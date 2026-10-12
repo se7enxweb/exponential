@@ -99,6 +99,24 @@ $FunctionList['read'] = array(
         ),
     ),
 );
+// a channel an extension adds ([AuditChannelSettings] Channels[] of its audit.ini.append.php) can be granted too,
+// named after the extension's source when one owns it (expAuditSourceRegistry)
+if ( class_exists( 'expAuditConfig' ) )
+{
+    try
+    {
+        $auditKnown = array_column( $FunctionList['read']['Channel']['values'], 'value' );
+        $auditLabels = class_exists( 'expAuditSourceRegistry' ) ? expAuditSourceRegistry::channelLabels() : array();
+        foreach ( expAuditConfig::get()['channels'] as $auditChannel )
+            if ( !in_array( $auditChannel, $auditKnown, true ) )
+                $FunctionList['read']['Channel']['values'][] = array( 'Name' => isset( $auditLabels[$auditChannel] ) ? $auditLabels[$auditChannel] : ucfirst( $auditChannel ),
+                                                                      'value' => $auditChannel );
+    }
+    catch ( Throwable $e )
+    {
+    }
+    unset( $auditKnown, $auditLabels, $auditChannel );
+}
 // Archives, settings, alerts (acknowledge), reindex and retention
 $FunctionList['manage'] = array();
 

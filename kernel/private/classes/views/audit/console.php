@@ -89,7 +89,9 @@ class Console extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'older_url', $offset + $limit < $page['total'] ? \expAuditConsole::url( 'audit/console', $raw, array( 'offset' => $offset + $limit, 'limit' => $limit !== $settings['pageSize'] ? $limit : null ) ) : '' );
         $tpl->setVariable( 'page', (int)floor( $offset / $limit ) + 1 );
         $tpl->setVariable( 'pages', max( 1, (int)ceil( $page['total'] / $limit ) ) );
-        $tpl->setVariable( 'channel_names', \expAuditConsole::channelNames( $allowed ) );
+        $tpl->setVariable( 'channel_options', \expAuditConsole::channelOptions( $allowed ) );
+        // the links of the extensions' sources (audit.ini [AuditSourceSettings] Sources[]); none without one
+        $tpl->setVariable( 'audit_sources', \expAuditConsole::sourceLinks( 'audit/console', $raw, $allowed ) );
         $tpl->setVariable( 'chains', \expAuditConsole::chainStates( $allowed ) );
         $tpl->setVariable( 'severities', \expAuditIndexRow::SEVERITIES );
         $tpl->setVariable( 'names', \expAuditConsole::knownNames( $allowed ) );

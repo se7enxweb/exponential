@@ -65630,6 +65630,14 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>A filter is not valid, so nothing is shown:</source>
         <translation>Ein Filter ist nicht gültig, daher wird nichts angezeigt:</translation>
     </message>
+    <message>
+        <source>channel</source>
+        <translation>Kanal</translation>
+    </message>
+    <message>
+        <source>Sources</source>
+        <translation>Quellen</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/job</name>

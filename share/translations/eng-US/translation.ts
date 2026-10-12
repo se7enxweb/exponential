@@ -58184,6 +58184,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>A filter is not valid, so nothing is shown:</source>
         <translation>A filter is not valid, so nothing is shown:</translation>
     </message>
+    <message>
+        <source>channel</source>
+        <translation>channel</translation>
+    </message>
+    <message>
+        <source>Sources</source>
+        <translation>Sources</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/job</name>

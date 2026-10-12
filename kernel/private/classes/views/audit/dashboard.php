@@ -71,7 +71,12 @@ class Dashboard extends \Exponential\Runnable\ModuleView
             $tpl->setVariable( 'security', $this->security( $q, $allowed ) );
             $tpl->setVariable( 'alerts', $this->alerts( $q, $allowed ) );
             $tpl->setVariable( 'activity', $this->cached( 'activity', $allowed, function () use ( $q, $allowed ) { return $this->activity( $q, $allowed ); } ) );
+            // the panels of the extensions' sources (audit.ini [AuditSourceSettings] Sources[]): none without one;
+            // kept for a minute per user, as their links follow the user's policies
+            $tpl->setVariable( 'source_panels', $this->sourcePanels( $q, $allowed ) );
         }
+        else
+            $tpl->setVariable( 'source_panels', array() );
         $tpl->setVariable( 'operations', $this->operations( $config, $manage, $usable, $indexRun ) );
         $tpl->setVariable( 'ms', (int)round( ( microtime( true ) - $start ) * 1000 ) );
 
@@ -303,6 +308,21 @@ class Dashboard extends \Exponential\Runnable\ModuleView
             $out['latest'][] = \expAuditConsole::view( $r );
         $out['latest_url'] = \expAuditConsole::url( 'audit/console', array( 'severity' => 'warning' ) );
         return $out;
+    }
+
+    /**
+     * The panels of the extensions' sources (expAuditSource::dashboard()), each for today and the last 7 days.
+     *
+     * @return array[]
+     */
+    protected function sourcePanels( \expAuditQuery $q, $allowed )
+    {
+        if ( !class_exists( 'expAuditSourceRegistry' ) || !\expAuditSourceRegistry::readable( $allowed ) )
+            return array();
+        $period = array( 'today_ms' => self::todayMs(), 'week_ms' => self::todayMs() - 6 * 86400000 );
+        return $this->cached( 'sources-u' . (int)\eZUser::currentUserID(), $allowed, function () use ( $q, $allowed, $period ) {
+            return \expAuditSourceRegistry::panels( $q, $allowed, $period );
+        } );
     }
 
     /**

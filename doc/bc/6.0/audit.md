@@ -143,7 +143,7 @@ Three things to do on a new installation:
 
 | Policy | Grants | Limitation |
 |---|---|---|
-| `audit/read` | the Audit tab, dashboard, console, event, charts, alerts, export, recent; the dashboard block, sidebar link, node tab and job links; the fetch functions | `Channel` (content, access, system, commerce, read): for example, a shop auditor who sees only `commerce` |
+| `audit/read` | the Audit tab, dashboard, console, event, charts, alerts, export, recent; the dashboard block, sidebar link, node tab and job links; the fetch functions | `Channel` (content, access, system, commerce, read, and any channel an active extension adds, such as `ai`): for example, a shop auditor who sees only `commerce` |
 | `audit/manage` | archives and settings views, "Verify now" | none |
 
 No role except Administrator (which holds `*/*`) has these policies in a new installation. To give someone read
@@ -198,6 +198,13 @@ events, Charts, Alerts and Export, plus Archives and Settings for `audit/manage`
 | **Archives** (manage) | `audit/archives` | Per channel: live files (count, size, oldest), archives and manifests, each live file's verification state (intact, repaired, broken at line n, unchecked), the signing key id and fingerprint. Read-only: archiving and restoring are done by the cronjob part and `exp:audit` |
 | **Settings** (manage) | `audit/settings` | The effective audit.ini with the file each value comes from, secrets masked, keys as ids and fingerprints, the sinks and format handlers with what keeps them from working, the index state (tables, full-text kind, rows, lag). Read-only: write settings with `exp:ini` (see [4.9](#49-changing-settings)) |
 | **Recent** | `audit/recent` | The latest 100 events, all channels or `/(channel)/<name>`, with a chain line per channel |
+
+**Extensions' sources.** An active extension can register a source of the console
+(`[AuditSourceSettings] Sources[]`, see [3.5](#35-the-developer-api), "An extension's source in the console"). Its
+events then have a dashboard panel, a line of links on the console, recent, charts, alerts and export views, charts
+of their own, the extension's fields and links on `audit/event`, and an entry in this left menu. Without such an
+extension the views are exactly as described above. Exponential Intelligence (expai) is one: the channel `ai`, the
+panel "Exponential Intelligence" and the menu entries "AI events" and "EI: Log" (with `expai/log`).
 
 **Console filters** are URL parameters, so every filtered view can be bookmarked and shared:
 
@@ -828,6 +835,110 @@ hashed). A filter event's value passes through unchanged. Shipped: `session/rege
 `access.session.regenerate`, and `session/destroy` and `session/gc` → `access.session.expire`. Both are off by
 default.
 
+#### An extension's source in the console
+
+A branch puts an extension's names into the audit; a **source** tells the console how to show them. An extension that
+records events of its own (best in a channel of its own) registers a class implementing `expAuditSource`, usually by
+extending `expAuditSourceBase`, which answers every method with "nothing":
+
+```php
+// extension/myext/classes/myextauditsource.php
+class myExtAuditSource extends expAuditSourceBase
+{
+    public function label()   { return ezpI18n::tr( 'extension/myext/audit', 'Polls' ); }
+    public function channel() { return 'polls'; }
+    public function problem() { return class_exists( 'myExtPoll' ) ? '' : 'the classes of myext are not loaded'; }
+
+    /** Links on the console's views ($view: audit/console, audit/recent, audit/charts, audit/alerts, audit/export) */
+    public function links( $view, array $filters )
+    {
+        $links = array( array( 'label' => 'Votes', 'url' => self::consoleUrl( 'audit/console', array( 'name' => 'content.myext_poll.vote' ) ) ) );
+        if ( self::hasPolicy( 'poll', 'manage' ) )
+            $links[] = array( 'label' => 'All polls', 'url' => 'poll/list/(state)/open' );
+        return $links;
+    }
+
+    /** The dashboard panel, from the index: figures, lists, links, note */
+    public function dashboard( expAuditQuery $q, ?array $allowed, array $period )
+    {
+        $week = array( 'from_ms' => $period['week_ms'], 'name' => 'content.myext_poll.vote' );
+        return array( 'figures' => array( array( 'label' => 'votes, 7 days', 'value' => $q->count( $week, $allowed ),
+                                                 'url' => self::consoleUrl( 'audit/console', array( 'name' => 'content.myext_poll.vote' ) ) ) ),
+                      'lists' => array( array( 'title' => 'Top voters', 'items' => array() ) ) );
+    }
+
+    /** audit/event: the record's fields as the extension names them, and links into its pages */
+    public function event( array $record )
+    {
+        return array( 'fields' => array( array( 'label' => 'Poll', 'value' => $record['object']['id'] ) ),
+                      'links' => array( array( 'label' => 'The poll', 'url' => 'poll/view/' . (int)$record['object']['id'] ) ) );
+    }
+
+    /** The address of an object type the extension records (the Object line of audit/event) */
+    public function linkFor( $type, $id ) { return $type === 'poll' ? 'poll/view/' . (int)$id : null; }
+
+    /** audit/charts: each series counts a name pattern per day */
+    public function charts()
+    {
+        return array( array( 'title' => 'Polls per day', 'series' => array( array( 'label' => 'votes', 'name' => 'content.myext_poll.vote' ),
+                                                                            array( 'label' => 'closed', 'name' => 'content.myext_poll.close' ) ) ) );
+    }
+}
+```
+
+```ini
+# extension/myext/settings/audit.ini.append.php (no empty "Channels[]" or "Rules[]" line: it would clear the kernel's list)
+[AuditEventSettings]
+Branches[myext]=myExtAuditBranch          # its events() give 'channel' => 'polls'
+[AuditChannelSettings]
+Channels[]=polls
+[AuditChannel_polls]
+LiveDays=90
+ArchiveDays=730
+MaxFileSize=64M
+ArchiveFormat=gzip
+Sinks[]
+[AuditSourceSettings]
+Sources[myext]=myExtAuditSource
+```
+
+```ini
+# extension/myext/settings/menu.ini.append.php: the audit sidebar (each link only with its policies)
+[Leftmenu_audit]
+Links[myext_events]=audit/console/(channel)/polls
+LinkNames[myext_events]=Poll events
+PolicyList_myext_events[]=audit/read
+```
+
+What each view does with it (only for a source that works here, `problem()` is `''`, and whose channel the user may
+read under the `Channel` limitation of `audit/read`):
+
+| View | What the source adds |
+|---|---|
+| `audit/dashboard` | its panel after Activity: figures (each optionally a link and a state success, refused or failed), lists, links, a note; kept for a minute per user (its links follow the user's policies) |
+| `audit/console` | the channel's option reads "polls (Polls)"; a line of the source's links under the filter |
+| `audit/recent`, `audit/alerts`, `audit/export` | the line of links; on alerts, a rule on the source's names shows the source under its event |
+| `audit/charts` | the line of links and one card per chart: a bar per series and day, the numbers in a table (left out when the page is filtered on another channel) |
+| `audit/event` | for a record of the source's channel, a card with the source's fields and links; the Object and Target lines link through `linkFor()` |
+| `audit/settings` | a Sources card: identifier, label, channel, class and what keeps it from working (shown only when a source is registered) |
+| policies | the `Channel` limitation of `audit/read` lists every channel of `Channels[]`, an extension's named after its source |
+
+Rules every source follows, enforced by `expAuditSourceRegistry`:
+
+- **Addresses are module/view paths with view parameters** (`expai/log/(errors)/1`), never a query string, an absolute
+  URL, a leading slash or `..`. Anything else is dropped. Build console addresses with `consoleUrl()`.
+- **Only links the user may follow.** The source checks its own policies (`hasPolicy( $module, $function )`); the
+  console checks `audit/read` and the channel.
+- **Never throw into a view.** A source that throws is left out of that call and written to `error.log`.
+- **Name fields so the privacy rules leave them.** A field whose name contains password, secret, token, salt,
+  credential, privatekey or apikey is written as `[secret]` (`input_tokens` too): put counts under a neutral key
+  (expai: `after.usage.in`, `after.usage.out`).
+- **With the extension inactive nothing changes**: its settings are not read, no source, no channel, no menu entry.
+  Its files stay in `var/log/audit/` and are listed by `exp:audit status` like any channel's.
+
+Exponential Intelligence (extension expai) is the reference: `classes/audit/expaiauditsource.php`, its branch
+`expaiauditbranch.php`, the recorder `expaiaudit.php`, and its documentation `doc/audit-trail.md`.
+
 #### A sink, an alert rule class, an archive format
 
 Each is a class named in audit.ini, counted by the RAD survey (registries `auditsinks`, `auditalertrules`,
@@ -1338,6 +1449,7 @@ The verifier keeps going after a break (using the record's own `prev`), so a rep
 | `auditsinks` | `[AuditSinkSettings] SinkClasses[]` | syslog, webhook, mail; 0 broken |
 | `auditalertrules` | `[AuditAlertSettings] RuleClasses[]` | threshold, match, schedule; 0 broken |
 | `auditformats` | `[AuditArchiveSettings] FormatHandlers[]` | gzip, bzip2, xz, zstd, zip; 0 broken |
+| (sources) | `[AuditSourceSettings] Sources[]` | none in the kernel; expai registers `expai` (channel `ai`). Listed with their problems in `audit/settings`, not counted by the RAD survey |
 
 ### 5.5 Buffering and flushing
 
@@ -1832,6 +1944,7 @@ section summarises it. Change values in an override, never in that file ([4.9](#
 | `[AuditEventSettings]` | `Enabled[]`, `Disabled[]` | patterns; the most specific wins, `Disabled[]` on a tie |
 | | `Branches[<ext>]` | extension taxonomy branches |
 | | `MinSeverity` (info) | lower severities are not recorded |
+| `[AuditSourceSettings]` | `Sources[<ext>]` | the console's sources of extensions: panel, links, event fields, charts ([3.5](#35-the-developer-api), "An extension's source in the console") |
 | `[AuditChannelSettings]` | `Channels[]`, `Route[<pattern>]`, `DefaultChannel` (system) | channels and routing |
 | `[AuditChannel_<c>]` | `LiveDays`, `ArchiveDays`, `MaxFileSize`, `ArchiveFormat`, `Sinks[]` | per channel; see the shipped values in [4.3](#43-retention) |
 | `[AuditRecordSettings]` | `BeforeAfter` (enabled \| keys \| disabled), `MaxValueLength` (512), `ChildDepth` (3), `MaxChildren` (10000), `RequestContext`, `RequestIdHeader` (X-Exp-Request-Id), `TrustedRequestIdHeader` (empty; trusted from loopback only), `MaxLineBytes` (262144) | what a record holds |
@@ -2048,6 +2161,7 @@ The acceptance tests of the design (Z9), run at the end of the work on 2026-10-0
 | `expAuditImportTest` | 1 | both 4.x header forms, re-import skipped, the legacy manifest (E4) |
 | `expAuditFilterGuardReauthTest` | 9 | name patterns, malformed filters find nothing, the time rule, `--query`, `OnWriteFailure=refuse` (the guard, a settings write, an admin POST), `ReauthForManage` (AG-01–AG-09; live database, throwaway log directories) |
 | `expAuditMailRecipientsTest` | 8 | every recipient kind against the live database (temporary users and groups, removed afterwards) |
+| `expAuditSourceTest` | 8 | the console's sources (AS-01–AS-08): none registered changes nothing, a source of its own channel, what keeps one out, view paths only, a source that throws, the Channel limitation, a branch routed into the source's channel, the policy limitation lists it |
 
 Also `tests/tests/kernel/classes/expViewAccessTest.php` (the dashboard permission fix): 14 tests, 68 assertions, OK
 (6 skipped).

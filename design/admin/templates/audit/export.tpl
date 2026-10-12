@@ -1,5 +1,5 @@
 {* audit/export without a format: the choice of format for the current filter. Variables: filters, total, max,
-   console_url, urls (csv, jsonl, json => module/view path). *}
+   console_url, urls (csv, jsonl, json => module/view path), audit_sources (audit/sources.tpl). *}
 {include uri='design:audit/style.tpl'}
 <div class="context-block au-view" id="exp-audit-export">
 
@@ -25,6 +25,7 @@
     <li><a href={$urls.jsonl|ezurl}>{'JSON lines'|i18n( 'design/admin/audit' )}</a> &ndash; {'the records as written, one per line; their hashes can be checked'|i18n( 'design/admin/audit' )}</li>
     <li><a href={$urls.json|ezurl}>{'JSON'|i18n( 'design/admin/audit' )}</a> &ndash; {'the records as one array'|i18n( 'design/admin/audit' )}</li>
 </ul>
+{include uri='design:audit/sources.tpl'}
 <p class="au-note">{'An export is recorded (system.audit.export) with the filter, the format, the count and the sha256 of the file.'|i18n( 'design/admin/audit' )}</p>
 <p><a href={$console_url|ezurl}>&larr; {'Back to the console'|i18n( 'design/admin/audit' )}</a></p>
 </div>

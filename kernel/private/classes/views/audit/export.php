@@ -56,6 +56,7 @@ class Export extends \Exponential\Runnable\ModuleView
             foreach ( array_keys( self::FORMATS ) as $f )
                 $urls[$f] = \expAuditConsole::url( 'audit/export', $raw, array( 'format' => $f ) );
             $tpl->setVariable( 'urls', $urls );
+            $tpl->setVariable( 'audit_sources', \expAuditConsole::sourceLinks( 'audit/export', $raw, $allowed ) );
             \expAuditConsole::recordRead( 'audit/export', $raw, $total );
             return \expAuditConsole::result( $tpl->fetch( 'design:audit/export.tpl' ), \ezpI18n::tr( 'design/admin/audit', 'Export' ) );
         }

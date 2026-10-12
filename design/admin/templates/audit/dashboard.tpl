@@ -2,7 +2,8 @@
    audit_enabled, index_usable, health (chains, key, worst), limited_to, and with the index: volume (days, channels,
    families, today, week, *_url), security (failed_logins, by_ip, by_login, grants, grants_total, refusals,
    refused_views, *_url), alerts (recent, day, rules, problems, recipients, enabled), activity (actors, objects,
-   latest, latest_url); operations (archives, sinks, index, cron); ms. *}
+   latest, latest_url), source_panels (the panels of the extensions' sources: identifier, label, channel, figures,
+   lists, links, note); operations (archives, sinks, index, cron); ms. *}
 {include uri='design:audit/style.tpl'}
 <style type="text/css">
 {literal}
@@ -141,6 +142,28 @@
     <ul class="au-list">{foreach $activity.latest as $e}<li><span><span class="au-result {if $e.severity_number|le( 3 )}failed{else}refused{/if}">{$e.severity|wash}</span> <a href={concat( 'audit/event/', $e.id )|ezurl} title="{$e.name|wash}">{$e.label|wash}</a></span><span class="au-sub au-n">{$e.time|wash}</span></li>{/foreach}</ul>
     {else}<p class="au-note">{'No events.'|i18n( 'design/admin/audit' )}</p>{/if}
 </section>
+
+{* ---- The panels of the extensions' sources (audit.ini [AuditSourceSettings] Sources[]) ---- *}
+{foreach $source_panels as $p}
+<section class="au-card au-source-panel" id="au-d-source-{$p.identifier|wash}" aria-labelledby="au-d-source-{$p.identifier|wash}-h">
+    <h2 class="au-h" id="au-d-source-{$p.identifier|wash}-h">{$p.label|wash}{if $p.channel} <a href={concat( 'audit/console/(channel)/', $p.channel )|ezurl}>{'Console'|i18n( 'design/admin/audit' )} &rarr;</a>{/if}</h2>
+    {if $p.figures|count}
+    <div class="au-figures">
+    {foreach $p.figures as $f}
+        <div class="au-figure"><strong>{if $f.state}<span class="au-result {$f.state|wash}">{/if}{if $f.url}<a href={$f.url|ezurl}>{$f.value|wash}</a>{else}{$f.value|wash}{/if}{if $f.state}</span>{/if}</strong><span>{$f.label|wash}</span></div>
+    {/foreach}
+    </div>
+    {/if}
+    {foreach $p.lists as $l}
+    <p class="au-sub">{$l.title|wash}</p>
+    {if $l.items|count}
+    <ul class="au-list">{foreach $l.items as $i}<li>{if $i.url}<a href={$i.url|ezurl}>{$i.label|wash}</a>{else}<span>{$i.label|wash}</span>{/if}<span class="au-n">{$i.n}</span></li>{/foreach}</ul>
+    {else}<p class="au-note">{'No events.'|i18n( 'design/admin/audit' )}</p>{/if}
+    {/foreach}
+    {if $p.links|count}<div class="au-quick">{foreach $p.links as $l}<a href={$l.url|ezurl}>{$l.label|wash}</a>{/foreach}</div>{/if}
+    {if $p.note}<p class="au-note">{$p.note|wash}</p>{/if}
+</section>
+{/foreach}
 {else}
 <section class="au-card">
     <h2 class="au-h">{'Index'|i18n( 'design/admin/audit' )}</h2>

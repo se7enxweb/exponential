@@ -55,8 +55,26 @@ class Alerts extends \Exponential\Runnable\ModuleView
                               'group_by' => isset( $c['GroupBy'] ) ? (string)$c['GroupBy'] : '',
                               'severity' => isset( $c['Severity'] ) ? (string)$c['Severity'] : '',
                               'sinks' => implode( ', ', array_filter( (array)( isset( $c['Sinks'] ) ? $c['Sinks'] : array() ), 'strlen' ) ),
-                              'problem' => $r['problem'],
+                              'problem' => $r['problem'], 'source' => '',
                               'fired_url' => \expAuditConsole::url( 'audit/console', array( 'name' => 'system.audit.alert', 'q' => $name ) ) );
+        }
+
+        // a rule on the events of an extension's source names the source (the branch of the taxonomy that
+        // registers its event names carries the source's identifier)
+        $sourceLabels = array();
+        if ( class_exists( 'expAuditSourceRegistry' ) )
+            foreach ( \expAuditSourceRegistry::readable( $allowed ) as $sid => $source )
+                $sourceLabels[$sid] = \expAuditSourceRegistry::status()[$sid]['label'];
+        if ( $sourceLabels )
+        {
+            $registry = \expAuditTaxonomy::registry();
+            foreach ( $rules as $i => $r )
+                foreach ( $registry as $eventName => $def )
+                    if ( isset( $sourceLabels[$def['branch']] ) && $r['event'] !== '' && \expAuditTaxonomy::match( $r['event'], $eventName ) >= 0 )
+                    {
+                        $rules[$i]['source'] = $sourceLabels[$def['branch']];
+                        break;
+                    }
         }
 
         \expAuditConsole::recordRead( 'audit/alerts', array(), (int)$page['total'] );
@@ -71,6 +89,7 @@ class Alerts extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'alerts_enabled', strtolower( (string)$ini->variable( 'AuditAlertSettings', 'Alerts' ) ) === 'enabled' );
         $tpl->setVariable( 'system_allowed', \expAuditConsole::channelAllowed( 'system', $allowed ) );
         $tpl->setVariable( 'can_manage', \expAuditConsole::canManage() );
+        $tpl->setVariable( 'audit_sources', \expAuditConsole::sourceLinks( 'audit/alerts', array(), $allowed ) );
         return \expAuditConsole::result( $tpl->fetch( 'design:audit/alerts.tpl' ), \ezpI18n::tr( 'design/admin/audit', 'Alerts' ) );
     }
 

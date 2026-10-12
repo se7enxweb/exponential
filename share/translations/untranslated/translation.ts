@@ -55568,4 +55568,15 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
 </context>
+<context>
+    <name>design/admin/audit</name>
+    <message>
+        <source>channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sources</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
 </TS>

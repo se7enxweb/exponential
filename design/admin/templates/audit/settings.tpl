@@ -1,7 +1,8 @@
 {* audit/settings (audit/manage): the effective audit.ini with the origin of every value, the keys as fingerprints,
    the sinks and format handlers with their problems, and the index state. Read-only. Variables: blocks (name,
    rows: variable, value, is_list, secret, origin, overridden), key_rows, installation, sinks, formats, index,
-   audit_enabled, log_dir, index_settings. *}
+   audit_enabled, log_dir, index_settings, sources (the registered sources of extensions: identifier, label, channel,
+   class, problem; the card is shown only when one is registered). *}
 {include uri='design:audit/style.tpl'}
 <div class="context-block au-view" id="exp-audit-settings">
 
@@ -59,6 +60,15 @@
     </table>
     {else}<p class="au-note">{'No format handlers are registered here.'|i18n( 'design/admin/audit' )}</p>{/if}
 </section>
+
+{if $sources|count}
+<section class="au-card">
+    <h2 class="au-h">{'Sources'|i18n( 'design/admin/audit' )}</h2>
+    <table class="list" cellspacing="0">
+    {foreach $sources as $s}<tr><td><code>{$s.identifier|wash}</code> {$s.label|wash}{if $s.channel} <span class="au-sub">{'channel'|i18n( 'design/admin/audit' )} <code>{$s.channel|wash}</code></span>{/if}<br /><span class="au-sub">{$s.class|wash}</span></td><td>{if $s.problem}<span class="au-result refused">{'not working'|i18n( 'design/admin/audit' )}</span> <span class="au-sub">{$s.problem|wash}</span>{else}<span class="au-result success">{'ready'|i18n( 'design/admin/audit' )}</span>{/if}</td></tr>{/foreach}
+    </table>
+</section>
+{/if}
 </div>
 
 <h2 class="au-h">audit.ini</h2>

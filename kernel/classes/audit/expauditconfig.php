@@ -42,6 +42,7 @@ class expAuditConfig
             'AuditEventSettings/Disabled' => array( 'access.session.regenerate', 'access.session.expire' ),
             'AuditEventSettings/Branches' => array(),
             'AuditEventSettings/MinSeverity' => 'info',
+            'AuditSourceSettings/Sources' => array(),
             'AuditChannelSettings/Channels' => array( 'content', 'access', 'system', 'commerce', 'read' ),
             'AuditChannelSettings/Route' => array( 'content.*' => 'content', 'content.node.view' => 'read',
                                                    'content.search.*' => 'read', 'content.object.download' => 'read',
@@ -265,6 +266,8 @@ class expAuditConfig
             'enabledPatterns' => $list( $v['AuditEventSettings/Enabled'] ),
             'disabledPatterns' => $list( $v['AuditEventSettings/Disabled'] ),
             'branches' => $hash( $v['AuditEventSettings/Branches'] ),
+            // the console's sources of extensions (expAuditSourceRegistry): identifier => class
+            'sources' => $hash( $v['AuditSourceSettings/Sources'] ),
             'minSeverity' => strtolower( trim( (string)$v['AuditEventSettings/MinSeverity'] ) ),
             'channels' => $channels,
             'routes' => $hash( $v['AuditChannelSettings/Route'] ),

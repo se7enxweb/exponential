@@ -1,7 +1,8 @@
 {* audit/event: one audit record in full. Variables: event (expAuditConsole::view), record, raw (indented JSON),
    request, actor, object_fields, target_fields, error_fields (field => text), changes (key, before, after, changed),
    roles (id, name), links (object, target, user, job: module/view paths or null), related (parent, children,
-   request, job_count), hash_ok (yes | no | n/a), file_state, prev, hash, console_request_url, console_job_url. *}
+   request, job_count), hash_ok (yes | no | n/a), file_state, prev, hash, console_request_url, console_job_url,
+   source (what the source of the channel says: identifier, label, fields (label, value), links (label, url)) or null. *}
 {include uri='design:audit/style.tpl'}
 <div class="context-block au-view" id="exp-audit-event">
 
@@ -44,6 +45,21 @@
         <br /><span class="au-sub">prev <code>{$prev|wash}</code></span><br /><span class="au-sub">hash <code>{$hash|wash}</code></span></dd>
 </dl>
 </div>
+
+{if $source}
+<section class="au-card au-event-source" id="au-event-source-{$source.identifier|wash}" aria-labelledby="au-event-source-h">
+<h2 class="au-h" id="au-event-source-h">{$source.label|wash}</h2>
+{if $source.fields|count}
+<dl class="au-fields">
+{foreach $source.fields as $f}
+    <dt>{$f.label|wash}</dt>
+    <dd>{$f.value|wash}</dd>
+{/foreach}
+</dl>
+{/if}
+{if $source.links|count}<p class="au-quick-links">{foreach $source.links as $l}<a href={$l.url|ezurl}>{$l.label|wash}</a>{delimiter} &middot; {/delimiter}{/foreach}</p>{/if}
+</section>
+{/if}
 
 {if $changes|count}
 <h2 class="au-h">{'Before and after'|i18n( 'design/admin/audit' )}</h2>

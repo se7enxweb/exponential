@@ -119,6 +119,12 @@ class Settings extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'installation', $installation );
         $tpl->setVariable( 'sinks', $sinks );
         $tpl->setVariable( 'formats', $formats );
+        // the extensions' sources of the console (audit.ini [AuditSourceSettings] Sources[]) and what keeps them from working
+        $sources = array();
+        if ( class_exists( 'expAuditSourceRegistry' ) )
+            foreach ( \expAuditSourceRegistry::status() as $id => $s )
+                $sources[] = array( 'identifier' => $id ) + $s;
+        $tpl->setVariable( 'sources', $sources );
         $tpl->setVariable( 'index', $index );
         $tpl->setVariable( 'audit_enabled', $config['enabled'] );
         $tpl->setVariable( 'log_dir', \expAudit::relativePath( $config['logDir'] ) );

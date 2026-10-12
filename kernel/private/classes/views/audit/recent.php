@@ -108,6 +108,8 @@ class Recent extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'verified_today_only', isset( $options['date'] ) );
         $tpl->setVariable( 'limit', self::LIMIT );
         $tpl->setVariable( 'request_id', \expAudit::requestId() );
+        // the links of the extensions' sources (audit.ini [AuditSourceSettings] Sources[]); none without one
+        $tpl->setVariable( 'audit_sources', class_exists( 'expAuditConsole' ) ? \expAuditConsole::sourceLinks( 'audit/recent', $channel === null ? array() : array( 'channel' => $channel ), \expAuditConsole::allowedChannels() ) : array() );
 
         return array( 'content' => $tpl->fetch( 'design:audit/recent.tpl' ),
                       'path' => array( array( 'text' => \ezpI18n::tr( 'design/admin/audit', 'Audit' ), 'url' => false ),

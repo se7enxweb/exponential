@@ -1,6 +1,6 @@
 {* The audit/recent view: the latest audit events (newest first) and the state of each channel's hash chain.
    Read-only (policy audit/read). Variables: events, chains, channel, channel_names, audit_enabled, log_dir,
-   verified_today_only, limit, request_id. *}
+   verified_today_only, limit, request_id, audit_sources (audit/sources.tpl). *}
 <style type="text/css">
 {literal}
 #exp-audit-recent .au-chains { display: flex; flex-wrap: wrap; gap: .4em .8em; margin: 0 0 .8em; padding: 0; list-style: none; }
@@ -18,6 +18,7 @@
 #exp-audit-recent code { font-size: .85em; }
 #exp-audit-recent .au-scope { margin: 0 0 .6em; }
 #exp-audit-recent .au-scope .current { font-weight: bold; }
+#exp-audit-recent .au-sources p.au-source { margin: .15em 0 .6em; overflow-wrap: anywhere; }
 #exp-audit-recent .au-empty { padding: 1.2em; text-align: center; color: #555; }
 #exp-audit-recent .au-note { color: #555; font-size: .9em; }
 {/literal}
@@ -56,6 +57,7 @@
     {foreach $channel_names as $name} | {if eq( $channel, $name )}<span class="current">{$name|wash}</span>{else}<a href={concat( 'audit/recent/(channel)/', $name )|ezurl}>{$name|wash}</a>{/if}{/foreach}
 </p>
 {/if}
+{include uri='design:audit/sources.tpl'}
 </div>
 
 {if $events|count}

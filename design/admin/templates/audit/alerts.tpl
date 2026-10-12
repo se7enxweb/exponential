@@ -1,7 +1,7 @@
 {* audit/alerts: the alerts that fired (system.audit.alert) and the rules in use. Read-only. Variables: alerts
    (event rows plus rule, group, count, window, message, first, last), total, offset, page_size, rules (name, class,
    event, threshold, window, group_by, severity, sinks, problem, fired_url), alerts_enabled, system_allowed,
-   can_manage. *}
+   can_manage, audit_sources (audit/sources.tpl); a rule on the events of an extension's source has its label in source. *}
 {include uri='design:audit/style.tpl'}
 <div class="context-block au-view" id="exp-audit-alerts">
 
@@ -18,6 +18,8 @@
 {if $system_allowed|not}
 <p class="au-note">{'Alerts are records of the system channel, which your access does not include.'|i18n( 'design/admin/audit' )}</p>
 {/if}
+
+{include uri='design:audit/sources.tpl'}
 
 <h2 class="au-h">{'Fired alerts'|i18n( 'design/admin/audit' )} ({$total})</h2>
 {if $alerts|count}
@@ -63,7 +65,7 @@
 <tr class="{$style}">
     <td><a href={$r.fired_url|ezurl}><code>{$r.name|wash}</code></a></td>
     <td>{$r.class|wash}</td>
-    <td><code>{$r.event|wash}</code></td>
+    <td><code>{$r.event|wash}</code>{if $r.source}<br /><span class="au-sub">{$r.source|wash}</span>{/if}</td>
     <td>{if $r.threshold}{$r.threshold|wash} {'in'|i18n( 'design/admin/audit' )} {$r.window|wash} s{if $r.group_by}, {'per'|i18n( 'design/admin/audit' )} {$r.group_by|wash}{/if}{else}&ndash;{/if}</td>
     <td>{$r.severity|wash}</td>
     <td>{$r.sinks|wash}</td>

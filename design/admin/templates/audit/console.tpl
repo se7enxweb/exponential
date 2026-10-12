@@ -1,7 +1,8 @@
 {* audit/console: the audit timeline, newest first, with filters, search and paging, and the chain state per
    channel. Variables: events, total, offset, limit, page, pages, newer_url, older_url, source (index | files),
-   fulltext, unindexed, index_run, filters, active_filters, filter_url, export_url, charts_url, channel_names,
-   chains, severities, names, audit_enabled, can_manage, limited_to, invalid_filters (filter => why it is refused). *}
+   fulltext, unindexed, index_run, filters, active_filters, filter_url, export_url, charts_url, channel_options,
+   chains, severities, names, audit_enabled, can_manage, limited_to, invalid_filters (filter => why it is refused),
+   audit_sources (the links of the extensions' sources, audit/sources.tpl). *}
 {include uri='design:audit/style.tpl'}
 <div class="context-block au-view" id="exp-audit-console">
 
@@ -38,7 +39,7 @@
         <label for="au-channel">{'Channel'|i18n( 'design/admin/audit' )}</label>
         <select id="au-channel" name="Channel">
             <option value="">{'All'|i18n( 'design/admin/audit' )}</option>
-            {foreach $channel_names as $c}<option value="{$c|wash}"{if and( is_set( $filters.channel ), eq( $filters.channel, $c ) )} selected="selected"{/if}>{$c|wash}</option>{/foreach}
+            {foreach $channel_options as $c}<option value="{$c.channel|wash}"{if and( is_set( $filters.channel ), eq( $filters.channel, $c.channel ) )} selected="selected"{/if}>{$c.label|wash}</option>{/foreach}
         </select>
     </div>
     <div>
@@ -102,6 +103,8 @@
 {/foreach}
 </ul>
 {/if}
+
+{include uri='design:audit/sources.tpl'}
 
 <div class="au-bar">
     <span>{'%total events'|i18n( 'design/admin/audit',, hash( '%total', $total ) )}{if eq( $source, 'files' )} &middot; <span class="au-note">{'read from the files (no index)'|i18n( 'design/admin/audit' )}</span>{elseif $unindexed} &middot; <span class="au-note">{'%n not indexed yet, read from the files'|i18n( 'design/admin/audit',, hash( '%n', $unindexed ) )}</span>{/if}</span>

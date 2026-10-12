@@ -1,7 +1,8 @@
 {* audit/charts: events per day per channel (stacked bars, fixed channel colours), refusals and failures per day,
    logins and failed logins per day, the most active actors and the most frequent events; each chart has its
-   numbers in a table below it. Variables: index_usable, filters, days, console_url, channel_names, severities,
-   names, and with the index: day_rows, legend, top_actors, top_names, total, max_day, from. *}
+   numbers in a table below it. Variables: index_usable, filters, days, console_url, channel_options, severities,
+   names, audit_sources (audit/sources.tpl), and with the index: day_rows, legend, top_actors, top_names, total,
+   max_day, from, source_charts (the charts of the extensions' sources: title, console_url, series, rows). *}
 {include uri='design:audit/style.tpl'}
 <div class="context-block au-view" id="exp-audit-charts">
 
@@ -17,7 +18,7 @@
         <label for="au-channel">{'Channel'|i18n( 'design/admin/audit' )}</label>
         <select id="au-channel" name="Channel">
             <option value="">{'All'|i18n( 'design/admin/audit' )}</option>
-            {foreach $channel_names as $c}<option value="{$c|wash}"{if and( is_set( $filters.channel ), eq( $filters.channel, $c ) )} selected="selected"{/if}>{$c|wash}</option>{/foreach}
+            {foreach $channel_options as $c}<option value="{$c.channel|wash}"{if and( is_set( $filters.channel ), eq( $filters.channel, $c.channel ) )} selected="selected"{/if}>{$c.label|wash}</option>{/foreach}
         </select>
     </div>
     <div>
@@ -38,6 +39,8 @@
         <a href={'audit/charts'|ezurl}>{'Reset'|i18n( 'design/admin/audit' )}</a>
     </div>
 </form>
+
+{include uri='design:audit/sources.tpl'}
 
 {if $index_usable|not}
 <div class="block au-empty"><p>{'Charts need the audit index (audit.ini [AuditIndexSettings] Index=enabled and its tables). The console still reads the files.'|i18n( 'design/admin/audit' )}</p></div>
@@ -118,6 +121,25 @@
     </div>
     {else}<p class="au-note">{'No events.'|i18n( 'design/admin/audit' )}</p>{/if}
 </section>
+
+{foreach $source_charts as $ci => $sc}
+<section class="au-card au-chart" aria-labelledby="au-cs{$ci}" id="au-chart-{$sc.identifier|wash}-{$ci}">
+    <h2 class="au-h" id="au-cs{$ci}">{$sc.title|wash}</h2>
+    <ul class="au-legend">{foreach $sc.series as $s}<li><span class="au-key s{$s.slot}"></span><a href={$s.url|ezurl} title="{$s.name|wash}">{$s.label|wash}</a> {$s.total}</li>{/foreach}</ul>
+    <div class="au-rows">
+    {foreach $sc.rows as $r}
+        <span class="au-lab">{$r.label|wash}</span>
+        <span class="au-track au-multi">{foreach $r.values as $v}<span class="au-seg s{$v.slot}" style="width: {$v.pct}%" title="{$r.day|wash} &middot; {$v.label|wash}: {$v.n}"{if $v.n} tabindex="0"{/if}></span>{/foreach}</span>
+        <span class="au-val">{$r.text|wash}</span>
+    {/foreach}
+    </div>
+    <details class="au-data"><summary>{'The numbers'|i18n( 'design/admin/audit' )}</summary>
+    <table class="list" cellspacing="0"><tr><th>{'Day'|i18n( 'design/admin/audit' )}</th>{foreach $sc.series as $s}<th>{$s.label|wash}</th>{/foreach}</tr>
+    {foreach $sc.rows as $r}<tr><td>{$r.day|wash}</td>{foreach $r.values as $v}<td>{$v.n}</td>{/foreach}</tr>{/foreach}</table>
+    </details>
+    <p class="au-sub"><a href={$sc.console_url|ezurl}>{'These events in the console'|i18n( 'design/admin/audit' )}</a></p>
+</section>
+{/foreach}
 </div>
 {/if}
 

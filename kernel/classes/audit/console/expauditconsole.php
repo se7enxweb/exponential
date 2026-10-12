@@ -356,7 +356,11 @@ class expAuditConsole
         $label = class_exists( 'expAuditTaxonomy' ) ? expAuditTaxonomy::label( $name ) : $name;
         // Only the names of the taxonomy are translated: the label of a name found in a stored event that the taxonomy
         // does not know (a retired or test event) is not in the catalogue and can never be, so it is shown as it is.
-        $known = class_exists( 'expAuditTaxonomy' ) && array_key_exists( $name, expAuditTaxonomy::registry() );
+        $registry = class_exists( 'expAuditTaxonomy' ) ? expAuditTaxonomy::registry() : array();
+        $known = array_key_exists( $name, $registry );
+        // an extension's branch names its events itself ('label' of expAuditTaxonomyBranch::events())
+        if ( $known && isset( $registry[$name]['label'] ) && $registry[$name]['label'] !== '' )
+            $label = (string)$registry[$name]['label'];
         return $known && class_exists( 'ezpI18n' ) ? ezpI18n::tr( 'kernel/audit', $label ) : $label;
     }
 
@@ -479,7 +483,37 @@ class expAuditConsole
             case 'view':
                 return self::viewLink( (string)$id );
         }
-        return null;
+        // a type an extension records: its source knows the address (expAuditSource::linkFor())
+        return class_exists( 'expAuditSourceRegistry' ) ? expAuditSourceRegistry::linkFor( (string)$type, (string)$id ) : null;
+    }
+
+    /**
+     * The links of the extensions' sources for a view (expAuditSource::links()), for design:audit/sources.tpl.
+     * Empty without a registered source.
+     *
+     * @param string $view audit/console ...
+     * @param array $filters the view's raw filters
+     * @param string[]|null $allowed
+     * @return array[] identifier, label, channel, links (label, url)
+     */
+    public static function sourceLinks( $view, array $filters, $allowed )
+    {
+        return class_exists( 'expAuditSourceRegistry' ) ? expAuditSourceRegistry::links( $view, $filters, $allowed ) : array();
+    }
+
+    /**
+     * The channels to offer in a filter with their labels: a source's channel is shown with the source's name.
+     *
+     * @param string[]|null $allowed
+     * @return array[] channel, label
+     */
+    public static function channelOptions( $allowed )
+    {
+        $labels = class_exists( 'expAuditSourceRegistry' ) ? expAuditSourceRegistry::channelLabels() : array();
+        $out = array();
+        foreach ( self::channelNames( $allowed ) as $c )
+            $out[] = array( 'channel' => $c, 'label' => isset( $labels[$c] ) ? $c . ' (' . $labels[$c] . ')' : $c );
+        return $out;
     }
 
     /**

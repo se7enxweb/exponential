@@ -165,6 +165,8 @@ class Event extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'hash', isset( $record['hash'] ) ? (string)$record['hash'] : '' );
         $tpl->setVariable( 'console_request_url', $row['request_id'] ? \expAuditConsole::url( 'audit/console', array( 'request' => $row['request_id'] ) ) : '' );
         $tpl->setVariable( 'console_job_url', $row['job_id'] ? \expAuditConsole::url( 'audit/console', array( 'job' => $row['job_id'] ) ) : '' );
+        // what the source of the record's channel says about it (expAuditSource::event()); null without one
+        $tpl->setVariable( 'source', class_exists( 'expAuditSourceRegistry' ) ? \expAuditSourceRegistry::event( $record ) : null );
 
         return \expAuditConsole::result( $tpl->fetch( 'design:audit/event.tpl' ), \ezpI18n::tr( 'design/admin/audit', 'Event' ),
                                          array( array( 'text' => $id, 'url' => false ) ) );

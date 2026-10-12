@@ -39,7 +39,9 @@ class Charts extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'filters', $raw );
         $tpl->setVariable( 'days', $days );
         $tpl->setVariable( 'console_url', \expAuditConsole::url( 'audit/console', $raw ) );
-        $tpl->setVariable( 'channel_names', \expAuditConsole::channelNames( $allowed ) );
+        $tpl->setVariable( 'channel_options', \expAuditConsole::channelOptions( $allowed ) );
+        // the links of the extensions' sources (audit.ini [AuditSourceSettings] Sources[]); none without one
+        $tpl->setVariable( 'audit_sources', \expAuditConsole::sourceLinks( 'audit/charts', $raw, $allowed ) );
         $tpl->setVariable( 'severities', \expAuditIndexRow::SEVERITIES );
         $tpl->setVariable( 'names', \expAuditConsole::knownNames( $allowed ) );
         if ( !$usable )
@@ -138,7 +140,11 @@ class Charts extends \Exponential\Runnable\ModuleView
         foreach ( $topNames as $i => $r )
             $topNames[$i]['label'] = \expAuditConsole::label( $r['value'] );
 
+        $sourceCharts = $this->sourceCharts( $q, $f, $raw, $allowed, $axis, $offsetMs );
+
         \expAuditConsole::recordRead( 'audit/charts', $raw, $total, array( 'days' => $days ) );
+
+        $tpl->setVariable( 'source_charts', $sourceCharts );
 
         $tpl->setVariable( 'day_rows', $dayRows );
         $tpl->setVariable( 'legend', array_map( function ( $c ) use ( $colour ) { return array( 'channel' => $c, 'slot' => $colour[$c] ); }, $ordered ) );
@@ -149,6 +155,63 @@ class Charts extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'from', $f['from'] );
 
         return \expAuditConsole::result( $tpl->fetch( 'design:audit/charts.tpl' ), \ezpI18n::tr( 'design/admin/audit', 'Charts' ) );
+    }
+
+    /**
+     * The charts of the extensions' sources (expAuditSource::charts()): each series counts the events of its name
+     * pattern per day, under the page's filters. A source of another channel than the filtered one is left out.
+     *
+     * @param \expAuditQuery $q
+     * @param array $f the normalised filters
+     * @param array $raw
+     * @param string[]|null $allowed
+     * @param string[] $axis the days
+     * @param int $offsetMs
+     * @return array[] identifier, title, console_url, series (label, name, slot, total, url), rows (day, label, values (n, pct, slot, label), text)
+     */
+    protected function sourceCharts( \expAuditQuery $q, array $f, array $raw, $allowed, array $axis, $offsetMs )
+    {
+        if ( !class_exists( 'expAuditSourceRegistry' ) )
+            return array();
+        $out = array();
+        foreach ( \expAuditSourceRegistry::charts( $allowed ) as $chart )
+        {
+            if ( isset( $f['channel'] ) && $chart['channel'] !== '' && $f['channel'] !== $chart['channel'] )
+                continue;
+            $series = array();
+            $counts = array();
+            $max = 1;
+            foreach ( $chart['series'] as $i => $s )
+            {
+                $sf = $f;
+                unset( $sf['names'] );
+                $sf['name'] = $s['name'];
+                $perDay = $q->perDay( $sf, $allowed, 'channel', $offsetMs );
+                $counts[$i] = array();
+                $sum = 0;
+                foreach ( $axis as $d )
+                {
+                    $n = isset( $perDay[$d] ) ? (int)array_sum( $perDay[$d] ) : 0;
+                    $counts[$i][$d] = $n;
+                    $sum += $n;
+                    $max = max( $max, $n );
+                }
+                $series[] = array( 'label' => $s['label'], 'name' => $s['name'], 'slot' => 1 + $i % 8, 'total' => $sum,
+                                   'url' => \expAuditConsole::url( 'audit/console', array( 'name' => $s['name'] ) + array_diff_key( $raw, array( 'name' => 1 ) ) ) );
+            }
+            $rows = array();
+            foreach ( $axis as $d )
+            {
+                $values = array();
+                foreach ( $series as $i => $s )
+                    $values[] = array( 'n' => $counts[$i][$d], 'pct' => round( 100 * $counts[$i][$d] / $max, 2 ), 'slot' => $s['slot'], 'label' => $s['label'] );
+                $rows[] = array( 'day' => $d, 'label' => date( 'D j M', strtotime( $d ) ), 'values' => $values,
+                                 'text' => implode( ' / ', array_column( $values, 'n' ) ) );
+            }
+            $out[] = array( 'identifier' => $chart['identifier'], 'title' => $chart['title'], 'series' => $series, 'rows' => $rows,
+                            'console_url' => \expAuditConsole::url( 'audit/console', $chart['channel'] !== '' ? array( 'channel' => $chart['channel'] ) + $raw : $raw ) );
+        }
+        return $out;
     }
 }
 

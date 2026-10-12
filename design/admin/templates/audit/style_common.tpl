@@ -49,11 +49,16 @@
 .au-view .au-track { display: flex; gap: 2px; height: 14px; min-width: 0; }
 .au-view .au-seg { height: 100%; min-width: 0; }
 .au-view .au-seg:last-child { border-radius: 0 4px 4px 0; }
+.au-view .au-track.au-multi { flex-direction: column; height: auto; gap: 2px; }
+.au-view .au-track.au-multi .au-seg { height: 6px; border-radius: 0 4px 4px 0; }
 .au-view .au-seg:hover, .au-view .au-seg:focus { outline: 2px solid var(--au-ink); outline-offset: 1px; }
 .au-view .s1 { background: var(--au-s1); } .au-view .s2 { background: var(--au-s2); } .au-view .s3 { background: var(--au-s3); }
 .au-view .s4 { background: var(--au-s4); } .au-view .s5 { background: var(--au-s5); } .au-view .s6 { background: var(--au-s6); }
 .au-view .s7 { background: var(--au-s7); } .au-view .s8 { background: var(--au-s8); }
 .au-view .serious { background: var(--au-serious); } .au-view .critical { background: var(--au-critical); }
+/* the extensions' sources (audit/sources.tpl) */
+.au-view .au-sources { margin: 0 0 .8em; padding: .5em .8em; border: 1px solid var(--au-line); border-radius: var(--au-radius); background: var(--au-soft); }
+.au-view .au-sources p.au-source { margin: .15em 0; overflow-wrap: anywhere; }
 .au-view details.au-data { margin: .4em 0 1em; }
 .au-view details.au-data summary { cursor: pointer; color: var(--au-muted); font-size: .9em; }
 @media ( max-width: 640px ) {
