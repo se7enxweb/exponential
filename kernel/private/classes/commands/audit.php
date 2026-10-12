@@ -605,8 +605,10 @@ class Audit extends \Exponential\Runnable\Command
         foreach ( $results as $c => $res )
         {
             $span = $res['first_time'] ? ', ' . $res['first_time'] . ' to ' . $res['last_time'] : '';
-            $this->output( sprintf( '%-10s %-9s %d records in %d file%s%s%s', $c, strtoupper( $res['result'] ), $res['records'], $res['files'],
-                                    $res['files'] === 1 ? '' : 's', $span, $res['checkpoints'] ? ', ' . $res['checkpoints'] . ' checkpoint(s) matched' : '' ) );
+            $repeated = isset( $res['repeated'] ) ? (int)$res['repeated'] : 0;
+            $this->output( sprintf( '%-10s %-9s %d records in %d file%s%s%s%s', $c, strtoupper( $res['result'] ), $res['records'], $res['files'],
+                                    $res['files'] === 1 ? '' : 's', $span, $res['checkpoints'] ? ', ' . $res['checkpoints'] . ' checkpoint(s) matched' : '',
+                                    $repeated ? sprintf( ', %d distinct (%d repeated)', $res['records'] - $repeated, $repeated ) : '' ) );
             foreach ( array_slice( $res['breaks'], 0, 20 ) as $b )
                 $this->output( "           break: {$b['file']} line {$b['line']}: {$b['kind']} ({$b['detail']})" . ( $b['id'] ? " id {$b['id']}" : '' ) );
             if ( count( $res['breaks'] ) > 20 )

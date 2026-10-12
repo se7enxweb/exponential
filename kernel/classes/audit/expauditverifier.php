@@ -143,7 +143,7 @@ class expAuditVerifier
         }
         $result = array( 'channel' => $channel, 'result' => 'empty', 'records' => 0, 'files' => count( $files ),
                          'first_time' => null, 'last_time' => null, 'breaks' => array(), 'repairs' => array(),
-                         'notices' => array(), 'checkpoints' => 0, 'last_seq' => null, 'last_hash' => null );
+                         'notices' => array(), 'checkpoints' => 0, 'last_seq' => null, 'last_hash' => null, 'repeated' => 0 );
         if ( !$files )
             return $result;
 
@@ -185,6 +185,8 @@ class expAuditVerifier
             $pendingTorn = null;
             $firstInFile = true;
             $fileLastName = null;
+            $idsInFile = array();
+            $repeatedInFile = 0;
             while ( ( $raw = fgets( $h ) ) !== false )
             {
                 $lineNo++;
@@ -212,6 +214,15 @@ class expAuditVerifier
                 $result['records']++;
                 $id = isset( $rec->id ) ? (string)$rec->id : null;
                 $kinds = array();
+                // the same record id once more (a forked process wrote its copy of its parent's buffer): chained
+                // like any line, so not a break; the index keeps the first (doc/bc/6.0/audit.md, "Repeated records")
+                if ( $id !== null )
+                {
+                    if ( isset( $idsInFile[$id] ) )
+                        $repeatedInFile++;
+                    else
+                        $idsInFile[$id] = true;
+                }
 
                 $hashless = clone $rec;
                 unset( $hashless->hash );
@@ -303,6 +314,13 @@ class expAuditVerifier
                 $lastName = $fileLastName = (string)$rec->name;
             }
             fclose( $h );
+            $idsInFile = array();
+            if ( $repeatedInFile > 0 )
+            {
+                $result['repeated'] += $repeatedInFile;
+                $result['notices'][] = array( 'file' => $file, 'line' => 0, 'kind' => 'repeated_ids',
+                                              'detail' => $repeatedInFile . ' line(s) repeat a record id written before in this file; the index and the exports keep the first' );
+            }
             if ( $pendingTorn !== null )
                 $result['notices'][] = array( 'file' => $file, 'line' => $pendingTorn['line'], 'kind' => 'torn_tail',
                                               'detail' => 'the last ' . $pendingTorn['length'] . ' bytes are not a record yet; the next write repairs them' );
@@ -358,6 +376,7 @@ class expAuditVerifier
                 $first = $result['breaks'] ? $result['breaks'][0] : null;
                 $data[$channel] = array(
                     'result' => $result['result'], 'records' => $result['records'], 'files' => $result['files'],
+                    'repeated' => isset( $result['repeated'] ) ? (int)$result['repeated'] : 0,
                     'breaks' => count( $result['breaks'] ), 'repairs' => count( $result['repairs'] ),
                     'first_break' => $first ? $first['file'] . ' line ' . $first['line'] . ': ' . $first['kind'] : '',
                     'partial' => (bool)$partial, 'verified_at' => time() );

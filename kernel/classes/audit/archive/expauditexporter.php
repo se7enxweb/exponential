@@ -97,6 +97,9 @@ class expAuditExporter
     {
         $f = $this->prepare( $f );
         $out = array();
+        // a record id seen again (a forked process wrote its copy of its parent's buffer) is left out, as the index
+        // leaves it out, so this export and the console's agree; at most the matches of the files read are kept
+        $seen = array();
         foreach ( $this->files( isset( $f['channel'] ) ? $f['channel'] : null ) as $path )
         {
             // a file of a day after "to" or before "from" cannot hold a match
@@ -113,7 +116,14 @@ class expAuditExporter
                     continue;
                 $r = json_decode( $line, true );
                 if ( is_array( $r ) && isset( $r['name'] ) && $this->matches( $r, $f ) )
+                {
+                    $id = isset( $r['id'] ) && is_string( $r['id'] ) ? $r['id'] : null;
+                    if ( $id !== null && isset( $seen[$id] ) )
+                        continue;
+                    if ( $id !== null )
+                        $seen[$id] = true;
                     $found[] = $r;
+                }
             }
             if ( $h )
                 fclose( $h );
