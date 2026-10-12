@@ -315,7 +315,7 @@ d5a3589152af07aa3d6cb3f0b025bec6  design/admin/stylesheets/setup-extensions.css
 a29149b517fa70cf3b43a635b58ead49  design/admin/stylesheets/theme/rounded.css
 4c5d17d9e5889a0f8907ad075f34c3d9  design/admin/stylesheets/visual-templateview.css
 51b12c9efcb649950dae2f832c6782e1  design/admin/templates/ajaxuploader/browse.tpl
-2a971a019be83d646f3bd5f5b5f82105  design/admin/templates/ajaxuploader/location.tpl
+a7f309134423a1be7e4bd03f3623b023  design/admin/templates/ajaxuploader/location.tpl
 f5c677b2579053f3f5a23f2a3dd3b87d  design/admin/templates/ajaxuploader/preview.tpl
 e002d70967d5f151cca6861170e9584f  design/admin/templates/ajaxuploader/upload.tpl
 a450bce071a004b4b9a65c4de328a16e  design/admin/templates/audit/alerts.tpl
@@ -952,7 +952,7 @@ d5a3589152af07aa3d6cb3f0b025bec6  design/admin4/stylesheets/setup-extensions.css
 d4ae8e476c5e52ca52eee57cc934f79c  design/admin4/stylesheets/theme/rounded.css
 4c5d17d9e5889a0f8907ad075f34c3d9  design/admin4/stylesheets/visual-templateview.css
 51b12c9efcb649950dae2f832c6782e1  design/admin4/templates/ajaxuploader/browse.tpl
-2a971a019be83d646f3bd5f5b5f82105  design/admin4/templates/ajaxuploader/location.tpl
+a7f309134423a1be7e4bd03f3623b023  design/admin4/templates/ajaxuploader/location.tpl
 f5c677b2579053f3f5a23f2a3dd3b87d  design/admin4/templates/ajaxuploader/preview.tpl
 e002d70967d5f151cca6861170e9584f  design/admin4/templates/ajaxuploader/upload.tpl
 a1acde366d02fa03bf24d51911522eec  design/admin4/templates/audit/recent.tpl
@@ -1866,7 +1866,7 @@ aeea638ca236f3b3ea2c500f08cf84f6  design/standard/templates/class/datatype/edit/
 e28c14aaba3f0b49f5a855467dc99693  design/standard/templates/class/datatype/edit/ezenum.tpl
 4410cb8bdedf964e8a3b19e143f02153  design/standard/templates/class/datatype/edit/ezfloat.tpl
 141291f1bb882694611e3687e64a469d  design/standard/templates/class/datatype/edit/ezidentifier.tpl
-36ce897ad8bda9df79b030bebb5329fa  design/standard/templates/class/datatype/edit/ezimage.tpl
+a8677444443a2e7a747e82c59a69aed1  design/standard/templates/class/datatype/edit/ezimage.tpl
 c081473d4c8ec6de66d8535f851441f5  design/standard/templates/class/datatype/edit/ezinisetting.tpl
 62d9b0b30fb5c834c590fbe7a762b6d1  design/standard/templates/class/datatype/edit/ezinteger.tpl
 ba1fbe716fe7cf2071f669a2d5469c3a  design/standard/templates/class/datatype/edit/ezisbn.tpl
@@ -1884,7 +1884,7 @@ cfade7851d9b96aabbbea3d8b1e87dd9  design/standard/templates/class/datatype/edit/
 0a7aa5c3a174fc74aa64007e7afe7e8d  design/standard/templates/class/datatype/edit/ezproductcategory.tpl
 494050db7cfe040e7cabb181b97fea93  design/standard/templates/class/datatype/edit/ezrangeoption.tpl
 032376eb0e734a2bcd2ad9457b6b487d  design/standard/templates/class/datatype/edit/ezselection.tpl
-017269127198f639f5b1d7698c17dbd8  design/standard/templates/class/datatype/edit/ezstring.tpl
+a785ddf412290ad65f30faaa8968ae31  design/standard/templates/class/datatype/edit/ezstring.tpl
 0a7aa5c3a174fc74aa64007e7afe7e8d  design/standard/templates/class/datatype/edit/ezsubtreesubscription.tpl
 3d492fc879d4f1b8f76936743c87870b  design/standard/templates/class/datatype/edit/eztext.tpl
 640d35c0d204894b8bf9d4ab145e0e32  design/standard/templates/class/datatype/edit/eztime.tpl
@@ -1901,7 +1901,7 @@ fb87756abde52d892ef6d6be120c85f6  design/standard/templates/class/datatype/view/
 a7ce93266c774624f6f64719732729ce  design/standard/templates/class/datatype/view/ezenum.tpl
 024a8fe18b5498c692539c7a957dc6bb  design/standard/templates/class/datatype/view/ezfloat.tpl
 71617d3f8859a9ddf61aca088c8d9d73  design/standard/templates/class/datatype/view/ezidentifier.tpl
-390205f482fb47b82a76eae995e544c5  design/standard/templates/class/datatype/view/ezimage.tpl
+84f8cfc6e5bb5d297c063320b3a4d4a8  design/standard/templates/class/datatype/view/ezimage.tpl
 c6d586a9d6bfb3d24f86ab7760f5016a  design/standard/templates/class/datatype/view/ezinisetting.tpl
 b586a6b8d41c0df9f3394a9fd6080ff6  design/standard/templates/class/datatype/view/ezinteger.tpl
 e50b40b52c3769e254656563fd191372  design/standard/templates/class/datatype/view/ezisbn.tpl
@@ -1919,7 +1919,7 @@ db75a29265e17fefae495fd274f1beb9  design/standard/templates/class/datatype/view/
 0a7aa5c3a174fc74aa64007e7afe7e8d  design/standard/templates/class/datatype/view/ezproductcategory.tpl
 319440cb38ad8ccf656dd7278fc74b3e  design/standard/templates/class/datatype/view/ezrangeoption.tpl
 d6d095521533114e22f111328c9bb56e  design/standard/templates/class/datatype/view/ezselection.tpl
-691a6205011aa0ad761a51f4acb1867e  design/standard/templates/class/datatype/view/ezstring.tpl
+6a70cbe314924471676ca13770bdcf01  design/standard/templates/class/datatype/view/ezstring.tpl
 0a7aa5c3a174fc74aa64007e7afe7e8d  design/standard/templates/class/datatype/view/ezsubtreesubscription.tpl
 836eda3a846b1d6ab3a3d5b1c353fb00  design/standard/templates/class/datatype/view/eztext.tpl
 e83acef8fa67b6e3faec6972f7602f86  design/standard/templates/class/datatype/view/eztime.tpl
@@ -2047,7 +2047,7 @@ a7dec648c018085f0c03d9050da2976d  design/standard/templates/content/datatype/edi
 73eb92fd6465695fd8b8585ecc8c3354  design/standard/templates/content/datatype/edit/ezenum.tpl
 a06a7f14b1eb9e3eaf92820df8d9a340  design/standard/templates/content/datatype/edit/ezfloat.tpl
 b17e58c480c3627f58dfae3c9462f828  design/standard/templates/content/datatype/edit/ezidentifier.tpl
-99a45b7c81b8cc6b2bafc7589e781c25  design/standard/templates/content/datatype/edit/ezimage.tpl
+390836a1045e5c935fbc176603598653  design/standard/templates/content/datatype/edit/ezimage.tpl
 38d15b06f177b8d3865b9c053cd8116f  design/standard/templates/content/datatype/edit/ezinisetting.tpl
 cb2a66e1b0662fa553bfb743671f299a  design/standard/templates/content/datatype/edit/ezinteger.tpl
 8dccc32d38b8a2f8563728ceb43e0b6e  design/standard/templates/content/datatype/edit/ezisbn.tpl
@@ -3503,7 +3503,7 @@ e6788c036282afd665d79ed6bb9c4d6d  doc/guides/benchmarking.md
 8f01bc44a84c119de29cd508fe41e05b  doc/guides/collected-information.md
 c5bc08dd00377761032a0fe460b3ef2a  doc/guides/content-history.md
 ca8f236019aaf4b164a601a6703b2d91  doc/guides/content-languages.md
-677a569571f655683f79d75eeeade858  doc/guides/content-model-and-editing.md
+e573f7e5c72d9fa816743a3730cd944d  doc/guides/content-model-and-editing.md
 3cf6ae135149b09ba4487eab5edd0f03  doc/guides/cronjobs.md
 9ea97a05fa2a16e68fe3ddeaf00535b2  doc/guides/deploying.md
 60946c27c4015c785d2c5b1d7c9106f3  doc/guides/drafts-and-pending.md
@@ -4199,7 +4199,7 @@ b656555c61cf975c56958dd42d4718dd  extension/ezoe/classes/runnable/views/ezoe/loa
 68a782c84a70af752905f917629fd3de  extension/ezoe/classes/runnable/views/ezoe/relations.php
 bcf0ee6ce97fa5471bb0400ade8de944  extension/ezoe/classes/runnable/views/ezoe/spellcheck_rpc.php
 0094bd5d9f9f73d0742050175de07d5d  extension/ezoe/classes/runnable/views/ezoe/tags.php
-feb9529c2eb7b37bd52f5f68fb790217  extension/ezoe/classes/runnable/views/ezoe/upload.php
+6c5f8e3c406757d0c67fd646ebbf6d99  extension/ezoe/classes/runnable/views/ezoe/upload.php
 a215d5fc30b402fd3f2608e4272eafbe  extension/ezoe/design/standard/images/tango/bookmark-new.png
 ca0901b4491d61ced030d0c91b4185e3  extension/ezoe/design/standard/images/tango/document-open.png
 e70141a37e7034c38d885651869c8adc  extension/ezoe/design/standard/images/tango/document-save.png
@@ -4636,7 +4636,7 @@ c275f2f494c626b8736b04b4d9987a53  extension/ezoe/design/standard/templates/ezoe/
 2c9eaab8f51ec6938ad43ad2bc425c62  extension/ezoe/design/standard/templates/ezoe/tag_table_cell.tpl
 e957ad0751e2c0d271450a92c8ab1e64  extension/ezoe/design/standard/templates/ezoe/upload/common_attributes.tpl
 13006eb47776c787cb7ba1126b1f4fa6  extension/ezoe/design/standard/templates/ezoe/upload_files.tpl
-7a73567ee675478dd8920976e25fcc63  extension/ezoe/design/standard/templates/ezoe/upload_images.tpl
+f3bffc88e81741de46f06135aac557bf  extension/ezoe/design/standard/templates/ezoe/upload_images.tpl
 3f471eb3f2a16e6dabbe7667060002ba  extension/ezoe/design/standard/templates/ezoe/upload_objects.tpl
 8607a7e3766c4aba3e75ab44f0b34020  extension/ezoe/doc/oe5_intro.odt
 432508f8b8c2b01e6ced699e524f4abe  extension/ezoe/doc/oe5_intro.pdf
@@ -4678,11 +4678,11 @@ f8a85b1a0304fa337737229280fcb45c  extension/ezoe/tests/suite.php
 89352618462fa235c9a4d73edfcde79a  extension/ezoe/translations/cze-CZ/translation.ts
 7a01cb19a8749a323545c01659a2ddba  extension/ezoe/translations/dan-DK/translation.ts
 78a42e2ad90b2c482030782011ab6e00  extension/ezoe/translations/dut-NL/translation.ts
-5309869367c041a100f55df0723950d4  extension/ezoe/translations/eng-US/translation.ts
+a830ee115e08901f435b608d5993243c  extension/ezoe/translations/eng-US/translation.ts
 a2513942156d811b6633ed45a77daeaa  extension/ezoe/translations/esl-ES/translation.ts
 bb5bd9726ef6de446fc6c037ac7cd59a  extension/ezoe/translations/fin-FI/translation.ts
 fa1dcd341369fc539d0a397f66e9aec7  extension/ezoe/translations/fre-FR/translation.ts
-45ada98e1cfabe5d9107bb5e2368639d  extension/ezoe/translations/ger-DE/translation.ts
+14f7ce8126a74b105acf590739cee27a  extension/ezoe/translations/ger-DE/translation.ts
 27a456dec6d79d2cd1099446cf723ba6  extension/ezoe/translations/ita-IT/translation.ts
 83cb07d4be4e2d1cff883ca7d8b5d984  extension/ezoe/translations/jpn-JP/translation.ts
 eec45b2adf10df254f61640cf79d23f7  extension/ezoe/translations/nor-NO/translation.ts
@@ -4691,7 +4691,7 @@ eec45b2adf10df254f61640cf79d23f7  extension/ezoe/translations/nor-NO/translation
 2d1041a369218b69c7497cdfe94a712a  extension/ezoe/translations/rus-RU/translation.ts
 79cb4dd5f6a0d6d832a63dbe95aa7f42  extension/ezoe/translations/ser-SR/translation.ts
 442b8f5ff21eaf472a640c8ae88744c0  extension/ezoe/translations/swe-SE/translation.ts
-668169300019f26c72d648d431ba13e5  extension/ezoe/translations/untranslated/translation.ts
+6d177b50c9fc19e7d636c4fd99a22018  extension/ezoe/translations/untranslated/translation.ts
 8d1d60689df854dd7cdff2bb0d921bd5  extension/ezoe/update/database/5.0/dbupdate-5.0.0-to-5.0.1.sql
 095a3ffdbaa76a73898ba20f893b9aad  ezpm.php
 855e225a60e154204dde78feafe5d1b5  ezpublish.cron
@@ -4875,7 +4875,7 @@ bb35232f915ab1f6a98245e68f7830e9  kernel/classes/datatypes/ezproductcategory/ezp
 e83b8db5cdd3dcd430a9bd25ded7d750  kernel/classes/datatypes/ezrangeoption/ezrangeoption.php
 871c62ccda2ef9df0e3d2448e68715c9  kernel/classes/datatypes/ezrangeoption/ezrangeoptiontype.php
 b34d022d94ab54c66da80756ae1f0122  kernel/classes/datatypes/ezselection/ezselectiontype.php
-4227dd6de1e2ff0ad460568d1f9342df  kernel/classes/datatypes/ezstring/ezstringtype.php
+3bb1805ad7c3efa59fe9a82a1708a678  kernel/classes/datatypes/ezstring/ezstringtype.php
 1d82d6a3e0430c6e8c27fa43b3e60b03  kernel/classes/datatypes/ezsubtreesubscription/ezsubtreesubscriptiontype.php
 80a085c3156cdf537c60a08410a67c8f  kernel/classes/datatypes/eztext/eztexttype.php
 a002e94a9d78469bc67760ea91216fc0  kernel/classes/datatypes/eztime/eztimetype.php
@@ -4934,6 +4934,7 @@ e0b74fce97e793dcf8a5c7ccd1ad86c0  kernel/classes/expextensionchangeplan.php
 f93c0a4b63a19a1bc54c806e89fd6a22  kernel/classes/expkickstarterini.php
 0c2606192197f0079a759fa583ffa338  kernel/classes/explinkcheck.php
 ff086dac5c4b6a5eaa79c84336445b0d  kernel/classes/expmaintenance.php
+f33944dda86f2612b983e1d72273dccc  kernel/classes/expnamepatternresolverinterface.php
 846590ae94cadbe8b9122bfb25b89d0c  kernel/classes/expnotificationjob.php
 2b141e8596da58d9d22a67c4021cba74  kernel/classes/expnotificationservice.php
 57cba6faffa4b17b05a923a1427a986c  kernel/classes/exppackageconflictreport.php
@@ -4983,7 +4984,7 @@ d32c6962dd7f135b3bd18c0f2d036263  kernel/classes/ezcontentbrowsebookmark.php
 e03967a373ba9e46d7ba161d72500151  kernel/classes/ezcontentbrowserecent.php
 be5967e47609a568319111fd808d10e2  kernel/classes/ezcontentcache.php
 60f96273f58116cb5a510e2cd1909244  kernel/classes/ezcontentcachemanager.php
-f0f02ee28505eb2c4f41ed9c1755df1b  kernel/classes/ezcontentclass.php
+b54dc3050de2493e3a921da200445feb  kernel/classes/ezcontentclass.php
 1b6e5128718bb11668a859b0c083cda1  kernel/classes/ezcontentclassattribute.php
 57be7f3d46bf77207cc381abf151a22c  kernel/classes/ezcontentclassclassgroup.php
 80531ede01d01d5e75317285416f594a  kernel/classes/ezcontentclassedithandler.php
@@ -5015,7 +5016,7 @@ fb132e7c863174626926237fdc954d34  kernel/classes/ezdiscountsubrule.php
 1ab77f2d056c3648a7cd8e5095feb662  kernel/classes/ezhttpheader.php
 a44920d95ac2d04c9a60749688f571bb  kernel/classes/ezinformationcollection.php
 6dcf00e526909397b7ed9fc0740b1a80  kernel/classes/ezinformationcollectionattribute.php
-701d32ac9b97918e47d5dec4f18061df  kernel/classes/eznamepatternresolver.php
+6a0bdb8a63405f62ad505533e61710e0  kernel/classes/eznamepatternresolver.php
 77e7aa794459e17c5adc407a3366f752  kernel/classes/eznavigationpart.php
 a14bddf5ee8c6d1e97d2620e2878d87a  kernel/classes/eznodeassignment.php
 06f40a01df189bfc13b05c175291b528  kernel/classes/eznodeviewfunctions.php
@@ -5269,7 +5270,7 @@ b7959d6a47645a1610274283d404c746  kernel/content/download.php
 3f03566dd39083dfddaa39a51a78ee37  kernel/content/draft.php
 753c6fb6e051f80440937bda433446df  kernel/content/edit.php
 c3727d36c3ba8cfee7f93cb050539b20  kernel/content/error.php
-1919c33c26497e0cca4962dd4216fed1  kernel/content/ezcontentfunctioncollection.php
+65830fafc8461cb51876efae23c12339  kernel/content/ezcontentfunctioncollection.php
 a387c2503192d366d62ecd8bed67dbea  kernel/content/ezcontentoperationcollection.php
 6547d1af2360fb0c8cd643815945d308  kernel/content/ezcontentpublishingbehaviour.php
 3f2810a0bb3e5eaba2a795b0b4aa2079  kernel/content/function_definition.php
@@ -6408,7 +6409,7 @@ f3014cea78015e34d8827fbb5e8aab89  settings/audit.ini
 69b7abd76c6aad8b54776c6f2b9bb65e  settings/codetemplate.ini
 de45042ac0530e8a52e3a2ac0e519d8a  settings/collaboration.ini
 182107cb19ce2f10279176af2ccb2819  settings/collect.ini
-21384dcde9da9951d045978e89976a8c  settings/content.ini
+b0f8672cb5bdd0afb92196d9a41ce09e  settings/content.ini
 850a0458284805760eaa0832567cecc1  settings/contentfinder.ini
 1dbcfc8da1b2cb204ea10c28c2caec6b  settings/contentstructuremenu.ini
 bbef6be3b98786e0ac5391c2f9993b6f  settings/country.ini
@@ -7174,10 +7175,12 @@ fc299aa103c4f996d3dbf0ab2178bf80  tests/tests/kernel/classes/datatypes/eZDatatyp
 c15e9ca2aca7c6a64bf53f6b7d2fe112  tests/tests/kernel/classes/datatypes/eZDateTimeDatatypesTest.php
 be230a8ce86ca237985d46e212686dbe  tests/tests/kernel/classes/datatypes/eZISBNAndAuthorDatatypesTest.php
 f65de49a296b8df733dd0a2f160f89bc  tests/tests/kernel/classes/datatypes/eZIdentifierAndRangeOptionDatatypesTest.php
+47f1cf4e74761b742109fab3823a2356  tests/tests/kernel/classes/datatypes/eZImageTypeAltTextTest.php
 23a9a08096135ebe917e471b7fe54722  tests/tests/kernel/classes/datatypes/eZIniSettingDatatypeTest.php
 efe59a322e82b01b5d198f5ce4ac2d5c  tests/tests/kernel/classes/datatypes/eZMatrixAndOptionDatatypesTest.php
 8b7725310f999cfd85ede73a60ca4f95  tests/tests/kernel/classes/datatypes/eZMultiOptionDatatypeTest.php
 3838e382720201da0ba10c1f69b0ff29  tests/tests/kernel/classes/datatypes/eZNumericDatatypesTest.php
+4a21957961bc085715c7b1ae745ecf74  tests/tests/kernel/classes/datatypes/eZStringTypeTrimTest.php
 d3c199ef12933087e7bf07a63474ce7f  tests/tests/kernel/classes/datatypes/eZTextDatatypesTest.php
 e8093e3d17d03cfdae2feafd46d02173  tests/tests/kernel/classes/datatypes/eZUserDatatypeDraftSecurityTest.php
 cc71014b46954ff2444ae1742ce6663f  tests/tests/kernel/classes/datatypes/eZUserDatatypeDraftTest.php
@@ -7205,6 +7208,7 @@ c2edb6e2d9c112518bab3ebd07cd1247  tests/tests/kernel/classes/eZContentObjectTree
 c5b0906382598e118d038175ada1cc30  tests/tests/kernel/classes/eZExtensionAdditionalDirectoriesTest.php
 ae5b1048f8e08ec7094ae01547fdcee1  tests/tests/kernel/classes/eZExtensionWithOrderingTest.php
 b78b2f659b4281a0dead0cdea8bae0b1  tests/tests/kernel/classes/eZExtensionWithoutOrderingTest.php
+cbfe9686d5c1b5bc8335c7ef7f985b45  tests/tests/kernel/classes/eZNamePatternResolverClassTest.php
 5177bfc3e5766c1569122d4c4c6a299d  tests/tests/kernel/classes/eZNamePatternResolverPatternTest.php
 9169fade253bff5d12cacfca741df2be  tests/tests/kernel/classes/eZNodeAssignmentTest.php
 34a30d04bc83a3f957f992301d260afc  tests/tests/kernel/classes/eZNodeviewfunctionsViewCacheTest.php
@@ -7530,6 +7534,7 @@ b2e46951bdb7165f0a97de3990a4e4e4  tests/tests/kernel/common/eZKernelCommonOperat
 d44f7d91cfcfce7f540940d68cc67a08  tests/tests/kernel/common/eZTopMenuOperatorMissingTabGroupTest.php
 2750fff669b9a51f2ad1a9cf046ccd88  tests/tests/kernel/common/ezautolinkoperator_test.php
 0272b9db6554e00826c7f5085696ac37  tests/tests/kernel/common/ezurloperator_test.php
+4e2b0da3c851b252696c94cdb4723b25  tests/tests/kernel/content/eZContentFunctionCollectionClassFilterTypeTest.php
 7584758a4f40031bd44aedd755614046  tests/tests/kernel/content/eZContentOperationCollectionTest.php
 b460bd68c74256811a99815a5fe6b24d  tests/tests/kernel/content/eZPublishWithoutNotificationLiveTest.php
 5e5e8f579e9972bdb3388b9b5f3c5b9c  tests/tests/kernel/content/eZPublishWithoutNotificationTest.php
