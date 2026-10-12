@@ -96,6 +96,7 @@ return array(
       'Exponential\\Command\\Kernel\\Updateisbn13'                   => 'kernel/private/classes/commands/updateisbn13.php',
       'Exponential\\Command\\Kernel\\Updateniceurls'                 => 'kernel/private/classes/commands/updateniceurls.php',
       'Exponential\\Command\\Kernel\\Updatesearchindex'              => 'kernel/private/classes/commands/updatesearchindex.php',
+      'Exponential\\Command\\Kernel\\Userlogincheck'                 => 'kernel/private/classes/commands/userlogincheck.php',
       'Exponential\\Command\\Kernel\\Velocity'                       => 'kernel/private/classes/commands/velocity.php',
       'Exponential\\Command\\Kernel\\VelocityRouter'                 => 'kernel/private/classes/commands/velocity-router.php',
       'Exponential\\Command\\Kernel\\VelocityWarmup'                 => 'kernel/private/classes/commands/velocity-warmup.php',
