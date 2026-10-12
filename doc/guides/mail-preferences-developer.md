@@ -259,6 +259,12 @@ if ( trim( $ini->variable( 'MailSettings', 'Transport' ) ) !== 'file' )
     throw new RuntimeException( 'The mail transport is not the file transport: the test refuses to run.' );
 ```
 
+One message can also be sent with another transport than the configured one, without changing the setting:
+`eZMailTransport::send( $mail, 'file' )` (any name of `site.ini [MailSettings] TransportAlias[]`: `file`,
+`sendmail`, `smtp` or one of an extension). The next message is sent as configured again, and the mail gate applies
+either way. `tests/tests/lib/ezutils/eZMailTransportSendTest.php` shows both. With thanks to Mugo Web (LoveStack,
+commit `df07cb1ef5`).
+
 `expMailGate::setLogFileForTest( $file )` sends the gate's log to a file of the test. Remove the rows the test made
 (`expmail_preference`, `expmail_pending`, `expmail_consent_log` by recipient key, `expmail_suppression` by hash), and
 skip where there is no installation with `ezpLiveInstallation::requireOrSkip()`, so the GitHub workflow stays green. The

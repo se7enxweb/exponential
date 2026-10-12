@@ -26,15 +26,25 @@ class eZMailTransport
         return false;
     }
 
-    /*!
-     \static
-     Sends the contents of the email object \a $mail using the default transport.
-    */
-    static function send( eZMail $mail )
+    /**
+     * Sends the contents of the email object $mail, with the transport of site.ini [MailSettings] Transport,
+     * or for this one message with $transportType: a name of [MailSettings] TransportAlias (file, sendmail,
+     * smtp or one an extension adds). The setting itself is not changed, so the next message is sent as
+     * configured again. The mail gate (kernel/classes/mailpreferences) applies either way.
+     *
+     * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit df07cb1ef5), Copyright (C) Mugo Web, GPL v2
+     *
+     * @param eZMail $mail
+     * @param string|null $transportType null or '' for the configured transport
+     * @return bool
+     */
+    static function send( eZMail $mail, ?string $transportType = null )
     {
         $ini = eZINI::instance();
 
-        $transportType = trim( $ini->variable( 'MailSettings', 'Transport' ) );
+        $transportType = $transportType !== null && trim( $transportType ) !== ''
+                       ? trim( $transportType )
+                       : trim( $ini->variable( 'MailSettings', 'Transport' ) );
 
         $optionArray = array( 'iniFile'      => 'site.ini',
                               'iniSection'   => 'MailSettings',
