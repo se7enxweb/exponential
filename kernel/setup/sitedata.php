@@ -9,6 +9,7 @@
 
 // The code is in kernel/private/classes/views/setup/sitedata.php; this file is the entry point.
 // A server process started before the class existed (a Velocity worker) cannot load it: not available, no 500.
+$scope = get_defined_vars();
 if ( !class_exists( 'Exponential\\View\\Kernel\\Setup\\Sitedata' ) )
-    return $Params['Module']->handleError( eZError::KERNEL_NOT_AVAILABLE, 'kernel' );
-return \Exponential\View\Kernel\Setup\Sitedata::main( __FILE__, get_defined_vars() );
+    return $scope['Params']['Module']->handleError( eZError::KERNEL_NOT_AVAILABLE, 'kernel' );
+return \Exponential\View\Kernel\Setup\Sitedata::main( __FILE__, $scope );
