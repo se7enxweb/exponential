@@ -63197,6 +63197,14 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>What shows an extension's own audit records in the audit console (audit.ini [AuditSourceSettings] Sources[&lt;name&gt;]=, implementing expAuditSource).</source>
         <translation>Was die eigenen Audit-Einträge einer Erweiterung in der Audit-Konsole zeigt (audit.ini [AuditSourceSettings] Sources[&lt;Name&gt;]=, implementiert expAuditSource).</translation>
     </message>
+    <message>
+        <source>The server functions of ezjscore (ezjscore.ini [ezjscServer_&lt;name&gt;] Class=), each called as ezjscore/call/&lt;name&gt;::&lt;function&gt;.</source>
+        <translation>Die Serverfunktionen von ezjscore (ezjscore.ini [ezjscServer_&lt;Name&gt;] Class=), jeweils aufgerufen als ezjscore/call/&lt;Name&gt;::&lt;Funktion&gt;.</translation>
+    </message>
+    <message>
+        <source>The editors the Online Editor offers (ezoe.ini [EditorSettings] Engines[&lt;id&gt;]=&lt;class&gt;), each a class implementing expOEEditorEngine.</source>
+        <translation>Die Editoren, die der Online-Editor anbietet (ezoe.ini [EditorSettings] Engines[&lt;ID&gt;]=&lt;Klasse&gt;), jeweils eine Klasse, die expOEEditorEngine implementiert.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/shop/dashboard</name>
@@ -65801,6 +65809,10 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Sources</source>
         <translation>Quellen</translation>
+    </message>
+    <message>
+        <source>with the columns of %source: %columns</source>
+        <translation>mit den Spalten von %source: %columns</translation>
     </message>
 </context>
 <context>

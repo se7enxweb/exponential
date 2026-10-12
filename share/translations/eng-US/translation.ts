@@ -55751,6 +55751,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>What shows an extension's own audit records in the audit console (audit.ini [AuditSourceSettings] Sources[&lt;name&gt;]=, implementing expAuditSource).</source>
         <translation>What shows an extension's own audit records in the audit console (audit.ini [AuditSourceSettings] Sources[&lt;name&gt;]=, implementing expAuditSource).</translation>
     </message>
+    <message>
+        <source>The server functions of ezjscore (ezjscore.ini [ezjscServer_&lt;name&gt;] Class=), each called as ezjscore/call/&lt;name&gt;::&lt;function&gt;.</source>
+        <translation>The server functions of ezjscore (ezjscore.ini [ezjscServer_&lt;name&gt;] Class=), each called as ezjscore/call/&lt;name&gt;::&lt;function&gt;.</translation>
+    </message>
+    <message>
+        <source>The editors the Online Editor offers (ezoe.ini [EditorSettings] Engines[&lt;id&gt;]=&lt;class&gt;), each a class implementing expOEEditorEngine.</source>
+        <translation>The editors the Online Editor offers (ezoe.ini [EditorSettings] Engines[&lt;id&gt;]=&lt;class&gt;), each a class implementing expOEEditorEngine.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/shop/dashboard</name>
@@ -58355,6 +58363,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Sources</source>
         <translation>Sources</translation>
+    </message>
+    <message>
+        <source>with the columns of %source: %columns</source>
+        <translation>with the columns of %source: %columns</translation>
     </message>
 </context>
 <context>
