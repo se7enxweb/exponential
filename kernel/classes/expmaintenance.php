@@ -343,8 +343,14 @@ class expMaintenance
         $root = rtrim( $root, '/' );
         foreach ( glob( $root . '/var/*/cache/exphttpcache', GLOB_ONLYDIR ) ?: array() as $dir )
             @rename( $dir, $root . '/var/tmp/' . basename( dirname( dirname( $dir ) ) ) . '-exphttpcache-before-maintenance-' . date( 'YmdHis' ) . '-' . getmypid() );
+        // Started by a setup run, the command works with the settings as they are before the installation: their
+        // database may be none, or another one than the one being installed. EXP_SETUP_RUN tells it so, and it
+        // does not look the user up for its audit entry (expAudit::canLookUp()); without it, every installation
+        // logged a failed database connection of the command.
+        $setupRun = class_exists( 'expSetupLog', false ) ? expSetupLog::runId() : null;
+        $environment = $setupRun !== null ? 'EXP_SETUP_RUN=' . escapeshellarg( $setupRun ) . ' ' : '';
         if ( PHP_SAPI === 'cli' && is_file( $root . '/console' ) && function_exists( 'exec' ) )
-            @exec( 'cd ' . escapeshellarg( $root ) . ' && php console exp:velocity cache clear --allow-root-user >/dev/null 2>&1' );
+            @exec( 'cd ' . escapeshellarg( $root ) . ' && ' . $environment . 'php console exp:velocity cache clear --allow-root-user >/dev/null 2>&1' );
     }
 }
 ?>
