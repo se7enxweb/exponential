@@ -2,9 +2,10 @@
 /**
  * eZAutoloadGenerator (bin/php/ezpgenerateautoloads.php) on an extension made for the test: the run mode chosen by
  * the options, which files are scanned (tests, settings and the .autoloadignore entries left out, blank lines and
- * comments in it ignored), which declarations become entries (classes, interfaces, traits and enums, namespaced or
- * not, never "Foo::class" or an anonymous class), duplicates and kernel classes refused with a warning, the written
- * file and the option checks.
+ * comments in it ignored; the tests/ of every extension left out of the extension and kernel override arrays, also
+ * under a relative extension root), which declarations become entries (classes, interfaces, traits and enums,
+ * namespaced or not, never "Foo::class" or an anonymous class), duplicates and kernel classes refused with a warning,
+ * the written file and the option checks.
  *
  * No database. The extension lives under var/tmp and is removed in tearDown(); the autoload files are written only
  * there.
@@ -17,6 +18,14 @@
 
 class eZAutoloadGeneratorTestGenerator extends eZAutoloadGenerator
 {
+    /** @var array|null extension roots used instead of the INI setting, when set */
+    public $roots = null;
+
+    protected function getExtensionRoots()
+    {
+        return $this->roots !== null ? $this->roots : parent::getExtensionRoots();
+    }
+
     public function arrays()
     {
         return $this->autoloadArrays;
@@ -216,6 +225,23 @@ class eZAutoloadGeneratorTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( "{$p}Keep" ), array_keys( $entries ) );
         list( , $entries ) = $this->generated();
         $this->assertSame( array( "{$p}Keep", "{$p}Old" ), array_keys( $entries ) );
+    }
+
+    public function testTestsOfAnExtensionAreLeftOutUnderARelativeExtensionRoot()
+    {
+        $p = $this->name;
+        $this->file( 'classes/keep.php', "<?php\nclass {$p}Keep {}\n" );
+        $this->file( 'tests/bootstrap.php', "<?php\nclass eZDB {}\nclass {$p}InTests {}\n" );
+        foreach ( array( eZAutoloadGenerator::MODE_EXTENSION, eZAutoloadGenerator::MODE_KERNEL_OVERRIDE ) as $mode )
+        {
+            // The installation's .autoloadignore leaves out var/, so the base is the test directory.
+            $generator = $this->generator( array( 'basePath' => $this->dir ) );
+            $generator->setMode( $mode );
+            // A relative root, as the default "extension" is.
+            $generator->roots = array( $this->dir );
+            $files = $generator->files();
+            $this->assertSame( array( "$this->name/classes/keep.php" ), $files[$mode], "mode $mode" );
+        }
     }
 
     public function testExtensionGivenByAnAbsolutePath()
