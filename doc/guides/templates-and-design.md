@@ -289,6 +289,25 @@ $key, $value, $override = true )` sets one key; with `$override = false` a key t
 value, which is how the node view sets `layout` to `''` without replacing the layout of `layout/set`. With
 thanks to Mugo Web (LoveStack, commit `856a95e240`).
 
+## 12. Response headers of error pages
+
+The error pages (a page that does not exist, a refused access) send the status line of
+`settings/error.ini [HTTPError-<code>] HTTPName`. Further headers can be added per code, for example to let a
+proxy keep the "not found" page for five minutes:
+
+```ini
+# settings/override/error.ini.append.php
+[HTTPError-404]
+HeaderList[]
+HeaderList[Cache-Control]=public, must-revalidate, max-age=300
+```
+
+The headers follow the status lines and are stored with the page in the content view cache, so a cached error
+page sends them again. A name that is not a valid header name, or a value with a line break, is left out with a
+warning in the debug output. `HeaderList[Status]=<text>` stands for `HTTPName` when that is not set. The list is
+empty in every installation, new or upgraded, so nothing changes until you add an entry. With thanks to Mugo Web
+(LoveStack, commit `97690e9c93`).
+
 ## Related pages
 
 - [The content model and editing content](content-model-and-editing.md): the classes and attributes your templates show.

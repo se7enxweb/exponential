@@ -38,6 +38,8 @@
             <directory suffix="Test.php">tests/tests/kernel/classes</directory>
             <!-- the template operators of kernel/common, called directly; no database -->
             <directory suffix="Test.php">tests/tests/kernel/common</directory>
+            <!-- the error module's view (kernel/error): headers of error pages; no database -->
+            <directory suffix="Test.php">tests/tests/kernel/error</directory>
             <exclude>tests/tests/kernel/classes/security</exclude>
         </testsuite>
 

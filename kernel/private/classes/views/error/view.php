@@ -91,27 +91,26 @@ class View extends \Exponential\Runnable\ModuleView
                     if ( isset( $errorMap[$errorNumber] ) )
                     {
                         $httpErrorCode = $errorMap[$errorNumber];
-                        if ( $errorINI->hasVariable( 'HTTPError-' . $httpErrorCode, 'HTTPName' ) )
+                        // The status lines (HTTPName) and the headers of [HTTPError-<code>] HeaderList[]
+                        // Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 97690e9c93), Copyright (C) Mugo Web, GPL v2
+                        $errorHeaders = \expErrorHeaderList::build( $errorINI, $httpErrorCode, \eZSys::serverVariable( 'SERVER_PROTOCOL', true ) );
+                        if ( $errorHeaders['name'] !== null && $errorNumber == \eZError::KERNEL_MOVED )
                         {
-                            $httpErrorName = $errorINI->variable( 'HTTPError-' . $httpErrorCode, 'HTTPName' );
-                            $httpErrorString = "$httpErrorCode $httpErrorName";
-                            if ( $errorNumber == \eZError::KERNEL_MOVED )
-                            {
-                                $module->redirectTo( $extraErrorParameters['new_location'] );
-                                $module->setRedirectStatus( $httpErrorString );
-                                return $this->viewResult( isset( $Result ) ? $Result : null,  array() ); // $Result of this view
-                            }
-                            else
-                            {
-                                // we need to store the header so that they are listed in view cache data ()
-                                $responseHeaders = array(
-                                    \eZSys::serverVariable( 'SERVER_PROTOCOL' ) . " $httpErrorString",
-                                    "Status: $httpErrorString"
-                                );
-                                header( $responseHeaders[0] );
-                                header( $responseHeaders[1] );
-                            }
+                            $httpErrorName = $errorHeaders['name'];
+                            foreach ( $errorHeaders['headers'] as $header )
+                                header( $header );
+                            $module->redirectTo( $extraErrorParameters['new_location'] );
+                            $module->setRedirectStatus( "$httpErrorCode $httpErrorName" );
+                            return $this->viewResult( isset( $Result ) ? $Result : null,  array() ); // $Result of this view
                         }
+                        if ( $errorHeaders['name'] !== null )
+                            $httpErrorName = $errorHeaders['name'];
+                        // we need to store the headers so that they are listed in view cache data
+                        $responseHeaders = array_merge( $errorHeaders['status'], $errorHeaders['headers'] );
+                        foreach ( $responseHeaders as $header )
+                            header( $header );
+                        if ( !$responseHeaders )
+                            unset( $responseHeaders );
                     }
                 }
             }
