@@ -621,7 +621,7 @@ dcb722bfda3d71da901504f9da33f0f5  design/admin/templates/setup/datatype_code.tpl
 335d150760b72b20eaa1e2cbede0233a  design/admin/templates/setup/extensions.tpl
 d5bb255f3b23a012d0fbd889a08adf23  design/admin/templates/setup/extensions_exp_style.tpl
 30f574e10ffb461e9037ec8f49cb2218  design/admin/templates/setup/handlerextension.tpl
-61eb80f03b0e2044c5d91392446d9915  design/admin/templates/setup/info.tpl
+9a82804d6ee20715dd33abe99540e490  design/admin/templates/setup/info.tpl
 bbdadba4a9dc511a67e3fedce07a424f  design/admin/templates/setup/info_exp_style.tpl
 6b72cbcef562564b15e7e151788d788c  design/admin/templates/setup/kerneloverride.tpl
 6a696879d93afecad32e8537b41650c6  design/admin/templates/setup/maintenance.tpl
@@ -1245,7 +1245,7 @@ dcb722bfda3d71da901504f9da33f0f5  design/admin4/templates/setup/datatype_code.tp
 335d150760b72b20eaa1e2cbede0233a  design/admin4/templates/setup/extensions.tpl
 d5bb255f3b23a012d0fbd889a08adf23  design/admin4/templates/setup/extensions_exp_style.tpl
 30f574e10ffb461e9037ec8f49cb2218  design/admin4/templates/setup/handlerextension.tpl
-61eb80f03b0e2044c5d91392446d9915  design/admin4/templates/setup/info.tpl
+9a82804d6ee20715dd33abe99540e490  design/admin4/templates/setup/info.tpl
 bbdadba4a9dc511a67e3fedce07a424f  design/admin4/templates/setup/info_exp_style.tpl
 6b72cbcef562564b15e7e151788d788c  design/admin4/templates/setup/kerneloverride.tpl
 6a696879d93afecad32e8537b41650c6  design/admin4/templates/setup/maintenance.tpl
@@ -3550,7 +3550,7 @@ b96aa9f19d0e6aebe8b4e7b2569216d5  doc/guides/rss-feeds.md
 f2ef8cf9e7627ccdad13ebc6dd1d1c48  doc/guides/security-and-audit.md
 43dbd90e31972fef2826ebb622ab5c4d  doc/guides/sessions.md
 7254d46a6b447baa27f4bf3675abaa98  doc/guides/settings-page.md
-984fbd968c27ef1981e5c835b18c8c0b  doc/guides/system-information.md
+4ffc48fb1971cb76c58062468b0e3bda  doc/guides/system-information.md
 6d357c09961364f17f03bf89bcf60312  doc/guides/templates-and-design.md
 29fa6d0f4b651ad28fd12b2cbd199bd5  doc/guides/two-factor-login.md
 76caaadb12a9d05063f40cfeff955325  doc/guides/upgrade-check.md
@@ -4941,7 +4941,7 @@ d8bfba7e3e116906a27e21641d61ef7b  kernel/classes/exppreloadlock.php
 5c085c15fe530c93eb0b61571c3f36cb  kernel/classes/expscriptstatus.php
 7d2a6f8642a3b8bd761ad57f45901ef3  kernel/classes/expsecretrule.php
 a9ac5a2c24c07de96e640440ff067bd2  kernel/classes/expsetuplog.php
-35bbad515c5cf048367cfae294eacdc4  kernel/classes/expsystemreport.php
+ea1f5ed0f6fc16b6076cb12ed7599e93  kernel/classes/expsystemreport.php
 28af669e43f170c97eb589d4f920a469  kernel/classes/expsystemreportmask.php
 25b7eece701f971da2d25487be392d0f  kernel/classes/expvelocity.php
 3b2051fab9283e3c15ac1e5519951c5d  kernel/classes/expvelocityconfig.php
@@ -5704,7 +5704,7 @@ c82e5ac21ed1b61b72a5e91d6550bf9c  kernel/private/classes/views/setup/datatype.ph
 3fb46e2cc3fe98e4a440d4cc02d8e12c  kernel/private/classes/views/setup/extensions.php
 ba095e1065f22b1f8ce06eaaaeaeb8a6  kernel/private/classes/views/setup/ezsetup.php
 af13a15fd346cd3c53de7f9c8fb7bb81  kernel/private/classes/views/setup/handlerextension.php
-aeb150cfacc9d73b972411071074b46a  kernel/private/classes/views/setup/info.php
+6657064649a7c4b27b63f18ccd37709b  kernel/private/classes/views/setup/info.php
 9ec471cd1828163cca17e995aaa27538  kernel/private/classes/views/setup/kerneloverride.php
 c52c0969e44db3dd969bdf15caf1427c  kernel/private/classes/views/setup/maintenance.php
 f3d410d2a77820dc00af01f2bb3ffc68  kernel/private/classes/views/setup/menuconfig.php
@@ -6875,14 +6875,14 @@ dd5f5f3cf2348a6cc17bd0ee76983225  share/translations/dut-NL/translation.ts
 284321a9de29bf9268c27abb13f56f2c  share/translations/ell-GR/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-AU/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-NZ/translation.ts
-7d43339c7da593bb0f07ed401fdae796  share/translations/eng-US/translation.ts
+77fbb5b15ba1674c4fc7e936a5b247a4  share/translations/eng-US/translation.ts
 5f0920d5b4e8bbaff2a4a6d5b3995c90  share/translations/esl-ES/translation.ts
 27846e3f6408cd74f58cef8adcbab573  share/translations/esl-MX/translation.ts
 4b104d4d337601b4bc6ae0482e6478ea  share/translations/fin-FI/translation.ts
 edfd3efb7eca1e2bd6d6d7d08bd78a77  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-dd45d39e0ca0ec695fdb7d58507b7e36  share/translations/ger-DE/translation.ts
+f56982cc8e81dbdb42f4fd9a7fa904b2  share/translations/ger-DE/translation.ts
 75d657fed5de11db9e059cdcff2046a8  share/translations/ita-IT/translation.ts
 a45e2d26b1c24ac4cb6ae1d7197e5b0e  share/translations/jpn-JP/translation.ts
 d1dc34034ddce2d64c4f8df7fcc41c85  share/translations/nno-NO/translation.ts
@@ -6895,7 +6895,7 @@ e33e059c205f7c0a49e112ce9ba6147d  share/translations/ser-SR/translation.ts
 e9e308757570f0321486d498fc993d17  share/translations/srp-RS/translation.ts
 718ecc8ecbbe8ebec7a88fb2697f401f  share/translations/swe-SE/translation.ts
 0b1b76b5ad6b2f923afd6fd9a9937a8b  share/translations/untranslated/readme.txt
-f40fc63e835d5c2308f4e9cebf933a0c  share/translations/untranslated/translation.ts
+5ca4daf7c8ca019e57f098ed75318a9c  share/translations/untranslated/translation.ts
 bae9ff85781e52af001213bdb213a013  shippable.yml
 414f4d1129273ab3dea38b878d554eae  soap.php
 3b6d156f31df70e093aa1a6d8a525cd3  support/ezlupdate-qt4.5/README.txt
@@ -7252,7 +7252,7 @@ e50cb342005e0cdae8e05cb08cea964d  tests/tests/kernel/classes/expRolePagesTest.ph
 cf5d5388e5242328fbc1f6c199a8afd8  tests/tests/kernel/classes/expSectionOverviewTest.php
 50e70542d10e85700415c8a12177c2b3  tests/tests/kernel/classes/expSettingsPageTest.php
 c513b931571a3dd56abff2cfcdd557c6  tests/tests/kernel/classes/expSystemReportMaskTest.php
-1e66f7ac332da1d3639695e403a9dc2f  tests/tests/kernel/classes/expSystemReportTest.php
+0e63665c6be316de4385ab860a4aeff3  tests/tests/kernel/classes/expSystemReportTest.php
 f0e7540561b9a7d039c5fee3b8912260  tests/tests/kernel/classes/expUrlAdminPagesTest.php
 bd8b17b821244bcbd789b3b8b81fcb54  tests/tests/kernel/classes/expVelocityEnginesTest.php
 f7cd1ed759475ce246d5a6cd8c5a92b6  tests/tests/kernel/classes/expVelocityStopRestartTest.php
