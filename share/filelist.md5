@@ -3013,7 +3013,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-7b6a6a7b802a396659934aef17929837  doc/changelogs/6.0/6.0.15.md
+24eb6bab4ac03e8274edd795b531bf4d  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -6366,7 +6366,7 @@ b55898a868b558383b32af3334bd55d6  lib/ezutils/classes/expinfo.php
 0ee9cef26c3240f827773cafd53d87b6  lib/ezutils/classes/ezdatetimevalidator.php
 5d4ab2a67dd8aac73c4715adb5338e9c  lib/ezutils/classes/ezdebug.php
 072c48359e732e46bda20413549d3a94  lib/ezutils/classes/ezdebugsetting.php
-d1fa2312d5760fff6537a61d1db773c3  lib/ezutils/classes/ezexecution.php
+91f66ad66a917e16e269c4ffda5b6417  lib/ezutils/classes/ezexecution.php
 72fc7a1f67f3eaa83336f9d5b48a0169  lib/ezutils/classes/ezexpiryhandler.php
 36956abfc133867d79b27972159e26fa  lib/ezutils/classes/ezextension.php
 072c8aadc71992ed763c699b6999fda2  lib/ezutils/classes/ezfatalusererror.php
@@ -7953,6 +7953,7 @@ e03fa9c077e0046cda4ed2e95139fa40  tests/tests/lib/ezutils/eZCLITest.php
 9e267a84dd2291afb44623aacd3ebe39  tests/tests/lib/ezutils/eZDebugDeprecatedTest.php
 19b4b7676978ad54bccd376b846ad625  tests/tests/lib/ezutils/eZDebugHandleTypeTest.php
 d673c9d26918f6ad1e90008332f95a8e  tests/tests/lib/ezutils/eZDebugMessagesTest.php
+4b13614a9750900ddd1d2071456fe6fd  tests/tests/lib/ezutils/eZExecutionDatabaseUnavailableTest.php
 60e4f4c4fcc1cfe2c734e6fc4b947dfd  tests/tests/lib/ezutils/eZExpiryHandlerCacheDirectoryTest.php
 e0df258f6fc60a3fcb7ac21bfd0511b1  tests/tests/lib/ezutils/eZExtensionCountsTest.php
 d6114e4248b4221f06f138cb33e09dc2  tests/tests/lib/ezutils/eZExtensionNewestFileTimeTest.php
