@@ -269,8 +269,8 @@ class ApiKeyLiveTest extends expContentModelLiveTestCase
     {
         expAudit::flush();
         $names = array();
-        $config = expAuditConfig::get();
-        $dir = $config['logDir'];
+        // where the web servers write, not the directory of this test run (tests/bootstrap.php)
+        $dir = expAuditConfig::siteLogDir();
         foreach ( array_unique( array( gmdate( 'Y-m-d', static::$startedAt ), gmdate( 'Y-m-d' ) ) ) as $day )
             foreach ( glob( $dir . '/access-' . $day . '*.jsonl' ) ?: array() as $file )
                 foreach ( file( $file, FILE_IGNORE_NEW_LINES ) as $line )

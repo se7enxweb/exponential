@@ -138,6 +138,28 @@ class eZSiteLogReadersTest extends PHPUnit\Framework\TestCase
         }
     }
 
+    /** siteLogDir() names where the site's requests write, also while the test run writes into a directory of its own */
+    public function testSiteLogDirIgnoresTheDirectoryOfTheTestRun()
+    {
+        $ini = eZINI::instance();
+        $ini->setVariable( 'FileSettings', 'VarDir', 'var/x1example' );
+        $testLogDir = expAuditConfig::testLogDir();
+        $runDir = $this->tempDir( 'audit-run' );
+        expAuditConfig::setTestLogDir( $runDir );
+        try
+        {
+            $root = expAuditConfig::root();
+            $this->assertSame( $runDir, expAuditConfig::get()['logDir'], 'this process writes into the run directory' );
+            $this->assertSame( $root . 'var/x1example/log/audit', expAuditConfig::siteLogDir(), 'the site writes into LogDir' );
+            $this->assertSame( $runDir, expAuditConfig::testLogDir(), 'the run directory is kept' );
+            $this->assertSame( $runDir, expAuditConfig::get()['logDir'], 'and still used afterwards' );
+        }
+        finally
+        {
+            expAuditConfig::setTestLogDir( $testLogDir );
+        }
+    }
+
     private function checkAuditRecordsStayInsideVarDir( eZINI $ini )
     {
         $root = expAuditConfig::root();

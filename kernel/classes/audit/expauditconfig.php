@@ -122,6 +122,28 @@ class expAuditConfig
     }
 
     /**
+     * The directory the site's own requests write their records into: [AuditSettings] LogDir as the site
+     * resolves it (or the logDir of setOverride()), never the test run's directory of setTestLogDir(). A live
+     * test that reads what a web server recorded (a refused API key, a sign in over HTTP) reads it here, as
+     * get()['logDir'] names the test run's directory while one is set.
+     *
+     * @return string absolute directory, without a trailing slash
+     */
+    public static function siteLogDir()
+    {
+        $testLogDir = self::$testLogDir;
+        self::$testLogDir = null;
+        try
+        {
+            return self::build( self::raw() )['logDir'];
+        }
+        finally
+        {
+            self::$testLogDir = $testLogDir;
+        }
+    }
+
+    /**
      * Replaces the settings (tests). null goes back to the INI files.
      *
      * @param array|null $settings 'Block/Variable' => value; 'logDir' (absolute), 'keyDir' (absolute directory

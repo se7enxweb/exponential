@@ -253,10 +253,11 @@ class RestContentPermissionLiveTest extends expContentModelLiveTestCase
     {
         list( $prefix ) = expApiKey::parseToken( $token );
         expAudit::flush();
-        $config = expAuditConfig::get();
+        // where the web servers write, not the directory of this test run (tests/bootstrap.php)
+        $dir = expAuditConfig::siteLogDir();
         $count = 0;
         foreach ( array_unique( array( gmdate( 'Y-m-d', static::$startedAt ), gmdate( 'Y-m-d' ) ) ) as $day )
-            foreach ( glob( $config['logDir'] . '/access-' . $day . '*.jsonl' ) ?: array() as $file )
+            foreach ( glob( $dir . '/access-' . $day . '*.jsonl' ) ?: array() as $file )
                 foreach ( file( $file, FILE_IGNORE_NEW_LINES ) as $line )
                     if ( strpos( $line, $prefix ) !== false && strpos( $line, 'access.apikey.use.failed' ) !== false )
                         $count++;
