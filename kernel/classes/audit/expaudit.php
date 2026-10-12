@@ -79,6 +79,9 @@ class expAudit
     /** @var bool resetRequest() is flushing what the previous request left */
     protected static $resetting = false;
 
+    /** @var int|null The process the buffer, the open parents and the request state belong to (getmypid()) */
+    protected static $pid = null;
+
     /** @var array|null Fixed clock for tests: microtime float */
     protected static $now = null;
 
@@ -631,6 +634,7 @@ class expAudit
     {
         try
         {
+            self::leaveParentState();
             if ( $final )
             {
                 foreach ( array_keys( self::$open ) as $id )
@@ -716,6 +720,7 @@ class expAudit
     {
         if ( self::$resetting )
             return;
+        self::leaveParentState();
         self::$resetting = true;
         try
         {
@@ -743,6 +748,36 @@ class expAudit
         self::$failed = array();
         self::$writeFailures = array();
         self::$lastFlush = self::nowFloat();
+        self::$pid = self::processId();
+    }
+
+    /**
+     * A forked child (pcntl_fork(): a test that runs a worker, the asynchronous publisher, a Velocity worker forked
+     * after its parent recorded something) starts with a copy of its parent's buffer, open parents and failed
+     * records. They are the parent's: the parent writes them, and a child that wrote its copy too put the same
+     * records (same ids) into the channel a second time, once per child, each with a new seq and hash. The child
+     * keeps none of them, gets a request id of its own (and its own pid in request.pid), and keeps the job, the run
+     * and the parent stack, so what it records still names the job and the parent event it works for.
+     */
+    protected static function leaveParentState()
+    {
+        if ( self::$pid === null || self::$pid === self::processId() )
+            return;
+        self::$pid = self::processId();
+        self::$buffer = new expAuditBuffer();
+        self::$open = array();
+        self::$failed = array();
+        self::$writeFailures = array();
+        self::$requestId = null;
+        self::$requestFields = null;
+        self::$overflowRecorded = false;
+        self::$lastFlush = self::nowFloat();
+    }
+
+    /** @return int the current process id (after a fork the child's own) */
+    protected static function processId()
+    {
+        return function_exists( 'posix_getpid' ) ? (int)posix_getpid() : (int)getmypid();
     }
 
     /**
@@ -761,6 +796,7 @@ class expAudit
     {
         if ( self::$resetting )
             return;
+        self::leaveParentState();
         $key = isset( $_SERVER['REQUEST_TIME_FLOAT'] ) ? (string)$_SERVER['REQUEST_TIME_FLOAT'] : '';
         if ( self::$requestKey !== $key || self::$buffer === null )
             self::resetRequest();
