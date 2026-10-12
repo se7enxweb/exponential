@@ -582,29 +582,30 @@ Ibexa DXP Developer Portal: [developers.ibexa.co](https://developers.ibexa.co/)
 
 **Exponential Platform DXP** is a free, open-source Digital Experience Platform built on the Symfony framework, the community continuation of the eZ Platform and Ibexa OSS line maintained by 7x.
 
-Exponential Platform DXP gives organizations one place to create, manage and deliver content across websites, apps and channels. Editors work with structured content types they define themselves, in many languages and across several sites from one installation, with drafts, version history, approval workflows and fine-grained permissions for every role. Pages are put together visually with layouts and reusable blocks, while developers build on standard Symfony tools, Twig templates and REST and GraphQL APIs to run a classic website, a headless content hub, or both. Because it keeps the proven content model of its predecessors and runs on current PHP, it suits teams who want an enterprise-grade, vendor-independent CMS without license fees, whether they are starting fresh or moving an existing eZ Publish or Exponential site forward.
+Exponential Platform DXP gives organizations one place to create, manage and deliver content across websites, apps and channels. Editors work with structured content types they define themselves, in many languages and across several sites from one installation, with drafts, version history and fine-grained permissions for every role, while developers build on standard Symfony tools, Twig templates and REST and GraphQL APIs to run a classic website, a headless content hub, or both. Because it keeps the proven content model of its predecessors and runs on current PHP, it suits teams who want an enterprise-grade, vendor-independent CMS without license fees, whether they are starting fresh or moving an existing eZ Publish or Exponential site forward.
 
 ## Who it is for
 
 - **Organizations with a lot of structured content**: publishers, associations, universities, public bodies and companies that run several sites, brands or languages from one content repository.
 - **Teams leaving eZ Platform or Ibexa OSS** who want to stay on the same content model, the same APIs and the same way of working, on a maintained stack with current PHP and Symfony.
-- **Exponential and eZ Publish users** who want a modern Symfony front end without giving up their existing content, extensions and administration: the dual-kernel distributions include a full copy of Exponential 6.
+- **Exponential and eZ Publish users** who want a modern Symfony stack: the DXP itself is Symfony only, and the dual-kernel distributions Exponential Platform Legacy and Exponential Platform Nexus (see the list above) include a full copy of Exponential 6 next to it.
 - **Developers and agencies** who prefer standard Symfony bundles, Composer and Twig over a proprietary framework, and an open license over a vendor contract.
 
 ## What it does for editors
 
 - **Structured content you define**: content types with typed fields (text, rich text, images, files, relations, dates, prices, locations and more), so the same content can appear on a page, in a feed, in an app or in a newsletter without copying it.
 - **Many sites and languages from one installation**: translations side by side, a site per domain, path or language, and content shared between sites where it belongs.
-- **A safe editorial process**: drafts, a full version history with comparison and restore, approval workflows before anything goes live, scheduled publishing and permissions down to the section, content type and field.
-- **Visual page building**: layouts made of zones and reusable blocks, assigned to content by rules, so editors build landing pages and sections without template work.
+- **A safe editorial process**: drafts, a full version history you can go back to, and permissions down to the section, subtree, content type and language.
+- **An administration interface and content forms**: editors create and edit content in the browser, and content forms let signed-in users create and edit content on the site itself, within their permissions.
 - **Media and assets**: images with automatic variations for every screen, files and embedded media, managed next to the content that uses them.
 
 ## What it does for developers
 
 - **Standard Symfony**: bundles, dependency injection, events, the console, Twig and Composer, so any Symfony developer can work on it from day one.
 - **Headless or full site, or both**: REST and GraphQL APIs for apps and front-end frameworks, and server-side Twig rendering for classic websites, on the same content repository.
-- **Extensible at every level**: field types, content views, query types, search, workflows and the administration interface can be extended with your own bundles instead of patching the core.
-- **Search and performance**: a search engine of your choice behind one API, and HTTP caching designed for reverse proxies and CDNs.
+- **Extensible at every level**: field types, content views, query types, search and the administration interface can be extended with your own bundles instead of patching the core.
+- **Search and performance**: the built-in search or Solr behind one API, and HTTP caching designed for reverse proxies and CDNs.
+- **Batteries included**: rich text, matrix and query field types, notifications, background jobs through Symfony Messenger and cron, JWT authentication for APIs, and a GraphiQL console to explore the GraphQL schema.
 
 ## What Exponential Platform DXP adds
 
@@ -612,7 +613,7 @@ Exponential Platform DXP features improvements not found in Ibexa DXP OSS, for e
 
 - **The SQLite database driver and framework support**, which lets you host a site, including a read-only site, without a dedicated database server: one file holds the whole repository, which makes small sites, demos, staging copies and archives simple to run and to move.
 - **Current PHP**: the stack is kept up to date for PHP 8.3 and later, with the fixes that this requires across the bundles it ships.
-- **Exponential 6 inside**: the dual-kernel distributions (Exponential Platform Legacy and Exponential Platform Nexus, see the list above) include a full copy of Exponential 6, so existing Exponential and eZ Publish sites can move forward step by step instead of in one rewrite.
+- **A path from Exponential 6**: the DXP is the Symfony-only distribution; when an existing Exponential or eZ Publish site has to move forward step by step instead of in one rewrite, the dual-kernel distributions Exponential Platform Legacy and Exponential Platform Nexus run Exponential 6 next to it.
 - **A name of its own**: the stack is rebranded to avoid trademark issues, so you can keep using, changing and redistributing it freely.
 
 ## An open community
