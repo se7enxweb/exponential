@@ -175,7 +175,7 @@ b974dde24700fd18ba9d30714509893a  composer.dev.json
 ad0c706a0cd20b8bc2b805eaae6242d8  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 2d91308b2fa30038d9cc37afd0e2d44a  config.env.php.example
-a63e9a2939aca762a90ee6158afc2a22  config.php-RECOMMENDED
+e7da3e13ed7cc993f3d31886d4a42ddc  config.php-RECOMMENDED
 cc7ccfafe6b4245628b2099dfd4c5dc9  cronjobs/audit.php
 61d291489da4f9b45b694496ab0a7289  cronjobs/basket_cleanup.php
 239cd3f0ef83b344abc63672ba39a9d6  cronjobs/cachecleanup.php
@@ -2812,7 +2812,7 @@ a97f241d85290c2fbece2d8f20d6c401  doc/bc/6.0/console-exp-ini.md
 4fa2c2acfebf49a6d0606b3cfdadd05c  doc/bc/6.0/console.md
 d3d1f22911e860a16506696d3fee2cbb  doc/bc/6.0/content-jobs.md
 ec94f35b9c29418f1c35fe46d54a157f  doc/bc/6.0/content-object-fallback-locale.md
-09d05cd812d3ccabd32043b79e5023c5  doc/bc/6.0/debug-bar.md
+d8273c8c2a7771814a70d343fcc4894b  doc/bc/6.0/debug-bar.md
 68ca2915c347f13a647afb19d14748d0  doc/bc/6.0/draft-edit-access.md
 3363c1727dc13ba26af5e714957046fa  doc/bc/6.0/eZINI_PRESERVES_COMMENTS.md
 cf9e3712f778ce6bfbb6aaca39d7f82b  doc/bc/6.0/expinfo-operator.md
@@ -3012,7 +3012,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-8ba03a5289b768ddbca489c484f2bdab  doc/changelogs/6.0/6.0.15.md
+412fba8f4463f52a687e2d91db75ff3a  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3544,7 +3544,7 @@ bcc36ff60104026b63bd37c7a221d037  doc/guides/maintenance-mode.md
 80f57f2a6435791097287c051763ba8d  doc/guides/notifications-administrator.md
 934e5fac274514582acb8481191f0713  doc/guides/notifications-developer.md
 8b3b80adcdda951de281fd97a9475529  doc/guides/object-states.md
-e861af99783d9722c884e338acf8f918  doc/guides/operating-a-site.md
+6bfab010c091cb30823ea7984f4f4aca  doc/guides/operating-a-site.md
 ab52cfafedf9a2c28390bf0f5adf7b6f  doc/guides/packages.md
 f5c7d03721608109d841867836f390c9  doc/guides/pdf-exports.md
 69eb92f94dbfcc89c1bd3f868d578068  doc/guides/preloading-caches.md
@@ -5064,7 +5064,7 @@ e094631e523211106016c1f6ccd2021e  kernel/classes/ezrssexport.php
 6ef539ffae5c45b5237f4166bb4c601a  kernel/classes/ezrssexportopmlitem.php
 a1fdd12cc8b007017c4bf7964e3ff6d0  kernel/classes/ezrssimport.php
 80ea5d59b41c225e7aa9efe8a8a33f5c  kernel/classes/ezruncronjobs.php
-6aa1971683af3d160277cc405f740854  kernel/classes/ezscript.php
+03ac594b56f2820c28e0893d413d5544  kernel/classes/ezscript.php
 101e697256e937ea550fc850939ad824  kernel/classes/ezsearch.php
 59fe9c1b44af855290c3a2c585bd2693  kernel/classes/ezsearchlog.php
 165108fb9078c688cbb30bc59e1bf7c1  kernel/classes/ezsection.php
@@ -5514,7 +5514,7 @@ d895189330ddae3a492bfbb6a7445468  kernel/private/classes/cronjobs/subtreeexpiryc
 ad5a895259336ad06a47e6b4ce61f189  kernel/private/classes/cronjobs/unpublish.php
 c653e60e6b7e4b2c61357312f8918808  kernel/private/classes/cronjobs/updateviewcount.php
 9bd293d6ac2165f0d8cdf7bac0b06264  kernel/private/classes/cronjobs/workflow.php
-b0da3bd69196023f1965ac879c334a0d  kernel/private/classes/debug_settings_functions.php
+5edac7b7ba3645c4a8f21317dd7ddac9  kernel/private/classes/debug_settings_functions.php
 669375e4223eeeff60674ecf44b594f1  kernel/private/classes/exceptions/cluster/mount_point_not_found.php
 b65310d20f5ab03d6b562fb3259ad627  kernel/private/classes/exceptions/cluster/mount_point_not_writeable.php
 8d671482fb0c4e1878f951d7ebb4a8eb  kernel/private/classes/exceptions/cluster/noconnection.php
@@ -5551,7 +5551,7 @@ cecedcc8d3f8f0c9cd7745fb3a8c67db  kernel/private/classes/ezpkernel.php
 28b56f2df1290892158aedc26b81b0c8  kernel/private/classes/ezpkernelredirect.php
 177993fa9e64be25d35ab1bc40e66544  kernel/private/classes/ezpkernelresult.php
 ddec744dfff68595b33fab3f301af457  kernel/private/classes/ezpkerneltreemenu.php
-a575dc06c0441715ec3e83b2397e05cf  kernel/private/classes/ezpkernelweb.php
+86cf5c6685112b21c2ec57ecbd07c23e  kernel/private/classes/ezpkernelweb.php
 2b8a42157ac99a624a5cd28409ac43d6  kernel/private/classes/ezplanguageswitcher.php
 c40373eb533e1704ca522996e35b8e1e  kernel/private/classes/ezpmail.php
 0548609342e2db364a28094abfb637a8  kernel/private/classes/ezpmobiledevicedetect.php
@@ -5883,7 +5883,7 @@ f688b66dbcc427e808dc90540217df12  kernel/private/rest/classes/content_renderer.p
 0b6574eea43984924b4c4b7069581232  kernel/private/rest/classes/controllers/error.php
 697c78b2796188771e7d6f2978f95532  kernel/private/rest/classes/controllers/oauth_token.php
 9d1e29271766054745de281a4dc8b649  kernel/private/rest/classes/controllers/rest_controller.php
-71a8cf3b576559380dfcb988119ba1e3  kernel/private/rest/classes/debug/debug.php
+690a78e18937a4139eafd518d526f754  kernel/private/rest/classes/debug/debug.php
 14cfa6812d869e32ad0947000d4b40f1  kernel/private/rest/classes/debug/formatters/php_formatter.php
 dca5311534b43adcbb52331cfe94f028  kernel/private/rest/classes/default_regexp_prefix_filter.php
 99ee57f43451f453730ab113f76d7415  kernel/private/rest/classes/dispatcher.php
@@ -6217,7 +6217,7 @@ bec03c44a375a6eafbb3a7cf109240e6  lib/ezfile/classes/ezforwardcompressionhandler
 25f22feb4450b3d809285377cbf9fddb  lib/ezfile/classes/ezgzipcompressionhandler.php
 8975300cc5c3fa93f32240fa0385580a  lib/ezfile/classes/ezgzipshellcompressionhandler.php
 5410e76467997c8508cb2263d8544a3d  lib/ezfile/classes/ezgzipzlibcompressionhandler.php
-ba60991614970c438e2d40661b9de508  lib/ezfile/classes/ezlog.php
+d7fdf5ed3178bef61156fc50e4e9b790  lib/ezfile/classes/ezlog.php
 0c9a30ddeed23b7e36c3122610a020fd  lib/ezfile/classes/ezmd5.php
 a7b345b24d67dc00fd9072ef5113e76f  lib/ezfile/classes/eznocompressionhandler.php
 76db3225c1a2121b68709ce9e8e690c3  lib/ezi18n/classes/ez1337translator.php
@@ -6354,12 +6354,12 @@ d27d72fa632723c912c0e30955660dfb  lib/eztemplate/classes/eztemplatetreecache.php
 83db4deedb094ab56e41666aa89d1d45  lib/eztemplate/classes/eztemplateunitoperator.php
 c86873ded14533e5c2c8d74477b5b0c9  lib/eztemplate/classes/eztemplatevariableelement.php
 290175b9eca3990307842ecc8353ae59  lib/eztemplate/classes/eztemplatewhilefunction.php
-ded4f609073d94e5b88d437aa00cc72d  lib/ezutils/classes/expdebugbarreport.php
+aed3a640262eff03d8cf29a2a1b896ac  lib/ezutils/classes/expdebugbarreport.php
 b55898a868b558383b32af3334bd55d6  lib/ezutils/classes/expinfo.php
 11982ee3f90617fbf7ddbb55b4806286  lib/ezutils/classes/ezcachehelper.php
 65418d73b97109fe1dc0fc642c93139e  lib/ezutils/classes/ezcli.php
 0ee9cef26c3240f827773cafd53d87b6  lib/ezutils/classes/ezdatetimevalidator.php
-9b790ecda8fae14350d1a8695a7f0cb0  lib/ezutils/classes/ezdebug.php
+5d4ab2a67dd8aac73c4715adb5338e9c  lib/ezutils/classes/ezdebug.php
 072c48359e732e46bda20413549d3a94  lib/ezutils/classes/ezdebugsetting.php
 d1fa2312d5760fff6537a61d1db773c3  lib/ezutils/classes/ezexecution.php
 72fc7a1f67f3eaa83336f9d5b48a0169  lib/ezutils/classes/ezexpiryhandler.php
@@ -6427,7 +6427,7 @@ d5020c505e699f2d0f7606e505c9a8d2  settings/datatype.ini
 ea68c5ba8eb753c5292a1c4dd3a5b2bc  settings/datetime.ini
 9197ab21aa5e2f4e44eb3950d1753461  settings/dbschema.ini
 0c09e0bf093c0f1f18f97705355d487c  settings/debug.ini
-53b8d8bfd8a930ad4e4fa422c8f39f80  settings/debugbar.ini
+b2f32f415f4ea77bc25e1c2e1e145c27  settings/debugbar.ini
 6711e2b730a26275dd51452f0c6688dd  settings/design.ini
 508ed13ee170dbb990e10380d9022fa7  settings/error.ini
 4209ce0fc8d74237bef6f2415d450959  settings/extendedattributefilter.ini
@@ -6458,7 +6458,7 @@ ebc1c25ced143cfaaa5d343350676ecc  settings/override.ini
 122b02cc3dab8b41bbbce96df60e2642  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-27d817c95cb8bd07badf195cf9f4bac3  settings/site.ini
+ffec95c4b631bc72ee483202b80ddcfe  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -6891,14 +6891,14 @@ dd5f5f3cf2348a6cc17bd0ee76983225  share/translations/dut-NL/translation.ts
 284321a9de29bf9268c27abb13f56f2c  share/translations/ell-GR/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-AU/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-NZ/translation.ts
-09e90d582837c62595e376101e5dcf37  share/translations/eng-US/translation.ts
+29211d7a1e066b05c467095a999e114b  share/translations/eng-US/translation.ts
 5f0920d5b4e8bbaff2a4a6d5b3995c90  share/translations/esl-ES/translation.ts
 27846e3f6408cd74f58cef8adcbab573  share/translations/esl-MX/translation.ts
 4b104d4d337601b4bc6ae0482e6478ea  share/translations/fin-FI/translation.ts
 edfd3efb7eca1e2bd6d6d7d08bd78a77  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-4fc116b4d6084f203277853e9af01ab3  share/translations/ger-DE/translation.ts
+d7f16f3ba4b2014b6e1e3c8208bf7a7a  share/translations/ger-DE/translation.ts
 75d657fed5de11db9e059cdcff2046a8  share/translations/ita-IT/translation.ts
 a45e2d26b1c24ac4cb6ae1d7197e5b0e  share/translations/jpn-JP/translation.ts
 d1dc34034ddce2d64c4f8df7fcc41c85  share/translations/nno-NO/translation.ts
@@ -6911,7 +6911,7 @@ e33e059c205f7c0a49e112ce9ba6147d  share/translations/ser-SR/translation.ts
 e9e308757570f0321486d498fc993d17  share/translations/srp-RS/translation.ts
 718ecc8ecbbe8ebec7a88fb2697f401f  share/translations/swe-SE/translation.ts
 0b1b76b5ad6b2f923afd6fd9a9937a8b  share/translations/untranslated/readme.txt
-cb19f35a808cb228a7fc0640bf200289  share/translations/untranslated/translation.ts
+8a04431b80b7011e1466602b7989f8e3  share/translations/untranslated/translation.ts
 bae9ff85781e52af001213bdb213a013  shippable.yml
 414f4d1129273ab3dea38b878d554eae  soap.php
 3b6d156f31df70e093aa1a6d8a525cd3  support/ezlupdate-qt4.5/README.txt
@@ -7883,6 +7883,7 @@ cb0fed15dd1df5bc335d598439aec099  tests/tests/lib/ezfile/eZDirDeletionGuardTest.
 0dd718f8618cc4879dffae43841d1edd  tests/tests/lib/ezfile/eZFileDownloadTest.php
 2eaffb8e67d3f31c3e3900c40e4110f2  tests/tests/lib/ezfile/eZFileRenameTest.php
 317a34f0b93988ea8049d998b6461d96  tests/tests/lib/ezfile/eZGZIPCompressionHandlerLevelTest.php
+7b1fed0fdeaec24702682148e76a1d22  tests/tests/lib/ezfile/eZLogMaxSizeTest.php
 0e500c4c33e2c792446c79d92088be2b  tests/tests/lib/ezfile/eZMD5Test.php
 7a4cee107fc363201c9e225b433ecc8e  tests/tests/lib/ezfile/ezdirinsideroot_test.php
 78c44bc71a3cf9a273ef914528144964  tests/tests/lib/ezfile/ezdiroutsideroot_test.php
@@ -7937,8 +7938,9 @@ d55f27da992880ec276e9fc8d117a356  tests/tests/lib/ezutils/ErrorCasePageTest.php
 1cb86abbb39e758fa2ec557a149ad317  tests/tests/lib/ezutils/PHPUnitTextUICommandShimTest.php
 b04416a94a85e92fcfaf8d20cd7481f2  tests/tests/lib/ezutils/RepairQueueTest.php
 e03fa9c077e0046cda4ed2e95139fa40  tests/tests/lib/ezutils/eZCLITest.php
+9e267a84dd2291afb44623aacd3ebe39  tests/tests/lib/ezutils/eZDebugDeprecatedTest.php
 19b4b7676978ad54bccd376b846ad625  tests/tests/lib/ezutils/eZDebugHandleTypeTest.php
-cf18f00c422de9b9f4ab10201485831c  tests/tests/lib/ezutils/eZDebugMessagesTest.php
+d673c9d26918f6ad1e90008332f95a8e  tests/tests/lib/ezutils/eZDebugMessagesTest.php
 60e4f4c4fcc1cfe2c734e6fc4b947dfd  tests/tests/lib/ezutils/eZExpiryHandlerCacheDirectoryTest.php
 e0df258f6fc60a3fcb7ac21bfd0511b1  tests/tests/lib/ezutils/eZExtensionCountsTest.php
 d6114e4248b4221f06f138cb33e09dc2  tests/tests/lib/ezutils/eZExtensionNewestFileTimeTest.php
