@@ -224,6 +224,30 @@ php bin/php/cache.php clear --all --allow-root-user
 
 Expected: both end with `PASS`; reload the administration interface and the header carries a light/dark toggle after the search box. To go back, set `SiteDesign` to `admin3` and clear again. To try it first without changing anything, open the siteaccess `admintest_admin4`. Everything about it, including how to write your own styles on top (`design/admin4/stylesheets/admin4.css`, no cascade layers): [The admin4 design](../features/6.0/admin4-design.md); the earlier responsive design: [admin3](../features/6.0/admin3-responsive-admin.md).
 
+## 9. Site data in templates
+
+A template can read a row of `ezsite_data` (the name/value pairs listed under Setup > Site data) once its name is
+allowed in `site.ini`:
+
+```ini
+# settings/override/site.ini.append.php
+[SiteDataSettings]
+TemplateReadable[]=my-flag
+```
+
+```
+{def $flag = fetch( 'content', 'site_data', hash( 'name', 'my-flag' ) )}
+{if $flag}{$flag.value|wash}{/if}
+{undef $flag}
+```
+
+The fetch gives the row (`.name`, `.value`) or `false` for a name that is not listed or not stored; names are whole
+names, not patterns. It only reads: no template can write a row. The list is empty in every installation, new or
+upgraded, so nothing is readable until you add a name; asking for one not listed leaves a notice in the debug
+output. PHP code keeps using `eZSiteData::fetchByName()`, and `eZSiteData::createNew( $name, $value )` stores a row
+in one call. This comes from LoveStack (mugoweb/ezpublish-legacy, commits `55029bd473` and `a679a13176`), with thanks
+to Mugo Web; Exponential adds the allow-list.
+
 ## Related pages
 
 - [The content model and editing content](content-model-and-editing.md): the classes and attributes your templates show.

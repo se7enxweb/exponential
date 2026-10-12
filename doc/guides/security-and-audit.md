@@ -132,6 +132,21 @@ To hand records to an auditor, open **Export** with the console's filter: **Down
 with a channel of its own (Exponential Intelligence: the channel `ai`, every request to a model and every draft it
 wrote, never a prompt or an answer) adds its panel to the dashboard and its columns to the CSV.
 
+Location changes: removing a location is recorded by default (**Location remove**). To see who added a location
+or chose another main location (**Location add**, **Main location change**), switch those two on in
+`settings/override/audit.ini.append.php`:
+
+```ini
+[AuditEventSettings]
+Enabled[]=content.node.add
+Enabled[]=content.node.main
+```
+
+They then appear in the console like every content event, with the object, the node and its parent; removing the
+main location also records which location became the main one. The idea comes from LoveStack
+(mugoweb/ezpublish-legacy, commit `9c931192e0`), with thanks to Mugo Web; see the
+[audit reference](../bc/6.0/audit.md), "Location changes".
+
 Depth: [the audit trail](../features/6.0/audit-trail.md), [audit event model](../specifications/6.0/audit-event-model.md), [audit reference (bc)](../bc/6.0/audit.md).
 
 ## 4. Debug output for your address only (5 minutes)

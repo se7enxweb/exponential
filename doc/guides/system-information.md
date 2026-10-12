@@ -201,7 +201,18 @@ command-line SAPI writes it.
 Velocity: OPcache is usually off there and is not a warning, and `max_execution_time` is "no limit". It exits 1 when
 a check fails, so it can guard a deploy script.
 
-## 9. Usual questions
+## 9. Site data
+
+**Setup > Site data** (`setup/sitedata`) lists the rows of the table `ezsite_data`: name and value pairs that the
+installation and its extensions keep in the database, such as `ezpublish-version` (the version of the installed
+database schema) and `ezpublish-release`. The list is read only, sorted by name, 50 rows a page, with a filter that
+takes a whole name or `*` for any characters (`ezpublish-*`). A column says whether templates may read the row (see
+[Templates and design](templates-and-design.md), "Site data in templates"). It needs the same policy as this page,
+`setup/system_info`, and is in the Setup menu for those who hold it. The list and the template fetch were brought
+over from LoveStack (mugoweb/ezpublish-legacy, commits `55029bd473`, `a679a13176`, `94b7b6c239`), with thanks to
+Mugo Web.
+
+## 10. Usual questions
 
 **The figures differ between Apache and Velocity.** They should: two servers, two PHP processes, two OPcaches. Check
 the banner before comparing.

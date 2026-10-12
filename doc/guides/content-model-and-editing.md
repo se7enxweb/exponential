@@ -200,6 +200,34 @@ such a fetch lists only those classes (`exclude`: every class but those). It app
 keeps today's results. Switch it on only after checking the templates that rely on the array being ignored:
 `grep -rn "class_filter_array" design extension --include=*.tpl | grep -v class_filter_type`.
 
+## 10. Copying, locations and how selections are shown
+
+These come from LoveStack (mugoweb/ezpublish-legacy), rebuilt in Exponential with thanks to Mugo Web; the commits
+are named with each item.
+
+### Copy from the full view
+
+Next to **Move** and **Remove**, the full view of an item in the administration interface (admin, admin3 and
+admin4) has a **Copy** button (LoveStack commit `4d56593614`). It opens the same steps as **Copy** in the
+right-click menu: choose where the copy goes, then, if your site asks for it, which versions to copy. The button is
+active when you may create content in the item's parent, as the menu is; otherwise it is greyed out and says why.
+You still need create access where the copy goes, which is checked when you choose the place. Nothing to switch on.
+
+### The Locations window keeps a hidden location hidden
+
+In the edit form's **Locations** window, the **Visibility after publishing** choice of an existing location now
+starts at **Unchanged** instead of **Visible** (EZP-26501, LoveStack commit `f1b7f056b4`). Publishing after adding
+a location therefore no longer reveals a location that was hidden. A new location starts as it was given
+(**Hidden** when it was added hidden, else **Unchanged**, which follows its parent). **Visible** and **Hidden** can
+still be chosen for any location. This is a fix and applies to every site.
+
+### Selection and matrix fields without stray line breaks
+
+The standard view templates of the selection (`ezselection`) and matrix (`ezmatrix`) fields write no stray
+`<br />` (LoveStack commits `eee7f69fc3`, `67eec8f972`, `492a946963`): one selected option is shown on its own,
+several are separated by one `<br />` each, in the order of the class, and the matrix is a table and nothing else.
+A site with its own override of these templates is not affected.
+
 ## Settings used in this guide
 
 | File | Block | Key | Default | Scope |

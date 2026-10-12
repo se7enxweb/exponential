@@ -1006,6 +1006,29 @@ it.
   `[AuditCompatSettings] Map[]`, and the attributes go under `after.legacy` (`Comment`, `NeverRecord[]` keys and
   secrets dropped). Unmapped names become `system.legacy.<name>`. The kernel no longer calls it: its call sites
   raise native events.
+- The location names of LoveStack (mugoweb/ezpublish-legacy, commit `9c931192e0`, with thanks to Mugo Web) are
+  mapped as well, with their attributes read into the record: `location-assign` is `content.node.add` (object;
+  after: parents, main node), `location-remove` is `content.node.remove` (the removed node as the object; before:
+  parent, main) and `main-node-update` is `content.node.main` (the new main node as the target; after: main node,
+  parent). Their files (`location_assign.log`, `location_remove.log`, `location_main_update.log`) are in
+  `AuditFileNames[]`, so `exp:audit import` reads them and `(legacy_file)` finds their events.
+
+#### Location changes: who added, removed or chose a location
+
+The kernel records the location changes itself, from `eZContentOperationCollection`, in the channel `content`:
+
+| What the editor did | Event | Console label | About | Before → after |
+|---|---|---|---|---|
+| Added a location (Locations window, Add locations, a content job) | `content.node.add`, one per new location | Location add | the object; the new node is the target | locations → locations, node, parent, main node |
+| Removed a location (Locations window, a content job) | `content.node.remove` | Location remove | the removed node | parent, path, object id, name, main → – |
+| Chose another main location | `content.node.main` | Main location change | the object; the new main node is the target | main node → main node, parent |
+| Removed the main location | `content.node.remove`, then `content.node.main` with `cause` `location-remove` | | | |
+
+`content.node.remove` is on by default. `content.node.add` and `content.node.main` are off, as before: switch them on
+with `Enabled[]=content.node.add` and `Enabled[]=content.node.main` (or `content.node.*`) in
+`settings/override/audit.ini.append.php`. The console shows the records under their labels, and `audit/event/<id>`
+lists object, target and the before and after values, with links to the nodes. On an upgrade nothing changes until
+they are switched on.
 
 ---
 
@@ -2095,8 +2118,8 @@ only with `Reads=enabled`).
 | `content.version.remove` | archived or draft versions are removed by an editor | status, language → – | `views/content/history.php:run`, `views/content/removeeditversion.php:run` | remove | notice | on | yes | content | buffered |
 | `content.node.move` | a location gets a new parent `[content-move]` | parent, path → parent, path | `ezcontentobjecttreenode.php:move` | move | info | on | yes | content | buffered |
 | `content.node.copy` | a node or subtree is copied | – → new node id, new object id | `contentjob/expcontentjobcopysubtree.php:copyNode`, `ezcontentobjecttreenodeoperations.php:auditSubtreeCopy`, `views/content/copy.php:copyObject` | copy | info | off | no | content | buffered |
-| `content.node.add` | a location is added to an object | locations → locations | `content/ezcontentoperationcollection.php:addAssignment` | add | info | off | no | content | buffered |
-| `content.node.remove` | a location is removed, the object stays | parent, path, object id, name → – | `ezcontentobjecttreenode.php:removeSubtrees`, `ezcontentobjecttreenode.php:removeNodeFromTree`, `content/ezcontentoperationcollection.php:removeNodes` | remove | notice | on | yes | content | buffered |
+| `content.node.add` | a location is added to an object, one record per new location `[location-assign]` | locations → locations, the new node and its parent, main node (the new node is the target) | `content/ezcontentoperationcollection.php:addAssignment`, `content/ezcontentoperationcollection.php:auditLocationsAdded` | add | info | off | no | content | buffered |
+| `content.node.remove` | a location is removed, the object stays `[location-remove]` | parent, path, object id, name, main (from the Locations window) → – | `ezcontentobjecttreenode.php:removeSubtrees`, `ezcontentobjecttreenode.php:removeNodeFromTree`, `content/ezcontentoperationcollection.php:removeNodes` | remove | notice | on | yes | content | buffered |
 | `content.node.remove.trash` | an object goes to the trash `[content-delete]` | parent, path, object id, name, class → – | `ezcontentobject.php:removeThis`, `ezcontentobjecttreenode.php:removeSubtrees`, `ezcontentobjecttreenode.php:removeNodeFromTree`, `ezcontentobjecttreenode.php:auditRemovalData` | remove | notice | on | yes | content | buffered |
 | `content.object.remove` | an object is removed for good, not through the trash `[content-delete]` | name, class, owner, locations → – | `ezcontentobjecttreenode.php:removeSubtrees`, `ezcontentobjecttreenode.php:removeNodeFromTree`, `ezcontentobjecttreenode.php:auditRemovalData` | remove | notice | on | yes | content | buffered |
 | `content.object.purge` | an object is purged (trash emptied, version purge) `[content-delete]` | name, class → – | `ezcontentobject.php:purge`, `ezcontentobjecttreenode.php:removeNodeFromTree` | purge | notice | on | yes | content | buffered |
@@ -2107,7 +2130,7 @@ only with `Reads=enabled`).
 | `content.node.swap` | two locations swap their objects | object ids → object ids | `content/ezcontentoperationcollection.php:swapNode` | swap | info | on | yes | content | buffered |
 | `content.node.section` | a section is assigned to a subtree `[section-assign]` | section → section | `contentjob/expcontentjobsectionsubtree.php:prepare`, `ezcontentobjecttreenode.php:assignSectionToSubTree`, `ezcontentobjecttreenode.php:removeNodeFromTree` | assign | info | on | yes | content | buffered |
 | `content.object.state` | object states are assigned `[state-assign]` | states → states | `content/ezcontentoperationcollection.php:updateObjectState` | assign | info | on | yes | content | buffered |
-| `content.node.main` | the main location changes | main node → main node | `content/ezcontentoperationcollection.php:updateMainAssignment` | assign | info | off | no | content | buffered |
+| `content.node.main` | the main location changes: chosen by an editor, or the next location when the main one is removed `[main-node-update]` | main node → main node, its parent, cause (location-remove when the main location was removed) | `content/ezcontentoperationcollection.php:updateMainAssignment`, `content/ezcontentoperationcollection.php:removeNodes`, `content/ezcontentoperationcollection.php:auditMainLocationChanged` | assign | info | off | no | content | buffered |
 | `content.node.sort` | a node's sort order changes | field, order → field, order | `content/ezcontentoperationcollection.php:changeSortOrder` | sort | info | off | no | content | buffered |
 | `content.node.priority` | priorities of children change | priorities → priorities | `content/ezcontentoperationcollection.php:updatePriority` | sort | info | off | no | content | buffered |
 | `content.object.always_available` | the always-available flag changes | flag → flag | `content/ezcontentoperationcollection.php:updateAlwaysAvailable` | change | info | off | no | content | buffered |
@@ -2257,6 +2280,7 @@ The acceptance tests of the design (Z9), run at the end of the work on 2026-10-0
 | `expAuditForkTest` | 4 | a forked child writes only its own records and leaves its parent's open parents and buffer to the parent, also when it only exits; repeated ids verify intact, are counted, and the export gives each once (AF-01–AF-04) |
 | `expAuditCompatTest` | 7 | the 15 4.x names, HashKey never kept, keys, ownership, settings writes (B3) |
 | `expAuditHookTest` | 5 | every catalogue name has a hook point; off names build nothing; verbs; the bridge (live database) |
+| `eZAuditLocationTest` | 5 | a location added, chosen as main, removed (main and secondary) records add, main, remove and the promoted main node; off by default; the LoveStack location names; labels (live database, rolled back) |
 | `expAuditIndexTest` | 10 | schema, incremental index, crash between batch and cursor, rebuild = incremental, search, pseudonymisation, fetch functions (live database, test channels) |
 | `expAuditSinksTest` | 5 | RFC 5424 and journald, a webhook receiver verifying every signature, outage and retry, mail throttling (E1) |
 | `expAuditAlertsTest` | 9 | every built-in rule reached, not reached, repeated; INI rules; replay (E2) |
