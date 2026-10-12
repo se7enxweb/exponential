@@ -7,6 +7,8 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package kernel
+ *
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 826e1d4647), Copyright (C) Mugo Web, GPL v2
  */
 
 /*!
@@ -295,8 +297,11 @@ class eZUserType extends eZDataType
         }
         else
         {
-            // No "draft" for version 1 to avoid regression for existing code creating new users.
-            if ( $contentObjectAttribute->attribute( 'version' ) == '1' )
+            // No "draft" for version 1 to avoid regression for existing code creating new users. A form that did
+            // not validate (a login another account has, among others) stores no account: the attribute is stored
+            // all the same to keep what was entered, and the account would have been written with the refused
+            // login, a second row with that login or, with the unique index on ezuser.login, a failed query
+            if ( $contentObjectAttribute->attribute( 'version' ) == '1' && !$contentObjectAttribute->hasValidationError() )
             {
                 // The account may exist only as a draft (content() made it from data_text): storing it creates
                 // the ezuser row, and it needs its ezuser_setting row as the default account above gets one,
@@ -319,7 +324,15 @@ class eZUserType extends eZDataType
                         return;
                     }
                 }
-                $user->store();
+                // The login is checked once more as it is written: an existing account may have been given a
+                // login another account has, and another request may take it in the meantime
+                // (expUserLoginIntegrity::storeUser(), the unique index on ezuser.login)
+                if ( !self::storeAccount( $user, $hasLogin ) )
+                {
+                    $contentObjectAttribute->setAttribute( 'data_text', '' );
+                    $contentObjectAttribute->setContent( $isNewAccount ? null : eZUser::fetch( $userID ) );
+                    return;
+                }
                 if ( $isNewAccount && $hasLogin )
                 {
                     self::createSettingIfMissing( $userID );
@@ -401,15 +414,22 @@ class eZUserType extends eZDataType
             else
             {
                 // without an ezuser row a draft without a login makes no account (eZUser::store() stored a login of
-                // blanks)
-                if ( isset( $stored[0] ) || $hasLogin )
-                    $user->store();
-                // the new account needs its ezuser_setting row like any new account
-                if ( $isNewAccount )
+                // blanks). A changed login another account has is not applied either (storeAccount())
+                $applied = ( isset( $stored[0] ) || $hasLogin ) ? self::storeAccount( $user, $hasLogin ) : true;
+                if ( !$applied )
                 {
-                    self::createSettingIfMissing( $userID );
+                    eZDebug::writeError( "The draft of the account of user object $userID is not applied: the login is taken", __METHOD__ );
+                    $contentObjectAttribute->setContent( isset( $stored[0] ) ? eZUser::fetch( $userID ) : null );
                 }
-                $contentObjectAttribute->setContent( $user );
+                else
+                {
+                    // the new account needs its ezuser_setting row like any new account
+                    if ( $isNewAccount )
+                    {
+                        self::createSettingIfMissing( $userID );
+                    }
+                    $contentObjectAttribute->setContent( $user );
+                }
             }
 
             // Clear draft info
@@ -757,7 +777,9 @@ class eZUserType extends eZDataType
             self::storeIsEnabled( $contentObjectAttribute->attribute( 'contentobject_id' ), (int)(bool)$userData[4] );
         }
 
-        $user->store();
+        // another account may take the login between the check above and the write
+        if ( !self::storeAccount( $user, trim( (string)$login ) !== '' ) )
+            return false;
         return $user;
     }
 
@@ -806,7 +828,13 @@ class eZUserType extends eZDataType
             $user->setAttribute( 'email', $userNode->getAttribute( 'email' ) );
             $user->setAttribute( 'password_hash', $userNode->getAttribute( 'password_hash' ) );
             $user->setAttribute( 'password_hash_type', eZUser::passwordHashTypeID( $userNode->getAttribute( 'password_hash_type' ) ) );
-            $user->store();
+            // A package whose account has a login another account of this site has installs the object without
+            // that account, as the edit form refuses a taken login
+            if ( !self::storeAccount( $user, trim( (string)$userNode->getAttribute( 'login' ) ) !== '' ) )
+            {
+                eZDebug::writeError( "The account of user object $userID is not installed from the package: the login is taken", __METHOD__ );
+                return;
+            }
             // serializeContentObjectAttribute() writes is_enabled; an account
             // exported disabled was installed enabled because it was not read
             if ( $userNode->hasAttribute( 'is_enabled' ) )
@@ -879,6 +907,30 @@ class eZUserType extends eZDataType
         $userSetting = eZUserSetting::create( $userID, $isEnabled );
         $userSetting->store();
         return true;
+    }
+
+    /**
+     * Stores the account. An account with a login goes through expUserLoginIntegrity::storeUser(): it is not
+     * stored when another account has the login, compared as signing in compares it, and a write the unique
+     * index on ezuser.login refuses (another request took the login meanwhile) is answered with false outside a
+     * transaction. An account without a login is not written by eZUser::store() at all.
+     *
+     * @param eZUser $user
+     * @param bool $hasLogin
+     * @return bool the account was stored, or had nothing to store
+     */
+    private static function storeAccount( eZUser $user, $hasLogin )
+    {
+        if ( !$hasLogin || !class_exists( 'expUserLoginIntegrity' ) )
+        {
+            $user->store();
+            return true;
+        }
+        if ( expUserLoginIntegrity::storeUser( $user ) )
+            return true;
+        // eZUser::store() keeps the account it stores in memory for eZUser::fetch(); a refused one is not it
+        unset( $GLOBALS['eZUserObject_' . (int)$user->attribute( 'contentobject_id' )] );
+        return false;
     }
 
     /**

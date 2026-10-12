@@ -7,6 +7,8 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package kernel
+ *
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 826e1d4647), Copyright (C) Mugo Web, GPL v2
  */
 
 /*!
@@ -825,7 +827,24 @@ class eZLDAPUser extends eZUser
 
         $user->setAttribute( 'password_hash', "" );
         $user->setAttribute( 'password_hash_type', self::PASSWORD_HASH_EMPTY );
-        $user->store();
+        if ( $createNewUser && class_exists( 'expUserLoginIntegrity' ) )
+        {
+            // Two first sign-ins with the same LDAP login at once both find no account and both create one; the
+            // second is refused (the check of storeUser(), or the unique index on ezuser.login) instead of
+            // making a second account with the login or stopping the request with a failed query. Its new
+            // object goes again, and the sign-in continues with the account the other request created
+            if ( !expUserLoginIntegrity::storeUser( $user ) )
+            {
+                $contentObject->purge();
+                $existing = eZUser::fetchByName( $login );
+                eZDebug::writeWarning( 'Another request created the account of this LDAP login at the same time; using it', __METHOD__ );
+                return $existing instanceof eZUser ? $existing : false;
+            }
+        }
+        else
+        {
+            $user->store();
+        }
 
         $debugArray = array( 'Updating user data',
                              'createNewUser' => $createNewUser,
