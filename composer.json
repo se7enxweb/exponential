@@ -148,6 +148,9 @@
         ]
     },
     "extra": {
+        "branch-alias": {
+            "dev-main": "6.0.x-dev"
+        },
         "symfony-app-dir": "app",
         "symfony-bin-dir": "bin",
         "symfony-var-dir": "var",
