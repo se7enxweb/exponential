@@ -578,11 +578,21 @@ Documentation for Ibexa DXP: [doc.ibexa.co/en/latest/](https://doc.ibexa.co/en/l
 
 Ibexa DXP Developer Portal: [developers.ibexa.co](https://developers.ibexa.co/)
 
+# What is Exponential Platform DXP?
+
+**Exponential Platform DXP** is a free, open-source Digital Experience Platform built on the Symfony framework, the community continuation of the eZ Platform and Ibexa OSS line maintained by 7x. 
+
+Exponential Platform DXP gives organizations one place to create, manage and deliver content across websites, apps and channels. Editors work with structured content types they define themselves, in many languages and across several sites from one installation, with drafts, version history, approval workflows and fine-grained permissions for every role. Pages are put together visually with layouts and reusable blocks, while developers build on standard Symfony tools, Twig templates and REST and GraphQL APIs to run a classic website, a headless content hub, or both. Because it keeps the proven content model of its predecessors and runs on current PHP, it suits teams who want an enterprise-grade, vendor-independent CMS without license fees, whether they are starting fresh or moving an existing eZ Publish or Exponential site forward.
+
+Exponential Platform DXP features improvements not found in Ibexa DXP OSS, one feature for example our groundbreaking SQLite Database Driver and Framework Support allowing users to easily host read-only sites without requiring a dedicated database server. Exponential Project, the Exponential Foundation support the open source community directly as a part of our daily routine and work ethic and promotes the community users support needs conversely there is no open source community with Ibexa only a tightly closed source business relationship to be found in Ibexa DXP from Ibexa.
 
 # License
 
-Exponential is GNU GPL licensed. You can no longer choose between the GNU GPL and the eZ Systems' eZ Publish Professional License. The GNU GPL gives you the right to use, modify and redistribute Exponential under certain conditions. The GNU GPL license is distributed with the software, see the file LICENSE. It is also available at http://www.gnu.org/licenses/gpl.txt
+Exponential is GNU GPLv2 licensed. You can no longer choose between the GNU GPLv2-or-later and the eZ Systems' eZ Publish Professional Licenses. The GNU GPLv2 gives you the right to use, modify and redistribute Exponential under certain conditions. The GNU GPLv2 license is distributed with the software, see the file LICENSE. It is also available at [https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt)
+
 
 Using Exponential under the terms of the GNU GPL is free of charge.
 
-The Professional License is no longer available. This effectively makes Exponential GNU GPL ONLY.
+The Professional License is no longer available. 
+
+This effectively makes Exponential GNU GPLv2-or-later ONLY.
