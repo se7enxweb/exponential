@@ -459,7 +459,7 @@ class expLoveStack
             }
         }
         if ( !$findings )
-            $findings[] = self::finding( 'ini.setting', 'LoveStack-only settings', self::STATUS_CLEAR, 'none in settings/override or the siteaccesses' );
+            $findings[] = self::finding( 'ini.setting', 'LoveStack-only settings', self::STATUS_CLEAR, 'none in settings/override, the siteaccesses or the extensions' );
         return $findings;
     }
 
@@ -482,7 +482,8 @@ class expLoveStack
     }
 
     /**
-     * The files of one INI name in settings/override and in each siteaccess, with a scope label.
+     * The files of one INI name in settings/override and in each siteaccess (for settings, also those
+     * of each extension and its siteaccess directories), with a scope label.
      *
      * @param string $iniName e.g. site.ini
      * @param bool $withShipped also settings/<name> itself (for ActiveExtensions[])
@@ -495,6 +496,17 @@ class expLoveStack
         $dirs = array( 'settings/override' => 'settings/override' );
         foreach ( (array)glob( $this->root . '/settings/siteaccess/*', GLOB_ONLYDIR ) as $dir )
             $dirs['settings/siteaccess/' . basename( $dir )] = 'siteaccess ' . basename( $dir );
+        if ( !$withShipped )
+        {
+            // the settings an extension brings, and those of its siteaccess directories
+            foreach ( (array)glob( $this->root . '/extension/*/settings', GLOB_ONLYDIR ) as $dir )
+            {
+                $extension = basename( dirname( $dir ) );
+                $dirs['extension/' . $extension . '/settings'] = 'extension ' . $extension;
+                foreach ( (array)glob( $dir . '/siteaccess/*', GLOB_ONLYDIR ) as $siteaccessDir )
+                    $dirs['extension/' . $extension . '/settings/siteaccess/' . basename( $siteaccessDir )] = 'extension ' . $extension . ', siteaccess ' . basename( $siteaccessDir );
+            }
+        }
         foreach ( $dirs as $dir => $scope )
         {
             foreach ( $suffixes as $suffix )

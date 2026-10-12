@@ -186,6 +186,23 @@ class expLoveStackCheckTest extends PHPUnit\Framework\TestCase
         $this->assertTrue( expLoveStack::needsAttention( $all ) );
     }
 
+    public function testSettingsOfExtensionsAreRead()
+    {
+        mkdir( $this->dir . '/extension/mysite/settings/siteaccess/site', 0777, true );
+        file_put_contents( $this->dir . '/extension/mysite/settings/site.ini.append.php', "<?php /*\n[Session]\nSameSite=Lax\n*/ ?>\n" );
+        file_put_contents( $this->dir . '/extension/mysite/settings/siteaccess/site/menu.ini.append.php', "<?php /*\n[Leftmenu_my]\nPolicyList_edit_profile[]=user/selfedit\n*/ ?>\n" );
+        $sqlite = expLoveStackFixture::create( $this->dir . '/exponential.db', false );
+        $check = new expLoveStack( $this->handler( $sqlite ), $this->dir );
+        $details = array();
+        foreach ( $check->findings() as $finding )
+        {
+            if ( $finding['id'] === 'ini.setting' )
+                $details[$finding['label']] = $finding['status'] . ' ' . $finding['detail'];
+        }
+        $this->assertSame( 'found set in extension mysite', $details['site.ini [Session] SameSite'] );
+        $this->assertSame( 'found set in extension mysite, siteaccess site', $details['menu.ini [Leftmenu_my] PolicyList_edit_profile'] );
+    }
+
     public function testParseIniReadsAppendFiles()
     {
         $this->writeLoveStackSettings();
