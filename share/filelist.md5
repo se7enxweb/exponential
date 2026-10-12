@@ -6250,7 +6250,7 @@ c20160e270170e2ef235c0615dc28d9f  lib/ezmath/classes/mathhandlers/ezbcmath.php
 d50e58599b2d6eb78ae243defb06e9ec  lib/ezpdf/classes/class.ezpdf.php
 99db897f848af8ed95a67354e7b650b6  lib/ezpdf/classes/class.ezpdftable.php
 6e58b2dfba0da26ae4e068a64869f6ee  lib/ezpdf/classes/class.pdf.php
-ccbb99622ec772de1abae4c7c366fb0c  lib/ezpdf/classes/ezpdf.php
+5d830fcbb65fdf4e2cdbb93364df59e2  lib/ezpdf/classes/ezpdf.php
 05afa7a4e6700b91ab34a1f648300f4b  lib/ezpdf/classes/eztemplateautoload.php
 1ed26aa7506bc37808b8951ca8168e33  lib/ezpdf/classes/eztruetypefont.php
 c12d684d7bbb4b557ea3131102234d76  lib/ezpdf/classes/fonts/php_Courier-Bold.font
