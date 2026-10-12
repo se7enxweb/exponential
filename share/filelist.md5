@@ -39,7 +39,7 @@ ac2994f58400084582a59ab8b38d8377  bin/linux/doxytag
 c7f87c874a59c2d17a5fe47b40fd3325  bin/mongodb/create_indexes.js
 23b09c03c5fb1122d7f55a89723f0a2f  bin/mongodb/export_mysql.sh
 a9586e3978dfedf84e40af4d9ff7edd6  bin/mongodb/fixup_ndjson.py
-f916c8a57dd6118120e22bd349dddb1c  bin/mongodb/import_all.sh
+236d5d750221b222ee83cd17ee0cb266  bin/mongodb/import_all.sh
 97b3bd6db790ba2f8193ed70104eb119  bin/mongodb/mysql2ndjson.py
 1374ed9d080d58b9372d49d958ba0ed1  bin/mongodb/validate_ndjson.sh
 04ea36d6c950a3853af68f0b8424a2b2  bin/php/accesscheck.php
@@ -3009,7 +3009,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-4cc9fffb87837c87ce7b37d3ac0049f1  doc/changelogs/6.0/6.0.15.md
+b4c654783cde0b0255757aa93e592ad7  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3449,7 +3449,7 @@ afec5a2b80e838f67a095f7657bed36d  doc/features/6.0/platform-nexus-starter.md
 77b6dcb702be5b7cb2f3197dd5c1aef1  doc/features/6.0/platform-sqlite-install.md
 bd00eb2e724c0f4f3612917275e79456  doc/features/6.0/preload-sites-view.md
 7fa66cfaa817deccf7e3293c09e6cb73  doc/features/6.0/publish-without-notification.md
-b6632acc1267422ebe4b2219a0fe2e00  doc/features/6.0/quality-checks.md
+5a0820a0c4e18b8ab27663c9b43cc217  doc/features/6.0/quality-checks.md
 b44b9ac50952ac2e8f16cbb8f32b9b1b  doc/features/6.0/rad-tools.md
 08e9e00824933e2b7737283320b6e967  doc/features/6.0/rebranding-to-exponential.md
 12527c047b3b9350ebd0481dcb338531  doc/features/6.0/remote-services-expservices.md
@@ -4754,7 +4754,7 @@ c1062d494013d680c96c7512ee918ed8  kernel/classes/audit/console/expauditsourcereg
 8cb24defd57484f9aa59934fc7481093  kernel/classes/audit/expaudit.php
 9c334e44176a6cfc7684970fafde7220  kernel/classes/audit/expauditalertrule.php
 6b1471b8c2c558afeee3d921fa52994a  kernel/classes/audit/expauditbuffer.php
-808f32284a9b18a97f0b27b0ae7062d2  kernel/classes/audit/expauditconfig.php
+92f1293e22000818b7ac65a323351c77  kernel/classes/audit/expauditconfig.php
 ebf3b87a6adfdca34f19f196d47cc270  kernel/classes/audit/expauditformathandler.php
 1d2c91acbcac5c2932a213d371ebbdec  kernel/classes/audit/expauditguard.php
 187b8cc3e063acfad1cbbbb4c13ff030  kernel/classes/audit/expauditjson.php
@@ -7092,9 +7092,9 @@ cf79264b76e26d46d385530fc1fc6e93  tests/tests/extension/ezupdate/fixtures/compos
 93560b62a75eb48a157a8f339b6cebfa  tests/tests/extension/ezupdate/fixtures/composer_update_one_update.log
 7a425cdb99ce71ff04e1a65bc1ccd33f  tests/tests/extension/ezupdate/fixtures/probe_composer_location.php
 f04713280a3892277e47fac6ad2dc2fb  tests/tests/extension/syndication/ezSyndicationTest.php
-85166a45c9a93d650668ea278d5628c9  tests/tests/kernel/classes/apikey/ApiKeyLiveTest.php
+60763ffb5de55986611b882076e8d32c  tests/tests/kernel/classes/apikey/ApiKeyLiveTest.php
 80f2b4056adbe4f9240733cdcfd4d5d9  tests/tests/kernel/classes/apikey/ApiKeySchemaSqlTest.php
-246825a7bbb1eb1e964abdfaaeb2f496  tests/tests/kernel/classes/apikey/RestContentPermissionLiveTest.php
+9f90c6f18803323d91118720359180cc  tests/tests/kernel/classes/apikey/RestContentPermissionLiveTest.php
 f1a9d5150dd4377fec1c1db7e0702d4f  tests/tests/kernel/classes/apikey/expApiKeyTest.php
 61aa4888f10928a95ff2bf608bd5217b  tests/tests/kernel/classes/apikey/expRestLiveTestCleanup.php
 80580bf8003967c59876d6359066f6b6  tests/tests/kernel/classes/audit/expAuditAlertsTest.php
@@ -7232,7 +7232,7 @@ d61e47486ee9a916d28189fd4e6aba6d  tests/tests/kernel/classes/eZSiteAccessSitePat
 68d772f3db6a9ae2a865ce3eb3a607e3  tests/tests/kernel/classes/eZSiteAccess_Test.php
 aec17c87e108b370bb8d629a55864026  tests/tests/kernel/classes/eZSiteDataTest.php
 d046fb97bcc75a96538b30760c09dde6  tests/tests/kernel/classes/eZSiteInstallerTest.php
-31279262def09fb16f563fa72f1aef9e  tests/tests/kernel/classes/eZSiteLogReadersTest.php
+68681a05404f6b77f50d54c68586e050  tests/tests/kernel/classes/eZSiteLogReadersTest.php
 568f1e1165db3e325a038c64e9b911aa  tests/tests/kernel/classes/eZSubtreeNotificationRuleTest.php
 d46ed3e78e608bc03a8d009b6250ba0c  tests/tests/kernel/classes/eZURLAliasMLTest.php
 cff81497a83267ad5f42597bb6c66c5c  tests/tests/kernel/classes/eZURLTest.php
@@ -7840,10 +7840,10 @@ f725ee9eb15406052f599712365f5eee  tests/tests/lib/ezdb/ezmysqldb_fk_test.php
 718099f8062692e5235568da46de808e  tests/tests/lib/ezdb/ezpostgresqldb_test.php
 ba55080feee2e4a59cbc8ce872308cfb  tests/tests/lib/ezdb/mongodb/expMongoDBAdapterTest.php
 0776a915c6f47a378acf18d0001d5a29  tests/tests/lib/ezdb/mongodb/expMongoDBDeclaredDefaultTest.php
-b307dfd63335b4813a32196682897dc9  tests/tests/lib/ezdb/mongodb/expMongoDBIntegrationTest.php
+331159e9e546b74cf5be2c0cc4ed748d  tests/tests/lib/ezdb/mongodb/expMongoDBIntegrationTest.php
 eae37bd4076abbb33b0e566f8d816ef8  tests/tests/lib/ezdb/mongodb/expMongoDBWhereTextTest.php
 5e300d37634d8c8feaced169687fed0f  tests/tests/lib/ezdb/mongodb/sevenxMongoDBAdapterTest.php
-fb53daa907db9aed6712d715150412e5  tests/tests/lib/ezdb/mongodb/sevenxMongoDBIntegrationTest.php
+5270224505ef824263b274220d047878  tests/tests/lib/ezdb/mongodb/sevenxMongoDBIntegrationTest.php
 d69d80eb919a41cca021cb8e9172bd2f  tests/tests/lib/ezdb/mongodb/stubs.php
 ed800401b82ccafb8da7b386047af5cd  tests/tests/lib/ezdb/suite.php
 2c8cd0a84a690c6c737ca90e849b5dc4  tests/tests/lib/ezdbschema/eZDbSchemaGenerationTest.php
