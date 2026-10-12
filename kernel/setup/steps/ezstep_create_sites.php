@@ -473,27 +473,60 @@ class eZStepCreateSites extends eZStepInstaller
     }
 
     /**
-     * The common settings (settings/override) of a new installation with ezoe.ini [EditorSettings]
-     * CustomTagControls=enabled: the Online Editor's controls on custom tags (move, edit, remove, labels).
-     * A site package that sets CustomTagControls itself keeps its value; its other ezoe.ini settings stay.
-     * The custom tag controls are rebuilt from LoveStack (mugoweb/ezpublish-legacy, commit 63334f1681).
+     * The fallback languages of the site with the content's own languages added where they are needed: for every
+     * object in none of the chosen languages and none of the fallbacks so far, its initial language (the first of
+     * its list) is added after them. Content that has a chosen language adds nothing.
      *
-     * @param array $commonSettings list of array( 'name' => ini file, 'settings' => block => setting => value )
-     * @return array the list with the setting
+     * @param string[] $chosen the chosen languages, the primary first
+     * @param string[] $fallback the fallback languages so far (the clean data's language)
+     * @param array[] $objectLanguages per content object its languages, the initial one first
+     *        (eZContentObjectPackageHandler::objectLanguageLists())
+     * @return string[] the fallback languages, each once
      */
-    static function withCustomTagControls( array $commonSettings )
+    static function contentFallbackLanguages( array $chosen, array $fallback, array $objectLanguages )
     {
-        foreach ( $commonSettings as $key => $setting )
+        $fallback = array_values( array_unique( $fallback ) );
+        foreach ( $objectLanguages as $languages )
         {
-            if ( !is_array( $setting ) || !isset( $setting['name'] ) || $setting['name'] !== 'ezoe.ini' )
+            $languages = array_values( array_filter( array_map( 'strval', (array)$languages ), 'strlen' ) );
+            if ( !$languages || array_intersect( $languages, $chosen ) || array_intersect( $languages, $fallback ) )
                 continue;
-            if ( !isset( $setting['settings']['EditorSettings']['CustomTagControls'] ) )
-                $commonSettings[$key]['settings']['EditorSettings']['CustomTagControls'] = 'enabled';
-            return $commonSettings;
+            $fallback[] = $languages[0];
         }
-        $commonSettings[] = array( 'name' => 'ezoe.ini',
-                                   'settings' => array( 'EditorSettings' => array( 'CustomTagControls' => 'enabled' ) ) );
-        return $commonSettings;
+        return $fallback;
+    }
+
+    /**
+     * The languages of every content object the site package's required packages install (those of install type
+     * "install"), read from the packages: one list per object, its initial language first. Empty when the site
+     * package is not there.
+     *
+     * @param string $sitePackageName
+     * @return array[]
+     */
+    static function contentObjectLanguageLists( $sitePackageName )
+    {
+        $sitePackage = $sitePackageName ? eZPackage::fetch( $sitePackageName, false, false, false ) : false;
+        if ( !is_object( $sitePackage ) )
+            return array();
+        $dependencies = $sitePackage->attribute( 'dependencies' );
+        $handler = eZPackage::packageHandler( 'ezcontentobject' );
+        if ( !is_object( $handler ) || !method_exists( $handler, 'objectLanguageLists' ) )
+            return array();
+        $lists = array();
+        foreach ( isset( $dependencies['requires'] ) ? (array)$dependencies['requires'] : array() as $require )
+        {
+            if ( !isset( $require['type'] ) || $require['type'] != 'ezpackage' )
+                continue;
+            $package = eZPackage::fetch( $require['name'], false, false, false );
+            if ( !is_object( $package ) || $package->attribute( 'install_type' ) != 'install' )
+                continue;
+            // installItemsList( $type ) also returns the items of other types: filtered here
+            foreach ( $package->installItemsList() as $item )
+                if ( isset( $item['type'] ) && $item['type'] == 'ezcontentobject' )
+                    $lists = array_merge( $lists, $handler->objectLanguageLists( $package, $item ) );
+        }
+        return $lists;
     }
 
     /**
@@ -996,6 +1029,15 @@ class eZStepCreateSites extends eZStepInstaller
         $cleanDataLanguageCode = eZStepInstaller::CLEAN_DATA_LANGUAGE;
         $fallbackLanguageCodes = in_array( $cleanDataLanguageCode, $prioritizedLanguages )
                                  ? array() : array( $cleanDataLanguageCode );
+        // The same for the content the site package installs, when no language map was chosen (the kickstarter
+        // and exp:install have no package language step, so the content comes in in its own languages): an
+        // object in none of the chosen languages needs its language as a fallback. The CJW starter content is
+        // in ger-DE, with eng-US translations of a fifth of it; installed with eng-US alone, every lookup of the
+        // rest missed: the image paths of the import logged "pathWithNames() failed to fetch path" (125 times),
+        // the site package's steps found the starter's nodes "not installed", and the site could not show them.
+        if ( !isset( $this->PersistenceList['package_info']['language_map'] ) )
+            $fallbackLanguageCodes = self::contentFallbackLanguages( $prioritizedLanguages, $fallbackLanguageCodes,
+                                                                     self::contentObjectLanguageLists( $this->chosenSitePackage() ) );
         $siteLanguageList = array_merge( $prioritizedLanguages, $fallbackLanguageCodes );
 
         // The clean data's language is the first one the database gets. Its
@@ -1320,6 +1362,17 @@ language_locale='eng-GB'";
             if ( !$primaryLanguageObj )
             {
                 $primaryLanguageObj = eZContentLanguage::addLanguage( $languageObject->localeCode(), $languageObject->internationalLanguageName() );
+            }
+        }
+        // ... and the fallback languages: one the import would create only when it reaches the first object in
+        // it is not in the list set below, and every lookup of that content during the import still misses
+        foreach ( $fallbackLanguageCodes as $fallbackLanguageCode )
+        {
+            if ( !eZContentLanguage::fetchByLocale( $fallbackLanguageCode ) )
+            {
+                $fallbackLocale = eZLocale::create( $fallbackLanguageCode );
+                eZContentLanguage::addLanguage( $fallbackLanguageCode,
+                                                $fallbackLocale ? $fallbackLocale->internationalLanguageName() : $fallbackLanguageCode );
             }
         }
         eZContentLanguage::expireCache();
@@ -1665,10 +1718,6 @@ language_locale='eng-GB'";
             $extraAdminSettings[] = array( 'name' => 'contentstructuremenu.ini',
                                            'settings' => array( 'TreeMenu' => array( 'Dynamic' => 'enabled' ) ) );
         }
-
-        // New installations show the Online Editor's custom tag controls (ezoe.ini [EditorSettings]
-        // CustomTagControls); the shipped default stays disabled, so an upgraded site keeps its editor as it was
-        $extraCommonSettings = self::withCustomTagControls( $extraCommonSettings );
 
         $resultArray['common_settings'] = $extraCommonSettings;
 

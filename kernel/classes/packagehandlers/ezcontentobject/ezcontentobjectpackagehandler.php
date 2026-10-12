@@ -163,6 +163,56 @@ class eZContentObjectPackageHandler extends eZPackageHandler
         }
     }
 
+    /**
+     * The languages of every content object of an install item, read from the package without installing anything:
+     * per object its initial language first, then the languages of its translations. Unlike
+     * explainInstallItem(), which lists up to MAX_LISTED_OBJECTS objects, every object is read. The setup uses it
+     * to find content in none of the chosen languages (eZStepCreateSites::contentFallbackLanguages()).
+     *
+     * @param eZPackage $package
+     * @param array $installItem an install item of type ezcontentobject (eZPackage::installItemsList())
+     * @return array[] one list of locales per object
+     */
+    function objectLanguageLists( $package, $installItem )
+    {
+        $this->Package = $package;
+        if ( empty( $installItem['filename'] ) )
+            return array();
+        $filepath = $package->path() . '/' . ( !empty( $installItem['sub-directory'] ) ? $installItem['sub-directory'] . '/' : '' ) .
+                    $installItem['filename'] . '.xml';
+        $dom = $package->fetchDOMFromFile( $filepath );
+        if ( !$dom )
+            return array();
+        $content = $dom->documentElement;
+        $listNode = $content->getElementsByTagName( 'object-list' )->item( 0 );
+        if ( $listNode )
+            $objectNodes = $listNode->getElementsByTagName( 'object' );
+        else
+        {
+            $listNode = $content->getElementsByTagName( 'object-files-list' )->item( 0 );
+            $objectNodes = $listNode ? $listNode->getElementsByTagName( 'object-file' ) : array();
+        }
+        $lists = array();
+        foreach ( $objectNodes as $objectNode )
+        {
+            $realObjectNode = $this->getRealObjectNode( $objectNode );
+            if ( !$realObjectNode )
+                continue;
+            $languages = array();
+            $initial = (string)$realObjectNode->getAttribute( 'initial_language' );
+            if ( $initial !== '' )
+                $languages[] = $initial;
+            foreach ( $realObjectNode->getElementsByTagName( 'object-translation' ) as $translation )
+            {
+                $language = (string)$translation->getAttribute( 'language' );
+                if ( $language !== '' && !in_array( $language, $languages, true ) )
+                    $languages[] = $language;
+            }
+            $lists[] = $languages;
+        }
+        return $lists;
+    }
+
     /*!
      Add Node list to ezcontentobject package handler.
 
