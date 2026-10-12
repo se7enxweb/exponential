@@ -1047,6 +1047,7 @@ return array(
       'expExtensionWizard'                                           => 'kernel/setup/expextensionwizard.php',
       'expFileConsistencyReport'                                     => 'kernel/private/classes/expfileconsistencyreport.php',
       'expHandlerWizard'                                             => 'kernel/setup/exphandlerwizard.php',
+      'expImageUploadValidator'                                      => 'kernel/classes/expimageuploadvalidator.php',
       'expInfo'                                                      => 'lib/ezutils/classes/expinfo.php',
       'expIniAction'                                                 => 'kernel/classes/ini/actions/expiniaction.php',
       'expIniActionActions'                                          => 'kernel/classes/ini/actions/expiniactionactions.php',

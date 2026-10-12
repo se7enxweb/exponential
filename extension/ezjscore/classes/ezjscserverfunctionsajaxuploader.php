@@ -8,6 +8,8 @@
  * @version //autogentag//
  * @package ezjscore
  * @subpackage ajaxuploader
+ *
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit c8e45fced7), Copyright (C) Mugo Web, GPL v2
  */
 
 /**
@@ -93,6 +95,29 @@ class ezjscServerFunctionsAjaxUploader extends ezjscServerFunctions
     }
 
     /**
+     * Why the uploaded $file cannot become an object of $class, or false when it can: an image
+     * attribute takes only a file whose type by content is on image.ini [ImageUploadSettings]
+     * AllowedMIMETypes[] (see eZContentUpload::imageUploadError()).
+     *
+     * @param eZContentClass $class
+     * @param eZHTTPFile $file
+     * @return string|false
+     */
+    private static function imageUploadError( eZContentClass $class, eZHTTPFile $file )
+    {
+        $uploadINI = eZINI::instance( 'upload.ini' );
+        $group = $class->attribute( 'identifier' ) . '_ClassSettings';
+        $fileAttribute = $uploadINI->hasVariable( $group, 'FileAttribute' ) ? $uploadINI->variable( $group, 'FileAttribute' ) : false;
+        $dataMap = $class->dataMap();
+        $upload = new eZContentUpload();
+        $fileAttribute = $upload->findHTTPFileAttribute( $dataMap, $fileAttribute );
+        if ( !$fileAttribute )
+            return false;
+        return eZContentUpload::imageUploadError( $dataMap, $fileAttribute,
+                                                  $file->attribute( 'filename' ), $file->attribute( 'original_filename' ) );
+    }
+
+    /**
      * Stores the uploaded file and returns the location form. The result of
      * this method is always json encoded.
      *
@@ -108,6 +133,13 @@ class ezjscServerFunctionsAjaxUploader extends ezjscServerFunctions
             $mimeData = $fileInfo['mime'];
             $file = $fileInfo['file'];
             $class = $handler->getContentClass( $mimeData );
+
+            // An image is checked by its content before the file is stored
+            $imageError = self::imageUploadError( $class, $file );
+            if ( $imageError !== false )
+            {
+                throw new RuntimeException( $imageError );
+            }
 
             if ( $file->store( false, $mimeData['suffix'] ) === false )
             {

@@ -58965,6 +58965,10 @@ wenn Sie die Option &quot;%3&quot; von &quot;%4&quot; ausgewählt haben </transl
         <translation>Die Beschreibung sollte kürzer als 155 Zeichen sein.</translation>
     </message>
     <message>
+        <source>Images of the type %1 are not accepted.</source>
+        <translation>Bilder vom Typ %1 werden nicht angenommen.</translation>
+    </message>
+    <message>
         <source>Name on creditcard not given</source>
         <translation>Der Name auf der Kreditkarte fehlt.</translation>
     </message>

@@ -52152,6 +52152,10 @@ your account.</translation>
         <translation>Birthday</translation>
     </message>
     <message>
+        <source>Images of the type %1 are not accepted.</source>
+        <translation>Images of the type %1 are not accepted.</translation>
+    </message>
+    <message>
         <source>Cancer</source>
         <translation>Cancer</translation>
     </message>

@@ -7,6 +7,8 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package kernel
+ *
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit c8e45fced7), Copyright (C) Mugo Web, GPL v2
  */
 
 /*!
@@ -324,7 +326,7 @@ class eZImageType extends eZDataType
              }
 
              // The name says image; the content must say so as well
-             $imageError = self::imageFileError( $imagefile );
+             $imageError = self::imageFileError( $imagefile, $_FILES[$httpFileName]['name'] );
              if ( $imageError !== false )
              {
                  $contentObjectAttribute->setValidationError( $imageError );
@@ -369,20 +371,34 @@ class eZImageType extends eZDataType
      * Why the file at $filePath is not an image this datatype stores, as a
      * translated validation message, or false when it is one.
      *
-     * The content decides, not the name: it must be a raster image PHP can read
+     * The content decides, not the name: its type read by content (finfo) must
+     * be on image.ini [ImageUploadSettings] AllowedMIMETypes[] (see
+     * expImageUploadValidator), it must be a raster image PHP can read
      * the size of (so no SVG, HTML, script or archive named .jpg), must not
      * start with markup a browser could sniff as HTML, and must not have more
      * pixels than [ImageSettings] MaxImagePixels in image.ini (default 100
      * million), which the image converters would need all at once in memory.
      *
      * @param string $filePath
+     * @param string|null $originalName the uploaded file's name, used only when PHP can read the type neither by content nor by getimagesize()
      * @return string|false
      */
-    static function imageFileError( $filePath )
+    static function imageFileError( $filePath, $originalName = null )
     {
         $invalid = ezpI18n::tr( 'kernel/classes/datatypes', 'A valid image file is required.' );
         if ( !is_string( $filePath ) || $filePath === '' || strpos( $filePath, "\0" ) !== false || !is_file( $filePath ) || !filesize( $filePath ) )
             return $invalid;
+
+        $check = expImageUploadValidator::validate( $filePath, $originalName );
+        if ( !$check['valid'] )
+        {
+            if ( $check['mime'] !== '' && strpos( $check['mime'], 'image/' ) === 0 )
+            {
+                return ezpI18n::tr( 'kernel/classes/datatypes', 'Images of the type %1 are not accepted.', null,
+                                    array( '%1' => $check['mime'] ) );
+            }
+            return $invalid;
+        }
 
         $info = @getimagesize( $filePath );
         if ( !is_array( $info ) || empty( $info[0] ) || empty( $info[1] ) || !isset( $info['mime'] ) ||
@@ -498,7 +514,7 @@ class eZImageType extends eZDataType
             // Validation checked the upload; checked again here for callers that
             // store without validating, since this is where the file is kept
             if ( $httpFile && self::validateImageFileExtension( $httpFile->attribute( 'original_filename' ) ) &&
-                 self::imageFileError( $httpFile->attribute( 'filename' ) ) === false )
+                 self::imageFileError( $httpFile->attribute( 'filename' ), $httpFile->attribute( 'original_filename' ) ) === false )
             {
                 $imageAltText = $imageHandler->attribute( 'alternative_text' );
 
@@ -548,7 +564,7 @@ class eZImageType extends eZDataType
         // The upload module and the WebDAV/REST inserts skip the edit form's
         // validation: the same content check applies here
         $imageError = self::validateImageFileExtension( $httpFile->attribute( 'original_filename' ) ) ?
-                      self::imageFileError( $httpFile->attribute( 'filename' ) ) :
+                      self::imageFileError( $httpFile->attribute( 'filename' ), $httpFile->attribute( 'original_filename' ) ) :
                       ezpI18n::tr( 'kernel/classes/datatypes', 'A valid image file is required.' );
         if ( $imageError !== false )
         {

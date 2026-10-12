@@ -46,6 +46,12 @@ Expected: `404` three times. If you keep your own copy of `.htaccess`, merge the
 
 **Files and directories the site writes.** Logs, caches and storage are created as open as `site.ini [FileSettings]` and the code ask (0777/0666 by default). On a live server set the limits in `config.php`, `define( 'EZP_DIR_MODE_MAX', 0750 );` and `define( 'EZP_FILE_MODE_MAX', 0640 );`, so nothing new is readable or writable by other accounts, and narrow what exists once: [limits for the modes of new files and directories](../bc/6.0/file-modes.md).
 
+**Uploaded images.** An image is accepted by what the file contains, not by its name: PHP's fileinfo reads the type and it must be on `image.ini [ImageUploadSettings] AllowedMIMETypes[]` (JPEG, PNG, GIF, WebP, AVIF, TIFF and BMP as shipped; SVG is never stored as an image, a browser runs script from it). This applies to the edit form, the upload dialogs, the AJAX uploader and the package wizard's thumbnails, and a refused file is not stored. Check that fileinfo is loaded in the web server's PHP as well as on the command line (`php -m | grep fileinfo`); without it the older getimagesize() check applies and the log says so once. Read the list with:
+
+```bash
+./console exp:ini get 'image.ini/ImageUploadSettings/AllowedMIMETypes' --allow-root-user
+```
+
 **The first administrator password.** When a kickstart file sets no password, or a well-known one such as `publish`, the installer makes a random 20-character password, prints it once and writes it to `var/log/initial-admin-password` (readable by the owner only). `exp:install --random-password` makes a 24-character one and shows it once. Sign in, change it, and delete that file. Forgot it later:
 
 ```bash

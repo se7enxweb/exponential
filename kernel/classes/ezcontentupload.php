@@ -7,6 +7,8 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package kernel
+ *
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit c8e45fced7), Copyright (C) Mugo Web, GPL v2
  */
 
 /*!
@@ -346,6 +348,14 @@ class eZContentUpload
             return false;
         }
 
+        // An image is checked by its content before any object is created for it
+        $imageError = self::imageUploadError( $dataMap, $fileAttribute, $filePath, $nameString );
+        if ( $imageError !== false )
+        {
+            $result['errors'][] = array( 'description' => $imageError );
+            return false;
+        }
+
         $nameAttribute = $uploadINI->variable( $iniGroup, 'NameAttribute' );
         if ( !$nameAttribute )
         {
@@ -630,6 +640,14 @@ class eZContentUpload
             $result['errors'][] =
                 array( 'description' => ezpI18n::tr( 'kernel/content/upload',
                                                 'No matching file attribute found, cannot create content object without this.' ) );
+            return false;
+        }
+
+        // An image is checked by its content before any object is created for it
+        $imageError = self::imageUploadError( $dataMap, $fileAttribute, $file->attribute( 'filename' ), $file->attribute( 'original_filename' ) );
+        if ( $imageError !== false )
+        {
+            $result['errors'][] = array( 'description' => $imageError );
             return false;
         }
 
@@ -922,6 +940,29 @@ class eZContentUpload
         $mimeData = eZMimeType::findByFileContents( $file->attribute( "original_filename" ) );
 
         return true;
+    }
+
+    /**
+     * Why the file at $filePath cannot be stored in the file attribute $fileAttribute of the
+     * class data map $dataMap, as a translated message, or false when it can. Only an image
+     * attribute (ezimage) checks anything: the file's type by content must be on the image.ini
+     * [ImageUploadSettings] AllowedMIMETypes[] list and the file must be an image (see
+     * eZImageType::imageFileError()).
+     *
+     * @param array $dataMap class attributes by identifier
+     * @param string $fileAttribute
+     * @param string $filePath
+     * @param string|null $originalName
+     * @return string|false
+     */
+    static function imageUploadError( $dataMap, $fileAttribute, $filePath, $originalName = null )
+    {
+        if ( !isset( $dataMap[$fileAttribute] ) || !is_object( $dataMap[$fileAttribute] ) ||
+             $dataMap[$fileAttribute]->attribute( 'data_type_string' ) !== eZImageType::DATA_TYPE_STRING )
+        {
+            return false;
+        }
+        return eZImageType::imageFileError( $filePath, is_string( $originalName ) && $originalName !== '' ? $originalName : null );
     }
 
     /*!

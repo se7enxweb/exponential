@@ -50530,6 +50530,10 @@ your account.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Images of the type %1 are not accepted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Wrong closing tag : &amp;lt;/%1&amp;gt;.</source>
         <translation type="unfinished"></translation>
     </message>
