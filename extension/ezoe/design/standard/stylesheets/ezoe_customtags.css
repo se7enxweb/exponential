@@ -1,0 +1,82 @@
+/*
+ * Custom tag controls of the Online Editor (ezoe.ini [EditorSettings] CustomTagControls=enabled):
+ * labels on block custom tags inside the editor and the control bar on a focused custom tag.
+ * Every rule is scoped to .ezoe-custom-tag-labels (the editor's body) or .ezoe-custom-tag-controls (the bar),
+ * so the file changes nothing while the controls are disabled.
+ *
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 63334f1681), Copyright (C) Mugo Web, GPL v2
+ * (mugo_editor.css and the custom_tags_controls plugin, Copyright 2014, Mugo Web).
+ */
+
+/* the label: the tag's name above its content; the text is written per tag by the editor ("::before" content) */
+.ezoe-custom-tag-labels div.ezoeItemCustomTag
+{
+    position: relative;
+    padding-top: 1.9em;
+    min-height: 2em;
+}
+.ezoe-custom-tag-labels div.ezoeItemCustomTag::before
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 2px 8px;
+    background-color: #3a5a80;
+    color: #fff;
+    font: bold 11px/1.4 sans-serif;
+    white-space: nowrap;
+    pointer-events: none;
+}
+/* the control bar on the focused custom tag (TinyMCE 3: in the page above the editor's frame) */
+.ezoe-custom-tag-controls
+{
+    position: absolute;
+    z-index: 100;
+    display: flex;
+    gap: 2px;
+    padding: 2px;
+    background: #fff;
+    border: 1px solid #3a5a80;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba( 0, 0, 0, .25 );
+}
+.ezoe-custom-tag-controls[hidden]
+{
+    display: none;
+}
+.ezoe-custom-tag-controls button
+{
+    min-width: 26px;
+    height: 24px;
+    margin: 0;
+    padding: 0 5px;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    background: transparent;
+    color: #1f3550;
+    font: 14px/1 sans-serif;
+    cursor: pointer;
+}
+.ezoe-custom-tag-controls button:hover,
+.ezoe-custom-tag-controls button:focus-visible
+{
+    border-color: #3a5a80;
+    background: #e8eef6;
+    outline: none;
+}
+.ezoe-custom-tag-controls button:disabled
+{
+    opacity: .4;
+    cursor: default;
+}
+
+/* the example image in the custom tag dialog */
+.ezoe-custom-tag-preview
+{
+    margin: .5em 0;
+}
+.ezoe-custom-tag-preview img
+{
+    max-width: 100%;
+    border: 1px solid #ccc;
+}

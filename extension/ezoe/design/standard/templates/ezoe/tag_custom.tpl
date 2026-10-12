@@ -206,6 +206,13 @@ function filterOutCustomBlockTags( n )
 {foreach $class_list as $custom_tag => $text}
         {set $tag_is_inline = cond( is_set($custom_inline_tags[$custom_tag]), $custom_inline_tags[$custom_tag], 'false' )}
         {include uri="design:ezoe/customattributes.tpl" tag_name=$custom_tag hide=$custom_tag_name|ne( $custom_tag ) extra_attribute=array('inline', $tag_is_inline, array('image', 'true')|contains( $tag_is_inline ))}
+        {* the example image of the tag, images/editor/custom_tags_thumbs/<name>.png in a design (LoveStack 63334f1681) *}
+        {if and( is_set( $custom_tag_previews[$custom_tag] ), $custom_tag_previews[$custom_tag] )}
+        <div class="ezoe-custom-tag-preview" id="{$custom_tag|wash}_preview"{if $custom_tag_name|ne( $custom_tag )} style="display: none;"{/if}>
+            <h3>{'Example'|i18n('design/standard/ezoe')}</h3>
+            <img src="{$custom_tag_previews[$custom_tag]}" alt="{'Example of the tag %tag_name'|i18n('design/standard/ezoe', '', hash( '%tag_name', $text ))|wash}" />
+        </div>
+        {/if}
 {/foreach}
 
         <div class="block">

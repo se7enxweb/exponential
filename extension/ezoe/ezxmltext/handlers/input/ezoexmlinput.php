@@ -96,6 +96,7 @@ class eZOEXMLInput extends eZXMLInputHandler
                       'xml_tag_alias',
                       'json_xml_tag_alias',
                       'custom_tag_definitions',
+                      'custom_tag_controls_enabled',
                       'engine_switch_enabled',
                       'engine',
                       'engine_switch_choices',
@@ -135,6 +136,8 @@ class eZOEXMLInput extends eZXMLInputHandler
             $attr =  json_encode( self::getXmlTagAliasList() );
         else if ( $name === 'custom_tag_definitions' )
             $attr = self::getCustomTagDefinitions();
+        else if ( $name === 'custom_tag_controls_enabled' )
+            $attr = self::customTagControlsEnabled();
         else if ( $name === 'engine_switch_enabled' )
             $attr = self::engineSwitchEnabled();
         else if ( $name === 'engine' )
@@ -272,13 +275,18 @@ class eZOEXMLInput extends eZXMLInputHandler
      * does for the TinyMCE 3 dialogs, for use by the TinyMCE 8 ezcustomtag plugin.
      *
      * @static
-     * @return array List of hashes with name, title, inline (true|false|'image'), icon and attributes
+     * hidden: in [CustomTagSettings] IsHidden[], offered only for a tag of that name already in the text.
+     * preview: customTagPreview(), the URL of the example image or ''.
+     *
+     * @return array List of hashes with name, title, inline (true|false|'image'), icon, hidden, preview and attributes
      */
     public static function getCustomTagDefinitions()
     {
         $contentIni    = eZINI::instance( 'content.ini' );
         $descriptions  = $contentIni->hasVariable( 'CustomTagSettings', 'CustomTagsDescription' )
                        ? $contentIni->variable( 'CustomTagSettings', 'CustomTagsDescription' ) : array();
+        $hidden      = self::hiddenCustomTags( $contentIni );
+        $designBases = eZTemplateDesignResource::allDesignBases();
         $definitions = array();
 
         foreach ( array_unique( $contentIni->variable( 'CustomTagSettings', 'AvailableCustomTags' ) ) as $tagName )
@@ -289,6 +297,8 @@ class eZOEXMLInput extends eZXMLInputHandler
                 'title'      => isset( $descriptions[$tagName] ) ? $descriptions[$tagName] : $tagName,
                 'inline'     => is_string( $inline ) ? 'image' : $inline,
                 'icon'       => is_string( $inline ) ? self::getDesignFile( $inline ) : '',
+                'hidden'     => in_array( (string)$tagName, $hidden, true ),
+                'preview'    => self::customTagPreview( $tagName, $designBases ),
                 'attributes' => self::getCustomAttributeDefinitions( $tagName ),
             );
             $definitions[] = $definition;
@@ -2123,6 +2133,80 @@ class eZOEXMLInput extends eZXMLInputHandler
             }
         }
         return false;
+    }
+
+    /**
+     * The custom tags content.ini [CustomTagSettings] IsHidden[] names: they keep working and rendering where
+     * they are in the text, but the editors do not offer them for new tags (TinyMCE 3, TinyMCE 8, Tiptap).
+     * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit e21ef46691), Copyright (C) Mugo Web, GPL v2
+     *
+     * @param eZINI|null $ini content.ini, the current siteaccess's when not given
+     * @return string[] tag names, each once, empty entries ignored
+     */
+    public static function hiddenCustomTags( $ini = null )
+    {
+        $ini = $ini instanceof eZINI ? $ini : eZINI::instance( 'content.ini' );
+        if ( !$ini->hasVariable( 'CustomTagSettings', 'IsHidden' ) )
+            return array();
+        return array_values( array_unique( array_filter( array_map( 'trim', (array)$ini->variable( 'CustomTagSettings', 'IsHidden' ) ), 'strlen' ) ) );
+    }
+
+    /**
+     * The custom tags an editor's tag list offers: $tags without the hidden ones, except $current, the tag being
+     * edited, so the dialog of a hidden tag that is already in the text still shows its name.
+     *
+     * @param array $tags tag name => description (the order is kept)
+     * @param string $current the custom tag being edited, '' for a new one
+     * @param string[]|null $hidden hiddenCustomTags() when not given
+     * @return array tag name => description
+     */
+    public static function offeredCustomTags( array $tags, $current = '', $hidden = null )
+    {
+        $hidden = is_array( $hidden ) ? $hidden : self::hiddenCustomTags();
+        $offered = array();
+        foreach ( $tags as $name => $description )
+        {
+            if ( (string)$name !== (string)$current && in_array( (string)$name, $hidden, true ) )
+                continue;
+            $offered[$name] = $description;
+        }
+        return $offered;
+    }
+
+    /**
+     * The URL of the example image a custom tag's dialog shows: images/editor/custom_tags_thumbs/<name>.png in
+     * any active design, '' when no design has one.
+     * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 63334f1681), Copyright (C) Mugo Web, GPL v2
+     *
+     * @param string $name custom tag name
+     * @param array|null $designBases eZTemplateDesignResource::allDesignBases() when not given
+     * @return string
+     */
+    public static function customTagPreview( $name, $designBases = null )
+    {
+        $name = (string)$name;
+        if ( $name === '' || !preg_match( '/^[A-Za-z0-9_\-]+$/', $name ) )
+            return '';
+        $designBases = is_array( $designBases ) ? $designBases : eZTemplateDesignResource::allDesignBases();
+        $triedFiles = array();
+        $match =eZTemplateDesignResource::fileMatch( $designBases, '', 'images/editor/custom_tags_thumbs/' . $name . '.png', $triedFiles );
+        if ( $match === false )
+            return '';
+        return htmlspecialchars( self::getServerURL() . '/' . $match['path'], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
+    }
+
+    /**
+     * Whether the editors show the custom tag controls: buttons on the focused custom tag to move it up or down,
+     * edit and remove it, with keyboard shortcuts, and a label with the tag's name on every block custom tag.
+     * ezoe.ini [EditorSettings] CustomTagControls=enabled; disabled when not set.
+     *
+     * @return bool
+     */
+    public static function customTagControlsEnabled()
+    {
+        $ini = eZINI::instance( 'ezoe.ini' );
+        return $ini->hasVariable( 'EditorSettings', 'CustomTagControls' )
+            && $ini->variable( 'EditorSettings', 'CustomTagControls' ) === 'enabled';
     }
 
     /*

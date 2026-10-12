@@ -18,6 +18,12 @@
 #IsInline[externalimage]=image
 ## Lets you specify 22x22 icon to use on custom image tag if it doesn't have 'image_url' attribute
 #InlineImageIconPath[mashup]=images/tango/image-x-generic22.png
+## Custom tags the editors do not offer for new tags (TinyMCE 3, TinyMCE 8 and Tiptap). A hidden tag that is
+## already in a text stays there, is rendered as before and can still be edited and removed. None by default.
+## (From LoveStack, commit e21ef46691, with thanks to Mugo Web.)
+#IsHidden[]
+#IsHidden[]=sub
+## An example image for a custom tag's dialog: images/editor/custom_tags_thumbs/<name>.png in one of your designs.
 
 
 

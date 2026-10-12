@@ -11,6 +11,10 @@ DesignExtensions[]=ezoe
 # You can use a variable <skin> anywhere in the path / filename
 # this [optional]variable is taken from ezoe.ini
 EditorCSSFileList[]=skins/<skin>/content.css
+# labels and focus outline of custom tags; acts only with ezoe.ini [EditorSettings] CustomTagControls=enabled
+EditorCSSFileList[]=ezoe_customtags.css
+# the example image of a custom tag in its dialog
+EditorDialogCSSFileList[]=ezoe_customtags.css
 
 
 ## Here is an example for appending your own css to the editor

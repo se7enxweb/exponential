@@ -544,6 +544,14 @@ var eZOEPopupUtils = {
             else
                 el.hide();
         });
+        // the example image of the chosen custom tag (images/editor/custom_tags_thumbs/<name>.png), if it has one
+        jQuery('div.ezoe-custom-tag-preview').each(function( i, el ){
+            el = jQuery( el );
+            if ( el.attr('id') === node[0].value + '_preview' )
+                el.show();
+            else
+                el.hide();
+        });
     },
 
     /**

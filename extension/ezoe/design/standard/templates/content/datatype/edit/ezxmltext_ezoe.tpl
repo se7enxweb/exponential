@@ -67,6 +67,15 @@
         {set $content_css_list = $content_css_list|append( $css|explode( '<skin>' )|implode( $skin ) )}
     {/foreach}
 
+    {* ezoe.ini [EditorSettings] CustomTagControls=enabled: the custom tag controls plugin and its bar's stylesheet *}
+    {def $custom_tag_controls = $input_handler.custom_tag_controls_enabled}
+    {if and( $custom_tag_controls, $plugin_list|contains( 'exp_customtag_controls' )|not )}
+        {set $plugin_list = $plugin_list|append( 'exp_customtag_controls' )}
+    {/if}
+    {if $custom_tag_controls}
+        {ezcss_require( 'ezoe_customtags.css' )}
+    {/if}
+
     {foreach $plugin_list as $plugin}
         {set $dependency_js_list = $dependency_js_list|append( concat( 'plugins/', $plugin|trim, '/editor_plugin.js' ))}
     {/foreach}
@@ -110,6 +119,9 @@
         inline_styles : false,
         tab_focus : ':prev,:next',
         theme_ez_xml_alias_list : {$input_handler.json_xml_tag_alias},
+        {if $custom_tag_controls}
+        ez_custom_tags : {json_encode( $input_handler.custom_tag_definitions )},
+        {/if}
         theme_ez_editor_css : '{ezcssfiles( $editor_css_list, 3, true() )|implode(',')}',
         theme_ez_content_css : '{ezcssfiles( $content_css_list, 3, true() )|implode(',')}',
         theme_ez_statusbar_open_dialog : {cond( ezini('EditorSettings', 'TagPathOpenDialog', 'ezoe.ini',,true())|eq('enabled'), 'true', 'false' )},

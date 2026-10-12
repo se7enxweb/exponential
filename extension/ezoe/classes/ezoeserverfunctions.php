@@ -374,6 +374,14 @@ class ezoeServerFunctions extends ezjscServerFunctions
                 'bookmarks_top_level' => ezpI18n::tr( 'design/admin/content/bookmark', 'Top level' ),
                 'empty_bookmarks_result' => ezpI18n::tr( 'design/standard/content/view', 'You have no bookmarks')
             ),
+            // plugin exp_customtag_controls (ezoe.ini [EditorSettings] CustomTagControls)
+            'customtagcontrols' => array(
+                'bar' => ezpI18n::tr( 'design/standard/ezoe', 'Custom tag controls' ),
+                'up' => ezpI18n::tr( 'design/standard/ezoe', 'Move the custom tag up' ),
+                'down' => ezpI18n::tr( 'design/standard/ezoe', 'Move the custom tag down' ),
+                'edit' => ezpI18n::tr( 'design/standard/ezoe', 'Edit the custom tag' ),
+                'remove' => ezpI18n::tr( 'design/standard/ezoe', 'Remove the custom tag' )
+            ),
             'searchreplace_dlg' => array(
                 'searchnext_desc' => ezpI18n::tr('design/standard/ezoe/searchreplace', "Find again"),
                 'notfound' => ezpI18n::tr('design/standard/ezoe/searchreplace', "The search has been completed. The search string could not be found."),

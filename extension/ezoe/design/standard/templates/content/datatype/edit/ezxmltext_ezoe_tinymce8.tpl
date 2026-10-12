@@ -147,6 +147,16 @@ var eZOe8GlobalSettings = {ldelim}
     {rdelim},
     ez_general_definitions: {json_encode( $input_handler.general_definitions )},
     ez_custom_tags: {json_encode( $input_handler.custom_tag_definitions )},
+    ez_custom_tag_controls: {ldelim}
+        enabled: {cond( $input_handler.custom_tag_controls_enabled, 'true', 'false' )},
+        texts: {ldelim}
+            up: {json_encode( 'Move the custom tag up'|i18n('design/standard/ezoe') )},
+            down: {json_encode( 'Move the custom tag down'|i18n('design/standard/ezoe') )},
+            edit: {json_encode( 'Edit the custom tag'|i18n('design/standard/ezoe') )},
+            remove: {json_encode( 'Remove the custom tag'|i18n('design/standard/ezoe') )},
+            example: {json_encode( 'Example'|i18n('design/standard/ezoe') )}
+        {rdelim}
+    {rdelim},
     ez_link_classes: {json_encode( $link_classes )},
     ez_link_view_modes: {json_encode( ezini( 'link', 'AvailableViewModes', 'content.ini' ) )},
     ez_custom_attribute_style_map: {json_encode( ezini( 'EditorSettings', 'CustomAttributeStyleMap', 'ezoe.ini',,true() ) )},

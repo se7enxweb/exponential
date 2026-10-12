@@ -473,6 +473,30 @@ class eZStepCreateSites extends eZStepInstaller
     }
 
     /**
+     * The common settings (settings/override) of a new installation with ezoe.ini [EditorSettings]
+     * CustomTagControls=enabled: the Online Editor's controls on custom tags (move, edit, remove, labels).
+     * A site package that sets CustomTagControls itself keeps its value; its other ezoe.ini settings stay.
+     * The custom tag controls are rebuilt from LoveStack (mugoweb/ezpublish-legacy, commit 63334f1681).
+     *
+     * @param array $commonSettings list of array( 'name' => ini file, 'settings' => block => setting => value )
+     * @return array the list with the setting
+     */
+    static function withCustomTagControls( array $commonSettings )
+    {
+        foreach ( $commonSettings as $key => $setting )
+        {
+            if ( !is_array( $setting ) || !isset( $setting['name'] ) || $setting['name'] !== 'ezoe.ini' )
+                continue;
+            if ( !isset( $setting['settings']['EditorSettings']['CustomTagControls'] ) )
+                $commonSettings[$key]['settings']['EditorSettings']['CustomTagControls'] = 'enabled';
+            return $commonSettings;
+        }
+        $commonSettings[] = array( 'name' => 'ezoe.ini',
+                                   'settings' => array( 'EditorSettings' => array( 'CustomTagControls' => 'enabled' ) ) );
+        return $commonSettings;
+    }
+
+    /**
      * The node view tabs of the editor siteaccess (admininterface.ini [WindowControlsSettings] AdditionalTabs[]): the
      * editor's own list, then the tabs its access extensions declare in their own settings. The editor's list
      * starts with an empty AdditionalTabs[], and an access extension's settings are read before the siteaccess's,
@@ -1641,6 +1665,10 @@ language_locale='eng-GB'";
             $extraAdminSettings[] = array( 'name' => 'contentstructuremenu.ini',
                                            'settings' => array( 'TreeMenu' => array( 'Dynamic' => 'enabled' ) ) );
         }
+
+        // New installations show the Online Editor's custom tag controls (ezoe.ini [EditorSettings]
+        // CustomTagControls); the shipped default stays disabled, so an upgraded site keeps its editor as it was
+        $extraCommonSettings = self::withCustomTagControls( $extraCommonSettings );
 
         $resultArray['common_settings'] = $extraCommonSettings;
 

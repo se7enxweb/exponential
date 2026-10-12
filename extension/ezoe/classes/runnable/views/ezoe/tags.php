@@ -2,6 +2,7 @@
 /**
  * The code of extension/ezoe/modules/ezoe/tags.php, moved into a class (#207 stage 1). The file extension/ezoe/modules/ezoe/tags.php is one call to it.
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commits e21ef46691 and 63334f1681), Copyright (C) Mugo Web, GPL v2
  */
 
 namespace Exponential\View\Extension\Ezoe\Ezoe
@@ -92,6 +93,7 @@ class Tags extends \Exponential\Runnable\ModuleView
         // class list with description
         $classList  = array();
         $customInlineList = array();
+        $customTagPreviews = array();
         $contentIni = \eZINI::instance( 'content.ini' );
 
         if ( $tagName === 'custom' )
@@ -112,6 +114,16 @@ class Tags extends \Exponential\Runnable\ModuleView
                     $classList[$tag] = $customTagDescription[$tag];
                 else
                     $classList[$tag] = $tag;
+            }
+            // custom tags in [CustomTagSettings] IsHidden[] are not offered, the one being edited stays in the list
+            // Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit e21ef46691), Copyright (C) Mugo Web, GPL v2
+            $classList = \eZOEXMLInput::offeredCustomTags( $classList, $customTagName );
+
+            // the example image of each tag, images/editor/custom_tags_thumbs/<name>.png (63334f1681)
+            $designBases = \eZTemplateDesignResource::allDesignBases();
+            foreach ( array_keys( $classList ) as $tag )
+            {
+                $customTagPreviews[$tag] = \eZOEXMLInput::customTagPreview( $tag, $designBases );
             }
         }
         else
@@ -145,6 +157,7 @@ class Tags extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'custom_tag_name', $customTagName );
 
         $tpl->setVariable( 'custom_inline_tags', $customInlineList );
+        $tpl->setVariable( 'custom_tag_previews', $customTagPreviews );
 
         $tpl->setVariable( 'class_list', $classList );
 

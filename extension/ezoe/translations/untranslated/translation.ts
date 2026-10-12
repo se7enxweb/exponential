@@ -91,6 +91,34 @@
 <context>
     <name>design/standard/ezoe</name>
     <message>
+        <source>Custom tag controls</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move the custom tag up</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move the custom tag down</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit the custom tag</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove the custom tag</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Example</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Example of the tag %tag_name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>this</source>
         <translation type="unfinished"></translation>
     </message>

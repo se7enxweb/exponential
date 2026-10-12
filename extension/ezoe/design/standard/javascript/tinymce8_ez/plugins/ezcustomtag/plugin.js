@@ -12,6 +12,8 @@
  * (content.ini [CustomTagSettings] and [<tag>] CustomAttributes, ezoe_attributes.ini).
  *
  * Licensed under the GNU General Public License v2.0, like the rest of ezoe.
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commits e21ef46691 and 63334f1681),
+ * Copyright (C) Mugo Web, GPL v2
  */
 (function () {
     'use strict';
@@ -34,6 +36,8 @@
 
         editor.options.register( 'ez_custom_tags', { processor: 'array', default: [] } );
         editor.options.register( 'ez_custom_attribute_style_map', { processor: 'object', default: {} } );
+        // ezoe.ini [EditorSettings] CustomTagControls: { enabled: bool, texts: { up, down, edit, remove, example } }
+        editor.options.register( 'ez_custom_tag_controls', { processor: 'object', default: { enabled: false, texts: {} } } );
 
         var t = function ( text, value ) {
             var s = editor.translate( text );
@@ -119,7 +123,12 @@
         };
 
         var openDialog = function ( target ) {
-            var list = definitions();
+            // content.ini [CustomTagSettings] IsHidden[]: not offered, except the hidden tag being edited
+            // (LoveStack commit e21ef46691, Copyright (C) Mugo Web, GPL v2)
+            var targetName = target ? getTagName( target ) : '';
+            var list = definitions().filter( function ( d ) {
+                return !d.hidden || d.name === targetName;
+            } );
             if ( !list.length )
             {
                 editor.notificationManager.open( { text: t( 'No custom tags are configured in content.ini [CustomTagSettings].' ), type: 'warning', timeout: 5000 } );
@@ -155,6 +164,10 @@
                     items = items.concat( visible.map( buildField ) );
                 else
                     items.push( { type: 'htmlpanel', html: '<p>' + escapeHtml( t( 'This tag has no attributes.' ) ) + '</p>' } );
+                // the example image, images/editor/custom_tags_thumbs/<name>.png (LoveStack commit 63334f1681)
+                if ( definition.preview )
+                    items.push( { type: 'htmlpanel', html: '<div class="ezoe-custom-tag-preview"><p><strong>' + escapeHtml( controlText( 'example', 'Example' ) ) + '</strong></p>' +
+                                  '<img src="' + escapeHtml( definition.preview ) + '" alt="" style="max-width: 100%;" /></div>' } );
 
                 return {
                     title: target ? t( 'Edit custom tag' ) : t( 'Insert custom tag' ),
@@ -233,6 +246,137 @@
 
         editor.addCommand( 'ezCustomTag', openForSelection );
 
+        // ------------------------------------------------------------------ custom tag controls
+        // Buttons on the focused custom tag to move it up or down, edit and remove it, keyboard shortcuts for the
+        // same, Backspace in an empty block custom tag removes it, and a label with the name on every block tag.
+        // Rebuilt from the custom_tags_controls plugin of LoveStack (commit 63334f1681, plugin
+        // Copyright 2014, Mugo Web), with thanks to Mugo Web.
+        var controls = editor.options.get( 'ez_custom_tag_controls' ) || {};
+
+        function controlText( key, fallback ) {
+            var texts = ( editor.options.get( 'ez_custom_tag_controls' ) || {} ).texts || {};
+            return texts[key] || t( fallback );
+        }
+
+        // the block custom tag the selection is in (moving applies to block tags only)
+        var getBlockCustomTag = function () {
+            var el = getCustomTag( editor.selection.getNode() );
+            return el && el.nodeName === 'DIV' && el.parentNode ? el : null;
+        };
+
+        var siblingBlock = function ( el, forward ) {
+            var n = forward ? el.nextSibling : el.previousSibling;
+            while ( n && n.nodeType !== 1 )
+                n = forward ? n.nextSibling : n.previousSibling;
+            return n;
+        };
+
+        var placeCaretIn = function ( el ) {
+            editor.selection.select( el, true );
+            editor.selection.collapse( true );
+        };
+
+        var moveCustomTag = function ( forward ) {
+            var el = getBlockCustomTag(), other = el && siblingBlock( el, forward );
+            if ( !other )
+                return false;
+            editor.undoManager.transact( function () {
+                if ( forward )
+                {
+                    el.parentNode.insertBefore( other, el );
+                    // keep a paragraph after a tag that became the last one, to go on writing after it
+                    if ( !siblingBlock( el, true ) && el.parentNode === editor.getBody() )
+                        editor.dom.insertAfter( editor.dom.create( 'p', {}, '<br data-mce-bogus="1">' ), el );
+                }
+                else
+                    el.parentNode.insertBefore( el, other );
+            } );
+            placeCaretIn( el );
+            editor.nodeChanged();
+            return true;
+        };
+
+        // an empty block custom tag (no text, no image or embed in it) is replaced by an empty paragraph
+        var removeEmptyCustomTag = function () {
+            var el = getBlockCustomTag();
+            if ( !el || ( el.textContent || '' ).replace( /[\s ​]+/g, '' ) !== '' || el.querySelector( 'img,table,[id^=eZObject_],[id^=eZNode_]' ) )
+                return false;
+            var p = editor.dom.create( 'p', {}, '<br data-mce-bogus="1">' );
+            editor.undoManager.transact( function () {
+                el.parentNode.replaceChild( p, el );
+            } );
+            placeCaretIn( p );
+            editor.nodeChanged();
+            return true;
+        };
+
+        if ( controls.enabled )
+        {
+            var canMove = function ( forward ) {
+                return function ( api ) {
+                    var handler = function () {
+                        var el = getBlockCustomTag();
+                        api.setEnabled( !!( el && siblingBlock( el, forward ) ) );
+                    };
+                    handler();
+                    editor.on( 'NodeChange', handler );
+                    return function () {
+                        editor.off( 'NodeChange', handler );
+                    };
+                };
+            };
+            editor.ui.registry.addButton( 'ezcustomtagup', {
+                icon: 'chevron-up',
+                tooltip: controlText( 'up', 'Move the custom tag up' ) + ' (Alt+Shift+Up)',
+                onAction: function () { moveCustomTag( false ); },
+                onSetup: canMove( false )
+            } );
+            editor.ui.registry.addButton( 'ezcustomtagdown', {
+                icon: 'chevron-down',
+                tooltip: controlText( 'down', 'Move the custom tag down' ) + ' (Alt+Shift+Down)',
+                onAction: function () { moveCustomTag( true ); },
+                onSetup: canMove( true )
+            } );
+
+            editor.on( 'keydown', function ( e ) {
+                if ( e.altKey && e.shiftKey && !e.ctrlKey && !e.metaKey )
+                {
+                    var done = false;
+                    if ( e.key === 'ArrowUp' )
+                        done = moveCustomTag( false );
+                    else if ( e.key === 'ArrowDown' )
+                        done = moveCustomTag( true );
+                    else if ( ( e.key === 'E' || e.key === 'e' || e.code === 'KeyE' ) && getCustomTag( editor.selection.getNode() ) )
+                    {
+                        openForSelection();
+                        done = true;
+                    }
+                    else if ( ( e.key === 'Delete' || e.key === 'Backspace' ) && getCustomTag( editor.selection.getNode() ) )
+                    {
+                        removeCustomTag();
+                        done = true;
+                    }
+                    if ( done )
+                        e.preventDefault();
+                }
+                else if ( e.key === 'Backspace' && !e.altKey && !e.ctrlKey && !e.metaKey && removeEmptyCustomTag() )
+                    e.preventDefault();
+            } );
+
+            // labels: the name (CustomTagsDescription) of each block custom tag above it, from ezoe_customtags.css's
+            // look; the rules are written into the editor's document so no site has to list its tags in a stylesheet
+            editor.on( 'init', function () {
+                var css = '';
+                editor.options.get( 'ez_custom_tags' ).forEach( function ( d ) {
+                    if ( !d.inline && /^[A-Za-z0-9_\-]+$/.test( d.name ) )
+                        css += 'div.ezoeItemCustomTag.' + d.name + '::before { content: "' + String( d.title || d.name ).replace( /["\\\n\r]/g, ' ' ) + '"; }\n';
+                } );
+                editor.getBody().classList.add( 'ezoe-custom-tag-labels' );
+                if ( css )
+                    editor.dom.addStyle( css );
+            } );
+        }
+
         editor.ui.registry.addToggleButton( 'ezcustomtag', {
             icon: 'template',
             tooltip: t( 'Custom tag' ),
@@ -270,7 +414,7 @@
             predicate: function ( node ) {
                 return !!getCustomTag( node ) && !editor.dom.getParent( node, '[id^=eZObject_],[id^=eZNode_]', editor.getBody() );
             },
-            items: 'ezcustomtagedit ezcustomtagremove',
+            items: controls.enabled ? 'ezcustomtagup ezcustomtagdown | ezcustomtagedit ezcustomtagremove' : 'ezcustomtagedit ezcustomtagremove',
             position: 'node',
             scope: 'node'
         } );

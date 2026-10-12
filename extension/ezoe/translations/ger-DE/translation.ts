@@ -91,6 +91,34 @@
 <context>
     <name>design/standard/ezoe</name>
     <message>
+        <source>Custom tag controls</source>
+        <translation>Steuerung des benutzerdefinierten Tags</translation>
+    </message>
+    <message>
+        <source>Move the custom tag up</source>
+        <translation>Benutzerdefiniertes Tag nach oben verschieben</translation>
+    </message>
+    <message>
+        <source>Move the custom tag down</source>
+        <translation>Benutzerdefiniertes Tag nach unten verschieben</translation>
+    </message>
+    <message>
+        <source>Edit the custom tag</source>
+        <translation>Benutzerdefiniertes Tag bearbeiten</translation>
+    </message>
+    <message>
+        <source>Remove the custom tag</source>
+        <translation>Benutzerdefiniertes Tag entfernen</translation>
+    </message>
+    <message>
+        <source>Example</source>
+        <translation>Beispiel</translation>
+    </message>
+    <message>
+        <source>Example of the tag %tag_name</source>
+        <translation>Beispiel für das Tag %tag_name</translation>
+    </message>
+    <message>
         <source>TinyMCE 3</source>
         <translation>TinyMCE 3</translation>
     </message>

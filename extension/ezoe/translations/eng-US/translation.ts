@@ -91,6 +91,34 @@
 <context>
     <name>design/standard/ezoe</name>
     <message>
+        <source>Custom tag controls</source>
+        <translation>Custom tag controls</translation>
+    </message>
+    <message>
+        <source>Move the custom tag up</source>
+        <translation>Move the custom tag up</translation>
+    </message>
+    <message>
+        <source>Move the custom tag down</source>
+        <translation>Move the custom tag down</translation>
+    </message>
+    <message>
+        <source>Edit the custom tag</source>
+        <translation>Edit the custom tag</translation>
+    </message>
+    <message>
+        <source>Remove the custom tag</source>
+        <translation>Remove the custom tag</translation>
+    </message>
+    <message>
+        <source>Example</source>
+        <translation>Example</translation>
+    </message>
+    <message>
+        <source>Example of the tag %tag_name</source>
+        <translation>Example of the tag %tag_name</translation>
+    </message>
+    <message>
         <source>TinyMCE 3</source>
         <translation>TinyMCE 3</translation>
     </message>
