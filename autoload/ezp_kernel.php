@@ -1173,6 +1173,7 @@ return array(
       'expUnactivatedUsers'                                          => 'kernel/classes/user/expunactivatedusers.php',
       'expUserAccountOverview'                                       => 'kernel/classes/user/expuseraccountoverview.php',
       'expUserActivation'                                            => 'kernel/classes/user/expuseractivation.php',
+      'expUserLoginIntegrity'                                        => 'kernel/classes/expuserloginintegrity.php',
       'expVelocity'                                                  => 'kernel/classes/expvelocity.php',
       'expVelocityConfig'                                            => 'kernel/classes/expvelocityconfig.php',
       'expVelocityConfigLayout'                                      => 'kernel/classes/expvelocityconfiglayout.php',
