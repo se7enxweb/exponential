@@ -69,7 +69,8 @@ class expContentJobAuditExport implements expContentJobType
         foreach ( isset( $params['filters'] ) ? (array)$params['filters'] : array() as $k => $v )
             if ( is_string( $k ) && isset( expAuditConsole::FILTERS[$k] ) && is_scalar( $v ) && trim( (string)$v ) !== '' )
                 $raw[$k] = trim( (string)$v );
-        unset( $raw['offset'], $raw['limit'] );
+        // only the console's filters are kept: expAuditConsole::FILTERS names no paging key (offset, limit), so a
+        // job never starts in the middle of its records
         if ( isset( $raw['channel'] ) && !expAuditConsole::channelAllowed( $raw['channel'], $channels ) )
             throw new expContentJobException( self::tr( 'You may not read the audit channel %1.', array( '%1' => $raw['channel'] ) ) );
         $total = expAuditExportStream::total( $raw, $channels );
