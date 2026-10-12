@@ -139,8 +139,20 @@ class Info extends \Exponential\Runnable\ModuleView
         // engine; the others of this installation that happen to be running as well
         // -- a test setup -- are only named, in one line. Under Apache, php-fpm or a
         // server exp:velocity does not know, there is no such box.
+        // The box asks the serving engine and each other one about their processes: the process table is read once.
         \eZDebug::accumulatorStart( 'setup_info_velocity_server_info', 'System information', 'velocityServerInfo' );
-        $this->velocityServerInfo( $velocityBrand, $view, $engine, $velocityEngineNames, $tpl );
+        $reuseProcessTable = class_exists( 'expVelocity' ) && method_exists( 'expVelocity', 'reuseProcessTable' );
+        if ( $reuseProcessTable )
+            \expVelocity::reuseProcessTable( true );
+        try
+        {
+            $this->velocityServerInfo( $velocityBrand, $view, $engine, $velocityEngineNames, $tpl );
+        }
+        finally
+        {
+            if ( $reuseProcessTable )
+                \expVelocity::reuseProcessTable( false );
+        }
         \eZDebug::accumulatorStop( 'setup_info_velocity_server_info' );
 
         // The response cache in front of this installation, when a Qbix server runs it.
@@ -943,7 +955,9 @@ class Info extends \Exponential\Runnable\ModuleView
             if ( !$httpsPort && $servingEngine === 'qbix' && \eZSys::isSSLNow() )
                 $httpsPort = (int)\eZINI::instance( 'velocity.ini' )->variable( 'ServerSettings', 'HTTPSPort' );
             $configured = in_array( $servedPort, array_filter( array( $velocity->httpPort(), $httpsPort ) ), true );
-            $status = $configured ? $velocity->status() : array();
+            // Without the health check: it would send this same server a request while this one holds a worker,
+            // and the box shows the processes only.
+            $status = $configured ? $velocity->status( false ) : array();
 
             $bind = $velocity->bindHost();
             $local = in_array( $bind, array( '', '127.0.0.1', 'localhost', '::1', '[::1]' ), true );

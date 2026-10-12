@@ -599,11 +599,12 @@ class expVelocityPHPServer extends expVelocity
     }
 
     /**
+     * @param bool $probe false: without the health check (expVelocity::status())
      * @return array
      */
-    public function status()
+    public function status( $probe = true )
     {
-        $status = parent::status();
+        $status = parent::status( $probe );
         $workers = (int)$this->setting( 'ServerSettings', 'Workers', 4 );
         return array_merge( $status, array(
             'server'       => 'php',

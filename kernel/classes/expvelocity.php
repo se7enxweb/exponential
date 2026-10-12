@@ -2277,6 +2277,40 @@ class expVelocity
      */
     protected function processTable()
     {
+        // Read once while reuseProcessTable() is on (Setup > System information asks about the serving engine and
+        // every other one: about a thousand processes, two files each, every time). Off, as for everything that
+        // waits for processes to start and stop, it is read anew.
+        if ( self::$processTableReuse && is_array( self::$processTableMemo ) )
+            return self::$processTableMemo;
+        $table = $this->readProcessTable();
+        self::$processTableMemo = self::$processTableReuse ? $table : null;
+        return $table;
+    }
+
+    /** @var bool whether processTable() is read once and reused (reuseProcessTable()) */
+    protected static $processTableReuse = false;
+    /** @var array|null the table read while reuse is on */
+    protected static $processTableMemo = null;
+
+    /**
+     * Reads the process table once and reuses it until switched off again: for a page that asks several engines
+     * whether they run, and never for code that waits for a process to start or stop.
+     *
+     * @param bool $reuse
+     */
+    public static function reuseProcessTable( $reuse )
+    {
+        self::$processTableReuse = (bool)$reuse;
+        self::$processTableMemo = null;
+    }
+
+    /**
+     * processTable() as read now.
+     *
+     * @return array
+     */
+    protected function readProcessTable()
+    {
         $table = array();
         if ( is_dir( '/proc/self' ) )
         {
@@ -3470,19 +3504,26 @@ class expVelocity
     /**
      * What the server is doing.
      *
+     * @param bool $probe false: without the health check, which sends the server a request (and waits for it, up
+     *        to twice five seconds when it is busy) and reads the kernel state of every process: 'answering' is
+     *        then null, 'problems' empty and 'state' "running" for processes that exist. For a page that only shows
+     *        the processes (Setup > System information, answered by that same server).
      * @return array
      */
-    public function status()
+    public function status( $probe = true )
     {
         $pids = $this->processIDs();
         $ports = $this->listeningPorts();
-        $health = $pids ? $this->health( $pids ) : array( 'answering' => false, 'problems' => array() );
+        if ( !$probe )
+            $health = array( 'answering' => $pids ? null : false, 'problems' => array() );
+        else
+            $health = $pids ? $this->health( $pids ) : array( 'answering' => false, 'problems' => array() );
 
         return array(
             // Processes of this installation exist. Whether they make a
             // server is 'state': running only when it answers a request.
             'running'   => $pids ? true : false,
-            'state'     => !$pids ? 'stopped' : ( $health['answering'] ? 'running' : 'not answering' ),
+            'state'     => !$pids ? 'stopped' : ( $health['answering'] || $health['answering'] === null ? 'running' : 'not answering' ),
             'answering' => $health['answering'],
             'problems'  => $health['problems'],
             'parent'    => $this->parentID(),

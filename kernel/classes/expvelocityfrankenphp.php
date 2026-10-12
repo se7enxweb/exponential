@@ -1422,11 +1422,12 @@ class expVelocityFrankenPHP extends expVelocity
      * What the server is doing: the keys every engine reports, plus what only
      * this one knows.
      *
+     * @param bool $probe false: without the health check and the admin request (expVelocity::status())
      * @return array
      */
-    public function status()
+    public function status( $probe = true )
     {
-        $status = parent::status();
+        $status = parent::status( $probe );
         $pids = $status['pids'];
         $threads = 0;
         foreach ( $pids as $pid )
@@ -1452,7 +1453,7 @@ class expVelocityFrankenPHP extends expVelocity
             'threads'        => $threads,
             'caddyfile'      => $this->caddyfile(),
             'admin'          => $this->adminAddress(),
-            'adminReachable' => $pids ? $this->adminRequest( 'GET', '/config/' ) === 200 : false,
+            'adminReachable' => $pids ? ( $probe ? $this->adminRequest( 'GET', '/config/' ) === 200 : null ) : false,
             'notes'          => $this->ignoredSettings(),
         ) );
     }
