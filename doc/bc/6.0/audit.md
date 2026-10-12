@@ -1283,9 +1283,9 @@ Measured on the reference installation (channel `content`, 26,889 records up to 
 | | before | after |
 |---|---|---|
 | Apache + PHP-FPM (:443), first byte / total | 0.75 s / 38.3 s | 0.45 s / 3.3 s |
-| Velocity (:8080), first byte / total | 504 after 30.6 s | see below |
+| Velocity (:8080), first byte / total | 504 after 30.6 s | 0.4–1.3 s / 3.4–4.1 s |
 | reading and formatting only (CLI), time / peak memory | 36.4 s / 130 MB | 2.9 s / 22 MB |
-| background job (6 batches of 5,000) | – | 4 s, peak 18.9 MB |
+| background job (6 batches of 5,000) | – | 4 s, peak 18.9 MB; 7–9 s from the click to the file on the export page |
 
 The output is byte for byte the same as before for a CSV of 528 records (`ai` channel, with its source columns), of
 4,390 records as CSV, JSON lines and JSON, and of the 26,889 records; the background file of the same filter too.
@@ -2205,7 +2205,7 @@ The acceptance tests of the design (Z9), run at the end of the work on 2026-10-0
 
 ### 9.1 Tests
 
-`php vendor/bin/phpunit tests/tests/kernel/classes/audit/`: **95 tests, 5 768 assertions, OK** (one marked risky:
+`php vendor/bin/phpunit tests/tests/kernel/classes/audit/`: **115 tests, 6 015 assertions, OK** (2026-10-12, run as root: as the site user the settings-write tests cannot create their directory under a root-owned `var/tmp/ini-tests`, and the journald test needs root; earlier runs: one marked risky:
 `testWriteFailureNeverThrows` deliberately replaces the error handler to provoke a write failure).
 
 | Test class | Tests | Covers |
