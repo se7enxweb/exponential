@@ -8679,7 +8679,7 @@ $schema = array (
           0 => 'contentobject_id',
         ),
       ),
-      'ezuser_login' =>
+      'ezuser_login' => 
       array (
         'type' => 'unique',
         'fields' => 

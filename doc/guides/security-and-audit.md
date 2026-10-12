@@ -234,6 +234,47 @@ Expected: an administrator sees every card on their own page; an editor without 
 `design/admin4/templates/user/edit.tpl` (the same file in `design/admin`), its style `user/exp_style.tpl`, and the
 overview `expUserAccountOverview` (tested in `tests/tests/kernel/classes/user/expUserAccountOverviewTest.php`).
 
+## 7. One account per login (2 minutes)
+
+Signing in looks an account up by its login without regard to case, so two accounts with the same login (or with
+logins that differ only in case) cannot both be used, and which one answers is a matter of chance. A new
+installation has a unique index on `ezuser.login`, so the database itself keeps logins apart. An upgraded site keeps
+the plain index it had until an administrator adds the unique one; the database update does not, because it would
+fail on a site that has duplicates.
+
+1. List the duplicates (changes nothing):
+
+   ```bash
+   ./console exp:user-login-check --allow-root-user
+   ```
+
+   It shows the database engine, the index on `ezuser.login` and one line per login that more than one account has,
+   with the content object ids of those accounts. Logins are shortened to their first letter and length;
+   `--show-logins` shows them in full, `--json` gives the same as JSON. A line ending in "differ only in case" is
+   accepted by the index of PostgreSQL, SQLite, Oracle and MongoDB, which compare bytes, but is still the same
+   login to Exponential. On MySQL and MariaDB the column's collation decides; as shipped it ignores case and
+   trailing spaces.
+2. Resolve each line by hand: open the accounts by their ids (`/content/view/full/<node>` or **Users**), give one a
+   new login on its edit page, or remove an account nobody uses.
+3. Add the unique index once the report is clean:
+
+   ```bash
+   ./console exp:user-login-check --fix-index --allow-root-user
+   ```
+
+   It refuses, and changes nothing, while any duplicate is listed. Exit codes: 0 clean (or index added), 1
+   duplicates found (or index refused), 2 error.
+
+Expected: "PASS: every login belongs to one account" and, after `--fix-index`, "Login index ezuser_login (unique)".
+
+What editors and integrations notice: the edit form already refused a login another account has; now an account
+draft, a package import, the `login|email|hash|type|enabled` string of the content API and a first LDAP sign-in
+refuse it too, and two requests creating the same account at once end with one account. A first LDAP sign-in that
+loses that race signs in with the account the other request created. For developers:
+`expUserLoginIntegrity::duplicates()`, `indexStatus()`, `addUniqueIndex()`, `loginTakenBy()` and `storeUser()`
+(`kernel/classes/expuserloginintegrity.php`, tested in `tests/tests/kernel/classes/expUserLoginIntegrityTest.php`).
+The idea and the draft handling come from LoveStack (Mugo Web, commit 826e1d4647), with thanks.
+
 ## Checklist
 
 - [ ] Five security headers present, dot files and PHP files answer 404

@@ -181,6 +181,17 @@ Until `trashed_by` and `trashed_via` exist the kernel keeps writing `trashed.jso
 
 Check the version row (same query as at the top; expected `6.0.15stable` after this file).
 
+A new installation has a unique index on `ezuser.login`; the file does not add it on an upgrade, since it fails on a
+database where two accounts share a login. List such logins and add the index when there are none (the command
+refuses otherwise, and changes nothing):
+
+```bash
+./console exp:user-login-check --allow-root-user
+./console exp:user-login-check --fix-index --allow-root-user
+```
+
+See [one account per login](security-and-audit.md#7-one-account-per-login-2-minutes).
+
 ### C3. Read the checklist of each period you pass
 
 The upgrade notes are written per period. Read every one between your version and today; each opens with a
