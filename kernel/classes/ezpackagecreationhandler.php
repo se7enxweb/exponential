@@ -7,6 +7,8 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package kernel
+ *
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 04b3b6985a), Copyright (C) Mugo Web, GPL v2
  */
 
 /*!
@@ -977,7 +979,7 @@ class eZPackageCreationHandler
         if ( !eZHTTPFile::canFetch( 'PackageThumbnail' ) )
             return true;
 
-        if ( !self::httpFileIsImage( ezpI18n::tr( 'kernel/package', 'PackageThumbnail' ), $errorList ) )
+        if ( !self::httpFileIsImage( 'PackageThumbnail', $errorList ) )
         {
             return false;
         }
@@ -997,11 +999,16 @@ class eZPackageCreationHandler
     }
 
     /*!
-     Check if the HTTP file is an image.
+     Check if the HTTP file is an image: named as one and, by its content, of a type on image.ini
+     [ImageUploadSettings] AllowedMIMETypes[] (see expImageUploadValidator and
+     eZImageType::imageFileError()). A refused file is not stored.
     */
     static function httpFileIsImage( $httpFileName, &$errorList )
     {
-        if ( !isset( $_FILES[$httpFileName] ) || $_FILES[$httpFileName]["tmp_name"] === "" )
+        if ( !isset( $_FILES[$httpFileName] ) || !is_array( $_FILES[$httpFileName] ) ||
+             !isset( $_FILES[$httpFileName]['tmp_name'], $_FILES[$httpFileName]['name'] ) ||
+             !is_string( $_FILES[$httpFileName]['tmp_name'] ) || !is_string( $_FILES[$httpFileName]['name'] ) ||
+             $_FILES[$httpFileName]["tmp_name"] === "" )
         {
             $errorList[] = array( 'field' => $httpFileName,
                                   'description' => ezpI18n::tr( 'kernel/package', 'The file does not exist.' ) );
@@ -1009,7 +1016,7 @@ class eZPackageCreationHandler
         }
 
         $imagefile = $_FILES[$httpFileName]['tmp_name'];
-        if ( !$_FILES[$httpFileName]["size"] )
+        if ( empty( $_FILES[$httpFileName]["size"] ) )
         {
             $errorList[] = array( 'field' => $httpFileName,
                                   'description' => ezpI18n::tr( 'kernel/package', 'The image file must have non-zero size.' ) );
@@ -1017,12 +1024,21 @@ class eZPackageCreationHandler
         }
 
         $mimeType = eZMimeType::findByURL( $_FILES[$httpFileName]['name'] );
-        $nameMimeType = $mimeType['name'];
+        $nameMimeType = isset( $mimeType['name'] ) ? (string)$mimeType['name'] : '';
         $nameMimeTypes = explode("/", $nameMimeType);
         if ( $nameMimeTypes[0] != 'image' )
         {
             $errorList[] = array( 'field' => $httpFileName,
                                   'description' => ezpI18n::tr( 'kernel/package', 'A valid image file is required.' ) );
+            return false;
+        }
+
+        // The name says image; the content must say so as well
+        $imageError = eZImageType::imageFileError( $imagefile, $_FILES[$httpFileName]['name'] );
+        if ( $imageError !== false )
+        {
+            $errorList[] = array( 'field' => $httpFileName,
+                                  'description' => $imageError );
             return false;
         }
 

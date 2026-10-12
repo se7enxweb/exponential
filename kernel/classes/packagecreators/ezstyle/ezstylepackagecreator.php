@@ -7,6 +7,8 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package kernel
+ *
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 04b3b6985a), Copyright (C) Mugo Web, GPL v2
  */
 
 /*!
@@ -227,7 +229,7 @@ class eZStylePackageCreator extends eZPackageCreationHandler
         if ( !eZHTTPFile::canFetch( 'PackageImageFile' ) )
             return true;
 
-        if ( !self::httpFileIsImage( ezpI18n::tr( 'kernel/package', 'PackageImageFile' ), $errorList ) )
+        if ( !self::httpFileIsImage( 'PackageImageFile', $errorList ) )
         {
             return false;
         }

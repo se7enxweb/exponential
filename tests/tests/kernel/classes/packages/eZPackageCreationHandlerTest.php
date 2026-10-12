@@ -200,9 +200,31 @@ class eZPackageCreationHandlerTest extends PHPUnit\Framework\TestCase
         $_FILES = array( 'Thumb' => array( 'name' => 'a.txt', 'tmp_name' => 'x', 'size' => 5 ) );
         $this->assertFalse( eZPackageCreationHandler::httpFileIsImage( 'Thumb', $errors ) );
         $this->assertCount( 3, $errors );
-        $_FILES = array( 'Thumb' => array( 'name' => 'a.png', 'tmp_name' => 'x', 'size' => 5 ) );
+
+        // named .png, but not a PNG by content (L06): refused, nothing is stored
+        file_put_contents( "$this->dir/disguised", "<?php phpinfo(); ?>" );
+        $_FILES = array( 'Thumb' => array( 'name' => 'a.png', 'tmp_name' => "$this->dir/disguised", 'size' => 19 ) );
+        $this->assertFalse( eZPackageCreationHandler::httpFileIsImage( 'Thumb', $errors ) );
+        $this->assertCount( 4, $errors );
+        $this->assertSame( 'Thumb', $errors[3]['field'] );
+
+        // an SVG thumbnail is refused as well
+        file_put_contents( "$this->dir/drawing", '<svg xmlns="http://www.w3.org/2000/svg" width="1" height="1"/>' );
+        $_FILES = array( 'Thumb' => array( 'name' => 'a.svg', 'tmp_name' => "$this->dir/drawing", 'size' => 62 ) );
+        $this->assertFalse( eZPackageCreationHandler::httpFileIsImage( 'Thumb', $errors ) );
+        $this->assertCount( 5, $errors );
+
+        // a real PNG passes
+        $image = imagecreatetruecolor( 2, 2 );
+        imagepng( $image, "$this->dir/thumb" );
+        $_FILES = array( 'Thumb' => array( 'name' => 'a.png', 'tmp_name' => "$this->dir/thumb", 'size' => filesize( "$this->dir/thumb" ) ) );
         $this->assertTrue( eZPackageCreationHandler::httpFileIsImage( 'Thumb', $errors ) );
-        $this->assertCount( 3, $errors );
+        $this->assertCount( 5, $errors );
+
+        // a file field posted as an array is no upload
+        $_FILES = array( 'Thumb' => array( 'name' => array( 'a.png' ), 'tmp_name' => array( "$this->dir/thumb" ), 'size' => array( 5 ) ) );
+        $this->assertFalse( eZPackageCreationHandler::httpFileIsImage( 'Thumb', $errors ) );
+        $_FILES = array();
     }
 
     public function testLicenceDocuments()
