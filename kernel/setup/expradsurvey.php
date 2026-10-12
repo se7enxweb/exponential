@@ -108,6 +108,8 @@ class expRADSurvey
         self::$Memo    = null;
         self::$MemoUsed = array();
         self::$MemoDirty = false;
+        self::$Lists = array();
+        self::$ActiveExtensions = null;
     }
 
     /**
@@ -269,6 +271,11 @@ class expRADSurvey
 
         foreach ( $files as $file )
         {
+            // rad.ini declares registries for this survey; what it names (Implements=, in:<class>::...) is read by
+            // registries() and is not a setting of the installation
+            if ( $file['ini'] === 'rad.ini' )
+                continue;
+
             $parsed = self::fileMemo( 'ini', $file['path'], array( __CLASS__, 'parseIni' ) );
 
             foreach ( $parsed as $section => $variables )
@@ -375,10 +382,14 @@ class expRADSurvey
 
         $views    = 0;
         $policies = 0;
+        $limitations = 0;
+        $limitationsBroken = 0;
         foreach ( $modules as $module )
         {
             $views    += count( $module['views'] );
             $policies += count( $module['functions'] );
+            $limitations += count( $module['limitations'] );
+            $limitationsBroken += count( array_filter( $module['limitations'], function ( $l ) { return !$l['ok']; } ) );
         }
 
         self::$Survey = array(
@@ -407,6 +418,8 @@ class expRADSurvey
                 'modules'      => count( $modules ),
                 'views'        => $views,
                 'policies'     => $policies,
+                'limitations'  => $limitations,
+                'limitations_broken' => $limitationsBroken,
                 'callables'    => count( $callables ),
                 'operators'    => count( array_filter( $callables, function ( $c ) { return $c['kind'] === 'operator'; } ) ),
                 'functions'    => count( array_filter( $callables, function ( $c ) { return $c['kind'] === 'function'; } ) ),
@@ -434,22 +447,37 @@ class expRADSurvey
 
         // The registries, entry by entry. Most entries name a class and are points of 'settings' already; the
         // others (a template column, a Handler=<class>::<method> column) are added to the total here, once.
-        $entries = 0;
-        $added   = 0;
-        $broken  = 0;
+        // A registry declared with InTotal=disabled refers to points counted elsewhere: listed, checked, not added.
+        $entries  = 0;
+        $added    = 0;
+        $broken   = 0;
+        $declared = 0;
+        $declaredEntries = 0;
+        $declaredBy = array();
         foreach ( $registries as $key => $registry )
         {
             $notCounted = count( array_filter( $registry['entries'], function ( $e ) { return !$e['counted']; } ) );
+            $inTotal    = !isset( $registry['in_total'] ) || $registry['in_total'];
             self::$Survey['counts']['registry_' . $key]            = count( $registry['entries'] );
-            self::$Survey['counts']['registry_' . $key . '_added'] = $notCounted;
+            self::$Survey['counts']['registry_' . $key . '_added'] = $inTotal ? $notCounted : 0;
+            self::$Survey['counts']['registry_' . $key . '_settings'] = count( $registry['entries'] ) - $notCounted;
             self::$Survey['counts']['registry_' . $key . '_broken'] = count( $registry['broken'] );
             $entries += count( $registry['entries'] );
-            $added   += $notCounted;
+            $added   += $inTotal ? $notCounted : 0;
             $broken  += count( $registry['broken'] );
+            if ( !empty( $registry['declared'] ) )
+            {
+                $declared++;
+                $declaredEntries += count( $registry['entries'] );
+                $declaredBy[$registry['origin']] = true;
+            }
         }
         self::$Survey['counts']['registries']        = $entries;
         self::$Survey['counts']['registries_added']  = $added;
         self::$Survey['counts']['registries_broken'] = $broken;
+        self::$Survey['counts']['registries_declared']         = $declared;
+        self::$Survey['counts']['registries_declared_entries'] = $declaredEntries;
+        self::$Survey['counts']['registries_declared_by']      = count( $declaredBy );
 
         // The debug bar's own figures: what it shows (registered, discovered), its presets, the extensions that
         // register settings. They say what is inside the two registries above and are not added again.
@@ -486,6 +514,7 @@ class expRADSurvey
             'repositories'     => array( 'label' => 'places the kernel looks',                       'section' => 'repositories' ),
             'contracts'        => array( 'label' => 'interfaces and abstract classes',               'section' => 'contracts' ),
             'views'            => array( 'label' => 'module views',                                  'section' => 'modules' ),
+            'limitations'      => array( 'label' => 'policy limitations',                            'section' => 'modules' ),
             'callables'        => array( 'label' => 'template operators and functions',              'section' => 'callables' ),
             'events'           => array( 'label' => 'events',                                        'section' => 'events' ),
             'overrides'        => array( 'label' => 'template overrides',                            'section' => 'overrides' ),
@@ -509,10 +538,20 @@ class expRADSurvey
         foreach ( self::totalGroups() as $key => $group )
             $groups[] = array( 'key' => $key, 'label' => $group['label'], 'count' => $counts[$key],
                                'section' => $group['section'], 'in_total' => true, 'counted' => 0 );
+        // A declared registry's title is translated here, in its own context; the page's i18n then finds nothing
+        // for it and leaves it as it is.
         foreach ( $survey['registries'] as $key => $registry )
-            $groups[] = array( 'key' => 'registry_' . $key, 'label' => $registry['title'], 'count' => $counts['registry_' . $key],
+            $groups[] = array( 'key' => 'registry_' . $key,
+                               'label' => !empty( $registry['declared'] ) ? self::registryTitle( $registry ) : $registry['title'],
+                               'count' => $counts['registry_' . $key],
                                'section' => 'registries', 'in_total' => false,
-                               'counted' => $counts['registry_' . $key] - $counts['registry_' . $key . '_added'] );
+                               'counted' => isset( $counts['registry_' . $key . '_settings'] ) ? $counts['registry_' . $key . '_settings']
+                                            : $counts['registry_' . $key] - $counts['registry_' . $key . '_added'],
+                               'declared' => !empty( $registry['declared'] ),
+                               'origin' => isset( $registry['origin'] ) ? $registry['origin'] : 'kernel',
+                               'broken' => isset( $counts['registry_' . $key . '_broken'] ) ? $counts['registry_' . $key . '_broken'] : 0,
+                               'description' => !empty( $registry['declared'] ) && $registry['description'] !== '' && class_exists( 'ezpI18n' )
+                                                ? ezpI18n::tr( $registry['context'], $registry['description'] ) : '' );
         return $groups;
     }
 
@@ -644,16 +683,218 @@ class expRADSurvey
     }
 
     /**
-     * Every registry of registryDescriptors(), read out of the ini files this survey walks (kernel, override,
-     * extensions; a later file wins for a keyed entry, appended entries add up, as in the settings group).
+     * The registries declared in rad.ini rather than here: [RegistrySettings] Registries[]=<key> and a block
+     * [Registry_<key>] for each, in settings/rad.ini, settings/override/rad.ini.append.php and the
+     * rad.ini.append.php of every active extension (settings/rad.ini says what a block holds). This is how a
+     * registry the kernel does not know - an extension's providers, tools, job types - is counted and checked like
+     * the kernel's own, without the kernel naming the extension.
+     *
+     * A later file replaces a single value of an earlier one and adds to an array. A key listed without its block,
+     * a block without a Title, or one that names neither Ini, Section and Entries[] nor List is kept with a
+     * problem, so that the page shows it as broken instead of leaving it out.
+     *
+     * @param array|null $files iniFiles(), when the caller has them
+     * @return array key => descriptor (as registryDescriptors(), plus declared, origin, sections, list,
+     *               implements, in_total, description, doc, context, problems)
+     */
+    public static function declaredRegistryDescriptors( $files = null )
+    {
+        $files = $files === null ? self::iniFiles() : $files;
+
+        $blocks  = array();
+        $origins = array();
+        foreach ( $files as $file )
+        {
+            if ( $file['ini'] !== 'rad.ini' || !self::isActiveOrigin( $file['origin'] ) )
+                continue;
+            foreach ( self::fileMemo( 'ini', $file['path'], array( __CLASS__, 'parseIni' ) ) as $section => $variables )
+            {
+                if ( !isset( $origins[$section] ) )
+                    $origins[$section] = $file['origin'];
+                foreach ( $variables as $variable => $values )
+                {
+                    if ( substr( $variable, -2 ) === '[]' )
+                    {
+                        $bare = substr( $variable, 0, -2 );
+                        foreach ( $values as $value )
+                            if ( is_string( $value ) && $value !== '' )
+                                $blocks[$section][$bare][] = $value;
+                        if ( !isset( $blocks[$section][$bare] ) )
+                            $blocks[$section][$bare] = array();
+                    }
+                    elseif ( preg_match( '/^([A-Za-z][A-Za-z0-9_]*)\[([^\]]+)\]$/', $variable, $m ) )
+                        $blocks[$section][$m[1]][$m[2]] = (string) end( $values );
+                    else
+                        $blocks[$section][$variable] = (string) end( $values );
+                }
+            }
+        }
+
+        $keys = isset( $blocks['RegistrySettings']['Registries'] ) && is_array( $blocks['RegistrySettings']['Registries'] )
+                ? array_values( array_unique( $blocks['RegistrySettings']['Registries'] ) ) : array();
+
+        $descriptors = array();
+        foreach ( $keys as $key )
+        {
+            if ( !preg_match( '/^[A-Za-z0-9_.-]+$/', $key ) )
+                continue;
+            $section = 'Registry_' . $key;
+            $block   = isset( $blocks[$section] ) ? $blocks[$section] : array();
+            $get     = function ( $name ) use ( $block ) {
+                return isset( $block[$name] ) && is_string( $block[$name] ) ? trim( $block[$name] ) : '';
+            };
+
+            $sections = isset( $block['Sections'] ) && is_array( $block['Sections'] ) ? $block['Sections'] : array();
+            if ( $get( 'Section' ) !== '' )
+                array_unshift( $sections, $get( 'Section' ) );
+            $variables = isset( $block['Entries'] ) && is_array( $block['Entries'] ) ? $block['Entries'] : array();
+
+            $problems = array();
+            if ( !isset( $blocks[$section] ) )
+                $problems[] = 'the registry has no block of its own';
+            elseif ( $get( 'Title' ) === '' )
+                $problems[] = 'the registry has no Title';
+            if ( isset( $blocks[$section] ) && $get( 'List' ) === '' && ( $get( 'Ini' ) === '' || !count( $sections ) || !count( $variables ) ) )
+                $problems[] = 'the registry names neither Ini, Section and Entries[] nor List';
+
+            $descriptors[$key] = array(
+                'title'       => $get( 'Title' ) !== '' ? $get( 'Title' ) : $key,
+                'ini'         => $get( 'Ini' ) !== '' ? $get( 'Ini' ) : 'rad.ini',
+                'sections'    => array_values( array_unique( $sections ) ),
+                'variables'   => $variables,
+                'skip'        => $get( 'Skip' ) !== '' ? $get( 'Skip' ) : null,
+                'list'        => $get( 'List' ),
+                'implements'  => $get( 'Implements' ),
+                'in_total'    => !preg_match( '/^(disabled|false|no|0)$/i', $get( 'InTotal' ) ),
+                'description' => $get( 'Description' ),
+                'doc'         => $get( 'Doc' ),
+                'context'     => $get( 'TranslationContext' ) !== '' ? $get( 'TranslationContext' ) : 'kernel/setup/rad',
+                'declared'    => true,
+                'origin'      => isset( $origins[$section] ) ? $origins[$section] : 'rad.ini',
+                'problems'    => $problems );
+        }
+
+        return $descriptors;
+    }
+
+    /**
+     * The active extensions, for this request.
+     *
+     * @var string[]|null
+     */
+    protected static $ActiveExtensions = null;
+
+    /**
+     * Whether the settings of an ini file's origin are in force: the kernel's and the override's always, an
+     * extension's when it is active. Without the kernel's extension class (a bare unit test) every origin is.
+     *
+     * @param string $origin kernel, override or an extension's name (iniFiles())
+     * @return bool
+     */
+    public static function isActiveOrigin( $origin )
+    {
+        if ( $origin === 'kernel' || $origin === 'override' )
+            return true;
+        if ( self::$ActiveExtensions === null )
+            self::$ActiveExtensions = class_exists( 'eZExtension' ) ? (array) eZExtension::activeExtensions() : false;
+
+        return self::$ActiveExtensions === false || in_array( $origin, self::$ActiveExtensions, true );
+    }
+
+    /**
+     * Whether an ini block belongs to a registry, and the name of the entry it holds.
+     *
+     * @param string $pattern a block name, <prefix>* or /<pattern>/
+     * @param string $section
+     * @param string|null $name set to the rest of the name, the pattern's first group, or the block name
+     * @return bool
+     */
+    public static function sectionMatches( $pattern, $section, &$name = null )
+    {
+        if ( $pattern !== '' && $pattern[0] === '/' )
+        {
+            if ( !@preg_match( $pattern, $section, $m ) )
+                return false;
+            $name = isset( $m[1] ) ? $m[1] : $section;
+            return true;
+        }
+        if ( substr( $pattern, -1 ) === '*' )
+        {
+            $prefix = substr( $pattern, 0, -1 );
+            if ( $prefix === '' || strpos( $section, $prefix ) !== 0 || strlen( $section ) === strlen( $prefix ) )
+                return false;
+            $name = substr( $section, strlen( $prefix ) );
+            return true;
+        }
+        $name = $section;
+
+        return $section === $pattern;
+    }
+
+    /**
+     * The lists read for List= and in: during this request, by <class>::<NAME>.
+     *
+     * @var array
+     */
+    protected static $Lists = array();
+
+    /**
+     * The array a class constant or a public static method gives, for a registry that lives in code (List=) and
+     * for the check in:<class>::<NAME>. Only a class that exists is loaded; the method is called once a request.
+     *
+     * @param string $spec <class>::<CONSTANT> or <class>::<method>
+     * @return array|string the list, or why it cannot be read
+     */
+    public static function codeList( $spec )
+    {
+        if ( isset( self::$Lists[$spec] ) )
+            return self::$Lists[$spec];
+
+        $parts = explode( '::', (string) $spec, 2 );
+        if ( count( $parts ) !== 2 || !preg_match( self::CLASS_PATTERN, $parts[0] ) || !preg_match( '/^[A-Za-z_][A-Za-z0-9_]*$/', $parts[1] ) )
+            return self::$Lists[$spec] = 'not <class>::<constant or method>';
+        list( $class, $name ) = $parts;
+        if ( self::fileOf( $class ) === '' || !class_exists( $class ) )
+            return self::$Lists[$spec] = 'the class does not exist';
+
+        $list = null;
+        try
+        {
+            if ( defined( $class . '::' . $name ) )
+                $list = constant( $class . '::' . $name );
+            elseif ( method_exists( $class, $name ) )
+            {
+                $method = new ReflectionMethod( $class, $name );
+                if ( !$method->isPublic() || !$method->isStatic() || $method->getNumberOfRequiredParameters() > 0 )
+                    return self::$Lists[$spec] = 'the method is not public, static and without arguments';
+                $list = $method->invoke( null );
+            }
+            else
+                return self::$Lists[$spec] = 'the class has no such constant or method';
+        }
+        catch ( Throwable $e )
+        {
+            return self::$Lists[$spec] = 'reading the list failed';
+        }
+
+        return self::$Lists[$spec] = is_array( $list ) ? $list : 'it gives no list';
+    }
+
+    /**
+     * Every registry of registryDescriptors() and of declaredRegistryDescriptors(), read out of the ini files this
+     * survey walks (kernel, override, extensions; a later file wins for a keyed entry, appended entries add up, as
+     * in the settings group) or, for a registry declared with List=, out of the class that holds it. A declared
+     * registry reads the files of active extensions only, since the settings of the others are not in force.
      *
      * Each entry is a re-implementation point: a column, a job type, an action, a server function. Most of them
      * name a class, so they are points of "settings" already; 'counted' says which, and only the others (a
-     * template column, a Handler=<class>::<method> column) are added to the total, so nothing is counted twice.
+     * template column, a Handler=<class>::<method> column, a provider type, a tool) are added to the total, so
+     * nothing is counted twice. A registry declared with InTotal=disabled is listed and checked and adds nothing.
      *
      * @param array|null $files iniFiles(), when the caller has them
      * @param array $settings the settings group, to tell which entries it already counts
-     * @return array key => array( key, title, entries (name, variable, value, what, origin, ok, why, counted), broken )
+     * @return array key => array( key, title, ini, entries (name, section, variable, value, what, origin, ok, why,
+     *               counted), broken, problems, declared, origin, in_total, description, doc, context )
      */
     public static function registries( $files = null, array $settings = array() )
     {
@@ -663,21 +904,43 @@ class expRADSurvey
         foreach ( $settings as $setting )
             $inSettings[$setting['ini'] . '|' . $setting['section'] . '|' . $setting['variable'] . '|' . $setting['value']] = true;
 
+        $byIni = array();
+        foreach ( $files as $file )
+            $byIni[$file['ini']][] = $file;
+
+        $descriptors = static::registryDescriptors();
+        foreach ( static::declaredRegistryDescriptors( $files ) as $key => $descriptor )
+            if ( !isset( $descriptors[$key] ) )
+                $descriptors[$key] = $descriptor;
+
         $registries = array();
-        foreach ( static::registryDescriptors() as $key => $descriptor )
+        foreach ( $descriptors as $key => $descriptor )
         {
+            $declared = !empty( $descriptor['declared'] );
+            $patterns = isset( $descriptor['sections'] ) ? $descriptor['sections']
+                      : ( isset( $descriptor['section'] ) ? array( $descriptor['section'] ) : array() );
+            $variables = isset( $descriptor['variables'] ) ? $descriptor['variables'] : array();
+
             $sections = array();
-            foreach ( $files as $file )
+            $known    = array();
+            foreach ( isset( $byIni[$descriptor['ini']] ) && count( $patterns ) ? $byIni[$descriptor['ini']] : array() as $file )
             {
-                if ( $file['ini'] !== $descriptor['ini'] )
+                if ( $declared && !self::isActiveOrigin( $file['origin'] ) )
                     continue;
-                foreach ( self::parseIni( $file['path'] ) as $section => $variables )
+                foreach ( self::fileMemo( 'ini', $file['path'], array( __CLASS__, 'parseIni' ) ) as $section => $sectionVariables )
                 {
-                    $isPattern = $descriptor['section'][0] === '/';
-                    if ( $isPattern ? !preg_match( $descriptor['section'], $section, $m ) : $section !== $descriptor['section'] )
+                    $known[$section] = true;
+                    $name = null;
+                    $matched = false;
+                    foreach ( $patterns as $pattern )
+                        if ( self::sectionMatches( $pattern, $section, $name ) )
+                        {
+                            $matched = true;
+                            break;
+                        }
+                    if ( !$matched )
                         continue;
-                    $name = $isPattern && isset( $m[1] ) ? $m[1] : $section;
-                    foreach ( $variables as $variable => $values )
+                    foreach ( $sectionVariables as $variable => $values )
                     {
                         $bare = preg_replace( '/\[.*$/', '', $variable );
                         if ( isset( $descriptor['skip'] ) && $bare === $descriptor['skip'] )
@@ -685,7 +948,7 @@ class expRADSurvey
                             $sections[$section]['skip'] = preg_match( '/^(true|enabled|1)$/i', (string) end( $values ) ) === 1;
                             continue;
                         }
-                        if ( !array_key_exists( $bare, $descriptor['variables'] ) )
+                        if ( !array_key_exists( $bare, $variables ) )
                             continue;
                         foreach ( $values as $value )
                         {
@@ -699,11 +962,37 @@ class expRADSurvey
                                 'section'  => $section,
                                 'variable' => $variable,
                                 'value'    => $value,
-                                'what'     => $descriptor['variables'][$bare],
+                                'what'     => $variables[$bare],
                                 'origin'   => $file['origin'] );
                         }
                     }
                 }
+            }
+
+            $problems = array();
+            foreach ( isset( $descriptor['problems'] ) ? $descriptor['problems'] : array() as $why )
+                $problems[] = self::registryDeclarationProblem( $key, $descriptor, 'Registry_' . $key, $why );
+
+            // a registry that lives in code: the list a class constant or static method gives
+            if ( !empty( $descriptor['list'] ) )
+            {
+                $list = self::codeList( $descriptor['list'] );
+                if ( is_string( $list ) )
+                    $problems[] = self::registryDeclarationProblem( $key, $descriptor, $descriptor['list'], $list );
+                else
+                    foreach ( $list as $index => $item )
+                    {
+                        $class = is_string( $item ) && !is_int( $index ) ? $item
+                               : ( is_array( $item ) && isset( $item['class'] ) && is_string( $item['class'] ) ? $item['class'] : '' );
+                        $name  = is_int( $index ) && is_string( $item ) ? $item : (string) $index;
+                        $sections['(list)']['entries'][] = array(
+                            'name'     => $name,
+                            'section'  => $descriptor['list'],
+                            'variable' => $descriptor['list'],
+                            'value'    => $class !== '' ? $class : $name,
+                            'what'     => $class !== '' ? (string) $descriptor['implements'] : 'name',
+                            'origin'   => $descriptor['origin'] );
+                    }
             }
 
             $entries = array();
@@ -714,7 +1003,7 @@ class expRADSurvey
                     continue;
                 foreach ( $section['entries'] as $entry )
                 {
-                    $entry['why']     = self::registryProblem( $entry['value'], $entry['what'] );
+                    $entry['why']     = self::registryProblem( $entry['value'], $entry['what'], $known );
                     $entry['ok']      = $entry['why'] === '';
                     $entry['counted'] = isset( $inSettings[$descriptor['ini'] . '|' . $entry['section'] . '|' . $entry['variable'] . '|' . $entry['value']] );
                     $entries[] = $entry;
@@ -724,13 +1013,49 @@ class expRADSurvey
             }
 
             $registries[$key] = array( 'key' => $key, 'title' => $descriptor['title'], 'ini' => $descriptor['ini'],
-                                       'entries' => $entries, 'broken' => $broken );
+                                       'entries' => $entries, 'broken' => array_merge( $problems, $broken ), 'problems' => $problems,
+                                       'declared' => $declared,
+                                       'origin' => isset( $descriptor['origin'] ) ? $descriptor['origin'] : 'kernel',
+                                       'in_total' => !isset( $descriptor['in_total'] ) || $descriptor['in_total'],
+                                       'description' => isset( $descriptor['description'] ) ? $descriptor['description'] : '',
+                                       'doc' => isset( $descriptor['doc'] ) ? $descriptor['doc'] : '',
+                                       'context' => isset( $descriptor['context'] ) ? $descriptor['context'] : 'kernel/setup/rad' );
         }
 
         if ( isset( $registries['ezjscserver'] ) )
             $registries['expservices'] = self::remoteServices( $registries['ezjscserver']['entries'] );
 
         return $registries;
+    }
+
+    /**
+     * A problem of a registry's declaration, shaped like a broken entry so that the page lists it with the others.
+     *
+     * @param string $key
+     * @param array $descriptor
+     * @param string $where the block or the List= the problem is in
+     * @param string $why
+     * @return array
+     */
+    protected static function registryDeclarationProblem( $key, array $descriptor, $where, $why )
+    {
+        return array( 'name' => $key, 'section' => $where, 'variable' => 'rad.ini [Registry_' . $key . ']', 'value' => $where,
+                      'what' => 'declaration', 'origin' => isset( $descriptor['origin'] ) ? $descriptor['origin'] : 'kernel',
+                      'why' => $why, 'ok' => false, 'counted' => false );
+    }
+
+    /**
+     * The title of a registry in the language of the page: a declared registry's in its own translation context.
+     *
+     * @param array $registry an entry of registries()
+     * @return string
+     */
+    public static function registryTitle( array $registry )
+    {
+        if ( !class_exists( 'ezpI18n' ) )
+            return $registry['title'];
+
+        return ezpI18n::tr( isset( $registry['context'] ) ? $registry['context'] : 'kernel/setup/rad', $registry['title'] );
     }
 
     /**
@@ -771,7 +1096,8 @@ class expRADSurvey
             }
         }
         return array( 'key' => 'expservices', 'title' => 'Remote services (expservices)', 'ini' => 'ezjscore.ini',
-                      'entries' => $entries, 'broken' => $broken );
+                      'entries' => $entries, 'broken' => $broken, 'problems' => array(), 'declared' => false,
+                      'origin' => 'kernel', 'in_total' => true, 'description' => '', 'doc' => '', 'context' => 'kernel/setup/rad' );
     }
 
     /**
@@ -805,16 +1131,48 @@ class expRADSurvey
      * exists is loaded, to tell whether it extends or implements what the registry asks for.
      *
      * @param string $value
-     * @param string $what a class or interface name, '' for any class, 'callable' or 'template'
+     * @param string $what a class or interface name, '' or 'class' for any class, 'callable', 'template', and for a
+     *                     registry declared in rad.ini also 'listener', 'section:<prefix>', 'in:<class>::<NAME>',
+     *                     'one-of:<a>,<b>' and 'name' (settings/rad.ini)
+     * @param array|null $sections block name => true of the registry's ini file, for 'section:' (null: not checked)
      * @return string
      */
-    public static function registryProblem( $value, $what )
+    public static function registryProblem( $value, $what, ?array $sections = null )
     {
         if ( $what === 'debugbar-type' )
             return in_array( strtolower( trim( $value ) ), array( 'bool', 'enum', 'list', 'text', 'iplist', 'userlist' ), true )
                    ? '' : 'Type is not one of bool, enum, list, text, iplist, userlist';
         if ( $what === 'debugbar-preset' )
             return trim( $value ) === '' ? 'a preset needs a name' : '';
+
+        // the checks a registry declared in rad.ini can ask for besides a class (settings/rad.ini)
+        if ( $what === 'name' )
+            return '';
+        if ( $what === 'class' )
+            $what = '';
+        if ( strpos( $what, 'section:' ) === 0 )
+            return $sections === null || isset( $sections[substr( $what, 8 ) . $value] ) ? '' : 'the ini file has no such block';
+        if ( strpos( $what, 'one-of:' ) === 0 )
+            return in_array( strtolower( trim( $value ) ), array_map( 'strtolower', array_map( 'trim', explode( ',', substr( $what, 7 ) ) ) ), true )
+                   ? '' : 'the value is not one of the words allowed';
+        if ( strpos( $what, 'in:' ) === 0 )
+        {
+            $list = self::codeList( substr( $what, 3 ) );
+            if ( is_string( $list ) )
+                return 'the list it is checked against cannot be read';
+            return array_key_exists( $value, $list ) || in_array( $value, $list, true ) ? '' : 'the value is not in the list';
+        }
+        if ( $what === 'listener' )
+        {
+            $parts = explode( '@', trim( $value ), 2 );
+            if ( count( $parts ) !== 2 || trim( $parts[0] ) === '' || trim( $parts[1] ) === '' )
+                return 'not <event>@<callback>';
+            $callback = trim( $parts[1] );
+            if ( strpos( $callback, '::' ) === false )
+                return function_exists( $callback ) ? '' : 'no such function';
+            $value = $callback;
+            $what  = 'callable';
+        }
 
         if ( $what === 'template' )
         {
@@ -1385,8 +1743,24 @@ class expRADSurvey
             if ( strpos( $contents, 'ezpEvent' ) === false )
                 continue;
 
-            if ( !preg_match_all( "/ezpEvent::getInstance\(\)\s*->\s*(notify|filter)\(\s*'([^']+)'/s",
-                                  $contents, $found, PREG_SET_ORDER ) )
+            // The event is announced on ezpEvent::getInstance() directly, or on a variable or property holding it
+            // ($event->notify( 'content/pre_rendering' ), $this->eventHandler->filter( 'cluster/fileExists' )), and
+            // its name is a literal or a variable given a literal in the same file ($name = 'package/install/drafts';
+            // $event->notify( $name, ... )). Only names with a slash are events: $this->notify( 'x' ) of a class of
+            // its own is something else, and so is any receiver that is plainly $this.
+            $found = array();
+            if ( preg_match_all( "/ezpEvent::getInstance\(\)\s*->\s*(notify|filter)\(\s*'([^']+)'/s", $contents, $direct, PREG_SET_ORDER ) )
+                $found = $direct;
+            if ( preg_match_all( "/(?:\\\$(?!this\b)[A-Za-z_][A-Za-z0-9_]*|\\\$this->[A-Za-z_][A-Za-z0-9_]*)\s*->\s*(notify|filter)\(\s*'([A-Za-z0-9_.-]+(?:\/[A-Za-z0-9_.-]+)+)'/s",
+                                 $contents, $held, PREG_SET_ORDER ) )
+                $found = array_merge( $found, $held );
+            if ( preg_match_all( "/->\s*(notify|filter)\(\s*\\\$([A-Za-z_][A-Za-z0-9_]*)\s*[,)]/s", $contents, $named, PREG_SET_ORDER ) )
+                foreach ( $named as $match )
+                    if ( preg_match_all( "/\\\$" . $match[2] . "\s*=\s*'([A-Za-z0-9_.-]+(?:\/[A-Za-z0-9_.-]+)+)'\s*;/", $contents, $literals ) )
+                        foreach ( array_unique( $literals[1] ) as $literal )
+                            $found[] = array( $match[0], $match[1], $literal );
+
+            if ( !count( $found ) )
                 continue;
 
             foreach ( $found as $match )
@@ -1928,11 +2302,31 @@ class expRADSurvey
                                     ? count( $definition['unordered_params'] ) : 0 );
             }
 
-        $functions = array();
+        // A policy function's limitations: each gives its values through a class and a method of its own
+        // ('class' => ..., 'function' => ...), or lists them ('values'); one whose class is not there offers
+        // nothing to choose in the role editor.
+        $functions   = array();
+        $limitations = array();
         if ( isset( $declared['FunctionList'] ) && is_array( $declared['FunctionList'] ) )
-            foreach ( array_keys( $declared['FunctionList'] ) as $function )
-                if ( is_string( $function ) )
-                    $functions[] = $function;
+            foreach ( $declared['FunctionList'] as $function => $definition )
+            {
+                if ( !is_string( $function ) )
+                    continue;
+                $functions[] = $function;
+                foreach ( is_array( $definition ) ? $definition : array() as $limitation => $spec )
+                {
+                    if ( !is_string( $limitation ) || !is_array( $spec ) )
+                        continue;
+                    $class  = isset( $spec['class'] ) && is_string( $spec['class'] ) ? $spec['class'] : '';
+                    $method = isset( $spec['function'] ) && is_string( $spec['function'] ) ? $spec['function'] : '';
+                    $limitations[] = array(
+                        'function'   => $function,
+                        'limitation' => $limitation,
+                        'class'      => $class,
+                        'method'     => $method,
+                        'ok'         => $class === '' || self::fileOf( $class ) !== '' );
+                }
+            }
 
         return array(
             'name'      => $name,
@@ -1940,6 +2334,7 @@ class expRADSurvey
             'path'      => dirname( $path ),
             'views'     => $views,
             'functions' => $functions,
+            'limitations' => $limitations,
             'fetches'   => self::fetchesOf( dirname( $path ) ) );
     }
 

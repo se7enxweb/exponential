@@ -2487,6 +2487,81 @@ the kernel source says.
 | `ezpContentPublishingBehaviour` | `extension/nxc_powercontent/modules/content/ezcontentpublishingbehaviour.php` | `kernel/content/ezcontentpublishingbehaviour.php` |
 
 
+## Registries declared in rad.ini
+
+A registry is a list of implementations that something reads from its settings or from its code: the columns of
+the subitems table, the content job types, an extension's AI providers or queue job types. The survey's section
+**Registries** (`setup/radsurvey/(show)/registries`) lists every entry of every registry, checks it, and adds the
+entries that are not already counted as settings to the total that `setup/rad` shows.
+
+The kernel's own registries (subitems columns, content job types, `exp:ini`, the server functions of ezjscore and
+their remote services, the online editor's engines, the debug bar, the audit) are built into
+`kernel/setup/expradsurvey.php`. Every other registry is **declared in rad.ini**, so that the kernel never has to
+name an extension: `settings/rad.ini` holds the kernel's declarations and describes the format, and an extension adds
+its own in `extension/<name>/settings/rad.ini.append.php`. Only the declarations of active extensions are read, and
+a declared registry reads the settings of active extensions only, since the others are not in force.
+
+```ini
+[RegistrySettings]
+Registries[]=myext_widgets
+Registries[]=myext_commands
+
+# entries read from ini blocks: every value of Class= in [Widget_<name>] of myext.ini
+[Registry_myext_widgets]
+Title=My widgets
+Description=The widgets of myext.ini [Widget_<name>], each a class implementing myExtWidget.
+Doc=extension/myext/doc/widgets.md
+TranslationContext=extension/myext/rad
+Ini=myext.ini
+Section=Widget_*
+Entries[Class]=myExtWidget
+Entries[Mode]=one-of:inline,block
+
+# entries a class gives: name => class, name => array( 'class' => ... ), or a list of names
+[Registry_myext_commands]
+Title=My commands
+List=myExtCommand::COMMANDS
+```
+
+| Variable | Meaning |
+| --- | --- |
+| `Title` | What the entries are, shown on `setup/rad` and `setup/radsurvey` (required). |
+| `Description` | One sentence, shown when the pointer rests on the registry on `setup/rad`. |
+| `Doc` | Where the registry is documented. |
+| `TranslationContext` | The context of `Title` and `Description` in the extension's translations (default `kernel/setup/rad`). |
+| `Ini` | The ini file; the kernel's, the override's and every active extension's copy are read. |
+| `Section`, `Sections[]` | A block (`ToolSettings`), a family of blocks (`Tool_*`: the rest of the name is the entry's name) or a pattern (`/^Tool_(.+)$/`). |
+| `Entries[<variable>]` | Every value of `<variable>` in those blocks is one entry, and must pass the check given. |
+| `Skip` | A variable that, set to true, makes a block no point (a built-in one). |
+| `List`, `Implements` | A registry that lives in code: a class constant or a public static method without arguments, and what each class it names must extend or implement. |
+| `InTotal` | `disabled`: the entries are listed and checked but not added to the total, for a list that only refers to points counted somewhere else. |
+
+The checks: a class or interface name (the value is a class that extends or implements it), `class` (any class),
+`callable` (`<class>::<method>`), `listener` (`<event>@<callback>`, as `[Event] Listeners[]`), `template` (a template
+some design has), `section:<prefix>` (the same ini file has a block `[<prefix><value>]`), `in:<class>::<NAME>` (a key
+or a value of that constant or static method), `one-of:<a>,<b>` and `name` (counted, not checked). An entry that
+fails its check is shown as broken with the reason; so is a declaration that cannot be read: a key listed without its
+block, a block without a `Title`, one that names neither `Ini`, `Section` and `Entries[]` nor `List`, a `List` whose
+class or constant is not there.
+
+An entry whose value names a class is usually a setting that names a class as well, and is counted there; the survey
+marks it "also a setting that names a class" and does not count it twice. The declarations themselves are not
+settings of the installation and are left out of the settings group.
+
+Declared on this installation:
+
+| Declared by | Registries |
+| --- | --- |
+| kernel (`settings/rad.ini`) | event listeners (`site.ini [Event] Listeners[]`, `[RunnableSettings] Listeners[]`), cronjob part scripts (listed, not added), audit console sources (`audit.ini [AuditSourceSettings] Sources[]`) |
+| expai | provider types, providers, models, batch APIs, lanes, tools, web search providers, MCP servers, MCP bridge tools (listed, not added), service tools (listed, not added), chains, chain steps, field actions, presets, request appliers, diff segmenters, panel sections and panes, history repositories, data policy rules, request veto rules |
+| expqueue | job types, the priority class of each job type (listed, not added), priority classes, resources, commands |
+| expmcp | tools, tools of the in-process bridge (listed, not added), tool profiles, the tools the profiles name (listed, not added), allowlists (listed, not added) |
+
+Besides the registries, the survey counts every **policy limitation** of every module (`module.php` `FunctionList`,
+with the class and method that give its values; one whose class is missing is broken) in the group **policy
+limitations**, and its event sweep finds events announced on a variable or a property holding `ezpEvent`
+(`$event->notify( $name, ... )` with `$name = 'package/install/drafts';`), not only on `ezpEvent::getInstance()`.
+
 ## Related pages
 
 - [Extension points](rad-extension-points.md)

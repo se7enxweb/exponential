@@ -33,13 +33,15 @@ class Radsurvey extends \Exponential\Runnable\ModuleView
             'contracts'    => array( 'title' => 'Interfaces and abstract classes',
                                      'what'  => 'What the kernel declares for somebody else to implement, with how many methods each asks for and what already implements it. The ones with many methods and one implementation are the deep water.' ),
             'modules'      => array( 'title' => 'Modules and their views',
-                                     'what'  => 'Every page the system serves. A view can be replaced by an extension carrying a module of the same name, and a module of your own can add views beside them. Each view names the policies somebody needs to reach it.' ),
+                                     'what'  => 'Every page the system serves. A view can be replaced by an extension carrying a module of the same name, and a module of your own can add views beside them. Each view names the policies somebody needs to reach it.',
+                                     'also'  => 'Each limitation of a policy function is listed too, with the class and method that give its values; one whose class is not there offers nothing to choose in the role editor and is shown as broken.' ),
             'runnables'    => array( 'title' => 'Commands, cronjob parts and views as classes',
                                      'what'  => 'Every command, cronjob part and module view whose code is a class. Each can be re-implemented without copying a file: a subclass named in site.ini [RunnableSettings] Implementation[<class>] runs in its place, and listeners of runnable/<kind>/before and runnable/<kind>/after act around any of them. An entry that names no such class, or a replacement that does not extend it, is ignored and shown here as broken.' ),
             'inicommand'   => array( 'title' => 'Actions and scopes of exp:ini',
                                      'what'  => 'Every action of the exp:ini command and every provider of the scopes it writes, as ini.ini [IniCommandSettings] registers them. An extension adds an action with Actions[<name>]=<class> (a class implementing expIniAction) and a scope provider with ScopeProviders[]=<class> (expIniScopeProvider) in its own ini.ini.append.php. Guide: doc/bc/6.0/console-exp-ini.md.' ),
             'registries'   => array( 'title' => 'Registries',
-                                     'what'  => 'Settings blocks each entry of which registers an implementation: the columns of the subitems table (subitemscolumns.ini [Column_<key>] Class=, Handler=<class>::<method> or Template=), the content job types (content.ini [ContentJobSettings] JobTypes[]), the actions and scope providers of exp:ini (ini.ini [IniCommandSettings]) and the server functions of ezjscore (ezjscore.ini [ezjscServer_<name>] Class=), with every remote service a server function class extending expServiceBase declares (its static $services, called as ezjscore/call/<name>::<service>; each one added to the total, a declared service whose method is missing is broken). An entry that names a class is also one of the settings that name a class and is counted there; the others are added to the total here. An entry whose class, method or template is missing, or whose class does not extend what the registry asks for, is shown as broken. Built-in subitems columns, which the list renders itself, are no point and are not listed.' ),
+                                     'what'  => 'Settings blocks each entry of which registers an implementation: the columns of the subitems table (subitemscolumns.ini [Column_<key>] Class=, Handler=<class>::<method> or Template=), the content job types (content.ini [ContentJobSettings] JobTypes[]), the actions and scope providers of exp:ini (ini.ini [IniCommandSettings]) and the server functions of ezjscore (ezjscore.ini [ezjscServer_<name>] Class=), with every remote service a server function class extending expServiceBase declares (its static $services, called as ezjscore/call/<name>::<service>; each one added to the total, a declared service whose method is missing is broken). An entry that names a class is also one of the settings that name a class and is counted there; the others are added to the total here. An entry whose class, method or template is missing, or whose class does not extend what the registry asks for, is shown as broken. Built-in subitems columns, which the list renders itself, are no point and are not listed.',
+                                     'also'  => 'Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/bc/6.0/rad-extension-surface.md.' ),
             'callables'    => array( 'title' => 'What a template can call',
                                      'what'  => 'Every operator and function the engine has been taught, read out of the autoload arrays where they are really declared - there is no ini listing them. An operator not marked live belongs to an extension that is not active: the name is declared and nothing answers to it.' ),
             'events'       => array( 'title' => 'Events something can listen to',
@@ -230,17 +232,34 @@ class Radsurvey extends \Exponential\Runnable\ModuleView
                 break;
 
             case 'registries':
+                // A registry declared in rad.ini has its title in its own translation context; one that lives in
+                // code (List=) has no ini block, so its note is the class list; its declaration problems come last.
                 foreach ( $survey['registries'] as $registry )
+                {
+                    $title   = !empty( $registry['declared'] ) ? \expRADSurvey::registryTitle( $registry )
+                                                               : \ezpI18n::tr( 'kernel/setup/rad', $registry['title'] );
+                    $inTotal = !isset( $registry['in_total'] ) || $registry['in_total'];
                     foreach ( $registry['entries'] as $entry )
                         $rows[] = array(
                             'one'   => $entry['name'],
-                            'two'   => \ezpI18n::tr( 'kernel/setup/rad', $registry['title'] ),
+                            'two'   => $title,
                             'three' => $entry['ok'] ? ( $entry['counted'] ? \ezpI18n::tr( 'kernel/setup/rad', 'also a setting that names a class' )
-                                                                         : \ezpI18n::tr( 'kernel/setup/rad', 'counted here' ) )
+                                                                         : ( $inTotal ? \ezpI18n::tr( 'kernel/setup/rad', 'counted here' )
+                                                                                      : \ezpI18n::tr( 'kernel/setup/rad', 'checked, counted elsewhere' ) ) )
                                                     : \ezpI18n::tr( 'kernel/setup/rad', $entry['why'] ),
-                            'four'  => $entry['variable'] . '=' . $entry['value'],
-                            'note'  => $registry['ini'] . ' [' . $entry['section'] . '] (' . $entry['origin'] . ')',
+                            'four'  => $entry['section'] === $entry['variable'] ? $entry['value'] : $entry['variable'] . '=' . $entry['value'],
+                            'note'  => ( $entry['section'] === $entry['variable'] ? $entry['section'] : $registry['ini'] . ' [' . $entry['section'] . ']' )
+                                       . ' (' . $entry['origin'] . ')',
                             'state' => $entry['ok'] ? 'ok' : 'bad' );
+                    foreach ( isset( $registry['problems'] ) ? $registry['problems'] : array() as $problem )
+                        $rows[] = array(
+                            'one'   => $problem['name'],
+                            'two'   => $title,
+                            'three' => \ezpI18n::tr( 'kernel/setup/rad', $problem['why'] ),
+                            'four'  => $problem['value'],
+                            'note'  => $problem['variable'] . ' (' . $problem['origin'] . ')',
+                            'state' => 'bad' );
+                }
                 break;
 
             case 'replaced':
@@ -269,6 +288,16 @@ class Radsurvey extends \Exponential\Runnable\ModuleView
                                        : \ezpI18n::tr( 'kernel/setup/rad', 'no policy check' ),
                             'note'  => $module['path'] . '/' . $view['script'],
                             'state' => count( $view['functions'] ) ? 'ok' : 'empty' );
+
+                    foreach ( $module['limitations'] as $limitation )
+                        $rows[] = array(
+                            'one'   => $module['name'] . '/' . $limitation['function'] . ' : ' . $limitation['limitation'],
+                            'two'   => \ezpI18n::tr( 'kernel/setup/rad', 'policy limitation' ),
+                            'three' => $limitation['ok'] ? '' : \ezpI18n::tr( 'kernel/setup/rad', 'the class does not exist' ),
+                            'four'  => $limitation['class'] !== '' ? $limitation['class'] . '::' . $limitation['method']
+                                                                   : \ezpI18n::tr( 'kernel/setup/rad', 'values listed in module.php' ),
+                            'note'  => $module['path'] . '/module.php',
+                            'state' => $limitation['ok'] ? 'ok' : 'bad' );
 
                     foreach ( $module['fetches'] as $fetch )
                         $rows[] = array(

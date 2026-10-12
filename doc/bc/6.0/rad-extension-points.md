@@ -26,6 +26,8 @@ Every entry was checked against the source; the *Kernel* column names the file t
 - **design** — A template in a design, found through the design chain rather than by being named anywhere.
 - **ini** — Settings only. Nothing is written but ini, and the behaviour changes.
 - **override** — A kernel class replaced by one of your own through the override autoload path. The heaviest of these mechanisms and the last resort: nothing registers the replacement by name, so two extensions replacing the same class is a fight neither of them knows it is in.
+- **registry** — An entry of a registry that rad.ini declares: the kernel or an extension says which ini blocks, or which class list, hold the entries and what each must be, and the extension point survey counts and checks every entry without the kernel naming the extension.
+- **filter** — A listener of a filter event in site.ini [Event] Listeners[]. The kernel passes a value and goes on with what the listener returns, so a listener that forgets to return it destroys the value.
 
 ## Content
 
@@ -351,6 +353,22 @@ Something the browser can call and get json back from, without a page.
 | Mechanism | handler |
 | Kernel | `extension/ezjscore` |
 
+### Registry declared in rad.ini  
+*Tool:* `/setup/radsurvey/(show)/registries`
+
+A list of implementations that an extension reads from its own settings or from its own code, such as AI providers
+and tools, MCP tools or queue job types. Declared in rad.ini, it is counted and checked by the extension point survey
+like the kernel's own registries: every entry is listed, and one whose class, method, template or block is missing is
+shown as broken. How to declare one: [The extension surface](rad-extension-surface.md#registries-declared-in-radini).
+
+| | |
+|---|---|
+| Code | `extension/<name>/settings/rad.ini.append.php` |
+| Registered by | rad.ini [RegistrySettings] Registries[]=<key> and [Registry_<key>] with Title, Ini, Section and Entries[<variable>]=<check>, or List=<class>::<constant or method> |
+| Contract | `Each entry passes its check: a class or interface, callable, listener, template, section:<prefix>, in:<class>::<list>, one-of:<words> or name` |
+| Mechanism | registry |
+| Kernel | `kernel/setup/expradsurvey.php` |
+
 ## Workflow, events and jobs
 
 What happens when something is published, and what runs on its own.
@@ -446,6 +464,21 @@ Something called when the kernel reaches a named point, such as a request arrivi
 | Registered by | site.ini [Event] Listeners[]=<event>@<callback> |
 | Contract | `A callable taking whatever the event passes` |
 | Mechanism | ini |
+| Kernel | `kernel/private/classes/ezpevent.php` |
+
+### Filter event listener  
+*Tool:* `/setup/radsurvey/(show)/events`
+
+A listener of a filter event, whose return value replaces what the kernel passed: for example
+`httpcache/store/headers`, the headers an HTTP cache keeps with a page. A notify event such as
+`package/install/drafts`, after a package was installed as drafts, ignores what its listeners return.
+
+| | |
+|---|---|
+| Code | `extension/<name>/classes/<name>listener.php` |
+| Registered by | site.ini [Event] Listeners[]=<filter>@<callback> |
+| Contract | `A callable that returns the value it was given, changed or not` |
+| Mechanism | filter |
 | Kernel | `kernel/private/classes/ezpevent.php` |
 
 ## Storage and infrastructure

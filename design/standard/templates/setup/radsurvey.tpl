@@ -17,6 +17,7 @@
 
 <h2>{$survey_section.title|i18n( 'design/standard/setup' )|wash}</h2>
 <p>{$survey_section.what|i18n( 'design/standard/setup' )|wash}</p>
+{if is_set( $survey_section.also )}<p>{$survey_section.also|i18n( 'design/standard/setup' )|wash}</p>{/if}
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr>

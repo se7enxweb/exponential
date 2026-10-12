@@ -135,6 +135,7 @@
 <div class="sv-card">
 <h2>{$survey_section.title|i18n( 'design/admin/setup/rad/survey' )|wash}</h2>
 <span class="sv-meta">{$survey_section.what|i18n( 'design/admin/setup/rad/survey' )|wash}</span>
+{if is_set( $survey_section.also )}<span class="sv-meta">{$survey_section.also|i18n( 'design/admin/setup/rad/survey' )|wash}</span>{/if}
 
 <form class="sv-find" method="get" action={concat( '/setup/radsurvey/(show)/', $survey_show )|ezurl}>
     <input type="text" name="find" value="{$survey_find|wash}" placeholder="{'Narrow the list'|i18n( 'design/admin/setup/rad/survey' )}" autocomplete="off" />

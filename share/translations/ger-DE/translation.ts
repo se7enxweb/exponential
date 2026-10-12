@@ -27607,6 +27607,54 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>template overrides</source>
         <translation>Template-Overrides</translation>
     </message>
+    <message>
+        <source>policy limitations</source>
+        <translation>Richtlinien-Einschränkungen</translation>
+    </message>
+    <message>
+        <source>%registries registries are declared in rad.ini by %origins sources (the kernel and extensions), with %entries entries. %limitations policy limitations give the values the role editor offers.</source>
+        <translation>%registries Registries sind in rad.ini von %origins Quellen (dem Kernel und Erweiterungen) deklariert, mit %entries Einträgen. %limitations Richtlinien-Einschränkungen liefern die Werte, die der Rollen-Editor anbietet.</translation>
+    </message>
+    <message>
+        <source>%broken registry entries cannot work and are shown as broken in the survey.</source>
+        <translation>%broken Registry-Einträge können nicht funktionieren und werden in der Übersicht als defekt gezeigt.</translation>
+    </message>
+    <message>
+        <source>Registry declared in rad.ini</source>
+        <translation>In rad.ini deklarierte Registry</translation>
+    </message>
+    <message>
+        <source>A list of implementations that an extension reads from its own settings or from its own code, such as AI providers and tools, MCP tools or queue job types. Declared in rad.ini, it is counted and checked by the extension point survey like the kernel's own registries: every entry is listed, and one whose class, method, template or block is missing is shown as broken.</source>
+        <translation>Eine Liste von Implementierungen, die eine Erweiterung aus ihren eigenen Einstellungen oder ihrem eigenen Code liest, etwa KI-Anbieter und -Werkzeuge, MCP-Werkzeuge oder Jobtypen der Warteschlange. In rad.ini deklariert, wird sie von der Übersicht der Erweiterungspunkte wie die Registries des Kernels gezählt und geprüft: Jeder Eintrag wird aufgelistet, und einer, dessen Klasse, Methode, Template oder Block fehlt, wird als defekt gezeigt.</translation>
+    </message>
+    <message>
+        <source>rad.ini [RegistrySettings] Registries[]=&lt;key&gt; and [Registry_&lt;key&gt;] with Title, Ini, Section and Entries[&lt;variable&gt;]=&lt;check&gt;, or List=&lt;class&gt;::&lt;constant or method&gt;</source>
+        <translation>rad.ini [RegistrySettings] Registries[]=&lt;Schlüssel&gt; und [Registry_&lt;Schlüssel&gt;] mit Title, Ini, Section und Entries[&lt;Variable&gt;]=&lt;Prüfung&gt;, oder List=&lt;Klasse&gt;::&lt;Konstante oder Methode&gt;</translation>
+    </message>
+    <message>
+        <source>Each entry passes its check: a class or interface, callable, listener, template, section:&lt;prefix&gt;, in:&lt;class&gt;::&lt;list&gt;, one-of:&lt;words&gt; or name</source>
+        <translation>Jeder Eintrag besteht seine Prüfung: eine Klasse oder ein Interface, callable, listener, template, section:&lt;Präfix&gt;, in:&lt;Klasse&gt;::&lt;Liste&gt;, one-of:&lt;Wörter&gt; oder name</translation>
+    </message>
+    <message>
+        <source>Filter event listener</source>
+        <translation>Listener eines Filter-Ereignisses</translation>
+    </message>
+    <message>
+        <source>A listener of a filter event, whose return value replaces what the kernel passed: for example httpcache/store/headers, the headers an HTTP cache keeps with a page. A notify event such as package/install/drafts, after a package was installed as drafts, ignores what its listeners return.</source>
+        <translation>Ein Listener eines Filter-Ereignisses, dessen Rückgabewert ersetzt, was der Kernel übergeben hat: etwa httpcache/store/headers, die Header, die ein HTTP-Cache mit einer Seite speichert. Ein Notify-Ereignis wie package/install/drafts, nachdem ein Paket als Entwürfe installiert wurde, ignoriert, was seine Listener zurückgeben.</translation>
+    </message>
+    <message>
+        <source>A callable that returns the value it was given, changed or not</source>
+        <translation>Ein Callable, das den übergebenen Wert zurückgibt, geändert oder nicht</translation>
+    </message>
+    <message>
+        <source>An entry of a registry that rad.ini declares: the kernel or an extension says which ini blocks, or which class list, hold the entries and what each must be, and the extension point survey counts and checks every entry without the kernel naming the extension.</source>
+        <translation>Ein Eintrag einer Registry, die rad.ini deklariert: Der Kernel oder eine Erweiterung sagt, welche INI-Blöcke oder welche Klassenliste die Einträge enthalten und was jeder sein muss, und die Übersicht der Erweiterungspunkte zählt und prüft jeden Eintrag, ohne dass der Kernel die Erweiterung nennt.</translation>
+    </message>
+    <message>
+        <source>A listener of a filter event in site.ini [Event] Listeners[]. The kernel passes a value and goes on with what the listener returns, so a listener that forgets to return it destroys the value.</source>
+        <translation>Ein Listener eines Filter-Ereignisses in site.ini [Event] Listeners[]. Der Kernel übergibt einen Wert und arbeitet mit dem weiter, was der Listener zurückgibt; ein Listener, der ihn nicht zurückgibt, zerstört den Wert.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/rad/content</name>
@@ -31354,6 +31402,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Settings blocks each entry of which registers an implementation: the columns of the subitems table (subitemscolumns.ini [Column_&lt;key&gt;] Class=, Handler=&lt;class&gt;::&lt;method&gt; or Template=), the content job types (content.ini [ContentJobSettings] JobTypes[]), the actions and scope providers of exp:ini (ini.ini [IniCommandSettings]) and the server functions of ezjscore (ezjscore.ini [ezjscServer_&lt;name&gt;] Class=), with every remote service a server function class extending expServiceBase declares (its static $services, called as ezjscore/call/&lt;name&gt;::&lt;service&gt;; each one added to the total, a declared service whose method is missing is broken). An entry that names a class is also one of the settings that name a class and is counted there; the others are added to the total here. An entry whose class, method or template is missing, or whose class does not extend what the registry asks for, is shown as broken. Built-in subitems columns, which the list renders itself, are no point and are not listed.</source>
         <translation>Einstellungsblöcke, deren Einträge je eine Implementierung registrieren: die Spalten der Unterelementtabelle (subitemscolumns.ini [Column_&lt;key&gt;] Class=, Handler=&lt;class&gt;::&lt;method&gt; oder Template=), die Inhaltsjob-Typen (content.ini [ContentJobSettings] JobTypes[]), die Aktionen und Geltungsbereich-Anbieter von exp:ini (ini.ini [IniCommandSettings]) und die Serverfunktionen von ezjscore (ezjscore.ini [ezjscServer_&lt;name&gt;] Class=), dazu jeder Remote-Dienst, den eine von expServiceBase abgeleitete Serverfunktionsklasse deklariert (ihr statisches $services, aufgerufen als ezjscore/call/&lt;name&gt;::&lt;service&gt;; jeder wird zur Summe addiert, ein deklarierter Dienst ohne Methode gilt als defekt). Ein Eintrag, der eine Klasse nennt, ist auch eine der Einstellungen, die eine Klasse nennen, und wird dort gezählt; die übrigen werden hier zur Summe addiert. Ein Eintrag, dessen Klasse, Methode oder Template fehlt oder dessen Klasse nicht von dem ableitet, was die Registry verlangt, wird als defekt angezeigt. Eingebaute Spalten der Unterelementtabelle, die die Liste selbst darstellt, sind keine Punkte und werden nicht aufgeführt.</translation>
+    </message>
+    <message>
+        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/bc/6.0/rad-extension-surface.md.</source>
+        <translation>Weitere Registries sind in rad.ini deklariert, vom Kernel und von jeder aktiven Erweiterung in ihrer eigenen rad.ini.append.php: Ereignis-Listener, KI-Anbieter, -Werkzeuge und -Ketten, MCP-Werkzeuge, Jobtypen der Warteschlange und mehr. Jede sagt, welche INI-Blöcke oder welche Klassenliste ihre Einträge enthalten und was jeder Eintrag sein muss; eine mit InTotal=disabled deklarierte verweist auf anderswo gezählte Punkte und wird geprüft, ohne addiert zu werden. Anleitung: doc/bc/6.0/rad-extension-surface.md.</translation>
+    </message>
+    <message>
+        <source>Each limitation of a policy function is listed too, with the class and method that give its values; one whose class is not there offers nothing to choose in the role editor and is shown as broken.</source>
+        <translation>Jede Einschränkung einer Richtlinien-Funktion wird ebenfalls aufgelistet, mit der Klasse und Methode, die ihre Werte liefern; eine, deren Klasse fehlt, bietet im Rollen-Editor nichts zur Auswahl und wird als defekt gezeigt.</translation>
     </message>
 </context>
 <context>
@@ -51252,6 +51308,14 @@ Der Vorgabecode wurde aus den grundlegenen Parametern erstellt, die Sie ausgewä
         <source>Every setting on this installation whose value is a class, or whose name says it takes one. Change one of these and something else answers instead.</source>
         <translation>Jede Einstellung dieser Installation, deren Wert eine Klasse ist oder deren Name sagt, dass sie eine erwartet. Ändern Sie eine davon, und etwas anderes antwortet stattdessen.</translation>
     </message>
+    <message>
+        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/bc/6.0/rad-extension-surface.md.</source>
+        <translation>Weitere Registries sind in rad.ini deklariert, vom Kernel und von jeder aktiven Erweiterung in ihrer eigenen rad.ini.append.php: Ereignis-Listener, KI-Anbieter, -Werkzeuge und -Ketten, MCP-Werkzeuge, Jobtypen der Warteschlange und mehr. Jede sagt, welche INI-Blöcke oder welche Klassenliste ihre Einträge enthalten und was jeder Eintrag sein muss; eine mit InTotal=disabled deklarierte verweist auf anderswo gezählte Punkte und wird geprüft, ohne addiert zu werden. Anleitung: doc/bc/6.0/rad-extension-surface.md.</translation>
+    </message>
+    <message>
+        <source>Each limitation of a policy function is listed too, with the class and method that give its values; one whose class is not there offers nothing to choose in the role editor and is shown as broken.</source>
+        <translation>Jede Einschränkung einer Richtlinien-Funktion wird ebenfalls aufgelistet, mit der Klasse und Methode, die ihre Werte liefern; eine, deren Klasse fehlt, bietet im Rollen-Editor nichts zur Auswahl und wird als defekt gezeigt.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/datatypecode</name>
@@ -63033,6 +63097,98 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>exp:ini actions and scope providers</source>
         <translation>Aktionen und Geltungsbereich-Anbieter von exp:ini</translation>
     </message>
+    <message>
+        <source>policy limitation</source>
+        <translation>Richtlinien-Einschränkung</translation>
+    </message>
+    <message>
+        <source>values listed in module.php</source>
+        <translation>Werte in module.php aufgelistet</translation>
+    </message>
+    <message>
+        <source>checked, counted elsewhere</source>
+        <translation>geprüft, anderswo gezählt</translation>
+    </message>
+    <message>
+        <source>the ini file has no such block</source>
+        <translation>die INI-Datei hat keinen solchen Block</translation>
+    </message>
+    <message>
+        <source>the value is not one of the words allowed</source>
+        <translation>der Wert ist keines der erlaubten Wörter</translation>
+    </message>
+    <message>
+        <source>the list it is checked against cannot be read</source>
+        <translation>die Liste, gegen die geprüft wird, kann nicht gelesen werden</translation>
+    </message>
+    <message>
+        <source>the value is not in the list</source>
+        <translation>der Wert steht nicht in der Liste</translation>
+    </message>
+    <message>
+        <source>not &lt;event&gt;@&lt;callback&gt;</source>
+        <translation>nicht &lt;Ereignis&gt;@&lt;Callback&gt;</translation>
+    </message>
+    <message>
+        <source>no such function</source>
+        <translation>keine solche Funktion</translation>
+    </message>
+    <message>
+        <source>the registry has no block of its own</source>
+        <translation>die Registry hat keinen eigenen Block</translation>
+    </message>
+    <message>
+        <source>the registry has no Title</source>
+        <translation>die Registry hat keinen Title</translation>
+    </message>
+    <message>
+        <source>the registry names neither Ini, Section and Entries[] nor List</source>
+        <translation>die Registry nennt weder Ini, Section und Entries[] noch List</translation>
+    </message>
+    <message>
+        <source>not &lt;class&gt;::&lt;constant or method&gt;</source>
+        <translation>nicht &lt;Klasse&gt;::&lt;Konstante oder Methode&gt;</translation>
+    </message>
+    <message>
+        <source>the class has no such constant or method</source>
+        <translation>die Klasse hat keine solche Konstante oder Methode</translation>
+    </message>
+    <message>
+        <source>the method is not public, static and without arguments</source>
+        <translation>die Methode ist nicht öffentlich, statisch und ohne Argumente</translation>
+    </message>
+    <message>
+        <source>reading the list failed</source>
+        <translation>die Liste konnte nicht gelesen werden</translation>
+    </message>
+    <message>
+        <source>it gives no list</source>
+        <translation>sie liefert keine Liste</translation>
+    </message>
+    <message>
+        <source>Event listeners</source>
+        <translation>Ereignis-Listener</translation>
+    </message>
+    <message>
+        <source>The listeners attached to kernel events and filters: site.ini [Event] Listeners[] and [RunnableSettings] Listeners[], each &lt;event&gt;@&lt;callback&gt;.</source>
+        <translation>Die Listener an Kernel-Ereignissen und -Filtern: site.ini [Event] Listeners[] und [RunnableSettings] Listeners[], jeweils &lt;Ereignis&gt;@&lt;Callback&gt;.</translation>
+    </message>
+    <message>
+        <source>Cronjob part scripts</source>
+        <translation>Skripte der Cronjob-Teile</translation>
+    </message>
+    <message>
+        <source>The scripts of every cronjob part (cronjob.ini [CronjobPart-&lt;part&gt;] Scripts[]). Most of them are commands counted as runnables already, so they are listed and not added to the total.</source>
+        <translation>Die Skripte jedes Cronjob-Teils (cronjob.ini [CronjobPart-&lt;Teil&gt;] Scripts[]). Die meisten sind Befehle, die schon als Runnables gezählt sind; sie werden daher aufgelistet und nicht zur Summe addiert.</translation>
+    </message>
+    <message>
+        <source>Audit console sources</source>
+        <translation>Quellen der Audit-Konsole</translation>
+    </message>
+    <message>
+        <source>What shows an extension's own audit records in the audit console (audit.ini [AuditSourceSettings] Sources[&lt;name&gt;]=, implementing expAuditSource).</source>
+        <translation>Was die eigenen Audit-Einträge einer Erweiterung in der Audit-Konsole zeigt (audit.ini [AuditSourceSettings] Sources[&lt;Name&gt;]=, implementiert expAuditSource).</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/shop/dashboard</name>
@@ -69566,6 +69722,37 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>The key "%name" is revoked. Requests with it are refused from now on.</source>
         <translation>Der Schlüssel „%name“ ist widerrufen. Anfragen damit werden ab jetzt abgewiesen.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/preferences</name>
+    <message>
+        <source>Change a preference</source>
+        <translation>Eine Einstellung ändern</translation>
+    </message>
+    <message>
+        <source>Switch the tabs on while browsing content?</source>
+        <translation>Die Reiter beim Durchsuchen der Inhalte einschalten?</translation>
+    </message>
+    <message>
+        <source>Switch the tabs off while browsing content?</source>
+        <translation>Die Reiter beim Durchsuchen der Inhalte ausschalten?</translation>
+    </message>
+    <message>
+        <source>Set your preference &quot;%key&quot; to &quot;%value&quot;?</source>
+        <translation>Ihre Einstellung „%key“ auf „%value“ setzen?</translation>
+    </message>
+    <message>
+        <source>This address was opened directly or from another site, so nothing has been changed yet.</source>
+        <translation>Diese Adresse wurde direkt oder von einer anderen Website aus geöffnet, deshalb wurde noch nichts geändert.</translation>
+    </message>
+    <message>
+        <source>Change it</source>
+        <translation>Ändern</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abbrechen</translation>
     </message>
 </context>
 </TS>

@@ -4,7 +4,7 @@
  * long-running worker.
  *
  *  RR-01 — Every registry of the installation's own settings is read entry by entry: the subitems columns (every
- *          Class, Handler and Template column, no built-in one), the nine content job types, the exp:ini actions
+ *          Class, Handler and Template column, no built-in one), the ten content job types, the exp:ini actions
  *          and scope providers, the ezjscore server functions; none of them is broken
  *  RR-02 — No point is counted twice: an entry naming a class is a setting already, only the others (template and
  *          Handler=<class>::<method> columns that the settings group does not have) are added, and the total is the
@@ -34,6 +34,11 @@ class ezpTestRadSurveyWithExtraRegistry extends expRADSurvey
     {
         return array( 'radtest' => array( 'title' => 'Test registry', 'ini' => 'ini.ini', 'section' => 'IniCommandSettings',
                                           'variables' => array( 'ScopeProviders' => 'expIniScopeProvider' ) ) );
+    }
+
+    public static function declaredRegistryDescriptors( $files = null )
+    {
+        return array();
     }
 }
 
@@ -78,10 +83,10 @@ class RadSurveyRegistriesTest extends PHPUnit\Framework\TestCase
         $this->assertContains( 'daysonline', $names );
 
         $jobs = self::$survey['content_jobs'];
-        $this->assertSame( array( 'remove', 'copy', 'move', 'hide', 'reveal', 'section', 'state', 'addlocation', 'removelocation' ),
+        $this->assertSame( array( 'remove', 'copy', 'move', 'hide', 'reveal', 'section', 'state', 'addlocation', 'removelocation', 'packageinstall' ),
                            array_column( $jobs['types'], 'name' ) );
         $this->assertSame( array(), $jobs['broken'] );
-        $this->assertSame( 9, self::$survey['counts']['content_job_types'] );
+        $this->assertSame( 10, self::$survey['counts']['content_job_types'] );
         $this->assertSame( 0, self::$survey['counts']['content_job_types_registered'] );
 
         $ini = array_column( $registries['inicommand']['entries'], 'value' );
@@ -107,7 +112,9 @@ class RadSurveyRegistriesTest extends PHPUnit\Framework\TestCase
                 if ( !$inSettings )
                     $added++;
                 // a class entry is always a setting already
-                if ( $entry['what'] !== 'template' && $entry['what'] !== 'callable' && strpos( $entry['what'], 'debugbar-' ) !== 0 )
+                // (a registry declared in rad.ini checks more than classes, and RadSurveyDeclaredRegistriesTest covers it)
+                if ( empty( $registry['declared'] ) && $registry['key'] !== 'expservices'
+                     && $entry['what'] !== 'template' && $entry['what'] !== 'callable' && strpos( $entry['what'], 'debugbar-' ) !== 0 )
                     $this->assertTrue( $entry['counted'], $entry['value'] . ' names a class and is a setting' );
             }
         $this->assertSame( $added, $c['registries_added'] );
@@ -119,7 +126,7 @@ class RadSurveyRegistriesTest extends PHPUnit\Framework\TestCase
         foreach ( array_keys( expRADSurvey::totalGroups() ) as $group )
             $sum += $c[$group];
         $this->assertSame( $sum, $c['total'] );
-        $this->assertSame( $c['settings'] + $c['repositories'] + $c['contracts'] + $c['views'] + $c['callables']
+        $this->assertSame( $c['settings'] + $c['repositories'] + $c['contracts'] + $c['views'] + $c['limitations'] + $c['callables']
                            + $c['events'] + $c['overrides'] + $c['replaced'] + $c['runnables'] + $c['registries_added'], $c['total'] );
 
         $groups = expRADSurvey::groupCounts( self::$survey );

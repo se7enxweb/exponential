@@ -129,11 +129,13 @@
         <span class="rad-meta">{'The list above is written by hand. This one is read off disk on every request: %settings settings that name a class across %ini ini files, %views module views, %repositories directories searched for handlers, and %contracts interfaces waiting to be implemented.'|i18n( 'design/admin/setup/rad',, hash( '%settings', $rad_survey.counts.settings, '%ini', $rad_survey.counts.ini, '%views', $rad_survey.counts.views, '%repositories', $rad_survey.counts.repositories, '%contracts', $rad_survey.counts.contracts ) )}</span>
         <span class="rad-meta">{'%runnables commands, cronjob parts and views are classes a subclass named in site.ini can replace.'|i18n( 'design/admin/setup/rad',, hash( '%runnables', $rad_survey.counts.runnables ) )}</span>
         <span class="rad-meta">{'exp:ini has %actions actions and %providers scope providers; an extension adds its own in ini.ini.'|i18n( 'design/admin/setup/rad',, hash( '%actions', $rad_survey.counts.ini_actions, '%providers', $rad_survey.counts.ini_scope_providers ) )}</span>
+        <span class="rad-meta">{'%registries registries are declared in rad.ini by %origins sources (the kernel and extensions), with %entries entries. %limitations policy limitations give the values the role editor offers.'|i18n( 'design/admin/setup/rad',, hash( '%registries', $rad_survey.counts.registries_declared, '%origins', $rad_survey.counts.registries_declared_by, '%entries', $rad_survey.counts.registries_declared_entries, '%limitations', $rad_survey.counts.limitations ) )}</span>
+        {if $rad_survey.counts.registries_broken|gt( 0 )}<span class="rad-meta">{'%broken registry entries cannot work and are shown as broken in the survey.'|i18n( 'design/admin/setup/rad',, hash( '%broken', $rad_survey.counts.registries_broken ) )}</span>{/if}
     </span>
 </a>
 <ul class="rad-survey-groups">
 {foreach $rad_survey_groups as $rad_count}
-    <li{if $rad_count.in_total|not} class="is-inside"{/if}><a href={concat( 'setup/radsurvey/(show)/', $rad_count.section )|ezurl}><b>{$rad_count.count}</b> {$rad_count.label|i18n( 'design/admin/setup/rad' )|wash}{if and( $rad_count.in_total|not, $rad_count.counted|gt( 0 ) )} <span class="rad-meta">({'%counted of them counted as settings'|i18n( 'design/admin/setup/rad',, hash( '%counted', $rad_count.counted ) )})</span>{/if}</a></li>
+    <li{if $rad_count.in_total|not} class="is-inside"{/if}><a href={concat( 'setup/radsurvey/(show)/', $rad_count.section )|ezurl}{if and( is_set( $rad_count.description ), $rad_count.description )} title="{$rad_count.description|wash}"{/if}><b>{$rad_count.count}</b> {$rad_count.label|i18n( 'design/admin/setup/rad' )|wash}{if and( $rad_count.in_total|not, $rad_count.counted|gt( 0 ) )} <span class="rad-meta">({'%counted of them counted as settings'|i18n( 'design/admin/setup/rad',, hash( '%counted', $rad_count.counted ) )})</span>{/if}</a></li>
 {/foreach}
 </ul>
 </div>

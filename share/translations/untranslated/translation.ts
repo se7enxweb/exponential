@@ -23812,6 +23812,54 @@ Note: The packages will not be uninstalled.</source>
         <source>implements expContentJobType (validate, countNodes, locks, describe, prepare, runBatch, afterBatch, finish)</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>policy limitations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%registries registries are declared in rad.ini by %origins sources (the kernel and extensions), with %entries entries. %limitations policy limitations give the values the role editor offers.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%broken registry entries cannot work and are shown as broken in the survey.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Registry declared in rad.ini</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A list of implementations that an extension reads from its own settings or from its own code, such as AI providers and tools, MCP tools or queue job types. Declared in rad.ini, it is counted and checked by the extension point survey like the kernel's own registries: every entry is listed, and one whose class, method, template or block is missing is shown as broken.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>rad.ini [RegistrySettings] Registries[]=&lt;key&gt; and [Registry_&lt;key&gt;] with Title, Ini, Section and Entries[&lt;variable&gt;]=&lt;check&gt;, or List=&lt;class&gt;::&lt;constant or method&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Each entry passes its check: a class or interface, callable, listener, template, section:&lt;prefix&gt;, in:&lt;class&gt;::&lt;list&gt;, one-of:&lt;words&gt; or name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filter event listener</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A listener of a filter event, whose return value replaces what the kernel passed: for example httpcache/store/headers, the headers an HTTP cache keeps with a page. A notify event such as package/install/drafts, after a package was installed as drafts, ignores what its listeners return.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A callable that returns the value it was given, changed or not</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An entry of a registry that rad.ini declares: the kernel or an extension says which ini blocks, or which class list, hold the entries and what each must be, and the extension point survey counts and checks every entry without the kernel naming the extension.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A listener of a filter event in site.ini [Event] Listeners[]. The kernel passes a value and goes on with what the listener returns, so a listener that forgets to return it destroys the value.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/rad/content</name>
@@ -27909,6 +27957,14 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>If you are looking for somewhere to change behaviour, these are the places nobody has claimed yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/bc/6.0/rad-extension-surface.md.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Each limitation of a policy function is listed too, with the class and method that give its values; one whose class is not there offers nothing to choose in the role editor and is shown as broken.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -44238,6 +44294,14 @@ The default code was made from the basic parameters you chose.</source>
         <source>Every setting on this installation whose value is a class, or whose name says it takes one. Change one of these and something else answers instead.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/bc/6.0/rad-extension-surface.md.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Each limitation of a policy function is listed too, with the class and method that give its values; one whose class is not there offers nothing to choose in the role editor and is shown as broken.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/datatypecode</name>
@@ -53529,6 +53593,98 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The licence &quot;%licence&quot; is not one of the licences configured in package.ini [LicenseSettings]. Choose one from the list.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>policy limitation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>values listed in module.php</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>checked, counted elsewhere</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the ini file has no such block</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the value is not one of the words allowed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the list it is checked against cannot be read</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the value is not in the list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not &lt;event&gt;@&lt;callback&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>no such function</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the registry has no block of its own</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the registry has no Title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the registry names neither Ini, Section and Entries[] nor List</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not &lt;class&gt;::&lt;constant or method&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the class has no such constant or method</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the method is not public, static and without arguments</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>reading the list failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>it gives no list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Event listeners</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The listeners attached to kernel events and filters: site.ini [Event] Listeners[] and [RunnableSettings] Listeners[], each &lt;event&gt;@&lt;callback&gt;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cronjob part scripts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The scripts of every cronjob part (cronjob.ini [CronjobPart-&lt;part&gt;] Scripts[]). Most of them are commands counted as runnables already, so they are listed and not added to the total.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audit console sources</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What shows an extension's own audit records in the audit console (audit.ini [AuditSourceSettings] Sources[&lt;name&gt;]=, implementing expAuditSource).</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/shop/dashboard</name>
@@ -55576,6 +55732,37 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Sources</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/preferences</name>
+    <message>
+        <source>Change a preference</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch the tabs on while browsing content?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch the tabs off while browsing content?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set your preference &quot;%key&quot; to &quot;%value&quot;?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This address was opened directly or from another site, so nothing has been changed yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -76,6 +76,8 @@ class expRADCatalogue
             'ini'       => 'Settings only. Nothing is written but ini, and the behaviour changes.',
             'override'  => 'A kernel class replaced by one of your own through the override autoload path. The heaviest of these mechanisms and the last resort: nothing registers the replacement by name, so two extensions replacing the same class is a fight neither of them knows it is in.',
             'runnable'  => 'A subclass of a command, cronjob part or view class, named in site.ini [RunnableSettings] Implementation[]. The file of the command, part or view stays as it is; Runnable::create() makes the subclass instead, and an entry that is not a subclass is ignored. A command reads it from settings/site.ini and settings/override only, because it starts before its siteaccess and extensions are loaded.',
+            'registry'  => 'An entry of a registry that rad.ini declares: the kernel or an extension says which ini blocks, or which class list, hold the entries and what each must be, and the extension point survey counts and checks every entry without the kernel naming the extension.',
+            'filter'    => 'A listener of a filter event in site.ini [Event] Listeners[]. The kernel passes a value and goes on with what the listener returns, so a listener that forgets to return it destroys the value.',
         );
     }
 
@@ -458,6 +460,17 @@ class expRADCatalogue
             'source' => 'kernel/classes/ini/actions/expiniaction.php',
             'tool'  => false ),
 
+        'declaredregistry' => array(
+            'group' => 'modules',
+            'title' => 'Registry declared in rad.ini',
+            'what'  => 'A list of implementations that an extension reads from its own settings or from its own code, such as AI providers and tools, MCP tools or queue job types. Declared in rad.ini, it is counted and checked by the extension point survey like the kernel\'s own registries: every entry is listed, and one whose class, method, template or block is missing is shown as broken.',
+            'where' => 'extension/<name>/settings/rad.ini.append.php',
+            'register' => ezpI18n::tr( 'design/admin/setup/rad', 'rad.ini [RegistrySettings] Registries[]=<key> and [Registry_<key>] with Title, Ini, Section and Entries[<variable>]=<check>, or List=<class>::<constant or method>' ),
+            'contract' => ezpI18n::tr( 'design/admin/setup/rad', 'Each entry passes its check: a class or interface, callable, listener, template, section:<prefix>, in:<class>::<list>, one-of:<words> or name' ),
+            'mechanism' => 'registry',
+            'source' => 'kernel/setup/expradsurvey.php',
+            'tool'  => 'setup/radsurvey/(show)/registries' ),
+
         // ── Workflow, events and jobs ───────────────────────────────────────
 
         'contentjobtype' => array(
@@ -547,6 +560,17 @@ class expRADCatalogue
             'mechanism' => 'ini',
             'source' => 'kernel/private/classes/ezpevent.php',
             'tool'  => 'setup/settingsextension' ),
+
+        'filterlistener' => array(
+            'group' => 'workflow',
+            'title' => 'Filter event listener',
+            'what'  => 'A listener of a filter event, whose return value replaces what the kernel passed: for example httpcache/store/headers, the headers an HTTP cache keeps with a page. A notify event such as package/install/drafts, after a package was installed as drafts, ignores what its listeners return.',
+            'where' => 'extension/<name>/classes/<name>listener.php',
+            'register' => 'site.ini [Event] Listeners[]=<filter>@<callback>',
+            'contract' => ezpI18n::tr( 'design/admin/setup/rad', 'A callable that returns the value it was given, changed or not' ),
+            'mechanism' => 'filter',
+            'source' => 'kernel/private/classes/ezpevent.php',
+            'tool'  => 'setup/radsurvey/(show)/events' ),
 
         // ── Storage and infrastructure ──────────────────────────────────────
 

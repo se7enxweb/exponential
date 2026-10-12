@@ -126,14 +126,14 @@ class expRadSurveyHelpersTest extends PHPUnit\Framework\TestCase
     public function testGroupsOfTheTotal()
     {
         $groups = expRADSurvey::totalGroups();
-        $this->assertSame( array( 'settings', 'repositories', 'contracts', 'views', 'callables', 'events', 'overrides', 'replaced', 'runnables', 'registries_added' ), array_keys( $groups ) );
+        $this->assertSame( array( 'settings', 'repositories', 'contracts', 'views', 'limitations', 'callables', 'events', 'overrides', 'replaced', 'runnables', 'registries_added' ), array_keys( $groups ) );
         $counts = array_fill_keys( array_keys( $groups ), 1 );
         $counts['registry_k1e'] = 5;
         $counts['registry_k1e_added'] = 2;
         $rows = expRADSurvey::groupCounts( array( 'counts' => $counts, 'registries' => array( 'k1e' => array( 'title' => 'K1e things' ) ) ) );
-        $this->assertCount( 11, $rows );
+        $this->assertCount( 12, $rows );
         $last = end( $rows );
-        $this->assertSame( array( 'key' => 'registry_k1e', 'label' => 'K1e things', 'count' => 5, 'section' => 'registries', 'in_total' => false, 'counted' => 3 ), $last );
+        $this->assertSame( array( 'key' => 'registry_k1e', 'label' => 'K1e things', 'count' => 5, 'section' => 'registries', 'in_total' => false, 'counted' => 3, 'declared' => false, 'origin' => 'kernel', 'broken' => 0, 'description' => '' ), $last );
         $this->assertTrue( $rows[0]['in_total'] );
         $this->assertNotEmpty( expRADSurvey::registryDescriptors() );
     }
