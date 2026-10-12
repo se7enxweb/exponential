@@ -5,13 +5,13 @@
 #   bash import_all.sh [indir]
 #
 # Default indir: ./json_fixed
-# Credentials / URI can be overridden via environment:
-#   MONGO_URI  (default: mongodb://db:publishing$8088@localhost:27017/exp)
+# The server is read from the environment:
+#   MONGO_URI  (required: a mongodb:// connection string, e.g. mongodb://USER:PASSWORD@localhost:27017/exp)
 #   MONGO_DB   (default: exp)
 
 set -euo pipefail
 
-URI="${MONGO_URI:-mongodb://db:publishing\$8088@localhost:27017/exp}"
+URI="${MONGO_URI:?set MONGO_URI to a mongodb:// connection string (mongodb://USER:PASSWORD@host:27017/exp)}"
 DB="${MONGO_DB:-exp}"
 INDIR="${1:-./json_fixed}"
 

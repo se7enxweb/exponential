@@ -14,7 +14,7 @@
  * Not part of the normal run (group network-live): it needs a live installation reachable over HTTP. Run it with
  *   php vendor/bin/phpunit --group network-live tests/tests/kernel/classes/apikey/ApiKeyLiveTest.php
  * Env: APIKEY_LIVE_BASES (comma separated), APIKEY_LIVE_SITEACCESS (site), APIKEY_LIVE_ADMIN_SITEACCESS (admin),
- * APIKEY_LIVE_ADMIN_PASSWORD, APIKEY_LIVE_REST_PATH (default from expApiKey::examplePath()).
+ * APIKEY_LIVE_ADMIN_PASSWORD (AL-06 is skipped without it), APIKEY_LIVE_REST_PATH (default from expApiKey::examplePath()).
  *
  *  AL-01 the page asks a signed out visitor to sign in or register, and makes no key
  *  AL-02 a key is made on the page: shown once (no-store), stored as a hash, recorded as access.apikey.create
@@ -385,6 +385,9 @@ class ApiKeyLiveTest extends expContentModelLiveTestCase
     public function testAdministratorRevokesAKey()
     {
         $first = static::$bases[0];
+        $adminPassword = (string)getenv( 'APIKEY_LIVE_ADMIN_PASSWORD' );
+        if ( $adminPassword === '' )
+            $this->markTestSkipped( 'APIKEY_LIVE_ADMIN_PASSWORD (the password of the administrator account "admin") is not set' );
         $this->signIn( $first );
         $token = $this->makeKey( $first, 'Live test second', array( 'read' ) );
         list( $prefix ) = expApiKey::parseToken( $token );
@@ -394,7 +397,7 @@ class ApiKeyLiveTest extends expContentModelLiveTestCase
         $sa = '/' . ( getenv( 'APIKEY_LIVE_ADMIN_SITEACCESS' ) ?: 'admin' );
         list( , , $login ) = static::http( $first, 'GET', $sa . '/user/login', null, array(), 'admin' );
         list( $status, $headers ) = static::http( $first, 'POST', $sa . '/user/login', array(
-            'Login' => 'admin', 'Password' => getenv( 'APIKEY_LIVE_ADMIN_PASSWORD' ) ?: 'publishing$',
+            'Login' => 'admin', 'Password' => $adminPassword,
             'LoginButton' => 'Login', 'ezxform_token' => static::formToken( $login ) ), array(), 'admin' );
         $this->assertSame( 302, $status, 'the administrator signs in' );
         list( $status, , $list ) = static::http( $first, 'GET', $sa . '/oauthadmin/keys/(user)/' . static::$user['object'], null, array(), 'admin' );

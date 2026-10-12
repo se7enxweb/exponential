@@ -2,9 +2,11 @@
 /**
  * Live integration tests for expMongoDB and the MySQL (ezmysqli) adapter.
  *
- * These tests require:
- *  - A running MongoDB 8.x instance at mongodb://db:publishing$8088@localhost:27017/exp
- *  - A running MariaDB/MySQL instance at localhost with user xa_alpha / db-alpha-2025 / xa_alpha
+ * These tests read their servers from environment variables and skip when they are not set:
+ *  - MongoDB 8.x: EXP_TEST_MONGO_URI (a mongodb:// connection string) and EXP_TEST_MONGO_DATABASE
+ *    (default "exp"), a database holding an imported installation.
+ *  - MySQL/MariaDB: EXP_TEST_MYSQL_USER, EXP_TEST_MYSQL_PASSWORD and EXP_TEST_MYSQL_DATABASE, with
+ *    EXP_TEST_MYSQL_HOST (default "localhost") and EXP_TEST_MYSQL_PORT (default 3306).
  *
  * They are tagged @group mongodb-live so they are EXCLUDED from the default
  * phpunit run.  Run them explicitly with:
@@ -26,21 +28,52 @@
 #[\PHPUnit\Framework\Attributes\Group('mongodb-live')]
 class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
 {
-    private const MONGO_URI  = 'mongodb://db:publishing$8088@localhost:27017/exp';
-    private const MONGO_DB   = 'exp';
     private const TEST_COL   = '_phpunit_test';
     private const SEQ_COL    = 'ezsequence';
-
-    private const MYSQL_HOST = 'localhost';
-    private const MYSQL_USER = 'xa_alpha';
-    private const MYSQL_PASS = 'db-alpha-2025';
-    private const MYSQL_DB   = 'xa_alpha';
 
     /** @var MongoDB\Client */
     private static $mongoClient;
 
     /** @var mysqli */
     private static $mysql;
+
+    /** @var string */
+    private static $mongoDb = 'exp';
+
+    /**
+     * The value of environment variable $name, trimmed; '' when it is not set.
+     */
+    private static function env( string $name ): string
+    {
+        $value = getenv( $name );
+        return $value === false ? '' : trim( $value );
+    }
+
+    /**
+     * Connects to the MySQL/MariaDB server named by EXP_TEST_MYSQL_HOST, EXP_TEST_MYSQL_PORT,
+     * EXP_TEST_MYSQL_USER, EXP_TEST_MYSQL_PASSWORD and EXP_TEST_MYSQL_DATABASE. Null when
+     * EXP_TEST_MYSQL_USER or EXP_TEST_MYSQL_DATABASE is not set or the connection fails.
+     */
+    private static function connectMySQL(): ?mysqli
+    {
+        $user = self::env( 'EXP_TEST_MYSQL_USER' );
+        $database = self::env( 'EXP_TEST_MYSQL_DATABASE' );
+        if ( $user === '' || $database === '' )
+            return null;
+
+        $host = self::env( 'EXP_TEST_MYSQL_HOST' );
+        $port = (int)self::env( 'EXP_TEST_MYSQL_PORT' );
+        $password = getenv( 'EXP_TEST_MYSQL_PASSWORD' );
+        try
+        {
+            $mysql = @new mysqli( $host !== '' ? $host : 'localhost', $user, $password === false ? '' : $password, $database, $port > 0 ? $port : 3306 );
+        }
+        catch ( mysqli_sql_exception $e )
+        {
+            return null;
+        }
+        return $mysql->connect_errno ? null : $mysql;
+    }
 
     /** @var bool */
     private static $mongoBootstrapAttempted = false;
@@ -81,10 +114,19 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
             return;
         }
 
+        $uri = self::env( 'EXP_TEST_MONGO_URI' );
+        if ( $uri === '' )
+        {
+            self::$mongoSkipReason = 'EXP_TEST_MONGO_URI is not set (a mongodb:// connection string of a server holding an imported installation)';
+            return;
+        }
+        $database = self::env( 'EXP_TEST_MONGO_DATABASE' );
+        self::$mongoDb = $database !== '' ? $database : 'exp';
+
         try
         {
-            self::$mongoClient = new MongoDB\Client( self::MONGO_URI );
-            self::$mongoClient->selectDatabase( self::MONGO_DB )->command( [ 'ping' => 1 ] );
+            self::$mongoClient = new MongoDB\Client( $uri );
+            self::$mongoClient->selectDatabase( self::$mongoDb )->command( [ 'ping' => 1 ] );
         }
         catch ( Exception $e )
         {
@@ -100,23 +142,7 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
 
         self::$mysqlBootstrapAttempted = true;
 
-        try
-        {
-            self::$mysql = @new mysqli(
-                self::MYSQL_HOST, self::MYSQL_USER, self::MYSQL_PASS, self::MYSQL_DB
-            );
-        }
-        catch ( mysqli_sql_exception $e )
-        {
-            self::$mysql = null;
-            return;
-        }
-
-        if ( self::$mysql->connect_errno )
-        {
-            self::$mysql = null;
-            // Not skipped — MySQL tests will be individually skipped via skipIfNoMySQL()
-        }
+        self::$mysql = self::connectMySQL();
     }
 
     private function requireMongo(): void
@@ -133,11 +159,11 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
 
         // Always remove test documents written during this test.
         self::$mongoClient
-            ->selectCollection( self::MONGO_DB, self::TEST_COL )
+            ->selectCollection( self::$mongoDb, self::TEST_COL )
             ->deleteMany( [] );
         // Clean up sequence counter if touched
         self::$mongoClient
-            ->selectCollection( self::MONGO_DB, self::SEQ_COL )
+            ->selectCollection( self::$mongoDb, self::SEQ_COL )
             ->deleteMany( [ '_id' => 'phpunit_seq_test' ] );
     }
 
@@ -145,7 +171,7 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
     {
         self::bootstrapMySQL();
         if ( self::$mysql === null )
-            $this->markTestSkipped( 'Cannot connect to MySQL/MariaDB' );
+            $this->markTestSkipped( 'EXP_TEST_MYSQL_USER and EXP_TEST_MYSQL_DATABASE are not set, or MySQL/MariaDB cannot be reached' );
     }
 
     // ── MongoDB live: basic connectivity ─────────────────────────────────────
@@ -157,7 +183,7 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
     {
         $this->requireMongo();
         $result = self::$mongoClient
-            ->selectDatabase( self::MONGO_DB )
+            ->selectDatabase( self::$mongoDb )
             ->command( [ 'ping' => 1 ] );
         $arr = current( iterator_to_array( $result ) );
         $this->assertArrayHasKey( 'ok', (array)$arr );
@@ -170,7 +196,7 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
     public function testMongoInsertAndAggregate(): void
     {
         $this->requireMongo();
-        $col = self::$mongoClient->selectCollection( self::MONGO_DB, self::TEST_COL );
+        $col = self::$mongoClient->selectCollection( self::$mongoDb, self::TEST_COL );
 
         // Insert two test documents
         $col->insertOne( [ 'type' => 'phpunit', 'value' => 10, 'active' => true ] );
@@ -194,7 +220,7 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
     public function testMongoUpsertUpdatesExisting(): void
     {
         $this->requireMongo();
-        $col = self::$mongoClient->selectCollection( self::MONGO_DB, self::TEST_COL );
+        $col = self::$mongoClient->selectCollection( self::$mongoDb, self::TEST_COL );
         $col->insertOne( [ 'type' => 'phpunit_upsert', 'key' => 'k1', 'val' => 'old' ] );
 
         $col->replaceOne(
@@ -214,7 +240,7 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
     public function testMongoDeleteMany(): void
     {
         $this->requireMongo();
-        $col = self::$mongoClient->selectCollection( self::MONGO_DB, self::TEST_COL );
+        $col = self::$mongoClient->selectCollection( self::$mongoDb, self::TEST_COL );
         $col->insertOne( [ 'type' => 'phpunit_del', 'id' => 1 ] );
         $col->insertOne( [ 'type' => 'phpunit_del', 'id' => 2 ] );
         $col->insertOne( [ 'type' => 'other',       'id' => 3 ] );
@@ -233,7 +259,7 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
     public function testMongoUpdateOneIncrement(): void
     {
         $this->requireMongo();
-        $col = self::$mongoClient->selectCollection( self::MONGO_DB, self::SEQ_COL );
+        $col = self::$mongoClient->selectCollection( self::$mongoDb, self::SEQ_COL );
         // Remove any leftover from a previous run first
         $col->deleteMany( [ '_id' => 'phpunit_seq_test' ] );
 
@@ -256,7 +282,7 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
     {
         $this->requireMongo();
         $names = iterator_to_array(
-            self::$mongoClient->selectDatabase( self::MONGO_DB )->listCollectionNames()
+            self::$mongoClient->selectDatabase( self::$mongoDb )->listCollectionNames()
         );
 
         // These collections must exist after the MongoDB migration
@@ -272,7 +298,7 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
             $this->assertContains(
                 $col,
                 $names,
-                "MongoDB collection '{$col}' must exist in database '" . self::MONGO_DB . "'"
+                "MongoDB collection '{$col}' must exist in database '" . self::$mongoDb . "'"
             );
         }
     }
@@ -284,7 +310,7 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
     {
         $this->requireMongo();
         $doc = self::$mongoClient
-            ->selectCollection( self::MONGO_DB, 'ezcontentobject' )
+            ->selectCollection( self::$mongoDb, 'ezcontentobject' )
             ->findOne( [] );
 
         $this->assertNotNull( $doc, 'ezcontentobject must contain at least one document' );
@@ -308,7 +334,7 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
     {
         $this->requireMongo();
         $doc = self::$mongoClient
-            ->selectCollection( self::MONGO_DB, 'ezcontentobject_tree' )
+            ->selectCollection( self::$mongoDb, 'ezcontentobject_tree' )
             ->findOne( [] );
 
         $this->assertNotNull( $doc, 'ezcontentobject_tree must contain at least one document' );
@@ -440,7 +466,7 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
 
         $pipeline = [ [ '$match' => [ 'status' => 1 ] ], [ '$count' => 'c' ] ];
         $cursor   = self::$mongoClient
-            ->selectCollection( self::MONGO_DB, 'ezcontentobject' )
+            ->selectCollection( self::$mongoDb, 'ezcontentobject' )
             ->aggregate( $pipeline );
         $rows = iterator_to_array( $cursor );
         $mongoCount = empty( $rows ) ? 0 : (int)( (array)$rows[0] )['c'];
