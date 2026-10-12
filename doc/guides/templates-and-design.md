@@ -262,6 +262,33 @@ Both are listed in `settings/template.ini [PHP] PHPOperatorList[]`, in every ins
 `urlencode` and `urldecode` are unchanged. The list is read-only from the settings page and from code, as it
 names PHP functions. With thanks to Mugo Web (LoveStack, commit `627004e5c4`).
 
+## 11. Telling a layout view apart: the `layout` key
+
+A page shown through `layout/set/<layout>/...` (for example a print view) is rendered with the override key
+`layout` set to that layout, which an override can match:
+
+```ini
+# settings/siteaccess/<site>/override.ini.append.php
+[full_article_print]
+Source=node/view/full.tpl
+MatchFile=full/article_print.tpl
+Subdir=templates
+Match[class_identifier]=article
+Match[layout]=print
+```
+
+Since 6.0.15 every node view has the key, as an empty value when no layout is used, so a node template can
+always ask for it without a check whether it exists:
+
+```
+{if $DesignKeys:used.layout|eq( 'print' )}...{/if}
+```
+
+Overrides that do not name `layout` match as before. In PHP, `eZTemplateDesignResource::instance()->setKeyValue(
+$key, $value, $override = true )` sets one key; with `$override = false` a key that is already set keeps its
+value, which is how the node view sets `layout` to `''` without replacing the layout of `layout/set`. With
+thanks to Mugo Web (LoveStack, commit `856a95e240`).
+
 ## Related pages
 
 - [The content model and editing content](content-model-and-editing.md): the classes and attributes your templates show.

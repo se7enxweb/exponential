@@ -78,6 +78,12 @@ class eZNodeviewfunctions
                                           array $viewParameters = array( 'offset' => 0, 'year' => false, 'month' => false, 'day' => false ),
                                           $collectionAttributes = false, $validation = false )
     {
+        // The layout key is always there for the node's templates: the layout of layout/set when one is
+        // used, '' otherwise, so an override can tell a layout view from the normal one (Match[layout]).
+        // Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 856a95e240), Copyright (C) Mugo Web, GPL v2
+        $res = eZTemplateDesignResource::instance();
+        $res->setKeyValue( 'layout', '', false );
+
         $section = eZSection::fetch( $object->attribute( 'section_id' ) );
         if ( $section )
         {
@@ -136,7 +142,6 @@ class eZNodeviewfunctions
             }
         }
 
-        $res = eZTemplateDesignResource::instance();
         $res->setKeys( $keyArray );
 
         if ( $languageCode )

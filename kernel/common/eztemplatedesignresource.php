@@ -1090,6 +1090,24 @@ class eZTemplateDesignResource extends eZTemplateFileResource
         $this->mergeKeys( $this->Keys, $keys );
     }
 
+    /**
+     * Sets one override key. With $override false a key that is already set keeps its value, and $value is
+     * only the default for a key that is not set yet.
+     *
+     * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 856a95e240), Copyright (C) Mugo Web, GPL v2
+     *
+     * @param string $key
+     * @param mixed $value
+     * @param bool $override
+     * @return eZTemplateDesignResource
+     */
+    public function setKeyValue( string $key, $value, bool $override = true )
+    {
+        if ( $override || !array_key_exists( $key, $this->Keys ) )
+            $this->Keys[$key] = $value;
+        return $this;
+    }
+
     /*!
      Removes the given key
     */
