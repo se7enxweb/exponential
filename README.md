@@ -333,7 +333,9 @@ permissions.
 
 It is the extension [`se7enxweb/expai`](https://github.com/se7enxweb/expai) (release
 [0.0.1.0](https://github.com/se7enxweb/expai/releases/tag/v0.0.1.0)), required in `composer.json` since 6.0.15, so
-every installation has it in `extension/expai`. It does nothing until you switch it on.
+every installation has it in `extension/expai`. **A new installation activates it by default**: the installer switches
+it on for the administration siteaccesses and creates its tables. It sends nothing anywhere until you add a provider
+key (see [How to enable it](#how-to-enable-it)).
 
 ## What it does for editors
 
@@ -378,6 +380,19 @@ Only models that passed a live tool-calling **probe** (or are trusted by configu
   refuse a request with a reason.
 
 ## How to enable it
+
+**On a new installation** it is already active for the administration siteaccesses (admin, editor and adminui), its
+tables exist and the Administrator role holds all its policies. Two things are left to you:
+
+1. Put the provider key into `settings/override/expai.ini.append.php` (`[AISettings] Enabled=true`, `ApiKey=...`),
+   never into a committed file. Without a key it stays idle and sends nothing.
+2. Add the cron parts `expqueue` and `expai` (`php runcronjobs.php -q -s <admin siteaccess> expqueue`, every minute;
+   `... expai`, every five minutes), and give editors the policy `expai/write` (and `ezjscore/call`) if they should
+   use it.
+
+Then open a folder in the administration, choose the **Intelligence** tab and ask for something.
+
+**Upgrading an earlier installation** (one installed before Exponential Intelligence was part of the installers):
 
 1. Activate it for the admin siteaccess(es): `ActiveAccessExtensions[]=expai` in each admin siteaccess's
    `site.ini.append.php` (or `ActiveExtensions[]=expai` for all).
