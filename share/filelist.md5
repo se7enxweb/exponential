@@ -3013,7 +3013,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-d1e1c10b02f72c051df1929c88e75877  doc/changelogs/6.0/6.0.15.md
+7e7b4a7b61692a6511421bf9ab31de96  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -4829,7 +4829,7 @@ d8226b00b7469da9040b293266a47da4  kernel/classes/contentjob/expcontentjobtype.ph
 73228e28e463b55ff7acc76b1cbd3bf0  kernel/classes/contentjob/expcontentjobworker.php
 b87309023dcf0632588ba95e277c245b  kernel/classes/datatypes/ezauthor/ezauthor.php
 947a63267a510aeeb225845c19aed101  kernel/classes/datatypes/ezauthor/ezauthortype.php
-3456007bcaed1b1f34c4d305de9ae7cf  kernel/classes/datatypes/ezbinaryfile/ezbinaryfile.php
+fb75d46b05bf6f49f29fafd0d7c71fe5  kernel/classes/datatypes/ezbinaryfile/ezbinaryfile.php
 05d2e5c9378c710451169da883ac85c3  kernel/classes/datatypes/ezbinaryfile/ezbinaryfiletype.php
 6570c8317fbcaa7383d912e2f0b1e034  kernel/classes/datatypes/ezbinaryfile/plugins/ezpdfparser.php
 a50a52a2e1335405a62886d9a3243a74  kernel/classes/datatypes/ezbinaryfile/plugins/ezplaintextparser.php
@@ -4943,7 +4943,7 @@ e0b74fce97e793dcf8a5c7ccd1ad86c0  kernel/classes/expextensionchangeplan.php
 f93c0a4b63a19a1bc54c806e89fd6a22  kernel/classes/expkickstarterini.php
 0c2606192197f0079a759fa583ffa338  kernel/classes/explinkcheck.php
 56871d2f29e5b9d253fb825f5a2d971b  kernel/classes/explovestack.php
-ff086dac5c4b6a5eaa79c84336445b0d  kernel/classes/expmaintenance.php
+e5bc1dbeaeffc71af4b70610c9bf3211  kernel/classes/expmaintenance.php
 f33944dda86f2612b983e1d72273dccc  kernel/classes/expnamepatternresolverinterface.php
 846590ae94cadbe8b9122bfb25b89d0c  kernel/classes/expnotificationjob.php
 2b141e8596da58d9d22a67c4021cba74  kernel/classes/expnotificationservice.php
@@ -5180,7 +5180,7 @@ b6e0eb67e9d64bc90af7f845e8208208  kernel/classes/packagecreators/ezcontentclass/
 a5c689c7a2cb251c036e401356ba09c7  kernel/classes/packagecreators/ezextension/ezextensionpackagecreator.php
 465042c1b2063952766489798dc5d675  kernel/classes/packagecreators/ezstyle/ezstylepackagecreator.php
 345e8a3f3a19b13d6aeefc0bea5193ff  kernel/classes/packagehandlers/ezcontentclass/ezcontentclasspackagehandler.php
-4fec7ce7ff8a4b581325e75559340005  kernel/classes/packagehandlers/ezcontentobject/ezcontentobjectpackagehandler.php
+7f52b8ed6e4c0bca419915f16389ccd9  kernel/classes/packagehandlers/ezcontentobject/ezcontentobjectpackagehandler.php
 43fdcc2147331027b2804b9923b768b9  kernel/classes/packagehandlers/ezdb/ezdbpackagehandler.php
 3e27ab748eea7615ef3094e31f36b463  kernel/classes/packagehandlers/ezextension/ezextensionpackagehandler.php
 67c3fad221510ea847e17b6b6bc0ab07  kernel/classes/packagehandlers/ezfile/ezfilepackagehandler.php
@@ -6041,7 +6041,7 @@ dbb6944605f9a85624cdea87d250e3a7  kernel/setup/settingstoolbar.php
 d0f0035e31be1c14f09689697e83c198  kernel/setup/setupmenu.php
 609997eec8eb7fb4199bdad2c7b61145  kernel/setup/sitedata.php
 43596548856cbf1657013d4ae36e1873  kernel/setup/staticcachestream.php
-c9f5aac21d8b8ed44b07fe90438ffeaf  kernel/setup/steps/ezstep_create_sites.php
+8ad0b88f06609c352e67a3a2f13c9706  kernel/setup/steps/ezstep_create_sites.php
 3174823463cf9d0f9a18162ee233dc04  kernel/setup/steps/ezstep_data.php
 b9fd62b91d08d970060f9290870a9d53  kernel/setup/steps/ezstep_database_choice.php
 159e6d92aa4c98ea6d19e6c8f2299379  kernel/setup/steps/ezstep_database_init.php
@@ -7499,8 +7499,10 @@ b9ab3dc75242d91d9686047634059862  tests/tests/kernel/classes/setup/KickstarterIn
 45c4fd96321c423c32cf68eb6f67f2a4  tests/tests/kernel/classes/setup/MaintenanceRunTest.php
 bc8f87debce9fdd6ab2277a72ff216a4  tests/tests/kernel/classes/setup/RegistrationAndDryRunTest.php
 ae30bcf264ae9a0e1b6e2e582bb0e469  tests/tests/kernel/classes/setup/SessionPageTest.php
+9eefb9efe67f592ab335a0860c480b61  tests/tests/kernel/classes/setup/SetupContentFallbackLanguagesTest.php
 6f791a2bce8d7fd28c8ba73af0026faf  tests/tests/kernel/classes/setup/SetupPackageDownloadTest.php
 2671ef0292727fae9b58c4f6fc4614f4  tests/tests/kernel/classes/setup/SetupPhpVersionTest.php
+192c130cbdb996c8ecb2c05bf353b089  tests/tests/kernel/classes/setup/SetupRunCommandAuditTest.php
 be124ca8bd5eed793ebfb648619273d6  tests/tests/kernel/classes/setupsteps/eZSetupCheckFunctionsTest.php
 ff0f446447b511ded16794509df958e8  tests/tests/kernel/classes/setupsteps/eZSetupStepTestHelper.php
 a5f311adee5cc6c0fa46486b22f14f48  tests/tests/kernel/classes/setupsteps/eZSetupStepsTest.php
