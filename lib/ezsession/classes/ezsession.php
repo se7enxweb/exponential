@@ -7,6 +7,8 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package lib
+ *
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit e56cb305f0), Copyright (C) Mugo Web, GPL v2
  */
 
 /**
@@ -105,6 +107,15 @@ class eZSession
      * @var string
      */
     static protected $namespace = null;
+
+    /**
+     * The request (its REQUEST_TIME_FLOAT) in which the deprecated [Session] SameSite was last noted, see
+     * {@link eZSession::sameSiteSetting()}; null before the first. Compared with the request running now, so a
+     * persistent worker notes it again in every request.
+     *
+     * @var string|null
+     */
+    static protected $sameSiteAliasNoted = null;
 
     /**
      * Constructor (not used, this is an all static class)
@@ -370,9 +381,7 @@ class eZSession
 
         $httponly = self::cookieFlag( $ini, 'CookieHttponly', true );
 
-        $samesite = $ini->hasVariable( 'Session', 'CookieSameSite' )
-            ? trim( (string)$ini->variable( 'Session', 'CookieSameSite' ) )
-            : 'Lax';
+        $samesite = self::sameSiteSetting( $ini );
         if ( !in_array( strtolower( $samesite ), array( 'lax', 'strict', 'none', '' ), true ) )
             $samesite = 'Lax';
         // Browsers drop a SameSite=None cookie that is not Secure.
@@ -387,6 +396,37 @@ class eZSession
             'httponly' => (bool)$httponly,
             'samesite' => $samesite === '' ? '' : ucfirst( strtolower( $samesite ) ),
         );
+    }
+
+    /**
+     * The SameSite attribute site.ini [Session] asks for, as written: CookieSameSite, else the older name SameSite
+     * (the name LoveStack and some other distributions read), else Lax. SameSite alone is read as an alias and noted
+     * as deprecated once per request; CookieSameSite wins when both are set. cookieParams() checks the value.
+     *
+     * @param eZINI $ini
+     * @return string
+     */
+    static protected function sameSiteSetting( $ini )
+    {
+        if ( $ini->hasVariable( 'Session', 'CookieSameSite' ) )
+        {
+            return trim( (string)$ini->variable( 'Session', 'CookieSameSite' ) );
+        }
+        if ( !$ini->hasVariable( 'Session', 'SameSite' ) )
+        {
+            return 'Lax';
+        }
+        // Once per request: a persistent worker (Velocity) serves many, and each is told again
+        $request = isset( $_SERVER['REQUEST_TIME_FLOAT'] ) ? (string)$_SERVER['REQUEST_TIME_FLOAT']
+                 : ( isset( $_SERVER['REQUEST_TIME'] ) ? (string)$_SERVER['REQUEST_TIME'] : '' );
+        if ( self::$sameSiteAliasNoted !== $request )
+        {
+            self::$sameSiteAliasNoted = $request;
+            $message = 'site.ini [Session] SameSite is deprecated, read as CookieSameSite; rename the setting to CookieSameSite';
+            // The deprecated level of the debug output (deprecated.log, counted in the debug summary)
+            eZDebug::writeDeprecated( $message, __METHOD__ );
+        }
+        return trim( (string)$ini->variable( 'Session', 'SameSite' ) );
     }
 
     /**
