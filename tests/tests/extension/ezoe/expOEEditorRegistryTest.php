@@ -62,7 +62,11 @@ class expOEEditorRegistryTest extends expOETestCase
     {
         $this->ini( 'Engines', $this->savedEngines + array( 'third' => 'expOETestThirdEngine' ) );
         $ids = array_column( expOEEditor::switchChoices( 'tinymce3' ), 'identifier' );
-        $this->assertSame( array( 'tinymce8', 'third' ), $ids );
+        // every other available engine, in registry order: ezoe's own, those of other active extensions (Tiptap of
+        // exp_oe_tiptap, ezoe.ini.append.php Engines[tiptap]), then the test's third
+        $this->assertSame( array_values( array_diff( array_keys( expOEEditor::engines() ), array( 'tinymce3' ) ) ), $ids );
+        $this->assertSame( 'tinymce8', $ids[0] );
+        $this->assertSame( 'third', end( $ids ) );
         $this->assertNotContains( 'tinymce3', $ids );
     }
 
