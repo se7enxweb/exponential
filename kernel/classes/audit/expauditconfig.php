@@ -20,6 +20,9 @@ class expAuditConfig
     /** @var array|null Test settings: 'Block/Variable' => value, plus 'logDir', 'keyDir', 'root', 'context' */
     protected static $override = null;
 
+    /** @var string|null The audit directory of a test run, used with the INI settings (setTestLogDir()) */
+    protected static $testLogDir = null;
+
     /** @var array|null The snapshot of this request */
     protected static $snapshot = null;
 
@@ -96,6 +99,26 @@ class expAuditConfig
             'AuditCompatSettings/UnmappedAsLegacy' => 'enabled',
             'AuditCompatSettings/LegacyFiles' => 'disabled',
         );
+    }
+
+    /**
+     * The audit directory of a test run (tests/bootstrap.php): while no setOverride() names a directory of its
+     * own, records go there instead of into the site's [AuditSettings] LogDir, with the settings otherwise read
+     * as always. A test that changes content, runs a content job or signs in a user then never writes into the
+     * live audit trail. null goes back to LogDir.
+     *
+     * @param string|null $dir absolute directory
+     */
+    public static function setTestLogDir( $dir )
+    {
+        self::$testLogDir = $dir === null ? null : rtrim( (string)$dir, '/' );
+        self::reset();
+    }
+
+    /** @return string|null The audit directory of the test run (setTestLogDir()), null without one */
+    public static function testLogDir()
+    {
+        return self::$testLogDir;
     }
 
     /**
@@ -234,6 +257,8 @@ class expAuditConfig
 
         if ( isset( $v['logDir'] ) )
             $logDir = rtrim( $v['logDir'], '/' );
+        else if ( self::$testLogDir !== null )
+            $logDir = self::$testLogDir;
         else
         {
             $logDir = trim( (string)$v['AuditSettings/LogDir'] ) !== '' ? trim( $v['AuditSettings/LogDir'] ) : 'log/audit';
@@ -422,7 +447,7 @@ class expAuditConfig
         if ( $value !== '' && $value[0] === '/' )
             return rtrim( $value, '/' );
         $config = self::get();
-        if ( self::$override !== null )
+        if ( self::$override !== null || self::$testLogDir !== null )
         {
             // tests: LogDir is <test>/log; a relative path like log/audit/spool lands in <test>/log/spool
             $rel = preg_replace( '#^log/audit/?#', '', $value );

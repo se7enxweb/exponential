@@ -309,3 +309,33 @@ if ( file_exists( __DIR__ . '/../kernel/private/classes/global_functions.php' ) 
 {
     require_once __DIR__ . '/../kernel/private/classes/global_functions.php';
 }
+
+// ── 4. The audit trail of the test run ───────────────────────────────────────
+// Tests that change content, run a content job or sign in a user write audit records. They go into a directory
+// of this run under var/tmp, removed when the run ends, never into the site's live, hash-chained audit files
+// (var/<site>/log/audit). A test that sets its own directory (expAuditConfig::setOverride(), the audit
+// fixtures) still uses that one.
+if ( class_exists( 'expAuditConfig' ) && method_exists( 'expAuditConfig', 'setTestLogDir' ) )
+{
+    $expTestAuditDir = dirname( __DIR__ ) . '/var/tmp/phpunit-audit/run-' . date( 'Ymd-His' ) . '-' . getmypid();
+    if ( !is_dir( $expTestAuditDir ) )
+        @mkdir( $expTestAuditDir, 0750, true );
+    expAuditConfig::setTestLogDir( $expTestAuditDir );
+    $expTestAuditPid = getmypid();
+    $expTestAuditRemove = function () use ( $expTestAuditDir, $expTestAuditPid ) {
+        // only the process that made it: a forked child (the content job tests) ends before the run does
+        if ( getmypid() !== $expTestAuditPid || !is_dir( $expTestAuditDir ) )
+            return;
+        $items = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( $expTestAuditDir, FilesystemIterator::SKIP_DOTS ),
+                                                RecursiveIteratorIterator::CHILD_FIRST );
+        foreach ( $items as $item )
+            $item->isDir() && !$item->isLink() ? @rmdir( $item->getPathname() ) : @unlink( $item->getPathname() );
+        @rmdir( $expTestAuditDir );
+    };
+    // registered from a shutdown function, so it runs after the audit's own, which writes the last records
+    register_shutdown_function( function () use ( $expTestAuditRemove ) {
+        register_shutdown_function( $expTestAuditRemove );
+    } );
+    unset( $expTestAuditRemove );
+    unset( $expTestAuditDir, $expTestAuditPid );
+}

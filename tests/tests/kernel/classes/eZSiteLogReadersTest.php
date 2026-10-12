@@ -125,8 +125,21 @@ class eZSiteLogReadersTest extends PHPUnit\Framework\TestCase
         $ini->setVariable( 'FileSettings', 'VarDir', 'var/x1example' );
         $ini->setVariable( 'FileSettings', 'LogVarDir', 'var_log' );
         $ini->setVariable( 'FileSettings', 'LogDir', '/srv/x1-logs' );
-        expAuditConfig::reset();
+        // the directory LogDir resolves to, not the test run's own (tests/bootstrap.php); only paths are read here
+        $testLogDir = expAuditConfig::testLogDir();
+        expAuditConfig::setTestLogDir( null );
+        try
+        {
+            $this->checkAuditRecordsStayInsideVarDir( $ini );
+        }
+        finally
+        {
+            expAuditConfig::setTestLogDir( $testLogDir );
+        }
+    }
 
+    private function checkAuditRecordsStayInsideVarDir( eZINI $ini )
+    {
         $root = expAuditConfig::root();
         $this->assertSame( $root . 'var/x1example/log/audit', expAuditConfig::get()['logDir'] );
         $this->assertSame( $root . 'var/x1example/log/audit/spool', expAuditConfig::path( 'log/audit/spool' ) );
