@@ -190,7 +190,7 @@
     <div><dt>{'Maintainers'|i18n('design/admin/package')}</dt>
         <dd>{section var=maintainer loop=$package.maintainers}<a href="mailto:{$maintainer.item.email|wash}" title="{'Send email to the maintainer'|i18n('design/admin/package')}">{$maintainer.item.name|wash}</a>{if $maintainer.item.role} ({$maintainer.item.role|wash}){/if}{delimiter}, {/delimiter}{section-else}&ndash;{/section}</dd></div>
     <div><dt>{'Documents'|i18n('design/admin/package')}</dt>
-        <dd>{section var=document loop=$package.documents}{let document_path=$package|ezpackage( documentpath, $document.name )}{if $document_path}<a href={$document_path|ezroot}>{/if}{$document.name|wash}{if $document_path}</a>{/if}{/let}{delimiter}, {/delimiter}{section-else}&ndash;{/section}
+        <dd>{section var=document loop=$package.documents}{if and( is_set( $package_document_links ), is_set( $package_document_links[$document.name] ) )}<a href={$package_document_links[$document.name]|ezurl}>{$document.name|wash}</a>{else}{$document.name|wash}{/if}{delimiter}, {/delimiter}{section-else}&ndash;{/section}
             {if $package.file-count|gt( 0 )} &middot; <a href={concat( "package/view/files/", $package.name, $repo_suffix )|ezurl}>{'File list'|i18n('design/admin/package')}</a>{/if}</dd></div>
     <div><dt>{'Released'|i18n( 'design/admin/package' )}</dt><dd>{if $package.release-timestamp}{$package.release-timestamp|l10n( shortdatetime )}{else}&ndash;{/if}</dd></div>
     <div><dt>{'Packaged'|i18n( 'design/admin/package' )}</dt><dd>{if $package.packaging-timestamp}{$package.packaging-timestamp|l10n( shortdatetime )}{if $package.packaging-host} &middot; {$package.packaging-host|wash}{/if}{else}&ndash;{/if}</dd></div>

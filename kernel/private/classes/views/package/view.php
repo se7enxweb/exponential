@@ -111,6 +111,7 @@ class View extends \Exponential\Runnable\ModuleView
         // any extension. $ContentsBrowser stays false for every other ViewMode (files.tpl, for instance,
         // already has its own listing).
         $ContentsBrowser = false;
+        $tpl->setVariable( 'package_document_links', array() );
         if ( $viewMode === 'full' )
         {
             // The browser's state is in view parameters, like every other paged kernel view:
@@ -188,6 +189,21 @@ class View extends \Exponential\Runnable\ModuleView
             $state['as'] = isset( $userParameters['as'] ) && in_array( $userParameters['as'], array( 'xml', 'json' ), true ) ? $userParameters['as'] : '';
             $typeFilter = $state['type'];
             $search = $state['search'];
+
+            // #389 a document of the package (documents/LICENCE, ...) opens in the contents browser of this page,
+            // (file)/<index>: a link straight to the file under var/storage is refused by the web server (404)
+            $documentLinks = array();
+            $documentIndex = array();
+            foreach ( \eZPackageFileBrowser::allFiles( $package ) as $index => $row )
+                $documentIndex[$row['path']] = $index;
+            foreach ( (array)$package->attribute( 'documents' ) as $document )
+            {
+                $relative = \eZPackage::documentDirectory() . '/' . ( isset( $document['name'] ) ? (string)$document['name'] : '' );
+                if ( isset( $documentIndex[$relative] ) )
+                    $documentLinks[(string)$document['name']] = $browseURL( array( 'type' => '', 'search' => '', 'limit' => '50', 'offset' => 0,
+                                                                                   'file' => $documentIndex[$relative], 'as' => '' ) );
+            }
+            $tpl->setVariable( 'package_document_links', $documentLinks );
 
             $page = \eZPackageFileBrowser::filteredPage( $package, array(
                 'offset' => $state['offset'], 'limit' => $state['limit'], 'type' => $typeFilter, 'search' => $search,
