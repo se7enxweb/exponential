@@ -1,3 +1,4 @@
+{* Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 98854ab935), Copyright (C) Mugo Web, GPL v2 *}
 {* Warnings *}
 {if $User:warning.bad_login}
 <div class="message-warning">
@@ -67,7 +68,8 @@
     <div class="login-input-wrapper">
         <input class="defaultbutton" type="submit" id="loginbutton" name="LoginButton" value="{'Log in'|i18n( 'design/admin/user/login', 'Login button' )}" tabindex="3" title="{'Click here to log in using the username/password combination entered in the fields above.'|i18n( 'design/admin/user/login' )}" />
     </div>
-    {if ezmodule( 'user/register' )}
+    {* the register link only for a user who may register: user/register in the policy omit list or the policy *}
+    {if and( ezmodule( 'user/register' ), fetch( 'user', 'can_open', hash( 'uri', 'user/register' ) ) )}
         <div class="login-text-wrapper">
             {'or'|i18n( 'design/admin/user/login')}
             <br/>

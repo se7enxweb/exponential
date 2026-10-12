@@ -130,6 +130,50 @@ On the role page:
 
 Every action, here and on the role pages, needs the form token of the page. A request without it is refused with 403.
 
+## 8. Decide who may register and who may read node data
+
+Two permissions were open to everyone by default and can now be given through roles instead. Both ideas come from
+Mugo Web's LoveStack distribution (commits `98854ab935` and `aa307a7ff3`), with thanks.
+
+**Registering a new account (`user/register`).** On a new installation registering needs the `user/register`
+policy. For open registration, add the policy *User / Register* to the **Anonymous** role. The login pages of the
+administration, the standard design, the media and the starter designs show *Register new account*, *Not
+registered?* or *Sign Up* only to a visitor who may open `user/register`, so a site without open registration shows
+no dead link.
+
+- An upgraded site keeps registration open, as before: `user/register` stays in `site.ini [RoleSettings]
+  PolicyOmitList[]` and the link stays on the login page.
+- To close it on an upgraded site, add to `settings/override/site.ini.append.php`:
+
+  ```ini
+  [RoleSettings]
+  PolicyOmitListExclude[]=user/register
+  ```
+
+  then clear the INI cache. `PolicyOmitListExclude[]` takes single entries out of `PolicyOmitList[]` after every
+  settings file is read, so the entries the extensions add (`ezjscore/call` and others) stay.
+
+**Node data as JSON or XML (`ezjscore/call/ezjscnode::load`, `::subtree`, `::updatepriority`).** These calls return
+a node's name, ids, remote id, owner, section, dates, class and translations to every user who may read the node,
+anonymous visitors included. With `ezjscore.ini [ezjscServer_ezjscnode] RequirePolicy=enabled` a user also needs the
+policy *ezjscore / call* with the function list **ezjscnode**; a request whose calls are all refused is answered with
+403 Forbidden.
+
+- New installations switch it on and give the **Editor** role *ezjscore / call* with the function list
+  `ezjscnode`, which the sub-items list (its fallback list and the priority column) and the image size preview of
+  the rich text editor use. Administrators have it through full access.
+- An upgraded site keeps `RequirePolicy=disabled`: nothing changes. To switch it on, first give *ezjscore / call*
+  with the function list `ezjscnode` to every role whose users use the administration without full access, then add
+  to `settings/override/ezjscore.ini.append.php`:
+
+  ```ini
+  [ezjscServer_ezjscnode]
+  RequirePolicy=enabled
+  ```
+
+  and clear the INI cache. The shipped designs do not call `ezjscnode` for anonymous visitors; a site's own
+  JavaScript that does would need the policy for the Anonymous role.
+
 ## Who may do this
 
 - The role pages need access to the `role` module. The unactivated users page needs `user/activation`.

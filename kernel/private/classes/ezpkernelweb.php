@@ -1692,10 +1692,11 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
             )
         );
 
-        // Read role settings
+        // Read role settings: PolicyOmitList[] without PolicyOmitListExclude[] (class_exists: a
+        // Velocity worker started before the class was added keeps the plain list)
         $this->siteBasics['policy-check-omit-list'] = array_merge(
             $this->siteBasics['policy-check-omit-list'],
-            $ini->variable( 'RoleSettings', 'PolicyOmitList' )
+            class_exists( 'expPolicyOmitList' ) ? expPolicyOmitList::entries( $ini ) : $ini->variable( 'RoleSettings', 'PolicyOmitList' )
         );
 
         $this->isInitialized = true;

@@ -130,7 +130,8 @@ class Run extends \Exponential\Runnable\ModuleView
         // check access to view
         $ini         = \eZINI::instance();
         $currentUser = \eZUser::currentUser();
-        if ( !hasAccessToBySetting( $moduleName, $viewName, $ini->variable( 'RoleSettings', 'PolicyOmitList' ) )
+        $policyOmitList = class_exists( 'expPolicyOmitList' ) ? \expPolicyOmitList::entries( $ini ) : $ini->variable( 'RoleSettings', 'PolicyOmitList' );
+        if ( !hasAccessToBySetting( $moduleName, $viewName, $policyOmitList )
           && !$currentUser->hasAccessToView( $module, $viewName, $params ) )
         {
             exitWithInternalError( "User does not have access to the $moduleName/$viewName policy." );

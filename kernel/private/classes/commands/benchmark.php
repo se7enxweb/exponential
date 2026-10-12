@@ -760,7 +760,7 @@ class Benchmark extends \Exponential\Runnable\Command
             $user = $id > 0 ? \eZUser::fetch( $id ) : null;
             if ( !$user instanceof \eZUser )
                 return false;
-            $omit = \eZINI::instance()->variable( 'RoleSettings', 'PolicyOmitList' );
+            $omit = class_exists( 'expPolicyOmitList' ) ? \expPolicyOmitList::entries() : \eZINI::instance()->variable( 'RoleSettings', 'PolicyOmitList' );
             if ( in_array( 'content/search', (array)$omit, true ) )
                 return true;
             // the content/search view requires the content/read function (kernel/content/module.php)

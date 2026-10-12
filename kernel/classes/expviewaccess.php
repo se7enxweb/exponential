@@ -139,7 +139,7 @@ class expViewAccess
             }
         }
 
-        $omit = (array)$ini->variable( 'RoleSettings', 'PolicyOmitList' );
+        $omit = class_exists( 'expPolicyOmitList' ) ? expPolicyOmitList::entries( $ini ) : (array)$ini->variable( 'RoleSettings', 'PolicyOmitList' );
         if ( in_array( $moduleName, $omit ) || in_array( $moduleName . '/' . $viewName, $omit ) )
         {
             $result['result'] = true;
