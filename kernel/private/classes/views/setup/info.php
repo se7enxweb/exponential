@@ -65,14 +65,8 @@ class Info extends \Exponential\Runnable\ModuleView
         $this->sharedAction = \expCacheManager::sharedActionFromPost( $http );
         $tpl->setVariable( 'cache_action', $this->sharedAction );
 
-        $systemReport = $report->toArray();
-        $systemReport['text'] = $report->toText();
-        $systemReport['sizes'] = $mode === 'sizes';
-        $reportFacts = $report->facts();
-        $systemReport['sizes_time'] = !empty( $reportFacts['sizes_time'] ) ? date( 'Y-m-d H:i:s', (int)$reportFacts['sizes_time'] ) : '';
-        $systemReport['sizes_minutes'] = (int)( \expSystemReport::SIZES_CACHE_SECONDS / 60 );
-        $systemReport['sizes_seconds'] = (int)\expSystemReport::SIZES_BUDGET;
-        $tpl->setVariable( 'system_report', $systemReport );
+        // The report as the template reads it, with when its sizes were measured.
+        $this->systemReportVariable( $report, $mode, $tpl );
 
         \eZDebug::accumulatorStart( 'setup_info_system_info', 'System information', 'systemInfo' );
         $this->systemInfo( $info, $e, $systemInfo, $phpAcceleratorInfo );
@@ -141,18 +135,7 @@ class Info extends \Exponential\Runnable\ModuleView
         // server exp:velocity does not know, there is no such box.
         // The box asks the serving engine and each other one about their processes: the process table is read once.
         \eZDebug::accumulatorStart( 'setup_info_velocity_server_info', 'System information', 'velocityServerInfo' );
-        $reuseProcessTable = class_exists( 'expVelocity' ) && method_exists( 'expVelocity', 'reuseProcessTable' );
-        if ( $reuseProcessTable )
-            \expVelocity::reuseProcessTable( true );
-        try
-        {
-            $this->velocityServerInfo( $velocityBrand, $view, $engine, $velocityEngineNames, $tpl );
-        }
-        finally
-        {
-            if ( $reuseProcessTable )
-                \expVelocity::reuseProcessTable( false );
-        }
+        $this->velocityServerBox( $velocityBrand, $view, $engine, $velocityEngineNames, $tpl );
         \eZDebug::accumulatorStop( 'setup_info_velocity_server_info' );
 
         // The response cache in front of this installation, when a Qbix server runs it.
@@ -195,6 +178,46 @@ class Info extends \Exponential\Runnable\ModuleView
                                         'text' => \ezpI18n::tr( 'kernel/setup', 'System information' ) ) );
 
         return $this->viewResult( isset( $Result ) ? $Result : null, null );
+    }
+
+    /**
+     * Part of run(), moved here unchanged; run()'s variables are passed by reference.
+     *
+     * The template variable system_report: the report as an array and as text, whether the sizes were asked for,
+     * when they were measured, and how long a measurement is kept and may take.
+     */
+    protected function systemReportVariable( &$report, &$mode, &$tpl )
+    {
+        $systemReport = $report->toArray();
+        $systemReport['text'] = $report->toText();
+        $systemReport['sizes'] = $mode === 'sizes';
+        $reportFacts = $report->facts();
+        $systemReport['sizes_time'] = !empty( $reportFacts['sizes_time'] ) ? date( 'Y-m-d H:i:s', (int)$reportFacts['sizes_time'] ) : '';
+        $systemReport['sizes_minutes'] = (int)( \expSystemReport::SIZES_CACHE_SECONDS / 60 );
+        $systemReport['sizes_seconds'] = (int)\expSystemReport::SIZES_BUDGET;
+        $tpl->setVariable( 'system_report', $systemReport );
+    }
+
+    /**
+     * Part of run(), moved here unchanged; run()'s variables are passed by reference.
+     *
+     * The Velocity box (velocityServerInfo()), with the process table read once for the serving engine and every
+     * other one, and given up again afterwards whatever happens.
+     */
+    protected function velocityServerBox( &$velocityBrand, &$view, &$engine, &$velocityEngineNames, &$tpl )
+    {
+        $reuseProcessTable = class_exists( 'expVelocity' ) && method_exists( 'expVelocity', 'reuseProcessTable' );
+        if ( $reuseProcessTable )
+            \expVelocity::reuseProcessTable( true );
+        try
+        {
+            $this->velocityServerInfo( $velocityBrand, $view, $engine, $velocityEngineNames, $tpl );
+        }
+        finally
+        {
+            if ( $reuseProcessTable )
+                \expVelocity::reuseProcessTable( false );
+        }
     }
 
     /**
