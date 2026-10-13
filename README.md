@@ -463,6 +463,79 @@ The guide: [doc/bc/6.0/LAYOUTS.md](doc/bc/6.0/LAYOUTS.md). The repositories:
 [explayouts_tags_query](https://github.com/se7enxweb/explayouts_tags_query). Their Composer packages are
 `se7enxweb/explayouts`, `se7enxweb/explayouts-core`, `se7enxweb/explayouts-ui` and so on.
 
+# Exponential Distribution Integration: LoveStack (2026.10)
+
+**LoveStack**, Mugo Web's fork of the legacy kernel ([`mugoweb/ezpublish-legacy`](https://github.com/mugoweb/ezpublish-legacy)),
+carries valuable improvements that Mugo Web built over many years. At the time of this port (12 October 2026), the
+LoveStack repository had not been updated in over seven months (last commit 23 February 2026, last release
+v2025.03.1 on 1 March 2025, supporting PHP up to 8.3), which has left many users wondering about the future of the
+distribution and its unique features. Those features have been carefully documented and rebuilt in the Exponential
+6.0.15 distribution (this GitHub main repository), so everyone can use the modern Exponential features and the
+LoveStack improvements together, as one stack, on PHP 8.1 to 8.5. Bringing them into Exponential keeps them
+available and maintained for everyone, with full credit to Mugo Web.
+
+## What you gain
+
+- **Safer by default**: logging out really ends the session and its cookie; uploaded images and package thumbnails
+  are checked by their content; node data calls (`ezjscnode`) and registration can require a policy; one account
+  per login, with a report of duplicates before the unique index is added.
+- **For editors**: a Copy button on the admin full view, required alternative text for image fields, trimmed text
+  line fields, a Locations window that keeps hidden locations hidden, hidden custom tags and custom tag controls in
+  the rich text editor.
+- **For administrators**: audit records for location changes, site data in **Setup > Site data**, extra headers per
+  error page, PHP deprecations in their own log, log file size as a setting, a warning when a change clears every
+  view cache, two optional URL settings.
+- **For developers**: `eZURI::build()`, a mail transport per message, the `rawurlencode` and `rawurldecode`
+  template operators, `[Include …]` inside settings files, names made by your own PHP class, database errors with
+  the driver's error number, and the PHP 8 fixes LoveStack made, reproduced and fixed where still needed.
+
+36 features in all (L01 to L36), each with its tests.
+
+## How to switch the opt-in ones on
+
+Nothing changes on an existing site unless you switch it on, except plain bug fixes, the new log settings and
+warnings, the Copy button and the security checks for logging out and image uploads. New installations also start
+with the policies for node data and registration, the unique login index and the custom tag controls. The rest is
+one setting each, in an override file, for example:
+
+```ini
+# settings/override/ezjscore.ini.append.php: node data calls need ezjscore/call with ezjscnode
+[ezjscServer_ezjscnode]
+RequirePolicy=enabled
+
+# settings/override/site.ini.append.php: registration needs the User / Register policy
+[RoleSettings]
+PolicyOmitListExclude[]=user/register
+
+# settings/override/ezoe.ini.append.php: custom tag controls in the rich text editor
+[EditorSettings]
+CustomTagControls=enabled
+```
+
+then `php bin/php/ezcache.php --clear-tag=ini`. Alternative text and trimming are options per class attribute on
+the class edit page. Every feature's setting, default and test is in the overview.
+
+## Coming from LoveStack
+
+```sh
+./console exp:lovestack check            # read only: what the installation brings along
+./console exp:lovestack migrate          # dry run; add --apply to record the database as Exponential's
+./console exp:user-login-check           # duplicate logins; --fix-index adds the unique index
+```
+
+Step by step: [Moving a site from LoveStack](doc/bc/6.0/love/MIGRATION.md) and the upgrade guide's
+[Coming from LoveStack](doc/guides/upgrading.md#coming-from-lovestack).
+
+## Documentation and credits
+
+The overview, feature by feature: [doc/bc/6.0/lovestack.md](doc/bc/6.0/lovestack.md), with the detailed pages in
+[doc/bc/6.0/love/](doc/bc/6.0/love/README.md). LoveStack itself: <https://github.com/mugoweb/ezpublish-legacy>.
+
+Thank you to **Mugo Web**, who built these improvements and published them as open source under the GNU GPL. Every
+rebuilt feature keeps their copyright notice and names the LoveStack commit it comes from. "LoveStack" is Mugo Web's
+name for their distribution; Exponential uses it only to say where these features come from, and nothing here
+implies an endorsement by Mugo Web. They are friends of this project, and we are grateful for their work.
+
 # Installation
 
 Read [doc/INSTALL.md](doc/INSTALL.md) or go to [exponential.doc.exponential.earth/Exponential/Technical-manual/6.x/Installation.html](https://exponential.doc.exponential.earth/Exponential/Technical-manual/6.x/Installation.html)
