@@ -1,3 +1,32 @@
+# 1.6.0
+- Added: [ezjscServer_<group>] RequirePolicy (ezjscore.ini). Not set: Functions[] is checked as
+  before. disabled: not checked. enabled: checked, and a request whose calls are all refused is
+  answered with 403 Forbidden. ezjscnode ships RequirePolicy=disabled, so nothing changes until a
+  site switches it on (FunctionList[]=ezjscnode for the policy limitation).
+  ezjscServerRouter::getInstance() takes an optional fourth argument that is set to why a call was
+  refused, and ezjscServerRouter::refusedStatus() gives the HTTP status for those refusals.
+  Derived from LoveStack (mugoweb/ezpublish-legacy, commit aa307a7ff3), with thanks to Mugo Web.
+- Added: the ezjsc::search server function sorts eZ Find results by ezfind.ini
+  [SearchSettings] SortBy[] (field => asc|desc). settings/ezfind.ini.append.php ships
+  SortBy[published]=desc, the order search always used. Derived from LoveStack (commits
+  3d2d337b0d and 3af1ec3aee), with thanks to Mugo Web.
+- Updated: the ajax uploader checks an uploaded image by its content against the image types
+  the installation allows before the file is stored (derived from LoveStack commit c8e45fced7),
+  and its location form asks for an alternative text when the image's class requires one
+  (derived from LoveStack commit a28863d9c0). Both use the image checks of the Exponential 6.0.15
+  kernel (eZContentUpload::imageUploadError(), eZImageType::classAltTextRequired()).
+- Updated: ezjscore/run reads the policy omit list through expPolicyOmitList when the kernel has
+  it (idea from LoveStack commit 98854ab935).
+- Updated: ezjscore/call answers a PHP Error in a server function with a generic error text and
+  logs the details, instead of breaking the JSON response.
+- Updated: the module definition reads its function list without ezjscore.ini (an inactive
+  extension, a test), and htmlspecialchars() is called with explicit flags, which gives the same
+  output on PHP 8.0 as on 8.1 and later.
+- Added: settings/rad.ini.append.php declares the server function registry for the extension
+  point survey of Exponential.
+- Updated: Version 1.6.0 in ezinfo.php and extension.xml.
+
+
 # 1.5.0
 - Removed YUI: the YUI 2 and YUI 3 libraries (design/standard/lib/yui), the packer keys
   ezjsc::yui2, ezjsc::yui3, ezjsc::yui3io and their config functions (yui2conf, yui3conf),
