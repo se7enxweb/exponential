@@ -16,7 +16,7 @@ eab760120a50cdf35a0fd50618301b24  COPYRIGHT.md
 d34848eec00c077171187386a805c85b  LICENSE
 bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 1bc8d08bda60c234dded6cb03b90dfba  Makefile
-c142eb37132f6eb9b60928b2b6df8bbe  README.md
+cacf43062404983599d53f26e5add805  README.md
 fd07fac4ce74813bf1e9bda18fbcf1b0  SECURITY.md
 7a103568d7c533e99e2d7a5e9f1b5ffb  autoload.php
 e85348d11239c1df00508a0feed84c37  autoload/ezp_kernel.php
@@ -2830,6 +2830,19 @@ ac6e038afa43bb7abe89a1cfd1a6533e  doc/bc/6.0/http2-and-cache-warming.md
 b4b2d3cf7a13a38b86ae1add01523e49  doc/bc/6.0/ini-save-file-permissions.md
 744e2ee1ba1dbc7018c79c78bf9dc28e  doc/bc/6.0/kickstartercli.md
 a6d977d642aa2384831b54248e80ecc6  doc/bc/6.0/locations-tab-paging-and-sorting.md
+55e1c907228e8d0b48be0e9f4da11b39  doc/bc/6.0/love/API.md
+9e712de5471ffb06c9f5c50903324f8e  doc/bc/6.0/love/CHANGELOG.md
+ea712add4a62f4b68cfe631e746b404a  doc/bc/6.0/love/FAQ.md
+0558db4c5d38e5f39631f32cd0e2046f  doc/bc/6.0/love/FEATURES.md
+38217ce23a4f5a2dec47ef111e327fb4  doc/bc/6.0/love/GETTING_STARTED.md
+0a30b853d1a82092e21baafb561117d5  doc/bc/6.0/love/L01-callers.md
+4bfb38e80713d034c559f8d8226795be  doc/bc/6.0/love/MIGRATION.md
+daefa9bbd836c42a2b768b2423e56f6f  doc/bc/6.0/love/PHP8-REVIEW.md
+e1f4daaa764ddb48b13df1f21f8364b7  doc/bc/6.0/love/README.md
+5b683f02a33e0c3dde0e109e22d878ac  doc/bc/6.0/love/ROADMAP.md
+9ca37842b2d184d8c2f4b14f0628b586  doc/bc/6.0/love/TESTING.md
+53a73f51f257c2a84ce74357cb5aa859  doc/bc/6.0/love/TESTS-MAPPING.md
+ebda5a2c3cc9fb9507853f9dbcfc1f3b  doc/bc/6.0/lovestack.md
 e1a1f8a4940d420e0ab02a90567834b3  doc/bc/6.0/mail-preferences.md
 abb94091360a905fee43c0792bbf9d39  doc/bc/6.0/middle-out-compression.md
 02a48a62c48e03aa3f29dfaee9709546  doc/bc/6.0/multi-node-edit.md
@@ -3013,7 +3026,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-ca937355b1b6a0bcf89afe468b27ddd2  doc/changelogs/6.0/6.0.15.md
+71bfac41e7c181e9caed149bbe337d44  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
