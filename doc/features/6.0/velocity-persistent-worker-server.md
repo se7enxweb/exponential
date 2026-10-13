@@ -237,6 +237,14 @@ if ( self::$registered !== eZExecution::requestKey() )
 `eZExecution::addCleanupHandler()` and `addFatalErrorHandler()` may also simply be
 called on every request: the same handler is kept once.
 
+From Exponential Velocity 0.0.4.51 the engine also ends the warm-up's request before
+it forks its workers: the shutdown functions the warm-up's render registered are
+dropped without running, and the headers, error and exception handlers, session,
+ini and environment changes and output buffers it left are put back. That holds
+for any application on the engine; `eZExecution::runForRequest()` remains the
+kernel's own guard, for an older engine. A request's `$_SESSION` also ends with
+the request, as under PHP-FPM.
+
 ## Limits and cautions
 
 - The response cache stores only anonymous pages. A page with a form token is
