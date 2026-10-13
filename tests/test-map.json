@@ -9,7 +9,9 @@
     "autoload/*",
     ".autoloadignore",
     ".github/*",
-    "composer.lock"
+    "composer.lock",
+    "extension/*/CHANGELOG",
+    "tests/test-map.json"
   ],
   "map": {
     "kernel/private/classes/views/error/view.php": [
@@ -23,6 +25,88 @@
     ],
     "bin/php/userlogincheck.php": [
       "tests/tests/kernel/classes/expUserLoginIntegrityTest.php"
+    ],
+    "design/admin/templates/ajaxuploader/location.tpl": [
+      "tests/tests/extension/ezjscore/ezjscServerFunctionsAjaxUploaderAltTextTest.php"
+    ],
+    "design/admin4/templates/ajaxuploader/location.tpl": [
+      "tests/tests/extension/ezjscore/ezjscServerFunctionsAjaxUploaderAltTextTest.php"
+    ],
+    "extension/ezjscore/classes/ezjscserverfunctionsajaxuploader.php": [
+      "tests/tests/extension/ezjscore/ezjscServerFunctionsAjaxUploaderImageTest.php",
+      "tests/tests/extension/ezjscore/ezjscServerFunctionsAjaxUploaderAltTextTest.php"
+    ],
+    "design/admin/templates/user/login.tpl": [
+      "tests/tests/kernel/content/eZLoginTemplatesRegisterLinkTest.php"
+    ],
+    "design/admin4/templates/user/login.tpl": [
+      "tests/tests/kernel/content/eZLoginTemplatesRegisterLinkTest.php"
+    ],
+    "design/standard/templates/user/login.tpl": [
+      "tests/tests/kernel/content/eZLoginTemplatesRegisterLinkTest.php"
+    ],
+    "design/standard/templates/toolbar/full/login.tpl": [
+      "tests/tests/kernel/content/eZLoginTemplatesRegisterLinkTest.php"
+    ],
+    "design/admin/templates/content/edit_locations.tpl": [
+      "tests/tests/kernel/content/eZEditLocationsVisibilityTest.php"
+    ],
+    "design/admin4/templates/content/edit_locations.tpl": [
+      "tests/tests/kernel/content/eZEditLocationsVisibilityTest.php"
+    ],
+    "design/admin/templates/node/view/full.tpl": [
+      "tests/tests/kernel/content/eZAdminFullViewCopyButtonTest.php"
+    ],
+    "design/admin4/templates/node/view/a4_full_body.tpl": [
+      "tests/tests/kernel/content/eZAdminFullViewCopyButtonTest.php"
+    ],
+    "design/standard/templates/content/datatype/view/ezselection.tpl": [
+      "tests/tests/kernel/datatypes/eZSelectionMatrixViewTemplateTest.php"
+    ],
+    "design/standard/templates/content/datatype/view/ezmatrix.tpl": [
+      "tests/tests/kernel/datatypes/eZSelectionMatrixViewTemplateTest.php"
+    ],
+    "extension/ezoe/design/standard/templates/ezoe/tag_custom.tpl": [
+      "tests/tests/extension/ezoe/expOECustomTagAssetsTest.php"
+    ],
+    "extension/ezoe/design/standard/javascript/ezoe/popup_utils.js": [
+      "tests/tests/extension/ezoe/expOECustomTagAssetsTest.php"
+    ],
+    "extension/ezoe/design/standard/javascript/plugins/exp_customtag_controls/editor_plugin.js": [
+      "tests/tests/extension/ezoe/expOECustomTagAssetsTest.php"
+    ],
+    "extension/ezoe/design/standard/javascript/tinymce8_ez/plugins/ezcustomtag/plugin.js": [
+      "tests/tests/extension/ezoe/expOECustomTagAssetsTest.php"
+    ],
+    "extension/ezoe/design/standard/stylesheets/ezoe_customtags.css": [
+      "tests/tests/extension/ezoe/expOECustomTagAssetsTest.php"
+    ],
+    "extension/ezoe/settings/design.ini.append.php": [
+      "tests/tests/extension/ezoe/expOECustomTagAssetsTest.php"
+    ],
+    "extension/ezoe/settings/content.ini.append.php": [
+      "tests/tests/extension/ezoe/expOECustomTagListTest.php",
+      "tests/tests/kernel/classes/expShippedFeatureDefaultsTest.php"
+    ],
+    "kernel/classes/packagecreators/ezstyle/ezstylepackagecreator.php": [
+      "tests/tests/kernel/classes/packages/eZStylePackageCreatorTest.php"
+    ],
+    "kernel/private/classes/commands/benchmark.php": [
+      "tests/tests/kernel/classes/benchmark/ExpBenchmarkTest.php",
+      "tests/tests/kernel/classes/expPolicyOmitListTest.php"
+    ],
+    "kernel/private/classes/views/content/urlalias.php": [
+      "tests/tests/kernel/classes/eZContentCacheEventSendersTest.php"
+    ],
+    "lib/ezsession/classes/ezpsessionhandlersymfony.php": [
+      "tests/tests/kernel/classes/eZUserLogoutTest.php"
+    ],
+    "config.php-RECOMMENDED": [
+      "tests/tests/kernel/classes/expShippedFeatureDefaultsTest.php",
+      "tests/tests/lib/ezfile/eZLogMaxSizeTest.php"
+    ],
+    "lib/eztemplate/classes/eztemplatephpoperator.php": [
+      "tests/tests/kernel/common/eZTemplateRawURLEncodeOperatorTest.php"
     ]
   },
   "generated": {
