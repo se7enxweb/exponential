@@ -7079,6 +7079,7 @@ b977ef5a409ff4c1d2e4c734c839d6e3  tests/tests/extension/expservices/users/expUse
 1d8e114d714c6cc4edbaaf7d046993bc  tests/tests/extension/expservices/users/expUsersDeclarationsTest.php
 c2d1d9f4d1d3bfd48c427cac7ccaace7  tests/tests/extension/expservices/users/expUsersTestCase.php
 df797f976ce5f225fe73f393ff910b74  tests/tests/extension/ezjscore/ezjscServerFunctionsAjaxUploaderImageTest.php
+3ef20c0512a951483e7cb7761a9f87f7  tests/tests/extension/ezjscore/ezjscServerFunctionsJsSearchSortByTest.php
 1045d4d1d9f875ee35726dfa45431264  tests/tests/extension/ezjscore/ezjscServerRouterPolicyTest.php
 d5ef0a34d06298d2da7f951273c12e1d  tests/tests/extension/ezjscore/ezjscoreCallThrowableTest.php
 be082c2cbbd69c12eee01261f6b2f622  tests/tests/extension/ezoe/expOEContentTypeAndLoadTest.php
