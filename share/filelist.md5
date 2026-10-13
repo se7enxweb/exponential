@@ -63,7 +63,7 @@ a26b90f83a935a64e5db3eb84f9a5cfd  bin/php/cleanuprss.php
 0a7d1915373ef3451e32dbafc6b08c6e  bin/php/convertprice2multiprice.php
 c0e2aa3b432485dd3e2c0edad20c76c5  bin/php/dfscleanup.php
 f0f67c88d699385e2c4f30e0c72a413f  bin/php/expcontentjob.php
-bcfcc76348bcd7447a5a71216b75e93a  bin/php/explovestack.php
+6a4db46d8822245538c5ab3e1a5ccc3a  bin/php/explovestack.php
 d740a85c5b65dab46bbba7402504fad0  bin/php/exprepair.php
 f37521856fa926fcc151f0d580022dd9  bin/php/ezapplytemplate.php
 59115b281ed2f7ab7ccab46d6f848960  bin/php/ezasynchronouspublisher.php
@@ -3013,7 +3013,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-7e7b4a7b61692a6511421bf9ab31de96  doc/changelogs/6.0/6.0.15.md
+17a3fd7f68cf2f8914b4fe9db76af492  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3560,7 +3560,7 @@ f52435ea65b9339e1191f8bbb8753638  doc/guides/system-information.md
 0336ade018fe7f75e7a16ce2eb7356c8  doc/guides/templates-and-design.md
 dc5f0aedab105f984fc1d7e71761f4eb  doc/guides/two-factor-login.md
 fc2eb248460e9ebbb10faf76eb446e2e  doc/guides/upgrade-check.md
-1aca94dfd304bd93d2acf29c8f4ca362  doc/guides/upgrading.md
+96ce9e87d17b31ab1a771517f083e4ea  doc/guides/upgrading.md
 6477f5214f3a7f3dfdf0da2e2284d082  doc/guides/urls-and-aliases.md
 d0260680e11ffdb7581f3bff6191d877  doc/guides/workflows.md
 bfac4d20e64cf0fff734fc68908cf3e9  doc/history/2023/2023-12.md
@@ -4942,7 +4942,7 @@ e0b74fce97e793dcf8a5c7ccd1ad86c0  kernel/classes/expextensionchangeplan.php
 2a96f379f935f105bea29c86d75aca44  kernel/classes/expkickstarter.php
 f93c0a4b63a19a1bc54c806e89fd6a22  kernel/classes/expkickstarterini.php
 0c2606192197f0079a759fa583ffa338  kernel/classes/explinkcheck.php
-56871d2f29e5b9d253fb825f5a2d971b  kernel/classes/explovestack.php
+f4d6ecae469a38295a4d8c566f6ba3be  kernel/classes/explovestack.php
 e5bc1dbeaeffc71af4b70610c9bf3211  kernel/classes/expmaintenance.php
 f33944dda86f2612b983e1d72273dccc  kernel/classes/expnamepatternresolverinterface.php
 846590ae94cadbe8b9122bfb25b89d0c  kernel/classes/expnotificationjob.php
@@ -5430,7 +5430,7 @@ fc100209dee85f836a6d9ed383e3a0c1  kernel/private/classes/commands/collaborations
 f12e48ebe5663a2c1f489acdd31489af  kernel/private/classes/commands/convertprice2multiprice.php
 21a07ab99816048c850eb65e8735a3c7  kernel/private/classes/commands/dfscleanup.php
 629cddb79ec70350f282b31fd6fe7387  kernel/private/classes/commands/expcontentjob.php
-9ad3d1e88dfca569971c549de41352d3  kernel/private/classes/commands/explovestack.php
+a9b9d8e9a77fb33ca2dc94227b9c3c4a  kernel/private/classes/commands/explovestack.php
 6d8a459160cce77e7dae6b0ca3d3cb37  kernel/private/classes/commands/ezapplytemplate.php
 7d2006d209eb3d149fc2036b08aa5fe8  kernel/private/classes/commands/ezasynchronouspublisher.php
 a2510ad9627f7859dbfa65ef84fa6b75  kernel/private/classes/commands/ezcache.php
@@ -7289,6 +7289,7 @@ c3c626e3450b8775e3ca74608825e7db  tests/tests/kernel/classes/expImageUploadValid
 629ef4db40bb3ea9ff3f8b56bcae400a  tests/tests/kernel/classes/expLinkCheckTest.php
 005e68dac380fb8240e13d69320e6dce  tests/tests/kernel/classes/expLoveStackCheckTest.php
 6c208dc24a08e5be39ccb166fd888223  tests/tests/kernel/classes/expLoveStackFixture.php
+b96df7eebf3dbbb88f9463398353a91a  tests/tests/kernel/classes/expLoveStackMigrateTest.php
 05a73385f01378bb23461a9bfdfdfbc9  tests/tests/kernel/classes/expPDFExportTest.php
 3bdd28bd003091155ce34cc6c77145e9  tests/tests/kernel/classes/expPolicyOmitListTest.php
 b167704de63034a7da8cd5daba25a132  tests/tests/kernel/classes/expRemoveSubtreeMultiLocationTest.php
