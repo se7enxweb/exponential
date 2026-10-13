@@ -51,9 +51,10 @@ class StubSessionEZDB extends eZDBInterface
     }
 }
 
-if ( !class_exists( 'eZINI', false ) )
+// The real eZINI whenever the autoloader can load it, for the same reason as eZSession below
+if ( !class_exists( 'eZINI', true ) )
 {
-    /** Minimal eZINI stub. */
+    /** Minimal eZINI stub, only without the kernel's autoloader. */
     class eZINI
     {
         public static function instance(): self { return new self(); }
@@ -67,9 +68,11 @@ if ( !class_exists( 'eZINI', false ) )
     }
 }
 
-if ( !class_exists( 'eZSession', false ) )
+// The real eZSession whenever the autoloader can load it (it has setUserID(), userID() and triggerCallback() too):
+// a stub declared here would stay for the rest of the run, and every later session test would test the stub
+if ( !class_exists( 'eZSession', true ) )
 {
-    /** Minimal eZSession stub. */
+    /** Minimal eZSession stub, only without the kernel's autoloader. */
     class eZSession
     {
         public static ?int $userId = null;
