@@ -7946,7 +7946,7 @@ b534c94bd16d35b2e4c350ed914eeed0  tests/tests/lib/ezlocale/suite.php
 60e3422dd7a813f76038a3ecb5b842f4  tests/tests/lib/ezmath/eZMathHandlersTest.php
 d72315fa9b3256a89308f3109ca900e0  tests/tests/lib/ezsession/EzpSessionHandlerAdapterTest.php
 b6d9a1d17254c473234dbcf75d807cf9  tests/tests/lib/ezsession/EzpSessionHandlerDBPhp8BugfixesTest.php
-b078858df9972d3e704af87be75bc3b2  tests/tests/lib/ezsession/EzpSessionHandlerDBPhp8BugfixesTestStubs.php
+bfa32adb29c2c6cd0bc24e2075b80450  tests/tests/lib/ezsession/EzpSessionHandlerDBPhp8BugfixesTestStubs.php
 acbb9b3905b1d5cad1c75014265dec30  tests/tests/lib/ezsession/eZSessionResponseCookieTest.php
 73b35b62ec7c6e4868123e802790213b  tests/tests/lib/ezsession/eZSessionSameSiteAliasTest.php
 30b880bea4f1463e4d346dc8020eaed0  tests/tests/lib/ezsoap/eZSOAPClientTest.php
