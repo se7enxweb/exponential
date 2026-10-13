@@ -11,15 +11,16 @@
  *  RP-03 - the superglobals are put back after each request
  *
  * The older regression test (ezprest_request_parser_regression.php) runs only under the old test runner; this one
- * runs in the PHPUnit suite. LoveStack gave the HTTPS request's Accept headers distinct quality values, so the order
- * no longer depends on how equal values are sorted (commit 30c1260b84), and kept the date comparison working across
+ * runs in the PHPUnit suite. ezpRestHttpRequestParserTest (kernel/classes/rest) tests the parser on requests that
+ * test builds itself. LoveStack gave the HTTPS request's Accept headers distinct quality values, so the order no
+ * longer depends on how equal values are sorted (commit 30c1260b84), and kept the date comparison working across
  * PHP versions (commit 09e49ce1ff); Exponential carries both. The recorded request is made again from the .exp
  * file and compared as an object, because PHP 8 exports it in another order. No database.
  *
  * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commits 30c1260b84 and 09e49ce1ff), Copyright (C)
  * Mugo Web, GPL v2
  *
- * Run: php vendor/bin/phpunit tests/tests/kernel/private/rest/ezpRestHttpRequestParserTest.php
+ * Run: php vendor/bin/phpunit tests/tests/kernel/private/rest/ezpRestHttpRequestParserRecordedRequestsTest.php
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
@@ -29,7 +30,7 @@
  * @group rest
  */
 
-class ezpRestHttpRequestParserTest extends PHPUnit\Framework\TestCase
+class ezpRestHttpRequestParserRecordedRequestsTest extends PHPUnit\Framework\TestCase
 {
     /** @var array the superglobals before the test */
     private $saved = array();

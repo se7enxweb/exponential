@@ -17,7 +17,7 @@
  *
  * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit d894b9e885), Copyright (C) Mugo Web, GPL v2
  *
- * Run: php vendor/bin/phpunit tests/tests/kernel/common/eZAutoLinkOperatorTest.php
+ * Run: php vendor/bin/phpunit tests/tests/kernel/common/eZAutoLinkOperatorLinksTest.php
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
@@ -27,7 +27,7 @@
  * @group templateoperators
  */
 
-class eZAutoLinkOperatorTestTpl
+class eZAutoLinkOperatorLinksTestTpl
 {
     public function ini()
     {
@@ -40,7 +40,7 @@ class eZAutoLinkOperatorTestTpl
     }
 }
 
-class eZAutoLinkOperatorTest extends PHPUnit\Framework\TestCase
+class eZAutoLinkOperatorLinksTest extends PHPUnit\Framework\TestCase
 {
     /** @var array[] array( group, name, had, value ) of template.ini, put back in tearDown() */
     private $saved = array();
@@ -77,7 +77,7 @@ class eZAutoLinkOperatorTest extends PHPUnit\Framework\TestCase
     private function autolink( $text, $maxChars )
     {
         $operator = new eZAutoLinkOperator();
-        $operator->modify( new eZAutoLinkOperatorTestTpl(), 'autolink', array(), '', '', $text, array( 'max_chars' => $maxChars ), false );
+        $operator->modify( new eZAutoLinkOperatorLinksTestTpl(), 'autolink', array(), '', '', $text, array( 'max_chars' => $maxChars ), false );
         return $text;
     }
 
