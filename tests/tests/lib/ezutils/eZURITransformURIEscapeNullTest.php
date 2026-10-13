@@ -5,6 +5,9 @@
  * fragment branch ("#top") and escapeHtmlTransformUri() must raise no PHP 8.1 null deprecation, and
  * eZURI::build() keeps giving the same link.
  *
+ * The eZSys state earlier tests leave (access path, www directory, index file) is saved, cleared for each test
+ * and restored, so the links are exact whatever runs before.
+ *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package tests
@@ -16,6 +19,9 @@
 class eZURITransformURIEscapeNullTest extends PHPUnit\Framework\TestCase
 {
     private $messages = array();
+    private $accessPath;
+    private $wwwDir;
+    private $indexFile;
 
     public static function setUpBeforeClass(): void
     {
@@ -25,6 +31,15 @@ class eZURITransformURIEscapeNullTest extends PHPUnit\Framework\TestCase
 
     protected function setUp(): void
     {
+        $sys = eZSys::instance();
+        $this->accessPath = $sys->AccessPath;
+        $this->wwwDir = $sys->WWWDir;
+        $this->indexFile = $sys->IndexFile;
+        $sys->WWWDir = '';
+        $sys->IndexFile = '';
+        eZSys::clearAccessPath( false );
+        eZSys::clearAccessPath( true );
+
         $this->messages = array();
         set_error_handler( function ( $errno, $errstr ) {
             $this->messages[] = $errstr;
@@ -35,6 +50,11 @@ class eZURITransformURIEscapeNullTest extends PHPUnit\Framework\TestCase
     protected function tearDown(): void
     {
         restore_error_handler();
+        $sys = eZSys::instance();
+        eZSys::setAccessPath( $this->accessPath['siteaccess']['url'], $this->accessPath['siteaccess']['name'], true );
+        eZSys::setAccessPath( $this->accessPath['path']['url'], $this->accessPath['path']['name'], false );
+        $sys->WWWDir = $this->wwwDir;
+        $sys->IndexFile = $this->indexFile;
     }
 
     public function testNullLinkEscapedGivesTheRootWithoutDeprecation()
@@ -43,7 +63,7 @@ class eZURITransformURIEscapeNullTest extends PHPUnit\Framework\TestCase
         {
             $href = null;
             $this->assertTrue( eZURI::transformURI( $href, $ignoreIndexDir, 'relative', true ) );
-            $this->assertSame( '/', substr( (string)$href, -1 ) );
+            $this->assertSame( '/', $href );
         }
         $this->assertSame( array(), $this->messages );
     }
@@ -60,7 +80,7 @@ class eZURITransformURIEscapeNullTest extends PHPUnit\Framework\TestCase
     {
         $href = 42;
         $this->assertTrue( eZURI::transformURI( $href, true, 'relative', true ) );
-        $this->assertSame( '/42', substr( (string)$href, -3 ) );
+        $this->assertSame( '/42', $href );
         $this->assertSame( array(), $this->messages );
     }
 
@@ -76,7 +96,7 @@ class eZURITransformURIEscapeNullTest extends PHPUnit\Framework\TestCase
     {
         $this->assertSame( '#top', eZURI::build( '#top' ) );
         $this->assertSame( 'https://example.org/a?b=1&amp;c=2', eZURI::build( 'https://example.org/a?b=1&amp;c=2' ) );
-        $this->assertSame( '/', substr( eZURI::build( '' ), -1 ) );
+        $this->assertSame( '/', eZURI::build( '' ) );
         $this->assertSame( array(), $this->messages );
     }
 }
