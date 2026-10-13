@@ -3013,7 +3013,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-df36d666b723f6ea45825e3ccdf3b18b  doc/changelogs/6.0/6.0.15.md
+76c9a84772c1bc95c9f8a99d97b4b0c3  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3486,7 +3486,7 @@ cc8bb968e1c59a87aeb1832017543308  doc/features/6.0/velocity-discovery-federation
 631068be86692a9e13aeab5ff40ed8a6  doc/features/6.0/velocity-https-certificates.md
 609de8c320265356f3b7ee6e4612eb47  doc/features/6.0/velocity-opcode-cache-and-profile.md
 a6174671d4a040f86383eb0381ce3ab0  doc/features/6.0/velocity-packages-and-binaries.md
-aca4c6249611307a4783cd588de3ca0c  doc/features/6.0/velocity-persistent-worker-server.md
+b9703f6c5e95b954f34a5045a644c98e  doc/features/6.0/velocity-persistent-worker-server.md
 a72372bfbed72cfa54a1c57099f1a532  doc/features/6.0/velocity-q-shell.md
 7aca62cdf7dc9024a1a2653cb2350236  doc/features/6.0/velocity-response-cache.md
 288e51c6e830565630751a7e6166d9ba  doc/features/6.0/velocity-scheduler.md
@@ -4759,7 +4759,7 @@ fb0d8ce61ba6412678ae63735944ddbf  kernel/classes/audit/console/expauditreauth.ph
 4a45594d0dda20f7f515c980fc1114f3  kernel/classes/audit/console/expauditsourcebase.php
 c1062d494013d680c96c7512ee918ed8  kernel/classes/audit/console/expauditsourceregistry.php
 207d8b733eaba7ff0f33f85f0683b5b1  kernel/classes/audit/console/expaudittemplateoperator.php
-83790e47b139ff9d58cd24c744bd3d81  kernel/classes/audit/expaudit.php
+7baf3e4ebfd75b89de9190faaded4c7d  kernel/classes/audit/expaudit.php
 9c334e44176a6cfc7684970fafde7220  kernel/classes/audit/expauditalertrule.php
 6b1471b8c2c558afeee3d921fa52994a  kernel/classes/audit/expauditbuffer.php
 55180820cb00e674978df201725371df  kernel/classes/audit/expauditconfig.php
@@ -4977,7 +4977,7 @@ a8480946c345cbdba00cf4aa5f283a34  kernel/classes/ezbinaryfilehandler.php
 98f16064973b2f2cce28545ee3efd8d6  kernel/classes/ezcache.php
 2cea93db58b75780affc83f4c4df3601  kernel/classes/ezcachetrash.php
 b755d73f6bf0e34f04abbcf67fdbcc69  kernel/classes/ezclusterfilefailure.php
-ccaaa94850a3994a6ec5ad6e4fb11c88  kernel/classes/ezclusterfilehandler.php
+eff4a74fafc031a8bb3b4b5151ad8fdb  kernel/classes/ezclusterfilehandler.php
 3c5fb56810944894ac7ef955f1e50aaf  kernel/classes/ezcodetemplate.php
 d466e26a73141e07f2f9eaf7ab14be0e  kernel/classes/ezcollaborationgroup.php
 9db87cffca5b84ab90b33484fdcd5d45  kernel/classes/ezcollaborationitem.php
@@ -6190,8 +6190,8 @@ c7a43052aedb258efa97ec02a0d630f0  kernel/workflow/workflowlist.php
 29a9398e1ffaf0295240ff21451d1f16  kickstart.ini-dist
 9ba91d57d77c458fd031b4a0751ce000  lib/ezdb/classes/expmongodb.php
 226416065566fd96df9cfca57d5a3c99  lib/ezdb/classes/ezdb.php
-ed68b2ebeb6be94932b0e35aad41e1d7  lib/ezdb/classes/ezdbinterface.php
-f6d3fcbe3d222d44c1b0709969765358  lib/ezdb/classes/ezdbquerycache.php
+e3a1ffc6a2c9f262f92f520cc63b13ae  lib/ezdb/classes/ezdbinterface.php
+478913d9a7be2630f9b8b6812fa3478d  lib/ezdb/classes/ezdbquerycache.php
 cba91a38a19dd20520328d582d9d9228  lib/ezdb/classes/ezdbtool.php
 c8b7cb50e53522cc1d45078b3a28979b  lib/ezdb/classes/ezmysqlcharset.php
 184ec92d24404cebb876e3ee05cff51f  lib/ezdb/classes/ezmysqlidb.php
@@ -6367,9 +6367,9 @@ b55898a868b558383b32af3334bd55d6  lib/ezutils/classes/expinfo.php
 11982ee3f90617fbf7ddbb55b4806286  lib/ezutils/classes/ezcachehelper.php
 65418d73b97109fe1dc0fc642c93139e  lib/ezutils/classes/ezcli.php
 0ee9cef26c3240f827773cafd53d87b6  lib/ezutils/classes/ezdatetimevalidator.php
-a906eec91818c9acc43833387b64410e  lib/ezutils/classes/ezdebug.php
+da02ee86e1aafe2cdfa3940922eb7863  lib/ezutils/classes/ezdebug.php
 072c48359e732e46bda20413549d3a94  lib/ezutils/classes/ezdebugsetting.php
-8d9890035a814e834bf60b3ddf240646  lib/ezutils/classes/ezexecution.php
+9aaad506ff8b06ee6e95ef9ae0592556  lib/ezutils/classes/ezexecution.php
 72fc7a1f67f3eaa83336f9d5b48a0169  lib/ezutils/classes/ezexpiryhandler.php
 36956abfc133867d79b27972159e26fa  lib/ezutils/classes/ezextension.php
 072c8aadc71992ed763c699b6999fda2  lib/ezutils/classes/ezfatalusererror.php
@@ -7985,6 +7985,7 @@ d673c9d26918f6ad1e90008332f95a8e  tests/tests/lib/ezutils/eZDebugMessagesTest.ph
 0954197c4970b48489c62b41ead45f74  tests/tests/lib/ezutils/eZDebugReportNullLabelTest.php
 4b13614a9750900ddd1d2071456fe6fd  tests/tests/lib/ezutils/eZExecutionDatabaseUnavailableTest.php
 ce575fc0814b1be85b41eab21e1760d4  tests/tests/lib/ezutils/eZExecutionExceptionHandlerTest.php
+41301f2c3e24e6ce23d007d76aa851d3  tests/tests/lib/ezutils/eZExecutionPerRequestRegistrationTest.php
 60e4f4c4fcc1cfe2c734e6fc4b947dfd  tests/tests/lib/ezutils/eZExpiryHandlerCacheDirectoryTest.php
 e0df258f6fc60a3fcb7ac21bfd0511b1  tests/tests/lib/ezutils/eZExtensionCountsTest.php
 d6114e4248b4221f06f138cb33e09dc2  tests/tests/lib/ezutils/eZExtensionNewestFileTimeTest.php
