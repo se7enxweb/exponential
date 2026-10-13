@@ -8,6 +8,9 @@
  * No database: external links are counted instead of being registered (see eZXMLTextTestFixtures.php); links and
  * embeds by node (eznode://), which look the node up, are not used.
  *
+ * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 5286068d5b), Copyright (C) Mugo Web, GPL v2
+ * (testBareAmpersandInALinkAddress)
+ *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package tests
@@ -178,6 +181,24 @@ class eZSimplifiedXMLInputParserTest extends eZXMLTextTestCase
         $this->assertSame( $linkedObjects, $parser->getLinkedObjectIDArray() );
         $this->assertSame( $urls, $parser->registeredURLs );
         $this->assertSame( array_keys( $urls ), $parser->getUrlIDArray() );
+    }
+
+    /**
+     * EZP-26832: an editor types simplified XML with a bare & in a link address (not written as &amp;). The input
+     * is parsed at the syntax error level as the editor's input is, and the address is registered with the &.
+     * LoveStack's case (commit 5286068d5b); the fix reached Exponential from the upstream line as 863c3e4b3a.
+     */
+    public function testBareAmpersandInALinkAddress()
+    {
+        foreach ( array( '<link href="https://k1d.example.invalid/?this=that&something=nothing">link</link>',
+                         '<a href="https://k1d.example.invalid/?this=that&something=nothing">link</a>' ) as $input )
+        {
+            $parser = $this->parser( 5, false, eZXMLInputParser::ERROR_SYNTAX );
+            $document = $parser->process( $input );
+            $this->assertNotFalse( $document, $input );
+            $this->assertSame( '<paragraph><link url_id="9000">link</link></paragraph>', self::body( $document ), $input );
+            $this->assertSame( array( 9000 => 'https://k1d.example.invalid/?this=that&something=nothing' ), $parser->registeredURLs, $input );
+        }
     }
 
     public function testRequiredAttributeMissingAmongOthers()
