@@ -3013,7 +3013,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-76c9a84772c1bc95c9f8a99d97b4b0c3  doc/changelogs/6.0/6.0.15.md
+383740db24c48a9a29a41452d8bc13dc  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -6362,7 +6362,7 @@ d27d72fa632723c912c0e30955660dfb  lib/eztemplate/classes/eztemplatetreecache.php
 83db4deedb094ab56e41666aa89d1d45  lib/eztemplate/classes/eztemplateunitoperator.php
 c86873ded14533e5c2c8d74477b5b0c9  lib/eztemplate/classes/eztemplatevariableelement.php
 290175b9eca3990307842ecc8353ae59  lib/eztemplate/classes/eztemplatewhilefunction.php
-aed3a640262eff03d8cf29a2a1b896ac  lib/ezutils/classes/expdebugbarreport.php
+d2ed334e167aebcc542a55bd487f9c66  lib/ezutils/classes/expdebugbarreport.php
 b55898a868b558383b32af3334bd55d6  lib/ezutils/classes/expinfo.php
 11982ee3f90617fbf7ddbb55b4806286  lib/ezutils/classes/ezcachehelper.php
 65418d73b97109fe1dc0fc642c93139e  lib/ezutils/classes/ezcli.php
@@ -7979,7 +7979,7 @@ d55f27da992880ec276e9fc8d117a356  tests/tests/lib/ezutils/ErrorCasePageTest.php
 1cb86abbb39e758fa2ec557a149ad317  tests/tests/lib/ezutils/PHPUnitTextUICommandShimTest.php
 b04416a94a85e92fcfaf8d20cd7481f2  tests/tests/lib/ezutils/RepairQueueTest.php
 e03fa9c077e0046cda4ed2e95139fa40  tests/tests/lib/ezutils/eZCLITest.php
-9e267a84dd2291afb44623aacd3ebe39  tests/tests/lib/ezutils/eZDebugDeprecatedTest.php
+4cd340417869b480b242028b8c519c02  tests/tests/lib/ezutils/eZDebugDeprecatedTest.php
 19b4b7676978ad54bccd376b846ad625  tests/tests/lib/ezutils/eZDebugHandleTypeTest.php
 d673c9d26918f6ad1e90008332f95a8e  tests/tests/lib/ezutils/eZDebugMessagesTest.php
 0954197c4970b48489c62b41ead45f74  tests/tests/lib/ezutils/eZDebugReportNullLabelTest.php
@@ -8021,6 +8021,7 @@ e6ad2c9ac436d848b4359433b0380402  tests/tests/lib/ezutils/eZURIFilterStringTest.
 40005d9e868e02bfbd2cae8d1e693583  tests/tests/lib/ezutils/eZURITransformURINullTest.php
 ffcf86e89c7ff74ede52e2ec04b52b1a  tests/tests/lib/ezutils/eZUtilsHelpersTest.php
 fa6bba7b528e860298cc6d4538c5c00e  tests/tests/lib/ezutils/expDebugBarReportCopyMessagesTest.php
+b99dee804176afb040d2d3199defbcf5  tests/tests/lib/ezutils/expDebugBarReportMessageTextTest.php
 73b71352cf122c5331f60f4ca3185288  tests/tests/lib/ezutils/ezdebug_regression.php
 43dca975479fcb28e788dece5baeef99  tests/tests/lib/ezutils/ezhttptool_regression.php
 41fb7ef1daa21e63dd3a19220df5e261  tests/tests/lib/ezutils/ezhttptool_test.php
