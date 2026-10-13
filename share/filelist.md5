@@ -3453,7 +3453,7 @@ afec5a2b80e838f67a095f7657bed36d  doc/features/6.0/platform-nexus-starter.md
 77b6dcb702be5b7cb2f3197dd5c1aef1  doc/features/6.0/platform-sqlite-install.md
 bd00eb2e724c0f4f3612917275e79456  doc/features/6.0/preload-sites-view.md
 7fa66cfaa817deccf7e3293c09e6cb73  doc/features/6.0/publish-without-notification.md
-5a0820a0c4e18b8ab27663c9b43cc217  doc/features/6.0/quality-checks.md
+18e39fe0812a7119587fdcc8a8118daf  doc/features/6.0/quality-checks.md
 b44b9ac50952ac2e8f16cbb8f32b9b1b  doc/features/6.0/rad-tools.md
 08e9e00824933e2b7737283320b6e967  doc/features/6.0/rebranding-to-exponential.md
 12527c047b3b9350ebd0481dcb338531  doc/features/6.0/remote-services-expservices.md
@@ -6979,6 +6979,7 @@ d56115c8242b3081672f63607aa69361  tests/runtests.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 9ff58a769386f12831d56db2598e292e  tests/suite.php
+cadce606029f8e799d4169c65e25c3ad  tests/test-map.json
 8b29711fe10a56c5c5b90916f35d0a00  tests/tests/bin/phpcs/NoTypeDeclarationsSniffTest.php
 4e3eeb18c2ea423afb62388e5e3dcafc  tests/tests/bin/phpcs/fixtures/typedeclarations.inc
 dcc45e4631fc358b0384c51d17ff8d67  tests/tests/extension/bccie/ezBccieTest.php
