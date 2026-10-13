@@ -1719,6 +1719,16 @@ language_locale='eng-GB'";
                                             'settings' => array( 'ExtensionSettings' => array( 'ActiveExtensions' => array_values( array_unique( array_merge( $extensionsPrepended, $extensionsToEnable ) ) ) ) ) );
         }
 
+        // A new installation closes open registration and the ezjscnode node data calls, which
+        // settings/site.ini and ezjscore.ini keep open for upgraded sites: registering needs the
+        // user/register policy (PolicyOmitListExclude[], read by expPolicyOmitList), the node data the
+        // ezjscore/call policy with the function list ezjscnode (doc/guides/roles-and-policies.md, 8).
+        // Portions derived from LoveStack (mugoweb/ezpublish-legacy, commits 98854ab935 and aa307a7ff3), Copyright (C) Mugo Web, GPL v2
+        $extraCommonSettings[] = array( 'name' => 'site.ini',
+                                        'settings' => array( 'RoleSettings' => array( 'PolicyOmitListExclude' => array( 'user/register' ) ) ) );
+        $extraCommonSettings[] = array( 'name' => 'ezjscore.ini',
+                                        'settings' => array( 'ezjscServer_ezjscnode' => array( 'RequirePolicy' => 'enabled' ) ) );
+
         // Enable dynamic tree menu for the admin interface by default
         $enableDynamicTreeMenuAdded = false;
         foreach ( $extraAdminSettings as $key => $extraSetting )
