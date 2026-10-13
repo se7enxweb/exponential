@@ -173,7 +173,7 @@ bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
 b974dde24700fd18ba9d30714509893a  composer.dev.json
 7e531407fc8efd6cf497d4260dd8897c  composer.dev.lock
-369d7d57b826faf2787141d388677c91  composer.json
+6a178e4d052635cf4ad94b9ca698ddad  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 2d91308b2fa30038d9cc37afd0e2d44a  config.env.php.example
 e7da3e13ed7cc993f3d31886d4a42ddc  config.php-RECOMMENDED
@@ -3026,7 +3026,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-71bfac41e7c181e9caed149bbe337d44  doc/changelogs/6.0/6.0.15.md
+434396dbd3e000b036a0a3c171f994f8  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3499,7 +3499,7 @@ cc8bb968e1c59a87aeb1832017543308  doc/features/6.0/velocity-discovery-federation
 631068be86692a9e13aeab5ff40ed8a6  doc/features/6.0/velocity-https-certificates.md
 609de8c320265356f3b7ee6e4612eb47  doc/features/6.0/velocity-opcode-cache-and-profile.md
 a6174671d4a040f86383eb0381ce3ab0  doc/features/6.0/velocity-packages-and-binaries.md
-b9703f6c5e95b954f34a5045a644c98e  doc/features/6.0/velocity-persistent-worker-server.md
+e161ae937af452c4cce629aab52ff642  doc/features/6.0/velocity-persistent-worker-server.md
 a72372bfbed72cfa54a1c57099f1a532  doc/features/6.0/velocity-q-shell.md
 7aca62cdf7dc9024a1a2653cb2350236  doc/features/6.0/velocity-response-cache.md
 288e51c6e830565630751a7e6166d9ba  doc/features/6.0/velocity-scheduler.md
