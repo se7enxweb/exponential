@@ -242,6 +242,10 @@ $tpl->setVariable( 'siteaccess', $siteaccess );
 $tpl->setVariable( 'is_creator', $isCreator );
 $tpl->setVariable( 'from_language', $FromLanguage );
 $tpl->setVariable( 'translation_list', $foundTranslationList );
+// The location the preview shows (node assignment id): the versionview templates mark it in their location list.
+// Content/versionview includes this file with $placementID in scope. It may come from the request, and
+// design/standard prints it into a form field, so only a number is handed over.
+$tpl->setVariable( 'placement', isset( $placementID ) && is_numeric( $placementID ) ? (int)$placementID : false );
 
 $res = eZTemplateDesignResource::instance();
 
