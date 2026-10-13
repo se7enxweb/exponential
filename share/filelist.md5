@@ -7503,7 +7503,7 @@ ae30bcf264ae9a0e1b6e2e582bb0e469  tests/tests/kernel/classes/setup/SessionPageTe
 9eefb9efe67f592ab335a0860c480b61  tests/tests/kernel/classes/setup/SetupContentFallbackLanguagesTest.php
 6f791a2bce8d7fd28c8ba73af0026faf  tests/tests/kernel/classes/setup/SetupPackageDownloadTest.php
 2671ef0292727fae9b58c4f6fc4614f4  tests/tests/kernel/classes/setup/SetupPhpVersionTest.php
-192c130cbdb996c8ecb2c05bf353b089  tests/tests/kernel/classes/setup/SetupRunCommandAuditTest.php
+6c464bc501b547eae3d4ffb37aa5e3c9  tests/tests/kernel/classes/setup/SetupRunCommandAuditTest.php
 be124ca8bd5eed793ebfb648619273d6  tests/tests/kernel/classes/setupsteps/eZSetupCheckFunctionsTest.php
 ff0f446447b511ded16794509df958e8  tests/tests/kernel/classes/setupsteps/eZSetupStepTestHelper.php
 a5f311adee5cc6c0fa46486b22f14f48  tests/tests/kernel/classes/setupsteps/eZSetupStepsTest.php
