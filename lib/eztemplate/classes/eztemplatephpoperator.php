@@ -84,23 +84,28 @@ class eZTemplatePHPOperator
         $phpname = $this->PHPNames[$operatorName];
 
         $values[] = $parameters[0];
-        $code = "%output% = $phpname( %1% );\n";
+        // null (a value that is not set) as an empty text, as in modify()
+        $code = "%output% = $phpname( %1% ?? '' );\n";
 
         $newElements[] = eZTemplateNodeTool::createCodePieceElement( $code, $values );
         return $newElements;
     }
 
     /*!
-     Executes the PHP function for the operator $op_name.
+     Executes the PHP function for the operator $op_name. A value that is not set (null), piped in or given as the
+     parameter, is passed as an empty text: the shipped functions (urlencode, urldecode, rawurlencode, rawurldecode)
+     take a string, and PHP 8.1 deprecates null for them.
     */
     function modify( $tpl, $operatorName, $operatorParameters, $rootNamespace, $currentNamespace, &$value, $namedParameters, $placement )
     {
         $phpname = $this->PHPNames[$operatorName];
         if ( $value !== null )
             $operand = $value;
-        else
+        else if ( isset( $operatorParameters[0] ) )
             $operand = $tpl->elementValue( $operatorParameters[0], $rootNamespace, $currentNamespace, $placement );
-        $value = $phpname( $operand );
+        else
+            $operand = null;
+        $value = $phpname( $operand ?? '' );
     }
 
     /// The array of operators, used for registering operators

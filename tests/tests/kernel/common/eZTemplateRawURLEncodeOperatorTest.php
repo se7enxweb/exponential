@@ -2,7 +2,9 @@
 /**
  * The template operators rawurlencode and rawurldecode (template.ini [PHP] PHPOperatorList): RFC 3986
  * encoding, where a space is %20 and not + as urlencode gives. Checked in the shipped settings, through the
- * PHP operator class and in a template rendered by eZTemplate. No database.
+ * PHP operator class and in a template rendered by eZTemplate. Numbers, the empty text and the RFC 3986 characters
+ * give the same result interpreted and compiled, and a value that is not set gives an empty text without a PHP 8.1
+ * null deprecation (the same for urlencode and urldecode, which share eZTemplatePHPOperator). No database.
  *
  * Run: php vendor/bin/phpunit tests/tests/kernel/common/eZTemplateRawURLEncodeOperatorTest.php
  *
@@ -82,6 +84,116 @@ class eZTemplateRawURLEncodeOperatorTest extends PHPUnit\Framework\TestCase
         finally
         {
             eZTemplate::resetInstance();
+        }
+    }
+
+    /**
+     * Renders $source with $variables, interpreted and compiled, and gives array( mode => array( output, PHP
+     * notices ) ). The operators are registered from the shipped list as in testATemplateRendersBothOperators().
+     */
+    private function renderBothWays( $source, array $variables )
+    {
+        $file = $this->dir . '/' . md5( $source ) . '.tpl';
+        file_put_contents( $file, $source );
+        $fresh = new eZINI( 'template.ini', 'settings', null, false );
+        $list = $fresh->variable( 'PHP', 'PHPOperatorList' );
+        $saved = array();
+        foreach ( array( 'eZTemplateCompilerSettings', 'eZSiteBasics' ) as $name )
+            $saved[$name] = array_key_exists( $name, $GLOBALS ) ? array( $GLOBALS[$name] ) : null;
+        $results = array();
+        try
+        {
+            foreach ( array( 'interpreted' => false, 'compiled' => true ) as $mode => $compiled )
+            {
+                if ( $compiled )
+                {
+                    unset( $GLOBALS['eZSiteBasics'] );
+                    $GLOBALS['eZTemplateCompilerSettings']['compile'] = true;
+                    $GLOBALS['eZTemplateCompilerSettings']['compilation-directory'] = $this->dir;
+                }
+                else
+                {
+                    $GLOBALS['eZTemplateCompilerSettings']['compile'] = false;
+                    $GLOBALS['eZSiteBasics']['no-cache-adviced'] = true;
+                }
+                $notices = array();
+                set_error_handler( function ( $no, $str, $f, $l ) use ( &$notices )
+                {
+                    $notices[] = $str . ' (' . basename( $f ) . ':' . $l . ')';
+                    return true;
+                } );
+                eZTemplate::resetInstance();
+                try
+                {
+                    $tpl = new eZTemplate();
+                    $tpl->autoload();
+                    $tpl->registerAutoloadOperators( array( 'class' => 'eZTemplatePHPOperator',
+                                                            'class_parameter' => $list,
+                                                            'operator_names' => array_keys( $list ) ) );
+                    foreach ( $variables as $name => $value )
+                        $tpl->setVariable( $name, $value );
+                    $output = $tpl->fetch( $file );
+                }
+                finally
+                {
+                    restore_error_handler();
+                }
+                $results[$mode] = array( $output, $notices );
+            }
+        }
+        finally
+        {
+            eZTemplate::resetInstance();
+            foreach ( $saved as $name => $value )
+            {
+                if ( $value === null )
+                    unset( $GLOBALS[$name] );
+                else
+                    $GLOBALS[$name] = $value[0];
+            }
+            foreach ( glob( $this->dir . '/*/' ) ?: array() as $sub )
+                self::removeTree( $sub );
+        }
+        return $results;
+    }
+
+    private static function removeTree( $path )
+    {
+        if ( is_dir( $path ) && !is_link( $path ) )
+        {
+            foreach ( scandir( $path ) as $entry )
+            {
+                if ( $entry !== '.' && $entry !== '..' )
+                    self::removeTree( rtrim( $path, '/' ) . '/' . $entry );
+            }
+            rmdir( $path );
+        }
+        else if ( file_exists( $path ) )
+            unlink( $path );
+    }
+
+    /** Numbers, the empty text and the RFC 3986 characters, interpreted and compiled */
+    public function testValuesOfEveryKindBothWays()
+    {
+        $source = '[{$n|rawurlencode}][{$e|rawurlencode}][{$u|rawurlencode}][{$p|rawurldecode}][{$q|rawurldecode}]';
+        $variables = array( 'n' => 42, 'e' => '', 'u' => '-_.~ !*\'()', 'p' => 'a+b%20c', 'q' => '%E2%82%AC' );
+        foreach ( $this->renderBothWays( $source, $variables ) as $mode => $result )
+        {
+            list( $output, $notices ) = $result;
+            $this->assertSame( array(), $notices, "$mode: no PHP notices" );
+            $this->assertSame( "[42][][-_.~%20%21%2A%27%28%29][a+b c][\u{20AC}]", $output, $mode );
+        }
+    }
+
+    /** A value that is not set (null) gives an empty text, without a PHP 8.1 null deprecation */
+    public function testAnUnsetValueGivesAnEmptyText()
+    {
+        $source = '[{$missing|rawurlencode}][{$nothing|rawurldecode}][{$nothing|urlencode}]';
+        foreach ( $this->renderBothWays( $source, array( 'nothing' => null ) ) as $mode => $result )
+        {
+            list( $output, $notices ) = $result;
+            $this->assertSame( array(), $notices, "$mode: no PHP notices" );
+            $this->assertSame( '[][][]', $output, $mode );
         }
     }
 }
