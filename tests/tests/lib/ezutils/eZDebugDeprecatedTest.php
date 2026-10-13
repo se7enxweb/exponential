@@ -193,8 +193,28 @@ class eZDebugDeprecatedTest extends PHPUnit\Framework\TestCase
     {
         $this->raise( 'counted in the bar' );
         $this->raise( 'counted in the bar' );
-        $html = expDebugBarReport::render( $this->debug, true, false, false, false, false );
-        $this->assertMatchesRegularExpression( '/data-key="deprecations"[^>]*>2 depr</', $html );
+        $before = eZDebug::deprecatedCount();
+
+        // Whatever handler an earlier test left installed (an eZDebug one counts into this instance) stays out:
+        // render() runs under a handler of the test's own, which collects what render() itself raises
+        $raised = array();
+        set_error_handler( function ( $errno, $errstr, $errfile, $errline ) use ( &$raised )
+        {
+            $raised[] = "$errstr in $errfile on line $errline";
+            return true;
+        } );
+        try
+        {
+            $html = expDebugBarReport::render( $this->debug, true, false, false, false, false );
+        }
+        finally
+        {
+            restore_error_handler();
+        }
+
+        $this->assertSame( array(), $raised, 'render() raises nothing' );
+        $this->assertSame( $before, eZDebug::deprecatedCount() );
+        $this->assertMatchesRegularExpression( '/data-key="deprecations"[^>]*>' . $before . ' depr</', $html );
         $this->assertStringNotContainsString( 'counted in the bar', $html, 'no row for it' );
     }
 }

@@ -402,15 +402,20 @@ class expDebugBarReport
     /**
      * The message rows, as the classic report printed them, plus the level on each row for the filter.
      *
+     * A message that is not a string (null, a number) is shown as its string value, with xdebug loaded too.
+     *
+     * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 4065ed16b3), Copyright (C) Mugo Web, GPL v2.
+     *
+     * @param bool|null $xdebug whether xdebug is loaded; null: ask PHP (a test passes true)
      * @return array( 'rows' => string[], 'sql' => array of array( 'html', 'ms', 'n' ), 'counts' => level => count )
      */
-    protected static function messageRows( eZDebug $debug, array $allowedDebugLevels )
+    protected static function messageRows( eZDebug $debug, array $allowedDebugLevels, $xdebug = null )
     {
         $hasLevel = array();
         $rows = array();
         $sql = array();
         $counts = array( 'notice' => 0, 'warning' => 0, 'error' => 0, 'debug' => 0, 'timing' => 0, 'strict' => 0 );
-        $xdebug = extension_loaded( 'xdebug' );
+        $xdebug = $xdebug === null ? extension_loaded( 'xdebug' ) : (bool)$xdebug;
         foreach ( $debug->DebugStrings as $entry )
         {
             if ( !in_array( $entry['Level'], $allowedDebugLevels ) )
@@ -431,10 +436,11 @@ class expDebugBarReport
             $time = date( "M d Y H:i:s", $entry['Time'] );
             $bgclass = $entry['BackgroundClass'];
             $pre = $bgclass != '' ? " class='$bgclass'" : '';
-            if ( $xdebug && strncmp( eZDebug::XDEBUG_SIGNATURE, $entry['String'], strlen( eZDebug::XDEBUG_SIGNATURE ) ) === 0 )
-                $contents = substr( $entry['String'], strlen( eZDebug::XDEBUG_SIGNATURE ) );
+            $text = (string)$entry['String'];
+            if ( $xdebug && strncmp( eZDebug::XDEBUG_SIGNATURE, $text, strlen( eZDebug::XDEBUG_SIGNATURE ) ) === 0 )
+                $contents = substr( $text, strlen( eZDebug::XDEBUG_SIGNATURE ) );
             else
-                $contents = htmlspecialchars( (string)$entry['String'], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
+                $contents = htmlspecialchars( $text, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
 
             $html = "<tr class='$style' data-level='$style'><td class='debugheader'$identifierText><b><span>{$outputData['name']}:</span> " . htmlspecialchars( $label, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . "</b></td>"
                   . "<td class='debugheader' style=\"text-align:right;\">$time</td></tr>"
