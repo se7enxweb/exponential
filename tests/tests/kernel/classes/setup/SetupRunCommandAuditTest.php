@@ -28,7 +28,6 @@ class SetupRunCommandAuditTest extends PHPUnit\Framework\TestCase
         mkdir( $this->root, 0775, true );
         file_put_contents( $this->root . '/console', "<?php\nfile_put_contents( __DIR__ . '/given.txt', var_export( getenv( 'EXP_SETUP_RUN' ), true ) . ' ' . implode( ' ', array_slice( \$argv, 1 ) ) );\n" );
         $this->run = new ReflectionProperty( 'expSetupLog', 'run' );
-        $this->run->setAccessible( true );
         $this->runBefore = $this->run->getValue();
     }
 
@@ -64,7 +63,6 @@ class SetupRunCommandAuditTest extends PHPUnit\Framework\TestCase
     {
         $this->run->setValue( null, null );
         $canLookUp = new ReflectionMethod( 'expAudit', 'canLookUp' );
-        $canLookUp->setAccessible( true );
         putenv( 'EXP_SETUP_RUN' );
         $without = $canLookUp->invoke( null );
         putenv( 'EXP_SETUP_RUN=20261012-120000-abcdef' );
