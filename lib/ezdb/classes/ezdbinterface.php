@@ -32,7 +32,7 @@ class eZDBInterface
      */
     public static $SQLProfileOn = null;
     protected static $SQLProfile = array( 'total' => 0, 'select' => 0, 'seconds' => 0.0, 'seen' => array(), 'repeats' => 0, 'repeatSeconds' => 0.0, 'started' => 0.0 );
-    /** @var bool whether writeSQLProfile() is registered for shutdown in this process */
+    /** @var string|false eZExecution::requestKey() of the request writeSQLProfile() is registered for */
     protected static $SQLProfileRegistered = false;
 
     /** Starts a new request's profile (ezpKernelWeb, once per request). */
@@ -60,9 +60,9 @@ class eZDBInterface
                 return;
             if ( !self::$SQLProfile['started'] )
                 self::$SQLProfile['started'] = microtime( true );
-            if ( !self::$SQLProfileRegistered )
+            if ( self::$SQLProfileRegistered !== eZExecution::requestKey() )
             {
-                self::$SQLProfileRegistered = true;
+                self::$SQLProfileRegistered = eZExecution::requestKey();
                 register_shutdown_function( array( 'eZDBInterface', 'writeSQLProfile' ) );
             }
         }

@@ -18,6 +18,17 @@
 
   By registering a cleanup handler it's possible to make sure the script can
   end properly.
+
+  The handlers, the clean exit flag and the shutdown functions belong to one
+  request, told apart by REQUEST_TIME_FLOAT (requestKey()): the first call in a
+  new request starts from what a fresh process has. Under Apache/PHP-FPM and on
+  the command line a process serves one request, so nothing changes there. A
+  persistent Exponential Velocity worker serves many, puts this class's statics
+  back to what they were after its warm-up between them and runs and forgets the
+  request's shutdown functions at its end, so without this every request after a
+  worker's first ran with the warm-up's handlers plus its own, and with no
+  shutdown function at all: no clean-up and no error page after a fatal error,
+  and no eZSession::stop().
 */
 
 class eZExecution
@@ -28,6 +39,7 @@ class eZExecution
     */
     static function setCleanExit( $hasCleanExit = true )
     {
+        self::forRequest();
         self::$hasCleanExit = $hasCleanExit;
     }
 
@@ -55,7 +67,10 @@ class eZExecution
     static function addCleanupHandler( $handler )
     {
         self::registerShutdownHandler();
-        self::$cleanupHandlers[] = $handler;
+        // once per request: a handler added again (code that registers on every call, or behind a flag that
+        // outlived its request) runs once
+        if ( !in_array( $handler, self::$cleanupHandlers, true ) )
+            self::$cleanupHandlers[] = $handler;
     }
 
     /*!
@@ -63,6 +78,7 @@ class eZExecution
     */
     static function cleanupHandlers()
     {
+        self::forRequest();
         return self::$cleanupHandlers;
     }
 
@@ -75,7 +91,8 @@ class eZExecution
     static function addFatalErrorHandler( $handler )
     {
         self::registerShutdownHandler();
-        self::$fatalErrorHandlers[] = $handler;
+        if ( !in_array( $handler, self::$fatalErrorHandlers, true ) )
+            self::$fatalErrorHandlers[] = $handler;
     }
 
     /*!
@@ -83,6 +100,7 @@ class eZExecution
     */
     static function fatalErrorHandlers()
     {
+        self::forRequest();
         return self::$fatalErrorHandlers;
     }
 
@@ -91,6 +109,7 @@ class eZExecution
     */
     static function isCleanExit()
     {
+        self::forRequest();
         return self::$hasCleanExit;
     }
 
@@ -182,17 +201,26 @@ class eZExecution
     */
     static public function registerShutdownHandler( $documentRoot = false )
     {
+        self::forRequest();
         if ( !self::$shutdownHandle )
         {
-            register_shutdown_function( array('eZExecution', 'uncleanShutdownHandler') );
+            // Tied to this request: a persistent worker can still hold the shutdown functions of a request that
+            // has ended (its warm-up's, which it never ran), and those must not run in this one.
+            $request = self::requestKey();
+            register_shutdown_function( array('eZExecution', 'runForRequest'), $request, array('eZExecution', 'uncleanShutdownHandler') );
             /*
                 see:
                 - http://www.php.net/manual/en/function.session-set-save-handler.php
                 - http://bugs.php.net/bug.php?id=33635
                 - http://bugs.php.net/bug.php?id=33772
             */
-            register_shutdown_function( array('eZSession', 'stop') );
-            set_exception_handler( array('eZExecution', 'defaultExceptionHandler') );
+            register_shutdown_function( array('eZExecution', 'runForRequest'), $request, array('eZSession', 'stop') );
+            // The process's first registration installs the handler, as it always did. A later request's (a
+            // persistent worker's) installs it when none is in place, see below: the worker has taken the last
+            // request's handler away by then, and a handler this request's own code installed first is kept.
+            if ( !self::$handlerInstalled || self::currentExceptionHandler() === null )
+                set_exception_handler( array('eZExecution', 'defaultExceptionHandler') );
+            self::$handlerInstalled = true;
             self::$shutdownHandle = true;
         }
         else if ( self::currentExceptionHandler() === null )
@@ -215,6 +243,54 @@ class eZExecution
         {
             self::$eZDocumentRoot = getcwd();
         }
+    }
+
+    /**
+     * The request the registrations belong to: REQUEST_TIME_FLOAT, which a persistent Velocity worker sets anew
+     * for every request and which stays the same for the whole of a request under Apache/PHP-FPM and on the
+     * command line. '' when it is not set (the registrations then belong to the process, as they always did).
+     *
+     * @return string
+     */
+    static public function requestKey()
+    {
+        return isset( $_SERVER['REQUEST_TIME_FLOAT'] ) ? (string)$_SERVER['REQUEST_TIME_FLOAT'] : '';
+    }
+
+    /**
+     * A shutdown function registered by registerShutdownHandler(): calls $callback when the request that
+     * registered it is still the current one, and does nothing for an earlier request.
+     *
+     * @param string $request requestKey() of the request that registered it
+     * @param callable $callback
+     * @return void
+     */
+    static public function runForRequest( $request, $callback )
+    {
+        if ( (string)$request !== self::requestKey() )
+            return;
+        if ( is_callable( $callback ) )
+            call_user_func( $callback );
+    }
+
+    /**
+     * Starts a new request's registrations when the request is not the one they belong to: no handlers, no
+     * clean exit, no shutdown functions, as in a fresh process. The first call in a process only notes the
+     * request; everything still has its declared value then.
+     */
+    static private function forRequest()
+    {
+        $request = self::requestKey();
+        if ( self::$requestKey === $request )
+            return;
+        if ( self::$requestKey !== null )
+        {
+            self::$hasCleanExit = false;
+            self::$shutdownHandle = false;
+            self::$fatalErrorHandlers = array();
+            self::$cleanupHandlers = array();
+        }
+        self::$requestKey = $request;
     }
 
     /**
@@ -591,8 +667,12 @@ class eZExecution
     }
 
     static private $eZDocumentRoot = null;
+    /** @var string|null requestKey() of the request the four below belong to, null before the first call */
+    static private $requestKey = null;
     static private $hasCleanExit = false;
     static private $shutdownHandle = false;
+    /** @var bool the exception handler was installed in this process (never reset per request) */
+    static private $handlerInstalled = false;
     static private $fatalErrorHandlers = array();
     static private $cleanupHandlers = array();
 }

@@ -61,7 +61,7 @@ class expAudit
     /** @var int Depth of event() calls in progress (a record that records another one) */
     protected static $inside = 0;
 
-    /** @var bool The cleanup and fatal error handlers are registered (they persist in a Velocity worker) */
+    /** @var bool The cleanup and fatal error handlers are registered for this request */
     protected static $handlersRegistered = false;
 
     /** @var bool The shutdown function is registered for this request */
@@ -773,6 +773,7 @@ class expAudit
         self::$job = null;
         self::$run = null;
         self::$overflowRecorded = false;
+        self::$handlersRegistered = false;
         self::$shutdownRegistered = false;
         self::$failed = array();
         self::$writeFailures = array();
@@ -1085,9 +1086,8 @@ class expAudit
     }
 
     /**
-     * Registers the cleanup and fatal error handlers once per process (eZExecution keeps its handler lists for
-     * the life of a Velocity worker, and runs them every request), and the shutdown function once per request
-     * (Velocity runs and forgets shutdown functions at the end of each request).
+     * Registers the cleanup and fatal error handlers and the shutdown function once per request (eZExecution's
+     * handlers belong to one request, and Velocity runs and forgets shutdown functions at the end of each one).
      */
     protected static function registerHandlers()
     {

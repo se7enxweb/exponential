@@ -206,6 +206,37 @@ upload-to-execution path under command-line PHP; closed). The system
 information page now names the engine, its release, its caches and APCu, and
 every log line carries the request's siteaccess and full address.
 
+### Clean-up handlers and shutdown functions, once per request
+
+`eZExecution`'s cleanup and fatal error handlers, its clean exit flag and the
+shutdown functions it registers (its own clean-up handler and
+`eZSession::stop()`) belong to one request. Between requests a worker puts every
+class's statics back to what they were after its warm-up, and it runs and then
+forgets the shutdown functions a request registered. Until this release a
+worker therefore registered no shutdown function from its second request on
+(no clean-up and no error page after a fatal error, no `eZSession::stop()`), and
+every request ran the warm-up's handlers beside its own. Now the first
+`eZExecution` call of a request starts from what a fresh process has, a handler
+added twice in one request runs once, and a shutdown function of an earlier
+request (the warm-up's, in a worker's first request) does nothing. Under
+Apache/PHP-FPM and on the command line a process serves one request, so nothing
+changes there.
+
+For developers: guard a registration that must happen once per request with
+`eZExecution::requestKey()` (the request's `REQUEST_TIME_FLOAT`), never with a
+`true` flag, which a worker keeps from its warm-up for good:
+
+```php
+if ( self::$registered !== eZExecution::requestKey() )
+{
+    self::$registered = eZExecution::requestKey();
+    register_shutdown_function( array( __CLASS__, 'flush' ) );
+}
+```
+
+`eZExecution::addCleanupHandler()` and `addFatalErrorHandler()` may also simply be
+called on every request: the same handler is kept once.
+
 ## Limits and cautions
 
 - The response cache stores only anonymous pages. A page with a form token is

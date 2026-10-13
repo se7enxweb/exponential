@@ -469,7 +469,7 @@ class eZDBQueryCache
         self::$stats = array( 'hits' => 0, 'misses' => 0, 'stores' => 0, 'uncacheable' => 0, 'writes' => 0 );
     }
 
-    /** @var bool whether flushStats() is registered to run at shutdown */
+    /** @var string|false eZExecution::requestKey() of the request flushStats() is registered to run at the end of */
     protected static $flushRegistered = false;
 
     /**
@@ -499,9 +499,9 @@ class eZDBQueryCache
     /** Makes sure the counters of a plain (non-persistent) request are flushed. */
     protected static function registerFlush()
     {
-        if ( !self::$flushRegistered )
+        if ( self::$flushRegistered !== eZExecution::requestKey() )
         {
-            self::$flushRegistered = true;
+            self::$flushRegistered = eZExecution::requestKey();
             register_shutdown_function( array( __CLASS__, 'flushStats' ) );
         }
     }

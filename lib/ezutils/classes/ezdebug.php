@@ -1166,11 +1166,12 @@ class eZDebug
     {
         self::flushLogRepeats();
         self::$LogContext = trim( str_replace( array( "\r", "\n" ), ' ', (string)$context ) );
-        if ( self::$LogContext !== '' && !self::$LogContextShutdown )
+        if ( self::$LogContext !== '' && self::$LogContextShutdown !== eZExecution::requestKey() )
         {
             // A setup that ends in a fatal error still gets its last count written
             register_shutdown_function( array( 'eZDebug', 'flushLogRepeats' ) );
-            self::$LogContextShutdown = true;
+            // per request: a Velocity worker runs and forgets the shutdown functions at the end of each one
+            self::$LogContextShutdown = eZExecution::requestKey();
         }
     }
 

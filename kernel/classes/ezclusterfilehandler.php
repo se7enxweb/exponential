@@ -21,10 +21,11 @@ class eZClusterFileHandler
      */
     static function instance( $filename = false )
     {
-        if ( self::$isShutdownFunctionRegistered !== true )
+        // once per request (eZExecution's handlers belong to one request; a Velocity worker serves many)
+        if ( self::$isShutdownFunctionRegistered !== eZExecution::requestKey() )
         {
             eZExecution::addCleanupHandler( array( __CLASS__, 'cleanupGeneratingFiles' ) );
-            self::$isShutdownFunctionRegistered = true;
+            self::$isShutdownFunctionRegistered = eZExecution::requestKey();
         }
 
         if( $filename !== false )
@@ -173,6 +174,7 @@ class eZClusterFileHandler
      * Shutdown registration check variable
      * @var bool
      */
+    /** @var string|false eZExecution::requestKey() of the request the cleanup handler is registered for */
     private static $isShutdownFunctionRegistered = false;
 
     /**
