@@ -3,7 +3,8 @@
 /**
  * File containing the explovestack.php script.
  *
- * Checks an installation and its database for what a site coming from LoveStack brings along (read-only).
+ * Checks an installation and its database for what a site coming from LoveStack brings along (check, read-only)
+ * and records a LoveStack database as Exponential's (migrate).
  *
  * @alias exp:lovestack
  *

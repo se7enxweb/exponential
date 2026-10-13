@@ -23,7 +23,7 @@ historic spelling on purpose.) Expected: a value such as `5.4.0` or `6.0.14`.
 | 3.10 up to 5.3 | Part A, then B |
 | 5.4.0 or 5.90 (2017.08 and later) | Part B |
 | 6.0.0 up to 6.0.14, or an earlier checkout of the 6.0.15 line | Part C |
-| `lovestack` (LoveStack, Mugo Web's distribution of the same kernel, `mugoweb/ezpublish-legacy`) | [Coming from LoveStack](#coming-from-lovestack), then Part C |
+| `lovestack` (LoveStack, Mugo Web's distribution of the same kernel, `mugoweb/ezpublish-legacy`) | [Coming from LoveStack](#coming-from-lovestack), then Part C, then `exp:lovestack migrate` |
 
 ### Coming from LoveStack
 
@@ -45,6 +45,36 @@ It reads the database and the settings and writes nothing. Each line is marked:
 
 It ends with `OK` (exit code 0) when nothing needs to be done, or `NEEDS ATTENTION` (exit code 1).
 
+Then back up (Step 1), put the new code in place and apply the database update of Part C (C1 and C2). After that,
+one more command records the database as Exponential's and lists the settings to change by hand:
+
+```bash
+./console exp:lovestack migrate --allow-root-user            # a dry run: prints what it would write, writes nothing
+./console exp:lovestack migrate --apply --allow-root-user    # writes it
+```
+
+What it writes, in the `ezsite_data` table and nowhere else:
+
+| Row | Value |
+|---|---|
+| `ezpublish-version` | this release's version (`6.0.15stable`) when the row still says `lovestack`. Exponential's version checks (Setup > Upgrade check, Info > About) read this row. The update SQL of C2 sets it too; any other value is left to that file |
+| `lovestack-schema-version` | the value of LoveStack's `db-schema-version` row (`unknown` when there is none), so the database keeps a record of the LoveStack schema steps it went through. LoveStack's own row stays as it is |
+
+It never changes content, users or settings, and running it again changes nothing. A database that does not come
+from LoveStack (no `lovestack` version row and no `db-schema-version` row) is refused with a message saying so, and
+nothing is written. `--json` gives the same report as one JSON object.
+
+Below the rows it prints the settings and extensions to change by hand, taken from `check`:
+
+- LoveStack-only settings, each with the Exponential name to use or a note that Exponential does not read it. For
+  `site.ini [Session] SameSite`, rename it to `CookieSameSite`. Until then Exponential reads `SameSite` as
+  `CookieSameSite` and logs a deprecation notice (if both are set, `CookieSameSite` is used).
+- The `legacy_2018` extension, if it is active: remove it from `ActiveExtensions[]` and `ActiveAccessExtensions[]`.
+  Exponential keeps the selection datatype (`ezenum`) in the kernel, and the extension would define it a second time.
+- The `mugoweb/ezpublish-legacy` package, if `composer.json` still requires it: replace it with Exponential's.
+
+Thanks to Mugo Web, whose documented schema steps in LoveStack (`update/database/mysql/lovestack/1.sql` to `4.sql`)
+made it possible to tell a LoveStack database apart this precisely.
 
 ## Step 1: back up, always
 

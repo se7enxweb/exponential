@@ -13,15 +13,18 @@
  * login index, a data_text column that refuses NULL), the legacy_2018 extension, LoveStack-only
  * settings in settings/override and the siteaccesses, and the LoveStack package in composer.json.
  *
- * Read-only: it runs SELECT and PRAGMA statements and reads files, nothing else. No state outlives
- * the object, so it is safe in Velocity's persistent workers.
+ * findings() is read-only: it runs SELECT and PRAGMA statements and reads files, nothing else.
+ * migrationPlan() is read-only too; migrate( true ) writes the two ezsite_data rows of the plan and
+ * nothing else (never content, never settings). No state outlives the object, so it is safe in
+ * Velocity's persistent workers.
  *
  *   $check = new expLoveStack();            // eZDB::instance() and the installation root
  *   $findings = $check->findings();
  *   $needsAttention = expLoveStack::needsAttention( $findings );
+ *   $plan = $check->migrate( false );       // what migrate would write; true writes it
  *
  * Each finding: id, label, status (one of the STATUS_ constants), detail, action.
- * Used by ./console exp:lovestack check (bin/php/explovestack.php).
+ * Used by ./console exp:lovestack check and exp:lovestack migrate (bin/php/explovestack.php).
  */
 class expLoveStack
 {
@@ -229,7 +232,7 @@ class expLoveStack
         if ( strtolower( $value ) === 'lovestack' )
         {
             return self::finding( 'db.version', $label, self::STATUS_FOUND, "'$value': a LoveStack database",
-                                  "set it to '" . self::expectedDatabaseVersion() . "' after the upgrade SQL (exp:lovestack migrate, or by hand: UPDATE ezsite_data SET value='" . self::expectedDatabaseVersion() . "' WHERE name='ezpublish-version')" );
+                                  "set it to '" . self::expectedDatabaseVersion() . "' with the upgrade SQL (update/database/<engine>/6.0/dbupdate-6.0.0-6.0.15.sql) or exp:lovestack migrate --apply, or by hand: UPDATE ezsite_data SET value='" . self::expectedDatabaseVersion() . "' WHERE name='ezpublish-version')" );
         }
         $expected = self::expectedDatabaseVersion();
         if ( $expected !== '' && $value !== $expected )
@@ -250,7 +253,7 @@ class expLoveStack
         if ( $value === false )
             return self::finding( 'db.schema_version', $label, self::STATUS_CLEAR, 'no such row' );
         return self::finding( 'db.schema_version', $label, self::STATUS_INFO, "'$value': LoveStack's update/run.php has run on this database",
-                              'Exponential does not read it; keep it as a record (exp:lovestack migrate keeps it as lovestack-schema-version)' );
+                              'Exponential does not read it; keep it as a record (exp:lovestack migrate --apply records it as lovestack-schema-version too)' );
     }
 
     /**
@@ -479,6 +482,140 @@ class expLoveStack
         if ( $where )
             return self::finding( 'composer.package', $label, self::STATUS_FOUND, 'mugoweb/ezpublish-legacy in ' . implode( ', ', $where ), 'replace it with Exponential\'s package' );
         return self::finding( 'composer.package', $label, self::STATUS_CLEAR, 'not required' );
+    }
+
+    /** The row that tells Exponential's version checks which release the database is for. */
+    const ROW_VERSION = 'ezpublish-version';
+    /** The counter LoveStack's update/run.php keeps. */
+    const ROW_SCHEMA_VERSION = 'db-schema-version';
+    /** Where exp:lovestack migrate records the former LoveStack schema version. */
+    const ROW_FORMER_SCHEMA_VERSION = 'lovestack-schema-version';
+    /** The value of ezpublish-version on a database that LoveStack has upgraded. */
+    const LOVESTACK_VERSION = 'lovestack';
+
+    /**
+     * What exp:lovestack migrate would do on this database, without writing anything.
+     *
+     * A database comes from LoveStack when its version row says 'lovestack', or when it has LoveStack's
+     * db-schema-version row or an earlier migrate's lovestack-schema-version row (so the plan of a database
+     * migrated before, or one that the 6.0.15 update SQL has already given the version row, is empty rather
+     * than refused). Two rows are planned, nothing else:
+     *   ezpublish-version         'lovestack' becomes this release's version (another value is left to the
+     *                             upgrade SQL of update/database/<engine>/, which sets it)
+     *   lovestack-schema-version  the value of db-schema-version ('unknown' when there is none), once
+     * The settings to change come from findings(): LoveStack-only settings, legacy_2018, the LoveStack package.
+     *
+     * @return array 'loveStack' (bool), 'refused' (string, '' when not refused), 'version' (the current
+     *               ezpublish-version, false without the row), 'expected' (string), 'writes' (list of array(
+     *               'name', 'from' (string|null for a new row), 'to' )), 'notes' (string[]), 'settings' (list of
+     *               array( 'label', 'detail', 'action' ))
+     */
+    public function migrationPlan()
+    {
+        $db = $this->database();
+        $plan = array( 'loveStack' => false, 'refused' => '', 'version' => false, 'expected' => self::expectedDatabaseVersion(),
+                       'writes' => array(), 'notes' => array(), 'settings' => array() );
+
+        $version = self::siteData( $db, self::ROW_VERSION );
+        $schema = self::siteData( $db, self::ROW_SCHEMA_VERSION );
+        $former = self::siteData( $db, self::ROW_FORMER_SCHEMA_VERSION );
+        if ( $version === null )
+        {
+            $plan['refused'] = 'ezsite_data cannot be read: this command needs the database of an installation. Nothing was written.';
+            return $plan;
+        }
+        $plan['version'] = $version;
+        $isLoveStackRow = $version !== false && strtolower( $version ) === self::LOVESTACK_VERSION;
+        if ( !$isLoveStackRow && $schema === false && $former === false )
+        {
+            $plan['refused'] = "This database does not come from LoveStack: ezsite_data " . self::ROW_VERSION . " is " .
+                               ( $version === false ? 'missing' : "'$version'" ) . " and there is no " . self::ROW_SCHEMA_VERSION .
+                               " or " . self::ROW_FORMER_SCHEMA_VERSION . " row. exp:lovestack migrate only changes databases that" .
+                               " LoveStack has upgraded. Nothing was written.";
+            return $plan;
+        }
+        if ( $plan['expected'] === '' )
+        {
+            $plan['refused'] = 'The version of this Exponential release cannot be read (lib/version.php). Nothing was written.';
+            return $plan;
+        }
+        $plan['loveStack'] = true;
+
+        if ( $isLoveStackRow )
+        {
+            $plan['writes'][] = array( 'name' => self::ROW_VERSION, 'from' => $version, 'to' => $plan['expected'] );
+            $plan['notes'][] = "Apply the database update of this release (update/database/<engine>/6.0/dbupdate-6.0.0-6.0.15.sql) if you have not yet:" .
+                               " the version row only records which release the database is for.";
+        }
+        else if ( $version === false )
+            $plan['notes'][] = "There is no " . self::ROW_VERSION . " row: apply the database update of this release (update/database/<engine>/6.0/), which writes it.";
+        else if ( $version !== $plan['expected'] )
+            $plan['notes'][] = self::ROW_VERSION . " is '$version' (this release is '{$plan['expected']}'): it is left to the database update of" .
+                               " update/database/<engine>/6.0/, which sets it.";
+
+        if ( $former === false )
+        {
+            $plan['writes'][] = array( 'name' => self::ROW_FORMER_SCHEMA_VERSION, 'from' => null,
+                                       'to' => $schema !== false ? $schema : 'unknown' );
+        }
+        if ( $schema !== false )
+            $plan['notes'][] = "LoveStack's " . self::ROW_SCHEMA_VERSION . " row ('$schema') is kept as it is; Exponential does not read it.";
+
+        foreach ( $this->findings() as $finding )
+        {
+            if ( $finding['status'] !== self::STATUS_FOUND || !in_array( $finding['id'], array( 'ini.setting', 'ext.legacy_2018', 'composer.package' ), true ) )
+                continue;
+            $action = $finding['action'];
+            if ( $finding['label'] === 'site.ini [Session] SameSite' )
+                $action .= ' (until then Exponential reads [Session] SameSite as CookieSameSite and logs a deprecation notice; CookieSameSite wins when both are set)';
+            $plan['settings'][] = array( 'label' => $finding['label'], 'detail' => $finding['detail'], 'action' => $action );
+        }
+        return $plan;
+    }
+
+    /**
+     * Runs the migration plan: with $apply false it only reports (a dry run), with $apply true it writes the
+     * planned ezsite_data rows in one transaction. Running it again writes nothing, since the plan is then empty.
+     * Never touches content, settings or any other table.
+     *
+     * @param bool $apply
+     * @return array the plan of migrationPlan(), plus 'applied' (bool) and 'written' (int, rows written)
+     */
+    public function migrate( $apply = false )
+    {
+        $plan = $this->migrationPlan();
+        $plan['applied'] = false;
+        $plan['written'] = 0;
+        if ( !$apply || $plan['refused'] !== '' || !$plan['writes'] )
+            return $plan;
+
+        $db = $this->database();
+        if ( method_exists( $db, 'begin' ) )
+            $db->begin();
+        foreach ( $plan['writes'] as $write )
+        {
+            $name = self::escape( $db, $write['name'] );
+            $value = self::escape( $db, $write['to'] );
+            if ( $write['from'] === null )
+                $db->query( "INSERT INTO ezsite_data ( name, value ) VALUES ( '$name', '$value' )" );
+            else
+                $db->query( "UPDATE ezsite_data SET value='$value' WHERE name='$name'" );
+            ++$plan['written'];
+        }
+        if ( method_exists( $db, 'commit' ) )
+            $db->commit();
+        $plan['applied'] = true;
+        return $plan;
+    }
+
+    /**
+     * @param object $db
+     * @param string $text
+     * @return string
+     */
+    protected static function escape( $db, $text )
+    {
+        return method_exists( $db, 'escapeString' ) ? $db->escapeString( (string)$text ) : str_replace( "'", "''", (string)$text );
     }
 
     /**
