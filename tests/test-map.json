@@ -1,0 +1,784 @@
+{
+  "comment": "Maps source files to the PHPUnit test files that cover them, for running only the tests of a change. 'map' holds hand-made entries (a path or an fnmatch pattern, where * also matches /), 'generated' the source paths that test files name literally (regenerated), 'ignore' the files no PHPUnit test covers on purpose. See doc/features/6.0/quality-checks.md.",
+  "ignore": [
+    "doc/*",
+    "*.md",
+    "share/filelist.md5",
+    "share/translations/*",
+    "extension/*/translations/*",
+    "autoload/*",
+    ".autoloadignore",
+    ".github/*",
+    "composer.lock"
+  ],
+  "map": {
+    "kernel/private/classes/views/error/view.php": [
+      "tests/tests/kernel/error/ErrorHeaderListTest.php"
+    ],
+    "kernel/private/classes/views/user/logout.php": [
+      "tests/tests/kernel/classes/eZUserLogoutTest.php"
+    ],
+    "kernel/private/classes/commands/userlogincheck.php": [
+      "tests/tests/kernel/classes/expUserLoginIntegrityTest.php"
+    ],
+    "bin/php/userlogincheck.php": [
+      "tests/tests/kernel/classes/expUserLoginIntegrityTest.php"
+    ]
+  },
+  "generated": {
+    "bin/php/audit.php": [
+      "tests/tests/kernel/classes/audit/expAuditFilterGuardReauthTest.php"
+    ],
+    "bin/php/collaborationsampledata.php": [
+      "tests/tests/kernel/classes/collaboration/CollaborationSampleDataTest.php"
+    ],
+    "bin/php/ezcache.php": [
+      "tests/tests/kernel/classes/runnable/MovedEntryPointsTest.php",
+      "tests/tests/kernel/classes/runnable/RunnableTest.php"
+    ],
+    "bin/php/ezexec.php": [
+      "tests/tests/kernel/classes/trash/TrashedByColumnsTest.php"
+    ],
+    "bin/php/ezpgenerateautoloads.php": [
+      "tests/tests/kernel/classes/setup/AutoloadGeneratorOptionsTest.php"
+    ],
+    "bin/php/ini.php": [
+      "tests/tests/kernel/classes/ini/command/IniCommandTest.php",
+      "tests/tests/kernel/classes/ini/command/IniMoveTest.php"
+    ],
+    "bin/php/install.php": [
+      "tests/tests/kernel/classes/setup/EditorSiteaccessDefaultTest.php",
+      "tests/tests/kernel/classes/setup/KickstarterIniDefaultsTest.php"
+    ],
+    "bin/php/trashpurge.php": [
+      "tests/tests/kernel/classes/runnable/CommandHelpersTest.php"
+    ],
+    "bin/php/velocity-router.php": [
+      "tests/tests/kernel/classes/expVelocityEnginesTest.php"
+    ],
+    "bin/php/velocity-warmup.php": [
+      "tests/tests/kernel/classes/expVelocityEnginesTest.php"
+    ],
+    "cronjobs/hide.php": [
+      "tests/tests/kernel/classes/runnable/HideCronjobSearchIndexTest.php"
+    ],
+    "cronjobs/internal_drafts_cleanup.php": [
+      "tests/tests/kernel/classes/runnable/ServicesTest.php"
+    ],
+    "cronjobs/old_drafts_cleanup.php": [
+      "tests/tests/kernel/classes/runnable/ServicesTest.php"
+    ],
+    "cronjobs/session_gc.php": [
+      "tests/tests/kernel/classes/runnable/ServicesTest.php"
+    ],
+    "cronjobs/trashpurge.php": [
+      "tests/tests/kernel/classes/runnable/ServicesTest.php"
+    ],
+    "cronjobs/unpublish.php": [
+      "tests/tests/kernel/classes/expCronjobRunnerScheduleTest.php"
+    ],
+    "cronjobs/workflow.php": [
+      "tests/tests/kernel/classes/runnable/MovedEntryPointsTest.php",
+      "tests/tests/kernel/content/eZPublishWithoutNotificationLiveTest.php"
+    ],
+    "design/admin/templates/content/edit.tpl": [
+      "tests/tests/kernel/content/eZPublishWithoutNotificationTest.php"
+    ],
+    "design/admin/templates/content/edit_conflict.tpl": [
+      "tests/tests/kernel/private/expAdminViewsDebugCleanTest.php"
+    ],
+    "design/admin/templates/content/view/versionview.tpl": [
+      "tests/tests/kernel/content/eZPublishWithoutNotificationTest.php",
+      "tests/tests/kernel/private/expAdminViewsDebugCleanTest.php"
+    ],
+    "design/admin/templates/node/view/full.tpl": [
+      "tests/tests/kernel/content/eZAdminFullViewCopyButtonTest.php"
+    ],
+    "design/admin/templates/parts/ini_menu.tpl": [
+      "tests/tests/kernel/private/expAdminViewsDebugCleanTest.php"
+    ],
+    "design/admin/templates/setup/sitedata.tpl": [
+      "tests/tests/kernel/content/eZContentFunctionCollectionSiteDataTest.php"
+    ],
+    "design/admin/templates/shop/archivelist.tpl": [
+      "tests/tests/kernel/classes/eZShopCustomerOrderViewEmailTest.php"
+    ],
+    "design/admin/templates/shop/customerlist.tpl": [
+      "tests/tests/kernel/classes/eZShopCustomerOrderViewEmailTest.php"
+    ],
+    "design/admin/templates/shop/dashboard.tpl": [
+      "tests/tests/kernel/classes/eZShopCustomerOrderViewEmailTest.php"
+    ],
+    "design/admin/templates/shop/orderlist.tpl": [
+      "tests/tests/kernel/classes/eZShopCustomerOrderViewEmailTest.php"
+    ],
+    "design/admin3/templates/content/edit.tpl": [
+      "tests/tests/kernel/content/eZPublishWithoutNotificationTest.php"
+    ],
+    "design/admin3/templates/content/view/versionview.tpl": [
+      "tests/tests/kernel/content/eZPublishWithoutNotificationTest.php",
+      "tests/tests/kernel/private/expAdminViewsDebugCleanTest.php"
+    ],
+    "design/admin4/templates/content/edit.tpl": [
+      "tests/tests/kernel/content/eZPublishWithoutNotificationTest.php"
+    ],
+    "design/admin4/templates/content/edit_conflict.tpl": [
+      "tests/tests/kernel/private/expAdminViewsDebugCleanTest.php"
+    ],
+    "design/admin4/templates/content/view/versionview.tpl": [
+      "tests/tests/kernel/content/eZPublishWithoutNotificationTest.php",
+      "tests/tests/kernel/private/expAdminViewsDebugCleanTest.php"
+    ],
+    "design/admin4/templates/node/view/a4_full_body.tpl": [
+      "tests/tests/kernel/content/eZAdminFullViewCopyButtonTest.php"
+    ],
+    "design/admin4/templates/setup/sitedata.tpl": [
+      "tests/tests/kernel/content/eZContentFunctionCollectionSiteDataTest.php"
+    ],
+    "design/admin4/templates/shop/archivelist.tpl": [
+      "tests/tests/kernel/classes/eZShopCustomerOrderViewEmailTest.php"
+    ],
+    "design/admin4/templates/shop/customerlist.tpl": [
+      "tests/tests/kernel/classes/eZShopCustomerOrderViewEmailTest.php"
+    ],
+    "design/admin4/templates/shop/dashboard.tpl": [
+      "tests/tests/kernel/classes/eZShopCustomerOrderViewEmailTest.php"
+    ],
+    "design/admin4/templates/shop/orderlist.tpl": [
+      "tests/tests/kernel/classes/eZShopCustomerOrderViewEmailTest.php"
+    ],
+    "design/admin4l/templates/explayouts/admin_zone.tpl": [
+      "tests/tests/extension/explayouts_admin/expLayoutsAdminLayoutsTest.php"
+    ],
+    "design/admin4l/templates/pagelayout.tpl": [
+      "tests/tests/extension/explayouts_admin/expLayoutsAdminLayoutsTest.php"
+    ],
+    "design/standard/javascript/expdebugbar.js": [
+      "tests/tests/kernel/classes/debugbar/expDebugBarSettingsTest.php",
+      "tests/tests/lib/ezutils/expDebugBarReportCopyMessagesTest.php"
+    ],
+    "design/standard/stylesheets/core.css": [
+      "tests/tests/kernel/classes/expVelocityEnginesTest.php"
+    ],
+    "design/standard/templates/content/datatype/view/ezmatrix.tpl": [
+      "tests/tests/kernel/datatypes/eZSelectionMatrixViewTemplateTest.php"
+    ],
+    "design/standard/templates/content/datatype/view/ezselection.tpl": [
+      "tests/tests/kernel/datatypes/eZSelectionMatrixViewTemplateTest.php"
+    ],
+    "design/standard/templates/content/edit.tpl": [
+      "tests/tests/kernel/content/eZPublishWithoutNotificationTest.php"
+    ],
+    "design/standard/templates/content/edit_conflict.tpl": [
+      "tests/tests/kernel/private/expAdminViewsDebugCleanTest.php"
+    ],
+    "design/standard/templates/content/view/versionview.tpl": [
+      "tests/tests/kernel/content/eZPublishWithoutNotificationTest.php"
+    ],
+    "design/standard/templates/content/view/versionviewframe.tpl": [
+      "tests/tests/kernel/content/eZPublishWithoutNotificationTest.php"
+    ],
+    "design/standard/templates/mailpreferences/admin/suppression.tpl": [
+      "tests/tests/kernel/classes/mailpreferences/MailPreferencesIntegrationTest.php"
+    ],
+    "design/standard/templates/node/view/full.tpl": [
+      "tests/tests/extension/expservices/misc/expDesignServicesTest.php",
+      "tests/tests/kernel/common/eZTemplatesStatisticsReporterEditUrlTest.php"
+    ],
+    "design/standard/templates/node/view/print.tpl": [
+      "tests/tests/kernel/classes/eZContentVersionviewViewModeTest.php"
+    ],
+    "design/standard/templates/notification/handler/ezcollaboration/view/digest_plain.tpl": [
+      "tests/tests/kernel/classes/mailpreferences/MailPreferencesIntegrationTest.php"
+    ],
+    "design/standard/templates/setup/init/site_details.tpl": [
+      "tests/tests/kernel/classes/mailpreferences/MailPreferencesIntegrationTest.php"
+    ],
+    "design/standard/templates/shop/orderlist.tpl": [
+      "tests/tests/kernel/classes/eZShopCustomerOrderViewEmailTest.php"
+    ],
+    "extension/expservices/classes/users/expaccountservices.php": [
+      "tests/tests/kernel/classes/mailpreferences/MailPreferencesIntegrationTest.php"
+    ],
+    "extension/expservices/classes/users/expuserservices.php": [
+      "tests/tests/kernel/classes/mailpreferences/MailPreferencesIntegrationTest.php"
+    ],
+    "extension/ezoe/classes/ezoeserverfunctions.php": [
+      "tests/tests/extension/ezoe/expOECustomTagListTest.php"
+    ],
+    "extension/ezoe/classes/runnable/views/ezoe/dialog.php": [
+      "tests/tests/extension/ezoe/expOEContentTypeAndLoadTest.php",
+      "tests/tests/extension/ezoe/expOEDialogAccessRulesTest.php",
+      "tests/tests/extension/ezoe/expOEUploadPostStringTest.php",
+      "tests/tests/extension/ezoe/expOEUploadRulesTest.php"
+    ],
+    "extension/ezoe/classes/runnable/views/ezoe/relations.php": [
+      "tests/tests/extension/ezoe/expOEContentTypeAndLoadTest.php",
+      "tests/tests/extension/ezoe/expOERelationsEmbedIdTest.php"
+    ],
+    "extension/ezoe/classes/runnable/views/ezoe/spellcheck_rpc.php": [
+      "tests/tests/extension/ezoe/ezoeSpellcheckRpcRawInputTest.php",
+      "tests/tests/extension/ezoe/ezoeSpellcheckRpcRequestParamTest.php"
+    ],
+    "extension/ezoe/classes/runnable/views/ezoe/tags.php": [
+      "tests/tests/extension/ezoe/expOECustomTagListTest.php"
+    ],
+    "extension/ezoe/classes/runnable/views/ezoe/upload.php": [
+      "tests/tests/extension/ezoe/expOEDialogAccessRulesTest.php",
+      "tests/tests/extension/ezoe/expOEUploadPostStringTest.php",
+      "tests/tests/extension/ezoe/expOEUploadRulesTest.php"
+    ],
+    "extension/ezoe/design/standard/javascript/tinymce8_ez/plugins/ezlink/plugin.js": [
+      "tests/tests/extension/ezoe/expOERoundTripTest.php"
+    ],
+    "extension/ezoe/design/standard/templates/ezoe/engine.tpl": [
+      "tests/tests/extension/ezoe/expOEEngineViewTest.php"
+    ],
+    "extension/ezoe/ezxmltext/handlers/input/ezoexmlinput.php": [
+      "tests/tests/extension/ezoe/expOEInputTableCellTextTest.php"
+    ],
+    "extension/ezoe/modules/ezoe/engine.php": [
+      "tests/tests/extension/ezoe/expOEEngineViewTest.php"
+    ],
+    "extension/ezoe/modules/ezoe/module.php": [
+      "tests/tests/extension/ezoe/expOEEngineViewTest.php",
+      "tests/tests/extension/ezoe/expOEViewsJsonTest.php"
+    ],
+    "extension/ezoe/settings/ezoe.ini": [
+      "tests/tests/extension/ezoe/expOECustomTagListTest.php"
+    ],
+    "kernel/audit/module.php": [
+      "tests/tests/kernel/classes/audit/expAuditSourceTest.php"
+    ],
+    "kernel/classes/audit/expauditconfig.php": [
+      "tests/tests/kernel/classes/audit/expAuditConfigRootTest.php"
+    ],
+    "kernel/classes/audit/sinks/expauditmailsink.php": [
+      "tests/tests/kernel/classes/mailpreferences/MailPreferencesIntegrationTest.php"
+    ],
+    "kernel/classes/confirmorderhandlers/ezdefaultconfirmorderhandler.php": [
+      "tests/tests/kernel/classes/mailpreferences/MailPreferencesIntegrationTest.php"
+    ],
+    "kernel/classes/contentjob/expcontentjob.php": [
+      "tests/tests/lib/ezutils/EngineArchiveInstallationRootTest.php"
+    ],
+    "kernel/classes/debugbar/expdebugbariplist.php": [
+      "tests/tests/kernel/classes/debugbar/expDebugBarIPListTest.php"
+    ],
+    "kernel/classes/debugbar/expdebugbarserverfunctions.php": [
+      "tests/tests/kernel/classes/debugbar/expDebugBarSettingsTest.php"
+    ],
+    "kernel/classes/expbenchmark.php": [
+      "tests/tests/kernel/classes/benchmark/ExpBenchmarkHttpTest.php",
+      "tests/tests/kernel/classes/benchmark/ExpBenchmarkMicroTest.php",
+      "tests/tests/kernel/classes/benchmark/ExpBenchmarkTest.php"
+    ],
+    "kernel/classes/expbenchmarkhttp.php": [
+      "tests/tests/kernel/classes/benchmark/ExpBenchmarkHttpTest.php",
+      "tests/tests/kernel/classes/benchmark/ExpBenchmarkTest.php"
+    ],
+    "kernel/classes/expbenchmarkmicro.php": [
+      "tests/tests/kernel/classes/benchmark/ExpBenchmarkMicroTest.php"
+    ],
+    "kernel/classes/expbookmarkpage.php": [
+      "tests/tests/kernel/classes/bookmarks/expBookmarkPageTest.php"
+    ],
+    "kernel/classes/expextensioncatalogue.php": [
+      "tests/tests/kernel/classes/setup/ExtensionChangePlanTest.php"
+    ],
+    "kernel/classes/expextensionchangeplan.php": [
+      "tests/tests/kernel/classes/setup/ExtensionChangePlanTest.php"
+    ],
+    "kernel/classes/explovestack.php": [
+      "tests/tests/kernel/classes/expLoveStackCheckTest.php",
+      "tests/tests/kernel/classes/expLoveStackMigrateTest.php"
+    ],
+    "kernel/classes/expphar.php": [
+      "tests/tests/kernel/classes/engineindex/expPharCheckTest.php"
+    ],
+    "kernel/classes/exppolicyomitlist.php": [
+      "tests/tests/kernel/classes/expPolicyOmitListTest.php"
+    ],
+    "kernel/classes/expprocesstools.php": [
+      "tests/tests/kernel/classes/processtools/ExpProcessToolsTest.php"
+    ],
+    "kernel/classes/expuserloginintegrity.php": [
+      "tests/tests/kernel/classes/expUserLoginIntegrityTest.php"
+    ],
+    "kernel/classes/expvelocity.php": [
+      "tests/tests/kernel/classes/expVelocityEnginesTest.php"
+    ],
+    "kernel/classes/ezcollaborationitemhandler.php": [
+      "tests/tests/kernel/classes/eZPhp8CallableMethodsTest.php"
+    ],
+    "kernel/classes/ezcontentclass.php": [
+      "tests/tests/kernel/classes/codetemplate/eZCodeTemplateTest.php",
+      "tests/tests/kernel/classes/eZPhp8CallableMethodsTest.php"
+    ],
+    "kernel/classes/ezcontentclassattribute.php": [
+      "tests/tests/kernel/classes/eZContentClassAttributeSQLiteIDsTest.php"
+    ],
+    "kernel/classes/ezcontentfunctions.php": [
+      "tests/tests/kernel/content/eZPublishWithoutNotificationTest.php"
+    ],
+    "kernel/classes/ezcontentupload.php": [
+      "tests/tests/kernel/classes/eZPhp8CallableMethodsTest.php"
+    ],
+    "kernel/classes/ezdbgarbagecollector.php": [
+      "tests/tests/kernel/classes/eZPhp8CallableMethodsTest.php"
+    ],
+    "kernel/classes/ezorderitem.php": [
+      "tests/tests/kernel/classes/eZPhp8CallableMethodsTest.php"
+    ],
+    "kernel/classes/ezpackage.php": [
+      "tests/tests/kernel/classes/security/expFileModeLimitsTest.php"
+    ],
+    "kernel/classes/ezserializedobjectnamelist.php": [
+      "tests/tests/kernel/classes/contentmodel/eZSerializedObjectNameListFallbackLocaleTest.php"
+    ],
+    "kernel/classes/ezsiteinstaller.php": [
+      "tests/tests/kernel/classes/eZPhp8CallableMethodsTest.php"
+    ],
+    "kernel/classes/ezurlaliasml.php": [
+      "tests/tests/lib/eztemplate/eZTemplatePHP8RegressionTest.php"
+    ],
+    "kernel/classes/ezworkflowprocess.php": [
+      "tests/tests/kernel/classes/eZPhp8CallableMethodsTest.php"
+    ],
+    "kernel/classes/mailpreferences/expmailpreferencesservice.php": [
+      "tests/tests/kernel/classes/mailpreferences/MailPreferencesIntegrationTest.php"
+    ],
+    "kernel/clustering/dfsmysqli.php": [
+      "tests/tests/lib/ezfile/eZFileDownloadShortReadTest.php"
+    ],
+    "kernel/clustering/gateway.php": [
+      "tests/tests/lib/ezfile/eZFileDownloadShortReadTest.php"
+    ],
+    "kernel/common/ezobjectforwarder.php": [
+      "tests/tests/lib/eztemplate/eZTemplatePHP8RegressionTest.php"
+    ],
+    "kernel/content/function_definition.php": [
+      "tests/tests/kernel/content/eZContentFunctionCollectionSiteDataTest.php"
+    ],
+    "kernel/content/module.php": [
+      "tests/tests/kernel/classes/eZContentHistoryAccessTest.php",
+      "tests/tests/kernel/classes/eZContentVersionviewViewModeTest.php",
+      "tests/tests/kernel/classes/subitems/expSubitemsCSVExportTest.php",
+      "tests/tests/kernel/content/eZPublishWithoutNotificationTest.php"
+    ],
+    "kernel/content/multiedit_functions.php": [
+      "tests/tests/kernel/classes/permissions/expPermissionHooksTest.php"
+    ],
+    "kernel/content/operation_definition.php": [
+      "tests/tests/kernel/content/eZPublishWithoutNotificationTest.php"
+    ],
+    "kernel/content/subitemsexport.php": [
+      "tests/tests/kernel/classes/subitems/expSubitemsCSVExportTest.php"
+    ],
+    "kernel/content/versionviewframe.php": [
+      "tests/tests/kernel/content/eZPublishWithoutNotificationTest.php"
+    ],
+    "kernel/private/classes/clusterfilehandlers/dfsbackends/dfs_filter_iterator.php": [
+      "tests/tests/kernel/classes/eZPhp8CallableMethodsTest.php"
+    ],
+    "kernel/private/classes/clusterfilehandlers/dfsbackends/mysqli.php": [
+      "tests/tests/kernel/classes/eZPhp8CallableMethodsTest.php"
+    ],
+    "kernel/private/classes/clusterfilehandlers/ezdfsfilehandler.php": [
+      "tests/tests/kernel/classes/eZPhp8CallableMethodsTest.php"
+    ],
+    "kernel/private/classes/commands/checkdbfiles.php": [
+      "tests/tests/kernel/classes/updatesql/CheckDbFilesVersionListTest.php"
+    ],
+    "kernel/private/classes/commands/convertezenumtoezselection.php": [
+      "tests/tests/kernel/classes/eZPersistentObjectShortNameTest.php"
+    ],
+    "kernel/private/classes/commands/kickstarter.php": [
+      "tests/tests/kernel/classes/setup/KickstarterIniDefaultsTest.php"
+    ],
+    "kernel/private/classes/commands/runcronjobs.php": [
+      "tests/tests/kernel/classes/runnable/CronjobPartRunFilterTest.php"
+    ],
+    "kernel/private/classes/commands/velocity-warmup.php": [
+      "tests/tests/kernel/classes/expVelocityEnginesTest.php"
+    ],
+    "kernel/private/classes/cronjobs/clusterpurge.php": [
+      "tests/tests/kernel/classes/runnable/ClusterPurgeCronjobExpiryTest.php"
+    ],
+    "kernel/private/classes/debug_settings_functions.php": [
+      "tests/tests/lib/ezutils/eZDebugDeprecatedTest.php",
+      "tests/tests/lib/ezutils/eZSiteLogAndExpiryPathsTest.php"
+    ],
+    "kernel/private/classes/expfileconsistencyreport.php": [
+      "tests/tests/kernel/private/classes/expUpgradeCheckReportsTest.php"
+    ],
+    "kernel/private/classes/expschemaconsistencyreport.php": [
+      "tests/tests/kernel/private/classes/expUpgradeCheckReportsTest.php",
+      "tests/tests/lib/ezdbschema/expSQLiteSchemaReaderTest.php"
+    ],
+    "kernel/private/classes/ezautoloadgenerator.php": [
+      "tests/tests/kernel/private/autoload/eZAutoloadGeneratorTest.php"
+    ],
+    "kernel/private/classes/ezpactiveextensions.php": [
+      "tests/tests/kernel/classes/setup/ExtensionChangePlanTest.php"
+    ],
+    "kernel/private/classes/ezpkernelweb.php": [
+      "tests/tests/lib/ezsession/eZSessionResponseCookieTest.php"
+    ],
+    "kernel/private/classes/ezscriptclusterpurge.php": [
+      "tests/tests/kernel/classes/runnable/ClusterPurgeCronjobExpiryTest.php"
+    ],
+    "kernel/private/classes/ezscripttrashpurge.php": [
+      "tests/tests/kernel/classes/runnable/ServicesTest.php"
+    ],
+    "kernel/private/classes/httpcache/ezphttpcachecontract.php": [
+      "tests/tests/kernel/classes/httpcache/ezpHttpCacheContractTest.php",
+      "tests/tests/kernel/classes/security/expFileModeLimitsTest.php"
+    ],
+    "kernel/private/classes/httpcache/ezphttpcachelistener.php": [
+      "tests/tests/kernel/classes/httpcache/ezpHttpCacheContractTest.php"
+    ],
+    "kernel/private/classes/runnable/cronjobpart.php": [
+      "tests/tests/kernel/classes/runnable/ClusterPurgeCronjobExpiryTest.php"
+    ],
+    "kernel/private/classes/runnable/moduleview.php": [
+      "tests/tests/extension/ezoe/ezoeSpellcheckRpcRequestParamTest.php"
+    ],
+    "kernel/private/classes/runnable/runnable.php": [
+      "tests/tests/extension/ezoe/ezoeSpellcheckRpcRequestParamTest.php",
+      "tests/tests/kernel/classes/runnable/ClusterPurgeCronjobExpiryTest.php"
+    ],
+    "kernel/private/classes/services/draftscleanup.php": [
+      "tests/tests/kernel/classes/runnable/ServicesTest.php"
+    ],
+    "kernel/private/classes/services/mailpreferencespage.php": [
+      "tests/tests/kernel/classes/mailpreferences/MailPreferencesHardeningTest.php"
+    ],
+    "kernel/private/classes/services/sessiongarbagecollector.php": [
+      "tests/tests/kernel/classes/runnable/ServicesTest.php"
+    ],
+    "kernel/private/classes/services/trash.php": [
+      "tests/tests/kernel/classes/runnable/ServicesTest.php"
+    ],
+    "kernel/private/classes/services/trashlist.php": [
+      "tests/tests/kernel/classes/trash/TrashedByColumnsTest.php"
+    ],
+    "kernel/private/classes/services/trashrecord.php": [
+      "tests/tests/kernel/classes/trash/TrashedByColumnsTest.php"
+    ],
+    "kernel/private/classes/views/content/edit.php": [
+      "tests/tests/kernel/classes/permissions/expPermissionHooksTest.php",
+      "tests/tests/kernel/content/eZPublishWithoutNotificationTest.php"
+    ],
+    "kernel/private/classes/views/content/history.php": [
+      "tests/tests/kernel/classes/expContentHistoryListTest.php"
+    ],
+    "kernel/private/classes/views/content/search.php": [
+      "tests/tests/kernel/private/classes/ContentSearchPathPrefixSubTreeTest.php"
+    ],
+    "kernel/private/classes/views/content/versionview.php": [
+      "tests/tests/kernel/private/expAdminViewsDebugCleanTest.php"
+    ],
+    "kernel/private/classes/views/setup/rad.php": [
+      "tests/tests/kernel/classes/runnable/RadSurveyRegistriesTest.php"
+    ],
+    "kernel/private/classes/views/setup/radsurvey.php": [
+      "tests/tests/kernel/classes/ini/command/RadSurveyIniCommandTest.php",
+      "tests/tests/kernel/classes/runnable/RadSurveyRegistriesTest.php",
+      "tests/tests/kernel/classes/runnable/RadSurveyRunnablesTest.php"
+    ],
+    "kernel/private/classes/views/shop/discountgroupmembershipview.php": [
+      "tests/tests/kernel/classes/eZPhp8CallableMethodsTest.php"
+    ],
+    "kernel/private/classes/views/trigger/list.php": [
+      "tests/tests/kernel/classes/eZPhp8CallableMethodsTest.php"
+    ],
+    "kernel/private/classes/views/user/forgotpassword.php": [
+      "tests/tests/kernel/classes/mailpreferences/MailPreferencesIntegrationTest.php"
+    ],
+    "kernel/private/classes/views/user/register.php": [
+      "tests/tests/kernel/classes/mailpreferences/MailPreferencesIntegrationTest.php"
+    ],
+    "kernel/setup/expcronjobrunner.php": [
+      "tests/tests/kernel/classes/expCronjobRunnerScheduleTest.php"
+    ],
+    "kernel/setup/expextensionwizard.php": [
+      "tests/tests/kernel/classes/radwizards/expExtensionWizardBaseTest.php"
+    ],
+    "kernel/setup/expradcatalogue.php": [
+      "tests/tests/kernel/classes/ini/command/RadSurveyIniCommandTest.php",
+      "tests/tests/kernel/classes/runnable/RadSurveyRegistriesTest.php",
+      "tests/tests/kernel/classes/runnable/RadSurveyRunnablesTest.php"
+    ],
+    "kernel/setup/expradsurvey.php": [
+      "tests/tests/kernel/classes/debugbar/RadSurveyDebugBarTest.php",
+      "tests/tests/kernel/classes/ini/command/RadSurveyIniCommandTest.php",
+      "tests/tests/kernel/classes/radwizards/expRadSurveyHelpersTest.php",
+      "tests/tests/kernel/classes/runnable/RadSurveyDeclaredRegistriesTest.php",
+      "tests/tests/kernel/classes/runnable/RadSurveyRegistriesTest.php",
+      "tests/tests/kernel/classes/runnable/RadSurveyRunnablesTest.php"
+    ],
+    "kernel/setup/ezsetupcommon.php": [
+      "tests/tests/kernel/classes/setupsteps/eZSetupCheckFunctionsTest.php"
+    ],
+    "kernel/setup/ezsetuptests.php": [
+      "tests/tests/kernel/classes/setupsteps/eZSetupCheckFunctionsTest.php"
+    ],
+    "kernel/setup/module.php": [
+      "tests/tests/kernel/content/eZContentFunctionCollectionSiteDataTest.php"
+    ],
+    "kernel/setup/sitedata.php": [
+      "tests/tests/kernel/content/eZContentFunctionCollectionSiteDataTest.php"
+    ],
+    "kernel/setup/steps/ezstep_create_sites.php": [
+      "tests/tests/extension/ezoe/expOECustomTagListTest.php"
+    ],
+    "kernel/setup/steps/ezstep_installer.php": [
+      "tests/tests/extension/ezoe/expOECustomTagListTest.php"
+    ],
+    "kernel/setup/steps/ezstep_registration.php": [
+      "tests/tests/kernel/classes/mailpreferences/MailPreferencesIntegrationTest.php",
+      "tests/tests/kernel/classes/setup/RegistrationAndDryRunTest.php"
+    ],
+    "kernel/sql/mysql/kernel_schema.sql": [
+      "tests/tests/kernel/classes/apikey/ApiKeySchemaSqlTest.php",
+      "tests/tests/kernel/classes/expUserLoginIntegrityTest.php",
+      "tests/tests/kernel/classes/trash/TrashedByColumnsTest.php",
+      "tests/tests/kernel/classes/updatesql/PasswordHashWideningUpdateSqlTest.php",
+      "tests/tests/kernel/classes/updatesql/SixZeroPathSchemaUpdateSqlTest.php"
+    ],
+    "kernel/sql/postgresql/kernel_schema.sql": [
+      "tests/tests/kernel/classes/apikey/ApiKeySchemaSqlTest.php",
+      "tests/tests/kernel/classes/expUserLoginIntegrityTest.php",
+      "tests/tests/kernel/classes/trash/TrashedByColumnsTest.php",
+      "tests/tests/kernel/classes/updatesql/PasswordHashWideningUpdateSqlTest.php",
+      "tests/tests/kernel/classes/updatesql/SixZeroPathSchemaUpdateSqlTest.php"
+    ],
+    "kernel/sql/postgresql/setval.sql": [
+      "tests/tests/kernel/classes/apikey/ApiKeySchemaSqlTest.php"
+    ],
+    "kernel/sql/sqlite/schema.sql": [
+      "tests/tests/kernel/classes/apikey/ApiKeySchemaSqlTest.php",
+      "tests/tests/kernel/classes/expUserLoginIntegrityTest.php",
+      "tests/tests/kernel/classes/trash/TrashedByColumnsTest.php",
+      "tests/tests/kernel/classes/updatesql/PasswordHashWideningUpdateSqlTest.php",
+      "tests/tests/kernel/classes/updatesql/SixZeroPathSchemaUpdateSqlTest.php"
+    ],
+    "kernel/user/ezuseroperationcollection.php": [
+      "tests/tests/kernel/classes/mailpreferences/MailPreferencesIntegrationTest.php"
+    ],
+    "lib/ezdb/classes/expmongodb.php": [
+      "tests/tests/lib/ezutils/EngineArchiveInstallationRootTest.php"
+    ],
+    "lib/ezdb/classes/ezdbinterface.php": [
+      "tests/tests/lib/ezutils/EngineArchiveInstallationRootTest.php"
+    ],
+    "lib/ezdb/classes/ezdbquerycache.php": [
+      "tests/tests/lib/ezdb/eZDBQueryCacheTest.php"
+    ],
+    "lib/ezdb/classes/ezsqlite3db.php": [
+      "tests/tests/lib/ezdb/eZSQLite3TransactionWaitTest.php"
+    ],
+    "lib/ezdbschema/classes/ezdbschemachecker.php": [
+      "tests/tests/lib/ezdbschema/expSQLiteSchemaReaderTest.php"
+    ],
+    "lib/ezdbschema/classes/ezdbschemainterface.php": [
+      "tests/tests/lib/ezdbschema/expSQLiteSchemaReaderTest.php"
+    ],
+    "lib/ezdbschema/classes/ezsqliteschema.php": [
+      "tests/tests/lib/ezdbschema/expSQLiteSchemaReaderTest.php"
+    ],
+    "lib/ezfile/classes/ezmd5.php": [
+      "tests/tests/lib/ezfile/eZMD5Test.php"
+    ],
+    "lib/ezi18n/classes/ezcodepage.php": [
+      "tests/tests/kernel/classes/eZPhp8CallableMethodsTest.php"
+    ],
+    "lib/ezmath/classes/mathhandlers/ezbcmath.php": [
+      "tests/tests/lib/ezmath/eZMathHandlersTest.php"
+    ],
+    "lib/ezmath/classes/mathhandlers/ezphpmath.php": [
+      "tests/tests/lib/ezmath/eZMathHandlersTest.php"
+    ],
+    "lib/ezpdf/classes/class.pdf.php": [
+      "tests/tests/kernel/classes/eZPhp8CallableMethodsTest.php"
+    ],
+    "lib/ezsession/classes/ezpsessionhandler.php": [
+      "tests/tests/lib/ezsession/EzpSessionHandlerDBPhp8BugfixesTest.php"
+    ],
+    "lib/ezsession/classes/ezpsessionhandlerdb.php": [
+      "tests/tests/lib/ezsession/EzpSessionHandlerDBPhp8BugfixesTest.php"
+    ],
+    "lib/eztemplate/classes/eztemplateexpinfooperator.php": [
+      "tests/tests/kernel/classes/eZPhp8CallableMethodsTest.php"
+    ],
+    "lib/eztemplate/classes/eztemplatestringsoperator.php": [
+      "tests/tests/lib/eztemplate/eZTemplateStringsOperatorTest.php"
+    ],
+    "lib/ezutils/classes/expdebugbarreport.php": [
+      "tests/tests/kernel/classes/debugbar/expDebugBarSettingsTest.php",
+      "tests/tests/lib/ezutils/expDebugBarReportCopyMessagesTest.php"
+    ],
+    "lib/ezutils/classes/ezdebug.php": [
+      "tests/tests/lib/ezutils/eZDebugReportNullLabelTest.php",
+      "tests/tests/lib/ezutils/eZFatalUserErrorTest.php"
+    ],
+    "lib/ezutils/classes/ezexecution.php": [
+      "tests/tests/lib/ezutils/ErrorCasePageTest.php"
+    ],
+    "lib/ezutils/classes/ezexpiryhandler.php": [
+      "tests/tests/lib/ezutils/eZFatalUserErrorTest.php"
+    ],
+    "lib/ezutils/classes/ezini.php": [
+      "tests/tests/kernel/classes/audit/expAuditHookTest.php",
+      "tests/tests/kernel/classes/engineindex/expPharCheckTest.php"
+    ],
+    "lib/ezutils/classes/ezmodule.php": [
+      "tests/tests/kernel/classes/audit/expAuditHookTest.php"
+    ],
+    "lib/ezutils/classes/ezprepairqueue.php": [
+      "tests/tests/kernel/classes/audit/expAuditHookTest.php",
+      "tests/tests/kernel/classes/security/expFileModeLimitsTest.php",
+      "tests/tests/lib/ezutils/EngineArchiveInstallationRootTest.php",
+      "tests/tests/lib/ezutils/RepairQueueTest.php"
+    ],
+    "lib/ezutils/classes/ezprocess.php": [
+      "tests/tests/kernel/classes/runnable/RunnableTest.php"
+    ],
+    "lib/ezutils/classes/eztexttool.php": [
+      "tests/tests/lib/ezutils/eZTextToolTest.php"
+    ],
+    "lib/ezutils/classes/ezuri.php": [
+      "tests/tests/kernel/classes/radwizards/expRadWizardListsTest.php"
+    ],
+    "lib/phpcompat.php": [
+      "tests/tests/lib/ezversion/ExponentialSDKAndPhpCompatTest.php"
+    ],
+    "lib/version.php": [
+      "tests/tests/kernel/classes/expLoveStackMigrateTest.php",
+      "tests/tests/lib/ezversion/ExponentialSDKAndPhpCompatTest.php"
+    ],
+    "settings/audit.ini": [
+      "tests/tests/kernel/classes/audit/expAuditHookTest.php",
+      "tests/tests/kernel/classes/expShippedFeatureDefaultsTest.php",
+      "tests/tests/kernel/content/eZAuditLocationTest.php"
+    ],
+    "settings/content.ini": [
+      "tests/tests/kernel/classes/contentjob/ContentJobEngineTest.php",
+      "tests/tests/kernel/classes/expShippedFeatureDefaultsTest.php"
+    ],
+    "settings/cronjob.ini": [
+      "tests/tests/kernel/classes/ini/expIniLocatorTest.php"
+    ],
+    "settings/debugbar.ini": [
+      "tests/tests/kernel/classes/debugbar/RadSurveyDebugBarTest.php"
+    ],
+    "settings/design.ini": [
+      "tests/tests/kernel/classes/expSettingsPageTest.php"
+    ],
+    "settings/error.ini": [
+      "tests/tests/kernel/classes/expShippedFeatureDefaultsTest.php"
+    ],
+    "settings/image.ini": [
+      "tests/tests/kernel/classes/expShippedFeatureDefaultsTest.php"
+    ],
+    "settings/ini.ini": [
+      "tests/tests/kernel/classes/ini/command/IniCommandExtensionTest.php",
+      "tests/tests/kernel/classes/ini/expIniEditorTest.php"
+    ],
+    "settings/menu.ini": [
+      "tests/tests/kernel/classes/classicmenu/expClassicMenuSettingsTest.php",
+      "tests/tests/kernel/content/eZContentFunctionCollectionSiteDataTest.php"
+    ],
+    "settings/notification.ini": [
+      "tests/tests/kernel/content/eZPublishWithoutNotificationTest.php"
+    ],
+    "settings/requestrules.ini": [
+      "tests/tests/kernel/classes/requestrules/ezpRequestRuleEngineTest.php"
+    ],
+    "settings/setup.ini": [
+      "tests/tests/kernel/classes/setup/SetupPhpVersionTest.php"
+    ],
+    "settings/site.ini": [
+      "tests/tests/extension/cjw_newsletter/cjwNewsletterImportExportTest.php",
+      "tests/tests/extension/expservices/core/expIniCacheServicesTest.php",
+      "tests/tests/extension/expservices/misc/expDesignServicesTest.php",
+      "tests/tests/kernel/classes/contentmodel/eZSerializedObjectNameListFallbackLocaleTest.php",
+      "tests/tests/kernel/classes/expPolicyOmitListTest.php",
+      "tests/tests/kernel/classes/expSettingsPageTest.php",
+      "tests/tests/kernel/classes/expShippedFeatureDefaultsTest.php",
+      "tests/tests/kernel/classes/expVelocityEnginesTest.php",
+      "tests/tests/kernel/classes/ini/command/IniCommandTest.php",
+      "tests/tests/kernel/classes/ini/expIniEditorTest.php",
+      "tests/tests/kernel/classes/ini/expIniLocatorTest.php",
+      "tests/tests/kernel/classes/runnable/RunnableExtensionPointsTest.php",
+      "tests/tests/kernel/classes/user/expPasswordPolicyTest.php",
+      "tests/tests/kernel/content/eZContentFunctionCollectionSiteDataTest.php",
+      "tests/tests/lib/ezdb/eZSQLite3TransactionWaitTest.php",
+      "tests/tests/lib/ezfile/eZLogMaxSizeTest.php",
+      "tests/tests/lib/ezutils/eZINIEnvironmentTest.php"
+    ],
+    "settings/subitems.ini": [
+      "tests/tests/kernel/classes/subitems/expSubitemsColumnRegistryTest.php"
+    ],
+    "settings/subitemscolumns.ini": [
+      "tests/tests/kernel/classes/subitems/expSubitemsColumnRegistryTest.php"
+    ],
+    "settings/template.ini": [
+      "tests/tests/kernel/classes/expShippedFeatureDefaultsTest.php"
+    ],
+    "settings/velocity.ini": [
+      "tests/tests/kernel/classes/expVelocityEnginesTest.php",
+      "tests/tests/kernel/classes/velocitylayout/expVelocityConfigTest.php"
+    ],
+    "share/db_data.dba": [
+      "tests/tests/kernel/classes/datatypes/eZDataTypeBaseTest.php"
+    ],
+    "share/db_schema.dba": [
+      "tests/tests/extension/cjw_newsletter/cjwNewsletterRunnerTest.php",
+      "tests/tests/extension/cjw_newsletter/cjwNewsletterSchemaTest.php",
+      "tests/tests/kernel/classes/apikey/ApiKeySchemaSqlTest.php",
+      "tests/tests/kernel/classes/audit/expAuditIndexTest.php",
+      "tests/tests/kernel/classes/expUserLoginIntegrityTest.php",
+      "tests/tests/kernel/classes/mailpreferences/MailPreferencesIntegrationTest.php",
+      "tests/tests/kernel/classes/trash/TrashedByColumnsTest.php",
+      "tests/tests/kernel/classes/updatesql/PasswordHashWideningUpdateSqlTest.php"
+    ],
+    "update/common/scripts/5.4/cleanupfieldvaluerelations.php": [
+      "tests/tests/kernel/classes/eZUpdateScriptCleanupFieldValueRelationsTest.php"
+    ],
+    "update/database/mysql/6.0/dbupdate-5.4.0-6.0.0.sql": [
+      "tests/tests/kernel/classes/updatesql/CheckDbFilesVersionListTest.php",
+      "tests/tests/kernel/classes/updatesql/PasswordHashWideningUpdateSqlTest.php",
+      "tests/tests/kernel/classes/updatesql/SixZeroPathSchemaUpdateSqlTest.php"
+    ],
+    "update/database/mysql/6.0/dbupdate-6.0.0-6.0.15.sql": [
+      "tests/tests/kernel/classes/apikey/ApiKeySchemaSqlTest.php",
+      "tests/tests/kernel/classes/trash/TrashedByColumnsTest.php",
+      "tests/tests/kernel/classes/updatesql/PasswordHashWideningUpdateSqlTest.php",
+      "tests/tests/kernel/classes/updatesql/SixZeroPathSchemaUpdateSqlTest.php"
+    ],
+    "update/database/postgresql/6.0/dbupdate-5.4-to-6.0.sql": [
+      "tests/tests/kernel/classes/updatesql/CheckDbFilesVersionListTest.php",
+      "tests/tests/kernel/classes/updatesql/PasswordHashWideningUpdateSqlTest.php",
+      "tests/tests/kernel/classes/updatesql/SixZeroPathSchemaUpdateSqlTest.php"
+    ],
+    "update/database/postgresql/6.0/dbupdate-6.0.0-6.0.15.sql": [
+      "tests/tests/kernel/classes/apikey/ApiKeySchemaSqlTest.php",
+      "tests/tests/kernel/classes/trash/TrashedByColumnsTest.php",
+      "tests/tests/kernel/classes/updatesql/PasswordHashWideningUpdateSqlTest.php",
+      "tests/tests/kernel/classes/updatesql/SixZeroPathSchemaUpdateSqlTest.php"
+    ],
+    "update/database/postgresql/7.2/dbupdate-6.13.0-to-7.2.0.sql": [
+      "tests/tests/kernel/classes/updatesql/SixZeroPathSchemaUpdateSqlTest.php"
+    ],
+    "update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql": [
+      "tests/tests/kernel/classes/apikey/ApiKeySchemaSqlTest.php",
+      "tests/tests/kernel/classes/bookmarks/BookmarkFolderUpgradeSqlTest.php",
+      "tests/tests/kernel/classes/trash/TrashedByColumnsTest.php",
+      "tests/tests/kernel/classes/updatesql/CheckDbFilesVersionListTest.php",
+      "tests/tests/kernel/classes/updatesql/PasswordHashWideningUpdateSqlTest.php",
+      "tests/tests/kernel/classes/updatesql/SixZeroPathSchemaUpdateSqlTest.php"
+    ]
+  }
+}

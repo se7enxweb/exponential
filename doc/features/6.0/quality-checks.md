@@ -146,3 +146,54 @@ make phpstan                                                                    
 ```
 
 A failure here fails the workflow too. Code style stays a warning in CI.
+
+### Run only the tests of a change
+
+The whole PHPUnit run (more than 10,000 tests) takes a long time on a busy machine. For an everyday commit it is
+enough to run the test files that cover the files the change touches, each in its own PHPUnit process, so that one
+file's global state (a static cache, an INI value set in-process) cannot change the result of another. The full run
+stays the check before a release or a large push, and CI still runs everything.
+
+A test file belongs to a change when:
+
+1. `tests/test-map.json` names it for a changed file. The file has three sections: `map`, hand-made entries (a path
+   or a pattern where `*` also matches `/`) for code that tests reach without naming it, such as a module view that
+   a test runs through the module; `generated`, the source paths that test files name literally; and `ignore`, files
+   no PHPUnit test covers on purpose (documentation, translations, the manifest).
+2. It is named after a class the changed file declares, or after the file itself, or it names one of those classes
+   or functions, the changed file's path, or an INI setting the change adds or changes.
+3. It is itself a changed test file.
+
+A changed file that none of these finds is an untested change. That is a warning, not a failure, but it shows where
+a test is missing. A change to `tests/bootstrap.php`, `tests/toolkit/` or `phpunit.xml` touches every test, so run
+the whole suite for it.
+
+With git, grep and xargs (and `jq` for the map), from the root of the installation:
+
+```sh
+BASE=origin/main
+mkdir -p var/tmp
+{
+    # 3. changed test files
+    git diff --name-only --diff-filter=AM "$BASE"..HEAD -- 'tests/tests/*Test.php'
+    for f in $(git diff --name-only --diff-filter=AM "$BASE"..HEAD -- ':!tests/tests/*Test.php'); do
+        # 1. the explicit map (exact paths; patterns need a look at the file)
+        jq -r --arg f "$f" '(.map[$f] // []) + (.generated[$f] // []) | .[]' tests/test-map.json
+        # 2. test files that name a class the changed file declares
+        case "$f" in *.php)
+            for c in $(sed -nE 's/^\s*((abstract|final|readonly)\s+)*(class|interface|trait|enum)\s+([A-Za-z_][A-Za-z0-9_]*).*/\4/p' "$f"); do
+                grep -rliw --include='*Test.php' -- "$c" tests/tests
+            done ;;
+        esac
+    done
+} | sort -u > var/tmp/tests-of-change.txt
+# one PHPUnit process per test file, three at a time, at low priority
+xargs -r -P 3 -I{} sh -c 'nice -n 15 php vendor/bin/phpunit --no-coverage --do-not-cache-result "{}" \
+    > /dev/null 2>&1 && echo "PASS {}" || echo "FAIL {}"' < var/tmp/tests-of-change.txt
+```
+
+Run a failing file again on its own (`php vendor/bin/phpunit <file>`) to see the failure. A test file listed here
+that is outside the suites of `phpunit.xml` is not part of the full run either; leave it out. A class that most test
+files use (`eZINI`, `eZUser`) finds a large part of the suite; keep the files named after the class and the ones of
+the changed file's own directory. When a new test covers code that its file does not name, add an entry to `map` in
+`tests/test-map.json` in the same commit.
