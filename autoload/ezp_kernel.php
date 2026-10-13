@@ -1120,6 +1120,7 @@ return array(
       'expPackageJson'                                               => 'kernel/classes/exppackagejson.php',
       'expPasswordPolicy'                                            => 'kernel/classes/exppasswordpolicy.php',
       'expPhar'                                                      => 'kernel/classes/expphar.php',
+      'expPolicyOmitList'                                            => 'kernel/classes/exppolicyomitlist.php',
       'expPreloadAddress'                                            => 'kernel/classes/exppreloadaddress.php',
       'expPreloadHistory'                                            => 'kernel/classes/exppreloadhistory.php',
       'expPreloadJob'                                                => 'kernel/classes/exppreloadjob.php',
