@@ -10,7 +10,7 @@
  *  SD-L02 - registration: PolicyOmitListExclude[] empty, user/register still in PolicyOmitList[]
  *  SD-L05 - uploaded images checked by content (on for everyone): ValidateMIMEType=enabled; SVG not in the list
  *  SD-L07 - deprecations to deprecated.log (on by default): DeprecatedLog=enabled
- *  SD-L08 - log size 2 MB, three rotated files
+ *  SD-L08 - log size 2 MB, three rotated files; config.php-RECOMMENDED documents the constants that win over them
  *  SD-L10 - the used templates' edit link: UsedTemplateEditUrl empty (the usual link)
  *  SD-L13 - location audit: removal recorded as before; adding a location and changing the main one are mapped
  *           but not in Enabled[]
@@ -111,6 +111,27 @@ class expShippedFeatureDefaultsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( '2097152', self::value( 'settings/site.ini', 'FileSettings', 'LogFileMaxSize' ) );
         $this->assertSame( '3', self::value( 'settings/site.ini', 'FileSettings', 'LogFileRotateCount' ) );
         $this->assertSame( '', self::value( 'settings/site.ini', 'DebugSettings', 'UsedTemplateEditUrl' ) );
+    }
+
+    /**
+     * SD-L08 (config.php-RECOMMENDED): the four log constants it documents are commented out, so the site.ini
+     * settings apply, and they are the constants eZDebug and eZLog read; the settings it names are shipped
+     */
+    public function testConfigRecommendedDocumentsTheLogSettings()
+    {
+        $config = file_get_contents( 'config.php-RECOMMENDED' );
+        $code = file_get_contents( 'lib/ezutils/classes/ezdebug.php' ) . file_get_contents( 'lib/ezfile/classes/ezlog.php' );
+        foreach ( array( 'EZPUBLISH_LOG_MAX_FILE_SIZE', 'EZPUBLISH_LOG_ROTATE_FILES', 'CUSTOM_LOG_MAX_FILE_SIZE', 'CUSTOM_LOG_ROTATE_FILES' ) as $constant )
+        {
+            $this->assertMatchesRegularExpression( "#^// define\( '$constant', \d+ \);$#m", $config, "$constant is documented, commented out" );
+            $this->assertStringContainsString( "defined( '$constant' )", $code, "$constant is read" );
+        }
+        foreach ( array( 'LogFileMaxSize', 'LogFileRotateCount' ) as $setting )
+        {
+            $this->assertStringContainsString( $setting, $config );
+            self::value( 'settings/site.ini', 'FileSettings', $setting );
+        }
+        $this->assertStringContainsString( 'deprecated.log', $config );
     }
 
     /** SD-L13 */
