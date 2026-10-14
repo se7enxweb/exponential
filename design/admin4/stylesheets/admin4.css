@@ -240,7 +240,7 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
 #header .searchblock input.searchtext:focus {
   border-color: var(--a4-orange);
   box-shadow: 0 0 0 3px var(--a4-ring);
-  outline: none;
+  outline: 2px solid transparent;
 }
 
 /* The light/dark toggle, after the search box */
@@ -268,7 +268,7 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
   border-color: var(--a4-orange);
 }
 .a4-theme-toggle:focus-visible {
-  outline: none;
+  outline: 2px solid transparent;
   box-shadow: 0 0 0 3px var(--a4-ring);
 }
 .a4-theme-toggle .a4-icon {
@@ -345,8 +345,8 @@ html[data-a4-theme="dark"] .a4-theme-toggle .a4-icon-moon { display: inline-bloc
   border-radius: 0.75rem 0 0 0.75rem;
 }
 .sidebar-control:focus-visible {
-  outline: 2px solid var(--a4-orange);
-  outline-offset: 1px;
+  outline: 3px solid var(--a4-ring);
+  outline-offset: 2px;
 }
 /* An open side menu below 1024px is a drawer over the page: a deeper shadow and a solid edge set it apart
    from the content it covers. */
@@ -480,7 +480,7 @@ input.defaultbutton:active {
        #page input[type=search], #page select, #page textarea):focus {
   border-color: var(--a4-orange);
   box-shadow: 0 0 0 3px var(--a4-ring);
-  outline: none;
+  outline: 2px solid transparent;
 }
 :where(input[type=radio], input[type=checkbox]) {
   accent-color: var(--a4-accent-strong);
@@ -850,7 +850,7 @@ html[data-a4-theme="dark"] .a4-login-logo { background-image: url('../images/3/l
   border: 1px solid var(--a4-field-line); border-radius: var(--a4-radius-s); background-color: var(--a4-field); color: var(--a4-ink);
   font: 16px/1.2 var(--a4-font); transition: border-color .15s ease, box-shadow .15s ease;
 }
-.a4-login-form #logintext:focus, .a4-login-form #passwordtext:focus { outline: none; border-color: var(--a4-accent); box-shadow: 0 0 0 3px var(--a4-ring); }
+.a4-login-form #logintext:focus, .a4-login-form #passwordtext:focus { outline: 2px solid transparent; border-color: var(--a4-accent); box-shadow: 0 0 0 3px var(--a4-ring); }
 .a4-field-wrap { position: relative; }
 .a4-field-wrap #passwordtext { padding-right: 48px; }
 .a4-reveal {
@@ -1121,7 +1121,7 @@ html[data-a4-theme="dark"] .a4-login-logo { background-image: url('../images/3/l
   font: 16px/1.2 var(--a4-font); box-shadow: none;
 }
 .exp-pw-js .a4pw-input input { padding-right: 92px; }
-.a4pw-input input:focus { outline: none; border-color: var(--a4-accent); box-shadow: 0 0 0 3px var(--a4-ring); }
+.a4pw-input input:focus { outline: 2px solid transparent; border-color: var(--a4-accent); box-shadow: 0 0 0 3px var(--a4-ring); }
 .a4pw-field.invalid .a4pw-input input { border-color: var(--a4-bad); border-width: 2px; padding-left: 11px; }
 .a4pw-toggle {
   position: absolute; top: 4px; right: 4px; bottom: 4px; display: inline-flex; align-items: center; gap: 6px;
