@@ -122,7 +122,7 @@ th.admin-dt-hidden, tr.admin-dt-odd .admin-dt-hidden, tr.admin-dt-even .admin-dt
 }
 
 .admin-dt caption {
-    color: #000;
+    color: var(--a4-ink);
     font-size: 85%;
     font-weight: normal;
     font-style: italic;
@@ -143,7 +143,7 @@ th.admin-dt-hidden, tr.admin-dt-odd .admin-dt-hidden, tr.admin-dt-even .admin-dt
     margin: 0;
     padding: 0;
     border: none;
-    border-left: 1px solid #a9a9a9;
+    border-left: 1px solid var(--a4-line-strong);
 }
 
 .admin-dt th.admin-dt-sortable
@@ -152,7 +152,7 @@ th.admin-dt-hidden, tr.admin-dt-odd .admin-dt-hidden, tr.admin-dt-even .admin-dt
 }
 
 .admin-dt tr.admin-dt-first td {
-    border-top: 1px solid #CCCCCC;
+    border-top: 1px solid var(--a4-line);
 }
 
 .admin-dt th .admin-dt-liner {
@@ -202,7 +202,7 @@ th.admin-dt-hidden, tr.admin-dt-odd .admin-dt-hidden, tr.admin-dt-even .admin-dt
 }
 
 .admin-dt-message {
-    background-color: #FFF;
+    background-color: var(--a4-surface);
 }
 
 .admin-dt-scrollable table {
@@ -210,20 +210,20 @@ th.admin-dt-hidden, tr.admin-dt-odd .admin-dt-hidden, tr.admin-dt-even .admin-dt
 }
 
 .admin-dt-scrollable .admin-dt-hd {
-    border-left: 1px solid #CCCCCC;
-    border-top: 1px solid #CCCCCC;
-    border-right: 1px solid #CCCCCC;
+    border-left: 1px solid var(--a4-line);
+    border-top: 1px solid var(--a4-line);
+    border-right: 1px solid var(--a4-line);
 }
 
 .admin-dt-scrollable .admin-dt-bd {
-    border-left: 1px solid #CCCCCC;
-    border-bottom: 1px solid #CCCCCC;
-    border-right: 1px solid #CCCCCC;
-    background-color: #FFF;
+    border-left: 1px solid var(--a4-line);
+    border-bottom: 1px solid var(--a4-line);
+    border-right: 1px solid var(--a4-line);
+    background-color: var(--a4-surface);
 }
 
 .admin-dt-scrollable .admin-dt-data tr.admin-dt-last td {
-    border-bottom: 1px solid #CCCCCC;
+    border-bottom: 1px solid var(--a4-line);
 }
 
 th.admin-dt-asc,th.admin-dt-desc {
@@ -255,7 +255,7 @@ tbody .admin-dt-editable {
 
 .admin-dt-editor {
     text-align: left;
-    background-color: #F2F2F2;
+    background-color: var(--a4-soft);
     border: 1px solid #808080;
     padding: 6px;
 }
@@ -269,15 +269,15 @@ tbody .admin-dt-editable {
     padding-top: 6px;
     text-align: right;
 }tr.admin-dt-even {
-    background-color: #FFF;
+    background-color: var(--a4-surface);
 }
 
 tr.admin-dt-odd {
-    background-color: #f3f3f3;
+    background-color: var(--a4-soft);
 }
 
 .admin-dt tbody tr:hover {
-    background-color:#D1DFE9;
+    background-color:var(--a4-info-bg);
 /*    cursor: pointer;*/
 }
 
@@ -293,11 +293,11 @@ tr.admin-dt-odd {
 }
 
 .admin-dt-list tr.admin-dt-even {
-    background-color: #FFF;
+    background-color: var(--a4-surface);
 }
 
 .admin-dt-list tr.admin-dt-odd {
-    background-color: #FFF;
+    background-color: var(--a4-surface);
 }
 
 /*
@@ -323,48 +323,48 @@ tr.admin-dt-odd td.admin-dt-asc,tr.admin-dt-odd td.admin-dt-desc
 */
 th.admin-dt-highlighted,th.admin-dt-highlighted a
 {
-    background-color: #D1DFE9;
+    background-color: var(--a4-info-bg);
 }
 
 tr.admin-dt-highlighted,tr.admin-dt-highlighted td.admin-dt-asc,tr.admin-dt-highlighted td.admin-dt-desc,tr.admin-dt-even td.admin-dt-highlighted,tr.admin-dt-odd td.admin-dt-highlighted
 {
     cursor: pointer;
-    background-color: #D1DFE9;
+    background-color: var(--a4-info-bg);
 }
 
 
 .admin-dt-list th.admin-dt-highlighted,.admin-dt-list th.admin-dt-highlighted a {
-    background-color: #D1DFE9;
+    background-color: var(--a4-info-bg);
 }
 
 .admin-dt-list tr.admin-dt-highlighted,.admin-dt-list tr.admin-dt-highlighted td.admin-dt-asc,.admin-dt-list tr.admin-dt-highlighted td.admin-dt-desc,.admin-dt-list tr.admin-dt-even td.admin-dt-highlighted,.admin-dt-list tr.admin-dt-odd td.admin-dt-highlighted
 {
     cursor: pointer;
-    background-color: #D1DFE9;
+    background-color: var(--a4-info-bg);
 }
 
 th.admin-dt-selected,th.admin-dt-selected a {
-    background-color: #D1DFE9;
+    background-color: var(--a4-info-bg);
 }
 
 tr.admin-dt-selected td,tr.admin-dt-selected td.admin-dt-asc,tr.admin-dt-selected td.admin-dt-desc {
-    background-color: #D1DFE9;
+    background-color: var(--a4-info-bg);
 }
 
 tr.admin-dt-even td.admin-dt-selected,tr.admin-dt-odd td.admin-dt-selected {
-    background-color: #D1DFE9;
+    background-color: var(--a4-info-bg);
 }
 
 .admin-dt-list th.admin-dt-selected,.admin-dt-list th.admin-dt-selected a {
-    background-color: #D1DFE9;
+    background-color: var(--a4-info-bg);
 }
 
 .admin-dt-list tr.admin-dt-selected td,.admin-dt-list tr.admin-dt-selected td.admin-dt-asc,.admin-dt-list tr.admin-dt-selected td.admin-dt-desc {
-    background-color: #D1DFE9;
+    background-color: var(--a4-info-bg);
 }
 
 .admin-dt-list tr.admin-dt-even td.admin-dt-selected,.admin-dt-list tr.admin-dt-odd td.admin-dt-selected {
-    background-color: #D1DFE9;
+    background-color: var(--a4-info-bg);
 }
 
 .admin-dt-paginator {
@@ -389,15 +389,15 @@ tr.admin-dt-even td.admin-dt-selected,tr.admin-dt-odd td.admin-dt-selected {
 }
 
 a.admin-dt-page {
-    border: 1px solid #CBCBCB;
+    border: 1px solid var(--a4-line);
     padding: 2px 6px;
     text-decoration: none;
-    background-color: #fff;
+    background-color: var(--a4-surface);
 }
 
 .admin-dt-selected {
     border: 1px solid #fff;
-    background-color: #fff;
+    background-color: var(--a4-surface);
 }
 
 /* PAGINATOR */
@@ -416,14 +416,14 @@ a.admin-dt-page {
 }
 
 .admin-pg-first,.admin-pg-previous,.admin-pg-next,.admin-pg-last {
-    color: black;
-    background: #fff;
+    color: var(--a4-ink);
+    background: var(--a4-surface);
     background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#eee));
     background-image: -moz-linear-gradient(top,  #fff,  #eee);
     background-image: -ms-linear-gradient(top,  #fff,  #eee);
     background-image: -o-linear-gradient(top,  #fff,  #eee);
     background-image: linear-gradient(top,  #fff,  #eee);
-    border: 1px solid #cfd1d3;
+    border: 1px solid var(--a4-line);
     border-radius: 3px;
     width: 31px;
     height:25px;
@@ -441,7 +441,7 @@ span.admin-pg-first,span.admin-pg-previous,span.admin-pg-next,span.admin-pg-last
 }
 
 a.admin-pg-first:hover,a.admin-pg-previous:hover,a.admin-pg-next:hover,a.admin-pg-last:hover,a.admin-pg-page:hover{
-    border: 1px solid #999;
+    border: 1px solid var(--a4-line-strong);
 }
 
 .admin-pg-previous span
@@ -470,8 +470,8 @@ span.admin-pg-first,span.admin-pg-previous,span.admin-pg-next,span.admin-pg-last
 }
 
 .admin-pg-page {
-    background-color: #fff;
-    border: 1px solid #CBCBCB;
+    background-color: var(--a4-surface);
+    border: 1px solid var(--a4-line);
     border-radius: 2px;
     padding: 0.3em 0.5em;
     text-decoration: none;
@@ -524,12 +524,12 @@ span.admin-pg-first,span.admin-pg-previous,span.admin-pg-next,span.admin-pg-last
 
 .thumbview span {
     position: absolute;
-    background-color: white;
+    background-color: var(--a4-surface);
     padding: 5px;
     left: -1000px;
-    border: 1px solid #999;
+    border: 1px solid var(--a4-line-strong);
     visibility: hidden;
-    color: black;
+    color: var(--a4-ink);
     text-decoration: none;
 }
 
@@ -778,7 +778,7 @@ span.admin-pg-first,span.admin-pg-previous,span.admin-pg-next,span.admin-pg-last
 .table-options-custom-input {
     width: 100px;
     padding: 4px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--a4-line);
     border-radius: 3px;
     font-size: 12px;
 }
@@ -821,12 +821,12 @@ span.admin-pg-first,span.admin-pg-previous,span.admin-pg-next,span.admin-pg-last
 
 .thumbview span {
     position: absolute;
-    background-color: white;
+    background-color: var(--a4-surface);
     padding: 5px;
     left: -1000px;
-    border: 1px solid #999;
+    border: 1px solid var(--a4-line-strong);
     visibility: hidden;
-    color: black;
+    color: var(--a4-ink);
     text-decoration: none;
 }
 

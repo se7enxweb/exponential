@@ -52,7 +52,7 @@
     padding: 0.3em 0.4em 0.3em 0.3em;
     border: 1px solid #dfe4ea;
     border-radius: 4px;
-    background: #fff;
+    background: var(--a4-surface);
     cursor: grab;
     break-inside: avoid;
     transition: background-color 0.15s, box-shadow 0.15s;

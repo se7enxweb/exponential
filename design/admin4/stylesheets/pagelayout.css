@@ -5,7 +5,7 @@
 span.vertical-seperator {
     height: 100%;
     width: 4px;
-    border-right: 1px solid #bbb;
+    border-right: 1px solid var(--a4-line-strong);
     margin-left: 12px;
     margin-right: 16px;
 }
@@ -232,7 +232,7 @@ ul.tabs li.selected a {
 #header-topmenu ul li span.disabled,
 span.disabled,
 ul.tabs.disabled li a {
-    color: #888;
+    color: var(--a4-muted);
 }
 
 #header-topmenu ul li.first a,
@@ -318,7 +318,7 @@ div.tabs-content.disabled div.tab-content {
 }
 
 #path span {
-    color: #333;
+    color: var(--a4-ink);
 }
 
 /* COLUMNS */
@@ -417,7 +417,7 @@ ul.leftmenu-items li.current a {
     width: 10px;
     /*    cursor: col-resize; */
     z-index: 11;
-    /*    background: #f8f8f8;*/
+    /*    background: var(--a4-soft);*/
 }
 
 /* FOOTER */
@@ -470,12 +470,17 @@ div#contentstructure ul#content_tree_menu ul li {
     padding-top: 0;
     padding-left: 20px;
     padding-bottom: 4px;
-    background-image: url(../images/bg_content_tree_li.png);
+    /* the tree's lines, drawn in the line token (was an opaque white image with a grey line, a white strip on the
+       dark page): the vertical line at 8px and the elbow at 7px */
+    background-image: linear-gradient(var(--a4-line-strong), var(--a4-line-strong)),
+                      linear-gradient(var(--a4-line-strong), var(--a4-line-strong));
+    background-size: 1px 100%, 9px 1px;
+    background-position: 8px 0, 8px 7px;
     background-repeat: no-repeat;
 }
 
 div#contentstructure ul#content_tree_menu ul li.lastli {
-    background-position: left -9990px;
+    background-size: 1px 8px, 9px 1px;
     padding-bottom: 2px;
 }
 
@@ -502,7 +507,7 @@ div#contentstructure li a.image-text span.node-name-hidden,
 div#contentstructure li.currentnode li a.image-text span.node-name-hidden {
     font-weight: normal;
     font-style: normal;
-    background-color: #ddd;
+    background-color: var(--a4-soft);
     padding: 0 0.2em 0 0.2em;
 }
 
@@ -510,7 +515,7 @@ div#contentstructure li a.image-text span.node-name-hiddenbyparent,
 div#contentstructure li.currentnode li a.image-text span.node-name-hiddenbyparent {
     font-weight: normal;
     font-style: normal;
-    background-color: #eee;
+    background-color: var(--a4-soft);
     padding: 0 0.2em 0 0.2em;
 }
 
@@ -567,10 +572,10 @@ div#contentstructure ul#content_tree_menu div.loaded {
 
 div#contentstructure ul#content_tree_menu div.error {
     white-space: normal;
-    color: grey;
+    color: var(--a4-muted);
     margin: 10px 0;
     padding: 4px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--a4-line);
     border-radius: 5px;
 }
 
@@ -592,12 +597,12 @@ div.popupmenu {
     width: 14em;
     margin: 0px;
     padding: 2px;
-    background-color: #fff;
-    border: 1px solid #999;
+    background-color: var(--a4-surface);
+    border: 1px solid var(--a4-line-strong);
     box-shadow: 3px 3px 3px 0px #bbb;
     border-radius: 3px;
     font-size: 0.90em;
-    color: #333;
+    color: var(--a4-ink);
 
     /* These three are essential */
     position: absolute;
@@ -608,7 +613,7 @@ div.popupmenu {
 div.popupmenu div.popupmenuheader {
     background-color: #6f6e6b;
     color: #eee;
-    border-bottom: 1px solid #bbb;
+    border-bottom: 1px solid var(--a4-line-strong);
 }
 
 div.popupmenu#EditSubmenu {
@@ -628,7 +633,7 @@ div.popupmenu div.window-close {
 
 div.popupmenu div.window-close p {
     margin: 0;
-    color: #000000;
+    color: var(--a4-ink);
     font-weight: bold;
     background-color: #ecece4;
     padding: 0.1em 0.3em 0.1em 0.3em;
@@ -638,7 +643,7 @@ div.popupmenu div.window-close p {
 }
 
 div.popupmenu a {
-    color: #000000;
+    color: var(--a4-ink);
     padding: 0.2em 0.3em 0.2em 0.3em;
     text-decoration: none;
     cursor: default;
@@ -664,14 +669,14 @@ div.popupmenu a {
 }
 
 div.popupmenu a:hover {
-    background-color: #D1DFE9;
+    background-color: var(--a4-info-bg);
     text-decoration: none;
     cursor: default;
 }
 
 div.popupmenu hr {
     border: none;
-    border-top: 1px solid #c0c0c0;
+    border-top: 1px solid var(--a4-line-strong);
 }
 
 /* BOX MODEL */
@@ -712,7 +717,7 @@ h2.context-title {
 
 div.context-information,
 span.classattribute-description {
-    color: #333;
+    color: var(--a4-ink);
     font-size: 0.8em;
     padding: 0 0.5em 0 0.5em;
     margin-bottom: 1.5em;
@@ -729,7 +734,7 @@ p.class-description {
 span.classattribute-description:hover,
 p.class-description:hover,
 div.context-information p:hover {
-    color: #111;
+    color: var(--a4-ink);
 }
 
 div.context-information p.left {
@@ -793,7 +798,7 @@ div.context-block h2.context-title img {
     margin-left: 4px;
     text-decoration: none;
     display: block;
-    border: 1px solid #999;
+    border: 1px solid var(--a4-line-strong);
 }
 
 .menu-block li:first-child a {
@@ -801,7 +806,7 @@ div.context-block h2.context-title img {
 }
 
 .menu-block li.disabled a {
-    background-color: #f3f3f3;
+    background-color: var(--a4-soft);
 }
 
 
@@ -834,7 +839,7 @@ input.button-disabled {
 }
 
 input.button:hover {
-    border: 1px solid #999;
+    border: 1px solid var(--a4-line-strong);
 }
 
 /* SEARCH: design:page_search.tpl, in the header and in the narrow screen menu (classes, not ids: two copies) */
@@ -926,9 +931,9 @@ input.button:hover {
     width: 300px;
     z-index: 60;
     text-align: left;
-    color: #222;
-    background: #fff;
-    border: 1px solid #c1c1c1;
+    color: var(--a4-ink);
+    background: var(--a4-surface);
+    border: 1px solid var(--a4-line);
     border-radius: 6px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
 }
@@ -944,8 +949,8 @@ input.button:hover {
     padding: 9px 10px 8px 12px;
     font-weight: bold;
     font-size: 13px;
-    color: #111;
-    background: #f5f5f5;
+    color: var(--a4-ink);
+    background: var(--a4-soft);
     border-bottom: 1px solid #e3e3e3;
     border-radius: 6px 6px 0 0;
 }
@@ -1018,14 +1023,14 @@ input.button:hover {
 }
 
 .searchscope-body label.disabled {
-    color: #999;
+    color: var(--a4-disabled);
     cursor: default;
 }
 
 .searchscope-advanced {
     margin: 10px 0 0;
     padding-top: 8px;
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--a4-line);
     font-size: 13px;
 }
 
@@ -1092,7 +1097,7 @@ input:-moz-placeholder {
 
 
 .login-text-wrapper {
-    color: #b7b7b7;
+    color: var(--a4-disabled);
     margin-top: 15px;
     margin-bottom: 3rem;
     text-align: center;
@@ -1155,7 +1160,7 @@ input:-moz-placeholder {
 
 #loginbutton {
     background: none;
-    color: #b7b7b7;
+    color: var(--a4-disabled);
     border-radius: 5px;
     border: 1px solid #3a3d41;
     -moz-box-shadow: inset 1px 1px #6f6e6b, 1px 1px #6f6e6b;
@@ -1221,7 +1226,7 @@ input:-moz-placeholder {
 #mainteinance-text .edition-info,
 #footer-design .edition-info {
     font-weight: bold;
-    color: #ff8300;
+    color: var(--a4-accent-text);
 }
 
 /* BEGIN::Fix Dashboard Layout */
@@ -1241,7 +1246,7 @@ input:-moz-placeholder {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    background-color: #ffffff;
+    background-color: var(--a4-surface);
     position: fixed;
     top: var(--header-height);
     bottom: 0;
@@ -1399,7 +1404,7 @@ html[data-a4-left-size="large"] {
 .content-wrapper {
     flex: 1;
     padding: 2rem;
-    background-color: #ffffff;
+    background-color: var(--a4-surface);
     border-image-source: url(../images/3/textile.png);
     border-image-slice: 30;
     border-image-width: 1.25rem;
@@ -1650,7 +1655,7 @@ div:has(> table) {
 }
 
 .draft-list-head .draft-list-cell {
-    border-top: 1px solid #acabab;
+    border-top: 1px solid var(--a4-line-strong);
 }
 
 .draft-list-cell {
@@ -1659,9 +1664,9 @@ div:has(> table) {
     align-items: center;
     gap: 1rem;
     padding: 0.5rem 0.75rem;
-    border-bottom: 1px solid #acabab;
-    border-right: 1px solid #acabab;
-    border-left: 1px solid #acabab;
+    border-bottom: 1px solid var(--a4-line-strong);
+    border-right: 1px solid var(--a4-line-strong);
+    border-left: 1px solid var(--a4-line-strong);
 }
 
 .draft-list-cell-inner {
@@ -1673,7 +1678,7 @@ div:has(> table) {
 }
 
 .draft-list-body .draft-list-row:first-of-type .draft-list-cell:first-of-type {
-    border-top: 1px solid #acabab;
+    border-top: 1px solid var(--a4-line-strong);
 }
 
 @media screen and (min-width: 1024px) {
@@ -1704,7 +1709,7 @@ div:has(> table) {
 
     .draft-list-row .draft-list-cell:first-of-type {
         width: 1.5rem;
-        border-left: 1px solid #acabab;
+        border-left: 1px solid var(--a4-line-strong);
     }
 
     .draft-list-body .draft-list-row:first-of-type .draft-list-cell:first-of-type {
@@ -1725,7 +1730,7 @@ div.message-error {
 }
 
 .form-control::placeholder {
-    color: #333;
+    color: var(--a4-ink);
 }
 
 body {

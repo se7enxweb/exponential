@@ -42,7 +42,7 @@
   --a4-header-shadow: 0 1px 0 rgba(16, 24, 40, 0.03), 0 10px 28px rgba(16, 24, 40, 0.06);
   --a4-header-ink: #3b4252;
   --a4-header-hover: rgba(16, 24, 40, 0.05);
-  --a4-header-field: #fff;
+  --a4-header-field: var(--a4-field);
   --a4-header-field-line: rgba(16, 24, 40, 0.14);
   --a4-card-bg: var(--a4-surface);   /* the three columns: white in light mode, slate in dark mode (components.css) */
   --a4-card-edge: rgba(16, 24, 40, 0.06);
@@ -65,7 +65,7 @@ html[data-a4-theme="dark"] {
   --a4-header-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
   --a4-header-ink: #d7dbe2;
   --a4-header-hover: rgba(255, 255, 255, 0.08);
-  --a4-header-field: rgba(255, 255, 255, 0.92);
+  --a4-header-field: var(--a4-field);
   --a4-header-field-line: rgba(255, 255, 255, 0.18);
   --a4-card-edge: rgba(255, 255, 255, 0.04);
   --a4-card-shadow: 0 18px 44px rgba(0, 0, 0, 0.28), 0 2px 8px rgba(0, 0, 0, 0.18);
@@ -175,8 +175,8 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
 .navbar-menu li a.selected:hover {
   padding: 0.3rem 0.75rem;
   background-color: var(--a4-orange);
-  color: #fff;
-  box-shadow: 0 4px 14px rgba(242, 106, 33, 0.32);
+  color: var(--a4-on-accent);
+  box-shadow: 0 4px 14px var(--a4-accent-soft);
 }
 .navbar-menu li a.disabled {
   color: var(--a4-header-ink);
@@ -227,9 +227,14 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
   border-radius: 99px;
   color: var(--a4-ink);
 }
+#header .searchblock input.searchtext.disabled,
+#header .searchblock input.searchtext[disabled] {
+  background-image: repeating-linear-gradient(135deg, var(--a4-line) 0 1px, transparent 1px 5px);
+  color: var(--a4-muted);
+}
 #header .searchblock input.searchtext:focus {
   border-color: var(--a4-orange);
-  box-shadow: 0 0 0 3px rgba(242, 106, 33, 0.22);
+  box-shadow: 0 0 0 3px var(--a4-ring);
   outline: none;
 }
 
@@ -259,7 +264,7 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
 }
 .a4-theme-toggle:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(242, 106, 33, 0.3);
+  box-shadow: 0 0 0 3px var(--a4-ring);
 }
 .a4-theme-toggle svg {
   fill: var(--a4-orange);
@@ -342,7 +347,7 @@ html[data-a4-theme="dark"] .a4-theme-toggle .a4-icon-moon { display: inline; }
 @media screen and (max-width: 1023px) {
   .sidebar.show #leftmenu-design,
   .sidebar.show #rightmenu-design {
-    box-shadow: 0 0 0 1px var(--a4-card-edge), 0 18px 44px rgba(16, 24, 40, 0.28);
+    box-shadow: 0 0 0 1px var(--a4-card-edge), var(--a4-shadow-m);
   }
 }
 
@@ -353,10 +358,10 @@ html[data-a4-theme="dark"] .a4-theme-toggle .a4-icon-moon { display: inline; }
   color: var(--a4-ink);
 }
 :where(#maincontent, #leftmenu, #rightmenu) a {
-  color: var(--a4-orange-dark);
+  color: var(--a4-accent-text);
 }
 :where(#maincontent, #leftmenu, #rightmenu) a:hover {
-  color: var(--a4-orange);
+  color: var(--a4-ink);
 }
 /* Note for every rule here: ezjscore's packer used to drop the space in ") :" (fixed in the kernel copy, 2026-10-02), turning ":where(#a) :where(b)" into
    ":where(#a):where(b)" (nothing). A descendant goes INSIDE one :where(), so admin4 also works with an older packer. */
@@ -375,7 +380,7 @@ html[data-a4-theme="dark"] .a4-theme-toggle .a4-icon-moon { display: inline; }
   border-top: 1px solid var(--a4-line);
 }
 :focus-visible {
-  outline: 3px solid rgba(242, 106, 33, 0.38);
+  outline: 3px solid var(--a4-ring);
   outline-offset: 2px;
 }
 
@@ -393,13 +398,13 @@ ul.tabs li a:hover {
 }
 ul.tabs li.selected a,
 ul.tabs li.selected span.disabled {
-  background-color: var(--a4-orange-soft);
-  color: var(--a4-orange-dark);
-  box-shadow: inset 0 -2px 0 var(--a4-orange);
+  background-color: var(--a4-accent-soft);
+  color: var(--a4-accent-text);
+  box-shadow: inset 0 -2px 0 var(--a4-accent);
 }
 .tab-content {
   border-color: var(--a4-line);
-  border-radius: 12px;
+  border-radius: var(--a4-radius-s);
   background-color: var(--a4-soft);
 }
 
@@ -413,44 +418,63 @@ input.button, input.defaultbutton, input.button-disabled {
   transition: background-color .15s ease, border-color .15s ease;
 }
 input.button {
-  background-color: #fff;
-  border: 1px solid #c9ced6;
+  background-color: var(--a4-card);
+  border: 1px solid var(--a4-line-strong);
   color: var(--a4-ink);
 }
 input.button:hover {
   background-color: var(--a4-soft);
-  border-color: #9aa1ad;
+  border-color: var(--a4-field-line);
 }
 input.defaultbutton {
-  background-color: var(--a4-orange);
-  border: 1px solid var(--a4-orange);
-  color: #fff;
+  background-color: var(--a4-accent-strong);
+  border: 1px solid var(--a4-accent-strong);
+  color: var(--a4-on-accent);
 }
 input.defaultbutton:hover {
-  background-color: var(--a4-orange-dark);
-  border-color: var(--a4-orange-dark);
+  background-color: var(--a4-accent-hover);
+  border-color: var(--a4-accent-hover);
 }
-input.button-disabled, input.button[disabled] {
+html[data-a4-theme="dark"] input.defaultbutton:hover {
+  color: var(--a4-code-bg);
+}
+input.button-disabled, input.button[disabled], input.button[disabled="disabled"] {
   background-color: var(--a4-soft);
+  /* the base's light hatch texture (diagonal_pattern.png), drawn in the line token so it suits both modes */
+  background-image: repeating-linear-gradient(135deg, var(--a4-line) 0 1px, transparent 1px 5px);
   border: 1px solid var(--a4-line);
-  color: #9aa1ad;
+  color: var(--a4-disabled);
+}
+input.defaultbutton:active {
+  background-color: var(--a4-accent-strong);
+  color: var(--a4-on-accent);
+}
+/* buttons and fields with no class of their own: the field and card tokens (no weight, so any class wins) */
+:where(#page button, #page input[type=button], #page input[type=submit], #page input[type=reset]) {
+  background-color: var(--a4-card);
+  border-color: var(--a4-line-strong);
+  color: var(--a4-ink);
 }
 
 /* Fields: rounded, the orange focus ring */
-:where(#page input[type=text], #page input[type=password], #page input[type=email], #page input[type=number],
+:where(#page input:not([type]), #page input[type=text], #page input[type=password], #page input[type=email], #page input[type=number],
+       #page input[type=url], #page input[type=tel], #page input[type=date], #page input[type=time], #page input[type=datetime-local],
        #page input[type=search], #page select, #page textarea) {
-  border: 1px solid #c9ced6;
+  border: 1px solid var(--a4-line-strong);
   border-radius: var(--a4-radius-s);
+  background-color: var(--a4-field);
+  color: var(--a4-ink);
   font-family: var(--a4-font);
 }
-:where(#page input[type=text], #page input[type=password], #page input[type=email], #page input[type=number],
+:where(#page input:not([type]), #page input[type=text], #page input[type=password], #page input[type=email], #page input[type=number],
+       #page input[type=url], #page input[type=tel], #page input[type=date], #page input[type=time], #page input[type=datetime-local],
        #page input[type=search], #page select, #page textarea):focus {
   border-color: var(--a4-orange);
-  box-shadow: 0 0 0 3px rgba(242, 106, 33, 0.22);
+  box-shadow: 0 0 0 3px var(--a4-ring);
   outline: none;
 }
 :where(input[type=radio], input[type=checkbox]) {
-  accent-color: var(--a4-orange);
+  accent-color: var(--a4-accent-strong);
 }
 
 /* List tables (table.list, the kernel's and most extensions'): a light header in place of the black bar */
@@ -471,16 +495,16 @@ table.list th a, table.special th a {
   background-color: var(--a4-soft);
 }
 table.list th.admin-dt-asc, table.list th.admin-dt-desc {
-  background-color: var(--a4-orange-soft) !important;
+  background-color: var(--a4-accent-soft) !important;
   color: var(--a4-ink);
 }
-table.list tr.bglight, table.list tr.bglight td { background-color: #fff; }
-table.list tr.bgdark, table.list tr.bgdark td { background-color: #fafbfc; }
+table.list tr.bglight, table.list tr.bglight td { background-color: var(--a4-surface); }
+table.list tr.bgdark, table.list tr.bgdark td { background-color: var(--a4-soft); }
 table.list td { border-color: var(--a4-line); }
 
 /* Messages */
 div.message-warning, div.message-error, div.message-feedback, div.message-confirmation, div.message-information {
-  border-radius: 12px;
+  border-radius: var(--a4-radius-s);
 }
 
 /* ---- Footer: quiet text on the page ------------------------------------------------------------------------- */
@@ -514,8 +538,8 @@ html #page.ezexplayoutsuinavigationpart #leftmenu.sidebar {
 .a4-dashboard { display: grid; gap: 22px; }
 .a4-dash-hero {
   display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 18px;
-  padding: 22px 24px; border-radius: 16px;
-  background: linear-gradient(135deg, rgba(242, 106, 33, 0.10), rgba(64, 120, 192, 0.06) 70%), var(--a4-soft);
+  padding: 22px 24px; border-radius: var(--a4-radius);
+  background: linear-gradient(135deg, var(--a4-accent-soft), transparent 70%), var(--a4-soft);
   box-shadow: inset 0 0 0 1px var(--a4-line);
 }
 .a4-dash-hero h1 { margin: 2px 0 4px; font-size: 26px; line-height: 1.2; }
@@ -524,42 +548,42 @@ html #page.ezexplayoutsuinavigationpart #leftmenu.sidebar {
 .a4-dash-actions { display: flex; flex-wrap: wrap; gap: 8px; }
 :where(.a4-dash-actions) .a4-dash-action {
   display: inline-flex; align-items: center; gap: 7px; padding: 8px 14px; border-radius: 99px;
-  background: #fff; color: var(--a4-ink); font-weight: 600; text-decoration: none;
-  box-shadow: 0 0 0 1px var(--a4-line), 0 1px 2px rgba(16, 24, 40, 0.05);
+  background-color: var(--a4-card); color: var(--a4-ink); font-weight: 600; text-decoration: none;
+  box-shadow: 0 0 0 1px var(--a4-line), var(--a4-shadow-s);
   transition: box-shadow .15s ease, transform .15s ease;
 }
-:where(.a4-dash-actions) .a4-dash-action:hover { color: var(--a4-ink); transform: translateY(-1px); box-shadow: 0 0 0 1px var(--a4-orange), 0 6px 16px rgba(242, 106, 33, 0.16); }
-:where(.a4-dash-actions) .a4-dash-action.a4-primary { background: var(--a4-orange); color: #fff; box-shadow: 0 6px 16px rgba(242, 106, 33, 0.28); }
+:where(.a4-dash-actions) .a4-dash-action:hover { color: var(--a4-ink); transform: translateY(-1px); box-shadow: 0 0 0 1px var(--a4-accent), 0 6px 16px var(--a4-accent-soft); }
+:where(.a4-dash-actions) .a4-dash-action.a4-primary { background-color: var(--a4-accent-strong); color: var(--a4-on-accent); box-shadow: 0 6px 16px var(--a4-accent-soft); }
 .a4-dash-ico { font-size: 15px; line-height: 1; opacity: .85; }
 
 .a4-dash-figures { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
 :where(.a4-dash-figures) .a4-dash-figure {
-  display: flex; flex-direction: column; gap: 4px; padding: 14px 16px; border-radius: 14px;
-  background: #fff; color: var(--a4-muted); text-decoration: none;
-  box-shadow: 0 0 0 1px var(--a4-line), 0 1px 2px rgba(16, 24, 40, 0.04);
+  display: flex; flex-direction: column; gap: 4px; padding: 14px 16px; border-radius: var(--a4-radius);
+  background-color: var(--a4-card); color: var(--a4-muted); text-decoration: none;
+  box-shadow: 0 0 0 1px var(--a4-line), var(--a4-shadow-s);
   transition: box-shadow .15s ease;
 }
-:where(.a4-dash-figures) a.a4-dash-figure:hover { color: var(--a4-muted); box-shadow: 0 0 0 1px var(--a4-orange), 0 8px 20px rgba(16, 24, 40, 0.08); }
+:where(.a4-dash-figures) a.a4-dash-figure:hover { color: var(--a4-muted); box-shadow: 0 0 0 1px var(--a4-accent), var(--a4-shadow-m); }
 .a4-dash-figure strong { font-size: 26px; line-height: 1.1; font-weight: 700; color: var(--a4-ink); font-variant-numeric: tabular-nums; }
 .a4-dash-figure span { font-size: 12.5px; }
-.a4-dash-figure.a4-accent { background: linear-gradient(135deg, #fff, rgba(242, 106, 33, 0.08)); }
-.a4-dash-figure.a4-accent strong { color: var(--a4-orange-dark); }
+.a4-dash-figure.a4-accent { background: linear-gradient(135deg, var(--a4-card), var(--a4-accent-soft)); }
+.a4-dash-figure.a4-accent strong { color: var(--a4-accent-text); }
 
 .a4-dash-row { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 22px; }
 @media (max-width: 1100px) { .a4-dash-row { grid-template-columns: minmax(0, 1fr); } }
 .a4-dash-card {
-  min-width: 0; padding: 18px 20px 20px; border-radius: 16px; background: #fff;
-  box-shadow: 0 0 0 1px var(--a4-line), 0 1px 2px rgba(16, 24, 40, 0.04);
+  min-width: 0; padding: 18px 20px 20px; border-radius: var(--a4-radius); background-color: var(--a4-card); color: var(--a4-ink);
+  box-shadow: 0 0 0 1px var(--a4-line), var(--a4-shadow-s);
 }
 .a4-dash-card > header h2, .a4-dash-card h2 { margin: 0 0 12px; font-size: 16px; font-weight: 650; }
 .a4-dash-card table.list { width: 100%; }
 
 .a4-dash-bars { display: flex; align-items: flex-end; gap: 6px; height: 170px; padding-top: 18px; }
 .a4-dash-bar { position: relative; flex: 1 1 0; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; height: 100%; }
-.a4-dash-bar-fill { width: 100%; max-width: 26px; min-height: 0; border-radius: 6px 6px 3px 3px; background: linear-gradient(180deg, #ff9a4d, var(--a4-orange)); }
+.a4-dash-bar-fill { width: 100%; max-width: 26px; min-height: 0; border-radius: var(--a4-radius-s) var(--a4-radius-s) 0 0; background: linear-gradient(180deg, var(--a4-accent), var(--a4-accent-strong)); }
 .a4-dash-bar-value { font-size: 11px; font-weight: 700; color: var(--a4-muted); margin-bottom: 3px; }
 .a4-dash-bar-day { margin-top: 6px; font-size: 11px; color: var(--a4-muted); }
-.a4-dash-bar:last-child .a4-dash-bar-day { color: var(--a4-orange-dark); font-weight: 700; }
+.a4-dash-bar:last-child .a4-dash-bar-day { color: var(--a4-accent-text); font-weight: 700; }
 
 .a4-dash-system #dashboard-logo { display: none; }
 .a4-dash-system #mainteinance-text h2 { display: none; }
@@ -582,17 +606,17 @@ html #page.ezexplayoutsuinavigationpart #leftmenu.sidebar {
 
 /* The dashboard's "Stay secure" card: the two updates, as numbered steps */
 .a4-dash-secure {
-  background: linear-gradient(135deg, rgba(34, 139, 94, 0.07), rgba(64, 120, 192, 0.05) 70%), #fff;
-  box-shadow: 0 0 0 1px rgba(34, 139, 94, 0.22), 0 1px 2px rgba(16, 24, 40, 0.04);
+  background: linear-gradient(135deg, var(--a4-ok-bg), transparent 70%), var(--a4-card);
+  box-shadow: 0 0 0 1px var(--a4-ok-line), var(--a4-shadow-s);
 }
 .a4-dash-secure h2 { display: flex; align-items: center; gap: 8px; }
 .a4-dash-secure-ico { flex: 0 0 auto; }
 .a4-dash-secure-intro { margin: -4px 0 14px; color: var(--a4-muted); max-width: 70ch; }
 .a4-dash-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin: 0; padding: 0; list-style: none; }
-.a4-dash-steps > li { display: flex; gap: 12px; padding: 14px 16px; border-radius: 12px; background: #fff; box-shadow: 0 0 0 1px var(--a4-line); }
+.a4-dash-steps > li { display: flex; gap: 12px; padding: 14px 16px; border-radius: var(--a4-radius-s); background-color: var(--a4-card); box-shadow: 0 0 0 1px var(--a4-line); }
 .a4-dash-step-no {
   flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center;
-  width: 28px; height: 28px; border-radius: 50%; background: #228b5e; color: #fff; font-weight: 700;
+  width: 28px; height: 28px; border-radius: 50%; background-color: var(--a4-ok); color: var(--a4-card); font-weight: 700;
 }
 .a4-dash-steps h3 { margin: 2px 0 6px; font-size: 14.5px; font-weight: 650; }
 .a4-dash-steps p { margin: 0 0 8px; color: var(--a4-muted); line-height: 1.5; }
@@ -640,13 +664,13 @@ span.classattribute-description {
   border: 0;
   background-color: var(--a4-soft);
   background-image: none;
-  border-radius: 12px;
+  border-radius: var(--a4-radius-s);
   box-shadow: inset 0 0 0 1px var(--a4-line);
 }
 :where(#maincontent .controlbar) {
   margin: 14px 0;
   padding: 10px 12px;
-  border-radius: 12px;
+  border-radius: var(--a4-radius-s);
   background-color: var(--a4-soft);
   box-shadow: inset 0 0 0 1px var(--a4-line);
 }
@@ -668,11 +692,11 @@ span.classattribute-description {
   justify-content: center;
   width: 36px;
   height: 36px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, rgba(242, 106, 33, 0.14), rgba(64, 120, 192, 0.10));
+  border-radius: var(--a4-radius-s);
+  background: linear-gradient(135deg, var(--a4-accent-soft), var(--a4-info-bg));
   box-shadow: inset 0 0 0 1px var(--a4-line);
 }
-.a4-node-icon:hover { box-shadow: inset 0 0 0 1px var(--a4-orange); }
+.a4-node-icon:hover { box-shadow: inset 0 0 0 1px var(--a4-accent); }
 .a4-node-heading {
   flex: 1 1 260px;
   min-width: 0;
@@ -692,8 +716,8 @@ span.classattribute-description {
   font-size: 11.5px; font-weight: 600; line-height: 1.6; color: var(--a4-muted);
   background: var(--a4-soft); box-shadow: inset 0 0 0 1px var(--a4-line);
 }
-.a4-badge-class { color: var(--a4-orange-dark); background: var(--a4-orange-soft); box-shadow: none; }
-.a4-badge-warn { color: #9a5b00; background: rgba(230, 160, 20, 0.16); box-shadow: none; }
+.a4-badge-class { color: var(--a4-accent-text); background-color: var(--a4-accent-soft); box-shadow: none; }
+.a4-badge-warn { color: var(--a4-warn); background-color: var(--a4-warn-bg); box-shadow: none; }
 
 /* the actions, on the title's row (wrapping under it on narrow windows) */
 .controlbar.a4-node-actions {
@@ -717,15 +741,15 @@ span.classattribute-description {
   font-size: 13px;
 }
 .controlbar.a4-node-actions .block select { padding: 0 8px; }
-input.button.a4-danger:hover { border-color: #c2410c; color: #c2410c; background-color: #fff5f0; }
+input.button.a4-danger:hover { border-color: var(--a4-bad); color: var(--a4-bad); background-color: var(--a4-bad-bg); }
 .a4-node-links { display: flex; align-items: center; gap: 4px; }
 .a4-node-links .versions { display: inline-flex; margin: 0; }
 :where(.a4-node-links) .a4-icon-button {
   display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px;
-  border-radius: var(--a4-radius-s); color: var(--a4-muted); background: #fff; background-image: none;
-  box-shadow: inset 0 0 0 1px #c9ced6; padding: 0;
+  border-radius: var(--a4-radius-s); color: var(--a4-muted); background-color: var(--a4-card); background-image: none;
+  box-shadow: inset 0 0 0 1px var(--a4-line-strong); padding: 0;
 }
-:where(.a4-node-links) .a4-icon-button:hover { color: var(--a4-orange-dark); box-shadow: inset 0 0 0 1px var(--a4-orange); }
+:where(.a4-node-links) .a4-icon-button:hover { color: var(--a4-accent-text); box-shadow: inset 0 0 0 1px var(--a4-accent); }
 
 /* one quiet meta line */
 p.context-information.a4-node-meta,
@@ -733,27 +757,27 @@ div.context-information.a4-node-meta {
   display: flex; flex-wrap: wrap; align-items: center; gap: 2px 0;
   margin: 0 0 10px; padding: 0; font-size: 12.5px; color: var(--a4-muted);
 }
-.a4-node-meta > * + *::before { content: "\00b7"; margin: 0 8px; color: #b6bcc6; }
+.a4-node-meta > * + *::before { content: "\00b7"; margin: 0 8px; color: var(--a4-muted); }
 .a4-node-meta button.a4-copy {
   margin: 0; padding: 0; border: 0; background: none; font: inherit; color: inherit; cursor: copy;
-  border-bottom: 1px dashed #b6bcc6;
+  border-bottom: 1px dashed var(--a4-line-strong);
 }
-.a4-node-meta button.a4-copy:hover { color: var(--a4-ink); border-bottom-color: var(--a4-orange); }
-.a4-node-meta button.a4-copied { color: #1e7a4f; border-bottom-color: #228b5e; }
+.a4-node-meta button.a4-copy:hover { color: var(--a4-ink); border-bottom-color: var(--a4-accent); }
+.a4-node-meta button.a4-copied { color: var(--a4-ok); border-bottom-color: var(--a4-ok); }
 .a4-node-meta button.a4-copied::after { content: " \2713"; }
 .a4-node-langs { display: inline-flex; gap: 4px; }
 :where(.a4-node-langs) .a4-node-lang { display: inline-flex; padding: 2px; border-radius: 4px; opacity: .55; }
 :where(.a4-node-langs) .a4-node-lang.a4-current,
-:where(.a4-node-langs) .a4-node-lang:hover { opacity: 1; box-shadow: 0 0 0 1px var(--a4-orange); }
+:where(.a4-node-langs) .a4-node-lang:hover { opacity: 1; box-shadow: 0 0 0 1px var(--a4-accent); }
 
 /* the tabs as a quiet segmented row, the open panel as a soft card under it */
-.a4-node-tabs ul.tabs { display: flex; flex-wrap: wrap; gap: 2px; margin: 0 0 8px; padding: 3px; border-radius: 10px; background: var(--a4-soft); box-shadow: inset 0 0 0 1px var(--a4-line); }
+.a4-node-tabs ul.tabs { display: flex; flex-wrap: wrap; gap: 2px; margin: 0 0 8px; padding: 3px; border-radius: var(--a4-radius-s); background-color: var(--a4-soft); box-shadow: inset 0 0 0 1px var(--a4-line); }
 .a4-node-tabs ul.tabs li { float: none; margin: 0; }
 .a4-node-tabs ul.tabs li a,
 .a4-node-tabs ul.tabs li span.disabled { display: inline-block; padding: 4px 10px; font-size: 13px; }
 .a4-node-tabs ul.tabs li.selected a,
-.a4-node-tabs ul.tabs li.selected span.disabled { background-color: #fff; box-shadow: 0 1px 2px rgba(16, 24, 40, 0.08), inset 0 0 0 1px var(--a4-line); color: var(--a4-orange-dark); }
-.a4-node-tabs .tabs-content { border-radius: 12px; }
+.a4-node-tabs ul.tabs li.selected span.disabled { background-color: var(--a4-card); box-shadow: var(--a4-shadow-s), inset 0 0 0 1px var(--a4-line); color: var(--a4-accent-text); }
+.a4-node-tabs .tabs-content { border-radius: var(--a4-radius-s); }
 .a4-node-children { margin-top: 4px; }
 /* the node view needs no rules between its parts: spacing separates them (the base drew a dashed line above the
    tabs, a line under the closed tab panel, and a dashed line above the sub items) */
@@ -776,13 +800,12 @@ body.a4-login-page {
   margin: 0;
   min-height: 100vh;
   min-height: 100dvh;
-  background: var(--a4-login-bg, #fff);
+  background-color: var(--a4-surface);
   color: var(--a4-ink);
   font: 15px/1.5 var(--a4-font);
   text-shadow: none;
 }
-html[data-a4-theme="dark"] body.a4-login-page { --a4-login-bg: #141922; --a4-ink: #e8ebf0; --a4-muted: #9aa3b2; --a4-line: #2b3240; }
-html:has(body.a4-login-page) { background: var(--a4-login-bg, #fff); }
+html:has(body.a4-login-page) { background: var(--a4-surface); }
 .a4-login { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-height: 100vh; min-height: 100dvh; }
 .a4-login-side { display: flex; flex-direction: column; padding: 24px 32px; }
 .a4-login-top { flex: 0 0 auto; }
@@ -802,10 +825,9 @@ html[data-a4-theme="dark"] .a4-login-logo { background-image: url('../images/3/l
 .a4-login-sub { margin: 0 0 26px; text-align: center; color: var(--a4-muted); font-size: 14px; }
 
 .a4-login-alert.message-warning {
-  margin: 0 0 18px; padding: 12px 14px; border: 1px solid rgba(194, 65, 12, 0.35); border-radius: 10px;
-  background: #fff5f0; color: #7c2d12; font-size: 14px;
+  margin: 0 0 18px; padding: 12px 14px; border: 1px solid var(--a4-warn-line); border-radius: var(--a4-radius-s);
+  background-color: var(--a4-warn-bg); color: var(--a4-warn); font-size: 14px;
 }
-html[data-a4-theme="dark"] .a4-login-alert.message-warning { background: rgba(194, 65, 12, 0.14); color: #fdba74; }
 .a4-login-alert p { margin: 0; }
 .a4-login-alert p + p { margin-top: 4px; }
 .a4-login-alert-title { font-weight: 700; }
@@ -814,53 +836,51 @@ html[data-a4-theme="dark"] .a4-login-alert.message-warning { background: rgba(19
 .a4-field-label { display: block; margin: 0 0 6px; font-size: 14px; font-weight: 600; color: var(--a4-ink); }
 .a4-field-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin-top: 16px; }
 .a4-field-head .a4-field-label { margin-bottom: 6px; }
-.a4-login-forgot { font-size: 13px; color: var(--a4-orange-dark); text-decoration: none; }
+.a4-login-forgot { font-size: 13px; color: var(--a4-accent-text); text-decoration: none; }
 .a4-login-forgot:hover { text-decoration: underline; }
 .a4-login-form #logintext, .a4-login-form #passwordtext {   /* by id: the old login stylesheet styles them by id */
   box-shadow: none; outline: none;
   box-sizing: border-box; width: 100%; height: 46px; margin: 0; padding: 0 14px;
-  border: 1px solid #c9ced6; border-radius: 10px; background: #fff; color: #1f2430;
+  border: 1px solid var(--a4-field-line); border-radius: var(--a4-radius-s); background-color: var(--a4-field); color: var(--a4-ink);
   font: 16px/1.2 var(--a4-font); transition: border-color .15s ease, box-shadow .15s ease;
 }
-html[data-a4-theme="dark"] .a4-login-form #logintext, html[data-a4-theme="dark"] .a4-login-form #passwordtext { background: #1c2230; color: #e8ebf0; border-color: #364055; }
-.a4-login-form #logintext:focus, .a4-login-form #passwordtext:focus { outline: none; border-color: var(--a4-orange); box-shadow: 0 0 0 3px rgba(242, 106, 33, 0.22); }
+.a4-login-form #logintext:focus, .a4-login-form #passwordtext:focus { outline: none; border-color: var(--a4-accent); box-shadow: 0 0 0 3px var(--a4-ring); }
 .a4-field-wrap { position: relative; }
 .a4-field-wrap #passwordtext { padding-right: 48px; }
 .a4-reveal {
   position: absolute; top: 3px; right: 3px; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center;
-  margin: 0; padding: 0; border: 0; border-radius: 8px; background: transparent; color: var(--a4-muted); cursor: pointer;
+  margin: 0; padding: 0; border: 0; border-radius: var(--a4-radius-s); background: transparent; color: var(--a4-muted); cursor: pointer;
 }
-.a4-reveal:hover { color: var(--a4-ink); background: rgba(16, 24, 40, 0.05); }
-.a4-reveal:focus-visible { outline: 3px solid rgba(242, 106, 33, 0.35); outline-offset: 0; }
+.a4-reveal:hover { color: var(--a4-ink); background-color: var(--a4-soft); }
+.a4-reveal:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 0; }
 .a4-reveal .a4-eye-off { display: none; }
 .a4-reveal[aria-pressed="true"] .a4-eye { display: none; }
 .a4-reveal[aria-pressed="true"] .a4-eye-off { display: inline; }
 .a4-check { display: flex; align-items: center; gap: 10px; margin: 16px 0 0; font-size: 14px; font-weight: 500; color: var(--a4-ink); cursor: pointer; }
-.a4-check input { width: 18px; height: 18px; margin: 0; accent-color: var(--a4-orange); }
+.a4-check input { width: 18px; height: 18px; margin: 0; accent-color: var(--a4-accent-strong); }
 .a4-login-note { margin: 14px 0 0; font-size: 13px; color: var(--a4-muted); }
 .a4-login-form #loginbutton {
   box-sizing: border-box; width: 100%; height: 48px; margin: 22px 0 0; padding: 0 16px;
-  border: 0; border-radius: 10px; background: var(--a4-orange); color: #fff;
-  font: 600 16px/1 var(--a4-font); cursor: pointer; box-shadow: 0 6px 16px rgba(242, 106, 33, 0.26);
+  border: 0; border-radius: var(--a4-radius-s); background-color: var(--a4-accent-strong); color: var(--a4-on-accent);
+  font: 600 16px/1 var(--a4-font); cursor: pointer; box-shadow: 0 6px 16px var(--a4-accent-soft);
   transition: background-color .15s ease, box-shadow .15s ease;
 }
-.a4-login-form #loginbutton:hover { background: var(--a4-orange-dark); }
-.a4-login-form #loginbutton:focus-visible { outline: 3px solid rgba(242, 106, 33, 0.4); outline-offset: 2px; }
+.a4-login-form #loginbutton:hover { background-color: var(--a4-accent-hover); }
+.a4-login-form #loginbutton:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
 .a4-login-form #loginbutton.a4-busy { opacity: .75; cursor: progress; pointer-events: none; }
 .a4-login-alt { margin: 18px 0 0; text-align: center; font-size: 14px; color: var(--a4-muted); }
-.a4-login-alt a { color: var(--a4-orange-dark); font-weight: 600; text-decoration: none; }
+.a4-login-alt a { color: var(--a4-accent-text); font-weight: 600; text-decoration: none; }
 
 /* the brand panel: the wizard's orange, a quiet pattern, one line of text */
 .a4-login-brand {
   position: relative; overflow: hidden; display: flex; align-items: center; padding: 48px 64px;
-  color: #fff;
+  color: var(--a4-on-accent);
   background:
-    repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.07) 0 2px, transparent 2px 9px),
-    radial-gradient(900px 600px at 80% 20%, #ff8a3d 0%, transparent 60%),
-    linear-gradient(160deg, #f26a21 0%, #d9561a 100%);
+    repeating-linear-gradient(135deg, var(--a4-accent-soft) 0 2px, transparent 2px 9px),
+    linear-gradient(160deg, var(--a4-accent) 0%, var(--a4-accent-strong) 100%);
 }
 .a4-login-brand-inner { max-width: 440px; }
-.a4-login-brand-kicker { margin: 0 0 12px; font: 600 13px/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing: .04em; opacity: .9; }
+.a4-login-brand-kicker { margin: 0 0 12px; font: 600 13px/1.4 var(--a4-mono); letter-spacing: .04em; opacity: .9; }
 .a4-login-brand-title { margin: 0 0 12px; font-size: 32px; line-height: 1.15; font-weight: 700; letter-spacing: -.01em; }
 .a4-login-brand-sub { margin: 0; font-size: 15px; opacity: .9; }
 
@@ -895,10 +915,10 @@ html[data-a4-theme="dark"] .a4-login-form #logintext, html[data-a4-theme="dark"]
   z-index: 60;
 }
 #controlbar-top .box-bc {
-  background-color: rgba(246, 247, 249, 0.94);
+  background-color: var(--a4-soft);
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
-  box-shadow: inset 0 0 0 1px var(--a4-line), 0 8px 20px rgba(16, 24, 40, 0.10);
+  box-shadow: inset 0 0 0 1px var(--a4-line), var(--a4-shadow-m);
 }
 
 /* The edit form's button bar: one slim line. It was a box in a box in a box (the generic control-bar panel,
@@ -912,7 +932,7 @@ html[data-a4-theme="dark"] .a4-login-form #logintext, html[data-a4-theme="dark"]
 }
 #controlbar-top .box-bc {
   padding: 6px 8px;
-  border-radius: 12px;
+  border-radius: var(--a4-radius-s);
 }
 #controlbar-top .box-bc .box-ml {
   margin: 0;
@@ -954,7 +974,7 @@ html[data-a4-theme="dark"] .a4-login-form #logintext, html[data-a4-theme="dark"]
   }
   #maincontent {
     padding: 14px 12px 16px;
-    border-radius: 14px;
+    border-radius: var(--a4-radius);
   }
   h1.context-title { font-size: 1.2em; }
   #maincontent fieldset { padding: 8px 8px 10px; margin-left: 0; margin-right: 0; }
@@ -987,7 +1007,7 @@ html[data-a4-theme="dark"] .a4-login-form #logintext, html[data-a4-theme="dark"]
 #maincontent .controlbar.a4-edit-bar-bottom {
   margin: 14px 0 0;
   padding: 6px 8px;
-  border-radius: 12px;
+  border-radius: var(--a4-radius-s);
 }
 .a4-edit-bar-bottom .block {
   display: flex;
@@ -1070,12 +1090,9 @@ html[data-a4-theme="dark"] .a4-login-form #logintext, html[data-a4-theme="dark"]
 /* ---- Change password (user/password.tpl, design:javascript/exp_password_field.js) ------------------------------
    One card: current password, the new one with its checklist and strength, the confirmation. Errors inline and in
    a summary. The controls the script brings (show / hide, meter, match, Generate) are hidden in the markup until it
-   runs. Text colours meet WCAG AA (4.5:1) on the white card: the accent for text and the button is a darker orange
-   than the frame's (#d9561a is 3.6:1 on white). The card is white in both modes (the dark mode darkens the page
-   around the cards), so the same colours hold in both; the fields and lines follow the frame's tokens. */
-.a4pw { --a4pw-accent: #c2410c; --a4pw-accent-hover: #9a3412; --a4pw-ok: #166534; --a4pw-ok-bg: #e7f5ea;
-        --a4pw-bad: #b91c1c; --a4pw-bad-bg: #fdecec; --a4pw-field: #fff; --a4pw-field-line: #8a93a3;
-        max-width: 40rem; color: var(--a4-ink); font-family: var(--a4-font); }
+   runs. Colours are the shared tokens (components.css), which meet WCAG AA (4.5:1) in both modes: the accent as
+   text (--a4-accent-text), the button in --a4-accent-strong. */
+.a4pw { max-width: 40rem; color: var(--a4-ink); font-family: var(--a4-font); }
 .a4pw *, .a4pw *::before, .a4pw *::after { box-sizing: border-box; }
 .a4pw [hidden] { display: none !important; }
 .a4pw h1, .a4pw h2 { margin: 0; padding: 0; border: 0; background: none; color: inherit; }
@@ -1083,7 +1100,7 @@ html[data-a4-theme="dark"] .a4-login-form #logintext, html[data-a4-theme="dark"]
 .a4pw-head h1 { font-size: 1.5em; line-height: 1.2; font-weight: 700; }
 .a4pw-head p { margin: 4px 0 0; color: var(--a4-muted); }
 
-.a4pw-card { margin: 0; padding: 20px; border: 1px solid var(--a4-line); border-radius: 14px; background: var(--a4-card-bg, #fff); }
+.a4pw-card { margin: 0; padding: 20px; border: 1px solid var(--a4-line); border-radius: var(--a4-radius); background-color: var(--a4-card); }
 .a4pw-username { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); border: 0; opacity: 0; }
 .a4pw-sr { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
@@ -1093,82 +1110,82 @@ html[data-a4-theme="dark"] .a4-login-form #logintext, html[data-a4-theme="dark"]
 .a4pw-input { position: relative; display: flex; align-items: stretch; }
 .a4pw-input input {
   flex: 1 1 auto; min-width: 0; width: 100%; height: 44px; margin: 0; padding: 0 12px;
-  border: 1px solid var(--a4pw-field-line); border-radius: 10px; background: var(--a4pw-field); color: var(--a4-ink);
+  border: 1px solid var(--a4-field-line); border-radius: var(--a4-radius-s); background-color: var(--a4-field); color: var(--a4-ink);
   font: 16px/1.2 var(--a4-font); box-shadow: none;
 }
 .exp-pw-js .a4pw-input input { padding-right: 92px; }
-.a4pw-input input:focus { outline: none; border-color: var(--a4pw-accent); box-shadow: 0 0 0 3px rgba(194, 65, 12, 0.25); }
-.a4pw-field.invalid .a4pw-input input { border-color: var(--a4pw-bad); border-width: 2px; padding-left: 11px; }
+.a4pw-input input:focus { outline: none; border-color: var(--a4-accent); box-shadow: 0 0 0 3px var(--a4-ring); }
+.a4pw-field.invalid .a4pw-input input { border-color: var(--a4-bad); border-width: 2px; padding-left: 11px; }
 .a4pw-toggle {
   position: absolute; top: 4px; right: 4px; bottom: 4px; display: inline-flex; align-items: center; gap: 6px;
-  margin: 0; padding: 0 10px; border: 1px solid transparent; border-radius: 7px; background: transparent;
+  margin: 0; padding: 0 10px; border: 1px solid transparent; border-radius: var(--a4-radius-s); background: transparent;
   color: var(--a4-muted); font: 600 13px/1 var(--a4-font); cursor: pointer;
 }
 .a4pw-toggle:hover { background: var(--a4-soft); color: var(--a4-ink); }
-.a4pw-toggle:focus-visible { outline: 3px solid rgba(194, 65, 12, 0.45); outline-offset: 0; }
+.a4pw-toggle:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 0; }
 .a4pw-toggle[aria-pressed="true"] { background: var(--a4-soft); border-color: var(--a4-line); color: var(--a4-ink); }
 .a4pw-toggle .a4pw-eye-off, .a4pw-toggle[aria-pressed="true"] .a4pw-eye { display: none; }
 .a4pw-toggle[aria-pressed="true"] .a4pw-eye-off { display: inline; }
 
-.a4pw-link { margin: 0 0 6px; padding: 2px 0; border: 0; background: none; color: var(--a4pw-accent); font: 600 13px/1.3 var(--a4-font); text-decoration: underline; text-underline-offset: 2px; cursor: pointer; }
-.a4pw-link:hover { color: var(--a4pw-accent-hover); }
+.a4pw-link { margin: 0 0 6px; padding: 2px 0; border: 0; background: none; color: var(--a4-accent-text); font: 600 13px/1.3 var(--a4-font); text-decoration: underline; text-underline-offset: 2px; cursor: pointer; }
+.a4pw-link:hover { color: var(--a4-ink); }
 
-.a4pw-error { margin: 6px 0 0; color: var(--a4pw-bad); font-size: 14px; font-weight: 600; }
+.a4pw-error { margin: 6px 0 0; color: var(--a4-bad); font-size: 14px; font-weight: 600; }
 .a4pw-error span { display: block; }
 .a4pw-error span::before { content: "! "; }
 
 .a4pw-meter { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; margin: 10px 0 0; font-size: 13px; color: var(--a4-muted); }
 .a4pw-meter-bar { display: inline-grid; grid-template-columns: repeat(5, 1fr); gap: 4px; width: 12rem; max-width: 100%; }
-.a4pw-meter-bar span { height: 6px; border-radius: 3px; background: var(--a4-line); }
-.a4pw-meter[data-score="0"] .a4pw-meter-bar span:nth-child(-n+1) { background: #b91c1c; }
-.a4pw-meter[data-score="1"] .a4pw-meter-bar span:nth-child(-n+2) { background: #c2410c; }
-.a4pw-meter[data-score="2"] .a4pw-meter-bar span:nth-child(-n+3) { background: #a16207; }
-.a4pw-meter[data-score="3"] .a4pw-meter-bar span:nth-child(-n+4) { background: #4d7c0f; }
-.a4pw-meter[data-score="4"] .a4pw-meter-bar span { background: #166534; }
+.a4pw-meter-bar span { height: 6px; border-radius: var(--a4-radius-s); background-color: var(--a4-line); }
+.a4pw-meter[data-score="0"] .a4pw-meter-bar span:nth-child(-n+1) { background-color: var(--a4-bad); }
+.a4pw-meter[data-score="1"] .a4pw-meter-bar span:nth-child(-n+2) { background-color: var(--a4-accent-strong); }
+.a4pw-meter[data-score="2"] .a4pw-meter-bar span:nth-child(-n+3) { background-color: var(--a4-warn); }
+.a4pw-meter[data-score="3"] .a4pw-meter-bar span:nth-child(-n+4) { background-color: var(--a4-chart-3); }
+.a4pw-meter[data-score="4"] .a4pw-meter-bar span { background-color: var(--a4-ok); }
 .a4pw-meter-label b { color: var(--a4-ink); }
 .a4pw-meter:not([data-score]) .a4pw-meter-label, .a4pw-meter[data-score=""] .a4pw-meter-label { visibility: hidden; }
 
 .a4pw-rules-title { margin: 12px 0 4px; font-size: 13px; font-weight: 650; color: var(--a4-muted); }
 .a4pw-rules { margin: 0; padding: 0; list-style: none; font-size: 14px; }
 .a4pw-rules li { display: flex; align-items: flex-start; gap: 8px; margin: 3px 0; padding: 0; color: var(--a4-ink); background: none; }
-.a4pw-rule-icon { flex: 0 0 auto; width: 16px; height: 16px; margin-top: 2px; border: 2px solid var(--a4pw-field-line); border-radius: 50%; }
-.a4pw-rules li[data-state="met"] { color: var(--a4pw-ok); }
-.a4pw-rules li[data-state="met"] .a4pw-rule-icon { border-color: var(--a4pw-ok); background: var(--a4pw-ok) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.3l2.6 2.6L12 5.5' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 12px no-repeat; }
-.a4pw-rules li[data-state="unmet"] .a4pw-rule-icon { border-color: var(--a4pw-field-line); }
-.a4pw-field.invalid .a4pw-rules li[data-state="unmet"] { color: var(--a4pw-bad); }
-.a4pw-field.invalid .a4pw-rules li[data-state="unmet"] .a4pw-rule-icon { border-color: var(--a4pw-bad); }
-.a4pw-rules li[data-failed="true"]:not([data-state="met"]) { color: var(--a4pw-bad); font-weight: 600; }
-.a4pw-rules li[data-failed="true"]:not([data-state="met"]) .a4pw-rule-icon { border-color: var(--a4pw-bad); }
+.a4pw-rule-icon { flex: 0 0 auto; width: 16px; height: 16px; margin-top: 2px; border: 2px solid var(--a4-field-line); border-radius: 50%; }
+.a4pw-rules li[data-state="met"] { color: var(--a4-ok); }
+.a4pw-rules li[data-state="met"] .a4pw-rule-icon { border-color: var(--a4-ok); background: var(--a4-ok) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.3l2.6 2.6L12 5.5' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 12px no-repeat; }
+.a4pw-rules li[data-state="unmet"] .a4pw-rule-icon { border-color: var(--a4-field-line); }
+.a4pw-field.invalid .a4pw-rules li[data-state="unmet"] { color: var(--a4-bad); }
+.a4pw-field.invalid .a4pw-rules li[data-state="unmet"] .a4pw-rule-icon { border-color: var(--a4-bad); }
+.a4pw-rules li[data-failed="true"]:not([data-state="met"]) { color: var(--a4-bad); font-weight: 600; }
+.a4pw-rules li[data-failed="true"]:not([data-state="met"]) .a4pw-rule-icon { border-color: var(--a4-bad); }
 
 .a4pw-match { margin: 6px 0 0; font-size: 14px; font-weight: 600; }
-.a4pw-match[data-state="match"] { color: var(--a4pw-ok); }
+.a4pw-match[data-state="match"] { color: var(--a4-ok); }
 .a4pw-match[data-state="match"]::before { content: "\2713  "; }
 .a4pw-match[data-state="nomatch"] { color: var(--a4-muted); }
-.a4pw-status { margin: 0 0 16px; padding: 10px 12px; border-radius: 10px; background: var(--a4-soft); color: var(--a4-ink); font-size: 14px; }
+.a4pw-status { margin: 0 0 16px; padding: 10px 12px; border-radius: var(--a4-radius-s); background-color: var(--a4-soft); color: var(--a4-ink); font-size: 14px; }
 
 .a4pw-actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 4px 0 0; padding: 16px 0 0; border-top: 1px solid var(--a4-line); }
 .a4pw-btn {
   display: inline-flex; align-items: center; justify-content: center; min-height: 44px; margin: 0; padding: 0 18px;
-  border: 1px solid var(--a4pw-field-line); border-radius: 10px; background: var(--a4-card-bg, #fff); color: var(--a4-ink);
+  border: 1px solid var(--a4-field-line); border-radius: var(--a4-radius-s); background-color: var(--a4-card); color: var(--a4-ink);
   font: 600 15px/1.2 var(--a4-font); text-decoration: none; cursor: pointer; text-shadow: none;
 }
 .a4pw a.a4pw-btn { color: var(--a4-ink); }
-.a4pw-btn:hover { border-color: var(--a4pw-accent); }
-.a4pw-btn:focus-visible { outline: 3px solid rgba(194, 65, 12, 0.45); outline-offset: 2px; }
-.a4pw-btn.primary, .a4pw a.a4pw-btn.primary { background: var(--a4pw-accent); border-color: var(--a4pw-accent); color: #fff; }
-.a4pw-btn.primary:hover, .a4pw a.a4pw-btn.primary:hover { background: var(--a4pw-accent-hover); border-color: var(--a4pw-accent-hover); color: #fff; }
+.a4pw-btn:hover { border-color: var(--a4-accent); }
+.a4pw-btn:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
+.a4pw-btn.primary, .a4pw a.a4pw-btn.primary { background-color: var(--a4-accent-strong); border-color: var(--a4-accent-strong); color: var(--a4-on-accent); }
+.a4pw-btn.primary:hover, .a4pw a.a4pw-btn.primary:hover { background-color: var(--a4-accent-hover); border-color: var(--a4-accent-hover); color: var(--a4-on-accent); }
 
-.a4pw-summary { margin: 0 0 16px; padding: 14px 16px; border: 1px solid #f1b4b4; border-left: 4px solid var(--a4pw-bad); border-radius: 10px; background: var(--a4pw-bad-bg); color: #7f1d1d; }
-.a4pw-summary:focus { outline: 3px solid rgba(185, 28, 28, 0.35); outline-offset: 2px; }
-.a4pw-summary h2 { font-size: 16px; font-weight: 700; color: #7f1d1d; }
+.a4pw-summary { margin: 0 0 16px; padding: 14px 16px; border: 1px solid var(--a4-bad-line); border-left: 4px solid var(--a4-bad); border-radius: var(--a4-radius-s); background-color: var(--a4-bad-bg); color: var(--a4-bad); }
+.a4pw-summary:focus { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
+.a4pw-summary h2 { font-size: 16px; font-weight: 700; color: var(--a4-bad); }
 .a4pw-summary ul { margin: 6px 0 0; padding: 0 0 0 20px; }
 .a4pw-summary li { margin: 2px 0; }
-.a4pw .a4pw-summary a { color: #7f1d1d; text-decoration: underline; font-weight: 600; }
+.a4pw .a4pw-summary a { color: var(--a4-bad); text-decoration: underline; font-weight: 600; }
 
-.a4pw-done { display: flex; gap: 14px; align-items: flex-start; padding: 18px 20px; border: 1px solid #b7dfc1; border-radius: 14px; background: var(--a4pw-ok-bg); color: #14532d; }
-.a4pw-done:focus { outline: 3px solid rgba(22, 101, 52, 0.3); outline-offset: 2px; }
-.a4pw-done-icon { flex: 0 0 auto; color: var(--a4pw-ok); }
-.a4pw-done h2 { font-size: 18px; font-weight: 700; color: #14532d; }
+.a4pw-done { display: flex; gap: 14px; align-items: flex-start; padding: 18px 20px; border: 1px solid var(--a4-ok-line); border-radius: var(--a4-radius); background-color: var(--a4-ok-bg); color: var(--a4-ok); }
+.a4pw-done:focus { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
+.a4pw-done-icon { flex: 0 0 auto; color: var(--a4-ok); }
+.a4pw-done h2 { font-size: 18px; font-weight: 700; color: var(--a4-ok); }
 .a4pw-done p { margin: 6px 0 0; }
 .a4pw-done-actions { padding-top: 6px; }
 
@@ -1178,3 +1195,40 @@ html[data-a4-theme="dark"] .a4-login-form #logintext, html[data-a4-theme="dark"]
   .a4pw-btn { flex: 1 1 auto; }
   .exp-pw-js .a4pw-input input { padding-right: 84px; }
 }
+
+/* ---- Compatibility: Exponential UI (expui) in admin4's tokens ----------------------------------------------------
+   expui's components take their colours from --exp-* (exp/core.css, on :root) and the tables from --exp-dt-*
+   (exp/datatable.css, on .exp-dt); both load after this file, so html in front of their own selectors gives these
+   one more element of weight. Mapped to the --a4-* tokens, they follow the light and dark mode with the rest. The
+   table's buttons, menu, pager and dialog had white painted in: the same selectors, the tokens. */
+html:root {
+  --exp-ink: var(--a4-ink); --exp-muted: var(--a4-muted); --exp-faint: var(--a4-disabled); --exp-line: var(--a4-line);
+  --exp-soft: var(--a4-soft); --exp-card: var(--a4-card);
+  --exp-accent: var(--a4-accent); --exp-accent-dark: var(--a4-accent-hover); --exp-accent-ring: var(--a4-ring);
+  --exp-ok: var(--a4-ok); --exp-ok-bg: var(--a4-ok-bg); --exp-warn: var(--a4-warn); --exp-warn-bg: var(--a4-warn-bg);
+  --exp-bad: var(--a4-bad); --exp-bad-bg: var(--a4-bad-bg); --exp-info: var(--a4-info); --exp-info-bg: var(--a4-info-bg);
+  --exp-shadow: var(--a4-shadow-s); --exp-shadow-up: var(--a4-shadow-m); --exp-mono: var(--a4-mono);
+}
+html .exp-dt, html .exp-dt-actions, html .exp-dt-pager, html .exp-dt-dialog {
+  --exp-dt-head: var(--a4-soft); --exp-dt-head-sortable: var(--a4-soft); --exp-dt-head-sorted: var(--a4-accent-soft);
+  --exp-dt-head-ink: var(--a4-ink); --exp-dt-head-line: var(--a4-line); --exp-dt-row: var(--a4-surface);
+  --exp-dt-row-alt: var(--a4-soft); --exp-dt-row-hover: var(--a4-info-bg); --exp-dt-line: var(--a4-line);
+  --exp-dt-link: var(--a4-accent-text); --exp-dt-button-ink: var(--a4-accent-text); --exp-dt-button-line: var(--a4-line-strong);
+  --exp-dt-button-hover: var(--a4-field-line); --exp-dt-disabled: var(--a4-disabled); --exp-dt-panel: var(--a4-soft);
+  --exp-dt-frame: var(--a4-line-strong);
+}
+html .exp-dt-action { background-color: var(--a4-card); background-image: none; color: var(--a4-ink); text-shadow: none; }
+html .exp-dt-button { background-color: var(--a4-soft); }
+html .exp-dt-button:disabled { color: var(--a4-disabled); }
+html .exp-dt-menu { border-color: var(--a4-line-strong); background-color: var(--a4-card); }
+html .exp-dt-menu-group { color: var(--a4-muted); }
+html .exp-dt-menu [role=menuitem] { color: var(--a4-ink); }
+html .exp-dt-first, html .exp-dt-prev, html .exp-dt-next, html .exp-dt-last {
+  background-color: var(--a4-card); background-image: none; color: var(--a4-ink);
+}
+html .exp-dt-first:disabled, html .exp-dt-prev:disabled, html .exp-dt-next:disabled, html .exp-dt-last:disabled {
+  background-color: var(--a4-soft); background-image: none;
+}
+html .exp-dt-page { border-color: var(--a4-line); background-color: var(--a4-card); }
+html .exp-dt-dialog { color: var(--a4-ink); }
+html .exp-dt-dialog-title { background-color: var(--a4-soft); background-image: none; color: var(--a4-ink); }

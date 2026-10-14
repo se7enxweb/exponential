@@ -64,7 +64,7 @@
 
 .loginpage .ezusernavigationpart #columns  #maincontent
 {
-    background:white;
+    background:var(--a4-surface);
     margin-top: 20px;
     margin-bottom: 20px;
     box-shadow: 0 0 5px black;
@@ -87,7 +87,7 @@
 
 #header-topmenu ul li a, #header-topmenu ul li span.disabled
 {
-    color: #B7B7B7;
+    color: var(--a4-disabled);
     text-shadow: -1px -1px 1px black;
     font-size: 1.1em;
     text-decoration: underline;
@@ -96,7 +96,7 @@
 #header-topmenu ul li span.disabled,
 #searchtext.disabled {
     background: transparent url(../../images/3/diagonal_pattern.png) repeat center left;
-    color: #444;
+    color: var(--a4-ink);
     text-shadow: none;
     text-decoration: none;
 }
@@ -110,7 +110,7 @@ ul.tabs li a, ul.tabs li span.disabled
 
 ul.tabs li a:hover
 {
-    color:black;
+    color:var(--a4-ink);
 }
 
 #header-topmenu ul li.selected a, ul.tabs li.selected a
@@ -123,13 +123,13 @@ ul.tabs li a:hover
 
 .tab-content
 {
-    border: 1px solid #ccc;
-    background-color: #f5f5f5;
+    border: 1px solid var(--a4-line);
+    background-color: var(--a4-soft);
 }
 
 .tabs-content.disabled
 {
-    border-top: 1px solid #ccc;
+    border-top: 1px solid var(--a4-line);
 }
 
 /* CSS Media Query's to adjust layout based on screen width */
@@ -147,7 +147,7 @@ ul.tabs li a:hover
 
 a.show-hide-control:hover
 {
-    border-color: #666;
+    border-color: var(--a4-line-strong);
 }
 
 #leftmenu a.show-hide-control
@@ -189,7 +189,7 @@ a.show-hide-tabs:hover
 .tab-block
 {
     padding-top: 0.8em;
-    border-top: 1px dashed #ddd;
+    border-top: 1px dashed var(--a4-line);
 }
 
 .tab-block .button-left
@@ -214,8 +214,8 @@ a.show-hide-tabs:hover
 
 #controlbar-top .box-bc
 {
-    border: 1px solid #ccc;
-    background: #f4f4f4;
+    border: 1px solid var(--a4-line);
+    background: var(--a4-soft);
     background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fdfdfd), to(#e4e3e4));
     background-image: -moz-linear-gradient(top,  #fdfdfd, #e4e3e4);
     background-image: -ms-linear-gradient(top,  #fdfdfd,  #e4e3e4);
@@ -236,7 +236,7 @@ a.show-hide-tabs:hover
 
 .box-header
 {
-    border-top: 1px dashed #ccc;
+    border-top: 1px dashed var(--a4-line);
     font-size:1.5em;
 }
 .box-header select, .box-header input.button
@@ -287,7 +287,7 @@ p.versions a
 
 p.versions a:hover
 {
-    color:black;
+    color:var(--a4-ink);
 }
 
 
@@ -295,8 +295,8 @@ p.table-preferences
 {
     border-radius: 3px;
     border-bottom-right-radius: 3px;
-    border: 1px solid #CCCCCC;
-    background-color: #f0f0f0;
+    border: 1px solid var(--a4-line);
+    background-color: var(--a4-soft);
     background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fdfdfd), to(#e4e3e4));
     background-image: -moz-linear-gradient(top,  #fdfdfd,  #e4e3e4);
     background-image: -ms-linear-gradient(top,  #fdfdfd,  #e4e3e4);
@@ -307,7 +307,7 @@ p.table-preferences
 
 p.table-preferences > a, p.table-preferences > span
 {
-    border: solid #CCC;
+    border: solid var(--a4-line);
     border-width: 0 1px 0 0;
     padding-right: 1em;
     line-height: 1.5em;
@@ -320,9 +320,9 @@ p.table-preferences :last-child
 
 input.button, input.defaultbutton, input.button-disabled
 {
-    color: #44484d;
-    background: #fff;
-    border: 1px solid #cfd1d3;
+    color: var(--a4-ink);
+    background: var(--a4-surface);
+    border: 1px solid var(--a4-line);
     border-radius: 3px;
     font-size: 1em;
     margin-left: 5px;
@@ -336,12 +336,12 @@ input.button, input.defaultbutton, input.button-disabled
 
 input.defaultbutton, input.button-disabled, input.button[disabled="disabled"]
 {
-    background-color: #f5f5f5;
+    background-color: var(--a4-soft);
 }
 
 input.button:hover, input.button:focus {
     background-color: rgba(0, 0, 0, 0.1);
-    color: black;
+    color: var(--a4-ink);
 }
 
 input.defaultbutton
@@ -367,8 +367,8 @@ input.defaultbutton:active {
 
 input.button-disabled, input.button[disabled="disabled"]
 {
-    color: #999;
-    background: #fff;
+    color: var(--a4-disabled);
+    background: var(--a4-surface);
 
     background-image: url('../../images/3/diagonal_pattern.png');
 
@@ -442,8 +442,8 @@ div.community-activity #feed-elements ul li p
 {
     margin: 1.5em 0 0.5em 0;
     overflow-x: auto;
-    border-top: 1px dashed #ccc;
-    border-bottom: 1px dashed #ccc;
+    border-top: 1px dashed var(--a4-line);
+    border-bottom: 1px dashed var(--a4-line);
     padding-bottom: 1em;
 }
 
@@ -493,8 +493,8 @@ div.pagenavigator span.pages span.other, div.pagenavigator span.pages span.curre
     font-size: 1em;
     margin-left: 1px;
     margin-right: 1px;
-    background-color: #fff;
-    border: 1px solid #CBCBCB;
+    background-color: var(--a4-surface);
+    border: 1px solid var(--a4-line);
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
     border-radius: 2px;
@@ -504,7 +504,7 @@ div.pagenavigator span.pages span.other, div.pagenavigator span.pages span.curre
 
 div.pagenavigator span.pages span.current
 {
-    background-color: #f4f4f4;
+    background-color: var(--a4-soft);
 }
 
 div.alphabetical
@@ -521,7 +521,7 @@ div.alphabetical
 
 #footer-design
 {
-    color:#aaa;
+    color:var(--a4-disabled);
 }
 
 #footer-design a
@@ -541,12 +541,12 @@ table.list th, table.special th
     background-color: #6F6E6B;
     padding-top:0;
     padding-bottom:0;
-    border-left: 1px solid #a9a9a9;
+    border-left: 1px solid var(--a4-line-strong);
 }
 
 #leftmenu-design ul
 {
-    color: #333;
+    color: var(--a4-ink);
 }
 
 .settings .current
@@ -573,7 +573,7 @@ table.list th, table.special th
 
 #ezap-message-publishing h1:before {
     content: "\021BB";
-    color: #555;
+    color: var(--a4-ink);
 }
 
 #ezap-message-finished h1:before, #ezap-message-deferred h1:before {

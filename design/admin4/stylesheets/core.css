@@ -12,7 +12,7 @@ body /* These becomes the initial settings for most other elements */
 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 0.8em;
-    background-color: #ffffff;
+    background-color: var(--a4-surface);
     margin: 0;
     padding: 0;
     height: 100%;
@@ -72,7 +72,7 @@ a
 
 a:hover
 {
-    color: black;
+    color: var(--a4-ink);
     text-decoration: underline;
     cursor: pointer;
 }
@@ -93,10 +93,10 @@ pre, code
 
 pre
 {
-    background-color: #f8f8f8;
+    background-color: var(--a4-soft);
     margin: 1em 0 1em 0;
     padding: 0.2em;
-    border: 1px solid #e0e0e0;
+    border: 1px solid var(--a4-line);
 }
 
 pre.wordwrap /* Style for ensuring long lines in pre field won't break the design; use &nbsp; instead to preserve white-space where desired */
@@ -138,7 +138,7 @@ table
 
 tr
 {
-    background: white;
+    background: var(--a4-surface);
 }
 
 th, td
@@ -189,22 +189,22 @@ table.list td.na-rate, table.special td.na-rate
 {
     text-align: right;
     font-style: italic;
-    color: #C0C0C0;
+    color: var(--a4-disabled);
 }
 
 table.list tr.bglight
 {
-    background-color: #fff;
+    background-color: var(--a4-surface);
 }
 
 table.list tr.bgdark, table.special tr.bgdark
 {
-    background-color: #f5f5f5;
+    background-color: var(--a4-soft);
 }
 
 table.list tr.bglight:hover, table.list tr.bgdark:hover /* This has no effect in IE6 and below */
 {
-    background-color: #e8e8e8;
+    background-color: var(--a4-soft);
 }
 
 table.list img
@@ -346,7 +346,7 @@ input.defaultbutton
 input.button-disabled, input.button[disabled="disabled"]
 {
     cursor: default;
-    color: #888;
+    color: var(--a4-muted);
 }
 
 input.disabled[type="image"]
@@ -372,8 +372,8 @@ td input.halfbox, td textarea.halfbox
 
 fieldset
 {
-    border: 1px solid #CACACA;
-    background-color: #F8F8F8;
+    border: 1px solid var(--a4-line);
+    background-color: var(--a4-soft);
     padding: 0.7em;
     margin: 0em;
 }
@@ -386,7 +386,7 @@ fieldset.block
 legend
 {
     font-weight: bold;
-    color: #000000;
+    color: var(--a4-ink);
     padding: 0 0.35em 0 0.35em;
     font-size:1.1em;
 }
@@ -410,7 +410,7 @@ legend span.long-legend-wrap
 
 fieldset label
 {
-    color: #000000;
+    color: var(--a4-ink);
     font-size:1em;
 }
 
@@ -470,7 +470,7 @@ div.message-feedback h2
 div.message-warning
 {
     border-color: #ff910d;
-    background: #fff;
+    background: var(--a4-surface);
 }
 
 div.message-warning h2
@@ -699,7 +699,7 @@ table.multioption table
 table.multioption th, table.multioption td
 {
     padding:0.35em 0.7em;
-    border: 1px solid #aaa;
+    border: 1px solid var(--a4-line-strong);
     vertical-align: middle;
     text-align: left;
 }
@@ -718,7 +718,7 @@ table.multioption table.options-list th
 {
     padding:0.35em 0.5em;
     vertical-align:middle;
-    background-color: #eee;
+    background-color: var(--a4-soft);
 }
 
 table.multioption div.controlbar div.block

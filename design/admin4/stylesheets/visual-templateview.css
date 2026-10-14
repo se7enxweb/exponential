@@ -9,21 +9,21 @@
     margin: 0.3em 0 1em 0;
 }
 .templateview-fact { display: flex; align-items: center; gap: 0.5em; flex-wrap: wrap; }
-.templateview-fact-label { font-weight: bold; color: #3a4a5c; }
+.templateview-fact-label { font-weight: bold; color: var(--a4-ink); }
 .templateview-fact code { font-size: 0.92em; }
 
-.templateview-hint { margin: 0 0 0.8em 0; color: #6b7785; font-size: 0.92em; }
+.templateview-hint { margin: 0 0 0.8em 0; color: var(--a4-muted); font-size: 0.92em; }
 
 .override-order { margin: 0; padding: 0; list-style: none; }
 .override-card {
     margin: 0 0 0.6em 0;
     padding: 0.6em 0.8em;
-    border: 1px solid #dfe4ea;
-    border-radius: 6px;
-    background: #fff;
+    border: 1px solid var(--a4-line);
+    border-radius: var(--a4-radius-s);
+    background: var(--a4-surface);
     transition: background-color 0.15s, box-shadow 0.15s;
 }
-.override-card:hover { box-shadow: 0 1px 3px rgba(29, 43, 58, 0.08); }
+.override-card:hover { box-shadow: var(--a4-shadow-s); }
 .override-card.is-dragging { opacity: 0.45; border-style: dashed; }
 
 .override-head { display: flex; align-items: center; gap: 0.6em; flex-wrap: wrap; }
@@ -32,7 +32,7 @@
     width: 10px;
     height: 18px;
     cursor: grab;
-    background-image: radial-gradient(circle, #9aa6b3 1.3px, transparent 1.4px);
+    background-image: radial-gradient(circle, var(--a4-line-strong) 1.3px, transparent 1.4px);
     background-size: 5px 5px;
 }
 .override-grip:active { cursor: grabbing; }
@@ -41,15 +41,15 @@
     min-width: 1.9em;
     padding: 0.05em 0.35em;
     border-radius: 3px;
-    background: #e3f1e6;
-    color: #1f5f2c;
+    background-color: var(--a4-ok-bg);
+    color: var(--a4-ok);
     font-weight: bold;
     text-align: center;
 }
-.override-name { font-weight: bold; color: #1d2b3a; font-family: monospace; font-size: 1em; }
+.override-name { font-weight: bold; color: var(--a4-ink); font-family: monospace; font-size: 1em; }
 .override-badge { padding: 0.05em 0.5em; border-radius: 999px; font-size: 0.82em; }
-.override-badge-own { background: #eef2f6; color: #3a4a5c; }
-.override-badge-extension { background: #e6eefa; color: #1f4a7f; }
+.override-badge-own { background-color: var(--a4-soft); color: var(--a4-ink); }
+.override-badge-extension { background-color: var(--a4-info-bg); color: var(--a4-info); }
 
 .override-actions { margin-left: auto; display: flex; align-items: center; gap: 0.6em; }
 .override-actions button {
@@ -57,31 +57,31 @@
     border: 1px solid transparent;
     border-radius: 3px;
     background: transparent;
-    color: #6b7785;
+    color: var(--a4-muted);
     font-size: 1em;
     line-height: 1.5;
     cursor: pointer;
 }
 .override-actions button:hover,
-.override-actions button:focus { border-color: #c5ced8; background: #eef2f6; color: #1d2b3a; }
+.override-actions button:focus { border-color: var(--a4-line-strong); background-color: var(--a4-soft); color: var(--a4-ink); }
 /* The first and last of a page move across to the page before or after,
    when there is one. */
 .override-order:not(.has-previous) .override-card:first-child .override-up,
 .override-order:not(.has-next) .override-card:last-child .override-down { visibility: hidden; }
-.override-remove { font-size: 0.9em; color: #a4262c; white-space: nowrap; }
+.override-remove { font-size: 0.9em; color: var(--a4-bad); white-space: nowrap; }
 
-.override-file { margin: 0.35em 0 0.4em 2.9em; color: #56657a; font-size: 0.9em; word-break: break-all; }
+.override-file { margin: 0.35em 0 0.4em 2.9em; color: var(--a4-muted); font-size: 0.9em; word-break: break-all; }
 .override-conditions { margin-left: 2.9em; }
 .override-condition { display: flex; align-items: center; gap: 0.5em; flex-wrap: wrap; margin: 0.2em 0; }
 .override-condition-key { display: inline-block; min-width: 10em; font-weight: bold; font-family: monospace; }
-.override-condition-remove { font-size: 0.85em; color: #6b7785; }
+.override-condition-remove { font-size: 0.85em; color: var(--a4-muted); }
 .override-condition-new select { min-width: 10.5em; }
-.override-no-conditions { margin: 0.2em 0; color: #6b7785; font-style: italic; }
+.override-no-conditions { margin: 0.2em 0; color: var(--a4-muted); font-style: italic; }
 
 .override-order.is-saving .override-grip { cursor: progress; }
-.override-order-status { margin: 0.2em 0 0.8em 0; min-height: 1.2em; font-size: 0.9em; color: #6b7785; }
-.override-order-status.is-ok { color: #1f5f2c; }
-.override-order-status.is-error { color: #a4262c; font-weight: bold; }
+.override-order-status { margin: 0.2em 0 0.8em 0; min-height: 1.2em; font-size: 0.9em; color: var(--a4-muted); }
+.override-order-status.is-ok { color: var(--a4-ok); }
+.override-order-status.is-error { color: var(--a4-bad); font-weight: bold; }
 
 @media (max-width: 700px) {
     .override-file, .override-conditions { margin-left: 0; }
@@ -92,12 +92,12 @@
 .override-filter { display: flex; align-items: center; gap: 0.6em; flex-wrap: wrap; margin: 0 0 0.7em 0; }
 .override-filter label { font-weight: bold; }
 .override-filter input { max-width: 22em; }
-.override-filter-note { color: #6b7785; font-size: 0.9em; }
+.override-filter-note { color: var(--a4-muted); font-size: 0.9em; }
 .override-order.is-filtered .override-grip,
 .override-order.is-filtered .override-up,
 .override-order.is-filtered .override-down { visibility: hidden; }
 .override-add { margin: 0.25em 0 0 0; }
-.override-add > summary { cursor: pointer; color: #3a6ea5; font-size: 0.9em; }
+.override-add > summary { cursor: pointer; color: var(--a4-accent-text); font-size: 0.9em; }
 
 /* The buttons above the overrides, and the pager. */
 .templateview-topbar { margin: 0 0 0.8em 0; border-radius: 4px; }
