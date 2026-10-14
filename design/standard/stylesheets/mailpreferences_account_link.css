@@ -1,0 +1,37 @@
+/*
+ * The link to the e-mail preference page (mailpreferences/parts/account_link.tpl) on the profile, notification
+ * settings and newsletter pages, in every design. It was inline style="" attributes. Colours come from the
+ * administration's tokens (--a4-*, light and dark) where the page has them; the values after the comma are for the
+ * site designs, which have no tokens.
+ */
+.mp-account-link {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .4em 1em;
+  margin: 0 0 1em;
+  padding: .7em .95em;
+  border: 1px solid var(--a4-info-line, #bcd2f0);
+  border-radius: var(--a4-radius-s, 9px);
+  background-color: var(--a4-info-bg, #e8f0fb);
+  color: var(--a4-info, #1f4a7f);
+}
+.mp-account-link p {
+  flex: 1 1 18em;
+  margin: 0;
+}
+.mp-account-link a.mp-account-link-button {
+  display: inline-block;
+  padding: .4em .95em;
+  border: 1px solid var(--a4-info, #1f4a7f);
+  border-radius: var(--a4-radius-s, 8px);
+  background-color: var(--a4-card, #fff);
+  color: var(--a4-info, #1f4a7f);
+  font-weight: 650;
+  text-decoration: none;
+}
+.mp-account-link a.mp-account-link-button:hover,
+.mp-account-link a.mp-account-link-button:focus {
+  text-decoration: underline;
+}
