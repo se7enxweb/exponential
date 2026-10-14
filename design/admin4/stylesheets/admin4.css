@@ -878,7 +878,8 @@ html[data-a4-theme="dark"] .a4-login-form #loginbutton:hover { color: var(--a4-c
   color: var(--a4-on-accent);
   background:
     repeating-linear-gradient(135deg, var(--a4-accent-soft) 0 2px, transparent 2px 9px),
-    linear-gradient(160deg, var(--a4-accent) 0%, var(--a4-accent-strong) 100%);
+    linear-gradient(160deg, var(--a4-accent-strong) 0%, var(--a4-accent-strong) 100%);
+  background-color: var(--a4-accent-strong);   /* white text on every part of the panel at least 5.2:1 */
 }
 .a4-login-brand-inner { max-width: 440px; }
 .a4-login-brand-kicker { margin: 0 0 12px; font: 600 13px/1.4 var(--a4-mono); letter-spacing: .04em; opacity: .9; }
