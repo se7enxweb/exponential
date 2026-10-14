@@ -12,7 +12,7 @@
 <div class="context-attributes">
 
 <div class="block">
-    <label>{'Name'|i18n( 'design/admin/shop/discountgroupedit' )}:</label>
+    <label for="discountgroupName">{'Name'|i18n( 'design/admin/shop/discountgroupedit' )}:</label>
     <input class="box" id="discountgroupName" type="text" name="discount_group_name" value="{$discount_group.name|wash}" />
 </div>
 

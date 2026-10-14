@@ -62,7 +62,7 @@
 </tr>
 {section var=Rules loop=$rule_list sequence=array( bglight, bgdark )}
 <tr class="{$Rules.sequence}">
-    <td><input type="checkbox" name="removeRuleList[]" value="{$Rules.item.id}" title="{'Select discount rule for removal.'|i18n( 'design/admin/shop/discountgroupmembershipview' )}" /></td>
+    <td><input aria-label="{'Select discount rule for removal.'|i18n( 'design/admin/shop/discountgroupmembershipview' )|wash}" type="checkbox" name="removeRuleList[]" value="{$Rules.item.id}" title="{'Select discount rule for removal.'|i18n( 'design/admin/shop/discountgroupmembershipview' )}" /></td>
     <td>{$Rules.item.name|wash}</td>
     <td class="number" align="right">{$Rules.item.discount_percent|l10n( number )}%</td>
     <td>{$Rules.item.limitation}</td>
@@ -118,7 +118,7 @@
 </tr>
 {section var=Customers loop=$customers sequence=array( bglight, bgdark )}
 <tr class="{$Customers.sequence}">
-    <td><input type="checkbox" value="{$Customers.item.id}" name="CustomerIDArray[]" title="{'Select user or user group for removal.'|i18n( 'design/admin/shop/discountgroupmembershipview' )}" /></td>
+    <td><input aria-label="{'Select user or user group for removal.'|i18n( 'design/admin/shop/discountgroupmembershipview' )|wash}" type="checkbox" value="{$Customers.item.id}" name="CustomerIDArray[]" title="{'Select user or user group for removal.'|i18n( 'design/admin/shop/discountgroupmembershipview' )}" /></td>
     <td>{$Customers.item.class_identifier|class_icon(small, $Customers.item.class_name )}&nbsp;<a href={$Customers.item.main_node.url_alias|ezurl}>{$Customers.item.name|wash}</a></td>
     <td>{$Customers.item.class_name}</td>
 </tr>

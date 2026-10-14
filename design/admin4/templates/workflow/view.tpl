@@ -84,7 +84,7 @@
 </tr>
 {section var=Groups loop=$workflow.ingroup_list sequence=array( bglight, bgdark )}
 <tr class="{$Groups.sequence}">
-    <td class="tight"><input type="checkbox" name="group_id_checked[]" value="{$Groups.item.group_id}" /></td>
+    <td class="tight"><input type="checkbox" aria-label="{$Groups.item.group_name|wash}" name="group_id_checked[]" value="{$Groups.item.group_id}" /></td>
     <td class="wide"><a href={concat( '/workflow/workflowlist/', $Groups.item.group_id )|ezurl}>{$Groups.item.group_name|wash}</a></td>
 </tr>
 {/section}
@@ -99,7 +99,7 @@
     </div>
     <div class="block">
     {section show=sub( count( $workflow.group_list ),count( $workflow.ingroup_list ) )}
-        <select name="Workflow_group">
+        <select name="Workflow_group" aria-label="{'Add to group'|i18n( 'design/admin/workflow/view' )|wash}">
         {section var=Groups loop=$workflow.group_list}
             {if $workflow.ingroup_id_list|contains($Groups.item.id)|not}
                 <option value="{$Groups.item.id}/{$Groups.item.name|wash}">{$Groups.item.name|wash}</option>
@@ -108,7 +108,7 @@
         </select>
         <input class="button" type="submit" name="AddGroupButton" value="{'Add to group'|i18n( 'design/admin/workflow/view' )}" />
     {section-else}
-        <select name="ContentClass_group" disabled="disabled">
+        <select name="ContentClass_group" disabled="disabled" aria-label="{'Add to group'|i18n( 'design/admin/workflow/view' )|wash}">
         <option value="">{'No group'|i18n( 'design/admin/workflow/view' )}</option>
         </select>
         <input class="button" type="submit" name="AddGroupButton" value="{'Add to group'|i18n( 'design/admin/workflow/view' )}" disabled="disabled" />

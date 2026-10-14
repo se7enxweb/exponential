@@ -2,8 +2,8 @@
 
 {* Sections *}
 <div class="element">
-    <label>{'Affected sections'|i18n( 'design/admin/workflow/eventtype/edit' )}:</label>
-    <select name="WorkflowEvent_event_ezapprove_section_{$event.id}[]" size="5" multiple="multiple">
+    <label for="a4f-WorkflowEvent_event_ezapprove_section_{$event.id}">{'Affected sections'|i18n( 'design/admin/workflow/eventtype/edit' )}:</label>
+    <select id="a4f-WorkflowEvent_event_ezapprove_section_{$event.id}" name="WorkflowEvent_event_ezapprove_section_{$event.id}[]" size="5" multiple="multiple">
     <option value="-1"
          {section show=and( $event.selected_sections|count()|eq( 1 ), $event.selected_sections[0]|eq( '' ) )}
              selected="selected"
@@ -19,8 +19,8 @@
 
 {* Languages *}
 <div class="element">
-    <label>{'Affected languages'|i18n( 'design/admin/workflow/eventtype/edit' )}:</label>
-    <select name="WorkflowEvent_event_ezapprove_languages_{$event.id}[]" size="5" multiple="multiple">
+    <label for="a4f-WorkflowEvent_event_ezapprove_languages_{$event.id}">{'Affected languages'|i18n( 'design/admin/workflow/eventtype/edit' )}:</label>
+    <select id="a4f-WorkflowEvent_event_ezapprove_languages_{$event.id}" name="WorkflowEvent_event_ezapprove_languages_{$event.id}[]" size="5" multiple="multiple">
     <option value="-1"
          {if eq( count( $event.language_list ), 0 )}
              selected="selected"
@@ -34,8 +34,8 @@
 
 {* Affected versions option *}
 <div class="element">
-    <label>{'Affected versions'|i18n( 'design/admin/workflow/eventtype/edit' )}:</label>
-    <select name="WorkflowEvent_event_ezapprove_version_option_{$event.id}[]" size="3" multiple="multiple">
+    <label for="a4f-WorkflowEvent_event_ezapprove_version_option_{$event.id}">{'Affected versions'|i18n( 'design/admin/workflow/eventtype/edit' )}:</label>
+    <select id="a4f-WorkflowEvent_event_ezapprove_version_option_{$event.id}" name="WorkflowEvent_event_ezapprove_version_option_{$event.id}[]" size="3" multiple="multiple">
     <option value="0"{if or( lt($event.version_option, 1), gt($event.version_option, 2) )} selected="selected"{/if}>{'All versions'|i18n( 'design/admin/workflow/eventtype/edit' )}</option>
     <option value="1"{if eq( $event.version_option, 1)} selected="selected"{/if}>{'Publishing new object'|i18n( 'design/admin/workflow/eventtype/edit' )}</option>
     <option value="2"{if eq( $event.version_option, 2)} selected="selected"{/if}>{'Updating existing object'|i18n( 'design/admin/workflow/eventtype/edit' )}</option>
@@ -54,8 +54,8 @@
     </tr>
     {section var=User loop=$event.approve_users sequence=array( bglight, bgdark )}
         <tr class="{$User.sequence}">
-            <td><input type="checkbox" name="DeleteApproveUserIDArray_{$event.id}[]" value="{$User.item}" /></td>
-            <td>{fetch(content, object, hash( object_id, $User.item)).name|wash}</td>
+            <td><input type="checkbox" aria-labelledby="approve-user-{$event.id}-{$User.item}" name="DeleteApproveUserIDArray_{$event.id}[]" value="{$User.item}" /></td>
+            <td id="approve-user-{$event.id}-{$User.item}">{fetch(content, object, hash( object_id, $User.item)).name|wash}</td>
         </tr>
     {/section}
     </table>
@@ -82,8 +82,8 @@
     </tr>
     {section var=Group loop=$event.approve_groups sequence=array( bglight, bgdark )}
         <tr class="{$Group.sequence}">
-            <td><input type="checkbox" name="DeleteApproveGroupIDArray_{$event.id}[]" value="{$Group.item}" /></td>
-            <td>{fetch(content, object, hash( object_id, $Group.item)).name|wash}</td>
+            <td><input type="checkbox" aria-labelledby="approve-group-{$event.id}-{$Group.item}" name="DeleteApproveGroupIDArray_{$event.id}[]" value="{$Group.item}" /></td>
+            <td id="approve-group-{$event.id}-{$Group.item}">{fetch(content, object, hash( object_id, $Group.item)).name|wash}</td>
         </tr>
     {/section}
     </table>
@@ -110,8 +110,8 @@
 </tr>
 {section var=User loop=$event.selected_usergroups sequence=array( bglight, bgdark )}
 <tr class="{$User.sequence}">
-<td><input type="checkbox" name="DeleteExcludeUserIDArray_{$event.id}[]" value="{$User.item}" /></td>
-<td>{fetch(content, object, hash( object_id, $User.item)).name|wash}</td>
+<td><input type="checkbox" aria-labelledby="approve-exclude-{$event.id}-{$User.item}" name="DeleteExcludeUserIDArray_{$event.id}[]" value="{$User.item}" /></td>
+<td id="approve-exclude-{$event.id}-{$User.item}">{fetch(content, object, hash( object_id, $User.item)).name|wash}</td>
 </tr>
 {/section}
 </table>

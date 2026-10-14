@@ -35,9 +35,9 @@
     {set $id_string='id="LastAdded"'}
 {/if}
 <tr class="{$Vattypes.sequence}">
-    <td><input type="checkbox" name="vatTypeIDList[]" value="{$Vattypes.item.id}" title="{'Select VAT type for removal.'|i18n( 'design/admin/shop/vattype' )}" /></td>
-    <td><input type="text" name="vattype_name_{$Vattypes.item.id}" {$id_string} value="{$Vattypes.item.name|wash}" size="24" /></td>
-    <td><input type="text" name="vattype_percentage_{$Vattypes.item.id}" value="{$Vattypes.item.percentage}" size="4" />&nbsp;%</td>
+    <td><input aria-label="{'Select VAT type for removal.'|i18n( 'design/admin/shop/vattype' )|wash}" type="checkbox" name="vatTypeIDList[]" value="{$Vattypes.item.id}" title="{'Select VAT type for removal.'|i18n( 'design/admin/shop/vattype' )}" /></td>
+    <td><input aria-label="{'Name'|i18n( 'design/admin/shop/vattype' )|wash}" type="text" name="vattype_name_{$Vattypes.item.id}" {$id_string} value="{$Vattypes.item.name|wash}" size="24" /></td>
+    <td><input aria-label="{'Percentage'|i18n( 'design/admin/shop/vattype' )|wash}" type="text" name="vattype_percentage_{$Vattypes.item.id}" value="{$Vattypes.item.percentage}" size="4" />&nbsp;%</td>
 </tr>
 {/section}
 </table>

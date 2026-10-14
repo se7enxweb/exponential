@@ -63,7 +63,7 @@
 <div class="context-attributes">
 
 <div class="block">
-<label>{'Name'|i18n( 'design/admin/workflow/edit' )}:</label>
+<label for="workflowName">{'Name'|i18n( 'design/admin/workflow/edit' )}:</label>
 <input class="halfbox" id="workflowName" type="text" name="Workflow_name" value="{$workflow.name|wash}" />
 </div>
 
@@ -74,8 +74,8 @@
 {section var=Events loop=$event_list}
 <table class="list" cellspacing="0">
 <tr>
-<th scope="col">
-<input type="checkbox" name="WorkflowEvent_id_checked[]" value="{$Events.item.id}" />
+<th scope="col" id="workflow-event-{$Events.item.id}">
+<input type="checkbox" aria-labelledby="workflow-event-{$Events.item.id}" name="WorkflowEvent_id_checked[]" value="{$Events.item.id}" />
 &nbsp;
 {if $Events.item.workflow_type|is_null}
     <span class="error">{$Events.number}({$Events.item.placement})&nbsp;{'Error : Could not load workflow event "%eventtype" (event type not available)'|i18n( 'design/admin/workflow/edit',, hash( '%eventtype', $Events.item.workflow_type_string ) )}</span>
@@ -96,8 +96,8 @@
 
 	<tr><td>
 	<div class="block">
-	<label>{'Description / comments'|i18n( 'design/admin/workflow/edit' )}:</label>
-	<input class="halfbox" type="text" name="WorkflowEvent_description[]" value="{$Events.item.description}" />
+	<label for="a4f-WorkflowEvent_description-{$Events.item.id}">{'Description / comments'|i18n( 'design/admin/workflow/edit' )}:</label>
+	<input id="a4f-WorkflowEvent_description-{$Events.item.id}" class="halfbox" type="text" name="WorkflowEvent_description[]" value="{$Events.item.description}" />
 	</div>
 
 	{if and( is_set( $selectedClass ), $selectedClass )}
@@ -127,7 +127,7 @@
 
 
 <div class="block">
-<select name="WorkflowTypeString">
+<select name="WorkflowTypeString" aria-label="{'Add event'|i18n( 'design/admin/workflow/edit' )|wash}">
 {section var=WorkflowTypes loop=$workflow_type_list}
 <option value="{$WorkflowTypes.item.type_string}">{$WorkflowTypes.item.group_name}&nbsp;/&nbsp;{$WorkflowTypes.item.name|wash}</option>
 {/section}

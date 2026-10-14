@@ -14,28 +14,28 @@
 
 {* Name *}
 <div class="block">
-<label>{'Name'|i18n( 'design/admin/shop/discountruleedit' )}:</label>
+<label for="discountruleName">{'Name'|i18n( 'design/admin/shop/discountruleedit' )}:</label>
 <input class="box" id="discountruleName" type="text" name="discountrule_name" value="{$discountrule.name|wash}" size="40" />
 </div>
 
 {* Discount precent *}
 <div class="block">
-<label>{'Discount percent'|i18n( 'design/admin/shop/discountruleedit' )}:</label>
-<input type="text" name="discountrule_percent" value="{$discountrule.discount_percent|l10n( number )}" size="5" />&nbsp;%
+<label for="discountrule-percent">{'Discount percent'|i18n( 'design/admin/shop/discountruleedit' )}:</label>
+<input id="discountrule-percent" type="text" name="discountrule_percent" value="{$discountrule.discount_percent|l10n( number )}" size="5" />&nbsp;%
 </div>
 
 <div class="block">
 
 {* Classes *}
 <div class="element">
-<label>{'Product types'|i18n( 'design/admin/shop/discountruleedit' )}:</label>
+<label id="discountrule-classes">{'Product types'|i18n( 'design/admin/shop/discountruleedit' )}:</label>
 {section show=$product_list}
     {section var=class loop=$class_limitation_list}
     <input type="hidden" name="Contentclasses[]" value="{$class}" />
     {/section}
-    <select name="ContentclassesDisabled[]" size="5" multiple="multiple" disabled="disabled">
+    <select aria-labelledby="discountrule-classes" name="ContentclassesDisabled[]" size="5" multiple="multiple" disabled="disabled">
 {section-else}
-    <select name="Contentclasses[]" size="5" multiple="multiple">
+    <select aria-labelledby="discountrule-classes" name="Contentclasses[]" size="5" multiple="multiple">
 {/section}
 <option value="-1" {if $class_any_selected}selected="selected"{/if} >{'Any'|i18n( 'design/admin/shop/discountruleedit' )}</option>
 {section name=Classes loop=$product_class_list}
@@ -48,14 +48,14 @@
 
 {* Sections *}
 <div class="element">
-<label>{'in sections'|i18n( 'design/admin/shop/discountruleedit' )}:</label>
+<label id="discountrule-sections">{'in sections'|i18n( 'design/admin/shop/discountruleedit' )}:</label>
 {section show=$product_list}
     {section var=section loop=$section_limitation_list}
     <input type="hidden" name="Sections[]" value="{$section}" />
     {/section}
-    <select name="SectionsDisabled[]" size="5" multiple="multiple" disabled="disabled">
+    <select aria-labelledby="discountrule-sections" name="SectionsDisabled[]" size="5" multiple="multiple" disabled="disabled">
 {section-else}
-    <select name="Sections[]" size="5" multiple="multiple">
+    <select aria-labelledby="discountrule-sections" name="Sections[]" size="5" multiple="multiple">
 {/section}
 <option value="-1" {if $section_any_selected}selected="selected"{/if}>{'Any'|i18n( 'design/admin/shop/discountruleedit' )}</option>
 {section name=Sections loop=$section_list}
@@ -81,8 +81,8 @@
 </tr>
 {section var=Product show=$product_list loop=$product_list sequence=array( bglight, bgdark )}
 <tr class="{$Product.sequence}">
-<td><input type="hidden" name="Products[]" value="{$Product.id}" /><input type="checkbox" name="DeleteProductIDArray[]" value="{$Product.id}" /></td>
-<td>{$Product.name|wash}</td>
+<td><input type="hidden" name="Products[]" value="{$Product.id}" /><input aria-labelledby="discountrule-product-{$Product.id}" type="checkbox" name="DeleteProductIDArray[]" value="{$Product.id}" /></td>
+<td id="discountrule-product-{$Product.id}">{$Product.name|wash}</td>
 </tr>
 {/section}
 </table>

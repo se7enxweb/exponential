@@ -1,6 +1,6 @@
 {* Class *}
 <div class="block">
-    <label>{'Class'|i18n( 'design/admin/workflow/eventtype/edit' )}:</label>
+    <label for="workflowevent-event-ezwaituntildate-class-{$event.id}">{'Class'|i18n( 'design/admin/workflow/eventtype/edit' )}:</label>
     <select id="workflowevent-event-ezwaituntildate-class-{$event.id}" name="WorkflowEvent_event_ezwaituntildate_class_{$event.id}[]">
     {section var=Classes loop=$event.workflow_type.contentclass_list}
         {if and( and( is_set( $selectedClass ), $selectedClass ), eq( $selectedClass, $Classes.item.id ) )}
@@ -17,7 +17,7 @@
 {* Attributes *}
 <div class="block">
     {let possibleClassAttributes=$event.workflow_type.contentclassattribute_list}
-    <label>{'Attribute'|i18n( 'design/admin/workflow/eventtype/edit' )}:</label>
+    <label for="workflowevent-event-ezwaituntildate-class-attribute-{$event.id}">{'Attribute'|i18n( 'design/admin/workflow/eventtype/edit' )}:</label>
     <select id="workflowevent-event-ezwaituntildate-class-attribute-{$event.id}" name="WorkflowEvent_event_ezwaituntildate_classattribute_{$event.id}[]">
     {section name=HasClassAttributes loop=$possibleClassAttributes}
         <option value="{$HasClassAttributes:item.id}">{$HasClassAttributes:item.name|wash}</option>
@@ -40,8 +40,8 @@
 </tr>
 {section var=Entries loop=$event.content.entry_list sequence=array( bglight, bgdark )}
 <tr class="{$Entries.sequence}">
-<td><input type="checkbox" name="WorkflowEvent_data_waituntildate_remove_{$event.id}[]" value="{$Entries.item.id}" /></td>
-<td>{if $Entries.item.class_name|is_null|not}{$Entries.item.class_name}{else}<b><i>{"Item can not be found"|i18n("design/standard/workflow/eventtype/view")}</i></b>{/if}</td>
+<td><input type="checkbox" aria-labelledby="waituntil-{$event.id}-{$Entries.item.id}" name="WorkflowEvent_data_waituntildate_remove_{$event.id}[]" value="{$Entries.item.id}" /></td>
+<td id="waituntil-{$event.id}-{$Entries.item.id}">{if $Entries.item.class_name|is_null|not}{$Entries.item.class_name}{else}<b><i>{"Item can not be found"|i18n("design/standard/workflow/eventtype/view")}</i></b>{/if}</td>
 <td>{if $Entries.item.classattribute_name|is_null|not}{$Entries.item.classattribute_name}{else}<b><i>{"Item can not be found"|i18n("design/standard/workflow/eventtype/view")}</i></b>{/if}</td>
 </tr>
 {/section}
@@ -57,8 +57,8 @@
 
 {* Modify publishing dates *}
 <div class="block">
-<label>{"Modify the objects' publishing dates"|i18n( 'design/admin/workflow/eventtype/edit' )}:</label>
-<input type="checkbox" name="WorkflowEvent_data_waituntildate_modifydate_{$event.id}[]" value="1" {if $event.data_int1}checked="checked"{/if} />
+<label for="a4f-WorkflowEvent_data_waituntildate_modifydate_{$event.id}">{"Modify the objects' publishing dates"|i18n( 'design/admin/workflow/eventtype/edit' )}:</label>
+<input id="a4f-WorkflowEvent_data_waituntildate_modifydate_{$event.id}" type="checkbox" name="WorkflowEvent_data_waituntildate_modifydate_{$event.id}[]" value="1" {if $event.data_int1}checked="checked"{/if} />
 </div>
 
 <script type="text/javascript">

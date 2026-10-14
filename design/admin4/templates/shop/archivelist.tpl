@@ -68,7 +68,7 @@
 {/if}
 
 <tr class="{$Orders.sequence}">
-    <td><input type="checkbox" name="OrderIDArray[]" value="{$Orders.item.id}" title="{'Select order for removal.'|i18n( 'design/admin/shop/archivelist' )}" /></td>
+    <td><input aria-label="{'Select order for removal.'|i18n( 'design/admin/shop/archivelist' )|wash}" type="checkbox" name="OrderIDArray[]" value="{$Orders.item.id}" title="{'Select order for removal.'|i18n( 'design/admin/shop/archivelist' )}" /></td>
     <td><a href={concat( '/shop/orderview/', $Orders.item.id, '/' )|ezurl}>{$Orders.item.order_nr}</a></td>
     <td><a href={concat( '/shop/customerorderview/', $Orders.item.user_id, '/', $Orders.item.account_email|rawurlencode )|ezurl}>{$Orders.item.account_name|wash}</a></td> {* Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 5a17c08bfc), Copyright (C) Mugo Web, GPL v2 *}
 

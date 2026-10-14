@@ -35,8 +35,8 @@
     {set $id_string='id="LastAdded"'}
 {/if}
 <tr class="{$seq_color}">
-    <td><input type="checkbox" name="CategoryIDList[]" value="{$cat.id}" title="{'Select product category for removal.'|i18n( 'design/admin/shop/productcategories' )}" /></td>
-    <td><input type="text" name="category_name_{$cat.id}" {$id_string} value="{$cat.name|wash}" size="24" /></td>
+    <td><input aria-label="{'Select product category for removal.'|i18n( 'design/admin/shop/productcategories' )|wash}" type="checkbox" name="CategoryIDList[]" value="{$cat.id}" title="{'Select product category for removal.'|i18n( 'design/admin/shop/productcategories' )}" /></td>
+    <td><input aria-label="{'Name'|i18n( 'design/admin/shop/productcategories' )|wash}" type="text" name="category_name_{$cat.id}" {$id_string} value="{$cat.name|wash}" size="24" /></td>
 </tr>
 {/foreach}
 </table>
