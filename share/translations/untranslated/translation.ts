@@ -19424,10 +19424,6 @@ Note: The packages will not be uninstalled.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The extension %name was not packed: its settings hold secret values (%settings). Copy it from the server instead.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>The extension %name could not be packed.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -51426,6 +51422,14 @@ You will need to change the class of the node by using the swap functionality.</
 </context>
 <context>
     <name>kernel/package</name>
+    <message>
+        <source>The extension %name is not known.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The extension %name was not packed: it holds secret values or key material (%files). Copy it from the server instead.</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message>
         <source>Lead</source>
         <translation type="unfinished"></translation>

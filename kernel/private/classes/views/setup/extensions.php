@@ -434,10 +434,10 @@ class Extensions extends \Exponential\Runnable\ModuleView
         if ( !isset( self::DOWNLOAD_FORMATS[$format] ) || !in_array( $name, $available, true ) || \eZExtension::extensionPath( $name ) === false )
             return \ezpI18n::tr( 'design/admin/setup/extensions', 'The extension or the archive format is not known.' );
 
-        $secrets = self::secretSettings( \eZExtension::baseDirectory() . '/' . $name );
-        if ( $secrets )
-            return \ezpI18n::tr( 'design/admin/setup/extensions', 'The extension %name was not packed: its settings hold secret values (%settings). Copy it from the server instead.', null,
-                                 array( '%name' => $name, '%settings' => implode( ', ', array_slice( $secrets, 0, 5 ) ) . ( count( $secrets ) > 5 ? ', ...' : '' ) ) );
+        // the rule of every package: no secret settings, no key material (addExtension() refuses them as well)
+        $refusal = \eZExtensionPackageHandler::packRefusal( $name );
+        if ( $refusal !== '' )
+            return $refusal;
 
         $archiveFile = \eZPackage::temporaryExportPath() . '/' . $name . '.' . $format;
         $package = null;
@@ -457,6 +457,11 @@ class Extensions extends \Exponential\Runnable\ModuleView
             header( 'X-Content-Type-Options: nosniff' );
             readfile( $archiveFile );
         }
+        catch ( \RuntimeException $e )
+        {
+            // addExtension()'s refusal: its reason names no value
+            return $e->getMessage();
+        }
         catch ( \Exception $e )
         {
             \eZDebug::writeError( $e->getMessage(), __METHOD__ );
@@ -471,44 +476,6 @@ class Extensions extends \Exponential\Runnable\ModuleView
         }
         \eZExecution::cleanExit();
         return '';
-    }
-
-    /**
-     * The settings of the extension in $dir that hold a secret value: "<file below settings/>: <name>" for each
-     * setting whose name is a secret (expSecretRule::isSecretName()) or whose value carries one (a password in an
-     * address, a "password=..." pair). Empty values, numbers and switches (true, enabled, ...) are not secrets.
-     * Pure apart from reading the files.
-     *
-     * @param string $dir the extension's directory
-     * @return string[]
-     */
-    public static function secretSettings( $dir )
-    {
-        $settings = rtrim( (string)$dir, '/' ) . '/settings';
-        if ( !is_dir( $settings ) )
-            return array();
-        $found = array();
-        $files = new \RecursiveIteratorIterator( new \RecursiveDirectoryIterator( $settings, \FilesystemIterator::SKIP_DOTS ) );
-        foreach ( $files as $file )
-        {
-            if ( !$file->isFile() || !preg_match( '/\.ini(\.append)?(\.php)?$/', $file->getFilename() ) )
-                continue;
-            $relative = substr( $file->getPathname(), strlen( $settings ) + 1 );
-            foreach ( (array)file( $file->getPathname(), FILE_IGNORE_NEW_LINES ) as $line )
-            {
-                if ( !preg_match( '/^\s*([A-Za-z0-9_.\-]+)(\[[^\]]*\])?\s*=(.*)$/', (string)$line, $m ) )
-                    continue;
-                $value = trim( $m[3] );
-                // a number or a switch is a limit or a choice (MaxTokens=4096, RequireToken=enabled), never a secret
-                if ( $value === '' || preg_match( '/^(-?\d+(\.\d+)?|true|false|enabled|disabled|yes|no|on|off)$/i', $value ) )
-                    continue;
-                if ( \expSecretRule::isSecretName( $m[1] ) || \expSecretRule::hasInlineSecret( $value ) )
-                    $found[$relative . ': ' . $m[1]] = true;
-            }
-        }
-        $found = array_keys( $found );
-        sort( $found );
-        return $found;
     }
 }
 

@@ -70,6 +70,23 @@ class SetupInfoMaskTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( 'This program is free software', $out );
     }
 
+    /** IM-01, text that is not valid UTF-8 is kept, with the bad bytes replaced */
+    public function testInvalidUtf8IsNotDropped()
+    {
+        $out = Info::maskPhpInfo( '<table><tr><td class="e">open_basedir</td><td class="v">/srv/a' . "\xff" . 'b</td></tr></table>', true );
+        $this->assertStringContainsString( "/srv/a\u{FFFD}b", $out );
+    }
+
+    /** IM-01, the names phpinfo() and extension packages treat as secret */
+    public function testSecretSettingNames()
+    {
+        foreach ( array( 'mysqli.default_pw', 'db_pass', 'smtp.passwd', 'ProxyAuth', 'http_auth', 'Bearer', 'Authorization', 'ApiKey', 'MailPassword' ) as $name )
+            $this->assertTrue( expSystemReportMask::isSecretSettingName( $name ), $name );
+        foreach ( array( 'Bypass', 'Compass', 'OAuthServer', 'mysqli.default_port', 'AuthenticationMethod', 'session.name' ) as $name )
+            $this->assertFalse( expSystemReportMask::isSecretSettingName( $name ), $name );
+        $this->assertTrue( Info::isPhpInfoSecretName( 'db_pass' ) );
+    }
+
     /** IM-03 */
     public function testTheViewPrintsTheMaskedOutput()
     {
@@ -98,5 +115,6 @@ class SetupInfoMaskTest extends PHPUnit\Framework\TestCase
 
         $tpl = file_get_contents( dirname( __DIR__, 5 ) . '/design/standard/templates/setup/session.tpl' );
         $this->assertStringNotContainsString( 'session.session_key', $tpl );
+        $this->assertStringNotContainsString( 'SessionKeyArray', $tpl, 'the select-all script ticks the references' );
     }
 }

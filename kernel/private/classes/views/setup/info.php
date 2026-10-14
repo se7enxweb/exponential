@@ -246,15 +246,15 @@ class Info extends \Exponential\Runnable\ModuleView
     const PHPINFO_DROPPED_SECTIONS = array( 'apache environment', 'http headers information', 'environment', 'php variables' );
 
     /**
-     * Whether a directive of phpinfo() holds a secret: the report's rule, and PHP's own password directives
-     * (mysqli.default_pw).
+     * Whether a directive of phpinfo() holds a secret: expSystemReportMask::isSecretSettingName(), the rule extension
+     * packages use too (mysqli.default_pw).
      *
      * @param string $name
      * @return bool
      */
     public static function isPhpInfoSecretName( $name )
     {
-        return \expSystemReportMask::isSecretName( $name ) || preg_match( '/(^|[._])pw$/i', (string)$name ) === 1;
+        return \expSystemReportMask::isSecretSettingName( $name );
     }
 
     /**
@@ -310,7 +310,7 @@ class Info extends \Exponential\Runnable\ModuleView
             // the text between the tags, outside <style> and <img>
             return preg_replace_callback( '#(<style\b.*?</style>|<[^>]*>)|([^<]+)#is', function ( $m ) {
                 if ( isset( $m[2] ) && $m[2] !== '' )
-                    return htmlspecialchars( \expSystemReportMask::text( html_entity_decode( $m[2], ENT_QUOTES | ENT_HTML5, 'UTF-8' ) ), ENT_NOQUOTES, 'UTF-8' );
+                    return htmlspecialchars( \expSystemReportMask::text( html_entity_decode( $m[2], ENT_QUOTES | ENT_HTML5, 'UTF-8' ) ), ENT_NOQUOTES | ENT_SUBSTITUTE, 'UTF-8' );
                 return $m[0];
             }, $kept );
         }

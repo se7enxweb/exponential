@@ -187,13 +187,131 @@ class eZExtensionPackageHandler extends eZPackageHandler
         }
     }
 
+    /** Files that hold key material, anywhere in an extension: by name */
+    const KEY_FILE_PATTERN = '/(\.(pem|key|p12|pfx|jks|keystore|kdbx)$|^\.env(\.(?!(example|sample|template)$).*)?$|^id_(rsa|dsa|ecdsa|ed25519)|^\.htpasswd$|^\.netrc$)/i';
+
+    /** Directories whose files are key material, anywhere in an extension */
+    const KEY_DIRECTORY_PATTERN = '/^(jwt|\.ssh)$/i';
+
+    /** Copies and backups of settings files: never packed, whatever they hold */
+    const BACKUP_FILE_PATTERN = '/(\.(bak|orig|dist|old|save|swp|tmp|rej)$|~$)/i';
+
+    /**
+     * Whether $extensionName names an extension directory that can be packed: a plain name (no path), present below
+     * the extension directory.
+     *
+     * @param string $extensionName
+     * @return bool
+     */
+    static function isPackableName( $extensionName )
+    {
+        $extensionName = (string)$extensionName;
+        if ( !preg_match( '/^[A-Za-z0-9][A-Za-z0-9_.\-]*$/', $extensionName ) )
+            return false;
+        return is_dir( eZExtension::baseDirectory() . '/' . $extensionName );
+    }
+
+    /**
+     * What in the extension directory $dir must not leave the server in a package, one line each, without a value:
+     *  - key material anywhere: KEY_FILE_PATTERN (*.pem, *.key, *.p12, *.pfx, .env but not .env.example, .sample or
+     *    .template, id_rsa, ...) and every file in a
+     *    KEY_DIRECTORY_PATTERN directory (jwt/, .ssh/);
+     *  - below settings/: a copy or backup (BACKUP_FILE_PATTERN: *.bak, *.orig, *.dist, *~, ...), and in every
+     *    other file a setting whose name holds a secret (expSystemReportMask::isSecretSettingName()) or whose value
+     *    carries one (expSecretRule::hasInlineSecret()). Empty values, numbers and switches (true, enabled, none,
+     *    ...) are not secrets.
+     * Reads the files only.
+     *
+     * @param string $dir
+     * @return string[] "<path below $dir>: <setting>" or "<path below $dir>: <reason>", sorted
+     */
+    static function secretFiles( $dir )
+    {
+        $dir = rtrim( (string)$dir, '/' );
+        if ( $dir === '' || !is_dir( $dir ) )
+            return array();
+        $found = array();
+        $files = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( $dir, FilesystemIterator::SKIP_DOTS ) );
+        foreach ( $files as $file )
+        {
+            if ( !$file->isFile() )
+                continue;
+            $relative = substr( $file->getPathname(), strlen( $dir ) + 1 );
+            $parts = explode( '/', $relative );
+            $name = array_pop( $parts );
+            if ( preg_match( self::KEY_FILE_PATTERN, $name ) )
+            {
+                $found[$relative . ': key material'] = true;
+                continue;
+            }
+            foreach ( $parts as $part )
+            {
+                if ( preg_match( self::KEY_DIRECTORY_PATTERN, $part ) )
+                {
+                    $found[$relative . ': key material'] = true;
+                    continue 2;
+                }
+            }
+            if ( !isset( $parts[0] ) || $parts[0] !== 'settings' )
+                continue;
+            if ( preg_match( self::BACKUP_FILE_PATTERN, $name ) )
+            {
+                $found[$relative . ': copy of a settings file'] = true;
+                continue;
+            }
+            foreach ( (array)@file( $file->getPathname(), FILE_IGNORE_NEW_LINES ) as $line )
+            {
+                if ( !preg_match( '/^\s*([A-Za-z0-9_.\-]+)(\[[^\]]*\])?\s*=(.*)$/', (string)$line, $m ) )
+                    continue;
+                $value = trim( $m[3] );
+                // a number or a switch is a limit or a choice (MaxTokens=4096, RequireToken=enabled), never a secret
+                if ( $value === '' || preg_match( '/^(-?\d+(\.\d+)?|true|false|enabled|disabled|yes|no|on|off|none|null)$/i', $value ) )
+                    continue;
+                if ( expSystemReportMask::isSecretSettingName( $m[1] ) || expSecretRule::hasInlineSecret( $value ) )
+                    $found[$relative . ': ' . $m[1]] = true;
+            }
+        }
+        $found = array_keys( $found );
+        sort( $found );
+        return $found;
+    }
+
+    /**
+     * Why the extension $extensionName cannot be packed, or an empty string when it can (isPackableName() and no
+     * secretFiles()).
+     *
+     * @param string $extensionName
+     * @return string
+     */
+    static function packRefusal( $extensionName )
+    {
+        if ( !self::isPackableName( $extensionName ) )
+            return ezpI18n::tr( 'kernel/package', 'The extension %name is not known.', null, array( '%name' => (string)$extensionName ) );
+        $secrets = self::secretFiles( eZExtension::baseDirectory() . '/' . $extensionName );
+        if ( !$secrets )
+            return '';
+        return ezpI18n::tr( 'kernel/package', 'The extension %name was not packed: it holds secret values or key material (%files). Copy it from the server instead.', null,
+                            array( '%name' => $extensionName,
+                                   '%files' => implode( ', ', array_slice( $secrets, 0, 5 ) ) . ( count( $secrets ) > 5 ? ', ...' : '' ) ) );
+    }
+
+    /**
+     * Adds the extension $extensionName to $package. Refuses (RuntimeException, nothing copied) an extension that
+     * packRefusal() names a reason for: every way to a package (Setup > Extensions, the package wizard, the command
+     * line) passes here.
+     *
+     * @param eZPackage $package
+     * @param string $extensionName
+     * @throws RuntimeException
+     */
     static function addExtension( $package, $extensionName )
     {
-        $siteINI = eZINI::instance();
-        $extensionDir = $siteINI->variable( 'ExtensionSettings', 'ExtensionDirectory' );
+        $refusal = self::packRefusal( $extensionName );
+        if ( $refusal !== '' )
+            throw new RuntimeException( $refusal );
 
         $fileList = array();
-        $sourceDir = $extensionDir . '/' . $extensionName;
+        $sourceDir = eZExtension::baseDirectory() . '/' . $extensionName;
         $targetDir = $package->path() . '/ezextension';
 
         eZDir::mkdir( $targetDir, false, true );
@@ -256,6 +374,12 @@ class eZExtensionPackageHandler extends eZPackageHandler
         {
             if ( in_array( $argument, $extensionList ) )
             {
+                $refusal = self::packRefusal( $argument );
+                if ( $refusal !== '' )
+                {
+                    $cli->error( $refusal );
+                    return false;
+                }
                 $extensionsToAdd[] = $argument;
             }
             else
