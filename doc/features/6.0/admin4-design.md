@@ -89,8 +89,10 @@ are in `share/icons/bootstrap-icons/svg/`, unchanged, with the licence beside th
 - **Class, file type, class group and other icons** (`class_icon`, `mimetype_icon`, `classgroup_icon`, `icon`,
   `icon_info` of the content tree): the icon theme `bootstrap-icons`, chosen in the admin siteaccess's `icon.ini`
   (step 4 above). Its `icon.ini` maps every class and MIME type of `crystal-admin`, the classes of the website
-  interface and demo packages and the OOXML, EPUB, RTF, CSV, XML, JSON and SVG types; one SVG serves every size. A
-  class it does not map is looked up in `crystal-admin` next. In dark mode a filter in `admin4.css` turns these
+  interface and demo packages and the OOXML, EPUB, RTF, CSV, XML, JSON and SVG types; one SVG serves every size. For
+  a class it does not map, `class_icon` and the other operators take the `crystal-admin` PNG of
+  `AdditionalThemeList[]`, but the content tree (`icon_info`) reads only the first theme and shows the theme's
+  `Default`: add a class of your own to `ClassMap` in an `icon.ini.append.php`. In dark mode a filter in `admin4.css` turns these
   `<img>` icons light, since an SVG in an `<img>` cannot take the page's colours.
 - The classic designs (`admin`, `admin2`, `admin3`) keep their images; `.a4-icon` and `.a4-icon-btn` are in their
   copy of `components.css` as well, for templates shared by every administration design.

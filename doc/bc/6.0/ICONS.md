@@ -154,7 +154,9 @@ AdditionalThemeList[]
 AdditionalThemeList[]=crystal-admin
 ```
 
-so a class it does not know still gets its `crystal-admin` icon. See
+so `class_icon`, `mimetype_icon`, `classgroup_icon` and `icon` still give a key it does not map its `crystal-admin`
+icon. The content tree's `icon_info` does not: it reads the first theme it finds (break at the first theme directory)
+and gives that theme's `Default` for a class it does not map, so a class of your own belongs in `ClassMap`. See
 [the admin4 design: icons](../../features/6.0/admin4-design.md#icons).
 
 ## Template operators
