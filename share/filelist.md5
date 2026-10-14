@@ -7062,7 +7062,7 @@ a33e9d573eb8e846797e949212bf192e  tests/tests/design/AdminNoticesTest.php
 3473b4b9b2a1778e5a9efaf5fc2fa7ab  tests/tests/design/AdminPageHeaderTest.php
 6ff0ec39508251b32aa19593c39780e4  tests/tests/design/AdminPreferencesTest.php
 4b3af4d4ae744b360aa04bc3a27578b4  tests/tests/design/AdminRetiredClassesTest.php
-caca2d5d594a5630782062da641f2aa2  tests/tests/design/AdminScriptsTest.php
+3ae246adfa4802ce5ad29a65861f2827  tests/tests/design/AdminScriptsTest.php
 2267a66a813a4949572649ef13219314  tests/tests/design/AdminSelfContainedTest.php
 49ff0b715b9ae6006a2fc14ea203573a  tests/tests/design/AdminStylingRulesTest.php
 850f08505510556f8649d66b26af8a93  tests/tests/design/AdminThemeSwitchTest.php
