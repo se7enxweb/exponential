@@ -12624,6 +12624,10 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Disable &amp;quot;Tabs&amp;quot; by default while browsing content.</translation>
     </message>
     <message>
+        <source>Tabs</source>
+        <translation>Tabs</translation>
+    </message>
+    <message>
         <source>Audit trail</source>
         <translation>Audit trail</translation>
     </message>

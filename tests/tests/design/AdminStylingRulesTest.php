@@ -513,7 +513,7 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
 
     /**
      * The targets made 24px (WCAG 2.5.8) stay so: the sidebar tabs, the hit areas around the tree's open/close and
-     * the search scope switch, the dialog and scope pane close buttons, the page numbers
+     * the search scope switch, the dialog and scope pane close buttons, the page numbers, the node view's tabs switch
      */
     public function testSmallControlsKeepTheirTargets()
     {
@@ -535,6 +535,15 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
         $this->assertSame( '24px', $found['.searchscope-pane .close']['width'] );
         $this->assertSame( '24px', $found['.pagenavigator a']['min-width'] );
         $this->assertSame( '24px', $found['.pagenavigator a']['min-height'] );
+        // the node view's tabs switch: a 36 x 24px control with a visible label in both templates that draw it
+        $this->assertSame( '36px', $found['.tab-block .show-hide-tabs']['width'] );
+        $this->assertSame( '24px', $found['.tab-block .show-hide-tabs']['height'] );
+        $this->assertArrayHasKey( '.a4-tabs-switch-label', $found );
+        foreach ( array( 'window_controls.tpl', 'node/top_node_full.tpl' ) as $template )
+        {
+            $this->assertStringContainsString( '<span class="a4-tabs-switch-label" aria-hidden="true">{\'Tabs\'|i18n( \'design/admin/parts/my/menu\' )}</span>',
+                file_get_contents( self::$root . "/design/admin4/templates/$template" ), $template );
+        }
     }
 
     public function testComponentsAreTheSameInAdminAndAdmin4()

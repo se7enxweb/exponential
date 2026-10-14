@@ -57,6 +57,7 @@
 
 <div id="window-controls" class="tab-block">
 
+<span class="a4-tabs-switch-label" aria-hidden="true">{'Tabs'|i18n( 'design/admin/parts/my/menu' )}</span>
 {if $tabs_disabled}
     <div class="button-left"><a id="maincontent-show" class="show-hide-tabs" href={'/user/preferences/set/admin_navigation_content/1'|ezurl} title="{'Enable &quot;Tabs&quot; by default while browsing content.'|i18n( 'design/admin/parts/my/menu' )}">&nbsp;</a></div>
 {else}

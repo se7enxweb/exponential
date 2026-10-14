@@ -1288,6 +1288,104 @@ div#contentstructure ul#content_tree_menu ul a.openclose-close::after {
   height: 18px;
 }
 
+/* The node view's tabs switch (window_controls.tpl, node/top_node_full.tpl: .button-left > .show-hide-tabs, the
+   ids #maincontent-show / #maincontent-hide, later a button with aria-pressed): a labelled 36 x 24px switch above
+   the right end of the tab row instead of a 16px icon in the gap. Styled by class, id and aria-pressed only, so it
+   works with the link and with the button. The text "Tabs" beside it is the visible label; the control's own name
+   (its title, or the button's name) contains it. */
+.tab-block:has(> .button-left > .show-hide-tabs) > .button-left,
+.tab-block:has(> .button-left > .show-hide-tabs) > .a4-tabs-switch-label {
+  float: right;   /* both precede the tab row: it shrinks beside them, so they share its line, at its right end */
+  display: flex;
+  align-items: center;
+  height: 40px;   /* the tab row of the node view: 4px inset, 32px tabs, 4px inset */
+  margin: 0 0 0 var(--a4-space-2);
+}
+.tab-block:not(.a4-node-tabs):has(> .button-left > .show-hide-tabs) > .button-left,
+.tab-block:not(.a4-node-tabs):has(> .button-left > .show-hide-tabs) > .a4-tabs-switch-label {
+  height: 28px;   /* the classic tab row of the top node's view */
+}
+.tab-block:has(> .button-left > .show-hide-tabs) > ul.tabs {
+  width: auto;           /* not 100%: beside the floats */
+  overflow: hidden;      /* its own formatting context, also for the classic tabs of floated items */
+}
+.tab-block:has(> .button-left > .show-hide-tabs) > .tabs-content {
+  clear: both;
+}
+.a4-tabs-switch-label {
+  color: var(--a4-muted);
+  font-size: var(--a4-text-s);
+  font-weight: 600;
+}
+.tab-block .show-hide-tabs {
+  position: relative;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 36px;
+  min-width: 36px;
+  height: 24px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--a4-muted);
+  font-size: 0;
+  line-height: 0;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.tab-block .show-hide-tabs::before {   /* the track: the field edge (3:1) while off */
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 36px;
+  height: 20px;
+  margin: 0;
+  box-sizing: border-box;
+  border: 1px solid var(--a4-field-line);
+  border-radius: 10px;
+  background-color: var(--a4-field);
+  -webkit-mask: none;
+  mask: none;
+}
+/* theme/rounded.css draws the old icon through a#maincontent-hide::before (an id): no mask on the track */
+.tab-block #maincontent-show.show-hide-tabs::before,
+.tab-block #maincontent-hide.show-hide-tabs::before {
+  -webkit-mask: none;
+  mask: none;
+}
+.tab-block .show-hide-tabs::after {    /* the knob */
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--a4-muted);
+  transition: left .15s ease, background-color .15s ease;
+}
+.tab-block .show-hide-tabs[aria-pressed="true"]::before,
+.tab-block #maincontent-hide.show-hide-tabs:not([aria-pressed="false"])::before {
+  border-color: var(--a4-accent-strong);
+  background-color: var(--a4-accent-strong);
+}
+.tab-block .show-hide-tabs[aria-pressed="true"]::after,
+.tab-block #maincontent-hide.show-hide-tabs:not([aria-pressed="false"])::after {
+  left: 20px;
+  background-color: var(--a4-on-accent);
+}
+@media (forced-colors: active) {
+  .tab-block .show-hide-tabs::before { border-color: ButtonText; background-color: Canvas; }
+  .tab-block .show-hide-tabs::after { background-color: ButtonText; }
+  .tab-block .show-hide-tabs[aria-pressed="true"]::before,
+  .tab-block #maincontent-hide.show-hide-tabs:not([aria-pressed="false"])::before { border-color: Highlight; background-color: Highlight; }
+  .tab-block .show-hide-tabs[aria-pressed="true"]::after,
+  .tab-block #maincontent-hide.show-hide-tabs:not([aria-pressed="false"])::after { background-color: HighlightText; }
+}
+
 /* Visitors who ask for less motion get none: the frame's sidebar slides, the dashboard's lift and every fade end at
    once. Components keep their own rule for the running-status pulse. */
 @media (prefers-reduced-motion: reduce) {

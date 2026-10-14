@@ -193,6 +193,10 @@ it takes the click (the search scope switch); where that would cover a neighbour
 24px apart. A pixel length that is a layout offset rather than spacing (the password field's room for its toggle)
 is listed per selector in the test's `SCALE_EXCEPTIONS`.
 
+The node view's tabs switch (`.tab-block .show-hide-tabs`, the ids `#maincontent-show` / `#maincontent-hide`, or
+`aria-pressed` on a button) is a 36 x 24px switch with the visible label `.a4-tabs-switch-label` ("Tabs"); both float
+at the right end of the tab row. Style it by those hooks, not by the element, so link and button look the same.
+
 Modes the browser asks for: each theme sets `color-scheme` (scrollbars, select popups and date pickers follow);
 forced colors (Windows high contrast) get edges, the current and selected states and the focus in system colours,
 and data drawn as fills (dots, meters, bars) keeps its colours (`forced-color-adjust: none`);
