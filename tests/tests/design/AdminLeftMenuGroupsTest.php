@@ -91,7 +91,10 @@ class AdminLeftMenuGroupsTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( 'aria-current="page"', $items );
         $this->assertStringContainsString( 'aria-labelledby=', $items );
         $css = self::read( 'design/admin4/stylesheets/admin4.css' );
-        $this->assertStringContainsString( 'a[aria-current="page"]', $css );
+        // the page itself is "page", a page below the link "true": the same mark for both
+        $this->assertStringContainsString( '{if eq( $current_uri_string, $item.url )}', $items );
+        $this->assertStringContainsString( 'aria-current="true"', $items );
+        $this->assertStringContainsString( 'a[aria-current]', $css );
         $this->assertStringContainsString( 'summary.a4-nav-title', $css );
         $this->assertMatchesRegularExpression( '/@media \(forced-colors: active\) \{\s*#leftmenu details\.a4-navgroup/', $css );
         $this->assertMatchesRegularExpression( '/@media \(prefers-reduced-motion: reduce\) \{\s*#leftmenu details\.a4-navgroup > summary\.a4-nav-title::before \{ transition: none; \}/', $css );
