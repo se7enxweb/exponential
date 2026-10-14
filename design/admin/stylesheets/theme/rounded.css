@@ -538,7 +538,7 @@ div.alphabetical
 /* MISC */
 table.list th, table.special th
 {
-    color: #EEE;
+    color: #FFF;   /* white on the grey header row: 5.0:1 (#EEE was 4.4:1) */
     background-color: #6F6E6B;
     padding-top:0;
     padding-bottom:0;
