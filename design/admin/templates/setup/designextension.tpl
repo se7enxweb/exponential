@@ -154,9 +154,9 @@
 
 {if $wizard_file_count|gt( 0 )}
 <ul class="a4-setup-wz-tree">
-{foreach $wizard_files as $dew_file}
+{foreach $wizard_files as $dew_index => $dew_file}
     <li class="a4-setup-wz-depth-{min( 10, $dew_file.depth )}">
-        <a href="#dew-{$dew_file.path|wash|simplify_tag_name}">{$dew_file.basename|wash}</a>
+        <a href="#dew-file-{$dew_index}">{$dew_file.basename|wash}</a>
         <span class="a4-setup-wz-size">{'%lines lines'|i18n( 'design/admin/setup/rad/designextension',, hash( '%lines', $dew_file.lines ) )}</span>
         {if $dew_file.depth|gt( 0 )}<span class="a4-setup-wz-dir">&mdash; {$dew_file.path|wash}</span>{/if}
     </li>
@@ -187,8 +187,8 @@
     <button type="button" class="a4-btn a4-btn-small" id="dewCloseAll">{'Close all'|i18n( 'design/admin/setup/rad/designextension' )}</button>
 </div>
 
-{foreach $wizard_files as $dew_file}
-<div class="a4-setup-wz-file is-collapsed" id="dew-{$dew_file.path|wash|simplify_tag_name}">
+{foreach $wizard_files as $dew_index => $dew_file}
+<div class="a4-setup-wz-file is-collapsed" id="dew-file-{$dew_index}">
     <div class="a4-setup-wz-file-head">
         <span class="a4-setup-wz-file-toggle">+</span>
         <span class="a4-setup-wz-file-path">{$dew_file.path|wash}</span>
