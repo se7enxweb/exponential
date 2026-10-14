@@ -1148,7 +1148,7 @@ e6fe56c836e1e8315b4d7aa9e9fb4b74  design/admin4/templates/parts/audit_timeline.t
 b6f84f3260ba7ce48bcf3d4aa5231b95  design/admin4/templates/parts/content/menu.tpl
 15270559a36631b6940a25b072c96766  design/admin4/templates/parts/ini_menu.tpl
 3dff8ecf3c880bf2261cc89a9b39d8bd  design/admin4/templates/parts/ini_menu_items.tpl
-6d80fa219cecf8b22a88bde064a56fd3  design/admin4/templates/parts/language_badge.tpl
+d7dbfe9a07a2a521d91ce7b0a59f8722  design/admin4/templates/parts/language_badge.tpl
 c21842ba6557a31b9ace43341b2199f0  design/admin4/templates/parts/media/menu.tpl
 b13a791afb811dc46a6db640d480c37b  design/admin4/templates/parts/my/menu.tpl
 dccc0514a32ea7344daba52fb01e5b24  design/admin4/templates/parts/setup/menu.tpl
