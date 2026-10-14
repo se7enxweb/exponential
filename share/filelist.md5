@@ -307,7 +307,7 @@ d1f3e1ef98e8cee2e52a5446280eadc3  design/admin/override/templates/embed-inline_i
 e0c996a801b1373df9824852298b20d9  design/admin/override/templates/tiny_image.tpl
 a2c561e93ef63c93201e81acd4f32741  design/admin/override/templates/window_controls_user.tpl
 f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin/override/templates/windows_user.tpl
-e593e5a88dd0e249761460f262eb7b95  design/admin/stylesheets/components.css
+b4683825b461e8c9485ffbbce8253510  design/admin/stylesheets/components.css
 ce90ff045aa9ad5f6b74ebb4adb49d1f  design/admin/stylesheets/content.css
 9176b99cf9d39d3d3f7c8c50d1554eb5  design/admin/stylesheets/core.css
 3467a1c4602619c56bfc506613bebb91  design/admin/stylesheets/ezinfo.css
@@ -883,7 +883,7 @@ ac084a07607e6d6c5a845da15423854f  design/admin4/images/view-fullscreen.png
 99d3d5810f85a580372c354d45b81eb7  design/admin4/javascript/admin4.js
 c026c4c30fa5e95415c1f6611bcce9ea  design/admin4/javascript/contentstructuremenu_dynamic.js
 2208f27da9ddaa11d336d07c190cbc4b  design/admin4/javascript/expajaxuploader.js
-4e23960167274509b7adb391569718f1  design/admin4/javascript/ezadmin_menubar.js
+5390a64acc6421e3208a35c0e6c673f7  design/admin4/javascript/ezadmin_menubar.js
 2b984f2f31802646942901f436bf277b  design/admin4/javascript/ezajaxrelations_jquery.js
 563718ba8e0479fd6defd99313ac4ac8  design/admin4/javascript/ezajaxsubitems_expdatatable.js
 2c35ad74f3ae96723bd750231c27cbe4  design/admin4/javascript/leftmenu_widthcontrol.js
@@ -920,8 +920,8 @@ d1f3e1ef98e8cee2e52a5446280eadc3  design/admin4/override/templates/embed-inline_
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
 a2c561e93ef63c93201e81acd4f32741  design/admin4/override/templates/window_controls_user.tpl
 f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin4/override/templates/windows_user.tpl
-d770186a686d379596a9dcb85baaf660  design/admin4/stylesheets/admin4.css
-e593e5a88dd0e249761460f262eb7b95  design/admin4/stylesheets/components.css
+16b032ff7736e8b2c57e80f39b91238f  design/admin4/stylesheets/admin4.css
+b4683825b461e8c9485ffbbce8253510  design/admin4/stylesheets/components.css
 a8fcc091552c07de33a4c8bc6df8c20f  design/admin4/stylesheets/content.css
 b34210463fcdf50abd3a693ade329417  design/admin4/stylesheets/core.css
 98121f13132e15fd3e1d5ec12dba92a4  design/admin4/stylesheets/ezinfo.css
@@ -931,7 +931,7 @@ e998271a3ce233d1eaa620affd77e9fa  design/admin4/stylesheets/modules/setup.css
 c64a7dfdcdffd8b45c0c58c9e0442709  design/admin4/stylesheets/modules/structure.css
 690d1039b3c065561a026ba124a60ac5  design/admin4/stylesheets/modules/workflow.css
 9abe0790c5c47ddb1e1c67dce45083a8  design/admin4/stylesheets/packagecompare.css
-0c4aac9c693575ef53f115865b12eda9  design/admin4/stylesheets/pagelayout.css
+8ccae419037ccd3f4b916923963a44c4  design/admin4/stylesheets/pagelayout.css
 5d3b68fdb809c73a6d8dc464e33c61ec  design/admin4/stylesheets/responsive.css
 37282706e0e958814192a40961776a16  design/admin4/stylesheets/setup-extensions.css
 8649dc32faedc2b0f4da9c28243728dc  design/admin4/stylesheets/theme/admin_datatable.css
@@ -2755,7 +2755,7 @@ cdbe0fdc9c9011438bf808f4842b0982  doc/bc/5.90/relation_indexing.md
 94f95a803fffdb657972e1a81769e82f  doc/bc/6.0/LAYOUTS.md
 d386923e32f7abc18de9e5392795bb5f  doc/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md
 d95203ddf57747c5dcb15b6923bd0356  doc/bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXPANSION_HIDE_UNHIDE.md
-88f2429d900468c0f716b59612a04dde  doc/bc/6.0/admin4-styling.md
+9cd2fef47af7659f6d615e9304dacffe  doc/bc/6.0/admin4-styling.md
 b8b0564ea1db716863a85739a1f4c06d  doc/bc/6.0/admin4l.md
 f0b57cd68a5b41cc14ca22727186740c  doc/bc/6.0/api-keys.md
 c9f20a03afc08795fea37b7b66458194  doc/bc/6.0/audit.md
@@ -2984,7 +2984,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-c75c1845cbdd0429d9659f776bea485f  doc/changelogs/6.0/6.0.15.md
+144b9d90f25c2d9d25adf85f4ace447f  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -7057,7 +7057,7 @@ f9b0e9a77c376b79746b7f1228f66fac  tests/test-map.json
 4e3eeb18c2ea423afb62388e5e3dcafc  tests/tests/bin/phpcs/fixtures/typedeclarations.inc
 617c938384f3d87aa79b21ee6d448f4e  tests/tests/design/AdminIconsTest.php
 7e8957a9c15916135defa02bc8301d00  tests/tests/design/AdminRetiredClassesTest.php
-098de23052a322a00d9d458f57c8ac8a  tests/tests/design/AdminStylingRulesTest.php
+a41cfe18f7e0f951d550a4b0e439b79c  tests/tests/design/AdminStylingRulesTest.php
 54e302371453eecb7371979a43b7b89f  tests/tests/design/AdminTokenContrastTest.php
 dcc45e4631fc358b0384c51d17ff8d67  tests/tests/extension/bccie/ezBccieTest.php
 e71599015464e106c536eedfe12d9676  tests/tests/extension/cjw_newsletter/cjwNewsletterAdminViewsTest.php
