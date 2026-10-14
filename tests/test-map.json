@@ -235,6 +235,9 @@
     ],
     "kernel/*/module.php": [
       "tests/tests/design/AdminMenuPolicyListTest.php"
+    ],
+    "extension/ezjscore/settings/site.ini.append.php": [
+      "tests/tests/extension/ezjscore/ezjscoreAnonymousAccessTest.php"
     ]
   },
   "generated": {
