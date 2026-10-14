@@ -320,6 +320,69 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
     }
 
     /**
+     * Returns true when a selector (a list) has a :focus or :focus-visible state that is not exempt: :focus-within is
+     * another state, and :focus:not(:focus-visible) is the mouse-focus case that may drop the outline
+     */
+    public static function selectorHasFocus( $selector )
+    {
+        foreach ( explode( ',', $selector ) as $part )
+        {
+            $part = str_replace( ':focus:not(:focus-visible)', '', $part );
+            if ( preg_match( '/:focus(-visible)?(?![\w-])/', $part ) )
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Returns true when an outline declaration draws nothing: style none or hidden, or width 0, in any order
+     */
+    public static function outlineIsRemoved( $property, $value )
+    {
+        $value = strtolower( trim( preg_replace( '/\s*!important\s*$/i', '', $value ) ) );
+        $words = preg_split( '/\s+/', $value );
+        if ( $property === 'outline-style' )
+        {
+            return in_array( $value, array( 'none', 'hidden' ), true );
+        }
+        if ( $property === 'outline-width' )
+        {
+            return (bool)preg_match( '/^0([a-z]+)?$/', $value );
+        }
+        if ( $property !== 'outline' )
+        {
+            return false;
+        }
+        foreach ( $words as $word )
+        {
+            if ( in_array( $word, array( 'none', 'hidden' ), true ) || preg_match( '/^0([a-z]+)?$/', $word ) )
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public function testFocusOutlineCheckerCatchesWhatItShould()
+    {
+        foreach ( array( 'none', '0', '0 none', 'none 0', 'medium none', '0px none', 'none !important' ) as $value )
+        {
+            $this->assertTrue( self::outlineIsRemoved( 'outline', $value ), "outline: $value" );
+        }
+        $this->assertTrue( self::outlineIsRemoved( 'outline-style', 'hidden' ) );
+        $this->assertTrue( self::outlineIsRemoved( 'outline-width', '0' ) );
+        $this->assertFalse( self::outlineIsRemoved( 'outline', '2px solid transparent' ) );
+        $this->assertFalse( self::outlineIsRemoved( 'outline', '3px solid var(--a4-ring)' ) );
+        $this->assertTrue( self::selectorHasFocus( 'a:focus' ) );
+        $this->assertTrue( self::selectorHasFocus( 'a:hover, a:focus-visible' ) );
+        $this->assertFalse( self::selectorHasFocus( '.box:focus-within' ) );
+        $this->assertFalse( self::selectorHasFocus( 'a:focus:not(:focus-visible)' ) );
+        $this->assertFalse( self::selectorHasFocus( 'a:hover' ) );
+    }
+
+    /**
      * A :focus or :focus-visible rule of admin4 that takes the outline away leaves nothing in forced-colors mode,
      * where box-shadow rings are not drawn: it keeps an outline (a transparent one is enough, forced colors paint it)
      */
@@ -337,8 +400,7 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
             foreach ( self::declarations( file_get_contents( $file ) ) as $d )
             {
                 list( $selector, $property, $value ) = $d;
-                if ( strpos( $selector, ':focus' ) !== false && in_array( $property, array( 'outline', 'outline-style', 'outline-width' ), true )
-                     && preg_match( '/^(none|0|0px)(\s*!important)?$/i', trim( $value ) ) )
+                if ( self::selectorHasFocus( $selector ) && self::outlineIsRemoved( $property, $value ) )
                 {
                     $problems[] = "$name: $selector { $property: $value }";
                 }

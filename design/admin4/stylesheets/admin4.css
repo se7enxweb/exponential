@@ -340,8 +340,8 @@ html[data-a4-theme="dark"] .a4-theme-toggle .a4-icon-moon { display: inline-bloc
   border-radius: 0.75rem 0 0 0.75rem;
 }
 .sidebar-control:focus-visible {
-  outline: 2px solid var(--a4-orange);
-  outline-offset: 1px;
+  outline: 3px solid var(--a4-ring);
+  outline-offset: 2px;
 }
 /* An open side menu below 1024px is a drawer over the page: a deeper shadow and a solid edge set it apart
    from the content it covers. */
