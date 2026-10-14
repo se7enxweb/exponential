@@ -307,7 +307,7 @@ d1f3e1ef98e8cee2e52a5446280eadc3  design/admin/override/templates/embed-inline_i
 e0c996a801b1373df9824852298b20d9  design/admin/override/templates/tiny_image.tpl
 a2c561e93ef63c93201e81acd4f32741  design/admin/override/templates/window_controls_user.tpl
 f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin/override/templates/windows_user.tpl
-c459339c3272e7b77072628e02527db0  design/admin/stylesheets/components.css
+fc82bcb31373a679b67d854224931ff0  design/admin/stylesheets/components.css
 ce90ff045aa9ad5f6b74ebb4adb49d1f  design/admin/stylesheets/content.css
 9176b99cf9d39d3d3f7c8c50d1554eb5  design/admin/stylesheets/core.css
 3467a1c4602619c56bfc506613bebb91  design/admin/stylesheets/ezinfo.css
@@ -921,7 +921,7 @@ e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tp
 a2c561e93ef63c93201e81acd4f32741  design/admin4/override/templates/window_controls_user.tpl
 f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin4/override/templates/windows_user.tpl
 5da12574d83af7fd18faa30b7f1808da  design/admin4/stylesheets/admin4.css
-c459339c3272e7b77072628e02527db0  design/admin4/stylesheets/components.css
+fc82bcb31373a679b67d854224931ff0  design/admin4/stylesheets/components.css
 ebae562e551202c0215060f25a943041  design/admin4/stylesheets/content.css
 b34210463fcdf50abd3a693ade329417  design/admin4/stylesheets/core.css
 3467a1c4602619c56bfc506613bebb91  design/admin4/stylesheets/ezinfo.css
@@ -8029,7 +8029,7 @@ cb0fed15dd1df5bc335d598439aec099  tests/tests/lib/ezfile/eZDirDeletionGuardTest.
 9848960050fb352a09399a1a93913d16  tests/tests/lib/ezimage/ezimagemanager_test.php
 94fc51afad752bcbfdbe3874254dda15  tests/tests/lib/ezimage/ezimageshellhandler_test.php
 8c85befbff3ccee276d033abc3ac38ef  tests/tests/lib/ezimage/suite.php
-724c0669258a900e775671367c10b128  tests/tests/lib/ezlocale/eZLocaleFormattingTest.php
+cfe7c616c02612ba55b2591edb23f78a  tests/tests/lib/ezlocale/eZLocaleFormattingTest.php
 ee1781006858e40da837447e9667f887  tests/tests/lib/ezlocale/ezlocale_regression.php
 b534c94bd16d35b2e4c350ed914eeed0  tests/tests/lib/ezlocale/suite.php
 60e3422dd7a813f76038a3ecb5b842f4  tests/tests/lib/ezmath/eZMathHandlersTest.php
