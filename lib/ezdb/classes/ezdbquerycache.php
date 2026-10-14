@@ -61,6 +61,26 @@ class eZDBQueryCache
     /** @var array counters for this request (the setup/info box sums them per server) */
     public static $stats = array( 'hits' => 0, 'misses' => 0, 'stores' => 0, 'uncacheable' => 0, 'writes' => 0 );
 
+    /**
+     * @var WeakMap|null per driver object: the session parameters its ALTER
+     * SESSION statements set (see noteSession()), which key() adds to every
+     * statement of that connection. Not reset per request: the session lives
+     * as long as the connection.
+     */
+    protected static $session = null;
+
+    /**
+     * Oracle session parameters that become part of the key instead of making
+     * every result stale: the NLS settings (number and date format, length
+     * semantics, linguistic comparison and sort, language, territory ...),
+     * CURSOR_SHARING and TIME_ZONE. Each changes a result, if at all, only by
+     * its value, and every connection's statements are keyed with the values
+     * it set, so a result is answered only to a session with the same ones.
+     * Anything else (CURRENT_SCHEMA, EDITION, CONTAINER, EVENTS ...) stays a
+     * write that makes every result stale.
+     */
+    const SESSION_KEY_PARAMETERS = '/^(?:NLS_[A-Z_]+|CURSOR_SHARING|TIME_ZONE)$/';
+
     /** Words that make a statement's result depend on more than its tables. */
     /**
      * Oracle's forms of the same, without parentheses: a sequence's NEXTVAL and
@@ -179,8 +199,9 @@ class eZDBQueryCache
     }
 
     /**
-     * The key of a statement: the connection, the text and arrayQuery()'s
-     * parameters. xxh128 where PHP has it (8.1+), several times faster than
+     * The key of a statement: the connection, its session settings (Oracle,
+     * see noteSession()), the text and arrayQuery()'s parameters. xxh128
+     * where PHP has it (8.1+), several times faster than
      * md5 on a long statement; the parameters (offset, limit, column) joined
      * instead of serialized.
      */
@@ -192,7 +213,7 @@ class eZDBQueryCache
             foreach ( $params as $name => $value )
                 $p .= $name . '=' . ( is_scalar( $value ) || $value === null ? (string)$value : serialize( $value ) ) . ';';
         }
-        $raw = get_class( $db ) . "\0" . ( $db->DB ?? '' ) . "\0" . ( $db->Server ?? '' ) . "\0" . $sql . "\0" . $p;
+        $raw = get_class( $db ) . "\0" . ( $db->DB ?? '' ) . "\0" . ( $db->Server ?? '' ) . "\0" . self::sessionKey( $db ) . "\0" . $sql . "\0" . $p;
         static $xxh = null;
         if ( $xxh === null )
             $xxh = in_array( 'xxh128', hash_algos(), true );
@@ -279,13 +300,15 @@ class eZDBQueryCache
             return;
         }
         $verb = strtoupper( (string)strtok( ltrim( $sql ), " \t\r\n(" ) );
-        // The ALTER SESSION ezoracle runs on every connect changes nothing a result
-        // depends on. Counted as a write of unknown tables it made every result stale
-        // on every request. Any other ALTER SESSION (CURRENT_SCHEMA, NLS_SORT, NLS_COMP,
-        // NLS_DATE_FORMAT, TIME_ZONE, EDITION, CONTAINER ...) can change results and
-        // stays an unreadable write.
-        if ( $verb === 'ALTER' && self::isNeutralAlterSession( $sql ) )
+        // ezoracle runs one ALTER SESSION on every connect. Counted as a write of
+        // unknown tables it made every result stale on every request. Its parameters
+        // (SESSION_KEY_PARAMETERS) go into the connection's key instead; any other
+        // ALTER SESSION (CURRENT_SCHEMA, EDITION, CONTAINER ...) stays an unreadable write.
+        if ( $verb === 'ALTER' && ( $set = self::sessionSettings( $sql ) ) !== null )
+        {
+            self::noteSession( $db, $set );
             return;
+        }
         if ( in_array( $verb, array( 'SELECT', 'SHOW', 'DESCRIBE', 'DESC', 'EXPLAIN', 'SET', 'BEGIN', 'START', 'COMMIT', 'ROLLBACK', 'SAVEPOINT', 'RELEASE', 'PRAGMA', 'USE', 'LOCK', 'UNLOCK', 'ANALYZE', 'CHECK', 'CHECKSUM', 'FLUSH', 'KILL', 'OPTIMIZE', 'VACUUM' ), true ) )
             return;
         // Temporary tables are never cached, so their writes invalidate
@@ -319,37 +342,76 @@ class eZDBQueryCache
     }
 
     /**
-     * Session parameters that change no cached result: the length unit of new
-     * columns, cursor reuse, and the number format, which only ezoracle sets, on
-     * connect and always to the same value (the key does not carry it). With
-     * site.ini OracleCaseInsensitive=enabled ezoracle adds NLS_COMP and NLS_SORT,
-     * which change comparisons: that statement stays a write.
-     */
-    const NEUTRAL_SESSION_PARAMETERS = array( 'NLS_NUMERIC_CHARACTERS', 'NLS_LENGTH_SEMANTICS', 'CURSOR_SHARING' );
-
-    /**
-     * Whether $sql is an ALTER SESSION SET that only sets parameters of
-     * NEUTRAL_SESSION_PARAMETERS (the statement ezoracle runs on connect).
+     * Whether $sql is an ALTER SESSION SET that changes nothing a stored result
+     * could be wrong about: it only sets parameters of SESSION_KEY_PARAMETERS
+     * (the statement ezoracle runs on every connect, with or without
+     * OracleCaseInsensitive). noteWrite() makes such a statement part of the
+     * connection's key instead of a write.
      *
      * @param string $sql
      * @return bool
      */
     public static function isNeutralAlterSession( $sql )
     {
+        return self::sessionSettings( $sql ) !== null;
+    }
+
+    /**
+     * The parameters an ALTER SESSION SET sets (NAME => value, names and
+     * unquoted values in upper case, a quoted value as written), or null when
+     * $sql is anything else or sets a parameter outside SESSION_KEY_PARAMETERS.
+     *
+     * @param string $sql
+     * @return array|null
+     */
+    public static function sessionSettings( $sql )
+    {
         if ( !preg_match( '/^\s*ALTER\s+SESSION\s+SET\s+(.+?)\s*;?\s*$/is', $sql, $m ) )
-            return false;
+            return null;
         $rest = $m[1];
-        $found = 0;
+        $set = array();
         while ( $rest !== '' )
         {
-            if ( !preg_match( "/^([A-Za-z_][A-Za-z0-9_\$#]*)\s*=\s*(?:'(?:[^']++|'')*+'|[^\s']++)\s*/", $rest, $p ) )
-                return false;
-            if ( !in_array( strtoupper( $p[1] ), self::NEUTRAL_SESSION_PARAMETERS, true ) )
-                return false;
+            if ( !preg_match( "/^([A-Za-z_][A-Za-z0-9_\$#]*)\s*=\s*('(?:[^']++|'')*+'|[^\s']++)\s*/", $rest, $p ) )
+                return null;
+            $name = strtoupper( $p[1] );
+            if ( !preg_match( self::SESSION_KEY_PARAMETERS, $name ) )
+                return null;
+            $set[$name] = $p[2][0] === "'" ? $p[2] : strtoupper( $p[2] );
             $rest = (string)substr( $rest, strlen( $p[0] ) );
-            $found++;
         }
-        return $found > 0;
+        return $set ?: null;
+    }
+
+    /**
+     * Adds the session parameters $set to what the key of $db's statements
+     * carries from now on. A connection's session lives as long as the driver
+     * object (a persistent worker's too), so this is not reset per request.
+     */
+    protected static function noteSession( $db, array $set )
+    {
+        if ( self::$session === null )
+            self::$session = new WeakMap();
+        $all = ( isset( self::$session[$db] ) ? self::$session[$db]['set'] : array() );
+        foreach ( $set as $name => $value )
+            $all[$name] = $value;
+        ksort( $all );
+        $text = '';
+        foreach ( $all as $name => $value )
+            $text .= $name . '=' . $value . ' ';
+        self::$session[$db] = array( 'set' => $all, 'key' => $text );
+    }
+
+    /**
+     * What key() adds for $db: the session parameters noteSession() saw on it,
+     * '' for a connection that set none.
+     *
+     * @param object $db
+     * @return string
+     */
+    public static function sessionKey( $db )
+    {
+        return self::$session !== null && isset( self::$session[$db] ) ? self::$session[$db]['key'] : '';
     }
 
     /**

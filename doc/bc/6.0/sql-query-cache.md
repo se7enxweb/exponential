@@ -24,10 +24,28 @@ reads a sequence (`<sequence>.NEXTVAL`, `.CURRVAL`: the driver reads every new r
 (`SYSDATE`, `SYSTIMESTAMP`), the SCN, `SYS_GUID`, `SYS_CONTEXT`/`USERENV` or `DBMS_RANDOM`, and anything that reads the
 catalogue (`USER_*`, `ALL_*`, `DBA_*`, `V$*`), is always run. An anonymous PL/SQL block (`DECLARE ...`,
 `BEGIN ... END;`) counts as a write whose tables cannot be read: it makes every result stale.
-The `ALTER SESSION` the driver runs on every connect (number format, length semantics, cursor sharing) is no
-write; any other `ALTER SESSION` can change results and makes every result stale as well. With
-`site.ini [DatabaseSettings] OracleCaseInsensitive=enabled` the driver adds `NLS_COMP` and `NLS_SORT` to that statement:
-then every connect still makes every result stale, and the shared cache does not hit across requests.
+
+### Session settings (Oracle `ALTER SESSION`)
+
+ezoracle runs one `ALTER SESSION SET` on every connect (`initializeSession()`): the number format
+(`NLS_NUMERIC_CHARACTERS`), character length semantics (`NLS_LENGTH_SEMANTICS`), `CURSOR_SHARING`, and with
+`site.ini [DatabaseSettings] OracleCaseInsensitive=enabled` also `NLS_COMP=LINGUISTIC` and `NLS_SORT`. Such a statement
+is **no write**. Its parameters become part of the key of every statement of that connection, so a result is answered
+only to a connection whose session has the same settings, and every connection of an installation, which runs the
+same statement, shares the results across requests (also with `OracleCaseInsensitive`).
+
+| `ALTER SESSION ...` | What the cache does |
+|---|---|
+| `SET` of only `NLS_*` parameters, `CURSOR_SHARING`, `TIME_ZONE` | no write; the values go into the connection's key (names and unquoted values in upper case, the last value of a parameter wins) |
+| `SET` of anything else, alone or mixed in (`CURRENT_SCHEMA`, `EDITION`, `CONTAINER`, `EVENTS` ...), any other form (`ENABLE PARALLEL DML`), a second statement after `;` | a write whose tables cannot be read: every result stale |
+
+The session parameters are kept per driver object (a `WeakMap`), not per request: a persistent worker that keeps its
+connection keeps its session. `eZDBQueryCache::sessionSettings( $sql )` returns what a statement sets (or null),
+`eZDBQueryCache::sessionKey( $db )` what the key of a connection carries ('' for MySQL, PostgreSQL, SQLite).
+
+The other drivers set their session through the client library (`mysqli_set_charset()`, the connection string), not
+through `query()`; a `SET ...` or `PRAGMA ...` that does reach `query()` is no write for the cache and does not change
+the key.
 
 ## What it gives (measured on a test installation, 2026-09-27)
 
@@ -317,11 +335,15 @@ so the tests never touch the site's cache.
 | QC-11 | `Mode=off` stores nothing, writes no state and counts nothing |
 | QC-12 | A write by another process, seen through the state file, makes a result stale within a second, even one still in the request's memo; other tables stay current |
 | QC-13 | A stored result is answered without parsing the statement again, but not once a table it read has been excluded |
-| QC-16 | Oracle: the `ALTER SESSION` ezoracle runs on connect (`NLS_NUMERIC_CHARACTERS`, `NLS_LENGTH_SEMANTICS`, `CURSOR_SHARING`) writes nothing; any other `ALTER SESSION` (`CURRENT_SCHEMA`, `NLS_SORT`, `NLS_COMP`, `NLS_DATE_FORMAT`, `TIME_ZONE`, `CONTAINER` ...) makes everything stale |
+| QC-14 | The database's own catalogue (`sqlite_master`, `sqlite_stat1`, `pg_*`, `information_schema`) is never cached |
+| QC-15 | Oracle: sequences, the clock, the SCN, `SYS_GUID`, `SYS_CONTEXT`, `DBMS_RANDOM` and the catalogue are never cached; a PL/SQL block makes everything stale, a bare `BEGIN` does not |
+| QC-16 | Oracle: an `ALTER SESSION SET` of `NLS_*`, `CURSOR_SHARING`, `TIME_ZONE` (the statement ezoracle runs on connect, with or without `OracleCaseInsensitive`) writes nothing; any other `ALTER SESSION` (`CURRENT_SCHEMA`, `CONTAINER`, `EVENTS`, `ENABLE ...`, a second statement) makes everything stale |
+| QC-19 | Oracle: a result is answered to the next connections with the same session settings, and connecting raises no generation, also with `NLS_COMP`/`NLS_SORT` |
+| QC-20 | Oracle: a result is never answered to a session with other settings (`NLS_SORT=GERMAN` against `BINARY_CI`); a later `ALTER SESSION` gives the connection its new key; with `Mode=off` nothing is noted |
 
 ```bash
 php vendor/bin/phpunit --testsuite lib --filter eZDBQueryCacheTest
-# OK (13 tests, 95 assertions), about 2 s (QC-08 and QC-12 wait a second each)
+# OK (18 tests, 164 assertions), about 2 s (QC-08 and QC-12 wait a second each)
 ```
 
 **On a running site** (MySQL, the real drivers), each checked on a test installation

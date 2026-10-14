@@ -16,6 +16,10 @@
  *  QC-12 — A write by another process, seen through the state file, makes a result stale
  *  QC-13 — A stored result is answered without reading its tables again, but not once a table it read is excluded
  *  QC-14 — The database's own catalogue (sqlite_master, sqlite_stat1, pg_*, information_schema) is never cached
+ *  QC-15 — Oracle: sequences, the clock, the SCN and the catalogue are never cached; PL/SQL blocks write
+ *  QC-16 — Oracle: an ALTER SESSION SET of NLS_*, CURSOR_SHARING, TIME_ZONE writes nothing; any other makes everything stale
+ *  QC-19 — Oracle: connections with the same session settings share results, also with NLS_COMP/NLS_SORT
+ *  QC-20 — Oracle: a result is never answered to a session with other settings
  *
  * No database: the driver is a stand-in object with the properties the cache
  * reads, and the state lives in a directory of its own under var/tmp.
@@ -371,26 +375,30 @@ class eZDBQueryCacheTest extends PHPUnit\Framework\TestCase
         $sql = 'SELECT * FROM ezcontentobject';
         $this->select( $sql );
         $generation = eZDBQueryCache::freshState()['generation'];
-        $this->write( "ALTER SESSION SET NLS_NUMERIC_CHARACTERS='. ' NLS_LENGTH_SEMANTICS=CHAR CURSOR_SHARING=FORCE" );
-        $this->write( "  alter session set cursor_sharing = EXACT;" );
-        $this->write( "ALTER SESSION\n\tSET NLS_LENGTH_SEMANTICS=CHAR\tNLS_NUMERIC_CHARACTERS = '.'''" );
-        $this->assertNotNull( $this->select( $sql ), 'the driver\'s session settings change no result' );
-        $this->assertSame( $generation, eZDBQueryCache::freshState()['generation'] );
-
-        // settings that can change results stay unreadable writes
-        foreach ( array( 'ALTER SESSION SET CURRENT_SCHEMA = other',
+        foreach ( array( "ALTER SESSION SET NLS_NUMERIC_CHARACTERS='. ' NLS_LENGTH_SEMANTICS=CHAR CURSOR_SHARING=FORCE",
+                         "  alter session set cursor_sharing = EXACT;",
+                         "ALTER SESSION\n\tSET NLS_LENGTH_SEMANTICS=CHAR\tNLS_NUMERIC_CHARACTERS = '.'''",
                          "ALTER SESSION SET NLS_NUMERIC_CHARACTERS='. ' NLS_COMP=LINGUISTIC NLS_SORT=BINARY_CI",
                          "ALTER SESSION SET NLS_DATE_FORMAT='YYYY-MM-DD'",
                          "ALTER SESSION SET TIME_ZONE='+02:00'",
+                         "ALTER SESSION SET CURSOR_SHARING=FORCE NLS_SORT=GERMAN",
+                         "ALTER SESSION SET NLS_NUMERIC_CHARACTERS='.''' NLS_SORT='x'" ) as $alter )
+        {
+            $this->assertTrue( eZDBQueryCache::isNeutralAlterSession( $alter ), $alter );
+            $this->write( $alter );
+        }
+        $this->assertSame( $generation, eZDBQueryCache::freshState()['generation'], 'session settings are no write' );
+
+        // settings that can change results in other ways stay unreadable writes
+        foreach ( array( 'ALTER SESSION SET CURRENT_SCHEMA = other',
                          'ALTER SESSION SET CONTAINER = pdb2',
                          'ALTER SESSION SET',
                          'ALTER SESSION ENABLE PARALLEL DML',
-                         "ALTER SESSION SET CURSOR_SHARING=FORCE NLS_SORT=GERMAN",
                          "ALTER SESSION SET CURSOR_SHARING=FORCE; DROP TABLE ezcontentobject",
                          "/* x */ ALTER SESSION SET CURSOR_SHARING=FORCE",
                          'ALTER SESSION SET CURSOR_SHARING=',
-                         "ALTER SESSION SET EVENTS '10046 trace name context forever'",
-                         "ALTER SESSION SET NLS_NUMERIC_CHARACTERS='.''' NLS_SORT='x'" ) as $alter )
+                         "ALTER SESSION SET NLS_SORT=GERMAN CURRENT_SCHEMA=other",
+                         "ALTER SESSION SET EVENTS '10046 trace name context forever'" ) as $alter )
         {
             $this->assertFalse( eZDBQueryCache::isNeutralAlterSession( $alter ), $alter );
             $this->select( $sql );
@@ -401,5 +409,68 @@ class eZDBQueryCacheTest extends PHPUnit\Framework\TestCase
         $this->select( $sql );
         $this->write( 'ALTER TABLE ezcontentobject ADD foo INTEGER' );
         $this->assertNull( $this->select( $sql ), 'ALTER TABLE still makes its table stale' );
+    }
+
+    /** A new connection of ezoracle: a new driver object and its ALTER SESSION, as initializeSession() runs it. */
+    private function oracleConnection( $caseInsensitive = false, $sort = 'BINARY_CI' )
+    {
+        $db = $this->driver();
+        $alter = "ALTER SESSION SET NLS_NUMERIC_CHARACTERS='. ' NLS_LENGTH_SEMANTICS=CHAR CURSOR_SHARING=EXACT";
+        if ( $caseInsensitive )
+            $alter .= ' NLS_COMP=LINGUISTIC NLS_SORT=' . $sort;
+        eZDBQueryCache::noteWrite( $db, $alter );
+        return $db;
+    }
+
+    /** QC-19 */
+    public function testOracleConnectionsHitAcrossRequestsAlsoCaseInsensitive()
+    {
+        $sql = 'SELECT * FROM ezcontentobject';
+        foreach ( array( false, true ) as $caseInsensitive )
+        {
+            $this->newRequest();
+            $this->select( $sql, array( array( 'id' => 1 ) ), array(), $this->oracleConnection( $caseInsensitive ) );
+            $generation = eZDBQueryCache::freshState()['generation'];
+            // the next connections (the next requests) with the same settings
+            for ( $connection = 0; $connection < 2; $connection++ )
+            {
+                $db = $this->oracleConnection( $caseInsensitive );
+                $this->assertSame( $generation, eZDBQueryCache::freshState()['generation'], 'connecting writes nothing' );
+                $this->assertSame( array( array( 'id' => 1 ) ), $this->select( $sql, array(), array(), $db ),
+                                   'answered to another connection with the same settings' . ( $caseInsensitive ? ' (OracleCaseInsensitive)' : '' ) );
+            }
+        }
+        // a connection that set nothing keys as before
+        $this->assertSame( '', eZDBQueryCache::sessionKey( $this->driver() ) );
+        $this->assertSame( "CURSOR_SHARING=EXACT NLS_COMP=LINGUISTIC NLS_LENGTH_SEMANTICS=CHAR NLS_NUMERIC_CHARACTERS='. ' NLS_SORT=BINARY_CI ",
+                           eZDBQueryCache::sessionKey( $this->oracleConnection( true ) ) );
+    }
+
+    /** QC-20 */
+    public function testAResultIsAnsweredOnlyToASessionWithTheSameSettings()
+    {
+        $sql = "SELECT name FROM ezcontentobject ORDER BY name";
+        $binary = $this->oracleConnection();
+        $german = $this->oracleConnection( true, 'GERMAN' );
+        $this->select( $sql, array( array( 'name' => 'B' ), array( 'name' => 'a' ) ), array(), $binary );
+        $this->assertNull( $this->select( $sql, array( array( 'name' => 'a' ), array( 'name' => 'B' ) ), array(), $german ),
+                           'a sort of another session is not answered' );
+        $this->assertSame( array( array( 'name' => 'B' ), array( 'name' => 'a' ) ), $this->select( $sql, array(), array(), $binary ) );
+        $this->assertSame( array( array( 'name' => 'a' ), array( 'name' => 'B' ) ), $this->select( $sql, array(), array(), $german ) );
+        $this->assertSame( array( array( 'name' => 'a' ), array( 'name' => 'B' ) ), $this->select( $sql, array(), array(), $this->oracleConnection( true, 'german' ) ),
+                           'names and unquoted values are compared in upper case' );
+
+        // a later ALTER SESSION on the same connection: from then on its own key, the last value of a parameter wins
+        eZDBQueryCache::noteWrite( $binary, 'ALTER SESSION SET NLS_SORT=GERMAN NLS_COMP=LINGUISTIC' );
+        $this->assertSame( eZDBQueryCache::sessionKey( $german ), eZDBQueryCache::sessionKey( $binary ) );
+        $this->assertSame( array( array( 'name' => 'a' ), array( 'name' => 'B' ) ), $this->select( $sql, array(), array(), $binary ) );
+        eZDBQueryCache::noteWrite( $binary, 'ALTER SESSION SET NLS_SORT=BINARY_CI' );
+        $this->assertNull( $this->select( $sql, array( array( 'name' => 'x' ) ), array(), $binary ) );
+
+        // with the cache off nothing is noted
+        eZDBQueryCache::setSettings( array( 'mode' => 'off' ) + eZDBQueryCache::settings() );
+        $off = $this->driver();
+        eZDBQueryCache::noteWrite( $off, 'ALTER SESSION SET NLS_SORT=GERMAN' );
+        $this->assertSame( '', eZDBQueryCache::sessionKey( $off ) );
     }
 }
