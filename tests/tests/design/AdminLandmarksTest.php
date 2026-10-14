@@ -120,8 +120,9 @@ class AdminLandmarksTest extends PHPUnit\Framework\TestCase
     public function testTheBreadcrumbMarksTheCurrentPage()
     {
         $path = self::template( 'page_toppath.tpl' );
-        $this->assertSame( 2, substr_count( $path, 'aria-current="page"' ) );
-        $this->assertStringContainsString( '<span class="slash" aria-hidden="true">', $path );
+        // the last step, as a link, as plain text or disabled while editing
+        $this->assertSame( 3, substr_count( $path, 'aria-current="page"' ) );
+        $this->assertStringContainsString( '<ol class="a4-crumbs" role="list">', $path );
     }
 
     public function testTheTopMenuMarksTheCurrentEntryAndItsDisabledEntries()

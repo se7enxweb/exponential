@@ -51,7 +51,7 @@ class AdminPageHeaderTest extends PHPUnit\Framework\TestCase
         $tpl = self::read( 'design/admin4/templates/page_toppath.tpl' );
         $this->assertStringNotContainsString( 'shorten(', $tpl, 'names are no longer cut to 18 characters' );
         $this->assertStringNotContainsString( 'class="slash"', $tpl, 'the separators come from the stylesheet' );
-        $this->assertSame( 2, substr_count( $tpl, 'aria-current="page"' ), 'the last step, link or text, is the current page' );
+        $this->assertSame( 3, substr_count( $tpl, 'aria-current="page"' ), 'the last step, link, text or disabled while editing, is the current page' );
         $this->assertGreaterThanOrEqual( 3, substr_count( $tpl, 'title="{$:item.text|wash}"' ), 'a long name keeps its full name as title' );
         $this->assertStringContainsString( 'is-fold" aria-hidden="true"', $tpl );
         // Safari keeps the list semantics only with an explicit role; the fold appears from three steps on; no empty list
