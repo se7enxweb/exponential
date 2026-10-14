@@ -14947,6 +14947,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Hauptmenü</translation>
     </message>
     <message>
+        <source>More</source>
+        <translation>Mehr</translation>
+    </message>
+    <message>
         <source>Left column</source>
         <translation>Linke Spalte</translation>
     </message>

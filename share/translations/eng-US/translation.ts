@@ -12562,6 +12562,10 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Main menu</translation>
     </message>
     <message>
+        <source>More</source>
+        <translation>More</translation>
+    </message>
+    <message>
         <source>Left column</source>
         <translation>Left column</translation>
     </message>

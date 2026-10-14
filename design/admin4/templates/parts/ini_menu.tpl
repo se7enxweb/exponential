@@ -178,17 +178,17 @@
                 {/if}
             {/foreach}
             {if $group_items|count}
-                {set $groups = $groups|append( hash( 'id', 'more', 'name', 'More', 'items', $group_items ) )}
+                {set $groups = $groups|append( hash( 'id', 'more', 'name', 'More'|i18n( 'design/admin/pagelayout' ), 'translated', true(), 'items', $group_items ) )}
             {/if}
 
             {foreach $groups as $group}
                 {set $group_open = false()
                      $group_id = concat( $menu_title_id, '-', $group.id )}
                 {foreach $group.items as $item}
-                    {if and( eq( $item.state, 'link' ), $current_uri_string|begins_with( $item.url ) )}{set $group_open = true()}{/if}
+                    {if and( eq( $item.state, 'link' ), or( eq( $current_uri_string, $item.url ), $current_uri_string|begins_with( concat( $item.url, '/' ) ) ) )}{set $group_open = true()}{/if}
                 {/foreach}
                 <details class="a4-navgroup" id="{$group_id|wash}" data-a4-navgroup="{$group_id|wash}" open{if $group_open} data-a4-current{/if}>
-                    <summary class="a4-nav-title">{$group.name|d18n( $i18n_section )|wash}</summary>
+                    <summary class="a4-nav-title">{if is_set( $group.translated )}{$group.name|wash}{else}{$group.name|d18n( $i18n_section )|wash}{/if}</summary>
                     {include uri='design:parts/ini_menu_items.tpl' items=$group.items current_uri_string=$current_uri_string}
                 </details>
             {/foreach}

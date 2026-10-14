@@ -8,8 +8,11 @@
     {if eq( $item.state, 'disabled' )}
         <li><div><span class="disabled">{$item.name}</span></div></li>
     {elseif eq( $item.state, 'link' )}
-        {if $current_uri_string|begins_with( $item.url )}
+        {* the page itself: aria-current="page"; a page below the link (a view of it): "true", the same mark *}
+        {if eq( $current_uri_string, $item.url )}
         <li class="current"><div><a href={$item.url|ezurl} aria-current="page">{$item.name}</a></div></li>
+        {elseif $current_uri_string|begins_with( concat( $item.url, '/' ) )}
+        <li class="current"><div><a href={$item.url|ezurl} aria-current="true">{$item.name}</a></div></li>
         {else}
         <li><div><a href={$item.url|ezurl}>{$item.name}</a></div></li>
         {/if}

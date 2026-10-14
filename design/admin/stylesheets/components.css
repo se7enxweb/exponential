@@ -171,7 +171,7 @@
    every target its 24px (WCAG 2.5.8). */
 html[data-a4-density="compact"] {
   --a4-control-h: calc(var(--a4-space-5) + var(--a4-space-1));
-  --a4-list-pad: .25em;
+  --a4-list-pad: .3em;   /* with a 13px body and a normal line height a row stays above 24px (WCAG 2.5.8) */
   --a4-cell-pad-y: var(--a4-space-1);
   --a4-cell-pad-x: var(--a4-space-2);
   --a4-card-pad-y: var(--a4-space-2);
