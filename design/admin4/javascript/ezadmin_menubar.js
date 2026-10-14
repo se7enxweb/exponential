@@ -35,9 +35,10 @@ function sidebarToggle() {
         // nothing to clean up without storage
     }
 
+    // The tabs on the window edges are named after their column ("Left column"); aria-expanded says whether it shows.
     function show(side, open) {
         $(".sidebar." + side).toggleClass("show", open);
-        $(".sidebar-control." + side).toggleClass("rotate", open);
+        $(".sidebar-control." + side).toggleClass("rotate", open).attr("aria-expanded", open ? "true" : "false");
     }
 
     function apply() {
@@ -62,6 +63,29 @@ function sidebarToggle() {
 
     $(".sidebar-control.left").on("click", () => toggle("left"));
     $(".sidebar-control.right").on("click", () => toggle("right"));
+
+    // Escape closes a column open over the page on a narrow window and gives the focus back to its tab, when the focus
+    // is in that column or on its tab; a menu open in the column handles Escape itself first.
+    document.addEventListener("keydown", (e) => {
+        if (e.key !== "Escape" || e.defaultPrevented || !narrow.matches || narrowOpen === null) {
+            return;
+        }
+        const side = narrowOpen;
+        const control = document.querySelector(".sidebar-control." + side);
+        const column = document.querySelector(".sidebar." + side);
+        const active = document.activeElement;
+        if (!active || (active !== control && !(column && column.contains(active)))) {
+            return;
+        }
+        if (active.closest && active.closest('[role="menu"]')) {
+            return;
+        }
+        narrowOpen = null;
+        apply();
+        if (control) {
+            control.focus();
+        }
+    });
 
     if (narrow.addEventListener) {
         narrow.addEventListener("change", apply);

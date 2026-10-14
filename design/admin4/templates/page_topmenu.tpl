@@ -45,10 +45,10 @@
     <div class="navbar-icon">&#9776;</div>
     <!-- begin::Sidebar Controls -->
         <div class="sidebar-controls">
-            <button type="button" class="sidebar-control left" aria-label="{'Show or hide the left sidebar'|i18n( 'design/admin/pagelayout' )|wash}" title="{'Show or hide the left sidebar'|i18n( 'design/admin/pagelayout' )|wash}">
+            <button type="button" class="sidebar-control left" aria-controls="leftmenu" aria-label="{'Left column'|i18n( 'design/admin/pagelayout' )|wash}" title="{'Show or hide the left sidebar'|i18n( 'design/admin/pagelayout' )|wash}">
                 <span class="a4-icon a4-bi-chevron-right" aria-hidden="true"></span>
             </button>
-            <button type="button" class="sidebar-control right" aria-label="{'Show or hide the right sidebar'|i18n( 'design/admin/pagelayout' )|wash}" title="{'Show or hide the right sidebar'|i18n( 'design/admin/pagelayout' )|wash}">
+            <button type="button" class="sidebar-control right" aria-controls="rightmenu" aria-label="{'Right column'|i18n( 'design/admin/pagelayout' )|wash}" title="{'Show or hide the right sidebar'|i18n( 'design/admin/pagelayout' )|wash}">
                 <span class="a4-icon a4-bi-chevron-right" aria-hidden="true"></span>
             </button>
         </div>

@@ -14814,6 +14814,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Export parts of the content tree as feeds, import the feeds of other sites</source>
         <translation>Teile des Inhaltsbaums als Feeds exportieren, Feeds anderer Seiten importieren</translation>
     </message>
+    <message>
+        <source>Left column</source>
+        <translation>Linke Spalte</translation>
+    </message>
+    <message>
+        <source>Right column</source>
+        <translation>Rechte Spalte</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
