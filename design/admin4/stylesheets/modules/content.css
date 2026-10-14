@@ -120,7 +120,7 @@
   position: absolute;
   top: -10px;
   right: 6px;
-  z-index: 2;
+  z-index: var(--a4-z-raised);
   padding: 1px var(--a4-space-2);
   border-radius: var(--a4-radius-s);
   background-color: var(--a4-accent-strong);

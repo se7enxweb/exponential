@@ -12509,6 +12509,14 @@ Note: The packages will not be uninstalled.</translation>
         <source>Main menu</source>
         <translation>Main menu</translation>
     </message>
+    <message>
+        <source>Left column</source>
+        <translation>Left column</translation>
+    </message>
+    <message>
+        <source>Right column</source>
+        <translation>Right column</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>

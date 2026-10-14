@@ -11559,6 +11559,14 @@ Note: The packages will not be uninstalled.</source>
         <source>SQL debug output</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Left column</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right column</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>

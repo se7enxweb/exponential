@@ -119,6 +119,37 @@ use them; new code uses the `--a4-accent*` names.
 White text on it is only 3:1, so filled controls with white text use its darker shade `--a4-accent-strong`
 (`#c2410c`, 5.2:1) and accent-coloured text uses `--a4-accent-text` (`#bc3f0b` light, 4.7:1 also on a hovered table row; `#ff9a5c` dark).
 
+### Stacking layers
+
+Stacking order comes from one scale in `components.css`; a stylesheet writes `z-index: var(--a4-z-…)`, never a
+number (0, 1 and -1 for order inside one component excepted). Theme-independent, no dark value.
+
+| Token | Value | For |
+|---|---|---|
+| `--a4-z-raised` | 2 | an item over its neighbours (a hovered thumbnail, a drop marker) |
+| `--a4-z-sticky` | 5 | sticky toolbars and notices in the content |
+| `--a4-z-frame-grip` | 9 | the classic frame's width grip, under its show/hide links |
+| `--a4-z-frame-control` | 11 | the classic frame's show/hide links and width handler |
+| `--a4-z-hover-preview` | 50 | a thumbnail enlarged on hover, over sticky bars and grips |
+| `--a4-z-popover` | 60 | a pane inside the header or the control bar (search scope) |
+| `--a4-z-scroll-top` | 100 | the back-to-top button |
+| `--a4-z-navbar` | 110 | the phone-width menu |
+| `--a4-z-sidebar` | 120 | side columns open over the page |
+| `--a4-z-sidebar-handle` | 140 | the left column's width grip |
+| `--a4-z-controlbar` | 200 | the fixed control bar of edit pages |
+| `--a4-z-drag-target` | 999 | the drop target when a table column is dragged |
+| `--a4-z-header` | 1020 | the fixed header |
+| `--a4-z-sidebar-toggle` | 1030 | the tabs on the window edges (inside the fixed header: ordered among its children) |
+| `--a4-z-menu` / `--a4-z-menu-sub` | 1040 / 1050 | context menus and their submenus, above the header |
+| `--a4-z-overlay` / `--a4-z-modal` | 1060 / 1070 | a dialog's mask and the dialog (also the base rule of `theme/modalwindow.css`) |
+| `--a4-z-toast` | 1080 | short-lived notices |
+| `--a4-z-drag` / `--a4-z-drag-mask` | 9000 / 9500 | column drag and resize proxies of the data tables |
+
+Inside a parent with its own stacking context (the fixed header, a transformed card) a token only orders against that
+parent's children. `AdminStylingRulesTest::testStackingComesFromTheLayerTokens` fails on any other z-index and on a
+change of the order sticky < grip < frame controls < hover preview < popover < header < tabs < menus < mask < dialog <
+toasts, and on a `var(--a4-z-…)` that `components.css` does not define (a typo would fall back to `auto`).
+
 ## Components
 
 | Component | Classes |
@@ -270,6 +301,7 @@ For every template or stylesheet change in an administration design or an extens
 - [ ] Colours, radius, spacing and fonts are `var(--a4-*)` tokens: no `#hex`, `rgb()`, named colour, px radius or
       spacing literal, and no local custom properties.
 - [ ] A new token is in `components.css` with a light and a dark value, and documented on this page.
+- [ ] A z-index is a `--a4-z-*` token (or 0/1/-1 inside one component).
 - [ ] A new data table is a `table.list` or an `.a4-table` (zebra rows, hover); controls in one row share
       `--a4-control-h`.
 - [ ] A new module stylesheet is listed in `AdminComponentCSSFileList` and exists in `design/admin4` and `design/admin`.

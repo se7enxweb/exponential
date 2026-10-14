@@ -34,6 +34,7 @@ function sidebarToggle() {
         // nothing to clean up without storage
     }
 
+    // The tabs on the window edges are named after their column ("Left column"); aria-expanded says whether it shows.
     function show(side, open) {
         $(".sidebar." + side).toggleClass("show", open);
         $(".sidebar-control." + side).toggleClass("rotate", open).attr("aria-expanded", open ? "true" : "false");
@@ -61,6 +62,37 @@ function sidebarToggle() {
 
     $(".sidebar-control.left").on("click", () => toggle("left"));
     $(".sidebar-control.right").on("click", () => toggle("right"));
+
+    // Escape closes a column open over the page on a narrow window and gives the focus back to its tab, when the focus
+    // is in that column or on its tab. While a context menu (ezpopupmenu.js) is shown, Escape belongs to the menu: this
+    // does not rely on the order the scripts load in or on the menu stopping the event.
+    document.addEventListener("keydown", (e) => {
+        if (e.key !== "Escape" || e.defaultPrevented || !narrow.matches || narrowOpen === null) {
+            return;
+        }
+        const side = narrowOpen;
+        const control = document.querySelector(".sidebar-control." + side);
+        const column = document.querySelector(".sidebar." + side);
+        const active = document.activeElement;
+        if (!active || (active !== control && !(column && column.contains(active)))) {
+            return;
+        }
+        if (active.closest && active.closest('[role="menu"]')) {
+            return;
+        }
+        const menus = document.querySelectorAll("div.popupmenu");
+        for (let i = 0; i < menus.length; i++) {
+            const style = window.getComputedStyle(menus[i]);
+            if (style.display !== "none" && style.visibility !== "hidden") {
+                return;
+            }
+        }
+        narrowOpen = null;
+        apply();
+        if (control) {
+            control.focus();
+        }
+    });
 
     if (narrow.addEventListener) {
         narrow.addEventListener("change", apply);

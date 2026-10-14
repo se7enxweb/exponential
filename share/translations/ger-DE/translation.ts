@@ -14894,6 +14894,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Main menu</source>
         <translation>Hauptmenü</translation>
     </message>
+    <message>
+        <source>Left column</source>
+        <translation>Linke Spalte</translation>
+    </message>
+    <message>
+        <source>Right column</source>
+        <translation>Rechte Spalte</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>

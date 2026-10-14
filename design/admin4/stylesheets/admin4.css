@@ -339,7 +339,7 @@ html[data-a4-theme="dark"] .a4-theme-toggle .a4-icon-moon { display: inline-bloc
   left: 0;
   right: 0;
   transform: translateY(-50%);
-  z-index: 1030;
+  z-index: var(--a4-z-sidebar-toggle);
 }
 .sidebar-control {
   width: 1.5rem;   /* 24px: the smallest target WCAG 2.5.8 allows */
@@ -966,7 +966,7 @@ html[data-a4-theme="dark"] .a4-login-logo { background-image: url('../images/3/l
 #controlbar-top {
   position: sticky;
   top: calc(var(--header-height, 6.25rem) + 6px);
-  z-index: 60;
+  z-index: var(--a4-z-popover);
 }
 #controlbar-top .box-bc {
   background-color: var(--a4-soft);

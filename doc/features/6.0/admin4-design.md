@@ -64,7 +64,8 @@ extension). The editor siteaccess falls back to `admin4` first, then `admin3`, `
   while the form scrolls (CSS `position: sticky`, replacing the YUI script that stopped working). They are slim
   (42 px on a desktop) and fit a phone screen. Edit pages show one left column, not two.
 - **Frame.** Side column margins are halved (a 16 px gap). The sidebar buttons sit on the window edges at 48% of the
-  window height, with labels and titles. Long names in the side columns wrap instead of being cut off.
+  window height; they are named after their column ("Left column", "Right column"), say with `aria-expanded` whether
+  it shows, and on a narrow window Escape closes a column open over the page and returns the focus to its tab. Long names in the side columns wrap instead of being cut off.
 - **Tables.** A list table's sorted column is readable (soft orange header).
 - **Icons.** Bootstrap Icons in the text colour, so they follow links, buttons, hover and the dark mode (see below).
 - **Languages.** A short code instead of a flag (see [Languages](#languages)).
