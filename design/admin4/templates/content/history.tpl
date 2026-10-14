@@ -258,7 +258,7 @@
     <dl class="a4-facts">
         <div>
             <dt>{'Translations'|i18n( 'design/admin/content/history' )}</dt>
-            <dd>{foreach $row.languages as $locale => $language_name}{delimiter}, {/delimiter}<img src="{$locale|flag_icon}" width="18" height="12" alt="" /> {$language_name|wash}{if eq( $locale, $row.language )} <span class="a4-muted">({'modified'|i18n( 'design/admin/content/history' )})</span>{/if}{/foreach}</dd>
+            <dd>{foreach $row.languages as $locale => $language_name}{delimiter}, {/delimiter}{include uri='design:parts/language_badge.tpl' locale=$locale named=true()} {$language_name|wash}{if eq( $locale, $row.language )} <span class="a4-muted">({'modified'|i18n( 'design/admin/content/history' )})</span>{/if}{/foreach}</dd>
         </div>
         <div>
             <dt>{'Creator'|i18n( 'design/admin/content/history' )}</dt>

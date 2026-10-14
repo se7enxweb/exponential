@@ -133,7 +133,7 @@
     {if gt( $locations, 1 )}<span>{$locations} {'locations'|i18n( 'design/admin/node/view/full' )}</span>{/if}
     <span class="a4-node-langs">
     {foreach $a4_translations as $language}
-        <a class="a4-node-lang{if eq( $language.locale, $object.current_language )} a4-current{/if}" href={concat( 'content/view/full/', $node.node_id, '/(language)/', $language.locale )|ezurl} title="{$language.name|wash}"><img src="{$language.locale|flag_icon}" width="18" height="12" alt="{$language.locale|wash}" /></a>
+        <a class="a4-lang a4-node-lang{if eq( $language.locale, $object.current_language )} is-current{/if}" href={concat( 'content/view/full/', $node.node_id, '/(language)/', $language.locale )|ezurl} title="{$language.name|wash}" aria-label="{$language.name|wash}"{if eq( $language.locale, $object.current_language )} aria-current="true"{/if} translate="no">{include uri='design:parts/language_badge.tpl' locale=$language.locale plain=true()}</a>
     {/foreach}
     </span>
 </p>

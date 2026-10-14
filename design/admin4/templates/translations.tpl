@@ -33,8 +33,7 @@
 
 {* Language name. *}
 <td>
-<img src="{$Translations.item.locale|flag_icon}" width="18" height="12" alt="{$Translations.item.locale}" />
-&nbsp;
+{include uri='design:parts/language_badge.tpl' locale=$Translations.item.locale named=true()}
 {if eq( $Translations.item.locale, $node.object.current_language )}
 <b><a href={concat( $node.url, '/(language)/', $Translations.item.locale )|ezurl} title="{'View translation.'|i18n( 'design/admin/node/view/full' )}">{$Translations.item.name}</a></b>
 {else}

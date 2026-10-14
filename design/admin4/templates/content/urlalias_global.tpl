@@ -237,7 +237,7 @@
         {/if}
         <div>
             <dt>{'Language'|i18n( 'design/admin/content/urlalias_global' )}</dt>
-            <dd><img src="{$element.language_object.locale|flag_icon}" width="18" height="12" alt="" /> {$element.language_object.name|wash}</dd>
+            <dd>{include uri='design:parts/language_badge.tpl' locale=$element.language_object.locale named=true()} {$element.language_object.name|wash}</dd>
         </div>
         <div>
             <dt>{'Always available'|i18n( 'design/admin/content/urlalias_global' )}</dt>

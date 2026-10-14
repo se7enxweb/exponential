@@ -50,7 +50,7 @@
 <div class="context-information">
 <p class="left modified">{'Last modified'|i18n( 'design/admin/node/view/full' )}: {$node.modified_subnode|l10n( shortdatetime )} ({'Node ID'|i18n( 'design/admin/node/view/full' )}: {$node.node_id})</p>
 {if $top_language}
-<p class="right translation">{$top_language.locale_object.intl_language_name|wash}&nbsp;<img src="{$top_language.locale|flag_icon}" width="18" height="12" alt="{$top_language.locale|wash}" class="a4-flag" /></p>
+<p class="right translation">{$top_language.locale_object.intl_language_name|wash}&nbsp;{include uri='design:parts/language_badge.tpl' locale=$top_language.locale named=true()}</p>
 {/if}
 <div class="break"></div>
 </div>

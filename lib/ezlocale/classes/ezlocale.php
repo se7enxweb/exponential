@@ -581,6 +581,7 @@ class eZLocale
                       'locale_code' => 'localeCode',
                       'locale_full_code' => 'localeFullCode',
                       'http_locale_code' => 'httpLocaleCode',
+                      'content_language_code' => 'contentLanguageCode',
                       'decimal_symbol' => 'decimalSymbol',
                       'thousands_separator' => 'thousandsSeparator',
                       'decimal_count' => 'decimalCount',
@@ -709,6 +710,18 @@ class eZLocale
         if ( $localeCode == '' )
             $localeCode = $this->localeCode();
         return $localeCode;
+    }
+
+    /**
+     * The language tag of this locale for HTTP and HTML (BCP 47, e.g. de-DE), as its locale file names it in
+     * [HTTP] ContentLanguage. Unlike httpLocaleCode() it does not take site.ini [RegionalSettings] HTTPLocale, which
+     * sets one tag for the whole site: the admin's language badges need the tag of each locale.
+     *
+     * @return string The tag, or an empty string when the locale file has none.
+     */
+    function contentLanguageCode()
+    {
+        return (string)$this->HTTPLocaleCode;
     }
 
     /*!

@@ -68,7 +68,7 @@
 
 {foreach $translations as $translation}
 <fieldset class="a4-state-lang">
-    <legend><img class="a4-state-flag" src="{$translation.language.locale|flag_icon}" width="18" height="12" alt="" /> {$translation.language.locale_object.intl_language_name|wash} <code class="a4-muted">{$translation.language.locale|wash}</code></legend>
+    <legend>{$translation.language.locale_object.intl_language_name|wash} <code class="a4-muted">{$translation.language.locale|wash}</code></legend>
     <div class="a4-field">
         <label for="state-name-{$translation.language.id}">{'Name'|i18n( 'design/admin/state/edit' )}</label>
         <input type="text" id="state-name-{$translation.language.id}" size="45" maxlength="45" name="ContentObjectState_name[]" value="{$translation.name|wash}" />

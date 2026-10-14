@@ -61,7 +61,6 @@
 <li class="a4-card{if $language.attention} is-attention{/if}" id="{$language_card}" aria-labelledby="{$language_card}-title">
     <div class="a4-card-head">
         <div class="a4-card-title a4-content-languages-title">
-            <img src="{$language.locale|flag_icon}" width="18" height="12" alt="" />
             <h3 id="{$language_card}-title"><a href={concat( '/content/translations/', $language.id )|ezurl}>{$language.name|wash}</a></h3>
             <code>{$language.locale|wash}</code>
             <ul class="a4-badges">

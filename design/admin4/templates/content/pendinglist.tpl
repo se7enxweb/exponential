@@ -131,7 +131,7 @@
         </div>
         <div>
             <dt>{'Translation'|i18n( 'design/admin/content/pendinglist' )}</dt>
-            <dd><img src="{$row.language|flag_icon}" width="18" height="12" alt="" /> {$row.language_name|wash} &middot; {'version %number'|i18n( 'design/admin/content/pendinglist',, hash( '%number', $row.version ) )}</dd>
+            <dd>{include uri='design:parts/language_badge.tpl' locale=$row.language named=true()} {$row.language_name|wash} &middot; {'version %number'|i18n( 'design/admin/content/pendinglist',, hash( '%number', $row.version ) )}</dd>
         </div>
         <div>
             <dt>{'Sent by'|i18n( 'design/admin/content/pendinglist' )}</dt>

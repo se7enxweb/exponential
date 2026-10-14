@@ -14,9 +14,10 @@ var availableLanguages = {ldelim}{*
     *}{/foreach}{*
 *}{rdelim};
 
-var icons = {ldelim}{*
+{* The short code of each language for the Translations column (DE, EN; EN-GB and EN-US when both exist). *}
+var languageBadges = {ldelim}{*
     *}{foreach $locales as $locale}{*
-        *}'{$locale.locale_code}': '{$locale.locale_code|flag_icon()}'{*
+        *}'{$locale.locale_code|wash(javascript)}': '{include uri='design:parts/language_badge.tpl' locale=$locale.locale_code plain=true()}'{*
         *}{delimiter},{/delimiter}{*
     *}{/foreach}{*
 *}{rdelim};
@@ -61,7 +62,8 @@ var confObj = {ldelim}
     cookieDomain: "{ezsys(hostname)}",
     languages: availableLanguages,
     classesString: {$node.classes_js_array},
-    flagIcons: icons
+    languageBadges: languageBadges,
+    editInLanguage: "{'Edit in <%language_name>.'|i18n( 'design/admin/node/view/full',, hash( '%language_name', '%language_name' ) )|wash('javascript')}"
 
 {rdelim}
 

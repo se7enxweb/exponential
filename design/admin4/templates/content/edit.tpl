@@ -91,19 +91,17 @@
                                     {if $is_translating_content}
 
                                         {let from_language_object=$object.languages[$from_language]}
+                                        {set-block variable=a4_from_badge}{include uri='design:parts/language_badge.tpl' locale=$from_language_object.locale named=true()}{/set-block}{set-block variable=a4_to_badge}{include uri='design:parts/language_badge.tpl' locale=$translation_list[$language_index].language_code named=true()}{/set-block}
 
                                         {'Translating content from %from_lang to %to_lang'|i18n( 'design/admin/content/edit',, hash(
-                                                        '%from_lang', concat( $from_language_object.name, '&nbsp;<img src="', $from_language_object.locale|flag_icon, '" width="18" height="12" class="a4-flag" alt="', $from_language_object.locale, '" />' ),
-                                                        '%to_lang', concat( $translation_list[$language_index].locale.intl_language_name, '&nbsp;<img src="', $translation_list[$language_index].language_code|flag_icon, '" width="18" height="12" class="a4-flag" alt="', $translation_list[$language_index].language_code, '" />' ) ) )}
+                                                        '%from_lang', concat( $from_language_object.name|wash, '&nbsp;', $a4_from_badge ),
+                                                        '%to_lang', concat( $translation_list[$language_index].locale.intl_language_name|wash, '&nbsp;', $a4_to_badge ) ) )}
 
                                         {/let}
 
                                     {else}
 
-                                        {$translation_list[$language_index].locale.intl_language_name}&nbsp;<img
-                                            src="{$translation_list[$language_index].language_code|flag_icon}" width="18"
-                                            height="12" class="a4-flag"
-                                            alt="{$translation_list[$language_index].language_code}" />
+                                        {$translation_list[$language_index].locale.intl_language_name|wash}&nbsp;{include uri='design:parts/language_badge.tpl' locale=$translation_list[$language_index].language_code named=true()}
 
                                     {/if}
 
