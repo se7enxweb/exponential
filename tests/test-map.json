@@ -75,7 +75,7 @@
       "tests/tests/design/AdminDensityTest.php",
       "tests/tests/design/AdminCardsTest.php"
     ],
-    "design/admin4/javascript/ezajaxsubitems_expdatatable.js": [
+    "design/admin*/javascript/ezajaxsubitems_expdatatable.js": [
       "tests/tests/design/AdminLanguageBadgeTest.php"
     ],
     "lib/ezlocale/classes/ezlocale.php": [

@@ -74,6 +74,46 @@ class AdminLanguageBadgeTest extends PHPUnit\Framework\TestCase
         $this->assertGreaterThanOrEqual( 20, $uses );
     }
 
+    /**
+     * An include sees the variables of the template that includes it, so an optional parameter that is not passed
+     * reads the caller's variable of the same name: $class is the eZContentClass in class/view.tpl and class/edit.tpl,
+     * and {$class|wash} on it is a fatal error. The optional parameters therefore carry the prefix badge_.
+     */
+    public function testTheOptionalParametersCannotReadACallersVariable()
+    {
+        $source = (string)file_get_contents( self::root() . '/' . self::INCLUDE_FILE );
+        $code = (string)preg_replace( '/\{\*.*?\*\}/s', '', $source );
+        preg_match_all( '/\$([a-z_0-9]+)/', $code, $matches );
+        $read = array_values( array_unique( $matches[1] ) );
+        foreach ( $read as $name )
+        {
+            $this->assertMatchesRegularExpression( '/^(locale|badge_[a-z]+|a4_lang_[a-z_]+)$/', $name,
+                                                   "The include reads \$$name, which a caller may have set for itself" );
+        }
+        foreach ( array( 'badge_name', 'badge_named', 'badge_plain', 'badge_class' ) as $name )
+            $this->assertContains( $name, $read );
+    }
+
+    public function testEveryIncludePassesOnlyKnownParameters()
+    {
+        $known = array( 'uri', 'locale', 'badge_name', 'badge_named', 'badge_plain', 'badge_class' );
+        $includes = 0;
+        foreach ( self::admin4Files() as $file )
+        {
+            if ( substr( $file, -3 ) !== 'tpl' )
+                continue;
+            preg_match_all( "/\{include\s+uri='design:parts\/language_badge\.tpl'[^}]*\}/", (string)file_get_contents( $file ), $matches );
+            foreach ( $matches[0] as $include )
+            {
+                ++$includes;
+                preg_match_all( '/\s([a-z_]+)=/', $include, $names );
+                $this->assertSame( array(), array_values( array_diff( $names[1], $known ) ), basename( $file ) . ": $include" );
+                $this->assertStringContainsString( ' locale=', $include, basename( $file ) . ": $include" );
+            }
+        }
+        $this->assertGreaterThanOrEqual( 20, $includes );
+    }
+
     public function testTheSubItemsColumnEscapesAndNamesItsBadges()
     {
         $script = (string)file_get_contents( self::root() . '/design/admin4/javascript/ezajaxsubitems_expdatatable.js' );
@@ -82,10 +122,33 @@ class AdminLanguageBadgeTest extends PHPUnit\Framework\TestCase
         // A badge link's name starts with the code it shows (WCAG 2.5.3 label in name): the name follows as hidden text
         $this->assertStringContainsString( "+ badge + '<span class=\"a4-sr-only\"> ' + label + '</span></a>'", $script );
         $body = (string)file_get_contents( self::root() . '/design/admin4/templates/node/view/a4_full_body.tpl' );
-        $this->assertStringContainsString( 'plain=true()}<span class="a4-sr-only"> {$language.name|wash}</span></a>', $body );
+        $this->assertStringContainsString( 'badge_plain=true()}<span class="a4-sr-only"> {$language.name|wash}</span></a>', $body );
         $template = (string)file_get_contents( self::root() . '/design/admin4/templates/children_detailed.tpl' );
         $this->assertStringContainsString( 'languageBadges: languageBadges', $template );
-        $this->assertStringContainsString( "design:parts/language_badge.tpl' locale=\$locale.locale_code plain=true()", $template );
+        $this->assertStringContainsString( "design:parts/language_badge.tpl' locale=\$locale.locale_code badge_plain=true()", $template );
+    }
+
+    /**
+     * The classic admin design shows the code too: its copy of the sub-items script is kept identical to admin4's
+     * (AdminContextMenuTest), so its template has to hand the script the same languageBadges map, built by its own
+     * identical copy of the include. The badge's style is in both copies of components.css.
+     */
+    public function testNeitherDesignDrawsAFlagInTheSubItemsTable()
+    {
+        foreach ( array( 'admin4', 'admin' ) as $design )
+        {
+            $script = (string)file_get_contents( self::root() . "/design/$design/javascript/ezajaxsubitems_expdatatable.js" );
+            $this->assertDoesNotMatchRegularExpression( '/flagIcons|flag_icon|share\/icons\/flags/', $script,
+                                                        "design/$design's sub-items script still draws a flag" );
+            $this->assertStringContainsString( 'confObj.languageBadges', $script, $design );
+            $template = (string)file_get_contents( self::root() . "/design/$design/templates/children_detailed.tpl" );
+            $this->assertDoesNotMatchRegularExpression( '/flagIcons|flag_icon/', $template,
+                                                        "design/$design's children_detailed.tpl still hands the script flags" );
+            $this->assertStringContainsString( 'languageBadges: languageBadges', $template, $design );
+        }
+        $this->assertFileEquals( self::root() . '/' . self::INCLUDE_FILE,
+                                 self::root() . '/design/admin/templates/parts/language_badge.tpl',
+                                 'The classic admin design needs the same language badge include as admin4' );
     }
 
     public function testTheComponentIsInBothCopiesOfTheComponentsStylesheet()

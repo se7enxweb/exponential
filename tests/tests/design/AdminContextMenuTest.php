@@ -21,6 +21,7 @@ class AdminContextMenuTest extends PHPUnit\Framework\TestCase
     const SCRIPT_COPIES = array(
         'javascript/popupmenu/ezpopupmenu.js',
         'javascript/contentstructuremenu_dynamic.js',
+        'javascript/ezajaxsubitems_expdatatable.js',
         'templates/contentstructuremenu/show_content_structure.tpl',
     );
 
@@ -94,9 +95,8 @@ class AdminContextMenuTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * The sub-items script differs between the designs on purpose: admin4 draws language badges in its
-     * Translations column (AdminLanguageBadgeTest), design/admin keeps its flags. Its menu opener is the same in
-     * both: the native event goes to ezpopupmenu.js, which places a menu opened from the keyboard itself.
+     * The sub-items menu opener is the same in both designs: the native event goes to ezpopupmenu.js, which places
+     * a menu opened from the keyboard itself.
      */
     public function testSubitemsMenuOpenerIsTheSameInBothDesigns()
     {

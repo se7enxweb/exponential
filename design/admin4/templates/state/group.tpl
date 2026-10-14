@@ -175,7 +175,7 @@
 <tbody>
 {foreach $group.languages as $language}
 <tr>
-    <td>{include uri='design:parts/language_badge.tpl' locale=$language.locale named=true()} <a href={concat( $base_url, '/', $language.locale )|ezurl} title="{'Show the group in %language'|i18n( 'design/admin/state/group',, hash( '%language', $language.name ) )|wash}">{$language.name|wash}</a></td>
+    <td>{include uri='design:parts/language_badge.tpl' locale=$language.locale badge_named=true()} <a href={concat( $base_url, '/', $language.locale )|ezurl} title="{'Show the group in %language'|i18n( 'design/admin/state/group',, hash( '%language', $language.name ) )|wash}">{$language.name|wash}</a></td>
     <td><code>{$language.locale|wash}</code></td>
     <td>{if $language.id|eq( $group.default_language_id )}{'Yes'|i18n( 'design/admin/state/group' )}{else}<span class="a4-muted">{'No'|i18n( 'design/admin/state/group' )}</span>{/if}</td>
 </tr>

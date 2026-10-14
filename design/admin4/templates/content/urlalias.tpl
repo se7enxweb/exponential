@@ -98,7 +98,7 @@
         </td>
 
         <td>
-            {include uri='design:parts/language_badge.tpl' locale=$element.language_object.locale named=true()}
+            {include uri='design:parts/language_badge.tpl' locale=$element.language_object.locale badge_named=true()}
             {$element.language_object.name|wash}
         </td>
         <td>
@@ -196,7 +196,7 @@
 
         {* Language. *}
         <td>
-        {include uri='design:parts/language_badge.tpl' locale=$element.language_object.locale named=true()}
+        {include uri='design:parts/language_badge.tpl' locale=$element.language_object.locale badge_named=true()}
         {$element.language_object.name|wash}
         </td>
 

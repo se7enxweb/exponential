@@ -69,7 +69,7 @@
 						<label>
 							<input type="radio" name="FromLanguage" value="{$language.locale|wash}"
 								{if $language.locale|eq($from_language)} checked="checked" {/if} />
-							{include uri='design:parts/language_badge.tpl' locale=$language.locale named=true()}
+							{include uri='design:parts/language_badge.tpl' locale=$language.locale badge_named=true()}
 							{$language.name|wash}
 						</label>
 					{/if}

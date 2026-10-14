@@ -75,7 +75,7 @@
 <tbody>
 {foreach $state.languages as $language}
 <tr>
-    <td>{include uri='design:parts/language_badge.tpl' locale=$language.locale named=true()} <a href={concat( '/state/view/', $group.identifier, '/', $state.identifier, '/', $language.locale )|ezurl} title="{'Show the state in %language'|i18n( 'design/admin/state/view',, hash( '%language', $language.name ) )|wash}">{$language.name|wash}</a></td>
+    <td>{include uri='design:parts/language_badge.tpl' locale=$language.locale badge_named=true()} <a href={concat( '/state/view/', $group.identifier, '/', $state.identifier, '/', $language.locale )|ezurl} title="{'Show the state in %language'|i18n( 'design/admin/state/view',, hash( '%language', $language.name ) )|wash}">{$language.name|wash}</a></td>
     <td><code>{$language.locale|wash}</code></td>
     <td>{if $language.id|eq( $state.default_language_id )}{'Yes'|i18n( 'design/admin/state/view' )}{else}<span class="a4-muted">{'No'|i18n( 'design/admin/state/view' )}</span>{/if}</td>
 </tr>

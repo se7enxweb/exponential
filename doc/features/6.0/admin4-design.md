@@ -163,12 +163,17 @@ list languages:
 - Where the name and the locale code are both shown already (the language cards of Setup > Languages, the state
   editors' legends), the flag is simply gone.
 
-Every badge comes from `design:parts/language_badge.tpl` (parameters `locale`, optional `name`, `named` when the name
-is written next to it, `plain` for the bare code, `class`), styled by `.a4-lang` / `.a4-langs` in both copies of
+Every badge comes from `design:parts/language_badge.tpl` (parameter `locale`; optional `badge_name`, `badge_named`
+when the name is written next to it, `badge_plain` for the bare code, `badge_class`), styled by `.a4-lang` / `.a4-langs` in both copies of
 `components.css`. The code is taken from `eZLocale`'s new attribute `content_language_code`, the locale file's
 `[HTTP] ContentLanguage`: unlike `http_locale_code` it is not overridden by `site.ini [RegionalSettings] HTTPLocale`,
-which sets one tag for a whole site. The flags in `share/icons/flags/` and the `flag_icon` operator stay for the
-other designs. `tests/tests/design/AdminLanguageBadgeTest.php` fails for a flag in an admin4 template or script.
+which sets one tag for a whole site. The optional parameters carry the prefix `badge_` because an include sees the
+variables of the template that includes it: a parameter called `class` would read the content class of
+`class/view.tpl` when it is not passed. The classic admin design has an identical copy of the include and of
+`ezajaxsubitems_expdatatable.js`, so its sub-items table shows the code as well (the badge style is in both copies of
+`components.css`). The flags in `share/icons/flags/` and the `flag_icon` operator stay for its other templates and the
+other designs. `tests/tests/design/AdminLanguageBadgeTest.php` fails for a flag in an admin4 template or script, or in
+either design's sub-items table.
 
 ## Context menus
 
