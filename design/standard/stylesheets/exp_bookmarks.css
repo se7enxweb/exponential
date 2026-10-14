@@ -95,3 +95,15 @@ html.exp-bm-has-js .exp-bm-actions > .exp-bm-js { display: inline-flex; gap: .25
 /* the Bookmarks box is for getting to a bookmark: no count badge there (the bookmark page has them) */
 .exp-bm-sidebar .exp-bm-count { display: none; }
 .exp-bm-sidebar .exp-bm-row { max-width: none; }
+
+/* the depth of a row (data-depth from bookmark_tree.tpl; no style="" in the template) */
+.exp-bm-row[data-depth="1"] { --d: 1; }
+.exp-bm-row[data-depth="2"] { --d: 2; }
+.exp-bm-row[data-depth="3"] { --d: 3; }
+.exp-bm-row[data-depth="4"] { --d: 4; }
+.exp-bm-row[data-depth="5"] { --d: 5; }
+.exp-bm-row[data-depth="6"] { --d: 6; }
+.exp-bm-row[data-depth="7"] { --d: 7; }
+.exp-bm-row[data-depth="8"] { --d: 8; }
+.exp-bm-row[data-depth="9"] { --d: 9; }
+.exp-bm-row[data-depth="10"], .exp-bm-row[data-depth="11"], .exp-bm-row[data-depth="12"] { --d: 10; }

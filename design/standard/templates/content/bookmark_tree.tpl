@@ -17,13 +17,13 @@
 {if $tree_rows|not}
     {set $tree_rows = fetch( 'content', 'bookmark_rows', hash() )}
 {/if}
-<link rel="stylesheet" href="{'stylesheets/exp_bookmarks.css'|ezdesign(no)}?v=20261005" />
-<script type="text/javascript" src="{'javascript/exp_bookmarks.js'|ezdesign(no)}?v=20261005" defer="defer"></script>
+<link rel="stylesheet" href="{'stylesheets/exp_bookmarks.css'|ezdesign(no)}" />
+<script type="text/javascript" src="{'javascript/exp_bookmarks.js'|ezdesign(no)}" defer="defer"></script>
 {def $node = false()}
 <ul class="exp-bm-tree exp-bm-{$mode}" role="tree" data-exp-bm="{$mode}">
 {foreach $tree_rows as $row}
   {if eq( $row.type, 'folder' )}
-    <li class="exp-bm-row exp-bm-folder" role="treeitem" aria-expanded="true" aria-level="{$row.depth|inc}" style="--d:{$row.depth}"
+    <li class="exp-bm-row exp-bm-folder" role="treeitem" aria-expanded="true" aria-level="{$row.depth|inc}" data-depth="{$row.depth}"
         data-type="folder" data-id="{$row.id}" data-parent="{$row.parent_id}" data-name="{$row.name|wash}"{if eq( $mode, 'page' )} draggable="true"{/if}>
       <button type="button" class="exp-bm-toggle" aria-label="{'Open or close the folder'|i18n( 'design/admin/content/bookmark' )}" title="{'Open or close the folder'|i18n( 'design/admin/content/bookmark' )}"><span aria-hidden="true"></span></button>
       <span class="exp-bm-folder-name">{$row.name|wash}</span>
@@ -42,7 +42,7 @@
   {else}
     {set $node = $row.bookmark.node}
     {if $node}
-    <li class="exp-bm-row exp-bm-bookmark" role="treeitem" aria-level="{$row.depth|inc}" style="--d:{$row.depth}"
+    <li class="exp-bm-row exp-bm-bookmark" role="treeitem" aria-level="{$row.depth|inc}" data-depth="{$row.depth}"
         data-type="bookmark" data-id="{$row.id}" data-parent="{$row.folder_id}" data-name="{$node.name|wash}"{if eq( $mode, 'page' )} draggable="true"{/if}>
       <span class="exp-bm-indent" aria-hidden="true"></span>
       {if eq( $mode, 'page' )}
