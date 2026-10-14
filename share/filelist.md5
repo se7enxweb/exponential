@@ -273,7 +273,7 @@ ac084a07607e6d6c5a845da15423854f  design/admin/images/view-fullscreen.png
 c026c4c30fa5e95415c1f6611bcce9ea  design/admin/javascript/contentstructuremenu_dynamic.js
 2208f27da9ddaa11d336d07c190cbc4b  design/admin/javascript/expajaxuploader.js
 2b984f2f31802646942901f436bf277b  design/admin/javascript/ezajaxrelations_jquery.js
-563718ba8e0479fd6defd99313ac4ac8  design/admin/javascript/ezajaxsubitems_expdatatable.js
+6fa921e9fdd6d4cb15fe1687cbf8fcd5  design/admin/javascript/ezajaxsubitems_expdatatable.js
 2c35ad74f3ae96723bd750231c27cbe4  design/admin/javascript/leftmenu_widthcontrol.js
 d03d761498ffa705d43d836836910ad2  design/admin/javascript/node_tabs.js
 79cb3cf1ed288abafeea53964d7a6d14  design/admin/javascript/popupmenu/ezpopupmenu.js
@@ -340,7 +340,7 @@ c7eb697cccc88a7038703f8fcc862659  design/admin/templates/audit/reauth.tpl
 285f50ecd0189915430a72868d737398  design/admin/templates/audit/settings.tpl
 6ad3a8724d541edaf79af7df5927ab5a  design/admin/templates/audit/sources.tpl
 001ec42ede673f1e5de54c82bcdd9d6f  design/admin/templates/children.tpl
-b6dcfc3be82b876c4e8d71c080219715  design/admin/templates/children_detailed.tpl
+b262243567e4867eb6a5ab5cbde846f5  design/admin/templates/children_detailed.tpl
 e43630d07c69d19c6b4301797c3a915e  design/admin/templates/class/classlist.tpl
 51fd6b1a1612e389ee44ce3d6cbe83d1  design/admin/templates/class/copy_confirm.tpl
 2f32def3d98933143182da37d73213f4  design/admin/templates/class/datatype/browse_objectrelation_placement.tpl
@@ -542,6 +542,7 @@ f0474d761bfda4475aafd6de5d1c6922  design/admin/templates/page_header.tpl
 2891f454853f3b2f2cac2a94173e257a  design/admin/templates/parts/audit/menu.tpl
 6f4962eafc7286ab584e17db8f6c7b00  design/admin/templates/parts/content/menu.tpl
 b067ee8e870a38ce63ed27fedd85b653  design/admin/templates/parts/ini_menu.tpl
+5e0f6d3ec0e18268701f66051d24f387  design/admin/templates/parts/language_badge.tpl
 29b9aac282e8e53f74896ae53ef83e66  design/admin/templates/parts/media/menu.tpl
 aa1932ff1a6fdb01f517167fb114d964  design/admin/templates/parts/my/menu.tpl
 dccc0514a32ea7344daba52fb01e5b24  design/admin/templates/parts/setup/menu.tpl
@@ -2985,7 +2986,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-0b8d455686e03e0d3cff7e1ccd97acda  doc/changelogs/6.0/6.0.15.md
+9435cf04bafe2d090d6d14a22cea78cc  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3313,7 +3314,7 @@ c4809a3b611073bdcad4b38e9ea7dd6d  doc/features/6.0/additional-extension-director
 8ee6875c6693489d567c309177b49b81  doc/features/6.0/admin-list-paging.md
 41099ca247392d7ed963caa4b857e51c  doc/features/6.0/admin3-responsive-admin.md
 98b1eb658a2475fc31af9b9cbfaba709  doc/features/6.0/admin3-sidebar-width-and-font-size.md
-daf1f8837fabd94da56583420d734f26  doc/features/6.0/admin4-design.md
+0637df512fa69cf7cc8e3bd65300867e  doc/features/6.0/admin4-design.md
 7d8b3d248d27baa55bbf5f7f22040693  doc/features/6.0/admin4l.md
 cb077d1f37f8e8811c377ede4bc99357  doc/features/6.0/adminneo-database-manager.md
 ae7d698fad5f10287ad37ade2f97d8aa  doc/features/6.0/audit-trail.md
@@ -7053,11 +7054,11 @@ d56115c8242b3081672f63607aa69361  tests/runtests.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 9ff58a769386f12831d56db2598e292e  tests/suite.php
-302ad760fa7ce8848132a741408309ed  tests/test-map.json
+d5224ea0eed423886bd2e701313b7f4f  tests/test-map.json
 8b29711fe10a56c5c5b90916f35d0a00  tests/tests/bin/phpcs/NoTypeDeclarationsSniffTest.php
 4e3eeb18c2ea423afb62388e5e3dcafc  tests/tests/bin/phpcs/fixtures/typedeclarations.inc
 617c938384f3d87aa79b21ee6d448f4e  tests/tests/design/AdminIconsTest.php
-7d585c88e7a4d50e335ee4098844c099  tests/tests/design/AdminLanguageBadgeTest.php
+9c0c47c128c2f65c867c0277315b0517  tests/tests/design/AdminLanguageBadgeTest.php
 7e8957a9c15916135defa02bc8301d00  tests/tests/design/AdminRetiredClassesTest.php
 7c4c16e37f7b38c730404eac254aaf4a  tests/tests/design/AdminStylingRulesTest.php
 dcc45e4631fc358b0384c51d17ff8d67  tests/tests/extension/bccie/ezBccieTest.php
