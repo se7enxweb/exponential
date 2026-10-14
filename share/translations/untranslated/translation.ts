@@ -20841,6 +20841,10 @@ Note: The packages will not be uninstalled.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>%count results not kept in APCu: less than %reserve % of it was free (ApcuReserve)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Over the last %n profiled requests: %statements statements, %repeats exact repeats (%repeat_pct), %db_ms in the database</source>
         <translation type="unfinished"></translation>
     </message>

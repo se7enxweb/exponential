@@ -816,6 +816,7 @@
         t('since %time: %requests requests, hit rate %rate, %stores stored, %writes writes', {
           '%time': whenText(c.since) || t('never'), '%requests': c.requests || 0,
           '%rate': c.hit_rate === null || c.hit_rate === undefined ? '-' : c.hit_rate + ' %', '%stores': c.stores || 0, '%writes': c.writes || 0 })));
+      if (c.reserve > 0) box.append(hint(t('%count results not kept in APCu: less than %reserve % of it was free (ApcuReserve)', { '%count': c.reserve, '%reserve': q.apcu_reserve }), 'warn'));
     }
     box.append(el('p', {}, el('strong', {}, t('State') + ': '),
       t('generation %gen, cleared %time, %count tables written in the last MaxAge', { '%gen': q.generation, '%time': whenText(q.cleared) || t('never'), '%count': q.tables_tracked })));

@@ -94,6 +94,7 @@ Override in `settings/override/querycache.ini.append.php` (or a siteaccess).
 [QueryCacheSettings]
 Mode=off          # off | request | shared
 Storage=auto      # where shared keeps results: auto | apcu | file
+ApcuReserve=25    # percent of APCu kept free for the pool's other users; 0 = off
 MaxAge=300        # longest life of a result, in seconds
 MaxRows=5000      # results with more rows are not kept
 ExcludeTables[]
@@ -132,6 +133,35 @@ Choosing:
   removes the files older than `MaxAge` or from before the last clear; clearing
   the query cache removes them at once. Schedule it with `Storage=file` or
   `auto` without APCu, or the files of statements not run again stay on disk.
+- `ApcuReserve` (default 25): APCu is one memory for every site of the
+  PHP-FPM pool (the HTTP cache, API keys, a request filter's rate limits ...).
+  Full with valid entries, APCu empties itself completely, and everything in it
+  is lost, not only the query cache's results (`apc.ttl` helps only when there
+  are entries nobody read for that long). With this share or less of APCu
+  free, shared mode stops adding results to APCu and keeps them for the
+  request only. The free share comes from `apcu_sma_info()`, read before every
+  store (under a microsecond), so a long-running process cannot overshoot it.
+  APCu frees an expired entry only when it is deleted by its key or when an
+  allocation fails, and below the reserve the cache allocates nothing: so a
+  miss below the reserve deletes its key's old entry, and once a minute for
+  the whole pool `eZDBQueryCache::purgeExpired()` deletes every expired
+  query cache entry from APCu's entry list, as long as APCu holds at most
+  30,000 entries and the list fits below 80 % of `memory_limit` (it costs
+  about 0.8 KB of PHP memory per entry, about 200 ms and 100 MB at 130,000).
+  In a web request it runs at the end, after the page; on the command line
+  (Velocity, scripts) at once. Above that only a larger `apc.shm_size`
+  helps. With a small APCu (the default `apc.shm_size` is 32 MB) a reserve of
+  25 % is 8 MB, and another user holding three quarters of it keeps the query
+  cache out of APCu; the counter shows it. Setup > System
+  information and the Cache tab of the Exp Debug bar count the results held
+  back; the debug report lists them as *Not cached: APCu reserve*. Measured
+  with a 32 MB APCu that another user had filled to 85 %: with
+  `ApcuReserve=10` the cache stored 34 results and held back the rest, the
+  other user's entries stayed; with `0` APCu emptied itself five times and the
+  other user's entries were lost. With the cache's own entries expired and
+  never asked again (one-shot statements, 32 MB APCu at 25 % free), it stored
+  again a minute later, when the purge had freed them. Files (`Storage=file`)
+  have no reserve.
 - Several web servers on one `var/` over NFS: whether a result is current is
   decided by `state.ser`, as for APCu. NFS clients cache file attributes and
   directory lookups (`acregmin`/`acdirmin` 3 to 30 s by default), so a write or
@@ -356,7 +386,8 @@ the mode is off.
 | The hit rate stays low | A table the pages read is written on every request. Setup > System information lists the tables written last; find who writes (usually a view counter, a session-like table or a broken image alias regenerated on every view) and fix it, or add the table to `ExcludeTables`. |
 | "APCu is not available to this server" in the box | `Storage=apcu` without APCu: `shared` falls back to `request`. Enable APCu for that PHP (FPM pool, or `apc.enable_cli=1` for Velocity and scripts), or set `Storage=auto` or `file`. |
 | Many files in `var/<site>/cache/querycache/entries/` | The cronjob part `cache_cleanup` does not run. Schedule `php runcronjobs.php -s <siteaccess> cache_cleanup`; a clear of the query cache removes them too. |
-| APCu memory full, other caches evicted | Lower `MaxRows`, lower `MaxAge`, or raise `apc.shm_size`. Setup > System information shows what the query cache holds. |
+| APCu memory full, other caches evicted | Keep `ApcuReserve` above 0, lower `MaxRows` or `MaxAge`, or raise `apc.shm_size`. Setup > System information shows what the query cache holds. |
+| "results not kept in APCu" in the box or the Cache tab | APCu had no more than `ApcuReserve` percent free. Raise `apc.shm_size`, or find the other users of APCu (Setup > System information, PHP section). |
 | `state.ser` not writable (warnings in the log) | `var/<site>/cache/querycache/` must be writable by every user the site runs as. Files written by root are handed to the directory's owner. |
 | A result looks wrong and you suspect the cache | Set `Mode=off` and compare. If the output is the same, it is not the cache. |
 
@@ -391,10 +422,13 @@ so the tests never touch the site's cache.
 | QC-22 | The file storage: one file per result under its two-character directory, a hit in the next request, stale after a write to its table |
 | QC-23 | A result file never makes objects (`__PHP_Incomplete_Class`), a broken file is a miss |
 | QC-24 | `cleanupFiles()` removes files older than `MaxAge` and temporary files left over, keeps the others; `status()` and `inventory()` count the files (no hits); a clear removes them |
+| QC-25 | `apcuRoom()`: room only with more than `ApcuReserve` percent free, `0` never stops, 25 by default |
+| QC-26 | Below the reserve a result stays in the request, is counted (`reserve`) and not put into APCu; with room again it is; files have no reserve |
+| QC-27 | `purgeExpired()` deletes the query cache's expired APCu entries and frees their memory, keeps live ones and other users' entries, runs once a minute for the pool, and `apcuRoom()` starts it below the reserve |
 
 ```bash
 php vendor/bin/phpunit --testsuite lib --filter eZDBQueryCacheTest
-# OK (24 tests, 226 assertions; QC-20 needs apc.enable_cli=1), about 3 s (QC-08, QC-12 and QC-24 wait a second each)
+# OK (27 tests, 248 assertions; QC-20, QC-26 and QC-27 need apc.enable_cli=1), about 7 s (QC-08, QC-12, QC-24 and QC-27 wait)
 ```
 
 **On a running site** (MySQL, the real drivers), each checked on a test installation
