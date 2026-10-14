@@ -24,6 +24,10 @@
   output on PHP 8.0 as on 8.1 and later.
 - Added: settings/rad.ini.append.php declares the server function registry for the extension
   point survey of Exponential.
+- Removed: the older jQuery copies nothing loaded: jquery-3.7.1.js, jquery-3.7.1.min.js,
+  jquery-migrate-3.4.1.min.js and jquery-ui-1.10.3.custom.min.js (jQuery UI 1.10.3 has known
+  vulnerabilities). design/standard/javascript/ holds one release of each library: jQuery 4.0.0,
+  jQuery Migrate 4.0.2 and jQuery UI 1.14.2.
 - Updated: Version 1.6.0 in ezinfo.php and extension.xml.
 
 
