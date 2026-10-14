@@ -167,18 +167,36 @@ background: url(../../images/3/sprite.png) no-repeat 0 -461px;
 
 a.show-hide-tabs
 {
+    position: relative;
+    display: inline-block;
+    min-width: 16px;
     border:none;
     padding: 0 5px;
     cursor: pointer;
     overflow: visible;
     width: auto;
     text-decoration: none;
-    background: url('../../images/3/sprite.png') no-repeat 1px -118px; /* swapped: the icon shows the state the tabs are in */
 }
 
-a#maincontent-hide /* the icon of the other state */
+/* the icon shows the state the tabs are in: stacked while they are off, tabs while they are on */
+a.show-hide-tabs::before
 {
-    background: url('../../images/3/sprite.png') no-repeat 1px -62px;
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 16px;
+    height: 16px;
+    margin: -8px 0 0 -8px;
+    background-color: currentColor;
+    -webkit-mask: url(../../../../share/icons/bootstrap-icons/svg/view-stacked.svg) no-repeat center / contain;
+    mask: url(../../../../share/icons/bootstrap-icons/svg/view-stacked.svg) no-repeat center / contain;
+}
+
+a#maincontent-hide::before /* the icon of the other state */
+{
+    -webkit-mask-image: url(../../../../share/icons/bootstrap-icons/svg/segmented-nav.svg);
+    mask-image: url(../../../../share/icons/bootstrap-icons/svg/segmented-nav.svg);
 }
 
 a.show-hide-tabs:hover

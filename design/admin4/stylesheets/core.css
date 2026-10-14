@@ -451,10 +451,23 @@ div.box-content div.message-confirmation, div.box-content div.message-feedback, 
 
 div.message-feedback h2, div.message-warning h2, div.message-error h2
 {
-    background-repeat: no-repeat;
-    background-position: 0 0;
+    position: relative;
     margin-left: 0.5em;
     padding: 0.25em 0.5em 0.5em 2.5em;
+}
+
+/* The icon left of the heading: a Bootstrap icon (share/icons/bootstrap-icons) in the colour of the state */
+div.message-feedback h2::before, div.message-warning h2::before, div.message-error h2::before
+{
+    content: "";
+    position: absolute;
+    left: 0.5em;
+    top: 0.25em;
+    width: 1.25em;
+    height: 1.25em;
+    background-color: currentColor;
+    -webkit-mask: no-repeat center / contain;
+    mask: no-repeat center / contain;
 }
 
 div.message-feedback
@@ -462,9 +475,11 @@ div.message-feedback
     border-color: #3e8d29;
 }
 
-div.message-feedback h2
+div.message-feedback h2::before
 {
-    background-image: url(../images/message-feedback.gif);
+    background-color: var(--a4-ok);
+    -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/check-circle-fill.svg);
+    mask-image: url(../../../share/icons/bootstrap-icons/svg/check-circle-fill.svg);
 }
 
 div.message-warning
@@ -473,9 +488,11 @@ div.message-warning
     background: var(--a4-surface);
 }
 
-div.message-warning h2
+div.message-warning h2::before
 {
-    background-image: url(../images/message-warning.gif);
+    background-color: var(--a4-warn);
+    -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/exclamation-triangle-fill.svg);
+    mask-image: url(../../../share/icons/bootstrap-icons/svg/exclamation-triangle-fill.svg);
 }
 
 div.message-error
@@ -483,9 +500,11 @@ div.message-error
     border-color: #C11B17;
 }
 
-div.message-error h2
+div.message-error h2::before
 {
-    background-image: url(../images/message-error.gif);
+    background-color: var(--a4-bad);
+    -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/x-circle-fill.svg);
+    mask-image: url(../../../share/icons/bootstrap-icons/svg/x-circle-fill.svg);
 }
 
 div.message-feedback span.time, div.message-warning span.time, div.message-error span.time

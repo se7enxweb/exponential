@@ -550,20 +550,55 @@ div#contentstructure ul#content_tree_menu ul a.openclose-error {
     top: 0;
     width: 16px;
     height: 16px;
-    background: transparent url('../images/content_tree-icons.png') no-repeat center 0px scroll;
 }
 
-div#contentstructure ul#content_tree_menu ul a.openclose-close {
-    background-position: center -16px;
-}
-
+/* open, close, loading and failed: a Bootstrap icon (share/icons/bootstrap-icons) on the column's own background, so
+   the connector line of the tree does not run through it; a caret right while closed and down while open */
+div#contentstructure ul#content_tree_menu ul a.openclose-open,
+div#contentstructure ul#content_tree_menu ul a.openclose-close,
+div#contentstructure ul#content_tree_menu ul a.openclose-busy,
 div#contentstructure ul#content_tree_menu ul a.openclose-error {
-    background-position: center -32px;
+    background-color: var(--a4-card-bg);
+}
+
+div#contentstructure ul#content_tree_menu ul a.openclose-open::before,
+div#contentstructure ul#content_tree_menu ul a.openclose-close::before,
+div#contentstructure ul#content_tree_menu ul a.openclose-busy::before,
+div#contentstructure ul#content_tree_menu ul a.openclose-error::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    width: 12px;
+    height: 12px;
+    background-color: var(--a4-ink);
+    -webkit-mask: no-repeat center / contain;
+    mask: no-repeat center / contain;
+}
+
+div#contentstructure ul#content_tree_menu ul a.openclose-open::before {
+    -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/caret-right-fill.svg);
+    mask-image: url(../../../share/icons/bootstrap-icons/svg/caret-right-fill.svg);
+}
+
+div#contentstructure ul#content_tree_menu ul a.openclose-close::before {
+    -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/caret-down-fill.svg);
+    mask-image: url(../../../share/icons/bootstrap-icons/svg/caret-down-fill.svg);
+}
+
+div#contentstructure ul#content_tree_menu ul a.openclose-error::before {
+    background-color: var(--a4-bad);
+    -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/x-circle-fill.svg);
+    mask-image: url(../../../share/icons/bootstrap-icons/svg/x-circle-fill.svg);
 }
 
 div#contentstructure ul#content_tree_menu ul a.openclose-busy {
-    background-position: center -48px;
     cursor: progress;
+}
+
+div#contentstructure ul#content_tree_menu ul a.openclose-busy::before {
+    -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/hourglass-split.svg);
+    mask-image: url(../../../share/icons/bootstrap-icons/svg/hourglass-split.svg);
 }
 
 div#contentstructure ul#content_tree_menu div.loaded {
@@ -651,9 +686,20 @@ div.popupmenu a {
 }
 
 div.popupmenu a.more {
-    background-image: url(../images/more-arrow.gif);
-    background-repeat: no-repeat;
-    background-position: right center;
+    position: relative;
+}
+
+div.popupmenu a.more::after {
+    content: "";
+    position: absolute;
+    right: 0.3em;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    margin-top: -5px;
+    background-color: currentColor;
+    -webkit-mask: url(../../../share/icons/bootstrap-icons/svg/caret-right-fill.svg) no-repeat center / contain;
+    mask: url(../../../share/icons/bootstrap-icons/svg/caret-right-fill.svg) no-repeat center / contain;
 }
 
 div.popupmenu a.menu-item-disabled {
@@ -891,8 +937,22 @@ input.button:hover {
     padding: 0;
     border: 4px solid rgba(255, 255, 255, 0.1);
     border-radius: 5px;
-    background: transparent url(../images/3/sprite.png) no-repeat 9px -578px;
+    position: relative;
+    background-color: transparent;
     cursor: pointer;
+}
+
+.searchblock .searchbuttonfield::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 18px;
+    height: 18px;
+    margin: -9px 0 0 -9px;
+    background-color: var(--a4-header-ink);
+    -webkit-mask: url(../../../share/icons/bootstrap-icons/svg/search.svg) no-repeat center / contain;
+    mask: url(../../../share/icons/bootstrap-icons/svg/search.svg) no-repeat center / contain;
 }
 
 .searchblock .searchbuttonfield:hover,
@@ -912,9 +972,22 @@ input.button:hover {
     padding: 0;
     border: 0;
     border-radius: 4px;
-    background: transparent url(../images/3/sprite.png) no-repeat 3px -865px;
+    background-color: transparent;
     cursor: pointer;
     z-index: 1;
+}
+
+.searchblock .searchscope::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 14px;
+    height: 14px;
+    margin: -7px 0 0 -7px;
+    background-color: var(--a4-muted);
+    -webkit-mask: url(../../../share/icons/bootstrap-icons/svg/funnel.svg) no-repeat center / contain;
+    mask: url(../../../share/icons/bootstrap-icons/svg/funnel.svg) no-repeat center / contain;
 }
 
 .searchblock .searchscope:hover,
@@ -961,8 +1034,22 @@ input.button:hover {
     padding: 0;
     border: 0;
     border-radius: 4px;
-    background: transparent url(../images/3/sprite.png) no-repeat -26px -866px;
+    position: relative;
+    background-color: transparent;
     cursor: pointer;
+}
+
+.searchscope-pane .close::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 12px;
+    height: 12px;
+    margin: -6px 0 0 -6px;
+    background-color: var(--a4-ink);
+    -webkit-mask: url(../../../share/icons/bootstrap-icons/svg/x-lg.svg) no-repeat center / contain;
+    mask: url(../../../share/icons/bootstrap-icons/svg/x-lg.svg) no-repeat center / contain;
 }
 
 .searchscope-pane .close:hover,
