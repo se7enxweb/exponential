@@ -56,7 +56,8 @@
       "tests/tests/design/AdminPageHeaderTest.php",
       "tests/tests/design/AdminNoticesTest.php",
       "tests/tests/design/AdminThemeSwitchTest.php",
-      "tests/tests/design/AdminDensityTest.php"
+      "tests/tests/design/AdminDensityTest.php",
+      "tests/tests/design/AdminDashboardTest.php"
     ],
     "design/admin*/stylesheets/*": [
       "tests/tests/design/AdminStylingRulesTest.php",

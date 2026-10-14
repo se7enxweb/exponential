@@ -67486,6 +67486,26 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Version</source>
         <translation>Version</translation>
     </message>
+    <message>
+        <source>%delta against the 7 days before</source>
+        <translation>%delta zur Vorwoche</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Tag</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Veröffentlicht</translation>
+    </message>
+    <message>
+        <source>As many as the 7 days before</source>
+        <translation>So viele wie in der Vorwoche</translation>
+    </message>
+    <message>
+        <source>Show the numbers</source>
+        <translation>Zahlen anzeigen</translation>
+    </message>
 </context>
 <context>
     <name>extension/autorss</name>

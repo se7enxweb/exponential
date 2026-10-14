@@ -307,7 +307,7 @@ d1f3e1ef98e8cee2e52a5446280eadc3  design/admin/override/templates/embed-inline_i
 e0c996a801b1373df9824852298b20d9  design/admin/override/templates/tiny_image.tpl
 a2c561e93ef63c93201e81acd4f32741  design/admin/override/templates/window_controls_user.tpl
 f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin/override/templates/windows_user.tpl
-f53240ef4729ea88e8a7bbe49afeb228  design/admin/stylesheets/components.css
+26d1f580aa2219fe16b77c922befbac7  design/admin/stylesheets/components.css
 ce90ff045aa9ad5f6b74ebb4adb49d1f  design/admin/stylesheets/content.css
 9176b99cf9d39d3d3f7c8c50d1554eb5  design/admin/stylesheets/core.css
 3467a1c4602619c56bfc506613bebb91  design/admin/stylesheets/ezinfo.css
@@ -920,8 +920,8 @@ b475c3f694071288d4f3be93d6b8ca0e  design/admin4/override/templates/template_look
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
 a2c561e93ef63c93201e81acd4f32741  design/admin4/override/templates/window_controls_user.tpl
 f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin4/override/templates/windows_user.tpl
-fedc03d862bb095478c698141ec32b40  design/admin4/stylesheets/admin4.css
-f53240ef4729ea88e8a7bbe49afeb228  design/admin4/stylesheets/components.css
+2ba947db849ff38238e7c8620e658e16  design/admin4/stylesheets/admin4.css
+26d1f580aa2219fe16b77c922befbac7  design/admin4/stylesheets/components.css
 e7b0acbd1646895a73189e0df9299144  design/admin4/stylesheets/content.css
 266bbaade2491b8b0ad3043daacb5434  design/admin4/stylesheets/core.css
 024901334b90c0e08bf8b8fe9197604e  design/admin4/stylesheets/ezinfo.css
@@ -997,7 +997,7 @@ f3c70a3819d45856f62d41d3287dd790  design/admin4/templates/content/collectedinfo/
 471dca9e1c4a2772f4be1d0a177eaca5  design/admin4/templates/content/collectedinfo/poll.tpl
 e38ad584536ed7835539e7d712bb2912  design/admin4/templates/content/confirmtranslationremove.tpl
 afe296b9f61bc7df7010688feac4bb9a  design/admin4/templates/content/create_languages.tpl
-711b7b0ebb79cb16493035b794973476  design/admin4/templates/content/dashboard.tpl
+035c3468fd259917243ae70994c84cda  design/admin4/templates/content/dashboard.tpl
 e4a78e6f40809ce7e27196f092b76383  design/admin4/templates/content/datatype/edit/ezdate.tpl
 66b016c84522674708860bbed46bd58f  design/admin4/templates/content/datatype/edit/ezdatetime.tpl
 496306b3d94af123f35a29bd7992fe6c  design/admin4/templates/content/datatype/edit/ezobjectrelation_ajax_search.tpl
@@ -2988,7 +2988,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-4b7f6e10074948dee5bc07e876ddc9c9  doc/changelogs/6.0/6.0.15.md
+87f5c9314fc7e6f9b82c8087b399dd86  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3316,7 +3316,7 @@ c4809a3b611073bdcad4b38e9ea7dd6d  doc/features/6.0/additional-extension-director
 8ee6875c6693489d567c309177b49b81  doc/features/6.0/admin-list-paging.md
 41099ca247392d7ed963caa4b857e51c  doc/features/6.0/admin3-responsive-admin.md
 98b1eb658a2475fc31af9b9cbfaba709  doc/features/6.0/admin3-sidebar-width-and-font-size.md
-2fb62d4057d9453f5e9c1b058abcf469  doc/features/6.0/admin4-design.md
+3810f904b722b5e4a590550813ccbdc9  doc/features/6.0/admin4-design.md
 7d8b3d248d27baa55bbf5f7f22040693  doc/features/6.0/admin4l.md
 cb077d1f37f8e8811c377ede4bc99357  doc/features/6.0/adminneo-database-manager.md
 ae7d698fad5f10287ad37ade2f97d8aa  doc/features/6.0/audit-trail.md
@@ -6523,7 +6523,9 @@ a63ff6444dbbf40c9bd57aee41040c9f  share/db_data.dba
 8081c555057a13d171959373f4119bf8  share/icons/bootstrap-icons/svg/arrow-90deg-up.svg
 ef7b4b735360451c330ba9991d32c8ea  share/icons/bootstrap-icons/svg/arrow-bar-down.svg
 d7d5f88705e5c33e290f74a2c3990d7f  share/icons/bootstrap-icons/svg/arrow-bar-up.svg
+6dc6323c73cf8de7d71fb2aa20d16dd9  share/icons/bootstrap-icons/svg/arrow-down-right.svg
 8ecf63e91dde243bb7ba49ed9df72528  share/icons/bootstrap-icons/svg/arrow-down.svg
+78cfee59787ad84080292641226bb7ea  share/icons/bootstrap-icons/svg/arrow-up-right.svg
 34a00a42d8d8748cc3620c731114e257  share/icons/bootstrap-icons/svg/arrow-up.svg
 05ca217bcd09f27b01df1d9c420073b5  share/icons/bootstrap-icons/svg/arrows-move.svg
 8906b374decdb081fa5eee8b86db0084  share/icons/bootstrap-icons/svg/bar-chart.svg
@@ -6550,6 +6552,7 @@ a5e74644ade8498803cb8ef7fcb3ba72  share/icons/bootstrap-icons/svg/check2-square.
 6f1dff0deef6ad523176fc289b9f07bc  share/icons/bootstrap-icons/svg/circle-half.svg
 dcc31f91aa6ac688965e0b40c9ae0e9e  share/icons/bootstrap-icons/svg/clock-history.svg
 459850ed4ff704748e3a0798cf2155a5  share/icons/bootstrap-icons/svg/collection-play.svg
+2b76ed2585a49ffa7edde0b9a1fb0bb8  share/icons/bootstrap-icons/svg/dash.svg
 dbc2f0ee5731813a2a830e7a54f1a345  share/icons/bootstrap-icons/svg/diagram-3.svg
 3ebb1986eaa5472d7a40de81dc30dedf  share/icons/bootstrap-icons/svg/download.svg
 b7e48ee8e390faeb537ae38c029f878b  share/icons/bootstrap-icons/svg/envelope.svg
@@ -6579,6 +6582,7 @@ ab1ade2253a99d49990fe9be43096af6  share/icons/bootstrap-icons/svg/folder.svg
 fcaa194e79d14ba1a9c6e3db532bb384  share/icons/bootstrap-icons/svg/gear.svg
 00b6dff6edb02715da3135c8b7c315c1  share/icons/bootstrap-icons/svg/geo-alt.svg
 3a5f55e318cc07fe1fe9376ed3581cf4  share/icons/bootstrap-icons/svg/globe2.svg
+dc0baae7e28d0029abe2213f4ba873f7  share/icons/bootstrap-icons/svg/graph-up-arrow.svg
 4b5e20ad2de4f2b3033a81f963c18db0  share/icons/bootstrap-icons/svg/grip-vertical.svg
 ee80f767aa8e63b6a76842b164682bfd  share/icons/bootstrap-icons/svg/hourglass-split.svg
 7520f5ca2b05f6c30d1b50d63da44803  share/icons/bootstrap-icons/svg/house.svg
@@ -6598,6 +6602,7 @@ a0327b9f53c5012c4284f5c7642e991f  share/icons/bootstrap-icons/svg/pencil-square.
 7f3977fbcc112e9c3acdb45c1124f1f8  share/icons/bootstrap-icons/svg/pencil.svg
 f3cba1b852a8b3db6751bf9773566f3e  share/icons/bootstrap-icons/svg/people.svg
 411890530c93d145fa9e534d76bd6735  share/icons/bootstrap-icons/svg/person-badge.svg
+f2183ae2aea93c966a346ba6cd654d4e  share/icons/bootstrap-icons/svg/person-check.svg
 02884a0d7850880af21a0919125479a6  share/icons/bootstrap-icons/svg/person-circle.svg
 1bcf58690e56663c2429bcdffc2d8471  share/icons/bootstrap-icons/svg/person.svg
 ce2cb08c51e291a8d6faaf4aa3f088ac  share/icons/bootstrap-icons/svg/phone.svg
@@ -6978,14 +6983,14 @@ dd5f5f3cf2348a6cc17bd0ee76983225  share/translations/dut-NL/translation.ts
 284321a9de29bf9268c27abb13f56f2c  share/translations/ell-GR/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-AU/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-NZ/translation.ts
-0c5064ca85c228c4c4c4001082e94735  share/translations/eng-US/translation.ts
+e7b2664d5bb65c3611251ecfa668de29  share/translations/eng-US/translation.ts
 5f0920d5b4e8bbaff2a4a6d5b3995c90  share/translations/esl-ES/translation.ts
 27846e3f6408cd74f58cef8adcbab573  share/translations/esl-MX/translation.ts
 4b104d4d337601b4bc6ae0482e6478ea  share/translations/fin-FI/translation.ts
 edfd3efb7eca1e2bd6d6d7d08bd78a77  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-69501d0a5dc415d387565b4a5e0c4ac9  share/translations/ger-DE/translation.ts
+5a65138cbf97dbc1bb6e698e5713f436  share/translations/ger-DE/translation.ts
 75d657fed5de11db9e059cdcff2046a8  share/translations/ita-IT/translation.ts
 a45e2d26b1c24ac4cb6ae1d7197e5b0e  share/translations/jpn-JP/translation.ts
 d1dc34034ddce2d64c4f8df7fcc41c85  share/translations/nno-NO/translation.ts
@@ -6998,7 +7003,7 @@ e33e059c205f7c0a49e112ce9ba6147d  share/translations/ser-SR/translation.ts
 e9e308757570f0321486d498fc993d17  share/translations/srp-RS/translation.ts
 718ecc8ecbbe8ebec7a88fb2697f401f  share/translations/swe-SE/translation.ts
 0b1b76b5ad6b2f923afd6fd9a9937a8b  share/translations/untranslated/readme.txt
-99d206f8ee30c570554db5eaacaf0358  share/translations/untranslated/translation.ts
+ad6280a2296fd2d47f301a43144ef360  share/translations/untranslated/translation.ts
 bae9ff85781e52af001213bdb213a013  shippable.yml
 414f4d1129273ab3dea38b878d554eae  soap.php
 3b6d156f31df70e093aa1a6d8a525cd3  support/ezlupdate-qt4.5/README.txt
@@ -7058,10 +7063,11 @@ d56115c8242b3081672f63607aa69361  tests/runtests.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 9ff58a769386f12831d56db2598e292e  tests/suite.php
-8f4ddcf449f3b7c5996cd8b2f37173a3  tests/test-map.json
+730f55330bf2d3b8501929449eb0744c  tests/test-map.json
 8b29711fe10a56c5c5b90916f35d0a00  tests/tests/bin/phpcs/NoTypeDeclarationsSniffTest.php
 4e3eeb18c2ea423afb62388e5e3dcafc  tests/tests/bin/phpcs/fixtures/typedeclarations.inc
 abff1ff74c5399665db9df5a552c9682  tests/tests/design/AdminContextMenuTest.php
+94566664967df836a619fdf995be930b  tests/tests/design/AdminDashboardTest.php
 e9d17fa1c1ac3df04a1402a34081e7aa  tests/tests/design/AdminDensityTest.php
 c805f3b778d5e27530594a38b05712ba  tests/tests/design/AdminFormErrorsTest.php
 c4dbc84de70b3ac212233446d50a8b64  tests/tests/design/AdminFormLabelsTest.php
@@ -7073,7 +7079,7 @@ a33e9d573eb8e846797e949212bf192e  tests/tests/design/AdminNoticesTest.php
 0c55571a81de40303f49848a033d4661  tests/tests/design/AdminPageHeaderTest.php
 7e8957a9c15916135defa02bc8301d00  tests/tests/design/AdminRetiredClassesTest.php
 0dc3582808cc1c69069458d1cb6c8909  tests/tests/design/AdminStylingRulesTest.php
-fed16e9f0c46983c217d458b3255c33a  tests/tests/design/AdminThemeSwitchTest.php
+4e333fca1d282a533daa89c974f49281  tests/tests/design/AdminThemeSwitchTest.php
 d3aa163841a3b7ef9a8ce4048f7b1980  tests/tests/design/AdminTimelineTest.php
 8317da7f6c320876d336caa2d77c524a  tests/tests/design/AdminTokenContrastTest.php
 3e871accb7d56ac483c1150496cb8d3c  tests/tests/design/AdminTreeViewTest.php

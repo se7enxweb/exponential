@@ -75,6 +75,11 @@ extension). The editor siteaccess falls back to `admin4` first, then `admin3`, `
   name as tooltip (no longer cut to 18 characters). On windows up to 600px (and at 400% zoom) the middle steps fold
   into "..." for the eye only: screen readers still read the whole path, and a step that takes the keyboard focus
   shows again.
+  Each key figure has an icon tile; a figure that leads somewhere shows an arrow in its corner. The week's figure
+  says how it compares with the 7 days before (a number, an arrow and words, never a colour for "good" or "bad"),
+  counted from the same 14 days as the chart, so it needs no query of its own. The chart's numbers fold out under
+  it as a table ("Show the numbers"). States in tables use the existing `.a4-badge.is-ok|is-warn|is-bad|is-info`
+  (the state's tint and text colour); there is no second "pill" component.
 - **Node view.** One header row with the class icon, title, badges (class, hidden, secondary location) and the actions
   (language, Edit, Move, Remove, View on site, Preview, Manage versions). One meta line with modified and by whom,
   published, version, section, node, object and remote ids (click to copy) and the translations (click to switch).
