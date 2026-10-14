@@ -1782,7 +1782,7 @@ f4c72a3b44fe9648e42d849832a4b87d  design/standard/images/user_group.png
 1c57c779bb3be6099bcac166bc83aab6  design/standard/javascript/contentstructuremenu/contentstructuremenu.js
 ff23b2b1387845ae5f541b38a7951963  design/standard/javascript/exp_bookmarks.js
 3e27389cb0e9b7fcbc78aa9f77b83e9f  design/standard/javascript/exp_password_field.js
-dbf02ede693de8000907e23d9645631b  design/standard/javascript/expdebugbar.js
+8193592ab40606fbc3b798275f6ade62  design/standard/javascript/expdebugbar.js
 3492ec4bc10e9beb9e57dc4554f3067d  design/standard/javascript/ezasynchronouspublishing.js
 508ff667415a5d98e2a74446341b83ec  design/standard/javascript/ezmultioption/ezmultioption.js
 5665f05feab34431f20fa7d4431da034  design/standard/javascript/lib/ezjslibcookiesupport.js
@@ -2769,7 +2769,7 @@ f1ac6c4bdfb768a543907f1e85408ed8  doc/bc/6.0/console-exp-ini.md
 4fa2c2acfebf49a6d0606b3cfdadd05c  doc/bc/6.0/console.md
 d3d1f22911e860a16506696d3fee2cbb  doc/bc/6.0/content-jobs.md
 ec94f35b9c29418f1c35fe46d54a157f  doc/bc/6.0/content-object-fallback-locale.md
-4ec06a01cca1ac2f8e287a6770d833f0  doc/bc/6.0/debug-bar.md
+4ddc8c80dc6c5a32266350eb6c8f35b7  doc/bc/6.0/debug-bar.md
 68ca2915c347f13a647afb19d14748d0  doc/bc/6.0/draft-edit-access.md
 b0fbba2abe4abadee42e57cebb5388fd  doc/bc/6.0/eZINI_PRESERVES_COMMENTS.md
 cf9e3712f778ce6bfbb6aaca39d7f82b  doc/bc/6.0/expinfo-operator.md
@@ -2982,7 +2982,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-10a7815293bc09c10eb92b4f4e61e9a6  doc/changelogs/6.0/6.0.15.md
+e5b481799522452672855fa36173a61a  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -5546,7 +5546,7 @@ a4426106f9957b221c8245b2bb480881  kernel/private/classes/ezptemplateoverrides.ph
 b4c8b6bdaa165af37f563c5e39f0dad4  kernel/private/classes/ezptopologicalsortnode.php
 ff87cb464a335a0d70234d2a35106203  kernel/private/classes/ezscriptclusterpurge.php
 93df9b90000e461d123cdcd6f817ecd9  kernel/private/classes/ezscripttrashpurge.php
-044350c27c47d06a339d22cba1c7638f  kernel/private/classes/global_functions.php
+6a70200419e040cc050e79492abadf7e  kernel/private/classes/global_functions.php
 d34a95cf9e3f33a2a43a779f02d998cd  kernel/private/classes/httpcache/ezphttpcachecontract.php
 02d8fd5929eba35f5ad8ed31e4b86f3e  kernel/private/classes/httpcache/ezphttpcacheearlyexit.php
 d618db74c2bf854fd1172ff441a356d7  kernel/private/classes/httpcache/ezphttpcachelistener.php
@@ -6333,7 +6333,7 @@ d27d72fa632723c912c0e30955660dfb  lib/eztemplate/classes/eztemplatetreecache.php
 83db4deedb094ab56e41666aa89d1d45  lib/eztemplate/classes/eztemplateunitoperator.php
 c86873ded14533e5c2c8d74477b5b0c9  lib/eztemplate/classes/eztemplatevariableelement.php
 290175b9eca3990307842ecc8353ae59  lib/eztemplate/classes/eztemplatewhilefunction.php
-7c9a0cfa1c675e399b00211f84a8049b  lib/ezutils/classes/expdebugbarreport.php
+e447ea28aae949e936846aef9785257b  lib/ezutils/classes/expdebugbarreport.php
 b55898a868b558383b32af3334bd55d6  lib/ezutils/classes/expinfo.php
 11982ee3f90617fbf7ddbb55b4806286  lib/ezutils/classes/ezcachehelper.php
 65418d73b97109fe1dc0fc642c93139e  lib/ezutils/classes/ezcli.php
@@ -6870,14 +6870,14 @@ dd5f5f3cf2348a6cc17bd0ee76983225  share/translations/dut-NL/translation.ts
 284321a9de29bf9268c27abb13f56f2c  share/translations/ell-GR/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-AU/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-NZ/translation.ts
-a7ef2f17413ed9be80b54958e6bb52db  share/translations/eng-US/translation.ts
+cbffe11e93fdd529ce6cf5100e8d084e  share/translations/eng-US/translation.ts
 5f0920d5b4e8bbaff2a4a6d5b3995c90  share/translations/esl-ES/translation.ts
 27846e3f6408cd74f58cef8adcbab573  share/translations/esl-MX/translation.ts
 4b104d4d337601b4bc6ae0482e6478ea  share/translations/fin-FI/translation.ts
 edfd3efb7eca1e2bd6d6d7d08bd78a77  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-10cf998fa1ef0dd2b97e830f05c57827  share/translations/ger-DE/translation.ts
+3e65869c3188604296231915bcba544a  share/translations/ger-DE/translation.ts
 75d657fed5de11db9e059cdcff2046a8  share/translations/ita-IT/translation.ts
 a45e2d26b1c24ac4cb6ae1d7197e5b0e  share/translations/jpn-JP/translation.ts
 d1dc34034ddce2d64c4f8df7fcc41c85  share/translations/nno-NO/translation.ts
@@ -8005,6 +8005,7 @@ e6ad2c9ac436d848b4359433b0380402  tests/tests/lib/ezutils/eZURIFilterStringTest.
 40005d9e868e02bfbd2cae8d1e693583  tests/tests/lib/ezutils/eZURITransformURINullTest.php
 ffcf86e89c7ff74ede52e2ec04b52b1a  tests/tests/lib/ezutils/eZUtilsHelpersTest.php
 bcb05709494b4d98cd5103db4d823680  tests/tests/lib/ezutils/expDebugBarReportCopyMessagesTest.php
+248bd720b9f731f7952cb9ed6b4a3295  tests/tests/lib/ezutils/expDebugBarReportEngineTest.php
 b99dee804176afb040d2d3199defbcf5  tests/tests/lib/ezutils/expDebugBarReportMessageTextTest.php
 f08c00519b68562f0e65ea1ceab0b216  tests/tests/lib/ezutils/expDebugBarReportPanelHeightTest.php
 73b71352cf122c5331f60f4ca3185288  tests/tests/lib/ezutils/ezdebug_regression.php
