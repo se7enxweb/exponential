@@ -102,6 +102,29 @@ To add an icon: copy the SVG from the Bootstrap Icons 1.13.1 package unchanged i
 theme's `icon.ini`), and use it. `tests/tests/design/AdminIconsTest.php` fails for a file nothing names, a name with
 no file, a changed file, and a GIF icon, inline SVG or image button in an admin4 template.
 
+## Context menus
+
+The menus of the content tree, the sub-items table, the class icon and the bookmarks (`ezpopupmenu.js` with the
+templates in `templates/popupmenu/`) look like the other admin4 popovers and work from the keyboard.
+
+- **Look:** the card colour, edge, radius and shadow of the admin tokens in the light and the dark mode; text at the
+  body size (14 px) in rows of at least 32 px; the menu as wide as its longest item (13.5 to 22 rem) instead of a
+  fixed 14em that wrapped long items; the node or class name as a quiet title row; the hovered, focused and opened
+  row in the accent tint; disabled items in the muted text colour. Under Windows high contrast the rows keep a
+  visible outline.
+- **Keyboard:** the tree's menu button (the class icon in front of a node) and the sub-items table's row button
+  open the menu with Enter or Space; Shift+F10 or the context menu key open the menu of the focused tree item or
+  table row. The first item takes the focus. Arrow Down and Up, Home and End move between items, Arrow Right,
+  Enter or Space open a submenu, Arrow Left closes it, Enter or Space run an item, Escape closes the menu and
+  returns the focus to its button, Tab closes the menu and moves on.
+- **Screen readers:** `ezpopupmenu.js` gives each menu `role="menu"` labelled by its title row, its items
+  `role="menuitem"` (`aria-disabled` when disabled, `aria-haspopup`/`aria-expanded` for a submenu) and its rules
+  `role="separator"` when it shows the menu, so menus that extensions add through `admininterface.ini` get them too.
+  The menu's button carries `aria-haspopup="menu"` and `aria-expanded`; the tree's button is named after its node.
+- The functions extensions call (`ezpopmenu_showTopLevel`, `ezpopmenu_showSubLevel`, `ezpopmenu_mouseOver`,
+  `ezpopmenu_submitForm`, `ezpopmenu_hideAll` ...) are unchanged. `design/admin` keeps an identical copy of the menu
+  script and of the two scripts and the template that open it; change both copies together.
+
 ## Settings
 
 | File | Block | Key | Default | Scope |
