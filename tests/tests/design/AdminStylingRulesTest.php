@@ -671,9 +671,38 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
     {
         $css = file_get_contents( self::$root . '/design/admin4/stylesheets/admin4.css' );
         $this->assertStringContainsString( 'li.currentnode > a.image-text :is(span.node-name-normal', $css );
-        $this->assertStringContainsString( 'box-shadow: inset 3px 0 0 var(--a4-accent);', $css );
+        $this->assertSame( 1, preg_match( '/\n(div#contentstructure li\.currentnode > a\.image-text :is\([^)]*\)) \{([^}]*)\}/', $css, $current ) );
+        $this->assertStringContainsString( 'box-shadow: inset 3px 0 0 var(--a4-accent);', $current[2] );
+        // the bar is an inset shadow on the left: rounded left corners bend it into a "("
+        $this->assertStringContainsString( 'border-radius: 0 var(--a4-radius-s) var(--a4-radius-s) 0;', $current[2],
+                                           'The current node\'s left corners must be square, or its bar is drawn curved' );
         $this->assertStringContainsString( 'li:has(li.currentnode) > a.image-text', $css );
         $this->assertStringContainsString( 'border-left: 3px solid Highlight;', $css );
+    }
+
+    /**
+     * The choices above a list (10 | 25 | 50 and the like) were a light gradient with fixed colours: in dark mode a
+     * light box whose current value, in light text, could not be read. They are a segmented control on the tokens.
+     */
+    public function testTablePreferencesAreASegmentedControlOnTheTokens()
+    {
+        $css = file_get_contents( self::$root . '/design/admin4/stylesheets/theme/rounded.css' );
+        preg_match_all( '/(?:^|\n)([^{}\n]*p\.table-preferences[^{}]*)\{([^}]*)\}/', $css, $rules, PREG_SET_ORDER );
+        $this->assertGreaterThanOrEqual( 4, count( $rules ) );
+        $all = '';
+        foreach ( $rules as $rule )
+        {
+            $this->assertStringNotContainsString( 'gradient', $rule[2], trim( $rule[1] ) );
+            $this->assertDoesNotMatchRegularExpression( '/#[0-9a-f]{3,8}\b|rgba?\(/i', $rule[2], trim( $rule[1] ) . ' uses a colour literal' );
+            $all .= trim( $rule[1] ) . ' {' . $rule[2] . "}\n";
+        }
+        $this->assertMatchesRegularExpression( '/p\.table-preferences \{[^}]*border: 1px solid var\(--a4-line\);[^}]*background-color: var\(--a4-surface\);/', $all );
+        $this->assertMatchesRegularExpression( '/p\.table-preferences > a \{ color: var\(--a4-accent-text\); \}/', $all );
+        $this->assertMatchesRegularExpression( '/p\.table-preferences > span\.current \{[^}]*background-color: var\(--a4-accent-soft\);[^}]*color: var\(--a4-ink\);/', $all );
+        $this->assertMatchesRegularExpression( '/p\.table-preferences > a, p\.table-preferences > span \{[^}]*min-height: (2[4-9]|[3-9]\d)px;/', $all,
+                                               'The choices are targets of at least 24px' );
+        $this->assertMatchesRegularExpression( '/@media \(forced-colors: active\)\s*\{\s*p\.table-preferences[^}]*\}\s*p\.table-preferences > span\.current \{[^}]*Highlight/', $css,
+                                               'The current choice needs a forced-colors fallback' );
     }
 
     public function testEmptyListsUseTheEmptyState()

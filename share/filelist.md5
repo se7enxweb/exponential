@@ -921,7 +921,7 @@ d1f3e1ef98e8cee2e52a5446280eadc3  design/admin4/override/templates/embed-inline_
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
 a2c561e93ef63c93201e81acd4f32741  design/admin4/override/templates/window_controls_user.tpl
 f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin4/override/templates/windows_user.tpl
-f07ed5597ce30d43cd482ea9989ba32d  design/admin4/stylesheets/admin4.css
+2fd47736fd8f08f303e4e8088c46d005  design/admin4/stylesheets/admin4.css
 b580ad9299d33392c4d8441301121455  design/admin4/stylesheets/components.css
 e7b0acbd1646895a73189e0df9299144  design/admin4/stylesheets/content.css
 266bbaade2491b8b0ad3043daacb5434  design/admin4/stylesheets/core.css
@@ -937,7 +937,7 @@ bfe8caaefaad23ec10bbd8b39d575729  design/admin4/stylesheets/packagecompare.css
 cf525e1369265621db513e084052aa94  design/admin4/stylesheets/setup-extensions.css
 50be641d876ba7d5e17b15d5d0318426  design/admin4/stylesheets/theme/admin_datatable.css
 884b8cc51a5e8cba719fada5db7789c3  design/admin4/stylesheets/theme/modalwindow.css
-6d5a0d5839e2def7b7de26385bc67749  design/admin4/stylesheets/theme/rounded.css
+8f36e08ea6dc338a397c6a92d274f641  design/admin4/stylesheets/theme/rounded.css
 5dd996271ae1077ba68072e6f520b74d  design/admin4/stylesheets/visual-templateview.css
 e92ed971bdc20f0f00266930acf8e0ea  design/admin4/templates/ajaxuploader/browse.tpl
 a7f309134423a1be7e4bd03f3623b023  design/admin4/templates/ajaxuploader/location.tpl
@@ -2991,7 +2991,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-6c53af591a96e49987cc65bfc2202c50  doc/changelogs/6.0/6.0.15.md
+1bad5251fb69adb6cb4de7a079a3a78d  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -7084,7 +7084,7 @@ a33e9d573eb8e846797e949212bf192e  tests/tests/design/AdminNoticesTest.php
 0c55571a81de40303f49848a033d4661  tests/tests/design/AdminPageHeaderTest.php
 6ff0ec39508251b32aa19593c39780e4  tests/tests/design/AdminPreferencesTest.php
 7e8957a9c15916135defa02bc8301d00  tests/tests/design/AdminRetiredClassesTest.php
-b9e7e8353a7015090aa2b2c73becfe58  tests/tests/design/AdminStylingRulesTest.php
+d9f6fa3adb8c971a1011eeb017f059f9  tests/tests/design/AdminStylingRulesTest.php
 850f08505510556f8649d66b26af8a93  tests/tests/design/AdminThemeSwitchTest.php
 d3aa163841a3b7ef9a8ce4048f7b1980  tests/tests/design/AdminTimelineTest.php
 8317da7f6c320876d336caa2d77c524a  tests/tests/design/AdminTokenContrastTest.php

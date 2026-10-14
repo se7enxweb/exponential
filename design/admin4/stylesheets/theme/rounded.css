@@ -309,31 +309,50 @@ p.versions a:hover
 }
 
 
+/* The choices above a list (10 | 25 | 50 items, a sort field or order, a filter): a segmented control on the
+   tokens, so it follows the colour scheme; the current choice is a span.current, the others are links. */
 p.table-preferences
 {
-    border-radius: 3px;
-    border-bottom-right-radius: 3px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    max-width: 100%;
+    padding: 0;
     border: 1px solid var(--a4-line);
-    background-color: var(--a4-soft);
-    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fdfdfd), to(#e4e3e4));
-    background-image: -moz-linear-gradient(top,  #fdfdfd,  #e4e3e4);
-    background-image: -ms-linear-gradient(top,  #fdfdfd,  #e4e3e4);
-    background-image: -o-linear-gradient(top,  #fdfdfd,  #e4e3e4);
-    background-image: linear-gradient(top,  #fdfdfd,  #e4e3e4);
-    background-clip: padding-box;
+    border-radius: var(--a4-radius-s);
+    background-color: var(--a4-surface);
+    overflow: hidden;
 }
 
 p.table-preferences > a, p.table-preferences > span
 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    min-height: 28px;
+    padding: 2px var(--a4-space-2);
     border: solid var(--a4-line);
     border-width: 0 1px 0 0;
-    padding-right: 1em;
     line-height: 1.5em;
+    text-decoration: none;
 }
 
-p.table-preferences :last-child
+p.table-preferences > :last-child { border-right: 0; }
+p.table-preferences > a { color: var(--a4-accent-text); }
+p.table-preferences > a:hover { background-color: var(--a4-soft); color: var(--a4-ink); }
+p.table-preferences > a:focus-visible { outline-offset: -2px; }
+p.table-preferences > span.current
 {
-    border-right: 0px;
+    background-color: var(--a4-accent-soft);
+    color: var(--a4-ink);
+    font-weight: 650;
+}
+
+@media (forced-colors: active)
+{
+    p.table-preferences, p.table-preferences > a, p.table-preferences > span { border-color: CanvasText; }
+    p.table-preferences > span.current { forced-color-adjust: none; background-color: Highlight; color: HighlightText; }
 }
 
 input.button, input.defaultbutton, input.button-disabled
