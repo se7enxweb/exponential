@@ -129,7 +129,7 @@
                     {if $admin_layout}{set-block variable=$zone_html}{include uri='design:explayouts/admin_zone.tpl' layout=$admin_layout zone_identifier='left'}{/set-block}{else}{set $zone_html = ''}{/if}
                     {if $zone_html|trim|ne( '' )}
                     <div id="leftmenu" class="sidebar left" role="navigation" aria-label="{'Side menu'|i18n( 'design/admin/pagelayout' )|wash}">
-                        <div id="leftmenu-resize-handle" class="leftmenu-resize-handle" aria-hidden="true"></div>
+                        <div id="leftmenu-resize-handle" class="leftmenu-resize-handle" role="separator" aria-orientation="vertical" aria-controls="leftmenu" tabindex="0" aria-label="{'Width of the left column'|i18n( 'design/admin/pagelayout' )|wash}"></div>
                         <div id="leftmenu-design">
                             {$zone_html}
                         </div>

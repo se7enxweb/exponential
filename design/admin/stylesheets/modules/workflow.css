@@ -288,7 +288,7 @@ td.a4-settings-name code { word-break: normal; }
 .a4-audit-sub { color: var(--a4-muted); font-size: var(--a4-text-xs); }
 .a4-audit-nowrap, td.a4-audit-time { white-space: nowrap; }
 .a4-audit-view table.list td { vertical-align: top; overflow-wrap: anywhere; }
-/* the zebra rows of the older designs are grey: links in the lists stay ink-coloured (and underlined) there */
+/* links in the audit lists stay ink-coloured (and underlined) on the zebra rows */
 .a4-audit-view table.list td a { color: var(--a4-ink); }
 .a4-audit-view td.a4-audit-name code,
 .a4-audit-view code { font-size: var(--a4-text-xs); }

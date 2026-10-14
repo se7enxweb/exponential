@@ -99,7 +99,7 @@ modes.
 **Tables.** Every data table is striped the same way: `table.list`, the `.a4-table` component and the sub-items table
 (`exp/datatable`, through `--exp-dt-row-alt`) paint every second data row with `--a4-zebra`, the hovered row with
 `--a4-info-bg`, a selected row (`.a4-table tr.is-selected`) with `--a4-accent-soft`; a row header (`th scope="row"`)
-takes its row's colour. Only rows with data cells count (`tr:nth-child(even of :has(> td):not([hidden]))`): a header
+takes its row's colour. Only rows with data cells count (`tr:where(:nth-child(even of :has(> td):not([hidden])))`): a header
 row of `th` inside `tbody` or a row with the `hidden` attribute is skipped, so the first data row is always plain. The
 `bglight`/`bgdark` classes the templates still write are ignored for the colour. A row hidden by a script
 (`display: none`) still counts; that is a known limit of CSS striping. A table used for layout carries none of these

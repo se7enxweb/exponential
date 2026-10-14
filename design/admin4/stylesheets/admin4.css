@@ -520,7 +520,7 @@ table.list th.admin-dt-asc, table.list th.admin-dt-desc {
 table.list tr.bglight, table.list tr.bgdark,
 table.list tr.bglight td, table.list tr.bgdark td, table.list tr.bgdark th[scope="row"] { background-color: transparent; }
 table.list:not(.a4-plain) > tbody > tr > th[scope="row"] { background-color: transparent; }   /* a row header is its row's colour */
-table.list:not(.a4-plain) > tbody > tr:nth-child(even of :has(> td):not([hidden])) > :is(td, th[scope="row"]) { background-color: var(--a4-zebra); }
+table.list:not(.a4-plain) > tbody > tr:where(:nth-child(even of :has(> td):not([hidden]))) > :is(td, th[scope="row"]) { background-color: var(--a4-zebra); }
 table.list:not(.a4-plain) > tbody > tr:hover > :is(td, th[scope="row"]) { background-color: var(--a4-info-bg); }
 table.list td { border-color: var(--a4-line); }
 
@@ -771,13 +771,13 @@ span.classattribute-description {
   box-sizing: border-box;
   height: var(--a4-control-h);   /* .controlbar form .button-left .block select sets height: auto */
   padding: 0 var(--a4-space-6) 0 var(--a4-space-3);
-  border: 1px solid var(--a4-line-strong);
+  border: 1px solid var(--a4-field-line);
   border-radius: var(--a4-radius-s);
   background-color: var(--a4-card);
   background-image: linear-gradient(45deg, transparent 50%, var(--a4-muted) 50%),
                     linear-gradient(135deg, var(--a4-muted) 50%, transparent 50%);
-  background-position: calc(100% - 17px) 55%, calc(100% - 12px) 55%;
-  background-size: 5px 5px;
+  background-position: calc(100% - var(--a4-space-4) - 1px) 55%, calc(100% - var(--a4-space-3)) 55%;
+  background-size: calc(var(--a4-space-1) + 1px) calc(var(--a4-space-1) + 1px);   /* the chevron: two 5px halves */
   background-repeat: no-repeat;
   color: var(--a4-ink);
   cursor: pointer;

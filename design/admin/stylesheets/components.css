@@ -785,7 +785,7 @@ fieldset.a4-field > legend + * { clear: both; }
   white-space: nowrap;
 }
 .a4-table tr:last-child td { border-bottom: 0; }
-.a4-table > tbody > tr:nth-child(even of :has(> td):not([hidden])) > :is(td, th[scope="row"]) { background-color: var(--a4-zebra); }   /* zebra: see admin4-styling.md, Tables */
+.a4-table > tbody > tr:where(:nth-child(even of :has(> td):not([hidden]))) > :is(td, th[scope="row"]) { background-color: var(--a4-zebra); }   /* zebra: see admin4-styling.md, Tables */
 .a4-table > tbody > tr:hover > :is(td, th[scope="row"]) { background-color: var(--a4-info-bg); }
 .a4-table .a4-num, .a4-table th.a4-num { text-align: right; }
 .a4-table img { vertical-align: -3px; }

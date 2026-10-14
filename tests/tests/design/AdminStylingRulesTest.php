@@ -558,7 +558,7 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
         }
         // only data rows count (a header row of th in tbody does not), so the first data row is plain; a row header
         // (th scope=row) takes the stripe with its cells
-        $rows = ' > tbody > tr:nth-child(even of :has(> td):not([hidden])) > :is(td, th[scope="row"])';
+        $rows = ' > tbody > tr:where(:nth-child(even of :has(> td):not([hidden]))) > :is(td, th[scope="row"])';
         $this->assertSame( 'var(--a4-zebra)', $found['.a4-table' . $rows]['background-color'] );
         $this->assertSame( 'var(--a4-zebra)', $found['table.list:not(.a4-plain)' . $rows]['background-color'] );
         $this->assertSame( 'var(--a4-info-bg)', $found['table.list:not(.a4-plain) > tbody > tr:hover > :is(td, th[scope="row"])']['background-color'] );
@@ -621,6 +621,12 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
     {
         $this->assertFileEquals( self::$root . '/design/admin4/stylesheets/components.css', self::$root . '/design/admin/stylesheets/components.css',
             'design/admin/stylesheets/components.css is a copy of the admin4 file; change admin4 and copy it' );
+        // the module stylesheets too: design/admin loads the same components and the same module groups
+        foreach ( glob( self::$root . '/design/admin4/stylesheets/modules/*.css' ) as $file )
+        {
+            $this->assertFileEquals( $file, self::$root . '/design/admin/stylesheets/modules/' . basename( $file ),
+                'design/admin/stylesheets/modules/' . basename( $file ) . ' is a copy of the admin4 file; change admin4 and copy it' );
+        }
     }
 
     public function testEveryListedStylesheetExists()
