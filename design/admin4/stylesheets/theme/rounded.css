@@ -497,7 +497,7 @@ div.pagenavigator span.next
 
 div.pagenavigator span.disabled
 {
-    color: #d0d0d0;
+    color: var(--a4-muted);   /* readable (4.5:1); not a link, so it does not look like one */
 }
 
 div.pagenavigator span.pages span.other, div.pagenavigator span.pages span.current

@@ -16,7 +16,7 @@
   <input type="hidden" name="NodeID" value="{$module_result.content_info.node_id}">
   <input type="hidden" name="ObjectID" value="{$module_result.content_info.object_id}">
 {/if}
-<select{eq( $ui_context, 'edit' )|choose( '', ' disabled="disabled"' )} name="CacheTypeValue">
+<select{eq( $ui_context, 'edit' )|choose( '', ' disabled="disabled"' )} name="CacheTypeValue" aria-label="{'Clear cache'|i18n( 'design/admin/pagelayout' )|wash}">
    {section loop=$caches_list}
       {if eq( $:item.2, false )}
         <option{eq( $selected_cache_type, $:item.0 )|choose( '', ' selected="selected"' )} value="{$:item.0}">{$:item.1}</option>

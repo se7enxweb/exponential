@@ -539,7 +539,7 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
         }
         $this->assertStringStartsWith( '1.5rem', $found['.sidebar-control']['width'] );
         $this->assertSame( '""', $found['div#contentstructure ul#content_tree_menu ul a.openclose-open::after, div#contentstructure ul#content_tree_menu ul a.openclose-close::after']['content'] );
-        $this->assertSame( '""', $found['#header .searchblock .searchscope::after']['content'] );
+        $this->assertSame( 'var(--a4-space-5)', $found['#header .searchblock .searchscope']['width'] );
         $this->assertSame( '24px', $found['.window-close']['width'] );
         $this->assertSame( '24px', $found['.window-close']['height'] );
         $this->assertSame( '24px', $found['.searchscope-pane .close']['width'] );

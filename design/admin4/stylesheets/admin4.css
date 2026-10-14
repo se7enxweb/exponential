@@ -1503,10 +1503,11 @@ div#contentstructure ul#content_tree_menu ul a.openclose-close::after {
   position: absolute;
   inset: -2px 0 -2px -4px;   /* 20 x 20px: wider would cover the row above or below or the node's own link */
 }
-#header .searchblock .searchscope::after {
-  content: "";
-  position: absolute;
-  inset: -2px;
+#header .searchblock .searchscope {   /* the button itself is 24 x 24px (WCAG 2.5.8), at the field's left edge */
+  left: var(--a4-space-1);
+  width: var(--a4-space-5);
+  height: var(--a4-space-5);
+  margin-top: calc(-0.5 * var(--a4-space-5));
 }
 
 /* ---- The side columns: their first heading at the card's top, a compact tree, a visible width grip ------------- */
@@ -1757,12 +1758,22 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
   padding: var(--a4-space-1) var(--a4-space-2);
   border-radius: var(--a4-radius-s);
 }
+/* Every link of the side columns' menus and tools is a 24px target (WCAG 2.5.8): a row of 16px links stood too close
+   for the spacing exception. */
+#leftmenu ul.leftmenu-items li > div > :is(a, span),
+#rightmenu .box-content ul li > div > a,
+#rightmenu .box-content ul li > a {
+  display: block;
+  min-height: var(--a4-space-5);
+  padding-block: var(--a4-space-1);
+  box-sizing: border-box;
+}
 #leftmenu ul.leftmenu-items li > div > a[aria-current] {
   display: block;
   padding: var(--a4-space-1) var(--a4-space-2);
   border-radius: var(--a4-radius-s);
   background-color: var(--a4-accent-soft);
-  box-shadow: inset 3px 0 0 var(--a4-accent);
+  box-shadow: inset 3px 0 0 var(--a4-accent-text);
   color: var(--a4-accent-text);
   font-weight: 600;
   text-decoration: none;
