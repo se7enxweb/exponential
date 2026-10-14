@@ -222,6 +222,8 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
   }
 }
 #header .searchblock input.searchtext {
+  box-sizing: border-box;
+  height: 36px;   /* the light/dark switch next to it is 36px high */
   background-color: var(--a4-header-field);
   border: 1px solid var(--a4-header-field-line);
   border-radius: 99px;
@@ -245,6 +247,8 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
   padding: 0 var(--a4-space-4) 0 var(--a4-space-4);
 }
 .a4-theme-toggle {
+  box-sizing: border-box;
+  height: 36px;   /* as high as the search field */
   display: inline-flex;
   align-items: center;
   gap: var(--a4-space-2);
@@ -311,11 +315,11 @@ html[data-a4-theme="dark"] .a4-theme-toggle .a4-icon-moon { display: inline-bloc
   margin: 1rem;
 }
 .content-wrapper {
-  padding: 1rem;
+  padding: 1rem var(--a4-space-5);   /* 24px a side: the sidebar tabs on the window's edges are 24px wide */
 }
 @media screen and (max-width: 1023px) {
   .content-wrapper {
-    padding: 0.5rem;
+    padding: 0.5rem var(--a4-space-5);
   }
 }
 
@@ -585,8 +589,8 @@ html #page.ezexplayoutsuinavigationpart #leftmenu.sidebar {
 .a4-dash-bars { display: flex; align-items: flex-end; gap: var(--a4-space-2); height: 170px; padding-top: var(--a4-space-4); }
 .a4-dash-bar { position: relative; flex: 1 1 0; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; height: 100%; }
 .a4-dash-bar-fill { width: 100%; max-width: 26px; min-height: 0; border-radius: var(--a4-radius-s) var(--a4-radius-s) 0 0; background: linear-gradient(180deg, var(--a4-accent), var(--a4-accent-strong)); }
-.a4-dash-bar-value { font-size: var(--a4-text-xs); font-weight: 700; color: var(--a4-muted); margin-bottom: var(--a4-space-1); }
-.a4-dash-bar-day { margin-top: var(--a4-space-2); font-size: var(--a4-text-xs); color: var(--a4-muted); }
+.a4-dash-bar-value { font-size: var(--a4-text-xs); font-weight: 700; color: var(--a4-muted); margin-bottom: var(--a4-space-1); overflow-wrap: anywhere; text-align: center; }
+.a4-dash-bar-day { margin-top: var(--a4-space-2); font-size: var(--a4-text-xs); color: var(--a4-muted); overflow-wrap: anywhere; text-align: center; }
 .a4-dash-bar:last-child .a4-dash-bar-day { color: var(--a4-accent-text); font-weight: 700; }
 
 .a4-dash-system #dashboard-logo { display: none; }
@@ -972,7 +976,7 @@ html[data-a4-theme="dark"] .a4-login-logo { background-image: url('../images/3/l
    own padding and the edit pages' 32px margin took about 42-58px a side of a 390px screen. */
 @media (max-width: 767px) {
   .content-wrapper {
-    padding: var(--a4-space-2) var(--a4-space-2);
+    padding: var(--a4-space-2) var(--a4-space-5);   /* the 24px sidebar tabs on the edges */
   }
   .dashboard-flex > #maincontent {
     margin: var(--a4-space-2) var(--a4-space-2);
@@ -1118,9 +1122,9 @@ html[data-a4-theme="dark"] .a4-login-logo { background-image: url('../images/3/l
   border: 1px solid var(--a4-field-line); border-radius: var(--a4-radius-s); background-color: var(--a4-field); color: var(--a4-ink);
   font: var(--a4-text-l)/1.2 var(--a4-font); box-shadow: none;
 }
-.exp-pw-js .a4pw-input input { padding-right: 92px; }
+.exp-pw-js .a4pw-input input { padding-right: 98px; }   /* room for .a4pw-toggle (two 12px insets, 8px gap, icon and "Show"): a layout length, not spacing */
 .a4pw-input input:focus { outline: 2px solid transparent; border-color: var(--a4-accent); box-shadow: 0 0 0 3px var(--a4-ring); }
-.a4pw-field.invalid .a4pw-input input { border-color: var(--a4-bad); border-width: 2px; padding-left: var(--a4-space-3); }
+.a4pw-field.invalid .a4pw-input input { border-color: var(--a4-bad); border-width: 2px; padding-left: calc(var(--a4-space-3) - 1px); }   /* the 1px wider border: the text stays put */
 .a4pw-toggle {
   position: absolute; top: 4px; right: 4px; bottom: 4px; display: inline-flex; align-items: center; gap: var(--a4-space-2);
   margin: 0; padding: 0 var(--a4-space-3); border: 1px solid transparent; border-radius: var(--a4-radius-s); background: transparent;
@@ -1190,7 +1194,7 @@ html[data-a4-theme="dark"] .a4-login-logo { background-image: url('../images/3/l
 .a4pw-done { display: flex; gap: var(--a4-space-3); align-items: flex-start; padding: var(--a4-space-4) var(--a4-space-4); border: 1px solid var(--a4-ok-line); border-radius: var(--a4-radius); background-color: var(--a4-ok-bg); color: var(--a4-ok); }
 .a4pw-done:focus { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
 .a4pw-done-icon { flex: 0 0 auto; color: var(--a4-ok); }
-.a4pw-done h2 { font-size: var(--a4-text-xl); font-weight: 700; color: var(--a4-ok); }
+.a4pw-done h2 { font-size: var(--a4-text-l); font-weight: 700; color: var(--a4-ok); }
 .a4pw-done p { margin: var(--a4-space-2) 0 0; }
 .a4pw-done-actions { padding-top: var(--a4-space-2); }
 
@@ -1198,7 +1202,7 @@ html[data-a4-theme="dark"] .a4-login-logo { background-image: url('../images/3/l
   .a4pw-card { padding: var(--a4-space-3) var(--a4-space-3); border: 0; padding-left: 0; padding-right: 0; }
   .a4pw-head h1 { font-size: 1.3em; }
   .a4pw-btn { flex: 1 1 auto; }
-  .exp-pw-js .a4pw-input input { padding-right: 84px; }
+  .exp-pw-js .a4pw-input input { padding-right: 90px; }
 }
 
 /* ---- Compatibility: Exponential UI (expui) in admin4's tokens ----------------------------------------------------
@@ -1255,7 +1259,7 @@ div#contentstructure ul#content_tree_menu ul a.openclose-open::after,
 div#contentstructure ul#content_tree_menu ul a.openclose-close::after {
   content: "";
   position: absolute;
-  inset: -4px;
+  inset: -2px 0 -2px -4px;   /* 20 x 20px: wider would cover the row above or below or the node's own link */
 }
 #header .searchblock .searchscope::after {
   content: "";
@@ -1267,6 +1271,9 @@ div#contentstructure ul#content_tree_menu ul a.openclose-close::after {
   width: 24px;
   height: 24px;
   background-position: center;
+}
+.pagenavigator {
+  overflow-wrap: anywhere;
 }
 .pagenavigator a {
   display: inline-block;

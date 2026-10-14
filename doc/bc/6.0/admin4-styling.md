@@ -187,8 +187,11 @@ The left column's preset sizes (small, medium, large) are `html[data-a4-left-siz
   (`1px`, `2px` and the frame's few layout offsets aside);
 - a file named in `AdminComponentCSSFileList` is missing.
 
-Targets are at least 24 x 24px (WCAG 2.5.8). Where the drawn control stays smaller (the content tree's open/close,
-the search scope switch), an invisible `::after` around it takes the click.
+Targets are at least 24 x 24px (WCAG 2.5.8). Where the drawn control stays smaller, an invisible `::after` around
+it takes the click (the search scope switch); where that would cover a neighbour (the content tree's open/close,
+20 x 20px) or the control is a native checkbox (18px), the spacing exception of 2.5.8 applies: keep rows at least
+24px apart. A pixel length that is a layout offset rather than spacing (the password field's room for its toggle)
+is listed per selector in the test's `SCALE_EXCEPTIONS`.
 
 Modes the browser asks for: each theme sets `color-scheme` (scrollbars, select popups and date pickers follow);
 forced colors (Windows high contrast) get edges, the current and selected states and the focus in system colours,

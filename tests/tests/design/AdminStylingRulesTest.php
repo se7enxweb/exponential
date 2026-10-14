@@ -463,35 +463,44 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * Pixel lengths the frame keeps for its layout offsets (the header's search field, the sign-in panel), not for
-     * the spacing between elements
+     * Pixel lengths kept on purpose (stylesheet => selector => lengths): layout offsets, not spacing between elements
      */
-    const FRAME_LAYOUT_LENGTHS = array( '64px', '84px', '92px', '-4px', '-6px' );
+    const SCALE_EXCEPTIONS = array(
+        'admin4.css' => array(
+            '.a4-login-brand' => array( '64px' ),                                // the sign-in brand panel's side inset
+            '.exp-pw-js .a4pw-input input' => array( '98px', '90px' ),          // room for the show/hide toggle
+            '.a4-dash-secure-intro' => array( '-4px' ),                         // pulls the intro under its heading
+        ),
+        'components.css' => array(
+            '.a4-pick' => array( '-6px' ),                                      // pulls the pick box into its cell's inset
+        ),
+    );
 
     /**
      * components.css and admin4.css set font sizes with the --a4-text-* tokens and spacing with the --a4-space-*
-     * tokens (1px, 2px and the layout offsets above aside)
+     * tokens (1px, 2px and the exceptions above aside)
      */
     public function testFrameAndComponentsUseTheScale()
     {
         $problems = array();
         foreach ( array( 'components.css', 'admin4.css' ) as $file )
         {
+            $exceptions = isset( self::SCALE_EXCEPTIONS[$file] ) ? self::SCALE_EXCEPTIONS[$file] : array();
             foreach ( self::declarations( file_get_contents( self::$root . "/design/admin4/stylesheets/$file" ) ) as $d )
             {
                 list( $selector, $property, $value ) = $d;
-                if ( ( $property === 'font-size' || $property === 'font' ) && preg_match( '/\d+(\.\d+)?px/', $value ) )
+                if ( ( $property === 'font-size' || $property === 'font' ) && preg_match( '/\d+(\.\d+)?px/i', $value ) )
                 {
                     $problems[] = "$file: $selector { $property: $value } -- use a --a4-text-* token";
                 }
                 if ( preg_match( '/^(margin|padding|gap|row-gap|column-gap)(-|$)/', $property ) )
                 {
-                    preg_match_all( '/(?<![\w.-])-?\d+(\.\d+)?px/', $value, $m );
+                    preg_match_all( '/(?<![\w.-])-?\d+(\.\d+)?px/i', $value, $m );
                     foreach ( $m[0] as $length )
                     {
-                        if ( !in_array( $length, array( '1px', '2px', '-1px', '-2px' ), true )
-                             && !( $file === 'admin4.css' && in_array( $length, self::FRAME_LAYOUT_LENGTHS, true ) )
-                             && !( $file === 'components.css' && $length === '-6px' ) )
+                        $length = strtolower( $length );
+                        $allowed = isset( $exceptions[$selector] ) ? $exceptions[$selector] : array();
+                        if ( !in_array( $length, array( '1px', '2px', '-1px', '-2px' ), true ) && !in_array( $length, $allowed, true ) )
                         {
                             $problems[] = "$file: $selector { $property: $value } -- use a --a4-space-* token";
                         }
@@ -500,6 +509,32 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
             }
         }
         $this->assertSame( array(), array_values( array_unique( $problems ) ) );
+    }
+
+    /**
+     * The targets made 24px (WCAG 2.5.8) stay so: the sidebar tabs, the hit areas around the tree's open/close and
+     * the search scope switch, the dialog and scope pane close buttons, the page numbers
+     */
+    public function testSmallControlsKeepTheirTargets()
+    {
+        $dir = self::$root . '/design/admin4/stylesheets';
+        $found = array();
+        // in the order the page loads them: admin4.css after pagelayout.css
+        foreach ( array( 'pagelayout.css', 'admin4.css' ) as $file )
+        {
+            foreach ( self::declarations( file_get_contents( "$dir/$file" ) ) as $d )
+            {
+                $found[$d[0]][$d[1]] = $d[2];
+            }
+        }
+        $this->assertStringStartsWith( '1.5rem', $found['.sidebar-control']['width'] );
+        $this->assertSame( '""', $found['div#contentstructure ul#content_tree_menu ul a.openclose-open::after, div#contentstructure ul#content_tree_menu ul a.openclose-close::after']['content'] );
+        $this->assertSame( '""', $found['#header .searchblock .searchscope::after']['content'] );
+        $this->assertSame( '24px', $found['.window-close']['width'] );
+        $this->assertSame( '24px', $found['.window-close']['height'] );
+        $this->assertSame( '24px', $found['.searchscope-pane .close']['width'] );
+        $this->assertSame( '24px', $found['.pagenavigator a']['min-width'] );
+        $this->assertSame( '24px', $found['.pagenavigator a']['min-height'] );
     }
 
     public function testComponentsAreTheSameInAdminAndAdmin4()
