@@ -1828,7 +1828,7 @@ f4c72a3b44fe9648e42d849832a4b87d  design/standard/images/user_group.png
 1c57c779bb3be6099bcac166bc83aab6  design/standard/javascript/contentstructuremenu/contentstructuremenu.js
 ff23b2b1387845ae5f541b38a7951963  design/standard/javascript/exp_bookmarks.js
 3e27389cb0e9b7fcbc78aa9f77b83e9f  design/standard/javascript/exp_password_field.js
-d1c11aa215efd9fd4183498245865b4e  design/standard/javascript/expdebugbar.js
+8f9ffcb684bad409ea94683138652806  design/standard/javascript/expdebugbar.js
 3492ec4bc10e9beb9e57dc4554f3067d  design/standard/javascript/ezasynchronouspublishing.js
 508ff667415a5d98e2a74446341b83ec  design/standard/javascript/ezmultioption/ezmultioption.js
 5665f05feab34431f20fa7d4431da034  design/standard/javascript/lib/ezjslibcookiesupport.js
@@ -1842,7 +1842,7 @@ bca28d129e420ebe0e8a332a15c24fd4  design/standard/stylesheets/core.css
 39d7b2ecc372dbc65fa0dd3418b12621  design/standard/stylesheets/debug.css
 54bbc9b009260c844ef7e2254bf5ea02  design/standard/stylesheets/exp_bookmarks.css
 e893b624988aeccab0abef6a46d6e0fa  design/standard/stylesheets/exp_password_page.css
-f110c0c39cf863a3f6b14cb30570fa51  design/standard/stylesheets/expdebugbar.css
+cdbb4b89ed142bfe4b9c78e2caaaa303  design/standard/stylesheets/expdebugbar.css
 c815977883ff0447b636e3b2206828a4  design/standard/stylesheets/loginpagelayout.css
 d5de150d8a583b510f49f7c3021088cf  design/standard/stylesheets/manual.css
 98719dedc66bde23d454467e88a81961  design/standard/stylesheets/setup.css
@@ -3026,7 +3026,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-22e4ae7593d444ade594081d88b2ca1d  doc/changelogs/6.0/6.0.15.md
+6f952f7e83b3f280a0e8f1efb608b3b7  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
