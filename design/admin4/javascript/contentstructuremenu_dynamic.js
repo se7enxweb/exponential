@@ -122,10 +122,11 @@ function ContentStructureMenu( params, i18n )
             // A button for keyboards and screen readers: its name says whose sub items it shows, aria-expanded
             // whether they are shown (_toggleState), and Space presses it like Enter. It keeps the focus after a
             // press (no blur), so a keyboard can press it again; the ring shows on :focus-visible only.
+            // item.name arrives HTML-encoded (treemenu.php: htmlentities, ENT_COMPAT), so it goes in as it is.
             html += '<a class="openclose-open" id="a'
                 + item.node_id
                 + '" href="#" role="button" aria-expanded="false" aria-label="'
-                + _attr( ( i18n.subitems || '%name' ).split( '%name' ).join( item.name ) )
+                + _attr( i18n.subitems || '%name' ).split( '%name' ).join( item.name )
                 + '" onkeydown="if ( event.key === \' \' ) { event.preventDefault(); this.click(); }"'
                 + ' onclick="return treeMenu.load( this, '
                 + item.node_id
@@ -204,8 +205,9 @@ function ContentStructureMenu( params, i18n )
         {
             // A menu button named after the node (the image inside is decorative), opened with Enter, Space or
             // Shift+F10 too (ezpopupmenu.js).
+            // item.name arrives HTML-encoded (treemenu.php), so it goes into the attribute as it is.
             html += '<a class="nodeicon" href="#" role="button" aria-haspopup="menu" aria-expanded="false" aria-label="'
-                + String(item.name).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')
+                + item.name
                 + '" onclick="ezpopmenu_showTopLevel( event, \'ContextMenu\', {\'%nodeID%\':'
                 + item.node_id
                 + ', \'%objectID%\':'
