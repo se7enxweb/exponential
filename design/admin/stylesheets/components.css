@@ -679,6 +679,16 @@ fieldset.a4-field > legend + * { clear: both; }
 .a4-field-wide { grid-column: 1 / -1; }
 .a4-field-error { color: var(--a4-bad); font-size: var(--a4-text-s); font-weight: 650; }
 
+/* Required fields: a mark beside the label (the word itself is in .a4-sr-only for screen readers) and one hint
+   above the form that says what the mark means. A field error may lead with an icon. */
+.a4-required-mark { margin-left: var(--a4-space-1); color: var(--a4-bad); font-weight: 700; }
+.a4-required-hint { margin: 0 0 var(--a4-space-3); color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-required-hint .a4-required-mark { margin: 0 var(--a4-space-1) 0 0; }
+.a4-field-error > .a4-icon { flex: none; }
+
+/* The summary of a failed store (role="alert", focused on load): its links lead to the fields */
+.a4-error-summary a { color: inherit; text-decoration: underline; }
+
 /* The controls: inside a field, or anywhere with .a4-input */
 .a4-input,
 .a4-field select,
@@ -1232,6 +1242,7 @@ a.a4-icon-btn, a.a4-icon-btn:visited { color: var(--a4-muted); }
 .a4-bi-shield-fill-check { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/shield-fill-check.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/shield-fill-check.svg); }
 .a4-bi-sun { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/sun.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/sun.svg); }
 .a4-bi-trash { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/trash.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/trash.svg); }
+.a4-bi-x-circle-fill { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/x-circle-fill.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/x-circle-fill.svg); }
 
 /* ---- The frame's own hidden-until-used parts (were style="display:none" in the pagelayouts) ------------------ */
 

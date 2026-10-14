@@ -3704,6 +3704,10 @@
         <translation>Code zum Einbetten des Objekts</translation>
     </message>
     <message>
+        <source>Required field</source>
+        <translation>Pflichtfeld</translation>
+    </message>
+    <message>
         <source>Edit &lt;%object_name&gt; [%class_name]</source>
         <translation>&lt;%object_name&gt; [%class_name] bearbeiten</translation>
     </message>

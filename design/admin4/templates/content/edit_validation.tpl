@@ -1,13 +1,13 @@
 {section show=$validation.processed}
     {section show=or( $validation.attributes, $validation.placement, $validation.custom_rules )}
-        <div class="message-error">
-            <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {'The draft could not be stored.'|i18n( 'design/admin/content/edit' )}</h2>
+        <div class="message-error a4-error-summary" id="a4-error-summary" role="alert" tabindex="-1" aria-labelledby="a4-error-summary-title">
+            <h2 id="a4-error-summary-title"><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {'The draft could not be stored.'|i18n( 'design/admin/content/edit' )}</h2>
 
             {section show=$validation.attributes}
                 <p>{'Required data is either missing or is invalid'|i18n( 'design/admin/content/edit' )}:</p>
                 <ul>
                     {section var=UnvalidatedAttributes loop=$validation.attributes}
-                        <li>{$UnvalidatedAttributes.item.name|wash}: {$UnvalidatedAttributes.item.description}</li>
+                        <li>{if is_set( $UnvalidatedAttributes.item.identifier )}<a href="#ezcca-attr-{$UnvalidatedAttributes.item.id|wash}">{$UnvalidatedAttributes.item.name|wash}</a>{else}{$UnvalidatedAttributes.item.name|wash}{/if}: {$UnvalidatedAttributes.item.description}</li>
                     {/section}
                 </ul>
             {/section}
