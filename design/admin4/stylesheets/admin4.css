@@ -242,19 +242,19 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
 .header-theme {
   display: flex;
   align-items: center;
-  padding: 0 16px 0 18px;
+  padding: 0 var(--a4-space-4) 0 var(--a4-space-4);
 }
 .a4-theme-toggle {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--a4-space-2);
   margin: 0;
-  padding: 7px 14px 7px 11px;
+  padding: var(--a4-space-2) var(--a4-space-3) var(--a4-space-2) var(--a4-space-3);
   border: 1px solid var(--a4-header-field-line);
   border-radius: 99px;
   background-color: var(--a4-header-field);
   color: var(--a4-ink);
-  font: 600 13px/1.2 var(--a4-font);
+  font: 600 var(--a4-text-s)/1.2 var(--a4-font);
   white-space: nowrap;
   cursor: pointer;
   transition: border-color .15s ease, box-shadow .15s ease;
@@ -275,13 +275,13 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
 html[data-a4-theme="dark"] .a4-theme-toggle .a4-icon-sun { display: none; }
 html[data-a4-theme="dark"] .a4-theme-toggle .a4-icon-moon { display: inline-block; }
 /* The same round icon button at every width (the label is read by screen readers, not shown) */
-.a4-theme-toggle { padding: 7px 9px; }
+.a4-theme-toggle { padding: var(--a4-space-2) var(--a4-space-2); }
 .a4-theme-toggle .a4-theme-label {
   position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden;
   clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0;
 }
 @media (max-width: 1023px) {
-  .header-theme { padding: 0 8px; }
+  .header-theme { padding: 0 var(--a4-space-2); }
 }
 
 /* ---- The three columns as cards: soft, edged by light and shadow rather than boxes -------------------------- */
@@ -297,11 +297,11 @@ html[data-a4-theme="dark"] .a4-theme-toggle .a4-icon-moon { display: inline-bloc
   background-color: transparent;
 }
 #maincontent {
-  padding: 14px 16px 16px;
+  padding: var(--a4-space-3) var(--a4-space-4) var(--a4-space-4);
 }
 #leftmenu-design,
 #rightmenu-design {
-  padding: 8px 8px 10px;   /* the right column is 240px wide: more would push its buttons past the card */
+  padding: var(--a4-space-2) var(--a4-space-2) var(--a4-space-3);   /* the right column is 240px wide: more would push its buttons past the card */
 }
 
 /* Tight edges: the side columns' outer margin (admin3: 2rem), the main column's padding (2rem) and the space under the
@@ -330,7 +330,7 @@ html[data-a4-theme="dark"] .a4-theme-toggle .a4-icon-moon { display: inline-bloc
   z-index: 1030;
 }
 .sidebar-control {
-  width: 1rem;
+  width: 1.5rem;   /* 24px: the smallest target WCAG 2.5.8 allows */
   height: 2.5rem;
 }
 .sidebar-control.left {
@@ -539,65 +539,65 @@ html #page.ezexplayoutsuinavigationpart #leftmenu.sidebar {
 
 /* ---- The dashboard (content/dashboard.tpl): welcome, figures, activity, system, the configured blocks -------- */
 
-.a4-dashboard { display: grid; gap: 22px; }
+.a4-dashboard { display: grid; gap: var(--a4-space-5); }
 .a4-dash-hero {
-  display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 18px;
-  padding: 22px 24px; border-radius: var(--a4-radius);
+  display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: var(--a4-space-4);
+  padding: var(--a4-space-5) var(--a4-space-5); border-radius: var(--a4-radius);
   background: linear-gradient(135deg, var(--a4-accent-soft), transparent 70%), var(--a4-soft);
   box-shadow: inset 0 0 0 1px var(--a4-line);
 }
-.a4-dash-hero h1 { margin: 2px 0 4px; font-size: 26px; line-height: 1.2; }
-.a4-dash-date { margin: 0; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--a4-muted); }
+.a4-dash-hero h1 { margin: 2px 0 var(--a4-space-1); font-size: var(--a4-text-2xl); line-height: 1.2; }
+.a4-dash-date { margin: 0; font-size: var(--a4-text-xs); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--a4-muted); }
 .a4-dash-sub { margin: 0; color: var(--a4-muted); }
-.a4-dash-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.a4-dash-actions { display: flex; flex-wrap: wrap; gap: var(--a4-space-2); }
 :where(.a4-dash-actions) .a4-dash-action {
-  display: inline-flex; align-items: center; gap: 7px; padding: 8px 14px; border-radius: 99px;
+  display: inline-flex; align-items: center; gap: var(--a4-space-2); padding: var(--a4-space-2) var(--a4-space-3); border-radius: 99px;
   background-color: var(--a4-card); color: var(--a4-ink); font-weight: 600; text-decoration: none;
   box-shadow: 0 0 0 1px var(--a4-line), var(--a4-shadow-s);
   transition: box-shadow .15s ease, transform .15s ease;
 }
 :where(.a4-dash-actions) .a4-dash-action:hover { color: var(--a4-ink); transform: translateY(-1px); box-shadow: 0 0 0 1px var(--a4-accent), 0 6px 16px var(--a4-accent-soft); }
 :where(.a4-dash-actions) .a4-dash-action.a4-primary { background-color: var(--a4-accent-strong); color: var(--a4-on-accent); box-shadow: 0 6px 16px var(--a4-accent-soft); }
-.a4-dash-ico { font-size: 15px; line-height: 1; opacity: .85; }
+.a4-dash-ico { font-size: var(--a4-text-m); line-height: 1; opacity: .85; }
 
-.a4-dash-figures { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+.a4-dash-figures { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--a4-space-3); }
 :where(.a4-dash-figures) .a4-dash-figure {
-  display: flex; flex-direction: column; gap: 4px; padding: 14px 16px; border-radius: var(--a4-radius);
+  display: flex; flex-direction: column; gap: var(--a4-space-1); padding: var(--a4-space-3) var(--a4-space-4); border-radius: var(--a4-radius);
   background-color: var(--a4-card); color: var(--a4-muted); text-decoration: none;
   box-shadow: 0 0 0 1px var(--a4-line), var(--a4-shadow-s);
   transition: box-shadow .15s ease;
 }
 :where(.a4-dash-figures) a.a4-dash-figure:hover { color: var(--a4-muted); box-shadow: 0 0 0 1px var(--a4-accent), var(--a4-shadow-m); }
-.a4-dash-figure strong { font-size: 26px; line-height: 1.1; font-weight: 700; color: var(--a4-ink); font-variant-numeric: tabular-nums; }
-.a4-dash-figure span { font-size: 12.5px; }
+.a4-dash-figure strong { font-size: var(--a4-text-2xl); line-height: 1.1; font-weight: 700; color: var(--a4-ink); font-variant-numeric: tabular-nums; }
+.a4-dash-figure span { font-size: var(--a4-text-xs); }
 .a4-dash-figure.a4-accent { background: linear-gradient(135deg, var(--a4-card), var(--a4-accent-soft)); }
 .a4-dash-figure.a4-accent strong { color: var(--a4-accent-text); }
 
-.a4-dash-row { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 22px; }
+.a4-dash-row { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: var(--a4-space-5); }
 @media (max-width: 1100px) { .a4-dash-row { grid-template-columns: minmax(0, 1fr); } }
 .a4-dash-card {
-  min-width: 0; padding: 18px 20px 20px; border-radius: var(--a4-radius); background-color: var(--a4-card); color: var(--a4-ink);
+  min-width: 0; padding: var(--a4-space-4) var(--a4-space-4) var(--a4-space-4); border-radius: var(--a4-radius); background-color: var(--a4-card); color: var(--a4-ink);
   box-shadow: 0 0 0 1px var(--a4-line), var(--a4-shadow-s);
 }
-.a4-dash-card > header h2, .a4-dash-card h2 { margin: 0 0 12px; font-size: 16px; font-weight: 650; }
+.a4-dash-card > header h2, .a4-dash-card h2 { margin: 0 0 var(--a4-space-3); font-size: var(--a4-text-l); font-weight: 650; }
 .a4-dash-card table.list { width: 100%; }
 
-.a4-dash-bars { display: flex; align-items: flex-end; gap: 6px; height: 170px; padding-top: 18px; }
+.a4-dash-bars { display: flex; align-items: flex-end; gap: var(--a4-space-2); height: 170px; padding-top: var(--a4-space-4); }
 .a4-dash-bar { position: relative; flex: 1 1 0; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; height: 100%; }
 .a4-dash-bar-fill { width: 100%; max-width: 26px; min-height: 0; border-radius: var(--a4-radius-s) var(--a4-radius-s) 0 0; background: linear-gradient(180deg, var(--a4-accent), var(--a4-accent-strong)); }
-.a4-dash-bar-value { font-size: 11px; font-weight: 700; color: var(--a4-muted); margin-bottom: 3px; }
-.a4-dash-bar-day { margin-top: 6px; font-size: 11px; color: var(--a4-muted); }
+.a4-dash-bar-value { font-size: var(--a4-text-xs); font-weight: 700; color: var(--a4-muted); margin-bottom: var(--a4-space-1); }
+.a4-dash-bar-day { margin-top: var(--a4-space-2); font-size: var(--a4-text-xs); color: var(--a4-muted); }
 .a4-dash-bar:last-child .a4-dash-bar-day { color: var(--a4-accent-text); font-weight: 700; }
 
 .a4-dash-system #dashboard-logo { display: none; }
 .a4-dash-system #mainteinance-text h2 { display: none; }
-.a4-dash-system #mainteinance-text p { margin: 0 0 8px; color: var(--a4-muted); font-size: 13.5px; line-height: 1.5; }
-.a4-dash-facts { display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; margin: 12px 0; }
+.a4-dash-system #mainteinance-text p { margin: 0 0 var(--a4-space-2); color: var(--a4-muted); font-size: var(--a4-text-s); line-height: 1.5; }
+.a4-dash-facts { display: grid; grid-template-columns: auto 1fr; gap: var(--a4-space-2) var(--a4-space-3); margin: var(--a4-space-3) 0; }
 .a4-dash-facts dt { color: var(--a4-muted); }
 .a4-dash-facts dd { margin: 0; font-weight: 600; }
-.a4-dash-links { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: 0; }
+.a4-dash-links { display: flex; flex-wrap: wrap; gap: var(--a4-space-2) var(--a4-space-3); margin: 0; }
 
-.a4-dash-blocks { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 22px; align-items: start; }
+.a4-dash-blocks { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--a4-space-5); align-items: start; }
 .a4-dash-blocks .a4-dash-card { overflow-x: auto; }
 /* admin3 drew a dashed rule above each block; the cards' edge replaces it (the base rule's own selector) */
 .dashboard-item {
@@ -613,17 +613,17 @@ html #page.ezexplayoutsuinavigationpart #leftmenu.sidebar {
   background: linear-gradient(135deg, var(--a4-ok-bg), transparent 70%), var(--a4-card);
   box-shadow: 0 0 0 1px var(--a4-ok-line), var(--a4-shadow-s);
 }
-.a4-dash-secure h2 { display: flex; align-items: center; gap: 8px; }
+.a4-dash-secure h2 { display: flex; align-items: center; gap: var(--a4-space-2); }
 .a4-dash-secure-ico { flex: 0 0 auto; }
-.a4-dash-secure-intro { margin: -4px 0 14px; color: var(--a4-muted); max-width: 70ch; }
-.a4-dash-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin: 0; padding: 0; list-style: none; }
-.a4-dash-steps > li { display: flex; gap: 12px; padding: 14px 16px; border-radius: var(--a4-radius-s); background-color: var(--a4-card); box-shadow: 0 0 0 1px var(--a4-line); }
+.a4-dash-secure-intro { margin: -4px 0 var(--a4-space-3); color: var(--a4-muted); max-width: 70ch; }
+.a4-dash-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--a4-space-3); margin: 0; padding: 0; list-style: none; }
+.a4-dash-steps > li { display: flex; gap: var(--a4-space-3); padding: var(--a4-space-3) var(--a4-space-4); border-radius: var(--a4-radius-s); background-color: var(--a4-card); box-shadow: 0 0 0 1px var(--a4-line); }
 .a4-dash-step-no {
   flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center;
   width: 28px; height: 28px; border-radius: 50%; background-color: var(--a4-ok); color: var(--a4-card); font-weight: 700;
 }
-.a4-dash-steps h3 { margin: 2px 0 6px; font-size: 14.5px; font-weight: 650; }
-.a4-dash-steps p { margin: 0 0 8px; color: var(--a4-muted); line-height: 1.5; }
+.a4-dash-steps h3 { margin: 2px 0 var(--a4-space-2); font-size: var(--a4-text-m); font-weight: 650; }
+.a4-dash-steps p { margin: 0 0 var(--a4-space-2); color: var(--a4-muted); line-height: 1.5; }
 :where(.a4-dash-steps) .a4-dash-step-link { font-weight: 650; text-decoration: none; }
 .a4-dash-step-note { font-style: italic; }
 
@@ -633,11 +633,11 @@ html #page.ezexplayoutsuinavigationpart #leftmenu.sidebar {
    and #controlbar-top. Each restyled by its base selector, so extension rules that beat the base still win. */
 
 h1.context-title {
-  margin: 0 0 4px;
+  margin: 0 0 var(--a4-space-1);
   font-size: 1.35em;
   font-weight: 700;
   letter-spacing: -.01em;
-  line-height: 1.25;
+  line-height: var(--a4-leading-tight);
   color: var(--a4-ink);
 }
 h2.context-title {
@@ -672,8 +672,8 @@ span.classattribute-description {
   box-shadow: inset 0 0 0 1px var(--a4-line);
 }
 :where(#maincontent .controlbar) {
-  margin: 14px 0;
-  padding: 10px 12px;
+  margin: var(--a4-space-3) 0;
+  padding: var(--a4-space-3) var(--a4-space-3);
   border-radius: var(--a4-radius-s);
   background-color: var(--a4-soft);
   box-shadow: inset 0 0 0 1px var(--a4-line);
@@ -681,13 +681,13 @@ span.classattribute-description {
 
 /* ---- The node view (node/view/a4_full_body.tpl): compact, the content near the top ------------------------- */
 
-.a4-node-card { margin-bottom: 14px; }
+.a4-node-card { margin-bottom: var(--a4-space-3); }
 .a4-node-head {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 10px 14px;
-  padding: 2px 0 8px;
+  gap: var(--a4-space-3) var(--a4-space-3);
+  padding: 2px 0 var(--a4-space-2);
 }
 .a4-node-icon {
   flex: 0 0 auto;
@@ -707,17 +707,17 @@ span.classattribute-description {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
-  gap: 4px 10px;
+  gap: var(--a4-space-1) var(--a4-space-3);
 }
 .a4-node-head h1.context-title {
   margin: 0;
   font-size: 1.45em;
   overflow-wrap: anywhere;
 }
-.a4-node-badges { display: inline-flex; flex-wrap: wrap; gap: 5px; }
+.a4-node-badges { display: inline-flex; flex-wrap: wrap; gap: var(--a4-space-1); }
 .a4-badge {
-  display: inline-flex; align-items: center; padding: 1px 8px; border-radius: 99px;
-  font-size: 11.5px; font-weight: 600; line-height: 1.6; color: var(--a4-muted);
+  display: inline-flex; align-items: center; padding: 1px var(--a4-space-2); border-radius: 99px;
+  font-size: var(--a4-text-xs); font-weight: 600; line-height: 1.6; color: var(--a4-muted);
   background: var(--a4-soft); box-shadow: inset 0 0 0 1px var(--a4-line);
 }
 .a4-badge-class { color: var(--a4-accent-text); background-color: var(--a4-accent-soft); box-shadow: none; }
@@ -731,22 +731,22 @@ span.classattribute-description {
   background: transparent;
   box-shadow: none;
 }
-.controlbar.a4-node-actions form { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.controlbar.a4-node-actions form { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2); }
 .controlbar.a4-node-actions .button-left,
 .controlbar.a4-node-actions .button-right { float: none; margin: 0; }
-.controlbar.a4-node-actions .block { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 0; }
+.controlbar.a4-node-actions .block { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2); margin: 0; }
 .controlbar.a4-node-actions .block select,
 .controlbar.a4-node-actions .block input.button,
 .controlbar.a4-node-actions .block input.defaultbutton,
 .controlbar.a4-node-actions .block input.button-disabled {
   height: 32px;
   margin: 0;
-  padding: 0 12px;
-  font-size: 13px;
+  padding: 0 var(--a4-space-3);
+  font-size: var(--a4-text-s);
 }
-.controlbar.a4-node-actions .block select { padding: 0 8px; }
+.controlbar.a4-node-actions .block select { padding: 0 var(--a4-space-2); }
 input.button.a4-danger:hover { border-color: var(--a4-bad); color: var(--a4-bad); background-color: var(--a4-bad-bg); }
-.a4-node-links { display: flex; align-items: center; gap: 4px; }
+.a4-node-links { display: flex; align-items: center; gap: var(--a4-space-1); }
 .a4-node-links .versions { display: inline-flex; margin: 0; }
 :where(.a4-node-links) .a4-icon-button {
   display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px;
@@ -759,9 +759,9 @@ input.button.a4-danger:hover { border-color: var(--a4-bad); color: var(--a4-bad)
 p.context-information.a4-node-meta,
 div.context-information.a4-node-meta {
   display: flex; flex-wrap: wrap; align-items: center; gap: 2px 0;
-  margin: 0 0 10px; padding: 0; font-size: 12.5px; color: var(--a4-muted);
+  margin: 0 0 var(--a4-space-3); padding: 0; font-size: var(--a4-text-xs); color: var(--a4-muted);
 }
-.a4-node-meta > * + *::before { content: "\00b7"; margin: 0 8px; color: var(--a4-muted); }
+.a4-node-meta > * + *::before { content: "\00b7"; margin: 0 var(--a4-space-2); color: var(--a4-muted); }
 .a4-node-meta button.a4-copy {
   margin: 0; padding: 0; border: 0; background: none; font: inherit; color: inherit; cursor: copy;
   border-bottom: 1px dashed var(--a4-line-strong);
@@ -769,20 +769,20 @@ div.context-information.a4-node-meta {
 .a4-node-meta button.a4-copy:hover { color: var(--a4-ink); border-bottom-color: var(--a4-accent); }
 .a4-node-meta button.a4-copied { color: var(--a4-ok); border-bottom-color: var(--a4-ok); }
 .a4-node-meta button.a4-copied::after { content: " \2713"; }
-.a4-node-langs { display: inline-flex; gap: 4px; }
+.a4-node-langs { display: inline-flex; gap: var(--a4-space-1); }
 :where(.a4-node-langs) .a4-node-lang { display: inline-flex; padding: 2px; border-radius: 4px; opacity: .55; }
 :where(.a4-node-langs) .a4-node-lang.a4-current,
 :where(.a4-node-langs) .a4-node-lang:hover { opacity: 1; box-shadow: 0 0 0 1px var(--a4-accent); }
 
 /* the tabs as a quiet segmented row, the open panel as a soft card under it */
-.a4-node-tabs ul.tabs { display: flex; flex-wrap: wrap; gap: 2px; margin: 0 0 8px; padding: 3px; border-radius: var(--a4-radius-s); background-color: var(--a4-soft); box-shadow: inset 0 0 0 1px var(--a4-line); }
+.a4-node-tabs ul.tabs { display: flex; flex-wrap: wrap; gap: 2px; margin: 0 0 var(--a4-space-2); padding: var(--a4-space-1); border-radius: var(--a4-radius-s); background-color: var(--a4-soft); box-shadow: inset 0 0 0 1px var(--a4-line); }
 .a4-node-tabs ul.tabs li { float: none; margin: 0; }
 .a4-node-tabs ul.tabs li a,
-.a4-node-tabs ul.tabs li span.disabled { display: inline-block; padding: 4px 10px; font-size: 13px; }
+.a4-node-tabs ul.tabs li span.disabled { display: inline-block; padding: var(--a4-space-1) var(--a4-space-3); font-size: var(--a4-text-s); }
 .a4-node-tabs ul.tabs li.selected a,
 .a4-node-tabs ul.tabs li.selected span.disabled { background-color: var(--a4-card); box-shadow: var(--a4-shadow-s), inset 0 0 0 1px var(--a4-line); color: var(--a4-accent-text); }
 .a4-node-tabs .tabs-content { border-radius: var(--a4-radius-s); }
-.a4-node-children { margin-top: 4px; }
+.a4-node-children { margin-top: var(--a4-space-1); }
 /* the node view needs no rules between its parts: spacing separates them (the base drew a dashed line above the
    tabs, a line under the closed tab panel, and a dashed line above the sub items) */
 .a4-node-tabs.tab-block { border-top: 0; padding-top: 0; }
@@ -806,12 +806,12 @@ body.a4-login-page {
   min-height: 100dvh;
   background-color: var(--a4-surface);
   color: var(--a4-ink);
-  font: 15px/1.5 var(--a4-font);
+  font: var(--a4-text-m)/1.5 var(--a4-font);
   text-shadow: none;
 }
 html:has(body.a4-login-page) { background: var(--a4-surface); }
 .a4-login { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-height: 100vh; min-height: 100dvh; }
-.a4-login-side { display: flex; flex-direction: column; padding: 24px 32px; }
+.a4-login-side { display: flex; flex-direction: column; padding: var(--a4-space-5) var(--a4-space-6); }
 .a4-login-top { flex: 0 0 auto; }
 .a4-login-logo {
   display: block; width: 168px; height: 40px;
@@ -820,37 +820,37 @@ html:has(body.a4-login-page) { background: var(--a4-surface); }
 /* the dark logo is the white one of admin3's sprite (500x100): 114x32 at x 124, in the top band, so the sprite is
    placed by pixels like admin3's header does, not centred (centred, the box showed the separator blocks below it) */
 html[data-a4-theme="dark"] .a4-login-logo { background-image: url('../images/3/logo_separator_sprite.png'); background-position: -124px 4px; background-size: auto; width: 114px; }
-.a4-login-box { flex: 1 0 auto; display: flex; flex-direction: column; justify-content: center; width: 100%; max-width: 380px; margin: 0 auto; padding: 32px 0; }
-.a4-login-legal { flex: 0 0 auto; text-align: center; font-size: 12.5px; color: var(--a4-muted); }
-.a4-login-legal p { margin: 4px 0; }
+.a4-login-box { flex: 1 0 auto; display: flex; flex-direction: column; justify-content: center; width: 100%; max-width: 380px; margin: 0 auto; padding: var(--a4-space-6) 0; }
+.a4-login-legal { flex: 0 0 auto; text-align: center; font-size: var(--a4-text-xs); color: var(--a4-muted); }
+.a4-login-legal p { margin: var(--a4-space-1) 0; }
 .a4-login-legal a { color: var(--a4-muted); text-decoration: underline; text-underline-offset: 2px; }
 
-.a4-login-title { margin: 0 0 6px; font-size: 26px; line-height: 1.2; font-weight: 700; letter-spacing: -.01em; text-align: center; color: var(--a4-ink); }
-.a4-login-sub { margin: 0 0 26px; text-align: center; color: var(--a4-muted); font-size: 14px; }
+.a4-login-title { margin: 0 0 var(--a4-space-2); font-size: var(--a4-text-2xl); line-height: 1.2; font-weight: 700; letter-spacing: -.01em; text-align: center; color: var(--a4-ink); }
+.a4-login-sub { margin: 0 0 var(--a4-space-5); text-align: center; color: var(--a4-muted); font-size: var(--a4-text-m); }
 
 .a4-login-alert.message-warning {
-  margin: 0 0 18px; padding: 12px 14px; border: 1px solid var(--a4-warn-line); border-radius: var(--a4-radius-s);
-  background-color: var(--a4-warn-bg); color: var(--a4-warn); font-size: 14px;
+  margin: 0 0 var(--a4-space-4); padding: var(--a4-space-3) var(--a4-space-3); border: 1px solid var(--a4-warn-line); border-radius: var(--a4-radius-s);
+  background-color: var(--a4-warn-bg); color: var(--a4-warn); font-size: var(--a4-text-m);
 }
 .a4-login-alert p { margin: 0; }
-.a4-login-alert p + p { margin-top: 4px; }
+.a4-login-alert p + p { margin-top: var(--a4-space-1); }
 .a4-login-alert-title { font-weight: 700; }
 
 .a4-login-form { display: flex; flex-direction: column; }
-.a4-field-label { display: block; margin: 0 0 6px; font-size: 14px; font-weight: 600; color: var(--a4-ink); }
-.a4-field-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin-top: 16px; }
-.a4-field-head .a4-field-label { margin-bottom: 6px; }
-.a4-login-forgot { font-size: 13px; color: var(--a4-accent-text); text-decoration: none; }
+.a4-field-label { display: block; margin: 0 0 var(--a4-space-2); font-size: var(--a4-text-m); font-weight: 600; color: var(--a4-ink); }
+.a4-field-head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--a4-space-3); margin-top: var(--a4-space-4); }
+.a4-field-head .a4-field-label { margin-bottom: var(--a4-space-2); }
+.a4-login-forgot { font-size: var(--a4-text-s); color: var(--a4-accent-text); text-decoration: none; }
 .a4-login-forgot:hover { text-decoration: underline; }
 .a4-login-form #logintext, .a4-login-form #passwordtext {   /* by id: the old login stylesheet styles them by id */
   box-shadow: none; outline: none;
-  box-sizing: border-box; width: 100%; height: 46px; margin: 0; padding: 0 14px;
+  box-sizing: border-box; width: 100%; height: 46px; margin: 0; padding: 0 var(--a4-space-3);
   border: 1px solid var(--a4-field-line); border-radius: var(--a4-radius-s); background-color: var(--a4-field); color: var(--a4-ink);
-  font: 16px/1.2 var(--a4-font); transition: border-color .15s ease, box-shadow .15s ease;
+  font: var(--a4-text-l)/1.2 var(--a4-font); transition: border-color .15s ease, box-shadow .15s ease;
 }
 .a4-login-form #logintext:focus, .a4-login-form #passwordtext:focus { outline: 2px solid transparent; border-color: var(--a4-accent); box-shadow: 0 0 0 3px var(--a4-ring); }
 .a4-field-wrap { position: relative; }
-.a4-field-wrap #passwordtext { padding-right: 48px; }
+.a4-field-wrap #passwordtext { padding-right: var(--a4-space-7); }
 .a4-reveal {
   position: absolute; top: 3px; right: 3px; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center;
   margin: 0; padding: 0; border: 0; border-radius: var(--a4-radius-s); background: transparent; color: var(--a4-muted); cursor: pointer;
@@ -860,24 +860,24 @@ html[data-a4-theme="dark"] .a4-login-logo { background-image: url('../images/3/l
 .a4-reveal .a4-eye-off { display: none; }
 .a4-reveal[aria-pressed="true"] .a4-eye { display: none; }
 .a4-reveal[aria-pressed="true"] .a4-eye-off { display: inline-block; }
-.a4-check { display: flex; align-items: center; gap: 10px; margin: 16px 0 0; font-size: 14px; font-weight: 500; color: var(--a4-ink); cursor: pointer; }
+.a4-check { display: flex; align-items: center; gap: var(--a4-space-3); margin: var(--a4-space-4) 0 0; font-size: var(--a4-text-m); font-weight: 500; color: var(--a4-ink); cursor: pointer; }
 .a4-check input { width: 18px; height: 18px; margin: 0; accent-color: var(--a4-accent-strong); }
-.a4-login-note { margin: 14px 0 0; font-size: 13px; color: var(--a4-muted); }
+.a4-login-note { margin: var(--a4-space-3) 0 0; font-size: var(--a4-text-s); color: var(--a4-muted); }
 .a4-login-form #loginbutton {
-  box-sizing: border-box; width: 100%; height: 48px; margin: 22px 0 0; padding: 0 16px;
+  box-sizing: border-box; width: 100%; height: 48px; margin: var(--a4-space-5) 0 0; padding: 0 var(--a4-space-4);
   border: 0; border-radius: var(--a4-radius-s); background-color: var(--a4-accent-strong); color: var(--a4-on-accent);
-  font: 600 16px/1 var(--a4-font); cursor: pointer; box-shadow: 0 6px 16px var(--a4-accent-soft);
+  font: 600 var(--a4-text-l)/1 var(--a4-font); cursor: pointer; box-shadow: 0 6px 16px var(--a4-accent-soft);
   transition: background-color .15s ease, box-shadow .15s ease;
 }
 .a4-login-form #loginbutton:hover { background-color: var(--a4-accent-press); color: var(--a4-on-accent-hover); }
 .a4-login-form #loginbutton:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
 .a4-login-form #loginbutton.a4-busy { opacity: .75; cursor: progress; pointer-events: none; }
-.a4-login-alt { margin: 18px 0 0; text-align: center; font-size: 14px; color: var(--a4-muted); }
+.a4-login-alt { margin: var(--a4-space-4) 0 0; text-align: center; font-size: var(--a4-text-m); color: var(--a4-muted); }
 .a4-login-alt a { color: var(--a4-accent-text); font-weight: 600; text-decoration: none; }
 
 /* the brand panel: the wizard's orange, a quiet pattern, one line of text */
 .a4-login-brand {
-  position: relative; overflow: hidden; display: flex; align-items: center; padding: 48px 64px;
+  position: relative; overflow: hidden; display: flex; align-items: center; padding: var(--a4-space-7) 64px;
   color: var(--a4-on-accent);
   background:
     repeating-linear-gradient(135deg, var(--a4-accent-soft) 0 2px, transparent 2px 9px),
@@ -885,17 +885,17 @@ html[data-a4-theme="dark"] .a4-login-logo { background-image: url('../images/3/l
   background-color: var(--a4-accent-strong);   /* white text on every part of the panel at least 5.2:1 */
 }
 .a4-login-brand-inner { max-width: 440px; }
-.a4-login-brand-kicker { margin: 0 0 12px; font: 600 13px/1.4 var(--a4-mono); letter-spacing: .04em; opacity: .9; }
-.a4-login-brand-title { margin: 0 0 12px; font-size: 32px; line-height: 1.15; font-weight: 700; letter-spacing: -.01em; }
-.a4-login-brand-sub { margin: 0; font-size: 15px; opacity: .9; }
+.a4-login-brand-kicker { margin: 0 0 var(--a4-space-3); font: 600 var(--a4-text-s)/1.4 var(--a4-mono); letter-spacing: .04em; opacity: .9; }
+.a4-login-brand-title { margin: 0 0 var(--a4-space-3); font-size: var(--a4-text-3xl); line-height: 1.15; font-weight: 700; letter-spacing: -.01em; }
+.a4-login-brand-sub { margin: 0; font-size: var(--a4-text-m); opacity: .9; }
 
 /* phones and narrow windows: the form alone */
 @media (max-width: 899px) {
   .a4-login { grid-template-columns: minmax(0, 1fr); }
   .a4-login-brand { display: none; }
-  .a4-login-side { padding: 18px 20px calc(18px + env(safe-area-inset-bottom)); }
-  .a4-login-box { justify-content: flex-start; padding: 28px 0 24px; max-width: 420px; }
-  .a4-login-title { font-size: 24px; }
+  .a4-login-side { padding: var(--a4-space-4) var(--a4-space-4) calc(var(--a4-space-4) + env(safe-area-inset-bottom)); }
+  .a4-login-box { justify-content: flex-start; padding: var(--a4-space-5) 0 var(--a4-space-5); max-width: 420px; }
+  .a4-login-title { font-size: var(--a4-text-xl); }
   .a4-login-form #logintext, .a4-login-form #passwordtext { height: 48px; }
 }
 
@@ -903,7 +903,7 @@ html[data-a4-theme="dark"] .a4-login-logo { background-image: url('../images/3/l
    Their templates bring their own columns (#leftmenu with the object information, #maincontent, #rightmenu)
    straight into .dashboard-flex, without the #maincolumn wrapper whose padding spaces the main card elsewhere. */
 .dashboard-flex > #maincontent {
-  margin: 16px;
+  margin: var(--a4-space-4);
 }
 
 /* The edit form's buttons (Send for publishing / Store draft / Store draft and exit / Discard draft) stay in view
@@ -930,13 +930,13 @@ html[data-a4-theme="dark"] .a4-login-logo { background-image: url('../images/3/l
    the bar's own panel, the block inside), and its buttons wrapped onto two lines. Now one bar, 30px buttons,
    one line; on narrow windows the line scrolls sideways instead of wrapping (no scrollbar shown). */
 #maincontent #controlbar-top.controlbar {
-  margin: 0 0 12px;
+  margin: 0 0 var(--a4-space-3);
   padding: 0;
   background-color: transparent;
   box-shadow: none;
 }
 #controlbar-top .box-bc {
-  padding: 6px 8px;
+  padding: var(--a4-space-2) var(--a4-space-2);
   border-radius: var(--a4-radius-s);
 }
 #controlbar-top .box-bc .box-ml {
@@ -947,7 +947,7 @@ html[data-a4-theme="dark"] .a4-login-logo { background-image: url('../images/3/l
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
-  gap: 6px;
+  gap: var(--a4-space-2);
   float: none;
   margin: 0;
   overflow-x: auto;
@@ -962,8 +962,8 @@ html[data-a4-theme="dark"] .a4-login-logo { background-image: url('../images/3/l
   flex: 0 0 auto;
   height: 30px;
   margin: 0;
-  padding: 0 11px;
-  font-size: 13px;
+  padding: 0 var(--a4-space-3);
+  font-size: var(--a4-text-s);
   line-height: 28px;
   white-space: nowrap;
 }
@@ -972,21 +972,21 @@ html[data-a4-theme="dark"] .a4-login-logo { background-image: url('../images/3/l
    own padding and the edit pages' 32px margin took about 42-58px a side of a 390px screen. */
 @media (max-width: 767px) {
   .content-wrapper {
-    padding: 8px 6px;
+    padding: var(--a4-space-2) var(--a4-space-2);
   }
   .dashboard-flex > #maincontent {
-    margin: 8px 6px;
+    margin: var(--a4-space-2) var(--a4-space-2);
   }
   #maincontent {
-    padding: 14px 12px 16px;
+    padding: var(--a4-space-3) var(--a4-space-3) var(--a4-space-4);
     border-radius: var(--a4-radius);
   }
   h1.context-title { font-size: 1.2em; }
-  #maincontent fieldset { padding: 8px 8px 10px; margin-left: 0; margin-right: 0; }
-  #controlbar-top .box-bc { padding: 5px 6px; }
+  #maincontent fieldset { padding: var(--a4-space-2) var(--a4-space-2) var(--a4-space-3); margin-left: 0; margin-right: 0; }
+  #controlbar-top .box-bc { padding: var(--a4-space-1) var(--a4-space-2); }
   #controlbar-top .button-left input.defaultbutton,
   #controlbar-top .button-left input.button,
-  #controlbar-top .button-left input.button-disabled { padding: 0 9px; font-size: 12.5px; }
+  #controlbar-top .button-left input.button-disabled { padding: 0 var(--a4-space-2); font-size: var(--a4-text-xs); }
 }
 /* On phones every button of the edit bar shows without swiping: the buttons share the bar's width at 12px
    (the three labels need about 330px, a 390px phone has about 366px inside the bar); a narrower phone wraps
@@ -995,30 +995,30 @@ html[data-a4-theme="dark"] .a4-login-logo { background-image: url('../images/3/l
   #controlbar-top .button-left {
     flex-wrap: wrap;
     overflow-x: visible;
-    gap: 5px;
+    gap: var(--a4-space-1);
   }
   #controlbar-top .button-left input.defaultbutton,
   #controlbar-top .button-left input.button,
   #controlbar-top .button-left input.button-disabled {
     flex: 1 1 auto;
     min-width: 0;
-    padding: 0 7px;
-    font-size: 12px;
+    padding: 0 var(--a4-space-2);
+    font-size: var(--a4-text-xs);
   }
 }
 
 /* The edit form's second button bar, at the bottom of the form (content/edit.tpl .a4-edit-bar-bottom): the same
    compact bar as the one at the top, in place (the top one is the sticky one). */
 #maincontent .controlbar.a4-edit-bar-bottom {
-  margin: 14px 0 0;
-  padding: 6px 8px;
+  margin: var(--a4-space-3) 0 0;
+  padding: var(--a4-space-2) var(--a4-space-2);
   border-radius: var(--a4-radius-s);
 }
 .a4-edit-bar-bottom .block {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 6px;
+  gap: var(--a4-space-2);
   margin: 0;
 }
 .a4-edit-bar-bottom .block input.defaultbutton,
@@ -1027,21 +1027,21 @@ html[data-a4-theme="dark"] .a4-login-logo { background-image: url('../images/3/l
   flex: 0 0 auto;
   height: 30px;
   margin: 0;
-  padding: 0 11px;
-  font-size: 13px;
+  padding: 0 var(--a4-space-3);
+  font-size: var(--a4-text-s);
   line-height: 28px;
   white-space: nowrap;
 }
 @media (max-width: 767px) {
-  #maincontent .controlbar.a4-edit-bar-bottom { padding: 5px 6px; }
-  .a4-edit-bar-bottom .block { gap: 5px; }
+  #maincontent .controlbar.a4-edit-bar-bottom { padding: var(--a4-space-1) var(--a4-space-2); }
+  .a4-edit-bar-bottom .block { gap: var(--a4-space-1); }
   .a4-edit-bar-bottom .block input.defaultbutton,
   .a4-edit-bar-bottom .block input.button,
   .a4-edit-bar-bottom .block input.button-disabled {
     flex: 1 1 auto;
     min-width: 0;
-    padding: 0 7px;
-    font-size: 12px;
+    padding: 0 var(--a4-space-2);
+    font-size: var(--a4-text-xs);
   }
 }
 
@@ -1059,7 +1059,7 @@ html[data-a4-theme="dark"] .a4-login-logo { background-image: url('../images/3/l
     width: 100%;
     min-width: 0;
   }
-  .controlbar.a4-node-actions .block { gap: 5px; }
+  .controlbar.a4-node-actions .block { gap: var(--a4-space-1); }
   .controlbar.a4-node-actions .block select {
     flex: 1 1 150px;
     min-width: 0;
@@ -1069,15 +1069,15 @@ html[data-a4-theme="dark"] .a4-login-logo { background-image: url('../images/3/l
   .controlbar.a4-node-actions .block input.button-disabled {
     flex: 1 1 auto;
     min-width: 0;
-    padding: 0 8px;
-    font-size: 12.5px;
+    padding: 0 var(--a4-space-2);
+    font-size: var(--a4-text-xs);
   }
 }
 /* ... and all the controls flow as one set: the groups around them (the node view's own markup) step aside, so
    the language choice, Edit, Move, Remove and the icon buttons fill the lines together, the choice growing,
    the buttons at their own width. */
 @media (max-width: 767px) {
-  .controlbar.a4-node-actions form { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; width: 100%; }
+  .controlbar.a4-node-actions form { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-1); width: 100%; }
   .controlbar.a4-node-actions .button-left,
   .controlbar.a4-node-actions .block,
   .controlbar.a4-node-actions .a4-node-links,
@@ -1101,30 +1101,30 @@ html[data-a4-theme="dark"] .a4-login-logo { background-image: url('../images/3/l
 .a4pw *, .a4pw *::before, .a4pw *::after { box-sizing: border-box; }
 .a4pw [hidden] { display: none !important; }
 .a4pw h1, .a4pw h2 { margin: 0; padding: 0; border: 0; background: none; color: inherit; }
-.a4pw-head { margin: 0 0 16px; }
+.a4pw-head { margin: 0 0 var(--a4-space-4); }
 .a4pw-head h1 { font-size: 1.5em; line-height: 1.2; font-weight: 700; }
-.a4pw-head p { margin: 4px 0 0; color: var(--a4-muted); }
+.a4pw-head p { margin: var(--a4-space-1) 0 0; color: var(--a4-muted); }
 
-.a4pw-card { margin: 0; padding: 20px; border: 1px solid var(--a4-line); border-radius: var(--a4-radius); background-color: var(--a4-card); }
+.a4pw-card { margin: 0; padding: var(--a4-space-4); border: 1px solid var(--a4-line); border-radius: var(--a4-radius); background-color: var(--a4-card); }
 .a4pw-username { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); border: 0; opacity: 0; }
 .a4pw-sr { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-.a4pw-field { margin: 0 0 20px; }
-.a4pw-label-row { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 12px; }
-.a4pw label.a4pw-label { display: block; margin: 0 0 6px; padding: 0; font-size: 14px; font-weight: 650; color: var(--a4-ink); }
+.a4pw-field { margin: 0 0 var(--a4-space-4); }
+.a4pw-label-row { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--a4-space-1) var(--a4-space-3); }
+.a4pw label.a4pw-label { display: block; margin: 0 0 var(--a4-space-2); padding: 0; font-size: var(--a4-text-m); font-weight: 650; color: var(--a4-ink); }
 .a4pw-input { position: relative; display: flex; align-items: stretch; }
 .a4pw-input input {
-  flex: 1 1 auto; min-width: 0; width: 100%; height: 44px; margin: 0; padding: 0 12px;
+  flex: 1 1 auto; min-width: 0; width: 100%; height: 44px; margin: 0; padding: 0 var(--a4-space-3);
   border: 1px solid var(--a4-field-line); border-radius: var(--a4-radius-s); background-color: var(--a4-field); color: var(--a4-ink);
-  font: 16px/1.2 var(--a4-font); box-shadow: none;
+  font: var(--a4-text-l)/1.2 var(--a4-font); box-shadow: none;
 }
 .exp-pw-js .a4pw-input input { padding-right: 92px; }
 .a4pw-input input:focus { outline: 2px solid transparent; border-color: var(--a4-accent); box-shadow: 0 0 0 3px var(--a4-ring); }
-.a4pw-field.invalid .a4pw-input input { border-color: var(--a4-bad); border-width: 2px; padding-left: 11px; }
+.a4pw-field.invalid .a4pw-input input { border-color: var(--a4-bad); border-width: 2px; padding-left: var(--a4-space-3); }
 .a4pw-toggle {
-  position: absolute; top: 4px; right: 4px; bottom: 4px; display: inline-flex; align-items: center; gap: 6px;
-  margin: 0; padding: 0 10px; border: 1px solid transparent; border-radius: var(--a4-radius-s); background: transparent;
-  color: var(--a4-muted); font: 600 13px/1 var(--a4-font); cursor: pointer;
+  position: absolute; top: 4px; right: 4px; bottom: 4px; display: inline-flex; align-items: center; gap: var(--a4-space-2);
+  margin: 0; padding: 0 var(--a4-space-3); border: 1px solid transparent; border-radius: var(--a4-radius-s); background: transparent;
+  color: var(--a4-muted); font: 600 var(--a4-text-s)/1 var(--a4-font); cursor: pointer;
 }
 .a4pw-toggle:hover { background: var(--a4-soft); color: var(--a4-ink); }
 .a4pw-toggle:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 0; }
@@ -1132,15 +1132,15 @@ html[data-a4-theme="dark"] .a4-login-logo { background-image: url('../images/3/l
 .a4pw-toggle .a4pw-eye-off, .a4pw-toggle[aria-pressed="true"] .a4pw-eye { display: none; }
 .a4pw-toggle[aria-pressed="true"] .a4pw-eye-off { display: inline-block; }
 
-.a4pw-link { margin: 0 0 6px; padding: 2px 0; border: 0; background: none; color: var(--a4-accent-text); font: 600 13px/1.3 var(--a4-font); text-decoration: underline; text-underline-offset: 2px; cursor: pointer; }
+.a4pw-link { margin: 0 0 var(--a4-space-2); padding: 2px 0; border: 0; background: none; color: var(--a4-accent-text); font: 600 var(--a4-text-s)/1.3 var(--a4-font); text-decoration: underline; text-underline-offset: 2px; cursor: pointer; }
 .a4pw-link:hover { color: var(--a4-ink); }
 
-.a4pw-error { margin: 6px 0 0; color: var(--a4-bad); font-size: 14px; font-weight: 600; }
+.a4pw-error { margin: var(--a4-space-2) 0 0; color: var(--a4-bad); font-size: var(--a4-text-m); font-weight: 600; }
 .a4pw-error span { display: block; }
 .a4pw-error span::before { content: "! "; }
 
-.a4pw-meter { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; margin: 10px 0 0; font-size: 13px; color: var(--a4-muted); }
-.a4pw-meter-bar { display: inline-grid; grid-template-columns: repeat(5, 1fr); gap: 4px; width: 12rem; max-width: 100%; }
+.a4pw-meter { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2) var(--a4-space-3); margin: var(--a4-space-3) 0 0; font-size: var(--a4-text-s); color: var(--a4-muted); }
+.a4pw-meter-bar { display: inline-grid; grid-template-columns: repeat(5, 1fr); gap: var(--a4-space-1); width: 12rem; max-width: 100%; }
 .a4pw-meter-bar span { height: 6px; border-radius: var(--a4-radius-s); background-color: var(--a4-line); }
 .a4pw-meter[data-score="0"] .a4pw-meter-bar span:nth-child(-n+1) { background-color: var(--a4-bad); }
 .a4pw-meter[data-score="1"] .a4pw-meter-bar span:nth-child(-n+2) { background-color: var(--a4-accent-strong); }
@@ -1150,9 +1150,9 @@ html[data-a4-theme="dark"] .a4-login-logo { background-image: url('../images/3/l
 .a4pw-meter-label b { color: var(--a4-ink); }
 .a4pw-meter:not([data-score]) .a4pw-meter-label, .a4pw-meter[data-score=""] .a4pw-meter-label { visibility: hidden; }
 
-.a4pw-rules-title { margin: 12px 0 4px; font-size: 13px; font-weight: 650; color: var(--a4-muted); }
-.a4pw-rules { margin: 0; padding: 0; list-style: none; font-size: 14px; }
-.a4pw-rules li { display: flex; align-items: flex-start; gap: 8px; margin: 3px 0; padding: 0; color: var(--a4-ink); background: none; }
+.a4pw-rules-title { margin: var(--a4-space-3) 0 var(--a4-space-1); font-size: var(--a4-text-s); font-weight: 650; color: var(--a4-muted); }
+.a4pw-rules { margin: 0; padding: 0; list-style: none; font-size: var(--a4-text-m); }
+.a4pw-rules li { display: flex; align-items: flex-start; gap: var(--a4-space-2); margin: var(--a4-space-1) 0; padding: 0; color: var(--a4-ink); background: none; }
 .a4pw-rule-icon { flex: 0 0 auto; width: 16px; height: 16px; margin-top: 2px; border: 2px solid var(--a4-field-line); border-radius: 50%; }
 .a4pw-rules li[data-state="met"] { color: var(--a4-ok); }
 .a4pw-rules li[data-state="met"] .a4pw-rule-icon { border-color: var(--a4-ok); background: var(--a4-ok) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.3l2.6 2.6L12 5.5' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 12px no-repeat; }
@@ -1162,17 +1162,17 @@ html[data-a4-theme="dark"] .a4-login-logo { background-image: url('../images/3/l
 .a4pw-rules li[data-failed="true"]:not([data-state="met"]) { color: var(--a4-bad); font-weight: 600; }
 .a4pw-rules li[data-failed="true"]:not([data-state="met"]) .a4pw-rule-icon { border-color: var(--a4-bad); }
 
-.a4pw-match { margin: 6px 0 0; font-size: 14px; font-weight: 600; }
+.a4pw-match { margin: var(--a4-space-2) 0 0; font-size: var(--a4-text-m); font-weight: 600; }
 .a4pw-match[data-state="match"] { color: var(--a4-ok); }
 .a4pw-match[data-state="match"]::before { content: "\2713  "; }
 .a4pw-match[data-state="nomatch"] { color: var(--a4-muted); }
-.a4pw-status { margin: 0 0 16px; padding: 10px 12px; border-radius: var(--a4-radius-s); background-color: var(--a4-soft); color: var(--a4-ink); font-size: 14px; }
+.a4pw-status { margin: 0 0 var(--a4-space-4); padding: var(--a4-space-3) var(--a4-space-3); border-radius: var(--a4-radius-s); background-color: var(--a4-soft); color: var(--a4-ink); font-size: var(--a4-text-m); }
 
-.a4pw-actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 4px 0 0; padding: 16px 0 0; border-top: 1px solid var(--a4-line); }
+.a4pw-actions { display: flex; flex-wrap: wrap; gap: var(--a4-space-3); margin: var(--a4-space-1) 0 0; padding: var(--a4-space-4) 0 0; border-top: 1px solid var(--a4-line); }
 .a4pw-btn {
-  display: inline-flex; align-items: center; justify-content: center; min-height: 44px; margin: 0; padding: 0 18px;
+  display: inline-flex; align-items: center; justify-content: center; min-height: 44px; margin: 0; padding: 0 var(--a4-space-4);
   border: 1px solid var(--a4-field-line); border-radius: var(--a4-radius-s); background-color: var(--a4-card); color: var(--a4-ink);
-  font: 600 15px/1.2 var(--a4-font); text-decoration: none; cursor: pointer; text-shadow: none;
+  font: 600 var(--a4-text-m)/1.2 var(--a4-font); text-decoration: none; cursor: pointer; text-shadow: none;
 }
 .a4pw a.a4pw-btn { color: var(--a4-ink); }
 .a4pw-btn:hover { border-color: var(--a4-accent); }
@@ -1180,22 +1180,22 @@ html[data-a4-theme="dark"] .a4-login-logo { background-image: url('../images/3/l
 .a4pw-btn.primary, .a4pw a.a4pw-btn.primary { background-color: var(--a4-accent-strong); border-color: var(--a4-accent-strong); color: var(--a4-on-accent); }
 .a4pw-btn.primary:hover, .a4pw a.a4pw-btn.primary:hover { background-color: var(--a4-accent-press); border-color: var(--a4-accent-press); color: var(--a4-on-accent-hover); }
 
-.a4pw-summary { margin: 0 0 16px; padding: 14px 16px; border: 1px solid var(--a4-bad-line); border-left: 4px solid var(--a4-bad); border-radius: var(--a4-radius-s); background-color: var(--a4-bad-bg); color: var(--a4-bad); }
+.a4pw-summary { margin: 0 0 var(--a4-space-4); padding: var(--a4-space-3) var(--a4-space-4); border: 1px solid var(--a4-bad-line); border-left: 4px solid var(--a4-bad); border-radius: var(--a4-radius-s); background-color: var(--a4-bad-bg); color: var(--a4-bad); }
 .a4pw-summary:focus { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
-.a4pw-summary h2 { font-size: 16px; font-weight: 700; color: var(--a4-bad); }
-.a4pw-summary ul { margin: 6px 0 0; padding: 0 0 0 20px; }
+.a4pw-summary h2 { font-size: var(--a4-text-l); font-weight: 700; color: var(--a4-bad); }
+.a4pw-summary ul { margin: var(--a4-space-2) 0 0; padding: 0 0 0 var(--a4-space-4); }
 .a4pw-summary li { margin: 2px 0; }
 .a4pw .a4pw-summary a { color: var(--a4-bad); text-decoration: underline; font-weight: 600; }
 
-.a4pw-done { display: flex; gap: 14px; align-items: flex-start; padding: 18px 20px; border: 1px solid var(--a4-ok-line); border-radius: var(--a4-radius); background-color: var(--a4-ok-bg); color: var(--a4-ok); }
+.a4pw-done { display: flex; gap: var(--a4-space-3); align-items: flex-start; padding: var(--a4-space-4) var(--a4-space-4); border: 1px solid var(--a4-ok-line); border-radius: var(--a4-radius); background-color: var(--a4-ok-bg); color: var(--a4-ok); }
 .a4pw-done:focus { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
 .a4pw-done-icon { flex: 0 0 auto; color: var(--a4-ok); }
-.a4pw-done h2 { font-size: 18px; font-weight: 700; color: var(--a4-ok); }
-.a4pw-done p { margin: 6px 0 0; }
-.a4pw-done-actions { padding-top: 6px; }
+.a4pw-done h2 { font-size: var(--a4-text-xl); font-weight: 700; color: var(--a4-ok); }
+.a4pw-done p { margin: var(--a4-space-2) 0 0; }
+.a4pw-done-actions { padding-top: var(--a4-space-2); }
 
 @media (max-width: 767px) {
-  .a4pw-card { padding: 14px 12px; border: 0; padding-left: 0; padding-right: 0; }
+  .a4pw-card { padding: var(--a4-space-3) var(--a4-space-3); border: 0; padding-left: 0; padding-right: 0; }
   .a4pw-head h1 { font-size: 1.3em; }
   .a4pw-btn { flex: 1 1 auto; }
   .exp-pw-js .a4pw-input input { padding-right: 84px; }
@@ -1246,6 +1246,39 @@ html[data-a4-theme="dark"] img[src*="/share/icons/bootstrap-icons/"] { filter: i
 /* Windows high contrast with a dark canvas: the same black SVGs would vanish, so they follow the canvas text. */
 @media (forced-colors: active) and (prefers-color-scheme: dark) {
   img[src*="/share/icons/bootstrap-icons/"] { filter: invert(1); }
+}
+
+/* Targets of at least 24 x 24px (WCAG 2.5.8): where the drawn control stays small, an invisible ::after around it
+   takes the click. The content tree's open/close (16px), the search scope switch (20px), the dialog close, the page
+   numbers and the row checkboxes of the lists. */
+div#contentstructure ul#content_tree_menu ul a.openclose-open::after,
+div#contentstructure ul#content_tree_menu ul a.openclose-close::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+}
+#header .searchblock .searchscope::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+}
+.window-close {
+  box-sizing: border-box;
+  width: 24px;
+  height: 24px;
+  background-position: center;
+}
+.pagenavigator a {
+  display: inline-block;
+  min-width: 24px;
+  min-height: 24px;
+  line-height: 24px;
+  text-align: center;
+}
+#page td.exp-dt-col-checkbox > input[type=checkbox],
+#page td.tight > input[type=checkbox] {
+  width: 18px;
+  height: 18px;
 }
 
 /* Visitors who ask for less motion get none: the frame's sidebar slides, the dashboard's lift and every fade end at

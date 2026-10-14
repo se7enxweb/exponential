@@ -89,8 +89,8 @@ All `var(--a4-...)`, defined in `components.css`.
 | Charts | `--a4-chart-1` to `--a4-chart-8`, a categorical palette in this order |
 | Depth | `--a4-shadow-s`, `--a4-shadow-m`, `--a4-shadow-up` |
 | Radius | `--a4-radius-s` (9 px): the one component radius. `--a4-radius` (18 px) is the frame's three columns only |
-| Spacing | `--a4-space-1` to `--a4-space-6` (4, 8, 12, 16, 24, 32 px) |
-| Type | `--a4-font`, `--a4-mono`, `--a4-text-xs`, `-s`, `-m`, `-l`, `-xl` (12, 13, 14, 16, 22 px), `--a4-leading` (1.5) |
+| Spacing | `--a4-space-1` to `--a4-space-7` (4, 8, 12, 16, 24, 32, 48 px); a length between two steps takes the nearer one (3 and 5 → 4, 6 to 9 → 8, 10 to 14 → 12, 15 to 20 → 16, 22 to 28 → 24) |
+| Type | `--a4-font`, `--a4-mono`, `--a4-text-xs`, `-s`, `-m`, `-l`, `-xl`, `-2xl`, `-3xl` (12, 13, 14, 16, 22, 26, 32 px; nothing below 12), `--a4-leading` (1.5, every block that can wrap), `--a4-leading-tight` (1.25, headings only) |
 
 Every colour, chart and depth token has a dark value; the radius, spacing and type tokens are the same in both modes.
 `--a4-orange`, `--a4-orange-dark` and `--a4-orange-soft` are the accent's former names, kept for the extensions that
@@ -183,7 +183,12 @@ The left column's preset sizes (small, medium, large) are `html[data-a4-left-siz
   paints where it drops the shadow; inside `.a4-page` the components' own ring applies anyway;
 - `components.css` loses the `color-scheme` of a theme, its forced-colors or touch block, `admin4.css` its
   `prefers-reduced-motion` rule, or an admin4 stylesheet transitions `all` (name the properties instead);
+- `components.css` or `admin4.css` sets a pixel font size, or a spacing length that is not a `--a4-space-*` token
+  (`1px`, `2px` and the frame's few layout offsets aside);
 - a file named in `AdminComponentCSSFileList` is missing.
+
+Targets are at least 24 x 24px (WCAG 2.5.8). Where the drawn control stays smaller (the content tree's open/close,
+the search scope switch), an invisible `::after` around it takes the click.
 
 Modes the browser asks for: each theme sets `color-scheme` (scrollbars, select popups and date pickers follow);
 forced colors (Windows high contrast) get edges, the current and selected states and the focus in system colours,

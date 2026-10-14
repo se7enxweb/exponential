@@ -91,6 +91,7 @@
   --a4-space-4: 16px;
   --a4-space-5: 24px;
   --a4-space-6: 32px;
+  --a4-space-7: 48px;
   --a4-font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --a4-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   --a4-text-xs: 12px;
@@ -98,7 +99,10 @@
   --a4-text-m: 14px;
   --a4-text-l: 16px;
   --a4-text-xl: 22px;
+  --a4-text-2xl: 26px;
+  --a4-text-3xl: 32px;
   --a4-leading: 1.5;
+  --a4-leading-tight: 1.25;
 
   /* the browser's own parts (scrollbars, select popups, date pickers, autofill) follow the mode */
   color-scheme: light;
@@ -274,7 +278,7 @@ html[data-a4-theme="dark"] {
   margin: 0 0 var(--a4-space-3);
 }
 .a4-section-head > p { flex: 1 1 100%; max-width: 78ch; color: var(--a4-muted); }
-.a4-title-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px var(--a4-space-3); }
+.a4-title-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2) var(--a4-space-3); }
 .a4-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2); }
 .a4-row.is-between { justify-content: space-between; }
 .a4-stack { display: grid; grid-template-columns: minmax(0, 1fr); align-content: start; gap: var(--a4-space-3); }
@@ -320,13 +324,13 @@ html[data-a4-theme="dark"] {
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 10px var(--a4-space-4);
+  gap: var(--a4-space-3) var(--a4-space-4);
 }
 .a4-card-title {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 6px 10px;
+  gap: var(--a4-space-2) var(--a4-space-3);
   min-width: 0;
   flex: 1 1 320px;
 }
@@ -338,7 +342,7 @@ html[data-a4-theme="dark"] {
 .a4-figures {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 120px), 1fr));
-  gap: 10px;
+  gap: var(--a4-space-3);
   margin: 0 0 var(--a4-space-4);
   padding: 0;
   list-style: none;
@@ -348,7 +352,7 @@ html[data-a4-theme="dark"] {
   flex-direction: column;
   gap: 2px;
   margin: 0;
-  padding: var(--a4-space-3) 14px;
+  padding: var(--a4-space-3) var(--a4-space-3);
   border: 1px solid var(--a4-line);
   border-radius: var(--a4-radius-s);
   background-color: var(--a4-card);
@@ -373,7 +377,7 @@ html[data-a4-theme="dark"] {
 .a4-facts {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 165px), 1fr));
-  gap: var(--a4-space-2) 18px;
+  gap: var(--a4-space-2) var(--a4-space-4);
   margin: var(--a4-space-3) 0 0;
 }
 .a4-facts > div { min-width: 0; }
@@ -386,7 +390,7 @@ html[data-a4-theme="dark"] {
   text-transform: uppercase;
 }
 .a4-facts dd { margin: 2px 0 0; overflow-wrap: anywhere; }
-.a4-facts.is-rows { grid-template-columns: minmax(120px, max-content) minmax(0, 1fr); gap: 6px var(--a4-space-4); }
+.a4-facts.is-rows { grid-template-columns: minmax(120px, max-content) minmax(0, 1fr); gap: var(--a4-space-2) var(--a4-space-4); }
 .a4-facts.is-rows dd { margin: 0; }
 
 /* ---- Tag / badge ------------------------------------------------------------------------------------------------ */
@@ -394,7 +398,7 @@ html[data-a4-theme="dark"] {
 .a4-badges {
   display: inline-flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: var(--a4-space-2);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -403,9 +407,9 @@ html[data-a4-theme="dark"] {
 .a4-badge {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: var(--a4-space-1);
   margin: 0;
-  padding: 2px 9px;
+  padding: 2px var(--a4-space-2);
   border-radius: var(--a4-radius-s);
   background-color: var(--a4-soft);
   color: var(--a4-muted);
@@ -453,11 +457,11 @@ html[data-a4-theme="dark"] {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: var(--a4-space-2);
   max-width: 100%;
   min-height: 36px;
   margin: 0;
-  padding: 6px 14px;
+  padding: var(--a4-space-2) var(--a4-space-3);
   border: 1px solid var(--a4-line-strong);
   border-radius: var(--a4-radius-s);
   background-color: var(--a4-card);
@@ -501,7 +505,7 @@ a.a4-btn, a.a4-btn:visited { color: var(--a4-ink); }
   color: var(--a4-card);
 }
 .a4-btn-ghost { border-color: transparent; background-color: transparent; }
-.a4-btn-small { min-height: 30px; padding: var(--a4-space-1) 10px; font-size: var(--a4-text-xs); }
+.a4-btn-small { min-height: 30px; padding: var(--a4-space-1) var(--a4-space-3); font-size: var(--a4-text-xs); }
 .a4-btn-icon { min-width: 34px; padding: var(--a4-space-1) var(--a4-space-2); }
 @media (max-width: 600px) {
   .a4-btn { white-space: normal; text-align: center; }
@@ -517,21 +521,21 @@ a.a4-btn, a.a4-btn:visited { color: var(--a4-ink); }
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 10px var(--a4-space-4);
-  margin: 0 0 18px;
-  padding: var(--a4-space-3) 14px;
+  gap: var(--a4-space-3) var(--a4-space-4);
+  margin: 0 0 var(--a4-space-4);
+  padding: var(--a4-space-3) var(--a4-space-3);
   border: 1px solid var(--a4-line);
   border-radius: var(--a4-radius-s);
   background-color: var(--a4-soft);
   color: var(--a4-ink);
 }
 .a4-toolbar > .a4-meta { flex: 1 1 260px; }
-.a4-toolbar.is-bottom { justify-content: flex-start; margin: 18px 0 0; }
+.a4-toolbar.is-bottom { justify-content: flex-start; margin: var(--a4-space-4) 0 0; }
 .a4-toolbar.is-sticky {
   position: sticky;
   bottom: 0;
   z-index: 5;
-  margin: 18px 0 0;
+  margin: var(--a4-space-4) 0 0;
   background-color: var(--a4-card);
   box-shadow: var(--a4-shadow-up);
 }
@@ -546,7 +550,7 @@ a.a4-btn, a.a4-btn:visited { color: var(--a4-ink); }
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
   align-items: end;
-  gap: 14px var(--a4-space-4);
+  gap: var(--a4-space-3) var(--a4-space-4);
   margin: 0 0 var(--a4-space-4);
   padding: var(--a4-space-4);
   border: 1px solid var(--a4-line);
@@ -561,14 +565,14 @@ a.a4-btn, a.a4-btn:visited { color: var(--a4-ink); }
 .a4-field {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: var(--a4-space-1);
   min-width: 0;
   margin: 0;
   padding: 0;
   border: 0;
 }
 fieldset.a4-field { background: none; box-shadow: none; border-radius: 0; }
-fieldset.a4-field > legend { float: left; width: 100%; margin: 0 0 5px; padding: 0; background: none; }
+fieldset.a4-field > legend { float: left; width: 100%; margin: 0 0 var(--a4-space-1); padding: 0; background: none; }
 fieldset.a4-field > legend + * { clear: both; }
 .a4-field > label,
 .a4-field > legend,
@@ -597,7 +601,7 @@ fieldset.a4-field > legend + * { clear: both; }
   width: 100%;
   min-height: 38px;
   margin: 0;
-  padding: 6px 10px;
+  padding: var(--a4-space-2) var(--a4-space-3);
   border: 1px solid var(--a4-field-line);
   border-radius: var(--a4-radius-s);
   background-color: var(--a4-field);
@@ -622,18 +626,18 @@ fieldset.a4-field > legend + * { clear: both; }
 .a4-input::placeholder { color: var(--a4-muted); }
 
 /* Fields side by side (.a4-form) and the classic row: label left, control right (.a4-formrow) */
-.a4-form { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; max-width: 640px; }
+.a4-form { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--a4-space-4); max-width: 640px; }
 .a4-form.is-wide { max-width: none; }
 .a4-formrow {
   display: grid;
   grid-template-columns: minmax(140px, 220px) minmax(0, 1fr);
   align-items: start;
-  gap: 6px var(--a4-space-4);
-  padding: 10px 0;
+  gap: var(--a4-space-2) var(--a4-space-4);
+  padding: var(--a4-space-3) 0;
   border-bottom: 1px solid var(--a4-line);
 }
 .a4-formrow:last-child { border-bottom: 0; }
-.a4-formrow > label, .a4-formrow > .a4-label { padding-top: 9px; }
+.a4-formrow > label, .a4-formrow > .a4-label { padding-top: var(--a4-space-2); }
 @media (max-width: 600px) {
   .a4-formrow { grid-template-columns: minmax(0, 1fr); }
   .a4-formrow > label, .a4-formrow > .a4-label { padding-top: 0; }
@@ -661,7 +665,7 @@ fieldset.a4-field > legend + * { clear: both; }
 .a4-radios label {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--a4-space-3);
   min-height: 40px;
   padding: var(--a4-space-2) var(--a4-space-3);
   border: 1px solid var(--a4-line);
@@ -673,7 +677,7 @@ fieldset.a4-field > legend + * { clear: both; }
 .a4-radios input:checked + span { font-weight: 650; }
 
 /* Chips: checkboxes or radios drawn as toggles */
-.a4-chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.a4-chips { display: flex; flex-wrap: wrap; gap: var(--a4-space-2); margin: 0; padding: 0; list-style: none; }
 .a4-chip { position: relative; display: inline-flex; margin: 0; }
 .a4-chip input { position: absolute; width: 1px; height: 1px; opacity: 0; }
 .a4-chip span {
@@ -708,7 +712,7 @@ fieldset.a4-field > legend + * { clear: both; }
 .a4-table { width: 100%; margin: 0; border-collapse: collapse; background-color: transparent; }
 .a4-table th,
 .a4-table td {
-  padding: 9px var(--a4-space-3);
+  padding: var(--a4-space-2) var(--a4-space-3);
   border: 0;
   border-bottom: 1px solid var(--a4-line);
   background-color: transparent;
@@ -729,10 +733,10 @@ fieldset.a4-field > legend + * { clear: both; }
 .a4-table tbody tr:hover td { background-color: var(--a4-soft); }
 .a4-table .a4-num, .a4-table th.a4-num { text-align: right; }
 .a4-table img { vertical-align: -3px; }
-.a4-table.is-compact th, .a4-table.is-compact td { padding: 6px 10px; }
+.a4-table.is-compact th, .a4-table.is-compact td { padding: var(--a4-space-2) var(--a4-space-3); }
 .a4-table tr.is-selected td { background-color: var(--a4-accent-soft); }
 @media (max-width: 600px) {
-  .a4-table th, .a4-table td { padding: var(--a4-space-2) 9px; }
+  .a4-table th, .a4-table td { padding: var(--a4-space-2) var(--a4-space-2); }
 }
 
 /* ---- Below a list: page sizes and pages ---------------------------------------------------------------------- */
@@ -742,10 +746,10 @@ fieldset.a4-field > legend + * { clear: both; }
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 10px 18px;
-  margin: 14px 0 0;
+  gap: var(--a4-space-3) var(--a4-space-4);
+  margin: var(--a4-space-3) 0 0;
 }
-.a4-sizes { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 0; color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-sizes { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2); margin: 0; color: var(--a4-muted); font-size: var(--a4-text-s); }
 .a4-sizes a,
 .a4-sizes span.current {
   display: inline-flex;
@@ -772,14 +776,14 @@ fieldset.a4-field > legend + * { clear: both; }
 
 /* ---- Tabs: links as pills, the current one filled -------------------------------------------------------- */
 
-.a4-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.a4-tabs { display: flex; flex-wrap: wrap; gap: var(--a4-space-2); margin: 0; padding: 0; list-style: none; }
 .a4-tabs a,
 .a4-tabs button,
 .a4-tabs span.current,
 .a4-tabs .is-current {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--a4-space-2);
   min-height: 32px;
   margin: 0;
   padding: var(--a4-space-1) var(--a4-space-3);
@@ -811,7 +815,7 @@ fieldset.a4-field > legend + * { clear: both; }
 
 .a4-empty {
   margin: 0;
-  padding: 18px var(--a4-space-4);
+  padding: var(--a4-space-4) var(--a4-space-4);
   border: 1px dashed var(--a4-line-strong);
   border-radius: var(--a4-radius-s);
   color: var(--a4-muted);
@@ -820,8 +824,8 @@ fieldset.a4-field > legend + * { clear: both; }
 .a4-empty > * + * { margin-top: var(--a4-space-2); }
 
 .a4-notice {
-  margin: 0 0 14px;
-  padding: 10px 14px;
+  margin: 0 0 var(--a4-space-3);
+  padding: var(--a4-space-3) var(--a4-space-3);
   border: 1px solid var(--a4-line);
   border-left-width: 4px;
   border-radius: var(--a4-radius-s);
@@ -835,8 +839,8 @@ fieldset.a4-field > legend + * { clear: both; }
 .a4-notice strong, .a4-notice .a4-h2, .a4-notice .a4-h3, .a4-notice a:not(.a4-btn) { color: inherit; }
 .a4-notice > .a4-h2, .a4-notice > .a4-h3 { margin-bottom: var(--a4-space-2); }
 .a4-notice > .a4-actions { margin-top: var(--a4-space-3); }
-.a4-notice p + p, .a4-notice p + ul, .a4-notice ul + p { margin-top: 6px; }
-.a4-notice ul { margin: 6px 0 0; padding-left: 20px; }
+.a4-notice p + p, .a4-notice p + ul, .a4-notice ul + p { margin-top: var(--a4-space-2); }
+.a4-notice ul { margin: var(--a4-space-2) 0 0; padding-left: var(--a4-space-4); }
 .a4-notice li + li { margin-top: var(--a4-space-1); }
 
 /* ---- Folding: <details class="a4-fold">, and the in-place confirmation <details class="a4-confirm"> ------------ */
@@ -856,7 +860,7 @@ fieldset.a4-field > legend + * { clear: both; }
   align-items: center;
   gap: var(--a4-space-2);
   min-height: 40px;
-  padding: var(--a4-space-2) 14px;
+  padding: var(--a4-space-2) var(--a4-space-3);
   color: var(--a4-ink);
   font-weight: 650;
   list-style: none;
@@ -869,15 +873,15 @@ fieldset.a4-field > legend + * { clear: both; }
 .a4-fold[open] > summary::before,
 .a4-confirm[open] > summary::before { content: "\25BE"; }
 .a4-fold > summary:hover { color: var(--a4-accent-text); }
-.a4-fold-body { padding: 0 14px 14px; }
+.a4-fold-body { padding: 0 var(--a4-space-3) var(--a4-space-3); }
 .a4-confirm { flex: 1 1 100%; }
-.a4-confirm > summary { display: inline-flex; min-height: 36px; padding: 6px 14px; color: var(--a4-bad); }
+.a4-confirm > summary { display: inline-flex; min-height: 36px; padding: var(--a4-space-2) var(--a4-space-3); color: var(--a4-bad); }
 .a4-confirm > div {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 10px 14px;
-  padding: 0 14px 14px;
+  gap: var(--a4-space-3) var(--a4-space-3);
+  padding: 0 var(--a4-space-3) var(--a4-space-3);
 }
 .a4-confirm > div p { flex: 1 1 320px; color: var(--a4-ink); }
 .a4-toolbar .a4-confirm { flex: 0 1 auto; }
@@ -889,7 +893,7 @@ fieldset.a4-field > legend + * { clear: both; }
   display: flex;
   flex-wrap: wrap;
   gap: var(--a4-space-2);
-  margin: 0 0 18px;
+  margin: 0 0 var(--a4-space-4);
   padding: 0;
   list-style: none;
   counter-reset: a4step;
@@ -899,7 +903,7 @@ fieldset.a4-field > legend + * { clear: both; }
   align-items: center;
   gap: var(--a4-space-2);
   min-height: 34px;
-  padding: var(--a4-space-1) 14px var(--a4-space-1) 6px;
+  padding: var(--a4-space-1) var(--a4-space-3) var(--a4-space-1) var(--a4-space-2);
   border: 1px solid var(--a4-line);
   border-radius: var(--a4-radius-s);
   background-color: var(--a4-card);
@@ -931,7 +935,7 @@ fieldset.a4-field > legend + * { clear: both; }
 .a4-pre {
   max-height: 420px;
   margin: 0;
-  padding: var(--a4-space-3) 14px;
+  padding: var(--a4-space-3) var(--a4-space-3);
   overflow: auto;
   border-radius: var(--a4-radius-s);
   background-color: var(--a4-code-bg);
