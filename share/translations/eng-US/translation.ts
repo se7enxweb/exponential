@@ -9411,6 +9411,10 @@
         <source>Main location</source>
         <translation>Main location</translation>
     </message>
+    <message>
+        <source>Show tabs</source>
+        <translation>Show tabs</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/node/view/line</name>

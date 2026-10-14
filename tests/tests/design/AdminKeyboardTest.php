@@ -36,9 +36,20 @@ class AdminKeyboardTest extends PHPUnit\Framework\TestCase
         foreach ( array( 'design/admin4/templates/window_controls.tpl', 'design/admin4/templates/node/top_node_full.tpl' ) as $path )
         {
             $tpl = self::file( $path );
-            $this->assertSame( 2, preg_match_all( '#<a id="maincontent-(?:show|hide)" class="show-hide-tabs"[^>]* role="button" aria-pressed="(?:true|false)" aria-label="[^"]+" data-label-show="[^"]+" data-label-hide="[^"]+">#', $tpl ), $path );
+            // one name in both states; aria-pressed carries the state, the title what a press does
+            $this->assertSame( 2, preg_match_all( '#<a id="maincontent-(?:show|hide)" class="show-hide-tabs"[^>]* role="button" aria-pressed="(?:true|false)" aria-label="\{\'Show tabs\'\|i18n\( \'design/admin/node/view/full\' \)\|wash\}" data-title-show="[^"]+" data-title-hide="[^"]+">#', $tpl ), $path );
         }
-        $this->assertStringContainsString( "setAttribute( 'aria-pressed'", self::file( 'design/admin4/javascript/node_tabs.js' ) );
+        $js = self::file( 'design/admin4/javascript/node_tabs.js' );
+        $this->assertStringContainsString( "setAttribute( 'aria-pressed'", $js );
+        $this->assertStringNotContainsString( "setAttribute( 'aria-label'", $js );
+    }
+
+    /** With no selected tab the first tab is the Tab stop: the list never drops out of the Tab order */
+    public function testATabListWithoutSelectionKeepsATabStop()
+    {
+        $js = self::file( 'design/admin4/javascript/node_tabs.js' );
+        $this->assertStringContainsString( "noneSelected = !\$ul.children( 'li.selected' ).children( 'a' ).length", $js );
+        $this->assertStringContainsString( "a.setAttribute( 'tabindex', stop ? '0' : '-1' );", $js );
     }
 
     public function testTheTreeToggleIsANamedButtonWithItsState()
@@ -46,10 +57,22 @@ class AdminKeyboardTest extends PHPUnit\Framework\TestCase
         $js = self::file( 'design/admin4/javascript/contentstructuremenu_dynamic.js' );
         $this->assertStringContainsString( 'role="button" aria-expanded="false" aria-label="', $js );
         $this->assertStringContainsString( 'i18n.subitems', $js );
+        // a node name with $& or $1 in it must not be read as a replacement pattern
+        $this->assertStringContainsString( ".split( '%name' ).join( item.name )", $js );
+        // the button keeps the focus after a press, so the keyboard can press it again
+        $this->assertSame( 1, preg_match( '#role="button" aria-expanded="false".*?<\\\\/a>#s', $js, $m ) );
+        $this->assertStringNotContainsString( 'blur', $m[0] );
         // every change of the symbol goes through _toggleState, which keeps aria-expanded in step
         $this->assertSame( 0, preg_match_all( '/\.className\s*=\s*[\'"]openclose-/', $js ) );
         $this->assertGreaterThanOrEqual( 6, substr_count( $js, '_toggleState( aElement,' ) );
         $this->assertStringContainsString( '"subitems":', self::file( 'design/admin4/templates/contentstructuremenu/content_structure_menu_dynamic.tpl' ) );
+    }
+
+    /** The content tree is the same script and settings in the admin and admin4 designs */
+    public function testTheTreeIsTheSameInAdminAndAdmin4()
+    {
+        foreach ( array( 'javascript/contentstructuremenu_dynamic.js', 'templates/contentstructuremenu/content_structure_menu_dynamic.tpl' ) as $path )
+            $this->assertSame( self::file( "design/admin4/$path" ), self::file( "design/admin/$path" ), $path );
     }
 
     public function testTheCalendarOpensFromAButton()

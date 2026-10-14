@@ -119,9 +119,15 @@ function ContentStructureMenu( params, i18n )
             + '>';
         if ( canOpen && !rootNode )
         {
+            // A button for keyboards and screen readers: its name says whose sub items it shows, aria-expanded
+            // whether they are shown (_toggleState), and Space presses it like Enter. It keeps the focus after a
+            // press (no blur), so a keyboard can press it again; the ring shows on :focus-visible only.
             html += '<a class="openclose-open" id="a'
                 + item.node_id
-                + '" href="#" onclick="this.blur(); return treeMenu.load( this, '
+                + '" href="#" role="button" aria-expanded="false" aria-label="'
+                + _attr( ( i18n.subitems || '%name' ).split( '%name' ).join( item.name ) )
+                + '" onkeydown="if ( event.key === \' \' ) { event.preventDefault(); this.click(); }"'
+                + ' onclick="return treeMenu.load( this, '
                 + item.node_id
                 + ', '
                 + item.modified_subnode
@@ -278,7 +284,7 @@ function ContentStructureMenu( params, i18n )
             divElement.className = 'loaded';
             if ( aElement )
             {
-                aElement.className = 'openclose-close';
+                _toggleState( aElement, 'openclose-close' );
             }
 
             this.setOpen( nodeID );
@@ -291,7 +297,7 @@ function ContentStructureMenu( params, i18n )
             divElement.className = 'hidden';
             if ( aElement )
             {
-                aElement.className = 'openclose-open';
+                _toggleState( aElement, 'openclose-open' );
             }
 
             this.setClosed( nodeID );
@@ -312,7 +318,7 @@ function ContentStructureMenu( params, i18n )
         divElement.className = 'busy';
         if ( aElement )
         {
-            aElement.className = "openclose-busy";
+            _toggleState( aElement, 'openclose-busy' );
         }
 
         var thisThis = this, request = jQuery.ajax({
@@ -341,7 +347,7 @@ function ContentStructureMenu( params, i18n )
                 divElement.className = 'loaded';
                 if ( aElement )
                 {
-                    aElement.className = 'openclose-close';
+                    _toggleState( aElement, 'openclose-close' );
                 }
 
                 thisThis.setOpen( nodeID );
@@ -352,7 +358,7 @@ function ContentStructureMenu( params, i18n )
             'error': function( xhr, textStatus, errorThrown )
             {
                 divElement.className = 'error';
-                if (aElement) aElement.className = 'openclose-error';
+                if (aElement) _toggleState( aElement, 'openclose-error' );
 
                 function setErrorText( txt )
                 {
@@ -443,7 +449,7 @@ function ContentStructureMenu( params, i18n )
                 {
                     subdivElement.className = 'hidden';
                 }
-                aElement.className = 'openclose-open';
+                _toggleState( aElement, 'openclose-open' );
                 this.setClosed( nodeID );
             }
         }
@@ -452,10 +458,26 @@ function ContentStructureMenu( params, i18n )
         if ( aElement )
         {
             divElement.className = 'hidden';
-            aElement.className   = 'openclose-open';
+            _toggleState( aElement, 'openclose-open' );
             this.setClosed( parentNodeID );
         }
     };
+
+    // The open/close button of a node: its class (the symbol), aria-expanded and, while the sub items load,
+    // aria-busy.
+    function _toggleState( a, state )
+    {
+        a.className = state;
+        a.setAttribute( 'aria-expanded', state === 'openclose-close' ? 'true' : 'false' );
+        if ( state === 'openclose-busy' ) a.setAttribute( 'aria-busy', 'true' );
+        else a.removeAttribute( 'aria-busy' );
+    }
+
+    // A value for a double-quoted attribute of the generated markup
+    function _attr( value )
+    {
+        return String( value ).replace( /&/g, '&amp;' ).replace( /"/g, '&quot;' ).replace( /</g, '&lt;' ).replace( />/g, '&gt;' );
+    }
 
     // Internal cookie functions
     function _setCookie( name, value, expires, path )

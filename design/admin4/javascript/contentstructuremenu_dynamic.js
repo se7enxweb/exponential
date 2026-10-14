@@ -120,13 +120,14 @@ function ContentStructureMenu( params, i18n )
         if ( canOpen && !rootNode )
         {
             // A button for keyboards and screen readers: its name says whose sub items it shows, aria-expanded
-            // whether they are shown (_toggleState), and Space presses it like Enter.
+            // whether they are shown (_toggleState), and Space presses it like Enter. It keeps the focus after a
+            // press (no blur), so a keyboard can press it again; the ring shows on :focus-visible only.
             html += '<a class="openclose-open" id="a'
                 + item.node_id
                 + '" href="#" role="button" aria-expanded="false" aria-label="'
-                + _attr( ( i18n.subitems || '%name' ).replace( '%name', item.name ) )
+                + _attr( ( i18n.subitems || '%name' ).split( '%name' ).join( item.name ) )
                 + '" onkeydown="if ( event.key === \' \' ) { event.preventDefault(); this.click(); }"'
-                + ' onclick="this.blur(); return treeMenu.load( this, '
+                + ' onclick="return treeMenu.load( this, '
                 + item.node_id
                 + ', '
                 + item.modified_subnode

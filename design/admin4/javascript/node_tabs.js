@@ -52,16 +52,13 @@ jQuery(function( $ )
             return false;
         },
 
-        // the show/hide tabs toggle reports whether the tabs are on, and its name says what a press does
+        // the show/hide tabs toggle keeps one name and reports in aria-pressed whether the tabs are shown; its
+        // title says what a press does
         toggleState : function( link, on )
         {
             link.setAttribute( 'aria-pressed', on ? 'true' : 'false' );
-            var label = link.getAttribute( on ? 'data-label-hide' : 'data-label-show' );
-            if ( label )
-            {
-                link.setAttribute( 'aria-label', label );
-                link.title = label;
-            }
+            var title = link.getAttribute( on ? 'data-title-hide' : 'data-title-show' );
+            if ( title ) link.title = title;
         },
 
         // The tabs as the WAI-ARIA tabs pattern: tablist, tab with aria-selected and aria-controls, tabpanel, and
@@ -71,19 +68,22 @@ jQuery(function( $ )
         {
             var $ul = $( ul ), on = !$ul.hasClass( 'disabled' );
             if ( on ) $ul.attr( 'role', 'tablist' ); else $ul.removeAttr( 'role' );
+            // with no tab selected the first one takes the Tab stop, so the keyboard can still reach the list
+            var noneSelected = !$ul.children( 'li.selected' ).children( 'a' ).length;
             $ul.children( 'li' ).each( function()
             {
                 var li = this, a = $( li ).children( 'a' )[0];
                 if ( !a ) return;
                 var panel = li.id ? document.getElementById( li.id + '-content' ) : null,
-                    selected = $( li ).hasClass( 'selected' );
+                    selected = $( li ).hasClass( 'selected' ),
+                    stop = selected || ( noneSelected && a === $ul.children( 'li' ).children( 'a' )[0] );
                 if ( on )
                 {
                     $( li ).attr( 'role', 'presentation' );
                     if ( !a.id && li.id ) a.id = li.id + '-tab';
                     a.setAttribute( 'role', 'tab' );
                     a.setAttribute( 'aria-selected', selected ? 'true' : 'false' );
-                    a.setAttribute( 'tabindex', selected ? '0' : '-1' );
+                    a.setAttribute( 'tabindex', stop ? '0' : '-1' );
                     if ( panel )
                     {
                         a.setAttribute( 'aria-controls', panel.id );

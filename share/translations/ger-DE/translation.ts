@@ -11621,6 +11621,10 @@
         <source>Main location</source>
         <translation>Hauptort</translation>
     </message>
+    <message>
+        <source>Show tabs</source>
+        <translation>Tabs anzeigen</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/node/view/line</name>
