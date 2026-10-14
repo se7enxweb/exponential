@@ -24,7 +24,7 @@
     <input type="text" id="exp-sitedata-filter" name="Filter" value="{$filter|wash}" size="30" maxlength="100" />
     <input class="button" type="submit" value="{'Filter'|i18n( 'design/admin/setup/sitedata' )}" />
     {if $filter}<a href={'/setup/sitedata'|ezurl}>{'Show all'|i18n( 'design/admin/setup/sitedata' )}</a>{/if}
-    <div class="exp-sitedata-hint">{'A whole name, or * for any characters (ezpublish-*).'|i18n( 'design/admin/setup/sitedata' )}</div>
+    <div class="a4-help">{'A whole name, or * for any characters (ezpublish-*).'|i18n( 'design/admin/setup/sitedata' )}</div>
 </div>
 </form>
 
@@ -38,7 +38,7 @@
 {foreach $rows as $row sequence array( 'bglight', 'bgdark' ) as $style}
 <tr class="{$style}">
     <td><code>{$row.name|wash}</code></td>
-    <td class="exp-sitedata-value">{$row.value|wash}</td>
+    <td class="a4-wrap">{$row.value|wash}</td>
     <td>{if $row.template_readable}{'Yes'|i18n( 'design/admin/setup/sitedata' )}{else}{'No'|i18n( 'design/admin/setup/sitedata' )}{/if}</td>
 </tr>
 {/foreach}
@@ -59,7 +59,3 @@
 </div></div></div>
 
 </div>
-<style>
-.exp-sitedata-value {ldelim} word-break: break-word; {rdelim}
-.exp-sitedata-hint {ldelim} font-size: 0.85em; opacity: 0.8; margin-top: 0.25em; {rdelim}
-</style>

@@ -5,3 +5,935 @@
  * colours, radius, spacing and fonts from the --a4-* tokens only (no hard-coded values, no local aliases).
  * Registered in design.ini [StylesheetSettings] AdminComponentCSSFileList; rules: doc/bc/6.0/admin4-styling.md
  */
+
+/* ---- shared by several setup pages ------------------------------------------------------------------------- */
+
+
+/* A list of values on one line, separated by a dot */
+.a4-setup-inline { margin: 0; padding: 0; list-style: none; font-size: var(--a4-text-s); }
+.a4-setup-inline li { display: inline; }
+.a4-setup-inline li + li::before { content: " \00b7 "; color: var(--a4-muted); }
+.a4-setup-inline code { color: var(--a4-muted); }
+
+/* Names with a number, in columns (the loaded extensions; the upgrade check's lists) */
+.a4-setup-ext-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+  gap: var(--a4-space-1) var(--a4-space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.a4-setup-ext-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--a4-space-2);
+  min-width: 0;
+  padding: var(--a4-space-1) 0;
+  border-bottom: 1px solid var(--a4-line);
+  font-size: var(--a4-text-s);
+}
+.a4-setup-ext-list li span:first-child { min-width: 0; overflow-wrap: anywhere; font-family: var(--a4-mono); font-size: var(--a4-text-xs); }
+.a4-setup-ext-list li span:last-child { color: var(--a4-muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* Which server answered the page (System information, Caches) */
+.a4-setup-served {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--a4-space-2) var(--a4-space-4);
+  margin: 0 0 var(--a4-space-3);
+  padding: var(--a4-space-3) var(--a4-space-4);
+  border: 1px solid var(--a4-info-line);
+  border-left: 5px solid var(--a4-info);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-info-bg);
+  color: var(--a4-ink);
+}
+.a4-setup-served.is-velocity { border-color: var(--a4-line); border-left-color: var(--a4-accent); background-color: var(--a4-accent-soft); }
+.a4-setup-served-main { flex: 1 1 320px; min-width: 0; }
+.a4-setup-served-main strong { font-size: var(--a4-text-l); }
+.a4-setup-served-main p { overflow-wrap: anywhere; }
+.a4-setup-served-main p + p { margin-top: var(--a4-space-1); color: var(--a4-muted); font-size: var(--a4-text-s); }
+
+/* ---- setup/info: System information ------------------------------------------------------------------------ */
+
+/* A health check: its badge, then what was found and what to do */
+.a4-setup-check {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  align-items: start;
+  gap: var(--a4-space-1) var(--a4-space-3);
+}
+.a4-setup-check > .a4-badge { justify-self: start; }
+.a4-setup-check-text { min-width: 0; overflow-wrap: anywhere; }
+.a4-setup-check-text strong { font-weight: 650; }
+.a4-setup-check-text p { margin-top: 2px; color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-setup-check-text p.a4-setup-fix { color: var(--a4-ink); }
+.a4-setup-check-text p.a4-setup-fix::before { content: "\2192\00a0"; color: var(--a4-accent-text); font-weight: 700; }
+details.a4-setup-ok-checks { margin-top: var(--a4-space-2); }
+details.a4-setup-ok-checks > summary { padding: var(--a4-space-1) 0; color: var(--a4-muted); font-size: var(--a4-text-s); font-weight: 650; cursor: pointer; }
+details.a4-setup-ok-checks > ul { margin-top: var(--a4-space-2); }
+@media (max-width: 600px) {
+  .a4-setup-check { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Usage bars: label | bar | figure */
+.a4-setup-bars {
+  display: grid;
+  grid-template-columns: minmax(0, 8em) minmax(60px, 1fr) minmax(0, auto);
+  align-items: center;
+  gap: var(--a4-space-1) var(--a4-space-2);
+  margin: 0;
+  font-size: var(--a4-text-s);
+}
+.a4-setup-bars dt { margin: 0; color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 650; }
+.a4-setup-bars dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+@media (max-width: 560px) {
+  .a4-setup-bars { grid-template-columns: minmax(0, 1fr) minmax(60px, 1fr); }
+  .a4-setup-bars dd.a4-setup-bar-text { grid-column: 1 / -1; margin-bottom: var(--a4-space-1); }
+}
+
+.a4-setup-info .a4-table td:first-child,
+.a4-setup-info .a4-setup-table-views td:nth-child(2) { white-space: nowrap; }
+.a4-setup-info .a4-table td { overflow-wrap: anywhere; font-size: var(--a4-text-s); }
+
+/* The report for support */
+textarea.a4-setup-report {
+  display: block;
+  min-height: 320px;
+  background-color: var(--a4-soft);
+  font-family: var(--a4-mono);
+  font-size: var(--a4-text-xs);
+  white-space: pre;
+  overflow: auto;
+  resize: vertical;
+}
+
+/* Label and value rows inside a card (narrower than .a4-facts.is-rows: the label column fits its text up to 14em) */
+.a4-setup-rows { display: grid; grid-template-columns: fit-content(14em) minmax(0, 1fr); gap: var(--a4-space-1) var(--a4-space-3); margin: 0; }
+.a4-setup-rows dt { min-width: 0; margin: 0; color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 650; overflow-wrap: break-word; }
+.a4-setup-rows dd { min-width: 0; margin: 0; overflow-wrap: anywhere; word-break: break-word; }
+@media (max-width: 600px) {
+  .a4-setup-rows { grid-template-columns: minmax(0, 1fr); gap: 0 var(--a4-space-3); }
+  .a4-setup-rows dd { margin-bottom: var(--a4-space-1); }
+}
+
+/* ---- setup/cache: Caches ------------------------------------------------------------------------------------ */
+
+.a4-setup-cache form { margin: 0; }
+.a4-setup-cache .a4-figure.is-date strong { font-size: var(--a4-text-l); line-height: 1.3; }
+
+/* One group of caches: a card with its table and, at its foot, the clear button of the group */
+.a4-setup-group { margin: 0 0 var(--a4-space-4); }
+.a4-setup-group .a4-section-head p { font-size: var(--a4-text-s); max-width: 90ch; }
+.a4-setup-group-foot { display: flex; flex-wrap: wrap; align-items: flex-start; gap: var(--a4-space-2) var(--a4-space-4); margin-top: var(--a4-space-3); }
+.a4-setup-group-foot code { color: var(--a4-muted); }
+
+/* The cache table: below 760 pixels each row is a card with the checkbox on its left */
+.a4-setup-caches td { font-size: var(--a4-text-s); overflow-wrap: anywhere; }
+.a4-setup-caches td.a4-setup-check-cell { width: 34px; }
+.a4-setup-caches td.a4-setup-check-cell input { width: 18px; height: 18px; margin: 2px 0 0; cursor: pointer; }
+.a4-setup-caches .a4-setup-cache-name { font-weight: 650; }
+.a4-setup-caches .a4-setup-cache-holds,
+.a4-setup-caches .a4-setup-cache-meta,
+.a4-setup-caches .a4-setup-cleared-by { display: block; margin-top: 2px; color: var(--a4-muted); font-size: var(--a4-text-xs); overflow-wrap: anywhere; }
+.a4-setup-caches .a4-setup-cleared-when { display: block; }
+.a4-setup-caches .a4-badge { margin: var(--a4-space-1) var(--a4-space-1) 0 0; }
+.a4-setup-caches tr.is-disabled td,
+.a4-setup-caches code { color: var(--a4-muted); }
+.a4-setup-caches th:nth-child(3), .a4-setup-caches td:nth-child(3) { width: 7.5em; }
+.a4-setup-caches th:nth-child(4), .a4-setup-caches td:nth-child(4) { width: 11em; }
+@media (max-width: 760px) {
+  .a4-setup-caches thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .a4-setup-caches, .a4-setup-caches tbody, .a4-setup-caches tr, .a4-setup-caches td { display: block; width: 100%; }
+  .a4-setup-caches tr { position: relative; padding: var(--a4-space-2) 0 var(--a4-space-2) var(--a4-space-6); border-bottom: 1px solid var(--a4-line); }
+  .a4-setup-caches tr:last-child { border-bottom: 0; }
+  .a4-setup-caches td,
+  .a4-setup-caches th:nth-child(n), .a4-setup-caches td:nth-child(n) { width: 100%; padding: 2px 0; border: 0; }
+  .a4-setup-caches td.a4-setup-check-cell { position: absolute; top: 10px; left: var(--a4-space-1); width: auto; }
+  .a4-setup-caches td.a4-num { text-align: left; }
+  .a4-setup-caches td[data-label]::before { content: attr(data-label) ": "; color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 650; }
+}
+
+/* The in-place confirmation: a details element whose summary is the button and whose body names what goes */
+details.a4-setup-confirm { max-width: 100%; }
+details.a4-setup-confirm > summary { list-style: none; }
+details.a4-setup-confirm > summary::-webkit-details-marker { display: none; }
+details.a4-setup-confirm[open] > summary { border-color: var(--a4-accent); }
+.a4-setup-confirm-body {
+  max-width: 72ch;
+  margin-top: var(--a4-space-2);
+  padding: var(--a4-space-3) var(--a4-space-3);
+  border: 1px solid var(--a4-warn-line);
+  border-left: 4px solid var(--a4-warn);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-warn-bg);
+  color: var(--a4-ink);
+}
+.a4-setup-confirm-body p { margin: 0 0 var(--a4-space-1); }
+.a4-setup-confirm-body ul,
+.a4-setup-cache .a4-notice ul { margin: 0 0 var(--a4-space-2); padding-left: var(--a4-space-4); font-size: var(--a4-text-s); columns: 2 16em; column-gap: var(--a4-space-5); }
+.a4-setup-cache .a4-notice code { color: inherit; }
+
+/* The maintenance rows of the servers' own caches */
+.a4-setup-server-rows { display: grid; grid-template-columns: minmax(0, 1fr); margin: var(--a4-space-3) 0 0; padding: 0; list-style: none; }
+.a4-setup-server-rows > li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--a4-space-1) var(--a4-space-3);
+  padding: var(--a4-space-2) 0;
+  border-bottom: 1px solid var(--a4-line);
+}
+.a4-setup-server-rows > li:last-child { border-bottom: 0; }
+.a4-setup-server-text { flex: 1 1 320px; min-width: 0; overflow-wrap: anywhere; }
+.a4-setup-server-text small { display: block; color: var(--a4-muted); font-size: var(--a4-text-xs); }
+
+/* The static cache form: fields side by side */
+.a4-setup-static-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+  align-items: end;
+  gap: var(--a4-space-3) var(--a4-space-4);
+}
+
+/* Commands from a shell, one per row */
+.a4-setup-commands { margin: 0; padding: 0; list-style: none; }
+.a4-setup-commands li { padding: var(--a4-space-1) 0; border-bottom: 1px solid var(--a4-line); font-size: var(--a4-text-s); }
+.a4-setup-commands li:last-child { border-bottom: 0; }
+.a4-setup-commands code { display: block; margin-top: 2px; color: var(--a4-ink); }
+
+/* A live console (static cache generation, preload, cronjob runs): the lines a stream writes, by kind */
+.a4-setup-console {
+  max-width: 100%;
+  height: 20em;
+  margin: 0;
+  padding: var(--a4-space-3);
+  overflow: auto;
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+  color: var(--a4-ink);
+  font-family: var(--a4-mono);
+  font-size: var(--a4-text-xs);
+  line-height: var(--a4-leading);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.a4-setup-console-phase, .a4-setup-console-done { color: var(--a4-info); font-weight: 700; }
+.a4-setup-console-ok { color: var(--a4-ok); }
+.a4-setup-console-warn { color: var(--a4-warn); }
+.a4-setup-console-error { color: var(--a4-bad); }
+.a4-setup-console-info { color: var(--a4-muted); }
+
+/* ---- setup/session: Sessions -------------------------------------------------------------------------------- */
+
+.a4-setup-sortbar { align-items: center; margin: 0 0 var(--a4-space-3); color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-setup-session .a4-facts dd code { color: var(--a4-muted); }
+.a4-setup-confirm-list { margin: var(--a4-space-2) 0 0; padding-left: var(--a4-space-4); }
+.a4-setup-confirm-list li + li { margin-top: var(--a4-space-1); }
+
+/* Numbered steps of an explanation (not the steps of a wizard) */
+ol.a4-setup-numbered { margin: var(--a4-space-1) 0 0; padding-left: var(--a4-space-6); }
+ol.a4-setup-numbered li + li { margin-top: var(--a4-space-1); }
+ol.a4-setup-numbered .a4-pre { margin: var(--a4-space-2) 0 0; }
+
+/* ---- setup/systemupgrade: Upgrade check ---------------------------------------------------------------------- */
+
+.a4-setup-upgrade .a4-intro p + p { margin-top: var(--a4-space-1); }
+.a4-setup-upgrade .a4-notice p { margin-top: var(--a4-space-1); }
+.a4-setup-time { font-size: var(--a4-text-s); font-weight: 600; font-variant-numeric: tabular-nums; }
+.a4-setup-upgrade .a4-figure.is-text strong { font-size: var(--a4-text-l); line-height: 1.35; }
+
+/* The two checks, side by side, their run button at the bottom */
+.a4-setup-upgrade-check { display: flex; flex-direction: column; gap: var(--a4-space-2); }
+.a4-setup-upgrade-check p { color: var(--a4-muted); }
+.a4-setup-upgrade-check .a4-actions { margin-top: auto; padding-top: var(--a4-space-1); }
+
+/* How to fix a finding */
+.a4-setup-howto { padding: var(--a4-space-2) var(--a4-space-3); border-radius: var(--a4-radius-s); background-color: var(--a4-soft); color: var(--a4-ink); }
+.a4-setup-howto strong { display: block; margin-bottom: 2px; font-size: var(--a4-text-s); }
+.a4-setup-howto p + p { margin-top: var(--a4-space-1); }
+.a4-setup-howto code { color: var(--a4-ink); }
+
+/* The findings' tables: path and checksums */
+.a4-setup-upgrade .a4-table td.a4-setup-path { min-width: 220px; overflow-wrap: anywhere; font-family: var(--a4-mono); font-size: var(--a4-text-xs); }
+.a4-setup-upgrade .a4-table td.a4-setup-sums { color: var(--a4-muted); font-family: var(--a4-mono); font-size: var(--a4-text-xs); overflow-wrap: anywhere; }
+.a4-setup-upgrade .a4-table td.a4-setup-sums span[title] { color: var(--a4-ink); white-space: nowrap; }
+.a4-setup-sum { display: inline-block; margin-right: var(--a4-space-2); white-space: nowrap; }
+.a4-setup-sum-label { font-family: var(--a4-font); font-size: var(--a4-text-xs); font-weight: 650; letter-spacing: .03em; text-transform: uppercase; }
+
+/* Names in a row of small tags */
+.a4-setup-taglist { margin-top: var(--a4-space-2); }
+.a4-setup-taglist li { padding: 1px var(--a4-space-2); border-radius: var(--a4-radius-s); background-color: var(--a4-soft); color: var(--a4-ink); font-family: var(--a4-mono); font-size: var(--a4-text-xs); }
+
+.a4-setup-docs { margin: var(--a4-space-5) 0 0; padding-top: var(--a4-space-3); border-top: 1px solid var(--a4-line); color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-setup-console-phase-item { color: var(--a4-ok); }
+.a4-setup-console-image { color: var(--a4-muted); }
+.a4-setup-console-report { color: var(--a4-bad); }
+
+/* A gap above an element a page script adds */
+.a4-setup-gap { margin-top: var(--a4-space-2); }
+
+/* ---- setup/preload: Preload sites ---------------------------------------------------------------------------- */
+
+.a4-setup-status-main { display: flex; flex-direction: column; flex: 1 1 320px; gap: var(--a4-space-1); min-width: 0; }
+.a4-setup-current { color: var(--a4-muted); font-family: var(--a4-mono); font-size: var(--a4-text-xs); overflow-wrap: anywhere; }
+.a4-setup-progress { max-width: 520px; margin: var(--a4-space-1) 0 2px; }
+.a4-setup-progress > span { transition: width .4s ease; }
+.a4-setup-card { margin: 0 0 var(--a4-space-4); }
+.a4-setup-card + .a4-setup-card { margin-top: 0; }
+
+/* The form: the site wide, the two limits beside it */
+.a4-setup-fields { display: grid; grid-template-columns: minmax(0, 2fr) repeat(2, minmax(0, 1fr)); align-items: start; gap: var(--a4-space-3) var(--a4-space-4); }
+@media (max-width: 900px) {
+  .a4-setup-fields { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .a4-setup-fields .a4-setup-field-site { grid-column: 1 / -1; }
+}
+@media (max-width: 600px) {
+  .a4-setup-fields { grid-template-columns: minmax(0, 1fr); }
+}
+.a4-setup-formbar { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2) var(--a4-space-3); padding: var(--a4-space-3) 0 0; border-top: 1px solid var(--a4-line); }
+.a4-setup-formbar .a4-meta { flex: 1 1 260px; }
+
+.a4-setup-urls { margin: 0; padding: 0; list-style: none; }
+.a4-setup-urls li { padding: var(--a4-space-1) 0; border-top: 1px solid var(--a4-line); font-family: var(--a4-mono); font-size: var(--a4-text-xs); overflow-wrap: anywhere; }
+.a4-setup-urls li:first-child { border-top: 0; }
+ul.a4-setup-points { margin: 0; padding-left: var(--a4-space-4); }
+ul.a4-setup-points li + li { margin-top: var(--a4-space-1); }
+
+/* The runs */
+.a4-setup-preload .a4-setup-url-text { overflow-wrap: anywhere; }
+.a4-setup-preload td.a4-setup-run { min-width: 16em; }
+.a4-setup-preload td.a4-setup-url { min-width: 14em; font-family: var(--a4-mono); font-size: var(--a4-text-xs); overflow-wrap: anywhere; word-break: break-word; }
+.a4-setup-preload tr.a4-setup-detail-row > td { background-color: var(--a4-soft); }
+details.a4-setup-failures > summary { color: var(--a4-bad); font-weight: 650; cursor: pointer; }
+
+/* ---- setup/extensions: Extensions ---------------------------------------------------------------------------- */
+
+details.a4-setup-warnings > summary { cursor: pointer; }
+
+/* The bar that says what is not saved yet; it stays in view while the list scrolls */
+.a4-setup-bar.is-dirty { border-color: var(--a4-accent); background-color: var(--a4-accent-soft); box-shadow: inset 4px 0 0 var(--a4-accent); }
+.a4-setup-bar.is-dirty .a4-meta { color: var(--a4-ink); }
+.a4-setup-pending { position: sticky; top: var(--a4-space-2); z-index: 5; }
+
+/* The list of extensions in load order: position and grip | name, badges, problems | actions */
+.a4-setup-exts { container-type: inline-size; display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--a4-space-2); margin: 0; padding: 0; list-style: none; }
+.a4-setup-exts > .a4-card + .a4-card { margin-top: 0; }
+.a4-setup-ext { display: grid; grid-template-columns: 48px minmax(0, 1fr) auto; align-items: start; gap: var(--a4-space-1) var(--a4-space-3); }
+.a4-setup-ext.is-inactive { background-color: var(--a4-soft); }
+.a4-setup-ext.is-changed,
+.a4-setup-ext.is-drop-target { border-color: var(--a4-accent); }
+.a4-setup-ext:target { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
+.a4-setup-ext-pos { display: flex; flex-direction: column; align-items: center; gap: var(--a4-space-1); }
+.a4-setup-ext-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 32px;
+  padding: 0 var(--a4-space-1);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-ok-bg);
+  color: var(--a4-ok);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.a4-setup-ext.is-inactive .a4-setup-ext-num { background-color: var(--a4-line); color: var(--a4-muted); font-weight: 600; }
+.a4-setup-ext .a4-grip { width: 40px; min-height: 28px; }
+.a4-setup-ext .a4-grip[aria-pressed="true"] { border-style: solid; border-color: var(--a4-accent); color: var(--a4-accent-text); }
+.a4-setup-ext-main { min-width: 0; }
+.a4-setup-ext-title { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--a4-space-1) var(--a4-space-2); }
+.a4-setup-ext-title h3 { margin: 0; font-size: var(--a4-text-m); }
+.a4-setup-ext-title h3 code { color: var(--a4-ink); font-size: var(--a4-text-m); font-weight: 700; }
+.a4-setup-ext-label { color: var(--a4-muted); overflow-wrap: anywhere; }
+.a4-setup-ext-desc { max-width: 90ch; margin: var(--a4-space-1) 0 0; color: var(--a4-muted); overflow-wrap: anywhere; }
+.a4-setup-ext-badges { margin-top: var(--a4-space-1); }
+.a4-setup-ext-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: var(--a4-space-1); }
+.a4-setup-ext-moves { display: inline-flex; gap: var(--a4-space-1); }
+@container (max-width: 620px) {
+  .a4-setup-ext { grid-template-columns: 44px minmax(0, 1fr); }
+  .a4-setup-ext-actions { grid-column: 1 / -1; justify-content: flex-start; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .a4-setup-ext { transition: border-color .15s ease, box-shadow .15s ease; }
+}
+
+/* What an extension lacks or warns about, one dot per line */
+.a4-setup-problems { margin: var(--a4-space-2) 0 0; padding: 0; list-style: none; font-size: var(--a4-text-s); }
+.a4-setup-problems li { position: relative; margin: 2px 0 0; padding-left: var(--a4-space-3); overflow-wrap: anywhere; }
+.a4-setup-problems li::before { content: ""; position: absolute; top: .55em; left: 0; width: 7px; height: 7px; border-radius: 50%; background-color: var(--a4-muted); }
+.a4-setup-problems li.is-bad { color: var(--a4-bad); }
+.a4-setup-problems li.is-bad::before { background-color: var(--a4-bad); }
+.a4-setup-problems li.is-warn { color: var(--a4-warn); }
+.a4-setup-problems li.is-warn::before { background-color: var(--a4-warn); }
+.a4-setup-problems li.is-info { color: var(--a4-muted); }
+details.a4-setup-more { margin: var(--a4-space-2) 0 0; font-size: var(--a4-text-s); }
+details.a4-setup-more > summary { width: max-content; max-width: 100%; color: var(--a4-accent-text); font-weight: 600; cursor: pointer; }
+details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
+
+/* The review before saving: what changes, and the lines of the settings file */
+.a4-setup-review { margin: 0 0 var(--a4-space-4); border: 2px solid var(--a4-accent); }
+.a4-setup-review-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr)); gap: var(--a4-space-3); margin: var(--a4-space-3) 0; }
+.a4-setup-review-cols > div { min-width: 0; padding: var(--a4-space-2) var(--a4-space-3); border: 1px solid var(--a4-line); border-radius: var(--a4-radius-s); background-color: var(--a4-soft); }
+.a4-setup-review-cols h3 { color: var(--a4-muted); font-size: var(--a4-text-s); letter-spacing: .04em; text-transform: uppercase; }
+.a4-setup-review-cols ul { margin: var(--a4-space-1) 0 0; padding: 0; list-style: none; }
+.a4-setup-review-cols li { margin: 2px 0 0; overflow-wrap: anywhere; }
+.a4-setup-review .a4-actions { margin-top: var(--a4-space-3); }
+.a4-setup-lines {
+  max-height: 320px;
+  margin: var(--a4-space-2) 0 0;
+  padding: var(--a4-space-2) var(--a4-space-3);
+  overflow: auto;
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+  color: var(--a4-ink);
+  font-family: var(--a4-mono);
+  font-size: var(--a4-text-xs);
+  line-height: 1.55;
+}
+.a4-setup-line { display: block; width: max-content; min-width: 100%; white-space: pre; }
+.a4-setup-line em { margin-left: var(--a4-space-2); font-style: normal; }
+.a4-setup-lines .is-added { background-color: var(--a4-ok-bg); color: var(--a4-ok); }
+.a4-setup-lines .is-moved { background-color: var(--a4-accent-soft); color: var(--a4-accent-text); }
+.a4-setup-ack { display: flex; align-items: flex-start; gap: var(--a4-space-2); margin: var(--a4-space-3) 0 0; color: var(--a4-bad); font-weight: 600; white-space: normal; }
+.a4-setup-ack span { min-width: 0; overflow-wrap: anywhere; }
+.a4-setup-ack input { flex: 0 0 auto; width: 18px; height: 18px; margin: 1px 0 0; accent-color: var(--a4-bad); }
+
+/* ---- setup/maintenance: Maintenance -------------------------------------------------------------------------- */
+
+.a4-setup-maint .box-content { container: a4-setup-maint / inline-size; }
+.a4-setup-maint label { white-space: normal; }
+.a4-setup-maint .a4-meta,
+.a4-setup-hint { overflow-wrap: anywhere; }
+.a4-setup-hint { color: var(--a4-muted); font-size: var(--a4-text-xs); }
+.a4-setup-maint .a4-check .a4-setup-hint { font-weight: 400; }
+
+/* The state: online (ok) or in maintenance (.is-on, warn), with the one action it calls for */
+.a4-setup-state {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--a4-space-3) var(--a4-space-5);
+  margin: 0 0 var(--a4-space-4);
+  padding: var(--a4-space-4) var(--a4-space-4);
+  border: 1px solid var(--a4-ok-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-ok-bg);
+  box-shadow: inset 5px 0 0 var(--a4-ok);
+}
+.a4-setup-state.is-on { border-color: var(--a4-warn-line); background-color: var(--a4-warn-bg); box-shadow: inset 5px 0 0 var(--a4-warn); }
+.a4-setup-state-head { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-1) var(--a4-space-3); }
+.a4-setup-state-title { flex: 1 1 14ch; min-width: 0; margin: 0; padding: 0; border: 0; background: none; color: var(--a4-ok); font-size: var(--a4-text-xl); font-weight: 700; line-height: 1.25; }
+.a4-setup-state.is-on .a4-setup-state-title { color: var(--a4-warn); }
+.a4-setup-state-text { max-width: 70ch; margin: var(--a4-space-1) 0 0; color: var(--a4-ink); }
+.a4-setup-state .a4-dot { width: 12px; height: 12px; background-color: var(--a4-ok); box-shadow: 0 0 0 4px var(--a4-ok-line); }
+.a4-setup-state.is-on .a4-dot { background-color: var(--a4-warn); box-shadow: 0 0 0 4px var(--a4-warn-line); animation: a4-pulse 1.6s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .a4-setup-state.is-on .a4-dot { animation: none; }
+}
+.a4-setup-state .a4-facts { grid-column: 1 / -1; margin: 0; padding: var(--a4-space-3) 0 0; border-top: 1px solid var(--a4-warn-line); }
+.a4-setup-state .a4-facts dd .a4-badge { white-space: normal; }
+.a4-setup-state .a4-badge { background-color: var(--a4-card); }
+.a4-setup-state-action { display: flex; flex-direction: column; align-items: flex-end; gap: var(--a4-space-1); }
+.a4-setup-state-action .a4-meta { max-width: 30ch; color: var(--a4-ink); text-align: right; }
+
+/* The form for the next window beside the preview of the visitors' page */
+.a4-setup-plan { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .9fr); align-items: start; gap: var(--a4-space-4); margin: 0 0 var(--a4-space-5); }
+.a4-setup-maint .a4-card { padding: var(--a4-space-4) var(--a4-space-4); }
+.a4-setup-formsteps { display: flex; flex-direction: column; gap: var(--a4-space-4); margin: 0; padding: 0; list-style: none; }
+.a4-setup-formsteps > li { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: var(--a4-space-1) var(--a4-space-3); margin: 0; padding: 0 0 var(--a4-space-4); border-bottom: 1px solid var(--a4-line); }
+.a4-setup-formsteps > li:last-child { padding-bottom: 0; border-bottom: 0; }
+.a4-setup-step {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--a4-line);
+  border-radius: 50%;
+  background-color: var(--a4-soft);
+  color: var(--a4-ink);
+  font-size: var(--a4-text-xs);
+  font-weight: 700;
+}
+.a4-setup-step-body { display: flex; flex-direction: column; gap: var(--a4-space-1); min-width: 0; }
+.a4-setup-step-body > label,
+.a4-setup-step-title { margin: 0; padding: 0; color: var(--a4-ink); font-size: var(--a4-text-m); font-weight: 650; }
+.a4-setup-step-body textarea { resize: vertical; }
+.a4-setup-step-body textarea.is-code { font-family: var(--a4-mono); font-size: var(--a4-text-s); }
+.a4-input.a4-setup-minutes { width: 9em; }
+.a4-setup-presets { display: flex; flex-wrap: wrap; gap: var(--a4-space-1); }
+.a4-setup-preset {
+  min-height: 32px;
+  padding: var(--a4-space-1) var(--a4-space-3);
+  border: 1px solid var(--a4-line-strong);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  color: var(--a4-ink);
+  font: inherit;
+  font-size: var(--a4-text-s);
+  cursor: pointer;
+}
+.a4-setup-preset:hover { border-color: var(--a4-accent); color: var(--a4-accent-text); }
+.a4-setup-preset[aria-pressed="true"] { border-color: var(--a4-accent-strong); background-color: var(--a4-accent-strong); color: var(--a4-on-accent); font-weight: 650; }
+.a4-setup-access { display: flex; flex-direction: column; gap: var(--a4-space-1); margin: 0; padding: 0; list-style: none; }
+.a4-setup-access li { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--a4-space-1) var(--a4-space-2); margin: 0; padding: var(--a4-space-2) var(--a4-space-2); border: 1px solid var(--a4-line); border-radius: var(--a4-radius-s); background-color: var(--a4-soft); }
+.a4-setup-access li strong { font-weight: 650; }
+.a4-setup-access code { color: var(--a4-ink); }
+.a4-setup-ipcheck { margin: 0; color: var(--a4-bad); font-size: var(--a4-text-s); font-weight: 650; }
+.a4-setup-counter { align-self: flex-end; color: var(--a4-muted); font-size: var(--a4-text-xs); font-variant-numeric: tabular-nums; }
+
+/* The confirmation before the site goes offline */
+.a4-setup-danger-box { margin: var(--a4-space-4) 0 0; padding: var(--a4-space-3) var(--a4-space-4); border: 1px solid var(--a4-bad-line); border-radius: var(--a4-radius-s); background-color: var(--a4-bad-bg); }
+.a4-setup-danger-box .a4-check { color: var(--a4-bad); font-weight: 600; }
+.a4-setup-danger-box .a4-check input { accent-color: var(--a4-bad); }
+.a4-setup-confirm-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2) var(--a4-space-4); margin: var(--a4-space-3) 0 0; }
+.a4-setup-confirm-row .a4-meta { color: var(--a4-bad); }
+
+/* The preview of the maintenance page */
+.a4-setup-preview { position: sticky; top: var(--a4-space-3); }
+.a4-setup-preview .a4-meta { margin: var(--a4-space-2) 0 0; }
+.a4-setup-frame-wrap { overflow: hidden; border: 1px solid var(--a4-line); border-radius: var(--a4-radius-s); background-color: var(--a4-soft); }
+.a4-setup-frame-bar { display: flex; align-items: center; gap: var(--a4-space-1); padding: var(--a4-space-2) var(--a4-space-2); border-bottom: 1px solid var(--a4-line); color: var(--a4-muted); font-size: var(--a4-text-xs); }
+.a4-setup-frame-bar span[aria-hidden] { width: 9px; height: 9px; border-radius: 50%; background-color: var(--a4-line-strong); }
+.a4-setup-frame-bar code { min-width: 0; margin-left: var(--a4-space-1); overflow: hidden; color: var(--a4-muted); text-overflow: ellipsis; white-space: nowrap; }
+/* the frame shows the visitors' page, which has its own (light) colours */
+.a4-setup-frame { display: block; width: 100%; height: 440px; margin: 0; border: 0; background-color: var(--a4-surface); }
+
+.a4-setup-maint .a4-fold { margin: 0 0 var(--a4-space-3); }
+.a4-setup-maint .a4-fold-body ul.a4-plain { padding-left: var(--a4-space-4); }
+
+/* Commands with a copy button (Maintenance, Cronjobs) */
+.a4-setup-cmds { display: flex; flex-direction: column; gap: var(--a4-space-2); margin: 0; padding: 0; list-style: none; }
+.a4-setup-cmd-row { display: flex; align-items: center; gap: var(--a4-space-2); margin: 0; }
+.a4-setup-cmd-label { flex: 0 0 7.5em; color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 650; }
+.a4-setup-cmd {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: var(--a4-space-1) var(--a4-space-2);
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+  color: var(--a4-ink);
+  overflow-wrap: anywhere;
+  user-select: all;
+  -webkit-user-select: all;
+}
+
+@media (max-width: 1100px) {
+  .a4-setup-plan { grid-template-columns: minmax(0, 1fr); }
+  .a4-setup-preview { position: static; }
+  .a4-setup-frame { height: 400px; }
+}
+/* By the width the page really has: the side menus narrow it far more than the window says */
+@container a4-setup-maint (max-width: 760px) {
+  .a4-setup-plan { grid-template-columns: minmax(0, 1fr); }
+  .a4-setup-preview { position: static; }
+}
+@container a4-setup-maint (max-width: 640px) {
+  .a4-setup-maint .a4-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .a4-setup-maint .a4-table tr { display: block; padding: var(--a4-space-2) 0; border-bottom: 1px solid var(--a4-line); }
+  .a4-setup-maint .a4-table tr:last-child { border-bottom: 0; }
+  .a4-setup-maint .a4-table td { display: flex; gap: var(--a4-space-2); padding: var(--a4-space-1) var(--a4-space-3); border: 0; }
+  .a4-setup-maint .a4-table td::before { content: attr(data-label); flex: 0 0 8.5em; color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 650; }
+}
+@container a4-setup-maint (max-width: 560px) {
+  .a4-setup-state { grid-template-columns: minmax(0, 1fr); padding: var(--a4-space-3); }
+  .a4-setup-state-action { align-items: stretch; }
+  .a4-setup-state-action .a4-meta { max-width: none; text-align: left; }
+  .a4-setup-state-action .a4-btn,
+  .a4-setup-confirm-row .a4-btn { width: 100%; white-space: normal; }
+  .a4-setup-maint .a4-card { padding: var(--a4-space-3) var(--a4-space-3); }
+  .a4-setup-formsteps > li { grid-template-columns: minmax(0, 1fr); }
+  .a4-setup-cmd-row { flex-wrap: wrap; }
+  .a4-setup-cmd-label { flex-basis: 100%; }
+  .a4-setup-frame { height: 360px; }
+}
+
+/* ---- setup/cronjobs: Cronjobs -------------------------------------------------------------------------------- */
+
+.a4-setup-cron .a4-section { margin-bottom: var(--a4-space-5); }
+.a4-setup-cron .a4-toolbar { margin-bottom: var(--a4-space-3); }
+.a4-setup-paths { display: flex; flex-wrap: wrap; gap: var(--a4-space-1) var(--a4-space-4); margin: calc(-1 * var(--a4-space-1)) 0 var(--a4-space-4); color: var(--a4-muted); font-size: var(--a4-text-xs); }
+.a4-setup-paths code { color: var(--a4-ink); overflow-wrap: anywhere; }
+.a4-setup-cron .a4-figures { margin-bottom: var(--a4-space-5); }
+.a4-setup-cron .a4-figure.is-last { grid-column: span 2; }
+.a4-setup-cron .a4-figure.is-last strong { font-size: var(--a4-text-m); line-height: 1.35; overflow-wrap: anywhere; }
+@media (max-width: 520px) {
+  .a4-setup-cron .a4-figure.is-last { grid-column: 1 / -1; }
+}
+.a4-setup-cron .a4-filterbar { margin-bottom: var(--a4-space-5); }
+
+/* Run a part on a chosen siteaccess, across the whole filter bar */
+.a4-setup-runbox { display: flex; flex-wrap: wrap; align-items: end; grid-column: 1 / -1; gap: var(--a4-space-2) var(--a4-space-3); padding-top: var(--a4-space-3); border-top: 1px solid var(--a4-line); }
+.a4-setup-runbox .a4-field { flex: 1 1 220px; }
+.a4-setup-runbox .a4-meta { flex: 1 1 100%; }
+
+/* The output and the crontab, folded */
+.a4-setup-cron .a4-fold { margin: 0 0 var(--a4-space-5); }
+.a4-setup-cron .a4-fold-body { contain: inline-size; }
+.a4-setup-cron .a4-fold-body h3 { margin: var(--a4-space-3) 0 var(--a4-space-1); font-size: var(--a4-text-m); }
+.a4-setup-cron .a4-fold-body h3:first-child { margin-top: 0; }
+.a4-setup-cron .a4-fold-body p { margin: 0 0 var(--a4-space-2); }
+.a4-setup-cron .a4-setup-console { height: 22em; max-height: 60vh; }
+.a4-setup-console:empty::before { content: attr(data-empty); color: var(--a4-muted); }
+.a4-setup-crontab {
+  margin: 0 0 var(--a4-space-3);
+  padding: var(--a4-space-3) var(--a4-space-3);
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+  color: var(--a4-ink);
+  font-family: var(--a4-mono);
+  font-size: var(--a4-text-xs);
+  line-height: 1.8;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* One card per cronjob part; the one running now is marked */
+.a4-setup-part-row.is-current { border-color: var(--a4-ok); box-shadow: inset 4px 0 0 var(--a4-ok), var(--a4-shadow-s); }
+.a4-setup-cron .a4-facts dd code { color: var(--a4-muted); }
+.a4-setup-cron .a4-setup-cmd-row { margin: var(--a4-space-3) 0 0; }
+.a4-setup-cron .a4-setup-cmd-label { flex: 0 0 auto; }
+.a4-setup-scripts { margin: var(--a4-space-3) 0 0; border-top: 1px solid var(--a4-line); }
+.a4-setup-scripts > summary { display: flex; align-items: baseline; gap: var(--a4-space-2); padding: var(--a4-space-2) 0 0; color: var(--a4-ink); font-size: var(--a4-text-s); list-style: none; cursor: pointer; }
+.a4-setup-scripts > summary::-webkit-details-marker { display: none; }
+.a4-setup-scripts > summary::before { content: "\25B8"; flex: 0 0 auto; color: var(--a4-muted); }
+.a4-setup-scripts[open] > summary::before { content: "\25BE"; }
+.a4-setup-scripts[open] > summary { padding-bottom: var(--a4-space-1); }
+.a4-setup-scripts-count { flex: 0 0 auto; font-weight: 650; }
+.a4-setup-scripts > summary:hover .a4-setup-scripts-count { color: var(--a4-accent-text); }
+.a4-setup-scripts-names { min-width: 0; overflow: hidden; color: var(--a4-muted); font-family: var(--a4-mono); font-size: var(--a4-text-xs); text-overflow: ellipsis; white-space: nowrap; }
+.a4-setup-scripts[open] .a4-setup-scripts-names { visibility: hidden; }
+.a4-setup-script-list { margin: 0; padding: 0; list-style: none; }
+.a4-setup-script { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--a4-space-1) var(--a4-space-3); margin: 0; padding: var(--a4-space-2) 0; border-top: 1px dashed var(--a4-line); }
+.a4-setup-script:first-child { border-top: 0; }
+.a4-setup-script-main { flex: 1 1 260px; min-width: 0; }
+.a4-setup-script-name { color: var(--a4-ink); font-weight: 650; overflow-wrap: anywhere; }
+.a4-setup-script-desc { margin: 2px 0 0; }
+.a4-setup-script-where { margin: 2px 0 0; color: var(--a4-muted); font-size: var(--a4-text-xs); overflow-wrap: anywhere; }
+.a4-setup-script-where.is-missing { color: var(--a4-bad); font-weight: 650; }
+.a4-setup-script-actions { display: flex; flex-wrap: wrap; gap: var(--a4-space-1); }
+.a4-setup-cron .a4-pager { margin: var(--a4-space-3) 0 0; }
+
+@media (max-width: 600px) {
+  .a4-setup-cron .a4-toolbar .a4-actions,
+  .a4-setup-cron .a4-toolbar .a4-actions .a4-btn { width: 100%; }
+  .a4-setup-cron .a4-toolbar .a4-actions .a4-btn { flex: 1 1 0; }
+  .a4-setup-cron .a4-card-head .a4-setup-run { width: 100%; }
+  .a4-setup-cmd-row { flex-wrap: wrap; }
+  .a4-setup-cmd-label { flex-basis: 100%; }
+}
+
+/* ---- the RAD wizards (setup/contentextension, datatype, designextension, handlerextension, kerneloverride,
+        moduleextension, modulewizard, settingsextension, templateoperator, workflowevent): .a4-setup-wz ---------- */
+
+.a4-setup-wz h2 { margin: 0 0 2px; font-size: var(--a4-text-l); }
+.a4-setup-wz h3 { margin: var(--a4-space-4) 0 var(--a4-space-1); color: var(--a4-muted); font-size: var(--a4-text-s); letter-spacing: .04em; text-transform: uppercase; }
+.a4-setup-wz pre { max-width: 100%; overflow-x: auto; font-family: var(--a4-mono); white-space: pre; }
+.a4-setup-wz label,
+.a4-setup-wz label * { white-space: normal; }
+.a4-setup-wz .a4-meta { white-space: normal; }
+.a4-setup-wz .a4-card { margin: 0 0 var(--a4-space-5); }
+/* a wizard notice is a sign (! or a tick) beside its sentence */
+.a4-setup-wz .a4-notice { display: flex; align-items: flex-start; gap: var(--a4-space-2); }
+.a4-setup-wz .a4-card > .a4-meta { display: block; padding-bottom: var(--a4-space-3); }
+.a4-setup-wz .a4-card.is-off { opacity: .55; }
+.a4-setup-wz .a4-field { padding-bottom: var(--a4-space-3); }
+.a4-setup-wz .a4-field textarea { font-family: var(--a4-mono); font-size: var(--a4-text-s); resize: vertical; }
+.a4-setup-wz .a4-actions { padding: 2px 0 var(--a4-space-3); }
+.a4-setup-wz .a4-table .is-bad { color: var(--a4-bad); font-weight: 600; }
+
+.a4-setup-wz-grid { display: flex; flex-wrap: wrap; align-items: flex-start; gap: var(--a4-space-5); }
+.a4-setup-wz-col { flex: 1 1 26rem; min-width: 0; }
+.a4-setup-wz-row { display: flex; flex-wrap: wrap; gap: var(--a4-space-3); }
+.a4-setup-wz-row > .a4-field { flex: 1 1 9rem; }
+
+/* A choice with its explanation (radio or checkbox) */
+.a4-setup-wz-pick { display: flex; align-items: flex-start; gap: var(--a4-space-2); padding: var(--a4-space-2); border-radius: var(--a4-radius-s); }
+.a4-setup-wz-pick:hover { background-color: var(--a4-soft); }
+.a4-setup-wz-pick input { flex: 0 0 auto; margin-top: var(--a4-space-1); accent-color: var(--a4-accent-strong); }
+.a4-setup-wz-pick > span { flex: 1 1 auto; min-width: 0; }
+.a4-setup-wz-pick-label { display: block; font-weight: 600; }
+.a4-setup-wz-pick .a4-meta { display: block; }
+.a4-setup-wz-pick.is-locked { opacity: .75; }
+.a4-setup-wz-count { color: var(--a4-accent-text); font-size: var(--a4-text-xs); font-weight: 600; }
+
+.a4-setup-wz-types { padding-top: var(--a4-space-1); }
+.a4-setup-wz-types code { padding: 1px var(--a4-space-1); border: 1px solid var(--a4-line); border-radius: var(--a4-radius-s); background-color: var(--a4-soft); font-size: var(--a4-text-xs); }
+
+/* A small uppercase label: the kind of a thing (accent; .is-muted, .is-open neutral; .is-bad) */
+.a4-setup-wz-tag {
+  display: inline-block;
+  padding: 1px var(--a4-space-1);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-accent-strong);
+  color: var(--a4-on-accent);
+  font-size: var(--a4-text-xs);
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  vertical-align: .1em;
+}
+.a4-setup-wz-tag.is-muted,
+.a4-setup-wz-tag.is-open { background-color: var(--a4-soft); color: var(--a4-muted); }
+.a4-setup-wz-tag.is-filter { background-color: var(--a4-accent-strong); color: var(--a4-on-accent); }
+.a4-setup-wz-tag.is-bad { background-color: var(--a4-bad-bg); color: var(--a4-bad); }
+
+/* A row of a list, each under a thin line: methods, views, references, settings, uses, matches, columns */
+.a4-setup-wz-method,
+.a4-setup-wz-view,
+.a4-setup-wz-use { padding: var(--a4-space-2) 0; border-top: 1px solid var(--a4-line); }
+.a4-setup-wz-method code,
+.a4-setup-wz-view code.a4-setup-wz-address { display: block; padding-bottom: 2px; font-weight: 600; }
+.a4-setup-wz-use pre { margin: var(--a4-space-1) 0 var(--a4-space-1); padding: var(--a4-space-2) var(--a4-space-2); border: 1px solid var(--a4-line); border-radius: var(--a4-radius-s); background-color: var(--a4-soft); }
+.a4-setup-wz-ref,
+.a4-setup-wz-cols { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--a4-space-2); padding: var(--a4-space-1) 0; border-top: 1px solid var(--a4-line); }
+.a4-setup-wz-ref code { flex: 0 0 10rem; font-weight: 600; }
+.a4-setup-wz-cols code { flex: 0 0 9rem; font-weight: 600; }
+.a4-setup-wz-ref .a4-meta,
+.a4-setup-wz-cols .a4-meta { flex: 1 1 12rem; min-width: 0; }
+.a4-setup-wz-setting { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2); padding: var(--a4-space-1) 0; }
+.a4-setup-wz-setting code { flex: 0 0 7rem; }
+.a4-setup-wz-setting input { flex: 1 1 10rem; width: auto; min-width: 0; }
+.a4-setup-wz-match { display: flex; align-items: baseline; gap: var(--a4-space-2); padding: var(--a4-space-1) var(--a4-space-2); border-top: 1px solid var(--a4-line); border-radius: var(--a4-radius-s); }
+.a4-setup-wz-match:hover { background-color: var(--a4-soft); }
+.a4-setup-wz-match.is-current { background-color: var(--a4-info-bg); }
+.a4-setup-wz-match input { flex: 0 0 auto; }
+.a4-setup-wz-match code { flex: 0 0 auto; font-weight: 600; }
+.a4-setup-wz-match .a4-meta { flex: 1 1 10rem; min-width: 0; }
+.a4-setup-wz-group { display: block; padding-top: var(--a4-space-3); color: var(--a4-accent-text); font-size: var(--a4-text-xs); font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
+.a4-setup-wz-facts { display: flex; flex-direction: column; gap: var(--a4-space-1); padding-bottom: var(--a4-space-2); }
+.a4-setup-wz-fact { display: flex; flex-wrap: wrap; gap: var(--a4-space-2); }
+.a4-setup-wz-fact b { flex: 0 0 7rem; color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 600; letter-spacing: .03em; text-transform: uppercase; }
+.a4-setup-wz-fact span { flex: 1 1 12rem; min-width: 0; }
+.a4-setup-wz-summary { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--a4-space-5); padding: 0 0 var(--a4-space-4); }
+.a4-setup-wz-summary b { font-size: var(--a4-text-xl); }
+
+/* The files the wizard writes: a head that folds the file open and closed */
+.a4-setup-wz-file { margin: 0 0 var(--a4-space-2); border: 1px solid var(--a4-line); border-radius: var(--a4-radius-s); background-color: var(--a4-card); }
+.a4-setup-wz-file-head { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2); padding: var(--a4-space-2) var(--a4-space-3); cursor: pointer; }
+.a4-setup-wz-file-head:hover { background-color: var(--a4-soft); }
+.a4-setup-wz-file-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+  font-weight: 700;
+  line-height: 1;
+}
+.a4-setup-wz-file-path { min-width: 0; font-weight: 600; overflow-wrap: anywhere; }
+.a4-setup-wz-file pre { max-height: 28rem; margin: 0; padding: var(--a4-space-3) var(--a4-space-4); overflow: auto; border-top: 1px solid var(--a4-line); background-color: var(--a4-soft); color: var(--a4-ink); font-size: var(--a4-text-s); line-height: var(--a4-leading); }
+.a4-setup-wz-file.is-collapsed pre { display: none; }
+
+/* The file tree of the design wizard, indented by depth (.a4-setup-wz-depth-0 ... -10) */
+.a4-setup-wz-tree { margin: 0; padding: 0; list-style: none; }
+.a4-setup-wz-tree li { padding: 2px 0; overflow-wrap: anywhere; }
+.a4-setup-wz-tree a { color: var(--a4-accent-text); text-decoration: none; }
+.a4-setup-wz-tree a:hover { text-decoration: underline; }
+.a4-setup-wz-dir,
+.a4-setup-wz-size { color: var(--a4-muted); }
+.a4-setup-wz-size { font-size: var(--a4-text-xs); }
+.a4-setup-wz-tree li.a4-setup-wz-depth-1 { padding-left: calc(1 * var(--a4-space-4)); }
+.a4-setup-wz-tree li.a4-setup-wz-depth-2 { padding-left: calc(2 * var(--a4-space-4)); }
+.a4-setup-wz-tree li.a4-setup-wz-depth-3 { padding-left: calc(3 * var(--a4-space-4)); }
+.a4-setup-wz-tree li.a4-setup-wz-depth-4 { padding-left: calc(4 * var(--a4-space-4)); }
+.a4-setup-wz-tree li.a4-setup-wz-depth-5 { padding-left: calc(5 * var(--a4-space-4)); }
+.a4-setup-wz-tree li.a4-setup-wz-depth-6 { padding-left: calc(6 * var(--a4-space-4)); }
+.a4-setup-wz-tree li.a4-setup-wz-depth-7 { padding-left: calc(7 * var(--a4-space-4)); }
+.a4-setup-wz-tree li.a4-setup-wz-depth-8 { padding-left: calc(8 * var(--a4-space-4)); }
+.a4-setup-wz-tree li.a4-setup-wz-depth-9 { padding-left: calc(9 * var(--a4-space-4)); }
+.a4-setup-wz-tree li.a4-setup-wz-depth-10 { padding-left: calc(10 * var(--a4-space-4)); }
+.a4-setup-wz-parts { display: flex; flex-direction: column; gap: 2px; }
+
+/* The module wizard: the table picker, the column chips, the mapping, the external source */
+.a4-setup-wz-tables { max-height: 28rem; overflow: auto; border: 1px solid var(--a4-line); border-radius: var(--a4-radius-s); }
+.a4-setup-wz-tables table,
+.a4-setup-wz-map table { width: 100%; border-collapse: collapse; font-size: var(--a4-text-s); }
+.a4-setup-wz-tables table { min-width: 30rem; }
+.a4-setup-wz-tables th,
+.a4-setup-wz-tables td,
+.a4-setup-wz-map th,
+.a4-setup-wz-map td { padding: var(--a4-space-1) var(--a4-space-2); border-bottom: 1px solid var(--a4-line); color: var(--a4-ink); text-align: left; }
+.a4-setup-wz-tables th { position: sticky; top: 0; z-index: 1; background-color: var(--a4-soft); }
+.a4-setup-wz-tables tr.is-selected { background-color: var(--a4-accent-soft); }
+.a4-setup-wz-nokey { color: var(--a4-bad); }
+.a4-setup-wz-map { overflow-x: auto; }
+.a4-setup-wz-map table { min-width: 34rem; }
+.a4-setup-wz-map th { color: var(--a4-muted); font-weight: 600; }
+.a4-setup-wz-chips { display: flex; flex-wrap: wrap; gap: var(--a4-space-1); max-width: 100%; padding-top: var(--a4-space-1); }
+.a4-setup-wz-chip { padding: 1px var(--a4-space-1); border: 1px solid var(--a4-line); border-radius: var(--a4-radius-s); background-color: var(--a4-soft); font-size: var(--a4-text-xs); overflow-wrap: anywhere; }
+.a4-setup-wz-chip b { font-weight: 600; }
+.a4-setup-wz-chip.is-key,
+.a4-setup-wz-chip.is-accent { border-color: var(--a4-accent); background-color: transparent; color: var(--a4-accent-text); }
+.a4-setup-wz-chip.is-accent { white-space: nowrap; }
+.a4-setup-wz-external { padding-left: var(--a4-space-3); border-left: 3px solid var(--a4-line); }
+
+/* The workflow event wizard: the trigger matrix, the statuses, the settings rows */
+.a4-setup-wz-module { padding-bottom: var(--a4-space-4); }
+.a4-setup-wz-module h3 { margin: 0 0 var(--a4-space-1); text-transform: capitalize; }
+.a4-setup-wz-matrix,
+.a4-setup-wz-attrs { width: 100%; border-collapse: collapse; font-size: var(--a4-text-s); }
+.a4-setup-wz-matrix th,
+.a4-setup-wz-matrix td,
+.a4-setup-wz-attrs th,
+.a4-setup-wz-attrs td { padding: var(--a4-space-1) var(--a4-space-2); border-bottom: 1px solid var(--a4-line); color: var(--a4-ink); text-align: left; vertical-align: top; }
+.a4-setup-wz-matrix th,
+.a4-setup-wz-attrs th { color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 600; text-transform: uppercase; }
+.a4-setup-wz-matrix td.a4-setup-wz-tick { width: 5.5rem; text-align: center; }
+.a4-setup-wz-matrix tr.is-chosen td { background-color: var(--a4-accent-soft); }
+.a4-setup-wz-none,
+.a4-setup-wz-col-used { color: var(--a4-muted); }
+.a4-setup-wz-col-used { font-size: var(--a4-text-xs); white-space: nowrap; }
+.a4-setup-wz-attrs .a4-input,
+.a4-setup-wz-attrs input[type=text],
+.a4-setup-wz-attrs select { width: 100%; padding: var(--a4-space-1) var(--a4-space-1); border: 1px solid var(--a4-field-line); border-radius: var(--a4-radius-s); background-color: var(--a4-field); color: var(--a4-ink); font: inherit; }
+.a4-setup-wz-status { display: flex; align-items: flex-start; gap: var(--a4-space-2); padding: var(--a4-space-2); border-radius: var(--a4-radius-s); }
+.a4-setup-wz-status:hover { background-color: var(--a4-soft); }
+.a4-setup-wz-status input { flex: 0 0 auto; margin-top: var(--a4-space-1); }
+.a4-setup-wz-status > span { flex: 1 1 auto; min-width: 0; }
+.a4-setup-wz-status code { display: block; font-weight: 600; }
+.a4-setup-wz-status .a4-meta { display: block; }
+.a4-setup-wz-left { display: flex; gap: var(--a4-space-4); padding-top: var(--a4-space-2); }
+.a4-setup-wz-triggers { display: flex; flex-wrap: wrap; gap: var(--a4-space-1); padding-bottom: var(--a4-space-2); }
+
+/* ---- setup/rad: Rapid application development ---------------------------------------------------------------- */
+
+.a4-setup-rad h2 { margin: 0 0 2px; font-size: var(--a4-text-l); }
+.a4-setup-rad label,
+.a4-setup-rad .a4-meta { white-space: normal; }
+.a4-setup-rad-group { margin: 0 0 var(--a4-space-5); }
+.a4-setup-rad-group > .a4-meta { display: block; padding-bottom: var(--a4-space-2); }
+.a4-setup-rad-point { margin: 0 0 var(--a4-space-2); }
+.a4-setup-rad-point.is-hidden,
+.a4-setup-rad-group.is-hidden { display: none; }
+.a4-setup-rad-point .a4-title-row { align-items: baseline; }
+.a4-setup-rad-point h3 { margin: 0; font-size: var(--a4-text-l); }
+.a4-setup-rad-point-what { padding: var(--a4-space-1) 0 var(--a4-space-2); white-space: normal; }
+.a4-setup-rad-open { font-weight: 600; text-decoration: none; }
+.a4-setup-rad-legend dt { padding-top: var(--a4-space-2); font-weight: 600; }
+.a4-setup-rad-legend dd { margin: 0; color: var(--a4-muted); white-space: normal; }
+
+/* The filter of the list, on its own line */
+.a4-setup-rad-find { padding: 0 0 var(--a4-space-3); }
+.a4-setup-rad-find .a4-input { flex: 1 1 22rem; }
+.a4-setup-rad-find-count { flex: 0 0 auto; }
+.a4-setup-rad-find-none { padding: var(--a4-space-2) 0 var(--a4-space-4); }
+
+/* The survey: a link with its count, and the survey's sections */
+.a4-setup-rad-survey-note { padding: 0 0 var(--a4-space-4); }
+.a4-setup-rad-survey-link {
+  display: flex;
+  align-items: center;
+  gap: var(--a4-space-3);
+  padding: var(--a4-space-3) var(--a4-space-4);
+  border: 1px solid var(--a4-line);
+  border-left: 4px solid var(--a4-accent);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+  color: inherit;
+  text-decoration: none;
+}
+.a4-page a.a4-setup-rad-survey-link { color: var(--a4-ink); }
+.a4-setup-rad-survey-link:hover { border-color: var(--a4-line-strong); border-left-color: var(--a4-accent); }
+.a4-setup-rad-survey-link > span { min-width: 0; }
+.a4-setup-rad-survey-link b { display: block; }
+.a4-setup-rad-survey-link .a4-meta { display: block; white-space: normal; }
+.a4-setup-rad-survey-count { flex: 0 0 auto; color: var(--a4-accent-text); font-size: var(--a4-text-xl); font-weight: 700; line-height: 1; }
+.a4-setup-rad-survey-groups { margin: var(--a4-space-2) 0 0; }
+.a4-setup-rad-survey-groups li { margin: 0; padding: 0; }
+.a4-setup-rad-survey-groups li.is-inside a { border-style: dashed; }
+
+/* The admin toolbar floats its contents: clear it before the first group */
+.a4-setup-rad-filter { display: block; padding: 0 0 var(--a4-space-1); }
+.a4-setup-rad-filter::after { content: ""; display: block; clear: both; }
+.a4-setup-rad-filter p.table-preferences { margin: 0; }
+.a4-setup-rad-groups { clear: both; padding-top: var(--a4-space-4); }
+
+/* ---- setup/radsurvey: the extension point survey -------------------------------------------------------------- */
+
+.a4-setup-survey h2 { margin: 0 0 2px; font-size: var(--a4-text-l); }
+.a4-setup-survey label,
+.a4-setup-survey label *,
+.a4-setup-survey .a4-meta { white-space: normal; }
+.a4-setup-survey .a4-card { margin: 0 0 var(--a4-space-5); }
+.a4-setup-survey .a4-card > .a4-meta { display: block; padding-bottom: var(--a4-space-3); }
+.a4-setup-survey .a4-searchrow { padding: 0 0 var(--a4-space-3); }
+
+/* The figures at the top; the linked ones lead to their part of the survey */
+.a4-setup-survey-summary { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--a4-space-5) var(--a4-space-6); padding: 0 0 var(--a4-space-4); }
+.a4-setup-survey-summary > span,
+.a4-setup-survey-figure { display: flex; flex-direction: column; gap: 2px; }
+.a4-setup-survey-summary b { font-size: var(--a4-text-xl); line-height: 1.1; }
+.a4-setup-survey-label { color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 600; letter-spacing: .05em; text-transform: uppercase; }
+.a4-page a.a4-setup-survey-figure { padding-bottom: 2px; border-bottom: 2px solid transparent; color: var(--a4-ink); text-decoration: none; }
+.a4-page a.a4-setup-survey-figure:hover { border-bottom-color: var(--a4-accent); }
+.a4-setup-survey-figure.is-bad b { color: var(--a4-bad); }
+.a4-page a.a4-setup-survey-figure.is-bad:hover { border-bottom-color: var(--a4-bad); }
+
+/* The parts of the survey, as large tabs */
+.a4-setup-survey-tabs { display: flex; flex-wrap: wrap; gap: var(--a4-space-2); padding: 0 0 var(--a4-space-4); }
+.a4-page a.a4-setup-survey-tab {
+  display: flex;
+  flex: 1 1 14rem;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  padding: var(--a4-space-2) var(--a4-space-3);
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  color: var(--a4-ink);
+  text-decoration: none;
+}
+.a4-page a.a4-setup-survey-tab:hover { border-color: var(--a4-line-strong); }
+.a4-page a.a4-setup-survey-tab.is-current { border-color: var(--a4-accent); box-shadow: inset 0 0 0 1px var(--a4-accent); }
+.a4-setup-survey-tab-title { font-weight: 600; }
+.a4-setup-survey-tab-count { color: var(--a4-accent-text); font-weight: 700; }
+
+/* The kinds of finding, each with its severity on the left edge */
+.a4-setup-survey-kinds { display: flex; flex-wrap: wrap; gap: var(--a4-space-1); padding: 0 0 var(--a4-space-4); }
+.a4-page a.a4-setup-survey-kind {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--a4-space-1);
+  padding: var(--a4-space-1) var(--a4-space-2);
+  border: 1px solid var(--a4-line);
+  border-left-width: 4px;
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  color: var(--a4-ink);
+  font-size: var(--a4-text-s);
+  text-decoration: none;
+}
+.a4-page a.a4-setup-survey-kind:hover { border-color: var(--a4-line-strong); }
+.a4-setup-survey-kind.is-broken { border-left-color: var(--a4-bad); }
+.a4-setup-survey-kind.is-odd { border-left-color: var(--a4-ok); }
+.a4-setup-survey-kind.is-note { border-left-color: var(--a4-line-strong); }
+.a4-page a.a4-setup-survey-kind.is-current { border-color: var(--a4-accent); background-color: var(--a4-accent-soft); }
+.a4-setup-survey-kind b { font-weight: 700; }
+
+/* How to fix a finding, inside its row */
+.a4-setup-survey-fix { margin: var(--a4-space-1) 0 2px; padding: var(--a4-space-2) var(--a4-space-2); border: 1px solid var(--a4-line); border-radius: var(--a4-radius-s); background-color: var(--a4-soft); }
+.a4-setup-survey-fix-head { display: block; padding-bottom: var(--a4-space-1); color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
+.a4-setup-survey-fix ol { margin: 0; padding-left: var(--a4-space-4); }
+.a4-setup-survey-fix li { padding: 2px 0; white-space: normal; }
+.a4-setup-survey .a4-table .a4-setup-survey-value { font-weight: 600; }
+.a4-setup-survey .a4-table .a4-setup-survey-where { color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-setup-survey .a4-dot { display: inline-block; width: 9px; height: 9px; vertical-align: .05em; }
+.a4-setup-survey-pages { clear: both; padding: var(--a4-space-3) 0 0; }
+
+/* The note under the buttons of a page's action bar takes its own line (System information, Caches) */
+.a4-setup-info .a4-toolbar > .a4-meta,
+.a4-setup-cache .a4-toolbar > .a4-meta { flex-basis: 100%; }

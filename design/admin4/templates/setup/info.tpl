@@ -9,10 +9,9 @@
    repeated by "Measure again" (RefreshSizesButton). The page itself changes nothing; the
    buttons of the HTTP cache, the query cache and the SQL profile post to it and need setup/managecache.
 
-   The same file is in design/admin and design/admin4. The styling is setup/info_exp_style.tpl, scoped to
-   .exp-sysinfo. Everything works without javascript, except the "Copy" button, which is only shown with it.
+   The same file is in design/admin and design/admin4. The page uses the shared admin components (components.css)
+   and stylesheets/modules/setup.css (.a4-setup-*). Everything works without javascript, except the "Copy" button, which is only shown with it.
    Guide: doc/guides/system-information.md *}
-{include uri='design:setup/info_exp_style.tpl'}
 {def $si = $system_report
      $si_state_class = hash( 'ok', 'is-ok', 'warn', 'is-warn', 'fail', 'is-bad', 'info', 'is-info' )
      $si_state_label = hash( 'ok', 'OK'|i18n( 'design/admin/setup/info' ),
@@ -20,8 +19,8 @@
                              'fail', 'Failure'|i18n( 'design/admin/setup/info' ),
                              'info', 'Note'|i18n( 'design/admin/setup/info' ) )
      $si_open_checks = 0
-     $si_level = ''}
-<div class="context-block exp-sysinfo" id="exp-sysinfo"
+     $si_level = 'is-ok'}
+<div class="context-block a4-page a4-setup-info" id="exp-sysinfo"
      data-sysinfo-server="{$si.server_kind|wash}"
      data-sysinfo-label="{$si.server|wash}"
      data-sysinfo-sapi="{$si.facts.php.sapi|wash}"
@@ -40,65 +39,65 @@
 
 <div class="box-ml"><div class="box-mr"><div class="box-content">
 
-<p class="exp-intro">{'What this installation runs on, as the server that answered this page sees it, and what needs attention. Nothing here changes the site. To ask for help, download the report: passwords, keys, session ids and full server paths are left out.'|i18n( 'design/admin/setup/info' )}</p>
+<p class="a4-intro">{'What this installation runs on, as the server that answered this page sees it, and what needs attention. Nothing here changes the site. To ask for help, download the report: passwords, keys, session ids and full server paths are left out.'|i18n( 'design/admin/setup/info' )}</p>
 
 {* Who answered: the one thing to know before reading any other figure *}
-<div class="exp-served{if eq( $si.server_kind, 'velocity' )} is-velocity{/if}" role="note">
-    <div class="exp-served-main">
+<div class="a4-setup-served{if eq( $si.server_kind, 'velocity' )} is-velocity{/if}" role="note">
+    <div class="a4-setup-served-main">
         <p>{'This page was answered by'|i18n( 'design/admin/setup/info' )} <strong>{$si.server|wash}{if and( eq( $si.server_kind, 'velocity' ), $si.facts.server.version )} {$si.facts.server.version|wash}{/if}</strong>{if $si.facts.server.workers.pool} &middot; {'PHP-FPM pool %pool'|i18n( 'design/admin/setup/info',, hash( '%pool', $si.facts.server.workers.pool|wash ) )}{/if}</p>
         {if $si.worker_model}<p>{$si.worker_model|wash}.</p>{/if}
         <p>{'Each server has its own PHP, OPcache and settings: Apache with PHP-FPM and Exponential Velocity show different figures. Open this page on the other server to see its own.'|i18n( 'design/admin/setup/info' )}</p>
     </div>
-    <span class="exp-badge is-info">PHP {$si.facts.php.version|wash} &middot; {$si.facts.php.sapi|wash}</span>
+    <span class="a4-badge is-info">PHP {$si.facts.php.version|wash} &middot; {$si.facts.php.sapi|wash}</span>
 </div>
 
-<div class="exp-actionbar">
-    <button type="button" class="exp-btn exp-btn-primary" id="exp-sysinfo-copy" hidden data-done="{'The report was copied to the clipboard.'|i18n( 'design/admin/setup/info' )|wash}" data-manual="{'Select the text of the report below and copy it.'|i18n( 'design/admin/setup/info' )|wash}">{'Copy report as text'|i18n( 'design/admin/setup/info' )}</button>
-    <a class="exp-btn" href={'/setup/info/report'|ezurl}>{'Download report (.txt)'|i18n( 'design/admin/setup/info' )}</a>
-    <a class="exp-btn" href={'/setup/info/json'|ezurl}>{'Download as JSON'|i18n( 'design/admin/setup/info' )}</a>
+<div class="a4-toolbar">
+    <button type="button" class="a4-btn a4-btn-primary" id="exp-sysinfo-copy" hidden data-done="{'The report was copied to the clipboard.'|i18n( 'design/admin/setup/info' )|wash}" data-manual="{'Select the text of the report below and copy it.'|i18n( 'design/admin/setup/info' )|wash}">{'Copy report as text'|i18n( 'design/admin/setup/info' )}</button>
+    <a class="a4-btn" href={'/setup/info/report'|ezurl}>{'Download report (.txt)'|i18n( 'design/admin/setup/info' )}</a>
+    <a class="a4-btn" href={'/setup/info/json'|ezurl}>{'Download as JSON'|i18n( 'design/admin/setup/info' )}</a>
     {if $si.sizes}
-        <a class="exp-btn" href={'/setup/info'|ezurl}>{'Without sizes (faster)'|i18n( 'design/admin/setup/info' )}</a>
-        <form method="post" action={'/setup/info/sizes'|ezurl} class="exp-sysinfo-form"><button type="submit" class="exp-btn" name="RefreshSizesButton" value="1">{'Measure again'|i18n( 'design/admin/setup/info' )}</button></form>
+        <a class="a4-btn" href={'/setup/info'|ezurl}>{'Without sizes (faster)'|i18n( 'design/admin/setup/info' )}</a>
+        <form method="post" action={'/setup/info/sizes'|ezurl} class="a4-actions"><button type="submit" class="a4-btn" name="RefreshSizesButton" value="1">{'Measure again'|i18n( 'design/admin/setup/info' )}</button></form>
     {else}
-        <a class="exp-btn" href={'/setup/info/sizes'|ezurl}>{'Measure sizes'|i18n( 'design/admin/setup/info' )}</a>
+        <a class="a4-btn" href={'/setup/info/sizes'|ezurl}>{'Measure sizes'|i18n( 'design/admin/setup/info' )}</a>
     {/if}
-    <span class="exp-status-text" id="exp-sysinfo-copy-status" role="status" aria-live="polite"></span>
-    <p class="exp-meta">{'Generated %time.'|i18n( 'design/admin/setup/info',, hash( '%time', $si.generated|wash ) )}
+    <span class="a4-meta a4-ok-text" id="exp-sysinfo-copy-status" role="status" aria-live="polite"></span>
+    <p class="a4-meta">{'Generated %time.'|i18n( 'design/admin/setup/info',, hash( '%time', $si.generated|wash ) )}
     {if $si.sizes}{'Sizes were measured at %time, within %seconds seconds, and are shown for %minutes minutes; a size marked ≥ was cut short.'|i18n( 'design/admin/setup/info',, hash( '%time', $si.sizes_time|wash, '%seconds', $si.sizes_seconds|wash, '%minutes', $si.sizes_minutes|wash ) )}{else}{'Sizes of var/, the cache directories and a database on a server are measured only on request, as that reads every file.'|i18n( 'design/admin/setup/info' )}{/if}</p>
 </div>
 
 {* Health checks *}
-<section class="exp-section" aria-labelledby="exp-sysinfo-health">
-    <div class="exp-section-head">
-        <h2 class="exp-h2" id="exp-sysinfo-health">{'Health checks'|i18n( 'design/admin/setup/info' )}</h2>
+<section class="a4-section" aria-labelledby="exp-sysinfo-health">
+    <div class="a4-section-head">
+        <h2 class="a4-h2" id="exp-sysinfo-health">{'Health checks'|i18n( 'design/admin/setup/info' )}</h2>
         <p>{'What needs attention first, each with what to do. Checked for the server that answered.'|i18n( 'design/admin/setup/info' )}</p>
     </div>
-    <ul class="exp-figures">
-        <li class="exp-figure{if $si.summary.fail|gt( 0 )} is-bad{/if}"><strong>{$si.summary.fail|wash}</strong><span>{'failures'|i18n( 'design/admin/setup/info' )}</span></li>
-        <li class="exp-figure{if $si.summary.warn|gt( 0 )} is-warn{/if}"><strong>{$si.summary.warn|wash}</strong><span>{'warnings'|i18n( 'design/admin/setup/info' )}</span></li>
-        <li class="exp-figure is-info"><strong>{$si.summary.info|wash}</strong><span>{'notes'|i18n( 'design/admin/setup/info' )}</span></li>
-        <li class="exp-figure is-ok"><strong>{$si.summary.ok|wash}</strong><span>{'in order'|i18n( 'design/admin/setup/info' )}</span></li>
+    <ul class="a4-figures">
+        <li class="a4-figure{if $si.summary.fail|gt( 0 )} is-bad{/if}"><strong>{$si.summary.fail|wash}</strong><span>{'failures'|i18n( 'design/admin/setup/info' )}</span></li>
+        <li class="a4-figure{if $si.summary.warn|gt( 0 )} is-warn{/if}"><strong>{$si.summary.warn|wash}</strong><span>{'warnings'|i18n( 'design/admin/setup/info' )}</span></li>
+        <li class="a4-figure is-info"><strong>{$si.summary.info|wash}</strong><span>{'notes'|i18n( 'design/admin/setup/info' )}</span></li>
+        <li class="a4-figure is-ok"><strong>{$si.summary.ok|wash}</strong><span>{'in order'|i18n( 'design/admin/setup/info' )}</span></li>
     </ul>
-    <ul class="exp-checks">
+    <ul class="a4-stack a4-plain">
     {foreach $si.checks as $si_check}{if ne( $si_check.state, 'ok' )}
-        <li class="exp-check {$si_state_class[$si_check.state]}">
-            <span class="exp-badge {$si_state_class[$si_check.state]}">{$si_state_label[$si_check.state]|wash}</span>
-            <div class="exp-check-text">
+        <li class="a4-card a4-setup-check {$si_state_class[$si_check.state]}">
+            <span class="a4-badge {$si_state_class[$si_check.state]}">{$si_state_label[$si_check.state]|wash}</span>
+            <div class="a4-setup-check-text">
                 <strong>{$si_check.title|wash}</strong>
                 {if $si_check.detail}<p>{$si_check.detail|wash}</p>{/if}
-                {if $si_check.fix}<p class="exp-fix">{$si_check.fix|wash}</p>{/if}
+                {if $si_check.fix}<p class="a4-setup-fix">{$si_check.fix|wash}</p>{/if}
             </div>
         </li>
     {/if}{/foreach}
     </ul>
     {if $si.summary.ok|gt( 0 )}
-    <details class="exp-ok-checks"{if and( $si.summary.fail|eq( 0 ), $si.summary.warn|eq( 0 ), $si.summary.info|eq( 0 ) )} open{/if}>
+    <details class="a4-setup-ok-checks"{if and( $si.summary.fail|eq( 0 ), $si.summary.warn|eq( 0 ), $si.summary.info|eq( 0 ) )} open{/if}>
         <summary>{'%count checks in order'|i18n( 'design/admin/setup/info',, hash( '%count', $si.summary.ok ) )}</summary>
-        <ul class="exp-checks">
+        <ul class="a4-stack a4-plain">
         {foreach $si.checks as $si_check}{if eq( $si_check.state, 'ok' )}
-            <li class="exp-check is-ok">
-                <span class="exp-badge is-ok">{$si_state_label.ok|wash}</span>
-                <div class="exp-check-text"><strong>{$si_check.title|wash}</strong>{if $si_check.detail}<p>{$si_check.detail|wash}</p>{/if}</div>
+            <li class="a4-card a4-setup-check">
+                <span class="a4-badge is-ok">{$si_state_label.ok|wash}</span>
+                <div class="a4-setup-check-text"><strong>{$si_check.title|wash}</strong>{if $si_check.detail}<p>{$si_check.detail|wash}</p>{/if}</div>
             </li>
         {/if}{/foreach}
         </ul>
@@ -107,18 +106,18 @@
 </section>
 
 {* Overview *}
-<section class="exp-section" aria-labelledby="exp-sysinfo-overview">
-    <div class="exp-section-head">
-        <h2 class="exp-h2" id="exp-sysinfo-overview">{'Overview'|i18n( 'design/admin/setup/info' )}</h2>
+<section class="a4-section" aria-labelledby="exp-sysinfo-overview">
+    <div class="a4-section-head">
+        <h2 class="a4-h2" id="exp-sysinfo-overview">{'Overview'|i18n( 'design/admin/setup/info' )}</h2>
     </div>
-    <ul class="exp-cards">
+    <ul class="a4-grid">
     {foreach $si.cards as $card}
-        <li class="exp-card {$si_state_class[$card.state]}" id="exp-sysinfo-card-{$card.id|wash}">
-            <div class="exp-card-head">
-                <h3>{$card.title|wash}</h3>
-                {if ne( $card.state, 'ok' )}<span class="exp-badge {$si_state_class[$card.state]}">{$si_state_label[$card.state]|wash}</span>{/if}
+        <li class="a4-card{if ne( $card.state, 'ok' )} {$si_state_class[$card.state]}{/if}" id="exp-sysinfo-card-{$card.id|wash}">
+            <div class="a4-card-head">
+                <h3 class="a4-h3">{$card.title|wash}</h3>
+                {if ne( $card.state, 'ok' )}<span class="a4-badge {$si_state_class[$card.state]}">{$si_state_label[$card.state]|wash}</span>{/if}
             </div>
-            <dl class="exp-rows">
+            <dl class="a4-setup-rows">
             {foreach $card.rows as $row}
                 <dt>{$row.label|wash}</dt><dd>{$row.value|wash}</dd>
             {/foreach}
@@ -129,26 +128,26 @@
 </section>
 
 {* Extensions *}
-<details class="exp-panel" id="exp-sysinfo-extensions">
-    <summary><h2 class="exp-h2">{'Active extensions'|i18n( 'design/admin/setup/info' )}</h2><span class="exp-muted">{$si.extensions|count} &middot; {'in load order, with the version their extension.xml, ezinfo.php or composer.json states'|i18n( 'design/admin/setup/info' )}</span></summary>
-    <div class="exp-panel-body">
-        <ul class="exp-ext-list">
+<details class="a4-fold" id="exp-sysinfo-extensions">
+    <summary><h2 class="a4-h2">{'Active extensions'|i18n( 'design/admin/setup/info' )}</h2><span class="a4-muted">{$si.extensions|count} &middot; {'in load order, with the version their extension.xml, ezinfo.php or composer.json states'|i18n( 'design/admin/setup/info' )}</span></summary>
+    <div class="a4-fold-body a4-stack">
+        <ul class="a4-setup-ext-list">
         {foreach $si.extensions as $extension}
             <li><span>{$extension.extension|wash}</span><span>{if $extension.version}{$extension.version|wash}{else}&ndash;{/if}</span></li>
         {/foreach}
         </ul>
-        <p class="exp-note">{'Their authors, licences and websites are on'|i18n( 'design/admin/setup/info' )} <a href={'/ezinfo/about'|ezurl}>{'About'|i18n( 'design/admin/setup/info' )}</a>.</p>
+        <p class="a4-help">{'Their authors, licences and websites are on'|i18n( 'design/admin/setup/info' )} <a href={'/ezinfo/about'|ezurl}>{'About'|i18n( 'design/admin/setup/info' )}</a>.</p>
     </div>
 </details>
 
 {* PHP *}
-<details class="exp-panel" id="exp-sysinfo-php">
-    <summary><h2 class="exp-h2">{'PHP extensions and settings'|i18n( 'design/admin/setup/info' )}</h2><span class="exp-muted">{$php_loaded_extensions|count} {'extensions'|i18n( 'design/admin/setup/info' )}</span></summary>
-    <div class="exp-panel-body">
-        <ul class="exp-chips">
-        {foreach $si.php_extensions as $loaded_extension}<li class="exp-chip">{$loaded_extension|wash}</li>{/foreach}
+<details class="a4-fold" id="exp-sysinfo-php">
+    <summary><h2 class="a4-h2">{'PHP extensions and settings'|i18n( 'design/admin/setup/info' )}</h2><span class="a4-muted">{$php_loaded_extensions|count} {'extensions'|i18n( 'design/admin/setup/info' )}</span></summary>
+    <div class="a4-fold-body a4-stack">
+        <ul class="a4-badges">
+        {foreach $si.php_extensions as $loaded_extension}<li class="a4-tag is-mono">{$loaded_extension|wash}</li>{/foreach}
         </ul>
-        <ul class="exp-inline">
+        <ul class="a4-setup-inline">
             <li><code>file_uploads</code> {if $php_ini.file_uploads}{'on'|i18n( 'design/admin/setup/info' )}{else}{'off'|i18n( 'design/admin/setup/info' )}{/if}</li>
             <li><code>open_basedir</code> {if $php_ini.open_basedir}{'set'|i18n( 'design/admin/setup/info' )}{else}{'not set'|i18n( 'design/admin/setup/info' )}{/if}</li>
             <li><code>max_file_uploads</code> {$si.facts.php.max_file_uploads|wash}</li>
@@ -157,8 +156,8 @@
         </ul>
         {if $autoload_functions}
         <div>
-            <h3>{'PHP autoload functions'|i18n( 'design/admin/setup/info' )}</h3>
-            <ol class="exp-note">
+            <h3 class="a4-h3">{'PHP autoload functions'|i18n( 'design/admin/setup/info' )}</h3>
+            <ol class="a4-help">
             {foreach $autoload_functions as $key => $function}
                 {if is_array( $function )}
                     {if $function[0]|is_object()}
@@ -172,15 +171,15 @@
             </ol>
         </div>
         {/if}
-        <p class="exp-note">{'The full PHP configuration of this server process, without the request and the environment (they carry the sign-in and the session cookie):'|i18n( 'design/admin/setup/info' )} <a href={'/setup/info/php'|ezurl} rel="nofollow">{'PHP details (phpinfo)'|i18n( 'design/admin/setup/info' )}</a></p>
+        <p class="a4-help">{'The full PHP configuration of this server process, without the request and the environment (they carry the sign-in and the session cookie):'|i18n( 'design/admin/setup/info' )} <a href={'/setup/info/php'|ezurl} rel="nofollow">{'PHP details (phpinfo)'|i18n( 'design/admin/setup/info' )}</a></p>
     </div>
 </details>
 
 {* Site addresses *}
-<details class="exp-panel" id="exp-sysinfo-site"{if $site_info.configured_placeholder} open{/if}>
-    <summary><h2 class="exp-h2">{'Site addresses'|i18n( 'design/admin/setup/info' )}</h2><span class="exp-muted">{$site_info.siteaccess|wash}</span></summary>
-    <div class="exp-panel-body">
-        <dl class="exp-rows">
+<details class="a4-fold" id="exp-sysinfo-site"{if $site_info.configured_placeholder} open{/if}>
+    <summary><h2 class="a4-h2">{'Site addresses'|i18n( 'design/admin/setup/info' )}</h2><span class="a4-muted">{$site_info.siteaccess|wash}</span></summary>
+    <div class="a4-fold-body a4-stack">
+        <dl class="a4-setup-rows">
             <dt>{'Site'|i18n( 'design/admin/setup/info' )}</dt>
             <dd>{if $site_info.public_url}<a href="{$site_info.public_url|wash}">{$site_info.public_url|wash}</a> ({$site_info.public_siteaccess|wash}){else}&mdash;{/if}</dd>
             {if and( $site_info.url, ne( $site_info.siteaccess, $site_info.public_siteaccess ) )}
@@ -188,59 +187,59 @@
             <dd><a href="{$site_info.url|wash}">{$site_info.url|wash}</a> ({$site_info.siteaccess|wash})</dd>
             {/if}
             <dt>{'Site URL setting'|i18n( 'design/admin/setup/info' )}</dt>
-            <dd>{if $site_info.configured}<code>{$site_info.configured|wash}</code>{else}<em>{'(empty)'|i18n( 'design/admin/setup/info' )}</em>{/if} <span class="exp-muted">site.ini [SiteSettings] SiteURL, {$site_info.siteaccess|wash}</span></dd>
+            <dd>{if $site_info.configured}<code>{$site_info.configured|wash}</code>{else}<em>{'(empty)'|i18n( 'design/admin/setup/info' )}</em>{/if} <span class="a4-muted">site.ini [SiteSettings] SiteURL, {$site_info.siteaccess|wash}</span></dd>
         </dl>
         {if $site_info.configured_placeholder}
-        <div class="exp-feedback is-warn"><p><strong>{'This is not an address visitors can reach.'|i18n( 'design/admin/setup/info' )}</strong>
+        <div class="a4-notice is-warn"><p><strong>{'This is not an address visitors can reach.'|i18n( 'design/admin/setup/info' )}</strong>
         {'Mails, feeds and links made outside a request (cronjobs, notifications) use this setting. Set it in settings/siteaccess/%siteaccess/site.ini.append.php.'|i18n( 'design/admin/setup/info',, hash( '%siteaccess', $site_info.siteaccess|wash ) )}</p></div>
         {/if}
     </div>
 </details>
 
 {* The opcode cache and APCu, for whatever serves the page *}
-<details class="exp-panel" id="php-caches">
-    <summary><h2 class="exp-h2">{'OPcache and APCu'|i18n( 'design/admin/setup/info' )}</h2><span class="exp-muted">{'figures of the process that answered'|i18n( 'design/admin/setup/info' )}</span></summary>
-    <div class="exp-panel-body">
-    <div class="exp-two">
+<details class="a4-fold" id="php-caches">
+    <summary><h2 class="a4-h2">{'OPcache and APCu'|i18n( 'design/admin/setup/info' )}</h2><span class="a4-muted">{'figures of the process that answered'|i18n( 'design/admin/setup/info' )}</span></summary>
+    <div class="a4-fold-body a4-stack">
+    <div class="a4-grid is-wide">
     {foreach hash( 'opcache', 'OPcache', 'apcu', 'APCu' ) as $key => $title}
     {def $cache=$php_caches[$key]}
-    <div class="exp-box">
-        <div class="exp-subhead">
-            <h3>{$title|wash}</h3>
+    <div class="a4-card a4-stack">
+        <div class="a4-title-row">
+            <h3 class="a4-h3">{$title|wash}</h3>
             <small>{if eq( $key, 'opcache' )}{'compiled PHP scripts'|i18n( 'design/admin/setup/info' )}{else}{'data in shared memory'|i18n( 'design/admin/setup/info' )}{/if}</small>
             {if $cache|not}
-                <span class="exp-badge">{'not installed'|i18n( 'design/admin/setup/info' )}</span>
+                <span class="a4-badge">{'not installed'|i18n( 'design/admin/setup/info' )}</span>
             {elseif $cache.enabled}
-                <span class="exp-badge is-ok">{'enabled'|i18n( 'design/admin/setup/info' )}</span>{if $cache.version}<small>{$cache.version|wash}</small>{/if}
+                <span class="a4-badge is-ok">{'enabled'|i18n( 'design/admin/setup/info' )}</span>{if $cache.version}<small>{$cache.version|wash}</small>{/if}
             {else}
-                <span class="exp-badge is-warn">{'off'|i18n( 'design/admin/setup/info' )}</span>
+                <span class="a4-badge is-warn">{'off'|i18n( 'design/admin/setup/info' )}</span>
             {/if}
         </div>
-        {if and( $cache, $cache.enabled|not )}<p class="exp-note">{$cache.why_off|wash}</p>{/if}
+        {if and( $cache, $cache.enabled|not )}<p class="a4-help">{$cache.why_off|wash}</p>{/if}
         {if and( $cache, $cache.bars )}
-        <dl class="exp-bars">
+        <dl class="a4-setup-bars">
         {foreach $cache.bars as $bar}
             {* Green while there is room; amber from 75 %, red from 90 % -- for the hit rate the other way round *}
             {set $si_level = cond( eq( $bar.label, 'Hit rate' ),
-                                   cond( ge( $bar.percent, 90 ), '', ge( $bar.percent, 60 ), 'is-warn', 'is-bad' ),
-                                   cond( ge( $bar.percent, 90 ), 'is-bad', ge( $bar.percent, 75 ), 'is-warn', '' ) )}
+                                   cond( ge( $bar.percent, 90 ), 'is-ok', ge( $bar.percent, 60 ), 'is-warn', 'is-bad' ),
+                                   cond( ge( $bar.percent, 90 ), 'is-bad', ge( $bar.percent, 75 ), 'is-warn', 'is-ok' ) )}
             <dt>{$bar.label|i18n( 'design/admin/setup/info' )}</dt>
-            <dd><div class="exp-bar {$si_level}" role="img" aria-label="{$bar.percent|wash} %"><span style="width: {$bar.percent|int}%"></span></div></dd>
-            <dd class="exp-bar-text">{$bar.text|wash}</dd>
+            <dd><div class="a4-meter {$si_level}" role="img" aria-label="{$bar.percent|wash} %"><span class="a4-pct-{min( 100, max( 0, $bar.percent|int ) )}"></span></div></dd>
+            <dd class="a4-setup-bar-text">{$bar.text|wash}</dd>
         {/foreach}
         </dl>
         {/if}
         {if and( $cache, $cache.figures )}
-        <ul class="exp-inline">{foreach $cache.figures as $name => $value}<li>{$name|wash}: {$value|wash}</li>{/foreach}</ul>
+        <ul class="a4-setup-inline">{foreach $cache.figures as $name => $value}<li>{$name|wash}: {$value|wash}</li>{/foreach}</ul>
         {/if}
         {if and( $cache, $cache.settings )}
-        <ul class="exp-inline">{foreach $cache.settings as $name => $value}<li><code>{$name|wash}</code> {$value|wash}</li>{/foreach}</ul>
+        <ul class="a4-setup-inline">{foreach $cache.settings as $name => $value}<li><code>{$name|wash}</code> {$value|wash}</li>{/foreach}</ul>
         {/if}
     </div>
     {undef $cache}
     {/foreach}
     </div>
-    <p class="exp-note">{'These figures belong to the server process that answered this page; a command-line script, another php-fpm pool or another engine has caches of its own.'|i18n( 'design/admin/setup/info' )}
+    <p class="a4-help">{'These figures belong to the server process that answered this page; a command-line script, another php-fpm pool or another engine has caches of its own.'|i18n( 'design/admin/setup/info' )}
     {if $can_flush_caches}
         {'Both can be emptied on'|i18n( 'design/admin/setup/info' )} <a href="{'/setup/cache'|ezurl( 'no' )}#php-caches">{'Setup &gt; Caches'|i18n( 'design/admin/setup/info' )}</a>.
     {/if}</p>
@@ -249,10 +248,10 @@
 
 {* The Velocity engine serving this page, and what it answers itself *}
 {if $velocity_info}
-<details class="exp-panel" id="exp-sysinfo-velocity" open>
-    <summary><h2 class="exp-h2">{$velocity_info.brand|wash} &mdash; {$velocity_info.engine_name|wash}</h2>{if $velocity_info.version}<span class="exp-muted">{$velocity_info.version|wash}</span>{/if}</summary>
-    <div class="exp-panel-body">
-        <dl class="exp-rows">
+<details class="a4-fold" id="exp-sysinfo-velocity" open>
+    <summary><h2 class="a4-h2">{$velocity_info.brand|wash} &mdash; {$velocity_info.engine_name|wash}</h2>{if $velocity_info.version}<span class="a4-muted">{$velocity_info.version|wash}</span>{/if}</summary>
+    <div class="a4-fold-body a4-stack">
+        <dl class="a4-setup-rows">
             <dt>{'Engine'|i18n( 'design/admin/setup/info' )}</dt>
             <dd>{$velocity_info.engine_name|wash} (<code>{$velocity_info.engine|wash}</code>) &mdash; {$velocity_info.role_text|wash}.
                 {if $velocity_info.is_default}
@@ -260,7 +259,7 @@
                 {else}
                     {'The default engine is %default; this one runs with %command.'|i18n( 'design/admin/setup/info',, hash( '%default', $velocity_info.default|wash, '%command', concat( '<code>exp:velocity start --engine=', $velocity_info.engine|wash, '</code>' ) ) )}
                 {/if}
-                {if $velocity_info.velocity|not}<br /><span class="exp-muted">{'This server was not started by exp:velocity (it answers on another port than velocity.ini gives this engine), so the status below is limited to what the request itself shows.'|i18n( 'design/admin/setup/info' )}</span>{/if}
+                {if $velocity_info.velocity|not}<br /><span class="a4-muted">{'This server was not started by exp:velocity (it answers on another port than velocity.ini gives this engine), so the status below is limited to what the request itself shows.'|i18n( 'design/admin/setup/info' )}</span>{/if}
             </dd>
             <dt>{'Address'|i18n( 'design/admin/setup/info' )}</dt>
             <dd><a href="{$velocity_info.url|wash}">{$velocity_info.url|wash}</a> &mdash; {'reachable from %reach'|i18n( 'design/admin/setup/info',, hash( '%reach', $velocity_info.reach|wash ) )}</dd>
@@ -273,9 +272,9 @@
         </dl>
         {* What the server answers itself, with who may open it. Tokens are never put into these links. *}
         <div>
-            <h3>{'Views of the server'|i18n( 'design/admin/setup/info' )}</h3>
-            <div class="exp-table-wrap">
-            <table class="exp-table exp-table-views">
+            <h3 class="a4-h3">{'Views of the server'|i18n( 'design/admin/setup/info' )}</h3>
+            <div class="a4-table-wrap">
+            <table class="a4-table a4-setup-table-views">
             <thead><tr>
                 <th scope="col">{'View'|i18n( 'design/admin/setup/info' )}</th>
                 <th scope="col">{'Type'|i18n( 'design/admin/setup/info' )}</th>
@@ -296,19 +295,19 @@
             </div>
         </div>
         {if $velocity_info.notes}
-        <ul class="exp-note">{foreach $velocity_info.notes as $note}<li>{$note|wash}</li>{/foreach}</ul>
+        <ul class="a4-help">{foreach $velocity_info.notes as $note}<li>{$note|wash}</li>{/foreach}</ul>
         {/if}
         {if $velocity_info.others}
         <div>
-            <h3>{'Other engines running'|i18n( 'design/admin/setup/info' )}</h3>
-            <ul class="exp-note">
+            <h3 class="a4-h3">{'Other engines running'|i18n( 'design/admin/setup/info' )}</h3>
+            <ul class="a4-help">
             {foreach $velocity_info.others as $other}
                 <li>{$other.name|wash} (<code>{$other.engine|wash}</code>, {$other.role|wash})
                 {foreach $other.urls as $url}<a href="{$url|wash}">{$url|wash}</a>{delimiter} {'and'|i18n( 'design/admin/setup/info' )} {/delimiter}{/foreach}
                 &mdash; {'stop it with %command'|i18n( 'design/admin/setup/info',, hash( '%command', concat( '<code>exp:velocity stop --engine=', $other.engine|wash, '</code>' ) ) )}</li>
             {/foreach}
             </ul>
-            <p class="exp-note">{'Started from this installation as well. A site is served by one engine; another one running is usually left from a test or a benchmark.'|i18n( 'design/admin/setup/info' )}</p>
+            <p class="a4-help">{'Started from this installation as well. A site is served by one engine; another one running is usually left from a test or a benchmark.'|i18n( 'design/admin/setup/info' )}</p>
         </div>
         {/if}
     </div>
@@ -317,17 +316,17 @@
 
 {if and( $velocity_info, eq( $velocity_info.engine, 'qbix' ) )}
 {* Where the running engine came from: when a kernel edit appears to do nothing, this is the first thing to read *}
-<details class="exp-panel" id="exp-sysinfo-engine">
-    <summary><h2 class="exp-h2">{'Phar App Engine'|i18n( 'design/admin/setup/info' )}</h2><span class="exp-muted">{if eq( $engine_info.source, 'archive' )}{'The archive'|i18n( 'design/admin/setup/info' )}{else}{'Individual files on disk'|i18n( 'design/admin/setup/info' )}{/if}</span></summary>
-    <div class="exp-panel-body">
-        <dl class="exp-rows">
+<details class="a4-fold" id="exp-sysinfo-engine">
+    <summary><h2 class="a4-h2">{'Phar App Engine'|i18n( 'design/admin/setup/info' )}</h2><span class="a4-muted">{if eq( $engine_info.source, 'archive' )}{'The archive'|i18n( 'design/admin/setup/info' )}{else}{'Individual files on disk'|i18n( 'design/admin/setup/info' )}{/if}</span></summary>
+    <div class="a4-fold-body a4-stack">
+        <dl class="a4-setup-rows">
             <dt>{'Loaded from'|i18n( 'design/admin/setup/info' )}</dt>
             <dd>{if eq( $engine_info.source, 'archive' )}
                     {'The archive'|i18n( 'design/admin/setup/info' )} &mdash; <code>{$engine_info.archive|wash}</code>
                 {else}
                     {'Individual files on disk &mdash; the archive below is not being used, because the EXP_ENGINE_PHAR environment variable is not set'|i18n( 'design/admin/setup/info' )}
                 {/if}
-                <br /><span class="exp-muted">{'Served by %server.'|i18n( 'design/admin/setup/info',, hash( '%server', $engine_info.server|wash ) )}
+                <br /><span class="a4-muted">{'Served by %server.'|i18n( 'design/admin/setup/info',, hash( '%server', $engine_info.server|wash ) )}
                 {if eq( $engine_info.source, 'archive' )}
                     {'To run from the files on disk again: %command.'|i18n( 'design/admin/setup/info',, hash( '%command', $engine_info.switch_off|wash ) )}
                 {else}
@@ -344,12 +343,12 @@
             <dt>{'Archive is current'|i18n( 'design/admin/setup/info' )}</dt>
             <dd>{$engine_info.matches_repo|wash}
                 {if $engine_info.stale_reason}
-                    <br /><span class="exp-muted">{'Why'|i18n( 'design/admin/setup/info' )}: {$engine_info.stale_reason|wash}.</span>
+                    <br /><span class="a4-muted">{'Why'|i18n( 'design/admin/setup/info' )}: {$engine_info.stale_reason|wash}.</span>
                     <br />{'To fix'|i18n( 'design/admin/setup/info' )}: <code>{$engine_info.stale_fix|wash}</code>
-                    <br /><span class="exp-muted">{if ne( $engine_info.source, 'archive' )}{'Nothing is running from the archive at the moment, so this is not affecting the site.'|i18n( 'design/admin/setup/info' )}{else}{'The site is running from this archive, so what is on disk is not what is being served.'|i18n( 'design/admin/setup/info' )}{/if}</span>
+                    <br /><span class="a4-muted">{if ne( $engine_info.source, 'archive' )}{'Nothing is running from the archive at the moment, so this is not affecting the site.'|i18n( 'design/admin/setup/info' )}{else}{'The site is running from this archive, so what is on disk is not what is being served.'|i18n( 'design/admin/setup/info' )}{/if}</span>
                 {/if}</dd>
             <dt>{'Phar stream wrapper'|i18n( 'design/admin/setup/info' )}</dt>
-            <dd>{$engine_info.phar_wrapper|wash}{if eq( $engine_info.phar_wrapper, 'unregistered' )}<br /><span class="exp-muted">{'Deliberate: with it registered, a file that is both a valid image and a valid archive can be executed through a phar:// path.'|i18n( 'design/admin/setup/info' )}</span>{/if}</dd>
+            <dd>{$engine_info.phar_wrapper|wash}{if eq( $engine_info.phar_wrapper, 'unregistered' )}<br /><span class="a4-muted">{'Deliberate: with it registered, a file that is both a valid image and a valid archive can be executed through a phar:// path.'|i18n( 'design/admin/setup/info' )}</span>{/if}</dd>
             <dt>{'Writing archives (phar.readonly)'|i18n( 'design/admin/setup/info' )}</dt><dd>{$engine_info.phar_readonly|wash}</dd>
         </dl>
     </div>
@@ -357,51 +356,51 @@
 {/if}
 
 {if $http_cache}
-<details class="exp-panel" id="http-cache"{if $http_cache.message} open{/if}>
-    <summary><h2 class="exp-h2">{'HTTP cache (role-aware)'|i18n( 'design/admin/setup/info' )}</h2>
-        {if $http_cache.enabled|not}<span class="exp-badge">{'disabled'|i18n( 'design/admin/setup/info' )}</span>
-        {elseif $http_cache.started|not}<span class="exp-badge is-warn">{'enabled, nothing stored yet'|i18n( 'design/admin/setup/info' )}</span>
-        {else}<span class="exp-badge is-ok">{'enabled'|i18n( 'design/admin/setup/info' )}</span>{/if}
-        <span class="exp-muted">{'Whole pages, per permission context'|i18n( 'design/admin/setup/info' )}</span></summary>
-    <div class="exp-panel-body">
+<details class="a4-fold" id="http-cache"{if $http_cache.message} open{/if}>
+    <summary><h2 class="a4-h2">{'HTTP cache (role-aware)'|i18n( 'design/admin/setup/info' )}</h2>
+        {if $http_cache.enabled|not}<span class="a4-badge">{'disabled'|i18n( 'design/admin/setup/info' )}</span>
+        {elseif $http_cache.started|not}<span class="a4-badge is-warn">{'enabled, nothing stored yet'|i18n( 'design/admin/setup/info' )}</span>
+        {else}<span class="a4-badge is-ok">{'enabled'|i18n( 'design/admin/setup/info' )}</span>{/if}
+        <span class="a4-muted">{'Whole pages, per permission context'|i18n( 'design/admin/setup/info' )}</span></summary>
+    <div class="a4-fold-body a4-stack">
         {if $http_cache.enabled|not}
-            <p class="exp-note">{'Switch it on with Enabled=enabled in settings/httpcache.ini (an override); every page is rendered until then.'|i18n( 'design/admin/setup/info' )}</p>
+            <p class="a4-help">{'Switch it on with Enabled=enabled in settings/httpcache.ini (an override); every page is rendered until then.'|i18n( 'design/admin/setup/info' )}</p>
         {elseif $http_cache.started|not}
-            <p class="exp-note">{'The first page requested on a cached siteaccess starts it.'|i18n( 'design/admin/setup/info' )}</p>
+            <p class="a4-help">{'The first page requested on a cached siteaccess starts it.'|i18n( 'design/admin/setup/info' )}</p>
         {/if}
-        {if $http_cache.message}<div class="exp-feedback {if and( $cache_action, $cache_action.ok|not )}is-warn{else}is-ok{/if}" role="status"><p>{$http_cache.message|wash}</p></div>{/if}
+        {if $http_cache.message}<div class="a4-notice {if and( $cache_action, $cache_action.ok|not )}is-warn{else}is-ok{/if}" role="status"><p>{$http_cache.message|wash}</p></div>{/if}
         {if $http_cache.started}
             {if $http_cache.bars}
-            <dl class="exp-bars">
+            <dl class="a4-setup-bars">
             {foreach $http_cache.bars as $bar}
-                {set $si_level = cond( ge( $bar.percent, 90 ), '', ge( $bar.percent, 60 ), 'is-warn', 'is-bad' )}
+                {set $si_level = cond( ge( $bar.percent, 90 ), 'is-ok', ge( $bar.percent, 60 ), 'is-warn', 'is-bad' )}
                 <dt>{$bar.label|i18n( 'design/admin/setup/info' )}</dt>
-                <dd><div class="exp-bar {$si_level}" role="img" aria-label="{$bar.percent|wash} %"><span style="width: {$bar.percent|int}%"></span></div></dd>
-                <dd class="exp-bar-text">{$bar.text|wash}</dd>
+                <dd><div class="a4-meter {$si_level}" role="img" aria-label="{$bar.percent|wash} %"><span class="a4-pct-{min( 100, max( 0, $bar.percent|int ) )}"></span></div></dd>
+                <dd class="a4-setup-bar-text">{$bar.text|wash}</dd>
             {/foreach}
             </dl>
             {elseif $http_cache.stats|not}
-            <p class="exp-note">{'No server has counted yet: hit counts need APCu in the PHP that serves the site.'|i18n( 'design/admin/setup/info' )}</p>
+            <p class="a4-help">{'No server has counted yet: hit counts need APCu in the PHP that serves the site.'|i18n( 'design/admin/setup/info' )}</p>
             {/if}
-            <ul class="exp-inline">{foreach $http_cache.figures as $name => $value}<li>{$name|wash}: <strong>{$value|wash}</strong></li>{/foreach}</ul>
+            <ul class="a4-setup-inline">{foreach $http_cache.figures as $name => $value}<li>{$name|wash}: <strong>{$value|wash}</strong></li>{/foreach}</ul>
             {if $http_cache.reasons}
             <div>
-                <p class="exp-note">{'Why requests were not served from the cache'|i18n( 'design/admin/setup/info' )}:</p>
-                <dl class="exp-bars">
+                <p class="a4-help">{'Why requests were not served from the cache'|i18n( 'design/admin/setup/info' )}:</p>
+                <dl class="a4-setup-bars">
                 {foreach $http_cache.reasons as $r}
                     <dt><code>{$r.reason|wash}</code></dt>
-                    <dd><div class="exp-bar is-neutral" role="img" aria-label="{$r.percent|wash} %"><span style="width: {$r.percent|int}%"></span></div></dd>
-                    <dd class="exp-bar-text">{$r.count|wash}</dd>
+                    <dd><div class="a4-meter is-info" role="img" aria-label="{$r.percent|wash} %"><span class="a4-pct-{min( 100, max( 0, $r.percent|int ) )}"></span></div></dd>
+                    <dd class="a4-setup-bar-text">{$r.count|wash}</dd>
                 {/foreach}
                 </dl>
             </div>
             {/if}
-            <ul class="exp-inline">{foreach $http_cache.settings as $name => $value}<li><code>{$name|wash}</code> {$value|wash}</li>{/foreach}<li><code>{$http_cache.dir|wash}</code></li></ul>
+            <ul class="a4-setup-inline">{foreach $http_cache.settings as $name => $value}<li><code>{$name|wash}</code> {$value|wash}</li>{/foreach}<li><code>{$http_cache.dir|wash}</code></li></ul>
             {if $can_flush_caches}
-            <form method="post" action={'/setup/info'|ezurl} class="exp-sysinfo-form">
-                <button type="submit" class="exp-btn exp-btn-small" name="HttpCacheAction" value="purge" onclick="return confirm( '{'Purge every cached page?'|i18n( 'design/admin/setup/info' )|wash( javascript )}' );">{'Purge all pages'|i18n( 'design/admin/setup/info' )}</button>
-                <button type="submit" class="exp-btn exp-btn-small" name="HttpCacheAction" value="gc">{'Remove dead entries'|i18n( 'design/admin/setup/info' )}</button>
-                {if $http_cache.stats}<button type="submit" class="exp-btn exp-btn-small" name="HttpCacheAction" value="reset">{'Reset counters'|i18n( 'design/admin/setup/info' )}</button>{/if}
+            <form method="post" action={'/setup/info'|ezurl} class="a4-actions">
+                <button type="submit" class="a4-btn a4-btn-small" name="HttpCacheAction" value="purge" onclick="return confirm( '{'Purge every cached page?'|i18n( 'design/admin/setup/info' )|wash( javascript )}' );">{'Purge all pages'|i18n( 'design/admin/setup/info' )}</button>
+                <button type="submit" class="a4-btn a4-btn-small" name="HttpCacheAction" value="gc">{'Remove dead entries'|i18n( 'design/admin/setup/info' )}</button>
+                {if $http_cache.stats}<button type="submit" class="a4-btn a4-btn-small" name="HttpCacheAction" value="reset">{'Reset counters'|i18n( 'design/admin/setup/info' )}</button>{/if}
             </form>
             {/if}
         {/if}
@@ -410,22 +409,22 @@
 {/if}
 
 {if $sql_profile}
-<details class="exp-panel" id="database-queries"{if $sql_profile.message} open{/if}>
-    <summary><h2 class="exp-h2">{'Database queries'|i18n( 'design/admin/setup/info' )}</h2>
-        {if $sql_profile.mongo}<span class="exp-badge">{'MongoDB: not an SQL engine'|i18n( 'design/admin/setup/info' )}</span>
-        {elseif $sql_profile.on}<span class="exp-badge is-ok">{'profile on'|i18n( 'design/admin/setup/info' )}</span>
-        {else}<span class="exp-badge">{'profile off'|i18n( 'design/admin/setup/info' )}</span>{/if}
-        <span class="exp-muted"><code>{$sql_profile.engine|wash}</code></span></summary>
-    <div class="exp-panel-body">
-        {if $sql_profile.mongo}<p class="exp-note">{'The query cache is for the SQL engines. The MongoDB driver keeps its own statement profile (var/tmp/mongo_profile.on).'|i18n( 'design/admin/setup/info' )}</p>{/if}
-        {if $sql_profile.message}<div class="exp-feedback {if and( $cache_action, $cache_action.ok|not )}is-warn{else}is-ok{/if}" role="status"><p>{$sql_profile.message|wash}</p></div>{/if}
+<details class="a4-fold" id="database-queries"{if $sql_profile.message} open{/if}>
+    <summary><h2 class="a4-h2">{'Database queries'|i18n( 'design/admin/setup/info' )}</h2>
+        {if $sql_profile.mongo}<span class="a4-badge">{'MongoDB: not an SQL engine'|i18n( 'design/admin/setup/info' )}</span>
+        {elseif $sql_profile.on}<span class="a4-badge is-ok">{'profile on'|i18n( 'design/admin/setup/info' )}</span>
+        {else}<span class="a4-badge">{'profile off'|i18n( 'design/admin/setup/info' )}</span>{/if}
+        <span class="a4-muted"><code>{$sql_profile.engine|wash}</code></span></summary>
+    <div class="a4-fold-body a4-stack">
+        {if $sql_profile.mongo}<p class="a4-help">{'The query cache is for the SQL engines. The MongoDB driver keeps its own statement profile (var/tmp/mongo_profile.on).'|i18n( 'design/admin/setup/info' )}</p>{/if}
+        {if $sql_profile.message}<div class="a4-notice {if and( $cache_action, $cache_action.ok|not )}is-warn{else}is-ok{/if}" role="status"><p>{$sql_profile.message|wash}</p></div>{/if}
 
         {if and( $sql_profile.mongo|not, $query_cache )}
-        <div class="exp-box">
-            <div class="exp-subhead"><h3>{'Query cache'|i18n( 'design/admin/setup/info' )}</h3>
-                {if $query_cache.enabled}<span class="exp-badge is-ok">{$query_cache.mode|wash}</span>{else}<span class="exp-badge">{'off'|i18n( 'design/admin/setup/info' )}</span>{/if}
+        <div class="a4-card a4-stack">
+            <div class="a4-title-row"><h3 class="a4-h3">{'Query cache'|i18n( 'design/admin/setup/info' )}</h3>
+                {if $query_cache.enabled}<span class="a4-badge is-ok">{$query_cache.mode|wash}</span>{else}<span class="a4-badge">{'off'|i18n( 'design/admin/setup/info' )}</span>{/if}
                 <small>{'settings/querycache.ini'|i18n( 'design/admin/setup/info' )}: MaxAge={$query_cache.max_age|wash}&nbsp;s, MaxRows={$query_cache.max_rows|wash}{if $query_cache.exclude}, ExcludeTables={$query_cache.exclude|implode( ', ' )|wash}{/if}</small></div>
-            <p class="exp-note">
+            <p class="a4-help">
                 {if $query_cache.mode|eq( 'shared' )}
                     {if $query_cache.apcu}
                         {'%entries results held in APCu (%size) by this server'|i18n( 'design/admin/setup/info',, hash( '%entries', concat( '<strong>', $query_cache.entries|wash, '</strong>' ), '%size', concat( $query_cache.memory_kb|wash, '&nbsp;KB' ) ) )}
@@ -439,18 +438,18 @@
                 {if $query_cache.state_exists|not}({'no state file yet'|i18n( 'design/admin/setup/info' )}){/if}
             </p>
             {if $query_cache.counters}
-            <p class="exp-note">
+            <p class="a4-help">
                 {'This server since %date: %requests requests, %hits hits, %misses misses'|i18n( 'design/admin/setup/info',, hash( '%date', cond( $query_cache.counters.since, $query_cache.counters.since|l10n( shortdatetime ), '-' ), '%requests', concat( '<strong>', $query_cache.counters.requests|wash, '</strong>' ), '%hits', concat( '<strong>', $query_cache.counters.hits|wash, '</strong>' ), '%misses', concat( '<strong>', $query_cache.counters.misses|wash, '</strong>' ) ) )}{if $query_cache.counters.hit_rate|ne( '' )} ({'%rate hit rate'|i18n( 'design/admin/setup/info',, hash( '%rate', concat( '<strong>', $query_cache.counters.hit_rate|wash, '&nbsp;%</strong>' ) ) )}){/if},
                 {'%uncacheable not cacheable, %writes writes'|i18n( 'design/admin/setup/info',, hash( '%uncacheable', $query_cache.counters.uncacheable|wash, '%writes', $query_cache.counters.writes|wash ) )}
             </p>
             {/if}
             {if $query_cache.recent_writes}
-            <ul class="exp-inline"><li>{'Last written'|i18n( 'design/admin/setup/info' )}:</li>{foreach $query_cache.recent_writes as $w}<li><code>{$w.table|wash}</code> {$w.ago|wash}&nbsp;s</li>{/foreach}</ul>
+            <ul class="a4-setup-inline"><li>{'Last written'|i18n( 'design/admin/setup/info' )}:</li>{foreach $query_cache.recent_writes as $w}<li><code>{$w.table|wash}</code> {$w.ago|wash}&nbsp;s</li>{/foreach}</ul>
             {/if}
             {if $can_flush_caches}
-            <form method="post" action={'/setup/info'|ezurl} class="exp-sysinfo-form" style="margin-top: 10px;">
-                <button type="submit" class="exp-btn exp-btn-small" name="QueryCacheAction" value="clear">{'Clear the query cache'|i18n( 'design/admin/setup/info' )}</button>
-                {if $query_cache.counters}<button type="submit" class="exp-btn exp-btn-small" name="QueryCacheAction" value="reset">{'Reset the counters'|i18n( 'design/admin/setup/info' )}</button>{/if}
+            <form method="post" action={'/setup/info'|ezurl} class="a4-actions">
+                <button type="submit" class="a4-btn a4-btn-small" name="QueryCacheAction" value="clear">{'Clear the query cache'|i18n( 'design/admin/setup/info' )}</button>
+                {if $query_cache.counters}<button type="submit" class="a4-btn a4-btn-small" name="QueryCacheAction" value="reset">{'Reset the counters'|i18n( 'design/admin/setup/info' )}</button>{/if}
             </form>
             {/if}
         </div>
@@ -458,50 +457,50 @@
 
         {if $sql_profile.mongo|not}
             {if $sql_profile.summary}
-            <p class="exp-note">
+            <p class="a4-help">
                 {'Over the last %n profiled requests: %statements statements, %repeats exact repeats (%repeat_pct), %db_ms in the database'|i18n( 'design/admin/setup/info',, hash( '%n', $sql_profile.summary.requests|wash, '%statements', concat( '<strong>', $sql_profile.summary.statements|wash, '</strong>' ), '%repeats', concat( '<strong>', $sql_profile.summary.repeats|wash, '</strong>' ), '%repeat_pct', concat( $sql_profile.summary.repeat_pct|wash, '&nbsp;%' ), '%db_ms', concat( '<strong>', $sql_profile.summary.db_ms|wash, '&nbsp;ms</strong>' ) ) )}
                 &middot; {'a per-request memo would save %memo_ms, a shared query cache about %shared_ms'|i18n( 'design/admin/setup/info',, hash( '%memo_ms', concat( '<strong>', $sql_profile.summary.memo_ms|wash, '&nbsp;ms</strong>' ), '%shared_ms', concat( '<strong>', $sql_profile.summary.shared_ms|wash, '&nbsp;ms</strong>' ) ) )}
             </p>
-            <div class="exp-table-wrap">
-            <table class="exp-table">
+            <div class="a4-table-wrap">
+            <table class="a4-table">
             <thead><tr>
                 <th scope="col">{'Time'|i18n( 'design/admin/setup/info' )}</th>
                 <th scope="col">{'Request'|i18n( 'design/admin/setup/info' )}</th>
-                <th scope="col" class="exp-num">{'Statements'|i18n( 'design/admin/setup/info' )}</th>
-                <th scope="col" class="exp-num">{'Distinct'|i18n( 'design/admin/setup/info' )}</th>
-                <th scope="col" class="exp-num">{'Repeats'|i18n( 'design/admin/setup/info' )}</th>
-                <th scope="col" class="exp-num">{'In the database'|i18n( 'design/admin/setup/info' )}</th>
-                <th scope="col" class="exp-num">{'Memo saves'|i18n( 'design/admin/setup/info' )}</th>
-                <th scope="col" class="exp-num">{'Shared cache saves'|i18n( 'design/admin/setup/info' )}</th>
+                <th scope="col" class="a4-num">{'Statements'|i18n( 'design/admin/setup/info' )}</th>
+                <th scope="col" class="a4-num">{'Distinct'|i18n( 'design/admin/setup/info' )}</th>
+                <th scope="col" class="a4-num">{'Repeats'|i18n( 'design/admin/setup/info' )}</th>
+                <th scope="col" class="a4-num">{'In the database'|i18n( 'design/admin/setup/info' )}</th>
+                <th scope="col" class="a4-num">{'Memo saves'|i18n( 'design/admin/setup/info' )}</th>
+                <th scope="col" class="a4-num">{'Shared cache saves'|i18n( 'design/admin/setup/info' )}</th>
             </tr></thead>
             <tbody>
             {foreach $sql_profile.rows as $row}
             <tr>
                 <td>{$row.time|wash}</td>
                 <td><code>{$row.uri|wash}</code></td>
-                <td class="exp-num">{$row.statements|wash}</td>
-                <td class="exp-num">{$row.distinct|wash}</td>
-                <td class="exp-num">{$row.repeats|wash}</td>
-                <td class="exp-num">{$row.db_ms|wash}&nbsp;ms</td>
-                <td class="exp-num">{$row.memo_ms|wash}&nbsp;ms</td>
-                <td class="exp-num">{$row.shared_ms|wash}&nbsp;ms</td>
+                <td class="a4-num">{$row.statements|wash}</td>
+                <td class="a4-num">{$row.distinct|wash}</td>
+                <td class="a4-num">{$row.repeats|wash}</td>
+                <td class="a4-num">{$row.db_ms|wash}&nbsp;ms</td>
+                <td class="a4-num">{$row.memo_ms|wash}&nbsp;ms</td>
+                <td class="a4-num">{$row.shared_ms|wash}&nbsp;ms</td>
             </tr>
             {/foreach}
             </tbody>
             </table>
             </div>
             {elseif $sql_profile.on}
-            <p class="exp-note">{'On, and nothing profiled yet: open a few pages.'|i18n( 'design/admin/setup/info' )}</p>
+            <p class="a4-help">{'On, and nothing profiled yet: open a few pages.'|i18n( 'design/admin/setup/info' )}</p>
             {else}
-            <p class="exp-note">{'Switch the profile on to see how many statements each request runs, how many are exact repeats, and what a query cache would save.'|i18n( 'design/admin/setup/info' )}</p>
+            <p class="a4-help">{'Switch the profile on to see how many statements each request runs, how many are exact repeats, and what a query cache would save.'|i18n( 'design/admin/setup/info' )}</p>
             {/if}
-            <p class="exp-note">{'The profile counts the statements that reached the database: with the query cache on, a cached answer is not in it. "Memo saves" is what the request mode would save, "shared cache saves" what the shared mode would (about 15 µs per answer). Counters are per server, since each server has its own APCu. The log is var/tmp/sql_profile.log; see doc/bc/6.0/sql-query-cache.md.'|i18n( 'design/admin/setup/info' )}</p>
+            <p class="a4-help">{'The profile counts the statements that reached the database: with the query cache on, a cached answer is not in it. "Memo saves" is what the request mode would save, "shared cache saves" what the shared mode would (about 15 µs per answer). Counters are per server, since each server has its own APCu. The log is var/tmp/sql_profile.log; see doc/bc/6.0/sql-query-cache.md.'|i18n( 'design/admin/setup/info' )}</p>
             {if $can_flush_caches}
-            <form method="post" action={'/setup/info'|ezurl} class="exp-sysinfo-form">
+            <form method="post" action={'/setup/info'|ezurl} class="a4-actions">
                 {if $sql_profile.on}
-                    <button type="submit" class="exp-btn exp-btn-small" name="SQLProfileAction" value="off">{'Switch the SQL profile off'|i18n( 'design/admin/setup/info' )}</button>
+                    <button type="submit" class="a4-btn a4-btn-small" name="SQLProfileAction" value="off">{'Switch the SQL profile off'|i18n( 'design/admin/setup/info' )}</button>
                 {else}
-                    <button type="submit" class="exp-btn exp-btn-small" name="SQLProfileAction" value="on">{'Switch the SQL profile on'|i18n( 'design/admin/setup/info' )}</button>
+                    <button type="submit" class="a4-btn a4-btn-small" name="SQLProfileAction" value="on">{'Switch the SQL profile on'|i18n( 'design/admin/setup/info' )}</button>
                 {/if}
             </form>
             {/if}
@@ -511,11 +510,11 @@
 {/if}
 
 {if $response_cache}
-<details class="exp-panel" id="exp-sysinfo-response-cache">
-    <summary><h2 class="exp-h2">{'Response cache (web server)'|i18n( 'design/admin/setup/info' )}</h2>
-        {if $response_cache.enabled}<span class="exp-badge is-ok">{'enabled'|i18n( 'design/admin/setup/info' )}</span>{else}<span class="exp-badge">{'disabled'|i18n( 'design/admin/setup/info' )}</span>{/if}</summary>
-    <div class="exp-panel-body">
-        <dl class="exp-rows">
+<details class="a4-fold" id="exp-sysinfo-response-cache">
+    <summary><h2 class="a4-h2">{'Response cache (web server)'|i18n( 'design/admin/setup/info' )}</h2>
+        {if $response_cache.enabled}<span class="a4-badge is-ok">{'enabled'|i18n( 'design/admin/setup/info' )}</span>{else}<span class="a4-badge">{'disabled'|i18n( 'design/admin/setup/info' )}</span>{/if}</summary>
+    <div class="a4-fold-body a4-stack">
+        <dl class="a4-setup-rows">
             <dt>{'Status'|i18n( 'design/admin/setup/info' )}</dt>
             <dd>{if $response_cache.enabled}
                     {if $response_cache.default_ttl|gt( 0 )}
@@ -548,7 +547,7 @@
                 <br /><code>{$response_cache.dir|wash}</code>{if $response_cache.dir_mode} &mdash; {'directories %mode'|i18n( 'design/admin/setup/info',, hash( '%mode', $response_cache.dir_mode|wash ) )}{/if}{if $response_cache.file_mode}, {'files %mode'|i18n( 'design/admin/setup/info',, hash( '%mode', $response_cache.file_mode|wash ) )}{/if}</dd>
             <dt>{'Not cached for visitors carrying'|i18n( 'design/admin/setup/info' )}</dt>
             <dd>{if $response_cache.skip_cookies}
-                    {foreach $response_cache.skip_cookies as $cookie}<code>{$cookie|wash}</code>{delimiter}, {/delimiter}{/foreach} <span class="exp-muted">({'matched as a prefix'|i18n( 'design/admin/setup/info' )})</span>
+                    {foreach $response_cache.skip_cookies as $cookie}<code>{$cookie|wash}</code>{delimiter}, {/delimiter}{/foreach} <span class="a4-muted">({'matched as a prefix'|i18n( 'design/admin/setup/info' )})</span>
                 {else}
                     <strong>{'no cookie -- signed-in visitors would be served from the cache'|i18n( 'design/admin/setup/info' )}</strong>
                 {/if}</dd>
@@ -564,10 +563,10 @@
 {/if}
 
 {* The database connection: what the overview card leaves out *}
-<details class="exp-panel" id="exp-sysinfo-database">
-    <summary><h2 class="exp-h2">{'Database connection'|i18n( 'design/admin/setup/info' )}</h2><span class="exp-muted">{$database_info|wash}</span></summary>
-    <div class="exp-panel-body">
-        <dl class="exp-rows">
+<details class="a4-fold" id="exp-sysinfo-database">
+    <summary><h2 class="a4-h2">{'Database connection'|i18n( 'design/admin/setup/info' )}</h2><span class="a4-muted">{$database_info|wash}</span></summary>
+    <div class="a4-fold-body a4-stack">
+        <dl class="a4-setup-rows">
             <dt>{'Type'|i18n( 'design/admin/setup/info', 'Database type' )}</dt><dd>{$database_info|wash}</dd>
             {if $database_object.database_server}<dt>{'Server'|i18n( 'design/admin/setup/info', 'Database server' )}</dt><dd>{$database_object.database_server|wash}</dd>{/if}
             {if $database_object.database_socket_path}<dt>{'Socket path'|i18n( 'design/admin/setup/info', 'Database socket path' )}</dt><dd><code>{$database_object.database_socket_path|wash}</code></dd>{/if}
@@ -581,12 +580,12 @@
 </details>
 
 {* The report for support *}
-<details class="exp-panel" id="exp-sysinfo-report">
-    <summary><h2 class="exp-h2">{'Report for support'|i18n( 'design/admin/setup/info' )}</h2><span class="exp-muted">{'the text the download and the Copy button give'|i18n( 'design/admin/setup/info' )}</span></summary>
-    <div class="exp-panel-body">
-        <p class="exp-note">{'Passwords, keys, tokens, session ids, credentials in addresses and the full paths of the server are left out; paths inside the installation are relative to it.'|i18n( 'design/admin/setup/info' )}</p>
-        <label class="exp-sr" for="exp-sysinfo-report-text">{'Report for support'|i18n( 'design/admin/setup/info' )}</label>
-        <textarea class="exp-report" id="exp-sysinfo-report-text" readonly rows="18" spellcheck="false">{$si.text|wash}</textarea>
+<details class="a4-fold" id="exp-sysinfo-report">
+    <summary><h2 class="a4-h2">{'Report for support'|i18n( 'design/admin/setup/info' )}</h2><span class="a4-muted">{'the text the download and the Copy button give'|i18n( 'design/admin/setup/info' )}</span></summary>
+    <div class="a4-fold-body a4-stack">
+        <p class="a4-help">{'Passwords, keys, tokens, session ids, credentials in addresses and the full paths of the server are left out; paths inside the installation are relative to it.'|i18n( 'design/admin/setup/info' )}</p>
+        <label class="a4-sr-only" for="exp-sysinfo-report-text">{'Report for support'|i18n( 'design/admin/setup/info' )}</label>
+        <textarea class="a4-input a4-setup-report" id="exp-sysinfo-report-text" readonly rows="18" spellcheck="false">{$si.text|wash}</textarea>
     </div>
 </details>
 

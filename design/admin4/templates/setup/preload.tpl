@@ -6,10 +6,9 @@
    and the page follows it.
 
    The same file is in design/admin and design/admin4, so every administration design resolves it. The styling is
-   setup/preload_exp_style.tpl, scoped to .exp-preload. Everything works without javascript: the form posts Start,
+   the shared admin components and stylesheets/modules/setup.css (.a4-setup-preload). Everything works without javascript: the form posts Start,
    Dry run and Stop, and a reload shows how a run is doing. The script below follows a run as it goes.
    Guide: doc/guides/preloading-caches.md *}
-{include uri='design:setup/preload_exp_style.tpl'}
 {def $preload_states = hash(
         'finished', array( 'is-ok', 'Finished'|i18n( 'design/admin/setup/preload' ) ),
         'stopped', array( 'is-warn', 'Stopped'|i18n( 'design/admin/setup/preload' ) ),
@@ -23,7 +22,7 @@
      $preload_min = 0
      $preload_sec = 0
      $preload_last = cond( $runs|count|gt( 0 ), $runs[0], false() )}
-<div class="context-block exp-preload" id="exp-preload"
+<div class="context-block a4-page a4-setup-preload" id="exp-preload"
      data-job-url={$job_url|ezurl()}
      data-running-id="{if $running}{$running.id|wash}{/if}"
      data-max-pages="{if $running}{$running.max_pages|wash}{/if}">
@@ -35,57 +34,57 @@
 
 <div class="box-ml"><div class="box-mr"><div class="box-content">
 
-<p class="exp-intro">{'Requests the pages of a site as a visitor would, so its caches are warm before the first visitor arrives: the page views, the image aliases and the compiled templates. It starts at the section pages and follows the links of the site, and lists the links that are broken with the pages that link to them.'|i18n( 'design/admin/setup/preload' )}</p>
+<p class="a4-intro">{'Requests the pages of a site as a visitor would, so its caches are warm before the first visitor arrives: the page views, the image aliases and the compiled templates. It starts at the section pages and follows the links of the site, and lists the links that are broken with the pages that link to them.'|i18n( 'design/admin/setup/preload' )}</p>
 
 {* What the last action said *}
 {foreach $feedback as $preload_message}
 {switch match=$preload_message.type}
-{case match='started'}<div class="exp-feedback is-ok" role="status"><p>{'The preload of %siteaccess was started in the background. Its progress is shown below; you can leave this page and come back.'|i18n( 'design/admin/setup/preload',, hash( '%siteaccess', $preload_message.message|wash ) )}</p></div>{/case}
-{case match='stopping'}<div class="exp-feedback is-ok" role="status"><p>{'The preload was asked to stop. It ends after the page it is requesting.'|i18n( 'design/admin/setup/preload' )}</p></div>{/case}
-{case match='not_running'}<div class="exp-feedback is-warn" role="status"><p>{'That preload is not running any more.'|i18n( 'design/admin/setup/preload' )}</p></div>{/case}
-{case match='busy'}<div class="exp-feedback is-warn" role="alert"><p>{'A preload is already running. Only one runs at a time: wait for it to end, or stop it first.'|i18n( 'design/admin/setup/preload' )}</p></div>{/case}
-{case match='unknown_siteaccess'}<div class="exp-feedback is-bad" role="alert"><p>{'Choose one of the sites in the list.'|i18n( 'design/admin/setup/preload' )}</p></div>{/case}
-{case}<div class="exp-feedback is-bad" role="alert"><p><strong>{'The preload could not be started.'|i18n( 'design/admin/setup/preload' )}</strong> {$preload_message.message|wash}</p></div>{/case}
+{case match='started'}<div class="a4-notice is-ok" role="status"><p>{'The preload of %siteaccess was started in the background. Its progress is shown below; you can leave this page and come back.'|i18n( 'design/admin/setup/preload',, hash( '%siteaccess', $preload_message.message|wash ) )}</p></div>{/case}
+{case match='stopping'}<div class="a4-notice is-ok" role="status"><p>{'The preload was asked to stop. It ends after the page it is requesting.'|i18n( 'design/admin/setup/preload' )}</p></div>{/case}
+{case match='not_running'}<div class="a4-notice is-warn" role="status"><p>{'That preload is not running any more.'|i18n( 'design/admin/setup/preload' )}</p></div>{/case}
+{case match='busy'}<div class="a4-notice is-warn" role="alert"><p>{'A preload is already running. Only one runs at a time: wait for it to end, or stop it first.'|i18n( 'design/admin/setup/preload' )}</p></div>{/case}
+{case match='unknown_siteaccess'}<div class="a4-notice is-bad" role="alert"><p>{'Choose one of the sites in the list.'|i18n( 'design/admin/setup/preload' )}</p></div>{/case}
+{case}<div class="a4-notice is-bad" role="alert"><p><strong>{'The preload could not be started.'|i18n( 'design/admin/setup/preload' )}</strong> {$preload_message.message|wash}</p></div>{/case}
 {/switch}
 {/foreach}
 
 {if $targets|count|eq( 0 )}
-<div class="exp-feedback is-bad" role="alert">
+<div class="a4-notice is-bad" role="alert">
     <p><strong>{'There is no site to warm.'|i18n( 'design/admin/setup/preload' )}</strong>
     {'Add the siteaccesses of your sites to site.ini [SiteAccessSettings] RelatedSiteAccessList and give each a SiteURL.'|i18n( 'design/admin/setup/preload' )}</p>
 </div>
 {/if}
 
 {* What is running now *}
-<div class="exp-statusbar" id="exp-preload-status">
-    <div class="exp-status">
+<div class="a4-toolbar" id="exp-preload-status">
+    <div class="a4-setup-status-main">
     {if $running}
-        <div class="exp-status-line">
-            <span class="exp-pill is-running"><span class="exp-dot" aria-hidden="true"></span>{'Running'|i18n( 'design/admin/setup/preload' )}</span>
-            <span class="exp-meta">{'%site, started %time from %source'|i18n( 'design/admin/setup/preload',, hash( '%site', cond( $running.siteaccess|ne( '' ), $running.siteaccess, $running.base_url )|wash, '%time', $running.started|l10n( shortdatetime ), '%source', cond( is_set( $preload_sources[$running.source] ), $preload_sources[$running.source], $running.source|wash ) ) )}</span>
+        <div class="a4-row">
+            <span class="a4-status is-running"><span class="a4-dot" aria-hidden="true"></span>{'Running'|i18n( 'design/admin/setup/preload' )}</span>
+            <span class="a4-meta">{'%site, started %time from %source'|i18n( 'design/admin/setup/preload',, hash( '%site', cond( $running.siteaccess|ne( '' ), $running.siteaccess, $running.base_url )|wash, '%time', $running.started|l10n( shortdatetime ), '%source', cond( is_set( $preload_sources[$running.source] ), $preload_sources[$running.source], $running.source|wash ) ) )}</span>
         </div>
-        <div class="exp-progress" aria-hidden="true"><span id="exp-preload-bar" style="width: {if $running.max_pages|gt( 0 )}{min( 100, $running.counts.fetched|mul( 100 )|div( $running.max_pages )|round )}{else}0{/if}%"></span></div>
-        <p class="exp-meta" id="exp-preload-count" aria-live="polite">{'%pages of at most %max pages warmed, %broken broken'|i18n( 'design/admin/setup/preload',, hash( '%pages', $running.counts.fetched, '%max', $running.max_pages, '%broken', $running.counts.broken ) )}</p>
-        <p class="exp-current" id="exp-preload-current">{$running.current|wash}</p>
+        <div class="a4-meter is-ok a4-setup-progress" aria-hidden="true"><span id="exp-preload-bar" class="a4-pct-{if $running.max_pages|gt( 0 )}{min( 100, $running.counts.fetched|mul( 100 )|div( $running.max_pages )|round )}{else}0{/if}"></span></div>
+        <p class="a4-meta" id="exp-preload-count" aria-live="polite">{'%pages of at most %max pages warmed, %broken broken'|i18n( 'design/admin/setup/preload',, hash( '%pages', $running.counts.fetched, '%max', $running.max_pages, '%broken', $running.counts.broken ) )}</p>
+        <p class="a4-setup-current" id="exp-preload-current">{$running.current|wash}</p>
     {else}
-        <div class="exp-status-line">
-            <span class="exp-pill"><span class="exp-dot" aria-hidden="true"></span>{'Idle'|i18n( 'design/admin/setup/preload' )}</span>
+        <div class="a4-row">
+            <span class="a4-status"><span class="a4-dot" aria-hidden="true"></span>{'Idle'|i18n( 'design/admin/setup/preload' )}</span>
             {if $preload_last}
-            <span class="exp-meta">{'Last run %time: %site'|i18n( 'design/admin/setup/preload',, hash( '%time', $preload_last.started|l10n( shortdatetime ), '%site', cond( $preload_last.siteaccess|ne( '' ), $preload_last.siteaccess, $preload_last.base_url )|wash ) )}
-                <span class="exp-badge {$preload_states[$preload_last.state][0]}">{$preload_states[$preload_last.state][1]}</span></span>
+            <span class="a4-meta">{'Last run %time: %site'|i18n( 'design/admin/setup/preload',, hash( '%time', $preload_last.started|l10n( shortdatetime ), '%site', cond( $preload_last.siteaccess|ne( '' ), $preload_last.siteaccess, $preload_last.base_url )|wash ) )}
+                <span class="a4-badge {$preload_states[$preload_last.state][0]}">{$preload_states[$preload_last.state][1]}</span></span>
             {else}
-            <span class="exp-meta">{'No site has been preloaded yet.'|i18n( 'design/admin/setup/preload' )}</span>
+            <span class="a4-meta">{'No site has been preloaded yet.'|i18n( 'design/admin/setup/preload' )}</span>
             {/if}
         </div>
     {/if}
     </div>
-    <div class="exp-actions">
+    <div class="a4-actions">
     {if $running}
-        <a class="exp-btn" href={'setup/preload'|ezurl()} id="exp-preload-refresh">{'Refresh'|i18n( 'design/admin/setup/preload' )}</a>
+        <a class="a4-btn" href={'setup/preload'|ezurl()} id="exp-preload-refresh">{'Refresh'|i18n( 'design/admin/setup/preload' )}</a>
         {if $running.id|ne( '' )}
         <form method="post" action={'setup/preload'|ezurl()}>
             <input type="hidden" name="JobID" value="{$running.id|wash}" />
-            <button class="exp-btn exp-btn-outline-danger" type="submit" name="Action" value="stop" id="exp-preload-stop">{'Stop'|i18n( 'design/admin/setup/preload' )}</button>
+            <button class="a4-btn a4-btn-outline-danger" type="submit" name="Action" value="stop" id="exp-preload-stop">{'Stop'|i18n( 'design/admin/setup/preload' )}</button>
         </form>
         {/if}
     {/if}
@@ -93,88 +92,88 @@
 </div>
 
 {* The live output of the run that is followed *}
-<section class="exp-section" id="exp-preload-live"{if $running|not} hidden{/if} aria-labelledby="exp-preload-live-title">
-    <div class="exp-section-head">
-        <h2 class="exp-h2" id="exp-preload-live-title">{'Output'|i18n( 'design/admin/setup/preload' )}</h2>
-        <span class="exp-meta" id="exp-preload-state" aria-live="polite"></span>
+<section class="a4-section" id="exp-preload-live"{if $running|not} hidden{/if} aria-labelledby="exp-preload-live-title">
+    <div class="a4-section-head">
+        <h2 class="a4-h2" id="exp-preload-live-title">{'Output'|i18n( 'design/admin/setup/preload' )}</h2>
+        <span class="a4-meta" id="exp-preload-state" aria-live="polite"></span>
     </div>
-    <ul class="exp-figures" id="exp-preload-figures" hidden></ul>
-    <pre class="exp-console" id="exp-preload-console" tabindex="0" aria-label="{'Output of the preload'|i18n( 'design/admin/setup/preload' )|wash}"></pre>
+    <ul class="a4-figures" id="exp-preload-figures" hidden></ul>
+    <pre class="a4-setup-console" id="exp-preload-console" tabindex="0" aria-label="{'Output of the preload'|i18n( 'design/admin/setup/preload' )|wash}"></pre>
     <div id="exp-preload-broken"></div>
 </section>
 
 {* The form *}
-<form method="post" action={'setup/preload'|ezurl()} class="exp-card" id="exp-preload-form" aria-labelledby="exp-preload-form-title">
-    <div class="exp-section-head">
-        <h2 class="exp-h2" id="exp-preload-form-title">{'Start a preload'|i18n( 'design/admin/setup/preload' )}</h2>
+<form method="post" action={'setup/preload'|ezurl()} class="a4-card a4-stack a4-setup-card" id="exp-preload-form" aria-labelledby="exp-preload-form-title">
+    <div class="a4-section-head">
+        <h2 class="a4-h2" id="exp-preload-form-title">{'Start a preload'|i18n( 'design/admin/setup/preload' )}</h2>
         <p>{'Choose the site and how far to go. A dry run shows the address and the starting pages without requesting anything.'|i18n( 'design/admin/setup/preload' )}</p>
     </div>
-    <div class="exp-fields">
-        <div class="exp-field exp-field-site">
+    <div class="a4-setup-fields">
+        <div class="a4-field a4-setup-field-site">
             <label for="preload-siteaccess">{'Site to warm'|i18n( 'design/admin/setup/preload' )}</label>
             <select id="preload-siteaccess" name="SiteAccess"{if $targets|count|eq( 0 )} disabled="disabled"{/if}>
             {foreach $targets as $preload_target}
                 <option value="{$preload_target.name|wash}"{if eq( $preload_target.name, $selected_siteaccess )} selected="selected"{/if}>{$preload_target.name|wash} &mdash; {$preload_target.url|wash}</option>
             {/foreach}
             </select>
-            <span class="exp-help">{'The siteaccesses of site.ini RelatedSiteAccessList, at the address their SiteURL and the siteaccess matching give them.'|i18n( 'design/admin/setup/preload' )}</span>
+            <span class="a4-help">{'The siteaccesses of site.ini RelatedSiteAccessList, at the address their SiteURL and the siteaccess matching give them.'|i18n( 'design/admin/setup/preload' )}</span>
         </div>
-        <div class="exp-field">
+        <div class="a4-field">
             <label for="preload-max-pages">{'Page limit'|i18n( 'design/admin/setup/preload' )}</label>
             <input id="preload-max-pages" name="MaxPages" type="number" min="1" max="{$max_pages_limit}" step="1" inputmode="numeric" value="{$form.max_pages|wash}" aria-describedby="preload-max-pages-help" />
-            <span class="exp-help" id="preload-max-pages-help">{'The most pages one run requests, 1 to %max.'|i18n( 'design/admin/setup/preload',, hash( '%max', $max_pages_limit ) )}</span>
+            <span class="a4-help" id="preload-max-pages-help">{'The most pages one run requests, 1 to %max.'|i18n( 'design/admin/setup/preload',, hash( '%max', $max_pages_limit ) )}</span>
         </div>
-        <div class="exp-field">
+        <div class="a4-field">
             <label for="preload-max-depth">{'Link depth'|i18n( 'design/admin/setup/preload' )}</label>
             <input id="preload-max-depth" name="MaxDepth" type="number" min="0" max="{$max_depth_limit}" step="1" inputmode="numeric" value="{$form.max_depth|wash}" aria-describedby="preload-max-depth-help" />
-            <span class="exp-help" id="preload-max-depth-help">{'How many links from a starting page are followed; 0 warms the starting pages only.'|i18n( 'design/admin/setup/preload' )}</span>
+            <span class="a4-help" id="preload-max-depth-help">{'How many links from a starting page are followed; 0 warms the starting pages only.'|i18n( 'design/admin/setup/preload' )}</span>
         </div>
-        <div class="exp-field exp-field-wide">
-            <span class="exp-label">{'What to warm'|i18n( 'design/admin/setup/preload' )}</span>
-            <label class="exp-check" for="preload-images">
+        <div class="a4-field a4-field-wide">
+            <span class="a4-label">{'What to warm'|i18n( 'design/admin/setup/preload' )}</span>
+            <label class="a4-check" for="preload-images">
                 <input id="preload-images" type="checkbox" name="Images" value="1"{if $form.images} checked="checked"{/if} />
                 <span><strong>{'Also check the images on each page'|i18n( 'design/admin/setup/preload' )}</strong>
-                <span class="exp-help">{'The pages make their image aliases when they are rendered. This also requests every image they show, once, and lists the ones that are missing with the pages that show them.'|i18n( 'design/admin/setup/preload' )}</span></span>
+                <span class="a4-help">{'The pages make their image aliases when they are rendered. This also requests every image they show, once, and lists the ones that are missing with the pages that show them.'|i18n( 'design/admin/setup/preload' )}</span></span>
             </label>
         </div>
     </div>
-    <div class="exp-formbar">
-        <button class="exp-btn exp-btn-primary" type="submit" name="Action" value="start" id="preload-start"{if or( $running, $targets|count|eq( 0 ) )} disabled="disabled"{/if}>{'Start preloading'|i18n( 'design/admin/setup/preload' )}</button>
-        <button class="exp-btn" type="submit" name="Action" value="dryrun" id="preload-dryrun"{if $targets|count|eq( 0 )} disabled="disabled"{/if}>{'Dry run'|i18n( 'design/admin/setup/preload' )}</button>
-        <p class="exp-meta" id="preload-start-note">{if $running}{'A preload is running; the next one can start when it has ended.'|i18n( 'design/admin/setup/preload' )}{else}{'The run goes on in the background. One preload runs at a time.'|i18n( 'design/admin/setup/preload' )}{/if}</p>
+    <div class="a4-setup-formbar">
+        <button class="a4-btn a4-btn-primary" type="submit" name="Action" value="start" id="preload-start"{if or( $running, $targets|count|eq( 0 ) )} disabled="disabled"{/if}>{'Start preloading'|i18n( 'design/admin/setup/preload' )}</button>
+        <button class="a4-btn" type="submit" name="Action" value="dryrun" id="preload-dryrun"{if $targets|count|eq( 0 )} disabled="disabled"{/if}>{'Dry run'|i18n( 'design/admin/setup/preload' )}</button>
+        <p class="a4-meta" id="preload-start-note">{if $running}{'A preload is running; the next one can start when it has ended.'|i18n( 'design/admin/setup/preload' )}{else}{'The run goes on in the background. One preload runs at a time.'|i18n( 'design/admin/setup/preload' )}{/if}</p>
     </div>
 </form>
 
 {* The dry run *}
-<section class="exp-card" id="exp-preload-plan"{if $plan|not} hidden{/if} aria-labelledby="exp-preload-plan-title">
-    <div class="exp-section-head">
-        <h2 class="exp-h2" id="exp-preload-plan-title">{'Dry run'|i18n( 'design/admin/setup/preload' )}</h2>
+<section class="a4-card a4-stack a4-setup-card" id="exp-preload-plan"{if $plan|not} hidden{/if} aria-labelledby="exp-preload-plan-title">
+    <div class="a4-section-head">
+        <h2 class="a4-h2" id="exp-preload-plan-title">{'Dry run'|i18n( 'design/admin/setup/preload' )}</h2>
         <p>{'Nothing was requested. A run would start at these pages and follow their links to the same site, up to the limits.'|i18n( 'design/admin/setup/preload' )}</p>
     </div>
     <div id="exp-preload-plan-body">
     {if $plan}
         {if $plan.reached|not}
-        <div class="exp-feedback is-warn"><p>{'The siteaccess matching in site.ini does not send this address to %siteaccess, so the pages warmed may be those of another siteaccess. Check SiteURL and the match settings of the siteaccess.'|i18n( 'design/admin/setup/preload',, hash( '%siteaccess', $plan.siteaccess|wash ) )}</p></div>
+        <div class="a4-notice is-warn"><p>{'The siteaccess matching in site.ini does not send this address to %siteaccess, so the pages warmed may be those of another siteaccess. Check SiteURL and the match settings of the siteaccess.'|i18n( 'design/admin/setup/preload',, hash( '%siteaccess', $plan.siteaccess|wash ) )}</p></div>
         {/if}
-        <dl class="exp-facts">
+        <dl class="a4-facts">
             <div><dt>{'Siteaccess'|i18n( 'design/admin/setup/preload' )}</dt><dd>{$plan.siteaccess|wash}</dd></div>
             <div><dt>{'Address'|i18n( 'design/admin/setup/preload' )}</dt><dd><code>{$plan.base_url|wash}</code></dd></div>
             <div><dt>{'Prefix'|i18n( 'design/admin/setup/preload' )}</dt><dd>{if $plan.prefix|ne( '' )}<code>{$plan.prefix|wash}</code>{else}{'none, matched by host'|i18n( 'design/admin/setup/preload' )}{/if}</dd></div>
             <div><dt>{'Limits'|i18n( 'design/admin/setup/preload' )}</dt><dd>{'%pages pages, link depth %depth'|i18n( 'design/admin/setup/preload',, hash( '%pages', $plan.options.max_pages, '%depth', $plan.options.max_depth ) )}{if $plan.options.images}, {'images checked'|i18n( 'design/admin/setup/preload' )}{/if}</dd></div>
         </dl>
-        <h3 style="margin-top: 14px;">{'Starting pages'|i18n( 'design/admin/setup/preload' )}</h3>
-        <ul class="exp-urls">{foreach $plan.start_urls as $preload_url}<li>{$preload_url|wash}</li>{/foreach}</ul>
-        <h3 style="margin-top: 14px;">{'The same from the shell'|i18n( 'design/admin/setup/preload' )}</h3>
-        <pre class="exp-code">{$plan.command|wash} --dry-run</pre>
+        <h3 class="a4-h3">{'Starting pages'|i18n( 'design/admin/setup/preload' )}</h3>
+        <ul class="a4-setup-urls">{foreach $plan.start_urls as $preload_url}<li>{$preload_url|wash}</li>{/foreach}</ul>
+        <h3 class="a4-h3">{'The same from the shell'|i18n( 'design/admin/setup/preload' )}</h3>
+        <pre class="a4-pre">{$plan.command|wash} --dry-run</pre>
     {/if}
     </div>
 </section>
 
-<div class="exp-columns">
-    <section class="exp-card" aria-labelledby="exp-preload-server-title">
-        <h2 class="exp-h2" id="exp-preload-server-title">{'Which caches it warms'|i18n( 'design/admin/setup/preload' )}</h2>
-        <p style="margin-top: 6px;">{'The run requests each page at the address of the site, so the server that answers that address renders it: here %address.'|i18n( 'design/admin/setup/preload',, hash( '%address', cond( is_set( $start_urls[0] ), $start_urls[0], $base_url )|wash ) )}</p>
-        <ul class="exp-points">
+<div class="a4-grid is-wide">
+    <section class="a4-card a4-stack a4-setup-card" aria-labelledby="exp-preload-server-title">
+        <h2 class="a4-h2" id="exp-preload-server-title">{'Which caches it warms'|i18n( 'design/admin/setup/preload' )}</h2>
+        <p>{'The run requests each page at the address of the site, so the server that answers that address renders it: here %address.'|i18n( 'design/admin/setup/preload',, hash( '%address', cond( is_set( $start_urls[0] ), $start_urls[0], $base_url )|wash ) )}</p>
+        <ul class="a4-setup-points">
             <li>{'The page view cache, the image aliases and the compiled templates are files of this installation. Apache with PHP-FPM and Exponential Velocity share them, so a run warms them for both, whichever server answers.'|i18n( 'design/admin/setup/preload' )}</li>
             {if $servers.velocity}
             <li>{'Velocity is running here (ports %port). Its own response cache keeps a page for %ttl seconds only, so warming it ahead of visitors does not last; the shared caches above are what a run is for.'|i18n( 'design/admin/setup/preload',, hash( '%port', $servers.velocity_port, '%ttl', cond( $servers.velocity_ttl|is_null, '?', $servers.velocity_ttl ) ) )}</li>
@@ -182,70 +181,70 @@
             <li>{'Pages for signed-in users are not warmed: the run is an anonymous visitor.'|i18n( 'design/admin/setup/preload' )}</li>
         </ul>
     </section>
-    <section class="exp-card" aria-labelledby="exp-preload-shell-title">
-        <h2 class="exp-h2" id="exp-preload-shell-title">{'From the shell or cron'|i18n( 'design/admin/setup/preload' )}</h2>
-        <p style="margin-top: 6px;">{'The same run, from the installation directory. It waits for nobody: when a preload is already running it says so and ends. Its runs are listed below with the others.'|i18n( 'design/admin/setup/preload' )}</p>
-        <pre class="exp-code" id="exp-preload-command">{$command_line|wash}</pre>
-        <p style="margin-top: 8px;" class="exp-meta">{'For cron, after the nightly cache clear for example:'|i18n( 'design/admin/setup/preload' )}</p>
-        <pre class="exp-code">30 4 * * * cd {$root_dir|wash} &amp;&amp; {$command_line|wash} -q</pre>
-        <p style="margin-top: 8px;" class="exp-meta">{'Runs are kept in %dir (the last 20).'|i18n( 'design/admin/setup/preload',, hash( '%dir', concat( '<code>', $runs_directory|wash, '</code>' ) ) )}</p>
+    <section class="a4-card a4-stack a4-setup-card" aria-labelledby="exp-preload-shell-title">
+        <h2 class="a4-h2" id="exp-preload-shell-title">{'From the shell or cron'|i18n( 'design/admin/setup/preload' )}</h2>
+        <p>{'The same run, from the installation directory. It waits for nobody: when a preload is already running it says so and ends. Its runs are listed below with the others.'|i18n( 'design/admin/setup/preload' )}</p>
+        <pre class="a4-pre" id="exp-preload-command">{$command_line|wash}</pre>
+        <p class="a4-meta">{'For cron, after the nightly cache clear for example:'|i18n( 'design/admin/setup/preload' )}</p>
+        <pre class="a4-pre">30 4 * * * cd {$root_dir|wash} &amp;&amp; {$command_line|wash} -q</pre>
+        <p class="a4-meta">{'Runs are kept in %dir (the last 20).'|i18n( 'design/admin/setup/preload',, hash( '%dir', concat( '<code>', $runs_directory|wash, '</code>' ) ) )}</p>
     </section>
 </div>
 
 {* The last runs *}
-<section class="exp-section" id="exp-preload-runs" aria-labelledby="exp-preload-runs-title">
-    <div class="exp-section-head">
-        <h2 class="exp-h2" id="exp-preload-runs-title">{'Last runs'|i18n( 'design/admin/setup/preload' )}</h2>
+<section class="a4-section" id="exp-preload-runs" aria-labelledby="exp-preload-runs-title">
+    <div class="a4-section-head">
+        <h2 class="a4-h2" id="exp-preload-runs-title">{'Last runs'|i18n( 'design/admin/setup/preload' )}</h2>
         <p>{'From this page, the shell and cron, newest first. Image aliases made counts the alias files the pages created while the run requested them.'|i18n( 'design/admin/setup/preload' )}</p>
     </div>
     {if $runs|count|eq( 0 )}
-    <p class="exp-empty">{'No runs yet. Start one above, or run the command from the shell.'|i18n( 'design/admin/setup/preload' )}</p>
+    <p class="a4-empty">{'No runs yet. Start one above, or run the command from the shell.'|i18n( 'design/admin/setup/preload' )}</p>
     {else}
-    <div class="exp-table-wrap">
-    <table class="exp-table">
-        <caption class="exp-sr">{'Last runs'|i18n( 'design/admin/setup/preload' )}</caption>
+    <div class="a4-table-wrap">
+    <table class="a4-table">
+        <caption class="a4-sr-only">{'Last runs'|i18n( 'design/admin/setup/preload' )}</caption>
         <thead><tr>
             <th scope="col">{'Run'|i18n( 'design/admin/setup/preload' )}</th>
             <th scope="col">{'Result'|i18n( 'design/admin/setup/preload' )}</th>
-            <th scope="col" class="exp-num">{'Duration'|i18n( 'design/admin/setup/preload' )}</th>
-            <th scope="col" class="exp-num">{'Pages'|i18n( 'design/admin/setup/preload' )}</th>
-            <th scope="col" class="exp-num">{'Image aliases made'|i18n( 'design/admin/setup/preload' )}</th>
-            <th scope="col" class="exp-num">{'Failures'|i18n( 'design/admin/setup/preload' )}</th>
+            <th scope="col" class="a4-num">{'Duration'|i18n( 'design/admin/setup/preload' )}</th>
+            <th scope="col" class="a4-num">{'Pages'|i18n( 'design/admin/setup/preload' )}</th>
+            <th scope="col" class="a4-num">{'Image aliases made'|i18n( 'design/admin/setup/preload' )}</th>
+            <th scope="col" class="a4-num">{'Failures'|i18n( 'design/admin/setup/preload' )}</th>
         </tr></thead>
         <tbody>
         {foreach $runs as $preload_run}
         {set $preload_min = cond( $preload_run.seconds|is_null, 0, $preload_run.seconds|div( 60 )|floor )
              $preload_sec = cond( $preload_run.seconds|is_null, 0, $preload_run.seconds|sub( $preload_min|mul( 60 ) )|round )}
         <tr>
-            <td class="exp-run"><span class="exp-nowrap">{$preload_run.started|l10n( shortdatetime )}</span><br />{if $preload_run.siteaccess|ne( '' )}<strong>{$preload_run.siteaccess|wash}</strong> {/if}<span class="exp-meta exp-url-text">{$preload_run.base_url|wash}</span><br /><span class="exp-meta">{cond( is_set( $preload_sources[$preload_run.source] ), $preload_sources[$preload_run.source], $preload_run.source|wash )}</span></td>
-            <td><span class="exp-badge {cond( is_set( $preload_states[$preload_run.state] ), $preload_states[$preload_run.state][0], '' )}">{cond( is_set( $preload_states[$preload_run.state] ), $preload_states[$preload_run.state][1], $preload_run.state|wash )}</span>
-                {if $preload_run.message|ne( '' )}<br /><span class="exp-meta">{$preload_run.message|wash}</span>{/if}</td>
-            <td class="exp-num">{if $preload_run.seconds|is_null}&mdash;{elseif $preload_min|gt( 0 )}{'%min min %sec s'|i18n( 'design/admin/setup/preload',, hash( '%min', $preload_min, '%sec', $preload_sec ) )}{else}{'%sec s'|i18n( 'design/admin/setup/preload',, hash( '%sec', $preload_run.seconds ) )}{/if}</td>
-            <td class="exp-num">{$preload_run.counts.fetched}{if $preload_run.max_pages|gt( 0 )}<span class="exp-meta"> / {$preload_run.max_pages}</span>{/if}</td>
-            <td class="exp-num">{if $preload_run.aliases|is_null}<span class="exp-meta">{'not counted'|i18n( 'design/admin/setup/preload' )}</span>{else}{$preload_run.aliases}{/if}{if $preload_run.images}<br /><span class="exp-meta">{'%count images checked'|i18n( 'design/admin/setup/preload',, hash( '%count', $preload_run.counts.images ) )}</span>{/if}</td>
-            <td class="exp-num">{if $preload_run.failures|count|gt( 0 )}<span class="exp-badge is-bad">{$preload_run.failures|count|sum( $preload_run.failures_more )}</span>{else}0{/if}{if $preload_run.counts.denied|gt( 0 )}<br /><span class="exp-meta">{'%count denied'|i18n( 'design/admin/setup/preload',, hash( '%count', $preload_run.counts.denied ) )}</span>{/if}</td>
+            <td class="a4-setup-run"><span class="a4-nowrap">{$preload_run.started|l10n( shortdatetime )}</span><br />{if $preload_run.siteaccess|ne( '' )}<strong>{$preload_run.siteaccess|wash}</strong> {/if}<span class="a4-meta a4-setup-url-text">{$preload_run.base_url|wash}</span><br /><span class="a4-meta">{cond( is_set( $preload_sources[$preload_run.source] ), $preload_sources[$preload_run.source], $preload_run.source|wash )}</span></td>
+            <td><span class="a4-badge {cond( is_set( $preload_states[$preload_run.state] ), $preload_states[$preload_run.state][0], '' )}">{cond( is_set( $preload_states[$preload_run.state] ), $preload_states[$preload_run.state][1], $preload_run.state|wash )}</span>
+                {if $preload_run.message|ne( '' )}<br /><span class="a4-meta">{$preload_run.message|wash}</span>{/if}</td>
+            <td class="a4-num">{if $preload_run.seconds|is_null}&mdash;{elseif $preload_min|gt( 0 )}{'%min min %sec s'|i18n( 'design/admin/setup/preload',, hash( '%min', $preload_min, '%sec', $preload_sec ) )}{else}{'%sec s'|i18n( 'design/admin/setup/preload',, hash( '%sec', $preload_run.seconds ) )}{/if}</td>
+            <td class="a4-num">{$preload_run.counts.fetched}{if $preload_run.max_pages|gt( 0 )}<span class="a4-meta"> / {$preload_run.max_pages}</span>{/if}</td>
+            <td class="a4-num">{if $preload_run.aliases|is_null}<span class="a4-meta">{'not counted'|i18n( 'design/admin/setup/preload' )}</span>{else}{$preload_run.aliases}{/if}{if $preload_run.images}<br /><span class="a4-meta">{'%count images checked'|i18n( 'design/admin/setup/preload',, hash( '%count', $preload_run.counts.images ) )}</span>{/if}</td>
+            <td class="a4-num">{if $preload_run.failures|count|gt( 0 )}<span class="a4-badge is-bad">{$preload_run.failures|count|sum( $preload_run.failures_more )}</span>{else}0{/if}{if $preload_run.counts.denied|gt( 0 )}<br /><span class="a4-meta">{'%count denied'|i18n( 'design/admin/setup/preload',, hash( '%count', $preload_run.counts.denied ) )}</span>{/if}</td>
         </tr>
         {if $preload_run.failures|count|gt( 0 )}
-        <tr class="exp-detail-row"><td colspan="6">
-            <details class="exp-failures">
+        <tr class="a4-setup-detail-row"><td colspan="6">
+            <details class="a4-setup-failures">
                 <summary>{'The addresses that failed, with the pages that link to them'|i18n( 'design/admin/setup/preload' )}</summary>
-                <div class="exp-table-wrap">
-                <table class="exp-table">
+                <div class="a4-table-wrap">
+                <table class="a4-table">
                     <thead><tr>
                         <th scope="col">{'Address'|i18n( 'design/admin/setup/preload' )}</th>
-                        <th scope="col" class="exp-num">{'Status'|i18n( 'design/admin/setup/preload' )}</th>
+                        <th scope="col" class="a4-num">{'Status'|i18n( 'design/admin/setup/preload' )}</th>
                         <th scope="col">{'Linked from'|i18n( 'design/admin/setup/preload' )}</th>
                     </tr></thead>
                     <tbody>
                     {foreach $preload_run.failures as $preload_failure}
                     <tr>
-                        <td class="exp-url">{if $preload_failure.url|begins_with( 'http' )}<a href="{$preload_failure.url|wash}" rel="noopener noreferrer" target="_blank">{$preload_failure.url|wash}</a>{else}{$preload_failure.url|wash}{/if}</td>
-                        <td class="exp-num">{if $preload_failure.status|gt( 0 )}{$preload_failure.status}{else}<span class="exp-meta">{'no response'|i18n( 'design/admin/setup/preload' )}</span>{/if}</td>
-                        <td class="exp-url">{if $preload_failure.referrers|count|eq( 0 )}<span class="exp-meta">{'a starting page; nothing on the site links to it'|i18n( 'design/admin/setup/preload' )}</span>{else}{foreach $preload_failure.referrers as $preload_from}{if $preload_from|begins_with( 'http' )}<a href="{$preload_from|wash}" rel="noopener noreferrer" target="_blank">{$preload_from|wash}</a>{else}{$preload_from|wash}{/if}{delimiter}<br />{/delimiter}{/foreach}{if $preload_failure.more|gt( 0 )}<br /><span class="exp-meta">{'... and %count more'|i18n( 'design/admin/setup/preload',, hash( '%count', $preload_failure.more ) )}</span>{/if}{/if}</td>
+                        <td class="a4-setup-url">{if $preload_failure.url|begins_with( 'http' )}<a href="{$preload_failure.url|wash}" rel="noopener noreferrer" target="_blank">{$preload_failure.url|wash}</a>{else}{$preload_failure.url|wash}{/if}</td>
+                        <td class="a4-num">{if $preload_failure.status|gt( 0 )}{$preload_failure.status}{else}<span class="a4-meta">{'no response'|i18n( 'design/admin/setup/preload' )}</span>{/if}</td>
+                        <td class="a4-setup-url">{if $preload_failure.referrers|count|eq( 0 )}<span class="a4-meta">{'a starting page; nothing on the site links to it'|i18n( 'design/admin/setup/preload' )}</span>{else}{foreach $preload_failure.referrers as $preload_from}{if $preload_from|begins_with( 'http' )}<a href="{$preload_from|wash}" rel="noopener noreferrer" target="_blank">{$preload_from|wash}</a>{else}{$preload_from|wash}{/if}{delimiter}<br />{/delimiter}{/foreach}{if $preload_failure.more|gt( 0 )}<br /><span class="a4-meta">{'... and %count more'|i18n( 'design/admin/setup/preload',, hash( '%count', $preload_failure.more ) )}</span>{/if}{/if}</td>
                     </tr>
                     {/foreach}
                     {if $preload_run.failures_more|gt( 0 )}
-                    <tr><td colspan="3" class="exp-meta">{'%count more are in the output of the run.'|i18n( 'design/admin/setup/preload',, hash( '%count', $preload_run.failures_more ) )}</td></tr>
+                    <tr><td colspan="3" class="a4-meta">{'%count more are in the output of the run.'|i18n( 'design/admin/setup/preload',, hash( '%count', $preload_run.failures_more ) )}</td></tr>
                     {/if}
                     </tbody>
                 </table>
@@ -330,33 +329,32 @@
     }
     function write( type, message ) {
         var atBottom = consoleEl.scrollTop + consoleEl.clientHeight >= consoleEl.scrollHeight - 8;
-        consoleEl.appendChild( el( 'div', 'is-' + String( type ).replace( /[^a-z-]/g, '' ), message ) );
+        consoleEl.appendChild( el( 'div', 'a4-setup-console-' + String( type ).replace( /[^a-z-]/g, '' ), message ) );
         // follow the tail only while the reader is at the bottom
         if ( atBottom ) consoleEl.scrollTop = consoleEl.scrollHeight;
     }
     function renderBroken( broken ) {
         brokenEl.textContent = '';
-        if ( !broken || !broken.length ) { var none = el( 'p', 'exp-meta', text.noBroken ); none.style.marginTop = '8px'; brokenEl.appendChild( none ); return; }
+        if ( !broken || !broken.length ) { var none = el( 'p', 'a4-meta a4-setup-gap', text.noBroken ); brokenEl.appendChild( none ); return; }
         brokenEl.appendChild( el( 'h3', '', text.brokenHead ) );
-        var wrap = el( 'div', 'exp-table-wrap' ), table = el( 'table', 'exp-table' ), head = el( 'tr' );
-        wrap.style.marginTop = '8px';
+        var wrap = el( 'div', 'a4-table-wrap a4-setup-gap' ), table = el( 'table', 'a4-table' ), head = el( 'tr' );
         [ text.colLink, text.colStatus, text.colFrom ].forEach( function ( label ) { head.appendChild( el( 'th', '', label ) ); } );
         var thead = el( 'thead' ); thead.appendChild( head ); table.appendChild( thead );
         var tbody = el( 'tbody' );
         broken.forEach( function ( entry ) {
-            var row = el( 'tr' ), cell = el( 'td', 'exp-url' );
+            var row = el( 'tr' ), cell = el( 'td', 'a4-setup-url' );
             cell.appendChild( link( entry.url ) ); row.appendChild( cell );
-            row.appendChild( el( 'td', 'exp-num', entry.status ? entry.status : text.noResponse ) );
-            var from = el( 'td', 'exp-url' ), list = entry.referrers || [];
-            if ( !list.length ) from.appendChild( el( 'span', 'exp-meta', text.startPage ) );
+            row.appendChild( el( 'td', 'a4-num', entry.status ? entry.status : text.noResponse ) );
+            var from = el( 'td', 'a4-setup-url' ), list = entry.referrers || [];
+            if ( !list.length ) from.appendChild( el( 'span', 'a4-meta', text.startPage ) );
             list.forEach( function ( url, i ) { if ( i ) from.appendChild( el( 'br' ) ); from.appendChild( link( url ) ); } );
-            if ( entry.more > 0 ) { from.appendChild( el( 'br' ) ); from.appendChild( el( 'span', 'exp-meta', tr( text.more, { count: entry.more } ) ) ); }
+            if ( entry.more > 0 ) { from.appendChild( el( 'br' ) ); from.appendChild( el( 'span', 'a4-meta', tr( text.more, { count: entry.more } ) ) ); }
             row.appendChild( from ); tbody.appendChild( row );
         } );
         table.appendChild( tbody ); wrap.appendChild( table ); brokenEl.appendChild( wrap );
     }
     function figure( value, label, attention ) {
-        var li = el( 'li', 'exp-figure' + ( attention ? ' is-attention' : '' ) );
+        var li = el( 'li', 'a4-figure' + ( attention ? ' is-attention' : '' ) );
         li.appendChild( el( 'strong', '', value ) ); li.appendChild( el( 'span', '', label ) );
         figuresEl.appendChild( li );
     }
@@ -364,7 +362,7 @@
         if ( !status ) return;
         var c = status.counts || {};
         var max = status.max_pages || 0;
-        if ( barEl && max ) barEl.style.width = Math.min( 100, Math.round( ( c.fetched || 0 ) * 100 / max ) ) + "%";
+        if ( barEl && max ) barEl.className = 'a4-pct-' + Math.min( 100, Math.round( ( c.fetched || 0 ) * 100 / max ) );
         if ( countEl ) countEl.textContent = tr( text.count, { pages: c.fetched || 0, max: max, broken: c.broken || 0 } );
         if ( currentEl ) currentEl.textContent = status.current || "";
         if ( status.running ) return;
@@ -383,7 +381,7 @@
         showStatus( status );
         var bar = document.getElementById( 'exp-preload-status' );
         if ( bar ) {
-            var pill = bar.querySelector( '.exp-pill' );
+            var pill = bar.querySelector( '.a4-status' );
             if ( pill ) { pill.classList.remove( 'is-running' ); pill.lastChild.textContent = stateEl.textContent; }
             var stop = document.getElementById( 'exp-preload-stop' );
             if ( stop ) stop.hidden = true;
