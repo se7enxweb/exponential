@@ -276,7 +276,7 @@ ac084a07607e6d6c5a845da15423854f  design/admin/images/view-fullscreen.png
 88bd424484f5cae6b7f2a16f154b3417  design/admin/javascript/ezajaxsubitems_expdatatable.js
 2c35ad74f3ae96723bd750231c27cbe4  design/admin/javascript/leftmenu_widthcontrol.js
 d03d761498ffa705d43d836836910ad2  design/admin/javascript/node_tabs.js
-1beef810c93ab362e678250e782c3c80  design/admin/javascript/popupmenu/ezpopupmenu.js
+e6440b58704620e58a87e47f6aa82464  design/admin/javascript/popupmenu/ezpopupmenu.js
 54cb1a1df10aa18ea280c08a9d97a328  design/admin/override/templates/admin_preview/article.tpl
 fa42107d7f6c82b26eed48050374e9a5  design/admin/override/templates/admin_preview/comment.tpl
 0c4cec334b8bff8d319219e52813802e  design/admin/override/templates/admin_preview/company.tpl
@@ -888,7 +888,7 @@ c3b4efd501310e51f2088b46936df4ec  design/admin4/javascript/ezadmin_menubar.js
 88bd424484f5cae6b7f2a16f154b3417  design/admin4/javascript/ezajaxsubitems_expdatatable.js
 2c35ad74f3ae96723bd750231c27cbe4  design/admin4/javascript/leftmenu_widthcontrol.js
 d03d761498ffa705d43d836836910ad2  design/admin4/javascript/node_tabs.js
-1beef810c93ab362e678250e782c3c80  design/admin4/javascript/popupmenu/ezpopupmenu.js
+e6440b58704620e58a87e47f6aa82464  design/admin4/javascript/popupmenu/ezpopupmenu.js
 54cb1a1df10aa18ea280c08a9d97a328  design/admin4/override/templates/admin_preview/article.tpl
 fa42107d7f6c82b26eed48050374e9a5  design/admin4/override/templates/admin_preview/comment.tpl
 0c4cec334b8bff8d319219e52813802e  design/admin4/override/templates/admin_preview/company.tpl
