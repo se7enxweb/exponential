@@ -21,6 +21,7 @@
  * - No :focus or :focus-visible rule of an admin4 stylesheet sets its outline to none or 0.
  * - components.css sets the colour scheme of both themes and has forced-colors and touch rules; admin4.css stops
  *   motion for prefers-reduced-motion; no admin4 stylesheet transitions "all".
+ * - components.css and admin4.css take font sizes and spacing from the --a4-text-* and --a4-space-* scales.
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminStylingRulesTest.php
  *
@@ -459,6 +460,46 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
         $this->assertStringNotContainsString( '$(window).width()', $sidebar );
         $this->assertSame( 0, preg_match_all( '/(?<!window\.)localStorage/', $sidebar ), 'localStorage only as window.localStorage, inside try' );
         $this->assertSame( 3, substr_count( $sidebar, 'try {' ), 'reading, storing and the clean-up of the old keys each in a try block' );
+    }
+
+    /**
+     * Pixel lengths the frame keeps for its layout offsets (the header's search field, the sign-in panel), not for
+     * the spacing between elements
+     */
+    const FRAME_LAYOUT_LENGTHS = array( '64px', '84px', '92px', '-4px', '-6px' );
+
+    /**
+     * components.css and admin4.css set font sizes with the --a4-text-* tokens and spacing with the --a4-space-*
+     * tokens (1px, 2px and the layout offsets above aside)
+     */
+    public function testFrameAndComponentsUseTheScale()
+    {
+        $problems = array();
+        foreach ( array( 'components.css', 'admin4.css' ) as $file )
+        {
+            foreach ( self::declarations( file_get_contents( self::$root . "/design/admin4/stylesheets/$file" ) ) as $d )
+            {
+                list( $selector, $property, $value ) = $d;
+                if ( ( $property === 'font-size' || $property === 'font' ) && preg_match( '/\d+(\.\d+)?px/', $value ) )
+                {
+                    $problems[] = "$file: $selector { $property: $value } -- use a --a4-text-* token";
+                }
+                if ( preg_match( '/^(margin|padding|gap|row-gap|column-gap)(-|$)/', $property ) )
+                {
+                    preg_match_all( '/(?<![\w.-])-?\d+(\.\d+)?px/', $value, $m );
+                    foreach ( $m[0] as $length )
+                    {
+                        if ( !in_array( $length, array( '1px', '2px', '-1px', '-2px' ), true )
+                             && !( $file === 'admin4.css' && in_array( $length, self::FRAME_LAYOUT_LENGTHS, true ) )
+                             && !( $file === 'components.css' && $length === '-6px' ) )
+                        {
+                            $problems[] = "$file: $selector { $property: $value } -- use a --a4-space-* token";
+                        }
+                    }
+                }
+            }
+        }
+        $this->assertSame( array(), array_values( array_unique( $problems ) ) );
     }
 
     public function testComponentsAreTheSameInAdminAndAdmin4()
