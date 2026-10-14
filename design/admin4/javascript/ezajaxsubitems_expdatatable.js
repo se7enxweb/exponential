@@ -154,7 +154,8 @@ var eZAjaxSubitemsExpDataTable = (function () {
             return '';
         };
         // One language badge per translation (DE, EN), a link to edit it where the user may; the name is the
-        // badge's title and accessible name. Everything from the row or the settings is escaped.
+        // badge's title and accessible name (a link: the code, then the name as hidden text, so its name starts with
+        // what it shows). Everything from the row or the settings is escaped.
         var attr = function (v) {
             return String(v).replace(/&/g, '&#38;').replace(/</g, '&#60;').replace(/>/g, '&#62;').replace(/"/g, '&#34;').replace(/'/g, '&#39;');
         };
@@ -164,8 +165,9 @@ var eZAjaxSubitemsExpDataTable = (function () {
                 var badge = attr((confObj.languageBadges && confObj.languageBadges[e]) || e),
                     name = attr((confObj.languages && confObj.languages[e]) || e);
                 if (row.can_edit === true) {
-                    var label = confObj.editInLanguage ? attr(String(confObj.editInLanguage).replace('%language_name', (confObj.languages && confObj.languages[e]) || e)) : name;
-                    html += '<a class="a4-lang" href="' + attr(confObj.editPrefixURL + '/' + row.contentobject_id + '/f/' + e) + '" title="' + label + '" aria-label="' + label + '" translate="no">' + badge + '</a>';
+                    var langName = (confObj.languages && confObj.languages[e]) || e,
+                        label = confObj.editInLanguage ? attr(String(confObj.editInLanguage).replace('%language_name', function () { return langName; })) : name;
+                    html += '<a class="a4-lang" href="' + attr(confObj.editPrefixURL + '/' + row.contentobject_id + '/f/' + e) + '" title="' + label + '" translate="no">' + badge + '<span class="a4-sr-only"> ' + label + '</span></a>';
                 } else {
                     html += '<span class="a4-lang" title="' + name + '" role="img" aria-label="' + name + '" translate="no">' + badge + '</span>';
                 }

@@ -79,6 +79,10 @@ class AdminLanguageBadgeTest extends PHPUnit\Framework\TestCase
         $script = (string)file_get_contents( self::root() . '/design/admin4/javascript/ezajaxsubitems_expdatatable.js' );
         $this->assertStringContainsString( 'confObj.languageBadges', $script );
         $this->assertMatchesRegularExpression( '/class="a4-lang"[^;]*aria-label=/', $script );
+        // A badge link's name starts with the code it shows (WCAG 2.5.3 label in name): the name follows as hidden text
+        $this->assertStringContainsString( "+ badge + '<span class=\"a4-sr-only\"> ' + label + '</span></a>'", $script );
+        $body = (string)file_get_contents( self::root() . '/design/admin4/templates/node/view/a4_full_body.tpl' );
+        $this->assertStringContainsString( 'plain=true()}<span class="a4-sr-only"> {$language.name|wash}</span></a>', $body );
         $template = (string)file_get_contents( self::root() . '/design/admin4/templates/children_detailed.tpl' );
         $this->assertStringContainsString( 'languageBadges: languageBadges', $template );
         $this->assertStringContainsString( "design:parts/language_badge.tpl' locale=\$locale.locale_code plain=true()", $template );
