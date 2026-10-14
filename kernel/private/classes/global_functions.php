@@ -43,10 +43,32 @@ function eZDisplayDebug()
         eZDebug::appendBottomReport( 'Template Usage Statistics', eZTemplatesStatisticsReporter::generateStatistics( $asHtml ) );
 
         eZDebug::setScriptStop( $scriptStopTime );
-        return eZDebug::printReport( $type == "popup", $asHtml, true, false, true,
+        $report = eZDebug::printReport( $type == "popup", $asHtml, true, false, true,
             true, $ini->variable( "DebugSettings", "DisplayIncludedFiles" ) == 'enabled' );
+        eZDebugReportNoStore( $report );
+        return $report;
     }
     return null;
+}
+
+/**
+ * A page that carries the debug report belongs to this request and this viewer (its timings, queries and messages,
+ * and a report shown by IP to that address only): "private, no-store", so no shared cache keeps it -- Velocity's
+ * response cache had kept an anonymous page with the report of a request from a listed address, and answered every
+ * visitor with it -- and the browser does not replay it either. The role-aware page cache refuses such a page on its
+ * own (ezpHttpCacheListener, "BYPASS (debug report)").
+ *
+ * @param string|null $report what eZDebug::printReport() returned
+ * @return bool whether the header was sent
+ */
+function eZDebugReportNoStore( $report )
+{
+    if ( !is_string( $report ) || trim( $report ) === '' || headers_sent() )
+        return false;
+    header( 'Cache-Control: private, no-store' );
+    header_remove( 'Expires' );
+    header_remove( 'Pragma' );
+    return true;
 }
 
 /**

@@ -64624,8 +64624,116 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Engine</translation>
     </message>
     <message>
-        <source>Not running on Velocity.</source>
-        <translation>Läuft nicht auf Velocity.</translation>
+        <source>Received by Velocity on port %port and rendered by a Velocity worker.</source>
+        <translation>Von Velocity auf Port %port angenommen und von einem Velocity-Worker erzeugt.</translation>
+    </message>
+    <message>
+        <source>Received by Velocity on port %port and rendered by the Velocity parent process (no worker).</source>
+        <translation>Von Velocity auf Port %port angenommen und vom Velocity-Elternprozess erzeugt (kein Worker).</translation>
+    </message>
+    <message>
+        <source>Received by Velocity on port %port and rendered by php-cgi, which Velocity starts for this script (Q.webserver.cgi.patterns).</source>
+        <translation>Von Velocity auf Port %port angenommen und von php-cgi erzeugt, das Velocity für dieses Skript startet (Q.webserver.cgi.patterns).</translation>
+    </message>
+    <message>
+        <source>Rendered on the command line (%sapi), not for a web request.</source>
+        <translation>Auf der Kommandozeile erzeugt (%sapi), nicht für eine Web-Anfrage.</translation>
+    </message>
+    <message>
+        <source>Served by %server / PHP-FPM (port %port), not by Velocity.</source>
+        <translation>Ausgeliefert von %server / PHP-FPM (Port %port), nicht von Velocity.</translation>
+    </message>
+    <message>
+        <source>Served by PHP-FPM (port %port), not by Velocity.</source>
+        <translation>Ausgeliefert von PHP-FPM (Port %port), nicht von Velocity.</translation>
+    </message>
+    <message>
+        <source>Served by Apache with mod_php (port %port), not by Velocity.</source>
+        <translation>Ausgeliefert von Apache mit mod_php (Port %port), nicht von Velocity.</translation>
+    </message>
+    <message>
+        <source>Served by FrankenPHP (port %port), not by Velocity.</source>
+        <translation>Ausgeliefert von FrankenPHP (Port %port), nicht von Velocity.</translation>
+    </message>
+    <message>
+        <source>Served by %server (%sapi, port %port), not by Velocity.</source>
+        <translation>Ausgeliefert von %server (%sapi, Port %port), nicht von Velocity.</translation>
+    </message>
+    <message>
+        <source>port %port</source>
+        <translation>Port %port</translation>
+    </message>
+    <message>
+        <source>forwarded headers: %headers</source>
+        <translation>weitergeleitete Header: %headers</translation>
+    </message>
+    <message>
+        <source>Entered</source>
+        <translation>Eingegangen</translation>
+    </message>
+    <message>
+        <source>Received by</source>
+        <translation>Angenommen von</translation>
+    </message>
+    <message>
+        <source>Rendered by</source>
+        <translation>Erzeugt von</translation>
+    </message>
+    <message>
+        <source>Rendered at</source>
+        <translation>Erzeugt um</translation>
+    </message>
+    <message>
+        <source>Cached</source>
+        <translation>Zwischengespeichert</translation>
+    </message>
+    <message>
+        <source>No: a page with this report is rendered for each request and kept by no cache (Cache-Control: private, no-store).</source>
+        <translation>Nein: eine Seite mit diesem Bericht wird für jede Anfrage erzeugt und von keinem Cache behalten (Cache-Control: private, no-store).</translation>
+    </message>
+    <message>
+        <source>Velocity worker</source>
+        <translation>Velocity-Worker</translation>
+    </message>
+    <message>
+        <source>Velocity parent process</source>
+        <translation>Velocity-Elternprozess</translation>
+    </message>
+    <message>
+        <source>php-cgi</source>
+        <translation>php-cgi</translation>
+    </message>
+    <message>
+        <source>PHP-FPM</source>
+        <translation>PHP-FPM</translation>
+    </message>
+    <message>
+        <source>mod_php</source>
+        <translation>mod_php</translation>
+    </message>
+    <message>
+        <source>FrankenPHP</source>
+        <translation>FrankenPHP</translation>
+    </message>
+    <message>
+        <source>Not available: opcache_get_status() is disabled for this PHP (disable_functions).</source>
+        <translation>Nicht verfügbar: opcache_get_status() ist für dieses PHP abgeschaltet (disable_functions).</translation>
+    </message>
+    <message>
+        <source>Not available: OPcache is not loaded in this PHP.</source>
+        <translation>Nicht verfügbar: OPcache ist in diesem PHP nicht geladen.</translation>
+    </message>
+    <message>
+        <source>This report was rendered at %time by %renderer for a request on port %entry, %age before this page was loaded on port %port: the page came from a cache, not from this request.</source>
+        <translation>Dieser Bericht wurde um %time von %renderer für eine Anfrage auf Port %entry erzeugt, %age bevor diese Seite auf Port %port geladen wurde: die Seite kam aus einem Cache, nicht aus dieser Anfrage.</translation>
+    </message>
+    <message>
+        <source>%count s</source>
+        <translation>%count s</translation>
+    </message>
+    <message>
+        <source>%count min</source>
+        <translation>%count min</translation>
     </message>
     <message>
         <source>Close</source>

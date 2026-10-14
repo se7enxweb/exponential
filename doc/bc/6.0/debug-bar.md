@@ -394,7 +394,7 @@ the report's own defaults.
 | Templates | the templates used (`ShowUsedTemplates`) and the CSS/JS packer report, or how to turn them on |
 | Included files | the included PHP files (`DisplayIncludedFiles`), or their number and how to list them |
 | Memory | the classic "Main resources" table, memory now, peak, limit and share, and the five steps that took the most |
-| Velocity | the engine serving the page (Velocity and its version, or Apache / PHP-FPM), PHP, process, host, OPcache status, and Velocity's response cache |
+| Velocity | where the request entered and which process rendered the report, in one sentence (see [below](#velocity-where-the-request-entered-and-what-rendered-it)), the facts behind it, OPcache status, and Velocity's response cache |
 | Other | reports appended by extensions with `eZDebug::appendBottomReport()` that belong to no tab (only when there are any) |
 
 Every section keeps its id, so scripts and stylesheets written for the classic report still find it.
@@ -435,6 +435,50 @@ The user list (`DebugUserIDList[]`) takes one user ID per line, "Add me" adds th
 Drawn from `expdebugbar::cache`: "This page only" (the view cache of the node the page shows), Velocity's
 response cache, OPcache of the serving process, every cache tag and every cache ID with its description and when
 it was last cleared, and all caches. Each clear says what it did.
+
+### Velocity: where the request entered and what rendered it
+
+The tab opens with one sentence that says where the request entered and which process rendered the report, then
+the facts behind it (`expDebugBarReport::engineFacts()`, from the server variables and `engineProbe()`):
+
+| Rendered by | Sentence (example) |
+|---|---|
+| a Velocity worker | Received by Velocity on port 8080 and rendered by a Velocity worker. |
+| the Velocity parent (no pool) | Received by Velocity on port 8080 and rendered by the Velocity parent process (no worker). |
+| php-cgi, started by Velocity for a script under `Q.webserver.cgi.patterns` | Received by Velocity on port 8080 and rendered by php-cgi, which Velocity starts for this script (Q.webserver.cgi.patterns). |
+| PHP-FPM behind Apache (or nginx) | Served by Apache / PHP-FPM (port 443), not by Velocity. |
+| mod_php, FrankenPHP, another SAPI | Served by Apache with mod_php (port 80), not by Velocity. |
+
+The rows: **Entered** (scheme, port, and the forwarded headers seen, such as `X-Real-IP` and `X-Forwarded-For` from
+a proxy in front), **Received by** (Exponential Velocity and its version, or the server named by
+`SERVER_SOFTWARE`), **Rendered by**, PHP and its SAPI, **Process** and **Host** (only for a user with setup or cache
+access), **Rendered at**, and **Cached**: a page with the report is rendered for each request and kept by no cache.
+
+Only signals a client cannot set decide: `QBIX_SERVER_VERSION` (defined only in a Velocity process), the SAPI, and
+`SERVER_SOFTWARE` and `SERVER_PORT` as the server set them. A worker is told from the parent by its parent process,
+which is the Velocity parent or its zygote (`qbixserver`). Forwarded headers are listed as seen and decide nothing,
+since a client can send them too. Velocity answers every request itself; it never hands one on to PHP-FPM or Apache,
+so a report rendered by PHP-FPM always belongs to a request that went to Apache (for example nginx in front of Apache on 443).
+
+**A report that came out of a cache.** The page carries the report of the request that rendered it. Pages with the
+report are sent `Cache-Control: private, no-store` (`eZDebugReportNoStore()` in `eZDisplayDebug()`), so neither
+Velocity's response cache nor the role-aware page cache (`X-Exp-Cache: BYPASS (debug report)`) keeps them. Should one
+still arrive from somewhere (a page stored before 2026-10-14, a browser or service worker replaying it), the script
+compares the report's port (`data-entry-port`) with the address in the browser and its time (`data-rendered-at`)
+with the time the page was loaded, and says so above the facts: "This report was rendered at 04:08:02 by PHP-FPM
+244909 for a request on port 443, 9 min before this page was loaded on port 8080: the page came from a cache, not
+from this request." (`data-exp-debug-replayed`; 120 s of room for a clock that differs).
+
+Why the tab changed (2026-10-14): on :8080 the tab said "Not running on Velocity", engine Apache (fpm-fcgi). The page
+was the signed-in front page from the role-aware page cache, stored at 04:08:02 by PHP-FPM (process 244909) for a
+request on :443 and answered on :8080 by Velocity's parent straight from that shared store (`Q.web.appCache`), with
+PHP-FPM's report in it. Velocity's own response cache did the same for anonymous pages: one rendered for a listed
+address was kept with its report and answered to every visitor of :8080 (`X-Cache: HIT`).
+
+The OPcache box says why it has nothing to show: `opcache_get_status()` switched off for that PHP (a pool's
+`disable_functions`) or OPcache not loaded.
+
+Test: `expDebugBarReportEngineTest` (no database; server variables and the probe passed in).
 
 ### Tests
 

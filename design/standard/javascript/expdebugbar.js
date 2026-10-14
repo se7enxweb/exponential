@@ -755,6 +755,25 @@
   /* ---------------------------------------------------------------- cache */
   const cacheBox = root.querySelector('.exp-debug-cache');
   const velocityBox = root.querySelector('.exp-debug-velocity-cache');
+
+  /* A page that came from a cache (or was replayed by the browser) carries the report of the request that rendered
+     it: on another port, or long before this page was loaded. Said in the Velocity tab, with when and by whom. */
+  const engineBox = root.querySelector('.exp-debug-engine');
+  if (engineBox) {
+    const port = location.port ? Number(location.port) : (location.protocol === 'https:' ? 443 : 80);
+    const entry = Number(engineBox.getAttribute('data-entry-port') || 0);
+    const at = Number(engineBox.getAttribute('data-rendered-at') || 0);
+    const loaded = (performance.timeOrigin || Date.now()) / 1000;
+    const age = at ? Math.round(loaded - at) : 0;
+    // 120 s of room for a clock that differs between server and browser
+    if ((entry && entry !== port) || age > 120) {
+      const ageText = age >= 120 ? t('%count min', { '%count': Math.round(age / 60) }) : t('%count s', { '%count': Math.max(age, 0) });
+      engineBox.prepend(el('p', { class: 'exp-debug-hint exp-debug-warn', 'data-exp-debug-replayed': '1' },
+        t('This report was rendered at %time by %renderer for a request on port %entry, %age before this page was loaded on port %port: the page came from a cache, not from this request.', {
+          '%time': new Date(at * 1000).toLocaleString(), '%renderer': engineBox.getAttribute('data-rendered-by') || '',
+          '%entry': entry, '%age': ageText, '%port': port })));
+    }
+  }
   const page = data.page || {};
   const clearButton = (label, params, status, extra, done) => el('button', Object.assign({ type: 'button', class: 'exp-debug-button', onclick: (ev) => {
     const b = ev.currentTarget; b.disabled = true;

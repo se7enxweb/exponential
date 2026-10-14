@@ -187,7 +187,10 @@ class expDebugBarReport
             'OPcache', 'Status', 'Memory used', 'Hit rate', 'Cached scripts', 'Not available',
             'By tag', 'By ID', 'All caches',
             'You may not clear caches (setup/managecache).',
-            'Response cache', 'Engine', 'Not running on Velocity.',
+            'Response cache', 'Engine',
+            // the Velocity tab: a page that came from a cache carries the report of the request that rendered it
+            'This report was rendered at %time by %renderer for a request on port %entry, %age before this page was loaded on port %port: the page came from a cache, not from this request.',
+            '%count s', '%count min',
             'Close', 'Open the debug report',
             'Minimise debug bar', 'Show debug bar', '%count errors', '%count warnings',
             // the handle that resizes the open panel
@@ -895,34 +898,160 @@ class expDebugBarReport
         return $html;
     }
 
-    protected static function velocityHtml( $privileged = false )
+    /**
+     * What this process can tell about itself, for engineFacts(): the SAPI, Velocity's version (QBIX_SERVER_VERSION
+     * is defined only in a Velocity process), the process id, the command line of the parent process (a Velocity
+     * worker is forked by the Velocity parent or its zygote, both named qbixserver; the parent itself is not) and
+     * the time the report is rendered.
+     */
+    public static function engineProbe()
     {
-        $rows = array();
+        $parentPid = function_exists( 'posix_getppid' ) ? (int)posix_getppid() : 0;
+        $parentCmd = '';
+        if ( $parentPid > 1 && @is_readable( '/proc/' . $parentPid . '/cmdline' ) )
+            $parentCmd = trim( str_replace( "\0", ' ', (string)@file_get_contents( '/proc/' . $parentPid . '/cmdline' ) ) );
+        $velocity = null;
         if ( defined( 'QBIX_SERVER_VERSION' ) )
+            $velocity = function_exists( 'qbix_version_label' ) ? (string)qbix_version_label() : 'v' . QBIX_SERVER_VERSION;
+        return array(
+            'sapi'       => PHP_SAPI,
+            'velocity'   => $velocity,
+            'pid'        => (int)getmypid(),
+            'parent_pid' => $parentPid,
+            'parent_cmd' => $parentCmd,
+            'time'       => microtime( true ),
+        );
+    }
+
+    /**
+     * Where the request entered and which process rendered this report, from the server variables and the probe
+     * (engineProbe()); no state, so a test passes both.
+     *
+     * The signals are the ones a client cannot set: the SAPI and QBIX_SERVER_VERSION belong to the process,
+     * SERVER_SOFTWARE and SERVER_PORT to the server that ran the script. Velocity answers every request itself (a
+     * worker, its parent, or php-cgi for a script under Q.webserver.cgi.patterns); it never hands a request on to
+     * PHP-FPM or Apache, so a report rendered by PHP-FPM was rendered for a request that went to Apache. Forwarded
+     * headers (X-Forwarded-For and the like) are listed as seen, as a client can send them too.
+     *
+     * @return array entry (scheme, port, host, forwarded), receiver, renderer (velocity-worker, velocity-parent,
+     *         velocity-cgi, php-fpm, mod-php, frankenphp, cli, other), velocity (bool: rendered by Velocity),
+     *         sentence (English source) and arguments (for t()), received_by, rendered_by, pid, rendered_at
+     */
+    public static function engineFacts( array $server, array $probe )
+    {
+        $sapi = isset( $probe['sapi'] ) ? (string)$probe['sapi'] : PHP_SAPI;
+        $velocity = isset( $probe['velocity'] ) && $probe['velocity'] !== null && $probe['velocity'] !== '' ? (string)$probe['velocity'] : null;
+        $software = isset( $server['SERVER_SOFTWARE'] ) ? trim( (string)$server['SERVER_SOFTWARE'] ) : '';
+        $softwareIsVelocity = stripos( $software, 'QbixServer' ) === 0;
+
+        $https = ( isset( $server['HTTPS'] ) && $server['HTTPS'] !== '' && strtolower( (string)$server['HTTPS'] ) !== 'off' )
+              || ( isset( $server['REQUEST_SCHEME'] ) && strtolower( (string)$server['REQUEST_SCHEME'] ) === 'https' );
+        $port = isset( $server['SERVER_PORT'] ) && ctype_digit( (string)$server['SERVER_PORT'] ) ? (int)$server['SERVER_PORT'] : ( $https ? 443 : 80 );
+        $forwarded = array();
+        foreach ( array( 'HTTP_FORWARDED' => 'Forwarded', 'HTTP_X_FORWARDED_FOR' => 'X-Forwarded-For', 'HTTP_X_FORWARDED_PROTO' => 'X-Forwarded-Proto',
+                         'HTTP_X_FORWARDED_HOST' => 'X-Forwarded-Host', 'HTTP_X_REAL_IP' => 'X-Real-IP', 'HTTP_VIA' => 'Via' ) as $key => $name )
         {
-            $version = function_exists( 'qbix_version_label' ) ? qbix_version_label() : (string)QBIX_SERVER_VERSION;
-            $rows[self::t( 'Engine' )] = 'Exponential Velocity ' . $version;
+            if ( isset( $server[$key] ) && (string)$server[$key] !== '' )
+                $forwarded[] = $name;
+        }
+
+        // Which server took the request: the one that set SERVER_SOFTWARE ("Apache", "nginx/1.2", "QbixServer/1.0")
+        $receivedBy = $software !== '' ? preg_replace( '#/.*$#', '', $software ) : '';
+        if ( $velocity !== null || $softwareIsVelocity )
+            $receivedBy = 'Exponential Velocity' . ( $velocity !== null ? ' ' . $velocity : '' );
+
+        $pid = isset( $probe['pid'] ) ? (int)$probe['pid'] : 0;
+        $args = array( '%port' => (string)$port, '%server' => $receivedBy !== '' ? $receivedBy : $sapi, '%sapi' => $sapi );
+        if ( $velocity !== null && $sapi === 'cli' )
+        {
+            $isWorker = isset( $probe['parent_cmd'] ) && stripos( (string)$probe['parent_cmd'], 'qbixserver' ) !== false;
+            $renderer = $isWorker ? 'velocity-worker' : 'velocity-parent';
+            $renderedBy = $isWorker ? 'Velocity worker' : 'Velocity parent process';
+            $sentence = $isWorker ? 'Received by Velocity on port %port and rendered by a Velocity worker.'
+                                  : 'Received by Velocity on port %port and rendered by the Velocity parent process (no worker).';
+        }
+        else if ( $softwareIsVelocity && ( $sapi === 'cgi-fcgi' || $sapi === 'cgi' ) )
+        {
+            $renderer = 'velocity-cgi';
+            $renderedBy = 'php-cgi';
+            $sentence = 'Received by Velocity on port %port and rendered by php-cgi, which Velocity starts for this script (Q.webserver.cgi.patterns).';
+        }
+        else if ( $sapi === 'cli' || $sapi === 'phpdbg' )
+        {
+            $renderer = 'cli';
+            $renderedBy = 'PHP ' . $sapi;
+            $sentence = 'Rendered on the command line (%sapi), not for a web request.';
+        }
+        else if ( $sapi === 'fpm-fcgi' )
+        {
+            $renderer = 'php-fpm';
+            $renderedBy = 'PHP-FPM';
+            $sentence = $receivedBy !== '' ? 'Served by %server / PHP-FPM (port %port), not by Velocity.' : 'Served by PHP-FPM (port %port), not by Velocity.';
+        }
+        else if ( $sapi === 'apache2handler' )
+        {
+            $renderer = 'mod-php';
+            $renderedBy = 'mod_php';
+            $sentence = 'Served by Apache with mod_php (port %port), not by Velocity.';
+        }
+        else if ( $sapi === 'frankenphp' )
+        {
+            $renderer = 'frankenphp';
+            $renderedBy = 'FrankenPHP';
+            $sentence = 'Served by FrankenPHP (port %port), not by Velocity.';
         }
         else
         {
-            $software = isset( $_SERVER['SERVER_SOFTWARE'] ) ? (string)$_SERVER['SERVER_SOFTWARE'] : '';
-            $engine = getenv( 'EXP_VELOCITY_ENGINE' );
-            $rows[self::t( 'Engine' )] = $engine ? $engine : trim( $software . ' (' . PHP_SAPI . ')' );
+            $renderer = 'other';
+            $renderedBy = 'PHP ' . $sapi;
+            $sentence = 'Served by %server (%sapi, port %port), not by Velocity.';
         }
+
+        return array(
+            'entry'       => array( 'scheme' => $https ? 'https' : 'http', 'port' => $port,
+                                    'host' => isset( $server['HTTP_HOST'] ) ? (string)$server['HTTP_HOST'] : '', 'forwarded' => $forwarded ),
+            'renderer'    => $renderer,
+            'velocity'    => strpos( $renderer, 'velocity-' ) === 0,
+            'received_by' => $receivedBy !== '' ? $receivedBy : $sapi,
+            'rendered_by' => $renderedBy,
+            'sentence'    => $sentence,
+            'arguments'   => $args,
+            'pid'         => $pid,
+            'rendered_at' => isset( $probe['time'] ) ? (float)$probe['time'] : microtime( true ),
+        );
+    }
+
+    protected static function velocityHtml( $privileged = false )
+    {
+        $facts = self::engineFacts( $_SERVER, self::engineProbe() );
+        $entry = $facts['entry'];
+        $entered = $entry['scheme'] . ', ' . self::t( 'port %port', array( '%port' => $entry['port'] ) );
+        if ( $entry['forwarded'] )
+            $entered .= '; ' . self::t( 'forwarded headers: %headers', array( '%headers' => implode( ', ', $entry['forwarded'] ) ) );
+
+        $rows = array();
+        $rows[self::t( 'Entered' )] = $entered;
+        $rows[self::t( 'Received by' )] = $facts['received_by'];
+        $rows[self::t( 'Rendered by' )] = self::t( $facts['rendered_by'] );
         $rows['PHP'] = PHP_VERSION . ' (' . PHP_SAPI . ')';
         if ( $privileged )
         {
-            $rows[self::t( 'Process' )] = (string)getmypid();
+            $rows[self::t( 'Process' )] = (string)$facts['pid'];
             $rows[self::t( 'Host' )] = function_exists( 'gethostname' ) ? (string)gethostname() : '';
         }
+        $rows[self::t( 'Rendered at' )] = date( 'Y-m-d H:i:s T', (int)$facts['rendered_at'] );
+        $rows[self::t( 'Cached' )] = self::t( 'No: a page with this report is rendered for each request and kept by no cache (Cache-Control: private, no-store).' );
 
-        $html = '';
-        if ( !defined( 'QBIX_SERVER_VERSION' ) )
-            $html .= '<p class="exp-debug-hint">' . self::h( 'Not running on Velocity.' ) . '</p>';
+        // The script compares these with the address the browser shows and the time the page was loaded: a page
+        // replayed from a cache (or by the browser) carries the report of the request that rendered it.
+        $html = '<div class="exp-debug-engine" data-renderer="' . self::a( $facts['renderer'] ) . '" data-velocity="' . ( $facts['velocity'] ? '1' : '0' )
+              . '" data-entry-port="' . (int)$entry['port'] . '" data-rendered-at="' . self::a( sprintf( '%.3F', $facts['rendered_at'] ) )
+              . '" data-rendered-by="' . self::a( self::t( $facts['rendered_by'] ) . ( $privileged ? ' ' . $facts['pid'] : '' ) ) . '">';
+        $html .= '<p class="exp-debug-hint' . ( $facts['velocity'] ? ' exp-debug-ok' : '' ) . '">' . self::h( $facts['sentence'], $facts['arguments'] ) . '</p>';
         $html .= '<table class="exp-debug-facts">';
         foreach ( $rows as $k => $v )
-            $html .= '<tr><th>' . htmlspecialchars( $k, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '</th><td>' . htmlspecialchars( $v, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '</td></tr>';
-        $html .= '</table>';
+            $html .= '<tr><th>' . self::a( $k ) . '</th><td>' . self::a( $v ) . '</td></tr>';
+        $html .= '</table></div>';
 
         if ( $privileged )
         {
@@ -931,6 +1060,13 @@ class expDebugBarReport
         }
         return $html;
     }
+
+    /** htmlspecialchars() for text and attribute values. */
+    protected static function a( $value )
+    {
+        return htmlspecialchars( (string)$value, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
+    }
+
 
     /** OPcache status of the process that rendered this page. */
     public static function opcacheStatus()
@@ -958,7 +1094,15 @@ class expDebugBarReport
     {
         $s = self::opcacheStatus();
         if ( $s === null )
+        {
+            // Why not: the function is switched off for this PHP (a pool's disable_functions), or OPcache is not loaded
+            $disabled = array_map( 'trim', explode( ',', strtolower( (string)ini_get( 'disable_functions' ) ) ) );
+            if ( in_array( 'opcache_get_status', $disabled, true ) )
+                return '<p class="exp-debug-hint">' . self::h( 'Not available: opcache_get_status() is disabled for this PHP (disable_functions).' ) . '</p>';
+            if ( !extension_loaded( 'Zend OPcache' ) )
+                return '<p class="exp-debug-hint">' . self::h( 'Not available: OPcache is not loaded in this PHP.' ) . '</p>';
             return '<p class="exp-debug-hint">' . self::h( 'Not available' ) . '</p>';
+        }
         $html = '<table class="exp-debug-facts exp-debug-opcache">';
         $html .= '<tr><th>' . self::h( 'Status' ) . '</th><td>' . ( $s['enabled'] ? self::h( 'enabled' ) : self::h( 'disabled' ) ) . '</td></tr>';
         if ( $s['enabled'] )
