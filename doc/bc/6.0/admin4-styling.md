@@ -106,6 +106,12 @@ row of `th` inside `tbody` or a row with the `hidden` attribute is skipped, so t
 classes and stays plain; a form laid out as a `table.list` takes `a4-plain` as well (`shop/editvatrule.tpl`,
 `shop/editcurrency.tpl`). Text on a zebra row and on a hovered row keeps 4.5:1 (`AdminTokenContrastTest`), and no
 admin4 stylesheet paints rows in a colour of its own (`AdminStylingRulesTest::testDataTablesShareOneZebra`).
+Cells sit in the middle of their row. A row whose selection checkbox is ticked takes `--a4-accent-soft` without a
+script (`tr:has(> td input[type="checkbox"]:checked)`), over stripe and hover. The header row of a list (`thead`, or
+the first `tbody` row that has no data cells) stays in view under the fixed header while the page scrolls
+(`position: sticky; top: var(--header-height, 0px)`); inside a horizontally scrolling wrapper it sticks to the
+wrapper instead. An empty list says so in `.a4-empty`, optionally with `.a4-empty-title` and `.a4-empty-action`, never
+in a plain paragraph (`AdminStylingRulesTest::testEmptyListsUseTheEmptyState`).
 `--a4-orange`, `--a4-orange-dark` and `--a4-orange-soft` are the accent's former names, kept for the extensions that
 use them; new code uses the `--a4-accent*` names.
 
@@ -130,7 +136,7 @@ White text on it is only 3:1, so filled controls with white text use its darker 
 | Forms | `.a4-field`, `.a4-field-wide`, `.a4-label`, `.a4-input` (`.is-auto`), `.a4-field-error`, `.a4-form` (`.is-wide`), `.a4-formrow` (label beside control), `.a4-searchrow`, `.a4-check`, `.a4-radios`, `.a4-chips` > `.a4-chip` |
 | Tables | `.a4-table-wrap` > `table.a4-table` (`.is-compact`), `tr.is-selected` |
 | Under a list | `.a4-listfoot`, `.a4-sizes`, `.a4-pager`; `.a4-tabs` (links, buttons, `span.current`, `a.current`, `.is-current`), `.a4-count` |
-| Empty state, notices | `.a4-empty`; `.a4-notice` (`.is-ok`, `.is-warn`, `.is-bad`, `.is-info`) |
+| Empty state, notices | `.a4-empty` (`.a4-empty-title`, `.a4-empty-action`); `.a4-notice` (`.is-ok`, `.is-warn`, `.is-bad`, `.is-info`) |
 | Folding | `details.a4-fold` > `summary` + `.a4-fold-body` (`.is-bad`, `.is-warn`); `details.a4-confirm` (a confirmation that opens in place) |
 | Steps | `ol.a4-steps` > `li.is-done` / `li.is-current` |
 | Code | `.a4-pre` (`.is-tall`), `.a4-kbd` |
