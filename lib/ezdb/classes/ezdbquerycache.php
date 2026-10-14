@@ -388,7 +388,11 @@ class eZDBQueryCache
     /** Group-writable mode (mkdir() and file_put_contents() are subject to the umask), and handed over to $owner. */
     protected static function handOver( $path, $owner, $isDir )
     {
-        @chmod( $path, $isDir ? eZDir::dirMode( 0770 ) : eZFile::fileMode( 0660 ) );
+        // each mode through its own limit, as every chmod() of the kernel (expFileModeLimitsTest)
+        if ( $isDir )
+            @chmod( $path, eZDir::dirMode( 0770 ) );
+        else
+            @chmod( $path, eZFile::fileMode( 0660 ) );
         if ( $owner )
         {
             @chown( $path, $owner['uid'] );
