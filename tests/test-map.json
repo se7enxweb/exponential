@@ -37,12 +37,14 @@
     ],
     "design/admin*/templates/*": [
       "tests/tests/design/AdminStylingRulesTest.php",
-      "tests/tests/design/AdminIconsTest.php"
+      "tests/tests/design/AdminIconsTest.php",
+      "tests/tests/design/AdminDensityTest.php"
     ],
     "design/admin*/stylesheets/*": [
       "tests/tests/design/AdminStylingRulesTest.php",
       "tests/tests/design/AdminIconsTest.php",
-      "tests/tests/design/AdminTokenContrastTest.php"
+      "tests/tests/design/AdminTokenContrastTest.php",
+      "tests/tests/design/AdminDensityTest.php"
     ],
     "share/icons/bootstrap-icons/*": [
       "tests/tests/design/AdminIconsTest.php"
