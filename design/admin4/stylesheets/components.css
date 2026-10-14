@@ -437,7 +437,7 @@ html[data-a4-theme="dark"] {
 }
 a.a4-lang:hover { border-color: var(--a4-accent); color: var(--a4-accent-text); }
 a.a4-lang:focus-visible { outline: 2px solid var(--a4-accent-strong); outline-offset: 1px; }
-.a4-lang.is-current { border-color: var(--a4-accent); background-color: var(--a4-accent-soft); color: var(--a4-accent-text); }
+.a4-lang.is-current { border-color: var(--a4-accent); background-color: var(--a4-accent-soft); color: var(--a4-accent-text); font-weight: 800; text-decoration: underline; text-underline-offset: 2px; }
 
 /* A status with a dot: .a4-status > .a4-dot + text; .is-running pulses */
 .a4-status { display: inline-flex; align-items: center; gap: var(--a4-space-2); font-weight: 700; }

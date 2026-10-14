@@ -457,4 +457,22 @@ class eZLocaleFormattingTest extends PHPUnit\Framework\TestCase
     {
         $this->assertSame( self::STAMP, eZDateUtils::textToDate( eZDateUtils::rfc1123Date( self::STAMP ) ) );
     }
+
+    public function testContentLanguageCodeIsTheLanguageTagOfTheLocaleFile()
+    {
+        $this->assertSame( 'de-DE', self::locale( 'ger-DE' )->contentLanguageCode() );
+        $this->assertSame( 'en-GB', self::locale( 'eng-GB' )->attribute( 'content_language_code' ) );
+        $this->assertTrue( self::locale( 'eng-GB' )->hasAttribute( 'content_language_code' ) );
+    }
+
+    public function testContentLanguageCodeIsInheritedFromTheLanguageAndCountryFiles()
+    {
+        // ser-SR.ini names no tag itself; the language and country files give it
+        $this->assertSame( 'sr-RS', self::locale( 'ser-SR' )->contentLanguageCode() );
+    }
+
+    public function testContentLanguageCodeIsEmptyForAnUnknownLocale()
+    {
+        $this->assertSame( '', self::locale( 'xxx-YY' )->contentLanguageCode() );
+    }
 }
