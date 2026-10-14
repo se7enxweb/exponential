@@ -175,12 +175,12 @@ The left column's preset sizes (small, medium, large) are `html[data-a4-left-siz
   family or pixel font size of its own, a custom property of its own, or a selector without an `.a4-` class;
 - a colour token in `components.css` has no dark value, or the admin and admin4 copies differ;
 - `admin4.css` or one of admin4's page stylesheets (`ezinfo.css`, `packagecompare.css`, `setup-extensions.css`,
-  `visual-templateview.css`) has a colour literal outside a token definition.
+  `visual-templateview.css`) has a colour literal outside a token definition;
+- a file named in `AdminComponentCSSFileList` is missing.
 
 `tests/tests/design/AdminTokenContrastTest.php` computes the WCAG contrast of the token pairs in both modes: text
-tokens on card, surface and soft 4.5:1, the text of filled buttons (also hovered) 4.5:1, the ring and the field edge
-3:1 on every surface, the chart colours 3:1 on a card.
-- a file named in `AdminComponentCSSFileList` is missing.
+tokens on card, surface and soft 4.5:1, each state's text on its own tint 4.5:1, the text of filled buttons (also
+hovered) 4.5:1, the ring and the field edge 3:1 on every surface and the page, the chart colours 3:1 on a card.
 
 Never weaken the test or add an allowlist entry to make a change pass; move the CSS.
 
