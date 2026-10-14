@@ -466,7 +466,7 @@ class eZDBQueryCacheTest extends PHPUnit\Framework\TestCase
             $this->assertMatchesRegularExpression( '/^Misses +1$/m', $text );
             $this->assertMatchesRegularExpression( '/^Hit rate +50 %$/m', $text );
             $this->assertMatchesRegularExpression( '/^Not cached: statement \(volatile or tables not readable\) +1$/m', $text );
-            $this->assertMatchesRegularExpression( '/^Database time saved \(estimated\) +[0-9.]+ ms$/m', $text );
+            $this->assertMatchesRegularExpression( '/^Database time saved \(estimated\) +[0-9.]+ ms( = \d+ % of the request so far \(\d+ ms; about \d+ ms without the cache\))?$/m', $text );
             $this->assertStringContainsString( "Made everything stale: CALL some_procedure( '?' ) /* <b> */", $text, 'literals masked' );
             $this->assertStringNotContainsString( 'secret', $text );
 
@@ -531,6 +531,8 @@ class eZDBQueryCacheTest extends PHPUnit\Framework\TestCase
             $this->assertSame( 50.0, $snap['hit_rate'] );
             $this->assertSame( array( 'CALL some_procedure()' ), $snap['stale'] );
             $this->assertIsFloat( $snap['saved_ms'] );
+            $this->assertGreaterThan( 0, $snap['request_ms'], 'the request so far (REQUEST_TIME_FLOAT)' );
+            $this->assertSame( eZDBQueryCache::savedShare( $snap['saved_ms'], $snap['request_ms'] ), $snap['saved_share'] );
         } );
         $this->withDebug( false, function ( $debug )
         {

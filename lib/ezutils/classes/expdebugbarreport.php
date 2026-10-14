@@ -505,13 +505,22 @@ class expDebugBarReport
         if ( !empty( $s['querycache']['measured'] ) )
         {
             $q = $s['querycache'];
+            // the saved time against this page's time: 200 % = without the cache the page would have taken three times as long
+            $pageMs = isset( $s['time'] ) ? $s['time'] * 1000 : null;
+            $share = class_exists( 'eZDBQueryCache' ) ? eZDBQueryCache::savedShare( $q['saved_ms'], $pageMs ) : null;
             $chips[] = array( 'sql', 'querycache', in_array( $q['level'], array( 'ok', 'warn', 'high' ), true ) ? $q['level'] : 'ok',
                               self::t( 'QC %rate', array( '%rate' => $q['hit_rate'] === null ? '-' : number_format( $q['hit_rate'], 0 ) . ' %' ) )
-                              . ' · ' . ( round( $q['saved_ms'] ) > 0 ? '-' : '' ) . number_format( $q['saved_ms'], 0 ) . ' ms',
+                              . ' · ' . ( round( $q['saved_ms'] ) > 0 ? '-' : '' ) . number_format( $q['saved_ms'], 0 ) . ' ms'
+                              . ( $share !== null ? ' (' . number_format( $share, 0 ) . ' %)' : '' ),
                               self::t( 'SQL query cache: hit rate and database time saved (estimated); %hits hits, %misses misses, %stores stored, %skipped not cached, %writes writes, mode %mode',
                                        array( '%hits' => $q['hits'], '%misses' => $q['misses'], '%stores' => $q['stores'], '%skipped' => $q['not_cached'],
                                               '%writes' => $q['writes'], '%mode' => $q['mode'] . ( $q['mode'] !== 'shared' ? ''
-                                                  : ( empty( $q['storage'] ) ? ' (no APCu)' : ' (' . $q['storage'] . ')' ) ) ) ) );
+                                                  : ( empty( $q['storage'] ) ? ' (no APCu)' : ' (' . $q['storage'] . ')' ) ) ) )
+                              . ( $share !== null
+                                  ? '. ' . self::t( 'The saved time is %share % of this page\'s time: without the cache about %without ms instead of %with ms',
+                                                    array( '%share' => number_format( $share, 0 ), '%without' => number_format( $pageMs + $q['saved_ms'], 0 ),
+                                                           '%with' => number_format( $pageMs, 0 ) ) )
+                                  : '' ) );
         }
         $chips[] = array( 'memory', 'memory', $memLevel, number_format( $s['memory'] / 1048576, 1 ) . ' MB', self::t( 'Peak memory' ) );
         if ( $s['templates'] !== null )

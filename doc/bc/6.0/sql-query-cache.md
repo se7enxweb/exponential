@@ -328,14 +328,18 @@ what the cache did for it:
   where the state file is read.
 - a **report** at the bottom, *Query cache*: mode (in `shared` mode with its storage, `apcu` or `file`, or *no APCu: works as request*),
   generation, hits, misses, hit rate, stored, not cached, writes, the **database time
-  saved (estimated)**, the reasons for statements not cached (inside a transaction,
+  saved (estimated)** with its share of the request so far (`186 ms = 186 % of the
+  request so far (100 ms; about 286 ms without the cache)`; measured from PHP's
+  `REQUEST_TIME_FLOAT`, so it can be a little higher than the bar's page time,
+  which starts with the script), the reasons for statements not cached (inside a transaction,
   volatile or unreadable statement, excluded, temporary or catalogue table, more rows
   than `MaxRows`), and up to 20 writes that made every result stale, with their string literals masked.
   *Not cached* counts every statement that was not answered and not stored for one of these reasons, so it is
   larger than the *uncacheable* counter of Setup > System information, which leaves out excluded tables and
   transactions; a result with more rows than `MaxRows` is counted as a miss and as not cached.
 
-In the **Exp Debug bar** the same figures are a chip in the pinned bar (hit rate and saved time, amber below 50 %,
+In the **Exp Debug bar** the same figures are a chip in the pinned bar (hit rate and saved time, the saved time also in
+percent of the page's time: `QC 83 % · -186 ms (186 %)` on a page of 100 ms means about 286 ms without the cache; amber below 50 %,
 red below 10 % or in `shared` mode without a storage, `debugbar.ini Thresholds[querycache_hit_rate]`) and the report stands at the top of the SQL tab, next
 to the database's accumulators. The **Cache tab** (setup/managecache) shows what this server holds: entries and
 memory in APCu (or the result files and their size on disk; files count no hits), the counters since the last reset, the state, the cached results grouped by the tables they read

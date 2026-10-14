@@ -321,7 +321,7 @@ The summary in the bar shows the request at a glance; each value opens its tab:
 | SQL count / time | SQL | `Thresholds[sql_count]`, `Thresholds[sql_ms]` |
 | peak memory | Memory | `Thresholds[memory_mb]` (else 50 % / 80 % of `memory_limit`) |
 | templates used (only with `ShowUsedTemplates`) | Templates | `Thresholds[templates]` |
-| SQL query cache (`QC 83 % · -186 ms`: hit rate, database time saved; only while the cache is on) | SQL | `Thresholds[querycache_hit_rate]` (amber below 50 %, red below 10 %; amber when a write made everything stale, red in `shared` without APCu) |
+| SQL query cache (`QC 83 % · -186 ms (186 %)`: hit rate, database time saved, and that time in percent of the page's time; only while the cache is on) | SQL | `Thresholds[querycache_hit_rate]` (amber below 50 %, red below 10 %; amber when a write made everything stale, red in `shared` without APCu) |
 | warnings, errors | Messages (filtered to that level) | any warning is amber, any error red |
 | deprecations (`3 depr`) | Messages | any deprecation is amber |
 

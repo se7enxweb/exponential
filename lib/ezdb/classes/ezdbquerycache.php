@@ -668,6 +668,8 @@ class eZDBQueryCache
      *
      * @return array|null mode, apcu, storage, generation, hits, misses, stores, not_cached,
      *                    writes, hit_rate (percent, null without lookups), saved_ms,
+     *                    request_ms (the request so far, null without REQUEST_TIME_FLOAT),
+     *                    saved_share (saved_ms in percent of request_ms, see savedShare()),
      *                    hits_unmeasured, skipped (reason => count), stale (statements), stale_more
      */
     public static function debugSnapshot()
@@ -677,6 +679,7 @@ class eZDBQueryCache
         $st = self::$stats;
         $looked = $st['hits'] + $st['misses'];
         $state = self::state();
+        $requestMs = isset( $_SERVER['REQUEST_TIME_FLOAT'] ) ? round( ( microtime( true ) - (float)$_SERVER['REQUEST_TIME_FLOAT'] ) * 1000, 1 ) : null;
         return array(
             'mode' => self::settings()['mode'],
             'apcu' => self::apcuUsable(),
@@ -689,11 +692,30 @@ class eZDBQueryCache
             'writes' => $st['writes'],
             'hit_rate' => $looked > 0 ? round( 100 * $st['hits'] / $looked, 1 ) : null,
             'saved_ms' => round( self::$debug['saved_ms'], 1 ),
+            'request_ms' => $requestMs,
+            'saved_share' => self::savedShare( self::$debug['saved_ms'], $requestMs ),
             'hits_unmeasured' => self::$debug['hits_unmeasured'],
             'skipped' => self::$debug['skipped'],
             'stale' => self::$debug['stale'],
             'stale_more' => self::$debug['stale_more'],
         );
+    }
+
+    /**
+     * The database time the hits saved, in percent of the time the request
+     * took with them: 200 means the hits saved twice the request's time, so
+     * without the cache it would have taken three times as long. Null when
+     * nothing was saved or the request's time is unknown.
+     *
+     * @param float $savedMs
+     * @param float|null $requestMs
+     * @return int|null
+     */
+    public static function savedShare( $savedMs, $requestMs )
+    {
+        if ( $requestMs === null || $requestMs <= 0 || round( (float)$savedMs ) <= 0 )
+            return null;
+        return (int)round( 100 * $savedMs / $requestMs );
     }
 
     /**
@@ -720,6 +742,10 @@ class eZDBQueryCache
             'Not cached' => $d['not_cached'],
             'Writes' => $d['writes'],
             'Database time saved (estimated)' => $d['saved_ms'] . ' ms'
+                . ( $d['saved_share'] !== null
+                    ? ' = ' . $d['saved_share'] . ' % of the request so far (' . round( $d['request_ms'] ) . ' ms; about '
+                      . round( $d['request_ms'] + $d['saved_ms'] ) . ' ms without the cache)'
+                    : '' )
                 . ( $d['hits_unmeasured'] ? ' (+ ' . $d['hits_unmeasured'] . ' hits on entries without a duration)' : '' ),
         );
         foreach ( $d['skipped'] as $reason => $n )
