@@ -224,7 +224,7 @@
                                 </p>
                                 <p class="center full-screen">
                                     <a href={concat("content/versionview/",$object.id,"/",$view_version.version,"/",$language, "/site_access/", $siteaccess, $view_mode_uri)|ezurl}
-                                        target="_blank"><img src={"images/view-fullscreen.png"|ezdesign} /></a>
+                                        target="_blank"><img src={"images/view-fullscreen.png"|ezdesign} alt="{'Open the preview in a new window'|i18n( 'design/admin/content/view/versionview' )}" /></a>
                                 </p>
                                 <div class="break"></div>
                             </div>
