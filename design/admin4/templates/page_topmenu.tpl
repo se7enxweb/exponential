@@ -30,15 +30,17 @@
     <div id="header-search" class="header-search">
         {include uri='design:page_search.tpl'}
     </div>
-    {* admin4: light or dark mode. The choice is kept in this browser (localStorage "exp-admin4-theme"); the
+    {* admin4: light, dark or system mode; the button names the mode in use and steps to the next. The choice is kept in this browser (localStorage "exp-admin4-theme"); the
        script at the top of page_head_style.tpl applies it before the page is drawn and wires this button. *}
     <div id="header-theme" class="header-theme">
-        <button type="button" id="a4-theme-toggle" class="a4-theme-toggle" aria-pressed="false"
-                title="{'Switch between light and dark mode'|i18n( 'design/admin/pagelayout' )|wash}"
+        <button type="button" id="a4-theme-toggle" class="a4-theme-toggle"
+                title="{'Switch between light, dark and system mode'|i18n( 'design/admin/pagelayout' )|wash}"
                 data-label-light="{'Light mode'|i18n( 'design/admin/pagelayout' )|wash}"
-                data-label-dark="{'Dark mode'|i18n( 'design/admin/pagelayout' )|wash}">
+                data-label-dark="{'Dark mode'|i18n( 'design/admin/pagelayout' )|wash}"
+                data-label-system="{'System mode'|i18n( 'design/admin/pagelayout' )|wash}">
             <span class="a4-icon a4-bi-sun a4-icon-sun" aria-hidden="true"></span>
             <span class="a4-icon a4-bi-moon a4-icon-moon" aria-hidden="true"></span>
+            <span class="a4-icon a4-bi-circle-half a4-icon-system" aria-hidden="true"></span>
             <span class="a4-theme-label">{'Light mode'|i18n( 'design/admin/pagelayout' )}</span>
         </button>
     </div>

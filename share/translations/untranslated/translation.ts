@@ -11324,6 +11324,14 @@ Note: The packages will not be uninstalled.</source>
 <context>
     <name>design/admin/pagelayout</name>
     <message>
+        <source>Switch between light, dark and system mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Width of the left column</source>
         <translation type="unfinished"></translation>
     </message>

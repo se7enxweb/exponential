@@ -275,9 +275,14 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
   height: 18px;
   color: var(--a4-orange);
 }
-.a4-theme-toggle .a4-icon-moon { display: none; }
-html[data-a4-theme="dark"] .a4-theme-toggle .a4-icon-sun { display: none; }
-html[data-a4-theme="dark"] .a4-theme-toggle .a4-icon-moon { display: inline-block; }
+/* The icon names the chosen mode: sun (light), moon (dark), half circle (system). Without the script (no choice
+   attribute) the sun shows, as the page is light then. */
+.a4-theme-toggle .a4-icon-moon,
+.a4-theme-toggle .a4-icon-system { display: none; }
+html[data-a4-theme-choice="dark"] .a4-theme-toggle .a4-icon-sun,
+html[data-a4-theme-choice="system"] .a4-theme-toggle .a4-icon-sun { display: none; }
+html[data-a4-theme-choice="dark"] .a4-theme-toggle .a4-icon-moon,
+html[data-a4-theme-choice="system"] .a4-theme-toggle .a4-icon-system { display: inline-block; }
 /* The same round icon button at every width (the label is read by screen readers, not shown) */
 .a4-theme-toggle { padding: var(--a4-space-2) var(--a4-space-2); }
 .a4-theme-toggle .a4-theme-label {

@@ -12386,6 +12386,14 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Switch between light and dark mode</translation>
     </message>
     <message>
+        <source>Switch between light, dark and system mode</source>
+        <translation>Switch between light, dark and system mode</translation>
+    </message>
+    <message>
+        <source>System mode</source>
+        <translation>System mode</translation>
+    </message>
+    <message>
         <source>Where</source>
         <translation>Where</translation>
     </message>

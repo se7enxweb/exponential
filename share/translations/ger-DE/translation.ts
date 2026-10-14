@@ -14795,6 +14795,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Zwischen hellem und dunklem Modus wechseln</translation>
     </message>
     <message>
+        <source>Switch between light, dark and system mode</source>
+        <translation>Zwischen hellem, dunklem und System-Modus wechseln</translation>
+    </message>
+    <message>
+        <source>System mode</source>
+        <translation>Modus wie das System</translation>
+    </message>
+    <message>
         <source>Where</source>
         <translation>Wo</translation>
     </message>
