@@ -12,7 +12,9 @@
  * (ezpSiteAccessURL::root()), with the scheme, host, port and siteaccess path
  * the settings and the current request call for.
  *
- *   {siteaccess_url()}              the default siteaccess (DefaultAccess)
+ *   {siteaccess_url()}              the site of the current siteaccess:
+ *                                   site.ini [SiteSettings] FrontSiteAccess,
+ *                                   else DefaultAccess (ezpSiteAccessURL::front())
  *   {siteaccess_url( 'bold_ger' )}  a given one
  *
  * Returns an empty string for a siteaccess that does not exist.
@@ -58,17 +60,17 @@ class ezpSiteAccessURLOperator
         {
             $values = array( $parameters[0] );
             $newElements[] = eZTemplateNodeTool::createCodePieceElement(
-                "%output% = (string)ezpSiteAccessURL::root( ( (string)%1% !== '' ) ? (string)%1% : null );\n", $values );
+                "%output% = (string)( ( (string)%1% !== '' ) ? ezpSiteAccessURL::root( (string)%1% ) : ezpSiteAccessURL::front() );\n", $values );
         }
         else
         {
-            $newElements[] = eZTemplateNodeTool::createCodePieceElement( "%output% = (string)ezpSiteAccessURL::root();\n" );
+            $newElements[] = eZTemplateNodeTool::createCodePieceElement( "%output% = (string)ezpSiteAccessURL::front();\n" );
         }
         return $newElements;
     }
 
     public function modify( $tpl, $operatorName, $operatorParameters, $rootNamespace, $currentNamespace, &$operatorValue, $namedParameters )
     {
-        $operatorValue = (string)ezpSiteAccessURL::root( $namedParameters['siteaccess'] !== '' ? $namedParameters['siteaccess'] : null );
+        $operatorValue = (string)( $namedParameters['siteaccess'] !== '' ? ezpSiteAccessURL::root( $namedParameters['siteaccess'] ) : ezpSiteAccessURL::front() );
     }
 }
