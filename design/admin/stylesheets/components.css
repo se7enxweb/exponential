@@ -936,6 +936,76 @@ fieldset.a4-field > legend + * { clear: both; }
   .a4-steps li { flex: 1 1 100%; }
 }
 
+/* ---- Timeline: <ol class="a4-timeline">, one event per <li>, newest first ------------------------------------- */
+/* <li class="is-ok|is-warn|is-bad|is-info"><time class="a4-timeline-time" datetime="...">...</time>
+   <div class="a4-timeline-body">title, .a4-timeline-meta, a state badge</div></li>. A dot on a line marks each event;
+   its colour repeats the state the badge says in words, so the state never rests on colour alone. Two columns (time,
+   event), one on narrow windows. For short chronological lists without actions; a list with checkboxes or buttons
+   per row stays a table. */
+.a4-timeline {
+  margin: 0 0 var(--a4-space-4);
+  padding: 0;
+  list-style: none;
+}
+.a4-timeline > li {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 10.5em) minmax(0, 1fr);
+  gap: var(--a4-space-1) var(--a4-space-4);
+  align-items: baseline;
+  margin: 0;
+  padding: var(--a4-space-2) 0 var(--a4-space-2) var(--a4-space-5);
+  font-size: var(--a4-text-s);
+  line-height: var(--a4-leading);
+}
+/* the line: an edge, not a fill, so forced colors keep it */
+.a4-timeline > li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 7px;
+  width: 0;
+  border-left: 2px solid var(--a4-line-strong);
+}
+.a4-timeline > li:first-child::before { top: 18px; }
+.a4-timeline > li:last-child::before { bottom: auto; height: 18px; }
+.a4-timeline > li:only-child::before { display: none; }
+/* the dot, centred on the line at the height of the first text line */
+.a4-timeline > li::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 2px;
+  box-sizing: border-box;
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--a4-card);
+  border-radius: 50%;
+  background-color: var(--a4-muted);
+}
+.a4-timeline > li.is-ok::after { background-color: var(--a4-ok); }
+.a4-timeline > li.is-warn::after { background-color: var(--a4-warn); }
+.a4-timeline > li.is-bad::after { background-color: var(--a4-bad); }
+.a4-timeline > li.is-info::after { background-color: var(--a4-info); }
+.a4-timeline-time {
+  color: var(--a4-muted);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.a4-timeline-body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--a4-space-1) var(--a4-space-2);
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.a4-timeline-meta { color: var(--a4-muted); }
+@media (max-width: 600px) {
+  .a4-timeline > li { grid-template-columns: minmax(0, 1fr); }
+}
+
 /* ---- Code and output ------------------------------------------------------------------------------------------ */
 
 .a4-pre {
@@ -1198,6 +1268,7 @@ a.a4-current-user-name { color: var(--a4-ink); font-weight: 400; text-decoration
   :focus-visible { outline-color: Highlight; }
   /* data drawn as fills: the colour is the information */
   .a4-dot, .a4-meter > span, .a4-bars > * { forced-color-adjust: none; }
+  .a4-timeline > li::after { forced-color-adjust: none; border-color: Canvas; }
 }
 
 /* A field with text under 16px makes a phone's browser zoom in when it gets the focus */
