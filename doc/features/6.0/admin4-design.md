@@ -54,6 +54,12 @@ extension). The editor siteaccess falls back to `admin4` first, then `admin3`, `
   stored choice the admin is light, as before. `html[data-a4-theme]` stays light or dark for the stylesheets,
   `html[data-a4-theme-choice]` carries the chosen mode. A copy of the switch without `data-label-system` (an
   extension's own header) keeps stepping between light and dark. Other open admin tabs follow the change.
+  page, white cards. The header toggle switches them; the choice is kept in the browser (`localStorage`) and applied
+  before the page is drawn.
+- **Normal or compact density.** A second header button (pressed = compact) tightens the cells of `table.list` and
+  `.a4-table`, cards and the height of the controls in a row (32 to 28 px), not `table.special`; kept in the browser like the mode (`localStorage`
+  "exp-admin4-density") and applied before the page is drawn. Every target stays at least 24 px, the content tree
+  keeps its row pitch.
 - **Top menu.** Every item shows at every width from 576 px, wrapping onto more lines; phones keep the hamburger menu.
   The page always starts below the header, even after a resize adds a line.
 - **Sign-in page.** One calm form, fast on phones: labels above 46-48 px fields, 16 px text so mobile Safari does not

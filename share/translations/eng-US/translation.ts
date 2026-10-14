@@ -12470,6 +12470,14 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Dark mode</translation>
     </message>
     <message>
+        <source>Compact view</source>
+        <translation>Compact view</translation>
+    </message>
+    <message>
+        <source>Switch between normal and compact view</source>
+        <translation>Switch between normal and compact view</translation>
+    </message>
+    <message>
         <source>Light mode</source>
         <translation>Light mode</translation>
     </message>

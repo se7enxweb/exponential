@@ -47,6 +47,13 @@
             <span class="a4-theme-label">{'Colour mode: light'|i18n( 'design/admin/pagelayout' )}</span>
         </button>
         <span id="a4-theme-status" class="a4-sr-only" role="status"></span>
+        {* Normal or compact density, kept in this browser (localStorage "exp-admin4-density") like the mode;
+           pressed means compact. Applied before the page is drawn by the script in page_head_style.tpl. *}
+        <button type="button" id="a4-density-toggle" class="a4-theme-toggle a4-density-toggle" aria-pressed="false"
+                title="{'Switch between normal and compact view'|i18n( 'design/admin/pagelayout' )|wash}">
+            <span class="a4-icon a4-bi-view-stacked" aria-hidden="true"></span>
+            <span class="a4-theme-label">{'Compact view'|i18n( 'design/admin/pagelayout' )}</span>
+        </button>
     </div>
     {* The phone-width menu button; ezadmin_menubar.js toggles the menu, aria-expanded and the keys. *}
     <div class="navbar-icon" role="button" tabindex="0" aria-expanded="false" aria-controls="a4-navbar-menu" aria-label="{'Menu'|i18n( 'design/admin/pagelayout' )|wash}"><span aria-hidden="true">&#9776;</span></div>

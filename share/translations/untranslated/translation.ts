@@ -11363,6 +11363,13 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Switch to light mode</source>
+    </message>
+    <message>
+        <source>Compact view</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch between normal and compact view</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

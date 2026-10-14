@@ -297,6 +297,16 @@ html[data-a4-theme-choice="system"] .a4-theme-toggle .a4-icon-system { display: 
   position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden;
   clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0;
 }
+/* The density switch beside it: the same round button; pressed (compact) it carries the accent tint */
+.header-theme { gap: var(--a4-space-2); }
+.a4-density-toggle[aria-pressed="true"] {
+  border-color: var(--a4-accent);
+  background-color: var(--a4-accent-soft);
+}
+.a4-density-toggle[aria-pressed="true"]:hover { border-color: var(--a4-orange); }
+@media (forced-colors: active) {
+  .a4-density-toggle[aria-pressed="true"] { border-color: Highlight; }
+}
 @media (max-width: 1023.98px) {
   .header-theme { padding: 0 var(--a4-space-2); }
 }
@@ -498,7 +508,9 @@ input.defaultbutton:active {
   accent-color: var(--a4-accent-strong);
 }
 
-/* List tables (table.list, the kernel's and most extensions'): a light header in place of the black bar */
+/* List tables (table.list, the kernel's and most extensions'): a light header in place of the black bar.
+   Their cell spacing is core.css's .4em, as the density token --a4-list-pad (compact: .25em). */
+table.list th, table.list td { padding: var(--a4-list-pad); }
 table.list th, table.special th {
   background-color: var(--a4-soft);
   color: var(--a4-ink);
