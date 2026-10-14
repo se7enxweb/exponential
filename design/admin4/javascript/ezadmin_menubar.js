@@ -104,7 +104,8 @@ function leftMenuResize() {
     }
 
     const minWidth = 224;
-    const maxWidth = Math.max(minWidth, Math.floor(window.innerWidth * 0.72));
+    // the widest the column may get follows the window
+    const maxWidthNow = () => Math.max(minWidth, Math.floor(window.innerWidth * 0.72));
     let startX = 0;
     let startWidth = 0;
     let activePointerId = null;
@@ -115,7 +116,7 @@ function leftMenuResize() {
     };
 
     const applyWidth = (width) => {
-        const clamped = Math.min(maxWidth, Math.max(minWidth, Math.round(width)));
+        const clamped = Math.min(maxWidthNow(), Math.max(minWidth, Math.round(width)));
         document.documentElement.style.setProperty('--left-sidebar-width', `${clamped}px`);
         return clamped;
     };
@@ -191,6 +192,40 @@ function leftMenuResize() {
     };
 
     handle.addEventListener('pointerdown', startResize);
+
+    // The grip is a focusable separator: its value is the column's width, the arrow keys change it by 16px
+    // (Shift: 64px), Home and End go to the narrowest and widest; the width is saved when a key is let go.
+    const announce = (width) => {
+        handle.setAttribute('aria-valuemin', String(minWidth));
+        const max = maxWidthNow();
+        handle.setAttribute('aria-valuemax', String(max));
+        handle.setAttribute('aria-valuenow', String(Math.min(max, Math.max(minWidth, Math.round(width)))));
+    };
+    announce(leftMenu.getBoundingClientRect().width);
+    window.addEventListener('resize', () => announce(leftMenu.getBoundingClientRect().width));
+    let keyed = false;
+    handle.addEventListener('keydown', (event) => {
+        const step = event.shiftKey ? 64 : 16;
+        const width = leftMenu.getBoundingClientRect().width;
+        let next = null;
+        if (event.key === 'ArrowLeft' || event.key === 'ArrowDown') { next = width - step; }
+        else if (event.key === 'ArrowRight' || event.key === 'ArrowUp') { next = width + step; }
+        else if (event.key === 'Home') { next = minWidth; }
+        else if (event.key === 'End') { next = maxWidthNow(); }
+        if (next === null) {
+            return;
+        }
+        event.preventDefault();
+        announce(applyWidth(next));
+        keyed = true;
+    });
+    handle.addEventListener('keyup', () => {
+        if (keyed) {
+            keyed = false;
+            saveWidth(Math.round(leftMenu.getBoundingClientRect().width));
+        }
+    });
+    handle.addEventListener('pointerup', () => announce(leftMenu.getBoundingClientRect().width));
 }
 
 /**

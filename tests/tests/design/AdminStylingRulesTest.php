@@ -53,7 +53,7 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
     /**
      * Token name prefixes that are the same in light and dark mode (sizes, radius, type), so need no dark value
      */
-    const THEME_INDEPENDENT = array( '--a4-space-', '--a4-text-', '--a4-radius', '--a4-font', '--a4-mono', '--a4-leading' );
+    const THEME_INDEPENDENT = array( '--a4-space-', '--a4-text-', '--a4-radius', '--a4-font', '--a4-mono', '--a4-leading', '--a4-control-h' );
 
     private static $root;
 
@@ -539,6 +539,82 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
             $this->assertStringContainsString( '<span class="a4-tabs-switch-label" aria-hidden="true">{\'Tabs\'|i18n( \'design/admin/parts/my/menu\' )}</span>',
                 file_get_contents( self::$root . "/design/admin4/templates/$template" ), $template );
         }
+    }
+
+    /**
+     * Every data table stripes its even body rows with --a4-zebra (table.list, .a4-table, the sub-items table), the
+     * hovered row wins; no admin4 stylesheet paints rows in a colour of its own
+     */
+    public function testDataTablesShareOneZebra()
+    {
+        $dir = self::$root . '/design/admin4/stylesheets';
+        $found = array();
+        foreach ( array( 'components.css', 'admin4.css' ) as $file )
+        {
+            foreach ( self::declarations( file_get_contents( "$dir/$file" ) ) as $d )
+            {
+                $found[$d[0]][$d[1]] = $d[2];
+            }
+        }
+        // only data rows count (a header row of th in tbody does not), so the first data row is plain; a row header
+        // (th scope=row) takes the stripe with its cells
+        $rows = ' > tbody > tr:nth-child(even of :has(> td):not([hidden])) > :is(td, th[scope="row"])';
+        $this->assertSame( 'var(--a4-zebra)', $found['.a4-table' . $rows]['background-color'] );
+        $this->assertSame( 'var(--a4-zebra)', $found['table.list:not(.a4-plain)' . $rows]['background-color'] );
+        $this->assertSame( 'var(--a4-info-bg)', $found['table.list:not(.a4-plain) > tbody > tr:hover > :is(td, th[scope="row"])']['background-color'] );
+        $this->assertSame( 'var(--a4-info-bg)', $found['.a4-table > tbody > tr:hover > :is(td, th[scope="row"])']['background-color'] );
+        // the forms laid out as a list are not data tables
+        foreach ( array( 'shop/editvatrule.tpl', 'shop/editcurrency.tpl' ) as $template )
+        {
+            $this->assertStringContainsString( '<table class="list a4-plain"', file_get_contents( self::$root . "/design/admin4/templates/$template" ), $template );
+        }
+        $this->assertStringContainsString( '--exp-dt-row-alt: var(--a4-zebra)', file_get_contents( "$dir/admin4.css" ) );
+
+        $problems = array();
+        foreach ( array_merge( glob( "$dir/*.css" ), glob( "$dir/*/*.css" ) ) as $path )
+        {
+            foreach ( self::declarations( file_get_contents( $path ) ) as $d )
+            {
+                list( $selector, $property, $value ) = $d;
+                if ( preg_match( '/tr\.(bglight|bgdark)|tr:nth-(child|of-type)\((even|odd|2n)/', $selector )
+                     && preg_match( '/^background(-color)?$/', $property )
+                     && !preg_match( '/^(transparent|var\(--a4-zebra\)|var\(--a4-surface\)|var\(--a4-soft\)|var\(--exp-dt-row-alt\))$/', trim( $value ) ) )
+                {
+                    $problems[] = basename( $path ) . ": $selector { $property: $value }";
+                }
+            }
+        }
+        $this->assertSame( array(), $problems, 'zebra rows take --a4-zebra' );
+    }
+
+    /**
+     * The controls in a row are as high as each other (--a4-control-h): the node's language choice and buttons, the
+     * sub-items toolbar and its pagers; the left column's width grip is a focusable separator
+     */
+    public function testControlsInARowShareOneHeight()
+    {
+        $dir = self::$root . '/design/admin4/stylesheets';
+        $found = array();
+        foreach ( self::declarations( file_get_contents( "$dir/admin4.css" ) ) as $d )
+        {
+            $found[$d[0]][$d[1]] = $d[2];
+        }
+        $this->assertSame( 'var(--a4-control-h)', $found['.controlbar.a4-node-actions form .button-left .block select']['height'] );
+        // drawn by the page (the forced-colors block further down gives the native control back)
+        $this->assertMatchesRegularExpression( '/\n\.controlbar\.a4-node-actions form \.button-left \.block select \{[^}]*\bappearance: none;/',
+            file_get_contents( "$dir/admin4.css" ) );
+        $this->assertSame( 'var(--a4-control-h)', $found['html #action-controls .exp-dt-action']['height'] );
+        $this->assertSame( 'var(--a4-control-h)', $found['html .exp-dt-first, html .exp-dt-prev, html .exp-dt-next, html .exp-dt-last, html .exp-dt-page']['height'] );
+        $this->assertSame( 'col-resize', $found['.leftmenu-resize-handle']['cursor'] );
+        $this->assertStringContainsString( '--a4-control-h: 32px', file_get_contents( "$dir/components.css" ) );
+        $grip = file_get_contents( self::$root . '/design/admin4/templates/page_leftmenu.tpl' );
+        $this->assertStringContainsString( 'role="separator"', $grip );
+        $this->assertStringContainsString( 'tabindex="0"', $grip );
+        $this->assertStringNotContainsString( 'title=', $grip, 'the grip is named by its aria-label alone' );
+        // forced colors: the native select without the page's chevron
+        $this->assertMatchesRegularExpression( '/@media \(forced-colors: active\) \{\s*\.controlbar\.a4-node-actions form \.button-left \.block select \{[^}]*appearance: auto;[^}]*background-image: none;/',
+            file_get_contents( "$dir/admin4.css" ) );
+        $this->assertStringContainsString( "handle.addEventListener('keydown'", file_get_contents( self::$root . '/design/admin4/javascript/ezadmin_menubar.js' ) );
     }
 
     public function testComponentsAreTheSameInAdminAndAdmin4()

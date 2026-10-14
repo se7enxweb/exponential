@@ -1433,11 +1433,9 @@ html[data-a4-left-size="large"] {
     width: 1rem;
     height: 4rem;
     z-index: 140;
-    cursor: ew-resize;
+    cursor: col-resize;
     touch-action: none;
-    background: linear-gradient(90deg, rgba(145, 145, 145, 0), rgba(145, 145, 145, 0.85), rgba(145, 145, 145, 0));
-    border-radius: 999px;
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.55);
+    /* drawn in admin4.css: a small card with a grip, in the tokens */
 }
 
 .sidebar.show {

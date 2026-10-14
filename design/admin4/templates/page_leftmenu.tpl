@@ -1,6 +1,6 @@
 <div id="leftmenu" class="sidebar left" role="navigation" aria-label="{'Side menu'|i18n( 'design/admin/pagelayout' )|wash}">
-    {* Resize handle for drag-to-resize functionality *}
-    <div id="leftmenu-resize-handle" class="leftmenu-resize-handle" aria-hidden="true"></div>
+    {* The width grip: drag it, or focus it and use the arrow keys (ezadmin_menubar.js sets its value) *}
+    <div id="leftmenu-resize-handle" class="leftmenu-resize-handle" role="separator" aria-orientation="vertical" aria-controls="leftmenu" tabindex="0" aria-label="{'Width of the left column'|i18n( 'design/admin/pagelayout' )|wash}"></div>
     <div id="leftmenu-design">
         {if is_set( $module_result.left_menu )}
             {include uri=$module_result.left_menu}

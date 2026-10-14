@@ -14527,6 +14527,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
 <context>
     <name>design/admin/pagelayout</name>
     <message>
+        <source>Width of the left column</source>
+        <translation>Breite der linken Spalte</translation>
+    </message>
+    <message>
         <source>Search</source>
         <translation>Suchen</translation>
     </message>

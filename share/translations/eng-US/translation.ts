@@ -12210,6 +12210,10 @@ Note: The packages will not be uninstalled.</translation>
 <context>
     <name>design/admin/pagelayout</name>
     <message>
+        <source>Width of the left column</source>
+        <translation>Width of the left column</translation>
+    </message>
+    <message>
         <source>Search</source>
         <translation>Search</translation>
     </message>

@@ -511,8 +511,17 @@ table.list th.admin-dt-asc, table.list th.admin-dt-desc {
   background-color: var(--a4-accent-soft) !important;
   color: var(--a4-ink);
 }
-table.list tr.bglight, table.list tr.bglight td { background-color: var(--a4-surface); }
-table.list tr.bgdark, table.list tr.bgdark td { background-color: var(--a4-soft); }
+/* Zebra rows (doc/bc/6.0/admin4-styling.md, Tables): every data table -- table.list, .a4-table, the sub-items
+   table -- stripes its even data rows with --a4-zebra. Only rows with data cells count (a header row of th inside
+   tbody, or a row with the hidden attribute, does not), so the first data row is plain, whatever bglight/bgdark
+   sequence a template writes; a row header (th scope=row) takes the stripe with its cells; the hovered row wins.
+   A row hidden by a script (display: none) still counts: a known limit. Tables used for layout have none of these
+   classes, and a form laid out as a list (.a4-plain) stays plain too. */
+table.list tr.bglight, table.list tr.bgdark,
+table.list tr.bglight td, table.list tr.bgdark td, table.list tr.bgdark th[scope="row"] { background-color: transparent; }
+table.list:not(.a4-plain) > tbody > tr > th[scope="row"] { background-color: transparent; }   /* a row header is its row's colour */
+table.list:not(.a4-plain) > tbody > tr:nth-child(even of :has(> td):not([hidden])) > :is(td, th[scope="row"]) { background-color: var(--a4-zebra); }
+table.list:not(.a4-plain) > tbody > tr:hover > :is(td, th[scope="row"]) { background-color: var(--a4-info-bg); }
 table.list td { border-color: var(--a4-line); }
 
 /* Messages */
@@ -748,17 +757,41 @@ span.classattribute-description {
 .controlbar.a4-node-actions .block input.button,
 .controlbar.a4-node-actions .block input.defaultbutton,
 .controlbar.a4-node-actions .block input.button-disabled {
-  height: 32px;
+  box-sizing: border-box;
+  height: var(--a4-control-h);
   margin: 0;
   padding: 0 var(--a4-space-3);
   font-size: var(--a4-text-s);
 }
-.controlbar.a4-node-actions .block select { padding: 0 var(--a4-space-2); }
+/* the language choice: as high as the buttons beside it (a native select keeps its own height, so it is drawn by the
+   page: edge, radius and a chevron in the tokens); forced colors get the native control back */
+.controlbar.a4-node-actions form .button-left .block select {
+  -webkit-appearance: none;
+  appearance: none;
+  box-sizing: border-box;
+  height: var(--a4-control-h);   /* .controlbar form .button-left .block select sets height: auto */
+  padding: 0 var(--a4-space-6) 0 var(--a4-space-3);
+  border: 1px solid var(--a4-line-strong);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  background-image: linear-gradient(45deg, transparent 50%, var(--a4-muted) 50%),
+                    linear-gradient(135deg, var(--a4-muted) 50%, transparent 50%);
+  background-position: calc(100% - 17px) 55%, calc(100% - 12px) 55%;
+  background-size: 5px 5px;
+  background-repeat: no-repeat;
+  color: var(--a4-ink);
+  cursor: pointer;
+}
+.controlbar.a4-node-actions form .button-left .block select:hover:not(:disabled) { border-color: var(--a4-field-line); background-color: var(--a4-soft); }
+.controlbar.a4-node-actions form .button-left .block select:disabled { color: var(--a4-disabled); cursor: default; }
+@media (forced-colors: active) {
+  .controlbar.a4-node-actions form .button-left .block select { -webkit-appearance: auto; appearance: auto; padding-right: var(--a4-space-3); background-image: none; }
+}
 input.button.a4-danger:hover { border-color: var(--a4-bad); color: var(--a4-bad); background-color: var(--a4-bad-bg); }
 .a4-node-links { display: flex; align-items: center; gap: var(--a4-space-1); }
 .a4-node-links .versions { display: inline-flex; margin: 0; }
 :where(.a4-node-links) .a4-icon-button {
-  display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px;
+  display: inline-flex; align-items: center; justify-content: center; width: var(--a4-control-h); height: var(--a4-control-h);
   border-radius: var(--a4-radius-s); color: var(--a4-muted); background-color: var(--a4-card); background-image: none;
   box-shadow: inset 0 0 0 1px var(--a4-line-strong); padding: 0;
 }
@@ -1223,7 +1256,7 @@ html:root {
 html .exp-dt, html .exp-dt-actions, html .exp-dt-pager, html .exp-dt-dialog {
   --exp-dt-head: var(--a4-soft); --exp-dt-head-sortable: var(--a4-soft); --exp-dt-head-sorted: var(--a4-accent-soft);
   --exp-dt-head-ink: var(--a4-ink); --exp-dt-head-line: var(--a4-line); --exp-dt-row: var(--a4-surface);
-  --exp-dt-row-alt: var(--a4-soft); --exp-dt-row-hover: var(--a4-info-bg); --exp-dt-line: var(--a4-line);
+  --exp-dt-row-alt: var(--a4-zebra); --exp-dt-row-hover: var(--a4-info-bg); --exp-dt-line: var(--a4-line);
   --exp-dt-link: var(--a4-accent-text); --exp-dt-button-ink: var(--a4-accent-text); --exp-dt-button-line: var(--a4-line-strong);
   --exp-dt-button-hover: var(--a4-field-line); --exp-dt-disabled: var(--a4-disabled); --exp-dt-panel: var(--a4-soft);
   --exp-dt-frame: var(--a4-line-strong);
@@ -1243,6 +1276,77 @@ html .exp-dt-first:disabled, html .exp-dt-prev:disabled, html .exp-dt-next:disab
 html .exp-dt-page { border-color: var(--a4-line); background-color: var(--a4-card); }
 html .exp-dt-dialog { color: var(--a4-ink); }
 html .exp-dt-dialog-title { background-color: var(--a4-soft); background-image: none; color: var(--a4-ink); }
+
+/* The sub-items toolbar and pagers draw like the node's action buttons above them: one height (--a4-control-h),
+   the button radius and edge, ink text in the buttons' weight, the same hover and the global focus ring. */
+html #action-controls .exp-dt-action-group { vertical-align: middle; }
+html #action-controls .exp-dt-action {
+  display: inline-flex;
+  box-sizing: border-box;
+  height: var(--a4-control-h);
+  margin-left: var(--a4-space-2);
+  border: 1px solid var(--a4-line-strong);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  font-size: var(--a4-text-s);
+}
+html #action-controls .exp-dt-action-group:first-child .exp-dt-action { margin-left: 0; }
+html #action-controls .exp-dt-action:hover { border-color: var(--a4-field-line); background-color: var(--a4-soft); }
+html #action-controls .exp-dt-action-disabled,
+html #action-controls .exp-dt-action-disabled:hover { border-color: var(--a4-line); background-color: var(--a4-soft); }
+html #action-controls .exp-dt-button {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 var(--a4-space-3);
+  border-radius: var(--a4-radius-s);
+  background-color: transparent;
+  color: var(--a4-ink);
+  font-family: var(--a4-font);
+  font-size: var(--a4-text-s);
+  font-weight: 600;
+}
+html #action-controls .exp-dt-button:disabled { color: var(--a4-disabled); }
+html #action-controls .exp-dt-button:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
+/* room for the icon in front (12px in, 14px wide) and the caret of "More actions" */
+html #action-controls #ezbtn-items-button,
+html #action-controls #ezbtn-new-button,
+html #action-controls #ezbtn-options-button { padding-left: var(--a4-space-6); }
+html #action-controls #ezbtn-items-button::before,
+html #action-controls #ezbtn-new-button::before,
+html #action-controls #ezbtn-options-button::before { left: var(--a4-space-3); }
+html #action-controls #ezbtn-more button { padding-right: var(--a4-space-6); }
+html #action-controls #ezbtn-more button::after { right: var(--a4-space-3); }
+html .exp-dt-first, html .exp-dt-prev, html .exp-dt-next, html .exp-dt-last, html .exp-dt-page {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: auto;
+  min-width: var(--a4-control-h);
+  height: var(--a4-control-h);
+  margin: 0 0 0 var(--a4-space-1);
+  padding: 0 var(--a4-space-2);
+  border: 1px solid var(--a4-line-strong);
+  border-radius: var(--a4-radius-s);
+  color: var(--a4-ink);
+  font-family: var(--a4-font);
+  font-size: var(--a4-text-m);
+  font-weight: 600;
+  line-height: 1;
+  vertical-align: middle;
+}
+html .exp-dt-first:hover, html .exp-dt-prev:hover, html .exp-dt-next:hover, html .exp-dt-last:hover, html .exp-dt-page:hover {
+  border-color: var(--a4-field-line); background-color: var(--a4-soft);
+}
+html .exp-dt-first:disabled, html .exp-dt-prev:disabled, html .exp-dt-next:disabled, html .exp-dt-last:disabled {
+  border-color: var(--a4-line); color: var(--a4-disabled);
+}
+/* the arrows are IcoMoon glyphs ([data-icon]::before, core.css), which keep their own font family */
+html .exp-dt-first [data-icon], html .exp-dt-prev [data-icon], html .exp-dt-next [data-icon], html .exp-dt-last [data-icon] { font-size: var(--a4-text-l); }
+html .exp-dt-page.exp-dt-current { border-color: var(--a4-accent); background-color: var(--a4-accent-soft); color: var(--a4-accent-text); }
+html .exp-dt-first:focus-visible, html .exp-dt-prev:focus-visible, html .exp-dt-next:focus-visible, html .exp-dt-last:focus-visible,
+html .exp-dt-page:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
 
 /* The class, file type and other icons of the bootstrap-icons theme (share/icons/bootstrap-icons, switched on in the
    admin siteaccess's icon.ini) come as <img src="....svg">. An SVG in an <img> is drawn apart from the page, so its
@@ -1283,6 +1387,57 @@ div#contentstructure ul#content_tree_menu ul a.openclose-close::after {
   content: "";
   position: absolute;
   inset: -2px;
+}
+
+/* ---- The side columns: their first heading at the card's top, a compact tree, a visible width grip ------------- */
+
+/* The card's own edge is its top: the rule between blocks (.box-header's top border) is not drawn above the first
+   heading, and that heading has no extra space above it. */
+#leftmenu-design > :first-child > .box-header:first-child,
+#rightmenu-design > :first-child > .box-header:first-child { border-top: 0; }
+#leftmenu-design > :first-child > .box-header:first-child h4,
+#rightmenu-design > :first-child > .box-header:first-child h4 { margin-top: 0; padding-top: 0; }
+
+/* The content tree: rows 24px apart at the small and medium column sizes (a 20px line and the item's 4px below it),
+   the smallest spacing WCAG 2.5.8 allows for its links and the 20px open/close areas; a larger font (the "Large"
+   column size) gets a line of 1.25em instead. The connector elbow, the open/close symbol and the class icon sit on
+   the 20px line's middle. */
+div#contentstructure ul#content_tree_menu li { line-height: max(calc(var(--a4-space-5) - var(--a4-space-1)), 1.25em); }
+div#contentstructure ul#content_tree_menu ul li { background-position: 8px 0, 8px 10px; }
+div#contentstructure ul#content_tree_menu ul li.lastli { background-size: 1px 11px, 9px 1px; }
+div#contentstructure ul#content_tree_menu ul a.openclose-open,
+div#contentstructure ul#content_tree_menu ul a.openclose-close,
+div#contentstructure ul#content_tree_menu ul a.openclose-busy,
+div#contentstructure ul#content_tree_menu ul a.openclose-error { top: 2px; }
+
+/* The left column's width grip (page_leftmenu.tpl, ezadmin_menubar.js): a small card on the column's right edge with
+   two rows of dots, the resize cursor, the focus ring; the arrow keys change the width too. */
+.leftmenu-resize-handle {
+  box-sizing: border-box;
+  width: var(--a4-space-4);
+  height: var(--a4-space-7);
+  right: calc(-1 * var(--a4-space-2));
+  border-radius: var(--a4-radius-s);
+  background: var(--a4-card);
+  box-shadow: 0 0 0 1px var(--a4-line-strong), var(--a4-shadow-s);
+  color: var(--a4-muted);
+  cursor: col-resize;
+}
+.leftmenu-resize-handle::before {
+  content: "";
+  position: absolute;
+  inset: var(--a4-space-3) var(--a4-space-1);
+  background-image: radial-gradient(circle, currentColor 1.5px, transparent 2px);
+  background-size: 6px 6px;
+  background-position: center;
+}
+.leftmenu-resize-handle:hover,
+.leftmenu-resize-handle:focus-visible,
+body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); box-shadow: 0 0 0 1px var(--a4-accent), var(--a4-shadow-s); }
+.leftmenu-resize-handle:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
+@media (forced-colors: active) {
+  .leftmenu-resize-handle { border: 1px solid CanvasText; }
+  .leftmenu-resize-handle::before { forced-color-adjust: none; color: CanvasText; }
 }
 .window-close {
   box-sizing: border-box;

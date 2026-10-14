@@ -115,7 +115,7 @@ class AdminTokenContrastTest extends PHPUnit\Framework\TestCase
         $pairs = array();
         foreach ( array( '--a4-ink', '--a4-muted', '--a4-accent-text', '--a4-ok', '--a4-warn', '--a4-bad', '--a4-info' ) as $text )
         {
-            foreach ( array( '--a4-card', '--a4-surface', '--a4-soft' ) as $surface )
+            foreach ( array( '--a4-card', '--a4-surface', '--a4-soft', '--a4-zebra', '--a4-info-bg' ) as $surface )
             {
                 $pairs[] = array( $text, $surface, 4.5 );
             }

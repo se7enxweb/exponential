@@ -84,21 +84,34 @@ All `var(--a4-...)`, defined in `components.css`.
 | Group | Tokens |
 |---|---|
 | Accent | `--a4-accent` (`#f26a21`), `--a4-accent-hover`, `--a4-accent-strong` (filled controls with white text, 5.2:1), `--a4-accent-press` (their hovered fill), `--a4-accent-text` (the accent as text or link), `--a4-accent-soft` (tint), `--a4-on-accent`, `--a4-on-accent-hover` (text on the `-press` fill), `--a4-ring` (focus ring, opaque: 3:1 on every surface) |
-| Neutral | `--a4-ink`, `--a4-muted`, `--a4-line`, `--a4-line-strong`, `--a4-soft`, `--a4-card`, `--a4-surface`, `--a4-field`, `--a4-field-line`, `--a4-disabled`, `--a4-overlay`, `--a4-code-bg`, `--a4-code-ink` |
+| Neutral | `--a4-ink`, `--a4-muted`, `--a4-line`, `--a4-line-strong`, `--a4-soft`, `--a4-card`, `--a4-surface`, `--a4-zebra` (the even rows of data tables), `--a4-field`, `--a4-field-line`, `--a4-disabled`, `--a4-overlay`, `--a4-code-bg`, `--a4-code-ink` |
 | States | `--a4-ok`, `--a4-ok-bg`, `--a4-ok-line`; `--a4-warn`, `--a4-warn-bg`, `--a4-warn-line`; `--a4-bad`, `--a4-bad-bg`, `--a4-bad-line`, `--a4-bad-hover`; `--a4-info`, `--a4-info-bg`, `--a4-info-line` |
 | Charts | `--a4-chart-1` to `--a4-chart-8`, a categorical palette in this order |
 | Depth | `--a4-shadow-s`, `--a4-shadow-m`, `--a4-shadow-up` |
 | Radius | `--a4-radius-s` (9 px): the one component radius. `--a4-radius` (18 px) is the frame's three columns only |
 | Spacing | `--a4-space-1` to `--a4-space-7` (4, 8, 12, 16, 24, 32, 48 px); a length between two steps takes the nearer one (3 and 5 → 4, 6 to 9 → 8, 10 to 14 → 12, 15 to 20 → 16, 22 to 28 → 24) |
+| Controls | `--a4-control-h` (32 px): one height for the buttons, selects and pager buttons that stand in a row (the node's actions, the sub-items toolbar and pagers) |
 | Type | `--a4-font`, `--a4-mono`, `--a4-text-xs`, `-s`, `-m`, `-l`, `-xl`, `-2xl`, `-3xl` (12, 13, 14, 16, 22, 26, 32 px; nothing below 12), `--a4-leading` (1.5, every block that can wrap), `--a4-leading-tight` (1.25, headings only) |
 
-Every colour, chart and depth token has a dark value; the radius, spacing and type tokens are the same in both modes.
+Every colour, chart and depth token has a dark value; the radius, spacing, control and type tokens are the same in both
+modes.
+
+**Tables.** Every data table is striped the same way: `table.list`, the `.a4-table` component and the sub-items table
+(`exp/datatable`, through `--exp-dt-row-alt`) paint every second data row with `--a4-zebra`, the hovered row with
+`--a4-info-bg`, a selected row (`.a4-table tr.is-selected`) with `--a4-accent-soft`; a row header (`th scope="row"`)
+takes its row's colour. Only rows with data cells count (`tr:nth-child(even of :has(> td):not([hidden]))`): a header
+row of `th` inside `tbody` or a row with the `hidden` attribute is skipped, so the first data row is always plain. The
+`bglight`/`bgdark` classes the templates still write are ignored for the colour. A row hidden by a script
+(`display: none`) still counts; that is a known limit of CSS striping. A table used for layout carries none of these
+classes and stays plain; a form laid out as a `table.list` takes `a4-plain` as well (`shop/editvatrule.tpl`,
+`shop/editcurrency.tpl`). Text on a zebra row and on a hovered row keeps 4.5:1 (`AdminTokenContrastTest`), and no
+admin4 stylesheet paints rows in a colour of its own (`AdminStylingRulesTest::testDataTablesShareOneZebra`).
 `--a4-orange`, `--a4-orange-dark` and `--a4-orange-soft` are the accent's former names, kept for the extensions that
 use them; new code uses the `--a4-accent*` names.
 
 **The accent** is the brand orange `#f26a21`, as on admin4's header (the selected menu pill) and its default button.
 White text on it is only 3:1, so filled controls with white text use its darker shade `--a4-accent-strong`
-(`#c2410c`, 5.2:1) and accent-coloured text uses `--a4-accent-text` (`#c2410c` light, `#ff9a5c` dark).
+(`#c2410c`, 5.2:1) and accent-coloured text uses `--a4-accent-text` (`#bc3f0b` light, 4.7:1 also on a hovered table row; `#ff9a5c` dark).
 
 ## Components
 
@@ -245,6 +258,8 @@ For every template or stylesheet change in an administration design or an extens
 - [ ] Colours, radius, spacing and fonts are `var(--a4-*)` tokens: no `#hex`, `rgb()`, named colour, px radius or
       spacing literal, and no local custom properties.
 - [ ] A new token is in `components.css` with a light and a dark value, and documented on this page.
+- [ ] A new data table is a `table.list` or an `.a4-table` (zebra rows, hover); controls in one row share
+      `--a4-control-h`.
 - [ ] A new module stylesheet is listed in `AdminComponentCSSFileList` and exists in `design/admin4` and `design/admin`.
 - [ ] The page was checked in light and dark mode at 1440 px and at 960 px with scale 2: no light card on the dark
       page, text contrast at least 4.5:1, no horizontal overflow, no console errors.

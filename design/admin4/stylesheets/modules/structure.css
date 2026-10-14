@@ -358,8 +358,6 @@ a.a4-class-top {
   color: var(--a4-ink);
   vertical-align: middle;
 }
-.a4-rss-opml table.list tr.bglight,
-.a4-rss-opml table.list tr.bgdark { background-color: transparent; }
 .a4-rss-opml table.list th.sortable button.sort-button {
   margin: 0;
   padding: 0;
