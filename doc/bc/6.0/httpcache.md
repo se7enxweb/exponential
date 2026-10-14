@@ -184,7 +184,10 @@ of their own; pages with a disallowed query string; pages whose template sets
 that cannot be known before the kernel; anything not a content view; a request
 [request-shield](https://github.com/cjw-network/request-shield) in front
 marked as not for a cache (`REQUEST_SHIELD=allow-uncached`: a made-up path or
-parameter).
+parameter); a page that carries the debug report of its request (the Exp Debug
+bar or the classic report, `X-Exp-Cache: BYPASS (debug report)`): its timings,
+queries, messages and the viewer's own panel height belong to that request, and a
+report shown by IP would otherwise reach everyone sharing the anonymous context.
 
 ## With request-shield in front
 

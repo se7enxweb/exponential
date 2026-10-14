@@ -351,6 +351,11 @@ The height is saved once at the end of a drag, or 0.6 s after the last key press
 A logged-in user's preference is authoritative: localStorage is not looked at for a logged-in user. The panel says
 which applies in `data-exp-debug-panel-store` (`preference` or `browser`).
 
+A page that carries the debug report is never kept by the page cache (`X-Exp-Cache: BYPASS (debug report)`, see
+[What is never cached](httpcache.md#what-is-never-cached)): the report and the saved height are rendered for each
+request. Before 2026-10-14 a signed-in user's front page came from that cache with the report of an earlier request in
+it, so a reload showed the height from before the last resize.
+
 A stored value is a whole number of pixels: `expDebugBarReport::panelHeight()` turns anything else (text, a
 fraction, a negative number, a unit) into "not a height" (the server function refuses it, the report uses the
 default) and holds a number between 120 and 4000 (`PANEL_HEIGHT_MIN`, `PANEL_HEIGHT_MAX`).

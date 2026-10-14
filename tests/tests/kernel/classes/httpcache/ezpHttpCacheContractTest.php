@@ -660,4 +660,69 @@ class ezpHttpCacheContractTest extends PHPUnit\Framework\TestCase
                 $GLOBALS['eZCurrentAccess'] = $saved[3];
         }
     }
+
+    /**
+     * HC-23: a page with the debug report of its request is never stored. The report (and the Exp Debug bar's
+     * panel height of the viewer, data-exp-debug-panel-height) belongs to one request: stored, a reload showed the
+     * old report and the old height, and a report shown by IP reached everyone sharing the anonymous context.
+     */
+    public function testAPageWithTheDebugReportIsNeverStored()
+    {
+        require_once __DIR__ . '/../../../../../kernel/private/classes/httpcache/ezphttpcachelistener.php';
+        $reason = new ReflectionMethod( 'ezpHttpCacheListener', 'uncacheableReason' );
+        if ( PHP_VERSION_ID < 80100 )
+            $reason->setAccessible( true );
+        $saved = array( $_SERVER, $_POST, $GLOBALS['ezpRequestRuleNoStore'] ?? null, $GLOBALS['eZCurrentAccess'] ?? null );
+        try
+        {
+            $_SERVER['REQUEST_METHOD'] = 'GET';
+            $_POST = array();
+            unset( $GLOBALS['ezpRequestRuleNoStore'], $GLOBALS['eZCurrentAccess'], $_SERVER['REQUEST_SHIELD'] );
+            $bar = '<html><body><p>page</p><div id="debug" class="exp-debug" data-exp-debug-bar="2"><h2><a href="#debug-end">Exp Debug</a></h2>'
+                 . '<div id="debug-details" role="region" aria-label="Debug report" data-exp-debug-panel-height="630" data-exp-debug-panel-store="preference">'
+                 . '</div></div></body></html>';
+            $this->assertSame( 'debug report', $reason->invoke( null, $bar ), 'the Exp Debug bar' );
+            $this->assertSame( 'debug report', $reason->invoke( null, '<p>page</p><div id="debug"><h2><a href="#debug-end">Exp Debug </a></h2></div>' ),
+                'the classic report' );
+            $this->assertSame( 'debug report', $reason->invoke( null, "<p>page</p><div id='debug'>\n</div>" ) );
+            // what the debug report itself renders is the real thing
+            $debugGlobals = array();
+            foreach ( array( 'eZDebugGlobalInstance', 'eZDebugEnabled', 'eZDebugLogOnly', 'eZDebugAlwaysLog', 'eZDebugLogFileEnabled' ) as $key )
+                $debugGlobals[$key] = array_key_exists( $key, $GLOBALS ) ? array( $GLOBALS[$key] ) : null;
+            unset( $GLOBALS['eZDebugAlwaysLog'], $GLOBALS['eZDebugLogFileEnabled'] );
+            $GLOBALS['eZDebugGlobalInstance'] = $instance = new eZDebug();
+            $GLOBALS['eZDebugEnabled'] = true;
+            $GLOBALS['eZDebugLogOnly'] = false;
+            $dir = 'var/tmp/phpunit-httpcache-debug-' . getmypid() . '/';
+            @mkdir( $dir, 0777, true );
+            foreach ( $instance->LogFiles as $level => $file )
+                $instance->LogFiles[$level] = array( $dir, $file[1] );
+            ob_start();
+            $report = eZDebug::printReport( false, true, true );
+            ob_end_clean();
+            foreach ( glob( $dir . '*' ) as $file )
+                unlink( $file );
+            @rmdir( $dir );
+            foreach ( $debugGlobals as $key => $value )
+            {
+                if ( $value === null )
+                    unset( $GLOBALS[$key] );
+                else
+                    $GLOBALS[$key] = $value[0];
+            }
+            $this->assertIsString( $report );
+            $this->assertSame( 'debug report', $reason->invoke( null, '<html><body><p>page</p>' . $report . '</body></html>' ), 'the rendered report' );
+            // pages that only mention debug are stored as before
+            $this->assertNull( $reason->invoke( null, '<p>page</p><div id="debugger">x</div><div class="debug">y</div>' ) );
+            $this->assertNull( $reason->invoke( null, '<p>page</p><a href="#debug">debug</a>' ) );
+        }
+        finally
+        {
+            list( $_SERVER, $_POST ) = $saved;
+            if ( $saved[2] !== null )
+                $GLOBALS['ezpRequestRuleNoStore'] = $saved[2];
+            if ( $saved[3] !== null )
+                $GLOBALS['eZCurrentAccess'] = $saved[3];
+        }
+    }
 }

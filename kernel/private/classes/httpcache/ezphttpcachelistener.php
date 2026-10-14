@@ -375,6 +375,12 @@ class ezpHttpCacheListener
             return 'status ' . $code;
         if ( !is_string( $html ) || $html === '' )
             return 'empty';
+        // The page carries the debug report of this request (the Exp Debug bar or the classic report): its
+        // timings, queries and messages, and the viewer's own settings such as the panel height, belong to this
+        // request and this viewer. Stored, every later request of the same context got the old report and the
+        // old panel height, and a report shown by IP went to everybody sharing the anonymous context.
+        if ( preg_match( '/<div id=["\']debug["\'][\s>]/', $html ) )
+            return 'debug report';
         // request-shield in front marked the request as not for a cache (a made-up parameter or path,
         // a method): answered, never stored -- random addresses cannot fill the cache.
         if ( ( $_SERVER['REQUEST_SHIELD'] ?? '' ) === 'allow-uncached' )
