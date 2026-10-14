@@ -768,8 +768,15 @@ function _keyHandler( e )
     {
         // In a form field (the priority input of a row, a checkbox) the browser's own context menu stays.
         if ( /^(INPUT|TEXTAREA|SELECT)$/.test( active.tagName ) || active.isContentEditable ) return;
-        var row = active.closest( 'li, tr' );
-        var trigger = row ? row.querySelector( '[aria-haspopup="menu"]' ) : null;
+        var row = active.closest( 'li, tr' ), trigger = null;
+        // The row's own menu button: in the content tree a node's li also holds the li of its loaded sub items,
+        // so a button inside one of those belongs to another node.
+        var candidates = row ? row.querySelectorAll( '[aria-haspopup="menu"]' ) : [];
+        for ( var i = 0; i < candidates.length && !trigger; i++ )
+        {
+            if ( candidates[i].closest( 'li, tr' ) === row )
+                trigger = candidates[i];
+        }
         if ( trigger )
         {
             e.preventDefault();

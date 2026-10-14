@@ -75,6 +75,9 @@ class AdminContextMenuTest extends PHPUnit\Framework\TestCase
         // Shift+F10 in a form field of a row keeps the browser's own context menu
         $this->assertMatchesRegularExpression( '/INPUT\|TEXTAREA\|SELECT\)\$\/\.test\( active\.tagName \) \|\| active\.isContentEditable \) return;/', $js,
             'ezpopupmenu.js must leave Shift+F10 in form fields to the browser' );
+        // ... and opens the row's OWN menu: a tree node's li also holds the li of its sub items
+        $this->assertStringContainsString( "candidates[i].closest( 'li, tr' ) === row", $js,
+            'ezpopupmenu.js must take the menu button of the row itself, not one of a sub item' );
         // the public interface extensions call stays as it was
         foreach ( array( 'ezpopmenu_showTopLevel', 'ezpopmenu_showSubLevel', 'ezpopmenu_mouseOver', 'ezpopmenu_hideAll',
                          'ezpopmenu_hide', 'ezpopmenu_submitForm', 'ez_createAArray', 'ezpopup_SubstituteAndRedirect' ) as $api )
