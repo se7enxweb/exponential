@@ -1828,7 +1828,7 @@ f4c72a3b44fe9648e42d849832a4b87d  design/standard/images/user_group.png
 1c57c779bb3be6099bcac166bc83aab6  design/standard/javascript/contentstructuremenu/contentstructuremenu.js
 ff23b2b1387845ae5f541b38a7951963  design/standard/javascript/exp_bookmarks.js
 3e27389cb0e9b7fcbc78aa9f77b83e9f  design/standard/javascript/exp_password_field.js
-5886cbdc47d36106c192f8017a7e5a65  design/standard/javascript/expdebugbar.js
+d1c11aa215efd9fd4183498245865b4e  design/standard/javascript/expdebugbar.js
 3492ec4bc10e9beb9e57dc4554f3067d  design/standard/javascript/ezasynchronouspublishing.js
 508ff667415a5d98e2a74446341b83ec  design/standard/javascript/ezmultioption/ezmultioption.js
 5665f05feab34431f20fa7d4431da034  design/standard/javascript/lib/ezjslibcookiesupport.js
@@ -2813,7 +2813,7 @@ f1ac6c4bdfb768a543907f1e85408ed8  doc/bc/6.0/console-exp-ini.md
 4fa2c2acfebf49a6d0606b3cfdadd05c  doc/bc/6.0/console.md
 d3d1f22911e860a16506696d3fee2cbb  doc/bc/6.0/content-jobs.md
 ec94f35b9c29418f1c35fe46d54a157f  doc/bc/6.0/content-object-fallback-locale.md
-99fe17cdd388399ee09cec114615d91d  doc/bc/6.0/debug-bar.md
+3ea14ae87cb86aa4afacb20eddd38f99  doc/bc/6.0/debug-bar.md
 68ca2915c347f13a647afb19d14748d0  doc/bc/6.0/draft-edit-access.md
 b0fbba2abe4abadee42e57cebb5388fd  doc/bc/6.0/eZINI_PRESERVES_COMMENTS.md
 cf9e3712f778ce6bfbb6aaca39d7f82b  doc/bc/6.0/expinfo-operator.md
@@ -2867,7 +2867,7 @@ ec58de54f835ce1e62ff06f43ccbdc23  doc/bc/6.0/repair.md
 9a20a73e9663b4839cc8a2c370a4a571  doc/bc/6.0/response-cache-and-navigation.md
 42da9bad10b511619fee08bc9233c4b6  doc/bc/6.0/role-policy-paging.md
 7e517a45f444b0f9ced02b40e3fffe94  doc/bc/6.0/shop-basket-view-name.md
-ce8c2c33da99eef4c31014c186b4aa78  doc/bc/6.0/sql-query-cache.md
+4937283c56d29f8eb0bca2f2a5fe3b6d  doc/bc/6.0/sql-query-cache.md
 0400b2a50fcef2db6be4b2b01355360c  doc/bc/6.0/sqlite-transactions.md
 e21f3db4b2792ce0c74ab2480c335f60  doc/bc/6.0/static-cache-defaults.md
 8543fdb94ade4a47cc1e810302bd005a  doc/bc/6.0/subitems-table-options.md
@@ -3026,7 +3026,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-318ece0e1ed9fa10f652bc194597b6c9  doc/changelogs/6.0/6.0.15.md
+22e4ae7593d444ade594081d88b2ca1d  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -4927,9 +4927,9 @@ dc082dd96e41677e348d1721ead53183  kernel/classes/datatypes/ezxmltext/ezxmlinputh
 666c69c2b4d8f820ef56fee531b78ee9  kernel/classes/debugbar/expdebugbariplist.php
 b1e2b2eda4d2bbe754381b546a983f28  kernel/classes/debugbar/expdebugbarlog.php
 6dd9e1ed7d41968d2cf6e40053836913  kernel/classes/debugbar/expdebugbarregistry.php
-e54d5f718827b3231d161f2e7f139a84  kernel/classes/debugbar/expdebugbarserverfunctions.php
+b9bfc538a83d759c3b5db96b31090e59  kernel/classes/debugbar/expdebugbarserverfunctions.php
 a5a49ed6cf0490a3dd6bb00d8c1a1d45  kernel/classes/debugbar/expdebugbarsettings.php
-361a3fb1745eedee266a140ccc35d1ac  kernel/classes/debugbar/expdebugbarsummary.php
+b1e60e81fdb21e7d85d9a6874999cb63  kernel/classes/debugbar/expdebugbarsummary.php
 d0b9fe4899a6bfc77d3e2fe69b0d9a3e  kernel/classes/expadminpagination.php
 0dc063d43d781562aceed1ea6df05f57  kernel/classes/expbenchmark.php
 0f21cab2bd8703ec564d77e3042723f2  kernel/classes/expbenchmarkhttp.php
@@ -6205,7 +6205,7 @@ c7a43052aedb258efa97ec02a0d630f0  kernel/workflow/workflowlist.php
 9ba91d57d77c458fd031b4a0751ce000  lib/ezdb/classes/expmongodb.php
 226416065566fd96df9cfca57d5a3c99  lib/ezdb/classes/ezdb.php
 e3a1ffc6a2c9f262f92f520cc63b13ae  lib/ezdb/classes/ezdbinterface.php
-c86a08243de86aa673b80516f112f88c  lib/ezdb/classes/ezdbquerycache.php
+a8ac0d76f792bd973e4aa22cbd38d539  lib/ezdb/classes/ezdbquerycache.php
 cba91a38a19dd20520328d582d9d9228  lib/ezdb/classes/ezdbtool.php
 c8b7cb50e53522cc1d45078b3a28979b  lib/ezdb/classes/ezmysqlcharset.php
 184ec92d24404cebb876e3ee05cff51f  lib/ezdb/classes/ezmysqlidb.php
@@ -6376,7 +6376,7 @@ d27d72fa632723c912c0e30955660dfb  lib/eztemplate/classes/eztemplatetreecache.php
 83db4deedb094ab56e41666aa89d1d45  lib/eztemplate/classes/eztemplateunitoperator.php
 c86873ded14533e5c2c8d74477b5b0c9  lib/eztemplate/classes/eztemplatevariableelement.php
 290175b9eca3990307842ecc8353ae59  lib/eztemplate/classes/eztemplatewhilefunction.php
-a8734129842a9cb461d96cf4f12b5e39  lib/ezutils/classes/expdebugbarreport.php
+541042cc6db165c480a9e83f67f334a8  lib/ezutils/classes/expdebugbarreport.php
 b55898a868b558383b32af3334bd55d6  lib/ezutils/classes/expinfo.php
 11982ee3f90617fbf7ddbb55b4806286  lib/ezutils/classes/ezcachehelper.php
 65418d73b97109fe1dc0fc642c93139e  lib/ezutils/classes/ezcli.php
@@ -7225,8 +7225,8 @@ e8093e3d17d03cfdae2feafd46d02173  tests/tests/kernel/classes/datatypes/eZUserDat
 cc71014b46954ff2444ae1742ce6663f  tests/tests/kernel/classes/datatypes/eZUserDatatypeDraftTest.php
 3dc0333408fb6ae63ad09e93427f72d5  tests/tests/kernel/classes/debugbar/RadSurveyDebugBarTest.php
 e957ce257ff45aa0025d9ba25e8e9a5c  tests/tests/kernel/classes/debugbar/expDebugBarIPListTest.php
-7f8edbb2456688be8e254b7f8599436e  tests/tests/kernel/classes/debugbar/expDebugBarQueryCacheTest.php
-de55bef317782e72e484f292bbb55000  tests/tests/kernel/classes/debugbar/expDebugBarSettingsTest.php
+c408043440dd0d7ca6b9b5f6c36a8e44  tests/tests/kernel/classes/debugbar/expDebugBarQueryCacheTest.php
+d3f4c6a7061e2f6b8d54c27e22d3e5c7  tests/tests/kernel/classes/debugbar/expDebugBarSettingsTest.php
 d0f1077b7412d5471c3025b0e6e47260  tests/tests/kernel/classes/eZCollaborationItemTest.php
 c27a9015f7fbb87702e8932aa1238ea8  tests/tests/kernel/classes/eZContentCacheEventSendersTest.php
 94b71bed8f4c29466e8a95961fb599d4  tests/tests/kernel/classes/eZContentCacheManagerThresholdWarningTest.php
@@ -7916,7 +7916,7 @@ a3ea1bdfc39cf79ebe3eeda15c967a85  tests/tests/kernel/suite.php
 f41f1ce2427c94f00213bc3ba51685cf  tests/tests/lib/ezdb/eZDBExceptionCodeTest.php
 859ec399542c1118723b6c217ff29a77  tests/tests/lib/ezdb/eZDBInterfaceHelpersTest.php
 d0fbfd88dc279221eee85b97921f6add  tests/tests/lib/ezdb/eZDBInterfaceTest.php
-5c490ff9729974b1fec444c530ff6464  tests/tests/lib/ezdb/eZDBQueryCacheTest.php
+f30416978774772c80df42ab542d89d5  tests/tests/lib/ezdb/eZDBQueryCacheTest.php
 afa76fb7b9aaa0a1aaaea775252c6dcc  tests/tests/lib/ezdb/eZMySQLiDBFKTest.php
 d185830f980916133c98bbee065b75bb  tests/tests/lib/ezdb/eZPostgreSQLDBEscapeStringNullTest.php
 647b489c0b9f59541e1d26587ed4bb2b  tests/tests/lib/ezdb/eZPostgreSQLDBTest.php
