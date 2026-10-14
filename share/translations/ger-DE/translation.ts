@@ -14551,15 +14551,15 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Schließen</translation>
     </message>
     <message>
-        <source>Colour mode: light</source>
+        <source>Color mode: light</source>
         <translation>Farbmodus: hell</translation>
     </message>
     <message>
-        <source>Colour mode: dark</source>
+        <source>Color mode: dark</source>
         <translation>Farbmodus: dunkel</translation>
     </message>
     <message>
-        <source>Colour mode: system</source>
+        <source>Color mode: system</source>
         <translation>Farbmodus: System</translation>
     </message>
     <message>

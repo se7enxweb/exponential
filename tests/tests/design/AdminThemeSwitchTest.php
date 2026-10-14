@@ -44,10 +44,10 @@ class AdminThemeSwitchTest extends PHPUnit\Framework\TestCase
         foreach ( self::SWITCHES as $path )
         {
             $tpl = self::read( $path );
-            // the name says the state ("Colour mode: ..."), the title the next step
+            // the name says the state ("Color mode: ..."), the title the next step
             foreach ( array( 'light', 'dark', 'system' ) as $mode )
             {
-                $this->assertMatchesRegularExpression( "/data-label-$mode=\"\{'Colour mode: $mode'/", $tpl, $path );
+                $this->assertMatchesRegularExpression( "/data-label-$mode=\"\{'Color mode: $mode'/", $tpl, $path );
                 $this->assertStringContainsString( "data-title-$mode=", $tpl, $path );
             }
             // all three icons are admin icons (masks in the text colour, also in dark and forced colours)

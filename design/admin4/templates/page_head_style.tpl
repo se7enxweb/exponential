@@ -4,7 +4,7 @@
    (window.a4Pref: the signed-in user's eZPreference admin_color_mode; localStorage "exp-admin4-theme" on an
    anonymous page), light by default; "system" follows prefers-color-scheme, also when the system
    changes while the page is open. The header's #a4-theme-toggle steps light -> dark -> system -> light and stores
-   the step; its name says the mode in use ("Colour mode: …", data-label-*), its title the next step
+   the step; its name says the mode in use ("Color mode: …", data-label-*), its title the next step
    (data-title-*), and #a4-theme-status announces a press. A switch without data-label-system (an older copy of
    the markup) keeps stepping between light and dark. Other open admin tabs follow through the storage event.
    Storage that is blocked (private windows, policies) only means the choice is not remembered.

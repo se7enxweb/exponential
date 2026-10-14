@@ -12234,16 +12234,16 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Dismiss</translation>
     </message>
     <message>
-        <source>Colour mode: light</source>
-        <translation>Colour mode: light</translation>
+        <source>Color mode: light</source>
+        <translation>Color mode: light</translation>
     </message>
     <message>
-        <source>Colour mode: dark</source>
-        <translation>Colour mode: dark</translation>
+        <source>Color mode: dark</source>
+        <translation>Color mode: dark</translation>
     </message>
     <message>
-        <source>Colour mode: system</source>
-        <translation>Colour mode: system</translation>
+        <source>Color mode: system</source>
+        <translation>Color mode: system</translation>
     </message>
     <message>
         <source>Switch to dark mode</source>

@@ -35,16 +35,16 @@
     <div id="header-theme" class="header-theme">
         <button type="button" id="a4-theme-toggle" class="a4-theme-toggle"
                 title="{'Switch to dark mode'|i18n( 'design/admin/pagelayout' )|wash}"
-                data-label-light="{'Colour mode: light'|i18n( 'design/admin/pagelayout' )|wash}"
-                data-label-dark="{'Colour mode: dark'|i18n( 'design/admin/pagelayout' )|wash}"
-                data-label-system="{'Colour mode: system'|i18n( 'design/admin/pagelayout' )|wash}"
+                data-label-light="{'Color mode: light'|i18n( 'design/admin/pagelayout' )|wash}"
+                data-label-dark="{'Color mode: dark'|i18n( 'design/admin/pagelayout' )|wash}"
+                data-label-system="{'Color mode: system'|i18n( 'design/admin/pagelayout' )|wash}"
                 data-title-light="{'Switch to dark mode'|i18n( 'design/admin/pagelayout' )|wash}"
                 data-title-dark="{'Switch to system mode'|i18n( 'design/admin/pagelayout' )|wash}"
                 data-title-system="{'Switch to light mode'|i18n( 'design/admin/pagelayout' )|wash}">
             <span class="a4-icon a4-bi-sun a4-icon-sun" aria-hidden="true"></span>
             <span class="a4-icon a4-bi-moon a4-icon-moon" aria-hidden="true"></span>
             <span class="a4-icon a4-bi-circle-half a4-icon-system" aria-hidden="true"></span>
-            <span class="a4-theme-label">{'Colour mode: light'|i18n( 'design/admin/pagelayout' )}</span>
+            <span class="a4-theme-label">{'Color mode: light'|i18n( 'design/admin/pagelayout' )}</span>
         </button>
         <span id="a4-theme-status" class="a4-sr-only" role="status"></span>
         {* Normal or compact density, the user's eZPreference admin_density (window.a4Pref) like the mode;

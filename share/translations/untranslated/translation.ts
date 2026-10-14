@@ -11342,15 +11342,15 @@ Note: The packages will not be uninstalled.</source>
         <source>Dismiss</source>
     </message>
     <message>
-        <source>Colour mode: light</source>
+        <source>Color mode: light</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Colour mode: dark</source>
+        <source>Color mode: dark</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Colour mode: system</source>
+        <source>Color mode: system</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
