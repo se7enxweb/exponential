@@ -37,7 +37,8 @@
     ],
     "design/admin*/templates/*": [
       "tests/tests/design/AdminStylingRulesTest.php",
-      "tests/tests/design/AdminIconsTest.php"
+      "tests/tests/design/AdminIconsTest.php",
+      "tests/tests/design/AdminDashboardTest.php"
     ],
     "design/admin*/stylesheets/*": [
       "tests/tests/design/AdminStylingRulesTest.php",

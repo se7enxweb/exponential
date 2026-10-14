@@ -55,6 +55,11 @@ extension). The editor siteaccess falls back to `admin4` first, then `admin3`, `
 - **Dashboard.** A welcome with quick actions, key figures, the last 14 days of publishing and the system at a glance,
   around every block of `dashboard.ini`. It points to the two updates that keep an installation secure: the CMS with
   the Git manager, and the Composer libraries on the Updates dashboard, linked only where the user may open them.
+  Each key figure has an icon tile; a figure that leads somewhere shows an arrow in its corner. The week's figure
+  says how it compares with the 7 days before (a number, an arrow and words, never a colour for "good" or "bad"),
+  counted from the same 14 days as the chart, so it needs no query of its own. The chart's numbers fold out under
+  it as a table ("Show the numbers"). States in tables use the existing `.a4-badge.is-ok|is-warn|is-bad|is-info`
+  (the state's tint and text colour); there is no second "pill" component.
 - **Node view.** One header row with the class icon, title, badges (class, hidden, secondary location) and the actions
   (language, Edit, Move, Remove, View on site, Preview, Manage versions). One meta line with modified and by whom,
   published, version, section, node, object and remote ids (click to copy) and the translations (click to switch).
