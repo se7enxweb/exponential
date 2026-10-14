@@ -690,10 +690,19 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
         {
             if ( substr( (string)$file, -4 ) !== '.tpl' )
                 continue;
+            // inside a <div class="a4-empty"> a paragraph is the component's text; an .a4-empty inside one is a box in a box
+            $inEmpty = false;
             foreach ( file( (string)$file ) as $no => $line )
             {
-                if ( preg_match( "/^\\s*<p>\\{'(There are no |The [a-z ]*list is empty|The list is empty)/", $line ) )
-                    $plain[] = substr( (string)$file, strlen( self::$root ) + 1 ) . ':' . ( $no + 1 );
+                $where = substr( (string)$file, strlen( self::$root ) + 1 ) . ':' . ( $no + 1 );
+                if ( $inEmpty && strpos( $line, 'class="a4-empty"' ) !== false )
+                    $plain[] = "$where (an .a4-empty inside an .a4-empty)";
+                if ( strpos( $line, '<div class="a4-empty">' ) !== false )
+                    $inEmpty = true;
+                elseif ( $inEmpty && preg_match( '#^\s*</div>#', $line ) )
+                    $inEmpty = false;
+                if ( !$inEmpty && preg_match( "/^\\s*<p>\\{'(There are no |The [a-z ]*list is empty|The list is empty)/", $line ) )
+                    $plain[] = $where;
             }
         }
         $this->assertSame( array(), $plain, 'an empty list says so in .a4-empty, not in a plain paragraph' );
