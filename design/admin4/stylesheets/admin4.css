@@ -1795,3 +1795,16 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
   #leftmenu details.a4-navgroup > summary.a4-nav-title::before { forced-color-adjust: none; background-color: CanvasText; }
   #leftmenu ul.leftmenu-items li > div > a[aria-current] { border-left: 3px solid Highlight; box-shadow: none; }
 }
+
+/* No text below 12px (WCAG 1.4.4 in practice, the owner's floor): the browser draws <small> and <code> smaller than
+   their parent, which under the 13px body lands at about 11px. They keep the type scale's smallest step at least. */
+#page small,
+#page code { font-size: max(var(--a4-text-xs), .9em); }
+
+/* The quick settings' checkboxes stand in rows 24px apart, so each keeps its 24px target (WCAG 2.5.8) */
+#quicksettings-tool label:has(> input[type="checkbox"]) {
+  display: flex;
+  align-items: center;
+  gap: var(--a4-space-2);
+  min-height: var(--a4-space-5);
+}
