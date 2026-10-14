@@ -865,7 +865,8 @@ html[data-a4-theme="dark"] .a4-login-logo { background-image: url('../images/3/l
   font: 600 16px/1 var(--a4-font); cursor: pointer; box-shadow: 0 6px 16px var(--a4-accent-soft);
   transition: background-color .15s ease, box-shadow .15s ease;
 }
-.a4-login-form #loginbutton:hover { background-color: var(--a4-accent-hover); }
+.a4-login-form #loginbutton:hover { background-color: var(--a4-accent-press); }
+html[data-a4-theme="dark"] .a4-login-form #loginbutton:hover { color: var(--a4-code-bg); }   /* light orange in dark mode: dark text */
 .a4-login-form #loginbutton:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
 .a4-login-form #loginbutton.a4-busy { opacity: .75; cursor: progress; pointer-events: none; }
 .a4-login-alt { margin: 18px 0 0; text-align: center; font-size: 14px; color: var(--a4-muted); }
