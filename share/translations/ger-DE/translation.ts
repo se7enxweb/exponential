@@ -14783,6 +14783,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Dunkler Modus</translation>
     </message>
     <message>
+        <source>Compact view</source>
+        <translation>Kompakte Ansicht</translation>
+    </message>
+    <message>
+        <source>Switch between normal and compact view</source>
+        <translation>Zwischen normaler und kompakter Ansicht wechseln</translation>
+    </message>
+    <message>
         <source>Light mode</source>
         <translation>Heller Modus</translation>
     </message>

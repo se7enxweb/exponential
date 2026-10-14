@@ -11324,6 +11324,14 @@ Note: The packages will not be uninstalled.</source>
 <context>
     <name>design/admin/pagelayout</name>
     <message>
+        <source>Compact view</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch between normal and compact view</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Width of the left column</source>
         <translation type="unfinished"></translation>
     </message>

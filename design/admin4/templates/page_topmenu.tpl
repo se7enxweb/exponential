@@ -41,6 +41,13 @@
             <span class="a4-icon a4-bi-moon a4-icon-moon" aria-hidden="true"></span>
             <span class="a4-theme-label">{'Light mode'|i18n( 'design/admin/pagelayout' )}</span>
         </button>
+        {* Normal or compact density, kept in this browser (localStorage "exp-admin4-density") like the mode;
+           pressed means compact. Applied before the page is drawn by the script in page_head_style.tpl. *}
+        <button type="button" id="a4-density-toggle" class="a4-theme-toggle a4-density-toggle" aria-pressed="false"
+                title="{'Switch between normal and compact view'|i18n( 'design/admin/pagelayout' )|wash}">
+            <span class="a4-icon a4-bi-view-stacked" aria-hidden="true"></span>
+            <span class="a4-theme-label">{'Compact view'|i18n( 'design/admin/pagelayout' )}</span>
+        </button>
     </div>
     <div class="navbar-icon">&#9776;</div>
     <!-- begin::Sidebar Controls -->
