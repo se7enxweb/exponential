@@ -157,6 +157,8 @@ var CurrentDisableMenuID = -1;
 var CurrentDisabledMenusItems = {}, DefaultDisabledMenuItemCSSClass = 'menu-item-disabled';;
 // VisibleMenus is an array that holds the names of the currently visible menus
 var VisibleMenus = [];
+// The element that opened the visible top-level menu, and per submenu the item that opened it (keyboard layer)
+var MenuOpener = null, SubMenuOpeners = {};
 
 /*!
   Controls the popup offsets of the menu relative to the mouse position.
@@ -193,11 +195,19 @@ function _showTopLevel( event, menuID, substituteValues, menuHeader, disableIDLi
 {
     if ( !document.getElementById( menuID ) ) return;
     var mousePos = _mouseHandler( event ); // register new mouse position
+    var byKeyboard = _isKeyboardEvent( event );
 
     if ( substituteValues != -1 ) // new topmenu
     {
         _hideAll();
         CurrentSubstituteValues = substituteValues;
+        _setOpener( event );
+        // Opened with the keyboard (Enter on the trigger, Shift+F10): no mouse position, so open under the trigger.
+        if ( byKeyboard && MenuOpener && MenuOpener.getBoundingClientRect )
+        {
+            var rect = MenuOpener.getBoundingClientRect(), screenData = _getScreenProperties();
+            mousePos = { 'x': rect.left + screenData.ScrollX - EZPOPMENU_OFFSET, 'y': rect.bottom + screenData.ScrollY - EZPOPMENU_OFFSET };
+        }
     }
 
     if ( disableIDList && disableIDList != -1 )
@@ -212,6 +222,7 @@ function _showTopLevel( event, menuID, substituteValues, menuHeader, disableIDLi
     // make menu visible
     _makeVisible( menuID );
     _moveTopLevelOnScreen( menuID, mousePos );
+    if ( byKeyboard ) _focusItem( menuID, 0 );
 }
 
 /*!
@@ -234,6 +245,13 @@ function _showSubLevel( event, menuID, overItem )
     // make menu visible (show first since width is used in _moveSubLevelOnScreen)
     _makeVisible( menuID );
     _moveSubLevelOnScreen( menuID, overItem );
+
+    var opener = document.getElementById( overItem );
+    if ( opener )
+    {
+        SubMenuOpeners[menuID] = opener;
+        opener.setAttribute( 'aria-expanded', 'true' );
+    }
 }
 
 /*!
@@ -246,6 +264,7 @@ function _makeVisible( menuID )
     var el = document.getElementById( menuID );
     if ( el ) el.style.display = 'block';
     VisibleMenus[menuArray[menuID]['depth']] = menuID;
+    _decorate( menuID );
 
     document.getElementById( menuID ).onmouseover = function() { document.onmousedown = null; }
     document.getElementById( menuID ).onmouseout = function() { document.onmousedown = _hideAll; }
@@ -433,7 +452,8 @@ function _moveSubLevelOnScreen( menuID, alignItem )
 
     if ( alignElement && parentElement )
     {
-        newX = parseInt( parentElement.style.left ) + menuElement.offsetWidth - EZPOPMENU_SUBOFFSET;
+        // Next to the parent menu: its width, not the submenu's (they differ now that menus size to their items).
+        newX = parseInt( parentElement.style.left ) + parentElement.offsetWidth - EZPOPMENU_SUBOFFSET;
         newY = parseInt( parentElement.style.top ) + alignElement.offsetTop + EZPOPMENU_SUBTOPOFFSET;
     }
     // compensate if we are below the screen
@@ -518,6 +538,7 @@ function _hideAll()
 {
     document.onmousedown = null;
     _hideHigher( -1 );
+    if ( MenuOpener ) MenuOpener.setAttribute( 'aria-expanded', 'false' );
 }
 
 /*
@@ -529,6 +550,7 @@ function _hideHigher( level, el )
     {
         el = document.getElementById( VisibleMenus[i] );
         if ( el ) el.style.display = 'none';
+        if ( SubMenuOpeners[VisibleMenus[i]] ) SubMenuOpeners[VisibleMenus[i]].setAttribute( 'aria-expanded', 'false' );
         VisibleMenus[i] = 'none';
     }
 }
@@ -611,6 +633,227 @@ function _getScreenProperties()
 
   return result;
 }
+
+/*
+ * Keyboard and ARIA layer (WAI-ARIA menu pattern). The menus stay plain markup with inline mouse handlers, as
+ * extensions and older templates write them; the roles are added when a menu is shown, so every menu gets them.
+ *
+ * - The trigger gets aria-haspopup="menu" and aria-expanded; a menu opened from the keyboard (Enter or Space on
+ *   the trigger, Shift+F10 or the context menu key on a tree item or table row) opens under the trigger and its
+ *   first item takes the focus.
+ * - Arrow Down/Up, Home and End move between the items, Arrow Right, Enter or Space open a submenu, Arrow Left
+ *   closes it, Enter or Space activate an item, Escape closes the menu and returns the focus to the trigger, Tab
+ *   closes the menu.
+ */
+function _isKeyboardEvent( event )
+{
+    if ( !event ) return true;
+    if ( event.type && event.type.indexOf( 'key' ) === 0 ) return true;
+    // A click made with Enter or Space carries no position and detail 0.
+    return !event.pageX && !event.pageY && !event.clientX && !event.clientY;
+}
+
+function _setOpener( event )
+{
+    var el = event && ( event.currentTarget || event.target || event.srcElement );
+    if ( !el || el.nodeType !== 1 || el === window || el === document ) el = document.activeElement;
+    if ( el && el.closest ) el = el.closest( 'a, button, [tabindex]' ) || el;
+    if ( !el || el === document.body || ( el.closest && el.closest( 'div.popupmenu' ) ) )
+    {
+        MenuOpener = null;
+        return;
+    }
+    MenuOpener = el;
+    if ( !el.hasAttribute( 'aria-haspopup' ) ) el.setAttribute( 'aria-haspopup', 'menu' );
+    el.setAttribute( 'aria-expanded', 'true' );
+}
+
+function _menuItems( menu )
+{
+    var items = [], links = menu ? menu.getElementsByTagName( 'a' ) : [];
+    for ( var i = 0, l = links.length; i < l; i++ )
+    {
+        if ( links[i].offsetParent !== null || links[i].getClientRects().length ) items.push( links[i] );
+    }
+    return items;
+}
+
+function _decorate( menuID )
+{
+    var menu = document.getElementById( menuID );
+    if ( !menu ) return;
+    menu.setAttribute( 'role', 'menu' );
+
+    var headerID = menuArray[menuID] && menuArray[menuID]['headerID'];
+    if ( headerID && document.getElementById( headerID ) )
+    {
+        var header = document.getElementById( headerID );
+        menu.setAttribute( 'aria-labelledby', headerID );
+        header.setAttribute( 'role', 'none' );
+        if ( header.parentNode && header.parentNode !== menu ) header.parentNode.setAttribute( 'role', 'none' );
+    }
+
+    var links = menu.getElementsByTagName( 'a' );
+    for ( var i = 0, l = links.length; i < l; i++ )
+    {
+        var a = links[i];
+        a.setAttribute( 'role', 'menuitem' );
+        a.setAttribute( 'tabindex', '-1' );
+        if ( /(^|\s)more(\s|$)/.test( a.className ) )
+        {
+            a.setAttribute( 'aria-haspopup', 'menu' );
+            if ( !a.hasAttribute( 'aria-expanded' ) ) a.setAttribute( 'aria-expanded', 'false' );
+        }
+        if ( /disabled/.test( a.className ) ) a.setAttribute( 'aria-disabled', 'true' );
+        else a.removeAttribute( 'aria-disabled' );
+    }
+    var rules = menu.getElementsByTagName( 'hr' );
+    for ( var j = 0, k = rules.length; j < k; j++ ) rules[j].setAttribute( 'role', 'separator' );
+}
+
+function _focusItem( menuID, index )
+{
+    var items = _menuItems( document.getElementById( menuID ) );
+    if ( !items.length ) return;
+    if ( index < 0 ) index = items.length - 1;
+    items[index % items.length].focus();
+}
+
+function _visibleDepth()
+{
+    var depth = -1;
+    for ( var i = 0, l = VisibleMenus.length; i < l && VisibleMenus[i] != 'none'; i++ ) depth = i;
+    return depth;
+}
+
+function _menuOf( el )
+{
+    var menu = el && el.closest ? el.closest( 'div.popupmenu' ) : null;
+    return menu && menuArray[menu.id] ? menu : null;
+}
+
+function _openSubmenu( item )
+{
+    var before = _visibleDepth();
+    if ( typeof item.onmouseover === 'function' ) item.onmouseover.call( item );
+    if ( _visibleDepth() > before ) _focusItem( VisibleMenus[_visibleDepth()], 0 );
+}
+
+function _activate( item )
+{
+    if ( item.getAttribute( 'aria-disabled' ) === 'true' ) return;
+    if ( item.getAttribute( 'aria-haspopup' ) === 'menu' ) _openSubmenu( item );
+    else item.click();
+}
+
+function _keyHandler( e )
+{
+    var key = e.key, active = document.activeElement;
+
+    // Shift+F10 or the context menu key on a tree item or table row opens that row's menu.
+    if ( ( key === 'ContextMenu' || ( key === 'F10' && e.shiftKey ) ) && active && active.closest && !_menuOf( active ) )
+    {
+        var row = active.closest( 'li, tr' );
+        var trigger = row ? row.querySelector( '[aria-haspopup="menu"]' ) : null;
+        if ( trigger )
+        {
+            e.preventDefault();
+            trigger.click();
+        }
+        return;
+    }
+
+    // Space on a link that is a menu button (role="button") opens its menu as Enter does.
+    if ( ( key === ' ' || key === 'Spacebar' ) && active && active.tagName === 'A' && !_menuOf( active ) &&
+         active.getAttribute( 'aria-haspopup' ) === 'menu' )
+    {
+        e.preventDefault();
+        active.click();
+        return;
+    }
+
+    var depth = _visibleDepth();
+    if ( depth < 0 ) return;
+
+    // A menu opened with the mouse: the keys reach it from its trigger or the page, never from a form field.
+    if ( !_menuOf( active ) && active && active !== document.body && active !== MenuOpener && key !== 'Escape' && key !== 'Esc' ) return;
+
+    var menu = _menuOf( active ) || document.getElementById( VisibleMenus[depth] );
+    if ( !menu ) return;
+    var items = _menuItems( menu ), index = items.indexOf( active ), level = menuArray[menu.id]['depth'];
+
+    switch ( key )
+    {
+        case 'ArrowDown':
+        case 'Down':
+            e.preventDefault();
+            ( items[index + 1] || items[0] ).focus();
+            break;
+        case 'ArrowUp':
+        case 'Up':
+            e.preventDefault();
+            ( index > 0 ? items[index - 1] : items[items.length - 1] ).focus();
+            break;
+        case 'Home':
+            e.preventDefault();
+            if ( items.length ) items[0].focus();
+            break;
+        case 'End':
+            e.preventDefault();
+            if ( items.length ) items[items.length - 1].focus();
+            break;
+        case 'ArrowRight':
+        case 'Right':
+            if ( index >= 0 && items[index].getAttribute( 'aria-haspopup' ) === 'menu' )
+            {
+                e.preventDefault();
+                _openSubmenu( items[index] );
+            }
+            break;
+        case 'ArrowLeft':
+        case 'Left':
+        case 'Escape':
+        case 'Esc':
+            if ( level > 0 )
+            {
+                e.preventDefault();
+                var opener = SubMenuOpeners[menu.id];
+                _hideHigher( level - 1 );
+                if ( opener ) opener.focus();
+            }
+            else if ( key === 'Escape' || key === 'Esc' )
+            {
+                e.preventDefault();
+                var trigger = MenuOpener;
+                _hideAll();
+                if ( trigger && trigger.focus ) trigger.focus();
+            }
+            break;
+        case 'Enter':
+        case ' ':
+        case 'Spacebar':
+            if ( index >= 0 )
+            {
+                if ( key !== 'Enter' || items[index].getAttribute( 'aria-haspopup' ) === 'menu' || items[index].getAttribute( 'aria-disabled' ) === 'true' )
+                {
+                    e.preventDefault();
+                    _activate( items[index] );
+                }
+                // Enter on a plain item: the browser follows the link, which runs its onclick handler.
+            }
+            break;
+        case 'Tab':
+            if ( index >= 0 )
+            {
+                var back = MenuOpener;
+                _hideAll();
+                if ( back && back.focus ) back.focus();
+            }
+            break;
+    }
+}
+
+if ( document.addEventListener ) document.addEventListener( 'keydown', _keyHandler );
 
 // Register some functions on global scope
 window.ezpopup_SubstituteAndRedirect = _SubstituteAndRedirect;

@@ -196,7 +196,11 @@ function ContentStructureMenu( params, i18n )
         var icon = ( params.iconsList[classIdentifier] )? params.iconsList[classIdentifier]: params.iconsList['__default__'];
         if ( params.context != 'browse' && item.node_id > 1 )
         {
-            html += '<a class="nodeicon" href="#" onclick="ezpopmenu_showTopLevel( event, \'ContextMenu\', {\'%nodeID%\':'
+            // A menu button named after the node (the image inside is decorative), opened with Enter, Space or
+            // Shift+F10 too (ezpopupmenu.js).
+            html += '<a class="nodeicon" href="#" role="button" aria-haspopup="menu" aria-expanded="false" aria-label="'
+                + String(item.name).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')
+                + '" onclick="ezpopmenu_showTopLevel( event, \'ContextMenu\', {\'%nodeID%\':'
                 + item.node_id
                 + ', \'%objectID%\':'
                 + item.object_id

@@ -133,11 +133,9 @@ var eZAjaxSubitemsExpDataTable = (function () {
                 .append('<div class="crankfield"></div>');
             a.on('click', function (e) {
                 e.preventDefault();
+                // The native event: opened with the keyboard it has no position, and ezpopupmenu.js opens the menu
+                // under this link and moves the focus into it.
                 var ev = e.originalEvent || e;
-                if (!ev.pageX && !ev.pageY) {   // opened with the keyboard: under the link
-                    var r = this.getBoundingClientRect();
-                    ev = { pageX: r.left + window.pageXOffset, pageY: r.bottom + window.pageYOffset };
-                }
                 window.ezpopmenu_showTopLevel(ev, 'SubitemsContextMenu', {
                     '%nodeID%': row.node_id, '%objectID%': row.contentobject_id, '%version%': row.version,
                     '%languages%': translationArray, '%classList%': confObj.classesString
