@@ -63,9 +63,9 @@
                                $ignore_nodes_merge|unique|count ) )}
         {if is_array( $browse.class_array )}
             {if $browse.class_array|contains( $Nodes.item.object.content_class.identifier )}
-                <input type="{$select_type}" name="{$select_name}[]" value="{$Nodes.item[$select_attribute]}" />
+                <input type="{$select_type}" aria-label="{$Nodes.item.name|wash}" name="{$select_name}[]" value="{$Nodes.item[$select_attribute]}" />
             {else}
-                <input type="{$select_type}" name="_Disabled" value="" disabled="disabled" />
+                <input type="{$select_type}" aria-label="{$Nodes.item.name|wash}" name="_Disabled" value="" disabled="disabled" />
             {/if}
         {else}
             {*
@@ -74,18 +74,18 @@
               - Action is swap node, and node to swap has children and item is not a container, and vice versa
             *}
             {if and( or( eq( $browse.action_name, 'MoveNode' ), eq( $browse.action_name, 'CopyNode' ), eq( $browse.action_name, 'AddNodeAssignment' ) ), $Nodes.item.object.content_class.is_container|not )}
-                <input type="{$select_type}" name="{$select_name}[]" value="{$Nodes.item[$select_attribute]}" disabled="disabled" />
+                <input type="{$select_type}" aria-label="{$Nodes.item.name|wash}" name="{$select_name}[]" value="{$Nodes.item[$select_attribute]}" disabled="disabled" />
             {elseif and( eq( $browse.action_name, 'SwapNode' ),
                          eq( $swap_node_class, 'ezcontentobjecttreenode' ),
                          or( and( $swap_node.children_count|gt(0), $Nodes.item.object.content_class.is_container|not ),
                              and( $swap_node.is_container|not, $Nodes.item.children_count|gt(0) ) ) )}
-                <input type="{$select_type}" name="{$select_name}[]" value="{$Nodes.item[$select_attribute]}" disabled="disabled" />
+                <input type="{$select_type}" aria-label="{$Nodes.item.name|wash}" name="{$select_name}[]" value="{$Nodes.item[$select_attribute]}" disabled="disabled" />
             {else}
-                <input type="{$select_type}" name="{$select_name}[]" value="{$Nodes.item[$select_attribute]}" />
+                <input type="{$select_type}" aria-label="{$Nodes.item.name|wash}" name="{$select_name}[]" value="{$Nodes.item[$select_attribute]}" />
             {/if}
         {/if}
     {else}
-        <input type="{$select_type}" name="_Disabled" value="" disabled="disabled" />
+        <input type="{$select_type}" aria-label="{$Nodes.item.name|wash}" name="_Disabled" value="" disabled="disabled" />
     {/if}
     {/let}
     </td>

@@ -134,8 +134,8 @@
                             {* DESIGN: Control bar START *}
                             <div class="block">
                                 {if ezpreference( 'admin_edit_show_re_edit' )}
-                                    <input type="checkbox"
-                                        name="BackToEdit" />{'Back to edit'|i18n( 'design/admin/content/edit' )}
+                                    <label class="a4-inline-label"><input type="checkbox"
+                                        name="BackToEdit" />{'Back to edit'|i18n( 'design/admin/content/edit' )}</label>
                                 {/if}
                                 <input class="defaultbutton" type="submit" name="PublishButton"
                                     value="{'Send for publishing'|i18n( 'design/admin/content/edit' )}"

@@ -121,12 +121,12 @@
     {/if}
 
     <p>
-        <input type="checkbox" name="MoveToTrash" value="1"
+        <label class="a4-inline-label"><input type="checkbox" name="MoveToTrash" value="1"
                {if and($move_to_trash, $move_to_trash_allowed) }checked="checked" {/if}
                {if not($move_to_trash_allowed)}disabled="disabled" {/if}
                title="{'If "Move to trash" is checked, the items will be moved to the trash instead of being permanently deleted.'|i18n( 'design/admin/node/removeobject' )|wash}"
         />
-        {'Move to trash'|i18n('design/admin/node/removeobject')}
+        {'Move to trash'|i18n('design/admin/node/removeobject')}</label>
         {if not($move_to_trash_allowed)}
             - {'Objects containing ezuser attributes can not be sent to trash'|i18n('design/admin/node/removeobject')}
         {/if}

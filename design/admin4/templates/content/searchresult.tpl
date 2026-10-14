@@ -13,7 +13,7 @@
    ids and the request token. *}
 <table class="list" cellspacing="0">
 <tr>
-    <th scope="col" class="tight"><input type="checkbox" id="ezsearch-select-all" title="{'Select every result on this page.'|i18n( 'design/admin/content/search' )|wash}" /></th>
+    <th scope="col" class="tight"><input aria-label="{'Select every result on this page.'|i18n( 'design/admin/content/search' )|wash}" type="checkbox" id="ezsearch-select-all" title="{'Select every result on this page.'|i18n( 'design/admin/content/search' )|wash}" /></th>
     <th scope="col">{'Name'|i18n( 'design/admin/content/search' )}</th>
     <th scope="col">{'Type'|i18n( 'design/admin/content/search' )}</th>
 </tr>
@@ -21,7 +21,7 @@
 {section var=SearchResult loop=$search_result sequence=array( bglight, bgdark )}
 <tr class="{$SearchResult.sequence}">
 <td class="tight">
-    <input type="checkbox" class="ezsearch-select" value="{$SearchResult.item.node_id}" title="{'Select this item for editing.'|i18n( 'design/admin/content/search' )|wash}" />
+    <input aria-label="{'Select this item for editing.'|i18n( 'design/admin/content/search' )|wash}" type="checkbox" class="ezsearch-select" value="{$SearchResult.item.node_id}" title="{'Select this item for editing.'|i18n( 'design/admin/content/search' )|wash}" />
 </td>
 <td>
 {node_view_gui view=line content_node=$SearchResult.item}
