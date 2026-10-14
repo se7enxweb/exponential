@@ -203,7 +203,7 @@
                     {* DESIGN: Header START *}<div class="box-header">
                         <div class="box-ml">
 
-                            <h1 class="context-title"><a href={concat( '/class/view/', $object.contentclass_id )|ezurl}
+                            <h1 class="context-title"><a href={concat( '/class/view/', $object.contentclass_id )|ezurl} aria-haspopup="menu" aria-expanded="false"
                                     onclick="ezpopmenu_showTopLevel( event, 'ClassMenu', ez_createAArray( new Array( '%classID%', {$object.contentclass_id},'%objectID%',{$object.id}, '%nodeID%', {if $node.node_id}{$node.node_id}{else}null{/if}, '%currentURL%','{$node.url|wash( javascript )}')), '{$object.content_class.name|wash(javascript)}', ['class-createnodefeed', 'class-removenodefeed' {if $node.node_id|is_null()}, 'class-history', 'url-alias'{/if}] ); return false;">{$object.content_class.identifier|class_icon( normal, $node.class_name )}</a>&nbsp;{$object.name|wash}&nbsp;[{$object.content_class.name|wash}]
                             </h1>
 

@@ -207,7 +207,7 @@ function ContentStructureMenu( params, i18n )
             // Shift+F10 too (ezpopupmenu.js).
             // item.name arrives HTML-encoded (treemenu.php), so it goes into the attribute as it is.
             html += '<a class="nodeicon" href="#" role="button" aria-haspopup="menu" aria-expanded="false" aria-label="'
-                + item.name
+                + _attr( i18n.actions || '%name' ).split( '%name' ).join( item.name )
                 + '" onclick="ezpopmenu_showTopLevel( event, \'ContextMenu\', {\'%nodeID%\':'
                 + item.node_id
                 + ', \'%objectID%\':'

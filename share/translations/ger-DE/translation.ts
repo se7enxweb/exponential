@@ -8858,6 +8858,10 @@
         <translation>Elemente unter %name</translation>
     </message>
     <message>
+        <source>Actions for %name</source>
+        <translation>Aktionen für %name</translation>
+    </message>
+    <message>
         <source>Content tree</source>
         <translation>Inhaltsbaum</translation>
     </message>

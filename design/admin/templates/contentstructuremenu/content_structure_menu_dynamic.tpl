@@ -117,6 +117,7 @@ var treeMenu;
             *}"not_exist":"{'Node does not exist'|i18n("design/admin/contentstructuremenu")|wash("javascript")}",{*
             *}"internal_error":"{'Internal error'|i18n("design/admin/contentstructuremenu")|wash("javascript")}",{*
             *}"subitems":"{'Items below %name'|i18n("design/admin/contentstructuremenu")|wash("javascript")}",{*
+            *}"actions":"{'Actions for %name'|i18n("design/admin/contentstructuremenu")|wash("javascript")}",{*
             *}"tree":"{'Content tree'|i18n("design/admin/contentstructuremenu")|wash("javascript")}"{rdelim};
         {undef $iconInfo $classIconsSize}
     {/cache-block}

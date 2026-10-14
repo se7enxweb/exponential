@@ -692,8 +692,8 @@ function _decorate( menuID )
     {
         var header = document.getElementById( headerID );
         menu.setAttribute( 'aria-labelledby', headerID );
-        header.setAttribute( 'role', 'none' );
-        if ( header.parentNode && header.parentNode !== menu ) header.parentNode.setAttribute( 'role', 'none' );
+        // The title names the menu (aria-labelledby works on hidden elements) but is not a child of it.
+        ( header.parentNode && header.parentNode !== menu ? header.parentNode : header ).setAttribute( 'aria-hidden', 'true' );
     }
 
     var links = menu.getElementsByTagName( 'a' );
@@ -860,12 +860,26 @@ function _keyHandler( e )
         case 'Spacebar':
             if ( index >= 0 )
             {
-                if ( key !== 'Enter' || items[index].getAttribute( 'aria-haspopup' ) === 'menu' || items[index].getAttribute( 'aria-disabled' ) === 'true' )
+                // Also for Enter: an item without href (the siteaccess override items) gets no click from the browser.
+                e.preventDefault();
+                _activate( items[index] );
+            }
+            break;
+        default:
+            // Typeahead: a printable character moves to the next item whose label starts with it.
+            if ( index >= 0 && key && key.length === 1 && key !== ' ' && !e.ctrlKey && !e.metaKey && !e.altKey )
+            {
+                var ch = key.toLowerCase();
+                for ( var n = 1; n <= items.length; n++ )
                 {
-                    e.preventDefault();
-                    _activate( items[index] );
+                    var cand = items[( index + n ) % items.length];
+                    if ( ( cand.textContent || '' ).replace( /^\s+/, '' ).toLowerCase().indexOf( ch ) === 0 )
+                    {
+                        e.preventDefault();
+                        cand.focus();
+                        break;
+                    }
                 }
-                // Enter on a plain item: the browser follows the link, which runs its onclick handler.
             }
             break;
         case 'Tab':

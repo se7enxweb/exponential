@@ -7311,6 +7311,10 @@
         <translation>Items below %name</translation>
     </message>
     <message>
+        <source>Actions for %name</source>
+        <translation>Actions for %name</translation>
+    </message>
+    <message>
         <source>Content tree</source>
         <translation>Content tree</translation>
     </message>
