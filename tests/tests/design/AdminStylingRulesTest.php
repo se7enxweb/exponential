@@ -53,7 +53,7 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
     /**
      * Token name prefixes that are the same in light and dark mode (sizes, radius, type), so need no dark value
      */
-    const THEME_INDEPENDENT = array( '--a4-space-', '--a4-text-', '--a4-radius', '--a4-font', '--a4-mono', '--a4-leading', '--a4-control-h' );
+    const THEME_INDEPENDENT = array( '--a4-space-', '--a4-text-', '--a4-radius', '--a4-font', '--a4-mono', '--a4-leading', '--a4-control-h', '--a4-z-' );
 
     private static $root;
 
@@ -620,6 +620,60 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
         $this->assertMatchesRegularExpression( '/@media \(forced-colors: active\) \{\s*\.controlbar\.a4-node-actions form \.button-left \.block select \{[^}]*appearance: auto;[^}]*background-image: none;/',
             file_get_contents( "$dir/admin4.css" ) );
         $this->assertStringContainsString( "handle.addEventListener('keydown'", file_get_contents( self::$root . '/design/admin4/javascript/ezadmin_menubar.js' ) );
+    }
+
+    /** Stacking order comes from one scale of --a4-z-* tokens; a number decides it only inside one component. */
+    public function testStackingComesFromTheLayerTokens()
+    {
+        $dir = self::$root . '/design/admin4/stylesheets';
+        $problems = array();
+        foreach ( array_merge( glob( "$dir/*.css" ), glob( "$dir/*/*.css" ) ) as $path )
+        {
+            $css = preg_replace( '#/\*.*?\*/#s', '', (string)file_get_contents( $path ) );
+            if ( preg_match_all( '/z-index\s*:\s*([^;}]+)/i', $css, $m ) )
+            {
+                foreach ( $m[1] as $value )
+                {
+                    $value = trim( preg_replace( '/!important/i', '', $value ) );
+                    if ( !preg_match( '/^(0|1|-1|auto|var\(--a4-z-[a-z-]+\))$/', $value ) )
+                    {
+                        $problems[] = basename( $path ) . ": z-index $value";
+                    }
+                }
+            }
+        }
+        $this->assertSame( array(), $problems, 'use a --a4-z-* token (0, 1 and -1 only inside one component)' );
+
+        $tokens = array();
+        preg_match_all( '/(--a4-z-[a-z-]+)\s*:\s*(-?\d+)\s*;/', (string)file_get_contents( "$dir/components.css" ), $m, PREG_SET_ORDER );
+        foreach ( $m as $token )
+        {
+            $tokens[$token[1]] = (int)$token[2];
+        }
+        // the order the frame relies on: content < header < the edge tabs < menus < a dialog's mask < the dialog < toasts
+        $order = array( '--a4-z-sticky', '--a4-z-sidebar', '--a4-z-header', '--a4-z-sidebar-toggle', '--a4-z-menu',
+                        '--a4-z-menu-sub', '--a4-z-overlay', '--a4-z-modal', '--a4-z-toast' );
+        foreach ( $order as $i => $token )
+        {
+            $this->assertArrayHasKey( $token, $tokens );
+            if ( $i > 0 )
+            {
+                $this->assertGreaterThan( $tokens[$order[$i - 1]], $tokens[$token], "$token must lie above {$order[$i - 1]}" );
+            }
+        }
+    }
+
+    /** The tabs on the window edges say which column they show and whether it is shown; Escape closes an overlay column. */
+    public function testSidebarTabsSayWhatTheyControl()
+    {
+        $tpl = (string)file_get_contents( self::$root . '/design/admin4/templates/page_topmenu.tpl' );
+        $this->assertStringContainsString( 'class="sidebar-control left" aria-controls="leftmenu"', $tpl );
+        $this->assertStringContainsString( 'class="sidebar-control right" aria-controls="rightmenu"', $tpl );
+        $this->assertStringContainsString( "'Left column'|i18n( 'design/admin/pagelayout' )|wash", $tpl );
+        $js = (string)file_get_contents( self::$root . '/design/admin4/javascript/ezadmin_menubar.js' );
+        $this->assertStringContainsString( '.attr("aria-expanded", open ? "true" : "false")', $js );
+        $this->assertStringContainsString( 'e.key !== "Escape"', $js );
+        $this->assertStringContainsString( 'control.focus();', $js );
     }
 
     public function testComponentsAreTheSameInAdminAndAdmin4()
