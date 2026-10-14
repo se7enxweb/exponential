@@ -262,8 +262,9 @@ class expDebugBarReportEngineTest extends PHPUnit\Framework\TestCase
         $this->assertFalse( eZDebugReportNoStore( null ), 'debug output off' );
         $this->assertFalse( eZDebugReportNoStore( '' ) );
         $this->assertFalse( eZDebugReportNoStore( "  \n" ) );
-        // On the command line headers are never sent, so header() is called (a no-op there) and it says so
-        $this->assertTrue( eZDebugReportNoStore( '<div id="debug"></div>' ) );
+        // A report: the header is sent while headers can still be sent. In a whole PHPUnit run earlier tests have
+        // printed output, so headers count as sent there and nothing may be sent (header() would warn)
+        $this->assertSame( !headers_sent(), eZDebugReportNoStore( '<div id="debug"></div>' ) );
 
         $source = file_get_contents( $this->root . '/kernel/private/classes/global_functions.php' );
         $this->assertStringContainsString( "header( 'Cache-Control: private, no-store' );", $source );
