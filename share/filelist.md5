@@ -311,7 +311,7 @@ ad20247f90ec224cc1463d406ba4b68d  design/admin/stylesheets/components.css
 ce90ff045aa9ad5f6b74ebb4adb49d1f  design/admin/stylesheets/content.css
 9176b99cf9d39d3d3f7c8c50d1554eb5  design/admin/stylesheets/core.css
 3467a1c4602619c56bfc506613bebb91  design/admin/stylesheets/ezinfo.css
-4c5e4d692682f4f467483ff91da65a26  design/admin/stylesheets/modules/content.css
+23c79c055b5646969ed3d86d4b18fc0b  design/admin/stylesheets/modules/content.css
 7cff3d07d807a858fb8d33f1338fafea  design/admin/stylesheets/modules/people.css
 e998271a3ce233d1eaa620affd77e9fa  design/admin/stylesheets/modules/setup.css
 ecbe9b40c9b469223e7363ba6f46f76f  design/admin/stylesheets/modules/structure.css
@@ -415,7 +415,8 @@ ebddb1b029c18464d9785f47e985c405  design/admin/templates/content/job_mode_choice
 a4e501cf8a95cf8bd4ec8bf3b1708a49  design/admin/templates/content/job_refused.tpl
 474c721f36a4d2a42278c4afedaa41b1  design/admin/templates/content/job_summary.tpl
 aca80d05bbf2ac6b735ce8a1fe3abfb5  design/admin/templates/content/jobs.tpl
-8d9867cf99b2650f954f2804232df9ef  design/admin/templates/content/multiedit.tpl
+49dd1098322204c5e30d850dd8e3382e  design/admin/templates/content/multiedit.tpl
+239e133832014c6d11be6cc663a83774  design/admin/templates/content/multiedit_refused.tpl
 36252706998a7cb709f710393c42446a  design/admin/templates/content/parts/edit_sections.tpl
 7d22d9f5f0da24d7def6a5958148933c  design/admin/templates/content/parts/edit_states.tpl
 6fa8f0c45621619c5bb80fb8f2d891be  design/admin/templates/content/parts/object_information.tpl
@@ -924,7 +925,7 @@ ad20247f90ec224cc1463d406ba4b68d  design/admin4/stylesheets/components.css
 bb8e25bf8ebc32077b9ac79955233ced  design/admin4/stylesheets/content.css
 2bf3ab5ec84da6cbc0b6d1ad8b09b327  design/admin4/stylesheets/core.css
 3467a1c4602619c56bfc506613bebb91  design/admin4/stylesheets/ezinfo.css
-4c5e4d692682f4f467483ff91da65a26  design/admin4/stylesheets/modules/content.css
+23c79c055b5646969ed3d86d4b18fc0b  design/admin4/stylesheets/modules/content.css
 7cff3d07d807a858fb8d33f1338fafea  design/admin4/stylesheets/modules/people.css
 e998271a3ce233d1eaa620affd77e9fa  design/admin4/stylesheets/modules/setup.css
 ecbe9b40c9b469223e7363ba6f46f76f  design/admin4/stylesheets/modules/structure.css
@@ -1021,7 +1022,8 @@ ebddb1b029c18464d9785f47e985c405  design/admin4/templates/content/job_mode_choic
 a4e501cf8a95cf8bd4ec8bf3b1708a49  design/admin4/templates/content/job_refused.tpl
 474c721f36a4d2a42278c4afedaa41b1  design/admin4/templates/content/job_summary.tpl
 aca80d05bbf2ac6b735ce8a1fe3abfb5  design/admin4/templates/content/jobs.tpl
-fb2d58c6cd41b423a8714fe9d3309b09  design/admin4/templates/content/multiedit.tpl
+49dd1098322204c5e30d850dd8e3382e  design/admin4/templates/content/multiedit.tpl
+239e133832014c6d11be6cc663a83774  design/admin4/templates/content/multiedit_refused.tpl
 36252706998a7cb709f710393c42446a  design/admin4/templates/content/parts/edit_sections.tpl
 7d22d9f5f0da24d7def6a5958148933c  design/admin4/templates/content/parts/edit_states.tpl
 6fa8f0c45621619c5bb80fb8f2d891be  design/admin4/templates/content/parts/object_information.tpl
