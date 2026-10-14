@@ -265,3 +265,14 @@ html[data-a4-theme="dark"] #debug {
 #debug[data-exp-debug-bar] > h2 > label.debug-keep-open { order: 2; margin-left: 12px; margin-right: 12px; }
 #debug[data-exp-debug-bar] > h2 > a { order: 3; flex: 0 0 auto; margin-left: auto; }
 #debug[data-exp-debug-bar] > h2 > button.exp-debug-logo { order: 4; margin-left: 6px; margin-right: 6px; }
+
+/* The SQL query cache in the Cache tab: what is cached by table and the largest entries (expdebugbar.js,
+   renderQueryCache), drawn like the facts tables; the figures right aligned in equal digits. */
+#debug table.exp-debug-querycache-table { border-collapse: collapse; font-size: 13px; margin: 4px 0 8px; max-width: 100%; }
+#debug table.exp-debug-querycache-table th, #debug table.exp-debug-querycache-table td {
+  text-align: left; padding: 3px 14px 3px 0; border-bottom: 1px solid var(--xd-line); vertical-align: top; overflow-wrap: anywhere;
+}
+#debug table.exp-debug-querycache-table th { color: var(--xd-fg-soft); background-color: transparent; font-weight: 600; }
+#debug table.exp-debug-querycache-table .exp-debug-num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+#debug table.exp-debug-querycache-table th:last-child, #debug table.exp-debug-querycache-table td:last-child { padding-right: 0; }
+#debug .exp-debug-panel fieldset h4 { font-size: 13px; font-weight: 600; margin: 10px 0 2px; }

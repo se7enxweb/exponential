@@ -791,8 +791,13 @@
   // The SQL query cache: settings, this server's counters, APCu memory, and what it holds by table and its largest
   // entries (eZDBQueryCache::inventory()). Entries carry no statement text: a key, the tables, rows, size, hits, age.
   const kb = (bytes) => (Math.round((bytes || 0) / 102.4) / 10) + ' KB';
-  const qcTable = (head, rows) => el('table', { class: 'exp-debug-messages exp-debug-querycache-table' },
-    el('tr', {}, ...head.map((h) => el('th', {}, h))), ...rows.map((r) => el('tr', {}, ...r.map((c) => el('td', {}, c)))));
+  // numFrom: the first column of figures (right aligned by the class exp-debug-num of expdebugbar.css)
+  const qcTable = (head, rows, numFrom) => {
+    const cls = (i) => (i >= numFrom ? 'exp-debug-num' : null);
+    return el('table', { class: 'exp-debug-querycache-table' },
+      el('thead', {}, el('tr', {}, ...head.map((h, i) => el('th', { scope: 'col', class: cls(i) }, h)))),
+      el('tbody', {}, ...rows.map((r) => el('tr', {}, ...r.map((c, i) => el('td', { class: cls(i) }, c))))));
+  };
   const renderQueryCache = (q, can, lc, section) => {
     const box = el('fieldset', { 'data-cache': 'querycache' }, el('legend', {}, t('SQL query cache')));
     if (!q.enabled) {
@@ -817,12 +822,12 @@
     if ((q.tables || []).length) {
       box.append(el('h4', {}, t('What is cached (by table)')),
         qcTable([t('Table'), t('Entries'), t('Rows'), t('Size'), t('Hits')],
-          q.tables.map((r) => [r.table, r.entries, r.rows, kb(r.bytes), r.hits])));
+          q.tables.map((r) => [r.table, r.entries, r.rows, kb(r.bytes), r.hits]), 1));
     }
     if ((q.largest || []).length) {
       box.append(el('h4', {}, t('Largest entries')),
         qcTable([t('Key'), t('Tables'), t('Rows'), t('Size'), t('Hits'), t('Age')],
-          q.largest.map((r) => [r.key, (r.tables || []).join(', '), r.rows, kb(r.bytes), r.hits, Math.round((r.age_s || 0) / 60) + ' min'])));
+          q.largest.map((r) => [r.key, (r.tables || []).join(', '), r.rows, kb(r.bytes), r.hits, Math.round((r.age_s || 0) / 60) + ' min']), 2));
     }
     if (q.truncated) box.append(hint(t('Only the first %count entries were read.', { '%count': q.entries_read }), 'warn'));
     else if (q.apcu && !q.entries) box.append(hint(t('Nothing is cached on this server yet.')));
