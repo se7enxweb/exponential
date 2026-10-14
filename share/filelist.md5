@@ -5335,7 +5335,7 @@ baa63921e8f05df178e0c58f546c8c59  kernel/content/urlalias.php
 632f14a72172e9396bfe5a451bb7b718  kernel/content/urlalias_global.php
 4333ecad65749547fb889e2d3351ea72  kernel/content/urlalias_wildcard.php
 1ad9bf77d1e4d16af32f03dad229b93f  kernel/content/versionview.php
-1bfce75951784c21ac54763371e88c5a  kernel/content/versionviewframe.php
+1869d23c66552bb167d76dfe5ceff938  kernel/content/versionviewframe.php
 10eb94a93da9521ceb319245f0a6243c  kernel/content/view.php
 9347908f63def173d2ef2392a735b837  kernel/contentfinder/action.php
 a4eed9a7905fe1e626f082adbfc5b6cf  kernel/contentfinder/module.php
@@ -7602,7 +7602,7 @@ d44f7d91cfcfce7f540940d68cc67a08  tests/tests/kernel/common/eZTopMenuOperatorMis
 4e2b0da3c851b252696c94cdb4723b25  tests/tests/kernel/content/eZContentFunctionCollectionClassFilterTypeTest.php
 f39889af608be04ca56239a1de0a09c6  tests/tests/kernel/content/eZContentFunctionCollectionSiteDataTest.php
 7584758a4f40031bd44aedd755614046  tests/tests/kernel/content/eZContentOperationCollectionTest.php
-b5889727c77eff745ab60c6bceaa2835  tests/tests/kernel/content/eZContentVersionviewPlacementTest.php
+4399e626b4880c761281bb1f8af5a94c  tests/tests/kernel/content/eZContentVersionviewPlacementTest.php
 939a541d2bdf00bfadb6ce4a2d000d0f  tests/tests/kernel/content/eZEditLocationsVisibilityTest.php
 6e8d2af722d64f799200531b5cff5cfb  tests/tests/kernel/content/eZLoginTemplatesRegisterLinkTest.php
 b460bd68c74256811a99815a5fe6b24d  tests/tests/kernel/content/eZPublishWithoutNotificationLiveTest.php
