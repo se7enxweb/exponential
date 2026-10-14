@@ -348,6 +348,7 @@ function ContentStructureMenu( params, i18n )
                 html += '<\/ul>';
 
                 divElement.innerHTML += html;
+                thisThis.decorate( divElement );
                 divElement.className = 'loaded';
                 if ( aElement )
                 {
@@ -368,6 +369,7 @@ function ContentStructureMenu( params, i18n )
                 {
                     if (aElement) aElement.title = txt;
                     else divElement.innerHTML = '<span></span>' + txt;
+                    if (aElement) _describe( aElement.parentNode, txt );
                 }
 
                 switch( xhr.status )
@@ -468,13 +470,372 @@ function ContentStructureMenu( params, i18n )
     };
 
     // The open/close button of a node: its class (the symbol), aria-expanded and, while the sub items load,
-    // aria-busy.
+    // aria-busy. The node's tree item carries the same state.
     function _toggleState( a, state )
     {
         a.className = state;
         a.setAttribute( 'aria-expanded', state === 'openclose-close' ? 'true' : 'false' );
         if ( state === 'openclose-busy' ) a.setAttribute( 'aria-busy', 'true' );
         else a.removeAttribute( 'aria-busy' );
+        var item = _ownItem( a.parentNode );
+        if ( item )
+        {
+            // Opened, but every sub item was filtered out (hideNodes): nothing to expand
+            var childDiv = a.parentNode.id ? document.getElementById( 'c' + a.parentNode.id.substr( 1 ) ) : null;
+            if ( state === 'openclose-close' && childDiv && !childDiv.getElementsByTagName( 'li' ).length )
+                item.removeAttribute( 'aria-expanded' );
+            else
+                item.setAttribute( 'aria-expanded', state === 'openclose-close' ? 'true' : 'false' );
+            if ( state === 'openclose-busy' ) item.setAttribute( 'aria-busy', 'true' );
+            else item.removeAttribute( 'aria-busy' );
+            // Closed with the mouse (browsers that do not focus a clicked link): the Tab stop may sit in the items
+            // that just went away; it moves to the closed node.
+            var tree = _treeOf( item ), stop = tree ? _tabStop( tree ) : null;
+            if ( state === 'openclose-open' && stop && !_shown( stop ) )
+            {
+                _tabStop( tree, item );
+            }
+        }
+    }
+
+    // The tree for screen readers and keyboards (WAI-ARIA tree view pattern, as the navigation tree example):
+    // the list is a tree, every node's name link a tree item (its li is presentation), the list of its sub items
+    // a group it owns. One tree item is in the Tab order: the current node's, else the first. Up and Down move
+    // through the visible items, Right opens a node or moves to its first sub item, Left closes it or moves to its
+    // parent, Home and End go to the first and last item, typed letters to the next item starting with them, Enter
+    // follows the link, Shift+F10 or the context menu key opens the node's menu. The open/close button and the
+    // node icon stay for the mouse but leave the Tab order and the accessibility tree: the tree item carries
+    // aria-expanded, and the focus they get from the keyboard or a closing menu goes to the tree item.
+    this.tree = function( ul )
+    {
+        if ( !ul || ul.getAttribute( 'role' ) === 'tree' )
+        {
+            return;
+        }
+        ul.setAttribute( 'role', 'tree' );
+        if ( i18n.tree )
+        {
+            ul.setAttribute( 'aria-label', i18n.tree );
+        }
+        this.treeElement = ul;
+        this.decorate( ul );
+
+        var pointer = false, typed = '', typedAt = 0;
+        ul.addEventListener( 'mousedown', function()
+        {
+            pointer = true;
+            setTimeout( function() { pointer = false; }, 0 );
+        } );
+
+        ul.addEventListener( 'focusin', function( e )
+        {
+            var target = e.target;
+            if ( target.getAttribute && target.getAttribute( 'role' ) === 'treeitem' )
+            {
+                _tabStop( ul, target );
+            }
+            else if ( target.tagName === 'A' )
+            {
+                // The open/close button or node icon took the focus (the keyboard, or a closing menu giving it
+                // back): hand it to the node's tree item. Not for a click on the node icon or while its menu is
+                // open: the menu's keys work from the icon.
+                var item = _ownItem( target.parentNode );
+                if ( item && !( /(^|\s)nodeicon(\s|$)/.test( target.className ) && ( pointer || target.getAttribute( 'aria-expanded' ) === 'true' ) ) )
+                {
+                    item.focus();
+                }
+            }
+        } );
+
+        ul.addEventListener( 'keydown', function( e )
+        {
+            var item = e.target;
+            if ( e.altKey || e.ctrlKey || e.metaKey || !item.getAttribute || item.getAttribute( 'role' ) !== 'treeitem' )
+            {
+                return;
+            }
+            var li = item.parentNode, next = null, handled = false;
+            if ( e.key === 'ContextMenu' || ( e.shiftKey && e.key === 'F10' ) )
+            {
+                // The node's own menu button (a direct child of its li, never one of a sub item)
+                var opener = _childLink( li, 'nodeicon' );
+                if ( opener )
+                {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    opener.click();
+                }
+                return;
+            }
+            if ( e.shiftKey && e.key !== 'Home' && e.key !== 'End' && e.key.length !== 1 )
+            {
+                return;
+            }
+            switch ( e.key )
+            {
+                case 'ArrowDown': next = _step( ul, item, 1 ); break;
+                case 'ArrowUp': next = _step( ul, item, -1 ); break;
+                case 'Home': next = _step( ul, null, 1 ); break;
+                case 'End': next = _step( ul, null, -1 ); break;
+                case 'ArrowRight':
+                    if ( item.getAttribute( 'aria-expanded' ) === 'false' )
+                    {
+                        handled = _pressToggle( li );
+                    }
+                    else if ( item.getAttribute( 'aria-expanded' ) === 'true' )
+                    {
+                        var group = document.getElementById( item.getAttribute( 'aria-owns' ) || '' );
+                        next = group ? _step( group, null, 1 ) : null;
+                    }
+                    break;
+                case 'ArrowLeft':
+                    if ( item.getAttribute( 'aria-expanded' ) === 'true' && _toggleOf( li ) )
+                    {
+                        handled = _pressToggle( li );
+                    }
+                    else
+                    {
+                        next = _parentItem( li );
+                    }
+                    break;
+                default:
+                    if ( !e.key || e.key.length !== 1 || !/\S/.test( e.key ) )
+                    {
+                        return;
+                    }
+                    // Type-ahead: letters typed within half a second form one search
+                    var now = new Date().getTime();
+                    typed = ( now - typedAt < 500 ? typed : '' ) + e.key.toLowerCase();
+                    typedAt = now;
+                    next = _find( ul, item, typed );
+            }
+            if ( next )
+            {
+                next.focus();
+                handled = true;
+            }
+            if ( handled )
+            {
+                e.preventDefault();
+            }
+        } );
+    };
+
+    // Roles and states for the items under container (the tree, or the sub items just loaded)
+    this.decorate = function( container )
+    {
+        var ul = this.treeElement;
+        if ( !ul )
+        {
+            return;
+        }
+        var lists = jQuery.makeArray( container.getElementsByTagName( 'ul' ) );
+        if ( container === ul )
+        {
+            lists.unshift( ul );
+        }
+        for ( var l = 0; l < lists.length; l++ )
+        {
+            // One pass per list: level once, position by a running counter
+            var list = lists[l], lis = [], level = 1, c;
+            for ( var node = list; node && node !== ul; node = node.parentNode )
+            {
+                if ( node.tagName === 'UL' ) level++;
+            }
+            for ( c = list.firstChild; c; c = c.nextSibling )
+            {
+                if ( c.nodeType === 1 && c.tagName === 'LI' ) lis.push( c );
+            }
+            var div = list.parentNode, owner = list !== ul && div && div.id && div.id.charAt( 0 ) === 'c' ? _ownItem( div.parentNode ) : null;
+            if ( list !== ul )
+            {
+                if ( !lis.length )
+                {
+                    // Every sub item was filtered out (hideNodes): no group
+                    if ( owner && !_toggleOf( div.parentNode ) ) owner.removeAttribute( 'aria-expanded' );
+                    continue;
+                }
+                list.setAttribute( 'role', 'group' );
+                list.id = 'g' + div.id.substr( 1 );
+                if ( owner )
+                {
+                    owner.setAttribute( 'aria-owns', list.id );
+                    if ( !_toggleOf( div.parentNode ) )
+                    {
+                        // The top node of the tree: always open
+                        owner.setAttribute( 'aria-expanded', 'true' );
+                    }
+                }
+            }
+            for ( var i = 0; i < lis.length; i++ )
+            {
+                var li = lis[i], item = _ownItem( li );
+                if ( !item || item.getAttribute( 'role' ) === 'treeitem' )
+                {
+                    continue;
+                }
+                li.setAttribute( 'role', 'none' );
+                item.setAttribute( 'role', 'treeitem' );
+                item.setAttribute( 'tabindex', '-1' );
+                item.setAttribute( 'aria-level', level );
+                item.setAttribute( 'aria-setsize', lis.length );
+                item.setAttribute( 'aria-posinset', i + 1 );
+                if ( /(^|\s)currentnode(\s|$)/.test( li.className ) )
+                {
+                    item.setAttribute( 'aria-current', 'page' );
+                }
+                for ( c = li.firstChild; c; c = c.nextSibling )
+                {
+                    if ( c.nodeType === 1 && c.tagName === 'A' && c !== item )
+                    {
+                        c.setAttribute( 'tabindex', '-1' );
+                        c.setAttribute( 'aria-hidden', 'true' );
+                    }
+                }
+                var toggle = _toggleOf( li );
+                if ( toggle )
+                {
+                    item.setAttribute( 'aria-expanded', toggle.getAttribute( 'aria-expanded' ) || 'false' );
+                }
+            }
+        }
+        // The Tab stop is the current node's item once it is shown (the path to it opens step by step), unless
+        // the focus is in the tree already; else the first shown item, else the first item.
+        var stop = _tabStop( ul ), current = ul.querySelector( '[role="treeitem"][aria-current="page"]' );
+        if ( current && current !== stop && !( stop && stop.getAttribute( 'aria-current' ) === 'page' ) && !jQuery.contains( ul, document.activeElement ) )
+        {
+            _tabStop( ul, current );
+        }
+        else if ( !stop )
+        {
+            var first = _step( ul, null, 1 ) || ul.querySelector( '[role="treeitem"]' );
+            if ( first ) _tabStop( ul, first );
+        }
+    };
+
+    // The name link of the node li: the tree item
+    function _ownItem( li )
+    {
+        return _childLink( li, 'image-text' );
+    }
+
+    // The link with the given class among the direct children of li
+    function _childLink( li, className )
+    {
+        if ( !li || li.tagName !== 'LI' ) return null;
+        var pattern = new RegExp( '(^|\\s)' + className + '(\\s|$)' );
+        for ( var c = li.firstChild; c; c = c.nextSibling )
+        {
+            if ( c.nodeType === 1 && c.tagName === 'A' && pattern.test( c.className ) ) return c;
+        }
+        return null;
+    }
+
+    // The open/close button of the node li, if it has one
+    function _toggleOf( li )
+    {
+        return _childLink( li, 'openclose-(?:open|close|busy|error)' );
+    }
+
+    // Press the open/close button of the node li; false when there is nothing to press
+    function _pressToggle( li )
+    {
+        var toggle = _toggleOf( li );
+        if ( toggle && toggle.className !== 'openclose-busy' && toggle.className !== 'openclose-error' && toggle.onclick )
+        {
+            toggle.onclick();
+            return true;
+        }
+        return false;
+    }
+
+    // The tree item of the node above li
+    function _parentItem( li )
+    {
+        var div = li.parentNode && li.parentNode.parentNode;
+        return div && div.parentNode ? _ownItem( div.parentNode ) : null;
+    }
+
+    // The tree the item belongs to
+    function _treeOf( item )
+    {
+        for ( var node = item; node; node = node.parentNode )
+        {
+            if ( node.getAttribute && node.getAttribute( 'role' ) === 'tree' ) return node;
+        }
+        return null;
+    }
+
+    function _shown( item )
+    {
+        return item.getClientRects().length > 0;
+    }
+
+    // The next shown tree item under root after (direction 1) or before (-1) from, or the first or last one
+    // when from is null; only the items passed are measured.
+    function _step( root, from, direction )
+    {
+        var items = root.querySelectorAll( '[role="treeitem"]' ), i;
+        if ( from )
+        {
+            for ( i = 0; i < items.length && items[i] !== from; i++ );
+            i += direction;
+        }
+        else
+        {
+            i = direction > 0 ? 0 : items.length - 1;
+        }
+        for ( ; i >= 0 && i < items.length; i += direction )
+        {
+            if ( _shown( items[i] ) ) return items[i];
+        }
+        return null;
+    }
+
+    // The next shown tree item whose name starts with text, after from (at from itself for a longer search),
+    // wrapping round
+    function _find( root, from, text )
+    {
+        var items = root.querySelectorAll( '[role="treeitem"]' ), start = 0;
+        for ( ; start < items.length && items[start] !== from; start++ );
+        if ( text.length === 1 ) start++;
+        for ( var n = 0; n < items.length; n++ )
+        {
+            var candidate = items[( start + n ) % items.length];
+            if ( String( candidate.textContent ).trim().toLowerCase().indexOf( text ) === 0 && _shown( candidate ) ) return candidate;
+        }
+        return null;
+    }
+
+    // Get, or move, the one tree item in the Tab order
+    function _tabStop( ul, item )
+    {
+        var current = ul.querySelector( '[role="treeitem"][tabindex="0"]' );
+        if ( item && item !== current )
+        {
+            if ( current ) current.setAttribute( 'tabindex', '-1' );
+            item.setAttribute( 'tabindex', '0' );
+            current = item;
+        }
+        return current;
+    }
+
+    // A message about the node li for screen readers (its open/close button, which shows it as a title, is
+    // hidden from them): a visually hidden text the tree item is described by
+    function _describe( li, text )
+    {
+        var item = _ownItem( li );
+        if ( !item || !li.id ) return;
+        var id = 'e' + li.id.substr( 1 ), span = document.getElementById( id );
+        if ( !span )
+        {
+            span = document.createElement( 'span' );
+            span.id = id;
+            span.className = 'a4-sr-only';
+            li.appendChild( span );
+        }
+        span.textContent = text;
+        item.setAttribute( 'aria-describedby', id );
     }
 
     // A value for a double-quoted attribute of the generated markup
