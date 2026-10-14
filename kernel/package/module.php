@@ -168,5 +168,8 @@ $FunctionList['remove'] = array( 'Type' => $TypeID );
 $FunctionList['install'] = array( 'Type' => $TypeID );
 $FunctionList['import'] = array( 'Type' => $TypeID );
 $FunctionList['export'] = array( 'Type' => $TypeID );
+// Export an extension as a package (Setup > Extensions, the package wizard); asked when package.ini
+// [ExtensionExportSettings] RequirePolicy=enabled
+$FunctionList['export_extension'] = array();
 
 ?>

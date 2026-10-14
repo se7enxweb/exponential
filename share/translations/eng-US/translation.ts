@@ -53492,6 +53492,14 @@ You will need to change the class of the node by using the swap functionality.</
 <context>
     <name>kernel/package</name>
     <message>
+        <source>The extension %name may not be exported: it is not in package.ini [ExtensionExportSettings] AllowedExtensions[].</source>
+        <translation>The extension %name may not be exported: it is not in package.ini [ExtensionExportSettings] AllowedExtensions[].</translation>
+    </message>
+    <message>
+        <source>Exporting an extension needs the policy package/export_extension.</source>
+        <translation>Exporting an extension needs the policy package/export_extension.</translation>
+    </message>
+    <message>
         <source>The extension %name is not known.</source>
         <translation>The extension %name is not known.</translation>
     </message>

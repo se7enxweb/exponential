@@ -434,8 +434,11 @@ class Extensions extends \Exponential\Runnable\ModuleView
         if ( !isset( self::DOWNLOAD_FORMATS[$format] ) || !in_array( $name, $available, true ) || \eZExtension::extensionPath( $name ) === false )
             return \ezpI18n::tr( 'design/admin/setup/extensions', 'The extension or the archive format is not known.' );
 
-        // the rule of every package: no secret settings, no key material (addExtension() refuses them as well)
-        $refusal = \eZExtensionPackageHandler::packRefusal( $name );
+        // package.ini [ExtensionExportSettings] and the policy, then the rule of every package: no secret settings,
+        // no key material (addExtension() refuses them as well, on the copy it makes)
+        $refusal = \eZExtensionPackageHandler::exportRefusal( $name, true );
+        if ( $refusal === '' )
+            $refusal = \eZExtensionPackageHandler::packRefusal( $name );
         if ( $refusal !== '' )
             return $refusal;
 

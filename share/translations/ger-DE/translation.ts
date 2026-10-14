@@ -60779,6 +60779,14 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
 <context>
     <name>kernel/package</name>
     <message>
+        <source>The extension %name may not be exported: it is not in package.ini [ExtensionExportSettings] AllowedExtensions[].</source>
+        <translation>Die Extension %name darf nicht exportiert werden: sie steht nicht in package.ini [ExtensionExportSettings] AllowedExtensions[].</translation>
+    </message>
+    <message>
+        <source>Exporting an extension needs the policy package/export_extension.</source>
+        <translation>Für den Export einer Extension ist die Policy package/export_extension nötig.</translation>
+    </message>
+    <message>
         <source>The extension %name is not known.</source>
         <translation>Die Extension %name ist nicht bekannt.</translation>
     </message>

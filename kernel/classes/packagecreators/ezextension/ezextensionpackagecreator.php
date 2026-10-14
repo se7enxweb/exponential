@@ -45,6 +45,10 @@ class eZExtensionPackageCreator extends eZPackageCreationHandler
         {
             foreach ( $extensionList as $extensionName )
             {
+                // the policy as well: the extension step may lie behind the visitor
+                $refusal = eZExtensionPackageHandler::exportRefusal( (string)$extensionName, true );
+                if ( $refusal !== '' )
+                    throw new RuntimeException( $refusal );
                 $extensionHandler->addExtension( $package, $extensionName );
             }
         }
@@ -130,7 +134,9 @@ class eZExtensionPackageCreator extends eZPackageCreationHandler
         $valid = true;
         foreach ( (array)$http->postVariable( 'PackageExtensionNames' ) as $extensionName )
         {
-            $refusal = is_string( $extensionName ) ? eZExtensionPackageHandler::packRefusal( $extensionName ) : ezpI18n::tr( 'kernel/package', 'You must select at least one extension' );
+            $refusal = is_string( $extensionName ) ? eZExtensionPackageHandler::exportRefusal( $extensionName, true ) : ezpI18n::tr( 'kernel/package', 'You must select at least one extension' );
+            if ( $refusal === '' )
+                $refusal = eZExtensionPackageHandler::packRefusal( $extensionName );
             if ( $refusal !== '' )
             {
                 $errorList[] = array( 'field' => ezpI18n::tr( 'kernel/package', 'Extension list' ), 'description' => $refusal );
