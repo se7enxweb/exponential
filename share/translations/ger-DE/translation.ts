@@ -14551,6 +14551,30 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Schließen</translation>
     </message>
     <message>
+        <source>Colour mode: light</source>
+        <translation>Farbmodus: hell</translation>
+    </message>
+    <message>
+        <source>Colour mode: dark</source>
+        <translation>Farbmodus: dunkel</translation>
+    </message>
+    <message>
+        <source>Colour mode: system</source>
+        <translation>Farbmodus: System</translation>
+    </message>
+    <message>
+        <source>Switch to dark mode</source>
+        <translation>Zum dunklen Modus wechseln</translation>
+    </message>
+    <message>
+        <source>Switch to system mode</source>
+        <translation>Zum Systemmodus wechseln</translation>
+    </message>
+    <message>
+        <source>Switch to light mode</source>
+        <translation>Zum hellen Modus wechseln</translation>
+    </message>
+    <message>
         <source>Width of the left column</source>
         <translation>Breite der linken Spalte</translation>
     </message>
