@@ -270,7 +270,7 @@ a54e5021b1c597539a60da86ef766f0c  design/admin/images/trash-icon-16x16.gif
 bb57d7d50de510183570d8844efbd49f  design/admin/images/up-16x16-grey.png
 bc1f590f32f5d71f9bfdf7781f2135fc  design/admin/images/url_translator.png
 ac084a07607e6d6c5a845da15423854f  design/admin/images/view-fullscreen.png
-85af2ac592426ec959eded6626648142  design/admin/javascript/contentstructuremenu_dynamic.js
+18af72dae448bf72f192b18fd57f1f50  design/admin/javascript/contentstructuremenu_dynamic.js
 2208f27da9ddaa11d336d07c190cbc4b  design/admin/javascript/expajaxuploader.js
 2b984f2f31802646942901f436bf277b  design/admin/javascript/ezajaxrelations_jquery.js
 563718ba8e0479fd6defd99313ac4ac8  design/admin/javascript/ezajaxsubitems_expdatatable.js
@@ -881,7 +881,7 @@ bb57d7d50de510183570d8844efbd49f  design/admin4/images/up-16x16-grey.png
 bc1f590f32f5d71f9bfdf7781f2135fc  design/admin4/images/url_translator.png
 ac084a07607e6d6c5a845da15423854f  design/admin4/images/view-fullscreen.png
 99d3d5810f85a580372c354d45b81eb7  design/admin4/javascript/admin4.js
-85af2ac592426ec959eded6626648142  design/admin4/javascript/contentstructuremenu_dynamic.js
+18af72dae448bf72f192b18fd57f1f50  design/admin4/javascript/contentstructuremenu_dynamic.js
 2208f27da9ddaa11d336d07c190cbc4b  design/admin4/javascript/expajaxuploader.js
 b332109d3c4e4512f1e523c5d0288f7b  design/admin4/javascript/ezadmin_menubar.js
 2b984f2f31802646942901f436bf277b  design/admin4/javascript/ezajaxrelations_jquery.js
@@ -2984,7 +2984,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-f9c45c6040b88cb5a5da40436d8e7702  doc/changelogs/6.0/6.0.15.md
+c4c4ff41a92b0e623af01e5d5d8af60f  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3312,7 +3312,7 @@ c4809a3b611073bdcad4b38e9ea7dd6d  doc/features/6.0/additional-extension-director
 8ee6875c6693489d567c309177b49b81  doc/features/6.0/admin-list-paging.md
 41099ca247392d7ed963caa4b857e51c  doc/features/6.0/admin3-responsive-admin.md
 98b1eb658a2475fc31af9b9cbfaba709  doc/features/6.0/admin3-sidebar-width-and-font-size.md
-8df40759d30d70b87f3fe6e99eb6e136  doc/features/6.0/admin4-design.md
+ed4ace1f5854c965951f5ad786361250  doc/features/6.0/admin4-design.md
 7d8b3d248d27baa55bbf5f7f22040693  doc/features/6.0/admin4l.md
 cb077d1f37f8e8811c377ede4bc99357  doc/features/6.0/adminneo-database-manager.md
 ae7d698fad5f10287ad37ade2f97d8aa  doc/features/6.0/audit-trail.md
@@ -7060,7 +7060,7 @@ a279dc1d15cd330c560350bc794414f7  tests/tests/design/AdminKeyboardTest.php
 e642e34d50734b2155f69823ad17acf6  tests/tests/design/AdminLandmarksTest.php
 7e8957a9c15916135defa02bc8301d00  tests/tests/design/AdminRetiredClassesTest.php
 7c4c16e37f7b38c730404eac254aaf4a  tests/tests/design/AdminStylingRulesTest.php
-14e3a51cdccca2aa8173556335ffe2c2  tests/tests/design/AdminTreeViewTest.php
+2030d8fe56137d68a08dcea564c7b352  tests/tests/design/AdminTreeViewTest.php
 dcc45e4631fc358b0384c51d17ff8d67  tests/tests/extension/bccie/ezBccieTest.php
 e71599015464e106c536eedfe12d9676  tests/tests/extension/cjw_newsletter/cjwNewsletterAdminViewsTest.php
 52ce45237dc18d73206a7fb95a62e4bb  tests/tests/extension/cjw_newsletter/cjwNewsletterBounceTest.php
