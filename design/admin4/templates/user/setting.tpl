@@ -15,8 +15,8 @@
 <div class="context-attributes">
 
 <div class="block">
-<label>{'Maximum concurrent logins'|i18n( 'design/admin/user/setting' )}:</label>
-<input type="text" name="max_login" size="11" value="{$userSetting.max_login}" title="{'This functionality is not currently not available. [Use this field to specify the maximum allowed number of concurrent logins.]'|i18n( 'design/admin/user/setting' )}" disabled="disabled" />
+<label for="a4f-max_login">{'Maximum concurrent logins'|i18n( 'design/admin/user/setting' )}:</label>
+<input id="a4f-max_login" type="text" name="max_login" size="11" value="{$userSetting.max_login}" title="{'This functionality is not currently not available. [Use this field to specify the maximum allowed number of concurrent logins.]'|i18n( 'design/admin/user/setting' )}" disabled="disabled" />
 </div>
 
 {if and( ne( $max_failed_login_attempts, 0), gt( $failed_login_attempts, $max_failed_login_attempts ) )}
@@ -36,7 +36,7 @@
 
 <div class="block">
 <label class="check">{'Enable user account'|i18n( 'design/admin/user/setting' )}:</label>
-<input type="checkbox" name="is_enabled" {if $userSetting.is_enabled}checked="checked"{/if} title="{'Use this checkbox to enable or disable the user account.'|i18n( 'design/admin/user/setting' )}" />
+<input aria-label="{'Use this checkbox to enable or disable the user account.'|i18n( 'design/admin/user/setting' )|wash}" type="checkbox" name="is_enabled" {if $userSetting.is_enabled}checked="checked"{/if} title="{'Use this checkbox to enable or disable the user account.'|i18n( 'design/admin/user/setting' )}" />
 </div>
 
 {* The user's personal API keys (doc/guides/api-keys.md), for an administrator of oauthadmin. *}

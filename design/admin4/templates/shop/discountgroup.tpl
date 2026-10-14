@@ -19,7 +19,7 @@
 </tr>
 {section var=Groups loop=$discountgroup_array sequence=array( bglight, bgdark )}
 <tr class="{$Groups.sequence}">
-    <td><input type="checkbox" name="discountGroupIDList[]" value="{$Groups.item.id}" title="{'Select discount group for removal.'|i18n( 'design/admin/shop/discountgroup' )}" /></td>
+    <td><input aria-label="{'Select discount group for removal.'|i18n( 'design/admin/shop/discountgroup' )|wash}" type="checkbox" name="discountGroupIDList[]" value="{$Groups.item.id}" title="{'Select discount group for removal.'|i18n( 'design/admin/shop/discountgroup' )}" /></td>
     <td><a href={concat( $module.functions.discountgroupview.uri, '/', $Groups.item.id )|ezurl}>{$Groups.item.name|wash}</a></td>
     <td><a href={concat( $module.functions.discountgroupedit.uri, '/', $Groups.item.id )|ezurl}><span class="a4-icon a4-bi-pencil is-medium" role="img" aria-label="{'Edit'|i18n( 'design/admin/shop/discountgroup' )|wash}" title="{'Edit the <%discountgroup_name> discount group.'|i18n( 'design/admin/shop/discountgroup',, hash( '%discountgroup_name', $Groups.item.name ) )|wash}"></span></a></td>
 </tr>

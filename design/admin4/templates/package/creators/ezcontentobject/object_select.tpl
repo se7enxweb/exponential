@@ -20,8 +20,8 @@
     </tr>
         {section var=node loop=$node_list sequence=array(bglight,bgdark)}
         <tr class="{$node.sequence}">
-        <td width="1" align="right"><input type="checkbox" name="DeleteIDArray[]" value="{$node.item.id}"></td>
-        <td>{fetch(content,node,hash(node_id,$node.item.id)).name|wash}</td>
+        <td width="1" align="right"><input aria-labelledby="package-node-{$node.item.id}" type="checkbox" name="DeleteIDArray[]" value="{$node.item.id}"></td>
+        <td id="package-node-{$node.item.id}">{fetch(content,node,hash(node_id,$node.item.id)).name|wash}</td>
         <td>{$node.item.type}</td>
         </tr>
     {/section}

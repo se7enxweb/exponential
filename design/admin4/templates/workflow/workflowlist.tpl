@@ -67,7 +67,7 @@
   </tr>
    {section var=Workflows loop=$workflow_list sequence=array( bglight, bgdark )}
        <tr class="{$Workflows.sequence}">
-    <td><input type="checkbox" name="Workflow_id_checked[]" value="{$Workflows.item.id}" title="{'Select workflow for removal.'|i18n( 'design/admin/workflow/workflowlist' )}" /></td>
+    <td><input aria-label="{'Select workflow for removal.'|i18n( 'design/admin/workflow/workflowlist' )|wash}" type="checkbox" name="Workflow_id_checked[]" value="{$Workflows.item.id}" title="{'Select workflow for removal.'|i18n( 'design/admin/workflow/workflowlist' )}" /></td>
     <td><a href={concat( $module.functions.view.uri, '/', $Workflows.item.id )|ezurl}>{$Workflows.item.name|wash}</a></td>
     <td class="number" align="right">{$Workflows.item.id}</th>
     <td>

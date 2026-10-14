@@ -51,11 +51,11 @@
 <div class="a4-setup-wz-col">
 
 <div class="a4-card">
-<h2>{'Which class'|i18n( 'design/admin/setup/rad/override' )}</h2>
-<span class="a4-meta">{'%count classes in this kernel. Type part of a name or a path; every word has to match.'|i18n( 'design/admin/setup/rad/override',, hash( '%count', $wizard_class_count ) )}</span>
+<h2 id="a4f-h-find">{'Which class'|i18n( 'design/admin/setup/rad/override' )}</h2>
+<span class="a4-meta" id="a4f-m-find">{'%count classes in this kernel. Type part of a name or a path; every word has to match.'|i18n( 'design/admin/setup/rad/override',, hash( '%count', $wizard_class_count ) )}</span>
 
 <div class="a4-field">
-    <input type="text" name="find" value="{$wizard_settings.find|wash}" placeholder="{'ezcontentobject, or classes/datatypes'|i18n( 'design/admin/setup/rad/override' )}" autocomplete="off" />
+    <input aria-labelledby="a4f-h-find" aria-describedby="a4f-m-find" type="text" name="find" value="{$wizard_settings.find|wash}" placeholder="{'ezcontentobject, or classes/datatypes'|i18n( 'design/admin/setup/rad/override' )}" autocomplete="off" />
 </div>
 
 {if ne( $wizard_settings.find, '' )}
@@ -82,11 +82,11 @@
 </div>
 
 <div class="a4-card">
-<h2>{'Why an override'|i18n( 'design/admin/setup/rad/override' )}</h2>
-<span class="a4-meta">{'Whoever meets this at the next upgrade will want to know whether it is still needed, and by then nobody will remember. It goes in the file and in the README.'|i18n( 'design/admin/setup/rad/override' )}</span>
+<h2 id="a4f-h-reason">{'Why an override'|i18n( 'design/admin/setup/rad/override' )}</h2>
+<span class="a4-meta" id="a4f-m-reason">{'Whoever meets this at the next upgrade will want to know whether it is still needed, and by then nobody will remember. It goes in the file and in the README.'|i18n( 'design/admin/setup/rad/override' )}</span>
 
 <div class="a4-field">
-    <textarea name="reason" rows="3" placeholder="{'What has to change, and which lighter mechanism was tried first.'|i18n( 'design/admin/setup/rad/override' )}">{$wizard_settings.reason|wash}</textarea>
+    <textarea aria-labelledby="a4f-h-reason" aria-describedby="a4f-m-reason" name="reason" rows="3" placeholder="{'What has to change, and which lighter mechanism was tried first.'|i18n( 'design/admin/setup/rad/override' )}">{$wizard_settings.reason|wash}</textarea>
 </div>
 </div>
 

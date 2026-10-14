@@ -3238,6 +3238,10 @@
 <context>
     <name>design/admin/content/edit</name>
     <message>
+        <source>Code to embed the object</source>
+        <translation>Code to embed the object</translation>
+    </message>
+    <message>
         <source>Edit &lt;%object_name&gt; [%class_name]</source>
         <translation>Edit &lt;%object_name&gt; [%class_name]</translation>
     </message>
@@ -9850,6 +9854,10 @@
 </context>
 <context>
     <name>design/admin/package</name>
+    <message>
+        <source>Image file</source>
+        <translation>Image file</translation>
+    </message>
     <message>
         <source>Please provide information on the changes.</source>
         <translation>Please provide information on the changes.</translation>
@@ -23663,6 +23671,10 @@ Note: The packages will not be uninstalled.</translation>
 <context>
     <name>design/admin/setup/rad</name>
     <message>
+        <source>Find</source>
+        <translation>Find</translation>
+    </message>
+    <message>
         <source>Rapid Application Development Tools</source>
         <translation>Rapid Application Development Tools</translation>
     </message>
@@ -36519,6 +36531,14 @@ your account.</translation>
 </context>
 <context>
     <name>design/admin/visual/toolbar</name>
+    <message>
+        <source>Priority</source>
+        <translation>Priority</translation>
+    </message>
+    <message>
+        <source>Tool</source>
+        <translation>Tool</translation>
+    </message>
     <message>
         <source>Browse</source>
         <translation>Browse</translation>

@@ -55,7 +55,7 @@
    list and needs no address of its own. With javascript off the box never
    appears and the links below still do the job. *}
 <div class="a4-searchrow a4-setup-rad-find" id="radFind" hidden>
-    <input type="text" class="a4-input" id="radFindInput" autocomplete="off"
+    <input type="text" class="a4-input" id="radFindInput" autocomplete="off" aria-label="{'Find'|i18n( 'design/admin/setup/rad' )|wash}"
            placeholder="{'Type to narrow: a name, a setting, a class, a file'|i18n( 'design/admin/setup/rad' )}" />
     <button type="button" class="a4-btn a4-btn-small a4-btn-icon" id="radFindClear" title="{'Clear'|i18n( 'design/admin/setup/rad' )}">&times;</button>
     <span class="a4-setup-rad-find-count a4-meta" id="radFindCount"></span>

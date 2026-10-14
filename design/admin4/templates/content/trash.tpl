@@ -192,7 +192,7 @@
 
     <tr class="{$row_class}">
         <td>
-        <input type="checkbox" name="DeleteIDArray[]" value="{$item.object_id}" title="{'Use these checkboxes to mark items for removal. Click the "Remove selected" button to remove the selected items.'|i18n( 'design/admin/content/trash' )|wash()}" />
+        <input type="checkbox" aria-label="{$trash_node.name|wash}" name="DeleteIDArray[]" value="{$item.object_id}" title="{'Use these checkboxes to mark items for removal. Click the "Remove selected" button to remove the selected items.'|i18n( 'design/admin/content/trash' )|wash()}" />
         </td>
         <td class="a4-content-trash-name">
         {$trash_node.class_identifier|class_icon( small, $trash_node.class_name|wash )}&nbsp;<a href={concat( '/content/versionview/', $item.object_id, '/', $cur_c_object.current_version, '/' )|ezurl}>{$trash_node.name|wash}</a>

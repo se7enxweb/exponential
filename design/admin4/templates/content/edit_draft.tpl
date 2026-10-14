@@ -124,11 +124,11 @@
                                                                 value="{$Drafts.item.version}"
                                                                 {if eq( $Drafts.item.id, $draft_checked )}checked="checked"
                                                                 {/if}
-                                                                title="{'Select draft version #%version for editing.'|i18n( 'design/admin/content/edit_draft',, hash( '%version', $Drafts.item.version ) )}" />
+                                                                title="{'Select draft version #%version for editing.'|i18n( 'design/admin/content/edit_draft',, hash( '%version', $Drafts.item.version ) )}" aria-label="{'Select draft version #%version for editing.'|i18n( 'design/admin/content/edit_draft',, hash( '%version', $Drafts.item.version ) )|wash}" />
                                                         {else}
                                                             <input type="radio" name="SelectedVersion"
                                                                 value="{$Drafts.item.version}" disabled="disabled"
-                                                                title="{'You cannot select draft version #%version for editing because it belongs to another user. Please select a draft that belongs to you or create a new draft and then edit it.'|i18n( 'design/admin/content/edit_draft',, hash( '%version', $Drafts.item.version ) )}" />
+                                                                title="{'You cannot select draft version #%version for editing because it belongs to another user. Please select a draft that belongs to you or create a new draft and then edit it.'|i18n( 'design/admin/content/edit_draft',, hash( '%version', $Drafts.item.version ) )}" aria-label="{'You cannot select draft version #%version for editing because it belongs to another user. Please select a draft that belongs to you or create a new draft and then edit it.'|i18n( 'design/admin/content/edit_draft',, hash( '%version', $Drafts.item.version ) )|wash}" />
                                                         {/if}
                                                     </div>
                                                 </div>

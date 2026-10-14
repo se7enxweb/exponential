@@ -169,6 +169,11 @@ admin4's frame tells screen readers and keyboards how the page is built:
   selects, checkboxes and radios that had only a `title` or their table position have a name (the row's language or
   location where a list repeats them). The duplicate image link before the current user's name is hidden from both.
 - **Tables.** Every header cell of admin4's templates has `scope="col"` (its tables have header rows only).
+- **Form fields.** Every field has a name: its visible label (`<label for>`, or a `<label class="a4-inline-label">`
+  around the text next to a radio or checkbox), the column header and the row's name in a list, the card heading in
+  the Setup > RAD wizards, and an `aria-label` only where nothing is shown. Radio groups are named groups (version
+  preview, template creation, package export). `tests/tests/design/AdminFormLabelsTest.php` checks every
+  `input`, `select` and `textarea` of admin4's templates and overrides.
 
 `tests/tests/design/AdminLandmarksTest.php` checks the skip link, the landmarks, one main landmark per
 `#maincontent`, the `#a4-main` wrapper, the scopes, the frame titles and the named controls, in admin4's templates

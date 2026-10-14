@@ -4,9 +4,9 @@
 
     {attribute_view_gui attribute=$related_object.data_map.image image_class=small}
 
-    <p class="checkbox"><input type="checkbox" id="related-object-id-{$related_object.id}" name="DeleteRelationIDArray[]" value="{$related_object.id}" /></p>
+    <p class="checkbox"><input type="checkbox" aria-label="{$related_object.name|wash}" id="related-object-id-{$related_object.id}" name="DeleteRelationIDArray[]" value="{$related_object.id}" /></p>
     <p>{$related_object.name|wash}</p>
 
-    <input class="linkbox" type="text" value="&lt;object id={$related_object.id} /&gt;">
+    <input class="linkbox" type="text" aria-label="{'Code to embed the object'|i18n( 'design/admin/content/edit' )|wash}" value="&lt;object id={$related_object.id} /&gt;">
 
 </div>

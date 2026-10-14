@@ -87,7 +87,7 @@
         {/if}
         <input class="defaultbutton" type="submit" name="EditButton" value="{'Edit'|i18n( 'design/admin/node/view/full' )}" title="{'Edit the contents of this item.'|i18n( 'design/admin/node/view/full' )}" />
     {else}
-        <select name="ContentObjectLanguageCode" disabled="disabled">
+        <select name="ContentObjectLanguageCode" disabled="disabled" aria-label="{'Language to edit'|i18n( 'design/admin/node/view/full' )|wash}">
             <option value="">{'Not available'|i18n( 'design/admin/node/view/full' )}</option>
         </select>
         <input class="button-disabled" type="submit" name="EditButton" value="{'Edit'|i18n( 'design/admin/node/view/full' )}" title="{'You do not have permission to edit this item.'|i18n( 'design/admin/node/view/full' )}" disabled="disabled" />

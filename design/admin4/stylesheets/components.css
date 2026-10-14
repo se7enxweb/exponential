@@ -685,6 +685,11 @@ fieldset.a4-field > legend + * { clear: both; }
 .a4-check > span { flex: 1 1 auto; min-width: 0; }
 .a4-check strong { font-weight: 650; }
 .a4-check .a4-help { display: block; }
+
+/* A label around text that was plain before: an inline radio or checkbox with its text, or the words in front of a
+   control in a table cell. It names the control and widens its click area, and looks like the text around it
+   (core.css draws every label bold, larger and as a block of its own). */
+.a4-inline-label { display: inline; padding: 0; font-size: inherit; font-weight: inherit; white-space: normal; }
 .a4-page input[type="checkbox"], .a4-page input[type="radio"] { accent-color: var(--a4-accent-strong); }
 
 /* A choice of one, as rows */

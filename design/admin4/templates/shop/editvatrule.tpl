@@ -33,10 +33,10 @@
 <table class="list" cellspacing="0">
 <tr>
     <td>
-    <label>{'Country/region'|i18n( 'design/admin/shop/editvatrule' )}:</label>
+    <label for="editvatrule-country">{'Country/region'|i18n( 'design/admin/shop/editvatrule' )}:</label>
     </td>
     <td>
-    {include uri='design:shop/country/edit.tpl' select_name='Country' select_size=1
+    {include uri='design:shop/country/edit.tpl' select_name='Country' select_id='editvatrule-country' select_size=1
              default_val='*' default_desc='Any'|i18n( 'design/admin/shop/editvatrule' )
              current_val=$country use_country_code=1}
     </td>
@@ -44,11 +44,11 @@
 
 <tr>
     <td>
-    <label>{'Product categories'|i18n( 'design/admin/shop/editvatrule' )}:</label>
+    <label for="editvatrule-categories">{'Product categories'|i18n( 'design/admin/shop/editvatrule' )}:</label>
     </td>
     <td>
     {def $categories_list_size = cond( $all_product_categories|count|le( 100 ), $all_product_categories|count, true, 100 )}
-    <select name="Categories[]" size="{$categories_list_size}" multiple="multiple">
+    <select id="editvatrule-categories" name="Categories[]" size="{$categories_list_size}" multiple="multiple">
         <option {if $category_ids|count|eq(0)}selected="selected"{/if} value="*">{'Any'|i18n( 'design/admin/shop/editvatrule' )}</option>
     {foreach $all_product_categories as $current_cat}
         <option {if $category_ids|contains( $current_cat.id )}selected="selected"{/if} value="{$current_cat.id}">{$current_cat.name|wash}</option>
@@ -59,10 +59,10 @@
 
 <tr>
     <td>
-    <label>{'VAT type'|i18n( 'design/admin/shop/editvatrule' )}:</label>
+    <label for="editvatrule-vattype">{'VAT type'|i18n( 'design/admin/shop/editvatrule' )}:</label>
     </td>
     <td>
-    <select name="VatType" size="1">
+    <select id="editvatrule-vattype" name="VatType" size="1">
     {foreach $all_vat_types as $current_vat_type}
         <option {if eq( $vat_type_id, $current_vat_type.id )}selected="selected"{/if} value="{$current_vat_type.id}">{$current_vat_type.name|wash} ({$current_vat_type.percentage}%)</option>
         {/foreach}

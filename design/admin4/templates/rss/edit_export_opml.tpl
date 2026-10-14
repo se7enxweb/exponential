@@ -72,10 +72,10 @@
 </tr>
 {foreach $opml_items as $opml_item sequence array( bglight, bgdark ) as $opml_seq}
 <tr class="{$opml_seq}">
-    <td><input type="checkbox" name="OPMLItemRemove[]" value="{$opml_item.id}" title="{'Select this outline for removal.'|i18n( 'design/admin/rss/edit_export' )}" /><input type="hidden" name="OPMLItem_ID[]" value="{$opml_item.id}" /></td>
-    <td class="tight"><input type="text" name="OPMLItem_Priority[{$opml_item.id}]" value="{$opml_item.priority}" size="3" title="{'Lower numbers come first in the document.'|i18n( 'design/admin/rss/edit_export' )}" /></td>
+    <td><input type="checkbox" name="OPMLItemRemove[]" value="{$opml_item.id}" title="{'Select this outline for removal.'|i18n( 'design/admin/rss/edit_export' )|wash}" aria-label="{'Select this outline for removal.'|i18n( 'design/admin/rss/edit_export' )|wash}" /><input type="hidden" name="OPMLItem_ID[]" value="{$opml_item.id}" /></td>
+    <td class="tight"><input type="text" aria-label="{'Order'|i18n( 'design/admin/rss/edit_export' )|wash}" name="OPMLItem_Priority[{$opml_item.id}]" value="{$opml_item.priority}" size="3" title="{'Lower numbers come first in the document.'|i18n( 'design/admin/rss/edit_export' )}" /></td>
     <td class="tight">
-        <select name="OPMLItem_Type[{$opml_item.id}]">
+        <select aria-label="{'Type'|i18n( 'design/admin/rss/edit_export' )|wash}" name="OPMLItem_Type[{$opml_item.id}]">
         {foreach $opml_outline_types as $opml_type_key => $opml_type_label}
             <option value="{$opml_type_key}"{if eq( $opml_item.outline_type, $opml_type_key )} selected="selected"{/if}>{$opml_type_label|i18n( 'design/admin/rss/edit_export' )}</option>
         {/foreach}
@@ -94,10 +94,10 @@
         <button type="submit" class="button" name="BrowseOPMLNode" value="{$opml_item.id}" title="{'Point this outline at a content node instead of a feed.'|i18n( 'design/admin/rss/edit_export' )}">{'Browse content'|i18n( 'design/admin/rss/edit_export' )}</button>
     {/if}
     </td>
-    <td><input type="text" name="OPMLItem_Text[{$opml_item.id}]" value="{$opml_item.outline_text|wash}" size="24" title="{'What a reader shows on the line. Left empty, the feed\'s own name is used.'|i18n( 'design/admin/rss/edit_export' )|wash}" /></td>
-    <td><input type="text" name="OPMLItem_Category[{$opml_item.id}]" value="{$opml_item.category|wash}" size="14" /></td>
+    <td><input type="text" aria-label="{'Text'|i18n( 'design/admin/rss/edit_export' )|wash}" name="OPMLItem_Text[{$opml_item.id}]" value="{$opml_item.outline_text|wash}" size="24" title="{'What a reader shows on the line. Left empty, the feed\'s own name is used.'|i18n( 'design/admin/rss/edit_export' )|wash}" /></td>
+    <td><input type="text" aria-label="{'Category'|i18n( 'design/admin/rss/edit_export' )|wash}" name="OPMLItem_Category[{$opml_item.id}]" value="{$opml_item.category|wash}" size="14" /></td>
     <td class="tight">
-        <select name="OPMLItem_Parent[{$opml_item.id}]">
+        <select aria-label="{'Inside'|i18n( 'design/admin/rss/edit_export' )|wash}" name="OPMLItem_Parent[{$opml_item.id}]">
             <option value="0">{'Top level'|i18n( 'design/admin/rss/edit_export' )}</option>
         {foreach $opml_groups as $opml_group}
             {if ne( $opml_group.id, $opml_item.id )}
@@ -188,9 +188,9 @@
 </tr>
 {foreach $opml_browser_list as $opml_candidate sequence array( bglight, bgdark ) as $opml_candidate_seq}
 <tr class="{$opml_candidate_seq}{if $opml_candidate.selected} a4-rss-opml-already{/if}">
-    <td>{if $opml_candidate.selected}<span class="a4-rss-opml-tick" title="{'Already in this document.'|i18n( 'design/admin/rss/edit_export' )}">&#10003;</span>{else}<input type="checkbox" name="FeedBrowserSelect[]" value="{$opml_candidate.id}" />{/if}</td>
+    <td>{if $opml_candidate.selected}<span class="a4-rss-opml-tick" title="{'Already in this document.'|i18n( 'design/admin/rss/edit_export' )}">&#10003;</span>{else}<input type="checkbox" name="FeedBrowserSelect[]" value="{$opml_candidate.id}" aria-labelledby="opml-feed-{$opml_candidate.id}" />{/if}</td>
     <td class="tight a4-rss-opml-meta">{$opml_candidate.id}</td>
-    <td>{$opml_candidate.title|wash}</td>
+    <td id="opml-feed-{$opml_candidate.id}">{$opml_candidate.title|wash}</td>
     <td><code>{$opml_candidate.access_url|wash}</code></td>
     <td>{$opml_candidate.rss_version|wash}</td>
     <td>{if $opml_candidate.active|eq( 1 )}{'Active'|i18n( 'design/admin/rss/edit_export' )}{else}{'Inactive'|i18n( 'design/admin/rss/edit_export' )}{/if}</td>

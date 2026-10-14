@@ -137,13 +137,13 @@
 </div>
 
 <div class="a4-card">
-<h2>{'Class settings'|i18n( 'design/admin/setup/rad/datatype' )}</h2>
-<span class="a4-meta">{'Settings an editor chooses once, when the attribute is added to a content class: a maximum length, a default, a folder to browse from. Name the ones this datatype keeps and they become constants in the class and fields in the settings form. Leave a box empty to leave that column alone.'|i18n( 'design/admin/setup/rad/datatype' )}</span>
+<h2 id="dw-class-settings">{'Class settings'|i18n( 'design/admin/setup/rad/datatype' )}</h2>
+<span class="a4-meta" id="dw-class-settings-help">{'Settings an editor chooses once, when the attribute is added to a content class: a maximum length, a default, a folder to browse from. Name the ones this datatype keeps and they become constants in the class and fields in the settings form. Leave a box empty to leave that column alone.'|i18n( 'design/admin/setup/rad/datatype' )}</span>
 
 {foreach $wizard_class_settings as $dw_setting}
     <div class="a4-setup-wz-setting">
-        <code>{$dw_setting.key|wash}</code>
-        <input type="text" name="ClassSettingNames[{$dw_setting.key|wash}]" value="{$dw_setting.value|wash}" placeholder="{$dw_setting.kind|wash}" autocomplete="off" />
+        <code id="dw-class-setting-{$dw_setting.key|wash}">{$dw_setting.key|wash}</code>
+        <input aria-labelledby="dw-class-settings dw-class-setting-{$dw_setting.key|wash}" aria-describedby="dw-class-settings-help" type="text" name="ClassSettingNames[{$dw_setting.key|wash}]" value="{$dw_setting.value|wash}" placeholder="{$dw_setting.kind|wash}" autocomplete="off" />
     </div>
 {/foreach}
 </div>

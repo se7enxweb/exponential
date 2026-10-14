@@ -62,7 +62,7 @@
 <tr class="{$WishedItems.sequence}">
 
     {* Remove. *}
-    <td><input type="checkbox" name="RemoveProductItemDeleteList[]" value="{$WishedItems.item.id}" title="{'Select item for removal.'|i18n( 'design/admin/shop/wishlist' )}" /></td>
+    <td><input aria-label="{'Select item for removal.'|i18n( 'design/admin/shop/wishlist' )|wash}" type="checkbox" name="RemoveProductItemDeleteList[]" value="{$WishedItems.item.id}" title="{'Select item for removal.'|i18n( 'design/admin/shop/wishlist' )}" /></td>
 
     {* Name. *}
     <td>

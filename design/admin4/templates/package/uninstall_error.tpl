@@ -23,7 +23,7 @@
         <div class="optionslist">
         {def $i=0}
         {foreach $error.actions as $action_id => $action}
-            <input class="radiobutton" id="{$action_id}" type="radio" name="ActionID" value="{$action_id}" {if eq($i, 0)}checked="checked"{/if} />{$action|wash}<br />
+            <label class="a4-inline-label"><input class="radiobutton" id="{$action_id}" type="radio" name="ActionID" value="{$action_id}" {if eq($i, 0)}checked="checked"{/if} />{$action|wash}</label><br />
             {set $i=inc($i)}
         {/foreach}
         </div>

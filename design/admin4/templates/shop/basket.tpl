@@ -79,9 +79,9 @@
 </tr>
 {section var=Products loop=$basket.items sequence=array( bglight, bgdark )}
 <tr class="{$Products.sequence}">
-    <td><input type="checkbox" name="RemoveProductItemDeleteList[]" value="{$Products.item.id}" title="{'Select item for removal.'|i18n( 'design/admin/shop/basket' )}" /></td>
+    <td><input aria-label="{'Select item for removal.'|i18n( 'design/admin/shop/basket' )|wash}" type="checkbox" name="RemoveProductItemDeleteList[]" value="{$Products.item.id}" title="{'Select item for removal.'|i18n( 'design/admin/shop/basket' )}" /></td>
     <td><input type="hidden" name="ProductItemIDList[]" value="{$Products.item.id}" /><a href={concat( '/content/view/full/', $Products.item.node_id, '/' )|ezurl}>{$Products.item.object_name|wash}</a></td>
-    <td><input type="text" name="ProductItemCountList[]" value="{$Products.item.item_count}" size="3" /></td>
+    <td><input aria-label="{'Quantity'|i18n( 'design/admin/shop/basket' )|wash}" type="text" name="ProductItemCountList[]" value="{$Products.item.item_count}" size="3" /></td>
     <td class="number" align="right">
     {if ne( $Products.item.vat_value, -1 )}
         {$Products.item.vat_value} %

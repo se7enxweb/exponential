@@ -30,7 +30,7 @@
 <div class="context-attributes">
 
 <div class="block">
-    <input class="halfbox" type="text" name="SearchText" id="Search" value="{$search_text|wash}" />
+    <input class="halfbox" type="text" name="SearchText" id="Search" aria-label="{'Search'|i18n( 'design/admin/content/search' )|wash}" value="{$search_text|wash}" />
     <input class="button"  name="SearchButton" type="submit" value="{'Search'|i18n( 'design/admin/content/search' )}" />
 </div>
 

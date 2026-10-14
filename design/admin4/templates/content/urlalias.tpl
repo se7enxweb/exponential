@@ -78,10 +78,10 @@
     <tr class="{$seq}">
         {* Remove. *}
         <td>
-            <input type="checkbox" name="ElementList[]" value="{$element.parent}.{$element.text_md5}.{$element.language_object.locale}" />
+            <input type="checkbox" name="ElementList[]" value="{$element.parent}.{$element.text_md5}.{$element.language_object.locale}" aria-labelledby="urlalias-{$element.parent}-{$element.text_md5}" />
         </td>
 
-        <td>
+        <td id="urlalias-{$element.parent}-{$element.text_md5}">
             {def $url_alias_path=""}
             {foreach $element.path_array as $el}
                 {if ne( $el.action, "nop:" )}

@@ -35,7 +35,7 @@
             {if $RelatedImageObjects.item.can_read }
                 {attribute_view_gui attribute=$RelatedImageObjects.item.data_map.image image_class=small}
                 <p>
-                    <input type="checkbox" id="related-object-id-{$RelatedImageObjects.item.id}" name="DeleteRelationIDArray[]" value="{$RelatedImageObjects.item.id}" {if $related_contentobjects_id.common|contains( $RelatedImageObjects.item.id )|not}disabled="disabled"{/if} />
+                    <input type="checkbox" aria-label="{$RelatedImageObjects.item.name|wash}" id="related-object-id-{$RelatedImageObjects.item.id}" name="DeleteRelationIDArray[]" value="{$RelatedImageObjects.item.id}" {if $related_contentobjects_id.common|contains( $RelatedImageObjects.item.id )|not}disabled="disabled"{/if} />
                     {$RelatedImageObjects.item.name|wash}
                 </p>
             {else}
@@ -85,7 +85,7 @@
             {section var=RelatedFileObjects loop=$grouped_related_contentobjects.files sequence=array( bglight, bgdark )}
                 <tr class="{$RelatedFileObjects.sequence|wash}">
                     {if $RelatedFileObjects.item.can_read}
-                        <td class="checkbox"><input type="checkbox" id="related-object-id-{$RelatedFileObjects.item.id}" name="DeleteRelationIDArray[]" value="{$RelatedFileObjects.item.id}" {if $related_contentobjects_id.common|contains( $RelatedFileObjects.item.id )|not}disabled="disabled"{/if} /></td>
+                        <td class="checkbox"><input type="checkbox" aria-label="{$RelatedFileObjects.item.name|wash}" id="related-object-id-{$RelatedFileObjects.item.id}" name="DeleteRelationIDArray[]" value="{$RelatedFileObjects.item.id}" {if $related_contentobjects_id.common|contains( $RelatedFileObjects.item.id )|not}disabled="disabled"{/if} /></td>
                         <td class="name">{$RelatedFileObjects.item.class_name|class_icon( small, $RelatedFileObjects.class_name )}&nbsp;{$RelatedFileObjects.item.name|wash}</td>
                         <td class="filetype">{$RelatedFileObjects.item.data_map.file.content.mime_type|wash}</td>
                         <td class="filesize nowrap">{$RelatedFileObjects.item.data_map.file.content.filesize|si( byte )}</td>
@@ -148,7 +148,7 @@
 
                 <tr class="{$RelatedObjects.sequence|wash}">
                     {if $RelatedObjects.item.can_read}
-                        <td class="checkbox"><input type="checkbox" id="related-object-id-{$RelatedObjects.item.id}" name="DeleteRelationIDArray[]" value="{$RelatedObjects.item.id}" {if $related_contentobjects_id.common|contains( $RelatedObjects.item.id )|not}disabled="disabled"{/if} /></td>
+                        <td class="checkbox"><input type="checkbox" aria-label="{$RelatedObjects.item.name|wash}" id="related-object-id-{$RelatedObjects.item.id}" name="DeleteRelationIDArray[]" value="{$RelatedObjects.item.id}" {if $related_contentobjects_id.common|contains( $RelatedObjects.item.id )|not}disabled="disabled"{/if} /></td>
                         <td class="name">{$RelatedObjects.item.class_name|class_icon( small, $RelatedObjects.class_name )}&nbsp;{$RelatedObjects.item.name|wash}</td>
                         <td class="class nowrap">{$RelatedObjects.item.class_name|wash}</td>
                         <td class="code">

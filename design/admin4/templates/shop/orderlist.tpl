@@ -43,7 +43,7 @@
 {/if}
 
 <tr class="{$Orders.sequence}">
-    <td><input type="checkbox" name="OrderIDArray[]" value="{$Orders.item.id}" title="{'Select order for removal.'|i18n( 'design/admin/shop/orderlist' )}" /></td>
+    <td><input aria-label="{'Select order for removal.'|i18n( 'design/admin/shop/orderlist' )|wash}" type="checkbox" name="OrderIDArray[]" value="{$Orders.item.id}" title="{'Select order for removal.'|i18n( 'design/admin/shop/orderlist' )}" /></td>
     <td><a href={concat( '/shop/orderview/', $Orders.item.id, '/' )|ezurl}>{$Orders.item.order_nr}</a></td>
     <td>
     {if is_null($Orders.item.account_name)}
@@ -65,7 +65,7 @@
 
     {section show=$order_status_list|count|gt( 0 )}
         {set can_apply=true()}
-        <select name="StatusList[{$Orders.item.id}]">
+        <select aria-label="{'Status'|i18n( 'design/admin/shop/orderlist' )|wash}" name="StatusList[{$Orders.item.id}]">
         {section var=Status loop=$order_status_list}
             <option value="{$Status.item.status_id}"
                 {if eq( $Status.item.status_id, $Orders.item.status_id )}selected="selected"{/if}>

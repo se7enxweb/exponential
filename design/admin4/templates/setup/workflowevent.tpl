@@ -117,16 +117,16 @@
     <table class="a4-setup-wz-matrix">
     <tr>
         <th scope="col">{'Operation'|i18n( 'design/admin/setup/rad/workflowevent' )}</th>
-        <th scope="col" class="a4-setup-wz-tick">{'Before'|i18n( 'design/admin/setup/rad/workflowevent' )}</th>
-        <th scope="col" class="a4-setup-wz-tick">{'After'|i18n( 'design/admin/setup/rad/workflowevent' )}</th>
+        <th scope="col" class="a4-setup-wz-tick" id="wfe-{$wfe_module.module|wash}-before">{'Before'|i18n( 'design/admin/setup/rad/workflowevent' )}</th>
+        <th scope="col" class="a4-setup-wz-tick" id="wfe-{$wfe_module.module|wash}-after">{'After'|i18n( 'design/admin/setup/rad/workflowevent' )}</th>
     </tr>
     {foreach $wfe_module.rows as $wfe_row}
     <tr{if or( $wfe_row.cells.before.chosen, $wfe_row.cells.after.chosen )} class="is-chosen"{/if}>
-        <td><code>{$wfe_module.module|wash}/{$wfe_row.operation|wash}</code></td>
+        <td id="wfe-{$wfe_module.module|wash}-{$wfe_row.operation|wash}"><code>{$wfe_module.module|wash}/{$wfe_row.operation|wash}</code></td>
         {foreach array( 'before', 'after' ) as $wfe_point}
         <td class="a4-setup-wz-tick">
         {if $wfe_row.cells[$wfe_point].available}
-            <input type="checkbox" name="Triggers[]" value="{$wfe_row.cells[$wfe_point].key|wash}"{if $wfe_row.cells[$wfe_point].chosen} checked="checked"{/if} />
+            <input type="checkbox" name="Triggers[]" aria-labelledby="wfe-{$wfe_module.module|wash}-{$wfe_row.operation|wash} wfe-{$wfe_module.module|wash}-{$wfe_point}" value="{$wfe_row.cells[$wfe_point].key|wash}"{if $wfe_row.cells[$wfe_point].chosen} checked="checked"{/if} />
         {else}
             <span class="a4-setup-wz-none">&mdash;</span>
         {/if}
@@ -150,48 +150,48 @@
 
 <table class="a4-setup-wz-attrs">
 <tr>
-    <th scope="col">{'Name'|i18n( 'design/admin/setup/rad/workflowevent' )}</th>
-    <th scope="col">{'Label'|i18n( 'design/admin/setup/rad/workflowevent' )}</th>
-    <th scope="col">{'Kind'|i18n( 'design/admin/setup/rad/workflowevent' )}</th>
-    <th scope="col">{'Values'|i18n( 'design/admin/setup/rad/workflowevent' )}</th>
+    <th scope="col" id="wfe-attr-name">{'Name'|i18n( 'design/admin/setup/rad/workflowevent' )}</th>
+    <th scope="col" id="wfe-attr-label">{'Label'|i18n( 'design/admin/setup/rad/workflowevent' )}</th>
+    <th scope="col" id="wfe-attr-kind">{'Kind'|i18n( 'design/admin/setup/rad/workflowevent' )}</th>
+    <th scope="col" id="wfe-attr-values">{'Values'|i18n( 'design/admin/setup/rad/workflowevent' )}</th>
     <th scope="col">{'Column'|i18n( 'design/admin/setup/rad/workflowevent' )}</th>
 </tr>
 {foreach $wizard_attributes as $wfe_attribute}
 <tr>
-    <td><input type="text" name="AttributeName[]" value="{$wfe_attribute.name|wash}" /></td>
-    <td><input type="text" name="AttributeLabel[]" value="{$wfe_attribute.label|wash}" /></td>
+    <td><input type="text" aria-labelledby="wfe-attr-name" name="AttributeName[]" value="{$wfe_attribute.name|wash}" /></td>
+    <td><input type="text" aria-labelledby="wfe-attr-label" name="AttributeLabel[]" value="{$wfe_attribute.label|wash}" /></td>
     <td>
-        <select name="AttributeType[]">
+        <select aria-labelledby="wfe-attr-kind" name="AttributeType[]">
         {foreach $wizard_attribute_types as $wfe_type => $wfe_type_info}
             <option value="{$wfe_type|wash}"{if eq( $wfe_attribute.type, $wfe_type )} selected="selected"{/if}>{$wfe_type_info.label|i18n( 'design/admin/setup/rad/workflowevent' )|wash}</option>
         {/foreach}
         </select>
     </td>
-    <td><input type="text" name="AttributeChoices[]" value="{$wfe_attribute.choices|implode( ', ' )|wash}" placeholder="a, b, c" /></td>
+    <td><input type="text" aria-labelledby="wfe-attr-values" name="AttributeChoices[]" value="{$wfe_attribute.choices|implode( ', ' )|wash}" placeholder="a, b, c" /></td>
     <td class="a4-setup-wz-col-used"><code>{$wfe_attribute.column|wash}</code></td>
 </tr>
 <tr>
-    <td colspan="5"><input type="text" name="AttributeHelp[]" value="{$wfe_attribute.help|wash}" placeholder="{'A line of help shown under the field'|i18n( 'design/admin/setup/rad/workflowevent' )}" /></td>
+    <td colspan="5"><input type="text" aria-label="{'A line of help shown under the field'|i18n( 'design/admin/setup/rad/workflowevent' )|wash}" name="AttributeHelp[]" value="{$wfe_attribute.help|wash}" placeholder="{'A line of help shown under the field'|i18n( 'design/admin/setup/rad/workflowevent' )}" /></td>
 </tr>
 {/foreach}
 
 {* Three empty rows, so something can always be added without a round trip. *}
 {foreach array( 1, 2, 3 ) as $wfe_spare}
 <tr>
-    <td><input type="text" name="AttributeName[]" value="" placeholder="minwords" /></td>
-    <td><input type="text" name="AttributeLabel[]" value="" /></td>
+    <td><input type="text" aria-labelledby="wfe-attr-name" name="AttributeName[]" value="" placeholder="minwords" /></td>
+    <td><input type="text" aria-labelledby="wfe-attr-label" name="AttributeLabel[]" value="" /></td>
     <td>
-        <select name="AttributeType[]">
+        <select aria-labelledby="wfe-attr-kind" name="AttributeType[]">
         {foreach $wizard_attribute_types as $wfe_type => $wfe_type_info}
             <option value="{$wfe_type|wash}"{if eq( $wfe_type, 'text' )} selected="selected"{/if}>{$wfe_type_info.label|i18n( 'design/admin/setup/rad/workflowevent' )|wash}</option>
         {/foreach}
         </select>
     </td>
-    <td><input type="text" name="AttributeChoices[]" value="" placeholder="a, b, c" /></td>
+    <td><input type="text" aria-labelledby="wfe-attr-values" name="AttributeChoices[]" value="" placeholder="a, b, c" /></td>
     <td class="a4-setup-wz-col-used">&mdash;</td>
 </tr>
 <tr>
-    <td colspan="5"><input type="text" name="AttributeHelp[]" value="" placeholder="{'A line of help shown under the field'|i18n( 'design/admin/setup/rad/workflowevent' )}" /></td>
+    <td colspan="5"><input type="text" aria-label="{'A line of help shown under the field'|i18n( 'design/admin/setup/rad/workflowevent' )|wash}" name="AttributeHelp[]" value="" placeholder="{'A line of help shown under the field'|i18n( 'design/admin/setup/rad/workflowevent' )}" /></td>
 </tr>
 {/foreach}
 </table>

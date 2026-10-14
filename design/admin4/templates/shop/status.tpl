@@ -30,13 +30,13 @@
 
 {section var=Orderstatus loop=$orderstatus_array sequence=array( bglight, bgdark )}
 <tr class="{$Orderstatus.sequence}">
-    <td><input type="checkbox" name="orderStatusIDList[]" value="{$Orderstatus.item.id}" title="{'Select order status for removal.'|i18n( 'design/admin/shop/status' )}" {if $Orderstatus.item.is_internal}disabled="disabled"{/if} /></td>
+    <td><input aria-label="{'Select order status for removal.'|i18n( 'design/admin/shop/status' )|wash}" type="checkbox" name="orderStatusIDList[]" value="{$Orderstatus.item.id}" title="{'Select order status for removal.'|i18n( 'design/admin/shop/status' )}" {if $Orderstatus.item.is_internal}disabled="disabled"{/if} /></td>
     <td class="number" align="right">{if $Orderstatus.item.is_internal}<i>{/if}{$Orderstatus.item.status_id}{if $Orderstatus.item.is_internal}</i>{/if}</td>
-    <td><input type="text" name="orderstatus_name_{$Orderstatus.item.id}" value="{$Orderstatus.item.name|wash}" size="24" /></td>
+    <td><input aria-label="{'Name'|i18n( 'design/admin/shop/status' )|wash}" type="text" name="orderstatus_name_{$Orderstatus.item.id}" value="{$Orderstatus.item.name|wash}" size="24" /></td>
     <td>
         {* The hidden variable is required because a checkbox will only set the value if it is checked *}
         <input type="hidden" name="orderstatus_active_has_input_{$Orderstatus.item.id}" value="1" />
-        <input type="checkbox" name="orderstatus_active_{$Orderstatus.item.id}" value="{$Orderstatus.item.id}" title="{'Check this if you want the status to be usable in the shopping system.'|i18n( 'design/admin/shop/status' )}" {if $Orderstatus.item.is_active}checked="checked"{/if} />
+        <input aria-label="{'Check this if you want the status to be usable in the shopping system.'|i18n( 'design/admin/shop/status' )|wash}" type="checkbox" name="orderstatus_active_{$Orderstatus.item.id}" value="{$Orderstatus.item.id}" title="{'Check this if you want the status to be usable in the shopping system.'|i18n( 'design/admin/shop/status' )}" {if $Orderstatus.item.is_active}checked="checked"{/if} />
     </td>
 </tr>
 {/section}

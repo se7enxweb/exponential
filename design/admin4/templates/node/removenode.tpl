@@ -35,7 +35,7 @@
 <form enctype="multipart/form-data" method="post" action={concat( '/content/removenode/', $object.id, '/', $edit_version, '/', $node.node_id, '/' )|ezurl}>
     <input type="hidden" name=RemoveNodeID value={$node.node_id} />
     <input class="button" type="submit" name="ConfirmButton" value="{'OK'|i18n( 'design/admin/node/removenode' )}" />
-    <input class="button" type="submit" name="CancelButton" value="{'Cancel'|i18n( 'design/admin/node/removenode' )} />
+    <input class="button" type="submit" name="CancelButton" value="{'Cancel'|i18n( 'design/admin/node/removenode' )}" />
 </form>
 
 </div>

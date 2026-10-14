@@ -74,13 +74,13 @@
 
                             {* Translation *}
                             {if fetch( content, translation_list )|count|gt( 1 )}
-                                <h6>{'Translation'|i18n( 'design/admin/content/view/versionview' )}:</h6>
-                                <div class="block">
+                                <h6 id="vv-translation">{'Translation'|i18n( 'design/admin/content/view/versionview' )}:</h6>
+                                <div class="block" role="radiogroup" aria-labelledby="vv-translation">
                                     {if $translation_list|count|gt( 1 )}
                                         {def $locale_object = false}
                                         {foreach $translation_list as $locale_code}
                                             {set $locale_object = $locale_code|locale()}
-                                            <p>
+                                            <p><label class="a4-inline-label">
                                                 <input type="radio" name="SelectedLanguage" value="{$locale_code}"
                                                     {if eq( $locale_code, $object_languagecode )}checked="checked" {/if} />
                                                 {if $locale_object.is_valid}
@@ -89,10 +89,10 @@
                                                 {else}
                                                     {'%1 (No locale information available)'|i18n( 'design/admin/content/view/versionview',, array( $locale_code ) )}
                                                 {/if}
-                                            </p>
+                                            </label></p>
                                         {/foreach}
                                     {else}
-                                        <input type="radio" name="SelectedLanguage"
+                                        <label class="a4-inline-label"><input type="radio" name="SelectedLanguage"
                                             value="{$version.language_list[0].language_code}" checked="checked"
                                             disabled="disabled" />
                                         {if $version.language_list[0].locale.is_valid}
@@ -100,48 +100,48 @@
                                             {$version.language_list[0].locale.intl_language_name|shorten( 16 )}
                                         {else}
                                             {'%1 (No locale information available)'|i18n( 'design/admin/content/view/versionview',, array( $version.language_list[0].language_code ) )}
-                                        {/if}
+                                        {/if}</label>
                                     {/if}
                                 </div>
                             {/if}
 
                             {* Location *}
                             {section show=$version.node_assignments|count|gt( 0 )}
-                                <h6>{'Location'|i18n( 'design/admin/content/view/versionview' )}:</h6>
-                                <div class="block">
+                                <h6 id="vv-location">{'Location'|i18n( 'design/admin/content/view/versionview' )}:</h6>
+                                <div class="block" role="radiogroup" aria-labelledby="vv-location">
                                     {section show=$version.node_assignments|count|gt( 1 )}
                                         {section var=Locations loop=$version.node_assignments}
                                             <p>
-                                                <input type="radio" name="SelectedPlacement" value="{$Locations.item.id}"
+                                                <label class="a4-inline-label"><input type="radio" name="SelectedPlacement" value="{$Locations.item.id}"
                                                     {if eq( $Locations.item.id, $placement )}checked="checked"
-                                                    {/if} />&nbsp;{$Locations.item.parent_node_obj.name|wash}
+                                                    {/if} />&nbsp;{$Locations.item.parent_node_obj.name|wash}</label>
                                             </p>
                                         {/section}
                                         {section-else}
                                             <p>
-                                                <input type="radio" name="SelectedPlacement"
+                                                <label class="a4-inline-label"><input type="radio" name="SelectedPlacement"
                                                     value="{$version.node_assignments[0].id}" checked="checked"
-                                                    disabled="disabled" />&nbsp;{$version.node_assignments[0].parent_node_obj.name|wash}
+                                                    disabled="disabled" />&nbsp;{$version.node_assignments[0].parent_node_obj.name|wash}</label>
                                             </p>
                                         {/section}
                                     </div>
                                 {/section}
 
                                 {* Design *}
-                                <h6>{'Siteaccess'|i18n( 'design/admin/content/view/versionview' )}:</h6>
-                                <div class="block">
+                                <h6 id="vv-siteaccess">{'Siteaccess'|i18n( 'design/admin/content/view/versionview' )}:</h6>
+                                <div class="block" role="radiogroup" aria-labelledby="vv-siteaccess">
                                     {if $site_access_locale_map|count|gt( 1 )}
                                         {foreach $site_access_locale_map as $related_site_access => $related_site_access_locale}
                                             <p>
-                                                <input type="radio" name="SelectedSiteAccess" value="{$related_site_access}"
+                                                <label class="a4-inline-label"><input type="radio" name="SelectedSiteAccess" value="{$related_site_access}"
                                                     {if eq( $related_site_access, $siteaccess )}checked="checked"
-                                                    {/if} />&nbsp;{$related_site_access|wash}
+                                                    {/if} />&nbsp;{$related_site_access|wash}</label>
                                             </p>
                                         {/foreach}
                                     {else}
                                         <p>
-                                            <input type="radio" name="SelectedSiteAccess" value="{$site_designs[0]}"
-                                                checked="checked" disabled="disabled" />&nbsp;{$site_designs[0]|wash}
+                                            <label class="a4-inline-label"><input type="radio" name="SelectedSiteAccess" value="{$site_designs[0]}"
+                                                checked="checked" disabled="disabled" />&nbsp;{$site_designs[0]|wash}</label>
                                         </p>
                                     {/if}
                                 </div>
@@ -150,11 +150,11 @@
                                 {def $version_view_modes=cond( ezini_hasvariable( 'VersionView', 'ViewModes', 'content.ini' ), ezini( 'VersionView', 'ViewModes', 'content.ini' ), array( 'full' ) )
                                      $current_view_mode=cond( is_set( $view_mode ), $view_mode, 'full' )}
                                 {if $version_view_modes|count|gt( 1 )}
-                                <h6>{'View mode'|i18n( 'design/admin/content/view/versionview' )}:</h6>
-                                <div class="block">
+                                <h6 id="vv-viewmode">{'View mode'|i18n( 'design/admin/content/view/versionview' )}:</h6>
+                                <div class="block" role="radiogroup" aria-labelledby="vv-viewmode">
                                 {foreach $version_view_modes as $version_view_mode}
                                     <p>
-                                    <input type="radio" name="SelectedViewMode" value="{$version_view_mode|wash}" {if eq( $version_view_mode, $current_view_mode )}checked="checked"{/if} />&nbsp;{$version_view_mode|wash}
+                                    <label class="a4-inline-label"><input type="radio" name="SelectedViewMode" value="{$version_view_mode|wash}" {if eq( $version_view_mode, $current_view_mode )}checked="checked"{/if} />&nbsp;{$version_view_mode|wash}</label>
                                     </p>
                                 {/foreach}
                                 </div>

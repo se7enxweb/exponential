@@ -114,7 +114,7 @@ White text on it is only 3:1, so filled controls with white text use its darker 
 | Buttons | `.a4-btn`, `.a4-btn-primary`, `.a4-btn-danger`, `.a4-btn-outline-danger`, `.a4-btn-ghost`, `.a4-btn-small`, `.a4-btn-large`, `.a4-btn-icon`; `.a4-actions` (a row of them) |
 | Toolbar | `.a4-toolbar` (an action bar), `.is-bottom` (under a list), `.is-sticky` (stays at the window's bottom) |
 | Filter bar | `.a4-filterbar` (a grid of fields above a list), `.a4-filter-count` |
-| Forms | `.a4-field`, `.a4-field-wide`, `.a4-label`, `.a4-input` (`.is-auto`), `.a4-field-error`, `.a4-form` (`.is-wide`), `.a4-formrow` (label beside control), `.a4-searchrow`, `.a4-check`, `.a4-radios`, `.a4-chips` > `.a4-chip` |
+| Forms | `.a4-field`, `.a4-field-wide`, `.a4-label`, `.a4-input` (`.is-auto`), `.a4-field-error`, `.a4-form` (`.is-wide`), `.a4-formrow` (label beside control), `.a4-searchrow`, `.a4-check`, `.a4-radios`, `.a4-chips` > `.a4-chip`, `.a4-inline-label` (a label around text that was plain before: an inline radio or checkbox with its text, or the words in front of a control in a table cell; drawn like the text around it) |
 | Tables | `.a4-table-wrap` > `table.a4-table` (`.is-compact`), `tr.is-selected` |
 | Under a list | `.a4-listfoot`, `.a4-sizes`, `.a4-pager`; `.a4-tabs` (links, buttons, `span.current`, `a.current`, `.is-current`), `.a4-count` |
 | Empty state, notices | `.a4-empty`; `.a4-notice` (`.is-ok`, `.is-warn`, `.is-bad`, `.is-info`) |
@@ -206,6 +206,11 @@ For every template or stylesheet change in an administration design or an extens
       keyboard handling there; nothing opens a menu that only a mouse reaches (`AdminContextMenuTest`).
 - [ ] A control that has no visible text has a name (`aria-label`, or `.a4-sr-only` text inside it); a header cell
       has `scope`; a new frame column keeps its landmark role (`tests/tests/design/AdminLandmarksTest.php`).
+- [ ] Every form field has a name: a `<label for>` on its id, a `<label>` around it, or `aria-labelledby` on text
+      that is shown (a column header, the row's name, a card heading); `aria-label` only where no text is shown. A
+      `title` or a `placeholder` is not a name. Around plain text use `<label class="a4-inline-label">`, which keeps
+      the text's look. A field with a label that has text gets no `aria-label` beside it: it would replace the label's
+      words (WCAG 2.5.3) (`tests/tests/design/AdminFormLabelsTest.php` checks admin4).
 - [ ] Colours, radius, spacing and fonts are `var(--a4-*)` tokens: no `#hex`, `rgb()`, named colour, px radius or
       spacing literal, and no local custom properties.
 - [ ] A new token is in `components.css` with a light and a dark value, and documented on this page.

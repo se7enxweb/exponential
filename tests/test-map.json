@@ -42,14 +42,16 @@
       "tests/tests/design/AdminContextMenuTest.php",
       "tests/tests/design/AdminLandmarksTest.php",
       "tests/tests/design/AdminKeyboardTest.php",
-      "tests/tests/design/AdminTreeViewTest.php"
+      "tests/tests/design/AdminTreeViewTest.php",
+      "tests/tests/design/AdminFormLabelsTest.php"
     ],
     "design/admin*/stylesheets/*": [
       "tests/tests/design/AdminStylingRulesTest.php",
       "tests/tests/design/AdminIconsTest.php",
       "tests/tests/design/AdminLanguageBadgeTest.php",
       "tests/tests/design/AdminContextMenuTest.php",
-      "tests/tests/design/AdminLandmarksTest.php"
+      "tests/tests/design/AdminLandmarksTest.php",
+      "tests/tests/design/AdminFormLabelsTest.php"
     ],
     "design/admin4/javascript/ezajaxsubitems_expdatatable.js": [
       "tests/tests/design/AdminLanguageBadgeTest.php"

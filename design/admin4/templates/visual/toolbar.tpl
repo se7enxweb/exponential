@@ -17,9 +17,9 @@
 {section var=Tool loop=$tool_list}
 
 <tr>
-    <th scope="col" class="tight"><input type="checkbox" name="deleteToolArray[]" value="{$Tool.index}" /></th>
-    <th scope="col" class="wide">{$Tool.name|wash}</th>
-    <th scope="col" class="tight"><input type="text" name="placement_{$Tool.index}" size="2" value="{sum($Tool.index,1)}" /></th>
+    <th scope="col" class="tight"><input type="checkbox" aria-labelledby="toolbar-tool-{$Tool.index}" name="deleteToolArray[]" value="{$Tool.index}" /></th>
+    <th scope="col" class="wide" id="toolbar-tool-{$Tool.index}">{$Tool.name|wash}</th>
+    <th scope="col" class="tight"><input type="text" aria-label="{'Priority'|i18n( 'design/admin/visual/toolbar' )|wash}" aria-describedby="toolbar-tool-{$Tool.index}" name="placement_{$Tool.index}" size="2" value="{sum($Tool.index,1)}" /></th>
 </tr>
 
 <tr>
@@ -34,7 +34,7 @@
         <table>
         {section var=Parameter loop=$Tool.parameters}
         <tr>
-            <td>
+            <td id="toolbar-param-{$Tool.index}-{$Parameter.name|wash}">
             {$Parameter.description}
             </td>
             <td>
@@ -58,7 +58,7 @@
             {/case}
             {case match=2}
                 {let class_list=fetch( class, list )}
-                <select name="{$Tool.index}_parameter_{$Parameter.name|wash}">
+                <select aria-labelledby="toolbar-param-{$Tool.index}-{$Parameter.name|wash}" name="{$Tool.index}_parameter_{$Parameter.name|wash}">
                 {section var=class loop=$class_list}
                     <option value="{$class.identifier|wash}" {if eq( $class.identifier, $Parameter.value )}selected="selected"{/if}>{$class.name|wash}</option>
                 {/section}
@@ -67,7 +67,7 @@
             {/case}
             {case match=3}
                 {let class_list=fetch( class, list ) match_list=$Parameter.value|explode( ',' )}
-                <select multiple="multiple" name="CustomInputList[{$Tool.index}_parameter_{$Parameter.name|wash}][]">
+                <select aria-labelledby="toolbar-param-{$Tool.index}-{$Parameter.name|wash}" multiple="multiple" name="CustomInputList[{$Tool.index}_parameter_{$Parameter.name|wash}][]">
                 {section var=class loop=$class_list}
                     <option value="{$class.identifier|wash}" {if $match_list|contains( $class.identifier )}selected="selected"{/if}>{$class.name|wash}</option>
                 {/section}
@@ -94,12 +94,12 @@
                       <label for="{$Tool.index}_parameter_{$Parameter.name|wash}_true"><input type="radio" name="{$Tool.index}_parameter_{$Parameter.name|wash}" id="{$Tool.index}_parameter_{$Parameter.name|wash}_true" value="yes" {if $Parameter.value|ne( 'no' )}checked="checked"{/if} />{'Yes'|i18n( 'design/admin/visual/toolbar' )}</label>
                       <label for="{$Tool.index}_parameter_{$Parameter.name|wash}_false"><input type="radio" name="{$Tool.index}_parameter_{$Parameter.name|wash}" id="{$Tool.index}_parameter_{$Parameter.name|wash}_false" value="no" {if $Parameter.value|eq( 'no' )}checked="checked"{/if} />{'No'|i18n( 'design/admin/visual/toolbar' )}</label>
                   {else}
-                      <input type="text" name="{$Tool.index}_parameter_{$Parameter.name|wash}" size="20" value="{$Parameter.value|wash}" />
+                      <input type="text" aria-labelledby="toolbar-param-{$Tool.index}-{$Parameter.name|wash}" name="{$Tool.index}_parameter_{$Parameter.name|wash}" size="20" value="{$Parameter.value|wash}" />
                   {/if}
                 {/if}
             {/case}
             {case}
-                <input type="text" name="{$Tool.index}_parameter_{$Parameter.name|wash}" size="20" value="{$Parameter.value|wash}" />
+                <input type="text" aria-labelledby="toolbar-param-{$Tool.index}-{$Parameter.name|wash}" name="{$Tool.index}_parameter_{$Parameter.name|wash}" size="20" value="{$Parameter.value|wash}" />
             {/case}
             {/switch}
 
@@ -125,7 +125,7 @@
 </div>
 
 <div class="block">
-<select name="toolName">
+<select name="toolName" aria-label="{'Tool'|i18n( 'design/admin/visual/toolbar' )|wash}">
 {section var=Tool loop=$available_tool_list}
     <option value="{$Tool}">{$Tool}</option>
 {/section}

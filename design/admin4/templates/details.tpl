@@ -73,9 +73,9 @@
 
     {foreach $states as $allowed_assign_state_info sequence array( 'bglight', 'bgdark' ) as $sequence}
     <tr class="{$sequence}">
-        <td>{$allowed_assign_state_info.group.current_translation.name|wash}</td>
+        <td id="details-state-group-{$allowed_assign_state_info.group.id}">{$allowed_assign_state_info.group.current_translation.name|wash}</td>
         <td>
-            <select name="SelectedStateIDList[]" {if $allowed_assign_state_info.states|count|eq(1)}disabled="disabled"{/if}>
+            <select aria-labelledby="details-state-group-{$allowed_assign_state_info.group.id}" name="SelectedStateIDList[]" {if $allowed_assign_state_info.states|count|eq(1)}disabled="disabled"{/if}>
             {foreach $allowed_assign_state_info.states as $state}
                 <option value="{$state.id}" {if $node.object.state_id_array|contains($state.id)}selected="selected"{/if}>{$state.current_translation.name|wash}</option>
             {/foreach}

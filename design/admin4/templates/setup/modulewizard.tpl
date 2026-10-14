@@ -42,11 +42,11 @@
 <div class="a4-setup-wz-col">
 
 <div class="a4-card">
-<h2>{'The views'|i18n( 'design/admin/setup/rad/module' )}</h2>
-<span class="a4-meta">{'One per line: a name, a colon, then what it needs. A word in lower case is a policy; a word starting with a capital is a parameter in the address; a capital word ending in ? is a named parameter that may be left out.'|i18n( 'design/admin/setup/rad/module' )}</span>
+<h2 id="a4f-h-views">{'The views'|i18n( 'design/admin/setup/rad/module' )}</h2>
+<span class="a4-meta" id="a4f-m-views">{'One per line: a name, a colon, then what it needs. A word in lower case is a policy; a word starting with a capital is a parameter in the address; a capital word ending in ? is a named parameter that may be left out.'|i18n( 'design/admin/setup/rad/module' )}</span>
 
 <div class="a4-field">
-    <textarea name="views" rows="5" placeholder="list: read Offset? Limit?&#10;view: read Id&#10;edit: edit Id">{$wizard_raw.views|wash}</textarea>
+    <textarea aria-labelledby="a4f-h-views" aria-describedby="a4f-m-views" name="views" rows="5" placeholder="list: read Offset? Limit?&#10;view: read Id&#10;edit: edit Id">{$wizard_raw.views|wash}</textarea>
 </div>
 
 <h3>{'What that produces'|i18n( 'design/admin/setup/rad/module' )}</h3>
@@ -67,11 +67,11 @@
 </div>
 
 <div class="a4-card">
-<h2>{'The policies'|i18n( 'design/admin/setup/rad/module' )}</h2>
-<span class="a4-meta">{'One per line: a name, a colon, then any limitations. Every policy a view asks for has to be here, or nobody can be granted it and the view is reachable by nobody.'|i18n( 'design/admin/setup/rad/module' )}</span>
+<h2 id="a4f-h-policies">{'The policies'|i18n( 'design/admin/setup/rad/module' )}</h2>
+<span class="a4-meta" id="a4f-m-policies">{'One per line: a name, a colon, then any limitations. Every policy a view asks for has to be here, or nobody can be granted it and the view is reachable by nobody.'|i18n( 'design/admin/setup/rad/module' )}</span>
 
 <div class="a4-field">
-    <textarea name="policies" rows="3" placeholder="read: Section, Class&#10;edit: Section">{$wizard_raw.policies|wash}</textarea>
+    <textarea aria-labelledby="a4f-h-policies" aria-describedby="a4f-m-policies" name="policies" rows="3" placeholder="read: Section, Class&#10;edit: Section">{$wizard_raw.policies|wash}</textarea>
 </div>
 
 <h3>{'Limitations'|i18n( 'design/admin/setup/rad/module' )}</h3>

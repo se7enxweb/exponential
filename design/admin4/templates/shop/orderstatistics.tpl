@@ -139,14 +139,14 @@
 {* DESIGN: Control bar START *}<div class="box-bc"><div class="box-ml">
 <div class="block">
 
-<select name="Year" title="{'Select the year for which you want to view statistics.'|i18n( 'design/admin/shop/orderstatistics' )}">
+<select aria-label="{'Select the year for which you want to view statistics.'|i18n( 'design/admin/shop/orderstatistics' )|wash}" name="Year" title="{'Select the year for which you want to view statistics.'|i18n( 'design/admin/shop/orderstatistics' )}">
     <option value="0" {if eq($year,0)}selected="selected"{/if}>[{'All years'|i18n( 'design/admin/shop/orderstatistics' )}]</option>
     {section var=YearValue loop=$year_list}
         <option value="{$YearValue}" {if eq($YearValue,$year)}selected="selected"{/if}>{$YearValue}</option>
     {/section}
 </select>
 
-<select name="Month" title="{'Select the month for which you want to view statistics.'|i18n( 'design/admin/shop/orderstatistics' )}">
+<select aria-label="{'Select the month for which you want to view statistics.'|i18n( 'design/admin/shop/orderstatistics' )|wash}" name="Month" title="{'Select the month for which you want to view statistics.'|i18n( 'design/admin/shop/orderstatistics' )}">
     <option value="0" {if eq($month,0)}selected="selected"{/if}>[{'All months'|i18n( 'design/admin/shop/orderstatistics' )}]</option>
     {section var=MonthItem loop=$month_list}
         <option value="{$MonthItem.value}" {if eq($MonthItem.value,$month)}selected="selected"{/if}>{$MonthItem.name|wash}</option>

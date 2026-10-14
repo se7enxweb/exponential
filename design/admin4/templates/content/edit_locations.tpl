@@ -43,7 +43,7 @@
     <th scope="col">{'Sorting of sub items'|i18n( 'design/admin/content/edit' )}</th>
     {if $:has_top_levels|not}
     <th scope="col">{'Current visibility'|i18n( 'design/admin/content/edit' )}</th>
-    <th scope="col">{'Visibility after publishing'|i18n( 'design/admin/content/edit' )}</th>
+    <th scope="col" id="edit-locations-future-visibility">{'Visibility after publishing'|i18n( 'design/admin/content/edit' )}</th>
     <th scope="col">{'Main'|i18n( 'design/admin/content/edit' )}</th>
     <th scope="col">&nbsp;</th>
     {/if}
@@ -72,9 +72,9 @@
     {* Remove. *}
     <td>
     {if or( $location_ui_enabled|not, and( $Node:item.node, $Node:item.node.can_remove|not ) )}
-    <input type="checkbox" name="AssignmentIDSelection[]" value="{$Node:item.parent_node}" title="{'You do not have permission to remove this location.'|i18n( 'design/admin/content/edit' )}" disabled="disabled" />
+    <input aria-label="{'You do not have permission to remove this location.'|i18n( 'design/admin/content/edit' )|wash}" type="checkbox" name="AssignmentIDSelection[]" value="{$Node:item.parent_node}" title="{'You do not have permission to remove this location.'|i18n( 'design/admin/content/edit' )}" disabled="disabled" />
     {else}
-    <input type="checkbox" name="AssignmentIDSelection[]" value="{$Node:item.parent_node}" title="{'Select location for removal.'|i18n( 'design/admin/content/edit' )}" />
+    <input aria-label="{'Select location for removal.'|i18n( 'design/admin/content/edit' )|wash}" type="checkbox" name="AssignmentIDSelection[]" value="{$Node:item.parent_node}" title="{'Select location for removal.'|i18n( 'design/admin/content/edit' )}" />
     {/if}
     </td>
 
@@ -106,12 +106,12 @@
 
     {* Sorting. *}
     <td>
-    <select {if $location_ui_enabled|not}disabled="disabled" {/if}name="SortFieldMap[{$Node:item.id}]" title="{'Use this menu to set the sorting method for the sub items in this location.'|i18n( 'design/admin/content/edit' )}">
+    <select aria-label="{'Use this menu to set the sorting method for the sub items in this location.'|i18n( 'design/admin/content/edit' )|wash}" {if $location_ui_enabled|not}disabled="disabled" {/if}name="SortFieldMap[{$Node:item.id}]" title="{'Use this menu to set the sorting method for the sub items in this location.'|i18n( 'design/admin/content/edit' )}">
     {section name=Sort loop=$Node:sort_fields}
     <option value="{$Node:Sort:key}" {if eq($Node:Sort:key,$Node:item.sort_field)}selected="selected"{/if}>{$Node:Sort:item}</option>
     {/section}
     </select>
-    <select {if $location_ui_enabled|not}disabled="disabled" {/if}name="SortOrderMap[{$Node:item.id}]" title="{'Use this menu to set the sorting direction for the sub items in this location.'|i18n( 'design/admin/content/edit' )}">
+    <select aria-label="{'Use this menu to set the sorting direction for the sub items in this location.'|i18n( 'design/admin/content/edit' )|wash}" {if $location_ui_enabled|not}disabled="disabled" {/if}name="SortOrderMap[{$Node:item.id}]" title="{'Use this menu to set the sorting direction for the sub items in this location.'|i18n( 'design/admin/content/edit' )}">
     <option value="1" {if eq( $Node:item.sort_order, 1)}selected="selected"{/if}>{'Asc.'|i18n( 'design/admin/content/edit' )}</option>
     <option value="0" {if eq( $Node:item.sort_order, 0)}selected="selected"{/if}>{'Desc.'|i18n( 'design/admin/content/edit' )}</option>
     </select>
@@ -134,7 +134,7 @@
 
     {* Visibility status after publishing. *}
     <td>
-    <select {if $location_ui_enabled|not}disabled="disabled" {/if}name="FutureNodeHiddenState_{$Node:parent_node.node_id}">
+    <select aria-labelledby="edit-locations-future-visibility" {if $location_ui_enabled|not}disabled="disabled" {/if}name="FutureNodeHiddenState_{$Node:parent_node.node_id}">
     {* An existing location keeps its visibility (Unchanged) unless the editor picks another; a new one starts
        as its assignment says. Visible is never forced (EZP-26501; portions derived from LoveStack,
        mugoweb/ezpublish-legacy, commit f1b7f056b4, Copyright (C) Mugo Web, GPL v2). *}
@@ -146,7 +146,7 @@
 
     {* Main node. *}
     <td>
-    <input {if $location_ui_enabled|not}disabled="disabled" {/if}type="radio" name="MainNodeID" {if eq($main_node_id,$Node:item.parent_node)}checked="checked"{/if} value="{$Node:item.parent_node}" title="{'Use these radio buttons to specify the main location (main node) for the object being edited.'|i18n( 'design/admin/content/edit' )}" />
+    <input aria-label="{'Use these radio buttons to specify the main location (main node) for the object being edited.'|i18n( 'design/admin/content/edit' )|wash}" {if $location_ui_enabled|not}disabled="disabled" {/if}type="radio" name="MainNodeID" {if eq($main_node_id,$Node:item.parent_node)}checked="checked"{/if} value="{$Node:item.parent_node}" title="{'Use these radio buttons to specify the main location (main node) for the object being edited.'|i18n( 'design/admin/content/edit' )}" />
     </td>
 
     {* Move. *}
