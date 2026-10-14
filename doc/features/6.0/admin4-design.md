@@ -126,8 +126,11 @@ when the name is written next to it, `badge_plain` for the bare code, `badge_cla
 `[HTTP] ContentLanguage`: unlike `http_locale_code` it is not overridden by `site.ini [RegionalSettings] HTTPLocale`,
 which sets one tag for a whole site. The optional parameters carry the prefix `badge_` because an include sees the
 variables of the template that includes it: a parameter called `class` would read the content class of
-`class/view.tpl` when it is not passed. The flags in `share/icons/flags/` and the `flag_icon` operator stay for the
-other designs. `tests/tests/design/AdminLanguageBadgeTest.php` fails for a flag in an admin4 template or script.
+`class/view.tpl` when it is not passed. The classic admin design has an identical copy of the include and of
+`ezajaxsubitems_expdatatable.js`, so its sub-items table shows the code as well (the badge style is in both copies of
+`components.css`). The flags in `share/icons/flags/` and the `flag_icon` operator stay for its other templates and the
+other designs. `tests/tests/design/AdminLanguageBadgeTest.php` fails for a flag in an admin4 template or script, or in
+either design's sub-items table.
 
 ## Settings
 

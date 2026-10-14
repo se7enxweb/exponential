@@ -124,6 +124,29 @@ class AdminLanguageBadgeTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( "design:parts/language_badge.tpl' locale=\$locale.locale_code badge_plain=true()", $template );
     }
 
+    /**
+     * The classic admin design shows the code too: its copy of the sub-items script is kept identical to admin4's
+     * (AdminContextMenuTest), so its template has to hand the script the same languageBadges map, built by its own
+     * identical copy of the include. The badge's style is in both copies of components.css.
+     */
+    public function testNeitherDesignDrawsAFlagInTheSubItemsTable()
+    {
+        foreach ( array( 'admin4', 'admin' ) as $design )
+        {
+            $script = (string)file_get_contents( self::root() . "/design/$design/javascript/ezajaxsubitems_expdatatable.js" );
+            $this->assertDoesNotMatchRegularExpression( '/flagIcons|flag_icon|share\/icons\/flags/', $script,
+                                                        "design/$design's sub-items script still draws a flag" );
+            $this->assertStringContainsString( 'confObj.languageBadges', $script, $design );
+            $template = (string)file_get_contents( self::root() . "/design/$design/templates/children_detailed.tpl" );
+            $this->assertDoesNotMatchRegularExpression( '/flagIcons|flag_icon/', $template,
+                                                        "design/$design's children_detailed.tpl still hands the script flags" );
+            $this->assertStringContainsString( 'languageBadges: languageBadges', $template, $design );
+        }
+        $this->assertFileEquals( self::root() . '/' . self::INCLUDE_FILE,
+                                 self::root() . '/design/admin/templates/parts/language_badge.tpl',
+                                 'The classic admin design needs the same language badge include as admin4' );
+    }
+
     public function testTheComponentIsInBothCopiesOfTheComponentsStylesheet()
     {
         foreach ( array( 'admin4', 'admin' ) as $design )
