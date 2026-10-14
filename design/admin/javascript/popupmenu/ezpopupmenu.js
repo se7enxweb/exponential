@@ -826,7 +826,8 @@ function _keyHandler( e )
                 e.preventDefault();
                 var trigger = MenuOpener;
                 _hideAll();
-                if ( trigger && trigger.focus ) trigger.focus();
+                // Back to the button only from the menu or the button itself, never out of a form field.
+                if ( trigger && trigger.focus && ( index >= 0 || active === trigger || active === document.body ) ) trigger.focus();
             }
             break;
         case 'Enter':
