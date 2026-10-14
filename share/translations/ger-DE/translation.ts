@@ -14483,10 +14483,6 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Breite der linken Spalte</translation>
     </message>
     <message>
-        <source>Drag, or use the arrow keys, to change the width of the left column</source>
-        <translation>Ziehen oder mit den Pfeiltasten die Breite der linken Spalte ändern</translation>
-    </message>
-    <message>
         <source>Search</source>
         <translation>Suchen</translation>
     </message>

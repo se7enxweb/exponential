@@ -12166,10 +12166,6 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Width of the left column</translation>
     </message>
     <message>
-        <source>Drag, or use the arrow keys, to change the width of the left column</source>
-        <translation>Drag, or use the arrow keys, to change the width of the left column</translation>
-    </message>
-    <message>
         <source>Search</source>
         <translation>Search</translation>
     </message>
