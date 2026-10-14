@@ -107,6 +107,43 @@
   --a4-leading-tight: 1.25;
   /* one height for the buttons, selects and pager buttons that stand in a row (node actions, sub-items toolbar) */
   --a4-control-h: 32px;
+  /* Stacking layers (z-index). One scale for the whole administration, lowest first; use the token, never a number
+     (0, 1 and -1 for order inside one component excepted). Inside a positioned parent with its own stacking context
+     (the header, a card) a token only orders against that parent's other children.
+     raised        an item over its neighbours (a hovered thumbnail, a drop marker)
+     sticky        sticky toolbars and notices inside the content
+     frame-control the classic frame's grips and show/hide links
+     popover       a pane that opens inside the header or the control bar
+     scroll-top    the "back to top" button
+     navbar        the phone-width menu
+     sidebar       the side columns when they open over the page
+     sidebar-handle the left column's width grip
+     controlbar    the fixed control bar of edit pages
+     drag-target / drag / drag-mask  column drag and resize in the data tables
+     header        the fixed header
+     sidebar-toggle the tabs on the window edges that show and hide the side columns
+     menu, menu-sub context menus and their submenus, above the header so a menu that opens upwards is not cut off
+     overlay, modal the dimming mask and the dialog on it, above everything of the frame
+     toast         short-lived notices, above a dialog */
+  --a4-z-raised: 2;
+  --a4-z-sticky: 5;
+  --a4-z-frame-control: 10;
+  --a4-z-popover: 60;
+  --a4-z-scroll-top: 100;
+  --a4-z-navbar: 110;
+  --a4-z-sidebar: 120;
+  --a4-z-sidebar-handle: 140;
+  --a4-z-controlbar: 200;
+  --a4-z-drag-target: 999;
+  --a4-z-header: 1020;
+  --a4-z-sidebar-toggle: 1030;
+  --a4-z-menu: 1040;
+  --a4-z-menu-sub: 1050;
+  --a4-z-overlay: 1060;
+  --a4-z-modal: 1070;
+  --a4-z-toast: 1080;
+  --a4-z-drag: 9000;
+  --a4-z-drag-mask: 9500;
 
   /* the browser's own parts (scrollbars, select popups, date pickers, autofill) follow the mode */
   color-scheme: light;
@@ -539,7 +576,7 @@ a.a4-btn, a.a4-btn:visited { color: var(--a4-ink); }
 .a4-toolbar.is-sticky {
   position: sticky;
   bottom: 0;
-  z-index: 5;
+  z-index: var(--a4-z-sticky);
   margin: var(--a4-space-4) 0 0;
   background-color: var(--a4-card);
   box-shadow: var(--a4-shadow-up);

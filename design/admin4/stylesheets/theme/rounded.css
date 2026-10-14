@@ -153,7 +153,7 @@ a.show-hide-control:hover
 #leftmenu a.show-hide-control
 {
 position:relative;
-z-index:10;
+z-index: var(--a4-z-frame-control);
 float:right;
 width:19px;
 background: url(../../images/3/sprite.png) no-repeat -20px -461px;

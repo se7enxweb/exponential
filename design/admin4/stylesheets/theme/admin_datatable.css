@@ -24,7 +24,7 @@ font-size:1.05em;
 
 .admin-dt-mask {
     position: absolute;
-    z-index: 9500;
+    z-index: var(--a4-z-drag-mask);
 }
 
 .admin-dt-tmp {
@@ -61,7 +61,7 @@ thead .admin-dt-draggable {
 
 .admin-dt-coltarget {
     position: absolute;
-    z-index: 999;
+    z-index: var(--a4-z-drag-target);
 }
 
 .admin-dt-hd {
@@ -87,7 +87,7 @@ th.admin-dt-resizeable .admin-dt-resizerliner {
 .admin-dt-resizerproxy {
     visibility: hidden;
     position: absolute;
-    z-index: 9000;
+    z-index: var(--a4-z-drag);
     background-color: #CCC;
     opacity: 0;
     filter: alpha(opacity = 0);
@@ -104,7 +104,7 @@ th.admin-dt-hidden, tr.admin-dt-odd .admin-dt-hidden, tr.admin-dt-even .admin-dt
 }
 .admin-dt-editor {
     position: absolute;
-    z-index: 9000;
+    z-index: var(--a4-z-drag);
 }
 
 .admin-dt table {
@@ -576,7 +576,7 @@ a:focus-visible > .crankfield::before {
 
 .thumbview:hover{
     background-color: transparent;
-    z-index: 50;
+    z-index: var(--a4-z-raised);
 }
 
 .thumbview span {
@@ -945,7 +945,7 @@ a:focus-visible > .crankfield::before {
 
 .thumbview:hover {
     background-color: transparent;
-    z-index: 50;
+    z-index: var(--a4-z-raised);
 }
 
 .thumbview span {

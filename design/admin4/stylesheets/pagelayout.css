@@ -25,7 +25,7 @@ div.widthcontrol-grippy {
     height: 33px;
     width: 15px;
     background: url('../images/3/sprite.png') no-repeat 0 -505px;
-    z-index: 9;
+    z-index: var(--a4-z-frame-control);
 }
 
 div.widthcontrol-grippy:hover,
@@ -59,7 +59,7 @@ a.show-hide-control {
     -ms-transition: none;
     -o-transition: none;
     transition: none;
-    z-index: 11;
+    z-index: var(--a4-z-frame-control);
 }
 
 a.show-hide-control:hover,
@@ -79,7 +79,7 @@ a.show-hide-control-right {
     -ms-transition: none;
     -o-transition: none;
     transition: none;
-    z-index: 11;
+    z-index: var(--a4-z-frame-control);
 }
 
 a.show-hide-control-right:hover,
@@ -416,7 +416,7 @@ ul.leftmenu-items li.current a {
     /* strech div to full width of relative box */
     width: 10px;
     /*    cursor: col-resize; */
-    z-index: 11;
+    z-index: var(--a4-z-frame-control);
     /*    background: var(--a4-soft);*/
 }
 
@@ -641,7 +641,7 @@ div.popupmenu {
 
     /* These three are essential */
     position: absolute;
-    z-index: 1010;
+    z-index: var(--a4-z-menu);
     display: none;
 }
 
@@ -652,7 +652,7 @@ div.popupmenu div.popupmenuheader {
 }
 
 div.popupmenu#EditSubmenu {
-    z-index: 21;
+    z-index: var(--a4-z-menu-sub);
 }
 
 div.popupmenu h3 {
@@ -1000,7 +1000,7 @@ input.button:hover {
     top: calc(100% + 8px);
     right: 0;
     width: 300px;
-    z-index: 60;
+    z-index: var(--a4-z-popover);
     text-align: left;
     color: var(--a4-ink);
     background: var(--a4-surface);
@@ -1259,7 +1259,7 @@ input:-moz-placeholder {
 
 /* FIXED CONTROLBAR DEPENDING ON SCROLL */
 .exp-js .controlbar-fixed {
-    z-index: 200;
+    z-index: var(--a4-z-controlbar);
     position: fixed;
     width: 100%;
     top: -0.6em;
@@ -1278,7 +1278,7 @@ input:-moz-placeholder {
     color: #fff;
     text-decoration: none;
     display: none;
-    z-index: 100;
+    z-index: var(--a4-z-scroll-top);
 }
 
 .exp-js .scroll-to-top {
@@ -1334,7 +1334,7 @@ input:-moz-placeholder {
     position: fixed;
     top: var(--header-height);
     bottom: 0;
-    z-index: 120;
+    z-index: var(--a4-z-sidebar);
     border-image-source: url(../images/3/textile.png);
     border-image-slice: 30;
     border-image-width: 1.25rem;
@@ -1389,7 +1389,7 @@ html[data-a4-left-size="large"] {
     right: -0.5rem;
     width: 1rem;
     height: 4rem;
-    z-index: 140;
+    z-index: var(--a4-z-sidebar-handle);
     cursor: col-resize;
     touch-action: none;
     /* drawn in admin4.css: a small card with a grip, in the tokens */
@@ -1569,7 +1569,7 @@ html[data-a4-left-size="large"] {
     gap: 0.75rem;
     padding: 0.5rem 1.25rem;
     position: relative;
-    z-index: 110;
+    z-index: var(--a4-z-navbar);
 }
 
 .navbar-icon {
@@ -1822,11 +1822,11 @@ body {
     background: url("../images/3/dark_back.png");
     position: fixed;
     inset: 0 0 auto;
-    z-index: 1020;
+    z-index: var(--a4-z-header);
 }
 
 div.popupmenu#EditSubmenu {
-    z-index: 1020;
+    z-index: var(--a4-z-menu-sub);
 }
 
 input.button,
@@ -1845,11 +1845,11 @@ fieldset {
 /* 01-05-2024 */
 /* =============================== */
 #overlay-mask {
-    z-index: 121 !important;
+    z-index: var(--a4-z-overlay) !important;
 }
 
 div:has(.modal-window) {
-    z-index: 122 !important;
+    z-index: var(--a4-z-modal) !important;
     position: fixed;
     top: 50% !important;
     left: 50% !important;
