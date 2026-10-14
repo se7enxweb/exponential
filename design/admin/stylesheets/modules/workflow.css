@@ -634,3 +634,314 @@ ul.a4-shop-checklist li.critical .a4-shop-level { color: var(--a4-bad); }
 ul.a4-shop-checklist li.warning .a4-shop-level { color: var(--a4-warn); }
 ul.a4-shop-checklist li.info .a4-shop-level { color: var(--a4-info); }
 
+/* ---- search ---- search/stats: the phrase table with a bar per phrase (.a4-meter) ---------------------------- */
+
+.a4-search .a4-search-phrase { overflow-wrap: anywhere; font-weight: 600; }
+.a4-search .a4-table td { vertical-align: middle; }
+.a4-search .a4-table .a4-search-bar-col { width: 22%; min-width: 80px; }
+.a4-search .a4-meter { box-shadow: inset 0 0 0 1px var(--a4-line); }
+.a4-search .a4-meter > span { min-width: 4px; }
+@media (max-width: 600px) {
+  .a4-search .a4-table .a4-search-bar-col { display: none; }
+}
+
+/* ---- url ---- url/list, content/urltranslator, content/urlwildcards: one address per card ------------------- */
+
+.a4-url .a4-url-addr {
+  min-width: 0;
+  font-family: var(--a4-mono);
+  font-size: var(--a4-text-m);
+  font-weight: 600;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+.a4-url .a4-url-addr a { color: var(--a4-ink); text-decoration: none; }
+.a4-url .a4-url-addr a:hover { color: var(--a4-accent-text); text-decoration: underline; }
+.a4-url .a4-url-arrow { color: var(--a4-muted); font-family: var(--a4-mono); }
+.a4-url .a4-url-usage { margin: 0; padding: 0; list-style: none; }
+.a4-url .a4-url-usage li { display: inline; }
+.a4-url .a4-url-usage li + li::before { content: ", "; color: var(--a4-muted); }
+/* the wildcard tester's answer */
+.a4-url .a4-url-result { margin: var(--a4-space-3) 0 0; }
+.a4-url .a4-url-result dl { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: var(--a4-space-1) var(--a4-space-3); margin: var(--a4-space-2) 0 0; }
+.a4-url .a4-url-result dt { font-weight: 650; }
+.a4-url .a4-url-result dd { margin: 0; overflow-wrap: anywhere; }
+@media (max-width: 600px) {
+  .a4-url .a4-url-result dl { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  .a4-url .a4-url-result dd { margin-bottom: var(--a4-space-1); }
+}
+
+/* ---- visual ---- visual/menuconfig: siteaccesses, the menu choices with a small preview, recipes -------------- */
+
+.a4-visual .a4-visual-subtitle { margin: var(--a4-space-1) 0 var(--a4-space-3); color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-visual .a4-visual-about {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: var(--a4-space-3) var(--a4-space-4);
+  margin: var(--a4-space-3) 0 var(--a4-space-4);
+  padding: var(--a4-space-4) var(--a4-space-4);
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+}
+.a4-visual .a4-visual-about p { max-width: 78ch; }
+.a4-visual .a4-visual-about .a4-actions { justify-content: flex-end; }
+.a4-visual .a4-visual-sa-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+  gap: var(--a4-space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.a4-visual .a4-visual-sa {
+  display: flex;
+  flex-direction: column;
+  gap: var(--a4-space-1);
+  min-width: 0;
+  margin: 0;
+  padding: var(--a4-space-3) var(--a4-space-3);
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+}
+.a4-visual .a4-visual-sa.is-selected { border-color: var(--a4-accent); box-shadow: inset 0 0 0 1px var(--a4-accent); }
+.a4-visual .a4-visual-sa-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--a4-space-1) var(--a4-space-2); }
+.a4-visual .a4-visual-sa-head h3 { font-family: var(--a4-mono); font-size: var(--a4-text-m); }
+.a4-visual .a4-visual-sa p { color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-visual .a4-visual-sa p code { color: var(--a4-ink); }
+.a4-visual .a4-visual-sa .a4-actions { margin-top: auto; padding-top: var(--a4-space-1); }
+.a4-visual .a4-visual-steps { margin: var(--a4-space-1) 0 0; padding-left: var(--a4-space-4); }
+.a4-visual .a4-visual-steps li + li { margin-top: var(--a4-space-1); }
+.a4-visual .a4-visual-switch { display: flex; flex-wrap: wrap; align-items: end; gap: var(--a4-space-2) var(--a4-space-3); margin: 0 0 var(--a4-space-3); }
+
+/* the menu choices: a radio card each */
+.a4-visual fieldset.a4-visual-choices { min-width: 0; margin: var(--a4-space-4) 0 0; padding: 0; border: 0; background: none; box-shadow: none; }
+.a4-visual fieldset.a4-visual-choices > legend {
+  margin: 0 0 var(--a4-space-1);
+  padding: 0;
+  background: none;
+  color: var(--a4-ink);
+  font-size: var(--a4-text-l);
+  font-weight: 650;
+}
+.a4-visual .a4-visual-choice-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: var(--a4-space-3);
+  margin: var(--a4-space-2) 0 0;
+  padding: 0;
+  list-style: none;
+}
+.a4-visual .a4-visual-choice {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  margin: 0;
+  border: 1px solid var(--a4-line-strong);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+}
+.a4-visual .a4-visual-choice:hover { border-color: var(--a4-accent); }
+.a4-visual .a4-visual-choice:has(input:checked) { border-color: var(--a4-accent); box-shadow: inset 0 0 0 1px var(--a4-accent); }
+.a4-visual .a4-visual-choice:has(input:checked) .a4-visual-choice-pick { background-color: var(--a4-accent-soft); }
+.a4-visual .a4-visual-choice:has(input:focus-visible) { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
+.a4-visual .a4-visual-choice-pick {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--a4-space-2);
+  min-width: 0;
+  margin: 0;
+  padding: var(--a4-space-3);
+  border-radius: var(--a4-radius-s) var(--a4-radius-s) 0 0;
+  font-weight: 400;
+  white-space: normal;
+  cursor: pointer;
+}
+.a4-visual .a4-visual-choice-pick input {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--a4-accent-strong);
+  cursor: pointer;
+}
+.a4-visual .a4-visual-choice-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--a4-space-1) var(--a4-space-2);
+  padding-right: var(--a4-space-5);
+  color: var(--a4-ink);
+  font-size: var(--a4-text-m);
+  font-weight: 650;
+}
+.a4-visual .a4-visual-choice-desc { display: block; min-width: 0; }
+.a4-visual .a4-visual-choice dl { margin: 0; font-size: var(--a4-text-s); overflow-wrap: anywhere; }
+.a4-visual .a4-visual-choice dl > div + div { margin-top: var(--a4-space-1); }
+.a4-visual .a4-visual-choice dt { display: inline; color: var(--a4-ink); font-weight: 650; }
+.a4-visual .a4-visual-choice dd { display: inline; margin: 0; color: var(--a4-muted); overflow-wrap: anywhere; }
+.a4-visual details.a4-visual-choice-more { margin: auto 0 0; border-top: 1px dashed var(--a4-line); font-size: var(--a4-text-s); }
+.a4-visual details.a4-visual-choice-more > summary { padding: var(--a4-space-2) var(--a4-space-3); color: var(--a4-accent-text); font-weight: 650; cursor: pointer; }
+.a4-visual details.a4-visual-choice-more > ul,
+.a4-visual details.a4-visual-choice-more > pre { margin: 0 var(--a4-space-3) var(--a4-space-3); }
+.a4-visual .a4-visual-choice-facts li { margin: 0 0 var(--a4-space-1); overflow-wrap: anywhere; }
+
+/* the small page drawn for a choice, from this installation's real pages */
+.a4-visual .a4-visual-mini {
+  display: flex;
+  flex-direction: column;
+  gap: var(--a4-space-1);
+  min-height: 150px;
+  padding: var(--a4-space-1);
+  overflow: hidden;
+  border: 1px solid var(--a4-line-strong);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+  font-size: var(--a4-text-xs);
+  line-height: 1.35;
+}
+.a4-visual .a4-visual-mini b { overflow: hidden; font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
+.a4-visual .a4-visual-mini-head,
+.a4-visual .a4-visual-mini-second {
+  padding: 2px var(--a4-space-1);
+  overflow: hidden;
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-line);
+  color: var(--a4-ink);
+}
+.a4-visual .a4-visual-mini-head { font-weight: 700; text-overflow: ellipsis; white-space: nowrap; }
+.a4-visual .a4-visual-mini-top,
+.a4-visual .a4-visual-mini-second { display: flex; flex-wrap: wrap; gap: 2px var(--a4-space-2); padding: var(--a4-space-1) var(--a4-space-1); }
+.a4-visual .a4-visual-mini-top,
+.a4-visual .a4-visual-mini-left { border-radius: var(--a4-radius-s); background-color: var(--a4-muted); color: var(--a4-card); }
+.a4-visual .a4-visual-mini-top b { max-width: 12em; }
+.a4-visual .a4-visual-mini-top b.is-in { text-decoration: underline; text-underline-offset: 2px; }
+.a4-visual .a4-visual-mini-second { margin: 0 var(--a4-space-2); }
+.a4-visual .a4-visual-mini-body { display: grid; grid-template-columns: minmax(0, 1fr); flex: 1 1 auto; gap: var(--a4-space-1); min-height: 0; }
+.a4-visual .a4-visual-mini-body.has-left { grid-template-columns: minmax(0, 38%) minmax(0, 1fr); }
+.a4-visual .a4-visual-mini-left { display: flex; flex-direction: column; gap: 2px; min-width: 0; padding: var(--a4-space-1) var(--a4-space-1); }
+.a4-visual .a4-visual-mini-left b.is-sub { padding-left: var(--a4-space-2); font-weight: 400; }
+.a4-visual .a4-visual-mini-main { display: flex; flex-direction: column; gap: var(--a4-space-1); min-width: 0; padding: var(--a4-space-1) 2px; }
+.a4-visual .a4-visual-mini-main i { display: block; height: 5px; border-radius: var(--a4-radius-s); background-color: var(--a4-line-strong); }
+.a4-visual .a4-visual-mini-main i:first-child { height: auto; background: none; color: var(--a4-ink); font-style: normal; font-weight: 600; overflow-wrap: anywhere; }
+.a4-visual .a4-visual-mini-main i:nth-child(3) { width: 80%; }
+
+/* recipes, designs and the settings snippets */
+.a4-visual .a4-visual-recipes { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 380px), 1fr)); gap: var(--a4-space-3); }
+.a4-visual .a4-visual-recipe > p { margin-top: var(--a4-space-2); }
+.a4-visual .a4-visual-recipe-file { color: var(--a4-muted); font-size: var(--a4-text-xs); }
+.a4-visual .a4-visual-recipe-sees { padding-top: var(--a4-space-2); border-top: 1px dashed var(--a4-line); }
+.a4-visual .a4-visual-designs { display: grid; gap: var(--a4-space-1); margin: 0 0 var(--a4-space-3); padding: 0; list-style: none; }
+.a4-visual .a4-visual-designs li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--a4-space-1) var(--a4-space-2);
+  padding: var(--a4-space-2) var(--a4-space-3);
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  overflow-wrap: anywhere;
+}
+.a4-visual .a4-visual-designs li code { font-weight: 650; }
+.a4-visual .a4-visual-snippet { min-width: 0; margin: 0 0 var(--a4-space-3); }
+.a4-visual .a4-visual-snippet-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--a4-space-1) var(--a4-space-3); margin: 0 0 var(--a4-space-1); }
+.a4-visual .a4-visual-snippet > p { max-width: 80ch; margin: 0 0 var(--a4-space-1); color: var(--a4-muted); }
+.a4-visual .a4-pre { white-space: pre; overflow-x: auto; tab-size: 4; }
+.a4-visual pre.a4-visual-lines {
+  margin: var(--a4-space-2) 0 0;
+  padding: var(--a4-space-2) var(--a4-space-3);
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+  color: var(--a4-ink);
+  font-family: var(--a4-mono);
+  font-size: var(--a4-text-xs);
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 760px) {
+  .a4-visual .a4-visual-about { grid-template-columns: minmax(0, 1fr); }
+  .a4-visual .a4-visual-about .a4-actions { justify-content: flex-start; }
+}
+@media (max-width: 600px) {
+  .a4-visual .a4-visual-switch .a4-field { flex: 1 1 100%; }
+}
+
+/* visual/templateedit: the template source, full width */
+textarea.a4-visual-editor {
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  height: auto;
+  min-height: 70vh;
+  padding: var(--a4-space-2);
+  overflow: auto;
+  border: 1px solid var(--a4-field-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-field);
+  color: var(--a4-ink);
+  font-family: var(--a4-mono);
+  font-size: var(--a4-text-m);
+  line-height: var(--a4-leading);
+  white-space: pre;
+  tab-size: 4;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+/* ---- contentfinder ---- contentfinder/search, /action and the small box below the content structure ------- */
+
+.a4-contentfinder .a4-contentfinder-form { display: flex; flex-wrap: wrap; align-items: flex-end; gap: var(--a4-space-2); margin: 0 0 var(--a4-space-2); }
+.a4-contentfinder .a4-contentfinder-form label { display: block; margin: 0 0 var(--a4-space-1); font-weight: 700; }
+.a4-contentfinder .a4-contentfinder-form .a4-contentfinder-text { flex: 1 1 22em; min-width: 0; }
+.a4-contentfinder .a4-contentfinder-form .a4-contentfinder-text input { width: 100%; box-sizing: border-box; }
+.a4-contentfinder .a4-contentfinder-form .a4-contentfinder-type select { max-width: 100%; }
+.a4-contentfinder .a4-contentfinder-hint { margin: 0 0 var(--a4-space-3); color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-contentfinder .a4-contentfinder-result { margin: 0 0 var(--a4-space-4); }
+.a4-contentfinder .a4-contentfinder-result h2 { margin: 0 0 var(--a4-space-1); font-size: var(--a4-text-l); }
+.a4-contentfinder .a4-contentfinder-result h3 { margin: var(--a4-space-3) 0 var(--a4-space-1); font-size: var(--a4-text-m); }
+.a4-contentfinder .a4-contentfinder-meta { display: grid; grid-template-columns: minmax(8em, max-content) 1fr; gap: var(--a4-space-1) var(--a4-space-3); margin: var(--a4-space-1) 0; }
+.a4-contentfinder .a4-contentfinder-meta dt { font-weight: 700; }
+.a4-contentfinder .a4-contentfinder-meta dd { margin: 0; overflow-wrap: anywhere; }
+.a4-contentfinder .a4-contentfinder-match { margin: var(--a4-space-1) 0 var(--a4-space-2); padding: var(--a4-space-1) var(--a4-space-2); border-radius: var(--a4-radius-s); background-color: var(--a4-accent-soft); }
+.a4-contentfinder .a4-contentfinder-badge.published,
+.a4-contentfinder .a4-contentfinder-badge.main { background-color: var(--a4-ok-bg); color: var(--a4-ok); }
+.a4-contentfinder .a4-contentfinder-badge.archived,
+.a4-contentfinder .a4-contentfinder-badge.trash { background-color: var(--a4-bad-bg); color: var(--a4-bad); }
+.a4-contentfinder .a4-contentfinder-badge.draft,
+.a4-contentfinder .a4-contentfinder-badge.internal_draft,
+.a4-contentfinder .a4-contentfinder-badge.pending { background-color: var(--a4-warn-bg); color: var(--a4-warn); }
+.a4-contentfinder .a4-contentfinder-table { width: 100%; overflow-x: auto; }
+.a4-contentfinder .a4-contentfinder-table table { width: 100%; }
+.a4-contentfinder .a4-contentfinder-table td { vertical-align: top; overflow-wrap: anywhere; }
+.a4-contentfinder .a4-contentfinder-actions { display: flex; flex-wrap: wrap; gap: var(--a4-space-2); margin: var(--a4-space-3) 0 0; }
+.a4-contentfinder .a4-contentfinder-actions form { display: inline; margin: 0; }
+.a4-contentfinder .a4-contentfinder-inline { display: inline; margin: 0; }
+.a4-contentfinder .a4-contentfinder-danger { border-color: var(--a4-bad); color: var(--a4-bad); }
+.a4-contentfinder .a4-contentfinder-none { padding: var(--a4-space-3); }
+.a4-contentfinder .a4-contentfinder-plan li { margin: var(--a4-space-1) 0; }
+.a4-contentfinder .a4-contentfinder-permanent { margin: var(--a4-space-3) 0; padding: var(--a4-space-2) var(--a4-space-2); border: 1px solid var(--a4-bad); border-radius: var(--a4-radius-s); }
+@media (max-width: 640px) {
+  .a4-contentfinder .a4-contentfinder-meta { grid-template-columns: 1fr; }
+  .a4-contentfinder .a4-contentfinder-meta dt { margin-top: var(--a4-space-1); }
+  .a4-contentfinder .a4-contentfinder-table table,
+  .a4-contentfinder .a4-contentfinder-table tbody,
+  .a4-contentfinder .a4-contentfinder-table tr,
+  .a4-contentfinder .a4-contentfinder-table td { display: block; width: auto; }
+  .a4-contentfinder .a4-contentfinder-table tr:first-child { display: none; }
+  .a4-contentfinder .a4-contentfinder-table tr { padding: var(--a4-space-1) 0; border-bottom: 1px solid var(--a4-line); }
+  .a4-contentfinder .a4-contentfinder-table td[data-label]::before { content: attr(data-label) ": "; font-weight: 700; }
+}
+.a4-contentfinder-box { margin: var(--a4-space-3) 0 0; }
+.a4-contentfinder-box label { display: block; margin: 0 0 var(--a4-space-1); font-weight: 700; }
+.a4-contentfinder-box .a4-contentfinder-box-row { display: flex; gap: var(--a4-space-1); }
+.a4-contentfinder-box input[type="search"] { flex: 1 1 auto; min-width: 0; box-sizing: border-box; }
