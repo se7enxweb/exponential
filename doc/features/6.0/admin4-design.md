@@ -67,7 +67,9 @@ extension). The editor siteaccess falls back to `admin4` first, then `admin3`, `
   `aria-required`). After a failed store a summary at the top takes the focus and links to each field; every invalid
   field shows its message under its label, carries a red edge, and its controls are `aria-invalid` with the message as
   description. Each attribute is a named group (`role="group"`, id `ezcca-attr-<attribute id>`). The datatype
-  templates are unchanged: the marks are set on their controls by the edit page's script.
+  templates are unchanged: the marks are set on their data controls by the page's script (not on buttons, file inputs
+  or remove checkboxes); a datatype template opts a control out with the class `a4-no-field-mark`. Multiedit, user
+  registration and the template look editor include the same attribute template and behave the same.
 - **Frame.** Side column margins are halved (a 16 px gap). The sidebar buttons sit on the window edges at 48% of the
   window height, with labels and titles. Long names in the side columns wrap instead of being cut off.
 - **Tables.** A list table's sorted column is readable (soft orange header).
