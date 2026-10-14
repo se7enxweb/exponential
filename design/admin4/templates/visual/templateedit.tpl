@@ -3,7 +3,7 @@
 
 {* DESIGN: Header START *}<div class="box-header"><div class="box-ml">
 
-<h1 class="context-title">{'Edit template: <%template>'|i18n( 'design/admin/visual/templateedit',, hash( '%template', $template ) )|wash}</h1>
+<h1 class="context-title" id="templateedit-title">{'Edit template: <%template>'|i18n( 'design/admin/visual/templateedit',, hash( '%template', $template ) )|wash}</h1>
 
 {* DESIGN: Mainline *}<div class="header-mainline"></div>
 
@@ -14,7 +14,7 @@
 <div class="context-attributes">
 <div class="block">
 
-<textarea class="box template-editor a4-visual-editor" name="TemplateContent" cols="40" rows="30" spellcheck="false" wrap="off">{$template_content|wash(xhtml)}</textarea>
+<textarea aria-labelledby="templateedit-title" class="box template-editor a4-visual-editor" name="TemplateContent" cols="40" rows="30" spellcheck="false" wrap="off">{$template_content|wash(xhtml)}</textarea>
 
 </div>
 </div>

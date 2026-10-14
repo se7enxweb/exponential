@@ -15,13 +15,13 @@
 <div class="context-attributes">
 
 <div class="block">
-<label>{'Name'|i18n( 'design/admin/setup/rad/templateoperator' )}:</label>
-<input class="box" type="text" name="Name" value="" />
+<label for="a4f-Name">{'Name'|i18n( 'design/admin/setup/rad/templateoperator' )}:</label>
+<input id="a4f-Name" class="box" type="text" name="Name" value="" />
 </div>
 
 <div class="block">
-<label>{'Handles input'|i18n( 'design/admin/setup/rad/templateoperator' )}:</label>
-<input type="checkbox" name="InputCheck" value="1" checked="checked" />
+<label for="a4f-InputCheck">{'Handles input'|i18n( 'design/admin/setup/rad/templateoperator' )}:</label>
+<input id="a4f-InputCheck" type="checkbox" name="InputCheck" value="1" checked="checked" />
 </div>
 
 <div class="block">
@@ -30,8 +30,8 @@
 </div>
 
 <div class="block">
-<label>{'Parameters'|i18n( 'design/admin/setup/rad/templateoperator' )}:</label>
-<select name="Parameter">
+<label for="a4f-Parameter">{'Parameters'|i18n( 'design/admin/setup/rad/templateoperator' )}:</label>
+<select id="a4f-Parameter" name="Parameter">
     <option value="1">{'No parameters'|i18n( 'design/admin/setup/rad/templateoperator' )}</option>
     <option value="2">{'Named parameters'|i18n( 'design/admin/setup/rad/templateoperator' )}</option>
     <option value="3">{'Sequential parameters'|i18n( 'design/admin/setup/rad/templateoperator' )}</option>

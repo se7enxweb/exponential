@@ -20,7 +20,7 @@
     {/if}
 {*        <label>{'Select siteaccess'|i18n( 'design/admin/visual/toolbar' )}:</label> *}
 
-        <select name="CurrentSiteAccess">
+        <select name="CurrentSiteAccess" aria-label="{'Select siteaccess'|i18n( 'design/admin/visual/toolbar' )|wash}">
             {section var=siteaccess loop=$siteaccess_list}
                 {if eq( $current_siteaccess, $siteaccess )}
                     <option value="{$siteaccess}" selected="selected">{$siteaccess}</option>

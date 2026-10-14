@@ -123,11 +123,11 @@
 <div class="a4-setup-wz-col">
 
 <div class="a4-card{if $wizard_settings.parts.customtag|not} is-off{/if}">
-<h2>{'Custom tags'|i18n( 'design/admin/setup/rad/content' )}</h2>
-<span class="a4-meta">{'One per line: a name, a colon, then its attributes. Add the word inline for a tag that sits inside a paragraph rather than replacing one.'|i18n( 'design/admin/setup/rad/content' )}</span>
+<h2 id="a4f-h-tags">{'Custom tags'|i18n( 'design/admin/setup/rad/content' )}</h2>
+<span class="a4-meta" id="a4f-m-tags">{'One per line: a name, a colon, then its attributes. Add the word inline for a tag that sits inside a paragraph rather than replacing one.'|i18n( 'design/admin/setup/rad/content' )}</span>
 
 <div class="a4-field">
-    <textarea name="tags" rows="4" placeholder="factbox: title&#10;highlight: inline">{$wizard_raw.tags|wash}</textarea>
+    <textarea aria-labelledby="a4f-h-tags" aria-describedby="a4f-m-tags" name="tags" rows="4" placeholder="factbox: title&#10;highlight: inline">{$wizard_raw.tags|wash}</textarea>
     <span class="a4-help">{'A template is written for each, and the ini that allows it. Anything not listed as an attribute cannot be set at all, which is the only validation a custom tag has.'|i18n( 'design/admin/setup/rad/content' )}</span>
 </div>
 </div>

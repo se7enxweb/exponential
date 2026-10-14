@@ -13,26 +13,26 @@
 <div class="context-attributes">
 
 <div class="block">
-<label>{'Class name'|i18n( 'design/admin/setup/rad/templateoperator' )}:</label>
-<input class="box" type="text" name="ClassName" value="{$class_name|wash}" />
+<label for="a4f-ClassName">{'Class name'|i18n( 'design/admin/setup/rad/templateoperator' )}:</label>
+<input id="a4f-ClassName" class="box" type="text" name="ClassName" value="{$class_name|wash}" />
 </div>
 
 <div class="block">
-<label>{'Author'|i18n( 'design/admin/setup/rad/templateoperator' )}:</label>
-<input class="box" type="text" name="CreatorName" value="{fetch(user,current_user).contentobject.name|wash}" />
+<label for="a4f-CreatorName">{'Author'|i18n( 'design/admin/setup/rad/templateoperator' )}:</label>
+<input id="a4f-CreatorName" class="box" type="text" name="CreatorName" value="{fetch(user,current_user).contentobject.name|wash}" />
 </div>
 
 <div class="block">
-<label>{'Description'|i18n( 'design/admin/setup/rad/templateoperator' )}:</label>
-<textarea class="box" name="Description" cols="60" rows="5">
+<label for="a4f-Description">{'Description'|i18n( 'design/admin/setup/rad/templateoperator' )}:</label>
+<textarea id="a4f-Description" class="box" name="Description" cols="60" rows="5">
 {'Handles template operator %operator_name. By using %operator_name you can...'|i18n( 'design/admin/setup/rad/templateoperator',, hash( '%operator_name', $operator_name))}
 </textarea>
 <p>{'Hint: The first line will be used for the brief description. The rest will become the documentation.'|i18n( 'design/admin/setup/rad/templateoperator' )}</p>
 </div>
 
 <div class="block">
-<label>{'Example code'|i18n( 'design/admin/setup/rad/templateoperator' )}:</label>
-<textarea class="box" name="ExampleCode" cols="60" rows="3">{$example_code|wash}</textarea>
+<label for="a4f-ExampleCode">{'Example code'|i18n( 'design/admin/setup/rad/templateoperator' )}:</label>
+<textarea id="a4f-ExampleCode" class="box" name="ExampleCode" cols="60" rows="3">{$example_code|wash}</textarea>
 <p>{'Hint: Feel free to add example code that demonstrates how the operator works.'|i18n( 'design/admin/setup/rad/templateoperator' )}</p>
 </div>
 

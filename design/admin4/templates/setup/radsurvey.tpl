@@ -54,12 +54,12 @@
 </div>
 
 <div class="a4-card">
-<h2>{$survey_section.title|i18n( 'design/admin/setup/rad/survey' )|wash}</h2>
-<span class="a4-meta">{$survey_section.what|i18n( 'design/admin/setup/rad/survey' )|wash}</span>
+<h2 id="a4f-h-find">{$survey_section.title|i18n( 'design/admin/setup/rad/survey' )|wash}</h2>
+<span class="a4-meta" id="a4f-m-find">{$survey_section.what|i18n( 'design/admin/setup/rad/survey' )|wash}</span>
 {if is_set( $survey_section.also )}<span class="a4-meta">{$survey_section.also|i18n( 'design/admin/setup/rad/survey' )|wash}</span>{/if}
 
 <form class="a4-searchrow" method="get" action={concat( '/setup/radsurvey/(show)/', $survey_show )|ezurl}>
-    <input type="text" class="a4-input" name="find" value="{$survey_find|wash}" placeholder="{'Narrow the list'|i18n( 'design/admin/setup/rad/survey' )}" autocomplete="off" />
+    <input aria-labelledby="a4f-h-find" aria-describedby="a4f-m-find" type="text" class="a4-input" name="find" value="{$survey_find|wash}" placeholder="{'Narrow the list'|i18n( 'design/admin/setup/rad/survey' )}" autocomplete="off" />
     <input class="a4-btn" type="submit" value="{'Find'|i18n( 'design/admin/setup/rad/survey' )}" />
 {if ne( $survey_find, '' )}
     <a class="a4-btn" href={$survey_reset|ezurl}>{'Clear'|i18n( 'design/admin/setup/rad/survey' )}</a>

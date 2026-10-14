@@ -57,11 +57,11 @@
 <div class="a4-setup-wz-col">
 
 <div class="a4-card{if $wizard_settings.parts.image|not} is-off{/if}">
-<h2>{'Image aliases'|i18n( 'design/admin/setup/rad/settings' )}</h2>
-<span class="a4-meta">{'One per line: a name, a colon, then the filters separated by commas. Arguments follow the filter after an = sign.'|i18n( 'design/admin/setup/rad/settings' )}</span>
+<h2 id="a4f-h-aliases">{'Image aliases'|i18n( 'design/admin/setup/rad/settings' )}</h2>
+<span class="a4-meta" id="a4f-m-aliases">{'One per line: a name, a colon, then the filters separated by commas. Arguments follow the filter after an = sign.'|i18n( 'design/admin/setup/rad/settings' )}</span>
 
 <div class="a4-field">
-    <textarea name="aliases" rows="5" placeholder="card: geometry/scaledownonly=320;240&#10;square: geometry/scaleexact=200;200, colorspace/gray">{$wizard_raw.aliases|wash}</textarea>
+    <textarea aria-labelledby="a4f-h-aliases" aria-describedby="a4f-m-aliases" name="aliases" rows="5" placeholder="card: geometry/scaledownonly=320;240&#10;square: geometry/scaleexact=200;200, colorspace/gray">{$wizard_raw.aliases|wash}</textarea>
 </div>
 
 <h3>{'Filters that ship'|i18n( 'design/admin/setup/rad/settings' )}</h3>
@@ -74,11 +74,11 @@
 </div>
 
 <div class="a4-card{if $wizard_settings.parts.viewcache|not} is-off{/if}">
-<h2>{'View cache clearing rules'|i18n( 'design/admin/setup/rad/settings' )}</h2>
-<span class="a4-meta">{'One per line: a content class identifier, a colon, then the methods. Any word that is not a method is taken as a class identifier this one depends on.'|i18n( 'design/admin/setup/rad/settings' )}</span>
+<h2 id="a4f-h-rules">{'View cache clearing rules'|i18n( 'design/admin/setup/rad/settings' )}</h2>
+<span class="a4-meta" id="a4f-m-rules">{'One per line: a content class identifier, a colon, then the methods. Any word that is not a method is taken as a class identifier this one depends on.'|i18n( 'design/admin/setup/rad/settings' )}</span>
 
 <div class="a4-field">
-    <textarea name="rules" rows="4" placeholder="comment: relating, parent, forum_topic&#10;article: siblings">{$wizard_raw.rules|wash}</textarea>
+    <textarea aria-labelledby="a4f-h-rules" aria-describedby="a4f-m-rules" name="rules" rows="4" placeholder="comment: relating, parent, forum_topic&#10;article: siblings">{$wizard_raw.rules|wash}</textarea>
 </div>
 
 <h3>{'Methods'|i18n( 'design/admin/setup/rad/settings' )}</h3>
@@ -91,11 +91,11 @@
 </div>
 
 <div class="a4-card{if $wizard_settings.parts.collect|not} is-off{/if}">
-<h2>{'Information collection'|i18n( 'design/admin/setup/rad/settings' )}</h2>
-<span class="a4-meta">{'One per line: a content class identifier, a type, and the word nomail if it should not be emailed.'|i18n( 'design/admin/setup/rad/settings' )}</span>
+<h2 id="a4f-h-forms">{'Information collection'|i18n( 'design/admin/setup/rad/settings' )}</h2>
+<span class="a4-meta" id="a4f-m-forms">{'One per line: a content class identifier, a type, and the word nomail if it should not be emailed.'|i18n( 'design/admin/setup/rad/settings' )}</span>
 
 <div class="a4-field">
-    <textarea name="forms" rows="3" placeholder="contact_form form&#10;reader_poll poll nomail">{$wizard_raw.forms|wash}</textarea>
+    <textarea aria-labelledby="a4f-h-forms" aria-describedby="a4f-m-forms" name="forms" rows="3" placeholder="contact_form form&#10;reader_poll poll nomail">{$wizard_raw.forms|wash}</textarea>
 </div>
 
 <h3>{'Types'|i18n( 'design/admin/setup/rad/settings' )}</h3>
@@ -130,21 +130,21 @@
 </div>
 
 <div class="a4-card{if $wizard_settings.parts.trigger|not} is-off{/if}">
-<h2>{'Trigger operations'|i18n( 'design/admin/setup/rad/settings' )}</h2>
-<span class="a4-meta">{'Which operations a workflow may be bound to in the admin. Separated by commas, spaces or newlines.'|i18n( 'design/admin/setup/rad/settings' )}</span>
+<h2 id="a4f-h-operations">{'Trigger operations'|i18n( 'design/admin/setup/rad/settings' )}</h2>
+<span class="a4-meta" id="a4f-m-operations">{'Which operations a workflow may be bound to in the admin. Separated by commas, spaces or newlines.'|i18n( 'design/admin/setup/rad/settings' )}</span>
 
 <div class="a4-field">
-    <input type="text" name="operations" value="{$wizard_raw.operations|wash}" placeholder="content_delete, content_hide, user_activation" autocomplete="off" />
+    <input aria-labelledby="a4f-h-operations" aria-describedby="a4f-m-operations" type="text" name="operations" value="{$wizard_raw.operations|wash}" placeholder="content_delete, content_hide, user_activation" autocomplete="off" />
     <span class="a4-help">{'Listing an operation makes it bindable and binds nothing. The binding is a row in the database, done in the admin, and does not travel with the extension.'|i18n( 'design/admin/setup/rad/settings' )}</span>
 </div>
 </div>
 
 <div class="a4-card{if $wizard_settings.parts.roots|not} is-off{/if}">
-<h2>{'Additional extension roots'|i18n( 'design/admin/setup/rad/settings' )}</h2>
-<span class="a4-meta">{'One per line, relative to the installation. extension/ is always first and is not named here; each of these is searched after it, and an extension of the same name in a later root shadows the one before it.'|i18n( 'design/admin/setup/rad/settings' )}</span>
+<h2 id="a4f-h-roots">{'Additional extension roots'|i18n( 'design/admin/setup/rad/settings' )}</h2>
+<span class="a4-meta" id="a4f-m-roots">{'One per line, relative to the installation. extension/ is always first and is not named here; each of these is searched after it, and an extension of the same name in a later root shadows the one before it.'|i18n( 'design/admin/setup/rad/settings' )}</span>
 
 <div class="a4-field">
-    <textarea name="roots" rows="2" placeholder="extension_src">{$wizard_raw.roots|wash}</textarea>
+    <textarea aria-labelledby="a4f-h-roots" aria-describedby="a4f-m-roots" name="roots" rows="2" placeholder="extension_src">{$wizard_raw.roots|wash}</textarea>
     <span class="a4-help">{'The directory has to exist, and the autoloads have to be regenerated after adding one. Moving a package between roots is a copy and nothing else.'|i18n( 'design/admin/setup/rad/settings' )}</span>
 </div>
 </div>

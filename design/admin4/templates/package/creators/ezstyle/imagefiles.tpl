@@ -25,7 +25,7 @@ Click "Next" without choosing an image to continue to the next step.'|i18n('desi
 
     <div class="block">
     <input type="hidden" name="MAX_FILE_SIZE" value="32000000" />
-    <input class="box" name="PackageImageFile" type="file" />
+    <input class="box" name="PackageImageFile" type="file" aria-label="{'Image file'|i18n( 'design/admin/package' )|wash}" />
     </div>
 
     {include uri="design:package/navigator.tpl"}

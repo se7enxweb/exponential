@@ -80,7 +80,7 @@
 <div class="a4-field">
     <label for="mewFile">{$wizard_fields.db_file.label|i18n( 'design/admin/setup/rad/moduleextension' )}</label>
     {if $wizard_sqlite_files|count|gt( 0 )}
-    <select id="mewFilePick">
+    <select id="mewFilePick" aria-label="{'Choose a file this installation can see...'|i18n( 'design/admin/setup/rad/moduleextension' )|wash}">
         <option value="">{'Choose a file this installation can see...'|i18n( 'design/admin/setup/rad/moduleextension' )}</option>
     {foreach $wizard_sqlite_files as $mew_path => $mew_label}
         <option value="{$mew_path|wash}"{if eq( $wizard_settings.db_file, $mew_path )} selected="selected"{/if}>{$mew_label|wash}</option>
@@ -150,11 +150,11 @@
 </div>
 
 <div class="a4-card">
-<h2>{if eq( $wizard_kind, 'document' )}{'Collections'|i18n( 'design/admin/setup/rad/moduleextension' )}{else}{'Tables'|i18n( 'design/admin/setup/rad/moduleextension' )}{/if}</h2>
-<span class="a4-meta">{if eq( $wizard_kind, 'document' )}{'Tick the collections this extension should cover. A collection has no declared shape, so the fields below were worked out by reading a sample of its documents: a field that only some documents carry may be missing, and one that holds different kinds of value in different documents is treated as text.'|i18n( 'design/admin/setup/rad/moduleextension' )}{else}{'Tick the ones this extension should cover. A table with no primary key can still be read, but a single row cannot be addressed, so the first column is used instead.'|i18n( 'design/admin/setup/rad/moduleextension' )}{/if}</span>
+<h2 id="a4f-h-mewFilter">{if eq( $wizard_kind, 'document' )}{'Collections'|i18n( 'design/admin/setup/rad/moduleextension' )}{else}{'Tables'|i18n( 'design/admin/setup/rad/moduleextension' )}{/if}</h2>
+<span class="a4-meta" id="a4f-m-mewFilter">{if eq( $wizard_kind, 'document' )}{'Tick the collections this extension should cover. A collection has no declared shape, so the fields below were worked out by reading a sample of its documents: a field that only some documents carry may be missing, and one that holds different kinds of value in different documents is treated as text.'|i18n( 'design/admin/setup/rad/moduleextension' )}{else}{'Tick the ones this extension should cover. A table with no primary key can still be read, but a single row cannot be addressed, so the first column is used instead.'|i18n( 'design/admin/setup/rad/moduleextension' )}{/if}</span>
 
 <div class="a4-actions">
-    <input type="text" id="mewFilter" class="a4-input is-auto" placeholder="{'Filter'|i18n( 'design/admin/setup/rad/moduleextension' )}" />
+    <input aria-labelledby="a4f-h-mewFilter" aria-describedby="a4f-m-mewFilter" type="text" id="mewFilter" class="a4-input is-auto" placeholder="{'Filter'|i18n( 'design/admin/setup/rad/moduleextension' )}" />
     <button type="button" class="a4-btn a4-btn-small" id="mewNone">{'Tick none'|i18n( 'design/admin/setup/rad/moduleextension' )}</button>
     <button type="submit" class="a4-btn a4-btn-small" name="PreviewButton" value="1">{'Refresh preview'|i18n( 'design/admin/setup/rad/moduleextension' )}</button>
 </div>
@@ -171,7 +171,7 @@
 </tr>
 {foreach $wizard_tables as $mew_table}
 <tr{if $mew_table.selected} class="is-selected"{/if}>
-    <td><input type="checkbox" name="Tables[]" value="{$mew_table.name|wash}"{if $mew_table.selected} checked="checked"{/if} /></td>
+    <td><input type="checkbox" aria-label="{$mew_table.name|wash}" name="Tables[]" value="{$mew_table.name|wash}"{if $mew_table.selected} checked="checked"{/if} /></td>
     <td><code>{$mew_table.name|wash}</code></td>
     <td class="a4-num a4-muted">{$mew_table.columns}</td>
     <td>{if $mew_table.has_key}<code>{$mew_table.keys|wash}</code>{else}<span class="a4-setup-wz-nokey">{'none'|i18n( 'design/admin/setup/rad/moduleextension' )}</span>{/if}</td>

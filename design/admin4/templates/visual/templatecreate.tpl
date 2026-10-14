@@ -35,9 +35,9 @@
 {def $extension_list=ezini('ExtensionSettings','DesignExtensions','design.ini' )}
 {if ne($extension_list, array())}
     <div class="block">
-    <label>{'Extension'|i18n( 'design/standard/visual/templatecreate' )}:</label>
+    <label for="templatecreate-extension">{'Extension'|i18n( 'design/standard/visual/templatecreate' )}:</label>
 
-    <select name="DesignExtension">
+    <select id="templatecreate-extension" name="DesignExtension">
         {foreach $extension_list as $extensionName}
             {if eq($design_extension,$extensionName)}
                 <option value="{$extensionName}" selected="selected">{$extensionName}</option>
@@ -56,8 +56,8 @@
 {/if}
 
 <div class="block">
-    <label>{'Filename'|i18n( 'design/admin/visual/templatecreate' )}:</label>
-    <input class="halfbox" type="text" name="TemplateName" value="{$template_name}" />.tpl
+    <label for="templatecreate-name">{'Filename'|i18n( 'design/admin/visual/templatecreate' )}:</label>
+    <input id="templatecreate-name" class="halfbox" type="text" name="TemplateName" value="{$template_name}" />.tpl
 </div>
 
 {switch match=$template_type}
@@ -67,9 +67,9 @@
 
 <table>
 <tr>
-    <td>{'Class'|i18n( 'design/admin/visual/templatecreate' )}:</td>
+    <td><label class="a4-inline-label" for="templatecreate-class">{'Class'|i18n( 'design/admin/visual/templatecreate' )}</label>:</td>
     <td>
-    <select name="Match[class_identifier]">
+    <select id="templatecreate-class" name="Match[class_identifier]">
         <option value="-1">{'All classes'|i18n( 'design/admin/visual/templatecreate' )}</option>
         {section name=Class loop=fetch('content', 'can_instantiate_class_list')}
             {let contentClass = fetch( content, class, hash( class_id, $Class:item.id ) )}
@@ -80,9 +80,9 @@
     </td>
 </tr>
 <tr>
-    <td>{'Section'|i18n( 'design/admin/visual/templatecreate' )}:</td>
+    <td><label class="a4-inline-label" for="templatecreate-section">{'Section'|i18n( 'design/admin/visual/templatecreate' )}</label>:</td>
     <td>
-    <select name="Match[section]">
+    <select id="templatecreate-section" name="Match[section]">
         <option value="-1">{'All sections'|i18n( 'design/admin/visual/templatecreate' )}</option>
         {section name=Section loop=fetch( 'content', 'section_list' )}
             <option value="{$:item.id}">{$:item.name|wash}</option>
@@ -91,29 +91,29 @@
     </td>
 </tr>
 <tr>
-    <td>{'Object ID'|i18n( 'design/admin/visual/templatecreate' )}:</td>
-    <td><input type="text" size="5" value="{$override_keys['objectID']}" name="Match[object]" /></td>
+    <td><label class="a4-inline-label" for="templatecreate-object">{'Object ID'|i18n( 'design/admin/visual/templatecreate' )}</label>:</td>
+    <td><input id="templatecreate-object" type="text" size="5" value="{$override_keys['objectID']}" name="Match[object]" /></td>
 </tr>
 <tr>
-    <td>{'Node ID'|i18n( 'design/admin/visual/templatecreate' )}:</td>
-    <td><input type="text" size="5" value="{$override_keys['nodeID']}" name="Match[node]" /></td>
+    <td><label class="a4-inline-label" for="templatecreate-node">{'Node ID'|i18n( 'design/admin/visual/templatecreate' )}</label>:</td>
+    <td><input id="templatecreate-node" type="text" size="5" value="{$override_keys['nodeID']}" name="Match[node]" /></td>
 </tr>
 </table>
 </div>
 
 
-<div class="block">
-<label>{'Base template on'|i18n( 'design/admin/visual/templatecreate' )}:</label>
-<input type="radio" name="TemplateContent" value="EmptyFile" checked="checked"/>{'Empty file'|i18n( 'design/admin/visual/templatecreate' )}<br />
-<input type="radio" name="TemplateContent" value="DefaultCopy" />{'Copy of default template'|i18n( 'design/admin/visual/templatecreate' )}<br />
-<select name="TemplateSource">
+<div class="block" role="radiogroup" aria-labelledby="templatecreate-base">
+<label id="templatecreate-base">{'Base template on'|i18n( 'design/admin/visual/templatecreate' )}:</label>
+<label class="a4-inline-label"><input type="radio" name="TemplateContent" value="EmptyFile" checked="checked"/>{'Empty file'|i18n( 'design/admin/visual/templatecreate' )}</label><br />
+<label class="a4-inline-label" id="templatecreate-copy"><input type="radio" name="TemplateContent" value="DefaultCopy" />{'Copy of default template'|i18n( 'design/admin/visual/templatecreate' )}</label><br />
+<select name="TemplateSource" aria-labelledby="templatecreate-copy">
     <option value="">{'Automatic (class-specific override if available, otherwise source)'|i18n( 'design/admin/visual/templatecreate' )}</option>
     {foreach $default_template_sources as $source}
     <option value="{$source.path}">{$source.label}</option>
     {/foreach}
 </select><br />
-<input type="radio" name="TemplateContent" value="ContainerTemplate" />{'Container (with children)'|i18n( 'design/admin/visual/templatecreate' )}<br />
-<input type="radio" name="TemplateContent" value="ViewTemplate" />{'View (without children)'|i18n( 'design/admin/visual/templatecreate' )}<br />
+<label class="a4-inline-label"><input type="radio" name="TemplateContent" value="ContainerTemplate" />{'Container (with children)'|i18n( 'design/admin/visual/templatecreate' )}</label><br />
+<label class="a4-inline-label"><input type="radio" name="TemplateContent" value="ViewTemplate" />{'View (without children)'|i18n( 'design/admin/visual/templatecreate' )}</label><br />
 </div>
 
 {/case}
@@ -127,11 +127,11 @@
 <tr>
     <td>
     <p>
-    {'Class'|i18n( 'design/admin/visual/templatecreate' )}
+    <label class="a4-inline-label" for="templatecreate-class">{'Class'|i18n( 'design/admin/visual/templatecreate' )}</label>
     </p>
     </td>
     <td>
-    <select name="Match[class_identifier]">
+    <select id="templatecreate-class" name="Match[class_identifier]">
         <option value="-1">{'Any'|i18n( 'design/admin/visual/templatecreate' )}</option>
         {section name=Class loop=fetch('content', 'class_list', hash('sorts', array()))}
         <option value="{$Class:item.identifier}">{$Class:item.name|wash}</option>
@@ -142,11 +142,11 @@
 <tr>
     <td>
     <p>
-    {'Section'|i18n( 'design/admin/visual/templatecreate' )}
+    <label class="a4-inline-label" for="templatecreate-section">{'Section'|i18n( 'design/admin/visual/templatecreate' )}</label>
     </p>
     </td>
     <td>
-    <select name="Match[section]">
+    <select id="templatecreate-section" name="Match[section]">
         <option value="-1">{'Any'|i18n( 'design/admin/visual/templatecreate' )}</option>
         {section name=Section loop=fetch( 'content', 'section_list' )}
             <option value="{$:item.id}">{$:item.name|wash}</option>
@@ -157,11 +157,11 @@
 <tr>
     <td>
     <p>
-    {'Object'|i18n( 'design/admin/visual/templatecreate' )}
+    <label class="a4-inline-label" for="templatecreate-object">{'Object'|i18n( 'design/admin/visual/templatecreate' )}</label>
     </p>
     </td>
     <td>
-    <input type="text" size="5" value="" name="Match[object]" />
+    <input id="templatecreate-object" type="text" size="5" value="" name="Match[object]" />
     </td>
 </tr>
 </table>
@@ -169,30 +169,30 @@
 
 
 <div class="objectheader">
-<h2>{'Base template on'|i18n( 'design/admin/visual/templatecreate' )}</h2>
+<h2 id="templatecreate-base">{'Base template on'|i18n( 'design/admin/visual/templatecreate' )}</h2>
 </div>
-<div class="object">
+<div class="object" role="radiogroup" aria-labelledby="templatecreate-base">
 
-<input type="radio" name="TemplateContent" value="EmptyFile" checked="checked"/>{'Empty file'|i18n( 'design/admin/visual/templatecreate' )}<br />
-<input type="radio" name="TemplateContent" value="DefaultCopy" />{'Copy of default template'|i18n( 'design/admin/visual/templatecreate' )}<br />
-<select name="TemplateSource">
+<label class="a4-inline-label"><input type="radio" name="TemplateContent" value="EmptyFile" checked="checked"/>{'Empty file'|i18n( 'design/admin/visual/templatecreate' )}</label><br />
+<label class="a4-inline-label" id="templatecreate-copy"><input type="radio" name="TemplateContent" value="DefaultCopy" />{'Copy of default template'|i18n( 'design/admin/visual/templatecreate' )}</label><br />
+<select name="TemplateSource" aria-labelledby="templatecreate-copy">
     <option value="">{'Automatic (class-specific override if available, otherwise source)'|i18n( 'design/admin/visual/templatecreate' )}</option>
     {foreach $default_template_sources as $source}
     <option value="{$source.path}">{$source.label}</option>
     {/foreach}
 </select><br />
-<input type="radio" name="TemplateContent" value="ViewTemplate" />{'View (without children)'|i18n( 'design/admin/visual/templatecreate' )}<br />
+<label class="a4-inline-label"><input type="radio" name="TemplateContent" value="ViewTemplate" />{'View (without children)'|i18n( 'design/admin/visual/templatecreate' )}</label><br />
 </div>
 
 {/case}
 {case match='pagelayout'}
     <div class="objectheader">
-    <h2>{'Base template on'|i18n( 'design/admin/visual/templatecreate' )}</h2>
+    <h2 id="templatecreate-base">{'Base template on'|i18n( 'design/admin/visual/templatecreate' )}</h2>
     </div>
-    <div class="object">
-    <input type="radio" name="TemplateContent" value="EmptyFile" checked="checked"/>{'Empty file'|i18n( 'design/admin/visual/templatecreate' )}<br />
-    <input type="radio" name="TemplateContent" value="DefaultCopy" />{'Copy of default template'|i18n( 'design/admin/visual/templatecreate' )}<br />
-    <select name="TemplateSource">
+    <div class="object" role="radiogroup" aria-labelledby="templatecreate-base">
+    <label class="a4-inline-label"><input type="radio" name="TemplateContent" value="EmptyFile" checked="checked"/>{'Empty file'|i18n( 'design/admin/visual/templatecreate' )}</label><br />
+    <label class="a4-inline-label" id="templatecreate-copy"><input type="radio" name="TemplateContent" value="DefaultCopy" />{'Copy of default template'|i18n( 'design/admin/visual/templatecreate' )}</label><br />
+    <select name="TemplateSource" aria-labelledby="templatecreate-copy">
         <option value="">{'Automatic (source template)'|i18n( 'design/admin/visual/templatecreate' )}</option>
         {foreach $default_template_sources as $source}
         <option value="{$source.path}">{$source.label}</option>
@@ -202,12 +202,12 @@
 {/case}
 {case}
     <div class="objectheader">
-    <h2>{'Base template on'|i18n( 'design/admin/visual/templatecreate' )}</h2>
+    <h2 id="templatecreate-base">{'Base template on'|i18n( 'design/admin/visual/templatecreate' )}</h2>
     </div>
-    <div class="object">
-    <input type="radio" name="TemplateContent" value="EmptyFile" checked="checked"/>{'Empty file'|i18n( 'design/admin/visual/templatecreate' )}<br />
-    <input type="radio" name="TemplateContent" value="DefaultCopy" />{'Copy of default template'|i18n( 'design/admin/visual/templatecreate' )}<br />
-    <select name="TemplateSource">
+    <div class="object" role="radiogroup" aria-labelledby="templatecreate-base">
+    <label class="a4-inline-label"><input type="radio" name="TemplateContent" value="EmptyFile" checked="checked"/>{'Empty file'|i18n( 'design/admin/visual/templatecreate' )}</label><br />
+    <label class="a4-inline-label" id="templatecreate-copy"><input type="radio" name="TemplateContent" value="DefaultCopy" />{'Copy of default template'|i18n( 'design/admin/visual/templatecreate' )}</label><br />
+    <select name="TemplateSource" aria-labelledby="templatecreate-copy">
         <option value="">{'Automatic (source template)'|i18n( 'design/admin/visual/templatecreate' )}</option>
         {foreach $default_template_sources as $source}
         <option value="{$source.path}">{$source.label}</option>

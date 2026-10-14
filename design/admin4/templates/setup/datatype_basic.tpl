@@ -13,13 +13,13 @@
 <div class="context-attributes">
 
 <div class="block">
-<label>{'Name'|i18n( 'design/admin/setup/rad/datatype' )}:</label>
-<input class="box" type="text" name="Name" value="" />
+<label for="a4f-Name">{'Name'|i18n( 'design/admin/setup/rad/datatype' )}:</label>
+<input id="a4f-Name" class="box" type="text" name="Name" value="" />
 </div>
 
 <div class="block">
-<label>{'Descriptive name'|i18n( 'design/admin/setup/rad/datatype' )}:</label>
-<input class="box" type="text" name="DescName" value="" />
+<label for="a4f-DescName">{'Descriptive name'|i18n( 'design/admin/setup/rad/datatype' )}:</label>
+<input id="a4f-DescName" class="box" type="text" name="DescName" value="" />
 </div>
 
 <div class="block">
