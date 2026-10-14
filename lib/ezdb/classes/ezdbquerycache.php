@@ -113,7 +113,7 @@ class eZDBQueryCache
     {
         if ( self::$settings !== null )
             return self::$settings;
-        $s = array( 'mode' => 'off', 'maxAge' => 300, 'maxRows' => 5000, 'exclude' => array(), 'report' => true );
+        $s = array( 'mode' => 'off', 'maxAge' => 300, 'maxRows' => 5000, 'exclude' => array(), 'report' => true, 'storage' => 'auto' );
         if ( class_exists( 'eZINI', false ) && eZINI::exists( 'querycache.ini' ) )
         {
             $ini = eZINI::instance( 'querycache.ini' );
@@ -125,6 +125,11 @@ class eZDBQueryCache
             {
                 if ( $t !== '' )
                     $s['exclude'][strtolower( $t )] = true;
+            }
+            if ( $ini->hasVariable( 'QueryCacheSettings', 'Storage' ) )
+            {
+                $storage = strtolower( (string)$ini->variable( 'QueryCacheSettings', 'Storage' ) );
+                $s['storage'] = in_array( $storage, array( 'auto', 'apcu', 'file' ), true ) ? $storage : 'auto';
             }
             if ( $ini->hasVariable( 'DebugSettings', 'Report' ) )
                 $s['report'] = $ini->variable( 'DebugSettings', 'Report' ) !== 'disabled';
@@ -143,9 +148,166 @@ class eZDBQueryCache
         return self::settings()['mode'] !== 'off';
     }
 
+    /**
+     * Where shared mode keeps results across requests: 'apcu', 'file', or null
+     * (not shared mode, or Storage=apcu without APCu: the request's memo only).
+     * Storage=auto takes APCu where this process has it, else the files under
+     * entriesDir() -- but not on the command line (cronjobs, scripts): their
+     * files would only add disk traffic, so there auto keeps the memo only.
+     * Storage=file always the files.
+     *
+     * @return string|null
+     */
+    public static function storage()
+    {
+        $s = self::settings();
+        if ( $s['mode'] !== 'shared' )
+            return null;
+        $want = $s['storage'] ?? 'auto';
+        if ( $want === 'file' )
+            return 'file';
+        if ( function_exists( 'apcu_enabled' ) && apcu_enabled() )
+            return 'apcu';
+        return $want === 'auto' && PHP_SAPI !== 'cli' ? 'file' : null;
+    }
+
     protected static function apcuUsable()
     {
-        return self::settings()['mode'] === 'shared' && function_exists( 'apcu_enabled' ) && apcu_enabled();
+        return self::storage() === 'apcu';
+    }
+
+    /** The directory of the result files of Storage=file (or auto without APCu). */
+    public static function entriesDir()
+    {
+        return self::stateDir() . '/entries';
+    }
+
+    /** A result's file: entriesDir()/<first two characters of the key>/<key>. */
+    protected static function entryFile( $key )
+    {
+        return self::entriesDir() . '/' . substr( (string)$key, 0, 2 ) . '/' . $key;
+    }
+
+    /** A stored entry from APCu or its file, or null. A file never makes objects (allowed_classes false). */
+    protected static function fetchShared( $storage, $key )
+    {
+        if ( $storage === 'apcu' )
+        {
+            $got = @apcu_fetch( 'ezqc:' . $key );
+            return is_array( $got ) ? $got : null;
+        }
+        $raw = @file_get_contents( self::entryFile( $key ) );
+        if ( $raw === false )
+            return null;
+        $got = @unserialize( $raw, array( 'allowed_classes' => false ) );
+        return is_array( $got ) && isset( $got['created'], $got['tables'], $got['rows'] ) ? $got : null;
+    }
+
+    /**
+     * Keeps an entry in APCu (for MaxAge) or in its file: written to a temporary
+     * file and renamed, so a reader sees the old file or the new one, never half
+     * of one. A file that cannot be written is left out: the next lookup misses.
+     */
+    protected static function storeShared( $storage, $key, array $entry )
+    {
+        if ( $storage === 'apcu' )
+        {
+            @apcu_store( 'ezqc:' . $key, $entry, self::settings()['maxAge'] );
+            return;
+        }
+        $file = self::entryFile( $key );
+        $dir = dirname( $file );
+        // A root process (Velocity, a CLI script) leaves what it creates to the owner of the state directory (or
+        // of its parent while it does not exist yet), or the site user's FPM could neither read the file nor
+        // write in the directory.
+        $owner = false;
+        if ( function_exists( 'posix_geteuid' ) && posix_geteuid() === 0 )
+        {
+            $owner = @stat( is_dir( self::stateDir() ) ? self::stateDir() : dirname( self::stateDir() ) );
+            if ( $owner && $owner['uid'] === 0 )
+                $owner = false;
+        }
+        if ( !is_dir( $dir ) )
+        {
+            $levels = array_filter( array( self::stateDir(), self::entriesDir(), $dir ), function ( $d ) { return !is_dir( $d ); } );
+            @mkdir( $dir, eZDir::dirMode( 0770 ), true );
+            foreach ( $levels as $made )
+            {
+                // mkdir() is subject to the umask: the group must be able to write too
+                @chmod( $made, eZDir::dirMode( 0770 ) );
+                if ( $owner )
+                {
+                    @chown( $made, $owner['uid'] );
+                    @chgrp( $made, $owner['gid'] );
+                }
+            }
+        }
+        $tmp = $file . '.' . getmypid() . '.' . mt_rand() . '.tmp';
+        if ( @file_put_contents( $tmp, serialize( $entry ) ) === false )
+        {
+            @unlink( $tmp );
+            return;
+        }
+        @chmod( $tmp, eZFile::fileMode( 0660 ) );
+        if ( $owner )
+        {
+            @chown( $tmp, $owner['uid'] );
+            @chgrp( $tmp, $owner['gid'] );
+        }
+        if ( !@rename( $tmp, $file ) )
+            @unlink( $tmp );
+    }
+
+    /** The result files (path => name) under entriesDir(), temporary files included. */
+    protected static function entryFiles()
+    {
+        $root = self::entriesDir();
+        if ( !is_dir( $root ) )
+            return;
+        foreach ( (array)glob( $root . '/*', GLOB_ONLYDIR ) as $dir )
+        {
+            foreach ( (array)@scandir( $dir ) as $name )
+            {
+                if ( $name !== '.' && $name !== '..' )
+                    yield $dir . '/' . $name => $name;
+            }
+        }
+    }
+
+    /**
+     * Removes the result files that can no longer be answered: older than MaxAge
+     * or from before the last clear (genTime), and temporary files left over by
+     * an aborted write. The cronjob part cache_cleanup runs it
+     * (cronjobs/querycache_cleanup.php); clearAll() too, when there are files.
+     *
+     * @param int|null $now
+     * @return array removed, kept, bytes (removed), tmp (temporary files removed)
+     */
+    public static function cleanupFiles( $now = null )
+    {
+        $out = array( 'removed' => 0, 'kept' => 0, 'bytes' => 0, 'tmp' => 0 );
+        $now = $now === null ? time() : (int)$now;
+        $state = self::freshState();
+        $horizon = max( $now - self::settings()['maxAge'], (int)( $state['genTime'] ?? 0 ) );
+        foreach ( self::entryFiles() as $file => $name )
+        {
+            $mtime = @filemtime( $file );
+            if ( $mtime === false )
+                continue;
+            $isTmp = substr( $name, -4 ) === '.tmp';
+            if ( $isTmp ? $mtime < $now - 60 : $mtime <= $horizon )
+            {
+                $size = (int)@filesize( $file );
+                if ( @unlink( $file ) )
+                {
+                    $out[$isTmp ? 'tmp' : 'removed']++;
+                    $out['bytes'] += $size;
+                }
+            }
+            else if ( !$isTmp )
+                $out['kept']++;
+        }
+        return $out;
     }
 
     // ── Reads ────────────────────────────────────────────────────────────
@@ -181,12 +343,8 @@ class eZDBQueryCache
         // statement for ~545 statements); only a miss parses now.
         $key = self::key( $db, $sql, $params );
         $entry = self::$memo[$key] ?? null;
-        if ( $entry === null && self::apcuUsable() )
-        {
-            $got = @apcu_fetch( 'ezqc:' . $key );
-            if ( is_array( $got ) )
-                $entry = $got;
-        }
+        if ( $entry === null && ( $storage = self::storage() ) !== null )
+            $entry = self::fetchShared( $storage, $key );
         // Only statements that were cacheable when stored have entries; one of
         // their tables excluded since, or temporary, is not answered from it.
         if ( $entry !== null && self::current( $entry ) && self::answerable( $entry['tables'] ) )
@@ -300,8 +458,8 @@ class eZDBQueryCache
         $entry = array( 'created' => $started, 'tables' => $tables, 'rows' => $copy,
                         'ms' => round( ( microtime( true ) - $started ) * 1000, 3 ) );
         self::$memo[$key] = $entry;
-        if ( self::apcuUsable() )
-            @apcu_store( 'ezqc:' . $key, $entry, self::settings()['maxAge'] );
+        if ( ( $storage = self::storage() ) !== null )
+            self::storeShared( $storage, $key, $entry );
         self::$stats['stores']++;
         if ( $debugStart !== null )
             self::debugTime( 'store', $debugStart );
@@ -481,7 +639,7 @@ class eZDBQueryCache
      * no state and sets no timing point: 'generation' is the one the request
      * last read, null before it read any.
      *
-     * @return array|null mode, apcu, generation, hits, misses, stores, not_cached,
+     * @return array|null mode, apcu, storage, generation, hits, misses, stores, not_cached,
      *                    writes, hit_rate (percent, null without lookups), saved_ms,
      *                    hits_unmeasured, skipped (reason => count), stale (statements, literals masked), stale_more
      */
@@ -494,6 +652,7 @@ class eZDBQueryCache
         return array(
             'mode' => self::settings()['mode'],
             'apcu' => self::apcuUsable(),
+            'storage' => self::storage(),
             'generation' => self::$state !== null ? (int)self::$state['generation'] : null,
             'hits' => $d['count']['hit'],
             'misses' => $d['count']['miss'],
@@ -524,7 +683,8 @@ class eZDBQueryCache
         if ( $d === null )
             return '';
         $rows = array(
-            'Mode' => $d['mode'] . ( $d['mode'] === 'shared' && !$d['apcu'] ? ' (no APCu: works as request)' : '' ),
+            'Mode' => $d['mode'] . ( $d['mode'] !== 'shared' ? ''
+                      : ( $d['storage'] !== null ? ' (' . $d['storage'] . ')' : ' (no APCu: works as request)' ) ),
             // as the request last read it; the report itself reads nothing and sets no timing point
             'Generation' => $d['generation'] ?? 'not read',
             'Hits' => $d['hits'],
@@ -571,7 +731,8 @@ class eZDBQueryCache
 
     /**
      * What this server holds, for the cache tab of the Exp Debug bar: status()
-     * (settings, state, counters), the APCu memory, and the entries grouped by
+     * (settings, state, counters), the APCu memory, and the entries (from APCu
+     * or, with the file storage, from their files; hits null) grouped by
      * the tables they read (an entry that read several tables counts for each)
      * with their rows, size and hits, and the largest entries. Entries carry no
      * statement text, only its key. Reads the entries with their rows, at most
@@ -585,10 +746,12 @@ class eZDBQueryCache
      */
     public static function inventory( $limit = 15 )
     {
-        // without the state file's path: the inventory goes to the browser
-        $out = array_diff_key( self::status( false ), array( 'state_file' => true ) )
+        // without the paths of the state file and of the result files: the inventory goes to the browser
+        $out = array_diff_key( self::status( false ), array( 'state_file' => true, 'entries_dir' => true ) )
              + array( 'sma' => null, 'tables' => array(), 'largest' => array(),
-                     'entries_read' => 0, 'truncated' => false );
+                      'entries_read' => 0, 'truncated' => false );
+        if ( $out['storage'] === 'file' )
+            return self::fileInventory( $out, $limit );
         if ( !$out['apcu'] || !class_exists( 'APCUIterator' ) )
             return $out;
         $sma = @apcu_sma_info( true );
@@ -631,6 +794,54 @@ class eZDBQueryCache
             $largest[] = array( 'key' => substr( (string)$item['key'], 5, 12 ), 'tables' => array_values( (array)$value['tables'] ),
                                 'rows' => $rows, 'bytes' => $bytes, 'hits' => $hits,
                                 'age_s' => max( 0, $now - (int)$item['creation_time'] ) );
+        }
+        usort( $tables, function ( $a, $b ) { return $b['bytes'] <=> $a['bytes'] ?: strcmp( $a['table'], $b['table'] ); } );
+        usort( $largest, function ( $a, $b ) { return $b['bytes'] <=> $a['bytes'] ?: strcmp( $a['key'], $b['key'] ); } );
+        $out['tables'] = array_slice( array_values( $tables ), 0, max( 1, (int)$limit ) );
+        $out['largest'] = array_slice( $largest, 0, max( 1, (int)$limit ) );
+        return $out;
+    }
+
+    /** inventory() for the file storage: 'entries' and 'memory' (bytes on disk) count the files read. */
+    protected static function fileInventory( array $out, $limit )
+    {
+        $out['entries'] = 0;
+        $out['memory'] = 0;
+        $now = time();
+        $deadline = microtime( true ) + self::INVENTORY_MAX_SECONDS;
+        $tables = array();
+        $largest = array();
+        foreach ( self::entryFiles() as $file => $name )
+        {
+            if ( substr( $name, -4 ) === '.tmp' )
+                continue;
+            if ( $out['entries_read'] >= self::INVENTORY_MAX_ENTRIES || microtime( true ) > $deadline )
+            {
+                $out['truncated'] = true;
+                break;
+            }
+            $raw = @file_get_contents( $file );
+            if ( $raw === false )
+                continue;
+            $out['entries_read']++;
+            $out['entries']++;
+            $bytes = strlen( $raw );
+            $out['memory'] += $bytes;
+            $value = @unserialize( $raw, array( 'allowed_classes' => false ) );
+            if ( !is_array( $value ) || !isset( $value['tables'] ) )
+                continue;
+            $rows = isset( $value['rows'] ) && is_array( $value['rows'] ) ? count( $value['rows'] ) : 0;
+            foreach ( (array)$value['tables'] as $t )
+            {
+                if ( !isset( $tables[$t] ) )
+                    $tables[$t] = array( 'table' => $t, 'entries' => 0, 'rows' => 0, 'bytes' => 0, 'hits' => null );
+                $tables[$t]['entries']++;
+                $tables[$t]['rows'] += $rows;
+                $tables[$t]['bytes'] += $bytes;
+            }
+            $largest[] = array( 'key' => substr( $name, 0, 12 ), 'tables' => array_values( (array)$value['tables'] ),
+                                'rows' => $rows, 'bytes' => $bytes, 'hits' => null,
+                                'age_s' => max( 0, $now - (int)( $value['created'] ?? $now ) ) );
         }
         usort( $tables, function ( $a, $b ) { return $b['bytes'] <=> $a['bytes'] ?: strcmp( $a['table'], $b['table'] ); } );
         usort( $largest, function ( $a, $b ) { return $b['bytes'] <=> $a['bytes'] ?: strcmp( $a['key'], $b['key'] ); } );
@@ -809,6 +1020,9 @@ class eZDBQueryCache
     public static function clearAll()
     {
         self::bump( null );
+        // Result files from before the new generation are never answered again: free their space now.
+        if ( is_dir( self::entriesDir() ) )
+            self::cleanupFiles();
     }
 
     /** Marks tables (null: all) written now, in the shared state and this request. */
@@ -979,8 +1193,10 @@ class eZDBQueryCache
     }
 
     /**
-     * What Setup > System information shows: settings, state, what this server
-     * holds in APCu and its counters since they were last reset.
+     * What Setup > System information shows: settings, state, where shared mode
+     * keeps results ('storage'), what this server holds in APCu or in the result
+     * files (entries, memory = bytes on disk) and its counters since they were
+     * last reset (APCu only).
      */
     public static function status( $countEntries = true )
     {
@@ -1001,14 +1217,34 @@ class eZDBQueryCache
             'tables_tracked' => count( $tables ),
             'recent_writes' => array_slice( array_map( 'intval', $tables ), 0, 8, true ),
             'apcu' => function_exists( 'apcu_enabled' ) && apcu_enabled(),
+            'storage' => self::storage(),
+            'entries_dir' => self::entriesDir(),
             'entries' => 0,
+            'entries_truncated' => false,
             'memory' => 0,
             'counters' => null,
         );
+        if ( $out['storage'] === 'file' && $countEntries )
+        {
+            // like inventory(): at most INVENTORY_MAX_ENTRIES files for INVENTORY_MAX_SECONDS ('entries_truncated')
+            $deadline = microtime( true ) + self::INVENTORY_MAX_SECONDS;
+            foreach ( self::entryFiles() as $file => $name )
+            {
+                if ( substr( $name, -4 ) === '.tmp' )
+                    continue;
+                if ( $out['entries'] >= self::INVENTORY_MAX_ENTRIES || microtime( true ) > $deadline )
+                {
+                    $out['entries_truncated'] = true;
+                    break;
+                }
+                $out['entries']++;
+                $out['memory'] += (int)@filesize( $file );
+            }
+        }
         if ( $out['apcu'] && class_exists( 'APCUIterator' ) )
         {
-            // inventory() counts while it reads the entries anyway
-            if ( $countEntries )
+            // inventory() counts while it reads the entries anyway; the file storage counted its files above
+            if ( $countEntries && $out['storage'] !== 'file' )
             {
                 $it = new APCUIterator( '/^ezqc:/', APC_ITER_MEM_SIZE );
                 foreach ( $it as $item )

@@ -12,7 +12,7 @@ class expDebugBarQueryCacheTest extends PHPUnit\Framework\TestCase
 {
     private function snapshot( array $values = array() )
     {
-        return $values + array( 'mode' => 'shared', 'apcu' => true, 'generation' => 3, 'hits' => 8, 'misses' => 2, 'stores' => 2,
+        return $values + array( 'mode' => 'shared', 'apcu' => true, 'storage' => 'apcu', 'generation' => 3, 'hits' => 8, 'misses' => 2, 'stores' => 2,
                                 'not_cached' => 1, 'writes' => 0, 'hit_rate' => 80.0, 'saved_ms' => 186.4, 'hits_unmeasured' => 0,
                                 'skipped' => array(), 'stale' => array(), 'stale_more' => 0 );
     }
@@ -28,8 +28,9 @@ class expDebugBarQueryCacheTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'ok', expDebugBarSummary::queryCacheLevel( $this->snapshot( array( 'hit_rate' => null ) ), $limits ), 'no lookup' );
         $this->assertSame( 'warn', expDebugBarSummary::queryCacheLevel( $this->snapshot( array( 'stale' => array( 'CALL x()' ) ) ), $limits ) );
         $this->assertSame( 'warn', expDebugBarSummary::queryCacheLevel( array( 'stale_count' => 2 ) + $this->snapshot( array( 'stale' => array() ) ), $limits ), 'the summary carries a count' );
-        $this->assertSame( 'high', expDebugBarSummary::queryCacheLevel( $this->snapshot( array( 'apcu' => false ) ), $limits ), 'shared without APCu' );
-        $this->assertSame( 'ok', expDebugBarSummary::queryCacheLevel( $this->snapshot( array( 'mode' => 'request', 'apcu' => false ) ), $limits ) );
+        $this->assertSame( 'high', expDebugBarSummary::queryCacheLevel( $this->snapshot( array( 'apcu' => false, 'storage' => null ) ), $limits ), 'Storage=apcu without APCu' );
+        $this->assertSame( 'ok', expDebugBarSummary::queryCacheLevel( $this->snapshot( array( 'apcu' => false, 'storage' => 'file' ) ), $limits ), 'without APCu in files' );
+        $this->assertSame( 'ok', expDebugBarSummary::queryCacheLevel( $this->snapshot( array( 'mode' => 'request', 'apcu' => false, 'storage' => null ) ), $limits ) );
     }
 
     /** DQ-02 */
@@ -37,9 +38,12 @@ class expDebugBarQueryCacheTest extends PHPUnit\Framework\TestCase
     {
         $html = $this->summaryHtml( array( 'measured' => true ) + $this->snapshot( array( 'hit_rate' => 83.3 ) ) + array( 'level' => 'warn' ) );
         $this->assertMatchesRegularExpression( '/<button [^>]*data-tab="sql" data-key="querycache" data-level="warn"[^>]*>QC 83 % · -186 ms<\/button>/u', $html );
-        $this->assertStringContainsString( '8 hits, 2 misses, 2 stored, 1 not cached, 0 writes, mode shared', $html );
+        $this->assertStringContainsString( '8 hits, 2 misses, 2 stored, 1 not cached, 0 writes, mode shared (apcu)', $html );
 
-        $html = $this->summaryHtml( array( 'measured' => true ) + $this->snapshot( array( 'hit_rate' => null, 'apcu' => false ) ) + array( 'level' => 'high' ) );
+        $html = $this->summaryHtml( array( 'measured' => true ) + $this->snapshot( array( 'storage' => 'file' ) ) + array( 'level' => 'ok' ) );
+        $this->assertStringContainsString( 'mode shared (file)', $html );
+
+        $html = $this->summaryHtml( array( 'measured' => true ) + $this->snapshot( array( 'hit_rate' => null, 'apcu' => false, 'storage' => null ) ) + array( 'level' => 'high' ) );
         $this->assertMatchesRegularExpression( '/data-key="querycache" data-level="high"[^>]*>QC - · -186 ms</u', $html );
         $this->assertStringContainsString( 'mode shared (no APCu)', $html );
 

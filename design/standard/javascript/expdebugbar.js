@@ -788,8 +788,10 @@
       ans.can_cache ? el('div', { class: 'exp-debug-cache-row' }, clearButton(t('Clear'), { by: 'velocity' }, status, { 'data-cache': 'velocity' }), status) : null);
   };
 
-  // The SQL query cache: settings, this server's counters, APCu memory, and what it holds by table and its largest
-  // entries (eZDBQueryCache::inventory()). Entries carry no statement text: a key, the tables, rows, size, hits, age.
+  // The SQL query cache: settings, this server's counters, APCu memory or the result files, and what it holds by table
+  // and its largest entries (eZDBQueryCache::inventory()). Entries carry no statement text: a key, the tables, rows,
+  // size, hits (none for files), age.
+  const qcHits = (n) => (n === null || n === undefined ? '-' : n);
   const kb = (bytes) => (Math.round((bytes || 0) / 102.4) / 10) + ' KB';
   // numFrom: the first column of figures (right aligned by the class exp-debug-num of expdebugbar.css)
   const qcTable = (head, rows, numFrom) => {
@@ -807,11 +809,15 @@
     const c = q.counters || {};
     box.append(el('p', { class: 'exp-debug-hint' },
       t('Mode %mode, MaxAge %age s, MaxRows %rows', { '%mode': q.mode, '%age': q.max_age, '%rows': q.max_rows })));
-    if (!q.apcu) box.append(hint(t('APCu is not available to this server: shared works as request.'), 'warn'));
-    else {
+    if (q.mode === 'shared' && !q.storage) box.append(hint(t('APCu is not available to this server: shared works as request.'), 'warn'));
+    else if (q.storage === 'file') {
+      box.append(el('p', {}, el('strong', {}, t('Files') + ': '), t('%count entries', { '%count': q.entries }) + ' · ' + kb(q.memory)));
+    } else if (q.apcu) {
       const sma = q.sma ? t('%used of %size (%pct %)', { '%used': kb(q.memory), '%size': kb(q.sma.size), '%pct': q.sma.size ? Math.round(1000 * q.memory / q.sma.size) / 10 : 0 })
         + ' · ' + t('APCu used in all: %pct %', { '%pct': q.sma.used_pct }) : kb(q.memory);
       box.append(el('p', {}, el('strong', {}, t('APCu') + ': '), t('%count entries', { '%count': q.entries }) + ' · ' + sma));
+    }
+    if (q.counters) {
       box.append(el('p', {}, el('strong', {}, t('This server') + ': '),
         t('since %time: %requests requests, hit rate %rate, %stores stored, %writes writes', {
           '%time': whenText(c.since) || t('never'), '%requests': c.requests || 0,
@@ -822,15 +828,15 @@
     if ((q.tables || []).length) {
       box.append(el('h4', {}, t('What is cached (by table)')),
         qcTable([t('Table'), t('Entries'), t('Rows'), t('Size'), t('Hits')],
-          q.tables.map((r) => [r.table, r.entries, r.rows, kb(r.bytes), r.hits]), 1));
+          q.tables.map((r) => [r.table, r.entries, r.rows, kb(r.bytes), qcHits(r.hits)]), 1));
     }
     if ((q.largest || []).length) {
       box.append(el('h4', {}, t('Largest entries')),
         qcTable([t('Key'), t('Tables'), t('Rows'), t('Size'), t('Hits'), t('Age')],
-          q.largest.map((r) => [r.key, (r.tables || []).join(', '), r.rows, kb(r.bytes), r.hits, Math.round((r.age_s || 0) / 60) + ' min']), 2));
+          q.largest.map((r) => [r.key, (r.tables || []).join(', '), r.rows, kb(r.bytes), qcHits(r.hits), Math.round((r.age_s || 0) / 60) + ' min']), 2));
     }
     if (q.truncated) box.append(hint(t('Only the first %count entries were read.', { '%count': q.entries_read }), 'warn'));
-    else if (q.apcu && !q.entries) box.append(hint(t('Nothing is cached on this server yet.')));
+    else if (q.storage && !q.entries) box.append(hint(t('Nothing is cached on this server yet.')));
     // after a clear or a reset the section is read again (the new generation, the zeroed counters); the status line
     // stays readable for a moment first
     const refresh = () => setTimeout(loadCache, 1200);

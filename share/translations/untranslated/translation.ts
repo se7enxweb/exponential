@@ -20813,6 +20813,10 @@ Note: The packages will not be uninstalled.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>%entries results held in files (%size) by this server</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>generation %generation</source>
         <translation type="unfinished"></translation>
     </message>

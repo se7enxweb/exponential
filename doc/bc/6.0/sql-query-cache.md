@@ -111,6 +111,7 @@ Override in `settings/override/querycache.ini.append.php` (or a siteaccess).
 ```ini
 [QueryCacheSettings]
 Mode=off          # off | request | shared
+Storage=auto      # where shared keeps results: auto | apcu | file
 MaxAge=300        # longest life of a result, in seconds
 MaxRows=5000      # results with more rows are not kept
 ExcludeTables[]
@@ -126,15 +127,36 @@ Report=enabled    # with the debug output on: accumulators, timing point, report
 |---|---|---|
 | `off` | nothing; the hooks return at once | — |
 | `request` | a memo for one request: an identical `SELECT` is not run twice in it | PHP memory |
-| `shared` | the memo, and results across requests | the memo, then APCu of the server process group |
+| `shared` | the memo, and results across requests | the memo, then APCu of the server process group or one file per result (`Storage`) |
 
 Choosing:
 
 - `request` is safe everywhere and needs nothing: it removes the in-request
   repeats (about a quarter of the statements on a layouts page).
-- `shared` needs APCu (`apc.enabled=1`; for scripts also `apc.enable_cli=1`).
-  Without APCu it works as `request`. This is the mode that removes the
-  statements between requests.
+- `shared` keeps results in APCu (`apc.enabled=1`; for scripts also
+  `apc.enable_cli=1`) or in files, as `Storage` says. This is the mode that
+  removes the statements between requests.
+- `Storage=auto` (the default) takes APCu where the PHP process has it and
+  files otherwise (on the command line without APCu, cronjobs and scripts, only
+  the request's memo: their files would only add disk traffic); `Storage=apcu` only APCu (without it `shared` works as
+  `request`, the behaviour before files existed); `Storage=file` always files,
+  even with APCu. Files are `var/<site>/cache/querycache/entries/<2>/<key>`,
+  one serialized result each (read with `allowed_classes` off), written to a
+  temporary file and renamed. Every web server that mounts `var/` shares them
+  (a cluster on NFS or a SAN), where APCu is per server; a hit costs a file
+  read and `unserialize()` (about 0.03 ms against 0.01 ms from APCu, measured
+  on a test installation with PHP 8.4), still far below a statement on the
+  database. The cronjob part `cache_cleanup` (`cronjobs/querycache_cleanup.php`)
+  removes the files older than `MaxAge` or from before the last clear; clearing
+  the query cache removes them at once. Schedule it with `Storage=file` or
+  `auto` without APCu, or the files of statements not run again stay on disk.
+- Several web servers on one `var/` over NFS: whether a result is current is
+  decided by `state.ser`, as for APCu. NFS clients cache file attributes and
+  directory lookups (`acregmin`/`acdirmin` 3 to 30 s by default), so a write or
+  clear on one server can take that long to be seen on another. Mount `var/`
+  with `lookupcache=none` and `actimeo=0` (or `noac`) where that matters;
+  the state file's lock needs NFSv4 or `lockd`. Clock skew between the servers
+  only shifts when the cronjob removes a file, never what is answered.
 - `MaxAge` bounds what the cache cannot see: a write made outside Exponential
   (another program, a SQL client, a restore). Within Exponential every write
   invalidates at once, whatever `MaxAge` is.
@@ -218,7 +240,10 @@ marked at the outermost `COMMIT`; on `ROLLBACK` they are dropped.
 `xxh128` (where PHP has it; `md5` otherwise) of the driver class, database name, server, the statement text and
 `arrayQuery()`'s parameters (offset, limit, column). In APCu the entries are
 `ezqc:<key>`, with `MaxAge` as their TTL, so APCu can evict them under memory
-pressure. The counters are `ezqcstat:*`.
+pressure. The counters are `ezqcstat:*` (in APCu only: with the file storage
+and no APCu there are no counters). As files, the entries are
+`entries/<first two characters of the key>/<key>`; a lookup checks their age
+and the state like an APCu entry, the cronjob removes the old ones.
 
 
 ## In the administration interface
@@ -244,7 +269,8 @@ The **Database queries** box shows, for the server answering the page:
 
 - the mode, `MaxAge`, `MaxRows`, `ExcludeTables`;
 - in `shared` mode, how many results this server holds in APCu and how much
-  memory they take;
+  memory they take, or with the file storage how many result files there are,
+  their size on disk and their directory;
 - the generation, when the cache was last cleared, and how many tables the
   state file tracks;
 - this server's counters since they were last reset: requests, hits, misses,
@@ -284,7 +310,7 @@ The report itself reads no state and sets no point.
 
 | Line | What it means |
 |---|---|
-| Mode | `off`, `request` or `shared`; `shared (no APCu: works as request)` where APCu is missing or off |
+| Mode | `off`, `request` or `shared`; in `shared` mode with its storage, `shared (apcu)` or `shared (file)`, or `shared (no APCu: works as request)` where it has none |
 | Generation | the generation of the state as this request last read it; *not read* when no statement has looked at the state yet |
 | Hits, Misses, Hit rate | as the accumulators; the rate is hits of hits plus misses |
 | Stored | results stored |
@@ -316,9 +342,9 @@ the noise of a lookup hit of ~2.7 µs); the duration stored with each entry is o
 on, the cost is that of the accumulators.
 
 In the **Exp Debug bar** the same figures are a chip in the pinned bar (hit rate and saved time, amber below 50 %,
-red below 10 %, `debugbar.ini Thresholds[querycache_hit_rate]`) and the report stands at the top of the SQL tab, next
+red below 10 % or in `shared` mode without a storage, `debugbar.ini Thresholds[querycache_hit_rate]`) and the report stands at the top of the SQL tab, next
 to the database's accumulators. The **Cache tab** (setup/managecache) shows what this server holds: entries and
-memory in APCu, the counters since the last reset, the state, the cached results grouped by the tables they read
+memory in APCu (or the result files and their size on disk; files count no hits), the counters since the last reset, the state, the cached results grouped by the tables they read
 (entries, rows, size, hits as counted by APCu) and the largest entries, with buttons to clear the query cache and to
 reset the counters.
 
@@ -374,7 +400,8 @@ the mode is off.
 | A page shows old data after a change made with a SQL client, `mysql < dump.sql` or another program | The cache cannot see writes outside Exponential. Clear it (Setup > Caches, or `php bin/php/ezcache.php --clear-id=querycache --allow-root-user`), or wait `MaxAge`. Do this after every restore. |
 | `Class "eZDBQueryCache" not found` in `var/vc/qbix/log/error.log`, admin pages 500 on Velocity only | Velocity loaded the kernel autoload array before the class existed. Restart it: `./console exp:velocity restart --allow-root-user`. Any update that adds kernel classes needs this. |
 | The hit rate stays low | A table the pages read is written on every request. Setup > System information lists the tables written last; find who writes (usually a view counter, a session-like table or a broken image alias regenerated on every view) and fix it, or add the table to `ExcludeTables`. |
-| "APCu is not available to this server" in the box | `shared` falls back to `request`. Enable APCu for that PHP (FPM pool, or `apc.enable_cli=1` for Velocity and scripts). |
+| "APCu is not available to this server" in the box | `Storage=apcu` without APCu: `shared` falls back to `request`. Enable APCu for that PHP (FPM pool, or `apc.enable_cli=1` for Velocity and scripts), or set `Storage=auto` or `file`. |
+| Many files in `var/<site>/cache/querycache/entries/` | The cronjob part `cache_cleanup` does not run. Schedule `php runcronjobs.php -s <siteaccess> cache_cleanup`; a clear of the query cache removes them too. |
 | APCu memory full, other caches evicted | Lower `MaxRows`, lower `MaxAge`, or raise `apc.shm_size`. Setup > System information shows what the query cache holds. |
 | `state.ser` not writable (warnings in the log) | `var/<site>/cache/querycache/` must be writable by every user the site runs as. Files written by root are handed to the directory's owner. |
 | A result looks wrong and you suspect the cache | Set `Mode=off` and compare. If the output is the same, it is not the cache. |
@@ -412,10 +439,14 @@ so the tests never touch the site's cache.
 | QC-22 | After `eZDebug::reset()` in the same process the report, its own counters and the timing point start again; `flushStats()` leaves them alone; the next request carries nothing over; with the debug output switched off nothing is registered |
 | QC-23 | `debugSnapshot()`: the figures of the report (its own counters) with the debug output on, null without it |
 | QC-24 | `inventory()` (with APCu): entries grouped by table, an entry of two tables counted for each, hits from APCu, largest first, no statement text |
+| QC-25 | `storage()`: `Storage=file` even with APCu, `auto` APCu (on the command line without APCu none), `apcu` without APCu none, `request` mode none |
+| QC-26 | The file storage: one file per result under its two-character directory, a hit in the next request, stale after a write to its table |
+| QC-27 | A result file never makes objects (`__PHP_Incomplete_Class`), a broken file is a miss |
+| QC-28 | `cleanupFiles()` removes files older than `MaxAge` and temporary files left over, keeps the others; `status()` and `inventory()` count the files (no hits); a clear removes them |
 
 ```bash
 php vendor/bin/phpunit --testsuite lib --filter eZDBQueryCacheTest
-# OK (24 tests; QC-24 needs apc.enable_cli=1), about 2 s (QC-08 and QC-12 wait a second each)
+# OK (28 tests; QC-24 needs apc.enable_cli=1), about 3 s (QC-08, QC-12 and QC-28 wait a second each)
 ```
 
 **On a running site** (MySQL, the real drivers), each checked on a test installation
@@ -448,8 +479,10 @@ line means none reached the database.
 | `kernel/classes/ezcache.php` | the `querycache` entry in the cache list |
 | `kernel/setup/cache.php`, `design/admin/templates/setup/cache.tpl` | Setup > Caches |
 | `kernel/setup/info.php`, `design/admin/templates/setup/info.tpl` | Setup > System information |
+| `cronjobs/querycache_cleanup.php`, `kernel/private/classes/cronjobs/querycache_cleanup.php` | removes old result files (part `cache_cleanup`) |
 | `settings/querycache.ini` | settings |
 | `var/<site>/cache/querycache/state.ser` | the shared state |
+| `var/<site>/cache/querycache/entries/` | the result files of the file storage |
 
 ## Related pages
 

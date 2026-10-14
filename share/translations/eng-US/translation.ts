@@ -21711,6 +21711,10 @@ Note: The packages will not be uninstalled.</translation>
         <translation>%entries results held in APCu (%size) by this server</translation>
     </message>
     <message>
+        <source>%entries results held in files (%size) by this server</source>
+        <translation>%entries results held in files (%size) by this server</translation>
+    </message>
+    <message>
         <source>generation %generation</source>
         <translation>generation %generation</translation>
     </message>
@@ -57464,6 +57468,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>APCu</source>
         <translation>APCu</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Files</translation>
     </message>
     <message>
         <source>%count entries</source>

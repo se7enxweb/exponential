@@ -118,7 +118,7 @@ class expDebugBarReport
             'Minimise debug bar', 'Show debug bar', '%count errors', '%count warnings',
             // the SQL query cache in the Cache tab
             'SQL query cache', 'Off (querycache.ini Mode=off)', 'Mode %mode, MaxAge %age s, MaxRows %rows',
-            'APCu is not available to this server: shared works as request.', 'APCu', '%count entries',
+            'APCu is not available to this server: shared works as request.', 'APCu', 'Files', '%count entries',
             '%used of %size (%pct %)', 'APCu used in all: %pct %', 'This server',
             'since %time: %requests requests, hit rate %rate, %stores stored, %writes writes', 'State',
             'generation %gen, cleared %time, %count tables written in the last MaxAge',
@@ -509,7 +509,8 @@ class expDebugBarReport
                               . ' · ' . ( round( $q['saved_ms'] ) > 0 ? '-' : '' ) . number_format( $q['saved_ms'], 0 ) . ' ms',
                               self::t( 'SQL query cache: hit rate and database time saved (estimated); %hits hits, %misses misses, %stores stored, %skipped not cached, %writes writes, mode %mode',
                                        array( '%hits' => $q['hits'], '%misses' => $q['misses'], '%stores' => $q['stores'], '%skipped' => $q['not_cached'],
-                                              '%writes' => $q['writes'], '%mode' => $q['mode'] . ( $q['mode'] === 'shared' && empty( $q['apcu'] ) ? ' (no APCu)' : '' ) ) ) );
+                                              '%writes' => $q['writes'], '%mode' => $q['mode'] . ( $q['mode'] !== 'shared' ? ''
+                                                  : ( empty( $q['storage'] ) ? ' (no APCu)' : ' (' . $q['storage'] . ')' ) ) ) ) );
         }
         $chips[] = array( 'memory', 'memory', $memLevel, number_format( $s['memory'] / 1048576, 1 ) . ' MB', self::t( 'Peak memory' ) );
         if ( $s['templates'] !== null )
@@ -575,8 +576,9 @@ class expDebugBarReport
     }
 
     /**
-     * ok, warn or high for a query cache snapshot (or the figures made from one): high in shared mode without APCu
-     * (it works as request then) or below the second hit rate of $limits; warn below the first, or when a write made
+     * ok, warn or high for a query cache snapshot (or the figures made from one): high in shared mode without a storage
+     * (Storage=apcu without APCu: it works as request then; Storage=auto falls back to the files) or below the second
+     * hit rate of $limits; warn below the first, or when a write made
      * every result stale. Without a lookup the hit rate says nothing: ok, unless one of the others holds.
      *
      * @param array $snapshot
@@ -586,7 +588,9 @@ class expDebugBarReport
     public static function queryCacheLevel( array $snapshot, array $limits )
     {
         list( $warn, $high ) = array_values( $limits ) + array( 50, 10 );
-        if ( ( $snapshot['mode'] ?? '' ) === 'shared' && empty( $snapshot['apcu'] ) )
+        // 'storage' since the file storage; a snapshot without it (older figures, tests) has only 'apcu'
+        $storage = array_key_exists( 'storage', $snapshot ) ? $snapshot['storage'] : ( empty( $snapshot['apcu'] ) ? null : 'apcu' );
+        if ( ( $snapshot['mode'] ?? '' ) === 'shared' && empty( $storage ) )
             return 'high';
         $rate = $snapshot['hit_rate'] ?? null;
         if ( $rate !== null && $rate < $high )

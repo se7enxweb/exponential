@@ -426,7 +426,10 @@
                 <small>{'settings/querycache.ini'|i18n( 'design/admin/setup/info' )}: MaxAge={$query_cache.max_age|wash}&nbsp;s, MaxRows={$query_cache.max_rows|wash}{if $query_cache.exclude}, ExcludeTables={$query_cache.exclude|implode( ', ' )|wash}{/if}</small></div>
             <p class="a4-help">
                 {if $query_cache.mode|eq( 'shared' )}
-                    {if $query_cache.apcu}
+                    {if $query_cache.storage|eq( 'file' )}
+                        {'%entries results held in files (%size) by this server'|i18n( 'design/admin/setup/info',, hash( '%entries', concat( '<strong>', $query_cache.entries|wash, cond( $query_cache.entries_truncated, '+', '' ), '</strong>' ), '%size', concat( $query_cache.memory_kb|wash, '&nbsp;KB' ) ) )}
+                        (<code>{$query_cache.entries_dir|wash}</code>)
+                    {elseif $query_cache.storage|eq( 'apcu' )}
                         {'%entries results held in APCu (%size) by this server'|i18n( 'design/admin/setup/info',, hash( '%entries', concat( '<strong>', $query_cache.entries|wash, '</strong>' ), '%size', concat( $query_cache.memory_kb|wash, '&nbsp;KB' ) ) )}
                     {else}
                         {'APCu is not available to this server: "shared" works as "request" here.'|i18n( 'design/admin/setup/info' )}

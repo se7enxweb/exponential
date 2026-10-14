@@ -24296,6 +24296,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>%entries Ergebnisse in APCu (%size) auf diesem Server</translation>
     </message>
     <message>
+        <source>%entries results held in files (%size) by this server</source>
+        <translation>%entries Ergebnisse in Dateien (%size) auf diesem Server</translation>
+    </message>
+    <message>
         <source>APCu is not available to this server: &quot;shared&quot; works as &quot;request&quot; here.</source>
         <translation>APCu ist für diesen Server nicht verfügbar: &quot;shared&quot; arbeitet hier wie &quot;request&quot;.</translation>
     </message>
@@ -64906,6 +64910,10 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>APCu</source>
         <translation>APCu</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Dateien</translation>
     </message>
     <message>
         <source>%count entries</source>
