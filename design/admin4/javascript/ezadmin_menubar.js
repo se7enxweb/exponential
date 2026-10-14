@@ -1,87 +1,51 @@
 // Sidebar toggling feature
+// On a wide window (1024px and up) each sidebar follows the visitor's stored choice (ezpAdminLeftSidebar,
+// ezpAdminRightSidebar; open when nothing is stored). On a narrow window both start closed and at most one is open,
+// and nothing is written: a narrow window, or a sidebar opened over the page there, must not change what a wide
+// window shows later. Only a click on a wide window stores a choice.
 function sidebarToggle() {
-    function toggleeZPAdminLeftSidebar() {
-        const ezpAdminLeftSidebar = localStorage?.getItem("ezpAdminLeftSidebar");
+    const isNarrow = () => $(window).width() < 1024;
+    const stored = (side) => (localStorage?.getItem(side === "left" ? "ezpAdminLeftSidebar" : "ezpAdminRightSidebar") || "true") === "true";
+    const store = (side, open) => localStorage?.setItem(side === "left" ? "ezpAdminLeftSidebar" : "ezpAdminRightSidebar", open ? "true" : "false");
+    let narrowOpen = null; // the sidebar open over the page on a narrow window: "left", "right" or null
 
-        if (ezpAdminLeftSidebar === "true") {
-            if ($(window).width() < 1024) {
-                $(".sidebar").removeClass("show");
-                $(".sidebar-control").removeClass("rotate");
-            }
+    function show(side, open) {
+        $(".sidebar." + side).toggleClass("show", open);
+        $(".sidebar-control." + side).toggleClass("rotate", open);
+    }
 
-            $(".sidebar.left").addClass("show");
-            $(".sidebar-control.left").addClass("rotate");
+    function apply() {
+        if (isNarrow()) {
+            show("left", narrowOpen === "left");
+            show("right", narrowOpen === "right");
             return;
         }
-
-        $(".sidebar.left").removeClass("show");
-        $(".sidebar-control.left").removeClass("rotate");
+        narrowOpen = null;
+        show("left", stored("left"));
+        show("right", stored("right"));
     }
 
-    function toggleeZPAdminRightSidebar() {
-        const ezpAdminRightSidebar = localStorage?.getItem("ezpAdminRightSidebar");
-
-        if (ezpAdminRightSidebar === "true") {
-            if ($(window).width() < 1024) {
-                $(".sidebar").removeClass("show");
-                $(".sidebar-control").removeClass("rotate");
-            }
-
-            $(".sidebar.right").addClass("show");
-            $(".sidebar-control.right").addClass("rotate");
-            return;
-        }
-
-        $(".sidebar.right").removeClass("show");
-        $(".sidebar-control.right").removeClass("rotate");
-    }
-
-    $(".sidebar-control.left").on("click", function () {
-        if (localStorage?.getItem("ezpAdminLeftSidebar") === "true") {
-            localStorage?.setItem("ezpAdminLeftSidebar", "false");
+    function toggle(side) {
+        if (isNarrow()) {
+            narrowOpen = narrowOpen === side ? null : side;
         } else {
-            localStorage?.setItem("ezpAdminLeftSidebar", "true");
+            store(side, !stored(side));
         }
+        apply();
+    }
 
-        if ($(window).width() < 1024) {
-            localStorage?.setItem("ezpAdminRightSidebar", "false");
+    $(".sidebar-control.left").on("click", () => toggle("left"));
+    $(".sidebar-control.right").on("click", () => toggle("right"));
+
+    let wasNarrow = isNarrow();
+    $(window).on("resize", () => {
+        if (isNarrow() !== wasNarrow) {
+            wasNarrow = isNarrow();
+            apply();
         }
-
-        toggleeZPAdminLeftSidebar();
     });
 
-    $(".sidebar-control.right").on("click", function () {
-        if (localStorage?.getItem("ezpAdminRightSidebar") === "true") {
-            localStorage?.setItem("ezpAdminRightSidebar", "false");
-        } else {
-            localStorage?.setItem("ezpAdminRightSidebar", "true");
-        }
-
-        if ($(window).width() < 1024) {
-            localStorage?.setItem("ezpAdminLeftSidebar", "false");
-        }
-
-        toggleeZPAdminRightSidebar();
-    });
-
-    function resetSidebar() {
-        const ezpAdminLeftSidebar = localStorage?.getItem("ezpAdminLeftSidebar") || 'true';
-        const ezpAdminRightSidebar = localStorage?.getItem("ezpAdminRightSidebar") || 'true';
-
-
-        if ($(window).width() < 1024) {
-            localStorage?.setItem("ezpAdminLeftSidebar", "false");
-            localStorage?.setItem("ezpAdminRightSidebar", "false");
-        } else {
-            localStorage?.setItem("ezpAdminLeftSidebar", ezpAdminLeftSidebar);
-            localStorage?.setItem("ezpAdminRightSidebar", ezpAdminRightSidebar);
-        }
-
-        toggleeZPAdminLeftSidebar();
-        toggleeZPAdminRightSidebar();
-    }
-
-    resetSidebar();
+    apply();
 }
 
 // Navbar menu toggling feature

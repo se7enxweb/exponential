@@ -348,7 +348,7 @@ table.list td.role-id { text-align: right; color: var(--a4-muted); white-space: 
 .package-view-full .pvf-actions input { margin: 0; }
 .package-view-full .pvf-noinstall { margin: 0.5em 0 1em; padding: 0.5em 0.75em; border-left: 3px solid var(--a4-line-strong); background: var(--a4-soft); color: var(--a4-ink); overflow-wrap: anywhere; }
 /* Compare: a link (package/compare only reads), drawn like the admin's input.button beside it */
-.package-view-full a.pvf-button-link { display: inline-block; padding: 3px 6px; border: 1px solid var(--a4-line); border-radius: 3px; background: var(--a4-surface); color: var(--a4-ink); font-size: 1em; line-height: normal; text-decoration: none; font-family: Verdana, Arial, Helvetica, sans-serif; vertical-align: middle; transition: all 300ms ease; }
+.package-view-full a.pvf-button-link { display: inline-block; padding: 3px 6px; border: 1px solid var(--a4-line); border-radius: 3px; background: var(--a4-surface); color: var(--a4-ink); font-size: 1em; line-height: normal; text-decoration: none; font-family: Verdana, Arial, Helvetica, sans-serif; vertical-align: middle; transition: background-color 300ms ease, border-color 300ms ease, color 300ms ease; }
 .package-view-full a.pvf-button-link:hover,
 .package-view-full a.pvf-button-link:focus { background-color: var(--a4-soft); color: var(--a4-ink); }
 .package-view-full a.pvf-button-link:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }

@@ -99,11 +99,15 @@
   --a4-text-l: 16px;
   --a4-text-xl: 22px;
   --a4-leading: 1.5;
+
+  /* the browser's own parts (scrollbars, select popups, date pickers, autofill) follow the mode */
+  color-scheme: light;
 }
 
 /* ---- Tokens: dark (admin4) --------------------------------------------------------------------------------- */
 
 html[data-a4-theme="dark"] {
+  color-scheme: dark;
   --a4-accent: #f26a21;
   --a4-accent-hover: #ff8a4c;
   --a4-accent-strong: #c2410c;
@@ -1170,3 +1174,22 @@ a.a4-current-user-name { color: var(--a4-ink); font-weight: 400; text-decoration
 
 /* request H1: the one main action of a page state */
 .a4-btn-large { min-height: 44px; padding: var(--a4-space-3) var(--a4-space-5); font-size: var(--a4-text-l); }
+
+/* ---- Forced colors (Windows high contrast) and touch -------------------------------------------------------- */
+
+/* Forced colors drop backgrounds and box-shadows: the edges, the current and selected states and the focus come
+   back as system colours, and the status dots keep their own colour (they are the state). */
+@media (forced-colors: active) {
+  .a4-btn, .a4-input, .a4-card, .a4-badge, .a4-chip { border: 1px solid CanvasText; }
+  .a4-tabs .is-current, .a4-table tr.is-selected td, .a4-card.is-selected, .a4-figure.is-current { outline: 2px solid Highlight; outline-offset: -2px; }
+  :focus-visible { outline-color: Highlight; }
+  .a4-dot { forced-color-adjust: none; }
+}
+
+/* A field with text under 16px makes a phone's browser zoom in when it gets the focus */
+@media (pointer: coarse) {
+  .a4-input,
+  .a4-field select,
+  .a4-field textarea,
+  .a4-field input { font-size: var(--a4-text-l); }
+}

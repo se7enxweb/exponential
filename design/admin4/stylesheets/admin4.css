@@ -313,7 +313,7 @@ html[data-a4-theme="dark"] .a4-theme-toggle .a4-icon-moon { display: inline-bloc
 .content-wrapper {
   padding: 1rem;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
   .content-wrapper {
     padding: 0.5rem;
   }
@@ -1246,4 +1246,22 @@ html[data-a4-theme="dark"] img[src*="/share/icons/bootstrap-icons/"] { filter: i
 /* Windows high contrast with a dark canvas: the same black SVGs would vanish, so they follow the canvas text. */
 @media (forced-colors: active) and (prefers-color-scheme: dark) {
   img[src*="/share/icons/bootstrap-icons/"] { filter: invert(1); }
+}
+
+/* Visitors who ask for less motion get none: the frame's sidebar slides, the dashboard's lift and every fade end at
+   once. Components keep their own rule for the running-status pulse. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* The fields of the frame and of #page on touch screens: 16px, so a phone's browser does not zoom in on focus */
+@media (pointer: coarse) {
+  #header .searchblock input.searchtext,
+  :where(#page input:not([type]), #page input[type=text], #page input[type=password], #page input[type=email], #page input[type=number],
+         #page input[type=url], #page input[type=tel], #page input[type=search], #page select, #page textarea) { font-size: var(--a4-text-l); }
 }
