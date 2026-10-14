@@ -5,18 +5,20 @@
 
    Parameters:
      locale  the locale code, e.g. ger-DE (required)
-     name    the language's name (optional, default: the locale's international name, e.g. German)
+     badge_name   the language's name (optional, default: the locale's international name, e.g. German)
      named   true when the name is written next to the badge: the badge is then hidden from screen readers;
              otherwise it carries the name as its accessible name (role="img", aria-label)
      plain   true: only the code as text, for scripts and attribute values
-     class   further classes, e.g. is-current
+     badge_class  further classes, e.g. is-current
+   (badge_name and badge_class, not name and class: an include sees its caller's variables, and the edit page's
+   $class is the content class object)
 *}{def $a4_lang_object = $locale|locale()
      $a4_lang_tag = ''
      $a4_lang_badge = $locale|upcase
      $a4_lang_label = $locale}{*
 *}{if $a4_lang_object.is_valid}{set $a4_lang_tag = $a4_lang_object.content_language_code
                                     $a4_lang_label = $a4_lang_object.intl_language_name}{/if}{*
-*}{if and( is_set( $name ), $name|ne( '' ) )}{set $a4_lang_label = $name}{/if}{*
+*}{if and( is_set( $badge_name ), $badge_name|ne( '' ) )}{set $a4_lang_label = $badge_name}{/if}{*
 *}{if $a4_lang_tag|ne( '' )}{*
     *}{def $a4_lang_primary = $a4_lang_tag|downcase|explode( '-' )
            $a4_lang_same = 0}{*
@@ -27,5 +29,5 @@
     *}{if $a4_lang_same|gt( 1 )}{set $a4_lang_badge = $a4_lang_tag|upcase}{else}{set $a4_lang_badge = $a4_lang_primary|upcase}{/if}{*
     *}{undef $a4_lang_primary $a4_lang_same}{*
 *}{/if}{*
-*}{if and( is_set( $plain ), $plain )}{$a4_lang_badge|wash}{else}<span class="a4-lang{if is_set( $class )} {$class|wash}{/if}" title="{$a4_lang_label|wash}" translate="no"{if and( is_set( $named ), $named )} aria-hidden="true"{else} role="img" aria-label="{$a4_lang_label|wash}"{/if}>{$a4_lang_badge|wash}</span>{/if}{*
+*}{if and( is_set( $plain ), $plain )}{$a4_lang_badge|wash}{else}<span class="a4-lang{if is_set( $badge_class )} {$badge_class|wash}{/if}" title="{$a4_lang_label|wash}" translate="no"{if and( is_set( $named ), $named )} aria-hidden="true"{else} role="img" aria-label="{$a4_lang_label|wash}"{/if}>{$a4_lang_badge|wash}</span>{/if}{*
 *}{undef $a4_lang_object $a4_lang_tag $a4_lang_badge $a4_lang_label}
