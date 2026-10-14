@@ -250,6 +250,8 @@ For every template or stylesheet change in an administration design or an extens
 - [ ] A new token is in `components.css` with a light and a dark value, and documented on this page.
 - [ ] A new data table is a `table.list` or an `.a4-table` (zebra rows, hover); controls in one row share
       `--a4-control-h`.
+- [ ] A new left-menu link (menu.ini `Links[]` of a section with `Groups[]`) is placed in a group
+      (`GroupLinks_<group>[]`); otherwise it shows under "More" (`AdminLeftMenuGroupsTest` checks Leftmenu_setup).
 - [ ] A new module stylesheet is listed in `AdminComponentCSSFileList` and exists in `design/admin4` and `design/admin`.
 - [ ] The page was checked in light and dark mode at 1440 px and at 960 px with scale 2: no light card on the dark
       page, text contrast at least 4.5:1, no horizontal overflow, no console errors.

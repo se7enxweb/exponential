@@ -37,7 +37,8 @@
     ],
     "design/admin*/templates/*": [
       "tests/tests/design/AdminStylingRulesTest.php",
-      "tests/tests/design/AdminIconsTest.php"
+      "tests/tests/design/AdminIconsTest.php",
+      "tests/tests/design/AdminLeftMenuGroupsTest.php"
     ],
     "design/admin*/stylesheets/*": [
       "tests/tests/design/AdminStylingRulesTest.php",
@@ -49,6 +50,9 @@
     ],
     "settings/design.ini": [
       "tests/tests/design/AdminStylingRulesTest.php"
+    ],
+    "design/admin4/javascript/admin4.js": [
+      "tests/tests/design/AdminLeftMenuGroupsTest.php"
     ],
     "design/admin4/javascript/ezadmin_menubar.js": [
       "tests/tests/design/AdminStylingRulesTest.php"
@@ -810,6 +814,7 @@
       "tests/tests/kernel/classes/ini/expIniEditorTest.php"
     ],
     "settings/menu.ini": [
+      "tests/tests/design/AdminLeftMenuGroupsTest.php",
       "tests/tests/kernel/classes/classicmenu/expClassicMenuSettingsTest.php",
       "tests/tests/kernel/content/eZContentFunctionCollectionSiteDataTest.php"
     ],

@@ -65,6 +65,12 @@ extension). The editor siteaccess falls back to `admin4` first, then `admin3`, `
   (42 px on a desktop) and fit a phone screen. Edit pages show one left column, not two.
 - **Frame.** Side column margins are halved (a 16 px gap). The sidebar buttons sit on the window edges at 48% of the
   window height, with labels and titles. Long names in the side columns wrap instead of being cut off.
+- **Left menu.** The left column is the "Side menu" navigation. A long menu shows in groups: Setup in Content model,
+  Site and URLs, Workflows, Users and messages, System, and "More" for links an extension adds. Each group has a small
+  capital title with a caret and opens and closes (the browser keeps the choice; the group of the current page always
+  opens). The current page's link carries `aria-current="page"` and is marked with the accent tint and a bar. A menu
+  is grouped through menu.ini (`Groups[]`, `GroupNames[<group>]`, `GroupLinks_<group>[]`); without `Groups[]` it is
+  one list, named by its heading. Access is checked per link as before.
 - **Tables.** A list table's sorted column is readable (soft orange header).
 - **Icons.** Bootstrap Icons in the text colour, so they follow links, buttons, hover and the dark mode (see below).
 
