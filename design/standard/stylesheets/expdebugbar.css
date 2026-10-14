@@ -75,6 +75,19 @@ html[data-a4-theme="dark"] #debug {
 
 /* --- the panel */
 #debug-details.active { padding: 0 12px 12px; color: var(--xd-fg); background: var(--xd-bg); }
+/* The handle on the panel's top edge (expdebugbar.js, "panel height"): it stays at the top while the panel scrolls,
+   the toolbar sticks right under it. 10px high with a grip in the middle; the whole strip takes the pointer. */
+#debug .exp-debug-resizer {
+  position: sticky; top: 0; z-index: 3; display: flex; align-items: center; justify-content: center;
+  box-sizing: border-box; height: 10px; margin: 0 -12px; background-color: var(--xd-bg-soft);
+  border-bottom: 1px solid var(--xd-line); cursor: ns-resize; touch-action: none; user-select: none;
+}
+#debug .exp-debug-resizer::before { content: ""; display: block; width: 48px; height: 4px; border-radius: 2px; background: var(--xd-line-strong); }
+#debug .exp-debug-resizer:hover::before, #debug .exp-debug-resizer.exp-debug-resizing::before { background: var(--xd-accent); }
+#debug .exp-debug-resizer:focus-visible { outline: 2px solid var(--xd-focus); outline-offset: -2px; }
+#debug .exp-debug-resizer:focus-visible::before { background: var(--xd-focus); }
+body.exp-debug-resizing { cursor: ns-resize; user-select: none; }
+#debug .exp-debug-resizer ~ .exp-debug-toolbar { top: 10px; }
 #debug .exp-debug-toolbar {
   position: sticky; top: 0; z-index: 2; display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: center;
   padding: 8px 0; background: var(--xd-bg); border-bottom: 1px solid var(--xd-line);

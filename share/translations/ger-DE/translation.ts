@@ -65023,6 +65023,18 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Storage %storage (setting %setting), ApcuReserve %reserve %</source>
         <translation>Speicher %storage (Einstellung %setting), ApcuReserve %reserve %</translation>
     </message>
+    <message>
+        <source>Resize the debug panel</source>
+        <translation>Höhe des Debug-Bereichs ändern</translation>
+    </message>
+    <message>
+        <source>Drag or use the arrow keys to change the height; double-click for the default height.</source>
+        <translation>Ziehen oder mit den Pfeiltasten die Höhe ändern; Doppelklick stellt die Standardhöhe wieder her.</translation>
+    </message>
+    <message>
+        <source>%count pixels</source>
+        <translation>%count Pixel</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/audit</name>

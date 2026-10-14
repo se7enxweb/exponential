@@ -940,6 +940,111 @@
     if (read('exp-debug-min') === '1') setMin(true, false);
   }
 
+  /* ---------------------------------------------------------------- panel height */
+  // The panel opens upward from the pinned bar, across the whole width, so only its height changes: a handle on
+  // its top edge (a focusable separator) is dragged with mouse, pen or touch, or moved with the arrow keys (Shift for
+  // big steps, Home and End for the limits); a double-click gives the default height (60% of the window) back.
+  // The height is kept in --exp-debug-panel-h on <html> (the report's own script set it from the saved value
+  // before the panel opened) and held between data.panel.min and the room above the bar, again whenever the window
+  // changes size. It is saved once at the end of a drag, or 0.6 s after the last key: in the user preference
+  // (expdebugbar::panelheight) for a logged-in user; for an anonymous visitor (the bar shown by IP) in localStorage
+  // (exp-debug-panel-height, nothing sent: eZPreferences would need a session, which the bar never starts).
+  const details = document.getElementById('debug-details');
+  if (details) {
+    const docEl = document.documentElement;
+    const MIN = (data.panel && data.panel.min) || 120;
+    const STEP = 16, BIG_STEP = 64, KEY_SAVE_DELAY = 600, DEFAULT_SHARE = 0.6;
+    const store = details.getAttribute('data-exp-debug-panel-store');   // 'preference' (logged in) or 'browser'
+    const barEl = root.querySelector(':scope > h2');
+    const maxHeight = () => Math.max(0, window.innerHeight - (barEl ? barEl.offsetHeight : 0));
+    const minHeight = () => Math.min(MIN, maxHeight());
+    const clamp = (h) => Math.max(minHeight(), Math.min(maxHeight(), Math.round(h)));
+    let wanted = parseInt(docEl.style.getPropertyValue('--exp-debug-panel-h'), 10) || 0;   // 0: the default
+    let saved = wanted;
+    let keyTimer = null;
+    let drag = null;
+    const current = () => clamp(wanted || window.innerHeight * DEFAULT_SHARE);
+    const handle = el('div', { class: 'exp-debug-resizer', role: 'separator', tabindex: '0', 'aria-orientation': 'horizontal',
+      'aria-controls': 'debug-details', 'aria-label': t('Resize the debug panel'),
+      title: t('Drag or use the arrow keys to change the height; double-click for the default height.') });
+    const describe = () => {
+      const h = current();
+      handle.setAttribute('aria-valuenow', String(h));
+      handle.setAttribute('aria-valuemin', String(minHeight()));
+      handle.setAttribute('aria-valuemax', String(maxHeight()));
+      handle.setAttribute('aria-valuetext', t('%count pixels', { '%count': h }));
+    };
+    const apply = (h) => {
+      wanted = clamp(h);
+      docEl.style.setProperty('--exp-debug-panel-h', wanted + 'px');
+      describe();
+      return wanted;
+    };
+    const save = (h) => {
+      if (h === saved) return;
+      saved = h;
+      if (store === 'browser') {
+        try { if (h) window.localStorage.setItem('exp-debug-panel-height', String(h)); else window.localStorage.removeItem('exp-debug-panel-height'); } catch (e) {}
+        return;
+      }
+      if (store !== 'preference') return;
+      call('panelheight', { height: h }, true).catch(() => { saved = -1; });
+    };
+    const reset = () => {
+      wanted = 0;
+      docEl.style.removeProperty('--exp-debug-panel-h');
+      describe();
+      save(0);
+    };
+    const onMove = (e) => {
+      if (!drag || e.pointerId !== drag.id) return;
+      e.preventDefault();
+      // the handle is on the top edge: moving up makes the panel higher
+      apply(drag.start + (drag.y - e.clientY));
+    };
+    const onEnd = (e) => {
+      if (!drag || (e && e.pointerId !== drag.id)) return;
+      try { if (handle.hasPointerCapture(drag.id)) handle.releasePointerCapture(drag.id); } catch (err) {}
+      drag = null;
+      handle.classList.remove('exp-debug-resizing');
+      document.body.classList.remove('exp-debug-resizing');
+      save(wanted);
+    };
+    handle.addEventListener('pointerdown', (e) => {
+      if (e.pointerType === 'mouse' && e.button !== 0) return;
+      e.preventDefault();
+      drag = { id: e.pointerId, y: e.clientY, start: Math.round(details.getBoundingClientRect().height) };
+      try { handle.setPointerCapture(e.pointerId); } catch (err) {}
+      handle.classList.add('exp-debug-resizing');
+      document.body.classList.add('exp-debug-resizing');
+      handle.focus({ preventScroll: true });
+    });
+    handle.addEventListener('pointermove', onMove);
+    handle.addEventListener('pointerup', onEnd);
+    handle.addEventListener('pointercancel', onEnd);
+    handle.addEventListener('lostpointercapture', onEnd);
+    handle.addEventListener('dblclick', (e) => { e.preventDefault(); reset(); });
+    handle.addEventListener('keydown', (e) => {
+      const step = e.shiftKey ? BIG_STEP : STEP;
+      let h = null;
+      if (e.key === 'ArrowUp') h = current() + step;
+      else if (e.key === 'ArrowDown') h = current() - step;
+      else if (e.key === 'Home') h = minHeight();
+      else if (e.key === 'End') h = maxHeight();
+      if (h === null) return;
+      e.preventDefault();
+      apply(h);
+      clearTimeout(keyTimer);
+      keyTimer = setTimeout(() => save(wanted), KEY_SAVE_DELAY);
+    });
+    // a height kept from a taller window is held to this one's room (the stylesheet does the same), and
+    // comes back when the window is tall enough again
+    window.addEventListener('resize', describe);
+    document.addEventListener('exp-debug-toggle', describe);
+    details.insertBefore(handle, details.firstChild);
+    describe();
+  }
+
   /* ---------------------------------------------------------------- start */
   select(read('exp-debug-tab') || 'messages');
   document.addEventListener('exp-debug-toggle', (e) => { if (e.detail && e.detail.open) { const cur = tabs.find((tb) => tb.getAttribute('aria-selected') === 'true'); if (cur) select(cur.getAttribute('data-tab')); } });

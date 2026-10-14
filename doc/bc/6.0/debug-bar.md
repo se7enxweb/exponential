@@ -235,6 +235,7 @@ or `high`, against `Thresholds[]` in debugbar.ini (`time_ms`, `sql_count`, `sql_
 | `iptest` | `address`, `list` (JSON array) | setup/setup |
 | `log[::<limit>]` | GET | setup/setup |
 | `summary` | GET | debug output for the request (the report itself; a visitor gets no IP list entry in it) |
+| `panelheight` | POST `height` (pixels, `0` for the default) | a logged-in user (never an anonymous visitor) with debug output for the request: stores the user preference `expdebugbar_panel_height` (see [The panel's height](#the-panels-height)) |
 
 Every POST must carry the form token (`ezxform_token`, or the header `X-CSRF-Token`); the `settings` answer has
 it. Someone who only sees the debug report gets the settings without the IP and user lists, the log or the
@@ -281,6 +282,7 @@ php vendor/bin/phpunit tests/tests/kernel/classes/debugbar/
 
 | Test | Covers |
 |---|---|
+| `expDebugBarReportPanelHeightTest` (`tests/tests/lib/ezutils/`) | the panel height: the preference name and limits, `panelHeight()` on whole numbers, text, fractions, negatives and values out of range, `savedPanelHeight()` with a reader passed in and never asking it for an anonymous visitor, the data attributes on the rendered panel (no `style` attribute), the handle's styles and keys, the server function's checks. No database |
 | `expDebugBarIPListTest` | addresses and CIDR of both families, IPv4-mapped clients, entries with labels and expiries, writing entries, the match, the warnings, the suggestions. Needs no kernel |
 | `expDebugBarSettingsTest` | the registry and discovery, the values in effect against `expIniLocator::where()`, writes of every type and op with the log and undo, dry runs, refusals, a siteaccess scope, presets as a group, the lock-out and open checks, eZDebug's IP check and its fallback, the summary, the server functions (registration, answers, POST, token and policy, what a visitor without policy sees) |
 | `RadSurveyDebugBarTest` | the two registries, the total, the bar's figures, the new problem kinds |
@@ -312,6 +314,46 @@ The bar stays at the bottom of the window wherever the page is scrolled; a click
 above it, which scrolls on its own. No page ever has to be scrolled to use it. "Keep open on reload" remembers the
 open panel in the browser (`localStorage` keys `exp-debug-keep`, `exp-debug-open`), and the last tab
 (`exp-debug-tab`). Escape closes the panel.
+
+### The panel's height
+
+The open panel is full width, so only its height changes. The strip on its top edge (the edge facing the page, the
+panel opens upward from the bar) is a handle: drag it with the mouse, a pen or a finger, or focus it (it is a
+`role="separator"` with `aria-valuenow`, `aria-valuemin` and `aria-valuemax`) and use the keys:
+
+| Key | Does |
+|---|---|
+| Arrow up / down | 16 px higher / lower |
+| Shift + arrow up / down | 64 px higher / lower |
+| Home / End | the lowest / the highest the window allows |
+| Double-click on the handle | back to the default height (60 % of the window) |
+
+The height stays between 120 px and the window's height minus the pinned bar, also when the window changes size (a
+height kept from a taller window comes back when the window is tall enough again). The stylesheet holds the same
+limit (`height: min(var(--exp-debug-panel-h, 60vh), calc(100vh - var(--exp-debug-bar-h)))`), so a saved height never
+pushes the panel's top out of the window.
+
+The height is saved once at the end of a drag, or 0.6 s after the last key press:
+
+- **Logged in**: in the user preference `expdebugbar_panel_height` (eZPreferences, through
+  `expdebugbar::panelheight`), so it follows the user to any browser. `0` means the default height. The report reads
+  it back (`expDebugBarReport::savedPanelHeight()`) and prints it on the panel as `data-exp-debug-panel-height`; the
+  report's inline script sets `--exp-debug-panel-h` from it before the panel opens, so it opens at that height
+  without a jump.
+- **Anonymous** (the bar shown by IP): no preference is read or saved and no request is sent, since eZPreferences
+  keep an anonymous user's values in the session and the debug bar must never start a session
+  (`savedPanelHeight()` returns 0 without asking, and `expdebugbar::panelheight` refuses an anonymous visitor
+  before the token check). The height is kept in the browser instead: `localStorage` key `exp-debug-panel-height`,
+  every access in `try`/`catch` (blocked storage means the default height), read back and held between 120 and
+  4000 px by the report's inline script before the panel opens; anything but a whole number of pixels is ignored.
+  It stays in that browser only; another browser or a private window starts at the default.
+
+A logged-in user's preference is authoritative: localStorage is not looked at for a logged-in user. The panel says
+which applies in `data-exp-debug-panel-store` (`preference` or `browser`).
+
+A stored value is a whole number of pixels: `expDebugBarReport::panelHeight()` turns anything else (text, a
+fraction, a negative number, a unit) into "not a height" (the server function refuses it, the report uses the
+default) and holds a number between 120 and 4000 (`PANEL_HEIGHT_MIN`, `PANEL_HEIGHT_MAX`).
 
 The summary in the bar shows the request at a glance; each value opens its tab:
 

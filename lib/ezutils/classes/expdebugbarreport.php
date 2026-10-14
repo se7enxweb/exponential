@@ -33,6 +33,20 @@ class expDebugBarReport
     const CONTEXT = 'design/standard/debugbar';
 
     /**
+     * The height of the open panel as the user left it, in pixels (0: the default, 60% of the window), kept in this
+     * user preference (eZPreferences) for logged-in users only. Saved by the server function expdebugbar::panelheight
+     * and read back by render() into #debug-details data-exp-debug-panel-height, so the panel opens at that height.
+     * An anonymous visitor (the debug bar shown by IP) never has a preference read or saved (eZPreferences keep an
+     * anonymous user's values in the session, and the debug bar never starts one): the script keeps that height in
+     * the browser's localStorage (exp-debug-panel-height) instead. A logged-in user's preference is authoritative.
+     * The script holds the height between PANEL_HEIGHT_MIN and the window's height minus the pinned bar;
+     * PANEL_HEIGHT_MAX bounds what is stored.
+     */
+    const PANEL_HEIGHT_PREFERENCE = 'expdebugbar_panel_height';
+    const PANEL_HEIGHT_MIN = 120;
+    const PANEL_HEIGHT_MAX = 4000;
+
+    /**
      * When a summary value turns amber (warn) and red (high).
      * Memory is compared with memory_limit when PHP has one, else with the absolute bytes.
      */
@@ -63,6 +77,66 @@ class expDebugBarReport
             }
         }
         return $arguments ? strtr( $source, $arguments ) : $source;
+    }
+
+    /**
+     * A panel height as stored or sent: a whole number of pixels (an int, or a string of digits with optional
+     * spaces around it). 0 stays 0 (the default height); any other number is held between PANEL_HEIGHT_MIN and
+     * PANEL_HEIGHT_MAX.
+     *
+     * @param mixed $value
+     * @return int|null the height, or null when $value is not a whole number of pixels (empty, negative, a
+     *                  fraction, text, an array, a boolean)
+     */
+    public static function panelHeight( $value )
+    {
+        if ( is_int( $value ) )
+            $digits = $value >= 0 ? (string)$value : '';
+        else if ( is_string( $value ) )
+            $digits = trim( $value );
+        else
+            return null;
+        if ( $digits === '' || !ctype_digit( $digits ) )
+            return null;
+        // more digits than an int holds is far above the maximum
+        $height = strlen( $digits ) > 9 ? self::PANEL_HEIGHT_MAX : (int)$digits;
+        if ( $height === 0 )
+            return 0;
+        return max( self::PANEL_HEIGHT_MIN, min( self::PANEL_HEIGHT_MAX, $height ) );
+    }
+
+    /**
+     * The current user's saved panel height (preference PANEL_HEIGHT_PREFERENCE) for render(): 0 for the default,
+     * for a value that is not a height, and when there is no user to ask (an early error, a script without the
+     * kernel, no database). For a visitor who is not logged in it is always 0 and the preferences are not asked at
+     * all: eZPreferences keep an anonymous user's values in the session, and the debug bar never starts one.
+     *
+     * @param bool $loggedIn whether the current user is logged in (render() passes userInfo()'s logged_in)
+     * @param callable|null $reader function( string $name ): mixed, the preference reader (tests); default eZPreferences::value()
+     * @return int
+     */
+    public static function savedPanelHeight( $loggedIn, $reader = null )
+    {
+        if ( $loggedIn !== true )
+            return 0;
+        try
+        {
+            if ( $reader === null )
+            {
+                if ( !class_exists( 'eZUser', false ) || !class_exists( 'eZPreferences' ) )
+                    return 0;
+                $user = eZUser::currentUser();
+                if ( !$user instanceof eZUser || !$user->isRegistered() )
+                    return 0;
+                $reader = function ( $name ) { return eZPreferences::value( $name ); };
+            }
+            $height = self::panelHeight( $reader( self::PANEL_HEIGHT_PREFERENCE ) );
+            return $height === null ? 0 : $height;
+        }
+        catch ( Throwable $e )
+        {
+            return 0;
+        }
     }
 
     /** t() escaped for HTML. */
@@ -116,6 +190,9 @@ class expDebugBarReport
             'Response cache', 'Engine', 'Not running on Velocity.',
             'Close', 'Open the debug report',
             'Minimise debug bar', 'Show debug bar', '%count errors', '%count warnings',
+            // the handle that resizes the open panel
+            'Resize the debug panel', 'Drag or use the arrow keys to change the height; double-click for the default height.',
+            '%count pixels',
             // the SQL query cache in the Cache tab
             'SQL query cache', 'Off (querycache.ini Mode=off)', 'Mode %mode, MaxAge %age s, MaxRows %rows',
             'Storage %storage (setting %setting), ApcuReserve %reserve %', 'none',
@@ -259,7 +336,11 @@ class expDebugBarReport
         echo '<h2><a href="#debug-end" aria-controls="debug-details" aria-expanded="false">Exp Debug' . htmlspecialchars( $byUser . $byIP, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '</a>';
         echo self::summaryHtml( $summary );
         echo '</h2>';
-        echo '<div id="debug-details" role="region" aria-label="' . self::h( 'Debug report' ) . '">';
+        // the panel's height as the user left it (0: the default); the inline script below applies it before the
+        // panel opens. From the preference for a logged-in user; for an anonymous visitor from the browser's localStorage
+        echo '<div id="debug-details" role="region" aria-label="' . self::h( 'Debug report' ) . '"'
+           . ' data-exp-debug-panel-height="' . self::savedPanelHeight( $userInfo['logged_in'] ) . '"'
+           . ' data-exp-debug-panel-store="' . ( $userInfo['logged_in'] ? 'preference' : 'browser' ) . '">';
 
         if ( !$debug->UseCSS )
         {
@@ -377,6 +458,7 @@ class expDebugBarReport
             'urls'       => array( 'call' => self::url( 'ezjscore/call' ),
                                    'cachetoolbar' => self::url( 'setup/cachetoolbar' ) ),
             'strings'    => self::translatedScriptStrings(),
+            'panel'      => array( 'min' => self::PANEL_HEIGHT_MIN, 'max' => self::PANEL_HEIGHT_MAX ),
         );
         echo '<script type="application/json" id="exp-debug-data">'
            . json_encode( $data, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_UNESCAPED_UNICODE | JSON_PARTIAL_OUTPUT_ON_ERROR )
@@ -947,7 +1029,8 @@ class expDebugBarReport
     {
         $html = self::includeTag( 'css', 'design/standard/stylesheets/expdebugbar.css' );
         // The bar stays at the bottom of the window wherever the page is scrolled; the details open as a
-        // panel above it (its height follows the bar, which may wrap at narrow widths).
+        // panel above it (its height follows the bar, which may wrap at narrow widths). The panel is 60% of the
+        // window high, or the height the user dragged it to (--exp-debug-panel-h), never more than the room above the bar.
         $html .= "<style>
 #debug, #debug[data-exp-debug-bar] { margin: 0; padding: 0; border: 0; background: transparent; box-shadow: none; }
 #debug > h2 { position: fixed; left: 0; right: 0; bottom: 0; z-index: 2147483000; margin: 0;
@@ -957,7 +1040,8 @@ class expDebugBarReport
 #debug > h2 > label.debug-keep-open { margin-right: 12px; color: #222; }
 #debug-details { display: none; }
 #debug-details.active { display: block; position: fixed; left: 0; right: 0; bottom: var(--exp-debug-bar-h, 38px); z-index: 2147482999;
-  height: 60vh; overflow: auto; background: var(--xd-bg, #fff); color: var(--xd-fg, #222); border-top: 2px solid #999;
+  height: 60vh; height: min(var(--exp-debug-panel-h, 60vh), calc(100vh - var(--exp-debug-bar-h, 38px)));
+  overflow: auto; background: var(--xd-bg, #fff); color: var(--xd-fg, #222); border-top: 2px solid #999;
   box-shadow: 0 -4px 12px rgba(0,0,0,.2); box-sizing: border-box; }
 body.exp-debug-bar { padding-bottom: calc(var(--exp-debug-bar-h, 38px) + 8px); }
 @media (prefers-color-scheme: dark) {
@@ -981,6 +1065,14 @@ body.exp-debug-bar { padding-bottom: calc(var(--exp-debug-bar-h, 38px) + 8px); }
   header.addEventListener('click', (e) => e.preventDefault());
   const read = (key) => { try { return window.localStorage.getItem(key); } catch (e) { return null; } };
   const write = (key, value) => { try { window.localStorage.setItem(key, value); } catch (e) {} };
+  // The panel's height as the user left it (expdebugbar.js resizes it and saves the height), set before the panel
+  // opens: for a logged-in user from the user preference (data-exp-debug-panel-height, 0 for the default; the
+  // preference is authoritative, localStorage is not looked at), for an anonymous visitor from localStorage
+  // (exp-debug-panel-height; read() gives null where storage is blocked). Only a whole number of pixels counts.
+  const rawHeight = content.getAttribute('data-exp-debug-panel-store') === 'browser'
+    ? read('exp-debug-panel-height') : content.getAttribute('data-exp-debug-panel-height');
+  const savedHeight = parseInt(rawHeight || '0', 10);
+  if (savedHeight > 0 && String(savedHeight) === String(rawHeight).trim()) document.documentElement.style.setProperty('--exp-debug-panel-h', Math.min(" . self::PANEL_HEIGHT_MAX . ", Math.max(" . self::PANEL_HEIGHT_MIN . ", savedHeight)) + 'px');
   const setOpen = (open) => {
     header.classList.toggle('active', open);
     content.classList.toggle('active', open);

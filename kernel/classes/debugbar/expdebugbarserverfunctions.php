@@ -12,6 +12,8 @@
  *   expdebugbar::iptest                     address[, list]
  *   expdebugbar::log[::<limit>]             the newest log entries
  *   expdebugbar::summary                    the summary of this request
+ *   expdebugbar::panelheight                POST height: the open panel's height, kept in the user preference
+ *                                           expdebugbar_panel_height
  *
  * Only summary needs debug output for this request (the people who see the report). settings, log and iptest need
  * setup/setup, the cache list and clearing caches need setup/managecache, and nothing about the configuration (values,
@@ -99,6 +101,12 @@ class expDebugBarServerFunctions extends ezjscServerFunctions
     {
         if ( !self::hasAccess( 'setup', $function ) )
             throw new InvalidArgumentException( "Changing this needs the policy setup/$function" );
+        self::requirePost();
+    }
+
+    /** @throws InvalidArgumentException unless this is a POST with the right form token (when the protection is on) */
+    public static function requirePost()
+    {
         if ( self::$trustRequest === true )
             return;
         if ( !isset( $_SERVER['REQUEST_METHOD'] ) || $_SERVER['REQUEST_METHOD'] !== 'POST' )
@@ -430,6 +438,32 @@ class expDebugBarServerFunctions extends ezjscServerFunctions
     {
         self::requireRead();
         return expDebugBarSummary::collect();
+    }
+
+    /**
+     * expdebugbar::panelheight, POST height (pixels, 0 for the default) with the form token: the height the user
+     * dragged the open panel to, stored in the user preference expdebugbar_panel_height
+     * (expDebugBarReport::PANEL_HEIGHT_PREFERENCE), which the report reads back. For anybody who sees the debug
+     * output and is logged in: an anonymous user's preferences would need a session, which the debug bar never starts,
+     * so the script keeps an anonymous visitor's height in localStorage instead and never calls this; it refuses an
+     * anonymous visitor before eZPreferences is touched.
+     *
+     * @return array ok, height (as stored: 0, or held between PANEL_HEIGHT_MIN and PANEL_HEIGHT_MAX), preference
+     */
+    public static function panelheight( $args )
+    {
+        // the anonymous visitor first: refused before the token check or the preferences could touch a session
+        $user = eZUser::currentUser();
+        if ( !$user instanceof eZUser || !$user->isRegistered() )
+            throw new InvalidArgumentException( 'Only a logged-in user has preferences: the height is not saved for anonymous visitors' );
+        self::requireRead();
+        self::requirePost();
+        $height = expDebugBarReport::panelHeight( self::param( 'height', '' ) );
+        if ( $height === null )
+            throw new InvalidArgumentException( 'The height is a whole number of pixels, or 0 for the default' );
+        if ( !eZPreferences::setValue( expDebugBarReport::PANEL_HEIGHT_PREFERENCE, (string)$height ) )
+            throw new RuntimeException( 'The height could not be stored' );
+        return array( 'ok' => true, 'height' => $height, 'preference' => expDebugBarReport::PANEL_HEIGHT_PREFERENCE );
     }
 
     /**

@@ -5,7 +5,8 @@
  *   - the rendered report carries the button (a real button, hidden until the script shows it), its status line,
  *     and the message rows the script reads (header row with level, source and time, body row with the text)
  *   - every word the script passes to t() is in expDebugBarReport::scriptStrings(), and the button's words are
- *     translated in the kernel's eng-US and ger-DE translations (context design/standard/debugbar)
+ *     translated in the kernel's eng-US and ger-DE translations (context design/standard/debugbar), as are the words of
+ *     the handle that resizes the open panel
  *   - the script copies with navigator.clipboard and falls back to a textarea and execCommand('copy')
  *
  * No database: the report is rendered from a debug instance of its own, as eZDebugMessagesTest does.
@@ -109,7 +110,9 @@ class expDebugBarReportCopyMessagesTest extends PHPUnit\Framework\TestCase
         foreach ( array( 'Copied 1 message', 'Copied %count messages', 'No messages to copy.', 'Could not copy the messages.' ) as $source )
             $this->assertContains( $source, $listed );
 
-        $words = array( 'Copy Messages', 'Copied 1 message', 'Copied %count messages', 'No messages to copy.', 'Could not copy the messages.' );
+        $words = array( 'Copy Messages', 'Copied 1 message', 'Copied %count messages', 'No messages to copy.', 'Could not copy the messages.',
+                        // the handle that resizes the open panel
+                        'Resize the debug panel', 'Drag or use the arrow keys to change the height; double-click for the default height.', '%count pixels' );
         foreach ( array( 'eng-US', 'ger-DE' ) as $locale )
         {
             $xml = simplexml_load_file( $this->root . "/share/translations/$locale/translation.ts" );

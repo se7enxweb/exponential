@@ -57581,6 +57581,18 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Storage %storage (setting %setting), ApcuReserve %reserve %</source>
         <translation>Storage %storage (setting %setting), ApcuReserve %reserve %</translation>
     </message>
+    <message>
+        <source>Resize the debug panel</source>
+        <translation>Resize the debug panel</translation>
+    </message>
+    <message>
+        <source>Drag or use the arrow keys to change the height; double-click for the default height.</source>
+        <translation>Drag or use the arrow keys to change the height; double-click for the default height.</translation>
+    </message>
+    <message>
+        <source>%count pixels</source>
+        <translation>%count pixels</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/audit</name>
