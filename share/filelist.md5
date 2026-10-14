@@ -946,7 +946,7 @@ e002d70967d5f151cca6861170e9584f  design/admin4/templates/ajaxuploader/upload.tp
 679afc0a26455969e1bc2d18684104da  design/admin4/templates/audit/recent.tpl
 4db7d3213d032d3d825d6d572ea6dbca  design/admin4/templates/children.tpl
 b262243567e4867eb6a5ab5cbde846f5  design/admin4/templates/children_detailed.tpl
-334b2e551a38f3eab1deb0e61d5b4ad6  design/admin4/templates/class/classlist.tpl
+f60e0f377f64ba0eb70026b66a183a75  design/admin4/templates/class/classlist.tpl
 51fd6b1a1612e389ee44ce3d6cbe83d1  design/admin4/templates/class/copy_confirm.tpl
 2f32def3d98933143182da37d73213f4  design/admin4/templates/class/datatype/browse_objectrelation_placement.tpl
 90b2f4b8116b9ef3e04ceb886a6fd516  design/admin4/templates/class/datatype/browse_objectrelationlist_placement.tpl
@@ -954,7 +954,7 @@ a08e4ecb112037c60d35cc3ab0d65583  design/admin4/templates/class/edit.tpl
 f22ab5b4dc7e3569f64e4f001a4d7351  design/admin4/templates/class/edit_denied.tpl
 dbe5def951f76a833fe3992eb68bf430  design/admin4/templates/class/exp_list_script.tpl
 57032e2a27279f597ba2c22eefc2f634  design/admin4/templates/class/groupedit.tpl
-bdc2732b8c051ab81d5c078f408316dd  design/admin4/templates/class/grouplist.tpl
+f888009a9936ca2144f97df61cf7422e  design/admin4/templates/class/grouplist.tpl
 8d37d58eb35088b74323e2bf198f7bfb  design/admin4/templates/class/groups.tpl
 3320713f452047a0b3b535f42523d499  design/admin4/templates/class/removeclass.tpl
 f237acc26efb843ec5cc298610f2e5ab  design/admin4/templates/class/removegroup.tpl
@@ -975,7 +975,7 @@ f6abd7a9c28105d54f54099bd7f8c318  design/admin4/templates/collaboration/item_lis
 d51430668a3a897ccf4650cb50071422  design/admin4/templates/collaboration/parts/notice.tpl
 cb9ce70ef90296e96c1fc846fb8e9d3e  design/admin4/templates/collaboration/parts/rows.tpl
 50ad0bf49cddd812799da21930d06b49  design/admin4/templates/collaboration/view/summary.tpl
-a8dd06e48594df07847950b72761ab8c  design/admin4/templates/content/advancedsearch.tpl
+874d9503a61ca03472f8289fbb2a9036  design/admin4/templates/content/advancedsearch.tpl
 e4b41bdde5aa6ecc3f2b2b16c689ad66  design/admin4/templates/content/bookmark.tpl
 5d939d919c759b6de097cae7d58aa037  design/admin4/templates/content/browse.tpl
 831b12a91aa1878bc9d253d5c6aacf03  design/admin4/templates/content/browse_add_locations.tpl
@@ -1037,8 +1037,8 @@ ee9413387057151e421be661a3e3f0a1  design/admin4/templates/content/removeeditvers
 8af7e1a595938e62b11a169e03623ba0  design/admin4/templates/content/removetranslation.tpl
 72a5f36046a954b1a36ae80cd8df26bb  design/admin4/templates/content/restore.tpl
 32579aafc19e699a1340fba20c4d339e  design/admin4/templates/content/reverserelatedlist.tpl
-3e125969f006027b9ff8b7532d5d4a27  design/admin4/templates/content/search.tpl
-41464fb3ede9a3af9adfdfdd39674137  design/admin4/templates/content/searchresult.tpl
+9c83ee619bfda8166a3eb408cdc43b00  design/admin4/templates/content/search.tpl
+d565989557792193c555c0c4767a3bdf  design/admin4/templates/content/searchresult.tpl
 8c395bea9d0747d5466f5af51d0b6d10  design/admin4/templates/content/translationnew.tpl
 24487324e943fe6c7f82318087bec12d  design/admin4/templates/content/translations.tpl
 0288113ce68d85ab98f81f090fc5d4ba  design/admin4/templates/content/translationview.tpl
@@ -1076,7 +1076,7 @@ f395b7b7ae0ad14bb0767e20d42b7c9f  design/admin4/templates/loginpagelayout.tpl
 dcacf39d311d3f7d8fb055170b918d8c  design/admin4/templates/mailpreferences/parts/page_end.tpl
 437ebcb63bb4047517c8eccc45dd3d75  design/admin4/templates/mailpreferences/parts/page_start.tpl
 e6a3c2f8012b44d7d40ee02614debd4b  design/admin4/templates/navigator/alphabetical.tpl
-3fb8436c59191e84cb572d212aad2087  design/admin4/templates/navigator/google.tpl
+c6caf8a9fa0db2771a975b122bcb5226  design/admin4/templates/navigator/google.tpl
 3d34d274246f1b66961361854c4f039c  design/admin4/templates/no_children.tpl
 c49f6538ab403d0457921734f2327d39  design/admin4/templates/node/removenode.tpl
 520842ad63b7c1b9d953df16a0c68894  design/admin4/templates/node/removeobject.tpl
@@ -1139,8 +1139,8 @@ cb128a4645e891cd796919aad3ed36d1  design/admin4/templates/page_header.tpl
 1bf2256ccd6061ee7f354a26834937c1  design/admin4/templates/page_menuheadenabled.tpl
 9f4f8bdbbdfbfd8c6d873c03eded7ef6  design/admin4/templates/page_menuheadgray.tpl
 4306b7f17fbb890306fdc57c9be45664  design/admin4/templates/page_menuheadselected.tpl
-68ef800e886d8f0bbe4c2216f50e0c18  design/admin4/templates/page_search.tpl
-f0892183a38eec59129edf08ed257975  design/admin4/templates/page_topmenu.tpl
+28c5089cfe1580c36e2f9421fdfc790a  design/admin4/templates/page_search.tpl
+1c473306da03fc6460e3aec0e2f2c06c  design/admin4/templates/page_topmenu.tpl
 8aac725b06b7358a617c2fd0ff29ae91  design/admin4/templates/page_topmenuitem.tpl
 f0b52f21d5e9f1e7999667614bf82400  design/admin4/templates/page_toppath.tpl
 8e132d9cedd2f2e3900c68a27fc955c9  design/admin4/templates/pagelayout.tpl
@@ -1204,7 +1204,7 @@ d7ff0b41b76942a00b2b61a43a07c2a1  design/admin4/templates/section/assign_notific
 b438436a2acf7e0361fd5215d934a397  design/admin4/templates/section/browse_assign.tpl
 390b2f90250d531f673bb779ded89cd2  design/admin4/templates/section/confirmremove.tpl
 78a119b145eee625093da7386f5ad256  design/admin4/templates/section/edit.tpl
-dc8e6073e4148a012d36e92959bd8913  design/admin4/templates/section/list.tpl
+335d21576d320c3df5a7e89e3aa8749b  design/admin4/templates/section/list.tpl
 db5501e5df03519062897fc23deddbd5  design/admin4/templates/section/view.tpl
 f100b934e92cc353b82139782cb96b08  design/admin4/templates/settings/edit.tpl
 dcdfd28ff236916b7773ca84b5d3172e  design/admin4/templates/settings/exp_origin.tpl
@@ -1227,7 +1227,7 @@ ed3aff40e946d54c006710f6342619f6  design/admin4/templates/setup/info.tpl
 c8226c9b233467d0991c62b2e31f0432  design/admin4/templates/setup/modulewizard.tpl
 63d444f8ff389d947674e43d39c4c8be  design/admin4/templates/setup/preload.tpl
 8fb96fe4933cbf8c8f7c8755d4938dc6  design/admin4/templates/setup/quick_settings.tpl
-0ba8fca80ce49614be15bfa3fd442f6d  design/admin4/templates/setup/rad.tpl
+8df5921d6cce56054b0f7e260470c9b2  design/admin4/templates/setup/rad.tpl
 eb714f7b1282b93e98977398e0dd30ec  design/admin4/templates/setup/rad_licence_select.tpl
 8916c401b865d7c20f04e4bc7bb8cfc0  design/admin4/templates/setup/radsurvey.tpl
 193b9113dbfe8e7ccb7c561ecf6adb8d  design/admin4/templates/setup/session.tpl
@@ -1324,7 +1324,7 @@ b4481aa8c6dd7b66accd2fea3c4480ba  design/admin4/templates/windows.tpl
 b87b73dc3f706e7067a276692a30badc  design/admin4/templates/workflow/eventtype/edit/event_ezwaituntildate.tpl
 300f30d04c29a31ae01cbd00944281d9  design/admin4/templates/workflow/exp_list_script.tpl
 3a86df47b1f5de78400d10b3463c802a  design/admin4/templates/workflow/groupedit.tpl
-3f5b050e182258c2f8d431d259502588  design/admin4/templates/workflow/grouplist.tpl
+ca265819c074bc577f16a7ddc8ccb52c  design/admin4/templates/workflow/grouplist.tpl
 348e2a2fcb69ff3bd996f916e8355abc  design/admin4/templates/workflow/processlist.tpl
 d7a8a77347bae202321c14de4aff8d71  design/admin4/templates/workflow/view.tpl
 24dc5d5ad5fac4871c9e4a4d4fc0a866  design/admin4/templates/workflow/workflowlist.tpl
@@ -2991,7 +2991,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-a970c1af4c1d1ac35b92717bca30f1d4  doc/changelogs/6.0/6.0.15.md
+b309b0f6a930b1cd103dfe1fa183187c  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -4120,7 +4120,7 @@ ac3dd65ba7ed3f9a5b14ff27ebdd4746  extension/ezjscore/classes/ezjscjavascriptopti
 27ca4fdc9b658e488cf5b50324088d11  extension/ezjscore/classes/ezjscpacker.php
 1f9804412c3ba9cc36ec68bb52c2e242  extension/ezjscore/classes/ezjscserverfunctions.php
 50ab277c5bf8b4fb96d36b11a8be3c1b  extension/ezjscore/classes/ezjscserverfunctionsajaxuploader.php
-626b84c2efdd7f12aa324672b6346a61  extension/ezjscore/classes/ezjscserverfunctionsjs.php
+3af508f83b9aa79c878ae1fa32f94056  extension/ezjscore/classes/ezjscserverfunctionsjs.php
 6f13a2277478c637ee2eac9ed933e320  extension/ezjscore/classes/ezjscserverfunctionsnode.php
 dbea24715af6c5d5d6b1d551aa97dbca  extension/ezjscore/classes/ezjscserverfunctionspublishingqueue.php
 b6a8d8c527a374f1927de93c35dc44d0  extension/ezjscore/classes/ezjscserverrouter.php
@@ -5603,7 +5603,7 @@ a8f236b033308a59d6b884709d19d67e  kernel/private/classes/views/collaboration/gro
 6b1638146130dbee11842d94c7a2b525  kernel/private/classes/views/collaboration/item.php
 19ae411e65b94854c991daf6fe02d2dd  kernel/private/classes/views/collaboration/view.php
 c7ce945ff20429be1d975aba8de6c868  kernel/private/classes/views/content/action.php
-3c21e3ff8a3501078da35d926a36b6c3  kernel/private/classes/views/content/advancedsearch.php
+61005256583b700261be903948493e07  kernel/private/classes/views/content/advancedsearch.php
 66a77a2383215f4025c68c022435de28  kernel/private/classes/views/content/bookmark.php
 06f21be135d5e53e5cb5c58378ecc030  kernel/private/classes/views/content/browse.php
 667385c683f0777a6a3c8212b5ee0234  kernel/private/classes/views/content/collectedinfo.php
@@ -5631,7 +5631,7 @@ f9c430c252eb94b8b5efdea21168d97e  kernel/private/classes/views/content/removenod
 84f0fd52974fc2981cd69ccbb70fbe60  kernel/private/classes/views/content/removeobject.php
 0532c6bf42a37a33462247c62b31155d  kernel/private/classes/views/content/restore.php
 c75e831d1d57e3a1709fb41a3c094441  kernel/private/classes/views/content/reverserelatedlist.php
-ec0f48d257992d71464c3a73a2698f90  kernel/private/classes/views/content/search.php
+f46d1ba4ea8bf971c6021f371ae47f75  kernel/private/classes/views/content/search.php
 ea6d82cea689a55292679f82eaff72a7  kernel/private/classes/views/content/subitemsexport.php
 e7f6b7b2a1cb6cc5b80c5da35be68003  kernel/private/classes/views/content/tipafriend.php
 8633e40b09f4a5a11c208e5424129bad  kernel/private/classes/views/content/translation.php
@@ -6446,7 +6446,7 @@ ebc1c25ced143cfaaa5d343350676ecc  settings/override.ini
 122b02cc3dab8b41bbbce96df60e2642  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-5f0a0b9674416cc67cf6d47449135369  settings/site.ini
+db401160ff72340fb03fe725eab8ebe1  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -6986,14 +6986,14 @@ dd5f5f3cf2348a6cc17bd0ee76983225  share/translations/dut-NL/translation.ts
 284321a9de29bf9268c27abb13f56f2c  share/translations/ell-GR/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-AU/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-NZ/translation.ts
-713145af9f09a51fd6cb96c4ea9f0267  share/translations/eng-US/translation.ts
+c2deec3efc945a070a3f4dd4960666f8  share/translations/eng-US/translation.ts
 5f0920d5b4e8bbaff2a4a6d5b3995c90  share/translations/esl-ES/translation.ts
 27846e3f6408cd74f58cef8adcbab573  share/translations/esl-MX/translation.ts
 4b104d4d337601b4bc6ae0482e6478ea  share/translations/fin-FI/translation.ts
 edfd3efb7eca1e2bd6d6d7d08bd78a77  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-b024d153da9a5f131a3dce8ad81f9bee  share/translations/ger-DE/translation.ts
+5c779d4b0481ad8eccc73126f0f9704c  share/translations/ger-DE/translation.ts
 75d657fed5de11db9e059cdcff2046a8  share/translations/ita-IT/translation.ts
 a45e2d26b1c24ac4cb6ae1d7197e5b0e  share/translations/jpn-JP/translation.ts
 d1dc34034ddce2d64c4f8df7fcc41c85  share/translations/nno-NO/translation.ts
@@ -7084,6 +7084,7 @@ a33e9d573eb8e846797e949212bf192e  tests/tests/design/AdminNoticesTest.php
 0c55571a81de40303f49848a033d4661  tests/tests/design/AdminPageHeaderTest.php
 6ff0ec39508251b32aa19593c39780e4  tests/tests/design/AdminPreferencesTest.php
 7e8957a9c15916135defa02bc8301d00  tests/tests/design/AdminRetiredClassesTest.php
+fba3ae0ecf105bfaa378adaaf45cb2f7  tests/tests/design/AdminSearchTest.php
 d9f6fa3adb8c971a1011eeb017f059f9  tests/tests/design/AdminStylingRulesTest.php
 850f08505510556f8649d66b26af8a93  tests/tests/design/AdminThemeSwitchTest.php
 d3aa163841a3b7ef9a8ce4048f7b1980  tests/tests/design/AdminTimelineTest.php
@@ -7187,6 +7188,7 @@ b977ef5a409ff4c1d2e4c734c839d6e3  tests/tests/extension/expservices/users/expUse
 c2d1d9f4d1d3bfd48c427cac7ccaace7  tests/tests/extension/expservices/users/expUsersTestCase.php
 815c9c214d99424bb693376c627ac29b  tests/tests/extension/ezjscore/ezjscServerFunctionsAjaxUploaderAltTextTest.php
 df797f976ce5f225fe73f393ff910b74  tests/tests/extension/ezjscore/ezjscServerFunctionsAjaxUploaderImageTest.php
+ba7bac081c98f9d9dac6f69022b6757c  tests/tests/extension/ezjscore/ezjscServerFunctionsJsSearchIDsTest.php
 3ef20c0512a951483e7cb7761a9f87f7  tests/tests/extension/ezjscore/ezjscServerFunctionsJsSearchSortByTest.php
 1045d4d1d9f875ee35726dfa45431264  tests/tests/extension/ezjscore/ezjscServerRouterPolicyTest.php
 d5ef0a34d06298d2da7f951273c12e1d  tests/tests/extension/ezjscore/ezjscoreCallThrowableTest.php
@@ -7773,6 +7775,7 @@ bf4805eef66167c3d4a3a93b22e382b3  tests/tests/kernel/datatypes/ezxmltext/handler
 21a4686e433489cd944c809a0d2cd307  tests/tests/kernel/error/ErrorHeaderListTest.php
 7d433742c2df5b0ba02948a6f228f0e8  tests/tests/kernel/private/autoload/eZAutoloadGeneratorTest.php
 aacd59cd6ae767b5d328aefe72aec97e  tests/tests/kernel/private/classes/ContentSearchPathPrefixSubTreeTest.php
+fd25752e6c58a08fc76704298f7a00c6  tests/tests/kernel/private/classes/ContentSearchRequestTest.php
 e2866895244944ed9c19f75a4b7d748f  tests/tests/kernel/private/classes/expUpgradeCheckReportsTest.php
 0133feca9084b5d356221439d79d6841  tests/tests/kernel/private/classes/ezpExtensionInfoTest.php
 5277128e032a8ba916fd550e97672c58  tests/tests/kernel/private/classes/ezpFormTokenRefusalTest.php
