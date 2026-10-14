@@ -1,7 +1,8 @@
 {* admin4: admin3's stylesheets, then admin4.css -- the admin4 look -- and the shared components and module stylesheets (design.ini AdminComponentCSSFileList), before the extensions' own stylesheets, so an extension keeps the last word on its own markup. *}
 {* Light, dark or system mode, before anything is drawn: html[data-a4-theme] (light|dark, what the stylesheets read)
    and html[data-a4-theme-choice] (light|dark|system, what the switch shows) from this browser's choice
-   (localStorage "exp-admin4-theme"), light by default; "system" follows prefers-color-scheme, also when the system
+   (the signed-in user's eZPreference admin_color_mode, written on <html> as data-a4-theme-pref; localStorage
+   "exp-admin4-theme" for anonymous pages and before the first choice), light by default; "system" follows prefers-color-scheme, also when the system
    changes while the page is open. The header's #a4-theme-toggle steps light -> dark -> system -> light and stores
    the step; its name says the mode in use ("Colour mode: …", data-label-*), its title the next step
    (data-title-*), and #a4-theme-status announces a press. A switch without data-label-system (an older copy of
@@ -16,7 +17,21 @@
     var mq = window.matchMedia ? window.matchMedia( '(prefers-color-scheme: dark)' ) : null;
     var w = root.getAttribute('data-a4-left-width');
     if (w && /^\d{2,4}(\.\d+)?px$/.test(w)) root.style.setProperty('--left-sidebar-width', w);
-    function stored() { try { return window.localStorage.getItem(KEY); } catch (e) { return null; } }
+    // a signed-in user's choice is the eZPreference admin_color_mode (data-a4-theme-pref on <html>, empty before the
+    // first choice); the browser's storage is the fallback for anonymous pages and the first visit
+    function stored() {
+        var pref = root.getAttribute('data-a4-theme-pref');
+        if (pref) return pref;
+        try { return window.localStorage.getItem(KEY); } catch (e) { return null; }
+    }
+    function save(next) {
+        try { window.localStorage.setItem(KEY, next); } catch (e) {}
+        if (!root.hasAttribute('data-a4-theme-pref')) return;
+        root.setAttribute('data-a4-theme-pref', next);
+        var t = document.getElementById('ezxform_token_js'), token = t ? t.getAttribute('title') : '';
+        if (window.jQuery && jQuery.ez && token)
+            jQuery.post(jQuery.ez.url.replace('ezjscore/', 'user/preferences/') + 'set_and_exit/admin_color_mode/' + next, { ezxform_token: token });
+    }
     function choiceOf(value) { return value === 'dark' || value === 'system' ? value : 'light'; }
     function apply(value) {
         var choice = choiceOf(value);
@@ -49,7 +64,7 @@
             if (choice === 'light') next = 'dark';
             else if (choice === 'dark' && b.hasAttribute('data-label-system')) next = 'system';
             else next = 'light';
-            try { window.localStorage.setItem(KEY, next); } catch (e) {}
+            save(next);
             apply(next);
             announce(b);
         });

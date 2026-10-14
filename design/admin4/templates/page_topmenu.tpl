@@ -30,7 +30,7 @@
     <div id="header-search" class="header-search">
         {include uri='design:page_search.tpl'}
     </div>
-    {* admin4: light, dark or system mode; the button names the mode in use and steps to the next; a status region announces a press. The choice is kept in this browser (localStorage "exp-admin4-theme"); the
+    {* admin4: light, dark or system mode; the button names the mode in use and steps to the next; a status region announces a press. The choice is the user's eZPreference admin_color_mode (this browser's localStorage "exp-admin4-theme" when anonymous); the
        script at the top of page_head_style.tpl applies it before the page is drawn and wires this button. *}
     <div id="header-theme" class="header-theme">
         <button type="button" id="a4-theme-toggle" class="a4-theme-toggle"

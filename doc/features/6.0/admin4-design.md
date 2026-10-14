@@ -47,8 +47,10 @@ extension). The editor siteaccess falls back to `admin4` first, then `admin3`, `
   page, white cards. The header switch steps light -> dark -> system; "system" follows the operating system's
   setting (`prefers-color-scheme`), also when it changes while the page is open. The switch's icon (sun, moon, half
   circle) and its accessible name say the mode in use ("Colour mode: light/dark/system"); its title names the next
-  step ("Switch to dark mode"), and a status region announces a press. The choice is kept in the
-  browser (`localStorage` "exp-admin4-theme": light, dark or system) and applied before the page is drawn; without a
+  step ("Switch to dark mode"), and a status region announces a press. The choice is the signed-in
+  user's eZPreference `admin_color_mode` (light, dark or system; written on `<html>` as `data-a4-theme-pref`), so it
+  follows the user from browser to browser; an anonymous page keeps it in `localStorage` "exp-admin4-theme". It is
+  applied before the page is drawn; without a
   stored choice the admin is light, as before. `html[data-a4-theme]` stays light or dark for the stylesheets,
   `html[data-a4-theme-choice]` carries the chosen mode. A copy of the switch without `data-label-system` (an
   extension's own header) keeps stepping between light and dark. Other open admin tabs follow the change.
