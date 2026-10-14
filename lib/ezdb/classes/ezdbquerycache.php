@@ -62,11 +62,14 @@ class eZDBQueryCache
     public static $stats = array( 'hits' => 0, 'misses' => 0, 'stores' => 0, 'uncacheable' => 0, 'writes' => 0 );
 
     /**
-     * @var array|null what this request's debug report shows beyond $stats, null
-     * until the first statement with the debug output on: database time the hits
-     * saved (ms, from the duration recorded with each entry), hits on entries
-     * without it, why statements were not cached, the writes that made
-     * everything stale, and whether the state timing point was set.
+     * @var array|null this request's debug report, null until the first
+     * statement with the debug output on, started again after eZDebug::reset()
+     * (see debugBegin()): its own counters (hit, miss, store, skip, write: the
+     * request's $stats are zeroed by flushStats() whenever Setup > System
+     * information asks), the database time the hits saved (ms, from the
+     * duration recorded with each entry), hits on entries without it, why
+     * statements were not cached, the writes that made everything stale, and
+     * whether the state timing point was set. resetRequest() drops it.
      */
     protected static $debug = null;
 
@@ -144,7 +147,9 @@ class eZDBQueryCache
         if ( !self::enabled() )
             return null;
         self::registerFlush();
-        $debugStart = self::debugStart();
+        // eZDebug::isDebugEnabled() inlined: with the debug output off, this test is all the
+        // debug report costs a statement (no call; measured ~150 ns a lookup with two calls)
+        $debugStart = empty( $GLOBALS['eZDebugEnabled'] ) ? null : self::debugStart();
         if ( ( $db->TransactionCounter ?? 0 ) > 0 )
         {
             self::debugSkip( 'inside a transaction', $debugStart );
@@ -175,7 +180,7 @@ class eZDBQueryCache
                     self::$debug['saved_ms'] += $entry['ms'];
                 else
                     self::$debug['hits_unmeasured']++;
-                self::debugTime( 'querycache_hit', 'Hits', $debugStart );
+                self::debugTime( 'hit', $debugStart );
             }
             return null;
         }
@@ -207,7 +212,7 @@ class eZDBQueryCache
         }
         self::$stats['misses']++;
         if ( $debugStart !== null )
-            self::debugTime( 'querycache_miss', 'Misses (lookup only)', $debugStart );
+            self::debugTime( 'miss', $debugStart );
         return array( $key, $tables, microtime( true ) );
     }
 
@@ -258,7 +263,7 @@ class eZDBQueryCache
         if ( $ticket === null || !is_array( $rows ) )
             return;
         list( $key, $tables, $started ) = $ticket;
-        $debugStart = self::debugStart();
+        $debugStart = empty( $GLOBALS['eZDebugEnabled'] ) ? null : self::debugStart();
         if ( count( $rows ) > self::settings()['maxRows'] )
         {
             self::debugSkip( 'more rows than MaxRows', $debugStart );
@@ -278,7 +283,7 @@ class eZDBQueryCache
             @apcu_store( 'ezqc:' . $key, $entry, self::settings()['maxAge'] );
         self::$stats['stores']++;
         if ( $debugStart !== null )
-            self::debugTime( 'querycache_store', 'Stores', $debugStart );
+            self::debugTime( 'store', $debugStart );
     }
 
     /** Whether an entry is current: nothing it read was written since its query started. */
@@ -301,34 +306,51 @@ class eZDBQueryCache
 
     /**
      * The start time for a debug accumulator, or null when the debug output is
-     * off or querycache.ini [DebugSettings] Report=disabled. The first call of a
-     * request with the debug output on registers the report at the bottom of it.
+     * off or querycache.ini [DebugSettings] Report=disabled. With the debug
+     * output off the callers do not call it: they test the global eZDebug::isDebugEnabled() reads first.
+     *
+     * The first call of a request with the debug output on, and the first one
+     * after eZDebug::reset() (a worker between two jobs: the reset dropped the
+     * report and the accumulators), starts the report of that request or job.
      *
      * @return float|null
      */
     protected static function debugStart()
     {
-        if ( self::$debug === null )
+        if ( self::$debug === null || !isset( eZDebug::instance()->bottomReportsList['Query cache'] ) )
         {
             if ( !class_exists( 'eZDebug', false ) || !eZDebug::isDebugEnabled() || !( self::settings()['report'] ?? true ) )
                 return null;
-            self::$debug = array( 'saved_ms' => 0.0, 'hits_unmeasured' => 0, 'skipped' => array(), 'stale' => array(),
-                                  'stale_more' => 0, 'state_point' => false );
-            eZDebug::createAccumulatorGroup( 'querycache_total', 'Query cache' );
-            eZDebug::appendBottomReport( 'Query cache', array( __CLASS__, 'debugReport' ) );
-        }
-        elseif ( !isset( eZDebug::instance()->bottomReportsList['Query cache'] ) )
-        {
-            // eZDebug::reset() (a worker between two jobs) dropped the report and the accumulators
-            eZDebug::createAccumulatorGroup( 'querycache_total', 'Query cache' );
-            eZDebug::appendBottomReport( 'Query cache', array( __CLASS__, 'debugReport' ) );
+            self::debugBegin();
         }
         return microtime( true );
     }
 
-    /** Adds the time since $started to an accumulator of the group "Query cache". */
-    protected static function debugTime( $key, $name, $started )
+    /**
+     * Starts the debug report of a request or job: empty counters, the
+     * accumulator group and the bottom report registered with eZDebug, and the
+     * timing point due again with the next look at the state.
+     */
+    protected static function debugBegin()
     {
+        self::$debug = array( 'count' => array( 'hit' => 0, 'miss' => 0, 'store' => 0, 'skip' => 0, 'write' => 0 ),
+                              'saved_ms' => 0.0, 'hits_unmeasured' => 0, 'skipped' => array(), 'stale' => array(),
+                              'stale_more' => 0, 'state_point' => false );
+        eZDebug::createAccumulatorGroup( 'querycache_total', 'Query cache' );
+        eZDebug::appendBottomReport( 'Query cache', array( __CLASS__, 'debugReport' ) );
+    }
+
+    /** The accumulators of the group "Query cache": debug counter => accumulator key and name. */
+    const DEBUG_ACCUMULATORS = array( 'hit' => array( 'querycache_hit', 'Hits' ),
+                                      'miss' => array( 'querycache_miss', 'Misses (lookup only)' ),
+                                      'store' => array( 'querycache_store', 'Stores' ),
+                                      'skip' => array( 'querycache_skip', 'Not cached' ) );
+
+    /** Counts one statement as $what (hit, miss, store, skip) and adds the time since $started to its accumulator. */
+    protected static function debugTime( $what, $started )
+    {
+        self::$debug['count'][$what]++;
+        list( $key, $name ) = self::DEBUG_ACCUMULATORS[$what];
         $debug = eZDebug::instance();
         if ( !isset( $debug->TimeAccumulatorList[$key] ) )
             eZDebug::createAccumulator( $key, 'querycache_total', $name );
@@ -342,28 +364,89 @@ class eZDBQueryCache
         if ( $started === null )
             return;
         self::$debug['skipped'][$reason] = ( self::$debug['skipped'][$reason] ?? 0 ) + 1;
-        self::debugTime( 'querycache_skip', 'Not cached', $started );
+        self::debugTime( 'skip', $started );
     }
 
-    /** Remembers a write that makes every result stale, for the debug report. */
-    protected static function debugStale( $sql )
+    /** Counts a write, and remembers one that makes every result stale ($everything), for the debug report. */
+    protected static function debugWrite( $sql, $everything )
     {
-        if ( self::debugStart() === null )
+        if ( empty( $GLOBALS['eZDebugEnabled'] ) || self::debugStart() === null )
+            return;
+        self::$debug['count']['write']++;
+        if ( !$everything )
             return;
         if ( count( self::$debug['stale'] ) >= self::DEBUG_MAX_STALE_STATEMENTS )
         {
             self::$debug['stale_more']++;
             return;
         }
-        // String literals masked: values from requests and content stay out of the report
-        $text = preg_replace( "/'(?:[^']++|'')*+'/", "'?'", preg_replace( '/\s+/', ' ', trim( (string)$sql ) ) );
+        // Literals masked: values from requests and content stay out of the
+        // report. Only the start is masked: an unterminated literal is masked
+        // to the end, so cutting the text first hides nothing it would show.
+        $text = preg_replace( '/\s+/', ' ', trim( self::maskLiterals( substr( (string)$sql, 0, 4096 ) ) ) );
         self::$debug['stale'][] = strlen( $text ) > 200 ? substr( $text, 0, 200 ) . ' ...' : $text;
     }
 
     /**
-     * The bottom report of the debug output: this request's counters, the
-     * database time the hits saved, why statements were not cached and which
-     * writes made everything stale.
+     * $sql with every string literal replaced by '?'. Where a literal ends
+     * depends on the database: SQL-standard quoting doubles a quote inside it
+     * ('it''s', Oracle, PostgreSQL, SQLite), MySQL also escapes it with a
+     * backslash ('it\'s', what eZDBInterface::escapeString() writes there), and
+     * a backslash before the closing quote ('C:\') ends a standard literal but
+     * not a MySQL one. Both readings are masked, and so is everything from an
+     * unterminated quote to the end: no part of a literal shows under either.
+     * Double-quoted text (an identifier, except in MySQL without ANSI_QUOTES)
+     * is left as it is.
+     *
+     * @param string $sql
+     * @return string
+     */
+    public static function maskLiterals( $sql )
+    {
+        $sql = (string)$sql;
+        if ( strpos( $sql, "'" ) === false )
+            return $sql;
+        $ranges = array();
+        foreach ( array( "/'(?:[^']++|'')*+(?:'|$)/", "/'(?:[^'\\\\]++|''|\\\\.?)*+(?:'|$)/s" ) as $pattern )
+        {
+            if ( preg_match_all( $pattern, $sql, $m, PREG_OFFSET_CAPTURE ) )
+            {
+                foreach ( $m[0] as $hit )
+                    $ranges[] = array( $hit[1], $hit[1] + strlen( $hit[0] ) );
+            }
+        }
+        sort( $ranges );
+        $out = '';
+        $pos = 0;
+        $end = -1;
+        foreach ( $ranges as $range )
+        {
+            if ( $range[0] < $end )
+            {
+                $end = max( $end, $range[1] );
+                continue;
+            }
+            if ( $end >= 0 )
+            {
+                $out .= "'?'";
+                $pos = $end;
+            }
+            $out .= substr( $sql, $pos, $range[0] - $pos );
+            $end = $range[1];
+        }
+        if ( $end >= 0 )
+        {
+            $out .= "'?'";
+            $pos = $end;
+        }
+        return $out . substr( $sql, $pos );
+    }
+
+    /**
+     * The bottom report of the debug output: this request's (or, after
+     * eZDebug::reset(), this job's) counters, the database time the hits
+     * saved, why statements were not cached and which writes made everything
+     * stale.
      *
      * @param bool $as_html
      * @return string
@@ -372,26 +455,26 @@ class eZDBQueryCache
     {
         if ( self::$debug === null )
             return '';
-        $st = self::$stats;
-        $looked = $st['hits'] + $st['misses'];
-        $state = self::state();
+        $d = self::$debug;
+        $looked = $d['count']['hit'] + $d['count']['miss'];
+        $mode = self::settings()['mode'];
         $rows = array(
-            'Mode' => self::settings()['mode'] . ( self::apcuUsable() || self::settings()['mode'] !== 'shared' ? '' : ' (no APCu: works as request)' ),
-            'Generation' => (int)$state['generation'],
-            'Hits' => $st['hits'],
-            'Misses' => $st['misses'],
-            'Hit rate' => $looked > 0 ? round( 100 * $st['hits'] / $looked, 1 ) . ' %' : '-',
-            'Stored' => $st['stores'],
-            'Not cached' => array_sum( self::$debug['skipped'] ),
-            'Writes' => $st['writes'],
-            'Database time saved (estimated)' => round( self::$debug['saved_ms'], 1 ) . ' ms'
-                . ( self::$debug['hits_unmeasured'] ? ' (+ ' . self::$debug['hits_unmeasured'] . ' hits on entries without a duration)' : '' ),
+            'Mode' => $mode . ( $mode === 'shared' && !self::apcuUsable() ? ' (no APCu: works as request)' : '' ),
+            'Generation' => (int)self::state()['generation'],
+            'Hits' => $d['count']['hit'],
+            'Misses' => $d['count']['miss'],
+            'Hit rate' => $looked > 0 ? round( 100 * $d['count']['hit'] / $looked, 1 ) . ' %' : '-',
+            'Stored' => $d['count']['store'],
+            'Not cached' => $d['count']['skip'],
+            'Writes' => $d['count']['write'],
+            'Database time saved (estimated)' => round( $d['saved_ms'], 1 ) . ' ms'
+                . ( $d['hits_unmeasured'] ? ' (+ ' . $d['hits_unmeasured'] . ' hits on entries without a duration)' : '' ),
         );
-        foreach ( self::$debug['skipped'] as $reason => $n )
+        foreach ( $d['skipped'] as $reason => $n )
             $rows['Not cached: ' . $reason] = $n;
-        $stale = self::$debug['stale'];
-        if ( self::$debug['stale_more'] )
-            $stale[] = '... and ' . self::$debug['stale_more'] . ' more';
+        $stale = $d['stale'];
+        if ( $d['stale_more'] )
+            $stale[] = '... and ' . $d['stale_more'] . ' more';
 
         if ( !$as_html )
         {
@@ -402,14 +485,18 @@ class eZDBQueryCache
                 $out .= 'Made everything stale: ' . $sql . "\n";
             return $out;
         }
-        $h = function ( $v ) { return htmlspecialchars( (string)$v, ENT_QUOTES, 'UTF-8' ); };
         $out = '<div id="querycachereport"><h3>Query cache:</h3>'
              . '<table id="querycache" class="debug_resource_usage" title="SQL query cache of this request">';
         foreach ( $rows as $label => $value )
-            $out .= '<tr class="data"><td>' . $h( $label ) . '</td><td>' . $h( $value ) . '</td></tr>';
+            $out .= '<tr class="data"><td>' . self::html( $label ) . '</td><td>' . self::html( $value ) . '</td></tr>';
         foreach ( $stale as $sql )
-            $out .= '<tr class="data"><td>Made everything stale</td><td>' . $h( $sql ) . '</td></tr>';
+            $out .= '<tr class="data"><td>Made everything stale</td><td>' . self::html( $sql ) . '</td></tr>';
         return $out . '</table></div>';
+    }
+
+    protected static function html( $value )
+    {
+        return htmlspecialchars( (string)$value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8' );
     }
 
     // ── Writes ───────────────────────────────────────────────────────────
@@ -429,7 +516,7 @@ class eZDBQueryCache
         if ( preg_match( '/^\s*DECLARE\b/i', $sql ) || preg_match( '/^\s*BEGIN\b.*\bEND\b\s*;?\s*$/is', $sql ) )
         {
             self::$stats['writes']++;
-            self::debugStale( $sql );
+            self::debugWrite( $sql, true );
             if ( ( $db->TransactionCounter ?? 0 ) > 0 )
                 self::$pending['*'] = true;
             else
@@ -459,8 +546,7 @@ class eZDBQueryCache
             return;
         self::$stats['writes']++;
         $tables = self::writtenTables( $sql );
-        if ( $tables === null )
-            self::debugStale( $sql );
+        self::debugWrite( $sql, $tables === null );
         if ( $tables !== null )
         {
             $tables = array_values( array_filter( $tables, function ( $t ) { return !self::isTemporary( $t ); } ) );
@@ -600,11 +686,13 @@ class eZDBQueryCache
             $s = $raw === false ? false : @unserialize( $raw, array( 'allowed_classes' => false ) );
             self::$state = is_array( $s ) ? $s : array( 'generation' => 1, 'genTime' => 0, 'tables' => array() );
             self::$stateRead = $now;
-            if ( self::$debug !== null && !self::$debug['state_point'] )
-            {
-                self::$debug['state_point'] = true;
-                eZDebug::addTimingPoint( 'Query cache: state read (generation ' . (int)self::$state['generation'] . ')' );
-            }
+        }
+        // Once per debug report: the first look at the state of a request, or of
+        // a job after eZDebug::reset(), also when the state read just before is still current.
+        if ( self::$debug !== null && !self::$debug['state_point'] )
+        {
+            self::$debug['state_point'] = true;
+            eZDebug::addTimingPoint( 'Query cache: state read (generation ' . (int)self::$state['generation'] . ')' );
         }
         return self::$state;
     }
