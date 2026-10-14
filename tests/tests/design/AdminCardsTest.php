@@ -37,7 +37,8 @@ class AdminCardsTest extends PHPUnit\Framework\TestCase
         $y = 'var(--a4-card-pad-y, var(--a4-space-3))';
         $this->assertMatchesRegularExpression( '/\.a4-card-foot \{[^}]*margin: var\(--a4-space-3\) calc\(-1 \* ' . preg_quote( $x, '/' ) . '\) calc\(-1 \* ' . preg_quote( $y, '/' ) . '\);[^}]*padding: var\(--a4-space-3\) ' . preg_quote( $x, '/' ) . ';/', $css );
         $this->assertStringContainsString( '.a4-card.is-flush > .a4-card-head { padding: ' . $y . ' ' . $x . ';', $css );
-        $this->assertStringNotContainsString( '--a4-card-pad-x:', $css, 'the density setting defines the card padding tokens, not the card component' );
+        // the density setting (normal and compact) defines the card padding tokens; the card component only reads them
+        $this->assertSame( 2, substr_count( $css, '--a4-card-pad-x:' ), 'the density setting defines the card padding tokens, not the card component' );
     }
 
     public function testTheLinkCardRingsTheCardAndKeepsOtherControlsClickable()
@@ -56,7 +57,7 @@ class AdminCardsTest extends PHPUnit\Framework\TestCase
         $css = self::css( 'admin4' );
         $this->assertStringContainsString( 'animation: a4-card-busy', $css );
         // the state needs aria-busy too, and the veil lies above the controls a link card lifts (z-index 1)
-        $this->assertMatchesRegularExpression( '/\.a4-card\.is-busy\[aria-busy="true"\]::after \{[^}]*z-index: 2;/', $css );
+        $this->assertMatchesRegularExpression( '/\.a4-card\.is-busy\[aria-busy="true"\]::after \{[^}]*z-index: var\(--a4-z-card-veil\);/', $css );
         $this->assertStringNotContainsString( '.a4-card.is-busy::', $css );
         $this->assertMatchesRegularExpression( '/@media \(prefers-reduced-motion: reduce\) \{\s*\.a4-card\.is-busy\[aria-busy="true"\]::before \{ animation: none;/', $css );
         $this->assertMatchesRegularExpression( '/@media \(forced-colors: active\) \{\s*\.a4-card\.is-busy\[aria-busy="true"\]::before/', $css );

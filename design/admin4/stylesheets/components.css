@@ -129,6 +129,8 @@
      overlay, modal the dimming mask and the dialog on it, above everything of the frame
      toast         short-lived notices, above a dialog */
   --a4-z-raised: 2;
+  --a4-z-card-veil: 2;      /* the busy veil of a card, over the controls a link card lifts (1) */
+  --a4-z-card-spinner: 3;   /* its spinner, over the veil */
   --a4-z-sticky: 5;
   --a4-z-frame-grip: 9;
   --a4-z-frame-control: 11;
@@ -557,12 +559,16 @@ html[data-a4-theme="dark"] {
 /* .a4-card.is-link: the whole card follows the link in its title (the link's ::after covers the card). Other links,
    buttons and fields in the card body or foot are lifted above that layer and stay clickable; plain text under the
    layer cannot be selected with the mouse, so put no text there that people copy. Where the browser has :has(), the
-   focus ring is drawn around the card instead of the title text; elsewhere the title link keeps its own ring. */
+   focus ring is drawn around the card instead of the title text; elsewhere the title link keeps its own ring. The
+   title holds exactly one link, the card's; its text is the link's whole accessible name (the body is not part of
+   it), so never wrap a card in <a>. Controls in the head's subtitle and buttons in the title are lifted too. */
 .a4-card.is-link { position: relative; }
 .a4-card.is-link .a4-card-title a::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
 .a4-card.is-link .a4-card-body :is(a, button, input, select, textarea, label),
 .a4-card.is-link .a4-card-foot :is(a, button, input, select, textarea, label),
-.a4-card.is-link .a4-card-actions :is(a, button, input, select, textarea, label) { position: relative; z-index: 1; }
+.a4-card.is-link .a4-card-actions :is(a, button, input, select, textarea, label),
+.a4-card.is-link .a4-card-head > p :is(a, button),
+.a4-card.is-link .a4-card-title :is(button, input, select) { position: relative; z-index: 1; }
 .a4-card.is-link:hover { border-color: var(--a4-line-strong); }
 @supports selector(:has(*)) {
   .a4-card.is-link .a4-card-title a:focus-visible { outline-color: transparent; }
@@ -579,7 +585,7 @@ html[data-a4-theme="dark"] {
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  z-index: 2;
+  z-index: var(--a4-z-card-veil);
   background-color: color-mix(in srgb, var(--a4-card) 70%, transparent);
   cursor: progress;
 }
@@ -588,7 +594,7 @@ html[data-a4-theme="dark"] {
   position: absolute;
   top: 50%;
   left: 50%;
-  z-index: 3;
+  z-index: var(--a4-z-card-spinner);
   width: var(--a4-space-5);
   height: var(--a4-space-5);
   margin: calc(-0.5 * var(--a4-space-5)) 0 0 calc(-0.5 * var(--a4-space-5));

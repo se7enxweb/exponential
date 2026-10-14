@@ -147,6 +147,7 @@ number (0, 1 and -1 for order inside one component excepted). Theme-independent,
 | `--a4-z-toast` | 1080 | short-lived notices |
 | `--a4-z-drag` / `--a4-z-drag-mask` | 9000 / 9500 | column drag and resize proxies of the data tables |
 | `--a4-z-skip-link` | 10000 | the skip link while it is focused, over everything |
+| `--a4-z-card-veil` / `--a4-z-card-spinner` | 2 / 3 | the busy veil of a card and its spinner, inside the card |
 
 Inside a parent with its own stacking context (the fixed header, a transformed card) a token only orders against that
 parent's children. `AdminStylingRulesTest::testStackingComesFromTheLayerTokens` fails on any other z-index and on a
@@ -194,7 +195,11 @@ and head actions stay clickable, but plain text under the link layer cannot be s
 people copy; where the browser has `:has()` the focus ring goes around the card, elsewhere around the title link.
 `.is-busy` works together with `aria-busy="true"` on the same element and veils the card with a spinner while its
 content loads or is saved; the veil stops only the pointer, so the script that sets it also sets `inert` on the card
-(or disables its controls) and removes both afterwards. `tests/tests/design/AdminCardsTest.php` checks the parts and
+(or disables its controls) and removes both afterwards. `aria-busy` alone announces nothing: use
+`window.a4CardBusy( card, on, message )` (admin4.js), which sets and removes `aria-busy` and `inert` together and
+puts the message ("Saving...", then the result) in a polite live region outside the card. The title of a link card
+holds exactly one link, whose text is the card's accessible name; never wrap a card in `<a>`.
+`tests/tests/design/AdminCardsTest.php` checks the parts and
 that no admin4 card opens with a section head.
 
 States are `.is-*` classes on the component. Each component is one class plus at most an element or a state, so a

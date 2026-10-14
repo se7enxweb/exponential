@@ -185,3 +185,35 @@
         window.jQuery.fx.off = true;
     }
 }());
+
+/*
+ * window.a4CardBusy( card, on, message ): the busy state of an .a4-card.is-busy, complete. On: aria-busy="true",
+ * inert (the keyboard cannot act on what is being saved) and, when given, a short message ("Saving...") in a polite
+ * live region outside the card, so a screen reader hears why the focus left the card. Off: all of it removed, and a
+ * second message (the result) can be given the same way. The region is created once, hidden, at the end of the body.
+ */
+(function () {
+    'use strict';
+    function region() {
+        var r = document.getElementById('a4-busy-status');
+        if (!r) {
+            r = document.createElement('div');
+            r.id = 'a4-busy-status';
+            r.className = 'a4-sr-only';
+            r.setAttribute('role', 'status');
+            document.body.appendChild(r);
+        }
+        return r;
+    }
+    window.a4CardBusy = function (card, on, message) {
+        if (!card) return;
+        if (on) {
+            card.setAttribute('aria-busy', 'true');
+            card.setAttribute('inert', '');
+        } else {
+            card.removeAttribute('aria-busy');
+            card.removeAttribute('inert');
+        }
+        if (message) region().textContent = String(message);
+    };
+})();
