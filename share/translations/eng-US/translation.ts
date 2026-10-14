@@ -4576,6 +4576,10 @@
         <source>version %version</source>
         <translation>version %version</translation>
     </message>
+    <message>
+        <source>Item</source>
+        <translation>Item</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/pendinglist</name>
@@ -6146,6 +6150,30 @@
         <source>to</source>
         <translation>to</translation>
     </message>
+    <message>
+        <source>%count below it</source>
+        <translation>%count below it</translation>
+    </message>
+    <message>
+        <source>%items items in the trash: %top removed directly, %below below them. Oldest: %oldest.</source>
+        <translation>%items items in the trash: %top removed directly, %below below them. Oldest: %oldest.</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Who trashed an item is recorded from this version on: known for %recorded.</source>
+        <translation>Who trashed an item is recorded from this version on: known for %recorded.</translation>
+    </message>
+    <message>
+        <source>by %name</source>
+        <translation>by %name</translation>
+    </message>
+    <message>
+        <source>last modified by %name</source>
+        <translation>last modified by %name</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/upload</name>
@@ -7093,6 +7121,22 @@
         <source>%count selected.</source>
         <translation>%count selected.</translation>
     </message>
+    <message>
+        <source>A URL wildcard sends a whole group of addresses somewhere else with one rule: news/* to articles/{1\} turns news/2026/october into articles/2026/october. Each * of the pattern matches any text, and {1\}, {2\} ... in the destination put that text back. Wildcards are tried in the order they were created, the first that matches is used, and they are only consulted when no URL alias matches the address.</source>
+        <translation>A URL wildcard sends a whole group of addresses somewhere else with one rule: news/* to articles/{1\} turns news/2026/october into articles/2026/october. Each * of the pattern matches any text, and {1\}, {2\} ... in the destination put that text back. Wildcards are tried in the order they were created, the first that matches is used, and they are only consulted when no URL alias matches the address.</translation>
+    </message>
+    <message>
+        <source>Create one with the form above, for example old-blog/* to blog/{1\}.</source>
+        <translation>Create one with the form above, for example old-blog/* to blog/{1\}.</translation>
+    </message>
+    <message>
+        <source>Each * of the pattern is one placeholder, numbered from {1\}. Add a * to the pattern or remove the placeholder; otherwise visitors would be sent to an address with a part missing.</source>
+        <translation>Each * of the pattern is one placeholder, numbered from {1\}. Add a * to the pattern or remove the placeholder; otherwise visitors would be sent to an address with a part missing.</translation>
+    </message>
+    <message>
+        <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
+        <translation>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -7115,6 +7159,18 @@
     <message>
         <source>Untouched draft</source>
         <translation>Untouched draft</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Queued</translation>
+    </message>
+    <message>
+        <source>Rejected</source>
+        <translation>Rejected</translation>
+    </message>
+    <message>
+        <source>Repeat</source>
+        <translation>Repeat</translation>
     </message>
 </context>
 <context>
@@ -7250,6 +7306,22 @@
     <message>
         <source>Preview of the version</source>
         <translation>Preview of the version</translation>
+    </message>
+    <message>
+        <source>Open the preview in a new window</source>
+        <translation>Open the preview in a new window</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Queued</translation>
+    </message>
+    <message>
+        <source>Repeat</source>
+        <translation>Repeat</translation>
+    </message>
+    <message>
+        <source>Untouched draft</source>
+        <translation>Untouched draft</translation>
     </message>
 </context>
 <context>
@@ -7724,6 +7796,14 @@
     <message>
         <source>What you can do</source>
         <translation>What you can do</translation>
+    </message>
+    <message>
+        <source>The &quot;%module&quot; part of the system has no page called &quot;%view&quot;.</source>
+        <translation>The &quot;%module&quot; part of the system has no page called &quot;%view&quot;.</translation>
+    </message>
+    <message>
+        <source>There is no page at &quot;%page&quot;.</source>
+        <translation>There is no page at &quot;%page&quot;.</translation>
     </message>
 </context>
 <context>
@@ -9442,6 +9522,18 @@
     <message>
         <source>Show tabs</source>
         <translation>Show tabs</translation>
+    </message>
+    <message>
+        <source>Details of the top node: its node ID, depth and path, the number of sub items and the time of the latest change below it.</source>
+        <translation>Details of the top node: its node ID, depth and path, the number of sub items and the time of the latest change below it.</translation>
+    </message>
+    <message>
+        <source>This is the top node of the content structure. It is not a content object: it has no class, attributes, translations, versions or other locations, and it cannot be edited, moved or removed. The top-level nodes it holds are listed under Sub items.</source>
+        <translation>This is the top node of the content structure. It is not a content object: it has no class, attributes, translations, versions or other locations, and it cannot be edited, moved or removed. The top-level nodes it holds are listed under Sub items.</translation>
+    </message>
+    <message>
+        <source>Top node</source>
+        <translation>Top node</translation>
     </message>
 </context>
 <context>
@@ -12573,6 +12665,14 @@ Note: The packages will not be uninstalled.</translation>
         <source>Right column</source>
         <translation>Right column</translation>
     </message>
+    <message>
+        <source>Show or hide the left sidebar</source>
+        <translation>Show or hide the left sidebar</translation>
+    </message>
+    <message>
+        <source>Show or hide the right sidebar</source>
+        <translation>Show or hide the right sidebar</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -14084,6 +14184,10 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>People who bought this also bought</source>
         <translation>People who bought this also bought</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Category</translation>
     </message>
 </context>
 <context>
@@ -25094,6 +25198,18 @@ Note: The packages will not be uninstalled.</translation>
         <source>A listener of a filter event in site.ini [Event] Listeners[]. The kernel passes a value and goes on with what the listener returns, so a listener that forgets to return it destroys the value.</source>
         <translation>A listener of a filter event in site.ini [Event] Listeners[]. The kernel passes a value and goes on with what the listener returns, so a listener that forgets to return it destroys the value.</translation>
     </message>
+    <message>
+        <source>%counted of them counted as settings</source>
+        <translation>%counted of them counted as settings</translation>
+    </message>
+    <message>
+        <source>%runnables commands, cronjob parts and views are classes a subclass named in site.ini can replace.</source>
+        <translation>%runnables commands, cronjob parts and views are classes a subclass named in site.ini can replace.</translation>
+    </message>
+    <message>
+        <source>exp:ini has %actions actions and %providers scope providers; an extension adds its own in ini.ini.</source>
+        <translation>exp:ini has %actions actions and %providers scope providers; an extension adds its own in ini.ini.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/rad/content</name>
@@ -29428,6 +29544,14 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>Each limitation of a policy function is listed too, with the class and method that give its values; one whose class is not there offers nothing to choose in the role editor and is shown as broken.</source>
         <translation>Each limitation of a policy function is listed too, with the class and method that give its values; one whose class is not there offers nothing to choose in the role editor and is shown as broken.</translation>
+    </message>
+    <message>
+        <source>exp:ini actions, and %providers scope providers</source>
+        <translation>exp:ini actions, and %providers scope providers</translation>
+    </message>
+    <message>
+        <source>registry entries: %columns subitems columns, %jobs content job types</source>
+        <translation>registry entries: %columns subitems columns, %jobs content job types</translation>
     </message>
 </context>
 <context>
@@ -34577,6 +34701,18 @@ Note: The packages will not be uninstalled.</translation>
         <source>Objects using URL #%url_id (%url_count)</source>
         <translation>Objects using URL #%url_id (%url_count)</translation>
     </message>
+    <message>
+        <source>Queued</source>
+        <translation>Queued</translation>
+    </message>
+    <message>
+        <source>Repeat</source>
+        <translation>Repeat</translation>
+    </message>
+    <message>
+        <source>Untouched draft</source>
+        <translation>Untouched draft</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user</name>
@@ -35089,6 +35225,10 @@ your account.</translation>
     <message>
         <source>Signing in…</source>
         <translation>Signing in…</translation>
+    </message>
+    <message>
+        <source>Content, sites and layouts, managed in one place.</source>
+        <translation>Content, sites and layouts, managed in one place.</translation>
     </message>
 </context>
 <context>
@@ -36635,6 +36775,22 @@ your account.</translation>
     <message>
         <source>siteaccess</source>
         <translation>siteaccess</translation>
+    </message>
+    <message>
+        <source>Defined in settings/siteaccess/%siteaccess/override.ini.append.php</source>
+        <translation>Defined in settings/siteaccess/%siteaccess/override.ini.append.php</translation>
+    </message>
+    <message>
+        <source>The overrides are tried from the top, and the first whose conditions all match is used. Drag an override by its handle to a new place, or use its arrows; every change is saved at once as the Priority of these overrides in settings/siteaccess/%siteaccess/override.ini.append.php.</source>
+        <translation>The overrides are tried from the top, and the first whose conditions all match is used. Drag an override by its handle to a new place, or use its arrows; every change is saved at once as the Priority of these overrides in settings/siteaccess/%siteaccess/override.ini.append.php.</translation>
+    </message>
+    <message>
+        <source>Try %name earlier</source>
+        <translation>Try %name earlier</translation>
+    </message>
+    <message>
+        <source>Try %name later</source>
+        <translation>Try %name later</translation>
     </message>
 </context>
 <context>
@@ -44008,6 +44164,14 @@ You can also remove the package without uninstalling it from the package list.</
     <message>
         <source>No licenses are configured for packages. Add them to package.ini [LicenseSettings] LicenseList.</source>
         <translation>No licenses are configured for packages. Add them to package.ini [LicenseSettings] LicenseList.</translation>
+    </message>
+    <message>
+        <source>Back to the package</source>
+        <translation>Back to the package</translation>
+    </message>
+    <message>
+        <source>Package list</source>
+        <translation>Package list</translation>
     </message>
 </context>
 <context>
@@ -59302,6 +59466,206 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the result</source>
         <translation>Open the result</translation>
+    </message>
+    <message>
+        <source>%done of %total</source>
+        <translation>%done of %total</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from to %to of %count</translation>
+    </message>
+    <message>
+        <source>%title, %percent% done.</source>
+        <translation>%title, %percent% done.</translation>
+    </message>
+    <message>
+        <source>A remove or copy of a large subtree appears here when it runs in the background.</source>
+        <translation>A remove or copy of a large subtree appears here when it runs in the background.</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Actions</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>All</translation>
+    </message>
+    <message>
+        <source>All users</source>
+        <translation>All users</translation>
+    </message>
+    <message>
+        <source>An operation that overlaps them is refused until they are done.</source>
+        <translation>An operation that overlaps them is refused until they are done.</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Back</translation>
+    </message>
+    <message>
+        <source>Background jobs are working on this part of the tree</source>
+        <translation>Background jobs are working on this part of the tree</translation>
+    </message>
+    <message>
+        <source>Below %limit items running now is preselected, from %limit on the background job (content.ini SynchronousLimit). Your last choice is remembered.</source>
+        <translation>Below %limit items running now is preselected, from %limit on the background job (content.ini SynchronousLimit). Your last choice is remembered.</translation>
+    </message>
+    <message>
+        <source>Choose the node to add a location under using the radio buttons then click &quot;Select&quot;. Every selected item keeps its locations and gets one more under that node.</source>
+        <translation>Choose the node to add a location under using the radio buttons then click &quot;Select&quot;. Every selected item keeps its locations and gets one more under that node.</translation>
+    </message>
+    <message>
+        <source>Choose where to add a location for &lt;%object_name&gt;</source>
+        <translation>Choose where to add a location for &lt;%object_name&gt;</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Classes</translation>
+    </message>
+    <message>
+        <source>Clear the filters</source>
+        <translation>Clear the filters</translation>
+    </message>
+    <message>
+        <source>Content jobs (%count)</source>
+        <translation>Content jobs (%count)</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filter</translation>
+    </message>
+    <message>
+        <source>How to run it</source>
+        <translation>How to run it</translation>
+    </message>
+    <message>
+        <source>Jobs per state</source>
+        <translation>Jobs per state</translation>
+    </message>
+    <message>
+        <source>Large subtree removes and copies run in the background, in batches. A job keeps going when you leave its page.</source>
+        <translation>Large subtree removes and copies run in the background, in batches. A job keeps going when you leave its page.</translation>
+    </message>
+    <message>
+        <source>Last modified</source>
+        <translation>Last modified</translation>
+    </message>
+    <message>
+        <source>Locations</source>
+        <translation>Locations</translation>
+    </message>
+    <message>
+        <source>Moved to the trash, the items can be restored from the trash later. Without it they are deleted for good. Items you may not remove are marked in red above; then nothing is removed.</source>
+        <translation>Moved to the trash, the items can be restored from the trash later. Without it they are deleted for good. Items you may not remove are marked in red above; then nothing is removed.</translation>
+    </message>
+    <message>
+        <source>My jobs</source>
+        <translation>My jobs</translation>
+    </message>
+    <message>
+        <source>Newer</source>
+        <translation>Newer</translation>
+    </message>
+    <message>
+        <source>No job matches these filters.</source>
+        <translation>No job matches these filters.</translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation>OK</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Objects</translation>
+    </message>
+    <message>
+        <source>Objects with other locations</source>
+        <translation>Objects with other locations</translation>
+    </message>
+    <message>
+        <source>Older</source>
+        <translation>Older</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Open</translation>
+    </message>
+    <message>
+        <source>Progress and items</source>
+        <translation>Progress and items</translation>
+    </message>
+    <message>
+        <source>Run in the background (%count items: you can leave the page)</source>
+        <translation>Run in the background (%count items: you can leave the page)</translation>
+    </message>
+    <message>
+        <source>Run in the background (recommended for %count items: you can leave the page)</source>
+        <translation>Run in the background (recommended for %count items: you can leave the page)</translation>
+    </message>
+    <message>
+        <source>Run now (this page waits until it is done)</source>
+        <translation>Run now (this page waits until it is done)</translation>
+    </message>
+    <message>
+        <source>Selected locations</source>
+        <translation>Selected locations</translation>
+    </message>
+    <message>
+        <source>Server</source>
+        <translation>Server</translation>
+    </message>
+    <message>
+        <source>Show the job</source>
+        <translation>Show the job</translation>
+    </message>
+    <message>
+        <source>Source and target</source>
+        <translation>Source and target</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>State</translation>
+    </message>
+    <message>
+        <source>The copy gets the current version of each object unless all versions are chosen, and you as its creator unless the creator is kept (content.ini [CopySettings]).</source>
+        <translation>The copy gets the current version of each object unless all versions are chosen, and you as its creator unless the creator is kept (content.ini [CopySettings]).</translation>
+    </message>
+    <message>
+        <source>The operation was not started</source>
+        <translation>The operation was not started</translation>
+    </message>
+    <message>
+        <source>The part copied so far is kept under %target.</source>
+        <translation>The part copied so far is kept under %target.</translation>
+    </message>
+    <message>
+        <source>There are no content jobs.</source>
+        <translation>There are no content jobs.</translation>
+    </message>
+    <message>
+        <source>This is a large removal. It runs in the background, in batches: you see its progress and can leave the page while it works.</source>
+        <translation>This is a large removal. It runs in the background, in batches: you see its progress and can leave the page while it works.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>User</translation>
+    </message>
+    <message>
+        <source>What this touches</source>
+        <translation>What this touches</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>and %count more</translation>
+    </message>
+    <message>
+        <source>duration</source>
+        <translation>duration</translation>
+    </message>
+    <message>
+        <source>only these locations go; the objects keep existing at their other locations</source>
+        <translation>only these locations go; the objects keep existing at their other locations</translation>
     </message>
 </context>
 <context>
