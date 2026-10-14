@@ -244,8 +244,10 @@ $tpl->setVariable( 'from_language', $FromLanguage );
 $tpl->setVariable( 'translation_list', $foundTranslationList );
 // The location the preview shows (node assignment id): the versionview templates mark it in their location list.
 // Content/versionview includes this file with $placementID in scope. It may come from the request, and
-// design/standard prints it into a form field, so only a number is handed over.
-$tpl->setVariable( 'placement', isset( $placementID ) && is_numeric( $placementID ) ? (int)$placementID : false );
+// design/standard prints it into a form field, so only a positive integer is handed over.
+$tpl->setVariable( 'placement', isset( $placementID )
+    ? filter_var( $placementID, FILTER_VALIDATE_INT, array( 'options' => array( 'min_range' => 1 ) ) )
+    : false );
 
 $res = eZTemplateDesignResource::instance();
 
