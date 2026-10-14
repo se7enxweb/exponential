@@ -11337,9 +11337,11 @@ Note: The packages will not be uninstalled.</source>
     <name>design/admin/pagelayout</name>
     <message>
         <source>Breadcrumb</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Dismiss</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Color mode: light</source>
@@ -11363,6 +11365,7 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Switch to light mode</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Compact view</source>
@@ -11614,6 +11617,7 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Right column</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Side menu</source>
