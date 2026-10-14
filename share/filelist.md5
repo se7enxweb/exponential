@@ -276,7 +276,7 @@ b05092d370a223ac22e7c4b388174054  design/admin/javascript/contentstructuremenu_d
 def856500eb25e4c354688eaf1c1f790  design/admin/javascript/ezajaxsubitems_expdatatable.js
 2c35ad74f3ae96723bd750231c27cbe4  design/admin/javascript/leftmenu_widthcontrol.js
 d03d761498ffa705d43d836836910ad2  design/admin/javascript/node_tabs.js
-fe6b50d54f3c1436150e92f625d6bb0f  design/admin/javascript/popupmenu/ezpopupmenu.js
+651687df884a43cfc4c46992f5a671b5  design/admin/javascript/popupmenu/ezpopupmenu.js
 54cb1a1df10aa18ea280c08a9d97a328  design/admin/override/templates/admin_preview/article.tpl
 fa42107d7f6c82b26eed48050374e9a5  design/admin/override/templates/admin_preview/comment.tpl
 0c4cec334b8bff8d319219e52813802e  design/admin/override/templates/admin_preview/company.tpl
@@ -889,7 +889,7 @@ b05092d370a223ac22e7c4b388174054  design/admin4/javascript/contentstructuremenu_
 def856500eb25e4c354688eaf1c1f790  design/admin4/javascript/ezajaxsubitems_expdatatable.js
 2c35ad74f3ae96723bd750231c27cbe4  design/admin4/javascript/leftmenu_widthcontrol.js
 24e09818af2170bb98086c8cb586d0f1  design/admin4/javascript/node_tabs.js
-fe6b50d54f3c1436150e92f625d6bb0f  design/admin4/javascript/popupmenu/ezpopupmenu.js
+651687df884a43cfc4c46992f5a671b5  design/admin4/javascript/popupmenu/ezpopupmenu.js
 54cb1a1df10aa18ea280c08a9d97a328  design/admin4/override/templates/admin_preview/article.tpl
 fa42107d7f6c82b26eed48050374e9a5  design/admin4/override/templates/admin_preview/comment.tpl
 0c4cec334b8bff8d319219e52813802e  design/admin4/override/templates/admin_preview/company.tpl
@@ -932,7 +932,7 @@ e7b0acbd1646895a73189e0df9299144  design/admin4/stylesheets/content.css
 b24c177181d66fcf4760dafcec07ae88  design/admin4/stylesheets/modules/structure.css
 c4c85e1bc9f1dfc1d2cdb159f2021d0a  design/admin4/stylesheets/modules/workflow.css
 bfe8caaefaad23ec10bbd8b39d575729  design/admin4/stylesheets/packagecompare.css
-c9ecadb968c708e1f3c3f13f9a8eb6de  design/admin4/stylesheets/pagelayout.css
+05df64e46eec4cedcd48506b46eb0416  design/admin4/stylesheets/pagelayout.css
 5d3b68fdb809c73a6d8dc464e33c61ec  design/admin4/stylesheets/responsive.css
 cf525e1369265621db513e084052aa94  design/admin4/stylesheets/setup-extensions.css
 50be641d876ba7d5e17b15d5d0318426  design/admin4/stylesheets/theme/admin_datatable.css
@@ -2991,7 +2991,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-5746b8e3d2fcd2f0ad4c229c25796d6f  doc/changelogs/6.0/6.0.15.md
+6c53af591a96e49987cc65bfc2202c50  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3319,7 +3319,7 @@ c4809a3b611073bdcad4b38e9ea7dd6d  doc/features/6.0/additional-extension-director
 8ee6875c6693489d567c309177b49b81  doc/features/6.0/admin-list-paging.md
 41099ca247392d7ed963caa4b857e51c  doc/features/6.0/admin3-responsive-admin.md
 98b1eb658a2475fc31af9b9cbfaba709  doc/features/6.0/admin3-sidebar-width-and-font-size.md
-638068169d88373f049d221133688c86  doc/features/6.0/admin4-design.md
+c5928d71518afa154d36572a5ac32598  doc/features/6.0/admin4-design.md
 7d8b3d248d27baa55bbf5f7f22040693  doc/features/6.0/admin4l.md
 cb077d1f37f8e8811c377ede4bc99357  doc/features/6.0/adminneo-database-manager.md
 ae7d698fad5f10287ad37ade2f97d8aa  doc/features/6.0/audit-trail.md
@@ -7070,7 +7070,7 @@ ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 8b29711fe10a56c5c5b90916f35d0a00  tests/tests/bin/phpcs/NoTypeDeclarationsSniffTest.php
 4e3eeb18c2ea423afb62388e5e3dcafc  tests/tests/bin/phpcs/fixtures/typedeclarations.inc
 29cef3e64abdd6f9f23f9463f69e25d5  tests/tests/design/AdminCardsTest.php
-905e010b04293e65f497c736b3b9a73c  tests/tests/design/AdminContextMenuTest.php
+c074a5a5c27a2455e9bf5e8d4b39d19d  tests/tests/design/AdminContextMenuTest.php
 9de098ad350169c753d7ecdaa5244310  tests/tests/design/AdminDashboardTest.php
 d733a0e95c95e388ea2d3580231f5fa4  tests/tests/design/AdminDensityTest.php
 c805f3b778d5e27530594a38b05712ba  tests/tests/design/AdminFormErrorsTest.php
