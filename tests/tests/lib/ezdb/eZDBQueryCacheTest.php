@@ -502,4 +502,71 @@ class eZDBQueryCacheTest extends PHPUnit\Framework\TestCase
             $this->assertSame( '', eZDBQueryCache::debugReport( true ) );
         } );
     }
+
+    /** QC-19 */
+    public function testDebugSnapshot()
+    {
+        $this->withDebug( true, function ( $debug )
+        {
+            $this->newRequest();
+            $this->assertNull( eZDBQueryCache::debugSnapshot(), 'nothing measured yet' );
+            $sql = 'SELECT * FROM ezcontentobject';
+            $this->select( $sql );
+            $this->select( $sql );
+            $this->select( 'SELECT NOW() FROM ezsection' );
+            $this->write( 'CALL some_procedure()' );
+            $snap = eZDBQueryCache::debugSnapshot();
+            $this->assertSame( 'request', $snap['mode'] );
+            $this->assertSame( 1, $snap['hits'] );
+            $this->assertSame( 1, $snap['misses'] );
+            $this->assertSame( 1, $snap['stores'] );
+            $this->assertSame( 1, $snap['not_cached'] );
+            $this->assertSame( 1, $snap['writes'] );
+            $this->assertSame( 50.0, $snap['hit_rate'] );
+            $this->assertSame( array( 'CALL some_procedure()' ), $snap['stale'] );
+            $this->assertIsFloat( $snap['saved_ms'] );
+        } );
+        $this->withDebug( false, function ( $debug )
+        {
+            $this->newRequest();
+            $this->select( 'SELECT * FROM ezcontentobject' );
+            $this->assertNull( eZDBQueryCache::debugSnapshot(), 'without the debug output' );
+        } );
+    }
+
+    /** QC-20 */
+    public function testInventoryGroupsTheApcuEntriesByTable()
+    {
+        if ( !function_exists( 'apcu_enabled' ) || !apcu_enabled() || !class_exists( 'APCUIterator' ) )
+            $this->markTestSkipped( 'needs APCu (apc.enable_cli=1)' );
+        apcu_delete( new APCUIterator( '/^ezqc/' ) );
+        try
+        {
+            $this->newRequest( array( 'mode' => 'shared' ) );
+            $this->select( 'SELECT * FROM ezcontentobject a, ezcontentobject_tree t WHERE a.id = t.contentobject_id',
+                           array( array( 'id' => 1 ), array( 'id' => 2 ), array( 'id' => 3 ) ) );
+            $this->select( 'SELECT * FROM ezcontentobject WHERE id = 1' );
+            $this->newRequest( array( 'mode' => 'shared' ) );
+            $this->assertNotNull( $this->select( 'SELECT * FROM ezcontentobject WHERE id = 1' ), 'a hit from APCu' );
+
+            $inv = eZDBQueryCache::inventory( 10 );
+            $this->assertTrue( $inv['apcu'] );
+            $this->assertSame( 2, $inv['entries_read'] );
+            $this->assertFalse( $inv['truncated'] );
+            $byTable = array_column( $inv['tables'], null, 'table' );
+            $this->assertSame( 2, $byTable['ezcontentobject']['entries'], 'an entry that read two tables counts for each' );
+            $this->assertSame( 4, $byTable['ezcontentobject']['rows'] );
+            $this->assertSame( 1, $byTable['ezcontentobject_tree']['entries'] );
+            $this->assertSame( 1, $byTable['ezcontentobject']['hits'] );
+            $this->assertCount( 2, $inv['largest'] );
+            $this->assertGreaterThanOrEqual( $inv['largest'][1]['bytes'], $inv['largest'][0]['bytes'], 'largest first' );
+            $this->assertSame( 12, strlen( $inv['largest'][0]['key'] ) );
+            $this->assertArrayNotHasKey( 'sql', $inv['largest'][0], 'no statement text' );
+            $this->assertNotNull( $inv['sma'] );
+        }
+        finally
+        {
+            apcu_delete( new APCUIterator( '/^ezqc/' ) );
+        }
+    }
 }

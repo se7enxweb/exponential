@@ -64887,6 +64887,122 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Keep open on reload</source>
         <translation>Beim Neuladen offen lassen</translation>
     </message>
+    <message>
+        <source>SQL query cache</source>
+        <translation>SQL-Query-Cache</translation>
+    </message>
+    <message>
+        <source>Off (querycache.ini Mode=off)</source>
+        <translation>Aus (querycache.ini Mode=off)</translation>
+    </message>
+    <message>
+        <source>Mode %mode, MaxAge %age s, MaxRows %rows</source>
+        <translation>Modus %mode, MaxAge %age s, MaxRows %rows</translation>
+    </message>
+    <message>
+        <source>APCu is not available to this server: shared works as request.</source>
+        <translation>APCu ist auf diesem Server nicht verfügbar: shared arbeitet wie request.</translation>
+    </message>
+    <message>
+        <source>APCu</source>
+        <translation>APCu</translation>
+    </message>
+    <message>
+        <source>%count entries</source>
+        <translation>%count Einträge</translation>
+    </message>
+    <message>
+        <source>%used of %size (%pct %)</source>
+        <translation>%used von %size (%pct %)</translation>
+    </message>
+    <message>
+        <source>APCu used in all: %pct %</source>
+        <translation>APCu insgesamt belegt: %pct %</translation>
+    </message>
+    <message>
+        <source>This server</source>
+        <translation>Dieser Server</translation>
+    </message>
+    <message>
+        <source>since %time: %requests requests, hit rate %rate, %stores stored, %writes writes</source>
+        <translation>seit %time: %requests Requests, Trefferquote %rate, %stores gespeichert, %writes Schreibzugriffe</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Zustand</translation>
+    </message>
+    <message>
+        <source>generation %gen, cleared %time, %count tables written in the last MaxAge</source>
+        <translation>Generation %gen, geleert %time, %count Tabellen innerhalb von MaxAge beschrieben</translation>
+    </message>
+    <message>
+        <source>What is cached (by table)</source>
+        <translation>Was im Cache liegt (nach Tabelle)</translation>
+    </message>
+    <message>
+        <source>Table</source>
+        <translation>Tabelle</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Einträge</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Zeilen</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Größe</translation>
+    </message>
+    <message>
+        <source>Hits</source>
+        <translation>Treffer</translation>
+    </message>
+    <message>
+        <source>Largest entries</source>
+        <translation>Größte Einträge</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Schlüssel</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Tabellen</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Alter</translation>
+    </message>
+    <message>
+        <source>Only the first %count entries were read.</source>
+        <translation>Nur die ersten %count Einträge wurden gelesen.</translation>
+    </message>
+    <message>
+        <source>Nothing is cached on this server yet.</source>
+        <translation>Auf diesem Server liegt noch nichts im Cache.</translation>
+    </message>
+    <message>
+        <source>Clears every cached result (a new generation).</source>
+        <translation>Leert alle zwischengespeicherten Ergebnisse (neue Generation).</translation>
+    </message>
+    <message>
+        <source>Counters</source>
+        <translation>Zähler</translation>
+    </message>
+    <message>
+        <source>Zeroes this server's counters; the cached results stay.</source>
+        <translation>Setzt die Zähler dieses Servers auf null; die Ergebnisse im Cache bleiben.</translation>
+    </message>
+    <message>
+        <source>QC %rate</source>
+        <translation>QC %rate</translation>
+    </message>
+    <message>
+        <source>SQL query cache: hit rate and database time saved (estimated); %hits hits, %misses misses, %stores stored, %skipped not cached, %writes writes, mode %mode</source>
+        <translation>SQL-Query-Cache: Trefferquote und eingesparte Datenbankzeit (geschätzt); %hits Treffer, %misses Fehlgriffe, %stores gespeichert, %skipped nicht cachebar, %writes Schreibzugriffe, Modus %mode</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/audit</name>

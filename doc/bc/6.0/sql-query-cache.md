@@ -263,6 +263,13 @@ what the cache did for it:
   larger than the *uncacheable* counter of Setup > System information, which leaves out excluded tables and
   transactions; a result with more rows than `MaxRows` is counted as a miss and as not cached.
 
+In the **Exp Debug bar** the same figures are a chip in the pinned bar (hit rate and saved time, amber below 50 %,
+red below 10 %, `debugbar.ini Thresholds[querycache_hit_rate]`) and the report stands at the top of the SQL tab, next
+to the database's accumulators. The **Cache tab** (setup/managecache) shows what this server holds: entries and
+memory in APCu, the counters since the last reset, the state, the cached results grouped by the tables they read
+(entries, rows, size, hits as counted by APCu) and the largest entries, with buttons to clear the query cache and to
+reset the counters.
+
 The saved time is the sum, over the hits, of the time each statement took the
 database (with fetching its rows) when it was stored; entries stored before this
 was recorded are counted as hits without a duration; the time includes fetching
@@ -351,10 +358,12 @@ so the tests never touch the site's cache.
 | QC-16 | Oracle: the `ALTER SESSION` ezoracle runs on connect (`NLS_NUMERIC_CHARACTERS`, `NLS_LENGTH_SEMANTICS`, `CURSOR_SHARING`) writes nothing; any other `ALTER SESSION` (`CURRENT_SCHEMA`, `NLS_SORT`, `NLS_COMP`, `NLS_DATE_FORMAT`, `TIME_ZONE`, `CONTAINER` ...) makes everything stale |
 | QC-17 | With the debug output on: the accumulators of the group *Query cache*, one timing point, the bottom report as text and HTML (escaped) with hits, misses, hit rate, reasons and the writes that made everything stale |
 | QC-18 | Without the debug output, or with `Report=disabled`, no accumulator, no report |
+| QC-19 | `debugSnapshot()`: the request's figures with the debug output on, null without it |
+| QC-20 | `inventory()` (with APCu): entries grouped by table, an entry of two tables counted for each, hits from APCu, largest first, no statement text |
 
 ```bash
 php vendor/bin/phpunit --testsuite lib --filter eZDBQueryCacheTest
-# OK (18 tests, 175 assertions), about 2 s (QC-08 and QC-12 wait a second each)
+# OK (20 tests, 200 assertions; QC-20 needs apc.enable_cli=1), about 2 s (QC-08 and QC-12 wait a second each)
 ```
 
 **On a running site** (MySQL, the real drivers), each checked on a test installation

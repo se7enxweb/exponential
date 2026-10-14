@@ -213,9 +213,12 @@ changed a secret (the log has no secret values). The undo is logged with `undoes
 `expDebugBarSummary::collect()` gives what eZDebug measured: the page time, the SQL statements and their time (the
 `*_query` accumulators of the database drivers, or eZDB's counter), the peak memory and the limit, the templates
 used, messages per level, included files, the accumulators and the timing points, who gets debug and the IP entry
-that matched, the engine (Velocity or the SAPI) and the siteaccess. Every figure has a level, `ok`, `warn` or
-`high`, against `Thresholds[]` in debugbar.ini (`time_ms`, `sql_count`, `sql_ms`, `memory_mb`, `templates`, each
-`<warn>;<high>`). `expDebugBarSummary::json()` is the same as JSON that is safe inside a `<script>` element.
+that matched, the engine (Velocity or the SAPI), the siteaccess, and the SQL query cache of the request
+(`querycache`: `eZDBQueryCache::debugSnapshot()` with the stale statements replaced by their number, `stale_count`;
+null while the cache is off). Every figure has a level, `ok`, `warn`
+or `high`, against `Thresholds[]` in debugbar.ini (`time_ms`, `sql_count`, `sql_ms`, `memory_mb`, `templates`, each
+`<warn>;<high>`; `querycache_hit_rate` is a hit rate in percent and turns the level up **below** its values, see
+`expDebugBarSummary::queryCacheLevel()`). `expDebugBarSummary::json()` is the same as JSON that is safe inside a `<script>` element.
 
 ## Server functions
 
@@ -228,7 +231,7 @@ that matched, the engine (Velocity or the SAPI) and the siteaccess. Every figure
 | `set` | POST `setting`, `op`, `value`, `scope` [`siteaccess`, `confirm`, `dry_run`] | setup/setup |
 | `undo` | POST `entry` or `group` [`force`] | setup/setup |
 | `preset` | POST `preset` + `scope` (apply), `save` [+ `values` JSON or `snapshot=1`], or `delete` | setup/setup |
-| `cache` | GET `action=list`; POST `action=clear`, `by=all\|tag\|id\|node\|velocity\|opcache`, `names`, `node_id` | setup/managecache (list and clear) |
+| `cache` | GET `action=list`; POST `action=clear`, `by=all\|tag\|id\|node\|velocity\|opcache\|querycache_counters`, `names`, `node_id` | setup/managecache (list and clear) |
 | `iptest` | `address`, `list` (JSON array) | setup/setup |
 | `log[::<limit>]` | GET | setup/setup |
 | `summary` | GET | debug output for the request (the report itself; a visitor gets no IP list entry in it) |
@@ -240,9 +243,15 @@ masked as in exp:ini.
 
 `cache` with `by=node` clears the view cache of one node, the page the bar is on
 (`eZContentCacheManager::clearNodeViewCacheArray()`); `velocity` clears Velocity's response cache; `opcache`
-resets the OPcache of the process that answers. The list gives every cache with how it is cleared
-(`expCacheManager`), the tags, when each was last cleared from the bar, Velocity's cache status and the OPcache
-state.
+resets the OPcache of the process that answers; `querycache_counters` zeroes this server's query cache counters (the
+cached results themselves are the cache id `querycache`). The list gives every cache with how it is cleared
+(`expCacheManager`), the tags, when each was last cleared from the bar, Velocity's cache status, the OPcache state
+and the SQL query cache (`querycache`: `eZDBQueryCache::inventory()`, settings, this server's counters, the APCu
+memory, the entries grouped by the tables they read with rows, size and hits, and the largest entries; an entry
+carries no statement text, only the start of its key). The inventory reads the entries of the cache in APCu with their rows (at
+most 5,000 and for at most one second; it says when it stopped early), so it runs only when the Cache tab is opened.
+The summary (`expdebugbar::summary`, the page's JSON) carries only the number of writes that made everything stale
+(`stale_count`); the statements are in the report of the SQL tab. The state file's path is not sent.
 
 Example (replace the host names and YOUR_USER:YOUR_PASSWORD with your own; the second call is made without signing in):
 
@@ -312,6 +321,7 @@ The summary in the bar shows the request at a glance; each value opens its tab:
 | SQL count / time | SQL | `Thresholds[sql_count]`, `Thresholds[sql_ms]` |
 | peak memory | Memory | `Thresholds[memory_mb]` (else 50 % / 80 % of `memory_limit`) |
 | templates used (only with `ShowUsedTemplates`) | Templates | `Thresholds[templates]` |
+| SQL query cache (`QC 83 % · -186 ms`: hit rate, database time saved; only while the cache is on) | SQL | `Thresholds[querycache_hit_rate]` (amber below 50 %, red below 10 %; amber when a write made everything stale, red in `shared` without APCu) |
 | warnings, errors | Messages (filtered to that level) | any warning is amber, any error red |
 | deprecations (`3 depr`) | Messages | any deprecation is amber |
 

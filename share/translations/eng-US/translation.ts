@@ -57445,6 +57445,122 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Keep open on reload</source>
         <translation>Keep open on reload</translation>
     </message>
+    <message>
+        <source>SQL query cache</source>
+        <translation>SQL query cache</translation>
+    </message>
+    <message>
+        <source>Off (querycache.ini Mode=off)</source>
+        <translation>Off (querycache.ini Mode=off)</translation>
+    </message>
+    <message>
+        <source>Mode %mode, MaxAge %age s, MaxRows %rows</source>
+        <translation>Mode %mode, MaxAge %age s, MaxRows %rows</translation>
+    </message>
+    <message>
+        <source>APCu is not available to this server: shared works as request.</source>
+        <translation>APCu is not available to this server: shared works as request.</translation>
+    </message>
+    <message>
+        <source>APCu</source>
+        <translation>APCu</translation>
+    </message>
+    <message>
+        <source>%count entries</source>
+        <translation>%count entries</translation>
+    </message>
+    <message>
+        <source>%used of %size (%pct %)</source>
+        <translation>%used of %size (%pct %)</translation>
+    </message>
+    <message>
+        <source>APCu used in all: %pct %</source>
+        <translation>APCu used in all: %pct %</translation>
+    </message>
+    <message>
+        <source>This server</source>
+        <translation>This server</translation>
+    </message>
+    <message>
+        <source>since %time: %requests requests, hit rate %rate, %stores stored, %writes writes</source>
+        <translation>since %time: %requests requests, hit rate %rate, %stores stored, %writes writes</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>State</translation>
+    </message>
+    <message>
+        <source>generation %gen, cleared %time, %count tables written in the last MaxAge</source>
+        <translation>generation %gen, cleared %time, %count tables written in the last MaxAge</translation>
+    </message>
+    <message>
+        <source>What is cached (by table)</source>
+        <translation>What is cached (by table)</translation>
+    </message>
+    <message>
+        <source>Table</source>
+        <translation>Table</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Entries</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Rows</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Size</translation>
+    </message>
+    <message>
+        <source>Hits</source>
+        <translation>Hits</translation>
+    </message>
+    <message>
+        <source>Largest entries</source>
+        <translation>Largest entries</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Key</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Tables</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Age</translation>
+    </message>
+    <message>
+        <source>Only the first %count entries were read.</source>
+        <translation>Only the first %count entries were read.</translation>
+    </message>
+    <message>
+        <source>Nothing is cached on this server yet.</source>
+        <translation>Nothing is cached on this server yet.</translation>
+    </message>
+    <message>
+        <source>Clears every cached result (a new generation).</source>
+        <translation>Clears every cached result (a new generation).</translation>
+    </message>
+    <message>
+        <source>Counters</source>
+        <translation>Counters</translation>
+    </message>
+    <message>
+        <source>Zeroes this server's counters; the cached results stay.</source>
+        <translation>Zeroes this server's counters; the cached results stay.</translation>
+    </message>
+    <message>
+        <source>QC %rate</source>
+        <translation>QC %rate</translation>
+    </message>
+    <message>
+        <source>SQL query cache: hit rate and database time saved (estimated); %hits hits, %misses misses, %stores stored, %skipped not cached, %writes writes, mode %mode</source>
+        <translation>SQL query cache: hit rate and database time saved (estimated); %hits hits, %misses misses, %stores stored, %skipped not cached, %writes writes, mode %mode</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/audit</name>
