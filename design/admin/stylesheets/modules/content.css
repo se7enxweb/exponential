@@ -268,37 +268,26 @@
 .a4-content-trash details.a4-content-trash-details dt { margin: 0; font-weight: 700; }
 .a4-content-trash details.a4-content-trash-details dd { margin: 0; }
 
-/* ---- multiedit ---- content/multiedit: one section per class, one folding panel per object ---------------- */
+/* ---- multiedit ---- content/multiedit, in the frame of the content/action pages (box header, box, control bar).
+   The panels are .a4-fold, the groups .a4-section, the toolbar .a4-toolbar, the result table.list; here only
+   what those cannot do. */
 
-.a4-content-multiedit-note { margin: 0 0 var(--a4-space-3); color: var(--a4-muted); }
+.a4-content-multiedit-create { max-width: 640px; margin-bottom: var(--a4-space-4); }
 .a4-content-multiedit-group { margin-bottom: var(--a4-space-5); }
-.a4-content-multiedit-group > h2 { margin: 0 0 var(--a4-space-2); font-size: var(--a4-text-l); }
-.a4-content-multiedit-object { margin-bottom: var(--a4-space-3); border: 1px solid var(--a4-line); border-radius: var(--a4-radius-s); background-color: var(--a4-card); }
-.a4-content-multiedit-object > summary { padding: var(--a4-space-2) var(--a4-space-3); font-weight: 700; list-style: revert; cursor: pointer; }
-.a4-content-multiedit-object > summary small { margin-left: var(--a4-space-2); color: var(--a4-muted); font-weight: 400; }
-.a4-content-multiedit-object[open] > summary { border-bottom: 1px solid var(--a4-line); }
-.a4-content-multiedit-body { padding: var(--a4-space-3); }
-.a4-content-multiedit-invalid { border-color: var(--a4-bad); }
+.a4-content-multiedit-group .a4-section-head { margin-bottom: var(--a4-space-3); }
+.a4-content-multiedit-group .a4-section-head .a4-meta { font-weight: 400; }
+.a4-content-multiedit-object + .a4-content-multiedit-object { margin-top: var(--a4-space-3); }
+.a4-content-multiedit-object > summary .a4-meta { font-weight: 400; }
+.a4-content-multiedit-name { min-width: 0; overflow-wrap: anywhere; }
+.a4-content-multiedit-object[open] > summary { margin-bottom: var(--a4-space-3); border-bottom: 1px solid var(--a4-line); }
 .a4-content-multiedit-invalid > summary { background-color: var(--a4-bad-bg); color: var(--a4-bad); }
-.a4-content-multiedit-report { margin-bottom: var(--a4-space-3); padding: var(--a4-space-3); border: 1px solid var(--a4-line); border-radius: var(--a4-radius-s); background-color: var(--a4-soft); }
-.a4-content-multiedit-report li { margin: var(--a4-space-1) 0; }
-.a4-content-multiedit-state-published { color: var(--a4-ok); }
-.a4-content-multiedit-state-pending { color: var(--a4-warn); }
-.a4-content-multiedit-state-failed { color: var(--a4-bad); }
-.a4-content-multiedit-controls,
-.a4-content-multiedit-toggles { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2); }
-.a4-content-multiedit-toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--a4-space-2); margin-bottom: var(--a4-space-3); }
-.a4-content-multiedit-toolbar .a4-content-multiedit-note { margin: 0; }
-.a4-content-multiedit-autosave { min-width: 12em; color: var(--a4-muted); font-size: var(--a4-text-s); font-style: normal; }
+.a4-content-multiedit-report { margin-bottom: var(--a4-space-4); }
+.a4-content-multiedit-autosave { color: var(--a4-muted); font-size: var(--a4-text-s); font-style: normal; }
 .a4-content-multiedit-autosave.as-saving { color: var(--a4-warn); }
 .a4-content-multiedit-autosave.as-success { color: var(--a4-ok); }
 .a4-content-multiedit-autosave.as-error { color: var(--a4-bad); }
 @media (max-width: 700px) {
   .a4-content-multiedit-body .block label { display: block; }
-  .a4-content-multiedit-controls .button,
-  .a4-content-multiedit-toggles .button { flex: 1 1 auto; }
-  .a4-content-multiedit-toolbar { justify-content: flex-start; }
-  .a4-content-multiedit-toggles { width: 100%; }
 }
 
 /* ---- dashboard ---- content/dashboard: a column's height per day, from its .a4-pct-N class ------------------ */
