@@ -62,7 +62,12 @@ extension). The editor siteaccess falls back to `admin4` first, then `admin3`, `
   the actions wrap onto two short lines inside the card.
 - **Edit form.** The button bars (Send for publishing, Store draft, Store draft and exit, Discard draft) stay in view
   while the form scrolls (CSS `position: sticky`, replacing the YUI script that stopped working). They are slim
-  (42 px on a desktop) and fit a phone screen. Edit pages show one left column, not two.
+  (42 px on a desktop) and fit a phone screen. Edit pages show one left column, not two. Required fields carry a red
+  `*` (a hint above the attributes says what it means; screen readers hear "required", and the controls are
+  `aria-required`). After a failed store a summary at the top takes the focus and links to each field; every invalid
+  field shows its message under its label, carries a red edge, and its controls are `aria-invalid` with the message as
+  description. Each attribute is a named group (`role="group"`, id `ezcca-attr-<attribute id>`). The datatype
+  templates are unchanged: the marks are set on their controls by the edit page's script.
 - **Frame.** Side column margins are halved (a 16 px gap). The sidebar buttons sit on the window edges at 48% of the
   window height, with labels and titles. Long names in the side columns wrap instead of being cut off.
 - **Tables.** A list table's sorted column is readable (soft orange header).

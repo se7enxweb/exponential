@@ -127,7 +127,7 @@ White text on it is only 3:1, so filled controls with white text use its darker 
 | Buttons | `.a4-btn`, `.a4-btn-primary`, `.a4-btn-danger`, `.a4-btn-outline-danger`, `.a4-btn-ghost`, `.a4-btn-small`, `.a4-btn-large`, `.a4-btn-icon`; `.a4-actions` (a row of them) |
 | Toolbar | `.a4-toolbar` (an action bar), `.is-bottom` (under a list), `.is-sticky` (stays at the window's bottom) |
 | Filter bar | `.a4-filterbar` (a grid of fields above a list), `.a4-filter-count` |
-| Forms | `.a4-field`, `.a4-field-wide`, `.a4-label`, `.a4-input` (`.is-auto`), `.a4-field-error`, `.a4-form` (`.is-wide`), `.a4-formrow` (label beside control), `.a4-searchrow`, `.a4-check`, `.a4-radios`, `.a4-chips` > `.a4-chip` |
+| Forms | `.a4-field`, `.a4-field-wide`, `.a4-label`, `.a4-input` (`.is-auto`), `.a4-field-error`, `.a4-required-mark` + `.a4-required-hint` (required fields), `.a4-error-summary` (the summary of a failed store), `.a4-form` (`.is-wide`), `.a4-formrow` (label beside control), `.a4-searchrow`, `.a4-check`, `.a4-radios`, `.a4-chips` > `.a4-chip` |
 | Tables | `.a4-table-wrap` > `table.a4-table` (`.is-compact`), `tr.is-selected` |
 | Under a list | `.a4-listfoot`, `.a4-sizes`, `.a4-pager`; `.a4-tabs` (links, buttons, `span.current`, `a.current`, `.is-current`), `.a4-count` |
 | Empty state, notices | `.a4-empty`; `.a4-notice` (`.is-ok`, `.is-warn`, `.is-bad`, `.is-info`) |
@@ -248,6 +248,9 @@ For every template or stylesheet change in an administration design or an extens
 - [ ] Colours, radius, spacing and fonts are `var(--a4-*)` tokens: no `#hex`, `rgb()`, named colour, px radius or
       spacing literal, and no local custom properties.
 - [ ] A new token is in `components.css` with a light and a dark value, and documented on this page.
+- [ ] A required field shows `.a4-required-mark` (`aria-hidden`) with the word in `.a4-sr-only`, and its control is
+      `aria-required`; an invalid field shows its message (`.a4-field-error` with an id) and its control is
+      `aria-invalid` with that id in `aria-describedby` (`tests/tests/design/AdminFormErrorsTest.php`).
 - [ ] A new data table is a `table.list` or an `.a4-table` (zebra rows, hover); controls in one row share
       `--a4-control-h`.
 - [ ] A new module stylesheet is listed in `AdminComponentCSSFileList` and exists in `design/admin4` and `design/admin`.

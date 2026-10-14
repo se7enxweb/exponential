@@ -93,6 +93,12 @@
     "design/admin4/templates/content/edit_locations.tpl": [
       "tests/tests/kernel/content/eZEditLocationsVisibilityTest.php"
     ],
+    "design/admin4/templates/content/edit_attribute.tpl": [
+      "tests/tests/design/AdminFormErrorsTest.php"
+    ],
+    "design/admin4/templates/content/edit_validation.tpl": [
+      "tests/tests/design/AdminFormErrorsTest.php"
+    ],
     "design/admin/templates/node/view/full.tpl": [
       "tests/tests/kernel/content/eZAdminFullViewCopyButtonTest.php"
     ],
