@@ -57577,6 +57577,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>SQL query cache: hit rate and database time saved (estimated); %hits hits, %misses misses, %stores stored, %skipped not cached, %writes writes, mode %mode</source>
         <translation>SQL query cache: hit rate and database time saved (estimated); %hits hits, %misses misses, %stores stored, %skipped not cached, %writes writes, mode %mode</translation>
     </message>
+    <message>
+        <source>Storage %storage (setting %setting), ApcuReserve %reserve %</source>
+        <translation>Storage %storage (setting %setting), ApcuReserve %reserve %</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/audit</name>

@@ -1455,6 +1455,7 @@ class eZDBQueryCache
             'max_age' => $s['maxAge'],
             'max_rows' => $s['maxRows'],
             'apcu_reserve' => $s['apcuReserve'] ?? 25,
+            'storage_setting' => $s['storage'] ?? 'auto',
             'exclude' => array_keys( $s['exclude'] ),
             'state_file' => self::stateDir() . '/state.ser',
             'state_exists' => is_file( self::stateDir() . '/state.ser' ),

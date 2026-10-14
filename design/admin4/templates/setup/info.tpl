@@ -423,7 +423,7 @@
         <div class="a4-card a4-stack">
             <div class="a4-title-row"><h3 class="a4-h3">{'Query cache'|i18n( 'design/admin/setup/info' )}</h3>
                 {if $query_cache.enabled}<span class="a4-badge is-ok">{$query_cache.mode|wash}</span>{else}<span class="a4-badge">{'off'|i18n( 'design/admin/setup/info' )}</span>{/if}
-                <small>{'settings/querycache.ini'|i18n( 'design/admin/setup/info' )}: MaxAge={$query_cache.max_age|wash}&nbsp;s, MaxRows={$query_cache.max_rows|wash}{if $query_cache.exclude}, ExcludeTables={$query_cache.exclude|implode( ', ' )|wash}{/if}</small></div>
+                <small>{'settings/querycache.ini'|i18n( 'design/admin/setup/info' )}: MaxAge={$query_cache.max_age|wash}&nbsp;s, MaxRows={$query_cache.max_rows|wash}, Storage={$query_cache.storage_setting|wash}, ApcuReserve={$query_cache.apcu_reserve|wash}&nbsp;%{if $query_cache.exclude}, ExcludeTables={$query_cache.exclude|implode( ', ' )|wash}{/if}</small></div>
             <p class="a4-help">
                 {if $query_cache.mode|eq( 'shared' )}
                     {if $query_cache.storage|eq( 'file' )}

@@ -118,6 +118,7 @@ class expDebugBarReport
             'Minimise debug bar', 'Show debug bar', '%count errors', '%count warnings',
             // the SQL query cache in the Cache tab
             'SQL query cache', 'Off (querycache.ini Mode=off)', 'Mode %mode, MaxAge %age s, MaxRows %rows',
+            'Storage %storage (setting %setting), ApcuReserve %reserve %', 'none',
             'APCu is not available to this server: shared works as request.', 'APCu', 'Files', '%count entries',
             '%used of %size (%pct %)', 'APCu used in all: %pct %', 'This server',
             'since %time: %requests requests, hit rate %rate, %stores stored, %writes writes', 'State',

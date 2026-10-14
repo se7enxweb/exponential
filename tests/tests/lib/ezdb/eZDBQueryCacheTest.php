@@ -844,6 +844,8 @@ class eZDBQueryCacheTest extends PHPUnit\Framework\TestCase
 
         $status = eZDBQueryCache::status();
         $this->assertSame( 'file', $status['storage'] );
+        $this->assertSame( 'file', $status['storage_setting'], 'the setting next to what it gives' );
+        $this->assertSame( 25, $status['apcu_reserve'] );
         $this->assertSame( 1, $status['entries'] );
         $this->assertGreaterThan( 0, $status['memory'] );
 

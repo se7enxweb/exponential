@@ -809,6 +809,8 @@
     const c = q.counters || {};
     box.append(el('p', { class: 'exp-debug-hint' },
       t('Mode %mode, MaxAge %age s, MaxRows %rows', { '%mode': q.mode, '%age': q.max_age, '%rows': q.max_rows })));
+    box.append(el('p', { class: 'exp-debug-hint' }, t('Storage %storage (setting %setting), ApcuReserve %reserve %', {
+      '%storage': q.storage || t('none'), '%setting': q.storage_setting || 'auto', '%reserve': q.apcu_reserve })));
     if (q.mode === 'shared' && !q.storage) box.append(hint(t('APCu is not available to this server: shared works as request.'), 'warn'));
     else if (q.storage === 'file') {
       box.append(el('p', {}, el('strong', {}, t('Files') + ': '), t('%count entries', { '%count': q.entries }) + ' · ' + kb(q.memory)));

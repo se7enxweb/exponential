@@ -65019,6 +65019,10 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>SQL query cache: hit rate and database time saved (estimated); %hits hits, %misses misses, %stores stored, %skipped not cached, %writes writes, mode %mode</source>
         <translation>SQL-Query-Cache: Trefferquote und eingesparte Datenbankzeit (geschätzt); %hits Treffer, %misses Fehlgriffe, %stores gespeichert, %skipped nicht cachebar, %writes Schreibzugriffe, Modus %mode</translation>
     </message>
+    <message>
+        <source>Storage %storage (setting %setting), ApcuReserve %reserve %</source>
+        <translation>Speicher %storage (Einstellung %setting), ApcuReserve %reserve %</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/audit</name>
