@@ -12,9 +12,9 @@
     {def $user_node = $current_user.contentobject.main_node
          $current_user_link = $user_node.url_alias|ezurl}
     {if $user_node.can_read}
-        <p><a href={$current_user_link}><img src={'current-user.gif'|ezimage} height="22" width="22" alt="" class="a4-middle" /></a>&nbsp;<a class="a4-current-user-name" href={$current_user_link}>{$current_user.contentobject.name|wash}</a></p>
+        <p><a href={$current_user_link}><span class="a4-icon a4-bi-person-circle is-large a4-middle" aria-hidden="true"></span></a>&nbsp;<a class="a4-current-user-name" href={$current_user_link}>{$current_user.contentobject.name|wash}</a></p>
     {else}
-        <p><img src={'current-user-disabled.gif'|ezimage} height="22" width="22" alt="" class="a4-middle" /> {$current_user.contentobject.name|wash}</p>
+        <p><span class="a4-icon a4-bi-person-circle is-large a4-middle a4-muted" aria-hidden="true"></span> {$current_user.contentobject.name|wash}</p>
     {/if}
     {undef $current_user_link $user_node}
     <ul>
@@ -30,7 +30,7 @@
     <li><div><a href={'/mailpreferences/settings'|ezurl} title="{'Choose which e-mail you get.'|i18n( 'design/admin/pagelayout' )}">{'My e-mail preferences'|i18n( 'design/admin/pagelayout' )}</a></div></li>
     </ul>
 {else}
-    <p><img src={'current-user-disabled.gif'|ezimage} height="22" width="22" alt="" class="a4-middle" /> {$current_user.contentobject.name|wash}</p>
+    <p><span class="a4-icon a4-bi-person-circle is-large a4-middle a4-muted" aria-hidden="true"></span> {$current_user.contentobject.name|wash}</p>
     <ul>
     <li><div><span class="disabled">{'Change user info'|i18n( 'design/admin/pagelayout' )}</span></div></li>
     <li><div><span class="disabled">{'Change password'|i18n( 'design/admin/pagelayout' )}</span></div></li>

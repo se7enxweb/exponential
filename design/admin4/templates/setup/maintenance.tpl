@@ -70,7 +70,7 @@
     </div>
     {if $mi.on}
     <div class="a4-setup-state-action">
-        <button type="submit" class="a4-btn a4-btn-primary a4-btn-large" name="SwitchOffButton" value="1"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6.2 11.6 2.7 8.1l1.1-1.1 2.4 2.4 6-6 1.1 1.1z"/></svg>{'Bring the site back online'|i18n( 'design/admin/setup/maintenance' )}</button>
+        <button type="submit" class="a4-btn a4-btn-primary a4-btn-large" name="SwitchOffButton" value="1"><span class="a4-icon a4-bi-check-lg is-medium" aria-hidden="true"></span>{'Bring the site back online'|i18n( 'design/admin/setup/maintenance' )}</button>
         {if or( eq( $mi.reason, 'setup' ), eq( $mi.reason, 'install' ) )}
         <span class="a4-meta">{'An installation is still running: visitors would meet a half-built site.'|i18n( 'design/admin/setup/maintenance' )}</span>
         {/if}
@@ -165,7 +165,7 @@
         <div class="a4-setup-danger-box">
             <label class="a4-check" for="maintenance-confirm"><input type="checkbox" id="maintenance-confirm" required="required" /> <span>{'I understand that the public site goes offline for every visitor not listed above, until I switch maintenance off again.'|i18n( 'design/admin/setup/maintenance' )}</span></label>
             <div class="a4-setup-confirm-row">
-                <button type="submit" class="a4-btn a4-btn-danger a4-btn-large" name="SwitchOnButton" value="1"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M7.25 1.5h1.5v6.5h-1.5zM4.2 3.6l1 1.1A4.5 4.5 0 1 0 10.8 4.7l1-1.1A6 6 0 1 1 4.2 3.6z"/></svg>{'Take the site offline'|i18n( 'design/admin/setup/maintenance' )}</button>
+                <button type="submit" class="a4-btn a4-btn-danger a4-btn-large" name="SwitchOnButton" value="1"><span class="a4-icon a4-bi-power is-medium" aria-hidden="true"></span>{'Take the site offline'|i18n( 'design/admin/setup/maintenance' )}</button>
                 <span class="a4-meta">{'Also empties the caches that answer ahead of the site.'|i18n( 'design/admin/setup/maintenance' )}</span>
             </div>
         </div>

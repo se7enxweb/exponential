@@ -69,7 +69,7 @@
 {else}
 <table class="list" cellspacing="0" >
 <tr>
-    <th class="tight"><img src={'toggle-button-16x16.gif'|ezimage} width="16" height="16" alt="{'Invert selection.'|i18n( 'design/admin/content/urlalias' )}" title="{'Invert selection.'|i18n( 'design/admin/content/urlalias' )}" onclick="ezjs_toggleCheckboxes( document.aliasform, 'ElementList[]' ); return false;"/></th>
+    <th class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/content/urlalias' )}" aria-label="{'Invert selection.'|i18n( 'design/admin/content/urlalias' )}" onclick="ezjs_toggleCheckboxes( document.aliasform, 'ElementList[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
     <th>{'URL alias'|i18n( 'design/admin/content/urlalias' )}</th>
     <th>{'Language'|i18n( 'design/admin/content/urlalias' )}</th>
     <th>{'Type'|i18n( 'design/admin/content/urlalias' )}</th>
@@ -206,9 +206,9 @@
         <td>
             {set $img_title='Edit the contents for language %language.'|i18n( 'design/admin/content/urlalias',, hash( '%language', $language_obj.name ) )}
             {if fetch( content, access, hash( access, 'edit', contentobject, $node, language, $locale ) )}
-                <a href={concat('/content/edit/', $node.contentobject_id, '/f/', $locale)|ezurl}><img src={'edit.gif'|ezimage} width="16" height="16" alt="{$img_title}" title="{$img_title}" /></a>
+                <a href={concat('/content/edit/', $node.contentobject_id, '/f/', $locale)|ezurl}><span class="a4-icon a4-bi-pencil is-medium" role="img" aria-label="{$img_title}" title="{$img_title}"></span></a>
             {else}
-                <img src={'edit-disabled.gif'|ezimage} title="{'You cannot edit the contents for language %language because you do not have permission to edit the object.'|i18n( 'design/admin/content/urlalias',, hash( '%language', $language_obj.name ) )}" />
+                <span class="a4-icon a4-bi-pencil is-medium a4-muted" role="img" aria-label="{'You cannot edit the contents for language %language because you do not have permission to edit the object.'|i18n( 'design/admin/content/urlalias',, hash( '%language', $language_obj.name ) )}" title="{'You cannot edit the contents for language %language because you do not have permission to edit the object.'|i18n( 'design/admin/content/urlalias',, hash( '%language', $language_obj.name ) )}"></span>
             {/if}
         </td>
     </tr>

@@ -147,7 +147,7 @@
         </div>
         <div class="a4-actions">
             {if or( $info|not, $info.can_download )}
-            <a class="a4-btn a4-btn-small" href={concat( 'pdf/edit/', $export.id, '/generate' )|ezurl} aria-describedby="{$card_id}-title" title="{if $export.status|eq( 2 )}{'Generate the PDF now and download it.'|i18n( 'design/admin/pdf/list' )}{else}{'Download the stored file.'|i18n( 'design/admin/pdf/list' )}{/if}"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M7 1h2v7.6l2.3-2.3 1.4 1.4L8 12.4 3.3 7.7l1.4-1.4L7 8.6zM2 13h12v2H2z"/></svg>{'Download'|i18n( 'design/admin/pdf/list' )}</a>
+            <a class="a4-btn a4-btn-small" href={concat( 'pdf/edit/', $export.id, '/generate' )|ezurl} aria-describedby="{$card_id}-title" title="{if $export.status|eq( 2 )}{'Generate the PDF now and download it.'|i18n( 'design/admin/pdf/list' )}{else}{'Download the stored file.'|i18n( 'design/admin/pdf/list' )}{/if}"><span class="a4-icon a4-bi-download" aria-hidden="true"></span>{'Download'|i18n( 'design/admin/pdf/list' )}</a>
             {/if}
             {if and( $info, $info.is_stored )}
             <button type="submit" class="a4-btn a4-btn-small" name="RegenerateButton" value="{$export.id}" aria-describedby="{$card_id}-title{if $info.can_regenerate|not} {$card_id}-noregen{/if}"{if $info.can_regenerate|not} disabled="disabled"{/if} title="{'Generate the stored file anew from the current content.'|i18n( 'design/admin/pdf/list' )}">{'Regenerate'|i18n( 'design/admin/pdf/list' )}</button>
@@ -232,7 +232,7 @@
 <div class="a4-toolbar is-bottom">
     <div class="a4-actions">
         <button type="submit" class="a4-btn a4-btn-outline-danger" name="RemoveExportButton" value="1" aria-describedby="pdf-remove-help" title="{'Remove selected PDF exports.'|i18n( 'design/admin/pdf/list' )}"{if $pdfexport_list|count|eq( 0 )} disabled="disabled"{/if}>{'Remove selected'|i18n( 'design/admin/pdf/list' )}</button>
-        <button type="submit" class="a4-btn a4-btn-primary" name="NewPDFExport" value="1" title="{'Create a new PDF export.'|i18n( 'design/admin/pdf/list' )}"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M7 2h2v5h5v2H9v5H7V9H2V7h5z"/></svg>{'New PDF export'|i18n( 'design/admin/pdf/list' )}</button>
+        <button type="submit" class="a4-btn a4-btn-primary" name="NewPDFExport" value="1" title="{'Create a new PDF export.'|i18n( 'design/admin/pdf/list' )}"><span class="a4-icon a4-bi-plus-lg" aria-hidden="true"></span>{'New PDF export'|i18n( 'design/admin/pdf/list' )}</button>
     </div>
     <p class="a4-meta" id="pdf-remove-help">{'Remove selected asks for confirmation first and says which stored files go with the exports.'|i18n( 'design/admin/pdf/list' )} <span class="exp-selected-count" data-for="DeleteIDArray[]" aria-live="polite"></span></p>
 </div>

@@ -49,8 +49,8 @@
                 data-label-show="{'Show password'|i18n( 'design/admin/user/login' )|wash}"
                 data-label-hide="{'Hide password'|i18n( 'design/admin/user/login' )|wash}"
                 title="{'Show password'|i18n( 'design/admin/user/login' )|wash}" aria-label="{'Show password'|i18n( 'design/admin/user/login' )|wash}">
-            <svg class="a4-eye" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-            <svg class="a4-eye-off" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M3 3l18 18M10.6 5.1A10 10 0 0 1 12 5c6.4 0 10 7 10 7a17 17 0 0 1-3.2 4.1M6.6 6.6A17 17 0 0 0 2 12s3.6 7 10 7a10 10 0 0 0 5.4-1.6M9.9 9.9a3 3 0 0 0 4.2 4.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="a4-icon a4-bi-eye is-large a4-eye" aria-hidden="true"></span>
+            <span class="a4-icon a4-bi-eye-slash is-large a4-eye-off" aria-hidden="true"></span>
         </button>
     </div>
 

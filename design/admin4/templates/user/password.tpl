@@ -11,7 +11,7 @@
      $summary = first_set( $error_summary, array() )
      $changed = first_set( $password_changed, false() )
      $ctx = 'design/admin/user/password_page'
-     $eye = '<svg class="a4pw-eye" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/></svg><svg class="a4pw-eye-off" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M3 3l18 18M10.6 5.1A10 10 0 0 1 12 5c6.4 0 10 7 10 7a17 17 0 0 1-3.2 4.1M6.6 6.6A17 17 0 0 0 2 12s3.6 7 10 7a10 10 0 0 0 5.4-1.6M9.9 9.9a3 3 0 0 0 4.2 4.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'}
+     $eye = '<span class="a4-icon a4-bi-eye is-medium a4pw-eye" aria-hidden="true"></span><span class="a4-icon a4-bi-eye-slash is-medium a4pw-eye-off" aria-hidden="true"></span>'}
 {* an older kernel: only the three flags *}
 {if and( $summary|count|eq( 0 ), $message, or( $oldPasswordNotValid, $newPasswordNotMatch, $newPasswordTooShort ) )}
     {if $oldPasswordNotValid}{set $errors = $errors|merge( hash( 'oldPassword', array( 'Your current password is not correct.'|i18n( $ctx ) ) ) )}
@@ -29,7 +29,7 @@
 
 {if $changed}
     <div class="a4pw-done" role="status" tabindex="-1" autofocus>
-        <svg class="a4pw-done-icon" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="currentColor"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="a4-icon a4-bi-check-circle-fill is-large a4pw-done-icon" aria-hidden="true"></span>
         <div>
             <h2>{'Your password was changed.'|i18n( $ctx )}</h2>
             <p>{'You stay signed in here.'|i18n( $ctx )}{if and( is_set( $sessions_ended ), $sessions_ended|gt( 0 ) )} {'Your other sessions (%count) were signed out.'|i18n( $ctx, '', hash( '%count', $sessions_ended ) )}{elseif first_set( $other_sessions_signed_out, false() )} {'You were signed out on your other devices.'|i18n( $ctx )}{/if}</p>

@@ -24,7 +24,7 @@
 {section show=$vattype_array}
 <table class="list" cellspacing="0">
 <tr>
-    <th class="tight"><img src={'toggle-button-16x16.gif'|ezimage} width="16" height="16" alt="{'Invert selection.'|i18n( 'design/admin/shop/vattype' )}" title="{'Invert selection.'|i18n( 'design/admin/shop/vattype' )}" onclick="ezjs_toggleCheckboxes( document.VatType, 'vatTypeIDList[]' ); return false;" /></th>
+    <th class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/shop/vattype' )}" aria-label="{'Invert selection.'|i18n( 'design/admin/shop/vattype' )}" onclick="ezjs_toggleCheckboxes( document.VatType, 'vatTypeIDList[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
     <th>{'Name'|i18n( 'design/admin/shop/vattype' )}</th>
     <th class="tight">{'Percentage'|i18n( 'design/admin/shop/vattype' )}</th>
 </tr>

@@ -153,9 +153,9 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
 #header .site-preview {
   align-self: center;
 }
-#header .site-preview svg,
-#header .sidebar-control svg {
-  fill: var(--a4-header-ink);
+#header .site-preview .a4-icon,
+#header .sidebar-control .a4-icon {
+  color: var(--a4-header-ink);
 }
 #header .navbar-icon {
   color: var(--a4-header-ink);
@@ -266,13 +266,14 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
   outline: none;
   box-shadow: 0 0 0 3px var(--a4-ring);
 }
-.a4-theme-toggle svg {
-  fill: var(--a4-orange);
-  stroke: var(--a4-orange);
+.a4-theme-toggle .a4-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--a4-orange);
 }
 .a4-theme-toggle .a4-icon-moon { display: none; }
 html[data-a4-theme="dark"] .a4-theme-toggle .a4-icon-sun { display: none; }
-html[data-a4-theme="dark"] .a4-theme-toggle .a4-icon-moon { display: inline; }
+html[data-a4-theme="dark"] .a4-theme-toggle .a4-icon-moon { display: inline-block; }
 /* The same round icon button at every width (the label is read by screen readers, not shown) */
 .a4-theme-toggle { padding: 7px 9px; }
 .a4-theme-toggle .a4-theme-label {
@@ -855,7 +856,7 @@ html[data-a4-theme="dark"] .a4-login-logo { background-image: url('../images/3/l
 .a4-reveal:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 0; }
 .a4-reveal .a4-eye-off { display: none; }
 .a4-reveal[aria-pressed="true"] .a4-eye { display: none; }
-.a4-reveal[aria-pressed="true"] .a4-eye-off { display: inline; }
+.a4-reveal[aria-pressed="true"] .a4-eye-off { display: inline-block; }
 .a4-check { display: flex; align-items: center; gap: 10px; margin: 16px 0 0; font-size: 14px; font-weight: 500; color: var(--a4-ink); cursor: pointer; }
 .a4-check input { width: 18px; height: 18px; margin: 0; accent-color: var(--a4-accent-strong); }
 .a4-login-note { margin: 14px 0 0; font-size: 13px; color: var(--a4-muted); }
@@ -1127,7 +1128,7 @@ html[data-a4-theme="dark"] .a4-login-form #loginbutton:hover { color: var(--a4-c
 .a4pw-toggle:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 0; }
 .a4pw-toggle[aria-pressed="true"] { background: var(--a4-soft); border-color: var(--a4-line); color: var(--a4-ink); }
 .a4pw-toggle .a4pw-eye-off, .a4pw-toggle[aria-pressed="true"] .a4pw-eye { display: none; }
-.a4pw-toggle[aria-pressed="true"] .a4pw-eye-off { display: inline; }
+.a4pw-toggle[aria-pressed="true"] .a4pw-eye-off { display: inline-block; }
 
 .a4pw-link { margin: 0 0 6px; padding: 2px 0; border: 0; background: none; color: var(--a4-accent-text); font: 600 13px/1.3 var(--a4-font); text-decoration: underline; text-underline-offset: 2px; cursor: pointer; }
 .a4pw-link:hover { color: var(--a4-ink); }
@@ -1234,3 +1235,9 @@ html .exp-dt-first:disabled, html .exp-dt-prev:disabled, html .exp-dt-next:disab
 html .exp-dt-page { border-color: var(--a4-line); background-color: var(--a4-card); }
 html .exp-dt-dialog { color: var(--a4-ink); }
 html .exp-dt-dialog-title { background-color: var(--a4-soft); background-image: none; color: var(--a4-ink); }
+
+/* The class, file type and other icons of the bootstrap-icons theme (share/icons/bootstrap-icons, switched on in the
+   admin siteaccess's icon.ini) come as <img src="....svg">. An SVG in an <img> is drawn apart from the page, so its
+   currentColor is black and no rule here reaches its fill: in dark mode a filter turns the black into the light grey
+   of the text (invert gives white, brightness(.92) about #ebebeb, over 13:1 on the dark card). */
+html[data-a4-theme="dark"] img[src*="/share/icons/bootstrap-icons/"] { filter: invert(1) brightness(.92); }

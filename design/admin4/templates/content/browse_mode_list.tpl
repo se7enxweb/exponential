@@ -11,7 +11,7 @@
 <tr>
     <th class="tight">
     {if eq( $select_type, 'checkbox' )}
-        <img src={'toggle-button-16x16.gif'|ezimage} width="16" height="16" alt="{'Invert selection.'|i18n( 'design/admin/content/browse' )}" title="{'Invert selection.'|i18n( 'design/admin/content/browse' )}" onclick="ezjs_toggleCheckboxes( document.browse, '{$select_name}[]' ); return false;" />
+        <button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/content/browse' )}" aria-label="{'Invert selection.'|i18n( 'design/admin/content/browse' )}" onclick="ezjs_toggleCheckboxes( document.browse, '{$select_name}[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button>
     {else}
         &nbsp;
     {/if}

@@ -219,7 +219,7 @@
 </ul>
 
 <div class="a4-actions a4-card-body" id="rssExportAddSource"{if $rss_is_opml} hidden{/if}>
-    <button class="a4-btn" type="submit" name="AddSourceButton" value="1" title="{'Click to add a new source to the RSS export.'|i18n( 'design/admin/rss/edit_export' )}"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M7 2h2v5h5v2H9v5H7V9H2V7h5z"/></svg>{'Add source'|i18n( 'design/admin/rss/edit_export' )}</button>
+    <button class="a4-btn" type="submit" name="AddSourceButton" value="1" title="{'Click to add a new source to the RSS export.'|i18n( 'design/admin/rss/edit_export' )}"><span class="a4-icon a4-bi-plus-lg" aria-hidden="true"></span>{'Add source'|i18n( 'design/admin/rss/edit_export' )}</button>
 </div>
 </section>
 

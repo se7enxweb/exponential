@@ -1444,22 +1444,22 @@ html[data-a4-left-size="large"] {
     border-radius: 50rem;
 }
 
-.sidebar-control svg {
+.sidebar-control .a4-icon {
     width: 0.75rem;
     height: 0.751rem;
     transition: transform 300ms ease;
-    fill: white
+    color: white;
 }
 
-.sidebar-control.left svg {
+.sidebar-control.left .a4-icon {
     transform: rotate(180deg);
 }
 
-.sidebar-control.left.rotate svg {
+.sidebar-control.left.rotate .a4-icon {
     transform: rotate(0deg);
 }
 
-.sidebar-control.right.rotate svg {
+.sidebar-control.right.rotate .a4-icon {
     transform: rotate(180deg);
 }
 
@@ -1724,10 +1724,9 @@ div:has(> table) {
     color: #ffffff;
 }
 
-.header-logo .site-preview svg {
+.header-logo .site-preview .a4-icon {
     width: 1.5rem;
     height: 1.5rem;
-    fill: currentColor;
 }
 
 .draft-list {

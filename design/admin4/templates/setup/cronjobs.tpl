@@ -123,7 +123,7 @@
             {/foreach}
             </select>
         </div>
-        <button type="button" class="a4-btn a4-btn-primary" id="cronjob-run-selected"{if $cronjob_status.running} disabled="disabled"{/if}><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4 2.5v11l9-5.5z"/></svg>{'Run'|i18n( 'design/admin/setup/cronjobs' )}</button>
+        <button type="button" class="a4-btn a4-btn-primary" id="cronjob-run-selected"{if $cronjob_status.running} disabled="disabled"{/if}><span class="a4-icon a4-bi-play-fill" aria-hidden="true"></span>{'Run'|i18n( 'design/admin/setup/cronjobs' )}</button>
         <span class="a4-meta" id="cronjob-run-hint">{'Runs every part, one after another.'|i18n( 'design/admin/setup/cronjobs' )}</span>
     </div>
     <p class="a4-filter-count a4-setup-js-only" id="cronjob-filter-count" aria-live="polite" hidden></p>
@@ -196,7 +196,7 @@
                 data-blocked="{if $cronjob_blocked}1{else}0{/if}"
                 value="{$cronjob_part.name|wash}"{if $cronjob_runnable|not} disabled="disabled"{/if}
                 aria-label="{'Run the whole %part part now'|i18n( 'design/admin/setup/cronjobs',, hash( '%part', $cronjob_part.label ) )|wash}"
-                title="{'Run the whole %part part now'|i18n( 'design/admin/setup/cronjobs',, hash( '%part', $cronjob_part.label ) )|wash}"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4 2.5v11l9-5.5z"/></svg>{'Run part'|i18n( 'design/admin/setup/cronjobs' )}</button>
+                title="{'Run the whole %part part now'|i18n( 'design/admin/setup/cronjobs',, hash( '%part', $cronjob_part.label ) )|wash}"><span class="a4-icon a4-bi-play-fill" aria-hidden="true"></span>{'Run part'|i18n( 'design/admin/setup/cronjobs' )}</button>
     </div>
 
     <dl class="a4-facts">

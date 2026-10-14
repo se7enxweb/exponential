@@ -93,7 +93,7 @@
     {if $group_count|gt( $limit )}
     <span class="a4-meta">{'%from to %to of %count'|i18n( 'design/admin/state/groups',, hash( '%from', sum( $view_parameters.offset, 1 ), '%to', min( sum( $view_parameters.offset, $limit ), $group_count ), '%count', $group_count ) )}</span>
     {/if}
-    <button type="submit" class="a4-btn a4-btn-primary" name="CreateButton" value="1"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M7 2h2v5h5v2H9v5H7V9H2V7h5z"/></svg>{'New state group'|i18n( 'design/admin/state/groups' )}</button>
+    <button type="submit" class="a4-btn a4-btn-primary" name="CreateButton" value="1"><span class="a4-icon a4-bi-plus-lg" aria-hidden="true"></span>{'New state group'|i18n( 'design/admin/state/groups' )}</button>
 </div>
 
 {if $groups_info|count|eq(0)}
@@ -111,7 +111,7 @@
             <code class="a4-muted">{$info.identifier|wash}</code>
             <ul class="a4-badges">
                 {if $info.internal}
-                <li class="a4-badge is-info" title="{'Belongs to Exponential; it cannot be edited or removed'|i18n( 'design/admin/state/groups' )|wash}"><svg width="12" height="12" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M5 7V5a3 3 0 0 1 6 0v2h1v7H4V7zm2 0h2V5a1 1 0 0 0-2 0z"/></svg>{'System, protected'|i18n( 'design/admin/state/groups' )}</li>
+                <li class="a4-badge is-info" title="{'Belongs to Exponential; it cannot be edited or removed'|i18n( 'design/admin/state/groups' )|wash}"><span class="a4-icon a4-bi-lock-fill is-small" aria-hidden="true"></span>{'System, protected'|i18n( 'design/admin/state/groups' )}</li>
                 {/if}
                 <li class="a4-badge">{if $info.states|count|eq(1)}{'1 state'|i18n( 'design/admin/state/groups' )}{else}{'%count states'|i18n( 'design/admin/state/groups',, hash( '%count', $info.states|count ) )}{/if}</li>
                 {if $info.roles|count|gt(0)}<li class="a4-badge is-info">{'Used by %count roles'|i18n( 'design/admin/state/groups',, hash( '%count', $info.roles|count ) )}</li>{/if}

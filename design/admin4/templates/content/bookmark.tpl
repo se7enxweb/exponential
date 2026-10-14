@@ -16,7 +16,7 @@
 {def $bp = $bookmark_page
      $summary = $bp.summary
      $current = $bp.current
-     $folder_icon = '<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M1.5 3A1.5 1.5 0 0 1 3 1.5h3.1c.4 0 .78.16 1.06.44L8.2 3H13a1.5 1.5 0 0 1 1.5 1.5v8A1.5 1.5 0 0 1 13 14H3a1.5 1.5 0 0 1-1.5-1.5V3Zm1.5-.5a.5.5 0 0 0-.5.5v9.5a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5H8a.5.5 0 0 1-.35-.15L6.45 2.65a.5.5 0 0 0-.35-.15H3Z"/></svg>'
+     $folder_icon = '<span class="a4-icon a4-bi-folder is-medium" aria-hidden="true"></span>'
      $scope_title = ''
      $group_open = false()
      $group_info = false()
@@ -290,8 +290,8 @@
                 {if $item.can_edit}<a class="a4-btn a4-btn-small" href={concat( 'content/edit/', $item.contentobject_id )|ezurl} aria-describedby="{$card_id}-title">{'Edit'|i18n( 'design/admin/content/bookmark' )}</a>{/if}
                 {/if}
                 {if $bp.order_buttons}
-                <button type="submit" class="a4-btn a4-btn-small a4-btn-icon" name="BookmarkShiftButton" value="up-{$item.id}" title="{'Move up'|i18n( 'design/admin/content/bookmark' )}" aria-label="{'Move %name up'|i18n( 'design/admin/content/bookmark',, hash( '%name', $item.name ) )|wash}"{if $bp.first_last.first|contains( $item.id )} disabled="disabled"{/if}><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 3.5 13 9l-1.06 1.06L8.75 6.8V13h-1.5V6.8l-3.19 3.26L3 9z"/></svg></button>
-                <button type="submit" class="a4-btn a4-btn-small a4-btn-icon" name="BookmarkShiftButton" value="down-{$item.id}" title="{'Move down'|i18n( 'design/admin/content/bookmark' )}" aria-label="{'Move %name down'|i18n( 'design/admin/content/bookmark',, hash( '%name', $item.name ) )|wash}"{if $bp.first_last.last|contains( $item.id )} disabled="disabled"{/if}><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 12.5 3 7l1.06-1.06 3.19 3.26V3h1.5v6.2l3.19-3.26L13 7z"/></svg></button>
+                <button type="submit" class="a4-btn a4-btn-small a4-btn-icon" name="BookmarkShiftButton" value="up-{$item.id}" title="{'Move up'|i18n( 'design/admin/content/bookmark' )}" aria-label="{'Move %name up'|i18n( 'design/admin/content/bookmark',, hash( '%name', $item.name ) )|wash}"{if $bp.first_last.first|contains( $item.id )} disabled="disabled"{/if}><span class="a4-icon a4-bi-arrow-up" aria-hidden="true"></span></button>
+                <button type="submit" class="a4-btn a4-btn-small a4-btn-icon" name="BookmarkShiftButton" value="down-{$item.id}" title="{'Move down'|i18n( 'design/admin/content/bookmark' )}" aria-label="{'Move %name down'|i18n( 'design/admin/content/bookmark',, hash( '%name', $item.name ) )|wash}"{if $bp.first_last.last|contains( $item.id )} disabled="disabled"{/if}><span class="a4-icon a4-bi-arrow-down" aria-hidden="true"></span></button>
                 {/if}
             </div>
         </div>

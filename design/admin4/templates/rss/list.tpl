@@ -193,7 +193,7 @@
 <div class="a4-toolbar is-bottom">
     <div class="a4-actions">
         <button type="submit" class="a4-btn a4-btn-outline-danger" name="RemoveExportButton" value="1" aria-describedby="rss-export-remove-help" title="{'Remove selected RSS exports.'|i18n( 'design/admin/rss/list' )}"{if $rssexport_list|count|eq( 0 )} disabled="disabled"{/if}>{'Remove selected'|i18n( 'design/admin/rss/list' )}</button>
-        <button type="submit" class="a4-btn a4-btn-primary" name="NewExportButton" value="1" title="{'Create a new RSS export.'|i18n( 'design/admin/rss/list' )}"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M7 2h2v5h5v2H9v5H7V9H2V7h5z"/></svg>{'New export'|i18n( 'design/admin/rss/list' )}</button>
+        <button type="submit" class="a4-btn a4-btn-primary" name="NewExportButton" value="1" title="{'Create a new RSS export.'|i18n( 'design/admin/rss/list' )}"><span class="a4-icon a4-bi-plus-lg" aria-hidden="true"></span>{'New export'|i18n( 'design/admin/rss/list' )}</button>
     </div>
     <p class="a4-meta" id="rss-export-remove-help">{'Remove selected asks for confirmation first and says which feed addresses stop working.'|i18n( 'design/admin/rss/list' )} <span class="exp-selected-count" data-for="DeleteIDArray[]" aria-live="polite"></span></p>
 </div>
@@ -307,7 +307,7 @@
 <div class="a4-toolbar is-bottom">
     <div class="a4-actions">
         <button type="submit" class="a4-btn a4-btn-outline-danger" name="RemoveImportButton" value="1" aria-describedby="rss-import-remove-help" title="{'Remove selected RSS imports.'|i18n( 'design/admin/rss/list' )}"{if $rssimport_list|count|eq( 0 )} disabled="disabled"{/if}>{'Remove selected'|i18n( 'design/admin/rss/list' )}</button>
-        <button type="submit" class="a4-btn a4-btn-primary" name="NewImportButton" value="1" title="{'Create a new RSS import.'|i18n( 'design/admin/rss/list' )}"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M7 2h2v5h5v2H9v5H7V9H2V7h5z"/></svg>{'New import'|i18n( 'design/admin/rss/list' )}</button>
+        <button type="submit" class="a4-btn a4-btn-primary" name="NewImportButton" value="1" title="{'Create a new RSS import.'|i18n( 'design/admin/rss/list' )}"><span class="a4-icon a4-bi-plus-lg" aria-hidden="true"></span>{'New import'|i18n( 'design/admin/rss/list' )}</button>
     </div>
     <p class="a4-meta" id="rss-import-remove-help">{'Remove selected asks for confirmation first. The objects an import created stay in the content tree.'|i18n( 'design/admin/rss/list' )} <span class="exp-selected-count" data-for="DeleteIDArrayImport[]" aria-live="polite"></span></p>
 </div>

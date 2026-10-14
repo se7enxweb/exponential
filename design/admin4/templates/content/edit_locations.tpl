@@ -37,7 +37,7 @@
 <table class="list" cellspacing="0" >
 <tr>
 {* JB TODO: The alt/title fields should get different text descriptions when they are disabled *}
-    <th class="tight"><img src={'toggle-button-16x16.gif'|ezimage} width="16" height="16" alt="{'Invert selection.'|i18n( 'design/admin/content/edit' )}" title="{'Invert selection.'|i18n( 'design/admin/content/edit' )}" onclick="ezjs_toggleCheckboxes( document.editform, 'AssignmentIDSelection[]' ); return false;" /></th>
+    <th class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/content/edit' )}" aria-label="{'Invert selection.'|i18n( 'design/admin/content/edit' )}" onclick="ezjs_toggleCheckboxes( document.editform, 'AssignmentIDSelection[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
     <th>{'Location'|i18n( 'design/admin/content/edit' )}</th>
     <th>{'Sub items'|i18n( 'design/admin/content/edit' )}</th>
     <th>{'Sorting of sub items'|i18n( 'design/admin/content/edit' )}</th>
@@ -153,11 +153,11 @@
     <td>
     {switch match=$Node:item.parent_node}
     {case in=$Node:existingParentNodes}
-    <input {if $location_ui_enabled|not}disabled="disabled" {/if}type="image" name="{concat( 'MoveNodeID_', $Node:item.parent_node )}" src={'move.gif'|ezimage} value="{$Node:item.parent_node}" title="{'Move to another location.'|i18n( 'design/admin/content/edit' )}" />
+    <button {if $location_ui_enabled|not}disabled="disabled" {/if} type="submit" class="a4-icon-btn" name="MoveNodeID" value="{$Node:item.parent_node}" title="{'Move to another location.'|i18n( 'design/admin/content/edit' )}" aria-label="{'Move to another location.'|i18n( 'design/admin/content/edit' )}"><span class="a4-icon a4-bi-arrows-move is-medium" aria-hidden="true"></span></button>
     {/case}
     {case}
     {if $Node:item.from_node_id|gt( 0 )}
-    <input {if $location_ui_enabled|not}disabled="disabled" {/if}type="image" name="{concat( 'MoveNodeID_', $Node:item.parent_node )}" src={'move.gif'|ezimage} value="{$Node:item.parent_node}" title="{'Move to another location.'|i18n( 'design/admin/content/edit' )}" />
+    <button {if $location_ui_enabled|not}disabled="disabled" {/if} type="submit" class="a4-icon-btn" name="MoveNodeID" value="{$Node:item.parent_node}" title="{'Move to another location.'|i18n( 'design/admin/content/edit' )}" aria-label="{'Move to another location.'|i18n( 'design/admin/content/edit' )}"><span class="a4-icon a4-bi-arrows-move is-medium" aria-hidden="true"></span></button>
     {else}
     &nbsp;
     {/if}
