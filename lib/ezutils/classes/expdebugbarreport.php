@@ -334,7 +334,9 @@ class expDebugBarReport
             'templates'=> $templates === null ? '' : $templates,
         );
 
-        // --- the bar
+        // --- the bar. Its stylesheet comes first, so the browser has the rules before it draws the bar (a stylesheet
+        // in the body holds back the rendering of what follows it); the report carries no inline CSS.
+        echo self::includeTag( 'css', 'design/standard/stylesheets/expdebugbar.css' );
         echo '<div id="debug" class="exp-debug" data-exp-debug-bar="2">';
         echo '<h2><a href="#debug-end" aria-controls="debug-details" aria-expanded="false">Exp Debug' . htmlspecialchars( $byUser . $byIP, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '</a>';
         echo self::summaryHtml( $summary );
@@ -441,7 +443,7 @@ class expDebugBarReport
         }
 
         $reportTime = number_format( microtime( true ) - $reportStart, 4 );
-        echo '<p class="exp-debug-report-time"><b>' . self::h( 'Time used to render debug report: %time secs', array( '%time' => $reportTime ) ) . '</b></p>';
+        echo '<p class="exp-debug-report-time">' . self::h( 'Time used to render debug report: %time secs', array( '%time' => $reportTime ) ) . '</p>';
 
         echo '</div>'; // #debug-details
         echo '</div>'; // #debug
@@ -545,8 +547,8 @@ class expDebugBarReport
             else
                 $contents = htmlspecialchars( $text, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
 
-            $html = "<tr class='$style' data-level='$style'><td class='debugheader'$identifierText><b><span>{$outputData['name']}:</span> " . htmlspecialchars( $label, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . "</b></td>"
-                  . "<td class='debugheader' style=\"text-align:right;\">$time</td></tr>"
+            $html = "<tr class='$style' data-level='$style'><td class='debugheader debuglabel'$identifierText><span>{$outputData['name']}:</span> " . htmlspecialchars( $label, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . "</td>"
+                  . "<td class='debugheader debugtime'>$time</td></tr>"
                   . "<tr class='debugbody' data-level='$style'><td colspan='2'><pre$pre>" . $contents . "</pre></td></tr>";
             if ( $isSql )
             {
@@ -713,8 +715,8 @@ class expDebugBarReport
                 $relMemory = number_format( ( $next['MemoryUsage'] - $point['MemoryUsage'] ) / 1024, $acc );
             }
             $html .= "<tr class='data'><td>" . $point['Description'] . "</td>"
-                   . "<td style=\"text-align:right;\">" . number_format( $point['Time'] - $startTime, $acc ) . "</td><td style=\"text-align:right;\">$relElapsed</td>"
-                   . "<td style=\"text-align:right;\">" . number_format( $point['MemoryUsage'] / 1024, $acc ) . "</td><td style=\"text-align:right;\">$relMemory</td></tr>";
+                   . "<td class='num'>" . number_format( $point['Time'] - $startTime, $acc ) . "</td><td class='num'>$relElapsed</td>"
+                   . "<td class='num'>" . number_format( $point['MemoryUsage'] / 1024, $acc ) . "</td><td class='num'>$relMemory</td></tr>";
         }
         return $html . "</table></div>";
     }
@@ -762,14 +764,14 @@ class expDebugBarReport
             $children = $group['children'];
             if ( count( $children ) == 0 and !array_key_exists( 'time_data', $group ) )
                 continue;
-            $html .= "<tr class='group'><td><b>{$group['name']}</b></td>";
+            $html .= "<tr class='group'><td class='groupname'>{$group['name']}</td>";
             if ( array_key_exists( 'time_data', $group ) )
             {
                 $g = $group['time_data'];
-                $html .= "<td style=\"text-align:right;\"><i>" . number_format( $g['time'], $acc ) . "</i></td>"
-                       . "<td style=\"text-align:right;\"><i>" . number_format( $g['time'] * 100.0 / $totalElapsed, 1 ) . "</i></td>"
-                       . "<td style=\"text-align:right;\"><i>{$g['count']}</i></td>"
-                       . "<td style=\"text-align:right;\"><i>" . number_format( $g['count'] ? $g['time'] / $g['count'] : 0, $acc ) . "</i></td>";
+                $html .= "<td class='num'>" . number_format( $g['time'], $acc ) . "</td>"
+                       . "<td class='num'>" . number_format( $g['time'] * 100.0 / $totalElapsed, 1 ) . "</td>"
+                       . "<td class='num'>{$g['count']}</td>"
+                       . "<td class='num'>" . number_format( $g['count'] ? $g['time'] / $g['count'] : 0, $acc ) . "</td>";
             }
             else
             {
@@ -780,10 +782,10 @@ class expDebugBarReport
             {
                 $avg = $child['count'] > 0 ? $child['time'] / $child['count'] : 0.0;
                 $html .= "<tr class='data'><td>{$child['name']}</td>"
-                       . "<td style=\"text-align:right;\">" . number_format( $child['time'], $acc ) . "</td>"
-                       . "<td style=\"text-align:right;\">" . number_format( $child['time'] * 100.0 / $totalElapsed, $pacc ) . "</td>"
-                       . "<td style=\"text-align:right;\">{$child['count']}</td>"
-                       . "<td style=\"text-align:right;\">" . number_format( $avg, $pacc ) . "</td></tr>";
+                       . "<td class='num'>" . number_format( $child['time'], $acc ) . "</td>"
+                       . "<td class='num'>" . number_format( $child['time'] * 100.0 / $totalElapsed, $pacc ) . "</td>"
+                       . "<td class='num'>{$child['count']}</td>"
+                       . "<td class='num'>" . number_format( $avg, $pacc ) . "</td></tr>";
             }
         }
         return $html;
@@ -856,7 +858,7 @@ class expDebugBarReport
                 $phpFile = $matches[1];
             $html .= "<tr class='data'><td>" . htmlspecialchars( $phpFile, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . "</td></tr>";
         }
-        $html .= "<tr><td><b>&nbsp;" . self::h( 'Number of files included: %count', array( '%count' => count( $phpFiles ) ) ) . "</b></td></tr>";
+        $html .= "<tr class='summary'><td>" . self::h( 'Number of files included: %count', array( '%count' => count( $phpFiles ) ) ) . "</td></tr>";
         return $html . "</table></div>";
     }
 
@@ -1154,49 +1156,30 @@ class expDebugBarReport
         return $html;
     }
 
+    /**
+     * A link to one of the bar's files. The address is the plain path: no version or file time query (owner rule,
+     * AGENTS.md "Admin design and template styling rules"); a browser that still shows an old file is reloaded by hand.
+     */
     protected static function includeTag( $kind, $path )
     {
-        $file = $path;
-        $version = @filemtime( $file );
-        $url = eZSys::wwwDir() . '/' . $path . ( $version ? '?v=' . $version : '' );
+        $url = eZSys::wwwDir() . '/' . $path;
         if ( $kind === 'css' )
             return '<link rel="stylesheet" type="text/css" href="' . htmlspecialchars( $url, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '">';
         return '<script src="' . htmlspecialchars( $url, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '" defer></script>';
     }
 
     /**
-     * The bar's stylesheet and script. The pinned bar and the open/close with "Keep open on reload"
-     * are inline, so they work in every design even when the files cannot be loaded; the tabs and
-     * the controls come from the files.
+     * The bar's script: the open/close with "Keep open on reload" inline, the tabs and the controls from the file.
+     * All of the bar's CSS, the pinned bar and the panel above it included, is in expdebugbar.css, linked before
+     * the bar (render()); the report carries no <style> and no style="" (AGENTS.md "Admin design and template
+     * styling rules").
      */
     protected static function assetsHtml()
     {
-        $html = self::includeTag( 'css', 'design/standard/stylesheets/expdebugbar.css' );
-        // The bar stays at the bottom of the window wherever the page is scrolled; the details open as a
-        // panel above it (its height follows the bar, which may wrap at narrow widths). The panel is 60% of the
-        // window high, or the height the user dragged it to (--exp-debug-panel-h), never more than the room above the bar.
-        $html .= "<style>
-#debug, #debug[data-exp-debug-bar] { margin: 0; padding: 0; border: 0; background: transparent; box-shadow: none; }
-#debug > h2 { position: fixed; left: 0; right: 0; bottom: 0; z-index: 2147483000; margin: 0;
-  display: flex; flex-wrap: wrap; align-items: center; background: #f2f2f2; border-top: 1px solid #999;
-  box-shadow: 0 -2px 6px rgba(0,0,0,.15); font-size: 14px; }
-#debug > h2 > a { flex: 1 1 auto; padding: 8px 12px; color: #222; text-decoration: none; }
-#debug > h2 > label.debug-keep-open { margin-right: 12px; color: #222; }
-#debug-details { display: none; }
-#debug-details.active { display: block; position: fixed; left: 0; right: 0; bottom: var(--exp-debug-bar-h, 38px); z-index: 2147482999;
-  height: 60vh; height: min(var(--exp-debug-panel-h, 60vh), calc(100vh - var(--exp-debug-bar-h, 38px)));
-  overflow: auto; background: var(--xd-bg, #fff); color: var(--xd-fg, #222); border-top: 2px solid #999;
-  box-shadow: 0 -4px 12px rgba(0,0,0,.2); box-sizing: border-box; }
-body.exp-debug-bar { padding-bottom: calc(var(--exp-debug-bar-h, 38px) + 8px); }
-@media (prefers-color-scheme: dark) {
-  #debug > h2 { background: #2a2a2a; border-top-color: #555; }
-  #debug > h2 > a, #debug > h2 > label.debug-keep-open { color: #eee; }
-}
-</style>";
         // Open and close with a click on the header. "Keep open on reload" remembers the state in the
         // browser's localStorage (exp-debug-keep, exp-debug-open); unticked, the details start closed on
         // every page. Storage that throws (private windows, blocked site data) is ignored.
-        $html .= "<script>
+        $html = "<script>
 (function () {
   const header = document.querySelector('#debug h2 a');
   const content = document.querySelector('#debug-details');
@@ -1229,7 +1212,6 @@ body.exp-debug-bar { padding-bottom: calc(var(--exp-debug-bar-h, 38px) + 8px); }
   };
   const keepLabel = document.createElement('label');
   keepLabel.className = 'debug-keep-open';
-  keepLabel.style.cssText = 'margin-left:1em;font-size:12px;font-weight:normal;cursor:pointer;white-space:nowrap';
   const keep = document.createElement('input');
   keep.type = 'checkbox';
   keep.checked = read('exp-debug-keep') === '1';

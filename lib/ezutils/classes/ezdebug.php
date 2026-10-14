@@ -844,8 +844,8 @@ class eZDebug
     }
 
     /*!
-     Enables/disables the use of external CSS. If false a <style> tag is output
-     before the debug list. Default is to use internal css.
+     Enables/disables the use of external CSS. If false the classic HTML report links
+     design/standard/stylesheets/debug.css itself; true means the design loads it.
     */
     static function setUseExternalCSS( $use )
     {
@@ -1709,7 +1709,7 @@ class eZDebug
         // The HTML report is the "Exp Debug" bar (lib/ezutils/classes/expdebugbarreport.php): a pinned bar
         // with a summary and a tabbed panel over the same sections. Loaded by path, so a server whose
         // workers kept an older autoload array still finds it; without the file the classic report below.
-        if ( $as_html )
+        if ( $as_html && $this->UseDebugBar )
         {
             if ( !class_exists( 'expDebugBarReport', false ) && is_file( __DIR__ . '/expdebugbarreport.php' ) )
                 require_once __DIR__ . '/expdebugbarreport.php';
@@ -1837,8 +1837,8 @@ class eZDebug
                     else
                         $contents = htmlspecialchars( (string)$debug['String'], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
 
-                    echo "<tr class='$style'><td class='debugheader'$identifierText><b><span>$name:</span> $label</b></td>
-                                    <td class='debugheader' style=\"text-align:right;\">$time</td></tr>
+                    echo "<tr class='$style'><td class='debugheader debuglabel'$identifierText><span>$name:</span> $label</td>
+                                    <td class='debugheader debugtime'>$time</td></tr>
                                     <tr><td colspan='2'><pre$pre>" .  $contents . "</pre></td></tr>";
                 }
                 else
@@ -1946,8 +1946,8 @@ class eZDebug
                 if ( $as_html )
                 {
                     echo "<tr class='data'><td>" . $point["Description"] . "</td>
-                          <td style=\"text-align:right;\">$elapsed</td><td style=\"text-align:right;\">$relElapsed</td>
-                          <td style=\"text-align:right;\">$memory</td><td style=\"text-align:right;\">$relMemory</td></tr>";
+                          <td class='num'>$elapsed</td><td class='num'>$relElapsed</td>
+                          <td class='num'>$memory</td><td class='num'>$relMemory</td></tr>";
                 }
                 else
                 {
@@ -2010,7 +2010,7 @@ class eZDebug
                      !array_key_exists( 'time_data', $group ) )
                     continue;
                 if ( $as_html )
-                    echo "<tr class='group'><td><b>$groupName</b></td>";
+                    echo "<tr class='group'><td class='groupname'>$groupName</td>";
                 else
                     echo "Group " . $styles['mark'] . "$groupName:" . $styles['mark-end'] . " ";
                 if ( array_key_exists( 'time_data', $group ) )
@@ -2022,10 +2022,10 @@ class eZDebug
                     $groupAverage = number_format( ( $groupData['time'] / $groupData['count'] ), $this->TimingAccuracy );
                     if ( $as_html )
                     {
-                        echo ( "<td style=\"text-align:right;\"><i>$groupElapsed</i></td>".
-                               "<td style=\"text-align:right;\"><i>$groupPercent</i></td>".
-                               "<td style=\"text-align:right;\"><i>$groupCount</i></td>".
-                               "<td style=\"text-align:right;\"><i>$groupAverage</i></td>" );
+                        echo ( "<td class='num'>$groupElapsed</td>".
+                               "<td class='num'>$groupPercent</td>".
+                               "<td class='num'>$groupCount</td>".
+                               "<td class='num'>$groupAverage</td>" );
                     }
                     else
                     {
@@ -2061,10 +2061,10 @@ class eZDebug
                     {
                         echo ( "<tr class='data'>" .
                                          "<td>$childName</td>" .
-                                         "<td style=\"text-align:right;\">$childElapsed</td>" .
-                                         "<td style=\"text-align:right;\">$childPercent</td>" .
-                                         "<td style=\"text-align:right;\">$childCount</td>" .
-                                         "<td style=\"text-align:right;\">$childAverage</td>" .
+                                         "<td class='num'>$childElapsed</td>" .
+                                         "<td class='num'>$childPercent</td>" .
+                                         "<td class='num'>$childCount</td>" .
+                                         "<td class='num'>$childAverage</td>" .
                                          "</tr>" );
                     }
                     else
@@ -2108,7 +2108,7 @@ class eZDebug
             }
             if ( $as_html )
             {
-                echo "<tr><td><b>&nbsp;Number of files included: " . count( $phpFiles ) . "</b></td></tr>";
+                echo "<tr class='summary'><td>Number of files included: " . count( $phpFiles ) . "</td></tr>";
                 echo "</table></div>";
             }
         }
@@ -2119,7 +2119,7 @@ class eZDebug
         {
             $reportStop = microtime( true );
             $reportTime = number_format( $reportStop - $reportStart, 4 );
-            echo "<p><b>Time used to render debug report: $reportTime secs</b></p>";
+            echo "<p class='debugreporttime'>Time used to render debug report: $reportTime secs</p>";
 
             echo "</div>";
             echo "</div>";
@@ -2129,24 +2129,8 @@ class eZDebug
             // the state in the browser's localStorage (exp-debug-keep, exp-debug-open); unticked, the details
             // start closed on every page. Storage that throws (private windows, blocked site data) is ignored.
             // The bar stays at the bottom of the window wherever the page is scrolled, and the details open
-            // as a panel above it that scrolls on its own, so the report is reachable from the top of a long
-            // page. Inline, so every design (admin and public, with or without debug.css) gets it.
-            echo "<style>
-#debug { margin-bottom: 0; }
-#debug > h2 { position: fixed; left: 0; right: 0; bottom: 0; z-index: 2147483000; margin: 0;
-  display: flex; align-items: center; background: #f2f2f2; border-top: 1px solid #999;
-  box-shadow: 0 -2px 6px rgba(0,0,0,.15); font-size: 14px; }
-#debug > h2 > a { flex: 1; padding: 8px 12px; color: #222; text-decoration: none; }
-#debug > h2 > label.debug-keep-open { margin-right: 12px; color: #222; }
-#debug-details.active { position: fixed; left: 0; right: 0; bottom: 38px; z-index: 2147482999;
-  height: 60vh; overflow: auto; background: #fff; border-top: 2px solid #999;
-  box-shadow: 0 -4px 12px rgba(0,0,0,.2); box-sizing: border-box; }
-body.exp-debug-bar { padding-bottom: 46px; }
-@media (prefers-color-scheme: dark) {
-  #debug > h2 { background: #2a2a2a; border-top-color: #555; }
-  #debug > h2 > a, #debug > h2 > label.debug-keep-open { color: #eee; }
-}
-</style>";
+            // as a panel above it that scrolls on its own. The rules are in design/standard/stylesheets/debug.css
+            // (linked above, or loaded by the design); the report carries no inline CSS.
             echo "<script>
 (function () {
   const header = document.querySelector('#debug h2 a');
@@ -2165,7 +2149,6 @@ body.exp-debug-bar { padding-bottom: 46px; }
 
   const keepLabel = document.createElement('label');
   keepLabel.className = 'debug-keep-open';
-  keepLabel.style.cssText = 'margin-left:1em;font-size:12px;font-weight:normal;cursor:pointer;white-space:nowrap';
   const keep = document.createElement('input');
   keep.type = 'checkbox';
   keep.checked = read('exp-debug-keep') === '1';
@@ -2425,8 +2408,11 @@ body.exp-debug-bar { padding-bottom: 46px; }
     /// How many places behind . should be displayed when showing percentages
     public $PercentAccuracy = 4;
 
-    /// Whether to use external CSS or output own CSS. True if external is to be used.
+    /// Whether the design loads debug.css itself (true) or the HTML report links it (false).
     public $UseCSS;
+
+    /// Whether the HTML report is the Exp Debug bar (expDebugBarReport); false prints the classic report.
+    public $UseDebugBar = true;
 
     /// Determines how messages are output (screen/log)
     public $MessageOutput;

@@ -26,6 +26,9 @@
   --xd-row-alt: #f0f1f4;
   --xd-head: #e6e8ec;
   --xd-transaction: #f8f6d8;
+  /* the shadows of the pinned bar and of the open panel over the page */
+  --xd-shadow: rgba(0, 0, 0, .15);
+  --xd-shadow-strong: rgba(0, 0, 0, .2);
   /* message levels: heading colours on --xd-row-alt (the classic td.debugheader) */
   --xd-lv-notice: #1d6b35;
   --xd-lv-warning: #8a4600;
@@ -42,6 +45,7 @@
     --xd-line: #454a52; --xd-line-strong: #6b717c; --xd-accent: #6aa9f0; --xd-accent-fg: #0d1117;
     --xd-ok: #8fd6a3; --xd-ok-bg: #173323; --xd-warn: #ffd27a; --xd-warn-bg: #3a2c0c; --xd-high: #ff9d9d; --xd-high-bg: #4a1a1a;
     --xd-focus: #8ab4f8; --xd-row: #1c1e22; --xd-row-alt: #24272c; --xd-head: #2c3036; --xd-transaction: #34321c;
+    --xd-shadow: rgba(0, 0, 0, .5); --xd-shadow-strong: rgba(0, 0, 0, .6);
     --xd-lv-notice: #8fd6a3; --xd-lv-warning: #ffd27a; --xd-lv-error: #ff9d9d; --xd-lv-debug: #e8b07a;
     --xd-lv-timing: #8ab4f8; --xd-lv-strict: #d7aefb;
   }
@@ -52,9 +56,44 @@ html[data-a4-theme="dark"] #debug {
   --xd-line: #454a52; --xd-line-strong: #6b717c; --xd-accent: #6aa9f0; --xd-accent-fg: #0d1117;
   --xd-ok: #8fd6a3; --xd-ok-bg: #173323; --xd-warn: #ffd27a; --xd-warn-bg: #3a2c0c; --xd-high: #ff9d9d; --xd-high-bg: #4a1a1a;
   --xd-focus: #8ab4f8; --xd-row: #1c1e22; --xd-row-alt: #24272c; --xd-head: #2c3036; --xd-transaction: #34321c;
+  --xd-shadow: rgba(0, 0, 0, .5); --xd-shadow-strong: rgba(0, 0, 0, .6);
   --xd-lv-notice: #8fd6a3; --xd-lv-warning: #ffd27a; --xd-lv-error: #ff9d9d; --xd-lv-debug: #e8b07a;
   --xd-lv-timing: #8ab4f8; --xd-lv-strict: #d7aefb;
 }
+
+/* --- the pinned bar and the panel above it
+   Until #450 these rules were a <style> block the report printed after the bar; they are here now, and the report
+   links this file before the bar (expdebugbarreport.php, render()), so the bar is drawn styled. The bar stays at the
+   bottom of the window wherever the page is scrolled; the details open as a panel above it (its height follows the
+   bar, which may wrap at narrow widths). The panel is 60% of the window high, or the height the user dragged it to,
+   never more than the room above the bar. The two heights are custom properties the bar's script sets on the root
+   element at run time (--exp-debug-bar-h: the measured bar; --exp-debug-panel-h: the saved panel height). */
+#debug, #debug[data-exp-debug-bar] { margin: 0; padding: 0; border: 0; background: transparent; box-shadow: none; }
+#debug > h2 {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 2147483000; margin: 0;
+  display: flex; flex-wrap: wrap; align-items: center; background: var(--xd-bg-bar); border-top: 1px solid var(--xd-line-strong);
+  box-shadow: 0 -2px 6px var(--xd-shadow); font-size: 14px;
+}
+#debug > h2 > a { flex: 1 1 auto; padding: 8px 12px; color: var(--xd-fg); text-decoration: none; }
+#debug > h2 > label.debug-keep-open {
+  margin-left: 1em; margin-right: 12px; color: var(--xd-fg); font-size: 12px; font-weight: normal; cursor: pointer; white-space: nowrap;
+}
+#debug-details { display: none; }
+#debug-details.active {
+  display: block; position: fixed; left: 0; right: 0; bottom: var(--exp-debug-bar-h, 38px); z-index: 2147482999;
+  height: 60vh; height: min(var(--exp-debug-panel-h, 60vh), calc(100vh - var(--exp-debug-bar-h, 38px)));
+  overflow: auto; background: var(--xd-bg); color: var(--xd-fg); border-top: 2px solid var(--xd-line-strong);
+  box-shadow: 0 -4px 12px var(--xd-shadow-strong); box-sizing: border-box;
+}
+body.exp-debug-bar { padding-bottom: calc(var(--exp-debug-bar-h, 38px) + 8px); }
+/* a page in a frame shows no bar (expdebugbar.js sets hidden) */
+#debug[hidden] { display: none; }
+
+/* --- the report's tables: figures right aligned in equal digits; group rows and summaries by class, not <b>/<i> */
+#debug td.num, #debug td.debugtime { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+#debug td.debuglabel, #debug tr.group td.groupname, #debug tr.summary td { font-weight: bold; }
+#debug tr.group td.num { font-style: italic; }
+#debug .exp-debug-report-time { font-weight: 600; }
 
 #debug { box-sizing: border-box; max-width: 100%; }
 #debug * { word-break: normal; overflow-wrap: anywhere; }
@@ -138,6 +177,8 @@ body.exp-debug-resizing { cursor: ns-resize; user-select: none; }
 #debug .exp-debug-copy .exp-debug-button { margin: 0; }
 #debug .exp-debug-copy .exp-debug-button[hidden] { display: none; }
 #debug .exp-debug-copy-status { font-size: 13px; }
+/* the off-screen textarea the copy falls back to (expdebugbar.js, copyByTextarea; appended to the body) */
+textarea.exp-debug-copy-area { position: fixed; top: 0; left: -9999px; width: 1px; height: 1px; opacity: 0; }
 #debug .exp-debug-copy-status:empty { display: none; }
 #debug .exp-debug-copy-status.exp-debug-ok { color: var(--xd-ok); }
 #debug .exp-debug-copy-status.exp-debug-warn { color: var(--xd-warn); }
@@ -215,7 +256,7 @@ body.exp-debug-resizing { cursor: ns-resize; user-select: none; }
   color: inherit; background-color: transparent; background-image: none; border-color: var(--xd-line); text-shadow: none;
 }
 #debug > h2, #debug[data-exp-debug-bar] > h2 { background: var(--xd-bg-bar); color: var(--xd-fg); border-top-color: var(--xd-line-strong); }
-/* the inline <style> of the report (expdebugbarreport.php, ezdebug.php) sets #222 / #eee on these */
+/* the bar's text, over the old accordion colours of debug.css */
 #debug[data-exp-debug-bar] > h2 > a, #debug[data-exp-debug-bar] > h2 > label.debug-keep-open,
 #debug > h2 > a, #debug > h2 > label.debug-keep-open { color: var(--xd-fg); background: transparent; }
 #debug a, #debug a:visited { color: var(--xd-accent); }
@@ -236,12 +277,12 @@ body.exp-debug-resizing { cursor: ns-resize; user-select: none; }
 #debug #timingpoints, #debug #timeaccumulators, #debug #debug_resources, #debug #debug_includes, #debug table.debug_resource_usage { border-color: var(--xd-line-strong); }
 #debug pre, #debug code { color: var(--xd-fg); background: transparent; }
 #debug pre.debugtransaction { background-color: var(--xd-transaction); color: var(--xd-fg); }
-#debug tr.notice  td.debugheader span, #debug tr.notice  td.debugheader b { color: var(--xd-lv-notice); }
-#debug tr.warning td.debugheader span, #debug tr.warning td.debugheader b { color: var(--xd-lv-warning); }
-#debug tr.error   td.debugheader span, #debug tr.error   td.debugheader b { color: var(--xd-lv-error); }
-#debug tr.debug   td.debugheader span, #debug tr.debug   td.debugheader b { color: var(--xd-lv-debug); }
-#debug tr.timing  td.debugheader span, #debug tr.timing  td.debugheader b { color: var(--xd-lv-timing); }
-#debug tr.strict  td.debugheader span, #debug tr.strict  td.debugheader b { color: var(--xd-lv-strict); }
+#debug tr.notice  td.debugheader span, #debug tr.notice  td.debuglabel { color: var(--xd-lv-notice); }
+#debug tr.warning td.debugheader span, #debug tr.warning td.debuglabel { color: var(--xd-lv-warning); }
+#debug tr.error   td.debugheader span, #debug tr.error   td.debuglabel { color: var(--xd-lv-error); }
+#debug tr.debug   td.debugheader span, #debug tr.debug   td.debuglabel { color: var(--xd-lv-debug); }
+#debug tr.timing  td.debugheader span, #debug tr.timing  td.debuglabel { color: var(--xd-lv-timing); }
+#debug tr.strict  td.debugheader span, #debug tr.strict  td.debuglabel { color: var(--xd-lv-strict); }
 #debug span.debuginfo:after { color: var(--xd-accent); border-color: var(--xd-accent); opacity: 1; }
 #debug .exp-debug-panel h3, #debug .exp-debug-panel legend, #debug .exp-debug-classic > summary { color: var(--xd-fg); }
 

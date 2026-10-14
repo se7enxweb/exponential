@@ -164,7 +164,8 @@ class expDebugBarReportPanelHeightTest extends PHPUnit\Framework\TestCase
 
     public function testPanelSizeAndHandleStyles()
     {
-        $source = file_get_contents( $this->root . '/lib/ezutils/classes/expdebugbarreport.php' );
+        // the panel's rules are in the bar's stylesheet (the report prints no <style>)
+        $source = file_get_contents( $this->root . '/design/standard/stylesheets/expdebugbar.css' );
         $this->assertMatchesRegularExpression(
             '/#debug-details\.active \{[^}]*\bheight: min\(var\(--exp-debug-panel-h, 60vh\), calc\(100vh - var\(--exp-debug-bar-h, 38px\)\)\);/s',
             $source, 'the saved height, never more than the room above the pinned bar' );

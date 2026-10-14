@@ -303,10 +303,35 @@ test (and puts them back if they differ). Its log is a file of its own under `va
 | Words | context `design/standard/debugbar` in `share/translations/*/translation.ts` (eng-US, ger-DE) |
 
 The report links the script and the stylesheet itself, so every design gets the bar: admin, admin2, admin3, admin4
-and the public designs, with or without `debug.css`. The pinned bar and its open and close are inline in the
-report and work even when the two files cannot be loaded. Text reports (`Debug=inline` on the command line) and the
-popup window are unchanged. Without `expdebugbarreport.php` (an older engine archive) `eZDebug` prints the
-classic report.
+and the public designs, with or without `debug.css`. The links are plain paths, with no `?v=` or other version
+query (owner rule); after a change to one of the files a browser that still shows the old one is reloaded by hand.
+Text reports (`Debug=inline` on the command line) and the popup window are unchanged. Without
+`expdebugbarreport.php` (an older engine archive) `eZDebug` prints the classic report.
+
+### No inline CSS
+
+Neither report prints a `<style>` element or a `style=""` attribute (AGENTS.md "Admin design and template styling
+rules"); the open and close of the pinned bar stay an inline script.
+
+- **The bar**: every rule, the pinned bar and the panel above it included, is in `expdebugbar.css` and takes its
+  colours from the bar's `--xd-*` tokens, each with a value for `prefers-color-scheme: dark` and for admin4's
+  `html[data-a4-theme="dark"]`. The report links the stylesheet *before* the bar, so the browser has the rules
+  before it draws the bar; no pre-paint rule is needed. The two heights the script measures or restores at run time
+  are custom properties on the root element (`--exp-debug-bar-h`, `--exp-debug-panel-h`), not style attributes in
+  the markup.
+- **The classic report**: its rules are in `debug.css`, which the report links itself (or the design loads, with
+  `eZDebug::setUseExternalCSS( true )`), scoped to `#debug:not([data-exp-debug-bar])` with a small copy of the
+  tokens. Its bar follows the colour scheme; its panel keeps the light rows of the classic table rules in both.
+- **The tables of both**: the figures of the timing points and the time accumulators are `td.num` (right aligned in
+  equal digits), the time of a message heading `td.debugtime`, the heading `td.debuglabel`, an accumulator group's
+  name `td.groupname`, and the count rows of the included files and the template usage `tr.summary`; no `<b>` or
+  `<i>`.
+- `eZDebug::$UseDebugBar` (default true) set to false prints the classic HTML report; the test below uses it.
+
+`expDebugReportNoInlineCssTest` (`tests/tests/lib/ezutils/`, no database) renders the bar and the classic report
+with messages, timing points and accumulators, and fails on any `style=""` attribute, any `<style>` element and any
+asset URL with a `?v=` query; it also checks the query cache report's source, the plain-text report, and that every
+`--xd-*` token has its dark values.
 
 ### The pinned bar
 

@@ -84,15 +84,16 @@ class expDebugBarReportCopyMessagesTest extends PHPUnit\Framework\TestCase
 
         // the rows the script reads: header (level, source, time) and body (text), both with the level
         $this->assertMatchesRegularExpression(
-            "#<tr class='error' data-level='error'><td class='debugheader'[^>]*><b><span>Error:</span> eZImageAliasHandler::storeDOMTree</b></td>"
-            . "<td class='debugheader' style=\"text-align:right;\">\w{3} \d\d \d{4} \d\d:\d\d:\d\d</td></tr>"
+            "#<tr class='error' data-level='error'><td class='debugheader debuglabel'[^>]*><span>Error:</span> eZImageAliasHandler::storeDOMTree</td>"
+            . "<td class='debugheader debugtime'>\w{3} \d\d \d{4} \d\d:\d\d:\d\d</td></tr>"
             . "<tr class='debugbody' data-level='error'><td colspan='2'><pre>Invalid objectAttribute: id =  version = 1</pre></td></tr>#", $report );
         $this->assertStringContainsString( '<pre>a &lt;warning&gt; for the copy</pre>', $report );
     }
 
     public function testOpenPanelKeepsOneHeightForEveryTab()
     {
-        $source = file_get_contents( __DIR__ . '/../../../../lib/ezutils/classes/expdebugbarreport.php' );
+        // the panel's rules are in the bar's stylesheet (the report prints no <style>)
+        $source = file_get_contents( __DIR__ . '/../../../../design/standard/stylesheets/expdebugbar.css' );
         $this->assertMatchesRegularExpression( '/#debug-details\.active \{[^}]*\bheight: 60vh;[^}]*overflow: auto;/s', $source,
             'the open panel has a fixed height, so switching tabs does not resize it; longer tabs scroll inside it' );
         $this->assertDoesNotMatchRegularExpression( '/#debug-details\.active \{[^}]*max-height:/s', $source,

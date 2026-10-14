@@ -135,7 +135,7 @@ class eZTemplatesStatisticsReporter
 
         if ( $as_html )
         {
-            $stats .= "<tr><td colspan=\"6\"><b>&nbsp;Number of times templates used: $totalTemplatesCount<br>&nbsp;Number of unique templates used: $totalUniqueTemplatesCopunt</b></td></tr>";
+            $stats .= "<tr class='summary'><td colspan=\"6\">Number of times templates used: $totalTemplatesCount<br>Number of unique templates used: $totalUniqueTemplatesCopunt</td></tr>";
             $stats .= "</table>";
         }
         else

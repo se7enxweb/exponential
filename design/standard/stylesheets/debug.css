@@ -253,3 +253,51 @@ div.debug-toolbar label
 
 
 /* ============ DEBUG CONTENT ============ */
+
+/* ============ The classic report's pinned bar ============
+   The classic HTML report (eZDebug::printReportInternal(), used when the Exp Debug bar is not there) prints no
+   inline CSS; these rules were a <style> block after the report until #450. The bar stays at the bottom of the
+   window and the details open as a panel above it that scrolls on its own. Scoped to the classic markup
+   (#debug without data-exp-debug-bar): the Exp Debug bar has its own stylesheet, expdebugbar.css, and its own
+   copy of these tokens. The bar follows the colour scheme; the panel keeps its light rows (the classic table
+   rules above) in both schemes, so its two tokens have the same value in dark mode. */
+#debug:not([data-exp-debug-bar]) {
+  --xd-bg-bar: #f2f2f2;
+  --xd-fg-bar: #1d1f23;
+  --xd-bg: #ffffff;
+  --xd-fg: #1d1f23;
+  --xd-line-strong: #8f95a3;
+  --xd-shadow: rgba(0, 0, 0, .15);
+  --xd-shadow-strong: rgba(0, 0, 0, .2);
+  margin-bottom: 0;
+}
+@media (prefers-color-scheme: dark) {
+  #debug:not([data-exp-debug-bar]) {
+    --xd-bg-bar: #2a2a2a; --xd-fg-bar: #e8eaed; --xd-bg: #ffffff; --xd-fg: #1d1f23; --xd-line-strong: #6b717c;
+    --xd-shadow: rgba(0, 0, 0, .5); --xd-shadow-strong: rgba(0, 0, 0, .6);
+  }
+}
+html[data-a4-theme="dark"] #debug:not([data-exp-debug-bar]) {
+  --xd-bg-bar: #2a2a2a; --xd-fg-bar: #e8eaed; --xd-bg: #ffffff; --xd-fg: #1d1f23; --xd-line-strong: #6b717c;
+  --xd-shadow: rgba(0, 0, 0, .5); --xd-shadow-strong: rgba(0, 0, 0, .6);
+}
+#debug:not([data-exp-debug-bar]) > h2 {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 2147483000; margin: 0;
+  display: flex; align-items: center; background: var(--xd-bg-bar); border-top: 1px solid var(--xd-line-strong);
+  box-shadow: 0 -2px 6px var(--xd-shadow); font-size: 14px;
+}
+#debug:not([data-exp-debug-bar]) > h2 > a { flex: 1; padding: 8px 12px; color: var(--xd-fg-bar); background: transparent; text-decoration: none; }
+#debug:not([data-exp-debug-bar]) > h2 > label.debug-keep-open {
+  margin-left: 1em; margin-right: 12px; color: var(--xd-fg-bar); font-size: 12px; font-weight: normal; cursor: pointer; white-space: nowrap;
+}
+#debug:not([data-exp-debug-bar]) > #debug-details.active {
+  position: fixed; left: 0; right: 0; bottom: 38px; z-index: 2147482999;
+  height: 60vh; overflow: auto; background: var(--xd-bg); color: var(--xd-fg); border-top: 2px solid var(--xd-line-strong);
+  box-shadow: 0 -4px 12px var(--xd-shadow-strong); box-sizing: border-box;
+}
+body.exp-debug-bar { padding-bottom: 46px; }
+
+/* the report's tables: figures right aligned in equal digits; group rows and summaries by class, not <b>/<i> */
+#debug td.num, #debug td.debugtime { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+#debug td.debuglabel, #debug tr.group td.groupname, #debug tr.summary td, #debug p.debugreporttime { font-weight: bold; }
+#debug tr.group td.num { font-style: italic; }

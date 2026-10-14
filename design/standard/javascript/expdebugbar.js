@@ -22,8 +22,7 @@
   let framed = false;
   try { framed = window.self !== window.top; } catch (e) { framed = true; }
   if (framed) {
-    root.hidden = true;
-    root.style.display = 'none';
+    root.hidden = true;   // expdebugbar.css: #debug[hidden] { display: none }, over any design's #debug rule
     return;
   }
 
@@ -141,8 +140,7 @@
     return { count: entries.length, text: entries.join('\n\n') };
   };
   const copyByTextarea = (text) => {
-    const area = el('textarea', { readonly: 'readonly', 'aria-hidden': 'true', tabindex: '-1',
-      style: 'position:fixed;top:0;left:-9999px;width:1px;height:1px;opacity:0;' });
+    const area = el('textarea', { readonly: 'readonly', 'aria-hidden': 'true', tabindex: '-1', class: 'exp-debug-copy-area' });
     area.value = text;
     document.body.append(area);
     const active = document.activeElement;
