@@ -2823,7 +2823,7 @@ ec58de54f835ce1e62ff06f43ccbdc23  doc/bc/6.0/repair.md
 9a20a73e9663b4839cc8a2c370a4a571  doc/bc/6.0/response-cache-and-navigation.md
 42da9bad10b511619fee08bc9233c4b6  doc/bc/6.0/role-policy-paging.md
 7e517a45f444b0f9ced02b40e3fffe94  doc/bc/6.0/shop-basket-view-name.md
-94a3b2be04008c706f3560ed551efe53  doc/bc/6.0/sql-query-cache.md
+989e95e48ff291f43d96e3d535092be0  doc/bc/6.0/sql-query-cache.md
 0400b2a50fcef2db6be4b2b01355360c  doc/bc/6.0/sqlite-transactions.md
 e21f3db4b2792ce0c74ab2480c335f60  doc/bc/6.0/static-cache-defaults.md
 8543fdb94ade4a47cc1e810302bd005a  doc/bc/6.0/subitems-table-options.md
