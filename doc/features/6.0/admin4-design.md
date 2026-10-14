@@ -126,6 +126,23 @@ admin4's frame tells screen readers and keyboards how the page is built:
 `#maincontent`, the `#a4-main` wrapper, the scopes, the frame titles and the named controls, in admin4's templates
 and its overrides.
 
+## Keyboard
+
+- **Node tabs** (View, Details, Translations ... and the tabs extensions add) follow the WAI-ARIA tabs pattern:
+  `node_tabs.js` gives the list `role="tablist"`, each link `role="tab"` with `aria-selected` and `aria-controls`,
+  each panel `role="tabpanel"`. Only the selected tab is in the Tab order; the arrow keys, Home and End move to
+  another tab and open it, as a click does. A click on an element inside a tab's link opens the tab too. While the
+  tabs are switched off (every panel shown) the roles are taken away.
+- **Show/hide tabs** is a button with `aria-pressed` (tabs on or off); its name says what a press does, and Space
+  presses it like Enter.
+- **Content tree:** the open/close link before a node is a button named "Items below <node>", with `aria-expanded`
+  (and `aria-busy` while the items load). Space presses it like Enter.
+- **Date fields:** the calendar opens from a button (`aria-haspopup="dialog"`); `exp::datepicker` gives the focus back
+  to it when the calendar closes.
+
+`tests/tests/design/AdminKeyboardTest.php` holds the markup and the hooks the scripts rely on, and that no admin4
+template has a clickable image.
+
 ## Settings
 
 | File | Block | Key | Default | Scope |

@@ -38,12 +38,16 @@
     "design/admin*/templates/*": [
       "tests/tests/design/AdminStylingRulesTest.php",
       "tests/tests/design/AdminIconsTest.php",
-      "tests/tests/design/AdminLandmarksTest.php"
+      "tests/tests/design/AdminLandmarksTest.php",
+      "tests/tests/design/AdminKeyboardTest.php"
     ],
     "design/admin*/stylesheets/*": [
       "tests/tests/design/AdminStylingRulesTest.php",
       "tests/tests/design/AdminIconsTest.php",
       "tests/tests/design/AdminLandmarksTest.php"
+    ],
+    "design/admin4/javascript/*": [
+      "tests/tests/design/AdminKeyboardTest.php"
     ],
     "share/icons/bootstrap-icons/*": [
       "tests/tests/design/AdminIconsTest.php"
