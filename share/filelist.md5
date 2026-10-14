@@ -1143,7 +1143,7 @@ cb128a4645e891cd796919aad3ed36d1  design/admin4/templates/page_header.tpl
 cf8663798cf45b3045efbc98b8d831c5  design/admin4/templates/page_topmenuitem.tpl
 904563d0775993b51872b7af411dd5b3  design/admin4/templates/page_toppath.tpl
 6f729dc1e0e3f33285a4900581331ce5  design/admin4/templates/pagelayout.tpl
-c20cd78dbea2053ee6278c5cc3bdbfd1  design/admin4/templates/parts/audit_timeline.tpl
+1c2aaff2bec15809096e2fe05456e0d3  design/admin4/templates/parts/audit_timeline.tpl
 b6f84f3260ba7ce48bcf3d4aa5231b95  design/admin4/templates/parts/content/menu.tpl
 b067ee8e870a38ce63ed27fedd85b653  design/admin4/templates/parts/ini_menu.tpl
 c21842ba6557a31b9ace43341b2199f0  design/admin4/templates/parts/media/menu.tpl
@@ -7061,7 +7061,7 @@ ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 617c938384f3d87aa79b21ee6d448f4e  tests/tests/design/AdminIconsTest.php
 7e8957a9c15916135defa02bc8301d00  tests/tests/design/AdminRetiredClassesTest.php
 6895bdbd107827a2712077a14426a5dd  tests/tests/design/AdminStylingRulesTest.php
-e3307821fafc125903b8e59cda9742d8  tests/tests/design/AdminTimelineTest.php
+d3aa163841a3b7ef9a8ce4048f7b1980  tests/tests/design/AdminTimelineTest.php
 96676702fed665b02ac81464307b00f5  tests/tests/design/AdminTokenContrastTest.php
 dcc45e4631fc358b0384c51d17ff8d67  tests/tests/extension/bccie/ezBccieTest.php
 e71599015464e106c536eedfe12d9676  tests/tests/extension/cjw_newsletter/cjwNewsletterAdminViewsTest.php
