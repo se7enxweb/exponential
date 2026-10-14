@@ -57,8 +57,8 @@ class AdminKeyboardTest extends PHPUnit\Framework\TestCase
         $js = self::file( 'design/admin4/javascript/contentstructuremenu_dynamic.js' );
         $this->assertStringContainsString( 'role="button" aria-expanded="false" aria-label="', $js );
         $this->assertStringContainsString( 'i18n.subitems', $js );
-        // a node name with $& or $1 in it must not be read as a replacement pattern
-        $this->assertStringContainsString( ".split( '%name' ).join( item.name )", $js );
+        // a node name with $& or $1 in it must not be read as a replacement pattern (name: item.name decoded once)
+        $this->assertStringContainsString( ".split( '%name' ).join( name )", $js );
         // the button keeps the focus after a press, so the keyboard can press it again
         $this->assertSame( 1, preg_match( '#role="button" aria-expanded="false".*?<\\\\/a>#s', $js, $m ) );
         $this->assertStringNotContainsString( 'blur', $m[0] );
