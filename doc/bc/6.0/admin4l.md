@@ -35,3 +35,9 @@ Site layouts never reach the admin and admin layouts never reach the site. The s
 The stock admin layouts and rules are created on this installation by an idempotent seed. They are **not** in the
 installer's seed data yet: a fresh install has the layout types, blocks and settings, and the page runs as plain admin4
 (nothing resolves) until the layouts are seeded.
+
+## Styling
+
+admin4l draws admin4's stylesheets, so the administration's styling rules apply to its page layout and block
+templates as well: no `<style>` block or `style=""` attribute, the shared `.a4-*` components and `--a4-*` tokens.
+See [Styling the administration](admin4-styling.md).

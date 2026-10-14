@@ -44,6 +44,11 @@ git checkout -b feature/your-feature
 
 4. Keep your pull request focused. If you have multiple contributions, submit multiple pull requests.
 
+5. Templates and stylesheets of the administration designs (and of extensions' admin designs) follow
+   [Styling the administration](doc/bc/6.0/admin4-styling.md): no `<style>` block or `style=""` attribute, the
+   shared `.a4-*` components and `--a4-*` tokens with dark values, module CSS in `stylesheets/modules/`. Its code
+   review checklist applies to every such pull request; `tests/tests/design/AdminStylingRulesTest.php` checks it.
+
 ## Submitting Changes
 
 1. Ensure all tests pass.

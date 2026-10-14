@@ -65,6 +65,10 @@ Community". A template can also set `$show_community_links`.
 
 ## For developers
 
+- **Styling rules: [Styling the administration](../../bc/6.0/admin4-styling.md).** No `<style>` block or `style=""`
+  attribute in a template; the shared `.a4-*` components and `--a4-*` tokens (light and dark) of
+  `stylesheets/components.css`; module CSS in `stylesheets/modules/`, loaded through `design.ini`
+  `[StylesheetSettings] AdminComponentCSSFileList`; checked by `tests/tests/design/AdminStylingRulesTest.php`.
 - `design/admin4/stylesheets/admin4.css` is loaded after the base stylesheets and before the extensions' own. It uses
   the base rules' own selectors, so what beat a base rule before still beats it. Shared defaults carry no weight at all
   (`:where`), so extensions' rules win. There are no cascade layers.
@@ -81,6 +85,7 @@ Community". A template can also set `$show_community_links`.
 
 ## Related pages
 
+- [Styling the administration: components, tokens, no inline CSS](../../bc/6.0/admin4-styling.md)
 - [The responsive admin design (admin3)](admin3-responsive-admin.md), [left sidebar width and font size](admin3-sidebar-width-and-font-size.md)
 - [Setup wizard and editor siteaccess](setup-wizard-and-editor-siteaccess.md), [jQuery 4 and YUI removal](jquery4-and-yui-removal.md)
 - [Admin links follow permissions](admin-links-follow-permissions.md), [order list sorting](order-list-sorting.md)
