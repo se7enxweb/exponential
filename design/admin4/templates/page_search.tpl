@@ -1,8 +1,8 @@
 {* The header search: the field, the search button and the scope popup (section, where to search, advanced search).
    Included twice by page_topmenu.tpl, in the header and in the narrow screen menu: $search_box ('' or '-mobile')
    keeps the ids of the two copies apart, and the script works on the copy it belongs to, never on an id.
-   $search_sections: the sections of the popup, fetched once by page_topmenu.tpl for both copies; fetched here when
-   it is not set, and then kept for the other copy. *}
+   $search_sections: the sections of the popup, fetched once by page_topmenu.tpl before both copies; a page that
+   includes this template without it gets them fetched here. *}
 {def $search_node_id = first_set( $search_subtree_array[0], $module_result.path[0].node_id, 1 )
      $search_title = "Search in all content"|i18n( 'design/admin/pagelayout' )
      $section_id = -1
