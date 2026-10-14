@@ -176,6 +176,7 @@ toasts, and on a `var(--a4-z-…)` that `components.css` does not define (a typo
 | Toasts | `.a4-toasts` (the two live regions of the frame, `#a4-toasts` polite and `#a4-toasts-alert` assertive) and `.a4-toast` (`.is-ok`, `.is-warn`, `.is-bad`); added only by `window.a4Toast( message, kind )` from `admin4.js` |
 | Folding | `details.a4-fold` > `summary` + `.a4-fold-body` (`.is-bad`, `.is-warn`); `details.a4-confirm` (a confirmation that opens in place) |
 | Steps | `ol.a4-steps` > `li.is-done` / `li.is-current` |
+| Timeline | `ol.a4-timeline` > `li` (`.is-ok`, `.is-warn`, `.is-bad`, `.is-info`) > `time.a4-timeline-time` (with `datetime`) + `.a4-timeline-body` (`.a4-timeline-meta`, a state badge); for short chronological lists without actions per row, newest first; the dot repeats the state a badge says in words. Audit events: `parts/audit_timeline.tpl` (`events`, `show_reason`) |
 | Code | `.a4-pre` (`.is-tall`), `.a4-kbd` |
 | Amounts | `.a4-meter` > `span`, `.a4-bars` > children, sized by `.a4-pct-0` ... `.a4-pct-100` (`--a4-pct`) |
 | Language | `.a4-lang` (a content language's short code, from `design:parts/language_badge.tpl`; `.is-current` for the one shown), `.a4-langs` (several in a row) |
