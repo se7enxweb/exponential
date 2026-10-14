@@ -36,10 +36,15 @@
       "tests/tests/lib/ezutils/expDebugReportNoInlineCssTest.php"
     ],
     "design/admin*/templates/*": [
-      "tests/tests/design/AdminStylingRulesTest.php"
+      "tests/tests/design/AdminStylingRulesTest.php",
+      "tests/tests/design/AdminIconsTest.php"
     ],
     "design/admin*/stylesheets/*": [
-      "tests/tests/design/AdminStylingRulesTest.php"
+      "tests/tests/design/AdminStylingRulesTest.php",
+      "tests/tests/design/AdminIconsTest.php"
+    ],
+    "share/icons/bootstrap-icons/*": [
+      "tests/tests/design/AdminIconsTest.php"
     ],
     "settings/design.ini": [
       "tests/tests/design/AdminStylingRulesTest.php"
