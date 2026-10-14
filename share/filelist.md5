@@ -6430,7 +6430,7 @@ ebc1c25ced143cfaaa5d343350676ecc  settings/override.ini
 7d94ecc12088aa7f906848c0042f1d35  settings/package.ini
 33feee634197eb5cde08585beacd9d73  settings/paymentgateways.ini
 3a13a85a0747ba7150891dfbb20b25db  settings/pdf.ini
-608ea871a55db276bd1e48e377d0040a  settings/querycache.ini
+660b0d81b874343b1ffa494dc1fd6dbf  settings/querycache.ini
 688db30689fc7f6ca972f71be1616c51  settings/rad.ini
 744f63beb0a42c8ec1f29c355e81fd5c  settings/requestrules.ini
 02c2067bd8f1edecd60e16ea8a39e240  settings/rest.ini
@@ -6870,14 +6870,14 @@ dd5f5f3cf2348a6cc17bd0ee76983225  share/translations/dut-NL/translation.ts
 284321a9de29bf9268c27abb13f56f2c  share/translations/ell-GR/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-AU/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-NZ/translation.ts
-9b5a612cc0863b239ddebb87170c389e  share/translations/eng-US/translation.ts
+7f46cd2b2c9bac7bede95be129845de6  share/translations/eng-US/translation.ts
 5f0920d5b4e8bbaff2a4a6d5b3995c90  share/translations/esl-ES/translation.ts
 27846e3f6408cd74f58cef8adcbab573  share/translations/esl-MX/translation.ts
 4b104d4d337601b4bc6ae0482e6478ea  share/translations/fin-FI/translation.ts
 edfd3efb7eca1e2bd6d6d7d08bd78a77  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-223a63979751f67c7832255917e67af1  share/translations/ger-DE/translation.ts
+b394568d5338323afb2c34c7d6d4e89b  share/translations/ger-DE/translation.ts
 75d657fed5de11db9e059cdcff2046a8  share/translations/ita-IT/translation.ts
 a45e2d26b1c24ac4cb6ae1d7197e5b0e  share/translations/jpn-JP/translation.ts
 d1dc34034ddce2d64c4f8df7fcc41c85  share/translations/nno-NO/translation.ts
@@ -6890,7 +6890,7 @@ e33e059c205f7c0a49e112ce9ba6147d  share/translations/ser-SR/translation.ts
 e9e308757570f0321486d498fc993d17  share/translations/srp-RS/translation.ts
 718ecc8ecbbe8ebec7a88fb2697f401f  share/translations/swe-SE/translation.ts
 0b1b76b5ad6b2f923afd6fd9a9937a8b  share/translations/untranslated/readme.txt
-d6605c344d112b485d76d6a621bbad25  share/translations/untranslated/translation.ts
+1a575938b919eb78423ec8027a9e611e  share/translations/untranslated/translation.ts
 bae9ff85781e52af001213bdb213a013  shippable.yml
 414f4d1129273ab3dea38b878d554eae  soap.php
 3b6d156f31df70e093aa1a6d8a525cd3  support/ezlupdate-qt4.5/README.txt

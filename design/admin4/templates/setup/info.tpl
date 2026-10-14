@@ -445,6 +445,9 @@
                 {'This server since %date: %requests requests, %hits hits, %misses misses'|i18n( 'design/admin/setup/info',, hash( '%date', cond( $query_cache.counters.since, $query_cache.counters.since|l10n( shortdatetime ), '-' ), '%requests', concat( '<strong>', $query_cache.counters.requests|wash, '</strong>' ), '%hits', concat( '<strong>', $query_cache.counters.hits|wash, '</strong>' ), '%misses', concat( '<strong>', $query_cache.counters.misses|wash, '</strong>' ) ) )}{if $query_cache.counters.hit_rate|ne( '' )} ({'%rate hit rate'|i18n( 'design/admin/setup/info',, hash( '%rate', concat( '<strong>', $query_cache.counters.hit_rate|wash, '&nbsp;%</strong>' ) ) )}){/if},
                 {'%uncacheable not cacheable, %writes writes'|i18n( 'design/admin/setup/info',, hash( '%uncacheable', $query_cache.counters.uncacheable|wash, '%writes', $query_cache.counters.writes|wash ) )}
             </p>
+            {if $query_cache.counters.reserve|gt( 0 )}
+            <p class="exp-note is-warn">{'%count results not kept in APCu: less than %reserve % of it was free (ApcuReserve)'|i18n( 'design/admin/setup/info',, hash( '%count', concat( '<strong>', $query_cache.counters.reserve|wash, '</strong>' ), '%reserve', $query_cache.apcu_reserve|wash ) )}</p>
+            {/if}
             {/if}
             {if $query_cache.recent_writes}
             <ul class="a4-setup-inline"><li>{'Last written'|i18n( 'design/admin/setup/info' )}:</li>{foreach $query_cache.recent_writes as $w}<li><code>{$w.table|wash}</code> {$w.ago|wash}&nbsp;s</li>{/foreach}</ul>

@@ -46,6 +46,13 @@ class eZDBQueryCache
     protected static $state = null;
     protected static $stateRead = 0.0;
 
+    /**
+     * @var array|null APCu's free share in percent as apcuRoom() last read it, and when; null until read.
+     * Pinned by setApcuFree() for tests.
+     */
+    protected static $apcuFree = null;
+    protected static $apcuFreePinned = false;
+
     /** @var array this request's memo: key => entry */
     protected static $memo = array();
 
@@ -59,7 +66,7 @@ class eZDBQueryCache
     protected static $pending = array();
 
     /** @var array counters for this request (the setup/info box sums them per server) */
-    public static $stats = array( 'hits' => 0, 'misses' => 0, 'stores' => 0, 'uncacheable' => 0, 'writes' => 0 );
+    public static $stats = array( 'hits' => 0, 'misses' => 0, 'stores' => 0, 'uncacheable' => 0, 'writes' => 0, 'reserve' => 0 );
 
     /**
      * @var WeakMap|null per driver object: the session parameters its ALTER
@@ -113,7 +120,7 @@ class eZDBQueryCache
     {
         if ( self::$settings !== null )
             return self::$settings;
-        $s = array( 'mode' => 'off', 'maxAge' => 300, 'maxRows' => 5000, 'exclude' => array(), 'report' => true, 'storage' => 'auto' );
+        $s = array( 'mode' => 'off', 'maxAge' => 300, 'maxRows' => 5000, 'exclude' => array(), 'report' => true, 'storage' => 'auto', 'apcuReserve' => 25 );
         if ( class_exists( 'eZINI', false ) && eZINI::exists( 'querycache.ini' ) )
         {
             $ini = eZINI::instance( 'querycache.ini' );
@@ -131,6 +138,9 @@ class eZDBQueryCache
                 $storage = strtolower( (string)$ini->variable( 'QueryCacheSettings', 'Storage' ) );
                 $s['storage'] = in_array( $storage, array( 'auto', 'apcu', 'file' ), true ) ? $storage : 'auto';
             }
+            // a value that is not a number keeps the default rather than switching the reserve off
+            if ( $ini->hasVariable( 'QueryCacheSettings', 'ApcuReserve' ) && is_numeric( $ini->variable( 'QueryCacheSettings', 'ApcuReserve' ) ) )
+                $s['apcuReserve'] = min( 90, max( 0, (int)$ini->variable( 'QueryCacheSettings', 'ApcuReserve' ) ) );
             if ( $ini->hasVariable( 'DebugSettings', 'Report' ) )
                 $s['report'] = $ini->variable( 'DebugSettings', 'Report' ) !== 'disabled';
         }
@@ -197,6 +207,128 @@ class eZDBQueryCache
     protected static function apcuUsable()
     {
         return self::storage() === 'apcu';
+    }
+
+    /**
+     * Whether APCu has room for one more result: more than ApcuReserve percent
+     * of it free. APCu is one memory for every site of the PHP-FPM pool (other
+     * caches, rate limits of a request filter, ...); full with valid entries,
+     * it empties itself completely. Below the reserve the query cache stops
+     * adding results and leaves the rest to the others; what it holds expires
+     * within MaxAge. ApcuReserve=0 never stops. The free share is read before
+     * every store (apcu_sma_info() without the block list, under a microsecond),
+     * so a long-running process (Velocity, a script) cannot overshoot it.
+     *
+     * APCu frees an expired entry only when it is deleted by its key, or when an
+     * allocation fails; below the reserve the cache allocates nothing, so its
+     * own expired entries would hold the memory. purgeExpired() removes them.
+     *
+     * @return bool
+     */
+    public static function apcuRoom()
+    {
+        $reserve = self::settings()['apcuReserve'] ?? 25;
+        if ( $reserve <= 0 )
+            return true;
+        $now = microtime( true );
+        if ( !self::$apcuFreePinned )
+        {
+            $free = null;
+            $sma = function_exists( 'apcu_sma_info' ) ? @apcu_sma_info( true ) : false;
+            if ( is_array( $sma ) && isset( $sma['seg_size'], $sma['num_seg'], $sma['avail_mem'] ) && $sma['seg_size'] * $sma['num_seg'] > 0 )
+                $free = 100 * $sma['avail_mem'] / ( $sma['seg_size'] * $sma['num_seg'] );
+            self::$apcuFree = array( $free, $now );
+        }
+        // without figures from APCu: no reason to hold back
+        if ( self::$apcuFree[0] === null || self::$apcuFree[0] > $reserve )
+            return true;
+        self::schedulePurge();
+        return false;
+    }
+
+    /** @var bool whether this process has already asked for purgeExpired() at its end */
+    protected static $purgeScheduled = false;
+
+    /**
+     * purgeExpired() at the end of a web request (after the page, not while a
+     * visitor waits), at once on the command line: Velocity's workers and long
+     * scripts would reach their end only when they stop.
+     */
+    protected static function schedulePurge()
+    {
+        if ( PHP_SAPI === 'cli' )
+        {
+            self::purgeExpired();
+            return;
+        }
+        if ( !self::$purgeScheduled )
+        {
+            self::$purgeScheduled = true;
+            register_shutdown_function( array( __CLASS__, 'purgeExpired' ) );
+        }
+    }
+
+    /** purgeExpired() runs once a minute at most for the whole pool, and only up to this many APCu entries. */
+    const PURGE_INTERVAL = 60;
+    const PURGE_MAX_ENTRIES = 30000;
+
+    /**
+     * Deletes the query cache's expired entries from APCu by their keys, so
+     * their memory is free again (a lookup never answers them anyway). Runs
+     * below the reserve only, once a minute at most for the whole pool (an
+     * APCu lock), and only while APCu holds at most PURGE_MAX_ENTRIES entries:
+     * the list costs about 0.8 KB of PHP memory per entry, and it is left out
+     * when that would take the process above 80 % of its memory_limit. Above
+     * that, only a larger apc.shm_size helps.
+     *
+     * @return int|null entries deleted, null when it did not run
+     */
+    public static function purgeExpired()
+    {
+        if ( !function_exists( 'apcu_cache_info' ) || !@apcu_add( 'ezqcpurge', time(), self::PURGE_INTERVAL ) )
+            return null;
+        $summary = @apcu_cache_info( true );
+        $entries = is_array( $summary ) ? (int)( $summary['num_entries'] ?? 0 ) : PHP_INT_MAX;
+        if ( $entries > self::PURGE_MAX_ENTRIES )
+            return null;
+        $limit = self::bytes( ini_get( 'memory_limit' ) );
+        if ( $limit > 0 && memory_get_usage() + $entries * 1024 > 0.8 * $limit )
+            return null;
+        $info = @apcu_cache_info( false );
+        if ( !is_array( $info ) || !isset( $info['cache_list'] ) )
+            return null;
+        $now = time();
+        $deleted = 0;
+        foreach ( $info['cache_list'] as $item )
+        {
+            $key = (string)( $item['info'] ?? $item['key'] ?? '' );
+            $ttl = (int)( $item['ttl'] ?? 0 );
+            if ( strncmp( $key, 'ezqc:', 5 ) === 0 && $ttl > 0
+                 && (int)( $item['creation_time'] ?? $now ) + $ttl < $now && @apcu_delete( $key ) )
+                $deleted++;
+        }
+        return $deleted;
+    }
+
+    /** A php.ini size ('128M', '1G', '-1') in bytes; -1 or 0 for no limit. */
+    protected static function bytes( $value )
+    {
+        $value = trim( (string)$value );
+        $n = (int)$value;
+        switch ( strtoupper( substr( $value, -1 ) ) )
+        {
+            case 'G': $n *= 1024;
+            case 'M': $n *= 1024;
+            case 'K': $n *= 1024;
+        }
+        return $n;
+    }
+
+    /** For tests: APCu's free share in percent as apcuRoom() sees it (null reads it from APCu again). */
+    public static function setApcuFree( $percent )
+    {
+        self::$apcuFree = $percent === null ? null : array( (float)$percent, microtime( true ) + 3600 );
+        self::$apcuFreePinned = $percent !== null;
     }
 
     /** The directory of the result files of Storage=file (or auto without APCu). */
@@ -442,7 +574,8 @@ class eZDBQueryCache
         // statement for ~545 statements); only a miss parses now.
         $key = self::key( $db, $sql, $params );
         $entry = self::$memo[$key] ?? null;
-        if ( $entry === null && ( $storage = self::storage() ) !== null )
+        $storage = self::storage();
+        if ( $entry === null && $storage !== null )
             $entry = self::fetchShared( $storage, $key );
         // Only statements that were cacheable when stored have entries; one of
         // their tables excluded since, or temporary, is not answered from it.
@@ -461,6 +594,10 @@ class eZDBQueryCache
             }
             return null;
         }
+        // Below the reserve an expired or stale entry of this key would keep its memory (APCu frees only what is
+        // deleted by its key): delete it.
+        if ( $storage === 'apcu' && !self::apcuRoom() )
+            @apcu_delete( 'ezqc:' . $key );
         $tables = self::readTables( $sql );
         if ( $tables === null )
         {
@@ -557,7 +694,14 @@ class eZDBQueryCache
         $entry = array( 'created' => $started, 'tables' => $tables, 'rows' => $copy,
                         'ms' => round( ( microtime( true ) - $started ) * 1000, 3 ) );
         self::$memo[$key] = $entry;
-        if ( ( $storage = self::storage() ) !== null )
+        if ( ( $storage = self::storage() ) === 'apcu' && !self::apcuRoom() )
+        {
+            // kept for this request only: APCu is short of room for the pool's other users
+            self::$stats['reserve']++;
+            self::debugSkip( 'APCu reserve (less than ' . self::settings()['apcuReserve'] . ' % free)', $debugStart );
+            return;
+        }
+        if ( $storage !== null )
             self::storeShared( $storage, $key, $entry );
         self::$stats['stores']++;
         if ( $debugStart !== null )
@@ -1250,7 +1394,7 @@ class eZDBQueryCache
         self::$pending = array();
         self::$state = null;
         self::$settings = null;
-        self::$stats = array( 'hits' => 0, 'misses' => 0, 'stores' => 0, 'uncacheable' => 0, 'writes' => 0 );
+        self::$stats = array( 'hits' => 0, 'misses' => 0, 'stores' => 0, 'uncacheable' => 0, 'writes' => 0, 'reserve' => 0 );
         self::$debug = null;
     }
 
@@ -1278,7 +1422,7 @@ class eZDBQueryCache
             if ( @apcu_inc( 'ezqcstat:requests', 1 ) === false )
                 @apcu_store( 'ezqcstat:requests', 1 );
         }
-        self::$stats = array( 'hits' => 0, 'misses' => 0, 'stores' => 0, 'uncacheable' => 0, 'writes' => 0 );
+        self::$stats = array( 'hits' => 0, 'misses' => 0, 'stores' => 0, 'uncacheable' => 0, 'writes' => 0, 'reserve' => 0 );
     }
 
     /** Makes sure the counters of a plain (non-persistent) request are flushed. */
@@ -1308,6 +1452,7 @@ class eZDBQueryCache
             'enabled' => $s['mode'] !== 'off',
             'max_age' => $s['maxAge'],
             'max_rows' => $s['maxRows'],
+            'apcu_reserve' => $s['apcuReserve'] ?? 25,
             'exclude' => array_keys( $s['exclude'] ),
             'state_file' => self::stateDir() . '/state.ser',
             'state_exists' => is_file( self::stateDir() . '/state.ser' ),
@@ -1353,7 +1498,7 @@ class eZDBQueryCache
                 }
             }
             $c = array();
-            foreach ( array( 'requests', 'hits', 'misses', 'stores', 'uncacheable', 'writes', 'since' ) as $name )
+            foreach ( array( 'requests', 'hits', 'misses', 'stores', 'uncacheable', 'writes', 'reserve', 'since' ) as $name )
                 $c[$name] = (int)@apcu_fetch( 'ezqcstat:' . $name );
             $looked = $c['hits'] + $c['misses'];
             $c['hit_rate'] = $looked > 0 ? round( 100 * $c['hits'] / $looked, 1 ) : null;

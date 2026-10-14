@@ -21739,6 +21739,10 @@ Note: The packages will not be uninstalled.</translation>
         <translation>%uncacheable not cacheable, %writes writes</translation>
     </message>
     <message>
+        <source>%count results not kept in APCu: less than %reserve % of it was free (ApcuReserve)</source>
+        <translation>%count results not kept in APCu: less than %reserve % of it was free (ApcuReserve)</translation>
+    </message>
+    <message>
         <source>Over the last %n profiled requests: %statements statements, %repeats exact repeats (%repeat_pct), %db_ms in the database</source>
         <translation>Over the last %n profiled requests: %statements statements, %repeats exact repeats (%repeat_pct), %db_ms in the database</translation>
     </message>
@@ -57472,6 +57476,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Files</source>
         <translation>Files</translation>
+    </message>
+    <message>
+        <source>%count results not kept in APCu: less than %reserve % of it was free (ApcuReserve)</source>
+        <translation>%count results not kept in APCu: less than %reserve % of it was free (ApcuReserve)</translation>
     </message>
     <message>
         <source>%count entries</source>
