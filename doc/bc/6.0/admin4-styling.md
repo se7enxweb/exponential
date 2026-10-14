@@ -164,7 +164,6 @@ toasts, and on a `var(--a4-z-…)` that `components.css` does not define (a typo
 | Layout | `.a4-section`, `.a4-section-head`, `.a4-title-row`, `.a4-row` (`.is-between`), `.a4-stack`, `.a4-grid` (`.is-narrow`, `.is-wide`) |
 | Page header | `.a4-pagehead` > `.a4-pagehead-main` (`.a4-pagehead-pre`, `.a4-pagehead-title`, `.a4-pagehead-sub`) + `.a4-pagehead-actions` (right, under the title on narrow windows); the one title style of every page (`h1.context-title`, the node view and the dashboard take the same size) |
 | Breadcrumb | `ol.a4-crumbs` (`role="list"`) > `li` (`.is-middle`, `.is-fold`: the middle steps fold into "..." up to 600px, visually only, a focused step shows again), separators from the stylesheet, the current step `aria-current="page"`, inside the `#path` navigation landmark |
-| Card | `.a4-card` (`.is-soft`, `.is-selected`, `.is-attention`, `.is-warn`, `.is-bad`, `.is-ok`, `.is-info`), `.a4-cards`, `.a4-card-head`, `.a4-card-title`, `.a4-card-body`, `.a4-pick` (the selection checkbox) |
 | Card | `.a4-card` (`.is-soft`, `.is-selected`, `.is-attention`, `.is-warn`, `.is-bad`, `.is-ok`, `.is-info`, `.is-flush`, `.is-link`, `.is-busy`), `.a4-cards`, `.a4-card-head` (title, a `<p>` as subtitle, `.a4-card-actions` at its end), `.a4-card-title`, `.a4-card-body`, `.a4-card-foot` (the card's actions on a strip at its bottom edge), `.a4-pick` (the selection checkbox) |
 | Figures, facts | `.a4-figures` > `.a4-figure` (`.is-attention`, `.is-bad`, `.is-ok`, `.is-warn`, `.is-info`, `.is-current`); `dl.a4-facts` (`.is-rows`) |
 | Tag, badge, status | `.a4-tag`, `.a4-badge` (`.is-ok`, `.is-warn`, `.is-bad`, `.is-info`, `.is-accent`, `.is-mono`), `.a4-badges`; `.a4-status` (`.is-ok`, `.is-running`, `.is-warn`, `.is-bad`) with `.a4-dot` |
@@ -264,7 +263,7 @@ The left column's preset sizes (small, medium, large) are `html[data-a4-left-siz
 - `components.css` loses the `color-scheme` of a theme, its forced-colors or touch block, `admin4.css` its
   `prefers-reduced-motion` rule, or an admin4 stylesheet transitions `all` (name the properties instead);
 - `components.css` or `admin4.css` sets a pixel font size, or a spacing length that is not a `--a4-space-*` token
-  (`1px`, `2px` and the frame's few layout offsets aside);
+  (`1px` and `2px` aside; a layout length is a token of its own);
 - a file named in `AdminComponentCSSFileList` is missing.
 
 No text is smaller than 12px on an admin4 page. The base and page stylesheets (core.css, pagelayout.css, content.css,
