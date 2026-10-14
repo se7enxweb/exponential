@@ -12162,6 +12162,10 @@ Note: The packages will not be uninstalled.</translation>
 <context>
     <name>design/admin/pagelayout</name>
     <message>
+        <source>Breadcrumb</source>
+        <translation>Breadcrumb</translation>
+    </message>
+    <message>
         <source>Width of the left column</source>
         <translation>Width of the left column</translation>
     </message>

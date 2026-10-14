@@ -86,7 +86,7 @@
                             <div id="maincontent-design" class="float-break">
                                 <div id="fix">
 
-                                    <div id="path">
+                                    <div id="path" role="navigation" aria-label="{'Breadcrumb'|i18n( 'design/admin/pagelayout' )|wash}">
                                         <div id="path-design">
                                             {include uri='design:page_toppath.tpl'}
                                         </div>

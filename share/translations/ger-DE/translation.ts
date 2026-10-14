@@ -14479,6 +14479,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
 <context>
     <name>design/admin/pagelayout</name>
     <message>
+        <source>Breadcrumb</source>
+        <translation>Brotkrumennavigation</translation>
+    </message>
+    <message>
         <source>Width of the left column</source>
         <translation>Breite der linken Spalte</translation>
     </message>

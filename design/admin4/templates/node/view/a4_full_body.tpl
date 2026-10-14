@@ -52,10 +52,10 @@
 {/if}
 
 {* ---- One header row: icon, title + badges, actions ---- *}
-<div class="box-header a4-node-head">
+<div class="box-header a4-node-head a4-pagehead">
     <a class="a4-node-icon" href={concat( '/class/view/', $object.contentclass_id )|ezurl} title="{'Class menu'|i18n( 'design/admin/node/view/full' )|wash}" onclick="ezpopmenu_showTopLevel( event, 'ClassMenu', ez_createAArray( new Array( '%classID%', {$object.contentclass_id}, '%objectID%', {$node.contentobject_id}, '%nodeID%', {$node.node_id}, '%currentURL%', '{$node.url|wash( javascript )}', '%languages%', {$js_class_languages} ) ), '{$node.class_name|wash(javascript)}', {$disabled_sub_menu}, {$disable_another_language} ); return false;">{$node.class_identifier|class_icon( small, $node.class_name )}</a>
-    <div class="a4-node-heading">
-        <h1 class="context-title">{$node.name|wash}</h1>
+    <div class="a4-node-heading a4-pagehead-main">
+        <h1 class="context-title a4-pagehead-title">{$node.name|wash}</h1>
         <span class="a4-node-badges">
             <span class="a4-badge a4-badge-class">{$node.class_name|wash}</span>
             {if $node.is_hidden}<span class="a4-badge a4-badge-warn">{'Hidden'|i18n( 'design/admin/node/view/full' )}</span>
@@ -64,7 +64,7 @@
         </span>
     </div>
 
-    <div class="controlbar a4-node-actions">
+    <div class="controlbar a4-node-actions a4-pagehead-actions">
     <form method="post" action={'content/action'|ezurl}>
     <input type="hidden" name="TopLevelNode" value="{$object.main_node_id}" />
     <input type="hidden" name="ContentNodeID" value="{$node.node_id}" />
