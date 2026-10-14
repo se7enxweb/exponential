@@ -266,9 +266,29 @@ function _makeVisible( menuID )
     VisibleMenus[menuArray[menuID]['depth']] = menuID;
     _decorate( menuID );
 
-    document.getElementById( menuID ).onmouseover = function() { document.onmousedown = null; }
-    document.getElementById( menuID ).onmouseout = function() { document.onmousedown = _hideAll; }
-    document.onmousedown = _hideAll;
+    _listenForOutsideClicks();
+}
+
+/*!
+  A press of the mouse outside every shown menu hides them all. The listener is added once, beside any other
+  mousedown handler of the page (an assignment to document.onmousedown replaced the page's own), and does nothing
+  while no menu is shown.
+*/
+var OutsideClickListening = false;
+function _listenForOutsideClicks()
+{
+    if ( OutsideClickListening || !document.addEventListener ) return;
+    OutsideClickListening = true;
+    document.addEventListener( 'mousedown', function( e )
+    {
+        if ( !VisibleMenus[0] || VisibleMenus[0] == 'none' ) return;
+        for ( var i = 0, l = VisibleMenus.length; i < l && VisibleMenus[i] != 'none'; i++ )
+        {
+            var menu = document.getElementById( VisibleMenus[i] );
+            if ( menu && e.target && menu.contains( e.target ) ) return;
+        }
+        _hideAll();
+    }, false );
 }
 
 /*!
@@ -502,8 +522,8 @@ function _moveSubLevelOnScreen( menuID, alignItem )
     var menuElement = document.getElementById( menuID ), screenData = _getScreenProperties();
     var newX = 0; var newY = 0;
 
-    alignElement = document.getElementById( alignItem );
-    parentElement = document.getElementById( VisibleMenus[menuArray[menuID]['depth'] - 1] );
+    var alignElement = document.getElementById( alignItem );
+    var parentElement = document.getElementById( VisibleMenus[menuArray[menuID]['depth'] - 1] );
 
     if ( alignElement && parentElement )
     {
@@ -519,7 +539,8 @@ function _moveSubLevelOnScreen( menuID, alignItem )
         newY = screenData.ScrollY;
 
     // compensate if we are to the right of the screen
-    if ( ( screenData.ScrollX + screenData.Width ) < ( newX + menuElement.offsetWidth ) )
+    // (without its parent menu the submenu stays where it is: there is no side to move it to)
+    if ( parentElement && ( screenData.ScrollX + screenData.Width ) < ( newX + menuElement.offsetWidth ) )
     {
         newX = parseInt( parentElement.style.left ) + EZPOPMENU_SUBOFFSET - menuElement.offsetWidth;
     }
@@ -604,7 +625,6 @@ function _hide( id )
 */
 function _hideAll()
 {
-    document.onmousedown = null;
     _hideHigher( -1 );
     if ( MenuOpener ) MenuOpener.setAttribute( 'aria-expanded', 'false' );
 }

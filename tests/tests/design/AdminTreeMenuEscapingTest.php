@@ -54,7 +54,7 @@ class AdminTreeMenuEscapingTest extends PHPUnit\Framework\TestCase
             $this->assertStringContainsString( 'span.textContent = name;', $js, $path );
             $this->assertStringNotContainsString( 'span.innerHTML', $js, $path );
             // values in the generated markup's attributes go through _attr
-            $this->assertStringContainsString( "_attr( params.classes[item.class_id].name )", $js, $path );
+            $this->assertStringContainsString( "_attr( itemClass.name )", $js, $path );
             $this->assertStringContainsString( "_attr( icon )", $js, $path );
         }
     }

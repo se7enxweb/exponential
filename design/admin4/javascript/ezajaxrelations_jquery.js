@@ -3,9 +3,9 @@ jQuery(function( $ )
     // Attache click event to search button and show input fields
     $('input.ezobject-relation-search-btn').on( 'click', _search ).removeClass('hide');
 
-    // Attache key press event to catch enter and show input fields
-    $('input.ezobject-relation-search-text').on( 'keypress', function( e ){
-        if ( e.which == 13 )
+    // Enter in the search field searches (keydown and e.key: keypress and e.which are deprecated); show the fields
+    $('input.ezobject-relation-search-text').on( 'keydown', function( e ){
+        if ( e.key === 'Enter' && !e.isComposing )
         {
             return _search.call( this, e );
         }
@@ -71,7 +71,9 @@ jQuery(function( $ )
         }
         else
         {
-            alert( data.content.error_text );
+            // ezjscore reports a failure in error_text beside an empty content; no answer at all says nothing
+            var message = data && ( data.error_text || ( data.content && data.content.error_text ) );
+            if ( message ) alert( message );
         }
     }
 

@@ -98,7 +98,7 @@ function ContentStructureMenu( params, i18n )
             if ( !params.useCookie )
                 return;
             this.cookie = this.open.join('/');
-            expireDate  = new Date();
+            var expireDate = new Date();
             expireDate.setTime( expireDate.getTime() + this.cookieValidity * 86400000 );
             _setCookie( this.parameterName, this.cookie, expireDate );
         };
@@ -204,7 +204,10 @@ function ContentStructureMenu( params, i18n )
         }
         var canCreateClasses = classes.length > 0;
 
-        var classIdentifier = params.classes[item.class_id].identifier;
+        // A class created after the tree's parameters were cached is not in params.classes: the node is drawn with
+        // the default icon and no class name instead of throwing, which left its parent busy for good.
+        var itemClass = params.classes[item.class_id] || { identifier: '', name: '' };
+        var classIdentifier = itemClass.identifier;
         var icon = ( params.iconsList[classIdentifier] )? params.iconsList[classIdentifier]: params.iconsList['__default__'];
         if ( params.context != 'browse' && item.node_id > 1 )
         {
@@ -224,7 +227,7 @@ function ContentStructureMenu( params, i18n )
                 + '"><img src="'
                 + _attr( icon )
                 + '" alt="" title="['
-                + _attr( params.classes[item.class_id].name )
+                + _attr( itemClass.name )
                 + '] ' + _attr( i18n.expand ) + '" width="16" height="16" /><\/a>';
         }
         else
@@ -314,6 +317,18 @@ function ContentStructureMenu( params, i18n )
             return false;
         }
 
+        // After a failed load a press tries again: the failure may have been passing (a timeout, a restart)
+        if ( divElement.className == 'error' )
+        {
+            divElement.className = '';
+            divElement.innerHTML = '';
+            if ( aElement )
+            {
+                aElement.removeAttribute( 'title' );
+                _undescribe( aElement.parentNode );
+            }
+        }
+
         var url = params.contentTreeUrl + nodeID
             + "/" + modifiedSubnode
             + "/" + params.expiry
@@ -387,10 +402,6 @@ function ContentStructureMenu( params, i18n )
                       setErrorText( i18n.internal_error );
                     }
                 }
-                if (aElement) aElement.onclick = function()
-                {
-                    return false;
-                };
             }
         });
 
@@ -746,7 +757,7 @@ function ContentStructureMenu( params, i18n )
     function _pressToggle( li )
     {
         var toggle = _toggleOf( li );
-        if ( toggle && toggle.className !== 'openclose-busy' && toggle.className !== 'openclose-error' && toggle.onclick )
+        if ( toggle && toggle.className !== 'openclose-busy' && toggle.onclick )
         {
             toggle.onclick();
             return true;
@@ -841,6 +852,16 @@ function ContentStructureMenu( params, i18n )
         }
         span.textContent = text;
         item.setAttribute( 'aria-describedby', id );
+    }
+
+    // Takes back what _describe said about the node li
+    function _undescribe( li )
+    {
+        var item = _ownItem( li );
+        if ( !item || !li.id ) return;
+        var span = document.getElementById( 'e' + li.id.substr( 1 ) );
+        if ( span ) span.parentNode.removeChild( span );
+        item.removeAttribute( 'aria-describedby' );
     }
 
     // The text of an HTML-encoded value ("Tom &amp; Jerry" is "Tom & Jerry"); a textarea parses no markup
