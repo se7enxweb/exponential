@@ -320,7 +320,7 @@ c88a47e792d2074b8f41a4b176ac9812  design/admin/stylesheets/pagelayout.css
 d5a3589152af07aa3d6cb3f0b025bec6  design/admin/stylesheets/setup-extensions.css
 245e1a328067085da235258aef9db2a8  design/admin/stylesheets/theme/admin_datatable.css
 80e40d820b12263064128a75be2de07b  design/admin/stylesheets/theme/modalwindow.css
-a29149b517fa70cf3b43a635b58ead49  design/admin/stylesheets/theme/rounded.css
+0db1844ab2952f8bf22c404c41866264  design/admin/stylesheets/theme/rounded.css
 4c5d17d9e5889a0f8907ad075f34c3d9  design/admin/stylesheets/visual-templateview.css
 b2cbae36bac438158f9f947a2e58e18c  design/admin/templates/ajaxuploader/browse.tpl
 a7f309134423a1be7e4bd03f3623b023  design/admin/templates/ajaxuploader/location.tpl
@@ -918,7 +918,7 @@ d1f3e1ef98e8cee2e52a5446280eadc3  design/admin4/override/templates/embed-inline_
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
 a2c561e93ef63c93201e81acd4f32741  design/admin4/override/templates/window_controls_user.tpl
 f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin4/override/templates/windows_user.tpl
-a5a4b303e2faad0c2a7d57d41dba899f  design/admin4/stylesheets/admin4.css
+49bfc793b5daf7c82fff419c81f2743e  design/admin4/stylesheets/admin4.css
 ad20247f90ec224cc1463d406ba4b68d  design/admin4/stylesheets/components.css
 bb8e25bf8ebc32077b9ac79955233ced  design/admin4/stylesheets/content.css
 2bf3ab5ec84da6cbc0b6d1ad8b09b327  design/admin4/stylesheets/core.css
@@ -1793,7 +1793,7 @@ a840bee182d030b3120409884035010b  design/standard/javascript/tools/eziepngfix.js
 4c0e88b66cf6a83270cbe83c2dbadede  design/standard/javascript/tools/ezjsselection.js
 bca28d129e420ebe0e8a332a15c24fd4  design/standard/stylesheets/core.css
 39d7b2ecc372dbc65fa0dd3418b12621  design/standard/stylesheets/debug.css
-54bbc9b009260c844ef7e2254bf5ea02  design/standard/stylesheets/exp_bookmarks.css
+95aae21af74d28590b2b95defccd916e  design/standard/stylesheets/exp_bookmarks.css
 e893b624988aeccab0abef6a46d6e0fa  design/standard/stylesheets/exp_password_page.css
 cdbb4b89ed142bfe4b9c78e2caaaa303  design/standard/stylesheets/expdebugbar.css
 c815977883ff0447b636e3b2206828a4  design/standard/stylesheets/loginpagelayout.css
@@ -1908,7 +1908,7 @@ e11df7849555c5497e019b6233871c49  design/standard/templates/collaboration/view/s
 eeb2fa6f5621444e436ee177d6e799a5  design/standard/templates/content/advancedsearch.tpl
 80f7682f8712c93fc2a91de3d3b3632e  design/standard/templates/content/bookmark.tpl
 dd2d083063d92a1267370c78fde9056d  design/standard/templates/content/bookmark_folder_forms.tpl
-6d9dac9c544ccdeae1223474d3fdaeb5  design/standard/templates/content/bookmark_tree.tpl
+67f6348e0c9e651f09cea9e80faa0508  design/standard/templates/content/bookmark_tree.tpl
 3514af6c300de574c1c6b24adad1a636  design/standard/templates/content/browse.tpl
 831b12a91aa1878bc9d253d5c6aacf03  design/standard/templates/content/browse_add_locations.tpl
 ab6257b41bb7309eaf281abacfbee2b9  design/standard/templates/content/browse_bookmark.tpl
@@ -2288,7 +2288,7 @@ a2c0a4330bb6b4ef3f8dbfae9325dd6c  design/standard/templates/content/view/version
 60bfb0e6722187276b7b5b41747da5af  design/standard/templates/contentstructuremenu/content_structure_menu.tpl
 67ef3daa47a6934b62c8764557b23620  design/standard/templates/contentstructuremenu/show_content_structure.tpl
 5cefe9d6a84222d1e4718a6842b4385f  design/standard/templates/dashboard/all_latest_content.tpl
-2a3ca38cb480d99dcd203fad60f1e292  design/standard/templates/dashboard/audit.tpl
+720d81001686bfe9246caf73cce2b4b4  design/standard/templates/dashboard/audit.tpl
 8ad4388ba0922c195b7ec3afa7ebea43  design/standard/templates/dashboard/community_activity.tpl
 d435c25b42cd8f48ea747f4ad8662125  design/standard/templates/dashboard/drafts.tpl
 3f931249e0149b06a440453c9233b629  design/standard/templates/dashboard/latest_content.tpl
