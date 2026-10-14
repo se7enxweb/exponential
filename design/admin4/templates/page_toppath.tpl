@@ -6,16 +6,16 @@
     {if $:item.url}
         {if ne($ui_context,'edit')}
         <a class="path" href={cond( and( $:use_urlalias, is_set( $:item.url_alias ) ), $:item.url_alias,
-                                    $:item.url )|ezurl}>{$:item.text|shorten( 18 )|wash}</a>
+                                    $:item.url )|ezurl}{if eq( $:number, $module_result.path|count )} aria-current="page"{/if}>{$:item.text|shorten( 18 )|wash}</a>
         {else}
         <span class="disabled">{$:item.text|shorten( 18 )|wash}</span>
         {/if}
     {else}
-        <span class="path">{$:item.text|wash}</span>
+        <span class="path"{if eq( $:number, $module_result.path|count )} aria-current="page"{/if}>{$:item.text|wash}</span>
     {/if}
 
     {delimiter}
-        <span class="slash">/</span>
+        <span class="slash" aria-hidden="true">/</span>
     {/delimiter}
 {/section}
 &nbsp;</p>

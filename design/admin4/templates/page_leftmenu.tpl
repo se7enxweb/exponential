@@ -1,4 +1,4 @@
-<div id="leftmenu" class="sidebar left">
+<div id="leftmenu" class="sidebar left" role="navigation" aria-label="{'Side menu'|i18n( 'design/admin/pagelayout' )|wash}">
     {* Resize handle for drag-to-resize functionality *}
     <div id="leftmenu-resize-handle" class="leftmenu-resize-handle" aria-hidden="true"></div>
     <div id="leftmenu-design">
