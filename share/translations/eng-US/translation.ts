@@ -2896,6 +2896,10 @@
         <source>Upload a file and add the resulting object in the relation</source>
         <translation>Upload a file and add the resulting object in the relation</translation>
     </message>
+    <message>
+        <source>Choose a date</source>
+        <translation>Choose a date</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/datatype/ezuser</name>
@@ -7294,6 +7298,10 @@
         <source>(Hidden by parent)</source>
         <translation>(Hidden by parent)</translation>
     </message>
+    <message>
+        <source>Items below %name</source>
+        <translation>Items below %name</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/all_latest_content</name>
@@ -9402,6 +9410,10 @@
     <message>
         <source>Main location</source>
         <translation>Main location</translation>
+    </message>
+    <message>
+        <source>Show tabs</source>
+        <translation>Show tabs</translation>
     </message>
 </context>
 <context>

@@ -3271,6 +3271,10 @@
         <source>Upload a file and add the resulting object in the relation</source>
         <translation>Eine Datei hochladen und das daraus entstehende Objekt der Relation hinzufügen</translation>
     </message>
+    <message>
+        <source>Choose a date</source>
+        <translation>Datum auswählen</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/datatype/ezuser</name>
@@ -8841,6 +8845,10 @@
         <source>(Hidden by parent)</source>
         <translation>(Durch übergeordneten Knoten versteckt)</translation>
     </message>
+    <message>
+        <source>Items below %name</source>
+        <translation>Elemente unter %name</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/all_latest_content</name>
@@ -11612,6 +11620,10 @@
     <message>
         <source>Main location</source>
         <translation>Hauptort</translation>
+    </message>
+    <message>
+        <source>Show tabs</source>
+        <translation>Tabs anzeigen</translation>
     </message>
 </context>
 <context>
