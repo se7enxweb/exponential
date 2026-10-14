@@ -1073,13 +1073,13 @@ li.a4-notice { list-style: none; }   /* a notice as a list item: no marker next 
 /* ---- Toasts: short feedback of an action done in the page (copied, saved), announced by a live region ------- */
 /* One stack per page (.a4-toasts in the frame) holding two live regions: #a4-toasts, polite, and for errors
    #a4-toasts-alert, assertive.
-   window.a4Toast( message, kind ) adds a toast; it does not take the focus, closes after 5 s, waits while the
-   pointer or the focus is on it, and has a close button. */
+   window.a4Toast( message, kind ) adds a toast; it does not take the focus, closes after 5 s (an error stays until it
+   is dismissed), waits while the pointer or the focus is on it, and has a close button. */
 .a4-toasts {
   position: fixed;
   right: var(--a4-space-4);
   bottom: var(--a4-space-4);
-  z-index: 1060;
+  z-index: var(--a4-z-toast);
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -1087,6 +1087,8 @@ li.a4-notice { list-style: none; }   /* a notice as a list item: no marker next 
   max-width: min(26rem, calc(100vw - 2 * var(--a4-space-4)));
   pointer-events: none;
 }
+/* the debug bar is fixed over the bottom of the window (expdebugbar.css): the stack sits above it */
+body.exp-debug-bar .a4-toasts { bottom: calc(var(--exp-debug-bar-h, 38px) + var(--a4-space-4)); }
 .a4-toasts > [aria-live] {
   display: flex;
   flex-direction: column;

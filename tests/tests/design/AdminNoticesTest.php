@@ -63,11 +63,18 @@ class AdminNoticesTest extends PHPUnit\Framework\TestCase
             $this->assertStringContainsString( $rule, $css );
         $this->assertMatchesRegularExpression( '/@media \(prefers-reduced-motion: reduce\) \{\s*\.a4-toast \{ animation: none; \}/', $css );
 
-        $layout = (string)file_get_contents( self::root() . '/design/admin4/templates/pagelayout.tpl' );
-        $this->assertMatchesRegularExpression( '/<div id="a4-toasts" aria-live="polite"[^>]*data-close-label="\{\'Dismiss\'\|i18n\( \'design\/admin\/pagelayout\' \)\|wash\}"/', $layout );
-        $this->assertMatchesRegularExpression( '/<div id="a4-toasts-alert" aria-live="assertive"/', $layout );
-        // both regions in one stack, so two toasts never cover each other
-        $this->assertMatchesRegularExpression( '/<div class="a4-toasts">\\s*<div id="a4-toasts" [^>]*><\\/div>\\s*<div id="a4-toasts-alert" [^>]*><\\/div>\\s*<\\/div>/', $layout );
+        foreach ( array( 'admin4', 'admin4l' ) as $design )
+        {
+            $layout = (string)file_get_contents( self::root() . "/design/$design/templates/pagelayout.tpl" );
+            $this->assertMatchesRegularExpression( '/<div id="a4-toasts" aria-live="polite"[^>]*data-close-label="\{\'Dismiss\'\|i18n\( \'design\/admin\/pagelayout\' \)\|wash\}"/', $layout );
+            $this->assertMatchesRegularExpression( '/<div id="a4-toasts-alert" aria-live="assertive"/', $layout );
+            // both regions in one stack, so two toasts never cover each other
+            $this->assertMatchesRegularExpression( '/<div class="a4-toasts">\\s*<div id="a4-toasts" [^>]*><\\/div>\\s*<div id="a4-toasts-alert" [^>]*><\\/div>\\s*<\\/div>/', $layout );
+        }
+        // above the debug bar, on the layer scale; an error stays until it is dismissed
+        $this->assertStringContainsString( 'z-index: var(--a4-z-toast);', $css );
+        $this->assertStringContainsString( 'body.exp-debug-bar .a4-toasts {', $css );
+        $this->assertStringContainsString( "kind !== 'bad'", (string)file_get_contents( self::root() . '/design/admin4/javascript/admin4.js' ) );
 
         $js = (string)file_get_contents( self::root() . '/design/admin4/javascript/admin4.js' );
         $this->assertStringContainsString( 'window.a4Toast = function (message, kind', $js );
@@ -88,8 +95,9 @@ class AdminNoticesTest extends PHPUnit\Framework\TestCase
             preg_match_all( '/<div\s+class="message-(error|warning|feedback|confirmation|information)[^"]*"([^>]*)>/', (string)file_get_contents( $file ), $m, PREG_SET_ORDER );
             foreach ( $m as $div )
             {
+                // a warning that reports a failed action (did not validate, could not be stored) is an alert too
                 $expected = $div[1] === 'error' ? 'alert' : 'status';
-                if ( strpos( $div[2], 'role="' . $expected . '"' ) === false )
+                if ( strpos( $div[2], 'role="' . $expected . '"' ) === false && !( $div[1] === 'warning' && strpos( $div[2], 'role="alert"' ) !== false ) )
                     $missing[] = substr( $file, strlen( self::root() ) + 1 ) . ': message-' . $div[1] . ' without role="' . $expected . '"';
             }
         }

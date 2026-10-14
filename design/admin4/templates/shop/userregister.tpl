@@ -1,6 +1,6 @@
 {* Warning. *}
 {if $input_error}
-<div class="message-warning" role="status">
+<div class="message-warning" role="alert">
 <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {'Required information is missing...'|i18n( 'design/admin/shop/userregister' )}</h2>
 <ul>
 <li>

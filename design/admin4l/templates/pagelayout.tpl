@@ -208,6 +208,11 @@
         {if $zone_html|trim|ne( '' )}{$zone_html}{else}{include uri='design:popupmenu/popup_menu.tpl'}{/if}
         {/cache-block}
     </div>
+    {* Toasts: short feedback of an action done in the page (window.a4Toast in admin4.js), as in admin4's frame *}
+    <div class="a4-toasts">
+        <div id="a4-toasts" aria-live="polite" aria-relevant="additions" data-close-label="{'Dismiss'|i18n( 'design/admin/pagelayout' )|wash}"></div>
+        <div id="a4-toasts-alert" aria-live="assertive" aria-relevant="additions"></div>
+    </div>
     {* This comment will be replaced with actual debug report (if debug is on). *}
     {if $admin_layout}{set-block variable=$zone_html}{include uri='design:explayouts/admin_zone.tpl' layout=$admin_layout zone_identifier='footer' only=array( 'admin_debug_area' )}{/set-block}{else}{set $zone_html = ''}{/if}
         {if $zone_html|trim|ne( '' )}{$zone_html}{else}<!--DEBUG_REPORT-->{/if}

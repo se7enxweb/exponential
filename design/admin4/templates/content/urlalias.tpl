@@ -11,12 +11,12 @@
     </div>
 {/case}
 {case match='error-invalid-language'}
-    <div class="message-warning" role="status">
+    <div class="message-warning" role="alert">
         <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {'The specified language code <%language> is not valid.'|i18n( 'design/admin/content/urlalias',, hash('%language', $info_data['language']) )|wash}</h2>
     </div>
 {/case}
 {case match='error-no-alias-text'}
-    <div class="message-warning" role="status">
+    <div class="message-warning" role="alert">
         <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {'Text is missing for the URL alias'|i18n( 'design/admin/content/urlalias' )}</h2>
         <ul>
             <li>{'Enter text in the input box to create a new alias.'|i18n( 'design/admin/content/urlalias' )}</li>

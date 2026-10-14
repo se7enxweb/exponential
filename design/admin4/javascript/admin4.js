@@ -44,7 +44,7 @@
  * admin4 toasts: window.a4Toast( message, kind, opener ) shows a short feedback of an action done in the page in
  * the regions #a4-toasts (polite) or, for kind 'bad', #a4-toasts-alert (assertive) of the frame. kind is 'ok',
  * 'bad', 'warn' or 'info'; opener is the element the action came from (optional). The toast does not take the
- * focus, closes after 5 s, waits while the pointer or the focus is on it, and has a close button named by the
+ * focus, closes after 5 s (an error stays until it is dismissed; Escape closes a focused toast), waits while the pointer or the focus is on it, and has a close button named by the
  * region's data-close-label. Closed with that button, it gives the focus to the opener when it is still in the page;
  * without one the focus goes to the page, as with any removed element. A toast with the same text replaces the one
  * shown; at most three stay, the oldest goes first. Without the regions it does nothing.
@@ -76,12 +76,15 @@
         toast.appendChild(close);
         var timer = null, held = false;
         function remove() { if (timer) clearTimeout(timer); if (toast.parentNode) toast.parentNode.removeChild(toast); }
-        function arm() { if (timer) clearTimeout(timer); if (!held) timer = setTimeout(remove, DELAY); }
+        // an error stays until it is dismissed (WCAG 2.2.1): the user may have to act on it
+        function arm() { if (timer) clearTimeout(timer); if (!held && kind !== 'bad') timer = setTimeout(remove, DELAY); }
         function hold(on) { held = on; if (on) { if (timer) clearTimeout(timer); timer = null; } else arm(); }
         close.addEventListener('click', function () {
             remove();
             if (opener && opener.focus && document.body.contains(opener)) opener.focus();
         });
+        // Escape on a focused toast closes it like its button
+        toast.addEventListener('keydown', function (e) { if (e.key === 'Escape') { e.preventDefault(); close.click(); } });
         toast.addEventListener('mouseenter', function () { hold(true); });
         toast.addEventListener('mouseleave', function () { hold(toast.contains(document.activeElement)); });
         toast.addEventListener('focusin', function () { hold(true); });

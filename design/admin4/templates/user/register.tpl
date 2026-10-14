@@ -1,6 +1,6 @@
 {* Warning *}
 {section show=$validation.processed}
-<div class="message-warning" role="status">
+<div class="message-warning" role="alert">
 <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {'The information could not be stored...'|i18n( 'design/admin/user/register' )}</h2>
 <p>{'The following information is either incorrect or missing'|i18n( 'design/admin/user/register' )}:</p>
 <ul>
@@ -42,7 +42,7 @@
 
 {else}
 {* Warning *}
-<div class="message-warning" role="status">
+<div class="message-warning" role="alert">
 <h2>{'Unable to register new user'|i18n( 'design/admin/user/register' )}</h2>
 </div>
 <div class="controlbar">
