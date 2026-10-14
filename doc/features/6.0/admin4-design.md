@@ -108,7 +108,8 @@ The menus of the content tree, the sub-items table, the class icon and the bookm
 templates in `templates/popupmenu/`) look like the other admin4 popovers and work from the keyboard.
 
 - **Look:** the card colour, edge, radius and shadow of the admin tokens in the light and the dark mode; text at the
-  body size (14 px) in rows of at least 32 px; the menu as wide as its longest item (13.5 to 22 rem) instead of a
+  body size (14 px) in compact rows of about 27 px (4 px above and below, line height 1.35, at least 24 px, the
+  WCAG 2.2 target size; separators 2 px apart); the menu as wide as its longest item (13.5 to 22 rem) instead of a
   fixed 14em that wrapped long items, an item longer than that cut with an ellipsis; the node or class name as a quiet title row; the hovered, focused and opened
   row in the accent tint; disabled items in the muted text colour. Under Windows high contrast the rows keep a
   visible outline.

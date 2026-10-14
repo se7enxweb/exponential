@@ -51,11 +51,30 @@ class AdminContextMenuTest extends PHPUnit\Framework\TestCase
             $this->assertStringContainsString( "var($token)", $css, "The admin4 context menu does not use $token" );
     }
 
-    public function testAdmin4MenuRowsAreAtLeast32PxAndKeepTheirFocusRing()
+    /** The pixel value of an admin4 --a4-space-N token, from components.css */
+    private static function spaceTokenPx( $token )
+    {
+        $tokens = (string)file_get_contents( self::root() . '/design/admin4/stylesheets/components.css' );
+        self::assertSame( 1, preg_match( '/' . preg_quote( $token, '/' ) . ':\s*(\d+)px;/', $tokens, $match ),
+                          "components.css does not define $token in px" );
+        return (int)$match[1];
+    }
+
+    public function testAdmin4MenuRowsAreCompactButAtLeast24PxAndKeepTheirFocusRing()
     {
         $css = self::menuCss();
-        $this->assertMatchesRegularExpression( '/div\.popupmenu a\s*\{[^}]*min-height:\s*var\(--a4-space-6\)/', $css,
-            'Menu rows must be at least --a4-space-6 (32px) high' );
+        // compact rows: 14px text, line-height 1.35 and 4px above and below (about 27px), but never below the
+        // 24px target size of WCAG 2.2 (2.5.8)
+        $this->assertSame( 1, preg_match( '/div\.popupmenu a\s*\{[^}]*min-height:\s*var\((--a4-space-\d)\)/', $css, $match ),
+            'Menu rows need a min-height from the --a4-space-* tokens' );
+        $this->assertGreaterThanOrEqual( 24, self::spaceTokenPx( $match[1] ),
+            'Menu rows must be at least 24px high (WCAG 2.2 target size)' );
+        $this->assertMatchesRegularExpression( '/div\.popupmenu a\s*\{[^}]*padding:\s*var\(--a4-space-1\) var\(--a4-space-3\);[^}]*line-height:\s*1\.35;/', $css,
+            'Menu rows are compact: 4px above and below the text at line-height 1.35' );
+        $this->assertMatchesRegularExpression( '/div\.popupmenu h3\s*\{[^}]*padding:\s*var\(--a4-space-1\) var\(--a4-space-3\);/', $css,
+            'The title row is as compact as the items' );
+        $this->assertMatchesRegularExpression( '/div\.popupmenu hr\s*\{[^}]*margin:\s*calc\(var\(--a4-space-1\) \/ 2\) 0;/', $css,
+            'Separators keep 2px above and below' );
         $this->assertMatchesRegularExpression( '/div\.popupmenu a:focus-visible\s*\{[^}]*outline:\s*2px solid/', $css,
             'The focused menu row needs a visible outline' );
         $this->assertStringContainsString( '@media (forced-colors: active)', $css, 'The menu needs a forced-colors fallback' );

@@ -629,8 +629,8 @@ div#contentstructure ul#content_tree_menu div.hidden {
 
 /* POPUP MENU
    The context menus of ezpopupmenu.js (content tree, sub-items, class menu, bookmarks and their submenus), drawn
-   from the admin tokens like the other admin4 popovers: rows of at least 32px in the body text size, a quiet title
-   row, the accent tint for the hovered, focused and opened row. ezpopupmenu.js gives the menus their roles
+   from the admin tokens like the other admin4 popovers: compact rows of at least 24px (the WCAG 2.2 target size) in
+   the body text size, a quiet title row, the accent tint for the hovered, focused and opened row. ezpopupmenu.js gives the menus their roles
    (menu, menuitem, separator) and keyboard handling. */
 div.popupmenu {
     box-sizing: border-box;
@@ -671,11 +671,11 @@ div.popupmenu#EditSubmenu {
 div.popupmenu h3 {
     float: none;
     margin: 0;
-    padding: var(--a4-space-2) var(--a4-space-3);
+    padding: var(--a4-space-1) var(--a4-space-3);
     overflow: hidden;
     font-size: var(--a4-text-s);
     font-weight: 600;
-    line-height: 1.4;
+    line-height: 1.35;
     color: var(--a4-muted);
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -699,8 +699,9 @@ div.popupmenu div.window-close p {
 div.popupmenu a {
     display: block;
     box-sizing: border-box;
-    min-height: var(--a4-space-6);
-    padding: var(--a4-space-2) var(--a4-space-3);
+    min-height: var(--a4-space-5);
+    padding: var(--a4-space-1) var(--a4-space-3);
+    line-height: 1.35;
     border-radius: calc(var(--a4-radius-s) - var(--a4-space-1));
     color: var(--a4-ink);
     text-decoration: none;
@@ -755,7 +756,7 @@ div.popupmenu a[aria-disabled="true"] {
 
 div.popupmenu hr {
     height: 0;
-    margin: var(--a4-space-1) 0;
+    margin: calc(var(--a4-space-1) / 2) 0;
     border: none;
     border-top: 1px solid var(--a4-line);
 }
