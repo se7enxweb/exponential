@@ -92,6 +92,11 @@ class AdminLeftMenuGroupsTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( 'aria-labelledby=', $items );
         $css = self::read( 'design/admin4/stylesheets/admin4.css' );
         $this->assertStringContainsString( 'a[aria-current="page"]', $css );
+        // the current link's bar is an inset shadow on the left: rounded left corners bend it into a "("
+        $this->assertSame( 1, preg_match( '/#leftmenu ul\.leftmenu-items li > div > a\[aria-current="page"\] \{([^}]*)\}/', $css, $current ) );
+        $this->assertStringContainsString( 'box-shadow: inset 3px 0 0 var(--a4-accent);', $current[1] );
+        $this->assertStringContainsString( 'border-radius: 0 var(--a4-radius-s) var(--a4-radius-s) 0;', $current[1],
+                                           'The current link\'s left corners must be square, or its bar is drawn curved' );
         $this->assertStringContainsString( 'summary.a4-nav-title', $css );
         $this->assertMatchesRegularExpression( '/@media \(forced-colors: active\) \{\s*#leftmenu details\.a4-navgroup/', $css );
         $this->assertMatchesRegularExpression( '/@media \(prefers-reduced-motion: reduce\) \{\s*#leftmenu details\.a4-navgroup > summary\.a4-nav-title::before \{ transition: none; \}/', $css );
