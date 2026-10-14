@@ -4,7 +4,8 @@
  * installation.
  *
  * - No <style> block and no style="" attribute in the templates of the admin designs (admin4, admin4l, admin3,
- *   admin2, admin); template comments {* ... *} are not read. Files still being migrated are in ALLOWLIST, which
+ *   admin), in templates/ and override/templates/; template comments {* ... *} are not read. A listed design that
+ *   does not exist fails the test instead of being skipped. Files still being migrated are in ALLOWLIST, which
  *   only shrinks: a listed file that has no inline CSS any more fails the test until it is taken off the list.
  *   EXCEPTIONS are the documented, permanent ones.
  * - The module stylesheets (stylesheets/modules/*.css of admin4 and admin) take colours, radii, spacing and fonts
@@ -35,7 +36,7 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
     /**
      * The admin designs whose templates may carry no inline CSS
      */
-    const DESIGNS = array( 'admin4', 'admin4l', 'admin3', 'admin2', 'admin' );
+    const DESIGNS = array( 'admin4', 'admin4l', 'admin3', 'admin' );
 
     /**
      * Permanent exceptions, path => why (each is documented in doc/bc/6.0/admin4-styling.md, "Exceptions")
@@ -72,18 +73,34 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
     }
 
     /**
+     * Returns the template directories of the admin designs that exist: templates/ (which every listed design must
+     * have) and override/templates/ (where a design has one)
+     */
+    private static function templateDirectories()
+    {
+        $dirs = array();
+        foreach ( self::DESIGNS as $design )
+        {
+            foreach ( array( 'templates', 'override/templates' ) as $sub )
+            {
+                $dir = self::$root . "/design/$design/$sub";
+                if ( is_dir( $dir ) )
+                {
+                    $dirs[] = $dir;
+                }
+            }
+        }
+        return $dirs;
+    }
+
+    /**
      * Returns the templates (paths from the root) of the admin designs that carry inline CSS
      */
     private static function templatesWithInlineCss()
     {
         $found = array();
-        foreach ( self::DESIGNS as $design )
+        foreach ( self::templateDirectories() as $dir )
         {
-            $dir = self::$root . "/design/$design/templates";
-            if ( !is_dir( $dir ) )
-            {
-                continue;
-            }
             $files = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( $dir, FilesystemIterator::SKIP_DOTS ) );
             foreach ( $files as $file )
             {
@@ -95,6 +112,22 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
         }
         sort( $found );
         return $found;
+    }
+
+    public function testEveryListedDesignExists()
+    {
+        foreach ( self::DESIGNS as $design )
+        {
+            $this->assertDirectoryExists( self::$root . "/design/$design/templates",
+                "design/$design is listed in DESIGNS but has no templates: take it off the list rather than skip it" );
+        }
+    }
+
+    public function testOverrideTemplatesAreScanned()
+    {
+        $dirs = array_map( function ( $dir ) { return substr( $dir, strlen( self::$root ) + 1 ); }, self::templateDirectories() );
+        $this->assertContains( 'design/admin4/override/templates', $dirs );
+        $this->assertContains( 'design/admin/override/templates', $dirs );
     }
 
     public function testDetectsStyleBlocksAndAttributesButNotComments()
