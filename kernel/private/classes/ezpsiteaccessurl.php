@@ -56,8 +56,15 @@ class ezpSiteAccessURL
             $url = self::root( $front );
             if ( $url !== false )
                 return $url;
-            // once per value and request: the admin layouts ask several times per page
-            static $warned = array();
+            // once per value and request: the admin layouts ask several times per page. The memo belongs to one
+            // request (eZExecution::requestKey()): a persistent Velocity worker serves many, and each warns again.
+            static $warned = array(), $warnedRequest = null;
+            $request = eZExecution::requestKey();
+            if ( $warnedRequest !== $request )
+            {
+                $warned = array();
+                $warnedRequest = $request;
+            }
             if ( !isset( $warned[$front] ) )
             {
                 $warned[$front] = true;

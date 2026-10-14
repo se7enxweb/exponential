@@ -127,6 +127,37 @@ class ezpSiteAccessURLTest extends PHPUnit\Framework\TestCase
         $this->assertSame( ezpSiteAccessURL::root(), ezpSiteAccessURL::front() );
     }
 
+    /**
+     * The warning about an unknown FrontSiteAccess is given once per value and request, and a persistent Velocity
+     * worker, which keeps function statics from request to request, gives it again in the next request.
+     */
+    public function testTheUnknownFrontSiteAccessWarningIsRememberedPerRequest()
+    {
+        $this->rules( array() );
+        $this->front( 'k1-nothere' );
+        $time = $_SERVER['REQUEST_TIME_FLOAT'] ?? null;
+        $statics = function () { return ( new ReflectionMethod( 'ezpSiteAccessURL', 'front' ) )->getStaticVariables(); };
+        try
+        {
+            $_SERVER['REQUEST_TIME_FLOAT'] = 1000.25;
+            ezpSiteAccessURL::front();
+            ezpSiteAccessURL::front();
+            $this->assertSame( '1000.25', $statics()['warnedRequest'] );
+            $this->assertSame( array( 'k1-nothere' => true ), $statics()['warned'] );
+            $_SERVER['REQUEST_TIME_FLOAT'] = 1001.5;
+            ezpSiteAccessURL::front();
+            $this->assertSame( '1001.5', $statics()['warnedRequest'], 'a new request starts a new memo' );
+            $this->assertSame( array( 'k1-nothere' => true ), $statics()['warned'] );
+        }
+        finally
+        {
+            if ( $time === null )
+                unset( $_SERVER['REQUEST_TIME_FLOAT'] );
+            else
+                $_SERVER['REQUEST_TIME_FLOAT'] = $time;
+        }
+    }
+
     public function testDefaultSiteAccessLeftOutWhenRemoved()
     {
         $this->rules( array( 'RemoveSiteAccessIfDefaultAccess' => 'enabled' ) );
