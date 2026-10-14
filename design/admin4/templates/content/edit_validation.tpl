@@ -1,6 +1,6 @@
 {section show=$validation.processed}
     {section show=or( $validation.attributes, $validation.placement, $validation.custom_rules )}
-        <div class="message-error">
+        <div class="message-error" role="alert">
             <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {'The draft could not be stored.'|i18n( 'design/admin/content/edit' )}</h2>
 
             {section show=$validation.attributes}
@@ -34,7 +34,7 @@
     {section-else}
 
         {section show=$validation_log}
-            <div class="message-warning">
+            <div class="message-warning" role="status">
                 <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {'The draft was only partially stored.'|i18n( 'design/admin/content/edit' )}</h2>
                 {section var=ValidationLogs loop=$validation_log}
                     <p>{$ValidationLogs.item.name|wash}:</p>
@@ -46,7 +46,7 @@
                 {/section}
             </div>
             {section-else}
-            <div class="message-feedback">
+            <div class="message-feedback" role="status">
                 <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {'The draft was successfully stored.'|i18n( 'design/admin/content/edit' )}</h2>
             </div>
         {/section}

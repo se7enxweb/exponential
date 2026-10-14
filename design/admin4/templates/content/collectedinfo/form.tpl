@@ -4,7 +4,7 @@
 {set-block scope=global variable=title}{'Form %formname'|i18n( 'design/admin/content/collectedinfo/form',, hash( '%formname', $node.name ) )|wash}{/set-block}
 
 {if and( $error, $error_existing_data )}
-<div class="message-warning">
+<div class="message-warning" role="status">
     <p>{'You have already submitted this form. The previously submitted data was:'|i18n( 'design/admin/content/collectedinfo/form' )}</p>
 </div>
 {/if}

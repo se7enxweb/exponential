@@ -191,7 +191,7 @@
 
                 {* Translation mismatch notice *}
                 {if $object_languagecode|eq( $site_access_locale_map[$siteaccess] )|not}
-                    <div class="message-feedback">
+                    <div class="message-feedback" role="status">
                         <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span>
                             {'Translation mismatch'|i18n( 'design/admin/content/view/versionview' )}</h2>
                         <p>{'Your selected translation does not match the language of your selected siteaccess. This may lead to unexpected results in the preview, however it may also be what you intended.'|i18n( 'design/admin/content/view/versionview' )}

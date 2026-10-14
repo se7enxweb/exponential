@@ -3,13 +3,13 @@
 {if $error}
 
 {if $error_anonymous_user}
-<div class="message-warning">
+<div class="message-warning" role="status">
     <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {'Anonymous users are not allowed to vote in this poll. Please log in.'|i18n('design/admin/content/collectedinfo/poll')}</h2>
 </div>
 {/if}
 
 {if $error_existing_data}
-<div class="message-warning">
+<div class="message-warning" role="status">
     <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {'You have already voted in this poll.'|i18n('design/admin/content/collectedinfo/poll')}</h2>
 </div>
 {/if}

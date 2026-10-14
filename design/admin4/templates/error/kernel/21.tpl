@@ -2,7 +2,7 @@
 {def $missing_module = cond( is_set( $parameters.module ), $parameters.module|wash, '' )
      $missing_view = cond( is_set( $parameters.view ), $parameters.view|wash, '' )
      $missing_page = cond( and( $missing_module, $missing_view ), concat( $missing_module, '/', $missing_view ), $missing_module ) }
-<div class="message-error">
+<div class="message-error" role="alert">
 <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {'This page does not exist'|i18n( 'design/admin/error/kernel' )}</h2>
 {if $missing_page}
 <p>{'There is no page at "%page".'|i18n( 'design/admin/error/kernel',, hash( '%page', $missing_page ) )}

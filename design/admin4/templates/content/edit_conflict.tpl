@@ -10,7 +10,7 @@
 <div id="maincontent-design" class="float-break"><div id="fix">
 <!-- Maincontent START -->
 
-<div class="message-warning">
+<div class="message-warning" role="status">
 
 <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {'Possible edit conflict'|i18n( 'design/admin/content/edit_draft' )}</h2>
     <p>{'The object has already been published by someone else.'|i18n( 'design/admin/content/edit_draft' )}</p>

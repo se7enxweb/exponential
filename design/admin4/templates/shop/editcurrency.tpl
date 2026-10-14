@@ -1,5 +1,5 @@
 {if $error}
-    <div class="message-error">
+    <div class="message-error" role="alert">
         <h2>{$error|wash}</h2>
     </div>
 {/if}

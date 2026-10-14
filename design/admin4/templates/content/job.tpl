@@ -29,7 +29,7 @@
 {* DESIGN: Content START *}<div class="box-ml"><div class="box-mr"><div class="box-content">
 
 {if $action_error}
-<div class="message-error a4-content-job-action-error"><h2>{$action_error|wash}</h2></div>
+<div class="message-error a4-content-job-action-error" role="alert"><h2>{$action_error|wash}</h2></div>
 {/if}
 
 <div class="block">
@@ -42,20 +42,20 @@
     <p class="a4-content-job-message" aria-live="polite">{if and( $job.cancel_requested, $finished|not )}{'Stopping after the current batch'|i18n( 'design/admin/content/job' )}{else}{$job.message|wash}{/if}</p>
 </div>
 
-<div class="message-feedback a4-content-job-done"{if ne( $job.state, 'done' )} hidden{/if}>
+<div class="message-feedback a4-content-job-done" role="status"{if ne( $job.state, 'done' )} hidden{/if}>
     <h2>{$job.done_text|wash}</h2>
     <p><a class="a4-content-job-open" href={$job.redirect_url|ezurl}>{$job.open_text|wash}</a> <span class="a4-content-job-auto"></span></p>
 </div>
 
 {if $job.warnings|count}
-<div class="message-warning a4-content-job-warnings">
+<div class="message-warning a4-content-job-warnings" role="status">
     <h2>{'Warnings'|i18n( 'design/admin/content/job' )}</h2>
     <ul>{foreach $job.warnings as $warning}<li>{$warning|wash}</li>{/foreach}</ul>
 </div>
 {/if}
 
 {if eq( $job.state, 'failed' )}
-<div class="message-error a4-content-job-error">
+<div class="message-error a4-content-job-error" role="alert">
     <h2>{'The job stopped with an error.'|i18n( 'design/admin/content/job' )}</h2>
     <pre>{$job.error|wash}</pre>
     {if $job.error_node_id}<p><a href={concat( 'content/view/full/', $job.error_node_id )|ezurl}>{'Open the node that failed'|i18n( 'design/admin/content/job' )}</a></p>{/if}
@@ -64,7 +64,7 @@
 {/if}
 
 {if eq( $job.state, 'cancelled' )}
-<div class="message-warning">
+<div class="message-warning" role="status">
     {if eq( $job.type, 'copy' )}
         <h2>{'The copy was cancelled.'|i18n( 'design/admin/content/job' )}</h2>
         {if $job.partial_node_id}

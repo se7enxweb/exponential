@@ -1,5 +1,5 @@
 {if $errors}
-    <div class="message-warning">
+    <div class="message-warning" role="status">
         <h2>{'Input did not validate'|i18n( 'design/admin/shop/vattype' )}</h2>
         <ul>
         {foreach $errors as $error}

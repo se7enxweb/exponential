@@ -1,7 +1,7 @@
 {ezcss_require( 'visual-templateview.css' )}
 
 {section show=or( $not_removed, $ini_not_saved )}
-<div class="message-error">
+<div class="message-error" role="alert">
 <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {'The overrides could not be removed.'|i18n( 'design/admin/visual/templateview' )}</h2>
 
 {section show=$not_removed}
@@ -23,19 +23,19 @@
 {/section}
 
 {if $not_owned}
-<div class="message-warning">
+<div class="message-warning" role="status">
     <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {'Some overrides were not removed'|i18n( 'design/admin/visual/templateview' )}</h2>
     <p>{'These are defined by an extension, not in the siteaccess settings, and have to be removed there:'|i18n( 'design/admin/visual/templateview' )} {foreach $not_owned as $name}<code>{$name|wash}</code>{delimiter}, {/delimiter}{/foreach}</p>
 </div>
 {/if}
 
 {if and( $save_error, $ini_not_saved|not )}
-<div class="message-error">
+<div class="message-error" role="alert">
     <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {'The overrides were not changed'|i18n( 'design/admin/visual/templateview' )}</h2>
     <p>{$save_error|wash}</p>
 </div>
 {elseif $save_message}
-<div class="message-feedback">
+<div class="message-feedback" role="status">
     <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {$save_message|wash}</h2>
 </div>
 {/if}

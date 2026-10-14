@@ -519,9 +519,33 @@ table.list:not(.a4-plain) > tbody > tr:nth-child(even of :has(> td):not([hidden]
 table.list:not(.a4-plain) > tbody > tr:hover > :is(td, th[scope="row"]) { background-color: var(--a4-info-bg); }
 table.list td { border-color: var(--a4-line); }
 
-/* Messages */
-div.message-warning, div.message-error, div.message-feedback, div.message-confirmation, div.message-information {
+/* Messages: the classic div.message-* (the result of an action, rendered by the module) look like .a4-notice: a
+   state tint, a 4px edge in the state's colour, the heading's icon (core.css) in that colour too. The #page id
+   outweighs core.css, which cleared border and background inside div.box-content. */
+#page div:is(.message-warning, .message-error, .message-feedback, .message-confirmation, .message-information) {
+  margin: 0 0 var(--a4-space-3);
+  padding: var(--a4-space-2) var(--a4-space-3);
+  border: 1px solid var(--a4-line);
+  border-left-width: 4px;
   border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+  color: var(--a4-ink);
+}
+#page div:is(.message-feedback, .message-confirmation) { border-color: var(--a4-ok-line); border-left-color: var(--a4-ok); background-color: var(--a4-ok-bg); }
+#page div.message-warning { border-color: var(--a4-warn-line); border-left-color: var(--a4-warn); background-color: var(--a4-warn-bg); }
+#page div.message-error { border-color: var(--a4-bad-line); border-left-color: var(--a4-bad); background-color: var(--a4-bad-bg); }
+#page div.message-information { border-color: var(--a4-info-line); border-left-color: var(--a4-info); background-color: var(--a4-info-bg); }
+#page div:is(.message-feedback, .message-confirmation) h2 { color: var(--a4-ok); }
+#page div.message-warning h2 { color: var(--a4-warn); }
+#page div.message-error h2 { color: var(--a4-bad); }
+#page div:is(.message-warning, .message-error, .message-feedback, .message-confirmation, .message-information) h2 {
+  margin: 0 0 var(--a4-space-1);
+  padding: 0 0 0 calc(var(--a4-space-4) + var(--a4-space-1) + var(--a4-space-2));
+  font-size: var(--a4-text-l);
+}
+#page div:is(.message-warning, .message-error, .message-feedback, .message-confirmation, .message-information) h2::before {
+  left: 0;
+  top: 0.1em;
 }
 
 /* ---- Footer: quiet text on the page ------------------------------------------------------------------------- */

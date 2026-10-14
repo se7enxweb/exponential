@@ -7,7 +7,7 @@
 {*section show=and( $validation.processed, $validation.groups )*}
 {section show=$validation.processed}
 {section show=$validation.groups}
-<div class="message-warning">
+<div class="message-warning" role="status">
 <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {'Input did not validate'|i18n( 'design/admin/workflow/edit' )}</h2>
 <ul>
 {section var=item loop=$validation.groups}
@@ -17,7 +17,7 @@
 </div>
 {/section}
 {section show=$validation.events}
-<div class="message-warning">
+<div class="message-warning" role="status">
 <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {'The workflow could not be stored.'|i18n( 'design/admin/workflow/edit' )}</h2>
 <p>{'The following information is either missing or invalid'|i18n( 'design/admin/workflow/edit' )}:</p>
 <ul>
@@ -41,7 +41,7 @@
 {/section}
 
 {if $require_fixup}
-<div class="message-warning">
+<div class="message-warning" role="status">
 <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {'Data requires fixup'|i18n( 'design/admin/workflow/edit' )}</h2>
 </div>
 {/if}

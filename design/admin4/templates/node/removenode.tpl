@@ -10,7 +10,7 @@
 
 {* DESIGN: Content START *}<div class="box-ml"><div class="box-mr"><div class="box-content">
 
-<div class="message-confirmation">
+<div class="message-confirmation" role="status">
 
 <h2>{'Are you sure you want to remove %1 from node %2?'|i18n( 'design/admin/node/removenode',, hash( '%1', $object.name, '%2', $node.object.name ) )|wash}</h2>
 <ul>

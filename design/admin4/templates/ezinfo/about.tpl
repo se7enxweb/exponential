@@ -71,7 +71,7 @@
     {if $license}
     <pre class="ezinfo-license" tabindex="0" aria-label="{'License'|i18n( 'design/admin/ezinfo/about' )|wash}">{$license|wash}</pre>
     {else}
-    <div class="message-warning"><p>{'Could not load LICENSE file! You should have a LICENSE file in your Exponential root directory.'|i18n( 'design/admin/ezinfo/about' )}</p></div>
+    <div class="message-warning" role="status"><p>{'Could not load LICENSE file! You should have a LICENSE file in your Exponential root directory.'|i18n( 'design/admin/ezinfo/about' )}</p></div>
     {/if}
 </section>
 

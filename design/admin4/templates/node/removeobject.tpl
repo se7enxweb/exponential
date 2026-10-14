@@ -29,7 +29,7 @@
 {include uri='design:content/job_summary.tpl' job_summary=$job_summary operation='remove'}
 {/if}
 {if and( is_set( $job_mode ), $job_mode|not, is_set( $run_as_job ), $run_as_job )}
-<div class="message-feedback cj-job-notice">
+<div class="message-feedback cj-job-notice" role="status">
     <p>{'This is a large removal. It runs in the background, in batches: you see its progress and can leave the page while it works.'|i18n( 'design/admin/content/job' )}</p>
 </div>
 {/if}

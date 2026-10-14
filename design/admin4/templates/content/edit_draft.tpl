@@ -25,7 +25,7 @@
             {/section}
 
 
-            <div class="message-warning">
+            <div class="message-warning" role="status">
 
                 <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span>
                     {'Possible edit conflict'|i18n( 'design/admin/content/edit_draft' )}</h2>
