@@ -2751,7 +2751,7 @@ ef64aacab3749199176823b6f77f0728  doc/bc/5.4/changes-5.4.txt
 cdbe0fdc9c9011438bf808f4842b0982  doc/bc/5.90/relation_indexing.md
 80fe50b87915a03608f4e2717961df7b  doc/bc/6.0/AdditionalExtensionDirectories.md
 2101e0b2a39e88c630d7c237ef66285b  doc/bc/6.0/EXT_SORT_ORDERS.md
-1e3d333a060b56b8b2042f0616cad203  doc/bc/6.0/ICONS.md
+7bd7841ebda1338b74f5d29c8e3d4df0  doc/bc/6.0/ICONS.md
 94f95a803fffdb657972e1a81769e82f  doc/bc/6.0/LAYOUTS.md
 d386923e32f7abc18de9e5392795bb5f  doc/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md
 d95203ddf57747c5dcb15b6923bd0356  doc/bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXPANSION_HIDE_UNHIDE.md
@@ -2984,7 +2984,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-2a6b24b7f5c5d6ddc595bfaee3022a39  doc/changelogs/6.0/6.0.15.md
+9524974360880fe5c37a796bc0467d1b  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3312,7 +3312,7 @@ c4809a3b611073bdcad4b38e9ea7dd6d  doc/features/6.0/additional-extension-director
 8ee6875c6693489d567c309177b49b81  doc/features/6.0/admin-list-paging.md
 41099ca247392d7ed963caa4b857e51c  doc/features/6.0/admin3-responsive-admin.md
 98b1eb658a2475fc31af9b9cbfaba709  doc/features/6.0/admin3-sidebar-width-and-font-size.md
-ae94834229dfef5fa4ef0cca75b6af23  doc/features/6.0/admin4-design.md
+57efe559438f62344a7c458a7542c4a3  doc/features/6.0/admin4-design.md
 7d8b3d248d27baa55bbf5f7f22040693  doc/features/6.0/admin4l.md
 cb077d1f37f8e8811c377ede4bc99357  doc/features/6.0/adminneo-database-manager.md
 ae7d698fad5f10287ad37ade2f97d8aa  doc/features/6.0/audit-trail.md
@@ -6515,7 +6515,7 @@ a63ff6444dbbf40c9bd57aee41040c9f  share/db_data.dba
 27b07790be30d1577541464bc445fff3  share/icons/big-smile.gif
 0e1abb7c8f76d149177749fe2a397ce3  share/icons/blunk.gif
 9d76fce3ac59b65b057119623fb7b030  share/icons/bootstrap-icons/LICENSE
-7cd37ac0afed043af577bd9fbf2eecd7  share/icons/bootstrap-icons/icon.ini
+8138232b06815cc97861602f35879277  share/icons/bootstrap-icons/icon.ini
 8081c555057a13d171959373f4119bf8  share/icons/bootstrap-icons/svg/arrow-90deg-up.svg
 ef7b4b735360451c330ba9991d32c8ea  share/icons/bootstrap-icons/svg/arrow-bar-down.svg
 d7d5f88705e5c33e290f74a2c3990d7f  share/icons/bootstrap-icons/svg/arrow-bar-up.svg
