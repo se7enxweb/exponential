@@ -627,16 +627,24 @@ div#contentstructure ul#content_tree_menu div.hidden {
     display: none;
 }
 
-/* POPUP MENU */
+/* POPUP MENU
+   The context menus of ezpopupmenu.js (content tree, sub-items, class menu, bookmarks and their submenus), drawn
+   from the admin tokens like the other admin4 popovers: rows of at least 32px in the body text size, a quiet title
+   row, the accent tint for the hovered, focused and opened row. ezpopupmenu.js gives the menus their roles
+   (menu, menuitem, separator) and keyboard handling. */
 div.popupmenu {
-    width: 14em;
-    margin: 0px;
-    padding: 2px;
-    background-color: var(--a4-surface);
-    border: 1px solid var(--a4-line-strong);
-    box-shadow: 3px 3px 3px 0px #bbb;
-    border-radius: 3px;
-    font-size: 0.90em;
+    box-sizing: border-box;
+    min-width: 13.5rem;
+    width: max-content;
+    max-width: min(22rem, calc(100vw - 2 * var(--a4-space-3)));
+    margin: 0;
+    padding: var(--a4-space-1);
+    background-color: var(--a4-card);
+    border: 1px solid var(--a4-line);
+    border-radius: var(--a4-radius-s);
+    box-shadow: var(--a4-shadow-m);
+    font-size: var(--a4-text-m);
+    line-height: 1.4;
     color: var(--a4-ink);
 
     /* These three are essential */
@@ -646,9 +654,10 @@ div.popupmenu {
 }
 
 div.popupmenu div.popupmenuheader {
-    background-color: #6f6e6b;
-    color: #eee;
-    border-bottom: 1px solid var(--a4-line-strong);
+    margin: 0 0 var(--a4-space-1);
+    background: none;
+    color: var(--a4-muted);
+    border-bottom: 1px solid var(--a4-line);
 }
 
 div.popupmenu#EditSubmenu {
@@ -656,43 +665,55 @@ div.popupmenu#EditSubmenu {
 }
 
 div.popupmenu h3 {
+    float: none;
     margin: 0;
-    padding: 0.2em 0.5em 0.2em 0.5em;
-    float: left;
+    padding: var(--a4-space-2) var(--a4-space-3);
+    overflow: hidden;
+    font-size: var(--a4-text-s);
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--a4-muted);
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 div.popupmenu div.window-close {
     float: right;
-    padding: 1px;
+    padding: var(--a4-space-1);
 }
 
 div.popupmenu div.window-close p {
     margin: 0;
+    padding: 0 var(--a4-space-2);
     color: var(--a4-ink);
     font-weight: bold;
-    background-color: #ecece4;
-    padding: 0.1em 0.3em 0.1em 0.3em;
-    border: 1px solid #ffffff;
-    border-bottom-color: #bfbeb6;
-    border-right-color: #bfbeb6;
+    background-color: var(--a4-soft);
+    border: 1px solid var(--a4-line);
+    border-radius: var(--a4-radius-s);
 }
 
 div.popupmenu a {
-    color: var(--a4-ink);
-    padding: 0.2em 0.3em 0.2em 0.3em;
-    text-decoration: none;
-    cursor: default;
     display: block;
+    box-sizing: border-box;
+    min-height: var(--a4-space-6);
+    padding: var(--a4-space-2) var(--a4-space-3);
+    border-radius: calc(var(--a4-radius-s) - var(--a4-space-1));
+    color: var(--a4-ink);
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: none;
 }
 
 div.popupmenu a.more {
     position: relative;
+    padding-right: var(--a4-space-6);
 }
 
 div.popupmenu a.more::after {
     content: "";
     position: absolute;
-    right: 0.3em;
+    right: var(--a4-space-3);
     top: 50%;
     width: 10px;
     height: 10px;
@@ -702,27 +723,43 @@ div.popupmenu a.more::after {
     mask: url(../../../share/icons/bootstrap-icons/svg/caret-right-fill.svg) no-repeat center / contain;
 }
 
-div.popupmenu a.menu-item-disabled {
-    color: #CECECE;
-}
-
-div.popupmenu a {
-    -webkit-transition: none;
-    -moz-transition: none;
-    -ms-transition: none;
-    -o-transition: none;
-    transition: none;
-}
-
-div.popupmenu a:hover {
-    background-color: var(--a4-info-bg);
+div.popupmenu a:hover,
+div.popupmenu a:focus-visible,
+div.popupmenu a[aria-expanded="true"] {
+    background-color: var(--a4-accent-soft);
+    color: var(--a4-ink);
     text-decoration: none;
-    cursor: default;
+}
+
+div.popupmenu a:focus-visible {
+    outline: 2px solid var(--a4-accent-strong);
+    outline-offset: -2px;
+}
+
+html[data-a4-theme="dark"] div.popupmenu a:focus-visible {
+    outline-color: var(--a4-accent);
+}
+
+div.popupmenu a.menu-item-disabled,
+div.popupmenu a[aria-disabled="true"] {
+    color: var(--a4-muted);
+    background: none;
+    cursor: not-allowed;
 }
 
 div.popupmenu hr {
+    height: 0;
+    margin: var(--a4-space-1) 0;
     border: none;
-    border-top: 1px solid var(--a4-line-strong);
+    border-top: 1px solid var(--a4-line);
+}
+
+@media (forced-colors: active) {
+    div.popupmenu { border-color: CanvasText; }
+    div.popupmenu a:hover,
+    div.popupmenu a:focus-visible,
+    div.popupmenu a[aria-expanded="true"] { outline: 2px solid Highlight; outline-offset: -2px; }
+    div.popupmenu a[aria-disabled="true"] { color: GrayText; }
 }
 
 /* BOX MODEL */
