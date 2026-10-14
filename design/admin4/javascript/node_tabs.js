@@ -5,10 +5,10 @@ jQuery(function( $ )
 
         timeout : null,
 
-        // click on a tab event
+        // click on a tab event: the tab's li, whatever element inside the link was clicked
         click : function( e )
         {
-            NodeTab.open( e.target.parentNode.id, true );
+            NodeTab.open( $( this ).closest( 'li' ).attr( 'id' ), true );
 
             // enable tabs if disabled
             var link = document.getElementById('maincontent-show');
@@ -23,7 +23,7 @@ jQuery(function( $ )
         // toggle tabs ( enable / disable state )
         toggleClick : function( e )
         {
-            NodeTab.toggle( $('div.tab-block ul.tabs'), $('div.tab-block div.tabs-content'), e.target );
+            NodeTab.toggle( $('div.tab-block ul.tabs'), $('div.tab-block div.tabs-content'), this );
             return false;
         },
 
@@ -37,6 +37,7 @@ jQuery(function( $ )
                 NodeTab.saveTabState( 1 );
                 link.innerHTML = '&nbsp;';
                 link.id = 'maincontent-hide';
+                NodeTab.toggleState( link, true );
             }
             else
             {
@@ -45,8 +46,77 @@ jQuery(function( $ )
                 NodeTab.saveTabState( 0 );
                 link.innerHTML = '&nbsp;';
                 link.id = 'maincontent-show';
+                NodeTab.toggleState( link, false );
             }
+            ul.each( function(){ NodeTab.aria( this ); } );
             return false;
+        },
+
+        // the show/hide tabs toggle reports whether the tabs are on, and its name says what a press does
+        toggleState : function( link, on )
+        {
+            link.setAttribute( 'aria-pressed', on ? 'true' : 'false' );
+            var label = link.getAttribute( on ? 'data-label-hide' : 'data-label-show' );
+            if ( label )
+            {
+                link.setAttribute( 'aria-label', label );
+                link.title = label;
+            }
+        },
+
+        // The tabs as the WAI-ARIA tabs pattern: tablist, tab with aria-selected and aria-controls, tabpanel, and
+        // only the selected tab in the Tab order (the arrow keys reach the others). While the tabs are switched off
+        // (ul.disabled, every panel shown) the roles are taken away again.
+        aria : function( ul )
+        {
+            var $ul = $( ul ), on = !$ul.hasClass( 'disabled' );
+            if ( on ) $ul.attr( 'role', 'tablist' ); else $ul.removeAttr( 'role' );
+            $ul.children( 'li' ).each( function()
+            {
+                var li = this, a = $( li ).children( 'a' )[0];
+                if ( !a ) return;
+                var panel = li.id ? document.getElementById( li.id + '-content' ) : null,
+                    selected = $( li ).hasClass( 'selected' );
+                if ( on )
+                {
+                    $( li ).attr( 'role', 'presentation' );
+                    if ( !a.id && li.id ) a.id = li.id + '-tab';
+                    a.setAttribute( 'role', 'tab' );
+                    a.setAttribute( 'aria-selected', selected ? 'true' : 'false' );
+                    a.setAttribute( 'tabindex', selected ? '0' : '-1' );
+                    if ( panel )
+                    {
+                        a.setAttribute( 'aria-controls', panel.id );
+                        panel.setAttribute( 'role', 'tabpanel' );
+                        panel.setAttribute( 'aria-labelledby', a.id );
+                    }
+                }
+                else
+                {
+                    $( li ).removeAttr( 'role' );
+                    $( a ).removeAttr( 'role aria-selected aria-controls tabindex' );
+                    if ( panel ) $( panel ).removeAttr( 'role aria-labelledby' );
+                }
+            });
+        },
+
+        // arrow keys, Home and End move between the tabs and open the one they reach
+        keydown : function( e )
+        {
+            var ul = $( this ).closest( 'ul.tabs' );
+            if ( ul.hasClass( 'disabled' ) ) return;
+            var tabs = ul.children( 'li' ).children( 'a' ).toArray(), i = tabs.indexOf( this ), next = null;
+            switch ( e.key )
+            {
+                case 'ArrowRight': case 'ArrowDown': next = tabs[( i + 1 ) % tabs.length]; break;
+                case 'ArrowLeft': case 'ArrowUp': next = tabs[( i - 1 + tabs.length ) % tabs.length]; break;
+                case 'Home': next = tabs[0]; break;
+                case 'End': next = tabs[tabs.length - 1]; break;
+                default: return;
+            }
+            e.preventDefault();
+            NodeTab.open( $( next ).closest( 'li' ).attr( 'id' ), true );
+            next.focus();
         },
 
         // open a tab & optionally save state
@@ -65,6 +135,7 @@ jQuery(function( $ )
                 block.find("div.tab-content.selected").addClass('hide').removeClass('selected');
                 li.addClass('selected');
                 $( '#' + id + '-content' ).addClass('selected').removeClass('hide');
+                NodeTab.aria( li[0].parentNode );
 
                 var wc = li[0].parentNode.parentNode;
                 if ( wc && wc.id === 'window-controls' )
@@ -114,9 +185,15 @@ jQuery(function( $ )
         }
     };
 
-    $('div.tab-block ul.tabs li a').on( 'click', NodeTab.click );
+    $('div.tab-block ul.tabs li a').on( 'click', NodeTab.click ).on( 'keydown', NodeTab.keydown );
+    $('div.tab-block ul.tabs').each( function(){ NodeTab.aria( this ); } );
 
     $('#maincontent-hide').on( 'click', NodeTab.toggleClick );
+    $('a.show-hide-tabs').on( 'keydown', function( e )
+    {
+        // role="button": Space presses it like Enter
+        if ( e.key === ' ' ) { e.preventDefault(); this.click(); }
+    });
 
     var openTab = NodeTab.getCookie( 'adminNavigationTab' );
     if ( openTab && $('div.tab-block ul.tabs.tabs-by-cookie #node-tab-' + openTab).length )
