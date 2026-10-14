@@ -67487,8 +67487,8 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Version</translation>
     </message>
     <message>
-        <source>%delta against the 7 days before</source>
-        <translation>%delta zur Vorwoche</translation>
+        <source>%delta against the 6 days before, without today</source>
+        <translation>%delta gegenüber den 6 Tagen davor, ohne heute</translation>
     </message>
     <message>
         <source>Day</source>
@@ -67499,8 +67499,8 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Veröffentlicht</translation>
     </message>
     <message>
-        <source>As many as the 7 days before</source>
-        <translation>So viele wie in der Vorwoche</translation>
+        <source>As many as the 6 days before, without today</source>
+        <translation>So viele wie in den 6 Tagen davor, ohne heute</translation>
     </message>
     <message>
         <source>Show the numbers</source>

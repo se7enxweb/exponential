@@ -56037,7 +56037,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%delta against the 7 days before</source>
+        <source>%delta against the 6 days before, without today</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -56049,7 +56049,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>As many as the 7 days before</source>
+        <source>As many as the 6 days before, without today</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

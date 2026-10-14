@@ -76,7 +76,7 @@ extension). The editor siteaccess falls back to `admin4` first, then `admin3`, `
   into "..." for the eye only: screen readers still read the whole path, and a step that takes the keyboard focus
   shows again.
   Each key figure has an icon tile; a figure that leads somewhere shows an arrow in its corner. The week's figure
-  says how it compares with the 7 days before (a number, an arrow and words, never a colour for "good" or "bad"),
+  says how its full days compare with the 6 days before them, without today (a number, an arrow and words, never a colour for "good" or "bad"),
   counted from the same 14 days as the chart, so it needs no query of its own. The chart's numbers fold out under
   it as a table ("Show the numbers"). States in tables use the existing `.a4-badge.is-ok|is-warn|is-bad|is-info`
   (the state's tint and text colour); there is no second "pill" component.

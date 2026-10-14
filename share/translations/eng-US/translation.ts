@@ -60045,8 +60045,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Version</translation>
     </message>
     <message>
-        <source>%delta against the 7 days before</source>
-        <translation>%delta against the 7 days before</translation>
+        <source>%delta against the 6 days before, without today</source>
+        <translation>%delta against the 6 days before, without today</translation>
     </message>
     <message>
         <source>Day</source>
@@ -60057,8 +60057,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Published</translation>
     </message>
     <message>
-        <source>As many as the 7 days before</source>
-        <translation>As many as the 7 days before</translation>
+        <source>As many as the 6 days before, without today</source>
+        <translation>As many as the 6 days before, without today</translation>
     </message>
     <message>
         <source>Show the numbers</source>

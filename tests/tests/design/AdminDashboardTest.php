@@ -37,11 +37,13 @@ class AdminDashboardTest extends PHPUnit\Framework\TestCase
         $tpl = self::read( 'design/admin4/templates/content/dashboard.tpl' );
         $this->assertDoesNotMatchRegularExpression( '/\$count_week\s*=\s*fetch\(/', $tpl, 'the week is summed from $days, not fetched again' );
         $this->assertStringContainsString( '{set $count_week = sum( $count_week, $d.count )}', $tpl );
-        // $days runs oldest first: the first seven are the week before, the last seven this week
-        $this->assertStringContainsString( '{if lt( $n, 7 )}{set $count_prev_week = sum( $count_prev_week, $d.count )}{else}{set $count_week = sum( $count_week, $d.count )}{/if}', $tpl );
+        // $days runs oldest first: the last seven are the figure (today included); the trend compares full days only,
+        // the 6 days before today (7..12) with the 6 before them (1..6)
+        $this->assertStringContainsString( '{if ge( $n, 7 )}{set $count_week = sum( $count_week, $d.count )}{/if}', $tpl );
         $this->assertStringContainsString( '{for 13 to 0 as $i}', $tpl, 'the days are built oldest first' );
-        $this->assertStringContainsString( '{set $count_prev_week = sum( $count_prev_week, $d.count )}', $tpl );
-        $this->assertStringContainsString( '{def $week_delta = sub( $count_week, $count_prev_week )}', $tpl );
+        $this->assertStringContainsString( '{if and( ge( $n, 7 ), lt( $n, 13 ) )}{set $trend_now = sum( $trend_now, $d.count )}{elseif and( ge( $n, 1 ), lt( $n, 7 ) )}{set $trend_prev = sum( $trend_prev, $d.count )}{/if}', $tpl );
+        $this->assertStringContainsString( '{def $week_delta = sub( $trend_now, $trend_prev )}', $tpl );
+        $this->assertStringContainsString( "'%delta against the 6 days before, without today'", $tpl );
     }
 
     public function testTheTrendSaysItsChangeInWordsAndAnArrow()
@@ -50,8 +52,8 @@ class AdminDashboardTest extends PHPUnit\Framework\TestCase
         $this->assertMatchesRegularExpression( '/<span class="a4-dash-trend">/', $tpl );
         foreach ( array( 'a4-bi-arrow-up-right', 'a4-bi-arrow-down-right', 'a4-bi-dash' ) as $arrow )
             $this->assertStringContainsString( '<span class="a4-icon ' . $arrow . '" aria-hidden="true"></span>', $tpl );
-        $this->assertSame( 2, substr_count( $tpl, "'%delta against the 7 days before'|i18n( 'design/admin/dashboard'" ) );
-        $this->assertStringContainsString( "'As many as the 7 days before'|i18n( 'design/admin/dashboard' )", $tpl );
+        $this->assertSame( 2, substr_count( $tpl, "'%delta against the 6 days before, without today'|i18n( 'design/admin/dashboard'" ) );
+        $this->assertStringContainsString( "'As many as the 6 days before, without today'|i18n( 'design/admin/dashboard' )", $tpl );
 
         $css = self::read( 'design/admin4/stylesheets/admin4.css' );
         $this->assertMatchesRegularExpression( '/\.a4-dash-figure > \.a4-dash-trend \{[^}]*color: var\(--a4-muted\)/s', $css,
@@ -82,7 +84,7 @@ class AdminDashboardTest extends PHPUnit\Framework\TestCase
             $start = strpos( $ts, '<name>design/admin/dashboard</name>' );
             $this->assertNotFalse( $start );
             $context = substr( $ts, $start, strpos( $ts, '</context>', $start ) - $start );
-            foreach ( array( '%delta against the 7 days before', 'As many as the 7 days before', 'Show the numbers', 'Day', 'Published' ) as $source )
+            foreach ( array( '%delta against the 6 days before, without today', 'As many as the 6 days before, without today', 'Show the numbers', 'Day', 'Published' ) as $source )
                 $this->assertStringContainsString( "<source>$source</source>", $context, "$locale: $source" );
         }
     }

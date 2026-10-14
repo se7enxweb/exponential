@@ -50,12 +50,14 @@
     {set $days = $days|append( hash( 'time', $day_from, 'count', $day_count ) )}
     {if gt( $day_count, $day_max )}{set $day_max = $day_count}{/if}
 {/for}
-{* The last 7 days and the 7 before them, from the same counts: the figure and its trend need no query of their own *}
-{def $count_week = 0 $count_prev_week = 0}
+{* The last 7 days (the figure, today included) from the same counts, and its trend from full days only: the 6 days
+   before today against the 6 before them (today is not over, so it would always look slower). No query of its own. *}
+{def $count_week = 0 $trend_now = 0 $trend_prev = 0}
 {foreach $days as $n => $d}
-    {if lt( $n, 7 )}{set $count_prev_week = sum( $count_prev_week, $d.count )}{else}{set $count_week = sum( $count_week, $d.count )}{/if}
+    {if ge( $n, 7 )}{set $count_week = sum( $count_week, $d.count )}{/if}
+    {if and( ge( $n, 7 ), lt( $n, 13 ) )}{set $trend_now = sum( $trend_now, $d.count )}{elseif and( ge( $n, 1 ), lt( $n, 7 ) )}{set $trend_prev = sum( $trend_prev, $d.count )}{/if}
 {/foreach}
-{def $week_delta = sub( $count_week, $count_prev_week )}
+{def $week_delta = sub( $trend_now, $trend_prev )}
 
 <div class="context-block content-dashboard a4-dashboard">
 
@@ -96,7 +98,7 @@
         {if $can.content}<a class="a4-dash-figure" href={concat( 'content/view/full/', $root_node )|ezurl}><span class="a4-dash-figure-ico" aria-hidden="true"><span class="a4-icon a4-bi-files"></span></span><strong>{$count_content}</strong><span>{'Content items'|i18n( 'design/admin/dashboard' )}</span></a>{/if}
         <div class="a4-dash-figure a4-accent"><span class="a4-dash-figure-ico" aria-hidden="true"><span class="a4-icon a4-bi-graph-up-arrow"></span></span><strong>{$count_week}</strong><span>{'Published in the last 7 days'|i18n( 'design/admin/dashboard' )}</span>
             {* the change against the 7 days before, in words and an arrow, not by colour *}
-            <span class="a4-dash-trend">{if gt( $week_delta, 0 )}<span class="a4-icon a4-bi-arrow-up-right" aria-hidden="true"></span>{'%delta against the 7 days before'|i18n( 'design/admin/dashboard',, hash( '%delta', concat( '+', $week_delta ) ) )}{elseif lt( $week_delta, 0 )}<span class="a4-icon a4-bi-arrow-down-right" aria-hidden="true"></span>{'%delta against the 7 days before'|i18n( 'design/admin/dashboard',, hash( '%delta', concat( '&minus;', sub( 0, $week_delta ) ) ) )}{else}<span class="a4-icon a4-bi-dash" aria-hidden="true"></span>{'As many as the 7 days before'|i18n( 'design/admin/dashboard' )}{/if}</span></div>
+            <span class="a4-dash-trend">{if gt( $week_delta, 0 )}<span class="a4-icon a4-bi-arrow-up-right" aria-hidden="true"></span>{'%delta against the 6 days before, without today'|i18n( 'design/admin/dashboard',, hash( '%delta', concat( '+', $week_delta ) ) )}{elseif lt( $week_delta, 0 )}<span class="a4-icon a4-bi-arrow-down-right" aria-hidden="true"></span>{'%delta against the 6 days before, without today'|i18n( 'design/admin/dashboard',, hash( '%delta', concat( '&minus;', sub( 0, $week_delta ) ) ) )}{else}<span class="a4-icon a4-bi-dash" aria-hidden="true"></span>{'As many as the 6 days before, without today'|i18n( 'design/admin/dashboard' )}{/if}</span></div>
         {if $can.drafts}<a class="a4-dash-figure" href={'content/draft'|ezurl}><span class="a4-dash-figure-ico" aria-hidden="true"><span class="a4-icon a4-bi-pencil-square"></span></span><strong>{$count_drafts}</strong><span>{'My drafts'|i18n( 'design/admin/dashboard' )}</span></a>{/if}
         {if $can.pending}<a class="a4-dash-figure" href={'content/pendinglist'|ezurl}><span class="a4-dash-figure-ico" aria-hidden="true"><span class="a4-icon a4-bi-hourglass-split"></span></span><strong>{$count_pending}</strong><span>{'My pending items'|i18n( 'design/admin/dashboard' )}</span></a>{/if}
         {if $can.users}<a class="a4-dash-figure" href={concat( 'content/view/full/', $users_node )|ezurl}><span class="a4-dash-figure-ico" aria-hidden="true"><span class="a4-icon a4-bi-people"></span></span><strong>{$count_users}</strong><span>{'Users'|i18n( 'design/admin/dashboard' )}</span></a>{/if}
@@ -110,7 +112,7 @@
         {* ---- Activity ---- *}
         <section class="a4-dash-card a4-dash-activity">
             <header><h2>{'Publishing, last 14 days'|i18n( 'design/admin/dashboard' )}</h2></header>
-            <div class="a4-dash-bars" role="img" aria-label="{'Content published per day over the last 14 days'|i18n( 'design/admin/dashboard' )|wash}">
+            <div class="a4-dash-bars" aria-hidden="true">{* the numbers are the table below, for screen readers too *}
                 {foreach $days as $d}
                 <div class="a4-dash-bar" title="{$d.time|l10n( 'shortdate' )}: {$d.count}">
                     <span class="a4-dash-bar-value">{if gt( $d.count, 0 )}{$d.count}{/if}</span>
