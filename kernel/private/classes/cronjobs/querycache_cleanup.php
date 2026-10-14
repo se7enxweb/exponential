@@ -19,11 +19,8 @@ class QuerycacheCleanup extends \Exponential\Runnable\CronjobPart
 {
     public function run( array $scope )
     {
-        // the including function's variables ($Params, $Module, $cli, ...)
-        foreach ( array_keys( $scope ) as $__name )
-            if ( $__name !== 'this' && $__name !== 'scope' )
-                ${$__name} = &$scope[$__name];
-        unset( $__name );
+        // the including function's $cli (a cronjob part is run by runcronjobs.php), or the CLI's own
+        $cli = isset( $scope['cli'] ) && $scope['cli'] instanceof \eZCLI ? $scope['cli'] : \eZCLI::instance();
 
         if ( !is_dir( \eZDBQueryCache::entriesDir() ) )
         {

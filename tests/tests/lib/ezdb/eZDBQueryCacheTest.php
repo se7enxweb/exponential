@@ -36,6 +36,7 @@
  *  QC-32 — apcuRoom(): room only with more than ApcuReserve percent of APCu free
  *  QC-33 — Below the reserve a result stays in the request and is counted; files have no reserve
  *  QC-34 — purgeExpired() frees the memory of the expired entries, once a minute for the pool
+ *  QC-35 — In a web request (a Velocity worker too) the purge runs at the end of the request, registered once
  *
  * No database: the driver is a stand-in object with the properties the cache
  * reads, and the state lives in a directory of its own under var/tmp.
@@ -1028,6 +1029,33 @@ class eZDBQueryCacheTest extends PHPUnit\Framework\TestCase
         {
             apcu_delete( new APCUIterator( '/^ezqc/' ) );
             apcu_delete( 'other:expired' );
+        }
+    }
+
+    /** QC-35 */
+    public function testAWebRequestPurgesAtItsEndOncePerRequest()
+    {
+        if ( !function_exists( 'apcu_enabled' ) || !apcu_enabled() || !class_exists( 'APCUIterator' ) )
+            $this->markTestSkipped( 'needs APCu (apc.enable_cli=1)' );
+        apcu_delete( new APCUIterator( '/^ezqc/' ) );
+        $scheduled = new ReflectionProperty( 'eZDBQueryCache', 'purgeScheduled' );
+        if ( PHP_VERSION_ID < 80100 )
+            $scheduled->setAccessible( true );
+        try
+        {
+            eZDBQueryCache::setWebProcess( true );
+            $this->newRequest( array( 'mode' => 'shared', 'apcuReserve' => 25 ) );
+            eZDBQueryCache::setApcuFree( 10 );
+            $this->assertFalse( eZDBQueryCache::apcuRoom() );
+            $this->assertFalse( eZDBQueryCache::apcuRoom() );
+            $this->assertFalse( apcu_exists( 'ezqcpurge' ), 'not while the visitor waits: at the end of the request' );
+            $this->assertSame( eZExecution::requestKey(), $scheduled->getValue(), 'registered for this request' );
+        }
+        finally
+        {
+            eZDBQueryCache::setWebProcess( null );
+            $scheduled->setValue( null, false );
+            apcu_delete( new APCUIterator( '/^ezqc/' ) );
         }
     }
 }

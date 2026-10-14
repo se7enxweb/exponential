@@ -165,7 +165,8 @@ Choosing:
   are entries nobody read for that long). With this share or less of APCu
   free, shared mode stops adding results to APCu and keeps them for the
   request only. The free share comes from `apcu_sma_info()`, read before every
-  store (under a microsecond), so a long-running process cannot overshoot it.
+  store (measured on a test installation with PHP 8.5: 0.17 to 0.22 µs with one segment of 64 MB or 1.2 GB and 20,000 entries,
+  against 0.6 µs for an `apcu_fetch()`), so a long-running process cannot overshoot it.
   APCu frees an expired entry only when it is deleted by its key or when an
   allocation fails, and below the reserve the cache allocates nothing: so a
   miss below the reserve deletes its key's old entry, and once a minute for
@@ -173,8 +174,9 @@ Choosing:
   query cache entry from APCu's entry list, as long as APCu holds at most
   30,000 entries and the list fits below 80 % of `memory_limit` (it costs
   about 0.8 KB of PHP memory per entry, about 200 ms and 100 MB at 130,000).
-  In a web request it runs at the end, after the page; on the command line
-  (Velocity, scripts) at once. Above that only a larger `apc.shm_size`
+  In a web request it runs at the end, once per request: also in a worker of Exponential Velocity, whose shutdown
+  functions run at the end of every request; a script (cronjob, CLI) runs it at once.
+  It reads APCu's whole entry list (an `APCUIterator` does not list expired entries). Above that only a larger `apc.shm_size`
   helps. With a small APCu (the default `apc.shm_size` is 32 MB) a reserve of
   25 % is 8 MB, and another user holding three quarters of it keeps the query
   cache out of APCu; the counter shows it. Setup > System
@@ -487,10 +489,11 @@ so the tests never touch the site's cache.
 | QC-32 | `apcuRoom()`: room only with more than `ApcuReserve` percent free, `0` never stops, 25 by default |
 | QC-33 | Below the reserve a result stays in the request, is counted (`reserve`) and not put into APCu; with room again it is; files have no reserve |
 | QC-34 | `purgeExpired()` deletes the query cache's expired APCu entries and frees their memory, keeps live ones and other users' entries, runs once a minute for the pool, and `apcuRoom()` starts it below the reserve |
+| QC-35 | In a web request, a Velocity worker included, the purge runs at the end of the request and is registered once; a script runs it at once |
 
 ```bash
 php vendor/bin/phpunit --testsuite lib --filter eZDBQueryCacheTest
-# OK (34 tests; QC-24, QC-33 and QC-34 need apc.enable_cli=1), about 7 s (QC-08, QC-12, QC-28 and QC-34 wait)
+# OK (35 tests; QC-24, QC-33, QC-34 and QC-35 need apc.enable_cli=1), about 7 s (QC-08, QC-12, QC-28 and QC-34 wait)
 ```
 
 **On a running site** (MySQL, the real drivers), each checked on a test installation

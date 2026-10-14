@@ -446,7 +446,7 @@
                 {'%uncacheable not cacheable, %writes writes'|i18n( 'design/admin/setup/info',, hash( '%uncacheable', $query_cache.counters.uncacheable|wash, '%writes', $query_cache.counters.writes|wash ) )}
             </p>
             {if $query_cache.counters.reserve|gt( 0 )}
-            <p class="exp-note is-warn">{'%count results not kept in APCu: less than %reserve % of it was free (ApcuReserve)'|i18n( 'design/admin/setup/info',, hash( '%count', concat( '<strong>', $query_cache.counters.reserve|wash, '</strong>' ), '%reserve', $query_cache.apcu_reserve|wash ) )}</p>
+            <p class="a4-notice is-warn">{'%count results not kept in APCu: less than %reserve % of it was free (ApcuReserve)'|i18n( 'design/admin/setup/info',, hash( '%count', concat( '<strong>', $query_cache.counters.reserve|wash, '</strong>' ), '%reserve', $query_cache.apcu_reserve|wash ) )}</p>
             {/if}
             {/if}
             {if $query_cache.recent_writes}

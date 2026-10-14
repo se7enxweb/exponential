@@ -246,24 +246,25 @@ class eZDBQueryCache
         return false;
     }
 
-    /** @var bool whether this process has already asked for purgeExpired() at its end */
+    /** @var string|false eZExecution::requestKey() of the request purgeExpired() is registered to run at the end of */
     protected static $purgeScheduled = false;
 
     /**
      * purgeExpired() at the end of a web request (after the page, not while a
-     * visitor waits), at once on the command line: Velocity's workers and long
-     * scripts would reach their end only when they stop.
+     * visitor waits), once per request: also in a persistent worker of
+     * Exponential Velocity, whose shutdown functions run at the end of each
+     * request. At once in a script, which reaches its end only when it stops.
      */
     protected static function schedulePurge()
     {
-        if ( PHP_SAPI === 'cli' )
+        if ( !self::webProcess() )
         {
             self::purgeExpired();
             return;
         }
-        if ( !self::$purgeScheduled )
+        if ( self::$purgeScheduled !== eZExecution::requestKey() )
         {
-            self::$purgeScheduled = true;
+            self::$purgeScheduled = eZExecution::requestKey();
             register_shutdown_function( array( __CLASS__, 'purgeExpired' ) );
         }
     }
@@ -294,6 +295,7 @@ class eZDBQueryCache
         $limit = self::bytes( ini_get( 'memory_limit' ) );
         if ( $limit > 0 && memory_get_usage() + $entries * 1024 > 0.8 * $limit )
             return null;
+        // the whole list: an APCUIterator does not list expired entries, the ones this is about
         $info = @apcu_cache_info( false );
         if ( !is_array( $info ) || !isset( $info['cache_list'] ) )
             return null;
