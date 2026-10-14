@@ -326,8 +326,9 @@ html[data-a4-theme="dark"] {
 }
 
 /* Breadcrumb: an ordered list in a navigation landmark, the separators drawn by the stylesheet (not read out),
-   the current page marked with aria-current. Long names end in an ellipsis and keep their full name as title;
-   on narrow windows the middle steps fold into one "..." step. */
+   the current page marked with aria-current. Long names end in an ellipsis and keep their full name as title.
+   On narrow windows (and at 400% zoom) the middle steps fold into one "..." step: they are only visually hidden,
+   so screen readers still read the whole path, and a step that takes the keyboard focus shows again. */
 .a4-crumbs {
   display: flex;
   flex-wrap: wrap;
@@ -358,7 +359,14 @@ html[data-a4-theme="dark"] {
 .a4-crumbs > li > [aria-current="page"] { max-width: 48ch; font-weight: 600; color: var(--a4-ink); }
 .a4-crumbs > li.is-fold { display: none; }
 @media (max-width: 600px) {
-  .a4-crumbs > li.is-middle { display: none; }
+  .a4-crumbs > li.is-middle:not(:focus-within) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
   .a4-crumbs > li.is-fold { display: inline-flex; }
 }
 

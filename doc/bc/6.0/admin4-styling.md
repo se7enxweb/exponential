@@ -122,7 +122,7 @@ White text on it is only 3:1, so filled controls with white text use its darker 
 | Headings | `.a4-h2`, `.a4-h3` |
 | Layout | `.a4-section`, `.a4-section-head`, `.a4-title-row`, `.a4-row` (`.is-between`), `.a4-stack`, `.a4-grid` (`.is-narrow`, `.is-wide`) |
 | Page header | `.a4-pagehead` > `.a4-pagehead-main` (`.a4-pagehead-pre`, `.a4-pagehead-title`, `.a4-pagehead-sub`) + `.a4-pagehead-actions` (right, under the title on narrow windows); the one title style of every page (`h1.context-title`, the node view and the dashboard take the same size) |
-| Breadcrumb | `ol.a4-crumbs` > `li` (`.is-middle`, `.is-fold`: the middle steps fold into "..." on narrow windows), separators from the stylesheet, the current step `aria-current="page"`, inside the `#path` navigation landmark |
+| Breadcrumb | `ol.a4-crumbs` (`role="list"`) > `li` (`.is-middle`, `.is-fold`: the middle steps fold into "..." up to 600px, visually only, a focused step shows again), separators from the stylesheet, the current step `aria-current="page"`, inside the `#path` navigation landmark |
 | Card | `.a4-card` (`.is-soft`, `.is-selected`, `.is-attention`, `.is-warn`, `.is-bad`, `.is-ok`, `.is-info`), `.a4-cards`, `.a4-card-head`, `.a4-card-title`, `.a4-card-body`, `.a4-pick` (the selection checkbox) |
 | Figures, facts | `.a4-figures` > `.a4-figure` (`.is-attention`, `.is-bad`, `.is-ok`, `.is-warn`, `.is-info`, `.is-current`); `dl.a4-facts` (`.is-rows`) |
 | Tag, badge, status | `.a4-tag`, `.a4-badge` (`.is-ok`, `.is-warn`, `.is-bad`, `.is-info`, `.is-accent`, `.is-mono`), `.a4-badges`; `.a4-status` (`.is-ok`, `.is-running`, `.is-warn`, `.is-bad`) with `.a4-dot` |

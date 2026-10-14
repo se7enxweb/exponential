@@ -55,10 +55,12 @@ extension). The editor siteaccess falls back to `admin4` first, then `admin3`, `
 - **Dashboard.** A welcome with quick actions, key figures, the last 14 days of publishing and the system at a glance,
   around every block of `dashboard.ini`. It points to the two updates that keep an installation secure: the CMS with
   the Git manager, and the Composer libraries on the Updates dashboard, linked only where the user may open them.
-- **Page header and breadcrumb.** Every page title has one size (22px; 18px on narrow windows): the kernel's title
-  bar, the node view and the dashboard. The breadcrumb above it is a list in a navigation landmark: separators drawn
-  by the stylesheet, the current page marked for screen readers, long names ending in an ellipsis with the full name
-  as tooltip (no longer cut to 18 characters), the middle steps folded into "..." on narrow windows.
+- **Page header and breadcrumb.** Every page title has one size (22px; 16px on windows up to 600px): the kernel's
+  title bar, the node view and the dashboard. The breadcrumb above it is a list in a navigation landmark: separators
+  drawn by the stylesheet, the current page marked for screen readers, long names ending in an ellipsis with the full
+  name as tooltip (no longer cut to 18 characters). On windows up to 600px (and at 400% zoom) the middle steps fold
+  into "..." for the eye only: screen readers still read the whole path, and a step that takes the keyboard focus
+  shows again.
 - **Node view.** One header row with the class icon, title, badges (class, hidden, secondary location) and the actions
   (language, Edit, Move, Remove, View on site, Preview, Manage versions). One meta line with modified and by whom,
   published, version, section, node, object and remote ids (click to copy) and the translations (click to switch).

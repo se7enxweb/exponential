@@ -38,6 +38,9 @@ class AdminPageHeaderTest extends PHPUnit\Framework\TestCase
                 $this->assertStringContainsString( $selector, $css, "$path: $selector" );
             // the separator is not read out (content with an empty alternative text)
             $this->assertStringContainsString( 'content: "/" / "";', $css, $path );
+            // folded middle steps stay for screen readers and come back when they take the focus
+            $this->assertStringContainsString( '.a4-crumbs > li.is-middle:not(:focus-within) {', $css, $path );
+            $this->assertDoesNotMatchRegularExpression( '/li\.is-middle[^{]*\{[^}]*display: none/', $css, $path );
             // the title takes the type scale, not a size of its own
             $this->assertMatchesRegularExpression( '/\.a4-pagehead-title \{[^}]*font-size: var\(--a4-text-xl\);/', $css, $path );
         }
@@ -46,12 +49,15 @@ class AdminPageHeaderTest extends PHPUnit\Framework\TestCase
     public function testBreadcrumbIsAnOrderedListWithoutShortenedNames()
     {
         $tpl = self::read( 'design/admin4/templates/page_toppath.tpl' );
-        $this->assertStringContainsString( '<ol class="a4-crumbs">', $tpl );
         $this->assertStringNotContainsString( 'shorten(', $tpl, 'names are no longer cut to 18 characters' );
         $this->assertStringNotContainsString( 'class="slash"', $tpl, 'the separators come from the stylesheet' );
         $this->assertSame( 2, substr_count( $tpl, 'aria-current="page"' ), 'the last step, link or text, is the current page' );
         $this->assertGreaterThanOrEqual( 3, substr_count( $tpl, 'title="{$:item.text|wash}"' ), 'a long name keeps its full name as title' );
         $this->assertStringContainsString( 'is-fold" aria-hidden="true"', $tpl );
+        // Safari keeps the list semantics only with an explicit role; the fold appears from three steps on; no empty list
+        $this->assertStringContainsString( '<ol class="a4-crumbs" role="list">', $tpl );
+        $this->assertStringContainsString( 'eq( $:number, 1 ), gt( $:crumb_count, 2 )', $tpl );
+        $this->assertStringContainsString( '{if gt( $:crumb_count, 0 )}', $tpl );
 
         $layout = self::read( 'design/admin4/templates/pagelayout.tpl' );
         $this->assertStringContainsString( '<div id="path" role="navigation" aria-label="{\'Breadcrumb\'|i18n( \'design/admin/pagelayout\' )|wash}">', $layout );
@@ -64,6 +70,10 @@ class AdminPageHeaderTest extends PHPUnit\Framework\TestCase
         $this->assertMatchesRegularExpression( '/\.a4-dash-hero h1 \{[^}]*font-size: var\(--a4-text-xl\);/', $css );
         $this->assertDoesNotMatchRegularExpression( '/\.a4-node-head h1\.context-title \{[^}]*font-size/', $css,
             'the node view takes the common title size' );
+        // one breakpoint for the smaller title, the one of .a4-pagehead-title
+        $this->assertMatchesRegularExpression( '/@media \(max-width: 600px\) \{\s*h1\.context-title,\s*\.a4-dash-hero h1 \{ font-size: var\(--a4-text-l\); \}/', $css );
+        // the old #path span colour beat the breadcrumb's own colours
+        $this->assertStringNotContainsString( '#path span {', self::read( 'design/admin4/stylesheets/pagelayout.css' ) );
 
         $node = self::read( 'design/admin4/templates/node/view/a4_full_body.tpl' );
         foreach ( array( 'a4-node-head a4-pagehead', 'a4-node-heading a4-pagehead-main', 'context-title a4-pagehead-title',

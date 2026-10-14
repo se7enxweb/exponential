@@ -655,6 +655,11 @@ h1.context-title {
   line-height: var(--a4-leading-tight);
   color: var(--a4-ink);
 }
+/* narrow windows: every page title one step smaller, at the breakpoint of .a4-pagehead-title (components.css) */
+@media (max-width: 600px) {
+  h1.context-title,
+  .a4-dash-hero h1 { font-size: var(--a4-text-l); }
+}
 h2.context-title {
   font-size: 1.2em;
   font-weight: 650;
@@ -1021,7 +1026,6 @@ html[data-a4-theme="dark"] .a4-login-logo { background-image: url('../images/3/l
     padding: var(--a4-space-3) var(--a4-space-3) var(--a4-space-4);
     border-radius: var(--a4-radius);
   }
-  h1.context-title { font-size: var(--a4-text-l); }
   #maincontent fieldset { padding: var(--a4-space-2) var(--a4-space-2) var(--a4-space-3); margin-left: 0; margin-right: 0; }
   #controlbar-top .box-bc { padding: var(--a4-space-1) var(--a4-space-2); }
   #controlbar-top .button-left input.defaultbutton,
