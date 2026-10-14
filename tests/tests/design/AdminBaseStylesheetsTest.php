@@ -21,6 +21,8 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminTokenContrastTest.php';
+
 class AdminBaseStylesheetsTest extends PHPUnit\Framework\TestCase
 {
     const BASE = array( 'core.css', 'content.css', 'pagelayout.css', 'theme/rounded.css', 'theme/admin_datatable.css', 'theme/modalwindow.css' );

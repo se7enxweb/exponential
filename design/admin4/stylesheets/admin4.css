@@ -1002,7 +1002,7 @@ html[data-a4-theme="dark"] .a4-login-logo { background-image: url('../images/3/l
 .a4-field-head .a4-field-label { margin-bottom: var(--a4-space-2); }
 .a4-login-forgot { font-size: var(--a4-text-s); color: var(--a4-accent-text); text-decoration: none; }
 .a4-login-forgot:hover { text-decoration: underline; }
-.a4-login-form #logintext, .a4-login-form #passwordtext {   /* by id: the old login stylesheet styles them by id */
+.a4-login-form #logintext, .a4-login-form #passwordtext {   /* by id, so the rule wins over the global field rules */
   box-shadow: none; outline: none;
   box-sizing: border-box; width: 100%; height: 46px; margin: 0; padding: 0 var(--a4-space-3);
   border: 1px solid var(--a4-field-line); border-radius: var(--a4-radius-s); background-color: var(--a4-field); color: var(--a4-ink);
