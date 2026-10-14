@@ -94,7 +94,8 @@ class AdminTreeViewTest extends PHPUnit\Framework\TestCase
         $js = self::file( self::SCRIPT );
         $this->assertStringContainsString( "if (aElement) _describe( aElement.parentNode, txt );", $js );
         $this->assertStringContainsString( "item.setAttribute( 'aria-describedby', id );", $js );
-        $this->assertStringContainsString( "span.className = 'a4-sr-only';", $js );
+        // hidden: aria-describedby reads it, and the tree owns no loose text
+        $this->assertStringContainsString( "span.hidden = true;", $js );
     }
 
     /** The classic admin design shares the script and its settings template */
