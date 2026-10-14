@@ -2951,6 +2951,10 @@
 <context>
     <name>design/admin/content/edit</name>
     <message>
+        <source>Required field</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Edit &lt;%object_name&gt; [%class_name]</source>
         <translation type="unfinished"></translation>
     </message>

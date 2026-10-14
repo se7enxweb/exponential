@@ -3234,6 +3234,10 @@
 <context>
     <name>design/admin/content/edit</name>
     <message>
+        <source>Required field</source>
+        <translation>Required field</translation>
+    </message>
+    <message>
         <source>Edit &lt;%object_name&gt; [%class_name]</source>
         <translation>Edit &lt;%object_name&gt; [%class_name]</translation>
     </message>

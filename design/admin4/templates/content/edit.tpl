@@ -121,6 +121,7 @@
                                 {/foreach}
 
                                 <div class="context-attributes">
+                                    <p class="a4-required-hint"><span class="a4-required-mark" aria-hidden="true">*</span> {'Required field'|i18n( 'design/admin/content/edit' )}</p>
                                     {include uri='design:content/edit_attribute.tpl' view_parameters=$view_parameters}
                                 </div>
 
