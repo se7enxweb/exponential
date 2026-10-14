@@ -70,7 +70,8 @@
 </ul>
 
 <section class="a4-card" aria-labelledby="class-view-settings">
-<div class="a4-section-head"><h2 class="a4-h2" id="class-view-settings">{'Settings'|i18n( 'design/admin/class/view' )}</h2></div>
+<div class="a4-card-head"><h2 class="a4-h2" id="class-view-settings">{'Settings'|i18n( 'design/admin/class/view' )}</h2></div>
+<div class="a4-card-body">
 <dl class="a4-facts">
     <div><dt>{'Name'|i18n( 'design/admin/class/view' )}</dt><dd>{$class.nameList[$language_code]|wash}</dd></div>
     <div><dt>{'Identifier'|i18n( 'design/admin/class/view' )}</dt><dd><code>{$class.identifier|wash}</code></dd></div>
@@ -81,6 +82,7 @@
     <div><dt>{'Default sorting of children'|i18n( 'design/admin/class/view' )}</dt><dd>{def $sort_fields = fetch( content, available_sort_fields )}{if is_set( $sort_fields[$class.sort_field] )}{$sort_fields[$class.sort_field]|wash}{else}{$class.sort_field|wash}{/if} / {if eq( $class.sort_order, 0 )}{'Descending'|i18n( 'design/admin/class/edit' )}{else}{'Ascending'|i18n( 'design/admin/class/edit' )}{/if}{undef $sort_fields}</dd></div>
     <div class="a4-field-wide"><dt>{'Description'|i18n( 'design/admin/class/view' )}</dt><dd>{if $class.descriptionList[$language_code]|ne( '' )}{$class.descriptionList[$language_code]|wash}{else}<span class="a4-muted">{'None'|i18n( 'design/admin/class/view' )}</span>{/if}</dd></div>
 </dl>
+</div>
 </section>
 
 <section class="a4-section" aria-labelledby="class-view-attributes">

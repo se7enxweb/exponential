@@ -78,7 +78,8 @@
 </div>
 
 <section class="a4-card" aria-labelledby="class-edit-settings">
-<div class="a4-section-head"><h2 class="a4-h2" id="class-edit-settings">{'The class'|i18n( 'design/admin/class/edit' )}</h2></div>
+<div class="a4-card-head"><h2 class="a4-h2" id="class-edit-settings">{'The class'|i18n( 'design/admin/class/edit' )}</h2></div>
+<div class="a4-card-body">
 <div class="a4-grid is-wide">
     <div class="a4-field">
         <label for="className">{'Name'|i18n( 'design/admin/class/edit' )}</label>
@@ -133,6 +134,7 @@
         <label class="a4-check"><input type="checkbox" id="ContentClass_always_available" name="ContentClass_always_available"{if $class.always_available|eq( 1 )} checked="checked"{/if} /> {'Default object availability'|i18n( 'design/standard/class/edit' )}</label>
         <span class="a4-help">{'Use this checkbox to set the default availability for the objects of this class. The availability controls whether an object should be shown even if it does not exist in one of the languages specified by the "SiteLanguageList" setting. If this is the case, the system will use the main language of the object.'|i18n( 'design/admin/class/edit' )}</span>
     </div>
+</div>
 </div>
 </section>
 

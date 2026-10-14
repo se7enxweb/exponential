@@ -46,7 +46,8 @@
 
 {* ---- The feed ---- *}
 <section class="a4-card" aria-labelledby="rss-import-feed-title">
-<div class="a4-section-head"><h2 class="a4-h2" id="rss-import-feed-title">{'1. The feed'|i18n( 'design/admin/rss/edit_import' )}</h2></div>
+<div class="a4-card-head"><h2 class="a4-h2" id="rss-import-feed-title">{'1. The feed'|i18n( 'design/admin/rss/edit_import' )}</h2></div>
+<div class="a4-card-body">
 <div class="a4-grid is-wide">
     <div class="a4-field">
         <label for="importName">{'Name'|i18n( 'design/admin/rss/edit_import' )}</label>
@@ -64,11 +65,13 @@
         {elseif $rss_import.url|ne( '' )}<span class="a4-badge is-warn">{'Not read yet: press Update.'|i18n( 'design/admin/rss/edit_import' )}</span>{/if}
     </div>
 </div>
+</div>
 </section>
 
 {* ---- Where the items go ---- *}
 <section class="a4-card" aria-labelledby="rss-import-dest-title">
-<div class="a4-section-head"><h2 class="a4-h2" id="rss-import-dest-title">{'2. Where the items go'|i18n( 'design/admin/rss/edit_import' )}</h2></div>
+<div class="a4-card-head"><h2 class="a4-h2" id="rss-import-dest-title">{'2. Where the items go'|i18n( 'design/admin/rss/edit_import' )}</h2></div>
+<div class="a4-card-body">
 <div class="a4-grid is-wide">
     <div class="a4-field">
         <label for="rssImportDest">{'Destination path'|i18n( 'design/admin/rss/edit_import' )}</label>
@@ -89,15 +92,17 @@
     </div>
     {/if}
 </div>
+</div>
 </section>
 
 {if $analysed}
 {* ---- What they become ---- *}
 <section class="a4-card" aria-labelledby="rss-import-class-title">
-<div class="a4-section-head">
+<div class="a4-card-head">
     <h2 class="a4-h2" id="rss-import-class-title">{'3. What each item becomes'|i18n( 'design/admin/rss/edit_import' )}</h2>
     <p>{'Choose the class of the new objects and press Set; then choose which part of a feed item fills each attribute. Ignore leaves an attribute empty.'|i18n( 'design/admin/rss/edit_import' )}</p>
 </div>
+<div class="a4-card-body">
 <div class="a4-grid is-wide">
     <div class="a4-field">
         <label for="rssImportClassId">{'Class'|i18n( 'design/admin/rss/edit_import' )}</label>
@@ -147,13 +152,16 @@
 </div>
 {undef $import_description_array $field_map}
 {/if}
+</div>
 </section>
 
 <section class="a4-card" aria-labelledby="rss-import-active-title">
-<div class="a4-section-head"><h2 class="a4-h2" id="rss-import-active-title">{'4. Run it'|i18n( 'design/admin/rss/edit_import' )}</h2></div>
+<div class="a4-card-head"><h2 class="a4-h2" id="rss-import-active-title">{'4. Run it'|i18n( 'design/admin/rss/edit_import' )}</h2></div>
+<div class="a4-card-body">
 <div class="a4-field">
     <label class="a4-check"><input type="checkbox" id="rssImportActive" name="active"{if $rss_import.active|eq( 1 )} checked="checked"{/if} aria-describedby="rssImportActive-help" /> {'Active'|i18n( 'design/admin/rss/edit_import' )}</label>
     <span class="a4-help" id="rssImportActive-help">{'Use this checkbox to control if the RSS feed is active or not. An inactive feed will not be automatically updated.'|i18n( 'design/admin/rss/edit_import' )}</span>
+</div>
 </div>
 </section>
 {/if}

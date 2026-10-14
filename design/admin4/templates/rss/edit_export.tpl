@@ -49,7 +49,8 @@
 
 {* ---- The feed ---- *}
 <section class="a4-card" aria-labelledby="rss-export-feed-title">
-<div class="a4-section-head"><h2 class="a4-h2" id="rss-export-feed-title">{'The feed'|i18n( 'design/admin/rss/edit_export' )}</h2></div>
+<div class="a4-card-head"><h2 class="a4-h2" id="rss-export-feed-title">{'The feed'|i18n( 'design/admin/rss/edit_export' )}</h2></div>
+<div class="a4-card-body">
 <div class="a4-grid is-wide">
 
     <div class="a4-field">
@@ -104,16 +105,17 @@
     </div>
 
 </div>
+</div>
 </section>
 
 {* ---- What it lists: the sources. Hidden for OPML, which lists other feeds instead. ---- *}
 <section class="a4-card" id="rssExportSources"{if $rss_is_opml} hidden{/if} aria-labelledby="rss-export-sources-title">
-<div class="a4-section-head">
+<div class="a4-card-head">
     <h2 class="a4-h2" id="rss-export-sources-title">{'What the feed lists'|i18n( 'design/admin/rss/edit_export' )}</h2>
     <p>{'Each source is a location: the feed lists the newest objects of its class published below it. Browse picks the location; Set loads the attributes of the chosen class for the fields below it.'|i18n( 'design/admin/rss/edit_export' )}</p>
 </div>
 
-<div class="a4-grid is-wide" id="rssExportLimitBlock"{if $rss_is_opml} hidden{/if}>
+<div class="a4-grid is-wide a4-card-body" id="rssExportLimitBlock"{if $rss_is_opml} hidden{/if}>
     <div class="a4-field">
         <label for="rssExportLimit">{'Number of objects'|i18n( 'design/admin/rss/edit_export' )}</label>
         <select id="rssExportLimit" name="NumberOfObjects" aria-describedby="rssExportLimit-help">
@@ -225,11 +227,11 @@
 
 {* ---- The Apple Podcasts half. Shown when the format is Apple Podcasts, and only then. ---- *}
 <section class="a4-card" id="rssExportPodcast"{if $rss_is_podcast|not} hidden{/if} aria-labelledby="rss-export-podcast-title">
-<div class="a4-section-head">
+<div class="a4-card-head">
     <h2 class="a4-h2" id="rss-export-podcast-title">{'Apple Podcasts'|i18n( 'design/admin/rss/edit_export' )}</h2>
     <p>{'Apple reads these from the itunes namespace. A feed missing one it requires is rejected outright, so the required ones are marked. Everything else is optional and left out of the document when empty.'|i18n( 'design/admin/rss/edit_export' )}</p>
 </div>
-<div class="a4-grid is-wide">
+<div class="a4-grid is-wide a4-card-body">
     <div class="a4-field">
         <label for="podcastAuthor">{'Author'|i18n( 'design/admin/rss/edit_export' )}</label>
         <input type="text" id="podcastAuthor" name="Podcast_author" value="{$podcast_head.author|wash}" />
