@@ -90,6 +90,8 @@ body.exp-debug-bar { padding-bottom: calc(var(--exp-debug-bar-h, 38px) + 8px); }
 #debug[hidden] { display: none; }
 
 /* --- the report's tables: figures right aligned in equal digits; group rows and summaries by class, not <b>/<i> */
+/* the message headings at 12px at least (debug.css draws them at 0.9em, under 12px in the admin designs) */
+#debug td.debugheader { font-size: max(12px, 0.9em); }
 #debug td.num, #debug td.debugtime { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
 #debug td.debuglabel, #debug tr.group td.groupname, #debug tr.summary td { font-weight: bold; }
 #debug tr.group td.num { font-style: italic; }
@@ -139,7 +141,7 @@ body.exp-debug-resizing { cursor: ns-resize; user-select: none; }
 #debug .exp-debug-tab:hover { color: var(--xd-fg); background: var(--xd-bg-soft); }
 #debug .exp-debug-tab[aria-selected="true"] { color: var(--xd-fg); border-color: var(--xd-line); border-bottom-color: var(--xd-bg); background: var(--xd-bg); font-weight: 600; box-shadow: inset 0 2px 0 var(--xd-accent); }
 #debug .exp-debug-tab[data-matches="0"] { color: var(--xd-fg-soft); font-style: italic; }
-#debug .exp-debug-badge { display: inline-block; min-width: 1.4em; padding: 0 4px; margin-left: 2px; border-radius: 8px; background: var(--xd-bg-soft); font-size: 11px; text-align: center; }
+#debug .exp-debug-badge { display: inline-block; min-width: 1.4em; padding: 0 4px; margin-left: 2px; border-radius: 8px; background: var(--xd-bg-soft); font-size: 12px; text-align: center; }
 #debug .exp-debug-search input { font: inherit; font-size: 13px; padding: 4px 8px; width: 16em; max-width: 100%; border: 1px solid var(--xd-line); border-radius: 4px; background: var(--xd-bg); color: var(--xd-fg); }
 #debug .exp-debug-panel { padding-top: 10px; }
 #debug.exp-debug-js .exp-debug-panel-title { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
@@ -192,13 +194,13 @@ textarea.exp-debug-copy-area { position: fixed; top: 0; left: -9999px; width: 1p
   align-items: start; padding: 6px 0; border-bottom: 1px dashed var(--xd-line); font-size: 13px;
 }
 #debug .exp-debug-setting-name { font-weight: 600; }
-#debug .exp-debug-setting-key { display: block; font: 11px ui-monospace, Menlo, Consolas, monospace; color: var(--xd-fg-soft); font-weight: normal; }
+#debug .exp-debug-setting-key { display: block; font: 12px ui-monospace, Menlo, Consolas, monospace; color: var(--xd-fg-soft); font-weight: normal; }
 #debug .exp-debug-setting-help { display: block; color: var(--xd-fg-soft); font-weight: normal; font-size: 12px; }
-#debug .exp-debug-origin { display: inline-block; font-size: 11px; padding: 0 6px; border-radius: 8px; background: var(--xd-bg-soft); border: 1px solid var(--xd-line); color: var(--xd-fg-soft); }
+#debug .exp-debug-origin { display: inline-block; font-size: 12px; padding: 0 6px; border-radius: 8px; background: var(--xd-bg-soft); border: 1px solid var(--xd-line); color: var(--xd-fg-soft); }
 #debug .exp-debug-origin[data-origin="default"] { border-style: dashed; }
 #debug .exp-debug-setting-status { font-size: 12px; min-height: 1em; grid-column: 1 / -1; }
 #debug .exp-debug-setting textarea { width: 100%; min-height: 4em; }
-#debug .exp-debug-scope label { display: block; font-size: 11px; color: var(--xd-fg-soft); }
+#debug .exp-debug-scope label { display: block; font-size: 12px; color: var(--xd-fg-soft); }
 @media (max-width: 760px) {
   #debug .exp-debug-setting { grid-template-columns: 1fr 1fr; }
 }
