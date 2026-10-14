@@ -48,7 +48,7 @@
         <input type="hidden" name="EditLanguage" value="{$availableLanguages[0].locale|wash}" />
     {else}
         <label class="a4-sr-only" for="classViewEditLanguage">{'Language'|i18n( 'design/admin/class/view' )}</label>
-        <select aria-label="{'Use this menu to select the language you want to use for editing then click the "Edit" button.'|i18n( 'design/admin/class/view' )|wash}" id="classViewEditLanguage" class="a4-input is-auto" name="EditLanguage" title="{'Use this menu to select the language you want to use for editing then click the "Edit" button.'|i18n( 'design/admin/class/view' )|wash}">
+        <select id="classViewEditLanguage" class="a4-input is-auto" name="EditLanguage" title="{'Use this menu to select the language you want to use for editing then click the "Edit" button.'|i18n( 'design/admin/class/view' )|wash}">
         {foreach $languages as $language}
             <option value="{$language.locale|wash}">{$language.name|wash}</option>
         {/foreach}
