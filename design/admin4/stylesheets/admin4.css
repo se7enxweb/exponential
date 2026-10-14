@@ -47,7 +47,7 @@
   --a4-card-bg: var(--a4-surface);   /* the three columns: white in light mode, slate in dark mode (components.css) */
   --a4-card-edge: rgba(16, 24, 40, 0.06);
   --a4-card-shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 12px 32px -6px rgba(16, 24, 40, 0.09);
-  --a4-footer-ink: #6b7280;
+  --a4-footer-ink: #5d6573;   /* 5.1:1 on the page colour (#6b7280 was 4.3:1) */
   --a4-footer-link: #4b5563;
   --a4-footer-link-hover: #1f2430;
   --a4-logo: url('../images/admin4/logo-light.png');
