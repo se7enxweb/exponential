@@ -12,7 +12,7 @@
 <div class="context-block content-translations content-translations-view a4-page a4-content-languages">
 
 <div class="box-header"><div class="box-ml">
-<h1 class="context-title"><img src="{$language.locale|flag_icon}" width="18" height="12" alt="" /> <span class="a4-content-languages-title-text">{$language.name|wash}</span> <code>{$translation.locale|wash}</code></h1>
+<h1 class="context-title"><span class="a4-content-languages-title-text">{$language.name|wash}</span> <code>{$translation.locale|wash}</code></h1>
 <div class="header-mainline"></div>
 </div></div>
 

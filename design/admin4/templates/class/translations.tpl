@@ -27,7 +27,7 @@
 {foreach $translations as $translation}
 <tr>
     <td><input type="checkbox" name="LanguageID[]" value="{$translation.id}"{if $translation.id|eq( $class.initial_language_id )} disabled="disabled"{/if} aria-label="{$translation.name|wash}" /></td>
-    <td><img src="{$translation.locale|flag_icon}" width="18" height="12" alt="" />&nbsp;<a href={concat( 'class/view/', $class.id, '/(language)/', $translation.locale )|ezurl} title="{'View translation.'|i18n( 'design/admin/class/view' )}">{if eq( $translation.locale, $language_code )}<strong>{$translation.name|wash}</strong>{else}{$translation.name|wash}{/if}</a></td>
+    <td>{include uri='design:parts/language_badge.tpl' locale=$translation.locale named=true()}&nbsp;<a href={concat( 'class/view/', $class.id, '/(language)/', $translation.locale )|ezurl} title="{'View translation.'|i18n( 'design/admin/class/view' )}">{if eq( $translation.locale, $language_code )}<strong>{$translation.name|wash}</strong>{else}{$translation.name|wash}{/if}</a></td>
     <td><code>{$translation.locale|wash}</code></td>
     <td><input type="radio"{if $translation.id|eq( $class.initial_language_id )} checked="checked"{/if} name="InitialLanguageID" value="{$translation.id}" aria-label="{'Use these radio buttons to select the desired main language.'|i18n( 'design/admin/class/view' )}" /></td>
     <td><a class="a4-btn a4-btn-small" href={concat( 'class/edit/', $class.id, '/(language)/', $translation.locale )|ezurl} title="{'Edit in <%language_name>.'|i18n( 'design/admin/class/view',, hash( '%language_name', $translation.locale_object.intl_language_name ) )|wash}">{'Edit'|i18n( 'design/admin/class/view' )}</a></td>

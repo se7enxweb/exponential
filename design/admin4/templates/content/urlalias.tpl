@@ -98,8 +98,7 @@
         </td>
 
         <td>
-            <img src="{$element.language_object.locale|flag_icon}" width="18" height="12" alt="{$element.language_object.locale|wash}" />
-            &nbsp;
+            {include uri='design:parts/language_badge.tpl' locale=$element.language_object.locale named=true()}
             {$element.language_object.name|wash}
         </td>
         <td>
@@ -197,8 +196,7 @@
 
         {* Language. *}
         <td>
-        <img src="{$element.language_object.locale|flag_icon}" width="18" height="12" alt="{$element.language_object.locale|wash}" />
-        &nbsp;
+        {include uri='design:parts/language_badge.tpl' locale=$element.language_object.locale named=true()}
         {$element.language_object.name|wash}
         </td>
 

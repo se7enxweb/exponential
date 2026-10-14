@@ -39,7 +39,7 @@
 <form action={concat( '/class/edit/', $class.id )|ezurl} method="post" class="a4-toolbar">
     {def $locale = fetch( 'content', 'locale', hash( 'locale_code', $language_code ) )}
     <p class="a4-meta">{'Last modified: %time, %username'|i18n( 'design/admin/class/view',, hash( '%username', $class.modifier.contentobject.name, '%time', $class.modified|l10n( shortdatetime ) ) )|wash}
-        &middot; <img src="{$language_code|flag_icon}" width="18" height="12" alt="" class="a4-class-flag" /> {$locale.intl_language_name|wash}</p>
+        &middot; {include uri='design:parts/language_badge.tpl' locale=$language_code named=true()} {$locale.intl_language_name|wash}</p>
     {undef $locale}
     <div class="a4-actions">
     {def $languages = $class.prioritized_languages
