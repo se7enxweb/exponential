@@ -15,27 +15,27 @@
     margin: 0;
     padding: 0.35em 0.9em;
     border-radius: 999px;
-    background: #eef2f6;
-    color: #3a4a5c;
+    background: var(--a4-soft);
+    color: var(--a4-ink);
 }
 .extensions-summary strong { font-size: 1.1em; margin-right: 0.2em; }
-.extensions-summary-active { background: #e3f1e6 !important; color: #1f5f2c !important; }
-.extensions-summary-access { background: #e6eefa !important; color: #1f4a7f !important; }
+.extensions-summary-active { background: var(--a4-ok-bg) !important; color: var(--a4-ok) !important; }
+.extensions-summary-access { background: var(--a4-info-bg) !important; color: var(--a4-info) !important; }
 
 /* The loading order card. */
 .extension-order-card {
     margin: 0 0 1.2em 0;
-    border: 1px solid #d5dbe3;
+    border: 1px solid var(--a4-line);
     border-radius: 6px;
-    background: #fbfcfd;
+    background: var(--a4-soft);
 }
 .extension-order-card > summary {
     cursor: pointer;
     padding: 0.7em 1em;
     list-style-position: inside;
 }
-.extension-order-title { font-weight: bold; font-size: 1.05em; color: #1d2b3a; }
-.extension-order-hint { display: block; margin: 0.25em 0 0 1.2em; color: #6b7785; font-size: 0.9em; }
+.extension-order-title { font-weight: bold; font-size: 1.05em; color: var(--a4-ink); }
+.extension-order-hint { display: block; margin: 0.25em 0 0 1.2em; color: var(--a4-muted); font-size: 0.9em; }
 
 .extension-order {
     margin: 0;
@@ -50,7 +50,7 @@
     gap: 0.5em;
     margin: 0 0 0.3em 0;
     padding: 0.3em 0.4em 0.3em 0.3em;
-    border: 1px solid #dfe4ea;
+    border: 1px solid var(--a4-line);
     border-radius: 4px;
     background: var(--a4-surface);
     cursor: grab;
@@ -58,7 +58,7 @@
     transition: background-color 0.15s, box-shadow 0.15s;
     user-select: none;
 }
-.extension-order-item:hover { background: #f3f6f9; box-shadow: 0 1px 2px rgba(29, 43, 58, 0.08); }
+.extension-order-item:hover { background: var(--a4-soft); box-shadow: var(--a4-shadow-s); }
 .extension-order-item.is-dragging { opacity: 0.45; border-style: dashed; }
 .extension-order-item:active { cursor: grabbing; }
 
@@ -67,7 +67,7 @@
     flex: none;
     width: 8px;
     height: 14px;
-    background-image: radial-gradient(circle, #9aa6b3 1.2px, transparent 1.3px);
+    background-image: radial-gradient(circle, var(--a4-line-strong) 1.2px, transparent 1.3px);
     background-size: 4px 4px;
 }
 .extension-order-position {
@@ -75,18 +75,18 @@
     min-width: 1.9em;
     padding: 0.05em 0.3em;
     border-radius: 3px;
-    background: #e3f1e6;
-    color: #1f5f2c;
+    background: var(--a4-ok-bg);
+    color: var(--a4-ok);
     font-weight: bold;
     font-size: 0.9em;
     text-align: center;
 }
-.extension-order-name { font-family: monospace; font-size: 0.95em; color: #1d2b3a; }
+.extension-order-name { font-family: monospace; font-size: 0.95em; color: var(--a4-ink); }
 .extension-order-label {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    color: #6b7785;
+    color: var(--a4-muted);
     font-size: 0.85em;
     min-width: 0;
 }
@@ -96,29 +96,29 @@
     border: 1px solid transparent;
     border-radius: 3px;
     background: transparent;
-    color: #6b7785;
+    color: var(--a4-muted);
     font-size: 0.95em;
     line-height: 1.5;
     cursor: pointer;
 }
 .extension-order-moves button:hover,
-.extension-order-moves button:focus { border-color: #c5ced8; background: #eef2f6; color: #1d2b3a; }
+.extension-order-moves button:focus { border-color: var(--a4-line-strong); background: var(--a4-soft); color: var(--a4-ink); }
 .extension-order-item:first-child .extension-order-up,
 .extension-order-item:last-child .extension-order-down { visibility: hidden; }
 
 .extension-order.is-saving .extension-order-item { cursor: progress; }
 
-.extension-order-status { margin: 0; padding: 0 1em 0.7em 1em; min-height: 1.2em; font-size: 0.9em; color: #6b7785; }
-.extension-order-status.is-ok { color: #1f5f2c; }
-.extension-order-status.is-error { color: #a4262c; font-weight: bold; }
+.extension-order-status { margin: 0; padding: 0 1em 0.7em 1em; min-height: 1.2em; font-size: 0.9em; color: var(--a4-muted); }
+.extension-order-status.is-ok { color: var(--a4-ok); }
+.extension-order-status.is-error { color: var(--a4-bad); font-weight: bold; }
 
 /* The table. */
 .extensions-filter { display: flex; align-items: center; gap: 0.6em; margin: 0 0 0.6em 0; }
 .extensions-filter label { font-weight: bold; }
 .extensions-filter input { max-width: 22em; }
 
-.extensions-list tr.is-inactive td { color: #6b7785; }
-.extensions-list tr.is-inactive a.extension-name-link { color: #56657a; }
+.extensions-list tr.is-inactive td { color: var(--a4-muted); }
+.extensions-list tr.is-inactive a.extension-name-link { color: var(--a4-muted); }
 .extension-position-cell { text-align: center; }
 
 .extension-badge {
@@ -130,19 +130,19 @@
     font-weight: bold;
     text-align: center;
 }
-.extension-badge-active { background: #e3f1e6; color: #1f5f2c; }
-.extension-badge-access { background: #e6eefa; color: #1f4a7f; }
-.extension-badge-inactive { color: #9aa6b3; font-weight: normal; }
+.extension-badge-active { background: var(--a4-ok-bg); color: var(--a4-ok); }
+.extension-badge-access { background: var(--a4-info-bg); color: var(--a4-info); }
+.extension-badge-inactive { color: var(--a4-muted); font-weight: normal; }
 
 .extension-card {
     margin: 0.3em 0;
     padding: 0.8em 1em;
-    border-left: 3px solid #7aa7d6;
+    border-left: 3px solid var(--a4-info);
     border-radius: 0 4px 4px 0;
-    background: #f7f9fb;
+    background: var(--a4-soft);
 }
 .extension-card h3 { margin: 0 0 0.4em 0; }
-.extension-card .extension-folder { color: #6b7785; font-weight: normal; }
+.extension-card .extension-folder { color: var(--a4-muted); font-weight: normal; }
 .extension-card dl { display: grid; grid-template-columns: max-content 1fr; gap: 0.2em 1em; margin: 0.5em 0; }
 .extension-card dt { font-weight: bold; }
 .extension-card dd { margin: 0; }
@@ -155,4 +155,4 @@
 }
 
 /* The count in the heading, so a closed card still says how many there are. */
-.extension-order-count { color: #6b7785; font-weight: normal; }
+.extension-order-count { color: var(--a4-muted); font-weight: normal; }

@@ -324,9 +324,9 @@ table.list td.role-id { text-align: right; color: var(--a4-muted); white-space: 
 .package-view-full .pvf-badges { margin: 0.25em 0 0.5em; display: flex; flex-wrap: wrap; gap: 0.35em; align-items: center; }
 .package-view-full .pvf-badge { display: inline-block; padding: 0 0.5em; border: 1px solid var(--a4-line); border-radius: 3px; background: var(--a4-soft); color: var(--a4-ink); font-size: 0.85em; line-height: 1.6; white-space: nowrap; }
 .package-view-full .pvf-badge-version { font-weight: bold; }
-.package-view-full .pvf-badge-ok { background: #567975; border-color: #567975; color: #f5f3dd; }
+.package-view-full .pvf-badge-ok { background: var(--a4-accent-strong); border-color: var(--a4-accent-strong); color: var(--a4-on-accent); }
 .package-view-full .pvf-badge-muted { color: var(--a4-muted); }
-.package-view-full .pvf-badge-info { background: var(--a4-info-bg); border-color: #b9cfdd; color: #094564; }
+.package-view-full .pvf-badge-info { background: var(--a4-info-bg); border-color: var(--a4-info-line); color: var(--a4-info); }
 .package-view-full .pvf-date { color: var(--a4-muted); font-size: 0.9em; }
 
 .package-view-full .pvf-overview { display: flex; gap: 1.5em; align-items: flex-start; }
@@ -346,14 +346,14 @@ table.list td.role-id { text-align: right; color: var(--a4-muted); white-space: 
 
 .package-view-full .pvf-actions { display: flex; flex-wrap: wrap; gap: 0.5em; padding: 0.5em 0; margin: 0.5em 0 1em; border-top: 1px solid var(--a4-line); border-bottom: 1px solid var(--a4-line); }
 .package-view-full .pvf-actions input { margin: 0; }
-.package-view-full .pvf-noinstall { margin: 0.5em 0 1em; padding: 0.5em 0.75em; border-left: 3px solid #9aa4ad; background: #f4f6f8; color: var(--a4-ink); overflow-wrap: anywhere; }
+.package-view-full .pvf-noinstall { margin: 0.5em 0 1em; padding: 0.5em 0.75em; border-left: 3px solid var(--a4-line-strong); background: var(--a4-soft); color: var(--a4-ink); overflow-wrap: anywhere; }
 /* Compare: a link (package/compare only reads), drawn like the admin's input.button beside it */
 .package-view-full a.pvf-button-link { display: inline-block; padding: 3px 6px; border: 1px solid var(--a4-line); border-radius: 3px; background: var(--a4-surface); color: var(--a4-ink); font-size: 1em; line-height: normal; text-decoration: none; font-family: Verdana, Arial, Helvetica, sans-serif; vertical-align: middle; transition: all 300ms ease; }
 .package-view-full a.pvf-button-link:hover,
-.package-view-full a.pvf-button-link:focus { background-color: rgba(0, 0, 0, 0.1); color: var(--a4-ink); }
-.package-view-full a.pvf-button-link:focus-visible { outline: 2px solid #e27f15; outline-offset: 1px; }
-.package-view-full input.pvf-button-danger { margin-left: auto; color: #a8321f; border-color: #e0b4ab; }
-.package-view-full input.pvf-button-danger:hover { background: #fbeae6; }
+.package-view-full a.pvf-button-link:focus { background-color: var(--a4-soft); color: var(--a4-ink); }
+.package-view-full a.pvf-button-link:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
+.package-view-full input.pvf-button-danger { margin-left: auto; color: var(--a4-bad); border-color: var(--a4-bad-line); }
+.package-view-full input.pvf-button-danger:hover { background: var(--a4-bad-bg); }
 
 .package-view-full .pvf-browser-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25em 1em; }
 .package-view-full .pvf-count { color: var(--a4-muted); }
@@ -378,25 +378,25 @@ table.list td.role-id { text-align: right; color: var(--a4-muted); white-space: 
 .package-view-full table.pvf-files .pvf-col-size,
 .package-view-full table.pvf-files .pvf-col-actions { width: 1%; }
 .package-view-full table.list tr.pvf-current,
-.package-view-full table.list tr.pvf-current:hover { background: #ffe9bd; box-shadow: inset 3px 0 0 #e27f15; }
+.package-view-full table.list tr.pvf-current:hover { background: var(--a4-accent-soft); box-shadow: inset 3px 0 0 var(--a4-accent); }
 .package-view-full .pvf-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 
 .package-view-full .pvf-kind { display: inline-block; padding: 0 0.45em; border-radius: 3px; font-size: 0.85em; line-height: 1.6; background: var(--a4-soft); color: var(--a4-ink); }
-.package-view-full .pvf-kind-object { background: #e3ecea; color: #3c5653; }
-.package-view-full .pvf-kind-class { background: var(--a4-info-bg); color: #094564; }
-.package-view-full .pvf-kind-image { background: #fbeedd; color: #8a4b0b; }
-.package-view-full .pvf-kind-package { background: #6f6e6b; color: #eee; }
+.package-view-full .pvf-kind-object { background: var(--a4-ok-bg); color: var(--a4-ok); }
+.package-view-full .pvf-kind-class { background: var(--a4-info-bg); color: var(--a4-info); }
+.package-view-full .pvf-kind-image { background: var(--a4-warn-bg); color: var(--a4-warn); }
+.package-view-full .pvf-kind-package { background: var(--a4-soft); color: var(--a4-ink); }
 
 .package-view-full a.pvf-link-button,
 .package-view-full span.pvf-link-button { display: inline-block; padding: 0.1em 0.55em; border: 1px solid var(--a4-line); border-radius: 3px; background: var(--a4-surface); color: var(--a4-ink); text-decoration: none; line-height: 1.5; white-space: nowrap; }
 .package-view-full a.pvf-link-button:hover,
-.package-view-full a.pvf-link-button:focus { background: rgba(0, 0, 0, 0.1); }
+.package-view-full a.pvf-link-button:focus { background: var(--a4-soft); }
 .package-view-full span.pvf-disabled { color: var(--a4-disabled); background: var(--a4-soft); }
 
 .package-view-full .pvf-viewer { margin: 0 0 1em; border: 1px solid var(--a4-line); border-radius: 3px; overflow: hidden; }
-.package-view-full .pvf-viewer-head { display: flex; flex-wrap: wrap; gap: 0.5em 1em; align-items: center; justify-content: space-between; padding: 0.5em 0.75em; background: #6f6e6b; color: #eee; }
+.package-view-full .pvf-viewer-head { display: flex; flex-wrap: wrap; gap: 0.5em 1em; align-items: center; justify-content: space-between; padding: 0.5em 0.75em; background: var(--a4-soft); color: var(--a4-ink); border-bottom: 1px solid var(--a4-line); }
 .package-view-full .pvf-viewer-title { min-width: 0; flex: 1 1 20em; }
-.package-view-full .pvf-viewer-head .pvf-path { display: block; font-weight: bold; color: #fff; }
+.package-view-full .pvf-viewer-head .pvf-path { display: block; font-weight: bold; color: var(--a4-ink); }
 .package-view-full .pvf-viewer-meta { display: flex; gap: 0.75em; align-items: center; margin-top: 0.2em; }
 .package-view-full .pvf-viewer-actions { display: flex; gap: 0.4em; }
 .package-view-full .pvf-viewer-body { padding: 0.75em; }
@@ -424,8 +424,8 @@ table.list td.role-id { text-align: right; color: var(--a4-muted); white-space: 
 .package-view-full table.pvf-files code { font-size: 0.95em; }
 .package-view-full .pvf-dir { display: block; color: var(--a4-muted); font-size: 0.85em; line-height: 1.3; overflow-wrap: anywhere; }
 .package-view-full .pvf-name { color: var(--a4-ink); }
-.package-view-full a.pvf-link-button.pvf-active { background: #567975; border-color: #567975; color: #f5f3dd; }
-.package-view-full a.pvf-link-button.pvf-active:hover { background: #425c59; color: #ffe9bd; }
+.package-view-full a.pvf-link-button.pvf-active { background: var(--a4-accent-strong); border-color: var(--a4-accent-strong); color: var(--a4-on-accent); }
+.package-view-full a.pvf-link-button.pvf-active:hover { background: var(--a4-accent-press); color: var(--a4-on-accent-hover); }
 
 /* The pager, above the list (compact) and below it. */
 .package-view-full .pvf-pager { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.4em 1em; }
@@ -484,7 +484,7 @@ table.list td.role-id { text-align: right; color: var(--a4-muted); white-space: 
 .package-view-full a.pvf-link-button:focus-visible,
 .package-view-full .pvf-filter select:focus-visible,
 .package-view-full .pvf-filter input:focus-visible,
-.package-view-full .pvf-actions input:focus-visible { outline: 2px solid #e27f15; outline-offset: 1px; }
+.package-view-full .pvf-actions input:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
 
 @media (max-width: 640px) {
     .package-view-full table.pvf-object th { background: none; color: var(--a4-muted); font-size: 0.9em; border: 0; }

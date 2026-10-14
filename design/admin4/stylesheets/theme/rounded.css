@@ -396,12 +396,12 @@ input.button-disabled, input.button[disabled="disabled"]
 /* DASHBOARD */
 #ez-version
 {
-    color: #E24602;
+    color: var(--a4-accent-text);
 }
 
 #Exponential-community-project-is-innovative-and-cutting-edge
 {
-    color: #ff5500;
+    color: var(--a4-accent-text);
     font-style: italic;
 }
 
@@ -425,8 +425,7 @@ div.community-block-title span.first
 div.community-activity
 {
     border: 1px solid;
-    border-color: #ff5500;
-    border-color: rgba(255, 85, 0, 0.31);
+    border-color: var(--a4-accent-soft);
     padding: 1em 1em;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;

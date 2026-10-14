@@ -12,7 +12,7 @@
  * - every colour token has a value for html[data-a4-theme="dark"]; spacing, size, radius and font tokens are the
  *   same in both modes and are listed once (the test knows the --a4-space-, --a4-text-, --a4-radius, --a4-font,
  *   --a4-mono and --a4-leading names);
- * - one accent (#f26a21, the header's menu pill and the default button) and one component radius (--a4-radius-s);
+ * - one accent (#f26a21; a fill carrying white text takes its darker --a4-accent-strong) and one component radius (--a4-radius-s);
  *   --a4-radius (18px) is the frame's three columns only;
  * - a module's own CSS goes in stylesheets/modules/<group>.css as .a4-<module>-*, for what these classes cannot do.
  *
@@ -24,7 +24,9 @@
 
 :root {
   /* the accent: one colour. -hover and -strong are its darker shades for a pressed fill and for filled controls
-     carrying white text (5.2:1), -press their hovered fill (7:1); -text is the accent as text on a card (5.2:1 light, 7:1 dark) */
+     carrying white text (5.2:1), -press their hovered fill (7:1); -text is the accent as text on a card (5.2:1 light, 7:1 dark).
+     --a4-on-accent-hover is the text on the -press fill: white in light mode, dark ink on the light orange of dark mode.
+     --a4-ring is opaque: a focus indicator needs 3:1 against the page (5.2:1 light on white, 7:1 dark) */
   --a4-accent: #f26a21;
   --a4-accent-hover: #d9561a;
   --a4-accent-strong: #c2410c;
@@ -32,7 +34,8 @@
   --a4-accent-text: #c2410c;
   --a4-accent-soft: rgba(242, 106, 33, 0.12);
   --a4-on-accent: #fff;
-  --a4-ring: rgba(242, 106, 33, 0.55);
+  --a4-on-accent-hover: #fff;
+  --a4-ring: #c2410c;
 
   /* text and surfaces */
   --a4-ink: #1f2430;
@@ -43,7 +46,7 @@
   --a4-card: #fff;
   --a4-surface: #fff;
   --a4-field: #fff;
-  --a4-field-line: #8f96a3;
+  --a4-field-line: #80879a;
   --a4-disabled: #9aa1ad;
   --a4-overlay: rgba(16, 24, 40, 0.45);
   --a4-code-bg: #1f2430;
@@ -67,9 +70,9 @@
   /* a categorical chart palette, in this order (request H4: the audit charts, the shop dashboard) */
   --a4-chart-1: #2a78d6;
   --a4-chart-2: #eb6834;
-  --a4-chart-3: #1baf7a;
-  --a4-chart-4: #eda100;
-  --a4-chart-5: #e87ba4;
+  --a4-chart-3: #188a63;
+  --a4-chart-4: #a66c00;
+  --a4-chart-5: #d1578a;
   --a4-chart-6: #008300;
   --a4-chart-7: #4a3aa7;
   --a4-chart-8: #e34948;
@@ -108,7 +111,8 @@ html[data-a4-theme="dark"] {
   --a4-accent-text: #ff9a5c;
   --a4-accent-soft: rgba(242, 106, 33, 0.18);
   --a4-on-accent: #fff;
-  --a4-ring: rgba(255, 138, 76, 0.7);
+  --a4-on-accent-hover: #0e1218;
+  --a4-ring: #ff9a5c;
 
   --a4-ink: #e8ebf0;
   --a4-muted: #a3abb9;
@@ -118,7 +122,7 @@ html[data-a4-theme="dark"] {
   --a4-card: #1b212c;
   --a4-surface: #171c25;
   --a4-field: #121720;
-  --a4-field-line: #5b667a;
+  --a4-field-line: #6f7a93;
   --a4-disabled: #6b7486;
   --a4-overlay: rgba(0, 0, 0, 0.6);
   --a4-code-bg: #0e1218;
@@ -474,9 +478,8 @@ a.a4-btn, a.a4-btn:visited { color: var(--a4-ink); }
 .a4-btn-primary:hover:not([disabled]):not(.is-disabled) {
   border-color: var(--a4-accent-press);
   background-color: var(--a4-accent-press);
-  color: var(--a4-on-accent);
+  color: var(--a4-on-accent-hover);
 }
-html[data-a4-theme="dark"] .a4-btn-primary:hover:not([disabled]):not(.is-disabled) { color: var(--a4-code-bg); }
 .a4-btn-danger, a.a4-btn-danger {
   border-color: var(--a4-bad);
   background-color: var(--a4-bad);

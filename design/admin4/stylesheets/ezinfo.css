@@ -26,12 +26,12 @@
     margin: 0;
     padding: 0.35em 0.9em;
     border-radius: 999px;
-    background: #eef2f6;
-    color: #3a4a5c;
+    background: var(--a4-soft);
+    color: var(--a4-ink);
 }
 .ezinfo-page .ezinfo-summary strong { font-size: 1.05em; }
-.ezinfo-page .ezinfo-summary .ezinfo-summary-version { background: #fff1de; color: #7a3d00; }
-.ezinfo-page .ezinfo-summary .ezinfo-summary-license { background: #e3f1e6; color: #1f5f2c; }
+.ezinfo-page .ezinfo-summary .ezinfo-summary-version { background: var(--a4-warn-bg); color: var(--a4-warn); }
+.ezinfo-page .ezinfo-summary .ezinfo-summary-license { background: var(--a4-ok-bg); color: var(--a4-ok); }
 
 .ezinfo-page .ezinfo-toc {
     display: flex;
@@ -39,11 +39,11 @@
     align-items: baseline;
     gap: 0.3em 1em;
     padding: 0.6em 0.9em;
-    border: 1px solid #d5dbe3;
+    border: 1px solid var(--a4-line);
     border-radius: 6px;
-    background: #fbfcfd;
+    background: var(--a4-soft);
 }
-.ezinfo-page .ezinfo-toc-label { color: #6b7785; }
+.ezinfo-page .ezinfo-toc-label { color: var(--a4-muted); }
 .ezinfo-page .ezinfo-toc a { white-space: nowrap; }
 
 /* A section: a heading with the admin's orange rule under it. */
@@ -51,15 +51,15 @@
 .ezinfo-page .ezinfo-section h2 {
     margin: 0 0 0.6em 0;
     padding: 0 0 0.3em 0;
-    border-bottom: 2px solid #e8a15a;
+    border-bottom: 2px solid var(--a4-accent);
     font-size: 1.15em;
-    color: #1d2b3a;
+    color: var(--a4-ink);
 }
 .ezinfo-page .ezinfo-section h3 { margin: 1em 0 0.4em 0; font-size: 1em; }
-.ezinfo-page .ezinfo-count { color: #6b7785; font-weight: normal; }
+.ezinfo-page .ezinfo-count { color: var(--a4-muted); font-weight: normal; }
 .ezinfo-page .ezinfo-prose p { max-width: 46em; margin: 0 0 0.7em 0; line-height: 1.5; }
 .ezinfo-page .ezinfo-links a { margin-right: 1em; }
-.ezinfo-page .ezinfo-none { color: #7b8591; font-style: italic; }
+.ezinfo-page .ezinfo-none { color: var(--a4-muted); font-style: italic; }
 
 /* The license: a readable, scrollable block rather than the whole text in the page. */
 .ezinfo-page .ezinfo-license {
@@ -67,16 +67,16 @@
     margin: 0;
     padding: 1em 1.2em;
     overflow: auto;
-    border: 1px solid #d5dbe3;
+    border: 1px solid var(--a4-line);
     border-radius: 6px;
-    background: #fbfcfd;
-    color: #26313d;
+    background: var(--a4-soft);
+    color: var(--a4-ink);
     font-size: 0.85em;
     line-height: 1.55;
     white-space: pre-wrap;
     overflow-wrap: anywhere;
 }
-.ezinfo-page .ezinfo-license:focus { outline: 2px solid #e8a15a; outline-offset: 2px; }
+.ezinfo-page .ezinfo-license:focus { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
 
 .ezinfo-page .ezinfo-list { margin: 0.4em 0 0 0; padding-left: 1.3em; }
 .ezinfo-page .ezinfo-list li { margin-bottom: 0.3em; overflow-wrap: anywhere; }
@@ -91,7 +91,7 @@
 .ezinfo-page table.list td.ezinfo-cell-identifier { font-family: Consolas, "DejaVu Sans Mono", "Liberation Mono", monospace; font-size: 1em; overflow-wrap: anywhere; }
 .ezinfo-page table.list td.ezinfo-cell-license { min-width: 6em; }
 .ezinfo-page table.list td.ezinfo-cell-website { overflow-wrap: normal; }
-.ezinfo-page tr:target td { background: #fff4e3; }
+.ezinfo-page tr:target td { background: var(--a4-warn-bg); }
 
 /* The extension table has fixed column widths, so the name and its texts get the room
    and a long address or license cannot push the table out of the column. */
@@ -106,15 +106,15 @@
 .ezinfo-page table.ezinfo-extensions td.ezinfo-cell-version { white-space: normal; overflow-wrap: anywhere; }
 .ezinfo-page table.ezinfo-extensions td.ezinfo-cell-website { overflow-wrap: anywhere; }
 
-.ezinfo-page .ezinfo-extension-name { display: block; font-weight: bold; color: #1d2b3a; }
-.ezinfo-page .ezinfo-meta { display: block; margin-top: 0.2em; color: #5d6875; font-size: 0.9em; }
+.ezinfo-page .ezinfo-extension-name { display: block; font-weight: bold; color: var(--a4-ink); }
+.ezinfo-page .ezinfo-meta { display: block; margin-top: 0.2em; color: var(--a4-muted); font-size: 0.9em; }
 .ezinfo-page .ezinfo-position {
     display: inline-block;
     min-width: 1.9em;
     padding: 0.05em 0.3em;
     border-radius: 3px;
-    background: #e3f1e6;
-    color: #1f5f2c;
+    background: var(--a4-ok-bg);
+    color: var(--a4-ok);
     font-weight: bold;
     text-align: center;
 }
@@ -122,32 +122,32 @@
     margin: 0.35em 0 0 0;
     padding: 0.35em 0 0 0;
     list-style: none;
-    border-top: 1px dashed #d5dbe3;
+    border-top: 1px dashed var(--a4-line);
     font-size: 0.9em;
-    color: #3a4a5c;
+    color: var(--a4-ink);
 }
 .ezinfo-page .ezinfo-includes li { margin: 0 0 0.15em 0; padding-left: 1.2em; text-indent: -1.2em; overflow-wrap: anywhere; }
-.ezinfo-page .ezinfo-includes-label { color: #6b7785; }
+.ezinfo-page .ezinfo-includes-label { color: var(--a4-muted); }
 
 /* The sort links stand in for the heading row when the table is shown as cards. */
 .ezinfo-page .ezinfo-sortbar { display: none; }
 
 /* The copyright page. */
-.ezinfo-page .ezinfo-notice-holder { font-size: 1.1em; font-weight: bold; color: #1d2b3a; }
+.ezinfo-page .ezinfo-notice-holder { font-size: 1.1em; font-weight: bold; color: var(--a4-ink); }
 .ezinfo-page .ezinfo-warranty {
     max-width: 46em;
     padding: 0.7em 1em;
-    border-left: 4px solid #e8a15a;
-    background: #fff8ee;
+    border-left: 4px solid var(--a4-accent);
+    background: var(--a4-warn-bg);
     line-height: 1.5;
 }
-.ezinfo-page .ezinfo-plain-notice summary { cursor: pointer; color: #005b7f; }
+.ezinfo-page .ezinfo-plain-notice summary { cursor: pointer; color: var(--a4-info); }
 .ezinfo-page .ezinfo-plain-notice[open] summary { margin-bottom: 0.6em; }
 .ezinfo-page .ezinfo-plain-notice .ezinfo-plain-notice-text {
     padding: 0.8em 1em;
-    border: 1px solid #d5dbe3;
+    border: 1px solid var(--a4-line);
     border-radius: 6px;
-    background: #fbfcfd;
+    background: var(--a4-soft);
 }
 .ezinfo-page .ezinfo-plain-notice .ezinfo-plain-notice-text p { max-width: 46em; line-height: 1.5; }
 
@@ -158,7 +158,7 @@
         gap: 0.3em 0.9em;
         margin: 0 0 0.6em 0;
     }
-    .ezinfo-page .ezinfo-sortbar span { color: #6b7785; }
+    .ezinfo-page .ezinfo-sortbar span { color: var(--a4-muted); }
     .ezinfo-page .ezinfo-sortbar-current { font-weight: bold; }
 
     .ezinfo-page table.list,
@@ -169,14 +169,14 @@
     .ezinfo-page table.list tr {
         margin: 0 0 0.6em 0;
         padding: 0.5em 0.7em;
-        border: 1px solid #d5dbe3;
+        border: 1px solid var(--a4-line);
         border-radius: 6px;
     }
     .ezinfo-page table.list td { padding: 0.15em 0; border: 0; }
     .ezinfo-page table.list td[data-label]::before {
         content: attr(data-label) ":";
         margin-right: 0.4em;
-        color: #6b7785;
+        color: var(--a4-muted);
         font-family: sans-serif;
         font-size: 0.9em;
     }
