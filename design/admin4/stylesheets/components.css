@@ -31,7 +31,7 @@
   --a4-accent-hover: #d9561a;
   --a4-accent-strong: #c2410c;
   --a4-accent-press: #9a3412;
-  --a4-accent-text: #c2410c;
+  --a4-accent-text: #bc3f0b;   /* 4.7:1 on the hovered row (--a4-info-bg), 5.4:1 on white */
   --a4-accent-soft: rgba(242, 106, 33, 0.12);
   --a4-on-accent: #fff;
   --a4-on-accent-hover: #fff;
@@ -735,12 +735,12 @@ fieldset.a4-field > legend + * { clear: both; }
   white-space: nowrap;
 }
 .a4-table tr:last-child td { border-bottom: 0; }
-.a4-table > tbody > tr:nth-child(even) > td { background-color: var(--a4-zebra); }   /* zebra: see admin4-styling.md, Tables */
-.a4-table > tbody > tr:hover > td { background-color: var(--a4-info-bg); }
+.a4-table > tbody > tr:nth-child(even of :has(> td):not([hidden])) > :is(td, th[scope="row"]) { background-color: var(--a4-zebra); }   /* zebra: see admin4-styling.md, Tables */
+.a4-table > tbody > tr:hover > :is(td, th[scope="row"]) { background-color: var(--a4-info-bg); }
 .a4-table .a4-num, .a4-table th.a4-num { text-align: right; }
 .a4-table img { vertical-align: -3px; }
 .a4-table.is-compact th, .a4-table.is-compact td { padding: var(--a4-space-2) var(--a4-space-3); }
-.a4-table > tbody > tr.is-selected > td { background-color: var(--a4-accent-soft); }
+.a4-table > tbody > tr.is-selected > :is(td, th[scope="row"]) { background-color: var(--a4-accent-soft); }
 @media (max-width: 600px) {
   .a4-table th, .a4-table td { padding: var(--a4-space-2) var(--a4-space-2); }
 }

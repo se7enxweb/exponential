@@ -507,13 +507,16 @@ table.list th.admin-dt-asc, table.list th.admin-dt-desc {
   color: var(--a4-ink);
 }
 /* Zebra rows (doc/bc/6.0/admin4-styling.md, Tables): every data table -- table.list, .a4-table, the sub-items
-   table -- stripes its even body rows with --a4-zebra, whatever bglight/bgdark sequence a template writes (a header
-   row or a hidden row used to put two light rows together); the hovered row wins. Tables used for layout have
-   none of these classes and stay plain. */
+   table -- stripes its even data rows with --a4-zebra. Only rows with data cells count (a header row of th inside
+   tbody, or a row with the hidden attribute, does not), so the first data row is plain, whatever bglight/bgdark
+   sequence a template writes; a row header (th scope=row) takes the stripe with its cells; the hovered row wins.
+   A row hidden by a script (display: none) still counts: a known limit. Tables used for layout have none of these
+   classes, and a form laid out as a list (.a4-plain) stays plain too. */
 table.list tr.bglight, table.list tr.bgdark,
-table.list tr.bglight td, table.list tr.bgdark td { background-color: transparent; }
-table.list > tbody > tr:nth-child(even) > td { background-color: var(--a4-zebra); }
-table.list > tbody > tr:hover > td { background-color: var(--a4-info-bg); }
+table.list tr.bglight td, table.list tr.bgdark td, table.list tr.bgdark th[scope="row"] { background-color: transparent; }
+table.list:not(.a4-plain) > tbody > tr > th[scope="row"] { background-color: transparent; }   /* a row header is its row's colour */
+table.list:not(.a4-plain) > tbody > tr:nth-child(even of :has(> td):not([hidden])) > :is(td, th[scope="row"]) { background-color: var(--a4-zebra); }
+table.list:not(.a4-plain) > tbody > tr:hover > :is(td, th[scope="row"]) { background-color: var(--a4-info-bg); }
 table.list td { border-color: var(--a4-line); }
 
 /* Messages */
@@ -774,10 +777,10 @@ span.classattribute-description {
   color: var(--a4-ink);
   cursor: pointer;
 }
-.controlbar.a4-node-actions form .button-left .block select:hover { border-color: var(--a4-field-line); background-color: var(--a4-soft); }
+.controlbar.a4-node-actions form .button-left .block select:hover:not(:disabled) { border-color: var(--a4-field-line); background-color: var(--a4-soft); }
 .controlbar.a4-node-actions form .button-left .block select:disabled { color: var(--a4-disabled); cursor: default; }
 @media (forced-colors: active) {
-  .controlbar.a4-node-actions form .button-left .block select { -webkit-appearance: auto; appearance: auto; padding-right: var(--a4-space-3); }
+  .controlbar.a4-node-actions form .button-left .block select { -webkit-appearance: auto; appearance: auto; padding-right: var(--a4-space-3); background-image: none; }
 }
 input.button.a4-danger:hover { border-color: var(--a4-bad); color: var(--a4-bad); background-color: var(--a4-bad-bg); }
 .a4-node-links { display: flex; align-items: center; gap: var(--a4-space-1); }
@@ -1337,6 +1340,8 @@ html .exp-dt-first:hover, html .exp-dt-prev:hover, html .exp-dt-next:hover, html
 html .exp-dt-first:disabled, html .exp-dt-prev:disabled, html .exp-dt-next:disabled, html .exp-dt-last:disabled {
   border-color: var(--a4-line); color: var(--a4-disabled);
 }
+/* the arrows are IcoMoon glyphs ([data-icon]::before, core.css), which keep their own font family */
+html .exp-dt-first [data-icon], html .exp-dt-prev [data-icon], html .exp-dt-next [data-icon], html .exp-dt-last [data-icon] { font-size: var(--a4-text-l); }
 html .exp-dt-page.exp-dt-current { border-color: var(--a4-accent); background-color: var(--a4-accent-soft); color: var(--a4-accent-text); }
 html .exp-dt-first:focus-visible, html .exp-dt-prev:focus-visible, html .exp-dt-next:focus-visible, html .exp-dt-last:focus-visible,
 html .exp-dt-page:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
@@ -1375,10 +1380,11 @@ div#contentstructure ul#content_tree_menu ul a.openclose-close::after {
 #leftmenu-design > :first-child > .box-header:first-child h4,
 #rightmenu-design > :first-child > .box-header:first-child h4 { margin-top: 0; padding-top: 0; }
 
-/* The content tree: rows 24px apart whatever the column's font size (a 20px line and the item's 4px below it), the
-   smallest spacing WCAG 2.5.8 allows for its links and the 20px open/close areas; the connector elbow, the
-   open/close symbol and the class icon sit on the line's middle. */
-div#contentstructure ul#content_tree_menu li { line-height: calc(var(--a4-space-5) - var(--a4-space-1)); }
+/* The content tree: rows 24px apart at the small and medium column sizes (a 20px line and the item's 4px below it),
+   the smallest spacing WCAG 2.5.8 allows for its links and the 20px open/close areas; a larger font (the "Large"
+   column size) gets a line of 1.25em instead. The connector elbow, the open/close symbol and the class icon sit on
+   the 20px line's middle. */
+div#contentstructure ul#content_tree_menu li { line-height: max(calc(var(--a4-space-5) - var(--a4-space-1)), 1.25em); }
 div#contentstructure ul#content_tree_menu ul li { background-position: 8px 0, 8px 10px; }
 div#contentstructure ul#content_tree_menu ul li.lastli { background-size: 1px 11px, 9px 1px; }
 div#contentstructure ul#content_tree_menu ul a.openclose-open,

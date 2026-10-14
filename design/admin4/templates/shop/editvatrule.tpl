@@ -30,7 +30,7 @@
 {* DESIGN: Content START *}<div class="box-ml"><div class="box-mr"><div class="box-content">
 
 <div class="block">
-<table class="list" cellspacing="0">
+<table class="list a4-plain" cellspacing="0">
 <tr>
     <td>
     <label>{'Country/region'|i18n( 'design/admin/shop/editvatrule' )}:</label>

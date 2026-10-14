@@ -28,7 +28,7 @@
 
 <div class="block">
 {if $can_edit}
-    <table class="list" cellspacing="0">
+    <table class="list a4-plain" cellspacing="0">
         <tr>
             <td class="nowrap">{'Currency code'|i18n( 'design/admin/shop/editcurrency' )}</td>
             <td><input type="text" name="CurrencyData[code]" value="{$currency_data['code']}" />{'(Use three capital letters)'|i18n( 'design/admin/shop/editcurrency' )}</td>
