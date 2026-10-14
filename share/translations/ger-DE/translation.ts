@@ -65143,6 +65143,14 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>%count pixels</source>
         <translation>%count Pixel</translation>
     </message>
+    <message>
+        <source>The saved time is %share % of this page&apos;s time: without the cache about %without ms instead of %with ms</source>
+        <translation>Die gesparte Zeit entspricht %share % der Seitenzeit: ohne Cache etwa %without ms statt %with ms</translation>
+    </message>
+    <message>
+        <source>(%factor times as long)</source>
+        <translation>(%factor-mal so lange)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/audit</name>

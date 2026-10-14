@@ -371,13 +371,21 @@ The report itself reads no state and sets no point.
 | Stored | results stored |
 | Not cached | statements not answered and not stored, then one line *Not cached: reason* per reason: *inside a transaction*, *statement (volatile or tables not readable)*, *excluded table* (`ExcludeTables`), *temporary table*, *catalogue table*, *more rows than MaxRows* (that one is also counted as a miss) |
 | Writes | writes the cache saw (each makes the tables it names stale) |
-| Database time saved (estimated) | the sum, over the hits, of the time each statement took the database with fetching its rows when it was stored; an upper estimate. Entries stored before this was recorded add "+ n hits on entries without a duration" |
+| Database time saved (estimated) | the sum, over the hits, of the time each statement took the database with fetching its rows when it was stored; an upper estimate. Entries stored before this was recorded add "+ n hits on entries without a duration". Then its share of the page: `186 ms = 186 % of the page so far (100 ms; without the cache about 286 ms, 3 times as long)`; the factor only from 100 % on, where a share alone reads like a part of the page. The chip of the Exp Debug bar gives the same share, `QC 83 % · -186 ms (186 %)`, and the same sentence in its title |
 | Made everything stale | up to 20 writes whose tables cannot be read (a PL/SQL block, `CALL`, an `ALTER SESSION` that is not a [session setting](#session-settings-oracle-alter-session) ...), then "... and n more" |
 
 The report counts what happened since it started: from the first statement of the request with the debug output on,
 or again from the first statement after `eZDebug::reset()`. Its counters are its own, so Setup > System information
 flushing the request's counters (`eZDBQueryCache::flushStats()`) does not change them. *Not cached* is larger than the
 *uncacheable* counter of Setup > System information, which leaves out excluded tables and transactions.
+
+**The page's time for the share** (`eZDBQueryCache::requestMs()`, one time base for the report row and the chip):
+from eZDebug's script start, which the web kernel sets at the start of every request, also in a persistent worker
+of Exponential Velocity (so a worker's earlier requests never count), else from PHP's `REQUEST_TIME_FLOAT` (scripts;
+Velocity sets it for every request too); to where the Exp Debug bar's output starts (`setRequestEnd()`, cleared by
+`resetRequest()`), else to eZDebug's script stop, else to now. A start that would give a negative time or more than a
+day is not used (no share is shown): it can only be left from an earlier request. The bar's time chip measures to
+when its summary is made, a few milliseconds later.
 
 **Literals masked.** A statement in *Made everything stale* has each string literal replaced by `'?'`, so values from
 requests and content stay out of the debug output (`eZDBQueryCache::maskLiterals()`). Where a literal ends depends on
@@ -396,7 +404,8 @@ registers the accumulator group and the report again, starts new counters and se
 the noise of a lookup hit of ~2.7 µs); the duration stored with each entry is one `microtime()` per store. With it
 on, the cost is that of the accumulators.
 
-In the **Exp Debug bar** the same figures are a chip in the pinned bar (hit rate and saved time, amber below 50 %,
+In the **Exp Debug bar** the same figures are a chip in the pinned bar (hit rate and saved time, the saved time also in
+percent of the page's time: `QC 83 % · -186 ms (186 %)` on a page of 100 ms means about 286 ms without the cache; amber below 50 %,
 red below 10 % or in `shared` mode without a storage, `debugbar.ini Thresholds[querycache_hit_rate]`) and the report stands at the top of the SQL tab, next
 to the database's accumulators. The **Cache tab** (setup/managecache) shows what this server holds: entries and
 memory in APCu (or the result files and their size on disk; files count no hits), the counters since the last reset, the state, the cached results grouped by the tables they read
@@ -506,10 +515,12 @@ so the tests never touch the site's cache.
 | QC-33 | Below the reserve a result stays in the request, is counted (`reserve`) and not put into APCu; with room again it is; files have no reserve |
 | QC-34 | `purgeExpired()` deletes the query cache's expired APCu entries and frees their memory, keeps live ones and other users' entries, runs once a minute for the pool, and `apcuRoom()` starts it below the reserve |
 | QC-35 | In a web request, a Velocity worker included, the purge runs at the end of the request and is registered once; a script runs it at once |
+| QC-36 | One time base for the saved share: the script start (`REQUEST_TIME_FLOAT` without it) to the end the bar sets; a stale or later start gives no share; a new request measures to now again |
+| QC-37 | The report row says how many times as long the page would have taken without the cache, from a share of 100 % on, and carries no inline CSS |
 
 ```bash
 php vendor/bin/phpunit --testsuite lib --filter eZDBQueryCacheTest
-# OK (35 tests; QC-24, QC-33, QC-34 and QC-35 need apc.enable_cli=1), about 7 s (QC-08, QC-12, QC-28 and QC-34 wait)
+# OK (37 tests; QC-24, QC-33, QC-34 and QC-35 need apc.enable_cli=1), about 7 s (QC-08, QC-12, QC-28 and QC-34 wait)
 ```
 
 **On a running site** (MySQL, the real drivers), each checked on a test installation

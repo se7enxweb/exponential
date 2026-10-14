@@ -890,6 +890,8 @@ class eZDBQueryCache
      *
      * @return array|null mode, apcu, storage, generation, hits, misses, stores, not_cached,
      *                    writes, hit_rate (percent, null without lookups), saved_ms,
+     *                    request_ms (this request so far, see requestMs(); null when unknown),
+     *                    saved_share (saved_ms in percent of request_ms, see savedShare()),
      *                    hits_unmeasured, skipped (reason => count), stale (statements, literals masked), stale_more
      */
     public static function debugSnapshot()
@@ -898,6 +900,7 @@ class eZDBQueryCache
             return null;
         $d = self::$debug;
         $looked = $d['count']['hit'] + $d['count']['miss'];
+        $requestMs = self::requestMs();
         return array(
             'mode' => self::settings()['mode'],
             'apcu' => self::apcuUsable(),
@@ -910,11 +913,90 @@ class eZDBQueryCache
             'writes' => $d['count']['write'],
             'hit_rate' => $looked > 0 ? round( 100 * $d['count']['hit'] / $looked, 1 ) : null,
             'saved_ms' => round( $d['saved_ms'], 1 ),
+            'request_ms' => $requestMs,
+            'saved_share' => self::savedShare( $d['saved_ms'], $requestMs ),
             'hits_unmeasured' => $d['hits_unmeasured'],
             'skipped' => $d['skipped'],
             'stale' => $d['stale'],
             'stale_more' => $d['stale_more'],
         );
+    }
+
+    /** @var float|null where the page ends for requestMs(): set by the Exp Debug bar when its output starts; null: now */
+    protected static $requestEnd = null;
+
+    /**
+     * Ends the page for requestMs() at $time (microtime), so every figure the
+     * debug output gives -- the report's row and the bar's chip -- measures the
+     * same span; null measures to now again. resetRequest() clears it.
+     *
+     * @param float|null $time
+     */
+    public static function setRequestEnd( $time )
+    {
+        self::$requestEnd = $time === null ? null : (float)$time;
+    }
+
+    /**
+     * How long this request has taken so far, in ms, on the one time base the
+     * Exp Debug bar measures the page's time on as well (expDebugBarSummary):
+     * from eZDebug's script start, which the web kernel sets at the start of
+     * every request (in a persistent worker of Exponential Velocity too), else
+     * from PHP's REQUEST_TIME_FLOAT (scripts; Velocity sets it for every
+     * request), to where setRequestEnd() ended the page (the start of the bar's
+     * output), else to eZDebug's script stop once that is set, else to now. Null
+     * when no start is known, or when the result is not plausible (negative, or
+     * more than a day: a start left from an earlier request would make every
+     * share meaningless).
+     *
+     * @return float|null
+     */
+    public static function requestMs()
+    {
+        $debug = class_exists( 'eZDebug', false ) ? eZDebug::instance() : null;
+        if ( $debug && $debug->ScriptStart )
+            $start = (float)$debug->ScriptStart;
+        else if ( isset( $_SERVER['REQUEST_TIME_FLOAT'] ) )
+            $start = (float)$_SERVER['REQUEST_TIME_FLOAT'];
+        else
+            return null;
+        $stop = self::$requestEnd ?? ( $debug && $debug->ScriptStop ? (float)$debug->ScriptStop : microtime( true ) );
+        $ms = ( $stop - $start ) * 1000;
+        return $ms >= 0 && $ms < 86400000 ? round( $ms, 1 ) : null;
+    }
+
+    /**
+     * The database time the hits saved, in percent of the time the request
+     * took with them: 200 means the hits saved twice the request's time, so
+     * without the cache it would have taken three times as long. Null when
+     * nothing was saved or the request's time is unknown.
+     *
+     * @param float $savedMs
+     * @param float|null $requestMs
+     * @return int|null
+     */
+    public static function savedShare( $savedMs, $requestMs )
+    {
+        if ( $requestMs === null || $requestMs <= 0 || round( (float)$savedMs ) <= 0 )
+            return null;
+        return (int)round( 100 * $savedMs / $requestMs );
+    }
+
+    /**
+     * How many times as long the request would have taken without the cache,
+     * rounded, once the hits saved at least the request's own time (a share of
+     * 100 % or more: "186 %" alone reads like a share of the page); null below.
+     *
+     * @param float $savedMs
+     * @param float|null $requestMs
+     * @return int|null
+     */
+    public static function savedFactor( $savedMs, $requestMs )
+    {
+        $share = self::savedShare( $savedMs, $requestMs );
+        if ( $share === null || $share < 100 )
+            return null;
+        return (int)round( ( $requestMs + $savedMs ) / $requestMs );
     }
 
     /**
@@ -943,6 +1025,11 @@ class eZDBQueryCache
             'Not cached' => $d['not_cached'],
             'Writes' => $d['writes'],
             'Database time saved (estimated)' => $d['saved_ms'] . ' ms'
+                . ( $d['saved_share'] !== null
+                    ? ' = ' . $d['saved_share'] . ' % of the page so far (' . round( $d['request_ms'] ) . ' ms; without the cache about '
+                      . round( $d['request_ms'] + $d['saved_ms'] ) . ' ms'
+                      . ( ( $factor = self::savedFactor( $d['saved_ms'], $d['request_ms'] ) ) !== null ? ', ' . $factor . ' times as long' : '' ) . ')'
+                    : '' )
                 . ( $d['hits_unmeasured'] ? ' (+ ' . $d['hits_unmeasured'] . ' hits on entries without a duration)' : '' ),
         );
         foreach ( $d['skipped'] as $reason => $n )
@@ -1402,6 +1489,7 @@ class eZDBQueryCache
         self::$settings = null;
         self::$stats = array( 'hits' => 0, 'misses' => 0, 'stores' => 0, 'uncacheable' => 0, 'writes' => 0, 'reserve' => 0 );
         self::$debug = null;
+        self::$requestEnd = null;
     }
 
     /** @var string|false eZExecution::requestKey() of the request flushStats() is registered to run at the end of */

@@ -227,6 +227,9 @@ class expDebugBarReport
 
         $startTime = $debug->ScriptStart;
         $endTime = $debug->ScriptStop == null ? $reportStart : $debug->ScriptStop;
+        // one end of the page for the query cache's figures: its report row (rendered below) and its chip agree
+        if ( class_exists( 'eZDBQueryCache', false ) )
+            eZDBQueryCache::setRequestEnd( $endTime );
         $totalElapsed = $endTime - $startTime;
         if ( $totalElapsed <= 0 )
             $totalElapsed = 0.000001;
@@ -591,13 +594,28 @@ class expDebugBarReport
         if ( !empty( $s['querycache']['measured'] ) )
         {
             $q = $s['querycache'];
+            // the saved time against this page's time: 200 % = without the cache the page would have taken three times as long.
+            // The page's time is the snapshot's (eZDBQueryCache::requestMs(), ended where this output started), the same
+            // span the report row in the SQL tab gives; the bar's own page time only where the figures carry none.
+            $pageMs = isset( $q['request_ms'] ) ? (float)$q['request_ms'] : ( isset( $s['time'] ) ? $s['time'] * 1000 : null );
+            $share = class_exists( 'eZDBQueryCache' ) ? eZDBQueryCache::savedShare( $q['saved_ms'], $pageMs ) : null;
+            $factor = class_exists( 'eZDBQueryCache' ) ? eZDBQueryCache::savedFactor( $q['saved_ms'], $pageMs ) : null;
             $chips[] = array( 'sql', 'querycache', in_array( $q['level'], array( 'ok', 'warn', 'high' ), true ) ? $q['level'] : 'ok',
                               self::t( 'QC %rate', array( '%rate' => $q['hit_rate'] === null ? '-' : number_format( $q['hit_rate'], 0 ) . ' %' ) )
-                              . ' · ' . ( round( $q['saved_ms'] ) > 0 ? '-' : '' ) . number_format( $q['saved_ms'], 0 ) . ' ms',
+                              . ' · ' . ( round( $q['saved_ms'] ) > 0 ? '-' : '' ) . number_format( $q['saved_ms'], 0 ) . ' ms'
+                              // no thousands separator: "2,761 %" would read as a decimal in German
+                              . ( $share !== null ? ' (' . number_format( $share, 0, '.', '' ) . ' %)' : '' ),
                               self::t( 'SQL query cache: hit rate and database time saved (estimated); %hits hits, %misses misses, %stores stored, %skipped not cached, %writes writes, mode %mode',
                                        array( '%hits' => $q['hits'], '%misses' => $q['misses'], '%stores' => $q['stores'], '%skipped' => $q['not_cached'],
                                               '%writes' => $q['writes'], '%mode' => $q['mode'] . ( $q['mode'] !== 'shared' ? ''
-                                                  : ( empty( $q['storage'] ) ? ' (no APCu)' : ' (' . $q['storage'] . ')' ) ) ) ) );
+                                                  : ( empty( $q['storage'] ) ? ' (no APCu)' : ' (' . $q['storage'] . ')' ) ) ) )
+                              . ( $share !== null
+                                  ? '. ' . self::t( 'The saved time is %share % of this page\'s time: without the cache about %without ms instead of %with ms',
+                                                    array( '%share' => number_format( $share, 0, '.', '' ),
+                                                           '%without' => number_format( $pageMs + $q['saved_ms'], 0, '.', '' ),
+                                                           '%with' => number_format( $pageMs, 0, '.', '' ) ) )
+                                    . ( $factor !== null ? ' ' . self::t( '(%factor times as long)', array( '%factor' => $factor ) ) : '' )
+                                  : '' ) );
         }
         $chips[] = array( 'memory', 'memory', $memLevel, number_format( $s['memory'] / 1048576, 1 ) . ' MB', self::t( 'Peak memory' ) );
         if ( $s['templates'] !== null )

@@ -37,6 +37,8 @@
  *  QC-33 — Below the reserve a result stays in the request and is counted; files have no reserve
  *  QC-34 — purgeExpired() frees the memory of the expired entries, once a minute for the pool
  *  QC-35 — In a web request (a Velocity worker too) the purge runs at the end of the request, registered once
+ *  QC-36 — One time base for the saved share: the script start (REQUEST_TIME_FLOAT without it) to the end the bar sets
+ *  QC-37 — The report row says how many times as long the page would have taken without the cache
  *
  * No database: the driver is a stand-in object with the properties the cache
  * reads, and the state lives in a directory of its own under var/tmp.
@@ -554,7 +556,7 @@ class eZDBQueryCacheTest extends PHPUnit\Framework\TestCase
             $this->assertMatchesRegularExpression( '/^Misses +1$/m', $text );
             $this->assertMatchesRegularExpression( '/^Hit rate +50 %$/m', $text );
             $this->assertMatchesRegularExpression( '/^Not cached: statement \(volatile or tables not readable\) +1$/m', $text );
-            $this->assertMatchesRegularExpression( '/^Database time saved \(estimated\) +[0-9.]+ ms$/m', $text );
+            $this->assertMatchesRegularExpression( '/^Database time saved \(estimated\) +[0-9.]+ ms( = \d+ % of the page so far \(\d+ ms; without the cache about \d+ ms(, \d+ times as long)?\))?$/m', $text );
             $this->assertStringContainsString( "Made everything stale: CALL some_procedure( '?' ) /* <b> */", $text, 'literals masked' );
             $this->assertStringNotContainsString( 'secret', $text );
 
@@ -718,7 +720,11 @@ class eZDBQueryCacheTest extends PHPUnit\Framework\TestCase
             $this->assertIsInt( $snap['generation'] );
             // the report's own counters: Setup > System information flushing the request's counters changes nothing
             eZDBQueryCache::flushStats();
-            $this->assertSame( $snap, eZDBQueryCache::debugSnapshot() );
+            $moving = array( 'request_ms' => true, 'saved_share' => true ); // to now: they move between two calls
+            $this->assertSame( array_diff_key( $snap, $moving ), array_diff_key( eZDBQueryCache::debugSnapshot(), $moving ) );
+
+            $this->assertGreaterThan( 0, $snap['request_ms'], 'the request so far (REQUEST_TIME_FLOAT)' );
+            $this->assertSame( eZDBQueryCache::savedShare( $snap['saved_ms'], $snap['request_ms'] ), $snap['saved_share'] );
         } );
         $this->withDebug( false, function ( $debug )
         {
@@ -1059,5 +1065,82 @@ class eZDBQueryCacheTest extends PHPUnit\Framework\TestCase
             $scheduled->setValue( null, false );
             apcu_delete( new APCUIterator( '/^ezqc/' ) );
         }
+    }
+
+    /** QC-36 */
+    public function testOneTimeBaseForTheSavedShare()
+    {
+        $this->withDebug( true, function ( $debug )
+        {
+            $saved = $_SERVER['REQUEST_TIME_FLOAT'] ?? null;
+            try
+            {
+                // the bar's base first: eZDebug's script start, which the web kernel sets for every request
+                $debug->ScriptStart = 1000.0;
+                $_SERVER['REQUEST_TIME_FLOAT'] = 999.0;
+                eZDBQueryCache::setRequestEnd( 1000.25 );
+                $this->assertSame( 250.0, eZDBQueryCache::requestMs(), 'from the script start to where the bar ended the page' );
+                // REQUEST_TIME_FLOAT only without a script start
+                $debug->ScriptStart = null;
+                $this->assertSame( 1250.0, eZDBQueryCache::requestMs() );
+                // a start left from an earlier request, or one after the end: no share at all
+                $_SERVER['REQUEST_TIME_FLOAT'] = 1000.25 - 2 * 86400;
+                $this->assertNull( eZDBQueryCache::requestMs(), 'a stale start' );
+                $_SERVER['REQUEST_TIME_FLOAT'] = 1001.0;
+                $this->assertNull( eZDBQueryCache::requestMs(), 'a start after the end' );
+                unset( $_SERVER['REQUEST_TIME_FLOAT'] );
+                $this->assertNull( eZDBQueryCache::requestMs(), 'no start known' );
+                // a new request measures to now again
+                $debug->ScriptStart = microtime( true ) - 0.05;
+                eZDBQueryCache::resetRequest();
+                $this->assertGreaterThanOrEqual( 50.0, eZDBQueryCache::requestMs() );
+                $this->assertLessThan( 5000.0, eZDBQueryCache::requestMs() );
+            }
+            finally
+            {
+                eZDBQueryCache::setRequestEnd( null );
+                if ( $saved === null )
+                    unset( $_SERVER['REQUEST_TIME_FLOAT'] );
+                else
+                    $_SERVER['REQUEST_TIME_FLOAT'] = $saved;
+            }
+        } );
+    }
+
+    /** QC-37 */
+    public function testTheReportRowSaysHowManyTimesAsLong()
+    {
+        $this->assertNull( eZDBQueryCache::savedFactor( 50, 100 ), 'below the page\'s own time: the share says it' );
+        $this->assertSame( 2, eZDBQueryCache::savedFactor( 100, 100 ) );
+        $this->assertSame( 3, eZDBQueryCache::savedFactor( 186, 100 ), '286 ms instead of 100 ms' );
+        $this->assertNull( eZDBQueryCache::savedFactor( 186, null ) );
+        $this->withDebug( true, function ( $debug )
+        {
+            $this->newRequest();
+            $sql = 'SELECT * FROM ezcontentobject';
+            // a hit that saves about 20 ms: the statement took that long when it was stored
+            $ticket = eZDBQueryCache::lookup( $this->db, $sql, array(), $hit );
+            usleep( 20000 );
+            eZDBQueryCache::store( $ticket, array( array( 'id' => 1 ) ) );
+            $this->assertNotNull( $this->select( $sql ) );
+            $saved = eZDBQueryCache::debugSnapshot()['saved_ms'];
+            try
+            {
+                // a page much shorter than the saved time: many times as long without the cache
+                $debug->ScriptStart = 1000.0;
+                eZDBQueryCache::setRequestEnd( 1000.0 + max( $saved, 10 ) / 10000 );
+                $this->assertGreaterThanOrEqual( 15, $saved );
+                $this->select( $sql );
+                $text = eZDBQueryCache::debugReport( false );
+                $this->assertMatchesRegularExpression( '/ = \d+ % of the page so far \(\d+ ms; without the cache about \d+ ms, \d+ times as long\)/', $text );
+                eZDBQueryCache::setRequestEnd( 1000.0 + 1000 );
+                $this->assertDoesNotMatchRegularExpression( '/times as long/', eZDBQueryCache::debugReport( false ), 'a small share: no factor' );
+                $this->assertStringNotContainsString( 'style=', eZDBQueryCache::debugReport( true ), 'no inline CSS in the report' );
+            }
+            finally
+            {
+                eZDBQueryCache::setRequestEnd( null );
+            }
+        } );
     }
 }

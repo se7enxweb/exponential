@@ -37,21 +37,37 @@ class expDebugBarQueryCacheTest extends PHPUnit\Framework\TestCase
     public function testChip()
     {
         $html = $this->summaryHtml( array( 'measured' => true ) + $this->snapshot( array( 'hit_rate' => 83.3 ) ) + array( 'level' => 'warn' ) );
-        $this->assertMatchesRegularExpression( '/<button [^>]*data-tab="sql" data-key="querycache" data-level="warn"[^>]*>QC 83 % · -186 ms<\/button>/u', $html );
+        $this->assertMatchesRegularExpression( '/<button [^>]*data-tab="sql" data-key="querycache" data-level="warn"[^>]*>QC 83 % · -186 ms \(186 %\)<\/button>/u', $html, 'the page took 100 ms' );
+        $this->assertStringContainsString( 'The saved time is 186 % of this page&#039;s time: without the cache about 286 ms instead of 100 ms', $html );
         $this->assertStringContainsString( '8 hits, 2 misses, 2 stored, 1 not cached, 0 writes, mode shared (apcu)', $html );
 
         $html = $this->summaryHtml( array( 'measured' => true ) + $this->snapshot( array( 'storage' => 'file' ) ) + array( 'level' => 'ok' ) );
         $this->assertStringContainsString( 'mode shared (file)', $html );
 
         $html = $this->summaryHtml( array( 'measured' => true ) + $this->snapshot( array( 'hit_rate' => null, 'apcu' => false, 'storage' => null ) ) + array( 'level' => 'high' ) );
-        $this->assertMatchesRegularExpression( '/data-key="querycache" data-level="high"[^>]*>QC - · -186 ms</u', $html );
+        $this->assertMatchesRegularExpression( '/data-key="querycache" data-level="high"[^>]*>QC - · -186 ms \(186 %\)</u', $html );
         $this->assertStringContainsString( 'mode shared (no APCu)', $html );
 
+        $html = $this->summaryHtml( array( 'measured' => true ) + $this->snapshot( array( 'saved_ms' => 2761.0 ) ) + array( 'level' => 'ok' ) );
+        $this->assertStringContainsString( '(2761 %)', $html, 'no thousands separator: "2,761 %" reads as a decimal in German' );
+        $this->assertStringContainsString( 'about 2861 ms instead of 100 ms', $html );
+
         $html = $this->summaryHtml( array( 'measured' => true ) + $this->snapshot( array( 'saved_ms' => 0.2 ) ) + array( 'level' => 'ok' ) );
-        $this->assertMatchesRegularExpression( '/>QC 80 % · 0 ms</u', $html, 'nothing saved: no minus sign' );
+        $this->assertMatchesRegularExpression( '/>QC 80 % · 0 ms</u', $html, 'nothing saved: no minus sign, no share' );
+        $this->assertStringNotContainsString( 'The saved time is', $html );
 
         $this->assertStringNotContainsString( 'querycache', $this->summaryHtml( null ), 'cache off: no chip' );
         $this->assertStringNotContainsString( 'querycache', $this->summaryHtml( array( 'measured' => false ) ), 'nothing measured: no chip' );
+    }
+
+    /** DQ-06 */
+    public function testSavedShare()
+    {
+        $this->assertSame( 200, eZDBQueryCache::savedShare( 200, 100 ), 'saved twice the request: three times as long without the cache' );
+        $this->assertSame( 50, eZDBQueryCache::savedShare( 50.2, 100.0 ) );
+        $this->assertNull( eZDBQueryCache::savedShare( 0.3, 100 ), 'nothing saved' );
+        $this->assertNull( eZDBQueryCache::savedShare( 100, null ), 'the request time unknown' );
+        $this->assertNull( eZDBQueryCache::savedShare( 100, 0 ) );
     }
 
     /** DQ-03 */
@@ -129,6 +145,21 @@ class expDebugBarQueryCacheTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'measured' => false, 'mode' => 'shared', 'level' => 'ok' ), expDebugBarReport::queryCacheFigures( null, $limits, 'shared' ) );
     }
 
+
+    /** DQ-07 */
+    public function testTheChipMeasuresTheSameSpanAsTheReportAndSaysHowManyTimesAsLong()
+    {
+        // the figures carry the page's time as the report row measured it (request_ms): the chip uses that, not the
+        // bar's own page time (0.1 s in summaryHtml())
+        $html = $this->summaryHtml( array( 'measured' => true ) + $this->snapshot( array( 'request_ms' => 50.0 ) ) + array( 'level' => 'ok' ) );
+        $this->assertMatchesRegularExpression( '/>QC 80 % · -186 ms \(373 %\)</u', $html );
+        $this->assertStringContainsString( 'without the cache about 236 ms instead of 50 ms (5 times as long)', $html );
+        // below the page's own time: the share says it, no factor
+        $html = $this->summaryHtml( array( 'measured' => true ) + $this->snapshot( array( 'saved_ms' => 40.0, 'request_ms' => 100.0 ) ) + array( 'level' => 'ok' ) );
+        $this->assertMatchesRegularExpression( '/>QC 80 % · -40 ms \(40 %\)</u', $html );
+        $this->assertStringNotContainsString( 'times as long', $html );
+        $this->assertStringNotContainsString( 'style=', $html );
+    }
     private function summaryHtml( $queryCache )
     {
         $summary = array( 'time' => 0.1, 'sql_count' => 3, 'sql_ms' => 2.0, 'memory' => 1048576, 'memory_limit' => 0, 'templates' => null,
