@@ -1038,9 +1038,9 @@ fieldset.a4-field > legend + * { clear: both; }
 /* <span class="a4-icon a4-bi-pencil" aria-hidden="true"></span>: a 1em square that takes currentColor as a mask
    of an SVG file in share/icons/bootstrap-icons/svg/ (Bootstrap Icons 1.13.1, MIT), so it follows the link or
    button around it, its hover and the dark mode. The name of a control belongs to the control (its text, title or
-   aria-label, or .a4-sr-only beside the icon), never to the icon. .is-small is 12px, .is-large 22px; inside a
-   button the icon takes the button's font size. One .a4-bi-<name> per file; add a file there and a class here
-   together. */
+   aria-label, or .a4-sr-only beside the icon), or to the icon itself as role="img" with aria-label when it stands
+   for a word inside a link. .is-small is 12px, .is-medium 16px, .is-large 22px; without them the icon takes the
+   font size around it. One .a4-bi-<name> per file; add a file there and a class here together. */
 .a4-icon {
   display: inline-block;
   flex: 0 0 auto;
@@ -1051,12 +1051,39 @@ fieldset.a4-field > legend + * { clear: both; }
   -webkit-mask: no-repeat center / contain;
   mask: no-repeat center / contain;
 }
+/* A control that is only an icon (a link, or a <button type="button|submit">): no frame, a 24px hit area, muted,
+   the accent on hover and focus. Its name goes in title and aria-label, or in .a4-sr-only inside it. */
+.a4-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  min-height: 24px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--a4-radius-s);
+  background: none;
+  color: var(--a4-muted);
+  font-size: var(--a4-text-l);
+  line-height: 1;
+  vertical-align: middle;
+  cursor: pointer;
+}
+a.a4-icon-btn, a.a4-icon-btn:visited { color: var(--a4-muted); }
+.a4-icon-btn:hover:not([disabled]):not(.is-disabled),
+.a4-icon-btn:focus-visible { background-color: var(--a4-soft); color: var(--a4-accent-text); }
+.a4-icon-btn:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 1px; }
+.a4-icon-btn[disabled], .a4-icon-btn.is-disabled { color: var(--a4-disabled); cursor: not-allowed; }
 .a4-icon.is-small { width: var(--a4-text-xs); height: var(--a4-text-xs); }
+.a4-icon.is-medium { width: var(--a4-text-l); height: var(--a4-text-l); }
 .a4-icon.is-large { width: var(--a4-text-xl); height: var(--a4-text-xl); }
 @media (forced-colors: active) {
   .a4-icon { forced-color-adjust: none; background-color: CanvasText; }
 }
 .a4-bi-arrow-90deg-up { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-90deg-up.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-90deg-up.svg); }
+.a4-bi-arrow-bar-down { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-bar-down.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-bar-down.svg); }
+.a4-bi-arrow-bar-up { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-bar-up.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-bar-up.svg); }
 .a4-bi-arrow-down { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-down.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-down.svg); }
 .a4-bi-arrow-up { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-up.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-up.svg); }
 .a4-bi-arrows-move { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/arrows-move.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/arrows-move.svg); }
