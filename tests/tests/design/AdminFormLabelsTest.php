@@ -2,7 +2,8 @@
 /**
  * Every form control of admin4's templates has an accessible name: a <label for> on its id, a <label> around it,
  * aria-label or aria-labelledby. A title or a placeholder is not a name. Hidden fields, buttons with a value and
- * controls hidden from assistive technology (aria-hidden="true") need none.
+ * controls hidden from assistive technology (aria-hidden="true") need none. Labels point at ids that exist, an
+ * aria-label does not replace a label that has text, and includes that take their id as a parameter get one.
  * doc/bc/6.0/admin4-styling.md (review checklist).
  *
  * The check reads the template source, not the rendered page: a <label for> must name the id in the same file, and
@@ -21,11 +22,13 @@ class AdminFormLabelsTest extends PHPUnit\Framework\TestCase
     const TEMPLATE_DIRS = array( 'design/admin4/templates', 'design/admin4/override/templates' );
 
     /**
-     * Includes whose control takes its id from a parameter: every template that includes them puts a
-     * <label for> on that id, checked in testIncludedControlsAreNamedWhereTheyAreIncluded().
+     * Includes whose control takes its id from a parameter: every admin4 template that includes them passes the
+     * parameter and puts a <label for> on that id, checked in testIncludedControlsAreNamedWhereTheyAreIncluded().
+     * Template => array( include uri, parameter ).
      */
     const INCLUDED = array(
         'design/admin4/templates/setup/rad_licence_select.tpl' => array( 'design:setup/rad_licence_select.tpl', 'select_id' ),
+        'design/standard/templates/shop/country/edit.tpl' => array( 'design:shop/country/edit.tpl', 'select_id' ),
     );
 
     private static function root()
@@ -54,11 +57,34 @@ class AdminFormLabelsTest extends PHPUnit\Framework\TestCase
      * The form controls of a template source that have no accessible name, as "line: tag".
      * Comments ({* *} and <!-- -->) are blanked first, keeping the line numbers.
      */
-    public static function unnamedControls( $source )
+    /** The source with {* *} and <!-- --> comments blanked, line numbers kept */
+    private static function code( $source )
     {
         $blank = function ( $m ) { return preg_replace( '/[^\n]/', ' ', $m[0] ); };
-        $code = preg_replace_callback( '/\{\*.*?\*\}/s', $blank, $source );
-        $code = preg_replace_callback( '/<!--.*?-->/s', $blank, $code );
+        return preg_replace_callback( '/<!--.*?-->/s', $blank, preg_replace_callback( '/\{\*.*?\*\}/s', $blank, $source ) );
+    }
+
+    /** The value of attribute $name in $tag, braces of template code respected; null without it */
+    private static function attribute( $tag, $name )
+    {
+        if ( !preg_match( '/\s' . $name . '="/', $tag, $m, PREG_OFFSET_CAPTURE ) )
+            return null;
+        $start = $m[0][1] + strlen( $m[0][0] );
+        for ( $i = $start, $depth = 0, $n = strlen( $tag ); $i < $n; $i++ )
+        {
+            if ( $tag[$i] === '{' )
+                $depth++;
+            else if ( $tag[$i] === '}' )
+                $depth--;
+            else if ( $tag[$i] === '"' && $depth === 0 )
+                return substr( $tag, $start, $i - $start );
+        }
+        return null;
+    }
+
+    public static function unnamedControls( $source )
+    {
+        $code = self::code( $source );
         preg_match_all( '/\bfor="([^"]*)"/', $code, $forMatches );
         $labelled = array_flip( $forMatches[1] );
 
@@ -112,19 +138,103 @@ class AdminFormLabelsTest extends PHPUnit\Framework\TestCase
             $callers = 0;
             foreach ( $templates as $callerPath => $source )
             {
-                if ( !preg_match_all( "/\\{include uri='" . preg_quote( $uri, '/' ) . "'[^}]*\\b" . $parameter . "='([^']+)'/", $source, $m ) )
+                if ( !preg_match_all( "/\\{include uri='" . preg_quote( $uri, '/' ) . "'[^}]*\\}/", self::code( $source ), $includes ) )
                     continue;
-                foreach ( $m[1] as $id )
+                foreach ( $includes[0] as $call )
                 {
                     $callers++;
-                    $this->assertStringContainsString( 'for="' . $id . '"', $source, "$callerPath includes $uri with $parameter=$id but has no <label for> on it" );
+                    $this->assertMatchesRegularExpression( "/\\b" . $parameter . "='[^']+'/", $call, "$callerPath includes $uri without $parameter, so nothing can name its control" );
+                    preg_match( "/\\b" . $parameter . "='([^']+)'/", $call, $id );
+                    $this->assertStringContainsString( 'for="' . $id[1] . '"', $source, "$callerPath includes $uri with $parameter={$id[1]} but has no <label for> on it" );
                 }
             }
-            $this->assertGreaterThan( 0, $callers, "$uri is included nowhere; remove it from INCLUDED" );
-            $unnamed = self::unnamedControls( $templates[$path] );
-            $this->assertCount( 1, $unnamed, "$path should hold only its parameter-named control" );
-            $this->assertStringContainsString( 'id="{$' . $parameter . '|wash}"', $templates[$path] );
+            $this->assertGreaterThan( 0, $callers, "$uri is included nowhere in admin4; remove it from INCLUDED" );
+            $control = (string)file_get_contents( self::root() . '/' . $path );
+            $this->assertCount( 1, self::unnamedControls( $control ), "$path should hold only its parameter-named control" );
+            $this->assertMatchesRegularExpression( '/\\bid="\\{\\$' . $parameter . '\\|wash\\}"/', $control, "$path should take its id from $parameter" );
         }
+    }
+
+    /**
+     * A <label for> and aria-labelledby point at an id of the same template, or at the id an include of it is given
+     * (select_id='...'). Ids built from template code ({...}) are left out: they exist only once rendered.
+     */
+    public function testLabelsPointAtAnIdOfTheSameTemplate()
+    {
+        $problems = array();
+        foreach ( self::templates() as $path => $source )
+        {
+            $code = self::code( $source );
+            preg_match_all( '/\\bid="([^"{]+)"/', $code, $ids );
+            preg_match_all( "/\\b(?:[a-z_]*_id|id_name)=['\"]?([A-Za-z][\\w-]*)/", $code, $passed );
+            $known = array_flip( array_merge( $ids[1], $passed[1] ) );
+            preg_match_all( '/(?<![\\w-])for="([^"]+)"/', $code, $fors );
+            preg_match_all( '/(?<![\\w-])aria-labelledby="([^"]+)"/', $code, $labelledby );
+            $refs = $fors[1];
+            foreach ( $labelledby[1] as $list )
+                $refs = array_merge( $refs, preg_split( '/\\s+/', trim( $list ) ) );
+            foreach ( $refs as $ref )
+            {
+                if ( strpos( $ref, '{' ) === false && strpos( $ref, '}' ) === false && !isset( $known[$ref] ) )
+                    $problems[] = "$path: $ref";
+            }
+        }
+        $this->assertSame( array(), $problems, 'A label for or aria-labelledby points at no id of its template' );
+    }
+
+    /** The words of a label: its content without tags, :, whitespace and |wash, for comparing two names */
+    private static function words( $text )
+    {
+        // tags, and template code that prints nothing ({if}, {else}, {/if}, {def} ...); output ({'...'}, {$...}) stays
+        $text = preg_replace( '/\\{\\/?[a-z][^{}]*\\}/', '', preg_replace( '/<[^>]*>/', '', (string)$text ) );
+        return trim( str_replace( array( '|wash', ':' ), '', preg_replace( '/\\s+/', '', $text ) ) );
+    }
+
+    /**
+     * A control with a label that has text (<label for> or a label around it) takes its name from it: an aria-label
+     * with other words would replace the label (WCAG 2.5.3 Label in Name). A label around the control without text
+     * of its own (a styled tick box) names nothing, so the aria-label is the name there.
+     */
+    public function testAVisibleLabelIsNotOverriddenByAnAriaLabel()
+    {
+        $problems = array();
+        foreach ( self::templates() as $path => $source )
+        {
+            $code = self::code( $source );
+            preg_match_all( '/\\bfor="([^"]*)"/', $code, $fors );
+            $labelled = array_flip( $fors[1] );
+            preg_match_all( '/<(input|select|textarea)\\b/i', $code, $starts, PREG_OFFSET_CAPTURE );
+            foreach ( $starts[0] as $start )
+            {
+                $end = $start[1];
+                for ( $depth = 0, $n = strlen( $code ); $end < $n; $end++ )
+                {
+                    if ( $code[$end] === '{' ) $depth++;
+                    else if ( $code[$end] === '}' ) $depth--;
+                    else if ( $code[$end] === '>' && $depth === 0 ) break;
+                }
+                $tag = substr( $code, $start[1], $end - $start[1] + 1 );
+                if ( self::attribute( $tag, 'aria-label' ) === null )
+                    continue;
+                $id = self::attribute( $tag, 'id' );
+                $before = strtolower( substr( $code, 0, $start[1] ) );
+                $label = null;
+                if ( $id !== null && isset( $labelled[$id] ) && preg_match( '/<label\\b[^>]*\\bfor="' . preg_quote( $id, '/' ) . '"[^>]*>(.*?)<\\/label>/s', $code, $m ) )
+                    $label = $m[1];
+                else if ( substr_count( $before, '<label' ) > substr_count( $before, '</label>' ) )
+                {
+                    $open = strrpos( $before, '<label' );
+                    $close = stripos( $code, '</label>', $end );
+                    $inside = substr( $code, $open, $close - $open );
+                    $label = preg_replace( '/^<label[^>]*>/', '', str_replace( $tag, '', $inside ) );
+                }
+                if ( $label === null || self::words( $label ) === '' )
+                    continue;
+                if ( self::words( $label ) !== self::words( self::attribute( $tag, 'aria-label' ) ) )
+                    $problems[] = $path . ':' . ( substr_count( $before, "\n" ) + 1 );
+            }
+        }
+        $this->assertSame( array(), $problems, 'A control with a visible label also carries an aria-label, which replaces the label' );
     }
 
     /** The checker itself: what counts as a name and what does not */

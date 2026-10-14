@@ -206,7 +206,8 @@ For every template or stylesheet change in an administration design or an extens
 - [ ] Every form field has a name: a `<label for>` on its id, a `<label>` around it, or `aria-labelledby` on text
       that is shown (a column header, the row's name, a card heading); `aria-label` only where no text is shown. A
       `title` or a `placeholder` is not a name. Around plain text use `<label class="a4-inline-label">`, which keeps
-      the text's look (`tests/tests/design/AdminFormLabelsTest.php` checks admin4).
+      the text's look. A field with a label that has text gets no `aria-label` beside it: it would replace the label's
+      words (WCAG 2.5.3) (`tests/tests/design/AdminFormLabelsTest.php` checks admin4).
 - [ ] Colours, radius, spacing and fonts are `var(--a4-*)` tokens: no `#hex`, `rgb()`, named colour, px radius or
       spacing literal, and no local custom properties.
 - [ ] A new token is in `components.css` with a light and a dark value, and documented on this page.
