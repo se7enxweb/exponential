@@ -133,6 +133,7 @@ White text on it is only 3:1, so filled controls with white text use its darker 
 | Empty state, notices | `.a4-empty`; `.a4-notice` (`.is-ok`, `.is-warn`, `.is-bad`, `.is-info`) |
 | Folding | `details.a4-fold` > `summary` + `.a4-fold-body` (`.is-bad`, `.is-warn`); `details.a4-confirm` (a confirmation that opens in place) |
 | Steps | `ol.a4-steps` > `li.is-done` / `li.is-current` |
+| Timeline | `ol.a4-timeline` > `li` (`.is-ok`, `.is-warn`, `.is-bad`, `.is-info`) > `time.a4-timeline-time` (with `datetime`) + `.a4-timeline-body` (`.a4-timeline-meta`, a state badge); for short chronological lists without actions per row, newest first; the dot repeats the state a badge says in words. Audit events: `parts/audit_timeline.tpl` (`events`, `show_reason`) |
 | Code | `.a4-pre` (`.is-tall`), `.a4-kbd` |
 | Amounts | `.a4-meter` > `span`, `.a4-bars` > children, sized by `.a4-pct-0` ... `.a4-pct-100` (`--a4-pct`) |
 | Icons | `.a4-icon` with one `.a4-bi-<name>` (a Bootstrap icon of `share/icons/bootstrap-icons/svg/`, in `currentColor`; `.is-small`, `.is-medium`, `.is-large`); `.a4-icon-btn` (a link or button that is only an icon) |
