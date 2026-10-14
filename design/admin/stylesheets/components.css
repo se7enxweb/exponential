@@ -148,6 +148,7 @@
   --a4-z-modal: 1070;
   --a4-z-toast: 1080;
   --a4-z-drag: 9000;
+  --a4-z-skip-link: 10000;   /* the skip link, shown while focused, over everything */
   --a4-z-drag-mask: 9500;
 
   /* the browser's own parts (scrollbars, select popups, date pickers, autofill) follow the mode */
@@ -293,7 +294,7 @@ html[data-a4-theme="dark"] {
   position: fixed;
   top: var(--a4-space-2);
   left: var(--a4-space-2);
-  z-index: 10000;
+  z-index: var(--a4-z-skip-link);
   padding: var(--a4-space-2) var(--a4-space-4);
   border-radius: var(--a4-radius-s);
   background-color: var(--a4-card);

@@ -318,7 +318,7 @@ details.a4-setup-warnings > summary { cursor: pointer; }
 /* The bar that says what is not saved yet; it stays in view while the list scrolls */
 .a4-setup-bar.is-dirty { border-color: var(--a4-accent); background-color: var(--a4-accent-soft); box-shadow: inset 4px 0 0 var(--a4-accent); }
 .a4-setup-bar.is-dirty .a4-meta { color: var(--a4-ink); }
-.a4-setup-pending { position: sticky; top: var(--a4-space-2); z-index: 5; }
+.a4-setup-pending { position: sticky; top: var(--a4-space-2); z-index: var(--a4-z-sticky); }
 
 /* The list of extensions in load order: position and grip | name, badges, problems | actions */
 .a4-setup-exts { container-type: inline-size; display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--a4-space-2); margin: 0; padding: 0; list-style: none; }

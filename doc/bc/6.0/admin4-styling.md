@@ -144,6 +144,7 @@ number (0, 1 and -1 for order inside one component excepted). Theme-independent,
 | `--a4-z-overlay` / `--a4-z-modal` | 1060 / 1070 | a dialog's mask and the dialog (also the base rule of `theme/modalwindow.css`) |
 | `--a4-z-toast` | 1080 | short-lived notices |
 | `--a4-z-drag` / `--a4-z-drag-mask` | 9000 / 9500 | column drag and resize proxies of the data tables |
+| `--a4-z-skip-link` | 10000 | the skip link while it is focused, over everything |
 
 Inside a parent with its own stacking context (the fixed header, a transformed card) a token only orders against that
 parent's children. `AdminStylingRulesTest::testStackingComesFromTheLayerTokens` fails on any other z-index and on a
