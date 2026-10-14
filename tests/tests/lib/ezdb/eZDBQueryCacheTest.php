@@ -18,8 +18,12 @@
  *  QC-14 — The database's own catalogue (sqlite_master, sqlite_stat1, pg_*, information_schema) is never cached
  *  QC-15 — Oracle: sequences, the clock, the SCN and the catalogue are never cached; PL/SQL blocks write
  *  QC-16 — Oracle: an ALTER SESSION SET of NLS_*, CURSOR_SHARING, TIME_ZONE writes nothing; any other makes everything stale
+ *  QC-17 — The debug report: accumulators, one timing point, the bottom report as text and HTML
+ *  QC-18 — No debug report without the debug output or with Report=disabled
  *  QC-19 — Oracle: connections with the same session settings share results, also with NLS_COMP/NLS_SORT
  *  QC-20 — Oracle: a result is never answered to a session with other settings
+ *  QC-21 — Literals are masked under SQL-standard and MySQL backslash quoting
+ *  QC-22 — The debug report starts again after eZDebug::reset() and per request
  *
  * No database: the driver is a stand-in object with the properties the cache
  * reads, and the state lives in a directory of its own under var/tmp.
@@ -472,5 +476,191 @@ class eZDBQueryCacheTest extends PHPUnit\Framework\TestCase
         $off = $this->driver();
         eZDBQueryCache::noteWrite( $off, 'ALTER SESSION SET NLS_SORT=GERMAN' );
         $this->assertSame( '', eZDBQueryCache::sessionKey( $off ) );
+    }
+
+    /** Runs $test with a fresh eZDebug (debug output on or off, logs in the test directory), and puts the old one back. */
+    private function withDebug( $on, callable $test )
+    {
+        if ( !class_exists( 'eZDebug' ) )
+            $this->markTestSkipped( 'needs eZDebug' );
+        $keys = array( 'eZDebugGlobalInstance', 'eZDebugEnabled', 'eZDebugLogOnly' );
+        $saved = array();
+        foreach ( $keys as $key )
+            $saved[$key] = array_key_exists( $key, $GLOBALS ) ? array( $GLOBALS[$key] ) : null;
+        $debug = new eZDebug();
+        foreach ( $debug->LogFiles as $level => $file )
+            $debug->LogFiles[$level] = array( $this->dir . '/', $file[1] );
+        $GLOBALS['eZDebugGlobalInstance'] = $debug;
+        $GLOBALS['eZDebugEnabled'] = $on;
+        $GLOBALS['eZDebugLogOnly'] = false;
+        try
+        {
+            $test( $debug );
+        }
+        finally
+        {
+            foreach ( $saved as $key => $value )
+            {
+                if ( $value === null )
+                    unset( $GLOBALS[$key] );
+                else
+                    $GLOBALS[$key] = $value[0];
+            }
+        }
+    }
+
+    /** QC-17 */
+    public function testDebugReport()
+    {
+        $this->withDebug( true, function ( $debug )
+        {
+            $this->newRequest();
+            $sql = 'SELECT * FROM ezcontentobject';
+            $this->select( $sql );
+            $this->assertNotNull( $this->select( $sql ), 'hit' );
+            $this->select( 'SELECT NOW() FROM ezsection' );
+            $this->write( 'CALL some_procedure( \'secret\' ) /* <b> */' );
+
+            foreach ( array( 'querycache_hit' => 1, 'querycache_miss' => 1, 'querycache_store' => 1, 'querycache_skip' => 1 ) as $key => $count )
+            {
+                $this->assertSame( $count, $debug->TimeAccumulatorList[$key]['count'], $key );
+                $this->assertSame( 'querycache_total', $debug->TimeAccumulatorList[$key]['in_group'], $key );
+            }
+            $this->assertSame( array( 'eZDBQueryCache', 'debugReport' ), $debug->bottomReportsList['Query cache'] );
+            $points = array_column( $debug->TimePoints, 'Description' );
+            $this->assertCount( 1, preg_grep( '/^Query cache: state read \(generation \d+\)$/', $points ), 'one timing point per request' );
+
+            $text = eZDBQueryCache::debugReport( false );
+            $this->assertMatchesRegularExpression( '/^Hits +1$/m', $text );
+            $this->assertMatchesRegularExpression( '/^Misses +1$/m', $text );
+            $this->assertMatchesRegularExpression( '/^Hit rate +50 %$/m', $text );
+            $this->assertMatchesRegularExpression( '/^Not cached: statement \(volatile or tables not readable\) +1$/m', $text );
+            $this->assertMatchesRegularExpression( '/^Database time saved \(estimated\) +[0-9.]+ ms$/m', $text );
+            $this->assertStringContainsString( "Made everything stale: CALL some_procedure( '?' ) /* <b> */", $text, 'literals masked' );
+            $this->assertStringNotContainsString( 'secret', $text );
+
+            $html = eZDBQueryCache::debugReport( true );
+            $this->assertStringContainsString( '<table id="querycache"', $html );
+            $this->assertStringContainsString( 'CALL some_procedure( &#039;?&#039; ) /* &lt;b&gt; */', $html );
+            $this->assertStringNotContainsString( '<b>', $html );
+        } );
+    }
+
+    /** QC-18 */
+    public function testDebugReportStaysOffWithoutDebugOutputOrWhenDisabled()
+    {
+        $this->withDebug( false, function ( $debug )
+        {
+            $this->newRequest();
+            $this->select( 'SELECT * FROM ezcontentobject' );
+            $this->select( 'SELECT * FROM ezcontentobject' );
+            $this->assertSame( array(), $debug->TimeAccumulatorList );
+            $this->assertSame( array(), $debug->bottomReportsList );
+            $this->assertSame( '', eZDBQueryCache::debugReport( true ) );
+        } );
+        $this->withDebug( true, function ( $debug )
+        {
+            // eZDebug::reset() between two jobs of a worker: the report comes back with the next statement
+            $this->newRequest();
+            $this->select( 'SELECT * FROM ezcontentobject' );
+            $debug->bottomReportsList = array();
+            $debug->TimeAccumulatorList = array();
+            $this->select( 'SELECT * FROM ezcontentobject' );
+            $this->assertArrayHasKey( 'Query cache', $debug->bottomReportsList );
+            $this->assertSame( 1, $debug->TimeAccumulatorList['querycache_hit']['count'] );
+        } );
+        $this->withDebug( true, function ( $debug )
+        {
+            $this->newRequest( array( 'report' => false ) );
+            $this->select( 'SELECT * FROM ezcontentobject' );
+            $this->assertSame( array(), $debug->TimeAccumulatorList, 'querycache.ini [DebugSettings] Report=disabled' );
+            $this->assertSame( '', eZDBQueryCache::debugReport( true ) );
+        } );
+    }
+
+    /** QC-21 */
+    public function testLiteralsAreMaskedUnderBothQuotingRules()
+    {
+        foreach ( array(
+            "SELECT 1" => "SELECT 1",
+            'CALL p( "ident" )' => 'CALL p( "ident" )',
+            "UPDATE t SET a = 'x''y' WHERE b = 'z'" => "UPDATE t SET a = '?' WHERE b = '?'",
+            "CALL p( 'it\\'s secret' )" => "CALL p( '?'", // the standard reading ends the literal at \', the rest is masked to the end
+            "CALL p( 'a\\\\' , 'b' )" => "CALL p( '?' , '?' )",
+            "CALL p( 'C:\\', 'hidden' )" => "CALL p( '?'",
+            "CALL p( 'open" => "CALL p( '?'",
+            "CALL p( 'ends in a backslash\\" => "CALL p( '?'",
+            "CALL p( 'two\nlines' ), q( 'x' )" => "CALL p( '?' ), q( '?' )",
+        ) as $sql => $want )
+            $this->assertSame( $want, eZDBQueryCache::maskLiterals( $sql ), $sql );
+
+        $this->withDebug( true, function ( $debug )
+        {
+            $this->newRequest();
+            $this->select( 'SELECT * FROM ezcontentobject' );
+            // as MySQL escapes (\' and \\), and as Oracle, PostgreSQL and SQLite quote ('' and a plain \)
+            $this->write( "CALL some_procedure( 'it\\'s secret', 'C:\\\\', 'hidden' )" );
+            $this->write( "CALL ora_procedure( 'it''s secret', 'C:\\', 'hidden' )" );
+            $this->write( 'CALL other( \'' . str_repeat( 'x', 5000 ) . 'tail\' )' );
+            $text = eZDBQueryCache::debugReport( false );
+            foreach ( array( 'secret', 's secret', 'hidden', 'tail', 'xxx' ) as $part )
+                $this->assertStringNotContainsString( $part, $text, 'no part of a literal: ' . $part );
+            $this->assertStringContainsString( "Made everything stale: CALL some_procedure( '?'", $text );
+            $this->assertStringContainsString( "Made everything stale: CALL ora_procedure( '?', '?'\n", $text, 'from C:\\ on both readings disagree: masked to the end' );
+            $this->assertStringContainsString( "Made everything stale: CALL other( '?'", $text );
+        } );
+    }
+
+    /** QC-22 */
+    public function testDebugReportStartsAgainAfterAResetAndPerRequest()
+    {
+        $this->withDebug( true, function ( $debug )
+        {
+            $points = function () use ( $debug )
+            {
+                return count( preg_grep( '/^Query cache: state read \(generation \d+\)$/', array_column( $debug->TimePoints, 'Description' ) ) );
+            };
+            $sql = 'SELECT * FROM ezcontentobject';
+            $this->newRequest();
+            $this->select( $sql );
+            $this->assertNotNull( $this->select( $sql ) );
+            $this->write( 'UPDATE ezsection SET name = 1' );
+            $text = eZDBQueryCache::debugReport( false );
+            $this->assertMatchesRegularExpression( '/^Hits +1$/m', $text );
+            $this->assertMatchesRegularExpression( '/^Writes +1$/m', $text );
+            $this->assertStringNotContainsString( 'Made everything stale', $text, 'a write of known tables is only counted' );
+            $this->assertSame( 1, $points() );
+
+            // eZDBQueryCache::flushStats() mid-request (Setup > System information) leaves the report as it is
+            eZDBQueryCache::flushStats();
+            $this->assertMatchesRegularExpression( '/^Hits +1$/m', eZDBQueryCache::debugReport( false ) );
+
+            // eZDebug::reset() in the same process (a worker between two jobs), the state still current
+            $debug->reset();
+            $this->assertNotNull( $this->select( $sql ) );
+            $this->assertArrayHasKey( 'Query cache', $debug->bottomReportsList );
+            $this->assertSame( 2, $points(), 'the timing point comes again after a reset' );
+            $text = eZDBQueryCache::debugReport( false );
+            $this->assertMatchesRegularExpression( '/^Hits +1$/m', $text, 'the job counts its own statements' );
+            $this->assertMatchesRegularExpression( '/^Misses +0$/m', $text );
+            $this->assertMatchesRegularExpression( '/^Writes +0$/m', $text );
+            $this->assertSame( 1, $debug->TimeAccumulatorList['querycache_hit']['count'] );
+
+            // the next request of a persistent worker: nothing carried over
+            $this->newRequest();
+            $this->select( $sql );
+            $text = eZDBQueryCache::debugReport( false );
+            $this->assertMatchesRegularExpression( '/^Hits +0$/m', $text );
+            $this->assertMatchesRegularExpression( '/^Misses +1$/m', $text );
+            $this->assertSame( 3, $points() );
+
+            // the debug output switched off, then a reset: nothing registered, no accumulator half made
+            $GLOBALS['eZDebugEnabled'] = false;
+            $debug->reset();
+            $this->select( $sql );
+            $this->write( 'DECLARE n NUMBER; BEGIN n := 1; END;' );
+            $this->assertSame( array(), $debug->TimeAccumulatorList );
+            $this->assertSame( array(), $debug->bottomReportsList );
+        } );
     }
 }

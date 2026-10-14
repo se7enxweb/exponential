@@ -117,6 +117,9 @@ ExcludeTables[]
 ExcludeTables[]=ezsession
 ExcludeTables[]=ezpending_actions
 ExcludeTables[]=ezcollab_notification_rule
+
+[DebugSettings]
+Report=enabled    # with the debug output on: accumulators, timing point, report (see "In the debug output")
 ```
 
 | Mode | What is kept | Where |
@@ -256,6 +259,60 @@ the admin served by Velocity (port 8080). The state (generation, tables) is shar
 Below it the SQL profile (next section) and its switch.
 
 
+## In the debug output
+
+With the debug output on (`site.ini [DebugSettings] DebugOutput=enabled`) and
+`querycache.ini [DebugSettings] Report=enabled` (the default), every request shows what the cache did for it.
+`Report=disabled` keeps all three parts below out of the debug output; the cache itself works the same.
+
+**Time accumulators**, group *Query cache* (the time is that of the cache's own work, not of the database):
+
+| Accumulator | Counts | Time |
+|---|---|---|
+| *Hits* | statements answered from the cache; they never reach the driver, so they are missing from the driver's accumulator (e.g. *Oracle_queries*, *mysqli_query*) | the lookup that answered |
+| *Misses (lookup only)* | cacheable statements not in the cache (or stale) that went to the database | only the lookup; the database time stays with the driver's accumulator |
+| *Stores* | results kept after a miss | copying the rows into the memo (and APCu) |
+| *Not cached* | statements neither answered nor stored, for one of the reasons the report lists | the lookup |
+
+**Timing point** *Query cache: state read (generation n)*: where the request (or, after `eZDebug::reset()`, the job)
+first looks at the shared state file; *n* is the generation it found, the number every clear and every write of
+unknown tables raises.
+
+**Report** at the bottom, *Query cache* (text and HTML, every value escaped):
+
+| Line | What it means |
+|---|---|
+| Mode | `off`, `request` or `shared`; `shared (no APCu: works as request)` where APCu is missing or off |
+| Generation | the generation of the state as this request sees it |
+| Hits, Misses, Hit rate | as the accumulators; the rate is hits of hits plus misses |
+| Stored | results stored |
+| Not cached | statements not answered and not stored, then one line *Not cached: reason* per reason: *inside a transaction*, *statement (volatile or tables not readable)*, *excluded table* (`ExcludeTables`), *temporary table*, *catalogue table*, *more rows than MaxRows* (that one is also counted as a miss) |
+| Writes | writes the cache saw (each makes the tables it names stale) |
+| Database time saved (estimated) | the sum, over the hits, of the time each statement took the database with fetching its rows when it was stored; an upper estimate. Entries stored before this was recorded add "+ n hits on entries without a duration" |
+| Made everything stale | up to 20 writes whose tables cannot be read (a PL/SQL block, `CALL`, an `ALTER SESSION` that is not a [session setting](#session-settings-oracle-alter-session) ...), then "... and n more" |
+
+The report counts what happened since it started: from the first statement of the request with the debug output on,
+or again from the first statement after `eZDebug::reset()`. Its counters are its own, so Setup > System information
+flushing the request's counters (`eZDBQueryCache::flushStats()`) does not change them. *Not cached* is larger than the
+*uncacheable* counter of Setup > System information, which leaves out excluded tables and transactions.
+
+**Literals masked.** A statement in *Made everything stale* has each string literal replaced by `'?'`, so values from
+requests and content stay out of the debug output (`eZDBQueryCache::maskLiterals()`). Where a literal ends depends on
+the database: SQL-standard quoting doubles a quote (`'it''s'`: Oracle, PostgreSQL, SQLite), MySQL also escapes with a
+backslash (`'it\'s'`, what its `escapeString()` writes), and `'C:\'` is a whole literal in standard SQL but not in
+MySQL. Both readings are masked, and an unterminated quote is masked to the end, so no part of a literal shows under
+either reading; where they disagree, more than the literal is masked (`CALL p( 'it\'s', 1 )` shows as
+`CALL p( '?'`). Only the first 4 KB of a statement are read, and the line is cut at 200 characters. Double-quoted
+text (an identifier, or a string in MySQL without `ANSI_QUOTES`) and numbers are shown as they are.
+
+**Persistent workers** (Exponential Velocity): `resetRequest()`, which the web kernel runs for every request, drops
+the report, so nothing is carried from one request to the next; after `eZDebug::reset()` the next statement
+registers the accumulator group and the report again, starts new counters and sets the timing point again.
+
+**Cost.** With the debug output off the cache only tests, per statement, whether it is on (no call, measured within
+the noise of a lookup hit of ~2.7 µs); the duration stored with each entry is one `microtime()` per store. With it
+on, the cost is that of the accumulators.
+
 ## The SQL profiler
 
 `eZDBInterface::profileSQL()`, called by the MySQL driver after every
@@ -338,12 +395,16 @@ so the tests never touch the site's cache.
 | QC-14 | The database's own catalogue (`sqlite_master`, `sqlite_stat1`, `pg_*`, `information_schema`) is never cached |
 | QC-15 | Oracle: sequences, the clock, the SCN, `SYS_GUID`, `SYS_CONTEXT`, `DBMS_RANDOM` and the catalogue are never cached; a PL/SQL block makes everything stale, a bare `BEGIN` does not |
 | QC-16 | Oracle: an `ALTER SESSION SET` of `NLS_*`, `CURSOR_SHARING`, `TIME_ZONE` (the statement ezoracle runs on connect, with or without `OracleCaseInsensitive`) writes nothing; any other `ALTER SESSION` (`CURRENT_SCHEMA`, `CONTAINER`, `EVENTS`, `ENABLE ...`, a second statement) makes everything stale |
+| QC-17 | With the debug output on: the accumulators of the group *Query cache*, one timing point, the bottom report as text and HTML (escaped) with hits, misses, hit rate, reasons and the writes that made everything stale |
+| QC-18 | Without the debug output, or with `Report=disabled`, no accumulator, no report |
 | QC-19 | Oracle: a result is answered to the next connections with the same session settings, and connecting raises no generation, also with `NLS_COMP`/`NLS_SORT` |
 | QC-20 | Oracle: a result is never answered to a session with other settings (`NLS_SORT=GERMAN` against `BINARY_CI`); a later `ALTER SESSION` gives the connection its new key; with `Mode=off` nothing is noted |
+| QC-21 | Literals are masked under both quoting rules (`''`, `\'`, `'C:\'`, unterminated), and no part of one reaches the report, also from a statement longer than 4 KB |
+| QC-22 | After `eZDebug::reset()` in the same process the report, its own counters and the timing point start again; `flushStats()` leaves them alone; the next request carries nothing over; with the debug output switched off nothing is registered |
 
 ```bash
 php vendor/bin/phpunit --testsuite lib --filter eZDBQueryCacheTest
-# OK (18 tests, 164 assertions), about 2 s (QC-08 and QC-12 wait a second each)
+# OK (22 tests, 227 assertions), about 2 s (QC-08 and QC-12 wait a second each)
 ```
 
 **On a running site** (MySQL, the real drivers), each checked on a test installation
