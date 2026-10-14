@@ -475,32 +475,65 @@ class eZDBQueryCache
     }
 
     /**
+     * This request's (or, after eZDebug::reset(), this job's) figures for the
+     * debug output, from the report's own counters, or null while nothing was
+     * measured (debug output off, Report=disabled, or no statement yet). Reads
+     * no state and sets no timing point: 'generation' is the one the request
+     * last read, null before it read any.
+     *
+     * @return array|null mode, apcu, generation, hits, misses, stores, not_cached,
+     *                    writes, hit_rate (percent, null without lookups), saved_ms,
+     *                    hits_unmeasured, skipped (reason => count), stale (statements, literals masked), stale_more
+     */
+    public static function debugSnapshot()
+    {
+        if ( self::$debug === null )
+            return null;
+        $d = self::$debug;
+        $looked = $d['count']['hit'] + $d['count']['miss'];
+        return array(
+            'mode' => self::settings()['mode'],
+            'apcu' => self::apcuUsable(),
+            'generation' => self::$state !== null ? (int)self::$state['generation'] : null,
+            'hits' => $d['count']['hit'],
+            'misses' => $d['count']['miss'],
+            'stores' => $d['count']['store'],
+            'not_cached' => $d['count']['skip'],
+            'writes' => $d['count']['write'],
+            'hit_rate' => $looked > 0 ? round( 100 * $d['count']['hit'] / $looked, 1 ) : null,
+            'saved_ms' => round( $d['saved_ms'], 1 ),
+            'hits_unmeasured' => $d['hits_unmeasured'],
+            'skipped' => $d['skipped'],
+            'stale' => $d['stale'],
+            'stale_more' => $d['stale_more'],
+        );
+    }
+
+    /**
      * The bottom report of the debug output: this request's (or, after
      * eZDebug::reset(), this job's) counters, the database time the hits
      * saved, why statements were not cached and which writes made everything
-     * stale.
+     * stale. The Exp Debug bar shows it in its SQL tab.
      *
      * @param bool $as_html
      * @return string
      */
     public static function debugReport( $as_html = true )
     {
-        if ( self::$debug === null )
+        $d = self::debugSnapshot();
+        if ( $d === null )
             return '';
-        $d = self::$debug;
-        $looked = $d['count']['hit'] + $d['count']['miss'];
-        $mode = self::settings()['mode'];
         $rows = array(
-            'Mode' => $mode . ( $mode === 'shared' && !self::apcuUsable() ? ' (no APCu: works as request)' : '' ),
+            'Mode' => $d['mode'] . ( $d['mode'] === 'shared' && !$d['apcu'] ? ' (no APCu: works as request)' : '' ),
             // as the request last read it; the report itself reads nothing and sets no timing point
-            'Generation' => self::$state !== null ? (int)self::$state['generation'] : 'not read',
-            'Hits' => $d['count']['hit'],
-            'Misses' => $d['count']['miss'],
-            'Hit rate' => $looked > 0 ? round( 100 * $d['count']['hit'] / $looked, 1 ) . ' %' : '-',
-            'Stored' => $d['count']['store'],
-            'Not cached' => $d['count']['skip'],
-            'Writes' => $d['count']['write'],
-            'Database time saved (estimated)' => round( $d['saved_ms'], 1 ) . ' ms'
+            'Generation' => $d['generation'] ?? 'not read',
+            'Hits' => $d['hits'],
+            'Misses' => $d['misses'],
+            'Hit rate' => $d['hit_rate'] !== null ? $d['hit_rate'] . ' %' : '-',
+            'Stored' => $d['stores'],
+            'Not cached' => $d['not_cached'],
+            'Writes' => $d['writes'],
+            'Database time saved (estimated)' => $d['saved_ms'] . ' ms'
                 . ( $d['hits_unmeasured'] ? ' (+ ' . $d['hits_unmeasured'] . ' hits on entries without a duration)' : '' ),
         );
         foreach ( $d['skipped'] as $reason => $n )
@@ -530,6 +563,78 @@ class eZDBQueryCache
     protected static function html( $value )
     {
         return htmlspecialchars( (string)$value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8' );
+    }
+
+    /** inventory() reads at most this many APCu entries, and for at most this many seconds. */
+    const INVENTORY_MAX_ENTRIES = 5000;
+    const INVENTORY_MAX_SECONDS = 1.0;
+
+    /**
+     * What this server holds, for the cache tab of the Exp Debug bar: status()
+     * (settings, state, counters), the APCu memory, and the entries grouped by
+     * the tables they read (an entry that read several tables counts for each)
+     * with their rows, size and hits, and the largest entries. Entries carry no
+     * statement text, only its key. Reads the entries with their rows, at most
+     * INVENTORY_MAX_ENTRIES of them for at most INVENTORY_MAX_SECONDS: on request
+     * only. 'entries' and 'memory' count what was read ('truncated' when that was
+     * not all of it).
+     *
+     * @param int $limit tables and entries listed
+     * @return array status() plus 'sma' (size, available, used_pct) or null,
+     *               'tables', 'largest', 'entries_read', 'truncated'
+     */
+    public static function inventory( $limit = 15 )
+    {
+        $out = self::status( false ) + array( 'sma' => null, 'tables' => array(), 'largest' => array(),
+                                              'entries_read' => 0, 'truncated' => false );
+        if ( !$out['apcu'] || !class_exists( 'APCUIterator' ) )
+            return $out;
+        $sma = @apcu_sma_info( true );
+        if ( is_array( $sma ) && isset( $sma['seg_size'], $sma['num_seg'], $sma['avail_mem'] ) )
+        {
+            $size = (int)$sma['seg_size'] * (int)$sma['num_seg'];
+            $out['sma'] = array( 'size' => $size, 'available' => (int)$sma['avail_mem'],
+                                 'used_pct' => $size > 0 ? round( 100 * ( $size - $sma['avail_mem'] ) / $size, 1 ) : null );
+        }
+        $now = time();
+        $deadline = microtime( true ) + self::INVENTORY_MAX_SECONDS;
+        $tables = array();
+        $largest = array();
+        $it = new APCUIterator( '/^ezqc:/', APC_ITER_KEY | APC_ITER_VALUE | APC_ITER_MEM_SIZE | APC_ITER_NUM_HITS | APC_ITER_CTIME );
+        foreach ( $it as $item )
+        {
+            if ( $out['entries_read'] >= self::INVENTORY_MAX_ENTRIES || microtime( true ) > $deadline )
+            {
+                $out['truncated'] = true;
+                break;
+            }
+            $out['entries_read']++;
+            $out['entries']++;
+            $out['memory'] += (int)$item['mem_size'];
+            $value = $item['value'];
+            if ( !is_array( $value ) || !isset( $value['tables'] ) )
+                continue;
+            $rows = isset( $value['rows'] ) && is_array( $value['rows'] ) ? count( $value['rows'] ) : 0;
+            $bytes = (int)$item['mem_size'];
+            $hits = (int)$item['num_hits'];
+            foreach ( (array)$value['tables'] as $t )
+            {
+                if ( !isset( $tables[$t] ) )
+                    $tables[$t] = array( 'table' => $t, 'entries' => 0, 'rows' => 0, 'bytes' => 0, 'hits' => 0 );
+                $tables[$t]['entries']++;
+                $tables[$t]['rows'] += $rows;
+                $tables[$t]['bytes'] += $bytes;
+                $tables[$t]['hits'] += $hits;
+            }
+            $largest[] = array( 'key' => substr( (string)$item['key'], 5, 12 ), 'tables' => array_values( (array)$value['tables'] ),
+                                'rows' => $rows, 'bytes' => $bytes, 'hits' => $hits,
+                                'age_s' => max( 0, $now - (int)$item['creation_time'] ) );
+        }
+        usort( $tables, function ( $a, $b ) { return $b['bytes'] <=> $a['bytes'] ?: strcmp( $a['table'], $b['table'] ); } );
+        usort( $largest, function ( $a, $b ) { return $b['bytes'] <=> $a['bytes'] ?: strcmp( $a['key'], $b['key'] ); } );
+        $out['tables'] = array_slice( array_values( $tables ), 0, max( 1, (int)$limit ) );
+        $out['largest'] = array_slice( $largest, 0, max( 1, (int)$limit ) );
+        return $out;
     }
 
     // ── Writes ───────────────────────────────────────────────────────────
@@ -875,7 +980,7 @@ class eZDBQueryCache
      * What Setup > System information shows: settings, state, what this server
      * holds in APCu and its counters since they were last reset.
      */
-    public static function status()
+    public static function status( $countEntries = true )
     {
         $s = self::settings();
         $state = self::freshState();
@@ -900,11 +1005,15 @@ class eZDBQueryCache
         );
         if ( $out['apcu'] && class_exists( 'APCUIterator' ) )
         {
-            $it = new APCUIterator( '/^ezqc:/', APC_ITER_MEM_SIZE );
-            foreach ( $it as $item )
+            // inventory() counts while it reads the entries anyway
+            if ( $countEntries )
             {
-                $out['entries']++;
-                $out['memory'] += (int)$item['mem_size'];
+                $it = new APCUIterator( '/^ezqc:/', APC_ITER_MEM_SIZE );
+                foreach ( $it as $item )
+                {
+                    $out['entries']++;
+                    $out['memory'] += (int)$item['mem_size'];
+                }
             }
             $c = array();
             foreach ( array( 'requests', 'hits', 'misses', 'stores', 'uncacheable', 'writes', 'since' ) as $name )

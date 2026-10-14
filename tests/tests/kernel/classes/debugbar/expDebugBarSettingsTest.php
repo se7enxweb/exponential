@@ -840,5 +840,8 @@ class expDebugBarSettingsTest extends PHPUnit\Framework\TestCase
         $this->assertContains( 'content', array_column( $c['caches'], 'id' ) );
         $this->assertNotEmpty( $c['tags'] );
         $this->assertArrayHasKey( 'opcache', $c );
+        $this->assertArrayHasKey( 'querycache', $c );
+        foreach ( array( 'enabled', 'mode', 'counters', 'tables', 'largest', 'sma', 'entries_read', 'truncated' ) as $key )
+            $this->assertArrayHasKey( $key, $c['querycache'] );
     }
 }

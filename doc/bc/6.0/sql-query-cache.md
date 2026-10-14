@@ -315,6 +315,13 @@ registers the accumulator group and the report again, starts new counters and se
 the noise of a lookup hit of ~2.7 µs); the duration stored with each entry is one `microtime()` per store. With it
 on, the cost is that of the accumulators.
 
+In the **Exp Debug bar** the same figures are a chip in the pinned bar (hit rate and saved time, amber below 50 %,
+red below 10 %, `debugbar.ini Thresholds[querycache_hit_rate]`) and the report stands at the top of the SQL tab, next
+to the database's accumulators. The **Cache tab** (setup/managecache) shows what this server holds: entries and
+memory in APCu, the counters since the last reset, the state, the cached results grouped by the tables they read
+(entries, rows, size, hits as counted by APCu) and the largest entries, with buttons to clear the query cache and to
+reset the counters.
+
 ## The SQL profiler
 
 `eZDBInterface::profileSQL()`, called by the MySQL driver after every
@@ -403,10 +410,12 @@ so the tests never touch the site's cache.
 | QC-20 | Oracle: a result is never answered to a session with other settings (`NLS_SORT=GERMAN` against `BINARY_CI`); a later `ALTER SESSION` gives the connection its new key; with `Mode=off` nothing is noted |
 | QC-21 | Literals are masked under both quoting rules (`''`, `\'`, `'C:\'`, unterminated), and no part of one reaches the report, also from a statement longer than 4 KB |
 | QC-22 | After `eZDebug::reset()` in the same process the report, its own counters and the timing point start again; `flushStats()` leaves them alone; the next request carries nothing over; with the debug output switched off nothing is registered |
+| QC-23 | `debugSnapshot()`: the figures of the report (its own counters) with the debug output on, null without it |
+| QC-24 | `inventory()` (with APCu): entries grouped by table, an entry of two tables counted for each, hits from APCu, largest first, no statement text |
 
 ```bash
 php vendor/bin/phpunit --testsuite lib --filter eZDBQueryCacheTest
-# OK (22 tests, 232 assertions), about 2 s (QC-08 and QC-12 wait a second each)
+# OK (24 tests; QC-24 needs apc.enable_cli=1), about 2 s (QC-08 and QC-12 wait a second each)
 ```
 
 **On a running site** (MySQL, the real drivers), each checked on a test installation

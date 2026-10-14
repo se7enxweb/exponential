@@ -23,7 +23,8 @@ at the bottom.
 ## What you see
 
 - **The pinned bar** shows page time, SQL count and time, peak memory, templates used, warnings and errors (amber or
-  red past the thresholds). Each value opens its tab. The title "Exp Debug" and the logo sit at the right end, the
+  red past the thresholds). With the SQL query cache on it also shows the cache's hit rate and the database time it
+  saved for the request (`QC 83 % · -186 ms`); the SQL count beside it counts only what reached the database. Each value opens its tab. The title "Exp Debug" and the logo sit at the right end, the
   page summary on the left.
 - **The panel** above the bar (at most 60% of the window, scrolling on its own) has the tabs Messages, Settings,
   Cache, Timing, SQL, Templates, Included files, Memory and Velocity. Every section of the classic report is still

@@ -7,7 +7,8 @@
  *   expdebugbar::set                        POST setting, op, value, scope[, siteaccess, confirm, dry_run]
  *   expdebugbar::undo                       POST entry[, force] or group[, force]
  *   expdebugbar::preset                     POST preset, scope | save[, values, snapshot] | delete
- *   expdebugbar::cache                      action=list (GET) | POST action=clear, by=tag|id|all|node|velocity|opcache
+ *   expdebugbar::cache                      action=list (GET) | POST action=clear,
+ *                                           by=tag|id|all|node|velocity|opcache|querycache_counters
  *   expdebugbar::iptest                     address[, list]
  *   expdebugbar::log[::<limit>]             the newest log entries
  *   expdebugbar::summary                    the summary of this request
@@ -238,7 +239,8 @@ class expDebugBarServerFunctions extends ezjscServerFunctions
     }
 
     /**
-     * expdebugbar::cache, action=list | action=clear (POST) by=tag|id|all|node|velocity|opcache
+     * expdebugbar::cache, action=list | action=clear (POST) by=tag|id|all|node|velocity|opcache|querycache_counters
+     * (the query cache's entries are the cache id 'querycache'; querycache_counters zeroes this server's counters)
      */
     public static function cache( $args )
     {
@@ -280,8 +282,19 @@ class expDebugBarServerFunctions extends ezjscServerFunctions
             case 'opcache':
                 $result = expCacheManager::resetOPcache( $dryRun );
                 break;
+            case 'querycache_counters':
+                if ( !class_exists( 'eZDBQueryCache' ) )
+                    $result = expCacheManager::result( false, 'The SQL query cache is not available' );
+                else if ( $dryRun )
+                    $result = expCacheManager::result( true, "would reset this server's query cache counters", array(), true );
+                else
+                {
+                    eZDBQueryCache::resetStats();
+                    $result = expCacheManager::result( true, "reset this server's query cache counters" );
+                }
+                break;
             default:
-                $result = expCacheManager::result( false, "unknown by '$by': all, tag, id, node, velocity or opcache" );
+                $result = expCacheManager::result( false, "unknown by '$by': all, tag, id, node, velocity, opcache or querycache_counters" );
         }
         if ( $result['ok'] && !$dryRun )
         {
@@ -332,6 +345,8 @@ class expDebugBarServerFunctions extends ezjscServerFunctions
             'page' => array( 'node_id' => $nodeID ?: null, 'object_id' => (int)self::param( 'object_id', 0 ) ?: null ),
             'velocity' => expCacheManager::velocityCacheStatus(),
             'opcache' => isset( $php['opcache'] ) ? $php['opcache'] : null,
+            // the SQL query cache: settings, counters, APCu memory and what it holds (tables, largest entries)
+            'querycache' => class_exists( 'eZDBQueryCache' ) ? array_diff_key( eZDBQueryCache::inventory(), array( 'state_file' => true ) ) : null,
             'http_cache' => expCacheManager::httpCacheEnabled() ? expCacheManager::httpCacheStatus() : null,
         );
     }

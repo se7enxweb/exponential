@@ -43,6 +43,7 @@ class expDebugBarReport
         'memory'    => array( 'warn' => 0.5, 'high' => 0.8 ),          // share of memory_limit
         'memory_abs'=> array( 'warn' => 134217728, 'high' => 268435456 ), // 128 MB, 256 MB
         'templates' => array( 'warn' => 150, 'high' => 400 ),
+        'querycache_hit_rate' => array( 'warn' => 50, 'high' => 10 ), // percent: the level rises BELOW these
     );
 
     /**
@@ -115,6 +116,15 @@ class expDebugBarReport
             'Response cache', 'Engine', 'Not running on Velocity.',
             'Close', 'Open the debug report',
             'Minimise debug bar', 'Show debug bar', '%count errors', '%count warnings',
+            // the SQL query cache in the Cache tab
+            'SQL query cache', 'Off (querycache.ini Mode=off)', 'Mode %mode, MaxAge %age s, MaxRows %rows',
+            'APCu is not available to this server: shared works as request.', 'APCu', '%count entries',
+            '%used of %size (%pct %)', 'APCu used in all: %pct %', 'This server',
+            'since %time: %requests requests, hit rate %rate, %stores stored, %writes writes', 'State',
+            'generation %gen, cleared %time, %count tables written in the last MaxAge',
+            'What is cached (by table)', 'Table', 'Entries', 'Rows', 'Size', 'Hits', 'Largest entries', 'Key', 'Tables', 'Age',
+            'Only the first %count entries were read.', 'Nothing is cached on this server yet.',
+            'Clears every cached result (a new generation).', 'Counters', "Zeroes this server's counters; the cached results stay.",
         );
     }
 
@@ -161,14 +171,17 @@ class expDebugBarReport
                 $otherTop .= $content;
         }
 
-        // Bottom reports: template and packer statistics to Templates, the rest to Other.
+        // Bottom reports: template and packer statistics to Templates, the query cache to SQL, the rest to Other.
         $templateReports = '';
+        $sqlReports = '';
         $otherReports = '';
         foreach ( (array)$debug->bottomReportsList as $name => $report )
         {
             $content = is_callable( $report ) ? call_user_func_array( $report, array( true ) ) : $report;
             if ( $name === 'Template Usage Statistics' || $name === 'ezjscPacker' )
                 $templateReports .= $content;
+            else if ( $name === 'Query cache' )
+                $sqlReports .= $content;
             else
                 $otherReports .= $content;
         }
@@ -217,6 +230,8 @@ class expDebugBarReport
                 $serverSummary = null;
             }
         }
+        $summary['querycache'] = $serverSummary !== null && array_key_exists( 'querycache', $serverSummary )
+            ? $serverSummary['querycache'] : self::queryCacheSummary();
 
         $tabs = array(
             'messages'  => self::t( 'Messages' ),
@@ -306,6 +321,7 @@ class expDebugBarReport
 
         // --- SQL
         self::panelStart( 'sql', $tabs );
+        echo $sqlReports;
         echo self::sqlHtml( $debug, $ini, $dbType, $sqlCount, $sqlMs, $messages['sql'], $totalElapsed );
         self::panelEnd();
 
@@ -485,6 +501,16 @@ class expDebugBarReport
         $chips[] = array( 'sql', 'sql', $sqlLevel,
                           self::t( '%count SQL', array( '%count' => $s['sql_count'] ) ) . ' / ' . number_format( $s['sql_ms'], 0 ) . ' ms',
                           self::t( 'SQL queries and their time' ) );
+        if ( !empty( $s['querycache']['measured'] ) )
+        {
+            $q = $s['querycache'];
+            $chips[] = array( 'sql', 'querycache', in_array( $q['level'], array( 'ok', 'warn', 'high' ), true ) ? $q['level'] : 'ok',
+                              self::t( 'QC %rate', array( '%rate' => $q['hit_rate'] === null ? '-' : number_format( $q['hit_rate'], 0 ) . ' %' ) )
+                              . ' · ' . ( round( $q['saved_ms'] ) > 0 ? '-' : '' ) . number_format( $q['saved_ms'], 0 ) . ' ms',
+                              self::t( 'SQL query cache: hit rate and database time saved (estimated); %hits hits, %misses misses, %stores stored, %skipped not cached, %writes writes, mode %mode',
+                                       array( '%hits' => $q['hits'], '%misses' => $q['misses'], '%stores' => $q['stores'], '%skipped' => $q['not_cached'],
+                                              '%writes' => $q['writes'], '%mode' => $q['mode'] . ( $q['mode'] === 'shared' && empty( $q['apcu'] ) ? ' (no APCu)' : '' ) ) ) );
+        }
         $chips[] = array( 'memory', 'memory', $memLevel, number_format( $s['memory'] / 1048576, 1 ) . ' MB', self::t( 'Peak memory' ) );
         if ( $s['templates'] !== null )
             $chips[] = array( 'templates', 'templates', $tplLevel,
@@ -510,6 +536,33 @@ class expDebugBarReport
                    . htmlspecialchars( $text, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '</button>';
         }
         return $html . '</span>';
+    }
+
+    /**
+     * The query cache's figures for the summary when the kernel's summary (expDebugBarSummary) is not loaded:
+     * null when the cache is off, else eZDBQueryCache::debugSnapshot() with 'measured' and a level against
+     * the default thresholds (expDebugBarSummary::queryCacheLevel() has the same rules).
+     *
+     * @return array|null
+     */
+    protected static function queryCacheSummary()
+    {
+        if ( !class_exists( 'eZDBQueryCache', false ) || !eZDBQueryCache::enabled() )
+            return null;
+        $q = eZDBQueryCache::debugSnapshot();
+        if ( $q === null )
+            return array( 'measured' => false );
+        $limits = self::$thresholds['querycache_hit_rate'];
+        $rate = $q['hit_rate'];
+        if ( ( $q['mode'] === 'shared' && !$q['apcu'] ) || ( $rate !== null && $rate < $limits['high'] ) )
+            $level = 'high';
+        else if ( ( $rate !== null && $rate < $limits['warn'] ) || $q['stale'] )
+            $level = 'warn';
+        else
+            $level = 'ok';
+        $q['stale_count'] = count( $q['stale'] ) + $q['stale_more'];
+        unset( $q['stale'], $q['stale_more'] );
+        return array( 'measured' => true ) + $q + array( 'level' => $level );
     }
 
     protected static function timingPointsHtml( eZDebug $debug, $startTime )
@@ -632,7 +685,7 @@ class expDebugBarReport
         $groups = array();
         foreach ( self::accumulatorGroups( $debug ) as $key => $group )
         {
-            if ( strpos( (string)$key, $dbType ) === 0 )
+            if ( strpos( (string)$key, $dbType ) === 0 || $key === 'querycache_total' )
                 $groups[$key] = $group;
         }
         if ( $groups )

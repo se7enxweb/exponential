@@ -40,7 +40,8 @@ class expDebugBarSummary
             }
         }
         $thresholds += array( 'time_ms' => array( 500, 1500 ), 'sql_count' => array( 100, 300 ), 'sql_ms' => array( 200, 800 ),
-                              'memory_mb' => array( 64, 192 ), 'templates' => array( 150, 400 ) );
+                              'memory_mb' => array( 64, 192 ), 'templates' => array( 150, 400 ),
+                              'querycache_hit_rate' => array( 50, 10 ) );
 
         $start = $debug && $debug->ScriptStart ? $debug->ScriptStart : ( isset( $_SERVER['REQUEST_TIME_FLOAT'] ) ? $_SERVER['REQUEST_TIME_FLOAT'] : microtime( true ) );
         $stop = $debug && $debug->ScriptStop ? $debug->ScriptStop : microtime( true );
@@ -135,11 +136,55 @@ class expDebugBarSummary
                               'by_user' => $ini ? $ini->variable( 'DebugSettings', 'DebugByUser' ) === 'enabled' : false,
                               // the entry that matched is a line of the list: only for those who may see the list
                               'ip_match' => isset( $GLOBALS['eZDebugIPMatch'] ) ? ( self::mayReadLists() ? $GLOBALS['eZDebugIPMatch'] : true ) : null ),
+            'querycache' => self::queryCache( $thresholds['querycache_hit_rate'] ),
             'engine' => self::engine(),
             'siteaccess' => isset( $GLOBALS['eZCurrentAccess']['name'] ) ? $GLOBALS['eZCurrentAccess']['name'] : null,
             'php' => PHP_VERSION,
             'thresholds' => $thresholds,
         );
+    }
+
+    /**
+     * The SQL query cache of this request (eZDBQueryCache::debugSnapshot()) with a level, or null when the cache is
+     * off or not there. 'measured' is false while the cache saw no statement or its report is off.
+     *
+     * @param array $limits array( warn, high ): hit rates in percent below which the level turns warn and high
+     * @return array|null
+     */
+    public static function queryCache( array $limits )
+    {
+        if ( !class_exists( 'eZDBQueryCache', false ) || !eZDBQueryCache::enabled() )
+            return null;
+        $snapshot = eZDBQueryCache::debugSnapshot();
+        if ( $snapshot === null )
+            return array( 'measured' => false, 'mode' => eZDBQueryCache::settings()['mode'], 'level' => 'ok' );
+        $level = self::queryCacheLevel( $snapshot, $limits );
+        // the summary goes into the page's JSON and to expdebugbar::summary: the number of writes that made
+        // everything stale, not their statements (those are in the report of the SQL tab)
+        $snapshot['stale_count'] = count( $snapshot['stale'] ) + $snapshot['stale_more'];
+        unset( $snapshot['stale'], $snapshot['stale_more'] );
+        return array( 'measured' => true ) + $snapshot + array( 'level' => $level );
+    }
+
+    /**
+     * ok, warn or high for a query cache snapshot: warn below the first hit rate of $limits or when a write made every
+     * result stale, high below the second, or in shared mode without APCu (it works as request then). Without a
+     * lookup the hit rate says nothing: ok, unless one of the other two holds.
+     *
+     * @param array $snapshot eZDBQueryCache::debugSnapshot()
+     * @param array $limits array( warn, high )
+     * @return string
+     */
+    public static function queryCacheLevel( array $snapshot, array $limits )
+    {
+        if ( $snapshot['mode'] === 'shared' && empty( $snapshot['apcu'] ) )
+            return 'high';
+        $rate = $snapshot['hit_rate'];
+        if ( $rate !== null && $rate < $limits[1] )
+            return 'high';
+        if ( ( $rate !== null && $rate < $limits[0] ) || !empty( $snapshot['stale'] ) || !empty( $snapshot['stale_count'] ) )
+            return 'warn';
+        return 'ok';
     }
 
     /** Whether the current user has setup/setup (may see the IP and user lists). */

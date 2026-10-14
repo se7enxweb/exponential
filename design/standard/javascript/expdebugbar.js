@@ -787,6 +787,49 @@
       ans.can_cache ? el('div', { class: 'exp-debug-cache-row' }, clearButton(t('Clear'), { by: 'velocity' }, status, { 'data-cache': 'velocity' }), status) : null);
   };
 
+  // The SQL query cache: settings, this server's counters, APCu memory, and what it holds by table and its largest
+  // entries (eZDBQueryCache::inventory()). Entries carry no statement text: a key, the tables, rows, size, hits, age.
+  const kb = (bytes) => (Math.round((bytes || 0) / 102.4) / 10) + ' KB';
+  const qcTable = (head, rows) => el('table', { class: 'exp-debug-messages exp-debug-querycache-table' },
+    el('tr', {}, ...head.map((h) => el('th', {}, h))), ...rows.map((r) => el('tr', {}, ...r.map((c) => el('td', {}, c)))));
+  const renderQueryCache = (q, can, lc, section) => {
+    const box = el('fieldset', { 'data-cache': 'querycache' }, el('legend', {}, t('SQL query cache')));
+    if (!q.enabled) {
+      box.append(hint(t('Off (querycache.ini Mode=off)')));
+      return box;
+    }
+    const c = q.counters || {};
+    box.append(el('p', { class: 'exp-debug-hint' },
+      t('Mode %mode, MaxAge %age s, MaxRows %rows', { '%mode': q.mode, '%age': q.max_age, '%rows': q.max_rows })));
+    if (!q.apcu) box.append(hint(t('APCu is not available to this server: shared works as request.'), 'warn'));
+    else {
+      const sma = q.sma ? t('%used of %size (%pct %)', { '%used': kb(q.memory), '%size': kb(q.sma.size), '%pct': q.sma.size ? Math.round(1000 * q.memory / q.sma.size) / 10 : 0 })
+        + ' · ' + t('APCu used in all: %pct %', { '%pct': q.sma.used_pct }) : kb(q.memory);
+      box.append(el('p', {}, el('strong', {}, t('APCu') + ': '), t('%count entries', { '%count': q.entries }) + ' · ' + sma));
+      box.append(el('p', {}, el('strong', {}, t('This server') + ': '),
+        t('since %time: %requests requests, hit rate %rate, %stores stored, %writes writes', {
+          '%time': whenText(c.since) || t('never'), '%requests': c.requests || 0,
+          '%rate': c.hit_rate === null || c.hit_rate === undefined ? '-' : c.hit_rate + ' %', '%stores': c.stores || 0, '%writes': c.writes || 0 })));
+    }
+    box.append(el('p', {}, el('strong', {}, t('State') + ': '),
+      t('generation %gen, cleared %time, %count tables written in the last MaxAge', { '%gen': q.generation, '%time': whenText(q.cleared) || t('never'), '%count': q.tables_tracked })));
+    if ((q.tables || []).length) {
+      box.append(el('h4', {}, t('What is cached (by table)')),
+        qcTable([t('Table'), t('Entries'), t('Rows'), t('Size'), t('Hits')],
+          q.tables.map((r) => [r.table, r.entries, r.rows, kb(r.bytes), r.hits])));
+    }
+    if ((q.largest || []).length) {
+      box.append(el('h4', {}, t('Largest entries')),
+        qcTable([t('Key'), t('Tables'), t('Rows'), t('Size'), t('Hits'), t('Age')],
+          q.largest.map((r) => [r.key, (r.tables || []).join(', '), r.rows, kb(r.bytes), r.hits, Math.round((r.age_s || 0) / 60) + ' min'])));
+    }
+    if (q.truncated) box.append(hint(t('Only the first %count entries were read.', { '%count': q.entries_read }), 'warn'));
+    else if (q.apcu && !q.entries) box.append(hint(t('Nothing is cached on this server yet.')));
+    box.append(section(t('SQL query cache'), t('Clears every cached result (a new generation).'), { by: 'id', names: 'querycache' }, 'id:querycache', lc['id:querycache']));
+    box.append(section(t('Counters'), t('Zeroes this server\'s counters; the cached results stay.'), { by: 'querycache_counters' }, 'querycache_counters', lc.querycache_counters, can && q.apcu));
+    return box;
+  };
+
   const renderCache = (ans) => {
     const out = [];
     const can = !!ans.can_cache;
@@ -808,6 +851,7 @@
       section(t('Response cache'), v.message || t('Clears the pages Velocity keeps in memory.'), { by: 'velocity' }, 'velocity', lc.velocity)));
     out.push(el('fieldset', {}, el('legend', {}, t('OPcache')),
       section(t('OPcache'), (ans.opcache && ans.opcache.text) || t('Not available'), { by: 'opcache' }, 'opcache', lc.opcache, !!(ans.opcache && ans.opcache.available))));
+    if (ans.querycache) out.push(renderQueryCache(ans.querycache, can, lc, section));
     if ((ans.tags || []).length) {
       out.push(el('fieldset', {}, el('legend', {}, t('By tag')),
         ...ans.tags.map((tg) => section(tg.tag, tg.description || (tg.ids || []).join(', '), { by: 'tag', names: tg.tag }, 'tag:' + tg.tag, lc['tag:' + tg.tag]))));
