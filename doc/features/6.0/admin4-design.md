@@ -46,8 +46,8 @@ extension). The editor siteaccess falls back to `admin4` first, then `admin3`, `
 - **Light and dark mode.** Light (default): pale page, frosted header, cards edged by light and shadow. Dark: slate
   page, white cards. The header toggle switches them; the choice is kept in the browser (`localStorage`) and applied
   before the page is drawn.
-- **Normal or compact density.** A second header button (pressed = compact) tightens list cells, cards and the
-  height of the controls in a row (32 to 28 px); kept in the browser like the mode (`localStorage`
+- **Normal or compact density.** A second header button (pressed = compact) tightens the cells of `table.list` and
+  `.a4-table`, cards and the height of the controls in a row (32 to 28 px), not `table.special`; kept in the browser like the mode (`localStorage`
   "exp-admin4-density") and applied before the page is drawn. Every target stays at least 24 px, the content tree
   keeps its row pitch.
 - **Top menu.** Every item shows at every width from 576 px, wrapping onto more lines; phones keep the hamburger menu.

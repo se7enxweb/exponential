@@ -73,11 +73,31 @@ class AdminDensityTest extends PHPUnit\Framework\TestCase
 
     public function testTheContentTreeKeepsItsRowPitch()
     {
-        $block = self::compactBlock();
-        foreach ( array_keys( $block ) as $property )
-            $this->assertStringNotContainsString( 'tree', $property, 'the compact density must not tighten the content tree below its 24px row pitch' );
-        $this->assertStringNotContainsString( 'data-a4-density', self::file( 'design/admin4/stylesheets/admin4.css' ) . self::file( 'design/admin4/stylesheets/pagelayout.css' ),
-            'only components.css sets density; page stylesheets read the tokens' );
+        $root = dirname( __DIR__, 3 );
+        foreach ( glob( "$root/design/admin4/stylesheets/{,*/}*.css", GLOB_BRACE ) ?: array() as $file )
+        {
+            $css = preg_replace( '#/\*.*?\*/#s', '', (string)file_get_contents( $file ) );
+            preg_match_all( '/([^{}]*data-a4-density[^{}]*)\{/', $css, $m );
+            foreach ( $m[1] as $selector )
+            {
+                $this->assertDoesNotMatchRegularExpression( '/content_tree_menu|contentstructure/', $selector,
+                    basename( $file ) . ': the density must not tighten the content tree below its 24px row pitch' );
+                $this->assertSame( 'html[data-a4-density="compact"]', trim( $selector ),
+                    basename( $file ) . ': density is set only by the token block, rules read the tokens' );
+            }
+        }
+    }
+
+    public function testTheNormalDensityKeepsTheEarlierSpacing()
+    {
+        $components = self::file( 'design/admin4/stylesheets/components.css' );
+        $normal = array( '--a4-list-pad' => '.4em', '--a4-cell-pad-y' => 'var(--a4-space-2)', '--a4-cell-pad-x' => 'var(--a4-space-3)',
+                         '--a4-card-pad-y' => 'var(--a4-space-3)', '--a4-card-pad-x' => 'var(--a4-space-4)', '--a4-control-h' => '32px' );
+        foreach ( $normal as $token => $value )
+            $this->assertMatchesRegularExpression( '/^\s*' . preg_quote( $token, '/' ) . ':\s*' . preg_quote( $value, '/' ) . ';/m', $components,
+                "$token must stay $value in the normal density (it is what the lists, tables, cards and controls had)" );
+        $scale = self::spaceScale();
+        $this->assertSame( array( 8, 12, 16 ), array( $scale['--a4-space-2'], $scale['--a4-space-3'], $scale['--a4-space-4'] ) );
     }
 
     public function testTablesAndCardsReadTheTokens()

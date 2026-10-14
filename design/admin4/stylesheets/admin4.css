@@ -290,6 +290,7 @@ html[data-a4-theme="dark"] .a4-theme-toggle .a4-icon-moon { display: inline-bloc
   border-color: var(--a4-accent);
   background-color: var(--a4-accent-soft);
 }
+.a4-density-toggle[aria-pressed="true"]:hover { border-color: var(--a4-orange); }
 @media (forced-colors: active) {
   .a4-density-toggle[aria-pressed="true"] { border-color: Highlight; }
 }
