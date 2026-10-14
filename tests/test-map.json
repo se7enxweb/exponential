@@ -229,6 +229,12 @@
     ],
     "share/icons/crystal*": [
       "tests/tests/design/AdminIconsTest.php"
+    ],
+    "settings/menu.ini": [
+      "tests/tests/design/AdminMenuPolicyListTest.php"
+    ],
+    "kernel/*/module.php": [
+      "tests/tests/design/AdminMenuPolicyListTest.php"
     ]
   },
   "generated": {
