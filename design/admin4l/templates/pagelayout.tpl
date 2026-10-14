@@ -24,6 +24,7 @@
      $search_hash          = array( cond( ezhttp_hasvariable( 'SectionID', 'get' ), ezhttp( 'SectionID', 'get' ) ) )
      $user_hash = concat( $current_user.role_id_list|implode( ',' ), ',', $current_user.limited_assignment_value_list|implode( ',' ) )
      $uri_cache_key        = $module_result.uri
+     $main_wrapped         = false()
 }
     {* admin4l: the admin layout for this page. The safety switch is explayouts.ini [AdminLayoutSettings]
        Enabled=enabled|disabled: anything but "enabled" gives the plain admin4 page. When no layout resolves, or
@@ -50,6 +51,13 @@
             {set $admin_layout = false()}
         {/if}
     {/if}
+    {* The main landmark: #maincontent of the frame, or of the edit-type page that draws its own columns. A page
+       without the left column whose template brings no #maincontent (remove, copy, move ...) is wrapped in #a4-main,
+       a landmark without styles, so its layout stays as it was. After the admin layout: admin_full hides the left
+       column. *}
+    {if and( $hide_left_menu, $module_result.content|contains( 'id="maincontent"' )|not )}
+        {set $main_wrapped = true()}
+    {/if}
 
     {* Error pages can arrive with the same URI while their title and path name the error: key them
        by error type and number too (every other page keeps the plain URI key) *}
@@ -61,7 +69,7 @@
  Need navigation part for cases like content/browse where node id is taken from caller params *}
     {* siteaccess_url() here too: this block holds the header block below, whose
        site link depends on the scheme, host and port of the request. *}
-    {cache-block keys=array( $uri_cache_key, $user_hash, $admin_theme, $admin_left_size, $access_type, first_set( $module_result.navigation_part, $navigation_part.identifier ), $search_hash, siteaccess_url(), $admin_layout_id ) ignore_content_expiry}
+    {cache-block keys=array( $uri_cache_key, $user_hash, $admin_theme, $admin_left_size, $access_type, first_set( $module_result.navigation_part, $navigation_part.identifier ), $search_hash, siteaccess_url(), $admin_layout_id, $main_wrapped ) ignore_content_expiry}
 
     {include uri='design:page_head.tpl'}
 
@@ -73,9 +81,12 @@
 
 <body>
 
+    {* Skip link: the first stop of the Tab key, shown only while focused, to the main landmark (see $main_wrapped). *}
+    <a class="a4-skip-link" href="#{if $main_wrapped}a4-main{else}maincontent{/if}">{'Skip to main content'|i18n( 'design/admin/pagelayout' )|wash}</a>
+
     <div id="page" class="{$navigation_part.identifier} section_id_{first_set( $module_result.section_id, 0 )}">
 
-        <div id="header">
+        <div id="header" role="banner">
             <div id="header-design" class="float-break">
                 {* Pr tab header cache *}
                 {* siteaccess_url(): the header links to the site with the scheme, host and port
@@ -94,7 +105,7 @@
                 {if and( $header_html|trim|ne( '' ), $topmenu_html|trim|ne( '' ) )}
                 <div id="navbar" class="navbar-main">
                     {$header_html}
-                    <div class="navbar-menu {if $ui_context_edit}disabled{/if}">
+                    <div id="a4-navbar-menu" class="navbar-menu {if $ui_context_edit}disabled{/if}" role="navigation" aria-label="{'Main menu'|i18n( 'design/admin/pagelayout' )|wash}">
                         <ul class="navbar-bar">
                             {$topmenu_html}
                         </ul>
@@ -117,7 +128,7 @@
                 {else}
                     {if $admin_layout}{set-block variable=$zone_html}{include uri='design:explayouts/admin_zone.tpl' layout=$admin_layout zone_identifier='left'}{/set-block}{else}{set $zone_html = ''}{/if}
                     {if $zone_html|trim|ne( '' )}
-                    <div id="leftmenu" class="sidebar left">
+                    <div id="leftmenu" class="sidebar left" role="navigation" aria-label="{'Side menu'|i18n( 'design/admin/pagelayout' )|wash}">
                         <div id="leftmenu-resize-handle" class="leftmenu-resize-handle" aria-hidden="true"></div>
                         <div id="leftmenu-design">
                             {$zone_html}
@@ -130,7 +141,9 @@
                 <!-- end::Left Sidebar -->
 
                 <!-- begin::Main Section -->
-                {if $hide_left_menu}
+                {if $main_wrapped}
+                    <div id="a4-main" role="main" tabindex="-1">{if $admin_layout}{include uri='design:explayouts/admin_zone.tpl' layout=$admin_layout zone_identifier='main'}{else}{include uri='design:page_mainarea.tpl'}{/if}</div>
+                {elseif $hide_left_menu}
                     {if $admin_layout}{include uri='design:explayouts/admin_zone.tpl' layout=$admin_layout zone_identifier='main'}{else}{include uri='design:page_mainarea.tpl'}{/if}
                 {else}
                     <div id="maincolumn" class="content-wrapper">
@@ -138,11 +151,11 @@
                         {cache-block keys=array( $uri_cache_key, $user_hash, $left_size_hash, $access_type, first_set( $module_result.navigation_part, $navigation_part.identifier ) )}
                         {/cache-block}{* /Pr uri cache *}
                         {* Main area START *}
-                        <div id="maincontent">
+                        <div id="maincontent" role="main" tabindex="-1">
                             <div id="maincontent-design" class="float-break">
                                 <div id="fix">
 
-                                    <div id="path">
+                                    <div id="path" role="navigation" aria-label="{'Breadcrumb'|i18n( 'design/admin/pagelayout' )|wash}">
                                         <div id="path-design">
                                             {if $admin_layout}{set-block variable=$zone_html}{include uri='design:explayouts/admin_zone.tpl' layout=$admin_layout zone_identifier='main_top'}{/set-block}{else}{set $zone_html = ''}{/if}
                                             {if $zone_html|trim|ne( '' )}{$zone_html}{else}{include uri='design:page_toppath.tpl'}{/if}
@@ -162,7 +175,7 @@
                 <!-- end::Main Section -->
 
                 <!-- begin::Right Sidebar -->
-                <div id="rightmenu" class="sidebar right">
+                <div id="rightmenu" class="sidebar right" role="complementary" aria-label="{'Tools'|i18n( 'design/admin/pagelayout' )|wash}">
                     <div id="rightmenu-design">
                         {if $admin_layout}{set-block variable=$zone_html}{include uri='design:explayouts/admin_zone.tpl' layout=$admin_layout zone_identifier='right'}{/set-block}{else}{set $zone_html = ''}{/if}
                         {if $zone_html|trim|ne( '' )}{$zone_html}{else}
@@ -178,7 +191,7 @@
 
         {* keyed by the user's roles too: the context menu below shows entries by policy *}
         {cache-block keys=array( $access_type, $user_hash, $admin_layout_id ) ignore_content_expiry}
-        <div id="footer" class="float-break">
+        <div id="footer" class="float-break" role="contentinfo">
             <div id="footer-design">
                 {if $admin_layout}{set-block variable=$zone_html}{include uri='design:explayouts/admin_zone.tpl' layout=$admin_layout zone_identifier='footer' skip=array( 'admin_popup_menu', 'admin_debug_area', 'admin_overlay' )}{/set-block}{else}{set $zone_html = ''}{/if}
                 {if $zone_html|trim|ne( '' )}{$zone_html}{else}{include uri='design:page_copyright.tpl'}{/if}

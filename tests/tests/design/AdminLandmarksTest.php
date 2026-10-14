@@ -18,8 +18,8 @@ class AdminLandmarksTest extends PHPUnit\Framework\TestCase
 {
     const TEMPLATES = 'design/admin4/templates';
 
-    /** Where admin4's templates are: the design's own and its overrides */
-    const TEMPLATE_DIRS = array( 'design/admin4/templates', 'design/admin4/override/templates' );
+    /** Where admin4's templates are: the design's own, its overrides and admin4l, which falls back to admin4 */
+    const TEMPLATE_DIRS = array( 'design/admin4/templates', 'design/admin4/override/templates', 'design/admin4l/templates' );
 
     private static function root()
     {
@@ -77,6 +77,27 @@ class AdminLandmarksTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( 'role="contentinfo"', $layout );
         $this->assertMatchesRegularExpression( '#<div id="leftmenu" class="sidebar left" role="navigation" aria-label="#', self::template( 'page_leftmenu.tpl' ) );
         $this->assertMatchesRegularExpression( '#class="navbar-menu[^"]*" role="navigation" aria-label="#', self::template( 'page_topmenu.tpl' ) );
+    }
+
+    /**
+     * admin4l (the admin siteaccess on admin layouts) has its own copy of the page layout, which draws the zones of
+     * an admin layout and falls back to admin4 for everything else: it carries the same skip link and landmarks,
+     * also in the zone variants of the side and top menus.
+     */
+    public function testTheAdmin4lPageLayoutHasTheSameSkipLinkAndLandmarks()
+    {
+        $layout = preg_replace( '/\{\*.*?\*\}/s', '', (string)file_get_contents( self::root() . '/design/admin4l/templates/pagelayout.tpl' ) );
+        $this->assertMatchesRegularExpression( '#<body>\s*<a class="a4-skip-link" href="\#\{if \$main_wrapped\}a4-main\{else\}maincontent\{/if\}">#', $layout );
+        $this->assertStringContainsString( '<div id="maincontent" role="main" tabindex="-1">', $layout );
+        $this->assertMatchesRegularExpression( '#\{if \$main_wrapped\}\s*<div id="a4-main" role="main" tabindex="-1">#', $layout );
+        $this->assertStringContainsString( '<div id="header" role="banner">', $layout );
+        $this->assertMatchesRegularExpression( '#<div id="path" role="navigation" aria-label="#', $layout );
+        $this->assertMatchesRegularExpression( '#<div id="rightmenu" class="sidebar right" role="complementary" aria-label="#', $layout );
+        $this->assertStringContainsString( 'role="contentinfo"', $layout );
+        $this->assertMatchesRegularExpression( '#<div id="leftmenu" class="sidebar left" role="navigation" aria-label="#', $layout );
+        $this->assertMatchesRegularExpression( '#class="navbar-menu[^"]*" role="navigation" aria-label="#', $layout );
+        // The skip link's target is part of the cached header block's key
+        $this->assertMatchesRegularExpression( '#\{cache-block keys=array\( \$uri_cache_key,[^}]*\$main_wrapped \) ignore_content_expiry\}#', $layout );
     }
 
     /** The edit-type pages (content/edit, history, version view ...) bring #maincontent themselves */

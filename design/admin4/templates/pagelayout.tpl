@@ -42,7 +42,7 @@
  Need navigation part for cases like content/browse where node id is taken from caller params *}
     {* siteaccess_url() here too: this block holds the header block below, whose
        site link depends on the scheme, host and port of the request. *}
-    {cache-block keys=array( $uri_cache_key, $user_hash, $admin_theme, $admin_left_size, $access_type, first_set( $module_result.navigation_part, $navigation_part.identifier ), $search_hash, siteaccess_url() ) ignore_content_expiry}
+    {cache-block keys=array( $uri_cache_key, $user_hash, $admin_theme, $admin_left_size, $access_type, first_set( $module_result.navigation_part, $navigation_part.identifier ), $search_hash, siteaccess_url(), $main_wrapped ) ignore_content_expiry}
 
     {include uri='design:page_head.tpl'}
 
@@ -55,7 +55,7 @@
 <body>
 
     {* Skip link: the first stop of the Tab key, shown only while focused, to the main landmark (see $main_wrapped). *}
-    <a class="a4-skip-link" href="#{if $main_wrapped}a4-main{else}maincontent{/if}">{'Skip to main content'|i18n( 'design/admin/pagelayout' )}</a>
+    <a class="a4-skip-link" href="#{if $main_wrapped}a4-main{else}maincontent{/if}">{'Skip to main content'|i18n( 'design/admin/pagelayout' )|wash}</a>
 
     <div id="page" class="{$navigation_part.identifier} section_id_{first_set( $module_result.section_id, 0 )}">
 
