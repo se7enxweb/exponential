@@ -12,6 +12,11 @@
  *  ED-05 - the check reads what the package takes, as text: commented lines, Key[]=, blanks, quotes, BOM and CRLF,
  *          names in any case, hidden files, links outside the extension, files too big to read; the package holds
  *          exactly the entries the check marked as packed
+ *  ED-06 - under a secret name only an empty value or a whole placeholder passes (no look-alike, number or switch,
+ *          unless the name announces a measure or a switch)
+ *  ED-07 - every text file is read for the shapes of secrets, configuration files as pairs, UTF-16 and binary
+ *          settings files are refused, more names of key material
+ *  ED-08 - the package wizard removes a package refused while it is made and shows the reason
  *  ED-04 - the view no longer packs from the address (/setup/extensions/<name>/<format>), and both designs post a
  *          button instead of linking
  *
@@ -23,27 +28,38 @@
 use Exponential\View\Kernel\Setup\Extensions;
 
 /** A package held in a throwaway directory: what addExtension() asks of it */
-class ExtensionDownloadTestPackage
+class ExtensionDownloadTestPackage extends eZPackage
 {
-    private $path;
+    private $testPath;
 
     public function __construct( $path )
     {
-        $this->path = $path;
+        $this->testPath = $path;
     }
 
-    public function path()
+    function path()
     {
-        return $this->path;
+        return $this->testPath;
     }
 
-    public function md5sum( $file )
+    static function md5sum( $file )
     {
         return is_file( $file ) ? md5_file( $file ) : '';
     }
 
-    public function appendInstall()
+    function appendInstall( $type, $name, $os = false, $isInstall = true, $filename = false, $subdirectory = false, $parameters = false )
     {
+    }
+}
+
+/** The extension wizard with its package made in a throwaway directory */
+class ExtensionDownloadTestCreator extends eZExtensionPackageCreator
+{
+    public static $path;
+
+    function createPackage( &$package, $http, &$persistentData, &$cleanupFiles, $storePackage = true )
+    {
+        $package = new ExtensionDownloadTestPackage( self::$path );
     }
 }
 
@@ -102,7 +118,7 @@ class ExtensionDownloadTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array(), $this->secrets() );
         $this->put( 'settings/siteaccess/site/site.ini.append.php',
                     "<?php /* #?ini charset=\"utf-8\"?\n[DatabaseSettings]\nUser=db\nPassword=hunter2\n[Feed]\nSource=https://reader:pw1@feeds.example.invalid/x\nApiKey[default]=abc\n*/ ?>\n" );
-        $this->assertSame( array( 'settings/siteaccess/site/site.ini.append.php: ApiKey', 'settings/siteaccess/site/site.ini.append.php: Password',
+        $this->assertSame( array( 'settings/siteaccess/site/site.ini.append.php: (address with a password)', 'settings/siteaccess/site/site.ini.append.php: ApiKey', 'settings/siteaccess/site/site.ini.append.php: Password',
                                   'settings/siteaccess/site/site.ini.append.php: Source' ), $this->secrets() );
         $this->assertSame( array(), eZExtensionPackageHandler::secretFiles( $this->dir() . '/missing' ) );
     }
@@ -110,9 +126,9 @@ class ExtensionDownloadTest extends PHPUnit\Framework\TestCase
     /** ED-01, every file below settings/, and the names of passwords and authorizations */
     public function testEveryFileBelowSettingsAndMoreNamesAreRead()
     {
-        $this->put( 'settings/credentials.txt', "db_pass=hunter2\nProxyAuth=user:pw\nBearer=abc\nmysqli.default_pw=pw\nBypass=cache\nSmtpAuth=none\nAuth=login\nMaxTokens=10\n" );
-        $this->assertSame( array( 'settings/credentials.txt: Auth', 'settings/credentials.txt: Bearer', 'settings/credentials.txt: ProxyAuth',
-                                  'settings/credentials.txt: db_pass', 'settings/credentials.txt: mysqli.default_pw' ), $this->secrets() );
+        $this->put( 'settings/logins.txt', "db_pass=hunter2\nProxyAuth=user:pw\nBearer=abc\nmysqli.default_pw=pw\nBypass=cache\nSmtpAuth=none\nAuth=login\nMaxTokens=10\n" );
+        $this->assertSame( array( 'settings/logins.txt: Auth', 'settings/logins.txt: Bearer', 'settings/logins.txt: ProxyAuth', 'settings/logins.txt: SmtpAuth',
+                                  'settings/logins.txt: db_pass', 'settings/logins.txt: mysqli.default_pw' ), $this->secrets() );
     }
 
     /** ED-01, copies of settings files */
@@ -148,11 +164,112 @@ class ExtensionDownloadTest extends PHPUnit\Framework\TestCase
         $this->put( 'settings/c.ini', "[Db]\n  Password   =   \"hunter2\"  \n" );
         $this->put( 'settings/d.ini', "\xEF\xBB\xBFSecret=one\r\nUser=x\r\nDbPass=two\rTitle=three\r\n" );
         $this->put( 'settings/siteaccess/site/e', "Server=mysql://u:hunter2@db/x\n; Url=https://u:pw@host/\n" );
-        $this->put( 'settings/f.ini', "# ApiKey=sk-...\n# Password=<your password>\n# SearchServerUserPass=username:password\n# a token: in prose\nPassword=\nTimeout=30\n" );
+        $this->put( 'settings/f.ini', "# ApiKey=...\n# Password=<...>\n# Password=xxxx\n# a token: in prose\nPassword=\nTimeout=30\nMaxTokens=4096\nRequireToken=enabled\nContextTokens=1000000\n" );
         $this->put( 'doc/example.ini.append.php', "Password=hunter2\n" );
         $this->assertSame( array( 'doc/example.ini.append.php: Password', 'settings/a.ini.append.php: Password', 'settings/b.ini: Password',
                                   'settings/b.ini: Token', 'settings/c.ini: Password', 'settings/d.ini: DbPass', 'settings/d.ini: Secret',
-                                  'settings/siteaccess/site/e: Server', 'settings/siteaccess/site/e: Url' ), $this->secrets() );
+                                  'settings/siteaccess/site/e: (address with a password)', 'settings/siteaccess/site/e: Server',
+                                  'settings/siteaccess/site/e: Url' ), $this->secrets() );
+    }
+
+    /** ED-06, under a secret name only an empty value or a whole placeholder passes: no number, switch or look-alike */
+    public function testOnlyEmptyValuesAndWholePlaceholdersPass()
+    {
+        $refused = array( 'realsecret...', 'realsecret\u{2026}', 'secret', 'changeme', 'your_real_pw', '<abc123>', '12345678', '1234567890123456',
+                          'true', 'yes', 'none', 'null', '"none"', 'enabled' );
+        foreach ( $refused as $value )
+        {
+            $this->assertTrue( eZExtensionPackageHandler::isSecretPair( 'Password', $value ), "Password=$value" );
+            $this->assertTrue( eZExtensionPackageHandler::isSecretPair( 'ApiKey', $value ), "ApiKey=$value" );
+        }
+        foreach ( array( '', '""', '...', "\u{2026}", 'xxx', 'XXXXXXXX', '***', '<...>', "<\u{2026}>" ) as $value )
+            $this->assertFalse( eZExtensionPackageHandler::isSecretPair( 'Password', $value ), "Password=$value" );
+        foreach ( array( array( 'MaxTokens', '4096' ), array( 'ContextTokens', '1000000' ), array( 'CharsPerToken', '3.5' ),
+                         array( 'PasswordLifeTime', '90' ), array( 'RequireToken', 'enabled' ), array( 'AllowSessionAuth', 'disabled' ),
+                         array( 'Timeout', '30' ), array( 'Title', 'none' ) ) as $pair )
+            $this->assertFalse( eZExtensionPackageHandler::isSecretPair( $pair[0], $pair[1] ), implode( '=', $pair ) );
+        $this->put( 'settings/g.ini', "Password=realsecret...\nApiKey=1234567890123456\nToken=true\n" );
+        $this->assertSame( array( 'settings/g.ini: ApiKey', 'settings/g.ini: Password', 'settings/g.ini: Token' ), $this->secrets() );
+    }
+
+    /** ED-07, secrets by their shape in every text file, also outside settings/ */
+    public function testShapesAreFoundInEveryTextFile()
+    {
+        $this->put( 'classes/a.php', "<?php\n\$k = \"-----BEGIN RSA PRIVATE KEY-----\\nMIIE\";\n" );
+        $this->put( 'classes/b.php', "<?php\ndefine( 'MY_API_KEY', 'abc123' );\ndefine( 'TITLE', 'x' );\n" );
+        $this->put( 'doc/c.md', "curl -H 'Authorization: Bearer abcdefgh12345678' https://api.example.invalid/\n" );
+        $this->put( 'design/d.tpl', "{def \$key='sk-proj-abcdefghijklmnopqrstuvwxyz012345'}\n" );
+        $this->put( 'lib/e.json', "{\"aws\": \"AKIAABCDEFGHIJKLMNOP\", \"gh\": \"ghp_abcdefghijklmnopqrstuvwxyz0123456789\"}\n" );
+        $this->put( 'lib/f.xml', "<slack>xoxb-1234567890-abcdefghij</slack>\n" );
+        $this->put( 'lib/g.txt', "mirror: https://deploy:hunter2@git.example.invalid/x.git\n" );
+        $this->put( 'lib/clean.php', "<?php\n\$password = \$http->postVariable( 'Password' );\n// sk-... and AKIA... in prose\n" );
+        $this->assertSame( array( 'classes/a.php: (private key)', 'classes/b.php: (constant)', 'design/d.tpl: (API key)',
+                                  'doc/c.md: (bearer token)', 'lib/e.json: (API key)', 'lib/f.xml: (API key)',
+                                  'lib/g.txt: (address with a password)' ), $this->secrets() );
+    }
+
+    /** ED-07, configuration files: "name: value", quoted names, YAML values on the next line */
+    public function testConfigurationFilesAreReadAsPairs()
+    {
+        $this->put( 'config/a.yml', "db:\n  host: localhost\n  password: hunter2\n" );
+        $this->put( 'config/b.yaml', "api_token:\n  abc123\nclient_secret: |\n  multi\n" );
+        $this->put( 'config/c.conf', "auth_pass = s3cret\nport = 5432\n" );
+        $this->put( 'docker/.env.local.example', "DB_PASSWORD=hunter2\n" );
+        $this->put( 'config/d.yml', "password:\n  ...\ntimeout: 30\n" );
+        $this->assertSame( array( 'config/a.yml: password', 'config/b.yaml: api_token', 'config/b.yaml: client_secret',
+                                  'config/c.conf: auth_pass', 'docker/.env.local.example: key material' ), $this->secrets() );
+    }
+
+    /** ED-07, text the check cannot read is refused, binary files are not read */
+    public function testUnreadableEncodingsAndBinaryFiles()
+    {
+        $this->put( 'settings/u.ini', "\xFF\xFEP\0a\0s\0s\0=\0x\0" );
+        $this->put( 'doc/u16.txt', "\xFE\xFF\0P\0a" );
+        $this->put( 'settings/bin.ini', "Title=x\0Password=hunter2" );
+        $this->put( 'design/image.png', "\x89PNG\r\n\0\0Password=hunter2 sk-proj-abcdefghijklmnopqrstuvwxyz012345" );
+        $this->assertSame( array( 'doc/u16.txt: (text in UTF-16 or UTF-32)', 'settings/bin.ini: binary settings file',
+                                  'settings/u.ini: (text in UTF-16 or UTF-32)' ), $this->secrets() );
+    }
+
+    /** ED-07, more names of key material, files and directories */
+    public function testMoreKeyFileNames()
+    {
+        foreach ( array( 'credentials.json', 'gcp/my-service-account.json', 'old/private.pem.old', 'old/server.key.txt', 'certs.pem/cert', 'tls.KEY/a' ) as $file )
+            $this->put( $file );
+        $this->put( 'doc/keyboard.txt' );
+        $this->assertSame( array( 'certs.pem/cert: key material', 'credentials.json: key material', 'gcp/my-service-account.json: key material',
+                                  'old/private.pem.old: key material', 'old/server.key.txt: key material', 'tls.KEY/a: key material' ), $this->secrets() );
+    }
+
+    /** ED-08, a refusal while the wizard makes the package leaves nothing of it behind and is shown */
+    public function testTheWizardRemovesARefusedPackage()
+    {
+        $this->put( 'certs/server.key' );
+        $path = dirname( __DIR__, 5 ) . '/var/tmp/phpunit-extdownload-wizard-' . getmypid();
+        ExtensionDownloadTestCreator::$path = $path;
+        $creator = new ExtensionDownloadTestCreator( 'ezextension' );
+        $package = false;
+        $persistent = array( 'extensionlist' => array( 'classes_only_' . getmypid(), $this->name ) );
+        mkdir( eZExtension::baseDirectory() . '/classes_only_' . getmypid() . '/classes', 0777, true );
+        file_put_contents( eZExtension::baseDirectory() . '/classes_only_' . getmypid() . '/classes/a.php', "<?php\n" );
+        try
+        {
+            $creator->finalize( $package, eZHTTPTool::instance(), $persistent );
+            $this->fail( 'the wizard packs an extension with key material' );
+        }
+        catch ( RuntimeException $e )
+        {
+            $this->assertStringContainsString( 'certs/server.key: key material', $e->getMessage() );
+        }
+        finally
+        {
+            eZDir::recursiveDelete( eZExtension::baseDirectory() . '/classes_only_' . getmypid() );
+        }
+        $this->assertDirectoryDoesNotExist( $path, 'the extension packed before the refusal is removed' );
+
+        $source = file_get_contents( dirname( __DIR__, 5 ) . '/kernel/private/classes/views/package/create.php' );
+        $this->assertStringContainsString( "try\n                {\n                    \$creator->finalize( \$package, \$http, \$persistentData );\n                }\n                catch ( \\RuntimeException \$e )", $source );
+        $this->assertStringContainsString( "'description' => \$finalizeError", $source );
     }
 
     /** ED-05, names in any case, hidden files, links and files the check cannot read */
@@ -171,7 +288,7 @@ class ExtensionDownloadTest extends PHPUnit\Framework\TestCase
         {
             $this->assertSame( array( '.hidden/settings.ini: Password', 'certs/SERVER.PEM: key material',
                                       'config/site.INI.BAK: copy of a settings file', 'docker/.Env: key material',
-                                      'settings/huge.ini: too large or unreadable to check', 'settings/linked.ini: link outside the extension' ),
+                                      'settings/huge.ini: text too large to check', 'settings/linked.ini: link outside the extension' ),
                                $this->secrets() );
         }
         finally

@@ -188,10 +188,10 @@ class eZExtensionPackageHandler extends eZPackageHandler
     }
 
     /** Files that hold key material, anywhere in an extension: by name, any case */
-    const KEY_FILE_PATTERN = '/(\.(pem|key|p12|pfx|jks|keystore|kdbx|crt|der|p8|ppk|gpg|asc)$|^\.env(\.(?!(example|sample|template)$).*)?$|^id_(rsa|dsa|ecdsa|ed25519)|^\.htpasswd$|^\.netrc$|^\.pgpass$)/i';
+    const KEY_FILE_PATTERN = '/(\.(pem|key|p12|pfx|jks|keystore|kdbx|crt|der|p8|ppk|gpg|asc)$|\.(pem|key|p12|pfx)\.|^\.env(\.(?!(example|sample|template)$).*)?$|^id_(rsa|dsa|ecdsa|ed25519)|^\.htpasswd$|^\.netrc$|^\.pgpass$|^credentials|service[-_]?account)/i';
 
     /** Directories whose files are key material, anywhere in an extension, any case */
-    const KEY_DIRECTORY_PATTERN = '/^(jwt|\.ssh|\.gnupg)$/i';
+    const KEY_DIRECTORY_PATTERN = '/(^(jwt|\.ssh|\.gnupg)$|\.(pem|key)$)/i';
 
     /** Copies and backups of settings files: never packed, whatever they hold */
     const BACKUP_FILE_PATTERN = '/(\.(bak|orig|dist|old|save|swp|swo|tmp|rej|backup)$|~$)/i';
@@ -271,71 +271,156 @@ class eZExtensionPackageHandler extends eZPackageHandler
         return $entries;
     }
 
-    /**
-     * The secrets in the raw text of a settings file, by the names they stand under, without their values. Read
-     * line by line as text, not as eZINI reads it, so nothing eZINI skips or reads differently is missed: lines in
-     * a comment ("#Password=..." and the PHP comment wrapper), Key[]= and Key[name]=, blanks around "=", quotes,
-     * a byte order mark, CRLF or CR line ends, duplicates, several pairs on a line. A pair is a secret when its name
-     * holds one (expSystemReportMask::isSecretSettingName()) or its value carries one (expSecretRule::
-     * hasInlineSecret()); empty values, numbers, switches (true, enabled, none, ...) and placeholders
-     * (isPlaceholder()) are not. A line without a pair counts when it holds an address with a password, or, outside
-     * a comment, a secret inline ("password: ..."). Pure.
-     *
-     * @param string $text
-     * @return string[] names, "(inline)" for a line without a pair
-     */
-    static function secretsInText( $text )
-    {
-        $text = preg_replace( '/^\xEF\xBB\xBF/', '', (string)$text );
-        $found = array();
-        foreach ( preg_split( '/\r\n|\r|\n/', $text ) as $line )
-        {
-            if ( preg_match_all( '/([A-Za-z0-9_.\-]+)\s*(?:\[[^\]\r\n]*\])?\s*=(?![=>])([^\r\n]*)/', $line, $pairs, PREG_SET_ORDER ) )
-            {
-                foreach ( $pairs as $pair )
-                {
-                    $value = trim( preg_replace( '#\s*\*/\s*(\?>)?\s*$#', '', $pair[2] ) );
-                    $value = trim( $value, " \t\"'" );
-                    if ( $value === '' || preg_match( '/^(-?\d+(\.\d+)?|true|false|enabled|disabled|yes|no|on|off|none|null)$/i', $value )
-                         || self::isPlaceholder( $value ) )
-                        continue;
-                    if ( expSystemReportMask::isSecretSettingName( $pair[1] ) || expSecretRule::hasInlineSecret( $value ) )
-                        $found[$pair[1]] = true;
-                }
-            }
-            // a line without a pair: a password in an address always; "token: ..." style text only outside a comment
-            else if ( preg_match( '#[a-z][a-z0-9+.\-]*://[^/\s:@]+:[^@\s/]+@#i', $line )
-                      || ( !preg_match( '/^\s*(#|;|\/\/|\*)/', $line ) && expSecretRule::hasInlineSecret( $line ) ) )
-                $found['(inline)'] = true;
-        }
-        return array_keys( $found );
-    }
+    /** Secrets by their shape, in any text: private keys, bearer tokens and the token formats of common services */
+    const SECRET_SHAPE_PATTERNS = array(
+        'private key' => '/-----BEGIN [A-Z0-9 ]*PRIVATE KEY( BLOCK)?-----/',
+        'bearer token' => '/\bAuthorization\s*[:=]\s*["\']?Bearer\s+[A-Za-z0-9\-._~+\/]{8,}/i',
+        'API key' => '/\b(sk-(proj-|live-|test-)?[A-Za-z0-9_\-]{20,}|AKIA[0-9A-Z]{16}|ASIA[0-9A-Z]{16}|AIza[0-9A-Za-z_\-]{35}|gh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{30,}|xox[abprs]-[A-Za-z0-9\-]{10,}|glpat-[A-Za-z0-9_\-]{20,}|sk_live_[A-Za-z0-9]{20,}|rk_live_[A-Za-z0-9]{20,})/',
+        'constant' => '/\bdefine\s*\(\s*["\'][A-Za-z0-9_]*(KEY|SECRET|TOKEN|PASS|PASSWORD|PWD|CREDENTIAL)[A-Za-z0-9_]*["\']\s*,\s*["\'][^"\']+["\']/i',
+        'address with a password' => '#[a-z][a-z0-9+.\-]*://[^/\s:@"\']+:[^@\s/"\']+@#i',
+    );
+
+    /** Text files whose lines are read as "name = value" or "name: value" pairs, besides settings files */
+    const CONFIG_FILE_PATTERN = '/(\.(ya?ml|conf|cfg|cnf|properties|toml|env|neon)$|^\.env)/i';
 
     /**
-     * Whether $value only stands for a value, as the examples in settings comments do: "sk-...", "<your key>",
-     * "username:password", "xxxx". Pure.
+     * Whether $value is only a placeholder as a whole: "...", "…", "xxx" (three or more), "***" (three or more),
+     * "<...>" or "<…>". Anything else under a secret name is taken for a secret. Pure.
      *
      * @param string $value
      * @return bool
      */
     static function isPlaceholder( $value )
     {
+        return preg_match( '/^(\.\.\.|\x{2026}|[xX]{3,}|\*{3,}|<\.\.\.>|<\x{2026}>)$/u', trim( (string)$value ) ) === 1;
+    }
+
+    /**
+     * Whether a setting whose name only looks like a secret is a measure or a switch: a number (at most nine digits,
+     * maybe with decimals, maybe followed by words) under a name that says it measures (MaxTokens, TokenLength,
+     * PasswordLifeTime, CharsPerToken ...), or a
+     * switch (enabled, disabled, true, false) under a name that says it switches (AllowSessionAuth, RequireToken,
+     * IEDisableWithPassword ...). "Password=12345678", "ApiKey=12345" and "Password=true" are none of these. Pure.
+     *
+     * @param string $name
+     * @param string $value
+     * @return bool
+     */
+    static function isMeasureOrSwitch( $name, $value )
+    {
+        $name = (string)$name;
         $value = trim( (string)$value );
-        return preg_match( '/(\.\.\.|\x{2026})$/u', $value ) === 1
-            || preg_match( '/^<[^<>]*>$/', $value ) === 1
-            || preg_match( '/^(x+|\*+|changeme|secret|password|your[ _\-].*|username:password|user:password)$/i', $value ) === 1;
+        if ( preg_match( '/^\d{1,9}(\.\d+)?(\s|$)/', $value ) )
+            return preg_match( '/(tokens|length|lifetime|budget|count|size|limit|timeout|ttl|^max|^min|^estimate|per_?token)/i', $name ) === 1;
+        if ( preg_match( '/^(enabled|disabled|true|false)$/i', $value ) )
+            return preg_match( '/(^(allow|use|require|enable|disable|is|has|show|check)|(enabled|required|disable)|with)/i', $name ) === 1
+                && preg_match( '/^(allow|use|require|enable|disable|is|has|show|check|ie)/i', $name ) === 1;
+        return false;
+    }
+
+    /**
+     * Whether the pair $name = $value holds a secret: under a secret name (expSystemReportMask::isSecretSettingName())
+     * every value but an empty one, a placeholder (isPlaceholder()) or a measure or switch its name announces
+     * (isMeasureOrSwitch()); other numbers and switches count as secrets; under another
+     * name a value that carries a secret inline (expSecretRule::hasInlineSecret()) or has the shape of one. Pure.
+     *
+     * @param string $name
+     * @param string $value
+     * @return bool
+     */
+    static function isSecretPair( $name, $value )
+    {
+        $value = trim( preg_replace( '#\s*\*/\s*(\?>)?\s*$#', '', (string)$value ) );
+        $value = trim( rtrim( $value, ',;' ) );
+        $value = trim( $value, " \t\"'" );
+        if ( $value === '' )
+            return false;
+        if ( expSystemReportMask::isSecretSettingName( $name ) )
+            return !self::isPlaceholder( $value ) && !self::isMeasureOrSwitch( $name, $value );
+        if ( expSecretRule::hasInlineSecret( $value ) )
+            return true;
+        foreach ( self::SECRET_SHAPE_PATTERNS as $pattern )
+            if ( preg_match( $pattern, $value ) )
+                return true;
+        return false;
+    }
+
+    /**
+     * The secrets in the raw text of a file, by the names they stand under or by their kind, without their values.
+     *
+     * Every text: SECRET_SHAPE_PATTERNS (a private key, "Authorization: Bearer ...", service tokens such as sk-...,
+     * AKIA..., ghp_..., xoxb-..., define( '..._KEY', '...' ), an address with a password).
+     * $pairs 'ini' (settings files): every "name = value" in every line, read as text, not as eZINI reads it, so
+     * nothing eZINI skips or reads differently is missed (commented lines and the PHP comment wrapper, Key[]= and
+     * Key[name]=, blanks around "=", quotes, a byte order mark, CRLF or CR, duplicates, several pairs on a line),
+     * judged by isSecretPair(), and outside comments a line carrying a secret inline ("password: ...").
+     * $pairs 'config' (CONFIG_FILE_PATTERN: YAML, .env, .conf, .properties ...): the same with "name: value" and quoted
+     * names as well, and a secret name in YAML whose value stands on the next line.
+     * Text in UTF-16 or UTF-32 is not read: it is reported as such. Pure.
+     *
+     * @param string $text
+     * @param string|false $pairs 'ini', 'config' or false
+     * @return string[] names, or kinds in parentheses
+     */
+    static function secretsInText( $text, $pairs = 'ini' )
+    {
+        $text = (string)$text;
+        if ( preg_match( '/^(\xFF\xFE|\xFE\xFF|\x00\x00\xFE\xFF)/', $text ) )
+            return array( '(text in UTF-16 or UTF-32)' );
+        $text = preg_replace( '/^\xEF\xBB\xBF/', '', $text );
+        $found = array();
+        foreach ( self::SECRET_SHAPE_PATTERNS as $kind => $pattern )
+        {
+            if ( preg_match( $pattern, $text ) )
+                $found['(' . $kind . ')'] = true;
+        }
+        if ( $pairs === false )
+            return array_keys( $found );
+
+        $pairPattern = $pairs === 'config'
+            ? '/["\']?([A-Za-z0-9_.\-]+)["\']?\s*(?:\[[^\]\r\n]*\])?\s*(?:=(?![=>])|:(?![:\/]))([^\r\n]*)/'
+            : '/([A-Za-z0-9_.\-]+)\s*(?:\[[^\]\r\n]*\])?\s*=(?![=>])([^\r\n]*)/';
+        $lines = preg_split( '/\r\n|\r|\n/', $text );
+        foreach ( $lines as $i => $line )
+        {
+            $isComment = preg_match( '/^\s*(#|;|\/\/|\*)/', $line ) === 1;
+            if ( preg_match_all( $pairPattern, $line, $matches, PREG_SET_ORDER ) )
+            {
+                foreach ( $matches as $m )
+                {
+                    if ( self::isSecretPair( $m[1], $m[2] ) )
+                        $found[$m[1]] = true;
+                    // YAML: "password:" with its value on the next, deeper line
+                    else if ( $pairs === 'config' && ( trim( $m[2] ) === '' || preg_match( '/^\s*[|>][\-+]?\s*$/', $m[2] ) ) )
+                    {
+                        if ( expSystemReportMask::isSecretSettingName( $m[1] ) && isset( $lines[$i + 1] )
+                             && preg_match( '/^(\s+)(\S.*)$/', $lines[$i + 1], $next ) && !self::isPlaceholder( trim( $next[2], " \t\"'" ) )
+                             && !preg_match( '/^\s*[A-Za-z0-9_.\-]+\s*:/', $lines[$i + 1] ) )
+                            $found[$m[1]] = true;
+                    }
+                }
+            }
+            else if ( !$isComment && expSecretRule::hasInlineSecret( $line ) )
+                $found['(inline)'] = true;
+        }
+        return array_keys( $found );
     }
 
     /**
      * What in the extension directory $dir must not leave the server in a package, one line each, without a value.
      * Every entry of packEntries() is checked, the packed ones and the others (hidden files, links) alike:
-     *  - key material anywhere, any case: KEY_FILE_PATTERN (*.pem, *.key, *.p12, *.pfx, .env but not .env.example,
-     *    .sample or .template, id_rsa, ...) and every file in a KEY_DIRECTORY_PATTERN directory (jwt/, .ssh/);
+     *  - key material anywhere, by name in any case: KEY_FILE_PATTERN (*.pem, *.key, *.p12, *.pfx, also *.pem.* and
+     *    *.key.* such as private.pem.old, credentials*, *service-account*, .env but not .env.example, .sample or
+     *    .template, id_rsa, ...) and every file in a KEY_DIRECTORY_PATTERN directory (jwt/, .ssh/, *.pem/, *.key/);
      *  - a symbolic link that leads outside the extension or nowhere, and anything that is neither file, directory
      *    nor link;
-     *  - below settings/ (any case, any depth), and any file named *.ini*: a copy or backup (BACKUP_FILE_PATTERN:
-     *    *.bak, *.orig, *.dist, *~, ...), and the secrets of secretsInText() in every other file; a file that cannot
-     *    be read or is bigger than MAX_SCAN_BYTES is refused.
+     *  - a copy or backup of a settings file (BACKUP_FILE_PATTERN: *.bak, *.orig, *.dist, *~, ...) below settings/
+     *    or named *.ini*;
+     *  - the text of every file: secretsInText(). Settings files (below settings/, any case, any depth, or named
+     *    *.ini*) are read as INI pairs, the files of CONFIG_FILE_PATTERN as pairs of names and values, every other
+     *    file (PHP, JSON, XML, text, templates ...) for the shapes of secrets (SECRET_SHAPE_PATTERNS). A file is binary when its first 8 KB hold a NUL byte: a binary file
+     *    is not read, but a binary settings file is refused. Text in UTF-16 or UTF-32, text bigger than
+     *    MAX_SCAN_BYTES and a file that cannot be read are refused.
      * A directory that cannot be read refuses the whole extension. Reads the files only.
      *
      * @param string $dir
@@ -388,27 +473,36 @@ class eZExtensionPackageHandler extends eZPackageHandler
                     continue 2;
                 }
             }
-            $inSettings = isset( $parts[0] ) && strtolower( $parts[0] ) === 'settings';
-            if ( !$inSettings && !preg_match( '/\.ini(\.|$)/i', $name ) )
-                continue;
-            if ( preg_match( self::BACKUP_FILE_PATTERN, $name ) )
+            $isSettings = ( isset( $parts[0] ) && strtolower( $parts[0] ) === 'settings' ) || preg_match( '/\.ini(\.|$)/i', $name );
+            if ( $isSettings && preg_match( self::BACKUP_FILE_PATTERN, $name ) )
             {
                 $found[$relative . ': copy of a settings file'] = true;
                 continue;
             }
-            $size = @filesize( $full );
-            if ( $size === false || $size > self::MAX_SCAN_BYTES )
-            {
-                $found[$relative . ': too large or unreadable to check'] = true;
-                continue;
-            }
-            $text = @file_get_contents( $full );
+
+            $handle = @fopen( $full, 'rb' );
+            $text = $handle ? fread( $handle, self::MAX_SCAN_BYTES + 1 ) : false;
+            if ( $handle )
+                fclose( $handle );
             if ( $text === false )
             {
-                $found[$relative . ': too large or unreadable to check'] = true;
+                $found[$relative . ': unreadable'] = true;
                 continue;
             }
-            foreach ( self::secretsInText( $text ) as $setting )
+            $utf16 = preg_match( '/^(\xFF\xFE|\xFE\xFF|\x00\x00\xFE\xFF)/', $text ) === 1;
+            if ( !$utf16 && strpos( substr( $text, 0, 8192 ), "\0" ) !== false )
+            {
+                if ( $isSettings )
+                    $found[$relative . ': binary settings file'] = true;
+                continue;
+            }
+            if ( strlen( $text ) > self::MAX_SCAN_BYTES )
+            {
+                $found[$relative . ': text too large to check'] = true;
+                continue;
+            }
+            $pairs = $isSettings ? 'ini' : ( preg_match( self::CONFIG_FILE_PATTERN, $name ) ? 'config' : false );
+            foreach ( self::secretsInText( $text, $pairs ) as $setting )
                 $found[$relative . ': ' . $setting] = true;
         }
         $found = array_keys( $found );

@@ -41,9 +41,20 @@ class eZExtensionPackageCreator extends eZPackageCreationHandler
         $extensionHandler = eZPackage::packageHandler( 'ezextension' );
 
         $extensionList = $persistentData['extensionlist'];
-        foreach ( $extensionList as $extensionName )
+        try
         {
-            $extensionHandler->addExtension( $package, $extensionName );
+            foreach ( $extensionList as $extensionName )
+            {
+                $extensionHandler->addExtension( $package, $extensionName );
+            }
+        }
+        catch ( RuntimeException $e )
+        {
+            // an extension refused while the package was made (changed since the extension step): nothing of the
+            // package stays, and the wizard shows the reason (kernel/package/create)
+            if ( $package instanceof eZPackage )
+                eZPackage::removeFiles( $package->path() );
+            throw $e;
         }
 
         $package->setAttribute( 'is_active', true );
