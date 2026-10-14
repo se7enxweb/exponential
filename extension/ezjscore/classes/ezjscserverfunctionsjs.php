@@ -199,10 +199,11 @@ class ezjscServerFunctionsJs extends ezjscServerFunctions
     {
         $http = eZHTTPTool::instance();
 
+        $searchStr = '';
         if ( $http->hasPostVariable( 'SearchStr' ) )
-            $searchStr = trim( $http->postVariable( 'SearchStr' ) );
+            $searchStr = is_string( $http->postVariable( 'SearchStr' ) ) ? trim( $http->postVariable( 'SearchStr' ) ) : '';
         else if ( isset( $args[0] ) )
-            $searchStr = trim( $args[0] );
+            $searchStr = trim( (string)$args[0] );
 
         if ( $http->hasPostVariable( 'SearchOffset' ))
             $searchOffset = (int) $http->postVariable( 'SearchOffset' );
@@ -210,12 +211,17 @@ class ezjscServerFunctionsJs extends ezjscServerFunctions
             $searchOffset = (int) $args[1];
         else
             $searchOffset = 0;
+        // a negative offset makes the search engine fail
+        if ( $searchOffset < 0 )
+            $searchOffset = 0;
 
         if ( $http->hasPostVariable( 'SearchLimit' ))
             $searchLimit = (int) $http->postVariable( 'SearchLimit' );
         else if ( isset( $args[2] ) )
             $searchLimit = (int) $args[2];
         else
+            $searchLimit = 10;
+        if ( $searchLimit < 1 )
             $searchLimit = 10;
 
         // Do not allow to search for more then x items at a time
@@ -250,11 +256,11 @@ class ezjscServerFunctionsJs extends ezjscServerFunctions
 
         if ( self::hasPostValue( $http, 'SearchContentClassAttributeID' ) )
         {
-             $params['SearchContentClassAttributeID'] = self::makePostArray( $http, 'SearchContentClassAttributeID' );
+             $params['SearchContentClassAttributeID'] = self::makePostIDArray( $http, 'SearchContentClassAttributeID' );
         }
         else if ( self::hasPostValue( $http, 'SearchContentClassID' ) )
         {
-             $params['SearchContentClassID'] = self::makePostArray( $http, 'SearchContentClassID' );
+             $params['SearchContentClassID'] = self::makePostIDArray( $http, 'SearchContentClassID' );
         }
         else if ( self::hasPostValue( $http, 'SearchContentClassIdentifier' ) )
         {
@@ -263,12 +269,12 @@ class ezjscServerFunctionsJs extends ezjscServerFunctions
 
         if ( self::hasPostValue( $http, 'SearchSubTreeArray' ) )
         {
-             $params['SearchSubTreeArray'] = self::makePostArray( $http, 'SearchSubTreeArray' );
+             $params['SearchSubTreeArray'] = self::makePostIDArray( $http, 'SearchSubTreeArray' );
         }
 
         if ( self::hasPostValue( $http, 'SearchSectionID' ) )
         {
-             $params['SearchSectionID'] = self::makePostArray( $http, 'SearchSectionID' );
+             $params['SearchSectionID'] = self::makePostIDArray( $http, 'SearchSectionID' );
         }
 
         if ( self::hasPostValue( $http, 'SearchDate' ) )
@@ -277,8 +283,10 @@ class ezjscServerFunctionsJs extends ezjscServerFunctions
         }
         else if ( self::hasPostValue( $http, 'SearchTimestamp' ) )
         {
-            $params['SearchTimestamp'] = self::makePostArray( $http, 'SearchTimestamp' );
-            if ( !isset( $params['SearchTimestamp'][1] ) )
+            $params['SearchTimestamp'] = self::makePostIDArray( $http, 'SearchTimestamp' );
+            if ( !$params['SearchTimestamp'] )
+                unset( $params['SearchTimestamp'] );
+            else if ( !isset( $params['SearchTimestamp'][1] ) )
                 $params['SearchTimestamp'] = $params['SearchTimestamp'][0];
         }
 
@@ -375,6 +383,27 @@ class ezjscServerFunctionsJs extends ezjscServerFunctions
                 return explode( ',', $value );
         }
         return array();
+    }
+
+    /**
+     * makePostArray() for ids: every value cast to an integer, and only those above 0 kept. The ids end up in
+     * the search engine's query (eZ Find writes them into its filter queries), so nothing but an integer may get
+     * there.
+     *
+     * @param eZHTTPTool $http
+     * @param string $key
+     * @return int[]
+     */
+    protected static function makePostIDArray( eZHTTPTool $http, $key )
+    {
+        $idList = array();
+        foreach ( self::makePostArray( $http, $key ) as $value )
+        {
+            $id = is_scalar( $value ) ? (int)$value : 0;
+            if ( $id > 0 )
+                $idList[] = $id;
+        }
+        return $idList;
     }
 
     /**
