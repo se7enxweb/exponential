@@ -56,7 +56,7 @@
 
 {section-else}
 <div class="block">
-<p>{'There are no VAT types.'|i18n( 'design/admin/shop/vattype' )}</p>
+<p class="a4-empty">{'There are no VAT types.'|i18n( 'design/admin/shop/vattype' )}</p>
 </div>
 {/section}
 

@@ -83,7 +83,7 @@
 
 {section-else}
 <div class="block">
-<p>{'The customer list is empty.'|i18n( 'design/admin/shop/customerlist' )}</p>
+<p class="a4-empty">{'The customer list is empty.'|i18n( 'design/admin/shop/customerlist' )}</p>
 </div>
 {/section}
 

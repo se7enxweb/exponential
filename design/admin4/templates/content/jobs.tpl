@@ -104,7 +104,7 @@
     {if or( $filter.state, $filter.type, $filter.user )}
     <p>{'No job matches these filters.'|i18n( 'design/admin/content/job' )} <a href={$base_url|ezurl}>{'Clear the filters'|i18n( 'design/admin/content/job' )}</a></p>
     {else}
-    <p>{'There are no content jobs.'|i18n( 'design/admin/content/job' )}</p>
+    <p class="a4-empty">{'There are no content jobs.'|i18n( 'design/admin/content/job' )}</p>
     <p>{'A remove or copy of a large subtree appears here when it runs in the background.'|i18n( 'design/admin/content/job' )}</p>
     {/if}
 </div>

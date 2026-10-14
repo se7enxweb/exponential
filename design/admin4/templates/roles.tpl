@@ -50,7 +50,7 @@
 </table>
 {section-else}
 <div class="block">
-    <p>{'There are no assigned roles.'|i18n( 'design/admin/node/view/full' )}</p>
+    <p class="a4-empty">{'There are no assigned roles.'|i18n( 'design/admin/node/view/full' )}</p>
 </div>
 {/section}
 

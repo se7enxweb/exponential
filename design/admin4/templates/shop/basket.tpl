@@ -143,7 +143,7 @@
 
 {section-else}
 <div class="block">
-    <p>{'There are no items in your shopping basket.'|i18n( 'design/admin/shop/basket' )}</p>
+    <p class="a4-empty">{'There are no items in your shopping basket.'|i18n( 'design/admin/shop/basket' )}</p>
 </div>
 {/section}
 

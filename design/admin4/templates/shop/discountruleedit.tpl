@@ -88,7 +88,7 @@
 </table>
 {section-else}
 <div class="block">
-<p>{'The individual product list is empty.'|i18n( 'design/admin/shop/discountruleedit' )}</p>
+<p class="a4-empty">{'The individual product list is empty.'|i18n( 'design/admin/shop/discountruleedit' )}</p>
 </div>
 {/section}
 

@@ -98,7 +98,7 @@
 
 {if $groups_info|count|eq(0)}
 <div class="a4-empty">
-    <p>{'There are no state groups yet. A group holds the states content can be in, for example "Review" with Draft, In review and Approved.'|i18n( 'design/admin/state/groups' )}</p>
+    <p class="a4-empty">{'There are no state groups yet. A group holds the states content can be in, for example "Review" with Draft, In review and Approved.'|i18n( 'design/admin/state/groups' )}</p>
 </div>
 {else}
 <ul class="a4-cards" id="state-group-list">

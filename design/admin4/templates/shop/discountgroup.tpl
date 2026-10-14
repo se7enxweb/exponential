@@ -40,7 +40,7 @@
 
 {section-else}
 <div class="block">
-<p>{'There are no discount groups.'|i18n( 'design/admin/shop/discountgroup' )}</p>
+<p class="a4-empty">{'There are no discount groups.'|i18n( 'design/admin/shop/discountgroup' )}</p>
 </div>
 {/section}
 

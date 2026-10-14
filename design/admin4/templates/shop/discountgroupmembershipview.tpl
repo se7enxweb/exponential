@@ -72,7 +72,7 @@
 </table>
 {section-else}
 <div class="block">
-<p>{'There are no discount rules in this group.'|i18n( 'design/admin/shop/discountgroupmembershipview' )}</p>
+<p class="a4-empty">{'There are no discount rules in this group.'|i18n( 'design/admin/shop/discountgroupmembershipview' )}</p>
 </div>
 {/section}
 
@@ -126,7 +126,7 @@
 </table>
 {section-else}
 <div class="block">
-<p>{'There are no customers in this discount group.'|i18n( 'design/admin/shop/discountgroupmembershipview' )}</p>
+<p class="a4-empty">{'There are no customers in this discount group.'|i18n( 'design/admin/shop/discountgroupmembershipview' )}</p>
 </div>
 {/section}
 
