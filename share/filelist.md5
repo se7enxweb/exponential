@@ -920,7 +920,7 @@ d1f3e1ef98e8cee2e52a5446280eadc3  design/admin4/override/templates/embed-inline_
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
 a2c561e93ef63c93201e81acd4f32741  design/admin4/override/templates/window_controls_user.tpl
 f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin4/override/templates/windows_user.tpl
-7aa3eed20a27e841504a6001b0dcef21  design/admin4/stylesheets/admin4.css
+0ed6fc47dfeae80633103c8c452cfc54  design/admin4/stylesheets/admin4.css
 c78a1184983b47189afdcc053be52a9c  design/admin4/stylesheets/components.css
 a8fcc091552c07de33a4c8bc6df8c20f  design/admin4/stylesheets/content.css
 b34210463fcdf50abd3a693ade329417  design/admin4/stylesheets/core.css
@@ -1078,7 +1078,7 @@ e6a3c2f8012b44d7d40ee02614debd4b  design/admin4/templates/navigator/alphabetical
 3d34d274246f1b66961361854c4f039c  design/admin4/templates/no_children.tpl
 43081b08baebac3fc125b6b899ce31cd  design/admin4/templates/node/removenode.tpl
 42e4cfd87cd347933de08e94a4fd83d6  design/admin4/templates/node/removeobject.tpl
-1e0011d10bc97c9037176a921ae14af9  design/admin4/templates/node/top_node_full.tpl
+780506d7fd3a89a85ba9332bffc58fe4  design/admin4/templates/node/top_node_full.tpl
 81fc1197ec81214e6dc60701f1cc6d1c  design/admin4/templates/node/view/a4_full_body.tpl
 ea465bb76b53128ff5a195583ce942a2  design/admin4/templates/node/view/admin_preview.tpl
 dc142438409e90d072cf19d700673a82  design/admin4/templates/node/view/ajaxuploader_preview.tpl
@@ -1305,7 +1305,7 @@ a50dbbb7f5bd2d774da5916fe5984a6d  design/admin4/templates/visual/templatelist.tp
 33e4c23d831c66c1744cec343c7052a2  design/admin4/templates/visual/templateview_buttons.tpl
 99bffc8a164702c52b762b1dd300a15c  design/admin4/templates/visual/toolbar.tpl
 e0bcde19ca3e377bb55d86014ee0c876  design/admin4/templates/visual/toolbarlist.tpl
-03bf0a50004b366a1cbe7f46bb57d6ce  design/admin4/templates/window_controls.tpl
+20ee757d9cc9a4eddd98c6f91bd6ecdb  design/admin4/templates/window_controls.tpl
 aba9d45cd7a9ac859372e310bb43be04  design/admin4/templates/window_controls_extratabs.tpl
 b4481aa8c6dd7b66accd2fea3c4480ba  design/admin4/templates/windows.tpl
 6de7723b1c0bc39a3383cffd028dfd0e  design/admin4/templates/windows_extratabs.tpl
@@ -2755,7 +2755,7 @@ cdbe0fdc9c9011438bf808f4842b0982  doc/bc/5.90/relation_indexing.md
 94f95a803fffdb657972e1a81769e82f  doc/bc/6.0/LAYOUTS.md
 d386923e32f7abc18de9e5392795bb5f  doc/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md
 d95203ddf57747c5dcb15b6923bd0356  doc/bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXPANSION_HIDE_UNHIDE.md
-0f8479c532c4dd70af8009f438760407  doc/bc/6.0/admin4-styling.md
+356cb9482c619d5d9d6ca09fbb101e01  doc/bc/6.0/admin4-styling.md
 b8b0564ea1db716863a85739a1f4c06d  doc/bc/6.0/admin4l.md
 f0b57cd68a5b41cc14ca22727186740c  doc/bc/6.0/api-keys.md
 c9f20a03afc08795fea37b7b66458194  doc/bc/6.0/audit.md
@@ -2984,7 +2984,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-650d8e80186f170cae3e327e76a10e8a  doc/changelogs/6.0/6.0.15.md
+ef951ed4909500f79b5add9e607862c6  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -6972,14 +6972,14 @@ dd5f5f3cf2348a6cc17bd0ee76983225  share/translations/dut-NL/translation.ts
 284321a9de29bf9268c27abb13f56f2c  share/translations/ell-GR/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-AU/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-NZ/translation.ts
-f2b618089ba26f5b17282617a428a4f5  share/translations/eng-US/translation.ts
+ca82b5542c19f90d5213ece5c1d61480  share/translations/eng-US/translation.ts
 5f0920d5b4e8bbaff2a4a6d5b3995c90  share/translations/esl-ES/translation.ts
 27846e3f6408cd74f58cef8adcbab573  share/translations/esl-MX/translation.ts
 4b104d4d337601b4bc6ae0482e6478ea  share/translations/fin-FI/translation.ts
 edfd3efb7eca1e2bd6d6d7d08bd78a77  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-b91da0b129aac5ddff89ad6926a0a8ae  share/translations/ger-DE/translation.ts
+5463baa83123a55c0e985df07a915022  share/translations/ger-DE/translation.ts
 75d657fed5de11db9e059cdcff2046a8  share/translations/ita-IT/translation.ts
 a45e2d26b1c24ac4cb6ae1d7197e5b0e  share/translations/jpn-JP/translation.ts
 d1dc34034ddce2d64c4f8df7fcc41c85  share/translations/nno-NO/translation.ts
@@ -6992,7 +6992,7 @@ e33e059c205f7c0a49e112ce9ba6147d  share/translations/ser-SR/translation.ts
 e9e308757570f0321486d498fc993d17  share/translations/srp-RS/translation.ts
 718ecc8ecbbe8ebec7a88fb2697f401f  share/translations/swe-SE/translation.ts
 0b1b76b5ad6b2f923afd6fd9a9937a8b  share/translations/untranslated/readme.txt
-1a575938b919eb78423ec8027a9e611e  share/translations/untranslated/translation.ts
+f1bf7f14a798968d664f5693d36c35c6  share/translations/untranslated/translation.ts
 bae9ff85781e52af001213bdb213a013  shippable.yml
 414f4d1129273ab3dea38b878d554eae  soap.php
 3b6d156f31df70e093aa1a6d8a525cd3  support/ezlupdate-qt4.5/README.txt
@@ -7057,7 +7057,7 @@ f9b0e9a77c376b79746b7f1228f66fac  tests/test-map.json
 4e3eeb18c2ea423afb62388e5e3dcafc  tests/tests/bin/phpcs/fixtures/typedeclarations.inc
 617c938384f3d87aa79b21ee6d448f4e  tests/tests/design/AdminIconsTest.php
 7e8957a9c15916135defa02bc8301d00  tests/tests/design/AdminRetiredClassesTest.php
-e65acab61ef7a52138dd8f063a3c2f69  tests/tests/design/AdminStylingRulesTest.php
+260fd3cc5e3b510ef38e7d7c4d43401d  tests/tests/design/AdminStylingRulesTest.php
 54e302371453eecb7371979a43b7b89f  tests/tests/design/AdminTokenContrastTest.php
 dcc45e4631fc358b0384c51d17ff8d67  tests/tests/extension/bccie/ezBccieTest.php
 e71599015464e106c536eedfe12d9676  tests/tests/extension/cjw_newsletter/cjwNewsletterAdminViewsTest.php
