@@ -2,8 +2,9 @@
 /**
  * admin4's frame gives screen readers and keyboards its landmarks and names: a skip link first in the body that jumps
  * to the main landmark, the header as banner, the top menu, side menu, breadcrumb and footer as their landmarks, and
- * one main landmark on every page, also on the edit-type pages that bring their own #maincontent. Header cells of
- * admin4's tables say whether they head a column or a row, and the controls the audit found without a name have one.
+ * one main landmark on every page: #maincontent, also on the edit-type pages that bring their own, and #a4-main
+ * around a page without the left column that brings none. Header cells of admin4's tables have scope="col", and the
+ * controls the audit found without a name have one.
  * doc/features/6.0/admin4-design.md, doc/bc/6.0/admin4-styling.md.
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminLandmarksTest.php
@@ -17,6 +18,9 @@ class AdminLandmarksTest extends PHPUnit\Framework\TestCase
 {
     const TEMPLATES = 'design/admin4/templates';
 
+    /** Where admin4's templates are: the design's own and its overrides */
+    const TEMPLATE_DIRS = array( 'design/admin4/templates', 'design/admin4/override/templates' );
+
     private static function root()
     {
         return dirname( __DIR__, 3 );
@@ -27,18 +31,20 @@ class AdminLandmarksTest extends PHPUnit\Framework\TestCase
         return (string)file_get_contents( self::root() . '/' . self::TEMPLATES . '/' . $name );
     }
 
-    /** Every template of admin4, path relative to the templates directory => source without {* comments *} */
+    /** Every template of admin4 and its overrides, path relative to the root => source without {* comments *} */
     private static function templates()
     {
-        $base = self::root() . '/' . self::TEMPLATES . '/';
         $all = array();
-        $it = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( $base, FilesystemIterator::SKIP_DOTS ) );
-        foreach ( $it as $file )
+        foreach ( self::TEMPLATE_DIRS as $dir )
         {
-            if ( substr( $file->getFilename(), -4 ) !== '.tpl' )
-                continue;
-            $source = preg_replace( '/\{\*.*?\*\}/s', '', (string)file_get_contents( $file->getPathname() ) );
-            $all[substr( $file->getPathname(), strlen( $base ) )] = $source;
+            $it = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( self::root() . '/' . $dir, FilesystemIterator::SKIP_DOTS ) );
+            foreach ( $it as $file )
+            {
+                if ( substr( $file->getFilename(), -4 ) !== '.tpl' )
+                    continue;
+                $source = preg_replace( '/\{\*.*?\*\}/s', '', (string)file_get_contents( $file->getPathname() ) );
+                $all[substr( $file->getPathname(), strlen( self::root() ) + 1 )] = $source;
+            }
         }
         ksort( $all );
         return $all;
@@ -47,8 +53,19 @@ class AdminLandmarksTest extends PHPUnit\Framework\TestCase
     public function testTheSkipLinkIsTheFirstThingInTheBodyAndJumpsToTheMainLandmark()
     {
         $layout = preg_replace( '/\{\*.*?\*\}/s', '', self::template( 'pagelayout.tpl' ) );
-        $this->assertMatchesRegularExpression( '#<body>\s*<a class="a4-skip-link" href="\#maincontent">#', $layout );
+        $this->assertMatchesRegularExpression( '#<body>\s*<a class="a4-skip-link" href="\#\{if \$main_wrapped\}a4-main\{else\}maincontent\{/if\}">#', $layout );
         $this->assertStringContainsString( '<div id="maincontent" role="main" tabindex="-1">', $layout );
+    }
+
+    /**
+     * Without the left column (content edit, remove, copy, move ...) the page's template draws the main area. One that
+     * brings no #maincontent of its own is wrapped in #a4-main, so every page has exactly one main landmark.
+     */
+    public function testAPageWithoutItsOwnMaincontentIsWrappedInTheMainLandmark()
+    {
+        $layout = preg_replace( '/\{\*.*?\*\}/s', '', self::template( 'pagelayout.tpl' ) );
+        $this->assertStringContainsString( "{if and( \$hide_left_menu, \$module_result.content|contains( 'id=\"maincontent\"' )|not )}", $layout );
+        $this->assertMatchesRegularExpression( '#\{if \$main_wrapped\}\s*<div id="a4-main" role="main" tabindex="-1">\{include uri=\'design:page_mainarea\.tpl\'\}</div>#', $layout );
     }
 
     public function testTheFrameHasItsLandmarks()
@@ -97,7 +114,7 @@ class AdminLandmarksTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 2, preg_match_all( '#<a class="site-preview" [^>]*aria-label="#', $menu ) );
     }
 
-    /** A header cell says what it heads: scope="col" in a header row, scope="row" before the data of a row */
+    /** A header cell says what it heads (admin4's tables have header rows only: scope="col") */
     public function testEveryHeaderCellHasAScope()
     {
         $missing = array();

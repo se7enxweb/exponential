@@ -24,7 +24,14 @@
      $search_hash          = array( cond( ezhttp_hasvariable( 'SectionID', 'get' ), ezhttp( 'SectionID', 'get' ) ) )
      $user_hash = concat( $current_user.role_id_list|implode( ',' ), ',', $current_user.limited_assignment_value_list|implode( ',' ) )
      $uri_cache_key        = $module_result.uri
+     $main_wrapped         = false()
 }
+    {* The main landmark: #maincontent of the frame, or of the edit-type page that draws its own columns. A page
+       without the left column whose template brings no #maincontent (remove, copy, move ...) is wrapped in #a4-main,
+       a landmark without styles, so its layout stays as it was. *}
+    {if and( $hide_left_menu, $module_result.content|contains( 'id="maincontent"' )|not )}
+        {set $main_wrapped = true()}
+    {/if}
     {* Error pages can arrive with the same URI while their title and path name the error: key them
        by error type and number too (every other page keeps the plain URI key) *}
     {if is_set( $module_result.errorType )}
@@ -47,9 +54,8 @@
 
 <body>
 
-    {* Skip link: the first stop of the Tab key, shown only while focused. #maincontent is the main landmark here and
-       on the edit-type pages, whose templates bring their own #maincontent. *}
-    <a class="a4-skip-link" href="#maincontent">{'Skip to main content'|i18n( 'design/admin/pagelayout' )}</a>
+    {* Skip link: the first stop of the Tab key, shown only while focused, to the main landmark (see $main_wrapped). *}
+    <a class="a4-skip-link" href="#{if $main_wrapped}a4-main{else}maincontent{/if}">{'Skip to main content'|i18n( 'design/admin/pagelayout' )}</a>
 
     <div id="page" class="{$navigation_part.identifier} section_id_{first_set( $module_result.section_id, 0 )}">
 
@@ -78,7 +84,9 @@
                 <!-- end::Left Sidebar -->
 
                 <!-- begin::Main Section -->
-                {if $hide_left_menu}
+                {if $main_wrapped}
+                    <div id="a4-main" role="main" tabindex="-1">{include uri='design:page_mainarea.tpl'}</div>
+                {elseif $hide_left_menu}
                     {include uri='design:page_mainarea.tpl'}
                 {else}
                     <div id="maincolumn" class="content-wrapper">
