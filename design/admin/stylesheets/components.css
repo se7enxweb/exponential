@@ -1238,6 +1238,8 @@ a.a4-current-user-name { color: var(--a4-ink); font-weight: 400; text-decoration
   :focus-visible { outline-color: Highlight; }
   /* data drawn as fills: the colour is the information */
   .a4-dot, .a4-meter > span, .a4-bars > * { forced-color-adjust: none; }
+  /* a dot keeps its colour, which a high-contrast canvas can swallow: a ring in the text colour keeps its shape */
+  .a4-dot { outline: 1px solid CanvasText; }
 }
 
 /* A field with text under 16px makes a phone's browser zoom in when it gets the focus */

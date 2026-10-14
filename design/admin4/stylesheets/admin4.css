@@ -285,7 +285,7 @@ html[data-a4-theme="dark"] .a4-theme-toggle .a4-icon-moon { display: inline-bloc
   position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden;
   clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0;
 }
-@media (max-width: 1023px) {
+@media (max-width: 1023.98px) {
   .header-theme { padding: 0 8px; }
 }
 
@@ -318,7 +318,7 @@ html[data-a4-theme="dark"] .a4-theme-toggle .a4-icon-moon { display: inline-bloc
 .content-wrapper {
   padding: 1rem;
 }
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1023.98px) {
   .content-wrapper {
     padding: 0.5rem;
   }
@@ -350,7 +350,7 @@ html[data-a4-theme="dark"] .a4-theme-toggle .a4-icon-moon { display: inline-bloc
 }
 /* An open side menu below 1024px is a drawer over the page: a deeper shadow and a solid edge set it apart
    from the content it covers. */
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1023.98px) {
   .sidebar.show #leftmenu-design,
   .sidebar.show #rightmenu-design {
     box-shadow: 0 0 0 1px var(--a4-card-edge), var(--a4-shadow-m);
@@ -1248,6 +1248,22 @@ html[data-a4-theme="dark"] img[src*="/share/icons/bootstrap-icons/"] { filter: i
 /* Windows high contrast with a dark canvas: the same black SVGs would vanish, so they follow the canvas text. */
 @media (forced-colors: active) and (prefers-color-scheme: dark) {
   img[src*="/share/icons/bootstrap-icons/"] { filter: invert(1); }
+}
+/* Forced colors force every background to the canvas, and the icons drawn as a mask on a ::before or ::after take
+   their colour from the background: they would vanish (the tree's open and closed state with them). They keep
+   the canvas text colour, as .a4-icon does in components.css. */
+@media (forced-colors: active) {
+  div.message-feedback h2::before, div.message-warning h2::before, div.message-error h2::before,
+  table.list .sort-asc a::after, table.list .sort-desc a::after,
+  th.admin-dt-asc .admin-dt-liner::after, th.admin-dt-desc .admin-dt-liner::after,
+  #ezbtn-more button::after, #ezbtn-new-button::before, #ezbtn-options-button::before, #ezbtn-items-button::before,
+  [id^="ezopt-menu-"]::before,
+  div#contentstructure ul#content_tree_menu a[class^="openclose-"]::before,
+  div.popupmenu a.more::after, .searchblock .searchbuttonfield::before, .searchblock .searchscope::before,
+  .searchscope-pane .close::before, a.show-hide-tabs::before, a#maincontent-hide::before {
+    forced-color-adjust: none;
+    background-color: CanvasText;
+  }
 }
 
 /* Visitors who ask for less motion get none: the frame's sidebar slides, the dashboard's lift and every fade end at

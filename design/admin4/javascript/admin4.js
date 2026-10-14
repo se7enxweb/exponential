@@ -109,3 +109,14 @@
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
     else init();
 })();
+
+/*
+ * Reduced motion reaches jQuery's effects too (slideDown and slideUp of the edit page's attribute groups, fades):
+ * the CSS rule in admin4.css cannot stop them, jQuery.fx.off ends each one at once.
+ */
+(function () {
+    'use strict';
+    if (window.jQuery && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        window.jQuery.fx.off = true;
+    }
+}());

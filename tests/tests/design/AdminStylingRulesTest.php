@@ -450,7 +450,7 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
         $sidebar = substr( $js, $start, $end - $start );
         $this->assertSame( 1, substr_count( $sidebar, 'setItem(' ), 'setItem only inside store()' );
         $this->assertMatchesRegularExpression( '/function store\(side, open\) \{[^}]*try \{\s*window\.localStorage\.setItem/s', $sidebar );
-        $this->assertStringContainsString( 'window.matchMedia("(max-width: 1023px)")', $sidebar );
+        $this->assertStringContainsString( 'window.matchMedia("(max-width: 1023.98px)")', $sidebar );
         $this->assertStringNotContainsString( '$(window).width()', $sidebar );
         $this->assertSame( 0, preg_match_all( '/(?<!window\.)localStorage/', $sidebar ), 'localStorage only as window.localStorage, inside try' );
         $this->assertSame( 3, substr_count( $sidebar, 'try {' ), 'reading, storing and the clean-up of the old keys each in a try block' );

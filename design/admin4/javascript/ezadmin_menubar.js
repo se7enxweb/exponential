@@ -5,7 +5,7 @@
 // change what a wide window shows later. Only a click on a wide window stores a choice. The keys before this,
 // ezpAdminLeftSidebar and ezpAdminRightSidebar, were written as "false" by every narrow visit, so they are dropped.
 function sidebarToggle() {
-    const narrow = window.matchMedia("(max-width: 1023px)");
+    const narrow = window.matchMedia("(max-width: 1023.98px)");
     const keys = { left: "ezpAdminSidebarLeft", right: "ezpAdminSidebarRight" };
     const fallback = { left: true, right: true }; // what is shown when storage cannot be read or written
     let narrowOpen = null; // the sidebar open over the page on a narrow window: "left", "right" or null
@@ -37,7 +37,7 @@ function sidebarToggle() {
 
     function show(side, open) {
         $(".sidebar." + side).toggleClass("show", open);
-        $(".sidebar-control." + side).toggleClass("rotate", open);
+        $(".sidebar-control." + side).toggleClass("rotate", open).attr("aria-expanded", open ? "true" : "false");
     }
 
     function apply() {
