@@ -202,6 +202,106 @@ class eZExtensionPackageHandler extends eZPackageHandler
     /** An extension with more entries than this is refused, not partly checked */
     const MAX_ENTRIES = 200000;
 
+    /** MAX_ENTRIES, lowered by the tests */
+    public static $maxEntries = self::MAX_ENTRIES;
+
+    /** A name longer than this is taken for a secret's name, not read: no pattern runs over it */
+    const MAX_NAME_BYTES = 256;
+
+    /** A value longer than this is taken for a secret, not read */
+    const MAX_VALUE_BYTES = 65536;
+
+    /**
+     * preg_match() that fails closed: any PCRE error (the backtrack or recursion limit, the JIT stack, bad UTF-8
+     * under /u) is a RuntimeException, never a "no match" that would read as "no secret".
+     *
+     * @return bool
+     * @throws RuntimeException
+     */
+    static function pregMatch( $pattern, $subject, &$matches = null )
+    {
+        $result = preg_match( $pattern, (string)$subject, $matches );
+        if ( $result === false || preg_last_error() !== PREG_NO_ERROR )
+            throw new RuntimeException( 'pattern check failed: ' . preg_last_error_msg() );
+        return $result === 1;
+    }
+
+    /**
+     * preg_match_all() that fails closed (see pregMatch()).
+     *
+     * @return int
+     * @throws RuntimeException
+     */
+    static function pregMatchAll( $pattern, $subject, &$matches = null, $flags = PREG_PATTERN_ORDER )
+    {
+        $result = preg_match_all( $pattern, (string)$subject, $matches, $flags );
+        if ( $result === false || preg_last_error() !== PREG_NO_ERROR )
+            throw new RuntimeException( 'pattern check failed: ' . preg_last_error_msg() );
+        return $result;
+    }
+
+    /**
+     * preg_replace() that fails closed (see pregMatch()).
+     *
+     * @return string
+     * @throws RuntimeException
+     */
+    static function pregReplace( $pattern, $replacement, $subject )
+    {
+        $result = preg_replace( $pattern, $replacement, (string)$subject );
+        if ( $result === null || preg_last_error() !== PREG_NO_ERROR )
+            throw new RuntimeException( 'pattern check failed: ' . preg_last_error_msg() );
+        return $result;
+    }
+
+    /**
+     * preg_split() that fails closed (see pregMatch()).
+     *
+     * @return string[]
+     * @throws RuntimeException
+     */
+    static function pregSplit( $pattern, $subject )
+    {
+        $result = preg_split( $pattern, (string)$subject );
+        if ( $result === false || preg_last_error() !== PREG_NO_ERROR )
+            throw new RuntimeException( 'pattern check failed: ' . preg_last_error_msg() );
+        return $result;
+    }
+
+    /**
+     * expSystemReportMask::isSecretSettingName(), failing closed: a name over MAX_NAME_BYTES, or a PCRE error in any
+     * of the rule's patterns, counts as a secret's name.
+     *
+     * @param string $name
+     * @return bool
+     */
+    static function isSecretName( $name )
+    {
+        $name = (string)$name;
+        if ( strlen( $name ) > self::MAX_NAME_BYTES )
+            return true;
+        // the names the check passes here are runs of [A-Za-z0-9_.-] of at most MAX_NAME_BYTES: no pattern of the
+        // rule can reach a PCRE limit on them; an error is still read as a secret
+        $secret = expSystemReportMask::isSecretSettingName( $name );
+        return $secret || preg_last_error() !== PREG_NO_ERROR;
+    }
+
+    /**
+     * expSecretRule::hasInlineSecret(), failing closed: a value over MAX_VALUE_BYTES, or a PCRE error, counts as a
+     * secret.
+     *
+     * @param string $value
+     * @return bool
+     */
+    static function hasInlineSecret( $value )
+    {
+        $value = (string)$value;
+        if ( strlen( $value ) > self::MAX_VALUE_BYTES )
+            return true;
+        $secret = expSecretRule::hasInlineSecret( $value );
+        return $secret || preg_last_error() !== PREG_NO_ERROR;
+    }
+
     /**
      * Whether $extensionName names an extension directory that can be packed: a plain name (no path), present below
      * the extension directory.
@@ -212,7 +312,7 @@ class eZExtensionPackageHandler extends eZPackageHandler
     static function isPackableName( $extensionName )
     {
         $extensionName = (string)$extensionName;
-        if ( !preg_match( '/^[A-Za-z0-9][A-Za-z0-9_.\-]*$/', $extensionName ) )
+        if ( !self::pregMatch( '/^[A-Za-z0-9][A-Za-z0-9_.\-]*$/', $extensionName ) )
             return false;
         $dir = eZExtension::baseDirectory() . '/' . $extensionName;
         return is_dir( $dir ) && !is_link( $dir );
@@ -264,8 +364,8 @@ class eZExtensionPackageHandler extends eZPackageHandler
                     $entries[$path] = array( 'type' => 'file', 'packed' => !$isHidden );
                 else
                     $entries[$path] = array( 'type' => 'other', 'packed' => false );
-                if ( count( $entries ) > self::MAX_ENTRIES )
-                    throw new RuntimeException( 'more than ' . self::MAX_ENTRIES . ' entries' );
+                if ( count( $entries ) > self::$maxEntries )
+                    throw new RuntimeException( 'more than ' . self::$maxEntries . ' entries' );
             }
         }
         return $entries;
@@ -292,7 +392,7 @@ class eZExtensionPackageHandler extends eZPackageHandler
      */
     static function isPlaceholder( $value )
     {
-        return preg_match( '/^(\.\.\.|\x{2026}|[xX]{3,}|\*{3,}|<\.\.\.>|<\x{2026}>)$/u', trim( (string)$value ) ) === 1;
+        return self::pregMatch( '/^(\.\.\.|\xE2\x80\xA6|[xX]{3,}|\*{3,}|<\.\.\.>|<\xE2\x80\xA6>)$/', trim( (string)$value ) );
     }
 
     /**
@@ -310,11 +410,11 @@ class eZExtensionPackageHandler extends eZPackageHandler
     {
         $name = (string)$name;
         $value = trim( (string)$value );
-        if ( preg_match( '/^\d{1,9}(\.\d+)?(\s|$)/', $value ) )
-            return preg_match( '/(tokens|length|lifetime|budget|count|size|limit|timeout|ttl|^max|^min|^estimate|per_?token)/i', $name ) === 1;
-        if ( preg_match( '/^(enabled|disabled|true|false)$/i', $value ) )
-            return preg_match( '/(^(allow|use|require|enable|disable|is|has|show|check)|(enabled|required|disable)|with)/i', $name ) === 1
-                && preg_match( '/^(allow|use|require|enable|disable|is|has|show|check|ie)/i', $name ) === 1;
+        if ( self::pregMatch( '/^\d{1,9}(\.\d+)?(\s|$)/', $value ) )
+            return self::pregMatch( '/(tokens|length|lifetime|budget|count|size|limit|timeout|ttl|^max|^min|^estimate|per_?token)/i', $name );
+        if ( self::pregMatch( '/^(enabled|disabled|true|false)$/i', $value ) )
+            return self::pregMatch( '/(^(allow|use|require|enable|disable|is|has|show|check)|(enabled|required|disable)|with)/i', $name )
+                && self::pregMatch( '/^(allow|use|require|enable|disable|is|has|show|check|ie)/i', $name );
         return false;
     }
 
@@ -330,17 +430,17 @@ class eZExtensionPackageHandler extends eZPackageHandler
      */
     static function isSecretPair( $name, $value )
     {
-        $value = trim( preg_replace( '#\s*\*/\s*(\?>)?\s*$#', '', (string)$value ) );
+        $value = trim( self::pregReplace( '#\s*\*/\s*(\?>)?\s*$#', '', (string)$value ) );
         $value = trim( rtrim( $value, ',;' ) );
         $value = trim( $value, " \t\"'" );
         if ( $value === '' )
             return false;
-        if ( expSystemReportMask::isSecretSettingName( $name ) )
+        if ( self::isSecretName( $name ) )
             return !self::isPlaceholder( $value ) && !self::isMeasureOrSwitch( $name, $value );
-        if ( expSecretRule::hasInlineSecret( $value ) )
+        if ( self::hasInlineSecret( $value ) )
             return true;
         foreach ( self::SECRET_SHAPE_PATTERNS as $pattern )
-            if ( preg_match( $pattern, $value ) )
+            if ( self::pregMatch( $pattern, $value ) )
                 return true;
         return false;
     }
@@ -361,7 +461,7 @@ class eZExtensionPackageHandler extends eZPackageHandler
     {
         $text = (string)$text;
         $found = array();
-        if ( preg_match( '/^(\xFF\xFE|\xFE\xFF|\x00\x00\xFE\xFF)/', $text ) )
+        if ( self::pregMatch( '/^(\xFF\xFE|\xFE\xFF|\x00\x00\xFE\xFF)/', $text ) )
             $found['(text in UTF-16 or UTF-32)'] = true;
         foreach ( self::shapesIn( $text ) as $kind )
             $found[$kind] = true;
@@ -390,7 +490,7 @@ class eZExtensionPackageHandler extends eZPackageHandler
         {
             foreach ( $views as $view )
             {
-                if ( preg_match( $pattern, $view ) )
+                if ( self::pregMatch( $pattern, $view ) )
                 {
                     $found['(' . $kind . ')'] = true;
                     break;
@@ -419,11 +519,11 @@ class eZExtensionPackageHandler extends eZPackageHandler
             ? '/(?<![A-Za-z0-9_.\-])(?=["\']?([A-Za-z0-9_.\-]+)["\']?[ \t]*(?:\[[^\]\r\n]*\])?[ \t]*(?:=(?![=>])|:(?![:\/]))([^\r\n\f\v]*))/'
             : '/(?<![A-Za-z0-9_.\-])(?=([A-Za-z0-9_.\-]+)[ \t]*(?:\[[^\]\r\n]*\])?[ \t]*=(?![=>])([^\r\n\f\v]*))/';
         $found = array();
-        $lines = preg_split( '/\r\n|[\r\n\f\v]/', (string)$text );
+        $lines = self::pregSplit( '/\r\n|[\r\n\f\v]/', (string)$text );
         foreach ( $lines as $i => $line )
         {
-            $isComment = preg_match( '/^\s*(#|;|\/\/|\*)/', $line ) === 1;
-            if ( preg_match_all( $pairPattern, $line, $matches, PREG_SET_ORDER ) )
+            $isComment = self::pregMatch( '/^\s*(#|;|\/\/|\*)/', $line );
+            if ( self::pregMatchAll( $pairPattern, $line, $matches, PREG_SET_ORDER ) )
             {
                 foreach ( $matches as $m )
                 {
@@ -431,23 +531,23 @@ class eZExtensionPackageHandler extends eZPackageHandler
                         $found[$m[1]] = true;
                     // YAML: a secret name whose value stands on the next non-empty, deeper line ("password:",
                     // "password: |"), a nested mapping included
-                    else if ( $pairs === 'config' && expSystemReportMask::isSecretSettingName( $m[1] )
-                              && preg_match( '/^\s*([|>][\-+]?)?\s*(#.*)?$/', $m[2] ) )
+                    else if ( $pairs === 'config' && self::isSecretName( $m[1] )
+                              && self::pregMatch( '/^\s*([|>][\-+]?)?\s*(#.*)?$/', $m[2] ) )
                     {
-                        preg_match( '/^[ \t]*/', $line, $indent );
+                        self::pregMatch( '/^[ \t]*/', $line, $indent );
                         for ( $n = $i + 1; isset( $lines[$n] ); $n++ )
                         {
                             if ( trim( $lines[$n] ) === '' )
                                 continue;
-                            if ( preg_match( '/^([ \t]*)(\S.*)$/', $lines[$n], $next ) && strlen( $next[1] ) > strlen( $indent[0] )
-                                 && !self::isPlaceholder( trim( preg_replace( '/^-\s*/', '', $next[2] ), " \t\"'" ) ) )
+                            if ( self::pregMatch( '/^([ \t]*)(\S.*)$/', $lines[$n], $next ) && strlen( $next[1] ) > strlen( $indent[0] )
+                                 && !self::isPlaceholder( trim( self::pregReplace( '/^-\s*/', '', $next[2] ), " \t\"'" ) ) )
                                 $found[$m[1]] = true;
                             break;
                         }
                     }
                 }
             }
-            if ( !$isComment && expSecretRule::hasInlineSecret( $line ) && !preg_match_all( $pairPattern, $line ) )
+            if ( !$isComment && self::hasInlineSecret( $line ) && !self::pregMatchAll( $pairPattern, $line ) )
                 $found['(inline)'] = true;
         }
         return array_keys( $found );
@@ -512,8 +612,8 @@ class eZExtensionPackageHandler extends eZPackageHandler
     static function secretFiles( $dir )
     {
         $dir = rtrim( (string)$dir, '/' );
-        if ( $dir === '' || !is_dir( $dir ) )
-            return array();
+        if ( $dir === '' || !is_dir( $dir ) || is_link( $dir ) )
+            return array( '.: not a directory' );
         try
         {
             $entries = self::packEntries( $dir );
@@ -526,111 +626,196 @@ class eZExtensionPackageHandler extends eZPackageHandler
         $found = array();
         foreach ( $entries as $relative => $entry )
         {
-            $full = $dir . '/' . $relative;
-            $parts = explode( '/', $relative );
-            $name = array_pop( $parts );
-            if ( $entry['type'] === 'link' )
+            $relative = (string)$relative;
+            try
             {
-                $target = realpath( $full );
-                if ( $target === false || $realDir === false || ( $target !== $realDir && strpos( $target, $realDir . '/' ) !== 0 ) )
-                    $found[$relative . ': link outside the extension'] = true;
-                continue;
+                foreach ( self::entryFindings( $dir, $realDir, $relative, $entry ) as $finding )
+                    $found[$relative . ': ' . $finding] = true;
             }
-            if ( $entry['type'] === 'other' )
+            catch ( RuntimeException $e )
             {
-                $found[$relative . ': not a regular file'] = true;
-                continue;
+                // a pattern that failed, a file that changed: the entry is not checked, so the extension is refused
+                $found[$relative . ': could not be checked'] = true;
             }
-            if ( $entry['type'] !== 'file' )
-                continue;
-            if ( preg_match( self::KEY_FILE_PATTERN, $name ) )
-            {
-                $found[$relative . ': key material'] = true;
-                continue;
-            }
-            foreach ( $parts as $part )
-            {
-                if ( preg_match( self::KEY_DIRECTORY_PATTERN, $part ) )
-                {
-                    $found[$relative . ': key material'] = true;
-                    continue 2;
-                }
-            }
-            $isSettings = ( isset( $parts[0] ) && strtolower( $parts[0] ) === 'settings' ) || preg_match( '/\.ini(\.|$)/i', $name );
-            if ( $isSettings && preg_match( self::BACKUP_FILE_PATTERN, $name ) )
-            {
-                $found[$relative . ': copy of a settings file'] = true;
-                continue;
-            }
-
-            // the shapes of secrets: the whole file, text or binary, as it is packed
-            $shapes = self::shapesInFile( $full );
-            if ( $shapes === null )
-            {
-                $found[$relative . ': unreadable'] = true;
-                continue;
-            }
-            foreach ( $shapes as $kind )
-                $found[$relative . ': ' . $kind] = true;
-            $head = (string)@file_get_contents( $full, false, null, 0, 4 );
-            if ( preg_match( '/^(\xFF\xFE|\xFE\xFF|\x00\x00\xFE\xFF)/', $head ) )
-            {
-                $found[$relative . ': (text in UTF-16 or UTF-32)'] = true;
-                continue;
-            }
-            $pairs = $isSettings ? 'ini' : ( preg_match( self::CONFIG_FILE_PATTERN, $name ) ? 'config' : false );
-            if ( $pairs === false )
-                continue;
-            // settings and configuration files: the pairs, from the whole text exactly as it is packed
-            $size = @filesize( $full );
-            if ( $size === false || $size > self::MAX_SCAN_BYTES )
-            {
-                $found[$relative . ': text too large to check'] = true;
-                continue;
-            }
-            $text = @file_get_contents( $full );
-            if ( $text === false || strlen( $text ) !== $size )
-            {
-                $found[$relative . ': unreadable'] = true;
-                continue;
-            }
-            if ( strpos( $text, "\0" ) !== false )
-            {
-                $found[$relative . ( $isSettings ? ': binary settings file' : ': binary configuration file' )] = true;
-                continue;
-            }
-            foreach ( self::pairSecretsIn( $text, $pairs ) as $setting )
-                $found[$relative . ': ' . $setting] = true;
         }
         $found = array_keys( $found );
-        sort( $found );
+        sort( $found, SORT_STRING );
         return $found;
     }
 
     /**
+     * What is wrong with one entry of packEntries() below $dir (see secretFiles()), without the path.
+     *
+     * @param string $dir
+     * @param string|false $realDir realpath( $dir )
+     * @param string $relative
+     * @param array $entry
+     * @return string[]
+     * @throws RuntimeException a pattern that failed
+     */
+    static function entryFindings( $dir, $realDir, $relative, array $entry )
+    {
+        $found = array();
+        $full = $dir . '/' . $relative;
+        $parts = explode( '/', $relative );
+        $name = array_pop( $parts );
+        if ( $entry['type'] === 'link' )
+        {
+            $target = realpath( $full );
+            if ( $target === false || $realDir === false || ( $target !== $realDir && strpos( $target, $realDir . '/' ) !== 0 ) )
+                $found['link outside the extension'] = true;
+            return array_keys( $found );
+        }
+        if ( $entry['type'] === 'other' )
+        {
+            $found['not a regular file'] = true;
+            return array_keys( $found );
+        }
+        if ( $entry['type'] !== 'file' )
+            return array_keys( $found );
+        if ( self::pregMatch( self::KEY_FILE_PATTERN, $name ) )
+        {
+            $found['key material'] = true;
+            return array_keys( $found );
+        }
+        foreach ( $parts as $part )
+        {
+            if ( self::pregMatch( self::KEY_DIRECTORY_PATTERN, $part ) )
+            {
+                $found['key material'] = true;
+                return array_keys( $found );
+            }
+        }
+        $isSettings = ( isset( $parts[0] ) && strtolower( $parts[0] ) === 'settings' ) || self::pregMatch( '/\.ini(\.|$)/i', $name );
+        if ( $isSettings && self::pregMatch( self::BACKUP_FILE_PATTERN, $name ) )
+        {
+            $found['copy of a settings file'] = true;
+            return array_keys( $found );
+        }
+
+        // the shapes of secrets: the whole file, text or binary, as it is packed
+        $shapes = self::shapesInFile( $full );
+        if ( $shapes === null )
+        {
+            $found['unreadable'] = true;
+            return array_keys( $found );
+        }
+        foreach ( $shapes as $kind )
+            $found[$kind] = true;
+        $head = (string)@file_get_contents( $full, false, null, 0, 4 );
+        if ( self::pregMatch( '/^(\xFF\xFE|\xFE\xFF|\x00\x00\xFE\xFF)/', $head ) )
+        {
+            $found['(text in UTF-16 or UTF-32)'] = true;
+            return array_keys( $found );
+        }
+        $pairs = $isSettings ? 'ini' : ( self::pregMatch( self::CONFIG_FILE_PATTERN, $name ) ? 'config' : false );
+        if ( $pairs === false )
+            return array_keys( $found );
+        // settings and configuration files: the pairs, from the whole text exactly as it is packed
+        $size = @filesize( $full );
+        if ( $size === false || $size > self::MAX_SCAN_BYTES )
+        {
+            $found['text too large to check'] = true;
+            return array_keys( $found );
+        }
+        $text = @file_get_contents( $full );
+        if ( $text === false || strlen( $text ) !== $size )
+        {
+            $found['unreadable'] = true;
+            return array_keys( $found );
+        }
+        if ( strpos( $text, "\0" ) !== false )
+        {
+            $found[$isSettings ? 'binary settings file' : 'binary configuration file'] = true;
+            return array_keys( $found );
+        }
+        foreach ( self::pairSecretsIn( $text, $pairs ) as $setting )
+            $found[$setting] = true;
+        return array_keys( $found );
+    }
+
+    /**
+     * The refusal text for $findings of secretFiles().
+     *
+     * @param string $extensionName
+     * @param string[] $findings
+     * @return string
+     */
+    static function refusalText( $extensionName, array $findings )
+    {
+        return ezpI18n::tr( 'kernel/package', 'The extension %name was not packed: it holds secret values or key material (%files). Copy it from the server instead.', null,
+                            array( '%name' => (string)$extensionName,
+                                   '%files' => implode( ', ', array_slice( $findings, 0, 5 ) ) . ( count( $findings ) > 5 ? ', ...' : '' ) ) );
+    }
+
+    /**
      * Why the extension $extensionName cannot be packed, or an empty string when it can (isPackableName() and no
-     * secretFiles()). The one rule of Setup > Extensions, the package wizard, the command line and addExtension().
+     * secretFiles()). The one rule of Setup > Extensions, the package wizard, the command line and addExtension(),
+     * which applies it once more to the copy it makes. Any error while checking is a refusal.
      *
      * @param string $extensionName
      * @return string
      */
     static function packRefusal( $extensionName )
     {
-        if ( !self::isPackableName( $extensionName ) )
-            return ezpI18n::tr( 'kernel/package', 'The extension %name is not known.', null, array( '%name' => (string)$extensionName ) );
-        $secrets = self::secretFiles( eZExtension::baseDirectory() . '/' . $extensionName );
-        if ( !$secrets )
+        try
+        {
+            if ( !self::isPackableName( $extensionName ) )
+                return ezpI18n::tr( 'kernel/package', 'The extension %name is not known.', null, array( '%name' => (string)$extensionName ) );
+            $secrets = self::secretFiles( eZExtension::baseDirectory() . '/' . $extensionName );
+        }
+        catch ( Exception $e )
+        {
+            $secrets = array( '.: could not be checked' );
+        }
+        if ( count( $secrets ) === 0 )
             return '';
-        return ezpI18n::tr( 'kernel/package', 'The extension %name was not packed: it holds secret values or key material (%files). Copy it from the server instead.', null,
-                            array( '%name' => $extensionName,
-                                   '%files' => implode( ', ', array_slice( $secrets, 0, 5 ) ) . ( count( $secrets ) > 5 ? ', ...' : '' ) ) );
+        return self::refusalText( $extensionName, $secrets );
     }
 
     /**
-     * Adds the extension $extensionName to $package. The extension is checked before anything is copied, and an
-     * extension that packRefusal() names a reason for is refused (RuntimeException, nothing copied): every way to a
-     * package (Setup > Extensions, the package wizard, the command line) passes here. Then exactly the entries
-     * packEntries() marks as packed are copied, the same ones the check read.
+     * Why the extension $extensionName may not be exported here, or an empty string when it may: package.ini
+     * [ExtensionExportSettings] AllowedExtensions[] (when it lists any extension, only those), and with $checkPolicy
+     * and RequirePolicy=enabled the policy package/export_extension of the current user. The command line asks
+     * without $checkPolicy: it runs as no user.
+     *
+     * @param string $extensionName
+     * @param bool $checkPolicy
+     * @return string
+     */
+    static function exportRefusal( $extensionName, $checkPolicy = true )
+    {
+        $ini = eZINI::instance( 'package.ini' );
+        $allowed = array();
+        if ( $ini->hasVariable( 'ExtensionExportSettings', 'AllowedExtensions' ) )
+        {
+            // not array_filter() without a callback: it would drop an extension named "0"
+            foreach ( (array)$ini->variable( 'ExtensionExportSettings', 'AllowedExtensions' ) as $item )
+            {
+                if ( is_string( $item ) && trim( $item ) !== '' )
+                    $allowed[] = trim( $item );
+            }
+        }
+        if ( count( $allowed ) > 0 && !in_array( (string)$extensionName, $allowed, true ) )
+            return ezpI18n::tr( 'kernel/package', 'The extension %name may not be exported: it is not in package.ini [ExtensionExportSettings] AllowedExtensions[].', null,
+                                array( '%name' => (string)$extensionName ) );
+        if ( $checkPolicy && $ini->hasVariable( 'ExtensionExportSettings', 'RequirePolicy' )
+             && $ini->variable( 'ExtensionExportSettings', 'RequirePolicy' ) === 'enabled' )
+        {
+            $access = eZUser::currentUser()->hasAccessTo( 'package', 'export_extension' );
+            if ( !isset( $access['accessWord'] ) || $access['accessWord'] === 'no' )
+                return ezpI18n::tr( 'kernel/package', 'Exporting an extension needs the policy package/export_extension.' );
+        }
+        return '';
+    }
+
+    /**
+     * Adds the extension $extensionName to $package, refusing (RuntimeException) what exportRefusal() (without the
+     * policy, which the callers in the administration ask) or packRefusal() names a reason for: every way to a
+     * package (Setup > Extensions, the package wizard, the command line) passes here. The entries packEntries()
+     * marks as packed are copied into the package, and the decision is made on that copy: secretFiles() of the
+     * copy, and the copy holds nothing the walk of the source did not mark as packed. What is packed is exactly
+     * what was read; on any refusal or error the copy is removed.
      *
      * @param eZPackage $package
      * @param string $extensionName
@@ -638,7 +823,10 @@ class eZExtensionPackageHandler extends eZPackageHandler
      */
     static function addExtension( $package, $extensionName )
     {
-        $refusal = self::packRefusal( $extensionName );
+        $extensionName = (string)$extensionName;
+        $refusal = static::exportRefusal( $extensionName, false );
+        if ( $refusal === '' )
+            $refusal = static::packRefusal( $extensionName );
         if ( $refusal !== '' )
             throw new RuntimeException( $refusal );
 
@@ -650,18 +838,44 @@ class eZExtensionPackageHandler extends eZPackageHandler
         eZDir::mkdir( $targetDir, false, true );
         // as eZDir::copy( $sourceDir, $targetDir ) did: the extension's directory below ezextension/
         $copyDir = $targetDir . '/' . $extensionName;
-        eZDir::mkdir( $copyDir, eZDir::directoryPermission(), false );
-        foreach ( $entries as $relative => $entry )
+        if ( file_exists( $copyDir ) || is_link( $copyDir ) )
+            throw new RuntimeException( "The extension $extensionName is in the package already." );
+        if ( !eZDir::mkdir( $copyDir, eZDir::directoryPermission(), false ) || !is_dir( $copyDir ) )
+            throw new RuntimeException( "The extension $extensionName could not be packed." );
+        try
         {
-            if ( !$entry['packed'] )
-                continue;
-            $source = $sourceDir . '/' . $relative;
-            if ( is_link( $source ) )
-                throw new RuntimeException( "The extension $extensionName changed while it was packed: $relative" );
-            if ( $entry['type'] === 'dir' )
-                eZDir::mkdir( $copyDir . '/' . $relative, eZDir::directoryPermission(), false );
-            else if ( !eZFileHandler::copy( $source, $copyDir . '/' . $relative ) )
-                throw new RuntimeException( "The file $relative of the extension $extensionName could not be packed." );
+            foreach ( $entries as $relative => $entry )
+            {
+                $relative = (string)$relative;
+                if ( !$entry['packed'] )
+                    continue;
+                $source = $sourceDir . '/' . $relative;
+                if ( is_link( $source ) )
+                    throw new RuntimeException( "The extension $extensionName changed while it was packed: $relative" );
+                if ( $entry['type'] === 'dir' )
+                {
+                    if ( !eZDir::mkdir( $copyDir . '/' . $relative, eZDir::directoryPermission(), false ) && !is_dir( $copyDir . '/' . $relative ) )
+                        throw new RuntimeException( "The directory $relative of the extension $extensionName could not be packed." );
+                }
+                else if ( !eZFileHandler::copy( $source, $copyDir . '/' . $relative ) )
+                    throw new RuntimeException( "The file $relative of the extension $extensionName could not be packed." );
+            }
+
+            // The decision is made on the copy: the check reads what the package holds, byte for byte.
+            $findings = self::secretFiles( $copyDir );
+            if ( count( $findings ) > 0 )
+                throw new RuntimeException( self::refusalText( $extensionName, $findings ) );
+            foreach ( self::packEntries( $copyDir ) as $relative => $copied )
+            {
+                $relative = (string)$relative;
+                if ( !isset( $entries[$relative] ) || !$entries[$relative]['packed'] || $entries[$relative]['type'] !== $copied['type'] )
+                    throw new RuntimeException( "The extension $extensionName changed while it was packed: $relative" );
+            }
+        }
+        catch ( Exception $e )
+        {
+            eZDir::recursiveDelete( $copyDir );
+            throw $e instanceof RuntimeException ? $e : new RuntimeException( $e->getMessage(), 0, $e );
         }
 
         eZDir::recursiveList( $targetDir, '', $fileList );
@@ -721,7 +935,9 @@ class eZExtensionPackageHandler extends eZPackageHandler
         {
             if ( in_array( $argument, $extensionList ) )
             {
-                $refusal = self::packRefusal( $argument );
+                $refusal = self::exportRefusal( $argument, false );
+                if ( $refusal === '' )
+                    $refusal = self::packRefusal( $argument );
                 if ( $refusal !== '' )
                 {
                     $cli->error( $refusal );

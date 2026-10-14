@@ -17,6 +17,11 @@
  *  ED-07 - every text file is read for the shapes of secrets, configuration files as pairs, UTF-16 and binary
  *          settings files are refused, more names of key material
  *  ED-08 - the package wizard removes a package refused while it is made and shows the reason
+ *  ED-09 - the regression table: every input a check or a review found must be refused
+ *  ED-10 - fail closed: a failing pattern (PCRE limit), too many entries, long names, "0", missing directories,
+ *          names that are not UTF-8
+ *  ED-11 - addExtension() decides on the copy it makes, not only on the source
+ *  ED-12 - package.ini [ExtensionExportSettings] AllowedExtensions[] and the policy package/export_extension
  *  ED-04 - the view no longer packs from the address (/setup/extensions/<name>/<format>), and both designs post a
  *          button instead of linking
  *
@@ -49,6 +54,15 @@ class ExtensionDownloadTestPackage extends eZPackage
 
     function appendInstall( $type, $name, $os = false, $isInstall = true, $filename = false, $subdirectory = false, $parameters = false )
     {
+    }
+}
+
+/** The package handler with a source check that finds nothing: what is refused then is refused on the copy */
+class ExtensionDownloadTestBlindHandler extends eZExtensionPackageHandler
+{
+    static function packRefusal( $extensionName )
+    {
+        return '';
     }
 }
 
@@ -120,7 +134,7 @@ class ExtensionDownloadTest extends PHPUnit\Framework\TestCase
                     "<?php /* #?ini charset=\"utf-8\"?\n[DatabaseSettings]\nUser=db\nPassword=hunter2\n[Feed]\nSource=https://reader:pw1@feeds.example.invalid/x\nApiKey[default]=abc\n*/ ?>\n" );
         $this->assertSame( array( 'settings/siteaccess/site/site.ini.append.php: (address with a password)', 'settings/siteaccess/site/site.ini.append.php: ApiKey', 'settings/siteaccess/site/site.ini.append.php: Password',
                                   'settings/siteaccess/site/site.ini.append.php: Source' ), $this->secrets() );
-        $this->assertSame( array(), eZExtensionPackageHandler::secretFiles( $this->dir() . '/missing' ) );
+        $this->assertSame( array( '.: not a directory' ), eZExtensionPackageHandler::secretFiles( $this->dir() . '/missing' ) );
     }
 
     /** ED-01, every file below settings/, and the names of passwords and authorizations */
@@ -360,6 +374,147 @@ class ExtensionDownloadTest extends PHPUnit\Framework\TestCase
         $this->put( 'classes/d.php', "<?php\n\$password = \$http->postVariable( 'Password' );\ndefine( 'TITLE', 'x' );\n" );
         $this->put( 'design/e.png', "\x89PNG\0\0plain image bytes" );
         $this->assertSame( array(), $this->secrets() );
+    }
+
+    /** ED-10, any failure of a pattern is a refusal: the backtrack limit reached, and a value too long to read */
+    public function testAPatternThatFailsRefuses()
+    {
+        $this->put( 'settings/long.ini', "Title=abc\n" );
+        $limit = ini_get( 'pcre.backtrack_limit' );
+        $jit = ini_get( 'pcre.jit' );
+        ini_set( 'pcre.jit', '0' );
+        ini_set( 'pcre.backtrack_limit', '1' );
+        try
+        {
+            $secrets = $this->secrets();
+            $refusal = eZExtensionPackageHandler::packRefusal( $this->name );
+        }
+        finally
+        {
+            ini_set( 'pcre.backtrack_limit', $limit );
+            ini_set( 'pcre.jit', $jit );
+        }
+        $this->assertContains( 'settings/long.ini: could not be checked', $secrets );
+        $this->assertNotSame( '', $refusal );
+        try
+        {
+            ini_set( 'pcre.jit', '0' );
+            ini_set( 'pcre.backtrack_limit', '100' );
+            eZExtensionPackageHandler::pregMatch( '/(?:a|aa)+$/', str_repeat( 'a', 30 ) . '!' );
+            $this->fail( 'a failed pattern reads as no match' );
+        }
+        catch ( RuntimeException $e )
+        {
+            $this->assertStringContainsString( 'pattern check failed', $e->getMessage() );
+        }
+        finally
+        {
+            ini_set( 'pcre.backtrack_limit', $limit );
+            ini_set( 'pcre.jit', $jit );
+        }
+    }
+
+    /** ED-10, limits and odd states fail closed: too many entries, a long name, a missing directory, "0" */
+    public function testLimitsAndOddStatesFailClosed()
+    {
+        $this->put( 'settings/b.ini', str_repeat( 'N', eZExtensionPackageHandler::MAX_NAME_BYTES + 1 ) . "=1\n" );
+        $this->assertSame( array( 'settings/b.ini: ' . str_repeat( 'N', eZExtensionPackageHandler::MAX_NAME_BYTES + 1 ) ), $this->secrets() );
+        unlink( $this->dir() . '/settings/b.ini' );
+
+        $this->put( '0', "sk-proj-abcdefghijklmnopqrstuvwxyz012345\n" );
+        $this->put( 'settings/0', "Password=0\n" );
+        $this->put( 'settings/long.ini', 'Title=' . str_repeat( 'a', eZExtensionPackageHandler::MAX_VALUE_BYTES + 1 ) . "\n" );
+        $this->assertSame( array( '0: (API key)', 'settings/0: Password', 'settings/long.ini: Title' ), $this->secrets() );
+        unlink( $this->dir() . '/settings/long.ini' );
+        unlink( $this->dir() . '/0' );
+        unlink( $this->dir() . '/settings/0' );
+
+        eZExtensionPackageHandler::$maxEntries = 3;
+        try
+        {
+            $this->assertSame( array( '.: more than 3 entries' ), $this->secrets() );
+        }
+        finally
+        {
+            eZExtensionPackageHandler::$maxEntries = eZExtensionPackageHandler::MAX_ENTRIES;
+        }
+
+        $this->assertSame( array( '.: not a directory' ), eZExtensionPackageHandler::secretFiles( $this->dir() . '/missing' ) );
+        $this->assertSame( array( '.: not a directory' ), eZExtensionPackageHandler::secretFiles( '' ) );
+        mkdir( $this->dir() . '/empty' );
+        $this->assertSame( array(), eZExtensionPackageHandler::secretFiles( $this->dir() . '/empty' ), 'an empty extension holds nothing to refuse' );
+    }
+
+    /** ED-10, a file name that is not UTF-8 is read like any other */
+    public function testNamesThatAreNotUtf8()
+    {
+        // bytes that are not UTF-8: names by the byte patterns, values refused (no pattern reads them as nothing)
+        $this->assertTrue( eZExtensionPackageHandler::pregMatch( eZExtensionPackageHandler::KEY_FILE_PATTERN, "\xFF.pem" ) );
+        $this->put( 'settings/bytes.ini', "Password=\xFF\xFE\xFD\nTitle=\xC3\x28\n" );
+        $this->assertSame( array( 'settings/bytes.ini: Password' ), $this->secrets() );
+        unlink( $this->dir() . '/settings/bytes.ini' );
+        $this->put( 'settings/bytes.ini', "Password=x\xFF\n" );
+        $this->assertSame( array( 'settings/bytes.ini: Password' ), $this->secrets() );
+        unlink( $this->dir() . '/settings/bytes.ini' );
+
+        if ( @file_put_contents( $this->dir() . "/\xFF.pem", 'x' ) === false || @file_put_contents( $this->dir() . "/settings/\xFE", "Password=hunter2\n" ) === false )
+            $this->markTestSkipped( 'the file system takes UTF-8 names only' );
+        $this->assertSame( array( "\xFF.pem: key material", "settings/\xFE: Password" ), $this->secrets() );
+    }
+
+    /** ED-11, the decision is made on the copy in the package: a source check that missed something does not pack it */
+    public function testTheCopyIsCheckedNotOnlyTheSource()
+    {
+        $this->put( 'settings/site.ini', "Password=hunter2\n" );
+        $package = new ExtensionDownloadTestPackage( dirname( __DIR__, 5 ) . '/var/tmp/phpunit-extdownload-copy-' . getmypid() );
+        try
+        {
+            ExtensionDownloadTestBlindHandler::addExtension( $package, $this->name );
+            $this->fail( 'packed although the copy holds a secret' );
+        }
+        catch ( RuntimeException $e )
+        {
+            $this->assertStringContainsString( 'settings/site.ini: Password', $e->getMessage() );
+        }
+        $this->assertDirectoryDoesNotExist( $package->path() . '/ezextension/' . $this->name, 'the refused copy is removed' );
+        eZDir::recursiveDelete( $package->path() );
+    }
+
+    /** ED-12, package.ini [ExtensionExportSettings]: AllowedExtensions[] (an extension named "0" too) and the policy */
+    public function testTheExportSettings()
+    {
+        $ini = eZINI::instance( 'package.ini' );
+        $this->assertSame( array(), array_values( array_filter( (array)$ini->variable( 'ExtensionExportSettings', 'AllowedExtensions' ), 'strlen' ) ), 'shipped empty' );
+        $this->assertSame( 'disabled', $ini->variable( 'ExtensionExportSettings', 'RequirePolicy' ) );
+        $this->assertSame( '', eZExtensionPackageHandler::exportRefusal( $this->name, false ) );
+        $saved = $ini->variable( 'ExtensionExportSettings', 'AllowedExtensions' );
+        try
+        {
+            $ini->setVariable( 'ExtensionExportSettings', 'AllowedExtensions', array( '0' ) );
+            $this->assertSame( '', eZExtensionPackageHandler::exportRefusal( '0', false ), 'an extension named "0" stays in the list' );
+            $this->assertStringContainsString( 'AllowedExtensions', eZExtensionPackageHandler::exportRefusal( $this->name, false ) );
+            try
+            {
+                eZExtensionPackageHandler::addExtension( null, $this->name );
+                $this->fail( 'addExtension() ignores AllowedExtensions[]' );
+            }
+            catch ( RuntimeException $e )
+            {
+                $this->assertStringContainsString( 'AllowedExtensions', $e->getMessage() );
+            }
+        }
+        finally
+        {
+            $ini->setVariable( 'ExtensionExportSettings', 'AllowedExtensions', $saved );
+        }
+
+        $root = dirname( __DIR__, 5 );
+        include $root . '/kernel/package/module.php';
+        $this->assertArrayHasKey( 'export_extension', $FunctionList );
+        $handler = file_get_contents( $root . '/kernel/classes/packagehandlers/ezextension/ezextensionpackagehandler.php' );
+        $this->assertStringContainsString( "hasAccessTo( 'package', 'export_extension' )", $handler );
+        foreach ( array( 'kernel/private/classes/views/setup/extensions.php', 'kernel/classes/packagecreators/ezextension/ezextensionpackagecreator.php' ) as $caller )
+            $this->assertStringContainsString( 'exportRefusal( ', file_get_contents( $root . '/' . $caller ), $caller );
     }
 
     /** ED-05, names in any case, hidden files, links and files the check cannot read */
