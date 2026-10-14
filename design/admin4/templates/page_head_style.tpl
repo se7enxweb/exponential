@@ -3,7 +3,9 @@
    and html[data-a4-theme-choice] (light|dark|system, what the switch shows) from this browser's choice
    (localStorage "exp-admin4-theme"), light by default; "system" follows prefers-color-scheme, also when the system
    changes while the page is open. The header's #a4-theme-toggle steps light -> dark -> system -> light and stores
-   the step; a switch without data-label-system (an older copy of the markup) keeps stepping between light and dark.
+   the step; its name says the mode in use ("Colour mode: …", data-label-*), its title the next step
+   (data-title-*), and #a4-theme-status announces a press. A switch without data-label-system (an older copy of
+   the markup) keeps stepping between light and dark. Other open admin tabs follow through the storage event.
    Storage that is blocked (private windows, policies) only means the choice is not remembered.
    This script is the one piece of the page's look that cannot wait for the stylesheets (a page drawn light and then
    switched would flash). It also sets the left column's hand-dragged width (data-a4-left-width on <html>, from the
@@ -25,6 +27,13 @@
         if (!b) return;
         var label = b.querySelector('.a4-theme-label');
         if (label) label.textContent = b.getAttribute('data-label-' + choice) || b.getAttribute(dark ? 'data-label-dark' : 'data-label-light') || '';
+        var title = b.getAttribute('data-title-' + choice);
+        if (title) b.setAttribute('title', title);
+    }
+    // a press is announced once, politely, by the status region beside the switch (not on load)
+    function announce(b) {
+        var status = document.getElementById('a4-theme-status'), label = b.querySelector('.a4-theme-label');
+        if (status && label) status.textContent = label.textContent;
     }
     apply(stored());
     if (mq) {
@@ -42,6 +51,7 @@
             else next = 'light';
             try { window.localStorage.setItem(KEY, next); } catch (e) {}
             apply(next);
+            announce(b);
         });
     });
     // another tab changed it: follow

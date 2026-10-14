@@ -12162,6 +12162,30 @@ Note: The packages will not be uninstalled.</translation>
 <context>
     <name>design/admin/pagelayout</name>
     <message>
+        <source>Colour mode: light</source>
+        <translation>Colour mode: light</translation>
+    </message>
+    <message>
+        <source>Colour mode: dark</source>
+        <translation>Colour mode: dark</translation>
+    </message>
+    <message>
+        <source>Colour mode: system</source>
+        <translation>Colour mode: system</translation>
+    </message>
+    <message>
+        <source>Switch to dark mode</source>
+        <translation>Switch to dark mode</translation>
+    </message>
+    <message>
+        <source>Switch to system mode</source>
+        <translation>Switch to system mode</translation>
+    </message>
+    <message>
+        <source>Switch to light mode</source>
+        <translation>Switch to light mode</translation>
+    </message>
+    <message>
         <source>Width of the left column</source>
         <translation>Width of the left column</translation>
     </message>
@@ -12384,14 +12408,6 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>Switch between light and dark mode</source>
         <translation>Switch between light and dark mode</translation>
-    </message>
-    <message>
-        <source>Switch between light, dark and system mode</source>
-        <translation>Switch between light, dark and system mode</translation>
-    </message>
-    <message>
-        <source>System mode</source>
-        <translation>System mode</translation>
     </message>
     <message>
         <source>Where</source>

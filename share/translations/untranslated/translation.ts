@@ -11324,11 +11324,27 @@ Note: The packages will not be uninstalled.</source>
 <context>
     <name>design/admin/pagelayout</name>
     <message>
-        <source>Switch between light, dark and system mode</source>
+        <source>Colour mode: light</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>System mode</source>
+        <source>Colour mode: dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colour mode: system</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch to dark mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch to system mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch to light mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

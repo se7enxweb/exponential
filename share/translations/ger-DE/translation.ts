@@ -14479,6 +14479,30 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
 <context>
     <name>design/admin/pagelayout</name>
     <message>
+        <source>Colour mode: light</source>
+        <translation>Farbmodus: hell</translation>
+    </message>
+    <message>
+        <source>Colour mode: dark</source>
+        <translation>Farbmodus: dunkel</translation>
+    </message>
+    <message>
+        <source>Colour mode: system</source>
+        <translation>Farbmodus: System</translation>
+    </message>
+    <message>
+        <source>Switch to dark mode</source>
+        <translation>Zum dunklen Modus wechseln</translation>
+    </message>
+    <message>
+        <source>Switch to system mode</source>
+        <translation>Zum Systemmodus wechseln</translation>
+    </message>
+    <message>
+        <source>Switch to light mode</source>
+        <translation>Zum hellen Modus wechseln</translation>
+    </message>
+    <message>
         <source>Width of the left column</source>
         <translation>Breite der linken Spalte</translation>
     </message>
@@ -14793,14 +14817,6 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Switch between light and dark mode</source>
         <translation>Zwischen hellem und dunklem Modus wechseln</translation>
-    </message>
-    <message>
-        <source>Switch between light, dark and system mode</source>
-        <translation>Zwischen hellem, dunklem und System-Modus wechseln</translation>
-    </message>
-    <message>
-        <source>System mode</source>
-        <translation>Modus wie das System</translation>
     </message>
     <message>
         <source>Where</source>

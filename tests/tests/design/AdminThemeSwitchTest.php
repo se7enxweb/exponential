@@ -33,6 +33,10 @@ class AdminThemeSwitchTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( "value === 'dark' || value === 'system' ? value : 'light'", $js );
         // an older copy of the switch (no data-label-system) keeps stepping between light and dark
         $this->assertStringContainsString( "b.hasAttribute('data-label-system')", $js );
+        // the title names the next step, a press is announced by the status region, other tabs follow
+        $this->assertStringContainsString( "b.getAttribute('data-title-' + choice)", $js );
+        $this->assertStringContainsString( "document.getElementById('a4-theme-status')", $js );
+        $this->assertStringContainsString( "window.addEventListener('storage'", $js );
     }
 
     public function testEverySwitchOffersAndShowsTheSystemMode()
@@ -40,8 +44,17 @@ class AdminThemeSwitchTest extends PHPUnit\Framework\TestCase
         foreach ( self::SWITCHES as $path )
         {
             $tpl = self::read( $path );
-            $this->assertStringContainsString( 'data-label-system=', $tpl, $path );
-            $this->assertStringContainsString( 'a4-icon-system', $tpl, $path );
+            // the name says the state ("Colour mode: ..."), the title the next step
+            foreach ( array( 'light', 'dark', 'system' ) as $mode )
+            {
+                $this->assertMatchesRegularExpression( "/data-label-$mode=\"\{'Colour mode: $mode'/", $tpl, $path );
+                $this->assertStringContainsString( "data-title-$mode=", $tpl, $path );
+            }
+            // all three icons are admin icons (masks in the text colour, also in dark and forced colours)
+            foreach ( array( 'sun' => 'sun', 'moon' => 'moon', 'system' => 'circle-half' ) as $icon => $bi )
+                $this->assertMatchesRegularExpression( '/<span class="a4-icon a4-bi-' . $bi . ' a4-icon-' . $icon . '" aria-hidden="true"><\/span>/', $tpl, $path );
+            $this->assertStringNotContainsString( '<svg', $tpl, $path );
+            $this->assertStringContainsString( '<span id="a4-theme-status" class="a4-sr-only" role="status"></span>', $tpl, $path );
             // three states: aria-pressed (two states) would announce the wrong thing
             $this->assertStringNotContainsString( 'aria-pressed', $tpl, $path );
         }
