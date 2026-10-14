@@ -28,6 +28,7 @@
                         $admin_theme_css,
                         'theme/admin_datatable.css',
                         'theme/modalwindow.css',
+                        ezini( 'StylesheetSettings', 'AdminComponentCSSFileList', 'design.ini' ),
                         ezini( 'StylesheetSettings', 'BackendCSSFileList', 'design.ini' ) ) )}
   {else}
     {ezcss_load( array( 'core.css',
@@ -36,7 +37,8 @@
                         'content.css',
                         'responsive.css',
                         $admin_theme_css,
-                        'theme/admin_datatable.css' ) )}
+                        'theme/admin_datatable.css',
+                        ezini( 'StylesheetSettings', 'AdminComponentCSSFileList', 'design.ini' ) ) )}
   {/if}
 
   {include uri='design:page_head_style_inline.tpl'}

@@ -1,4 +1,4 @@
-{* admin4: admin3's stylesheets, then admin4.css -- the admin4 look -- before the extensions' own stylesheets, so an extension keeps the last word on its own markup. *}
+{* admin4: admin3's stylesheets, then admin4.css -- the admin4 look -- and the shared components and module stylesheets (design.ini AdminComponentCSSFileList), before the extensions' own stylesheets, so an extension keeps the last word on its own markup. *}
 {* Light or dark mode, before anything is drawn: html[data-a4-theme] from this browser's choice (localStorage
    "exp-admin4-theme"), light by default; then the header's #a4-theme-toggle switches and stores it. Storage that
    is blocked (private windows, policies) only means the choice is not remembered. *}
@@ -59,6 +59,7 @@
                         'theme/admin_datatable.css',
                         'theme/modalwindow.css',
                         'admin4.css',
+                        ezini( 'StylesheetSettings', 'AdminComponentCSSFileList', 'design.ini' ),
                         ezini( 'StylesheetSettings', 'BackendCSSFileList', 'design.ini' ) ) )}
   {else}
     {ezcss_load( array( 'core.css',
@@ -68,7 +69,8 @@
                         'responsive.css',
                         $admin_theme_css,
                         'theme/admin_datatable.css',
-                        'admin4.css' ) )}
+                        'admin4.css',
+                        ezini( 'StylesheetSettings', 'AdminComponentCSSFileList', 'design.ini' ) ) )}
   {/if}
 
   {include uri='design:page_head_style_inline.tpl'}

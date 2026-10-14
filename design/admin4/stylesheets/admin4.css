@@ -24,17 +24,14 @@
 
 /* ---- Tokens: light (default) ------------------------------------------------------------------------------- */
 
+/* The shared tokens -- accent, ink, muted, line, soft, card, radius, spacing, fonts, each with its dark value --
+   are defined once, in components.css (loaded right after this file). The frame's own tokens follow.
+   --a4-orange, --a4-orange-dark and --a4-orange-soft are the accent's earlier names, kept for the extensions that
+   use them (expai, exp_adminui, cjw_newsletter ...); new code uses --a4-accent, --a4-accent-hover, --a4-accent-soft. */
 :root {
-  --a4-orange: #f26a21;
-  --a4-orange-dark: #d9561a;
-  --a4-orange-soft: rgba(242, 106, 33, 0.12);
-  --a4-ink: #1f2430;
-  --a4-muted: #5d6573;
-  --a4-line: #e3e6eb;
-  --a4-soft: #f6f7f9;
-  --a4-radius: 18px;
-  --a4-radius-s: 9px;
-  --a4-font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --a4-orange: var(--a4-accent);
+  --a4-orange-dark: var(--a4-accent-hover);
+  --a4-orange-soft: var(--a4-accent-soft);
 
   --a4-page-color: #eef1f5;
   --a4-page-image: radial-gradient(1100px 620px at 88% -14%, rgba(242, 106, 33, 0.10), transparent 62%),

@@ -1,0 +1,1012 @@
+/*
+ * The administration's shared components: the tokens and the .a4-* classes every admin page builds on.
+ *
+ * One file, one prefix (.a4-), loaded through design.ini [StylesheetSettings] AdminComponentCSSFileList so the
+ * ezjscore packer bundles and caches it with the rest of the admin's CSS. The same file is in design/admin and
+ * design/admin4 (a test keeps the two identical), so a template shared by every administration design can use
+ * the classes in each of them; only admin4 has a dark mode, switched by html[data-a4-theme="dark"].
+ *
+ * Rules (doc/bc/6.0/admin4-styling.md):
+ * - no <style> block and no style="" attribute in a template: CSS lives here or in stylesheets/modules/;
+ * - colours, radius, spacing and fonts only from the --a4-* tokens below; no hard-coded values, no local aliases;
+ * - every colour token has a value for html[data-a4-theme="dark"]; spacing, size, radius and font tokens are the
+ *   same in both modes and are listed once (the test knows the --a4-space-, --a4-text-, --a4-radius, --a4-font,
+ *   --a4-mono and --a4-leading names);
+ * - one accent (#f26a21, the header's menu pill and the default button) and one component radius (--a4-radius-s);
+ *   --a4-radius (18px) is the frame's three columns only;
+ * - a module's own CSS goes in stylesheets/modules/<group>.css as .a4-<module>-*, for what these classes cannot do.
+ *
+ * Weight: each component is one class (plus an element or a state), so a module or an extension rule with one more
+ * class always wins, and the components beat the base element rules (fieldset, label, table) they replace.
+ */
+
+/* ---- Tokens: light (the default, and the only mode of design/admin, admin2 and admin3) ---------------------- */
+
+:root {
+  /* the accent: one colour. -hover and -strong are its darker shades for a pressed fill and for filled controls
+     carrying white text (5.2:1); -text is the accent as text on a card (5.2:1 light, 7:1 dark) */
+  --a4-accent: #f26a21;
+  --a4-accent-hover: #d9561a;
+  --a4-accent-strong: #c2410c;
+  --a4-accent-text: #c2410c;
+  --a4-accent-soft: rgba(242, 106, 33, 0.12);
+  --a4-on-accent: #fff;
+  --a4-ring: rgba(242, 106, 33, 0.55);
+
+  /* text and surfaces */
+  --a4-ink: #1f2430;
+  --a4-muted: #5d6573;
+  --a4-line: #e3e6eb;
+  --a4-line-strong: #c9ced6;
+  --a4-soft: #f6f7f9;
+  --a4-card: #fff;
+  --a4-surface: #fff;
+  --a4-field: #fff;
+  --a4-field-line: #8f96a3;
+  --a4-disabled: #9aa1ad;
+  --a4-overlay: rgba(16, 24, 40, 0.45);
+  --a4-code-bg: #1f2430;
+  --a4-code-ink: #e8ebf0;
+
+  /* states: text, tint, edge */
+  --a4-ok: #166534;
+  --a4-ok-bg: #e7f5ea;
+  --a4-ok-line: #b7dfc1;
+  --a4-warn: #8a4b00;
+  --a4-warn-bg: #fff3df;
+  --a4-warn-line: #f3d19c;
+  --a4-bad: #b91c1c;
+  --a4-bad-bg: #fdecec;
+  --a4-bad-line: #f1b4b4;
+  --a4-bad-hover: #7f1d1d;
+  --a4-info: #1e4fa8;
+  --a4-info-bg: #e8effd;
+  --a4-info-line: #bcd0f5;
+
+  /* depth */
+  --a4-shadow-s: 0 1px 2px rgba(16, 24, 40, 0.04);
+  --a4-shadow-m: 0 12px 32px -6px rgba(16, 24, 40, 0.12);
+  --a4-shadow-up: 0 -6px 18px -8px rgba(16, 24, 40, 0.18);
+
+  /* theme-independent: radius, spacing, type */
+  --a4-radius: 18px;
+  --a4-radius-s: 9px;
+  --a4-space-1: 4px;
+  --a4-space-2: 8px;
+  --a4-space-3: 12px;
+  --a4-space-4: 16px;
+  --a4-space-5: 24px;
+  --a4-space-6: 32px;
+  --a4-font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --a4-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --a4-text-xs: 12px;
+  --a4-text-s: 13px;
+  --a4-text-m: 14px;
+  --a4-text-l: 16px;
+  --a4-text-xl: 22px;
+  --a4-leading: 1.5;
+}
+
+/* ---- Tokens: dark (admin4) --------------------------------------------------------------------------------- */
+
+html[data-a4-theme="dark"] {
+  --a4-accent: #f26a21;
+  --a4-accent-hover: #ff8a4c;
+  --a4-accent-strong: #c2410c;
+  --a4-accent-text: #ff9a5c;
+  --a4-accent-soft: rgba(242, 106, 33, 0.18);
+  --a4-on-accent: #fff;
+  --a4-ring: rgba(255, 138, 76, 0.7);
+
+  --a4-ink: #e8ebf0;
+  --a4-muted: #a3abb9;
+  --a4-line: #2e3644;
+  --a4-line-strong: #434d5f;
+  --a4-soft: #222936;
+  --a4-card: #1b212c;
+  --a4-surface: #171c25;
+  --a4-field: #121720;
+  --a4-field-line: #5b667a;
+  --a4-disabled: #6b7486;
+  --a4-overlay: rgba(0, 0, 0, 0.6);
+  --a4-code-bg: #0e1218;
+  --a4-code-ink: #e8ebf0;
+
+  --a4-ok: #86efac;
+  --a4-ok-bg: rgba(34, 197, 94, 0.14);
+  --a4-ok-line: rgba(134, 239, 172, 0.35);
+  --a4-warn: #fcd34d;
+  --a4-warn-bg: rgba(245, 158, 11, 0.14);
+  --a4-warn-line: rgba(252, 211, 77, 0.35);
+  --a4-bad: #fca5a5;
+  --a4-bad-bg: rgba(239, 68, 68, 0.15);
+  --a4-bad-line: rgba(252, 165, 165, 0.38);
+  --a4-bad-hover: #fecaca;
+  --a4-info: #93b4f5;
+  --a4-info-bg: rgba(59, 130, 246, 0.15);
+  --a4-info-line: rgba(147, 180, 245, 0.38);
+
+  --a4-shadow-s: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --a4-shadow-m: 0 12px 32px -6px rgba(0, 0, 0, 0.45);
+  --a4-shadow-up: 0 -6px 18px -8px rgba(0, 0, 0, 0.5);
+}
+
+/* ---- The page scope: reset, type, focus ring --------------------------------------------------------------- */
+
+/* .a4-page wraps one module page (it replaces the old per-module scopes such as .exp-roles) */
+.a4-page {
+  color: var(--a4-ink);
+  font-family: var(--a4-font);
+  font-size: var(--a4-text-m);
+  line-height: var(--a4-leading);
+}
+.a4-page *,
+.a4-page *::before,
+.a4-page *::after {
+  box-sizing: border-box;
+}
+.a4-page [hidden] {
+  display: none !important;
+}
+.a4-page p {
+  margin: 0;
+}
+.a4-page code,
+.a4-code {
+  font-family: var(--a4-mono);
+  font-size: var(--a4-text-s);
+  overflow-wrap: anywhere;
+}
+.a4-page a {
+  color: var(--a4-accent-text);
+}
+.a4-page a:hover {
+  color: var(--a4-ink);
+}
+.a4-page :focus-visible,
+.a4-focus:focus-visible,
+.a4-btn:focus-visible {
+  outline: 3px solid var(--a4-ring);
+  outline-offset: 2px;
+}
+.a4-page .box-content {
+  padding-bottom: var(--a4-space-5);
+}
+.a4-page h1.context-title {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+/* A page drawn without the admin's main card (an edit view) gets one of its own */
+.a4-standalone {
+  max-width: 980px;
+  margin: var(--a4-space-4) auto var(--a4-space-5);
+  padding: var(--a4-space-4) var(--a4-space-5);
+  border-radius: var(--a4-radius);
+  background-color: var(--a4-card);
+  box-shadow: 0 0 0 1px var(--a4-line), var(--a4-shadow-m);
+}
+#maincontent .a4-standalone {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.a4-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---- Type ---------------------------------------------------------------------------------------------------- */
+
+.a4-h2,
+.a4-h3 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--a4-ink);
+  font-family: var(--a4-font);
+  font-weight: 650;
+  overflow-wrap: anywhere;
+}
+.a4-h2 { font-size: var(--a4-text-l); }
+.a4-h3 { font-size: var(--a4-text-m); }
+.a4-muted { color: var(--a4-muted); }
+.a4-meta { color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-help { color: var(--a4-muted); font-size: var(--a4-text-s); max-width: 72ch; }
+.a4-intro { margin: var(--a4-space-2) 0 var(--a4-space-4); max-width: 78ch; color: var(--a4-muted); }
+.a4-num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.a4-nowrap { white-space: nowrap; }
+.a4-wrap { overflow-wrap: anywhere; word-break: break-word; }
+.a4-plain { margin: 0; padding: 0; list-style: none; }
+.a4-ok-text { color: var(--a4-ok); }
+.a4-warn-text { color: var(--a4-warn); }
+.a4-bad-text { color: var(--a4-bad); }
+
+/* ---- Layout -------------------------------------------------------------------------------------------------- */
+
+.a4-section { margin: 0 0 var(--a4-space-5); }
+.a4-section-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--a4-space-1) var(--a4-space-3);
+  margin: 0 0 var(--a4-space-3);
+}
+.a4-section-head > p { flex: 1 1 100%; max-width: 78ch; color: var(--a4-muted); }
+.a4-title-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px var(--a4-space-3); }
+.a4-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2); }
+.a4-row.is-between { justify-content: space-between; }
+.a4-stack { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--a4-space-3); }
+.a4-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: var(--a4-space-3) var(--a4-space-4);
+}
+.a4-grid.is-narrow { grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr)); }
+.a4-grid.is-wide { grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); }
+
+/* ---- Card ---------------------------------------------------------------------------------------------------- */
+
+.a4-card {
+  min-width: 0;
+  margin: 0;
+  padding: var(--a4-space-3) var(--a4-space-4);
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  color: var(--a4-ink);
+  box-shadow: var(--a4-shadow-s);
+}
+.a4-card.is-soft { background-color: var(--a4-soft); box-shadow: none; }
+.a4-card.is-selected { border-color: var(--a4-accent); }
+.a4-card.is-attention { box-shadow: inset 4px 0 0 var(--a4-warn), var(--a4-shadow-s); }
+.a4-card.is-bad { box-shadow: inset 4px 0 0 var(--a4-bad), var(--a4-shadow-s); }
+.a4-card.is-ok { box-shadow: inset 4px 0 0 var(--a4-ok), var(--a4-shadow-s); }
+.a4-card.is-info { box-shadow: inset 4px 0 0 var(--a4-info), var(--a4-shadow-s); }
+.a4-card + .a4-card { margin-top: var(--a4-space-3); }
+.a4-cards > .a4-card + .a4-card,
+.a4-grid > .a4-card + .a4-card { margin-top: 0; }
+.a4-cards {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--a4-space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.a4-card-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px var(--a4-space-4);
+}
+.a4-card-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  min-width: 0;
+  flex: 1 1 320px;
+}
+.a4-card-title a { color: var(--a4-ink); text-decoration: none; }
+.a4-card-title a:hover { color: var(--a4-accent-text); text-decoration: underline; }
+.a4-card-body { margin-top: var(--a4-space-3); }
+
+/* Figures: a row of numbers */
+.a4-figures {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 120px), 1fr));
+  gap: 10px;
+  margin: 0 0 var(--a4-space-4);
+  padding: 0;
+  list-style: none;
+}
+.a4-figure {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0;
+  padding: var(--a4-space-3) 14px;
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+}
+.a4-figure strong {
+  color: var(--a4-ink);
+  font-size: var(--a4-text-xl);
+  font-weight: 700;
+  line-height: 1.15;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+.a4-figure span { color: var(--a4-muted); font-size: var(--a4-text-xs); }
+.a4-figure a { color: inherit; text-decoration: none; }
+.a4-figure a:hover span { text-decoration: underline; }
+.a4-figure.is-attention strong,
+.a4-figure.is-bad strong { color: var(--a4-bad); }
+.a4-figure.is-ok strong { color: var(--a4-ok); }
+.a4-figure.is-current { border-color: var(--a4-accent); box-shadow: inset 0 0 0 1px var(--a4-accent); }
+
+/* Facts: a definition list as a grid */
+.a4-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 165px), 1fr));
+  gap: var(--a4-space-2) 18px;
+  margin: var(--a4-space-3) 0 0;
+}
+.a4-facts > div { min-width: 0; }
+.a4-facts dt {
+  margin: 0;
+  color: var(--a4-muted);
+  font-size: var(--a4-text-xs);
+  font-weight: 650;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.a4-facts dd { margin: 2px 0 0; overflow-wrap: anywhere; }
+.a4-facts.is-rows { grid-template-columns: minmax(120px, max-content) minmax(0, 1fr); gap: 6px var(--a4-space-4); }
+.a4-facts.is-rows dd { margin: 0; }
+
+/* ---- Tag / badge ------------------------------------------------------------------------------------------------ */
+
+.a4-badges {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.a4-tag,
+.a4-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+  padding: 2px 9px;
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+  color: var(--a4-muted);
+  font-size: var(--a4-text-xs);
+  font-weight: 650;
+  line-height: var(--a4-leading);
+  white-space: nowrap;
+  text-decoration: none;
+}
+.a4-tag { border: 1px solid var(--a4-line); font-weight: 400; color: var(--a4-ink); }
+.a4-tag.is-ok, .a4-badge.is-ok { background-color: var(--a4-ok-bg); color: var(--a4-ok); }
+.a4-tag.is-warn, .a4-badge.is-warn { background-color: var(--a4-warn-bg); color: var(--a4-warn); }
+.a4-tag.is-bad, .a4-badge.is-bad { background-color: var(--a4-bad-bg); color: var(--a4-bad); }
+.a4-tag.is-info, .a4-badge.is-info { background-color: var(--a4-info-bg); color: var(--a4-info); }
+.a4-tag.is-accent, .a4-badge.is-accent { background-color: var(--a4-accent-soft); color: var(--a4-accent-text); }
+.a4-tag.is-ok, .a4-tag.is-warn, .a4-tag.is-bad, .a4-tag.is-info, .a4-tag.is-accent { border-color: transparent; }
+.a4-tag.is-mono, .a4-badge.is-mono { font-family: var(--a4-mono); font-weight: 400; }
+
+/* A status with a dot: .a4-status > .a4-dot + text; .is-running pulses */
+.a4-status { display: inline-flex; align-items: center; gap: var(--a4-space-2); font-weight: 700; }
+.a4-dot {
+  flex: 0 0 auto;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--a4-disabled);
+}
+.a4-status.is-ok, .a4-status.is-running { color: var(--a4-ok); }
+.a4-status.is-warn { color: var(--a4-warn); }
+.a4-status.is-bad { color: var(--a4-bad); }
+.a4-status.is-ok .a4-dot, .a4-status.is-running .a4-dot, .a4-dot.is-ok { background-color: var(--a4-ok); }
+.a4-status.is-warn .a4-dot, .a4-dot.is-warn { background-color: var(--a4-warn); }
+.a4-status.is-bad .a4-dot, .a4-dot.is-bad { background-color: var(--a4-bad); }
+.a4-dot.is-info { background-color: var(--a4-info); }
+.a4-dot.is-accent { background-color: var(--a4-accent); }
+.a4-status.is-running .a4-dot { box-shadow: 0 0 0 4px var(--a4-ok-bg); animation: a4-pulse 1.4s ease-in-out infinite; }
+@keyframes a4-pulse { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
+@media (prefers-reduced-motion: reduce) {
+  .a4-status.is-running .a4-dot { animation: none; }
+}
+
+/* ---- Buttons ----------------------------------------------------------------------------------------------- */
+
+.a4-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  max-width: 100%;
+  min-height: 36px;
+  margin: 0;
+  padding: 6px 14px;
+  border: 1px solid var(--a4-line-strong);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  color: var(--a4-ink);
+  font-family: var(--a4-font);
+  font-size: var(--a4-text-s);
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+a.a4-btn, a.a4-btn:visited { color: var(--a4-ink); }
+.a4-btn:hover:not([disabled]):not(.is-disabled) { border-color: var(--a4-accent); color: var(--a4-accent-text); }
+.a4-btn[disabled], .a4-btn.is-disabled { opacity: .55; cursor: not-allowed; }
+.a4-btn svg { flex: 0 0 auto; }
+.a4-btn-primary, a.a4-btn-primary, a.a4-btn-primary:visited {
+  border-color: var(--a4-accent-strong);
+  background-color: var(--a4-accent-strong);
+  color: var(--a4-on-accent);
+}
+.a4-btn-primary:hover:not([disabled]):not(.is-disabled) {
+  border-color: var(--a4-accent-hover);
+  background-color: var(--a4-accent-hover);
+  color: var(--a4-on-accent);
+}
+html[data-a4-theme="dark"] .a4-btn-primary:hover:not([disabled]):not(.is-disabled) { color: var(--a4-code-bg); }
+.a4-btn-danger, a.a4-btn-danger {
+  border-color: var(--a4-bad);
+  background-color: var(--a4-bad);
+  color: var(--a4-card);
+}
+.a4-btn-danger:hover:not([disabled]):not(.is-disabled) {
+  border-color: var(--a4-bad-hover);
+  background-color: var(--a4-bad-hover);
+  color: var(--a4-card);
+}
+.a4-btn-outline-danger, a.a4-btn-outline-danger { border-color: var(--a4-bad); color: var(--a4-bad); }
+.a4-btn-outline-danger:hover:not([disabled]):not(.is-disabled) {
+  border-color: var(--a4-bad);
+  background-color: var(--a4-bad);
+  color: var(--a4-card);
+}
+.a4-btn-ghost { border-color: transparent; background-color: transparent; }
+.a4-btn-small { min-height: 30px; padding: var(--a4-space-1) 10px; font-size: var(--a4-text-xs); }
+.a4-btn-icon { min-width: 34px; padding: var(--a4-space-1) var(--a4-space-2); }
+@media (max-width: 600px) {
+  .a4-btn { white-space: normal; text-align: center; }
+}
+
+.a4-actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2); }
+.a4-actions form { display: contents; }
+
+/* ---- Toolbar (an action bar; .is-bottom under a list, .is-sticky stays at the window's bottom) --------------- */
+
+.a4-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px var(--a4-space-4);
+  margin: 0 0 18px;
+  padding: var(--a4-space-3) 14px;
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+  color: var(--a4-ink);
+}
+.a4-toolbar > .a4-meta { flex: 1 1 260px; }
+.a4-toolbar.is-bottom { justify-content: flex-start; margin: 18px 0 0; }
+.a4-toolbar.is-sticky {
+  position: sticky;
+  bottom: 0;
+  z-index: 5;
+  margin: 18px 0 0;
+  background-color: var(--a4-card);
+  box-shadow: var(--a4-shadow-up);
+}
+@media (max-width: 600px) {
+  .a4-toolbar .a4-actions { width: 100%; }
+  .a4-toolbar .a4-btn { flex: 1 1 auto; }
+}
+
+/* ---- Filter bar: a grid of fields above a list ---------------------------------------------------------------- */
+
+.a4-filterbar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+  align-items: end;
+  gap: 14px var(--a4-space-4);
+  margin: 0 0 var(--a4-space-4);
+  padding: var(--a4-space-4);
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+}
+.a4-filterbar .a4-filter-count { grid-column: 1 / -1; margin: 0; color: var(--a4-muted); font-size: var(--a4-text-s); }
+
+/* ---- Forms ------------------------------------------------------------------------------------------------- */
+
+/* A field: label (or legend), control, help, error, stacked */
+.a4-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+fieldset.a4-field { background: none; box-shadow: none; border-radius: 0; }
+fieldset.a4-field > legend { float: left; width: 100%; margin: 0 0 5px; padding: 0; background: none; }
+fieldset.a4-field > legend + * { clear: both; }
+.a4-field > label,
+.a4-field > legend,
+.a4-label {
+  padding: 0;
+  color: var(--a4-ink);
+  font-size: var(--a4-text-xs);
+  font-weight: 650;
+}
+.a4-field-wide { grid-column: 1 / -1; }
+.a4-field-error { color: var(--a4-bad); font-size: var(--a4-text-s); font-weight: 650; }
+
+/* The controls: inside a field, or anywhere with .a4-input */
+.a4-input,
+.a4-field select,
+.a4-field textarea,
+.a4-field input[type="text"],
+.a4-field input[type="search"],
+.a4-field input[type="number"],
+.a4-field input[type="email"],
+.a4-field input[type="url"],
+.a4-field input[type="password"],
+.a4-field input[type="date"],
+.a4-field input[type="time"],
+.a4-field input[type="datetime-local"] {
+  width: 100%;
+  min-height: 38px;
+  margin: 0;
+  padding: 6px 10px;
+  border: 1px solid var(--a4-field-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-field);
+  color: var(--a4-ink);
+  font-family: inherit;
+  font-size: var(--a4-text-m);
+  box-shadow: none;
+}
+.a4-input.is-auto { width: auto; }
+.a4-field textarea, textarea.a4-input { min-height: 96px; line-height: var(--a4-leading); }
+.a4-field select[multiple], select.a4-input[multiple] { min-height: 150px; padding: var(--a4-space-1); }
+.a4-input:focus,
+.a4-field select:focus,
+.a4-field textarea:focus,
+.a4-field input:focus {
+  border-color: var(--a4-accent);
+  outline: 3px solid var(--a4-ring);
+  outline-offset: 0;
+}
+.a4-input[aria-invalid="true"],
+.a4-field input[aria-invalid="true"] { border-color: var(--a4-bad); box-shadow: inset 0 0 0 1px var(--a4-bad); }
+.a4-input::placeholder { color: var(--a4-muted); }
+
+/* Fields side by side (.a4-form) and the classic row: label left, control right (.a4-formrow) */
+.a4-form { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; max-width: 640px; }
+.a4-form.is-wide { max-width: none; }
+.a4-formrow {
+  display: grid;
+  grid-template-columns: minmax(140px, 220px) minmax(0, 1fr);
+  align-items: start;
+  gap: 6px var(--a4-space-4);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--a4-line);
+}
+.a4-formrow:last-child { border-bottom: 0; }
+.a4-formrow > label, .a4-formrow > .a4-label { padding-top: 9px; }
+@media (max-width: 600px) {
+  .a4-formrow { grid-template-columns: minmax(0, 1fr); }
+  .a4-formrow > label, .a4-formrow > .a4-label { padding-top: 0; }
+}
+.a4-searchrow { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2); }
+.a4-searchrow input[type="search"], .a4-searchrow input[type="text"], .a4-searchrow .a4-input { flex: 1 1 220px; width: auto; min-width: 0; }
+
+/* A checkbox or radio with its text */
+.a4-check { display: flex; align-items: flex-start; gap: var(--a4-space-2); font-weight: 400; white-space: normal; }
+.a4-check input { flex: 0 0 auto; width: 18px; height: 18px; margin: 2px 0 0; accent-color: var(--a4-accent-strong); }
+.a4-check > span { flex: 1 1 auto; min-width: 0; }
+.a4-check strong { font-weight: 650; }
+.a4-check .a4-help { display: block; }
+.a4-page input[type="checkbox"], .a4-page input[type="radio"] { accent-color: var(--a4-accent-strong); }
+
+/* A choice of one, as rows */
+.a4-radios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: var(--a4-space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.a4-radios label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 40px;
+  padding: var(--a4-space-2) var(--a4-space-3);
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  cursor: pointer;
+}
+.a4-radios input { width: 18px; height: 18px; margin: 0; }
+.a4-radios input:checked + span { font-weight: 650; }
+
+/* Chips: checkboxes or radios drawn as toggles */
+.a4-chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.a4-chip { position: relative; display: inline-flex; margin: 0; }
+.a4-chip input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.a4-chip span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: var(--a4-space-1) var(--a4-space-3);
+  border: 1px solid var(--a4-line-strong);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  color: var(--a4-ink);
+  font-size: var(--a4-text-s);
+  font-weight: 400;
+  cursor: pointer;
+}
+.a4-chip input:checked + span {
+  border-color: var(--a4-accent-strong);
+  background-color: var(--a4-accent-strong);
+  color: var(--a4-on-accent);
+  font-weight: 650;
+}
+.a4-chip input:focus-visible + span { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
+
+/* ---- Tables ------------------------------------------------------------------------------------------------ */
+
+.a4-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+}
+.a4-table { width: 100%; margin: 0; border-collapse: collapse; background-color: transparent; }
+.a4-table th,
+.a4-table td {
+  padding: 9px var(--a4-space-3);
+  border: 0;
+  border-bottom: 1px solid var(--a4-line);
+  background-color: transparent;
+  color: var(--a4-ink);
+  text-align: left;
+  vertical-align: top;
+}
+.a4-table th {
+  background-color: var(--a4-soft);
+  color: var(--a4-muted);
+  font-size: var(--a4-text-xs);
+  font-weight: 650;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.a4-table tr:last-child td { border-bottom: 0; }
+.a4-table tbody tr:hover td { background-color: var(--a4-soft); }
+.a4-table .a4-num, .a4-table th.a4-num { text-align: right; }
+.a4-table img { vertical-align: -3px; }
+.a4-table.is-compact th, .a4-table.is-compact td { padding: 6px 10px; }
+.a4-table tr.is-selected td { background-color: var(--a4-accent-soft); }
+@media (max-width: 600px) {
+  .a4-table th, .a4-table td { padding: var(--a4-space-2) 9px; }
+}
+
+/* ---- Below a list: page sizes and pages ---------------------------------------------------------------------- */
+
+.a4-listfoot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 18px;
+  margin: 14px 0 0;
+}
+.a4-sizes { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 0; color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-sizes a,
+.a4-sizes span.current {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 34px;
+  min-height: 30px;
+  padding: 2px var(--a4-space-2);
+  border: 1px solid var(--a4-line-strong);
+  border-radius: var(--a4-radius-s);
+  text-decoration: none;
+}
+.a4-sizes span.current {
+  border-color: var(--a4-accent-strong);
+  background-color: var(--a4-accent-strong);
+  color: var(--a4-on-accent);
+  font-weight: 650;
+}
+.a4-pager { min-width: 0; }
+.a4-pager .pagenavigator { margin: 0; }
+.a4-pager a, .a4-pager span.text, .a4-pager span.text a { color: var(--a4-accent-text); }
+.a4-pager span.disabled, .a4-pager span.text.disabled { color: var(--a4-muted); }
+.a4-pager span.current { color: var(--a4-ink); }
+
+/* ---- Tabs: links as pills, the current one filled -------------------------------------------------------- */
+
+.a4-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.a4-tabs a,
+.a4-tabs span.current,
+.a4-tabs .is-current {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 32px;
+  padding: var(--a4-space-1) var(--a4-space-3);
+  border: 1px solid var(--a4-line-strong);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  color: var(--a4-ink);
+  font-size: var(--a4-text-s);
+  text-decoration: none;
+}
+.a4-tabs a:hover { border-color: var(--a4-accent); color: var(--a4-accent-text); }
+.a4-tabs span.current,
+.a4-tabs .is-current,
+.a4-tabs a.is-current:hover {
+  border-color: var(--a4-accent-strong);
+  background-color: var(--a4-accent-strong);
+  color: var(--a4-on-accent);
+  font-weight: 650;
+}
+.a4-tabs .a4-count { font-variant-numeric: tabular-nums; opacity: .9; }
+
+/* ---- Empty state and notices ------------------------------------------------------------------------------- */
+
+.a4-empty {
+  margin: 0;
+  padding: 18px var(--a4-space-4);
+  border: 1px dashed var(--a4-line-strong);
+  border-radius: var(--a4-radius-s);
+  color: var(--a4-muted);
+  text-align: center;
+}
+.a4-empty > * + * { margin-top: var(--a4-space-2); }
+
+.a4-notice {
+  margin: 0 0 14px;
+  padding: 10px 14px;
+  border: 1px solid var(--a4-line);
+  border-left-width: 4px;
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+  color: var(--a4-ink);
+}
+.a4-notice.is-ok { border-color: var(--a4-ok-line); border-left-color: var(--a4-ok); background-color: var(--a4-ok-bg); color: var(--a4-ok); }
+.a4-notice.is-bad { border-color: var(--a4-bad-line); border-left-color: var(--a4-bad); background-color: var(--a4-bad-bg); color: var(--a4-bad); }
+.a4-notice.is-warn { border-color: var(--a4-warn-line); border-left-color: var(--a4-warn); background-color: var(--a4-warn-bg); color: var(--a4-warn); }
+.a4-notice.is-info { border-color: var(--a4-info-line); border-left-color: var(--a4-info); background-color: var(--a4-info-bg); color: var(--a4-info); }
+.a4-notice strong, .a4-notice .a4-h2, .a4-notice .a4-h3, .a4-notice a { color: inherit; }
+.a4-notice p + p, .a4-notice p + ul, .a4-notice ul + p { margin-top: 6px; }
+.a4-notice ul { margin: 6px 0 0; padding-left: 20px; }
+.a4-notice li + li { margin-top: var(--a4-space-1); }
+
+/* ---- Folding: <details class="a4-fold">, and the in-place confirmation <details class="a4-confirm"> ------------ */
+
+.a4-fold,
+.a4-confirm {
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+}
+.a4-fold + .a4-fold { margin-top: var(--a4-space-2); }
+.a4-fold > summary,
+.a4-confirm > summary {
+  display: flex;
+  align-items: center;
+  gap: var(--a4-space-2);
+  min-height: 40px;
+  padding: var(--a4-space-2) 14px;
+  color: var(--a4-ink);
+  font-weight: 650;
+  list-style: none;
+  cursor: pointer;
+}
+.a4-fold > summary::-webkit-details-marker,
+.a4-confirm > summary::-webkit-details-marker { display: none; }
+.a4-fold > summary::before,
+.a4-confirm > summary::before { content: "\25B8"; color: var(--a4-muted); }
+.a4-fold[open] > summary::before,
+.a4-confirm[open] > summary::before { content: "\25BE"; }
+.a4-fold > summary:hover { color: var(--a4-accent-text); }
+.a4-fold-body { padding: 0 14px 14px; }
+.a4-confirm { flex: 1 1 100%; }
+.a4-confirm > summary { display: inline-flex; min-height: 36px; padding: 6px 14px; color: var(--a4-bad); }
+.a4-confirm > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+  padding: 0 14px 14px;
+}
+.a4-confirm > div p { flex: 1 1 320px; color: var(--a4-ink); }
+.a4-toolbar .a4-confirm { flex: 0 1 auto; }
+.a4-toolbar .a4-confirm[open] { flex: 1 1 100%; }
+
+/* ---- Steps of a wizard: <ol class="a4-steps"><li class="is-done|is-current"> ---------------------------------- */
+
+.a4-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--a4-space-2);
+  margin: 0 0 18px;
+  padding: 0;
+  list-style: none;
+  counter-reset: a4step;
+}
+.a4-steps li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--a4-space-2);
+  min-height: 34px;
+  padding: var(--a4-space-1) 14px var(--a4-space-1) 6px;
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  color: var(--a4-muted);
+  font-size: var(--a4-text-s);
+  counter-increment: a4step;
+}
+.a4-steps li::before {
+  content: counter(a4step);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--a4-soft);
+  color: var(--a4-ink);
+  font-weight: 700;
+}
+.a4-steps li.is-done::before { content: "\2713"; background-color: var(--a4-ok-bg); color: var(--a4-ok); }
+.a4-steps li.is-current { border-color: var(--a4-accent); color: var(--a4-ink); font-weight: 650; }
+.a4-steps li.is-current::before { background-color: var(--a4-accent-strong); color: var(--a4-on-accent); }
+@media (max-width: 600px) {
+  .a4-steps li { flex: 1 1 100%; }
+}
+
+/* ---- Code and output ------------------------------------------------------------------------------------------ */
+
+.a4-pre {
+  max-height: 420px;
+  margin: 0;
+  padding: var(--a4-space-3) 14px;
+  overflow: auto;
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-code-bg);
+  color: var(--a4-code-ink);
+  font-family: var(--a4-mono);
+  font-size: var(--a4-text-s);
+  line-height: var(--a4-leading);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.a4-pre.is-tall { max-height: 70vh; }
+.a4-kbd {
+  display: inline-block;
+  margin: 0 var(--a4-space-1) var(--a4-space-1) 0;
+  padding: 1px var(--a4-space-2);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+  color: var(--a4-ink);
+  font-family: var(--a4-mono);
+  font-size: var(--a4-text-xs);
+  white-space: nowrap;
+}
+
+/* ---- Drag handle -------------------------------------------------------------------------------------------- */
+
+.a4-grip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  min-height: 30px;
+  margin: 0;
+  padding: 0;
+  border: 1px dashed var(--a4-line-strong);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+  color: var(--a4-muted);
+  font-size: var(--a4-text-l);
+  line-height: 1;
+  cursor: grab;
+  touch-action: none;
+}
+.a4-grip:hover, .a4-grip:focus-visible { border-style: solid; border-color: var(--a4-accent); color: var(--a4-accent-text); }
+.is-dragging { opacity: .55; }
+
+/* ---- Amounts without style="": .a4-pct-0 ... .a4-pct-100 set --a4-pct, which .a4-meter (a bar's width) and
+        .a4-bars (a chart's column heights) read. A template rounds its percentage to a whole number. ------------- */
+
+.a4-meter {
+  display: block;
+  height: 8px;
+  overflow: hidden;
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+}
+.a4-meter > span {
+  display: block;
+  width: calc(var(--a4-pct, 0) * 1%);
+  height: 100%;
+  border-radius: inherit;
+  background-color: var(--a4-accent);
+}
+.a4-meter.is-ok > span { background-color: var(--a4-ok); }
+.a4-meter.is-warn > span { background-color: var(--a4-warn); }
+.a4-meter.is-bad > span { background-color: var(--a4-bad); }
+.a4-meter.is-info > span { background-color: var(--a4-info); }
+.a4-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 9em;
+  border-bottom: 1px solid var(--a4-line-strong);
+}
+.a4-bars > * {
+  flex: 1 1 0;
+  min-width: 0;
+  height: calc(var(--a4-pct, 0) * 1%);
+  border-radius: var(--a4-radius-s) var(--a4-radius-s) 0 0;
+  background-color: var(--a4-accent);
+}
+.a4-bars > .is-current { background-color: var(--a4-ink); }
+.a4-pct-0 { --a4-pct: 0; } .a4-pct-1 { --a4-pct: 1; } .a4-pct-2 { --a4-pct: 2; } .a4-pct-3 { --a4-pct: 3; }
+.a4-pct-4 { --a4-pct: 4; } .a4-pct-5 { --a4-pct: 5; } .a4-pct-6 { --a4-pct: 6; } .a4-pct-7 { --a4-pct: 7; }
+.a4-pct-8 { --a4-pct: 8; } .a4-pct-9 { --a4-pct: 9; } .a4-pct-10 { --a4-pct: 10; } .a4-pct-11 { --a4-pct: 11; }
+.a4-pct-12 { --a4-pct: 12; } .a4-pct-13 { --a4-pct: 13; } .a4-pct-14 { --a4-pct: 14; } .a4-pct-15 { --a4-pct: 15; }
+.a4-pct-16 { --a4-pct: 16; } .a4-pct-17 { --a4-pct: 17; } .a4-pct-18 { --a4-pct: 18; } .a4-pct-19 { --a4-pct: 19; }
+.a4-pct-20 { --a4-pct: 20; } .a4-pct-21 { --a4-pct: 21; } .a4-pct-22 { --a4-pct: 22; } .a4-pct-23 { --a4-pct: 23; }
+.a4-pct-24 { --a4-pct: 24; } .a4-pct-25 { --a4-pct: 25; } .a4-pct-26 { --a4-pct: 26; } .a4-pct-27 { --a4-pct: 27; }
+.a4-pct-28 { --a4-pct: 28; } .a4-pct-29 { --a4-pct: 29; } .a4-pct-30 { --a4-pct: 30; } .a4-pct-31 { --a4-pct: 31; }
+.a4-pct-32 { --a4-pct: 32; } .a4-pct-33 { --a4-pct: 33; } .a4-pct-34 { --a4-pct: 34; } .a4-pct-35 { --a4-pct: 35; }
+.a4-pct-36 { --a4-pct: 36; } .a4-pct-37 { --a4-pct: 37; } .a4-pct-38 { --a4-pct: 38; } .a4-pct-39 { --a4-pct: 39; }
+.a4-pct-40 { --a4-pct: 40; } .a4-pct-41 { --a4-pct: 41; } .a4-pct-42 { --a4-pct: 42; } .a4-pct-43 { --a4-pct: 43; }
+.a4-pct-44 { --a4-pct: 44; } .a4-pct-45 { --a4-pct: 45; } .a4-pct-46 { --a4-pct: 46; } .a4-pct-47 { --a4-pct: 47; }
+.a4-pct-48 { --a4-pct: 48; } .a4-pct-49 { --a4-pct: 49; } .a4-pct-50 { --a4-pct: 50; } .a4-pct-51 { --a4-pct: 51; }
+.a4-pct-52 { --a4-pct: 52; } .a4-pct-53 { --a4-pct: 53; } .a4-pct-54 { --a4-pct: 54; } .a4-pct-55 { --a4-pct: 55; }
+.a4-pct-56 { --a4-pct: 56; } .a4-pct-57 { --a4-pct: 57; } .a4-pct-58 { --a4-pct: 58; } .a4-pct-59 { --a4-pct: 59; }
+.a4-pct-60 { --a4-pct: 60; } .a4-pct-61 { --a4-pct: 61; } .a4-pct-62 { --a4-pct: 62; } .a4-pct-63 { --a4-pct: 63; }
+.a4-pct-64 { --a4-pct: 64; } .a4-pct-65 { --a4-pct: 65; } .a4-pct-66 { --a4-pct: 66; } .a4-pct-67 { --a4-pct: 67; }
+.a4-pct-68 { --a4-pct: 68; } .a4-pct-69 { --a4-pct: 69; } .a4-pct-70 { --a4-pct: 70; } .a4-pct-71 { --a4-pct: 71; }
+.a4-pct-72 { --a4-pct: 72; } .a4-pct-73 { --a4-pct: 73; } .a4-pct-74 { --a4-pct: 74; } .a4-pct-75 { --a4-pct: 75; }
+.a4-pct-76 { --a4-pct: 76; } .a4-pct-77 { --a4-pct: 77; } .a4-pct-78 { --a4-pct: 78; } .a4-pct-79 { --a4-pct: 79; }
+.a4-pct-80 { --a4-pct: 80; } .a4-pct-81 { --a4-pct: 81; } .a4-pct-82 { --a4-pct: 82; } .a4-pct-83 { --a4-pct: 83; }
+.a4-pct-84 { --a4-pct: 84; } .a4-pct-85 { --a4-pct: 85; } .a4-pct-86 { --a4-pct: 86; } .a4-pct-87 { --a4-pct: 87; }
+.a4-pct-88 { --a4-pct: 88; } .a4-pct-89 { --a4-pct: 89; } .a4-pct-90 { --a4-pct: 90; } .a4-pct-91 { --a4-pct: 91; }
+.a4-pct-92 { --a4-pct: 92; } .a4-pct-93 { --a4-pct: 93; } .a4-pct-94 { --a4-pct: 94; } .a4-pct-95 { --a4-pct: 95; }
+.a4-pct-96 { --a4-pct: 96; } .a4-pct-97 { --a4-pct: 97; } .a4-pct-98 { --a4-pct: 98; } .a4-pct-99 { --a4-pct: 99; }
+.a4-pct-100 { --a4-pct: 100; }
+
+/* ---- The frame's own hidden-until-used parts (were style="display:none" in the pagelayouts) ------------------ */
+
+#overlay-mask,
+#ajaxuploader-loader {
+  display: none;
+}
+
+/* ---- Requests from the module migrations are added below this line (one block per request) ------------------ */

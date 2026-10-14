@@ -1,0 +1,7 @@
+/*
+ * Module stylesheet: role, section, state, user, notification and collaboration.
+ *
+ * Only what the shared components (stylesheets/components.css) cannot do, as .a4-<module>-* classes, with
+ * colours, radius, spacing and fonts from the --a4-* tokens only (no hard-coded values, no local aliases).
+ * Registered in design.ini [StylesheetSettings] AdminComponentCSSFileList; rules: doc/bc/6.0/admin4-styling.md
+ */
