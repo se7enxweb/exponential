@@ -181,7 +181,7 @@ The left column's preset sizes (small, medium, large) are `html[data-a4-left-siz
   `0`, in any order of the shorthand; `:focus:not(:focus-visible)` and `:focus-within` aside). The global ring
   (`outline: 3px solid var(--a4-ring)`, offset 2px) is the focus indicator. A frame field that draws its ring as a
   `box-shadow` (outside `.a4-page`) sets `outline: 2px solid transparent` instead of `none`, which forced-colors mode
-  paints where it drops the shadow; inside `.a4-page` the components' own ring applies anyway;
+  paints where it drops the shadow; inside `.a4-page` the components' own ring applies anyway. The check reads only rules whose selector names the focus: a plain rule that outranks the global ring (an id such as `#logintext { outline: none }`) is not seen, so give such a rule a `:focus` rule that restores the outline;
 - a file named in `AdminComponentCSSFileList` is missing.
 
 `tests/tests/design/AdminTokenContrastTest.php` computes the WCAG contrast of the token pairs in both modes: text

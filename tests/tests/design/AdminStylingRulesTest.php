@@ -376,6 +376,10 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
     /**
      * A :focus or :focus-visible rule of admin4 that takes the outline away leaves nothing in forced-colors mode,
      * where box-shadow rings are not drawn: it keeps an outline (a transparent one is enough, forced colors paint it)
+     *
+     * Its limit: it reads rules whose selector names :focus or :focus-visible. A plain rule that outranks the
+     * global ring (an id selector such as pagelayout.css's #logintext { outline: none }) removes the indicator
+     * as well and is not seen here; such a rule needs a :focus rule of its own that restores the outline.
      */
     public function testNoFocusRuleRemovesTheOutline()
     {
