@@ -123,6 +123,10 @@
 <context>
     <name>design/admin/class/classlist</name>
     <message>
+        <source>Only this page is searched: %from to %to of %count.</source>
+        <translation>Durchsucht wird nur diese Seite: %from bis %to von %count.</translation>
+    </message>
+    <message>
         <source>%group_name [Class group]</source>
         <translation>%group_name [Klassengruppe]</translation>
     </message>
@@ -847,6 +851,10 @@
 </context>
 <context>
     <name>design/admin/class/grouplist</name>
+    <message>
+        <source>Only this page is searched: %from to %to of %count.</source>
+        <translation>Durchsucht wird nur diese Seite: %from bis %to von %count.</translation>
+    </message>
     <message>
         <source>Class groups [%group_count]</source>
         <translation type="obsolete">Klassengruppen [%group_count]</translation>
@@ -5796,6 +5804,26 @@
 <context>
     <name>design/admin/content/search</name>
     <message>
+        <source>Search for</source>
+        <translation>Suchen nach</translation>
+    </message>
+    <message>
+        <source>The search text was too long and was shortened.</source>
+        <translation>Der Suchtext war zu lang und wurde gekürzt.</translation>
+    </message>
+    <message>
+        <source>Type the words to search for.</source>
+        <translation>Geben Sie die Wörter ein, nach denen gesucht werden soll.</translation>
+    </message>
+    <message>
+        <source>The search could not be run. Try fewer or simpler words, or search again later.</source>
+        <translation>Die Suche konnte nicht ausgeführt werden. Versuchen Sie es mit weniger oder einfacheren Wörtern oder später noch einmal.</translation>
+    </message>
+    <message>
+        <source>%count matches</source>
+        <translation>%count Treffer</translation>
+    </message>
+    <message>
         <source>Update attributes</source>
         <translation>Attribute aktualisieren</translation>
     </message>
@@ -9984,6 +10012,10 @@
 </context>
 <context>
     <name>design/admin/navigator</name>
+    <message>
+        <source>Pages</source>
+        <translation>Seiten</translation>
+    </message>
     <message>
         <source>Previous</source>
         <translation>Zurück</translation>
@@ -20429,6 +20461,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
 <context>
     <name>design/admin/section/list</name>
     <message>
+        <source>Only this page is searched: %from to %to of %count.</source>
+        <translation>Durchsucht wird nur diese Seite: %from bis %to von %count.</translation>
+    </message>
+    <message>
         <source>Sections [%section_count]</source>
         <translation type="obsolete">Sektionen [%section_count]</translation>
     </message>
@@ -26531,6 +26567,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
 </context>
 <context>
     <name>design/admin/setup/rad</name>
+    <message>
+        <source>%shown of %count</source>
+        <translation>%shown von %count</translation>
+    </message>
     <message>
         <source>Find</source>
         <translation>Suchen</translation>
@@ -40074,6 +40114,10 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
 </context>
 <context>
     <name>design/admin/workflow/grouplist</name>
+    <message>
+        <source>Only this page is searched: %from to %to of %count.</source>
+        <translation>Durchsucht wird nur diese Seite: %from bis %to von %count.</translation>
+    </message>
     <message>
         <source>Workflow groups [%groups_count]</source>
         <translation type="obsolete">Workflow Gruppen [%groups_count]</translation>

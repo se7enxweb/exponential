@@ -119,6 +119,10 @@
 <context>
     <name>design/admin/class/classlist</name>
     <message>
+        <source>Only this page is searched: %from to %to of %count.</source>
+        <translation>Only this page is searched: %from to %to of %count.</translation>
+    </message>
+    <message>
         <source>%group_name [Class group]</source>
         <translation>%group_name [Class group]</translation>
     </message>
@@ -758,6 +762,10 @@
 </context>
 <context>
     <name>design/admin/class/grouplist</name>
+    <message>
+        <source>Only this page is searched: %from to %to of %count.</source>
+        <translation>Only this page is searched: %from to %to of %count.</translation>
+    </message>
     <message>
         <source>Invert selection.</source>
         <translation>Invert selection.</translation>
@@ -5030,6 +5038,26 @@
 <context>
     <name>design/admin/content/search</name>
     <message>
+        <source>Search for</source>
+        <translation>Search for</translation>
+    </message>
+    <message>
+        <source>The search text was too long and was shortened.</source>
+        <translation>The search text was too long and was shortened.</translation>
+    </message>
+    <message>
+        <source>Type the words to search for.</source>
+        <translation>Type the words to search for.</translation>
+    </message>
+    <message>
+        <source>The search could not be run. Try fewer or simpler words, or search again later.</source>
+        <translation>The search could not be run. Try fewer or simpler words, or search again later.</translation>
+    </message>
+    <message>
+        <source>%count matches</source>
+        <translation>%count matches</translation>
+    </message>
+    <message>
         <source>Update attributes</source>
         <translation>Update attributes</translation>
     </message>
@@ -8246,6 +8274,10 @@
 </context>
 <context>
     <name>design/admin/navigator</name>
+    <message>
+        <source>Pages</source>
+        <translation>Pages</translation>
+    </message>
     <message>
         <source>Previous</source>
         <translation>Previous</translation>
@@ -17681,6 +17713,10 @@ Note: The packages will not be uninstalled.</translation>
 <context>
     <name>design/admin/section/list</name>
     <message>
+        <source>Only this page is searched: %from to %to of %count.</source>
+        <translation>Only this page is searched: %from to %to of %count.</translation>
+    </message>
+    <message>
         <source>Name</source>
         <translation>Name</translation>
     </message>
@@ -23770,6 +23806,10 @@ Note: The packages will not be uninstalled.</translation>
 </context>
 <context>
     <name>design/admin/setup/rad</name>
+    <message>
+        <source>%shown of %count</source>
+        <translation>%shown of %count</translation>
+    </message>
     <message>
         <source>Find</source>
         <translation>Find</translation>
@@ -36959,6 +36999,10 @@ your account.</translation>
 </context>
 <context>
     <name>design/admin/workflow/grouplist</name>
+    <message>
+        <source>Only this page is searched: %from to %to of %count.</source>
+        <translation>Only this page is searched: %from to %to of %count.</translation>
+    </message>
     <message>
         <source>Name</source>
         <translation>Name</translation>
