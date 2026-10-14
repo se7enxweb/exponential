@@ -1,7 +1,7 @@
 {* One file of a package as a card (package/view/full's contents browser): what it is by its content
    (eZPackageFileBrowser::sniff()), its size, its SHA-256 and whether it matches the checksum package.json lists.
    $file: the viewed file row (path, size, media, mime, sha256, checksum, index). *}
-<dl class="exp-facts pvf-card" data-media="{$file.media|wash}" data-checksum="{$file.checksum|wash}">
+<dl class="a4-facts pvf-card" data-media="{$file.media|wash}" data-checksum="{$file.checksum|wash}">
     <div><dt>{'Name'|i18n( 'design/admin/package' )}</dt><dd><code>{$file.path|wash}</code></dd></div>
     <div><dt>{'Size'|i18n( 'design/admin/package' )}</dt><dd>{$file.size|si( byte )} ({$file.size|wash} B)</dd></div>
     <div><dt>{'Type'|i18n( 'design/admin/package' )}</dt><dd><code>{$file.mime|wash}</code></dd></div>

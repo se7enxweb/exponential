@@ -11,7 +11,6 @@
    the page the editor came from (doc/features/6.0/safe-redirects.md). This is an edit view, which admin4 draws
    without its main card; .exp-standalone gives the page its own. The same file is in design/admin and
    design/admin4. Guide: doc/guides/security-and-audit.md, section 6 *}
-{include uri='design:user/exp_style.tpl'}
 
 {def $ov = first_set( $account_overview, false() )
      $acc = cond( $ov, $ov.account, hash( 'user_id', $userID, 'login', $userAccount.login, 'email', $userAccount.email,
@@ -24,33 +23,33 @@
                          'disabled', 'Disabled'|i18n( 'design/admin/user/edit' ),
                          'locked', 'Locked'|i18n( 'design/admin/user/edit' ) )}
 
-<form name="Edit" method="post" action={concat( $module.functions.edit.uri, '/', $userID )|ezurl} class="exp-account exp-standalone">
+<form name="Edit" method="post" action={concat( $module.functions.edit.uri, '/', $userID )|ezurl} class="a4-page a4-standalone">
 
 <div class="context-block">
 
 <div class="box-header"><div class="box-ml">
-<div class="exp-title-row">
+<div class="a4-title-row">
 <h1 class="context-title">{if $own}{'My account'|i18n( 'design/admin/user/edit' )}{else}{'User account: %name'|i18n( 'design/admin/user/edit',, hash( '%name', $acc.name ) )|wash}{/if}</h1>
-<span class="exp-meta">{'ID %id'|i18n( 'design/admin/user/edit',, hash( '%id', $acc.user_id ) )}</span>
+<span class="a4-meta">{'ID %id'|i18n( 'design/admin/user/edit',, hash( '%id', $acc.user_id ) )}</span>
 </div>
 </div></div>
 
 <div class="box-bc"><div class="box-ml"><div class="box-content">
 
-<div class="exp-actionbar">
-    <p class="exp-meta">{if $own}{'Your account at a glance, and every page to change it from.'|i18n( 'design/admin/user/edit' )}{else}{'The account of this user at a glance, and every page to change it from.'|i18n( 'design/admin/user/edit' )}{/if}</p>
-    <div class="exp-actions">
-        <button class="exp-btn exp-btn-primary" type="submit" name="EditButton" value="1">{'Edit profile'|i18n( 'design/admin/user/edit' )}</button>
-        {if $acc.node_id}<a class="exp-btn" href={concat( 'content/view/full/', $acc.node_id )|ezurl}>{'Show in the content tree'|i18n( 'design/admin/user/edit' )}</a>{/if}
-        <button class="exp-btn" type="submit" name="CancelButton" value="1">{'Cancel'|i18n( 'design/admin/user/edit' )}</button>
+<div class="a4-toolbar">
+    <p class="a4-meta">{if $own}{'Your account at a glance, and every page to change it from.'|i18n( 'design/admin/user/edit' )}{else}{'The account of this user at a glance, and every page to change it from.'|i18n( 'design/admin/user/edit' )}{/if}</p>
+    <div class="a4-actions">
+        <button class="a4-btn a4-btn-primary" type="submit" name="EditButton" value="1">{'Edit profile'|i18n( 'design/admin/user/edit' )}</button>
+        {if $acc.node_id}<a class="a4-btn" href={concat( 'content/view/full/', $acc.node_id )|ezurl}>{'Show in the content tree'|i18n( 'design/admin/user/edit' )}</a>{/if}
+        <button class="a4-btn" type="submit" name="CancelButton" value="1">{'Cancel'|i18n( 'design/admin/user/edit' )}</button>
     </div>
 </div>
 
 {* ---- Security hints ---- *}
 {if and( $ov, $ov.hints|count )}
-<ul class="exp-hints" aria-label="{'Security hints'|i18n( 'design/admin/user/edit' )}">
+<ul class="a4-user-hints" aria-label="{'Security hints'|i18n( 'design/admin/user/edit' )}">
 {foreach $ov.hints as $hint}
-    <li class="exp-feedback is-{$hint.level|wash}">
+    <li class="a4-notice is-{$hint.level|wash}">
     {switch match=$hint.key}
     {case match='disabled'}<strong>{'Disabled.'|i18n( 'design/admin/user/edit' )}</strong> {'This account is disabled: its user cannot sign in. It is enabled again under Account settings.'|i18n( 'design/admin/user/edit' )}{/case}
     {case match='locked'}<strong>{'Locked.'|i18n( 'design/admin/user/edit' )}</strong> {'This account is locked after too many failed sign-ins. Resetting the count under Account settings lets its user sign in again.'|i18n( 'design/admin/user/edit' )}{/case}
@@ -68,40 +67,40 @@
 {/if}
 
 {* ---- The overview ---- *}
-<section class="exp-section" aria-labelledby="account-overview-title">
-<div class="exp-panel">
-    <div class="exp-who">
-        <span class="exp-avatar" aria-hidden="true">{$acc.name|extract( 0, 1 )|upcase|wash}</span>
-        <div class="exp-who-text">
+<section class="a4-section" aria-labelledby="account-overview-title">
+<div class="a4-card">
+    <div class="a4-user-who">
+        <span class="a4-user-avatar" aria-hidden="true">{$acc.name|extract( 0, 1 )|upcase|wash}</span>
+        <div class="a4-user-who-text">
             <h2 id="account-overview-title">{$acc.name|wash}</h2>
         </div>
-        {if $ov}<span class="exp-badge is-{$ov.state.level|wash}">{$state_text[$ov.state.key]|wash}</span>{/if}
+        {if $ov}<span class="a4-badge is-{$ov.state.level|wash}">{$state_text[$ov.state.key]|wash}</span>{/if}
     </div>
-    <dl class="exp-facts">
+    <dl class="a4-facts">
         <div><dt>{'Login'|i18n( 'design/admin/user/edit' )}</dt><dd>{$acc.login|wash}</dd></div>
         <div><dt>{'E-mail'|i18n( 'design/admin/user/edit' )}</dt><dd>{$acc.email|wash( email )}</dd></div>
         {if $ov}
         <div><dt>{'Groups'|i18n( 'design/admin/user/edit' )}</dt><dd>
-            {if $acc.groups|count}<ul class="exp-inline">{foreach $acc.groups as $group}<li><a href={concat( 'content/view/full/', $group.node_id )|ezurl}>{$group.name|wash}</a></li>{/foreach}</ul>
-            {else}<span class="exp-meta">{'None'|i18n( 'design/admin/user/edit' )}</span>{/if}</dd></div>
+            {if $acc.groups|count}<ul class="a4-user-inline">{foreach $acc.groups as $group}<li><a href={concat( 'content/view/full/', $group.node_id )|ezurl}>{$group.name|wash}</a></li>{/foreach}</ul>
+            {else}<span class="a4-meta">{'None'|i18n( 'design/admin/user/edit' )}</span>{/if}</dd></div>
         <div><dt>{'Roles'|i18n( 'design/admin/user/edit' )}</dt><dd>
-            {if $acc.roles|count}<ul class="exp-inline">{foreach $acc.roles as $role}<li>{if $ov.can_view_roles}<a href={concat( 'role/view/', $role.id )|ezurl}>{$role.name|wash}</a>{else}{$role.name|wash}{/if}</li>{/foreach}</ul>
-            {else}<span class="exp-meta">{'None'|i18n( 'design/admin/user/edit' )}</span>{/if}</dd></div>
+            {if $acc.roles|count}<ul class="a4-user-inline">{foreach $acc.roles as $role}<li>{if $ov.can_view_roles}<a href={concat( 'role/view/', $role.id )|ezurl}>{$role.name|wash}</a>{else}{$role.name|wash}{/if}</li>{/foreach}</ul>
+            {else}<span class="a4-meta">{'None'|i18n( 'design/admin/user/edit' )}</span>{/if}</dd></div>
         <div><dt>{'Last sign-in'|i18n( 'design/admin/user/edit' )}</dt><dd>
-            {if $acc.last_visit}{$acc.last_visit|l10n( 'shortdatetime' )}<span class="exp-meta">{'%count sign-ins in all'|i18n( 'design/admin/user/edit',, hash( '%count', $acc.login_count ) )}</span>
+            {if $acc.last_visit}{$acc.last_visit|l10n( 'shortdatetime' )}<span class="a4-meta">{'%count sign-ins in all'|i18n( 'design/admin/user/edit',, hash( '%count', $acc.login_count ) )}</span>
             {else}{'Never'|i18n( 'design/admin/user/edit' )}{/if}</dd></div>
         <div><dt>{'Password changed'|i18n( 'design/admin/user/edit' )}</dt><dd>
-            {if $acc.password_changed}{$acc.password_changed|l10n( 'shortdate' )}<span class="exp-meta">{if $acc.password_age_days|eq( 0 )}{'today'|i18n( 'design/admin/user/edit' )}{else}{'%days days ago'|i18n( 'design/admin/user/edit',, hash( '%days', $acc.password_age_days ) )}{/if}</span>
-            {else}<span class="exp-meta">{'Not recorded'|i18n( 'design/admin/user/edit' )}</span>{/if}</dd></div>
+            {if $acc.password_changed}{$acc.password_changed|l10n( 'shortdate' )}<span class="a4-meta">{if $acc.password_age_days|eq( 0 )}{'today'|i18n( 'design/admin/user/edit' )}{else}{'%days days ago'|i18n( 'design/admin/user/edit',, hash( '%days', $acc.password_age_days ) )}{/if}</span>
+            {else}<span class="a4-meta">{'Not recorded'|i18n( 'design/admin/user/edit' )}</span>{/if}</dd></div>
         {/if}
     </dl>
 </div>
 </section>
 
 {* ---- Where to go on ---- *}
-<section class="exp-section" aria-labelledby="account-actions-title">
-<div class="exp-section-head"><h2 class="exp-h2" id="account-actions-title">{if $own}{'Manage your account'|i18n( 'design/admin/user/edit' )}{else}{'Manage this account'|i18n( 'design/admin/user/edit' )}{/if}</h2></div>
-<ul class="exp-cards">
+<section class="a4-section" aria-labelledby="account-actions-title">
+<div class="a4-section-head"><h2 class="a4-h2" id="account-actions-title">{if $own}{'Manage your account'|i18n( 'design/admin/user/edit' )}{else}{'Manage this account'|i18n( 'design/admin/user/edit' )}{/if}</h2></div>
+<ul class="a4-cards">
 {if $ov}
 {foreach $ov.actions as $action}
     {def $title = '' $text = '' $label = '' $badge = '' $icon = ''}
@@ -161,26 +160,26 @@
     {case}{/case}
     {/switch}
     {if $title}
-    <li class="exp-card{if and( $action.status, eq( $action.status.level, 'warn' ) )} is-attention{/if}" id="account-card-{$action.key|wash}">
-        <div class="exp-card-head">
-            <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">{$icon}</svg>{$title|wash}</h3>
-            {if $badge}<span class="exp-badge{if and( $action.status, ne( $action.status.level, 'none' ) )} is-{$action.status.level|wash}{/if}">{$badge|wash}</span>{/if}
+    <li class="a4-card{if and( $action.status, eq( $action.status.level, 'warn' ) )} is-attention{/if}" id="account-card-{$action.key|wash}">
+        <div class="a4-card-head">
+            <h3 class="a4-h3"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">{$icon}</svg>{$title|wash}</h3>
+            {if $badge}<span class="a4-badge{if and( $action.status, ne( $action.status.level, 'none' ) )} is-{$action.status.level|wash}{/if}">{$badge|wash}</span>{/if}
         </div>
         <p>{$text|wash}</p>
         {if eq( $action.how, 'post' )}
-        <button class="exp-btn" type="submit" name="{$action.button|wash}" value="1">{$label|wash}</button>
+        <button class="a4-btn" type="submit" name="{$action.button|wash}" value="1">{$label|wash}</button>
         {else}
-        <a class="exp-btn" href={$action.url|ezurl}>{$label|wash}</a>
+        <a class="a4-btn" href={$action.url|ezurl}>{$label|wash}</a>
         {/if}
     </li>
     {/if}
     {undef $title $text $label $badge $icon}
 {/foreach}
 {else}
-    <li class="exp-card"><div class="exp-card-head"><h3>{'Password'|i18n( 'design/admin/user/edit' )}</h3></div>
-        <button class="exp-btn" type="submit" name="ChangePasswordButton" value="1">{'Change password'|i18n( 'design/admin/user/edit' )}</button></li>
-    <li class="exp-card"><div class="exp-card-head"><h3>{'Account settings'|i18n( 'design/admin/user/edit' )}</h3></div>
-        <button class="exp-btn" type="submit" name="ChangeSettingButton" value="1">{'Open settings'|i18n( 'design/admin/user/edit' )}</button></li>
+    <li class="a4-card"><div class="a4-card-head"><h3 class="a4-h3">{'Password'|i18n( 'design/admin/user/edit' )}</h3></div>
+        <button class="a4-btn" type="submit" name="ChangePasswordButton" value="1">{'Change password'|i18n( 'design/admin/user/edit' )}</button></li>
+    <li class="a4-card"><div class="a4-card-head"><h3 class="a4-h3">{'Account settings'|i18n( 'design/admin/user/edit' )}</h3></div>
+        <button class="a4-btn" type="submit" name="ChangeSettingButton" value="1">{'Open settings'|i18n( 'design/admin/user/edit' )}</button></li>
 {/if}
 </ul>
 </section>

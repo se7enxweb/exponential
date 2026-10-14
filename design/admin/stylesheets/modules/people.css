@@ -5,3 +5,573 @@
  * colours, radius, spacing and fonts from the --a4-* tokens only (no hard-coded values, no local aliases).
  * Registered in design.ini [StylesheetSettings] AdminComponentCSSFileList; rules: doc/bc/6.0/admin4-styling.md
  */
+
+/* ---- role: the policies of a role (role/view, role/edit), the policy wizard, the save bar ------------------- */
+
+/* A policy: its sentence first, the module/function and limitations as small print under it */
+.a4-role-policies {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--a4-space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.a4-role-policy {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--a4-space-2) var(--a4-space-3);
+  margin: 0;
+  padding: var(--a4-space-2) var(--a4-space-3);
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+}
+.a4-role-policy.is-full { border-color: var(--a4-bad-line); box-shadow: inset var(--a4-space-1) 0 0 var(--a4-bad); }
+.a4-role-policy.is-roles { box-shadow: inset var(--a4-space-1) 0 0 var(--a4-warn); }
+.a4-role-policy.is-selected { border-color: var(--a4-accent); }
+.a4-role-policy.is-dragging { border-style: dashed; border-color: var(--a4-accent); }
+.a4-role-policy.is-moved { border-color: var(--a4-accent); box-shadow: 0 0 0 2px var(--a4-ring); }
+.a4-role-policy-main { flex: 1 1 320px; min-width: 0; }
+.a4-role-sentence { margin: 0; font-weight: 600; overflow-wrap: anywhere; }
+.a4-role-policy-detail {
+  margin: var(--a4-space-1) 0 0;
+  color: var(--a4-muted);
+  font-size: var(--a4-text-xs);
+  overflow-wrap: anywhere;
+}
+.a4-role-policy-detail code { color: var(--a4-muted); }
+.a4-role-policy-tools { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2); }
+.a4-role-denies { color: var(--a4-bad); font-style: normal; font-weight: 650; }
+
+/* Policies grouped by module, each group with a small head */
+.a4-role-group-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--a4-space-1) var(--a4-space-3);
+  margin: var(--a4-space-4) 0 var(--a4-space-2);
+}
+.a4-role-group-head:first-child { margin-top: 0; }
+
+/* Reordering: the up/down buttons and the position field next to the grip */
+.a4-role-order { display: inline-flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-1); }
+.a4-role-order .a4-btn { min-width: 34px; padding: var(--a4-space-1) var(--a4-space-2); }
+.a4-role-moveto { display: inline-flex; align-items: center; gap: var(--a4-space-1); }
+.a4-role-moveto input {
+  width: 4.2em;
+  min-height: 30px;
+  padding: 2px var(--a4-space-2);
+  border: 1px solid var(--a4-field-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-field);
+  color: var(--a4-ink);
+  font-family: inherit;
+  font-size: var(--a4-text-s);
+}
+.a4-role-moveto input:focus { border-color: var(--a4-accent); outline: 3px solid var(--a4-ring); outline-offset: 0; }
+
+/* The editor: unsaved changes in the save bar, the name field */
+.a4-role-dirty { display: inline-flex; align-items: center; gap: var(--a4-space-2); color: var(--a4-warn); font-weight: 650; }
+.a4-role-name-field { max-width: 520px; margin: 0 0 var(--a4-space-4); }
+
+/* The wizard: the two ways on (full or limited access), the limitation pickers and what they picked */
+.a4-role-choice {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: var(--a4-space-3);
+  margin: var(--a4-space-4) 0 0;
+}
+.a4-role-choice > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--a4-space-2);
+  padding: var(--a4-space-4);
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+}
+.a4-role-choice p { color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-role-pickers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: var(--a4-space-4);
+  margin: var(--a4-space-4) 0 0;
+}
+.a4-role-picked { margin: var(--a4-space-2) 0 var(--a4-space-3); padding: 0; list-style: none; }
+.a4-role-picked li {
+  display: flex;
+  align-items: center;
+  gap: var(--a4-space-2);
+  padding: var(--a4-space-1) 0;
+  border-bottom: 1px solid var(--a4-line);
+}
+.a4-role-picked li:last-child { border-bottom: 0; }
+.a4-role-picked input { width: 18px; height: 18px; accent-color: var(--a4-accent-strong); }
+
+@media (max-width: 600px) {
+  .a4-role-policy { padding: var(--a4-space-2) var(--a4-space-3); }
+}
+
+/* ---- state: a group's states in order (state/group), the flows of states, the translations ------------------ */
+
+.a4-state-desc { margin: var(--a4-space-2) 0 0; max-width: 80ch; color: var(--a4-ink); overflow-wrap: anywhere; }
+.a4-state-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--a4-space-2);
+  margin: var(--a4-space-3) 0 0;
+  padding: 0;
+  list-style: none;
+}
+.a4-state-flow li { display: inline-flex; align-items: center; gap: var(--a4-space-2); min-width: 0; margin: 0; }
+.a4-state-flow li + li::before { content: "\2192"; color: var(--a4-muted); }
+.a4-state-flow .a4-tag { white-space: normal; overflow-wrap: anywhere; }
+.a4-state-flow .a4-count { color: var(--a4-muted); font-variant-numeric: tabular-nums; }
+
+/* The ordered list of a group's states: position, name and facts, then the order field and the actions */
+.a4-state-list {
+  container-type: inline-size;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+}
+.a4-state-item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: start;
+  gap: var(--a4-space-2) var(--a4-space-3);
+  margin: 0;
+  padding: var(--a4-space-3);
+  border-top: 1px solid var(--a4-line);
+}
+.a4-state-item:first-child { border-top: 0; }
+.a4-state-item.is-default { box-shadow: inset var(--a4-space-1) 0 0 var(--a4-ok); }
+.a4-state-pos {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--a4-line);
+  border-radius: 50%;
+  background-color: var(--a4-soft);
+  color: var(--a4-ink);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.a4-state-item.is-default .a4-state-pos { border-color: var(--a4-ok-line); background-color: var(--a4-ok-bg); color: var(--a4-ok); }
+.a4-state-main { min-width: 0; }
+.a4-state-name { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-1) var(--a4-space-3); }
+.a4-state-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px var(--a4-space-4);
+  margin: var(--a4-space-1) 0 0;
+  color: var(--a4-muted);
+  font-size: var(--a4-text-s);
+}
+.a4-state-item .a4-state-desc { margin-top: var(--a4-space-1); font-size: var(--a4-text-s); }
+.a4-state-side { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: var(--a4-space-2); }
+.a4-state-order { display: inline-flex; align-items: center; gap: var(--a4-space-1); }
+.a4-state-order label { color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 650; }
+.a4-state-order-input {
+  width: 4.2em;
+  min-height: 32px;
+  margin: 0;
+  padding: var(--a4-space-1) var(--a4-space-2);
+  border: 1px solid var(--a4-field-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-field);
+  color: var(--a4-ink);
+  font-family: inherit;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+.a4-state-order-input:focus { border-color: var(--a4-accent); outline: 3px solid var(--a4-ring); outline-offset: 0; }
+@container (max-width: 720px) {
+  .a4-state-item { grid-template-columns: auto minmax(0, 1fr); }
+  .a4-state-side { grid-column: 2 / -1; justify-content: flex-start; }
+}
+
+/* One translation of a group or state in the edit views */
+.a4-state-lang {
+  min-width: 0;
+  margin: 0;
+  padding: var(--a4-space-3) var(--a4-space-3) var(--a4-space-4);
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  box-shadow: none;
+}
+.a4-state-lang > legend {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--a4-space-2);
+  margin: 0;
+  padding: 0 var(--a4-space-2);
+  background: none;
+  color: var(--a4-ink);
+  font-size: var(--a4-text-m);
+  font-weight: 650;
+}
+.a4-state-lang .a4-field + .a4-field { margin-top: var(--a4-space-3); }
+.a4-state-flag { width: 18px; height: 12px; }
+
+/* ---- user: the account overview (user/edit) ----------------------------------------------------------------- */
+
+.a4-user-hints { display: grid; gap: var(--a4-space-2); margin: 0 0 var(--a4-space-4); padding: 0; list-style: none; }
+.a4-user-hints .a4-notice { margin: 0; }
+.a4-user-who { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-3) var(--a4-space-4); margin: 0 0 var(--a4-space-3); }
+.a4-user-avatar {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: var(--a4-accent-strong);
+  color: var(--a4-on-accent);
+  font-size: var(--a4-text-xl);
+  font-weight: 700;
+  line-height: 1;
+}
+.a4-user-who-text { flex: 1 1 260px; min-width: 0; }
+.a4-user-who-text h2 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--a4-ink);
+  font-size: var(--a4-text-xl);
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+.a4-user-who-text p { margin: 2px 0 0; color: var(--a4-muted); overflow-wrap: anywhere; }
+.a4-user-inline { margin: 0; padding: 0; list-style: none; }
+.a4-user-inline li { display: inline; }
+.a4-user-inline li + li::before { content: ", "; color: var(--a4-muted); }
+
+/* State pages: the facts card above the list, the order hint */
+.a4-state-facts { margin: 0 0 var(--a4-space-5); }
+.a4-state-hint { margin: 0 0 var(--a4-space-3); }
+
+/* ---- notification and collaboration: the page head, filters, lists, the inbox and its thread ------------- */
+
+.a4-notification-head,
+.a4-collaboration-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--a4-space-2) var(--a4-space-5);
+  margin: 0 0 var(--a4-space-4);
+}
+.a4-notification-head h1,
+.a4-collaboration-head h1 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--a4-ink);
+  font-size: var(--a4-text-xl);
+  line-height: 1.2;
+}
+.a4-notification-head p,
+.a4-collaboration-head p { max-width: 46em; margin: var(--a4-space-1) 0 0; color: var(--a4-muted); }
+.a4-notification-crumb,
+.a4-collaboration-crumb { margin: 0 0 var(--a4-space-1); color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-page .a4-figures a.a4-figure:hover { border-color: var(--a4-accent); }
+.a4-page .a4-figures a.a4-figure { color: var(--a4-ink); text-decoration: none; }
+.a4-page .a4-figures .a4-figure { height: 100%; }
+
+/* Filters: a search form, chips that are links, the current one filled */
+.a4-notification-filters { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2) var(--a4-space-3); }
+.a4-notification-filters form { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2); margin: 0; }
+.a4-notification-filters input[type="text"],
+.a4-notification-filters select,
+.a4-notification-field input[type="text"],
+.a4-notification-field select,
+.a4-collaboration-compose textarea,
+.a4-collaboration-side .a4-searchrow input[type="text"] {
+  max-width: 100%;
+  padding: var(--a4-space-2) var(--a4-space-2);
+  border: 1px solid var(--a4-field-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-field);
+  color: var(--a4-ink);
+  font: inherit;
+}
+.a4-collaboration-filters { display: flex; flex-wrap: wrap; gap: var(--a4-space-2) var(--a4-space-5); margin: 0 0 var(--a4-space-3); }
+.a4-collaboration-filter { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-1); }
+.a4-collaboration-filter > b { margin-right: var(--a4-space-1); color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 600; }
+.a4-notification-chip,
+.a4-collaboration-chip {
+  display: inline-block;
+  padding: 2px var(--a4-space-3);
+  border: 1px solid var(--a4-line-strong);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  color: var(--a4-ink);
+  font-size: var(--a4-text-s);
+  text-decoration: none;
+}
+.a4-page a.a4-collaboration-chip { color: var(--a4-ink); }
+.a4-notification-chip:hover,
+.a4-collaboration-chip:hover { border-color: var(--a4-accent); }
+.a4-notification-chip.is-current,
+.a4-page a.a4-collaboration-chip.is-current {
+  border-color: var(--a4-accent-strong);
+  background-color: var(--a4-accent-strong);
+  color: var(--a4-on-accent);
+}
+.a4-collaboration-chip small { opacity: .85; }
+
+/* The items I follow: a bordered list of rows, a checkbox and the item */
+.a4-notification-selectall { display: flex; align-items: center; gap: var(--a4-space-2); margin: 0 0 var(--a4-space-1); color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-notification-list,
+.a4-collaboration-list {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  list-style: none;
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+}
+.a4-notification-row {
+  display: grid;
+  grid-template-columns: 2em minmax(0, 1fr);
+  align-items: start;
+  gap: var(--a4-space-2);
+  padding: var(--a4-space-2) var(--a4-space-3);
+  border-top: 1px solid var(--a4-line);
+}
+.a4-notification-row:first-child { border-top: 0; }
+.a4-notification-row.is-gone { background-color: var(--a4-warn-bg); }
+.a4-notification-row input[type="checkbox"] { width: 1.15em; height: 1.15em; margin: var(--a4-space-1) 0 0; accent-color: var(--a4-accent-strong); }
+.a4-notification-title,
+.a4-collaboration-title { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2); font-weight: 600; overflow-wrap: anywhere; }
+.a4-notification-title a { color: inherit; }
+.a4-notification-meta,
+.a4-collaboration-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px var(--a4-space-3);
+  margin: var(--a4-space-1) 0 0;
+  color: var(--a4-muted);
+  font-size: var(--a4-text-s);
+  overflow-wrap: anywhere;
+}
+
+/* The digest and collaboration settings: a toggle, a choice of when, the item types */
+.a4-notification-choice { display: grid; grid-template-columns: 1.6em minmax(0, 1fr); align-items: center; gap: var(--a4-space-1) var(--a4-space-2); }
+.a4-notification-choice input[type="radio"],
+.a4-notification-choice input[type="checkbox"] { width: 1.1em; height: 1.1em; margin: 0; accent-color: var(--a4-accent-strong); }
+.a4-notification-field { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2); min-width: 0; }
+.a4-notification-toggle {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--a4-space-2);
+  max-width: 100%;
+  padding: var(--a4-space-2) var(--a4-space-3);
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+  white-space: normal;
+}
+.a4-notification-toggle > div { min-width: 0; overflow-wrap: anywhere; }
+.a4-notification-toggle input { flex: none; width: 1.2em; height: 1.2em; margin: 2px 0 0; accent-color: var(--a4-accent-strong); }
+.a4-notification-toggle b { display: block; white-space: normal; }
+.a4-notification-toggle span { color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-notification-types { display: grid; gap: var(--a4-space-2); }
+.a4-notification-types label { display: flex; align-items: center; gap: var(--a4-space-2); font-weight: 400; }
+.a4-notification-types input { width: 1.1em; height: 1.1em; accent-color: var(--a4-accent-strong); }
+
+/* The inbox: a main column and a side column with the groups */
+.a4-collaboration-layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--a4-space-4); }
+.a4-collaboration-layout.is-side { display: flex; flex-wrap: wrap; align-items: flex-start; }
+.a4-collaboration-layout.is-side > .a4-collaboration-main { flex: 999 1 30em; min-width: 0; }
+.a4-collaboration-layout.is-side > .a4-collaboration-side { flex: 1 1 16em; min-width: 0; }
+.a4-collaboration-side .a4-card > .a4-h2 { margin: 0 0 var(--a4-space-2); }
+.a4-collaboration-side .a4-searchrow { margin-top: var(--a4-space-2); }
+.a4-collaboration-row { border-top: 1px solid var(--a4-line); }
+.a4-collaboration-row:first-child { border-top: 0; }
+.a4-page a.a4-collaboration-row-main {
+  display: block;
+  padding: var(--a4-space-3);
+  border-left: var(--a4-space-1) solid transparent;
+  color: inherit;
+  text-decoration: none;
+}
+.a4-page a.a4-collaboration-row-main:hover,
+.a4-page a.a4-collaboration-row-main:focus-visible { background-color: var(--a4-soft); color: inherit; }
+.a4-collaboration-state-waiting > .a4-collaboration-row-main { border-left-color: var(--a4-accent); }
+.a4-collaboration-state-approved > .a4-collaboration-row-main { border-left-color: var(--a4-ok); }
+.a4-collaboration-state-denied > .a4-collaboration-row-main { border-left-color: var(--a4-bad); }
+.a4-collaboration-unread .a4-collaboration-title { font-weight: 750; }
+.a4-collaboration-excerpt { display: block; margin: var(--a4-space-1) 0 0; color: var(--a4-muted); font-size: var(--a4-text-s); overflow-wrap: anywhere; }
+.a4-collaboration-excerpt b { color: var(--a4-ink); font-weight: 600; }
+.a4-collaboration-tree { margin: 0; padding: 0; list-style: none; }
+.a4-collaboration-tree li { margin: 0; }
+.a4-collaboration-tree a {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--a4-space-2);
+  padding: var(--a4-space-1) var(--a4-space-2);
+  border-radius: var(--a4-radius-s);
+  color: inherit;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.a4-page .a4-collaboration-tree a { color: var(--a4-ink); }
+.a4-collaboration-tree a:hover { background-color: var(--a4-soft); }
+.a4-collaboration-tree a.current { background-color: var(--a4-accent-soft); font-weight: 650; }
+.a4-collaboration-tree .count { color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-collaboration-depth-1 { padding-left: var(--a4-space-3); }
+.a4-collaboration-depth-2 { padding-left: var(--a4-space-5); }
+.a4-collaboration-depth-3 { padding-left: var(--a4-space-6); }
+.a4-collaboration-depth-4 { margin-left: var(--a4-space-3); padding-left: var(--a4-space-6); }
+.a4-collaboration-depth-5 { margin-left: var(--a4-space-5); padding-left: var(--a4-space-6); }
+.a4-collaboration-depth-6 { margin-left: var(--a4-space-6); padding-left: var(--a4-space-6); }
+
+/* An item: the people, the message thread, the compose box, the content preview */
+.a4-collaboration-people { display: flex; flex-wrap: wrap; gap: var(--a4-space-1); margin: 0; padding: 0; list-style: none; }
+.a4-collaboration-people li {
+  padding: 2px var(--a4-space-3);
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+  font-size: var(--a4-text-s);
+}
+.a4-collaboration-people li small { color: var(--a4-muted); }
+.a4-collaboration-thread { display: grid; gap: var(--a4-space-3); margin: 0; padding: 0; list-style: none; }
+.a4-collaboration-msg { display: grid; grid-template-columns: 2.2em minmax(0, 1fr); gap: var(--a4-space-2); }
+.a4-collaboration-avatar {
+  display: grid;
+  place-items: center;
+  width: 2.2em;
+  height: 2.2em;
+  border-radius: 50%;
+  background-color: var(--a4-accent-soft);
+  color: var(--a4-accent-text);
+  font-weight: 700;
+}
+.a4-collaboration-bubble {
+  padding: var(--a4-space-2) var(--a4-space-3);
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+  overflow-wrap: anywhere;
+}
+.a4-collaboration-msg.is-new .a4-collaboration-bubble { border-color: var(--a4-accent); background-color: var(--a4-accent-soft); }
+.a4-collaboration-msg-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px var(--a4-space-3); color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-collaboration-msg-head b { color: var(--a4-ink); }
+.a4-collaboration-msg p { margin: var(--a4-space-1) 0 0; }
+.a4-collaboration-compose textarea { width: 100%; min-height: 6em; resize: vertical; }
+.a4-collaboration-preview { max-height: 30em; padding: var(--a4-space-1); overflow: auto; }
+.a4-collaboration-preview .mainobject-window { overflow-wrap: anywhere; }
+.a4-collaboration-flag { vertical-align: middle; }
+
+@media (max-width: 600px) {
+  .a4-notification-head h1, .a4-collaboration-head h1 { font-size: var(--a4-text-l); }
+  .a4-page a.a4-collaboration-row-main { padding: var(--a4-space-2); }
+}
+
+/* ---- user, the classic admin design only: the change password page (user/password), the login ---------- */
+
+.a4-user-inline-label { display: inline; }
+.a4-user-pw [hidden] { display: none !important; }
+.a4-user-pw .block label.a4-user-pw-label { display: block; margin: 0 0 var(--a4-space-1); font-weight: 700; overflow-wrap: anywhere; }
+.a4-user-pw-input { position: relative; display: flex; max-width: 28em; }
+.a4-user-pw-input input {
+  box-sizing: border-box;
+  flex: 1 1 auto;
+  width: 100%;
+  min-width: 0;
+  padding: var(--a4-space-2) var(--a4-space-2);
+  border: 1px solid var(--a4-field-line);
+  background-color: var(--a4-field);
+  color: var(--a4-ink);
+  font-size: var(--a4-text-l);
+}
+.a4-user-pw-invalid .a4-user-pw-input input { border: 2px solid var(--a4-bad); }
+.a4-user-pw-toggle {
+  flex: 0 0 auto;
+  margin-left: var(--a4-space-1);
+  padding: 0 var(--a4-space-2);
+  border: 1px solid transparent;
+  background-color: var(--a4-soft);
+  color: var(--a4-ink);
+  font-weight: 700;
+  cursor: pointer;
+}
+.a4-user-pw-toggle[aria-pressed="true"] { border-color: var(--a4-line-strong); background-color: var(--a4-line); }
+.a4-user-pw-error { margin: var(--a4-space-1) 0 0; color: var(--a4-bad); font-weight: 700; }
+.a4-user-pw-error span { display: block; }
+.a4-user-pw-rules-title { margin: var(--a4-space-2) 0 var(--a4-space-1); color: var(--a4-muted); }
+.a4-user-pw-rules { margin: 0; padding: 0; list-style: none; }
+.a4-user-pw-rules li { position: relative; margin: 2px 0; padding: 0 0 0 var(--a4-space-5); background: none; overflow-wrap: anywhere; }
+.a4-user-pw-rules li::before { content: "\25CB"; position: absolute; left: .2em; color: var(--a4-muted); }
+.a4-user-pw-rules li[data-state="met"] { color: var(--a4-ok); }
+.a4-user-pw-rules li[data-state="met"]::before { content: "\2713"; color: var(--a4-ok); font-weight: 700; }
+.a4-user-pw-invalid .a4-user-pw-rules li[data-state="unmet"],
+.a4-user-pw-rules li[data-failed="true"]:not([data-state="met"]) { color: var(--a4-bad); }
+.a4-user-pw-invalid .a4-user-pw-rules li[data-state="unmet"]::before,
+.a4-user-pw-rules li[data-failed="true"]:not([data-state="met"])::before { content: "\2717"; color: var(--a4-bad); }
+.a4-user-pw-rules li[data-failed="true"]:not([data-state="met"]) { font-weight: 700; }
+.a4-user-pw input.defaultbutton,
+.a4-user-pw input.defaultbutton:hover,
+.a4-user-pw input.defaultbutton:focus { background-color: var(--a4-accent-strong); color: var(--a4-on-accent); }
+.a4-user-pw-meter { margin: var(--a4-space-1) 0 0; color: var(--a4-muted); }
+.a4-user-pw-meter[data-score=""] b { visibility: hidden; }
+.a4-user-pw-meter meter { width: 10em; height: .8em; vertical-align: middle; }
+.a4-user-pw-match { margin: var(--a4-space-1) 0 0; color: var(--a4-muted); font-weight: 700; }
+.a4-user-pw-match[data-state="match"] { color: var(--a4-ok); }
+.a4-user-pw-link {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--a4-info);
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.a4-user-pw-summary {
+  margin: 0 0 var(--a4-space-4);
+  padding: var(--a4-space-2) var(--a4-space-4);
+  border: 2px solid var(--a4-bad);
+  background-color: var(--a4-bad-bg);
+  color: var(--a4-bad);
+  overflow-wrap: anywhere;
+}
+.a4-user-pw-summary h2 { margin: 0 0 var(--a4-space-1); color: var(--a4-bad); font-size: var(--a4-text-l); }
+.a4-user-pw-summary ul { margin: 0 0 0 var(--a4-space-5); padding: 0; }
+.a4-user-pw-summary a { color: var(--a4-bad); font-weight: 700; text-decoration: underline; }
+.a4-user-pw-username {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
+  opacity: 0;
+}
+
+/* The settings' own labels are plain text with a bold lead, not the admin's bold form labels */
+.a4-notification-toggle,
+.a4-notification-choice label,
+.a4-notification-types label,
+.a4-notification-selectall { font-weight: 400; }
+.a4-notification-toggle b,
+.a4-notification-choice label b { font-weight: 650; }

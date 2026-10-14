@@ -11,7 +11,6 @@
 {let package=fetch( package,item,
                     hash( package_name, $package_name,
                           repository_id, $repository_id ) )}
-{include uri='design:package/exp_style.tpl'}
 {* The labels of the kinds eZPackageFileBrowser tells files apart by, shared by the filter, the
    file list's type badges and the viewed file's header. *}
 {def $kindLabels = hash( 'class', 'Content class'|i18n('design/admin/package'),
@@ -37,34 +36,34 @@
                             'required_by_source', 'Another installer source requires it.'|i18n( 'design/admin/package' ) )}
 {if and( $repo, $repo.id|ne( 'local' ) )}{set $repo_suffix = concat( '/', $repo.id )}{/if}
 
-<div class="context-block exp-packages package-view-full">
+<div class="context-block a4-page package-view-full">
 
 <div id="package" class="viewfull">
     <div id="pn-{$package.name|wash}" class="pt-{$package.type|wash}">
 
 <div class="box-header"><div class="box-ml">
-<div class="exp-title-row">
+<div class="a4-title-row">
     <h1 class="context-title">{$package.name|wash}</h1>
-    <span class="exp-version" title="{'Version'|i18n('design/admin/package')}">{$package.version-number|wash}-{$package.release-number|wash}</span>
-    <ul class="exp-badges">
-        {if $package.type}<li class="exp-badge" title="{'Type'|i18n('design/admin/package')}">{$package.type|wash}</li>{/if}
+    <span class="a4-kbd" title="{'Version'|i18n('design/admin/package')}">{$package.version-number|wash}-{$package.release-number|wash}</span>
+    <ul class="a4-badges">
+        {if $package.type}<li class="a4-badge" title="{'Type'|i18n('design/admin/package')}">{$package.type|wash}</li>{/if}
         {if $package.install_type|eq( 'install' )}
             {if $package.is_installed}
-            <li class="exp-badge is-ok">{'Installed'|i18n('design/admin/package')}</li>
+            <li class="a4-badge is-ok">{'Installed'|i18n('design/admin/package')}</li>
             {else}
-            <li class="exp-badge">{'Not installed'|i18n('design/admin/package')}</li>
+            <li class="a4-badge">{'Not installed'|i18n('design/admin/package')}</li>
             {/if}
         {else}
-            <li class="exp-badge is-info">{'Imported'|i18n('design/admin/package')}</li>
+            <li class="a4-badge is-info">{'Imported'|i18n('design/admin/package')}</li>
         {/if}
-        {if and( $card, $card.installer_source )}<li class="exp-badge is-info">{'Installer source'|i18n( 'design/admin/package' )}</li>{/if}
+        {if and( $card, $card.installer_source )}<li class="a4-badge is-info">{'Installer source'|i18n( 'design/admin/package' )}</li>{/if}
     </ul>
 </div>
 </div></div>
 
 <div class="box-ml"><div class="box-mr"><div class="box-content">
 
-{if $package.summary}<p class="exp-intro">{$package.summary|wash}</p>{/if}
+{if $package.summary}<p class="a4-intro">{$package.summary|wash}</p>{/if}
 
 {* Each button needs its own policy: Install, Reinstall and Uninstall package/install (the views they open check
    exactly that), Export to file and Download package/export, Remove package/remove. Only a package with install
@@ -73,50 +72,50 @@
      $pvf_can_install=$package.can_install
      $pvf_can_export=$package.can_export
      $pvf_can_remove=first_set( $package_can_remove, false() )}
-<div class="exp-actionbar">
-    <p class="exp-meta"><a href={cond( $repo_suffix|ne( '' ), concat( '/package/list', $repo_suffix ), '/package/list' )|ezurl}>&laquo; {'Back to the packages'|i18n( 'design/admin/package' )}</a></p>
-    <div class="exp-actions">
+<div class="a4-toolbar">
+    <p class="a4-meta"><a href={cond( $repo_suffix|ne( '' ), concat( '/package/list', $repo_suffix ), '/package/list' )|ezurl}>&laquo; {'Back to the packages'|i18n( 'design/admin/package' )}</a></p>
+    <div class="a4-actions">
     <form method="post" action={concat( 'package/view/full/', $package.name, $repo_suffix )|ezurl}>
         {if $package.install_type|eq( 'install' )}
             {* Compare (package/compare): a plain link, it only reads *}
-            <a class="exp-btn" href={concat( 'package/compare/', $package.name )|ezurl} title="{"Compare the package's content with the site's content tree"|i18n( 'design/admin/package' )}">{'Compare'|i18n( 'design/admin/package' )}</a>
+            <a class="a4-btn" href={concat( 'package/compare/', $package.name )|ezurl} title="{"Compare the package's content with the site's content tree"|i18n( 'design/admin/package' )}">{'Compare'|i18n( 'design/admin/package' )}</a>
         {/if}
         {if and( $pvf_installable, $pvf_can_install )}
             {if $package.is_installed}
-                <button class="exp-btn" type="submit" name="InstallButton" value="1">{'Reinstall'|i18n( 'design/admin/package')}</button>
+                <button class="a4-btn" type="submit" name="InstallButton" value="1">{'Reinstall'|i18n( 'design/admin/package')}</button>
             {else}
-                <button class="exp-btn exp-btn-primary" type="submit" name="InstallButton" value="1">{'Install'|i18n( 'design/admin/package')}</button>
+                <button class="a4-btn a4-btn-primary" type="submit" name="InstallButton" value="1">{'Install'|i18n( 'design/admin/package')}</button>
             {/if}
         {/if}
         {if $pvf_can_export}
-            <a class="exp-btn" href={concat( 'package/export/', $package.name, $repo_suffix, '/(format)/xml' )|ezurl} title="{'Download the package as an .ezpkg file.'|i18n( 'design/admin/package' )}">{'Download'|i18n( 'design/admin/package' )}</a>
-            <a class="exp-btn" href={concat( 'package/export/', $package.name, $repo_suffix, '/(format)/json' )|ezurl} title="{'Download the package in the JSON format (package.json), as a .json.ezpkg file.'|i18n( 'design/admin/package' )}">{'Download as JSON'|i18n( 'design/admin/package' )}</a>
+            <a class="a4-btn" href={concat( 'package/export/', $package.name, $repo_suffix, '/(format)/xml' )|ezurl} title="{'Download the package as an .ezpkg file.'|i18n( 'design/admin/package' )}">{'Download'|i18n( 'design/admin/package' )}</a>
+            <a class="a4-btn" href={concat( 'package/export/', $package.name, $repo_suffix, '/(format)/json' )|ezurl} title="{'Download the package in the JSON format (package.json), as a .json.ezpkg file.'|i18n( 'design/admin/package' )}">{'Download as JSON'|i18n( 'design/admin/package' )}</a>
         {/if}
         {* the package's validation: every document and, in the JSON format, the schema and the checksums *}
-        <button class="exp-btn" type="submit" name="ValidateButton" value="1" title="{'Check every document of the package and, in the JSON format, the schema and the checksums.'|i18n( 'design/admin/package' )}">{'Validate'|i18n( 'design/admin/package' )}</button>
+        <button class="a4-btn" type="submit" name="ValidateButton" value="1" title="{'Check every document of the package and, in the JSON format, the schema and the checksums.'|i18n( 'design/admin/package' )}">{'Validate'|i18n( 'design/admin/package' )}</button>
         {if and( $pvf_installable, $pvf_can_install, $package.is_installed )}
-            <button class="exp-btn exp-btn-outline-danger" type="submit" name="UninstallButton" value="1">{'Uninstall'|i18n( 'design/admin/package')}</button>
+            <button class="a4-btn a4-btn-outline-danger" type="submit" name="UninstallButton" value="1">{'Uninstall'|i18n( 'design/admin/package')}</button>
         {/if}
     </form>
     {if and( $pvf_can_remove, $card, $card.links|eq( 0 ) )}
     <form method="post" action={cond( $repo_suffix|ne( '' ), concat( '/package/list', $repo_suffix ), '/package/list' )|ezurl}>
         <input type="hidden" name="PackageSelection[]" value="{concat( $package.name, '@', $card.repository_id )|wash}" />
-        <button class="exp-btn exp-btn-outline-danger" type="submit" name="RemovePackageButton" value="1" title="{'Asks first and says what goes.'|i18n( 'design/admin/package' )}">{'Remove'|i18n( 'design/admin/package' )}</button>
+        <button class="a4-btn a4-btn-outline-danger" type="submit" name="RemovePackageButton" value="1" title="{'Asks first and says what goes.'|i18n( 'design/admin/package' )}">{'Remove'|i18n( 'design/admin/package' )}</button>
     </form>
     {/if}
     </div>
 </div>
 {if $package.install_type|ne( 'install' )}
-    <p class="exp-feedback is-info pvf-noinstall">{'There is nothing to install here: this package has the install type "%type". A site package is imported by the setup wizard together with the packages it requires, and is not installed on its own.'|i18n( 'design/admin/package',, hash( '%type', $package.install_type|wash ) )}</p>
+    <p class="a4-notice is-info pvf-noinstall">{'There is nothing to install here: this package has the install type "%type". A site package is imported by the setup wizard together with the packages it requires, and is not installed on its own.'|i18n( 'design/admin/package',, hash( '%type', $package.install_type|wash ) )}</p>
 {elseif $package.install|count|eq( 0 )}
-    <p class="exp-feedback is-info pvf-noinstall">{'There is nothing to install here: this package has no install items.'|i18n( 'design/admin/package' )}</p>
+    <p class="a4-notice is-info pvf-noinstall">{'There is nothing to install here: this package has no install items.'|i18n( 'design/admin/package' )}</p>
 {elseif $pvf_can_install|not}
-    <p class="exp-feedback is-info pvf-noinstall">{'You are not allowed to install packages (package/install), so the Install button is not shown.'|i18n( 'design/admin/package' )}</p>
+    <p class="a4-notice is-info pvf-noinstall">{'You are not allowed to install packages (package/install), so the Install button is not shown.'|i18n( 'design/admin/package' )}</p>
 {/if}
 {undef $pvf_installable $pvf_can_install $pvf_can_export $pvf_can_remove}
 
 {if and( $card, $card.installer_source )}
-<div class="exp-feedback is-info" role="note">
+<div class="a4-notice is-info" role="note">
     <p><strong>{'The installer takes this package as a source.'|i18n( 'design/admin/package' )}</strong></p>
     <ul>{foreach $card.installer_reasons as $reason}<li>{$reason_labels[$reason]|wash}</li>{/foreach}</ul>
     <p>{'Change it only on purpose: new installations and published packages are built from it.'|i18n( 'design/admin/package' )}</p>
@@ -130,12 +129,12 @@
 
 {* the background installs of this package (content jobs, content/job/<id>), newest first *}
 {if first_set( $package_jobs, array() )|count}
-<section class="exp-section" aria-labelledby="package-jobs-title">
-<div class="exp-section-head"><h2 class="exp-h2" id="package-jobs-title">{'Background installs'|i18n( 'design/admin/package' )}</h2></div>
+<section class="a4-section" aria-labelledby="package-jobs-title">
+<div class="a4-section-head"><h2 class="a4-h2" id="package-jobs-title">{'Background installs'|i18n( 'design/admin/package' )}</h2></div>
 {foreach $package_jobs as $job}
-<div class="exp-panel" data-job="{$job.id|wash}" data-job-state="{$job.state|wash}">
+<div class="a4-card" data-job="{$job.id|wash}" data-job-state="{$job.state|wash}">
     <p><strong>{$job.description|wash}</strong> &middot; <a href={concat( 'content/job/', $job.id )|ezurl}>{'Job page'|i18n( 'design/admin/package' )}</a></p>
-    <p class="exp-meta">{switch match=$job.state}
+    <p class="a4-meta">{switch match=$job.state}
         {case match='queued'}{'Waiting for its worker'|i18n( 'design/admin/package' )}{/case}
         {case match='running'}{'Running'|i18n( 'design/admin/package' )}{/case}
         {case match='done'}{'Done'|i18n( 'design/admin/package' )}{/case}
@@ -144,12 +143,12 @@
         {/switch}: {'%done of %total content objects (%percent %)'|i18n( 'design/admin/package',, hash( '%done', $job.progress.done, '%total', $job.progress.total, '%percent', $job.progress.percent ) )}
         &middot; {'Started'|i18n( 'design/admin/package' )} {$job.created|l10n( shortdatetime )}{if $job.finished} &middot; {'Finished'|i18n( 'design/admin/package' )} {$job.finished|l10n( shortdatetime )}{/if}</p>
     <progress max="100" value="{$job.progress.percent|wash}" aria-label="{'Progress'|i18n( 'design/admin/package' )}">{$job.progress.percent|wash} %</progress>
-    {if $job.error}<p class="exp-feedback is-bad" role="alert">{$job.error|wash}</p>{/if}
+    {if $job.error}<p class="a4-notice is-bad" role="alert">{$job.error|wash}</p>{/if}
     {if and( $job.state|eq( 'done' ), is_set( $job.result.drafts ) )}
-    <p class="exp-feedback is-ok" role="status">{'%count drafts were written. Nothing was published: review each draft and publish it, or remove it.'|i18n( 'design/admin/package',, hash( '%count', $job.result.drafts|count ) )}</p>
+    <p class="a4-notice is-ok" role="status">{'%count drafts were written. Nothing was published: review each draft and publish it, or remove it.'|i18n( 'design/admin/package',, hash( '%count', $job.result.drafts|count ) )}</p>
     {if $job.result.drafts|count}
-    <div class="exp-table-wrap">
-    <table class="exp-table">
+    <div class="a4-table-wrap">
+    <table class="a4-table">
         <tr><th>{'Draft'|i18n( 'design/admin/package' )}</th><th>{'Remote ID'|i18n( 'design/admin/package' )}</th><th>{'What'|i18n( 'design/admin/package' )}</th></tr>
         {foreach $job.result.drafts as $draft max 50}
         <tr>
@@ -165,19 +164,19 @@
         {/foreach}
     </table>
     </div>
-    {if $job.result.drafts|count|gt( 50 )}<p class="exp-muted">{'The first 50 of %count drafts; all of them are in My drafts.'|i18n( 'design/admin/package',, hash( '%count', $job.result.drafts|count ) )}</p>{/if}
+    {if $job.result.drafts|count|gt( 50 )}<p class="a4-muted">{'The first 50 of %count drafts; all of them are in My drafts.'|i18n( 'design/admin/package',, hash( '%count', $job.result.drafts|count ) )}</p>{/if}
     {/if}
-    {if $job.result.waiting|count}<p class="exp-muted">{'%count drafts wait for a parent that is a draft of this package too. Publish the parent, then install the package as drafts again to give them their place.'|i18n( 'design/admin/package',, hash( '%count', $job.result.waiting|count ) )}</p>{/if}
+    {if $job.result.waiting|count}<p class="a4-muted">{'%count drafts wait for a parent that is a draft of this package too. Publish the parent, then install the package as drafts again to give them their place.'|i18n( 'design/admin/package',, hash( '%count', $job.result.waiting|count ) )}</p>{/if}
     {/if}
 </div>
 {/foreach}
 </section>
 {/if}
-<section class="exp-section" aria-labelledby="package-details-title">
-<div class="exp-section-head"><h2 class="exp-h2" id="package-details-title">{'Details'|i18n( 'design/admin/package' )}</h2></div>
-<div class="exp-panel">
-<div class="exp-head-row">
-<dl class="exp-facts" style="flex: 1 1 520px">
+<section class="a4-section" aria-labelledby="package-details-title">
+<div class="a4-section-head"><h2 class="a4-h2" id="package-details-title">{'Details'|i18n( 'design/admin/package' )}</h2></div>
+<div class="a4-card">
+<div class="a4-package-head-row">
+<dl class="a4-facts a4-package-head-facts">
     <div><dt>{'Repository'|i18n( 'design/admin/package' )}</dt>
         <dd>{if $repo}<a href={concat( '/package/list/', $repo.id )|ezurl}><code>{$repo.id|wash}</code></a>{/if}{if $package.vendor} &middot; {$package.vendor|wash}{/if}</dd></div>
     <div><dt>{'State'|i18n('design/admin/package')}</dt><dd>{if $package.state}{$package.state|wash}{else}&ndash;{/if}</dd></div>
@@ -185,7 +184,7 @@
         {* A configured license (package.ini [LicenseSettings]) shows its name, a link and its identifier; an older or
            unknown stored value is shown as it is. *}
         {def $licenceInfo=$package.licence-info}
-        <dd>{if $licenceInfo}{if $licenceInfo.url}<a href="{$licenceInfo.url|wash}" target="_blank" rel="noopener noreferrer">{$licenceInfo.name|wash}</a>{else}{$licenceInfo.name|wash}{/if}{if $licenceInfo.known} <code>{$licenceInfo.identifier|wash}</code>{if $licenceInfo.stored|ne( $licenceInfo.identifier )} <span class="exp-muted">({'stored as %licence'|i18n('design/admin/package',,hash( '%licence', $licenceInfo.stored ))|wash})</span>{/if}{/if}{else}&ndash;{/if}</dd>
+        <dd>{if $licenceInfo}{if $licenceInfo.url}<a href="{$licenceInfo.url|wash}" target="_blank" rel="noopener noreferrer">{$licenceInfo.name|wash}</a>{else}{$licenceInfo.name|wash}{/if}{if $licenceInfo.known} <code>{$licenceInfo.identifier|wash}</code>{if $licenceInfo.stored|ne( $licenceInfo.identifier )} <span class="a4-muted">({'stored as %licence'|i18n('design/admin/package',,hash( '%licence', $licenceInfo.stored ))|wash})</span>{/if}{/if}{else}&ndash;{/if}</dd>
         {undef $licenceInfo}</div>
     <div><dt>{'Maintainers'|i18n('design/admin/package')}</dt>
         <dd>{section var=maintainer loop=$package.maintainers}<a href="mailto:{$maintainer.item.email|wash}" title="{'Send email to the maintainer'|i18n('design/admin/package')}">{$maintainer.item.name|wash}</a>{if $maintainer.item.role} ({$maintainer.item.role|wash}){/if}{delimiter}, {/delimiter}{section-else}&ndash;{/section}</dd></div>
@@ -201,61 +200,61 @@
     {/if}
     {if $card}
     <div><dt>{'Requires'|i18n( 'design/admin/package' )}</dt>
-        <dd>{if $card.requires|count|eq( 0 )}{'Nothing'|i18n( 'design/admin/package' )}{else}<ul class="exp-deps">{foreach $card.requires as $require}<li{if $require.present|not} class="is-missing"{/if}>{if $require.present}<a href={concat( '/package/view/full/', $require.name )|ezurl}>{$require.name|wash}</a>{else}{$require.name|wash} ({'missing'|i18n( 'design/admin/package' )}){/if}{if $require.min_version|ne( '' )} <span class="exp-muted">&ge; {$require.min_version|wash}</span>{/if}</li>{/foreach}</ul>{/if}</dd></div>
+        <dd>{if $card.requires|count|eq( 0 )}{'Nothing'|i18n( 'design/admin/package' )}{else}<ul class="a4-package-deps">{foreach $card.requires as $require}<li{if $require.present|not} class="is-missing"{/if}>{if $require.present}<a href={concat( '/package/view/full/', $require.name )|ezurl}>{$require.name|wash}</a>{else}{$require.name|wash} ({'missing'|i18n( 'design/admin/package' )}){/if}{if $require.min_version|ne( '' )} <span class="a4-muted">&ge; {$require.min_version|wash}</span>{/if}</li>{/foreach}</ul>{/if}</dd></div>
     <div><dt>{'Required by'|i18n( 'design/admin/package' )}</dt>
-        <dd>{if $card.required_by|count|eq( 0 )}{'No package'|i18n( 'design/admin/package' )}{else}<ul class="exp-deps">{foreach $card.required_by as $requirer}<li><a href={concat( '/package/view/full/', $requirer )|ezurl}>{$requirer|wash}</a></li>{/foreach}</ul>{/if}</dd></div>
+        <dd>{if $card.required_by|count|eq( 0 )}{'No package'|i18n( 'design/admin/package' )}{else}<ul class="a4-package-deps">{foreach $card.required_by as $requirer}<li><a href={concat( '/package/view/full/', $requirer )|ezurl}>{$requirer|wash}</a></li>{/foreach}</ul>{/if}</dd></div>
     <div><dt>{'Size'|i18n( 'design/admin/package' )}</dt><dd>{$card.bytes|si( byte )}, {'%count files'|i18n( 'design/admin/package',, hash( '%count', $card.files ) )}</dd></div>
     <div><dt title="{'The newest file of the package directory'|i18n( 'design/admin/package' )}">{'Last change'|i18n( 'design/admin/package' )}</dt><dd>{if $card.changed}{$card.changed|l10n( shortdatetime )}{else}&ndash;{/if}</dd></div>
     {/if}
 </dl>
 {let thumbnail_list=$package.thumbnail-list}
 {if $thumbnail_list}
-<img class="exp-thumb" src={concat( $package|ezpackage( fileitempath, $thumbnail_list[0] ) )|ezroot} alt="{$thumbnail_list[0].name|wash}" />
+<img class="a4-package-thumb" src={concat( $package|ezpackage( fileitempath, $thumbnail_list[0] ) )|ezroot} alt="{$thumbnail_list[0].name|wash}" />
 {/if}
 {/let}
 </div>
 {* Escaped: the description comes from the package's own package.xml, and packages can be uploaded *}
-{if $package.description}<p class="exp-description">{$package.description|wash|nl2br}</p>{/if}
+{if $package.description}<p class="a4-package-description">{$package.description|wash|nl2br}</p>{/if}
 </div>
 </section>
 
 {if $carries}
-<section class="exp-section" aria-labelledby="package-carries-title">
-<div class="exp-section-head">
-    <h2 class="exp-h2" id="package-carries-title">{'What it carries'|i18n( 'design/admin/package' )}</h2>
+<section class="a4-section" aria-labelledby="package-carries-title">
+<div class="a4-section-head">
+    <h2 class="a4-h2" id="package-carries-title">{'What it carries'|i18n( 'design/admin/package' )}</h2>
     <p>{'From the package definition and its files. Nothing here changes the site; Compare shows how it differs from what the site has.'|i18n( 'design/admin/package' )}</p>
 </div>
-<div class="exp-carries">
-    <div class="exp-panel">
-        <h3>{'Content classes'|i18n( 'design/admin/package' )} ({$carries.classes|count})</h3>
-        {if $carries.classes|count|eq( 0 )}<p class="exp-muted">{'None'|i18n( 'design/admin/package' )}</p>{else}<p>{foreach $carries.classes as $class}<span class="exp-fn">{$class|wash}</span>{/foreach}</p>{/if}
+<div class="a4-package-carries">
+    <div class="a4-card">
+        <h3 class="a4-h3">{'Content classes'|i18n( 'design/admin/package' )} ({$carries.classes|count})</h3>
+        {if $carries.classes|count|eq( 0 )}<p class="a4-muted">{'None'|i18n( 'design/admin/package' )}</p>{else}<p>{foreach $carries.classes as $class}<span class="a4-kbd">{$class|wash}</span>{/foreach}</p>{/if}
     </div>
-    <div class="exp-panel">
-        <h3>{'Content'|i18n( 'design/admin/package' )}</h3>
-        {if and( $carries.object_items|eq( 0 ), $carries.object_files|eq( 0 ) )}<p class="exp-muted">{'None'|i18n( 'design/admin/package' )}</p>
+    <div class="a4-card">
+        <h3 class="a4-h3">{'Content'|i18n( 'design/admin/package' )}</h3>
+        {if and( $carries.object_items|eq( 0 ), $carries.object_files|eq( 0 ) )}<p class="a4-muted">{'None'|i18n( 'design/admin/package' )}</p>
         {else}<p>{'%items content install item(s), %files object file(s)'|i18n( 'design/admin/package',, hash( '%items', $carries.object_items, '%files', $carries.object_files ) )}</p>{/if}
     </div>
-    <div class="exp-panel">
-        <h3>{'Extensions'|i18n( 'design/admin/package' )} ({$carries.extensions|count})</h3>
-        {if $carries.extensions|count|eq( 0 )}<p class="exp-muted">{'None'|i18n( 'design/admin/package' )}</p>{else}<p>{foreach $carries.extensions as $extension}<span class="exp-fn">{$extension|wash}</span>{/foreach}</p>{/if}
+    <div class="a4-card">
+        <h3 class="a4-h3">{'Extensions'|i18n( 'design/admin/package' )} ({$carries.extensions|count})</h3>
+        {if $carries.extensions|count|eq( 0 )}<p class="a4-muted">{'None'|i18n( 'design/admin/package' )}</p>{else}<p>{foreach $carries.extensions as $extension}<span class="a4-kbd">{$extension|wash}</span>{/foreach}</p>{/if}
     </div>
-    <div class="exp-panel">
-        <h3>{'Settings files'|i18n( 'design/admin/package' )} ({$carries.settings|count})</h3>
-        {if $carries.settings|count|eq( 0 )}<p class="exp-muted">{'None'|i18n( 'design/admin/package' )}</p>{else}<p>{foreach $carries.settings as $settings}<span class="exp-fn">{$settings|wash}</span>{/foreach}</p>{/if}
+    <div class="a4-card">
+        <h3 class="a4-h3">{'Settings files'|i18n( 'design/admin/package' )} ({$carries.settings|count})</h3>
+        {if $carries.settings|count|eq( 0 )}<p class="a4-muted">{'None'|i18n( 'design/admin/package' )}</p>{else}<p>{foreach $carries.settings as $settings}<span class="a4-kbd">{$settings|wash}</span>{/foreach}</p>{/if}
         {if $carries.other_items|count|gt( 0 )}
-        <h3>{'Other install items'|i18n( 'design/admin/package' )}</h3>
-        <p>{foreach $carries.other_items as $type => $count}<span class="exp-fn">{$type|wash} &times; {$count}</span>{/foreach}</p>
+        <h3 class="a4-h3">{'Other install items'|i18n( 'design/admin/package' )}</h3>
+        <p>{foreach $carries.other_items as $type => $count}<span class="a4-kbd">{$type|wash} &times; {$count}</span>{/foreach}</p>
         {/if}
     </div>
 </div>
 {if $carries.kinds|count|gt( 0 )}
-<div class="exp-table-wrap">
-<table class="exp-table">
-    <caption class="exp-sr">{'Files by kind'|i18n( 'design/admin/package' )}</caption>
-    <thead><tr><th scope="col">{'Kind'|i18n( 'design/admin/package' )}</th><th scope="col" class="exp-num">{'Files'|i18n( 'design/admin/package' )}</th><th scope="col" class="exp-num">{'Size'|i18n( 'design/admin/package' )}</th></tr></thead>
+<div class="a4-table-wrap">
+<table class="a4-table">
+    <caption class="a4-sr-only">{'Files by kind'|i18n( 'design/admin/package' )}</caption>
+    <thead><tr><th scope="col">{'Kind'|i18n( 'design/admin/package' )}</th><th scope="col" class="a4-num">{'Files'|i18n( 'design/admin/package' )}</th><th scope="col" class="a4-num">{'Size'|i18n( 'design/admin/package' )}</th></tr></thead>
     <tbody>
     {foreach $carries.kinds as $kind => $info}
-    <tr><td>{cond( is_set( $kindLabels[$kind] ), $kindLabels[$kind], $kind )|wash}</td><td class="exp-num">{$info.files}</td><td class="exp-num">{$info.bytes|si( byte )}</td></tr>
+    <tr><td>{cond( is_set( $kindLabels[$kind] ), $kindLabels[$kind], $kind )|wash}</td><td class="a4-num">{$info.files}</td><td class="a4-num">{$info.bytes|si( byte )}</td></tr>
     {/foreach}
     </tbody>
 </table>
@@ -265,12 +264,12 @@
 {/if}
 
 {if $package.changelog}
-<section class="exp-section" aria-labelledby="package-changelog-title">
-<div class="exp-section-head"><h2 class="exp-h2" id="package-changelog-title">{'Changelog'|i18n('design/admin/package')}</h2></div>
-<div class="exp-panel">
-<ul class="exp-changelog">
+<section class="a4-section" aria-labelledby="package-changelog-title">
+<div class="a4-section-head"><h2 class="a4-h2" id="package-changelog-title">{'Changelog'|i18n('design/admin/package')}</h2></div>
+<div class="a4-card">
+<ul class="a4-package-changelog">
 {section var=log loop=$package.changelog}
-    <li><span class="exp-meta">{$log.item.timestamp|l10n( shortdatetime )} &middot; <a href="mailto:{$log.item.email|wash}" title="{'Send email to the maintainer'|i18n('design/admin/package')}">{$log.item.person|wash}</a></span>
+    <li><span class="a4-meta">{$log.item.timestamp|l10n( shortdatetime )} &middot; <a href="mailto:{$log.item.email|wash}" title="{'Send email to the maintainer'|i18n('design/admin/package')}">{$log.item.person|wash}</a></span>
         <ul>{section var=change loop=$log.item.changes}<li>{$change.item|wash}</li>{/section}</ul></li>
 {/section}
 </ul>
@@ -332,7 +331,7 @@
                 <div class="pvf-viewer-title">
                     <code class="pvf-path">{$viewed.path|wash}</code>
                     <span class="pvf-viewer-meta">
-                        <span class="pvf-kind pvf-kind-{$viewed.kind|wash}">{cond( is_set( $kindLabels[$viewed.kind] ), $kindLabels[$viewed.kind], $viewed.kind )|wash}</span>
+                        <span class="a4-badge{if eq( $viewed.kind, 'class' )} is-info{elseif eq( $viewed.kind, 'image' )} is-warn{elseif eq( $viewed.kind, 'package' )} is-accent{/if}">{cond( is_set( $kindLabels[$viewed.kind] ), $kindLabels[$viewed.kind], $viewed.kind )|wash}</span>
                         <span class="pvf-size" title="{$viewed.size|wash} B">{$viewed.size|si( byte )}</span>
                         {if is_set( $viewed.checksum )}<span class="pvf-checksum" data-checksum="{$viewed.checksum|wash}">{switch match=$viewed.checksum}{case match='match'}{'Matches package.json'|i18n('design/admin/package')}{/case}{case match='mismatch'}<strong>{'Does not match package.json: the file was changed after the package was written'|i18n('design/admin/package')}</strong>{/case}{case}{/case}{/switch}</span>{/if}
                     </span>
@@ -357,7 +356,7 @@
                     <tr><th scope="row">{'Remote ID'|i18n('design/admin/package')}</th><td><code>{$ContentsBrowser.viewed_object.remote_id|wash}</code></td></tr>
                 </table>
                 {foreach $ContentsBrowser.viewed_object.translations as $language => $attributes}
-                <h3 class="pvf-language">{$language|wash}</h3>
+                <h3 class="a4-h3 pvf-language">{$language|wash}</h3>
                 <div class="pvf-scroll">
                 <table class="list pvf-attributes">
                     <thead><tr><th>{'Attribute'|i18n('design/admin/package')}</th><th>{'Datatype'|i18n('design/admin/package')}</th><th>{'Value'|i18n('design/admin/package')}</th></tr></thead>
@@ -373,7 +372,7 @@
                 <p class="pvf-note">{'+ %count more object(s) in the same file'|i18n('design/admin/package',,hash('%count', $ContentsBrowser.viewed_object.more_objects))}</p>
                 {/if}
                 {* the document itself, below its summary *}
-                <h3 class="pvf-language">{'Document'|i18n('design/admin/package')}</h3>
+                <h3 class="a4-h3 pvf-language">{'Document'|i18n('design/admin/package')}</h3>
                 <pre class="pvf-code" data-document-format="{first_set( $viewed.format, '' )|wash}">{$ContentsBrowser.viewed_content|wash}</pre>
                 {if and( is_set( $viewed.truncated ), $viewed.truncated )}<p class="pvf-note">{'Only the first megabyte is shown here; Download gives the whole file.'|i18n( 'design/admin/package' )}</p>{/if}
             {elseif and( first_set( $viewed.media, '' )|eq( 'image' ), $viewed.inline )}
@@ -410,7 +409,7 @@
                 {def $pathParts = $file.path|explode( '/' )}
                 <td class="pvf-col-path"><code>{if $pathParts|count|gt(1)}<span class="pvf-dir">{$pathParts|extract_left( $pathParts|count|dec )|implode( '/' )|wash}/</span>{/if}<span class="pvf-name">{$pathParts|extract_right( 1 )|implode( '' )|wash}</span></code></td>
                 {undef $pathParts}
-                <td class="pvf-col-type"><span class="pvf-kind pvf-kind-{$file.kind|wash}" title="{cond( is_set( $kindLabels[$file.kind] ), $kindLabels[$file.kind], $file.kind )|wash}">{cond( is_set( $kindShortLabels[$file.kind] ), $kindShortLabels[$file.kind], $file.kind )|wash}</span></td>
+                <td class="pvf-col-type"><span class="a4-badge{if eq( $file.kind, 'class' )} is-info{elseif eq( $file.kind, 'image' )} is-warn{elseif eq( $file.kind, 'package' )} is-accent{/if}" title="{cond( is_set( $kindLabels[$file.kind] ), $kindLabels[$file.kind], $file.kind )|wash}">{cond( is_set( $kindShortLabels[$file.kind] ), $kindShortLabels[$file.kind], $file.kind )|wash}</span></td>
                 <td class="pvf-col-size" title="{$file.size|wash} B">{$file.size|si( byte )}</td>
                 <td class="pvf-col-actions">
                     {if $file.kind|ne('other')}

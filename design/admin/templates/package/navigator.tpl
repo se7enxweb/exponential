@@ -12,7 +12,7 @@
 <div class="block">
 {if or( $current_step.previous_step, is_set( $creator ) )}
     {* Enter submits a form with its first button, which must stay Next: this copy comes first and is never seen. *}
-    <input type="submit" name="NextStepButton" value="" tabindex="-1" aria-hidden="true" style="position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden;" />
+    <input type="submit" name="NextStepButton" value="" tabindex="-1" aria-hidden="true" class="a4-sr-only" />
     <input class="button" type="submit" name="PreviousStepButton" value="{'%arrowleft Back'|i18n( 'design/admin/package',, hash( '%arrowleft', '&laquo;' ) )}" />
 {/if}
 {if $current_step.next_step}

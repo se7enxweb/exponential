@@ -5,3 +5,535 @@
  * colours, radius, spacing and fonts from the --a4-* tokens only (no hard-coded values, no local aliases).
  * Registered in design.ini [StylesheetSettings] AdminComponentCSSFileList; rules: doc/bc/6.0/admin4-styling.md
  */
+
+/* ---- shared by the class, pdf and rss pages of this file: what a removal takes, a status line, an address ----- */
+
+.a4-class-consequences,
+.a4-pdf-consequences,
+.a4-rss-consequences { margin: 0; padding-left: var(--a4-space-5); }
+.a4-class-consequences li + li,
+.a4-pdf-consequences li + li,
+.a4-rss-consequences li + li { margin-top: var(--a4-space-1); }
+
+/* A status line with a coloured edge (pdf/list drafts, rss/list import cronjob) */
+.a4-pdf-statusbar,
+.a4-rss-statusbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--a4-space-3) var(--a4-space-4);
+  margin: 0 0 var(--a4-space-4);
+  padding: var(--a4-space-3);
+  border: 1px solid var(--a4-line);
+  border-left-width: var(--a4-space-1);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  color: var(--a4-ink);
+}
+.a4-pdf-statusbar.is-ok, .a4-rss-statusbar.is-ok { border-left-color: var(--a4-ok); }
+.a4-pdf-statusbar.is-warn, .a4-rss-statusbar.is-warn { border-left-color: var(--a4-warn); }
+.a4-pdf-statusbar.is-bad, .a4-rss-statusbar.is-bad { border-left-color: var(--a4-bad); }
+.a4-pdf-statusbar.is-info, .a4-rss-statusbar.is-info { border-left-color: var(--a4-info); }
+.a4-pdf-statusbar p, .a4-rss-statusbar p { flex: 1 1 320px; }
+
+/* An address (a feed, a public PDF) as code with its link */
+.a4-pdf-url,
+.a4-rss-url { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2) var(--a4-space-3); min-width: 0; }
+.a4-pdf-url code,
+.a4-rss-url code,
+.a4-pdf-file code {
+  padding: 2px var(--a4-space-2);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+  color: var(--a4-ink);
+}
+.a4-pdf-url a, .a4-rss-url a { font-size: var(--a4-text-s); }
+.a4-pdf-url .a4-meta, .a4-pdf-file + .a4-meta { display: block; }
+
+/* ---- class: the class view (attributes and their settings), the class editor ------------------------------ */
+
+.a4-class-flag { vertical-align: -1px; }
+.a4-class-windows { padding: var(--a4-space-3); }
+.a4-class-datatype {
+  margin: var(--a4-space-3) 0 0;
+  padding: var(--a4-space-3) 0 0;
+  border-top: 1px dashed var(--a4-line);
+  color: var(--a4-ink);
+}
+.a4-class-datatype:empty { display: none; }
+.a4-class-datatype .block { margin: 0 0 var(--a4-space-3); }
+.a4-class-datatype h6,
+.a4-class-datatype label {
+  display: block;
+  margin: 0 0 var(--a4-space-1);
+  color: var(--a4-muted);
+  font-size: var(--a4-text-xs);
+  font-weight: 650;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.a4-class-datatype label input[type="checkbox"],
+.a4-class-datatype label input[type="radio"] { margin-right: var(--a4-space-2); }
+.a4-class-datatype input[type="text"],
+.a4-class-datatype select,
+.a4-class-datatype textarea {
+  max-width: 100%;
+  min-height: 34px;
+  padding: var(--a4-space-1) var(--a4-space-2);
+  border: 1px solid var(--a4-field-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-field);
+  color: var(--a4-ink);
+  font-family: inherit;
+  font-size: var(--a4-text-s);
+}
+.a4-class-datatype .element { display: inline-block; margin: 0 var(--a4-space-4) var(--a4-space-3) 0; vertical-align: top; }
+.a4-class-datatype p { margin: 0 0 var(--a4-space-2); }
+
+/* The editor: the fixed bar on top, the attribute list as cards, the flags, the order controls */
+#controlbar-top.a4-class-editbar { margin: 0 0 var(--a4-space-3); box-shadow: none; }
+.a4-class-editbar select {
+  min-height: 36px;
+  max-width: 100%;
+  padding: var(--a4-space-1) var(--a4-space-2);
+  border: 1px solid var(--a4-field-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-field);
+  color: var(--a4-ink);
+  font-family: inherit;
+  font-size: var(--a4-text-s);
+}
+.a4-class-attr-list { display: block; width: 100%; margin: 0; border: 0; border-collapse: separate; background: none; }
+.a4-class-attr-list > tbody { display: grid; gap: var(--a4-space-3); }
+.a4-class-attr-list > tbody > tr { display: block; background: none; }
+.a4-class-attr-list > tbody > tr > td { display: block; padding: 0; border: 0; background: none; }
+.a4-class-attr {
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid var(--a4-line);
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  box-shadow: var(--a4-shadow-s);
+}
+#LastChangedID .a4-class-attr { border-color: var(--a4-accent); }
+.a4-class-attr > tbody > tr > th,
+.a4-class-attr > tr > th {
+  padding: var(--a4-space-3);
+  border: 0;
+  border-bottom: 1px solid var(--a4-line);
+  background-color: var(--a4-soft);
+  color: var(--a4-ink);
+  font-size: var(--a4-text-m);
+  font-weight: 650;
+  letter-spacing: 0;
+  text-align: left;
+  text-transform: none;
+  vertical-align: middle;
+}
+.a4-class-attr th.tight { width: 1%; white-space: nowrap; }
+.a4-class-attr th.tight input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--a4-accent-strong); }
+.a4-class-attr-body { padding: var(--a4-space-4); border: 0; background-color: var(--a4-card); color: var(--a4-ink); }
+.a4-class-attr .listbutton { display: inline-flex; align-items: center; gap: var(--a4-space-2); }
+.a4-class-attr .listbutton input[type="image"] {
+  box-sizing: content-box;
+  width: 16px;
+  height: 16px;
+  padding: var(--a4-space-1);
+  border-radius: var(--a4-radius-s);
+}
+.a4-class-attr .listbutton input[type="image"]:hover { background-color: var(--a4-line); }
+.a4-class-attr .listbutton input[type="text"] {
+  width: 3.5em;
+  min-height: 30px;
+  padding: 2px var(--a4-space-2);
+  border: 1px solid var(--a4-field-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-field);
+  color: var(--a4-ink);
+  font-family: inherit;
+  font-size: var(--a4-text-s);
+  text-align: right;
+}
+.a4-class-flags { display: flex; flex-wrap: wrap; gap: var(--a4-space-2) var(--a4-space-4); margin: var(--a4-space-3) 0 0; }
+.a4-class-flags .a4-check { font-size: var(--a4-text-s); font-weight: 600; }
+.a4-class-flags .a4-check.is-off { color: var(--a4-muted); cursor: not-allowed; }
+.a4-class-move-status { margin: 0 0 var(--a4-space-2); color: var(--a4-muted); }
+.a4-class-move-status.is-error { color: var(--a4-bad); font-weight: 650; }
+a.a4-class-top {
+  position: static;
+  display: inline-block;
+  margin: var(--a4-space-3) 0 0;
+  padding: 0;
+  background: none;
+  color: var(--a4-accent-text);
+  font-size: var(--a4-text-s);
+}
+@media (max-width: 600px) {
+  .a4-class-attr > tbody > tr:first-child { display: flex; flex-wrap: wrap; align-items: center; }
+}
+
+/* ---- pdf: the export list's filters, the editor's groups, source and class choices ----------------------- */
+
+.a4-pdf-search { display: flex; flex-wrap: wrap; align-items: flex-end; gap: var(--a4-space-3); }
+.a4-pdf-search .a4-field { flex: 1 1 260px; }
+.a4-pdf-search .a4-actions { flex: 0 0 auto; }
+.a4-pdf-controls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--a4-space-3);
+  margin: 0 0 var(--a4-space-4);
+  padding: var(--a4-space-3) var(--a4-space-4);
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+}
+.a4-pdf-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--a4-space-2) var(--a4-space-4); }
+.a4-pdf-file { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-1) var(--a4-space-3); }
+.a4-pdf-group {
+  margin: 0 0 var(--a4-space-4);
+  padding: var(--a4-space-4);
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+}
+.a4-pdf-group > .a4-h2 { margin: 0 0 var(--a4-space-1); }
+.a4-pdf-group > .a4-help { margin: 0 0 var(--a4-space-3); }
+.a4-pdf-choices {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: var(--a4-space-3);
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.a4-pdf-choice {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--a4-space-3);
+  margin: 0;
+  padding: var(--a4-space-3);
+  border: 1px solid var(--a4-line-strong);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  white-space: normal;
+  cursor: pointer;
+}
+.a4-pdf-choice input { flex: 0 0 auto; width: 18px; height: 18px; margin: 2px 0 0; accent-color: var(--a4-accent-strong); }
+.a4-pdf-choice > span { flex: 1 1 auto; min-width: 0; font-weight: 400; }
+.a4-pdf-choice strong { display: block; color: var(--a4-ink); font-size: var(--a4-text-m); font-weight: 650; }
+.a4-pdf-choice .a4-help { display: block; margin-top: 2px; }
+.a4-pdf-choice:has(input:checked) { border-color: var(--a4-accent); box-shadow: inset 0 0 0 1px var(--a4-accent); }
+.a4-pdf-choice:has(input:focus-visible) { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
+.a4-pdf-classes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 210px), 1fr));
+  gap: 2px var(--a4-space-3);
+  max-height: 280px;
+  margin: 0;
+  padding: var(--a4-space-3);
+  overflow: auto;
+  border: 1px solid var(--a4-field-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-field);
+}
+.a4-pdf-classes label {
+  display: flex;
+  align-items: center;
+  gap: var(--a4-space-2);
+  min-height: 30px;
+  color: var(--a4-ink);
+  font-size: var(--a4-text-s);
+  font-weight: 400;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+.a4-pdf-classes input { flex: 0 0 auto; width: 16px; height: 16px; margin: 0; accent-color: var(--a4-accent-strong); }
+.a4-pdf-classes[aria-invalid="true"] { border-color: var(--a4-bad); box-shadow: inset 0 0 0 1px var(--a4-bad); }
+.a4-pdf-source {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--a4-space-3) var(--a4-space-4);
+  padding: var(--a4-space-3);
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+}
+.a4-pdf-source.is-bad { border-color: var(--a4-bad-line); background-color: var(--a4-bad-bg); color: var(--a4-bad); }
+.a4-pdf-source strong { overflow-wrap: anywhere; }
+.a4-pdf-source .a4-meta { display: block; }
+.a4-pdf-source-text { flex: 1 1 260px; min-width: 0; }
+@media (max-width: 600px) {
+  .a4-pdf-group { padding: var(--a4-space-3); }
+  .a4-pdf-search .a4-actions, .a4-pdf-search .a4-actions .a4-btn { width: 100%; }
+}
+
+/* ---- rss: the two lists, the export and import editors, the OPML editor ---------------------------------- */
+
+.a4-rss-sizes { margin: 0 0 var(--a4-space-4); }
+.a4-rss-part { margin: 0 0 var(--a4-space-6); padding: 0 0 var(--a4-space-1); }
+.a4-rss-part + .a4-rss-part { padding-top: var(--a4-space-5); border-top: 1px solid var(--a4-line); }
+.a4-rss-subhead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--a4-space-2) var(--a4-space-3);
+  margin: 0 0 var(--a4-space-3);
+}
+.a4-rss-sources { margin: 0; padding: 0; list-style: none; }
+.a4-rss-sources li + li { margin-top: 2px; }
+.a4-rss-prefix {
+  padding: var(--a4-space-2);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+  color: var(--a4-muted);
+  white-space: nowrap;
+}
+.a4-rss-mapping {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+  gap: var(--a4-space-3) var(--a4-space-4);
+  margin: var(--a4-space-3) 0 0;
+  padding: var(--a4-space-3) 0 0;
+  border-top: 1px dashed var(--a4-line);
+}
+.a4-rss-mapping-head { margin-top: var(--a4-space-4); }
+
+/* The OPML editor keeps the classic admin markup (fieldset, .block, table.list, input.button) */
+.a4-rss-opml fieldset {
+  margin: 0 0 var(--a4-space-4);
+  padding: var(--a4-space-3) var(--a4-space-4);
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+}
+.a4-rss-opml fieldset > legend { padding: 0 var(--a4-space-2); background: none; color: var(--a4-ink); font-size: var(--a4-text-m); font-weight: 650; }
+.a4-rss-opml .context-attributes p,
+.a4-rss-opml fieldset .block > p { max-width: 78ch; margin: 0 0 var(--a4-space-2); color: var(--a4-muted); }
+.a4-rss-opml fieldset .block { margin: 0 0 var(--a4-space-3); }
+.a4-rss-opml fieldset .block > label,
+.a4-rss-opml fieldset label.inline {
+  display: block;
+  margin: 0 0 var(--a4-space-1);
+  color: var(--a4-ink);
+  font-size: var(--a4-text-xs);
+  font-weight: 650;
+}
+.a4-rss-opml input[type="text"],
+.a4-rss-opml select,
+.a4-rss-opml textarea {
+  max-width: 100%;
+  min-height: 34px;
+  padding: var(--a4-space-1) var(--a4-space-2);
+  border: 1px solid var(--a4-field-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-field);
+  color: var(--a4-ink);
+  font-family: inherit;
+  font-size: var(--a4-text-s);
+}
+.a4-rss-opml input.halfbox { width: min(100%, 520px); }
+.a4-rss-opml table.list {
+  width: 100%;
+  margin: 0 0 var(--a4-space-2);
+  border: 1px solid var(--a4-line);
+  border-collapse: collapse;
+  border-radius: var(--a4-radius-s);
+}
+.a4-rss-opml table.list th {
+  padding: var(--a4-space-2) var(--a4-space-3);
+  border: 0;
+  border-bottom: 1px solid var(--a4-line);
+  background-color: var(--a4-soft);
+  color: var(--a4-muted);
+  font-size: var(--a4-text-xs);
+  font-weight: 650;
+  letter-spacing: .04em;
+  text-align: left;
+  text-transform: uppercase;
+}
+.a4-rss-opml table.list td {
+  padding: var(--a4-space-2) var(--a4-space-3);
+  border: 0;
+  border-bottom: 1px solid var(--a4-line);
+  background-color: transparent;
+  color: var(--a4-ink);
+  vertical-align: middle;
+}
+.a4-rss-opml table.list tr.bglight,
+.a4-rss-opml table.list tr.bgdark { background-color: transparent; }
+.a4-rss-opml table.list th.sortable button.sort-button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--a4-muted);
+  font: inherit;
+  font-weight: 650;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.a4-rss-opml input.button,
+.a4-rss-opml input.defaultbutton,
+.a4-rss-opml button.button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  margin: 0;
+  padding: var(--a4-space-1) var(--a4-space-3);
+  border: 1px solid var(--a4-line-strong);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  background-image: none;
+  color: var(--a4-ink);
+  font-family: inherit;
+  font-size: var(--a4-text-s);
+  font-weight: 600;
+  line-height: 1.2;
+  cursor: pointer;
+}
+.a4-rss-opml input.defaultbutton { border-color: var(--a4-accent-strong); background-color: var(--a4-accent-strong); color: var(--a4-on-accent); }
+.a4-rss-opml input.button:hover,
+.a4-rss-opml button.button:hover { border-color: var(--a4-accent); color: var(--a4-accent-text); }
+.a4-rss-opml-meta,
+.a4-rss-opml-more summary,
+.a4-rss-opml-more-grid label,
+.a4-rss-opml-window-field label { color: var(--a4-muted); }
+.a4-rss-opml-gone { color: var(--a4-bad); }
+.a4-rss-opml-tick { color: var(--a4-ok); }
+.a4-rss-opml-outlines td,
+.a4-rss-opml-browser td { vertical-align: middle; }
+.a4-rss-opml-outlines code,
+.a4-rss-opml-browser code { padding: 0 var(--a4-space-2); border-radius: var(--a4-radius-s); background-color: var(--a4-soft); }
+.a4-rss-opml-more summary { padding: 2px 0; cursor: pointer; }
+.a4-rss-opml-more-grid { display: flex; flex-wrap: wrap; gap: var(--a4-space-3) var(--a4-space-5); padding: var(--a4-space-3) 0 var(--a4-space-1); }
+.a4-rss-opml-more-grid > span { display: flex; flex-direction: column; gap: var(--a4-space-1); }
+.a4-rss-opml-more-grid > .a4-rss-opml-more-flags { flex-direction: row; align-items: center; gap: var(--a4-space-3); }
+.a4-rss-opml-actions,
+.a4-rss-opml-browser-controls,
+.a4-rss-opml-browser-pages,
+.a4-rss-opml-window { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2) var(--a4-space-3); }
+.a4-rss-opml-window-field { display: flex; flex-direction: column; gap: var(--a4-space-1); }
+.a4-rss-opml-browser-pages .current {
+  display: inline-block;
+  padding: var(--a4-space-1) var(--a4-space-2);
+  border: 1px solid var(--a4-accent-strong);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-accent-strong);
+  color: var(--a4-on-accent);
+  font-weight: 700;
+}
+.a4-rss-opml-already td { opacity: .7; }
+.a4-rss-opml-outlines-wrap,
+.a4-rss-opml-browser-wrap { overflow-x: auto; }
+
+/* ---- package: the repositories, the package cards, the details page, the upload, the steps --------------- */
+
+.a4-package-repos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr));
+  gap: var(--a4-space-3);
+  margin: 0 0 var(--a4-space-5);
+  padding: 0;
+  list-style: none;
+}
+.a4-package-repo { margin: 0; }
+.a4-package-repo > a {
+  display: flex;
+  flex-direction: column;
+  gap: var(--a4-space-2);
+  height: 100%;
+  padding: var(--a4-space-3);
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  color: var(--a4-ink);
+  text-decoration: none;
+}
+.a4-package-repo > a:hover { border-color: var(--a4-accent); }
+.a4-package-repo.is-current > a { border-color: var(--a4-accent); box-shadow: inset 0 0 0 1px var(--a4-accent); }
+.a4-package-repo-name { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2); font-size: var(--a4-text-m); font-weight: 650; }
+.a4-package-repo-name code { color: var(--a4-ink); font-size: var(--a4-text-m); }
+.a4-package-repo-count { font-size: var(--a4-text-xl); font-weight: 700; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.a4-package-repo-count span { color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 400; }
+.a4-package-repo-lines { margin: 0; padding: 0; list-style: none; color: var(--a4-muted); font-size: var(--a4-text-xs); }
+.a4-package-repo-lines li.is-warn { color: var(--a4-warn); font-weight: 650; }
+.a4-package-pkg-summary { margin: var(--a4-space-2) 0 0; color: var(--a4-ink); }
+.a4-package-deps { display: flex; flex-wrap: wrap; gap: var(--a4-space-1) var(--a4-space-2); margin: 0; padding: 0; list-style: none; }
+.a4-package-deps li { margin: 0; }
+.a4-package-deps .is-missing { color: var(--a4-bad); font-weight: 650; }
+.a4-package-pages { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2); margin: 0; padding: 0; list-style: none; font-size: var(--a4-text-s); }
+.a4-package-pages a,
+.a4-package-pages span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 34px;
+  min-height: 30px;
+  padding: 2px var(--a4-space-2);
+  border: 1px solid var(--a4-line-strong);
+  border-radius: var(--a4-radius-s);
+  color: var(--a4-accent-text);
+  text-decoration: none;
+}
+.a4-package-pages span[aria-current] {
+  border-color: var(--a4-accent-strong);
+  background-color: var(--a4-accent-strong);
+  color: var(--a4-on-accent);
+  font-weight: 650;
+}
+.a4-package-pages span.is-disabled { border-style: dashed; color: var(--a4-muted); }
+.a4-package-goes { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--a4-space-3); margin: 0 0 var(--a4-space-4); padding: 0; list-style: none; }
+.a4-package-confirm-tick {
+  display: flex;
+  flex: 1 1 100%;
+  align-items: flex-start;
+  gap: var(--a4-space-3);
+  min-width: 0;
+  margin: 0;
+  font-weight: 650;
+  overflow-wrap: anywhere;
+}
+.a4-package-confirm-tick input { flex: 0 0 auto; width: 18px; height: 18px; margin: 2px 0 0; accent-color: var(--a4-bad); }
+.a4-package-carries {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: var(--a4-space-3);
+  margin: 0 0 var(--a4-space-4);
+}
+.a4-package-carries h3 { margin-bottom: var(--a4-space-2); }
+.a4-package-carries .a4-card + .a4-card { margin-top: 0; }
+.a4-package-description { max-width: 78ch; margin: var(--a4-space-3) 0 0; overflow-wrap: anywhere; }
+.a4-package-thumb { max-width: 160px; max-height: 120px; border: 1px solid var(--a4-line); border-radius: var(--a4-radius-s); }
+.a4-package-head-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--a4-space-3) var(--a4-space-4);
+}
+.a4-package-head-facts { flex: 1 1 520px; }
+.a4-package-changelog { margin: 0; padding: 0; list-style: none; }
+.a4-package-changelog li + li { margin-top: var(--a4-space-2); }
+.a4-package-changelog ul { margin: var(--a4-space-1) 0 0; padding-left: var(--a4-space-5); }
+.a4-package-file {
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  padding: var(--a4-space-4);
+  border: 2px dashed var(--a4-field-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+  color: var(--a4-ink);
+  font: inherit;
+}
+.a4-package-file:focus { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
+.a4-package-steps { max-width: 78ch; margin: 0; padding-left: var(--a4-space-5); }
+.a4-package-steps li + li { margin-top: var(--a4-space-1); }
+.a4-package-licence-info { margin: var(--a4-space-2) 0 0; overflow-wrap: anywhere; }

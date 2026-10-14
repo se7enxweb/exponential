@@ -158,7 +158,7 @@
 
             {foreach $detail.sections as $section}
             <div class="pcmp-section">
-                <h3 class="pcmp-section-title">
+                <h3 class="a4-h3 pcmp-section-title">
                     {if $section.language}<code>{$section.title|wash}</code>{else}{$section.title|wash}{/if}
                     {if $section.state|eq('package')}<span class="pcmp-state pcmp-state-package_only">{'Translation only in the package'|i18n('design/admin/package')}</span>
                     {elseif $section.state|eq('site')}<span class="pcmp-state pcmp-state-site_only">{'Translation only on the site'|i18n('design/admin/package')}</span>{/if}
@@ -226,7 +226,7 @@
 
             {if $detail.placement}
             <div class="pcmp-section">
-                <h3 class="pcmp-section-title">{'Placement'|i18n('design/admin/package')}
+                <h3 class="a4-h3 pcmp-section-title">{'Placement'|i18n('design/admin/package')}
                     {if $detail.placement.changed}<span class="pcmp-state pcmp-state-changed">{'Changed'|i18n('design/admin/package')}</span>{/if}
                 </h3>
                 <div class="pcmp-sides">

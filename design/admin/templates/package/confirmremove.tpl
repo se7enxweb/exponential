@@ -5,7 +5,6 @@
    need their own tick before Remove does anything. Selected values that cannot be removed are listed with the
    reason. Remove posts ConfirmRemovePackageButton with the same PackageSelection[] values; the view removes only
    what this page offered. Guide: doc/guides/packages.md *}
-{include uri='design:package/exp_style.tpl'}
 
 {def $plan = $remove_plan
      $reason_labels = hash( 'vendor_repository', "It is in the setup wizard's repository, which the published packages are built from."|i18n( 'design/admin/package/list' ),
@@ -17,7 +16,7 @@
                              'policy', 'you are not allowed to remove packages of its type'|i18n( 'design/admin/package/list' ),
                              'links', 'its directory contains links, and removing it could delete files elsewhere; remove it on the server'|i18n( 'design/admin/package/list' ) )}
 
-<div class="context-block exp-packages">
+<div class="context-block a4-page">
 
 <div class="box-header"><div class="box-ml">
 <h1 class="context-title">{'Remove packages?'|i18n( 'design/admin/package/list' )}</h1>
@@ -28,44 +27,44 @@
 <form name="packageremove" method="post" action={cond( $repository_id|ne( '' ), concat( '/package/list/', $repository_id ), '/package/list' )|ezurl}>
 
 {if eq( $remove_problem, 'installer_source' )}
-<div class="exp-feedback is-bad" role="alert">{'Nothing was removed: tick the box under the list to confirm that installer sources are to be removed too.'|i18n( 'design/admin/package/list' )}</div>
+<div class="a4-notice is-bad" role="alert">{'Nothing was removed: tick the box under the list to confirm that installer sources are to be removed too.'|i18n( 'design/admin/package/list' )}</div>
 {elseif eq( $remove_problem, 'not_offered' )}
-<div class="exp-feedback is-bad" role="alert">{'Nothing was removed: the removal was not confirmed on this page. Check the list and confirm again.'|i18n( 'design/admin/package/list' )}</div>
+<div class="a4-notice is-bad" role="alert">{'Nothing was removed: the removal was not confirmed on this page. Check the list and confirm again.'|i18n( 'design/admin/package/list' )}</div>
 {/if}
 
 {if $plan.items|count|gt( 0 )}
-<p class="exp-intro">{'The directories below are deleted from the package storage with every file in them. This cannot be undone: download a package first to keep a copy. Removing a package does not uninstall it: the classes, content and files it installed stay on the site; only the record that it is installed goes.'|i18n( 'design/admin/package/list' )}</p>
+<p class="a4-intro">{'The directories below are deleted from the package storage with every file in them. This cannot be undone: download a package first to keep a copy. Removing a package does not uninstall it: the classes, content and files it installed stay on the site; only the record that it is installed goes.'|i18n( 'design/admin/package/list' )}</p>
 
-<ul class="exp-figures">
-    <li class="exp-figure"><strong>{$plan.items|count}</strong><span>{'Packages'|i18n( 'design/admin/package/list' )}</span></li>
-    <li class="exp-figure"><strong>{$plan.bytes|si( byte )}</strong><span>{'%count files'|i18n( 'design/admin/package/list',, hash( '%count', $plan.files ) )}</span></li>
-    <li class="exp-figure"><strong>{$plan.installed}</strong><span>{'Installed'|i18n( 'design/admin/package/list' )}</span></li>
-    <li class="exp-figure{if $plan.installer_sources|gt( 0 )} is-attention{/if}"><strong>{$plan.installer_sources}</strong><span>{'Installer sources'|i18n( 'design/admin/package/list' )}</span></li>
-    <li class="exp-figure{if $plan.required_elsewhere|gt( 0 )} is-attention{/if}"><strong>{$plan.required_elsewhere}</strong><span>{'Required by packages that stay'|i18n( 'design/admin/package/list' )}</span></li>
+<ul class="a4-figures">
+    <li class="a4-figure"><strong>{$plan.items|count}</strong><span>{'Packages'|i18n( 'design/admin/package/list' )}</span></li>
+    <li class="a4-figure"><strong>{$plan.bytes|si( byte )}</strong><span>{'%count files'|i18n( 'design/admin/package/list',, hash( '%count', $plan.files ) )}</span></li>
+    <li class="a4-figure"><strong>{$plan.installed}</strong><span>{'Installed'|i18n( 'design/admin/package/list' )}</span></li>
+    <li class="a4-figure{if $plan.installer_sources|gt( 0 )} is-attention{/if}"><strong>{$plan.installer_sources}</strong><span>{'Installer sources'|i18n( 'design/admin/package/list' )}</span></li>
+    <li class="a4-figure{if $plan.required_elsewhere|gt( 0 )} is-attention{/if}"><strong>{$plan.required_elsewhere}</strong><span>{'Required by packages that stay'|i18n( 'design/admin/package/list' )}</span></li>
 </ul>
 
-<h2 class="exp-h2">{'What goes'|i18n( 'design/admin/package/list' )}</h2>
-<ul class="exp-goes">
+<h2 class="a4-h2">{'What goes'|i18n( 'design/admin/package/list' )}</h2>
+<ul class="a4-package-goes">
 {foreach $plan.items as $item}
-<li class="exp-pkg{if $item.installer_source} is-source{/if}">
+<li class="a4-card{if $item.installer_source} is-info{/if}">
     <input type="hidden" name="PackageSelection[]" value="{$item.value|wash}" />
-    <div class="exp-pkg-title">
-        <h3>{$item.name|wash}</h3>
-        {if $item.version|ne( '' )}<span class="exp-version">{$item.version|wash}</span>{/if}
-        <ul class="exp-badges">
-            {if $item.type|ne( '' )}<li class="exp-badge">{$item.type|wash}</li>{/if}
-            {if $item.installed}<li class="exp-badge is-ok">{'Installed'|i18n( 'design/admin/package/list' )}</li>{/if}
-            {if $item.installer_source}<li class="exp-badge is-bad">{'Installer source'|i18n( 'design/admin/package/list' )}</li>{/if}
+    <div class="a4-card-title">
+        <h3 class="a4-h3">{$item.name|wash}</h3>
+        {if $item.version|ne( '' )}<span class="a4-kbd">{$item.version|wash}</span>{/if}
+        <ul class="a4-badges">
+            {if $item.type|ne( '' )}<li class="a4-badge">{$item.type|wash}</li>{/if}
+            {if $item.installed}<li class="a4-badge is-ok">{'Installed'|i18n( 'design/admin/package/list' )}</li>{/if}
+            {if $item.installer_source}<li class="a4-badge is-bad">{'Installer source'|i18n( 'design/admin/package/list' )}</li>{/if}
         </ul>
     </div>
-    {if $item.summary|ne( '' )}<p class="exp-pkg-summary">{$item.summary|wash}</p>{/if}
-    <dl class="exp-facts">
+    {if $item.summary|ne( '' )}<p class="a4-package-pkg-summary">{$item.summary|wash}</p>{/if}
+    <dl class="a4-facts">
         <div><dt>{'Directory'|i18n( 'design/admin/package/list' )}</dt><dd><code>{$item.path|wash}</code></dd></div>
         <div><dt>{'Size'|i18n( 'design/admin/package/list' )}</dt><dd>{$item.bytes|si( byte )}, {'%count files'|i18n( 'design/admin/package/list',, hash( '%count', $item.files ) )}</dd></div>
         <div><dt>{'Required by'|i18n( 'design/admin/package/list' )}</dt><dd>{if $item.required_by|count|eq( 0 )}{'No package'|i18n( 'design/admin/package/list' )}{else}{$item.required_by|implode( ', ' )|wash}{/if}</dd></div>
     </dl>
     {if or( $item.installer_source, $item.installed, $item.required_by|count|gt( 0 ) )}
-    <ul class="exp-reasons">
+    <ul class="">
         {foreach $item.installer_reasons as $reason}<li><strong>{'Installer source:'|i18n( 'design/admin/package/list' )}</strong> {$reason_labels[$reason]|wash} {'A new installation or a published package built without it will lack it.'|i18n( 'design/admin/package/list' )}</li>{/foreach}
         {if $item.installed}<li>{'It is installed here. What it installed stays; the site will no longer know which package it came from, and it cannot be uninstalled from here afterwards.'|i18n( 'design/admin/package/list' )}</li>{/if}
         {if $item.required_by|count|gt( 0 )}<li>{'%names require it and will miss it when they are installed.'|i18n( 'design/admin/package/list',, hash( '%names', $item.required_by|implode( ', ' ) ) )|wash}</li>{/if}
@@ -77,7 +76,7 @@
 {/if}
 
 {if $plan.refused|count|gt( 0 )}
-<div class="exp-feedback is-warn" role="status">
+<div class="a4-notice is-warn" role="status">
     <p><strong>{'These cannot be removed and stay:'|i18n( 'design/admin/package/list' )}</strong></p>
     <ul>
     {foreach $plan.refused as $refused}
@@ -87,19 +86,19 @@
 </div>
 {/if}
 
-<div class="exp-bottombar">
+<div class="a4-toolbar is-bottom">
     {if $plan.items|count|gt( 0 )}
     {if $plan.installer_sources|gt( 0 )}
-    <label class="exp-confirm-tick"><input type="checkbox" name="ConfirmInstallerSourceRemoval" value="1" /> {'I understand that %count installer source(s) will be deleted, and that new installations and published packages depend on them.'|i18n( 'design/admin/package/list',, hash( '%count', $plan.installer_sources ) )}</label>
+    <label class="a4-package-confirm-tick"><input type="checkbox" name="ConfirmInstallerSourceRemoval" value="1" /> {'I understand that %count installer source(s) will be deleted, and that new installations and published packages depend on them.'|i18n( 'design/admin/package/list',, hash( '%count', $plan.installer_sources ) )}</label>
     {/if}
-    <div class="exp-actions">
-        <button type="submit" class="exp-btn exp-btn-danger" name="ConfirmRemovePackageButton" value="1">{'Remove %count package(s)'|i18n( 'design/admin/package/list',, hash( '%count', $plan.items|count ) )}</button>
-        <button type="submit" class="exp-btn" name="CancelRemovePackageButton" value="1">{'Cancel'|i18n( 'design/admin/package/list' )}</button>
+    <div class="a4-actions">
+        <button type="submit" class="a4-btn a4-btn-danger" name="ConfirmRemovePackageButton" value="1">{'Remove %count package(s)'|i18n( 'design/admin/package/list',, hash( '%count', $plan.items|count ) )}</button>
+        <button type="submit" class="a4-btn" name="CancelRemovePackageButton" value="1">{'Cancel'|i18n( 'design/admin/package/list' )}</button>
     </div>
     {else}
-    <p class="exp-meta">{'Nothing selected can be removed.'|i18n( 'design/admin/package/list' )}</p>
-    <div class="exp-actions">
-        <button type="submit" class="exp-btn exp-btn-primary" name="CancelRemovePackageButton" value="1">{'Back to the packages'|i18n( 'design/admin/package/list' )}</button>
+    <p class="a4-meta">{'Nothing selected can be removed.'|i18n( 'design/admin/package/list' )}</p>
+    <div class="a4-actions">
+        <button type="submit" class="a4-btn a4-btn-primary" name="CancelRemovePackageButton" value="1">{'Back to the packages'|i18n( 'design/admin/package/list' )}</button>
     </div>
     {/if}
 </div>

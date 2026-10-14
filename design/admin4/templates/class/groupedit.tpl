@@ -4,38 +4,37 @@
    back to the page the form was opened from. This is an edit view, which admin4 draws without its main card;
    .exp-standalone gives the page its own. The same file is in design/admin and design/admin4.
    Guide: doc/guides/class-groups.md *}
-{include uri='design:class/exp_style.tpl'}
 
-<form name="GroupEdit" method="post" action={concat( $module.functions.groupedit.uri, '/', $classgroup.id )|ezurl} class="exp-lists exp-classgroups exp-standalone">
+<form name="GroupEdit" method="post" action={concat( $module.functions.groupedit.uri, '/', $classgroup.id )|ezurl} class="a4-page exp-classgroups a4-standalone">
 
 <div class="context-block">
 <div class="box-header"><div class="box-ml">
-<div class="exp-title-row">
+<div class="a4-title-row">
 <h1 class="context-title">{$classgroup.name|wash|classgroup_icon( normal, $classgroup.name|wash )}&nbsp;{'Edit <%group_name> [Class group]'|i18n( 'design/admin/class/groupedit',, hash( '%group_name', $classgroup.name ) )|wash}</h1>
-<span class="exp-meta">{'ID %id'|i18n( 'design/admin/class/grouplist',, hash( '%id', $classgroup.id ) )}</span>
+<span class="a4-meta">{'ID %id'|i18n( 'design/admin/class/grouplist',, hash( '%id', $classgroup.id ) )}</span>
 </div>
 </div></div>
 
 <div class="box-bc"><div class="box-ml"><div class="box-content">
 
-<p class="exp-intro">{'A class group files classes so they are easy to find. Its name is shown on Setup > Classes and in the class lists; renaming it changes nothing for the classes or their objects.'|i18n( 'design/admin/class/groupedit' )}</p>
+<p class="a4-intro">{'A class group files classes so they are easy to find. Its name is shown on Setup > Classes and in the class lists; renaming it changes nothing for the classes or their objects.'|i18n( 'design/admin/class/groupedit' )}</p>
 
-<div class="exp-panel">
-<div class="exp-form-fields">
-    <div class="exp-field">
+<div class="a4-card">
+<div class="a4-form">
+    <div class="a4-field">
         <label for="classGroupName">{'Name'|i18n( 'design/admin/class/groupedit' )}</label>
         <input id="classGroupName" type="text" name="Group_name" value="{$classgroup.name|wash}" maxlength="255" aria-describedby="classGroupName-help" />
-        <span class="exp-help" id="classGroupName-help">{'For example Content, Media or Users.'|i18n( 'design/admin/class/groupedit' )}</span>
+        <span class="a4-help" id="classGroupName-help">{'For example Content, Media or Users.'|i18n( 'design/admin/class/groupedit' )}</span>
     </div>
 </div>
 </div>
 
-<div class="exp-bottombar">
-    <div class="exp-actions">
-        <button class="exp-btn exp-btn-primary" type="submit" name="StoreButton" value="1">{'OK'|i18n( 'design/admin/class/groupedit' )}</button>
-        <button class="exp-btn" type="submit" name="DiscardButton" value="1">{'Cancel'|i18n( 'design/admin/class/groupedit' )}</button>
+<div class="a4-toolbar is-bottom">
+    <div class="a4-actions">
+        <button class="a4-btn a4-btn-primary" type="submit" name="StoreButton" value="1">{'OK'|i18n( 'design/admin/class/groupedit' )}</button>
+        <button class="a4-btn" type="submit" name="DiscardButton" value="1">{'Cancel'|i18n( 'design/admin/class/groupedit' )}</button>
     </div>
-    <p class="exp-meta">{'Cancel goes back without saving.'|i18n( 'design/admin/class/groupedit' )}</p>
+    <p class="a4-meta">{'Cancel goes back without saving.'|i18n( 'design/admin/class/groupedit' )}</p>
 </div>
 
 </div></div></div>

@@ -3,7 +3,7 @@
    Variable: refusal (what: policy, save, assign or copy; grants: the refused policies in words). Every text is
    escaped. The same file is in design/admin and design/admin4. Guide: doc/guides/roles-and-policies.md *}
 {if $refusal}
-<div class="exp-feedback is-bad" role="alert" id="role-grant-refused">
+<div class="a4-notice is-bad" role="alert" id="role-grant-refused">
     <p><strong>{switch match=$refusal.what}
         {case match='save'}{'The role was not saved.'|i18n( 'design/admin/role/grant' )}{/case}
         {case match='assign'}{'The role was not assigned.'|i18n( 'design/admin/role/grant' )}{/case}

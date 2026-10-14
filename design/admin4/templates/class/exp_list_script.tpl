@@ -26,13 +26,13 @@ var expListText = {ldelim}
         for ( key in values || {} ) s = s.split( '%' + key ).join( values[key] );
         return s;
     }
-    each( '.exp-lists .exp-js-only', function ( el ) { el.hidden = false; } );
+    each( '.a4-page .exp-js-only', function ( el ) { el.hidden = false; } );
 
-    var searchEl = document.querySelector( '.exp-lists input[type="search"]' );
-    var countEl = document.querySelector( '.exp-lists .exp-filter-count' );
+    var searchEl = document.querySelector( '.a4-page input[type="search"]' );
+    var countEl = document.querySelector( '.a4-page .a4-filter-count' );
 
     function chosen() {
-        var picked = document.querySelector( '.exp-lists input[data-filter]:checked' );
+        var picked = document.querySelector( '.a4-page input[data-filter]:checked' );
         return picked ? picked.value : '';
     }
 
@@ -41,7 +41,7 @@ var expListText = {ldelim}
         var words = searchEl ? searchEl.value.toLowerCase().split( /\s+/ ).filter( Boolean ) : [];
         var state = chosen(), shown = 0, total = 0;
         var negate = state.charAt( 0 ) === '!', flag = negate ? state.slice( 1 ) : state;
-        each( '.exp-lists [data-list]', function ( list ) {
+        each( '.a4-page [data-list]', function ( list ) {
             var listShown = 0;
             each( ':scope > [data-search]', function ( card ) {
                 total++;
@@ -54,14 +54,14 @@ var expListText = {ldelim}
             var noMatch = list.nextElementSibling;
             if ( noMatch && noMatch.classList.contains( 'exp-no-match' ) ) noMatch.hidden = listShown !== 0;
         } );
-        each( '.exp-lists .exp-no-match[data-global]', function ( el ) { el.hidden = shown !== 0; } );
+        each( '.a4-page .exp-no-match[data-global]', function ( el ) { el.hidden = shown !== 0; } );
         if ( countEl ) countEl.textContent = shown === total ? tr( 'allShown', { count: total } ) : tr( 'shown', { shown: shown, count: total } );
         updateSelection();
     }
 
     // The selection: a count beside the remove button, and a tick for every card shown.
     function updateSelection() {
-        each( '.exp-lists [data-select-all]', function ( all ) {
+        each( '.a4-page [data-select-all]', function ( all ) {
             var name = all.getAttribute( 'data-select-all' ), visible = 0, ticked = 0;
             var form = all.form || document;
             each( 'input[type="checkbox"]', function ( box ) {
@@ -73,7 +73,7 @@ var expListText = {ldelim}
             all.checked = visible > 0 && ticked === visible;
             all.indeterminate = ticked > 0 && ticked < visible;
         } );
-        each( '.exp-lists .exp-selected-count', function ( out ) {
+        each( '.a4-page .exp-selected-count', function ( out ) {
             var name = out.getAttribute( 'data-for' ), n = 0;
             var form = out.closest( 'form' ) || document;
             each( 'input[type="checkbox"]', function ( box ) { if ( box.name === name && box.checked ) n++; }, form );
@@ -81,7 +81,7 @@ var expListText = {ldelim}
         } );
     }
 
-    each( '.exp-lists [data-select-all]', function ( all ) {
+    each( '.a4-page [data-select-all]', function ( all ) {
         all.addEventListener( 'change', function () {
             var name = all.getAttribute( 'data-select-all' );
             each( 'input[type="checkbox"]', function ( box ) {
@@ -92,9 +92,9 @@ var expListText = {ldelim}
             updateSelection();
         } );
     } );
-    each( '.exp-lists [data-list]', function ( list ) { list.addEventListener( 'change', updateSelection ); } );
+    each( '.a4-page [data-list]', function ( list ) { list.addEventListener( 'change', updateSelection ); } );
     if ( searchEl ) searchEl.addEventListener( 'input', applyFilter );
-    each( '.exp-lists input[data-filter]', function ( radio ) { radio.addEventListener( 'change', applyFilter ); } );
+    each( '.a4-page input[data-filter]', function ( radio ) { radio.addEventListener( 'change', applyFilter ); } );
     applyFilter();
 })();
 {/literal}

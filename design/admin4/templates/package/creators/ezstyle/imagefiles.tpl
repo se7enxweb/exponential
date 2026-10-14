@@ -14,7 +14,7 @@ Click "Next" without choosing an image to continue to the next step.'|i18n('desi
 
     {section show=$persistent_data.imagefiles}
     <div class="files">
-        <h3>{'Currently added image files'|i18n('design/admin/package')}</h3>
+        <h3 class="a4-h3">{'Currently added image files'|i18n('design/admin/package')}</h3>
         <ul>
             {section var=imagefile loop=$persistent_data.imagefiles}
             <li>{$imagefile.filename|wash}</li>

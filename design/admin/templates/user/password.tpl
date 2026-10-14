@@ -19,47 +19,8 @@
 {/if}
 {if and( $message, $changed|not, $summary|count|eq( 0 ), $oldPasswordNotValid|not, $newPasswordNotMatch|not, $newPasswordTooShort|not, is_unset( $password_changed ) )}{set $changed = true()}{/if}
 
-<style type="text/css">
-{literal}
-.expw [hidden] { display: none !important; }
-.expw .block label.expw-label { display: block; font-weight: bold; margin: 0 0 .25em; }
-.expw-input { position: relative; display: flex; max-width: 28em; }
-.expw-input input { flex: 1 1 auto; min-width: 0; width: 100%; box-sizing: border-box; padding: .35em .5em; font-size: 1.05em; border: 1px solid #767676; }
-.exp-pw-js .expw-input input { padding-right: 5.5em; }
-.expw-invalid .expw-input input { border: 2px solid #b00020; }
-.expw-toggle { position: absolute; top: 2px; right: 2px; bottom: 2px; padding: 0 .6em; border: 1px solid transparent; background: #f1f1f1; color: #222; cursor: pointer; font-weight: bold; }
-.expw-toggle[aria-pressed="true"] { background: #dcdcdc; border-color: #888; }
-.expw-error { margin: .3em 0 0; color: #b00020; font-weight: bold; }
-.expw-error span { display: block; }
-.expw-rules-title { margin: .6em 0 .2em; color: #444; }
-.expw-rules { margin: 0; padding: 0; list-style: none; }
-.expw-rules li { margin: .15em 0; padding: 0 0 0 1.5em; position: relative; background: none; }
-.expw-rules li::before { content: "\25CB"; position: absolute; left: .2em; color: #555; }
-.expw-rules li[data-state="met"] { color: #1b5e20; }
-.expw-rules li[data-state="met"]::before { content: "\2713"; color: #1b5e20; font-weight: bold; }
-.expw-invalid .expw-rules li[data-state="unmet"] { color: #b00020; }
-.expw-invalid .expw-rules li[data-state="unmet"]::before { content: "\2717"; color: #b00020; }
-.expw-rules li[data-failed="true"]:not([data-state="met"]) { color: #b00020; font-weight: bold; }
-.expw-rules li[data-failed="true"]:not([data-state="met"])::before { content: "\2717"; color: #b00020; }
-.expw input.defaultbutton { background-color: #4f716d; color: #fff; }
-.expw input.defaultbutton:hover, .expw input.defaultbutton:focus { background-color: #425c59; color: #fff; }
-.expw-sr { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-.expw-meter { margin: .4em 0 0; color: #444; }
-.expw-meter[data-score=""] b { visibility: hidden; }
-.expw .block label.expw-label, .expw-summary, .expw-rules li { overflow-wrap: anywhere; }
-.expw-meter meter { width: 10em; height: .8em; vertical-align: middle; }
-.expw-match { margin: .3em 0 0; font-weight: bold; color: #444; }
-.expw-match[data-state="match"] { color: #1b5e20; }
-.expw-link { padding: 0; border: 0; background: none; color: #0b57a4; text-decoration: underline; cursor: pointer; font: inherit; }
-.expw-summary { margin: 0 0 1em; padding: .6em 1em; border: 2px solid #b00020; background: #fdecee; color: #6d0012; }
-.expw-summary h2 { margin: 0 0 .3em; font-size: 1.1em; color: #6d0012; }
-.expw-summary ul { margin: 0 0 0 1.3em; padding: 0; }
-.expw-summary a { color: #6d0012; text-decoration: underline; font-weight: bold; }
-.expw-username { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); border: 0; padding: 0; opacity: 0; }
-{/literal}
-</style>
 
-<div class="expw">
+<div class="a4-user-pw">
 {if $changed}
 <div class="message-feedback" role="status" tabindex="-1" autofocus>
     <h2>{'Your password was changed.'|i18n( $ctx )}</h2>
@@ -72,7 +33,7 @@
 {else}
 
 {if $summary|count}
-<div class="expw-summary" id="password-error-summary" role="alert" tabindex="-1" aria-labelledby="password-error-summary-title" data-exp-password-summary autofocus>
+<div class="a4-user-pw-summary" id="password-error-summary" role="alert" tabindex="-1" aria-labelledby="password-error-summary-title" data-exp-password-summary autofocus>
     <h2 id="password-error-summary-title">{'The password could not be changed.'|i18n( $ctx )}</h2>
     <ul>
 {foreach $summary as $e}
@@ -99,7 +60,7 @@
 
 <div class="context-attributes">
 
-<input type="text" class="expw-username" name="expwUsername" value="{$userAccount.login|wash}" autocomplete="username" readonly tabindex="-1" aria-hidden="true" />
+<input type="text" class="a4-user-pw-username" name="expwUsername" value="{$userAccount.login|wash}" autocomplete="username" readonly tabindex="-1" aria-hidden="true" />
 
 {* Username. *}
 <div class="block">
@@ -108,46 +69,46 @@
 </div>
 
 {* Current password. *}
-<div class="block{if $errors.oldPassword|count} expw-invalid{/if}">
-<label class="expw-label" for="{$ids.oldPassword}">{'Current password'|i18n( $ctx )}</label>
-<div class="expw-input">
+<div class="block{if $errors.oldPassword|count} a4-user-pw-invalid{/if}">
+<label class="a4-user-pw-label" for="{$ids.oldPassword}">{'Current password'|i18n( $ctx )}</label>
+<div class="a4-user-pw-input">
 <input id="{$ids.oldPassword}" type="password" name="oldPassword" value="" autocomplete="current-password" spellcheck="false" autocapitalize="off" data-exp-password="current"{if $errors.oldPassword|count} aria-invalid="true" aria-describedby="{$ids.oldPassword}-error"{/if}{if $summary|count|eq( 0 )} autofocus{/if} />
-<button type="button" class="expw-toggle" data-exp-password-toggle="{$ids.oldPassword}" aria-controls="{$ids.oldPassword}" aria-pressed="false" hidden><span data-exp-password-toggle-text>{'Show'|i18n( $ctx )}</span></button>
+<button type="button" class="a4-user-pw-toggle" data-exp-password-toggle="{$ids.oldPassword}" aria-controls="{$ids.oldPassword}" aria-pressed="false" hidden><span data-exp-password-toggle-text>{'Show'|i18n( $ctx )}</span></button>
 </div>
-{if $errors.oldPassword|count}<p class="expw-error" id="{$ids.oldPassword}-error">{foreach $errors.oldPassword as $t}<span>{$t|wash}</span>{/foreach}</p>{/if}
+{if $errors.oldPassword|count}<p class="a4-user-pw-error" id="{$ids.oldPassword}-error">{foreach $errors.oldPassword as $t}<span>{$t|wash}</span>{/foreach}</p>{/if}
 </div>
 
 {* New password. *}
-<div class="block{if $errors.newPassword|count} expw-invalid{/if}">
-<label class="expw-label" for="{$ids.newPassword}">{'New password'|i18n( $ctx )}</label>
-<div class="expw-input">
+<div class="block{if $errors.newPassword|count} a4-user-pw-invalid{/if}">
+<label class="a4-user-pw-label" for="{$ids.newPassword}">{'New password'|i18n( $ctx )}</label>
+<div class="a4-user-pw-input">
 <input id="{$ids.newPassword}" type="password" name="newPassword" value="" autocomplete="new-password" spellcheck="false" autocapitalize="off" minlength="{first_set( $min_length, ezini( 'UserSettings', 'MinPasswordLength' ) )}" data-exp-password="new" aria-describedby="{if $errors.newPassword|count}{$ids.newPassword}-error {/if}password-new-rules"{if $errors.newPassword|count} aria-invalid="true"{/if} />
-<button type="button" class="expw-toggle" data-exp-password-toggle="{$ids.newPassword}" aria-controls="{$ids.newPassword}" aria-pressed="false" hidden><span data-exp-password-toggle-text>{'Show'|i18n( $ctx )}</span></button>
+<button type="button" class="a4-user-pw-toggle" data-exp-password-toggle="{$ids.newPassword}" aria-controls="{$ids.newPassword}" aria-pressed="false" hidden><span data-exp-password-toggle-text>{'Show'|i18n( $ctx )}</span></button>
 </div>
-{if $errors.newPassword|count}<p class="expw-error" id="{$ids.newPassword}-error">{foreach $errors.newPassword as $t}<span>{$t|wash}</span>{/foreach}</p>{/if}
-<p class="expw-meter" data-exp-password-meter aria-live="polite" hidden>{'Strength'|i18n( $ctx )}: <meter min="0" max="5" low="2" high="4" optimum="5" value="0" aria-hidden="true"></meter> <b data-exp-password-meter-text></b></p>
-<p class="expw-rules-title" id="password-new-rules-title">{'Your new password needs'|i18n( $ctx )}</p>
-<ul class="expw-rules" id="password-new-rules" aria-labelledby="password-new-rules-title" data-exp-password-rules>
+{if $errors.newPassword|count}<p class="a4-user-pw-error" id="{$ids.newPassword}-error">{foreach $errors.newPassword as $t}<span>{$t|wash}</span>{/foreach}</p>{/if}
+<p class="a4-user-pw-meter" data-exp-password-meter aria-live="polite" hidden>{'Strength'|i18n( $ctx )}: <meter min="0" max="5" low="2" high="4" optimum="5" value="0" aria-hidden="true"></meter> <b data-exp-password-meter-text></b></p>
+<p class="a4-user-pw-rules-title" id="password-new-rules-title">{'Your new password needs'|i18n( $ctx )}</p>
+<ul class="a4-user-pw-rules" id="password-new-rules" aria-labelledby="password-new-rules-title" data-exp-password-rules>
 {if $rules|count}
 {foreach $rules as $r}
-<li data-exp-password-rule="{$r.id|wash}"{if $r.failed} data-state="unmet" data-failed="true"{/if}>{$r.text|wash}<span class="expw-sr" data-exp-password-rule-state>{if $r.failed}{'not met'|i18n( $ctx )}{/if}</span></li>
+<li data-exp-password-rule="{$r.id|wash}"{if $r.failed} data-state="unmet" data-failed="true"{/if}>{$r.text|wash}<span class="a4-sr-only" data-exp-password-rule-state>{if $r.failed}{'not met'|i18n( $ctx )}{/if}</span></li>
 {/foreach}
 {else}
-<li data-exp-password-rule="length">{'At least %1 characters'|i18n( $ctx, '', array( ezini( 'UserSettings', 'MinPasswordLength' ) ) )}<span class="expw-sr" data-exp-password-rule-state></span></li>
+<li data-exp-password-rule="length">{'At least %1 characters'|i18n( $ctx, '', array( ezini( 'UserSettings', 'MinPasswordLength' ) ) )}<span class="a4-sr-only" data-exp-password-rule-state></span></li>
 {/if}
 </ul>
-<p><button type="button" class="expw-link" data-exp-password-generate hidden>{'Generate a strong password'|i18n( $ctx )}</button></p>
+<p><button type="button" class="a4-user-pw-link" data-exp-password-generate hidden>{'Generate a strong password'|i18n( $ctx )}</button></p>
 </div>
 
 {* Confirm new password. *}
-<div class="block{if $errors.confirmPassword|count} expw-invalid{/if}">
-<label class="expw-label" for="{$ids.confirmPassword}">{'Confirm new password'|i18n( $ctx )}</label>
-<div class="expw-input">
+<div class="block{if $errors.confirmPassword|count} a4-user-pw-invalid{/if}">
+<label class="a4-user-pw-label" for="{$ids.confirmPassword}">{'Confirm new password'|i18n( $ctx )}</label>
+<div class="a4-user-pw-input">
 <input id="{$ids.confirmPassword}" type="password" name="confirmPassword" value="" autocomplete="new-password" spellcheck="false" autocapitalize="off" data-exp-password="confirm"{if $errors.confirmPassword|count} aria-invalid="true" aria-describedby="{$ids.confirmPassword}-error"{/if} />
-<button type="button" class="expw-toggle" data-exp-password-toggle="{$ids.confirmPassword}" aria-controls="{$ids.confirmPassword}" aria-pressed="false" hidden><span data-exp-password-toggle-text>{'Show'|i18n( $ctx )}</span></button>
+<button type="button" class="a4-user-pw-toggle" data-exp-password-toggle="{$ids.confirmPassword}" aria-controls="{$ids.confirmPassword}" aria-pressed="false" hidden><span data-exp-password-toggle-text>{'Show'|i18n( $ctx )}</span></button>
 </div>
-{if $errors.confirmPassword|count}<p class="expw-error" id="{$ids.confirmPassword}-error">{foreach $errors.confirmPassword as $t}<span>{$t|wash}</span>{/foreach}</p>{/if}
-<p class="expw-match" data-exp-password-match aria-live="polite" hidden></p>
+{if $errors.confirmPassword|count}<p class="a4-user-pw-error" id="{$ids.confirmPassword}-error">{foreach $errors.confirmPassword as $t}<span>{$t|wash}</span>{/foreach}</p>{/if}
+<p class="a4-user-pw-match" data-exp-password-match aria-live="polite" hidden></p>
 </div>
 
 <p data-exp-password-status aria-live="polite" hidden></p>

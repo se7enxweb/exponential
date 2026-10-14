@@ -55,7 +55,7 @@
 
     {if and( ezini_hasvariable( 'Session', 'RememberMeTimeout' ), ezini( 'Session', 'RememberMeTimeout' ) )}
         <div class="block login-text-wrapper">
-            <input type="checkbox" name="Cookie" id="id3" /><label for="id3" style="display:inline;">{"Remember me"|i18n("design/admin/user/login")}</label>
+            <input type="checkbox" name="Cookie" id="id3" /><label for="id3" class="a4-user-inline-label">{"Remember me"|i18n("design/admin/user/login")}</label>
         </div>
     {/if}
 

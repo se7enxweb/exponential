@@ -2,9 +2,8 @@
    at all (2), or because the user may not assign this section (3).
 
    The same file is in design/admin and design/admin4. Guide: doc/guides/sections.md *}
-{include uri='design:section/exp_style.tpl'}
 
-<div class="context-block exp-sections">
+<div class="context-block a4-page">
 
 <div class="box-header"><div class="box-ml">
 <h1 class="context-title">{'Assign section notification'|i18n( 'design/admin/section/assign_notification' )}</h1>
@@ -12,7 +11,7 @@
 
 <div class="box-bc"><div class="box-ml"><div class="box-content">
 
-<div class="exp-feedback is-warn" role="alert">
+<div class="a4-notice is-warn" role="alert">
 {switch match=$error_number}
 {case match=1}
     <p><strong>{"The section < %1 > was not assigned to the nodes listed below because of insufficient permission:"|i18n( 'design/admin/section/assign_notification', '', hash( '%1', $section_name ) )|wash}</strong></p>
@@ -35,11 +34,11 @@
 </div>
 
 <form action={"/section/list"|ezurl} method="post">
-<div class="exp-bottombar">
-    <div class="exp-actions">
-        <button class="exp-btn exp-btn-primary" type="submit">{'OK'|i18n( 'design/admin/section/assign_notification' )}</button>
+<div class="a4-toolbar is-bottom">
+    <div class="a4-actions">
+        <button class="a4-btn a4-btn-primary" type="submit">{'OK'|i18n( 'design/admin/section/assign_notification' )}</button>
     </div>
-    <p class="exp-meta">{'Back to the section list.'|i18n( 'design/admin/section/assign_notification' )}</p>
+    <p class="a4-meta">{'Back to the section list.'|i18n( 'design/admin/section/assign_notification' )}</p>
 </div>
 </form>
 

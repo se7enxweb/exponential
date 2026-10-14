@@ -40,24 +40,6 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
      * Templates still being moved to the stylesheets. This list only shrinks; it is empty when the work is done.
      */
     const ALLOWLIST = array(
-        'design/admin/templates/class/exp_style.tpl',
-        'design/admin/templates/package/exp_style.tpl',
-        'design/admin/templates/pdf/exp_style.tpl',
-        'design/admin/templates/role/exp_style.tpl',
-        'design/admin/templates/rss/exp_style.tpl',
-        'design/admin/templates/section/exp_style.tpl',
-        'design/admin/templates/state/style.tpl',
-        'design/admin/templates/user/exp_style.tpl',
-        'design/admin4/templates/class/exp_style.tpl',
-        'design/admin4/templates/collaboration/parts/style.tpl',
-        'design/admin4/templates/notification/parts/style.tpl',
-        'design/admin4/templates/package/exp_style.tpl',
-        'design/admin4/templates/pdf/exp_style.tpl',
-        'design/admin4/templates/role/exp_style.tpl',
-        'design/admin4/templates/rss/exp_style.tpl',
-        'design/admin4/templates/section/exp_style.tpl',
-        'design/admin4/templates/state/style.tpl',
-        'design/admin4/templates/user/exp_style.tpl',
     );
 
     /**

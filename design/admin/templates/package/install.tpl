@@ -4,23 +4,22 @@
    What the install meets here ($conflict_report, by remote id) and the option to install the content objects as
    drafts (AsDrafts, DraftsExisting); after an install as drafts $drafts_result lists the drafts.
    Format reference: doc/bc/6.0/package-json-format.md *}
-{include uri='design:package/exp_style.tpl'}
 <form method="post" action={concat( 'package/install/', $package.name )|ezurl}>
 
-<div class="context-block exp-packages exp-standalone">
+<div class="context-block a4-page a4-standalone">
 
 <div class="box-header"><div class="box-ml">
-<div class="exp-title-row">
+<div class="a4-title-row">
     <h1 class="context-title">{if is_set( $background_job )}{'Install in the background'|i18n('design/admin/package')}{elseif is_set( $drafts_result )}{'Installed as drafts'|i18n('design/admin/package')}{else}{'Install package'|i18n('design/admin/package')}{/if}</h1>
-    <span class="exp-title-key">{$package.name|wash}</span>
-    <span class="exp-version">{$package.version-number|wash}-{$package.release-number|wash}</span>
-    {if $package.format|eq( 'json' )}<span class="exp-version">JSON</span>{/if}
+    <span class="a4-muted">{$package.name|wash}</span>
+    <span class="a4-kbd">{$package.version-number|wash}-{$package.release-number|wash}</span>
+    {if $package.format|eq( 'json' )}<span class="a4-kbd">JSON</span>{/if}
 </div>
 </div></div>
 
 <div class="box-ml"><div class="box-mr"><div class="box-content">
 
-    <p class="exp-meta install-wizard-links">
+    <p class="a4-meta install-wizard-links">
         <a href={concat( 'package/view/full/', $package.name )|ezurl}>&laquo; {'Back to the package'|i18n('design/admin/package')}</a>
         &middot; <a href={'package/list'|ezurl}>{'Package list'|i18n('design/admin/package')}</a>
     </p>
@@ -33,18 +32,18 @@
 
 {if is_set( $background_job )}
     {if $background_job}
-    <div class="exp-feedback is-ok" role="status" data-background-job="{$background_job.id|wash}">{'The install runs in the background: %description. The package page and the job page show its progress; nothing waits for this page.'|i18n('design/admin/package',, hash( '%description', $background_job.description ))}</div>
-    <p><a class="exp-btn exp-btn-primary" href={concat( 'package/view/full/', $package.name )|ezurl}>{'Progress on the package page'|i18n('design/admin/package')}</a>
-       <a class="exp-btn" href={concat( 'content/job/', $background_job.id )|ezurl}>{'Job page'|i18n('design/admin/package')}</a></p>
+    <div class="a4-notice is-ok" role="status" data-background-job="{$background_job.id|wash}">{'The install runs in the background: %description. The package page and the job page show its progress; nothing waits for this page.'|i18n('design/admin/package',, hash( '%description', $background_job.description ))}</div>
+    <p><a class="a4-btn a4-btn-primary" href={concat( 'package/view/full/', $package.name )|ezurl}>{'Progress on the package page'|i18n('design/admin/package')}</a>
+       <a class="a4-btn" href={concat( 'content/job/', $background_job.id )|ezurl}>{'Job page'|i18n('design/admin/package')}</a></p>
     {else}
-    <div class="exp-feedback is-bad" role="alert">{'The background install could not be started: %error'|i18n('design/admin/package',, hash( '%error', $background_error ))}</div>
+    <div class="a4-notice is-bad" role="alert">{'The background install could not be started: %error'|i18n('design/admin/package',, hash( '%error', $background_error ))}</div>
     {/if}
 {elseif is_set( $drafts_result )}
 
-    <div class="exp-feedback is-ok" role="status">{'%count drafts were written. Nothing was published: review each draft and publish it, or remove it.'|i18n('design/admin/package',, hash( '%count', $drafts_result.drafts|count ))}</div>
+    <div class="a4-notice is-ok" role="status">{'%count drafts were written. Nothing was published: review each draft and publish it, or remove it.'|i18n('design/admin/package',, hash( '%count', $drafts_result.drafts|count ))}</div>
     {if $drafts_result.drafts|count}
-    <div class="exp-table-wrap">
-    <table class="exp-table">
+    <div class="a4-table-wrap">
+    <table class="a4-table">
         <tr><th>{'Draft'|i18n('design/admin/package')}</th><th>{'Remote ID'|i18n('design/admin/package')}</th><th>{'What'|i18n('design/admin/package')}</th></tr>
         {foreach $drafts_result.drafts as $draft}
         <tr>
@@ -62,33 +61,33 @@
     </div>
     {/if}
     {if $drafts_result.waiting|count}
-    <div class="exp-feedback is-warn" role="note">
+    <div class="a4-notice is-warn" role="note">
         <p>{'%count drafts wait for a parent that is a draft of this package too. Publish the parent, then install the package as drafts again to give them their place.'|i18n('design/admin/package',, hash( '%count', $drafts_result.waiting|count ))}</p>
     </div>
     {/if}
     {if $drafts_result.skipped|count}
-    <div class="exp-panel">
-    <h2 class="exp-h2">{'Not installed'|i18n('design/admin/package')} ({$drafts_result.skipped|count})</h2>
-    <p class="exp-muted">{'As drafts only content objects are written. These items change the site at once and were left out; install the package normally to install them.'|i18n('design/admin/package')}</p>
-    <ul class="exp-changelog">
+    <div class="a4-card">
+    <h2 class="a4-h2">{'Not installed'|i18n('design/admin/package')} ({$drafts_result.skipped|count})</h2>
+    <p class="a4-muted">{'As drafts only content objects are written. These items change the site at once and were left out; install the package normally to install them.'|i18n('design/admin/package')}</p>
+    <ul class="a4-package-changelog">
     {foreach $drafts_result.skipped as $item}<li>{$item.type|wash} {$item.name|wash}</li>{/foreach}
     </ul>
     </div>
     {/if}
 {else}
-    <p class="exp-intro">{'The package can be installed on your system. Installing the package will copy files, create content classes etc., depending on the package.
+    <p class="a4-intro">{'The package can be installed on your system. Installing the package will copy files, create content classes etc., depending on the package.
 If you do not want to install the package at this time, you can do so later on the view page for the package.'|i18n('design/admin/package')|break}</p>
 
     {if $package.is_installed}
-    <div class="exp-feedback is-warn" role="note">{'This package is installed already. Installing it again repeats every item below; content it creates is created again.'|i18n('design/admin/package')}</div>
+    <div class="a4-notice is-warn" role="note">{'This package is installed already. Installing it again repeats every item below; content it creates is created again.'|i18n('design/admin/package')}</div>
     {/if}
 
-    <div class="exp-panel">
-    <h2 class="exp-h2">{'Install items'|i18n('design/admin/package')} ({$install_elements|count})</h2>
+    <div class="a4-card">
+    <h2 class="a4-h2">{'Install items'|i18n('design/admin/package')} ({$install_elements|count})</h2>
     {if $install_elements|count|eq( 0 )}
-    <p class="exp-muted">{'This package has no install items.'|i18n('design/admin/package')}</p>
+    <p class="a4-muted">{'This package has no install items.'|i18n('design/admin/package')}</p>
     {else}
-    <ul class="exp-changelog">
+    <ul class="a4-package-changelog">
     {section var=install loop=$install_elements}
         <li>{$install.description|wash}</li>
     {/section}
@@ -97,16 +96,16 @@ If you do not want to install the package at this time, you can do so later on t
     </div>
 
     {if and( is_set( $conflict_report ), $conflict_report.object_total|gt( 0 ) )}
-    <div class="exp-panel">
-    <h2 class="exp-h2">{'What the install meets here'|i18n('design/admin/package')}</h2>
-    <p class="exp-meta">{'%total content objects, by remote ID: %create new, %update existing (updated, or a new draft), %conflict conflicts, %error without their class.'|i18n('design/admin/package',, hash( '%total', $conflict_report.object_total, '%create', $conflict_report.counts.create, '%update', $conflict_report.counts.update, '%conflict', $conflict_report.counts.conflict, '%error', $conflict_report.counts.error ))}</p>
+    <div class="a4-card">
+    <h2 class="a4-h2">{'What the install meets here'|i18n('design/admin/package')}</h2>
+    <p class="a4-meta">{'%total content objects, by remote ID: %create new, %update existing (updated, or a new draft), %conflict conflicts, %error without their class.'|i18n('design/admin/package',, hash( '%total', $conflict_report.object_total, '%create', $conflict_report.counts.create, '%update', $conflict_report.counts.update, '%conflict', $conflict_report.counts.conflict, '%error', $conflict_report.counts.error ))}</p>
     {if is_set( $conflict_report.parents )}
-    <p class="exp-meta" data-report="parents">{'Locations: %top at the top (below the node you choose next), %installed below a node that is here, %in_package below a node of the package, %missing below a node that is neither (they wait or are left out).'|i18n('design/admin/package',, hash( '%top', $conflict_report.parents.top, '%installed', $conflict_report.parents.installed, '%in_package', $conflict_report.parents.in_package, '%missing', $conflict_report.parents.missing ))}</p>
+    <p class="a4-meta" data-report="parents">{'Locations: %top at the top (below the node you choose next), %installed below a node that is here, %in_package below a node of the package, %missing below a node that is neither (they wait or are left out).'|i18n('design/admin/package',, hash( '%top', $conflict_report.parents.top, '%installed', $conflict_report.parents.installed, '%in_package', $conflict_report.parents.in_package, '%missing', $conflict_report.parents.missing ))}</p>
     {/if}
     {* every object of the package (the first 50; the counts above cover all): what the install does with it, and
        where its main location goes *}
-    <div class="exp-table-wrap">
-    <table class="exp-table" data-report="objects">
+    <div class="a4-table-wrap">
+    <table class="a4-table" data-report="objects">
         <tr><th>{'Remote ID'|i18n('design/admin/package')}</th><th>{'Name'|i18n('design/admin/package')}</th><th>{'Class'|i18n('design/admin/package')}</th><th>{'Here'|i18n('design/admin/package')}</th><th>{'Parent'|i18n('design/admin/package')}</th></tr>
         {foreach $conflict_report.objects as $row max 50}
         <tr data-action="{$row.action|wash}">
@@ -133,11 +132,11 @@ If you do not want to install the package at this time, you can do so later on t
     </div>
     {/if}
 
-    <div class="exp-panel">
-    <h2 class="exp-h2">{'Install as drafts'|i18n('design/admin/package')}</h2>
+    <div class="a4-card">
+    <h2 class="a4-h2">{'Install as drafts'|i18n('design/admin/package')}</h2>
     <p><label><input type="checkbox" name="AsDrafts" value="1" /> {'Install the content objects as drafts'|i18n('design/admin/package')}</label></p>
-    <p class="exp-muted">{'Nothing is published and no published object is changed: each draft is reviewed and published by a person. Classes, settings, design files and extensions are not installed.'|i18n('design/admin/package')}</p>
-    <p class="exp-meta"><label>{'An object that exists already'|i18n('design/admin/package')}:
+    <p class="a4-muted">{'Nothing is published and no published object is changed: each draft is reviewed and published by a person. Classes, settings, design files and extensions are not installed.'|i18n('design/admin/package')}</p>
+    <p class="a4-meta"><label>{'An object that exists already'|i18n('design/admin/package')}:
         <select name="DraftsExisting">
             <option value="update">{'gets a new draft'|i18n('design/admin/package')}</option>
             <option value="skip">{'is left alone'|i18n('design/admin/package')}</option>
@@ -145,31 +144,31 @@ If you do not want to install the package at this time, you can do so later on t
     </div>
 
     {if first_set( $background_available, false() )}
-    <div class="exp-panel">
-    <h2 class="exp-h2">{'Install in the background'|i18n('design/admin/package')}</h2>
+    <div class="a4-card">
+    <h2 class="a4-h2">{'Install in the background'|i18n('design/admin/package')}</h2>
     <p><label><input type="checkbox" name="Background" value="1"{if first_set( $background_suggested, false() )} checked="checked"{/if} /> {'Install in the background'|i18n('design/admin/package')}</label></p>
-    <p class="exp-muted">{'The next steps ask the same questions; then a background job installs the package, as you, and this page does not wait for it. The package page shows its progress. Suggested for a package with more than %limit content objects.'|i18n('design/admin/package',, hash( '%limit', ezini( 'ContentJobSettings', 'SynchronousLimit', 'content.ini' ) ))}</p>
+    <p class="a4-muted">{'The next steps ask the same questions; then a background job installs the package, as you, and this page does not wait for it. The package page shows its progress. Suggested for a package with more than %limit content objects.'|i18n('design/admin/package',, hash( '%limit', ezini( 'ContentJobSettings', 'SynchronousLimit', 'content.ini' ) ))}</p>
     </div>
     {/if}
 {/if}
 
 </div></div></div>
 
-<div class="exp-bottombar">
+<div class="a4-toolbar is-bottom">
 {if is_set( $background_job )}
-    <div class="exp-actions">
-        <a class="exp-btn" href={concat( 'package/view/full/', $package.name )|ezurl}>{'Back to the package'|i18n('design/admin/package')}</a>
+    <div class="a4-actions">
+        <a class="a4-btn" href={concat( 'package/view/full/', $package.name )|ezurl}>{'Back to the package'|i18n('design/admin/package')}</a>
     </div>
 {elseif is_set( $drafts_result )}
-    <div class="exp-actions">
-        <a class="exp-btn exp-btn-primary" href={'content/draft'|ezurl}>{'My drafts'|i18n('design/admin/package')}</a>
-        <a class="exp-btn" href={concat( 'package/view/full/', $package.name )|ezurl}>{'Back to the package'|i18n('design/admin/package')}</a>
+    <div class="a4-actions">
+        <a class="a4-btn a4-btn-primary" href={'content/draft'|ezurl}>{'My drafts'|i18n('design/admin/package')}</a>
+        <a class="a4-btn" href={concat( 'package/view/full/', $package.name )|ezurl}>{'Back to the package'|i18n('design/admin/package')}</a>
     </div>
 {else}
-    <p class="exp-meta">{'Each item is installed in turn; a step may ask how to handle a conflict.'|i18n('design/admin/package')}</p>
-    <div class="exp-actions">
-        <button class="exp-btn exp-btn-primary" type="submit" name="InstallPackageButton" value="1">{'Install package'|i18n('design/admin/package')}</button>
-        <button class="exp-btn" type="submit" name="SkipPackageButton" value="1">{'Skip installation'|i18n('design/admin/package')}</button>
+    <p class="a4-meta">{'Each item is installed in turn; a step may ask how to handle a conflict.'|i18n('design/admin/package')}</p>
+    <div class="a4-actions">
+        <button class="a4-btn a4-btn-primary" type="submit" name="InstallPackageButton" value="1">{'Install package'|i18n('design/admin/package')}</button>
+        <button class="a4-btn" type="submit" name="SkipPackageButton" value="1">{'Skip installation'|i18n('design/admin/package')}</button>
     </div>
 {/if}
 </div>

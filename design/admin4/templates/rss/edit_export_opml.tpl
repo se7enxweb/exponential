@@ -35,19 +35,19 @@
 <input class="halfbox" type="text" id="opmlDocs" name="OPMLHead_docs" value="{$opml_head.docs|wash}" title="{'Where the format this document follows is written down.'|i18n( 'design/admin/rss/edit_export' )}" />
 </div>
 
-<div class="block opml-window">
+<div class="block a4-rss-opml-window">
 <label class="inline">{'Outliner state'|i18n( 'design/admin/rss/edit_export' )}:</label>
-<span class="opml-window-field"><label for="opmlExpansionState">{'expansionState'|i18n( 'design/admin/rss/edit_export' )}</label>
+<span class="a4-rss-opml-window-field"><label for="opmlExpansionState">{'expansionState'|i18n( 'design/admin/rss/edit_export' )}</label>
 <input type="text" id="opmlExpansionState" name="OPMLHead_expansionState" value="{$opml_head.expansionState|wash}" size="12" /></span>
-<span class="opml-window-field"><label for="opmlVertScrollState">{'vertScrollState'|i18n( 'design/admin/rss/edit_export' )}</label>
+<span class="a4-rss-opml-window-field"><label for="opmlVertScrollState">{'vertScrollState'|i18n( 'design/admin/rss/edit_export' )}</label>
 <input type="text" id="opmlVertScrollState" name="OPMLHead_vertScrollState" value="{$opml_head.vertScrollState|wash}" size="6" /></span>
-<span class="opml-window-field"><label for="opmlWindowTop">{'top'|i18n( 'design/admin/rss/edit_export' )}</label>
+<span class="a4-rss-opml-window-field"><label for="opmlWindowTop">{'top'|i18n( 'design/admin/rss/edit_export' )}</label>
 <input type="text" id="opmlWindowTop" name="OPMLHead_windowTop" value="{$opml_head.windowTop|wash}" size="5" /></span>
-<span class="opml-window-field"><label for="opmlWindowLeft">{'left'|i18n( 'design/admin/rss/edit_export' )}</label>
+<span class="a4-rss-opml-window-field"><label for="opmlWindowLeft">{'left'|i18n( 'design/admin/rss/edit_export' )}</label>
 <input type="text" id="opmlWindowLeft" name="OPMLHead_windowLeft" value="{$opml_head.windowLeft|wash}" size="5" /></span>
-<span class="opml-window-field"><label for="opmlWindowBottom">{'bottom'|i18n( 'design/admin/rss/edit_export' )}</label>
+<span class="a4-rss-opml-window-field"><label for="opmlWindowBottom">{'bottom'|i18n( 'design/admin/rss/edit_export' )}</label>
 <input type="text" id="opmlWindowBottom" name="OPMLHead_windowBottom" value="{$opml_head.windowBottom|wash}" size="5" /></span>
-<span class="opml-window-field"><label for="opmlWindowRight">{'right'|i18n( 'design/admin/rss/edit_export' )}</label>
+<span class="a4-rss-opml-window-field"><label for="opmlWindowRight">{'right'|i18n( 'design/admin/rss/edit_export' )}</label>
 <input type="text" id="opmlWindowRight" name="OPMLHead_windowRight" value="{$opml_head.windowRight|wash}" size="5" /></span>
 <div class="context-attributes"><p>{'Where an outliner last had this list open on screen. Readers that do not keep window state ignore them.'|i18n( 'design/admin/rss/edit_export' )}</p></div>
 </div>
@@ -60,7 +60,7 @@
 <legend>{'Feeds in this document'|i18n( 'design/admin/rss/edit_export' )} ({$opml_items|count})</legend>
 
 {if $opml_items|count|gt( 0 )}
-<div class="opml-outlines-wrap"><table class="list opml-outlines" cellspacing="0">
+<div class="a4-rss-opml-outlines-wrap"><table class="list a4-rss-opml-outlines" cellspacing="0">
 <tr>
     <th class="tight">&nbsp;</th>
     <th class="tight">{'Order'|i18n( 'design/admin/rss/edit_export' )}</th>
@@ -84,11 +84,11 @@
     <td>
     {if $opml_item.target}
         <a href={concat( 'rss/edit_export/', $opml_item.target.id )|ezurl}>{$opml_item.target.title|wash}</a>
-        <span class="opml-meta">{$opml_item.target.rss_version|wash} &middot; <code>{$opml_item.target.access_url|wash}</code></span>
+        <span class="a4-rss-opml-meta">{$opml_item.target.rss_version|wash} &middot; <code>{$opml_item.target.access_url|wash}</code></span>
     {elseif $opml_item.target_gone}
-        <span class="opml-gone">{'The feed this pointed at has been deleted.'|i18n( 'design/admin/rss/edit_export' )}</span>
+        <span class="a4-rss-opml-gone">{'The feed this pointed at has been deleted.'|i18n( 'design/admin/rss/edit_export' )}</span>
     {elseif $opml_item.source_node}
-        <span class="opml-meta">{$opml_item.source_path|wash}</span>
+        <span class="a4-rss-opml-meta">{$opml_item.source_path|wash}</span>
         <button type="submit" class="button" name="ClearOPMLNode" value="{$opml_item.id}">{'Clear'|i18n( 'design/admin/rss/edit_export' )}</button>
     {else}
         <button type="submit" class="button" name="BrowseOPMLNode" value="{$opml_item.id}" title="{'Point this outline at a content node instead of a feed.'|i18n( 'design/admin/rss/edit_export' )}">{'Browse content'|i18n( 'design/admin/rss/edit_export' )}</button>
@@ -109,10 +109,10 @@
 </tr>
 <tr class="{$opml_seq}">
     <td>&nbsp;</td>
-    <td colspan="6" class="opml-more">
+    <td colspan="6" class="a4-rss-opml-more">
     <details>
         <summary>{'Everything else OPML lets this line carry'|i18n( 'design/admin/rss/edit_export' )}</summary>
-        <div class="opml-more-grid">
+        <div class="a4-rss-opml-more-grid">
             <span><label for="opmlTitle{$opml_item.id}">{'title'|i18n( 'design/admin/rss/edit_export' )}</label>
             <input type="text" id="opmlTitle{$opml_item.id}" name="OPMLItem_Title[{$opml_item.id}]" value="{$opml_item.title|wash}" size="24" /></span>
 
@@ -131,7 +131,7 @@
             <span><label for="opmlUrl{$opml_item.id}">{'url'|i18n( 'design/admin/rss/edit_export' )}</label>
             <input type="text" id="opmlUrl{$opml_item.id}" name="OPMLItem_Url[{$opml_item.id}]" value="{$opml_item.url|wash}" size="34" title="{'Used by the link and include types.'|i18n( 'design/admin/rss/edit_export' )}" /></span>
 
-            <span class="opml-more-flags">
+            <span class="a4-rss-opml-more-flags">
             <label><input type="checkbox" name="OPMLItem_IsComment[{$opml_item.id}]" {if $opml_item.is_comment|eq( 1 )}checked="checked"{/if} /> {'isComment'|i18n( 'design/admin/rss/edit_export' )}</label>
             <label><input type="checkbox" name="OPMLItem_IsBreakpoint[{$opml_item.id}]" {if $opml_item.is_breakpoint|eq( 1 )}checked="checked"{/if} /> {'isBreakpoint'|i18n( 'design/admin/rss/edit_export' )}</label>
             <label><input type="checkbox" name="OPMLItem_Subnodes[{$opml_item.id}]" {if $opml_item.subnodes|eq( 1 )}checked="checked"{/if} /> {'include subnodes'|i18n( 'design/admin/rss/edit_export' )}</label>
@@ -146,7 +146,7 @@
 <div class="block"><p>{'Nothing is listed yet. Find feeds below and add them.'|i18n( 'design/admin/rss/edit_export' )}</p></div>
 {/if}
 
-<div class="block opml-actions">
+<div class="block a4-rss-opml-actions">
     <input class="button" type="submit" name="RemoveOPMLItemsButton" value="{'Remove selected'|i18n( 'design/admin/rss/edit_export' )}" title="{'Take the ticked outlines out of the document.'|i18n( 'design/admin/rss/edit_export' )}" />
     <input class="button" type="submit" name="AddOPMLGroupButton" value="{'Add group'|i18n( 'design/admin/rss/edit_export' )}" title="{'Add a folder that other outlines can sit inside. OPML nests outlines, and readers show that nesting as groups.'|i18n( 'design/admin/rss/edit_export' )}" />
 </div>
@@ -162,7 +162,7 @@
 <input type="hidden" name="FeedBrowserSort" value="{$opml_browser_pager.sort.field|wash}" />
 <input type="hidden" name="FeedBrowserDir" value="{$opml_browser_pager.sort.direction|wash}" />
 
-<div class="block opml-browser-controls">
+<div class="block a4-rss-opml-browser-controls">
     <label for="feedBrowserSearch">{'Search'|i18n( 'design/admin/rss/edit_export' )}:</label>
     <input type="text" id="feedBrowserSearch" name="FeedBrowserSearch" value="{$opml_browser_search|wash}" size="24" title="{'Looks in the name, the address and the description.'|i18n( 'design/admin/rss/edit_export' )}" />
     <label for="feedBrowserLimit">{'Per page'|i18n( 'design/admin/rss/edit_export' )}:</label>
@@ -172,11 +172,11 @@
     {/foreach}
     </select>
     <button type="submit" class="button" name="FeedBrowserApply" value="1" id="feedBrowserApply">{'Apply'|i18n( 'design/admin/rss/edit_export' )}</button>
-    <span class="opml-meta">{'Showing %from to %to of %count'|i18n( 'design/admin/rss/edit_export',, hash( '%from', $opml_browser_pager.from, '%to', $opml_browser_pager.to, '%count', $opml_browser_pager.count ) )}</span>
+    <span class="a4-rss-opml-meta">{'Showing %from to %to of %count'|i18n( 'design/admin/rss/edit_export',, hash( '%from', $opml_browser_pager.from, '%to', $opml_browser_pager.to, '%count', $opml_browser_pager.count ) )}</span>
 </div>
 
 {if $opml_browser_list|count|gt( 0 )}
-<div class="opml-browser-wrap"><table class="list opml-browser" cellspacing="0">
+<div class="a4-rss-opml-browser-wrap"><table class="list a4-rss-opml-browser" cellspacing="0">
 <tr>
     <th class="tight">&nbsp;</th>
     {include uri='design:rss/sortbutton.tpl' key='id'          label='ID'|i18n( 'design/admin/rss/edit_export' )       sort=$opml_browser_pager.sort}
@@ -187,20 +187,20 @@
     {include uri='design:rss/sortbutton.tpl' key='modified'    label='Modified'|i18n( 'design/admin/rss/edit_export' ) sort=$opml_browser_pager.sort}
 </tr>
 {foreach $opml_browser_list as $opml_candidate sequence array( bglight, bgdark ) as $opml_candidate_seq}
-<tr class="{$opml_candidate_seq}{if $opml_candidate.selected} opml-already{/if}">
-    <td>{if $opml_candidate.selected}<span class="opml-tick" title="{'Already in this document.'|i18n( 'design/admin/rss/edit_export' )}">&#10003;</span>{else}<input type="checkbox" name="FeedBrowserSelect[]" value="{$opml_candidate.id}" />{/if}</td>
-    <td class="tight opml-meta">{$opml_candidate.id}</td>
+<tr class="{$opml_candidate_seq}{if $opml_candidate.selected} a4-rss-opml-already{/if}">
+    <td>{if $opml_candidate.selected}<span class="a4-rss-opml-tick" title="{'Already in this document.'|i18n( 'design/admin/rss/edit_export' )}">&#10003;</span>{else}<input type="checkbox" name="FeedBrowserSelect[]" value="{$opml_candidate.id}" />{/if}</td>
+    <td class="tight a4-rss-opml-meta">{$opml_candidate.id}</td>
     <td>{$opml_candidate.title|wash}</td>
     <td><code>{$opml_candidate.access_url|wash}</code></td>
     <td>{$opml_candidate.rss_version|wash}</td>
     <td>{if $opml_candidate.active|eq( 1 )}{'Active'|i18n( 'design/admin/rss/edit_export' )}{else}{'Inactive'|i18n( 'design/admin/rss/edit_export' )}{/if}</td>
-    <td class="opml-meta">{$opml_candidate.modified|l10n( shortdatetime )}</td>
+    <td class="a4-rss-opml-meta">{$opml_candidate.modified|l10n( shortdatetime )}</td>
 </tr>
 {/foreach}
 </table></div>
 
 {if $opml_browser_pager.needed}
-<div class="block opml-browser-pages">
+<div class="block a4-rss-opml-browser-pages">
     {if $opml_browser_pager.has_previous}
     <button type="submit" class="button" name="FeedBrowserSetOffset" value="{$opml_browser_pager.first}">&laquo;</button>
     <button type="submit" class="button" name="FeedBrowserSetOffset" value="{$opml_browser_pager.previous}">&lsaquo;</button>
@@ -213,11 +213,11 @@
     <button type="submit" class="button" name="FeedBrowserSetOffset" value="{$opml_browser_pager.next}">&rsaquo;</button>
     <button type="submit" class="button" name="FeedBrowserSetOffset" value="{$opml_browser_pager.last}">&raquo;</button>
     {/if}
-    <span class="opml-meta">{'Page %page of %pages'|i18n( 'design/admin/rss/edit_export',, hash( '%page', $opml_browser_pager.page, '%pages', $opml_browser_pager.page_count ) )}</span>
+    <span class="a4-rss-opml-meta">{'Page %page of %pages'|i18n( 'design/admin/rss/edit_export',, hash( '%page', $opml_browser_pager.page, '%pages', $opml_browser_pager.page_count ) )}</span>
 </div>
 {/if}
 
-<div class="block opml-actions">
+<div class="block a4-rss-opml-actions">
     <input class="defaultbutton" type="submit" name="AddFeedsButton" value="{'Add selected feeds'|i18n( 'design/admin/rss/edit_export' )}" title="{'Add the ticked feeds to this document.'|i18n( 'design/admin/rss/edit_export' )}" />
 </div>
 {else}

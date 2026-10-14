@@ -2,8 +2,8 @@
    a link that stores the user preference it always stored (admin_navigation_class_groups,
    admin_navigation_class_temlates, admin_navigation_class_translations). The same file is in design/admin and
    design/admin4. *}
-<nav class="exp-panel exp-windows" aria-label="{'Show on this page'|i18n( 'design/admin/class/view' )}">
-<p class="exp-sortby">
+<nav class="a4-card a4-class-windows" aria-label="{'Show on this page'|i18n( 'design/admin/class/view' )}">
+<p class="a4-tabs">
     <span>{'Show on this page'|i18n( 'design/admin/class/view' )}:</span>
     {if ezpreference( 'admin_navigation_class_groups' )}
     <a class="current" aria-pressed="true" href={'/user/preferences/set/admin_navigation_class_groups/0'|ezurl} title="{'Hide class groups.'|i18n( 'design/admin/class/view' )}">{'Class groups'|i18n( 'design/admin/class/view' )}</a>

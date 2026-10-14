@@ -11,35 +11,35 @@ var expPdfListText = {ldelim} selected: '{$text_selected|wash( javascript )}' {r
         var nodes = ( root || document ).querySelectorAll( selector ), i;
         for ( i = 0; i < nodes.length; i++ ) fn( nodes[i] );
     }
-    each( '.exp-lists .exp-js-only', function ( el ) { el.hidden = false; } );
+    each( '.a4-page .exp-js-only', function ( el ) { el.hidden = false; } );
 
     function update() {
-        each( '.exp-lists [data-select-all]', function ( all ) {
+        each( '.a4-page [data-select-all]', function ( all ) {
             var name = all.getAttribute( 'data-select-all' ), total = 0, ticked = 0;
             each( 'input[type="checkbox"]', function ( box ) {
                 if ( box.name !== name ) return;
                 total++;
                 if ( box.checked ) ticked++;
-                var card = box.closest( '.exp-sec' );
+                var card = box.closest( '.a4-card' );
                 if ( card ) card.classList.toggle( 'is-selected', box.checked );
             }, all.form || document );
             all.checked = total > 0 && ticked === total;
             all.indeterminate = ticked > 0 && ticked < total;
         } );
-        each( '.exp-lists .exp-selected-count', function ( out ) {
+        each( '.a4-page .exp-selected-count', function ( out ) {
             var name = out.getAttribute( 'data-for' ), n = 0;
             each( 'input[type="checkbox"]', function ( box ) { if ( box.name === name && box.checked ) n++; }, out.closest( 'form' ) || document );
             out.textContent = n ? expPdfListText.selected.split( '%count' ).join( n ) : '';
         } );
     }
-    each( '.exp-lists [data-select-all]', function ( all ) {
+    each( '.a4-page [data-select-all]', function ( all ) {
         all.addEventListener( 'change', function () {
             var name = all.getAttribute( 'data-select-all' );
             each( 'input[type="checkbox"]', function ( box ) { if ( box.name === name ) box.checked = all.checked; }, all.form || document );
             update();
         } );
     } );
-    each( '.exp-lists [data-list]', function ( list ) { list.addEventListener( 'change', update ); } );
+    each( '.a4-page [data-list]', function ( list ) { list.addEventListener( 'change', update ); } );
     update();
 })();
 {/literal}

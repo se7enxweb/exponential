@@ -1,12 +1,11 @@
 {* The notification status (admin4): for administrators. Variables from notification/status: status (expNotificationService::status()),
    problems, notice, missing_rules, recent_subscriptions, recent_total, events, job_available, job_error. *}
-{include uri='design:notification/parts/style.tpl'}
 
-<div class="nf" id="exp-notify-status">
+<div class="a4-page" id="exp-notify-status">
 
-    <div class="nf-head">
+    <div class="a4-notification-head">
         <div>
-            <p class="nf-crumb"><a href={'notification/settings'|ezurl}>{'My notification settings'|i18n( 'design/admin/notification/status' )}</a></p>
+            <p class="a4-notification-crumb"><a href={'notification/settings'|ezurl}>{'My notification settings'|i18n( 'design/admin/notification/status' )}</a></p>
             <h1>{'Notification status'|i18n( 'design/admin/notification/status' )}</h1>
             <p>{'Events wait here until the notification cronjob handles them: it sends the messages, or keeps them for a digest. This page shows what waits, what was sent and what looks wrong.'|i18n( 'design/admin/notification/status' )}</p>
         </div>
@@ -15,68 +14,68 @@
     {include uri='design:notification/parts/notice.tpl' notice=first_set( $notice, false() )}
 
 {if $problems|count|gt( 0 )}
-    <ul class="nf-problems">
+    <ul class="a4-plain a4-stack">
     {foreach $problems as $problem}
-        <li class="{$problem.level|wash}"><b>{if $problem.level|eq( 'error' )}{'Problem'|i18n( 'design/admin/notification/status' )}{elseif $problem.level|eq( 'warning' )}{'Attention'|i18n( 'design/admin/notification/status' )}{else}{'Note'|i18n( 'design/admin/notification/status' )}{/if}:</b> {$problem.text|wash}</li>
+        <li class="a4-notice {if eq( $problem.level, 'error' )}is-bad{elseif eq( $problem.level, 'warning' )}is-warn{else}is-info{/if}"><b>{if $problem.level|eq( 'error' )}{'Problem'|i18n( 'design/admin/notification/status' )}{elseif $problem.level|eq( 'warning' )}{'Attention'|i18n( 'design/admin/notification/status' )}{else}{'Note'|i18n( 'design/admin/notification/status' )}{/if}:</b> {$problem.text|wash}</li>
     {/foreach}
     </ul>
 {else}
-    <div class="nf-notice nf-notice-success" role="status"><p>{'Nothing looks wrong.'|i18n( 'design/admin/notification/status' )}</p></div>
+    <div class="a4-notice is-ok" role="status"><p>{'Nothing looks wrong.'|i18n( 'design/admin/notification/status' )}</p></div>
 {/if}
 
-    <ul class="nf-stats">
-        <li><div class="nf-stat{if $status.pending_total|gt( 0 )} hot{/if}"><strong>{$status.pending_total}</strong><span>{'Events waiting to be handled'|i18n( 'design/admin/notification/status' )}</span></div></li>
-        <li><div class="nf-stat"><strong>{$status.items_digest}</strong><span>{'Messages kept for a digest'|i18n( 'design/admin/notification/status' )}{if $status.items_due|gt( 0 )} ({$status.items_due} {'due'|i18n( 'design/admin/notification/status' )}){/if}</span></div></li>
-        <li><div class="nf-stat"><strong>{$status.subscriptions}</strong><span>{'Subscriptions by %users users'|i18n( 'design/admin/notification/status',, hash( '%users', $status.subscribers ) )}</span></div></li>
-        <li><div class="nf-stat"><strong>{$status.sent_24h.mails}</strong><span>{'Messages to %count recipients, last 24 hours'|i18n( 'design/admin/notification/status',, hash( '%count', $status.sent_24h.recipients ) )}</span></div></li>
-        <li><div class="nf-stat{if and( $status.last_run, $status.last_run.result|ne( 'ok' ) )} bad{/if}"><strong>{if $status.last_run}{$status.last_run.time|l10n( 'shortdatetime' )}{else}&mdash;{/if}</strong><span>{'Last run'|i18n( 'design/admin/notification/status' )}{if $status.last_run} ({$status.last_run.source|wash}){/if}</span></div></li>
+    <ul class="a4-figures">
+        <li><div class="a4-figure{if $status.pending_total|gt( 0 )} is-attention{/if}"><strong>{$status.pending_total}</strong><span>{'Events waiting to be handled'|i18n( 'design/admin/notification/status' )}</span></div></li>
+        <li><div class="a4-figure"><strong>{$status.items_digest}</strong><span>{'Messages kept for a digest'|i18n( 'design/admin/notification/status' )}{if $status.items_due|gt( 0 )} ({$status.items_due} {'due'|i18n( 'design/admin/notification/status' )}){/if}</span></div></li>
+        <li><div class="a4-figure"><strong>{$status.subscriptions}</strong><span>{'Subscriptions by %users users'|i18n( 'design/admin/notification/status',, hash( '%users', $status.subscribers ) )}</span></div></li>
+        <li><div class="a4-figure"><strong>{$status.sent_24h.mails}</strong><span>{'Messages to %count recipients, last 24 hours'|i18n( 'design/admin/notification/status',, hash( '%count', $status.sent_24h.recipients ) )}</span></div></li>
+        <li><div class="a4-figure{if and( $status.last_run, $status.last_run.result|ne( 'ok' ) )} is-bad{/if}"><strong>{if $status.last_run}{$status.last_run.time|l10n( 'shortdatetime' )}{else}&mdash;{/if}</strong><span>{'Last run'|i18n( 'design/admin/notification/status' )}{if $status.last_run} ({$status.last_run.source|wash}){/if}</span></div></li>
     </ul>
 
-    <section class="nf-card" id="nf-run">
-        <h2>{'Run the notifications'|i18n( 'design/admin/notification/status' )}</h2>
-        <p class="nf-lead">{'The notification cronjob does this on a schedule (part frequent, or php runcronjobs.php notification). Run now starts the same pass in the background; Preview lists what would be sent and changes nothing.'|i18n( 'design/admin/notification/status' )}</p>
+    <section class="a4-card a4-stack" id="nf-run">
+        <h2 class="a4-h2">{'Run the notifications'|i18n( 'design/admin/notification/status' )}</h2>
+        <p class="a4-help">{'The notification cronjob does this on a schedule (part frequent, or php runcronjobs.php notification). Run now starts the same pass in the background; Preview lists what would be sent and changes nothing.'|i18n( 'design/admin/notification/status' )}</p>
 {if $status.running}
-        <div class="nf-notice nf-notice-info" role="status"><p>{'A run is in progress (process %pid, since %time).'|i18n( 'design/admin/notification/status',, hash( '%pid', $status.running.pid, '%time', $status.running.since|l10n( 'shortdatetime' ) ) )}</p></div>
+        <div class="a4-notice is-info" role="status"><p>{'A run is in progress (process %pid, since %time).'|i18n( 'design/admin/notification/status',, hash( '%pid', $status.running.pid, '%time', $status.running.since|l10n( 'shortdatetime' ) ) )}</p></div>
 {/if}
 {if $job_available|not}
-        <div class="nf-notice nf-notice-warning" role="status"><p>{'Run now needs a background process: %reason'|i18n( 'design/admin/notification/status',, hash( '%reason', $job_error ) )|wash} {'Use the console: ./console exp:notification:run'|i18n( 'design/admin/notification/status' )}</p></div>
+        <div class="a4-notice is-warn" role="status"><p>{'Run now needs a background process: %reason'|i18n( 'design/admin/notification/status',, hash( '%reason', $job_error ) )|wash} {'Use the console: ./console exp:notification:run'|i18n( 'design/admin/notification/status' )}</p></div>
 {/if}
-        <div class="nf-actions">
-            <button type="button" class="nf-btn primary" id="nf-run-now"{if $job_available|not} disabled="disabled"{/if}>{'Run now'|i18n( 'design/admin/notification/status' )}</button>
-            <button type="button" class="nf-btn" id="nf-run-dry"{if $job_available|not} disabled="disabled"{/if}>{'Preview (dry run)'|i18n( 'design/admin/notification/status' )}</button>
+        <div class="a4-actions">
+            <button type="button" class="a4-btn a4-btn-primary" id="nf-run-now"{if $job_available|not} disabled="disabled"{/if}>{'Run now'|i18n( 'design/admin/notification/status' )}</button>
+            <button type="button" class="a4-btn" id="nf-run-dry"{if $job_available|not} disabled="disabled"{/if}>{'Preview (dry run)'|i18n( 'design/admin/notification/status' )}</button>
         </div>
-        <p class="nf-hint" id="nf-run-state" role="status" aria-live="polite"></p>
-        <pre class="nf-console" id="nf-console" hidden="hidden"></pre>
-        <form method="post" action={'notification/runfilter'|ezurl} class="nf-hint">
+        <p class="a4-help" id="nf-run-state" role="status" aria-live="polite"></p>
+        <pre class="a4-pre" id="nf-console" hidden="hidden"></pre>
+        <form method="post" action={'notification/runfilter'|ezurl} class="a4-help">
             {'Without JavaScript:'|i18n( 'design/admin/notification/status' )}
-            <input class="nf-btn" type="submit" name="RunFilterButton" value="{'Run notification filter'|i18n( 'design/admin/notification/runfilter' )}" />
+            <input class="a4-btn" type="submit" name="RunFilterButton" value="{'Run notification filter'|i18n( 'design/admin/notification/runfilter' )}" />
         </form>
     </section>
 
-    <div class="nf-layout two">
+    <div class="a4-grid is-wide">
 
-        <section class="nf-card">
-            <h2>{'Recent runs'|i18n( 'design/admin/notification/status' )}</h2>
+        <section class="a4-card a4-stack">
+            <h2 class="a4-h2">{'Recent runs'|i18n( 'design/admin/notification/status' )}</h2>
 {if $status.runs|count|gt( 0 )}
-            <div class="nf-scroll"><table class="nf-table">
+            <div class="a4-table-wrap"><table class="a4-table is-compact">
                 <thead><tr><th>{'When'|i18n( 'design/admin/notification/status' )}</th><th>{'Started by'|i18n( 'design/admin/notification/status' )}</th><th>{'Events'|i18n( 'design/admin/notification/status' )}</th><th>{'Messages'|i18n( 'design/admin/notification/status' )}</th><th>{'Result'|i18n( 'design/admin/notification/status' )}</th></tr></thead>
                 <tbody>
     {foreach $status.runs as $run}
                     <tr><td>{$run.time|l10n( 'shortdatetime' )}</td><td>{$run.source|wash}</td><td>{$run.events}</td><td>{$run.mails} / {$run.recipients}</td>
-                        <td>{if $run.result|eq( 'ok' )}<span class="nf-badge ok">{if $run.failed|gt( 0 )}{$run.failed} {'failed'|i18n( 'design/admin/notification/status' )}{else}OK{/if}</span>{if first_set( $run.send_failed, 0 )|gt( 0 )} <span class="nf-badge bad">{first_set( $run.send_failed, 0 )} {'not sent'|i18n( 'design/admin/notification/status' )}</span>{/if}{if first_set( $run.dropped, 0 )|gt( 0 )} <span class="nf-badge warn">{first_set( $run.dropped, 0 )} {'given up'|i18n( 'design/admin/notification/status' )}</span>{/if}{else}<span class="nf-badge bad">{$run.result|wash}</span>{/if} <small>{$run.ms} ms</small></td></tr>
+                        <td>{if $run.result|eq( 'ok' )}<span class="a4-badge is-ok">{if $run.failed|gt( 0 )}{$run.failed} {'failed'|i18n( 'design/admin/notification/status' )}{else}OK{/if}</span>{if first_set( $run.send_failed, 0 )|gt( 0 )} <span class="a4-badge is-bad">{first_set( $run.send_failed, 0 )} {'not sent'|i18n( 'design/admin/notification/status' )}</span>{/if}{if first_set( $run.dropped, 0 )|gt( 0 )} <span class="a4-badge is-warn">{first_set( $run.dropped, 0 )} {'given up'|i18n( 'design/admin/notification/status' )}</span>{/if}{else}<span class="a4-badge is-bad">{$run.result|wash}</span>{/if} <small>{$run.ms} ms</small></td></tr>
     {/foreach}
                 </tbody>
             </table></div>
-            <p class="nf-hint">{'Messages: sent / recipients.'|i18n( 'design/admin/notification/status' )}</p>
+            <p class="a4-help">{'Messages: sent / recipients.'|i18n( 'design/admin/notification/status' )}</p>
 {else}
-            <div class="nf-empty"><h3>{'No run is recorded yet'|i18n( 'design/admin/notification/status' )}</h3><p>{'The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run.'|i18n( 'design/admin/notification/status' )}</p></div>
+            <div class="a4-empty"><h3 class="a4-h3">{'No run is recorded yet'|i18n( 'design/admin/notification/status' )}</h3><p>{'The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run.'|i18n( 'design/admin/notification/status' )}</p></div>
 {/if}
         </section>
 
-        <section class="nf-card">
-            <h2>{'Events'|i18n( 'design/admin/notification/status' )} <span class="nf-tag">{$status.pending_total} {'waiting'|i18n( 'design/admin/notification/status' )}</span></h2>
+        <section class="a4-card a4-stack">
+            <h2 class="a4-h2">{'Events'|i18n( 'design/admin/notification/status' )} <span class="a4-tag">{$status.pending_total} {'waiting'|i18n( 'design/admin/notification/status' )}</span></h2>
 {if $events|count|gt( 0 )}
-            <div class="nf-scroll"><table class="nf-table">
+            <div class="a4-table-wrap"><table class="a4-table is-compact">
                 <thead><tr><th>#</th><th>{'Type'|i18n( 'design/admin/notification/status' )}</th><th>{'Status'|i18n( 'design/admin/notification/status' )}</th><th>{'Made'|i18n( 'design/admin/notification/status' )}</th></tr></thead>
                 <tbody>
     {foreach $events as $event}
@@ -85,15 +84,15 @@
                 </tbody>
             </table></div>
 {else}
-            <p class="nf-hint">{'No events.'|i18n( 'design/admin/notification/status' )}</p>
+            <p class="a4-help">{'No events.'|i18n( 'design/admin/notification/status' )}</p>
 {/if}
             <form method="post" action={'notification/status'|ezurl}>
-                <div class="nf-actions">
-                    <input class="nf-btn" type="submit" name="CleanupHandled" value="{'Remove handled events with nothing left to send'|i18n( 'design/admin/notification/status' )}"{if $status.handled_orphans|eq( 0 )} disabled="disabled"{/if} />
+                <div class="a4-actions">
+                    <input class="a4-btn" type="submit" name="CleanupHandled" value="{'Remove handled events with nothing left to send'|i18n( 'design/admin/notification/status' )}"{if $status.handled_orphans|eq( 0 )} disabled="disabled"{/if} />
                 </div>
             </form>
             <form method="post" action={'notification/status'|ezurl} onsubmit="return confirm( this.getAttribute( 'data-confirm' ) );" data-confirm="{'Remove all events older than the chosen age, with their waiting messages? This cannot be undone.'|i18n( 'design/admin/notification/status' )|wash}">
-                <div class="nf-actions nf-field">
+                <div class="a4-actions a4-notification-field">
                     <label for="nf-age">{'Remove events older than'|i18n( 'design/admin/notification/status' )}</label>
                     <select id="nf-age" name="OlderThan">
                         <option value="30d">{'30 days'|i18n( 'design/admin/notification/status' )}</option>
@@ -101,36 +100,36 @@
                         <option value="180d">{'180 days'|i18n( 'design/admin/notification/status' )}</option>
                         <option value="365d">{'1 year'|i18n( 'design/admin/notification/status' )}</option>
                     </select>
-                    <input class="nf-btn danger" type="submit" name="CleanupOld" value="{'Remove'|i18n( 'design/admin/notification/status' )}" />
+                    <input class="a4-btn a4-btn-outline-danger" type="submit" name="CleanupOld" value="{'Remove'|i18n( 'design/admin/notification/status' )}" />
                 </div>
             </form>
         </section>
 
-        <section class="nf-card">
-            <h2>{'Subscriptions'|i18n( 'design/admin/notification/status' )} <span class="nf-tag">{$recent_total}</span></h2>
+        <section class="a4-card a4-stack">
+            <h2 class="a4-h2">{'Subscriptions'|i18n( 'design/admin/notification/status' )} <span class="a4-tag">{$recent_total}</span></h2>
 {if $recent_subscriptions|count|gt( 0 )}
-            <div class="nf-scroll"><table class="nf-table">
+            <div class="a4-table-wrap"><table class="a4-table is-compact">
                 <thead><tr><th>{'User'|i18n( 'design/admin/notification/status' )}</th><th>{'Item'|i18n( 'design/admin/notification/status' )}</th></tr></thead>
                 <tbody>
     {foreach $recent_subscriptions as $row}
-                    <tr><td>{if $row.login|ne( '' )}{$row.login|wash}{else}#{$row.user_id}{/if}</td><td>{if $row.missing}<span class="nf-badge warn">{'Content no longer exists'|i18n( 'design/admin/notification/status' )}</span> #{$row.node_id}{else}{$row.name|wash} <small>({$row.class_name|wash})</small>{/if}</td></tr>
+                    <tr><td>{if $row.login|ne( '' )}{$row.login|wash}{else}#{$row.user_id}{/if}</td><td>{if $row.missing}<span class="a4-badge is-warn">{'Content no longer exists'|i18n( 'design/admin/notification/status' )}</span> #{$row.node_id}{else}{$row.name|wash} <small>({$row.class_name|wash})</small>{/if}</td></tr>
     {/foreach}
                 </tbody>
             </table></div>
-            <p class="nf-hint">{'The list per user and item: ./console exp:notification:subscriptions list'|i18n( 'design/admin/notification/status' )}</p>
+            <p class="a4-help">{'The list per user and item: ./console exp:notification:subscriptions list'|i18n( 'design/admin/notification/status' )}</p>
 {else}
-            <p class="nf-hint">{'No one follows any item yet.'|i18n( 'design/admin/notification/status' )}</p>
+            <p class="a4-help">{'No one follows any item yet.'|i18n( 'design/admin/notification/status' )}</p>
 {/if}
 {if $missing_rules|gt( 0 )}
             <form method="post" action={'notification/status'|ezurl}>
-                <div class="nf-actions"><input class="nf-btn danger" type="submit" name="RemoveMissingRules" value="{'Remove %count subscriptions whose content is gone'|i18n( 'design/admin/notification/status',, hash( '%count', $missing_rules ) )}" /></div>
+                <div class="a4-actions"><input class="a4-btn a4-btn-outline-danger" type="submit" name="RemoveMissingRules" value="{'Remove %count subscriptions whose content is gone'|i18n( 'design/admin/notification/status',, hash( '%count', $missing_rules ) )}" /></div>
             </form>
 {/if}
         </section>
 
-        <section class="nf-card">
-            <h2>{'Mail and handlers'|i18n( 'design/admin/notification/status' )}</h2>
-            <dl class="nf-facts">
+        <section class="a4-card a4-stack">
+            <h2 class="a4-h2">{'Mail and handlers'|i18n( 'design/admin/notification/status' )}</h2>
+            <dl class="a4-facts">
                 <div><dt>{'Mail transport'|i18n( 'design/admin/notification/status' )}</dt><dd>{$status.transport|wash}</dd></div>
                 <div><dt>{'Sender'|i18n( 'design/admin/notification/status' )}</dt><dd>{$status.sender|wash}</dd></div>
                 <div><dt>{'Handlers'|i18n( 'design/admin/notification/status' )}</dt><dd>{foreach $status.handlers as $h}{$h|wash}{delimiter}, {/delimiter}{/foreach}</dd></div>
@@ -138,7 +137,7 @@
                 <div><dt>{'Collaboration rules'|i18n( 'design/admin/notification/status' )}</dt><dd>{$status.collab_rules}</dd></div>
                 <div><dt>{'Messages waiting now'|i18n( 'design/admin/notification/status' )}</dt><dd>{$status.items_now}</dd></div>
             </dl>
-            <p class="nf-hint">{'Console:'|i18n( 'design/admin/notification/status' )} <code>exp:notification:status</code> <code>exp:notification:run --dry-run</code> <code>exp:notification:events</code> <code>exp:notification:subscriptions</code></p>
+            <p class="a4-help">{'Console:'|i18n( 'design/admin/notification/status' )} <code>exp:notification:status</code> <code>exp:notification:run --dry-run</code> <code>exp:notification:events</code> <code>exp:notification:subscriptions</code></p>
         </section>
 
     </div>

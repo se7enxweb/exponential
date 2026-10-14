@@ -1,8 +1,7 @@
-{include uri='design:notification/parts/style.tpl'}
-<div class="nf" id="exp-notify-removed">
-    <div class="nf-head"><div><h1>{'Notifications'|i18n( 'design/admin/notification/addingresult' )}</h1></div></div>
+<div class="a4-page" id="exp-notify-removed">
+    <div class="a4-notification-head"><div><h1>{'Notifications'|i18n( 'design/admin/notification/addingresult' )}</h1></div></div>
 {let node=fetch( content, node, hash( node_id, $node_id) )}
-    <div class="nf-notice nf-notice-{if $removed}success{else}info{/if}" role="status"><p>
+    <div class="a4-notice {if $removed}is-ok{else}is-info{/if}" role="status"><p>
 {if $removed}
         {'You no longer get notifications for node <%node_name>.'|i18n( 'design/admin/notification/addingresult',, hash( '%node_name', $node.name ) )|wash}
 {else}
@@ -10,8 +9,8 @@
 {/if}
     </p></div>
 {/let}
-    <div class="nf-actions">
-        <a class="nf-btn primary" href={first_set( $redirect_uri, $redirect_url, '/' )|ezurl}>{'OK'|i18n( 'design/admin/notification/addingresult' )}</a>
-        <a class="nf-btn" href={'notification/settings'|ezurl}>{'My notification settings'|i18n( 'design/admin/notification/addingresult' )}</a>
+    <div class="a4-actions">
+        <a class="a4-btn a4-btn-primary" href={first_set( $redirect_uri, $redirect_url, '/' )|ezurl}>{'OK'|i18n( 'design/admin/notification/addingresult' )}</a>
+        <a class="a4-btn" href={'notification/settings'|ezurl}>{'My notification settings'|i18n( 'design/admin/notification/addingresult' )}</a>
     </div>
 </div>

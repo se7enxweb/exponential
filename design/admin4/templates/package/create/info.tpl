@@ -43,7 +43,7 @@
     <div class="block package-licence">
             <label for="PackageLicence">{'License'|i18n('design/admin/package')}</label>
             {if $licence_groups|count|gt( 0 )}
-            <select id="PackageLicence" class="box" name="PackageLicence" aria-describedby="PackageLicenceInfo" style="width: 100%; max-width: 100%; box-sizing: border-box;">
+            <select id="PackageLicence" class="box" name="PackageLicence" aria-describedby="PackageLicenceInfo">
             {foreach $licence_groups as $group}
                 <optgroup label="{$group.name|wash}">
                 {foreach $group.licenses as $license}
@@ -52,9 +52,9 @@
                 </optgroup>
             {/foreach}
             </select>
-            <p id="PackageLicenceInfo" class="package-licence-info" style="margin: 0.4em 0 0; overflow-wrap: anywhere;">
-                <span id="PackageLicenceDescription"{if $licence_selected.description|not} style="display: none;"{/if}>{$licence_selected.description|wash}<br /></span>
-                <span id="PackageLicenceLinkLine"{if $licence_selected.url|not} style="display: none;"{/if}>{'License text:'|i18n('design/admin/package')} <a id="PackageLicenceLink" href="{$licence_selected.url|wash}" target="_blank" rel="noopener noreferrer">{$licence_selected.name|wash}</a></span>
+            <p id="PackageLicenceInfo" class="package-licence-info a4-package-licence-info">
+                <span id="PackageLicenceDescription"{if $licence_selected.description|not} hidden{/if}>{$licence_selected.description|wash}<br /></span>
+                <span id="PackageLicenceLinkLine"{if $licence_selected.url|not} hidden{/if}>{'License text:'|i18n('design/admin/package')} <a id="PackageLicenceLink" href="{$licence_selected.url|wash}" target="_blank" rel="noopener noreferrer">{$licence_selected.name|wash}</a></span>
             </p>
             {literal}
             <script type="text/javascript">
@@ -75,9 +75,9 @@
                         text = option.getAttribute( 'data-description' ) || '';
                     link.href = url || '#';
                     link.textContent = option.getAttribute( 'data-name' ) || option.value;
-                    linkLine.style.display = url ? '' : 'none';
+                    linkLine.hidden = !url;
                     description.firstChild.nodeValue = text;
-                    description.style.display = text ? '' : 'none';
+                    description.hidden = !text;
                 }
                 if ( !description.firstChild || description.firstChild.nodeType !== 3 )
                     description.insertBefore( document.createTextNode( '' ), description.firstChild );

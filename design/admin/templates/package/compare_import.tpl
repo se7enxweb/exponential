@@ -119,7 +119,7 @@
     {ldelim}
         classes[k].addEventListener( 'change', function ()
         {ldelim}
-            var needing = document.querySelectorAll( '.pcmp-import input[data-needs-class="' + this.getAttribute( 'data-pcmp-class' ) + '"]' );
+            var needing = document.querySelectorAll( '.pcmp-import input[data-needs-class="' + this.getAttribute( 'data-pcmp-class' )"]' );
             for ( var m = 0; m < needing.length; m++ ) needing[m].checked = this.checked;
         {rdelim} );
     {rdelim}

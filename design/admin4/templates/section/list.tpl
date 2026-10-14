@@ -8,13 +8,12 @@
    section_summary); without them (an older view class) the cards show what the section rows hold and nothing is
    lost. Everything works without javascript: the selection and the buttons submit the form. The script adds the
    search, the filter and the selection count. Guide: doc/guides/sections.md *}
-{include uri='design:section/exp_style.tpl'}
 
 {def $has_overview = and( is_set( $section_overview ), is_set( $section_summary ) )
      $can_edit = first_set( $section_can_edit, true() )
      $can_assign_any = $allowed_assign_sections|contains( '*' )}
 
-<div class="context-block exp-sections">
+<div class="context-block a4-page">
 
 <div class="box-header"><div class="box-ml">
 <h1 class="context-title">{'Sections'|i18n( 'design/admin/section/list' )}</h1>
@@ -22,18 +21,18 @@
 
 <div class="box-bc"><div class="box-ml"><div class="box-content">
 
-<p class="exp-intro">{'Sections divide the content into groups. Every object belongs to exactly one section. Roles can allow or deny access by section, the section decides which top menu tab is active while its content is viewed, and templates can be overridden for one section.'|i18n( 'design/admin/section/list' )}</p>
+<p class="a4-intro">{'Sections divide the content into groups. Every object belongs to exactly one section. Roles can allow or deny access by section, the section decides which top menu tab is active while its content is viewed, and templates can be overridden for one section.'|i18n( 'design/admin/section/list' )}</p>
 
 {def $feedback = first_set( $section_feedback, false() )}
 {if $feedback}
     {if eq( $feedback.type, 'created' )}
-<div class="exp-feedback is-ok" role="status">{'The section %name was created. Assign content to it with Assign content on its card.'|i18n( 'design/admin/section/list',, hash( '%name', $feedback.names[0]|wash ) )}</div>
+<div class="a4-notice is-ok" role="status">{'The section %name was created. Assign content to it with Assign content on its card.'|i18n( 'design/admin/section/list',, hash( '%name', $feedback.names[0]|wash ) )}</div>
     {elseif eq( $feedback.type, 'saved' )}
-<div class="exp-feedback is-ok" role="status">{'The section %name was saved.'|i18n( 'design/admin/section/list',, hash( '%name', $feedback.names[0]|wash ) )}</div>
+<div class="a4-notice is-ok" role="status">{'The section %name was saved.'|i18n( 'design/admin/section/list',, hash( '%name', $feedback.names[0]|wash ) )}</div>
     {elseif eq( $feedback.type, 'removed' )}
-<div class="exp-feedback is-ok" role="status">{'Removed: %names.'|i18n( 'design/admin/section/list',, hash( '%names', $feedback.names|implode( ', ' )|wash ) )}</div>
+<div class="a4-notice is-ok" role="status">{'Removed: %names.'|i18n( 'design/admin/section/list',, hash( '%names', $feedback.names|implode( ', ' )|wash ) )}</div>
     {elseif eq( $feedback.type, 'none_selected' )}
-<div class="exp-feedback is-warn" role="alert">{'No section was selected. Tick the sections to remove first.'|i18n( 'design/admin/section/list' )}</div>
+<div class="a4-notice is-warn" role="alert">{'No section was selected. Tick the sections to remove first.'|i18n( 'design/admin/section/list' )}</div>
     {/if}
 {/if}
 
@@ -41,117 +40,117 @@
 
 {if $has_overview}
 <section aria-labelledby="section-overview-title">
-<h2 class="exp-sr" id="section-overview-title">{'Overview'|i18n( 'design/admin/section/list' )}</h2>
-<ul class="exp-figures">
-    <li class="exp-figure"><strong>{$section_summary.sections}</strong><span>{'Sections'|i18n( 'design/admin/section/list' )}</span></li>
-    <li class="exp-figure"><strong>{$section_summary.published}</strong><span>{'Published objects'|i18n( 'design/admin/section/list' )}</span></li>
-    <li class="exp-figure"><strong>{$section_summary.in_roles}</strong><span>{'Used by roles'|i18n( 'design/admin/section/list' )}</span></li>
-    <li class="exp-figure"><strong>{$section_summary.empty}</strong><span>{'Without published objects'|i18n( 'design/admin/section/list' )}</span></li>
-    <li class="exp-figure"><strong>{$section_summary.removable}</strong><span>{'Can be removed'|i18n( 'design/admin/section/list' )}</span></li>
-    <li class="exp-figure{if $section_summary.attention|gt(0)} is-attention{/if}"><strong>{$section_summary.attention}</strong><span>{'Need attention'|i18n( 'design/admin/section/list' )}</span></li>
+<h2 class="a4-sr-only" id="section-overview-title">{'Overview'|i18n( 'design/admin/section/list' )}</h2>
+<ul class="a4-figures">
+    <li class="a4-figure"><strong>{$section_summary.sections}</strong><span>{'Sections'|i18n( 'design/admin/section/list' )}</span></li>
+    <li class="a4-figure"><strong>{$section_summary.published}</strong><span>{'Published objects'|i18n( 'design/admin/section/list' )}</span></li>
+    <li class="a4-figure"><strong>{$section_summary.in_roles}</strong><span>{'Used by roles'|i18n( 'design/admin/section/list' )}</span></li>
+    <li class="a4-figure"><strong>{$section_summary.empty}</strong><span>{'Without published objects'|i18n( 'design/admin/section/list' )}</span></li>
+    <li class="a4-figure"><strong>{$section_summary.removable}</strong><span>{'Can be removed'|i18n( 'design/admin/section/list' )}</span></li>
+    <li class="a4-figure{if $section_summary.attention|gt(0)} is-attention{/if}"><strong>{$section_summary.attention}</strong><span>{'Need attention'|i18n( 'design/admin/section/list' )}</span></li>
 </ul>
 </section>
 {/if}
 
 <section aria-labelledby="section-controls-title">
-<h2 class="exp-sr" id="section-controls-title">{'Find and create'|i18n( 'design/admin/section/list' )}</h2>
-<div class="exp-toolbar">
-    <div class="exp-field exp-js-only" hidden>
+<h2 class="a4-sr-only" id="section-controls-title">{'Find and create'|i18n( 'design/admin/section/list' )}</h2>
+<div class="a4-filterbar">
+    <div class="a4-field exp-js-only" hidden>
         <label for="section-search">{'Find a section'|i18n( 'design/admin/section/list' )}</label>
         <input type="search" id="section-search" autocomplete="off" spellcheck="false" aria-controls="section-list" aria-describedby="section-filter-count section-search-help" />
-        <span class="exp-help" id="section-search-help">{'Name, identifier, ID, navigation part or role.'|i18n( 'design/admin/section/list' )}</span>
+        <span class="a4-help" id="section-search-help">{'Name, identifier, ID, navigation part or role.'|i18n( 'design/admin/section/list' )}</span>
     </div>
     {if $can_edit}
-    <div class="exp-field">
-        <span class="exp-help">{'A new section starts empty: give it a name and an identifier, then assign content to it.'|i18n( 'design/admin/section/list' )}</span>
-        <div class="exp-actions">
-            <button type="submit" class="exp-btn exp-btn-primary" name="CreateSectionButton" value="1" title="{'Create a new section.'|i18n( 'design/admin/section/list' )}"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M7 2h2v5h5v2H9v5H7V9H2V7h5z"/></svg>{'New section'|i18n( 'design/admin/section/list' )}</button>
+    <div class="a4-field">
+        <span class="a4-help">{'A new section starts empty: give it a name and an identifier, then assign content to it.'|i18n( 'design/admin/section/list' )}</span>
+        <div class="a4-actions">
+            <button type="submit" class="a4-btn a4-btn-primary" name="CreateSectionButton" value="1" title="{'Create a new section.'|i18n( 'design/admin/section/list' )}"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M7 2h2v5h5v2H9v5H7V9H2V7h5z"/></svg>{'New section'|i18n( 'design/admin/section/list' )}</button>
         </div>
     </div>
     {/if}
     {if $has_overview}
-    <fieldset class="exp-field exp-field-wide exp-js-only" hidden>
+    <fieldset class="a4-field a4-field-wide exp-js-only" hidden>
         <legend>{'Show'|i18n( 'design/admin/section/list' )}</legend>
-        <div class="exp-chips">
-            <label class="exp-chip"><input type="radio" name="SectionFilter" value="" checked="checked" /><span>{'All'|i18n( 'design/admin/section/list' )}</span></label>
-            <label class="exp-chip"><input type="radio" name="SectionFilter" value="content" /><span>{'With published objects'|i18n( 'design/admin/section/list' )}</span></label>
-            <label class="exp-chip"><input type="radio" name="SectionFilter" value="empty" /><span>{'Without published objects'|i18n( 'design/admin/section/list' )}</span></label>
-            <label class="exp-chip"><input type="radio" name="SectionFilter" value="roles" /><span>{'Used by roles'|i18n( 'design/admin/section/list' )}</span></label>
-            <label class="exp-chip"><input type="radio" name="SectionFilter" value="removable" /><span>{'Can be removed'|i18n( 'design/admin/section/list' )}</span></label>
-            <label class="exp-chip"><input type="radio" name="SectionFilter" value="attention" /><span>{'Need attention'|i18n( 'design/admin/section/list' )}</span></label>
+        <div class="a4-chips">
+            <label class="a4-chip"><input type="radio" name="SectionFilter" value="" checked="checked" /><span>{'All'|i18n( 'design/admin/section/list' )}</span></label>
+            <label class="a4-chip"><input type="radio" name="SectionFilter" value="content" /><span>{'With published objects'|i18n( 'design/admin/section/list' )}</span></label>
+            <label class="a4-chip"><input type="radio" name="SectionFilter" value="empty" /><span>{'Without published objects'|i18n( 'design/admin/section/list' )}</span></label>
+            <label class="a4-chip"><input type="radio" name="SectionFilter" value="roles" /><span>{'Used by roles'|i18n( 'design/admin/section/list' )}</span></label>
+            <label class="a4-chip"><input type="radio" name="SectionFilter" value="removable" /><span>{'Can be removed'|i18n( 'design/admin/section/list' )}</span></label>
+            <label class="a4-chip"><input type="radio" name="SectionFilter" value="attention" /><span>{'Need attention'|i18n( 'design/admin/section/list' )}</span></label>
         </div>
     </fieldset>
     {/if}
-    <p class="exp-filter-count exp-js-only" id="section-filter-count" aria-live="polite" hidden></p>
+    <p class="a4-filter-count exp-js-only" id="section-filter-count" aria-live="polite" hidden></p>
 </div>
 </section>
 
-<section class="exp-section" aria-labelledby="section-list-title">
-<div class="exp-section-head">
-    <h2 class="exp-h2" id="section-list-title">{'All sections'|i18n( 'design/admin/section/list' )}</h2>
+<section class="a4-section" aria-labelledby="section-list-title">
+<div class="a4-section-head">
+    <h2 class="a4-h2" id="section-list-title">{'All sections'|i18n( 'design/admin/section/list' )}</h2>
     {if $section_count|gt( $limit )}
-    <span class="exp-meta">{'%from to %to of %count'|i18n( 'design/admin/section/list',, hash( '%from', sum( $view_parameters.offset, 1 ), '%to', min( sum( $view_parameters.offset, $limit ), $section_count ), '%count', $section_count ) )}</span>
+    <span class="a4-meta">{'%from to %to of %count'|i18n( 'design/admin/section/list',, hash( '%from', sum( $view_parameters.offset, 1 ), '%to', min( sum( $view_parameters.offset, $limit ), $section_count ), '%count', $section_count ) )}</span>
     {/if}
     {if $can_edit}
-    <label class="exp-meta exp-js-only" hidden><input type="checkbox" id="section-select-all" /> {'Select all on this page'|i18n( 'design/admin/section/list' )}</label>
+    <label class="a4-meta exp-js-only" hidden><input type="checkbox" id="section-select-all" /> {'Select all on this page'|i18n( 'design/admin/section/list' )}</label>
     {/if}
 </div>
 
 {if $section_array|count|eq(0)}
-<p class="exp-empty">{'There are no sections. A section is needed for every object; create one with New section.'|i18n( 'design/admin/section/list' )}</p>
+<p class="a4-empty">{'There are no sections. A section is needed for every object; create one with New section.'|i18n( 'design/admin/section/list' )}</p>
 {else}
-<ul class="exp-secs" id="section-list">
+<ul class="a4-cards" id="section-list">
 {foreach $section_array as $section}
     {def $info = first_set( $section_overview[$section.id], false() )
          $sec_id = concat( 'section-', $section.id )
          $can_assign = or( $can_assign_any, $allowed_assign_sections|contains( $section.id ) )}
-<li class="exp-sec{if and( $info, $info.attention )} is-attention{/if}" id="{$sec_id}"
+<li class="a4-card{if and( $info, $info.attention )} is-attention{/if}" id="{$sec_id}"
     {if $info}data-search="{$info.search|wash}" data-published="{$info.published}" data-roles="{if $info.used_by_roles}1{else}0{/if}" data-removable="{if $info.removable}1{else}0{/if}" data-attention="{if $info.attention}1{else}0{/if}"{else}data-search="{concat( $section.name, ' ', $section.identifier, ' ', $section.id )|downcase|wash}"{/if}>
-    <div class="exp-sec-head">
-        <div class="exp-sec-title">
+    <div class="a4-card-head">
+        <div class="a4-card-title">
             {if $can_edit}
-            <label class="exp-select" title="{'Select section for removal.'|i18n( 'design/admin/section/list' )}">
+            <label class="a4-pick" title="{'Select section for removal.'|i18n( 'design/admin/section/list' )}">
                 <input type="checkbox" name="SectionIDArray[]" value="{$section.id}" aria-label="{'Select %name for removal'|i18n( 'design/admin/section/list',, hash( '%name', $section.name ) )|wash}" />
             </label>
             {/if}
-            <h3 id="{$sec_id}-title"><a href={concat( '/section/view/', $section.id )|ezurl}>{$section.name|wash}</a></h3>
-            {if $section.identifier|ne( '' )}<code class="exp-title-key">{$section.identifier|wash}</code>{/if}
-            <span class="exp-meta">{'ID %id'|i18n( 'design/admin/section/list',, hash( '%id', $section.id ) )}</span>
+            <h3 class="a4-h3" id="{$sec_id}-title"><a href={concat( '/section/view/', $section.id )|ezurl}>{$section.name|wash}</a></h3>
+            {if $section.identifier|ne( '' )}<code class="a4-muted">{$section.identifier|wash}</code>{/if}
+            <span class="a4-meta">{'ID %id'|i18n( 'design/admin/section/list',, hash( '%id', $section.id ) )}</span>
             {if $info}
-            <ul class="exp-badges">
+            <ul class="a4-badges">
                 {if $info.published|gt(0)}
-                <li class="exp-badge is-info">{'%count published'|i18n( 'design/admin/section/list',, hash( '%count', $info.published ) )}</li>
+                <li class="a4-badge is-info">{'%count published'|i18n( 'design/admin/section/list',, hash( '%count', $info.published ) )}</li>
                 {else}
-                <li class="exp-badge">{'No published objects'|i18n( 'design/admin/section/list' )}</li>
+                <li class="a4-badge">{'No published objects'|i18n( 'design/admin/section/list' )}</li>
                 {/if}
                 {if $info.used_by_roles}
-                <li class="exp-badge is-info">{'Used by roles'|i18n( 'design/admin/section/list' )}</li>
+                <li class="a4-badge is-info">{'Used by roles'|i18n( 'design/admin/section/list' )}</li>
                 {/if}
                 {if $info.removable}
-                <li class="exp-badge is-ok">{'Can be removed'|i18n( 'design/admin/section/list' )}</li>
+                <li class="a4-badge is-ok">{'Can be removed'|i18n( 'design/admin/section/list' )}</li>
                 {/if}
                 {if $info.missing_identifier}
-                <li class="exp-badge is-warn">{'No identifier'|i18n( 'design/admin/section/list' )}</li>
+                <li class="a4-badge is-warn">{'No identifier'|i18n( 'design/admin/section/list' )}</li>
                 {/if}
                 {if $info.navigation_part_known|not}
-                <li class="exp-badge is-warn">{'Unknown navigation part'|i18n( 'design/admin/section/list' )}</li>
+                <li class="a4-badge is-warn">{'Unknown navigation part'|i18n( 'design/admin/section/list' )}</li>
                 {/if}
             </ul>
             {/if}
         </div>
-        <div class="exp-actions">
-            <a class="exp-btn exp-btn-small" href={concat( '/section/view/', $section.id )|ezurl} aria-describedby="{$sec_id}-title">{'View'|i18n( 'design/admin/section/list' )}</a>
+        <div class="a4-actions">
+            <a class="a4-btn a4-btn-small" href={concat( '/section/view/', $section.id )|ezurl} aria-describedby="{$sec_id}-title">{'View'|i18n( 'design/admin/section/list' )}</a>
             {if $can_edit}
-            <a class="exp-btn exp-btn-small" href={concat( '/section/edit/', $section.id, '/' )|ezurl} aria-describedby="{$sec_id}-title" title="{'Edit the <%section_name> section.'|i18n( 'design/admin/section/list',, hash( '%section_name', $section.name ) )|wash}">{'Edit'|i18n( 'design/admin/section/list' )}</a>
+            <a class="a4-btn a4-btn-small" href={concat( '/section/edit/', $section.id, '/' )|ezurl} aria-describedby="{$sec_id}-title" title="{'Edit the <%section_name> section.'|i18n( 'design/admin/section/list',, hash( '%section_name', $section.name ) )|wash}">{'Edit'|i18n( 'design/admin/section/list' )}</a>
             {/if}
             {if $can_assign}
-            <a class="exp-btn exp-btn-small" href={concat( '/section/assign/', $section.id, '/' )|ezurl} aria-describedby="{$sec_id}-title" title="{'Assign a subtree to the <%section_name> section.'|i18n( 'design/admin/section/list',, hash( '%section_name', $section.name ) )|wash}">{'Assign content'|i18n( 'design/admin/section/list' )}</a>
+            <a class="a4-btn a4-btn-small" href={concat( '/section/assign/', $section.id, '/' )|ezurl} aria-describedby="{$sec_id}-title" title="{'Assign a subtree to the <%section_name> section.'|i18n( 'design/admin/section/list',, hash( '%section_name', $section.name ) )|wash}">{'Assign content'|i18n( 'design/admin/section/list' )}</a>
             {else}
-            <span class="exp-btn exp-btn-small is-disabled" aria-disabled="true" title="{'You are not allowed to assign the <%section_name> section.'|i18n( 'design/admin/section/list',, hash( '%section_name', $section.name ) )|wash}">{'Assign content'|i18n( 'design/admin/section/list' )}</span>
+            <span class="a4-btn a4-btn-small is-disabled" aria-disabled="true" title="{'You are not allowed to assign the <%section_name> section.'|i18n( 'design/admin/section/list',, hash( '%section_name', $section.name ) )|wash}">{'Assign content'|i18n( 'design/admin/section/list' )}</span>
             {/if}
         </div>
     </div>
-    <dl class="exp-facts">
+    <dl class="a4-facts">
         <div>
             <dt>{'Navigation part'|i18n( 'design/admin/section/list' )}</dt>
             <dd>{if $info}{$info.navigation_part_name|wash} <code>{$info.navigation_part|wash}</code>{else}<code>{$section.navigation_part_identifier|wash}</code>{/if}</dd>
@@ -175,12 +174,12 @@
     {undef $info $sec_id $can_assign}
 {/foreach}
 </ul>
-<p class="exp-empty" id="section-no-match" hidden>{'No section on this page matches. Clear the search or choose All.'|i18n( 'design/admin/section/list' )}</p>
+<p class="a4-empty" id="section-no-match" hidden>{'No section on this page matches. Clear the search or choose All.'|i18n( 'design/admin/section/list' )}</p>
 {/if}
 
-<div class="exp-listfoot">
+<div class="a4-listfoot">
     {* The sizes come from admininterface.ini [PaginationSettings]; the preference stores the position in that list. *}
-    <p class="exp-sizes">
+    <p class="a4-sizes">
         <span>{'Per page'|i18n( 'design/admin/section/list' )}:</span>
     {foreach $limit_choices as $limit_index => $limit_option}
         {if eq( $limit_index|inc, $limit_choice )}
@@ -190,7 +189,7 @@
         {/if}
     {/foreach}
     </p>
-    <div class="exp-pager">
+    <div class="a4-pager">
     {include name=navigator
              uri='design:navigator/google.tpl'
              page_uri='/section/list'
@@ -202,12 +201,12 @@
 </section>
 
 {if $can_edit}
-<div class="exp-bottombar">
-    <div class="exp-actions">
-        <button type="submit" class="exp-btn exp-btn-outline-danger" name="RemoveSectionButton" value="1" id="section-remove" aria-describedby="section-remove-help" title="{'Remove selected sections.'|i18n( 'design/admin/section/list' )}">{'Remove selected'|i18n( 'design/admin/section/list' )}</button>
-        <button type="submit" class="exp-btn" name="CreateSectionButton" value="1" title="{'Create a new section.'|i18n( 'design/admin/section/list' )}">{'New section'|i18n( 'design/admin/section/list' )}</button>
+<div class="a4-toolbar is-bottom">
+    <div class="a4-actions">
+        <button type="submit" class="a4-btn a4-btn-outline-danger" name="RemoveSectionButton" value="1" id="section-remove" aria-describedby="section-remove-help" title="{'Remove selected sections.'|i18n( 'design/admin/section/list' )}">{'Remove selected'|i18n( 'design/admin/section/list' )}</button>
+        <button type="submit" class="a4-btn" name="CreateSectionButton" value="1" title="{'Create a new section.'|i18n( 'design/admin/section/list' )}">{'New section'|i18n( 'design/admin/section/list' )}</button>
     </div>
-    <p class="exp-meta" id="section-remove-help">{'Remove selected asks for confirmation first. A section that still holds objects, or that a role or role assignment names, is never removed.'|i18n( 'design/admin/section/list' )} <span id="section-selected-count" aria-live="polite"></span></p>
+    <p class="a4-meta" id="section-remove-help">{'Remove selected asks for confirmation first. A section that still holds objects, or that a role or role assignment names, is never removed.'|i18n( 'design/admin/section/list' )} <span id="section-selected-count" aria-live="polite"></span></p>
 </div>
 {/if}
 
@@ -234,7 +233,7 @@ var expSectionText = {ldelim}
         for ( key in values || {} ) s = s.split( '%' + key ).join( values[key] );
         return s;
     }
-    each( '.exp-sections .exp-js-only', function ( el ) { el.hidden = false; } );
+    each( '.a4-page .exp-js-only', function ( el ) { el.hidden = false; } );
     if ( !list ) return;
 
     var searchEl = document.getElementById( 'section-search' );
@@ -250,7 +249,7 @@ var expSectionText = {ldelim}
     function applyFilter() {
         var words = searchEl ? searchEl.value.toLowerCase().split( /\s+/ ).filter( Boolean ) : [];
         var state = chosen(), shown = 0, total = 0;
-        each( '#section-list > .exp-sec', function ( card ) {
+        each( '#section-list > .a4-card', function ( card ) {
             total++;
             var hay = card.getAttribute( 'data-search' ) || '', ok = true, i;
             if ( state === 'content' ) ok = card.getAttribute( 'data-published' ) !== '0';
@@ -276,7 +275,7 @@ var expSectionText = {ldelim}
     function updateSelection() {
         var all = boxes(), n = 0, visible = 0, visibleTicked = 0, i;
         for ( i = 0; i < all.length; i++ ) {
-            var card = all[i].closest( '.exp-sec' );
+            var card = all[i].closest( '.a4-card' );
             if ( card ) card.classList.toggle( 'is-selected', all[i].checked );
             if ( all[i].checked ) n++;
             if ( card && !card.hidden ) { visible++; if ( all[i].checked ) visibleTicked++; }
@@ -288,7 +287,7 @@ var expSectionText = {ldelim}
     if ( selectAll ) selectAll.addEventListener( 'change', function () {
         var all = boxes(), i;
         for ( i = 0; i < all.length; i++ ) {
-            var card = all[i].closest( '.exp-sec' );
+            var card = all[i].closest( '.a4-card' );
             if ( card && !card.hidden ) all[i].checked = selectAll.checked;
         }
         updateSelection();
