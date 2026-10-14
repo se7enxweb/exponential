@@ -539,9 +539,8 @@ class expDebugBarReport
     }
 
     /**
-     * The query cache's figures for the summary when the kernel's summary (expDebugBarSummary) is not loaded:
-     * null when the cache is off, else eZDBQueryCache::debugSnapshot() with 'measured' and a level against
-     * the default thresholds (expDebugBarSummary::queryCacheLevel() has the same rules).
+     * The query cache's figures for the summary when the kernel's summary (expDebugBarSummary) is not loaded,
+     * against the default thresholds: null when the cache is off, else queryCacheFigures().
      *
      * @return array|null
      */
@@ -549,20 +548,60 @@ class expDebugBarReport
     {
         if ( !class_exists( 'eZDBQueryCache', false ) || !eZDBQueryCache::enabled() )
             return null;
-        $q = eZDBQueryCache::debugSnapshot();
-        if ( $q === null )
-            return array( 'measured' => false );
-        $limits = self::$thresholds['querycache_hit_rate'];
-        $rate = $q['hit_rate'];
-        if ( ( $q['mode'] === 'shared' && !$q['apcu'] ) || ( $rate !== null && $rate < $limits['high'] ) )
-            $level = 'high';
-        else if ( ( $rate !== null && $rate < $limits['warn'] ) || $q['stale'] )
-            $level = 'warn';
-        else
-            $level = 'ok';
-        $q['stale_count'] = count( $q['stale'] ) + $q['stale_more'];
-        unset( $q['stale'], $q['stale_more'] );
-        return array( 'measured' => true ) + $q + array( 'level' => $level );
+        return self::queryCacheFigures( eZDBQueryCache::debugSnapshot(), array_values( self::$thresholds['querycache_hit_rate'] ),
+                                        eZDBQueryCache::settings()['mode'] );
+    }
+
+    /**
+     * The query cache's figures for the summary chip and the page's JSON, from eZDBQueryCache::debugSnapshot(): the
+     * snapshot with 'measured' => true, its level, and the number of writes that made everything stale
+     * ('stale_count') instead of their statements, which stay in the report of the SQL tab. Without a snapshot (the
+     * cache saw no statement, or its report is off): 'measured' => false. The one place for these rules: the
+     * kernel's expDebugBarSummary uses it too.
+     *
+     * @param array|null $snapshot eZDBQueryCache::debugSnapshot()
+     * @param array $limits array( warn, high ): hit rates in percent below which the level turns warn and high
+     * @param string|null $mode the cache's mode, for 'measured' => false
+     * @return array
+     */
+    public static function queryCacheFigures( $snapshot, array $limits, $mode = null )
+    {
+        if ( !is_array( $snapshot ) )
+            return array( 'measured' => false, 'mode' => $mode, 'level' => 'ok' );
+        $level = self::queryCacheLevel( $snapshot, $limits );
+        $snapshot['stale_count'] = self::queryCacheStaleCount( $snapshot );
+        unset( $snapshot['stale'], $snapshot['stale_more'] );
+        return array( 'measured' => true ) + $snapshot + array( 'level' => $level );
+    }
+
+    /**
+     * ok, warn or high for a query cache snapshot (or the figures made from one): high in shared mode without APCu
+     * (it works as request then) or below the second hit rate of $limits; warn below the first, or when a write made
+     * every result stale. Without a lookup the hit rate says nothing: ok, unless one of the others holds.
+     *
+     * @param array $snapshot
+     * @param array $limits array( warn, high ), hit rates in percent; the level rises BELOW them
+     * @return string
+     */
+    public static function queryCacheLevel( array $snapshot, array $limits )
+    {
+        list( $warn, $high ) = array_values( $limits ) + array( 50, 10 );
+        if ( ( $snapshot['mode'] ?? '' ) === 'shared' && empty( $snapshot['apcu'] ) )
+            return 'high';
+        $rate = $snapshot['hit_rate'] ?? null;
+        if ( $rate !== null && $rate < $high )
+            return 'high';
+        if ( ( $rate !== null && $rate < $warn ) || self::queryCacheStaleCount( $snapshot ) > 0 )
+            return 'warn';
+        return 'ok';
+    }
+
+    /** How many writes made everything stale: 'stale_count' of the figures, or the statements of a snapshot. */
+    protected static function queryCacheStaleCount( array $snapshot )
+    {
+        if ( isset( $snapshot['stale_count'] ) )
+            return (int)$snapshot['stale_count'];
+        return count( (array)( $snapshot['stale'] ?? array() ) ) + (int)( $snapshot['stale_more'] ?? 0 );
     }
 
     protected static function timingPointsHtml( eZDebug $debug, $startTime )

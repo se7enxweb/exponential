@@ -346,7 +346,7 @@ class expDebugBarServerFunctions extends ezjscServerFunctions
             'velocity' => expCacheManager::velocityCacheStatus(),
             'opcache' => isset( $php['opcache'] ) ? $php['opcache'] : null,
             // the SQL query cache: settings, counters, APCu memory and what it holds (tables, largest entries)
-            'querycache' => class_exists( 'eZDBQueryCache' ) ? array_diff_key( eZDBQueryCache::inventory(), array( 'state_file' => true ) ) : null,
+            'querycache' => class_exists( 'eZDBQueryCache' ) ? eZDBQueryCache::inventory() : null,
             'http_cache' => expCacheManager::httpCacheEnabled() ? expCacheManager::httpCacheStatus() : null,
         );
     }

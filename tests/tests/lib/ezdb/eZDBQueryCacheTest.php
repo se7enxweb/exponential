@@ -698,6 +698,10 @@ class eZDBQueryCacheTest extends PHPUnit\Framework\TestCase
             $this->assertSame( 50.0, $snap['hit_rate'] );
             $this->assertSame( array( 'CALL some_procedure()' ), $snap['stale'] );
             $this->assertIsFloat( $snap['saved_ms'] );
+            $this->assertIsInt( $snap['generation'] );
+            // the report's own counters: Setup > System information flushing the request's counters changes nothing
+            eZDBQueryCache::flushStats();
+            $this->assertSame( $snap, eZDBQueryCache::debugSnapshot() );
         } );
         $this->withDebug( false, function ( $debug )
         {
@@ -736,6 +740,7 @@ class eZDBQueryCacheTest extends PHPUnit\Framework\TestCase
             $this->assertSame( 12, strlen( $inv['largest'][0]['key'] ) );
             $this->assertArrayNotHasKey( 'sql', $inv['largest'][0], 'no statement text' );
             $this->assertNotNull( $inv['sma'] );
+            $this->assertArrayNotHasKey( 'state_file', $inv, 'the state file path does not reach the browser' );
         }
         finally
         {

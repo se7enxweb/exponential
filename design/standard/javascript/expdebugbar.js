@@ -756,7 +756,7 @@
   const cacheBox = root.querySelector('.exp-debug-cache');
   const velocityBox = root.querySelector('.exp-debug-velocity-cache');
   const page = data.page || {};
-  const clearButton = (label, params, status, extra) => el('button', Object.assign({ type: 'button', class: 'exp-debug-button', onclick: (ev) => {
+  const clearButton = (label, params, status, extra, done) => el('button', Object.assign({ type: 'button', class: 'exp-debug-button', onclick: (ev) => {
     const b = ev.currentTarget; b.disabled = true;
     status.textContent = t('Clearing...');
     call('cache', Object.assign({ action: 'clear' }, params), true).then((ans) => {
@@ -764,6 +764,7 @@
       status.textContent = (ans && ans.ok === false ? (ans.message || 'refused') : t('Cleared')) + (ans && ans.message && ans.ok !== false ? ': ' + ans.message : '');
       const last = b.closest('.exp-debug-cache-row'); const lc = last && last.querySelector('.exp-debug-last');
       if (lc) lc.textContent = t('Last cleared: %time', { '%time': new Date().toLocaleString() });
+      if (done && !(ans && ans.ok === false)) done(ans);
     }).catch((err) => { b.disabled = false; status.textContent = t('Could not load: %error', { '%error': err.message }); });
   } }, extra || {}), label);
   // The change log stores the time as ISO 8601 (date('c')); a number is Unix seconds (or milliseconds when
@@ -825,8 +826,11 @@
     }
     if (q.truncated) box.append(hint(t('Only the first %count entries were read.', { '%count': q.entries_read }), 'warn'));
     else if (q.apcu && !q.entries) box.append(hint(t('Nothing is cached on this server yet.')));
-    box.append(section(t('SQL query cache'), t('Clears every cached result (a new generation).'), { by: 'id', names: 'querycache' }, 'id:querycache', lc['id:querycache']));
-    box.append(section(t('Counters'), t('Zeroes this server\'s counters; the cached results stay.'), { by: 'querycache_counters' }, 'querycache_counters', lc.querycache_counters, can && q.apcu));
+    // after a clear or a reset the section is read again (the new generation, the zeroed counters); the status line
+    // stays readable for a moment first
+    const refresh = () => setTimeout(loadCache, 1200);
+    box.append(section(t('SQL query cache'), t('Clears every cached result (a new generation).'), { by: 'id', names: 'querycache' }, 'id:querycache', lc['id:querycache'], true, { done: refresh }));
+    box.append(section(t('Counters'), t('Zeroes this server\'s counters; the cached results stay.'), { by: 'querycache_counters' }, 'querycache_counters', lc.querycache_counters, can && q.apcu, { label: t('Reset'), done: refresh }));
     return box;
   };
 
@@ -834,11 +838,13 @@
     const out = [];
     const can = !!ans.can_cache;
     if (!can) out.push(hint(t('You may not clear caches (setup/managecache).'), 'warn'));
-    const section = (title, desc, params, key, last, offer) => {
+    // opts: label of the button (Clear), done: called after it succeeded
+    const section = (title, desc, params, key, last, offer, opts) => {
+      const label = (opts && opts.label) || t('Clear');
       const status = el('span', { 'aria-live': 'polite', class: 'exp-debug-hint' });
       return el('div', { class: 'exp-debug-cache-row', 'data-cache': key },
         el('strong', {}, title), ' ', desc ? el('span', { class: 'exp-debug-setting-help' }, desc) : null,
-        el('div', { class: 'exp-debug-row' }, can && offer !== false ? clearButton(t('Clear'), params, status, { 'data-cache': key, 'aria-label': t('Clear') + ': ' + title }) : null,
+        el('div', { class: 'exp-debug-row' }, can && offer !== false ? clearButton(label, params, status, { 'data-cache': key, 'aria-label': label + ': ' + title }, opts && opts.done) : null,
           el('span', { class: 'exp-debug-last exp-debug-hint' }, last !== undefined ? lastText(last) : ''), status));
     };
     const lc = ans.last_cleared || {};
@@ -858,7 +864,7 @@
     }
     if ((ans.caches || []).length) {
       out.push(el('fieldset', {}, el('legend', {}, t('By ID')),
-        ...ans.caches.map((c) => section(c.name + ' (' + c.id + ')', c.description || '', { by: 'id', names: c.id }, 'id:' + c.id, lc['id:' + c.id]))));
+        ...ans.caches.filter((c) => !(ans.querycache && c.id === 'querycache')).map((c) => section(c.name + ' (' + c.id + ')', c.description || '', { by: 'id', names: c.id }, 'id:' + c.id, lc['id:' + c.id]))));
     }
     out.push(el('fieldset', {}, el('legend', {}, t('All caches')), section(t('All caches'), '', { by: 'all' }, 'all', lc.all)));
     cacheBox.replaceChildren(...out);

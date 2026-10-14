@@ -585,8 +585,10 @@ class eZDBQueryCache
      */
     public static function inventory( $limit = 15 )
     {
-        $out = self::status( false ) + array( 'sma' => null, 'tables' => array(), 'largest' => array(),
-                                              'entries_read' => 0, 'truncated' => false );
+        // without the state file's path: the inventory goes to the browser
+        $out = array_diff_key( self::status( false ), array( 'state_file' => true ) )
+             + array( 'sma' => null, 'tables' => array(), 'largest' => array(),
+                     'entries_read' => 0, 'truncated' => false );
         if ( !$out['apcu'] || !class_exists( 'APCUIterator' ) )
             return $out;
         $sma = @apcu_sma_info( true );

@@ -843,5 +843,6 @@ class expDebugBarSettingsTest extends PHPUnit\Framework\TestCase
         $this->assertArrayHasKey( 'querycache', $c );
         foreach ( array( 'enabled', 'mode', 'counters', 'tables', 'largest', 'sma', 'entries_read', 'truncated' ) as $key )
             $this->assertArrayHasKey( $key, $c['querycache'] );
+        $this->assertArrayNotHasKey( 'state_file', $c['querycache'], 'the state file path does not reach the browser' );
     }
 }

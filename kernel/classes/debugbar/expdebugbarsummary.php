@@ -146,7 +146,8 @@ class expDebugBarSummary
 
     /**
      * The SQL query cache of this request (eZDBQueryCache::debugSnapshot()) with a level, or null when the cache is
-     * off or not there. 'measured' is false while the cache saw no statement or its report is off.
+     * off or not there. 'measured' is false while the cache saw no statement or its report is off. The rules are
+     * expDebugBarReport::queryCacheFigures(), shared with the bar's own fallback.
      *
      * @param array $limits array( warn, high ): hit rates in percent below which the level turns warn and high
      * @return array|null
@@ -155,21 +156,11 @@ class expDebugBarSummary
     {
         if ( !class_exists( 'eZDBQueryCache', false ) || !eZDBQueryCache::enabled() )
             return null;
-        $snapshot = eZDBQueryCache::debugSnapshot();
-        if ( $snapshot === null )
-            return array( 'measured' => false, 'mode' => eZDBQueryCache::settings()['mode'], 'level' => 'ok' );
-        $level = self::queryCacheLevel( $snapshot, $limits );
-        // the summary goes into the page's JSON and to expdebugbar::summary: the number of writes that made
-        // everything stale, not their statements (those are in the report of the SQL tab)
-        $snapshot['stale_count'] = count( $snapshot['stale'] ) + $snapshot['stale_more'];
-        unset( $snapshot['stale'], $snapshot['stale_more'] );
-        return array( 'measured' => true ) + $snapshot + array( 'level' => $level );
+        return expDebugBarReport::queryCacheFigures( eZDBQueryCache::debugSnapshot(), $limits, eZDBQueryCache::settings()['mode'] );
     }
 
     /**
-     * ok, warn or high for a query cache snapshot: warn below the first hit rate of $limits or when a write made every
-     * result stale, high below the second, or in shared mode without APCu (it works as request then). Without a
-     * lookup the hit rate says nothing: ok, unless one of the other two holds.
+     * ok, warn or high for a query cache snapshot: expDebugBarReport::queryCacheLevel(), the one place of the rules.
      *
      * @param array $snapshot eZDBQueryCache::debugSnapshot()
      * @param array $limits array( warn, high )
@@ -177,14 +168,7 @@ class expDebugBarSummary
      */
     public static function queryCacheLevel( array $snapshot, array $limits )
     {
-        if ( $snapshot['mode'] === 'shared' && empty( $snapshot['apcu'] ) )
-            return 'high';
-        $rate = $snapshot['hit_rate'];
-        if ( $rate !== null && $rate < $limits[1] )
-            return 'high';
-        if ( ( $rate !== null && $rate < $limits[0] ) || !empty( $snapshot['stale'] ) || !empty( $snapshot['stale_count'] ) )
-            return 'warn';
-        return 'ok';
+        return expDebugBarReport::queryCacheLevel( $snapshot, $limits );
     }
 
     /** Whether the current user has setup/setup (may see the IP and user lists). */

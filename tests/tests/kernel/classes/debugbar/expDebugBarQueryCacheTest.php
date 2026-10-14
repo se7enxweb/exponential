@@ -1,7 +1,7 @@
 <?php
 /**
  * The SQL query cache in the Exp Debug bar: the level of the summary chip (expDebugBarSummary::queryCacheLevel()),
- * the chip itself (expDebugBarReport), and the strings the Cache tab's query cache section uses.
+ * the chip itself (expDebugBarReport), and one source for the level and the figures (DQ-05).
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -64,7 +64,7 @@ class expDebugBarQueryCacheTest extends PHPUnit\Framework\TestCase
         $saved = array();
         foreach ( $keys as $key )
             $saved[$key] = array_key_exists( $key, $GLOBALS ) ? array( $GLOBALS[$key] ) : null;
-        $dir = sys_get_temp_dir() . '/querycache-dq04-' . getmypid() . '-' . mt_rand();
+        $dir = dirname( __DIR__, 5 ) . '/var/tmp/querycache-dq04-' . getmypid() . '-' . mt_rand();
         mkdir( $dir, 0770, true );
         $GLOBALS['eZDebugGlobalInstance'] = $debug = new eZDebug();
         foreach ( $debug->LogFiles as $level => $file )
@@ -104,12 +104,34 @@ class expDebugBarQueryCacheTest extends PHPUnit\Framework\TestCase
         }
     }
 
+    /** DQ-05 */
+    public function testOneSourceForTheLevelAndTheFigures()
+    {
+        $limits = array( 50, 10 );
+        foreach ( array( array(), array( 'hit_rate' => 49.0 ), array( 'hit_rate' => 5.0 ), array( 'hit_rate' => null ),
+                         array( 'apcu' => false ), array( 'stale' => array( 'CALL x()' ) ), array( 'stale_more' => 3 ) ) as $values )
+        {
+            $snapshot = $this->snapshot( $values );
+            $this->assertSame( expDebugBarReport::queryCacheLevel( $snapshot, $limits ), expDebugBarSummary::queryCacheLevel( $snapshot, $limits ) );
+            $figures = expDebugBarReport::queryCacheFigures( $snapshot, $limits );
+            $this->assertSame( $figures['level'], expDebugBarReport::queryCacheLevel( $figures, $limits ), 'the figures give the same level again' );
+        }
+        $this->assertSame( 'warn', expDebugBarReport::queryCacheLevel( $this->snapshot( array( 'stale_more' => 3 ) ), $limits ), 'only more stale writes than listed' );
+        $this->assertSame( 'warn', expDebugBarReport::queryCacheLevel( $this->snapshot(), array( 'warn' => 90, 'high' => 10 ) ), 'named limits (expDebugBarReport::$thresholds)' );
+        $figures = expDebugBarReport::queryCacheFigures( $this->snapshot( array( 'stale' => array( 'CALL a()', 'CALL b()' ), 'stale_more' => 1 ) ), $limits );
+        $this->assertSame( 3, $figures['stale_count'] );
+        $this->assertArrayNotHasKey( 'stale', $figures );
+        $this->assertArrayNotHasKey( 'stale_more', $figures );
+        $this->assertSame( array( 'measured' => false, 'mode' => 'shared', 'level' => 'ok' ), expDebugBarReport::queryCacheFigures( null, $limits, 'shared' ) );
+    }
+
     private function summaryHtml( $queryCache )
     {
         $summary = array( 'time' => 0.1, 'sql_count' => 3, 'sql_ms' => 2.0, 'memory' => 1048576, 'memory_limit' => 0, 'templates' => null,
                           'warnings' => 0, 'errors' => 0, 'notices' => 0, 'deprecations' => 0, 'levels' => array(), 'querycache' => $queryCache );
         $m = new ReflectionMethod( 'expDebugBarReport', 'summaryHtml' );
-        $m->setAccessible( true );
+        if ( PHP_VERSION_ID < 80100 )
+            $m->setAccessible( true );
         return $m->invoke( null, $summary );
     }
 }

@@ -218,7 +218,7 @@ that matched, the engine (Velocity or the SAPI), the siteaccess, and the SQL que
 null while the cache is off). Every figure has a level, `ok`, `warn`
 or `high`, against `Thresholds[]` in debugbar.ini (`time_ms`, `sql_count`, `sql_ms`, `memory_mb`, `templates`, each
 `<warn>;<high>`; `querycache_hit_rate` is a hit rate in percent and turns the level up **below** its values, see
-`expDebugBarSummary::queryCacheLevel()`). `expDebugBarSummary::json()` is the same as JSON that is safe inside a `<script>` element.
+`expDebugBarReport::queryCacheLevel()`, the one place of these rules: `expDebugBarSummary::queryCache()` and the bar's own fallback both build the figures with `expDebugBarReport::queryCacheFigures()`). `expDebugBarSummary::json()` is the same as JSON that is safe inside a `<script>` element.
 
 ## Server functions
 
@@ -251,7 +251,7 @@ memory, the entries grouped by the tables they read with rows, size and hits, an
 carries no statement text, only the start of its key). The inventory reads the entries of the cache in APCu with their rows (at
 most 5,000 and for at most one second; it says when it stopped early), so it runs only when the Cache tab is opened.
 The summary (`expdebugbar::summary`, the page's JSON) carries only the number of writes that made everything stale
-(`stale_count`); the statements are in the report of the SQL tab. The state file's path is not sent.
+(`stale_count`); the statements are in the report of the SQL tab. `inventory()` leaves out the state file's path itself. After a clear or a reset of the counters the section is read again. The query cache is no longer listed a second time under "By ID".
 
 Example (replace the host names and YOUR_USER:YOUR_PASSWORD with your own; the second call is made without signing in):
 
