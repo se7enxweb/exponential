@@ -1180,10 +1180,14 @@ a.a4-current-user-name { color: var(--a4-ink); font-weight: 400; text-decoration
 /* Forced colors drop backgrounds and box-shadows: the edges, the current and selected states and the focus come
    back as system colours, and the status dots keep their own colour (they are the state). */
 @media (forced-colors: active) {
-  .a4-btn, .a4-input, .a4-card, .a4-badge, .a4-chip { border: 1px solid CanvasText; }
+  .a4-btn, .a4-input, .a4-card, .a4-badge, .a4-chip span { border: 1px solid CanvasText; }
   .a4-tabs .is-current, .a4-table tr.is-selected td, .a4-card.is-selected, .a4-figure.is-current { outline: 2px solid Highlight; outline-offset: -2px; }
+  .a4-chip input:checked + span { background-color: Highlight; color: HighlightText; }
+  .a4-steps li.is-current::before { background-color: Highlight; color: HighlightText; }
+  .a4-steps li.is-done::before { border: 1px solid CanvasText; }
   :focus-visible { outline-color: Highlight; }
-  .a4-dot { forced-color-adjust: none; }
+  /* data drawn as fills: the colour is the information */
+  .a4-dot, .a4-meter > span, .a4-bars > * { forced-color-adjust: none; }
 }
 
 /* A field with text under 16px makes a phone's browser zoom in when it gets the focus */
@@ -1191,5 +1195,5 @@ a.a4-current-user-name { color: var(--a4-ink); font-weight: 400; text-decoration
   .a4-input,
   .a4-field select,
   .a4-field textarea,
-  .a4-field input { font-size: var(--a4-text-l); }
+  .a4-field input:not([type=checkbox]):not([type=radio]):not([type=file]):not([type=range]) { font-size: var(--a4-text-l); }
 }

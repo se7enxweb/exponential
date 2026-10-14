@@ -1508,7 +1508,7 @@ html[data-a4-left-size="large"] {
     float: none;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
     .content-wrapper {
         padding: 1rem;
         border-image-width: 0rem;

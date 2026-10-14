@@ -1,13 +1,39 @@
 // Sidebar toggling feature
-// On a wide window (1024px and up) each sidebar follows the visitor's stored choice (ezpAdminLeftSidebar,
-// ezpAdminRightSidebar; open when nothing is stored). On a narrow window both start closed and at most one is open,
-// and nothing is written: a narrow window, or a sidebar opened over the page there, must not change what a wide
-// window shows later. Only a click on a wide window stores a choice.
+// On a wide window (1024px and up) each sidebar follows the visitor's stored choice (ezpAdminSidebarLeft,
+// ezpAdminSidebarRight; open when nothing is stored or storage is blocked). On a narrow window both start closed and
+// at most one is open, and nothing is written: a narrow window, or a sidebar opened over the page there, must not
+// change what a wide window shows later. Only a click on a wide window stores a choice. The keys before this,
+// ezpAdminLeftSidebar and ezpAdminRightSidebar, were written as "false" by every narrow visit, so they are dropped.
 function sidebarToggle() {
-    const isNarrow = () => $(window).width() < 1024;
-    const stored = (side) => (localStorage?.getItem(side === "left" ? "ezpAdminLeftSidebar" : "ezpAdminRightSidebar") || "true") === "true";
-    const store = (side, open) => localStorage?.setItem(side === "left" ? "ezpAdminLeftSidebar" : "ezpAdminRightSidebar", open ? "true" : "false");
+    const narrow = window.matchMedia("(max-width: 1023px)");
+    const keys = { left: "ezpAdminSidebarLeft", right: "ezpAdminSidebarRight" };
+    const fallback = { left: true, right: true }; // what is shown when storage cannot be read or written
     let narrowOpen = null; // the sidebar open over the page on a narrow window: "left", "right" or null
+
+    function stored(side) {
+        try {
+            const value = window.localStorage.getItem(keys[side]);
+            return value === null ? fallback[side] : value === "true";
+        } catch (e) {
+            return fallback[side];
+        }
+    }
+
+    function store(side, open) {
+        fallback[side] = open;
+        try {
+            window.localStorage.setItem(keys[side], open ? "true" : "false");
+        } catch (e) {
+            // private windows and blocked site data: the choice lasts for this page only
+        }
+    }
+
+    try {
+        window.localStorage.removeItem("ezpAdminLeftSidebar");
+        window.localStorage.removeItem("ezpAdminRightSidebar");
+    } catch (e) {
+        // nothing to clean up without storage
+    }
 
     function show(side, open) {
         $(".sidebar." + side).toggleClass("show", open);
@@ -15,7 +41,7 @@ function sidebarToggle() {
     }
 
     function apply() {
-        if (isNarrow()) {
+        if (narrow.matches) {
             show("left", narrowOpen === "left");
             show("right", narrowOpen === "right");
             return;
@@ -26,7 +52,7 @@ function sidebarToggle() {
     }
 
     function toggle(side) {
-        if (isNarrow()) {
+        if (narrow.matches) {
             narrowOpen = narrowOpen === side ? null : side;
         } else {
             store(side, !stored(side));
@@ -37,13 +63,11 @@ function sidebarToggle() {
     $(".sidebar-control.left").on("click", () => toggle("left"));
     $(".sidebar-control.right").on("click", () => toggle("right"));
 
-    let wasNarrow = isNarrow();
-    $(window).on("resize", () => {
-        if (isNarrow() !== wasNarrow) {
-            wasNarrow = isNarrow();
-            apply();
-        }
-    });
+    if (narrow.addEventListener) {
+        narrow.addEventListener("change", apply);
+    } else if (narrow.addListener) {
+        narrow.addListener(apply);
+    }
 
     apply();
 }

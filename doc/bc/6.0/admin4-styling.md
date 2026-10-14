@@ -186,7 +186,8 @@ The left column's preset sizes (small, medium, large) are `html[data-a4-left-siz
 - a file named in `AdminComponentCSSFileList` is missing.
 
 Modes the browser asks for: each theme sets `color-scheme` (scrollbars, select popups and date pickers follow);
-forced colors (Windows high contrast) get edges, the current and selected states and the focus in system colours;
+forced colors (Windows high contrast) get edges, the current and selected states and the focus in system colours,
+and data drawn as fills (dots, meters, bars) keeps its colours (`forced-color-adjust: none`);
 `prefers-reduced-motion: reduce` ends every transition and animation at once; on a touch screen (`pointer: coarse`)
 fields use `--a4-text-l` (16px) so a phone does not zoom in on focus.
 

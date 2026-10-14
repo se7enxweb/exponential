@@ -1262,6 +1262,7 @@ html[data-a4-theme="dark"] img[src*="/share/icons/bootstrap-icons/"] { filter: i
 /* The fields of the frame and of #page on touch screens: 16px, so a phone's browser does not zoom in on focus */
 @media (pointer: coarse) {
   #header .searchblock input.searchtext,
-  :where(#page input:not([type]), #page input[type=text], #page input[type=password], #page input[type=email], #page input[type=number],
-         #page input[type=url], #page input[type=tel], #page input[type=search], #page select, #page textarea) { font-size: var(--a4-text-l); }
+  #page input:not([type=checkbox]):not([type=radio]):not([type=file]):not([type=range]):not([type=submit]):not([type=button]):not([type=reset]):not([type=image]):not([type=hidden]),
+  #page select,
+  #page textarea { font-size: var(--a4-text-l); }
 }

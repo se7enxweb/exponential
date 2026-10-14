@@ -421,22 +421,44 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
         $components = preg_replace( '#/\*.*?\*/#s', '', file_get_contents( "$dir/components.css" ) );
         $this->assertMatchesRegularExpression( '/(^|\})\s*:root\s*\{[^}]*color-scheme:\s*light/s', $components );
         $this->assertMatchesRegularExpression( '/html\[data-a4-theme="dark"\]\s*\{[^}]*color-scheme:\s*dark/s', $components );
-        $this->assertStringContainsString( '@media (forced-colors: active)', $components );
-        $this->assertStringContainsString( '@media (pointer: coarse)', $components );
+        $this->assertMatchesRegularExpression( '/@media \(forced-colors: active\)\s*\{.*?\.a4-dot, \.a4-meter > span, \.a4-bars > \* \{ forced-color-adjust: none; \}/s', $components );
+        // the touch rule must outweigh .a4-field input[type=text] (0,2,1): one :not() per excluded type
+        $this->assertMatchesRegularExpression( '/@media \(pointer: coarse\)\s*\{[^}]*\.a4-field input:not\(\[type=checkbox\]\):not\(\[type=radio\]\)[^{]*\{ font-size: var\(--a4-text-l\); \}/s', $components );
         $frame = preg_replace( '#/\*.*?\*/#s', '', file_get_contents( "$dir/admin4.css" ) );
         $this->assertMatchesRegularExpression( '/@media \(prefers-reduced-motion: reduce\)\s*\{\s*\*, \*::before, \*::after\s*\{[^}]*transition-duration/s', $frame );
+        $this->assertMatchesRegularExpression( '/@media \(pointer: coarse\)\s*\{[^}]*#page input:not\(\[type=checkbox\]\)[^{]*\{ font-size: var\(--a4-text-l\); \}/s', $frame );
         $all = array();
         foreach ( array_merge( glob( "$dir/*.css" ), glob( "$dir/*/*.css" ) ) as $file )
         {
             foreach ( self::declarations( file_get_contents( $file ) ) as $d )
             {
-                if ( preg_match( '/^(-\w+-)?transition$/', $d[1] ) && preg_match( '/^all\b/', $d[2] ) )
+                if ( preg_match( '/^(-\w+-)?transition(-property)?$/', $d[1] ) && preg_match( '/(^|,)\s*all\b/', $d[2] ) )
                 {
                     $all[] = substr( $file, strlen( self::$root ) + 1 ) . ': ' . $d[0];
                 }
             }
         }
         $this->assertSame( array(), $all, 'transition: all; name the properties' );
+    }
+
+    /**
+     * The sidebar script stores a choice in one place only (store(), for a click on a wide window), reads the width
+     * through matchMedia, and reaches localStorage only inside try blocks
+     */
+    public function testSidebarScriptStoresOnlyAWideWindowsClick()
+    {
+        $js = file_get_contents( self::$root . '/design/admin4/javascript/ezadmin_menubar.js' );
+        $start = strpos( $js, 'function sidebarToggle()' );
+        $end = strpos( $js, '// Navbar menu toggling feature' );
+        $this->assertNotFalse( $start );
+        $this->assertNotFalse( $end );
+        $sidebar = substr( $js, $start, $end - $start );
+        $this->assertSame( 1, substr_count( $sidebar, 'setItem(' ), 'setItem only inside store()' );
+        $this->assertMatchesRegularExpression( '/function store\(side, open\) \{[^}]*try \{\s*window\.localStorage\.setItem/s', $sidebar );
+        $this->assertStringContainsString( 'window.matchMedia("(max-width: 1023px)")', $sidebar );
+        $this->assertStringNotContainsString( '$(window).width()', $sidebar );
+        $this->assertSame( 0, preg_match_all( '/(?<!window\.)localStorage/', $sidebar ), 'localStorage only as window.localStorage, inside try' );
+        $this->assertSame( 3, substr_count( $sidebar, 'try {' ), 'reading, storing and the clean-up of the old keys each in a try block' );
     }
 
     public function testComponentsAreTheSameInAdminAndAdmin4()
