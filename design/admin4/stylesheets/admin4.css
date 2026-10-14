@@ -767,9 +767,6 @@ div.context-information.a4-node-meta {
 .a4-node-meta button.a4-copied { color: var(--a4-ok); border-bottom-color: var(--a4-ok); }
 .a4-node-meta button.a4-copied::after { content: " \2713"; }
 .a4-node-langs { display: inline-flex; gap: 4px; }
-:where(.a4-node-langs) .a4-node-lang { display: inline-flex; padding: 2px; border-radius: 4px; opacity: .55; }
-:where(.a4-node-langs) .a4-node-lang.a4-current,
-:where(.a4-node-langs) .a4-node-lang:hover { opacity: 1; box-shadow: 0 0 0 1px var(--a4-accent); }
 
 /* the tabs as a quiet segmented row, the open panel as a soft card under it */
 .a4-node-tabs ul.tabs { display: flex; flex-wrap: wrap; gap: 2px; margin: 0 0 8px; padding: 3px; border-radius: var(--a4-radius-s); background-color: var(--a4-soft); box-shadow: inset 0 0 0 1px var(--a4-line); }
