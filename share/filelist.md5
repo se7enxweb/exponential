@@ -2769,7 +2769,7 @@ f1ac6c4bdfb768a543907f1e85408ed8  doc/bc/6.0/console-exp-ini.md
 4fa2c2acfebf49a6d0606b3cfdadd05c  doc/bc/6.0/console.md
 d3d1f22911e860a16506696d3fee2cbb  doc/bc/6.0/content-jobs.md
 ec94f35b9c29418f1c35fe46d54a157f  doc/bc/6.0/content-object-fallback-locale.md
-a6d6a91e4fccb35edf89845cb4ba41b0  doc/bc/6.0/debug-bar.md
+57c9c760e769bb2d95e4456fccf99176  doc/bc/6.0/debug-bar.md
 68ca2915c347f13a647afb19d14748d0  doc/bc/6.0/draft-edit-access.md
 b0fbba2abe4abadee42e57cebb5388fd  doc/bc/6.0/eZINI_PRESERVES_COMMENTS.md
 cf9e3712f778ce6bfbb6aaca39d7f82b  doc/bc/6.0/expinfo-operator.md
@@ -2823,7 +2823,7 @@ ec58de54f835ce1e62ff06f43ccbdc23  doc/bc/6.0/repair.md
 9a20a73e9663b4839cc8a2c370a4a571  doc/bc/6.0/response-cache-and-navigation.md
 42da9bad10b511619fee08bc9233c4b6  doc/bc/6.0/role-policy-paging.md
 7e517a45f444b0f9ced02b40e3fffe94  doc/bc/6.0/shop-basket-view-name.md
-989e95e48ff291f43d96e3d535092be0  doc/bc/6.0/sql-query-cache.md
+767f022c02ef26ed61285e79a369c8b1  doc/bc/6.0/sql-query-cache.md
 0400b2a50fcef2db6be4b2b01355360c  doc/bc/6.0/sqlite-transactions.md
 e21f3db4b2792ce0c74ab2480c335f60  doc/bc/6.0/static-cache-defaults.md
 8543fdb94ade4a47cc1e810302bd005a  doc/bc/6.0/subitems-table-options.md
@@ -2982,7 +2982,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-e5b481799522452672855fa36173a61a  doc/changelogs/6.0/6.0.15.md
+396e37063ccc16a0caffa58fb6ca646e  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3329,7 +3329,7 @@ f2bff77e9a094481e27aa23236fdc3e5  doc/features/6.0/debug-output-improvements.md
 de63e86aaa339fad12115c7961c9094d  doc/features/6.0/default-extension-distribution.md
 f8d44bca99ffe43f048fc03fc7ca6cc2  doc/features/6.0/environment-settings.md
 d26f78ed5cf8ef8757d508dde440e55d  doc/features/6.0/exp-adminui.md
-37d8f46a73957105494c189202f97dae  doc/features/6.0/exp-debug-bar.md
+33624440c66ad7b66edbd95e0ba6e61a  doc/features/6.0/exp-debug-bar.md
 5eb04007ff0095dc046839caaae709eb  doc/features/6.0/exp-ini-command.md
 5c7a4b79d8119e3152f415e6dd55ef2b  doc/features/6.0/extension-list-and-downloads.md
 244d74a450d733edbbb098d118101a62  doc/features/6.0/extension-loading-order.md
@@ -6162,7 +6162,7 @@ c7a43052aedb258efa97ec02a0d630f0  kernel/workflow/workflowlist.php
 9ba91d57d77c458fd031b4a0751ce000  lib/ezdb/classes/expmongodb.php
 226416065566fd96df9cfca57d5a3c99  lib/ezdb/classes/ezdb.php
 e3a1ffc6a2c9f262f92f520cc63b13ae  lib/ezdb/classes/ezdbinterface.php
-64f2017e30a9667fc11f5bb16ec49d74  lib/ezdb/classes/ezdbquerycache.php
+dc9521c62f343abbce4622e8c9a1796f  lib/ezdb/classes/ezdbquerycache.php
 cba91a38a19dd20520328d582d9d9228  lib/ezdb/classes/ezdbtool.php
 c8b7cb50e53522cc1d45078b3a28979b  lib/ezdb/classes/ezmysqlcharset.php
 184ec92d24404cebb876e3ee05cff51f  lib/ezdb/classes/ezmysqlidb.php
@@ -6333,7 +6333,7 @@ d27d72fa632723c912c0e30955660dfb  lib/eztemplate/classes/eztemplatetreecache.php
 83db4deedb094ab56e41666aa89d1d45  lib/eztemplate/classes/eztemplateunitoperator.php
 c86873ded14533e5c2c8d74477b5b0c9  lib/eztemplate/classes/eztemplatevariableelement.php
 290175b9eca3990307842ecc8353ae59  lib/eztemplate/classes/eztemplatewhilefunction.php
-812c03bef5be571de2ee35afec5884ba  lib/ezutils/classes/expdebugbarreport.php
+bd2a8873a9dd7a0069f7074c769d1b98  lib/ezutils/classes/expdebugbarreport.php
 b55898a868b558383b32af3334bd55d6  lib/ezutils/classes/expinfo.php
 11982ee3f90617fbf7ddbb55b4806286  lib/ezutils/classes/ezcachehelper.php
 65418d73b97109fe1dc0fc642c93139e  lib/ezutils/classes/ezcli.php
@@ -6870,14 +6870,14 @@ dd5f5f3cf2348a6cc17bd0ee76983225  share/translations/dut-NL/translation.ts
 284321a9de29bf9268c27abb13f56f2c  share/translations/ell-GR/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-AU/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-NZ/translation.ts
-32eddfb97e0f676cc5071ae218e8e57c  share/translations/eng-US/translation.ts
+f2b618089ba26f5b17282617a428a4f5  share/translations/eng-US/translation.ts
 5f0920d5b4e8bbaff2a4a6d5b3995c90  share/translations/esl-ES/translation.ts
 27846e3f6408cd74f58cef8adcbab573  share/translations/esl-MX/translation.ts
 4b104d4d337601b4bc6ae0482e6478ea  share/translations/fin-FI/translation.ts
 edfd3efb7eca1e2bd6d6d7d08bd78a77  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-c3286661dce57cf640b3ef5df023006a  share/translations/ger-DE/translation.ts
+b91da0b129aac5ddff89ad6926a0a8ae  share/translations/ger-DE/translation.ts
 75d657fed5de11db9e059cdcff2046a8  share/translations/ita-IT/translation.ts
 a45e2d26b1c24ac4cb6ae1d7197e5b0e  share/translations/jpn-JP/translation.ts
 d1dc34034ddce2d64c4f8df7fcc41c85  share/translations/nno-NO/translation.ts
@@ -7184,7 +7184,7 @@ e8093e3d17d03cfdae2feafd46d02173  tests/tests/kernel/classes/datatypes/eZUserDat
 cc71014b46954ff2444ae1742ce6663f  tests/tests/kernel/classes/datatypes/eZUserDatatypeDraftTest.php
 3dc0333408fb6ae63ad09e93427f72d5  tests/tests/kernel/classes/debugbar/RadSurveyDebugBarTest.php
 e957ce257ff45aa0025d9ba25e8e9a5c  tests/tests/kernel/classes/debugbar/expDebugBarIPListTest.php
-6a4f35a86e92991a41dc80b8b6441b42  tests/tests/kernel/classes/debugbar/expDebugBarQueryCacheTest.php
+3afd50615887db52cfda0599f741eed7  tests/tests/kernel/classes/debugbar/expDebugBarQueryCacheTest.php
 d3f4c6a7061e2f6b8d54c27e22d3e5c7  tests/tests/kernel/classes/debugbar/expDebugBarSettingsTest.php
 d0f1077b7412d5471c3025b0e6e47260  tests/tests/kernel/classes/eZCollaborationItemTest.php
 c27a9015f7fbb87702e8932aa1238ea8  tests/tests/kernel/classes/eZContentCacheEventSendersTest.php
@@ -7875,7 +7875,7 @@ a3ea1bdfc39cf79ebe3eeda15c967a85  tests/tests/kernel/suite.php
 f41f1ce2427c94f00213bc3ba51685cf  tests/tests/lib/ezdb/eZDBExceptionCodeTest.php
 859ec399542c1118723b6c217ff29a77  tests/tests/lib/ezdb/eZDBInterfaceHelpersTest.php
 d0fbfd88dc279221eee85b97921f6add  tests/tests/lib/ezdb/eZDBInterfaceTest.php
-ceaf1c29570454e798b6a65593452565  tests/tests/lib/ezdb/eZDBQueryCacheTest.php
+4e08fdc7f720f60c790e506209ee96d4  tests/tests/lib/ezdb/eZDBQueryCacheTest.php
 afa76fb7b9aaa0a1aaaea775252c6dcc  tests/tests/lib/ezdb/eZMySQLiDBFKTest.php
 d185830f980916133c98bbee065b75bb  tests/tests/lib/ezdb/eZPostgreSQLDBEscapeStringNullTest.php
 647b489c0b9f59541e1d26587ed4bb2b  tests/tests/lib/ezdb/eZPostgreSQLDBTest.php
