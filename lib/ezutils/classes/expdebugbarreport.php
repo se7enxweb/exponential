@@ -118,7 +118,7 @@ class expDebugBarReport
             'Minimise debug bar', 'Show debug bar', '%count errors', '%count warnings',
             // the SQL query cache in the Cache tab
             'SQL query cache', 'Off (querycache.ini Mode=off)', 'Mode %mode, MaxAge %age s, MaxRows %rows',
-            'APCu is not available to this server: shared works as request.', 'APCu', '%count entries',
+            'APCu is not available to this server: shared works as request.', 'APCu', 'Files', '%count entries',
             '%used of %size (%pct %)', 'APCu used in all: %pct %', 'This server',
             'since %time: %requests requests, hit rate %rate, %stores stored, %writes writes', 'State',
             'generation %gen, cleared %time, %count tables written in the last MaxAge',
@@ -509,7 +509,8 @@ class expDebugBarReport
                               . ' · ' . ( round( $q['saved_ms'] ) > 0 ? '-' : '' ) . number_format( $q['saved_ms'], 0 ) . ' ms',
                               self::t( 'SQL query cache: hit rate and database time saved (estimated); %hits hits, %misses misses, %stores stored, %skipped not cached, %writes writes, mode %mode',
                                        array( '%hits' => $q['hits'], '%misses' => $q['misses'], '%stores' => $q['stores'], '%skipped' => $q['not_cached'],
-                                              '%writes' => $q['writes'], '%mode' => $q['mode'] . ( $q['mode'] === 'shared' && empty( $q['apcu'] ) ? ' (no APCu)' : '' ) ) ) );
+                                              '%writes' => $q['writes'], '%mode' => $q['mode'] . ( $q['mode'] !== 'shared' ? ''
+                                                  : ( empty( $q['storage'] ) ? ' (no APCu)' : ' (' . $q['storage'] . ')' ) ) ) ) );
         }
         $chips[] = array( 'memory', 'memory', $memLevel, number_format( $s['memory'] / 1048576, 1 ) . ' MB', self::t( 'Peak memory' ) );
         if ( $s['templates'] !== null )
@@ -554,7 +555,7 @@ class expDebugBarReport
             return array( 'measured' => false );
         $limits = self::$thresholds['querycache_hit_rate'];
         $rate = $q['hit_rate'];
-        if ( ( $q['mode'] === 'shared' && !$q['apcu'] ) || ( $rate !== null && $rate < $limits['high'] ) )
+        if ( ( $q['mode'] === 'shared' && empty( $q['storage'] ) ) || ( $rate !== null && $rate < $limits['high'] ) )
             $level = 'high';
         else if ( ( $rate !== null && $rate < $limits['warn'] ) || $q['stale'] )
             $level = 'warn';

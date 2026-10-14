@@ -47,9 +47,14 @@ class eZDBQueryCacheTest extends PHPUnit\Framework\TestCase
         eZDBQueryCache::resetRequest();
         eZDBQueryCache::setStateDir( null );
         eZDBQueryCache::setSettings( null );
-        foreach ( glob( $this->dir . '/*' ) as $f )
-            unlink( $f );
-        rmdir( $this->dir );
+        $this->removeDir( $this->dir );
+    }
+
+    private function removeDir( $dir )
+    {
+        foreach ( array_merge( glob( $dir . '/*' ), glob( $dir . '/.[!.]*' ) ) as $f )
+            is_dir( $f ) ? $this->removeDir( $f ) : unlink( $f );
+        rmdir( $dir );
     }
 
     private function newRequest( array $settings = array() )
@@ -542,11 +547,11 @@ class eZDBQueryCacheTest extends PHPUnit\Framework\TestCase
         apcu_delete( new APCUIterator( '/^ezqc/' ) );
         try
         {
-            $this->newRequest( array( 'mode' => 'shared' ) );
+            $this->newRequest( array( 'mode' => 'shared', 'storage' => 'apcu' ) );
             $this->select( 'SELECT * FROM ezcontentobject a, ezcontentobject_tree t WHERE a.id = t.contentobject_id',
                            array( array( 'id' => 1 ), array( 'id' => 2 ), array( 'id' => 3 ) ) );
             $this->select( 'SELECT * FROM ezcontentobject WHERE id = 1' );
-            $this->newRequest( array( 'mode' => 'shared' ) );
+            $this->newRequest( array( 'mode' => 'shared', 'storage' => 'apcu' ) );
             $this->assertNotNull( $this->select( 'SELECT * FROM ezcontentobject WHERE id = 1' ), 'a hit from APCu' );
 
             $inv = eZDBQueryCache::inventory( 10 );
@@ -568,5 +573,97 @@ class eZDBQueryCacheTest extends PHPUnit\Framework\TestCase
         {
             apcu_delete( new APCUIterator( '/^ezqc/' ) );
         }
+    }
+
+    /** QC-21 */
+    public function testStorageFollowsTheSettingAndApcu()
+    {
+        $apcu = function_exists( 'apcu_enabled' ) && apcu_enabled();
+        $this->newRequest( array( 'mode' => 'request' ) );
+        $this->assertNull( eZDBQueryCache::storage(), 'request mode keeps nothing across requests' );
+        $this->newRequest( array( 'mode' => 'shared', 'storage' => 'file' ) );
+        $this->assertSame( 'file', eZDBQueryCache::storage(), 'Storage=file even with APCu' );
+        $this->newRequest( array( 'mode' => 'shared', 'storage' => 'auto' ) );
+        $this->assertSame( $apcu ? 'apcu' : null, eZDBQueryCache::storage(), 'auto on the command line: no files without APCu' );
+        $this->newRequest( array( 'mode' => 'shared', 'storage' => 'apcu' ) );
+        $this->assertSame( $apcu ? 'apcu' : null, eZDBQueryCache::storage() );
+        $this->newRequest( array( 'mode' => 'shared' ) );
+        $this->assertSame( $apcu ? 'apcu' : null, eZDBQueryCache::storage(), 'without the setting: auto' );
+    }
+
+    /** QC-22 */
+    public function testFileStorageAnswersTheNextRequestUntilAWrite()
+    {
+        $sql = 'SELECT * FROM ezcontentobject WHERE id = 1';
+        $this->newRequest( array( 'mode' => 'shared', 'storage' => 'file' ) );
+        $this->assertNull( $this->select( $sql, array( array( 'id' => 1, 'name' => 'a' ) ) ) );
+        $files = glob( eZDBQueryCache::entriesDir() . '/*/*' );
+        $this->assertCount( 1, $files, 'one file per result' );
+        $this->assertSame( substr( basename( $files[0] ), 0, 2 ), basename( dirname( $files[0] ) ) );
+
+        $this->newRequest( array( 'mode' => 'shared', 'storage' => 'file' ) );
+        $this->assertSame( array( array( 'id' => 1, 'name' => 'a' ) ), $this->select( $sql ), 'a hit from the file' );
+
+        $this->write( 'UPDATE ezcontentobject SET name = \'b\' WHERE id = 1' );
+        $this->newRequest( array( 'mode' => 'shared', 'storage' => 'file' ) );
+        $this->assertNull( $this->select( $sql, array( array( 'id' => 1, 'name' => 'b' ) ) ), 'stale after the write' );
+        $this->newRequest( array( 'mode' => 'shared', 'storage' => 'file' ) );
+        $this->assertSame( array( array( 'id' => 1, 'name' => 'b' ) ), $this->select( $sql ), 'the new rows' );
+    }
+
+    /** QC-23 */
+    public function testFileStorageNeverMakesObjectsAndSkipsBrokenFiles()
+    {
+        $sql = 'SELECT * FROM ezsection';
+        $this->newRequest( array( 'mode' => 'shared', 'storage' => 'file' ) );
+        $this->select( $sql );
+        $file = glob( eZDBQueryCache::entriesDir() . '/*/*' )[0];
+
+        $entry = unserialize( file_get_contents( $file ) );
+        $entry['rows'] = array( new ArrayObject( array( 1 ) ) );
+        file_put_contents( $file, serialize( $entry ) );
+        $this->newRequest( array( 'mode' => 'shared', 'storage' => 'file' ) );
+        $hit = $this->select( $sql );
+        $this->assertNotNull( $hit );
+        $this->assertInstanceOf( '__PHP_Incomplete_Class', $hit[0], 'no object of a real class' );
+
+        file_put_contents( $file, 'not serialized' );
+        $this->newRequest( array( 'mode' => 'shared', 'storage' => 'file' ) );
+        $this->assertNull( $this->select( $sql ), 'a broken file is a miss' );
+    }
+
+    /** QC-24 */
+    public function testCleanupFilesRemovesExpiredClearedAndLeftOverFiles()
+    {
+        $this->newRequest( array( 'mode' => 'shared', 'storage' => 'file', 'maxAge' => 300 ) );
+        $this->select( 'SELECT * FROM ezsection' );
+        $this->select( 'SELECT * FROM ezcontentobject' );
+        $files = glob( eZDBQueryCache::entriesDir() . '/*/*' );
+        $this->assertCount( 2, $files );
+        touch( $files[0], time() - 400 );
+        $tmp = dirname( $files[1] ) . '/' . basename( $files[1] ) . '.1.2.tmp';
+        file_put_contents( $tmp, 'x' );
+        touch( $tmp, time() - 120 );
+
+        $out = eZDBQueryCache::cleanupFiles();
+        $this->assertSame( 1, $out['removed'], 'older than MaxAge' );
+        $this->assertSame( 1, $out['tmp'], 'left over by an aborted write' );
+        $this->assertSame( 1, $out['kept'] );
+        $this->assertFileDoesNotExist( $files[0] );
+        $this->assertFileExists( $files[1] );
+
+        $status = eZDBQueryCache::status();
+        $this->assertSame( 'file', $status['storage'] );
+        $this->assertSame( 1, $status['entries'] );
+        $this->assertGreaterThan( 0, $status['memory'] );
+
+        $inv = eZDBQueryCache::inventory( 10 );
+        $this->assertSame( 1, $inv['entries_read'] );
+        $this->assertNull( $inv['largest'][0]['hits'], 'files count no hits' );
+        $this->assertSame( 12, strlen( $inv['largest'][0]['key'] ) );
+
+        sleep( 1 );
+        eZDBQueryCache::clearAll();
+        $this->assertSame( array(), glob( eZDBQueryCache::entriesDir() . '/*/*' ), 'clearing removes the files' );
     }
 }

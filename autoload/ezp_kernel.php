@@ -118,6 +118,7 @@ return array(
       'Exponential\\Cronjob\\Kernel\\Mailpreferences'                => 'kernel/private/classes/cronjobs/mailpreferences.php',
       'Exponential\\Cronjob\\Kernel\\Notification'                   => 'kernel/private/classes/cronjobs/notification.php',
       'Exponential\\Cronjob\\Kernel\\OldDraftsCleanup'               => 'kernel/private/classes/cronjobs/old_drafts_cleanup.php',
+      'Exponential\\Cronjob\\Kernel\\QuerycacheCleanup'              => 'kernel/private/classes/cronjobs/querycache_cleanup.php',
       'Exponential\\Cronjob\\Kernel\\Rssimport'                      => 'kernel/private/classes/cronjobs/rssimport.php',
       'Exponential\\Cronjob\\Kernel\\SessionGc'                      => 'kernel/private/classes/cronjobs/session_gc.php',
       'Exponential\\Cronjob\\Kernel\\StaticcacheCleanup'             => 'kernel/private/classes/cronjobs/staticcache_cleanup.php',

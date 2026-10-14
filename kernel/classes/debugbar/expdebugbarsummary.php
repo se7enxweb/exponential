@@ -168,7 +168,8 @@ class expDebugBarSummary
 
     /**
      * ok, warn or high for a query cache snapshot: warn below the first hit rate of $limits or when a write made every
-     * result stale, high below the second, or in shared mode without APCu (it works as request then). Without a
+     * result stale, high below the second, or in shared mode without a storage (Storage=apcu without APCu: it works
+     * as request then; Storage=auto falls back to files). Without a
      * lookup the hit rate says nothing: ok, unless one of the other two holds.
      *
      * @param array $snapshot eZDBQueryCache::debugSnapshot()
@@ -177,7 +178,7 @@ class expDebugBarSummary
      */
     public static function queryCacheLevel( array $snapshot, array $limits )
     {
-        if ( $snapshot['mode'] === 'shared' && empty( $snapshot['apcu'] ) )
+        if ( $snapshot['mode'] === 'shared' && empty( $snapshot['storage'] ) )
             return 'high';
         $rate = $snapshot['hit_rate'];
         if ( $rate !== null && $rate < $limits[1] )
