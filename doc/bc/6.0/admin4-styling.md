@@ -83,7 +83,7 @@ All `var(--a4-...)`, defined in `components.css`.
 
 | Group | Tokens |
 |---|---|
-| Accent | `--a4-accent` (`#f26a21`), `--a4-accent-hover`, `--a4-accent-strong` (filled controls with white text, 5.2:1), `--a4-accent-press` (their hovered fill), `--a4-accent-text` (the accent as text or link), `--a4-accent-soft` (tint), `--a4-on-accent`, `--a4-ring` (focus ring) |
+| Accent | `--a4-accent` (`#f26a21`), `--a4-accent-hover`, `--a4-accent-strong` (filled controls with white text, 5.2:1), `--a4-accent-press` (their hovered fill), `--a4-accent-text` (the accent as text or link), `--a4-accent-soft` (tint), `--a4-on-accent`, `--a4-on-accent-hover` (text on the `-press` fill), `--a4-ring` (focus ring, opaque: 3:1 on every surface) |
 | Neutral | `--a4-ink`, `--a4-muted`, `--a4-line`, `--a4-line-strong`, `--a4-soft`, `--a4-card`, `--a4-surface`, `--a4-field`, `--a4-field-line`, `--a4-disabled`, `--a4-overlay`, `--a4-code-bg`, `--a4-code-ink` |
 | States | `--a4-ok`, `--a4-ok-bg`, `--a4-ok-line`; `--a4-warn`, `--a4-warn-bg`, `--a4-warn-line`; `--a4-bad`, `--a4-bad-bg`, `--a4-bad-line`, `--a4-bad-hover`; `--a4-info`, `--a4-info-bg`, `--a4-info-line` |
 | Charts | `--a4-chart-1` to `--a4-chart-8`, a categorical palette in this order |
@@ -175,7 +175,13 @@ The left column's preset sizes (small, medium, large) are `html[data-a4-left-siz
   `50%`, a spacing length that is not a token (`0`, `1px`, `2px`, `auto` and `calc()` of tokens are allowed), a font
   family or pixel font size of its own, a custom property of its own, or a selector without an `.a4-` class;
 - a colour token in `components.css` has no dark value, or the admin and admin4 copies differ;
+- `admin4.css` or one of admin4's page stylesheets (`ezinfo.css`, `packagecompare.css`, `setup-extensions.css`,
+  `visual-templateview.css`) has a colour literal outside a token definition;
 - a file named in `AdminComponentCSSFileList` is missing.
+
+`tests/tests/design/AdminTokenContrastTest.php` computes the WCAG contrast of the token pairs in both modes: text
+tokens on card, surface and soft 4.5:1, each state's text on its own tint 4.5:1, the text of filled buttons (also
+hovered) 4.5:1, the ring and the field edge 3:1 on every surface and the page, the chart colours 3:1 on a card.
 
 Never weaken the test or add an allowlist entry to make a change pass; move the CSS.
 

@@ -51,7 +51,8 @@
       "tests/tests/design/AdminLanguageBadgeTest.php",
       "tests/tests/design/AdminContextMenuTest.php",
       "tests/tests/design/AdminLandmarksTest.php",
-      "tests/tests/design/AdminFormLabelsTest.php"
+      "tests/tests/design/AdminFormLabelsTest.php",
+      "tests/tests/design/AdminTokenContrastTest.php"
     ],
     "design/admin4/javascript/ezajaxsubitems_expdatatable.js": [
       "tests/tests/design/AdminLanguageBadgeTest.php"

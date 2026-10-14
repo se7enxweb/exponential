@@ -14,6 +14,10 @@
  * - components.css: every colour token of :root has a value for html[data-a4-theme="dark"], and the copies in
  *   design/admin4 and design/admin are the same file.
  * - Every file of design.ini [StylesheetSettings] AdminComponentCSSFileList exists in both designs.
+ * - admin4's frame (admin4.css) and its page stylesheets (PAGE_STYLESHEETS) take their colours from the tokens too:
+ *   no colour literal outside a custom property's own definition, so every colour has its dark value. The other
+ *   base stylesheets inherited from admin3 (pagelayout, core, content, theme/*) are overridden through tokens in
+ *   admin4.css and are not checked yet.
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminStylingRulesTest.php
  *
@@ -274,6 +278,44 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
         }
         $this->assertSame( array(), $missing, 'tokens without a value for html[data-a4-theme="dark"] in components.css' );
         $this->assertSame( array(), array_values( array_diff( $dark, $light ) ), 'dark tokens that have no light value' );
+    }
+
+    /**
+     * admin4 stylesheets outside modules/ that take every colour from the tokens
+     */
+    const PAGE_STYLESHEETS = array( 'admin4.css', 'ezinfo.css', 'packagecompare.css', 'setup-extensions.css', 'visual-templateview.css' );
+
+    /**
+     * Declarations (stylesheet => selector => properties) that keep a colour literal on purpose
+     */
+    const COLOUR_EXCEPTIONS = array(
+        // explayouts paints its own navigation column navy on its pages; admin4's card takes that navy there
+        'admin4.css' => array( '#page.ezexplayoutsuinavigationpart #leftmenu-design' => array( 'background-color', 'box-shadow' ) ),
+    );
+
+    public function testPageStylesheetsUseOnlyColourTokens()
+    {
+        $problems = array();
+        foreach ( self::PAGE_STYLESHEETS as $file )
+        {
+            $path = self::$root . '/design/admin4/stylesheets/' . $file;
+            $this->assertFileExists( $path );
+            $exceptions = isset( self::COLOUR_EXCEPTIONS[$file] ) ? self::COLOUR_EXCEPTIONS[$file] : array();
+            foreach ( self::declarations( file_get_contents( $path ) ) as $d )
+            {
+                list( $selector, $property, $value ) = $d;
+                if ( strpos( $property, '--' ) === 0 || ( isset( $exceptions[$selector] ) && in_array( $property, $exceptions[$selector], true ) ) )
+                {
+                    continue;
+                }
+                $problem = self::moduleDeclarationProblem( $selector, $property, $value );
+                if ( $problem !== null && strpos( $problem, 'colour' ) !== false )
+                {
+                    $problems[] = "design/admin4/stylesheets/$file: $selector { $property: $value } -- $problem";
+                }
+            }
+        }
+        $this->assertSame( array(), array_values( array_unique( $problems ) ) );
     }
 
     public function testComponentsAreTheSameInAdminAndAdmin4()

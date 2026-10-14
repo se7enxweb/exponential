@@ -403,7 +403,7 @@ ul.leftmenu-items li a:hover {
 }
 
 ul.leftmenu-items li.current a {
-    color: #E24602;
+    color: var(--a4-accent-text);
     font-weight: bold;
 }
 
@@ -964,13 +964,13 @@ input.button:hover {
 }
 
 .searchblock input.searchtext::placeholder {
-    color: #3d4142;
+    color: var(--a4-muted);
     font-style: italic;
 }
 
 .searchblock input.searchtext:focus {
-    outline: 2px solid #f26a21;
-    outline-offset: 1px;
+    outline: 3px solid var(--a4-ring);
+    outline-offset: 2px;
     background-color: #f5f3dd;
 }
 
@@ -1149,7 +1149,7 @@ input.button:hover {
 
 .searchscope-body fieldset label input {
     margin: 2px 0 0;
-    accent-color: #f26a21;
+    accent-color: var(--a4-accent-strong);
 }
 
 .searchscope-body label.disabled {
@@ -1197,12 +1197,12 @@ input.button:hover {
 }
 
 input::-webkit-input-placeholder {
-    color: #a2a2a2;
+    color: var(--a4-muted);
     font-style: italic;
 }
 
 input:-moz-placeholder {
-    color: #a2a2a2;
+    color: var(--a4-muted);
     font-style: italic;
 }
 
@@ -1699,8 +1699,8 @@ html[data-a4-left-size="large"] {
 }
 
 .navbar-menu li a.selected:hover {
-    background-color: #e27f15;
-    color: #ffffff;
+    background-color: var(--a4-accent-press);
+    color: var(--a4-on-accent-hover);
 }
 
 @media screen and (min-width: 1024px) {

@@ -134,12 +134,12 @@
 .a4-content-bookmark .a4-content-bookmark-nav li.is-dragged,
 .a4-content-bookmark .a4-card.is-dragged { opacity: .5; }
 .a4-content-bookmark .a4-content-bookmark-nav li.is-moved > a,
-.a4-content-bookmark .a4-content-bookmark-nav li.is-moved > span.current { box-shadow: 0 0 0 2px var(--a4-ring); }
+.a4-content-bookmark .a4-content-bookmark-nav li.is-moved > span.current { background-color: var(--a4-accent-soft); box-shadow: inset 3px 0 0 var(--a4-accent); }
 .a4-content-bookmark .a4-content-bookmark-nav .a4-grip { width: 22px; min-height: 26px; font-size: var(--a4-text-s); }
 
 /* arranging the list */
 .a4-content-bookmark .a4-cards.is-arranging { border-radius: var(--a4-radius-s); outline: 2px dashed var(--a4-line-strong); outline-offset: var(--a4-space-1); }
-.a4-content-bookmark .a4-card.is-moved { border-color: var(--a4-accent); box-shadow: 0 0 0 2px var(--a4-ring); }
+.a4-content-bookmark .a4-card.is-moved { border-color: var(--a4-accent); background-color: var(--a4-accent-soft); }
 .a4-content-bookmark .a4-content-bookmark-arrange { margin: 0 0 var(--a4-space-3); }
 .a4-content-bookmark .a4-content-bookmark-cardfoot { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: var(--a4-space-2) var(--a4-space-4); margin: var(--a4-space-2) 0 0; padding-left: var(--a4-space-6); }
 .a4-content-bookmark .a4-content-bookmark-cardfoot > .a4-facts,

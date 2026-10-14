@@ -32,7 +32,7 @@
 .a4-role-policy.is-roles { box-shadow: inset var(--a4-space-1) 0 0 var(--a4-warn); }
 .a4-role-policy.is-selected { border-color: var(--a4-accent); }
 .a4-role-policy.is-dragging { border-style: dashed; border-color: var(--a4-accent); }
-.a4-role-policy.is-moved { border-color: var(--a4-accent); box-shadow: 0 0 0 2px var(--a4-ring); }
+.a4-role-policy.is-moved { border-color: var(--a4-accent); background-color: var(--a4-accent-soft); }
 .a4-role-policy-main { flex: 1 1 320px; min-width: 0; }
 .a4-role-sentence { margin: 0; font-weight: 600; overflow-wrap: anywhere; }
 .a4-role-policy-detail {

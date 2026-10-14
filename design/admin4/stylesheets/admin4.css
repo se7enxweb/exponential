@@ -174,7 +174,7 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
 .navbar-menu li a.selected,
 .navbar-menu li a.selected:hover {
   padding: 0.3rem 0.75rem;
-  background-color: var(--a4-orange);
+  background-color: var(--a4-accent-strong);
   color: var(--a4-on-accent);
   box-shadow: 0 4px 14px var(--a4-accent-soft);
 }
@@ -432,12 +432,15 @@ input.defaultbutton {
   border: 1px solid var(--a4-accent-strong);
   color: var(--a4-on-accent);
 }
-input.defaultbutton:hover {
-  background-color: var(--a4-accent-hover);
-  border-color: var(--a4-accent-hover);
+/* theme/rounded.css paints a focused default button teal with yellow text: keep the accent, the ring shows the focus */
+input.defaultbutton:focus {
+  background-color: var(--a4-accent-strong);
+  color: var(--a4-on-accent);
 }
-html[data-a4-theme="dark"] input.defaultbutton:hover {
-  color: var(--a4-code-bg);
+input.defaultbutton:hover {
+  background-color: var(--a4-accent-press);
+  border-color: var(--a4-accent-press);
+  color: var(--a4-on-accent-hover);
 }
 input.button-disabled, input.button[disabled], input.button[disabled="disabled"] {
   background-color: var(--a4-soft);
@@ -461,7 +464,7 @@ input.defaultbutton:active {
 :where(#page input:not([type]), #page input[type=text], #page input[type=password], #page input[type=email], #page input[type=number],
        #page input[type=url], #page input[type=tel], #page input[type=date], #page input[type=time], #page input[type=datetime-local],
        #page input[type=search], #page select, #page textarea) {
-  border: 1px solid var(--a4-line-strong);
+  border: 1px solid var(--a4-field-line);
   border-radius: var(--a4-radius-s);
   background-color: var(--a4-field);
   color: var(--a4-ink);
@@ -863,8 +866,7 @@ html[data-a4-theme="dark"] .a4-login-logo { background-image: url('../images/3/l
   font: 600 16px/1 var(--a4-font); cursor: pointer; box-shadow: 0 6px 16px var(--a4-accent-soft);
   transition: background-color .15s ease, box-shadow .15s ease;
 }
-.a4-login-form #loginbutton:hover { background-color: var(--a4-accent-press); }
-html[data-a4-theme="dark"] .a4-login-form #loginbutton:hover { color: var(--a4-code-bg); }   /* light orange in dark mode: dark text */
+.a4-login-form #loginbutton:hover { background-color: var(--a4-accent-press); color: var(--a4-on-accent-hover); }
 .a4-login-form #loginbutton:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
 .a4-login-form #loginbutton.a4-busy { opacity: .75; cursor: progress; pointer-events: none; }
 .a4-login-alt { margin: 18px 0 0; text-align: center; font-size: 14px; color: var(--a4-muted); }
@@ -1173,7 +1175,7 @@ html[data-a4-theme="dark"] .a4-login-form #loginbutton:hover { color: var(--a4-c
 .a4pw-btn:hover { border-color: var(--a4-accent); }
 .a4pw-btn:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
 .a4pw-btn.primary, .a4pw a.a4pw-btn.primary { background-color: var(--a4-accent-strong); border-color: var(--a4-accent-strong); color: var(--a4-on-accent); }
-.a4pw-btn.primary:hover, .a4pw a.a4pw-btn.primary:hover { background-color: var(--a4-accent-hover); border-color: var(--a4-accent-hover); color: var(--a4-on-accent); }
+.a4pw-btn.primary:hover, .a4pw a.a4pw-btn.primary:hover { background-color: var(--a4-accent-press); border-color: var(--a4-accent-press); color: var(--a4-on-accent-hover); }
 
 .a4pw-summary { margin: 0 0 16px; padding: 14px 16px; border: 1px solid var(--a4-bad-line); border-left: 4px solid var(--a4-bad); border-radius: var(--a4-radius-s); background-color: var(--a4-bad-bg); color: var(--a4-bad); }
 .a4pw-summary:focus { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
