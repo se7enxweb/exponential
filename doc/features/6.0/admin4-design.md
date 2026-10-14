@@ -67,6 +67,7 @@ extension). The editor siteaccess falls back to `admin4` first, then `admin3`, `
   window height, with labels and titles. Long names in the side columns wrap instead of being cut off.
 - **Tables.** A list table's sorted column is readable (soft orange header).
 - **Icons.** Bootstrap Icons in the text colour, so they follow links, buttons, hover and the dark mode (see below).
+- **Languages.** A short code instead of a flag (see [Languages](#languages)).
 
 ## Icons
 
@@ -101,6 +102,30 @@ To add an icon: copy the SVG from the Bootstrap Icons 1.13.1 package unchanged i
 `share/icons/bootstrap-icons/svg/`, add `.a4-bi-<name>` to both copies of `components.css` (or name the file in the
 theme's `icon.ini`), and use it. `tests/tests/design/AdminIconsTest.php` fails for a file nothing names, a name with
 no file, a changed file, and a GIF icon, inline SVG or image button in an admin4 template.
+
+## Languages
+
+A flag stands for a country, not for a language: English is spoken under several flags, and one country has several
+languages. admin4 therefore shows a content language as a short code badge and its name, the way most back offices
+list languages:
+
+- **The code** is the language part of the locale's language tag (`ger-DE` has `de-DE`, so `DE`; `eng-GB` gives
+  `EN`). When the installation has two content languages of the same language (`eng-GB` and `eng-US`), both show the
+  region as well (`EN-GB`, `EN-US`). A locale without a language tag shows its locale code.
+- **The name** (the locale's international name, e.g. German) is written next to the badge wherever there is room:
+  the Translations tab, the translation lists of versions, drafts, URL aliases, states and classes, and the language
+  choice of the edit page. Where there is no room, in the node view's meta line and the sub-items table's
+  Translations column, it is the badge's title and its accessible name; there the badges are the links to view or
+  edit a translation, and the language shown carries `aria-current`.
+- Where the name and the locale code are both shown already (the language cards of Setup > Languages, the state
+  editors' legends), the flag is simply gone.
+
+Every badge comes from `design:parts/language_badge.tpl` (parameters `locale`, optional `name`, `named` when the name
+is written next to it, `plain` for the bare code, `class`), styled by `.a4-lang` / `.a4-langs` in both copies of
+`components.css`. The code is taken from `eZLocale`'s new attribute `content_language_code`, the locale file's
+`[HTTP] ContentLanguage`: unlike `http_locale_code` it is not overridden by `site.ini [RegionalSettings] HTTPLocale`,
+which sets one tag for a whole site. The flags in `share/icons/flags/` and the `flag_icon` operator stay for the
+other designs. `tests/tests/design/AdminLanguageBadgeTest.php` fails for a flag in an admin4 template or script.
 
 ## Settings
 

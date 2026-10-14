@@ -122,6 +122,7 @@ White text on it is only 3:1, so filled controls with white text use its darker 
 | Steps | `ol.a4-steps` > `li.is-done` / `li.is-current` |
 | Code | `.a4-pre` (`.is-tall`), `.a4-kbd` |
 | Amounts | `.a4-meter` > `span`, `.a4-bars` > children, sized by `.a4-pct-0` ... `.a4-pct-100` (`--a4-pct`) |
+| Language | `.a4-lang` (a content language's short code, from `design:parts/language_badge.tpl`; `.is-current` for the one shown), `.a4-langs` (several in a row) |
 | Icons | `.a4-icon` with one `.a4-bi-<name>` (a Bootstrap icon of `share/icons/bootstrap-icons/svg/`, in `currentColor`; `.is-small`, `.is-medium`, `.is-large`); `.a4-icon-btn` (a link or button that is only an icon) |
 | Other | `.a4-grip` (drag handle), `.is-dragging` |
 
