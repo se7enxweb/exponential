@@ -317,10 +317,6 @@ div.tabs-content.disabled div.tab-content {
     margin: 0 0 0.5rem 0;
 }
 
-#path span {
-    color: var(--a4-ink);
-}
-
 /* COLUMNS */
 #columns {
     min-height: 100%;

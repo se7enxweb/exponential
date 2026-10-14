@@ -574,7 +574,7 @@ html #page.ezexplayoutsuinavigationpart #leftmenu.sidebar {
   background: linear-gradient(135deg, var(--a4-accent-soft), transparent 70%), var(--a4-soft);
   box-shadow: inset 0 0 0 1px var(--a4-line);
 }
-.a4-dash-hero h1 { margin: 2px 0 var(--a4-space-1); font-size: var(--a4-text-2xl); line-height: 1.2; }
+.a4-dash-hero h1 { margin: 2px 0 var(--a4-space-1); font-size: var(--a4-text-xl); font-weight: 650; line-height: var(--a4-leading-tight); }
 .a4-dash-date { margin: 0; font-size: var(--a4-text-xs); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--a4-muted); }
 .a4-dash-sub { margin: 0; color: var(--a4-muted); }
 .a4-dash-actions { display: flex; flex-wrap: wrap; gap: var(--a4-space-2); }
@@ -660,13 +660,20 @@ html #page.ezexplayoutsuinavigationpart #leftmenu.sidebar {
    title bar), .context-information (the line under it), .controlbar (the row of buttons under a form or list)
    and #controlbar-top. Each restyled by its base selector, so extension rules that beat the base still win. */
 
+/* one title style for every page, as .a4-pagehead-title (components.css): the kernel's title bar, the node view
+   and the dashboard used three sizes (1.35em, 1.45em, 26px) */
 h1.context-title {
   margin: 0 0 var(--a4-space-1);
-  font-size: 1.35em;
-  font-weight: 700;
+  font-size: var(--a4-text-xl);
+  font-weight: 650;
   letter-spacing: -.01em;
   line-height: var(--a4-leading-tight);
   color: var(--a4-ink);
+}
+/* narrow windows: every page title one step smaller, at the breakpoint of .a4-pagehead-title (components.css) */
+@media (max-width: 600px) {
+  h1.context-title,
+  .a4-dash-hero h1 { font-size: var(--a4-text-l); }
 }
 h2.context-title {
   font-size: 1.2em;
@@ -739,9 +746,10 @@ span.classattribute-description {
 }
 .a4-node-head h1.context-title {
   margin: 0;
-  font-size: 1.45em;
   overflow-wrap: anywhere;
 }
+/* the node head is the page header; its own padding replaces the component's bottom margin */
+.a4-node-head.a4-pagehead { margin: 0; }
 .a4-node-badges { display: inline-flex; flex-wrap: wrap; gap: var(--a4-space-1); }
 .a4-badge {
   display: inline-flex; align-items: center; padding: 1px var(--a4-space-2); border-radius: 999px;
@@ -1030,7 +1038,6 @@ html[data-a4-theme="dark"] .a4-login-logo { background-image: url('../images/3/l
     padding: var(--a4-space-3) var(--a4-space-3) var(--a4-space-4);
     border-radius: var(--a4-radius);
   }
-  h1.context-title { font-size: 1.2em; }
   #maincontent fieldset { padding: var(--a4-space-2) var(--a4-space-2) var(--a4-space-3); margin-left: 0; margin-right: 0; }
   #controlbar-top .box-bc { padding: var(--a4-space-1) var(--a4-space-2); }
   #controlbar-top .button-left input.defaultbutton,
