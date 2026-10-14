@@ -10270,6 +10270,10 @@
 <context>
     <name>design/admin/node/view/full</name>
     <message>
+        <source>Could not copy</source>
+        <translation>Kopieren nicht möglich</translation>
+    </message>
+    <message>
         <source>Copied to the clipboard</source>
         <translation>In die Zwischenablage kopiert</translation>
     </message>
@@ -38455,6 +38459,10 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
 </context>
 <context>
     <name>design/admin/visual/menuconfig</name>
+    <message>
+        <source>Could not copy</source>
+        <translation>Kopieren nicht möglich</translation>
+    </message>
     <message>
         <source>Copied to the clipboard</source>
         <translation>In die Zwischenablage kopiert</translation>

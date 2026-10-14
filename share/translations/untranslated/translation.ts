@@ -8000,6 +8000,10 @@
 <context>
     <name>design/admin/node/view/full</name>
     <message>
+        <source>Could not copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Copied to the clipboard</source>
         <translation type="unfinished"></translation>
     </message>
@@ -34021,6 +34025,10 @@ your account.</source>
 </context>
 <context>
     <name>design/admin/visual/menuconfig</name>
+    <message>
+        <source>Could not copy</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message>
         <source>Copied to the clipboard</source>
         <translation type="unfinished"></translation>

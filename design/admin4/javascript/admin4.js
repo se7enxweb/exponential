@@ -41,17 +41,26 @@
 })();
 
 /*
- * admin4 toasts: window.a4Toast( message, kind ) shows a short feedback of an action done in the page in the
- * regions #a4-toasts (polite) or, for kind 'bad', #a4-toasts-alert (assertive) of the frame. kind is 'ok', 'bad',
- * 'warn' or 'info'. The toast does not take the focus, closes after 5 s, waits while the pointer or the focus is on
- * it, and has a close button named by the region's data-close-label. Without the regions it does nothing.
+ * admin4 toasts: window.a4Toast( message, kind, opener ) shows a short feedback of an action done in the page in
+ * the regions #a4-toasts (polite) or, for kind 'bad', #a4-toasts-alert (assertive) of the frame. kind is 'ok',
+ * 'bad', 'warn' or 'info'; opener is the element the action came from (optional). The toast does not take the
+ * focus, closes after 5 s, waits while the pointer or the focus is on it, and has a close button named by the
+ * region's data-close-label. Closed with that button, it gives the focus to the opener when it is still in the page;
+ * without one the focus goes to the page, as with any removed element. A toast with the same text replaces the one
+ * shown; at most three stay, the oldest goes first. Without the regions it does nothing.
  */
 (function () {
     'use strict';
-    var DELAY = 5000;
-    window.a4Toast = function (message, kind) {
+    var DELAY = 5000, MAX = 3;
+    window.a4Toast = function (message, kind, opener) {
         var region = document.getElementById(kind === 'bad' ? 'a4-toasts-alert' : 'a4-toasts');
         if (!region || !message) return null;
+        // the same text again replaces the toast shown; more than MAX: the oldest goes
+        Array.prototype.forEach.call(region.querySelectorAll('.a4-toast'), function (old) {
+            var t = old.querySelector('.a4-toast-text');
+            if (t && t.textContent === String(message) && old.parentNode) old.parentNode.removeChild(old);
+        });
+        while (region.querySelectorAll('.a4-toast').length >= MAX) region.removeChild(region.querySelector('.a4-toast'));
         var labels = document.getElementById('a4-toasts');
         var toast = document.createElement('div');
         toast.className = 'a4-toast' + (/^(ok|bad|warn|info)$/.test(kind || '') ? ' is-' + kind : '');
@@ -69,11 +78,14 @@
         function remove() { if (timer) clearTimeout(timer); if (toast.parentNode) toast.parentNode.removeChild(toast); }
         function arm() { if (timer) clearTimeout(timer); if (!held) timer = setTimeout(remove, DELAY); }
         function hold(on) { held = on; if (on) { if (timer) clearTimeout(timer); timer = null; } else arm(); }
-        close.addEventListener('click', remove);
+        close.addEventListener('click', function () {
+            remove();
+            if (opener && opener.focus && document.body.contains(opener)) opener.focus();
+        });
         toast.addEventListener('mouseenter', function () { hold(true); });
         toast.addEventListener('mouseleave', function () { hold(toast.contains(document.activeElement)); });
         toast.addEventListener('focusin', function () { hold(true); });
-        toast.addEventListener('focusout', function (e) { if (!toast.contains(e.relatedTarget)) hold(false); });
+        toast.addEventListener('focusout', function (e) { if (!toast.contains(e.relatedTarget)) hold(toast.matches(':hover')); });
         region.appendChild(toast);
         arm();
         return toast;
@@ -89,11 +101,14 @@
     function copy(text) {
         if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
         return new Promise(function (resolve, reject) {
+            // the textarea takes the focus to be selected; give it back to where it was (the chip)
+            var before = document.activeElement;
             var t = document.createElement('textarea');
             t.value = text; t.setAttribute('readonly', ''); t.style.position = 'fixed'; t.style.opacity = '0';
             document.body.appendChild(t); t.select();
             try { document.execCommand('copy') ? resolve() : reject(); } catch (e) { reject(e); }
             document.body.removeChild(t);
+            if (before && before.focus) before.focus();
         });
     }
     document.addEventListener('click', function (e) {
@@ -105,8 +120,12 @@
             setTimeout(function () { chip.classList.remove('a4-copied'); }, 1400);
             // the tick is only seen; the toast also tells a screen reader
             if (window.a4Toast && chip.getAttribute('data-a4-copied'))
-                window.a4Toast(chip.getAttribute('data-a4-copied') + ': ' + chip.getAttribute('data-a4-copy'), 'ok');
-        }, function () {});
+                window.a4Toast(chip.getAttribute('data-a4-copied') + ': ' + chip.getAttribute('data-a4-copy'), 'ok', chip);
+        }, function () {
+            // a copy that failed says so instead of doing nothing
+            if (window.a4Toast && chip.getAttribute('data-a4-copy-failed'))
+                window.a4Toast(chip.getAttribute('data-a4-copy-failed'), 'bad', chip);
+        });
     });
 })();
 

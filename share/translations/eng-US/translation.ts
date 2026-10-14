@@ -8420,6 +8420,10 @@
 <context>
     <name>design/admin/node/view/full</name>
     <message>
+        <source>Could not copy</source>
+        <translation>Could not copy</translation>
+    </message>
+    <message>
         <source>Copied to the clipboard</source>
         <translation>Copied to the clipboard</translation>
     </message>
@@ -35408,6 +35412,10 @@ your account.</translation>
 </context>
 <context>
     <name>design/admin/visual/menuconfig</name>
+    <message>
+        <source>Could not copy</source>
+        <translation>Could not copy</translation>
+    </message>
     <message>
         <source>Copied to the clipboard</source>
         <translation>Copied to the clipboard</translation>
