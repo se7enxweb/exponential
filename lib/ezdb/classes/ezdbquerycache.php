@@ -279,6 +279,13 @@ class eZDBQueryCache
             return;
         }
         $verb = strtoupper( (string)strtok( ltrim( $sql ), " \t\r\n(" ) );
+        // The ALTER SESSION ezoracle runs on every connect changes nothing a result
+        // depends on. Counted as a write of unknown tables it made every result stale
+        // on every request. Any other ALTER SESSION (CURRENT_SCHEMA, NLS_SORT, NLS_COMP,
+        // NLS_DATE_FORMAT, TIME_ZONE, EDITION, CONTAINER ...) can change results and
+        // stays an unreadable write.
+        if ( $verb === 'ALTER' && self::isNeutralAlterSession( $sql ) )
+            return;
         if ( in_array( $verb, array( 'SELECT', 'SHOW', 'DESCRIBE', 'DESC', 'EXPLAIN', 'SET', 'BEGIN', 'START', 'COMMIT', 'ROLLBACK', 'SAVEPOINT', 'RELEASE', 'PRAGMA', 'USE', 'LOCK', 'UNLOCK', 'ANALYZE', 'CHECK', 'CHECKSUM', 'FLUSH', 'KILL', 'OPTIMIZE', 'VACUUM' ), true ) )
             return;
         // Temporary tables are never cached, so their writes invalidate
@@ -309,6 +316,40 @@ class eZDBQueryCache
             return;
         }
         self::bump( $tables );
+    }
+
+    /**
+     * Session parameters that change no cached result: the length unit of new
+     * columns, cursor reuse, and the number format, which only ezoracle sets, on
+     * connect and always to the same value (the key does not carry it). With
+     * site.ini OracleCaseInsensitive=enabled ezoracle adds NLS_COMP and NLS_SORT,
+     * which change comparisons: that statement stays a write.
+     */
+    const NEUTRAL_SESSION_PARAMETERS = array( 'NLS_NUMERIC_CHARACTERS', 'NLS_LENGTH_SEMANTICS', 'CURSOR_SHARING' );
+
+    /**
+     * Whether $sql is an ALTER SESSION SET that only sets parameters of
+     * NEUTRAL_SESSION_PARAMETERS (the statement ezoracle runs on connect).
+     *
+     * @param string $sql
+     * @return bool
+     */
+    public static function isNeutralAlterSession( $sql )
+    {
+        if ( !preg_match( '/^\s*ALTER\s+SESSION\s+SET\s+(.+?)\s*;?\s*$/is', $sql, $m ) )
+            return false;
+        $rest = $m[1];
+        $found = 0;
+        while ( $rest !== '' )
+        {
+            if ( !preg_match( "/^([A-Za-z_][A-Za-z0-9_\$#]*)\s*=\s*(?:'(?:[^']++|'')*+'|[^\s']++)\s*/", $rest, $p ) )
+                return false;
+            if ( !in_array( strtoupper( $p[1] ), self::NEUTRAL_SESSION_PARAMETERS, true ) )
+                return false;
+            $rest = (string)substr( $rest, strlen( $p[0] ) );
+            $found++;
+        }
+        return $found > 0;
     }
 
     /**

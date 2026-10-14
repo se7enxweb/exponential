@@ -24,6 +24,10 @@ reads a sequence (`<sequence>.NEXTVAL`, `.CURRVAL`: the driver reads every new r
 (`SYSDATE`, `SYSTIMESTAMP`), the SCN, `SYS_GUID`, `SYS_CONTEXT`/`USERENV` or `DBMS_RANDOM`, and anything that reads the
 catalogue (`USER_*`, `ALL_*`, `DBA_*`, `V$*`), is always run. An anonymous PL/SQL block (`DECLARE ...`,
 `BEGIN ... END;`) counts as a write whose tables cannot be read: it makes every result stale.
+The `ALTER SESSION` the driver runs on every connect (number format, length semantics, cursor sharing) is no
+write; any other `ALTER SESSION` can change results and makes every result stale as well. With
+`site.ini [DatabaseSettings] OracleCaseInsensitive=enabled` the driver adds `NLS_COMP` and `NLS_SORT` to that statement:
+then every connect still makes every result stale, and the shared cache does not hit across requests.
 
 ## What it gives (measured on a test installation, 2026-09-27)
 
@@ -313,6 +317,7 @@ so the tests never touch the site's cache.
 | QC-11 | `Mode=off` stores nothing, writes no state and counts nothing |
 | QC-12 | A write by another process, seen through the state file, makes a result stale within a second, even one still in the request's memo; other tables stay current |
 | QC-13 | A stored result is answered without parsing the statement again, but not once a table it read has been excluded |
+| QC-16 | Oracle: the `ALTER SESSION` ezoracle runs on connect (`NLS_NUMERIC_CHARACTERS`, `NLS_LENGTH_SEMANTICS`, `CURSOR_SHARING`) writes nothing; any other `ALTER SESSION` (`CURRENT_SCHEMA`, `NLS_SORT`, `NLS_COMP`, `NLS_DATE_FORMAT`, `TIME_ZONE`, `CONTAINER` ...) makes everything stale |
 
 ```bash
 php vendor/bin/phpunit --testsuite lib --filter eZDBQueryCacheTest

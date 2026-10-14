@@ -363,4 +363,43 @@ class eZDBQueryCacheTest extends PHPUnit\Framework\TestCase
         $this->write( 'DECLARE n NUMBER; BEGIN n := 1; END;' );
         $this->assertNull( $this->select( 'SELECT * FROM ezsection' ), 'so does a DECLARE block' );
     }
+
+    /** QC-16 */
+    public function testOracleAlterSessionOfTheDriverWritesNothing()
+    {
+        // ezoracle sets these with one ALTER SESSION on every connect
+        $sql = 'SELECT * FROM ezcontentobject';
+        $this->select( $sql );
+        $generation = eZDBQueryCache::freshState()['generation'];
+        $this->write( "ALTER SESSION SET NLS_NUMERIC_CHARACTERS='. ' NLS_LENGTH_SEMANTICS=CHAR CURSOR_SHARING=FORCE" );
+        $this->write( "  alter session set cursor_sharing = EXACT;" );
+        $this->write( "ALTER SESSION\n\tSET NLS_LENGTH_SEMANTICS=CHAR\tNLS_NUMERIC_CHARACTERS = '.'''" );
+        $this->assertNotNull( $this->select( $sql ), 'the driver\'s session settings change no result' );
+        $this->assertSame( $generation, eZDBQueryCache::freshState()['generation'] );
+
+        // settings that can change results stay unreadable writes
+        foreach ( array( 'ALTER SESSION SET CURRENT_SCHEMA = other',
+                         "ALTER SESSION SET NLS_NUMERIC_CHARACTERS='. ' NLS_COMP=LINGUISTIC NLS_SORT=BINARY_CI",
+                         "ALTER SESSION SET NLS_DATE_FORMAT='YYYY-MM-DD'",
+                         "ALTER SESSION SET TIME_ZONE='+02:00'",
+                         'ALTER SESSION SET CONTAINER = pdb2',
+                         'ALTER SESSION SET',
+                         'ALTER SESSION ENABLE PARALLEL DML',
+                         "ALTER SESSION SET CURSOR_SHARING=FORCE NLS_SORT=GERMAN",
+                         "ALTER SESSION SET CURSOR_SHARING=FORCE; DROP TABLE ezcontentobject",
+                         "/* x */ ALTER SESSION SET CURSOR_SHARING=FORCE",
+                         'ALTER SESSION SET CURSOR_SHARING=',
+                         "ALTER SESSION SET EVENTS '10046 trace name context forever'",
+                         "ALTER SESSION SET NLS_NUMERIC_CHARACTERS='.''' NLS_SORT='x'" ) as $alter )
+        {
+            $this->assertFalse( eZDBQueryCache::isNeutralAlterSession( $alter ), $alter );
+            $this->select( $sql );
+            $this->write( $alter );
+            $this->assertNull( $this->select( $sql ), 'stale after: ' . $alter );
+        }
+
+        $this->select( $sql );
+        $this->write( 'ALTER TABLE ezcontentobject ADD foo INTEGER' );
+        $this->assertNull( $this->select( $sql ), 'ALTER TABLE still makes its table stale' );
+    }
 }
