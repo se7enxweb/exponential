@@ -99,6 +99,9 @@ ExcludeTables[]
 ExcludeTables[]=ezsession
 ExcludeTables[]=ezpending_actions
 ExcludeTables[]=ezcollab_notification_rule
+
+[DebugSettings]
+Report=enabled    # with the debug output on: accumulators, timing point, report (see "In the debug output")
 ```
 
 | Mode | What is kept | Where |
@@ -238,6 +241,34 @@ the admin served by Velocity (port 8080). The state (generation, tables) is shar
 Below it the SQL profile (next section) and its switch.
 
 
+## In the debug output
+
+With the debug output on (`site.ini [DebugSettings] DebugOutput=enabled`) and
+`querycache.ini [DebugSettings] Report=enabled` (the default), every request shows
+what the cache did for it:
+
+- **Time accumulators**, group *Query cache*: *Hits* (count, and the time of the
+  lookups that answered), *Misses (lookup only)* (the database time of a miss stays
+  with the driver's accumulator, e.g. *Oracle_queries*), *Stores*, *Not cached*. A hit
+  never reaches the driver, so next to the driver's count the group shows how many
+  statements the cache took over.
+- a **timing point** *Query cache: state read (generation n)*, once per request,
+  where the state file is read.
+- a **report** at the bottom, *Query cache*: mode (and whether `shared` has APCu),
+  generation, hits, misses, hit rate, stored, not cached, writes, the **database time
+  saved (estimated)**, the reasons for statements not cached (inside a transaction,
+  volatile or unreadable statement, excluded, temporary or catalogue table, more rows
+  than `MaxRows`), and up to 20 writes that made every result stale, with their string literals masked.
+  *Not cached* counts every statement that was not answered and not stored for one of these reasons, so it is
+  larger than the *uncacheable* counter of Setup > System information, which leaves out excluded tables and
+  transactions; a result with more rows than `MaxRows` is counted as a miss and as not cached.
+
+The saved time is the sum, over the hits, of the time each statement took the
+database (with fetching its rows) when it was stored; entries stored before this
+was recorded are counted as hits without a duration; the time includes fetching
+the rows, so it is an upper estimate. With the debug output off the cache measures
+nothing and only checks, per statement, whether the debug output is on.
+
 ## The SQL profiler
 
 `eZDBInterface::profileSQL()`, called by the MySQL driver after every
@@ -318,10 +349,12 @@ so the tests never touch the site's cache.
 | QC-12 | A write by another process, seen through the state file, makes a result stale within a second, even one still in the request's memo; other tables stay current |
 | QC-13 | A stored result is answered without parsing the statement again, but not once a table it read has been excluded |
 | QC-16 | Oracle: the `ALTER SESSION` ezoracle runs on connect (`NLS_NUMERIC_CHARACTERS`, `NLS_LENGTH_SEMANTICS`, `CURSOR_SHARING`) writes nothing; any other `ALTER SESSION` (`CURRENT_SCHEMA`, `NLS_SORT`, `NLS_COMP`, `NLS_DATE_FORMAT`, `TIME_ZONE`, `CONTAINER` ...) makes everything stale |
+| QC-17 | With the debug output on: the accumulators of the group *Query cache*, one timing point, the bottom report as text and HTML (escaped) with hits, misses, hit rate, reasons and the writes that made everything stale |
+| QC-18 | Without the debug output, or with `Report=disabled`, no accumulator, no report |
 
 ```bash
 php vendor/bin/phpunit --testsuite lib --filter eZDBQueryCacheTest
-# OK (13 tests, 95 assertions), about 2 s (QC-08 and QC-12 wait a second each)
+# OK (18 tests, 175 assertions), about 2 s (QC-08 and QC-12 wait a second each)
 ```
 
 **On a running site** (MySQL, the real drivers), each checked on a test installation
