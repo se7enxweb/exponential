@@ -518,6 +518,16 @@ table.list:not(.a4-plain) > tbody > tr > th[scope="row"] { background-color: tra
 table.list:not(.a4-plain) > tbody > tr:nth-child(even of :has(> td):not([hidden])) > :is(td, th[scope="row"]) { background-color: var(--a4-zebra); }
 table.list:not(.a4-plain) > tbody > tr:hover > :is(td, th[scope="row"]) { background-color: var(--a4-info-bg); }
 table.list td { border-color: var(--a4-line); }
+/* Cells sit in the middle of their row (a checkbox, an icon and a two-line name line up). A row whose selection box
+   is ticked takes the selection tint, without a script, over stripe and hover. The header row of a long list stays
+   in view under the fixed header while the list scrolls (a th row in thead, or the first row of tbody when it has
+   no data cells). */
+table.list td, table.list th { vertical-align: middle; }
+table.list:not(.a4-plain) > tbody > tr:has(> td input[type="checkbox"]:checked) > :is(td, th[scope="row"]),
+html .exp-dt tbody tr:has(> td input[type="checkbox"]:checked) > td { background-color: var(--a4-accent-soft); }
+table.list:not(.a4-plain) > thead > tr > th,
+table.list:not(.a4-plain) > tbody > tr:first-child:not(:has(> td)) > th,
+html .exp-dt thead th { position: sticky; top: var(--header-height, 0px); z-index: 2; }
 
 /* Messages */
 div.message-warning, div.message-error, div.message-feedback, div.message-confirmation, div.message-information {
@@ -1387,6 +1397,25 @@ div#contentstructure ul#content_tree_menu ul a.openclose-close::after {
 div#contentstructure ul#content_tree_menu li { line-height: max(calc(var(--a4-space-5) - var(--a4-space-1)), 1.25em); }
 div#contentstructure ul#content_tree_menu ul li { background-position: 8px 0, 8px 10px; }
 div#contentstructure ul#content_tree_menu ul li.lastli { background-size: 1px 11px, 9px 1px; }
+/* The current node and the path to it: the current node's name in the accent tint with a bar on its left, the
+   nodes above it in a stronger weight, so the tree shows where the page is. */
+div#contentstructure li.currentnode > a.image-text :is(span.node-name-normal, span.node-name-hidden, span.node-name-hiddenbyparent) {
+  padding: 0 var(--a4-space-1) 0 var(--a4-space-2);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-accent-soft);
+  box-shadow: inset 3px 0 0 var(--a4-accent);
+  color: var(--a4-ink);
+  font-weight: 600;
+}
+div#contentstructure li:has(li.currentnode) > a.image-text :is(span.node-name-normal, span.node-name-hidden, span.node-name-hiddenbyparent) {
+  font-weight: 600;
+}
+@media (forced-colors: active) {
+  div#contentstructure li.currentnode > a.image-text :is(span.node-name-normal, span.node-name-hidden, span.node-name-hiddenbyparent) {
+    box-shadow: none;
+    border-left: 3px solid Highlight;
+  }
+}
 div#contentstructure ul#content_tree_menu ul a.openclose-open,
 div#contentstructure ul#content_tree_menu ul a.openclose-close,
 div#contentstructure ul#content_tree_menu ul a.openclose-busy,
