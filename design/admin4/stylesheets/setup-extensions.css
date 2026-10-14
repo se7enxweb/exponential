@@ -35,7 +35,7 @@
     list-style-position: inside;
 }
 .extension-order-title { font-weight: bold; font-size: 1.05em; color: var(--a4-ink); }
-.extension-order-hint { display: block; margin: 0.25em 0 0 1.2em; color: var(--a4-muted); font-size: 0.9em; }
+.extension-order-hint { display: block; margin: 0.25em 0 0 1.2em; color: var(--a4-muted); font-size: var(--a4-text-xs); }
 
 .extension-order {
     margin: 0;
@@ -78,7 +78,7 @@
     background: var(--a4-ok-bg);
     color: var(--a4-ok);
     font-weight: bold;
-    font-size: 0.9em;
+    font-size: var(--a4-text-xs);
     text-align: center;
 }
 .extension-order-name { font-family: monospace; font-size: 0.95em; color: var(--a4-ink); }
@@ -87,7 +87,7 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     color: var(--a4-muted);
-    font-size: 0.85em;
+    font-size: var(--a4-text-xs);
     min-width: 0;
 }
 .extension-order-moves { margin-left: auto; flex: none; display: flex; gap: 0.15em; }
@@ -108,7 +108,7 @@
 
 .extension-order.is-saving .extension-order-item { cursor: progress; }
 
-.extension-order-status { margin: 0; padding: 0 1em 0.7em 1em; min-height: 1.2em; font-size: 0.9em; color: var(--a4-muted); }
+.extension-order-status { margin: 0; padding: 0 1em 0.7em 1em; min-height: 1.2em; font-size: var(--a4-text-xs); color: var(--a4-muted); }
 .extension-order-status.is-ok { color: var(--a4-ok); }
 .extension-order-status.is-error { color: var(--a4-bad); font-weight: bold; }
 
@@ -126,7 +126,7 @@
     min-width: 1.9em;
     padding: 0.05em 0.35em;
     border-radius: 3px;
-    font-size: 0.88em;
+    font-size: var(--a4-text-xs);
     font-weight: bold;
     text-align: center;
 }

@@ -310,7 +310,7 @@ table.list th.sortable:hover a.sort-link { text-decoration: underline; }
 table.list th.sorted a.sort-link { font-weight: 700; }
 /* The arrow is the heading's own colour, a little dimmed: a fixed grey could not
    be seen on the dark heading bar of the admin3 design. */
-.sort-arrow { display: inline-block; width: 1em; font-size: .8em; color: inherit; opacity: .85; }
+.sort-arrow { display: inline-block; width: 1em; font-size: var(--a4-text-xs); color: inherit; opacity: .85; }
 
 /* The role list's id column: a number, read against the name beside it. */
 table.list td.role-id { text-align: right; color: var(--a4-muted); white-space: nowrap; }
@@ -322,12 +322,12 @@ table.list td.role-id { text-align: right; color: var(--a4-muted); white-space: 
    pager). Colours are the admin's own: the list heading grey, the default button's green, the
    top menu's highlight for the file being viewed. */
 .package-view-full .pvf-badges { margin: 0.25em 0 0.5em; display: flex; flex-wrap: wrap; gap: 0.35em; align-items: center; }
-.package-view-full .pvf-badge { display: inline-block; padding: 0 0.5em; border: 1px solid var(--a4-line); border-radius: 3px; background: var(--a4-soft); color: var(--a4-ink); font-size: 0.85em; line-height: 1.6; white-space: nowrap; }
+.package-view-full .pvf-badge { display: inline-block; padding: 0 0.5em; border: 1px solid var(--a4-line); border-radius: 3px; background: var(--a4-soft); color: var(--a4-ink); font-size: var(--a4-text-xs); line-height: 1.6; white-space: nowrap; }
 .package-view-full .pvf-badge-version { font-weight: bold; }
 .package-view-full .pvf-badge-ok { background: var(--a4-ok-bg); border-color: var(--a4-ok-line); color: var(--a4-ok); }
 .package-view-full .pvf-badge-muted { color: var(--a4-muted); }
 .package-view-full .pvf-badge-info { background: var(--a4-info-bg); border-color: var(--a4-info-line); color: var(--a4-info); }
-.package-view-full .pvf-date { color: var(--a4-muted); font-size: 0.9em; }
+.package-view-full .pvf-date { color: var(--a4-muted); font-size: var(--a4-text-xs); }
 
 .package-view-full .pvf-overview { display: flex; gap: 1.5em; align-items: flex-start; }
 .package-view-full dl.pvf-meta { flex: 1 1 auto; min-width: 0; display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 0.35em 1.25em; margin: 0.5em 0 1em; }
@@ -360,7 +360,7 @@ table.list td.role-id { text-align: right; color: var(--a4-muted); white-space: 
 
 .package-view-full .pvf-filter { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 0.5em 1em; margin: 0.5em 0 1em; padding: 0.6em 0.75em; background: var(--a4-soft); border: 1px solid var(--a4-line); border-radius: 3px; }
 .package-view-full .pvf-field { display: flex; flex-direction: column; gap: 0.2em; min-width: 0; }
-.package-view-full .pvf-field label { font-weight: bold; font-size: 0.9em; margin: 0; }
+.package-view-full .pvf-field label { font-weight: bold; font-size: var(--a4-text-xs); margin: 0; }
 .package-view-full .pvf-field-search { flex: 1 1 14em; }
 .package-view-full .pvf-field-search input { width: 100%; box-sizing: border-box; }
 .package-view-full .pvf-field-submit { flex-direction: row; align-items: center; gap: 0.75em; }
@@ -381,7 +381,7 @@ table.list td.role-id { text-align: right; color: var(--a4-muted); white-space: 
 .package-view-full table.list tr.pvf-current:hover { background: var(--a4-accent-soft); box-shadow: inset 3px 0 0 var(--a4-accent-text); }
 .package-view-full .pvf-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 
-.package-view-full .pvf-kind { display: inline-block; padding: 0 0.45em; border-radius: 3px; font-size: 0.85em; line-height: 1.6; background: var(--a4-soft); color: var(--a4-ink); }
+.package-view-full .pvf-kind { display: inline-block; padding: 0 0.45em; border-radius: 3px; font-size: var(--a4-text-xs); line-height: 1.6; background: var(--a4-soft); color: var(--a4-ink); }
 .package-view-full .pvf-kind-object { background: var(--a4-ok-bg); color: var(--a4-ok); }
 .package-view-full .pvf-kind-class { background: var(--a4-info-bg); color: var(--a4-info); }
 .package-view-full .pvf-kind-image { background: var(--a4-warn-bg); color: var(--a4-warn); }
@@ -401,7 +401,7 @@ table.list td.role-id { text-align: right; color: var(--a4-muted); white-space: 
 .package-view-full .pvf-viewer-actions { display: flex; gap: 0.4em; }
 .package-view-full .pvf-viewer-body { padding: 0.75em; }
 /* soft wrap by default (long JSON and XML lines stay readable at any width); "No wrap" keeps the lines and scrolls inside the box */
-.package-view-full pre.pvf-code { margin: 0; padding: 0.75em; max-height: 32em; max-width: 100%; box-sizing: border-box; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; word-break: break-word; font-size: 0.9em; line-height: 1.45; background: var(--a4-soft); }
+.package-view-full pre.pvf-code { margin: 0; padding: 0.75em; max-height: 32em; max-width: 100%; box-sizing: border-box; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; word-break: break-word; font-size: var(--a4-text-xs); line-height: 1.45; background: var(--a4-soft); }
 .package-view-full pre.pvf-code.pvf-nowrap { white-space: pre; overflow-wrap: normal; word-break: normal; }
 .package-view-full .pvf-viewer-body { min-width: 0; }
 .package-view-full table.pvf-object { border-collapse: collapse; }
@@ -422,7 +422,7 @@ table.list td.role-id { text-align: right; color: var(--a4-muted); white-space: 
    which is only broken inside when it does not fit on one line. */
 .package-view-full table.pvf-files td { vertical-align: middle; }
 .package-view-full table.pvf-files code { font-size: 0.95em; }
-.package-view-full .pvf-dir { display: block; color: var(--a4-muted); font-size: 0.85em; line-height: 1.3; overflow-wrap: anywhere; }
+.package-view-full .pvf-dir { display: block; color: var(--a4-muted); font-size: var(--a4-text-xs); line-height: 1.3; overflow-wrap: anywhere; }
 .package-view-full .pvf-name { color: var(--a4-ink); }
 .package-view-full a.pvf-link-button.pvf-active { background: var(--a4-accent-strong); border-color: var(--a4-accent-strong); color: var(--a4-on-accent); }
 .package-view-full a.pvf-link-button.pvf-active:hover { background: var(--a4-accent-press); color: var(--a4-on-accent-hover); }
@@ -487,7 +487,7 @@ table.list td.role-id { text-align: right; color: var(--a4-muted); white-space: 
 .package-view-full .pvf-actions input:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
 
 @media (max-width: 640px) {
-    .package-view-full table.pvf-object th { background: none; color: var(--a4-muted); font-size: 0.9em; border: 0; }
-    .package-view-full pre.pvf-code { font-size: 0.8em; padding: 0.5em; }
+    .package-view-full table.pvf-object th { background: none; color: var(--a4-muted); font-size: var(--a4-text-xs); border: 0; }
+    .package-view-full pre.pvf-code { font-size: var(--a4-text-xs); padding: 0.5em; }
     .package-view-full table.pvf-object td { border-bottom: 1px solid var(--a4-line); }
 }

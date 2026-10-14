@@ -458,29 +458,41 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * Pixel lengths kept on purpose (stylesheet => selector => lengths): layout offsets, not spacing between elements
+     * No text below 12px on admin4's pages, not only in admin4.css and components.css: the base and page stylesheets
+     * size text in em of the body, which core.css sets to var(--a4-text-s) (13px). An em size that resolves below
+     * 12px from there uses var(--a4-text-xs) instead. (1px font sizes are IE hacks and do not draw text.)
      */
-    const SCALE_EXCEPTIONS = array(
-        'admin4.css' => array(
-            '.a4-login-brand' => array( '64px' ),                                // the sign-in brand panel's side inset
-            '.exp-pw-js .a4pw-input input' => array( '98px', '90px' ),          // room for the show/hide toggle
-            '.a4-dash-secure-intro' => array( '-4px' ),                         // pulls the intro under its heading
-        ),
-        'components.css' => array(
-            '.a4-pick' => array( '-6px' ),                                      // pulls the pick box into its cell's inset
-        ),
-    );
+    public function testBaseAndPageStylesheetsDrawNoTextBelowTwelvePixels()
+    {
+        $core = (string)file_get_contents( self::$root . '/design/admin4/stylesheets/core.css' );
+        $this->assertMatchesRegularExpression( '/body \/\*[^*]*\*\/\s*\{[^}]*font-size: var\(--a4-text-s\);/', $core, 'core.css sets the body text from the type scale' );
+        $problems = array();
+        $it = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( self::$root . '/design/admin4/stylesheets', FilesystemIterator::SKIP_DOTS ) );
+        foreach ( $it as $file )
+        {
+            $name = $file->getFilename();
+            if ( substr( $name, -4 ) !== '.css' || in_array( $name, array( 'admin4.css', 'components.css' ), true ) )
+                continue;
+            $css = preg_replace( '/\/\*.*?\*\//s', '', (string)file_get_contents( $file->getPathname() ) );
+            preg_match_all( '/font(?:-size)?\s*:[^;{}]*?(?<![\w.])(0?\.\d+)em\b/', $css, $m );
+            foreach ( $m[1] as $em )
+            {
+                if ( (float)$em * 13 < 12 )
+                    $problems[] = substr( $file->getPathname(), strlen( self::$root ) + 1 ) . ": {$em}em is " . round( (float)$em * 13, 1 ) . 'px';
+            }
+        }
+        $this->assertSame( array(), $problems, 'use var(--a4-text-xs) for these' );
+    }
 
     /**
      * components.css and admin4.css set font sizes with the --a4-text-* tokens and spacing with the --a4-space-*
-     * tokens (1px, 2px and the exceptions above aside)
+     * tokens (1px and 2px aside; a layout length is a token of its own, e.g. --a4-pw-toggle-room)
      */
     public function testFrameAndComponentsUseTheScale()
     {
         $problems = array();
         foreach ( array( 'components.css', 'admin4.css' ) as $file )
         {
-            $exceptions = isset( self::SCALE_EXCEPTIONS[$file] ) ? self::SCALE_EXCEPTIONS[$file] : array();
             foreach ( self::declarations( file_get_contents( self::$root . "/design/admin4/stylesheets/$file" ) ) as $d )
             {
                 list( $selector, $property, $value ) = $d;
@@ -494,8 +506,7 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
                     foreach ( $m[0] as $length )
                     {
                         $length = strtolower( $length );
-                        $allowed = isset( $exceptions[$selector] ) ? $exceptions[$selector] : array();
-                        if ( !in_array( $length, array( '1px', '2px', '-1px', '-2px' ), true ) && !in_array( $length, $allowed, true ) )
+                        if ( !in_array( $length, array( '1px', '2px', '-1px', '-2px' ), true ) )
                         {
                             $problems[] = "$file: $selector { $property: $value } -- use a --a4-space-* token";
                         }

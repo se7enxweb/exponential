@@ -1209,7 +1209,7 @@ a.a4-icon-btn, a.a4-icon-btn:visited { color: var(--a4-muted); }
   gap: var(--a4-space-2);
   min-width: 32px;
   min-height: 32px;
-  margin: calc(-1 * var(--a4-space-1)) 0 calc(-1 * var(--a4-space-1)) -6px;
+  margin: calc(-1 * var(--a4-space-1)) 0 calc(-1 * var(--a4-space-1)) calc(-1.5 * var(--a4-space-1));
   border-radius: var(--a4-radius-s);
   color: var(--a4-ink);
   font-size: var(--a4-text-s);

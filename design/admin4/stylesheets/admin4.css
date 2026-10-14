@@ -49,6 +49,8 @@
   /* explayouts' own navigation column: navy in both modes, with a faint light edge */
   --a4-explayouts-nav: #1f2937;
   --a4-explayouts-nav-edge: rgba(255, 255, 255, 0.04);
+  /* the password field's room for its show/hide toggle: a layout length, the same in both modes */
+  --a4-pw-toggle-room: 98px;
   --a4-card-shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 12px 32px -6px rgba(16, 24, 40, 0.09);
   --a4-footer-ink: #5d6573;   /* 5.1:1 on the page colour (#6b7280 was 4.3:1) */
   --a4-footer-link: #4b5563;
@@ -73,6 +75,7 @@ html[data-a4-theme="dark"] {
   --a4-card-edge: rgba(255, 255, 255, 0.04);
   --a4-explayouts-nav: #1f2937;
   --a4-explayouts-nav-edge: rgba(255, 255, 255, 0.04);
+  --a4-pw-toggle-room: 98px;
   --a4-card-shadow: 0 18px 44px rgba(0, 0, 0, 0.28), 0 2px 8px rgba(0, 0, 0, 0.18);
   --a4-footer-ink: #8d95a3;
   --a4-footer-link: #c8cdd6;
@@ -168,7 +171,7 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
 /* The top menu (admin3's .navbar-menu): its own selectors, so these win by loading later and no more */
 .navbar-menu li a {
   padding: 0.3rem 0.75rem;
-  border-radius: 99px;
+  border-radius: 999px;
   color: var(--a4-header-ink);
   transition: background-color .15s ease, color .15s ease;
 }
@@ -231,7 +234,7 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
   height: 36px;   /* the light/dark switch next to it is 36px high */
   background-color: var(--a4-header-field);
   border: 1px solid var(--a4-field-line);
-  border-radius: 99px;
+  border-radius: 999px;
   color: var(--a4-ink);
 }
 #header .searchblock input.searchtext.disabled,
@@ -260,7 +263,7 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
   margin: 0;
   padding: var(--a4-space-2) var(--a4-space-3) var(--a4-space-2) var(--a4-space-3);
   border: 1px solid var(--a4-header-field-line);
-  border-radius: 99px;
+  border-radius: 999px;
   background-color: var(--a4-header-field);
   color: var(--a4-ink);
   font: 600 var(--a4-text-s)/1.2 var(--a4-font);
@@ -569,7 +572,7 @@ html #page.ezexplayoutsuinavigationpart #leftmenu.sidebar {
 .a4-dash-sub { margin: 0; color: var(--a4-muted); }
 .a4-dash-actions { display: flex; flex-wrap: wrap; gap: var(--a4-space-2); }
 :where(.a4-dash-actions) .a4-dash-action {
-  display: inline-flex; align-items: center; gap: var(--a4-space-2); padding: var(--a4-space-2) var(--a4-space-3); border-radius: 99px;
+  display: inline-flex; align-items: center; gap: var(--a4-space-2); padding: var(--a4-space-2) var(--a4-space-3); border-radius: 999px;
   background-color: var(--a4-card); color: var(--a4-ink); font-weight: 600; text-decoration: none;
   box-shadow: 0 0 0 1px var(--a4-line), var(--a4-shadow-s);
   transition: box-shadow .15s ease, transform .15s ease;
@@ -633,7 +636,7 @@ html #page.ezexplayoutsuinavigationpart #leftmenu.sidebar {
 }
 .a4-dash-secure h2 { display: flex; align-items: center; gap: var(--a4-space-2); }
 .a4-dash-secure-ico { flex: 0 0 auto; }
-.a4-dash-secure-intro { margin: -4px 0 var(--a4-space-3); color: var(--a4-muted); max-width: 70ch; }
+.a4-dash-secure-intro { margin: calc(-1 * var(--a4-space-1)) 0 var(--a4-space-3); color: var(--a4-muted); max-width: 70ch; }
 .a4-dash-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--a4-space-3); margin: 0; padding: 0; list-style: none; }
 .a4-dash-steps > li { display: flex; gap: var(--a4-space-3); padding: var(--a4-space-3) var(--a4-space-4); border-radius: var(--a4-radius-s); background-color: var(--a4-card); box-shadow: 0 0 0 1px var(--a4-line); }
 .a4-dash-step-no {
@@ -734,7 +737,7 @@ span.classattribute-description {
 }
 .a4-node-badges { display: inline-flex; flex-wrap: wrap; gap: var(--a4-space-1); }
 .a4-badge {
-  display: inline-flex; align-items: center; padding: 1px var(--a4-space-2); border-radius: 99px;
+  display: inline-flex; align-items: center; padding: 1px var(--a4-space-2); border-radius: 999px;
   font-size: var(--a4-text-xs); font-weight: 600; line-height: 1.6; color: var(--a4-muted);
   background: var(--a4-soft); box-shadow: inset 0 0 0 1px var(--a4-line);
 }
@@ -916,7 +919,7 @@ html[data-a4-theme="dark"] .a4-login-logo { background-image: url('../images/3/l
 
 /* the brand panel: the wizard's orange, a quiet pattern, one line of text */
 .a4-login-brand {
-  position: relative; overflow: hidden; display: flex; align-items: center; padding: var(--a4-space-7) 64px;
+  position: relative; overflow: hidden; display: flex; align-items: center; padding: var(--a4-space-7) calc(2 * var(--a4-space-6));
   color: var(--a4-on-accent);
   background:
     repeating-linear-gradient(135deg, var(--a4-accent-soft) 0 2px, transparent 2px 9px),
@@ -1157,7 +1160,7 @@ html[data-a4-theme="dark"] .a4-login-logo { background-image: url('../images/3/l
   border: 1px solid var(--a4-field-line); border-radius: var(--a4-radius-s); background-color: var(--a4-field); color: var(--a4-ink);
   font: var(--a4-text-l)/1.2 var(--a4-font); box-shadow: none;
 }
-.exp-pw-js .a4pw-input input { padding-right: 98px; }   /* room for .a4pw-toggle (two 12px insets, 8px gap, icon and "Show"): a layout length, not spacing */
+.exp-pw-js .a4pw-input input { padding-right: var(--a4-pw-toggle-room); }   /* room for .a4pw-toggle (two 12px insets, 8px gap, icon and "Show") */
 .a4pw-input input:focus { outline: 2px solid transparent; border-color: var(--a4-accent); box-shadow: 0 0 0 3px var(--a4-ring); }
 .a4pw-field.invalid .a4pw-input input { border-color: var(--a4-bad); border-width: 2px; padding-left: calc(var(--a4-space-3) - 1px); }   /* the 1px wider border: the text stays put */
 .a4pw-toggle {
@@ -1237,7 +1240,7 @@ html[data-a4-theme="dark"] .a4-login-logo { background-image: url('../images/3/l
   .a4pw-card { padding: var(--a4-space-3) var(--a4-space-3); border: 0; padding-left: 0; padding-right: 0; }
   .a4pw-head h1 { font-size: 1.3em; }
   .a4pw-btn { flex: 1 1 auto; }
-  .exp-pw-js .a4pw-input input { padding-right: 90px; }
+  .exp-pw-js .a4pw-input input { padding-right: calc(var(--a4-pw-toggle-room) - var(--a4-space-2)); }
 }
 
 /* ---- Compatibility: Exponential UI (expui) in admin4's tokens ----------------------------------------------------
@@ -1368,7 +1371,7 @@ html[data-a4-theme="dark"] img[src*="/share/icons/bootstrap-icons/"] { filter: i
   [id^="ezopt-menu-"]::before,
   div#contentstructure ul#content_tree_menu a[class^="openclose-"]::before,
   div.popupmenu a.more::after, .searchblock .searchbuttonfield::before, .searchblock .searchscope::before,
-  .searchscope-pane .close::before, a.show-hide-tabs::before, a#maincontent-hide::before {
+  .searchscope-pane .close::before {
     forced-color-adjust: none;
     background-color: CanvasText;
   }
@@ -1500,7 +1503,7 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
   margin: 0;
   padding: 0;
   border: 0;
-  border-radius: 12px;
+  border-radius: 999px;   /* a pill, as every pill of admin4 */
   background: transparent;
   color: var(--a4-muted);
   font-size: 0;
@@ -1518,7 +1521,7 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
   margin: 0;
   box-sizing: border-box;
   border: 1px solid var(--a4-field-line);
-  border-radius: 10px;
+  border-radius: 999px;
   background-color: var(--a4-field);
   -webkit-mask: none;
   mask: none;
@@ -1542,7 +1545,7 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
 }
 .tab-block .show-hide-tabs[aria-pressed="true"]::before,
 .tab-block #maincontent-hide.show-hide-tabs:not([aria-pressed="false"])::before {
-  border-color: var(--a4-accent-strong);
+  border-color: var(--a4-accent-text);   /* the edge keeps 5:1 on a dark card too */
   background-color: var(--a4-accent-strong);
 }
 .tab-block .show-hide-tabs[aria-pressed="true"]::after,

@@ -11,7 +11,7 @@ html
 body /* These becomes the initial settings for most other elements */
 {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.8em;
+    font-size: var(--a4-text-s);   /* 13px, the type scale (was 0.8em = 12.8px); every size below is 12px or more */
     background-color: var(--a4-surface);
     margin: 0;
     padding: 0;
@@ -329,7 +329,7 @@ input.button, button, input.defaultbutton, input.button-disabled
     text-align: center;
     vertical-align: middle;
     cursor: pointer;
-    font-size: 0.9em;
+    font-size: var(--a4-text-xs);
     font-weight: normal;
     padding-left: 0.25em;
     padding-right: 0.25em;
@@ -416,7 +416,7 @@ fieldset label
 
 label select
 {
-font-size:0.9em;
+font-size:var(--a4-text-xs);
 }
 
 
@@ -509,7 +509,7 @@ div.message-error h2::before
 
 div.message-feedback span.time, div.message-warning span.time, div.message-error span.time
 {
-    font-size: 0.8em;
+    font-size: var(--a4-text-xs);
     margin-top: 0.15em;
     display: block;
     float: right;

@@ -807,7 +807,7 @@ h2.context-title {
 div.context-information,
 span.classattribute-description {
     color: var(--a4-ink);
-    font-size: 0.8em;
+    font-size: var(--a4-text-xs);
     padding: 0 0.5em 0 0.5em;
     margin-bottom: 1.5em;
     position: relative;
@@ -1346,7 +1346,7 @@ input:-moz-placeholder {
 
 #mainteinance-text {
     /* margin-left: 182px; */
-    font-size: 0.7em;
+    font-size: var(--a4-text-xs);
 }
 
 #mainteinance-text #ez-version,

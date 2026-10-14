@@ -201,11 +201,17 @@ The left column's preset sizes (small, medium, large) are `html[data-a4-left-siz
   (`1px`, `2px` and the frame's few layout offsets aside);
 - a file named in `AdminComponentCSSFileList` is missing.
 
+No text is smaller than 12px on an admin4 page. The base and page stylesheets (core.css, pagelayout.css, content.css,
+the Info, package and template pages) size text in em of the body, which core.css sets to `var(--a4-text-s)` (13px);
+an em size that would land below 12px is `var(--a4-text-xs)` instead
+(`AdminStylingRulesTest::testBaseAndPageStylesheetsDrawNoTextBelowTwelvePixels`).
+
 Targets are at least 24 x 24px (WCAG 2.5.8). Where the drawn control stays smaller, an invisible `::after` around
 it takes the click (the search scope switch); where that would cover a neighbour (the content tree's open/close,
 20 x 20px) or the control is a native checkbox (18px), the spacing exception of 2.5.8 applies: keep rows at least
-24px apart. A pixel length that is a layout offset rather than spacing (the password field's room for its toggle)
-is listed per selector in the test's `SCALE_EXCEPTIONS`.
+24px apart. A pixel length that is a layout length rather than spacing (the password field's room for its toggle) is a token of
+its own with a dark value (`--a4-pw-toggle-room`); an offset is a calc() of the space tokens. The test keeps no
+exception list.
 
 The node view's tabs switch (`.tab-block .show-hide-tabs`, the ids `#maincontent-show` / `#maincontent-hide`, or
 `aria-pressed` on a button) is a 36 x 24px switch with the visible label `.a4-tabs-switch-label` ("Tabs"); both float

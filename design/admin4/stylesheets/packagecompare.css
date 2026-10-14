@@ -7,7 +7,7 @@
 
 .package-compare .pcmp-toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.5em 1em; margin: 0 0 0.75em; }
 .package-compare .pcmp-built { margin: 0; color: var(--a4-ink); flex: 1 1 24em; min-width: 0; }
-.package-compare .pcmp-cached { display: block; color: var(--a4-muted); font-size: 0.9em; }
+.package-compare .pcmp-cached { display: block; color: var(--a4-muted); font-size: var(--a4-text-xs); }
 .package-compare .pcmp-toolbar-actions { display: flex; flex-wrap: wrap; gap: 0.4em; align-items: center; margin: 0; }
 .package-compare .pcmp-toolbar-actions input { margin: 0; }
 
@@ -23,7 +23,7 @@
 .package-compare a.pcmp-chip-all.pcmp-chip-active { background: var(--a4-accent-strong); border-color: var(--a4-accent-strong); color: var(--a4-on-accent); }
 
 .package-compare .pcmp-glyph { display: inline-block; min-width: 1.1em; text-align: center; font-weight: bold; font-family: Verdana, Arial, sans-serif; }
-.package-compare .pcmp-status { display: inline-flex; align-items: center; gap: 0.2em; padding: 0 0.5em; border: 1px solid; border-radius: 3px; font-size: 0.9em; line-height: 1.6; white-space: nowrap; }
+.package-compare .pcmp-status { display: inline-flex; align-items: center; gap: 0.2em; padding: 0 0.5em; border: 1px solid; border-radius: 3px; font-size: var(--a4-text-xs); line-height: 1.6; white-space: nowrap; }
 
 .package-compare .pcmp-status-new { background: var(--a4-ok-bg); border-color: var(--a4-ok-line); color: var(--a4-ok); }
 .package-compare .pcmp-status-changed { background: var(--a4-warn-bg); border-color: var(--a4-warn-line); color: var(--a4-warn); }
@@ -39,7 +39,7 @@
 .package-compare table.pcmp-items .pcmp-col-actions { width: 1%; white-space: nowrap; }
 .package-compare table.pcmp-items .pcmp-col-actions { text-align: right; }
 .package-compare .pcmp-item-name { display: block; overflow-wrap: anywhere; white-space: pre-line; }
-.package-compare .pcmp-item-remote { display: block; color: var(--a4-muted); font-size: 0.8em; overflow-wrap: anywhere; }
+.package-compare .pcmp-item-remote { display: block; color: var(--a4-muted); font-size: var(--a4-text-xs); overflow-wrap: anywhere; }
 .package-compare td.pcmp-col-summary { color: var(--a4-ink); min-width: 10em; }
 
 /* The item opened */
@@ -47,18 +47,18 @@
 .package-compare .pcmp-viewer-head { display: flex; flex-wrap: wrap; gap: 0.5em 1em; align-items: flex-start; justify-content: space-between; padding: 0.6em 0.75em; background: var(--a4-soft); border-bottom: 1px solid var(--a4-line); }
 .package-compare .pcmp-viewer-title { flex: 1 1 20em; min-width: 0; }
 .package-compare .pcmp-viewer-title h2 { font-size: 1.1em; margin: 0.35em 0 0.2em; white-space: pre-line; overflow-wrap: anywhere; }
-.package-compare .pcmp-viewer-ids { display: flex; flex-wrap: wrap; gap: 0.2em 1em; margin: 0; color: var(--a4-muted); font-size: 0.9em; }
+.package-compare .pcmp-viewer-ids { display: flex; flex-wrap: wrap; gap: 0.2em 1em; margin: 0; color: var(--a4-muted); font-size: var(--a4-text-xs); }
 .package-compare .pcmp-viewer-ids code { overflow-wrap: anywhere; }
 .package-compare .pcmp-viewer-body { padding: 0.75em; }
 .package-compare .pcmp-note { margin: 0 0 0.6em; padding: 0.4em 0.6em; background: var(--a4-info-bg); border-left: 3px solid var(--a4-info); }
 .package-compare dl.pcmp-facts { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 0.2em 1em; margin: 0 0 0.6em; }
 .package-compare dl.pcmp-facts dt { font-weight: bold; color: var(--a4-ink); margin: 0; }
 .package-compare dl.pcmp-facts dd { margin: 0; overflow-wrap: anywhere; }
-.package-compare .pcmp-legend { display: flex; flex-wrap: wrap; gap: 0.25em 1.5em; margin: 0 0 0.75em; font-size: 0.9em; color: var(--a4-muted); }
+.package-compare .pcmp-legend { display: flex; flex-wrap: wrap; gap: 0.25em 1.5em; margin: 0 0 0.75em; font-size: var(--a4-text-xs); color: var(--a4-muted); }
 
 .package-compare .pcmp-section { margin: 0 0 1em; }
 .package-compare h3.pcmp-section-title { display: flex; flex-wrap: wrap; align-items: center; gap: 0.3em 0.75em; font-size: 1em; margin: 0.5em 0; padding-bottom: 0.25em; border-bottom: 1px solid var(--a4-line); }
-.package-compare .pcmp-section-count { color: var(--a4-muted); font-weight: normal; font-size: 0.9em; margin-left: auto; }
+.package-compare .pcmp-section-count { color: var(--a4-muted); font-weight: normal; font-size: var(--a4-text-xs); margin-left: auto; }
 
 .package-compare .pcmp-row { margin: 0 0 0.75em; padding: 0.5em; border: 1px solid var(--a4-line); border-left-width: 4px; border-radius: 3px; background: var(--a4-card); }
 .package-compare .pcmp-row-changed { border-left-color: var(--a4-warn); }
@@ -66,18 +66,18 @@
 .package-compare .pcmp-row-site_only { border-left-color: var(--a4-bad); }
 .package-compare .pcmp-row-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.2em 0.75em; margin: 0 0 0.4em; }
 .package-compare .pcmp-row-identifier,
-.package-compare .pcmp-row-datatype { color: var(--a4-muted); font-size: 0.85em; }
-.package-compare .pcmp-state { display: inline-block; padding: 0 0.45em; border-radius: 3px; font-size: 0.8em; font-weight: normal; line-height: 1.6; }
+.package-compare .pcmp-row-datatype { color: var(--a4-muted); font-size: var(--a4-text-xs); }
+.package-compare .pcmp-state { display: inline-block; padding: 0 0.45em; border-radius: 3px; font-size: var(--a4-text-xs); font-weight: normal; line-height: 1.6; }
 .package-compare .pcmp-state-changed { background: var(--a4-warn-bg); color: var(--a4-warn); }
 .package-compare .pcmp-state-package_only { background: var(--a4-ok-bg); color: var(--a4-ok); }
 .package-compare .pcmp-state-site_only { background: var(--a4-bad-bg); color: var(--a4-bad); }
 .package-compare .pcmp-state-identical { background: var(--a4-soft); color: var(--a4-muted); }
-.package-compare .pcmp-row-note { margin: 0.35em 0 0; color: var(--a4-muted); font-size: 0.9em; }
+.package-compare .pcmp-row-note { margin: 0.35em 0 0; color: var(--a4-muted); font-size: var(--a4-text-xs); }
 
 /* Side by side on a wide screen, one above the other on a narrow one */
 .package-compare .pcmp-sides { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0.6em; }
 .package-compare .pcmp-side { min-width: 0; }
-.package-compare .pcmp-side-label { font-size: 0.8em; font-weight: bold; color: var(--a4-muted); text-transform: uppercase; letter-spacing: 0.03em; margin: 0 0 0.2em; }
+.package-compare .pcmp-side-label { font-size: var(--a4-text-xs); font-weight: bold; color: var(--a4-muted); text-transform: uppercase; letter-spacing: 0.03em; margin: 0 0 0.2em; }
 .package-compare .pcmp-text { display: block; margin: 0; padding: 0.45em 0.6em; max-height: 22em; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font-family: inherit; font-size: 0.95em; line-height: 1.5; background: var(--a4-surface); border: 1px solid var(--a4-line); border-radius: 3px; }
 .package-compare .pcmp-text-missing { color: var(--a4-muted); font-style: italic; background: repeating-linear-gradient(135deg, var(--a4-soft), var(--a4-soft) 6px, var(--a4-soft) 6px, var(--a4-soft) 12px); }
 .package-compare .pcmp-text-same { max-height: 10em; border: 0; background: none; padding: 0; }
@@ -92,14 +92,14 @@
 .package-compare .pcmp-text-added { background: var(--a4-ok-bg); }
 
 .package-compare details.pcmp-raw { margin: 0.3em 0 0; }
-.package-compare details.pcmp-raw summary { cursor: pointer; font-size: 0.85em; color: var(--a4-info); }
-.package-compare details.pcmp-raw pre { margin: 0.3em 0 0; padding: 0.5em; max-height: 18em; overflow: auto; white-space: pre; font-size: 0.8em; background: var(--a4-soft); border: 1px solid var(--a4-line); }
+.package-compare details.pcmp-raw summary { cursor: pointer; font-size: var(--a4-text-xs); color: var(--a4-info); }
+.package-compare details.pcmp-raw pre { margin: 0.3em 0 0; padding: 0.5em; max-height: 18em; overflow: auto; white-space: pre; font-size: var(--a4-text-xs); background: var(--a4-soft); border: 1px solid var(--a4-line); }
 
 .package-compare details.pcmp-same { margin: 0.25em 0 0; }
 .package-compare details.pcmp-same > summary { cursor: pointer; color: var(--a4-info); padding: 0.2em 0; }
 .package-compare table.pcmp-same-list { border-collapse: collapse; margin-top: 0.3em; }
 .package-compare table.pcmp-same-list th { width: 30%; text-align: left; font-weight: normal; vertical-align: top; background: none; color: var(--a4-ink); border-left: 0; font-size: 1em; }
-.package-compare table.pcmp-same-list th code { display: block; color: var(--a4-muted); font-size: 0.85em; }
+.package-compare table.pcmp-same-list th code { display: block; color: var(--a4-muted); font-size: var(--a4-text-xs); }
 .package-compare table.pcmp-same-list td { vertical-align: top; }
 
 .package-compare ul.pcmp-places { margin: 0; padding: 0.45em 0.6em 0.45em 1.6em; background: var(--a4-surface); border: 1px solid var(--a4-line); border-radius: 3px; }
@@ -123,7 +123,7 @@
     .package-compare table.pcmp-items td.pcmp-col-class,
     .package-compare table.pcmp-items td.pcmp-col-actions { display: block; padding: 0; width: auto; border: 0; }
     .package-compare table.pcmp-items td.pcmp-col-name { flex: 1 1 100%; order: -1; }
-    .package-compare table.pcmp-items td.pcmp-col-summary { flex: 1 1 100%; min-width: 0; font-size: 0.9em; }
+    .package-compare table.pcmp-items td.pcmp-col-summary { flex: 1 1 100%; min-width: 0; font-size: var(--a4-text-xs); }
     .package-compare table.pcmp-items td.pcmp-col-summary:empty { display: none; }
     .package-compare table.pcmp-items td.pcmp-col-actions { margin-left: auto; }
     .package-compare .pcmp-viewer-body { padding: 0.5em; }
@@ -145,7 +145,7 @@
 /* Importing: the bulk bar, the row selection and buttons, the value ticks of the opened item */
 .package-compare .pcmp-bulk { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4em 0.6em; margin: 0 0 0.5em; padding: 0.45em 0.6em; background: var(--a4-soft); border: 1px solid var(--a4-line); border-radius: 3px; }
 .package-compare .pcmp-bulk input { margin: 0; }
-.package-compare .pcmp-bulk-note { color: var(--a4-muted); font-size: 0.9em; flex: 1 1 16em; }
+.package-compare .pcmp-bulk-note { color: var(--a4-muted); font-size: var(--a4-text-xs); flex: 1 1 16em; }
 .package-compare table.pcmp-items .pcmp-col-select { width: 1%; text-align: center; }
 .package-compare table.pcmp-items .pcmp-col-select input { margin: 0; }
 .package-compare button.pvf-link-button { display: inline-block; padding: 0.1em 0.55em; border: 1px solid var(--a4-line); border-radius: 3px; background: var(--a4-surface); color: var(--a4-ink); font: inherit; line-height: inherit; cursor: pointer; }
@@ -155,8 +155,8 @@
 .package-compare button.pcmp-import-button { border-color: var(--a4-ok-line); color: var(--a4-ok); background: var(--a4-ok-bg); }
 .package-compare .pcmp-viewer-actions input,
 .package-compare .pvf-viewer-actions input { margin: 0; }
-.package-compare .pcmp-import-hint { margin: 0 0 0.6em; color: var(--a4-muted); font-size: 0.9em; }
-.package-compare label.pcmp-import-tick { margin-left: auto; display: inline-flex; align-items: center; gap: 0.3em; font-size: 0.9em; font-weight: normal; cursor: pointer; }
+.package-compare .pcmp-import-hint { margin: 0 0 0.6em; color: var(--a4-muted); font-size: var(--a4-text-xs); }
+.package-compare label.pcmp-import-tick { margin-left: auto; display: inline-flex; align-items: center; gap: 0.3em; font-size: var(--a4-text-xs); font-weight: normal; cursor: pointer; }
 .package-compare label.pcmp-import-tick input { margin: 0; }
 
 /* The confirmation and the result */
@@ -171,7 +171,7 @@
 .package-compare li.pcmp-result-failed { border-left-color: var(--a4-bad); }
 .package-compare .pcmp-import-entry-head { display: flex; flex-wrap: wrap; align-items: center; gap: 0.3em 0.6em; }
 .package-compare .pcmp-import-name { overflow-wrap: anywhere; white-space: pre-line; min-width: 0; }
-.package-compare .pcmp-result { display: inline-block; padding: 0 0.5em; border-radius: 3px; font-size: 0.9em; line-height: 1.6; margin-left: auto; }
+.package-compare .pcmp-result { display: inline-block; padding: 0 0.5em; border-radius: 3px; font-size: var(--a4-text-xs); line-height: 1.6; margin-left: auto; }
 .package-compare .pcmp-result-badge-done { background: var(--a4-ok-bg); color: var(--a4-ok); }
 .package-compare .pcmp-result-badge-failed { background: var(--a4-bad-bg); color: var(--a4-bad); }
 .package-compare .pcmp-result-badge-skipped { background: var(--a4-soft); color: var(--a4-muted); }
@@ -207,7 +207,7 @@
 
 /* What an item needs, or why it is not offered, under its differences in the list and in its panel */
 .package-compare .pcmp-needs-class,
-.package-compare .pcmp-offer-reason { display: block; margin: 0.2em 0 0; font-size: 0.9em; }
+.package-compare .pcmp-offer-reason { display: block; margin: 0.2em 0 0; font-size: var(--a4-text-xs); }
 .package-compare .pcmp-needs-class { color: var(--a4-info); }
 .package-compare .pcmp-needs-class::before { content: "\2192\00a0"; }
 .package-compare .pcmp-offer-reason { color: var(--a4-muted); font-style: italic; }

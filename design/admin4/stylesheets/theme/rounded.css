@@ -447,7 +447,7 @@ div.community-activity #feed-elements ul
 div.community-activity #feed-elements ul li p
 {
     margin: 0.2em 0;
-    font-size: 0.8em;
+    font-size: var(--a4-text-xs);
 }
 
 .dashboard-item

@@ -71,7 +71,7 @@
     border-radius: 6px;
     background: var(--a4-soft);
     color: var(--a4-ink);
-    font-size: 0.85em;
+    font-size: var(--a4-text-xs);
     line-height: 1.55;
     white-space: pre-wrap;
     overflow-wrap: anywhere;
@@ -107,7 +107,7 @@
 .ezinfo-page table.ezinfo-extensions td.ezinfo-cell-website { overflow-wrap: anywhere; }
 
 .ezinfo-page .ezinfo-extension-name { display: block; font-weight: bold; color: var(--a4-ink); }
-.ezinfo-page .ezinfo-meta { display: block; margin-top: 0.2em; color: var(--a4-muted); font-size: 0.9em; }
+.ezinfo-page .ezinfo-meta { display: block; margin-top: 0.2em; color: var(--a4-muted); font-size: var(--a4-text-xs); }
 .ezinfo-page .ezinfo-position {
     display: inline-block;
     min-width: 1.9em;
@@ -123,7 +123,7 @@
     padding: 0.35em 0 0 0;
     list-style: none;
     border-top: 1px dashed var(--a4-line);
-    font-size: 0.9em;
+    font-size: var(--a4-text-xs);
     color: var(--a4-ink);
 }
 .ezinfo-page .ezinfo-includes li { margin: 0 0 0.15em 0; padding-left: 1.2em; text-indent: -1.2em; overflow-wrap: anywhere; }
@@ -178,7 +178,7 @@
         margin-right: 0.4em;
         color: var(--a4-muted);
         font-family: sans-serif;
-        font-size: 0.9em;
+        font-size: var(--a4-text-xs);
     }
     .ezinfo-page table.list td.ezinfo-cell-order { float: right; padding: 0; }
     .ezinfo-page table.list td.ezinfo-cell-order::before { content: none; }
