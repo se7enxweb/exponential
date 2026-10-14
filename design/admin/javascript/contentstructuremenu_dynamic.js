@@ -682,6 +682,11 @@ function ContentStructureMenu( params, i18n )
                 item.setAttribute( 'aria-level', level );
                 item.setAttribute( 'aria-setsize', lis.length );
                 item.setAttribute( 'aria-posinset', i + 1 );
+                // The node's menu opens with Shift+F10 (its icon button is hidden from the tree): say so
+                if ( _childLink( li, 'nodeicon' ) )
+                {
+                    item.setAttribute( 'aria-keyshortcuts', 'Shift+F10' );
+                }
                 if ( /(^|\s)currentnode(\s|$)/.test( li.className ) )
                 {
                     item.setAttribute( 'aria-current', 'page' );
@@ -833,7 +838,7 @@ function ContentStructureMenu( params, i18n )
         {
             span = document.createElement( 'span' );
             span.id = id;
-            span.className = 'a4-sr-only';
+            span.hidden = true;   // aria-describedby reads hidden text; no loose text in the tree
             li.appendChild( span );
         }
         span.textContent = text;

@@ -197,7 +197,7 @@ and its overrides.
   last one focused). Keys: Up and Down move through the shown items; Right opens a node (loading its items) or moves
   to its first sub item; Left closes it or moves to its parent; Home and End go to the first and last item; a letter
   moves to the next item that starts with it (letters typed within half a second form one search); Enter follows
-  the link; Shift+F10 or the context menu key opens the node's own menu. A key that does nothing there (Right on an
+  the link; Shift+F10 or the context menu key opens the node's own menu (each tree item says so in `aria-keyshortcuts`). A key that does nothing there (Right on an
   item without sub items) keeps its default. The open/close button before a node ("Items below <node>",
   `aria-expanded`) and the node icon stay for the mouse but are out of the Tab order and hidden from screen readers,
   since the item carries their state; a focus the keyboard or a closing menu gives them goes to the item (a click on
