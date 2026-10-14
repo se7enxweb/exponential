@@ -303,6 +303,8 @@ button.a4-content-datepicker-icon { padding: 0; border: 0; background: none; lin
 /* ---- edit ---- an attribute is a named group (role="group", id ezcca-attr-<id>, the summary's link target); one
    with a validation error carries a bad edge, its message under the label, and its controls are aria-invalid */
 
+/* a summary link scrolls its field below the fixed header, not behind it (WCAG 2.4.11) */
+.a4-content-attr, #a4-error-summary { scroll-margin-top: calc(var(--header-height, 6.25rem) + var(--a4-space-3)); }
 .a4-content-attr.is-invalid { border-left: 3px solid var(--a4-bad); padding-left: var(--a4-space-3); }
 .a4-content-attr-error { display: flex; gap: var(--a4-space-1); align-items: baseline; margin: var(--a4-space-1) 0 var(--a4-space-2); }
 .a4-content-attr input[aria-invalid="true"],

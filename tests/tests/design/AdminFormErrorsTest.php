@@ -61,7 +61,7 @@ class AdminFormErrorsTest extends PHPUnit\Framework\TestCase
         $tpl = self::read( 'design/admin4/templates/content/edit_attribute.tpl' );
         // one per editable branch: translation, grouped input (legend), single input (label)
         $this->assertSame( 3, substr_count( $tpl, '<p class="a4-field-error a4-content-attr-error" id="ezcca-error-{$attribute.id}">' ) );
-        $this->assertSame( 3, substr_count( $tpl, '{$attribute.validation_error|wash}' ) );
+        $this->assertSame( 3, substr_count( $tpl, '{$attribute.validation_error|explode( \'&lt;\' )|implode( \'<\' )|explode( \'&gt;\' )|implode( \'>\' )|wash}' ) );
     }
 
     public function testTheScriptMarksTheControlsOfEveryDatatype()
@@ -96,5 +96,24 @@ class AdminFormErrorsTest extends PHPUnit\Framework\TestCase
         $module = self::read( 'design/admin4/stylesheets/modules/content.css' );
         foreach ( array( '.a4-content-attr.is-invalid', '.a4-content-attr-error', '.a4-content-attr input[aria-invalid="true"]' ) as $selector )
             $this->assertStringContainsString( $selector, $module );
+    }
+
+    /**
+     * Validation messages are escaped once: some arrive with &lt; and &gt; already in them (the XML text parser's
+     * tag names), and some carry what the editor typed (a link, an e-mail address). Each is decoded from those two
+     * entities and then washed, in the summary and at the field alike; none is printed raw.
+     */
+    public function testValidationMessagesAreEscapedOnce()
+    {
+        $chain = "|explode( '&lt;' )|implode( '<' )|explode( '&gt;' )|implode( '>' )|wash}";
+        $summary = self::read( 'design/admin4/templates/content/edit_validation.tpl' );
+        foreach ( array( '{$UnvalidatedAttributes.item.description', '{$UnvalidatedPlacements.item.text', '{$UnvalidatedCustomRules.item.text', '{$LogMessages.item' ) as $value )
+        {
+            $this->assertStringContainsString( $value . $chain, $summary );
+            $this->assertStringNotContainsString( $value . '}', $summary, "$value is printed raw" );
+        }
+        $field = self::read( 'design/admin4/templates/content/edit_attribute.tpl' );
+        $this->assertSame( 3, substr_count( $field, '{$attribute.validation_error' . $chain ) );
+        $this->assertSame( 3, substr_count( $field, '{$attribute.validation_error' ) );
     }
 }
