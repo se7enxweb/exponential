@@ -276,7 +276,7 @@ ac084a07607e6d6c5a845da15423854f  design/admin/images/view-fullscreen.png
 88bd424484f5cae6b7f2a16f154b3417  design/admin/javascript/ezajaxsubitems_expdatatable.js
 2c35ad74f3ae96723bd750231c27cbe4  design/admin/javascript/leftmenu_widthcontrol.js
 d03d761498ffa705d43d836836910ad2  design/admin/javascript/node_tabs.js
-d017fa418e785cecc81f3d6aa8c6d485  design/admin/javascript/popupmenu/ezpopupmenu.js
+2003b7a9daedc35a1de4ccb940d24e96  design/admin/javascript/popupmenu/ezpopupmenu.js
 54cb1a1df10aa18ea280c08a9d97a328  design/admin/override/templates/admin_preview/article.tpl
 fa42107d7f6c82b26eed48050374e9a5  design/admin/override/templates/admin_preview/comment.tpl
 0c4cec334b8bff8d319219e52813802e  design/admin/override/templates/admin_preview/company.tpl
@@ -888,7 +888,7 @@ c3b4efd501310e51f2088b46936df4ec  design/admin4/javascript/ezadmin_menubar.js
 88bd424484f5cae6b7f2a16f154b3417  design/admin4/javascript/ezajaxsubitems_expdatatable.js
 2c35ad74f3ae96723bd750231c27cbe4  design/admin4/javascript/leftmenu_widthcontrol.js
 d03d761498ffa705d43d836836910ad2  design/admin4/javascript/node_tabs.js
-d017fa418e785cecc81f3d6aa8c6d485  design/admin4/javascript/popupmenu/ezpopupmenu.js
+2003b7a9daedc35a1de4ccb940d24e96  design/admin4/javascript/popupmenu/ezpopupmenu.js
 54cb1a1df10aa18ea280c08a9d97a328  design/admin4/override/templates/admin_preview/article.tpl
 fa42107d7f6c82b26eed48050374e9a5  design/admin4/override/templates/admin_preview/comment.tpl
 0c4cec334b8bff8d319219e52813802e  design/admin4/override/templates/admin_preview/company.tpl
@@ -7055,7 +7055,7 @@ ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 3bc3639cc9a5cbc6297eb77b068234bc  tests/test-map.json
 8b29711fe10a56c5c5b90916f35d0a00  tests/tests/bin/phpcs/NoTypeDeclarationsSniffTest.php
 4e3eeb18c2ea423afb62388e5e3dcafc  tests/tests/bin/phpcs/fixtures/typedeclarations.inc
-8a493db5f5964ca47052aee2ff3c71ce  tests/tests/design/AdminContextMenuTest.php
+74c71b766aa669757bc2db734a8929a8  tests/tests/design/AdminContextMenuTest.php
 617c938384f3d87aa79b21ee6d448f4e  tests/tests/design/AdminIconsTest.php
 7e8957a9c15916135defa02bc8301d00  tests/tests/design/AdminRetiredClassesTest.php
 7c4c16e37f7b38c730404eac254aaf4a  tests/tests/design/AdminStylingRulesTest.php
