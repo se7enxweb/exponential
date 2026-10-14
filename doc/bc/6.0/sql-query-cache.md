@@ -148,10 +148,26 @@ Choosing:
   so no name can reach outside `entries/`. Directories and files are group-writable whatever the umask, and a root
   process (Velocity, a script run as root) hands them to the owner of the state directory, so the site user's FPM
   can read and replace them. Every web server that mounts `var/` shares them
-  (a cluster on NFS or a SAN), where APCu is per server; a hit costs a file
-  read and `unserialize()` (about 0.03 ms against 0.01 ms from APCu, measured
-  on a test installation with PHP 8.4), still far below a statement on the
-  database. The cronjob part `cache_cleanup` (`cronjobs/querycache_cleanup.php`)
+  (a cluster on NFS or a SAN), where APCu is per server. A hit costs a file
+  read and `unserialize()`. Measured on a test installation (PHP 8.4, APCu
+  5.1.28, files on a local disk), the cache's own cost per statement:
+
+  | Result | Hit, APCu | Hit, file | Miss and store, APCu | Miss and store, file |
+  |---|---|---|---|---|
+  | 1 row | 0.02–0.03 ms | 0.05–0.08 ms | 0.02–0.04 ms | 0.17–0.23 ms |
+  | 26 rows | 0.03–0.05 ms | 0.07–0.09 ms | 0.04–0.05 ms | 0.18–0.21 ms |
+  | 500 rows | 0.31–0.42 ms | 0.35–0.41 ms | 0.39–0.42 ms | 0.47–0.63 ms |
+
+  A hit from a file takes about twice as long as one from APCu for small
+  results and the same for large ones, where `unserialize()` is most of the
+  cost; storing a file (temporary file, mode, rename) costs 0.15–0.2 ms more for
+  small results and 0.1–0.2 ms more for 500 rows. Both are far below a statement
+  on the database (through the Oracle driver on that installation: 0.2–0.3 ms
+  for a simple statement, about 60 ms for 500 sorted rows, against 0.05–0.1 ms
+  and 0.4 ms for a hit). On NFS or a SAN every file access adds the storage's
+  latency; that was not measured.
+
+  The cronjob part `cache_cleanup` (`cronjobs/querycache_cleanup.php`)
   removes the files older than `MaxAge` or from before the last clear; clearing
   the query cache removes them at once. Schedule it with `Storage=file` or
   `auto` without APCu. Without it the requests sweep the files themselves: a request that stored a file runs the
