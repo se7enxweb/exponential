@@ -365,6 +365,7 @@ function ContentStructureMenu( params, i18n )
                 {
                     if (aElement) aElement.title = txt;
                     else divElement.innerHTML = '<span></span>' + txt;
+                    if (aElement) _describe( aElement.parentNode, txt );
                 }
 
                 switch( xhr.status )
@@ -475,9 +476,21 @@ function ContentStructureMenu( params, i18n )
         var item = _ownItem( a.parentNode );
         if ( item )
         {
-            item.setAttribute( 'aria-expanded', state === 'openclose-close' ? 'true' : 'false' );
+            // Opened, but every sub item was filtered out (hideNodes): nothing to expand
+            var childDiv = a.parentNode.id ? document.getElementById( 'c' + a.parentNode.id.substr( 1 ) ) : null;
+            if ( state === 'openclose-close' && childDiv && !childDiv.getElementsByTagName( 'li' ).length )
+                item.removeAttribute( 'aria-expanded' );
+            else
+                item.setAttribute( 'aria-expanded', state === 'openclose-close' ? 'true' : 'false' );
             if ( state === 'openclose-busy' ) item.setAttribute( 'aria-busy', 'true' );
             else item.removeAttribute( 'aria-busy' );
+            // Closed with the mouse (browsers that do not focus a clicked link): the Tab stop may sit in the items
+            // that just went away; it moves to the closed node.
+            var tree = _treeOf( item ), stop = tree ? _tabStop( tree ) : null;
+            if ( state === 'openclose-open' && stop && !_shown( stop ) )
+            {
+                _tabStop( tree, item );
+            }
         }
     }
 
@@ -485,10 +498,10 @@ function ContentStructureMenu( params, i18n )
     // the list is a tree, every node's name link a tree item (its li is presentation), the list of its sub items
     // a group it owns. One tree item is in the Tab order: the current node's, else the first. Up and Down move
     // through the visible items, Right opens a node or moves to its first sub item, Left closes it or moves to its
-    // parent, Home and End go to the first and last item, a letter to the next item starting with it, Enter
-    // follows the link. The open/close button and the node icon stay for the mouse but leave the Tab order and
-    // the accessibility tree: the tree item carries aria-expanded, and the node's menu opens on the tree item
-    // with Shift+F10 or the context menu key, where ezpopupmenu.js supports that.
+    // parent, Home and End go to the first and last item, typed letters to the next item starting with them, Enter
+    // follows the link, Shift+F10 or the context menu key opens the node's menu. The open/close button and the
+    // node icon stay for the mouse but leave the Tab order and the accessibility tree: the tree item carries
+    // aria-expanded, and the focus they get from the keyboard or a closing menu goes to the tree item.
     this.tree = function( ul )
     {
         if ( !ul || ul.getAttribute( 'role' ) === 'tree' )
@@ -503,6 +516,13 @@ function ContentStructureMenu( params, i18n )
         this.treeElement = ul;
         this.decorate( ul );
 
+        var pointer = false, typed = '', typedAt = 0;
+        ul.addEventListener( 'mousedown', function()
+        {
+            pointer = true;
+            setTimeout( function() { pointer = false; }, 0 );
+        } );
+
         ul.addEventListener( 'focusin', function( e )
         {
             var target = e.target;
@@ -512,10 +532,11 @@ function ContentStructureMenu( params, i18n )
             }
             else if ( target.tagName === 'A' )
             {
-                // The open/close button or node icon took the focus (a click, or the menu giving it back on
-                // closing): hand it to the node's tree item.
+                // The open/close button or node icon took the focus (the keyboard, or a closing menu giving it
+                // back): hand it to the node's tree item. Not for a click on the node icon or while its menu is
+                // open: the menu's keys work from the icon.
                 var item = _ownItem( target.parentNode );
-                if ( item )
+                if ( item && !( /(^|\s)nodeicon(\s|$)/.test( target.className ) && ( pointer || target.getAttribute( 'aria-expanded' ) === 'true' ) ) )
                 {
                     item.focus();
                 }
@@ -529,28 +550,44 @@ function ContentStructureMenu( params, i18n )
             {
                 return;
             }
-            var items = _visibleItems( ul ), index = jQuery.inArray( item, items ), next = null, li = item.parentNode;
+            var li = item.parentNode, next = null, handled = false;
+            if ( e.key === 'ContextMenu' || ( e.shiftKey && e.key === 'F10' ) )
+            {
+                // The node's own menu button (a direct child of its li, never one of a sub item)
+                var opener = _childLink( li, 'nodeicon' );
+                if ( opener )
+                {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    opener.click();
+                }
+                return;
+            }
+            if ( e.shiftKey && e.key !== 'Home' && e.key !== 'End' && e.key.length !== 1 )
+            {
+                return;
+            }
             switch ( e.key )
             {
-                case 'ArrowDown': next = items[index + 1]; break;
-                case 'ArrowUp': next = items[index - 1]; break;
-                case 'Home': next = items[0]; break;
-                case 'End': next = items[items.length - 1]; break;
+                case 'ArrowDown': next = _step( ul, item, 1 ); break;
+                case 'ArrowUp': next = _step( ul, item, -1 ); break;
+                case 'Home': next = _step( ul, null, 1 ); break;
+                case 'End': next = _step( ul, null, -1 ); break;
                 case 'ArrowRight':
                     if ( item.getAttribute( 'aria-expanded' ) === 'false' )
                     {
-                        _pressToggle( li );
+                        handled = _pressToggle( li );
                     }
                     else if ( item.getAttribute( 'aria-expanded' ) === 'true' )
                     {
                         var group = document.getElementById( item.getAttribute( 'aria-owns' ) || '' );
-                        next = group ? _visibleItems( group )[0] : null;
+                        next = group ? _step( group, null, 1 ) : null;
                     }
                     break;
                 case 'ArrowLeft':
                     if ( item.getAttribute( 'aria-expanded' ) === 'true' && _toggleOf( li ) )
                     {
-                        _pressToggle( li );
+                        handled = _pressToggle( li );
                     }
                     else
                     {
@@ -558,29 +595,24 @@ function ContentStructureMenu( params, i18n )
                     }
                     break;
                 default:
-                    if ( e.shiftKey || !e.key || e.key.length !== 1 || !/\S/.test( e.key ) )
+                    if ( !e.key || e.key.length !== 1 || !/\S/.test( e.key ) )
                     {
                         return;
                     }
-                    var key = e.key.toLowerCase();
-                    for ( var i = 1; i <= items.length; i++ )
-                    {
-                        var candidate = items[( index + i ) % items.length];
-                        if ( String( candidate.textContent ).trim().toLowerCase().indexOf( key ) === 0 )
-                        {
-                            next = candidate;
-                            break;
-                        }
-                    }
-                    if ( !next )
-                    {
-                        return;
-                    }
+                    // Type-ahead: letters typed within half a second form one search
+                    var now = new Date().getTime();
+                    typed = ( now - typedAt < 500 ? typed : '' ) + e.key.toLowerCase();
+                    typedAt = now;
+                    next = _find( ul, item, typed );
             }
-            e.preventDefault();
             if ( next )
             {
                 next.focus();
+                handled = true;
+            }
+            if ( handled )
+            {
+                e.preventDefault();
             }
         } );
     };
@@ -593,93 +625,104 @@ function ContentStructureMenu( params, i18n )
         {
             return;
         }
-        var lis = container.getElementsByTagName( 'li' );
-        for ( var i = 0; i < lis.length; i++ )
+        var lists = jQuery.makeArray( container.getElementsByTagName( 'ul' ) );
+        if ( container === ul )
         {
-            var li = lis[i], item = _ownItem( li );
-            if ( !item || item.getAttribute( 'role' ) === 'treeitem' )
-            {
-                continue;
-            }
-            li.setAttribute( 'role', 'none' );
-            item.setAttribute( 'role', 'treeitem' );
-            item.setAttribute( 'tabindex', '-1' );
-            var level = 1, siblings = [], parentList = li.parentNode;
-            for ( var node = parentList; node && node !== ul; node = node.parentNode )
+            lists.unshift( ul );
+        }
+        for ( var l = 0; l < lists.length; l++ )
+        {
+            // One pass per list: level once, position by a running counter
+            var list = lists[l], lis = [], level = 1, c;
+            for ( var node = list; node && node !== ul; node = node.parentNode )
             {
                 if ( node.tagName === 'UL' ) level++;
             }
-            for ( var c = parentList.firstChild; c; c = c.nextSibling )
+            for ( c = list.firstChild; c; c = c.nextSibling )
             {
-                if ( c.nodeType === 1 && c.tagName === 'LI' ) siblings.push( c );
+                if ( c.nodeType === 1 && c.tagName === 'LI' ) lis.push( c );
             }
-            item.setAttribute( 'aria-level', level );
-            item.setAttribute( 'aria-setsize', siblings.length );
-            item.setAttribute( 'aria-posinset', jQuery.inArray( li, siblings ) + 1 );
-            if ( /(^|\s)currentnode(\s|$)/.test( li.className ) )
+            var div = list.parentNode, owner = list !== ul && div && div.id && div.id.charAt( 0 ) === 'c' ? _ownItem( div.parentNode ) : null;
+            if ( list !== ul )
             {
-                item.setAttribute( 'aria-current', 'page' );
-            }
-            for ( c = li.firstChild; c; c = c.nextSibling )
-            {
-                if ( c.nodeType === 1 && c.tagName === 'A' && c !== item )
+                if ( !lis.length )
                 {
-                    c.setAttribute( 'tabindex', '-1' );
-                    c.setAttribute( 'aria-hidden', 'true' );
+                    // Every sub item was filtered out (hideNodes): no group
+                    if ( owner && !_toggleOf( div.parentNode ) ) owner.removeAttribute( 'aria-expanded' );
+                    continue;
+                }
+                list.setAttribute( 'role', 'group' );
+                list.id = 'g' + div.id.substr( 1 );
+                if ( owner )
+                {
+                    owner.setAttribute( 'aria-owns', list.id );
+                    if ( !_toggleOf( div.parentNode ) )
+                    {
+                        // The top node of the tree: always open
+                        owner.setAttribute( 'aria-expanded', 'true' );
+                    }
                 }
             }
-            var toggle = _toggleOf( li ), childDiv = document.getElementById( 'c' + li.id.substr( 1 ) );
-            if ( toggle )
+            for ( var i = 0; i < lis.length; i++ )
             {
-                item.setAttribute( 'aria-expanded', toggle.getAttribute( 'aria-expanded' ) || 'false' );
-            }
-            else if ( childDiv && childDiv.getElementsByTagName( 'li' ).length )
-            {
-                // The top node of the tree: always open
-                item.setAttribute( 'aria-expanded', 'true' );
-            }
-        }
-        // Groups: the list of sub items under each opened node, owned by the node's tree item
-        var lists = container.getElementsByTagName( 'ul' );
-        for ( i = 0; i < lists.length; i++ )
-        {
-            var group = lists[i], div = group.parentNode;
-            if ( group === ul || !div || !div.id || div.id.charAt( 0 ) !== 'c' )
-            {
-                continue;
-            }
-            var owner = _ownItem( div.parentNode );
-            group.setAttribute( 'role', 'group' );
-            group.id = 'g' + div.id.substr( 1 );
-            if ( owner )
-            {
-                owner.setAttribute( 'aria-owns', group.id );
-                if ( !_toggleOf( div.parentNode ) )
+                var li = lis[i], item = _ownItem( li );
+                if ( !item || item.getAttribute( 'role' ) === 'treeitem' )
                 {
-                    owner.setAttribute( 'aria-expanded', 'true' );
+                    continue;
+                }
+                li.setAttribute( 'role', 'none' );
+                item.setAttribute( 'role', 'treeitem' );
+                item.setAttribute( 'tabindex', '-1' );
+                item.setAttribute( 'aria-level', level );
+                item.setAttribute( 'aria-setsize', lis.length );
+                item.setAttribute( 'aria-posinset', i + 1 );
+                if ( /(^|\s)currentnode(\s|$)/.test( li.className ) )
+                {
+                    item.setAttribute( 'aria-current', 'page' );
+                }
+                for ( c = li.firstChild; c; c = c.nextSibling )
+                {
+                    if ( c.nodeType === 1 && c.tagName === 'A' && c !== item )
+                    {
+                        c.setAttribute( 'tabindex', '-1' );
+                        c.setAttribute( 'aria-hidden', 'true' );
+                    }
+                }
+                var toggle = _toggleOf( li );
+                if ( toggle )
+                {
+                    item.setAttribute( 'aria-expanded', toggle.getAttribute( 'aria-expanded' ) || 'false' );
                 }
             }
         }
         // The Tab stop is the current node's item once it is shown (the path to it opens step by step), unless
-        // the focus is in the tree already; else the first item.
-        var stop = _tabStop( ul ), current = jQuery( ul ).find( '[role="treeitem"][aria-current="page"]' )[0];
+        // the focus is in the tree already; else the first shown item, else the first item.
+        var stop = _tabStop( ul ), current = ul.querySelector( '[role="treeitem"][aria-current="page"]' );
         if ( current && current !== stop && !( stop && stop.getAttribute( 'aria-current' ) === 'page' ) && !jQuery.contains( ul, document.activeElement ) )
         {
             _tabStop( ul, current );
         }
-        else if ( !stop && _visibleItems( ul )[0] )
+        else if ( !stop )
         {
-            _tabStop( ul, _visibleItems( ul )[0] );
+            var first = _step( ul, null, 1 ) || ul.querySelector( '[role="treeitem"]' );
+            if ( first ) _tabStop( ul, first );
         }
     };
 
     // The name link of the node li: the tree item
     function _ownItem( li )
     {
+        return _childLink( li, 'image-text' );
+    }
+
+    // The link with the given class among the direct children of li
+    function _childLink( li, className )
+    {
         if ( !li || li.tagName !== 'LI' ) return null;
+        var pattern = new RegExp( '(^|\\s)' + className + '(\\s|$)' );
         for ( var c = li.firstChild; c; c = c.nextSibling )
         {
-            if ( c.nodeType === 1 && c.tagName === 'A' && /(^|\s)image-text(\s|$)/.test( c.className ) ) return c;
+            if ( c.nodeType === 1 && c.tagName === 'A' && pattern.test( c.className ) ) return c;
         }
         return null;
     }
@@ -687,20 +730,19 @@ function ContentStructureMenu( params, i18n )
     // The open/close button of the node li, if it has one
     function _toggleOf( li )
     {
-        for ( var c = li.firstChild; c; c = c.nextSibling )
-        {
-            if ( c.nodeType === 1 && c.tagName === 'A' && /(^|\s)openclose-/.test( c.className ) ) return c;
-        }
-        return null;
+        return _childLink( li, 'openclose-(?:open|close|busy|error)' );
     }
 
+    // Press the open/close button of the node li; false when there is nothing to press
     function _pressToggle( li )
     {
         var toggle = _toggleOf( li );
         if ( toggle && toggle.className !== 'openclose-busy' && toggle.className !== 'openclose-error' && toggle.onclick )
         {
             toggle.onclick();
+            return true;
         }
+        return false;
     }
 
     // The tree item of the node above li
@@ -710,19 +752,61 @@ function ContentStructureMenu( params, i18n )
         return div && div.parentNode ? _ownItem( div.parentNode ) : null;
     }
 
-    // The tree items under root that are shown (their parents are open), in reading order
-    function _visibleItems( root )
+    // The tree the item belongs to
+    function _treeOf( item )
     {
-        return jQuery( root ).find( '[role="treeitem"]' ).filter( function()
+        for ( var node = item; node; node = node.parentNode )
         {
-            return this.getClientRects().length > 0;
-        } ).get();
+            if ( node.getAttribute && node.getAttribute( 'role' ) === 'tree' ) return node;
+        }
+        return null;
+    }
+
+    function _shown( item )
+    {
+        return item.getClientRects().length > 0;
+    }
+
+    // The next shown tree item under root after (direction 1) or before (-1) from, or the first or last one
+    // when from is null; only the items passed are measured.
+    function _step( root, from, direction )
+    {
+        var items = root.querySelectorAll( '[role="treeitem"]' ), i;
+        if ( from )
+        {
+            for ( i = 0; i < items.length && items[i] !== from; i++ );
+            i += direction;
+        }
+        else
+        {
+            i = direction > 0 ? 0 : items.length - 1;
+        }
+        for ( ; i >= 0 && i < items.length; i += direction )
+        {
+            if ( _shown( items[i] ) ) return items[i];
+        }
+        return null;
+    }
+
+    // The next shown tree item whose name starts with text, after from (at from itself for a longer search),
+    // wrapping round
+    function _find( root, from, text )
+    {
+        var items = root.querySelectorAll( '[role="treeitem"]' ), start = 0;
+        for ( ; start < items.length && items[start] !== from; start++ );
+        if ( text.length === 1 ) start++;
+        for ( var n = 0; n < items.length; n++ )
+        {
+            var candidate = items[( start + n ) % items.length];
+            if ( String( candidate.textContent ).trim().toLowerCase().indexOf( text ) === 0 && _shown( candidate ) ) return candidate;
+        }
+        return null;
     }
 
     // Get, or move, the one tree item in the Tab order
     function _tabStop( ul, item )
     {
-        var current = jQuery( ul ).find( '[role="treeitem"][tabindex="0"]' )[0] || null;
+        var current = ul.querySelector( '[role="treeitem"][tabindex="0"]' );
         if ( item && item !== current )
         {
             if ( current ) current.setAttribute( 'tabindex', '-1' );
@@ -730,6 +814,24 @@ function ContentStructureMenu( params, i18n )
             current = item;
         }
         return current;
+    }
+
+    // A message about the node li for screen readers (its open/close button, which shows it as a title, is
+    // hidden from them): a visually hidden text the tree item is described by
+    function _describe( li, text )
+    {
+        var item = _ownItem( li );
+        if ( !item || !li.id ) return;
+        var id = 'e' + li.id.substr( 1 ), span = document.getElementById( id );
+        if ( !span )
+        {
+            span = document.createElement( 'span' );
+            span.id = id;
+            span.className = 'a4-sr-only';
+            li.appendChild( span );
+        }
+        span.textContent = text;
+        item.setAttribute( 'aria-describedby', id );
     }
 
     // A value for a double-quoted attribute of the generated markup

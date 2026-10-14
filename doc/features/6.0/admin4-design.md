@@ -143,12 +143,16 @@ and its overrides.
   `aria-current="page"`. One item is in the Tab order (the current node's once it is shown, else the first; then the
   last one focused). Keys: Up and Down move through the shown items; Right opens a node (loading its items) or moves
   to its first sub item; Left closes it or moves to its parent; Home and End go to the first and last item; a letter
-  moves to the next item that starts with it; Enter follows the link. The open/close button before a node
-  ("Items below <node>", `aria-expanded`) and the node icon stay for the mouse but are out of the Tab order and
-  hidden from screen readers, since the item carries their state; a focus that lands on them goes to the item. The
-  node's context menu opens on the item with Shift+F10 or the context menu key where `ezpopupmenu.js` provides that,
-  and closing it gives the focus back to the item. The tree's script and settings template are the same file in
-  `design/admin` and `design/admin4`; the tree of `show_content_structure.tpl` (no dynamic menu) is unchanged.
+  moves to the next item that starts with it (letters typed within half a second form one search); Enter follows
+  the link; Shift+F10 or the context menu key opens the node's own menu. A key that does nothing there (Right on an
+  item without sub items) keeps its default. The open/close button before a node ("Items below <node>",
+  `aria-expanded`) and the node icon stay for the mouse but are out of the Tab order and hidden from screen readers,
+  since the item carries their state; a focus the keyboard or a closing menu gives them goes to the item (a click on
+  the node icon keeps it there, so the menu's keys work). A node whose items cannot be loaded says why through
+  `aria-describedby`; a node whose sub items are all hidden (`hideNodes`) has no `aria-expanded`. A node closed with
+  the mouse takes the Tab stop when it sat on one of its sub items. The tree's script and settings template are the
+  same file in `design/admin` and `design/admin4`; the tree of `show_content_structure.tpl` (no dynamic menu) is
+  unchanged.
 - **Date fields:** the calendar opens from a button (`aria-haspopup="dialog"`); `exp::datepicker` gives the focus back
   to it when the calendar closes. The classic designs keep their calendar image.
 

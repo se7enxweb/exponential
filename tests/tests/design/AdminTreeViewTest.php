@@ -62,8 +62,39 @@ class AdminTreeViewTest extends PHPUnit\Framework\TestCase
         $js = self::file( self::SCRIPT );
         foreach ( array( "'ArrowDown'", "'ArrowUp'", "'ArrowRight'", "'ArrowLeft'", "'Home'", "'End'" ) as $key )
             $this->assertStringContainsString( "case " . $key . ":", $js, $key );
+        // a key that did nothing (Right on a leaf, Left on the top node) keeps its default
+        $this->assertStringContainsString( "if ( handled )", $js );
         // jQuery 4 has no jQuery.trim
         $this->assertStringNotContainsString( 'jQuery.trim', $js );
+    }
+
+    /** Shift+F10 or the context menu key on a tree item opens that node's own menu, never one of a sub item */
+    public function testTheContextMenuKeyOpensTheNodesOwnMenu()
+    {
+        $js = self::file( self::SCRIPT );
+        $this->assertStringContainsString( "e.key === 'ContextMenu' || ( e.shiftKey && e.key === 'F10' )", $js );
+        $this->assertMatchesRegularExpression( "#var opener = _childLink\\( li, 'nodeicon' \\);\\s*if \\( opener \\)\\s*\\{\\s*e\\.preventDefault\\(\\);\\s*e\\.stopPropagation\\(\\);\\s*opener\\.click\\(\\);#", $js );
+        // _childLink looks at the direct children of the li only
+        $this->assertMatchesRegularExpression( "#function _childLink\\( li, className \\)\\s*\\{.*?for \\( var c = li\\.firstChild; c; c = c\\.nextSibling \\)#s", $js );
+        // a focus on the node icon goes to the item, but not for a click on it or while its menu is open
+        $this->assertStringContainsString( "( pointer || target.getAttribute( 'aria-expanded' ) === 'true' )", $js );
+    }
+
+    /** A node closed with the mouse takes the Tab stop when it sat on one of its sub items */
+    public function testTheTabStopNeverStaysOnAHiddenItem()
+    {
+        $js = self::file( self::SCRIPT );
+        $this->assertStringContainsString( "if ( state === 'openclose-open' && stop && !_shown( stop ) )", $js );
+        $this->assertStringContainsString( "_step( ul, null, 1 ) || ul.querySelector( '[role=\"treeitem\"]' )", $js );
+    }
+
+    /** A node whose items cannot be loaded says why to screen readers too */
+    public function testTheLoadErrorDescribesTheItem()
+    {
+        $js = self::file( self::SCRIPT );
+        $this->assertStringContainsString( "if (aElement) _describe( aElement.parentNode, txt );", $js );
+        $this->assertStringContainsString( "item.setAttribute( 'aria-describedby', id );", $js );
+        $this->assertStringContainsString( "span.className = 'a4-sr-only';", $js );
     }
 
     /** The classic admin design shares the script and its settings template */
