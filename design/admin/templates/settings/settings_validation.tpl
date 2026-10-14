@@ -1,8 +1,8 @@
 {* Why settings/edit did not save: validation_error, validation_error_type, validation_field (and, for a write
-   error, path and filename) as the view sets them. Included by settings/edit.tpl inside .exp-settings.
+   error, path and filename) as the view sets them. Included by settings/edit.tpl inside the page scope (.a4-page).
    The same file is in design/admin and design/admin4. *}
 {if $validation_error}
-<div class="exp-feedback is-bad" role="alert">
+<div class="a4-notice is-bad" role="alert">
 <p><strong>{'The setting was not saved.'|i18n( 'design/admin/settings' )}</strong></p>
     {switch match=$validation_error_type}
     {case match='empty'}

@@ -3,8 +3,7 @@
    rows: variable, value, is_list, secret, origin, overridden), key_rows, installation, sinks, formats, index,
    audit_enabled, log_dir, index_settings, sources (the registered sources of extensions: identifier, label, channel,
    class, problem; the card is shown only when one is registered). *}
-{include uri='design:audit/style.tpl'}
-<div class="context-block au-view" id="exp-audit-settings">
+<div class="context-block a4-audit-view a4-page" id="exp-audit-settings">
 
 {* DESIGN: Header START *}<div class="box-header"><div class="box-ml">
 <h1 class="context-title">{'Audit settings'|i18n( 'design/admin/audit' )}</h1>
@@ -15,13 +14,13 @@
 
 <div class="block">
 <p>{'Audit is %state. Live files: %dir.'|i18n( 'design/admin/audit',, hash( '%state', cond( $audit_enabled, 'enabled'|i18n( 'design/admin/audit' ), 'disabled'|i18n( 'design/admin/audit' ) ), '%dir', $log_dir ) )|wash}</p>
-<p class="au-note">{'This page only shows the settings. Write them with exp:ini, for example: ./console exp:ini set audit.ini/AuditConsoleSettings/PageSize 100 override. Every write to audit.ini is recorded (system.audit.setting.write).'|i18n( 'design/admin/audit' )}</p>
+<p class="a4-audit-note">{'This page only shows the settings. Write them with exp:ini, for example: ./console exp:ini set audit.ini/AuditConsoleSettings/PageSize 100 override. Every write to audit.ini is recorded (system.audit.setting.write).'|i18n( 'design/admin/audit' )}</p>
 </div>
 
-<div class="au-cards">
-<section class="au-card">
-    <h2 class="au-h">{'Index'|i18n( 'design/admin/audit' )}</h2>
-    <dl class="au-fields">
+<div class="a4-audit-cards">
+<section class="a4-audit-card">
+    <h2 class="a4-audit-h">{'Index'|i18n( 'design/admin/audit' )}</h2>
+    <dl class="a4-audit-fields">
         <dt>{'Index'|i18n( 'design/admin/audit' )}</dt><dd>{cond( $index.enabled, 'enabled'|i18n( 'design/admin/audit' ), 'disabled'|i18n( 'design/admin/audit' ) )}, {cond( $index.installed, 'tables installed'|i18n( 'design/admin/audit' ), 'tables missing'|i18n( 'design/admin/audit' ) )} ({$index.engine|wash})</dd>
         <dt>{'Search'|i18n( 'design/admin/audit' )}</dt><dd>{$index.fulltext|wash}</dd>
         <dt>{'Rows'|i18n( 'design/admin/audit' )}</dt><dd>{$index.rows}</dd>
@@ -32,57 +31,57 @@
     </dl>
 </section>
 
-<section class="au-card">
-    <h2 class="au-h">{'Keys'|i18n( 'design/admin/audit' )}</h2>
+<section class="a4-audit-card">
+    <h2 class="a4-audit-h">{'Keys'|i18n( 'design/admin/audit' )}</h2>
     {if $installation}<p>{'Installation %id'|i18n( 'design/admin/audit',, hash( '%id', $installation ) )|wash}</p>{/if}
     {if $key_rows|count}
     <table class="list" cellspacing="0">
     <tr><th>{'Key'|i18n( 'design/admin/audit' )}</th><th>{'Fingerprint'|i18n( 'design/admin/audit' )}</th></tr>
-    {foreach $key_rows as $k}<tr><td>{$k.kind|wash} {$k.id|wash}{if and( eq( $k.kind, 'signing' ), $k.active )} <span class="au-result success">{'active'|i18n( 'design/admin/audit' )}</span>{/if}</td><td><code>{$k.fingerprint|wash}</code></td></tr>{/foreach}
+    {foreach $key_rows as $k}<tr><td>{$k.kind|wash} {$k.id|wash}{if and( eq( $k.kind, 'signing' ), $k.active )} <span class="a4-audit-result success">{'active'|i18n( 'design/admin/audit' )}</span>{/if}</td><td><code>{$k.fingerprint|wash}</code></td></tr>{/foreach}
     </table>
-    {else}<p class="au-note">{'No keys yet: they are made with the first event.'|i18n( 'design/admin/audit' )}</p>{/if}
+    {else}<p class="a4-audit-note">{'No keys yet: they are made with the first event.'|i18n( 'design/admin/audit' )}</p>{/if}
 </section>
 
-<section class="au-card">
-    <h2 class="au-h">{'Sinks'|i18n( 'design/admin/audit' )}</h2>
+<section class="a4-audit-card">
+    <h2 class="a4-audit-h">{'Sinks'|i18n( 'design/admin/audit' )}</h2>
     {if $sinks|count}
     <table class="list" cellspacing="0">
-    {foreach $sinks as $s}<tr><td><code>{$s.name|wash}</code></td><td>{if $s.problem}<span class="au-result refused">{'not working'|i18n( 'design/admin/audit' )}</span> <span class="au-sub">{$s.problem|wash}</span>{else}<span class="au-result success">{'ready'|i18n( 'design/admin/audit' )}</span>{/if}</td></tr>{/foreach}
+    {foreach $sinks as $s}<tr><td><code>{$s.name|wash}</code></td><td>{if $s.problem}<span class="a4-audit-result refused">{'not working'|i18n( 'design/admin/audit' )}</span> <span class="a4-audit-sub">{$s.problem|wash}</span>{else}<span class="a4-audit-result success">{'ready'|i18n( 'design/admin/audit' )}</span>{/if}</td></tr>{/foreach}
     </table>
-    {else}<p class="au-note">{'No sinks are registered here.'|i18n( 'design/admin/audit' )}</p>{/if}
+    {else}<p class="a4-audit-note">{'No sinks are registered here.'|i18n( 'design/admin/audit' )}</p>{/if}
 </section>
 
-<section class="au-card">
-    <h2 class="au-h">{'Archive formats'|i18n( 'design/admin/audit' )}</h2>
+<section class="a4-audit-card">
+    <h2 class="a4-audit-h">{'Archive formats'|i18n( 'design/admin/audit' )}</h2>
     {if $formats|count}
     <table class="list" cellspacing="0">
-    {foreach $formats as $f}<tr><td><code>{$f.name|wash}</code> <span class="au-sub">{$f.extension|wash}</span></td><td>{if $f.problem}<span class="au-result refused">{'unavailable'|i18n( 'design/admin/audit' )}</span> <span class="au-sub">{$f.problem|wash}</span>{else}<span class="au-result success">{'available'|i18n( 'design/admin/audit' )}</span>{/if}</td></tr>{/foreach}
+    {foreach $formats as $f}<tr><td><code>{$f.name|wash}</code> <span class="a4-audit-sub">{$f.extension|wash}</span></td><td>{if $f.problem}<span class="a4-audit-result refused">{'unavailable'|i18n( 'design/admin/audit' )}</span> <span class="a4-audit-sub">{$f.problem|wash}</span>{else}<span class="a4-audit-result success">{'available'|i18n( 'design/admin/audit' )}</span>{/if}</td></tr>{/foreach}
     </table>
-    {else}<p class="au-note">{'No format handlers are registered here.'|i18n( 'design/admin/audit' )}</p>{/if}
+    {else}<p class="a4-audit-note">{'No format handlers are registered here.'|i18n( 'design/admin/audit' )}</p>{/if}
 </section>
 
 {if $sources|count}
-<section class="au-card">
-    <h2 class="au-h">{'Sources'|i18n( 'design/admin/audit' )}</h2>
+<section class="a4-audit-card">
+    <h2 class="a4-audit-h">{'Sources'|i18n( 'design/admin/audit' )}</h2>
     <table class="list" cellspacing="0">
-    {foreach $sources as $s}<tr><td><code>{$s.identifier|wash}</code> {$s.label|wash}{if $s.channel} <span class="au-sub">{'channel'|i18n( 'design/admin/audit' )} <code>{$s.channel|wash}</code></span>{/if}<br /><span class="au-sub">{$s.class|wash}</span></td><td>{if $s.problem}<span class="au-result refused">{'not working'|i18n( 'design/admin/audit' )}</span> <span class="au-sub">{$s.problem|wash}</span>{else}<span class="au-result success">{'ready'|i18n( 'design/admin/audit' )}</span>{/if}</td></tr>{/foreach}
+    {foreach $sources as $s}<tr><td><code>{$s.identifier|wash}</code> {$s.label|wash}{if $s.channel} <span class="a4-audit-sub">{'channel'|i18n( 'design/admin/audit' )} <code>{$s.channel|wash}</code></span>{/if}<br /><span class="a4-audit-sub">{$s.class|wash}</span></td><td>{if $s.problem}<span class="a4-audit-result refused">{'not working'|i18n( 'design/admin/audit' )}</span> <span class="a4-audit-sub">{$s.problem|wash}</span>{else}<span class="a4-audit-result success">{'ready'|i18n( 'design/admin/audit' )}</span>{/if}</td></tr>{/foreach}
     </table>
 </section>
 {/if}
 </div>
 
-<h2 class="au-h">audit.ini</h2>
+<h2 class="a4-audit-h">audit.ini</h2>
 {foreach $blocks as $b}
-<details class="au-data"{if array( 'AuditSettings', 'AuditIndexSettings', 'AuditConsoleSettings' )|contains( $b.name )} open="open"{/if}>
+<details class="a4-audit-data"{if array( 'AuditSettings', 'AuditIndexSettings', 'AuditConsoleSettings' )|contains( $b.name )} open="open"{/if}>
 <summary><code>[{$b.name|wash}]</code></summary>
-<div class="au-table">
+<div class="a4-audit-table">
 <table class="list" cellspacing="0">
 <tr><th>{'Variable'|i18n( 'design/admin/audit' )}</th><th>{'Value'|i18n( 'design/admin/audit' )}</th><th>{'From'|i18n( 'design/admin/audit' )}</th></tr>
 {foreach $b.rows as $r sequence array( 'bglight', 'bgdark' ) as $style}
 <tr class="{$style}">
     <td><code>{$r.variable|wash}</code></td>
-    <td>{if $r.is_list}<pre class="au-raw" style="max-height: 12em; margin: 0">{$r.value|wash}</pre>{else}<code>{$r.value|wash}</code>{/if}</td>
-    <td class="au-sub">{if $r.overridden}<strong>{$r.origin|wash}</strong>{else}{$r.origin|wash}{/if}</td>
+    <td>{if $r.is_list}<pre class="a4-audit-raw a4-audit-raw-inline">{$r.value|wash}</pre>{else}<code>{$r.value|wash}</code>{/if}</td>
+    <td class="a4-audit-sub">{if $r.overridden}<strong>{$r.origin|wash}</strong>{else}{$r.origin|wash}{/if}</td>
 </tr>
 {/foreach}
 </table>

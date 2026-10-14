@@ -4,11 +4,10 @@
    ConfirmRemoveButton; Cancel posts CancelButton, which removes nothing. Field and button names are unchanged.
 
    The same file is in design/admin and design/admin4. Guide: doc/guides/collected-information.md *}
-{include uri='design:infocollector/exp_style.tpl'}
 
 {def $objects = first_set( $remove_objects, array() )}
 
-<div class="context-block exp-info">
+<div class="context-block a4-page">
 
 <div class="box-header"><div class="box-ml">
 <h1 class="context-title">{'Confirm information collection removal'|i18n( 'design/admin/infocollector/confirmremoval' )}</h1>
@@ -22,8 +21,8 @@
 <form action={concat( $module.functions.collectionlist.uri, '/', $object_id )|ezurl} method="post" name="CollectionRemove">
 {/if}
 
-<div class="exp-feedback is-warn" role="alert">
-    <h2 class="exp-h2">{'Are you sure you want to remove the collected information?'|i18n( 'design/admin/infocollector/confirmremoval' )}</h2>
+<div class="a4-notice is-warn" role="alert">
+    <h2 class="a4-h2">{'Are you sure you want to remove the collected information?'|i18n( 'design/admin/infocollector/confirmremoval' )}</h2>
     {if $collections|lt( 2 )}
     <p>{'%collections collection will be removed.'|i18n( 'design/admin/infocollector/confirmremoval',, hash( '%collections', $collections ) )}</p>
     {else}
@@ -39,10 +38,10 @@
     <p>{'What the visitors sent is deleted and cannot be brought back; export it as CSV first if it is still needed. The objects and their forms stay and go on collecting.'|i18n( 'design/admin/infocollector/confirmremoval' )}</p>
 </div>
 
-<div class="exp-bottombar">
-    <div class="exp-actions">
-        <button class="exp-btn exp-btn-danger" type="submit" name="ConfirmRemoveButton" value="{'OK'|i18n( 'design/admin/infocollector/confirmremoval' )}">{'Remove'|i18n( 'design/admin/infocollector/confirmremoval' )}</button>
-        <button class="exp-btn" type="submit" name="CancelButton" value="{'Cancel'|i18n( 'design/admin/infocollector/confirmremoval' )}">{'Cancel'|i18n( 'design/admin/infocollector/confirmremoval' )}</button>
+<div class="a4-toolbar is-bottom">
+    <div class="a4-actions">
+        <button class="a4-btn a4-btn-danger" type="submit" name="ConfirmRemoveButton" value="{'OK'|i18n( 'design/admin/infocollector/confirmremoval' )}">{'Remove'|i18n( 'design/admin/infocollector/confirmremoval' )}</button>
+        <button class="a4-btn" type="submit" name="CancelButton" value="{'Cancel'|i18n( 'design/admin/infocollector/confirmremoval' )}">{'Cancel'|i18n( 'design/admin/infocollector/confirmremoval' )}</button>
     </div>
 </div>
 
