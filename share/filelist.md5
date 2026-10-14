@@ -1139,7 +1139,7 @@ cb128a4645e891cd796919aad3ed36d1  design/admin4/templates/page_header.tpl
 1bf2256ccd6061ee7f354a26834937c1  design/admin4/templates/page_menuheadenabled.tpl
 9f4f8bdbbdfbfd8c6d873c03eded7ef6  design/admin4/templates/page_menuheadgray.tpl
 4306b7f17fbb890306fdc57c9be45664  design/admin4/templates/page_menuheadselected.tpl
-28c5089cfe1580c36e2f9421fdfc790a  design/admin4/templates/page_search.tpl
+d4344507a798bfbb1af376ed22458d6f  design/admin4/templates/page_search.tpl
 1c473306da03fc6460e3aec0e2f2c06c  design/admin4/templates/page_topmenu.tpl
 8aac725b06b7358a617c2fd0ff29ae91  design/admin4/templates/page_topmenuitem.tpl
 f0b52f21d5e9f1e7999667614bf82400  design/admin4/templates/page_toppath.tpl
@@ -2991,7 +2991,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-b309b0f6a930b1cd103dfe1fa183187c  doc/changelogs/6.0/6.0.15.md
+1288d1f6ec968f7c1a750307cf0d8cd1  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -5957,7 +5957,7 @@ abd6b5d544e024e13ce23cf7d55071cb  kernel/rss/function_definition.php
 ef03144f5c2166b18dcadaa6f07d1f7b  kernel/search/ezsearchfunctioncollection.php
 fdffdc9520e14603f42c96c15fc026d4  kernel/search/function_definition.php
 52ea5b59cc322fd9359bf66400379024  kernel/search/module.php
-be0c15f835b5af030fc2d7009d84d4ea  kernel/search/plugins/ezsearchengine/ezsearchengine.php
+8a9ec8a45321ac9ffad78fed2cf28dca  kernel/search/plugins/ezsearchengine/ezsearchengine.php
 c184a2c19e4356edf8d714fb61356091  kernel/search/stats.php
 e48da813ef5e533b912e399f8e057728  kernel/section/assign.php
 9dfa74efbcd321c2a6d6c2bd27e15d6f  kernel/section/edit.php
@@ -8006,6 +8006,7 @@ ea78290da17011e1c5e5fa5c26e2f812  tests/tests/kernel/private/webdav/regression/P
 7b100637f4d4bd1ccb777fe013ccfd66  tests/tests/kernel/private/webdav/siteaccess/site.ini.append.php
 7ebd889c25aaa5abe2da1eb7814049cd  tests/tests/kernel/private/webdav/siteaccess/site.ini.append.php.replace
 5b1c01f8627cfce013a8da79b43212e1  tests/tests/kernel/private/webdav/wrappers.php
+0c4d498d365638f271d6368732362b01  tests/tests/kernel/search/eZSearchEngineIdsTest.php
 3fd64cf8d6100ef095a212afa06b5f22  tests/tests/kernel/search/eZSearchEngineIntegerClampTest.php
 7672ec3f2714756db70059a8fdabf898  tests/tests/kernel/search/ezsearchengine_regression.php
 a3ea1bdfc39cf79ebe3eeda15c967a85  tests/tests/kernel/suite.php
