@@ -92,7 +92,7 @@
   overflow-wrap: anywhere;
 }
 .a4-content-bookmark .a4-content-bookmark-nav a:hover { background-color: var(--a4-soft); color: var(--a4-accent-text); }
-.a4-content-bookmark .a4-content-bookmark-nav span.current { background-color: var(--a4-accent-soft); box-shadow: inset 3px 0 0 var(--a4-accent); font-weight: 650; }
+.a4-content-bookmark .a4-content-bookmark-nav span.current { background-color: var(--a4-accent-soft); box-shadow: inset 3px 0 0 var(--a4-accent-text); font-weight: 650; }
 .a4-content-bookmark .a4-content-bookmark-navname { flex: 1 1 auto; min-width: 0; }
 .a4-content-bookmark .a4-content-bookmark-nav .a4-count {
   flex: 0 0 auto;
@@ -134,7 +134,7 @@
 .a4-content-bookmark .a4-content-bookmark-nav li.is-dragged,
 .a4-content-bookmark .a4-card.is-dragged { opacity: .5; }
 .a4-content-bookmark .a4-content-bookmark-nav li.is-moved > a,
-.a4-content-bookmark .a4-content-bookmark-nav li.is-moved > span.current { background-color: var(--a4-accent-soft); box-shadow: inset 3px 0 0 var(--a4-accent); }
+.a4-content-bookmark .a4-content-bookmark-nav li.is-moved > span.current { background-color: var(--a4-accent-soft); box-shadow: inset 3px 0 0 var(--a4-accent-text); }
 .a4-content-bookmark .a4-content-bookmark-nav .a4-grip { width: 22px; min-height: 26px; font-size: var(--a4-text-s); }
 
 /* arranging the list */

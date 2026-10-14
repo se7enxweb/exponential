@@ -378,7 +378,7 @@ table.list td.role-id { text-align: right; color: var(--a4-muted); white-space: 
 .package-view-full table.pvf-files .pvf-col-size,
 .package-view-full table.pvf-files .pvf-col-actions { width: 1%; }
 .package-view-full table.list tr.pvf-current,
-.package-view-full table.list tr.pvf-current:hover { background: var(--a4-accent-soft); box-shadow: inset 3px 0 0 var(--a4-accent); }
+.package-view-full table.list tr.pvf-current:hover { background: var(--a4-accent-soft); box-shadow: inset 3px 0 0 var(--a4-accent-text); }
 .package-view-full .pvf-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 
 .package-view-full .pvf-kind { display: inline-block; padding: 0 0.45em; border-radius: 3px; font-size: 0.85em; line-height: 1.6; background: var(--a4-soft); color: var(--a4-ink); }

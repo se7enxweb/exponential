@@ -285,14 +285,6 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
      */
     const PAGE_STYLESHEETS = array( 'admin4.css', 'ezinfo.css', 'packagecompare.css', 'setup-extensions.css', 'visual-templateview.css' );
 
-    /**
-     * Declarations (stylesheet => selector => properties) that keep a colour literal on purpose
-     */
-    const COLOUR_EXCEPTIONS = array(
-        // explayouts paints its own navigation column navy on its pages; admin4's card takes that navy there
-        'admin4.css' => array( '#page.ezexplayoutsuinavigationpart #leftmenu-design' => array( 'background-color', 'box-shadow' ) ),
-    );
-
     public function testPageStylesheetsUseOnlyColourTokens()
     {
         $problems = array();
@@ -300,11 +292,10 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
         {
             $path = self::$root . '/design/admin4/stylesheets/' . $file;
             $this->assertFileExists( $path );
-            $exceptions = isset( self::COLOUR_EXCEPTIONS[$file] ) ? self::COLOUR_EXCEPTIONS[$file] : array();
             foreach ( self::declarations( file_get_contents( $path ) ) as $d )
             {
                 list( $selector, $property, $value ) = $d;
-                if ( strpos( $property, '--' ) === 0 || ( isset( $exceptions[$selector] ) && in_array( $property, $exceptions[$selector], true ) ) )
+                if ( strpos( $property, '--' ) === 0 )
                 {
                     continue;
                 }
