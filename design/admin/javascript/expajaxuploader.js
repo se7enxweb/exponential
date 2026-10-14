@@ -145,7 +145,11 @@
                 // the server URL-encodes the HTML of this answer (see ezjscServerFunctionsAjaxUploader::upload());
                 // a malformed sequence (URIError) is an answer that is not the one expected
                 var html;
-                try { html = decodeURIComponent(String(json.html)); } catch (e) {
+                if (typeof json.html !== 'string') {
+                    self.displayError(self.conf.parseJSONErrorText);
+                    return;
+                }
+                try { html = decodeURIComponent(json.html); } catch (e) {
                     self.displayError(self.conf.parseJSONErrorText);
                     return;
                 }
