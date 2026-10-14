@@ -37,6 +37,9 @@ class AdminDashboardTest extends PHPUnit\Framework\TestCase
         $tpl = self::read( 'design/admin4/templates/content/dashboard.tpl' );
         $this->assertDoesNotMatchRegularExpression( '/\$count_week\s*=\s*fetch\(/', $tpl, 'the week is summed from $days, not fetched again' );
         $this->assertStringContainsString( '{set $count_week = sum( $count_week, $d.count )}', $tpl );
+        // $days runs oldest first: the first seven are the week before, the last seven this week
+        $this->assertStringContainsString( '{if lt( $n, 7 )}{set $count_prev_week = sum( $count_prev_week, $d.count )}{else}{set $count_week = sum( $count_week, $d.count )}{/if}', $tpl );
+        $this->assertStringContainsString( '{for 13 to 0 as $i}', $tpl, 'the days are built oldest first' );
         $this->assertStringContainsString( '{set $count_prev_week = sum( $count_prev_week, $d.count )}', $tpl );
         $this->assertStringContainsString( '{def $week_delta = sub( $count_week, $count_prev_week )}', $tpl );
     }
@@ -53,13 +56,21 @@ class AdminDashboardTest extends PHPUnit\Framework\TestCase
         $css = self::read( 'design/admin4/stylesheets/admin4.css' );
         $this->assertMatchesRegularExpression( '/\.a4-dash-figure > \.a4-dash-trend \{[^}]*color: var\(--a4-muted\)/s', $css,
             'the trend is not coloured good or bad: a rise is not always good' );
+        $this->assertMatchesRegularExpression( '/\.a4-dash-figure > \.a4-dash-trend \{[^}]*grid-column: 1 \/ -1/s', $css );
+        // the label rule must leave the trend alone, or its column 2 (more specific) wins over the trend's span
+        preg_match_all( '/^([^{}\n]*)\{[^}]*grid-column: 2;/m', $css, $columnTwo );
+        foreach ( $columnTwo[1] as $selector )
+            if ( strpos( $selector, 'a4-dash-figure' ) !== false && strpos( $selector, 'span' ) !== false )
+                $this->assertStringContainsString( ':not(.a4-dash-trend)', $selector, "$selector would pull the trend into column 2" );
+        $this->assertMatchesRegularExpression( '/a\.a4-dash-figure:is\(:hover, :focus-visible\)[^{]*\{[^}]*text-decoration: underline/', $css,
+            'a linked figure shows it is a link beyond its arrow' );
     }
 
     public function testTheChartsNumbersAreATable()
     {
         $tpl = self::read( 'design/admin4/templates/content/dashboard.tpl' );
         $this->assertMatchesRegularExpression( '/<details class="a4-dash-data">\s*<summary>/', $tpl );
-        $this->assertMatchesRegularExpression( '/<table class="a4-table">\s*<thead><tr><th scope="col">/', $tpl );
+        $this->assertMatchesRegularExpression( '/<table class="a4-table">\s*<caption class="a4-sr-only">[^<]+<\/caption>\s*<thead><tr><th scope="col">/', $tpl );
         $this->assertStringContainsString( '<td class="a4-num">{$d.count}</td>', $tpl );
     }
 

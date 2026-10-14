@@ -598,7 +598,7 @@ html #page.ezexplayoutsuinavigationpart #leftmenu.sidebar {
 }
 .a4-dash-figure > .a4-dash-figure-ico .a4-icon { font-size: inherit; width: 1.25em; height: 1.25em; }
 .a4-dash-figure > strong { grid-column: 2; }
-.a4-dash-figure > span:not(.a4-dash-figure-ico) { grid-column: 2; }
+.a4-dash-figure > span:not(.a4-dash-figure-ico):not(.a4-dash-trend) { grid-column: 2; }
 .a4-dash-figure > .a4-dash-trend {
   grid-column: 1 / -1; display: inline-flex; align-items: center; gap: var(--a4-space-1);
   margin-top: var(--a4-space-2); color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 600;
@@ -610,6 +610,9 @@ a.a4-dash-figure:has(> .a4-dash-figure-ico)::after {
   mask: url(../../../share/icons/bootstrap-icons/svg/chevron-right.svg) no-repeat center / contain;
 }
 a.a4-dash-figure:hover::after, a.a4-dash-figure:focus-visible::after { background-color: var(--a4-accent-text); }
+/* A figure that is a link says so beyond its arrow: its label underlines on hover and focus; the focus ring is the
+   global :focus-visible one, which follows the tile's radius. */
+a.a4-dash-figure:is(:hover, :focus-visible) > span:not(.a4-dash-figure-ico):not(.a4-dash-trend) { text-decoration: underline; text-underline-offset: 2px; }
 @media (forced-colors: active) {
   .a4-dash-figure > .a4-dash-figure-ico { border: 1px solid CanvasText; }
   a.a4-dash-figure::after { forced-color-adjust: none; background-color: LinkText; }

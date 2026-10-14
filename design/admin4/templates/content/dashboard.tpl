@@ -123,6 +123,7 @@
             <details class="a4-dash-data">
                 <summary>{'Show the numbers'|i18n( 'design/admin/dashboard' )}</summary>
                 <table class="a4-table">
+                    <caption class="a4-sr-only">{'Content published per day over the last 14 days'|i18n( 'design/admin/dashboard' )}</caption>
                     <thead><tr><th scope="col">{'Day'|i18n( 'design/admin/dashboard' )}</th><th scope="col" class="a4-num">{'Published'|i18n( 'design/admin/dashboard' )}</th></tr></thead>
                     <tbody>
                     {foreach $days as $d}
