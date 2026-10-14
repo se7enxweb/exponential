@@ -624,7 +624,7 @@ dcb722bfda3d71da901504f9da33f0f5  design/admin/templates/setup/datatype_code.tpl
 335d150760b72b20eaa1e2cbede0233a  design/admin/templates/setup/extensions.tpl
 d5bb255f3b23a012d0fbd889a08adf23  design/admin/templates/setup/extensions_exp_style.tpl
 30f574e10ffb461e9037ec8f49cb2218  design/admin/templates/setup/handlerextension.tpl
-68411614b959367dd2db73d30d74deb5  design/admin/templates/setup/info.tpl
+10455086da80002c876e5d3a7a24b756  design/admin/templates/setup/info.tpl
 bbdadba4a9dc511a67e3fedce07a424f  design/admin/templates/setup/info_exp_style.tpl
 6b72cbcef562564b15e7e151788d788c  design/admin/templates/setup/kerneloverride.tpl
 6a696879d93afecad32e8537b41650c6  design/admin/templates/setup/maintenance.tpl
@@ -1249,7 +1249,7 @@ dcb722bfda3d71da901504f9da33f0f5  design/admin4/templates/setup/datatype_code.tp
 335d150760b72b20eaa1e2cbede0233a  design/admin4/templates/setup/extensions.tpl
 d5bb255f3b23a012d0fbd889a08adf23  design/admin4/templates/setup/extensions_exp_style.tpl
 30f574e10ffb461e9037ec8f49cb2218  design/admin4/templates/setup/handlerextension.tpl
-68411614b959367dd2db73d30d74deb5  design/admin4/templates/setup/info.tpl
+10455086da80002c876e5d3a7a24b756  design/admin4/templates/setup/info.tpl
 bbdadba4a9dc511a67e3fedce07a424f  design/admin4/templates/setup/info_exp_style.tpl
 6b72cbcef562564b15e7e151788d788c  design/admin4/templates/setup/kerneloverride.tpl
 6a696879d93afecad32e8537b41650c6  design/admin4/templates/setup/maintenance.tpl
@@ -1829,7 +1829,7 @@ f4c72a3b44fe9648e42d849832a4b87d  design/standard/images/user_group.png
 1c57c779bb3be6099bcac166bc83aab6  design/standard/javascript/contentstructuremenu/contentstructuremenu.js
 ff23b2b1387845ae5f541b38a7951963  design/standard/javascript/exp_bookmarks.js
 3e27389cb0e9b7fcbc78aa9f77b83e9f  design/standard/javascript/exp_password_field.js
-e1461fe6ccc70581d32ec217e9b781de  design/standard/javascript/expdebugbar.js
+0aa904dec48c7170c2ade76674aa344a  design/standard/javascript/expdebugbar.js
 3492ec4bc10e9beb9e57dc4554f3067d  design/standard/javascript/ezasynchronouspublishing.js
 508ff667415a5d98e2a74446341b83ec  design/standard/javascript/ezmultioption/ezmultioption.js
 5665f05feab34431f20fa7d4431da034  design/standard/javascript/lib/ezjslibcookiesupport.js
@@ -2868,7 +2868,7 @@ ec58de54f835ce1e62ff06f43ccbdc23  doc/bc/6.0/repair.md
 9a20a73e9663b4839cc8a2c370a4a571  doc/bc/6.0/response-cache-and-navigation.md
 42da9bad10b511619fee08bc9233c4b6  doc/bc/6.0/role-policy-paging.md
 7e517a45f444b0f9ced02b40e3fffe94  doc/bc/6.0/shop-basket-view-name.md
-d9bfdeb9951e604735569c4341611fea  doc/bc/6.0/sql-query-cache.md
+8e44cb0db9da1620c0f50244a4d579af  doc/bc/6.0/sql-query-cache.md
 0400b2a50fcef2db6be4b2b01355360c  doc/bc/6.0/sqlite-transactions.md
 e21f3db4b2792ce0c74ab2480c335f60  doc/bc/6.0/static-cache-defaults.md
 8543fdb94ade4a47cc1e810302bd005a  doc/bc/6.0/subitems-table-options.md
@@ -3027,7 +3027,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-5649c93b56877a99f217e230d50bdc68  doc/changelogs/6.0/6.0.15.md
+6221fe3372c44d02347688f716b28615  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -6206,7 +6206,7 @@ c7a43052aedb258efa97ec02a0d630f0  kernel/workflow/workflowlist.php
 9ba91d57d77c458fd031b4a0751ce000  lib/ezdb/classes/expmongodb.php
 226416065566fd96df9cfca57d5a3c99  lib/ezdb/classes/ezdb.php
 e3a1ffc6a2c9f262f92f520cc63b13ae  lib/ezdb/classes/ezdbinterface.php
-8a8100e0564c7f38bea2bfa8c51ee271  lib/ezdb/classes/ezdbquerycache.php
+e7e006c321b75ea7b1fe11f899bf718a  lib/ezdb/classes/ezdbquerycache.php
 cba91a38a19dd20520328d582d9d9228  lib/ezdb/classes/ezdbtool.php
 c8b7cb50e53522cc1d45078b3a28979b  lib/ezdb/classes/ezmysqlcharset.php
 184ec92d24404cebb876e3ee05cff51f  lib/ezdb/classes/ezmysqlidb.php
@@ -6377,7 +6377,7 @@ d27d72fa632723c912c0e30955660dfb  lib/eztemplate/classes/eztemplatetreecache.php
 83db4deedb094ab56e41666aa89d1d45  lib/eztemplate/classes/eztemplateunitoperator.php
 c86873ded14533e5c2c8d74477b5b0c9  lib/eztemplate/classes/eztemplatevariableelement.php
 290175b9eca3990307842ecc8353ae59  lib/eztemplate/classes/eztemplatewhilefunction.php
-170a235842f6bb1bca971029a8c499c9  lib/ezutils/classes/expdebugbarreport.php
+13842e8226f43190c6cfa2286f86f5a0  lib/ezutils/classes/expdebugbarreport.php
 b55898a868b558383b32af3334bd55d6  lib/ezutils/classes/expinfo.php
 11982ee3f90617fbf7ddbb55b4806286  lib/ezutils/classes/ezcachehelper.php
 65418d73b97109fe1dc0fc642c93139e  lib/ezutils/classes/ezcli.php
@@ -6474,7 +6474,7 @@ ebc1c25ced143cfaaa5d343350676ecc  settings/override.ini
 7d94ecc12088aa7f906848c0042f1d35  settings/package.ini
 33feee634197eb5cde08585beacd9d73  settings/paymentgateways.ini
 3a13a85a0747ba7150891dfbb20b25db  settings/pdf.ini
-608ea871a55db276bd1e48e377d0040a  settings/querycache.ini
+660b0d81b874343b1ffa494dc1fd6dbf  settings/querycache.ini
 688db30689fc7f6ca972f71be1616c51  settings/rad.ini
 744f63beb0a42c8ec1f29c355e81fd5c  settings/requestrules.ini
 02c2067bd8f1edecd60e16ea8a39e240  settings/rest.ini
@@ -6914,14 +6914,14 @@ dd5f5f3cf2348a6cc17bd0ee76983225  share/translations/dut-NL/translation.ts
 284321a9de29bf9268c27abb13f56f2c  share/translations/ell-GR/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-AU/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-NZ/translation.ts
-9b5a612cc0863b239ddebb87170c389e  share/translations/eng-US/translation.ts
+7f46cd2b2c9bac7bede95be129845de6  share/translations/eng-US/translation.ts
 5f0920d5b4e8bbaff2a4a6d5b3995c90  share/translations/esl-ES/translation.ts
 27846e3f6408cd74f58cef8adcbab573  share/translations/esl-MX/translation.ts
 4b104d4d337601b4bc6ae0482e6478ea  share/translations/fin-FI/translation.ts
 edfd3efb7eca1e2bd6d6d7d08bd78a77  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-223a63979751f67c7832255917e67af1  share/translations/ger-DE/translation.ts
+b394568d5338323afb2c34c7d6d4e89b  share/translations/ger-DE/translation.ts
 75d657fed5de11db9e059cdcff2046a8  share/translations/ita-IT/translation.ts
 a45e2d26b1c24ac4cb6ae1d7197e5b0e  share/translations/jpn-JP/translation.ts
 d1dc34034ddce2d64c4f8df7fcc41c85  share/translations/nno-NO/translation.ts
@@ -6934,7 +6934,7 @@ e33e059c205f7c0a49e112ce9ba6147d  share/translations/ser-SR/translation.ts
 e9e308757570f0321486d498fc993d17  share/translations/srp-RS/translation.ts
 718ecc8ecbbe8ebec7a88fb2697f401f  share/translations/swe-SE/translation.ts
 0b1b76b5ad6b2f923afd6fd9a9937a8b  share/translations/untranslated/readme.txt
-d6605c344d112b485d76d6a621bbad25  share/translations/untranslated/translation.ts
+1a575938b919eb78423ec8027a9e611e  share/translations/untranslated/translation.ts
 bae9ff85781e52af001213bdb213a013  shippable.yml
 414f4d1129273ab3dea38b878d554eae  soap.php
 3b6d156f31df70e093aa1a6d8a525cd3  support/ezlupdate-qt4.5/README.txt
@@ -7917,7 +7917,7 @@ a3ea1bdfc39cf79ebe3eeda15c967a85  tests/tests/kernel/suite.php
 f41f1ce2427c94f00213bc3ba51685cf  tests/tests/lib/ezdb/eZDBExceptionCodeTest.php
 859ec399542c1118723b6c217ff29a77  tests/tests/lib/ezdb/eZDBInterfaceHelpersTest.php
 d0fbfd88dc279221eee85b97921f6add  tests/tests/lib/ezdb/eZDBInterfaceTest.php
-c307a0932a85c09ab52ae57ae67394b2  tests/tests/lib/ezdb/eZDBQueryCacheTest.php
+a4164f351aa6d9f88bb1b34261f171c9  tests/tests/lib/ezdb/eZDBQueryCacheTest.php
 afa76fb7b9aaa0a1aaaea775252c6dcc  tests/tests/lib/ezdb/eZMySQLiDBFKTest.php
 d185830f980916133c98bbee065b75bb  tests/tests/lib/ezdb/eZPostgreSQLDBEscapeStringNullTest.php
 647b489c0b9f59541e1d26587ed4bb2b  tests/tests/lib/ezdb/eZPostgreSQLDBTest.php
