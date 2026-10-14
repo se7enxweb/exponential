@@ -14,7 +14,7 @@ function checkAll()
         {
             for (var i=0; i < elements.length; i++)
             {
-                if (elements[i].type == 'checkbox' && ( elements[i].name == 'SessionKeyArray[]' || elements[i].name == 'UserIDArray[]' ) )
+                if (elements[i].type == 'checkbox' && ( elements[i].name == 'SessionRefArray[]' || elements[i].name == 'UserIDArray[]' ) )
                      elements[i].checked = true;
             }
         }
@@ -27,7 +27,7 @@ function checkAll()
         {
             for (var i=0; i < elements.length; i++)
             {
-                if (elements[i].type == 'checkbox' && ( elements[i].name == 'SessionKeyArray[]' || elements[i].name == 'UserIDArray[]' ) )
+                if (elements[i].type == 'checkbox' && ( elements[i].name == 'SessionRefArray[]' || elements[i].name == 'UserIDArray[]' ) )
                      elements[i].checked = false;
             }
         }
