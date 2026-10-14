@@ -873,6 +873,7 @@ fieldset.a4-field > legend + * { clear: both; }
 .a4-notice.is-bad::before { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/x-circle-fill.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/x-circle-fill.svg); }
 .a4-notice.is-warn::before { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/exclamation-triangle-fill.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/exclamation-triangle-fill.svg); }
 .a4-notice.is-info::before { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/info-circle-fill.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/info-circle-fill.svg); }
+li.a4-notice { list-style: none; }   /* a notice as a list item: no marker next to its icon */
 .a4-notice-title { display: block; margin-bottom: var(--a4-space-1); font-weight: 700; color: inherit; }
 
 /* ---- Toasts: short feedback of an action done in the page (copied, saved), announced by a live region ------- */

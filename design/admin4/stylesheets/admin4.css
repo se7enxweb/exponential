@@ -547,6 +547,32 @@ table.list td { border-color: var(--a4-line); }
   left: 0;
   top: 0.1em;
 }
+/* A message without a heading (a paragraph or a list only) takes the icon on the block itself */
+#page div:is(.message-warning, .message-error, .message-feedback, .message-confirmation, .message-information):not(:has(> h2)) {
+  position: relative;
+  padding-left: calc(var(--a4-space-3) + var(--a4-space-4) + var(--a4-space-1) + var(--a4-space-2));
+}
+#page div:is(.message-warning, .message-error, .message-feedback, .message-confirmation, .message-information):not(:has(> h2))::before {
+  content: "";
+  position: absolute;
+  left: var(--a4-space-3);
+  top: calc(var(--a4-space-2) + 1px);
+  width: calc(var(--a4-space-4) + var(--a4-space-1));
+  height: calc(var(--a4-space-4) + var(--a4-space-1));
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+#page div:is(.message-feedback, .message-confirmation):not(:has(> h2))::before { background-color: var(--a4-ok); -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/check-circle-fill.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/check-circle-fill.svg); }
+#page div.message-warning:not(:has(> h2))::before { background-color: var(--a4-warn); -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/exclamation-triangle-fill.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/exclamation-triangle-fill.svg); }
+#page div.message-error:not(:has(> h2))::before { background-color: var(--a4-bad); -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/x-circle-fill.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/x-circle-fill.svg); }
+#page div.message-information:not(:has(> h2))::before { background-color: var(--a4-info); -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/info-circle-fill.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/info-circle-fill.svg); }
+@media (forced-colors: active) {
+  #page div:is(.message-warning, .message-error, .message-feedback, .message-confirmation, .message-information):not(:has(> h2))::before { forced-color-adjust: none; background-color: CanvasText; }
+}
 
 /* ---- Footer: quiet text on the page ------------------------------------------------------------------------- */
 

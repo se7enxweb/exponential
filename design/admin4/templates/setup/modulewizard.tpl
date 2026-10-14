@@ -27,15 +27,15 @@
 {/foreach}
 
 {foreach $wizard_problems as $mw_problem}
-<div class="a4-notice is-bad"><strong>!</strong><span>{$mw_problem|wash}</span></div>
+<div class="a4-notice is-bad"><span>{$mw_problem|wash}</span></div>
 {/foreach}
 
 {if $wizard_written|count|gt( 0 )}
-<div class="a4-notice is-info"><strong>&#10003;</strong><span>{'Written to %target. Switch it on with the lines below and clear the caches - the module list is itself cached.'|i18n( 'design/admin/setup/rad/module',, hash( '%target', $wizard_target ) )}</span></div>
+<div class="a4-notice is-ok"><span>{'Written to %target. Switch it on with the lines below and clear the caches - the module list is itself cached.'|i18n( 'design/admin/setup/rad/module',, hash( '%target', $wizard_target ) )}</span></div>
 {/if}
 
 {if $wizard_can_write|not}
-<div class="a4-notice is-info"><strong>i</strong><span>{'The web server cannot write into extension/, so this page can only hand you an archive.'|i18n( 'design/admin/setup/rad/module' )}</span></div>
+<div class="a4-notice is-info"><span>{'The web server cannot write into extension/, so this page can only hand you an archive.'|i18n( 'design/admin/setup/rad/module' )}</span></div>
 {/if}
 
 <div class="a4-setup-wz-grid">
