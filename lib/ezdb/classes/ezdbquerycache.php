@@ -152,8 +152,9 @@ class eZDBQueryCache
      * Where shared mode keeps results across requests: 'apcu', 'file', or null
      * (not shared mode, or Storage=apcu without APCu: the request's memo only).
      * Storage=auto takes APCu where this process has it, else the files under
-     * entriesDir() -- but not on the command line (cronjobs, scripts): their
-     * files would only add disk traffic, so there auto keeps the memo only.
+     * entriesDir() -- but only in a process that serves web requests (a web
+     * SAPI, or a worker of Exponential Velocity, whose SAPI is cli): cronjobs and
+     * scripts would only add disk traffic, so there auto keeps the memo only.
      * Storage=file always the files.
      *
      * @return string|null
@@ -168,7 +169,29 @@ class eZDBQueryCache
             return 'file';
         if ( function_exists( 'apcu_enabled' ) && apcu_enabled() )
             return 'apcu';
-        return $want === 'auto' && PHP_SAPI !== 'cli' ? 'file' : null;
+        return $want === 'auto' && self::webProcess() ? 'file' : null;
+    }
+
+    /** @var bool|null whether this process serves web requests; null until asked (setWebProcess() for tests) */
+    protected static $webProcess = null;
+
+    /**
+     * Whether this process serves web requests: a web SAPI (FPM, Apache's module), or
+     * a worker of Exponential Velocity, which runs with the cli SAPI.
+     *
+     * @return bool
+     */
+    public static function webProcess()
+    {
+        if ( self::$webProcess === null )
+            self::$webProcess = PHP_SAPI !== 'cli' || defined( 'QBIX_WEBSERVER' ) || class_exists( 'Q_WebServer', false );
+        return self::$webProcess;
+    }
+
+    /** For tests: whether this process counts as serving web requests (null finds out again). */
+    public static function setWebProcess( $web )
+    {
+        self::$webProcess = $web === null ? null : (bool)$web;
     }
 
     protected static function apcuUsable()
@@ -182,10 +205,17 @@ class eZDBQueryCache
         return self::stateDir() . '/entries';
     }
 
-    /** A result's file: entriesDir()/<first two characters of the key>/<key>. */
+    /**
+     * A result's file: entriesDir()/<first two characters of the key>/<key>, or
+     * null for anything that is not a key. A key is a hash (key()): hex digits
+     * only, so no name can reach outside the directory, whatever calls this.
+     */
     protected static function entryFile( $key )
     {
-        return self::entriesDir() . '/' . substr( (string)$key, 0, 2 ) . '/' . $key;
+        $key = (string)$key;
+        if ( !preg_match( '/^[0-9a-f]{16,64}$/', $key ) )
+            return null;
+        return self::entriesDir() . '/' . substr( $key, 0, 2 ) . '/' . $key;
     }
 
     /** A stored entry from APCu or its file, or null. A file never makes objects (allowed_classes false). */
@@ -196,7 +226,8 @@ class eZDBQueryCache
             $got = @apcu_fetch( 'ezqc:' . $key );
             return is_array( $got ) ? $got : null;
         }
-        $raw = @file_get_contents( self::entryFile( $key ) );
+        $file = self::entryFile( $key );
+        $raw = $file === null ? false : @file_get_contents( $file );
         if ( $raw === false )
             return null;
         $got = @unserialize( $raw, array( 'allowed_classes' => false ) );
@@ -204,9 +235,38 @@ class eZDBQueryCache
     }
 
     /**
+     * The owner a root process (Velocity, a CLI script) leaves what it creates in
+     * the state directory to: the owner of that directory (or of its parent while
+     * it does not exist yet), or the site user's FPM could neither read the files
+     * nor write in the directories. False when this process is not root, or the
+     * owner is root too.
+     *
+     * @return array|false stat() of the directory
+     */
+    protected static function handOverOwner()
+    {
+        if ( !function_exists( 'posix_geteuid' ) || posix_geteuid() !== 0 )
+            return false;
+        $owner = @stat( is_dir( self::stateDir() ) ? self::stateDir() : dirname( self::stateDir() ) );
+        return $owner && $owner['uid'] !== 0 ? $owner : false;
+    }
+
+    /** Group-writable mode (mkdir() and file_put_contents() are subject to the umask), and handed over to $owner. */
+    protected static function handOver( $path, $owner, $isDir )
+    {
+        @chmod( $path, $isDir ? eZDir::dirMode( 0770 ) : eZFile::fileMode( 0660 ) );
+        if ( $owner )
+        {
+            @chown( $path, $owner['uid'] );
+            @chgrp( $path, $owner['gid'] );
+        }
+    }
+
+    /**
      * Keeps an entry in APCu (for MaxAge) or in its file: written to a temporary
-     * file and renamed, so a reader sees the old file or the new one, never half
-     * of one. A file that cannot be written is left out: the next lookup misses.
+     * file in the same directory and renamed, so a reader sees the old file or the
+     * new one, never half of one (rename() within one directory is atomic, on NFS
+     * too). A file that cannot be written is left out: the next lookup misses.
      */
     protected static function storeShared( $storage, $key, array $entry )
     {
@@ -216,31 +276,16 @@ class eZDBQueryCache
             return;
         }
         $file = self::entryFile( $key );
+        if ( $file === null )
+            return;
         $dir = dirname( $file );
-        // A root process (Velocity, a CLI script) leaves what it creates to the owner of the state directory (or
-        // of its parent while it does not exist yet), or the site user's FPM could neither read the file nor
-        // write in the directory.
-        $owner = false;
-        if ( function_exists( 'posix_geteuid' ) && posix_geteuid() === 0 )
-        {
-            $owner = @stat( is_dir( self::stateDir() ) ? self::stateDir() : dirname( self::stateDir() ) );
-            if ( $owner && $owner['uid'] === 0 )
-                $owner = false;
-        }
+        $owner = self::handOverOwner();
         if ( !is_dir( $dir ) )
         {
             $levels = array_filter( array( self::stateDir(), self::entriesDir(), $dir ), function ( $d ) { return !is_dir( $d ); } );
             @mkdir( $dir, eZDir::dirMode( 0770 ), true );
             foreach ( $levels as $made )
-            {
-                // mkdir() is subject to the umask: the group must be able to write too
-                @chmod( $made, eZDir::dirMode( 0770 ) );
-                if ( $owner )
-                {
-                    @chown( $made, $owner['uid'] );
-                    @chgrp( $made, $owner['gid'] );
-                }
-            }
+                self::handOver( $made, $owner, true );
         }
         $tmp = $file . '.' . getmypid() . '.' . mt_rand() . '.tmp';
         if ( @file_put_contents( $tmp, serialize( $entry ) ) === false )
@@ -248,14 +293,10 @@ class eZDBQueryCache
             @unlink( $tmp );
             return;
         }
-        @chmod( $tmp, eZFile::fileMode( 0660 ) );
-        if ( $owner )
-        {
-            @chown( $tmp, $owner['uid'] );
-            @chgrp( $tmp, $owner['gid'] );
-        }
+        self::handOver( $tmp, $owner, false );
         if ( !@rename( $tmp, $file ) )
             @unlink( $tmp );
+        self::scheduleSweep();
     }
 
     /** The result files (path => name) under entriesDir(), temporary files included. */
@@ -278,19 +319,27 @@ class eZDBQueryCache
      * Removes the result files that can no longer be answered: older than MaxAge
      * or from before the last clear (genTime), and temporary files left over by
      * an aborted write. The cronjob part cache_cleanup runs it
-     * (cronjobs/querycache_cleanup.php); clearAll() too, when there are files.
+     * (cronjobs/querycache_cleanup.php), sweepFiles() too, and clearAll() when there
+     * are files.
      *
      * @param int|null $now
-     * @return array removed, kept, bytes (removed), tmp (temporary files removed)
+     * @param float|null $seconds stop after this long ('truncated'); null: no limit
+     * @return array removed, kept, bytes (removed), tmp (temporary files removed), truncated
      */
-    public static function cleanupFiles( $now = null )
+    public static function cleanupFiles( $now = null, $seconds = null )
     {
-        $out = array( 'removed' => 0, 'kept' => 0, 'bytes' => 0, 'tmp' => 0 );
+        $out = array( 'removed' => 0, 'kept' => 0, 'bytes' => 0, 'tmp' => 0, 'truncated' => false );
         $now = $now === null ? time() : (int)$now;
+        $deadline = $seconds === null ? null : microtime( true ) + $seconds;
         $state = self::freshState();
         $horizon = max( $now - self::settings()['maxAge'], (int)( $state['genTime'] ?? 0 ) );
         foreach ( self::entryFiles() as $file => $name )
         {
+            if ( $deadline !== null && microtime( true ) > $deadline )
+            {
+                $out['truncated'] = true;
+                break;
+            }
             $mtime = @filemtime( $file );
             if ( $mtime === false )
                 continue;
@@ -307,6 +356,56 @@ class eZDBQueryCache
             else if ( !$isTmp )
                 $out['kept']++;
         }
+        return $out;
+    }
+
+    /** sweepFiles() runs at most this often per installation (seconds; MaxAge when that is longer), for at most this long. */
+    const SWEEP_INTERVAL = 600;
+    const SWEEP_SECONDS = 0.5;
+
+    /** @var string|false eZExecution::requestKey() of the request sweepFiles() is registered to run at the end of */
+    protected static $sweepRegistered = false;
+
+    /** Asks for sweepFiles() at the end of this web request, once per request (a persistent worker's too). */
+    protected static function scheduleSweep()
+    {
+        if ( !self::webProcess() || self::$sweepRegistered === eZExecution::requestKey() )
+            return;
+        self::$sweepRegistered = eZExecution::requestKey();
+        register_shutdown_function( array( __CLASS__, 'sweepFiles' ) );
+    }
+
+    /**
+     * cleanupFiles() from the requests themselves, so the result files do not
+     * grow without bounds where the cronjob part cache_cleanup is not scheduled:
+     * at the end of a request that stored a file, at most every SWEEP_INTERVAL
+     * seconds (or MaxAge) for the whole installation (the time of entriesDir()/.swept,
+     * one sweeper at a time by a lock), and for at most SWEEP_SECONDS.
+     *
+     * @return array|null cleanupFiles(), null when it was not due or another process sweeps
+     */
+    public static function sweepFiles()
+    {
+        $root = self::entriesDir();
+        $stamp = $root . '/.swept';
+        $mtime = @filemtime( $stamp );
+        if ( !is_dir( $root ) || ( $mtime !== false && $mtime > time() - max( self::SWEEP_INTERVAL, self::settings()['maxAge'] ) ) )
+            return null;
+        $lock = @fopen( $root . '/.sweep.lock', 'c' );
+        if ( !$lock )
+            return null;
+        if ( !flock( $lock, LOCK_EX | LOCK_NB ) )
+        {
+            fclose( $lock );
+            return null;
+        }
+        $owner = self::handOverOwner();
+        @touch( $stamp );
+        self::handOver( $stamp, $owner, false );
+        self::handOver( $root . '/.sweep.lock', $owner, false );
+        $out = self::cleanupFiles( null, self::SWEEP_SECONDS );
+        flock( $lock, LOCK_UN );
+        fclose( $lock );
         return $out;
     }
 

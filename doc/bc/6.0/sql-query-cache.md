@@ -137,19 +137,26 @@ Choosing:
   `apc.enable_cli=1`) or in files, as `Storage` says. This is the mode that
   removes the statements between requests.
 - `Storage=auto` (the default) takes APCu where the PHP process has it and
-  files otherwise (on the command line without APCu, cronjobs and scripts, only
-  the request's memo: their files would only add disk traffic); `Storage=apcu` only APCu (without it `shared` works as
+  files otherwise in every process that serves web requests (FPM, and the workers of Exponential Velocity, whose SAPI
+  is `cli`); cronjobs and scripts without APCu keep only
+  the request's memo (their files would only add disk traffic); `Storage=apcu` only APCu (without it `shared` works as
   `request`, the behaviour before files existed); `Storage=file` always files,
   even with APCu. Files are `var/<site>/cache/querycache/entries/<2>/<key>`,
   one serialized result each (read with `allowed_classes` off), written to a
-  temporary file and renamed. Every web server that mounts `var/` shares them
+  temporary file in the same directory and renamed (atomic, on NFS too). A file is named by the key's hex digits only,
+  so no name can reach outside `entries/`. Directories and files are group-writable whatever the umask, and a root
+  process (Velocity, a script run as root) hands them to the owner of the state directory, so the site user's FPM
+  can read and replace them. Every web server that mounts `var/` shares them
   (a cluster on NFS or a SAN), where APCu is per server; a hit costs a file
   read and `unserialize()` (about 0.03 ms against 0.01 ms from APCu, measured
   on a test installation with PHP 8.4), still far below a statement on the
   database. The cronjob part `cache_cleanup` (`cronjobs/querycache_cleanup.php`)
   removes the files older than `MaxAge` or from before the last clear; clearing
   the query cache removes them at once. Schedule it with `Storage=file` or
-  `auto` without APCu, or the files of statements not run again stay on disk.
+  `auto` without APCu. Without it the requests sweep the files themselves: a request that stored a file runs the
+  same cleanup at its end, at most every 10 minutes (or `MaxAge`, when that is longer) for the installation, one
+  process at a time (`entries/.swept`, `entries/.sweep.lock`) and for at most half a second, so the files cannot grow
+  without bounds (`eZDBQueryCache::sweepFiles()`).
 - Several web servers on one `var/` over NFS: whether a result is current is
   decided by `state.ser`, as for APCu. NFS clients cache file attributes and
   directory lookups (`acregmin`/`acdirmin` 3 to 30 s by default), so a write or
@@ -443,10 +450,13 @@ so the tests never touch the site's cache.
 | QC-26 | The file storage: one file per result under its two-character directory, a hit in the next request, stale after a write to its table |
 | QC-27 | A result file never makes objects (`__PHP_Incomplete_Class`), a broken file is a miss |
 | QC-28 | `cleanupFiles()` removes files older than `MaxAge` and temporary files left over, keeps the others; `status()` and `inventory()` count the files (no hits); a clear removes them |
+| QC-29 | A result file is only ever named by a key (hex digits): `../`, upper case, an empty or NUL-carrying name write and read nothing |
+| QC-30 | The requests sweep the result files without the cronjob: expired ones removed, at most once per interval, one process at a time, within a time budget |
+| QC-31 | `Storage=auto` uses the files in every web process without APCu, a Velocity worker (cli SAPI) included, and none in a script |
 
 ```bash
 php vendor/bin/phpunit --testsuite lib --filter eZDBQueryCacheTest
-# OK (28 tests; QC-24 needs apc.enable_cli=1), about 3 s (QC-08, QC-12 and QC-28 wait a second each)
+# OK (31 tests; QC-24 needs apc.enable_cli=1), about 3 s (QC-08, QC-12 and QC-28 wait a second each)
 ```
 
 **On a running site** (MySQL, the real drivers), each checked on a test installation

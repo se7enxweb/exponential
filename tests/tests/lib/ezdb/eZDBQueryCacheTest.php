@@ -30,6 +30,9 @@
  *  QC-26 — The file storage: one file per result, a hit in the next request, stale after a write
  *  QC-27 — A result file never makes objects; a broken file is a miss
  *  QC-28 — cleanupFiles(), status() and inventory() with the files; a clear removes them
+ *  QC-29 — A result file is only ever named by a key (hex digits): no path leaves the directory
+ *  QC-30 — The requests sweep the result files at most once per interval, one at a time, within a time budget
+ *  QC-31 — Storage=auto uses the files in every web process, a Velocity worker (cli SAPI) included
  *
  * No database: the driver is a stand-in object with the properties the cache
  * reads, and the state lives in a directory of its own under var/tmp.
@@ -840,6 +843,8 @@ class eZDBQueryCacheTest extends PHPUnit\Framework\TestCase
         $this->assertGreaterThan( 0, $status['memory'] );
 
         $inv = eZDBQueryCache::inventory( 10 );
+        $this->assertArrayNotHasKey( 'entries_dir', $inv, 'the path of the result files does not reach the browser' );
+        $this->assertArrayNotHasKey( 'state_file', $inv );
         $this->assertSame( 1, $inv['entries_read'] );
         $this->assertNull( $inv['largest'][0]['hits'], 'files count no hits' );
         $this->assertSame( 12, strlen( $inv['largest'][0]['key'] ) );
@@ -847,5 +852,84 @@ class eZDBQueryCacheTest extends PHPUnit\Framework\TestCase
         sleep( 1 );
         eZDBQueryCache::clearAll();
         $this->assertSame( array(), glob( eZDBQueryCache::entriesDir() . '/*/*' ), 'clearing removes the files' );
+    }
+
+    /** QC-29 */
+    public function testAnEntryFileIsOnlyEverNamedByAKey()
+    {
+        $this->newRequest( array( 'mode' => 'shared', 'storage' => 'file' ) );
+        $store = new ReflectionMethod( 'eZDBQueryCache', 'storeShared' );
+        $fetch = new ReflectionMethod( 'eZDBQueryCache', 'fetchShared' );
+        $file = new ReflectionMethod( 'eZDBQueryCache', 'entryFile' );
+        if ( PHP_VERSION_ID < 80100 )
+        {
+            $store->setAccessible( true );
+            $fetch->setAccessible( true );
+            $file->setAccessible( true );
+        }
+        $entry = array( 'created' => microtime( true ), 'tables' => array( 'ezsection' ), 'rows' => array( array( 'id' => 1 ) ) );
+        foreach ( array( '../../../escaped', '../x', 'ab/../../cd', '', 'ABCDEF0123456789', "0123456789abcdef\0" ) as $bad )
+        {
+            $this->assertNull( $file->invoke( null, $bad ), 'no file for ' . json_encode( $bad ) );
+            $store->invoke( null, 'file', $bad, $entry );
+            $this->assertNull( $fetch->invoke( null, 'file', $bad ) );
+        }
+        $this->assertSame( array(), glob( $this->dir . '/*/*/*' ), 'nothing written' );
+        $this->assertFileDoesNotExist( dirname( $this->dir ) . '/escaped' );
+        $key = eZDBQueryCache::key( $this->db, 'SELECT * FROM ezsection', array() );
+        $this->assertSame( eZDBQueryCache::entriesDir() . '/' . substr( $key, 0, 2 ) . '/' . $key, $file->invoke( null, $key ) );
+    }
+
+    /** QC-30 */
+    public function testRequestsSweepTheFilesWithoutTheCronjobAtMostOncePerInterval()
+    {
+        $this->newRequest( array( 'mode' => 'shared', 'storage' => 'file', 'maxAge' => 300 ) );
+        $this->select( 'SELECT * FROM ezsection' );
+        $this->select( 'SELECT * FROM ezcontentobject' );
+        $files = glob( eZDBQueryCache::entriesDir() . '/*/*' );
+        $this->assertCount( 2, $files );
+        touch( $files[0], time() - 400 );
+        $out = eZDBQueryCache::sweepFiles();
+        $this->assertSame( 1, $out['removed'], 'the expired file' );
+        $this->assertSame( 1, $out['kept'] );
+        $this->assertFalse( $out['truncated'] );
+        $this->assertFileExists( eZDBQueryCache::entriesDir() . '/.swept' );
+        touch( $files[1], time() - 400 );
+        $this->assertNull( eZDBQueryCache::sweepFiles(), 'not again within the interval' );
+        $this->assertFileExists( $files[1] );
+        touch( eZDBQueryCache::entriesDir() . '/.swept', time() - 3600 );
+        $this->assertSame( 1, eZDBQueryCache::sweepFiles()['removed'], 'due again after the interval' );
+
+        // one sweeper at a time
+        touch( eZDBQueryCache::entriesDir() . '/.swept', time() - 3600 );
+        $lock = fopen( eZDBQueryCache::entriesDir() . '/.sweep.lock', 'c' );
+        flock( $lock, LOCK_EX );
+        $this->assertNull( eZDBQueryCache::sweepFiles(), 'another process sweeps' );
+        flock( $lock, LOCK_UN );
+        fclose( $lock );
+
+        // a time budget stops it early
+        $this->select( 'SELECT * FROM ezuser' );
+        $this->assertTrue( eZDBQueryCache::cleanupFiles( null, -1.0 )['truncated'] );
+    }
+
+    /** QC-31 */
+    public function testAutoUsesFilesInEveryWebProcessVelocityIncluded()
+    {
+        $apcu = function_exists( 'apcu_enabled' ) && apcu_enabled();
+        try
+        {
+            $this->newRequest( array( 'mode' => 'shared', 'storage' => 'auto' ) );
+            eZDBQueryCache::setWebProcess( true );
+            $this->assertSame( $apcu ? 'apcu' : 'file', eZDBQueryCache::storage(), 'a web process (FPM, a Velocity worker with the cli SAPI)' );
+            eZDBQueryCache::setWebProcess( false );
+            $this->assertSame( $apcu ? 'apcu' : null, eZDBQueryCache::storage(), 'a script' );
+            eZDBQueryCache::setWebProcess( null );
+            $this->assertSame( PHP_SAPI !== 'cli' || class_exists( 'Q_WebServer', false ), eZDBQueryCache::webProcess() );
+        }
+        finally
+        {
+            eZDBQueryCache::setWebProcess( null );
+        }
     }
 }
