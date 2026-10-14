@@ -1758,6 +1758,14 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
   padding: var(--a4-space-1) var(--a4-space-2);
   border-radius: var(--a4-radius-s);
 }
+/* Rows of small links that stand on their own (the column size presets, the classes of a class group card) are
+   24px targets too (WCAG 2.5.8) */
+#widthcontrol-links a,
+.a4-card-body > a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--a4-space-5);
+}
 /* Every link of the side columns' menus and tools is a 24px target (WCAG 2.5.8): a row of 16px links stood too close
    for the spacing exception. */
 #leftmenu ul.leftmenu-items li > div > :is(a, span),
