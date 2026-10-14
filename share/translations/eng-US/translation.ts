@@ -59884,6 +59884,26 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Version</source>
         <translation>Version</translation>
     </message>
+    <message>
+        <source>%delta against the 7 days before</source>
+        <translation>%delta against the 7 days before</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Day</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Published</translation>
+    </message>
+    <message>
+        <source>As many as the 7 days before</source>
+        <translation>As many as the 7 days before</translation>
+    </message>
+    <message>
+        <source>Show the numbers</source>
+        <translation>Show the numbers</translation>
+    </message>
 </context>
 <context>
     <name>extension/autorss</name>

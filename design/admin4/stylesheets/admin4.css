@@ -573,7 +573,7 @@ html #page.ezexplayoutsuinavigationpart #leftmenu.sidebar {
 :where(.a4-dash-actions) .a4-dash-action.a4-primary { background-color: var(--a4-accent-strong); color: var(--a4-on-accent); box-shadow: 0 6px 16px var(--a4-accent-soft); }
 .a4-dash-ico { font-size: var(--a4-text-m); line-height: 1; opacity: .85; }
 
-.a4-dash-figures { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--a4-space-3); }
+.a4-dash-figures { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr)); gap: var(--a4-space-3); }
 :where(.a4-dash-figures) .a4-dash-figure {
   display: flex; flex-direction: column; gap: var(--a4-space-1); padding: var(--a4-space-3) var(--a4-space-4); border-radius: var(--a4-radius);
   background-color: var(--a4-card); color: var(--a4-muted); text-decoration: none;
@@ -585,6 +585,35 @@ html #page.ezexplayoutsuinavigationpart #leftmenu.sidebar {
 .a4-dash-figure span { font-size: var(--a4-text-xs); }
 .a4-dash-figure.a4-accent { background: linear-gradient(135deg, var(--a4-card), var(--a4-accent-soft)); }
 .a4-dash-figure.a4-accent strong { color: var(--a4-accent-text); }
+/* A figure with an icon tile: the tile left over value and label, the trend on its own line under them; a figure
+   that is a link shows an arrow in its corner (the drill-down; the link's own text names where it goes). */
+:where(.a4-dash-figures) .a4-dash-figure:has(> .a4-dash-figure-ico) {
+  position: relative; display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; align-content: start;
+  column-gap: var(--a4-space-3); row-gap: 0;
+}
+.a4-dash-figure > .a4-dash-figure-ico {
+  grid-row: span 2; display: inline-flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px; border-radius: var(--a4-radius-s);
+  background-color: var(--a4-accent-soft); color: var(--a4-accent-text); font-size: var(--a4-text-l);
+}
+.a4-dash-figure > .a4-dash-figure-ico .a4-icon { font-size: inherit; width: 1.25em; height: 1.25em; }
+.a4-dash-figure > strong { grid-column: 2; }
+.a4-dash-figure > span:not(.a4-dash-figure-ico) { grid-column: 2; }
+.a4-dash-figure > .a4-dash-trend {
+  grid-column: 1 / -1; display: inline-flex; align-items: center; gap: var(--a4-space-1);
+  margin-top: var(--a4-space-2); color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 600;
+}
+a.a4-dash-figure:has(> .a4-dash-figure-ico)::after {
+  content: ""; position: absolute; top: var(--a4-space-3); right: var(--a4-space-3); width: 14px; height: 14px;
+  background-color: var(--a4-muted);
+  -webkit-mask: url(../../../share/icons/bootstrap-icons/svg/chevron-right.svg) no-repeat center / contain;
+  mask: url(../../../share/icons/bootstrap-icons/svg/chevron-right.svg) no-repeat center / contain;
+}
+a.a4-dash-figure:hover::after, a.a4-dash-figure:focus-visible::after { background-color: var(--a4-accent-text); }
+@media (forced-colors: active) {
+  .a4-dash-figure > .a4-dash-figure-ico { border: 1px solid CanvasText; }
+  a.a4-dash-figure::after { forced-color-adjust: none; background-color: LinkText; }
+}
 
 .a4-dash-row { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: var(--a4-space-5); }
 @media (max-width: 1100px) { .a4-dash-row { grid-template-columns: minmax(0, 1fr); } }
@@ -601,6 +630,10 @@ html #page.ezexplayoutsuinavigationpart #leftmenu.sidebar {
 .a4-dash-bar-value { font-size: var(--a4-text-xs); font-weight: 700; color: var(--a4-muted); margin-bottom: var(--a4-space-1); overflow-wrap: anywhere; text-align: center; }
 .a4-dash-bar-day { margin-top: var(--a4-space-2); font-size: var(--a4-text-xs); color: var(--a4-muted); overflow-wrap: anywhere; text-align: center; }
 .a4-dash-bar:last-child .a4-dash-bar-day { color: var(--a4-accent-text); font-weight: 700; }
+/* The chart's numbers as a table, folded under it */
+.a4-dash-data { margin-top: var(--a4-space-3); }
+.a4-dash-data > summary { cursor: pointer; color: var(--a4-accent-text); font-size: var(--a4-text-s); font-weight: 600; }
+.a4-dash-data > .a4-table { margin-top: var(--a4-space-2); }
 
 .a4-dash-system #dashboard-logo { display: none; }
 .a4-dash-system #mainteinance-text h2 { display: none; }

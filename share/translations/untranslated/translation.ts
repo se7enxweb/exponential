@@ -55971,6 +55971,26 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%active active in this siteaccess, %on_disk on disk</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>%delta against the 7 days before</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>As many as the 7 days before</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show the numbers</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/standard/debugbar</name>
