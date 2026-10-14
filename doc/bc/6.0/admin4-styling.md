@@ -182,7 +182,15 @@ The left column's preset sizes (small, medium, large) are `html[data-a4-left-siz
   (`outline: 3px solid var(--a4-ring)`, offset 2px) is the focus indicator. A frame field that draws its ring as a
   `box-shadow` (outside `.a4-page`) sets `outline: 2px solid transparent` instead of `none`, which forced-colors mode
   paints where it drops the shadow; inside `.a4-page` the components' own ring applies anyway. The check reads only rules whose selector names the focus: a plain rule that outranks the global ring (an id such as `#logintext { outline: none }`) is not seen, so give such a rule a `:focus` rule that restores the outline;
+- `components.css` loses the `color-scheme` of a theme, its forced-colors or touch block, `admin4.css` its
+  `prefers-reduced-motion` rule, or an admin4 stylesheet transitions `all` (name the properties instead);
 - a file named in `AdminComponentCSSFileList` is missing.
+
+Modes the browser asks for: each theme sets `color-scheme` (scrollbars, select popups and date pickers follow);
+forced colors (Windows high contrast) get edges, the current and selected states and the focus in system colours,
+and data drawn as fills (dots, meters, bars) keeps its colours (`forced-color-adjust: none`);
+`prefers-reduced-motion: reduce` ends every transition and animation at once; on a touch screen (`pointer: coarse`)
+fields use `--a4-text-l` (16px) so a phone does not zoom in on focus.
 
 `tests/tests/design/AdminTokenContrastTest.php` computes the WCAG contrast of the token pairs in both modes: text
 tokens on card, surface and soft 4.5:1, each state's text on its own tint 4.5:1, the text of filled buttons (also
