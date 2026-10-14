@@ -348,15 +348,10 @@ class eZExtensionPackageHandler extends eZPackageHandler
     /**
      * The secrets in the raw text of a file, by the names they stand under or by their kind, without their values.
      *
-     * Every text: SECRET_SHAPE_PATTERNS (a private key, "Authorization: Bearer ...", service tokens such as sk-...,
-     * AKIA..., ghp_..., xoxb-..., define( '..._KEY', '...' ), an address with a password).
-     * $pairs 'ini' (settings files): every "name = value" in every line, read as text, not as eZINI reads it, so
-     * nothing eZINI skips or reads differently is missed (commented lines and the PHP comment wrapper, Key[]= and
-     * Key[name]=, blanks around "=", quotes, a byte order mark, CRLF or CR, duplicates, several pairs on a line),
-     * judged by isSecretPair(), and outside comments a line carrying a secret inline ("password: ...").
-     * $pairs 'config' (CONFIG_FILE_PATTERN: YAML, .env, .conf, .properties ...): the same with "name: value" and quoted
-     * names as well, and a secret name in YAML whose value stands on the next line.
-     * Text in UTF-16 or UTF-32 is not read: it is reported as such. Pure.
+     * Every text: shapesIn() (SECRET_SHAPE_PATTERNS: a private key, "Authorization: Bearer ...", service tokens such
+     * as sk-..., AKIA..., ghp_..., xoxb-..., define( '..._KEY', '...' ), an address with a password), and a UTF-16
+     * or UTF-32 byte order mark. $pairs 'ini' or 'config': pairSecretsIn() as well. The text is read as it is: no
+     * byte is removed, decoded or changed before it is read. Pure.
      *
      * @param string $text
      * @param string|false $pairs 'ini', 'config' or false
@@ -365,22 +360,66 @@ class eZExtensionPackageHandler extends eZPackageHandler
     static function secretsInText( $text, $pairs = 'ini' )
     {
         $text = (string)$text;
-        if ( preg_match( '/^(\xFF\xFE|\xFE\xFF|\x00\x00\xFE\xFF)/', $text ) )
-            return array( '(text in UTF-16 or UTF-32)' );
-        $text = preg_replace( '/^\xEF\xBB\xBF/', '', $text );
         $found = array();
+        if ( preg_match( '/^(\xFF\xFE|\xFE\xFF|\x00\x00\xFE\xFF)/', $text ) )
+            $found['(text in UTF-16 or UTF-32)'] = true;
+        foreach ( self::shapesIn( $text ) as $kind )
+            $found[$kind] = true;
+        if ( $pairs !== false )
+        {
+            foreach ( self::pairSecretsIn( $text, $pairs ) as $name )
+                $found[$name] = true;
+        }
+        return array_keys( $found );
+    }
+
+    /**
+     * The kinds of SECRET_SHAPE_PATTERNS in $bytes, read as they are and once more without NUL bytes (text in
+     * UTF-16 or UTF-32 without a byte order mark). Pure.
+     *
+     * @param string $bytes
+     * @return string[] kinds in parentheses
+     */
+    static function shapesIn( $bytes )
+    {
+        $found = array();
+        $views = array( (string)$bytes );
+        if ( strpos( (string)$bytes, "\0" ) !== false )
+            $views[] = str_replace( "\0", '', (string)$bytes );
         foreach ( self::SECRET_SHAPE_PATTERNS as $kind => $pattern )
         {
-            if ( preg_match( $pattern, $text ) )
-                $found['(' . $kind . ')'] = true;
+            foreach ( $views as $view )
+            {
+                if ( preg_match( $pattern, $view ) )
+                {
+                    $found['(' . $kind . ')'] = true;
+                    break;
+                }
+            }
         }
-        if ( $pairs === false )
-            return array_keys( $found );
+        return array_keys( $found );
+    }
 
+    /**
+     * The names of the secret pairs in $text, read from the bytes as they are: no byte order mark is removed and no
+     * line end changed. 'ini' (settings files): every "name = value", read as text, not as eZINI reads it, so nothing
+     * eZINI skips or reads differently is missed (commented lines and the PHP comment wrapper, Key[]= and Key[name]=,
+     * blanks around "=", quotes, a byte order mark, CRLF or CR, duplicates), judged by isSecretPair(), and outside
+     * comments a line carrying a secret inline ("password: ..."). 'config' (CONFIG_FILE_PATTERN): also
+     * "name: value", quoted names, and a secret name in YAML whose value stands on a following, deeper line. A pair starts at every name that does not continue another one, so
+     * a pair inside the value of another ("Title=x Password=y") is read as well; lines end at CR, LF, FF or VT. Pure.
+     *
+     * @param string $text
+     * @param string $pairs 'ini' or 'config'
+     * @return string[]
+     */
+    static function pairSecretsIn( $text, $pairs )
+    {
         $pairPattern = $pairs === 'config'
-            ? '/["\']?([A-Za-z0-9_.\-]+)["\']?\s*(?:\[[^\]\r\n]*\])?\s*(?:=(?![=>])|:(?![:\/]))([^\r\n]*)/'
-            : '/([A-Za-z0-9_.\-]+)\s*(?:\[[^\]\r\n]*\])?\s*=(?![=>])([^\r\n]*)/';
-        $lines = preg_split( '/\r\n|\r|\n/', $text );
+            ? '/(?<![A-Za-z0-9_.\-])(?=["\']?([A-Za-z0-9_.\-]+)["\']?[ \t]*(?:\[[^\]\r\n]*\])?[ \t]*(?:=(?![=>])|:(?![:\/]))([^\r\n\f\v]*))/'
+            : '/(?<![A-Za-z0-9_.\-])(?=([A-Za-z0-9_.\-]+)[ \t]*(?:\[[^\]\r\n]*\])?[ \t]*=(?![=>])([^\r\n\f\v]*))/';
+        $found = array();
+        $lines = preg_split( '/\r\n|[\r\n\f\v]/', (string)$text );
         foreach ( $lines as $i => $line )
         {
             $isComment = preg_match( '/^\s*(#|;|\/\/|\*)/', $line ) === 1;
@@ -390,19 +429,63 @@ class eZExtensionPackageHandler extends eZPackageHandler
                 {
                     if ( self::isSecretPair( $m[1], $m[2] ) )
                         $found[$m[1]] = true;
-                    // YAML: "password:" with its value on the next, deeper line
-                    else if ( $pairs === 'config' && ( trim( $m[2] ) === '' || preg_match( '/^\s*[|>][\-+]?\s*$/', $m[2] ) ) )
+                    // YAML: a secret name whose value stands on the next non-empty, deeper line ("password:",
+                    // "password: |"), a nested mapping included
+                    else if ( $pairs === 'config' && expSystemReportMask::isSecretSettingName( $m[1] )
+                              && preg_match( '/^\s*([|>][\-+]?)?\s*(#.*)?$/', $m[2] ) )
                     {
-                        if ( expSystemReportMask::isSecretSettingName( $m[1] ) && isset( $lines[$i + 1] )
-                             && preg_match( '/^(\s+)(\S.*)$/', $lines[$i + 1], $next ) && !self::isPlaceholder( trim( $next[2], " \t\"'" ) )
-                             && !preg_match( '/^\s*[A-Za-z0-9_.\-]+\s*:/', $lines[$i + 1] ) )
-                            $found[$m[1]] = true;
+                        preg_match( '/^[ \t]*/', $line, $indent );
+                        for ( $n = $i + 1; isset( $lines[$n] ); $n++ )
+                        {
+                            if ( trim( $lines[$n] ) === '' )
+                                continue;
+                            if ( preg_match( '/^([ \t]*)(\S.*)$/', $lines[$n], $next ) && strlen( $next[1] ) > strlen( $indent[0] )
+                                 && !self::isPlaceholder( trim( preg_replace( '/^-\s*/', '', $next[2] ), " \t\"'" ) ) )
+                                $found[$m[1]] = true;
+                            break;
+                        }
                     }
                 }
             }
-            else if ( !$isComment && expSecretRule::hasInlineSecret( $line ) )
+            if ( !$isComment && expSecretRule::hasInlineSecret( $line ) && !preg_match_all( $pairPattern, $line ) )
                 $found['(inline)'] = true;
         }
+        return array_keys( $found );
+    }
+
+    /**
+     * The kinds of SECRET_SHAPE_PATTERNS in the whole file $file, read in pieces that overlap, so a file of any
+     * size and any content (text or binary) is read to its end. Null when the file cannot be read to its end.
+     *
+     * @param string $file
+     * @return string[]|null
+     */
+    static function shapesInFile( $file )
+    {
+        $handle = @fopen( $file, 'rb' );
+        if ( $handle === false )
+            return null;
+        $found = array();
+        $tail = '';
+        $read = 0;
+        while ( !feof( $handle ) )
+        {
+            $chunk = fread( $handle, 1048576 );
+            if ( $chunk === false )
+            {
+                fclose( $handle );
+                return null;
+            }
+            $read += strlen( $chunk );
+            $buffer = $tail . $chunk;
+            foreach ( self::shapesIn( $buffer ) as $kind )
+                $found[$kind] = true;
+            $tail = substr( $buffer, -65536 );
+        }
+        fclose( $handle );
+        clearstatcache( true, $file );
+        if ( $read !== @filesize( $file ) )
+            return null;
         return array_keys( $found );
     }
 
@@ -416,11 +499,11 @@ class eZExtensionPackageHandler extends eZPackageHandler
      *    nor link;
      *  - a copy or backup of a settings file (BACKUP_FILE_PATTERN: *.bak, *.orig, *.dist, *~, ...) below settings/
      *    or named *.ini*;
-     *  - the text of every file: secretsInText(). Settings files (below settings/, any case, any depth, or named
-     *    *.ini*) are read as INI pairs, the files of CONFIG_FILE_PATTERN as pairs of names and values, every other
-     *    file (PHP, JSON, XML, text, templates ...) for the shapes of secrets (SECRET_SHAPE_PATTERNS). A file is binary when its first 8 KB hold a NUL byte: a binary file
-     *    is not read, but a binary settings file is refused. Text in UTF-16 or UTF-32, text bigger than
-     *    MAX_SCAN_BYTES and a file that cannot be read are refused.
+     *  - every file, text or binary, whole and as it is packed, for the shapes of secrets (shapesInFile(),
+     *    SECRET_SHAPE_PATTERNS, also with NUL bytes left out); a file with a UTF-16 or UTF-32 byte order mark;
+     *  - settings files (below settings/, any case, any depth, or named *.ini*) as INI pairs and the files of
+     *    CONFIG_FILE_PATTERN as pairs of names and values (pairSecretsIn()), from their whole text, unchanged; such a
+     *    file with a NUL byte, bigger than MAX_SCAN_BYTES or not readable to its end is refused.
      * A directory that cannot be read refuses the whole extension. Reads the files only.
      *
      * @param string $dir
@@ -480,29 +563,43 @@ class eZExtensionPackageHandler extends eZPackageHandler
                 continue;
             }
 
-            $handle = @fopen( $full, 'rb' );
-            $text = $handle ? fread( $handle, self::MAX_SCAN_BYTES + 1 ) : false;
-            if ( $handle )
-                fclose( $handle );
-            if ( $text === false )
+            // the shapes of secrets: the whole file, text or binary, as it is packed
+            $shapes = self::shapesInFile( $full );
+            if ( $shapes === null )
             {
                 $found[$relative . ': unreadable'] = true;
                 continue;
             }
-            $utf16 = preg_match( '/^(\xFF\xFE|\xFE\xFF|\x00\x00\xFE\xFF)/', $text ) === 1;
-            if ( !$utf16 && strpos( substr( $text, 0, 8192 ), "\0" ) !== false )
+            foreach ( $shapes as $kind )
+                $found[$relative . ': ' . $kind] = true;
+            $head = (string)@file_get_contents( $full, false, null, 0, 4 );
+            if ( preg_match( '/^(\xFF\xFE|\xFE\xFF|\x00\x00\xFE\xFF)/', $head ) )
             {
-                if ( $isSettings )
-                    $found[$relative . ': binary settings file'] = true;
+                $found[$relative . ': (text in UTF-16 or UTF-32)'] = true;
                 continue;
             }
-            if ( strlen( $text ) > self::MAX_SCAN_BYTES )
+            $pairs = $isSettings ? 'ini' : ( preg_match( self::CONFIG_FILE_PATTERN, $name ) ? 'config' : false );
+            if ( $pairs === false )
+                continue;
+            // settings and configuration files: the pairs, from the whole text exactly as it is packed
+            $size = @filesize( $full );
+            if ( $size === false || $size > self::MAX_SCAN_BYTES )
             {
                 $found[$relative . ': text too large to check'] = true;
                 continue;
             }
-            $pairs = $isSettings ? 'ini' : ( preg_match( self::CONFIG_FILE_PATTERN, $name ) ? 'config' : false );
-            foreach ( self::secretsInText( $text, $pairs ) as $setting )
+            $text = @file_get_contents( $full );
+            if ( $text === false || strlen( $text ) !== $size )
+            {
+                $found[$relative . ': unreadable'] = true;
+                continue;
+            }
+            if ( strpos( $text, "\0" ) !== false )
+            {
+                $found[$relative . ( $isSettings ? ': binary settings file' : ': binary configuration file' )] = true;
+                continue;
+            }
+            foreach ( self::pairSecretsIn( $text, $pairs ) as $setting )
                 $found[$relative . ': ' . $setting] = true;
         }
         $found = array_keys( $found );

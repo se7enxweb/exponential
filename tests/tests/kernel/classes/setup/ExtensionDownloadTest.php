@@ -227,7 +227,7 @@ class ExtensionDownloadTest extends PHPUnit\Framework\TestCase
         $this->put( 'doc/u16.txt', "\xFE\xFF\0P\0a" );
         $this->put( 'settings/bin.ini', "Title=x\0Password=hunter2" );
         $this->put( 'design/image.png', "\x89PNG\r\n\0\0Password=hunter2 sk-proj-abcdefghijklmnopqrstuvwxyz012345" );
-        $this->assertSame( array( 'doc/u16.txt: (text in UTF-16 or UTF-32)', 'settings/bin.ini: binary settings file',
+        $this->assertSame( array( 'design/image.png: (API key)', 'doc/u16.txt: (text in UTF-16 or UTF-32)', 'settings/bin.ini: binary settings file',
                                   'settings/u.ini: (text in UTF-16 or UTF-32)' ), $this->secrets() );
     }
 
@@ -270,6 +270,96 @@ class ExtensionDownloadTest extends PHPUnit\Framework\TestCase
         $source = file_get_contents( dirname( __DIR__, 5 ) . '/kernel/private/classes/views/package/create.php' );
         $this->assertStringContainsString( "try\n                {\n                    \$creator->finalize( \$package, \$http, \$persistentData );\n                }\n                catch ( \\RuntimeException \$e )", $source );
         $this->assertStringContainsString( "'description' => \$finalizeError", $source );
+    }
+
+    /**
+     * ED-09, the regression table: each input alone in an extension must be refused. It holds every way in that a
+     * check or a review found, so a later change to the check cannot lose one of them unseen.
+     */
+    public static function refusedInputs()
+    {
+        $sk = 'sk-proj-abcdefghijklmnopqrstuvwxyz012345';
+        $utf16 = '';
+        foreach ( str_split( "token $sk" ) as $c )
+            $utf16 .= $c . "\0";
+        $big = str_repeat( "\0\x01", 2621440 ) . $sk;
+        $edge = str_repeat( 'a', 1048576 - 10 ) . ' ' . $sk;
+        return array(
+            'commented #Password='        => array( 'settings/a.ini.append.php', "<?php /* #?ini charset=\"utf-8\"?\n#Password=hunter2\n*/ ?>\n" ),
+            '; commented'                  => array( 'settings/a.ini', "; Password=hunter2\n" ),
+            'Password[]='                  => array( 'settings/a.ini', "Password[]=hunter2\n" ),
+            'Password[name]='              => array( 'settings/a.ini', "Password[db]=hunter2\n" ),
+            'blanks around ='              => array( 'settings/a.ini', "  Password   =   hunter2  \n" ),
+            'quoted value'                 => array( 'settings/a.ini', "Password=\"hunter2\"\n" ),
+            'upper case name'              => array( 'settings/a.ini', "PASSWORD=hunter2\n" ),
+            'lower case name'              => array( 'settings/a.ini', "password=hunter2\n" ),
+            'UTF-8 BOM'                    => array( 'settings/a.ini', "\xEF\xBB\xBFPassword=hunter2\n" ),
+            'CRLF'                         => array( 'settings/a.ini', "Title=x\r\nPassword=hunter2\r\n" ),
+            'CR only'                      => array( 'settings/a.ini', "Title=x\rPassword=hunter2\r" ),
+            'form feed'                    => array( 'settings/a.ini', "Title=x\fPassword=hunter2\n" ),
+            'pair inside a value'          => array( 'settings/a.ini', "Title=x Password=hunter2\n" ),
+            'duplicate key'                => array( 'settings/a.ini', "Password=\nPassword=hunter2\n" ),
+            'placeholder suffix ...'       => array( 'settings/a.ini', "Password=realsecret...\n" ),
+            "placeholder suffix \u{2026}"  => array( 'settings/a.ini', "Password=realsecret\u{2026}\n" ),
+            'secret as placeholder'        => array( 'settings/a.ini', "Password=secret\n" ),
+            'changeme'                     => array( 'settings/a.ini', "Password=changeme\n" ),
+            'your_*'                       => array( 'settings/a.ini', "Password=your_real_pw\n" ),
+            '<value>'                      => array( 'settings/a.ini', "Password=<abc123>\n" ),
+            'numeric secret'               => array( 'settings/a.ini', "Password=12345678\n" ),
+            'numeric key'                  => array( 'settings/a.ini', "ApiKey=1234567890123456\n" ),
+            'switch true'                  => array( 'settings/a.ini', "Password=true\n" ),
+            'switch none'                  => array( 'settings/a.ini', "Password=none\n" ),
+            'switch null'                  => array( 'settings/a.ini', "Token=null\n" ),
+            'settings without extension'   => array( 'settings/siteaccess/site/creds', "Password=hunter2\n" ),
+            'ini outside settings'         => array( 'doc/example.ini', "Password=hunter2\n" ),
+            'NUL in settings'              => array( 'settings/a.ini', "Title=x\0\nPassword=hunter2\n" ),
+            'UTF-16 BOM settings'          => array( 'settings/a.ini', "\xFF\xFEP\0=\0x\0" ),
+            'UTF-16 BOM text'              => array( 'doc/a.txt', "\xFE\xFF\0x" ),
+            'UTF-16 without BOM'           => array( 'doc/a.txt', $utf16 ),
+            'PEM in PHP'                   => array( 'classes/a.php', "<?php \$k = '-----BEGIN PRIVATE KEY-----';\n" ),
+            'PEM in binary'                => array( 'design/a.png', "\x89PNG\0\0-----BEGIN EC PRIVATE KEY-----\n" ),
+            'secret deep in a big binary'  => array( 'design/big.bin', $big ),
+            'secret across a piece edge'   => array( 'doc/edge.txt', $edge ),
+            'define() one line'            => array( 'classes/a.php', "<?php define( 'API_KEY', 'abc123' );\n" ),
+            'define() lines'               => array( 'classes/a.php', "<?php define(\n    \"DB_PASSWORD\",\n    \"hunter2\"\n);\n" ),
+            'Bearer'                       => array( 'doc/a.md', "Authorization: Bearer abcdefgh12345678\n" ),
+            'Bearer next line'             => array( 'doc/a.md', "Authorization:\n  Bearer abcdefgh12345678\n" ),
+            'sk- in JSON'                  => array( 'lib/a.json', "{\"key\": \"$sk\"}" ),
+            'AKIA in template'             => array( 'design/a.tpl', "AKIAABCDEFGHIJKLMNOP" ),
+            'address with a password'      => array( 'doc/a.txt', "https://deploy:hunter2@git.example.invalid/x\n" ),
+            'YAML next line'               => array( 'config/a.yml', "password:\n  hunter2\n" ),
+            'YAML after a blank line'      => array( 'config/a.yml', "password:\n\n  hunter2\n" ),
+            'YAML block scalar'            => array( 'config/a.yml', "client_secret: |\n  hunter2\n" ),
+            'YAML nested mapping'          => array( 'config/a.yml', "password:\n  value: hunter2\n" ),
+            'YAML inline'                  => array( 'config/a.yaml', "db:\n  password: hunter2\n" ),
+            '.conf pair'                   => array( 'config/a.conf', "auth_pass = s3cret\n" ),
+            '.env file'                    => array( '.env', "X=1\n" ),
+            'credentials file'             => array( 'credentials.json', "{}" ),
+            'key file upper case'          => array( 'certs/A.PEM', "x" ),
+            'key file with suffix'         => array( 'old/server.key.txt', "x" ),
+        );
+    }
+
+    /**
+     * @dataProvider refusedInputs
+     */
+    #[PHPUnit\Framework\Attributes\DataProvider( 'refusedInputs' )]
+    public function testTheRegressionTableIsRefused( $file, $contents )
+    {
+        unlink( $this->dir() . '/settings/plain.ini' );
+        $this->put( $file, $contents );
+        $this->assertNotSame( array(), $this->secrets(), $file );
+        $this->assertNotSame( '', eZExtensionPackageHandler::packRefusal( $this->name ) );
+    }
+
+    /** ED-09, and what must still pass */
+    public function testCleanInputsPass()
+    {
+        $this->put( 'settings/b.ini', "Password=\nPassword=...\nApiKey=xxx\nToken=<...>\nMaxTokens=4096\nRequireToken=enabled\nTimeout=30\nTitle=none\n" );
+        $this->put( 'config/c.yml', "password:\ntimeout: 30\ndb:\n  host: localhost\n" );
+        $this->put( 'classes/d.php', "<?php\n\$password = \$http->postVariable( 'Password' );\ndefine( 'TITLE', 'x' );\n" );
+        $this->put( 'design/e.png', "\x89PNG\0\0plain image bytes" );
+        $this->assertSame( array(), $this->secrets() );
     }
 
     /** ED-05, names in any case, hidden files, links and files the check cannot read */
