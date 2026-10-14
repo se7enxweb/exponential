@@ -23230,6 +23230,22 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
 <context>
     <name>design/admin/setup/extensions</name>
     <message>
+        <source>The extension or the archive format is not known.</source>
+        <translation>Die Extension oder das Archivformat ist nicht bekannt.</translation>
+    </message>
+    <message>
+        <source>The extension %name was not packed: its settings hold secret values (%settings). Copy it from the server instead.</source>
+        <translation>Die Extension %name wurde nicht gepackt: ihre Einstellungen enthalten geheime Werte (%settings). Kopieren Sie sie stattdessen vom Server.</translation>
+    </message>
+    <message>
+        <source>The extension %name could not be packed.</source>
+        <translation>Die Extension %name konnte nicht gepackt werden.</translation>
+    </message>
+    <message>
+        <source>Download %name as %format</source>
+        <translation>%name als %format herunterladen</translation>
+    </message>
+    <message>
         <source>Available extensions [%extension_count]</source>
         <translation type="obsolete">Verfügbare Extensions [%extension_count]</translation>
     </message>

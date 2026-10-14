@@ -19420,6 +19420,22 @@ Note: The packages will not be uninstalled.</source>
 <context>
     <name>design/admin/setup/extensions</name>
     <message>
+        <source>The extension or the archive format is not known.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The extension %name was not packed: its settings hold secret values (%settings). Copy it from the server instead.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The extension %name could not be packed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download %name as %format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Name</source>
         <translation type="unfinished"></translation>
     </message>

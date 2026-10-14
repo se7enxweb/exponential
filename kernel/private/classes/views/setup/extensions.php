@@ -76,6 +76,10 @@ namespace Exponential\View\Kernel\Setup
 
 class Extensions extends \Exponential\Runnable\ModuleView
 {
+    /** The archive formats of a download. */
+    const DOWNLOAD_FORMATS = array( 'tar.gz' => 'application/x-gzip', 'tar.bz2' => 'application/x-bzip2',
+                                    'zip' => 'application/zip', 'ezpkg' => 'application/octet-stream' );
+
     /** The session key of the notice shown once after a change was applied. */
     const NOTICE = 'ExpSetupExtensionsNotice';
 
@@ -93,44 +97,6 @@ class Extensions extends \Exponential\Runnable\ModuleView
         $http = \eZHTTPTool::instance();
         $module = $Params['Module'];
 
-        // Direct extension download via view parameters: /setup/extensions/<name>/<format>
-        $downloadName   = isset( $Params['ExtensionName'] ) ? $Params['ExtensionName'] : false;
-        $downloadFormat = isset( $Params['ExtensionFormat'] ) ? strtolower( $Params['ExtensionFormat'] ) : false;
-        $validFormats   = array( 'tar.gz', 'tar.bz2', 'zip', 'ezpkg' );
-
-        if ( $downloadName && $downloadFormat &&
-             in_array( $downloadFormat, $validFormats ) &&
-             \eZExtension::extensionPath( $downloadName ) !== false )
-        {
-            $temporaryExportPath = \eZPackage::temporaryExportPath();
-            $archiveFile         = $temporaryExportPath . '/' . $downloadName . '.' . $downloadFormat;
-
-            $package = \eZPackage::create( $downloadName . '_' . time() );
-            $package->setAttribute( 'is_active', true );
-            \eZPackage::packageHandler( 'ezextension' )->addExtension( $package, $downloadName );
-            $package->exportToArchive( $archiveFile, $downloadFormat );
-
-            $mimeTypes = array(
-                'tar.gz'  => 'application/x-gzip',
-                'tar.bz2' => 'application/x-bzip2',
-                'zip'     => 'application/zip',
-                'ezpkg'   => 'application/octet-stream',
-            );
-            $contentType = isset( $mimeTypes[$downloadFormat] ) ? $mimeTypes[$downloadFormat] : 'application/octet-stream';
-            $downloadFileName = preg_replace( '/[^a-zA-Z0-9_-]/', '_', $downloadName ) . '.' . $downloadFormat;
-
-            if ( file_exists( $archiveFile ) )
-            {
-                header( 'Content-Type: ' . $contentType );
-                header( 'Content-Disposition: attachment; filename="' . $downloadFileName . '"' );
-                header( 'Content-Length: ' . filesize( $archiveFile ) );
-                readfile( $archiveFile );
-                unlink( $archiveFile );
-                $package->removeFiles( $package->path() );
-                \eZExecution::cleanExit();
-            }
-        }
-
         // The JSON reorder of the former loading order card (6.0.15 before the redesign), kept for anything that
         // still posts it: it changes only the order, and only when the list holds exactly the active extensions.
         if ( $http->hasPostVariable( 'ReorderExtensions' ) )
@@ -145,6 +111,14 @@ class Extensions extends \Exponential\Runnable\ModuleView
 
         $siteINI = \eZINI::instance();
         $selectedAccessExtensionArray = (array)$siteINI->variable( 'ExtensionSettings', 'ActiveAccessExtensions' );
+
+        // Download of an extension as a package: a button of the form (POST, with the form token), never a link.
+        // An extension whose settings hold a secret value is not handed out.
+        if ( $http->hasPostVariable( 'ExtensionDownload' ) )
+        {
+            $downloadError = $this->download( (string)$http->postVariable( 'ExtensionDownload', '' ), $available );
+            $tpl->setVariable( 'download_error', $downloadError );
+        }
 
         // The form of the former page and of the standard design: the ticked boxes, written at once as before.
         if ( $module->isCurrentAction( 'ActivateExtensions' ) && !$http->hasPostVariable( 'ExtensionPlanForm' ) )
@@ -443,6 +417,98 @@ class Extensions extends \Exponential\Runnable\ModuleView
                 return \ezpI18n::tr( $ctx, 'Only the written order changes. The declared dependencies decide the loading order of these extensions, so they load in the same order as before.' );
         }
         return $code;
+    }
+
+    /**
+     * Sends $choice ("<name>/<format>") as a package archive and ends the request, or says why it was not sent.
+     *
+     * @param string $choice
+     * @param string[] $available the extensions of the catalogue
+     * @return string the reason it was not sent
+     */
+    protected function download( $choice, array $available )
+    {
+        $parts = explode( '/', $choice, 2 );
+        $name = $parts[0];
+        $format = isset( $parts[1] ) ? strtolower( $parts[1] ) : '';
+        if ( !isset( self::DOWNLOAD_FORMATS[$format] ) || !in_array( $name, $available, true ) || \eZExtension::extensionPath( $name ) === false )
+            return \ezpI18n::tr( 'design/admin/setup/extensions', 'The extension or the archive format is not known.' );
+
+        $secrets = self::secretSettings( \eZExtension::baseDirectory() . '/' . $name );
+        if ( $secrets )
+            return \ezpI18n::tr( 'design/admin/setup/extensions', 'The extension %name was not packed: its settings hold secret values (%settings). Copy it from the server instead.', null,
+                                 array( '%name' => $name, '%settings' => implode( ', ', array_slice( $secrets, 0, 5 ) ) . ( count( $secrets ) > 5 ? ', ...' : '' ) ) );
+
+        $archiveFile = \eZPackage::temporaryExportPath() . '/' . $name . '.' . $format;
+        $package = null;
+        try
+        {
+            $package = \eZPackage::create( $name . '_' . time() );
+            $package->setAttribute( 'is_active', true );
+            \eZPackage::packageHandler( 'ezextension' )->addExtension( $package, $name );
+            $package->exportToArchive( $archiveFile, $format );
+            if ( !is_file( $archiveFile ) )
+                return \ezpI18n::tr( 'design/admin/setup/extensions', 'The extension %name could not be packed.', null, array( '%name' => $name ) );
+
+            header( 'Content-Type: ' . self::DOWNLOAD_FORMATS[$format] );
+            header( 'Content-Disposition: attachment; filename="' . preg_replace( '/[^a-zA-Z0-9_-]/', '_', $name ) . '.' . $format . '"' );
+            header( 'Content-Length: ' . filesize( $archiveFile ) );
+            header( 'Cache-Control: no-store' );
+            header( 'X-Content-Type-Options: nosniff' );
+            readfile( $archiveFile );
+        }
+        catch ( \Exception $e )
+        {
+            \eZDebug::writeError( $e->getMessage(), __METHOD__ );
+            return \ezpI18n::tr( 'design/admin/setup/extensions', 'The extension %name could not be packed.', null, array( '%name' => $name ) );
+        }
+        finally
+        {
+            if ( is_file( $archiveFile ) )
+                unlink( $archiveFile );
+            if ( $package !== null )
+                \eZPackage::removeFiles( $package->path() );
+        }
+        \eZExecution::cleanExit();
+        return '';
+    }
+
+    /**
+     * The settings of the extension in $dir that hold a secret value: "<file below settings/>: <name>" for each
+     * setting whose name is a secret (expSecretRule::isSecretName()) or whose value carries one (a password in an
+     * address, a "password=..." pair). Empty values, numbers and switches (true, enabled, ...) are not secrets.
+     * Pure apart from reading the files.
+     *
+     * @param string $dir the extension's directory
+     * @return string[]
+     */
+    public static function secretSettings( $dir )
+    {
+        $settings = rtrim( (string)$dir, '/' ) . '/settings';
+        if ( !is_dir( $settings ) )
+            return array();
+        $found = array();
+        $files = new \RecursiveIteratorIterator( new \RecursiveDirectoryIterator( $settings, \FilesystemIterator::SKIP_DOTS ) );
+        foreach ( $files as $file )
+        {
+            if ( !$file->isFile() || !preg_match( '/\.ini(\.append)?(\.php)?$/', $file->getFilename() ) )
+                continue;
+            $relative = substr( $file->getPathname(), strlen( $settings ) + 1 );
+            foreach ( (array)file( $file->getPathname(), FILE_IGNORE_NEW_LINES ) as $line )
+            {
+                if ( !preg_match( '/^\s*([A-Za-z0-9_.\-]+)(\[[^\]]*\])?\s*=(.*)$/', (string)$line, $m ) )
+                    continue;
+                $value = trim( $m[3] );
+                // a number or a switch is a limit or a choice (MaxTokens=4096, RequireToken=enabled), never a secret
+                if ( $value === '' || preg_match( '/^(-?\d+(\.\d+)?|true|false|enabled|disabled|yes|no|on|off)$/i', $value ) )
+                    continue;
+                if ( \expSecretRule::isSecretName( $m[1] ) || \expSecretRule::hasInlineSecret( $value ) )
+                    $found[$relative . ': ' . $m[1]] = true;
+            }
+        }
+        $found = array_keys( $found );
+        sort( $found );
+        return $found;
     }
 }
 
