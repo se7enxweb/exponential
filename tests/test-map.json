@@ -226,6 +226,9 @@
     ],
     "kernel/classes/audit/*": [
       "tests/tests/design/AdminSelfContainedTest.php"
+    ],
+    "share/icons/crystal*": [
+      "tests/tests/design/AdminIconsTest.php"
     ]
   },
   "generated": {
