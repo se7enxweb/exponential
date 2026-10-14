@@ -270,10 +270,10 @@ a54e5021b1c597539a60da86ef766f0c  design/admin/images/trash-icon-16x16.gif
 bb57d7d50de510183570d8844efbd49f  design/admin/images/up-16x16-grey.png
 bc1f590f32f5d71f9bfdf7781f2135fc  design/admin/images/url_translator.png
 ac084a07607e6d6c5a845da15423854f  design/admin/images/view-fullscreen.png
-031055978fa48df876e7294b2e4017ea  design/admin/javascript/contentstructuremenu_dynamic.js
+731770d380b2eeb3d4ad04413dbb734d  design/admin/javascript/contentstructuremenu_dynamic.js
 2208f27da9ddaa11d336d07c190cbc4b  design/admin/javascript/expajaxuploader.js
 dcbeb2df140609b454d6bb3833a5b9fa  design/admin/javascript/ezajaxrelations_jquery.js
-fdd9e745df2fe303ef8cd8da341e6608  design/admin/javascript/ezajaxsubitems_expdatatable.js
+cf0e610abd479c8e33c64e4b48e9d609  design/admin/javascript/ezajaxsubitems_expdatatable.js
 2c35ad74f3ae96723bd750231c27cbe4  design/admin/javascript/leftmenu_widthcontrol.js
 d03d761498ffa705d43d836836910ad2  design/admin/javascript/node_tabs.js
 a99c01a2a139d2463bc8efc509350f6f  design/admin/javascript/popupmenu/ezpopupmenu.js
@@ -301,7 +301,7 @@ b2c3da31e2cc928df771601c6d761587  design/admin/override/templates/admin_preview/
 68fe19d4f0a0a40231b98b37317410f3  design/admin/override/templates/admin_preview/windows_media.tpl
 d1f3e1ef98e8cee2e52a5446280eadc3  design/admin/override/templates/embed-inline_image.tpl
 52e3042374cf244a81327966045e06e0  design/admin/override/templates/embed_image.tpl
-191d18b2654a0646af309d02091f7650  design/admin/override/templates/template_look_edit.tpl
+2c86444af5e964a26279b459dd1517d1  design/admin/override/templates/template_look_edit.tpl
 03505c55345b654eeb275f3b614a92bf  design/admin/override/templates/thumbnail/image.tpl
 6971adb19c3c39b21f245c72b7f73305  design/admin/override/templates/thumbnail/image_browse.tpl
 e0c996a801b1373df9824852298b20d9  design/admin/override/templates/tiny_image.tpl
@@ -340,7 +340,7 @@ c7eb697cccc88a7038703f8fcc862659  design/admin/templates/audit/reauth.tpl
 285f50ecd0189915430a72868d737398  design/admin/templates/audit/settings.tpl
 6ad3a8724d541edaf79af7df5927ab5a  design/admin/templates/audit/sources.tpl
 001ec42ede673f1e5de54c82bcdd9d6f  design/admin/templates/children.tpl
-60164ec50847c26892807492aff3c91f  design/admin/templates/children_detailed.tpl
+342fbb5a5c509a3110723664abc3b80a  design/admin/templates/children_detailed.tpl
 e43630d07c69d19c6b4301797c3a915e  design/admin/templates/class/classlist.tpl
 51fd6b1a1612e389ee44ce3d6cbe83d1  design/admin/templates/class/copy_confirm.tpl
 2f32def3d98933143182da37d73213f4  design/admin/templates/class/datatype/browse_objectrelation_placement.tpl
@@ -398,7 +398,7 @@ ac31521e1d3e3362c34b594c91a035dd  design/admin/templates/content/dashboard.tpl
 329c28bbc9d887a2df695a1ea4b48d6c  design/admin/templates/content/datatype/edit/ezobjectrelationlist_ajaxuploader.tpl
 9da33d1967da5abff9e5e93122d26540  design/admin/templates/content/datatype/view/ezxmltags/literal.tpl
 f49b3bdfe9b918ab6b26c89eb5b28c05  design/admin/templates/content/draft.tpl
-55348cebd88a2931048560ab1a4f1aa3  design/admin/templates/content/edit.tpl
+be10703720b7ceaf157f701c0edca88f  design/admin/templates/content/edit.tpl
 be1c7acb3cd20918fd4308fdfd105403  design/admin/templates/content/edit_attribute.tpl
 00f93086667ce9e241dae6c699728f85  design/admin/templates/content/edit_conflict.tpl
 a038803bfb7afe020d14c41475a8859b  design/admin/templates/content/edit_draft.tpl
@@ -438,8 +438,8 @@ c58456f930801986a94ae1c6a68e4fdc  design/admin/templates/content/searchresult.tp
 522a5244456835aa40cce7958b3654df  design/admin/templates/content/upload.tpl
 38726927dee8a4db82d729a58882095d  design/admin/templates/content/upload_related.tpl
 77c27453551792679be3d55c753ea011  design/admin/templates/content/urlalias.tpl
-ba0fd798329c7873ac9927b71b4831d7  design/admin/templates/content/urlalias_global.tpl
-69e9960fe5be6c32c571a0b02be79b02  design/admin/templates/content/urlalias_wildcard.tpl
+849b8007ec847fafec9b6b94c3063796  design/admin/templates/content/urlalias_global.tpl
+f08426363c068f8b87de5f75e85dd385  design/admin/templates/content/urlalias_wildcard.tpl
 4d8fbdf4374674358c2621ca09465022  design/admin/templates/content/view/versionview.tpl
 12317930ded26151688ae03c70d89efd  design/admin/templates/contentfinder/box.tpl
 3e2095eacb5bbd954b68d784ad0b9c15  design/admin/templates/contentfinder/confirm.tpl
@@ -613,7 +613,7 @@ dcb722bfda3d71da901504f9da33f0f5  design/admin/templates/setup/datatype_code.tpl
 a392a3e12f085fd85bb1625a6167237f  design/admin/templates/setup/designextension.tpl
 4f0c7f10c623069b9b621b3ca07d8336  design/admin/templates/setup/extensions.tpl
 a925a224cc78a74747132267d11b2cfa  design/admin/templates/setup/handlerextension.tpl
-ed3aff40e946d54c006710f6342619f6  design/admin/templates/setup/info.tpl
+bdcdfa5742405bda0f2c054e42741b83  design/admin/templates/setup/info.tpl
 af31fc447e00b08df2231c45cc83aff5  design/admin/templates/setup/kerneloverride.tpl
 88bed0ac1bea35ce39b48aa1493a8a12  design/admin/templates/setup/maintenance.tpl
 535ac0d2a806ac34792491f69fe0d777  design/admin/templates/setup/moduleextension.tpl
@@ -796,7 +796,7 @@ e3bfb91bebf01770b13c4a9ffe2a8f95  design/admin3/javascript/ezadmin_menubar.js
 c7ddd314fedef247c31ae61c9a38e4fe  design/admin3/templates/content/browse_current_node.tpl
 bc7937dac73f716b532f14b62505ed0d  design/admin3/templates/content/browse_mode_list.tpl
 861bd3ca689c1348cbf47d40c4d980ef  design/admin3/templates/content/browse_mode_thumbnail.tpl
-a2702edb596d3757371de7c73c78b281  design/admin3/templates/content/edit.tpl
+f1070d15631a97d1b594b7b75a8231d6  design/admin3/templates/content/edit.tpl
 35c95ad3e52bd6cf74d907b804ea2625  design/admin3/templates/content/edit_draft.tpl
 02474d5bf8a508eb4af0f63c623a678b  design/admin3/templates/content/edit_menu.tpl
 ada5d12461d8b215c68aca061f8d2368  design/admin3/templates/content/history.tpl
@@ -882,11 +882,11 @@ bb57d7d50de510183570d8844efbd49f  design/admin4/images/up-16x16-grey.png
 bc1f590f32f5d71f9bfdf7781f2135fc  design/admin4/images/url_translator.png
 ac084a07607e6d6c5a845da15423854f  design/admin4/images/view-fullscreen.png
 d7d11d12cef327ec0d54a0f346cdfc5b  design/admin4/javascript/admin4.js
-031055978fa48df876e7294b2e4017ea  design/admin4/javascript/contentstructuremenu_dynamic.js
+731770d380b2eeb3d4ad04413dbb734d  design/admin4/javascript/contentstructuremenu_dynamic.js
 2208f27da9ddaa11d336d07c190cbc4b  design/admin4/javascript/expajaxuploader.js
 5b924bb6c38c2aa71ee82f2185b8cac6  design/admin4/javascript/ezadmin_menubar.js
 dcbeb2df140609b454d6bb3833a5b9fa  design/admin4/javascript/ezajaxrelations_jquery.js
-fdd9e745df2fe303ef8cd8da341e6608  design/admin4/javascript/ezajaxsubitems_expdatatable.js
+cf0e610abd479c8e33c64e4b48e9d609  design/admin4/javascript/ezajaxsubitems_expdatatable.js
 2c35ad74f3ae96723bd750231c27cbe4  design/admin4/javascript/leftmenu_widthcontrol.js
 24e09818af2170bb98086c8cb586d0f1  design/admin4/javascript/node_tabs.js
 a99c01a2a139d2463bc8efc509350f6f  design/admin4/javascript/popupmenu/ezpopupmenu.js
@@ -915,7 +915,7 @@ b2c3da31e2cc928df771601c6d761587  design/admin4/override/templates/admin_preview
 d1f3e1ef98e8cee2e52a5446280eadc3  design/admin4/override/templates/embed-inline_image.tpl
 52e3042374cf244a81327966045e06e0  design/admin4/override/templates/embed_image.tpl
 2ac139cd76339fd86055b76a0b8944cc  design/admin4/override/templates/node/view/full_caching_disabled.tpl
-01467dbe30e2d3c912a4a74436f5122c  design/admin4/override/templates/template_look_edit.tpl
+4aaa6a6cfb78d45780f0681ec3ec6046  design/admin4/override/templates/template_look_edit.tpl
 03505c55345b654eeb275f3b614a92bf  design/admin4/override/templates/thumbnail/image.tpl
 6971adb19c3c39b21f245c72b7f73305  design/admin4/override/templates/thumbnail/image_browse.tpl
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
@@ -945,7 +945,7 @@ f5c677b2579053f3f5a23f2a3dd3b87d  design/admin4/templates/ajaxuploader/preview.t
 e002d70967d5f151cca6861170e9584f  design/admin4/templates/ajaxuploader/upload.tpl
 679afc0a26455969e1bc2d18684104da  design/admin4/templates/audit/recent.tpl
 4db7d3213d032d3d825d6d572ea6dbca  design/admin4/templates/children.tpl
-60164ec50847c26892807492aff3c91f  design/admin4/templates/children_detailed.tpl
+342fbb5a5c509a3110723664abc3b80a  design/admin4/templates/children_detailed.tpl
 334b2e551a38f3eab1deb0e61d5b4ad6  design/admin4/templates/class/classlist.tpl
 51fd6b1a1612e389ee44ce3d6cbe83d1  design/admin4/templates/class/copy_confirm.tpl
 2f32def3d98933143182da37d73213f4  design/admin4/templates/class/datatype/browse_objectrelation_placement.tpl
@@ -1006,7 +1006,7 @@ e4a78e6f40809ce7e27196f092b76383  design/admin4/templates/content/datatype/edit/
 329c28bbc9d887a2df695a1ea4b48d6c  design/admin4/templates/content/datatype/edit/ezobjectrelationlist_ajaxuploader.tpl
 9da33d1967da5abff9e5e93122d26540  design/admin4/templates/content/datatype/view/ezxmltags/literal.tpl
 5fa344f2efa7c8e7cec58cf743849f7d  design/admin4/templates/content/draft.tpl
-0d8a641494ee94942e9389786ef59fff  design/admin4/templates/content/edit.tpl
+55a0f770067ba004fbc633df7781540b  design/admin4/templates/content/edit.tpl
 a9eeca42caaeb5fa2f7339491f4b7553  design/admin4/templates/content/edit_attribute.tpl
 7c71af76a9760ef2ddf9d8a388e736d4  design/admin4/templates/content/edit_conflict.tpl
 64a0fa570c04b37f7ffb8effd9ba64f2  design/admin4/templates/content/edit_draft.tpl
@@ -1046,8 +1046,8 @@ e80baee3c22e4e4bc226a6355854788e  design/admin4/templates/content/trash.tpl
 a2b172b8944ff150c68ffddee1372eba  design/admin4/templates/content/upload.tpl
 38726927dee8a4db82d729a58882095d  design/admin4/templates/content/upload_related.tpl
 2338ac2189ebf523ac83e7c511b00398  design/admin4/templates/content/urlalias.tpl
-0eaeb1d84b7231fb2e8328fe62a90fd5  design/admin4/templates/content/urlalias_global.tpl
-69e9960fe5be6c32c571a0b02be79b02  design/admin4/templates/content/urlalias_wildcard.tpl
+2e0a54ad3eee1d359c882503ce48255a  design/admin4/templates/content/urlalias_global.tpl
+f08426363c068f8b87de5f75e85dd385  design/admin4/templates/content/urlalias_wildcard.tpl
 d0d9aa1787974685bab370fab84eb6a1  design/admin4/templates/content/view/versionview.tpl
 4947d0c96ee7a5fa2d9d81d14e80d9ca  design/admin4/templates/contentstructuremenu/content_structure_menu_dynamic.tpl
 f397f5889c7c872a0bc2a217890e4d98  design/admin4/templates/contentstructuremenu/show_content_structure.tpl
@@ -1220,7 +1220,7 @@ cbc413d613bb196f6da70a5caeea8d01  design/admin4/templates/setup/datatype_describ
 b0f4c265a32297ab71d7e1b558698bb0  design/admin4/templates/setup/designextension.tpl
 b8ccace071a441aea94af53b57db8e43  design/admin4/templates/setup/extensions.tpl
 7221793f43d4526f224d2bba4932db27  design/admin4/templates/setup/handlerextension.tpl
-ed3aff40e946d54c006710f6342619f6  design/admin4/templates/setup/info.tpl
+bdcdfa5742405bda0f2c054e42741b83  design/admin4/templates/setup/info.tpl
 7f200b3f632376d62e444bfaae08d28f  design/admin4/templates/setup/kerneloverride.tpl
 31d11b78948081ac49014ac82e74bb84  design/admin4/templates/setup/maintenance.tpl
 de35120270fc00040529a1d7ce00e312  design/admin4/templates/setup/moduleextension.tpl
@@ -2991,7 +2991,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-e1ae351510dd18022f95d2f21e69055c  doc/changelogs/6.0/6.0.15.md
+b0e7129867e445cd276205bae3bc387b  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -6331,7 +6331,7 @@ ea6f92f0a7d920a6030979b35e90b630  lib/eztemplate/classes/eztemplateroot.php
 9dbca1e98c046fcd232894bf526f0e88  lib/eztemplate/classes/eztemplatesectioniterator.php
 1c9a1cbd7e622cee588593de525b78a2  lib/eztemplate/classes/eztemplatesequencefunction.php
 97cb4b297bcf0147b114ff1f42c642ff  lib/eztemplate/classes/eztemplatesetfunction.php
-ca27041f69ce86c6622b45d4a221bc01  lib/eztemplate/classes/eztemplatestringoperator.php
+ac1c4dd7982a96d6761651c0356441d9  lib/eztemplate/classes/eztemplatestringoperator.php
 58be6d186dd66167918c928c39e9a96b  lib/eztemplate/classes/eztemplatestringsoperator.php
 ce64e8ddc670f525fc4f7a061e369df1  lib/eztemplate/classes/eztemplateswitchfunction.php
 3203d0b04dc182ec2491644db60bc42e  lib/eztemplate/classes/eztemplatetextelement.php
@@ -7088,7 +7088,7 @@ d9f6fa3adb8c971a1011eeb017f059f9  tests/tests/design/AdminStylingRulesTest.php
 850f08505510556f8649d66b26af8a93  tests/tests/design/AdminThemeSwitchTest.php
 d3aa163841a3b7ef9a8ce4048f7b1980  tests/tests/design/AdminTimelineTest.php
 8317da7f6c320876d336caa2d77c524a  tests/tests/design/AdminTokenContrastTest.php
-86582ac9497baaa4b1e12bf61ff5e516  tests/tests/design/AdminTreeMenuEscapingTest.php
+4a074714f8a1620217e84a3a09e010ac  tests/tests/design/AdminTreeMenuEscapingTest.php
 3e871accb7d56ac483c1150496cb8d3c  tests/tests/design/AdminTreeViewTest.php
 dcc45e4631fc358b0384c51d17ff8d67  tests/tests/extension/bccie/ezBccieTest.php
 e71599015464e106c536eedfe12d9676  tests/tests/extension/cjw_newsletter/cjwNewsletterAdminViewsTest.php
@@ -8081,7 +8081,7 @@ c0be3d17b10801879ce3559488f18e5c  tests/tests/lib/eztemplate/eZTemplateCompiledI
 e0e62e90ce7fd503b6e7a22b78f2975f  tests/tests/lib/eztemplate/eZTemplateFetchOperatorTest.php
 34793015486d957f67086345ea371dd3  tests/tests/lib/eztemplate/eZTemplateFunctionsAndParserTest.php
 14c4ac52ed9429ce9ba6ea2b67dfc89c  tests/tests/lib/eztemplate/eZTemplateOperatorDefaultWarningTest.php
-f334cc2c33f09af8afc75d019e7ba6e5  tests/tests/lib/eztemplate/eZTemplateOperatorMatrixTest.php
+5db007b33fa4b3de7e18aa5a13bab353  tests/tests/lib/eztemplate/eZTemplateOperatorMatrixTest.php
 9a3d0d27dcafdebf1d7c314eba1f394f  tests/tests/lib/eztemplate/eZTemplatePHP8RegressionTest.php
 054ba093ee53d9607044dc8dd344c73c  tests/tests/lib/eztemplate/eZTemplateStringsOperatorTest.php
 897c11a86ad0ae4c7ee05d4433239ae1  tests/tests/lib/eztemplate/eZTemplateUnitLocaleAndSequenceTest.php
