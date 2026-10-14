@@ -107,9 +107,29 @@
   --a4-leading-tight: 1.25;
   /* one height for the buttons, selects and pager buttons that stand in a row (node actions, sub-items toolbar) */
   --a4-control-h: 32px;
+  /* Density: the spacing of list cells and cards. html[data-a4-density="compact"] (below) sets them anew; nothing
+     else changes with the density, and every target keeps its 24px (WCAG 2.5.8). */
+  --a4-list-pad: .4em;
+  --a4-cell-pad-y: var(--a4-space-2);
+  --a4-cell-pad-x: var(--a4-space-3);
+  --a4-card-pad-y: var(--a4-space-3);
+  --a4-card-pad-x: var(--a4-space-4);
 
   /* the browser's own parts (scrollbars, select popups, date pickers, autofill) follow the mode */
   color-scheme: light;
+}
+
+/* ---- Density: compact ------------------------------------------------------------------------------------------
+   The header's density switch (page_head_style.tpl) sets html[data-a4-density="compact"]: smaller cell and card
+   spacing and 28px controls. Only the density tokens are set here; the content tree keeps its 24px row pitch and
+   every target its 24px (WCAG 2.5.8). */
+html[data-a4-density="compact"] {
+  --a4-control-h: calc(var(--a4-space-5) + var(--a4-space-1));
+  --a4-list-pad: .25em;
+  --a4-cell-pad-y: var(--a4-space-1);
+  --a4-cell-pad-x: var(--a4-space-2);
+  --a4-card-pad-y: var(--a4-space-2);
+  --a4-card-pad-x: var(--a4-space-3);
 }
 
 /* ---- Tokens: dark (admin4) --------------------------------------------------------------------------------- */
@@ -300,7 +320,7 @@ html[data-a4-theme="dark"] {
 .a4-card {
   min-width: 0;
   margin: 0;
-  padding: var(--a4-space-3) var(--a4-space-4);
+  padding: var(--a4-card-pad-y) var(--a4-card-pad-x);
   border: 1px solid var(--a4-line);
   border-radius: var(--a4-radius-s);
   background-color: var(--a4-card);
@@ -717,7 +737,7 @@ fieldset.a4-field > legend + * { clear: both; }
 .a4-table { width: 100%; margin: 0; border-collapse: collapse; background-color: transparent; }
 .a4-table th,
 .a4-table td {
-  padding: var(--a4-space-2) var(--a4-space-3);
+  padding: var(--a4-cell-pad-y) var(--a4-cell-pad-x);
   border: 0;
   border-bottom: 1px solid var(--a4-line);
   background-color: transparent;
@@ -1135,6 +1155,7 @@ a.a4-icon-btn, a.a4-icon-btn:visited { color: var(--a4-muted); }
 .a4-bi-shield-fill-check { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/shield-fill-check.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/shield-fill-check.svg); }
 .a4-bi-sun { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/sun.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/sun.svg); }
 .a4-bi-trash { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/trash.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/trash.svg); }
+.a4-bi-view-stacked { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/view-stacked.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/view-stacked.svg); }
 
 /* ---- The frame's own hidden-until-used parts (were style="display:none" in the pagelayouts) ------------------ */
 
