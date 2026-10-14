@@ -19,6 +19,8 @@
  *   base stylesheets inherited from admin3 (pagelayout, core, content, theme/*) are overridden through tokens in
  *   admin4.css and are not checked yet.
  * - No :focus or :focus-visible rule of an admin4 stylesheet sets its outline to none or 0.
+ * - components.css sets the colour scheme of both themes and has forced-colors and touch rules; admin4.css stops
+ *   motion for prefers-reduced-motion; no admin4 stylesheet transitions "all".
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminStylingRulesTest.php
  *
@@ -407,6 +409,34 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
             }
         }
         $this->assertSame( array(), $problems, 'focus rules without an outline; keep one (outline: 2px solid transparent next to a box-shadow ring)' );
+    }
+
+    /**
+     * The modes the browser asks for: the colour scheme of each theme, forced colors and touch in components.css,
+     * reduced motion and no transition of "all" in admin4's stylesheets
+     */
+    public function testAdmin4FollowsTheModesTheBrowserAsksFor()
+    {
+        $dir = self::$root . '/design/admin4/stylesheets';
+        $components = preg_replace( '#/\*.*?\*/#s', '', file_get_contents( "$dir/components.css" ) );
+        $this->assertMatchesRegularExpression( '/(^|\})\s*:root\s*\{[^}]*color-scheme:\s*light/s', $components );
+        $this->assertMatchesRegularExpression( '/html\[data-a4-theme="dark"\]\s*\{[^}]*color-scheme:\s*dark/s', $components );
+        $this->assertStringContainsString( '@media (forced-colors: active)', $components );
+        $this->assertStringContainsString( '@media (pointer: coarse)', $components );
+        $frame = preg_replace( '#/\*.*?\*/#s', '', file_get_contents( "$dir/admin4.css" ) );
+        $this->assertMatchesRegularExpression( '/@media \(prefers-reduced-motion: reduce\)\s*\{\s*\*, \*::before, \*::after\s*\{[^}]*transition-duration/s', $frame );
+        $all = array();
+        foreach ( array_merge( glob( "$dir/*.css" ), glob( "$dir/*/*.css" ) ) as $file )
+        {
+            foreach ( self::declarations( file_get_contents( $file ) ) as $d )
+            {
+                if ( preg_match( '/^(-\w+-)?transition$/', $d[1] ) && preg_match( '/^all\b/', $d[2] ) )
+                {
+                    $all[] = substr( $file, strlen( self::$root ) + 1 ) . ': ' . $d[0];
+                }
+            }
+        }
+        $this->assertSame( array(), $all, 'transition: all; name the properties' );
     }
 
     public function testComponentsAreTheSameInAdminAndAdmin4()
