@@ -41,6 +41,46 @@
 })();
 
 /*
+ * admin4 toasts: window.a4Toast( message, kind ) shows a short feedback of an action done in the page in the
+ * regions #a4-toasts (polite) or, for kind 'bad', #a4-toasts-alert (assertive) of the frame. kind is 'ok', 'bad',
+ * 'warn' or 'info'. The toast does not take the focus, closes after 5 s, waits while the pointer or the focus is on
+ * it, and has a close button named by the region's data-close-label. Without the regions it does nothing.
+ */
+(function () {
+    'use strict';
+    var DELAY = 5000;
+    window.a4Toast = function (message, kind) {
+        var region = document.getElementById(kind === 'bad' ? 'a4-toasts-alert' : 'a4-toasts');
+        if (!region || !message) return null;
+        var labels = document.getElementById('a4-toasts');
+        var toast = document.createElement('div');
+        toast.className = 'a4-toast' + (/^(ok|bad|warn|info)$/.test(kind || '') ? ' is-' + kind : '');
+        var text = document.createElement('span');
+        text.className = 'a4-toast-text';
+        text.textContent = String(message);
+        var close = document.createElement('button');
+        close.type = 'button';
+        close.className = 'a4-toast-close';
+        close.setAttribute('aria-label', (labels && labels.getAttribute('data-close-label')) || 'Dismiss');
+        close.textContent = '\u00d7';
+        toast.appendChild(text);
+        toast.appendChild(close);
+        var timer = null, held = false;
+        function remove() { if (timer) clearTimeout(timer); if (toast.parentNode) toast.parentNode.removeChild(toast); }
+        function arm() { if (timer) clearTimeout(timer); if (!held) timer = setTimeout(remove, DELAY); }
+        function hold(on) { held = on; if (on) { if (timer) clearTimeout(timer); timer = null; } else arm(); }
+        close.addEventListener('click', remove);
+        toast.addEventListener('mouseenter', function () { hold(true); });
+        toast.addEventListener('mouseleave', function () { hold(toast.contains(document.activeElement)); });
+        toast.addEventListener('focusin', function () { hold(true); });
+        toast.addEventListener('focusout', function (e) { if (!toast.contains(e.relatedTarget)) hold(false); });
+        region.appendChild(toast);
+        arm();
+        return toast;
+    };
+})();
+
+/*
  * admin4: chips with data-a4-copy (the node view's node, object and remote ids) copy their value to the
  * clipboard when clicked, and show a tick for a moment.
  */
@@ -63,6 +103,9 @@
         copy(chip.getAttribute('data-a4-copy')).then(function () {
             chip.classList.add('a4-copied');
             setTimeout(function () { chip.classList.remove('a4-copied'); }, 1400);
+            // the tick is only seen; the toast also tells a screen reader
+            if (window.a4Toast && chip.getAttribute('data-a4-copied'))
+                window.a4Toast(chip.getAttribute('data-a4-copied') + ': ' + chip.getAttribute('data-a4-copy'), 'ok');
         }, function () {});
     });
 })();

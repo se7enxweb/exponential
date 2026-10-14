@@ -8420,6 +8420,10 @@
 <context>
     <name>design/admin/node/view/full</name>
     <message>
+        <source>Copied to the clipboard</source>
+        <translation>Copied to the clipboard</translation>
+    </message>
+    <message>
         <source>Hide preview of content.</source>
         <translation>Hide preview of content.</translation>
     </message>
@@ -12161,6 +12165,10 @@ Note: The packages will not be uninstalled.</translation>
 </context>
 <context>
     <name>design/admin/pagelayout</name>
+    <message>
+        <source>Dismiss</source>
+        <translation>Dismiss</translation>
+    </message>
     <message>
         <source>Width of the left column</source>
         <translation>Width of the left column</translation>
@@ -35400,6 +35408,10 @@ your account.</translation>
 </context>
 <context>
     <name>design/admin/visual/menuconfig</name>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Copied to the clipboard</translation>
+    </message>
     <message>
         <source>Menu management</source>
         <translation>Menu management</translation>

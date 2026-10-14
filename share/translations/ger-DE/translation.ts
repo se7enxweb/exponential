@@ -10270,6 +10270,10 @@
 <context>
     <name>design/admin/node/view/full</name>
     <message>
+        <source>Copied to the clipboard</source>
+        <translation>In die Zwischenablage kopiert</translation>
+    </message>
+    <message>
         <source>Hide preview of content.</source>
         <translation>Vorschau ausblenden.</translation>
     </message>
@@ -14478,6 +14482,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
 </context>
 <context>
     <name>design/admin/pagelayout</name>
+    <message>
+        <source>Dismiss</source>
+        <translation>Schließen</translation>
+    </message>
     <message>
         <source>Width of the left column</source>
         <translation>Breite der linken Spalte</translation>
@@ -38447,6 +38455,10 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
 </context>
 <context>
     <name>design/admin/visual/menuconfig</name>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>In die Zwischenablage kopiert</translation>
+    </message>
     <message>
         <source>Menu management</source>
         <translation>Menu-Verwaltung</translation>

@@ -8000,6 +8000,10 @@
 <context>
     <name>design/admin/node/view/full</name>
     <message>
+        <source>Copied to the clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Hide preview of content.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -11323,6 +11327,10 @@ Note: The packages will not be uninstalled.</source>
 </context>
 <context>
     <name>design/admin/pagelayout</name>
+    <message>
+        <source>Dismiss</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message>
         <source>Width of the left column</source>
         <translation type="unfinished"></translation>
@@ -34013,6 +34021,10 @@ your account.</source>
 </context>
 <context>
     <name>design/admin/visual/menuconfig</name>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message>
         <source>Menu management</source>
         <translation type="unfinished"></translation>

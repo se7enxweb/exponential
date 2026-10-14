@@ -129,6 +129,13 @@
         {include uri='design:popupmenu/popup_menu.tpl'}
         {/cache-block}
     </div>
+
+    {* Toasts: short feedback of an action done in the page (window.a4Toast in admin4.js). Polite for news, a
+       second, assertive region for errors. Empty until a script adds a toast, so nothing is announced on load. *}
+    <div class="a4-toasts">
+        <div id="a4-toasts" aria-live="polite" aria-relevant="additions" data-close-label="{'Dismiss'|i18n( 'design/admin/pagelayout' )|wash}"></div>
+        <div id="a4-toasts-alert" aria-live="assertive" aria-relevant="additions"></div>
+    </div>
     {* This comment will be replaced with actual debug report (if debug is on). *}
     <!--DEBUG_REPORT-->
 
