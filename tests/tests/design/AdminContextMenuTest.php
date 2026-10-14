@@ -21,7 +21,6 @@ class AdminContextMenuTest extends PHPUnit\Framework\TestCase
     const SCRIPT_COPIES = array(
         'javascript/popupmenu/ezpopupmenu.js',
         'javascript/contentstructuremenu_dynamic.js',
-        'javascript/ezajaxsubitems_expdatatable.js',
         'templates/contentstructuremenu/show_content_structure.tpl',
     );
 
@@ -91,6 +90,21 @@ class AdminContextMenuTest extends PHPUnit\Framework\TestCase
             $text = (string)file_get_contents( self::root() . "/design/admin4/$file" );
             $this->assertMatchesRegularExpression( '/class="nodeicon" href="#" role="button" aria-haspopup="menu" aria-expanded="false" aria-label="/', $text,
                 "The tree's menu button in $file needs role, aria-haspopup, aria-expanded and a name" );
+        }
+    }
+
+    /**
+     * The sub-items script differs between the designs on purpose: admin4 draws language badges in its
+     * Translations column (AdminLanguageBadgeTest), design/admin keeps its flags. Its menu opener is the same in
+     * both: the native event goes to ezpopupmenu.js, which places a menu opened from the keyboard itself.
+     */
+    public function testSubitemsMenuOpenerIsTheSameInBothDesigns()
+    {
+        foreach ( array( "admin4", "admin" ) as $design )
+        {
+            $text = (string)file_get_contents( self::root() . "/design/$design/javascript/ezajaxsubitems_expdatatable.js" );
+            $this->assertStringContainsString( "var ev = e.originalEvent || e;", $text, "design/$design: the sub-items menu button passes the native event" );
+            $this->assertStringNotContainsString( "getBoundingClientRect", $text, "design/$design: the sub-items menu button places the menu itself again" );
         }
     }
 
