@@ -14,86 +14,14 @@
     min-height: 100%;
 }
 
-/* LOGIN PAGE (center it) */
-
-.loginpage, .loginpage #page
-{
-    height: 100%;
-}
-
-.loginpage #page
-{
-    overflow:auto;
-}
-
-.loginpage a:hover
-{
-    color:#ffe9bd !important;
-}
-
-.loginpage #header
-{
-    height: 230px;
-}
-
-.loginpage #columns
-{
-    min-height: 0;
-}
-
-.loginpage #columns #maincolumn
-{
-    border-right: 0 none;
-    margin-right: 0px;
-}
-
-.loginpage #columns #maincontent
-{
-    /* width: 48em; */
-    margin: 0 auto;
-    background-image:none;
-    box-shadow: none;
-}
-
-.loginpage #footer
-{
-    height: 30px;
-    border-top: 1px solid #3a3d41;
-    box-shadow: inset 0 1px #6f6e6b;
-}
-
-.loginpage .ezusernavigationpart #columns  #maincontent
-{
-    background:var(--a4-surface);
-    margin-top: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 0 5px black;
-}
-
-
 /* HEADER */
 #header
 {
-    border-top: 1px solid #696969;
+    border-top: 1px solid var(--a4-header-line);
 }
 
-.loginpage #header
-{
-    border-bottom: 1px solid #6f6e6b;
-    box-shadow: inset 0 -1px #3a3d41;
-}
+/* TABS */
 
-/* TOP MENU (TABS) */
-
-#header-topmenu ul li a, #header-topmenu ul li span.disabled
-{
-    color: var(--a4-disabled);
-    text-shadow: -1px -1px 1px black;
-    font-size: 1.1em;
-    text-decoration: underline;
-}
-
-#header-topmenu ul li span.disabled,
 #searchtext.disabled {
     background: transparent url(../../images/3/diagonal_pattern.png) repeat center left;
     color: var(--a4-ink);
@@ -103,7 +31,7 @@
 
 ul.tabs li a, ul.tabs li span.disabled
 {
-    color: #005b7f;
+    color: var(--a4-accent-text);
     font-size: 1.1em;
     text-decoration: underline;
 }
@@ -113,11 +41,11 @@ ul.tabs li a:hover
     color:var(--a4-ink);
 }
 
-#header-topmenu ul li.selected a, ul.tabs li.selected a
+ul.tabs li.selected a
 {
-    background: #444 none;
+    background: var(--a4-accent-soft) none;
     border-radius: 5px;
-    color:#f5f3dd;
+    color: var(--a4-accent-text);
     text-decoration: none;
 }
 
@@ -130,17 +58,6 @@ ul.tabs li a:hover
 .tabs-content.disabled
 {
     border-top: 1px solid var(--a4-line);
-}
-
-/* CSS Media Query's to adjust layout based on screen width */
-
-@media all and (max-width: 1124px)
-{
-
-    #header-topmenu ul li a, #header-topmenu ul li span.disabled
-    {
-        min-width: 80px;/* slightly smaller tabs */
-    }
 }
 
 /* BOX MODEL */
@@ -234,16 +151,9 @@ a.show-hide-tabs:hover
 {
     border: 1px solid var(--a4-line);
     background: var(--a4-soft);
-    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fdfdfd), to(#e4e3e4));
-    background-image: -moz-linear-gradient(top,  #fdfdfd, #e4e3e4);
-    background-image: -ms-linear-gradient(top,  #fdfdfd,  #e4e3e4);
-    background-image: -o-linear-gradient(top,  #fdfdfd,  #e4e3e4);
-    background-image: linear-gradient(top,  #fdfdfd,  #e4e3e4);
     border-radius: 3px;
     background-clip: padding-box;
-    -moz-box-shadow: 0 4px 4px #aaa;
-    -webkit-box-shadow: 0 4px 4px #aaa;
-    box-shadow: 0 4px 4px #aaa;
+    box-shadow: var(--a4-shadow-m);
 }
 
 .box-bc .box-ml, .box-header .box-ml
@@ -290,24 +200,6 @@ font-size:13px;
 }
 
 /* BUTTONS */
-p.versions
-{
-    padding-top:10px;
-    padding-right:21px;
-    background: url('../../images/3/sprite.png') no-repeat right -770px;
-
-}
-p.versions a
-{
-    color:#005b7f;
-    font-size: 1em;
-}
-
-p.versions a:hover
-{
-    color:var(--a4-ink);
-}
-
 
 /* The choices above a list (10 | 25 | 50 items, a sort field or order, a filter): a segmented control on the
    tokens, so it follows the colour scheme; the current choice is a span.current, the others are links. */
@@ -373,29 +265,27 @@ input.defaultbutton, input.button-disabled, input.button[disabled="disabled"]
 }
 
 input.button:hover, input.button:focus {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: var(--a4-soft);
     color: var(--a4-ink);
 }
 
 input.defaultbutton
 {
-    background-color: #567975;
-    color: #f5f3dd;
+    background-color: var(--a4-accent-strong);
+    color: var(--a4-on-accent);
     font-weight: normal;
 }
 
 input.defaultbutton:hover,
 input.defaultbutton:focus {
-    background-color: #425c59;
-    color: #ffe9bd;
+    background-color: var(--a4-accent-press);
+    color: var(--a4-on-accent-hover);
 }
 
 input.defaultbutton:active {
-    background-color: #525755;
-    -moz-box-shadow: inset 0 0 3px #000;
-    -webkit-box-shadow: inset 0 0 3px #000;
-    box-shadow: inset 0 0 3px #000;
-    color: #ff8300;
+    background-color: var(--a4-accent-strong);
+    box-shadow: inset 0 0 3px var(--a4-overlay);
+    color: var(--a4-on-accent);
 }
 
 input.button-disabled, input.button[disabled="disabled"]
@@ -441,8 +331,6 @@ div.community-activity
 {
     border: 1px solid var(--a4-line-strong);
     padding: 1em 1em;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
     border-radius: 10px;
 }
 
@@ -526,8 +414,6 @@ div.pagenavigator span.pages span.other, div.pagenavigator span.pages span.curre
     margin-right: 1px;
     background-color: var(--a4-surface);
     border: 1px solid var(--a4-line);
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
     border-radius: 2px;
     padding: 0.3em 0.5em;
     text-decoration: none;
@@ -557,19 +443,19 @@ div.alphabetical
 
 #footer-design a
 {
-    color:#6dcff6;
+    color: var(--a4-footer-link);
 }
 #footer-design a:hover
 {
-    color:#ffe9bd;
+    color: var(--a4-footer-link-hover);
 }
 
 
 /* MISC */
 table.list th, table.special th
 {
-    color: #EEE;
-    background-color: #6F6E6B;
+    color: var(--a4-ink);
+    background-color: var(--a4-soft);
     padding-top:0;
     padding-bottom:0;
     border-left: 1px solid var(--a4-line-strong);
@@ -599,7 +485,7 @@ table.list th, table.special th
 }
 
 #ezap-message-publishing {
-    border-color: #555;
+    border-color: var(--a4-line-strong);
 }
 
 #ezap-message-publishing h1:before {
@@ -609,7 +495,7 @@ table.list th, table.special th
 
 #ezap-message-finished h1:before, #ezap-message-deferred h1:before {
     content: "\02713";
-    color: #3e8d29;
+    color: var(--a4-ok);
     font-weight: bold;
 }
 

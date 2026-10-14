@@ -310,3 +310,11 @@ button.a4-content-datepicker-icon { padding: 0; border: 0; background: none; lin
 .a4-content-attr input[aria-invalid="true"],
 .a4-content-attr select[aria-invalid="true"],
 .a4-content-attr textarea[aria-invalid="true"] { border-color: var(--a4-bad); box-shadow: inset 0 0 0 1px var(--a4-bad); }
+
+/* Forced colors (Windows high contrast) drop backgrounds and box-shadows and repaint borders in one colour: a state
+   that differs only by them (current, selected, moved, pressed, changed) gets a Highlight outline. */
+@media (forced-colors: active) {
+  .a4-content-bookmark .a4-content-bookmark-nav li.is-moved > a,
+  .a4-content-bookmark .a4-content-bookmark-nav li.is-moved > span.current,
+  .a4-content-bookmark .a4-card.is-moved { outline: 2px solid Highlight; outline-offset: -2px; }
+}

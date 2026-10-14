@@ -29,6 +29,7 @@
                         'theme/admin_datatable.css',
                         'theme/modalwindow.css',
                         ezini( 'StylesheetSettings', 'AdminComponentCSSFileList', 'design.ini' ),
+                        'responsive.css',
                         ezini( 'StylesheetSettings', 'BackendCSSFileList', 'design.ini' ) ) )}
   {else}
     {ezcss_load( array( 'core.css',

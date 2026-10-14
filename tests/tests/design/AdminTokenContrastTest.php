@@ -4,7 +4,7 @@
  * page colour in admin4.css), computed with the WCAG 2 formula in the light and in the dark mode: the text tokens
  * on every surface 4.5:1, each state's text on its own tint 4.5:1 (a translucent tint is laid over the card first),
  * the text on filled buttons 4.5:1 also when hovered, the focus ring and the field edges 3:1 (WCAG 1.4.11), the
- * chart colours 3:1 on a card. A token changed so that a pair falls below fails here.
+ * chart colours 3:1 on a card, a meter's fill 3:1 on its track. A token changed so that a pair falls below fails here.
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminTokenContrastTest.php
  *
@@ -144,6 +144,11 @@ class AdminTokenContrastTest extends PHPUnit\Framework\TestCase
         for ( $i = 1; $i <= 8; $i++ )
         {
             $pairs[] = array( "--a4-chart-$i", '--a4-card', 3.0 );
+        }
+        // the fill of an .a4-meter (plain and each state) against its track (WCAG 1.4.11): the amount is the bar
+        foreach ( array( '--a4-accent-text', '--a4-ok', '--a4-warn', '--a4-bad', '--a4-info' ) as $fill )
+        {
+            $pairs[] = array( $fill, '--a4-soft', 3.0 );
         }
         return $pairs;
     }

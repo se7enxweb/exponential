@@ -66,7 +66,7 @@ p
 
 a
 {
-    color: #0b4e7a;
+    color: var(--a4-accent-text);
     text-decoration: underline;
 }
 
@@ -340,7 +340,7 @@ input.defaultbutton
     font-weight: bold;
     padding-left: 0.45em;
     padding-right: 0.45em;
-    color: #094564;
+    color: var(--a4-on-accent);
 }
 
 input.button-disabled, input.button[disabled="disabled"]
@@ -424,9 +424,8 @@ font-size:var(--a4-text-xs);
 
 hr /* General formatting for all horizontal rulers */
 {
-    color: #ffffff; /* Color must be set to the same as the background color to hide default formatting in IE */
     border: none; /* All borders must be removed as they are default for Opera */
-    border-top: 1px solid #e7e8e0; /* This single top border is the one replacing the default look of the ruler */
+    border-top: 1px solid var(--a4-line); /* This single top border is the one replacing the default look of the ruler */
     height: 1px;
     margin: 0.35em 0 0.35em 0; /* Be aware that these margins may not be calculated consistently across browsers */
 }
@@ -438,7 +437,7 @@ div.message-confirmation, div.message-feedback, div.message-warning, div.message
 {
     margin: 0.5em 0 1em 0;
     padding: 0.25em 1em 0.75em 1em;
-    border: 6px solid #000000;
+    border: 6px solid var(--a4-line-strong);
 }
 
 div.box-content div.message-confirmation, div.box-content div.message-feedback, div.box-content  div.message-warning, div.box-content  div.message-error
@@ -472,7 +471,7 @@ div.message-feedback h2::before, div.message-warning h2::before, div.message-err
 
 div.message-feedback
 {
-    border-color: #3e8d29;
+    border-color: var(--a4-ok);
 }
 
 div.message-feedback h2::before
@@ -484,7 +483,7 @@ div.message-feedback h2::before
 
 div.message-warning
 {
-    border-color: #ff910d;
+    border-color: var(--a4-warn);
     background: var(--a4-surface);
 }
 
@@ -497,7 +496,7 @@ div.message-warning h2::before
 
 div.message-error
 {
-    border-color: #C11B17;
+    border-color: var(--a4-bad);
 }
 
 div.message-error h2::before
@@ -517,7 +516,7 @@ div.message-feedback span.time, div.message-warning span.time, div.message-error
 
 label.message-error, legend.message-error
 {
-    color: maroon;
+    color: var(--a4-bad);
 }
 
 
@@ -724,13 +723,13 @@ table.multioption th, table.multioption td
 }
 table.multioption table.options-list th, table.multioption table.options-list td
 {
-    border: 1px solid #bebebe;
+    border: 1px solid var(--a4-line-strong);
 }
 
 table.multioption th
 {
     vertical-align:top;
-    background-color: #cccccc;
+    background-color: var(--a4-soft);
 }
 
 table.multioption table.options-list th
@@ -763,7 +762,7 @@ table.multioption input.box
 
 option.disabled
 {
-    color: #a0a0a0;
+    color: var(--a4-disabled);
 }
 
 div.attribute-multioption ul
