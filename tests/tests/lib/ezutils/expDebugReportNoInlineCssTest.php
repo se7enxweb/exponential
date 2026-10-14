@@ -158,6 +158,40 @@ class expDebugReportNoInlineCssTest extends PHPUnit\Framework\TestCase
         $this->assertMatchesRegularExpression( "#<td class='debugheader debuglabel'[^>]*><span>Warning:</span> warning-label</td>\s*<td class='debugheader debugtime'>#", $html );
     }
 
+    /**
+     * Every rule of the bar's stylesheet is scoped to the bar (#debug, #debug-details) or to its own class names
+     * on the body or appended elements (.exp-debug-*), so it cannot restyle the page around it.
+     */
+    public function testEveryRuleOfTheBarStylesheetIsScopedToTheBar()
+    {
+        $css = preg_replace( '/\/\*.*?\*\//s', '', file_get_contents( $this->root . '/design/standard/stylesheets/expdebugbar.css' ) );
+        $css = preg_replace( '/@media[^{]*\{/', '', $css );
+        preg_match_all( '/([^{}]+)\{[^{}]*\}/', $css, $m );
+        $this->assertGreaterThan( 50, count( $m[1] ) );
+        $scope = '/^(?:html\[data-a4-theme="dark"\] )?(?:#debug(?![\w-])|#debug-details(?![\w-])|[a-z]+\.exp-debug-[\w-]+)/';
+        foreach ( $m[1] as $selectorList )
+        {
+            foreach ( explode( ',', $selectorList ) as $selector )
+            {
+                $selector = trim( preg_replace( '/\s+/', ' ', $selector ) );
+                if ( $selector === '' || strpos( $selectorList, '(' ) !== false && !preg_match( '/^[^(]*[#.]/', $selector ) )
+                    continue; // the remainder of an :is( ... ) list, scoped by the part before it
+                $this->assertMatchesRegularExpression( $scope, $selector, "expdebugbar.css: \"$selector\" reaches outside the bar" );
+            }
+        }
+    }
+
+    /**
+     * debug.css is linked before expdebugbar.css: the bar's rules of the same weight (rows, level colours) then win
+     * over the classic white rows and red/orange headings, in light and dark mode
+     */
+    public function testTheBarStylesheetComesAfterDebugCss()
+    {
+        $this->debug->UseCSS = false;
+        $html = $this->render( true, true );
+        $this->assertLessThan( strpos( $html, 'stylesheets/expdebugbar.css' ), strpos( $html, 'stylesheets/debug.css' ) );
+    }
+
     public function testTheRulesAreInTheStylesheets()
     {
         $bar = file_get_contents( $this->root . '/design/standard/stylesheets/expdebugbar.css' );
