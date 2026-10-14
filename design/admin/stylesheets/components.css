@@ -741,11 +741,9 @@ fieldset.a4-field > legend + * { clear: both; }
 .a4-table img { vertical-align: -3px; }
 .a4-table.is-compact th, .a4-table.is-compact td { padding: var(--a4-space-2) var(--a4-space-3); }
 .a4-table > tbody > tr.is-selected > :is(td, th[scope="row"]) { background-color: var(--a4-accent-soft); }
-/* A row whose selection box is ticked takes the selection tint, without a script; it wins over stripe and hover. */
-.a4-table > tbody > tr:has(> td input[type="checkbox"]:checked) > :is(td, th[scope="row"]) { background-color: var(--a4-accent-soft); }
-/* The header of a long list stays in view under the fixed header (--header-height, kept by admin4.js; 0 in
-   designs without a fixed header) while the list scrolls. */
-.a4-table > thead > tr > th { position: sticky; top: var(--header-height, 0px); z-index: 2; }
+/* A row whose selection checkbox (a checkbox straight in one of its cells) is ticked takes the selection tint,
+   without a script; it comes after stripe and hover and is more specific than both. */
+.a4-table > tbody > tr:has(> td > input[type="checkbox"]:checked) > :is(td, th[scope="row"]) { background-color: var(--a4-accent-soft); }
 @media (max-width: 600px) {
   .a4-table th, .a4-table td { padding: var(--a4-space-2) var(--a4-space-2); }
 }
@@ -833,9 +831,6 @@ fieldset.a4-field > legend + * { clear: both; }
   text-align: center;
 }
 .a4-empty > * + * { margin-top: var(--a4-space-2); }
-/* An empty state may name what is missing and offer the next step: .a4-empty-title, a hint, .a4-empty-action. */
-.a4-empty-title { margin: 0; color: var(--a4-ink); font-size: var(--a4-text-m); font-weight: 650; }
-.a4-empty-action { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--a4-space-2); }
 
 .a4-notice {
   margin: 0 0 var(--a4-space-3);

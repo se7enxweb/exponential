@@ -518,16 +518,13 @@ table.list:not(.a4-plain) > tbody > tr > th[scope="row"] { background-color: tra
 table.list:not(.a4-plain) > tbody > tr:nth-child(even of :has(> td):not([hidden])) > :is(td, th[scope="row"]) { background-color: var(--a4-zebra); }
 table.list:not(.a4-plain) > tbody > tr:hover > :is(td, th[scope="row"]) { background-color: var(--a4-info-bg); }
 table.list td { border-color: var(--a4-line); }
-/* Cells sit in the middle of their row (a checkbox, an icon and a two-line name line up). A row whose selection box
-   is ticked takes the selection tint, without a script, over stripe and hover. The header row of a long list stays
-   in view under the fixed header while the list scrolls (a th row in thead, or the first row of tbody when it has
-   no data cells). */
-table.list td, table.list th { vertical-align: middle; }
-table.list:not(.a4-plain) > tbody > tr:has(> td input[type="checkbox"]:checked) > :is(td, th[scope="row"]),
-html .exp-dt tbody tr:has(> td input[type="checkbox"]:checked) > td { background-color: var(--a4-accent-soft); }
-table.list:not(.a4-plain) > thead > tr > th,
-table.list:not(.a4-plain) > tbody > tr:first-child:not(:has(> td)) > th,
-html .exp-dt thead th { position: sticky; top: var(--header-height, 0px); z-index: 2; }
+/* Cells of a data table sit in the middle of their row (a checkbox, an icon and a two-line name line up); a form
+   laid out as a list (.a4-plain) keeps its labels at the top. A row whose selection checkbox (a checkbox straight in
+   one of its cells) is ticked takes the selection tint, without a script; it comes after stripe and hover and is
+   more specific than both. */
+table.list:not(.a4-plain) td, table.list:not(.a4-plain) th { vertical-align: middle; }
+table.list:not(.a4-plain) > tbody > tr:has(> td > input[type="checkbox"]:checked) > :is(td, th[scope="row"]) { background-color: var(--a4-accent-soft); }
+html .exp-dt tbody tr:has(> td > input[type="checkbox"]:checked) > td { background-color: var(--a4-accent-soft); }
 
 /* Messages */
 div.message-warning, div.message-error, div.message-feedback, div.message-confirmation, div.message-information {

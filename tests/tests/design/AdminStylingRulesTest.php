@@ -622,7 +622,7 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( "handle.addEventListener('keydown'", file_get_contents( self::$root . '/design/admin4/javascript/ezadmin_menubar.js' ) );
     }
 
-    public function testListsMarkTickedRowsAndKeepTheirHeader()
+    public function testListsMarkTickedRows()
     {
         $dir = self::$root . '/design/admin4/stylesheets';
         $found = array();
@@ -637,20 +637,24 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
                 }
             }
         }
-        $ticked = ' > tbody > tr:has(> td input[type="checkbox"]:checked) > :is(td, th[scope="row"])';
+        // only the selection checkbox, a checkbox straight in a cell, marks its row
+        $ticked = ' > tbody > tr:has(> td > input[type="checkbox"]:checked) > :is(td, th[scope="row"])';
         $this->assertSame( 'var(--a4-accent-soft)', $found['.a4-table' . $ticked]['background-color'] ?? null );
         $this->assertSame( 'var(--a4-accent-soft)', $found['table.list:not(.a4-plain)' . $ticked]['background-color'] ?? null );
-        foreach ( array( '.a4-table > thead > tr > th', 'table.list:not(.a4-plain) > thead > tr > th',
-                         'table.list:not(.a4-plain) > tbody > tr:first-child:not(:has(> td)) > th' ) as $head )
-        {
-            $this->assertSame( 'sticky', $found[$head]['position'] ?? null, $head );
-            $this->assertSame( 'var(--header-height, 0px)', $found[$head]['top'] ?? null, $head );
-        }
         $this->assertSame( 'middle', $found['.a4-table td']['vertical-align'] ?? null );
-        $this->assertSame( 'middle', $found['table.list td']['vertical-align'] ?? null );
+        $this->assertSame( 'middle', $found['table.list:not(.a4-plain) td']['vertical-align'] ?? null );
         // the ticked tint comes after the hover rule, so it wins
-        $css = file_get_contents( "$dir/admin4.css" );
-        $this->assertGreaterThan( strpos( $css, 'tr:hover > :is(td, th[scope="row"])' ), strpos( $css, 'tr:has(> td input[type="checkbox"]:checked)' ) );
+        foreach ( array( 'components.css', 'admin4.css' ) as $file )
+        {
+            $css = file_get_contents( "$dir/$file" );
+            $this->assertGreaterThan( strpos( $css, 'tr:hover > :is(td, th[scope="row"])' ), strpos( $css, 'tr:has(> td > input[type="checkbox"]:checked)' ), $file );
+        }
+        // no sticky list header: the tables sit in scrolling wrappers (pagelayout.css div:has(> table)), where it never sticks
+        foreach ( $found as $selector => $props )
+        {
+            if ( preg_match( '/table|\.exp-dt/', $selector ) )
+                $this->assertNotSame( 'sticky', $props['position'] ?? null, $selector );
+        }
     }
 
     public function testTreeShowsThePathToTheCurrentNode()
