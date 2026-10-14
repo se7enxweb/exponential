@@ -142,6 +142,15 @@
             <directory suffix="Test.php">tests/tests/bin</directory>
         </testsuite>
 
+        <!--
+          design: the rules of the admin designs read from the files (no inline CSS in the templates, tokens only in
+          the module stylesheets, a dark value for every colour token). No database. doc/bc/6.0/admin4-styling.md
+          Run: php vendor/bin/phpunit - -testsuite design
+        -->
+        <testsuite name="design">
+            <directory suffix="Test.php">tests/tests/design</directory>
+        </testsuite>
+
     </testsuites>
 
     <groups>

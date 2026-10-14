@@ -32,7 +32,7 @@
                 <div id="maincolumn">
 
                     <div id="maincontent">
-                        <div id="maincontent-design" class="float-break" style="overflow: unset;">
+                        <div id="maincontent-design" class="float-break a4-overflow-visible">
                             <div id="fix">
 
                                 {* Main area START *}

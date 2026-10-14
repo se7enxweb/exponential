@@ -46,7 +46,7 @@
     {/foreach}
 </table>
 <div class="block pagination">
-    <div class="left" style="text-align:right;">
+    <div class="left a4-end">
         {if $browse.has_prev}
             <a href="ezajaxuploader::browse::{$browse_start.node_id}::{$class.id}::{$browse.offset|sub( $browse.limit )}">&laquo;&nbsp;{'prev'|i18n( 'design/admin/ajaxuploader' )}</a>
         {else}

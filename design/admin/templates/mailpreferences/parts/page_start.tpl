@@ -7,7 +7,7 @@
 {* DESIGN: Mainline *}<div class="header-mainline"></div>
 {* DESIGN: Header END *}</div></div>
 {* DESIGN: Content START *}<div class="box-content">
-<div class="mp mp-wide" style="padding: 8px 10px;">
+<div class="mp mp-wide a4-inset">
 {if first_set( $crumb, false() )}
     <p class="mp-crumb"><a href={$crumb.url|ezurl}>{$crumb.text|wash}</a></p>
 {/if}

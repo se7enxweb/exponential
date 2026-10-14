@@ -9,12 +9,11 @@
      signed_out   true() when the editor is not signed in
      login_form   true() when the refused form was a sign-in form
 
-   The colours live in error/parts/formtoken_style.tpl so a design (admin3)
-   can match its own theme without repeating the page.
+   admin4: drawn with the shared components (stylesheets/components.css), a warning notice
+   with the two links as buttons; no CSS of its own.
    Same wording as every other design (context design/standard/error/formtoken). *}
-{include uri='design:error/parts/formtoken_style.tpl'}
-<div class="message-warning formtoken-error formtoken-{$reason|wash}" role="alert">
-    <h2>{'This form has expired'|i18n( 'design/standard/error/formtoken' )}</h2>
+<div class="a4-page a4-notice is-warn formtoken-error formtoken-{$reason|wash}" role="alert">
+    <h2 class="a4-h2">{'This form has expired'|i18n( 'design/standard/error/formtoken' )}</h2>
     <p>{'The page with this form was open for a long time, or the form was sent from another page. To keep your information safe, nothing was saved.'|i18n( 'design/standard/error/formtoken' )}</p>
     <p>{'Reload the form and send it again.'|i18n( 'design/standard/error/formtoken' )}</p>
     {if $signed_out}
@@ -22,8 +21,8 @@
     {elseif and( is_set( $login_form ), $login_form )}
     <p>{'If you were signing in, please sign in again.'|i18n( 'design/standard/error/formtoken' )}</p>
     {/if}
-    <div class="formtoken-actions">
-        <a class="formtoken-primary" href="{$reload_url|wash}">{'Reload the form'|i18n( 'design/standard/error/formtoken' )}</a>
-        <a class="formtoken-secondary" href="{$home_url|wash}">{'Go to the dashboard'|i18n( 'design/standard/error/formtoken' )}</a>
+    <div class="a4-actions formtoken-actions">
+        <a class="a4-btn a4-btn-primary formtoken-primary" href="{$reload_url|wash}">{'Reload the form'|i18n( 'design/standard/error/formtoken' )}</a>
+        <a class="a4-btn formtoken-secondary" href="{$home_url|wash}">{'Go to the dashboard'|i18n( 'design/standard/error/formtoken' )}</a>
     </div>
 </div>

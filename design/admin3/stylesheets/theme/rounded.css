@@ -586,3 +586,10 @@ table.list th, table.special th
     font-size: 1.4em;
     padding: 0.5em;
 }
+
+/* The form token refusal (error/parts/formtoken.tpl) in the colours of the admin3 buttons; the layout is in
+   design/admin's content.css. Was an inline <style> in error/parts/formtoken_style.tpl. */
+div.formtoken-error .formtoken-actions a{padding:.35em .9em;border:1px solid #cfd1d3;border-radius:3px;color:#44484d;background:#fff;transition:all 300ms ease}
+div.formtoken-error .formtoken-actions a:hover,div.formtoken-error .formtoken-actions a:focus{background-color:rgba(0,0,0,.1);color:#000;text-decoration:none}
+div.formtoken-error .formtoken-actions a.formtoken-primary{background-color:#567975;border-color:#567975;color:#f5f3dd;font-weight:normal}
+div.formtoken-error .formtoken-actions a.formtoken-primary:hover,div.formtoken-error .formtoken-actions a.formtoken-primary:focus{background-color:#425c59;color:#ffe9bd}

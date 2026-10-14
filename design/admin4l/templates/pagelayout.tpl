@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html lang="{$site.http_equiv.Content-language|wash}">
+{* The left column's width (the admin_left_menu_size preference): a preset name, drawn by the stylesheets, or a
+   width dragged by hand, set as --left-sidebar-width by the pre-paint script in the head. No inline CSS. *}
+{def $page_left_size = ezpreference( 'admin_left_menu_size' )}
+<html lang="{$site.http_equiv.Content-language|wash}"{if $page_left_size|ne( '' )}{if or( eq( $page_left_size, 'small' ), eq( $page_left_size, 'medium' ), eq( $page_left_size, 'large' ) )} data-a4-left-size="{$page_left_size}"{else} data-a4-left-width="{$page_left_size|wash}"{/if}{/if}>
+{undef $page_left_size}
 
 <head>
     <meta charset="UTF-8">
@@ -64,31 +68,6 @@
     {include uri='design:page_head_style.tpl'}
     {include uri='design:page_head_script.tpl'}
 
-    {* Set CSS variables for left sidebar width and font size based on user preference *}
-    {def $left_sidebar_width = '16rem'}
-    {def $left_sidebar_font_size = '0.8225rem'}
-    {if eq( $admin_left_size, 'medium' )}
-        {set $left_sidebar_width = '22rem'}
-        {set $left_sidebar_font_size = '1rem'}
-    {else}
-        {if eq( $admin_left_size, 'large' )}
-            {set $left_sidebar_width = '30rem'}
-            {set $left_sidebar_font_size = '1.305rem'}
-        {else}
-            {* Custom pixel values from drag-resize are passed through as-is *}
-            {if and( $admin_left_size|ne( '' ), $admin_left_size|ne( 'small' ), $admin_left_size|ne( 'medium' ), $admin_left_size|ne( 'large' ) )}
-                {set $left_sidebar_width = $admin_left_size|wash}
-            {/if}
-        {/if}
-    {/if}
-    <style>
-        :root {ldelim} 
-        --left-sidebar-width: {$left_sidebar_width};
-        --left-sidebar-font-size: {$left_sidebar_font_size};
-        {rdelim}
-    </style>
-    {undef $left_sidebar_width}
-    {undef $left_sidebar_font_size}
 
 </head>
 
@@ -219,8 +198,8 @@
 
     {* modal window and AJAX stuff *}
     {if $admin_layout}{set-block variable=$zone_html}{include uri='design:explayouts/admin_zone.tpl' layout=$admin_layout zone_identifier='footer' only=array( 'admin_overlay' )}{/set-block}{else}{set $zone_html = ''}{/if}
-    {if $zone_html|trim|ne( '' )}{$zone_html}{else}    <div id="overlay-mask" style="display:none;"></div>
-    <img src={'2/loader.gif'|ezimage()} id="ajaxuploader-loader" style="display:none;"
+    {if $zone_html|trim|ne( '' )}{$zone_html}{else}    <div id="overlay-mask"></div>
+    <img src={'2/loader.gif'|ezimage()} id="ajaxuploader-loader"
         alt="{'Loading...'|i18n( 'design/admin/pagelayout' )}" />{/if}
 
 </body>

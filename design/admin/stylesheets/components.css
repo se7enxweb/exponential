@@ -63,6 +63,16 @@
   --a4-info-bg: #e8effd;
   --a4-info-line: #bcd0f5;
 
+  /* a categorical chart palette, in this order (request H4: the audit charts, the shop dashboard) */
+  --a4-chart-1: #2a78d6;
+  --a4-chart-2: #eb6834;
+  --a4-chart-3: #1baf7a;
+  --a4-chart-4: #eda100;
+  --a4-chart-5: #e87ba4;
+  --a4-chart-6: #008300;
+  --a4-chart-7: #4a3aa7;
+  --a4-chart-8: #e34948;
+
   /* depth */
   --a4-shadow-s: 0 1px 2px rgba(16, 24, 40, 0.04);
   --a4-shadow-m: 0 12px 32px -6px rgba(16, 24, 40, 0.12);
@@ -125,6 +135,15 @@ html[data-a4-theme="dark"] {
   --a4-info: #93b4f5;
   --a4-info-bg: rgba(59, 130, 246, 0.15);
   --a4-info-line: rgba(147, 180, 245, 0.38);
+
+  --a4-chart-1: #5b9cf0;
+  --a4-chart-2: #f5875a;
+  --a4-chart-3: #34d399;
+  --a4-chart-4: #fbbf24;
+  --a4-chart-5: #f19bbf;
+  --a4-chart-6: #4ade80;
+  --a4-chart-7: #8b7cf0;
+  --a4-chart-8: #f87171;
 
   --a4-shadow-s: 0 1px 2px rgba(0, 0, 0, 0.3);
   --a4-shadow-m: 0 12px 32px -6px rgba(0, 0, 0, 0.45);
@@ -746,24 +765,32 @@ fieldset.a4-field > legend + * { clear: both; }
 
 .a4-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
 .a4-tabs a,
+.a4-tabs button,
 .a4-tabs span.current,
 .a4-tabs .is-current {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   min-height: 32px;
+  margin: 0;
   padding: var(--a4-space-1) var(--a4-space-3);
   border: 1px solid var(--a4-line-strong);
   border-radius: var(--a4-radius-s);
   background-color: var(--a4-card);
   color: var(--a4-ink);
+  font-family: inherit;
   font-size: var(--a4-text-s);
   text-decoration: none;
+  cursor: pointer;
 }
-.a4-tabs a:hover { border-color: var(--a4-accent); color: var(--a4-accent-text); }
+.a4-tabs a:hover,
+.a4-tabs button:hover { border-color: var(--a4-accent); color: var(--a4-accent-text); }
 .a4-tabs span.current,
+.a4-tabs a.current,
 .a4-tabs .is-current,
-.a4-tabs a.is-current:hover {
+.a4-tabs a.current:hover,
+.a4-tabs a.is-current:hover,
+.a4-tabs button.is-current:hover {
   border-color: var(--a4-accent-strong);
   background-color: var(--a4-accent-strong);
   color: var(--a4-on-accent);
@@ -796,7 +823,9 @@ fieldset.a4-field > legend + * { clear: both; }
 .a4-notice.is-bad { border-color: var(--a4-bad-line); border-left-color: var(--a4-bad); background-color: var(--a4-bad-bg); color: var(--a4-bad); }
 .a4-notice.is-warn { border-color: var(--a4-warn-line); border-left-color: var(--a4-warn); background-color: var(--a4-warn-bg); color: var(--a4-warn); }
 .a4-notice.is-info { border-color: var(--a4-info-line); border-left-color: var(--a4-info); background-color: var(--a4-info-bg); color: var(--a4-info); }
-.a4-notice strong, .a4-notice .a4-h2, .a4-notice .a4-h3, .a4-notice a { color: inherit; }
+.a4-notice strong, .a4-notice .a4-h2, .a4-notice .a4-h3, .a4-notice a:not(.a4-btn) { color: inherit; }
+.a4-notice > .a4-h2, .a4-notice > .a4-h3 { margin-bottom: var(--a4-space-2); }
+.a4-notice > .a4-actions { margin-top: var(--a4-space-3); }
 .a4-notice p + p, .a4-notice p + ul, .a4-notice ul + p { margin-top: 6px; }
 .a4-notice ul { margin: 6px 0 0; padding-left: 20px; }
 .a4-notice li + li { margin-top: var(--a4-space-1); }
@@ -1010,3 +1039,43 @@ fieldset.a4-field > legend + * { clear: both; }
 }
 
 /* ---- Requests from the module migrations are added below this line (one block per request) ------------------ */
+
+/* request H1: the warn and info states of a figure, and .a4-card.is-warn (the ok|warn|bad|info state maps) */
+.a4-figure.is-warn strong { color: var(--a4-warn); }
+.a4-figure.is-info strong { color: var(--a4-info); }
+.a4-card.is-warn { box-shadow: inset 4px 0 0 var(--a4-warn), var(--a4-shadow-s); }
+
+/* request H2, H3, H4: the 32px hit area of the checkbox that selects a card or row (at the start of .a4-card-title),
+   with or without a text beside it */
+.a4-pick {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--a4-space-2);
+  min-width: 32px;
+  min-height: 32px;
+  margin: calc(-1 * var(--a4-space-1)) 0 calc(-1 * var(--a4-space-1)) -6px;
+  border-radius: var(--a4-radius-s);
+  color: var(--a4-ink);
+  font-size: var(--a4-text-s);
+  cursor: pointer;
+}
+.a4-pick:hover { background-color: var(--a4-soft); }
+.a4-pick input { width: 18px; height: 18px; margin: 0; accent-color: var(--a4-accent-strong); cursor: pointer; }
+
+/* ---- Small utilities that replaced style="" attributes in the shared admin templates ---------------------- */
+.a4-middle,
+.a4-flag { vertical-align: middle; }
+.a4-end { text-align: right; }
+.a4-inset { padding: var(--a4-space-2) var(--a4-space-3); }
+.a4-overflow-visible { overflow: visible; }
+a.a4-current-user-name { color: var(--a4-ink); font-weight: 400; text-decoration: none; }
+
+/* request H1: a folded group holding problems or notes; a summary with a heading, badges and a note wraps */
+.a4-fold.is-bad { box-shadow: inset 4px 0 0 var(--a4-bad); }
+.a4-fold.is-warn { box-shadow: inset 4px 0 0 var(--a4-warn); }
+.a4-fold > summary { flex-wrap: wrap; }
+.a4-fold > summary .a4-h2 { font-size: var(--a4-text-m); }
+
+/* request H1: the one main action of a page state */
+.a4-btn-large { min-height: 44px; padding: var(--a4-space-3) var(--a4-space-5); font-size: var(--a4-text-l); }

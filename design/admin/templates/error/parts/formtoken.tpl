@@ -9,10 +9,9 @@
      signed_out   true() when the editor is not signed in
      login_form   true() when the refused form was a sign-in form
 
-   The colours live in error/parts/formtoken_style.tpl so a design (admin3)
-   can match its own theme without repeating the page.
+   The look is in the stylesheets (content.css; admin3 adds its button colours in
+   theme/rounded.css): no CSS in the template.
    Same wording as every other design (context design/standard/error/formtoken). *}
-{include uri='design:error/parts/formtoken_style.tpl'}
 <div class="message-warning formtoken-error formtoken-{$reason|wash}" role="alert">
     <h2>{'This form has expired'|i18n( 'design/standard/error/formtoken' )}</h2>
     <p>{'The page with this form was open for a long time, or the form was sent from another page. To keep your information safe, nothing was saved.'|i18n( 'design/standard/error/formtoken' )}</p>

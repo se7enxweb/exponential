@@ -1,10 +1,15 @@
 {* admin4: admin3's stylesheets, then admin4.css -- the admin4 look -- and the shared components and module stylesheets (design.ini AdminComponentCSSFileList), before the extensions' own stylesheets, so an extension keeps the last word on its own markup. *}
 {* Light or dark mode, before anything is drawn: html[data-a4-theme] from this browser's choice (localStorage
    "exp-admin4-theme"), light by default; then the header's #a4-theme-toggle switches and stores it. Storage that
-   is blocked (private windows, policies) only means the choice is not remembered. *}
+   is blocked (private windows, policies) only means the choice is not remembered.
+   This script is the one piece of the page's look that cannot wait for the stylesheets (a page drawn light and then
+   switched would flash). It also sets the left column's hand-dragged width (data-a4-left-width on <html>, from the
+   admin_left_menu_size preference) as --left-sidebar-width; the preset sizes are in pagelayout.css. No <style>. *}
 {literal}<script>
 (function () {
     var KEY = 'exp-admin4-theme', root = document.documentElement;
+    var w = root.getAttribute('data-a4-left-width');
+    if (w && /^\d{2,4}(\.\d+)?px$/.test(w)) root.style.setProperty('--left-sidebar-width', w);
     function stored() { try { return window.localStorage.getItem(KEY); } catch (e) { return null; } }
     function apply(theme) {
         root.setAttribute('data-a4-theme', theme === 'dark' ? 'dark' : 'light');

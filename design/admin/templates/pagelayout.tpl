@@ -24,6 +24,9 @@
 {set $collapse_right_menu = false()}
 {/if}
 
+{* The one inline CSS kept in this design, on purpose (doc/bc/6.0/admin4-styling.md, "Exceptions"): the column
+   widths of this editor's preferences, in em from menu.ini [LeftMenuSettings] MenuWidth or a width dragged by hand,
+   which a stylesheet cannot know, needed before the page is drawn. Nothing else may be added here. *}
 {if and( $ui_context_edit|not, or( $collapse_right_menu, $admin_left_size, $collapse_left_menu, $hide_left_menu ))}
 <style type="text/css">
 {if $collapse_right_menu}
@@ -254,8 +257,8 @@ document.getElementById('right-panels-separator').style.right = (parseInt(docume
 <!--DEBUG_REPORT-->
 
 {* modal window and AJAX stuff *}
-<div id="overlay-mask" style="display:none;"></div>
-<img src={'2/loader.gif'|ezimage()} id="ajaxuploader-loader" style="display:none;" alt="{'Loading...'|i18n( 'design/admin/pagelayout' )}" />
+<div id="overlay-mask"></div>
+<img src={'2/loader.gif'|ezimage()} id="ajaxuploader-loader" alt="{'Loading...'|i18n( 'design/admin/pagelayout' )}" />
 
 
 </body>

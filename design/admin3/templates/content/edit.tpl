@@ -93,8 +93,8 @@
                                         {let from_language_object=$object.languages[$from_language]}
 
                                         {'Translating content from %from_lang to %to_lang'|i18n( 'design/admin/content/edit',, hash(
-                                                        '%from_lang', concat( $from_language_object.name, '&nbsp;<img src="', $from_language_object.locale|flag_icon, '" width="18" height="12" style="vertical-align: middle;" alt="', $from_language_object.locale, '" />' ),
-                                                        '%to_lang', concat( $translation_list[$language_index].locale.intl_language_name, '&nbsp;<img src="', $translation_list[$language_index].language_code|flag_icon, '" width="18" height="12" style="vertical-align: middle;" alt="', $translation_list[$language_index].language_code, '" />' ) ) )}
+                                                        '%from_lang', concat( $from_language_object.name, '&nbsp;<img src="', $from_language_object.locale|flag_icon, '" width="18" height="12" class="a4-flag" alt="', $from_language_object.locale, '" />' ),
+                                                        '%to_lang', concat( $translation_list[$language_index].locale.intl_language_name, '&nbsp;<img src="', $translation_list[$language_index].language_code|flag_icon, '" width="18" height="12" class="a4-flag" alt="', $translation_list[$language_index].language_code, '" />' ) ) )}
 
                                         {/let}
 
@@ -102,7 +102,7 @@
 
                                         {$translation_list[$language_index].locale.intl_language_name}&nbsp;<img
                                             src="{$translation_list[$language_index].language_code|flag_icon}" width="18"
-                                            height="12" style="vertical-align: middle;"
+                                            height="12" class="a4-flag"
                                             alt="{$translation_list[$language_index].language_code}" />
 
                                     {/if}

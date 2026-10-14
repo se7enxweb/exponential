@@ -1261,6 +1261,21 @@ input:-moz-placeholder {
     overflow: auto;
 }
 
+/* The left column's size (the admin_left_menu_size preference), named on <html> by the pagelayout; a width dragged
+   by hand is set as --left-sidebar-width on <html> by a script in the head (no inline CSS in the templates). */
+:root {
+    --left-sidebar-width: 16rem;
+    --left-sidebar-font-size: 0.8225rem;
+}
+html[data-a4-left-size="medium"] {
+    --left-sidebar-width: 22rem;
+    --left-sidebar-font-size: 1rem;
+}
+html[data-a4-left-size="large"] {
+    --left-sidebar-width: 30rem;
+    --left-sidebar-font-size: 1.305rem;
+}
+
 .sidebar.left {
     left: 0;
     width: var(--left-sidebar-width, 15rem);
