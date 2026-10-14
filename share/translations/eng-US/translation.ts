@@ -2900,6 +2900,10 @@
         <source>Choose a date</source>
         <translation>Choose a date</translation>
     </message>
+    <message>
+        <source>Choose a date for %name</source>
+        <translation>Choose a date for %name</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/datatype/ezuser</name>

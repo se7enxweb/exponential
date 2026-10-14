@@ -100,7 +100,7 @@ jQuery(function( $ )
             });
         },
 
-        // arrow keys, Home and End move between the tabs and open the one they reach
+        // Left and Right (a horizontal tab list: Up and Down stay with the page), Home and End move between the tabs and open the one they reach
         keydown : function( e )
         {
             var ul = $( this ).closest( 'ul.tabs' );
@@ -108,8 +108,8 @@ jQuery(function( $ )
             var tabs = ul.children( 'li' ).children( 'a' ).toArray(), i = tabs.indexOf( this ), next = null;
             switch ( e.key )
             {
-                case 'ArrowRight': case 'ArrowDown': next = tabs[( i + 1 ) % tabs.length]; break;
-                case 'ArrowLeft': case 'ArrowUp': next = tabs[( i - 1 + tabs.length ) % tabs.length]; break;
+                case 'ArrowRight': next = tabs[( i + 1 ) % tabs.length]; break;
+                case 'ArrowLeft': next = tabs[( i - 1 + tabs.length ) % tabs.length]; break;
                 case 'Home': next = tabs[0]; break;
                 case 'End': next = tabs[tabs.length - 1]; break;
                 default: return;

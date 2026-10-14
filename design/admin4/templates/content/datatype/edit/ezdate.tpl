@@ -20,7 +20,7 @@
 </div>
 <div class="element">
 {* A button, so the keyboard reaches the calendar (exp::datepicker gives the focus back to it on Escape). *}
-<button type="button" class="datepicker-icon a4-content-datepicker-icon" id="{$attribute_base}_date_cal_{$attribute.id}" aria-haspopup="dialog" title="{'Choose a date'|i18n( 'design/admin/content/datatype' )|wash}" aria-label="{'Choose a date'|i18n( 'design/admin/content/datatype' )|wash}" onclick="showDatePicker( '{$attribute_base}', '{$attribute.id}', 'date' );"><img src={"calendar_icon.png"|ezimage} width="24" height="28" alt="" /></button>
+<button type="button" class="datepicker-icon a4-content-datepicker-icon" id="{$attribute_base}_date_cal_{$attribute.id}" aria-haspopup="dialog" title="{'Choose a date'|i18n( 'design/admin/content/datatype' )|wash}" aria-label="{'Choose a date for %name'|i18n( 'design/admin/content/datatype',, hash( '%name', $attribute.contentclass_attribute.name ) )|wash}" onclick="showDatePicker( '{$attribute_base}', '{$attribute.id}', 'date' );"><img src={"calendar_icon.png"|ezimage} width="24" height="28" alt="" /></button>
 <div id="{$attribute_base}_date_cal_container_{$attribute.id}" class="a4-content-datepicker"></div>
 &nbsp;
 &nbsp;

@@ -3275,6 +3275,10 @@
         <source>Choose a date</source>
         <translation>Datum auswählen</translation>
     </message>
+    <message>
+        <source>Choose a date for %name</source>
+        <translation>Datum für %name auswählen</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/datatype/ezuser</name>

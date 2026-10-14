@@ -183,7 +183,7 @@ and its overrides.
 
 - **Node tabs** (View, Details, Translations ... and the tabs extensions add) follow the WAI-ARIA tabs pattern:
   `node_tabs.js` gives the list `role="tablist"`, each link `role="tab"` with `aria-selected` and `aria-controls`,
-  each panel `role="tabpanel"`. Only the selected tab is in the Tab order; the arrow keys, Home and End move to
+  each panel `role="tabpanel"`. Only the selected tab is in the Tab order; Arrow Left and Right (the list is horizontal, so Up and Down stay with the page), Home and End move to
   another tab and open it, as a click does; with no tab selected the first one is the Tab stop. A click on an
   element inside a tab's link opens the tab too. While the tabs are switched off (every panel shown) the roles are
   taken away.
@@ -206,7 +206,7 @@ and its overrides.
   the mouse takes the Tab stop when it sat on one of its sub items. The tree's script and settings template are the
   same file in `design/admin` and `design/admin4`; the tree of `show_content_structure.tpl` (no dynamic menu) is
   unchanged.
-- **Date fields:** the calendar opens from a button (`aria-haspopup="dialog"`); `exp::datepicker` gives the focus back
+- **Date fields:** the calendar opens from a button (`aria-haspopup="dialog"`) named after its field ("Choose a date for Publish date"); `exp::datepicker` gives the focus back
   to it when the calendar closes. The classic designs keep their calendar image.
 
 `tests/tests/design/AdminKeyboardTest.php` holds the markup and the hooks the scripts rely on, that the tree's
