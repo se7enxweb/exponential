@@ -50,6 +50,9 @@
     "settings/design.ini": [
       "tests/tests/design/AdminStylingRulesTest.php"
     ],
+    "design/admin4/javascript/ezadmin_menubar.js": [
+      "tests/tests/design/AdminStylingRulesTest.php"
+    ],
     "kernel/private/classes/views/error/view.php": [
       "tests/tests/kernel/error/ErrorHeaderListTest.php"
     ],
