@@ -113,7 +113,8 @@ class AdminScriptsTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( 'var message = data && ( data.error_text || ( data.content && data.content.error_text ) );', $relations );
 
         $uploader = self::code( 'design/admin4/javascript/expajaxuploader.js' );
-        $this->assertStringContainsString( 'try { html = decodeURIComponent(String(json.html)); } catch (e) {', $uploader );
+        $this->assertStringContainsString( "if (typeof json.html !== 'string') {", $uploader );
+        $this->assertStringContainsString( 'try { html = decodeURIComponent(json.html); } catch (e) {', $uploader );
         $this->assertSame( 1, substr_count( $uploader, 'decodeURIComponent(' ) );
         $this->assertStringContainsString( "\$hiddenPlace.find('input[data-exp-uploader-field]').remove();", $uploader );
 
