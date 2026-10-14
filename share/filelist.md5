@@ -271,7 +271,7 @@ bb57d7d50de510183570d8844efbd49f  design/admin/images/up-16x16-grey.png
 bc1f590f32f5d71f9bfdf7781f2135fc  design/admin/images/url_translator.png
 ac084a07607e6d6c5a845da15423854f  design/admin/images/view-fullscreen.png
 9f30c46fcd1a3ca27329392a80624514  design/admin/javascript/contentstructuremenu_dynamic.js
-a057be9e97626962bf43dfade72206b7  design/admin/javascript/expajaxuploader.js
+2f943a032eaebbf3592d4d2de8e7df87  design/admin/javascript/expajaxuploader.js
 59795cfe15e8bc99974d7d9099794478  design/admin/javascript/ezajaxrelations_jquery.js
 2342a8f4be9ea928ca5601b4bd3b2cc1  design/admin/javascript/ezajaxsubitems_expdatatable.js
 2c35ad74f3ae96723bd750231c27cbe4  design/admin/javascript/leftmenu_widthcontrol.js
@@ -307,7 +307,7 @@ ff4131909f10bebbceb2afa3d873ae3c  design/admin/override/templates/template_look_
 e0c996a801b1373df9824852298b20d9  design/admin/override/templates/tiny_image.tpl
 a2c561e93ef63c93201e81acd4f32741  design/admin/override/templates/window_controls_user.tpl
 f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin/override/templates/windows_user.tpl
-b580ad9299d33392c4d8441301121455  design/admin/stylesheets/components.css
+a1d1e9a7d0d3c296d0c2c297cd77b752  design/admin/stylesheets/components.css
 ce90ff045aa9ad5f6b74ebb4adb49d1f  design/admin/stylesheets/content.css
 9176b99cf9d39d3d3f7c8c50d1554eb5  design/admin/stylesheets/core.css
 3467a1c4602619c56bfc506613bebb91  design/admin/stylesheets/ezinfo.css
@@ -846,7 +846,7 @@ bc1f590f32f5d71f9bfdf7781f2135fc  design/admin4/images/url_translator.png
 ac084a07607e6d6c5a845da15423854f  design/admin4/images/view-fullscreen.png
 d7d11d12cef327ec0d54a0f346cdfc5b  design/admin4/javascript/admin4.js
 9f30c46fcd1a3ca27329392a80624514  design/admin4/javascript/contentstructuremenu_dynamic.js
-a057be9e97626962bf43dfade72206b7  design/admin4/javascript/expajaxuploader.js
+2f943a032eaebbf3592d4d2de8e7df87  design/admin4/javascript/expajaxuploader.js
 566b96e3b793f21501903283771e9b64  design/admin4/javascript/ezadmin_menubar.js
 59795cfe15e8bc99974d7d9099794478  design/admin4/javascript/ezajaxrelations_jquery.js
 2342a8f4be9ea928ca5601b4bd3b2cc1  design/admin4/javascript/ezajaxsubitems_expdatatable.js
@@ -882,7 +882,7 @@ f91a366a6abfa6b8a706b154b7aec12c  design/admin4/override/templates/template_look
 6971adb19c3c39b21f245c72b7f73305  design/admin4/override/templates/thumbnail/image_browse.tpl
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
 cdc3712a62e5f7aff58261378527819c  design/admin4/stylesheets/admin4.css
-b580ad9299d33392c4d8441301121455  design/admin4/stylesheets/components.css
+a1d1e9a7d0d3c296d0c2c297cd77b752  design/admin4/stylesheets/components.css
 e7b0acbd1646895a73189e0df9299144  design/admin4/stylesheets/content.css
 266bbaade2491b8b0ad3043daacb5434  design/admin4/stylesheets/core.css
 024901334b90c0e08bf8b8fe9197604e  design/admin4/stylesheets/ezinfo.css
@@ -2966,7 +2966,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-68f32ae3e1b31ca8c046cf2e5cebfb6d  doc/changelogs/6.0/6.0.15.md
+f87dfa3b2c8c8483cfb2d14b37b297b5  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
