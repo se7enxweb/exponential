@@ -96,11 +96,14 @@
 <div class="a4-setup-plan">
     <div>
         <section class="a4-card" aria-labelledby="maintenance-told-title">
-            <div class="a4-section-head"><h2 class="a4-h2" id="maintenance-told-title">{'What visitors are told'|i18n( 'design/admin/setup/maintenance' )}</h2></div>
+            <div class="a4-card-head"><h2 class="a4-h2" id="maintenance-told-title">{'What visitors are told'|i18n( 'design/admin/setup/maintenance' )}</h2></div>
+            <div class="a4-card-body">
             {if $mi.custom_message}<p>{$mi.message|wash}</p>{else}<p class="a4-muted">{'No message of its own: the page says its default text.'|i18n( 'design/admin/setup/maintenance' )}</p>{/if}
+            </div>
         </section>
         <section class="a4-card" aria-labelledby="maintenance-who-title">
-            <div class="a4-section-head"><h2 class="a4-h2" id="maintenance-who-title">{'Who still gets in'|i18n( 'design/admin/setup/maintenance' )}</h2></div>
+            <div class="a4-card-head"><h2 class="a4-h2" id="maintenance-who-title">{'Who still gets in'|i18n( 'design/admin/setup/maintenance' )}</h2></div>
+            <div class="a4-card-body">
             <ul class="a4-setup-access">
                 {foreach $mi.allow_paths as $mt_path}
                 <li><strong>{if or( eq( $mt_path, '/admin' ), eq( $mt_path, 'admin' ), eq( $mt_path, '/admin/' ) )}{'The administration'|i18n( 'design/admin/setup/maintenance' )}{else}{'Pages below'|i18n( 'design/admin/setup/maintenance' )}{/if}</strong> <code>{$mt_path|wash}</code></li>
@@ -112,13 +115,15 @@
                 <li><span class="a4-muted">{'Nobody: every page request gets the maintenance page.'|i18n( 'design/admin/setup/maintenance' )}</span></li>
                 {/if}
             </ul>
+            </div>
         </section>
     </div>
 {else}
 {* Online: the next window, step by step *}
 <div class="a4-setup-plan">
     <section class="a4-card" aria-labelledby="maintenance-plan-title">
-        <div class="a4-section-head"><h2 class="a4-h2" id="maintenance-plan-title">{'Plan the maintenance window'|i18n( 'design/admin/setup/maintenance' )}</h2></div>
+        <div class="a4-card-head"><h2 class="a4-h2" id="maintenance-plan-title">{'Plan the maintenance window'|i18n( 'design/admin/setup/maintenance' )}</h2></div>
+        <div class="a4-card-body">
         <ol class="a4-setup-formsteps">
             <li>
                 <span class="a4-setup-step" aria-hidden="true">1</span>
@@ -168,6 +173,7 @@
                 <button type="submit" class="a4-btn a4-btn-danger a4-btn-large" name="SwitchOnButton" value="1"><span class="a4-icon a4-bi-power is-medium" aria-hidden="true"></span>{'Take the site offline'|i18n( 'design/admin/setup/maintenance' )}</button>
                 <span class="a4-meta">{'Also empties the caches that answer ahead of the site.'|i18n( 'design/admin/setup/maintenance' )}</span>
             </div>
+        </div>
         </div>
     </section>
 {/if}

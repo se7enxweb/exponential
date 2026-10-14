@@ -98,11 +98,11 @@
 
 {* Create *}
 <section class="a4-card" aria-labelledby="alias-new-title">
-<div class="a4-section-head">
+<div class="a4-card-head">
     <h2 class="a4-h2" id="alias-new-title">{'Create new alias'|i18n( 'design/admin/content/urlalias' )}</h2>
     <p>{'The alias is the address visitors will use, the destination is what they get there.'|i18n( 'design/admin/content/urlalias_global' )}</p>
 </div>
-<div class="a4-grid is-wide">
+<div class="a4-grid is-wide a4-card-body">
 <div class="a4-form">
     <div class="a4-field">
         <label for="ezcontent_urlalias_global_source">{'New URL alias'|i18n( 'design/admin/content/urlalias_global' )}</label>

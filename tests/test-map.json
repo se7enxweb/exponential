@@ -57,7 +57,8 @@
       "tests/tests/design/AdminNoticesTest.php",
       "tests/tests/design/AdminThemeSwitchTest.php",
       "tests/tests/design/AdminDensityTest.php",
-      "tests/tests/design/AdminDashboardTest.php"
+      "tests/tests/design/AdminDashboardTest.php",
+      "tests/tests/design/AdminCardsTest.php"
     ],
     "design/admin*/stylesheets/*": [
       "tests/tests/design/AdminStylingRulesTest.php",
@@ -70,7 +71,8 @@
       "tests/tests/design/AdminPageHeaderTest.php",
       "tests/tests/design/AdminNoticesTest.php",
       "tests/tests/design/AdminThemeSwitchTest.php",
-      "tests/tests/design/AdminDensityTest.php"
+      "tests/tests/design/AdminDensityTest.php",
+      "tests/tests/design/AdminCardsTest.php"
     ],
     "design/admin4/javascript/ezajaxsubitems_expdatatable.js": [
       "tests/tests/design/AdminLanguageBadgeTest.php"

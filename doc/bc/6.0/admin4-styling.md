@@ -164,6 +164,7 @@ toasts, and on a `var(--a4-z-…)` that `components.css` does not define (a typo
 | Page header | `.a4-pagehead` > `.a4-pagehead-main` (`.a4-pagehead-pre`, `.a4-pagehead-title`, `.a4-pagehead-sub`) + `.a4-pagehead-actions` (right, under the title on narrow windows); the one title style of every page (`h1.context-title`, the node view and the dashboard take the same size) |
 | Breadcrumb | `ol.a4-crumbs` (`role="list"`) > `li` (`.is-middle`, `.is-fold`: the middle steps fold into "..." up to 600px, visually only, a focused step shows again), separators from the stylesheet, the current step `aria-current="page"`, inside the `#path` navigation landmark |
 | Card | `.a4-card` (`.is-soft`, `.is-selected`, `.is-attention`, `.is-warn`, `.is-bad`, `.is-ok`, `.is-info`), `.a4-cards`, `.a4-card-head`, `.a4-card-title`, `.a4-card-body`, `.a4-pick` (the selection checkbox) |
+| Card | `.a4-card` (`.is-soft`, `.is-selected`, `.is-attention`, `.is-warn`, `.is-bad`, `.is-ok`, `.is-info`, `.is-flush`, `.is-link`, `.is-busy`), `.a4-cards`, `.a4-card-head` (title, a `<p>` as subtitle, `.a4-card-actions` at its end), `.a4-card-title`, `.a4-card-body`, `.a4-card-foot` (the card's actions on a strip at its bottom edge), `.a4-pick` (the selection checkbox) |
 | Figures, facts | `.a4-figures` > `.a4-figure` (`.is-attention`, `.is-bad`, `.is-ok`, `.is-warn`, `.is-info`, `.is-current`); `dl.a4-facts` (`.is-rows`) |
 | Tag, badge, status | `.a4-tag`, `.a4-badge` (`.is-ok`, `.is-warn`, `.is-bad`, `.is-info`, `.is-accent`, `.is-mono`), `.a4-badges`; `.a4-status` (`.is-ok`, `.is-running`, `.is-warn`, `.is-bad`) with `.a4-dot` |
 | Buttons | `.a4-btn`, `.a4-btn-primary`, `.a4-btn-danger`, `.a4-btn-outline-danger`, `.a4-btn-ghost`, `.a4-btn-small`, `.a4-btn-large`, `.a4-btn-icon`; `.a4-actions` (a row of them) |
@@ -183,6 +184,18 @@ toasts, and on a `var(--a4-z-…)` that `components.css` does not define (a typo
 | Language | `.a4-lang` (a content language's short code, from `design:parts/language_badge.tpl`; `.is-current` for the one shown), `.a4-langs` (several in a row) |
 | Icons | `.a4-icon` with one `.a4-bi-<name>` (a Bootstrap icon of `share/icons/bootstrap-icons/svg/`, in `currentColor`; `.is-small`, `.is-medium`, `.is-large`); `.a4-icon-btn` (a link or button that is only an icon) |
 | Other | `.a4-grip` (drag handle), `.is-dragging` |
+
+A card opens with `.a4-card-head` (not `.a4-section-head`), puts the rest in `.a4-card-body` and its buttons in
+`.a4-card-foot`. The foot and the flush head read the card's padding from `--a4-card-pad-x`/`--a4-card-pad-y` when a
+density setting defines them, else from the spacing scale (`--a4-space-4`/`--a4-space-3`). `.is-flush` lets a table
+run to the card's edges (head and foot keep their padding, the table's corner cells take the card's radius).
+`.is-link` makes the whole card follow the link in its `.a4-card-title`: links, buttons and fields in the body, foot
+and head actions stay clickable, but plain text under the link layer cannot be selected, so a link card holds no text
+people copy; where the browser has `:has()` the focus ring goes around the card, elsewhere around the title link.
+`.is-busy` works together with `aria-busy="true"` on the same element and veils the card with a spinner while its
+content loads or is saved; the veil stops only the pointer, so the script that sets it also sets `inert` on the card
+(or disables its controls) and removes both afterwards. `tests/tests/design/AdminCardsTest.php` checks the parts and
+that no admin4 card opens with a section head.
 
 States are `.is-*` classes on the component. Each component is one class plus at most an element or a state, so a
 module rule with one more class always wins.
