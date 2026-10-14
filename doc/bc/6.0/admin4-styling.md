@@ -222,7 +222,10 @@ Example, a list page:
 ## Dark mode
 
 admin4's mode is `html[data-a4-theme="light"|"dark"]`, set before the page is drawn by the script at the top of
-`page_head_style.tpl` from the browser's choice (local storage `exp-admin4-theme`); the header's toggle switches it.
+`page_head_style.tpl` from the user's choice (`window.a4Pref`: the eZPreference `admin_color_mode`, the browser on an
+anonymous page); the header's toggle switches it. Every remembered choice of the frame (mode, density, side
+columns, menu groups) goes through `window.a4Pref`; never write `localStorage` from a feature script
+(`AdminPreferencesTest`).
 Since 2026-10-14 the frame's columns are dark in dark mode too (`--a4-card-bg` follows `--a4-surface`), so anything
 that paints its own background must take it from a token. A component or module rule never needs a
 `html[data-a4-theme="dark"]` rule of its own: the tokens switch.

@@ -46,20 +46,24 @@ extension). The editor siteaccess falls back to `admin4` first, then `admin3`, `
 - **Light and dark mode.** Light (default): pale page, frosted header, cards edged by light and shadow. Dark: slate
   page, white cards. The header switch steps light -> dark -> system; "system" follows the operating system's
   setting (`prefers-color-scheme`), also when it changes while the page is open. The switch's icon (sun, moon, half
-  circle) and its accessible name say the mode in use ("Colour mode: light/dark/system"); its title names the next
-  step ("Switch to dark mode"), and a status region announces a press. The choice is the signed-in
-  user's eZPreference `admin_color_mode` (light, dark or system; written on `<html>` as `data-a4-theme-pref`), so it
-  follows the user from browser to browser; an anonymous page keeps it in `localStorage` "exp-admin4-theme". It is
-  applied before the page is drawn; without a
-  stored choice the admin is light, as before. `html[data-a4-theme]` stays light or dark for the stylesheets,
-  `html[data-a4-theme-choice]` carries the chosen mode. A copy of the switch without `data-label-system` (an
-  extension's own header) keeps stepping between light and dark. Other open admin tabs follow the change.
-  page, white cards. The header toggle switches them; the choice is kept in the browser (`localStorage`) and applied
-  before the page is drawn.
+  circle) and its accessible name say the mode in use ("Color mode: light/dark/system"); its title names the next
+  step ("Switch to dark mode"), and a status region announces a press. The choice is the signed-in user's
+  eZPreference `admin_color_mode`, so it follows the user from browser to browser (see "Remembered choices" below);
+  it is applied before the page is drawn, and without a choice the admin is light, as before.
+  `html[data-a4-theme]` stays light or dark for the stylesheets, `html[data-a4-theme-choice]` carries the chosen
+  mode. A copy of the switch without `data-label-system` (an extension's own header) keeps stepping between light
+  and dark.
 - **Normal or compact density.** A second header button (pressed = compact) tightens the cells of `table.list` and
-  `.a4-table`, cards and the height of the controls in a row (32 to 28 px), not `table.special`; kept in the browser like the mode (`localStorage`
-  "exp-admin4-density") and applied before the page is drawn. Every target stays at least 24 px, the content tree
+  `.a4-table`, cards and the height of the controls in a row (32 to 28 px), not `table.special`; the eZPreference
+  `admin_density`, applied before the page is drawn. Every target stays at least 24 px, the content tree
   keeps its row pitch.
+- **Remembered choices.** The color mode, the density, the side columns on a wide window and the closed groups of
+  the left menus are the signed-in user's eZPreferences (`admin_color_mode`, `admin_density`,
+  `admin_left_sidebar`, `admin_right_sidebar`, `admin_navgroups`), like the column width. One helper,
+  `window.a4Pref` (the first script of `page_head_style.tpl`), reads them from `<html>`
+  (`design:parts/a4_preference_attributes.tpl`, `data-a4-pref-*`) and saves them through
+  `user/preferences/set_and_exit`. An anonymous page keeps them in the browser (`localStorage`) only; a browser
+  choice made before is taken along once. `tests/tests/design/AdminPreferencesTest.php` checks it.
 - **Top menu.** Every item shows at every width from 576 px, wrapping onto more lines; phones keep the hamburger menu.
   The page always starts below the header, even after a resize adds a line.
 - **Sign-in page.** One calm form, fast on phones: labels above 46-48 px fields, 16 px text so mobile Safari does not
@@ -98,10 +102,9 @@ extension). The editor siteaccess falls back to `admin4` first, then `admin3`, `
 - **Frame.** Side column margins are halved (a 16 px gap). The sidebar buttons sit on the window edges at 48% of the
   window height; they are named after their column ("Left column", "Right column"), say with `aria-expanded` whether
   it shows, and on a narrow window Escape closes a column open over the page and returns the focus to its tab. Long names in the side columns wrap instead of being cut off.
-  window height, with labels and titles. Long names in the side columns wrap instead of being cut off.
 - **Left menu.** The left column is the "Side menu" navigation. A long menu shows in groups: Setup in Content model,
   Site and URLs, Workflows, Users and messages, System, and "More" for links an extension adds. Each group has a small
-  capital title with a caret and opens and closes (the browser keeps the choice; the group of the current page always
+  capital title with a caret and opens and closes (the eZPreference `admin_navgroups` keeps the choice; the group of the current page always
   opens). The current page's link carries `aria-current="page"` and is marked with the accent tint and a bar. A menu
   is grouped through menu.ini (`Groups[]`, `GroupNames[<group>]`, `GroupLinks_<group>[]`); without `Groups[]`, or with
   `Groups[]` reset to no values, it is one list, named by its heading. Access is checked per link as before.

@@ -451,16 +451,10 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
         $this->assertNotFalse( $end );
         $sidebar = substr( $js, $start, $end - $start );
         $this->assertSame( 0, substr_count( $sidebar, 'setItem(' ), 'no browser storage: the choice is an eZPreference' );
-        $this->assertSame( 1, substr_count( $sidebar, 'set_and_exit/' ), 'saved only inside store()' );
-        $this->assertMatchesRegularExpression( '/function store\(side, open\) \{.*?set_and_exit\/" \+ prefs\[side\]/s', $sidebar );
-        $this->assertStringContainsString( 'data-a4-sidebars', $sidebar );
-        foreach ( array( 'admin4', 'admin4l' ) as $design )
-        {
-            $layout = (string)file_get_contents( self::$root . "/design/$design/templates/pagelayout.tpl" );
-            $this->assertStringContainsString( '<body data-a4-sidebars="{$admin_sidebars}">', $layout, $design );
-            $this->assertStringContainsString( "ezpreference( 'admin_left_sidebar' )", $layout, $design );
-            $this->assertMatchesRegularExpression( '/\{cache-block keys=array\( \$uri_cache_key, \$user_hash, \$admin_theme, \$admin_left_size, \$admin_sidebars,/', $layout, $design );
-        }
+        // saved only inside store(), through the shared window.a4Pref (AdminPreferencesTest)
+        $this->assertSame( 1, substr_count( $sidebar, 'pref.set(' ), 'saved only inside store()' );
+        $this->assertMatchesRegularExpression( '/function store\(side, open\) \{\s*choice\[side\] = open;\s*pref\.set\(prefs\[side\], open \? "1" : "0"\);/', $sidebar );
+        $this->assertStringContainsString( 'const pref = window.a4Pref', $sidebar );
         $this->assertStringContainsString( 'window.matchMedia("(max-width: 1023.98px)")', $sidebar );
         $this->assertStringNotContainsString( '$(window).width()', $sidebar );
         $this->assertSame( 0, preg_match_all( '/(?<!window\.)localStorage/', $sidebar ), 'localStorage only as window.localStorage, inside try' );

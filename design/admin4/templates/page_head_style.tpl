@@ -1,8 +1,8 @@
 {* admin4: admin3's stylesheets, then admin4.css -- the admin4 look -- and the shared components and module stylesheets (design.ini AdminComponentCSSFileList), before the extensions' own stylesheets, so an extension keeps the last word on its own markup. *}
 {* Light, dark or system mode, before anything is drawn: html[data-a4-theme] (light|dark, what the stylesheets read)
    and html[data-a4-theme-choice] (light|dark|system, what the switch shows) from this browser's choice
-   (the signed-in user's eZPreference admin_color_mode, written on <html> as data-a4-theme-pref; localStorage
-   "exp-admin4-theme" for anonymous pages and before the first choice), light by default; "system" follows prefers-color-scheme, also when the system
+   (window.a4Pref: the signed-in user's eZPreference admin_color_mode; localStorage "exp-admin4-theme" on an
+   anonymous page), light by default; "system" follows prefers-color-scheme, also when the system
    changes while the page is open. The header's #a4-theme-toggle steps light -> dark -> system -> light and stores
    the step; its name says the mode in use ("Colour mode: …", data-label-*), its title the next step
    (data-title-*), and #a4-theme-status announces a press. A switch without data-label-system (an older copy of
@@ -13,26 +13,60 @@
    admin_left_menu_size preference) as --left-sidebar-width; the preset sizes are in pagelayout.css. The second
    script does the same for the density (html[data-a4-density], #a4-density-toggle). No <style>. *}
 {literal}<script>
+/* window.a4Pref: the one place for the frame's remembered choices (color mode, density, side columns, left menu
+   groups). For a signed-in user each is an eZPreference: parts/a4_preference_attributes.tpl writes it on <html>
+   (data-a4-pref-<name>) and set() saves it through user/preferences/set_and_exit (data-a4-pref-url), so it
+   follows the user from browser to browser. An anonymous page has no data-a4-pref-url and keeps the choice in this
+   browser's localStorage only. get( name, legacyKey ): a signed-in user without the preference yet takes the
+   browser's old choice under legacyKey along once. */
+(function () {
+    var root = document.documentElement, url = root.getAttribute('data-a4-pref-url');
+    function attr(name) { return 'data-a4-pref-' + name.replace(/_/g, '-'); }
+    function local(key, value) {
+        try {
+            if (value === undefined) return window.localStorage.getItem(key);
+            window.localStorage.setItem(key, value);
+        } catch (e) { /* blocked storage: the choice lasts for this page */ }
+        return null;
+    }
+    function send(name, value) {
+        var go = function () {
+            var t = document.getElementById('ezxform_token_js'), token = t ? t.getAttribute('title') : '';
+            if (!window.fetch) return;
+            window.fetch(url + '/' + encodeURIComponent(name) + '/' + encodeURIComponent(value === '' ? '-' : value), {
+                method: 'POST', credentials: 'same-origin',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: 'ezxform_token=' + encodeURIComponent(token)
+            }).catch(function () {});
+        };
+        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', go); else go();
+    }
+    window.a4Pref = {
+        signedIn: !!url,
+        get: function (name, legacyKey) {
+            if (!url) return local(legacyKey || 'exp-a4-' + name);
+            var value = root.getAttribute(attr(name));
+            if (value) return value === '-' ? '' : value;
+            var old = legacyKey ? local(legacyKey) : null;
+            if (old) window.a4Pref.set(name, old);
+            return old;
+        },
+        set: function (name, value, legacyKey) {
+            value = String(value);
+            if (!url) { local(legacyKey || 'exp-a4-' + name, value); return; }
+            root.setAttribute(attr(name), value === '' ? '-' : value);
+            send(name, value);
+        }
+    };
+})();
 (function () {
     var KEY = 'exp-admin4-theme', root = document.documentElement;
     var mq = window.matchMedia ? window.matchMedia( '(prefers-color-scheme: dark)' ) : null;
     var w = root.getAttribute('data-a4-left-width');
     if (w && /^\d{2,4}(\.\d+)?px$/.test(w)) root.style.setProperty('--left-sidebar-width', w);
-    // a signed-in user's choice is the eZPreference admin_color_mode (data-a4-theme-pref on <html>, empty before the
-    // first choice); the browser's storage is the fallback for anonymous pages and the first visit
-    function stored() {
-        var pref = root.getAttribute('data-a4-theme-pref');
-        if (pref) return pref;
-        try { return window.localStorage.getItem(KEY); } catch (e) { return null; }
-    }
-    function save(next) {
-        try { window.localStorage.setItem(KEY, next); } catch (e) {}
-        if (!root.hasAttribute('data-a4-theme-pref')) return;
-        root.setAttribute('data-a4-theme-pref', next);
-        var t = document.getElementById('ezxform_token_js'), token = t ? t.getAttribute('title') : '';
-        if (window.jQuery && jQuery.ez && token)
-            jQuery.post(jQuery.ez.url.replace('ezjscore/', 'user/preferences/') + 'set_and_exit/admin_color_mode/' + next, { ezxform_token: token });
-    }
+    // the eZPreference admin_color_mode (window.a4Pref); localStorage for an anonymous page
+    function stored() { return window.a4Pref.get('admin_color_mode', KEY); }
+    function save(next) { window.a4Pref.set('admin_color_mode', next, KEY); }
     function choiceOf(value) { return value === 'dark' || value === 'system' ? value : 'light'; }
     function apply(value) {
         var choice = choiceOf(value);
@@ -73,11 +107,13 @@
     // another tab changed it: follow
     window.addEventListener('storage', function (e) { if (e.key === KEY) apply(e.newValue); });
 })();
-/* Normal or compact density: html[data-a4-density] from this browser's choice (localStorage "exp-admin4-density"),
+/* Normal or compact density: html[data-a4-density] from window.a4Pref (the eZPreference admin_density; localStorage
+   "exp-admin4-density" on an anonymous page),
    normal by default; #a4-density-toggle switches it (pressed = compact). Same pattern as the mode above. */
 (function () {
     var KEY = 'exp-admin4-density', root = document.documentElement;
-    function stored() { try { return window.localStorage.getItem(KEY); } catch (e) { return null; } }
+    // the eZPreference admin_density (window.a4Pref); localStorage for an anonymous page
+    function stored() { return window.a4Pref.get('admin_density', KEY); }
     function apply(density) {
         var compact = density === 'compact';
         root.setAttribute('data-a4-density', compact ? 'compact' : 'normal');
@@ -91,7 +127,7 @@
         if (!b) return;
         b.addEventListener('click', function () {
             var next = root.getAttribute('data-a4-density') === 'compact' ? 'normal' : 'compact';
-            try { window.localStorage.setItem(KEY, next); } catch (e) {}
+            window.a4Pref.set('admin_density', next, KEY);
             apply(next);
         });
     });

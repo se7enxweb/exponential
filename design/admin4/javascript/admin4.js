@@ -220,32 +220,35 @@
 
 /*
  * admin4: the groups of a long left menu (details.a4-navgroup, parts/ini_menu.tpl) keep their open or closed state
- * per browser. A group that holds the current page (data-a4-current) opens whatever was stored. Storage that throws
- * (private windows, blocked site data) only means the groups start as the page draws them.
+ * through window.a4Pref: for a signed-in user the eZPreference admin_navgroups (the closed groups' ids, comma
+ * separated), for an anonymous page the browser. A group that holds the current page (data-a4-current) opens
+ * whatever was stored.
  */
 (function () {
     'use strict';
 
-    var PREFIX = 'a4NavGroup:';
+    var NAME = 'admin_navgroups';
 
-    function read(key) {
-        try { return window.localStorage.getItem(PREFIX + key); } catch (e) { return null; }
+    function closed() {
+        var value = window.a4Pref ? window.a4Pref.get(NAME) : null;
+        return value ? value.split(',').filter(function (id) { return id !== '' && id !== '-'; }) : [];
     }
 
-    function write(key, open) {
-        try { window.localStorage.setItem(PREFIX + key, open ? '1' : '0'); } catch (e) { /* not stored */ }
+    function save(list) {
+        if (window.a4Pref) window.a4Pref.set(NAME, list.join(','));
     }
 
     function init() {
         var groups = document.querySelectorAll('details.a4-navgroup[data-a4-navgroup]');
+        var list = closed();
         Array.prototype.forEach.call(groups, function (group) {
             var key = group.getAttribute('data-a4-navgroup');
-            if (!group.hasAttribute('data-a4-current')) {
-                var stored = read(key);
-                if (stored === '1') group.open = true;
-                else if (stored === '0') group.open = false;
-            }
-            group.addEventListener('toggle', function () { write(key, group.open); });
+            if (!group.hasAttribute('data-a4-current') && list.indexOf(key) !== -1) group.open = false;
+            group.addEventListener('toggle', function () {
+                var now = closed().filter(function (id) { return id !== key; });
+                if (!group.open) now.push(key);
+                save(now);
+            });
         });
     }
 

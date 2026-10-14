@@ -1,15 +1,15 @@
 // Sidebar toggling feature
-// On a wide window (1024px and up) each sidebar follows the user's choice, kept as the eZPreferences
-// admin_left_sidebar and admin_right_sidebar like the column width: the page layout writes them into
-// <body data-a4-sidebars="11"> (left, right; 1 open, the default, 0 closed). On a narrow window both start closed
+// On a wide window (1024px and up) each sidebar follows the user's choice, kept through window.a4Pref (the head's
+// first script) as the eZPreferences admin_left_sidebar and admin_right_sidebar (1 open, the default, 0 closed),
+// like the column width; an anonymous page keeps it in the browser. On a narrow window both start closed
 // and at most one is open, and nothing is saved: a narrow window, or a sidebar opened over the page there, must not
 // change what a wide window shows later. Only a click on a wide window saves a choice. The browser storage keys
 // used before (ezpAdminSidebarLeft/Right, ezpAdminLeftSidebar/RightSidebar) are dropped.
 function sidebarToggle() {
     const narrow = window.matchMedia("(max-width: 1023.98px)");
     const prefs = { left: "admin_left_sidebar", right: "admin_right_sidebar" };
-    const given = String(document.body.getAttribute("data-a4-sidebars") || "11");
-    const choice = { left: given.charAt(0) !== "0", right: given.charAt(1) !== "0" };
+    const pref = window.a4Pref || { get: () => null, set: () => {} };
+    const choice = { left: pref.get(prefs.left) !== "0", right: pref.get(prefs.right) !== "0" };
     let narrowOpen = null; // the sidebar open over the page on a narrow window: "left", "right" or null
 
     function stored(side) {
@@ -18,13 +18,7 @@ function sidebarToggle() {
 
     function store(side, open) {
         choice[side] = open;
-        document.body.setAttribute("data-a4-sidebars", (choice.left ? "1" : "0") + (choice.right ? "1" : "0"));
-        const tokenNode = document.getElementById("ezxform_token_js");
-        const token = tokenNode ? tokenNode.getAttribute("title") : "";
-        if (window.jQuery && $.ez && token) {
-            $.post($.ez.url.replace("ezjscore/", "user/preferences/") + "set_and_exit/" + prefs[side] + "/" + (open ? "1" : "0"),
-                { ezxform_token: token });
-        }
+        pref.set(prefs[side], open ? "1" : "0");
     }
 
     try {

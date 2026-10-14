@@ -1,13 +1,9 @@
 <!DOCTYPE html>
 {* The left column's width (the admin_left_menu_size preference): a preset name, drawn by the stylesheets, or a
    width dragged by hand, set as --left-sidebar-width by the pre-paint script in the head. No inline CSS. *}
-{* A signed-in user's colour mode (light, dark or system; the eZPreference admin_color_mode, empty before the first
-   choice) for the pre-paint script of page_head_style.tpl; an anonymous visitor keeps it in the browser only. *}
-{def $page_left_size = ezpreference( 'admin_left_menu_size' )
-     $page_signed_in = fetch( 'user', 'current_user' ).is_logged_in
-     $page_color_mode = ezpreference( 'admin_color_mode' )}
-<html lang="{$site.http_equiv.Content-language|wash}"{if $page_left_size|ne( '' )}{if or( eq( $page_left_size, 'small' ), eq( $page_left_size, 'medium' ), eq( $page_left_size, 'large' ) )} data-a4-left-size="{$page_left_size}"{else} data-a4-left-width="{$page_left_size|wash}"{/if}{/if}{if $page_signed_in} data-a4-theme-pref="{if or( eq( $page_color_mode, 'light' ), eq( $page_color_mode, 'dark' ), eq( $page_color_mode, 'system' ) )}{$page_color_mode}{/if}"{/if}>
-{undef $page_left_size $page_signed_in $page_color_mode}
+{def $page_left_size = ezpreference( 'admin_left_menu_size' )}
+<html lang="{$site.http_equiv.Content-language|wash}"{if $page_left_size|ne( '' )}{if or( eq( $page_left_size, 'small' ), eq( $page_left_size, 'medium' ), eq( $page_left_size, 'large' ) )} data-a4-left-size="{$page_left_size}"{else} data-a4-left-width="{$page_left_size|wash}"{/if}{/if}{include uri='design:parts/a4_preference_attributes.tpl'}>
+{undef $page_left_size}
 
 <head>
     <meta charset="UTF-8">
@@ -24,7 +20,6 @@
      $hide_right_menu      = first_set( $module_result.content_info.persistent_variable.extra_menu, $ui_context_edit|not )|not
      $admin_left_size      = ezpreference( 'admin_left_menu_size' )
      $admin_theme          = ezpreference( 'admin_theme' )
-     $admin_sidebars       = concat( cond( ezpreference( 'admin_left_sidebar' )|eq( '0' ), '0', '1' ), cond( ezpreference( 'admin_right_sidebar' )|eq( '0' ), '0', '1' ) )
      $left_size_hash       = 0
      $search_hash          = array( cond( ezhttp_hasvariable( 'SectionID', 'get' ), ezhttp( 'SectionID', 'get' ) ) )
      $user_hash = concat( $current_user.role_id_list|implode( ',' ), ',', $current_user.limited_assignment_value_list|implode( ',' ) )
@@ -56,8 +51,6 @@
             {set $admin_layout = false()}
         {/if}
     {/if}
-    {* $admin_sidebars: the side columns on a wide window, left and right, 1 open (the default) or 0 closed: the
-       eZPreferences admin_left_sidebar and admin_right_sidebar, which ezadmin_menubar.js sets, like the width *}
     {* The main landmark: #maincontent of the frame, or of the edit-type page that draws its own columns. A page
        without the left column whose template brings no #maincontent (remove, copy, move ...) is wrapped in #a4-main,
        a landmark without styles, so its layout stays as it was. After the admin layout: admin_full hides the left
@@ -76,7 +69,7 @@
  Need navigation part for cases like content/browse where node id is taken from caller params *}
     {* siteaccess_url() here too: this block holds the header block below, whose
        site link depends on the scheme, host and port of the request. *}
-    {cache-block keys=array( $uri_cache_key, $user_hash, $admin_theme, $admin_left_size, $admin_sidebars, $access_type, first_set( $module_result.navigation_part, $navigation_part.identifier ), $search_hash, siteaccess_url(), $admin_layout_id, $main_wrapped ) ignore_content_expiry}
+    {cache-block keys=array( $uri_cache_key, $user_hash, $admin_theme, $admin_left_size, $access_type, first_set( $module_result.navigation_part, $navigation_part.identifier ), $search_hash, siteaccess_url(), $admin_layout_id, $main_wrapped ) ignore_content_expiry}
 
     {include uri='design:page_head.tpl'}
 
@@ -86,7 +79,7 @@
 
 </head>
 
-<body data-a4-sidebars="{$admin_sidebars}">
+<body>
 
     {* Skip link: the first stop of the Tab key, shown only while focused, to the main landmark (see $main_wrapped). *}
     <a class="a4-skip-link" href="#{if $main_wrapped}a4-main{else}maincontent{/if}">{'Skip to main content'|i18n( 'design/admin/pagelayout' )|wash}</a>

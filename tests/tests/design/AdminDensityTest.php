@@ -118,8 +118,8 @@ class AdminDensityTest extends PHPUnit\Framework\TestCase
         $head = self::file( 'design/admin4/templates/page_head_style.tpl' );
         $this->assertStringContainsString( "'exp-admin4-density'", $head );
         $this->assertStringContainsString( "root.setAttribute('data-a4-density'", $head );
-        $this->assertStringContainsString( "try { return window.localStorage.getItem(KEY); } catch (e) { return null; }", $head );
-        $this->assertStringContainsString( "try { window.localStorage.setItem(KEY, next); } catch (e) {}", $head );
+        $this->assertStringContainsString( "function stored() { return window.a4Pref.get('admin_density', KEY); }", $head );
+        $this->assertStringContainsString( "window.a4Pref.set('admin_density', next, KEY);", $head );
         $this->assertLessThan( strpos( $head, '{/literal}' ), strpos( $head, 'exp-admin4-density' ), 'the density script must sit in the head script, before the page is drawn' );
     }
 

@@ -110,6 +110,6 @@ class AdminLeftMenuGroupsTest extends PHPUnit\Framework\TestCase
         $js = self::read( 'design/admin4/javascript/admin4.js' );
         $this->assertStringContainsString( "details.a4-navgroup[data-a4-navgroup]", $js );
         $this->assertStringContainsString( "hasAttribute('data-a4-current')", $js, 'a stored "closed" must not close the group of the current page' );
-        $this->assertStringContainsString( 'localStorage', $js );
+        $this->assertStringContainsString( "var NAME = 'admin_navgroups';", $js, 'the closed groups are the eZPreference admin_navgroups (window.a4Pref)' );
     }
 }
