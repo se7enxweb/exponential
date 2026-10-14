@@ -3026,7 +3026,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-434396dbd3e000b036a0a3c171f994f8  doc/changelogs/6.0/6.0.15.md
+04fb77453c3250acd91c3705562a0abf  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -5335,7 +5335,7 @@ baa63921e8f05df178e0c58f546c8c59  kernel/content/urlalias.php
 632f14a72172e9396bfe5a451bb7b718  kernel/content/urlalias_global.php
 4333ecad65749547fb889e2d3351ea72  kernel/content/urlalias_wildcard.php
 1ad9bf77d1e4d16af32f03dad229b93f  kernel/content/versionview.php
-61582f8398dbe8ff525856b80ea0ffe7  kernel/content/versionviewframe.php
+1bfce75951784c21ac54763371e88c5a  kernel/content/versionviewframe.php
 10eb94a93da9521ceb319245f0a6243c  kernel/content/view.php
 9347908f63def173d2ef2392a735b837  kernel/contentfinder/action.php
 a4eed9a7905fe1e626f082adbfc5b6cf  kernel/contentfinder/module.php
@@ -7602,6 +7602,7 @@ d44f7d91cfcfce7f540940d68cc67a08  tests/tests/kernel/common/eZTopMenuOperatorMis
 4e2b0da3c851b252696c94cdb4723b25  tests/tests/kernel/content/eZContentFunctionCollectionClassFilterTypeTest.php
 f39889af608be04ca56239a1de0a09c6  tests/tests/kernel/content/eZContentFunctionCollectionSiteDataTest.php
 7584758a4f40031bd44aedd755614046  tests/tests/kernel/content/eZContentOperationCollectionTest.php
+b5889727c77eff745ab60c6bceaa2835  tests/tests/kernel/content/eZContentVersionviewPlacementTest.php
 939a541d2bdf00bfadb6ce4a2d000d0f  tests/tests/kernel/content/eZEditLocationsVisibilityTest.php
 6e8d2af722d64f799200531b5cff5cfb  tests/tests/kernel/content/eZLoginTemplatesRegisterLinkTest.php
 b460bd68c74256811a99815a5fe6b24d  tests/tests/kernel/content/eZPublishWithoutNotificationLiveTest.php
