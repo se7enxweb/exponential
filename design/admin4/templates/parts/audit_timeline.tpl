@@ -10,7 +10,7 @@
         <div class="a4-timeline-body">
             <a href={concat( 'audit/event/', $e.id )|ezurl} title="{$e.name|wash}">{$e.label|wash}</a>
             <span class="a4-timeline-meta"><span class="a4-sr-only">{'Actor'|i18n( 'design/admin/audit' )}: </span>{$e.actor|wash}</span>
-            <span class="a4-badge{if $audit_state} {$audit_state}{/if}"><span class="a4-sr-only">{'Result'|i18n( 'design/admin/audit' )}: </span>{$e.result|wash}</span>
+            <span class="a4-badge{if $audit_state} {$audit_state}{/if}"><span class="a4-sr-only">{'Result'|i18n( 'design/admin/audit' )}: </span>{cond( eq( $e.result, 'success' ), 'success'|i18n( 'design/admin/audit' ), eq( $e.result, 'failed' ), 'failed'|i18n( 'design/admin/audit' ), eq( $e.result, 'refused' ), 'refused'|i18n( 'design/admin/audit' ), $e.result )|wash}</span>
             {if and( $show_reason, $e.reason )}<span class="a4-timeline-meta">({$e.reason|wash})</span>{/if}
         </div>
     </li>
