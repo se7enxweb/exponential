@@ -297,4 +297,5 @@
 /* ---- edit ---- the date and date-and-time fields: the calendar icon and the picker's place (shown by its script) */
 
 .a4-content-datepicker-icon { cursor: pointer; }
+button.a4-content-datepicker-icon { padding: 0; border: 0; background: none; line-height: 0; vertical-align: middle; }
 .a4-content-datepicker { display: none; position: absolute; }
