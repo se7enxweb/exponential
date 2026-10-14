@@ -70,14 +70,14 @@ class AdminNoticesTest extends PHPUnit\Framework\TestCase
         $this->assertMatchesRegularExpression( '/<div class="a4-toasts">\\s*<div id="a4-toasts" [^>]*><\\/div>\\s*<div id="a4-toasts-alert" [^>]*><\\/div>\\s*<\\/div>/', $layout );
 
         $js = (string)file_get_contents( self::root() . '/design/admin4/javascript/admin4.js' );
-        $this->assertStringContainsString( 'window.a4Toast = function (message, kind)', $js );
-        $start = strpos( $js, 'window.a4Toast' );
+        $this->assertStringContainsString( 'window.a4Toast = function (message, kind', $js );
+        $start = strpos( $js, 'window.a4Toast = function' );
         $toast = substr( $js, $start, strpos( $js, '})();', $start ) - $start );
         // the message is text, never markup
         $this->assertStringContainsString( 'text.textContent = String(message);', $toast );
         $this->assertStringNotContainsString( 'innerHTML', $toast );
-        // the focus stays where it is
-        $this->assertDoesNotMatchRegularExpression( '/\.focus\(\)/', $toast );
+        // the focus stays where it is; only the close button gives it back to the opener
+        $this->assertDoesNotMatchRegularExpression( '/\.focus\(\)/', str_replace( 'opener.focus()', '', $toast ) );
     }
 
     public function testTheClassicMessagesCarryARole()
@@ -96,6 +96,45 @@ class AdminNoticesTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array(), $missing );
     }
 
+    public function testNoNoticeStartsWithAHandWrittenGlyph()
+    {
+        $found = array();
+        foreach ( self::templates() as $file )
+        {
+            if ( preg_match_all( '/a4-notice[^>]*>\s*<(strong|b|span)[^>]*>\s*(!|i|&#10003;|&#x2713;|\x{2713}|\x{2714})\s*<\//u', (string)file_get_contents( $file ), $m ) )
+                $found[] = substr( $file, strlen( self::root() ) + 1 );
+        }
+        $this->assertSame( array(), $found, 'the state class draws the icon; a "!" or tick beside it shows the state twice' );
+        $css = (string)file_get_contents( self::root() . '/design/admin4/stylesheets/components.css' );
+        $this->assertStringContainsString( 'li.a4-notice { list-style: none; }', $css );
+    }
+
+    public function testToastsStayFewAndGiveTheFocusBack()
+    {
+        $js = (string)file_get_contents( self::root() . '/design/admin4/javascript/admin4.js' );
+        $this->assertStringContainsString( 'window.a4Toast = function (message, kind, opener)', $js );
+        $this->assertStringContainsString( 'MAX = 3', $js );
+        $this->assertStringContainsString( "t.textContent === String(message)", $js );
+        $this->assertStringContainsString( 'opener.focus()', $js );
+        // leaving the toast with the focus while the pointer is still on it does not start the timer
+        $this->assertStringContainsString( "hold(toast.matches(':hover'))", $js );
+    }
+
+    public function testACopyThatFailsSaysSo()
+    {
+        $body = (string)file_get_contents( self::root() . '/design/admin4/templates/node/view/a4_full_body.tpl' );
+        $this->assertSame( substr_count( $body, 'data-a4-copy=' ), substr_count( $body, 'data-a4-copy-failed=' ) );
+        $js = (string)file_get_contents( self::root() . '/design/admin4/javascript/admin4.js' );
+        $this->assertStringContainsString( "window.a4Toast(chip.getAttribute('data-a4-copy-failed'), 'bad', chip)", $js );
+        $menu = (string)file_get_contents( self::root() . '/design/admin4/templates/visual/menuconfig.tpl' );
+        $this->assertStringContainsString( "window.a4Toast(button.getAttribute('data-copy-failed'), 'bad', button)", $menu );
+        foreach ( array( 'eng-US', 'ger-DE' ) as $lang )
+        {
+            $ts = (string)file_get_contents( self::root() . "/share/translations/$lang/translation.ts" );
+            $this->assertGreaterThanOrEqual( 2, substr_count( $ts, '<source>Could not copy</source>' ), $lang );
+        }
+    }
+
     public function testCopyFeedbackIsAlsoAToast()
     {
         $body = (string)file_get_contents( self::root() . '/design/admin4/templates/node/view/a4_full_body.tpl' );
@@ -103,6 +142,6 @@ class AdminNoticesTest extends PHPUnit\Framework\TestCase
         $js = (string)file_get_contents( self::root() . '/design/admin4/javascript/admin4.js' );
         $this->assertStringContainsString( "window.a4Toast(chip.getAttribute('data-a4-copied')", $js );
         $menu = (string)file_get_contents( self::root() . '/design/admin4/templates/visual/menuconfig.tpl' );
-        $this->assertStringContainsString( "window.a4Toast(button.getAttribute('data-copied'), 'ok')", $menu );
+        $this->assertStringContainsString( "window.a4Toast(button.getAttribute('data-copied'), 'ok', button)", $menu );
     }
 }

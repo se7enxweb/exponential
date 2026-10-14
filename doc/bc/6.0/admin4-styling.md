@@ -252,8 +252,9 @@ For every template or stylesheet change in an administration design or an extens
 - [ ] A new data table is a `table.list` or an `.a4-table` (zebra rows, hover); controls in one row share
       `--a4-control-h`.
 - [ ] A notice that reports the result of an action has a role: `role="alert"` for an error (`.a4-notice.is-bad`,
-      `div.message-error`), `role="status"` for the rest; a notice that explains a standing state has none, so it is
-      not announced on every page load. Feedback of an action done in the page without reload (copied, stored by
+      `div.message-error`), `role="status"` for the rest (a status region already in the page is usually not
+      announced on load, but screen readers differ); a notice that explains a standing state has none. No
+      hand-written glyph ("!", a tick) at the start of a notice: the state class draws the icon. Feedback of an action done in the page without reload (copied, stored by
       Ajax) is a toast (`window.a4Toast`), not a notice that appears; it never takes the focus (`AdminNoticesTest`).
 - [ ] A new module stylesheet is listed in `AdminComponentCSSFileList` and exists in `design/admin4` and `design/admin`.
 - [ ] The page was checked in light and dark mode at 1440 px and at 960 px with scale 2: no light card on the dark
