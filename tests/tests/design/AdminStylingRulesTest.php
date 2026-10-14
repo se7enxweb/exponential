@@ -438,8 +438,9 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * The sidebar script stores a choice in one place only (store(), for a click on a wide window), reads the width
-     * through matchMedia, and reaches localStorage only inside try blocks
+     * The sidebar script saves a choice in one place only (store(), for a click on a wide window) as the user's
+     * eZPreferences admin_left_sidebar / admin_right_sidebar, reads them from the page layout's data-a4-sidebars,
+     * reads the width through matchMedia, and touches localStorage only to drop the keys used before, in a try block
      */
     public function testSidebarScriptStoresOnlyAWideWindowsClick()
     {
@@ -449,12 +450,21 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
         $this->assertNotFalse( $start );
         $this->assertNotFalse( $end );
         $sidebar = substr( $js, $start, $end - $start );
-        $this->assertSame( 1, substr_count( $sidebar, 'setItem(' ), 'setItem only inside store()' );
-        $this->assertMatchesRegularExpression( '/function store\(side, open\) \{[^}]*try \{\s*window\.localStorage\.setItem/s', $sidebar );
+        $this->assertSame( 0, substr_count( $sidebar, 'setItem(' ), 'no browser storage: the choice is an eZPreference' );
+        $this->assertSame( 1, substr_count( $sidebar, 'set_and_exit/' ), 'saved only inside store()' );
+        $this->assertMatchesRegularExpression( '/function store\(side, open\) \{.*?set_and_exit\/" \+ prefs\[side\]/s', $sidebar );
+        $this->assertStringContainsString( 'data-a4-sidebars', $sidebar );
+        foreach ( array( 'admin4', 'admin4l' ) as $design )
+        {
+            $layout = (string)file_get_contents( self::$root . "/design/$design/templates/pagelayout.tpl" );
+            $this->assertStringContainsString( '<body data-a4-sidebars="{$admin_sidebars}">', $layout, $design );
+            $this->assertStringContainsString( "ezpreference( 'admin_left_sidebar' )", $layout, $design );
+            $this->assertMatchesRegularExpression( '/\{cache-block keys=array\( \$uri_cache_key, \$user_hash, \$admin_theme, \$admin_left_size, \$admin_sidebars,/', $layout, $design );
+        }
         $this->assertStringContainsString( 'window.matchMedia("(max-width: 1023.98px)")', $sidebar );
         $this->assertStringNotContainsString( '$(window).width()', $sidebar );
         $this->assertSame( 0, preg_match_all( '/(?<!window\.)localStorage/', $sidebar ), 'localStorage only as window.localStorage, inside try' );
-        $this->assertSame( 3, substr_count( $sidebar, 'try {' ), 'reading, storing and the clean-up of the old keys each in a try block' );
+        $this->assertSame( 1, substr_count( $sidebar, 'try {' ), 'only the clean-up of the old keys, in a try block' );
     }
 
     /**

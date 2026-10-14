@@ -53,7 +53,7 @@ class AdminLandmarksTest extends PHPUnit\Framework\TestCase
     public function testTheSkipLinkIsTheFirstThingInTheBodyAndJumpsToTheMainLandmark()
     {
         $layout = preg_replace( '/\{\*.*?\*\}/s', '', self::template( 'pagelayout.tpl' ) );
-        $this->assertMatchesRegularExpression( '#<body>\s*<a class="a4-skip-link" href="\#\{if \$main_wrapped\}a4-main\{else\}maincontent\{/if\}">#', $layout );
+        $this->assertMatchesRegularExpression( '#<body[^>]*>\s*<a class="a4-skip-link" href="\#\{if \$main_wrapped\}a4-main\{else\}maincontent\{/if\}">#', $layout );
         $this->assertStringContainsString( '<div id="maincontent" role="main" tabindex="-1">', $layout );
     }
 
@@ -87,7 +87,7 @@ class AdminLandmarksTest extends PHPUnit\Framework\TestCase
     public function testTheAdmin4lPageLayoutHasTheSameSkipLinkAndLandmarks()
     {
         $layout = preg_replace( '/\{\*.*?\*\}/s', '', (string)file_get_contents( self::root() . '/design/admin4l/templates/pagelayout.tpl' ) );
-        $this->assertMatchesRegularExpression( '#<body>\s*<a class="a4-skip-link" href="\#\{if \$main_wrapped\}a4-main\{else\}maincontent\{/if\}">#', $layout );
+        $this->assertMatchesRegularExpression( '#<body[^>]*>\s*<a class="a4-skip-link" href="\#\{if \$main_wrapped\}a4-main\{else\}maincontent\{/if\}">#', $layout );
         $this->assertStringContainsString( '<div id="maincontent" role="main" tabindex="-1">', $layout );
         $this->assertMatchesRegularExpression( '#\{if \$main_wrapped\}\s*<div id="a4-main" role="main" tabindex="-1">#', $layout );
         $this->assertStringContainsString( '<div id="header" role="banner">', $layout );
