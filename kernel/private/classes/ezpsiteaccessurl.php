@@ -56,7 +56,13 @@ class ezpSiteAccessURL
             $url = self::root( $front );
             if ( $url !== false )
                 return $url;
-            eZDebug::writeWarning( "site.ini [SiteSettings] FrontSiteAccess=$front is not in AvailableSiteAccessList, the link goes to DefaultAccess", __METHOD__ );
+            // once per value and request: the admin layouts ask several times per page
+            static $warned = array();
+            if ( !isset( $warned[$front] ) )
+            {
+                $warned[$front] = true;
+                eZDebug::writeWarning( "site.ini [SiteSettings] FrontSiteAccess=$front is not in AvailableSiteAccessList, the link goes to DefaultAccess", __METHOD__ );
+            }
         }
         return self::root();
     }

@@ -419,13 +419,14 @@ class eZKernelTemplateOperatorsTest extends eZDatatypeTestCase
 
     public function testSiteAccessUrlIsWorkedOutAtEveryRender()
     {
-        $expected = (string)ezpSiteAccessURL::root();
+        // without a parameter: the site of the current siteaccess (FrontSiteAccess, else DefaultAccess)
+        $expected = (string)ezpSiteAccessURL::front();
         $this->assertFourWays( '{siteaccess_url()}', null, array(), $expected );
         $compiledSource = '';
         $this->render( '{siteaccess_url()}', array(), true );
         foreach ( glob( self::$dir . '/compiled/*.php' ) as $file )
             $compiledSource .= file_get_contents( $file );
-        $this->assertStringContainsString( 'ezpSiteAccessURL::root()', $compiledSource );
+        $this->assertStringContainsString( 'ezpSiteAccessURL::front()', $compiledSource );
     }
 }
 

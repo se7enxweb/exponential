@@ -94,8 +94,7 @@ class ezpSiteAccessURLTest extends PHPUnit\Framework\TestCase
         $settings = $property->getValue();
         $settings['site.ini']['SiteSettings']['FrontSiteAccess'] = $siteaccess;
         eZINI::injectSettings( $settings );
-        // front() reads the cached instance of the current siteaccess
-        eZINI::resetInstance( 'site.ini' );
+        // front() reads eZINI::instance( 'site.ini' ), the settings of the current siteaccess
     }
 
     public function testFrontIsTheDefaultSiteAccessWithoutFrontSiteAccess()
@@ -112,6 +111,13 @@ class ezpSiteAccessURLTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'https://www.k1.example.invalid/' . $this->index . 'k1-ger/', ezpSiteAccessURL::front() );
         // root() without a parameter keeps meaning DefaultAccess
         $this->assertSame( 'https://www.k1.example.invalid/' . $this->index . 'k1-eng/', ezpSiteAccessURL::root() );
+    }
+
+    public function testFrontIgnoresSpacesAroundTheName()
+    {
+        $this->rules( array() );
+        $this->front( ' k1-ger ' );
+        $this->assertSame( 'https://www.k1.example.invalid/' . $this->index . 'k1-ger/', ezpSiteAccessURL::front() );
     }
 
     public function testFrontFallsBackToTheDefaultForAnUnknownSiteAccess()
