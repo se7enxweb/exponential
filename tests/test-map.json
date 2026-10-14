@@ -38,12 +38,14 @@
     "design/admin*/templates/*": [
       "tests/tests/design/AdminStylingRulesTest.php",
       "tests/tests/design/AdminIconsTest.php",
-      "tests/tests/design/AdminLanguageBadgeTest.php"
+      "tests/tests/design/AdminLanguageBadgeTest.php",
+      "tests/tests/design/AdminContextMenuTest.php"
     ],
     "design/admin*/stylesheets/*": [
       "tests/tests/design/AdminStylingRulesTest.php",
       "tests/tests/design/AdminIconsTest.php",
-      "tests/tests/design/AdminLanguageBadgeTest.php"
+      "tests/tests/design/AdminLanguageBadgeTest.php",
+      "tests/tests/design/AdminContextMenuTest.php"
     ],
     "design/admin4/javascript/ezajaxsubitems_expdatatable.js": [
       "tests/tests/design/AdminLanguageBadgeTest.php"
@@ -150,6 +152,9 @@
     ],
     "lib/eztemplate/classes/eztemplatephpoperator.php": [
       "tests/tests/kernel/common/eZTemplateRawURLEncodeOperatorTest.php"
+    ],
+    "design/admin*/javascript/*": [
+      "tests/tests/design/AdminContextMenuTest.php"
     ]
   },
   "generated": {

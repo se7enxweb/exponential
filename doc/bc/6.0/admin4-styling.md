@@ -202,6 +202,8 @@ For every template or stylesheet change in an administration design or an extens
       (or the extension's) class names, and holds only what the components cannot do.
 - [ ] Icons are `.a4-icon` with a `.a4-bi-*` class: no GIF or PNG icon through `ezimage`, no inline `<svg>`, no
       `<input type="image">` (`tests/tests/design/AdminIconsTest.php` checks admin4).
+- [ ] A popup or menu reuses the context menu (`ezpopupmenu.js`, `div.popupmenu`): it gets the menu roles and the
+      keyboard handling there; nothing opens a menu that only a mouse reaches (`AdminContextMenuTest`).
 - [ ] Colours, radius, spacing and fonts are `var(--a4-*)` tokens: no `#hex`, `rgb()`, named colour, px radius or
       spacing literal, and no local custom properties.
 - [ ] A new token is in `components.css` with a light and a dark value, and documented on this page.
