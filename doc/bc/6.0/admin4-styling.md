@@ -121,7 +121,7 @@ White text on it is only 3:1, so filled controls with white text use its darker 
 | Utilities | `.a4-sr-only`, `.a4-focus`, `.a4-muted`, `.a4-meta`, `.a4-help`, `.a4-intro`, `.a4-num`, `.a4-nowrap`, `.a4-wrap`, `.a4-plain`, `.a4-code`, `.a4-ok-text`, `.a4-warn-text`, `.a4-bad-text`, `.a4-middle`, `.a4-flag`, `.a4-end`, `.a4-inset`, `.a4-overflow-visible` |
 | Headings | `.a4-h2`, `.a4-h3` |
 | Layout | `.a4-section`, `.a4-section-head`, `.a4-title-row`, `.a4-row` (`.is-between`), `.a4-stack`, `.a4-grid` (`.is-narrow`, `.is-wide`) |
-| Card | `.a4-card` (`.is-soft`, `.is-selected`, `.is-attention`, `.is-warn`, `.is-bad`, `.is-ok`, `.is-info`), `.a4-cards`, `.a4-card-head`, `.a4-card-title`, `.a4-card-body`, `.a4-pick` (the selection checkbox) |
+| Card | `.a4-card` (`.is-soft`, `.is-selected`, `.is-attention`, `.is-warn`, `.is-bad`, `.is-ok`, `.is-info`, `.is-flush`, `.is-link`, `.is-busy`), `.a4-cards`, `.a4-card-head` (title, a `<p>` as subtitle, `.a4-card-actions` at its end), `.a4-card-title`, `.a4-card-body`, `.a4-card-foot` (the card's actions on a strip at its bottom edge), `.a4-pick` (the selection checkbox) |
 | Figures, facts | `.a4-figures` > `.a4-figure` (`.is-attention`, `.is-bad`, `.is-ok`, `.is-warn`, `.is-info`, `.is-current`); `dl.a4-facts` (`.is-rows`) |
 | Tag, badge, status | `.a4-tag`, `.a4-badge` (`.is-ok`, `.is-warn`, `.is-bad`, `.is-info`, `.is-accent`, `.is-mono`), `.a4-badges`; `.a4-status` (`.is-ok`, `.is-running`, `.is-warn`, `.is-bad`) with `.a4-dot` |
 | Buttons | `.a4-btn`, `.a4-btn-primary`, `.a4-btn-danger`, `.a4-btn-outline-danger`, `.a4-btn-ghost`, `.a4-btn-small`, `.a4-btn-large`, `.a4-btn-icon`; `.a4-actions` (a row of them) |
@@ -137,6 +137,14 @@ White text on it is only 3:1, so filled controls with white text use its darker 
 | Amounts | `.a4-meter` > `span`, `.a4-bars` > children, sized by `.a4-pct-0` ... `.a4-pct-100` (`--a4-pct`) |
 | Icons | `.a4-icon` with one `.a4-bi-<name>` (a Bootstrap icon of `share/icons/bootstrap-icons/svg/`, in `currentColor`; `.is-small`, `.is-medium`, `.is-large`); `.a4-icon-btn` (a link or button that is only an icon) |
 | Other | `.a4-grip` (drag handle), `.is-dragging` |
+
+A card opens with `.a4-card-head` (not `.a4-section-head`), puts the rest in `.a4-card-body` and its buttons in
+`.a4-card-foot`. `.is-flush` lets a table run to the card's edges (head and foot keep their padding, the table's
+corner cells take the card's radius). `.is-link` makes the whole card follow the link in its `.a4-card-title`; other
+controls in the card stay clickable, and the focus ring goes around the card. `.is-busy`, always together with
+`aria-busy="true"` on the same element, veils the card and shows a spinner while its content loads or is saved
+(still when reduced motion is asked for). `tests/tests/design/AdminCardsTest.php` checks the parts and that no
+admin4 card opens with a section head.
 
 States are `.is-*` classes on the component. Each component is one class plus at most an element or a state, so a
 module rule with one more class always wins.
