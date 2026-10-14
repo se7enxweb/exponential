@@ -97,7 +97,7 @@
 	<tr><td>
 	<div class="block">
 	<label>{'Description / comments'|i18n( 'design/admin/workflow/edit' )}:</label>
-	<input class="halfbox" type="text" name="WorkflowEvent_description[]" value="{$Events.item.description}" />
+	<input class="halfbox" type="text" name="WorkflowEvent_description[]" value="{$Events.item.description|wash}" />
 	</div>
 
 	{if and( is_set( $selectedClass ), $selectedClass )}

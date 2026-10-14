@@ -42,7 +42,7 @@
                             'limit', ezini( 'LocationSettings', 'MaxItems', 'upload.ini' ) ) )}
 
     {if $content_object.published}
-     <option value="{$content_object.main_node_id}">{$content_object.name}</option>
+     <option value="{$content_object.main_node_id}">{$content_object.name|wash}</option>
     {/if}
 
 {foreach $selection_list as $selection}

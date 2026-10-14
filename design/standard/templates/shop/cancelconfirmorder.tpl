@@ -2,7 +2,7 @@
 <form method="post" action={"/shop/confirmorder/"|ezurl}>
 
 <div class="message-error">
-<h2>{$error_header}</h2>
+<h2>{$error_header|wash}</h2>
 <ul>
 {foreach $error_list as $error}
     <li>{$error|wash}</li>

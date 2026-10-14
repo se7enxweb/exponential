@@ -81,7 +81,7 @@
         {foreach $ini_menu_url_list as $link_key => $link_url}
             {if $hidden_links|contains( $link_key )}{continue}{/if}
             {if is_set( $name_list[ $link_key ] )}
-                {set $item_name = $name_list[$link_key]|d18n($i18n_section)}
+                {set $item_name = $name_list[$link_key]|d18n($i18n_section)|wash}
             {else}
                 {set $item_name = first_set( $i18n_hash[ $link_key ], $link_key )|wash}
             {/if}
@@ -132,7 +132,7 @@
 
     {if $items|count}
         {* DESIGN: Header START *}<div class="box-header"><div class="box-ml">
-        {if $menu_name}<h4>{if is_set( $i18n_hash[ $menu_name ] )}{$i18n_hash[ $menu_name ]|wash}{else}{$menu_name|d18n($i18n_section)}{/if}</h4>{/if}
+        {if $menu_name}<h4>{if is_set( $i18n_hash[ $menu_name ] )}{$i18n_hash[ $menu_name ]|wash}{else}{$menu_name|d18n($i18n_section)|wash}{/if}</h4>{/if}
         {* DESIGN: Header END *}</div></div>
 
         {* DESIGN: Content START *}<div class="box-bc"><div class="box-ml"><div class="box-content">

@@ -36,7 +36,7 @@
             {/if}
             <td>
                 {if and( ne( $attribute_id, 0 ), $related_objects_id_typed['attribute']|contains( $object.id ) )}
-                    {$relation_type_names['attribute']} ( {$attr.name} )
+                    {$relation_type_names['attribute']} ( {$attr.name|wash} )
                 {elseif eq( $attribute_id, 0 )}
                     {def $relation_name_array = array()}
                     {foreach $related_objects_id_typed as $relation_type => $relation_id_array}
@@ -95,7 +95,7 @@
             {/if}
             <td>
                 {if and( ne( $attribute_id, 0 ), $reverse_related_objects_id_typed['attribute']|contains( $object.id ) )}
-                    {$relation_type_names['attribute']} ( {$attr.name} )
+                    {$relation_type_names['attribute']} ( {$attr.name|wash} )
                 {elseif eq( $attribute_id, 0 )}
                     {def $relation_name_array = array()}
                     {foreach $reverse_related_objects_id_typed as $relation_type => $relation_id_array}

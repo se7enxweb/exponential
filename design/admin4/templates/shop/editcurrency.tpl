@@ -31,28 +31,28 @@
     <table class="list a4-plain" cellspacing="0">
         <tr>
             <td class="nowrap"><label class="a4-inline-label" for="editcurrency-code">{'Currency code'|i18n( 'design/admin/shop/editcurrency' )}</label></td>
-            <td><input type="text" id="editcurrency-code" name="CurrencyData[code]" value="{$currency_data['code']}" />{'(Use three capital letters)'|i18n( 'design/admin/shop/editcurrency' )}</td>
+            <td><input type="text" id="editcurrency-code" name="CurrencyData[code]" value="{$currency_data['code']|wash}" />{'(Use three capital letters)'|i18n( 'design/admin/shop/editcurrency' )}</td>
         </tr>
         <tr>
             <td class="nowrap"><label class="a4-inline-label" for="editcurrency-symbol">{'Currency symbol'|i18n( 'design/admin/shop/editcurrency' )}</label></td>
-            <td><input type="text" id="editcurrency-symbol" name="CurrencyData[symbol]" value="{$currency_data['symbol']}" /></td>
+            <td><input type="text" id="editcurrency-symbol" name="CurrencyData[symbol]" value="{$currency_data['symbol']|wash}" /></td>
         </tr>
         <tr>
             <td class="nowrap">{'Formatting locale'|i18n( 'design/admin/shop/editcurrency' )}</td>
             <td><select aria-label="{'Select locale for formatting price values.'|i18n( 'design/admin/shop/editcurrency' )|wash}" name="CurrencyData[locale]" title="{'Select locale for formatting price values.'|i18n( 'design/admin/shop/editcurrency' )}">
                 {foreach $locale_list as $locale}
-                    <option value="{$locale.locale_full_code}" {if $locale.locale_full_code|compare( $currency_data['locale'] )}selected="selected"{/if}>{$locale.locale_full_code}</option>
+                    <option value="{$locale.locale_full_code|wash}" {if $locale.locale_full_code|compare( $currency_data['locale'] )}selected="selected"{/if}>{$locale.locale_full_code|wash}</option>
                 {/foreach}
                 </select>
             </td>
         </tr>
         <tr>
             <td class="nowrap"><label class="a4-inline-label" for="editcurrency-custom-rate">{'Custom rate'|i18n( 'design/admin/shop/editcurrency' )}</label></td>
-            <td><input type="text" id="editcurrency-custom-rate" name="CurrencyData[custom_rate_value]" value="{$currency_data['custom_rate_value']}" /></td>
+            <td><input type="text" id="editcurrency-custom-rate" name="CurrencyData[custom_rate_value]" value="{$currency_data['custom_rate_value']|wash}" /></td>
         </tr>
         <tr>
             <td class="nowrap"><label class="a4-inline-label" for="editcurrency-rate-factor">{'Rate factor'|i18n( 'design/admin/shop/editcurrency' )}</label></td>
-            <td><input type="text" id="editcurrency-rate-factor" name="CurrencyData[rate_factor]" value="{$currency_data['rate_factor']}" /></td>
+            <td><input type="text" id="editcurrency-rate-factor" name="CurrencyData[rate_factor]" value="{$currency_data['rate_factor']|wash}" /></td>
         </tr>
     </table>
 {else}

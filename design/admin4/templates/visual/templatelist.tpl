@@ -10,7 +10,7 @@
    <td align="right">
     <div class="content-search" >
            <form action={"/visual/templatelist"|ezurl} method="get">
-               <input class="halfbox" type="text" size="15" name="filterString" id="Filter" aria-label="{'Filter'|i18n( 'design/standard/layout' )|wash}" value="{$filterString}" />
+               <input class="halfbox" type="text" size="15" name="filterString" id="Filter" aria-label="{'Filter'|i18n( 'design/standard/layout' )|wash}" value="{$filterString|wash}" />
                <input class="button" name="FilterButton" type="submit" value="{'Filter'|i18n('design/standard/layout')}" />&nbsp; &nbsp;
            </form>
     </div>
