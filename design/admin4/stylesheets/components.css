@@ -24,10 +24,11 @@
 
 :root {
   /* the accent: one colour. -hover and -strong are its darker shades for a pressed fill and for filled controls
-     carrying white text (5.2:1); -text is the accent as text on a card (5.2:1 light, 7:1 dark) */
+     carrying white text (5.2:1), -press their hovered fill (7:1); -text is the accent as text on a card (5.2:1 light, 7:1 dark) */
   --a4-accent: #f26a21;
   --a4-accent-hover: #d9561a;
   --a4-accent-strong: #c2410c;
+  --a4-accent-press: #9a3412;
   --a4-accent-text: #c2410c;
   --a4-accent-soft: rgba(242, 106, 33, 0.12);
   --a4-on-accent: #fff;
@@ -103,6 +104,7 @@ html[data-a4-theme="dark"] {
   --a4-accent: #f26a21;
   --a4-accent-hover: #ff8a4c;
   --a4-accent-strong: #c2410c;
+  --a4-accent-press: #ff8a4c;
   --a4-accent-text: #ff9a5c;
   --a4-accent-soft: rgba(242, 106, 33, 0.18);
   --a4-on-accent: #fff;
@@ -167,19 +169,19 @@ html[data-a4-theme="dark"] {
 .a4-page [hidden] {
   display: none !important;
 }
-.a4-page p {
+:where(.a4-page) p {
   margin: 0;
 }
-.a4-page code,
+:where(.a4-page) code,
 .a4-code {
   font-family: var(--a4-mono);
   font-size: var(--a4-text-s);
   overflow-wrap: anywhere;
 }
-.a4-page a {
+:where(.a4-page) a {
   color: var(--a4-accent-text);
 }
-.a4-page a:hover {
+:where(.a4-page) a:hover {
   color: var(--a4-ink);
 }
 .a4-page :focus-visible,
@@ -267,7 +269,7 @@ html[data-a4-theme="dark"] {
 .a4-title-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px var(--a4-space-3); }
 .a4-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2); }
 .a4-row.is-between { justify-content: space-between; }
-.a4-stack { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--a4-space-3); }
+.a4-stack { display: grid; grid-template-columns: minmax(0, 1fr); align-content: start; gap: var(--a4-space-3); }
 .a4-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
@@ -470,8 +472,8 @@ a.a4-btn, a.a4-btn:visited { color: var(--a4-ink); }
   color: var(--a4-on-accent);
 }
 .a4-btn-primary:hover:not([disabled]):not(.is-disabled) {
-  border-color: var(--a4-accent-hover);
-  background-color: var(--a4-accent-hover);
+  border-color: var(--a4-accent-press);
+  background-color: var(--a4-accent-press);
   color: var(--a4-on-accent);
 }
 html[data-a4-theme="dark"] .a4-btn-primary:hover:not([disabled]):not(.is-disabled) { color: var(--a4-code-bg); }

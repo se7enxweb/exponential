@@ -83,7 +83,7 @@ All `var(--a4-...)`, defined in `components.css`.
 
 | Group | Tokens |
 |---|---|
-| Accent | `--a4-accent` (`#f26a21`), `--a4-accent-hover`, `--a4-accent-strong` (filled controls with white text, 5.2:1), `--a4-accent-text` (the accent as text or link), `--a4-accent-soft` (tint), `--a4-on-accent`, `--a4-ring` (focus ring) |
+| Accent | `--a4-accent` (`#f26a21`), `--a4-accent-hover`, `--a4-accent-strong` (filled controls with white text, 5.2:1), `--a4-accent-press` (their hovered fill), `--a4-accent-text` (the accent as text or link), `--a4-accent-soft` (tint), `--a4-on-accent`, `--a4-ring` (focus ring) |
 | Neutral | `--a4-ink`, `--a4-muted`, `--a4-line`, `--a4-line-strong`, `--a4-soft`, `--a4-card`, `--a4-surface`, `--a4-field`, `--a4-field-line`, `--a4-disabled`, `--a4-overlay`, `--a4-code-bg`, `--a4-code-ink` |
 | States | `--a4-ok`, `--a4-ok-bg`, `--a4-ok-line`; `--a4-warn`, `--a4-warn-bg`, `--a4-warn-line`; `--a4-bad`, `--a4-bad-bg`, `--a4-bad-line`, `--a4-bad-hover`; `--a4-info`, `--a4-info-bg`, `--a4-info-line` |
 | Charts | `--a4-chart-1` to `--a4-chart-8`, a categorical palette in this order |
