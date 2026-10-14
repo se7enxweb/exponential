@@ -1395,10 +1395,11 @@ div#contentstructure ul#content_tree_menu li { line-height: max(calc(var(--a4-sp
 div#contentstructure ul#content_tree_menu ul li { background-position: 8px 0, 8px 10px; }
 div#contentstructure ul#content_tree_menu ul li.lastli { background-size: 1px 11px, 9px 1px; }
 /* The current node and the path to it: the current node's name in the accent tint with a bar on its left, the
-   nodes above it in a stronger weight, so the tree shows where the page is. */
+   nodes above it in a stronger weight, so the tree shows where the page is. The bar is an inset shadow: its corners
+   stay square, or the rounding bends it into a "(". */
 div#contentstructure li.currentnode > a.image-text :is(span.node-name-normal, span.node-name-hidden, span.node-name-hiddenbyparent) {
   padding: 0 var(--a4-space-1) 0 var(--a4-space-2);
-  border-radius: var(--a4-radius-s);
+  border-radius: 0 var(--a4-radius-s) var(--a4-radius-s) 0;
   background-color: var(--a4-accent-soft);
   box-shadow: inset 3px 0 0 var(--a4-accent);
   color: var(--a4-ink);

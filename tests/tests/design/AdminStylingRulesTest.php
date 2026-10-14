@@ -661,7 +661,11 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
     {
         $css = file_get_contents( self::$root . '/design/admin4/stylesheets/admin4.css' );
         $this->assertStringContainsString( 'li.currentnode > a.image-text :is(span.node-name-normal', $css );
-        $this->assertStringContainsString( 'box-shadow: inset 3px 0 0 var(--a4-accent);', $css );
+        $this->assertSame( 1, preg_match( '/\n(div#contentstructure li\.currentnode > a\.image-text :is\([^)]*\)) \{([^}]*)\}/', $css, $current ) );
+        $this->assertStringContainsString( 'box-shadow: inset 3px 0 0 var(--a4-accent);', $current[2] );
+        // the bar is an inset shadow on the left: rounded left corners bend it into a "("
+        $this->assertStringContainsString( 'border-radius: 0 var(--a4-radius-s) var(--a4-radius-s) 0;', $current[2],
+                                           'The current node\'s left corners must be square, or its bar is drawn curved' );
         $this->assertStringContainsString( 'li:has(li.currentnode) > a.image-text', $css );
         $this->assertStringContainsString( 'border-left: 3px solid Highlight;', $css );
     }
