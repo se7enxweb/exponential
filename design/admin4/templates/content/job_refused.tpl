@@ -9,7 +9,7 @@
 
 {* DESIGN: Content START *}<div class="box-ml"><div class="box-mr"><div class="box-content">
 
-<div class="message-error">
+<div class="message-error" role="alert">
     <h2>{$message|wash}</h2>
     {if $holder}
     <p>{'%title, %percent% done.'|i18n( 'design/admin/content/job',, hash( '%title', $holder.title, '%percent', $holder.percent ) )|wash}

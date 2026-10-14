@@ -127,9 +127,9 @@
     {if $object.published}<span title="{$object.published|l10n( 'datetime' )}">{'Published'|i18n( 'design/admin/node/view/full' )} {$object.published|l10n( 'shortdate' )}</span>{/if}
     <span class="exp-object-version" data-object-id="{$object.id}">{'Version'|i18n( 'design/admin/node/view/full' )} <span class="exp-object-version-number">{$object.current_version}</span></span>
     {if $section}<span>{$section.name|wash}</span>{/if}
-    <button type="button" class="a4-copy" data-a4-copy="{$node.node_id}" title="{'Click to copy'|i18n( 'design/admin/node/view/full' )|wash}">{'Node'|i18n( 'design/admin/node/view/full' )} {$node.node_id}</button>
-    <button type="button" class="a4-copy" data-a4-copy="{$object.id}" title="{'Click to copy'|i18n( 'design/admin/node/view/full' )|wash}">{'Object'|i18n( 'design/admin/node/view/full' )} {$object.id}</button>
-    <button type="button" class="a4-copy" data-a4-copy="{$object.remote_id|wash}" title="{'Click to copy the remote ID'|i18n( 'design/admin/node/view/full' )|wash}">{'Remote ID'|i18n( 'design/admin/node/view/full' )}</button>
+    <button type="button" class="a4-copy" data-a4-copied="{'Copied to the clipboard'|i18n( 'design/admin/node/view/full' )|wash}" data-a4-copy-failed="{'Could not copy'|i18n( 'design/admin/node/view/full' )|wash}" data-a4-copy="{$node.node_id}" title="{'Click to copy'|i18n( 'design/admin/node/view/full' )|wash}">{'Node'|i18n( 'design/admin/node/view/full' )} {$node.node_id}</button>
+    <button type="button" class="a4-copy" data-a4-copied="{'Copied to the clipboard'|i18n( 'design/admin/node/view/full' )|wash}" data-a4-copy-failed="{'Could not copy'|i18n( 'design/admin/node/view/full' )|wash}" data-a4-copy="{$object.id}" title="{'Click to copy'|i18n( 'design/admin/node/view/full' )|wash}">{'Object'|i18n( 'design/admin/node/view/full' )} {$object.id}</button>
+    <button type="button" class="a4-copy" data-a4-copied="{'Copied to the clipboard'|i18n( 'design/admin/node/view/full' )|wash}" data-a4-copy-failed="{'Could not copy'|i18n( 'design/admin/node/view/full' )|wash}" data-a4-copy="{$object.remote_id|wash}" title="{'Click to copy the remote ID'|i18n( 'design/admin/node/view/full' )|wash}">{'Remote ID'|i18n( 'design/admin/node/view/full' )}</button>
     {if gt( $locations, 1 )}<span>{$locations} {'locations'|i18n( 'design/admin/node/view/full' )}</span>{/if}
     <span class="a4-node-langs">
     {foreach $a4_translations as $language}

@@ -1,4 +1,4 @@
-<div class="message-error">
+<div class="message-error" role="alert">
 <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {'The requested page could not be displayed. (2)'|i18n( 'design/admin/error/kernel' )}</h2>
 <p>{'The resource you requested was not found.'|i18n( 'design/admin/error/kernel' )}</p>
 <p>{'Possible reasons'|i18n( 'design/admin/error/kernel' )}:</p>

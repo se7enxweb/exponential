@@ -1,17 +1,17 @@
 {if eq( $error, 'permission_denied' )}
-<div class="message-error">
+<div class="message-error" role="alert">
 <h2>{'Could not create template, permission denied.'|i18n( 'design/admin/visual/templatecreate' )}</h2>
 </div>
 {/if}
 
 {if eq( $error, 'invalid_name' )}
-<div class="message-error">
+<div class="message-error" role="alert">
 <h2>{'Invalid name. You can only use the characters a-z, numbers, _ and / (for subdirectories).'|i18n( 'design/admin/visual/templatecreate' )}</h2>
 </div>
 {/if}
 
 {if eq( $error, 'invalid_template' )}
-<div class="message-error">
+<div class="message-error" role="alert">
 <h2>{'The selected template is not a source template and cannot be used to create an override.'|i18n( 'design/admin/visual/templatecreate' )}</h2>
 </div>
 {/if}

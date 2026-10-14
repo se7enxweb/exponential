@@ -534,9 +534,59 @@ table.list:not(.a4-plain) td, table.list:not(.a4-plain) th { vertical-align: mid
 table.list:not(.a4-plain) > tbody > tr:has(> td > input[type="checkbox"]:checked) > :is(td, th[scope="row"]) { background-color: var(--a4-accent-soft); }
 html .exp-dt tbody tr:has(> td > input[type="checkbox"]:checked) > td { background-color: var(--a4-accent-soft); }
 
-/* Messages */
-div.message-warning, div.message-error, div.message-feedback, div.message-confirmation, div.message-information {
+/* Messages: the classic div.message-* (the result of an action, rendered by the module) look like .a4-notice: a
+   state tint, a 4px edge in the state's colour, the heading's icon (core.css) in that colour too. The #page id
+   outweighs core.css, which cleared border and background inside div.box-content. */
+#page div:is(.message-warning, .message-error, .message-feedback, .message-confirmation, .message-information) {
+  margin: 0 0 var(--a4-space-3);
+  padding: var(--a4-space-2) var(--a4-space-3);
+  border: 1px solid var(--a4-line);
+  border-left-width: 4px;
   border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+  color: var(--a4-ink);
+}
+#page div:is(.message-feedback, .message-confirmation) { border-color: var(--a4-ok-line); border-left-color: var(--a4-ok); background-color: var(--a4-ok-bg); }
+#page div.message-warning { border-color: var(--a4-warn-line); border-left-color: var(--a4-warn); background-color: var(--a4-warn-bg); }
+#page div.message-error { border-color: var(--a4-bad-line); border-left-color: var(--a4-bad); background-color: var(--a4-bad-bg); }
+#page div.message-information { border-color: var(--a4-info-line); border-left-color: var(--a4-info); background-color: var(--a4-info-bg); }
+#page div:is(.message-feedback, .message-confirmation) h2 { color: var(--a4-ok); }
+#page div.message-warning h2 { color: var(--a4-warn); }
+#page div.message-error h2 { color: var(--a4-bad); }
+#page div:is(.message-warning, .message-error, .message-feedback, .message-confirmation, .message-information) h2 {
+  margin: 0 0 var(--a4-space-1);
+  padding: 0 0 0 calc(var(--a4-space-4) + var(--a4-space-1) + var(--a4-space-2));
+  font-size: var(--a4-text-l);
+}
+#page div:is(.message-warning, .message-error, .message-feedback, .message-confirmation, .message-information) h2::before {
+  left: 0;
+  top: 0.1em;
+}
+/* A message without a heading (a paragraph or a list only) takes the icon on the block itself */
+#page div:is(.message-warning, .message-error, .message-feedback, .message-confirmation, .message-information):not(:has(> h2)) {
+  position: relative;
+  padding-left: calc(var(--a4-space-3) + var(--a4-space-4) + var(--a4-space-1) + var(--a4-space-2));
+}
+#page div:is(.message-warning, .message-error, .message-feedback, .message-confirmation, .message-information):not(:has(> h2))::before {
+  content: "";
+  position: absolute;
+  left: var(--a4-space-3);
+  top: calc(var(--a4-space-2) + 1px);
+  width: calc(var(--a4-space-4) + var(--a4-space-1));
+  height: calc(var(--a4-space-4) + var(--a4-space-1));
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+#page div:is(.message-feedback, .message-confirmation):not(:has(> h2))::before { background-color: var(--a4-ok); -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/check-circle-fill.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/check-circle-fill.svg); }
+#page div.message-warning:not(:has(> h2))::before { background-color: var(--a4-warn); -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/exclamation-triangle-fill.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/exclamation-triangle-fill.svg); }
+#page div.message-error:not(:has(> h2))::before { background-color: var(--a4-bad); -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/x-circle-fill.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/x-circle-fill.svg); }
+#page div.message-information:not(:has(> h2))::before { background-color: var(--a4-info); -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/info-circle-fill.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/info-circle-fill.svg); }
+@media (forced-colors: active) {
+  #page div:is(.message-warning, .message-error, .message-feedback, .message-confirmation, .message-information):not(:has(> h2))::before { forced-color-adjust: none; background-color: CanvasText; }
 }
 
 /* ---- Footer: quiet text on the page ------------------------------------------------------------------------- */

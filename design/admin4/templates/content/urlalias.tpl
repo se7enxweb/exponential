@@ -1,22 +1,22 @@
 {* Errors START *}
 {switch match=$info_code}
 {case match='feedback-removed'}
-    <div class="message-feedback">
+    <div class="message-feedback" role="status">
         <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {'The selected aliases were successfully removed.'|i18n( 'design/admin/content/urlalias' )}</h2>
     </div>
 {/case}
 {case match='feedback-removed-all'}
-    <div class="message-feedback">
+    <div class="message-feedback" role="status">
         <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {'All aliases for this node were successfully removed.'|i18n( 'design/admin/content/urlalias' )}</h2>
     </div>
 {/case}
 {case match='error-invalid-language'}
-    <div class="message-warning">
+    <div class="message-warning" role="status">
         <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {'The specified language code <%language> is not valid.'|i18n( 'design/admin/content/urlalias',, hash('%language', $info_data['language']) )|wash}</h2>
     </div>
 {/case}
 {case match='error-no-alias-text'}
-    <div class="message-warning">
+    <div class="message-warning" role="status">
         <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {'Text is missing for the URL alias'|i18n( 'design/admin/content/urlalias' )}</h2>
         <ul>
             <li>{'Enter text in the input box to create a new alias.'|i18n( 'design/admin/content/urlalias' )}</li>
@@ -24,7 +24,7 @@
     </div>
 {/case}
 {case match='feedback-alias-cleanup'}
-    <div class="message-feedback">
+    <div class="message-feedback" role="status">
         <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {'The URL alias was successfully created, but was modified by the system to <%new_alias>'|i18n( 'design/admin/content/urlalias',, hash('%new_alias', $info_data['new_alias'] ) )|wash}</h2>
         <ul>
             <li>{'Invalid characters will be removed or transformed to valid characters.'|i18n( 'design/admin/content/urlalias' )}</li>
@@ -33,12 +33,12 @@
     </div>
 {/case}
 {case match='feedback-alias-created'}
-    <div class="message-feedback">
+    <div class="message-feedback" role="status">
         <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {'The URL alias <%new_alias> was successfully created'|i18n( 'design/admin/content/urlalias',, hash('%new_alias', $info_data['new_alias'] ) )|wash}</h2>
     </div>
 {/case}
 {case match='feedback-alias-exists'}
-    <div class="message-warning">
+    <div class="message-warning" role="status">
         <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {'The URL alias &lt;%new_alias&gt; already exists, and it points to &lt;%action_url&gt;'|i18n( 'design/admin/content/urlalias',, hash( '%new_alias', concat( "<"|wash, '<a href=', $info_data['url']|ezurl, '>', $info_data['new_alias'], '</a>', ">"|wash ), '%action_url', concat( "<"|wash, '<a href=', $info_data['action_url']|ezurl, '>', $info_data['action_url']|wash, '</a>', ">"|wash ) ) )}</h2>
     </div>
 {/case}

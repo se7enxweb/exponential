@@ -1,4 +1,4 @@
-<div class="message-error">
+<div class="message-error" role="alert">
 <h2>{'The requested page could not be displayed. (3)'|i18n( 'design/admin/error/kernel' )}</h2>
 <p>{'The requested object is not available.'|i18n( 'design/admin/error/kernel' )}</p>
 <p>{'Possible reasons'|i18n( 'design/admin/error/kernel' )}:</p>

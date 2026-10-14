@@ -118,7 +118,7 @@
 
 {* DESIGN: Content START *}<div class="box-ml"><div class="box-mr"><div class="box-content">
 
-<div class="message-confirmation">
+<div class="message-confirmation" role="status">
 <h2>{'Are you sure you want to discard the draft?'|i18n( 'design/admin/content/removeeditversion' )}</h2>
 </div>
 

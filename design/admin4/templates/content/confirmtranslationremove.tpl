@@ -12,7 +12,7 @@
 
 {* DESIGN: Content START *}<div class="box-ml"><div class="box-mr"><div class="box-content">
 
-<div class="message-confirmation">
+<div class="message-confirmation" role="status">
 
 {if $confirm_list|count|eq( 1 )}
 <h2>{'Are you sure you want to remove the language?'|i18n( 'design/admin/content/confirmtranslationremove' )}</h2>

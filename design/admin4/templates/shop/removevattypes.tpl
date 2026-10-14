@@ -28,7 +28,7 @@
 <form action={'shop/vattype'|ezurl} method="post" name="RemoveVatType">
 
 {if $can_remove|not}
-<div class="message-error">
+<div class="message-error" role="alert">
 {if $dependencies|count|gt(1)}
     <h2>{'Unable to remove the VAT types'|i18n( 'design/admin/shop/removevattypes' )}</h2>
 {else}
@@ -46,7 +46,7 @@
 <div class="box-content">
 
 {if $can_remove}
-<div class="message-confirmation">
+<div class="message-confirmation" role="status">
 {if $dependencies|count|gt(1)}
     <h2>{'Are you sure you want to remove the VAT types?'|i18n( 'design/admin/shop/removevattypes' )}</h2>
 {else}

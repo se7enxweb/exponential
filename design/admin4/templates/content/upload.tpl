@@ -54,7 +54,7 @@
 
 {* Errors. *}
 {section show=$errors|count|gt( 0 )}
-    <div class="message-error">
+    <div class="message-error" role="alert">
         <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {'The file could not be uploaded'|i18n( 'design/admin/content/upload' )}</h2>
         <p>{'The following errors occurred'|i18n( 'design/admin/content/upload' )}:</p>
         <ul>

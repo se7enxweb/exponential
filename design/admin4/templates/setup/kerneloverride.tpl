@@ -17,16 +17,15 @@
 {* DESIGN: Content START *}<div class="box-ml"><div class="box-mr"><div class="box-content">
 
 <div class="a4-notice is-warn">
-    <strong>!</strong>
     <span>{'An override is not a subclass. It replaces the kernel class under the same name, so there is no parent to call, nothing is inherited, and everything the original did has to keep being done by the copy. Every fix the kernel makes to that class afterwards is a fix this site does not get until somebody copies it across. Almost everything here has a lighter way in - a handler named by a setting, an event listener, a filter, a template override - and the RAD tools list them. This is for when none of them reaches the thing that has to change.'|i18n( 'design/admin/setup/rad/override' )}</span>
 </div>
 
 {if $wizard_readiness.allowed|not}
-<div class="a4-notice is-bad"><strong>!</strong><span>{$wizard_readiness.message|wash}</span></div>
+<div class="a4-notice is-bad"><span>{$wizard_readiness.message|wash}</span></div>
 {elseif $wizard_readiness.generated|not}
-<div class="a4-notice is-bad"><strong>!</strong><span>{$wizard_readiness.message|wash}</span></div>
+<div class="a4-notice is-bad"><span>{$wizard_readiness.message|wash}</span></div>
 {else}
-<div class="a4-notice is-ok"><strong>&#10003;</strong><span>{$wizard_readiness.message|wash}</span></div>
+<div class="a4-notice is-ok"><span>{$wizard_readiness.message|wash}</span></div>
 {/if}
 
 {foreach $wizard_feedback as $ko_note}
@@ -36,15 +35,15 @@
 {/foreach}
 
 {foreach $wizard_problems as $ko_problem}
-<div class="a4-notice is-bad"><strong>!</strong><span>{$ko_problem|wash}</span></div>
+<div class="a4-notice is-bad"><span>{$ko_problem|wash}</span></div>
 {/foreach}
 
 {if $wizard_written|count|gt( 0 )}
-<div class="a4-notice is-info"><strong>&#10003;</strong><span>{'Written to %target. Switch it on, allow overrides in config.php, and generate the override map with ezpgenerateautoloads.php -o, which is a different run from the ordinary one.'|i18n( 'design/admin/setup/rad/override',, hash( '%target', $wizard_target ) )}</span></div>
+<div class="a4-notice is-ok"><span>{'Written to %target. Switch it on, allow overrides in config.php, and generate the override map with ezpgenerateautoloads.php -o, which is a different run from the ordinary one.'|i18n( 'design/admin/setup/rad/override',, hash( '%target', $wizard_target ) )}</span></div>
 {/if}
 
 {if $wizard_can_write|not}
-<div class="a4-notice is-info"><strong>i</strong><span>{'The web server cannot write into extension/, so this page can only hand you an archive.'|i18n( 'design/admin/setup/rad/override' )}</span></div>
+<div class="a4-notice is-info"><span>{'The web server cannot write into extension/, so this page can only hand you an archive.'|i18n( 'design/admin/setup/rad/override' )}</span></div>
 {/if}
 
 <div class="a4-setup-wz-grid">

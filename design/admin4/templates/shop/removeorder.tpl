@@ -10,7 +10,7 @@
 
 {* DESIGN: Content START *}<div class="box-ml"><div class="box-mr"><div class="box-content">
 
-<div class="message-confirmation">
+<div class="message-confirmation" role="status">
 
 {if $delete_result|count|eq(1)}
 <h2>{'Are you sure you want to remove order #%order_number?'|i18n( 'design/admin/shop/removeorder',, hash( '%order_number', $delete_result ) )}</h2>

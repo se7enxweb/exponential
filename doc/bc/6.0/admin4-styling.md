@@ -172,7 +172,8 @@ toasts, and on a `var(--a4-z-…)` that `components.css` does not define (a typo
 | Forms | `.a4-field`, `.a4-field-wide`, `.a4-label`, `.a4-input` (`.is-auto`), `.a4-field-error`, `.a4-required-mark` + `.a4-required-hint` (required fields), `.a4-error-summary` (the summary of a failed store), `.a4-form` (`.is-wide`), `.a4-formrow` (label beside control), `.a4-searchrow`, `.a4-check`, `.a4-radios`, `.a4-chips` > `.a4-chip` |
 | Tables | `.a4-table-wrap` > `table.a4-table` (`.is-compact`), `tr.is-selected` |
 | Under a list | `.a4-listfoot`, `.a4-sizes`, `.a4-pager`; `.a4-tabs` (links, buttons, `span.current`, `a.current`, `.is-current`), `.a4-count` |
-| Empty state, notices | `.a4-empty`; `.a4-notice` (`.is-ok`, `.is-warn`, `.is-bad`, `.is-info`) |
+| Empty state, notices | `.a4-empty`; `.a4-notice` (`.is-ok`, `.is-warn`, `.is-bad`, `.is-info`: each with its icon left of the text, `.no-icon` leaves it out; `.a4-notice-title` for a bold first line) |
+| Toasts | `.a4-toasts` (the two live regions of the frame, `#a4-toasts` polite and `#a4-toasts-alert` assertive) and `.a4-toast` (`.is-ok`, `.is-warn`, `.is-bad`); added only by `window.a4Toast( message, kind )` from `admin4.js` |
 | Folding | `details.a4-fold` > `summary` + `.a4-fold-body` (`.is-bad`, `.is-warn`); `details.a4-confirm` (a confirmation that opens in place) |
 | Steps | `ol.a4-steps` > `li.is-done` / `li.is-current` |
 | Code | `.a4-pre` (`.is-tall`), `.a4-kbd` |
@@ -312,6 +313,11 @@ For every template or stylesheet change in an administration design or an extens
       `aria-invalid` with that id in `aria-describedby` (`tests/tests/design/AdminFormErrorsTest.php`).
 - [ ] A new data table is a `table.list` or an `.a4-table` (zebra rows, hover); controls in one row share
       `--a4-control-h`.
+- [ ] A notice that reports the result of an action has a role: `role="alert"` for an error (`.a4-notice.is-bad`,
+      `div.message-error`), `role="status"` for the rest (a status region already in the page is usually not
+      announced on load, but screen readers differ); a notice that explains a standing state has none. No
+      hand-written glyph ("!", a tick) at the start of a notice: the state class draws the icon. Feedback of an action done in the page without reload (copied, stored by
+      Ajax) is a toast (`window.a4Toast`), not a notice that appears; it never takes the focus (`AdminNoticesTest`).
 - [ ] A new module stylesheet is listed in `AdminComponentCSSFileList` and exists in `design/admin4` and `design/admin`.
 - [ ] The page was checked in light and dark mode at 1440 px and at 960 px with scale 2: no light card on the dark
       page, text contrast at least 4.5:1, no horizontal overflow, no console errors.

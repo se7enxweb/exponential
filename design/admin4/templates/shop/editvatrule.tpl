@@ -1,5 +1,5 @@
 {if $errors}
-    <div class="message-error">
+    <div class="message-error" role="alert">
         <h2>{$error_header}</h2>
         <ul>
         {foreach $errors as $error}

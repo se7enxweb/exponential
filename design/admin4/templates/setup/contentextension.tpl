@@ -27,15 +27,15 @@
 {/foreach}
 
 {foreach $wizard_problems as $ce_problem}
-<div class="a4-notice is-bad"><strong>!</strong><span>{$ce_problem|wash}</span></div>
+<div class="a4-notice is-bad"><span>{$ce_problem|wash}</span></div>
 {/foreach}
 
 {if $wizard_written|count|gt( 0 )}
-<div class="a4-notice is-info"><strong>&#10003;</strong><span>{'Written to %target. Switch it on with the lines below, clear the caches, and run the class script once.'|i18n( 'design/admin/setup/rad/content',, hash( '%target', $wizard_target ) )}</span></div>
+<div class="a4-notice is-ok"><span>{'Written to %target. Switch it on with the lines below, clear the caches, and run the class script once.'|i18n( 'design/admin/setup/rad/content',, hash( '%target', $wizard_target ) )}</span></div>
 {/if}
 
 {if $wizard_can_write|not}
-<div class="a4-notice is-info"><strong>i</strong><span>{'The web server cannot write into extension/, so this page can only hand you an archive.'|i18n( 'design/admin/setup/rad/content' )}</span></div>
+<div class="a4-notice is-info"><span>{'The web server cannot write into extension/, so this page can only hand you an archive.'|i18n( 'design/admin/setup/rad/content' )}</span></div>
 {/if}
 
 <div class="a4-card">

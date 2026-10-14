@@ -8452,6 +8452,14 @@
 <context>
     <name>design/admin/node/view/full</name>
     <message>
+        <source>Could not copy</source>
+        <translation>Could not copy</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Copied to the clipboard</translation>
+    </message>
+    <message>
         <source>Hide preview of content.</source>
         <translation>Hide preview of content.</translation>
     </message>
@@ -12220,6 +12228,10 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>Breadcrumb</source>
         <translation>Breadcrumb</translation>
+    </message>
+    <message>
+        <source>Dismiss</source>
+        <translation>Dismiss</translation>
     </message>
     <message>
         <source>Width of the left column</source>
@@ -35500,6 +35512,14 @@ your account.</translation>
 </context>
 <context>
     <name>design/admin/visual/menuconfig</name>
+    <message>
+        <source>Could not copy</source>
+        <translation>Could not copy</translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation>Copied to the clipboard</translation>
+    </message>
     <message>
         <source>Menu management</source>
         <translation>Menu management</translation>

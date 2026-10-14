@@ -1,4 +1,4 @@
-<div class="message-warning">
+<div class="message-warning" role="status">
 
 <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {'The template cannot be edited.'|i18n( 'design/admin/visual/templateedit' )}</h2>
 

@@ -8004,6 +8004,14 @@
 <context>
     <name>design/admin/node/view/full</name>
     <message>
+        <source>Could not copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Hide preview of content.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -11329,6 +11337,9 @@ Note: The packages will not be uninstalled.</source>
     <name>design/admin/pagelayout</name>
     <message>
         <source>Breadcrumb</source>
+    </message>
+    <message>
+        <source>Dismiss</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -34029,6 +34040,14 @@ your account.</source>
 </context>
 <context>
     <name>design/admin/visual/menuconfig</name>
+    <message>
+        <source>Could not copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copied to the clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message>
         <source>Menu management</source>
         <translation type="unfinished"></translation>

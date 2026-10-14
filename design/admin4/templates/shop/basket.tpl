@@ -1,6 +1,6 @@
 {* Feedback if some items were removed by the system. *}
 {section show=$removed_items}
-<div class="message-warning">
+<div class="message-warning" role="status">
 <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {'Items removed'|i18n( 'design/admin/shop/basket' )}</h2>
 <p>{'The following items were removed from your basket because the products have changed'|i18n( 'design/admin/shop/basket' )}:</p>
 <ul>
@@ -12,7 +12,7 @@
 {/section}
 
 {if not( $vat_is_known )}
-<div class="message-warning">
+<div class="message-warning" role="status">
 <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {'VAT is unknown'|i18n( 'design/admin/shop/basket' )}</h2>
 {'VAT percentage is not yet known for some of the items being purchased.'|i18n( 'design/admin/shop/basket' )}<br/>
 {'This probably means that some information about you is not yet available and will be obtained during checkout.'|i18n( 'design/admin/shop/basket' )}
@@ -20,7 +20,7 @@
 {/if}
 
 {section show=$error}
-<div class="message-warning">
+<div class="message-warning" role="status">
 {if eq( $error, "invaliditemcount" )}
     <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span>
     {"Incorrect quantity! The quantity of the product(s) must be numeric and not less than 1."|i18n("design/standard/shop",,)}</h2>

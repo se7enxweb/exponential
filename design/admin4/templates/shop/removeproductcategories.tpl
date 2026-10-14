@@ -10,7 +10,7 @@
 
 {* DESIGN: Content START *}<div class="box-ml"><div class="box-mr"><div class="box-content">
 
-<div class="message-confirmation">
+<div class="message-confirmation" role="status">
 
 {if $dependencies|count|gt(1)}
     <h2>{'Are you sure you want to remove the categories?'|i18n( 'design/admin/shop/removeproductcategories' )}</h2>

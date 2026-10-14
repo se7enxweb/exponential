@@ -1042,6 +1042,103 @@ fieldset.a4-field > legend + * { clear: both; }
 .a4-notice p + p, .a4-notice p + ul, .a4-notice ul + p { margin-top: var(--a4-space-2); }
 .a4-notice ul { margin: var(--a4-space-2) 0 0; padding-left: var(--a4-space-4); }
 .a4-notice li + li { margin-top: var(--a4-space-1); }
+/* The state shows as an icon too, not by colour alone (WCAG 1.4.1): a Bootstrap icon in the state's colour left of
+   the text. .a4-notice-title is the bold first line; .no-icon leaves the icon out (a notice that brings its own). */
+.a4-notice:is(.is-ok, .is-bad, .is-warn, .is-info):not(.no-icon) {
+  position: relative;
+  padding-left: calc(var(--a4-space-3) + var(--a4-space-4) + var(--a4-space-1) + var(--a4-space-2));
+}
+.a4-notice:is(.is-ok, .is-bad, .is-warn, .is-info):not(.no-icon)::before {
+  content: "";
+  position: absolute;
+  left: var(--a4-space-3);
+  top: calc(var(--a4-space-3) + 1px);
+  width: calc(var(--a4-space-4) + var(--a4-space-1));
+  height: calc(var(--a4-space-4) + var(--a4-space-1));
+  background-color: currentColor;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+.a4-notice.is-ok::before { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/check-circle-fill.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/check-circle-fill.svg); }
+.a4-notice.is-bad::before { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/x-circle-fill.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/x-circle-fill.svg); }
+.a4-notice.is-warn::before { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/exclamation-triangle-fill.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/exclamation-triangle-fill.svg); }
+.a4-notice.is-info::before { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/info-circle-fill.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/info-circle-fill.svg); }
+li.a4-notice { list-style: none; }   /* a notice as a list item: no marker next to its icon */
+.a4-notice-title { display: block; margin-bottom: var(--a4-space-1); font-weight: 700; color: inherit; }
+
+/* ---- Toasts: short feedback of an action done in the page (copied, saved), announced by a live region ------- */
+/* One stack per page (.a4-toasts in the frame) holding two live regions: #a4-toasts, polite, and for errors
+   #a4-toasts-alert, assertive.
+   window.a4Toast( message, kind ) adds a toast; it does not take the focus, closes after 5 s, waits while the
+   pointer or the focus is on it, and has a close button. */
+.a4-toasts {
+  position: fixed;
+  right: var(--a4-space-4);
+  bottom: var(--a4-space-4);
+  z-index: 1060;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--a4-space-2);
+  max-width: min(26rem, calc(100vw - 2 * var(--a4-space-4)));
+  pointer-events: none;
+}
+.a4-toasts > [aria-live] {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--a4-space-2);
+}
+.a4-toast {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--a4-space-2);
+  padding: var(--a4-space-2) var(--a4-space-2) var(--a4-space-2) var(--a4-space-3);
+  border: 1px solid var(--a4-line);
+  border-left: 4px solid var(--a4-info);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  box-shadow: var(--a4-shadow-m);
+  color: var(--a4-ink);
+  font-size: var(--a4-text-m);
+  line-height: 1.4;
+  pointer-events: auto;
+  animation: a4-toast-in .18s ease-out;
+}
+.a4-toast.is-ok { border-left-color: var(--a4-ok); }
+.a4-toast.is-bad { border-left-color: var(--a4-bad); }
+.a4-toast.is-warn { border-left-color: var(--a4-warn); }
+.a4-toast .a4-toast-text { flex: 1 1 auto; padding-top: var(--a4-space-1); }
+.a4-toast .a4-toast-close {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--a4-space-5);
+  height: var(--a4-space-5);
+  padding: 0;
+  border: 0;
+  border-radius: var(--a4-radius-s);
+  background: transparent;
+  color: var(--a4-muted);
+  font: inherit;
+  font-size: var(--a4-text-l);
+  line-height: 1;
+  cursor: pointer;
+}
+.a4-toast .a4-toast-close:hover { background-color: var(--a4-soft); color: var(--a4-ink); }
+@keyframes a4-toast-in { from { opacity: 0; transform: translateY(var(--a4-space-2)); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .a4-toast { animation: none; }
+}
+@media (forced-colors: active) {
+  .a4-notice:is(.is-ok, .is-bad, .is-warn, .is-info):not(.no-icon)::before { forced-color-adjust: none; background-color: CanvasText; }
+  .a4-toast { border: 1px solid CanvasText; border-left-width: 4px; }
+}
 
 /* ---- Folding: <details class="a4-fold">, and the in-place confirmation <details class="a4-confirm"> ------------ */
 

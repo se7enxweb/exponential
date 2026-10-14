@@ -26,7 +26,7 @@
     {/if}
 </dl>
 {if $job_summary.jobs|count}
-<div class="message-warning">
+<div class="message-warning" role="status">
     <h2>{'Background jobs are working on this part of the tree'|i18n( 'design/admin/content/job' )}</h2>
     <ul>{foreach $job_summary.jobs as $j}<li><a href={concat( 'content/job/', $j.id )|ezurl}>{$j.title|wash}</a> - {$j.percent}%</li>{/foreach}</ul>
     <p>{'An operation that overlaps them is refused until they are done.'|i18n( 'design/admin/content/job' )}</p>

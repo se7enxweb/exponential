@@ -44,7 +44,8 @@
       "tests/tests/design/AdminKeyboardTest.php",
       "tests/tests/design/AdminTreeViewTest.php",
       "tests/tests/design/AdminFormLabelsTest.php",
-      "tests/tests/design/AdminPageHeaderTest.php"
+      "tests/tests/design/AdminPageHeaderTest.php",
+      "tests/tests/design/AdminNoticesTest.php"
     ],
     "design/admin*/stylesheets/*": [
       "tests/tests/design/AdminStylingRulesTest.php",
@@ -54,7 +55,8 @@
       "tests/tests/design/AdminLandmarksTest.php",
       "tests/tests/design/AdminFormLabelsTest.php",
       "tests/tests/design/AdminTokenContrastTest.php",
-      "tests/tests/design/AdminPageHeaderTest.php"
+      "tests/tests/design/AdminPageHeaderTest.php",
+      "tests/tests/design/AdminNoticesTest.php"
     ],
     "design/admin4/javascript/ezajaxsubitems_expdatatable.js": [
       "tests/tests/design/AdminLanguageBadgeTest.php"
@@ -183,6 +185,9 @@
     ],
     "design/admin/javascript/contentstructuremenu_dynamic.js": [
       "tests/tests/design/AdminTreeViewTest.php"
+    ],
+    "design/admin4/javascript/admin4.js": [
+      "tests/tests/design/AdminNoticesTest.php"
     ]
   },
   "generated": {

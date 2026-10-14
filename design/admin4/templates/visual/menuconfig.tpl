@@ -373,7 +373,7 @@
                 {case match='menu_my_section_left'}{'A left menu for the current section'|i18n( 'design/admin/visual/menuconfig' )}{/case}
                 {case}{'Where the files go'|i18n( 'design/admin/visual/menuconfig' )}{/case}
             {/switch}</h3>
-            <button type="button" class="a4-btn a4-btn-small a4-visual-copy" data-copy="menuconfig-snippet-{$mc_id|wash}" hidden="hidden">{'Copy'|i18n( 'design/admin/visual/menuconfig' )}</button>
+            <button type="button" class="a4-btn a4-btn-small a4-visual-copy" data-copy="menuconfig-snippet-{$mc_id|wash}" data-copied="{'Copied to the clipboard'|i18n( 'design/admin/visual/menuconfig' )|wash}" data-copy-failed="{'Could not copy'|i18n( 'design/admin/visual/menuconfig' )|wash}" hidden="hidden">{'Copy'|i18n( 'design/admin/visual/menuconfig' )}</button>
         </div>
         <p>{switch match=$mc_id}
             {case match='pagelayout_menus'}{'Put it where the menus go in your pagelayout.tpl. The cache-block keys are those of design/base: the address, and the roles and limitations of the user, so every visitor gets the selected item of the page and only what their rights allow; the siteaccess is part of every cache-block key by itself, and the block expires whenever content is published.'|i18n( 'design/admin/visual/menuconfig' )}{/case}
@@ -398,13 +398,19 @@
         var label = button.textContent;
         button.addEventListener('click', function () {
             var text = target.textContent;
-            var done = function () { button.textContent = label + ' ✓'; setTimeout(function () { button.textContent = label; }, 1500); };
+            var done = function () {
+                button.textContent = label + ' ✓'; setTimeout(function () { button.textContent = label; }, 1500);
+                // the tick is only seen; the toast also tells a screen reader
+                if (window.a4Toast) window.a4Toast(button.getAttribute('data-copied'), 'ok', button);
+            };
+            // a copy that failed says so instead of doing nothing
+            var failed = function () { if (window.a4Toast) window.a4Toast(button.getAttribute('data-copy-failed'), 'bad', button); };
             if (navigator.clipboard && window.isSecureContext) {
-                navigator.clipboard.writeText(text).then(done, function () {});
+                navigator.clipboard.writeText(text).then(done, failed);
             } else {
                 var range = document.createRange(); range.selectNodeContents(target);
                 var selection = window.getSelection(); selection.removeAllRanges(); selection.addRange(range);
-                try { document.execCommand('copy'); done(); } catch (e) {}
+                try { if (document.execCommand('copy')) { done(); } else { failed(); } } catch (e) { failed(); }
             }
         });
     });

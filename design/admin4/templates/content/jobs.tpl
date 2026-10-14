@@ -18,7 +18,7 @@
 {* DESIGN: Content START *}<div class="box-ml"><div class="box-mr"><div class="box-content">
 
 {if $error}
-<div class="message-error"><h2>{$error|wash}</h2></div>
+<div class="message-error" role="alert"><h2>{$error|wash}</h2></div>
 {/if}
 
 <div class="block">
