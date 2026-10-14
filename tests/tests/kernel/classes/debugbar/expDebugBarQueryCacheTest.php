@@ -48,6 +48,10 @@ class expDebugBarQueryCacheTest extends PHPUnit\Framework\TestCase
         $this->assertMatchesRegularExpression( '/data-key="querycache" data-level="high"[^>]*>QC - · -186 ms \(186 %\)</u', $html );
         $this->assertStringContainsString( 'mode shared (no APCu)', $html );
 
+        $html = $this->summaryHtml( array( 'measured' => true ) + $this->snapshot( array( 'saved_ms' => 2761.0 ) ) + array( 'level' => 'ok' ) );
+        $this->assertStringContainsString( '(2761 %)', $html, 'no thousands separator: "2,761 %" reads as a decimal in German' );
+        $this->assertStringContainsString( 'about 2861 ms instead of 100 ms', $html );
+
         $html = $this->summaryHtml( array( 'measured' => true ) + $this->snapshot( array( 'saved_ms' => 0.2 ) ) + array( 'level' => 'ok' ) );
         $this->assertMatchesRegularExpression( '/>QC 80 % · 0 ms</u', $html, 'nothing saved: no minus sign, no share' );
         $this->assertStringNotContainsString( 'The saved time is', $html );
