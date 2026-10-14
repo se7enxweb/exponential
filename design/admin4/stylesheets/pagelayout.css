@@ -25,7 +25,7 @@ div.widthcontrol-grippy {
     height: 33px;
     width: 15px;
     background: url('../images/3/sprite.png') no-repeat 0 -505px;
-    z-index: var(--a4-z-frame-control);
+    z-index: var(--a4-z-frame-grip);
 }
 
 div.widthcontrol-grippy:hover,
@@ -649,10 +649,6 @@ div.popupmenu div.popupmenuheader {
     background-color: #6f6e6b;
     color: #eee;
     border-bottom: 1px solid var(--a4-line-strong);
-}
-
-div.popupmenu#EditSubmenu {
-    z-index: var(--a4-z-menu-sub);
 }
 
 div.popupmenu h3 {

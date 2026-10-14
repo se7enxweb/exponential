@@ -112,7 +112,9 @@
      (the header, a card) a token only orders against that parent's other children.
      raised        an item over its neighbours (a hovered thumbnail, a drop marker)
      sticky        sticky toolbars and notices inside the content
-     frame-control the classic frame's grips and show/hide links
+     frame-grip    the classic frame's width grip, under its show/hide links
+     frame-control the classic frame's show/hide links and width handler
+     hover-preview a thumbnail enlarged on hover, over sticky bars and grips
      popover       a pane that opens inside the header or the control bar
      scroll-top    the "back to top" button
      navbar        the phone-width menu
@@ -121,13 +123,16 @@
      controlbar    the fixed control bar of edit pages
      drag-target / drag / drag-mask  column drag and resize in the data tables
      header        the fixed header
-     sidebar-toggle the tabs on the window edges that show and hide the side columns
+     sidebar-toggle the tabs on the window edges that show and hide the side columns (they sit inside the fixed
+                   header, so this orders them among the header's children)
      menu, menu-sub context menus and their submenus, above the header so a menu that opens upwards is not cut off
      overlay, modal the dimming mask and the dialog on it, above everything of the frame
      toast         short-lived notices, above a dialog */
   --a4-z-raised: 2;
   --a4-z-sticky: 5;
-  --a4-z-frame-control: 10;
+  --a4-z-frame-grip: 9;
+  --a4-z-frame-control: 11;
+  --a4-z-hover-preview: 50;
   --a4-z-popover: 60;
   --a4-z-scroll-top: 100;
   --a4-z-navbar: 110;

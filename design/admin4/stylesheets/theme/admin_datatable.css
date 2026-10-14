@@ -576,7 +576,7 @@ a:focus-visible > .crankfield::before {
 
 .thumbview:hover{
     background-color: transparent;
-    z-index: var(--a4-z-raised);
+    z-index: var(--a4-z-hover-preview);
 }
 
 .thumbview span {
@@ -945,7 +945,7 @@ a:focus-visible > .crankfield::before {
 
 .thumbview:hover {
     background-color: transparent;
-    z-index: var(--a4-z-raised);
+    z-index: var(--a4-z-hover-preview);
 }
 
 .thumbview span {

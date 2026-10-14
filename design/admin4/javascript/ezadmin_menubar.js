@@ -65,7 +65,8 @@ function sidebarToggle() {
     $(".sidebar-control.right").on("click", () => toggle("right"));
 
     // Escape closes a column open over the page on a narrow window and gives the focus back to its tab, when the focus
-    // is in that column or on its tab; a menu open in the column handles Escape itself first.
+    // is in that column or on its tab. While a context menu (ezpopupmenu.js) is shown, Escape belongs to the menu: this
+    // does not rely on the order the scripts load in or on the menu stopping the event.
     document.addEventListener("keydown", (e) => {
         if (e.key !== "Escape" || e.defaultPrevented || !narrow.matches || narrowOpen === null) {
             return;
@@ -79,6 +80,13 @@ function sidebarToggle() {
         }
         if (active.closest && active.closest('[role="menu"]')) {
             return;
+        }
+        const menus = document.querySelectorAll("div.popupmenu");
+        for (let i = 0; i < menus.length; i++) {
+            const style = window.getComputedStyle(menus[i]);
+            if (style.display !== "none" && style.visibility !== "hidden") {
+                return;
+            }
         }
         narrowOpen = null;
         apply();

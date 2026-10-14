@@ -122,7 +122,9 @@ number (0, 1 and -1 for order inside one component excepted). Theme-independent,
 |---|---|---|
 | `--a4-z-raised` | 2 | an item over its neighbours (a hovered thumbnail, a drop marker) |
 | `--a4-z-sticky` | 5 | sticky toolbars and notices in the content |
-| `--a4-z-frame-control` | 10 | the classic frame's grips and show/hide links |
+| `--a4-z-frame-grip` | 9 | the classic frame's width grip, under its show/hide links |
+| `--a4-z-frame-control` | 11 | the classic frame's show/hide links and width handler |
+| `--a4-z-hover-preview` | 50 | a thumbnail enlarged on hover, over sticky bars and grips |
 | `--a4-z-popover` | 60 | a pane inside the header or the control bar (search scope) |
 | `--a4-z-scroll-top` | 100 | the back-to-top button |
 | `--a4-z-navbar` | 110 | the phone-width menu |
@@ -131,15 +133,16 @@ number (0, 1 and -1 for order inside one component excepted). Theme-independent,
 | `--a4-z-controlbar` | 200 | the fixed control bar of edit pages |
 | `--a4-z-drag-target` | 999 | the drop target when a table column is dragged |
 | `--a4-z-header` | 1020 | the fixed header |
-| `--a4-z-sidebar-toggle` | 1030 | the tabs on the window edges |
+| `--a4-z-sidebar-toggle` | 1030 | the tabs on the window edges (inside the fixed header: ordered among its children) |
 | `--a4-z-menu` / `--a4-z-menu-sub` | 1040 / 1050 | context menus and their submenus, above the header |
-| `--a4-z-overlay` / `--a4-z-modal` | 1060 / 1070 | a dialog's mask and the dialog |
+| `--a4-z-overlay` / `--a4-z-modal` | 1060 / 1070 | a dialog's mask and the dialog (also the base rule of `theme/modalwindow.css`) |
 | `--a4-z-toast` | 1080 | short-lived notices |
 | `--a4-z-drag` / `--a4-z-drag-mask` | 9000 / 9500 | column drag and resize proxies of the data tables |
 
 Inside a parent with its own stacking context (the fixed header, a transformed card) a token only orders against that
 parent's children. `AdminStylingRulesTest::testStackingComesFromTheLayerTokens` fails on any other z-index and on a
-change of the order header < tabs < menus < mask < dialog < toasts.
+change of the order sticky < grip < frame controls < hover preview < popover < header < tabs < menus < mask < dialog <
+toasts, and on a `var(--a4-z-…)` that `components.css` does not define (a typo would fall back to `auto`).
 
 ## Components
 

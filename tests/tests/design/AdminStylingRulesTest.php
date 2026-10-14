@@ -644,15 +644,33 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
         }
         $this->assertSame( array(), $problems, 'use a --a4-z-* token (0, 1 and -1 only inside one component)' );
 
+        // every token a stylesheet uses is defined (a typo would make the z-index auto)
+        $defined = (string)file_get_contents( "$dir/components.css" );
+        $undefined = array();
+        foreach ( array_merge( glob( "$dir/*.css" ), glob( "$dir/*/*.css" ) ) as $path )
+        {
+            preg_match_all( '/var\((--a4-z-[a-z-]+)\)/', (string)file_get_contents( $path ), $used );
+            foreach ( array_unique( $used[1] ) as $token )
+            {
+                if ( !preg_match( '/' . preg_quote( $token, '/' ) . '\s*:/', $defined ) )
+                {
+                    $undefined[] = basename( $path ) . ": $token";
+                }
+            }
+        }
+        $this->assertSame( array(), $undefined, 'a --a4-z-* token that components.css does not define' );
+
         $tokens = array();
         preg_match_all( '/(--a4-z-[a-z-]+)\s*:\s*(-?\d+)\s*;/', (string)file_get_contents( "$dir/components.css" ), $m, PREG_SET_ORDER );
         foreach ( $m as $token )
         {
             $tokens[$token[1]] = (int)$token[2];
         }
-        // the order the frame relies on: content < header < the edge tabs < menus < a dialog's mask < the dialog < toasts
-        $order = array( '--a4-z-sticky', '--a4-z-sidebar', '--a4-z-header', '--a4-z-sidebar-toggle', '--a4-z-menu',
-                        '--a4-z-menu-sub', '--a4-z-overlay', '--a4-z-modal', '--a4-z-toast' );
+        // the order the frame relies on, lowest first
+        $order = array( '--a4-z-raised', '--a4-z-sticky', '--a4-z-frame-grip', '--a4-z-frame-control',
+                        '--a4-z-hover-preview', '--a4-z-popover', '--a4-z-sidebar', '--a4-z-header',
+                        '--a4-z-sidebar-toggle', '--a4-z-menu', '--a4-z-menu-sub', '--a4-z-overlay', '--a4-z-modal',
+                        '--a4-z-toast' );
         foreach ( $order as $i => $token )
         {
             $this->assertArrayHasKey( $token, $tokens );
@@ -674,6 +692,8 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( '.attr("aria-expanded", open ? "true" : "false")', $js );
         $this->assertStringContainsString( 'e.key !== "Escape"', $js );
         $this->assertStringContainsString( 'control.focus();', $js );
+        // while a context menu is shown, Escape belongs to the menu, whatever the script order
+        $this->assertStringContainsString( 'document.querySelectorAll("div.popupmenu")', $js );
     }
 
     public function testComponentsAreTheSameInAdminAndAdmin4()
