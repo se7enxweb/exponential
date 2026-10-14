@@ -23,7 +23,7 @@
    column and direction are view parameters, so paging keeps them. *}
 <table class="list" cellspacing="0">
 <tr>
-    <th class="tight"><img src={'toggle-button-16x16.gif'|ezimage} width="16" height="16" alt="{'Invert selection.'|i18n( 'design/admin/shop/orderlist' )}" title="{'Invert selection.'|i18n( 'design/admin/shop/orderlist' )}" onclick="ezjs_toggleCheckboxes( document.orderlist, 'OrderIDArray[]' ); return false;" /></th>
+    <th class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/shop/orderlist' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/shop/orderlist' )|wash}" onclick="ezjs_toggleCheckboxes( document.orderlist, 'OrderIDArray[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
     {include uri='design:parts/sortheader.tpl' key='id' label='ID'|i18n( 'design/admin/shop/orderlist' ) sort=$order_sort page_uri='/shop/orderlist' cell_class='tight'}
     {include uri='design:parts/sortheader.tpl' key='customer' label='Customer'|i18n( 'design/admin/shop/orderlist' ) sort=$order_sort page_uri='/shop/orderlist' cell_class='wide'}
     {include uri='design:parts/sortheader.tpl' key='total_ex_vat' label='Total (ex. VAT)'|i18n( 'design/admin/shop/orderlist' ) sort=$order_sort page_uri='/shop/orderlist' cell_class='tight'}

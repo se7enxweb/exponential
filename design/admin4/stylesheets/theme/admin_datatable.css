@@ -234,12 +234,33 @@ th.admin-dt-sortable .admin-dt-label {
     margin-right: 10px;
 }
 
-th.admin-dt-desc .admin-dt-liner {
-   background:url(../../images/3/sprite.png) no-repeat right -170px;
+th.admin-dt-desc .admin-dt-liner,
+th.admin-dt-asc .admin-dt-liner {
+    position: relative;
 }
 
-th.admin-dt-asc .admin-dt-liner {
-    background:url(../../images/3/sprite.png) no-repeat right -224px;
+th.admin-dt-desc .admin-dt-liner::after,
+th.admin-dt-asc .admin-dt-liner::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    margin-top: -5px;
+    background-color: currentColor;
+    -webkit-mask: no-repeat center / contain;
+    mask: no-repeat center / contain;
+}
+
+th.admin-dt-desc .admin-dt-liner::after {
+    -webkit-mask-image: url(../../../../share/icons/bootstrap-icons/svg/caret-down-fill.svg);
+    mask-image: url(../../../../share/icons/bootstrap-icons/svg/caret-down-fill.svg);
+}
+
+th.admin-dt-asc .admin-dt-liner::after {
+    -webkit-mask-image: url(../../../../share/icons/bootstrap-icons/svg/caret-up-fill.svg);
+    mask-image: url(../../../../share/icons/bootstrap-icons/svg/caret-up-fill.svg);
 }
 
 th.admin-dt-asc, th.admin-dt-desc
@@ -498,12 +519,32 @@ span.admin-pg-first,span.admin-pg-previous,span.admin-pg-next,span.admin-pg-last
     width: 16px;
 }
 
-.crankfield {
-    background: transparent url(../../images/icons-sprite.png) no-repeat 0 -192px;
+.crankfield,
+.crankfield-disabled {
+    position: relative;
 }
 
-.crankfield-disabled {
-    background: transparent url(../../images/icons-sprite.png) no-repeat 0 -208px;
+/* the row's menu: three dots, muted; the accent while its link is hovered or focused */
+.crankfield::before,
+.crankfield-disabled::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    background-color: var(--a4-muted);
+    -webkit-mask: url(../../../../share/icons/bootstrap-icons/svg/three-dots-vertical.svg) no-repeat center / contain;
+    mask: url(../../../../share/icons/bootstrap-icons/svg/three-dots-vertical.svg) no-repeat center / contain;
+}
+
+a:hover > .crankfield::before,
+a:focus-visible > .crankfield::before {
+    background-color: var(--a4-accent-text);
+}
+
+.crankfield-disabled::before {
+    background-color: var(--a4-disabled);
 }
 
 .thumbfield {
@@ -511,10 +552,26 @@ span.admin-pg-first,span.admin-pg-previous,span.admin-pg-next,span.admin-pg-last
     width: 16px;
 }
 
-.thumbview{
+.thumbview {
     position: relative;
     z-index: 0;
-    background: transparent url(../../images/icons-sprite.png) no-repeat 0 -224px;
+}
+
+/* an image's preview: the image icon on the empty .thumbfield */
+.thumbview > .thumbfield {
+    position: relative;
+}
+
+.thumbview > .thumbfield::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    background-color: var(--a4-muted);
+    -webkit-mask: url(../../../../share/icons/bootstrap-icons/svg/image.svg) no-repeat center / contain;
+    mask: url(../../../../share/icons/bootstrap-icons/svg/image.svg) no-repeat center / contain;
 }
 
 .thumbview:hover{
@@ -564,158 +621,192 @@ span.admin-pg-first,span.admin-pg-previous,span.admin-pg-next,span.admin-pg-last
 }
 
 #ezbtn-more button {
-    background: transparent url(../../images/3/sprite.png) no-repeat right -811px;
+    position: relative;
     padding-right: 1.7em;
 }
 
-#ezbtn-items-button {
-    background: url('../../images/3/sprite.png') no-repeat 5px -650px;
-    padding-left: 2em;
-}
-
-#ezbtn-new-button {
-    background: url('../../images/3/sprite.png') no-repeat 5px 4px;
-    padding-left: 2em;
-}
-
+#ezbtn-items-button,
+#ezbtn-new-button,
 #ezbtn-options-button {
-    background: url('../../images/3/sprite.png') no-repeat 5px -713px;
+    position: relative;
     padding-left: 2em;
 }
 
-#ezopt-menu-remove {
-    background-image: url('../../images/trash-icon-16x16.gif');
-}
-
-#ezopt-menu-move {
-    background-image: url(../../images/icons-sprite.png);
-    background-position: 5% -157px;
-}
-
-#ezopt-menu-hide {
-    background-image: none;
-    position: relative;
-}
-
-#ezopt-menu-unhide {
-    background-image: none;
-    position: relative;
-}
-
-#ezopt-menu-hide:before,
-#ezopt-menu-unhide:before {
+#ezbtn-more button::after,
+#ezbtn-items-button::before,
+#ezbtn-new-button::before,
+#ezbtn-options-button::before {
     content: "";
     position: absolute;
-    left: 5%;
     top: 50%;
-    width: 11px;
-    height: 11px;
-    margin-top: -6px;
-    border: 1px solid;
-    border-radius: 2px;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
-    box-sizing: border-box;
-}
-
-#ezopt-menu-hide:before {
-    border-color: #6a6a6a;
-    background: linear-gradient(to bottom, #d7d7d7 0%, #a9a9a9 100%);
-}
-
-#ezopt-menu-unhide:before {
-    border-color: #268f26;
-    background: linear-gradient(to bottom, #60db60 0%, #20b920 100%);
-}
-
-#ezopt-menu-hide:after,
-#ezopt-menu-unhide:after {
-    content: "";
-    position: absolute;
-    left: 5%;
-    top: 50%;
-    width: 11px;
-    height: 11px;
-    margin-top: -6px;
+    width: 14px;
+    height: 14px;
+    margin-top: -7px;
     pointer-events: none;
+    background-color: currentColor;
+    -webkit-mask: no-repeat center / contain;
+    mask: no-repeat center / contain;
 }
 
-#ezopt-menu-hide:after {
-    background: linear-gradient(#3f3f3f, #3f3f3f) center/7px 2px no-repeat;
+#ezbtn-more button::after {
+    right: 0.45em;
+    width: 10px;
+    height: 10px;
+    margin-top: -5px;
+    -webkit-mask-image: url(../../../../share/icons/bootstrap-icons/svg/caret-down-fill.svg);
+    mask-image: url(../../../../share/icons/bootstrap-icons/svg/caret-down-fill.svg);
 }
 
-#ezopt-menu-unhide:after {
-    background:
-        linear-gradient(#f8fff8, #f8fff8) center/7px 2px no-repeat,
-        linear-gradient(#f8fff8, #f8fff8) center/2px 7px no-repeat;
+#ezbtn-items-button::before,
+#ezbtn-new-button::before,
+#ezbtn-options-button::before {
+    left: 6px;
 }
 
-#ezopt-menu-edit {
-    background-image: url('../../images/2/icon-edit-16x16.png');
+#ezbtn-items-button::before {
+    -webkit-mask-image: url(../../../../share/icons/bootstrap-icons/svg/check2-square.svg);
+    mask-image: url(../../../../share/icons/bootstrap-icons/svg/check2-square.svg);
 }
 
-#ezopt-menu-preview {
-    background-image: url('../../images/2/icon-preview-16x16.png');
+#ezbtn-new-button::before {
+    -webkit-mask-image: url(../../../../share/icons/bootstrap-icons/svg/plus-lg.svg);
+    mask-image: url(../../../../share/icons/bootstrap-icons/svg/plus-lg.svg);
 }
 
-#ezopt-menu-check {
-    background-image: url(../../images/icons-sprite.png);
-    background-position: 5% -61px;
+#ezbtn-options-button::before {
+    -webkit-mask-image: url(../../../../share/icons/bootstrap-icons/svg/sliders.svg);
+    mask-image: url(../../../../share/icons/bootstrap-icons/svg/sliders.svg);
 }
 
-#ezopt-menu-uncheck {
-    background-image: url(../../images/icons-sprite.png);
-    background-position: 5% -29px;
-}
-
-#ezopt-menu-toggle {
-    background-image: url('../../images/2/toggle-button-16x16.png');
-}
-
-#ezopt-menu-view {
-    background-image: url('../../images/2/icon-open-16x16.png');
-}
-
-#ezopt-menu-copy,
-#ezopt-menu-copy-subtree {
-    background-image: url('../../images/2/icon-copy-16x16.png');
-}
-
-#ezopt-menu-multiupload {
-    background-image: url('../../images/2/icon-up-16x16.png');
-}
-
-#ezopt-menu-addlocation,
-#ezopt-menu-list {
-    background-image: url('../../images/2/icon-sitemap-16x16.png');
-}
-
-#ezopt-menu-multiedit {
-    background-image: url('../../images/2/icon-edit-16x16.png');
-}
-
+/* The icon of each menu item: a Bootstrap icon (share/icons/bootstrap-icons) 5% from the item's left edge, in the
+   item's colour; remove in the danger colour, hide muted and unhide in the success colour */
 #ezopt-menu-remove,
+#ezopt-menu-move,
 #ezopt-menu-edit,
 #ezopt-menu-preview,
+#ezopt-menu-check,
+#ezopt-menu-uncheck,
 #ezopt-menu-toggle,
 #ezopt-menu-view,
 #ezopt-menu-copy,
 #ezopt-menu-copy-subtree,
 #ezopt-menu-multiupload,
-#ezopt-menu-multiedit,
 #ezopt-menu-addlocation,
-#ezopt-menu-list {
-    background-repeat: no-repeat;
-    background-position: 5% 50%;
+#ezopt-menu-list,
+#ezopt-menu-multiedit,
+#ezopt-menu-hide,
+#ezopt-menu-unhide {
+    position: relative;
     padding-left: 1em;
 }
 
-#ezopt-menu-move,
-#ezopt-menu-hide,
-#ezopt-menu-unhide,
-#ezopt-menu-check,
-#ezopt-menu-uncheck {
-    background-repeat: no-repeat;
-    padding-left: 1em;
+#ezopt-menu-remove::before,
+#ezopt-menu-move::before,
+#ezopt-menu-edit::before,
+#ezopt-menu-preview::before,
+#ezopt-menu-check::before,
+#ezopt-menu-uncheck::before,
+#ezopt-menu-toggle::before,
+#ezopt-menu-view::before,
+#ezopt-menu-copy::before,
+#ezopt-menu-copy-subtree::before,
+#ezopt-menu-multiupload::before,
+#ezopt-menu-addlocation::before,
+#ezopt-menu-list::before,
+#ezopt-menu-multiedit::before,
+#ezopt-menu-hide::before,
+#ezopt-menu-unhide::before {
+    content: "";
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    width: 13px;
+    height: 13px;
+    margin-top: -6.5px;
+    pointer-events: none;
+    background-color: currentColor;
+    -webkit-mask: no-repeat center / contain;
+    mask: no-repeat center / contain;
+}
+
+#ezopt-menu-remove::before {
+    -webkit-mask-image: url(../../../../share/icons/bootstrap-icons/svg/trash.svg);
+    mask-image: url(../../../../share/icons/bootstrap-icons/svg/trash.svg);
+}
+
+#ezopt-menu-move::before {
+    -webkit-mask-image: url(../../../../share/icons/bootstrap-icons/svg/arrows-move.svg);
+    mask-image: url(../../../../share/icons/bootstrap-icons/svg/arrows-move.svg);
+}
+
+#ezopt-menu-edit::before {
+    -webkit-mask-image: url(../../../../share/icons/bootstrap-icons/svg/pencil.svg);
+    mask-image: url(../../../../share/icons/bootstrap-icons/svg/pencil.svg);
+}
+
+#ezopt-menu-preview::before,
+#ezopt-menu-unhide::before {
+    -webkit-mask-image: url(../../../../share/icons/bootstrap-icons/svg/eye.svg);
+    mask-image: url(../../../../share/icons/bootstrap-icons/svg/eye.svg);
+}
+
+#ezopt-menu-check::before {
+    -webkit-mask-image: url(../../../../share/icons/bootstrap-icons/svg/check2-square.svg);
+    mask-image: url(../../../../share/icons/bootstrap-icons/svg/check2-square.svg);
+}
+
+#ezopt-menu-uncheck::before {
+    -webkit-mask-image: url(../../../../share/icons/bootstrap-icons/svg/square.svg);
+    mask-image: url(../../../../share/icons/bootstrap-icons/svg/square.svg);
+}
+
+#ezopt-menu-toggle::before {
+    -webkit-mask-image: url(../../../../share/icons/bootstrap-icons/svg/toggles.svg);
+    mask-image: url(../../../../share/icons/bootstrap-icons/svg/toggles.svg);
+}
+
+#ezopt-menu-view::before {
+    -webkit-mask-image: url(../../../../share/icons/bootstrap-icons/svg/box-arrow-up-right.svg);
+    mask-image: url(../../../../share/icons/bootstrap-icons/svg/box-arrow-up-right.svg);
+}
+
+#ezopt-menu-copy::before,
+#ezopt-menu-copy-subtree::before {
+    -webkit-mask-image: url(../../../../share/icons/bootstrap-icons/svg/files.svg);
+    mask-image: url(../../../../share/icons/bootstrap-icons/svg/files.svg);
+}
+
+#ezopt-menu-multiupload::before {
+    -webkit-mask-image: url(../../../../share/icons/bootstrap-icons/svg/upload.svg);
+    mask-image: url(../../../../share/icons/bootstrap-icons/svg/upload.svg);
+}
+
+#ezopt-menu-addlocation::before,
+#ezopt-menu-list::before {
+    -webkit-mask-image: url(../../../../share/icons/bootstrap-icons/svg/diagram-3.svg);
+    mask-image: url(../../../../share/icons/bootstrap-icons/svg/diagram-3.svg);
+}
+
+#ezopt-menu-multiedit::before {
+    -webkit-mask-image: url(../../../../share/icons/bootstrap-icons/svg/pencil-square.svg);
+    mask-image: url(../../../../share/icons/bootstrap-icons/svg/pencil-square.svg);
+}
+
+#ezopt-menu-hide::before {
+    -webkit-mask-image: url(../../../../share/icons/bootstrap-icons/svg/eye-slash.svg);
+    mask-image: url(../../../../share/icons/bootstrap-icons/svg/eye-slash.svg);
+}
+
+#ezopt-menu-remove::before {
+    background-color: var(--a4-bad);
+}
+
+#ezopt-menu-hide::before {
+    background-color: var(--a4-muted);
+}
+
+#ezopt-menu-unhide::before {
+    background-color: var(--a4-ok);
 }
 
 
@@ -797,12 +888,32 @@ span.admin-pg-first,span.admin-pg-previous,span.admin-pg-next,span.admin-pg-last
     width: 16px;
 }
 
-.crankfield {
-    background: transparent url(../../images/icons-sprite.png) no-repeat 0 -192px;
+.crankfield,
+.crankfield-disabled {
+    position: relative;
 }
 
-.crankfield-disabled {
-    background: transparent url(../../images/icons-sprite.png) no-repeat 0 -208px;
+/* the row's menu: three dots, muted; the accent while its link is hovered or focused */
+.crankfield::before,
+.crankfield-disabled::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    background-color: var(--a4-muted);
+    -webkit-mask: url(../../../../share/icons/bootstrap-icons/svg/three-dots-vertical.svg) no-repeat center / contain;
+    mask: url(../../../../share/icons/bootstrap-icons/svg/three-dots-vertical.svg) no-repeat center / contain;
+}
+
+a:hover > .crankfield::before,
+a:focus-visible > .crankfield::before {
+    background-color: var(--a4-accent-text);
+}
+
+.crankfield-disabled::before {
+    background-color: var(--a4-disabled);
 }
 
 .thumbfield {
@@ -813,7 +924,23 @@ span.admin-pg-first,span.admin-pg-previous,span.admin-pg-next,span.admin-pg-last
 .thumbview {
     position: relative;
     z-index: 0;
-    background: transparent url(../../images/icons-sprite.png) no-repeat 0 -224px;
+}
+
+/* an image's preview: the image icon on the empty .thumbfield */
+.thumbview > .thumbfield {
+    position: relative;
+}
+
+.thumbview > .thumbfield::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    background-color: var(--a4-muted);
+    -webkit-mask: url(../../../../share/icons/bootstrap-icons/svg/image.svg) no-repeat center / contain;
+    mask: url(../../../../share/icons/bootstrap-icons/svg/image.svg) no-repeat center / contain;
 }
 
 .thumbview:hover {

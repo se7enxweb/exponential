@@ -46,7 +46,7 @@
 
 <table class="list" cellspacing="0">
 <tr>
-    <th class="tight"><img src={'toggle-button-16x16.gif'|ezimage} width="16" height="16" alt="{'Invert selection.'|i18n( 'design/admin/shop/wishlist' )}" title="{'Invert selection.'|i18n( 'design/admin/shop/wishlist' )}" onclick="ezjs_toggleCheckboxes( document.wishlistform, 'RemoveProductItemDeleteList[]' ); return false;" /></th>
+    <th class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/shop/wishlist' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/shop/wishlist' )|wash}" onclick="ezjs_toggleCheckboxes( document.wishlistform, 'RemoveProductItemDeleteList[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
     <th>{'Name'|i18n( 'design/admin/shop/wishlist')}</th>
 {*
     <th>{'Quantity'|i18n( 'design/admin/shop/wishlist')}</th>

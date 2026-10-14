@@ -64,7 +64,7 @@
     <div class="a4-field">
         <span class="a4-help">{'A new section starts empty: give it a name and an identifier, then assign content to it.'|i18n( 'design/admin/section/list' )}</span>
         <div class="a4-actions">
-            <button type="submit" class="a4-btn a4-btn-primary" name="CreateSectionButton" value="1" title="{'Create a new section.'|i18n( 'design/admin/section/list' )}"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M7 2h2v5h5v2H9v5H7V9H2V7h5z"/></svg>{'New section'|i18n( 'design/admin/section/list' )}</button>
+            <button type="submit" class="a4-btn a4-btn-primary" name="CreateSectionButton" value="1" title="{'Create a new section.'|i18n( 'design/admin/section/list' )|wash}"><span class="a4-icon a4-bi-plus-lg" aria-hidden="true"></span>{'New section'|i18n( 'design/admin/section/list' )}</button>
         </div>
     </div>
     {/if}

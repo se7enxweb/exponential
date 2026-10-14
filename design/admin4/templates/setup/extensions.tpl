@@ -179,7 +179,7 @@
     <div class="a4-setup-ext-pos">
         {if $row.active}
         <span class="a4-setup-ext-num" title="{'Position in ActiveExtensions'|i18n( 'design/admin/setup/extensions' )|wash}"><span class="a4-sr-only">{'Position'|i18n( 'design/admin/setup/extensions' )} </span><span class="a4-setup-ext-n">{$row.position}</span></span>
-        <span class="a4-grip a4-setup-js-only" hidden draggable="true" role="button" tabindex="0" aria-label="{'Move %name: drag, or use the up and down arrow keys'|i18n( 'design/admin/setup/extensions',, hash( '%name', $row.name ) )|wash}"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M5 3h2v2H5zm4 0h2v2H9zM5 7h2v2H5zm4 0h2v2H9zm-4 4h2v2H5zm4 0h2v2H9z"/></svg></span>
+        <span class="a4-grip a4-setup-js-only" hidden draggable="true" role="button" tabindex="0" aria-label="{'Move %name: drag, or use the up and down arrow keys'|i18n( 'design/admin/setup/extensions',, hash( '%name', $row.name ) )|wash}"><span class="a4-icon a4-bi-grip-vertical" aria-hidden="true"></span></span>
         {else}
         <span class="a4-setup-ext-num" title="{'Not in ActiveExtensions'|i18n( 'design/admin/setup/extensions' )|wash}" aria-label="{'Inactive'|i18n( 'design/admin/setup/extensions' )|wash}">&ndash;</span>
         {/if}

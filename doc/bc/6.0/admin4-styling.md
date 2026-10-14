@@ -122,6 +122,7 @@ White text on it is only 3:1, so filled controls with white text use its darker 
 | Steps | `ol.a4-steps` > `li.is-done` / `li.is-current` |
 | Code | `.a4-pre` (`.is-tall`), `.a4-kbd` |
 | Amounts | `.a4-meter` > `span`, `.a4-bars` > children, sized by `.a4-pct-0` ... `.a4-pct-100` (`--a4-pct`) |
+| Icons | `.a4-icon` with one `.a4-bi-<name>` (a Bootstrap icon of `share/icons/bootstrap-icons/svg/`, in `currentColor`; `.is-small`, `.is-medium`, `.is-large`); `.a4-icon-btn` (a link or button that is only an icon) |
 | Other | `.a4-grip` (drag handle), `.is-dragging` |
 
 States are `.is-*` classes on the component. Each component is one class plus at most an element or a state, so a
@@ -198,6 +199,8 @@ For every template or stylesheet change in an administration design or an extens
 - [ ] The page uses the shared `.a4-*` components; nothing in it copies a component under another name.
 - [ ] New CSS is in `stylesheets/modules/<group>.css` (core) or the extension's own stylesheet, with `.a4-<module>-*`
       (or the extension's) class names, and holds only what the components cannot do.
+- [ ] Icons are `.a4-icon` with a `.a4-bi-*` class: no GIF or PNG icon through `ezimage`, no inline `<svg>`, no
+      `<input type="image">` (`tests/tests/design/AdminIconsTest.php` checks admin4).
 - [ ] Colours, radius, spacing and fonts are `var(--a4-*)` tokens: no `#hex`, `rgb()`, named colour, px radius or
       spacing literal, and no local custom properties.
 - [ ] A new token is in `components.css` with a light and a dark value, and documented on this page.

@@ -1033,6 +1033,92 @@ fieldset.a4-field > legend + * { clear: both; }
 .a4-pct-96 { --a4-pct: 96; } .a4-pct-97 { --a4-pct: 97; } .a4-pct-98 { --a4-pct: 98; } .a4-pct-99 { --a4-pct: 99; }
 .a4-pct-100 { --a4-pct: 100; }
 
+/* ---- Icon: a Bootstrap Icon drawn in the text colour ------------------------------------------------------------ */
+
+/* <span class="a4-icon a4-bi-pencil" aria-hidden="true"></span>: a 1em square that takes currentColor as a mask
+   of an SVG file in share/icons/bootstrap-icons/svg/ (Bootstrap Icons 1.13.1, MIT), so it follows the link or
+   button around it, its hover and the dark mode. The name of a control belongs to the control (its text, title or
+   aria-label, or .a4-sr-only beside the icon), or to the icon itself as role="img" with aria-label when it stands
+   for a word inside a link. .is-small is 12px, .is-medium 16px, .is-large 22px; without them the icon takes the
+   font size around it. One .a4-bi-<name> per file; add a file there and a class here together. */
+.a4-icon {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+  background-color: currentColor;
+  -webkit-mask: no-repeat center / contain;
+  mask: no-repeat center / contain;
+}
+/* A control that is only an icon (a link, or a <button type="button|submit">): no frame, a 24px hit area, muted,
+   the accent on hover and focus. Its name goes in title and aria-label, or in .a4-sr-only inside it. */
+.a4-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  min-height: 24px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--a4-radius-s);
+  background: none;
+  color: var(--a4-muted);
+  font-size: var(--a4-text-l);
+  line-height: 1;
+  vertical-align: middle;
+  cursor: pointer;
+}
+a.a4-icon-btn, a.a4-icon-btn:visited { color: var(--a4-muted); }
+.a4-icon-btn:hover:not([disabled]):not(.is-disabled),
+.a4-icon-btn:focus-visible { background-color: var(--a4-soft); color: var(--a4-accent-text); }
+.a4-icon-btn:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 1px; }
+.a4-icon-btn[disabled], .a4-icon-btn.is-disabled { color: var(--a4-disabled); cursor: not-allowed; }
+.a4-icon.is-small { width: var(--a4-text-xs); height: var(--a4-text-xs); }
+.a4-icon.is-medium { width: var(--a4-text-l); height: var(--a4-text-l); }
+.a4-icon.is-large { width: var(--a4-text-xl); height: var(--a4-text-xl); }
+@media (forced-colors: active) {
+  .a4-icon { forced-color-adjust: none; background-color: CanvasText; }
+}
+.a4-bi-arrow-90deg-up { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-90deg-up.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-90deg-up.svg); }
+.a4-bi-arrow-bar-down { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-bar-down.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-bar-down.svg); }
+.a4-bi-arrow-bar-up { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-bar-up.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-bar-up.svg); }
+.a4-bi-arrow-down { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-down.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-down.svg); }
+.a4-bi-arrow-up { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-up.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-up.svg); }
+.a4-bi-arrows-move { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/arrows-move.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/arrows-move.svg); }
+.a4-bi-bell { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/bell.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/bell.svg); }
+.a4-bi-bookmark { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/bookmark.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/bookmark.svg); }
+.a4-bi-box-arrow-up-right { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/box-arrow-up-right.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/box-arrow-up-right.svg); }
+.a4-bi-caret-down-fill { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/caret-down-fill.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/caret-down-fill.svg); }
+.a4-bi-caret-up-fill { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/caret-up-fill.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/caret-up-fill.svg); }
+.a4-bi-check-circle-fill { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/check-circle-fill.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/check-circle-fill.svg); }
+.a4-bi-check-lg { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/check-lg.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/check-lg.svg); }
+.a4-bi-check2-square { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/check2-square.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/check2-square.svg); }
+.a4-bi-chevron-right { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/chevron-right.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/chevron-right.svg); }
+.a4-bi-clock-history { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/clock-history.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/clock-history.svg); }
+.a4-bi-download { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/download.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/download.svg); }
+.a4-bi-envelope { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/envelope.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/envelope.svg); }
+.a4-bi-eye { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/eye.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/eye.svg); }
+.a4-bi-eye-slash { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/eye-slash.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/eye-slash.svg); }
+.a4-bi-folder { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/folder.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/folder.svg); }
+.a4-bi-gear { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/gear.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/gear.svg); }
+.a4-bi-grip-vertical { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/grip-vertical.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/grip-vertical.svg); }
+.a4-bi-key { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/key.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/key.svg); }
+.a4-bi-lock { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/lock.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/lock.svg); }
+.a4-bi-lock-fill { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/lock-fill.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/lock-fill.svg); }
+.a4-bi-moon { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/moon.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/moon.svg); }
+.a4-bi-pencil { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/pencil.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/pencil.svg); }
+.a4-bi-person { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/person.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/person.svg); }
+.a4-bi-person-circle { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/person-circle.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/person-circle.svg); }
+.a4-bi-phone { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/phone.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/phone.svg); }
+.a4-bi-play-fill { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/play-fill.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/play-fill.svg); }
+.a4-bi-plus-lg { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/plus-lg.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/plus-lg.svg); }
+.a4-bi-power { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/power.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/power.svg); }
+.a4-bi-shield-fill-check { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/shield-fill-check.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/shield-fill-check.svg); }
+.a4-bi-sun { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/sun.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/sun.svg); }
+.a4-bi-trash { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/trash.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/trash.svg); }
+
 /* ---- The frame's own hidden-until-used parts (were style="display:none" in the pagelayouts) ------------------ */
 
 #overlay-mask,

@@ -41,7 +41,7 @@
 
 <table class="list" cellspacing="0">
 <tr>
-    <th class="tight"><img src={'toggle-button-16x16.gif'|ezimage} width="16" height="16" alt="{'Invert selection.'|i18n( 'design/admin/shop/currencylist' )}" title="{'Invert selection.'|i18n( 'design/admin/shop/currencylist' )}" onclick="ezjs_toggleCheckboxes( document.currencylist, 'DeleteCurrencyList[]' ); return false;" /></th>
+    <th class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/shop/currencylist' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/shop/currencylist' )|wash}" onclick="ezjs_toggleCheckboxes( document.currencylist, 'DeleteCurrencyList[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
     <th class="name">{'Name'|i18n( 'design/admin/shop/currencylist' )}</th>
     <th class="nowrap">{'Code'|i18n( 'design/admin/shop/currencylist' )}</th>
     <th class="nowrap">{'Symbol'|i18n( 'design/admin/shop/currencylist' )}</th>
@@ -98,7 +98,7 @@
         {else}
             <td class="na-rate">{'N/A'|i18n( 'design/admin/shop/currencylist' )}</td>
         {/if}
-        <td><a href={concat( 'shop/editcurrency/(currency)/', $currency.code)|ezurl}><img src={'edit.gif'|ezimage} width="16" height="16" alt="{'Edit'|i18n( 'design/admin/shop/currencylist' )}" title="{"Edit '%currency_code' currency."|i18n( 'design/admin/shop/currencylist',, hash( '%currency_code', $currency.code ) )|wash}" /></a></td>
+        <td><a href={concat( 'shop/editcurrency/(currency)/', $currency.code)|ezurl}><span class="a4-icon a4-bi-pencil is-medium" role="img" aria-label="{'Edit'|i18n( 'design/admin/shop/currencylist' )|wash}" title="{"Edit '%currency_code' currency."|i18n( 'design/admin/shop/currencylist',, hash( '%currency_code', $currency.code ) )|wash}"></span></a></td>
     </tr>
 
 {/foreach}

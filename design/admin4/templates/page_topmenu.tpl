@@ -11,7 +11,7 @@
             {* The front page of the default siteaccess: scheme, host, port and siteaccess
                path as the settings and this request call for (ezpSiteAccessURL). *}
             <a class="site-preview" href="{siteaccess_url()|wash}" title="{'Open the site'|i18n( 'design/admin/pagelayout' )|wash}">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M32 32C14.3 32 0 46.3 0 64l0 96c0 17.7 14.3 32 32 32s32-14.3 32-32l0-64 64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L32 32zM64 352c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 96c0 17.7 14.3 32 32 32l96 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0 0-64zM320 32c-17.7 0-32 14.3-32 32s14.3 32 32 32l64 0 0 64c0 17.7 14.3 32 32 32s32-14.3 32-32l0-96c0-17.7-14.3-32-32-32l-96 0zM448 352c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 64-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l96 0c17.7 0 32-14.3 32-32l0-96z"/></svg>
+                <span class="a4-icon a4-bi-box-arrow-up-right" aria-hidden="true"></span>
             </a>
         {else}
             {* <a href="{ezini('SiteSettings', 'DefaultPage', 'site.ini')|ezurl( 'no' )}" title="Exponential {fetch( 'setup', 'version' )}">
@@ -23,7 +23,7 @@
             {* The front page of the default siteaccess: scheme, host, port and siteaccess
                path as the settings and this request call for (ezpSiteAccessURL). *}
             <a class="site-preview" href="{siteaccess_url()|wash}" title="{'Open the site'|i18n( 'design/admin/pagelayout' )|wash}">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M32 32C14.3 32 0 46.3 0 64l0 96c0 17.7 14.3 32 32 32s32-14.3 32-32l0-64 64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L32 32zM64 352c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 96c0 17.7 14.3 32 32 32l96 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0 0-64zM320 32c-17.7 0-32 14.3-32 32s14.3 32 32 32l64 0 0 64c0 17.7 14.3 32 32 32s32-14.3 32-32l0-96c0-17.7-14.3-32-32-32l-96 0zM448 352c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 64-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l96 0c17.7 0 32-14.3 32-32l0-96z"/></svg>
+                <span class="a4-icon a4-bi-box-arrow-up-right" aria-hidden="true"></span>
             </a>
         {/if}
     </div>
@@ -37,8 +37,8 @@
                 title="{'Switch between light and dark mode'|i18n( 'design/admin/pagelayout' )|wash}"
                 data-label-light="{'Light mode'|i18n( 'design/admin/pagelayout' )|wash}"
                 data-label-dark="{'Dark mode'|i18n( 'design/admin/pagelayout' )|wash}">
-            <svg class="a4-icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v2.5M12 20v2.5M1.5 12h2.5M20 12h2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
-            <svg class="a4-icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20.5 14.6A8.5 8.5 0 0 1 9.4 3.5a8.5 8.5 0 1 0 11.1 11.1z"/></svg>
+            <span class="a4-icon a4-bi-sun a4-icon-sun" aria-hidden="true"></span>
+            <span class="a4-icon a4-bi-moon a4-icon-moon" aria-hidden="true"></span>
             <span class="a4-theme-label">{'Light mode'|i18n( 'design/admin/pagelayout' )}</span>
         </button>
     </div>
@@ -46,10 +46,10 @@
     <!-- begin::Sidebar Controls -->
         <div class="sidebar-controls">
             <button type="button" class="sidebar-control left" aria-label="{'Show or hide the left sidebar'|i18n( 'design/admin/pagelayout' )|wash}" title="{'Show or hide the left sidebar'|i18n( 'design/admin/pagelayout' )|wash}">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>
+                <span class="a4-icon a4-bi-chevron-right" aria-hidden="true"></span>
             </button>
             <button type="button" class="sidebar-control right" aria-label="{'Show or hide the right sidebar'|i18n( 'design/admin/pagelayout' )|wash}" title="{'Show or hide the right sidebar'|i18n( 'design/admin/pagelayout' )|wash}">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>
+                <span class="a4-icon a4-bi-chevron-right" aria-hidden="true"></span>
             </button>
         </div>
     <!-- end::Sidebar Controls -->

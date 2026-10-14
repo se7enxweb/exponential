@@ -146,7 +146,7 @@
     {if or( $can_git, $can_update )}
     <section class="a4-dash-card a4-dash-secure" aria-labelledby="a4-dash-secure-title">
         <header>
-            <h2 id="a4-dash-secure-title"><svg class="a4-dash-secure-ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z" fill="#228b5e"/><path d="m8.5 12 2.5 2.5 4.5-5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>{'Stay secure: keep Exponential up to date'|i18n( 'design/admin/dashboard' )}</h2>
+            <h2 id="a4-dash-secure-title"><span class="a4-icon a4-bi-shield-fill-check is-large a4-ok-text a4-dash-secure-ico" aria-hidden="true"></span>{'Stay secure: keep Exponential up to date'|i18n( 'design/admin/dashboard' )}</h2>
             <p class="a4-dash-secure-intro">{'Most attacks use flaws that are already fixed in a newer version. Two updates keep this installation safe; check both regularly, and right away when a security release is announced.'|i18n( 'design/admin/dashboard' )}</p>
         </header>
         <ol class="a4-dash-steps">

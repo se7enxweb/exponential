@@ -65,12 +65,12 @@
                 <option value="{$language.locale|wash}">{$language.name|wash}</option>
             {/foreach}
             </select>
-            <button class="a4-btn a4-btn-primary" type="submit" name="NewButton" id="NewButtonTop" value="1" title="{'Create a new class within the <%class_group_name> class group.'|i18n( 'design/admin/class/classlist',, hash( '%class_group_name', $group.name ) )|wash}"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M7 2h2v5h5v2H9v5H7V9H2V7h5z"/></svg>{'New class'|i18n( 'design/admin/class/classlist' )}</button>
+            <button class="a4-btn a4-btn-primary" type="submit" name="NewButton" id="NewButtonTop" value="1" title="{'Create a new class within the <%class_group_name> class group.'|i18n( 'design/admin/class/classlist',, hash( '%class_group_name', $group.name ) )|wash}"><span class="a4-icon a4-bi-plus-lg" aria-hidden="true"></span>{'New class'|i18n( 'design/admin/class/classlist' )}</button>
         </div>
         {else}
         <input type="hidden" name="ClassLanguageCode" value="{$languages[0].locale|wash}" />
         <span class="a4-help">{'A new class starts with a name, an identifier and no attributes.'|i18n( 'design/admin/class/classlist' )}</span>
-        <div class="a4-actions"><button class="a4-btn a4-btn-primary" type="submit" name="NewButton" id="NewButtonTop" value="1"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M7 2h2v5h5v2H9v5H7V9H2V7h5z"/></svg>{'New class'|i18n( 'design/admin/class/classlist' )}</button></div>
+        <div class="a4-actions"><button class="a4-btn a4-btn-primary" type="submit" name="NewButton" id="NewButtonTop" value="1"><span class="a4-icon a4-bi-plus-lg" aria-hidden="true"></span>{'New class'|i18n( 'design/admin/class/classlist' )}</button></div>
         {/if}
     </div>
     <p class="a4-filter-count exp-js-only" id="classlist-filter-count" aria-live="polite" hidden></p>

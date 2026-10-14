@@ -109,20 +109,20 @@
         {set $title = 'Profile'|i18n( 'design/admin/user/edit' )
              $text = cond( $own, 'Your name, e-mail address, image and the other fields of your user.'|i18n( 'design/admin/user/edit' ), 'The name, e-mail address, image and the other fields of this user.'|i18n( 'design/admin/user/edit' ) )
              $label = 'Edit profile'|i18n( 'design/admin/user/edit' )
-             $icon = '<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/>'}
+             $icon = 'person'}
     {/case}
     {case match='password'}
         {set $title = 'Password'|i18n( 'design/admin/user/edit' )
              $text = cond( $own, 'Change the password you sign in with.'|i18n( 'design/admin/user/edit' ), 'Set a new password for this user.'|i18n( 'design/admin/user/edit' ) )
              $label = 'Change password'|i18n( 'design/admin/user/edit' )
-             $icon = '<rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>'}
+             $icon = 'lock'}
     {/case}
     {case match='settings'}
         {set $title = 'Account settings'|i18n( 'design/admin/user/edit' )
              $text = 'Enable or disable the account, reset failed sign-ins, and see its API keys.'|i18n( 'design/admin/user/edit' )
              $label = 'Open settings'|i18n( 'design/admin/user/edit' )
              $badge = $state_text[$action.status.key]
-             $icon = '<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/>'}
+             $icon = 'gear'}
     {/case}
     {case match='twofactor'}
         {set $title = 'Two-step sign-in'|i18n( 'design/admin/user/edit' )
@@ -130,39 +130,39 @@
              $label = cond( $own, cond( eq( $action.status.level, 'ok' ), 'Manage'|i18n( 'design/admin/user/edit' ), 'Turn on'|i18n( 'design/admin/user/edit' ) ), 'Edit profile'|i18n( 'design/admin/user/edit' ) )
              $badge = cond( eq( $action.status.key, 'on_app' ), 'On, authenticator app'|i18n( 'design/admin/user/edit' ),
                             eq( $action.status.key, 'on_email' ), 'On, e-mail codes'|i18n( 'design/admin/user/edit' ), 'Off'|i18n( 'design/admin/user/edit' ) )
-             $icon = '<rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/>'}
+             $icon = 'phone'}
     {/case}
     {case match='apikeys'}
         {set $title = 'API keys'|i18n( 'design/admin/user/edit' )
              $text = cond( $own, 'Personal keys for your own scripts and tools to publish through the REST interface.'|i18n( 'design/admin/user/edit' ), 'Show and revoke the API keys of this user.'|i18n( 'design/admin/user/edit' ) )
              $label = cond( $own, 'Manage my API keys'|i18n( 'design/admin/user/edit' ), 'Show API keys'|i18n( 'design/admin/user/edit' ) )
              $badge = cond( $action.status, '%active active, %total in all'|i18n( 'design/admin/user/edit',, hash( '%active', $action.status.active, '%total', $action.status.total ) ), '' )
-             $icon = '<circle cx="8" cy="15" r="4"/><path d="M10.8 12.2 20 3M16 7l3 3M14 9l2 2"/>'}
+             $icon = 'key'}
     {/case}
     {case match='bookmarks'}
         {set $title = 'Bookmarks'|i18n( 'design/admin/user/edit' )
              $text = 'Your bookmarks, in folders, for quick access to content.'|i18n( 'design/admin/user/edit' )
              $label = 'Open bookmarks'|i18n( 'design/admin/user/edit' )
-             $icon = '<path d="M6 3h12v18l-6-4-6 4z"/>'}
+             $icon = 'bookmark'}
     {/case}
     {case match='notifications'}
         {set $title = 'Notifications'|i18n( 'design/admin/user/edit' )
              $text = 'The content you follow, and how often you hear about changes to it.'|i18n( 'design/admin/user/edit' )
              $label = 'Notification settings'|i18n( 'design/admin/user/edit' )
-             $icon = '<path d="M18 16V11a6 6 0 0 0-12 0v5l-2 2h16z"/><path d="M10 21h4"/>'}
+             $icon = 'bell'}
     {/case}
     {case match='mail'}
         {set $title = 'E-mail preferences'|i18n( 'design/admin/user/edit' )
              $text = cond( $own, 'Choose which e-mail you get, download your e-mail data, or stop all optional e-mail.'|i18n( 'design/admin/user/edit' ), 'The e-mail preferences and consents of this user.'|i18n( 'design/admin/user/edit' ) )
              $label = 'Open e-mail preferences'|i18n( 'design/admin/user/edit' )
-             $icon = '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>'}
+             $icon = 'envelope'}
     {/case}
     {case}{/case}
     {/switch}
     {if $title}
     <li class="a4-card{if and( $action.status, eq( $action.status.level, 'warn' ) )} is-attention{/if}" id="account-card-{$action.key|wash}">
         <div class="a4-card-head">
-            <h3 class="a4-h3"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">{$icon}</svg>{$title|wash}</h3>
+            <h3 class="a4-h3"><span class="a4-icon a4-bi-{$icon|wash} is-large" aria-hidden="true"></span>{$title|wash}</h3>
             {if $badge}<span class="a4-badge{if and( $action.status, ne( $action.status.level, 'none' ) )} is-{$action.status.level|wash}{/if}">{$badge|wash}</span>{/if}
         </div>
         <p>{$text|wash}</p>

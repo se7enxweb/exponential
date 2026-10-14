@@ -49,7 +49,7 @@
 <div class="a4-section-head">
     <h2 class="a4-h2" id="language-list-title">{'Languages'|i18n( 'design/admin/content/translations' )}
         {if $translation_count|gt( $limit )}<span class="a4-meta">{'%from to %to of %count'|i18n( 'design/admin/content/translations',, hash( '%from', sum( $view_parameters.offset, 1 ), '%to', min( sum( $view_parameters.offset, $limit ), $translation_count ), '%count', $translation_count ) )}</span>{/if}</h2>
-    <button type="submit" class="a4-btn a4-btn-primary" name="NewButton" value="{'Add language'|i18n( 'design/admin/content/translations' )}"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M7 2h2v5h5v2H9v5H7V9H2V7h5z"/></svg>{'Add language'|i18n( 'design/admin/content/translations' )}</button>
+    <button type="submit" class="a4-btn a4-btn-primary" name="NewButton" value="{'Add language'|i18n( 'design/admin/content/translations' )}"><span class="a4-icon a4-bi-plus-lg" aria-hidden="true"></span>{'Add language'|i18n( 'design/admin/content/translations' )}</button>
 </div>
 
 {if $language_rows|count|eq(0)}

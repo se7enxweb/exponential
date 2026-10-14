@@ -12,7 +12,7 @@
 
 <table id="tab-translations-list" class="list" cellspacing="0" summary="{'Language list of translations for current object.'|i18n( 'design/admin/node/view/full' )}">
 <tr>
-    <th class="tight"><img src={'toggle-button-16x16.gif'|ezimage} width="16" height="16" alt="{'Invert selection.'|i18n( 'design/admin/node/view/full' )}" title="{'Invert selection.'|i18n( 'design/admin/node/view/full' )}" onclick="ezjs_toggleCheckboxes( document.translationsform, 'LanguageID[]' ); return false;"/></th>
+    <th class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/node/view/full' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/node/view/full' )|wash}" onclick="ezjs_toggleCheckboxes( document.translationsform, 'LanguageID[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
     <th>{'Language'|i18n( 'design/admin/node/view/full' )}</th>
     <th>{'Locale'|i18n( 'design/admin/node/view/full' )}</th>
     <th class="tight">{'Main'|i18n( 'design/admin/node/view/full' )}</th>
@@ -61,7 +61,7 @@
 
 {if $can_edit}
 
-<a href={concat( 'content/edit/', $node.object.id, '/f/', $Translations.item.locale )|ezurl}><img src={'edit.gif'|ezimage} width="16" height="16" alt="{'Edit in <%language_name>.'|i18n( 'design/admin/node/view/full',, hash( '%language_name', $Translations.item.locale_object.intl_language_name ) )|wash}" title="{'Edit in <%language_name>.'|i18n( 'design/admin/node/view/full',, hash( '%language_name', $Translations.item.locale_object.intl_language_name ) )|wash}" /></a>
+<a href={concat( 'content/edit/', $node.object.id, '/f/', $Translations.item.locale )|ezurl}><span class="a4-icon a4-bi-pencil is-medium" role="img" aria-label="{'Edit in <%language_name>.'|i18n( 'design/admin/node/view/full',, hash( '%language_name', $Translations.item.locale_object.intl_language_name ) )|wash}" title="{'Edit in <%language_name>.'|i18n( 'design/admin/node/view/full',, hash( '%language_name', $Translations.item.locale_object.intl_language_name ) )|wash}"></span></a>
 
 {/if}
 

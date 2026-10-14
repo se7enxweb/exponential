@@ -137,14 +137,6 @@
 .a4-class-attr th.tight input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--a4-accent-strong); }
 .a4-class-attr-body { padding: var(--a4-space-4); border: 0; background-color: var(--a4-card); color: var(--a4-ink); }
 .a4-class-attr .listbutton { display: inline-flex; align-items: center; gap: var(--a4-space-2); }
-.a4-class-attr .listbutton input[type="image"] {
-  box-sizing: content-box;
-  width: 16px;
-  height: 16px;
-  padding: var(--a4-space-1);
-  border-radius: var(--a4-radius-s);
-}
-.a4-class-attr .listbutton input[type="image"]:hover { background-color: var(--a4-line); }
 .a4-class-attr .listbutton input[type="text"] {
   width: 3.5em;
   min-height: 30px;

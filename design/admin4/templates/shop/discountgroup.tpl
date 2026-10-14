@@ -13,7 +13,7 @@
 {section show=$discountgroup_array}
 <table class="list" cellspacing="0">
 <tr>
-    <th class="tight"><img src={'toggle-button-16x16.gif'|ezimage} width="16" height="16" alt="{'Invert selection.'|i18n( 'design/admin/shop/discountgroup' )}" title="{'Invert selection.'|i18n( 'design/admin/shop/discountgroup' )}" onclick="ezjs_toggleCheckboxes( document.DiscountGroup, 'discountGroupIDList[]' ); return false;" /></th>
+    <th class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/shop/discountgroup' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/shop/discountgroup' )|wash}" onclick="ezjs_toggleCheckboxes( document.DiscountGroup, 'discountGroupIDList[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
     <th class="wide">{'Name'|i18n( 'design/admin/shop/discountgroup' )}</th>
     <th class="tight">&nbsp;</th>
 </tr>
@@ -21,7 +21,7 @@
 <tr class="{$Groups.sequence}">
     <td><input type="checkbox" name="discountGroupIDList[]" value="{$Groups.item.id}" title="{'Select discount group for removal.'|i18n( 'design/admin/shop/discountgroup' )}" /></td>
     <td><a href={concat( $module.functions.discountgroupview.uri, '/', $Groups.item.id )|ezurl}>{$Groups.item.name|wash}</a></td>
-    <td><a href={concat( $module.functions.discountgroupedit.uri, '/', $Groups.item.id )|ezurl}><img class="button" src={'edit.gif'|ezimage} width="16" height="16" alt="{'Edit'|i18n( 'design/admin/shop/discountgroup' )}" title="{'Edit the <%discountgroup_name> discount group.'|i18n( 'design/admin/shop/discountgroup',, hash( '%discountgroup_name', $Groups.item.name ) )|wash}" /></a></td>
+    <td><a href={concat( $module.functions.discountgroupedit.uri, '/', $Groups.item.id )|ezurl}><span class="a4-icon a4-bi-pencil is-medium" role="img" aria-label="{'Edit'|i18n( 'design/admin/shop/discountgroup' )|wash}" title="{'Edit the <%discountgroup_name> discount group.'|i18n( 'design/admin/shop/discountgroup',, hash( '%discountgroup_name', $Groups.item.name ) )|wash}"></span></a></td>
 </tr>
 {/section}
 </table>

@@ -23,7 +23,7 @@
     <span class="a4-meta">{'State group'|i18n( 'design/admin/state/group' )}</span>
     <code class="a4-muted">{$info.identifier|wash}</code>
     <ul class="a4-badges">
-        {if $locked}<li class="a4-badge is-info"><svg width="12" height="12" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M5 7V5a3 3 0 0 1 6 0v2h1v7H4V7zm2 0h2V5a1 1 0 0 0-2 0z"/></svg>{'System, protected'|i18n( 'design/admin/state/group' )}</li>{/if}
+        {if $locked}<li class="a4-badge is-info"><span class="a4-icon a4-bi-lock-fill is-small" aria-hidden="true"></span>{'System, protected'|i18n( 'design/admin/state/group' )}</li>{/if}
         <li class="a4-badge">{if $info.states|count|eq(1)}{'1 state'|i18n( 'design/admin/state/group' )}{else}{'%count states'|i18n( 'design/admin/state/group',, hash( '%count', $info.states|count ) )}{/if}</li>
         {if $current_language|ne('')}<li class="a4-badge is-info">{'Shown in %locale'|i18n( 'design/admin/state/group',, hash( '%locale', $current_language ) )|wash}</li>{/if}
     </ul>
@@ -95,7 +95,7 @@
 <div class="a4-section-head">
     <h2 class="a4-h2" id="state-list-title">{'States, in order'|i18n( 'design/admin/state/group' )}</h2>
     {if $locked|not}
-    <button type="submit" class="a4-btn a4-btn-primary" name="CreateButton" value="1"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M7 2h2v5h5v2H9v5H7V9H2V7h5z"/></svg>{'New state'|i18n( 'design/admin/state/group' )}</button>
+    <button type="submit" class="a4-btn a4-btn-primary" name="CreateButton" value="1"><span class="a4-icon a4-bi-plus-lg" aria-hidden="true"></span>{'New state'|i18n( 'design/admin/state/group' )}</button>
     {/if}
 </div>
 <p class="a4-meta a4-state-hint" id="state-order-hint">{'The first state is the default: every new object gets it. The order is also the order editors see the states in. To change it, change the positions and save the order.'|i18n( 'design/admin/state/group' )}</p>
@@ -128,8 +128,8 @@
             <input type="text" inputmode="numeric" class="a4-state-order-input" id="state-order-{$state_info.id}" name="Order[{$state_info.id}]" value="{$state_info.position}" size="3" aria-describedby="state-order-hint"{if $locked} disabled="disabled"{/if} />
         </span>
         {if $locked|not}
-        <button type="button" class="a4-btn a4-btn-small a4-btn-icon exp-move-up exp-js-only" hidden aria-label="{'Move %state up'|i18n( 'design/admin/state/group',, hash( '%state', $state_info.name ) )|wash}" title="{'Move up'|i18n( 'design/admin/state/group' )|wash}"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 3l5 6H3z"/></svg></button>
-        <button type="button" class="a4-btn a4-btn-small a4-btn-icon exp-move-down exp-js-only" hidden aria-label="{'Move %state down'|i18n( 'design/admin/state/group',, hash( '%state', $state_info.name ) )|wash}" title="{'Move down'|i18n( 'design/admin/state/group' )|wash}"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 13L3 7h10z"/></svg></button>
+        <button type="button" class="a4-btn a4-btn-small a4-btn-icon exp-move-up exp-js-only" hidden aria-label="{'Move %state up'|i18n( 'design/admin/state/group',, hash( '%state', $state_info.name ) )|wash}" title="{'Move up'|i18n( 'design/admin/state/group' )|wash}"><span class="a4-icon a4-bi-caret-up-fill" aria-hidden="true"></span></button>
+        <button type="button" class="a4-btn a4-btn-small a4-btn-icon exp-move-down exp-js-only" hidden aria-label="{'Move %state down'|i18n( 'design/admin/state/group',, hash( '%state', $state_info.name ) )|wash}" title="{'Move down'|i18n( 'design/admin/state/group' )|wash}"><span class="a4-icon a4-bi-caret-down-fill" aria-hidden="true"></span></button>
         <a class="a4-btn a4-btn-small" href={concat( '/state/edit/', $group.identifier, '/', $state_info.identifier )|ezurl} aria-label="{'Edit the state %state'|i18n( 'design/admin/state/group',, hash( '%state', $state_info.name ) )|wash}">{'Edit'|i18n( 'design/admin/state/group' )}</a>
         <label class="a4-pick"><input type="checkbox" name="RemoveIDList[]" value="{$state_info.id}" /><span>{'Select'|i18n( 'design/admin/state/group' )}<span class="a4-sr-only"> {$state_info.name|wash}</span></span></label>
         {/if}
