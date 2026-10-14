@@ -102,6 +102,28 @@ To add an icon: copy the SVG from the Bootstrap Icons 1.13.1 package unchanged i
 theme's `icon.ini`), and use it. `tests/tests/design/AdminIconsTest.php` fails for a file nothing names, a name with
 no file, a changed file, and a GIF icon, inline SVG or image button in an admin4 template.
 
+## Landmarks and names
+
+admin4's frame tells screen readers and keyboards how the page is built:
+
+- **Skip link.** The first stop of the Tab key is "Skip to main content", hidden until it has the focus. It jumps to
+  `#maincontent`, which takes the focus (`tabindex="-1"`).
+- **Landmarks.** The header is the banner, the top menu (`#a4-navbar-menu`), the side menu (`#leftmenu`) and the
+  breadcrumb (`#path`) are named navigation landmarks, the right column (`#rightmenu`) is a complementary landmark,
+  the footer the content info, and `#maincontent` the main landmark. The edit-type pages (content edit, history,
+  version view, upload ...) bring their own `#maincontent` and side column; theirs carry the same roles. The roles
+  sit on the existing elements, so every selector of the stylesheets and extensions still matches.
+- **Names and state.** The breadcrumb and the top menu mark the current page (`aria-current="page"`), a disabled top
+  menu entry is `aria-disabled` and out of the Tab order, the logo and "Open the site" links have a name, the
+  phone-width menu button is a button for keyboards and screen readers (Enter and Space, `aria-expanded`), and
+  selects, checkboxes and radios that had only a `title` or their table position have a name (the row's language or
+  location where a list repeats them). The duplicate image link before the current user's name is hidden from both.
+- **Tables.** Every header cell of admin4's templates says what it heads (`scope="col"`; `scope="row"` before the
+  data of a row).
+
+`tests/tests/design/AdminLandmarksTest.php` checks the skip link, the landmarks, one main landmark per
+`#maincontent`, the scopes, the frame titles and the named controls.
+
 ## Settings
 
 | File | Block | Key | Default | Scope |

@@ -105,7 +105,7 @@ White text on it is only 3:1, so filled controls with white text use its darker 
 | Component | Classes |
 |---|---|
 | Page scope | `.a4-page` wraps a module page: the box-sizing reset, font, `[hidden]`, links, the focus ring on `:focus-visible`. `.a4-standalone`: a page drawn without the main card |
-| Utilities | `.a4-sr-only`, `.a4-focus`, `.a4-muted`, `.a4-meta`, `.a4-help`, `.a4-intro`, `.a4-num`, `.a4-nowrap`, `.a4-wrap`, `.a4-plain`, `.a4-code`, `.a4-ok-text`, `.a4-warn-text`, `.a4-bad-text`, `.a4-middle`, `.a4-flag`, `.a4-end`, `.a4-inset`, `.a4-overflow-visible` |
+| Utilities | `.a4-sr-only`, `.a4-skip-link` (the frame's skip link, visible only while focused), `.a4-focus`, `.a4-muted`, `.a4-meta`, `.a4-help`, `.a4-intro`, `.a4-num`, `.a4-nowrap`, `.a4-wrap`, `.a4-plain`, `.a4-code`, `.a4-ok-text`, `.a4-warn-text`, `.a4-bad-text`, `.a4-middle`, `.a4-flag`, `.a4-end`, `.a4-inset`, `.a4-overflow-visible` |
 | Headings | `.a4-h2`, `.a4-h3` |
 | Layout | `.a4-section`, `.a4-section-head`, `.a4-title-row`, `.a4-row` (`.is-between`), `.a4-stack`, `.a4-grid` (`.is-narrow`, `.is-wide`) |
 | Card | `.a4-card` (`.is-soft`, `.is-selected`, `.is-attention`, `.is-warn`, `.is-bad`, `.is-ok`, `.is-info`), `.a4-cards`, `.a4-card-head`, `.a4-card-title`, `.a4-card-body`, `.a4-pick` (the selection checkbox) |
@@ -201,6 +201,8 @@ For every template or stylesheet change in an administration design or an extens
       (or the extension's) class names, and holds only what the components cannot do.
 - [ ] Icons are `.a4-icon` with a `.a4-bi-*` class: no GIF or PNG icon through `ezimage`, no inline `<svg>`, no
       `<input type="image">` (`tests/tests/design/AdminIconsTest.php` checks admin4).
+- [ ] A control that has no visible text has a name (`aria-label`, or `.a4-sr-only` text inside it); a header cell
+      has `scope`; a new frame column keeps its landmark role (`tests/tests/design/AdminLandmarksTest.php`).
 - [ ] Colours, radius, spacing and fonts are `var(--a4-*)` tokens: no `#hex`, `rgb()`, named colour, px radius or
       spacing literal, and no local custom properties.
 - [ ] A new token is in `components.css` with a light and a dark value, and documented on this page.

@@ -7231,6 +7231,10 @@
         <source>Publish without notifying the subscribers of its location: no notification mail is sent for this version.</source>
         <translation>Publish without notifying the subscribers of its location: no notification mail is sent for this version.</translation>
     </message>
+    <message>
+        <source>Preview of the version</source>
+        <translation>Preview of the version</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/contentstructuremenu</name>
@@ -9382,6 +9386,22 @@
     <message>
         <source>You do not have permission to copy this item.</source>
         <translation>You do not have permission to copy this item.</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Sort by</translation>
+    </message>
+    <message>
+        <source>Sort order</source>
+        <translation>Sort order</translation>
+    </message>
+    <message>
+        <source>Main language</source>
+        <translation>Main language</translation>
+    </message>
+    <message>
+        <source>Main location</source>
+        <translation>Main location</translation>
     </message>
 </context>
 <context>
@@ -12424,6 +12444,34 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>SQL debug output</source>
         <translation>SQL debug output</translation>
+    </message>
+    <message>
+        <source>Skip to main content</source>
+        <translation>Skip to main content</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Breadcrumb</translation>
+    </message>
+    <message>
+        <source>Tools</source>
+        <translation>Tools</translation>
+    </message>
+    <message>
+        <source>Side menu</source>
+        <translation>Side menu</translation>
+    </message>
+    <message>
+        <source>Side column</source>
+        <translation>Side column</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Menu</translation>
+    </message>
+    <message>
+        <source>Main menu</source>
+        <translation>Main menu</translation>
     </message>
 </context>
 <context>
