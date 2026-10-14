@@ -47,6 +47,8 @@ class AdminTreeMenuEscapingTest extends PHPUnit\Framework\TestCase
             $this->assertStringContainsString( '" data-node-id="', $js, $path );
             $this->assertStringContainsString( "closest( 'a.nodeicon[data-node-id]' )", $js, $path );
             $this->assertStringContainsString( 'this.nodes[nodeID] = {', $js, $path );
+            // the link of a known node never navigates, even without the popup menu script
+            $this->assertMatchesRegularExpression( '/if \( !node \)\s*\{\s*return;\s*\}\s*e\.preventDefault\(\);/', $js, $path );
             // the name arrives HTML-encoded and is decoded once, then handled as text
             $this->assertStringContainsString( 'name = _text( item.name )', $js, $path );
             $this->assertStringContainsString( 'span.textContent = name;', $js, $path );
@@ -55,6 +57,40 @@ class AdminTreeMenuEscapingTest extends PHPUnit\Framework\TestCase
             $this->assertStringContainsString( "_attr( params.classes[item.class_id].name )", $js, $path );
             $this->assertStringContainsString( "_attr( icon )", $js, $path );
         }
+    }
+
+    /** wash( 'javascript' ) is safe inside a script element: no < or > (no </script>), no raw line break */
+    public function testWashJavascriptEscapesWhatEndsAScriptOrAString()
+    {
+        $operator = self::file( 'lib/eztemplate/classes/eztemplatestringoperator.php' );
+        if ( !class_exists( 'eZTemplateStringOperator' ) )
+            require_once dirname( __DIR__, 3 ) . '/lib/eztemplate/classes/eztemplatestringoperator.php';
+        $this->assertSame( 'a\\\\b\\042\\047\\x3C/script\\x3E\\n\\r\\u2028\\u2029',
+                           eZTemplateStringOperator::javascriptString( "a\\b\"'</script>\n\r\u{2028}\u{2029}" ) );
+        // the interpreted and the compiled path both use it
+        $this->assertStringContainsString( '$operatorValue = self::javascriptString( $operatorValue );', $operator );
+        $this->assertStringContainsString( "eZTemplateStringOperator::javascriptString( %1% )", $operator );
+    }
+
+    /** Outside a script element (an onclick, an href="javascript:") a JS-escaped value is HTML-escaped as well */
+    public function testJavascriptWashInAnAttributeIsHtmlWashedToo()
+    {
+        $root = dirname( __DIR__, 3 );
+        $found = array();
+        foreach ( array( 'admin', 'admin3', 'admin4', 'standard' ) as $design )
+        {
+            $files = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( "$root/design/$design", FilesystemIterator::SKIP_DOTS ) );
+            foreach ( $files as $file )
+            {
+                if ( substr( $file->getFilename(), -4 ) !== '.tpl' )
+                    continue;
+                $tpl = (string)file_get_contents( $file->getPathname() );
+                $outside = preg_replace( '#<script\b[^>]*>.*?</script>#is', '', $tpl );
+                if ( preg_match_all( '/\|wash\(\s*["\']?javascript["\']?\s*\)(?!\s*\|wash\b)/', $outside, $m ) )
+                    $found[] = substr( $file->getPathname(), strlen( $root ) + 1 ) . ' (' . count( $m[0] ) . ')';
+            }
+        }
+        $this->assertSame( array(), $found, 'wash( javascript ) without |wash outside a script element' );
     }
 
     public function testThePopupMenuHeaderAndItemsAreText()
@@ -90,6 +126,7 @@ class AdminTreeMenuEscapingTest extends PHPUnit\Framework\TestCase
             $this->assertStringContainsString( "'aria-label': name", $js, $path );
             $this->assertStringNotContainsString( "'aria-label': row.name", $js, $path );
             $this->assertStringContainsString( '}, name, row.node_id, createhereMenu);', $js, $path );
+            $this->assertStringContainsString( "'::' + encodeURIComponent(confObj.nameFilter) + '?ContentType=json'", $js, $path );
         }
     }
 
@@ -97,7 +134,9 @@ class AdminTreeMenuEscapingTest extends PHPUnit\Framework\TestCase
     {
         foreach ( self::copies( 'templates/children_detailed.tpl' ) as $path => $tpl )
         {
-            $this->assertStringContainsString( "nameFilter: '{\$view_parameters.namefilter|wash(javascript)|wash}',", $tpl, $path );
+            // in a script element: wash( 'javascript' ) alone, which escapes < and > too (see below); no HTML entities,
+            // so a filter with & or < reaches the server as typed
+            $this->assertStringContainsString( "nameFilter: '{\$view_parameters.namefilter|wash(javascript)}',", $tpl, $path );
             $this->assertStringContainsString( '"{$group.group_name|wash(javascript)}"', $tpl, $path );
         }
         $washed = array(

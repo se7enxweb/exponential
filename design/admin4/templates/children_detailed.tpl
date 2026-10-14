@@ -54,7 +54,7 @@ var confObj = {ldelim}
     editPrefixURL: {'/content/edit/'|ezurl},
     rowsPrPage: {$number_of_items},
     sortOrder: {$node.sort_order},
-    nameFilter: '{$view_parameters.namefilter|wash(javascript)|wash}',
+    nameFilter: '{$view_parameters.namefilter|wash(javascript)}',
     defaultShownColumns: vcols,
     navigationPart: "{$section.navigation_part_identifier}",
     cookieName: "eZSubitemColumns",

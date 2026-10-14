@@ -393,7 +393,7 @@ var eZAjaxSubitemsExpDataTable = (function () {
                 // GET <ezjscore/call/ezjscnode::subtree::node>::limit::offset::sort::order::filter?ContentType=json
                 url: function (s) {
                     return confObj.dataSourceURL + '::' + s.limit + '::' + s.offset + '::' + s.sort.key + '::' +
-                           (s.sort.dir === 'asc' ? '1' : '0') + '::' + confObj.nameFilter + '?ContentType=json';
+                           (s.sort.dir === 'asc' ? '1' : '0') + '::' + encodeURIComponent(confObj.nameFilter) + '?ContentType=json';
                 },
                 parse: function (json) {
                     var c = (json && json.content) || {};

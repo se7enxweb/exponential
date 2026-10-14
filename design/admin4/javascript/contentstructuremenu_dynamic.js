@@ -23,11 +23,15 @@ function ContentStructureMenu( params, i18n )
     {
         var opener = e.target && e.target.closest ? e.target.closest( 'a.nodeicon[data-node-id]' ) : null;
         var node = opener ? thisMenu.nodes[opener.getAttribute( 'data-node-id' )] : null;
-        if ( !node || !window.ezpopmenu_showTopLevel )
+        if ( !node )
         {
             return;
         }
         e.preventDefault();
+        if ( !window.ezpopmenu_showTopLevel )
+        {
+            return;
+        }
         // The menu reads the opener and how it was opened from the event; this listener sits on the document.
         var event = { type: e.type, detail: e.detail, pageX: e.pageX, pageY: e.pageY, clientX: e.clientX, clientY: e.clientY,
                       target: opener, currentTarget: opener };
