@@ -39,7 +39,8 @@
       "tests/tests/design/AdminStylingRulesTest.php",
       "tests/tests/design/AdminIconsTest.php",
       "tests/tests/design/AdminLandmarksTest.php",
-      "tests/tests/design/AdminKeyboardTest.php"
+      "tests/tests/design/AdminKeyboardTest.php",
+      "tests/tests/design/AdminTreeViewTest.php"
     ],
     "design/admin*/stylesheets/*": [
       "tests/tests/design/AdminStylingRulesTest.php",
@@ -47,7 +48,11 @@
       "tests/tests/design/AdminLandmarksTest.php"
     ],
     "design/admin4/javascript/*": [
-      "tests/tests/design/AdminKeyboardTest.php"
+      "tests/tests/design/AdminKeyboardTest.php",
+      "tests/tests/design/AdminTreeViewTest.php"
+    ],
+    "design/admin/javascript/contentstructuremenu_dynamic.js": [
+      "tests/tests/design/AdminTreeViewTest.php"
     ],
     "share/icons/bootstrap-icons/*": [
       "tests/tests/design/AdminIconsTest.php"

@@ -136,14 +136,25 @@ and its overrides.
   taken away.
 - **Show/hide tabs** is a button with one name, "Show tabs", and `aria-pressed` (the tabs are shown or not); its
   title says what a press does. Space presses it like Enter.
-- **Content tree:** the open/close link before a node is a button named "Items below <node>", with `aria-expanded`
-  (and `aria-busy` while the items load). Space presses it like Enter, and it keeps the focus after a press. The
-  tree's script and settings template are the same file in `design/admin` and `design/admin4`.
+- **Content tree** is a tree (the WAI-ARIA tree view pattern, as in its navigation tree example): the list has
+  `role="tree"` and the name "Content tree", each node's name link is a `treeitem` with `aria-level`,
+  `aria-posinset`, `aria-setsize` and, for a node with sub items, `aria-expanded` (`aria-busy` while they load);
+  the list of sub items is a `group` the item owns (`aria-owns`), the current node's item has
+  `aria-current="page"`. One item is in the Tab order (the current node's once it is shown, else the first; then the
+  last one focused). Keys: Up and Down move through the shown items; Right opens a node (loading its items) or moves
+  to its first sub item; Left closes it or moves to its parent; Home and End go to the first and last item; a letter
+  moves to the next item that starts with it; Enter follows the link. The open/close button before a node
+  ("Items below <node>", `aria-expanded`) and the node icon stay for the mouse but are out of the Tab order and
+  hidden from screen readers, since the item carries their state; a focus that lands on them goes to the item. The
+  node's context menu opens on the item with Shift+F10 or the context menu key where `ezpopupmenu.js` provides that,
+  and closing it gives the focus back to the item. The tree's script and settings template are the same file in
+  `design/admin` and `design/admin4`; the tree of `show_content_structure.tpl` (no dynamic menu) is unchanged.
 - **Date fields:** the calendar opens from a button (`aria-haspopup="dialog"`); `exp::datepicker` gives the focus back
   to it when the calendar closes. The classic designs keep their calendar image.
 
 `tests/tests/design/AdminKeyboardTest.php` holds the markup and the hooks the scripts rely on, that the tree's
-files are the same in both designs, and that no admin4 template has a clickable image.
+files are the same in both designs, and that no admin4 template has a clickable image. `tests/tests/design/AdminTreeViewTest.php` holds the
+tree's roles, states, Tab stop and keys.
 
 ## Settings
 
