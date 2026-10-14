@@ -47,7 +47,7 @@
 {/section}
 </table>
 {section-else}
-<p>{'There are no combinations'|i18n( 'design/admin/workflow/eventtype/edit' )}</p>
+<p class="a4-empty">{'There are no combinations'|i18n( 'design/admin/workflow/eventtype/edit' )}</p>
 {/section}
 <div class="controlbar">
 <input class="button" type="submit" name="CustomActionButton[{$event.id}_remove_selected]" value="{'Remove selected'|i18n( 'design/admin/workflow/eventtype/edit' )}" {if $event.content.entry_list|not}disabled="disabled"{/if} />

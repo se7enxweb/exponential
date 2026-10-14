@@ -55,7 +55,7 @@
 
 {else}
 <div class="block">
-<p>{'There are no product categories.'|i18n( 'design/admin/shop/productcategories' )}</p>
+<p class="a4-empty">{'There are no product categories.'|i18n( 'design/admin/shop/productcategories' )}</p>
 </div>
 {/if}
 

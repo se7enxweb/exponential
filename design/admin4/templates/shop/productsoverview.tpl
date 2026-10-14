@@ -103,7 +103,7 @@
 
 {else}
     <div class="block">
-    <p>{'The product list is empty.'|i18n( 'design/admin/shop/productsoverview' )}</p>
+    <p class="a4-empty">{'The product list is empty.'|i18n( 'design/admin/shop/productsoverview' )}</p>
     </div>
 {/if}
 {* DESIGN: Content END *}</div></div></div>

@@ -85,7 +85,7 @@
 {undef $currency $locale $symbol}
 {section-else}
 <div class="block">
-<p>{'The order list is empty.'|i18n( 'design/admin/shop/orderlist' )}</p>
+<p class="a4-empty">{'The order list is empty.'|i18n( 'design/admin/shop/orderlist' )}</p>
 </div>
 {/section}
 

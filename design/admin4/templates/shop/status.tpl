@@ -56,7 +56,7 @@
 
 {section-else}
 <div class="block">
-<p>{'There are no order statuses.'|i18n( 'design/admin/shop/status' )}</p>
+<p class="a4-empty">{'There are no order statuses.'|i18n( 'design/admin/shop/status' )}</p>
 </div>
 {/section}
 

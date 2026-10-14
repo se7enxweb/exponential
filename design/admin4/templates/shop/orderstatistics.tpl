@@ -129,7 +129,7 @@
 
 {section-else}
 <div class="block">
-<p>{'The list is empty.'|i18n( 'design/admin/shop/orderstatistics' )}
+<p class="a4-empty">{'The list is empty.'|i18n( 'design/admin/shop/orderstatistics' )}
 </div>
 {/section}
 

@@ -638,6 +638,67 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( "handle.addEventListener('keydown'", file_get_contents( self::$root . '/design/admin4/javascript/ezadmin_menubar.js' ) );
     }
 
+    public function testListsMarkTickedRows()
+    {
+        $dir = self::$root . '/design/admin4/stylesheets';
+        $found = array();
+        foreach ( array( 'components.css', 'admin4.css' ) as $file )
+        {
+            foreach ( self::declarations( file_get_contents( "$dir/$file" ) ) as $d )
+            {
+                // a selector list counts for each of its selectors (commas inside :is()/:has() do not split)
+                foreach ( preg_split( '/,(?![^()]*\))/', $d[0] ) as $one )
+                {
+                    $found[trim( $one )][$d[1]] = $d[2];
+                }
+            }
+        }
+        // only the selection checkbox, a checkbox straight in a cell, marks its row
+        $ticked = ' > tbody > tr:has(> td > input[type="checkbox"]:checked) > :is(td, th[scope="row"])';
+        $this->assertSame( 'var(--a4-accent-soft)', $found['.a4-table' . $ticked]['background-color'] ?? null );
+        $this->assertSame( 'var(--a4-accent-soft)', $found['table.list:not(.a4-plain)' . $ticked]['background-color'] ?? null );
+        $this->assertSame( 'middle', $found['.a4-table td']['vertical-align'] ?? null );
+        $this->assertSame( 'middle', $found['table.list:not(.a4-plain) td']['vertical-align'] ?? null );
+        // the ticked tint comes after the hover rule, so it wins
+        foreach ( array( 'components.css', 'admin4.css' ) as $file )
+        {
+            $css = file_get_contents( "$dir/$file" );
+            $this->assertGreaterThan( strpos( $css, 'tr:hover > :is(td, th[scope="row"])' ), strpos( $css, 'tr:has(> td > input[type="checkbox"]:checked)' ), $file );
+        }
+        // no sticky list header: the tables sit in scrolling wrappers (pagelayout.css div:has(> table)), where it never sticks
+        foreach ( $found as $selector => $props )
+        {
+            if ( preg_match( '/table|\.exp-dt/', $selector ) )
+                $this->assertNotSame( 'sticky', $props['position'] ?? null, $selector );
+        }
+    }
+
+    public function testTreeShowsThePathToTheCurrentNode()
+    {
+        $css = file_get_contents( self::$root . '/design/admin4/stylesheets/admin4.css' );
+        $this->assertStringContainsString( 'li.currentnode > a.image-text :is(span.node-name-normal', $css );
+        $this->assertStringContainsString( 'box-shadow: inset 3px 0 0 var(--a4-accent);', $css );
+        $this->assertStringContainsString( 'li:has(li.currentnode) > a.image-text', $css );
+        $this->assertStringContainsString( 'border-left: 3px solid Highlight;', $css );
+    }
+
+    public function testEmptyListsUseTheEmptyState()
+    {
+        $plain = array();
+        $it = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( self::$root . '/design/admin4/templates', FilesystemIterator::SKIP_DOTS ) );
+        foreach ( $it as $file )
+        {
+            if ( substr( (string)$file, -4 ) !== '.tpl' )
+                continue;
+            foreach ( file( (string)$file ) as $no => $line )
+            {
+                if ( preg_match( "/^\\s*<p>\\{'(There are no |The [a-z ]*list is empty|The list is empty)/", $line ) )
+                    $plain[] = substr( (string)$file, strlen( self::$root ) + 1 ) . ':' . ( $no + 1 );
+            }
+        }
+        $this->assertSame( array(), $plain, 'an empty list says so in .a4-empty, not in a plain paragraph' );
+    }
+
     public function testComponentsAreTheSameInAdminAndAdmin4()
     {
         $this->assertFileEquals( self::$root . '/design/admin4/stylesheets/components.css', self::$root . '/design/admin/stylesheets/components.css',

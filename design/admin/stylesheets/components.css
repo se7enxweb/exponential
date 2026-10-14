@@ -773,7 +773,7 @@ fieldset.a4-field > legend + * { clear: both; }
   background-color: transparent;
   color: var(--a4-ink);
   text-align: left;
-  vertical-align: top;
+  vertical-align: middle;
 }
 .a4-table th {
   background-color: var(--a4-soft);
@@ -791,6 +791,9 @@ fieldset.a4-field > legend + * { clear: both; }
 .a4-table img { vertical-align: -3px; }
 .a4-table.is-compact th, .a4-table.is-compact td { padding: var(--a4-space-2) var(--a4-space-3); }
 .a4-table > tbody > tr.is-selected > :is(td, th[scope="row"]) { background-color: var(--a4-accent-soft); }
+/* A row whose selection checkbox (a checkbox straight in one of its cells) is ticked takes the selection tint,
+   without a script; it comes after stripe and hover and is more specific than both. */
+.a4-table > tbody > tr:has(> td > input[type="checkbox"]:checked) > :is(td, th[scope="row"]) { background-color: var(--a4-accent-soft); }
 @media (max-width: 600px) {
   .a4-table th, .a4-table td { padding: var(--a4-space-2) var(--a4-space-2); }
 }

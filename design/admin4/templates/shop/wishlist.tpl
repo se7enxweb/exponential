@@ -114,7 +114,7 @@
 
 {else}
 <div class="block">
-<p>{'The wish list is empty.'|i18n( 'design/admin/shop/wishlist')}</p>
+<p class="a4-empty">{'The wish list is empty.'|i18n( 'design/admin/shop/wishlist')}</p>
 </div>
 {/if}
 

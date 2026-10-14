@@ -193,7 +193,7 @@
 
 {section-else}
 <div class="block">
-<p>{'There are no objects related to the one that is currently being edited.'|i18n( 'design/admin/content/edit' )}</p>
+<p class="a4-empty">{'There are no objects related to the one that is currently being edited.'|i18n( 'design/admin/content/edit' )}</p>
 </div>
 {/section}
 

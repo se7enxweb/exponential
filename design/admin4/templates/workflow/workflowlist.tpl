@@ -82,7 +82,7 @@
 </table>
 {section-else}
 <div class="block">
-<p>{'There are no workflows in this group.'|i18n( 'design/admin/workflow/workflowlist' )}</p>
+<p class="a4-empty">{'There are no workflows in this group.'|i18n( 'design/admin/workflow/workflowlist' )}</p>
 </div>
 {/section}
 

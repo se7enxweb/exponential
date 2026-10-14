@@ -59,7 +59,7 @@
 
 {else}
 <div class="block">
-<p>{'There are no VAT charging rules.'|i18n( 'design/admin/shop/vatrules' )}</p>
+<p class="a4-empty">{'There are no VAT charging rules.'|i18n( 'design/admin/shop/vatrules' )}</p>
 </div>
 {/if}
 

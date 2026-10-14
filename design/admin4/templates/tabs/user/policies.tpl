@@ -97,6 +97,6 @@
 
 {else}
 <div class="block">
-    <p>{'There are no available policies.'|i18n( 'design/admin/node/view/full' )}</p>
+    <p class="a4-empty">{'There are no available policies.'|i18n( 'design/admin/node/view/full' )}</p>
 </div>
 {/if}

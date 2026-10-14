@@ -106,6 +106,12 @@ row of `th` inside `tbody` or a row with the `hidden` attribute is skipped, so t
 classes and stays plain; a form laid out as a `table.list` takes `a4-plain` as well (`shop/editvatrule.tpl`,
 `shop/editcurrency.tpl`). Text on a zebra row and on a hovered row keeps 4.5:1 (`AdminTokenContrastTest`), and no
 admin4 stylesheet paints rows in a colour of its own (`AdminStylingRulesTest::testDataTablesShareOneZebra`).
+Cells of a data table sit in the middle of their row (`.a4-plain` form tables keep their labels at the top). A row
+whose selection checkbox (a checkbox straight in one of its cells) is ticked takes `--a4-accent-soft` without a script
+(`tr:has(> td > input[type="checkbox"]:checked)`), over stripe and hover. List headers are not sticky: almost every
+table sits in a horizontally scrolling wrapper (`pagelayout.css`, `div:has(> table)`), and a sticky header binds to
+that wrapper, not to the page. An empty list says so in `.a4-empty`, never in a plain paragraph
+(`AdminStylingRulesTest::testEmptyListsUseTheEmptyState`).
 `--a4-orange`, `--a4-orange-dark` and `--a4-orange-soft` are the accent's former names, kept for the extensions that
 use them; new code uses the `--a4-accent*` names.
 

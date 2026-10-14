@@ -117,7 +117,7 @@
 <hr />
 {section-else}
 <div class="block">
-<p>{'There are no events within this workflow.'|i18n( 'design/admin/workflow/edit' )}</p>
+<p class="a4-empty">{'There are no events within this workflow.'|i18n( 'design/admin/workflow/edit' )}</p>
 </div>
 {/section}
 

@@ -271,7 +271,7 @@
     {if and( $details, $trash_filtered )}
     <p>{'No item in the trash matches the filter.'|i18n( 'design/admin/content/trash' )}</p>
     {else}
-    <p>{'There are no items in the trash'|i18n( 'design/admin/content/trash' )}.</p>
+    <p class="a4-empty">{'There are no items in the trash'|i18n( 'design/admin/content/trash' )}.</p>
     {/if}
 </div>
 
