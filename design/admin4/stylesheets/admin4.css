@@ -1716,3 +1716,61 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
   #page select,
   #page textarea { font-size: var(--a4-text-l); }
 }
+
+/* The left menu (parts/ini_menu.tpl, parts/ini_menu_items.tpl): a long menu in groups. A group is a <details> whose
+   summary is a quiet title (small capitals, muted), with a caret that turns when it opens; a group that holds the
+   current page opens. The current page's link (aria-current="page") takes the accent tint with a bar on its left,
+   as the content tree marks its current node. */
+#leftmenu details.a4-navgroup { margin: 0 0 var(--a4-space-2); }
+#leftmenu details.a4-navgroup > summary.a4-nav-title {
+  display: flex;
+  align-items: center;
+  gap: var(--a4-space-2);
+  min-height: 24px;
+  padding: var(--a4-space-1) 0;
+  list-style: none;
+  cursor: pointer;
+  color: var(--a4-muted);
+  font-size: var(--a4-text-xs);
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+#leftmenu details.a4-navgroup > summary.a4-nav-title::-webkit-details-marker { display: none; }
+#leftmenu details.a4-navgroup > summary.a4-nav-title::before {
+  content: "";
+  flex: none;
+  width: 10px;
+  height: 10px;
+  background-color: currentColor;
+  -webkit-mask: url(../../../share/icons/bootstrap-icons/svg/caret-right-fill.svg) no-repeat center / contain;
+  mask: url(../../../share/icons/bootstrap-icons/svg/caret-right-fill.svg) no-repeat center / contain;
+  transition: transform .15s ease;
+}
+#leftmenu details.a4-navgroup[open] > summary.a4-nav-title::before { transform: rotate(90deg); }
+#leftmenu details.a4-navgroup > summary.a4-nav-title:hover { color: var(--a4-ink); }
+#leftmenu details.a4-navgroup > .leftmenu-items { margin: 0; padding: 0; list-style: none; }
+#leftmenu details.a4-navgroup > .leftmenu-items li { margin: 0; }
+#leftmenu details.a4-navgroup > .leftmenu-items li > div > :is(a, span) {
+  display: block;
+  min-height: 24px;
+  padding: var(--a4-space-1) var(--a4-space-2);
+  border-radius: var(--a4-radius-s);
+}
+#leftmenu ul.leftmenu-items li > div > a[aria-current="page"] {
+  display: block;
+  padding: var(--a4-space-1) var(--a4-space-2);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-accent-soft);
+  box-shadow: inset 3px 0 0 var(--a4-accent);
+  color: var(--a4-accent-text);
+  font-weight: 600;
+  text-decoration: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  #leftmenu details.a4-navgroup > summary.a4-nav-title::before { transition: none; }
+}
+@media (forced-colors: active) {
+  #leftmenu details.a4-navgroup > summary.a4-nav-title::before { forced-color-adjust: none; background-color: CanvasText; }
+  #leftmenu ul.leftmenu-items li > div > a[aria-current="page"] { border-left: 3px solid Highlight; box-shadow: none; }
+}

@@ -338,6 +338,8 @@ For every template or stylesheet change in an administration design or an extens
       announced on load, but screen readers differ); a notice that explains a standing state has none. No
       hand-written glyph ("!", a tick) at the start of a notice: the state class draws the icon. Feedback of an action done in the page without reload (copied, stored by
       Ajax) is a toast (`window.a4Toast`), not a notice that appears; it never takes the focus (`AdminNoticesTest`).
+- [ ] A new left-menu link (menu.ini `Links[]` of a section with `Groups[]`) is placed in a group
+      (`GroupLinks_<group>[]`); otherwise it shows under "More" (`AdminLeftMenuGroupsTest` checks Leftmenu_setup).
 - [ ] A new module stylesheet is listed in `AdminComponentCSSFileList` and exists in `design/admin4` and `design/admin`.
 - [ ] The page was checked in light and dark mode at 1440 px and at 960 px with scale 2: no light card on the dark
       page, text contrast at least 4.5:1, no horizontal overflow, no console errors.

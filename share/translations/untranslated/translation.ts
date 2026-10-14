@@ -11614,6 +11614,9 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Right column</source>
+    </message>
+    <message>
+        <source>Side menu</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -11953,6 +11956,26 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Site data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content model</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Site and URLs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Users and messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>More</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

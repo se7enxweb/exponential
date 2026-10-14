@@ -12920,6 +12920,26 @@ Note: The packages will not be uninstalled.</translation>
         <source>Site data</source>
         <translation>Site data</translation>
     </message>
+    <message>
+        <source>Content model</source>
+        <translation>Content model</translation>
+    </message>
+    <message>
+        <source>Site and URLs</source>
+        <translation>Site and URLs</translation>
+    </message>
+    <message>
+        <source>Users and messages</source>
+        <translation>Users and messages</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>System</translation>
+    </message>
+    <message>
+        <source>More</source>
+        <translation>More</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>

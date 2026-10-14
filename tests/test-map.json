@@ -58,7 +58,8 @@
       "tests/tests/design/AdminThemeSwitchTest.php",
       "tests/tests/design/AdminDensityTest.php",
       "tests/tests/design/AdminDashboardTest.php",
-      "tests/tests/design/AdminCardsTest.php"
+      "tests/tests/design/AdminCardsTest.php",
+      "tests/tests/design/AdminLeftMenuGroupsTest.php"
     ],
     "design/admin*/stylesheets/*": [
       "tests/tests/design/AdminStylingRulesTest.php",
@@ -203,7 +204,8 @@
       "tests/tests/design/AdminTreeViewTest.php"
     ],
     "design/admin4/javascript/admin4.js": [
-      "tests/tests/design/AdminNoticesTest.php"
+      "tests/tests/design/AdminNoticesTest.php",
+      "tests/tests/design/AdminLeftMenuGroupsTest.php"
     ]
   },
   "generated": {
@@ -869,7 +871,8 @@
     ],
     "settings/menu.ini": [
       "tests/tests/kernel/classes/classicmenu/expClassicMenuSettingsTest.php",
-      "tests/tests/kernel/content/eZContentFunctionCollectionSiteDataTest.php"
+      "tests/tests/kernel/content/eZContentFunctionCollectionSiteDataTest.php",
+      "tests/tests/design/AdminLeftMenuGroupsTest.php"
     ],
     "settings/notification.ini": [
       "tests/tests/kernel/content/eZPublishWithoutNotificationTest.php"
