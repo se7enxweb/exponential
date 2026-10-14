@@ -921,7 +921,7 @@ d1f3e1ef98e8cee2e52a5446280eadc3  design/admin4/override/templates/embed-inline_
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
 a2c561e93ef63c93201e81acd4f32741  design/admin4/override/templates/window_controls_user.tpl
 f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin4/override/templates/windows_user.tpl
-2fd47736fd8f08f303e4e8088c46d005  design/admin4/stylesheets/admin4.css
+9de4486a794fd2d9c4c9a061ba1ef899  design/admin4/stylesheets/admin4.css
 b580ad9299d33392c4d8441301121455  design/admin4/stylesheets/components.css
 e7b0acbd1646895a73189e0df9299144  design/admin4/stylesheets/content.css
 266bbaade2491b8b0ad3043daacb5434  design/admin4/stylesheets/core.css
@@ -2991,7 +2991,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-1bad5251fb69adb6cb4de7a079a3a78d  doc/changelogs/6.0/6.0.15.md
+a970c1af4c1d1ac35b92717bca30f1d4  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -7079,7 +7079,7 @@ c4dbc84de70b3ac212233446d50a8b64  tests/tests/design/AdminFormLabelsTest.php
 a279dc1d15cd330c560350bc794414f7  tests/tests/design/AdminKeyboardTest.php
 f1af30bb607758cf5d815836baaf88a6  tests/tests/design/AdminLandmarksTest.php
 859c93ecb4d2d3c59b4fcc748587fcd6  tests/tests/design/AdminLanguageBadgeTest.php
-5087e6f50488e4fdb36d1b462d96ff4c  tests/tests/design/AdminLeftMenuGroupsTest.php
+962e411349c1edf829923a255be0bee7  tests/tests/design/AdminLeftMenuGroupsTest.php
 a33e9d573eb8e846797e949212bf192e  tests/tests/design/AdminNoticesTest.php
 0c55571a81de40303f49848a033d4661  tests/tests/design/AdminPageHeaderTest.php
 6ff0ec39508251b32aa19593c39780e4  tests/tests/design/AdminPreferencesTest.php

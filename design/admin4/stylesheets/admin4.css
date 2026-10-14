@@ -1777,10 +1777,11 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
   padding-block: var(--a4-space-1);
   box-sizing: border-box;
 }
+/* The bar on the left is an inset shadow: its corners stay square, or the rounding bends it into a "(". */
 #leftmenu ul.leftmenu-items li > div > a[aria-current] {
   display: block;
   padding: var(--a4-space-1) var(--a4-space-2);
-  border-radius: var(--a4-radius-s);
+  border-radius: 0 var(--a4-radius-s) var(--a4-radius-s) 0;
   background-color: var(--a4-accent-soft);
   box-shadow: inset 3px 0 0 var(--a4-accent-text);
   color: var(--a4-accent-text);
