@@ -133,7 +133,7 @@ function checkAll()
     {let session_user=fetch( content,object, hash( 'object_id', $session.user_id ) )}
     <td width="1%">
     {if $user_id}
-        <input type="checkbox" name="SessionKeyArray[]" value="{$session.session_key|wash}" />
+        <input type="checkbox" name="SessionRefArray[]" value="{$session.ref|wash}" />
     {else}
         <input type="checkbox" name="UserIDArray[]" value="{$session.user_id}" />
     {/if}

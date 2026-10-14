@@ -3,7 +3,8 @@
  * Setup > Site data (setup/sitedata): the rows of ezsite_data (eZSiteData), such as ezpublish-version, read only,
  * by name, with a filter (a whole name, or * for any characters) and paging. Each row says whether templates may
  * read it (site.ini [SiteDataSettings] TemplateReadable[], fetch( 'content', 'site_data', ... )). Policy
- * setup/system_info. Nothing on the page writes a row.
+ * setup/system_info. Nothing on the page writes a row. A value whose name holds a secret is not shown, and secrets
+ * inside other values are masked (shownValue()).
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -47,7 +48,7 @@ class Sitedata extends \Exponential\Runnable\ModuleView
         foreach ( (array)\eZSiteData::fetchList( $filter, $offset, self::LIMIT ) as $row )
         {
             $name = (string)$row->attribute( 'name' );
-            $rows[] = array( 'name' => $name, 'value' => (string)$row->attribute( 'value' ),
+            $rows[] = array( 'name' => $name, 'value' => self::shownValue( $name, (string)$row->attribute( 'value' ) ),
                              'template_readable' => in_array( $name, $readable, true ) );
         }
 
@@ -68,6 +69,22 @@ class Sitedata extends \Exponential\Runnable\ModuleView
         $Result['content'] = $tpl->fetch( 'design:setup/sitedata.tpl' );
         $Result['path'] = array( array( 'url' => false, 'text' => \ezpI18n::tr( 'kernel/setup', 'Site data' ) ) );
         return $Result;
+    }
+
+    /**
+     * A row's value as the page shows it: only whether it is set for a name that holds a secret
+     * (expSystemReportMask::isSecretName()), and with the secrets inside it masked otherwise
+     * (a password in an address, a "token=..." pair, a long key). Pure.
+     *
+     * @param string $name
+     * @param string $value
+     * @return string
+     */
+    public static function shownValue( $name, $value )
+    {
+        if ( \expSystemReportMask::isSecretName( (string)$name ) )
+            return \expSystemReportMask::secret( (string)$value );
+        return \expSystemReportMask::text( (string)$value );
     }
 
     /**
