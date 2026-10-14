@@ -24332,6 +24332,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>%uncacheable nicht zwischenspeicherbar, %writes Schreibvorgänge</translation>
     </message>
     <message>
+        <source>%count results not kept in APCu: less than %reserve % of it was free (ApcuReserve)</source>
+        <translation>%count Ergebnisse nicht in APCu abgelegt: weniger als %reserve % davon waren frei (ApcuReserve)</translation>
+    </message>
+    <message>
         <source>Last written</source>
         <translation>Zuletzt beschrieben</translation>
     </message>
@@ -64914,6 +64918,10 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Files</source>
         <translation>Dateien</translation>
+    </message>
+    <message>
+        <source>%count results not kept in APCu: less than %reserve % of it was free (ApcuReserve)</source>
+        <translation>%count Ergebnisse nicht in APCu abgelegt: weniger als %reserve % davon waren frei (ApcuReserve)</translation>
     </message>
     <message>
         <source>%count entries</source>

@@ -47,6 +47,7 @@ class eZDBQueryCacheTest extends PHPUnit\Framework\TestCase
         eZDBQueryCache::resetRequest();
         eZDBQueryCache::setStateDir( null );
         eZDBQueryCache::setSettings( null );
+        eZDBQueryCache::setApcuFree( null );
         $this->removeDir( $this->dir );
     }
 
@@ -665,5 +666,99 @@ class eZDBQueryCacheTest extends PHPUnit\Framework\TestCase
         sleep( 1 );
         eZDBQueryCache::clearAll();
         $this->assertSame( array(), glob( eZDBQueryCache::entriesDir() . '/*/*' ), 'clearing removes the files' );
+    }
+
+    /** QC-25 */
+    public function testApcuRoomFollowsTheReserve()
+    {
+        $this->newRequest( array( 'mode' => 'shared', 'apcuReserve' => 25 ) );
+        eZDBQueryCache::setApcuFree( 10 );
+        $this->assertFalse( eZDBQueryCache::apcuRoom(), '10 % free, 25 % reserve' );
+        eZDBQueryCache::setApcuFree( 25 );
+        $this->assertFalse( eZDBQueryCache::apcuRoom(), 'exactly the reserve is not more' );
+        eZDBQueryCache::setApcuFree( 30 );
+        $this->assertTrue( eZDBQueryCache::apcuRoom() );
+        eZDBQueryCache::setApcuFree( 1 );
+        $this->newRequest( array( 'mode' => 'shared', 'apcuReserve' => 0 ) );
+        $this->assertTrue( eZDBQueryCache::apcuRoom(), 'ApcuReserve=0 never stops' );
+        $this->newRequest( array( 'mode' => 'shared' ) );
+        $this->assertFalse( eZDBQueryCache::apcuRoom(), 'without the setting: 25 %' );
+    }
+
+    /** QC-26 */
+    public function testBelowTheReserveResultsStayInTheRequest()
+    {
+        $sql = 'SELECT * FROM ezsection WHERE id = 1';
+        // the file storage has no reserve
+        $this->newRequest( array( 'mode' => 'shared', 'storage' => 'file' ) );
+        eZDBQueryCache::setApcuFree( 1 );
+        $this->select( $sql );
+        $this->assertCount( 1, glob( eZDBQueryCache::entriesDir() . '/*/*' ) );
+
+        if ( !function_exists( 'apcu_enabled' ) || !apcu_enabled() || !class_exists( 'APCUIterator' ) )
+            $this->markTestSkipped( 'the rest needs APCu (apc.enable_cli=1)' );
+        apcu_delete( new APCUIterator( '/^ezqc:/' ) );
+        try
+        {
+            $this->newRequest( array( 'mode' => 'shared', 'storage' => 'apcu', 'apcuReserve' => 25 ) );
+            eZDBQueryCache::setApcuFree( 10 );
+            $this->assertNull( $this->select( $sql ) );
+            $this->assertSame( 1, eZDBQueryCache::$stats['reserve'] );
+            $this->assertSame( 0, eZDBQueryCache::$stats['stores'] );
+            $this->assertNotNull( $this->select( $sql ), 'the request still has it' );
+            $this->assertSame( 0, iterator_count( new APCUIterator( '/^ezqc:/' ) ), 'nothing in APCu' );
+
+            $this->newRequest( array( 'mode' => 'shared', 'storage' => 'apcu', 'apcuReserve' => 25 ) );
+            $this->assertNull( $this->select( $sql ), 'the next request misses' );
+            eZDBQueryCache::setApcuFree( 60 );
+            $this->newRequest( array( 'mode' => 'shared', 'storage' => 'apcu', 'apcuReserve' => 25 ) );
+            $this->select( $sql );
+            $this->newRequest( array( 'mode' => 'shared', 'storage' => 'apcu', 'apcuReserve' => 25 ) );
+            $this->assertNotNull( $this->select( $sql ), 'with room again: a hit from APCu' );
+        }
+        finally
+        {
+            apcu_delete( new APCUIterator( '/^ezqc:/' ) );
+        }
+    }
+
+    /** QC-27 */
+    public function testPurgeExpiredFreesTheMemoryOfExpiredEntries()
+    {
+        if ( !function_exists( 'apcu_enabled' ) || !apcu_enabled() || !class_exists( 'APCUIterator' ) )
+            $this->markTestSkipped( 'needs APCu (apc.enable_cli=1)' );
+        // the pool's purge lock (ezqcpurge) is matched too: no earlier test or run holds it
+        apcu_delete( new APCUIterator( '/^ezqc/' ) );
+        try
+        {
+            $free = function () { return apcu_sma_info( true )['avail_mem']; };
+            $before = $free();
+            for ( $i = 0; $i < 20; $i++ )
+                apcu_store( 'ezqc:expired' . $i, str_repeat( 'x', 20000 ), 1 );
+            apcu_store( 'ezqc:live', 'x', 300 );
+            apcu_store( 'other:expired', 'x', 1 );
+            sleep( 2 );
+            $this->assertLessThan( $before - 300000, $free(), 'expired entries still take their memory' );
+
+            $this->assertSame( 20, eZDBQueryCache::purgeExpired() );
+            $this->assertGreaterThan( $before - 100000, $free(), 'their memory is free again' );
+            $this->assertTrue( apcu_exists( 'ezqc:live' ), 'a live entry stays' );
+            $this->assertNull( eZDBQueryCache::purgeExpired(), 'once a minute for the pool' );
+
+            // below the reserve apcuRoom() starts it
+            apcu_delete( 'ezqcpurge' );
+            apcu_store( 'ezqc:expired', 'x', 1 );
+            sleep( 2 );
+            $this->newRequest( array( 'mode' => 'shared', 'apcuReserve' => 25 ) );
+            eZDBQueryCache::setApcuFree( 10 );
+            $this->assertFalse( eZDBQueryCache::apcuRoom() );
+            $this->assertTrue( apcu_exists( 'ezqcpurge' ), 'the purge ran (at once on the command line)' );
+            $this->assertFalse( apcu_exists( 'ezqc:expired' ) );
+        }
+        finally
+        {
+            apcu_delete( new APCUIterator( '/^ezqc/' ) );
+            apcu_delete( 'other:expired' );
+        }
     }
 }

@@ -125,6 +125,7 @@ class expDebugBarReport
             'What is cached (by table)', 'Table', 'Entries', 'Rows', 'Size', 'Hits', 'Largest entries', 'Key', 'Tables', 'Age',
             'Only the first %count entries were read.', 'Nothing is cached on this server yet.',
             'Clears every cached result (a new generation).', 'Counters', "Zeroes this server's counters; the cached results stay.",
+            '%count results not kept in APCu: less than %reserve % of it was free (ApcuReserve)',
         );
     }
 
