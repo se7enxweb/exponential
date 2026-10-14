@@ -59,7 +59,9 @@
       "tests/tests/design/AdminDensityTest.php",
       "tests/tests/design/AdminDashboardTest.php",
       "tests/tests/design/AdminCardsTest.php",
-      "tests/tests/design/AdminLeftMenuGroupsTest.php"
+      "tests/tests/design/AdminLeftMenuGroupsTest.php",
+      "tests/tests/design/AdminRetiredClassesTest.php",
+      "tests/tests/design/AdminSelfContainedTest.php"
     ],
     "design/admin*/stylesheets/*": [
       "tests/tests/design/AdminStylingRulesTest.php",
@@ -73,7 +75,8 @@
       "tests/tests/design/AdminNoticesTest.php",
       "tests/tests/design/AdminThemeSwitchTest.php",
       "tests/tests/design/AdminDensityTest.php",
-      "tests/tests/design/AdminCardsTest.php"
+      "tests/tests/design/AdminCardsTest.php",
+      "tests/tests/design/AdminRetiredClassesTest.php"
     ],
     "design/admin*/javascript/ezajaxsubitems_expdatatable.js": [
       "tests/tests/design/AdminLanguageBadgeTest.php"
@@ -88,7 +91,8 @@
       "tests/tests/design/AdminStylingRulesTest.php"
     ],
     "design/admin4/javascript/ezadmin_menubar.js": [
-      "tests/tests/design/AdminStylingRulesTest.php"
+      "tests/tests/design/AdminStylingRulesTest.php",
+      "tests/tests/design/AdminPreferencesTest.php"
     ],
     "design/admin4/templates/page_topmenu.tpl": [
       "tests/tests/design/AdminStylingRulesTest.php"
@@ -205,7 +209,23 @@
     ],
     "design/admin4/javascript/admin4.js": [
       "tests/tests/design/AdminNoticesTest.php",
-      "tests/tests/design/AdminLeftMenuGroupsTest.php"
+      "tests/tests/design/AdminLeftMenuGroupsTest.php",
+      "tests/tests/design/AdminPreferencesTest.php"
+    ],
+    "design/admin4/templates/page_head_style.tpl": [
+      "tests/tests/design/AdminPreferencesTest.php"
+    ],
+    "design/admin4/templates/parts/a4_preference_attributes.tpl": [
+      "tests/tests/design/AdminPreferencesTest.php"
+    ],
+    "design/admin*/templates/pagelayout.tpl": [
+      "tests/tests/design/AdminPreferencesTest.php"
+    ],
+    "kernel/private/classes/views/*": [
+      "tests/tests/design/AdminSelfContainedTest.php"
+    ],
+    "kernel/classes/audit/*": [
+      "tests/tests/design/AdminSelfContainedTest.php"
     ]
   },
   "generated": {

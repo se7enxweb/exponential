@@ -9761,6 +9761,10 @@
         <source>Information collected by &lt;%object_name&gt; (%collection_count)</source>
         <translation>Informationen gesammelt von &lt;%object_name&gt; (%collection_count)</translation>
     </message>
+    <message>
+        <source>Select collection %id for removal</source>
+        <translation>Sammlung %id zum Entfernen auswählen</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/infocollector/confirmremoval</name>

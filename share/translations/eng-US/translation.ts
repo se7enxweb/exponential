@@ -8070,6 +8070,10 @@
         <source>Information collected by &lt;%object_name&gt; (%collection_count)</source>
         <translation>Information collected by &lt;%object_name&gt; (%collection_count)</translation>
     </message>
+    <message>
+        <source>Select collection %id for removal</source>
+        <translation>Select collection %id for removal</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/infocollector/confirmremoval</name>
@@ -63311,6 +63315,462 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>Setup</translation>
+    </message>
+    <message>
+        <source>%count nodes are below it; at most %limit can be removed here.</source>
+        <translation>%count nodes are below it; at most %limit can be removed here.</translation>
+    </message>
+    <message>
+        <source>%count nodes below it</source>
+        <translation>%count nodes below it</translation>
+    </message>
+    <message>
+        <source>%count other objects relate to what is removed.</source>
+        <translation>%count other objects relate to what is removed.</translation>
+    </message>
+    <message>
+        <source>(an old address, kept as history)</source>
+        <translation>(an old address, kept as history)</translation>
+    </message>
+    <message>
+        <source>An action can only be sent from a form of the finder.</source>
+        <translation>An action can only be sent from a form of the finder.</translation>
+    </message>
+    <message>
+        <source>Archived</source>
+        <translation>Archived</translation>
+    </message>
+    <message>
+        <source>Attribute %id (%identifier, %datatype), version %version, %language</source>
+        <translation>Attribute %id (%identifier, %datatype), version %version, %language</translation>
+    </message>
+    <message>
+        <source>Attribute id</source>
+        <translation>Attribute id</translation>
+    </message>
+    <message>
+        <source>Back to the finder</source>
+        <translation>Back to the finder</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Class</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Created</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Creator</translation>
+    </message>
+    <message>
+        <source>Current version</source>
+        <translation>Current version</translation>
+    </message>
+    <message>
+        <source>Delete permanently</source>
+        <translation>Delete permanently</translation>
+    </message>
+    <message>
+        <source>Deleted permanently</source>
+        <translation>Deleted permanently</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Draft</translation>
+    </message>
+    <message>
+        <source>Enter an object, node, attribute or version id, a remote id, a URL alias, a page URL, or the path or URL of a file below var/ (for example the path of an image). A path that ends with / or * finds every file below it. A number is tried as every kind of id.</source>
+        <translation>Enter an object, node, attribute or version id, a remote id, a URL alias, a page URL, or the path or URL of a file below var/ (for example the path of an image). A path that ends with / or * finds every file below it. A number is tried as every kind of id.</translation>
+    </message>
+    <message>
+        <source>Enter at least %count characters to search by part of an alias.</source>
+        <translation>Enter at least %count characters to search by part of an alias.</translation>
+    </message>
+    <message>
+        <source>File path</source>
+        <translation>File path</translation>
+    </message>
+    <message>
+        <source>Find</source>
+        <translation>Find</translation>
+    </message>
+    <message>
+        <source>Find content by an object, node, attribute or version id, a remote id, a URL alias or the path of a file.</source>
+        <translation>Find content by an object, node, attribute or version id, a remote id, a URL alias or the path of a file.</translation>
+    </message>
+    <message>
+        <source>Found by</source>
+        <translation>Found by</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Hidden</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Hidden by its parent</translation>
+    </message>
+    <message>
+        <source>I understand that this cannot be undone.</source>
+        <translation>I understand that this cannot be undone.</translation>
+    </message>
+    <message>
+        <source>Id, path or URL</source>
+        <translation>Id, path or URL</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>In the trash</translation>
+    </message>
+    <message>
+        <source>Internal draft</source>
+        <translation>Internal draft</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Language</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Languages</translation>
+    </message>
+    <message>
+        <source>Locations</source>
+        <translation>Locations</translation>
+    </message>
+    <message>
+        <source>Locations: %locations. Nodes below them: %children. Versions of the object: %versions.</source>
+        <translation>Locations: %locations. Nodes below them: %children. Versions of the object: %versions.</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Main</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Modified</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Move to trash</translation>
+    </message>
+    <message>
+        <source>Moved to the trash</source>
+        <translation>Moved to the trash</translation>
+    </message>
+    <message>
+        <source>No location you may read.</source>
+        <translation>No location you may read.</translation>
+    </message>
+    <message>
+        <source>No version you may read (content/versionread).</source>
+        <translation>No version you may read (content/versionread).</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Node %id</translation>
+    </message>
+    <message>
+        <source>Node %id, trashed from</source>
+        <translation>Node %id, trashed from</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>Node id</translation>
+    </message>
+    <message>
+        <source>None: the object is in the trash.</source>
+        <translation>None: the object is in the trash.</translation>
+    </message>
+    <message>
+        <source>Nothing found, or you have no access to what was found.</source>
+        <translation>Nothing found, or you have no access to what was found.</translation>
+    </message>
+    <message>
+        <source>Object %id, %class.</source>
+        <translation>Object %id, %class.</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>Object id</translation>
+    </message>
+    <message>
+        <source>Objects found: %count.</source>
+        <translation>Objects found: %count.</translation>
+    </message>
+    <message>
+        <source>Only the first %count are shown; enter a more exact text.</source>
+        <translation>Only the first %count are shown; enter a more exact text.</translation>
+    </message>
+    <message>
+        <source>Original path</source>
+        <translation>Original path</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Owner</translation>
+    </message>
+    <message>
+        <source>Path</source>
+        <translation>Path</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Pending</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Published</translation>
+    </message>
+    <message>
+        <source>Purge from the trash</source>
+        <translation>Purge from the trash</translation>
+    </message>
+    <message>
+        <source>Purged from the trash</source>
+        <translation>Purged from the trash</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Queued</translation>
+    </message>
+    <message>
+        <source>Recognise automatically</source>
+        <translation>Recognise automatically</translation>
+    </message>
+    <message>
+        <source>Rejected</source>
+        <translation>Rejected</translation>
+    </message>
+    <message>
+        <source>Remote id</source>
+        <translation>Remote id</translation>
+    </message>
+    <message>
+        <source>Remove version</source>
+        <translation>Remove version</translation>
+    </message>
+    <message>
+        <source>Repeat</source>
+        <translation>Repeat</translation>
+    </message>
+    <message>
+        <source>Restore</source>
+        <translation>Restore</translation>
+    </message>
+    <message>
+        <source>Search for</source>
+        <translation>Search for</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Section</translation>
+    </message>
+    <message>
+        <source>Something below it is waiting for approval; remove it once that is decided.</source>
+        <translation>Something below it is waiting for approval; remove it once that is decided.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>State</translation>
+    </message>
+    <message>
+        <source>States</source>
+        <translation>States</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>The action failed. The error log has the details.</source>
+        <translation>The action failed. The error log has the details.</translation>
+    </message>
+    <message>
+        <source>The action was not done.</source>
+        <translation>The action was not done.</translation>
+    </message>
+    <message>
+        <source>The action was refused.</source>
+        <translation>The action was refused.</translation>
+    </message>
+    <message>
+        <source>The form has expired or did not come from this site. Open the finder again.</source>
+        <translation>The form has expired or did not come from this site. Open the finder again.</translation>
+    </message>
+    <message>
+        <source>The object changed after the confirmation page was shown. Check it again.</source>
+        <translation>The object changed after the confirmation page was shown. Check it again.</translation>
+    </message>
+    <message>
+        <source>The object goes to the trash from every location listed here, with everything below them. It can be restored from the trash.</source>
+        <translation>The object goes to the trash from every location listed here, with everything below them. It can be restored from the trash.</translation>
+    </message>
+    <message>
+        <source>The object is deleted from every location listed here, with everything below them. This cannot be undone: nothing goes to the trash.</source>
+        <translation>The object is deleted from every location listed here, with everything below them. This cannot be undone: nothing goes to the trash.</translation>
+    </message>
+    <message>
+        <source>The object is not in the trash.</source>
+        <translation>The object is not in the trash.</translation>
+    </message>
+    <message>
+        <source>The object is purged from the trash with all its %versions versions. This cannot be undone.</source>
+        <translation>The object is purged from the trash with all its %versions versions. This cannot be undone.</translation>
+    </message>
+    <message>
+        <source>The text is too long.</source>
+        <translation>The text is too long.</translation>
+    </message>
+    <message>
+        <source>There are too many nodes below it for one removal here; remove it from the content structure, where a large removal runs in the background.</source>
+        <translation>There are too many nodes below it for one removal here; remove it from the content structure, where a large removal runs in the background.</translation>
+    </message>
+    <message>
+        <source>This action is not possible.</source>
+        <translation>This action is not possible.</translation>
+    </message>
+    <message>
+        <source>This is not an action of the finder.</source>
+        <translation>This is not an action of the finder.</translation>
+    </message>
+    <message>
+        <source>This is not an id, path or URL the finder can look for.</source>
+        <translation>This is not an id, path or URL the finder can look for.</translation>
+    </message>
+    <message>
+        <source>This object cannot go to the trash (it is a user or has users below it); it can only be deleted permanently.</source>
+        <translation>This object cannot go to the trash (it is a user or has users below it); it can only be deleted permanently.</translation>
+    </message>
+    <message>
+        <source>This part of the content tree is being changed by a background job. Try again when the job is done.</source>
+        <translation>This part of the content tree is being changed by a background job. Try again when the job is done.</translation>
+    </message>
+    <message>
+        <source>This version cannot be removed: it is the published one, a workflow still holds it, or you may not remove it.</source>
+        <translation>This version cannot be removed: it is the published one, a workflow still holds it, or you may not remove it.</translation>
+    </message>
+    <message>
+        <source>Tick the box to confirm that this cannot be undone.</source>
+        <translation>Tick the box to confirm that this cannot be undone.</translation>
+    </message>
+    <message>
+        <source>Trashed</source>
+        <translation>Trashed</translation>
+    </message>
+    <message>
+        <source>Trashed by</source>
+        <translation>Trashed by</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL alias</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
+        <source>Version %version (%status, %language) is removed. This cannot be undone. The object keeps its other %count versions.</source>
+        <translation>Version %version (%status, %language) is removed. This cannot be undone. The object keeps its other %count versions.</translation>
+    </message>
+    <message>
+        <source>Version id</source>
+        <translation>Version id</translation>
+    </message>
+    <message>
+        <source>Version removed</source>
+        <translation>Version removed</translation>
+    </message>
+    <message>
+        <source>Versions</source>
+        <translation>Versions</translation>
+    </message>
+    <message>
+        <source>You do not have the policies this action needs.</source>
+        <translation>You do not have the policies this action needs.</translation>
+    </message>
+    <message>
+        <source>You may not remove every location of this object and everything below it.</source>
+        <translation>You may not remove every location of this object and everything below it.</translation>
+    </message>
+    <message>
+        <source>an alias containing “%part” (%alias, node %id)</source>
+        <translation>an alias containing “%part” (%alias, node %id)</translation>
+    </message>
+    <message>
+        <source>as a page of siteaccess %siteaccess</source>
+        <translation>as a page of siteaccess %siteaccess</translation>
+    </message>
+    <message>
+        <source>attribute id %id</source>
+        <translation>attribute id %id</translation>
+    </message>
+    <message>
+        <source>initial: %language</source>
+        <translation>initial: %language</translation>
+    </message>
+    <message>
+        <source>node %id, which is in the trash</source>
+        <translation>node %id, which is in the trash</translation>
+    </message>
+    <message>
+        <source>node id %id</source>
+        <translation>node id %id</translation>
+    </message>
+    <message>
+        <source>nothing below it</source>
+        <translation>nothing below it</translation>
+    </message>
+    <message>
+        <source>object %id</source>
+        <translation>object %id</translation>
+    </message>
+    <message>
+        <source>object id %id</source>
+        <translation>object id %id</translation>
+    </message>
+    <message>
+        <source>parent %id</source>
+        <translation>parent %id</translation>
+    </message>
+    <message>
+        <source>the URL alias %alias (node %id)</source>
+        <translation>the URL alias %alias (node %id)</translation>
+    </message>
+    <message>
+        <source>the file path %path</source>
+        <translation>the file path %path</translation>
+    </message>
+    <message>
+        <source>the last part of the URL alias %alias (node %id)</source>
+        <translation>the last part of the URL alias %alias (node %id)</translation>
+    </message>
+    <message>
+        <source>the remote id of node %id</source>
+        <translation>the remote id of node %id</translation>
+    </message>
+    <message>
+        <source>the remote id of the object</source>
+        <translation>the remote id of the object</translation>
+    </message>
+    <message>
+        <source>version %v</source>
+        <translation>version %v</translation>
+    </message>
+    <message>
+        <source>version id %id (version %version)</source>
+        <translation>version id %id (version %version)</translation>
+    </message>
+    <message>
+        <source>with the path prefix %prefix of siteaccess %siteaccess</source>
+        <translation>with the path prefix %prefix of siteaccess %siteaccess</translation>
     </message>
 </context>
 <context>
