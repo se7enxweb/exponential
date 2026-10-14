@@ -21,6 +21,7 @@ the code style and PHPStan with a hint.
 |---|---|---|
 | `git commit` (pre-commit) | `php -l` on every staged PHP file | a syntax error |
 | `git commit` (pre-commit) | `php -l` with PHP 8.0, when `EXP_PHP80` names it, `php8.0` or `php80` is on the PATH, or `/opt/plesk/php/8.0/bin/php` exists | syntax of PHP 8.1 and later: enums, readonly properties, `never`, `new` in initializers, first-class callables, ... |
+| `git commit` (pre-commit) | `node --check` on every staged JavaScript file (not `*.min.js`), when node is installed | a syntax error |
 | `git commit` (pre-commit) | `php bin/php/checkmanifest.php --staged` | a staged file whose checksum is missing or stale in `share/filelist.md5` |
 | `git commit` (pre-commit) | `php bin/php/checkcodestyle.php --staged` | a change that adds code style violations to a PHP file |
 | `git commit` (commit-msg) | subject format | a subject that does not start with `Added: `, `Updated: `, `Fixed: `, `Removed: ` or `Renamed: ` |
@@ -110,7 +111,8 @@ checks what a web server recorded reads the site's audit directory, `expAuditCon
 ## CI
 
 `.github/workflows/quality.yml` runs on every push and pull request to `main`: PHP syntax of the changed files with
-PHP 8.3, the manifest, the commit messages of the pushed or proposed commits, PHPStan and the tests of the own sniffs
+PHP 8.3, JavaScript syntax of the changed scripts (`node --check` with Node.js 22, which reads an ES module in a
+`.js` file), the manifest, the commit messages of the pushed or proposed commits, PHPStan and the tests of the own sniffs
 (their own job, on PHP 8.4) block; the code style of the changed files, including type declarations and PHP 8.0
 compatibility, is reported as a warning.
 
