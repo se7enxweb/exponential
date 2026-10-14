@@ -114,7 +114,8 @@ templates in `templates/popupmenu/`) look like the other admin4 popovers and wor
   visible outline.
 - **Keyboard:** the tree's menu button (the class icon in front of a node) and the sub-items table's row button
   open the menu with Enter or Space; Shift+F10 or the context menu key open the menu of the focused tree item or
-  table row (in a form field of the row they keep the browser's own menu). The first item takes the focus. Arrow Down and Up, Home and End move between items, Arrow Right,
+  table row (in a form field of the row they keep the browser's own menu); also on a scrolled page, a menu opened
+  from the keyboard opens under its button. The first item takes the focus. Arrow Down and Up, Home and End move between items, Arrow Right,
   Enter or Space open a submenu, Arrow Left closes it, Enter or Space run an item, Escape closes the menu and
   returns the focus to its button, Tab closes the menu and moves on.
 - **Screen readers:** `ezpopupmenu.js` gives each menu `role="menu"` labelled by its title row, its items

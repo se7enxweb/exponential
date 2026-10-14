@@ -652,8 +652,11 @@ function _isKeyboardEvent( event )
 {
     if ( !event ) return true;
     if ( event.type && event.type.indexOf( 'key' ) === 0 ) return true;
-    // A click made with Enter or Space carries no position and detail 0.
-    return !event.pageX && !event.pageY && !event.clientX && !event.clientY;
+    // A click made with Enter or Space, or by element.click() (Shift+F10), counts no clicks: detail 0. Its position
+    // in the window is 0, but pageX/pageY are not: they add the scroll offset, so on a scrolled page they would
+    // make it look like a mouse click and open the menu in the window's top left corner.
+    if ( event.type === 'click' && typeof event.detail === 'number' ) return event.detail === 0;
+    return !event.clientX && !event.clientY;
 }
 
 function _setOpener( event )

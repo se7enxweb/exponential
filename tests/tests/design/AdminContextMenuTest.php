@@ -84,6 +84,23 @@ class AdminContextMenuTest extends PHPUnit\Framework\TestCase
             $this->assertMatchesRegularExpression( '/window\.' . preg_quote( $api, '/' ) . '\s*=/', $js, "ezpopupmenu.js no longer exports $api" );
     }
 
+    /**
+     * A click made with Enter, Space or element.click() (the Shift+F10 path) has clientX/clientY 0, but pageX/pageY
+     * carry the scroll offset: on a scrolled page a test on pageX/pageY took it for a mouse click and opened the menu
+     * in the window's top left corner, without moving the focus into it.
+     */
+    public function testAKeyboardClickIsToldByItsClickCountNotByItsPositionOnThePage()
+    {
+        $js = (string)file_get_contents( self::root() . '/design/admin4/javascript/popupmenu/ezpopupmenu.js' );
+        $this->assertSame( 1, preg_match( '/function _isKeyboardEvent\( event \)\s*\{(.*?)\n\}/s', $js, $match ),
+                           'ezpopupmenu.js no longer has _isKeyboardEvent()' );
+        $body = (string)preg_replace( '/\/\/[^\n]*/', '', $match[1] );
+        $this->assertDoesNotMatchRegularExpression( '/\bpage[XY]\b/', $body,
+                                                    'pageX/pageY include the scroll offset and are not 0 for a keyboard click on a scrolled page' );
+        $this->assertStringContainsString( "event.type === 'click'", $body );
+        $this->assertStringContainsString( 'event.detail === 0', $body, 'A click made with the keyboard counts no clicks' );
+    }
+
     public function testContentTreeMenuButtonsHaveANameAndAnnounceTheirMenu()
     {
         foreach ( array( 'javascript/contentstructuremenu_dynamic.js', 'templates/contentstructuremenu/show_content_structure.tpl' ) as $file )
