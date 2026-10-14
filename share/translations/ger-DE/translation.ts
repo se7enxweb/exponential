@@ -3692,6 +3692,10 @@
 <context>
     <name>design/admin/content/edit</name>
     <message>
+        <source>Code to embed the object</source>
+        <translation>Code zum Einbetten des Objekts</translation>
+    </message>
+    <message>
         <source>Edit &lt;%object_name&gt; [%class_name]</source>
         <translation>&lt;%object_name&gt; [%class_name] bearbeiten</translation>
     </message>
@@ -12060,6 +12064,10 @@
 </context>
 <context>
     <name>design/admin/package</name>
+    <message>
+        <source>Image file</source>
+        <translation>Bilddatei</translation>
+    </message>
     <message>
         <source>Please provide information on the changes.</source>
         <translation>Bitte geben Sie Informationen über Änderungen.</translation>
@@ -26408,6 +26416,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
 <context>
     <name>design/admin/setup/rad</name>
     <message>
+        <source>Find</source>
+        <translation>Suchen</translation>
+    </message>
+    <message>
         <source>Rapid Application Development Tools</source>
         <translation>Werkzeuge zur schnellen Anwendungs-Entwicklung</translation>
     </message>
@@ -39578,6 +39590,14 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
 </context>
 <context>
     <name>design/admin/visual/toolbar</name>
+    <message>
+        <source>Priority</source>
+        <translation>Priorität</translation>
+    </message>
+    <message>
+        <source>Tool</source>
+        <translation>Werkzeug</translation>
+    </message>
     <message>
         <source>Tool List for &lt;Toolbar_%toolbar_position&gt;</source>
         <translation type="obsolete">Werkzeug Liste für &lt;Toolbar_%toolbar_position&gt;</translation>
