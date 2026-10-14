@@ -88,6 +88,45 @@ class ezpSiteAccessURLTest extends PHPUnit\Framework\TestCase
         $this->assertSame( ezpSiteAccessURL::root(), ezpSiteAccessURL::root( '' ) );
     }
 
+    private function front( $siteaccess )
+    {
+        $property = new ReflectionProperty( 'eZINI', 'injectedSettings' );
+        $settings = $property->getValue();
+        $settings['site.ini']['SiteSettings']['FrontSiteAccess'] = $siteaccess;
+        eZINI::injectSettings( $settings );
+        // front() reads eZINI::instance( 'site.ini' ), the settings of the current siteaccess
+    }
+
+    public function testFrontIsTheDefaultSiteAccessWithoutFrontSiteAccess()
+    {
+        $this->rules( array() );
+        $this->front( '' );
+        $this->assertSame( ezpSiteAccessURL::root(), ezpSiteAccessURL::front() );
+    }
+
+    public function testFrontIsTheSiteAccessFrontSiteAccessNames()
+    {
+        $this->rules( array() );
+        $this->front( 'k1-ger' );
+        $this->assertSame( 'https://www.k1.example.invalid/' . $this->index . 'k1-ger/', ezpSiteAccessURL::front() );
+        // root() without a parameter keeps meaning DefaultAccess
+        $this->assertSame( 'https://www.k1.example.invalid/' . $this->index . 'k1-eng/', ezpSiteAccessURL::root() );
+    }
+
+    public function testFrontIgnoresSpacesAroundTheName()
+    {
+        $this->rules( array() );
+        $this->front( ' k1-ger ' );
+        $this->assertSame( 'https://www.k1.example.invalid/' . $this->index . 'k1-ger/', ezpSiteAccessURL::front() );
+    }
+
+    public function testFrontFallsBackToTheDefaultForAnUnknownSiteAccess()
+    {
+        $this->rules( array() );
+        $this->front( 'k1-nothere' );
+        $this->assertSame( ezpSiteAccessURL::root(), ezpSiteAccessURL::front() );
+    }
+
     public function testDefaultSiteAccessLeftOutWhenRemoved()
     {
         $this->rules( array( 'RemoveSiteAccessIfDefaultAccess' => 'enabled' ) );

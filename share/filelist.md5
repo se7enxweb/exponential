@@ -880,7 +880,7 @@ a54e5021b1c597539a60da86ef766f0c  design/admin4/images/trash-icon-16x16.gif
 bb57d7d50de510183570d8844efbd49f  design/admin4/images/up-16x16-grey.png
 bc1f590f32f5d71f9bfdf7781f2135fc  design/admin4/images/url_translator.png
 ac084a07607e6d6c5a845da15423854f  design/admin4/images/view-fullscreen.png
-629de04d4a0fba6065f87a00bcee8c89  design/admin4/javascript/admin4.js
+5438b7a1ddf0a99ae1de6d030b2d18bf  design/admin4/javascript/admin4.js
 b05092d370a223ac22e7c4b388174054  design/admin4/javascript/contentstructuremenu_dynamic.js
 2208f27da9ddaa11d336d07c190cbc4b  design/admin4/javascript/expajaxuploader.js
 0df0953b7c2b2315ab91523b59401c62  design/admin4/javascript/ezadmin_menubar.js
@@ -1272,7 +1272,7 @@ f40ae639cabb4ca0d075b619a1263529  design/admin4/templates/shop/editvatrule.tpl
 5aa8665564c7d6f9daf51df0fec2c23f  design/admin4/templates/state/edit.tpl
 e2b2218c63c8f6d73812610f76008540  design/admin4/templates/state/group.tpl
 7953f2e4d2bd39bc1a791203b04b730d  design/admin4/templates/state/group_edit.tpl
-b4c9bf675f6a5541ecd6d48f7e8589b2  design/admin4/templates/state/groups.tpl
+84ed2e895c7363540433d1d60b4df389  design/admin4/templates/state/groups.tpl
 dd6d393aeee0d0b5d61c5db14f6fb9e2  design/admin4/templates/state/view.tpl
 242e73b25fef0e05cbc075c78c692e72  design/admin4/templates/tabs/audit/node.tpl
 3ef5dcced09671a2c30a9e5955f6674c  design/admin4/templates/tabs/user/policies.tpl
@@ -2989,7 +2989,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-390de201fc01c20b0ba707e02f0a49e5  doc/changelogs/6.0/6.0.15.md
+9121b6bace82baacb68f3e6a53da6e0a  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3312,7 +3312,7 @@ b4be8467e14cc6acd7f41becc1a4879f  doc/features/5.90/event.md
 8bccfb03586dc5373674e3741ad88699  doc/features/6.0/access-and-cache-filters.md
 d49f2412c8b20c39fe41028249e4770e  doc/features/6.0/access-array-prefetch.md
 c4809a3b611073bdcad4b38e9ea7dd6d  doc/features/6.0/additional-extension-directories.md
-8179e76efd7b989806870487ad25c732  doc/features/6.0/admin-content-tree-top-node.md
+1bd07ed11464dd1a29523b124b43a3c8  doc/features/6.0/admin-content-tree-top-node.md
 8807f67700e024fbcd49fd8bce10563f  doc/features/6.0/admin-links-follow-permissions.md
 8ee6875c6693489d567c309177b49b81  doc/features/6.0/admin-list-paging.md
 41099ca247392d7ed963caa4b857e51c  doc/features/6.0/admin3-responsive-admin.md
@@ -5233,7 +5233,7 @@ e5173154b8dda8d8a484430bcd35dd78  kernel/collaboration/function_definition.php
 94f70191d3c4e487b5d88064bf03964e  kernel/common/ezobjectforwarder.php
 18b91719ea4732c2a66731c64f3170a8  kernel/common/ezpackageoperator.php
 29b13a19cb190709ae5a40884bded410  kernel/common/ezpi18n.php
-5d87902cd7e04a68768a510883df4e47  kernel/common/ezpsiteaccessurloperator.php
+f96a90033dfa982c5532d6e86250f804  kernel/common/ezpsiteaccessurloperator.php
 017b674d3da82376774e263117ee3ce8  kernel/common/ezsimpletagsoperator.php
 da918f13b83149e6feee8a05e8c5b4be  kernel/common/eztemplateautoload.php
 062acfd4a6ef3e30b0378e9e24d97d77  kernel/common/eztemplatedesignresource.php
@@ -5547,7 +5547,7 @@ b6faff304d7afedf043b946e2b2104fb  kernel/private/classes/ezpmobiledevicedetectfi
 d512fea2b159bda6e83158d5992933ab  kernel/private/classes/ezpmultivariatetest.php
 be72236ef28a665ddb30d6e278d102c3  kernel/private/classes/ezpmultivariatetesthandler.php
 b0ceceef412a27ea5302703bdb8fb87a  kernel/private/classes/ezpmultivariatetesthandlerinterface.php
-920333bb6753d9d6448b28cd11bb64a7  kernel/private/classes/ezpsiteaccessurl.php
+e12433d31720f415952a3913b5310e62  kernel/private/classes/ezpsiteaccessurl.php
 a4426106f9957b221c8245b2bb480881  kernel/private/classes/ezptemplateoverrides.php
 0e365e531c5a5eda3f6f895ee50c1765  kernel/private/classes/ezptopologicalsort.php
 b4c8b6bdaa165af37f563c5e39f0dad4  kernel/private/classes/ezptopologicalsortnode.php
@@ -6444,7 +6444,7 @@ ebc1c25ced143cfaaa5d343350676ecc  settings/override.ini
 122b02cc3dab8b41bbbce96df60e2642  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-56f35d38530eebdb213febebb96213e9  settings/site.ini
+5f0a0b9674416cc67cf6d47449135369  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -7646,7 +7646,7 @@ d60e2e424b33dceae4a699b06f3c728d  tests/tests/kernel/classes/subitems/expSubitem
 64c81d5eb6d1b6ebb7089f305649aedb  tests/tests/kernel/classes/subitems/fixtures/expsubitemstesthelpers.php
 5509f70be8ab5c167cec44c57e4b4f07  tests/tests/kernel/classes/subitems/fixtures/subitems.ini
 76ef7c50caba9c07204d2cc9d80b6fa0  tests/tests/kernel/classes/subitems/fixtures/subitemscolumns.ini
-45a11042cf23d383859f6cd2ff5e6d2a  tests/tests/kernel/classes/templateside/eZKernelTemplateOperatorsTest.php
+65ea0f4fc996e4b55c80a262b019b5d7  tests/tests/kernel/classes/templateside/eZKernelTemplateOperatorsTest.php
 c4093815f512eca06838f9979dc3175b  tests/tests/kernel/classes/templateside/eZTemplateDesignResourceTest.php
 173c7582c0a9772090ad0f6f0e8cf2ca  tests/tests/kernel/classes/trash/TrashListMongoTest.php
 397cc60950363e47baa1ab8cbbcaafb9  tests/tests/kernel/classes/trash/TrashListPagedTest.php
@@ -7775,7 +7775,7 @@ e2866895244944ed9c19f75a4b7d748f  tests/tests/kernel/private/classes/expUpgradeC
 5277128e032a8ba916fd550e97672c58  tests/tests/kernel/private/classes/ezpFormTokenRefusalTest.php
 f6f7a6d0fedaac36b1b7a203e3f349cf  tests/tests/kernel/private/classes/ezpKernelResultAndEventTest.php
 13eaad81e6d99804ce2a4564858cdf7c  tests/tests/kernel/private/classes/ezpLanguageSwitcherTest.php
-d3aece307cd87977077761c98dcfa905  tests/tests/kernel/private/classes/ezpSiteAccessURLTest.php
+d454662077638ebbc1d7529584302bd3  tests/tests/kernel/private/classes/ezpSiteAccessURLTest.php
 2000c194dcb439f91bf20cee50496582  tests/tests/kernel/private/classes/ezpSmallKernelHelpersTest.php
 f8bd96cb7671e92382f05210af3b11eb  tests/tests/kernel/private/classes/ezpTopologicalSortOrderTest.php
 ccedf985750dd7fe3adf44e8e474cdc3  tests/tests/kernel/private/contentapi/ezpContentCriteriaTest.php

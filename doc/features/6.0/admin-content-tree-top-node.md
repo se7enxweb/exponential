@@ -61,8 +61,9 @@ Cronjobs, Seiten vorladen, oAuth-Verwaltung).
 
 ## The link to the site and the logo
 
-- **Site link.** The link beside the logo is worked out from the settings (`ezpSiteAccessURL::root()`):
-  `DefaultAccess`; this request's scheme; this host when the siteaccess can be reached on it by URI, or else a host
+- **Site link.** The link beside the logo is worked out from the settings (`ezpSiteAccessURL::front()`):
+  the admin siteaccess's `site.ini [SiteSettings] FrontSiteAccess`, else `DefaultAccess` (an installation that
+  serves several sites from one tree names each admin's site there); this request's scheme; this host when the siteaccess can be reached on it by URI, or else a host
   that `HostMatchMapItems` gives it, or its `SiteURL`; the visitor's port when the host is served by this
   installation; and the siteaccess path unless `RemoveSiteAccessIfDefaultAccess` leaves it out. Before, it was
   `https://` plus the host with `edit.` cut out, so it named neither the siteaccess nor the port (an installation

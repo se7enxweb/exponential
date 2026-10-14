@@ -29,10 +29,44 @@
  *
  * The rules are read from the settings without siteaccess overrides, as
  * eZSiteAccess::match() reads them, so the admin's own settings do not change
- * where the site is.
+ * where the site is. Which site an admin belongs to is the one thing it does
+ * say: front() reads site.ini [SiteSettings] FrontSiteAccess of the current
+ * siteaccess.
  */
 class ezpSiteAccessURL
 {
+    /**
+     * The front page of the site the current siteaccess belongs to: site.ini
+     * [SiteSettings] FrontSiteAccess of the current siteaccess (an admin
+     * siteaccess names its site there), else DefaultAccess. An installation
+     * that serves several sites from one tree gives each admin its own site.
+     * A FrontSiteAccess that is not in AvailableSiteAccessList falls back to
+     * DefaultAccess with a warning in the debug output.
+     *
+     * @return string|false the URL (ending in /), or false when neither has one
+     */
+    public static function front()
+    {
+        $ini = eZINI::instance( 'site.ini' );
+        $front = $ini->hasVariable( 'SiteSettings', 'FrontSiteAccess' )
+               ? trim( (string)$ini->variable( 'SiteSettings', 'FrontSiteAccess' ) )
+               : '';
+        if ( $front !== '' )
+        {
+            $url = self::root( $front );
+            if ( $url !== false )
+                return $url;
+            // once per value and request: the admin layouts ask several times per page
+            static $warned = array();
+            if ( !isset( $warned[$front] ) )
+            {
+                $warned[$front] = true;
+                eZDebug::writeWarning( "site.ini [SiteSettings] FrontSiteAccess=$front is not in AvailableSiteAccessList, the link goes to DefaultAccess", __METHOD__ );
+            }
+        }
+        return self::root();
+    }
+
     /**
      * @param string|null $siteaccess null: [SiteSettings] DefaultAccess
      * @return string|false the URL (ending in /), or false for a siteaccess
