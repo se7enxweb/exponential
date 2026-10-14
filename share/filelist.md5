@@ -962,7 +962,7 @@ e1f3588358db2e5e0ceb21ed4db32a42  design/admin4/templates/class/select_language.
 676d731ecaf7b28864b2a66cd100ac7a  design/admin4/templates/class/templates.tpl
 1b8d3bda00fbae2f46944f66517233f6  design/admin4/templates/class/translations.tpl
 66f7839ce015ce4416d0118159f6fd59  design/admin4/templates/class/view.tpl
-4581eb88f3baec539c96d289d36131b4  design/admin4/templates/class/window_controls.tpl
+287cedb6f59889a93ee22e4cdf92ddff  design/admin4/templates/class/window_controls.tpl
 03a840054c5ab652032b65fa93bd3e2a  design/admin4/templates/class/windows.tpl
 40694555f194e5eb570222e8faa0c6e2  design/admin4/templates/collaboration/group/view/list.tpl
 e10a40d98b3a1b9cf968131e81b7c52c  design/admin4/templates/collaboration/group_tree.tpl
