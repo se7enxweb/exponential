@@ -408,6 +408,9 @@ function _moveTopLevelOnScreen( menuID, mousePos )
         newY = screenData.ScrollY;
     else
         newY = mousePos.y + EZPOPMENU_OFFSET;
+    // A menu opened upwards stays inside the window; the stylesheet caps its height to the window.
+    if ( newY < screenData.ScrollY )
+        newY = screenData.ScrollY;
 
     // compensate if we are to the right of the screen
     if ( (screenData.ScrollX + screenData.Width) < ( mousePos.x + EZPOPMENU_OFFSET + menuElement.offsetWidth ) )

@@ -649,7 +649,11 @@ div.popupmenu {
 
     /* These three are essential */
     position: absolute;
-    z-index: 1010;
+    /* above the fixed header (1020) and the sidebar tabs (1030): a menu that opens upwards is not cut off */
+    z-index: 1040;
+    /* a menu taller than the window scrolls inside itself */
+    max-height: calc(100vh - 2 * var(--a4-space-3));
+    overflow-y: auto;
     display: none;
 }
 
@@ -1870,7 +1874,7 @@ body {
 }
 
 div.popupmenu#EditSubmenu {
-    z-index: 1020;
+    z-index: 1050;
 }
 
 input.button,
