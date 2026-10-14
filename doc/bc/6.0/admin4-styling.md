@@ -139,12 +139,16 @@ White text on it is only 3:1, so filled controls with white text use its darker 
 | Other | `.a4-grip` (drag handle), `.is-dragging` |
 
 A card opens with `.a4-card-head` (not `.a4-section-head`), puts the rest in `.a4-card-body` and its buttons in
-`.a4-card-foot`. `.is-flush` lets a table run to the card's edges (head and foot keep their padding, the table's
-corner cells take the card's radius). `.is-link` makes the whole card follow the link in its `.a4-card-title`; other
-controls in the card stay clickable, and the focus ring goes around the card. `.is-busy`, always together with
-`aria-busy="true"` on the same element, veils the card and shows a spinner while its content loads or is saved
-(still when reduced motion is asked for). `tests/tests/design/AdminCardsTest.php` checks the parts and that no
-admin4 card opens with a section head.
+`.a4-card-foot`. The foot and the flush head read the card's padding from `--a4-card-pad-x`/`--a4-card-pad-y` when a
+density setting defines them, else from the spacing scale (`--a4-space-4`/`--a4-space-3`). `.is-flush` lets a table
+run to the card's edges (head and foot keep their padding, the table's corner cells take the card's radius).
+`.is-link` makes the whole card follow the link in its `.a4-card-title`: links, buttons and fields in the body, foot
+and head actions stay clickable, but plain text under the link layer cannot be selected, so a link card holds no text
+people copy; where the browser has `:has()` the focus ring goes around the card, elsewhere around the title link.
+`.is-busy` works together with `aria-busy="true"` on the same element and veils the card with a spinner while its
+content loads or is saved; the veil stops only the pointer, so the script that sets it also sets `inert` on the card
+(or disables its controls) and removes both afterwards. `tests/tests/design/AdminCardsTest.php` checks the parts and
+that no admin4 card opens with a section head.
 
 States are `.is-*` classes on the component. Each component is one class plus at most an element or a state, so a
 module rule with one more class always wins.

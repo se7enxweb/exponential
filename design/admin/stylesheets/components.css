@@ -345,7 +345,9 @@ html[data-a4-theme="dark"] {
 
 /* Card parts. .a4-card-head: the title (h2/h3) and, at its end, .a4-card-actions; a <p> in it is the card's
    subtitle. .a4-card-body: the content, spaced from the head. .a4-card-foot: the actions that act on the card's
-   content, on a strip at the card's bottom edge (it reaches the edges through the card's padding). */
+   content, on a strip at the card's bottom edge (it reaches the edges through the card's padding). The foot and the
+   flush variant read the card's padding from --a4-card-pad-x/-y when a density setting defines them, else from the
+   spacing scale the card's padding uses. */
 .a4-card-head > :is(h2, h3, .a4-h2, .a4-h3) { margin: 0; }
 .a4-card-head > p { flex: 1 1 100%; max-width: 78ch; margin: 0; color: var(--a4-muted); }
 .a4-card-head:has(> p) { row-gap: var(--a4-space-1); }
@@ -355,8 +357,8 @@ html[data-a4-theme="dark"] {
   flex-wrap: wrap;
   align-items: center;
   gap: var(--a4-space-2);
-  margin: var(--a4-space-3) calc(-1 * var(--a4-space-4)) calc(-1 * var(--a4-space-3));
-  padding: var(--a4-space-3) var(--a4-space-4);
+  margin: var(--a4-space-3) calc(-1 * var(--a4-card-pad-x, var(--a4-space-4))) calc(-1 * var(--a4-card-pad-y, var(--a4-space-3)));
+  padding: var(--a4-space-3) var(--a4-card-pad-x, var(--a4-space-4));
   border-top: 1px solid var(--a4-line);
   border-radius: 0 0 var(--a4-radius-s) var(--a4-radius-s);
   background-color: var(--a4-soft);
@@ -365,46 +367,55 @@ html[data-a4-theme="dark"] {
 
 /* .a4-card.is-flush: a table (or list) that runs to the card's edges; head and foot keep their padding. */
 .a4-card.is-flush { padding: 0; }
-.a4-card.is-flush > .a4-card-head { padding: var(--a4-space-3) var(--a4-space-4); border-bottom: 1px solid var(--a4-line); }
+.a4-card.is-flush > .a4-card-head { padding: var(--a4-card-pad-y, var(--a4-space-3)) var(--a4-card-pad-x, var(--a4-space-4)); border-bottom: 1px solid var(--a4-line); }
 .a4-card.is-flush > .a4-card-body { margin: 0; }
 .a4-card.is-flush > .a4-card-foot { margin: 0; }
 .a4-card.is-flush > table,
 .a4-card.is-flush > .a4-card-body > table { width: 100%; margin: 0; border-collapse: separate; border-spacing: 0; }
 .a4-card.is-flush > table :is(th, td):first-child,
-.a4-card.is-flush > .a4-card-body > table :is(th, td):first-child { padding-left: var(--a4-space-4); }
+.a4-card.is-flush > .a4-card-body > table :is(th, td):first-child { padding-left: var(--a4-card-pad-x, var(--a4-space-4)); }
 .a4-card.is-flush > table :is(th, td):last-child,
-.a4-card.is-flush > .a4-card-body > table :is(th, td):last-child { padding-right: var(--a4-space-4); }
+.a4-card.is-flush > .a4-card-body > table :is(th, td):last-child { padding-right: var(--a4-card-pad-x, var(--a4-space-4)); }
 .a4-card.is-flush > table:first-child tr:first-child > :first-child { border-top-left-radius: var(--a4-radius-s); }
 .a4-card.is-flush > table:first-child tr:first-child > :last-child { border-top-right-radius: var(--a4-radius-s); }
 .a4-card.is-flush > table:last-child tr:last-child > :first-child { border-bottom-left-radius: var(--a4-radius-s); }
 .a4-card.is-flush > table:last-child tr:last-child > :last-child { border-bottom-right-radius: var(--a4-radius-s); }
 
-/* .a4-card.is-link: the whole card follows the link in its title (the link's ::after covers the card); other
-   controls in it stay on top and clickable. The focus ring is drawn around the card, not the title text. */
+/* .a4-card.is-link: the whole card follows the link in its title (the link's ::after covers the card). Other links,
+   buttons and fields in the card body or foot are lifted above that layer and stay clickable; plain text under the
+   layer cannot be selected with the mouse, so put no text there that people copy. Where the browser has :has(), the
+   focus ring is drawn around the card instead of the title text; elsewhere the title link keeps its own ring. */
 .a4-card.is-link { position: relative; }
 .a4-card.is-link .a4-card-title a::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
-.a4-card.is-link :is(a, button, input, select, textarea, label):not(.a4-card-title a) { position: relative; z-index: 1; }
+.a4-card.is-link .a4-card-body :is(a, button, input, select, textarea, label),
+.a4-card.is-link .a4-card-foot :is(a, button, input, select, textarea, label),
+.a4-card.is-link .a4-card-actions :is(a, button, input, select, textarea, label) { position: relative; z-index: 1; }
 .a4-card.is-link:hover { border-color: var(--a4-line-strong); }
-.a4-card.is-link .a4-card-title a:focus-visible { outline-color: transparent; }
-.a4-card.is-link:has(.a4-card-title a:focus-visible) { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
+@supports selector(:has(*)) {
+  .a4-card.is-link .a4-card-title a:focus-visible { outline-color: transparent; }
+  .a4-card.is-link:has(.a4-card-title a:focus-visible) { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
+}
 
-/* .a4-card.is-busy (with aria-busy="true" on the same element): content is loading or being saved; a veil and a
-   spinner over the card, the content stays where it is. Without motion when reduced motion is asked for. */
-.a4-card.is-busy { position: relative; }
-.a4-card.is-busy::after {
+/* .a4-card.is-busy[aria-busy="true"]: content is loading or being saved; a veil (above the controls a link card
+   lifts) and a spinner over the card, the content stays where it is; no motion when reduced motion is asked for.
+   The veil only stops the pointer: a script that sets the state also sets `inert` on the card (or disables its
+   controls) for the keyboard, and removes both when it is done. */
+.a4-card.is-busy[aria-busy="true"] { position: relative; }
+.a4-card.is-busy[aria-busy="true"]::after {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: inherit;
+  z-index: 2;
   background-color: color-mix(in srgb, var(--a4-card) 70%, transparent);
   cursor: progress;
 }
-.a4-card.is-busy::before {
+.a4-card.is-busy[aria-busy="true"]::before {
   content: "";
   position: absolute;
   top: 50%;
   left: 50%;
-  z-index: 1;
+  z-index: 3;
   width: var(--a4-space-5);
   height: var(--a4-space-5);
   margin: calc(-0.5 * var(--a4-space-5)) 0 0 calc(-0.5 * var(--a4-space-5));
@@ -415,10 +426,10 @@ html[data-a4-theme="dark"] {
 }
 @keyframes a4-card-busy { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) {
-  .a4-card.is-busy::before { animation: none; border-right-color: var(--a4-accent); }
+  .a4-card.is-busy[aria-busy="true"]::before { animation: none; border-right-color: var(--a4-accent); }
 }
 @media (forced-colors: active) {
-  .a4-card.is-busy::before { border-color: CanvasText; border-top-color: Highlight; }
+  .a4-card.is-busy[aria-busy="true"]::before { border-color: CanvasText; border-top-color: Highlight; }
   .a4-card-foot { border-top-color: CanvasText; }
 }
 
