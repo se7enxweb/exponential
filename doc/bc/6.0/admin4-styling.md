@@ -176,6 +176,9 @@ The left column's preset sizes (small, medium, large) are `html[data-a4-left-siz
 - a colour token in `components.css` has no dark value, or the admin and admin4 copies differ;
 - `admin4.css` or one of admin4's page stylesheets (`ezinfo.css`, `packagecompare.css`, `setup-extensions.css`,
   `visual-templateview.css`) has a colour literal outside a token definition;
+- a `:focus` or `:focus-visible` rule of an admin4 stylesheet sets `outline` to `none` or `0`. The global ring
+  (`outline: 3px solid var(--a4-ring)`, offset 2px) is the focus indicator; a field that draws its ring as a
+  `box-shadow` keeps `outline: 2px solid transparent`, which forced-colors mode paints where it drops the shadow;
 - a file named in `AdminComponentCSSFileList` is missing.
 
 `tests/tests/design/AdminTokenContrastTest.php` computes the WCAG contrast of the token pairs in both modes: text

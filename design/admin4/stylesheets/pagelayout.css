@@ -959,7 +959,6 @@ input.button:hover {
 .searchblock .searchbuttonfield:focus-visible {
     border-color: #567975;
     background-color: rgba(0, 0, 0, 0.2);
-    outline: none;
 }
 
 .searchblock .searchscope {
@@ -994,7 +993,6 @@ input.button:hover {
 .searchblock .searchscope[aria-expanded="true"],
 .searchblock .searchscope:focus-visible {
     background-color: rgba(0, 0, 0, 0.12);
-    outline: none;
 }
 
 .searchscope-pane {
@@ -1055,7 +1053,6 @@ input.button:hover {
 .searchscope-pane .close:hover,
 .searchscope-pane .close:focus-visible {
     background-color: rgba(0, 0, 0, 0.08);
-    outline: none;
 }
 
 .searchscope-pane > .searchscope-body {
