@@ -701,6 +701,8 @@ div.popupmenu a {
     color: var(--a4-ink);
     text-decoration: none;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     cursor: pointer;
     transition: none;
 }

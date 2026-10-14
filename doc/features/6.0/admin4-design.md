@@ -109,12 +109,12 @@ templates in `templates/popupmenu/`) look like the other admin4 popovers and wor
 
 - **Look:** the card colour, edge, radius and shadow of the admin tokens in the light and the dark mode; text at the
   body size (14 px) in rows of at least 32 px; the menu as wide as its longest item (13.5 to 22 rem) instead of a
-  fixed 14em that wrapped long items; the node or class name as a quiet title row; the hovered, focused and opened
+  fixed 14em that wrapped long items, an item longer than that cut with an ellipsis; the node or class name as a quiet title row; the hovered, focused and opened
   row in the accent tint; disabled items in the muted text colour. Under Windows high contrast the rows keep a
   visible outline.
 - **Keyboard:** the tree's menu button (the class icon in front of a node) and the sub-items table's row button
   open the menu with Enter or Space; Shift+F10 or the context menu key open the menu of the focused tree item or
-  table row. The first item takes the focus. Arrow Down and Up, Home and End move between items, Arrow Right,
+  table row (in a form field of the row they keep the browser's own menu). The first item takes the focus. Arrow Down and Up, Home and End move between items, Arrow Right,
   Enter or Space open a submenu, Arrow Left closes it, Enter or Space run an item, Escape closes the menu and
   returns the focus to its button, Tab closes the menu and moves on.
 - **Screen readers:** `ezpopupmenu.js` gives each menu `role="menu"` labelled by its title row, its items

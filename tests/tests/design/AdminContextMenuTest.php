@@ -59,6 +59,8 @@ class AdminContextMenuTest extends PHPUnit\Framework\TestCase
         $this->assertMatchesRegularExpression( '/div\.popupmenu a:focus-visible\s*\{[^}]*outline:\s*2px solid/', $css,
             'The focused menu row needs a visible outline' );
         $this->assertStringContainsString( '@media (forced-colors: active)', $css, 'The menu needs a forced-colors fallback' );
+        $this->assertMatchesRegularExpression( '/div\.popupmenu a\s*\{[^}]*white-space:\s*nowrap;[^}]*overflow:\s*hidden;[^}]*text-overflow:\s*ellipsis/', $css,
+            'Unwrapped menu items longer than the menu\'s max-width must end in an ellipsis, not spill past the card' );
         $this->assertDoesNotMatchRegularExpression( '/outline:\s*(none|0)\b/', $css, 'The menu must not remove the focus outline' );
     }
 
@@ -70,6 +72,9 @@ class AdminContextMenuTest extends PHPUnit\Framework\TestCase
             $this->assertStringContainsString( $needle, $js, "ezpopupmenu.js no longer sets $needle" );
         foreach ( array( 'ArrowDown', 'ArrowUp', 'ArrowRight', 'ArrowLeft', 'Home', 'End', 'Escape', 'Tab', "'F10'", "'ContextMenu'" ) as $key )
             $this->assertStringContainsString( $key, $js, "ezpopupmenu.js no longer handles $key" );
+        // Shift+F10 in a form field of a row keeps the browser's own context menu
+        $this->assertMatchesRegularExpression( '/INPUT\|TEXTAREA\|SELECT\)\$\/\.test\( active\.tagName \) \|\| active\.isContentEditable \) return;/', $js,
+            'ezpopupmenu.js must leave Shift+F10 in form fields to the browser' );
         // the public interface extensions call stays as it was
         foreach ( array( 'ezpopmenu_showTopLevel', 'ezpopmenu_showSubLevel', 'ezpopmenu_mouseOver', 'ezpopmenu_hideAll',
                          'ezpopmenu_hide', 'ezpopmenu_submitForm', 'ez_createAArray', 'ezpopup_SubstituteAndRedirect' ) as $api )

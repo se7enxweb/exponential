@@ -704,6 +704,12 @@ function _decorate( menuID )
             a.setAttribute( 'aria-haspopup', 'menu' );
             if ( !a.hasAttribute( 'aria-expanded' ) ) a.setAttribute( 'aria-expanded', 'false' );
         }
+        else
+        {
+            // An item that lost its submenu (a disabled "Create here") must not announce one any more.
+            a.removeAttribute( 'aria-haspopup' );
+            a.removeAttribute( 'aria-expanded' );
+        }
         if ( /disabled/.test( a.className ) ) a.setAttribute( 'aria-disabled', 'true' );
         else a.removeAttribute( 'aria-disabled' );
     }
@@ -734,9 +740,13 @@ function _menuOf( el )
 
 function _openSubmenu( item )
 {
-    var before = _visibleDepth();
+    var menu = _menuOf( item );
+    if ( !menu ) return;
+    var level = menuArray[menu.id]['depth'];
+    // Calls ezpopmenu_showSubLevel(); the submenu may already be open from the mouse hovering the item.
     if ( typeof item.onmouseover === 'function' ) item.onmouseover.call( item );
-    if ( _visibleDepth() > before ) _focusItem( VisibleMenus[_visibleDepth()], 0 );
+    var sub = VisibleMenus[level + 1];
+    if ( sub && sub != 'none' && SubMenuOpeners[sub] === item ) _focusItem( sub, 0 );
 }
 
 function _activate( item )
@@ -753,6 +763,8 @@ function _keyHandler( e )
     // Shift+F10 or the context menu key on a tree item or table row opens that row's menu.
     if ( ( key === 'ContextMenu' || ( key === 'F10' && e.shiftKey ) ) && active && active.closest && !_menuOf( active ) )
     {
+        // In a form field (the priority input of a row, a checkbox) the browser's own context menu stays.
+        if ( /^(INPUT|TEXTAREA|SELECT)$/.test( active.tagName ) || active.isContentEditable ) return;
         var row = active.closest( 'li, tr' );
         var trigger = row ? row.querySelector( '[aria-haspopup="menu"]' ) : null;
         if ( trigger )
@@ -781,6 +793,9 @@ function _keyHandler( e )
     var menu = _menuOf( active ) || document.getElementById( VisibleMenus[depth] );
     if ( !menu ) return;
     var items = _menuItems( menu ), index = items.indexOf( active ), level = menuArray[menu.id]['depth'];
+
+    // Moving within a level closes a submenu the mouse opened from another item of it.
+    if ( /^(ArrowDown|Down|ArrowUp|Up|Home|End)$/.test( key ) && _visibleDepth() > level ) _hideHigher( level );
 
     switch ( key )
     {
