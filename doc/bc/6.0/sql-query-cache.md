@@ -276,14 +276,16 @@ With the debug output on (`site.ini [DebugSettings] DebugOutput=enabled`) and
 
 **Timing point** *Query cache: state read (generation n)*: where the request (or, after `eZDebug::reset()`, the job)
 first looks at the shared state file; *n* is the generation it found, the number every clear and every write of
-unknown tables raises.
+unknown tables raises. After `eZDebug::reset()` the point comes at once with the next statement when the process
+already holds the state (the statements of the job may never read it again), otherwise with the first look at it.
+The report itself reads no state and sets no point.
 
 **Report** at the bottom, *Query cache* (text and HTML, every value escaped):
 
 | Line | What it means |
 |---|---|
 | Mode | `off`, `request` or `shared`; `shared (no APCu: works as request)` where APCu is missing or off |
-| Generation | the generation of the state as this request sees it |
+| Generation | the generation of the state as this request last read it; *not read* when no statement has looked at the state yet |
 | Hits, Misses, Hit rate | as the accumulators; the rate is hits of hits plus misses |
 | Stored | results stored |
 | Not cached | statements not answered and not stored, then one line *Not cached: reason* per reason: *inside a transaction*, *statement (volatile or tables not readable)*, *excluded table* (`ExcludeTables`), *temporary table*, *catalogue table*, *more rows than MaxRows* (that one is also counted as a miss) |
@@ -404,7 +406,7 @@ so the tests never touch the site's cache.
 
 ```bash
 php vendor/bin/phpunit --testsuite lib --filter eZDBQueryCacheTest
-# OK (22 tests, 227 assertions), about 2 s (QC-08 and QC-12 wait a second each)
+# OK (22 tests, 232 assertions), about 2 s (QC-08 and QC-12 wait a second each)
 ```
 
 **On a running site** (MySQL, the real drivers), each checked on a test installation

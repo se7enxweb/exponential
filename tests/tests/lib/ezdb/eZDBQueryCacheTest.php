@@ -646,13 +646,23 @@ class eZDBQueryCacheTest extends PHPUnit\Framework\TestCase
             $this->assertMatchesRegularExpression( '/^Writes +0$/m', $text );
             $this->assertSame( 1, $debug->TimeAccumulatorList['querycache_hit']['count'] );
 
-            // the next request of a persistent worker: nothing carried over
+            // a reset after a write that made everything stale: the next statement is a miss that reads no state,
+            // and the timing point still comes, with the generation this process holds
+            $this->write( 'DECLARE n NUMBER; BEGIN n := 1; END;' );
+            $debug->reset();
+            $this->assertNull( $this->select( $sql ) );
+            $this->assertSame( 3, $points() );
+
+            // the next request of a persistent worker: nothing carried over; the report reads no state itself
             $this->newRequest();
             $this->select( $sql );
             $text = eZDBQueryCache::debugReport( false );
             $this->assertMatchesRegularExpression( '/^Hits +0$/m', $text );
             $this->assertMatchesRegularExpression( '/^Misses +1$/m', $text );
-            $this->assertSame( 3, $points() );
+            $this->assertMatchesRegularExpression( '/^Generation +not read$/m', $text );
+            $this->assertSame( 3, $points(), 'no state read yet, no timing point, also not from the report' );
+            $this->assertNotNull( $this->select( $sql ) );
+            $this->assertSame( 4, $points(), 'the first look at the state' );
 
             // the debug output switched off, then a reset: nothing registered, no accumulator half made
             $GLOBALS['eZDebugEnabled'] = false;

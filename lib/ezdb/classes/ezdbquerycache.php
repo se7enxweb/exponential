@@ -350,7 +350,9 @@ class eZDBQueryCache
     /**
      * Starts the debug report of a request or job: empty counters, the
      * accumulator group and the bottom report registered with eZDebug, and the
-     * timing point due again with the next look at the state.
+     * timing point: at once when this process already holds the state (a job
+     * after eZDebug::reset(), whose statements may never read it again), else
+     * with the first look at it.
      */
     protected static function debugBegin()
     {
@@ -359,6 +361,15 @@ class eZDBQueryCache
                               'stale_more' => 0, 'state_point' => false );
         eZDebug::createAccumulatorGroup( 'querycache_total', 'Query cache' );
         eZDebug::appendBottomReport( 'Query cache', array( __CLASS__, 'debugReport' ) );
+        if ( self::$state !== null )
+            self::debugStatePoint();
+    }
+
+    /** The timing point of the state, once per debug report. */
+    protected static function debugStatePoint()
+    {
+        self::$debug['state_point'] = true;
+        eZDebug::addTimingPoint( 'Query cache: state read (generation ' . (int)self::$state['generation'] . ')' );
     }
 
     /** The accumulators of the group "Query cache": debug counter => accumulator key and name. */
@@ -481,7 +492,8 @@ class eZDBQueryCache
         $mode = self::settings()['mode'];
         $rows = array(
             'Mode' => $mode . ( $mode === 'shared' && !self::apcuUsable() ? ' (no APCu: works as request)' : '' ),
-            'Generation' => (int)self::state()['generation'],
+            // as the request last read it; the report itself reads nothing and sets no timing point
+            'Generation' => self::$state !== null ? (int)self::$state['generation'] : 'not read',
             'Hits' => $d['count']['hit'],
             'Misses' => $d['count']['miss'],
             'Hit rate' => $looked > 0 ? round( 100 * $d['count']['hit'] / $looked, 1 ) . ' %' : '-',
@@ -749,13 +761,9 @@ class eZDBQueryCache
             self::$state = is_array( $s ) ? $s : array( 'generation' => 1, 'genTime' => 0, 'tables' => array() );
             self::$stateRead = $now;
         }
-        // Once per debug report: the first look at the state of a request, or of
-        // a job after eZDebug::reset(), also when the state read just before is still current.
+        // Once per debug report, where the request first looks at the state.
         if ( self::$debug !== null && !self::$debug['state_point'] )
-        {
-            self::$debug['state_point'] = true;
-            eZDebug::addTimingPoint( 'Query cache: state read (generation ' . (int)self::$state['generation'] . ')' );
-        }
+            self::debugStatePoint();
         return self::$state;
     }
 
