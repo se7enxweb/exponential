@@ -54,7 +54,7 @@
 {section show=$rule_list}
 <table class="list" cellspacing="0">
 <tr>
-    <th class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/shop/discountgroupmembershipview' )}" aria-label="{'Invert selection.'|i18n( 'design/admin/shop/discountgroupmembershipview' )}" onclick="ezjs_toggleCheckboxes( document.DiscountGroupView, 'removeRuleList[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
+    <th class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/shop/discountgroupmembershipview' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/shop/discountgroupmembershipview' )|wash}" onclick="ezjs_toggleCheckboxes( document.DiscountGroupView, 'removeRuleList[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
     <th>{'Name'|i18n( 'design/admin/shop/discountgroupmembershipview' )}</th>
     <th>{'Percent'|i18n( 'design/admin/shop/discountgroupmembershipview' )}</th>
     <th>{'Apply to'|i18n( 'design/admin/shop/discountgroupmembershipview' )}</th>
@@ -66,7 +66,7 @@
     <td>{$Rules.item.name|wash}</td>
     <td class="number" align="right">{$Rules.item.discount_percent|l10n( number )}%</td>
     <td>{$Rules.item.limitation}</td>
-    <td><a href={concat( $module.functions.discountruleedit.uri, '/', $discountgroup.id, '/', $Rules.item.id)|ezurl}><span class="a4-icon a4-bi-pencil is-medium" role="img" aria-label="{'Edit'|i18n( 'design/admin/shop/discountgroupmembershipview' )}" title="{'Edit the <%discount_rule_name> discount rule.'|i18n( 'design/admin/shop/discountgroupmembershipview',, hash( '%discount_rule_name', $Rules.item.name ) )|wash}"></span></a></td>
+    <td><a href={concat( $module.functions.discountruleedit.uri, '/', $discountgroup.id, '/', $Rules.item.id)|ezurl}><span class="a4-icon a4-bi-pencil is-medium" role="img" aria-label="{'Edit'|i18n( 'design/admin/shop/discountgroupmembershipview' )|wash}" title="{'Edit the <%discount_rule_name> discount rule.'|i18n( 'design/admin/shop/discountgroupmembershipview',, hash( '%discount_rule_name', $Rules.item.name ) )|wash}"></span></a></td>
 </tr>
 {/section}
 </table>
@@ -112,7 +112,7 @@
 {section show=$customers}
 <table class="list" cellspacing="0">
 <tr>
-    <th class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/shop/discountgroupmembershipview' )}" aria-label="{'Invert selection.'|i18n( 'design/admin/shop/discountgroupmembershipview' )}" onclick="ezjs_toggleCheckboxes( document.DiscountGroupView, 'CustomerIDArray[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
+    <th class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/shop/discountgroupmembershipview' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/shop/discountgroupmembershipview' )|wash}" onclick="ezjs_toggleCheckboxes( document.DiscountGroupView, 'CustomerIDArray[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
     <th>{'Name'|i18n( 'design/admin/shop/discountgroupmembershipview' )}</th>
     <th>{'Type'|i18n( 'design/admin/shop/discountgroupmembershipview' )}</th>
 </tr>

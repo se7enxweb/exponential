@@ -81,14 +81,14 @@
     {let current_node=fetch( content, node, hash( node_id, $browse.start_node ) )}
     {if $browse.start_node|gt( 1 )}
         <h2 class="context-title">
-        <a href={concat( '/content/browse/', $main_node.parent_node_id, '/' )|ezurl}><span class="a4-icon a4-bi-arrow-90deg-up is-medium" role="img" aria-label="{'Back'|i18n( 'design/admin/content/browse' )}"></span></a>
+        <a href={concat( '/content/browse/', $main_node.parent_node_id, '/' )|ezurl}><span class="a4-icon a4-bi-arrow-90deg-up is-medium" role="img" aria-label="{'Back'|i18n( 'design/admin/content/browse' )|wash}"></span></a>
         {$current_node.class_identifier|class_icon( original, $current_node.class_name|wash )}&nbsp;{$current_node.name|wash}&nbsp;[{$browse_list_count}]</h2>
     {else}
-    <h2 class="context-title"><span class="a4-icon a4-bi-arrow-90deg-up is-medium" role="img" aria-label="{'Back'|i18n( 'design/admin/content/browse' )}"></span> {'folder'|class_icon( small, $current_node.class_name|wash )}&nbsp;{'Top level'|i18n( 'design/admin/content/browse' )}&nbsp;[{$current_node.children_count}]</h2>
+    <h2 class="context-title"><span class="a4-icon a4-bi-arrow-90deg-up is-medium" role="img" aria-label="{'Back'|i18n( 'design/admin/content/browse' )|wash}"></span> {'folder'|class_icon( small, $current_node.class_name|wash )}&nbsp;{'Top level'|i18n( 'design/admin/content/browse' )}&nbsp;[{$current_node.children_count}]</h2>
     {/if}
     {/let}
 {else}
- <h2 class="context-title"><span class="a4-icon a4-bi-arrow-90deg-up is-medium" role="img" aria-label="{'Back'|i18n( 'design/admin/content/browse' )}"></span> {'folder'|class_icon( small)}&nbsp;{'Search result'|i18n( 'design/admin/content/browse' )}&nbsp;[{$browse_list_count}]</h2>
+ <h2 class="context-title"><span class="a4-icon a4-bi-arrow-90deg-up is-medium" role="img" aria-label="{'Back'|i18n( 'design/admin/content/browse' )|wash}"></span> {'folder'|class_icon( small)}&nbsp;{'Search result'|i18n( 'design/admin/content/browse' )}&nbsp;[{$browse_list_count}]</h2>
 
 {/if}
 

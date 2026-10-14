@@ -76,7 +76,7 @@
 {section show=$product_list}
 <table class="list" cellspacing="0">
 <tr>
-<th class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/shop/discountruleedit' )}" aria-label="{'Invert selection.'|i18n( 'design/admin/shop/discountruleedit' )}" onclick="ezjs_toggleCheckboxes( document.DiscountRuleEdit, 'DeleteProductIDArray[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
+<th class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/shop/discountruleedit' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/shop/discountruleedit' )|wash}" onclick="ezjs_toggleCheckboxes( document.DiscountRuleEdit, 'DeleteProductIDArray[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
 <th>{'Name'|i18n( 'design/admin/shop/discountruleedit' )}</th>
 </tr>
 {section var=Product show=$product_list loop=$product_list sequence=array( bglight, bgdark )}

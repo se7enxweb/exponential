@@ -1241,3 +1241,7 @@ html .exp-dt-dialog-title { background-color: var(--a4-soft); background-image: 
    currentColor is black and no rule here reaches its fill: in dark mode a filter turns the black into the light grey
    of the text (invert gives white, brightness(.92) about #ebebeb, over 13:1 on the dark card). */
 html[data-a4-theme="dark"] img[src*="/share/icons/bootstrap-icons/"] { filter: invert(1) brightness(.92); }
+/* Windows high contrast with a dark canvas: the same black SVGs would vanish, so they follow the canvas text. */
+@media (forced-colors: active) and (prefers-color-scheme: dark) {
+  img[src*="/share/icons/bootstrap-icons/"] { filter: invert(1); }
+}

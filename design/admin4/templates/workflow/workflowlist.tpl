@@ -47,7 +47,7 @@
 
 {* DESIGN: Header START *}<div class="box-header"><div class="box-ml">
 
-<h2 class="context-title"><a href={'/workflow/grouplist'|ezurl}><span class="a4-icon a4-bi-arrow-90deg-up is-medium" role="img" aria-label="{'Back to workflow groups.'|i18n( 'design/admin/workflow/workflowlist' )}" title="{'Back to workflow groups.'|i18n( 'design/admin/workflow/workflowlist' )}"></span></a>&nbsp;{'Workflows (%workflow_count)'|i18n( 'design/admin/workflow/workflowlist',, hash( '%workflow_count', $workflow_list|count ) )}</h2>
+<h2 class="context-title"><a href={'/workflow/grouplist'|ezurl}><span class="a4-icon a4-bi-arrow-90deg-up is-medium" role="img" aria-label="{'Back to workflow groups.'|i18n( 'design/admin/workflow/workflowlist' )|wash}" title="{'Back to workflow groups.'|i18n( 'design/admin/workflow/workflowlist' )|wash}"></span></a>&nbsp;{'Workflows (%workflow_count)'|i18n( 'design/admin/workflow/workflowlist',, hash( '%workflow_count', $workflow_list|count ) )}</h2>
 
 
 
@@ -58,7 +58,7 @@
 {section show=$workflow_list}
 <table class="list" cellspacing="0">
 <tr>
-    <th class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/workflow/workflowlist' )}" aria-label="{'Invert selection.'|i18n( 'design/admin/workflow/workflowlist' )}" onclick="ezjs_toggleCheckboxes( document.workflowlistform, 'Workflow_id_checked[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
+    <th class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/workflow/workflowlist' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/workflow/workflowlist' )|wash}" onclick="ezjs_toggleCheckboxes( document.workflowlistform, 'Workflow_id_checked[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
     <th>{'Name'|i18n( 'design/admin/workflow/workflowlist' )}</th>
     <th class="tight">{'ID'|i18n( 'design/admin/workflow/workflowlist' )}</th>
     <th>{'Modifier'|i18n( 'design/admin/workflow/workflowlist' )}</th>
@@ -76,7 +76,7 @@
     {/let}
     </td>
     <td>{$Workflows.item.modified|l10n( shortdatetime )}</td>
-    <td><a href={concat( $module.functions.edit.uri, '/', $Workflows.item.id )|ezurl}><span class="a4-icon a4-bi-pencil is-medium" role="img" aria-label="{'Edit'|i18n( 'design/admin/workflow/workflowlist' )}" title="{'Edit the <%workflow_name> workflow.'|i18n( 'design/admin/workflow/workflowlist',, hash( '%workflow_name', $Workflows.item.name ) )|wash}"></span></a></td>
+    <td><a href={concat( $module.functions.edit.uri, '/', $Workflows.item.id )|ezurl}><span class="a4-icon a4-bi-pencil is-medium" role="img" aria-label="{'Edit'|i18n( 'design/admin/workflow/workflowlist' )|wash}" title="{'Edit the <%workflow_name> workflow.'|i18n( 'design/admin/workflow/workflowlist',, hash( '%workflow_name', $Workflows.item.name ) )|wash}"></span></a></td>
     </tr>
    {/section}
 </table>

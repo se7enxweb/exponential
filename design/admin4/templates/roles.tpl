@@ -43,7 +43,7 @@
         </td>
 
         {* Edit. *}
-        <td><a href={concat( '/role/edit/', $Roles.item.id )|ezurl}><span class="a4-icon a4-bi-pencil is-medium" role="img" aria-label="{'Edit role.'|i18n( 'design/admin/node/view/full' )}" title="{'Edit role.'|i18n( 'design/admin/node/view/full' )}"></span></a></td>
+        <td><a href={concat( '/role/edit/', $Roles.item.id )|ezurl}><span class="a4-icon a4-bi-pencil is-medium" role="img" aria-label="{'Edit role.'|i18n( 'design/admin/node/view/full' )|wash}" title="{'Edit role.'|i18n( 'design/admin/node/view/full' )|wash}"></span></a></td>
 
     </tr>
 {/section}

@@ -47,7 +47,7 @@
     <div class="a4-field">
         <span class="a4-help">{'Open a group to create classes in it, copy or remove them.'|i18n( 'design/admin/class/grouplist' )}</span>
         <div class="a4-actions">
-            <button type="submit" class="a4-btn a4-btn-primary" name="NewGroupButton" value="1" title="{'Create a new class group.'|i18n( 'design/admin/class/grouplist' )}"><span class="a4-icon a4-bi-plus-lg" aria-hidden="true"></span>{'New class group'|i18n( 'design/admin/class/grouplist' )}</button>
+            <button type="submit" class="a4-btn a4-btn-primary" name="NewGroupButton" value="1" title="{'Create a new class group.'|i18n( 'design/admin/class/grouplist' )|wash}"><span class="a4-icon a4-bi-plus-lg" aria-hidden="true"></span>{'New class group'|i18n( 'design/admin/class/grouplist' )}</button>
         </div>
     </div>
     <p class="a4-filter-count exp-js-only" id="classgroups-filter-count" aria-live="polite" hidden></p>

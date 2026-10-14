@@ -232,7 +232,7 @@
 <div class="a4-toolbar is-bottom">
     <div class="a4-actions">
         <button type="submit" class="a4-btn a4-btn-outline-danger" name="RemoveExportButton" value="1" aria-describedby="pdf-remove-help" title="{'Remove selected PDF exports.'|i18n( 'design/admin/pdf/list' )}"{if $pdfexport_list|count|eq( 0 )} disabled="disabled"{/if}>{'Remove selected'|i18n( 'design/admin/pdf/list' )}</button>
-        <button type="submit" class="a4-btn a4-btn-primary" name="NewPDFExport" value="1" title="{'Create a new PDF export.'|i18n( 'design/admin/pdf/list' )}"><span class="a4-icon a4-bi-plus-lg" aria-hidden="true"></span>{'New PDF export'|i18n( 'design/admin/pdf/list' )}</button>
+        <button type="submit" class="a4-btn a4-btn-primary" name="NewPDFExport" value="1" title="{'Create a new PDF export.'|i18n( 'design/admin/pdf/list' )|wash}"><span class="a4-icon a4-bi-plus-lg" aria-hidden="true"></span>{'New PDF export'|i18n( 'design/admin/pdf/list' )}</button>
     </div>
     <p class="a4-meta" id="pdf-remove-help">{'Remove selected asks for confirmation first and says which stored files go with the exports.'|i18n( 'design/admin/pdf/list' )} <span class="exp-selected-count" data-for="DeleteIDArray[]" aria-live="polite"></span></p>
 </div>

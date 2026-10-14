@@ -87,9 +87,9 @@
 {else}
 	{$Events.number}({$Events.item.placement})&nbsp;{$Events.item.workflow_type.group_name}&nbsp;/&nbsp;{$Events.item.workflow_type.name|wash}
 	<div class="button-right">
-	<a href={concat( $module.functions.down.uri, '/', $workflow.id, '/', $Events.item.id )|ezurl}><span class="a4-icon a4-bi-arrow-down is-medium" role="img" aria-label="{'Move down'|i18n( 'design/admin/workflow/edit' )}" title="{'Move down'|i18n( 'design/admin/workflow/edit' )}"></span></a>
+	<a href={concat( $module.functions.down.uri, '/', $workflow.id, '/', $Events.item.id )|ezurl}><span class="a4-icon a4-bi-arrow-down is-medium" role="img" aria-label="{'Move down'|i18n( 'design/admin/workflow/edit' )|wash}" title="{'Move down'|i18n( 'design/admin/workflow/edit' )|wash}"></span></a>
 	&nbsp;
-	<a href={concat( $module.functions.up.uri, '/', $workflow.id, '/', $Events.item.id )|ezurl}><span class="a4-icon a4-bi-arrow-up is-medium" role="img" aria-label="{'Move up'|i18n( 'design/admin/workflow/edit' )}" title="{'Move up'|i18n( 'design/admin/workflow/edit' )}"></span></a>
+	<a href={concat( $module.functions.up.uri, '/', $workflow.id, '/', $Events.item.id )|ezurl}><span class="a4-icon a4-bi-arrow-up is-medium" role="img" aria-label="{'Move up'|i18n( 'design/admin/workflow/edit' )|wash}" title="{'Move up'|i18n( 'design/admin/workflow/edit' )|wash}"></span></a>
 	</div>
 	</th>
 	</tr>

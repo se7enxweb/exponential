@@ -60,7 +60,7 @@
     <div class="a4-field">
         <span class="a4-help">{'Open a group to create workflows in it, change their order of events or remove them. Triggers connect a workflow to an operation.'|i18n( 'design/admin/workflow/grouplist' )}</span>
         <div class="a4-actions">
-            <button type="submit" class="a4-btn a4-btn-primary" name="NewGroupButton" value="1" title="{'Create a new workflow group.'|i18n( 'design/admin/workflow/grouplist' )}"><span class="a4-icon a4-bi-plus-lg" aria-hidden="true"></span>{'New workflow group'|i18n( 'design/admin/workflow/grouplist' )}</button>
+            <button type="submit" class="a4-btn a4-btn-primary" name="NewGroupButton" value="1" title="{'Create a new workflow group.'|i18n( 'design/admin/workflow/grouplist' )|wash}"><span class="a4-icon a4-bi-plus-lg" aria-hidden="true"></span>{'New workflow group'|i18n( 'design/admin/workflow/grouplist' )}</button>
             <a class="a4-btn" href={'trigger/list'|ezurl}>{'Triggers'|i18n( 'design/admin/workflow/grouplist' )}</a>
             <a class="a4-btn" href={'workflow/processlist'|ezurl}>{'Workflow processes'|i18n( 'design/admin/workflow/grouplist' )}</a>
         </div>

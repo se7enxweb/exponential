@@ -12,7 +12,7 @@
 
 <table id="tab-translations-list" class="list" cellspacing="0" summary="{'Language list of translations for current object.'|i18n( 'design/admin/node/view/full' )}">
 <tr>
-    <th class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/node/view/full' )}" aria-label="{'Invert selection.'|i18n( 'design/admin/node/view/full' )}" onclick="ezjs_toggleCheckboxes( document.translationsform, 'LanguageID[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
+    <th class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/node/view/full' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/node/view/full' )|wash}" onclick="ezjs_toggleCheckboxes( document.translationsform, 'LanguageID[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
     <th>{'Language'|i18n( 'design/admin/node/view/full' )}</th>
     <th>{'Locale'|i18n( 'design/admin/node/view/full' )}</th>
     <th class="tight">{'Main'|i18n( 'design/admin/node/view/full' )}</th>

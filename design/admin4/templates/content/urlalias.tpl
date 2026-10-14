@@ -69,7 +69,7 @@
 {else}
 <table class="list" cellspacing="0" >
 <tr>
-    <th class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/content/urlalias' )}" aria-label="{'Invert selection.'|i18n( 'design/admin/content/urlalias' )}" onclick="ezjs_toggleCheckboxes( document.aliasform, 'ElementList[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
+    <th class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/content/urlalias' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/content/urlalias' )|wash}" onclick="ezjs_toggleCheckboxes( document.aliasform, 'ElementList[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
     <th>{'URL alias'|i18n( 'design/admin/content/urlalias' )}</th>
     <th>{'Language'|i18n( 'design/admin/content/urlalias' )}</th>
     <th>{'Type'|i18n( 'design/admin/content/urlalias' )}</th>

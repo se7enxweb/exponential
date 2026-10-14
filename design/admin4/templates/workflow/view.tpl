@@ -79,7 +79,7 @@
 
 <table class="list" cellspacing="0">
 <tr>
-    <th class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/workflow/view' )}" aria-label="{'Invert selection.'|i18n( 'design/admin/workflow/view' )}" onclick="ezjs_toggleCheckboxes( document.workflowgroups, 'group_id_checked[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
+    <th class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/workflow/view' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/workflow/view' )|wash}" onclick="ezjs_toggleCheckboxes( document.workflowgroups, 'group_id_checked[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
     <th class="wide">{'Group'|i18n( 'design/admin/workflow/view' )}</th>
 </tr>
 {section var=Groups loop=$workflow.ingroup_list sequence=array( bglight, bgdark )}

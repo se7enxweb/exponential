@@ -290,8 +290,8 @@
                 {if $item.can_edit}<a class="a4-btn a4-btn-small" href={concat( 'content/edit/', $item.contentobject_id )|ezurl} aria-describedby="{$card_id}-title">{'Edit'|i18n( 'design/admin/content/bookmark' )}</a>{/if}
                 {/if}
                 {if $bp.order_buttons}
-                <button type="submit" class="a4-btn a4-btn-small a4-btn-icon" name="BookmarkShiftButton" value="up-{$item.id}" title="{'Move up'|i18n( 'design/admin/content/bookmark' )}" aria-label="{'Move %name up'|i18n( 'design/admin/content/bookmark',, hash( '%name', $item.name ) )|wash}"{if $bp.first_last.first|contains( $item.id )} disabled="disabled"{/if}><span class="a4-icon a4-bi-arrow-up" aria-hidden="true"></span></button>
-                <button type="submit" class="a4-btn a4-btn-small a4-btn-icon" name="BookmarkShiftButton" value="down-{$item.id}" title="{'Move down'|i18n( 'design/admin/content/bookmark' )}" aria-label="{'Move %name down'|i18n( 'design/admin/content/bookmark',, hash( '%name', $item.name ) )|wash}"{if $bp.first_last.last|contains( $item.id )} disabled="disabled"{/if}><span class="a4-icon a4-bi-arrow-down" aria-hidden="true"></span></button>
+                <button type="submit" class="a4-btn a4-btn-small a4-btn-icon" name="BookmarkShiftButton" value="up-{$item.id}" title="{'Move up'|i18n( 'design/admin/content/bookmark' )|wash}" aria-label="{'Move %name up'|i18n( 'design/admin/content/bookmark',, hash( '%name', $item.name ) )|wash}"{if $bp.first_last.first|contains( $item.id )} disabled="disabled"{/if}><span class="a4-icon a4-bi-arrow-up" aria-hidden="true"></span></button>
+                <button type="submit" class="a4-btn a4-btn-small a4-btn-icon" name="BookmarkShiftButton" value="down-{$item.id}" title="{'Move down'|i18n( 'design/admin/content/bookmark' )|wash}" aria-label="{'Move %name down'|i18n( 'design/admin/content/bookmark',, hash( '%name', $item.name ) )|wash}"{if $bp.first_last.last|contains( $item.id )} disabled="disabled"{/if}><span class="a4-icon a4-bi-arrow-down" aria-hidden="true"></span></button>
                 {/if}
             </div>
         </div>
