@@ -920,7 +920,7 @@ d1f3e1ef98e8cee2e52a5446280eadc3  design/admin4/override/templates/embed-inline_
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
 a2c561e93ef63c93201e81acd4f32741  design/admin4/override/templates/window_controls_user.tpl
 f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin4/override/templates/windows_user.tpl
-4b5437eae5d855cbb53e9747fa5bf9f1  design/admin4/stylesheets/admin4.css
+f5e982a86327b62810c38e51ea682efe  design/admin4/stylesheets/admin4.css
 d9e9381cd48dddfb6491bc766aa185db  design/admin4/stylesheets/components.css
 a8fcc091552c07de33a4c8bc6df8c20f  design/admin4/stylesheets/content.css
 b34210463fcdf50abd3a693ade329417  design/admin4/stylesheets/core.css
@@ -936,7 +936,7 @@ c4c85e1bc9f1dfc1d2cdb159f2021d0a  design/admin4/stylesheets/modules/workflow.css
 37282706e0e958814192a40961776a16  design/admin4/stylesheets/setup-extensions.css
 8649dc32faedc2b0f4da9c28243728dc  design/admin4/stylesheets/theme/admin_datatable.css
 67e9624cf4649eed019f088ca0450d3a  design/admin4/stylesheets/theme/modalwindow.css
-06c800559a6e9495263eace23474294a  design/admin4/stylesheets/theme/rounded.css
+a9e045bcc299fb74513f260855eda485  design/admin4/stylesheets/theme/rounded.css
 144488adea9c836a1ee758932065de9c  design/admin4/stylesheets/visual-templateview.css
 bf04c464f11b2b1b359c280548921423  design/admin4/templates/ajaxuploader/browse.tpl
 a7f309134423a1be7e4bd03f3623b023  design/admin4/templates/ajaxuploader/location.tpl
@@ -2984,7 +2984,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-2a849e99477541f816d25dc50f0cd8cd  doc/changelogs/6.0/6.0.15.md
+af738f7b74ea06906b32bd5cb4221e7f  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -7057,7 +7057,7 @@ ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 4e3eeb18c2ea423afb62388e5e3dcafc  tests/tests/bin/phpcs/fixtures/typedeclarations.inc
 617c938384f3d87aa79b21ee6d448f4e  tests/tests/design/AdminIconsTest.php
 7e8957a9c15916135defa02bc8301d00  tests/tests/design/AdminRetiredClassesTest.php
-3c766a718607b7cdbb39b5473cbad751  tests/tests/design/AdminStylingRulesTest.php
+603861b6e33167bf6c886128bc267daf  tests/tests/design/AdminStylingRulesTest.php
 96676702fed665b02ac81464307b00f5  tests/tests/design/AdminTokenContrastTest.php
 dcc45e4631fc358b0384c51d17ff8d67  tests/tests/extension/bccie/ezBccieTest.php
 e71599015464e106c536eedfe12d9676  tests/tests/extension/cjw_newsletter/cjwNewsletterAdminViewsTest.php
