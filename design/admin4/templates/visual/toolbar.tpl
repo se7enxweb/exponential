@@ -17,9 +17,9 @@
 {section var=Tool loop=$tool_list}
 
 <tr>
-    <th class="tight"><input type="checkbox" name="deleteToolArray[]" value="{$Tool.index}" /></th>
-    <th class="wide">{$Tool.name|wash}</th>
-    <th class="tight"><input type="text" name="placement_{$Tool.index}" size="2" value="{sum($Tool.index,1)}" /></th>
+    <th scope="col" class="tight"><input type="checkbox" name="deleteToolArray[]" value="{$Tool.index}" /></th>
+    <th scope="col" class="wide">{$Tool.name|wash}</th>
+    <th scope="col" class="tight"><input type="text" name="placement_{$Tool.index}" size="2" value="{sum($Tool.index,1)}" /></th>
 </tr>
 
 <tr>

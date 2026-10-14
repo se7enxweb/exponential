@@ -12,7 +12,7 @@
 <form action={'/content/search/'|ezurl} method="get" role="search">
     {if $ui_context_edit}
         <div class="searchtextwrapper">
-            <input id="searchtext{$box}" class="form-control searchtext disabled" name="SearchText" type="search" size="20" value="{if is_set( $search_text )}{$search_text|wash}{/if}" disabled="disabled" title="{$search_title|wash}" placeholder="{'Search...'|i18n( 'design/admin/pagelayout' )}" />
+            <input id="searchtext{$box}" class="form-control searchtext disabled" name="SearchText" type="search" size="20" value="{if is_set( $search_text )}{$search_text|wash}{/if}" disabled="disabled" title="{$search_title|wash}" aria-label="{$search_title|wash}" placeholder="{'Search...'|i18n( 'design/admin/pagelayout' )}" />
         </div>
         <button id="searchbutton{$box}" class="searchbuttonfield disabled" name="SearchButton" type="submit" value="{'Search'|i18n( 'design/admin/pagelayout' )}" disabled="disabled" title="{'Search'|i18n( 'design/admin/pagelayout' )}"><span class="hide">{'Search'|i18n( 'design/admin/pagelayout' )}</span></button>
     {else}

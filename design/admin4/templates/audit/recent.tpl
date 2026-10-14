@@ -42,12 +42,12 @@
 <div class="a4-audit-table">
 <table class="list" cellspacing="0">
 <tr>
-    <th>{'Time'|i18n( 'design/admin/audit' )}</th>
-    <th>{'Event'|i18n( 'design/admin/audit' )}</th>
-    <th>{'Actor'|i18n( 'design/admin/audit' )}</th>
-    <th>{'Object'|i18n( 'design/admin/audit' )}</th>
-    <th>{'Result'|i18n( 'design/admin/audit' )}</th>
-    <th>{'Request'|i18n( 'design/admin/audit' )}</th>
+    <th scope="col">{'Time'|i18n( 'design/admin/audit' )}</th>
+    <th scope="col">{'Event'|i18n( 'design/admin/audit' )}</th>
+    <th scope="col">{'Actor'|i18n( 'design/admin/audit' )}</th>
+    <th scope="col">{'Object'|i18n( 'design/admin/audit' )}</th>
+    <th scope="col">{'Result'|i18n( 'design/admin/audit' )}</th>
+    <th scope="col">{'Request'|i18n( 'design/admin/audit' )}</th>
 </tr>
 {foreach $events as $e sequence array( 'bglight', 'bgdark' ) as $style}
 <tr class="{$style}">

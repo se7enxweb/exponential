@@ -49,8 +49,8 @@
 {section show=$event.approve_users}
     <table class="list" cellspacing="0">
     <tr>
-        <th class="tight">&nbsp;</th>
-        <th>{'User'|i18n( 'design/admin/workflow/eventtype/edit' )}</th>
+        <th scope="col" class="tight">&nbsp;</th>
+        <th scope="col">{'User'|i18n( 'design/admin/workflow/eventtype/edit' )}</th>
     </tr>
     {section var=User loop=$event.approve_users sequence=array( bglight, bgdark )}
         <tr class="{$User.sequence}">
@@ -77,8 +77,8 @@
 {section show=$event.approve_groups}
     <table class="list" cellspacing="0">
     <tr>
-        <th class="tight">&nbsp;</th>
-        <th>{'Group'|i18n( 'design/admin/workflow/eventtype/edit' )}</th>
+        <th scope="col" class="tight">&nbsp;</th>
+        <th scope="col">{'Group'|i18n( 'design/admin/workflow/eventtype/edit' )}</th>
     </tr>
     {section var=Group loop=$event.approve_groups sequence=array( bglight, bgdark )}
         <tr class="{$Group.sequence}">
@@ -105,8 +105,8 @@
 {section show=$event.selected_usergroups}
 <table class="list" cellspacing="0">
 <tr>
-<th class="tight">&nbsp;</th>
-<th>{'User and user groups'|i18n( 'design/admin/workflow/eventtype/edit' )}</th>
+<th scope="col" class="tight">&nbsp;</th>
+<th scope="col">{'User and user groups'|i18n( 'design/admin/workflow/eventtype/edit' )}</th>
 </tr>
 {section var=User loop=$event.selected_usergroups sequence=array( bglight, bgdark )}
 <tr class="{$User.sequence}">

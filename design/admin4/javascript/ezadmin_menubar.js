@@ -86,9 +86,20 @@ function sidebarToggle() {
 
 // Navbar menu toggling feature
 function navbarToggle() {
-    $(".navbar-icon").on('click', function () {
+    // The icon is a div with role="button" (page_topmenu.tpl): it reports its state in aria-expanded and answers
+    // Enter and Space like a button.
+    function toggle( icon ) {
         $(".navbar-menu").toggleClass("show");
         $("body").toggleClass('navbar-open');
+        icon.setAttribute( 'aria-expanded', $(".navbar-menu").hasClass("show") ? 'true' : 'false' );
+    }
+    $(".navbar-icon").on('click', function () {
+        toggle( this );
+    }).on('keydown', function ( e ) {
+        if ( e.key === 'Enter' || e.key === ' ' ) {
+            e.preventDefault();
+            toggle( this );
+        }
     });
 }
 

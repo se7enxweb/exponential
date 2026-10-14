@@ -228,6 +228,28 @@ html[data-a4-theme="dark"] {
   border: 0;
 }
 
+/* The skip link (pagelayout.tpl): the first stop of the Tab key, off screen until it has the focus, then above the
+   fixed header. It jumps to #maincontent, the main landmark. */
+.a4-skip-link {
+  position: fixed;
+  top: var(--a4-space-2);
+  left: var(--a4-space-2);
+  z-index: 10000;
+  padding: var(--a4-space-2) var(--a4-space-4);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  box-shadow: var(--a4-shadow-m);
+  color: var(--a4-ink);
+  font-weight: 600;
+  text-decoration: none;
+  transform: translateY(calc(-100% - var(--a4-space-4)));
+}
+.a4-skip-link:focus {
+  transform: none;
+  outline: 3px solid var(--a4-ring);
+  outline-offset: 2px;
+}
+
 /* ---- Type ---------------------------------------------------------------------------------------------------- */
 
 .a4-h2,

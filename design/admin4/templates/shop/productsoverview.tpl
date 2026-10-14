@@ -79,8 +79,8 @@
 
 <table class="list" cellspacing="0">
 <tr>
-    <th class="name">{'Name'|i18n( 'design/admin/shop/productsoverview' )}</th>
-    <th class="nowrap">{'Price'|i18n( 'design/admin/shop/productsoverview' )}</th>
+    <th scope="col" class="name">{'Name'|i18n( 'design/admin/shop/productsoverview' )}</th>
+    <th scope="col" class="nowrap">{'Price'|i18n( 'design/admin/shop/productsoverview' )}</th>
 </tr>
 
 {foreach $product_list as $product sequence array( bglight, bgdark ) as $bg_class_style}

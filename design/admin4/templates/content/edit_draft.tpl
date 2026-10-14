@@ -6,7 +6,7 @@
 </div>*}
 {* hts *}
 
-<div id="maincontent" class="content-wrapper">
+<div id="maincontent" role="main" tabindex="-1" class="content-wrapper">
     <div id="maincontent-design" class="float-break">
         <div id="fix">
             <!-- Maincontent START -->

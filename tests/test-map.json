@@ -39,13 +39,15 @@
       "tests/tests/design/AdminStylingRulesTest.php",
       "tests/tests/design/AdminIconsTest.php",
       "tests/tests/design/AdminLanguageBadgeTest.php",
-      "tests/tests/design/AdminContextMenuTest.php"
+      "tests/tests/design/AdminContextMenuTest.php",
+      "tests/tests/design/AdminLandmarksTest.php"
     ],
     "design/admin*/stylesheets/*": [
       "tests/tests/design/AdminStylingRulesTest.php",
       "tests/tests/design/AdminIconsTest.php",
       "tests/tests/design/AdminLanguageBadgeTest.php",
-      "tests/tests/design/AdminContextMenuTest.php"
+      "tests/tests/design/AdminContextMenuTest.php",
+      "tests/tests/design/AdminLandmarksTest.php"
     ],
     "design/admin4/javascript/ezajaxsubitems_expdatatable.js": [
       "tests/tests/design/AdminLanguageBadgeTest.php"

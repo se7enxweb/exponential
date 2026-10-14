@@ -15,9 +15,9 @@
 {section show=count( $member_groups )}
 <table class="list" cellspacing="0">
 <tr>
-    <th>{'Name'|i18n( 'design/admin/node/view/full' )}</th>
-    <th>{'Limitation'|i18n( 'design/admin/node/view/full' )}</th>
-    <th class="tight">&nbsp;</th>
+    <th scope="col">{'Name'|i18n( 'design/admin/node/view/full' )}</th>
+    <th scope="col">{'Limitation'|i18n( 'design/admin/node/view/full' )}</th>
+    <th scope="col" class="tight">&nbsp;</th>
 </tr>
 {section var=Roles loop=$member_groups sequence=array( bglight, bgdark )}
     <tr class="{$Roles.sequence}">

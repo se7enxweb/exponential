@@ -14,10 +14,10 @@
 {section show=$customer_list}
 <table class="list" cellspacing="0">
 <tr>
-    <th class="wide">{'Name'|i18n( 'design/admin/shop/customerlist' )}</th>
-    <th class="tight">{'Orders'|i18n( 'design/admin/shop/customerlist' )}</th>
-    <th class="tight">{'Total (ex. VAT)'|i18n( 'design/admin/shop/customerlist' )}</th>
-    <th class="tight">{'Total (inc. VAT)'|i18n( 'design/admin/shop/customerlist' )}</th>
+    <th scope="col" class="wide">{'Name'|i18n( 'design/admin/shop/customerlist' )}</th>
+    <th scope="col" class="tight">{'Orders'|i18n( 'design/admin/shop/customerlist' )}</th>
+    <th scope="col" class="tight">{'Total (ex. VAT)'|i18n( 'design/admin/shop/customerlist' )}</th>
+    <th scope="col" class="tight">{'Total (inc. VAT)'|i18n( 'design/admin/shop/customerlist' )}</th>
 </tr>
 
 {def $currency = false()

@@ -28,14 +28,14 @@
 <b>{'Product items'|i18n( 'design/admin/shop/orderview' )}</b>
 <table class="list" width="100%" cellspacing="0" cellpadding="0" border="0">
 <tr>
-    <th>{'Product'|i18n( 'design/admin/shop/orderview' )}</th>
-    <th>{'Count'|i18n( 'design/admin/shop/orderview' )}</th>
-    <th>{'VAT'|i18n( 'design/admin/shop/orderview' )}</th>
-    <th>{'Price ex. VAT'|i18n( 'design/admin/shop/orderview' )}</th>
-    <th>{'Price inc. VAT'|i18n( 'design/admin/shop/orderview' )}</th>
-    <th>{'Discount'|i18n( 'design/admin/shop/orderview' )}</th>
-    <th>{'Total price ex. VAT'|i18n( 'design/admin/shop/orderview' )}</th>
-    <th>{'Total price inc. VAT'|i18n( 'design/admin/shop/orderview' )}</th>
+    <th scope="col">{'Product'|i18n( 'design/admin/shop/orderview' )}</th>
+    <th scope="col">{'Count'|i18n( 'design/admin/shop/orderview' )}</th>
+    <th scope="col">{'VAT'|i18n( 'design/admin/shop/orderview' )}</th>
+    <th scope="col">{'Price ex. VAT'|i18n( 'design/admin/shop/orderview' )}</th>
+    <th scope="col">{'Price inc. VAT'|i18n( 'design/admin/shop/orderview' )}</th>
+    <th scope="col">{'Discount'|i18n( 'design/admin/shop/orderview' )}</th>
+    <th scope="col">{'Total price ex. VAT'|i18n( 'design/admin/shop/orderview' )}</th>
+    <th scope="col">{'Total price inc. VAT'|i18n( 'design/admin/shop/orderview' )}</th>
 </tr>
 {section name=ProductItem loop=$order.product_items show=$order.product_items}
 <tr>
@@ -132,9 +132,9 @@
 {section show=$order_status_history|count|gt( 0 )}
 <table class="list" cellspacing="0">
 <tr>
-    <th>{'Date'|i18n( 'design/admin/shop/orderview' )}</th>
-    <th>{'Status'|i18n( 'design/admin/shop/orderview' )}</th>
-    <th>{'Person'|i18n( 'design/admin/shop/orderview' )}</th>
+    <th scope="col">{'Date'|i18n( 'design/admin/shop/orderview' )}</th>
+    <th scope="col">{'Status'|i18n( 'design/admin/shop/orderview' )}</th>
+    <th scope="col">{'Person'|i18n( 'design/admin/shop/orderview' )}</th>
 </tr>
 
 {section var=history loop=$order_status_history sequence=array( bglight, bgdark )}

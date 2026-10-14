@@ -41,17 +41,17 @@
 
 <table class="list" cellspacing="0">
 <tr>
-    <th class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/shop/currencylist' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/shop/currencylist' )|wash}" onclick="ezjs_toggleCheckboxes( document.currencylist, 'DeleteCurrencyList[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
-    <th class="name">{'Name'|i18n( 'design/admin/shop/currencylist' )}</th>
-    <th class="nowrap">{'Code'|i18n( 'design/admin/shop/currencylist' )}</th>
-    <th class="nowrap">{'Symbol'|i18n( 'design/admin/shop/currencylist' )}</th>
-    <th class="nowrap">{'Locale'|i18n( 'design/admin/shop/currencylist' )}</th>
-    <th class="nowrap">{'Status'|i18n( 'design/admin/shop/currencylist' )}</th>
-    <th class="tight">{'Auto rate'|i18n( 'design/admin/shop/currencylist' )}</th>
-    <th class="tight">{'Custom rate'|i18n( 'design/admin/shop/currencylist' )}</th>
-    <th class="tight">{'Factor'|i18n( 'design/admin/shop/currencylist' )}</th>
-    <th class="tight">{'Rate'|i18n( 'design/admin/shop/currencylist' )}</th>
-    <th class="tight">&nbsp;</th>
+    <th scope="col" class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/shop/currencylist' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/shop/currencylist' )|wash}" onclick="ezjs_toggleCheckboxes( document.currencylist, 'DeleteCurrencyList[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
+    <th scope="col" class="name">{'Name'|i18n( 'design/admin/shop/currencylist' )}</th>
+    <th scope="col" class="nowrap">{'Code'|i18n( 'design/admin/shop/currencylist' )}</th>
+    <th scope="col" class="nowrap">{'Symbol'|i18n( 'design/admin/shop/currencylist' )}</th>
+    <th scope="col" class="nowrap">{'Locale'|i18n( 'design/admin/shop/currencylist' )}</th>
+    <th scope="col" class="nowrap">{'Status'|i18n( 'design/admin/shop/currencylist' )}</th>
+    <th scope="col" class="tight">{'Auto rate'|i18n( 'design/admin/shop/currencylist' )}</th>
+    <th scope="col" class="tight">{'Custom rate'|i18n( 'design/admin/shop/currencylist' )}</th>
+    <th scope="col" class="tight">{'Factor'|i18n( 'design/admin/shop/currencylist' )}</th>
+    <th scope="col" class="tight">{'Rate'|i18n( 'design/admin/shop/currencylist' )}</th>
+    <th scope="col" class="tight">&nbsp;</th>
 </tr>
 
 {if is_set( $currency_names )|not}

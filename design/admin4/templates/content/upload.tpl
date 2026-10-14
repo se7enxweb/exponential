@@ -3,7 +3,7 @@
 {if $ui_context|eq('edit')}
 {let content_object=fetch( content, object, hash( object_id, $upload.content.object_id  ) )
      content_version=fetch( content, version, hash( object_id, $upload.content.object_id, version_id, $upload.content.object_version ) )}
-<div id="leftmenu" class="sidebar left">
+<div id="leftmenu" class="sidebar left" role="complementary" aria-label="{'Side column'|i18n( 'design/admin/pagelayout' )|wash}">
 <div id="leftmenu-design">
 
 {include uri="design:content/parts/object_information.tpl" object=$content_object manage_version_button=false()}
@@ -47,7 +47,7 @@
 </div>
 {/let}
 {/if}
-<div id="maincontent">
+<div id="maincontent" role="main" tabindex="-1">
 <div id="maincontent-design" class="float-break"><div id="fix">
 <!-- Maincontent START -->
 

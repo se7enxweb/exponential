@@ -54,11 +54,11 @@
 {section show=$rule_list}
 <table class="list" cellspacing="0">
 <tr>
-    <th class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/shop/discountgroupmembershipview' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/shop/discountgroupmembershipview' )|wash}" onclick="ezjs_toggleCheckboxes( document.DiscountGroupView, 'removeRuleList[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
-    <th>{'Name'|i18n( 'design/admin/shop/discountgroupmembershipview' )}</th>
-    <th>{'Percent'|i18n( 'design/admin/shop/discountgroupmembershipview' )}</th>
-    <th>{'Apply to'|i18n( 'design/admin/shop/discountgroupmembershipview' )}</th>
-    <th class="tight">&nbsp;</th>
+    <th scope="col" class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/shop/discountgroupmembershipview' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/shop/discountgroupmembershipview' )|wash}" onclick="ezjs_toggleCheckboxes( document.DiscountGroupView, 'removeRuleList[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
+    <th scope="col">{'Name'|i18n( 'design/admin/shop/discountgroupmembershipview' )}</th>
+    <th scope="col">{'Percent'|i18n( 'design/admin/shop/discountgroupmembershipview' )}</th>
+    <th scope="col">{'Apply to'|i18n( 'design/admin/shop/discountgroupmembershipview' )}</th>
+    <th scope="col" class="tight">&nbsp;</th>
 </tr>
 {section var=Rules loop=$rule_list sequence=array( bglight, bgdark )}
 <tr class="{$Rules.sequence}">
@@ -112,9 +112,9 @@
 {section show=$customers}
 <table class="list" cellspacing="0">
 <tr>
-    <th class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/shop/discountgroupmembershipview' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/shop/discountgroupmembershipview' )|wash}" onclick="ezjs_toggleCheckboxes( document.DiscountGroupView, 'CustomerIDArray[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
-    <th>{'Name'|i18n( 'design/admin/shop/discountgroupmembershipview' )}</th>
-    <th>{'Type'|i18n( 'design/admin/shop/discountgroupmembershipview' )}</th>
+    <th scope="col" class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/shop/discountgroupmembershipview' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/shop/discountgroupmembershipview' )|wash}" onclick="ezjs_toggleCheckboxes( document.DiscountGroupView, 'CustomerIDArray[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
+    <th scope="col">{'Name'|i18n( 'design/admin/shop/discountgroupmembershipview' )}</th>
+    <th scope="col">{'Type'|i18n( 'design/admin/shop/discountgroupmembershipview' )}</th>
 </tr>
 {section var=Customers loop=$customers sequence=array( bglight, bgdark )}
 <tr class="{$Customers.sequence}">

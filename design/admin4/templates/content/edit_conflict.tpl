@@ -1,4 +1,4 @@
-<div id="leftmenu" class="sidebar left">
+<div id="leftmenu" class="sidebar left" role="complementary" aria-label="{'Side column'|i18n( 'design/admin/pagelayout' )|wash}">
 <div id="leftmenu-design">
 
 {include uri="design:content/parts/object_information.tpl" object=$object manage_version_button=false()}
@@ -6,7 +6,7 @@
 </div>
 </div>
 
-<div id="maincontent">
+<div id="maincontent" role="main" tabindex="-1">
 <div id="maincontent-design" class="float-break"><div id="fix">
 <!-- Maincontent START -->
 
@@ -39,12 +39,12 @@
 
 <table class="list" cellspacing="0">
 <tr>
-    <th>{'Version'|i18n( 'design/admin/content/edit_draft' )}</th>
-    <th>{'Translations'|i18n( 'design/admin/content/edit_draft' )}</th>
-    <th>{'Creator'|i18n( 'design/admin/content/edit_draft' )}</th>
-    <th>{'Created'|i18n( 'design/admin/content/edit_draft' )}</th>
-    <th>{'Modified'|i18n( 'design/admin/content/edit_draft' )}</th>
-    <th>{'Status'|i18n( 'design/admin/content/edit_draft' )}</th>
+    <th scope="col">{'Version'|i18n( 'design/admin/content/edit_draft' )}</th>
+    <th scope="col">{'Translations'|i18n( 'design/admin/content/edit_draft' )}</th>
+    <th scope="col">{'Creator'|i18n( 'design/admin/content/edit_draft' )}</th>
+    <th scope="col">{'Created'|i18n( 'design/admin/content/edit_draft' )}</th>
+    <th scope="col">{'Modified'|i18n( 'design/admin/content/edit_draft' )}</th>
+    <th scope="col">{'Status'|i18n( 'design/admin/content/edit_draft' )}</th>
 </tr>
 
 {section var=Drafts loop=$draft_versions sequence=array( bglight, bgdark )}

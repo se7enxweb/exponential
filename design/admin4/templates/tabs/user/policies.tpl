@@ -14,11 +14,11 @@
 
 <table class="list" cellspacing="0" summary="{'Policy list and the Role that are assignet to current node.'|i18n( 'design/admin/node/view/full' )}">
 <tr>
-    <th>{'Role'|i18n( 'design/admin/node/view/full' )}</th>
-    <th>{'Limited to'|i18n( 'design/admin/node/view/full' )}</th>
-    <th>{'Module'|i18n( 'design/admin/node/view/full' )}</th>
-    <th>{'Function'|i18n( 'design/admin/node/view/full' )}</th>
-    <th>{'Limitation'|i18n( 'design/admin/node/view/full' )}</th>
+    <th scope="col">{'Role'|i18n( 'design/admin/node/view/full' )}</th>
+    <th scope="col">{'Limited to'|i18n( 'design/admin/node/view/full' )}</th>
+    <th scope="col">{'Module'|i18n( 'design/admin/node/view/full' )}</th>
+    <th scope="col">{'Function'|i18n( 'design/admin/node/view/full' )}</th>
+    <th scope="col">{'Limitation'|i18n( 'design/admin/node/view/full' )}</th>
 </tr>
 
 {* For all roles... *}

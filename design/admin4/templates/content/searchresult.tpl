@@ -13,9 +13,9 @@
    ids and the request token. *}
 <table class="list" cellspacing="0">
 <tr>
-    <th class="tight"><input type="checkbox" id="ezsearch-select-all" title="{'Select every result on this page.'|i18n( 'design/admin/content/search' )|wash}" /></th>
-    <th>{'Name'|i18n( 'design/admin/content/search' )}</th>
-    <th>{'Type'|i18n( 'design/admin/content/search' )}</th>
+    <th scope="col" class="tight"><input type="checkbox" id="ezsearch-select-all" title="{'Select every result on this page.'|i18n( 'design/admin/content/search' )|wash}" /></th>
+    <th scope="col">{'Name'|i18n( 'design/admin/content/search' )}</th>
+    <th scope="col">{'Type'|i18n( 'design/admin/content/search' )}</th>
 </tr>
 
 {section var=SearchResult loop=$search_result sequence=array( bglight, bgdark )}

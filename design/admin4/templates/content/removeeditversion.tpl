@@ -1,6 +1,6 @@
 {let version=fetch( content, version, hash( object_id, $object_id, version_id, $object_version ) )}
 
-<div id="leftmenu" class="sidebar left">
+<div id="leftmenu" class="sidebar left" role="complementary" aria-label="{'Side column'|i18n( 'design/admin/pagelayout' )|wash}">
 <div id="leftmenu-design">
 
 <div class="objectinfo">
@@ -100,7 +100,7 @@
 </div>
 
 
-<div id="maincontent">
+<div id="maincontent" role="main" tabindex="-1">
 <div id="maincontent-design" class="float-break"><div id="fix">
 <!-- Maincontent START -->
 

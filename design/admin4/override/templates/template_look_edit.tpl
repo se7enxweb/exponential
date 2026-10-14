@@ -8,7 +8,7 @@
 </div>
 </div>
 
-<div id="maincontent">
+<div id="maincontent" role="main" tabindex="-1">
 <div id="maincontent-design" class="float-break"><div id="fix">
 <!-- Maincontent START -->
 

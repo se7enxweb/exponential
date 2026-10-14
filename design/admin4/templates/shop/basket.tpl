@@ -67,15 +67,15 @@
 
 <table class="list" cellspacing="0">
 <tr>
-    <th class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/shop/basket' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/shop/basket' )|wash}" onclick="ezjs_toggleCheckboxes( document.basket, 'RemoveProductItemDeleteList[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
-    <th>{'Product'|i18n( 'design/admin/shop/basket' )}</th>
-    <th>{'Quantity'|i18n( 'design/admin/shop/basket' )}</th>
-    <th>{'VAT'|i18n( 'design/admin/shop/basket' )}</th>
-    <th>{'Price (ex. VAT)'|i18n( 'design/admin/shop/basket' )}</th>
-    <th>{'Price (inc. VAT)'|i18n( 'design/admin/shop/basket' )}</th>
-    <th>{'Discount'|i18n( 'design/admin/shop/basket' )}</th>
-    <th>{'Total (ex. VAT)'|i18n( 'design/admin/shop/basket' )}</th>
-    <th>{'Total (inc. VAT)'|i18n( 'design/admin/shop/basket' )}</th>
+    <th scope="col" class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/shop/basket' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/shop/basket' )|wash}" onclick="ezjs_toggleCheckboxes( document.basket, 'RemoveProductItemDeleteList[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
+    <th scope="col">{'Product'|i18n( 'design/admin/shop/basket' )}</th>
+    <th scope="col">{'Quantity'|i18n( 'design/admin/shop/basket' )}</th>
+    <th scope="col">{'VAT'|i18n( 'design/admin/shop/basket' )}</th>
+    <th scope="col">{'Price (ex. VAT)'|i18n( 'design/admin/shop/basket' )}</th>
+    <th scope="col">{'Price (inc. VAT)'|i18n( 'design/admin/shop/basket' )}</th>
+    <th scope="col">{'Discount'|i18n( 'design/admin/shop/basket' )}</th>
+    <th scope="col">{'Total (ex. VAT)'|i18n( 'design/admin/shop/basket' )}</th>
+    <th scope="col">{'Total (inc. VAT)'|i18n( 'design/admin/shop/basket' )}</th>
 </tr>
 {section var=Products loop=$basket.items sequence=array( bglight, bgdark )}
 <tr class="{$Products.sequence}">

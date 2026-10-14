@@ -58,7 +58,7 @@
             <h2 class="a4-h2">{'Recent runs'|i18n( 'design/admin/notification/status' )}</h2>
 {if $status.runs|count|gt( 0 )}
             <div class="a4-table-wrap"><table class="a4-table is-compact">
-                <thead><tr><th>{'When'|i18n( 'design/admin/notification/status' )}</th><th>{'Started by'|i18n( 'design/admin/notification/status' )}</th><th>{'Events'|i18n( 'design/admin/notification/status' )}</th><th>{'Messages'|i18n( 'design/admin/notification/status' )}</th><th>{'Result'|i18n( 'design/admin/notification/status' )}</th></tr></thead>
+                <thead><tr><th scope="col">{'When'|i18n( 'design/admin/notification/status' )}</th><th scope="col">{'Started by'|i18n( 'design/admin/notification/status' )}</th><th scope="col">{'Events'|i18n( 'design/admin/notification/status' )}</th><th scope="col">{'Messages'|i18n( 'design/admin/notification/status' )}</th><th scope="col">{'Result'|i18n( 'design/admin/notification/status' )}</th></tr></thead>
                 <tbody>
     {foreach $status.runs as $run}
                     <tr><td>{$run.time|l10n( 'shortdatetime' )}</td><td>{$run.source|wash}</td><td>{$run.events}</td><td>{$run.mails} / {$run.recipients}</td>
@@ -76,7 +76,7 @@
             <h2 class="a4-h2">{'Events'|i18n( 'design/admin/notification/status' )} <span class="a4-tag">{$status.pending_total} {'waiting'|i18n( 'design/admin/notification/status' )}</span></h2>
 {if $events|count|gt( 0 )}
             <div class="a4-table-wrap"><table class="a4-table is-compact">
-                <thead><tr><th>#</th><th>{'Type'|i18n( 'design/admin/notification/status' )}</th><th>{'Status'|i18n( 'design/admin/notification/status' )}</th><th>{'Made'|i18n( 'design/admin/notification/status' )}</th></tr></thead>
+                <thead><tr><th scope="col">#</th><th scope="col">{'Type'|i18n( 'design/admin/notification/status' )}</th><th scope="col">{'Status'|i18n( 'design/admin/notification/status' )}</th><th scope="col">{'Made'|i18n( 'design/admin/notification/status' )}</th></tr></thead>
                 <tbody>
     {foreach $events as $event}
                     <tr><td>{$event.id}</td><td>{$event.type|wash}</td><td>{if $event.status|eq( 'pending' )}{'Waiting'|i18n( 'design/admin/notification/status' )}{else}{'Handled'|i18n( 'design/admin/notification/status' )} ({$event.items}){/if}</td><td>{if $event.created}{$event.created|l10n( 'shortdatetime' )}{else}&mdash;{/if}</td></tr>
@@ -109,7 +109,7 @@
             <h2 class="a4-h2">{'Subscriptions'|i18n( 'design/admin/notification/status' )} <span class="a4-tag">{$recent_total}</span></h2>
 {if $recent_subscriptions|count|gt( 0 )}
             <div class="a4-table-wrap"><table class="a4-table is-compact">
-                <thead><tr><th>{'User'|i18n( 'design/admin/notification/status' )}</th><th>{'Item'|i18n( 'design/admin/notification/status' )}</th></tr></thead>
+                <thead><tr><th scope="col">{'User'|i18n( 'design/admin/notification/status' )}</th><th scope="col">{'Item'|i18n( 'design/admin/notification/status' )}</th></tr></thead>
                 <tbody>
     {foreach $recent_subscriptions as $row}
                     <tr><td>{if $row.login|ne( '' )}{$row.login|wash}{else}#{$row.user_id}{/if}</td><td>{if $row.missing}<span class="a4-badge is-warn">{'Content no longer exists'|i18n( 'design/admin/notification/status' )}</span> #{$row.node_id}{else}{$row.name|wash} <small>({$row.class_name|wash})</small>{/if}</td></tr>

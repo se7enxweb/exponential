@@ -44,7 +44,7 @@
     {if $drafts_result.drafts|count}
     <div class="a4-table-wrap">
     <table class="a4-table">
-        <tr><th>{'Draft'|i18n('design/admin/package')}</th><th>{'Remote ID'|i18n('design/admin/package')}</th><th>{'What'|i18n('design/admin/package')}</th></tr>
+        <tr><th scope="col">{'Draft'|i18n('design/admin/package')}</th><th scope="col">{'Remote ID'|i18n('design/admin/package')}</th><th scope="col">{'What'|i18n('design/admin/package')}</th></tr>
         {foreach $drafts_result.drafts as $draft}
         <tr>
             <td>{if $draft.version}<a href={concat( 'content/versionview/', $draft.object_id, '/', $draft.version )|ezurl}>{$draft.name|wash}</a>{else}{$draft.name|wash}{/if}</td>
@@ -106,7 +106,7 @@ If you do not want to install the package at this time, you can do so later on t
        where its main location goes *}
     <div class="a4-table-wrap">
     <table class="a4-table" data-report="objects">
-        <tr><th>{'Remote ID'|i18n('design/admin/package')}</th><th>{'Name'|i18n('design/admin/package')}</th><th>{'Class'|i18n('design/admin/package')}</th><th>{'Here'|i18n('design/admin/package')}</th><th>{'Parent'|i18n('design/admin/package')}</th></tr>
+        <tr><th scope="col">{'Remote ID'|i18n('design/admin/package')}</th><th scope="col">{'Name'|i18n('design/admin/package')}</th><th scope="col">{'Class'|i18n('design/admin/package')}</th><th scope="col">{'Here'|i18n('design/admin/package')}</th><th scope="col">{'Parent'|i18n('design/admin/package')}</th></tr>
         {foreach $conflict_report.objects as $row max 50}
         <tr data-action="{$row.action|wash}">
             <td><code>{$row.remote_id|wash}</code></td>

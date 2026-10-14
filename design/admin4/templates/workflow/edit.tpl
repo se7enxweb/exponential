@@ -74,7 +74,7 @@
 {section var=Events loop=$event_list}
 <table class="list" cellspacing="0">
 <tr>
-<th>
+<th scope="col">
 <input type="checkbox" name="WorkflowEvent_id_checked[]" value="{$Events.item.id}" />
 &nbsp;
 {if $Events.item.workflow_type|is_null}

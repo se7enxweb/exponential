@@ -12,11 +12,11 @@
 
 <table id="tab-translations-list" class="list" cellspacing="0" summary="{'Language list of translations for current object.'|i18n( 'design/admin/node/view/full' )}">
 <tr>
-    <th class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/node/view/full' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/node/view/full' )|wash}" onclick="ezjs_toggleCheckboxes( document.translationsform, 'LanguageID[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
-    <th>{'Language'|i18n( 'design/admin/node/view/full' )}</th>
-    <th>{'Locale'|i18n( 'design/admin/node/view/full' )}</th>
-    <th class="tight">{'Main'|i18n( 'design/admin/node/view/full' )}</th>
-    <th class="tight">&nbsp;</th>
+    <th scope="col" class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/node/view/full' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/node/view/full' )|wash}" onclick="ezjs_toggleCheckboxes( document.translationsform, 'LanguageID[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
+    <th scope="col">{'Language'|i18n( 'design/admin/node/view/full' )}</th>
+    <th scope="col">{'Locale'|i18n( 'design/admin/node/view/full' )}</th>
+    <th scope="col" class="tight">{'Main'|i18n( 'design/admin/node/view/full' )}</th>
+    <th scope="col" class="tight">&nbsp;</th>
 </tr>
 
 {section var=Translations loop=$translations sequence=array( bglight, bgdark )}
@@ -28,7 +28,7 @@
 
 {* Remove. *}
 <td>
-    <input type="checkbox" name="LanguageID[]" value="{$Translations.item.id}"{if or($can_edit|not,$Translations.item.id|eq($node.object.initial_language_id))} disabled="disabled"{/if} />
+    <input type="checkbox" name="LanguageID[]" value="{$Translations.item.id}" aria-label="{'Select'|i18n( 'design/admin/node/view/full' )|wash} {$Translations.item.name|wash}"{if or($can_edit|not,$Translations.item.id|eq($node.object.initial_language_id))} disabled="disabled"{/if} />
 </td>
 
 {* Language name. *}
@@ -49,7 +49,7 @@
 
 {if $object_can_edit}
 
-<input type="radio" {if $Translations.item.id|eq($node.object.initial_language_id)} checked="checked" class="main-translation-radio main-translation-radio-initial"{else} class="main-translation-radio"{/if} name="InitialLanguageID" value="{$Translations.item.id}" title="{'Use these radio buttons to select the desired main language.'|i18n( 'design/admin/node/view/full' )}" />
+<input type="radio" {if $Translations.item.id|eq($node.object.initial_language_id)} checked="checked" class="main-translation-radio main-translation-radio-initial"{else} class="main-translation-radio"{/if} name="InitialLanguageID" aria-label="{'Main language'|i18n( 'design/admin/node/view/full' )|wash}: {$Translations.item.name|wash}" value="{$Translations.item.id}" title="{'Use these radio buttons to select the desired main language.'|i18n( 'design/admin/node/view/full' )}" />
 
 {/if}
 

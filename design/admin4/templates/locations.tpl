@@ -61,14 +61,14 @@
 
 <table id="tab-locations-list" class="list" cellspacing="0" summary="{'Locations (aka Nodes) for current object.'|i18n( 'design/admin/node/view/full' )}">
 <tr>
-    <th class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/node/view/full' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/node/view/full' )|wash}" onclick="ezjs_toggleCheckboxes( document.locationsform, 'LocationIDSelection[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
+    <th scope="col" class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/node/view/full' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/node/view/full' )|wash}" onclick="ezjs_toggleCheckboxes( document.locationsform, 'LocationIDSelection[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
 {* The headings sort the whole list, not the page on screen: with one page of
    a possible fifty thousand locations in hand there is nothing useful to sort
    here, so the column travels on the address and the database does it. The
    heading itself is the same one the rss list uses, so the two look alike. *}
 {include uri='design:parts/sortheader.tpl' key='path'       label='Location'|i18n( 'design/admin/node/view/full' )   sort=$locations_sort_state page_uri=$locations_sort_uri sort_name='location_sort' dir_name='location_sort_order' suffix=$locations_carried_parameters cell_class='wide'}
 {include uri='design:parts/sortheader.tpl' key='children'   label='Sub items'|i18n( 'design/admin/node/view/full' )  sort=$locations_sort_state page_uri=$locations_sort_uri sort_name='location_sort' dir_name='location_sort_order' suffix=$locations_carried_parameters cell_class='tight'}
-{*   <th class="tight">{'Sorting'|i18n( 'design/admin/node/view/full' )}</th> *}
+{*   <th scope="col" class="tight">{'Sorting'|i18n( 'design/admin/node/view/full' )}</th> *}
 {include uri='design:parts/sortheader.tpl' key='visibility' label='Visibility'|i18n( 'design/admin/node/view/full' ) sort=$locations_sort_state page_uri=$locations_sort_uri sort_name='location_sort' dir_name='location_sort_order' suffix=$locations_carried_parameters cell_class='tight'}
 {include uri='design:parts/sortheader.tpl' key='main'       label='Main'|i18n( 'design/admin/node/view/full' )       sort=$locations_sort_state page_uri=$locations_sort_uri sort_name='location_sort' dir_name='location_sort_order' suffix=$locations_carried_parameters cell_class='tight'}
 </tr>
@@ -81,10 +81,10 @@
     {* Remove. *}
     <td>
     {if and( or( $assignment_node.can_remove, $assignment_node.can_remove_location ), eq( $assignment_node.node_id, $node.main_node_id )|not )}
-        <input type="checkbox" name="LocationIDSelection[]" value="{$assignment_node.node_id}" title="{'Select location for removal.'|i18n( 'design/admin/node/view/full' )}" />
+        <input type="checkbox" name="LocationIDSelection[]" value="{$assignment_node.node_id}" aria-label="{'Select location for removal.'|i18n( 'design/admin/node/view/full' )|wash} {$assignment_node.url_alias|wash}" title="{'Select location for removal.'|i18n( 'design/admin/node/view/full' )}" />
         {set can_remove_location=true()}
     {else}
-        <input type="checkbox" name="LocationIDSelection[]" value="{$assignment_node.node_id}" disabled="disabled" title="{'This location cannot be removed either because you do not have permission to remove it or because it is currently being displayed.'|i18n( 'design/admin/node/view/full' )}" />
+        <input type="checkbox" name="LocationIDSelection[]" value="{$assignment_node.node_id}" aria-label="{'Select location for removal.'|i18n( 'design/admin/node/view/full' )|wash} {$assignment_node.url_alias|wash}" disabled="disabled" title="{'This location cannot be removed either because you do not have permission to remove it or because it is currently being displayed.'|i18n( 'design/admin/node/view/full' )}" />
     {/if}
     </td>
 
@@ -126,14 +126,14 @@
     {if $assignment_node.can_edit}
 
     {if $assignment_count|gt( 1 ) }
-    <input type="radio" {if $assignment_node.is_main}checked="checked" class="main-locations-radio main-locations-radio-initial"{else}class="main-locations-radio"{/if} name="MainAssignmentCheck" value="{$assignment_node.node_id}" title="{'Use these radio buttons to select the desired main location.'|i18n( 'design/admin/node/view/full' )}" />
+    <input type="radio" {if $assignment_node.is_main}checked="checked" class="main-locations-radio main-locations-radio-initial"{else}class="main-locations-radio"{/if} name="MainAssignmentCheck" value="{$assignment_node.node_id}" aria-label="{'Main location'|i18n( 'design/admin/node/view/full' )|wash}: {$assignment_node.url_alias|wash}" title="{'Use these radio buttons to select the desired main location.'|i18n( 'design/admin/node/view/full' )}" />
     {else}
-    <input type="radio" {if $assignment_node.is_main}checked="checked"{/if} name="MainAssignmentCheck" value="{$assignment_node.node_id}" disabled="disabled" title="{'The item being displayed has only one location, which is by default the main location.'|i18n( 'design/admin/node/view/full' )}" />
+    <input type="radio" {if $assignment_node.is_main}checked="checked"{/if} name="MainAssignmentCheck" value="{$assignment_node.node_id}" aria-label="{'Main location'|i18n( 'design/admin/node/view/full' )|wash}: {$assignment_node.url_alias|wash}" disabled="disabled" title="{'The item being displayed has only one location, which is by default the main location.'|i18n( 'design/admin/node/view/full' )}" />
     {/if}
 
     {else}
 
-    <input type="radio" {if $assignment_node.is_main}checked="checked"{/if} name="MainAssignmentCheck" value="{$assignment_node.node_id}" disabled="disabled" title="{'You cannot set the main location because you do not have permission to edit the item being displayed.'|i18n( 'design/admin/node/view/full' )}" />
+    <input type="radio" {if $assignment_node.is_main}checked="checked"{/if} name="MainAssignmentCheck" value="{$assignment_node.node_id}" aria-label="{'Main location'|i18n( 'design/admin/node/view/full' )|wash}: {$assignment_node.url_alias|wash}" disabled="disabled" title="{'You cannot set the main location because you do not have permission to edit the item being displayed.'|i18n( 'design/admin/node/view/full' )}" />
 
     {/if}
 

@@ -18,7 +18,7 @@
 
 <table class="list" cellspacing="0">
     <tr>
-        <th>{"Language"|i18n("design/standard/content/removetranslation")}</th>
+        <th scope="col">{"Language"|i18n("design/standard/content/removetranslation")}</th>
     </tr>
     {foreach $languages as $language sequence array( bglight, bgdark ) as $class}
     <tr class="{$class}">

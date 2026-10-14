@@ -24,13 +24,13 @@
         {/if}
         
         <div class="block">{$title}</div>
-        <select id="ezasi-sort-field" name="SortingField" title="{$title}"{$disabled}>
+        <select id="ezasi-sort-field" name="SortingField" title="{$title}" aria-label="{'Sort by'|i18n( 'design/admin/node/view/full' )|wash}"{$disabled}>
         {foreach $sort_fields as $key => $field}
             <option value="{$key}" {if eq( $key, $node.sort_field )}selected="selected"{/if}>{$field}</option>
         {/foreach}
         </select>
     
-        <select id="ezasi-sort-order" name="SortingOrder" title="{$title}"{$disabled}>
+        <select id="ezasi-sort-order" name="SortingOrder" title="{$title}" aria-label="{'Sort order'|i18n( 'design/admin/node/view/full' )|wash}"{$disabled}>
             <option value="0"{if eq($node.sort_order, 0)} selected="selected"{/if}>{'Descending'|i18n( 'design/admin/node/view/full' )}</option>
             <option value="1"{if eq($node.sort_order, 1)} selected="selected"{/if}>{'Ascending'|i18n( 'design/admin/node/view/full' )}</option>
         </select>

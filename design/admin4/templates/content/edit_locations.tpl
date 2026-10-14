@@ -37,15 +37,15 @@
 <table class="list" cellspacing="0" >
 <tr>
 {* JB TODO: The alt/title fields should get different text descriptions when they are disabled *}
-    <th class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/content/edit' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/content/edit' )|wash}" onclick="ezjs_toggleCheckboxes( document.editform, 'AssignmentIDSelection[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
-    <th>{'Location'|i18n( 'design/admin/content/edit' )}</th>
-    <th>{'Sub items'|i18n( 'design/admin/content/edit' )}</th>
-    <th>{'Sorting of sub items'|i18n( 'design/admin/content/edit' )}</th>
+    <th scope="col" class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/content/edit' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/content/edit' )|wash}" onclick="ezjs_toggleCheckboxes( document.editform, 'AssignmentIDSelection[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
+    <th scope="col">{'Location'|i18n( 'design/admin/content/edit' )}</th>
+    <th scope="col">{'Sub items'|i18n( 'design/admin/content/edit' )}</th>
+    <th scope="col">{'Sorting of sub items'|i18n( 'design/admin/content/edit' )}</th>
     {if $:has_top_levels|not}
-    <th>{'Current visibility'|i18n( 'design/admin/content/edit' )}</th>
-    <th>{'Visibility after publishing'|i18n( 'design/admin/content/edit' )}</th>
-    <th>{'Main'|i18n( 'design/admin/content/edit' )}</th>
-    <th>&nbsp;</th>
+    <th scope="col">{'Current visibility'|i18n( 'design/admin/content/edit' )}</th>
+    <th scope="col">{'Visibility after publishing'|i18n( 'design/admin/content/edit' )}</th>
+    <th scope="col">{'Main'|i18n( 'design/admin/content/edit' )}</th>
+    <th scope="col">&nbsp;</th>
     {/if}
 </tr>
 

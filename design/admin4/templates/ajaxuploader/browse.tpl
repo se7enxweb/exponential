@@ -10,10 +10,10 @@
 </h4>
 <table class="list ajaxuploader-locations">
     <tr>
-        <th class="tight"></th>
-        <th>{'Name'|i18n( 'design/admin/ajaxuploader' )}</th>
-        <th>{'Type'|i18n( 'design/admin/ajaxuploader' )}</th>
-        <th>{'Section'|i18n( 'design/admin/ajaxuploader' )}</th>
+        <th scope="col" class="tight"></th>
+        <th scope="col">{'Name'|i18n( 'design/admin/ajaxuploader' )}</th>
+        <th scope="col">{'Type'|i18n( 'design/admin/ajaxuploader' )}</th>
+        <th scope="col">{'Section'|i18n( 'design/admin/ajaxuploader' )}</th>
     </tr>
     {foreach $browse.items as $item sequence array( 'bgdark', 'bglight' ) as $c}
     <tr class="{$c}">

@@ -69,10 +69,10 @@
 {else}
 <table class="list" cellspacing="0" >
 <tr>
-    <th class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/content/urlalias' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/content/urlalias' )|wash}" onclick="ezjs_toggleCheckboxes( document.aliasform, 'ElementList[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
-    <th>{'URL alias'|i18n( 'design/admin/content/urlalias' )}</th>
-    <th>{'Language'|i18n( 'design/admin/content/urlalias' )}</th>
-    <th>{'Type'|i18n( 'design/admin/content/urlalias' )}</th>
+    <th scope="col" class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/content/urlalias' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/content/urlalias' )|wash}" onclick="ezjs_toggleCheckboxes( document.aliasform, 'ElementList[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
+    <th scope="col">{'URL alias'|i18n( 'design/admin/content/urlalias' )}</th>
+    <th scope="col">{'Language'|i18n( 'design/admin/content/urlalias' )}</th>
+    <th scope="col">{'Type'|i18n( 'design/admin/content/urlalias' )}</th>
 </tr>
 {foreach $aliasList as $element sequence array('bglight', 'bgdark') as $seq}
     <tr class="{$seq}">
@@ -172,9 +172,9 @@
 
 <table class="list" cellspacing="0" >
 <tr>
-    <th>{'URL alias'|i18n( 'design/admin/content/urlalias' )}</th>
-    <th>{'Language'|i18n( 'design/admin/content/urlalias' )}</th>
-    <th class="tight">&nbsp;</th>
+    <th scope="col">{'URL alias'|i18n( 'design/admin/content/urlalias' )}</th>
+    <th scope="col">{'Language'|i18n( 'design/admin/content/urlalias' )}</th>
+    <th scope="col" class="tight">&nbsp;</th>
 </tr>
 {def $isCurrentLanguage=false()
      $language_obj=false()

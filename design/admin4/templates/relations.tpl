@@ -10,10 +10,10 @@
 
 <table class="list" cellspacing="0" summary="{'Object relation list from current object.'|i18n( 'design/admin/node/view/full' )}">
 <tr>
-    <th>{'Related objects (%related_objects_count)'|i18n( 'design/admin/node/view/full',, hash( '%related_objects_count', $related_objects_count ) )}</th>
+    <th scope="col">{'Related objects (%related_objects_count)'|i18n( 'design/admin/node/view/full',, hash( '%related_objects_count', $related_objects_count ) )}</th>
     {if $related_objects_count}
-    <th>{'Class'|i18n( 'design/admin/node/view/full' )}</th>
-    <th>{'Relation type'|i18n( 'design/admin/node/view/full')}</th>
+    <th scope="col">{'Class'|i18n( 'design/admin/node/view/full' )}</th>
+    <th scope="col">{'Relation type'|i18n( 'design/admin/node/view/full')}</th>
     {/if}
 </tr>
 {if $related_objects_count}
@@ -69,10 +69,10 @@
 
 <table class="list" cellspacing="0" summary="{'Reverse object relation list to current object.'|i18n( 'design/admin/node/view/full' )}">
 <tr>
-    <th>{'Reverse related objects (%related_objects_count)'|i18n( 'design/admin/node/view/full',, hash( '%related_objects_count', $reverse_related_objects_count ) )}</th>
+    <th scope="col">{'Reverse related objects (%related_objects_count)'|i18n( 'design/admin/node/view/full',, hash( '%related_objects_count', $reverse_related_objects_count ) )}</th>
     {if $reverse_related_objects_count}
-    <th>{'Class'|i18n( 'design/admin/node/view/full' )}</th>
-    <th>{'Relation type'|i18n( 'design/admin/node/view/full' )}</th>
+    <th scope="col">{'Class'|i18n( 'design/admin/node/view/full' )}</th>
+    <th scope="col">{'Relation type'|i18n( 'design/admin/node/view/full' )}</th>
     {/if}
 </tr>
 {if $reverse_related_objects_count}

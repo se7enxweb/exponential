@@ -116,9 +116,9 @@
     <h3>{$wfe_module.module|wash} <span class="a4-meta">({$wfe_module.count})</span></h3>
     <table class="a4-setup-wz-matrix">
     <tr>
-        <th>{'Operation'|i18n( 'design/admin/setup/rad/workflowevent' )}</th>
-        <th class="a4-setup-wz-tick">{'Before'|i18n( 'design/admin/setup/rad/workflowevent' )}</th>
-        <th class="a4-setup-wz-tick">{'After'|i18n( 'design/admin/setup/rad/workflowevent' )}</th>
+        <th scope="col">{'Operation'|i18n( 'design/admin/setup/rad/workflowevent' )}</th>
+        <th scope="col" class="a4-setup-wz-tick">{'Before'|i18n( 'design/admin/setup/rad/workflowevent' )}</th>
+        <th scope="col" class="a4-setup-wz-tick">{'After'|i18n( 'design/admin/setup/rad/workflowevent' )}</th>
     </tr>
     {foreach $wfe_module.rows as $wfe_row}
     <tr{if or( $wfe_row.cells.before.chosen, $wfe_row.cells.after.chosen )} class="is-chosen"{/if}>
@@ -150,11 +150,11 @@
 
 <table class="a4-setup-wz-attrs">
 <tr>
-    <th>{'Name'|i18n( 'design/admin/setup/rad/workflowevent' )}</th>
-    <th>{'Label'|i18n( 'design/admin/setup/rad/workflowevent' )}</th>
-    <th>{'Kind'|i18n( 'design/admin/setup/rad/workflowevent' )}</th>
-    <th>{'Values'|i18n( 'design/admin/setup/rad/workflowevent' )}</th>
-    <th>{'Column'|i18n( 'design/admin/setup/rad/workflowevent' )}</th>
+    <th scope="col">{'Name'|i18n( 'design/admin/setup/rad/workflowevent' )}</th>
+    <th scope="col">{'Label'|i18n( 'design/admin/setup/rad/workflowevent' )}</th>
+    <th scope="col">{'Kind'|i18n( 'design/admin/setup/rad/workflowevent' )}</th>
+    <th scope="col">{'Values'|i18n( 'design/admin/setup/rad/workflowevent' )}</th>
+    <th scope="col">{'Column'|i18n( 'design/admin/setup/rad/workflowevent' )}</th>
 </tr>
 {foreach $wizard_attributes as $wfe_attribute}
 <tr>

@@ -9,13 +9,13 @@
     {def $content_language = ezini( 'RegionalSettings', 'Locale' )
     $edit_menu_collapsed = cond( ezpreference( 'admin_edit_menu_collapsed' ), 1, 1 )}
 
-    <div id="leftmenu" class="sidebar left">
+    <div id="leftmenu" class="sidebar left" role="complementary" aria-label="{'Side column'|i18n( 'design/admin/pagelayout' )|wash}">
         <div id="leftmenu-design">
             {include uri='design:content/edit_menu.tpl'}
         </div>
     </div>
 
-    <div id="maincontent">
+    <div id="maincontent" role="main" tabindex="-1">
         <div id="maincontent-design" class="float-break">
             <div id="fix">
 

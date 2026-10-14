@@ -1,8 +1,8 @@
 <table class="list" cellspacing="0">
 <tr>
-  <th class="tight">&nbsp;</th>
-  <th colspan="2">{"Subject"|i18n('design/admin/collaboration/item_list')}</th>
-  <th>{"Date"|i18n('design/admin/collaboration/item_list')}</th>
+  <th scope="col" class="tight">&nbsp;</th>
+  <th scope="col" colspan="2">{"Subject"|i18n('design/admin/collaboration/item_list')}</th>
+  <th scope="col">{"Date"|i18n('design/admin/collaboration/item_list')}</th>
 </tr>
 {section name=Item loop=$item_list sequence=array(bglight,bgdark)}
 {let item_class="status_read"}

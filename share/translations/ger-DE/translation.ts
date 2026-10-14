@@ -8766,6 +8766,10 @@
         <source>Publish without notifying the subscribers of its location: no notification mail is sent for this version.</source>
         <translation>Ohne Benachrichtigung der Abonnenten dieses Ortes veröffentlichen: für diese Version wird keine Benachrichtigungsmail verschickt.</translation>
     </message>
+    <message>
+        <source>Preview of the version</source>
+        <translation>Vorschau der Version</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/contentstructuremenu</name>
@@ -11592,6 +11596,22 @@
     <message>
         <source>You do not have permission to copy this item.</source>
         <translation>Sie haben keine Berechtigung, dieses Element zu kopieren.</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Sortieren nach</translation>
+    </message>
+    <message>
+        <source>Sort order</source>
+        <translation>Sortierreihenfolge</translation>
+    </message>
+    <message>
+        <source>Main language</source>
+        <translation>Hauptsprache</translation>
+    </message>
+    <message>
+        <source>Main location</source>
+        <translation>Hauptort</translation>
     </message>
 </context>
 <context>
@@ -14809,6 +14829,34 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Export parts of the content tree as feeds, import the feeds of other sites</source>
         <translation>Teile des Inhaltsbaums als Feeds exportieren, Feeds anderer Seiten importieren</translation>
+    </message>
+    <message>
+        <source>Skip to main content</source>
+        <translation>Zum Hauptinhalt springen</translation>
+    </message>
+    <message>
+        <source>Breadcrumb</source>
+        <translation>Brotkrumennavigation</translation>
+    </message>
+    <message>
+        <source>Tools</source>
+        <translation>Werkzeuge</translation>
+    </message>
+    <message>
+        <source>Side menu</source>
+        <translation>Seitenmenü</translation>
+    </message>
+    <message>
+        <source>Side column</source>
+        <translation>Seitenspalte</translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation>Menü</translation>
+    </message>
+    <message>
+        <source>Main menu</source>
+        <translation>Hauptmenü</translation>
     </message>
 </context>
 <context>

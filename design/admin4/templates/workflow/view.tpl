@@ -79,8 +79,8 @@
 
 <table class="list" cellspacing="0">
 <tr>
-    <th class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/workflow/view' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/workflow/view' )|wash}" onclick="ezjs_toggleCheckboxes( document.workflowgroups, 'group_id_checked[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
-    <th class="wide">{'Group'|i18n( 'design/admin/workflow/view' )}</th>
+    <th scope="col" class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/workflow/view' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/workflow/view' )|wash}" onclick="ezjs_toggleCheckboxes( document.workflowgroups, 'group_id_checked[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
+    <th scope="col" class="wide">{'Group'|i18n( 'design/admin/workflow/view' )}</th>
 </tr>
 {section var=Groups loop=$workflow.ingroup_list sequence=array( bglight, bgdark )}
 <tr class="{$Groups.sequence}">
@@ -135,10 +135,10 @@
 
 <table class="list" cellspacing="0">
 <tr>
-    <th>{'Position'|i18n( 'design/admin/workflow/view' )}</th>
-    <th>{'Description'|i18n( 'design/admin/workflow/view' )}</th>
-    <th>{'Type'|i18n( 'design/admin/workflow/view' )}</th>
-    <th>{'Additional information'|i18n( 'design/admin/workflow/view' )}</th>
+    <th scope="col">{'Position'|i18n( 'design/admin/workflow/view' )}</th>
+    <th scope="col">{'Description'|i18n( 'design/admin/workflow/view' )}</th>
+    <th scope="col">{'Type'|i18n( 'design/admin/workflow/view' )}</th>
+    <th scope="col">{'Additional information'|i18n( 'design/admin/workflow/view' )}</th>
 </tr>
 {section var=Events loop=$event_list sequence=array( bglight, bgdark )}
 <tr class="{$Events.sequence}">

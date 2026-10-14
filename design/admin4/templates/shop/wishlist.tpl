@@ -46,16 +46,16 @@
 
 <table class="list" cellspacing="0">
 <tr>
-    <th class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/shop/wishlist' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/shop/wishlist' )|wash}" onclick="ezjs_toggleCheckboxes( document.wishlistform, 'RemoveProductItemDeleteList[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
-    <th>{'Name'|i18n( 'design/admin/shop/wishlist')}</th>
+    <th scope="col" class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/shop/wishlist' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/shop/wishlist' )|wash}" onclick="ezjs_toggleCheckboxes( document.wishlistform, 'RemoveProductItemDeleteList[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
+    <th scope="col">{'Name'|i18n( 'design/admin/shop/wishlist')}</th>
 {*
-    <th>{'Quantity'|i18n( 'design/admin/shop/wishlist')}</th>
-    <th>{'VAT'|i18n( 'design/admin/shop/wishlist')}</th>
-    <th>{'Price (ex. VAT)'|i18n( 'design/admin/shop/wishlist')}</th>
-    <th>{'Price (inc. VAT)'|i18n( 'design/admin/shop/wishlist')}</th>
-    <th>{'Discount'|i18n( 'design/admin/shop/wishlist')}</th>
-    <th>{'Total price (ex. VAT)'|i18n( 'design/admin/shop/wishlist')}</th>
-    <th>{'Total price (inc. VAT)'|i18n( 'design/admin/shop/wishlist')}</th>
+    <th scope="col">{'Quantity'|i18n( 'design/admin/shop/wishlist')}</th>
+    <th scope="col">{'VAT'|i18n( 'design/admin/shop/wishlist')}</th>
+    <th scope="col">{'Price (ex. VAT)'|i18n( 'design/admin/shop/wishlist')}</th>
+    <th scope="col">{'Price (inc. VAT)'|i18n( 'design/admin/shop/wishlist')}</th>
+    <th scope="col">{'Discount'|i18n( 'design/admin/shop/wishlist')}</th>
+    <th scope="col">{'Total price (ex. VAT)'|i18n( 'design/admin/shop/wishlist')}</th>
+    <th scope="col">{'Total price (inc. VAT)'|i18n( 'design/admin/shop/wishlist')}</th>
 *}
 </tr>
 {section var=WishedItems loop=fetch( 'shop', 'wish_list', hash( 'production_id', $wish_list.productcollection_id, 'offset', $view_parameters.offset, 'limit', number_of_items ) ) sequence=array( bglight, bgdark )}

@@ -96,21 +96,21 @@
 <table class="a4-table is-compact">
 {if eq( $survey_show, 'problems' )}
 <tr>
-    <th>&nbsp;</th>
-    <th>{'What is wrong'|i18n( 'design/admin/setup/rad/survey' )}</th>
-    <th>{'How much'|i18n( 'design/admin/setup/rad/survey' )}</th>
-    <th>{'Which one'|i18n( 'design/admin/setup/rad/survey' )}</th>
-    <th>{'What it means'|i18n( 'design/admin/setup/rad/survey' )}</th>
-    <th>{'Where'|i18n( 'design/admin/setup/rad/survey' )}</th>
+    <th scope="col">&nbsp;</th>
+    <th scope="col">{'What is wrong'|i18n( 'design/admin/setup/rad/survey' )}</th>
+    <th scope="col">{'How much'|i18n( 'design/admin/setup/rad/survey' )}</th>
+    <th scope="col">{'Which one'|i18n( 'design/admin/setup/rad/survey' )}</th>
+    <th scope="col">{'What it means'|i18n( 'design/admin/setup/rad/survey' )}</th>
+    <th scope="col">{'Where'|i18n( 'design/admin/setup/rad/survey' )}</th>
 </tr>
 {else}
 <tr>
-    <th>&nbsp;</th>
-    <th>{'Where'|i18n( 'design/admin/setup/rad/survey' )}</th>
-    <th>{'Section'|i18n( 'design/admin/setup/rad/survey' )}</th>
-    <th>{'Setting'|i18n( 'design/admin/setup/rad/survey' )}</th>
-    <th>{'Value'|i18n( 'design/admin/setup/rad/survey' )}</th>
-    <th>{'Declared in'|i18n( 'design/admin/setup/rad/survey' )}</th>
+    <th scope="col">&nbsp;</th>
+    <th scope="col">{'Where'|i18n( 'design/admin/setup/rad/survey' )}</th>
+    <th scope="col">{'Section'|i18n( 'design/admin/setup/rad/survey' )}</th>
+    <th scope="col">{'Setting'|i18n( 'design/admin/setup/rad/survey' )}</th>
+    <th scope="col">{'Value'|i18n( 'design/admin/setup/rad/survey' )}</th>
+    <th scope="col">{'Declared in'|i18n( 'design/admin/setup/rad/survey' )}</th>
 </tr>
 {/if}
 {foreach $survey_rows as $sv_row}
