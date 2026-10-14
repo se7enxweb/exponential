@@ -71,8 +71,8 @@ extension). The editor siteaccess falls back to `admin4` first, then `admin3`, `
 
 ## Icons
 
-admin4 draws its icons with [Bootstrap Icons](https://icons.getbootstrap.com/) 1.13.1 (MIT licence). The SVG files
-are in `share/icons/bootstrap-icons/svg/`, unchanged, with the licence beside them; nothing is loaded from a CDN.
+admin4 draws its icons with [Bootstrap Icons](https://icons.getbootstrap.com/) 1.13.1 (MIT license). The SVG files
+are in `share/icons/bootstrap-icons/svg/`, unchanged, with the license beside them; nothing is loaded from a CDN.
 
 - **In templates:** `<span class="a4-icon a4-bi-pencil" aria-hidden="true"></span>`, the component `.a4-icon`
   of `components.css`. The icon is a mask in `currentColor`, 1em square, or 12, 16 or 22 px with `.is-small`,

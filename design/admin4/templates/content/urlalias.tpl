@@ -202,11 +202,11 @@
 
         {* Edit button. *}
         <td>
-            {set $img_title='Edit the contents for language %language.'|i18n( 'design/admin/content/urlalias',, hash( '%language', $language_obj.name ) )}
+            {set $img_title='Edit the contents for language %language.'|i18n( 'design/admin/content/urlalias',, hash( '%language', $language_obj.name ) )|wash}
             {if fetch( content, access, hash( access, 'edit', contentobject, $node, language, $locale ) )}
                 <a href={concat('/content/edit/', $node.contentobject_id, '/f/', $locale)|ezurl}><span class="a4-icon a4-bi-pencil is-medium" role="img" aria-label="{$img_title}" title="{$img_title}"></span></a>
             {else}
-                <span class="a4-icon a4-bi-pencil is-medium a4-muted" role="img" aria-label="{'You cannot edit the contents for language %language because you do not have permission to edit the object.'|i18n( 'design/admin/content/urlalias',, hash( '%language', $language_obj.name ) )}" title="{'You cannot edit the contents for language %language because you do not have permission to edit the object.'|i18n( 'design/admin/content/urlalias',, hash( '%language', $language_obj.name ) )}"></span>
+                <span class="a4-icon a4-bi-pencil is-medium a4-muted" role="img" aria-label="{'You cannot edit the contents for language %language because you do not have permission to edit the object.'|i18n( 'design/admin/content/urlalias',, hash( '%language', $language_obj.name ) )|wash}" title="{'You cannot edit the contents for language %language because you do not have permission to edit the object.'|i18n( 'design/admin/content/urlalias',, hash( '%language', $language_obj.name ) )|wash}"></span>
             {/if}
         </td>
     </tr>

@@ -1,11 +1,13 @@
-    <div class="navbar-icon">&#9776;</div>
+{* Admin block (explayouts). Markup copied from admin4 page_topmenu.tpl lines, keep in step with it. *}
+    {* The phone-width menu button; ezadmin_menubar.js toggles the menu, aria-expanded and the keys. *}
+    <div class="navbar-icon" role="button" tabindex="0" aria-expanded="false" aria-controls="a4-navbar-menu" aria-label="{'Menu'|i18n( 'design/admin/pagelayout' )|wash}"><span aria-hidden="true">&#9776;</span></div>
     <!-- begin::Sidebar Controls -->
         <div class="sidebar-controls">
             <button type="button" class="sidebar-control left" aria-label="{'Show or hide the left sidebar'|i18n( 'design/admin/pagelayout' )|wash}" title="{'Show or hide the left sidebar'|i18n( 'design/admin/pagelayout' )|wash}">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>
+                <span class="a4-icon a4-bi-chevron-right" aria-hidden="true"></span>
             </button>
             <button type="button" class="sidebar-control right" aria-label="{'Show or hide the right sidebar'|i18n( 'design/admin/pagelayout' )|wash}" title="{'Show or hide the right sidebar'|i18n( 'design/admin/pagelayout' )|wash}">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>
+                <span class="a4-icon a4-bi-chevron-right" aria-hidden="true"></span>
             </button>
         </div>
     <!-- end::Sidebar Controls -->

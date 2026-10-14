@@ -8,7 +8,7 @@
    Every field and button name is the one the view has always read: ContentClassHasInput, ContentClass_name,
    ContentClass_identifier, ContentClass_description, ContentClass_contentobject_name, ContentClass_url_alias_name,
    ContentClass_is_container_*, ContentClass_default_sorting_*, ContentClass_always_available*,
-   ContentAttribute_*[<id>], MoveTop_/MoveUp_/MoveDown_/MoveBottom_<id>, DataTypeString, StoreButton, ApplyButton,
+   ContentAttribute_*[<id>], MoveTop/MoveUp/MoveDown/MoveBottom=<id> (submit buttons), DataTypeString, StoreButton, ApplyButton,
    DiscardButton, NewButton, RemoveButton and RedirectIfDiscarded (Cancel goes back to the page the form was opened
    from). The attribute list keeps the markup the order script relies on (#ezcca-edit-list, tr.ezcca-edit-list-item,
    th.wide, div.listbutton). Every template variable is unchanged. This is an edit view, which admin4 draws without its

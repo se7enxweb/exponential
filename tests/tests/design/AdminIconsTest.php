@@ -67,12 +67,16 @@ class AdminIconsTest extends PHPUnit\Framework\TestCase
 
     private static function adminTemplates()
     {
+        // admin4l (the admin layouts) draws its header from its own blocks, copies of admin4's page_topmenu.tpl
         $files = array();
-        $it = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( self::root() . '/design/admin4/templates', FilesystemIterator::SKIP_DOTS ) );
-        foreach ( $it as $file )
+        foreach ( array( 'design/admin4/templates', 'design/admin4l/templates' ) as $dir )
         {
-            if ( substr( $file->getFilename(), -4 ) === '.tpl' )
-                $files[] = $file->getPathname();
+            $it = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( self::root() . "/$dir", FilesystemIterator::SKIP_DOTS ) );
+            foreach ( $it as $file )
+            {
+                if ( substr( $file->getFilename(), -4 ) === '.tpl' )
+                    $files[] = $file->getPathname();
+            }
         }
         sort( $files );
         return $files;
@@ -164,5 +168,27 @@ class AdminIconsTest extends PHPUnit\Framework\TestCase
                 $found[] = "$short: an image button (use a <button> with .a4-icon-btn)";
         }
         $this->assertSame( array(), $found );
+    }
+
+    /**
+     * admin4l's header blocks are copies of parts of admin4's page_topmenu.tpl ("keep in step"): every line of
+     * their markup is in page_topmenu.tpl, so a change of the icons or names there cannot leave admin4l behind.
+     * The tab menu block keeps a plain .navbar-menu wrapper; the zone's wrapper in admin4l's page layout is the landmark.
+     */
+    public function testAdmin4lHeaderBlocksAreInStepWithTheTopMenu()
+    {
+        $top = (string)file_get_contents( self::root() . '/design/admin4/templates/page_topmenu.tpl' );
+        foreach ( array( 'admin_logo', 'admin_search', 'admin_theme_switch', 'admin_sidebar_toggles', 'admin_tab_menu' ) as $block )
+        {
+            $lines = file( self::root() . "/design/admin4l/templates/explayouts/block/$block.tpl", FILE_IGNORE_NEW_LINES );
+            foreach ( $lines as $line )
+            {
+                if ( trim( $line ) === '' || strpos( $line, '{* Admin block (explayouts)' ) === 0 || strpos( $line, '{if is_unset( $ui_context_edit )}' ) === 0 )
+                    continue;
+                if ( $block === 'admin_tab_menu' && trim( $line ) === '<div class="navbar-menu {if $ui_context_edit}disabled{/if}">' )
+                    continue;
+                $this->assertStringContainsString( $line, $top, "design/admin4l/templates/explayouts/block/$block.tpl is not in step with page_topmenu.tpl" );
+            }
+        }
     }
 }
