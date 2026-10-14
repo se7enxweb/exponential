@@ -424,8 +424,7 @@ div.community-block-title span.first
 
 div.community-activity
 {
-    border: 1px solid;
-    border-color: var(--a4-accent-soft);
+    border: 1px solid var(--a4-line-strong);
     padding: 1em 1em;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;

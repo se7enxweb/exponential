@@ -324,7 +324,7 @@ table.list td.role-id { text-align: right; color: var(--a4-muted); white-space: 
 .package-view-full .pvf-badges { margin: 0.25em 0 0.5em; display: flex; flex-wrap: wrap; gap: 0.35em; align-items: center; }
 .package-view-full .pvf-badge { display: inline-block; padding: 0 0.5em; border: 1px solid var(--a4-line); border-radius: 3px; background: var(--a4-soft); color: var(--a4-ink); font-size: 0.85em; line-height: 1.6; white-space: nowrap; }
 .package-view-full .pvf-badge-version { font-weight: bold; }
-.package-view-full .pvf-badge-ok { background: var(--a4-accent-strong); border-color: var(--a4-accent-strong); color: var(--a4-on-accent); }
+.package-view-full .pvf-badge-ok { background: var(--a4-ok-bg); border-color: var(--a4-ok-line); color: var(--a4-ok); }
 .package-view-full .pvf-badge-muted { color: var(--a4-muted); }
 .package-view-full .pvf-badge-info { background: var(--a4-info-bg); border-color: var(--a4-info-line); color: var(--a4-info); }
 .package-view-full .pvf-date { color: var(--a4-muted); font-size: 0.9em; }

@@ -432,6 +432,11 @@ input.defaultbutton {
   border: 1px solid var(--a4-accent-strong);
   color: var(--a4-on-accent);
 }
+/* theme/rounded.css paints a focused default button teal with yellow text: keep the accent, the ring shows the focus */
+input.defaultbutton:focus {
+  background-color: var(--a4-accent-strong);
+  color: var(--a4-on-accent);
+}
 input.defaultbutton:hover {
   background-color: var(--a4-accent-press);
   border-color: var(--a4-accent-press);
