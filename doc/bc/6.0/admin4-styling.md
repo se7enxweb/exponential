@@ -132,6 +132,7 @@ number (0, 1 and -1 for order inside one component excepted). Theme-independent,
 | `--a4-z-frame-control` | 11 | the classic frame's show/hide links and width handler |
 | `--a4-z-hover-preview` | 50 | a thumbnail enlarged on hover, over sticky bars and grips |
 | `--a4-z-popover` | 60 | a pane inside the header or the control bar (search scope) |
+| `--a4-z-controlbar-top` | 60 | the sticky top control bar of the edit pages |
 | `--a4-z-scroll-top` | 100 | the back-to-top button |
 | `--a4-z-navbar` | 110 | the phone-width menu |
 | `--a4-z-sidebar` | 120 | side columns open over the page |

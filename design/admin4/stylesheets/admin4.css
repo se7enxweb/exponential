@@ -966,7 +966,7 @@ html[data-a4-theme="dark"] .a4-login-logo { background-image: url('../images/3/l
 #controlbar-top {
   position: sticky;
   top: calc(var(--header-height, 6.25rem) + 6px);
-  z-index: var(--a4-z-popover);
+  z-index: var(--a4-z-controlbar-top);
 }
 #controlbar-top .box-bc {
   background-color: var(--a4-soft);

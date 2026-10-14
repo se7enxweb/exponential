@@ -37,7 +37,14 @@ function sidebarToggle() {
     // The tabs on the window edges are named after their column ("Left column"); aria-expanded says whether it shows.
     function show(side, open) {
         $(".sidebar." + side).toggleClass("show", open);
-        $(".sidebar-control." + side).toggleClass("rotate", open).attr("aria-expanded", open ? "true" : "false");
+        const tab = $(".sidebar-control." + side).toggleClass("rotate", open);
+        // A page without that column (content edit, history ...): the tab controls nothing, so it names no target
+        // and reports no state
+        if (!document.getElementById(side === "left" ? "leftmenu" : "rightmenu")) {
+            tab.removeAttr("aria-controls").removeAttr("aria-expanded");
+            return;
+        }
+        tab.attr("aria-expanded", open ? "true" : "false");
     }
 
     function apply() {

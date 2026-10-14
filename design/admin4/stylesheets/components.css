@@ -134,6 +134,7 @@
   --a4-z-frame-control: 11;
   --a4-z-hover-preview: 50;
   --a4-z-popover: 60;
+  --a4-z-controlbar-top: 60;   /* the sticky top control bar: over the content and its hover previews */
   --a4-z-scroll-top: 100;
   --a4-z-navbar: 110;
   --a4-z-sidebar: 120;
