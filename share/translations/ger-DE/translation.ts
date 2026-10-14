@@ -14814,6 +14814,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Export parts of the content tree as feeds, import the feeds of other sites</source>
         <translation>Teile des Inhaltsbaums als Feeds exportieren, Feeds anderer Seiten importieren</translation>
     </message>
+    <message>
+        <source>Side menu</source>
+        <translation>Seitenmenü</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15211,6 +15215,26 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Site data</source>
         <translation>Site-Daten</translation>
+    </message>
+    <message>
+        <source>Content model</source>
+        <translation>Inhaltsmodell</translation>
+    </message>
+    <message>
+        <source>Site and URLs</source>
+        <translation>Website und URLs</translation>
+    </message>
+    <message>
+        <source>Users and messages</source>
+        <translation>Benutzer und Nachrichten</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>System</translation>
+    </message>
+    <message>
+        <source>More</source>
+        <translation>Weitere</translation>
     </message>
 </context>
 <context>

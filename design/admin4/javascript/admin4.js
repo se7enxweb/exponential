@@ -109,3 +109,38 @@
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
     else init();
 })();
+
+/*
+ * admin4: the groups of a long left menu (details.a4-navgroup, parts/ini_menu.tpl) keep their open or closed state
+ * per browser. A group that holds the current page (data-a4-current) opens whatever was stored. Storage that throws
+ * (private windows, blocked site data) only means the groups start as the page draws them.
+ */
+(function () {
+    'use strict';
+
+    var PREFIX = 'a4NavGroup:';
+
+    function read(key) {
+        try { return window.localStorage.getItem(PREFIX + key); } catch (e) { return null; }
+    }
+
+    function write(key, open) {
+        try { window.localStorage.setItem(PREFIX + key, open ? '1' : '0'); } catch (e) { /* not stored */ }
+    }
+
+    function init() {
+        var groups = document.querySelectorAll('details.a4-navgroup[data-a4-navgroup]');
+        Array.prototype.forEach.call(groups, function (group) {
+            var key = group.getAttribute('data-a4-navgroup');
+            if (!group.hasAttribute('data-a4-current')) {
+                var stored = read(key);
+                if (stored === '1') group.open = true;
+                else if (stored === '0') group.open = false;
+            }
+            group.addEventListener('toggle', function () { write(key, group.open); });
+        });
+    }
+
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+    else init();
+})();
