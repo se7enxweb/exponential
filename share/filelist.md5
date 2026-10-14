@@ -273,7 +273,7 @@ ac084a07607e6d6c5a845da15423854f  design/admin/images/view-fullscreen.png
 c026c4c30fa5e95415c1f6611bcce9ea  design/admin/javascript/contentstructuremenu_dynamic.js
 2208f27da9ddaa11d336d07c190cbc4b  design/admin/javascript/expajaxuploader.js
 2b984f2f31802646942901f436bf277b  design/admin/javascript/ezajaxrelations_jquery.js
-79443a40bcbb3de253d265764e89767a  design/admin/javascript/ezajaxsubitems_expdatatable.js
+563718ba8e0479fd6defd99313ac4ac8  design/admin/javascript/ezajaxsubitems_expdatatable.js
 2c35ad74f3ae96723bd750231c27cbe4  design/admin/javascript/leftmenu_widthcontrol.js
 d03d761498ffa705d43d836836910ad2  design/admin/javascript/node_tabs.js
 79cb3cf1ed288abafeea53964d7a6d14  design/admin/javascript/popupmenu/ezpopupmenu.js
@@ -319,7 +319,7 @@ ecbe9b40c9b469223e7363ba6f46f76f  design/admin/stylesheets/modules/structure.css
 6c50ca081feaacea35d0ba88f81f92a0  design/admin/stylesheets/packagecompare.css
 c88a47e792d2074b8f41a4b176ac9812  design/admin/stylesheets/pagelayout.css
 d5a3589152af07aa3d6cb3f0b025bec6  design/admin/stylesheets/setup-extensions.css
-245e1a328067085da235258aef9db2a8  design/admin/stylesheets/theme/admin_datatable.css
+81cb750821a5d00e8658e709b21113b5  design/admin/stylesheets/theme/admin_datatable.css
 80e40d820b12263064128a75be2de07b  design/admin/stylesheets/theme/modalwindow.css
 0db1844ab2952f8bf22c404c41866264  design/admin/stylesheets/theme/rounded.css
 4c5d17d9e5889a0f8907ad075f34c3d9  design/admin/stylesheets/visual-templateview.css
@@ -340,7 +340,7 @@ c7eb697cccc88a7038703f8fcc862659  design/admin/templates/audit/reauth.tpl
 285f50ecd0189915430a72868d737398  design/admin/templates/audit/settings.tpl
 6ad3a8724d541edaf79af7df5927ab5a  design/admin/templates/audit/sources.tpl
 001ec42ede673f1e5de54c82bcdd9d6f  design/admin/templates/children.tpl
-db53c988fab8b3d6cda341110af8871b  design/admin/templates/children_detailed.tpl
+b6dcfc3be82b876c4e8d71c080219715  design/admin/templates/children_detailed.tpl
 e43630d07c69d19c6b4301797c3a915e  design/admin/templates/class/classlist.tpl
 51fd6b1a1612e389ee44ce3d6cbe83d1  design/admin/templates/class/copy_confirm.tpl
 2f32def3d98933143182da37d73213f4  design/admin/templates/class/datatype/browse_objectrelation_placement.tpl
@@ -884,7 +884,7 @@ c026c4c30fa5e95415c1f6611bcce9ea  design/admin4/javascript/contentstructuremenu_
 2208f27da9ddaa11d336d07c190cbc4b  design/admin4/javascript/expajaxuploader.js
 c3b4efd501310e51f2088b46936df4ec  design/admin4/javascript/ezadmin_menubar.js
 2b984f2f31802646942901f436bf277b  design/admin4/javascript/ezajaxrelations_jquery.js
-79443a40bcbb3de253d265764e89767a  design/admin4/javascript/ezajaxsubitems_expdatatable.js
+563718ba8e0479fd6defd99313ac4ac8  design/admin4/javascript/ezajaxsubitems_expdatatable.js
 2c35ad74f3ae96723bd750231c27cbe4  design/admin4/javascript/leftmenu_widthcontrol.js
 d03d761498ffa705d43d836836910ad2  design/admin4/javascript/node_tabs.js
 79cb3cf1ed288abafeea53964d7a6d14  design/admin4/javascript/popupmenu/ezpopupmenu.js
@@ -933,7 +933,7 @@ ecbe9b40c9b469223e7363ba6f46f76f  design/admin4/stylesheets/modules/structure.cs
 c175e9c5497228914c28ffd0a3df36d1  design/admin4/stylesheets/pagelayout.css
 5d3b68fdb809c73a6d8dc464e33c61ec  design/admin4/stylesheets/responsive.css
 549af6d9b3305adf87ad66768f35ac49  design/admin4/stylesheets/setup-extensions.css
-23b2ee1d47d6c56efd287e0db76f004e  design/admin4/stylesheets/theme/admin_datatable.css
+fb1255a735515495751a258c01088850  design/admin4/stylesheets/theme/admin_datatable.css
 67e9624cf4649eed019f088ca0450d3a  design/admin4/stylesheets/theme/modalwindow.css
 c0fa542a9e828d78185e0ff9a8e49708  design/admin4/stylesheets/theme/rounded.css
 144488adea9c836a1ee758932065de9c  design/admin4/stylesheets/visual-templateview.css
@@ -943,7 +943,7 @@ f5c677b2579053f3f5a23f2a3dd3b87d  design/admin4/templates/ajaxuploader/preview.t
 e002d70967d5f151cca6861170e9584f  design/admin4/templates/ajaxuploader/upload.tpl
 8adc5669d6fb59e72daa7a79d8f96493  design/admin4/templates/audit/recent.tpl
 001ec42ede673f1e5de54c82bcdd9d6f  design/admin4/templates/children.tpl
-db53c988fab8b3d6cda341110af8871b  design/admin4/templates/children_detailed.tpl
+b6dcfc3be82b876c4e8d71c080219715  design/admin4/templates/children_detailed.tpl
 e43630d07c69d19c6b4301797c3a915e  design/admin4/templates/class/classlist.tpl
 51fd6b1a1612e389ee44ce3d6cbe83d1  design/admin4/templates/class/copy_confirm.tpl
 2f32def3d98933143182da37d73213f4  design/admin4/templates/class/datatype/browse_objectrelation_placement.tpl
@@ -6870,14 +6870,14 @@ dd5f5f3cf2348a6cc17bd0ee76983225  share/translations/dut-NL/translation.ts
 284321a9de29bf9268c27abb13f56f2c  share/translations/ell-GR/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-AU/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-NZ/translation.ts
-cbffe11e93fdd529ce6cf5100e8d084e  share/translations/eng-US/translation.ts
+32eddfb97e0f676cc5071ae218e8e57c  share/translations/eng-US/translation.ts
 5f0920d5b4e8bbaff2a4a6d5b3995c90  share/translations/esl-ES/translation.ts
 27846e3f6408cd74f58cef8adcbab573  share/translations/esl-MX/translation.ts
 4b104d4d337601b4bc6ae0482e6478ea  share/translations/fin-FI/translation.ts
 edfd3efb7eca1e2bd6d6d7d08bd78a77  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-3e65869c3188604296231915bcba544a  share/translations/ger-DE/translation.ts
+c3286661dce57cf640b3ef5df023006a  share/translations/ger-DE/translation.ts
 75d657fed5de11db9e059cdcff2046a8  share/translations/ita-IT/translation.ts
 a45e2d26b1c24ac4cb6ae1d7197e5b0e  share/translations/jpn-JP/translation.ts
 d1dc34034ddce2d64c4f8df7fcc41c85  share/translations/nno-NO/translation.ts

@@ -684,6 +684,7 @@ span.admin-pg-first,span.admin-pg-previous,span.admin-pg-next,span.admin-pg-last
     background-image: url('../../images/2/icon-up-16x16.png');
 }
 
+#ezopt-menu-addlocation,
 #ezopt-menu-list {
     background-image: url('../../images/2/icon-sitemap-16x16.png');
 }
@@ -701,6 +702,7 @@ span.admin-pg-first,span.admin-pg-previous,span.admin-pg-next,span.admin-pg-last
 #ezopt-menu-copy-subtree,
 #ezopt-menu-multiupload,
 #ezopt-menu-multiedit,
+#ezopt-menu-addlocation,
 #ezopt-menu-list {
     background-repeat: no-repeat;
     background-position: 5% 50%;

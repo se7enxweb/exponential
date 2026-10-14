@@ -9228,8 +9228,8 @@
         <translation>Yes</translation>
     </message>
     <message>
-        <source>Add a location for selected</source>
-        <translation>Add a location for selected</translation>
+        <source>Add a location</source>
+        <translation>Add a location</translation>
     </message>
     <message>
         <source>Class menu</source>

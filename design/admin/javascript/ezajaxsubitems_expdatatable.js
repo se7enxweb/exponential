@@ -444,7 +444,7 @@ var eZAjaxSubitemsExpDataTable = (function () {
                           { id: 'ezopt-menu-hide', label: A.more_actions_hs, value: 3 },
                           { id: 'ezopt-menu-unhide', label: A.more_actions_us, value: 4 },
                           { id: 'ezopt-menu-multiedit', label: A.more_actions_me, value: 5 },
-                          { id: 'ezopt-menu-addlocation', label: A.more_actions_al || 'Add a location for selected', value: 6 }
+                          { id: 'ezopt-menu-addlocation', label: A.more_actions_al || 'Add a location', value: 6 }
                       ];
                   },
                   onSelect: function (item) {

@@ -11442,8 +11442,8 @@
         <translation>Details des Hauptknotens: Knoten-ID, Tiefe und Pfad, Anzahl der Unterelemente und Zeitpunkt der letzten Änderung darunter.</translation>
     </message>
     <message>
-        <source>Add a location for selected</source>
-        <translation>Position für die Auswahl hinzufügen</translation>
+        <source>Add a location</source>
+        <translation>Position hinzufügen</translation>
     </message>
     <message>
         <source>Class menu</source>
