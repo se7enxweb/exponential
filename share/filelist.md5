@@ -2991,7 +2991,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-b6dc04193c009324d5faf8a09a5a2e9a  doc/changelogs/6.0/6.0.15.md
+f916d09226890120b3eba9a295a7b8ad  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -5156,12 +5156,12 @@ b8c2fd803be545423c0029be897f12ca  kernel/classes/notification/handler/ezcollabor
 73d71015e39a0202b99ee869ed0a89e7  kernel/classes/notification/handler/ezsubtree/ezsubtreenotificationrule.php
 b6e0eb67e9d64bc90af7f845e8208208  kernel/classes/packagecreators/ezcontentclass/ezcontentclasspackagecreator.php
 26721b53e623366b4253430908db5bee  kernel/classes/packagecreators/ezcontentobject/ezcontentobjectpackagecreator.php
-2938d4d1e4ede03102e9f882e085f69c  kernel/classes/packagecreators/ezextension/ezextensionpackagecreator.php
+97f17b669353faa770b8035e0e938fae  kernel/classes/packagecreators/ezextension/ezextensionpackagecreator.php
 465042c1b2063952766489798dc5d675  kernel/classes/packagecreators/ezstyle/ezstylepackagecreator.php
 345e8a3f3a19b13d6aeefc0bea5193ff  kernel/classes/packagehandlers/ezcontentclass/ezcontentclasspackagehandler.php
 7f52b8ed6e4c0bca419915f16389ccd9  kernel/classes/packagehandlers/ezcontentobject/ezcontentobjectpackagehandler.php
 43fdcc2147331027b2804b9923b768b9  kernel/classes/packagehandlers/ezdb/ezdbpackagehandler.php
-bb847c6b323cb36b89a1a3f9ef786c5c  kernel/classes/packagehandlers/ezextension/ezextensionpackagehandler.php
+239522fa829c80da86a4551915f07dbe  kernel/classes/packagehandlers/ezextension/ezextensionpackagehandler.php
 67c3fad221510ea847e17b6b6bc0ab07  kernel/classes/packagehandlers/ezfile/ezfilepackagehandler.php
 9f2c7f09bb3b812d8325b397d1ca7701  kernel/classes/packagehandlers/eziniaddon/eziniaddonpackagehandler.php
 9293334bc191a66cd75a0f72469ac6ef  kernel/classes/packagehandlers/ezinstallscript/ezinstallscriptpackagehandler.php
@@ -5669,7 +5669,7 @@ bf82eace829ec23edc7f19730aaa013a  kernel/private/classes/views/notification/runf
 fe427288af444ba71c54f5bd857f788c  kernel/private/classes/views/notification/settings.php
 0b2643125c981646532c4e3f47a6342b  kernel/private/classes/views/notification/status.php
 6796715df8ddb61025d88073b83fc5fb  kernel/private/classes/views/package/compare.php
-66ff67c7e12b90f52c34f586114812b9  kernel/private/classes/views/package/create.php
+9effcf4f22882abe50aaaf009887b675  kernel/private/classes/views/package/create.php
 6c25fbf95180b1b56089d6fc1c89e0f1  kernel/private/classes/views/package/export.php
 3403eecec87dbfa2bc2f140a67fcf094  kernel/private/classes/views/package/install.php
 5f3184dd1488e66a52d6a34e92d5db80  kernel/private/classes/views/package/list.php
@@ -7614,7 +7614,7 @@ c8f42593fb63a6e7e3de2de5029d8368  tests/tests/kernel/classes/security/fixtures/e
 b26468a072e87640022ee9fe0bbb360e  tests/tests/kernel/classes/setup/EditorSiteaccessModulesTest.php
 728b364a823ae2d29c689cdff5b1c557  tests/tests/kernel/classes/setup/EditorSiteaccessTabsTest.php
 f2423dc1a4140e9f8bb33a822575aec8  tests/tests/kernel/classes/setup/ExtensionChangePlanTest.php
-800137f787a6be153cbcc0f14b304d68  tests/tests/kernel/classes/setup/ExtensionDownloadTest.php
+f685131da5e7473328353c48f29aa94d  tests/tests/kernel/classes/setup/ExtensionDownloadTest.php
 84a806754eee94940f2ff8fab608690f  tests/tests/kernel/classes/setup/KickstarterFailureReasonTest.php
 b9ab3dc75242d91d9686047634059862  tests/tests/kernel/classes/setup/KickstarterIniDefaultsTest.php
 2e4f85464804cc2fe00e7e80aa8a3a24  tests/tests/kernel/classes/setup/KickstarterOptionsTest.php
