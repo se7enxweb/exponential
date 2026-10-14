@@ -298,3 +298,12 @@
 
 .a4-content-datepicker-icon { cursor: pointer; }
 .a4-content-datepicker { display: none; position: absolute; }
+
+/* ---- edit ---- an attribute is a named group (role="group", id ezcca-attr-<id>, the summary's link target); one
+   with a validation error carries a bad edge, its message under the label, and its controls are aria-invalid */
+
+.a4-content-attr.is-invalid { border-left: 3px solid var(--a4-bad); padding-left: var(--a4-space-3); }
+.a4-content-attr-error { display: flex; gap: var(--a4-space-1); align-items: baseline; margin: var(--a4-space-1) 0 var(--a4-space-2); }
+.a4-content-attr input[aria-invalid="true"],
+.a4-content-attr select[aria-invalid="true"],
+.a4-content-attr textarea[aria-invalid="true"] { border-color: var(--a4-bad); box-shadow: inset 0 0 0 1px var(--a4-bad); }
