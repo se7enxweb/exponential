@@ -21,6 +21,7 @@
  * - No :focus or :focus-visible rule of an admin4 stylesheet sets its outline to none or 0.
  * - components.css sets the colour scheme of both themes and has forced-colors and touch rules; admin4.css stops
  *   motion for prefers-reduced-motion; no admin4 stylesheet transitions "all".
+ * - components.css and admin4.css take font sizes and spacing from the --a4-text-* and --a4-space-* scales.
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminStylingRulesTest.php
  *
@@ -454,6 +455,90 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
         $this->assertStringNotContainsString( '$(window).width()', $sidebar );
         $this->assertSame( 0, preg_match_all( '/(?<!window\.)localStorage/', $sidebar ), 'localStorage only as window.localStorage, inside try' );
         $this->assertSame( 3, substr_count( $sidebar, 'try {' ), 'reading, storing and the clean-up of the old keys each in a try block' );
+    }
+
+    /**
+     * Pixel lengths kept on purpose (stylesheet => selector => lengths): layout offsets, not spacing between elements
+     */
+    const SCALE_EXCEPTIONS = array(
+        'admin4.css' => array(
+            '.a4-login-brand' => array( '64px' ),                                // the sign-in brand panel's side inset
+            '.exp-pw-js .a4pw-input input' => array( '98px', '90px' ),          // room for the show/hide toggle
+            '.a4-dash-secure-intro' => array( '-4px' ),                         // pulls the intro under its heading
+        ),
+        'components.css' => array(
+            '.a4-pick' => array( '-6px' ),                                      // pulls the pick box into its cell's inset
+        ),
+    );
+
+    /**
+     * components.css and admin4.css set font sizes with the --a4-text-* tokens and spacing with the --a4-space-*
+     * tokens (1px, 2px and the exceptions above aside)
+     */
+    public function testFrameAndComponentsUseTheScale()
+    {
+        $problems = array();
+        foreach ( array( 'components.css', 'admin4.css' ) as $file )
+        {
+            $exceptions = isset( self::SCALE_EXCEPTIONS[$file] ) ? self::SCALE_EXCEPTIONS[$file] : array();
+            foreach ( self::declarations( file_get_contents( self::$root . "/design/admin4/stylesheets/$file" ) ) as $d )
+            {
+                list( $selector, $property, $value ) = $d;
+                if ( ( $property === 'font-size' || $property === 'font' ) && preg_match( '/\d+(\.\d+)?px/i', $value ) )
+                {
+                    $problems[] = "$file: $selector { $property: $value } -- use a --a4-text-* token";
+                }
+                if ( preg_match( '/^(margin|padding|gap|row-gap|column-gap)(-|$)/', $property ) )
+                {
+                    preg_match_all( '/(?<![\w.-])-?\d+(\.\d+)?px/i', $value, $m );
+                    foreach ( $m[0] as $length )
+                    {
+                        $length = strtolower( $length );
+                        $allowed = isset( $exceptions[$selector] ) ? $exceptions[$selector] : array();
+                        if ( !in_array( $length, array( '1px', '2px', '-1px', '-2px' ), true ) && !in_array( $length, $allowed, true ) )
+                        {
+                            $problems[] = "$file: $selector { $property: $value } -- use a --a4-space-* token";
+                        }
+                    }
+                }
+            }
+        }
+        $this->assertSame( array(), array_values( array_unique( $problems ) ) );
+    }
+
+    /**
+     * The targets made 24px (WCAG 2.5.8) stay so: the sidebar tabs, the hit areas around the tree's open/close and
+     * the search scope switch, the dialog and scope pane close buttons, the page numbers, the node view's tabs switch
+     */
+    public function testSmallControlsKeepTheirTargets()
+    {
+        $dir = self::$root . '/design/admin4/stylesheets';
+        $found = array();
+        // in the order the page loads them: admin4.css after pagelayout.css
+        foreach ( array( 'pagelayout.css', 'admin4.css' ) as $file )
+        {
+            foreach ( self::declarations( file_get_contents( "$dir/$file" ) ) as $d )
+            {
+                $found[$d[0]][$d[1]] = $d[2];
+            }
+        }
+        $this->assertStringStartsWith( '1.5rem', $found['.sidebar-control']['width'] );
+        $this->assertSame( '""', $found['div#contentstructure ul#content_tree_menu ul a.openclose-open::after, div#contentstructure ul#content_tree_menu ul a.openclose-close::after']['content'] );
+        $this->assertSame( '""', $found['#header .searchblock .searchscope::after']['content'] );
+        $this->assertSame( '24px', $found['.window-close']['width'] );
+        $this->assertSame( '24px', $found['.window-close']['height'] );
+        $this->assertSame( '24px', $found['.searchscope-pane .close']['width'] );
+        $this->assertSame( '24px', $found['.pagenavigator a']['min-width'] );
+        $this->assertSame( '24px', $found['.pagenavigator a']['min-height'] );
+        // the node view's tabs switch: a 36 x 24px control with a visible label in both templates that draw it
+        $this->assertSame( '36px', $found['.tab-block .show-hide-tabs']['width'] );
+        $this->assertSame( '24px', $found['.tab-block .show-hide-tabs']['height'] );
+        $this->assertArrayHasKey( '.a4-tabs-switch-label', $found );
+        foreach ( array( 'window_controls.tpl', 'node/top_node_full.tpl' ) as $template )
+        {
+            $this->assertStringContainsString( '<span class="a4-tabs-switch-label" aria-hidden="true">{\'Tabs\'|i18n( \'design/admin/parts/my/menu\' )}</span>',
+                file_get_contents( self::$root . "/design/admin4/templates/$template" ), $template );
+        }
     }
 
     public function testComponentsAreTheSameInAdminAndAdmin4()

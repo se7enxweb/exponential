@@ -15132,6 +15132,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Beim Browsen der Inhalte &amp;quot;Reiter&amp;quot; als Standard deaktivieren.</translation>
     </message>
     <message>
+        <source>Tabs</source>
+        <translation>Reiter</translation>
+    </message>
+    <message>
         <source>Audit trail</source>
         <translation>Audit-Protokoll</translation>
     </message>

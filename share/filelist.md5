@@ -307,7 +307,7 @@ d1f3e1ef98e8cee2e52a5446280eadc3  design/admin/override/templates/embed-inline_i
 e0c996a801b1373df9824852298b20d9  design/admin/override/templates/tiny_image.tpl
 a2c561e93ef63c93201e81acd4f32741  design/admin/override/templates/window_controls_user.tpl
 f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin/override/templates/windows_user.tpl
-66a7b4ff555b3bc5f9150cbef3ad1ea5  design/admin/stylesheets/components.css
+06ff5b3c2ba2594b92f9c400a54ec6a6  design/admin/stylesheets/components.css
 ce90ff045aa9ad5f6b74ebb4adb49d1f  design/admin/stylesheets/content.css
 9176b99cf9d39d3d3f7c8c50d1554eb5  design/admin/stylesheets/core.css
 3467a1c4602619c56bfc506613bebb91  design/admin/stylesheets/ezinfo.css
@@ -880,10 +880,10 @@ a54e5021b1c597539a60da86ef766f0c  design/admin4/images/trash-icon-16x16.gif
 bb57d7d50de510183570d8844efbd49f  design/admin4/images/up-16x16-grey.png
 bc1f590f32f5d71f9bfdf7781f2135fc  design/admin4/images/url_translator.png
 ac084a07607e6d6c5a845da15423854f  design/admin4/images/view-fullscreen.png
-99d3d5810f85a580372c354d45b81eb7  design/admin4/javascript/admin4.js
+3b95494c62eb983e8adf68c09603a2d3  design/admin4/javascript/admin4.js
 7222862dc4ee939153314b0120b9a070  design/admin4/javascript/contentstructuremenu_dynamic.js
 2208f27da9ddaa11d336d07c190cbc4b  design/admin4/javascript/expajaxuploader.js
-58642178ad0ae11aff19f8a95a0b51fa  design/admin4/javascript/ezadmin_menubar.js
+c67a52143f5fef4304a775799b6b037e  design/admin4/javascript/ezadmin_menubar.js
 2b984f2f31802646942901f436bf277b  design/admin4/javascript/ezajaxrelations_jquery.js
 def856500eb25e4c354688eaf1c1f790  design/admin4/javascript/ezajaxsubitems_expdatatable.js
 2c35ad74f3ae96723bd750231c27cbe4  design/admin4/javascript/leftmenu_widthcontrol.js
@@ -920,8 +920,8 @@ b475c3f694071288d4f3be93d6b8ca0e  design/admin4/override/templates/template_look
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
 a2c561e93ef63c93201e81acd4f32741  design/admin4/override/templates/window_controls_user.tpl
 f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin4/override/templates/windows_user.tpl
-db67a244a3defbbea7c1a207bd1a86de  design/admin4/stylesheets/admin4.css
-66a7b4ff555b3bc5f9150cbef3ad1ea5  design/admin4/stylesheets/components.css
+7d07d0bd4e3c79726b5efe16adb9ddba  design/admin4/stylesheets/admin4.css
+06ff5b3c2ba2594b92f9c400a54ec6a6  design/admin4/stylesheets/components.css
 bed542059d246f45ff28a7cfdf5cce27  design/admin4/stylesheets/content.css
 b34210463fcdf50abd3a693ade329417  design/admin4/stylesheets/core.css
 98121f13132e15fd3e1d5ec12dba92a4  design/admin4/stylesheets/ezinfo.css
@@ -931,7 +931,7 @@ e998271a3ce233d1eaa620affd77e9fa  design/admin4/stylesheets/modules/setup.css
 c64a7dfdcdffd8b45c0c58c9e0442709  design/admin4/stylesheets/modules/structure.css
 690d1039b3c065561a026ba124a60ac5  design/admin4/stylesheets/modules/workflow.css
 9abe0790c5c47ddb1e1c67dce45083a8  design/admin4/stylesheets/packagecompare.css
-440c6de1e102ba3a67e1a4d57a1cd918  design/admin4/stylesheets/pagelayout.css
+572a27913083d272ef41dfed27a7dbf1  design/admin4/stylesheets/pagelayout.css
 5d3b68fdb809c73a6d8dc464e33c61ec  design/admin4/stylesheets/responsive.css
 37282706e0e958814192a40961776a16  design/admin4/stylesheets/setup-extensions.css
 8649dc32faedc2b0f4da9c28243728dc  design/admin4/stylesheets/theme/admin_datatable.css
@@ -1078,7 +1078,7 @@ e6a3c2f8012b44d7d40ee02614debd4b  design/admin4/templates/navigator/alphabetical
 3d34d274246f1b66961361854c4f039c  design/admin4/templates/no_children.tpl
 9ac52345c797bfa78560bc949c186588  design/admin4/templates/node/removenode.tpl
 62a17f467ed685f83ab4b6205731034b  design/admin4/templates/node/removeobject.tpl
-d186080b25af9d55d4d12f3cfd23342b  design/admin4/templates/node/top_node_full.tpl
+92256623945716b2ad171ebb81951ef5  design/admin4/templates/node/top_node_full.tpl
 9b6a6da1d561ef9b024cd484be48d20b  design/admin4/templates/node/view/a4_full_body.tpl
 ea465bb76b53128ff5a195583ce942a2  design/admin4/templates/node/view/admin_preview.tpl
 dc142438409e90d072cf19d700673a82  design/admin4/templates/node/view/ajaxuploader_preview.tpl
@@ -1138,7 +1138,7 @@ cb128a4645e891cd796919aad3ed36d1  design/admin4/templates/page_header.tpl
 9f4f8bdbbdfbfd8c6d873c03eded7ef6  design/admin4/templates/page_menuheadgray.tpl
 4306b7f17fbb890306fdc57c9be45664  design/admin4/templates/page_menuheadselected.tpl
 68ef800e886d8f0bbe4c2216f50e0c18  design/admin4/templates/page_search.tpl
-066af5a6371d38caf53ad8cb87fce541  design/admin4/templates/page_topmenu.tpl
+a291e9a43ebed1f8408f519414229131  design/admin4/templates/page_topmenu.tpl
 8aac725b06b7358a617c2fd0ff29ae91  design/admin4/templates/page_topmenuitem.tpl
 b275f22fc9da2dc299a252666573db48  design/admin4/templates/page_toppath.tpl
 bef93147921ebe304b212a1ad706b1ed  design/admin4/templates/pagelayout.tpl
@@ -1306,7 +1306,7 @@ c665b114c92eb6b279cddab770a1cd52  design/admin4/templates/visual/templateedit_er
 33e4c23d831c66c1744cec343c7052a2  design/admin4/templates/visual/templateview_buttons.tpl
 d0df5089b695eb21a5d5e30ec96bd2b0  design/admin4/templates/visual/toolbar.tpl
 d190f4681a00dda7ab660a83f478cfad  design/admin4/templates/visual/toolbarlist.tpl
-48478e9f7704e610cf5c8f4fdb749820  design/admin4/templates/window_controls.tpl
+1da54f9195f48abcddeb765ef469cfe6  design/admin4/templates/window_controls.tpl
 aba9d45cd7a9ac859372e310bb43be04  design/admin4/templates/window_controls_extratabs.tpl
 b4481aa8c6dd7b66accd2fea3c4480ba  design/admin4/templates/windows.tpl
 6de7723b1c0bc39a3383cffd028dfd0e  design/admin4/templates/windows_extratabs.tpl
@@ -1338,7 +1338,7 @@ d32ea5c9ac61787a910308fd75511a3c  design/admin4l/templates/explayouts/block/admi
 1ce022d4013937ab4586061da042f429  design/admin4l/templates/explayouts/block/admin_preferences.tpl
 862cd1fb08e0588fe1d40dcbb29368bf  design/admin4l/templates/explayouts/block/admin_quick_settings.tpl
 6c12d08656249f22bee4de00a350b59f  design/admin4l/templates/explayouts/block/admin_search.tpl
-c8803d3f7052ed6dcc611c9bd6718573  design/admin4l/templates/explayouts/block/admin_sidebar_toggles.tpl
+14f23f370042cca8963effbadd9e3221  design/admin4l/templates/explayouts/block/admin_sidebar_toggles.tpl
 0c111d883220c9b7d32e8ea115cb3e00  design/admin4l/templates/explayouts/block/admin_tab_menu.tpl
 599e6d06891c5aabdc81c95c7ee99695  design/admin4l/templates/explayouts/block/admin_theme_switch.tpl
 2e5fe730e7c2fc181a36bd6177005270  design/admin4l/templates/pagelayout.tpl
@@ -2756,7 +2756,7 @@ cdbe0fdc9c9011438bf808f4842b0982  doc/bc/5.90/relation_indexing.md
 94f95a803fffdb657972e1a81769e82f  doc/bc/6.0/LAYOUTS.md
 d386923e32f7abc18de9e5392795bb5f  doc/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md
 d95203ddf57747c5dcb15b6923bd0356  doc/bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXPANSION_HIDE_UNHIDE.md
-76e9f9dc1fa871b2e28eb151335afec9  doc/bc/6.0/admin4-styling.md
+7de00f379619c82e7bb62b7e19812193  doc/bc/6.0/admin4-styling.md
 b8b0564ea1db716863a85739a1f4c06d  doc/bc/6.0/admin4l.md
 f0b57cd68a5b41cc14ca22727186740c  doc/bc/6.0/api-keys.md
 c9f20a03afc08795fea37b7b66458194  doc/bc/6.0/audit.md
@@ -2985,7 +2985,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-4d99c6559b86393225e335ab72aa2587  doc/changelogs/6.0/6.0.15.md
+7e82655aee75b0c2c69aedb322463563  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -6973,14 +6973,14 @@ dd5f5f3cf2348a6cc17bd0ee76983225  share/translations/dut-NL/translation.ts
 284321a9de29bf9268c27abb13f56f2c  share/translations/ell-GR/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-AU/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-NZ/translation.ts
-13dc501ca00e52a7b86d6d37d7dc1066  share/translations/eng-US/translation.ts
+cb2e424c2166d55cfdf042cfbb5788a3  share/translations/eng-US/translation.ts
 5f0920d5b4e8bbaff2a4a6d5b3995c90  share/translations/esl-ES/translation.ts
 27846e3f6408cd74f58cef8adcbab573  share/translations/esl-MX/translation.ts
 4b104d4d337601b4bc6ae0482e6478ea  share/translations/fin-FI/translation.ts
 edfd3efb7eca1e2bd6d6d7d08bd78a77  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-fe801b1269b3044097600f812a80fc2e  share/translations/ger-DE/translation.ts
+1cafd937de7bd0679ffeea7c50884012  share/translations/ger-DE/translation.ts
 75d657fed5de11db9e059cdcff2046a8  share/translations/ita-IT/translation.ts
 a45e2d26b1c24ac4cb6ae1d7197e5b0e  share/translations/jpn-JP/translation.ts
 d1dc34034ddce2d64c4f8df7fcc41c85  share/translations/nno-NO/translation.ts
@@ -6993,7 +6993,7 @@ e33e059c205f7c0a49e112ce9ba6147d  share/translations/ser-SR/translation.ts
 e9e308757570f0321486d498fc993d17  share/translations/srp-RS/translation.ts
 718ecc8ecbbe8ebec7a88fb2697f401f  share/translations/swe-SE/translation.ts
 0b1b76b5ad6b2f923afd6fd9a9937a8b  share/translations/untranslated/readme.txt
-1a575938b919eb78423ec8027a9e611e  share/translations/untranslated/translation.ts
+f1bf7f14a798968d664f5693d36c35c6  share/translations/untranslated/translation.ts
 bae9ff85781e52af001213bdb213a013  shippable.yml
 414f4d1129273ab3dea38b878d554eae  soap.php
 3b6d156f31df70e093aa1a6d8a525cd3  support/ezlupdate-qt4.5/README.txt
@@ -7063,7 +7063,7 @@ a279dc1d15cd330c560350bc794414f7  tests/tests/design/AdminKeyboardTest.php
 9ed50c6ea1ca5a3e20c6fd627db22df8  tests/tests/design/AdminLandmarksTest.php
 9f43685c7f932f561d262a824761406b  tests/tests/design/AdminLanguageBadgeTest.php
 7e8957a9c15916135defa02bc8301d00  tests/tests/design/AdminRetiredClassesTest.php
-d497e67ecdbbe8f601fe2564036be85f  tests/tests/design/AdminStylingRulesTest.php
+8cd3f974d0019ce4a2da1c992278ebaf  tests/tests/design/AdminStylingRulesTest.php
 b4e73f450135790483f6fe7f730a7b0a  tests/tests/design/AdminTokenContrastTest.php
 2030d8fe56137d68a08dcea564c7b352  tests/tests/design/AdminTreeViewTest.php
 dcc45e4631fc358b0384c51d17ff8d67  tests/tests/extension/bccie/ezBccieTest.php
