@@ -74,6 +74,46 @@ class AdminLanguageBadgeTest extends PHPUnit\Framework\TestCase
         $this->assertGreaterThanOrEqual( 20, $uses );
     }
 
+    /**
+     * An include sees the variables of the template that includes it, so an optional parameter that is not passed
+     * reads the caller's variable of the same name: $class is the eZContentClass in class/view.tpl and class/edit.tpl,
+     * and {$class|wash} on it is a fatal error. The optional parameters therefore carry the prefix badge_.
+     */
+    public function testTheOptionalParametersCannotReadACallersVariable()
+    {
+        $source = (string)file_get_contents( self::root() . '/' . self::INCLUDE_FILE );
+        $code = (string)preg_replace( '/\{\*.*?\*\}/s', '', $source );
+        preg_match_all( '/\$([a-z_0-9]+)/', $code, $matches );
+        $read = array_values( array_unique( $matches[1] ) );
+        foreach ( $read as $name )
+        {
+            $this->assertMatchesRegularExpression( '/^(locale|badge_[a-z]+|a4_lang_[a-z_]+)$/', $name,
+                                                   "The include reads \$$name, which a caller may have set for itself" );
+        }
+        foreach ( array( 'badge_name', 'badge_named', 'badge_plain', 'badge_class' ) as $name )
+            $this->assertContains( $name, $read );
+    }
+
+    public function testEveryIncludePassesOnlyKnownParameters()
+    {
+        $known = array( 'uri', 'locale', 'badge_name', 'badge_named', 'badge_plain', 'badge_class' );
+        $includes = 0;
+        foreach ( self::admin4Files() as $file )
+        {
+            if ( substr( $file, -3 ) !== 'tpl' )
+                continue;
+            preg_match_all( "/\{include\s+uri='design:parts\/language_badge\.tpl'[^}]*\}/", (string)file_get_contents( $file ), $matches );
+            foreach ( $matches[0] as $include )
+            {
+                ++$includes;
+                preg_match_all( '/\s([a-z_]+)=/', $include, $names );
+                $this->assertSame( array(), array_values( array_diff( $names[1], $known ) ), basename( $file ) . ": $include" );
+                $this->assertStringContainsString( ' locale=', $include, basename( $file ) . ": $include" );
+            }
+        }
+        $this->assertGreaterThanOrEqual( 20, $includes );
+    }
+
     public function testTheSubItemsColumnEscapesAndNamesItsBadges()
     {
         $script = (string)file_get_contents( self::root() . '/design/admin4/javascript/ezajaxsubitems_expdatatable.js' );
@@ -81,7 +121,7 @@ class AdminLanguageBadgeTest extends PHPUnit\Framework\TestCase
         $this->assertMatchesRegularExpression( '/class="a4-lang"[^;]*aria-label=/', $script );
         $template = (string)file_get_contents( self::root() . '/design/admin4/templates/children_detailed.tpl' );
         $this->assertStringContainsString( 'languageBadges: languageBadges', $template );
-        $this->assertStringContainsString( "design:parts/language_badge.tpl' locale=\$locale.locale_code plain=true()", $template );
+        $this->assertStringContainsString( "design:parts/language_badge.tpl' locale=\$locale.locale_code badge_plain=true()", $template );
     }
 
     public function testTheComponentIsInBothCopiesOfTheComponentsStylesheet()

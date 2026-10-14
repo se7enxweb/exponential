@@ -84,7 +84,7 @@
                                                 <input type="radio" name="SelectedLanguage" value="{$locale_code}"
                                                     {if eq( $locale_code, $object_languagecode )}checked="checked" {/if} />
                                                 {if $locale_object.is_valid}
-                                                    {include uri='design:parts/language_badge.tpl' locale=$locale_code named=true()}
+                                                    {include uri='design:parts/language_badge.tpl' locale=$locale_code badge_named=true()}
                                                     {$locale_object.intl_language_name|shorten( 16 )}
                                                 {else}
                                                     {'%1 (No locale information available)'|i18n( 'design/admin/content/view/versionview',, array( $locale_code ) )}
@@ -96,7 +96,7 @@
                                             value="{$version.language_list[0].language_code}" checked="checked"
                                             disabled="disabled" />
                                         {if $version.language_list[0].locale.is_valid}
-                                            {include uri='design:parts/language_badge.tpl' locale=$version.language_list[0].language_code named=true()}
+                                            {include uri='design:parts/language_badge.tpl' locale=$version.language_list[0].language_code badge_named=true()}
                                             {$version.language_list[0].locale.intl_language_name|shorten( 16 )}
                                         {else}
                                             {'%1 (No locale information available)'|i18n( 'design/admin/content/view/versionview',, array( $version.language_list[0].language_code ) )}
@@ -220,7 +220,7 @@
                             <div class="context-information">
                                 <p class="left modified">&nbsp;</p>
                                 <p class="right translation">
-                                    {$object_languagecode|locale().intl_language_name|wash} {include uri='design:parts/language_badge.tpl' locale=$object_languagecode named=true()}
+                                    {$object_languagecode|locale().intl_language_name|wash} {include uri='design:parts/language_badge.tpl' locale=$object_languagecode badge_named=true()}
                                 </p>
                                 <p class="center full-screen">
                                     <a href={concat("content/versionview/",$object.id,"/",$view_version.version,"/",$language, "/site_access/", $siteaccess, $view_mode_uri)|ezurl}

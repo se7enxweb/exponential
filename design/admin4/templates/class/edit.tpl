@@ -72,7 +72,7 @@
 <div class="a4-toolbar">
     {def $locale = fetch( 'content', 'locale', hash( 'locale_code', $language_code ) )}
     <p class="a4-meta">{'Last modified'|i18n( 'design/admin/class/edit' )}: {$class.modified|l10n( shortdatetime )}{if $class.modifier.contentobject}, {$class.modifier.contentobject.name|wash}{/if}
-        &middot; {include uri='design:parts/language_badge.tpl' locale=$language_code named=true()} {$locale.intl_language_name|wash}</p>
+        &middot; {include uri='design:parts/language_badge.tpl' locale=$language_code badge_named=true()} {$locale.intl_language_name|wash}</p>
     {undef $locale}
     <p class="a4-meta">{'Nothing changes for the objects of this class until you press OK. Cancel throws the draft away.'|i18n( 'design/admin/class/edit' )}</p>
 </div>

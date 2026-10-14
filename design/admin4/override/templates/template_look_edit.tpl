@@ -45,7 +45,7 @@
 {if $is_translating_content}
 
     {let from_language_object=$object.languages[$from_language]}
-    {set-block variable=a4_from_badge}{include uri='design:parts/language_badge.tpl' locale=$from_language_object.locale named=true()}{/set-block}{set-block variable=a4_to_badge}{include uri='design:parts/language_badge.tpl' locale=$translation_list[$language_index].language_code named=true()}{/set-block}
+    {set-block variable=a4_from_badge}{include uri='design:parts/language_badge.tpl' locale=$from_language_object.locale badge_named=true()}{/set-block}{set-block variable=a4_to_badge}{include uri='design:parts/language_badge.tpl' locale=$translation_list[$language_index].language_code badge_named=true()}{/set-block}
 
     {'Translating content from %from_lang to %to_lang'|i18n( 'design/admin/content/edit',, hash(
         '%from_lang', concat( $from_language_object.name|wash, '&nbsp;', $a4_from_badge ),
@@ -55,7 +55,7 @@
 
 {else}
 
-    {$translation_list[$language_index].locale.intl_language_name|wash}&nbsp;{include uri='design:parts/language_badge.tpl' locale=$translation_list[$language_index].language_code named=true()}
+    {$translation_list[$language_index].locale.intl_language_name|wash}&nbsp;{include uri='design:parts/language_badge.tpl' locale=$translation_list[$language_index].language_code badge_named=true()}
 
 {/if}
 

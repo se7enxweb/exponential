@@ -56,7 +56,7 @@
     <td>
         {section var=Languages loop=$Drafts.item.language_list}
             {delimiter}<br />{/delimiter}
-            {include uri='design:parts/language_badge.tpl' locale=$Languages.item.language_code named=true()}&nbsp;<a href={concat('/content/versionview/', $object.id, '/', $Drafts.item.version, '/', $Languages.item.language_code, '/' )|ezurl} title="{'View the contents of version #%version_number. Translation: %translation.'|i18n( 'design/admin/content/edit_draft',, hash( '%translation', $Languages.item.locale.intl_language_name, '%version_number', $Drafts.item.version ) )}" >{$Languages.item.locale.intl_language_name}</a>
+            {include uri='design:parts/language_badge.tpl' locale=$Languages.item.language_code badge_named=true()}&nbsp;<a href={concat('/content/versionview/', $object.id, '/', $Drafts.item.version, '/', $Languages.item.language_code, '/' )|ezurl} title="{'View the contents of version #%version_number. Translation: %translation.'|i18n( 'design/admin/content/edit_draft',, hash( '%translation', $Languages.item.locale.intl_language_name, '%version_number', $Drafts.item.version ) )}" >{$Languages.item.locale.intl_language_name}</a>
         {/section}
     </td>
 
