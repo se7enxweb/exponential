@@ -114,6 +114,12 @@ class expDebugReportNoInlineCssTest extends PHPUnit\Framework\TestCase
         $this->assertMatchesRegularExpression( '#<link rel="stylesheet" type="text/css" href="[^"]*/design/standard/stylesheets/expdebugbar\.css">#', $html );
         $this->assertMatchesRegularExpression( '#<script src="[^"]*/design/standard/javascript/expdebugbar\.js" defer></script>#', $html );
         $this->assertLessThan( strpos( $html, '<div id="debug"' ), strpos( $html, 'expdebugbar.css' ), 'the stylesheet comes before the bar' );
+        // debug.css (linked when the design does not load it) before expdebugbar.css: the bar's rules of the same
+        // weight must win over the classic white rows
+        $this->debug->UseCSS = false;
+        $html = $this->render( true, true );
+        $this->assertSame( 1, substr_count( $html, 'stylesheets/debug.css' ) );
+        $this->assertLessThan( strpos( $html, 'stylesheets/expdebugbar.css' ), strpos( $html, 'stylesheets/debug.css' ), 'debug.css before expdebugbar.css' );
         $this->assertFiguresAndHeadingsByClass( $html );
     }
 

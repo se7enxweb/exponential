@@ -335,7 +335,11 @@ class expDebugBarReport
         );
 
         // --- the bar. Its stylesheet comes first, so the browser has the rules before it draws the bar (a stylesheet
-        // in the body holds back the rendering of what follows it); the report carries no inline CSS.
+        // in the body holds back the rendering of what follows it); the report carries no inline CSS. debug.css (the
+        // classic table rules, when the design does not load it) comes before it, so the bar's rules of the same
+        // weight win over its white rows.
+        if ( !$debug->UseCSS )
+            echo self::includeTag( 'css', 'design/standard/stylesheets/debug.css' );
         echo self::includeTag( 'css', 'design/standard/stylesheets/expdebugbar.css' );
         echo '<div id="debug" class="exp-debug" data-exp-debug-bar="2">';
         echo '<h2><a href="#debug-end" aria-controls="debug-details" aria-expanded="false">Exp Debug' . htmlspecialchars( $byUser . $byIP, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '</a>';
@@ -346,12 +350,6 @@ class expDebugBarReport
         echo '<div id="debug-details" role="region" aria-label="' . self::h( 'Debug report' ) . '"'
            . ' data-exp-debug-panel-height="' . self::savedPanelHeight( $userInfo['logged_in'] ) . '"'
            . ' data-exp-debug-panel-store="' . ( $userInfo['logged_in'] ? 'preference' : 'browser' ) . '">';
-
-        if ( !$debug->UseCSS )
-        {
-            $wwwDir = eZSys::wwwDir();
-            echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"$wwwDir/design/standard/stylesheets/debug.css\">\n";
-        }
 
         echo '<div class="exp-debug-toolbar">';
         echo '<div class="exp-debug-tabs" role="tablist" aria-label="' . self::h( 'Debug report sections' ) . '">';
