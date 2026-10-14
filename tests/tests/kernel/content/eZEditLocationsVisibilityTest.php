@@ -72,7 +72,10 @@ class eZEditLocationsVisibilityTest extends PHPUnit\Framework\TestCase
     private static function selectBlock( $design )
     {
         $source = file_get_contents( "design/$design/templates/content/edit_locations.tpl" );
-        $start = strpos( $source, '<select {if $location_ui_enabled|not}disabled="disabled" {/if}name="FutureNodeHiddenState_' );
+        // the select may carry other attributes (admin4 names it by its column, aria-labelledby) before these
+        $name = strpos( $source, '{if $location_ui_enabled|not}disabled="disabled" {/if}name="FutureNodeHiddenState_' );
+        self::assertNotFalse( $name, "$design: the visibility select is in the template" );
+        $start = strrpos( substr( $source, 0, $name ), '<select ' );
         self::assertNotFalse( $start, "$design: the visibility select is in the template" );
         $end = strpos( $source, '</select>', $start );
         return substr( $source, $start, $end + strlen( '</select>' ) - $start );
@@ -148,9 +151,11 @@ class eZEditLocationsVisibilityTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'unchanged' ), $result[21]['selected'] );
     }
 
-    /** EL-05 */
+    /** EL-05: the same select in both designs; admin4 also names it by its column header (aria-labelledby) */
     public function testBothDesignsHaveTheSameSelect()
     {
-        $this->assertSame( self::selectBlock( 'admin' ), self::selectBlock( 'admin4' ) );
+        $admin4 = self::selectBlock( 'admin4' );
+        $this->assertStringContainsString( '<select aria-labelledby="edit-locations-future-visibility" ', $admin4 );
+        $this->assertSame( self::selectBlock( 'admin' ), str_replace( 'aria-labelledby="edit-locations-future-visibility" ', '', $admin4 ) );
     }
 }
