@@ -18,6 +18,7 @@
  *   no colour literal outside a custom property's own definition, so every colour has its dark value. The other
  *   base stylesheets inherited from admin3 (pagelayout, core, content, theme/*) are overridden through tokens in
  *   admin4.css and are not checked yet.
+ * - No :focus or :focus-visible rule of an admin4 stylesheet sets its outline to none or 0.
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminStylingRulesTest.php
  *
@@ -316,6 +317,34 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
             }
         }
         $this->assertSame( array(), array_values( array_unique( $problems ) ) );
+    }
+
+    /**
+     * A :focus or :focus-visible rule of admin4 that takes the outline away leaves nothing in forced-colors mode,
+     * where box-shadow rings are not drawn: it keeps an outline (a transparent one is enough, forced colors paint it)
+     */
+    public function testNoFocusRuleRemovesTheOutline()
+    {
+        $problems = array();
+        $files = array_merge(
+            glob( self::$root . '/design/admin4/stylesheets/*.css' ),
+            glob( self::$root . '/design/admin4/stylesheets/*/*.css' )
+        );
+        $this->assertNotEmpty( $files );
+        foreach ( $files as $file )
+        {
+            $name = substr( $file, strlen( self::$root ) + 1 );
+            foreach ( self::declarations( file_get_contents( $file ) ) as $d )
+            {
+                list( $selector, $property, $value ) = $d;
+                if ( strpos( $selector, ':focus' ) !== false && in_array( $property, array( 'outline', 'outline-style', 'outline-width' ), true )
+                     && preg_match( '/^(none|0|0px)(\s*!important)?$/i', trim( $value ) ) )
+                {
+                    $problems[] = "$name: $selector { $property: $value }";
+                }
+            }
+        }
+        $this->assertSame( array(), $problems, 'focus rules without an outline; keep one (outline: 2px solid transparent next to a box-shadow ring)' );
     }
 
     public function testComponentsAreTheSameInAdminAndAdmin4()
