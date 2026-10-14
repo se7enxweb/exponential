@@ -4,7 +4,7 @@
      $object_create_languages = $object.can_create_languages
      $can_edit                = true()}
 
-<div id="leftmenu" class="sidebar left">
+<div id="leftmenu" class="sidebar left" role="complementary" aria-label="{'Side column'|i18n( 'design/admin/pagelayout' )|wash}">
 <div id="leftmenu-design">
 
 {include uri="design:content/parts/object_information.tpl" object=$object manage_version_button=false()}
@@ -12,7 +12,7 @@
 </div>
 </div>
 
-<div id="maincontent">
+<div id="maincontent" role="main" tabindex="-1">
 <div id="maincontent-design" class="float-break"><div id="fix">
 <!-- Maincontent START -->
 

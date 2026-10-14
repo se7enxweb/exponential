@@ -135,7 +135,7 @@
 <div class="content-navigation-childlist admin-dt">
     <table class="list" cellspacing="0">
     <tr>
-        <th class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/content/trash' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/content/trash' )|wash}" onclick="ezjs_toggleCheckboxes( document.trashform, 'DeleteIDArray[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
+        <th scope="col" class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/content/trash' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/content/trash' )|wash}" onclick="ezjs_toggleCheckboxes( document.trashform, 'DeleteIDArray[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
         {* Name, Type and Section: sort link & asc/desc icon *}
         {foreach $sort_columns as $column}
         {set
@@ -152,7 +152,7 @@
                 }
             {/if}
         {/if}
-        <th class="admin-dt-col-name admin-dt-sortable{$col_class}">
+        <th scope="col" class="admin-dt-col-name admin-dt-sortable{$col_class}">
             <div class="admin-dt-liner">
                 <span class="admin-dt-label">
                     <a href="{concat( 'content/trash', $filter_uri, '/(sort_field)/', $column.field, '/(sort_order)/', $link_order )|ezurl( 'no' )}" title="{'Click to sort %sort_order'|i18n( 'design/admin/content/trash',, hash( '%sort_order', $sort_order ) )}" class="admin-dt-sortable">{$column.label|wash}</a>
@@ -160,7 +160,7 @@
             </div>
         </th>
         {/foreach}
-        <th class="admin-dt-col-name admin-dt-sortable">{'Original Placement'|i18n( 'design/admin/content/trash')}</th>
+        <th scope="col" class="admin-dt-col-name admin-dt-sortable">{'Original Placement'|i18n( 'design/admin/content/trash')}</th>
         {* set Trashed column link & asc/desc icon *}
         {set
             $col_class  = ''
@@ -176,14 +176,14 @@
                 }
             {/if}
         {/if}
-        <th class="admin-dt-col-name admin-dt-sortable{$col_class}">
+        <th scope="col" class="admin-dt-col-name admin-dt-sortable{$col_class}">
             <div class="admin-dt-liner">
                 <span class="admin-dt-label">
                     <a href="{concat( 'content/trash', $filter_uri, '/(sort_field)/trashed/(sort_order)/', $link_order )|ezurl( 'no' )}" title="{'Click to sort %sort_order'|i18n( 'design/admin/content/trash',, hash( '%sort_order', $sort_order ) )}" class="admin-dt-sortable">{'Date trashed'|i18n( 'design/admin/content/trash')}</a>
                 </span>
             </div>
         </th>
-        <th class="tight admin-dt-col-name">&nbsp;</th>
+        <th scope="col" class="tight admin-dt-col-name">&nbsp;</th>
     </tr>
 
     {foreach $items as $item sequence array( bglight, bgdark ) as $row_class}

@@ -43,8 +43,8 @@
                     {"You do not have permission to view this object"|i18n( 'design/admin/content/edit' )}
                 </p>
             {/if}
-           <input class="linkbox" type="text" value="&lt;embed href='ezobject://{$RelatedImageObjects.item.id}' /&gt;" readonly="readonly" title="{'Copy this code and paste it into an XML field to embed the object.'|i18n( 'design/admin/content/edit' )}" /><br />
-           <input class="linkbox" type="text" value="&lt;link href='ezobject://{$RelatedImageObjects.item.id}'&gt;&lt;/link&gt;" readonly="readonly" title="{'Copy this code and paste it into an XML field to link the object.'|i18n( 'design/admin/content/edit' )}" /><br />
+           <input class="linkbox" type="text" value="&lt;embed href='ezobject://{$RelatedImageObjects.item.id}' /&gt;" readonly="readonly" title="{'Copy this code and paste it into an XML field to embed the object.'|i18n( 'design/admin/content/edit' )|wash}" aria-label="{'Copy this code and paste it into an XML field to embed the object.'|i18n( 'design/admin/content/edit' )|wash}" /><br />
+           <input class="linkbox" type="text" value="&lt;link href='ezobject://{$RelatedImageObjects.item.id}'&gt;&lt;/link&gt;" readonly="readonly" title="{'Copy this code and paste it into an XML field to link the object.'|i18n( 'design/admin/content/edit' )|wash}" aria-label="{'Copy this code and paste it into an XML field to link the object.'|i18n( 'design/admin/content/edit' )|wash}" /><br />
             {def $relation_name_array = $empty_array}
             {foreach $related_contentobjects_id as $relation_type => $relation_id_array}
                 {if $relation_id_array|contains( $RelatedImageObjects.item.id )}
@@ -74,12 +74,12 @@
 
             <table class="list" cellspacing="0">
             <tr>
-                <th>&nbsp;</th>
-                <th class="name">{'Name'|i18n( 'design/admin/content/edit' )}</th>
-                <th class="filetype nowrap">{'File type'|i18n( 'design/admin/content/edit' )}</th>
-                <th class="filesize nowrap">{'Size'|i18n( 'design/admin/content/edit' )}</th>
-                <th class="code">{'XML code'|i18n( 'design/admin/content/edit' )}</th>
-                <th class="code">{'Relation type'|i18n( 'design/admin/content/edit' )}</th>
+                <th scope="col">&nbsp;</th>
+                <th scope="col" class="name">{'Name'|i18n( 'design/admin/content/edit' )}</th>
+                <th scope="col" class="filetype nowrap">{'File type'|i18n( 'design/admin/content/edit' )}</th>
+                <th scope="col" class="filesize nowrap">{'Size'|i18n( 'design/admin/content/edit' )}</th>
+                <th scope="col" class="code">{'XML code'|i18n( 'design/admin/content/edit' )}</th>
+                <th scope="col" class="code">{'Relation type'|i18n( 'design/admin/content/edit' )}</th>
             </tr>
 
             {section var=RelatedFileObjects loop=$grouped_related_contentobjects.files sequence=array( bglight, bgdark )}
@@ -90,8 +90,8 @@
                         <td class="filetype">{$RelatedFileObjects.item.data_map.file.content.mime_type|wash}</td>
                         <td class="filesize nowrap">{$RelatedFileObjects.item.data_map.file.content.filesize|si( byte )}</td>
                         <td class="code">
-                            <input class="linkbox" type="text" value="&lt;embed href='ezobject://{$RelatedFileObjects.item.id}' /&gt;" readonly="readonly" title="{'Copy this code and paste it into an XML field to embed the object.'|i18n( 'design/admin/content/edit' )}" /><br />
-                            <input class="linkbox" type="text" value="&lt;link href='ezobject://{$RelatedFileObjects.item.id}'&gt;&lt;/link&gt;" readonly="readonly" title="{'Copy this code and paste it into an XML field to link the object.'|i18n( 'design/admin/content/edit' )}" />
+                            <input class="linkbox" type="text" value="&lt;embed href='ezobject://{$RelatedFileObjects.item.id}' /&gt;" readonly="readonly" title="{'Copy this code and paste it into an XML field to embed the object.'|i18n( 'design/admin/content/edit' )|wash}" aria-label="{'Copy this code and paste it into an XML field to embed the object.'|i18n( 'design/admin/content/edit' )|wash}" /><br />
+                            <input class="linkbox" type="text" value="&lt;link href='ezobject://{$RelatedFileObjects.item.id}'&gt;&lt;/link&gt;" readonly="readonly" title="{'Copy this code and paste it into an XML field to link the object.'|i18n( 'design/admin/content/edit' )|wash}" aria-label="{'Copy this code and paste it into an XML field to link the object.'|i18n( 'design/admin/content/edit' )|wash}" />
                         </td>
                         <td class="code">
                             {def $relation_name_array = $empty_array}
@@ -107,8 +107,8 @@
                         <td class="checkbox">&nbsp;</td>
                         <td colspan="3">{"You do not have permission to view this object"|i18n( 'design/admin/content/edit' )}</td>
                         <td class="code">
-                            <input class="linkbox" type="text" value="&lt;embed href='ezobject://{$RelatedFileObjects.item.id}' /&gt;" readonly="readonly" title="{'Copy this code and paste it into an XML field to embed the object.'|i18n( 'design/admin/content/edit' )}" /><br />
-                            <input class="linkbox" type="text" value="&lt;link href='ezobject://{$RelatedFileObjects.item.id}'&gt;&lt;/link&gt;" readonly="readonly" title="{'Copy this code and paste it into an XML field to link the object.'|i18n( 'design/admin/content/edit' )}" />
+                            <input class="linkbox" type="text" value="&lt;embed href='ezobject://{$RelatedFileObjects.item.id}' /&gt;" readonly="readonly" title="{'Copy this code and paste it into an XML field to embed the object.'|i18n( 'design/admin/content/edit' )|wash}" aria-label="{'Copy this code and paste it into an XML field to embed the object.'|i18n( 'design/admin/content/edit' )|wash}" /><br />
+                            <input class="linkbox" type="text" value="&lt;link href='ezobject://{$RelatedFileObjects.item.id}'&gt;&lt;/link&gt;" readonly="readonly" title="{'Copy this code and paste it into an XML field to link the object.'|i18n( 'design/admin/content/edit' )|wash}" aria-label="{'Copy this code and paste it into an XML field to link the object.'|i18n( 'design/admin/content/edit' )|wash}" />
                         </td>
                         <td class="code">
                             {def $relation_name_array = $empty_array}
@@ -137,11 +137,11 @@
 
             <table class="list" cellspacing="0">
             <tr>
-                <th>&nbsp;</th>
-                <th class="name">{'Name'|i18n( 'design/admin/content/edit' )}</th>
-                <th class="class nowrap">{'Type'|i18n( 'design/admin/content/edit' )}</th>
-                <th class="code">{'XML code'|i18n( 'design/admin/content/edit' )}</th>
-                <th class="code">{'Relation type'|i18n( 'design/admin/content/edit' )}</th>
+                <th scope="col">&nbsp;</th>
+                <th scope="col" class="name">{'Name'|i18n( 'design/admin/content/edit' )}</th>
+                <th scope="col" class="class nowrap">{'Type'|i18n( 'design/admin/content/edit' )}</th>
+                <th scope="col" class="code">{'XML code'|i18n( 'design/admin/content/edit' )}</th>
+                <th scope="col" class="code">{'Relation type'|i18n( 'design/admin/content/edit' )}</th>
             </tr>
 
             {section var=RelatedObjects loop=$grouped_related_contentobjects.objects sequence=array( bglight, bgdark )}
@@ -152,8 +152,8 @@
                         <td class="name">{$RelatedObjects.item.class_name|class_icon( small, $RelatedObjects.class_name )}&nbsp;{$RelatedObjects.item.name|wash}</td>
                         <td class="class nowrap">{$RelatedObjects.item.class_name|wash}</td>
                         <td class="code">
-                            <input class="linkbox" type="text" value="&lt;embed href='ezobject://{$RelatedObjects.item.id}' /&gt;" readonly="readonly" title="{'Copy this code and paste it into an XML field to embed the object.'|i18n( 'design/admin/content/edit' )}" /><br />
-                            <input class="linkbox" type="text" value="&lt;link href='ezobject://{$RelatedObjects.item.id}'&gt;&lt;/link&gt;" readonly="readonly" title="{'Copy this code and paste it into an XML field to link the object.'|i18n( 'design/admin/content/edit' )}" />
+                            <input class="linkbox" type="text" value="&lt;embed href='ezobject://{$RelatedObjects.item.id}' /&gt;" readonly="readonly" title="{'Copy this code and paste it into an XML field to embed the object.'|i18n( 'design/admin/content/edit' )|wash}" aria-label="{'Copy this code and paste it into an XML field to embed the object.'|i18n( 'design/admin/content/edit' )|wash}" /><br />
+                            <input class="linkbox" type="text" value="&lt;link href='ezobject://{$RelatedObjects.item.id}'&gt;&lt;/link&gt;" readonly="readonly" title="{'Copy this code and paste it into an XML field to link the object.'|i18n( 'design/admin/content/edit' )|wash}" aria-label="{'Copy this code and paste it into an XML field to link the object.'|i18n( 'design/admin/content/edit' )|wash}" />
                         </td>
                         <td class="code">
                             {def $relation_name_array = $empty_array}
@@ -169,8 +169,8 @@
                         <td class="checkbox">&nbsp;</td>
                         <td colspan="2">{"You do not have permission to view this object"|i18n( 'design/admin/content/edit' )}</td>
                         <td class="code">
-                            <input class="linkbox" type="text" value="&lt;embed href='ezobject://{$RelatedObjects.item.id}' /&gt;" readonly="readonly" title="{'Copy this code and paste it into an XML field to embed the object.'|i18n( 'design/admin/content/edit' )}" />
-                            <input class="linkbox" type="text" value="&lt;link href='ezobject://{$RelatedObjects.item.id}'&gt;&lt;/link&gt;" readonly="readonly" title="{'Copy this code and paste it into an XML field to link the object.'|i18n( 'design/admin/content/edit' )}" />
+                            <input class="linkbox" type="text" value="&lt;embed href='ezobject://{$RelatedObjects.item.id}' /&gt;" readonly="readonly" title="{'Copy this code and paste it into an XML field to embed the object.'|i18n( 'design/admin/content/edit' )|wash}" aria-label="{'Copy this code and paste it into an XML field to embed the object.'|i18n( 'design/admin/content/edit' )|wash}" />
+                            <input class="linkbox" type="text" value="&lt;link href='ezobject://{$RelatedObjects.item.id}'&gt;&lt;/link&gt;" readonly="readonly" title="{'Copy this code and paste it into an XML field to link the object.'|i18n( 'design/admin/content/edit' )|wash}" aria-label="{'Copy this code and paste it into an XML field to link the object.'|i18n( 'design/admin/content/edit' )|wash}" />
                         </td>
                         <td class="code">
                             {def $relation_name_array = $empty_array}

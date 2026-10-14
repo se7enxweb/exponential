@@ -60,14 +60,14 @@
 <div class="a4-content-job-table">
 <table class="list" cellspacing="0">
 <tr>
-    {if $show_all}<th>{'User'|i18n( 'design/admin/content/job' )}</th>{/if}
-    <th>{'Operation'|i18n( 'design/admin/content/job' )}</th>
-    <th>{'Source and target'|i18n( 'design/admin/content/job' )}</th>
-    <th><a href={concat( $sort_url, 'sort=state&order=', $flip )|ezurl}>{'State'|i18n( 'design/admin/content/job' )}</a></th>
-    <th><a href={concat( $sort_url, 'sort=items&order=', $flip )|ezurl}>{'Progress and items'|i18n( 'design/admin/content/job' )}</a></th>
-    <th><a href={concat( $sort_url, 'sort=started&order=', $flip )|ezurl}>{'Started'|i18n( 'design/admin/content/job' )}</a>, <a href={concat( $sort_url, 'sort=duration&order=', $flip )|ezurl}>{'duration'|i18n( 'design/admin/content/job' )}</a></th>
-    <th>{'Server'|i18n( 'design/admin/content/job' )}</th>
-    <th>{'Actions'|i18n( 'design/admin/content/job' )}</th>
+    {if $show_all}<th scope="col">{'User'|i18n( 'design/admin/content/job' )}</th>{/if}
+    <th scope="col">{'Operation'|i18n( 'design/admin/content/job' )}</th>
+    <th scope="col">{'Source and target'|i18n( 'design/admin/content/job' )}</th>
+    <th scope="col"><a href={concat( $sort_url, 'sort=state&order=', $flip )|ezurl}>{'State'|i18n( 'design/admin/content/job' )}</a></th>
+    <th scope="col"><a href={concat( $sort_url, 'sort=items&order=', $flip )|ezurl}>{'Progress and items'|i18n( 'design/admin/content/job' )}</a></th>
+    <th scope="col"><a href={concat( $sort_url, 'sort=started&order=', $flip )|ezurl}>{'Started'|i18n( 'design/admin/content/job' )}</a>, <a href={concat( $sort_url, 'sort=duration&order=', $flip )|ezurl}>{'duration'|i18n( 'design/admin/content/job' )}</a></th>
+    <th scope="col">{'Server'|i18n( 'design/admin/content/job' )}</th>
+    <th scope="col">{'Actions'|i18n( 'design/admin/content/job' )}</th>
 </tr>
 {* the module name in a variable: a server process started before the audit classes existed (Velocity) then gets no audit links instead of an error *}
 {def $cj_audit_module = 'audit'}

@@ -34,9 +34,9 @@
 {section show=$event.content.entry_list}
 <table class="list" cellspacing="0">
 <tr>
-<th class="tight">&nbsp;</th>
-<th>{'Class'|i18n( 'design/admin/workflow/eventtype/edit' )}</th>
-<th>{'Attribute'|i18n( 'design/admin/workflow/eventtype/edit' )}</th>
+<th scope="col" class="tight">&nbsp;</th>
+<th scope="col">{'Class'|i18n( 'design/admin/workflow/eventtype/edit' )}</th>
+<th scope="col">{'Attribute'|i18n( 'design/admin/workflow/eventtype/edit' )}</th>
 </tr>
 {section var=Entries loop=$event.content.entry_list sequence=array( bglight, bgdark )}
 <tr class="{$Entries.sequence}">

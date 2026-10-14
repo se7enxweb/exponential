@@ -34,14 +34,14 @@
 <label>{'Items to be purchased'|i18n( 'design/admin/shop/confirmorder' )}:</label>
 <table class="list" cellspacing="0">
 <tr>
-    <th>{'Product'|i18n( 'design/admin/shop/confirmorder' )}</th>
-    <th>{'Quantity'|i18n( 'design/admin/shop/confirmorder' )}</th>
-    <th>{'VAT'|i18n( 'design/admin/shop/confirmorder' )}</th>
-    <th>{'Price (ex. VAT)'|i18n( 'design/admin/shop/confirmorder' )}</th>
-    <th>{'Price (inc. VAT)'|i18n( 'design/admin/shop/confirmorder' )}</th>
-    <th>{'Discount'|i18n( 'design/admin/shop/confirmorder' )}</th>
-    <th>{'Total price (ex. VAT)'|i18n( 'design/admin/shop/confirmorder' )}</th>
-    <th>{'Total price (inc. VAT)'|i18n( 'design/admin/shop/confirmorder' )}</th>
+    <th scope="col">{'Product'|i18n( 'design/admin/shop/confirmorder' )}</th>
+    <th scope="col">{'Quantity'|i18n( 'design/admin/shop/confirmorder' )}</th>
+    <th scope="col">{'VAT'|i18n( 'design/admin/shop/confirmorder' )}</th>
+    <th scope="col">{'Price (ex. VAT)'|i18n( 'design/admin/shop/confirmorder' )}</th>
+    <th scope="col">{'Price (inc. VAT)'|i18n( 'design/admin/shop/confirmorder' )}</th>
+    <th scope="col">{'Discount'|i18n( 'design/admin/shop/confirmorder' )}</th>
+    <th scope="col">{'Total price (ex. VAT)'|i18n( 'design/admin/shop/confirmorder' )}</th>
+    <th scope="col">{'Total price (inc. VAT)'|i18n( 'design/admin/shop/confirmorder' )}</th>
 </tr>
 {section var=Items loop=$order.product_items show=$order.product_items sequence=array( bglight, bgdark )}
 <tr class="{$Items.sequence}">

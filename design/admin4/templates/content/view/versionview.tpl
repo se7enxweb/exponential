@@ -2,7 +2,7 @@
 <form method="post"
     action={concat( 'content/versionview/', $object.id, '/', $version.version, '/', $language, '/', $from_language )|ezurl}>
 
-    <div id="leftmenu" class="sidebar left">
+    <div id="leftmenu" class="sidebar left" role="complementary" aria-label="{'Side column'|i18n( 'design/admin/pagelayout' )|wash}">
         <div id="leftmenu-design">
 
             {include uri="design:content/parts/object_information.tpl" object=$object manage_version_button=true()}
@@ -184,7 +184,7 @@
 
 
 
-    <div id="maincontent">
+    <div id="maincontent" role="main" tabindex="-1">
         <div id="maincontent-design" class="float-break">
             <div id="fix">
                 <!-- Maincontent START -->
@@ -238,7 +238,7 @@
 
                                 <iframe
                                     src={concat("content/versionview/",$object.id,"/",$view_version.version,"/",$language, "/site_access/", $siteaccess, $view_mode_uri )|ezurl}
-                                    width="100%" height="800">
+                                    width="100%" height="800" title="{'Preview of the version'|i18n( 'design/admin/content/view/versionview' )|wash}">
                                     {'Your browser does not support iframes. Please see this <a href=%url>link</a> instead.'|i18n( 'design/admin/content/view/versionview',, hash( '%url', concat("content/versionview/",$object.id,"/",$view_version.version,"/",$language, "/site_access/", $siteaccess, $view_mode_uri)|ezurl ) )}
                                 </iframe>
 

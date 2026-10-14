@@ -37,10 +37,10 @@
 
 <table class="list" cellspacing="0">
 <tr>
-    <th>{'Role'|i18n( 'design/admin/node/view/full' )}</th>
-    <th>{'Module'|i18n( 'design/admin/node/view/full' )}</th>
-    <th>{'Function'|i18n( 'design/admin/node/view/full' )}</th>
-    <th>{'Limitation'|i18n( 'design/admin/node/view/full' )}</th>
+    <th scope="col">{'Role'|i18n( 'design/admin/node/view/full' )}</th>
+    <th scope="col">{'Module'|i18n( 'design/admin/node/view/full' )}</th>
+    <th scope="col">{'Function'|i18n( 'design/admin/node/view/full' )}</th>
+    <th scope="col">{'Limitation'|i18n( 'design/admin/node/view/full' )}</th>
 </tr>
 
 {* For all roles... *}

@@ -95,10 +95,10 @@
 <div class="a4-table-wrap">
 <table class="a4-table is-compact">
 <tr>
-    <th>{'Identifier'|i18n( 'design/admin/setup/rad/content' )}</th>
-    <th>{'Datatype'|i18n( 'design/admin/setup/rad/content' )}</th>
-    <th>{'Name'|i18n( 'design/admin/setup/rad/content' )}</th>
-    <th>{'Flags'|i18n( 'design/admin/setup/rad/content' )}</th>
+    <th scope="col">{'Identifier'|i18n( 'design/admin/setup/rad/content' )}</th>
+    <th scope="col">{'Datatype'|i18n( 'design/admin/setup/rad/content' )}</th>
+    <th scope="col">{'Name'|i18n( 'design/admin/setup/rad/content' )}</th>
+    <th scope="col">{'Flags'|i18n( 'design/admin/setup/rad/content' )}</th>
 </tr>
 {foreach $wizard_attributes as $ce_attribute}
 <tr>

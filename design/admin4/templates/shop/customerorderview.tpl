@@ -36,11 +36,11 @@
 {section show=$order_list}
 <table class="list" cellspacing="0">
 <tr>
-    <th>{'ID'|i18n( 'design/admin/shop/customerorderview' )}</th>
-    <th>{'Total (ex. VAT)'|i18n( 'design/admin/shop/customerorderview' )}</th>
-    <th>{'Total (inc. VAT)'|i18n( 'design/admin/shop/customerorderview' )}</th>
-    <th>{'Time'|i18n( 'design/admin/shop/customerorderview' )}</th>
-    <th>{'Status'|i18n( 'design/admin/shop/customerorderview' )}</th>
+    <th scope="col">{'ID'|i18n( 'design/admin/shop/customerorderview' )}</th>
+    <th scope="col">{'Total (ex. VAT)'|i18n( 'design/admin/shop/customerorderview' )}</th>
+    <th scope="col">{'Total (inc. VAT)'|i18n( 'design/admin/shop/customerorderview' )}</th>
+    <th scope="col">{'Time'|i18n( 'design/admin/shop/customerorderview' )}</th>
+    <th scope="col">{'Status'|i18n( 'design/admin/shop/customerorderview' )}</th>
 </tr>
 {section var=Orders loop=$order_list sequence=array( bglight, bgdark )}
 {set currency = fetch( 'shop', 'currency', hash( 'code', $Orders.item.productcollection.currency_code ) ) }
@@ -82,10 +82,10 @@
 {section show=$product_list}
 <table class="list" cellspacing="0">
 <tr>
-    <th>{'Product'|i18n( 'design/admin/shop/customerorderview' )}</th>
-    <th>{'Quantity'|i18n( 'design/admin/shop/customerorderview' )}</th>
-    <th>{'Total (ex. VAT)'|i18n( 'design/admin/shop/customerorderview' )}</th>
-    <th>{'Total (inc. VAT)'|i18n( 'design/admin/shop/customerorderview' )}</th>
+    <th scope="col">{'Product'|i18n( 'design/admin/shop/customerorderview' )}</th>
+    <th scope="col">{'Quantity'|i18n( 'design/admin/shop/customerorderview' )}</th>
+    <th scope="col">{'Total (ex. VAT)'|i18n( 'design/admin/shop/customerorderview' )}</th>
+    <th scope="col">{'Total (inc. VAT)'|i18n( 'design/admin/shop/customerorderview' )}</th>
 </tr>
 
 {def $quantity_text = ''

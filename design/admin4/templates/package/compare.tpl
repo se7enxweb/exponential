@@ -269,12 +269,12 @@
     <div class="pvf-scroll">
     <table class="list pcmp-items">
         <thead><tr>
-            {if $Compare.can_import}<th class="pcmp-col-select"><span class="pvf-hidden">{'Select'|i18n('design/admin/package')}</span></th>{/if}
+            {if $Compare.can_import}<th scope="col" class="pcmp-col-select"><span class="pvf-hidden">{'Select'|i18n('design/admin/package')}</span></th>{/if}
             {include uri='design:parts/sortheader.tpl' key='status' label='Status'|i18n('design/admin/package') sort=$Compare.sort page_uri=$Compare.sort_uri cell_class='pcmp-col-status'}
             {include uri='design:parts/sortheader.tpl' key='name' label='Name'|i18n('design/admin/package') sort=$Compare.sort page_uri=$Compare.sort_uri cell_class='pcmp-col-name'}
             {include uri='design:parts/sortheader.tpl' key='class' label='Class'|i18n('design/admin/package') sort=$Compare.sort page_uri=$Compare.sort_uri cell_class='pcmp-col-class'}
             {include uri='design:parts/sortheader.tpl' key='differences' label='Differences'|i18n('design/admin/package') sort=$Compare.sort page_uri=$Compare.sort_uri cell_class='pcmp-col-summary'}
-            <th class="pcmp-col-actions"><span class="pvf-hidden">{'Actions'|i18n('design/admin/package')}</span></th>
+            <th scope="col" class="pcmp-col-actions"><span class="pvf-hidden">{'Actions'|i18n('design/admin/package')}</span></th>
         </tr></thead>
         <tbody>
         {foreach $Compare.items as $item sequence array( 'bglight', 'bgdark' ) as $rowStyle}

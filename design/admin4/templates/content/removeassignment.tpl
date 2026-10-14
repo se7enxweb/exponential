@@ -1,4 +1,4 @@
-<div id="leftmenu" class="sidebar left">
+<div id="leftmenu" class="sidebar left" role="complementary" aria-label="{'Side column'|i18n( 'design/admin/pagelayout' )|wash}">
 <div id="leftmenu-design">
 
 <div class="objectinfo">
@@ -96,7 +96,7 @@
 </div>
 </div>
 
-<div id="maincontent">
+<div id="maincontent" role="main" tabindex="-1">
 <div id="maincontent-design" class="float-break"><div id="fix">
 <!-- Maincontent START -->
 
@@ -135,8 +135,8 @@
 
 <table class="list" cellspacing="0">
 <tr>
-    <th colspan="2">{'Location'|i18n( 'design/admin/content/removeassignment' )}</th>
-    <th>{'Sub items'|i18n( 'design/admin/content/removeassignment' )}</th>
+    <th scope="col" colspan="2">{'Location'|i18n( 'design/admin/content/removeassignment' )}</th>
+    <th scope="col">{'Sub items'|i18n( 'design/admin/content/removeassignment' )}</th>
 </tr>
 
 {section var=remove_item loop=$assignment_data.remove_list sequence=array( bglight, bgdark )}

@@ -96,11 +96,11 @@
 <div class="block">
 <table class="list" cellspacing="0" summary="{'Details of the top node: its node ID, depth and path, the number of sub items and the time of the latest change below it.'|i18n( 'design/admin/node/view/full' )}">
 <tr>
-    <th class="tight">{'Node ID'|i18n( 'design/admin/node/view/full' )}</th>
-    <th class="tight">{'Depth'|i18n( 'design/admin/node/view/full' )}</th>
-    <th>{'Path String'|i18n( 'design/admin/node/view/full' )}</th>
-    <th class="tight">{'Sub items'|i18n( 'design/admin/node/view/full' )}</th>
-    <th>{'Last modified'|i18n( 'design/admin/node/view/full' )}</th>
+    <th scope="col" class="tight">{'Node ID'|i18n( 'design/admin/node/view/full' )}</th>
+    <th scope="col" class="tight">{'Depth'|i18n( 'design/admin/node/view/full' )}</th>
+    <th scope="col">{'Path String'|i18n( 'design/admin/node/view/full' )}</th>
+    <th scope="col" class="tight">{'Sub items'|i18n( 'design/admin/node/view/full' )}</th>
+    <th scope="col">{'Last modified'|i18n( 'design/admin/node/view/full' )}</th>
 </tr>
 <tr class="bglight">
     <td class="number" align="right">{$node.node_id}</td>
@@ -115,7 +115,7 @@
 <div class="block">
 <table class="list" cellspacing="0" summary="{'Node Remote ID'|i18n( 'design/admin/node/view/full' )}">
     <tr>
-        <th>{'Node Remote ID'|i18n( 'design/admin/node/view/full' )}</th>
+        <th scope="col">{'Node Remote ID'|i18n( 'design/admin/node/view/full' )}</th>
     </tr>
     <tr>
          <td>{$node.remote_id|wash}</td>

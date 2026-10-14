@@ -130,7 +130,7 @@
         {foreach $d.statuses as $s}{if $s.open}<span class="a4-shop-g-{$s.group} a4-pct-{$s.percent|round}" title="{$s.name|wash}: {$s.open}"></span>{/if}{/foreach}
     </div>
     <div class="a4-table-wrap a4-shop-scroll"><table class="a4-table is-compact">
-    <tr><th>{'Status'|i18n( $ctx )}</th><th class="a4-num">{'Orders'|i18n( $ctx )}</th><th class="a4-num">{'Archived'|i18n( $ctx )}</th><th>{'Longest in status'|i18n( $ctx )}</th></tr>
+    <tr><th scope="col">{'Status'|i18n( $ctx )}</th><th scope="col" class="a4-num">{'Orders'|i18n( $ctx )}</th><th scope="col" class="a4-num">{'Archived'|i18n( $ctx )}</th><th scope="col">{'Longest in status'|i18n( $ctx )}</th></tr>
     {foreach $d.statuses as $s}
     <tr>
         <td class="a4-nowrap"><span class="a4-shop-dot a4-shop-g-{$s.group}"></span>{$s.name|wash}{if $s.is_active|not} <span class="a4-tag">{'inactive'|i18n( $ctx )}</span>{/if}</td>
@@ -150,7 +150,7 @@
     <h3>{'Top products, last 30 days'|i18n( $ctx )}</h3>
     {if $d.top_products|count}
     <div class="a4-table-wrap a4-shop-scroll"><table class="a4-table is-compact">
-    <tr><th>{'Product'|i18n( $ctx )}</th><th class="a4-num">{'Sold'|i18n( $ctx )}</th><th class="a4-num">{'Orders'|i18n( $ctx )}</th><th class="a4-num">{'Revenue'|i18n( $ctx )}</th></tr>
+    <tr><th scope="col">{'Product'|i18n( $ctx )}</th><th scope="col" class="a4-num">{'Sold'|i18n( $ctx )}</th><th scope="col" class="a4-num">{'Orders'|i18n( $ctx )}</th><th scope="col" class="a4-num">{'Revenue'|i18n( $ctx )}</th></tr>
     {foreach $d.top_products as $tp}
     <tr>
         <td>{if $tp.node_id}<a href={concat( '/content/view/full/', $tp.node_id )|ezurl}>{$tp.name|wash}</a>{else}{$tp.name|wash} <span class="a4-tag is-bad">{'removed'|i18n( $ctx )}</span>{/if}
@@ -175,7 +175,7 @@
 <p class="a4-shop-lead">{'Every order that is not finished and not archived, the one waiting longest first. Highlighted: an order waiting for the customer (Pending, Awaiting payment, Payment failed, Ready for pickup) for more than %pending days, or in any other open status for more than %processing days.'|i18n( $ctx, , hash( '%pending', $d.limits.pending_days, '%processing', $d.limits.processing_days ) )}</p>
 {if $d.waiting|count}
 <div class="a4-table-wrap a4-shop-scroll"><table class="a4-table is-compact">
-<tr><th>{'Order'|i18n( $ctx )}</th><th>{'Customer'|i18n( $ctx )}</th><th>{'Status'|i18n( $ctx )}</th><th>{'Waiting'|i18n( $ctx )}</th><th class="a4-num">{'Total'|i18n( $ctx )}</th></tr>
+<tr><th scope="col">{'Order'|i18n( $ctx )}</th><th scope="col">{'Customer'|i18n( $ctx )}</th><th scope="col">{'Status'|i18n( $ctx )}</th><th scope="col">{'Waiting'|i18n( $ctx )}</th><th scope="col" class="a4-num">{'Total'|i18n( $ctx )}</th></tr>
 {foreach $d.waiting as $o}
 <tr{if $o.overdue} class="overdue"{/if}>
     <td><a href={concat( '/shop/orderview/', $o.id, '/' )|ezurl}>#{$o.order_nr}</a><div class="a4-shop-note">{$o.created|l10n( 'shortdatetime' )}</div></td>
@@ -194,7 +194,7 @@
 <h3>{'Latest orders'|i18n( $ctx )}</h3>
 {if $d.latest|count}
 <div class="a4-table-wrap a4-shop-scroll"><table class="a4-table is-compact">
-<tr><th>{'Order'|i18n( $ctx )}</th><th>{'Placed'|i18n( $ctx )}</th><th>{'Customer'|i18n( $ctx )}</th><th>{'Status'|i18n( $ctx )}</th><th class="a4-num">{'Total'|i18n( $ctx )}</th></tr>
+<tr><th scope="col">{'Order'|i18n( $ctx )}</th><th scope="col">{'Placed'|i18n( $ctx )}</th><th scope="col">{'Customer'|i18n( $ctx )}</th><th scope="col">{'Status'|i18n( $ctx )}</th><th scope="col" class="a4-num">{'Total'|i18n( $ctx )}</th></tr>
 {foreach $d.latest as $o}
 <tr>
     <td><a href={concat( '/shop/orderview/', $o.id, '/' )|ezurl}>#{$o.order_nr}</a></td>
@@ -217,7 +217,7 @@
 <div class="a4-shop-card">
     <h3>{'Baskets and unfinished checkouts'|i18n( $ctx )}</h3>
     <div class="a4-table-wrap a4-shop-scroll"><table class="a4-table is-compact">
-    <tr><th></th><th class="a4-num">{'Count'|i18n( $ctx )}</th><th class="a4-num">{'Items'|i18n( $ctx )}</th><th class="a4-num">{'Value'|i18n( $ctx )}</th></tr>
+    <tr><th scope="col"></th><th scope="col" class="a4-num">{'Count'|i18n( $ctx )}</th><th scope="col" class="a4-num">{'Items'|i18n( $ctx )}</th><th scope="col" class="a4-num">{'Value'|i18n( $ctx )}</th></tr>
     <tr><td>{'In progress (active in the last %hours hours)'|i18n( $ctx, , hash( '%hours', $d.limits.abandoned_hours ) )}</td><td class="a4-num">{$d.baskets.fresh.count}</td><td class="a4-num">{$d.baskets.fresh.items}</td>
         <td class="a4-num">{foreach $d.baskets.fresh.value as $cur => $sum}{$sum|l10n( 'currency', $d.format[$cur].locale, $d.format[$cur].symbol )}<br />{/foreach}</td></tr>
     <tr><td>{'Abandoned (idle longer)'|i18n( $ctx )}</td><td class="a4-num">{$d.baskets.abandoned.count}</td><td class="a4-num">{$d.baskets.abandoned.items}</td>
@@ -232,7 +232,7 @@
     <h3>{'Products'|i18n( $ctx )}</h3>
     {if $d.products.classes|count}
     <div class="a4-table-wrap a4-shop-scroll"><table class="a4-table is-compact">
-    <tr><th>{'Product class'|i18n( $ctx )}</th><th>{'Price attribute'|i18n( $ctx )}</th><th class="a4-num">{'Published'|i18n( $ctx )}</th><th class="a4-num">{'No price'|i18n( $ctx )}</th></tr>
+    <tr><th scope="col">{'Product class'|i18n( $ctx )}</th><th scope="col">{'Price attribute'|i18n( $ctx )}</th><th scope="col" class="a4-num">{'Published'|i18n( $ctx )}</th><th scope="col" class="a4-num">{'No price'|i18n( $ctx )}</th></tr>
     {foreach $d.products.classes as $c}
     <tr><td><a href={concat( '/class/view/', $c.id )|ezurl}>{$c.name|wash}</a></td><td><code>{$c.price_attribute|wash}</code> ({$c.datatype|wash})</td><td class="a4-num">{$c.products}</td><td class="a4-num">{if $c.no_price}<span class="a4-tag is-bad">{$c.no_price}</span>{else}0{/if}</td></tr>
     {/foreach}
@@ -320,7 +320,7 @@
 {if $d.triggers|count}
 <h3>{'Workflows connected to the shop'|i18n( $ctx )}</h3>
 <div class="a4-table-wrap a4-shop-scroll"><table class="a4-table is-compact">
-<tr><th>{'Trigger'|i18n( $ctx )}</th><th>{'Workflow'|i18n( $ctx )}</th><th>{'Events'|i18n( $ctx )}</th></tr>
+<tr><th scope="col">{'Trigger'|i18n( $ctx )}</th><th scope="col">{'Workflow'|i18n( $ctx )}</th><th scope="col">{'Events'|i18n( $ctx )}</th></tr>
 {foreach $d.triggers as $tr}
 <tr><td><code>shop / {$tr.function|wash} / {$tr.connect_type}</code></td><td><a href={concat( '/workflow/view/', $tr.workflow_id )|ezurl}>{$tr.workflow|wash}</a></td><td>{$tr.events|implode( ', ' )|wash}</td></tr>
 {/foreach}
@@ -331,7 +331,7 @@
 <div class="a4-shop-card">
     <h3>{'Order statuses and what they mean'|i18n( $ctx )}</h3>
     <div class="a4-table-wrap a4-shop-scroll"><table class="a4-table is-compact">
-    <tr><th>{'Status'|i18n( $ctx )}</th><th>{'Meaning'|i18n( $ctx )}</th></tr>
+    <tr><th scope="col">{'Status'|i18n( $ctx )}</th><th scope="col">{'Meaning'|i18n( $ctx )}</th></tr>
     {foreach $d.statuses as $s}
     <tr><td class="a4-nowrap"><span class="a4-shop-dot a4-shop-g-{$s.group}"></span>{$s.name|wash} <span class="a4-shop-note">({$s.status_id})</span></td>
         <td>{$s.meaning|wash}
@@ -345,7 +345,7 @@
     <h3>{'VAT'|i18n( $ctx )}</h3>
     <p>{if $d.config.dynamic_vat}{'Dynamic VAT is on: products whose price uses "%dynamic" get the VAT rule for the customer country and product category.'|i18n( $ctx, , hash( '%dynamic', ezini( 'VATSettings', 'DynamicVatTypeName', 'shop.ini' )|wash ) )}{else}{'Dynamic VAT is off (shop.ini [VATSettings] Handler is not set): every product price carries its own VAT type, and VAT rules are not applied.'|i18n( $ctx )}{/if}</p>
     <div class="a4-table-wrap a4-shop-scroll"><table class="a4-table is-compact">
-    <tr><th>{'VAT type'|i18n( $ctx )}</th><th class="a4-num">%</th><th class="a4-num">{'Products'|i18n( $ctx )}</th></tr>
+    <tr><th scope="col">{'VAT type'|i18n( $ctx )}</th><th scope="col" class="a4-num">%</th><th scope="col" class="a4-num">{'Products'|i18n( $ctx )}</th></tr>
     {foreach $d.vat_types as $vt}
     <tr><td>{$vt.name|wash}</td><td class="a4-num">{$vt.percentage|l10n( 'number' )}</td><td class="a4-num">{$vt.products}</td></tr>
     {/foreach}
@@ -364,7 +364,7 @@
     <h3>{'Currencies'|i18n( $ctx )}</h3>
     {if $d.currencies|count}
     <div class="a4-table-wrap a4-shop-scroll"><table class="a4-table is-compact">
-    <tr><th>{'Code'|i18n( $ctx )}</th><th>{'Symbol'|i18n( $ctx )}</th><th class="a4-num">{'Rate'|i18n( $ctx )}</th><th>{'Status'|i18n( $ctx )}</th></tr>
+    <tr><th scope="col">{'Code'|i18n( $ctx )}</th><th scope="col">{'Symbol'|i18n( $ctx )}</th><th scope="col" class="a4-num">{'Rate'|i18n( $ctx )}</th><th scope="col">{'Status'|i18n( $ctx )}</th></tr>
     {foreach $d.currencies as $cu}
     <tr><td>{$cu.code|wash}</td><td>{$cu.symbol|wash}</td><td class="a4-num">{$cu.rate|wash}</td><td>{if $cu.is_active}<span class="a4-tag is-ok">{'active'|i18n( $ctx )}</span>{else}<span class="a4-tag">{'inactive'|i18n( $ctx )}</span>{/if}</td></tr>
     {/foreach}
@@ -384,7 +384,7 @@
     <h3>{'Discounts'|i18n( $ctx )}</h3>
     {if $d.discount_rules|count}
     <div class="a4-table-wrap a4-shop-scroll"><table class="a4-table is-compact">
-    <tr><th>{'Discount group'|i18n( $ctx )}</th><th class="a4-num">{'Rules'|i18n( $ctx )}</th><th class="a4-num">{'Up to'|i18n( $ctx )}</th><th class="a4-num">{'Customers'|i18n( $ctx )}</th></tr>
+    <tr><th scope="col">{'Discount group'|i18n( $ctx )}</th><th scope="col" class="a4-num">{'Rules'|i18n( $ctx )}</th><th scope="col" class="a4-num">{'Up to'|i18n( $ctx )}</th><th scope="col" class="a4-num">{'Customers'|i18n( $ctx )}</th></tr>
     {foreach $d.discount_rules as $dr}
     <tr><td><a href={concat( '/shop/discountgroupview/', $dr.id )|ezurl}>{$dr.name|wash}</a></td><td class="a4-num">{$dr.sub_rules}</td><td class="a4-num">{$dr.max_percent|l10n( 'number' )} %</td><td class="a4-num">{$dr.members}</td></tr>
     {/foreach}

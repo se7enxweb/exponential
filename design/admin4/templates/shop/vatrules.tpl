@@ -27,11 +27,11 @@
 {if $rules}
 <table class="list" cellspacing="0">
 <tr>
-    <th class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/shop/vatrules' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/shop/vatrules' )|wash}" onclick="ezjs_toggleCheckboxes( document.VatRules, 'RuleIDList[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
-    <th class="tight">{'Country/region'|i18n( 'design/admin/shop/vatrules' )}</th>
-    <th class="wide">{'Product categories'|i18n( 'design/admin/shop/vatrules' )}</th>
-    <th>{'VAT type'|i18n( 'design/admin/shop/vatrules' )}</th>
-    <th class="tight">&nbsp;</th>
+    <th scope="col" class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/shop/vatrules' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/shop/vatrules' )|wash}" onclick="ezjs_toggleCheckboxes( document.VatRules, 'RuleIDList[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
+    <th scope="col" class="tight">{'Country/region'|i18n( 'design/admin/shop/vatrules' )}</th>
+    <th scope="col" class="wide">{'Product categories'|i18n( 'design/admin/shop/vatrules' )}</th>
+    <th scope="col">{'VAT type'|i18n( 'design/admin/shop/vatrules' )}</th>
+    <th scope="col" class="tight">&nbsp;</th>
 </tr>
 
 {foreach $rules as $rule sequence array( bglight, bgdark ) as $seq_color}

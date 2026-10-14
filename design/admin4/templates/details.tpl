@@ -3,13 +3,13 @@
 
 <table class="list" cellspacing="0" summary="{'Node and object details like creator, when it was created, section it belongs to, number of versions and translations, Node ID and Object ID.'|i18n( 'design/admin/node/view/full' )}">
 <tr>
-    <th>{'Creator'|i18n( 'design/admin/node/view/full' )}</th>
-    <th>{'Created'|i18n( 'design/admin/node/view/full' )}</th>
-    <th>{'Section'|i18n( 'design/admin/node/view/full' )}</th>
-    <th class="tight">{'Versions'|i18n( 'design/admin/node/view/full' )}</th>
-    <th class="tight">{'Translations'|i18n( 'design/admin/node/view/full' )}</th>
-    <th class="tight">{'Node ID'|i18n( 'design/admin/node/view/full' )}</th>
-    <th class="tight">{'Object ID'|i18n( 'design/admin/node/view/full' )}</th>
+    <th scope="col">{'Creator'|i18n( 'design/admin/node/view/full' )}</th>
+    <th scope="col">{'Created'|i18n( 'design/admin/node/view/full' )}</th>
+    <th scope="col">{'Section'|i18n( 'design/admin/node/view/full' )}</th>
+    <th scope="col" class="tight">{'Versions'|i18n( 'design/admin/node/view/full' )}</th>
+    <th scope="col" class="tight">{'Translations'|i18n( 'design/admin/node/view/full' )}</th>
+    <th scope="col" class="tight">{'Node ID'|i18n( 'design/admin/node/view/full' )}</th>
+    <th scope="col" class="tight">{'Object ID'|i18n( 'design/admin/node/view/full' )}</th>
 </tr>
 <tr class="bglight">
     <td><a href={$node.object.owner.main_node.url_alias|ezurl}>{$node.object.owner.name|wash}</a></td>
@@ -19,7 +19,7 @@
     <input type="hidden" name="RedirectRelativeURI" value="{$node.url_alias|wash}" />
     <input type="hidden" name="ChangeSectionOnly" value="1" />
 
-    <select id="selected-section-id" name="SelectedSectionId">
+    <select id="selected-section-id" name="SelectedSectionId" aria-label="{'Section'|i18n( 'design/admin/node/view/full' )|wash}">
     {foreach $node.object.allowed_assign_section_list as $allowed_assign_section}
         {if eq( $allowed_assign_section.id, $node.object.section_id )}
         <option value="{$allowed_assign_section.id}" selected="selected">{$allowed_assign_section.name|wash}</option>
@@ -43,8 +43,8 @@
 <div class="block">
 <table class="list" cellspacing="0" summary="{'Node Remote ID and Object Remote ID'|i18n( 'design/admin/node/view/full' )}">
     <tr>
-        <th>{'Node Remote ID'|i18n( 'design/admin/node/view/full' )}</th>
-        <th>{'Object Remote ID'|i18n( 'design/admin/node/view/full' )}</th>
+        <th scope="col">{'Node Remote ID'|i18n( 'design/admin/node/view/full' )}</th>
+        <th scope="col">{'Object Remote ID'|i18n( 'design/admin/node/view/full' )}</th>
     </tr>
     <tr>
          <td>{$node.remote_id|wash}</td>
@@ -67,8 +67,8 @@
 <table id="tab-details-states-list" class="list" cellspacing="0" summary="{'States and their states groups for current object.'|i18n( 'design/admin/node/view/full' )}">
 {if $states_count}
     <tr>
-        <th class="tight">{'State group'|i18n( 'design/admin/node/view/full' )}</th>
-        <th class="wide">{'Available states'|i18n( 'design/admin/node/view/full' )}</th>
+        <th scope="col" class="tight">{'State group'|i18n( 'design/admin/node/view/full' )}</th>
+        <th scope="col" class="wide">{'Available states'|i18n( 'design/admin/node/view/full' )}</th>
     </tr>
 
     {foreach $states as $allowed_assign_state_info sequence array( 'bglight', 'bgdark' ) as $sequence}

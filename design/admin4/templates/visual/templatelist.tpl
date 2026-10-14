@@ -7,14 +7,14 @@
    <td>
     <h1 class="context-title">{'Template list'|i18n( 'design/admin/visual/templatelist' )}</h1>
    </td>
-   <th align=right >
+   <td align="right">
     <div class="content-search" >
            <form action={"/visual/templatelist"|ezurl} method="get">
                <input class="halfbox" type="text" size="15" name="filterString" id="Filter" value="{$filterString}" />
                <input class="button" name="FilterButton" type="submit" value="{'Filter'|i18n('design/standard/layout')}" />&nbsp; &nbsp;
            </form>
     </div>
-   </th>
+   </td>
 </tr>
 </table>
 
@@ -26,10 +26,10 @@
 
 <table class="list" cellspacing="0">
 <tr>
-   <th>
+   <th scope="col">
    {'Template'|i18n( 'design/admin/visual/templatelist' )}
    </th>
-   <th>
+   <th scope="col">
    {'Design resource'|i18n( 'design/admin/visual/templatelist' )}
    </th>
 </tr>
@@ -69,8 +69,8 @@
 
 <table class="list" cellspacing="0">
 <tr>
-   <th>{'Template'|i18n( 'design/admin/visual/templatelist' )}</th>
-   <th>{'Design resource'|i18n( 'design/admin/visual/templatelist' )}</th>
+   <th scope="col">{'Template'|i18n( 'design/admin/visual/templatelist' )}</th>
+   <th scope="col">{'Design resource'|i18n( 'design/admin/visual/templatelist' )}</th>
 </tr>
 {section var=Templates loop=$most_used_template_array sequence=array( bglight, bgdark )}
 <tr class="{$Templates.sequence}">

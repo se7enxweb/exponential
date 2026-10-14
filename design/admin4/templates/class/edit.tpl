@@ -153,9 +153,9 @@
 <td>
 <table cellspacing="0" class="a4-class-attr" summary="{'Class attribute item'|i18n( 'design/admin/class/edit' )}">
 <tr>
-    <th class="tight"><input type="checkbox" name="ContentAttribute_id_checked[{$Attributes.item.id}]" value="{$Attributes.item.id}" aria-label="{'Select attribute for removal. Click the "Remove selected attributes" button to remove the selected attributes.'|i18n( 'design/admin/class/edit' )|wash}" /></th>
-    <th class="wide">{$Attributes.number}. {$Attributes.item.name|wash} [{$Attributes.item.data_type.information.name|wash}] (id:{$Attributes.item.id})</th>
-    <th class="tight">
+    <th scope="col" class="tight"><input type="checkbox" name="ContentAttribute_id_checked[{$Attributes.item.id}]" value="{$Attributes.item.id}" aria-label="{'Select attribute for removal. Click the "Remove selected attributes" button to remove the selected attributes.'|i18n( 'design/admin/class/edit' )|wash}" /></th>
+    <th scope="col" class="wide">{$Attributes.number}. {$Attributes.item.name|wash} [{$Attributes.item.data_type.information.name|wash}] (id:{$Attributes.item.id})</th>
+    <th scope="col" class="tight">
       <div class="listbutton">
           <button type="submit" class="a4-icon-btn" name="MoveTop" value="{$Attributes.item.id}" title="{'Move this attribute to the top.'|i18n( 'design/admin/class/edit' )|wash}" aria-label="{'Top'|i18n( 'design/admin/class/edit' )|wash}"><span class="a4-icon a4-bi-arrow-bar-up is-medium" aria-hidden="true"></span></button>
           <button type="submit" class="a4-icon-btn" name="MoveUp" value="{$Attributes.item.id}" title="{'Use the order buttons to set the order of the class attributes. The up arrow moves the attribute one place up. The down arrow moves the attribute one place down.'|i18n( 'design/admin/class/edit' )|wash}" aria-label="{'Up'|i18n( 'design/admin/class/edit' )|wash}"><span class="a4-icon a4-bi-arrow-up is-medium" aria-hidden="true"></span></button>

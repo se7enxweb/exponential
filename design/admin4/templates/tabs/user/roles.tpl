@@ -2,9 +2,9 @@
 {if $assigned_roles}
 <table class="list" cellspacing="0" summary="{'List of roles assigned with and without limitations for current node.'|i18n( 'design/admin/node/view/full' )}">
 <tr>
-    <th>{'Name'|i18n( 'design/admin/node/view/full' )}</th>
-    <th>{'Limitation'|i18n( 'design/admin/node/view/full' )}</th>
-    <th class="tight">&nbsp;</th>
+    <th scope="col">{'Name'|i18n( 'design/admin/node/view/full' )}</th>
+    <th scope="col">{'Limitation'|i18n( 'design/admin/node/view/full' )}</th>
+    <th scope="col" class="tight">&nbsp;</th>
 </tr>
 {section var=Roles loop=$assigned_roles sequence=array( 'bglight', 'bgdark' )}
     <tr class="{$Roles.sequence}">

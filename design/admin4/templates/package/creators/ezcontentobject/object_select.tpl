@@ -15,8 +15,8 @@
     <label>{'Selected nodes'|i18n('design/admin/package')}</label>
     <table class="list" width="100%" cellpadding="0" cellspacing="0" border="0">
     <tr>
-        <th class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/package' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/package' )|wash}" onclick="ezjs_toggleCheckboxes( document.objectlist, 'DeleteIDArray[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>        <th>{"Node"|i18n("design/admin/package")}</th>
-        <th>{"Export type"|i18n("design/admin/package")}</th>
+        <th scope="col" class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/package' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/package' )|wash}" onclick="ezjs_toggleCheckboxes( document.objectlist, 'DeleteIDArray[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>        <th scope="col">{"Node"|i18n("design/admin/package")}</th>
+        <th scope="col">{"Export type"|i18n("design/admin/package")}</th>
     </tr>
         {section var=node loop=$node_list sequence=array(bglight,bgdark)}
         <tr class="{$node.sequence}">

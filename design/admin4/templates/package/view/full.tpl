@@ -149,7 +149,7 @@
     {if $job.result.drafts|count}
     <div class="a4-table-wrap">
     <table class="a4-table">
-        <tr><th>{'Draft'|i18n( 'design/admin/package' )}</th><th>{'Remote ID'|i18n( 'design/admin/package' )}</th><th>{'What'|i18n( 'design/admin/package' )}</th></tr>
+        <tr><th scope="col">{'Draft'|i18n( 'design/admin/package' )}</th><th scope="col">{'Remote ID'|i18n( 'design/admin/package' )}</th><th scope="col">{'What'|i18n( 'design/admin/package' )}</th></tr>
         {foreach $job.result.drafts as $draft max 50}
         <tr>
             <td>{if $draft.version}<a href={concat( 'content/versionview/', $draft.object_id, '/', $draft.version )|ezurl}>{$draft.name|wash}</a>{else}{$draft.name|wash}{/if}</td>
@@ -359,7 +359,7 @@
                 <h3 class="a4-h3 pvf-language">{$language|wash}</h3>
                 <div class="pvf-scroll">
                 <table class="list pvf-attributes">
-                    <thead><tr><th>{'Attribute'|i18n('design/admin/package')}</th><th>{'Datatype'|i18n('design/admin/package')}</th><th>{'Value'|i18n('design/admin/package')}</th></tr></thead>
+                    <thead><tr><th scope="col">{'Attribute'|i18n('design/admin/package')}</th><th scope="col">{'Datatype'|i18n('design/admin/package')}</th><th scope="col">{'Value'|i18n('design/admin/package')}</th></tr></thead>
                     <tbody>
                     {foreach $attributes as $identifier => $attribute sequence array( 'bglight', 'bgdark' ) as $rowStyle}
                     <tr class="{$rowStyle}"><td><code>{$identifier|wash}</code></td><td>{$attribute.type|wash}</td><td class="pvf-value">{$attribute.text|wash}</td></tr>
@@ -398,10 +398,10 @@
         <div class="pvf-scroll">
         <table class="list pvf-files">
             <thead><tr>
-                <th class="pvf-col-path">{'Path'|i18n('design/admin/package')}</th>
-                <th class="pvf-col-type">{'Type'|i18n('design/admin/package')}</th>
-                <th class="pvf-col-size">{'Size'|i18n('design/admin/package')}</th>
-                <th class="pvf-col-actions"><span class="pvf-hidden">{'Actions'|i18n('design/admin/package')}</span></th>
+                <th scope="col" class="pvf-col-path">{'Path'|i18n('design/admin/package')}</th>
+                <th scope="col" class="pvf-col-type">{'Type'|i18n('design/admin/package')}</th>
+                <th scope="col" class="pvf-col-size">{'Size'|i18n('design/admin/package')}</th>
+                <th scope="col" class="pvf-col-actions"><span class="pvf-hidden">{'Actions'|i18n('design/admin/package')}</span></th>
             </tr></thead>
             <tbody>
             {foreach $ContentsBrowser.files as $file sequence array( 'bglight', 'bgdark' ) as $rowStyle}

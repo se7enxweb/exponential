@@ -13,9 +13,9 @@
 {section show=$discountgroup_array}
 <table class="list" cellspacing="0">
 <tr>
-    <th class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/shop/discountgroup' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/shop/discountgroup' )|wash}" onclick="ezjs_toggleCheckboxes( document.DiscountGroup, 'discountGroupIDList[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
-    <th class="wide">{'Name'|i18n( 'design/admin/shop/discountgroup' )}</th>
-    <th class="tight">&nbsp;</th>
+    <th scope="col" class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/shop/discountgroup' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/shop/discountgroup' )|wash}" onclick="ezjs_toggleCheckboxes( document.DiscountGroup, 'discountGroupIDList[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
+    <th scope="col" class="wide">{'Name'|i18n( 'design/admin/shop/discountgroup' )}</th>
+    <th scope="col" class="tight">&nbsp;</th>
 </tr>
 {section var=Groups loop=$discountgroup_array sequence=array( bglight, bgdark )}
 <tr class="{$Groups.sequence}">

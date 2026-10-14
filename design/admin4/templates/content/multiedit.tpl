@@ -17,7 +17,7 @@
 
 <form method="post" action={"content/multiedit"|ezurl} enctype="multipart/form-data" name="multiedit">
 
-<div id="maincontent" class="a4-content-multiedit-main"><div id="maincontent-design" class="float-break"><div id="fix">
+<div id="maincontent" role="main" tabindex="-1" class="a4-content-multiedit-main"><div id="maincontent-design" class="float-break"><div id="fix">
 <div class="context-block a4-content-multiedit">
 
 {* DESIGN: Header START *}<div class="box-header"><div class="box-ml">
@@ -82,8 +82,8 @@
         <p>{'Items waiting for approval have been sent into their workflow and are not published yet.'|i18n('design/admin/content/multiedit')}</p></div>
     <table class="list" cellspacing="0">
     <tr>
-        <th>{'Item'|i18n('design/admin/content/multiedit')}</th>
-        <th>{'Result'|i18n('design/admin/content/multiedit')}</th>
+        <th scope="col">{'Item'|i18n('design/admin/content/multiedit')}</th>
+        <th scope="col">{'Result'|i18n('design/admin/content/multiedit')}</th>
     </tr>
     {foreach $multiedit_published as $result sequence array( 'bglight', 'bgdark' ) as $row_class}
     <tr class="{$row_class}">

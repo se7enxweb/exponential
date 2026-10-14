@@ -163,11 +163,11 @@
 <div class="a4-setup-wz-tables">
 <table id="mewTableList">
 <tr>
-    <th>&nbsp;</th>
-    <th>{'Table'|i18n( 'design/admin/setup/rad/moduleextension' )}</th>
-    <th class="a4-num a4-muted">{'Columns'|i18n( 'design/admin/setup/rad/moduleextension' )}</th>
-    <th>{'Key'|i18n( 'design/admin/setup/rad/moduleextension' )}</th>
-    <th class="a4-num a4-muted">{'Rows'|i18n( 'design/admin/setup/rad/moduleextension' )}</th>
+    <th scope="col">&nbsp;</th>
+    <th scope="col">{'Table'|i18n( 'design/admin/setup/rad/moduleextension' )}</th>
+    <th scope="col" class="a4-num a4-muted">{'Columns'|i18n( 'design/admin/setup/rad/moduleextension' )}</th>
+    <th scope="col">{'Key'|i18n( 'design/admin/setup/rad/moduleextension' )}</th>
+    <th scope="col" class="a4-num a4-muted">{'Rows'|i18n( 'design/admin/setup/rad/moduleextension' )}</th>
 </tr>
 {foreach $wizard_tables as $mew_table}
 <tr{if $mew_table.selected} class="is-selected"{/if}>
@@ -275,10 +275,10 @@
 
 <table>
 <tr>
-    <th>{'Table'|i18n( 'design/admin/setup/rad/moduleextension' )}</th>
-    <th>{'Class'|i18n( 'design/admin/setup/rad/moduleextension' )}</th>
-    <th>{'Key'|i18n( 'design/admin/setup/rad/moduleextension' )}</th>
-    <th>{'Columns'|i18n( 'design/admin/setup/rad/moduleextension' )}</th>
+    <th scope="col">{'Table'|i18n( 'design/admin/setup/rad/moduleextension' )}</th>
+    <th scope="col">{'Class'|i18n( 'design/admin/setup/rad/moduleextension' )}</th>
+    <th scope="col">{'Key'|i18n( 'design/admin/setup/rad/moduleextension' )}</th>
+    <th scope="col">{'Columns'|i18n( 'design/admin/setup/rad/moduleextension' )}</th>
 </tr>
 {foreach $wizard_mapping as $mew_map}
 <tr>

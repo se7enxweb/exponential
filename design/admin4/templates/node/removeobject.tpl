@@ -73,9 +73,9 @@
 
 <table class="list" cellspacing="0">
 <tr>
-    <th colspan="2">{'Item'|i18n( 'design/admin/node/removeobject' )}</th>
-    <th>{'Type'|i18n( 'design/admin/node/removeobject' )}</th>
-    <th>{'Sub items'|i18n( 'design/admin/node/removeobject' )}</th>
+    <th scope="col" colspan="2">{'Item'|i18n( 'design/admin/node/removeobject' )}</th>
+    <th scope="col">{'Type'|i18n( 'design/admin/node/removeobject' )}</th>
+    <th scope="col">{'Sub items'|i18n( 'design/admin/node/removeobject' )}</th>
 </tr>
 {section var=remove_item loop=$remove_list sequence=array( bglight, bgdark )}
 

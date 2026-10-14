@@ -62,13 +62,13 @@
 {if $opml_items|count|gt( 0 )}
 <div class="a4-rss-opml-outlines-wrap"><table class="list a4-rss-opml-outlines" cellspacing="0">
 <tr>
-    <th class="tight">&nbsp;</th>
-    <th class="tight">{'Order'|i18n( 'design/admin/rss/edit_export' )}</th>
-    <th class="tight">{'Type'|i18n( 'design/admin/rss/edit_export' )}</th>
-    <th>{'Points at'|i18n( 'design/admin/rss/edit_export' )}</th>
-    <th>{'Text'|i18n( 'design/admin/rss/edit_export' )}</th>
-    <th>{'Category'|i18n( 'design/admin/rss/edit_export' )}</th>
-    <th class="tight">{'Inside'|i18n( 'design/admin/rss/edit_export' )}</th>
+    <th scope="col" class="tight">&nbsp;</th>
+    <th scope="col" class="tight">{'Order'|i18n( 'design/admin/rss/edit_export' )}</th>
+    <th scope="col" class="tight">{'Type'|i18n( 'design/admin/rss/edit_export' )}</th>
+    <th scope="col">{'Points at'|i18n( 'design/admin/rss/edit_export' )}</th>
+    <th scope="col">{'Text'|i18n( 'design/admin/rss/edit_export' )}</th>
+    <th scope="col">{'Category'|i18n( 'design/admin/rss/edit_export' )}</th>
+    <th scope="col" class="tight">{'Inside'|i18n( 'design/admin/rss/edit_export' )}</th>
 </tr>
 {foreach $opml_items as $opml_item sequence array( bglight, bgdark ) as $opml_seq}
 <tr class="{$opml_seq}">
@@ -178,7 +178,7 @@
 {if $opml_browser_list|count|gt( 0 )}
 <div class="a4-rss-opml-browser-wrap"><table class="list a4-rss-opml-browser" cellspacing="0">
 <tr>
-    <th class="tight">&nbsp;</th>
+    <th scope="col" class="tight">&nbsp;</th>
     {include uri='design:rss/sortbutton.tpl' key='id'          label='ID'|i18n( 'design/admin/rss/edit_export' )       sort=$opml_browser_pager.sort}
     {include uri='design:rss/sortbutton.tpl' key='title'       label='Name'|i18n( 'design/admin/rss/edit_export' )     sort=$opml_browser_pager.sort}
     {include uri='design:rss/sortbutton.tpl' key='access_url'  label='URI'|i18n( 'design/admin/rss/edit_export' )      sort=$opml_browser_pager.sort}

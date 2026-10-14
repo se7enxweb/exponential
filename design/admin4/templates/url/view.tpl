@@ -144,10 +144,10 @@
 <table class="list" cellspacing="0">
 
 <tr>
-    <th>{'Name'|i18n( 'design/admin/url/view' )}</th>
-    <th>{'Status'|i18n( 'design/admin/url/view' )}</th>
-    <th>{'Version'|i18n( 'design/admin/url/view' )}</th>
-    <th class="tight">&nbsp;</th>
+    <th scope="col">{'Name'|i18n( 'design/admin/url/view' )}</th>
+    <th scope="col">{'Status'|i18n( 'design/admin/url/view' )}</th>
+    <th scope="col">{'Version'|i18n( 'design/admin/url/view' )}</th>
+    <th scope="col" class="tight">&nbsp;</th>
 </tr>
 {section var=Objects loop=$object_list sequence=array( bglight, bgdark )}
 

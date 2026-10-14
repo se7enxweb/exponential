@@ -9,17 +9,17 @@
 
 <table class="list" cellspacing="0">
 <tr>
-    <th class="tight">
+    <th scope="col" class="tight">
     {if eq( $select_type, 'checkbox' )}
         <button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/content/browse' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/content/browse' )|wash}" onclick="ezjs_toggleCheckboxes( document.browse, '{$select_name}[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button>
     {else}
         &nbsp;
     {/if}
     </th>
-    <th class="wide">
+    <th scope="col" class="wide">
     {'Name'|i18n( 'design/admin/content/browse' )}
     </th>
-    <th class="tight">
+    <th scope="col" class="tight">
     {'Type'|i18n( 'design/admin/content/browse' )}
     </th>
 </tr>
