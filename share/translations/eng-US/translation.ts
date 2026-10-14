@@ -7302,6 +7302,10 @@
         <source>Items below %name</source>
         <translation>Items below %name</translation>
     </message>
+    <message>
+        <source>Content tree</source>
+        <translation>Content tree</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/all_latest_content</name>

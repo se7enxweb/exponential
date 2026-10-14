@@ -116,7 +116,8 @@ var treeMenu;
             *}"disabled":"{'Dynamic tree menu is disabled for this siteaccess!'|i18n("design/admin/contentstructuremenu")|wash("javascript")}",{*
             *}"not_exist":"{'Node does not exist'|i18n("design/admin/contentstructuremenu")|wash("javascript")}",{*
             *}"internal_error":"{'Internal error'|i18n("design/admin/contentstructuremenu")|wash("javascript")}",{*
-            *}"subitems":"{'Items below %name'|i18n("design/admin/contentstructuremenu")|wash("javascript")}"{rdelim};
+            *}"subitems":"{'Items below %name'|i18n("design/admin/contentstructuremenu")|wash("javascript")}",{*
+            *}"tree":"{'Content tree'|i18n("design/admin/contentstructuremenu")|wash("javascript")}"{rdelim};
         {undef $iconInfo $classIconsSize}
     {/cache-block}
 {/cache-block}
@@ -138,6 +139,7 @@ var treeMenu;
     document.writeln( '<ul id="content_tree_menu">' );
     document.writeln( treeMenu.generateEntry( rootNode, false, true ) );
     document.writeln( '<\/ul>' );
+    treeMenu.tree( document.getElementById( 'content_tree_menu' ) );
 
     treeMenu.load( false, rootNode.node_id, rootNode.modified_subnode );
 {rdelim})();

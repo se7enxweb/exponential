@@ -8849,6 +8849,10 @@
         <source>Items below %name</source>
         <translation>Elemente unter %name</translation>
     </message>
+    <message>
+        <source>Content tree</source>
+        <translation>Inhaltsbaum</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/all_latest_content</name>
