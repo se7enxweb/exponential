@@ -920,7 +920,7 @@ d1f3e1ef98e8cee2e52a5446280eadc3  design/admin4/override/templates/embed-inline_
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
 a2c561e93ef63c93201e81acd4f32741  design/admin4/override/templates/window_controls_user.tpl
 f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin4/override/templates/windows_user.tpl
-fab1552c50d5af710035d5664419d9a0  design/admin4/stylesheets/admin4.css
+b0aadecc881b06fd57121b840c34ef99  design/admin4/stylesheets/admin4.css
 dfe78d22a482e68f4fe3fe53b02fff72  design/admin4/stylesheets/components.css
 a8fcc091552c07de33a4c8bc6df8c20f  design/admin4/stylesheets/content.css
 b34210463fcdf50abd3a693ade329417  design/admin4/stylesheets/core.css
@@ -2985,7 +2985,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-635044fb789ccde0da4826fee20035c0  doc/changelogs/6.0/6.0.15.md
+982ee5f1dbcbda071923e68a800a195f  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -7057,7 +7057,7 @@ ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 8b29711fe10a56c5c5b90916f35d0a00  tests/tests/bin/phpcs/NoTypeDeclarationsSniffTest.php
 4e3eeb18c2ea423afb62388e5e3dcafc  tests/tests/bin/phpcs/fixtures/typedeclarations.inc
 617c938384f3d87aa79b21ee6d448f4e  tests/tests/design/AdminIconsTest.php
-2401fc59cd5aa53bf8cc803206d8f207  tests/tests/design/AdminLeftMenuGroupsTest.php
+e1f6a16a594a769adc56cdb33bba7f11  tests/tests/design/AdminLeftMenuGroupsTest.php
 7e8957a9c15916135defa02bc8301d00  tests/tests/design/AdminRetiredClassesTest.php
 6895bdbd107827a2712077a14426a5dd  tests/tests/design/AdminStylingRulesTest.php
 96676702fed665b02ac81464307b00f5  tests/tests/design/AdminTokenContrastTest.php
