@@ -1610,6 +1610,9 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
   font-weight: 600;
   text-decoration: none;
 }
+@media (prefers-reduced-motion: reduce) {
+  #leftmenu details.a4-navgroup > summary.a4-nav-title::before { transition: none; }
+}
 @media (forced-colors: active) {
   #leftmenu details.a4-navgroup > summary.a4-nav-title::before { forced-color-adjust: none; background-color: CanvasText; }
   #leftmenu ul.leftmenu-items li > div > a[aria-current="page"] { border-left: 3px solid Highlight; box-shadow: none; }

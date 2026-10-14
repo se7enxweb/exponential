@@ -44,7 +44,7 @@ class AdminLeftMenuGroupsTest extends PHPUnit\Framework\TestCase
         return $values;
     }
 
-    public function testSetupGroupsNameEveryGroupAndOnlyKnownLinks()
+    public function testSetupGroupsNameEveryGroupAndHoldEveryLinkOnce()
     {
         $setup = self::iniSection( 'Leftmenu_setup' );
         $this->assertNotEmpty( $setup['Groups'] ?? array(), 'Leftmenu_setup has no Groups[]' );
@@ -57,6 +57,7 @@ class AdminLeftMenuGroupsTest extends PHPUnit\Framework\TestCase
             foreach ( $setup["GroupLinks_$group"] as $key )
             {
                 $this->assertNotContains( $key, $seen, "link $key is in two groups" );
+                $this->assertContains( $key, $links, "GroupLinks_{$group}[] names $key, which is no Links[] key of Leftmenu_setup" );
                 $seen[] = $key;
             }
         }
@@ -68,7 +69,11 @@ class AdminLeftMenuGroupsTest extends PHPUnit\Framework\TestCase
     public function testMenuTemplateGroupsWithDetailsAndKeepsTheFlatList()
     {
         $tpl = self::read( 'design/admin4/templates/parts/ini_menu.tpl' );
-        $this->assertStringContainsString( "ezini_hasvariable( \$ini_section, 'Groups', 'menu.ini' )", $tpl );
+        // an empty Groups[] (reset in an override) gives the plain list: the branch counts, it does not ask hasVariable
+        $this->assertStringContainsString( '{if $group_list|count}', $tpl );
+        // a link named in two groups shows in the first only
+        $this->assertStringContainsString( '$grouped_keys|contains( $item.key )|not', $tpl );
+        $this->assertStringContainsString( "{\$group.name|d18n( \$i18n_section )|wash}", $tpl );
         $this->assertStringContainsString( '<details class="a4-navgroup"', $tpl );
         $this->assertStringContainsString( '<summary class="a4-nav-title">', $tpl );
         $this->assertStringContainsString( "'more', 'name', 'More'", $tpl, 'links in no group need the "More" group' );
@@ -89,6 +94,7 @@ class AdminLeftMenuGroupsTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( 'a[aria-current="page"]', $css );
         $this->assertStringContainsString( 'summary.a4-nav-title', $css );
         $this->assertMatchesRegularExpression( '/@media \(forced-colors: active\) \{\s*#leftmenu details\.a4-navgroup/', $css );
+        $this->assertMatchesRegularExpression( '/@media \(prefers-reduced-motion: reduce\) \{\s*#leftmenu details\.a4-navgroup > summary\.a4-nav-title::before \{ transition: none; \}/', $css );
     }
 
     public function testLeftColumnIsTheSideMenuNavigation()

@@ -69,8 +69,8 @@ extension). The editor siteaccess falls back to `admin4` first, then `admin3`, `
   Site and URLs, Workflows, Users and messages, System, and "More" for links an extension adds. Each group has a small
   capital title with a caret and opens and closes (the browser keeps the choice; the group of the current page always
   opens). The current page's link carries `aria-current="page"` and is marked with the accent tint and a bar. A menu
-  is grouped through menu.ini (`Groups[]`, `GroupNames[<group>]`, `GroupLinks_<group>[]`); without `Groups[]` it is
-  one list, named by its heading. Access is checked per link as before.
+  is grouped through menu.ini (`Groups[]`, `GroupNames[<group>]`, `GroupLinks_<group>[]`); without `Groups[]`, or with
+  `Groups[]` reset to no values, it is one list, named by its heading. Access is checked per link as before.
 - **Tables.** A list table's sorted column is readable (soft orange header).
 - **Icons.** Bootstrap Icons in the text colour, so they follow links, buttons, hover and the dark mode (see below).
 
