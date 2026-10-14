@@ -561,10 +561,18 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
                 $found[$d[0]][$d[1]] = $d[2];
             }
         }
-        $this->assertSame( 'var(--a4-zebra)', $found['.a4-table > tbody > tr:nth-child(even) > td']['background-color'] );
-        $this->assertSame( 'var(--a4-zebra)', $found['table.list > tbody > tr:nth-child(even) > td']['background-color'] );
-        $this->assertSame( 'var(--a4-info-bg)', $found['table.list > tbody > tr:hover > td']['background-color'] );
-        $this->assertSame( 'var(--a4-info-bg)', $found['.a4-table > tbody > tr:hover > td']['background-color'] );
+        // only data rows count (a header row of th in tbody does not), so the first data row is plain; a row header
+        // (th scope=row) takes the stripe with its cells
+        $rows = ' > tbody > tr:nth-child(even of :has(> td):not([hidden])) > :is(td, th[scope="row"])';
+        $this->assertSame( 'var(--a4-zebra)', $found['.a4-table' . $rows]['background-color'] );
+        $this->assertSame( 'var(--a4-zebra)', $found['table.list:not(.a4-plain)' . $rows]['background-color'] );
+        $this->assertSame( 'var(--a4-info-bg)', $found['table.list:not(.a4-plain) > tbody > tr:hover > :is(td, th[scope="row"])']['background-color'] );
+        $this->assertSame( 'var(--a4-info-bg)', $found['.a4-table > tbody > tr:hover > :is(td, th[scope="row"])']['background-color'] );
+        // the forms laid out as a list are not data tables
+        foreach ( array( 'shop/editvatrule.tpl', 'shop/editcurrency.tpl' ) as $template )
+        {
+            $this->assertStringContainsString( '<table class="list a4-plain"', file_get_contents( self::$root . "/design/admin4/templates/$template" ), $template );
+        }
         $this->assertStringContainsString( '--exp-dt-row-alt: var(--a4-zebra)', file_get_contents( "$dir/admin4.css" ) );
 
         $problems = array();
@@ -607,6 +615,10 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
         $grip = file_get_contents( self::$root . '/design/admin4/templates/page_leftmenu.tpl' );
         $this->assertStringContainsString( 'role="separator"', $grip );
         $this->assertStringContainsString( 'tabindex="0"', $grip );
+        $this->assertStringNotContainsString( 'title=', $grip, 'the grip is named by its aria-label alone' );
+        // forced colors: the native select without the page's chevron
+        $this->assertMatchesRegularExpression( '/@media \(forced-colors: active\) \{\s*\.controlbar\.a4-node-actions form \.button-left \.block select \{[^}]*appearance: auto;[^}]*background-image: none;/',
+            file_get_contents( "$dir/admin4.css" ) );
         $this->assertStringContainsString( "handle.addEventListener('keydown'", file_get_contents( self::$root . '/design/admin4/javascript/ezadmin_menubar.js' ) );
     }
 

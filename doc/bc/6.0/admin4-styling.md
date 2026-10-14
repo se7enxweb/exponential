@@ -97,18 +97,21 @@ Every colour, chart and depth token has a dark value; the radius, spacing, contr
 modes.
 
 **Tables.** Every data table is striped the same way: `table.list`, the `.a4-table` component and the sub-items table
-(`exp/datatable`, through `--exp-dt-row-alt`) paint their even body rows with `--a4-zebra`, the hovered row with
-`--a4-info-bg`, a selected row (`.a4-table tr.is-selected`) with `--a4-accent-soft`. The `bglight`/`bgdark` classes
-the templates still write are ignored for the colour (a header row or a hidden row used to put two light rows
-together). A table used for layout carries none of these classes and stays plain; do not give it one. Text on a zebra
-row keeps 4.5:1 (`AdminTokenContrastTest`), and no admin4 stylesheet paints rows in a colour of its own
-(`AdminStylingRulesTest::testDataTablesShareOneZebra`).
+(`exp/datatable`, through `--exp-dt-row-alt`) paint every second data row with `--a4-zebra`, the hovered row with
+`--a4-info-bg`, a selected row (`.a4-table tr.is-selected`) with `--a4-accent-soft`; a row header (`th scope="row"`)
+takes its row's colour. Only rows with data cells count (`tr:nth-child(even of :has(> td):not([hidden]))`): a header
+row of `th` inside `tbody` or a row with the `hidden` attribute is skipped, so the first data row is always plain. The
+`bglight`/`bgdark` classes the templates still write are ignored for the colour. A row hidden by a script
+(`display: none`) still counts; that is a known limit of CSS striping. A table used for layout carries none of these
+classes and stays plain; a form laid out as a `table.list` takes `a4-plain` as well (`shop/editvatrule.tpl`,
+`shop/editcurrency.tpl`). Text on a zebra row and on a hovered row keeps 4.5:1 (`AdminTokenContrastTest`), and no
+admin4 stylesheet paints rows in a colour of its own (`AdminStylingRulesTest::testDataTablesShareOneZebra`).
 `--a4-orange`, `--a4-orange-dark` and `--a4-orange-soft` are the accent's former names, kept for the extensions that
 use them; new code uses the `--a4-accent*` names.
 
 **The accent** is the brand orange `#f26a21`, as on admin4's header (the selected menu pill) and its default button.
 White text on it is only 3:1, so filled controls with white text use its darker shade `--a4-accent-strong`
-(`#c2410c`, 5.2:1) and accent-coloured text uses `--a4-accent-text` (`#c2410c` light, `#ff9a5c` dark).
+(`#c2410c`, 5.2:1) and accent-coloured text uses `--a4-accent-text` (`#bc3f0b` light, 4.7:1 also on a hovered table row; `#ff9a5c` dark).
 
 ## Components
 
