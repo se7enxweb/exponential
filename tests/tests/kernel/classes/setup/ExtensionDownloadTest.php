@@ -9,6 +9,9 @@
  *          Empty values, numbers, switches and comments are not secrets. addExtension() and the package wizard refuse.
  *  ED-02 - download() refuses an extension with a secret setting before anything is packed
  *  ED-03 - download() refuses an unknown extension or format
+ *  ED-05 - the check reads what the package takes, as text: commented lines, Key[]=, blanks, quotes, BOM and CRLF,
+ *          names in any case, hidden files, links outside the extension, files too big to read; the package holds
+ *          exactly the entries the check marked as packed
  *  ED-04 - the view no longer packs from the address (/setup/extensions/<name>/<format>), and both designs post a
  *          button instead of linking
  *
@@ -18,6 +21,31 @@
  */
 
 use Exponential\View\Kernel\Setup\Extensions;
+
+/** A package held in a throwaway directory: what addExtension() asks of it */
+class ExtensionDownloadTestPackage
+{
+    private $path;
+
+    public function __construct( $path )
+    {
+        $this->path = $path;
+    }
+
+    public function path()
+    {
+        return $this->path;
+    }
+
+    public function md5sum( $file )
+    {
+        return is_file( $file ) ? md5_file( $file ) : '';
+    }
+
+    public function appendInstall()
+    {
+    }
+}
 
 class ExtensionDownloadTest extends PHPUnit\Framework\TestCase
 {
@@ -34,7 +62,7 @@ class ExtensionDownloadTest extends PHPUnit\Framework\TestCase
         $this->name = 'phpunitextdownload' . getmypid();
         $settings = eZExtension::baseDirectory() . '/' . $this->name . '/settings';
         mkdir( $settings . '/siteaccess/site', 0777, true );
-        file_put_contents( $settings . '/plain.ini', "<?php /* #?ini charset=\"utf-8\"?\n[Limits]\nMaxTokens=4096\nRequireToken=enabled\nPassword=\n# Password=commented\n*/ ?>\n" );
+        file_put_contents( $settings . '/plain.ini', "<?php /* #?ini charset=\"utf-8\"?\n[Limits]\nMaxTokens=4096\nRequireToken=enabled\nPassword=\n# a comment\n*/ ?>\n" );
     }
 
     protected function tearDown(): void
@@ -92,7 +120,7 @@ class ExtensionDownloadTest extends PHPUnit\Framework\TestCase
     {
         foreach ( array( 'site.ini.bak', 'site.ini.orig', 'site.ini.append.php.dist', 'site.ini~', 'site.ini.old' ) as $name )
             $this->put( 'settings/' . $name, "Title=nothing secret\n" );
-        $this->put( 'doc/site.ini.bak', "Title=outside settings\n" );
+        $this->put( 'doc/notes.bak', "Title=outside settings, not a settings file\n" );
         $this->assertSame( array( 'settings/site.ini.append.php.dist: copy of a settings file', 'settings/site.ini.bak: copy of a settings file',
                                   'settings/site.ini.old: copy of a settings file', 'settings/site.ini.orig: copy of a settings file',
                                   'settings/site.ini~: copy of a settings file' ), $this->secrets() );
@@ -110,6 +138,86 @@ class ExtensionDownloadTest extends PHPUnit\Framework\TestCase
                                   'docker/.env.local: key material', 'lib/.ssh/config: key material', 'ssh/id_ed25519.pub: key material',
                                   'ssh/id_rsa: key material', 'store/client.p12: key material', 'store/client.pfx: key material',
                                   'var/jwt/public.txt: key material' ), $this->secrets() );
+    }
+
+    /** ED-05, what eZINI reads differently is read as text: comments, arrays, blanks, quotes, BOM and CRLF */
+    public function testTheRawTextIsRead()
+    {
+        $this->put( 'settings/a.ini.append.php', "<?php /* #?ini charset=\"utf-8\"?\n[Db]\n#Password=hunter2\n*/ ?>\n" );
+        $this->put( 'settings/b.ini', "[Db]\nPassword[]=hunter2\nToken[main]=abc\n" );
+        $this->put( 'settings/c.ini', "[Db]\n  Password   =   \"hunter2\"  \n" );
+        $this->put( 'settings/d.ini', "\xEF\xBB\xBFSecret=one\r\nUser=x\r\nDbPass=two\rTitle=three\r\n" );
+        $this->put( 'settings/siteaccess/site/e', "Server=mysql://u:hunter2@db/x\n; Url=https://u:pw@host/\n" );
+        $this->put( 'settings/f.ini', "# ApiKey=sk-...\n# Password=<your password>\n# SearchServerUserPass=username:password\n# a token: in prose\nPassword=\nTimeout=30\n" );
+        $this->put( 'doc/example.ini.append.php', "Password=hunter2\n" );
+        $this->assertSame( array( 'doc/example.ini.append.php: Password', 'settings/a.ini.append.php: Password', 'settings/b.ini: Password',
+                                  'settings/b.ini: Token', 'settings/c.ini: Password', 'settings/d.ini: DbPass', 'settings/d.ini: Secret',
+                                  'settings/siteaccess/site/e: Server', 'settings/siteaccess/site/e: Url' ), $this->secrets() );
+    }
+
+    /** ED-05, names in any case, hidden files, links and files the check cannot read */
+    public function testCaseHiddenFilesLinksAndUnreadableFiles()
+    {
+        $this->put( 'certs/SERVER.PEM' );
+        $this->put( 'docker/.Env' );
+        $this->put( 'config/site.INI.BAK', "Title=x\n" );
+        $this->put( '.hidden/settings.ini', "Password=hunter2\n" );
+        $outside = dirname( __DIR__, 5 ) . '/var/tmp/phpunit-extdownload-outside-' . getmypid();
+        file_put_contents( $outside, "Password=hunter2\n" );
+        symlink( $outside, $this->dir() . '/settings/linked.ini' );
+        symlink( 'plain.ini', $this->dir() . '/settings/inside.ini' );
+        $this->put( 'settings/huge.ini', str_repeat( 'x', eZExtensionPackageHandler::MAX_SCAN_BYTES + 1 ) );
+        try
+        {
+            $this->assertSame( array( '.hidden/settings.ini: Password', 'certs/SERVER.PEM: key material',
+                                      'config/site.INI.BAK: copy of a settings file', 'docker/.Env: key material',
+                                      'settings/huge.ini: too large or unreadable to check', 'settings/linked.ini: link outside the extension' ),
+                               $this->secrets() );
+        }
+        finally
+        {
+            unlink( $outside );
+        }
+
+        mkdir( $this->dir() . '/locked' );
+        chmod( $this->dir() . '/locked', 0 );
+        try
+        {
+            if ( is_readable( $this->dir() . '/locked' ) )
+                $this->markTestSkipped( 'runs as a user who reads every directory' );
+            $this->assertSame( array( '.: unreadable directory: locked' ), $this->secrets() );
+        }
+        finally
+        {
+            chmod( $this->dir() . '/locked', 0755 );
+        }
+    }
+
+    /** ED-05, the package holds exactly the entries the check read and marked as packed */
+    public function testThePackageHoldsWhatTheCheckRead()
+    {
+        $this->put( 'classes/a.php', "<?php\n" );
+        $this->put( '.git/config', "x\n" );
+        $this->put( 'design/.cache', "x\n" );
+        symlink( 'classes', $this->dir() . '/alias' );
+        $package = new ExtensionDownloadTestPackage( dirname( __DIR__, 5 ) . '/var/tmp/phpunit-extdownload-pkg-' . getmypid() );
+        try
+        {
+            eZExtensionPackageHandler::addExtension( $package, $this->name );
+            $copied = array();
+            eZDir::recursiveList( $package->path() . '/ezextension/' . $this->name, '', $copied );
+            $copied = array_map( function ( $f ) { return ltrim( $f['path'] . '/' . $f['name'], '/' ); }, $copied );
+            sort( $copied );
+            $packed = array_keys( array_filter( eZExtensionPackageHandler::packEntries( $this->dir() ), function ( $e ) { return $e['packed']; } ) );
+            sort( $packed );
+            $this->assertSame( $packed, $copied );
+            $this->assertSame( array( 'classes', 'classes/a.php', 'design', 'settings', 'settings/plain.ini', 'settings/siteaccess', 'settings/siteaccess/site' ), $copied );
+        }
+        finally
+        {
+            eZDir::recursiveDelete( $package->path() );
+            unlink( $this->dir() . '/alias' );
+        }
     }
 
     /** ED-01, every way to a package: the handler itself and the package wizard refuse */

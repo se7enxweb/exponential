@@ -187,14 +187,20 @@ class eZExtensionPackageHandler extends eZPackageHandler
         }
     }
 
-    /** Files that hold key material, anywhere in an extension: by name */
-    const KEY_FILE_PATTERN = '/(\.(pem|key|p12|pfx|jks|keystore|kdbx)$|^\.env(\.(?!(example|sample|template)$).*)?$|^id_(rsa|dsa|ecdsa|ed25519)|^\.htpasswd$|^\.netrc$)/i';
+    /** Files that hold key material, anywhere in an extension: by name, any case */
+    const KEY_FILE_PATTERN = '/(\.(pem|key|p12|pfx|jks|keystore|kdbx|crt|der|p8|ppk|gpg|asc)$|^\.env(\.(?!(example|sample|template)$).*)?$|^id_(rsa|dsa|ecdsa|ed25519)|^\.htpasswd$|^\.netrc$|^\.pgpass$)/i';
 
-    /** Directories whose files are key material, anywhere in an extension */
-    const KEY_DIRECTORY_PATTERN = '/^(jwt|\.ssh)$/i';
+    /** Directories whose files are key material, anywhere in an extension, any case */
+    const KEY_DIRECTORY_PATTERN = '/^(jwt|\.ssh|\.gnupg)$/i';
 
     /** Copies and backups of settings files: never packed, whatever they hold */
-    const BACKUP_FILE_PATTERN = '/(\.(bak|orig|dist|old|save|swp|tmp|rej)$|~$)/i';
+    const BACKUP_FILE_PATTERN = '/(\.(bak|orig|dist|old|save|swp|swo|tmp|rej|backup)$|~$)/i';
+
+    /** A file whose text is read for secrets is at most this big; a bigger one is refused, not skipped */
+    const MAX_SCAN_BYTES = 4194304;
+
+    /** An extension with more entries than this is refused, not partly checked */
+    const MAX_ENTRIES = 200000;
 
     /**
      * Whether $extensionName names an extension directory that can be packed: a plain name (no path), present below
@@ -208,19 +214,129 @@ class eZExtensionPackageHandler extends eZPackageHandler
         $extensionName = (string)$extensionName;
         if ( !preg_match( '/^[A-Za-z0-9][A-Za-z0-9_.\-]*$/', $extensionName ) )
             return false;
-        return is_dir( eZExtension::baseDirectory() . '/' . $extensionName );
+        $dir = eZExtension::baseDirectory() . '/' . $extensionName;
+        return is_dir( $dir ) && !is_link( $dir );
     }
 
     /**
-     * What in the extension directory $dir must not leave the server in a package, one line each, without a value:
-     *  - key material anywhere: KEY_FILE_PATTERN (*.pem, *.key, *.p12, *.pfx, .env but not .env.example, .sample or
-     *    .template, id_rsa, ...) and every file in a
-     *    KEY_DIRECTORY_PATTERN directory (jwt/, .ssh/);
-     *  - below settings/: a copy or backup (BACKUP_FILE_PATTERN: *.bak, *.orig, *.dist, *~, ...), and in every
-     *    other file a setting whose name holds a secret (expSystemReportMask::isSecretSettingName()) or whose value
-     *    carries one (expSecretRule::hasInlineSecret()). Empty values, numbers and switches (true, enabled, none,
-     *    ...) are not secrets.
-     * Reads the files only.
+     * Every entry below $dir, breadth first as eZDir::copy() walks, with what the package takes of it: a file or a
+     * directory whose name and parents do not start with "." (eZDir::copy() without hidden items) and that is not
+     * a symbolic link (eZDir::findSubitems() without "l"); a link is listed, not followed. addExtension() copies
+     * exactly the entries marked 'packed', so the check and the package see the same files.
+     *
+     * @param string $dir
+     * @return array relative path => array( 'type' => file|dir|link|other, 'packed' => bool ), parents first
+     * @throws RuntimeException a directory that cannot be read, or too many entries
+     */
+    static function packEntries( $dir )
+    {
+        $dir = rtrim( (string)$dir, '/' );
+        $entries = array();
+        $queue = array( array( '', false ) );
+        while ( $queue )
+        {
+            list( $relative, $hidden ) = array_shift( $queue );
+            $absolute = $relative === '' ? $dir : $dir . '/' . $relative;
+            $handle = @opendir( $absolute );
+            if ( $handle === false )
+                throw new RuntimeException( "unreadable directory: " . ( $relative === '' ? '.' : $relative ) );
+            $names = array();
+            while ( ( $name = readdir( $handle ) ) !== false )
+            {
+                if ( $name !== '.' && $name !== '..' )
+                    $names[] = $name;
+            }
+            closedir( $handle );
+            sort( $names, SORT_STRING );
+            foreach ( $names as $name )
+            {
+                $path = $relative === '' ? $name : $relative . '/' . $name;
+                $isHidden = $hidden || $name[0] === '.';
+                $full = $absolute . '/' . $name;
+                if ( is_link( $full ) )
+                    $entries[$path] = array( 'type' => 'link', 'packed' => false );
+                else if ( is_dir( $full ) )
+                {
+                    $entries[$path] = array( 'type' => 'dir', 'packed' => !$isHidden );
+                    $queue[] = array( $path, $isHidden );
+                }
+                else if ( is_file( $full ) )
+                    $entries[$path] = array( 'type' => 'file', 'packed' => !$isHidden );
+                else
+                    $entries[$path] = array( 'type' => 'other', 'packed' => false );
+                if ( count( $entries ) > self::MAX_ENTRIES )
+                    throw new RuntimeException( 'more than ' . self::MAX_ENTRIES . ' entries' );
+            }
+        }
+        return $entries;
+    }
+
+    /**
+     * The secrets in the raw text of a settings file, by the names they stand under, without their values. Read
+     * line by line as text, not as eZINI reads it, so nothing eZINI skips or reads differently is missed: lines in
+     * a comment ("#Password=..." and the PHP comment wrapper), Key[]= and Key[name]=, blanks around "=", quotes,
+     * a byte order mark, CRLF or CR line ends, duplicates, several pairs on a line. A pair is a secret when its name
+     * holds one (expSystemReportMask::isSecretSettingName()) or its value carries one (expSecretRule::
+     * hasInlineSecret()); empty values, numbers, switches (true, enabled, none, ...) and placeholders
+     * (isPlaceholder()) are not. A line without a pair counts when it holds an address with a password, or, outside
+     * a comment, a secret inline ("password: ..."). Pure.
+     *
+     * @param string $text
+     * @return string[] names, "(inline)" for a line without a pair
+     */
+    static function secretsInText( $text )
+    {
+        $text = preg_replace( '/^\xEF\xBB\xBF/', '', (string)$text );
+        $found = array();
+        foreach ( preg_split( '/\r\n|\r|\n/', $text ) as $line )
+        {
+            if ( preg_match_all( '/([A-Za-z0-9_.\-]+)\s*(?:\[[^\]\r\n]*\])?\s*=(?![=>])([^\r\n]*)/', $line, $pairs, PREG_SET_ORDER ) )
+            {
+                foreach ( $pairs as $pair )
+                {
+                    $value = trim( preg_replace( '#\s*\*/\s*(\?>)?\s*$#', '', $pair[2] ) );
+                    $value = trim( $value, " \t\"'" );
+                    if ( $value === '' || preg_match( '/^(-?\d+(\.\d+)?|true|false|enabled|disabled|yes|no|on|off|none|null)$/i', $value )
+                         || self::isPlaceholder( $value ) )
+                        continue;
+                    if ( expSystemReportMask::isSecretSettingName( $pair[1] ) || expSecretRule::hasInlineSecret( $value ) )
+                        $found[$pair[1]] = true;
+                }
+            }
+            // a line without a pair: a password in an address always; "token: ..." style text only outside a comment
+            else if ( preg_match( '#[a-z][a-z0-9+.\-]*://[^/\s:@]+:[^@\s/]+@#i', $line )
+                      || ( !preg_match( '/^\s*(#|;|\/\/|\*)/', $line ) && expSecretRule::hasInlineSecret( $line ) ) )
+                $found['(inline)'] = true;
+        }
+        return array_keys( $found );
+    }
+
+    /**
+     * Whether $value only stands for a value, as the examples in settings comments do: "sk-...", "<your key>",
+     * "username:password", "xxxx". Pure.
+     *
+     * @param string $value
+     * @return bool
+     */
+    static function isPlaceholder( $value )
+    {
+        $value = trim( (string)$value );
+        return preg_match( '/(\.\.\.|\x{2026})$/u', $value ) === 1
+            || preg_match( '/^<[^<>]*>$/', $value ) === 1
+            || preg_match( '/^(x+|\*+|changeme|secret|password|your[ _\-].*|username:password|user:password)$/i', $value ) === 1;
+    }
+
+    /**
+     * What in the extension directory $dir must not leave the server in a package, one line each, without a value.
+     * Every entry of packEntries() is checked, the packed ones and the others (hidden files, links) alike:
+     *  - key material anywhere, any case: KEY_FILE_PATTERN (*.pem, *.key, *.p12, *.pfx, .env but not .env.example,
+     *    .sample or .template, id_rsa, ...) and every file in a KEY_DIRECTORY_PATTERN directory (jwt/, .ssh/);
+     *  - a symbolic link that leads outside the extension or nowhere, and anything that is neither file, directory
+     *    nor link;
+     *  - below settings/ (any case, any depth), and any file named *.ini*: a copy or backup (BACKUP_FILE_PATTERN:
+     *    *.bak, *.orig, *.dist, *~, ...), and the secrets of secretsInText() in every other file; a file that cannot
+     *    be read or is bigger than MAX_SCAN_BYTES is refused.
+     * A directory that cannot be read refuses the whole extension. Reads the files only.
      *
      * @param string $dir
      * @return string[] "<path below $dir>: <setting>" or "<path below $dir>: <reason>", sorted
@@ -230,15 +346,35 @@ class eZExtensionPackageHandler extends eZPackageHandler
         $dir = rtrim( (string)$dir, '/' );
         if ( $dir === '' || !is_dir( $dir ) )
             return array();
-        $found = array();
-        $files = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( $dir, FilesystemIterator::SKIP_DOTS ) );
-        foreach ( $files as $file )
+        try
         {
-            if ( !$file->isFile() )
-                continue;
-            $relative = substr( $file->getPathname(), strlen( $dir ) + 1 );
+            $entries = self::packEntries( $dir );
+        }
+        catch ( RuntimeException $e )
+        {
+            return array( '.: ' . $e->getMessage() );
+        }
+        $realDir = realpath( $dir );
+        $found = array();
+        foreach ( $entries as $relative => $entry )
+        {
+            $full = $dir . '/' . $relative;
             $parts = explode( '/', $relative );
             $name = array_pop( $parts );
+            if ( $entry['type'] === 'link' )
+            {
+                $target = realpath( $full );
+                if ( $target === false || $realDir === false || ( $target !== $realDir && strpos( $target, $realDir . '/' ) !== 0 ) )
+                    $found[$relative . ': link outside the extension'] = true;
+                continue;
+            }
+            if ( $entry['type'] === 'other' )
+            {
+                $found[$relative . ': not a regular file'] = true;
+                continue;
+            }
+            if ( $entry['type'] !== 'file' )
+                continue;
             if ( preg_match( self::KEY_FILE_PATTERN, $name ) )
             {
                 $found[$relative . ': key material'] = true;
@@ -252,24 +388,28 @@ class eZExtensionPackageHandler extends eZPackageHandler
                     continue 2;
                 }
             }
-            if ( !isset( $parts[0] ) || $parts[0] !== 'settings' )
+            $inSettings = isset( $parts[0] ) && strtolower( $parts[0] ) === 'settings';
+            if ( !$inSettings && !preg_match( '/\.ini(\.|$)/i', $name ) )
                 continue;
             if ( preg_match( self::BACKUP_FILE_PATTERN, $name ) )
             {
                 $found[$relative . ': copy of a settings file'] = true;
                 continue;
             }
-            foreach ( (array)@file( $file->getPathname(), FILE_IGNORE_NEW_LINES ) as $line )
+            $size = @filesize( $full );
+            if ( $size === false || $size > self::MAX_SCAN_BYTES )
             {
-                if ( !preg_match( '/^\s*([A-Za-z0-9_.\-]+)(\[[^\]]*\])?\s*=(.*)$/', (string)$line, $m ) )
-                    continue;
-                $value = trim( $m[3] );
-                // a number or a switch is a limit or a choice (MaxTokens=4096, RequireToken=enabled), never a secret
-                if ( $value === '' || preg_match( '/^(-?\d+(\.\d+)?|true|false|enabled|disabled|yes|no|on|off|none|null)$/i', $value ) )
-                    continue;
-                if ( expSystemReportMask::isSecretSettingName( $m[1] ) || expSecretRule::hasInlineSecret( $value ) )
-                    $found[$relative . ': ' . $m[1]] = true;
+                $found[$relative . ': too large or unreadable to check'] = true;
+                continue;
             }
+            $text = @file_get_contents( $full );
+            if ( $text === false )
+            {
+                $found[$relative . ': too large or unreadable to check'] = true;
+                continue;
+            }
+            foreach ( self::secretsInText( $text ) as $setting )
+                $found[$relative . ': ' . $setting] = true;
         }
         $found = array_keys( $found );
         sort( $found );
@@ -278,7 +418,7 @@ class eZExtensionPackageHandler extends eZPackageHandler
 
     /**
      * Why the extension $extensionName cannot be packed, or an empty string when it can (isPackableName() and no
-     * secretFiles()).
+     * secretFiles()). The one rule of Setup > Extensions, the package wizard, the command line and addExtension().
      *
      * @param string $extensionName
      * @return string
@@ -296,9 +436,10 @@ class eZExtensionPackageHandler extends eZPackageHandler
     }
 
     /**
-     * Adds the extension $extensionName to $package. Refuses (RuntimeException, nothing copied) an extension that
-     * packRefusal() names a reason for: every way to a package (Setup > Extensions, the package wizard, the command
-     * line) passes here.
+     * Adds the extension $extensionName to $package. The extension is checked before anything is copied, and an
+     * extension that packRefusal() names a reason for is refused (RuntimeException, nothing copied): every way to a
+     * package (Setup > Extensions, the package wizard, the command line) passes here. Then exactly the entries
+     * packEntries() marks as packed are copied, the same ones the check read.
      *
      * @param eZPackage $package
      * @param string $extensionName
@@ -312,10 +453,25 @@ class eZExtensionPackageHandler extends eZPackageHandler
 
         $fileList = array();
         $sourceDir = eZExtension::baseDirectory() . '/' . $extensionName;
+        $entries = self::packEntries( $sourceDir );
         $targetDir = $package->path() . '/ezextension';
 
         eZDir::mkdir( $targetDir, false, true );
-        eZDir::copy( $sourceDir, $targetDir );
+        // as eZDir::copy( $sourceDir, $targetDir ) did: the extension's directory below ezextension/
+        $copyDir = $targetDir . '/' . $extensionName;
+        eZDir::mkdir( $copyDir, eZDir::directoryPermission(), false );
+        foreach ( $entries as $relative => $entry )
+        {
+            if ( !$entry['packed'] )
+                continue;
+            $source = $sourceDir . '/' . $relative;
+            if ( is_link( $source ) )
+                throw new RuntimeException( "The extension $extensionName changed while it was packed: $relative" );
+            if ( $entry['type'] === 'dir' )
+                eZDir::mkdir( $copyDir . '/' . $relative, eZDir::directoryPermission(), false );
+            else if ( !eZFileHandler::copy( $source, $copyDir . '/' . $relative ) )
+                throw new RuntimeException( "The file $relative of the extension $extensionName could not be packed." );
+        }
 
         eZDir::recursiveList( $targetDir, '', $fileList );
 
