@@ -2,14 +2,13 @@
    (expContentFinderAction::plan()), reason ('' or confirm_permanent: the box was not ticked), confirm_token,
    confirm_field, form_token, token_field, restore_allowed. The page says exactly what will happen; nothing is done
    until ConfirmButton is posted with the confirmation token. *}
-{include uri='design:contentfinder/style.tpl'}
 {def $titles = hash( 'trash', 'Move to trash'|i18n( 'kernel/contentfinder' ),
                      'delete', 'Delete permanently'|i18n( 'kernel/contentfinder' ),
                      'purge', 'Purge from the trash'|i18n( 'kernel/contentfinder' ),
                      'removeversion', 'Remove version'|i18n( 'kernel/contentfinder' ) )
      $version_names = hash( 'draft', 'Draft'|i18n( 'kernel/contentfinder' ), 'archived', 'Archived'|i18n( 'kernel/contentfinder' ),
                             'rejected', 'Rejected'|i18n( 'kernel/contentfinder' ), 'internal_draft', 'Internal draft'|i18n( 'kernel/contentfinder' ) )}
-<div class="context-block exp-cf" id="exp-contentfinder-confirm">
+<div class="context-block a4-page a4-contentfinder" id="exp-contentfinder-confirm">
 
 {* DESIGN: Header START *}<div class="box-header"><div class="box-ml">
 <h1 class="context-title">{if is_set( $titles[$plan.action] )}{$titles[$plan.action]|wash}{else}{'Content finder'|i18n( 'kernel/contentfinder' )}{/if}{if $plan.name}: {$plan.name|wash}{/if}</h1>
@@ -33,9 +32,9 @@
 {switch match=$plan.action}
 {case in=array( 'trash', 'delete' )}
     <p>{if eq( $plan.action, 'trash' )}{'The object goes to the trash from every location listed here, with everything below them. It can be restored from the trash.'|i18n( 'kernel/contentfinder' )}{else}{'The object is deleted from every location listed here, with everything below them. This cannot be undone: nothing goes to the trash.'|i18n( 'kernel/contentfinder' )}{/if}</p>
-    <ul class="cf-plan">
+    <ul class="a4-contentfinder-plan">
     {foreach $plan.nodes as $node}
-        <li>{'Node %id'|i18n( 'kernel/contentfinder',, hash( '%id', $node.node_id ) )} {if $node.is_main}<span class="cf-badge main">{'Main'|i18n( 'kernel/contentfinder' )}</span>{/if}
+        <li>{'Node %id'|i18n( 'kernel/contentfinder',, hash( '%id', $node.node_id ) )} {if $node.is_main}<span class="a4-badge a4-contentfinder-badge main">{'Main'|i18n( 'kernel/contentfinder' )}</span>{/if}
             <code>{$node.url_alias|wash}</code>:
             {if $node.children|gt( 0 )}<strong>{'%count nodes below it'|i18n( 'kernel/contentfinder',, hash( '%count', $node.children ) )}</strong>{else}{'nothing below it'|i18n( 'kernel/contentfinder' )}{/if}</li>
     {/foreach}
@@ -45,7 +44,7 @@
 {/case}
 {case match='purge'}
     <p>{'The object is purged from the trash with all its %versions versions. This cannot be undone.'|i18n( 'kernel/contentfinder',, hash( '%versions', $plan.versions ) )}</p>
-    <ul class="cf-plan">
+    <ul class="a4-contentfinder-plan">
     {foreach $plan.trash as $entry}
         <li>{'Node %id, trashed from'|i18n( 'kernel/contentfinder',, hash( '%id', $entry.node_id ) )} <code>{$entry.path|wash}</code></li>
     {/foreach}
@@ -64,10 +63,10 @@
     <input type="hidden" name="ObjectID" value="{$plan.object_id}" />
     {if $plan.version}<input type="hidden" name="VersionID" value="{$plan.version.id}" />{/if}
     {if $plan.permanent}
-    <p class="cf-permanent"><label><input type="checkbox" name="ConfirmPermanent" value="1" /> {'I understand that this cannot be undone.'|i18n( 'kernel/contentfinder' )}</label></p>
+    <p class="a4-contentfinder-permanent"><label><input type="checkbox" name="ConfirmPermanent" value="1" /> {'I understand that this cannot be undone.'|i18n( 'kernel/contentfinder' )}</label></p>
     {/if}
-    <div class="block cf-actions">
-        <input type="submit" class="defaultbutton{if $plan.permanent} cf-danger{/if}" name="ConfirmButton" value="{if is_set( $titles[$plan.action] )}{$titles[$plan.action]|wash}{else}OK{/if}" />
+    <div class="block a4-contentfinder-actions">
+        <input type="submit" class="defaultbutton{if $plan.permanent} a4-contentfinder-danger{/if}" name="ConfirmButton" value="{if is_set( $titles[$plan.action] )}{$titles[$plan.action]|wash}{else}OK{/if}" />
         <input type="submit" class="button" name="CancelButton" value="{'Cancel'|i18n( 'kernel/contentfinder' )}" />
     </div>
 </form>

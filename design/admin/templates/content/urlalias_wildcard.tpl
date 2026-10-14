@@ -8,7 +8,6 @@
    The same file is in design/admin and design/admin4. The search, the kind and the tester come from the view
    (wildcard_search, wildcard_kind, wildcard_test_result); without them (an older view class) the page shows the
    list and the form as before. Everything works without javascript. Guide: doc/guides/urls-and-aliases.md *}
-{include uri='design:url/exp_style.tpl'}
 
 {def $total = first_set( $wildcards_total_count, $wildcards_count )
      $search = first_set( $wildcard_search, '' )
@@ -26,7 +25,7 @@
 {case}{/case}
 {/switch}
 
-<div class="context-block content-urlalias-wildcard exp-urls">
+<div class="context-block content-urlalias-wildcard a4-page a4-url">
 
 <div class="box-header"><div class="box-ml">
 <h1 class="context-title">{'URL wildcards (%wildcard_count)'|i18n( 'design/admin/content/urlalias_wildcard',, hash( '%wildcard_count', $total ) )|wash}</h1>
@@ -34,61 +33,61 @@
 
 <div class="box-bc"><div class="box-ml"><div class="box-content">
 
-<p class="exp-intro">{'A URL wildcard sends a whole group of addresses somewhere else with one rule: news/* to articles/{1\} turns news/2026/october into articles/2026/october. Each * of the pattern matches any text, and {1\}, {2\} ... in the destination put that text back. Wildcards are tried in the order they were created, the first that matches is used, and they are only consulted when no URL alias matches the address.'|i18n( 'design/admin/content/urlalias_wildcard' )|wash}</p>
+<p class="a4-intro">{'A URL wildcard sends a whole group of addresses somewhere else with one rule: news/* to articles/{1\} turns news/2026/october into articles/2026/october. Each * of the pattern matches any text, and {1\}, {2\} ... in the destination put that text back. Wildcards are tried in the order they were created, the first that matches is used, and they are only consulted when no URL alias matches the address.'|i18n( 'design/admin/content/urlalias_wildcard' )|wash}</p>
 
 {* Feedback and errors *}
 {switch match=$info_code}
 {case match='feedback-wildcard-removed'}
-<div class="exp-feedback is-ok" role="status">{'The selected aliases were successfully removed.'|i18n( 'design/admin/content/urlalias_wildcard' )}</div>
+<div class="a4-notice is-ok" role="status">{'The selected aliases were successfully removed.'|i18n( 'design/admin/content/urlalias_wildcard' )}</div>
 {/case}
 {case match='feedback-wildcard-removed-all'}
-<div class="exp-feedback is-ok" role="status">{'All wildcard aliases were successfully removed.'|i18n( 'design/admin/content/urlalias_wildcard' )}</div>
+<div class="a4-notice is-ok" role="status">{'All wildcard aliases were successfully removed.'|i18n( 'design/admin/content/urlalias_wildcard' )}</div>
 {/case}
 {case match='error-no-wildcard-text'}
-<div class="exp-feedback is-bad" role="alert"><p><strong>{'Text is missing for the URL alias'|i18n( 'design/admin/content/urlalias_wildcard' )}</strong></p><p>{'Enter text in the input box to create a new alias.'|i18n( 'design/admin/content/urlalias_wildcard' )}</p></div>
+<div class="a4-notice is-bad" role="alert"><p><strong>{'Text is missing for the URL alias'|i18n( 'design/admin/content/urlalias_wildcard' )}</strong></p><p>{'Enter text in the input box to create a new alias.'|i18n( 'design/admin/content/urlalias_wildcard' )}</p></div>
 {/case}
 {case match='error-no-wildcard-destination-text'}
-<div class="exp-feedback is-bad" role="alert"><p><strong>{'Text is missing for the URL alias destination'|i18n( 'design/admin/content/urlalias_wildcard' )}</strong></p><p>{'Enter some text in the destination input box to create a new alias.'|i18n( 'design/admin/content/urlalias_wildcard' )}</p></div>
+<div class="a4-notice is-bad" role="alert"><p><strong>{'Text is missing for the URL alias destination'|i18n( 'design/admin/content/urlalias_wildcard' )}</strong></p><p>{'Enter some text in the destination input box to create a new alias.'|i18n( 'design/admin/content/urlalias_wildcard' )}</p></div>
 {/case}
 {case match='error-wildcard-placeholder'}
-<div class="exp-feedback is-bad" role="alert"><p><strong>{'The destination uses %placeholders, but the pattern has %count * only.'|i18n( 'design/admin/content/urlalias_wildcard',, hash( '%placeholders', $info_data['placeholders'], '%count', $info_data['stars'] ) )|wash}</strong></p><p>{'Each * of the pattern is one placeholder, numbered from {1\}. Add a * to the pattern or remove the placeholder; otherwise visitors would be sent to an address with a part missing.'|i18n( 'design/admin/content/urlalias_wildcard' )|wash}</p></div>
+<div class="a4-notice is-bad" role="alert"><p><strong>{'The destination uses %placeholders, but the pattern has %count * only.'|i18n( 'design/admin/content/urlalias_wildcard',, hash( '%placeholders', $info_data['placeholders'], '%count', $info_data['stars'] ) )|wash}</strong></p><p>{'Each * of the pattern is one placeholder, numbered from {1\}. Add a * to the pattern or remove the placeholder; otherwise visitors would be sent to an address with a part missing.'|i18n( 'design/admin/content/urlalias_wildcard' )|wash}</p></div>
 {/case}
 {case match='feedback-wildcard-created'}
-<div class="exp-feedback is-ok" role="status">{'The URL alias <%wildcard_src_url> was successfully created'|i18n( 'design/admin/content/urlalias_wildcard',, hash( '%wildcard_src_url', $info_data['wildcard_src_url'] ) )|wash}</div>
+<div class="a4-notice is-ok" role="status">{'The URL alias <%wildcard_src_url> was successfully created'|i18n( 'design/admin/content/urlalias_wildcard',, hash( '%wildcard_src_url', $info_data['wildcard_src_url'] ) )|wash}</div>
 {/case}
 {case match='feedback-wildcard-exists'}
-<div class="exp-feedback is-warn" role="alert">{'The URL alias <%wildcard_src_url> already exists, and it points to <%wildcard_dst_url>'|i18n( 'design/admin/content/urlalias_wildcard',, hash( '%wildcard_src_url', $info_data['wildcard_src_url'], '%wildcard_dst_url', $info_data['wildcard_dst_url'] ) )|wash}</div>
+<div class="a4-notice is-warn" role="alert">{'The URL alias <%wildcard_src_url> already exists, and it points to <%wildcard_dst_url>'|i18n( 'design/admin/content/urlalias_wildcard',, hash( '%wildcard_src_url', $info_data['wildcard_src_url'], '%wildcard_dst_url', $info_data['wildcard_dst_url'] ) )|wash}</div>
 {/case}
 {case}
 {/case}
 {/switch}
 
-<div class="exp-columns" style="margin-bottom: 24px">
+<div class="a4-grid is-wide a4-section">
 
 {* Create *}
-<section class="exp-panel" aria-labelledby="wildcard-new-title">
+<section class="a4-card" aria-labelledby="wildcard-new-title">
 <form name="wildcardcreate" method="post" action={concat( 'content/urlwildcards/', $kind_part, $search_suffix )|ezurl}>
-<div class="exp-section-head">
-    <h2 class="exp-h2" id="wildcard-new-title">{'Create new URL forwarding with wildcard'|i18n( 'design/admin/content/urlalias' )}</h2>
+<div class="a4-section-head">
+    <h2 class="a4-h2" id="wildcard-new-title">{'Create new URL forwarding with wildcard'|i18n( 'design/admin/content/urlalias' )}</h2>
 </div>
-<div class="exp-form-fields">
-    <div class="exp-field">
+<div class="a4-form">
+    <div class="a4-field">
         <label for="ezcontent_urlalias_wildcard_source">{'New URL wildcard'|i18n( 'design/admin/content/urlalias_wildcard' )}</label>
         <input id="ezcontent_urlalias_wildcard_source" type="text" name="WildcardSourceText" value="{$wildcardSourceText|wash}" spellcheck="false" aria-describedby="wildcard-source-help{if eq( $error_field, 'source' )} wildcard-source-error{/if}"{if eq( $error_field, 'source' )} aria-invalid="true"{/if} title="{'Enter the URL for the new wildcard. Example: developer/*'|i18n( 'design/admin/content/urlalias_wildcard' )}" />
-        <span class="exp-help" id="wildcard-source-help">{'The addresses to catch, without the host, with * where any text may follow. Example: developer/*'|i18n( 'design/admin/content/urlalias_wildcard' )}</span>
-        {if eq( $error_field, 'source' )}<span class="exp-field-error" id="wildcard-source-error">{if eq( $info_code, 'feedback-wildcard-exists' )}{'A wildcard with this pattern exists already. Change the pattern, or remove the old wildcard first.'|i18n( 'design/admin/content/urlalias_wildcard' )}{else}{'Enter the pattern of the wildcard.'|i18n( 'design/admin/content/urlalias_wildcard' )}{/if}</span>{/if}
+        <span class="a4-help" id="wildcard-source-help">{'The addresses to catch, without the host, with * where any text may follow. Example: developer/*'|i18n( 'design/admin/content/urlalias_wildcard' )}</span>
+        {if eq( $error_field, 'source' )}<span class="a4-field-error" id="wildcard-source-error">{if eq( $info_code, 'feedback-wildcard-exists' )}{'A wildcard with this pattern exists already. Change the pattern, or remove the old wildcard first.'|i18n( 'design/admin/content/urlalias_wildcard' )}{else}{'Enter the pattern of the wildcard.'|i18n( 'design/admin/content/urlalias_wildcard' )}{/if}</span>{/if}
     </div>
-    <div class="exp-field">
+    <div class="a4-field">
         <label for="ezcontent_urlalias_wildcard_destination">{'Destination'|i18n( 'design/admin/content/urlalias_wildcard' )}</label>
         <input id="ezcontent_urlalias_wildcard_destination" type="text" name="WildcardDestinationText" value="{$wildcardDestinationText|wash}" spellcheck="false" aria-describedby="wildcard-destination-help{if eq( $error_field, 'destination' )} wildcard-destination-error{/if}"{if eq( $error_field, 'destination' )} aria-invalid="true"{/if} title="{'Enter the destination URL for the new wildcard. Example: dev/{1\}'|i18n( 'design/admin/content/urlalias_wildcard' )}" />
-        <span class="exp-help" id="wildcard-destination-help">{'Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}'|i18n( 'design/admin/content/urlalias_wildcard' )|wash}</span>
-        {if eq( $error_field, 'destination' )}<span class="exp-field-error" id="wildcard-destination-error">{if eq( $info_code, 'error-wildcard-placeholder' )}{'Use only placeholders the pattern has a * for.'|i18n( 'design/admin/content/urlalias_wildcard' )}{else}{'Enter the destination.'|i18n( 'design/admin/content/urlalias_wildcard' )}{/if}</span>{/if}
+        <span class="a4-help" id="wildcard-destination-help">{'Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}'|i18n( 'design/admin/content/urlalias_wildcard' )|wash}</span>
+        {if eq( $error_field, 'destination' )}<span class="a4-field-error" id="wildcard-destination-error">{if eq( $info_code, 'error-wildcard-placeholder' )}{'Use only placeholders the pattern has a * for.'|i18n( 'design/admin/content/urlalias_wildcard' )}{else}{'Enter the destination.'|i18n( 'design/admin/content/urlalias_wildcard' )}{/if}</span>{/if}
     </div>
-    <div class="exp-field">
-        <label class="exp-check" for="wildcard-type"><input type="checkbox" id="wildcard-type" name="WildcardType"{if $wildcardType} checked="checked"{/if} /> <span><strong>{'Redirecting URL'|i18n( 'design/admin/content/urlalias' )}</strong><br /><span class="exp-help">{'Checked, visitors are redirected (HTTP 301) and see the destination address. Unchecked, the destination is shown under the address they asked for.'|i18n( 'design/admin/content/urlalias_wildcard' )}</span></span></label>
+    <div class="a4-field">
+        <label class="a4-check" for="wildcard-type"><input type="checkbox" id="wildcard-type" name="WildcardType"{if $wildcardType} checked="checked"{/if} /> <span><strong>{'Redirecting URL'|i18n( 'design/admin/content/urlalias' )}</strong><br /><span class="a4-help">{'Checked, visitors are redirected (HTTP 301) and see the destination address. Unchecked, the destination is shown under the address they asked for.'|i18n( 'design/admin/content/urlalias_wildcard' )}</span></span></label>
     </div>
-    <div class="exp-actions">
-        <button type="submit" class="exp-btn exp-btn-primary" name="NewWildcardButton" value="{'Create'|i18n( 'design/admin/content/urlalias_wildcard' )}" title="{'Create a new wildcard URL alias.'|i18n( 'design/admin/content/urlalias_wildcard' )}">{'Create'|i18n( 'design/admin/content/urlalias_wildcard' )}</button>
+    <div class="a4-actions">
+        <button type="submit" class="a4-btn a4-btn-primary" name="NewWildcardButton" value="{'Create'|i18n( 'design/admin/content/urlalias_wildcard' )}" title="{'Create a new wildcard URL alias.'|i18n( 'design/admin/content/urlalias_wildcard' )}">{'Create'|i18n( 'design/admin/content/urlalias_wildcard' )}</button>
     </div>
 </div>
 <input type="hidden" name="Offset" value="{$view_parameters.offset|wash}" />
@@ -96,25 +95,25 @@
 </section>
 
 {* Try an address *}
-<section class="exp-panel" aria-labelledby="wildcard-test-title">
+<section class="a4-card" aria-labelledby="wildcard-test-title">
 <form method="get" action={concat( 'content/urlwildcards/', $kind_part )|ezurl}>
-<div class="exp-section-head">
-    <h2 class="exp-h2" id="wildcard-test-title">{'Try an address'|i18n( 'design/admin/content/urlalias_wildcard' )}</h2>
+<div class="a4-section-head">
+    <h2 class="a4-h2" id="wildcard-test-title">{'Try an address'|i18n( 'design/admin/content/urlalias_wildcard' )}</h2>
     <p>{'See which wildcard an address matches and where it would lead. Nothing is changed.'|i18n( 'design/admin/content/urlalias_wildcard' )}</p>
 </div>
-<div class="exp-field">
+<div class="a4-field">
     <label for="wildcard-test">{'Address'|i18n( 'design/admin/content/urlalias_wildcard' )}</label>
-    <div class="exp-searchrow">
+    <div class="a4-searchrow">
         <input type="text" id="wildcard-test" name="test" value="{$test|wash}" spellcheck="false" maxlength="200" aria-describedby="wildcard-test-help" />
         {if $search|ne( '' )}<input type="hidden" name="q" value="{$search|wash}" />{/if}
-        <button type="submit" class="exp-btn">{'Try'|i18n( 'design/admin/content/urlalias_wildcard' )}</button>
+        <button type="submit" class="a4-btn">{'Try'|i18n( 'design/admin/content/urlalias_wildcard' )}</button>
     </div>
-    <span class="exp-help" id="wildcard-test-help">{'Without the host, for example news/2026/october.'|i18n( 'design/admin/content/urlalias_wildcard' )}</span>
+    <span class="a4-help" id="wildcard-test-help">{'Without the host, for example news/2026/october.'|i18n( 'design/admin/content/urlalias_wildcard' )}</span>
 </div>
 {if $test|ne( '' )}
-<div class="exp-result" role="status">
+<div class="a4-url-result" role="status">
     {if $test_result}
-    <div class="exp-feedback is-info">
+    <div class="a4-notice is-info">
         <p><strong>{'The address matches the wildcard %pattern.'|i18n( 'design/admin/content/urlalias_wildcard',, hash( '%pattern', $test_result.source ) )|wash}</strong></p>
         <dl>
             <dt>{'Becomes'|i18n( 'design/admin/content/urlalias_wildcard' )}</dt>
@@ -126,7 +125,7 @@
         </dl>
     </div>
     {else}
-    <div class="exp-feedback is-warn"><p>{'No wildcard matches this address. It is answered by URL aliases and modules alone.'|i18n( 'design/admin/content/urlalias_wildcard' )}</p></div>
+    <div class="a4-notice is-warn"><p>{'No wildcard matches this address. It is answered by URL aliases and modules alone.'|i18n( 'design/admin/content/urlalias_wildcard' )}</p></div>
     {/if}
 </div>
 {/if}
@@ -137,29 +136,29 @@
 
 <form name="wildcardform" method="post" action={concat( 'content/urlwildcards/', $kind_part, $search_suffix )|ezurl}>
 
-<section class="exp-section" aria-labelledby="wildcard-list-title">
-<div class="exp-section-head">
-    <h2 class="exp-h2" id="wildcard-list-title">{'Wildcards'|i18n( 'design/admin/content/urlalias_wildcard' )}</h2>
+<section class="a4-section" aria-labelledby="wildcard-list-title">
+<div class="a4-section-head">
+    <h2 class="a4-h2" id="wildcard-list-title">{'Wildcards'|i18n( 'design/admin/content/urlalias_wildcard' )}</h2>
     {if $wildcards_count|gt( 0 )}
-    <span class="exp-meta">{'%from to %to of %count'|i18n( 'design/admin/content/urlalias_wildcard',, hash( '%from', sum( $view_parameters.offset, 1 ), '%to', min( sum( $view_parameters.offset, $wildcards_limit ), $wildcards_count ), '%count', $wildcards_count ) )}</span>
-    <label class="exp-meta exp-js-only" hidden><input type="checkbox" id="wildcard-select-all" /> {'Select all on this page'|i18n( 'design/admin/content/urlalias_wildcard' )}</label>
+    <span class="a4-meta">{'%from to %to of %count'|i18n( 'design/admin/content/urlalias_wildcard',, hash( '%from', sum( $view_parameters.offset, 1 ), '%to', min( sum( $view_parameters.offset, $wildcards_limit ), $wildcards_count ), '%count', $wildcards_count ) )}</span>
+    <label class="a4-meta a4-url-js-only" hidden><input type="checkbox" id="wildcard-select-all" /> {'Select all on this page'|i18n( 'design/admin/content/urlalias_wildcard' )}</label>
     {/if}
 </div>
 
 {if $total|gt( 0 )}
-<div class="exp-toolbar" role="search">
-    <div class="exp-field exp-field-wide">
+<div class="a4-filterbar" role="search">
+    <div class="a4-field a4-field-wide">
         <label for="wildcard-search">{'Find a wildcard'|i18n( 'design/admin/content/urlalias_wildcard' )}</label>
-        <div class="exp-searchrow">
+        <div class="a4-searchrow">
             <input type="search" id="wildcard-search" name="q" form="wildcard-search-form" value="{$search|wash}" autocomplete="off" spellcheck="false" maxlength="200" aria-describedby="wildcard-search-help" />
-            <button type="submit" class="exp-btn" form="wildcard-search-form">{'Search'|i18n( 'design/admin/content/urlalias_wildcard' )}</button>
-            {if $search|ne( '' )}<a class="exp-btn" href={concat( 'content/urlwildcards/', $kind_part )|ezurl}>{'Clear search'|i18n( 'design/admin/content/urlalias_wildcard' )}</a>{/if}
+            <button type="submit" class="a4-btn" form="wildcard-search-form">{'Search'|i18n( 'design/admin/content/urlalias_wildcard' )}</button>
+            {if $search|ne( '' )}<a class="a4-btn" href={concat( 'content/urlwildcards/', $kind_part )|ezurl}>{'Clear search'|i18n( 'design/admin/content/urlalias_wildcard' )}</a>{/if}
         </div>
-        <span class="exp-help" id="wildcard-search-help">{'Any part of the pattern or of the destination.'|i18n( 'design/admin/content/urlalias_wildcard' )}</span>
+        <span class="a4-help" id="wildcard-search-help">{'Any part of the pattern or of the destination.'|i18n( 'design/admin/content/urlalias_wildcard' )}</span>
     </div>
-    <div class="exp-field">
+    <div class="a4-field">
         <span id="wildcard-kind-label"><strong>{'Show'|i18n( 'design/admin/content/urlalias_wildcard' )}</strong></span>
-        <ul class="exp-tabs" aria-labelledby="wildcard-kind-label">
+        <ul class="a4-tabs" aria-labelledby="wildcard-kind-label">
         {foreach array( hash( 'kind', 'all', 'text', 'All'|i18n( 'design/admin/content/urlalias_wildcard' ) ),
                         hash( 'kind', 'redirect', 'text', 'Redirecting'|i18n( 'design/admin/content/urlalias_wildcard' ) ),
                         hash( 'kind', 'direct', 'text', 'Direct'|i18n( 'design/admin/content/urlalias_wildcard' ) ) ) as $tab}
@@ -171,7 +170,7 @@
 {/if}
 
 {if eq( count( $wildcard_list ), 0 )}
-<p class="exp-empty">
+<p class="a4-empty">
 {if $total|eq( 0 )}
     {'The URL wildcard list does not contain any aliases.'|i18n( 'design/admin/content/urlalias_wildcard' )} {'Create one with the form above, for example old-blog/* to blog/{1\}.'|i18n( 'design/admin/content/urlalias_wildcard' )|wash}
 {else}
@@ -179,27 +178,27 @@
 {/if}
 </p>
 {else}
-<ul class="exp-cards" id="wildcard-list">
+<ul class="a4-cards" id="wildcard-list">
 {foreach $wildcard_list as $wildcard}
     {def $card_id = concat( 'wildcard-', $wildcard.id )}
-<li class="exp-card" id="{$card_id}">
-    <div class="exp-card-head">
-        <div class="exp-card-title">
-            <label class="exp-select" title="{'Select this wildcard for removal.'|i18n( 'design/admin/content/urlalias_wildcard' )}">
+<li class="a4-card" id="{$card_id}">
+    <div class="a4-card-head">
+        <div class="a4-card-title">
+            <label class="a4-pick" title="{'Select this wildcard for removal.'|i18n( 'design/admin/content/urlalias_wildcard' )}">
                 <input type="checkbox" name="WildcardIDList[]" value="{$wildcard.id}" aria-label="{'Select %wildcard for removal'|i18n( 'design/admin/content/urlalias_wildcard',, hash( '%wildcard', $wildcard.source_url ) )|wash}" />
             </label>
-            <h3 class="exp-card-addr" id="{$card_id}-title">/{$wildcard.source_url|wash} <span class="exp-arrow" aria-label="{'leads to'|i18n( 'design/admin/content/urlalias_wildcard' )}">&rarr;</span> {$wildcard.destination_url|wash}</h3>
-            <ul class="exp-badges">
+            <h3 class="a4-url-addr" id="{$card_id}-title">/{$wildcard.source_url|wash} <span class="a4-url-arrow" aria-label="{'leads to'|i18n( 'design/admin/content/urlalias_wildcard' )}">&rarr;</span> {$wildcard.destination_url|wash}</h3>
+            <ul class="a4-badges">
             {switch match=$wildcard.type}
-            {case match=1}<li class="exp-badge is-info" title="{'Visitors are redirected (HTTP 301).'|i18n( 'design/admin/content/urlalias_wildcard' )}">{'Forward'|i18n( 'design/admin/content/urlalias_wildcard' )}</li>{/case}
-            {case match=2}<li class="exp-badge" title="{'The destination is shown under the address asked for.'|i18n( 'design/admin/content/urlalias_wildcard' )}">{'Direct'|i18n( 'design/admin/content/urlalias_wildcard' )}</li>{/case}
-            {case}<li class="exp-badge is-warn">{'Undefined'|i18n( 'design/admin/content/urlalias_wildcard' )}</li>{/case}
+            {case match=1}<li class="a4-badge is-info" title="{'Visitors are redirected (HTTP 301).'|i18n( 'design/admin/content/urlalias_wildcard' )}">{'Forward'|i18n( 'design/admin/content/urlalias_wildcard' )}</li>{/case}
+            {case match=2}<li class="a4-badge" title="{'The destination is shown under the address asked for.'|i18n( 'design/admin/content/urlalias_wildcard' )}">{'Direct'|i18n( 'design/admin/content/urlalias_wildcard' )}</li>{/case}
+            {case}<li class="a4-badge is-warn">{'Undefined'|i18n( 'design/admin/content/urlalias_wildcard' )}</li>{/case}
             {/switch}
             </ul>
         </div>
     </div>
-    <dl class="exp-facts">
-        <div class="exp-field-wide">
+    <dl class="a4-facts">
+        <div class="a4-field-wide">
             <dt>{'Type'|i18n( 'design/admin/content/urlalias_wildcard' )}</dt>
             <dd>{switch match=$wildcard.type}{case match=1}{'Visitors are redirected (HTTP 301).'|i18n( 'design/admin/content/urlalias_wildcard' )}{/case}{case match=2}{'The destination is shown under the address asked for.'|i18n( 'design/admin/content/urlalias_wildcard' )}{/case}{case}{'Undefined'|i18n( 'design/admin/content/urlalias_wildcard' )}{/case}{/switch}</dd>
         </div>
@@ -214,8 +213,8 @@
 </ul>
 {/if}
 
-<div class="exp-listfoot">
-    <p class="exp-sizes">
+<div class="a4-listfoot">
+    <p class="a4-sizes">
         <span>{'Per page'|i18n( 'design/admin/content/urlalias_wildcard' )}:</span>
     {foreach $limitList as $limitEntry}
         {if eq( $limitID, $limitEntry['id'] )}
@@ -225,7 +224,7 @@
         {/if}
     {/foreach}
     </p>
-    <div class="exp-pager">
+    <div class="a4-pager">
     {include name=navigator
              uri='design:navigator/google.tpl'
              page_uri='content/urlwildcards/'
@@ -237,22 +236,22 @@
 </div>
 </section>
 
-<div class="exp-bottombar">
+<div class="a4-toolbar is-bottom">
 {if $wildcard_list|count|gt( 0 )}
-    <div class="exp-actions">
-        <button type="submit" class="exp-btn exp-btn-outline-danger" name="RemoveWildcardButton" value="{'Remove selected'|i18n( 'design/admin/content/urlalias_wildcard' )}" title="{'Remove selected aliases from the list above.'|i18n( 'design/admin/content/urlalias_wildcard' )}" onclick="return confirm( '{'Are you sure you want to remove the selected wildcards?'|i18n( 'design/admin/content/urlalias_wildcard' )|wash( javascript )}' );">{'Remove selected'|i18n( 'design/admin/content/urlalias_wildcard' )}</button>
+    <div class="a4-actions">
+        <button type="submit" class="a4-btn a4-btn-outline-danger" name="RemoveWildcardButton" value="{'Remove selected'|i18n( 'design/admin/content/urlalias_wildcard' )}" title="{'Remove selected aliases from the list above.'|i18n( 'design/admin/content/urlalias_wildcard' )}" onclick="return confirm( '{'Are you sure you want to remove the selected wildcards?'|i18n( 'design/admin/content/urlalias_wildcard' )|wash( javascript )}' );">{'Remove selected'|i18n( 'design/admin/content/urlalias_wildcard' )}</button>
     </div>
-    <p class="exp-meta">{'A removed wildcard stops working at once: its addresses are then answered by URL aliases and modules alone.'|i18n( 'design/admin/content/urlalias_wildcard' )} <span id="wildcard-selected-count" aria-live="polite"></span></p>
-    <details class="exp-confirm">
+    <p class="a4-meta">{'A removed wildcard stops working at once: its addresses are then answered by URL aliases and modules alone.'|i18n( 'design/admin/content/urlalias_wildcard' )} <span id="wildcard-selected-count" aria-live="polite"></span></p>
+    <details class="a4-confirm">
         <summary>{'Remove all'|i18n( 'design/admin/content/urlalias_wildcard' )}</summary>
         <div>
             <p>{'This removes every wildcard, %count in all, not only those shown. It cannot be undone.'|i18n( 'design/admin/content/urlalias_wildcard',, hash( '%count', $total ) )}</p>
-            <button type="submit" class="exp-btn exp-btn-danger" name="RemoveAllWildcardsButton" value="{'Remove all'|i18n( 'design/admin/content/urlalias_wildcard' )}" title="{'Remove all wildcard aliases.'|i18n( 'design/admin/content/urlalias_wildcard' )}">{'Remove all wildcards'|i18n( 'design/admin/content/urlalias_wildcard' )}</button>
+            <button type="submit" class="a4-btn a4-btn-danger" name="RemoveAllWildcardsButton" value="{'Remove all'|i18n( 'design/admin/content/urlalias_wildcard' )}" title="{'Remove all wildcard aliases.'|i18n( 'design/admin/content/urlalias_wildcard' )}">{'Remove all wildcards'|i18n( 'design/admin/content/urlalias_wildcard' )}</button>
         </div>
     </details>
 {else}
-    <button type="submit" class="exp-btn" name="RemoveWildcardButton" value="{'Remove selected'|i18n( 'design/admin/content/urlalias_wildcard' )}" title="{'There are no removable aliases.'|i18n( 'design/admin/content/urlalias_wildcard' )}" disabled="disabled">{'Remove selected'|i18n( 'design/admin/content/urlalias_wildcard' )}</button>
-    <p class="exp-meta">{'There are no removable aliases.'|i18n( 'design/admin/content/urlalias_wildcard' )}</p>
+    <button type="submit" class="a4-btn" name="RemoveWildcardButton" value="{'Remove selected'|i18n( 'design/admin/content/urlalias_wildcard' )}" title="{'There are no removable aliases.'|i18n( 'design/admin/content/urlalias_wildcard' )}" disabled="disabled">{'Remove selected'|i18n( 'design/admin/content/urlalias_wildcard' )}</button>
+    <p class="a4-meta">{'There are no removable aliases.'|i18n( 'design/admin/content/urlalias_wildcard' )}</p>
 {/if}
 </div>
 
@@ -271,9 +270,9 @@ var expWildcardText = {ldelim}
 {rdelim};
 {literal}
 (function () {
-    var nodes = document.querySelectorAll( '.exp-urls .exp-js-only' ), i;
+    var nodes = document.querySelectorAll( '.a4-url .a4-url-js-only' ), i;
     for ( i = 0; i < nodes.length; i++ ) nodes[i].hidden = false;
-    var invalid = document.querySelector( '.exp-urls [aria-invalid="true"]' );
+    var invalid = document.querySelector( '.a4-url [aria-invalid="true"]' );
     if ( invalid ) invalid.focus();
     var list = document.getElementById( 'wildcard-list' );
     if ( !list ) return;
@@ -283,7 +282,7 @@ var expWildcardText = {ldelim}
     function update() {
         var all = boxes(), n = 0, j;
         for ( j = 0; j < all.length; j++ ) {
-            var card = all[j].closest( '.exp-card' );
+            var card = all[j].closest( '.a4-card' );
             if ( card ) card.classList.toggle( 'is-selected', all[j].checked );
             if ( all[j].checked ) n++;
         }

@@ -5,39 +5,6 @@
    this template adds is the shape around them: one section per content class,
    one panel per object, and a report of what happened to each when publishing
    several of them did not all go the same way. *}
-{literal}<style>
-.multiedit-note { color: #555; margin: 0 0 1rem; }
-.multiedit-group { margin-bottom: 1.5rem; }
-.multiedit-group > h2 { font-size: 1.1em; margin: 0 0 .5rem; }
-.multiedit-object { border: 1px solid #d8d8d8; border-radius: 4px; margin-bottom: .75rem; background: #fff; }
-.multiedit-object > summary { padding: .6rem .75rem; cursor: pointer; font-weight: bold; list-style: revert; }
-.multiedit-object > summary small { font-weight: normal; color: #777; margin-left: .5rem; }
-.multiedit-object[open] > summary { border-bottom: 1px solid #e8e8e8; }
-.multiedit-body { padding: .75rem; }
-.multiedit-invalid { border-color: #c0392b; }
-.multiedit-invalid > summary { background: #fdf0ee; color: #a5281b; }
-.multiedit-report { border: 1px solid #d8d8d8; border-radius: 4px; padding: .75rem; margin-bottom: 1rem; background: #fafafa; }
-.multiedit-report li { margin: .2rem 0; }
-.multiedit-state-published { color: #2e7d32; }
-.multiedit-state-pending { color: #b26a00; }
-.multiedit-state-failed { color: #c0392b; }
-.multiedit-refused { border: 1px solid #e0cf9a; background: #fdf8e6; border-radius: 4px; padding: .6rem .75rem; margin-bottom: 1rem; }
-.multiedit-controls { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; }
-.multiedit-toolbar { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
-.multiedit-toolbar .multiedit-note { margin: 0; }
-.multiedit-toggles { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; }
-.multiedit-autosave { font-style: normal; font-size: .9em; color: #777; min-width: 12em; }
-.multiedit-autosave.as-saving { color: #b26a00; }
-.multiedit-autosave.as-success { color: #2e7d32; }
-.multiedit-autosave.as-error { color: #c0392b; }
-@media (max-width: 700px) {
-    .multiedit-body .block label { display: block; }
-    .multiedit-controls .button { flex: 1 1 auto; }
-    .multiedit-toolbar { justify-content: flex-start; }
-    .multiedit-toggles { width: 100%; }
-    .multiedit-toggles .button { flex: 1 1 auto; }
-}
-</style>{/literal}
 
 <form method="post" action={"content/multiedit"|ezurl} enctype="multipart/form-data" name="multiedit">
 
@@ -52,7 +19,7 @@
 {* ── Making several new ones ───────────────────────────────────────────── *}
 {if $multiedit_create_classes}
     {if $multiedit_error|begins_with('create-')}
-    <div class="multiedit-refused">
+    <div class="a4-notice is-warn">
         {if $multiedit_error|eq('create-permission')}{'You may not create content of that type here.'|i18n('design/admin/content/multiedit')}
         {elseif $multiedit_error|eq('create-count')}{'Choose how many to create.'|i18n('design/admin/content/multiedit')}
         {elseif $multiedit_error|eq('create-class')}{'Choose what to create.'|i18n('design/admin/content/multiedit')}
@@ -61,7 +28,7 @@
     </div>
     {/if}
 
-    <p class="multiedit-note">{'What would you like to create, and how many? They are made as drafts and nothing is published until you say so.'|i18n('design/admin/content/multiedit')}</p>
+    <p class="a4-content-multiedit-note">{'What would you like to create, and how many? They are made as drafts and nothing is published until you say so.'|i18n('design/admin/content/multiedit')}</p>
 
     <div class="block">
         <label class="inline" for="multiedit-create-class">{'Type'|i18n('design/admin/content/multiedit')}:</label>
@@ -82,14 +49,14 @@
 
 {* ── Nothing to do ─────────────────────────────────────────────────────── *}
 {if $multiedit_error|eq('nothing-selected')}
-    <p class="multiedit-note">{'Nothing was selected. Tick some items in a list or a search result and choose "Edit selected" from the More actions menu.'|i18n('design/admin/content/multiedit')}</p>
+    <p class="a4-content-multiedit-note">{'Nothing was selected. Tick some items in a list or a search result and choose "Edit selected" from the More actions menu.'|i18n('design/admin/content/multiedit')}</p>
 {elseif $multiedit_error|eq('nothing-editable')}
-    <p class="multiedit-note">{'None of the selected items can be edited.'|i18n('design/admin/content/multiedit')}</p>
+    <p class="a4-content-multiedit-note">{'None of the selected items can be edited.'|i18n('design/admin/content/multiedit')}</p>
     {* The reasons are worked out either way; when everything is refused they
        are the only thing on the page worth reading, so they are shown here as
        well as beside a form that did open. *}
     {if $multiedit_refused|count|gt(0)}
-    <div class="multiedit-refused">
+    <div class="a4-notice is-warn">
         <ul>
         {foreach $multiedit_refused as $refusedID => $refused}
             <li>{$refused.name|wash} &mdash;
@@ -107,11 +74,11 @@
 
 {* ── What happened when publishing ─────────────────────────────────────── *}
 {if $multiedit_published}
-<div class="multiedit-report">
+<div class="a4-content-multiedit-report">
     <h2>{'Result'|i18n('design/admin/content/multiedit')}</h2>
     <ul>
     {foreach $multiedit_published as $result}
-        <li class="multiedit-state-{$result.state}">
+        <li class="a4-content-multiedit-state-{$result.state}">
             {$result.name|wash}
             {if $result.state|eq('published')}&mdash; {'published'|i18n('design/admin/content/multiedit')}
             {elseif $result.state|eq('pending')}&mdash; {'waiting for approval'|i18n('design/admin/content/multiedit')}
@@ -120,13 +87,13 @@
         </li>
     {/foreach}
     </ul>
-    <p class="multiedit-note">{'Items waiting for approval have been sent into their workflow and are not published yet.'|i18n('design/admin/content/multiedit')}</p>
+    <p class="a4-content-multiedit-note">{'Items waiting for approval have been sent into their workflow and are not published yet.'|i18n('design/admin/content/multiedit')}</p>
 </div>
 {/if}
 
 {* ── What could not be opened ──────────────────────────────────────────── *}
 {if $multiedit_refused|count|gt(0)}
-<div class="multiedit-refused">
+<div class="a4-notice is-warn">
     <strong>{'Left out of this form'|i18n('design/admin/content/multiedit')}:</strong>
     <ul>
     {foreach $multiedit_refused as $refusedID => $refused}
@@ -144,21 +111,21 @@
 
 {* ── Not everything validated ──────────────────────────────────────────── *}
 {if $multiedit_all_valid|not}
-<div class="multiedit-refused">
+<div class="a4-notice is-warn">
     <strong>{'Nothing was published'|i18n('design/admin/content/multiedit')}:</strong>
     {'some items have fields that need attention. They are marked below; everything typed has been kept as a draft.'|i18n('design/admin/content/multiedit')}
 </div>
 {/if}
 
-<div class="multiedit-toolbar">
-    <p class="multiedit-note">
+<div class="a4-content-multiedit-toolbar">
+    <p class="a4-content-multiedit-note">
         {'%count items, in %language. Each one is published separately when you press Publish.'|i18n('design/admin/content/multiedit','',hash('%count',$multiedit_count,'%language',$multiedit_language))}
     </p>
     {* Several items open at once is a wall; several closed is a list you can
        find your way around. Nothing here changes what is submitted - a closed
        panel still posts its fields. *}
-    <div class="multiedit-toggles">
-        {if $multiedit_autosave_interval|gt(0)}<em id="multiedit-autosave" class="multiedit-autosave"></em>{/if}
+    <div class="a4-content-multiedit-toggles">
+        {if $multiedit_autosave_interval|gt(0)}<em id="multiedit-autosave" class="a4-content-multiedit-autosave"></em>{/if}
         <input class="button" type="button" id="multiedit-expand" value="{'Expand all'|i18n('design/admin/content/multiedit')}" title="{'Open every item.'|i18n('design/admin/content/multiedit')|wash}" />
         <input class="button" type="button" id="multiedit-collapse" value="{'Collapse all'|i18n('design/admin/content/multiedit')}" title="{'Close every item. Closed items are still saved and published; nothing is left out.'|i18n('design/admin/content/multiedit')|wash}" />
     </div>
@@ -166,21 +133,21 @@
 
 {* ── The objects, grouped by class ─────────────────────────────────────── *}
 {foreach $multiedit_groups as $group}
-<div class="multiedit-group">
+<div class="a4-content-multiedit-group">
     <h2>{$group.name|wash} <small>({$group.objects|count})</small></h2>
 
     {foreach $group.objects as $entry}
-    <details class="multiedit-object{if $multiedit_validation[$entry.object_id]} multiedit-invalid{/if}"{if or($multiedit_validation[$entry.object_id],$group.objects|count|le(3))} open="open"{/if}>
+    <details class="a4-content-multiedit-object{if $multiedit_validation[$entry.object_id]} a4-content-multiedit-invalid{/if}"{if or($multiedit_validation[$entry.object_id],$group.objects|count|le(3))} open="open"{/if}>
         <summary>
             {$entry.object.name|wash}
             <small>{$entry.language|wash} &middot; {'version %version'|i18n( 'design/admin/content/multiedit',, hash( '%version', $entry.version.version ) )}</small>
         </summary>
-        <div class="multiedit-body">
+        <div class="a4-content-multiedit-body">
             {* Which fields stopped this one, said here rather than only marked.
                With several objects on the page, "something is wrong somewhere"
                is not a message anybody can act on. *}
             {if $multiedit_validation[$entry.object_id]}
-            <div class="multiedit-refused">
+            <div class="a4-notice is-warn">
                 <strong>{'Needs attention before this item can be published'|i18n('design/admin/content/multiedit')}:</strong>
                 <ul>
                 {foreach $multiedit_validation[$entry.object_id].attributes as $invalid}
@@ -223,7 +190,7 @@
     function panels()
     {
         return Array.prototype.slice.call(
-            document.querySelectorAll( 'details.multiedit-object' ) );
+            document.querySelectorAll( 'details.a4-content-multiedit-object' ) );
     }
 
     function setAll( open )
@@ -241,7 +208,7 @@
     // need it, whatever the reader last collapsed: being told there is a
     // problem and then having to hunt for it is the worst of both.
     panels().forEach( function ( panel ) {
-        if ( panel.className.indexOf( 'multiedit-invalid' ) !== -1 )
+        if ( panel.className.indexOf( 'a4-content-multiedit-invalid' ) !== -1 )
             panel.open = true;
     } );
 })();
@@ -282,7 +249,7 @@ var MULTIEDIT_AUTOSAVE_TEXTS = {ldelim}
 
     function say( state, text )
     {
-        place.className = 'multiedit-autosave as-' + state;
+        place.className = 'a4-content-multiedit-autosave as-' + state;
         place.textContent = text;
     }
 
@@ -371,7 +338,7 @@ var MULTIEDIT_AUTOSAVE_TEXTS = {ldelim}
 </div>
 
 <div class="controlbar">
-<div class="block multiedit-controls">
+<div class="block a4-content-multiedit-controls">
     {if $multiedit_create_classes}
     {* Still choosing what to make: only one button makes sense yet. *}
     <input class="button" type="submit" name="MultiEditCreateButton" value="{'Create them'|i18n('design/admin/content/multiedit')}" title="{'Make this many drafts and open them all for editing.'|i18n('design/admin/content/multiedit')|wash}" />

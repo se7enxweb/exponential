@@ -1441,3 +1441,7 @@ html #page.ezexplayoutsuinavigationpart .ng-layouts-app table td
 
 html #page.ezexplayoutsuinavigationpart .ng-layouts-app table tbody tr:nth-child(even) { background: #f5f5f5; }
 html #page.ezexplayoutsuinavigationpart .ng-layouts-app table tbody tr:nth-child(odd) { background: #fff; }
+
+/* The edit view with its edit menu collapsed (content/edit.tpl sets the class; was a style attribute there) */
+#leftmenu.a4-content-edit-collapsed { margin-left: -13.5em; }
+#maincontent.a4-content-edit-collapsed { margin-left: 20px; }

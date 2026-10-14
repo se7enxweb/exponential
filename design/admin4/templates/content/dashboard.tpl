@@ -107,7 +107,7 @@
                 {foreach $days as $d}
                 <div class="a4-dash-bar" title="{$d.time|l10n( 'shortdate' )}: {$d.count}">
                     <span class="a4-dash-bar-value">{if gt( $d.count, 0 )}{$d.count}{/if}</span>
-                    <span class="a4-dash-bar-fill" style="height: {if gt( $d.count, 0 )}{max( 4, div( mul( $d.count, 100 ), $day_max )|round )}{else}0{/if}%"></span>
+                    <span class="a4-dash-bar-fill a4-pct-{if gt( $d.count, 0 )}{max( 4, div( mul( $d.count, 100 ), $day_max )|round )}{else}0{/if}"></span>
                     <span class="a4-dash-bar-day">{$d.time|datetime( 'custom', '%j' )}</span>
                 </div>
                 {/foreach}

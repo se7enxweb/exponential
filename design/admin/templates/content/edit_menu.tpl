@@ -62,7 +62,7 @@
 	{if not( eq($language.locale, $object.current_language_object.locale) )} {* Only providing other languages than current *}
 	<label>
 	<input type="radio" name="FromLanguage" value="{$language.locale|wash}"{if $language.locale|eq($from_language)} checked="checked"{/if} />
-	<img src="{$language.locale|flag_icon}" width="18" height="12" alt="{$language.locale|wash}" style="vertical-align: middle;" />
+	<img src="{$language.locale|flag_icon}" width="18" height="12" alt="{$language.locale|wash}" class="a4-flag" />
 	{$language.locale|wash}
 	</label>
 	{/if}

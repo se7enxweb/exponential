@@ -6,11 +6,9 @@
    version, the approval (when you take part in it) and the object. A version waiting for your approval is shown only
    when you may read it (content/versionread).
 
-   The same file is in design/admin and design/admin4; the look is content/history_exp_style.tpl (.exp-history) and
+   The same file is in design/admin and design/admin4; the look is content/history_exp_style.tpl (.a4-content-history) and
    content/draft_exp_style.tpl. The list comes from the view (pending_rows, pending_overview, pending_filters ...),
    worked out by expContentPendingList. Guide: doc/guides/drafts-and-pending.md *}
-{include uri='design:content/history_exp_style.tpl'}
-{include uri='design:content/draft_exp_style.tpl'}
 
 {def $rows = first_set( $pending_rows, array() )
      $overview = first_set( $pending_overview, hash( 'mine', 0, 'approve', 0, 'held_by_approval', 0, 'classes', hash() ) )
@@ -27,7 +25,7 @@
                          'deferred', 'Sent back for changes'|i18n( 'design/admin/content/pendinglist' ) )
      $state_class = hash( 'waiting', 'is-warn', 'accepted', 'is-ok', 'denied', 'is-bad', 'deferred', 'is-info' )}
 
-<div class="context-block exp-history exp-drafts exp-pending">
+<div class="context-block a4-page a4-content-history a4-content-drafts a4-content-pending">
 
 <div class="box-header"><div class="box-ml">
 <h1 class="context-title">{'My pending items (%pending_count)'|i18n( 'design/admin/content/pendinglist',, hash( '%pending_count', $overview.mine ) )}</h1>
@@ -35,24 +33,24 @@
 
 <div class="box-bc"><div class="box-ml"><div class="box-content">
 
-<p class="exp-intro">{'A version is pending when you have sent it for publishing and a workflow holds it, usually an approval: it is published when it is approved. Here are your pending versions and, if you approve content, the versions waiting for your approval that you may read. Open the approval to read the comments or to approve.'|i18n( 'design/admin/content/pendinglist' )}</p>
+<p class="a4-intro">{'A version is pending when you have sent it for publishing and a workflow holds it, usually an approval: it is published when it is approved. Here are your pending versions and, if you approve content, the versions waiting for your approval that you may read. Open the approval to read the comments or to approve.'|i18n( 'design/admin/content/pendinglist' )}</p>
 
 {if $total|gt( 0 )}
 <section aria-labelledby="pending-overview-title">
-<h2 class="exp-sr" id="pending-overview-title">{'Overview'|i18n( 'design/admin/content/pendinglist' )}</h2>
-<ul class="exp-figures">
-    <li class="exp-figure{if eq( $filters.scope, 'mine' )} is-current{/if}"><a href={concat( $base, $links.scope.mine )|ezurl}><strong>{$overview.mine}</strong> <span>{'Sent by you'|i18n( 'design/admin/content/pendinglist' )}</span></a></li>
-    <li class="exp-figure{if $overview.approve|gt( 0 )} is-attention{/if}{if eq( $filters.scope, 'approve' )} is-current{/if}"><a href={concat( $base, $links.scope.approve )|ezurl}><strong>{$overview.approve}</strong> <span>{'Waiting for your approval'|i18n( 'design/admin/content/pendinglist' )}</span></a></li>
-    <li class="exp-figure"><strong>{$overview.held_by_approval}</strong> <span>{'Held by an approval'|i18n( 'design/admin/content/pendinglist' )}</span></li>
+<h2 class="a4-sr-only" id="pending-overview-title">{'Overview'|i18n( 'design/admin/content/pendinglist' )}</h2>
+<ul class="a4-figures">
+    <li class="a4-figure{if eq( $filters.scope, 'mine' )} is-current{/if}"><a href={concat( $base, $links.scope.mine )|ezurl}><strong>{$overview.mine}</strong> <span>{'Sent by you'|i18n( 'design/admin/content/pendinglist' )}</span></a></li>
+    <li class="a4-figure{if $overview.approve|gt( 0 )} is-attention{/if}{if eq( $filters.scope, 'approve' )} is-current{/if}"><a href={concat( $base, $links.scope.approve )|ezurl}><strong>{$overview.approve}</strong> <span>{'Waiting for your approval'|i18n( 'design/admin/content/pendinglist' )}</span></a></li>
+    <li class="a4-figure"><strong>{$overview.held_by_approval}</strong> <span>{'Held by an approval'|i18n( 'design/admin/content/pendinglist' )}</span></li>
 </ul>
 </section>
 
 <section aria-labelledby="pending-find-title">
-<h2 class="exp-sr" id="pending-find-title">{'Filter and order'|i18n( 'design/admin/content/pendinglist' )}</h2>
-<div class="exp-toolbar">
-    <div class="exp-field">
-        <span class="exp-field-label" id="pending-scope-label"><strong>{'Show'|i18n( 'design/admin/content/pendinglist' )}</strong></span>
-        <ul class="exp-tabs" aria-labelledby="pending-scope-label">
+<h2 class="a4-sr-only" id="pending-find-title">{'Filter and order'|i18n( 'design/admin/content/pendinglist' )}</h2>
+<div class="a4-filterbar">
+    <div class="a4-field">
+        <span class="a4-label" id="pending-scope-label"><strong>{'Show'|i18n( 'design/admin/content/pendinglist' )}</strong></span>
+        <ul class="a4-tabs" aria-labelledby="pending-scope-label">
         {foreach array( hash( 'scope', 'all', 'text', 'All'|i18n( 'design/admin/content/pendinglist' ) ),
                         hash( 'scope', 'mine', 'text', 'Sent by you'|i18n( 'design/admin/content/pendinglist' ) ),
                         hash( 'scope', 'approve', 'text', 'Waiting for your approval'|i18n( 'design/admin/content/pendinglist' ) ) ) as $tab}
@@ -61,9 +59,9 @@
         </ul>
     </div>
     {if or( $overview.classes|count|gt( 1 ), $filters.class|ne( '' ) )}
-    <div class="exp-field">
-        <span class="exp-field-label" id="pending-class-label"><strong>{'Class'|i18n( 'design/admin/content/pendinglist' )}</strong></span>
-        <ul class="exp-tabs" aria-labelledby="pending-class-label">
+    <div class="a4-field">
+        <span class="a4-label" id="pending-class-label"><strong>{'Class'|i18n( 'design/admin/content/pendinglist' )}</strong></span>
+        <ul class="a4-tabs" aria-labelledby="pending-class-label">
             <li>{if eq( $filters.class, '' )}<span class="current" aria-current="true">{'All'|i18n( 'design/admin/content/pendinglist' )}</span>{else}<a href={concat( $base, $links.class.all )|ezurl}>{'All'|i18n( 'design/admin/content/pendinglist' )}</a>{/if}</li>
         {foreach $overview.classes as $identifier => $class_name}
             <li>{if eq( $filters.class, $identifier )}<span class="current" aria-current="true">{$class_name|wash}</span>{else}<a href={concat( $base, $links.class[$identifier] )|ezurl}>{$class_name|wash}</a>{/if}</li>
@@ -71,9 +69,9 @@
         </ul>
     </div>
     {/if}
-    <div class="exp-field">
-        <span class="exp-field-label" id="pending-sort-label"><strong>{'Order'|i18n( 'design/admin/content/pendinglist' )}</strong></span>
-        <ul class="exp-tabs" aria-labelledby="pending-sort-label">
+    <div class="a4-field">
+        <span class="a4-label" id="pending-sort-label"><strong>{'Order'|i18n( 'design/admin/content/pendinglist' )}</strong></span>
+        <ul class="a4-tabs" aria-labelledby="pending-sort-label">
         {foreach array( hash( 'sort', 'newest', 'text', 'Newest first'|i18n( 'design/admin/content/pendinglist' ) ),
                         hash( 'sort', 'oldest', 'text', 'Waiting longest'|i18n( 'design/admin/content/pendinglist' ) ),
                         hash( 'sort', 'name', 'text', 'Name'|i18n( 'design/admin/content/pendinglist' ) ) ) as $tab}
@@ -85,16 +83,16 @@
 </section>
 {/if}
 
-<section class="exp-section" aria-labelledby="pending-list-title">
-<div class="exp-section-head">
-    <h2 class="exp-h2" id="pending-list-title">{'Pending versions'|i18n( 'design/admin/content/pendinglist' )}</h2>
+<section class="a4-section" aria-labelledby="pending-list-title">
+<div class="a4-section-head">
+    <h2 class="a4-h2" id="pending-list-title">{'Pending versions'|i18n( 'design/admin/content/pendinglist' )}</h2>
     {if $count|gt( 0 )}
-    <span class="exp-meta">{'%from to %to of %count'|i18n( 'design/admin/content/pendinglist',, hash( '%from', sum( $view_parameters.offset, 1 ), '%to', min( sum( $view_parameters.offset, $page_limit ), $count ), '%count', $count ) )}</span>
+    <span class="a4-meta">{'%from to %to of %count'|i18n( 'design/admin/content/pendinglist',, hash( '%from', sum( $view_parameters.offset, 1 ), '%to', min( sum( $view_parameters.offset, $page_limit ), $count ), '%count', $count ) )}</span>
     {/if}
 </div>
 
 {if $rows|count|eq( 0 )}
-<p class="exp-empty">
+<p class="a4-empty">
 {if $total|eq( 0 )}
     {'The pending list is empty.'|i18n( 'design/admin/content/pendinglist' )} {'A version appears here when you send it for publishing and a workflow, such as an approval, holds it.'|i18n( 'design/admin/content/pendinglist' )}
 {else}
@@ -102,27 +100,27 @@
 {/if}
 </p>
 {else}
-<ul class="exp-cards" id="pending-list">
+<ul class="a4-cards" id="pending-list">
 {foreach $rows as $row}
     {def $card_id = concat( 'pending-', $row.id )}
-<li class="exp-card{if $row.approver} is-attention{/if}" id="{$card_id}">
-    <div class="exp-card-head">
-        <div class="exp-card-title">
+<li class="a4-card{if $row.approver} is-attention{/if}" id="{$card_id}">
+    <div class="a4-card-head">
+        <div class="a4-card-title">
             <h3 id="{$card_id}-title">{$row.class_identifier|class_icon( small, $row.class_name|wash )} {if $row.can_versionread}<a href={concat( '/content/versionview/', $row.object_id, '/', $row.version, '/', $row.language, '/' )|ezurl}>{$row.name|wash}</a>{else}{$row.name|wash}{/if}</h3>
-            <ul class="exp-badges">
-                {if $row.approval_id}<li class="exp-badge {$state_class[$row.approval_state_name]}">{$state_text[$row.approval_state_name]|wash}</li>{else}<li class="exp-badge is-warn">{'Pending'|i18n( 'design/admin/content/pendinglist' )}</li>{/if}
-                {if $row.mine}<li class="exp-badge">{'Sent by you'|i18n( 'design/admin/content/pendinglist' )}</li>{/if}
-                {if $row.approver}<li class="exp-badge is-info">{'You approve it'|i18n( 'design/admin/content/pendinglist' )}</li>{/if}
-                {if $row.is_new}<li class="exp-badge is-info">{'New object'|i18n( 'design/admin/content/pendinglist' )}</li>{/if}
+            <ul class="a4-badges">
+                {if $row.approval_id}<li class="a4-badge {$state_class[$row.approval_state_name]}">{$state_text[$row.approval_state_name]|wash}</li>{else}<li class="a4-badge is-warn">{'Pending'|i18n( 'design/admin/content/pendinglist' )}</li>{/if}
+                {if $row.mine}<li class="a4-badge">{'Sent by you'|i18n( 'design/admin/content/pendinglist' )}</li>{/if}
+                {if $row.approver}<li class="a4-badge is-info">{'You approve it'|i18n( 'design/admin/content/pendinglist' )}</li>{/if}
+                {if $row.is_new}<li class="a4-badge is-info">{'New object'|i18n( 'design/admin/content/pendinglist' )}</li>{/if}
             </ul>
         </div>
-        <div class="exp-actions">
-            {if $row.can_versionread}<a class="exp-btn exp-btn-small" href={concat( '/content/versionview/', $row.object_id, '/', $row.version, '/', $row.language, '/' )|ezurl} aria-describedby="{$card_id}-title">{'View'|i18n( 'design/admin/content/pendinglist' )}</a>{/if}
-            {if and( $row.approval_id, $row.approval_link )}<a class="exp-btn exp-btn-small{if $row.approver} exp-btn-primary{/if}" href={concat( '/collaboration/item/full/', $row.approval_id )|ezurl} aria-describedby="{$card_id}-title">{if $row.approver}{'Open the approval'|i18n( 'design/admin/content/pendinglist' )}{else}{'Approval and comments'|i18n( 'design/admin/content/pendinglist' )}{/if}</a>{/if}
-            {if $row.node_id|gt( 0 )}<a class="exp-btn exp-btn-small" href={concat( '/content/view/full/', $row.node_id )|ezurl} aria-describedby="{$card_id}-title">{'Published page'|i18n( 'design/admin/content/pendinglist' )}</a>{/if}
+        <div class="a4-actions">
+            {if $row.can_versionread}<a class="a4-btn a4-btn-small" href={concat( '/content/versionview/', $row.object_id, '/', $row.version, '/', $row.language, '/' )|ezurl} aria-describedby="{$card_id}-title">{'View'|i18n( 'design/admin/content/pendinglist' )}</a>{/if}
+            {if and( $row.approval_id, $row.approval_link )}<a class="a4-btn a4-btn-small{if $row.approver} a4-btn-primary{/if}" href={concat( '/collaboration/item/full/', $row.approval_id )|ezurl} aria-describedby="{$card_id}-title">{if $row.approver}{'Open the approval'|i18n( 'design/admin/content/pendinglist' )}{else}{'Approval and comments'|i18n( 'design/admin/content/pendinglist' )}{/if}</a>{/if}
+            {if $row.node_id|gt( 0 )}<a class="a4-btn a4-btn-small" href={concat( '/content/view/full/', $row.node_id )|ezurl} aria-describedby="{$card_id}-title">{'Published page'|i18n( 'design/admin/content/pendinglist' )}</a>{/if}
         </div>
     </div>
-    <dl class="exp-facts">
+    <dl class="a4-facts">
         <div>
             <dt>{'Class'|i18n( 'design/admin/content/pendinglist' )}</dt>
             <dd>{$row.class_name|wash}</dd>
@@ -144,7 +142,7 @@
             <dd>{$row.sent|l10n( shortdatetime )}</dd>
         </div>
     </dl>
-    <div class="exp-holds">
+    <div class="a4-content-history-holds">
         {if $row.approval_id}
         <p><strong>{'Held by an approval.'|i18n( 'design/admin/content/pendinglist' )}</strong> {if $row.approvers|count}{'Approvers: %names.'|i18n( 'design/admin/content/pendinglist',, hash( '%names', $row.approvers|implode( ', ' ) ) )|wash}{/if}</p>
         {/if}
@@ -160,8 +158,8 @@
 </ul>
 {/if}
 
-<div class="exp-listfoot">
-    <p class="exp-sizes">
+<div class="a4-listfoot">
+    <p class="a4-sizes">
         <span>{'Per page'|i18n( 'design/admin/content/pendinglist' )}:</span>
     {foreach first_set( $pending_limit_choices, array( 10, 25, 50 ) ) as $limit_index => $limit_option}
         {if eq( $limit_option, $page_limit )}
@@ -171,7 +169,7 @@
         {/if}
     {/foreach}
     </p>
-    <div class="exp-pager">
+    <div class="a4-pager">
     {include name=navigator
              uri='design:navigator/google.tpl'
              page_uri=$base

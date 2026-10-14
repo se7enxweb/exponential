@@ -1,27 +1,3 @@
-<style type="text/css">
-{literal}
-table.list td { max-width: 500px; word-wrap: break-word; }
-table.list td.width-280 { max-width: 280px; }
-.mt-20 { margin-top: 20px; }
-.content-trash .trash-summary { margin: 0 0 .6em 0; }
-.content-trash .trash-filter { display: flex; flex-wrap: wrap; gap: .4em 1em; align-items: flex-end; margin: 0 0 .8em 0; }
-.content-trash .trash-filter label { display: block; font-weight: bold; font-size: .9em; }
-.content-trash .trash-filter select, .content-trash .trash-filter input.trash-date { max-width: 14em; }
-.content-trash .trash-meta { font-size: .85em; opacity: .75; margin-top: .2em; }
-.content-trash .trash-state { font-size: .85em; margin-top: .2em; }
-.content-trash .trash-state-exists { color: #2d6a2d; }
-.content-trash .trash-state-trash, .content-trash .trash-state-moved, .content-trash .trash-state-gone { color: #8a4b00; }
-.content-trash .trash-path-trash, .content-trash .trash-path-gone { font-style: italic; }
-.content-trash details.trash-details { font-size: .85em; margin-top: .2em; }
-.content-trash details.trash-details summary { cursor: pointer; }
-.content-trash td.trash-name { min-width: 14em; }
-.content-trash details.trash-details dl { display: grid; grid-template-columns: auto 1fr; gap: .1em .6em; margin: .3em 0 0 0; }
-.content-trash details.trash-details dt { font-weight: bold; margin: 0; }
-.content-trash details.trash-details dd { margin: 0; }
-.content-trash a.trash-restore { display: inline-block; padding: 2px 8px; border: 1px solid #c9ced6; border-radius: 4px; background-color: #fff; text-decoration: none; white-space: nowrap; }
-.content-trash a.trash-restore:hover { border-color: #9aa1ad; }
-{/literal}
-</style>
 {let item_type = ezpreference( 'admin_list_limit' )
      number_of_items = min( $item_type, 3)|choose( 10, 10, 25, 50 )
      trash_sort_field = first_set(  $view_parameters.sort_field, 'trashed' )
@@ -66,7 +42,7 @@ table.list td.width-280 { max-width: 280px; }
 
 <form name="trashform" action={concat( 'content/trash', $filter_uri, '/(sort_field)/', $trash_sort_field, '/(sort_order)/', $trash_sort_order )|ezurl} method="post" >
 
-<div class="context-block content-trash">
+<div class="context-block a4-content-trash">
 
 {* DESIGN: Header START *}<div class="box-header"><div class="box-ml">
 
@@ -83,11 +59,11 @@ table.list td.width-280 { max-width: 280px; }
 <div class="context-toolbar">
 <div class="block">
 {if $trash_summary.items}
-    <p class="trash-summary">{'%items items in the trash: %top removed directly, %below below them. Oldest: %oldest.'|i18n( 'design/admin/content/trash',, hash( '%items', $trash_summary.items, '%top', $trash_summary.top, '%below', $trash_summary.below, '%oldest', $trash_summary.oldest|l10n( 'shortdatetime' ) ) )}
+    <p class="a4-content-trash-summary">{'%items items in the trash: %top removed directly, %below below them. Oldest: %oldest.'|i18n( 'design/admin/content/trash',, hash( '%items', $trash_summary.items, '%top', $trash_summary.top, '%below', $trash_summary.below, '%oldest', $trash_summary.oldest|l10n( 'shortdatetime' ) ) )}
     {if lt( $trash_summary.recorded, $trash_summary.items )}{'Who trashed an item is recorded from this version on: known for %recorded.'|i18n( 'design/admin/content/trash',, hash( '%recorded', $trash_summary.recorded ) )}{/if}</p>
 {/if}
 {if or( $trash_summary.items, $trash_filtered )}
-    <div class="trash-filter">
+    <div class="a4-content-trash-filter">
         <div>
             <label for="trash-filter-by">{'Trashed by'|i18n( 'design/admin/content/trash' )}</label>
             <select id="trash-filter-by" name="FilterTrashedBy">
@@ -109,11 +85,11 @@ table.list td.width-280 { max-width: 280px; }
         </div>
         <div>
             <label for="trash-filter-from">{'Trashed from'|i18n( 'design/admin/content/trash' )}</label>
-            <input class="trash-date" id="trash-filter-from" type="date" name="FilterTrashedFrom" value="{$trash_filters.from|wash}" />
+            <input class="a4-content-trash-date" id="trash-filter-from" type="date" name="FilterTrashedFrom" value="{$trash_filters.from|wash}" />
         </div>
         <div>
             <label for="trash-filter-to">{'to'|i18n( 'design/admin/content/trash' )}</label>
-            <input class="trash-date" id="trash-filter-to" type="date" name="FilterTrashedTo" value="{$trash_filters.to|wash}" />
+            <input class="a4-content-trash-date" id="trash-filter-to" type="date" name="FilterTrashedTo" value="{$trash_filters.to|wash}" />
         </div>
         <div>
             <input class="button" type="submit" name="FilterButton" value="{'Filter'|i18n( 'design/admin/content/trash' )}" title="{'Show only the items that match.'|i18n( 'design/admin/content/trash' )}" />
@@ -218,14 +194,14 @@ table.list td.width-280 { max-width: 280px; }
         <td>
         <input type="checkbox" name="DeleteIDArray[]" value="{$item.object_id}" title="{'Use these checkboxes to mark items for removal. Click the "Remove selected" button to remove the selected items.'|i18n( 'design/admin/content/trash' )|wash()}" />
         </td>
-        <td class="trash-name">
+        <td class="a4-content-trash-name">
         {$trash_node.class_identifier|class_icon( small, $trash_node.class_name|wash )}&nbsp;<a href={concat( '/content/versionview/', $item.object_id, '/', $cur_c_object.current_version, '/' )|ezurl}>{$trash_node.name|wash}</a>
         {if $details}
-        <div class="trash-meta">{'ID %id'|i18n( 'design/admin/content/trash',, hash( '%id', $item.object_id ) )}{if $item.subtree_count} &middot; {'%count below it'|i18n( 'design/admin/content/trash',, hash( '%count', $item.subtree_count ) )}{/if}{if $item.languages} &middot; {foreach $item.languages as $language}<span title="{$language.name|wash}">{$language.locale|wash}</span>{delimiter}, {/delimiter}{/foreach}{/if}</div>
+        <div class="a4-content-trash-meta">{'ID %id'|i18n( 'design/admin/content/trash',, hash( '%id', $item.object_id ) )}{if $item.subtree_count} &middot; {'%count below it'|i18n( 'design/admin/content/trash',, hash( '%count', $item.subtree_count ) )}{/if}{if $item.languages} &middot; {foreach $item.languages as $language}<span title="{$language.name|wash}">{$language.locale|wash}</span>{delimiter}, {/delimiter}{/foreach}{/if}</div>
         {if $item.other_locations}
-        <div class="trash-state trash-state-exists">{'Still in the tree at'|i18n( 'design/admin/content/trash' )}: {foreach $item.other_locations as $location}<a href={$location.url|ezurl}>{$location.name|wash}</a>{delimiter}, {/delimiter}{/foreach}</div>
+        <div class="a4-content-trash-state a4-ok-text">{'Still in the tree at'|i18n( 'design/admin/content/trash' )}: {foreach $item.other_locations as $location}<a href={$location.url|ezurl}>{$location.name|wash}</a>{delimiter}, {/delimiter}{/foreach}</div>
         {/if}
-        <details class="trash-details">
+        <details class="a4-content-trash-details">
             <summary>{'Details'|i18n( 'design/admin/content/trash' )}</summary>
             <dl>
                 <dt>{'Owner'|i18n( 'design/admin/content/trash' )}</dt>
@@ -254,14 +230,14 @@ table.list td.width-280 { max-width: 280px; }
             {let section_object=fetch( section, object, hash( section_id, $cur_c_object.section_id ) )}{section show=$section_object}{$section_object.name|wash}{section-else}<i>{'Unknown'|i18n( 'design/admin/content/trash' )}</i>{/section}{/let}
         {/if}
         </td>
-        <td class="width-280">
+        <td class="a4-content-trash-narrow">
         {if $details}
-            {if $item.path}{foreach $item.path as $step}{if $step.url}<a href={$step.url|ezurl}>{$step.name|wash}</a>{else}<span class="trash-path-{$step.state}">{$step.name|wash}</span>{/if}{delimiter} / {/delimiter}{/foreach}{else}/{/if}
+            {if $item.path}{foreach $item.path as $step}{if $step.url}<a href={$step.url|ezurl}>{$step.name|wash}</a>{else}<span class="a4-content-trash-path-{$step.state}">{$step.name|wash}</span>{/if}{delimiter} / {/delimiter}{/foreach}{else}/{/if}
             {switch match=$item.parent_state}
-            {case match='exists'}<div class="trash-state trash-state-exists">{'Parent exists: restores to its original place.'|i18n( 'design/admin/content/trash' )}</div>{/case}
-            {case match='trash'}<div class="trash-state trash-state-trash">{'Parent is in the trash too: restore it first.'|i18n( 'design/admin/content/trash' )}</div>{/case}
-            {case match='moved'}<div class="trash-state trash-state-moved">{'Parent has moved: choose a place when restoring.'|i18n( 'design/admin/content/trash' )}</div>{/case}
-            {case}<div class="trash-state trash-state-gone">{'Parent no longer exists: choose a place when restoring.'|i18n( 'design/admin/content/trash' )}</div>{/case}
+            {case match='exists'}<div class="a4-content-trash-state a4-ok-text">{'Parent exists: restores to its original place.'|i18n( 'design/admin/content/trash' )}</div>{/case}
+            {case match='trash'}<div class="a4-content-trash-state a4-warn-text">{'Parent is in the trash too: restore it first.'|i18n( 'design/admin/content/trash' )}</div>{/case}
+            {case match='moved'}<div class="a4-content-trash-state a4-warn-text">{'Parent has moved: choose a place when restoring.'|i18n( 'design/admin/content/trash' )}</div>{/case}
+            {case}<div class="a4-content-trash-state a4-warn-text">{'Parent no longer exists: choose a place when restoring.'|i18n( 'design/admin/content/trash' )}</div>{/case}
             {/switch}
         {else}
             {def $original_parent = $trash_node.original_parent}
@@ -273,14 +249,14 @@ table.list td.width-280 { max-width: 280px; }
         {$trash_node.trashed|l10n( 'shortdatetime' )}
         {if $details}
             {if $item.trashed_by}
-            <div class="trash-meta">{'by %name'|i18n( 'design/admin/content/trash',, hash( '%name', $item.trashed_by.name|wash ) )}{if $item.trashed_by.via} <span title="{'Where the removal came from'|i18n( 'design/admin/content/trash' )}">({$item.trashed_by.via|wash})</span>{/if}</div>
+            <div class="a4-content-trash-meta">{'by %name'|i18n( 'design/admin/content/trash',, hash( '%name', $item.trashed_by.name|wash ) )}{if $item.trashed_by.via} <span title="{'Where the removal came from'|i18n( 'design/admin/content/trash' )}">({$item.trashed_by.via|wash})</span>{/if}</div>
             {else}
-            <div class="trash-meta">{'by unknown'|i18n( 'design/admin/content/trash' )}{if $item.modifier_name}<br />{'last modified by %name'|i18n( 'design/admin/content/trash',, hash( '%name', $item.modifier_name|wash ) )}{/if}</div>
+            <div class="a4-content-trash-meta">{'by unknown'|i18n( 'design/admin/content/trash' )}{if $item.modifier_name}<br />{'last modified by %name'|i18n( 'design/admin/content/trash',, hash( '%name', $item.modifier_name|wash ) )}{/if}</div>
             {/if}
         {/if}
         </td>
         <td>
-        <a class="trash-restore" href={concat( '/content/restore/', $item.object_id, '/' )|ezurl} title="{'Restore this item: to its original place, or choose another one.'|i18n( 'design/admin/content/trash' )}">{'Restore'|i18n( 'design/admin/content/trash' )}</a>
+        <a class="a4-btn a4-btn-small" href={concat( '/content/restore/', $item.object_id, '/' )|ezurl} title="{'Restore this item: to its original place, or choose another one.'|i18n( 'design/admin/content/trash' )}">{'Restore'|i18n( 'design/admin/content/trash' )}</a>
         </td>
     </tr>
 
@@ -316,7 +292,7 @@ table.list td.width-280 { max-width: 280px; }
 
 <div class="controlbar">
 {* DESIGN: Control bar START *}<div class="box-bc"><div class="box-ml">
-<div class="button-left mt-20">
+<div class="button-left a4-content-trash-foot">
     {if $list_count}
         <input class="button" type="submit" name="RemoveButton" value="{'Remove selected'|i18n( 'design/admin/content/trash' )}"  title="{'Permanently remove the selected items.'|i18n( 'design/admin/content/trash' )}" />
         <input class="button" type="submit" name="EmptyButton"  value="{'Empty trash'|i18n( 'design/admin/content/trash' )}" title="{'Permanently remove all items from the trash.'|i18n( 'design/admin/content/trash' )}" />

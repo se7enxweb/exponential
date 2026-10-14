@@ -15,7 +15,6 @@
    Everything works without javascript; the script only adds Select all, the count of ticked versions and the
    switch between the views of the differences.
    Guide: doc/guides/content-history.md *}
-{include uri='design:content/history_exp_style.tpl'}
 
 {def $rows = first_set( $history_rows, array() )
      $overview = first_set( $history_overview, false() )
@@ -60,7 +59,7 @@
 <div id="maincontent"><div id="maincontent-design" class="float-break"><div id="fix">
 <!-- Maincontent START -->
 
-<div class="context-block exp-history">
+<div class="context-block a4-page a4-content-history">
 
 <div class="box-header"><div class="box-ml">
 <h1 class="context-title">{'Versions of “%name” (%count)'|i18n( 'design/admin/content/history',, hash( '%name', $object.name, '%count', first_set( $overview.total, $versions|count ) ) )|wash}</h1>
@@ -68,23 +67,23 @@
 
 <div class="box-bc"><div class="box-ml"><div class="box-content">
 
-<p class="exp-intro">{'Each save of an object is a version. A draft becomes the published version when it is published, and the version before it is archived. To change an older version or someone else’s draft, make a new draft from it: the new draft is yours, in the translation you choose, and you edit and publish it as usual. When the object already has as many versions as the version history limit of content.ini allows, the oldest archived version is removed to make room.'|i18n( 'design/admin/content/history' )}</p>
+<p class="a4-intro">{'Each save of an object is a version. A draft becomes the published version when it is published, and the version before it is archived. To change an older version or someone else’s draft, make a new draft from it: the new draft is yours, in the translation you choose, and you edit and publish it as usual. When the object already has as many versions as the version history limit of content.ini allows, the oldest archived version is removed to make room.'|i18n( 'design/admin/content/history' )}</p>
 
 {switch match=$edit_warning}
 {case match=1}
-<div class="exp-feedback is-warn" role="alert">
+<div class="a4-notice is-warn" role="alert">
     <p><strong>{'Version is not a draft'|i18n( 'design/admin/content/history' )}</strong></p>
     <p>{'Version %1 is not available for editing anymore. Only drafts can be edited.'|i18n( 'design/admin/content/history',, array( $edit_version ) )|wash} {'To edit this version, first create a copy of it.'|i18n( 'design/admin/content/history' )}</p>
 </div>
 {/case}
 {case match=2}
-<div class="exp-feedback is-warn" role="alert">
+<div class="a4-notice is-warn" role="alert">
     <p><strong>{'Version is not yours'|i18n( 'design/admin/content/history' )}</strong></p>
     <p>{'Version %1 was not created by you. You can only edit your own drafts.'|i18n( 'design/admin/content/history',, array( $edit_version ) )|wash} {'To edit this version, first create a copy of it.'|i18n( 'design/admin/content/history' )}</p>
 </div>
 {/case}
 {case match=3}
-<div class="exp-feedback is-bad" role="alert">
+<div class="a4-notice is-bad" role="alert">
     <p><strong>{'Unable to create new version'|i18n( 'design/admin/content/history' )}</strong></p>
     <p>{'Version history limit has been exceeded and no archived version can be removed by the system.'|i18n( 'design/admin/content/history' )} {'You can change your version history settings in content.ini, remove draft versions or edit existing drafts.'|i18n( 'design/admin/content/history' )}</p>
 </div>
@@ -97,30 +96,30 @@
 
 {if $feedback}
     {if eq( $feedback.type, 'removed' )}
-<div class="exp-feedback is-ok" role="status">{'Removed: version %versions.'|i18n( 'design/admin/content/history',, hash( '%versions', $feedback.versions|implode( ', ' ) ) )|wash}</div>
+<div class="a4-notice is-ok" role="status">{'Removed: version %versions.'|i18n( 'design/admin/content/history',, hash( '%versions', $feedback.versions|implode( ', ' ) ) )|wash}</div>
     {elseif eq( $feedback.type, 'copied' )}
-<div class="exp-feedback is-ok" role="status">{'Version %from was copied to your new draft %to (%language). Edit it from the list below.'|i18n( 'design/admin/content/history',, hash( '%from', $feedback.from, '%to', $feedback.to, '%language', $feedback.language ) )|wash}</div>
+<div class="a4-notice is-ok" role="status">{'Version %from was copied to your new draft %to (%language). Edit it from the list below.'|i18n( 'design/admin/content/history',, hash( '%from', $feedback.from, '%to', $feedback.to, '%language', $feedback.language ) )|wash}</div>
     {/if}
 {/if}
 
 {if $show_diff}
-<section class="exp-section exp-diff" id="history-diff" aria-labelledby="history-diff-title">
-<div class="exp-section-head">
-    <h2 class="exp-h2" id="history-diff-title">{'Differences between versions %oldVersion and %newVersion'|i18n( 'design/admin/content/history',, hash( '%oldVersion', $oldVersion, '%newVersion', $newVersion ) )|wash}</h2>
-    <a class="exp-btn exp-btn-small" href={concat( $base, $suffix )|ezurl}>{'Close the comparison'|i18n( 'design/admin/content/history' )}</a>
+<section class="a4-section a4-content-history-diff" id="history-diff" aria-labelledby="history-diff-title">
+<div class="a4-section-head">
+    <h2 class="a4-h2" id="history-diff-title">{'Differences between versions %oldVersion and %newVersion'|i18n( 'design/admin/content/history',, hash( '%oldVersion', $oldVersion, '%newVersion', $newVersion ) )|wash}</h2>
+    <a class="a4-btn a4-btn-small" href={concat( $base, $suffix )|ezurl}>{'Close the comparison'|i18n( 'design/admin/content/history' )}</a>
     <p>{'Removed text is struck through, added text is underlined. Choose how the changes are shown:'|i18n( 'design/admin/content/history' )}</p>
 </div>
-<ul class="exp-tabs exp-js-only" id="history-diff-modes" hidden>
-    <li><button type="button" class="exp-tab is-current" data-mode="inlinechanges" aria-pressed="true">{'Inline changes'|i18n( 'design/admin/content/history' )}</button></li>
-    <li><button type="button" class="exp-tab" data-mode="blockchanges" aria-pressed="false">{'Block changes'|i18n( 'design/admin/content/history' )}</button></li>
-    <li><button type="button" class="exp-tab" data-mode="previous" aria-pressed="false">{'Old version'|i18n( 'design/admin/content/history' )}</button></li>
-    <li><button type="button" class="exp-tab" data-mode="latest" aria-pressed="false">{'New version'|i18n( 'design/admin/content/history' )}</button></li>
+<ul class="a4-tabs a4-content-history-js-only" id="history-diff-modes" hidden>
+    <li><button type="button" class="is-current" data-mode="inlinechanges" aria-pressed="true">{'Inline changes'|i18n( 'design/admin/content/history' )}</button></li>
+    <li><button type="button" data-mode="blockchanges" aria-pressed="false">{'Block changes'|i18n( 'design/admin/content/history' )}</button></li>
+    <li><button type="button" data-mode="previous" aria-pressed="false">{'Old version'|i18n( 'design/admin/content/history' )}</button></li>
+    <li><button type="button" data-mode="latest" aria-pressed="false">{'New version'|i18n( 'design/admin/content/history' )}</button></li>
 </ul>
 <div id="diffview" class="inlinechanges">
-<ul class="exp-cards">
+<ul class="a4-cards">
 {foreach $object.data_map as $attr}
-    <li class="exp-card">
-        <h3>{$attr.contentclass_attribute.name|wash}</h3>
+    <li class="a4-card">
+        <h3 class="a4-h3">{$attr.contentclass_attribute.name|wash}</h3>
         <div class="attribute-view-diff">
             {attribute_diff_gui view=diff attribute=$attr old=$oldVersion new=$newVersion diff=$diff[$attr.contentclassattribute_id]}
         </div>
@@ -133,33 +132,33 @@
 
 {if $overview}
 <section aria-labelledby="history-overview-title">
-<h2 class="exp-sr" id="history-overview-title">{'Overview'|i18n( 'design/admin/content/history' )}</h2>
-<ul class="exp-figures">
-    <li class="exp-figure{if eq( $filters.status, '' )} is-current{/if}"><a href={$base|ezurl}><strong>{$overview.total}</strong> <span>{'Versions'|i18n( 'design/admin/content/history' )}</span></a></li>
+<h2 class="a4-sr-only" id="history-overview-title">{'Overview'|i18n( 'design/admin/content/history' )}</h2>
+<ul class="a4-figures">
+    <li class="a4-figure{if eq( $filters.status, '' )} is-current{/if}"><a href={$base|ezurl}><strong>{$overview.total}</strong> <span>{'Versions'|i18n( 'design/admin/content/history' )}</span></a></li>
     {foreach $overview.statuses as $status_name => $status_count}
-    <li class="exp-figure{if eq( $filters.status, $status_name )} is-current{/if}"><a href={concat( $base, '/(status)/', $status_name )|ezurl}><strong>{$status_count}</strong> <span>{$status_text[$status_name]|wash}</span></a></li>
+    <li class="a4-figure{if eq( $filters.status, $status_name )} is-current{/if}"><a href={concat( $base, '/(status)/', $status_name )|ezurl}><strong>{$status_count}</strong> <span>{$status_text[$status_name]|wash}</span></a></li>
     {/foreach}
-    <li class="exp-figure"><strong>{$overview.translations}</strong> <span>{'Translations'|i18n( 'design/admin/content/history' )}</span></li>
-    <li class="exp-figure"><a href={concat( $base, '/(creator)/', $user_id )|ezurl}><strong>{$overview.own_drafts}</strong> <span>{'Your drafts'|i18n( 'design/admin/content/history' )}</span></a></li>
+    <li class="a4-figure"><strong>{$overview.translations}</strong> <span>{'Translations'|i18n( 'design/admin/content/history' )}</span></li>
+    <li class="a4-figure"><a href={concat( $base, '/(creator)/', $user_id )|ezurl}><strong>{$overview.own_drafts}</strong> <span>{'Your drafts'|i18n( 'design/admin/content/history' )}</span></a></li>
 </ul>
 </section>
 
 <section aria-labelledby="history-find-title">
-<h2 class="exp-sr" id="history-find-title">{'Filter and order'|i18n( 'design/admin/content/history' )}</h2>
-<div class="exp-toolbar">
-    <div class="exp-field">
-        <span class="exp-field-label" id="history-status-label"><strong>{'Status'|i18n( 'design/admin/content/history' )}</strong></span>
-        <ul class="exp-tabs" aria-labelledby="history-status-label">
+<h2 class="a4-sr-only" id="history-find-title">{'Filter and order'|i18n( 'design/admin/content/history' )}</h2>
+<div class="a4-filterbar">
+    <div class="a4-field">
+        <span class="a4-label" id="history-status-label"><strong>{'Status'|i18n( 'design/admin/content/history' )}</strong></span>
+        <ul class="a4-tabs" aria-labelledby="history-status-label">
             <li>{if eq( $filters.status, '' )}<span class="current" aria-current="true">{'All'|i18n( 'design/admin/content/history' )}</span>{else}<a href={concat( $base, $links.status.all )|ezurl}>{'All'|i18n( 'design/admin/content/history' )}</a>{/if}</li>
         {foreach $overview.statuses as $status_name => $status_count}
-            <li>{if eq( $filters.status, $status_name )}<span class="current" aria-current="true">{$status_text[$status_name]|wash} <span class="exp-count">{$status_count}</span></span>{else}<a href={concat( $base, $links.status[$status_name] )|ezurl}>{$status_text[$status_name]|wash} <span class="exp-count">{$status_count}</span></a>{/if}</li>
+            <li>{if eq( $filters.status, $status_name )}<span class="current" aria-current="true">{$status_text[$status_name]|wash} <span class="a4-count">{$status_count}</span></span>{else}<a href={concat( $base, $links.status[$status_name] )|ezurl}>{$status_text[$status_name]|wash} <span class="a4-count">{$status_count}</span></a>{/if}</li>
         {/foreach}
         </ul>
     </div>
     {if or( $choices.languages|count|gt( 1 ), $filters.language|ne( '' ) )}
-    <div class="exp-field">
-        <span class="exp-field-label" id="history-language-label"><strong>{'Translation'|i18n( 'design/admin/content/history' )}</strong></span>
-        <ul class="exp-tabs" aria-labelledby="history-language-label">
+    <div class="a4-field">
+        <span class="a4-label" id="history-language-label"><strong>{'Translation'|i18n( 'design/admin/content/history' )}</strong></span>
+        <ul class="a4-tabs" aria-labelledby="history-language-label">
             <li>{if eq( $filters.language, '' )}<span class="current" aria-current="true">{'All'|i18n( 'design/admin/content/history' )}</span>{else}<a href={concat( $base, $links.language.all )|ezurl}>{'All'|i18n( 'design/admin/content/history' )}</a>{/if}</li>
         {foreach $choices.languages as $locale => $language_name}
             <li>{if eq( $filters.language, $locale )}<span class="current" aria-current="true">{$language_name|wash}</span>{else}<a href={concat( $base, $links.language[$locale] )|ezurl}>{$language_name|wash}</a>{/if}</li>
@@ -168,9 +167,9 @@
     </div>
     {/if}
     {if or( $choices.creators|count|gt( 1 ), $filters.creator|gt( 0 ) )}
-    <div class="exp-field">
-        <span class="exp-field-label" id="history-creator-label"><strong>{'Creator'|i18n( 'design/admin/content/history' )}</strong></span>
-        <ul class="exp-tabs" aria-labelledby="history-creator-label">
+    <div class="a4-field">
+        <span class="a4-label" id="history-creator-label"><strong>{'Creator'|i18n( 'design/admin/content/history' )}</strong></span>
+        <ul class="a4-tabs" aria-labelledby="history-creator-label">
             <li>{if eq( $filters.creator, 0 )}<span class="current" aria-current="true">{'Anyone'|i18n( 'design/admin/content/history' )}</span>{else}<a href={concat( $base, $links.creator.all )|ezurl}>{'Anyone'|i18n( 'design/admin/content/history' )}</a>{/if}</li>
         {foreach $choices.creators as $creator_id => $creator_name}
             <li>{if eq( $filters.creator, $creator_id )}<span class="current" aria-current="true">{$creator_name|wash}</span>{else}<a href={concat( $base, $links.creator[$creator_id] )|ezurl}>{$creator_name|wash}</a>{/if}</li>
@@ -178,9 +177,9 @@
         </ul>
     </div>
     {/if}
-    <div class="exp-field">
-        <span class="exp-field-label" id="history-sort-label"><strong>{'Order'|i18n( 'design/admin/content/history' )}</strong></span>
-        <ul class="exp-tabs" aria-labelledby="history-sort-label">
+    <div class="a4-field">
+        <span class="a4-label" id="history-sort-label"><strong>{'Order'|i18n( 'design/admin/content/history' )}</strong></span>
+        <ul class="a4-tabs" aria-labelledby="history-sort-label">
         {foreach array( hash( 'sort', 'newest', 'text', 'Newest first'|i18n( 'design/admin/content/history' ) ),
                         hash( 'sort', 'oldest', 'text', 'Oldest first'|i18n( 'design/admin/content/history' ) ),
                         hash( 'sort', 'modified', 'text', 'Last modified'|i18n( 'design/admin/content/history' ) ) ) as $tab}
@@ -199,15 +198,15 @@
 {def $viewable = 0
      $removable = 0}
 {foreach $rows as $row}{if $row.actions.view.allowed}{set $viewable = inc( $viewable )}{/if}{if $row.actions.remove.allowed}{set $removable = inc( $removable )}{/if}{/foreach}
-<section class="exp-section" aria-labelledby="history-list-title">
-<div class="exp-section-head">
-    <h2 class="exp-h2" id="history-list-title">{'Versions'|i18n( 'design/admin/content/history' )}</h2>
+<section class="a4-section" aria-labelledby="history-list-title">
+<div class="a4-section-head">
+    <h2 class="a4-h2" id="history-list-title">{'Versions'|i18n( 'design/admin/content/history' )}</h2>
     {if $count|gt( 0 )}
-    <span class="exp-meta">{'%from to %to of %count'|i18n( 'design/admin/content/history',, hash( '%from', sum( $view_parameters.offset, 1 ), '%to', min( sum( $view_parameters.offset, $page_limit ), $count ), '%count', $count ) )}</span>
-    {if $removable|gt( 0 )}<label class="exp-meta exp-js-only" hidden><input type="checkbox" id="history-select-all" /> {'Select all on this page'|i18n( 'design/admin/content/history' )}</label>{/if}
+    <span class="a4-meta">{'%from to %to of %count'|i18n( 'design/admin/content/history',, hash( '%from', sum( $view_parameters.offset, 1 ), '%to', min( sum( $view_parameters.offset, $page_limit ), $count ), '%count', $count ) )}</span>
+    {if $removable|gt( 0 )}<label class="a4-meta a4-content-history-js-only" hidden><input type="checkbox" id="history-select-all" /> {'Select all on this page'|i18n( 'design/admin/content/history' )}</label>{/if}
     {/if}
     {if and( $rows|count|gt( 0 ), or( $viewable|eq( 0 ), and( $can_edit, $removable|eq( 0 ) ) ) )}
-    <ul class="exp-why exp-why-page">
+    <ul class="a4-content-history-why a4-content-history-why-page">
         {if $viewable|eq( 0 )}<li>{'Opening the versions needs the policy content/versionread; you see what each version is, and compare and copy those you may read.'|i18n( 'design/admin/content/history' )}</li>{/if}
         {if and( $can_edit, $removable|eq( 0 ) )}<li>{'No version on this page can be removed by you: removing needs the policy content/versionremove, and the published version and versions in a running workflow are never removed.'|i18n( 'design/admin/content/history' )}</li>{/if}
     </ul>
@@ -215,9 +214,9 @@
 </div>
 
 {if $rows|count|eq( 0 )}
-<p class="exp-empty">{if $suffix|ne( '' )}{'No version matches these filters.'|i18n( 'design/admin/content/history' )} <a href={$base|ezurl}>{'Show all versions'|i18n( 'design/admin/content/history' )}</a>{else}{'This object does not have any versions.'|i18n( 'design/admin/content/history' )}{/if}</p>
+<p class="a4-empty">{if $suffix|ne( '' )}{'No version matches these filters.'|i18n( 'design/admin/content/history' )} <a href={$base|ezurl}>{'Show all versions'|i18n( 'design/admin/content/history' )}</a>{else}{'This object does not have any versions.'|i18n( 'design/admin/content/history' )}{/if}</p>
 {else}
-<ul class="exp-cards" id="history-list">
+<ul class="a4-cards" id="history-list">
 {foreach $rows as $row}
     {def $card_id = concat( 'history-version-', $row.version )
          $actions = $row.actions
@@ -227,10 +226,10 @@
     {if $actions.copy.allowed|not}{set $why = $why|append( $why_text[$actions.copy.reason] )}{/if}
     {if and( $actions.remove.allowed|not, $actions.remove.reason|ne( 'published' ), $removable|gt( 0 ) )}{set $why = $why|append( $why_text[$actions.remove.reason] )}{/if}
     {set $why = $why|unique}
-<li class="exp-card{if eq( $row.status, 1 )} is-current{/if}" id="{$card_id}">
-    <div class="exp-card-head">
-        <div class="exp-card-title">
-            <label class="exp-select" title="{if $actions.remove.allowed}{'Select version %number for removal.'|i18n( 'design/admin/content/history',, hash( '%number', $row.version ) )}{else}{$why_text[$actions.remove.reason]|wash}{/if}">
+<li class="a4-card{if eq( $row.status, 1 )} is-ok{/if}" id="{$card_id}">
+    <div class="a4-card-head">
+        <div class="a4-card-title">
+            <label class="a4-pick" title="{if $actions.remove.allowed}{'Select version %number for removal.'|i18n( 'design/admin/content/history',, hash( '%number', $row.version ) )}{else}{$why_text[$actions.remove.reason]|wash}{/if}">
                 {if $actions.remove.allowed}
                 <input type="checkbox" name="DeleteIDArray[]" value="{$row.id}" data-version="{$row.version}" aria-label="{'Select version %number for removal'|i18n( 'design/admin/content/history',, hash( '%number', $row.version ) )}" />
                 {else}
@@ -238,28 +237,28 @@
                 {/if}
             </label>
             <h3 id="{$card_id}-title">{if $actions.view.allowed}<a href={concat( '/content/versionview/', $object.id, '/', $row.version, '/', $row.language, '/' )|ezurl} title="{'View the contents of version #%version_number. Translation: %translation.'|i18n( 'design/admin/content/history',, hash( '%version_number', $row.version, '%translation', $row.language_name ) )}">{'Version %number'|i18n( 'design/admin/content/history',, hash( '%number', $row.version ) )}</a>{else}{'Version %number'|i18n( 'design/admin/content/history',, hash( '%number', $row.version ) )}{/if}</h3>
-            <ul class="exp-badges">
-                <li class="exp-badge {$status_class[$row.status_name]}">{$status_text[$row.status_name]|wash}</li>
-                {if eq( $row.version, $object.current_version )}<li class="exp-badge is-info">{'Current version'|i18n( 'design/admin/content/history' )}</li>{/if}
-                {if eq( $row.creator_id, $user_id )}<li class="exp-badge">{'Yours'|i18n( 'design/admin/content/history' )}</li>{/if}
+            <ul class="a4-badges">
+                <li class="a4-badge {$status_class[$row.status_name]}">{$status_text[$row.status_name]|wash}</li>
+                {if eq( $row.version, $object.current_version )}<li class="a4-badge is-info">{'Current version'|i18n( 'design/admin/content/history' )}</li>{/if}
+                {if eq( $row.creator_id, $user_id )}<li class="a4-badge">{'Yours'|i18n( 'design/admin/content/history' )}</li>{/if}
             </ul>
         </div>
-        <div class="exp-actions">
+        <div class="a4-actions">
             {if $actions.view.allowed}
-            <a class="exp-btn exp-btn-small" href={concat( '/content/versionview/', $object.id, '/', $row.version, '/', $row.language, '/' )|ezurl} aria-describedby="{$card_id}-title">{'View'|i18n( 'design/admin/content/history' )}</a>
+            <a class="a4-btn a4-btn-small" href={concat( '/content/versionview/', $object.id, '/', $row.version, '/', $row.language, '/' )|ezurl} aria-describedby="{$card_id}-title">{'View'|i18n( 'design/admin/content/history' )}</a>
             {/if}
             {if $actions.edit.allowed}
-            <button type="submit" class="exp-btn exp-btn-small exp-btn-primary" name="HistoryEditButton[{$row.version}]" value="1" aria-describedby="{$card_id}-title">{'Edit'|i18n( 'design/admin/content/history' )}</button>
+            <button type="submit" class="a4-btn a4-btn-small a4-btn-primary" name="HistoryEditButton[{$row.version}]" value="1" aria-describedby="{$card_id}-title">{'Edit'|i18n( 'design/admin/content/history' )}</button>
             {/if}
             {if and( $actions.compare.allowed, $object.can_diff, $seen|count|gt( 1 ) )}
-            <button type="submit" class="exp-btn exp-btn-small" name="CompareButton[{$row.version}]" value="1" aria-describedby="{$card_id}-title" title="{if eq( $row.version, $object.current_version )}{'Compare with the newest other version you may read.'|i18n( 'design/admin/content/history' )}{else}{'Compare with the current version.'|i18n( 'design/admin/content/history' )}{/if}">{'Compare'|i18n( 'design/admin/content/history' )}</button>
+            <button type="submit" class="a4-btn a4-btn-small" name="CompareButton[{$row.version}]" value="1" aria-describedby="{$card_id}-title" title="{if eq( $row.version, $object.current_version )}{'Compare with the newest other version you may read.'|i18n( 'design/admin/content/history' )}{else}{'Compare with the current version.'|i18n( 'design/admin/content/history' )}{/if}">{'Compare'|i18n( 'design/admin/content/history' )}</button>
             {/if}
         </div>
     </div>
-    <dl class="exp-facts">
+    <dl class="a4-facts">
         <div>
             <dt>{'Translations'|i18n( 'design/admin/content/history' )}</dt>
-            <dd>{foreach $row.languages as $locale => $language_name}{delimiter}, {/delimiter}<img src="{$locale|flag_icon}" width="18" height="12" alt="" /> {$language_name|wash}{if eq( $locale, $row.language )} <span class="exp-muted">({'modified'|i18n( 'design/admin/content/history' )})</span>{/if}{/foreach}</dd>
+            <dd>{foreach $row.languages as $locale => $language_name}{delimiter}, {/delimiter}<img src="{$locale|flag_icon}" width="18" height="12" alt="" /> {$language_name|wash}{if eq( $locale, $row.language )} <span class="a4-muted">({'modified'|i18n( 'design/admin/content/history' )})</span>{/if}{/foreach}</dd>
         </div>
         <div>
             <dt>{'Creator'|i18n( 'design/admin/content/history' )}</dt>
@@ -275,10 +274,10 @@
         </div>
     </dl>
     {if $actions.copy.allowed}
-    <div class="exp-copy">
-        <label for="{$card_id}-language">{'New draft from this version, in'|i18n( 'design/admin/content/history' )}</label>
+    <div class="a4-content-history-copy">
+        <label class="a4-label" for="{$card_id}-language">{'New draft from this version, in'|i18n( 'design/admin/content/history' )}</label>
         {if $actions.copy_languages|count|gt( 1 )}
-        <select id="{$card_id}-language" name="CopyVersionLanguage[{$row.version}]">
+        <select class="a4-input is-auto" id="{$card_id}-language" name="CopyVersionLanguage[{$row.version}]">
             {foreach $actions.copy_languages as $locale => $language_name}
             <option value="{$locale|wash}"{if eq( $locale, $row.language )} selected="selected"{/if}>{$language_name|wash}</option>
             {/foreach}
@@ -286,14 +285,14 @@
         {else}
             {foreach $actions.copy_languages as $locale => $language_name}
         <input type="hidden" name="CopyVersionLanguage[{$row.version}]" value="{$locale|wash}" />
-        <span class="exp-copy-language" id="{$card_id}-language">{$language_name|wash}</span>
+        <span class="a4-content-history-copy-language" id="{$card_id}-language">{$language_name|wash}</span>
             {/foreach}
         {/if}
-        <button type="submit" class="exp-btn exp-btn-small" name="HistoryCopyVersionButton[{$row.version}]" value="1" aria-describedby="{$card_id}-title">{'Make a new draft'|i18n( 'design/admin/content/history' )}</button>
+        <button type="submit" class="a4-btn a4-btn-small" name="HistoryCopyVersionButton[{$row.version}]" value="1" aria-describedby="{$card_id}-title">{'Make a new draft'|i18n( 'design/admin/content/history' )}</button>
     </div>
     {/if}
     {if $why|count}
-    <ul class="exp-why">
+    <ul class="a4-content-history-why">
         {foreach $why as $reason}<li>{$reason|wash}</li>{/foreach}
     </ul>
     {/if}
@@ -303,8 +302,8 @@
 </ul>
 {/if}
 
-<div class="exp-listfoot">
-    <p class="exp-sizes">
+<div class="a4-listfoot">
+    <p class="a4-sizes">
         <span>{'Per page'|i18n( 'design/admin/content/history' )}:</span>
     {foreach first_set( $history_limit_choices, array( 10, 25, 50 ) ) as $limit_index => $limit_option}
         {if eq( $limit_option, $page_limit )}
@@ -314,7 +313,7 @@
         {/if}
     {/foreach}
     </p>
-    <div class="exp-pager">
+    <div class="a4-pager">
     {include name=navigator
              uri='design:navigator/google.tpl'
              page_uri=$base
@@ -327,12 +326,12 @@
 </section>
 
 {if and( $object.can_diff, $seen|count|gt( 1 ) )}
-<section class="exp-section" aria-labelledby="history-compare-title">
-<div class="exp-panel">
-    <h2 class="exp-h2" id="history-compare-title">{'Compare two versions'|i18n( 'design/admin/content/history' )}</h2>
-    <p class="exp-help">{'Only the versions whose content you may read are offered.'|i18n( 'design/admin/content/history' )}</p>
-    <div class="exp-compare">
-        <div class="exp-field">
+<section class="a4-section" aria-labelledby="history-compare-title">
+<div class="a4-card">
+    <h2 class="a4-h2" id="history-compare-title">{'Compare two versions'|i18n( 'design/admin/content/history' )}</h2>
+    <p class="a4-help">{'Only the versions whose content you may read are offered.'|i18n( 'design/admin/content/history' )}</p>
+    <div class="a4-content-history-compare">
+        <div class="a4-field">
             <label for="history-from">{'Older version'|i18n( 'design/admin/content/history' )}</label>
             <select id="history-from" name="FromVersion">
             {foreach $object.versions as $ver}{if $seen|contains( $ver.version )}
@@ -340,7 +339,7 @@
             {/if}{/foreach}
             </select>
         </div>
-        <div class="exp-field">
+        <div class="a4-field">
             <label for="history-to">{'Newer version'|i18n( 'design/admin/content/history' )}</label>
             <select id="history-to" name="ToVersion">
             {foreach $object.versions as $ver}{if $seen|contains( $ver.version )}
@@ -348,7 +347,7 @@
             {/if}{/foreach}
             </select>
         </div>
-        <div class="exp-field">
+        <div class="a4-field">
             <label for="history-diff-language">{'Translation'|i18n( 'design/admin/content/history' )}</label>
             <select id="history-diff-language" name="Language">
             {foreach $object.languages as $lang}
@@ -356,32 +355,32 @@
             {/foreach}
             </select>
         </div>
-        <div class="exp-field">
-            <button type="submit" class="exp-btn exp-btn-primary" name="DiffButton" value="1">{'Show differences'|i18n( 'design/admin/content/history' )}</button>
+        <div class="a4-field">
+            <button type="submit" class="a4-btn a4-btn-primary" name="DiffButton" value="1">{'Show differences'|i18n( 'design/admin/content/history' )}</button>
         </div>
     </div>
 </div>
 </section>
 {/if}
 
-<div class="exp-bottombar">
-    <div class="exp-actions">
+<div class="a4-toolbar is-bottom">
+    <div class="a4-actions">
         {if is_set( $redirect_uri )}<input type="hidden" name="RedirectURI" value="{$redirect_uri|wash}" />{/if}
-        <button type="submit" class="exp-btn" name="BackButton" value="1">{'Back'|i18n( 'design/admin/content/history' )}</button>
+        <button type="submit" class="a4-btn" name="BackButton" value="1">{'Back'|i18n( 'design/admin/content/history' )}</button>
         {if and( $can_edit, $removable|gt( 0 ) )}
-        <details class="exp-confirm" id="history-remove">
+        <details class="a4-confirm" id="history-remove">
             <summary>{'Remove selected versions'|i18n( 'design/admin/content/history' )}</summary>
             <div>
                 <p><span id="history-remove-list">{'The ticked versions are removed for good, with all their translations.'|i18n( 'design/admin/content/history' )}</span> {'The published version and versions in a running workflow are never removed.'|i18n( 'design/admin/content/history' )}</p>
-                <button type="submit" class="exp-btn exp-btn-danger" name="RemoveButton" value="1" id="history-remove-button">{'Remove for good'|i18n( 'design/admin/content/history' )}</button>
+                <button type="submit" class="a4-btn a4-btn-danger" name="RemoveButton" value="1" id="history-remove-button">{'Remove for good'|i18n( 'design/admin/content/history' )}</button>
             </div>
         </details>
         {/if}
     </div>
     {if $can_edit}
-    <label class="exp-check exp-meta"><input type="checkbox" name="DoNotEditAfterCopy" value="1" checked="checked" /> <span>{'Stay on this page after making a new draft (untick to open the new draft in the editor at once).'|i18n( 'design/admin/content/history' )}</span></label>
+    <label class="a4-check a4-meta"><input type="checkbox" name="DoNotEditAfterCopy" value="1" checked="checked" /> <span>{'Stay on this page after making a new draft (untick to open the new draft in the editor at once).'|i18n( 'design/admin/content/history' )}</span></label>
     {/if}
-    <p class="exp-meta" id="history-selected-count" aria-live="polite"></p>
+    <p class="a4-meta" id="history-selected-count" aria-live="polite"></p>
 </div>
 
 </form>
@@ -400,7 +399,7 @@ var expHistoryText = {ldelim}
 {rdelim};
 {literal}
 (function () {
-    var nodes = document.querySelectorAll( '.exp-history .exp-js-only' ), i;
+    var nodes = document.querySelectorAll( '.a4-content-history .a4-content-history-js-only' ), i;
     for ( i = 0; i < nodes.length; i++ ) nodes[i].hidden = false;
     var modes = document.getElementById( 'history-diff-modes' ), view = document.getElementById( 'diffview' );
     if ( modes && view ) modes.addEventListener( 'click', function ( e ) {
@@ -419,7 +418,7 @@ var expHistoryText = {ldelim}
     function update() {
         var all = boxes(), ticked = [], j;
         for ( j = 0; j < all.length; j++ ) {
-            var card = all[j].closest( '.exp-card' );
+            var card = all[j].closest( '.a4-card' );
             if ( card ) card.classList.toggle( 'is-selected', all[j].checked );
             if ( all[j].checked ) ticked.push( all[j].getAttribute( 'data-version' ) );
         }

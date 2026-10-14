@@ -70,7 +70,7 @@
 							<input type="radio" name="FromLanguage" value="{$language.locale|wash}"
 								{if $language.locale|eq($from_language)} checked="checked" {/if} />
 							<img src="{$language.locale|flag_icon}" width="18" height="12" alt="{$language.locale|wash}"
-								style="vertical-align: middle;" />
+								class="a4-flag" />
 							{$language.locale|wash}
 						</label>
 					{/if}

@@ -10,15 +10,15 @@
                            'repeat', 'Repeat'|i18n( 'kernel/contentfinder' ),
                            'queued', 'Queued'|i18n( 'kernel/contentfinder' ) )
      $action_url = 'contentfinder/action'|ezurl( 'no' )}
-<section class="cf-result" id="cf-object-{$result.object_id}" aria-labelledby="cf-object-title-{$result.object_id}">
+<section class="a4-card a4-contentfinder-result" id="cf-object-{$result.object_id}" aria-labelledby="cf-object-title-{$result.object_id}">
 <h2 id="cf-object-title-{$result.object_id}">
     {if $result.main_node_id}<a href={concat( 'content/view/full/', $result.main_node_id )|ezurl}>{$result.name|wash}</a>{else}{$result.name|wash}{/if}
-    <span class="cf-badge {$result.status|wash}">{$status_names[$result.status]|wash}</span>
-    {if $result.in_trash}<span class="cf-badge trash">{'In the trash'|i18n( 'kernel/contentfinder' )}</span>{/if}
+    <span class="a4-badge a4-contentfinder-badge {$result.status|wash}">{$status_names[$result.status]|wash}</span>
+    {if $result.in_trash}<span class="a4-badge a4-contentfinder-badge trash">{'In the trash'|i18n( 'kernel/contentfinder' )}</span>{/if}
 </h2>
 
 {foreach $result.matches as $hit}
-<div class="cf-match">
+<div class="a4-contentfinder-match">
     <strong>{'Found by'|i18n( 'kernel/contentfinder' )}:</strong>
     {switch match=$hit.via}
     {case match='object'}{'object id %id'|i18n( 'kernel/contentfinder',, hash( '%id', $hit.value ) )}{/case}
@@ -45,7 +45,7 @@
 </div>
 {/foreach}
 
-<dl class="cf-meta">
+<dl class="a4-contentfinder-meta">
     <dt>{'Object id'|i18n( 'kernel/contentfinder' )}</dt><dd>{$result.object_id}</dd>
     <dt>{'Class'|i18n( 'kernel/contentfinder' )}</dt><dd>{$result.class_name|wash} (<code>{$result.class_identifier|wash}</code>)</dd>
     <dt>{'Owner'|i18n( 'kernel/contentfinder' )}</dt><dd>{$result.owner_name|wash}</dd>
@@ -60,14 +60,14 @@
 
 <h3>{'Locations'|i18n( 'kernel/contentfinder' )}</h3>
 {if $result.locations|count}
-<div class="cf-table"><table class="list" cellspacing="0">
+<div class="a4-contentfinder-table"><table class="list" cellspacing="0">
 <tr><th>{'Node id'|i18n( 'kernel/contentfinder' )}</th><th>{'Path'|i18n( 'kernel/contentfinder' )}</th><th>{'URL alias'|i18n( 'kernel/contentfinder' )}</th><th>{'State'|i18n( 'kernel/contentfinder' )}</th></tr>
 {foreach $result.locations as $location sequence array( 'bglight', 'bgdark' ) as $style}
 <tr class="{$style}">
     <td data-label="{'Node id'|i18n( 'kernel/contentfinder' )|wash}"><a href={concat( 'content/view/full/', $location.node_id )|ezurl}>{$location.node_id}</a></td>
     <td data-label="{'Path'|i18n( 'kernel/contentfinder' )|wash}"><code>{$location.path|wash}</code></td>
     <td data-label="{'URL alias'|i18n( 'kernel/contentfinder' )|wash}"><code>{$location.url_alias|wash}</code></td>
-    <td data-label="{'State'|i18n( 'kernel/contentfinder' )|wash}">{if $location.is_main}<span class="cf-badge main">{'Main'|i18n( 'kernel/contentfinder' )}</span> {/if}{if $location.is_hidden}<span class="cf-badge">{'Hidden'|i18n( 'kernel/contentfinder' )}</span> {elseif $location.is_invisible}<span class="cf-badge">{'Hidden by its parent'|i18n( 'kernel/contentfinder' )}</span> {/if}</td>
+    <td data-label="{'State'|i18n( 'kernel/contentfinder' )|wash}">{if $location.is_main}<span class="a4-badge a4-contentfinder-badge main">{'Main'|i18n( 'kernel/contentfinder' )}</span> {/if}{if $location.is_hidden}<span class="a4-badge a4-contentfinder-badge">{'Hidden'|i18n( 'kernel/contentfinder' )}</span> {elseif $location.is_invisible}<span class="a4-badge a4-contentfinder-badge">{'Hidden by its parent'|i18n( 'kernel/contentfinder' )}</span> {/if}</td>
 </tr>
 {/foreach}
 </table></div>
@@ -77,18 +77,18 @@
 
 <h3>{'Versions'|i18n( 'kernel/contentfinder' )}</h3>
 {if $result.versions|count}
-<div class="cf-table"><table class="list" cellspacing="0">
+<div class="a4-contentfinder-table"><table class="list" cellspacing="0">
 <tr><th>{'Version'|i18n( 'kernel/contentfinder' )}</th><th>{'Version id'|i18n( 'kernel/contentfinder' )}</th><th>{'Status'|i18n( 'kernel/contentfinder' )}</th><th>{'Language'|i18n( 'kernel/contentfinder' )}</th><th>{'Creator'|i18n( 'kernel/contentfinder' )}</th><th>{'Modified'|i18n( 'kernel/contentfinder' )}</th><th></th></tr>
 {foreach $result.versions as $version sequence array( 'bglight', 'bgdark' ) as $style}
 <tr class="{$style}">
     <td data-label="{'Version'|i18n( 'kernel/contentfinder' )|wash}"><a href={concat( 'content/versionview/', $result.object_id, '/', $version.version, '/', $version.language )|ezurl}>{$version.version}</a></td>
     <td data-label="{'Version id'|i18n( 'kernel/contentfinder' )|wash}">{$version.id}</td>
-    <td data-label="{'Status'|i18n( 'kernel/contentfinder' )|wash}"><span class="cf-badge {$version.status_name|wash}">{$status_names[$version.status_name]|wash}</span></td>
+    <td data-label="{'Status'|i18n( 'kernel/contentfinder' )|wash}"><span class="a4-badge a4-contentfinder-badge {$version.status_name|wash}">{$status_names[$version.status_name]|wash}</span></td>
     <td data-label="{'Language'|i18n( 'kernel/contentfinder' )|wash}">{$version.languages|implode( ', ' )|wash}</td>
     <td data-label="{'Creator'|i18n( 'kernel/contentfinder' )|wash}">{$version.creator_name|wash}</td>
     <td data-label="{'Modified'|i18n( 'kernel/contentfinder' )|wash}">{$version.modified|l10n( 'shortdatetime' )}</td>
     <td>{if and( $result.actions.remove_version, $version.can_remove )}
-        <form method="post" action="{$action_url|wash}" class="cf-inline">
+        <form method="post" action="{$action_url|wash}" class="a4-contentfinder-inline">
             <input type="hidden" name="{$token_field|wash}" value="{$form_token|wash}" />
             <input type="hidden" name="Action" value="removeversion" />
             <input type="hidden" name="ObjectID" value="{$result.object_id}" />
@@ -104,7 +104,7 @@
 
 {if $result.trash|count}
 <h3>{'In the trash'|i18n( 'kernel/contentfinder' )}</h3>
-<div class="cf-table"><table class="list" cellspacing="0">
+<div class="a4-contentfinder-table"><table class="list" cellspacing="0">
 <tr><th>{'Node id'|i18n( 'kernel/contentfinder' )}</th><th>{'Original path'|i18n( 'kernel/contentfinder' )}</th><th>{'Trashed'|i18n( 'kernel/contentfinder' )}</th><th>{'Trashed by'|i18n( 'kernel/contentfinder' )}</th></tr>
 {foreach $result.trash as $entry sequence array( 'bglight', 'bgdark' ) as $style}
 <tr class="{$style}">
@@ -118,14 +118,14 @@
 {/if}
 
 {if or( $result.actions.trash, $result.actions.delete, $result.actions.purge, $result.actions.restore )}
-<div class="cf-actions">
+<div class="a4-contentfinder-actions">
     {foreach array( 'trash', 'delete', 'purge' ) as $action}
     {if $result.actions[$action]}
     <form method="post" action="{$action_url|wash}">
         <input type="hidden" name="{$token_field|wash}" value="{$form_token|wash}" />
         <input type="hidden" name="Action" value="{$action}" />
         <input type="hidden" name="ObjectID" value="{$result.object_id}" />
-        <input type="submit" class="button{if ne( $action, 'trash' )} cf-danger{/if}" value="{switch match=$action}{case match='trash'}{'Move to trash'|i18n( 'kernel/contentfinder' )}{/case}{case match='delete'}{'Delete permanently'|i18n( 'kernel/contentfinder' )}{/case}{case}{'Purge from the trash'|i18n( 'kernel/contentfinder' )}{/case}{/switch}" />
+        <input type="submit" class="button{if ne( $action, 'trash' )} a4-contentfinder-danger{/if}" value="{switch match=$action}{case match='trash'}{'Move to trash'|i18n( 'kernel/contentfinder' )}{/case}{case match='delete'}{'Delete permanently'|i18n( 'kernel/contentfinder' )}{/case}{case}{'Purge from the trash'|i18n( 'kernel/contentfinder' )}{/case}{/switch}" />
     </form>
     {/if}
     {/foreach}

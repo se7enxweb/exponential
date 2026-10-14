@@ -66,7 +66,7 @@
             <p>
             <input type="radio" name="SelectedLanguage" value="{$locale_code}" {if eq( $locale_code, $object_languagecode )}checked="checked"{/if} />
             {if $locale_object.is_valid}
-                <img src="{$locale_code|flag_icon}" width="18" height="12" alt="{$locale_code}" style="vertical-align: middle;" /> {$locale_object.intl_language_name|shorten( 16 )}
+                <img src="{$locale_code|flag_icon}" width="18" height="12" alt="{$locale_code}" class="a4-flag" /> {$locale_object.intl_language_name|shorten( 16 )}
             {else}
                 {'%1 (No locale information available)'|i18n( 'design/admin/content/view/versionview',, array( $locale_code ) )}
             {/if}
@@ -75,7 +75,7 @@
     {else}
         <input type="radio" name="SelectedLanguage" value="{$version.language_list[0].language_code}" checked="checked" disabled="disabled" />
         {if $version.language_list[0].locale.is_valid}
-            <img src="{$version.language_list[0].language_code|flag_icon}" width="18" height="12" alt="{$version.language_list[0].language_code}" style="vertical-align: middle;" /> {$version.language_list[0].locale.intl_language_name|shorten( 16 )}
+            <img src="{$version.language_list[0].language_code|flag_icon}" width="18" height="12" alt="{$version.language_list[0].language_code}" class="a4-flag" /> {$version.language_list[0].locale.intl_language_name|shorten( 16 )}
         {else}
             {'%1 (No locale information available)'|i18n( 'design/admin/content/view/versionview',, array( $version.language_list[0].language_code ) )}
         {/if}
@@ -177,7 +177,7 @@
 <div class="context-information">
 <p class="left modified">&nbsp;</p>
 <p class="right translation">
-{$object_languagecode|locale().intl_language_name} <img src="{$object_languagecode|flag_icon}" width="18" height="12" alt="{$object_languagecode}" style="vertical-align: middle;" />
+{$object_languagecode|locale().intl_language_name} <img src="{$object_languagecode|flag_icon}" width="18" height="12" alt="{$object_languagecode}" class="a4-flag" />
 </p>
 <p class="center full-screen">
 <a href={concat("content/versionview/",$object.id,"/",$view_version.version,"/",$language, "/site_access/", $siteaccess, $view_mode_uri)|ezurl} target="_blank"><img src={"images/view-fullscreen.png"|ezdesign} /></a>

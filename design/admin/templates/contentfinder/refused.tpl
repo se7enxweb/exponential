@@ -1,7 +1,6 @@
 {* A request to contentfinder/action that was refused before anything was looked at: not a POST (405), or without
    the form tokens (403). Variable: reason (method, token, no_policy, unknown_action, not_found). *}
-{include uri='design:contentfinder/style.tpl'}
-<div class="context-block exp-cf" id="exp-contentfinder-refused">
+<div class="context-block a4-page a4-contentfinder" id="exp-contentfinder-refused">
 {* DESIGN: Header START *}<div class="box-header"><div class="box-ml">
 <h1 class="context-title">{'Content finder'|i18n( 'kernel/contentfinder' )}</h1>
 {* DESIGN: Mainline *}<div class="header-mainline"></div>

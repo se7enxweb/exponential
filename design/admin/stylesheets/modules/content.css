@@ -5,3 +5,307 @@
  * colours, radius, spacing and fonts from the --a4-* tokens only (no hard-coded values, no local aliases).
  * Registered in design.ini [StylesheetSettings] AdminComponentCSSFileList; rules: doc/bc/6.0/admin4-styling.md
  */
+
+/* ---- history ---- content/history, content/draft, content/pendinglist: versions as cards, the diff ----------- */
+
+.a4-content-history .a4-content-history-copy {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--a4-space-2) var(--a4-space-2);
+  margin: var(--a4-space-3) 0 0;
+  padding: var(--a4-space-2) var(--a4-space-3);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+}
+.a4-content-history .a4-content-history-copy-language { font-size: var(--a4-text-s); }
+.a4-content-history .a4-content-history-why { margin: var(--a4-space-2) 0 0; padding: 0; list-style: none; color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-content-history .a4-content-history-why li { position: relative; padding-left: var(--a4-space-4); }
+.a4-content-history .a4-content-history-why li::before { content: "\2013"; position: absolute; left: 2px; }
+.a4-content-history .a4-content-history-why-page { flex: 1 1 100%; margin: 2px 0 0; }
+.a4-content-history .a4-content-history-compare {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
+  align-items: end;
+  gap: var(--a4-space-3) var(--a4-space-3);
+  margin-top: var(--a4-space-3);
+}
+.a4-content-history .a4-content-history-diff .a4-tabs { margin: 0 0 var(--a4-space-3); }
+.a4-content-history .a4-content-history-diff .a4-card h3 { margin-bottom: var(--a4-space-1); }
+.a4-content-history .a4-toolbar.is-bottom .a4-check { flex: 1 1 100%; }
+.a4-content-history .attribute-view-diff { overflow-wrap: anywhere; }
+.a4-content-history .attribute-view-diff .block { margin: 0; }
+/* the changes, in colours that read on the card (the admin's own are lighter) */
+.a4-content-history #diffview ins { border-bottom: 1px solid var(--a4-ok); color: var(--a4-ok); text-decoration: none; }
+.a4-content-history #diffview del { color: var(--a4-bad); text-decoration: line-through; }
+.a4-content-history #diffview.blockchanges ins,
+.a4-content-history #diffview.blockchanges del { display: block; padding-left: var(--a4-space-2); border-bottom: 0; color: var(--a4-ink); text-decoration: none; }
+.a4-content-history #diffview.blockchanges ins { border-left: .5em solid var(--a4-ok); background-color: var(--a4-ok-bg); }
+.a4-content-history #diffview.blockchanges del { border-left: .5em solid var(--a4-bad); background-color: var(--a4-bad-bg); }
+.a4-content-history #diffview.previous ins,
+.a4-content-history #diffview.latest del { display: none; }
+.a4-content-history #diffview.previous del,
+.a4-content-history #diffview.latest ins { border-bottom: 0; background-color: var(--a4-warn-bg); color: var(--a4-ink); text-decoration: none; }
+@media (max-width: 600px) {
+  .a4-content-history .a4-content-history-copy { flex-direction: column; align-items: stretch; }
+  .a4-content-history .a4-content-history-copy .a4-btn { width: 100%; }
+}
+/* drafts and pending versions: a confirmation inside a card's actions, the facts of a pending version */
+.a4-content-drafts details.a4-content-history-confirm-inline { flex: 0 1 auto; border-color: var(--a4-line-strong); }
+.a4-content-drafts details.a4-content-history-confirm-inline > summary { min-height: 30px; padding: var(--a4-space-1) var(--a4-space-2); font-size: var(--a4-text-xs); }
+.a4-content-drafts details.a4-content-history-confirm-inline[open] { flex: 1 1 100%; }
+.a4-content-drafts details.a4-content-history-confirm-inline > div { padding: 0 var(--a4-space-2) var(--a4-space-2); }
+.a4-content-drafts .a4-card-title h3 img { vertical-align: -2px; }
+.a4-content-drafts .a4-content-history-holds { margin: var(--a4-space-2) 0 0; padding: var(--a4-space-2) var(--a4-space-3); border-radius: var(--a4-radius-s); background-color: var(--a4-soft); font-size: var(--a4-text-s); }
+.a4-content-drafts .a4-content-history-holds p + p { margin-top: var(--a4-space-1); }
+@media (max-width: 600px) {
+  .a4-content-drafts details.a4-content-history-confirm-inline { flex: 1 1 100%; }
+}
+
+/* ---- bookmark ---- content/bookmark: folders beside the list (above it in less than about 690 px) ------------ */
+
+.a4-content-bookmark .a4-content-bookmark-actions-tight { gap: var(--a4-space-1); }
+.a4-content-bookmark .a4-content-bookmark-inline-form { display: grid; gap: var(--a4-space-2); margin: 0; }
+.a4-content-bookmark .a4-content-bookmark-inline-form .a4-actions { justify-content: flex-start; }
+.a4-content-bookmark .a4-content-bookmark-layout { display: flex; flex-wrap: wrap; align-items: flex-start; gap: var(--a4-space-4); }
+.a4-content-bookmark .a4-content-bookmark-side { display: grid; flex: 1 1 250px; gap: var(--a4-space-3); min-width: 0; }
+.a4-content-bookmark .a4-content-bookmark-main { flex: 999 1 440px; min-width: 0; }
+.a4-content-bookmark .a4-content-bookmark-panel-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--a4-space-1) var(--a4-space-2); margin: 0 0 var(--a4-space-2); }
+.a4-content-bookmark .a4-fold > div { padding: 0 var(--a4-space-3) var(--a4-space-3); }
+.a4-content-bookmark .a4-fold.is-danger > summary { color: var(--a4-bad); }
+
+/* the folder tree; dropping a bookmark on a folder moves it there, the entry is outlined and says so */
+.a4-content-bookmark .a4-content-bookmark-nav { display: grid; gap: 2px; margin: 0; padding: 0; list-style: none; }
+.a4-content-bookmark .a4-content-bookmark-nav li { position: relative; display: flex; align-items: center; gap: var(--a4-space-1); min-width: 0; }
+.a4-content-bookmark .a4-content-bookmark-nav a,
+.a4-content-bookmark .a4-content-bookmark-nav span.current {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  gap: var(--a4-space-2);
+  min-width: 0;
+  min-height: 34px;
+  padding: var(--a4-space-1) var(--a4-space-2);
+  border-radius: var(--a4-radius-s);
+  color: var(--a4-ink);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.a4-content-bookmark .a4-content-bookmark-nav a:hover { background-color: var(--a4-soft); color: var(--a4-accent-text); }
+.a4-content-bookmark .a4-content-bookmark-nav span.current { background-color: var(--a4-accent-soft); box-shadow: inset 3px 0 0 var(--a4-accent); font-weight: 650; }
+.a4-content-bookmark .a4-content-bookmark-navname { flex: 1 1 auto; min-width: 0; }
+.a4-content-bookmark .a4-content-bookmark-nav .a4-count {
+  flex: 0 0 auto;
+  min-width: 26px;
+  padding: 0 var(--a4-space-2);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+  color: var(--a4-muted);
+  font-size: var(--a4-text-xs);
+  font-weight: 650;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+.a4-content-bookmark .a4-content-bookmark-nav span.current .a4-count { background-color: var(--a4-card); color: var(--a4-ink); }
+.a4-content-bookmark .a4-content-bookmark-nav svg { flex: 0 0 auto; color: var(--a4-muted); }
+.a4-content-bookmark .a4-content-bookmark-nav .is-sep { height: 1px; margin: var(--a4-space-1) var(--a4-space-1); background-color: var(--a4-line); }
+.a4-content-bookmark .a4-content-bookmark-nav li.d1 { padding-left: var(--a4-space-3); }
+.a4-content-bookmark .a4-content-bookmark-nav li.d2 { padding-left: var(--a4-space-5); }
+.a4-content-bookmark .a4-content-bookmark-nav li.d3 { padding-left: calc(var(--a4-space-6) + var(--a4-space-2)); }
+.a4-content-bookmark .a4-content-bookmark-nav li.d4 { padding-left: calc(var(--a4-space-6) + var(--a4-space-5)); }
+.a4-content-bookmark .a4-content-bookmark-nav li.is-drop > a,
+.a4-content-bookmark .a4-content-bookmark-nav li.is-drop > span.current { outline: 2px dashed var(--a4-accent); outline-offset: -2px; background-color: var(--a4-accent-soft); }
+.a4-content-bookmark .a4-content-bookmark-nav li.is-drop::after {
+  content: attr(data-drop-label);
+  position: absolute;
+  top: -10px;
+  right: 6px;
+  z-index: 2;
+  padding: 1px var(--a4-space-2);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-accent-strong);
+  color: var(--a4-on-accent);
+  font-size: var(--a4-text-xs);
+  font-weight: 650;
+  pointer-events: none;
+}
+.a4-content-bookmark .a4-content-bookmark-nav li.is-before { box-shadow: inset 0 3px 0 var(--a4-accent); }
+.a4-content-bookmark .a4-content-bookmark-nav li.is-after { box-shadow: inset 0 -3px 0 var(--a4-accent); }
+.a4-content-bookmark .a4-content-bookmark-nav li.is-dragged,
+.a4-content-bookmark .a4-card.is-dragged { opacity: .5; }
+.a4-content-bookmark .a4-content-bookmark-nav li.is-moved > a,
+.a4-content-bookmark .a4-content-bookmark-nav li.is-moved > span.current { box-shadow: 0 0 0 2px var(--a4-ring); }
+.a4-content-bookmark .a4-content-bookmark-nav .a4-grip { width: 22px; min-height: 26px; font-size: var(--a4-text-s); }
+
+/* arranging the list */
+.a4-content-bookmark .a4-cards.is-arranging { border-radius: var(--a4-radius-s); outline: 2px dashed var(--a4-line-strong); outline-offset: var(--a4-space-1); }
+.a4-content-bookmark .a4-card.is-moved { border-color: var(--a4-accent); box-shadow: 0 0 0 2px var(--a4-ring); }
+.a4-content-bookmark .a4-content-bookmark-arrange { margin: 0 0 var(--a4-space-3); }
+.a4-content-bookmark .a4-content-bookmark-cardfoot { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: var(--a4-space-2) var(--a4-space-4); margin: var(--a4-space-2) 0 0; padding-left: var(--a4-space-6); }
+.a4-content-bookmark .a4-content-bookmark-cardfoot > .a4-facts,
+.a4-content-bookmark .a4-content-bookmark-cardfoot > .a4-content-bookmark-note { flex: 1 1 320px; margin: 0; padding-left: 0; }
+.a4-content-bookmark .a4-content-bookmark-position { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-1) var(--a4-space-2); margin: 0; font-size: var(--a4-text-s); }
+.a4-content-bookmark .a4-content-bookmark-position label { color: var(--a4-ink); font-weight: 650; }
+.a4-content-bookmark .a4-content-bookmark-position .a4-input { width: 4.6em; min-height: 30px; padding: 2px var(--a4-space-1); }
+
+/* a folder's head, its actions and the move form */
+.a4-content-bookmark .a4-content-bookmark-folderhead { margin: 0 0 var(--a4-space-4); }
+.a4-content-bookmark .a4-content-bookmark-crumbs { display: flex; flex-wrap: wrap; gap: 2px var(--a4-space-1); margin: 0 0 var(--a4-space-1); padding: 0; list-style: none; color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-content-bookmark .a4-content-bookmark-crumbs li + li::before { content: "/"; margin-right: var(--a4-space-1); color: var(--a4-muted); }
+.a4-content-bookmark .a4-content-bookmark-folderacts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); align-items: start; gap: var(--a4-space-2); margin-top: var(--a4-space-3); }
+.a4-content-bookmark .a4-content-bookmark-folderacts > form { margin: 0; }
+.a4-content-bookmark .a4-content-bookmark-folderacts > details[open] { grid-column: 1 / -1; }
+.a4-content-bookmark .a4-content-bookmark-folderfacts { grid-template-columns: repeat(auto-fit, minmax(min(100%, 130px), 1fr)); padding-left: 0; }
+.a4-content-bookmark .a4-content-bookmark-choice { display: grid; gap: var(--a4-space-2); min-width: 0; margin: 0; padding: 0; border: 0; }
+.a4-content-bookmark .a4-content-bookmark-choice legend { margin: 0 0 var(--a4-space-1); padding: 0; font-weight: 650; }
+.a4-content-bookmark .a4-section-head .a4-content-bookmark-selectall { display: inline-flex; align-items: center; gap: var(--a4-space-1); margin-left: auto; }
+.a4-content-bookmark .a4-section-head .a4-content-bookmark-selectall input { width: 18px; height: 18px; margin: 0; }
+.a4-content-bookmark .a4-section-head .a4-content-bookmark-addtop { margin-left: var(--a4-space-1); }
+.a4-content-bookmark .a4-content-bookmark-group { margin: 0 0 var(--a4-space-4); }
+.a4-content-bookmark .a4-content-bookmark-grouphead { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-1) var(--a4-space-2); margin: 0 0 var(--a4-space-2); padding: 0 2px; }
+.a4-content-bookmark .a4-content-bookmark-grouphead svg { flex: 0 0 auto; color: var(--a4-muted); }
+.a4-content-bookmark .a4-content-bookmark-grouppath { flex: 1 1 100%; margin: 0; padding-left: var(--a4-space-5); color: var(--a4-muted); font-size: var(--a4-text-s); overflow-wrap: anywhere; }
+.a4-content-bookmark .a4-content-bookmark-note { margin: var(--a4-space-2) 0 0; padding-left: var(--a4-space-6); color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-content-bookmark .a4-content-bookmark-movegroup { display: flex; flex: 1 1 340px; flex-wrap: wrap; align-items: flex-end; gap: var(--a4-space-2); min-width: 0; }
+.a4-content-bookmark .a4-content-bookmark-movegroup .a4-field { flex: 1 1 200px; }
+@media (max-width: 600px) {
+  .a4-content-bookmark .a4-content-bookmark-note,
+  .a4-content-bookmark .a4-content-bookmark-cardfoot { padding-left: 0; }
+}
+
+/* ---- languages ---- content/translations, its language page and the add form ------------------------------ */
+
+.a4-content-languages h1.context-title { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-1) var(--a4-space-3); }
+.a4-content-languages h1 .a4-content-languages-title-text { color: var(--a4-ink); text-decoration: none; }
+.a4-content-languages .a4-figure.is-wide { grid-column: 1 / -1; }
+.a4-content-languages .a4-figure.is-wide strong { font-size: var(--a4-text-l); line-height: 1.35; }
+.a4-content-languages .a4-content-languages-title img { flex: 0 0 auto; border-radius: 0; box-shadow: 0 0 0 1px var(--a4-line-strong); }
+.a4-content-languages .a4-pick.is-disabled { cursor: not-allowed; }
+.a4-content-languages .a4-facts > .a4-content-languages-fact-wide { grid-column: 1 / -1; }
+.a4-content-languages .a4-content-languages-fact-wide .a4-badges { margin: var(--a4-space-1) 0 var(--a4-space-1); }
+.a4-content-languages .a4-content-languages-hint { margin: var(--a4-space-3) 0 0; padding: var(--a4-space-2) var(--a4-space-3); border-radius: var(--a4-radius-s); background-color: var(--a4-warn-bg); color: var(--a4-ink); }
+.a4-content-languages .a4-content-languages-hint.is-quiet { background-color: var(--a4-soft); }
+.a4-content-languages .a4-content-languages-hint strong { color: var(--a4-warn); }
+.a4-content-languages .a4-content-languages-hint.is-quiet strong { color: var(--a4-ink); }
+.a4-content-languages .a4-content-languages-why { margin: var(--a4-space-2) 0 0; color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-content-languages .a4-content-languages-state { margin: 0 0 var(--a4-space-3); }
+.a4-content-languages .a4-content-languages-legend { margin-top: var(--a4-space-1); }
+.a4-content-languages .a4-content-languages-steps { margin: var(--a4-space-1) 0 0; padding-left: var(--a4-space-4); }
+.a4-content-languages .a4-content-languages-steps li { margin: 0 0 var(--a4-space-1); }
+.a4-content-languages .a4-content-languages-locale-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: var(--a4-space-2) var(--a4-space-5); margin: 0; }
+.a4-content-languages .a4-content-languages-locale-grid > div { min-width: 0; padding: var(--a4-space-1) 0; border-bottom: 1px dashed var(--a4-line); }
+.a4-content-languages .a4-content-languages-locale-grid dt { margin: 0; color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 650; }
+.a4-content-languages .a4-content-languages-locale-grid dd { margin: 2px 0 0; overflow-wrap: anywhere; }
+.a4-content-languages .a4-content-languages-field-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 0 var(--a4-space-4); }
+
+/* ---- jobs ---- content/jobs, content/job, the run-mode choice and the summary of a subtree operation -------- */
+
+.a4-content-job .a4-content-job-state { text-transform: uppercase; }
+.a4-content-job .a4-content-job-state.running,
+.a4-content-job .a4-content-job-state.queued { background-color: var(--a4-accent-soft); color: var(--a4-accent-text); }
+.a4-content-job .a4-content-job-state.done { background-color: var(--a4-ok-bg); color: var(--a4-ok); }
+.a4-content-job .a4-content-job-state.failed { background-color: var(--a4-bad-bg); color: var(--a4-bad); }
+.a4-content-job .a4-content-job-bar { min-width: 4em; margin-bottom: var(--a4-space-1); }
+.a4-content-job .a4-content-job-bar > span { transition: width .4s; }
+.a4-content-job .a4-content-job-bar.done > span { background-color: var(--a4-ok); }
+.a4-content-job .a4-content-job-bar.failed > span { background-color: var(--a4-bad); }
+.a4-content-job .a4-content-job-table { width: 100%; overflow-x: auto; }
+.a4-content-job td { overflow-wrap: anywhere; vertical-align: top; }
+.a4-content-job td.a4-content-job-actions,
+.a4-content-job td.a4-content-job-user,
+.a4-content-job th a { color: inherit; white-space: nowrap; }
+.a4-content-job .a4-content-job-scope { margin: 0 0 var(--a4-space-2); }
+.a4-content-job .a4-content-job-scope .current { font-weight: 700; }
+.a4-content-job .a4-content-job-filters { display: flex; flex-wrap: wrap; align-items: flex-end; gap: var(--a4-space-2) var(--a4-space-3); margin: var(--a4-space-1) 0 var(--a4-space-3); }
+.a4-content-job .a4-content-job-filters label { display: flex; flex-direction: column; font-size: var(--a4-text-s); }
+.a4-content-job .a4-content-job-totals { display: flex; flex-wrap: wrap; gap: var(--a4-space-1) var(--a4-space-3); margin: 0 0 var(--a4-space-3); padding: 0; list-style: none; }
+.a4-content-job .a4-content-job-totals a { text-decoration: none; }
+/* the job page */
+.a4-content-job .a4-content-job-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--a4-space-1) var(--a4-space-3); margin: var(--a4-space-1) 0 var(--a4-space-1); }
+.a4-content-job .a4-content-job-counts { font-weight: 700; }
+.a4-content-job .a4-content-job-elapsed { color: var(--a4-muted); }
+.a4-content-job .a4-content-job-head + .a4-content-job-bar { max-width: 46em; height: 14px; margin: var(--a4-space-2) 0 var(--a4-space-1); }
+.a4-content-job .a4-content-job-message { margin: var(--a4-space-1) 0 var(--a4-space-3); overflow-wrap: anywhere; }
+.a4-content-job .a4-content-job-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(22em, 1fr)); gap: 0 var(--a4-space-5); }
+.a4-content-job .a4-content-job-group h2 { margin: var(--a4-space-2) 0 var(--a4-space-1); font-size: var(--a4-text-l); }
+.a4-content-job .a4-content-job-download { margin-left: var(--a4-space-3); font-size: var(--a4-text-xs); font-weight: 400; }
+.a4-content-job table.a4-content-job-details { width: 100%; margin-bottom: var(--a4-space-3); }
+.a4-content-job table.a4-content-job-details th { padding-right: var(--a4-space-5); background-color: transparent; color: var(--a4-muted); font-weight: 400; text-align: left; white-space: nowrap; }
+.a4-content-job table.a4-content-job-details td { overflow-wrap: anywhere; }
+.a4-content-job .a4-content-job-log { max-height: 18em; margin: var(--a4-space-1) 0 0; }
+.a4-content-job .a4-content-job-error pre { margin: var(--a4-space-1) 0 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+/* "run now or in the background", on a confirmation page */
+.a4-content-job-mode { margin: var(--a4-space-3) 0; padding: var(--a4-space-2) var(--a4-space-3) var(--a4-space-1); border: 1px solid var(--a4-line); border-radius: var(--a4-radius-s); }
+.a4-content-job-mode legend { padding: 0 var(--a4-space-1); font-weight: 700; }
+.a4-content-job-mode label { display: block; margin: var(--a4-space-1) 0; }
+.a4-content-job-mode label.disabled { color: var(--a4-disabled); }
+.a4-content-job-mode .a4-content-job-why { display: block; margin-left: var(--a4-space-5); }
+/* what an operation on a subtree touches */
+.a4-content-job-summary { margin: var(--a4-space-2) 0 var(--a4-space-3); }
+.a4-content-job-summary dl { display: grid; grid-template-columns: max-content 1fr; gap: var(--a4-space-1) var(--a4-space-4); margin: var(--a4-space-1) 0; }
+.a4-content-job-summary dt { color: var(--a4-muted); }
+.a4-content-job-summary dd { margin: 0; overflow-wrap: anywhere; }
+.a4-content-job-summary ul { margin: var(--a4-space-1) 0; padding-left: var(--a4-space-4); }
+
+/* ---- trash ---- content/trash: filters, where an item was and what restoring it does ------------------------- */
+
+.a4-content-trash table.list td { max-width: 500px; overflow-wrap: break-word; }
+.a4-content-trash table.list td.a4-content-trash-narrow { max-width: 280px; }
+.a4-content-trash td.a4-content-trash-name { min-width: 14em; }
+.a4-content-trash .a4-content-trash-foot { margin-top: var(--a4-space-4); }
+.a4-content-trash .a4-content-trash-summary { margin: 0 0 var(--a4-space-2); }
+.a4-content-trash .a4-content-trash-filter { display: flex; flex-wrap: wrap; align-items: flex-end; gap: var(--a4-space-1) var(--a4-space-3); margin: 0 0 var(--a4-space-3); }
+.a4-content-trash .a4-content-trash-filter label { display: block; font-size: var(--a4-text-s); font-weight: 700; }
+.a4-content-trash .a4-content-trash-filter select,
+.a4-content-trash .a4-content-trash-filter input.a4-content-trash-date { max-width: 14em; }
+.a4-content-trash .a4-content-trash-meta { margin-top: var(--a4-space-1); color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-content-trash .a4-content-trash-state { margin-top: var(--a4-space-1); font-size: var(--a4-text-s); }
+.a4-content-trash .a4-content-trash-path-trash,
+.a4-content-trash .a4-content-trash-path-gone { font-style: italic; }
+.a4-content-trash details.a4-content-trash-details { margin-top: var(--a4-space-1); font-size: var(--a4-text-s); }
+.a4-content-trash details.a4-content-trash-details summary { cursor: pointer; }
+.a4-content-trash details.a4-content-trash-details dl { display: grid; grid-template-columns: auto 1fr; gap: 2px var(--a4-space-2); margin: var(--a4-space-1) 0 0; }
+.a4-content-trash details.a4-content-trash-details dt { margin: 0; font-weight: 700; }
+.a4-content-trash details.a4-content-trash-details dd { margin: 0; }
+
+/* ---- multiedit ---- content/multiedit: one section per class, one folding panel per object ---------------- */
+
+.a4-content-multiedit-note { margin: 0 0 var(--a4-space-3); color: var(--a4-muted); }
+.a4-content-multiedit-group { margin-bottom: var(--a4-space-5); }
+.a4-content-multiedit-group > h2 { margin: 0 0 var(--a4-space-2); font-size: var(--a4-text-l); }
+.a4-content-multiedit-object { margin-bottom: var(--a4-space-3); border: 1px solid var(--a4-line); border-radius: var(--a4-radius-s); background-color: var(--a4-card); }
+.a4-content-multiedit-object > summary { padding: var(--a4-space-2) var(--a4-space-3); font-weight: 700; list-style: revert; cursor: pointer; }
+.a4-content-multiedit-object > summary small { margin-left: var(--a4-space-2); color: var(--a4-muted); font-weight: 400; }
+.a4-content-multiedit-object[open] > summary { border-bottom: 1px solid var(--a4-line); }
+.a4-content-multiedit-body { padding: var(--a4-space-3); }
+.a4-content-multiedit-invalid { border-color: var(--a4-bad); }
+.a4-content-multiedit-invalid > summary { background-color: var(--a4-bad-bg); color: var(--a4-bad); }
+.a4-content-multiedit-report { margin-bottom: var(--a4-space-3); padding: var(--a4-space-3); border: 1px solid var(--a4-line); border-radius: var(--a4-radius-s); background-color: var(--a4-soft); }
+.a4-content-multiedit-report li { margin: var(--a4-space-1) 0; }
+.a4-content-multiedit-state-published { color: var(--a4-ok); }
+.a4-content-multiedit-state-pending { color: var(--a4-warn); }
+.a4-content-multiedit-state-failed { color: var(--a4-bad); }
+.a4-content-multiedit-controls,
+.a4-content-multiedit-toggles { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2); }
+.a4-content-multiedit-toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--a4-space-2); margin-bottom: var(--a4-space-3); }
+.a4-content-multiedit-toolbar .a4-content-multiedit-note { margin: 0; }
+.a4-content-multiedit-autosave { min-width: 12em; color: var(--a4-muted); font-size: var(--a4-text-s); font-style: normal; }
+.a4-content-multiedit-autosave.as-saving { color: var(--a4-warn); }
+.a4-content-multiedit-autosave.as-success { color: var(--a4-ok); }
+.a4-content-multiedit-autosave.as-error { color: var(--a4-bad); }
+@media (max-width: 700px) {
+  .a4-content-multiedit-body .block label { display: block; }
+  .a4-content-multiedit-controls .button,
+  .a4-content-multiedit-toggles .button { flex: 1 1 auto; }
+  .a4-content-multiedit-toolbar { justify-content: flex-start; }
+  .a4-content-multiedit-toggles { width: 100%; }
+}
+
+/* ---- dashboard ---- content/dashboard: a column's height per day, from its .a4-pct-N class ------------------ */
+
+.a4-dash-bars .a4-dash-bar-fill { height: calc(var(--a4-pct, 0) * 1%); }
+
+/* ---- edit ---- the date and date-and-time fields: the calendar icon and the picker's place (shown by its script) */
+
+.a4-content-datepicker-icon { cursor: pointer; }
+.a4-content-datepicker { display: none; position: absolute; }

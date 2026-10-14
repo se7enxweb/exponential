@@ -7,7 +7,7 @@
 {def $content_language = ezini( 'RegionalSettings', 'Locale' )
      $edit_menu_collapsed = cond( ezpreference( 'admin_edit_menu_collapsed' ), 1, 0 )}
 
-<div id="leftmenu"{if $edit_menu_collapsed} style="margin-left:-13.5em;"{/if}>
+<div id="leftmenu"{if $edit_menu_collapsed} class="a4-content-edit-collapsed"{/if}>
 <a id="objectinfo-showhide" class="show-hide-control" title="{'Show / Hide leftmenu'|i18n( 'design/admin/pagelayout/leftmenu' )}" href="#"></a>
 <div id="leftmenu-design">
 
@@ -53,7 +53,7 @@ if ( window.Exp && window.Exp.collapse ) {
 </script>
 
 
-<div id="maincontent"{if $edit_menu_collapsed} style="margin-left:20px"{/if}>
+<div id="maincontent"{if $edit_menu_collapsed} class="a4-content-edit-collapsed"{/if}>
 <div id="maincontent-design" class="float-break"><div id="fix">
 
 
@@ -115,14 +115,14 @@ if ( window.Exp && window.Exp.collapse ) {
     {let from_language_object=$object.languages[$from_language]}
 
     {'Translating content from %from_lang to %to_lang'|i18n( 'design/admin/content/edit',, hash(
-        '%from_lang', concat( $from_language_object.name, '&nbsp;<img src="', $from_language_object.locale|flag_icon, '" width="18" height="12" style="vertical-align: middle;" alt="', $from_language_object.locale, '" />' ),
-        '%to_lang', concat( $translation_list[$language_index].locale.intl_language_name, '&nbsp;<img src="', $translation_list[$language_index].language_code|flag_icon, '" width="18" height="12" style="vertical-align: middle;" alt="', $translation_list[$language_index].language_code, '" />' ) ) )}
+        '%from_lang', concat( $from_language_object.name, '&nbsp;<img src="', $from_language_object.locale|flag_icon, '" width="18" height="12" class="a4-flag" alt="', $from_language_object.locale, '" />' ),
+        '%to_lang', concat( $translation_list[$language_index].locale.intl_language_name, '&nbsp;<img src="', $translation_list[$language_index].language_code|flag_icon, '" width="18" height="12" class="a4-flag" alt="', $translation_list[$language_index].language_code, '" />' ) ) )}
 
     {/let}
 
 {else}
 
-    {$translation_list[$language_index].locale.intl_language_name}&nbsp;<img src="{$translation_list[$language_index].language_code|flag_icon}" width="18" height="12" style="vertical-align: middle;" alt="{$translation_list[$language_index].language_code}" />
+    {$translation_list[$language_index].locale.intl_language_name}&nbsp;<img src="{$translation_list[$language_index].language_code|flag_icon}" width="18" height="12" class="a4-flag" alt="{$translation_list[$language_index].language_code}" />
 
 {/if}
 

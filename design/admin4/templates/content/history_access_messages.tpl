@@ -3,14 +3,14 @@
    ($refused: action diff, copy, copy-language, remove or remove-none). The same file is in design/admin and
    design/admin4; design/standard has the plain one. Included by content/history.tpl. *}
 {if and( is_set( $can_read ), $can_read|not )}
-<div class="exp-feedback is-info history-edit-only" role="note">
+<div class="a4-notice is-info history-edit-only" role="note">
     <p><strong>{'You may edit this object, but not read it'|i18n( 'design/admin/content/history' )}</strong></p>
     <p>{'The list shows every version of the object. You can compare and copy its published, archived and rejected versions and your own; a draft or pending version of someone else only with the policy content/versionread for it.'|i18n( 'design/admin/content/history' )}</p>
 </div>
 {/if}
 {if and( is_set( $refused ), $refused )}
 {def $refused_versions = $refused.versions|implode( ', ' )}
-<div class="exp-feedback is-warn history-refused" role="alert">
+<div class="a4-notice is-warn history-refused" role="alert">
     {switch match=$refused.action}
     {case match='diff'}
     <p><strong>{'The versions were not compared'|i18n( 'design/admin/content/history' )}</strong></p>

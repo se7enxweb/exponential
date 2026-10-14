@@ -2,16 +2,7 @@
    (ContentJobDetails::subtreeSummary()), optional $operation ('remove', 'copy', 'move', 'state', 'addlocation',
    'removelocation': the last two work on the selected locations only, not on what is below them). *}
 {default operation='remove'}
-<style type="text/css">
-{literal}
-.exp-jobsummary { margin: .6em 0 1em; }
-.exp-jobsummary dl { display: grid; grid-template-columns: max-content 1fr; gap: .2em 1.2em; margin: .3em 0; }
-.exp-jobsummary dt { color: #555; }
-.exp-jobsummary dd { margin: 0; overflow-wrap: anywhere; }
-.exp-jobsummary ul { margin: .2em 0; padding-left: 1.2em; }
-{/literal}
-</style>
-<div class="block exp-jobsummary">
+<div class="block a4-content-job-summary">
 <h2>{'What this touches'|i18n( 'design/admin/content/job' )}</h2>
 <dl>
     {if or( eq( $operation, 'addlocation' ), eq( $operation, 'removelocation' ) )}
