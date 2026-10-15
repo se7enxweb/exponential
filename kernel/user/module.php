@@ -127,6 +127,18 @@ $ViewList['unactivated'] = array(
     'params' => array( 'SortField', 'SortOrder' ),
 );
 
+// Check user accounts: every account, or those below a user group, by filter (never signed in, not seen for N days,
+// disabled, locked, orphaned, a shared e-mail address); disable, enable or unlock the ticked ones (after a
+// confirmation, each needing content/edit on the account) and the CSV of the list (doc/features/6.0/user-hygiene.md)
+$ViewList['hygiene'] = array(
+    'functions' => array( 'hygiene' ),
+    'script' => 'hygiene.php',
+    'ui_context' => 'administration',
+    'default_navigation_part' => 'ezusernavigationpart',
+    'unordered_params' => array( 'offset' => 'Offset' ),
+    'params' => array(),
+);
+
 $SiteAccess = array(
     'name'=> 'SiteAccess',
     'values'=> array(),
@@ -142,5 +154,6 @@ $FunctionList['preferences'] = array();
 $FunctionList['register'] = array();
 $FunctionList['selfedit'] = array();
 $FunctionList['activation'] = array();
+$FunctionList['hygiene'] = array();
 
 ?>

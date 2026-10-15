@@ -1781,6 +1781,7 @@ a.a4-icon-btn, a.a4-icon-btn:visited { color: var(--a4-muted); }
 .a4-bi-pencil-square { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/pencil-square.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/pencil-square.svg); }
 .a4-bi-people { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/people.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/people.svg); }
 .a4-bi-person { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/person.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/person.svg); }
+.a4-bi-person-badge { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/person-badge.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/person-badge.svg); }
 .a4-bi-person-check { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/person-check.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/person-check.svg); }
 .a4-bi-person-circle { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/person-circle.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/person-circle.svg); }
 .a4-bi-person-lock { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/person-lock.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/person-lock.svg); }
