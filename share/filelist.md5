@@ -1031,7 +1031,7 @@ a2b172b8944ff150c68ffddee1372eba  design/admin4/templates/content/upload.tpl
 2338ac2189ebf523ac83e7c511b00398  design/admin4/templates/content/urlalias.tpl
 2e0a54ad3eee1d359c882503ce48255a  design/admin4/templates/content/urlalias_global.tpl
 f08426363c068f8b87de5f75e85dd385  design/admin4/templates/content/urlalias_wildcard.tpl
-6bfdfcb9595eb4877cf609a43f6abfd4  design/admin4/templates/content/view/versionview.tpl
+5df283057728d73abe0e1d91f66ff1df  design/admin4/templates/content/view/versionview.tpl
 12317930ded26151688ae03c70d89efd  design/admin4/templates/contentfinder/box.tpl
 3e2095eacb5bbd954b68d784ad0b9c15  design/admin4/templates/contentfinder/confirm.tpl
 d15376799ac95a2f3c136d58a8e19ad6  design/admin4/templates/contentfinder/reason.tpl
@@ -2986,7 +2986,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-0dcbf7da6e4972379320c36ec7d0be63  doc/changelogs/6.0/6.0.15.md
+0cf889c5dee94bce4d020d34038c15c8  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3314,7 +3314,7 @@ c4809a3b611073bdcad4b38e9ea7dd6d  doc/features/6.0/additional-extension-director
 8ee6875c6693489d567c309177b49b81  doc/features/6.0/admin-list-paging.md
 41099ca247392d7ed963caa4b857e51c  doc/features/6.0/admin3-responsive-admin.md
 98b1eb658a2475fc31af9b9cbfaba709  doc/features/6.0/admin3-sidebar-width-and-font-size.md
-bbfdbb9e9b8fb8b0a11e919ca8c94f92  doc/features/6.0/admin4-design.md
+3e5effcdfbd0f348c81279ac5781696b  doc/features/6.0/admin4-design.md
 7d8b3d248d27baa55bbf5f7f22040693  doc/features/6.0/admin4l.md
 cb077d1f37f8e8811c377ede4bc99357  doc/features/6.0/adminneo-database-manager.md
 ae7d698fad5f10287ad37ade2f97d8aa  doc/features/6.0/audit-trail.md
@@ -7119,7 +7119,7 @@ f2f45d0be8a363de1fa024e40ff34fd2  tests/tests/design/AdminNewsletterPreviewTest.
 a33e9d573eb8e846797e949212bf192e  tests/tests/design/AdminNoticesTest.php
 917f288f4825456962ee3eabc46c89c2  tests/tests/design/AdminPageHeaderTest.php
 78b30039bd63be57ad93a86b8d456a1f  tests/tests/design/AdminPreferencesTest.php
-4973829ab1c980cb9622c2af1fedad70  tests/tests/design/AdminPreviewDevicesTest.php
+701c8adc97dbf0fbf93df4a3867b08e9  tests/tests/design/AdminPreviewDevicesTest.php
 09c565e1f86414d7548458461faf80dd  tests/tests/design/AdminResponsiveTest.php
 4b3af4d4ae744b360aa04bc3a27578b4  tests/tests/design/AdminRetiredClassesTest.php
 9f30c0d44bbf2de9c154495d15e158c8  tests/tests/design/AdminScriptsTest.php
