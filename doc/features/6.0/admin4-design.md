@@ -534,6 +534,8 @@ Community". A template can also set `$show_community_links`.
   `tests/tests/design/AdminMenuPolicyListTest.php` fails for a function a module does not have. The Design tab opens
   the design top node by its id (`content/view/full/58`, `content.ini [NodeSettings] DesignRootNode`).
 - `FrontSiteAccess` is the site an admin siteaccess belongs to: its "Open the site" and "View on site" links go there.
+  Both show the globe (Bootstrap Icons `globe2`, `.a4-bi-globe2`), so a link to the site does not look like a link
+  that leaves the administration for something else (`box-arrow-up-right`).
 - The logo's name in the header carries the release only for signed-in users; the anonymous pages of the admin
   (the 401 page, `user/register`, `user/forgotpassword`) say "Exponential".
 

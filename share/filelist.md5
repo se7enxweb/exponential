@@ -1072,7 +1072,7 @@ c6caf8a9fa0db2771a975b122bcb5226  design/admin4/templates/navigator/google.tpl
 c49f6538ab403d0457921734f2327d39  design/admin4/templates/node/removenode.tpl
 520842ad63b7c1b9d953df16a0c68894  design/admin4/templates/node/removeobject.tpl
 38c2e1177b42824a35112e9b16774351  design/admin4/templates/node/top_node_full.tpl
-9270ae7e38ef06831ccce1440db1febb  design/admin4/templates/node/view/a4_full_body.tpl
+6ffca5785b113e05abf7d0df143f12fc  design/admin4/templates/node/view/a4_full_body.tpl
 ea465bb76b53128ff5a195583ce942a2  design/admin4/templates/node/view/admin_preview.tpl
 dc142438409e90d072cf19d700673a82  design/admin4/templates/node/view/ajaxuploader_preview.tpl
 b9a3fa9fe69402b67871fc1aac68fcad  design/admin4/templates/node/view/browse_thumbnail.tpl
@@ -7122,7 +7122,7 @@ c31cba849cbfb42aae99d65b6e24f787  tests/tests/design/AdminContentEditFormsTest.p
 e0969685ae94ce6950d89ebe71ea65d1  tests/tests/design/AdminFormErrorsTest.php
 c76f86863ef135a2c51d2083890f9380  tests/tests/design/AdminFormLabelsTest.php
 c6ba9bc58f2ca2ab064b5fd06eaca6a6  tests/tests/design/AdminHeaderTest.php
-04f6c21d6c646ab0806a9f3eebe0e13c  tests/tests/design/AdminIconsTest.php
+40fcf4bb69d81c257fe08bcd68171e9c  tests/tests/design/AdminIconsTest.php
 6d1b6edb0965bdac475abd8af045e416  tests/tests/design/AdminJobTranslationsTest.php
 302b27352564e90e744b9a788bfcedb8  tests/tests/design/AdminKeyboardTest.php
 38aa8de26e3cf07553d9dfea472dafe4  tests/tests/design/AdminLandmarksTest.php
