@@ -1319,7 +1319,7 @@ class eZOEInputParser extends eZXMLInputParser
                     // Protection from XSS attack
                     if ( preg_match( "/^(java|vb)script:.*/i" , $url ) )
                     {
-                        $this->isInputValid = false;
+                        $this->IsInputValid = false;
                         $this->Messages[] = "Using scripts in links is not allowed, '" . self::messageText( $url ) . "' has been removed";
                         $element->removeAttribute( 'href' );
                         return $ret;
@@ -1330,12 +1330,11 @@ class eZOEInputParser extends eZXMLInputParser
                     {
                         if ( !eZMail::validate( $mailAddr[1] ) )
                         {
-                            $this->isInputValid = false;
-                            if ( $this->errorLevel >= 0 )
-                                $this->Messages[] = ezpI18n::tr( 'kernel/classes/datatypes/ezxmltext',
-                                                            "Invalid e-mail address: '%1'",
-                                                            false,
-                                                            array( $mailAddr[1] ) );
+                            $this->IsInputValid = false;
+                            $this->Messages[] = ezpI18n::tr( 'kernel/classes/datatypes/ezxmltext',
+                                                             "Invalid e-mail address: '%1'",
+                                                             false,
+                                                             array( $mailAddr[1] ) );
                             $element->removeAttribute( 'href' );
                             return $ret;
                         }
