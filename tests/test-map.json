@@ -130,7 +130,9 @@
       "tests/tests/design/AdminRetiredClassesTest.php"
     ],
     "design/admin*/javascript/ezajaxsubitems_expdatatable.js": [
-      "tests/tests/design/AdminLanguageBadgeTest.php"
+      "tests/tests/design/AdminLanguageBadgeTest.php",
+      "tests/tests/design/AdminVisibilityStatusTest.php",
+      "tests/tests/design/AdminResponsiveTest.php"
     ],
     "lib/ezlocale/classes/ezlocale.php": [
       "tests/tests/design/AdminLanguageBadgeTest.php"
@@ -207,7 +209,8 @@
       "tests/tests/kernel/content/eZAdminFullViewCopyButtonTest.php"
     ],
     "design/admin4/templates/node/view/a4_full_body.tpl": [
-      "tests/tests/kernel/content/eZAdminFullViewCopyButtonTest.php"
+      "tests/tests/kernel/content/eZAdminFullViewCopyButtonTest.php",
+      "tests/tests/design/AdminVisibilityStatusTest.php"
     ],
     "design/standard/templates/content/datatype/view/ezselection.tpl": [
       "tests/tests/kernel/datatypes/eZSelectionMatrixViewTemplateTest.php"
@@ -350,7 +353,9 @@
       "tests/tests/design/AdminEditBarTest.php",
       "tests/tests/design/AdminLegacyControlsTest.php",
       "tests/tests/design/AdminHeaderTest.php",
-      "tests/tests/design/AdminPhoneMenuTest.php"
+      "tests/tests/design/AdminPhoneMenuTest.php",
+      "tests/tests/design/AdminVisibilityStatusTest.php",
+      "tests/tests/design/AdminResponsiveTest.php"
     ],
     "extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe_tinymce8.tpl": [
       "tests/tests/design/AdminEditBarTest.php"
@@ -384,7 +389,8 @@
       "tests/tests/design/AdminSetupOverviewTest.php"
     ],
     "design/admin*/stylesheets/components.css": [
-      "tests/tests/design/AdminSetupOverviewTest.php"
+      "tests/tests/design/AdminSetupOverviewTest.php",
+      "tests/tests/design/AdminVisibilityStatusTest.php"
     ],
     "design/admin4/templates/page_leftmenu.tpl": [
       "tests/tests/design/AdminSetupTabsLeftMenuTest.php"
@@ -400,7 +406,8 @@
       "tests/tests/design/AdminIconsTest.php"
     ],
     "design/admin4/stylesheets/pagelayout.css": [
-      "tests/tests/design/AdminHeaderTest.php"
+      "tests/tests/design/AdminHeaderTest.php",
+      "tests/tests/design/AdminVisibilityStatusTest.php"
     ],
     "extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe_engine_switch.tpl": [
       "tests/tests/extension/ezoe/expOEEngineConfigTest.php"
@@ -443,6 +450,45 @@
     ],
     "kernel/classes/ezsearch.php": [
       "tests/tests/kernel/content/eZPendingIndexActionsTest.php"
+    ],
+    "design/admin*/javascript/contentstructuremenu_dynamic.js": [
+      "tests/tests/design/AdminVisibilityStatusTest.php"
+    ],
+    "design/admin*/templates/children_detailed.tpl": [
+      "tests/tests/design/AdminVisibilityStatusTest.php"
+    ],
+    "design/admin*/templates/contentstructuremenu/*": [
+      "tests/tests/design/AdminVisibilityStatusTest.php"
+    ],
+    "design/admin4/templates/parts/visibility_status.tpl": [
+      "tests/tests/design/AdminVisibilityStatusTest.php"
+    ],
+    "design/admin4/templates/content/browse_mode_list.tpl": [
+      "tests/tests/design/AdminVisibilityStatusTest.php"
+    ],
+    "tests/tests/design/js/visibility_status.js": [
+      "tests/tests/design/AdminVisibilityStatusTest.php"
+    ],
+    "kernel/private/classes/views/content/treemenu.php": [
+      "tests/tests/kernel/classes/user/expUserAccountStatusTest.php"
+    ],
+    "extension/ezjscore/classes/ezjscajaxcontent.php": [
+      "tests/tests/kernel/classes/user/expUserAccountStatusTest.php"
+    ],
+    "extension/ezjscore/classes/ezjscserverfunctionsnode.php": [
+      "tests/tests/kernel/classes/user/expUserAccountStatusTest.php"
+    ],
+    "kernel/classes/subitems/expsubitemsserverfunctions.php": [
+      "tests/tests/kernel/classes/user/expUserAccountStatusTest.php"
+    ],
+    "kernel/user/ezuseroperationcollection.php": [
+      "tests/tests/kernel/classes/user/expUserAccountStatusTest.php"
+    ],
+    "kernel/user/ezuserfunctioncollection.php": [
+      "tests/tests/kernel/classes/user/expUserAccountStatusTest.php"
+    ],
+    "kernel/user/function_definition.php": [
+      "tests/tests/kernel/classes/user/expUserAccountStatusTest.php"
     ]
   },
   "generated": {
