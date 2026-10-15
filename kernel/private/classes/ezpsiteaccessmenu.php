@@ -27,10 +27,17 @@
  *   site only.
  * - HiddenSiteAccessList[]: siteaccesses left out. The site the globe opens is
  *   always the first entry: the globe leads there anyway.
- * - AdminSiteAccessList[]: the siteaccesses listed under Administration. Empty:
- *   those whose [DesignSettings] SiteDesign begins with "admin", or that name a
- *   [SiteSettings] FrontSiteAccess (only an admin siteaccess has a site of its
- *   own to link to).
+ * - AdminSiteAccessList[]: the siteaccesses that count as administrations.
+ *   Empty: those whose [DesignSettings] SiteDesign begins with "admin", or that
+ *   name a [SiteSettings] FrontSiteAccess (only an admin siteaccess has a site
+ *   of its own to link to).
+ * - ListAdministrations: disabled (the default) lists the sites only;
+ *   enabled adds the administrations as a group of their own.
+ *
+ * Besides the site the globe opens, a siteaccess is listed only where the
+ * signed-in user may log in: user/login, with its SiteAccess limitation
+ * (eZUser::canLoginToSiteAccess()), as the login itself checks. The header's
+ * cache blocks are keyed by the user's role hash, so the list is the user's.
  *
  * The addresses come from ezpSiteAccessURL::root(), as siteaccess_url() has
  * them: scheme, host and port of this request, the siteaccess path by
@@ -43,20 +50,32 @@ class ezpSiteAccessMenu
     /**
      * The menu of the current siteaccess and request.
      *
+     * @param eZUser|null $user the user the menu is for (the template passes
+     *                          $current_user): besides the site the globe
+     *                          opens, only the siteaccesses this user may log
+     *                          in to are listed; null lists every one
      * @return array hash enabled (bool), front (an item, or null) and groups
      *               (list of hash identifier, site or admin, and items); an
      *               item is a hash identifier, name, locale, lang, url,
      *               display_url, current and admin, see build()
      */
-    public static function current()
+    public static function current( $user = null )
     {
         $settings = self::settings();
         if ( !$settings['show'] )
             return self::build( array(), '', '', array(), null, null );
         $current = eZSiteAccess::current();
+        $canUse = null;
+        if ( $user instanceof eZUser )
+        {
+            $canUse = function ( $name ) use ( $user ) {
+                return (bool)$user->canLoginToSiteAccess( array( 'name' => (string)$name ) );
+            };
+        }
         return self::build( self::names( $settings ), ezpSiteAccessURL::frontSiteAccess(),
                             $current ? (string)$current['name'] : '', $settings['admin'],
-                            array( __CLASS__, 'siteAccessInfo' ), array( 'ezpSiteAccessURL', 'root' ) );
+                            array( __CLASS__, 'siteAccessInfo' ), array( 'ezpSiteAccessURL', 'root' ),
+                            $canUse, $settings['administrations'] );
     }
 
     /**
@@ -78,6 +97,7 @@ class ezpSiteAccessMenu
         return md5( implode( "\n", array(
             implode( ',', self::names( $settings ) ),
             implode( ',', $settings['admin'] ),
+            $settings['administrations'] ? 'administrations' : 'sites',
             ezpSiteAccessURL::frontSiteAccess(),
             $current ? (string)$current['name'] : '',
             eZSys::isSSLNow() ? 'https' : 'http',
@@ -95,9 +115,12 @@ class ezpSiteAccessMenu
      * @param string[] $adminList AdminSiteAccessList[]; empty: by the design and FrontSiteAccess
      * @param callable|null $info name => hash site_name, locale, lang, site_design, front_site_access
      * @param callable|null $url name => the front page URL, or false when it cannot be reached
+     * @param callable|null $canUse name => whether the user may use the siteaccess (log in there); null: every one.
+     *                              Not asked for the site the globe opens, which the globe links to anyway
+     * @param bool $administrations whether the administrations are listed (a group of their own)
      * @return array see current()
      */
-    public static function build( array $names, $front, $current, array $adminList, $info, $url )
+    public static function build( array $names, $front, $current, array $adminList, $info, $url, $canUse = null, $administrations = true )
     {
         $menu = array( 'enabled' => false, 'front' => null, 'groups' => array() );
         if ( $info === null || $url === null )
@@ -108,10 +131,10 @@ class ezpSiteAccessMenu
         $groups = array( 'site' => array(), 'admin' => array() );
         foreach ( array_unique( $names ) as $name )
         {
-            if ( $name === $front )
+            if ( $name === $front || ( $canUse !== null && !call_user_func( $canUse, $name ) ) )
                 continue;
             $item = self::item( $name, $current, $adminList, $info, $url );
-            if ( $item !== null )
+            if ( $item !== null && ( $administrations || !$item['admin'] ) )
                 $groups[$item['admin'] ? 'admin' : 'site'][] = $item;
         }
         foreach ( $groups as $identifier => $items )
@@ -155,7 +178,8 @@ class ezpSiteAccessMenu
     /**
      * site.ini [AdminSiteAccessMenu] of the current siteaccess.
      *
-     * @return array hash show (bool), list (related or available), hidden and admin (string[])
+     * @return array hash show (bool), list (related or available), hidden and admin (string[]), administrations
+     *               (bool, ListAdministrations=enabled)
      */
     public static function settings()
     {
@@ -169,7 +193,8 @@ class ezpSiteAccessMenu
         return array( 'show' => $value( 'Show', 'enabled' ) !== 'disabled',
                       'list' => $value( 'List', 'related' ) === 'available' ? 'available' : 'related',
                       'hidden' => $list( 'HiddenSiteAccessList' ),
-                      'admin' => $list( 'AdminSiteAccessList' ) );
+                      'admin' => $list( 'AdminSiteAccessList' ),
+                      'administrations' => $value( 'ListAdministrations', 'disabled' ) === 'enabled' );
     }
 
     /**

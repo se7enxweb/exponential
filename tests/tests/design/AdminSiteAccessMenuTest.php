@@ -76,6 +76,45 @@ class AdminSiteAccessMenuTest extends PHPUnit\Framework\TestCase
         return preg_replace( '#/\*.*?\*/#s', '', self::file( 'design/admin4/stylesheets/admin4.css' ) );
     }
 
+    /**
+     * By default the menu lists sites only, and besides the site the globe opens only the siteaccesses the user may
+     * log in to (user/login with its SiteAccess limitation); the administrations only with ListAdministrations=enabled
+     */
+    public function testTheListIsTheUsersSitesUnlessAdministrationsAreAskedFor()
+    {
+        $user = new class( array() ) extends eZUser {
+            public $allowed = array( 'en', 'site_admin' );
+            public $asked = array();
+            public function canLoginToSiteAccess( $access )
+            {
+                $this->asked[] = $access['name'];
+                return in_array( $access['name'], $this->allowed, true );
+            }
+        };
+        // the default: sites only
+        $this->inject( array( 'ListAdministrations' => 'disabled', 'AdminSiteAccessList' => array( 'site_admin' ) ) );
+        $this->assertFalse( ezpSiteAccessMenu::settings()['administrations'] );
+        $this->assertSame( array( 'site' => array( 'en', 'de' ) ), self::identifiers( ezpSiteAccessMenu::current() ) );
+        // the user's: de is not theirs; the site the globe opens is not asked for (the globe links to it anyway)
+        $menu = ezpSiteAccessMenu::current( $user );
+        $this->assertSame( 'site', $menu['front']['identifier'] );
+        $this->assertSame( array( 'site' => array( 'en' ) ), self::identifiers( $menu ) );
+        $this->assertNotContains( 'site', $user->asked );
+        // with the administrations, still the user's only
+        $this->inject( array( 'ListAdministrations' => 'enabled', 'AdminSiteAccessList' => array( 'site_admin' ) ) );
+        $this->assertSame( array( 'site' => array( 'en' ), 'admin' => array( 'site_admin' ) ), self::identifiers( ezpSiteAccessMenu::current( $user ) ) );
+        $user->allowed = array();
+        $this->assertFalse( ezpSiteAccessMenu::current( $user )['enabled'], 'nothing besides the site: the globe stays a link' );
+        // the key follows the setting
+        $key = ezpSiteAccessMenu::key();
+        $this->inject( array( 'ListAdministrations' => 'disabled', 'AdminSiteAccessList' => array( 'site_admin' ) ) );
+        $this->assertNotSame( $key, ezpSiteAccessMenu::key(), 'ListAdministrations' );
+        // build() without a check lists every one, with it only the allowed ones
+        $this->assertSame( array( 'site' => array( 'en' ) ),
+                           self::identifiers( ezpSiteAccessMenu::build( array( 'site', 'en', 'de', 'site_admin' ), 'site', '', array( 'site_admin' ),
+                                                                        self::info(), self::url(), function ( $name ) { return $name !== 'de'; }, false ) ) );
+    }
+
     /** The settings of five siteaccesses, as build() gets them */
     private static function info()
     {
@@ -153,7 +192,8 @@ class AdminSiteAccessMenuTest extends PHPUnit\Framework\TestCase
             'HostMatchMapItems' => array(),
             'RemoveSiteAccessIfDefaultAccess' => 'disabled',
         );
-        $settings['site.ini']['AdminSiteAccessMenu'] = $menu;
+        // the administrations listed unless a test asks otherwise (the default, disabled, has its own test)
+        $settings['site.ini']['AdminSiteAccessMenu'] = $menu + array( 'ListAdministrations' => 'enabled' );
         eZINI::injectSettings( $settings );
         $GLOBALS['eZCurrentAccess'] = array( 'name' => $current, 'type' => eZSiteAccess::TYPE_URI, 'uri_part' => array( $current ) );
     }
@@ -162,7 +202,8 @@ class AdminSiteAccessMenuTest extends PHPUnit\Framework\TestCase
     {
         $this->inject( array( 'AdminSiteAccessList' => array( 'site_admin' ) ) );
         $settings = ezpSiteAccessMenu::settings();
-        $this->assertSame( array( 'show' => true, 'list' => 'related', 'hidden' => array(), 'admin' => array( 'site_admin' ) ), $settings );
+        $this->assertSame( array( 'show' => true, 'list' => 'related', 'hidden' => array(), 'admin' => array( 'site_admin' ),
+                                  'administrations' => true ), $settings );
         // List=related without RelatedSiteAccessList: the available ones
         $this->assertSame( array( 'site', 'en', 'de', 'site_admin' ), ezpSiteAccessMenu::names( $settings ) );
 
@@ -320,12 +361,12 @@ class AdminSiteAccessMenuTest extends PHPUnit\Framework\TestCase
     {
         $root = dirname( __DIR__, 3 );
         $source = self::file( 'design/admin4/templates/parts/a4_header_site.tpl' );
-        $this->assertSame( 1, substr_count( $source, 'siteaccess_menu()' ) );
+        $this->assertSame( 1, substr_count( $source, 'siteaccess_menu( $current_user )' ) );
         $this->assertSame( 1, substr_count( $source, 'siteaccess_url()|wash' ) );
         $dir = $root . '/var/tmp/phpunit-header-site-' . getmypid() . '-' . substr( md5( uniqid( '', true ) ), 0, 8 );
         mkdir( $dir, 0777, true );
         $copy = $dir . '/a4_header_site.tpl';
-        file_put_contents( $copy, str_replace( array( 'siteaccess_menu()', 'siteaccess_url()|wash' ), array( '$menu', '$site|wash' ), $source ) );
+        file_put_contents( $copy, str_replace( array( 'siteaccess_menu( $current_user )', 'siteaccess_url()|wash' ), array( '$menu', '$site|wash' ), $source ) );
         $basics = array_key_exists( 'eZSiteBasics', $GLOBALS ) ? array( $GLOBALS['eZSiteBasics'] ) : null;
         $GLOBALS['eZSiteBasics']['no-cache-adviced'] = true;
         try
@@ -413,7 +454,7 @@ class AdminSiteAccessMenuTest extends PHPUnit\Framework\TestCase
         }
         // anonymous pages (the 401 page draws the frame) do not even ask for the list
         $source = self::file( 'design/admin4/templates/parts/a4_header_site.tpl' );
-        $this->assertStringContainsString( "{if \$current_user.is_logged_in}{set \$a4_site_menu = siteaccess_menu()}{/if}", $source );
+        $this->assertStringContainsString( "{if \$current_user.is_logged_in}{set \$a4_site_menu = siteaccess_menu( \$current_user )}{/if}", $source );
     }
 
     /** One template in admin4 and admin4l, inside header cache blocks keyed by siteaccess_menu_key() */
@@ -437,7 +478,7 @@ class AdminSiteAccessMenuTest extends PHPUnit\Framework\TestCase
         $ini = self::file( 'settings/site.ini' );
         $section = substr( $ini, strpos( $ini, "[AdminSiteAccessMenu]\n" ) );
         $section = substr( $section, 0, strpos( $section, "\n[", 1 ) );
-        foreach ( array( "\nShow=enabled\n", "\nList=related\n", "\nHiddenSiteAccessList[]\n", "\nAdminSiteAccessList[]\n" ) as $line )
+        foreach ( array( "\nShow=enabled\n", "\nList=related\n", "\nHiddenSiteAccessList[]\n", "\nAdminSiteAccessList[]\n", "\nListAdministrations=disabled\n" ) as $line )
             $this->assertStringContainsString( $line, $section, trim( $line ) );
     }
 

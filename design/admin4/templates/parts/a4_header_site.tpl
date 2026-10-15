@@ -6,15 +6,17 @@
    in the same window and stays a link on edit pages.
 
    The menu (site.ini [AdminSiteAccessMenu], signed-in users only): the same globe as a disclosure button (aria-expanded,
-   aria-controls), whose list opens the site first and then the other siteaccesses, grouped into sites and
-   administrations, each with its name (SiteName), identifier, locale and address (the operator siteaccess_menu, worked out by
-   ezpSiteAccessURL as the link is); the siteaccess in use is marked with aria-current. One button in the place of the
-   link, so the header takes no more room. admin4.js shows the button and hides the link; without the script the
-   link stays, so the site is one click away either way. The header's cache blocks are keyed by siteaccess_menu_key()
-   (pagelayout.tpl): the list is the installation's, the addresses the request's. *}
+   aria-controls), whose list opens the site first and then the other sites (and, with ListAdministrations=enabled,
+   the administrations as a group of their own), each with its name (SiteName), identifier, locale and address (the
+   operator siteaccess_menu, worked out by ezpSiteAccessURL as the link is); the siteaccess in use is marked with
+   aria-current. Besides the site, only the siteaccesses the signed-in user may log in to are listed (user/login and
+   its SiteAccess limitation; the operator is given $current_user). One button in the place of the link, so the header
+   takes no more room. admin4.js shows the button and hides the link; without the script the link stays, so the site
+   is one click away either way. The header's cache blocks are keyed by siteaccess_menu_key() (pagelayout.tpl) and
+   by the user's role hash: the list is the installation's and the user's, the addresses the request's. *}
 {def $a4_site_label = 'Open the site'|i18n( 'design/admin/pagelayout' )
      $a4_site_menu = hash( 'enabled', false() )}
-{if $current_user.is_logged_in}{set $a4_site_menu = siteaccess_menu()}{/if}
+{if $current_user.is_logged_in}{set $a4_site_menu = siteaccess_menu( $current_user )}{/if}
 <div id="header-site" class="header-site">
     <a class="site-preview a4-header-btn" href="{siteaccess_url()|wash}" title="{$a4_site_label|wash}" aria-label="{$a4_site_label|wash}">
         <span class="a4-icon a4-bi-globe2" aria-hidden="true"></span>

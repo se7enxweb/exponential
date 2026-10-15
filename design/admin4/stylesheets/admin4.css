@@ -833,8 +833,8 @@ body,
 .a4-site-menu a {
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  min-height: 32px;
+  gap: var(--a4-space-1);
+  min-height: var(--a4-control-h);
   padding: var(--a4-space-1) var(--a4-space-3);
   border-radius: var(--a4-radius-s);
   color: var(--a4-ink);
