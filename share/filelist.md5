@@ -881,7 +881,7 @@ f91a366a6abfa6b8a706b154b7aec12c  design/admin4/override/templates/template_look
 03505c55345b654eeb275f3b614a92bf  design/admin4/override/templates/thumbnail/image.tpl
 6971adb19c3c39b21f245c72b7f73305  design/admin4/override/templates/thumbnail/image_browse.tpl
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
-08adb4c58fa9f703e6bebd17fbcbc11d  design/admin4/stylesheets/admin4.css
+d4503966ea787c6813e8b8baf54d4db8  design/admin4/stylesheets/admin4.css
 792f018982f3cd7c9b5201237367c313  design/admin4/stylesheets/components.css
 e907d0bf7b66f4bd6da6699efc5b84a7  design/admin4/stylesheets/content.css
 0368a507892a9eb10f58c7a00b0365bf  design/admin4/stylesheets/core.css
@@ -7132,7 +7132,7 @@ c6ba9bc58f2ca2ab064b5fd06eaca6a6  tests/tests/design/AdminHeaderTest.php
 d509a6b8ea815666ddf165c7f4e7f8bf  tests/tests/design/AdminLegacyControlsTest.php
 581b1a9e22de7c70a61a13e56d219070  tests/tests/design/AdminMenuPolicyListTest.php
 f2f45d0be8a363de1fa024e40ff34fd2  tests/tests/design/AdminNewsletterPreviewTest.php
-8e89276d811c5f6eafd024b76429b078  tests/tests/design/AdminNodeTabsHeightTest.php
+0f2fb014b249d02439af133df0006286  tests/tests/design/AdminNodeTabsHeightTest.php
 a33e9d573eb8e846797e949212bf192e  tests/tests/design/AdminNoticesTest.php
 917f288f4825456962ee3eabc46c89c2  tests/tests/design/AdminPageHeaderTest.php
 0b0c125119b97997ed733c022a93f1b4  tests/tests/design/AdminPhoneMenuTest.php
