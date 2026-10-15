@@ -1105,10 +1105,39 @@ class expCronjobRunner
         $links = $ini->hasVariable( 'ScriptDocumentation', 'Link' ) ? $ini->variable( 'ScriptDocumentation', 'Link' ) : array();
         $key = basename( (string)$name );
         if ( is_array( $links ) && isset( $links[$key] ) && is_scalar( $links[$key] ) && trim( (string)$links[$key] ) !== '' )
-            return strcasecmp( trim( (string)$links[$key] ), 'none' ) === 0 ? '' : self::documentationUrl( $links[$key], $base );
+        {
+            if ( strcasecmp( trim( (string)$links[$key] ), 'none' ) === 0 || !self::documentationShipped( $links[$key], $base, false ) )
+                return '';
+            return self::documentationUrl( $links[$key], $base );
+        }
 
         $tag = self::headerTag( $path, 'link' );
-        return $tag === '' ? '' : self::documentationUrl( $tag, $base );
+        if ( $tag === '' || !self::documentationShipped( $tag, $base, $path !== false && preg_match( '#(^|/)extension/#', (string)$path ) === 1 ) )
+            return '';
+        return self::documentationUrl( $tag, $base );
+    }
+
+    /**
+     * Whether a documentation path may be linked to Exponential's documentation (DOCUMENTATION_BASE): only a file this
+     * installation ships, so a typo or a page that has not been published never becomes a dead link, and never the
+     * path of an extension's script, which names a file of that extension rather than of Exponential. A URL, and a
+     * path after a DocumentationBase the installation set itself, are its own to keep alive.
+     *
+     * @param string $value
+     * @param string $base
+     * @param bool $fromExtension the path comes from the header of an extension's script
+     * @return bool
+     */
+    private static function documentationShipped( $value, $base, $fromExtension )
+    {
+        $value = trim( (string)$value );
+        if ( preg_match( '#^https?://#i', $value ) || rtrim( $base, '/' ) !== rtrim( self::DOCUMENTATION_BASE, '/' ) )
+            return true;
+        if ( $fromExtension )
+            return false;
+        $file = preg_replace( '/#.*$/', '', $value );
+        $root = class_exists( 'eZSys' ) ? rtrim( (string)eZSys::rootDir(), '/' ) : '';
+        return $file !== '' && strpos( $file, '..' ) === false && is_file( ( $root !== '' ? $root : '.' ) . '/' . $file );
     }
 
     /**

@@ -119,4 +119,44 @@ class expCronjobScriptDocumentationTest extends PHPUnit\Framework\TestCase
         }
         $this->assertGreaterThan( 0, $found );
     }
+
+    /**
+     * With Exponential's documentation as the base, a path is linked only when the installation ships that file: a
+     * typo or an unpublished page never becomes a dead link.
+     */
+    public function testAPathThatIsNotShippedGivesNoLink()
+    {
+        $this->links( array() );
+        $this->assertSame( '', expCronjobRunner::scriptDocumentation( 'thing.php', $this->script( " * @link doc/guides/t471-no-such-page.md\n" ) ) );
+        $this->links( array( 'thing.php' => 'doc/guides/t471-no-such-page.md' ) );
+        $this->assertSame( '', expCronjobRunner::scriptDocumentation( 'thing.php', $this->script( " * @description Does a thing\n" ) ) );
+        // An installation's own base is its own to keep alive.
+        $this->links( array( 'thing.php' => 'doc/t471-intranet.md' ), 'https://intranet.example.com/' );
+        $this->assertSame( 'https://intranet.example.com/doc/t471-intranet.md', expCronjobRunner::scriptDocumentation( 'thing.php', $this->script( '' ) ) );
+    }
+
+    /**
+     * The path in an extension's script names a file of that extension, never one of Exponential's documentation; its
+     * URL is kept.
+     */
+    public function testAnExtensionScriptsPathIsNotLinkedToTheKernelDocumentation()
+    {
+        $this->links( array() );
+        $dir = dirname( $this->file ) . '/t471-' . bin2hex( random_bytes( 4 ) ) . '/extension/demo/cronjobs';
+        mkdir( $dir, 0700, true );
+        $file = $dir . '/thing.php';
+        try
+        {
+            file_put_contents( $file, "<?php\n/**\n * @link doc/guides/sessions.md\n */\n" );
+            $this->assertSame( '', expCronjobRunner::scriptDocumentation( 'thing.php', $file ) );
+            file_put_contents( $file, "<?php\n/**\n * @link https://example.com/demo/cronjobs\n */\n" );
+            $this->assertSame( 'https://example.com/demo/cronjobs', expCronjobRunner::scriptDocumentation( 'thing.php', $file ) );
+        }
+        finally
+        {
+            @unlink( $file );
+            for ( $d = $dir, $i = 0; $i < 4; $i++, $d = dirname( $d ) )
+                @rmdir( $d );
+        }
+    }
 }
