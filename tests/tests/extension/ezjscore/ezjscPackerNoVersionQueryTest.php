@@ -26,6 +26,9 @@ class ezjscPackerNoVersionQueryTest extends PHPUnit\Framework\TestCase
         'design/standard/templates/dashboard/community_activity.tpl' => 'ajax.googleapis.com/ajax/services/feed/load?v=1.0',
     );
 
+    /** The extensions the kernel repository ships */
+    const KERNEL_EXTENSIONS = array( 'expservices', 'ezformtoken', 'ezjscore', 'ezoe' );
+
     private $cwd;
 
     protected function setUp(): void
@@ -98,12 +101,13 @@ class ezjscPackerNoVersionQueryTest extends PHPUnit\Framework\TestCase
     public function testNoLinkCarriesAVersionQuery()
     {
         $found = array();
+        // the kernel, its designs and the extensions of the kernel repository; an extension installed from another
+        // repository (composer, a checkout) is that repository's to check
         $dirs = array( 'design', 'kernel', 'lib' );
-        foreach ( glob( 'extension/*', GLOB_ONLYDIR ) as $extension )
+        foreach ( self::KERNEL_EXTENSIONS as $extension )
         {
-            // the extensions of the kernel repository; a copy of another repository's extension is checked there
-            if ( is_dir( "$extension/design" ) || is_dir( "$extension/classes" ) )
-                $dirs[] = $extension;
+            if ( is_dir( "extension/$extension" ) )
+                $dirs[] = "extension/$extension";
         }
         foreach ( $dirs as $dir )
         {

@@ -101,7 +101,7 @@ class Hide extends \Exponential\Runnable\ModuleView
         // viewed in the session may be one of another tab by now.
         $postedReturn = self::postedReturnURI( (int) $NodeID );
         if ( $postedReturn !== false )
-            return $this->viewResult( isset( $Result ) ? $Result : null, $Module->redirectTo( $postedReturn ) );
+            return $this->viewResult( null, $Module->redirectTo( $postedReturn ) );
 
         $hasRedirect = \eZRedirectManager::redirectTo( $Module, false );
         if ( !$hasRedirect )
