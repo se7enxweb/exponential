@@ -373,6 +373,9 @@ class ezjscAjaxContent
             $ret['depth']                = (int) $node->attribute( 'depth' );
             $ret['priority']             = (int) $node->attribute( 'priority' );
             $ret['hidden_status_string'] = $node->attribute( 'hidden_status_string' );
+            // the flags behind it, for a mark that tells hidden from hidden by a parent without parsing the text
+            $ret['is_hidden']            = (bool) $node->attribute( 'is_hidden' );
+            $ret['is_invisible']         = (bool) $node->attribute( 'is_invisible' );
 
             if ( $params['fetchPath'] )
             {

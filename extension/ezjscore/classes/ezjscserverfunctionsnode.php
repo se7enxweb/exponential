@@ -101,6 +101,9 @@ class ezjscServerFunctionsNode extends ezjscServerFunctions
                                                                      'fetchSection' => true,
                                                                      'fetchCreator' => true,
                                                                      'fetchClassIcon' => true ), 'raw' );
+            // the account status of the users among them (disabled, locked), read for the whole page at once
+            if ( class_exists( 'expUserAccountStatus' ) )
+                $list = expUserAccountStatus::addToList( $list );
         }
         else
         {
