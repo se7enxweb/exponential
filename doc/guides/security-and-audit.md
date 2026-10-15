@@ -236,6 +236,10 @@ Expected: an administrator sees every card on their own page; an editor without 
 `design/admin4/templates/user/edit.tpl` (the same file in `design/admin`), its style `user/exp_style.tpl`, and the
 overview `expUserAccountOverview` (tested in `tests/tests/kernel/classes/user/expUserAccountOverviewTest.php`).
 
+For all accounts at once, **Users > Check user accounts** (`user/hygiene`) lists those never signed in, not seen
+for N days, disabled, locked, orphaned or sharing an e-mail address, disables, enables or unlocks the ticked ones
+and exports the list as CSV: [Check user accounts](../features/6.0/user-hygiene.md).
+
 ## 7. One account per login (2 minutes)
 
 Signing in looks an account up by its login without regard to case, so two accounts with the same login (or with

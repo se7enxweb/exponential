@@ -671,8 +671,9 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
         $this->assertSame( $ini['Topmenu_users']['URL']['default'], $mega['Links']['accounts'] );
         $this->assertSame( $ini['Topmenu_users']['PolicyList'], $mega['PolicyList_accounts'] );
         $this->assertSame( $ini['Leftmenu_setup']['PolicyList_sessions'], $mega['PolicyList_sessions'], 'the policy of the Setup menu\'s link' );
-        // the left menu of the tab is unchanged: its two links, no groups
-        $this->assertSame( array( 'roles_and_policies' => 'role/list', 'unactivated' => 'user/unactivated' ), $ini['Leftmenu_user']['Links'] );
+        // the left menu of the tab: its links (Check user accounts since user/hygiene), no groups
+        $this->assertSame( array( 'roles_and_policies' => 'role/list', 'unactivated' => 'user/unactivated', 'user_hygiene' => 'user/hygiene' ),
+                           $ini['Leftmenu_user']['Links'] );
         $this->assertArrayNotHasKey( 'Groups', $ini['Leftmenu_user'] );
         $this->assertStringContainsString( "{include uri='design:parts/ini_menu.tpl' ini_section='Leftmenu_user' i18n_hash=", self::read( 'design/admin4/templates/parts/user/menu.tpl' ) );
     }
