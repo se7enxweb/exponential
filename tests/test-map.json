@@ -156,7 +156,8 @@
     ],
     "design/admin4/templates/page_topmenu.tpl": [
       "tests/tests/design/AdminStylingRulesTest.php",
-      "tests/tests/design/AdminHeaderTest.php"
+      "tests/tests/design/AdminHeaderTest.php",
+      "tests/tests/design/AdminLogoTest.php"
     ],
     "design/admin4/templates/parts/a4_header_user.tpl": [
       "tests/tests/design/AdminHeaderTest.php"
@@ -363,7 +364,8 @@
       "tests/tests/design/AdminPhoneMenuTest.php",
       "tests/tests/design/AdminNodeTabsHeightTest.php",
       "tests/tests/design/AdminVisibilityStatusTest.php",
-      "tests/tests/design/AdminResponsiveTest.php"
+      "tests/tests/design/AdminResponsiveTest.php",
+      "tests/tests/design/AdminLogoTest.php"
     ],
     "extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe_tinymce8.tpl": [
       "tests/tests/design/AdminEditBarTest.php"
@@ -503,6 +505,21 @@
     ],
     "kernel/user/function_definition.php": [
       "tests/tests/kernel/classes/user/expUserAccountStatusTest.php"
+    ],
+    "design/admin4/templates/parts/a4_logo.tpl": [
+      "tests/tests/design/AdminLogoTest.php",
+      "tests/tests/design/AdminIconsTest.php"
+    ],
+    "design/admin4/templates/loginpagelayout.tpl": [
+      "tests/tests/design/AdminLogoTest.php"
+    ],
+    "design/admin4l/templates/explayouts/block/admin_logo.tpl": [
+      "tests/tests/design/AdminLogoTest.php",
+      "tests/tests/design/AdminIconsTest.php",
+      "tests/tests/design/AdminPageHeaderTest.php"
+    ],
+    "design/admin4/images/admin4/exponential-*.svg": [
+      "tests/tests/design/AdminLogoTest.php"
     ]
   },
   "generated": {

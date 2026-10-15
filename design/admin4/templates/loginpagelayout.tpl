@@ -21,7 +21,7 @@
 <main class="a4-login">
     <section class="a4-login-side">
         <header class="a4-login-top">
-            <a class="a4-login-logo" href={'/'|ezurl} aria-label="Exponential"></a>
+            <a class="a4-login-logo" href={'/'|ezurl} aria-label="Exponential">{include uri='design:parts/a4_logo.tpl'}</a>
         </header>
 
         <div class="a4-login-box">
