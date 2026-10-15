@@ -139,6 +139,18 @@ $ViewList['hygiene'] = array(
     'params' => array(),
 );
 
+// Deactivate and move / Reactivate and move back (doc/features/6.0/user-hygiene.md): disables an account and
+// brings its locations together in the group for deactivated accounts, remembering where it was, or puts it back.
+// Off unless site.ini [UserSettings] DeactivateAndMove=enabled; POST only, after a confirmation, each account
+// needing content/edit on it and the rights to move it (see kernel/private/classes/views/user/deactivate.php)
+$ViewList['deactivate'] = array(
+    'functions' => array( 'deactivate' ),
+    'script' => 'deactivate.php',
+    'ui_context' => 'administration',
+    'default_navigation_part' => 'ezusernavigationpart',
+    'params' => array(),
+);
+
 $SiteAccess = array(
     'name'=> 'SiteAccess',
     'values'=> array(),
@@ -155,5 +167,6 @@ $FunctionList['register'] = array();
 $FunctionList['selfedit'] = array();
 $FunctionList['activation'] = array();
 $FunctionList['hygiene'] = array();
+$FunctionList['deactivate'] = array();
 
 ?>

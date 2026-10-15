@@ -12992,6 +12992,20 @@
     <message>
         <source>Translate into %language</source>
         <translation>In %language übersetzen</translation>
+        <source>Deactivate and move</source>
+        <translation>Deaktivieren und verschieben</translation>
+    </message>
+    <message>
+        <source>Reactivate and move back</source>
+        <translation>Reaktivieren und zurückverschieben</translation>
+    </message>
+    <message>
+        <source>Disable this account and move it to the group of deactivated users, remembering where it was. Nothing is removed.</source>
+        <translation>Dieses Konto deaktivieren und in die Gruppe der deaktivierten Benutzer verschieben; wo es war, wird gemerkt. Nichts wird entfernt.</translation>
+    </message>
+    <message>
+        <source>Enable this account and move it back to the locations it had.</source>
+        <translation>Dieses Konto aktivieren und an seine früheren Platzierungen zurückverschieben.</translation>
     </message>
 </context>
 <context>
@@ -18207,6 +18221,12 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Open the package wizard…</source>
         <translation>Paket-Assistenten öffnen…</translation>
+        <source>Deactivate and move (user accounts)</source>
+        <translation>Deaktivieren und verschieben (Benutzerkonten)</translation>
+    </message>
+    <message>
+        <source>Reactivate and move back (user accounts)</source>
+        <translation>Reaktivieren und zurückverschieben (Benutzerkonten)</translation>
     </message>
 </context>
 <context>
@@ -19796,6 +19816,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>check user accounts, and disable, enable and unlock them</source>
         <translation>Benutzerkonten prüfen sowie deaktivieren, aktivieren und entsperren</translation>
+    </message>
+    <message>
+        <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
+        <translation>Benutzerkonten deaktivieren und in die Gruppe der deaktivierten Benutzer verschieben sowie zurückverschieben</translation>
     </message>
 </context>
 <context>
@@ -40770,6 +40794,213 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     <message>
         <source>User ID</source>
         <translation>Benutzer-ID</translation>
+    </message>
+    <message>
+        <source>Deactivate and move the ticked accounts</source>
+        <translation>Angekreuzte Konten deaktivieren und verschieben</translation>
+    </message>
+    <message>
+        <source>Reactivate and move back the ticked accounts</source>
+        <translation>Angekreuzte Konten reaktivieren und zurückverschieben</translation>
+    </message>
+    <message>
+        <source>deactivated</source>
+        <translation>deaktiviert</translation>
+    </message>
+    <message>
+        <source>Moved here by Deactivate and move; Reactivate and move back puts it back.</source>
+        <translation>Durch „Deaktivieren und verschieben“ hierher verschoben; „Reaktivieren und zurückverschieben“ stellt es zurück.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/deactivate</name>
+    <message>
+        <source>Deactivate and move</source>
+        <translation>Deaktivieren und verschieben</translation>
+    </message>
+    <message>
+        <source>Reactivate and move back</source>
+        <translation>Reaktivieren und zurückverschieben</translation>
+    </message>
+    <message>
+        <source>Deactivated users</source>
+        <translation>Deaktivierte Benutzer</translation>
+    </message>
+    <message>
+        <source>Deactivated users (created now)</source>
+        <translation>Deaktivierte Benutzer (wird jetzt angelegt)</translation>
+    </message>
+    <message>
+        <source>Disabled accounts, kept instead of removed. No roles; hidden.</source>
+        <translation>Deaktivierte Konten, aufbewahrt statt gelöscht. Ohne Rollen; versteckt.</translation>
+    </message>
+    <message>
+        <source>the anonymous user, the administrator account or you</source>
+        <translation>der anonyme Benutzer, das Administratorkonto oder Sie selbst</translation>
+    </message>
+    <message>
+        <source>not found, or not visible to you</source>
+        <translation>nicht gefunden oder für Sie nicht sichtbar</translation>
+    </message>
+    <message>
+        <source>not a user account</source>
+        <translation>kein Benutzerkonto</translation>
+    </message>
+    <message>
+        <source>you may not edit, move or remove them, or not place them where they go</source>
+        <translation>Sie dürfen sie nicht bearbeiten, verschieben oder entfernen oder nicht dort ablegen, wohin sie kommen</translation>
+    </message>
+    <message>
+        <source>without a location</source>
+        <translation>ohne Platzierung</translation>
+    </message>
+    <message>
+        <source>a location has sub-items</source>
+        <translation>eine Platzierung hat Unterelemente</translation>
+    </message>
+    <message>
+        <source>the group of deactivated users is missing</source>
+        <translation>die Gruppe der deaktivierten Benutzer fehlt</translation>
+    </message>
+    <message>
+        <source>never activated: activate them under Unactivated users</source>
+        <translation>nie aktiviert: unter „Nicht aktivierte Benutzer“ aktivieren</translation>
+    </message>
+    <message>
+        <source>neither a former location nor the default user group can take them</source>
+        <translation>weder eine frühere Platzierung noch die Standard-Benutzergruppe kann sie aufnehmen</translation>
+    </message>
+    <message>
+        <source>already in that state</source>
+        <translation>bereits in diesem Zustand</translation>
+    </message>
+    <message>
+        <source>The node set in site.ini [UserSettings] DeactivatedUserGroupNodeID does not exist. Correct the setting or leave it empty.</source>
+        <translation>Der in site.ini [UserSettings] DeactivatedUserGroupNodeID eingetragene Knoten existiert nicht. Korrigieren Sie die Einstellung oder lassen Sie sie leer.</translation>
+    </message>
+    <message>
+        <source>An object with the remote id of the group of deactivated users exists but has no published location. Publish it, or set [UserSettings] DeactivatedUserGroupNodeID.</source>
+        <translation>Ein Objekt mit der Remote-ID der Gruppe der deaktivierten Benutzer existiert, hat aber keine veröffentlichte Platzierung. Veröffentlichen Sie es oder setzen Sie [UserSettings] DeactivatedUserGroupNodeID.</translation>
+    </message>
+    <message>
+        <source>The group of deactivated users does not exist yet, and you may not create it (a user group below the Users node). Ask an administrator to create it, for instance with bin/php/ezcreatedeactivatedusergroup.php.</source>
+        <translation>Die Gruppe der deaktivierten Benutzer gibt es noch nicht, und Sie dürfen sie nicht anlegen (eine Benutzergruppe unter dem Knoten „Benutzer“). Bitten Sie eine Administratorin oder einen Administrator, sie anzulegen, etwa mit bin/php/ezcreatedeactivatedusergroup.php.</translation>
+    </message>
+    <message>
+        <source>The group of deactivated users could not be created. Nothing was changed.</source>
+        <translation>Die Gruppe der deaktivierten Benutzer konnte nicht angelegt werden. Es wurde nichts geändert.</translation>
+    </message>
+    <message>
+        <source>Deactivate and move %count accounts?</source>
+        <translation>%count Konten deaktivieren und verschieben?</translation>
+    </message>
+    <message>
+        <source>Reactivate and move back %count accounts?</source>
+        <translation>%count Konten reaktivieren und zurückverschieben?</translation>
+    </message>
+    <message>
+        <source>Each account is disabled, so it cannot sign in, and its sessions end. Its locations are brought together in the group of deactivated users, which has no roles and is hidden; where it was is remembered. Its content and the roles assigned to the account itself stay. Nothing is removed.</source>
+        <translation>Jedes Konto wird deaktiviert, kann sich also nicht mehr anmelden, und seine Sitzungen enden. Seine Platzierungen werden in der Gruppe der deaktivierten Benutzer zusammengeführt, die keine Rollen hat und versteckt ist; wo es war, wird gemerkt. Seine Inhalte und die dem Konto selbst zugewiesenen Rollen bleiben. Nichts wird entfernt.</translation>
+    </message>
+    <message>
+        <source>Each account is enabled and moved back to the locations it had. A former location that no longer exists or that you may not use is left out; when the main one is, the account goes to the default user group.</source>
+        <translation>Jedes Konto wird aktiviert und an seine früheren Platzierungen zurückverschoben. Eine frühere Platzierung, die es nicht mehr gibt oder die Sie nicht nutzen dürfen, wird ausgelassen; trifft das die Hauptplatzierung, kommt das Konto in die Standard-Benutzergruppe.</translation>
+    </message>
+    <message>
+        <source>%selected selected; each is checked again when you confirm.</source>
+        <translation>%selected ausgewählt; jedes wird beim Bestätigen erneut geprüft.</translation>
+    </message>
+    <message>
+        <source>Accounts</source>
+        <translation>Konten</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Name</translation>
+    </message>
+    <message>
+        <source>In the groups now</source>
+        <translation>Jetzt in den Gruppen</translation>
+    </message>
+    <message>
+        <source>Goes to</source>
+        <translation>Kommt nach</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(ohne Namen)</translation>
+    </message>
+    <message>
+        <source>default user group: the former main location is gone or not yours to use</source>
+        <translation>Standard-Benutzergruppe: die frühere Hauptplatzierung fehlt oder ist für Sie nicht nutzbar</translation>
+    </message>
+    <message>
+        <source>%count former locations left out (gone or not yours to use)</source>
+        <translation>%count frühere Platzierungen ausgelassen (fehlen oder für Sie nicht nutzbar)</translation>
+    </message>
+    <message>
+        <source>Left out:</source>
+        <translation>Ausgelassen:</translation>
+    </message>
+    <message>
+        <source>%count %reason</source>
+        <translation>%count: %reason</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abbrechen</translation>
+    </message>
+    <message>
+        <source>%count accounts deactivated and moved.</source>
+        <translation>%count Konten deaktiviert und verschoben.</translation>
+    </message>
+    <message>
+        <source>%count accounts reactivated and moved back.</source>
+        <translation>%count Konten reaktiviert und zurückverschoben.</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>und %count weitere</translation>
+    </message>
+    <message>
+        <source>%count left out: %reason</source>
+        <translation>%count ausgelassen: %reason</translation>
+    </message>
+    <message>
+        <source>%count could not be changed; nothing was changed for them</source>
+        <translation>%count konnten nicht geändert werden; für sie wurde nichts geändert</translation>
+    </message>
+    <message>
+        <source>%count went to the default user group, as their former main location is gone or not yours to use</source>
+        <translation>%count kamen in die Standard-Benutzergruppe, da ihre frühere Hauptplatzierung fehlt oder für Sie nicht nutzbar ist</translation>
+    </message>
+    <message>
+        <source>%count former locations were left out (gone or not yours to use)</source>
+        <translation>%count frühere Platzierungen wurden ausgelassen (fehlen oder für Sie nicht nutzbar)</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Zurück</translation>
+    </message>
+    <message>
+        <source>Retire user accounts instead of removing them: users never go to the trash, so removing one cannot be undone. Deactivate and move disables an account and brings its locations together in the group of deactivated users; Reactivate and move back puts it back where it was.</source>
+        <translation>Benutzerkonten stilllegen statt entfernen: Benutzer kommen nie in den Papierkorb, Entfernen lässt sich also nicht rückgängig machen. „Deaktivieren und verschieben“ deaktiviert ein Konto und führt seine Platzierungen in der Gruppe der deaktivierten Benutzer zusammen; „Reaktivieren und zurückverschieben“ stellt es wieder dorthin, wo es war.</translation>
+    </message>
+    <message>
+        <source>No account was selected. Tick the accounts first.</source>
+        <translation>Es wurde kein Konto ausgewählt. Kreuzen Sie zuerst die Konten an.</translation>
+    </message>
+    <message>
+        <source>Choose the accounts on Users &gt; Check user accounts, or use the button on a user’s page.</source>
+        <translation>Wählen Sie die Konten unter Benutzer &gt; Benutzerkonten prüfen aus oder nutzen Sie den Knopf auf der Seite eines Benutzers.</translation>
+    </message>
+    <message>
+        <source>Check user accounts</source>
+        <translation>Benutzerkonten prüfen</translation>
+    </message>
+    <message>
+        <source>was disabled already before; enabled now</source>
+        <translation>war schon vorher deaktiviert; wird jetzt aktiviert</translation>
     </message>
 </context>
 <context>

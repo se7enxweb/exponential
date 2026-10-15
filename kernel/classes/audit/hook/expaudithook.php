@@ -39,6 +39,8 @@ class expAuditHook
     public static $verbs = array(
         'access.permission.refused' => 'access',
         'access.token.refused' => 'post',
+        'access.user.deactivate_move' => 'disable',
+        'access.user.deactivated_group.create' => 'create',
         'access.user.email.change' => 'change',
         'access.user.login.change' => 'change',
         'access.user.password.change' => 'change',
@@ -46,6 +48,7 @@ class expAuditHook
         'access.user.password.reset' => 'reset',
         'access.user.password.reset.failed' => 'reset',
         'access.user.password.reset.request' => 'request',
+        'access.user.reactivate_move' => 'enable',
         'access.view.sensitive' => 'read',
         'commerce.order.delete' => 'remove',
         'commerce.order.item.remove' => 'remove',
