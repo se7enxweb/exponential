@@ -306,9 +306,10 @@ side, at least 24px high, and under forced colors an outline in `Highlight` mark
 
 The node view's actions have an Upload button between Edit and Move (since 2026-10-15). It is a link,
 `<a class="a4-btn a4-node-upload">` with the Bootstrap Icon `.a4-bi-upload` and the text "Upload" (ger-DE
-"Hochladen"), to ezmultiupload's upload page for the node, `ezmultiupload/upload/<node id>`. One template draws it
-for `design/admin` and `admin4` (`admin4l` falls back to admin4): `design/admin/templates/node/view/upload_button.tpl`,
-included by `node/view/full.tpl` and `node/view/a4_full_body.tpl`. exp_adminui puts the same link first in its "..."
+"Hochladen"), to ezmultiupload's upload page for the node, `ezmultiupload/upload/<node id>`. One template draws it,
+`node/view/upload_button.tpl`, in identical copies in `design/admin` and `design/admin4` (admin4 is self-contained;
+`admin4l` falls back to admin4), included by `node/view/full.tpl` and `node/view/a4_full_body.tpl`; the icon is on
+`design.ini [AdminDesignSettings] IconList[]`. exp_adminui puts the same link first in its "..."
 menu (`window_preview_toolbar.tpl`).
 
 It shows only when uploading is possible there for the current user: the module `ezmultiupload/upload` is enabled and

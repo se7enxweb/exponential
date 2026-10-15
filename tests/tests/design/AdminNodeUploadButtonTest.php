@@ -179,6 +179,9 @@ class AdminNodeUploadButtonTest extends PHPUnit\Framework\TestCase
             $this->assertLessThan( strpos( $source, 'name="MoveNodeButton"' ), $at, "$path: before Move" );
         }
         $this->assertFalse( is_file( self::root() . '/design/admin4l/templates/node/view/full.tpl' ), 'admin4l takes admin4\'s node view' );
+        $this->assertSame( self::read( self::BUTTON ), self::read( 'design/admin4/templates/node/view/upload_button.tpl' ),
+                           'admin4 is self-contained: its copy of the button is the same as design/admin\'s' );
+        $this->assertContains( 'IconList[]=upload', array_map( 'trim', explode( "\n", self::read( 'settings/design.ini' ) ) ), 'the icon is listed in design.ini' );
 
         $adminui = 'extension/exp_adminui/design/adminui/templates/window_preview_toolbar.tpl';
         if ( !is_file( self::root() . '/' . $adminui ) )

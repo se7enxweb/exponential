@@ -3,7 +3,8 @@
    when the ezmultiupload module is enabled and reachable here and fetch( 'ezmultiupload', 'can_upload' ) says the
    current user can upload at this node (expMultiuploadService::canUploadAt(): the ezmultiupload/upload policy,
    read and content/create access, a container or a configured upload class or node). Published objects only, so a
-   draft or the edit pages never show it. Styled by .a4-btn of components.css, the icon from Bootstrap Icons. *}
+   draft or the edit pages never show it. Styled by .a4-btn of components.css, the icon from Bootstrap Icons.
+   design/admin4 has an identical copy (admin4 is self-contained; AdminNodeUploadButtonTest keeps them equal). *}
 {def $exp_can_upload = false()}
 {if and( is_set( $node.node_id ), eq( $node.object.status, 1 ) )}
     {if ezmodule( 'ezmultiupload/upload' )}{set $exp_can_upload = fetch( 'ezmultiupload', 'can_upload', hash( 'node_id', $node.node_id ) )}{/if}
