@@ -836,9 +836,9 @@ c7f5a7908e2046d7fa3fc4484a699029  design/admin4/images/3/ez_logo_big_community.p
 0b05c3e202483939c9bb48b5074456d2  design/admin4/images/3/logo_separator_sprite.png
 4f5f8a4dbd784eaa874ee59858290119  design/admin4/images/3/sprite.png
 bcf679a7e4ad0ec9dd7ec8995d653bdf  design/admin4/images/3/textile.png
-c738f5a343b0e7b3a701a32096f42019  design/admin4/images/admin4/exponential-logo.svg
+598806a0a5efa0cf87d75feee0c2bdcf  design/admin4/images/admin4/exponential-logo.svg
 7beaea5dd4fb0997461481955c418e3e  design/admin4/images/admin4/exponential-mark.svg
-c7f5a7908e2046d7fa3fc4484a699029  design/admin4/images/admin4/logo-light.png
+3fcd006dd204213b5b2926f8f0d04a18  design/admin4/images/admin4/logo-light.png
 fd0daf83ef4fe130485b7b2c883742bb  design/admin4/images/assign-disabled.gif
 fd0daf83ef4fe130485b7b2c883742bb  design/admin4/images/assign.gif
 53571b83d6e6b4cc099fd8954b034402  design/admin4/images/bg_content_tree_li.gif
@@ -897,7 +897,7 @@ f91a366a6abfa6b8a706b154b7aec12c  design/admin4/override/templates/template_look
 03505c55345b654eeb275f3b614a92bf  design/admin4/override/templates/thumbnail/image.tpl
 6971adb19c3c39b21f245c72b7f73305  design/admin4/override/templates/thumbnail/image_browse.tpl
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
-5963c2f5a0de14e11218dcf642012c75  design/admin4/stylesheets/admin4.css
+799c90aead129f26ff6135763bd8bcf6  design/admin4/stylesheets/admin4.css
 30a645c1835fdad5b8f8a3801999d92e  design/admin4/stylesheets/components.css
 e907d0bf7b66f4bd6da6699efc5b84a7  design/admin4/stylesheets/content.css
 0368a507892a9eb10f58c7a00b0365bf  design/admin4/stylesheets/core.css
@@ -1157,7 +1157,7 @@ f0b52f21d5e9f1e7999667614bf82400  design/admin4/templates/page_toppath.tpl
 2e0a2e6b1dc8d1d5b3ab5b3447dbf8ba  design/admin4/templates/pagelayout.tpl
 ea60339f8ba03a048baf3c09f52c3cc3  design/admin4/templates/parts/a4_environment_badge.tpl
 4c291d409f8f98263403597d29a50f61  design/admin4/templates/parts/a4_header_user.tpl
-f503af6ae9185a33fb995ae6597394a5  design/admin4/templates/parts/a4_logo.tpl
+302762e589dd7ade916c47265ed2955f  design/admin4/templates/parts/a4_logo.tpl
 c6e590ba7d99e6da8a62d5406e296489  design/admin4/templates/parts/a4_mega_menu.tpl
 cfdf95f46e6d8fc305784481a4055683  design/admin4/templates/parts/a4_mega_menu_check.tpl
 f3e3cfde385fe96ecd6534c0437066a9  design/admin4/templates/parts/a4_navigation_part.tpl
@@ -1665,7 +1665,7 @@ bae298c4fc11f236235bf3de15e76b75  design/standard/fonts/sketchy/sketchy.txt
 e6b581f667859a5e692897896410ecf8  design/standard/images/16x16.gif
 0b8d0e3d4697ce82203ad3a3adfdc22f  design/standard/images/1x1.gif
 ae559d3f1ee982a47520c2bf7bbb16bc  design/standard/images/32x32.gif
-d65195e9362c6dfb8a0f000e8d71c821  design/standard/images/Exponential-logo.gif
+d6a7d3fd75332352a3553967af0ab4fb  design/standard/images/Exponential-logo.gif
 4fb28010c53c6836057cc176a89fcdac  design/standard/images/add.png
 cfe0e2eb688b924aab38ddf72973025d  design/standard/images/addminimrk.gif
 d35d66ffab0fbccef657c348ef92d8db  design/standard/images/asc-transp.gif
@@ -1746,7 +1746,7 @@ aecda1649a1e5c4de420a503b66e0b42  design/standard/images/poll-bg.gif
 c583c19967f14ac892a0d7a6614e5047  design/standard/images/revert.png
 4bbaec43789d4d1c90c7225cd6d65409  design/standard/images/rss-icon.gif
 30f74dba6a819febab5c517f0abf05b5  design/standard/images/search.png
-c7f5a7908e2046d7fa3fc4484a699029  design/standard/images/setup/2/Exponential-logo-title.png
+3fcd006dd204213b5b2926f8f0d04a18  design/standard/images/setup/2/Exponential-logo-title.png
 9ec372f97b66fb35cc744f5042589ade  design/standard/images/setup/2/ez-ecosystem-virtuous-circle.png
 c5ef1c15fdd833aee584a94b09b8aea5  design/standard/images/setup/eZ_setup_bg_image.png
 b40edc94257b731a9ef1d512fb627e5f  design/standard/images/setup/eZ_setup_bottom_left_corner.png
@@ -3028,7 +3028,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-155d6fcb1ef60b01e36f57e62636e87a  doc/changelogs/6.0/6.0.15.md
+09930ecb07be52f25d1fefea3d7d7ff4  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md

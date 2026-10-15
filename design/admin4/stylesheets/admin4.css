@@ -174,7 +174,7 @@ body,
 }
 /* The logo (parts/a4_logo.tpl): an inline drawing in the link's color, so the letters are dark on the light header and
    light on the dark one; the box stays 32px high, as the old image's was, so the rows keep their heights. 24px high,
-   the full logo is 158px wide (388 x 59). */
+   the full logo is 152px wide (380 x 60). */
 #header-logo .brand {
   display: inline-flex;
   align-items: center;
@@ -184,7 +184,7 @@ body,
   color: var(--a4-ink);
 }
 .a4-logo { display: block; flex: none; }
-.a4-logo-full { width: calc(24px * 388 / 59); height: 24px; }
+.a4-logo-full { width: calc(24px * 380 / 60); height: 24px; }
 .a4-logo-mark { display: none; width: 28px; height: 28px; }
 /* the inner square of the back mark: white on light pages, as in the artwork; on dark pages the surface color, so the
    mark keeps its drawing (a light outline around a dark square, the orange square in front) instead of a white
@@ -1742,7 +1742,7 @@ html:has(body.a4-login-page) { background: var(--a4-surface); }
 .a4-login-side { display: flex; flex-direction: column; padding: var(--a4-space-5) var(--a4-space-6); }
 .a4-login-top { flex: 0 0 auto; }   /* a row: the logo and the environment badge (see the badge's rules) */
 .a4-login-logo { display: inline-flex; align-items: center; height: 40px; color: var(--a4-ink); }   /* parts/a4_logo.tpl */
-.a4-login-logo .a4-logo-full { width: calc(28px * 388 / 59); height: 28px; }
+.a4-login-logo .a4-logo-full { width: calc(28px * 380 / 60); height: 28px; }
 .a4-login-box { flex: 1 0 auto; display: flex; flex-direction: column; justify-content: center; width: 100%; max-width: 380px; margin: 0 auto; padding: var(--a4-space-6) 0; }
 .a4-login-legal { flex: 0 0 auto; text-align: center; font-size: var(--a4-text-xs); color: var(--a4-muted); }
 .a4-login-legal p { margin: var(--a4-space-1) 0; }
