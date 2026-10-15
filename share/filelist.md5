@@ -1122,7 +1122,7 @@ b4ee9e3d76d109ea99e37d999b681712  design/admin4/templates/pagelayout.tpl
 2891f454853f3b2f2cac2a94173e257a  design/admin4/templates/parts/audit/menu.tpl
 e6fe56c836e1e8315b4d7aa9e9fb4b74  design/admin4/templates/parts/audit_timeline.tpl
 b6f84f3260ba7ce48bcf3d4aa5231b95  design/admin4/templates/parts/content/menu.tpl
-721ea9c4f4049f11d7e164ea55945e81  design/admin4/templates/parts/ini_menu.tpl
+d27ab3987b02b91da5cae15926318cec  design/admin4/templates/parts/ini_menu.tpl
 3dff8ecf3c880bf2261cc89a9b39d8bd  design/admin4/templates/parts/ini_menu_items.tpl
 e36329025b09f023b15222452941ff02  design/admin4/templates/parts/ini_menu_tiles.tpl
 5e0f6d3ec0e18268701f66051d24f387  design/admin4/templates/parts/language_badge.tpl
@@ -3297,7 +3297,7 @@ c4809a3b611073bdcad4b38e9ea7dd6d  doc/features/6.0/additional-extension-director
 8ee6875c6693489d567c309177b49b81  doc/features/6.0/admin-list-paging.md
 41099ca247392d7ed963caa4b857e51c  doc/features/6.0/admin3-responsive-admin.md
 98b1eb658a2475fc31af9b9cbfaba709  doc/features/6.0/admin3-sidebar-width-and-font-size.md
-c0a031cf825057d46689cbd7f31e9446  doc/features/6.0/admin4-design.md
+021c814c6c5209f3aeea4b784183297f  doc/features/6.0/admin4-design.md
 7d8b3d248d27baa55bbf5f7f22040693  doc/features/6.0/admin4l.md
 cb077d1f37f8e8811c377ede4bc99357  doc/features/6.0/adminneo-database-manager.md
 ae7d698fad5f10287ad37ade2f97d8aa  doc/features/6.0/audit-trail.md
@@ -7097,7 +7097,7 @@ a33e9d573eb8e846797e949212bf192e  tests/tests/design/AdminNoticesTest.php
 3ae246adfa4802ce5ad29a65861f2827  tests/tests/design/AdminScriptsTest.php
 fba3ae0ecf105bfaa378adaaf45cb2f7  tests/tests/design/AdminSearchTest.php
 2267a66a813a4949572649ef13219314  tests/tests/design/AdminSelfContainedTest.php
-1131c01ed9166551b1afb130134028ba  tests/tests/design/AdminSetupOverviewTest.php
+7233cfc511e50ab47f9d5ea8a34b1eb0  tests/tests/design/AdminSetupOverviewTest.php
 93c3fcaecb5ead1aa5a10e5a8fe24d27  tests/tests/design/AdminStylingRulesTest.php
 850f08505510556f8649d66b26af8a93  tests/tests/design/AdminThemeSwitchTest.php
 d3aa163841a3b7ef9a8ce4048f7b1980  tests/tests/design/AdminTimelineTest.php

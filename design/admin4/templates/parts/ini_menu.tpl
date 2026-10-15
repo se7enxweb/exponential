@@ -187,7 +187,11 @@
                 {if $hidden_links|contains( $link_key )}{continue}{/if}
                 {* a link named in the group of a tab that is in the top menu *}
                 {if $tab_links|contains( $link_key )}{continue}{/if}
-            {elseif $section_hidden|contains( $link_key )}{continue}{/if}
+            {elseif $section_hidden|contains( $link_key )}
+                {* hidden here as in its own menu: a Setup link to the same address stays out as well *}
+                {set $added_urls = $added_urls|append( $link_url|trim( '/' ) )}
+                {continue}
+            {/if}
             {set $item_key = cond( $section_group, concat( $section_group, '-', $link_key ), $link_key )}
             {if is_set( $name_list[ $link_key ] )}
                 {if $section_group}

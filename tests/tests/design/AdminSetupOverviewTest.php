@@ -447,6 +447,7 @@ class AdminSetupOverviewTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( "ezini_hasvariable( \$section, concat( 'PolicyList_', \$link_key ), 'menu.ini' )", $menu );
         $this->assertStringContainsString( 'eq( $item.group, $group )', $menu, 'an added link is in its group' );
         $this->assertStringContainsString( '$added_urls|contains( $item.url|trim( \'/\' ) )|not', $menu, 'a Setup link the added menu has too shows once' );
+        $this->assertMatchesRegularExpression( '/\{elseif \$section_hidden\|contains\( \$link_key \)\}\s*\{\* [^*]+\*\}\s*\{set \$added_urls = \$added_urls\|append\( \$link_url\|trim\( \'\/\' \) \)\}/', $menu, 'a link hidden in the added menu keeps the Setup link to its address out' );
     }
 
     /**
@@ -458,6 +459,7 @@ class AdminSetupOverviewTest extends PHPUnit\Framework\TestCase
         $root = dirname( __DIR__, 3 );
         $ini = eZINI::instance( 'menu.ini' );
         $hidden = $ini->hasVariable( 'TopAdminMenu', 'HiddenTabs' ) ? $ini->variable( 'TopAdminMenu', 'HiddenTabs' ) : null;
+        $tabs = $ini->variable( 'TopAdminMenu', 'Tabs' );
         // not compiled: a compiled template holds the menu.ini values it was compiled with
         $basics = array_key_exists( 'eZSiteBasics', $GLOBALS ) ? array( $GLOBALS['eZSiteBasics'] ) : null;
         $GLOBALS['eZSiteBasics']['no-cache-adviced'] = true;
@@ -472,6 +474,8 @@ class AdminSetupOverviewTest extends PHPUnit\Framework\TestCase
         };
         try
         {
+            // the tabs of settings/menu.ini, whatever a siteaccess or extension of this installation restates
+            $ini->setVariable( 'TopAdminMenu', 'Tabs', self::iniSection( 'TopAdminMenu' )['Tabs'] );
             $ini->setVariable( 'TopAdminMenu', 'HiddenTabs', array() );
             $this->assertSame( 'expauditnavigationpart', $part( 'expauditnavigationpart' ), 'the audit tab is shown: its pages are its own' );
             $ini->setVariable( 'TopAdminMenu', 'HiddenTabs', array( 'audit', 'design' ) );
@@ -483,6 +487,7 @@ class AdminSetupOverviewTest extends PHPUnit\Framework\TestCase
         }
         finally
         {
+            $ini->setVariable( 'TopAdminMenu', 'Tabs', $tabs );
             if ( $hidden === null )
                 $ini->removeSetting( 'TopAdminMenu', 'HiddenTabs' );
             else

@@ -288,10 +288,12 @@ well for the core tabs; an extension's tab is left out only with `HiddenTabs[]`.
   (`PolicyList[]`, `PolicyList_<key>[]`, `CheckViewAccess`, the audit channels the user may not read) and tile
   settings (`LinkIcons[]`, `LinkDescriptions[]`, `LinkFigureTemplates[]` of that section, the descriptions translated
   in its context, e.g. `design/admin/parts/audit/menu`). A link an extension adds to `[Leftmenu_audit]` is in the
-  group too. The Design group starts with the Design tab's own page, `Links[design_node]=content/view/full/58` in
+  group too; give it `LinkNames[<key>]`, or it shows its key as its name there. The Design group starts with the Design tab's own page, `Links[design_node]=content/view/full/58` in
   `[Leftmenu_setup]` with the tab's `PolicyList[]=58`.
 - **A link once.** A Setup link to an address the added menu has as well shows in that group only: with the Audit
-  group, "Settings" (`audit/settings`) is there and the "Audit" link of "Users and messages" is not.
+  group, "Settings" (`audit/settings`) is there and the "Audit" link of "Users and messages" is not. A link the
+  added menu leaves out for the user (an audit channel the user may not read) keeps the Setup link to its address
+  out too.
 - **Navigation.** A page of such a tab (its `NavigationPartIdentifier`, e.g. `audit/console` or `visual/toolbarlist`)
   marks the Setup tab and draws the Setup menu, with its group open at the current link. No page marks a tab that is
   not in the top menu or draws a menu no tab leads to; the breadcrumb is the page's own. While the tab is in the top
