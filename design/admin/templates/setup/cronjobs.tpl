@@ -385,8 +385,8 @@
     </div>
 </details>
 
-{* Who paused and resumed what, newest first. Changes made to the pause files by other means (a shell, the
-   cjw_admincockpit page) have no entry here; the card still shows since when a part is paused. *}
+{* Who paused and resumed what, newest first. Changes made to the pause files by other means (a shell, an
+   extension) have no entry here; the card still shows since when a part is paused. *}
 {if $cronjob_pause_enabled}
 <details class="a4-fold" id="cronjob-pauses"{if $cronjob_pause_history|count|gt(0)} open="open"{/if}>
     <summary>

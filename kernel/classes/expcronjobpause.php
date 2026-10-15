@@ -7,14 +7,14 @@
  * across releases and restarts, because the state lives in a file rather than in a process.
  *
  * Operators wanted this for releases, data migrations and index rebuilds: stopping the crontab means editing it on
- * every server and remembering to put it back, and the cronjob_control page of the cjw_admincockpit extension, which
- * had done the job, depended on a kernel patch that Exponential no longer carries. The decision is made through the
+ * every server and remembering to put it back, and the extensions that had done the job depended on a patch of
+ * runcronjobs.php that Exponential does not carry. The decision is made through the
  * runcronjobs.php itself (notice()), before it asks the cronjob/part/run filter, so a site's own listeners still decide
  * about the parts that are not paused; cronjob.ini [PauseSettings] Pause=disabled switches the check off.
  *
- * The state files are the ones cjw_admincockpit writes - <cache>/cronjob_control/cronpart_deactivated_<part>.txt,
- * "1" for paused, anything else for running, "all" for every part and an empty part name for the scripts of
- * [CronjobSettings] - so an installation that used that extension keeps its paused parts, and the extension's page
+ * The state is one file per part - <cache>/cronjob_control/cronpart_deactivated_<part>.txt, "1" for paused,
+ * anything else for running, "all" for every part and an empty part name for the scripts of [CronjobSettings] - the
+ * layout such extensions already use, so an installation that paused parts that way keeps them, and such a page
  * and Setup > Cronjobs show the same state. Every pause and resume made here is written to a history file with the
  * user who did it; the console shows who paused a part and since when.
  *
@@ -149,7 +149,7 @@ class expCronjobPause
             {
                 if ( $entry['part'] === (string)$part )
                 {
-                    // Only the pause that wrote the file: a file changed since (from a shell, by cjw_admincockpit)
+                    // Only the pause that wrote the file: a file changed since (from a shell, by an extension)
                     // was paused by someone this history does not know.
                     $by = ( $entry['action'] === 'pause' && $entry['time'] >= $since - 2 ) ? $entry : false;
                     break;
@@ -282,7 +282,7 @@ class expCronjobPause
 
     /**
      * The directory of the state files: cronjob.ini [PauseSettings] Directory below the var directory, or the
-     * cronjob_control directory below the cache directory that cjw_admincockpit uses.
+     * cronjob_control directory below the cache directory.
      *
      * @return string
      */
