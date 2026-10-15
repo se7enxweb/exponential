@@ -7,6 +7,9 @@
  * its label. ezadmin_menubar.js measured the header once, at load: after a resize that added a line the header
  * covered the top of the page. A ResizeObserver on the header follows every change; where there is none, resize
  * and load events do. Plain JavaScript, no library.
+ *
+ * It also keeps --a4-sticky-edge on <html>: the header's height, and on edit pages the bottom of the sticky button
+ * bar (#controlbar-top), so a field scrolled into view and the rich text editor's toolbar stay below both.
  */
 (function () {
     'use strict';
@@ -21,6 +24,17 @@
         if (flex.style.getPropertyValue('--header-height') !== px + 'px') {
             flex.style.setProperty('--header-height', px + 'px');
         }
+        // --a4-sticky-edge on <html>: where the visible page starts under the header and, on edit pages, the sticky
+        // button bar (#controlbar-top, stuck at its CSS top). The scroll padding and the editor toolbars use it.
+        var edge = px, bar = document.getElementById('controlbar-top');
+        if (bar && window.getComputedStyle && window.getComputedStyle(bar).position === 'sticky') {
+            var top = parseFloat(window.getComputedStyle(bar).top);
+            edge = Math.max(edge, (isNaN(top) ? px : top) + bar.getBoundingClientRect().height + 4);
+        }
+        edge = Math.ceil(edge) + 'px';
+        if (document.documentElement.style.getPropertyValue('--a4-sticky-edge') !== edge) {
+            document.documentElement.style.setProperty('--a4-sticky-edge', edge);
+        }
     }
 
     function init() {
@@ -28,7 +42,9 @@
         if (!header) return;
         sync();
         if (window.ResizeObserver) {
-            new ResizeObserver(sync).observe(header);
+            var observer = new ResizeObserver(sync), bar = document.getElementById('controlbar-top');
+            observer.observe(header);
+            if (bar) observer.observe(bar);
         } else {
             window.addEventListener('resize', sync);
         }

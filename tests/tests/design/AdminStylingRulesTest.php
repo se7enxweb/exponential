@@ -753,10 +753,11 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
             $css = file_get_contents( "$dir/$file" );
             $this->assertGreaterThan( strpos( $css, 'tr:hover > :is(td, th[scope="row"])' ), strpos( $css, 'tr:has(> td > input[type="checkbox"]:checked)' ), $file );
         }
-        // no sticky list header: the tables sit in scrolling wrappers (pagelayout.css div:has(> table)), where it never sticks
+        // no sticky list header: the tables sit in scrolling wrappers (pagelayout.css div:has(> table)), where it never sticks.
+        // TinyMCE 3's layout table is no list: the editor wraps it in a span, so its toolbar can stick (AdminEditBarTest).
         foreach ( $found as $selector => $props )
         {
-            if ( preg_match( '/table|\.exp-dt/', $selector ) )
+            if ( preg_match( '/table|\.exp-dt/', $selector ) && strpos( $selector, 'table.mceLayout' ) === false )
                 $this->assertNotSame( 'sticky', $props['position'] ?? null, $selector );
         }
     }

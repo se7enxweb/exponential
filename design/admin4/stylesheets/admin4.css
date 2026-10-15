@@ -1128,6 +1128,57 @@ html[data-a4-theme="dark"] .a4-login-logo { background-image: url('../images/3/l
   white-space: nowrap;
 }
 
+/* The draft's save status (ezautosave puts #ez-as-place, and the preview link, into .button-right) stands in the bar's
+   line beside the buttons, on one line that never grows: the text appears and changes when a field loses the focus,
+   that is between the press and the release of a click on a button. Floated under the buttons it hung out of the bar
+   over the form; anything that changes the bar's height there moves every button and field under the pointer, and
+   the click is lost. */
+#controlbar-top .box-bc .box-ml {
+  display: flex;
+  align-items: center;
+  gap: var(--a4-space-3);
+}
+#controlbar-top .button-left {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+#controlbar-top .button-right {
+  float: none;
+  flex: 0 1 auto;
+  min-width: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--a4-space-2);
+  overflow: hidden;
+}
+#controlbar-top #ez-as-place {
+  float: none;
+  display: block;
+  min-width: 0;
+  max-width: 22rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: var(--a4-text-s);
+  color: var(--a4-muted);
+}
+#controlbar-top #ez-as-place.as-error { color: var(--a4-bad); }
+
+/* Room for the rich text editor's toolbar under the header and this bar: --a4-sticky-edge (admin4.js) is where the
+   visible part of the page starts. A field or an editor reached with the keyboard is scrolled to below it, not under
+   the bar, and TinyMCE 3's toolbar stays below the bar while its editor is in view (TinyMCE 8 gets the same edge as
+   toolbar_sticky_offset). */
+html {
+  scroll-padding-top: var(--a4-sticky-edge, 0px);
+}
+#editform table.mceLayout td.mceToolbar {
+  position: sticky;
+  top: var(--a4-sticky-edge, 0px);
+  z-index: var(--a4-z-sticky);
+  background-color: var(--a4-card);
+}
+
 /* Phones and small tablets: the main body uses the width. The column (.content-wrapper, 1rem here), the card's
    own padding and the edit pages' 32px margin took about 42-58px a side of a 390px screen. */
 @media (max-width: 767px) {
@@ -1156,6 +1207,11 @@ html[data-a4-theme="dark"] .a4-login-logo { background-image: url('../images/3/l
     overflow-x: visible;
     gap: var(--a4-space-1);
   }
+  /* the save status gets a line of its own under the buttons, there from the start, so its text does not change
+     how the buttons wrap */
+  #controlbar-top .box-bc .box-ml { flex-wrap: wrap; }
+  #controlbar-top .button-right { flex: 1 0 100%; min-height: 1.5em; }
+  #controlbar-top #ez-as-place { max-width: none; font-size: var(--a4-text-xs); }
   #controlbar-top .button-left input.defaultbutton,
   #controlbar-top .button-left input.button,
   #controlbar-top .button-left input.button-disabled {

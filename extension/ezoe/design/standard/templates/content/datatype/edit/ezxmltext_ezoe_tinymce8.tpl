@@ -206,12 +206,23 @@ function eZOe8Toolbar( buttons )
     return items.join( ' ' ) + ' | code';
 }
 
+// Where the visible page starts under the admin's fixed header and sticky button bar, 0 without them
+function eZOe8StickyOffset()
+{
+    var edge = window.getComputedStyle ? parseFloat( window.getComputedStyle( document.documentElement ).getPropertyValue( '--a4-sticky-edge' ) ) : NaN;
+    return isNaN( edge ) ? 0 : edge;
+}
+
 function eZOe8Init( id, attributeId, buttons, pathLocation, rows )
 {
     var settings = Object.assign( {}, eZOe8GlobalSettings, {
         selector: '#' + id,
         toolbar: eZOe8Toolbar( buttons ),
         toolbar_mode: 'wrap',
+        // the toolbar stays in view while the editor scrolls, below a fixed header and sticky button bar when the
+        // admin design names their bottom (--a4-sticky-edge on <html>)
+        toolbar_sticky: true,
+        toolbar_sticky_offset: eZOe8StickyOffset(),
         statusbar: pathLocation !== 'none',
         height: Math.max( 300, rows * 24 ),
         setup: function( editor ) {
