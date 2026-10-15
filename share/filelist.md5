@@ -2989,7 +2989,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-8d052cfb44e76af20a8b550a1b531c4a  doc/changelogs/6.0/6.0.15.md
+91f47d405e2eda4565edd29d3bb50050  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3330,7 +3330,7 @@ a7de42ade5e309311b5e346ced1a7cf2  doc/features/6.0/clean-install-defaults.md
 f1c1fb56a9242d2efa91dd58ead7449e  doc/features/6.0/content-jobs.md
 0e0369149f51247d6b31d8fcfe8fb949  doc/features/6.0/content-limitation-handlers.md
 75c167003b97bad4b0226315b2182509  doc/features/6.0/cronjob-part-filter.md
-165bc1b0454780370ab049ede7c57855  doc/features/6.0/cronjob-pause.md
+35be9b689349870dbd25f7737b4c0cb6  doc/features/6.0/cronjob-pause.md
 8642b1389ec7138669d56125d9a2b4cb  doc/features/6.0/cronjobs-console.md
 e6f3c790828c4532db21659841921631  doc/features/6.0/custom-items-per-page.md
 f2bff77e9a094481e27aa23236fdc3e5  doc/features/6.0/debug-output-improvements.md
@@ -4906,7 +4906,7 @@ e7456184eb299387e3eed677ae8ea469  kernel/classes/expcollaborationsampledata.php
 adcf0106cb325d58b6535e3119c86124  kernel/classes/expcontentdraftlist.php
 817ffe4f29fcb2fc58741e44fdd18603  kernel/classes/expcontenthistorylist.php
 060a5c445d16458886b00db1d94da18c  kernel/classes/expcontentpendinglist.php
-568fb76a8ca73b8148b798836b9bbe5a  kernel/classes/expcronjobpause.php
+25c157285634dd4eb29576183462a194  kernel/classes/expcronjobpause.php
 06c3fd9f915b90205f43300f8a58fe55  kernel/classes/experrorheaderlist.php
 4f8b979e7bac49349e8bab2c65a8e142  kernel/classes/expextensioncatalogue.php
 e0b74fce97e793dcf8a5c7ccd1ad86c0  kernel/classes/expextensionchangeplan.php
@@ -5995,7 +5995,7 @@ dd66c27efaf05f70d9ac86a5db71289f  kernel/setup/expsettingsextensionwizard.php
 f7657a2d39889bcc63f9e9a9ed72ec17  kernel/setup/ezsetup.php
 939f6afaaeeb8425b5a6cd2117ace549  kernel/setup/ezsetup_summary.php
 b3d46bd1c3ea5767a9ffcb90f8b22061  kernel/setup/ezsetupcommon.php
-2ed85782ce3b2c2ab0a5311e78725daa  kernel/setup/ezsetupfunctioncollection.php
+4abe2a71f1303ddea3f23a54556452df  kernel/setup/ezsetupfunctioncollection.php
 bb28247ab31d642b7cd2b0e6edd23fa0  kernel/setup/ezsetuptests.php
 05d83da4994202fadc6c81db15413274  kernel/setup/function_definition.php
 7183ac0ed7562b87665665a2daad4b6f  kernel/setup/handlerextension.php
@@ -7486,7 +7486,7 @@ c982ecbf9fc8545773311219e66b95fa  tests/tests/kernel/classes/expContentHideRetur
 3d4aea56bbd6b88864909c0e1ea1ec2a  tests/tests/kernel/classes/expContentHistoryListTest.php
 201f85cc8198f7389a66a982878dcf6a  tests/tests/kernel/classes/expContentLanguagesCountsLiveTest.php
 8a09334d1220ca0936f37a308b5be245  tests/tests/kernel/classes/expContentLanguagesOverviewTest.php
-f38ad67bcbfb55db9c79cbf42f18a7d6  tests/tests/kernel/classes/expCronjobPauseTest.php
+4799a37a0347c83794a9d7d43a865107  tests/tests/kernel/classes/expCronjobPauseTest.php
 e1d9c99f5f0c0a4a5f1dc95cdeae4a5d  tests/tests/kernel/classes/expCronjobRunnerScheduleTest.php
 92f303e359766f9135f828f2da64ac5a  tests/tests/kernel/classes/expCronjobScriptDocumentationTest.php
 0c18d323cfeaa6fe00651c0841916358  tests/tests/kernel/classes/expCronjobsCompactViewTest.php
