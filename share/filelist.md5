@@ -8,7 +8,7 @@ c0109dc6b712cfb2edaf1634f9613f51  .github/workflows/performance.yml
 57ca66c9047538723f176eb991e5e98c  .github/workflows/phpunit.yml
 baeb71427c77282aa3b16047e254fd23  .github/workflows/quality.yml
 1378291033e16daa1ef6e265447a2201  .gitignore
-07f11fe3332e334d1ac25c4c35951744  .htaccess_root
+9ae9da440bdbe3c882b160ce651bbbca  .htaccess_root
 cae6b5db9c9f45f8e87552cdc09e083a  .htaccess_root_static
 6f1b96d8c290abdef88145a2d5c34a83  .travis.yml
 59725baee0ff8baf5309f8f59722b3b7  CONTRIBUTING.md
@@ -2833,7 +2833,7 @@ ec58de54f835ce1e62ff06f43ccbdc23  doc/bc/6.0/repair.md
 0400b2a50fcef2db6be4b2b01355360c  doc/bc/6.0/sqlite-transactions.md
 e21f3db4b2792ce0c74ab2480c335f60  doc/bc/6.0/static-cache-defaults.md
 0c8ae79c442342b781dbf3f7e2c3dea6  doc/bc/6.0/subitems-table-options.md
-2697af24826fd9fdfb978aaa89746748  doc/bc/6.0/svg-images.md
+3c9ff9b6730b011a2b825d49fbeff9d6  doc/bc/6.0/svg-images.md
 b3619f3dd7b2c0c98ea03f16cba624e4  doc/bc/6.0/trash.md
 64389016aada25c568fdafc2ebe6ce5e  doc/bc/6.0/trusted-proxies.md
 7928239ba6369a6bb899ee998ce94b05  doc/bc/6.0/user-password-change.md
@@ -2989,7 +2989,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-03bde1025f3fea36e2dc8851a0d2dc9a  doc/changelogs/6.0/6.0.15.md
+2b5a8011ce4ac4090cb5ae92a3ff34e2  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -4821,7 +4821,7 @@ afca207873cd2979be2138e29f44d1e8  kernel/classes/datatypes/ezenum/ezenum.php
 b046f19d15627a3f7ae6ce32b92b5f4c  kernel/classes/datatypes/ezenum/ezenumvalue.php
 52ba2fd1a4ee75efa893bb7d38c9cad9  kernel/classes/datatypes/ezfloat/ezfloattype.php
 f3f3b9d2bbaa1447f6907fd14385d4fa  kernel/classes/datatypes/ezidentifier/ezidentifiertype.php
-0e59654c09bffc19bfd4cde4f2067d8c  kernel/classes/datatypes/ezimage/ezimagealiashandler.php
+97a4c6916a3ae2148bdc9d9f2948da7f  kernel/classes/datatypes/ezimage/ezimagealiashandler.php
 5a244d910a7451052f5fc5e35cbc6e6f  kernel/classes/datatypes/ezimage/ezimagefile.php
 eb85e00b0156fd4fc89349f947b3a715  kernel/classes/datatypes/ezimage/ezimagetype.php
 ff944b281fa27d32561d83dacee4116c  kernel/classes/datatypes/ezinisetting/ezinisettingtype.php
@@ -5211,7 +5211,7 @@ b629f03aada885567e0346305912edec  kernel/classes/workflowtypes/event/ezsimpleshi
 adf1dccc369322c1571d7ef2471c79a0  kernel/classes/workflowtypes/event/ezwaituntildate/ezwaituntildatetype.php
 d00cd45a90954d393149d88c495493f0  kernel/classes/workflowtypes/event/ezwaituntildate/ezwaituntildatevalue.php
 4c18eae437b9feda0701654a89b41ffb  kernel/clustering/dfsmysqli.php
-4455a1abbe48f65b298d39e7437c9a11  kernel/clustering/gateway.php
+eb9dae5e281a906136be22026aa4da37  kernel/clustering/gateway.php
 b4a3f9707811338f13702435dd2ab275  kernel/collaboration/action.php
 819594dd25db4ad3b2cb42e1563c1a3b  kernel/collaboration/ezcollaborationfunctioncollection.php
 e5173154b8dda8d8a484430bcd35dd78  kernel/collaboration/function_definition.php
@@ -6222,7 +6222,7 @@ a3484f75543a6443a38e554f38570e7d  lib/ezi18n/classes/eztranslatorhandler.php
 6513d16cb0039d3ce0301b7eb9dc4f59  lib/ezi18n/classes/eztranslatormanager.php
 180ffe8379a016eea58ca99a6e2ad28b  lib/ezi18n/classes/eztstranslator.php
 31bddf4620277ea94f10938bfb7f66a0  lib/ezi18n/classes/ezutf8codec.php
-005d474ccf7fe887300636dd292f99b9  lib/ezimage/classes/expsvgsanitizer.php
+b1f9d0cc359e52d77bd2a37936892e46  lib/ezimage/classes/expsvgsanitizer.php
 f69f6eb6351f364356203c20fa061dd1  lib/ezimage/classes/ezexifimageanalyzer.php
 a4460af21378334e6e914530894c0529  lib/ezimage/classes/ezgifimageanalyzer.php
 c157c80fd6660f3ace2a9f3c92fb472b  lib/ezimage/classes/ezimageanalyzer.php
@@ -7829,7 +7829,7 @@ d3bf1a7962d00356aceb039aafacc42f  tests/tests/kernel/datatypes/ezemail/eZEmailTy
 239cb2c30da730ba1b0a9e7552ad3f0e  tests/tests/kernel/datatypes/ezimage/eZImageAliasHandlerGuardsTest.php
 47c17675c1f700f4ae785e2e9c62f4e3  tests/tests/kernel/datatypes/ezimage/eZImageCopyOwnFilesTest.php
 13db375dbc006e78ef16437642166ede  tests/tests/kernel/datatypes/ezimage/eZImageEZP21324Test.php
-1654e910ba2887016346bcb321a7b2be  tests/tests/kernel/datatypes/ezimage/expImageSvgTest.php
+23d500a62fbf53f1d05f99a39e5ae680  tests/tests/kernel/datatypes/ezimage/expImageSvgTest.php
 88cdef8a476714efdc29288eceffc6d7  tests/tests/kernel/datatypes/ezimage/ezimagealiashandler_regression.php
 c16d0242dd56620443e2ec3bbc8c5255  tests/tests/kernel/datatypes/ezimage/ezimagealiashandler_regression_issue15155.png
 0b5300a70b7686420df3758cc1f5dc86  tests/tests/kernel/datatypes/ezimage/ezimagefile_regression.php
@@ -8160,7 +8160,7 @@ e9086b6ec3b4d0523a25a94ef7d2fac9  tests/tests/lib/ezimage/data/svg/wordmark.svg
 3126a603b2540039d88869c168923f4e  tests/tests/lib/ezimage/eZImageAnalyzerTest.php
 205e3b3a02dea6dd795d9a345ad9a33b  tests/tests/lib/ezimage/eZImageManagerTest.php
 14d3aad9b0411ab181c00a3f01dc52fb  tests/tests/lib/ezimage/eZImageShellHandlerTest.php
-a201eb94675f15f7461a53ea4a20ffa0  tests/tests/lib/ezimage/expSvgSanitizerTest.php
+3aec4f905dd7e18ec0a77e8e7343816a  tests/tests/lib/ezimage/expSvgSanitizerTest.php
 9848960050fb352a09399a1a93913d16  tests/tests/lib/ezimage/ezimagemanager_test.php
 94fc51afad752bcbfdbe3874254dda15  tests/tests/lib/ezimage/ezimageshellhandler_test.php
 8c85befbff3ccee276d033abc3ac38ef  tests/tests/lib/ezimage/suite.php
