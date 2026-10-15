@@ -35,6 +35,7 @@
 {else}
     <h3 class="a4-h3">{'Unhandled uninstallation error has occurred.'|i18n('design/standard/package')}</h3>
 {/if}
+</div>
 {* DESIGN: Content END *}</div></div></div>
 
 <div class="controlbar">

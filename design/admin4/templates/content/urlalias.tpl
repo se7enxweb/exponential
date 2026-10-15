@@ -302,7 +302,6 @@
 
 <div class="break"></div>
 
-{* DESIGN: Content END *}</div></div></div>
 </div>
 {* Create new alias context block end *}
 

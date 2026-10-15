@@ -313,7 +313,7 @@ f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin/override/templates/windows_user.t
 02552a724520157ce8a3aef16c524e9e  design/admin/stylesheets/components.css
 ce90ff045aa9ad5f6b74ebb4adb49d1f  design/admin/stylesheets/content.css
 9176b99cf9d39d3d3f7c8c50d1554eb5  design/admin/stylesheets/core.css
-3467a1c4602619c56bfc506613bebb91  design/admin/stylesheets/ezinfo.css
+62734b59f14ab1cb473727176f810806  design/admin/stylesheets/ezinfo.css
 57cf48a54c1eb9ce4cdc15d7bb848810  design/admin/stylesheets/modules/content.css
 b7b4bcd7be755643e4eb5982c06ef632  design/admin/stylesheets/modules/people.css
 ca592fc794ee0c5526f6740f7f066aa7  design/admin/stylesheets/modules/setup.css
@@ -470,8 +470,8 @@ e182e0f2a7a67fcb22d23b2e7a6b033d  design/admin/templates/error/parts/formtoken.t
 5d35317c921d3787c8da593f097cc2f4  design/admin/templates/error/shop/2.tpl
 f40a458ba972853fe21fbbda1945fcac  design/admin/templates/error/shop/3.tpl
 895dc97b57a6a8945b10dc5460e9778d  design/admin/templates/error/shop/4.tpl
-c8feeaf96cdca74d667c50887f824ef9  design/admin/templates/ezinfo/about.tpl
-945b0c68fbd406d6ec38921360f6ed30  design/admin/templates/ezinfo/copyright.tpl
+779a3d4311505cfeb78de4b8f1ca2751  design/admin/templates/ezinfo/about.tpl
+6c10e7f9eea0fc7029c8110b0b33fb28  design/admin/templates/ezinfo/copyright.tpl
 be642b13d020aa2e44360d60c283fbc5  design/admin/templates/infocollection_validation.tpl
 fa73d3e3be3e3b0d90f4e5c3f0340763  design/admin/templates/infocollector/collectionlist.tpl
 c4d695a653871ae2539df1bcce84cbb3  design/admin/templates/infocollector/confirmremoval.tpl
@@ -526,7 +526,7 @@ edb7883b96e57ebc5cdb4a5f79e908be  design/admin/templates/package/install_error.t
 a03658cb580b5f401c004bf9eaad2893  design/admin/templates/package/list.tpl
 63d74fb2d54c7ae9678cebba7c391791  design/admin/templates/package/navigator.tpl
 5a5488f80e4878edebb858e92d0db41c  design/admin/templates/package/uninstall.tpl
-ab4bb8ff32f6ea9f5b70bcbe4ad62f66  design/admin/templates/package/uninstall_error.tpl
+c587deb2dc55fe599fe51e9283088be7  design/admin/templates/package/uninstall_error.tpl
 6c04cea8a1c4d8c30c3398339da48098  design/admin/templates/package/upload.tpl
 064ae942508f041cf4628b1cc260b247  design/admin/templates/package/validation.tpl
 5eecf3f879aa02cedec156cd4b6ffb6b  design/admin/templates/package/view/contents_pager.tpl
@@ -1045,10 +1045,10 @@ a0b08bb545257e2ec0cb80586f65d086  design/admin4/templates/content/searchresult.t
 1ce579d8e06e7939fca678db0352b482  design/admin4/templates/content/translationnew.tpl
 b3393f1abf9f26699c5f2bb220088cb2  design/admin4/templates/content/translations.tpl
 0288113ce68d85ab98f81f090fc5d4ba  design/admin4/templates/content/translationview.tpl
-e80baee3c22e4e4bc226a6355854788e  design/admin4/templates/content/trash.tpl
+fd714bce0c0403996d6ef2110bfc3134  design/admin4/templates/content/trash.tpl
 a2b172b8944ff150c68ffddee1372eba  design/admin4/templates/content/upload.tpl
 38726927dee8a4db82d729a58882095d  design/admin4/templates/content/upload_related.tpl
-2338ac2189ebf523ac83e7c511b00398  design/admin4/templates/content/urlalias.tpl
+684d48d43807447865b3d0e1bc543f19  design/admin4/templates/content/urlalias.tpl
 2e0a54ad3eee1d359c882503ce48255a  design/admin4/templates/content/urlalias_global.tpl
 f08426363c068f8b87de5f75e85dd385  design/admin4/templates/content/urlalias_wildcard.tpl
 883c972e4645358662969efd99d71127  design/admin4/templates/content/view/versionview.tpl
@@ -1080,8 +1080,8 @@ dfc9f60f6f8ad15792eef04ef82dae7a  design/admin4/templates/error/shop/1.tpl
 b699c8d9f5fd81bafc4807efafad1e8c  design/admin4/templates/error/shop/2.tpl
 af3a8bc160cb265651100dbab44c53b6  design/admin4/templates/error/shop/3.tpl
 51e43838c75bb82603431b006b463a7f  design/admin4/templates/error/shop/4.tpl
-a293d775b864b1d39e0bd4e25286dbc0  design/admin4/templates/ezinfo/about.tpl
-945b0c68fbd406d6ec38921360f6ed30  design/admin4/templates/ezinfo/copyright.tpl
+7deb1dc6bd320de93789f39eb322d1f4  design/admin4/templates/ezinfo/about.tpl
+6c10e7f9eea0fc7029c8110b0b33fb28  design/admin4/templates/ezinfo/copyright.tpl
 1930afe53fb5c2737daf2736356f4ca7  design/admin4/templates/infocollection_validation.tpl
 9902ce28bd794cd2c894f846db365172  design/admin4/templates/infocollector/collectionlist.tpl
 c4d695a653871ae2539df1bcce84cbb3  design/admin4/templates/infocollector/confirmremoval.tpl
@@ -1139,7 +1139,7 @@ a3b9bfd99dc4a37ac06666fad2a348d1  design/admin4/templates/package/install_error.
 a03658cb580b5f401c004bf9eaad2893  design/admin4/templates/package/list.tpl
 63d74fb2d54c7ae9678cebba7c391791  design/admin4/templates/package/navigator.tpl
 5a5488f80e4878edebb858e92d0db41c  design/admin4/templates/package/uninstall.tpl
-c7ee49112f79016f358f3f3372fc095b  design/admin4/templates/package/uninstall_error.tpl
+c74950996591b735dc14bd736ad7a269  design/admin4/templates/package/uninstall_error.tpl
 6c04cea8a1c4d8c30c3398339da48098  design/admin4/templates/package/upload.tpl
 064ae942508f041cf4628b1cc260b247  design/admin4/templates/package/validation.tpl
 5eecf3f879aa02cedec156cd4b6ffb6b  design/admin4/templates/package/view/contents_pager.tpl
@@ -3040,7 +3040,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-a118a85e191fa7e670191bfb378beaf5  doc/changelogs/6.0/6.0.15.md
+84047388ff185fd878e1123efa1d1e42  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -7356,6 +7356,7 @@ e8a3daceffc693a72f9d04fd90d0d4eb  tests/tests/design/AdminSiteAccessMenuTest.php
 26cd1c78167aa9312aeffcbfe9b95bb1  tests/tests/design/AdminStylingRulesTest.php
 30d12ad7dc5a6ad97ac28b8f844f1ff3  tests/tests/design/AdminSubitemsPriorityDragTest.php
 0b4a969bd98da9c835eb609ba5cd0a8f  tests/tests/design/AdminSubitemsTranslationsTest.php
+7e25daf854e27ae8480a265adbfe41f4  tests/tests/design/AdminTemplateFramesTest.php
 fbee7cbdeef0e5c1be7b400d09748b59  tests/tests/design/AdminThemeSwitchTest.php
 d3aa163841a3b7ef9a8ce4048f7b1980  tests/tests/design/AdminTimelineTest.php
 d1631bafa4ffa2391654f1a9cf529c53  tests/tests/design/AdminTokenContrastTest.php
