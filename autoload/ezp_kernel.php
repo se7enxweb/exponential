@@ -135,6 +135,7 @@ return array(
       'Exponential\\Service\\ContentJobDetails'                      => 'kernel/private/classes/services/contentjobdetails.php',
       'Exponential\\Service\\DraftsCleanup'                          => 'kernel/private/classes/services/draftscleanup.php',
       'Exponential\\Service\\MailPreferencesPage'                    => 'kernel/private/classes/services/mailpreferencespage.php',
+      'Exponential\\Service\\ReverseRelationCheck'                   => 'kernel/private/classes/services/reverserelationcheck.php',
       'Exponential\\Service\\SessionGarbageCollector'                => 'kernel/private/classes/services/sessiongarbagecollector.php',
       'Exponential\\Service\\Trash'                                  => 'kernel/private/classes/services/trash.php',
       'Exponential\\Service\\TrashList'                              => 'kernel/private/classes/services/trashlist.php',

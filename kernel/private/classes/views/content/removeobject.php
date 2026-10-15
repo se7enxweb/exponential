@@ -136,12 +136,21 @@ class Removeobject extends \Exponential\Runnable\ModuleView
                        $contentINI->variable( 'RemoveSettings', 'MaxNodesRemoveSubtree' ) : 100;
         $runAsJob = $jobParams['node_ids'] && self::contentJob( 'chosenAsJob', 'remove', 'remove', $jobParams, $jobOldLimit );
 
-        if ( $runAsJob and ( $http->hasPostVariable( "ConfirmButton" ) or $hideRemoveConfirm ) )
+        // Reverse relations (content.ini [RemoveSettings] ReverseRelationCheck, doc/features/6.0/reverse-relation-check.md):
+        // warn lists the objects that point at what goes on the confirmation page; block also refuses the removal
+        // here, whatever the form sent, while such references exist
+        $relationMode = \Exponential\Service\ReverseRelationCheck::removeMode();
+        $relationCheck = $relationMode !== \Exponential\Service\ReverseRelationCheck::DISABLED && $jobParams['node_ids']
+                         ? \Exponential\Service\ReverseRelationCheck::forNodes( $jobParams['node_ids'] ) : null;
+        $relationBlocks = \Exponential\Service\ReverseRelationCheck::refusesRemoval( $relationMode, $relationCheck );
+        $relationRefused = $relationBlocks && ( $http->hasPostVariable( "ConfirmButton" ) or $hideRemoveConfirm );
+
+        if ( !$relationBlocks and $runAsJob and ( $http->hasPostVariable( "ConfirmButton" ) or $hideRemoveConfirm ) )
             return self::contentJob( 'startJob', $Module, 'remove', $jobParams, $jobBackURL,
                                   in_array( (int) $contentNodeID, $jobParams['node_ids'] ) ? 0 : (int) $contentNodeID );
 
-        if ( $http->hasPostVariable( "ConfirmButton" ) or
-             $hideRemoveConfirm )
+        if ( !$relationBlocks and ( $http->hasPostVariable( "ConfirmButton" ) or
+             $hideRemoveConfirm ) )
         {
             if ( \eZOperationHandler::operationIsAvailable( 'content_delete' ) )
             {
@@ -214,7 +223,10 @@ class Removeobject extends \Exponential\Runnable\ModuleView
         // to do this the following must be true:
         // - The total child count must be zero
         // - There must be no object removal (i.e. it is the only node for the object)
-        if ( $totalChildCount == 0 && !$runAsJob )
+        // with references to an object that goes (every location of it selected), the page with the list is shown
+        // instead of removing at once
+        $relationListed = \Exponential\Service\ReverseRelationCheck::templateData( $relationMode, $relationCheck ) !== null;
+        if ( $totalChildCount == 0 && !$runAsJob && !$relationBlocks && !$relationListed )
         {
             $canRemove = true;
             foreach ( $deleteResult as $item )
@@ -270,6 +282,7 @@ class Removeobject extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'move_to_trash'          , $moveToTrash );
         $tpl->setVariable( 'has_pending_object'     , $hasPendingObject );
         $tpl->setVariable( 'run_as_job'             , $runAsJob );
+        $tpl->setVariable( 'reverse_relation_check' , \Exponential\Service\ReverseRelationCheck::templateData( $relationMode, $relationCheck, $relationRefused ) );
         // content jobs: the now-or-background choice and what the removal touches (null without the engine)
         $tpl->setVariable( 'job_mode'               , $jobParams['node_ids'] ? self::contentJob( 'modeChoice', 'remove', 'remove', $jobParams, $jobOldLimit, '[RemoveSettings] MaxNodesRemoveSubtree' ) : null );
         $tpl->setVariable( 'job_summary'            , $jobParams['node_ids'] && class_exists( 'Exponential\\Service\\ContentJobDetails' ) ? \Exponential\Service\ContentJobDetails::subtreeSummary( $jobParams['node_ids'] ) : null );

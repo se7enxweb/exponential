@@ -61403,6 +61403,125 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
 </context>
 <context>
+    <name>design/admin/content/reverserelations</name>
+    <message>
+        <source>The removal is blocked: other objects use the items</source>
+        <translation>The removal is blocked: other objects use the items</translation>
+    </message>
+    <message>
+        <source>Nothing was removed.</source>
+        <translation>Nothing was removed.</translation>
+    </message>
+    <message>
+        <source>This site refuses to remove content while other objects point at it. Change or remove the references listed here first, then remove the items.</source>
+        <translation>This site refuses to remove content while other objects point at it. Change or remove the references listed here first, then remove the items.</translation>
+    </message>
+    <message>
+        <source>Check before hiding</source>
+        <translation>Check before hiding</translation>
+    </message>
+    <message>
+        <source>Other objects point at what you are about to hide. After hiding, their links, embedded items and relation fields lead to content the site no longer shows.</source>
+        <translation>Other objects point at what you are about to hide. After hiding, their links, embedded items and relation fields lead to content the site no longer shows.</translation>
+    </message>
+    <message>
+        <source>Other objects use the items</source>
+        <translation>Other objects use the items</translation>
+    </message>
+    <message>
+        <source>After the removal, their links, embedded items and relation fields point at content that is gone.</source>
+        <translation>After the removal, their links, embedded items and relation fields point at content that is gone.</translation>
+    </message>
+    <message>
+        <source>The references could not be checked.</source>
+        <translation>The references could not be checked.</translation>
+    </message>
+    <message>
+        <source>%count more references are not listed.</source>
+        <translation>%count more references are not listed.</translation>
+    </message>
+    <message>
+        <source>1 further reference from an object you may not read.</source>
+        <translation>1 further reference from an object you may not read.</translation>
+    </message>
+    <message>
+        <source>%count further references from objects you may not read.</source>
+        <translation>%count further references from objects you may not read.</translation>
+    </message>
+    <message>
+        <source>1 further location you may not read.</source>
+        <translation>1 further location you may not read.</translation>
+    </message>
+    <message>
+        <source>%count further locations you may not read.</source>
+        <translation>%count further locations you may not read.</translation>
+    </message>
+    <message>
+        <source>Used by</source>
+        <translation>Used by</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Type</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>How</translation>
+    </message>
+    <message>
+        <source>Points at</source>
+        <translation>Points at</translation>
+    </message>
+    <message>
+        <source>An object you may not read</source>
+        <translation>An object you may not read</translation>
+    </message>
+    <message>
+        <source>Embedded in rich text</source>
+        <translation>Embedded in rich text</translation>
+    </message>
+    <message>
+        <source>Linked in rich text</source>
+        <translation>Linked in rich text</translation>
+    </message>
+    <message>
+        <source>Relation field</source>
+        <translation>Relation field</translation>
+    </message>
+    <message>
+        <source>Object relation</source>
+        <translation>Object relation</translation>
+    </message>
+    <message>
+        <source>This item</source>
+        <translation>This item</translation>
+    </message>
+    <message>
+        <source>The object has further locations. Hiding this one leaves them as they are:</source>
+        <translation>The object has further locations. Hiding this one leaves them as they are:</translation>
+    </message>
+    <message>
+        <source>hidden</source>
+        <translation>hidden</translation>
+    </message>
+    <message>
+        <source>hidden by a parent</source>
+        <translation>hidden by a parent</translation>
+    </message>
+    <message>
+        <source>You cannot continue while other objects use the items (see the list above).</source>
+        <translation>You cannot continue while other objects use the items (see the list above).</translation>
+    </message>
+    <message>
+        <source>Hide the selected items</source>
+        <translation>Hide the selected items</translation>
+    </message>
+    <message>
+        <source>The selected items and everything below them are hidden from the site.</source>
+        <translation>The selected items and everything below them are hidden from the site.</translation>
+    </message>
+</context>
+<context>
     <name>design/standard/audit</name>
     <message>
         <source>Not recorded, so refused</source>
