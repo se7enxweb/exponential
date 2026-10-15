@@ -17008,8 +17008,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Sichtbare Inhalte, die auf gelöschte, versteckte oder im Papierkorb liegende Inhalte verweisen.</translation>
     </message>
     <message>
-        <source>Objects nothing refers to, to tidy up or move to the trash.</source>
-        <translation>Objekte, auf die nichts verweist – zum Aufräumen oder für den Papierkorb.</translation>
+        <source>Images and files nothing uses, to tidy up or move to the trash.</source>
+        <translation>Bilder und Dateien, die nichts verwendet – zum Aufräumen oder für den Papierkorb.</translation>
+    </message>
+    <message>
         <source>Check user accounts</source>
         <translation>Benutzerkonten prüfen</translation>
     </message>

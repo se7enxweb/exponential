@@ -12015,7 +12015,7 @@ Note: The packages will not be uninstalled.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Objects nothing refers to, to tidy up or move to the trash.</source>
+        <source>Images and files nothing uses, to tidy up or move to the trash.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

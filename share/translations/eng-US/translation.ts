@@ -14599,8 +14599,10 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Visible content that links to deleted, hidden or trashed content.</translation>
     </message>
     <message>
-        <source>Objects nothing refers to, to tidy up or move to the trash.</source>
-        <translation>Objects nothing refers to, to tidy up or move to the trash.</translation>
+        <source>Images and files nothing uses, to tidy up or move to the trash.</source>
+        <translation>Images and files nothing uses, to tidy up or move to the trash.</translation>
+    </message>
+    <message>
         <source>Check user accounts</source>
         <translation>Check user accounts</translation>
     </message>
