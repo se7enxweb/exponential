@@ -25,6 +25,7 @@
 </td>
 <td>
 {node_view_gui view=line content_node=$SearchResult.item}
+<span class="a4-search-path">/{$SearchResult.item.url_alias|wash}</span>
 </td>
 <td>
 {$SearchResult.item.class_name|wash}

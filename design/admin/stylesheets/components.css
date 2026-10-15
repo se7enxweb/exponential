@@ -103,6 +103,9 @@
   --a4-text-xl: 22px;
   --a4-text-2xl: 26px;
   --a4-text-3xl: 32px;
+  /* the body text (core.css's em sizes follow it): 13px up to a 1920px window, growing to 14px at 2560px, never
+     more; a modest step for very wide screens that keeps every em size at or above the 12px floor */
+  --a4-text-body: clamp(var(--a4-text-s), calc(var(--a4-text-s) - 3px + 0.15625vw), var(--a4-text-m));
   --a4-leading: 1.5;
   --a4-leading-tight: 1.25;
   /* one height for the buttons, selects and pager buttons that stand in a row (node actions, sub-items toolbar) */

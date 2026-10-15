@@ -160,4 +160,33 @@ class AdminResponsiveTest extends PHPUnit\Framework\TestCase
         $drawer = AdminBaseStylesheetsTest::rules( self::media( self::css( 'admin4.css' ), 'screen and (max-width: 1023.98px)' ) );
         $this->assertStringStartsWith( 'min(var(--left-sidebar-width', $drawer['body:has(#leftmenu.sidebar.show) .sidebar-control.left']['translate'] );
     }
+
+    public function testSearchResultsShowTypeAndPathOnAPhone()
+    {
+        $template = self::file( 'design/admin4/templates/content/searchresult.tpl' );
+        $this->assertStringContainsString( '<span class="a4-search-path">/{$SearchResult.item.url_alias|wash}</span>', $template, 'the path under the name' );
+        $phone = AdminBaseStylesheetsTest::rules( self::media( self::css( 'admin4.css' ), 'screen and (max-width: 575.98px)' ) );
+        $this->assertSame( 'grid', $phone['table.a4-search-results tr']['display'], 'the type stacks under the name instead of leaving the screen' );
+        $this->assertSame( '2', $phone['table.a4-search-results tr > :nth-child(3)']['grid-column'] );
+        $rules = AdminBaseStylesheetsTest::rules( self::css( 'admin4.css' ) );
+        $this->assertSame( 'anywhere', $rules['.a4-search-path']['overflow-wrap'] );
+    }
+
+    public function testTreeArrowsAndTheLanguageChoiceAreLargeEnoughToTouch()
+    {
+        $coarse = AdminBaseStylesheetsTest::rules( self::media( self::css( 'admin4.css' ), '(pointer: coarse)' ) );
+        $this->assertSame( '-4px 0 -4px -8px', $coarse['div#contentstructure ul#content_tree_menu ul a.openclose-open::after, div#contentstructure ul#content_tree_menu ul a.openclose-close::after']['inset'], '16px arrow + 8px = 24px' );
+        // the node's language choice is as high as the buttons beside it at every width (32px, 28px compact)
+        $rules = AdminBaseStylesheetsTest::rules( self::css( 'admin4.css' ) );
+        $this->assertSame( 'var(--a4-control-h)', $rules['.controlbar.a4-node-actions form .button-left .block select']['height'] );
+    }
+
+    public function testTheBodyTextGrowsModestlyOnVeryWideWindows()
+    {
+        $components = self::css( 'components.css' );
+        $this->assertStringContainsString( '--a4-text-body: clamp(var(--a4-text-s), calc(var(--a4-text-s) - 3px + 0.15625vw), var(--a4-text-m));', $components,
+            '13px up to 1920px, 14px at 2560px: never below the scale\'s 13px body, never above its next step' );
+        $rules = AdminBaseStylesheetsTest::rules( self::css( 'admin4.css' ) );
+        $this->assertSame( 'var(--a4-text-body)', $rules['body']['font-size'] );
+    }
 }

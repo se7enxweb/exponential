@@ -2113,8 +2113,27 @@ html #action-controls .exp-dt-action-group:first-child .exp-dt-action { margin-l
 #header .searchtextwrapper { border: 0; border-radius: 999px; background-color: transparent; }
 #header .searchblock .searchbuttonfield { border-radius: 999px; }
 
+/* The body text grows a little on very wide windows (--a4-text-body: 13px up to 1920px, 14px at 2560px). core.css
+   keeps var(--a4-text-s) for the body; this later rule takes over in admin4 only. */
+body { font-size: var(--a4-text-body); }
+
+/* Search results: the path of each result under its name; on a phone the type stands under them too, so no column
+   is pushed out of the screen */
+.a4-search-path { display: block; color: var(--a4-muted); font-size: var(--a4-text-xs); overflow-wrap: anywhere; }
+@media screen and (max-width: 575.98px) {
+  table.a4-search-results tr {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: start;
+  }
+  table.a4-search-results tr > :nth-child(3) { grid-column: 2; padding-top: 0; color: var(--a4-muted); }
+  table.a4-search-results tr > th:nth-child(3) { display: none; }   /* the type is no column on a phone */
+}
+
 /* Touch screens: the small controls get a 24px target (WCAG 2.5.8) */
 @media (pointer: coarse) {
+  div#contentstructure ul#content_tree_menu ul a.openclose-open::after,
+  div#contentstructure ul#content_tree_menu ul a.openclose-close::after { inset: -4px 0 -4px -8px; }   /* 24 x 24px; rows are 24px apart */
   div#contentstructure ul#content_tree_menu a.nodeicon { display: inline-flex; min-width: var(--a4-space-5); min-height: var(--a4-space-5); align-items: center; justify-content: center; }
   #header .searchblock .searchscope,
   #searchscope-mobile { width: var(--a4-space-5); height: var(--a4-space-5); margin-top: calc(-0.5 * var(--a4-space-5)); }
