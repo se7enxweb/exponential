@@ -48,7 +48,6 @@ function run(steps) {
         querySelectorAll: () => [logo, icon, inside, close, site, sideTab],
     });
     const handlers = { icon: {}, close: {} };
-    const resize = [];
     const phone = { matches: true, change: [], addEventListener(type, fn) { if (type === 'change') { this.change.push(fn); } } };
     function $(target) {
         const name = typeof target === 'string' ? target : 'element';
@@ -73,7 +72,6 @@ function run(steps) {
         window: {
             getComputedStyle: (el) => ({ display: 'none', visibility: el && el.hiddenStyle ? 'hidden' : 'visible' }),
             matchMedia: (q) => { if (q !== '(max-width: 575.98px)') { throw new Error('unexpected query ' + q); } return phone; },
-            addEventListener(type, fn) { if (type === 'resize') { resize.push(fn); } },
         },
         document: {
             body,
@@ -118,7 +116,6 @@ function run(steps) {
         else if (step === 'tap outside') { tap(outside); }
         else if (step === 'wide') { phone.matches = false; phone.change.forEach((fn) => fn({ matches: false })); }
         else if (step === 'wide quietly') { phone.matches = false; }
-        else if (step === 'resize') { resize.forEach((fn) => fn({})); }
     });
     return {
         open: classes.menu.has('show'),
@@ -151,8 +148,6 @@ const scenarios = {
     'a tap outside the header closes': ['click', 'focus outside', 'tap outside'],
     'a tap in the menu keeps it': ['click', 'tap inside'],
     'a wider window closes the menu': ['click', 'wide'],
-    'a resize to a wider window without the query event closes the menu': ['click', 'wide quietly', 'resize'],
-    'a resize on a phone keeps the menu': ['click', 'resize'],
 };
 Object.keys(scenarios).forEach((name) => {
     process.stdout.write(JSON.stringify(Object.assign({ name }, run(scenarios[name]))) + '\n');

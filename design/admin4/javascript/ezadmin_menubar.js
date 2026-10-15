@@ -307,11 +307,6 @@
         } else if (phone.addListener) {
             phone.addListener(closeWhenWide);
         }
-        // and on the window's resize: a browser that does not report the query's change for a resized viewport (WebKit
-        // when emulating a phone) still closes the menu and unlocks the page
-        if (window.addEventListener) {
-            window.addEventListener("resize", closeWhenWide);
-        }
     }
 
     /**
