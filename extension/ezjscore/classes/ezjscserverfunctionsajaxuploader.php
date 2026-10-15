@@ -203,6 +203,14 @@ class ezjscServerFunctionsAjaxUploader extends ezjscServerFunctions
 
         $http = eZHTTPTool::instance();
         $handlerData = $http->postVariable( 'AjaxUploadHandlerData', array() );
+        // A missing or incomplete target (a stale script, a hand-made request) is refused like any other wrong
+        // argument, instead of reaching the handler's constructor (ArgumentCountError)
+        if ( !self::handlerDataFits( $args[0], $handlerData ) )
+        {
+            throw new InvalidArgumentException(
+                ezpI18n::tr( 'extension/ezjscore/ajaxuploader', 'Arguments error.' )
+            );
+        }
 
         $handlerOptions = new ezpExtensionOptions();
         $handlerOptions->iniFile = 'ezjscore.ini';
@@ -211,7 +219,16 @@ class ezjscServerFunctionsAjaxUploader extends ezjscServerFunctions
         $handlerOptions->handlerIndex = $args[0];
         $handlerOptions->handlerParams = $handlerData;
 
-        $handler = eZExtension::getHandlerClass( $handlerOptions );
+        try
+        {
+            $handler = eZExtension::getHandlerClass( $handlerOptions );
+        }
+        catch ( ArgumentCountError $e )
+        {
+            throw new InvalidArgumentException(
+                ezpI18n::tr( 'extension/ezjscore/ajaxuploader', 'Arguments error.' )
+            );
+        }
 
         if ( !$handler instanceof ezpAjaxUploaderHandlerInterface )
         {
@@ -223,6 +240,32 @@ class ezjscServerFunctionsAjaxUploader extends ezjscServerFunctions
             );
         }
         return $handler;
+    }
+
+    /**
+     * Whether the posted handler data can build the handler configured as $identifier: a list of plain values, at
+     * least as many as its constructor requires. An identifier that is not configured, or a class that does not
+     * exist, is left to getHandler()'s "Unable to load" refusal.
+     *
+     * @param string $identifier the key of [AjaxUploader] AjaxUploadHandler[] in ezjscore.ini
+     * @param mixed $handlerData the posted AjaxUploadHandlerData
+     * @return bool
+     */
+    public static function handlerDataFits( $identifier, $handlerData )
+    {
+        if ( !is_array( $handlerData ) )
+            return false;
+        foreach ( $handlerData as $value )
+        {
+            if ( !is_scalar( $value ) )
+                return false;
+        }
+        $ini = eZINI::instance( 'ezjscore.ini' );
+        $handlers = $ini->hasVariable( 'AjaxUploader', 'AjaxUploadHandler' ) ? $ini->variable( 'AjaxUploader', 'AjaxUploadHandler' ) : array();
+        if ( !is_array( $handlers ) || !isset( $handlers[$identifier] ) || !is_string( $handlers[$identifier] ) || !class_exists( $handlers[$identifier] ) )
+            return true;
+        $constructor = ( new ReflectionClass( $handlers[$identifier] ) )->getConstructor();
+        return $constructor === null || count( $handlerData ) >= $constructor->getNumberOfRequiredParameters();
     }
 
     /**
