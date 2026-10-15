@@ -2746,8 +2746,13 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
 @media (prefers-reduced-motion: reduce) {
   #leftmenu details.a4-navgroup > summary.a4-nav-title::before { transition: none; }
 }
+/* Forced colors repaint the titles, but -webkit-text-fill-color (currentcolor) still resolves to the author's ink, and
+   contrast checkers that read it measure the light ink on the forced canvas (1.35:1). The titles name the system
+   colour themselves, so what is painted and what is measured agree. */
 @media (forced-colors: active) {
   #leftmenu details.a4-navgroup > summary.a4-nav-title::before { forced-color-adjust: none; background-color: CanvasText; }
+  #leftmenu details.a4-navgroup > summary.a4-nav-title, #leftmenu h4[id^="leftmenu-title-"],
+  #content-tree .box-header h4 { color: CanvasText; -webkit-text-fill-color: CanvasText; }
   #leftmenu ul.leftmenu-items li > div > a[aria-current] { border-left: 3px solid Highlight; box-shadow: none; }
 }
 
