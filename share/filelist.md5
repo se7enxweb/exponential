@@ -920,7 +920,7 @@ d1f3e1ef98e8cee2e52a5446280eadc3  design/admin4/override/templates/embed-inline_
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
 a2c561e93ef63c93201e81acd4f32741  design/admin4/override/templates/window_controls_user.tpl
 f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin4/override/templates/windows_user.tpl
-d889dd07c2b91b4919cd78679ca93137  design/admin4/stylesheets/admin4.css
+80b2783bddefb31a61bf17d174fdde88  design/admin4/stylesheets/admin4.css
 9493200852bdafe9ca50b75ad7ceb93f  design/admin4/stylesheets/components.css
 9e90db5915f1915b7c9175b18868a205  design/admin4/stylesheets/content.css
 0368a507892a9eb10f58c7a00b0365bf  design/admin4/stylesheets/core.css
@@ -7088,7 +7088,7 @@ e2eab2213a32db585ca4653f802becb9  tests/tests/design/AdminLegacyControlsTest.php
 a33e9d573eb8e846797e949212bf192e  tests/tests/design/AdminNoticesTest.php
 0c55571a81de40303f49848a033d4661  tests/tests/design/AdminPageHeaderTest.php
 6ff0ec39508251b32aa19593c39780e4  tests/tests/design/AdminPreferencesTest.php
-be9a8a36dfdf93ce5a6212d4e8902e1c  tests/tests/design/AdminResponsiveTest.php
+8f0403fc955ca134dd04e7f8b47bce4e  tests/tests/design/AdminResponsiveTest.php
 7e8957a9c15916135defa02bc8301d00  tests/tests/design/AdminRetiredClassesTest.php
 003493399ea7fe614dcc6b56a253c7b0  tests/tests/design/AdminSidebarDrawerTest.php
 7f101fc469af0cac1fa69ab9a5503e48  tests/tests/design/AdminStylingRulesTest.php
