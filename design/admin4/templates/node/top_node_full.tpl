@@ -135,6 +135,8 @@
 </div>
 {/if}
 
+{include uri='design:parts/a4_tabs_height.tpl'}
+
 {ezscript_require( 'node_tabs.js' )}
 
 </div>
