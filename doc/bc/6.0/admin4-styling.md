@@ -249,6 +249,29 @@ focus. For a signed-in user every one of these choices is an eZPreference writte
 `<html>` by `parts/a4_preference_attributes.tpl`, so it follows the user to another browser); an anonymous page keeps
 it in localStorage. The left column's drawer (below 1024px) is not remembered.
 
+## Resize grips
+
+admin4 has four grips that change a size by hand: the left column's width (`.leftmenu-resize-handle`,
+`ezadmin_menubar.js`), the node view's tab box height (`.a4-tabs-height-grip`, `parts/a4_tabs_height.tpl`, `admin4.js`),
+the debug panel's height (`expdebugbar.js`) and the details panel of exp_adminui. They behave alike, and a new one
+does the same:
+
+- a focusable separator (`role="separator"`, `tabindex="0"`, `aria-orientation`, `aria-valuenow`, `aria-valuemin` and
+  `aria-valuemax` in pixels, updated on a window resize), with a name and a title that says how to use it;
+- dragged with pointer events (`touch-action: none`, pointer capture), so the mouse, a finger and a pen all work;
+- the arrow keys move the edge 16px, Shift+Arrow 64px, Home and End go to the smallest and largest size, and a
+  double-click gives the default back (the left column has its size buttons for that instead);
+- held between limits that follow the window, so a size saved on a large screen still fits a small one;
+- saved once, at the end of a drag or a short rest after the last key, through `window.a4Pref` (an eZPreference for
+  a signed-in user, read on `<html>` outside every cache-block, so the page is drawn at the saved size without a
+  jump); going back to the default empties the preference instead of storing the default;
+- the size reaches the CSS as a custom property on `<html>` set by the script (`--left-sidebar-width`,
+  `--a4-node-tabs-height`), never as a `style=""` in a template.
+
+The node view's tab box: the eZPreference `admin_node_preview_height` (pixels, one height for every node), applied from
+576px only, between 10em and 60em and at most 85% of the window. The "Default size" button beside the grip (icon
+`arrow-counterclockwise`) shows only while a height of the user's own is set. `AdminNodeTabsHeightTest` checks it.
+
 ## Legacy controls and the side columns
 
 The kernel's module templates still write `input.button`, `input.defaultbutton`, `input.button-disabled`,

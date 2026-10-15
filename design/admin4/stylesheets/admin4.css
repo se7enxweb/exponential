@@ -1242,7 +1242,10 @@ div.context-information.a4-node-meta {
 .a4-node-meta button.a4-copy:hover { color: var(--a4-ink); border-bottom-color: var(--a4-accent); }
 .a4-node-meta button.a4-copied { color: var(--a4-ok); border-bottom-color: var(--a4-ok); }
 .a4-node-meta button.a4-copied::after { content: " \2713"; }
-.a4-node-langs { display: inline-flex; gap: var(--a4-space-1); }
+.a4-node-langs { display: inline-flex; flex-wrap: wrap; gap: var(--a4-space-1); }
+/* each language badge of the node is a link: at least 24px high (WCAG 2.5.8), so a wrapped row of them keeps its
+   targets apart at every width (axe target-size at 1024px) */
+.a4-node-langs a.a4-node-lang { display: inline-flex; align-items: center; min-height: var(--a4-space-5); }
 
 /* the tabs as a quiet segmented row, the open panel as a soft card under it */
 .a4-node-tabs ul.tabs { display: flex; flex-wrap: wrap; gap: 2px; margin: 0 0 var(--a4-space-2); padding: var(--a4-space-1); border-radius: var(--a4-radius-s); background-color: var(--a4-soft); box-shadow: inset 0 0 0 1px var(--a4-line); }
@@ -1280,6 +1283,69 @@ div.context-information.a4-node-meta {
   height: auto;
   min-height: 0;
   padding-bottom: var(--a4-space-5);
+}
+/* The tab box's height (parts/a4_tabs_height.tpl, admin4.js): one height of the user's own for every node, the
+   eZPreference admin_node_preview_height (localStorage on an anonymous page), set by admin4.js on <html> as
+   --a4-node-tabs-height before the page is drawn. It holds from 576px only (a phone keeps the default) and while the
+   tabs are on, between 10em (half the default 20em of pagelayout.css) and 60em (three times), and never taller than
+   85% of the window, so a height saved on a large screen still fits a small one. With admin4.js the grip below takes
+   the place of the browser's resize grip: it works with the keyboard and on touch screens too. */
+@media screen and (min-width: 576px) {
+  html[data-a4-node-tabs-height] #window-controls:has(> .a4-tabs-height):not(:has(.tabs-content.disabled)) {
+    height: clamp(10em, var(--a4-node-tabs-height), min(60em, 85vh));
+    min-height: 10em;
+  }
+}
+#window-controls:has(> .a4-tabs-height) { position: relative; }
+#window-controls.a4-tabs-sizable { resize: none; }
+#window-controls:not(.a4-node-tabs):has(> .a4-tabs-height) .tab-content { padding-bottom: var(--a4-space-5); }
+.a4-tabs-height {
+  position: absolute;
+  right: var(--a4-space-4);   /* clear of the tab panel's scroll bar */
+  bottom: var(--a4-space-2);  /* room for the focus ring: the box clips what overflows it */
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--a4-space-1);
+}
+.a4-tabs-height[hidden],
+.a4-tabs-height-reset[hidden],
+#window-controls:has(.tabs-content.disabled) > .a4-tabs-height { display: none; }
+/* opaque over the panel's text: one class more than .a4-icon-btn (components.css, loaded later, sets no background) */
+.a4-tabs-height > .a4-tabs-height-reset { background-color: var(--a4-card); box-shadow: 0 0 0 1px var(--a4-line); }
+/* the grip: a small card with two rows of dots, the resize cursor and the focus ring */
+.a4-tabs-height-grip {
+  position: relative;
+  box-sizing: border-box;
+  width: var(--a4-space-7);
+  height: var(--a4-space-5);
+  border-radius: var(--a4-radius-s);
+  background: var(--a4-card);
+  box-shadow: 0 0 0 1px var(--a4-line-strong), var(--a4-shadow-s);
+  color: var(--a4-muted);
+  cursor: ns-resize;
+  touch-action: none;
+}
+.a4-tabs-height-grip::before {
+  content: "";
+  position: absolute;
+  inset: 6px 15px;   /* three dots by two, whole */
+  background-image: radial-gradient(circle, currentColor 1.5px, transparent 2px);
+  background-size: 6px 6px;
+}
+.a4-tabs-height-grip:hover,
+.a4-tabs-height-grip:focus-visible,
+.a4-tabs-height-grip.is-dragging { color: var(--a4-accent-text); box-shadow: 0 0 0 1px var(--a4-accent), var(--a4-shadow-s); }
+.a4-tabs-height-grip:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
+body.a4-tabs-resizing { cursor: ns-resize; user-select: none; }
+@media screen and (max-width: 575.98px) {
+  .a4-tabs-height { display: none; }
+}
+@media (forced-colors: active) {
+  .a4-tabs-height-grip,
+  .a4-tabs-height-reset { border: 1px solid CanvasText; }
+  .a4-tabs-height-grip::before { forced-color-adjust: none; color: CanvasText; }
+  .a4-tabs-height-grip:focus-visible { outline-color: Highlight; }
 }
 /* the node view needs no rules between its parts: spacing separates them (the base drew a dashed line above the
    tabs, a line under the closed tab panel, and a dashed line above the sub items) */
@@ -2254,8 +2320,10 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
 #leftmenu details.a4-navgroup > .leftmenu-items { margin: 0; padding: 0; list-style: none; }
 /* the lead links (LeadLinks[], the Setup overview) stand before the groups, as plain rows of the same look */
 #leftmenu .a4-navlead > .leftmenu-items { margin: 0 0 var(--a4-space-2); padding: 0; list-style: none; }
-#leftmenu :is(details.a4-navgroup, .a4-navlead) > .leftmenu-items li { margin: 0; }
-#leftmenu :is(details.a4-navgroup, .a4-navlead) > .leftmenu-items li > div > :is(a, span) {
+/* the trail links (TrailLinks[]) stand after the groups, as the lead links before them */
+#leftmenu .a4-navtrail > .leftmenu-items { margin: var(--a4-space-2) 0 0; padding: 0; list-style: none; }
+#leftmenu :is(details.a4-navgroup, .a4-navlead, .a4-navtrail) > .leftmenu-items li { margin: 0; }
+#leftmenu :is(details.a4-navgroup, .a4-navlead, .a4-navtrail) > .leftmenu-items li > div > :is(a, span) {
   display: block;
   min-height: 24px;
   padding: var(--a4-space-1) var(--a4-space-2);
@@ -2342,6 +2410,7 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
   .sidebar,
   .sidebar-controls,
   .leftmenu-resize-handle,
+  .a4-tabs-height,
   #controlbar-top,
   .controlbar-fixed,
   .scroll-to-top,

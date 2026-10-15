@@ -5,6 +5,8 @@
  * link carries aria-current="page"; a plain menu's list is named by its heading; the left column is the "Side menu"
  * navigation. The access checks per link are untouched. The Setup menu ends with the groups "AI" and "Updates" for
  * the links of the se7enx extensions (expai; ezupdate, git_manager) before "More"; a group without a link is not drawn.
+ * TrailLinks[] moves links to the end of a menu, after the links extensions append and after every group, in all
+ * three copies of the template (admin4, admin, adminui): the Dashboard menu closes with Change password, Edit profile.
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminLeftMenuGroupsTest.php
  *
@@ -167,20 +169,101 @@ class AdminLeftMenuGroupsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'system' ), $m[1] );
     }
 
+    /** The copies of the menu template: admin4's, the classic admin's and adminui's */
+    const MENU_TEMPLATES = array(
+        'admin4'  => 'design/admin4/templates/parts/ini_menu.tpl',
+        'admin'   => 'design/admin/templates/parts/ini_menu.tpl',
+        'adminui' => 'extension/exp_adminui/design/adminui/templates/parts/ini_menu.tpl',
+    );
+
+    /** @return string[] the link addresses of a drawn menu, in their order */
+    private static function hrefs( $html )
+    {
+        preg_match_all( '/<a [^>]*?href="\/?([^"]*)"/', $html, $m );
+        return array_map( function ( $url ) { return preg_replace( '#^.*?index\.php/?#', '', $url ); }, $m[1] );
+    }
+
+    /**
+     * The Dashboard menu of settings/menu.ini as an extension (expai) appends to it: its Links[] in their order, then
+     * the extension's, drawn in a section of its own so no PolicyList_<key>[] of the real menu asks for a user.
+     */
+    private static function dashboardMenu( $section, $layout, $template = 'admin4', array $settings = array() )
+    {
+        $my = self::iniSection( 'Leftmenu_my' );
+        $links = array_merge( $my['Links'], array( 'expai_summary' => 'expai/summary', 'expai_vector' => 'expai/vector' ) );
+        return self::renderMenu( self::MENU_TEMPLATES[$template], $section,
+                                 array_merge( array( 'Links' => $links, 'LinkNames' => array(), 'TrailLinks' => $my['TrailLinks'] ?? array() ), $settings ),
+                                 $layout, 'content/dashboard' );
+    }
+
+    public function testDashboardMenuOrderInEveryDesign()
+    {
+        $wanted = array( 'content/dashboard', 'collaboration/view/summary', 'content/pendinglist', 'content/draft', 'content/bookmark',
+                         'mailpreferences/settings', 'notification/settings', 'audit/console', 'expai/summary', 'expai/vector',
+                         'user/password', 'user/edit/(action)/edit' );
+        $my = self::iniSection( 'Leftmenu_my' );
+        $this->assertSame( array( 'change_password', 'edit_profile' ), $my['TrailLinks'] ?? null );
+        foreach ( array_keys( self::MENU_TEMPLATES ) as $design )
+        {
+            $html = self::dashboardMenu( 'Leftmenu_trailtest', 'menu', $design );
+            $this->assertSame( $wanted, self::hrefs( $html ), "the Dashboard menu of $design" );
+            $this->assertSame( 1, substr_count( $html, '<ul' ), "$design draws the trail links in the one list" );
+        }
+        // a user without the audit console and the extension: the same order without them, Change password still
+        // before Edit profile at the end (a trail link the menu does not draw is left out, nothing else moves)
+        $html = self::renderMenu( self::MENU_TEMPLATES['admin4'], 'Leftmenu_trailtest',
+                                  array( 'Links' => array_diff_key( $my['Links'], array( 'audit' => 1 ) ), 'LinkNames' => array(),
+                                         'TrailLinks' => array( 'change_password', 'no_such_link', 'edit_profile', 'change_password' ) ),
+                                  'menu', 'content/dashboard' );
+        $this->assertSame( array_values( array_diff( $wanted, array( 'audit/console', 'expai/summary', 'expai/vector' ) ) ), self::hrefs( $html ) );
+        // tiles without groups: the trail links are the last tiles
+        $tiles = self::dashboardMenu( 'Leftmenu_trailtest', 'tiles' );
+        $this->assertMatchesRegularExpression( '#expai/vector".*user/password".*user/edit/\(action\)/edit"#s', $tiles );
+    }
+
+    public function testTrailLinksFollowTheGroupsAndMore()
+    {
+        $links = array( 'overview' => 'setup/menu', 'myext_report' => 'myext/report', 'expai_summary' => 'expai/summary', 'expqueue' => 'expqueue/dashboard' );
+        $html = self::renderMenu( self::MENU_TEMPLATES['admin4'], 'Leftmenu_setup',
+                                  array( 'Links' => $links, 'LinkNames' => array(), 'TrailLinks' => array( 'expqueue', 'overview' ) ), 'menu', 'setup/menu' );
+        preg_match_all( '/<details class="a4-navgroup" id="leftmenu-title-Leftmenu-setup-([a-z_]+)"/', $html, $m );
+        $this->assertSame( array( 'ai', 'more' ), $m[1], 'a trail link sits in no group: System has no link left' );
+        $this->assertStringNotContainsString( 'a4-navlead', $html, 'a key in LeadLinks[] and TrailLinks[] is a trail link' );
+        $trail = substr( $html, strrpos( $html, '</details>' ) );
+        $this->assertSame( 1, preg_match( '#^</details>\s*<div class="a4-navtrail">#', $trail ) );
+        $this->assertSame( array( 'expqueue/dashboard', 'setup/menu' ), self::hrefs( $trail ) );
+        $tiles = self::renderMenu( self::MENU_TEMPLATES['admin4'], 'Leftmenu_setup',
+                                   array( 'Links' => $links, 'LinkNames' => array(), 'TrailLinks' => array( 'expqueue' ) ), 'tiles', 'setup/menu' );
+        $this->assertSame( 'expqueue/dashboard', array_slice( self::hrefs( $tiles ), -1 )[0], 'the trail link is the last tile' );
+        $this->assertStringContainsString( '#leftmenu .a4-navtrail > .leftmenu-items', self::read( 'design/admin4/stylesheets/admin4.css' ) );
+    }
+
     /**
      * Fetches design/admin4/templates/parts/ini_menu.tpl for [Leftmenu_setup] with the given Links[] and LinkNames[]
      * in place of the menu's own, the site design admin4 and CheckViewAccess=disabled; restores every setting after.
      */
     private static function renderSetupMenu( array $links, array $names, $layout )
     {
+        return self::renderMenu( self::MENU_TEMPLATES['admin4'], 'Leftmenu_setup', array( 'Links' => $links, 'LinkNames' => $names ), $layout, 'update/dashboard' );
+    }
+
+    /**
+     * Fetches a copy of parts/ini_menu.tpl for one menu.ini section with the given settings in place of its own, the
+     * site design admin4 and CheckViewAccess=disabled; restores every setting after.
+     */
+    private static function renderMenu( $template, $section, array $settings, $layout, $uri )
+    {
         $root = dirname( __DIR__, 3 );
         $menu = eZINI::instance( 'menu.ini' );
         $site = eZINI::instance( 'site.ini' );
         $savedIni = array(
-            array( $menu, 'Leftmenu_setup', 'Links' ), array( $menu, 'Leftmenu_setup', 'LinkNames' ),
+            array( $menu, $section, 'TrailLinks' ),
             array( $menu, 'MenuAccessSettings', 'CheckViewAccess' ), array( $menu, 'MenuAccessSettings', 'NoAccessLinks' ),
             array( $site, 'DesignSettings', 'AdditionalSiteDesignList' ),
         );
+        foreach ( array_keys( $settings ) as $name )
+            if ( $name !== 'TrailLinks' )
+                $savedIni[] = array( $menu, $section, $name );
         foreach ( $savedIni as $i => $entry )
             $savedIni[$i][] = $entry[0]->hasVariable( $entry[1], $entry[2] ) ? array( $entry[0]->variable( $entry[1], $entry[2] ) ) : null;
         $savedGlobals = array();
@@ -191,8 +274,10 @@ class AdminLeftMenuGroupsTest extends PHPUnit\Framework\TestCase
         $overrides = new ReflectionProperty( 'eZTemplateDesignResource', 'overrideArrayCache' );
         try
         {
-            $menu->setVariable( 'Leftmenu_setup', 'Links', $links );
-            $menu->setVariable( 'Leftmenu_setup', 'LinkNames', $names );
+            if ( $menu->hasVariable( $section, 'TrailLinks' ) )
+                $menu->removeSetting( $section, 'TrailLinks' );
+            foreach ( $settings as $name => $value )
+                $menu->setVariable( $section, $name, $value );
             $menu->setVariable( 'MenuAccessSettings', 'CheckViewAccess', 'disabled' );
             $menu->setVariable( 'MenuAccessSettings', 'NoAccessLinks', 'enabled' );
             $site->setVariable( 'DesignSettings', 'AdditionalSiteDesignList', array() );
@@ -202,11 +287,11 @@ class AdminLeftMenuGroupsTest extends PHPUnit\Framework\TestCase
             $GLOBALS['eZTemplateDesignSetting'] = array( 'site' => 'admin4' );
             $overrides->setValue( null, null );
             $tpl = eZTemplate::factory();
-            $tpl->setVariable( 'ini_section', 'Leftmenu_setup' );
+            $tpl->setVariable( 'ini_section', $section );
             $tpl->setVariable( 'ui_context', 'navigation' );
-            $tpl->setVariable( 'uri_string', 'update/dashboard' );
+            $tpl->setVariable( 'uri_string', $uri );
             $tpl->setVariable( 'menu_layout', $layout );
-            $html = $tpl->fetch( "$root/design/admin4/templates/parts/ini_menu.tpl" );
+            $html = $tpl->fetch( "$root/$template" );
             PHPUnit\Framework\Assert::assertSame( array(), $tpl->errorLog() );
             return $html;
         }
@@ -217,7 +302,10 @@ class AdminLeftMenuGroupsTest extends PHPUnit\Framework\TestCase
             foreach ( $savedIni as list( $ini, $block, $name, $value ) )
             {
                 if ( $value === null )
-                    $ini->removeSetting( $block, $name );
+                {
+                    if ( $ini->hasVariable( $block, $name ) )
+                        $ini->removeSetting( $block, $name );
+                }
                 else
                     $ini->setVariable( $block, $name, $value[0] );
             }

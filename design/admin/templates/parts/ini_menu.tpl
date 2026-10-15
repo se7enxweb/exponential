@@ -14,6 +14,9 @@
    without a link with NoAccessLinks=disabled. A menu with no link left is left out.
    * hidden_links : (optional) keys of links to leave out whatever the user may do (the audit menu passes
      fetch( 'audit', 'hidden_menu_links' ): the links into channels the user may not read)
+   TrailLinks[] (optional, menu.ini) names links of the section drawn after all its other links, in the order
+   TrailLinks[] names them, also after the links extensions append (the Dashboard menu's Change password and Edit
+   profile). Access is checked as for every link; a key the user may not open is left out as always.
 *}
 
 {if is_unset( $ini_section )}
@@ -123,11 +126,33 @@
             {/if}
 
             {if $has_access}
-                {set $items = $items|append( hash( 'url', $link_url, 'name', $item_name, 'state', cond( $disabled, 'disabled', 'link' ) ) )}
+                {set $items = $items|append( hash( 'key', $link_key, 'url', $link_url, 'name', $item_name, 'state', cond( $disabled, 'disabled', 'link' ) ) )}
             {elseif $hide_no_access|not}
-                {set $items = $items|append( hash( 'url', $link_url, 'name', $item_name, 'state', 'no-access' ) )}
+                {set $items = $items|append( hash( 'key', $link_key, 'url', $link_url, 'name', $item_name, 'state', 'no-access' ) )}
             {/if}
         {/foreach}
+    {/if}
+
+    {* TrailLinks[]: the links named there move to the end, in that order; the rest keep theirs *}
+    {if and( $items|count, ezini_hasvariable( $ini_section, 'TrailLinks', 'menu.ini' ) )}
+        {def $trail_items = array()
+             $trail_keys = array()
+             $kept_items = array()}
+        {foreach ezini( $ini_section, 'TrailLinks', 'menu.ini' ) as $trail_key}
+            {foreach $items as $item}
+                {if and( eq( $item.key, $trail_key ), $trail_keys|contains( $item.key )|not )}
+                    {set $trail_items = $trail_items|append( $item )
+                         $trail_keys = $trail_keys|append( $item.key )}
+                {/if}
+            {/foreach}
+        {/foreach}
+        {foreach $items as $item}
+            {if $trail_keys|contains( $item.key )|not}
+                {set $kept_items = $kept_items|append( $item )}
+            {/if}
+        {/foreach}
+        {set $items = $kept_items|merge( $trail_items )}
+        {undef $trail_items $trail_keys $kept_items}
     {/if}
 
     {if $items|count}

@@ -437,6 +437,182 @@
 })();
 
 /*
+ * admin4: the height of the node view's tab box (#window-controls: View, Details, ...), one height of the user's own
+ * for every node. The grip (.a4-tabs-height-grip, parts/a4_tabs_height.tpl) is a focusable separator: it is dragged
+ * with the mouse, a finger or a pen, or moved with the arrow keys (16px; Shift, Page Up and Page Down 64px; Home and
+ * End the smallest and the largest height), the same steps as the grips of the left column and the debug panel. The
+ * button beside it (shown only while the height is not the default) and a double-click on the grip go back to the
+ * default and forget the stored height instead of storing the default, so a later change of the default reaches the
+ * user.
+ * Stored as a number of pixels: for a signed-in user the eZPreference admin_node_preview_height through window.a4Pref
+ * (written on <html> outside every cache-block, parts/a4_preference_attributes.tpl); window.a4Pref keeps it in this
+ * browser on an anonymous page and when the preference could not be saved. On load the preference wins over the
+ * browser's copy, which wins over the default. A height is saved once: at the end of a drag, 400ms after the last key
+ * (or when the page is left before that), at once by the reset button, and only when it changed. It is applied
+ * before the page is drawn as --a4-node-tabs-height on <html>; admin4.css uses it from 576px only (a phone keeps the
+ * default) and holds it between 10em and 60em, and at most 85% of the window.
+ */
+(function () {
+    'use strict';
+
+    var NAME = 'admin_node_preview_height', KEY = 'exp-a4-node-preview-height', DELAY = 400, STEP = 16, BIG = 64;
+    var root = document.documentElement;
+
+    function parse(value) {
+        return /^\d{2,4}$/.test(String(value || '')) ? parseInt(value, 10) : null;
+    }
+
+    // the preference (signed in; "" once reset), else this browser's copy (window.a4Pref)
+    function stored() {
+        return window.a4Pref ? parse(window.a4Pref.get(NAME, KEY)) : null;
+    }
+
+    function show(height) {
+        if (height === null) {
+            root.removeAttribute('data-a4-node-tabs-height');
+            root.style.removeProperty('--a4-node-tabs-height');
+        } else {
+            root.setAttribute('data-a4-node-tabs-height', String(height));
+            root.style.setProperty('--a4-node-tabs-height', height + 'px');
+        }
+    }
+
+    var saved = stored();
+    show(saved);
+
+    // null: back to the default; the stored height is forgotten (the preference set empty, the browser's copy removed)
+    function save(height) {
+        if (height === saved) return;
+        saved = height;
+        if (window.a4Pref) window.a4Pref.set(NAME, height === null ? '' : String(height), KEY);
+    }
+
+    function init() {
+        var box = document.getElementById('window-controls');
+        var bar = box ? box.querySelector('.a4-tabs-height') : null;
+        var grip = bar ? bar.querySelector('.a4-tabs-height-grip') : null;
+        var reset = bar ? bar.querySelector('.a4-tabs-height-reset') : null;
+        if (!grip || !reset) return;
+
+        var current = saved, timer = null, drag = null;
+
+        // the box's em: the default is 20em (pagelayout.css; the layouts tab draws 22em), the range 10em to 60em and
+        // at most 85% of the window, as in admin4.css. A height equal to the 20em default is no height of the user's
+        // own on any tab; shown is what the box draws without one on the open tab.
+        function limits() {
+            var em = parseFloat(window.getComputedStyle(box).fontSize) || 16;
+            var min = Math.round(em * 10);
+            return {
+                min: min,
+                max: Math.max(min, Math.round(Math.min(em * 60, window.innerHeight * 0.85))),
+                def: Math.round(em * 20),
+                shown: Math.round(em * (box.classList.contains('layouts-active') ? 22 : 20))
+            };
+        }
+
+        // the height drawn now, worked out as admin4.css does it: the box's own height can lag behind while a
+        // transition runs, and the keys would then step from an old value
+        function drawn(l) {
+            return current === null ? l.shown : Math.min(l.max, Math.max(l.min, current));
+        }
+
+        function update() {
+            var l = limits();
+            grip.setAttribute('aria-valuemin', String(l.min));
+            grip.setAttribute('aria-valuemax', String(l.max));
+            grip.setAttribute('aria-valuenow', String(drawn(l)));
+            reset.hidden = current === null;
+        }
+
+        // a height within the limits; the default itself is no height of the user's own
+        function apply(height) {
+            var l = limits();
+            if (height !== null) {
+                height = Math.min(l.max, Math.max(l.min, Math.round(height)));
+                if (height === l.def) height = null;
+            }
+            current = height;
+            show(height);
+            update();
+        }
+
+        function flush() {
+            if (timer !== null) { window.clearTimeout(timer); timer = null; }
+            save(current);
+        }
+
+        function later() {
+            if (timer !== null) window.clearTimeout(timer);
+            timer = window.setTimeout(flush, DELAY);
+        }
+
+        function stop(event) {
+            if (!drag || (event && event.pointerId !== drag.id)) return;
+            drag = null;
+            grip.classList.remove('is-dragging');
+            document.body.classList.remove('a4-tabs-resizing');
+            flush();
+        }
+
+        grip.addEventListener('pointerdown', function (event) {
+            if (event.button !== undefined && event.button !== 0) return;
+            event.preventDefault();
+            drag = { id: event.pointerId, y: event.clientY, height: drawn(limits()) };
+            if (grip.setPointerCapture) grip.setPointerCapture(event.pointerId);
+            grip.classList.add('is-dragging');
+            document.body.classList.add('a4-tabs-resizing');
+            grip.focus();
+        });
+        grip.addEventListener('pointermove', function (event) {
+            if (drag && event.pointerId === drag.id) apply(drag.height + event.clientY - drag.y);
+        });
+        grip.addEventListener('pointerup', stop);
+        grip.addEventListener('pointercancel', stop);
+        grip.addEventListener('lostpointercapture', stop);
+
+        grip.addEventListener('keydown', function (event) {
+            var l = limits(), height = drawn(l), next = null;
+            var step = event.shiftKey ? BIG : STEP;
+            if (event.key === 'ArrowDown') next = height + step;
+            else if (event.key === 'ArrowUp') next = height - step;
+            else if (event.key === 'PageDown') next = height + BIG;
+            else if (event.key === 'PageUp') next = height - BIG;
+            else if (event.key === 'Home') next = l.min;
+            else if (event.key === 'End') next = l.max;
+            if (next === null) return;
+            event.preventDefault();
+            apply(next);
+            later();
+        });
+
+        function toDefault() {
+            grip.focus();   // the button hides itself: the focus stays on the control
+            apply(null);
+            flush();
+        }
+        reset.addEventListener('click', toDefault);
+        // as on the grips of the debug panel and of the details panel: a double-click gives the default back
+        grip.addEventListener('dblclick', function (event) {
+            if (event && event.preventDefault) event.preventDefault();
+            toDefault();
+        });
+
+        // a change still waiting when the page is left is saved
+        window.addEventListener('pagehide', function () { if (timer !== null) flush(); });
+        window.addEventListener('resize', update);
+        // node_tabs.js switches the layouts tab's class: its default height differs
+        if (window.MutationObserver) new window.MutationObserver(update).observe(box, { attributes: true, attributeFilter: ['class'] });
+
+        box.classList.add('a4-tabs-sizable');
+        bar.hidden = false;
+        update();
+    }
+
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+    else init();
+})();
+
+/*
  * The content of the rich text editors follows the page's mode. TinyMCE 3 and 8 (the online editor) draw a field's
  * text in an iframe with ezoe's own light content stylesheet. The edit form names two stylesheets in
  * data-a4-editor-css (components.css for the tokens, editor_content.css for the rules); each editor's document gets

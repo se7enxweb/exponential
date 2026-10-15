@@ -8604,6 +8604,18 @@
 <context>
     <name>design/admin/node/view/full</name>
     <message>
+        <source>Default size</source>
+        <translation>Default size</translation>
+    </message>
+    <message>
+        <source>Height of the tab panel</source>
+        <translation>Height of the tab panel</translation>
+    </message>
+    <message>
+        <source>Drag, or use the arrow keys, to change the height; double-click for the default size</source>
+        <translation>Drag, or use the arrow keys, to change the height; double-click for the default size</translation>
+    </message>
+    <message>
         <source>Could not copy</source>
         <translation>Could not copy</translation>
     </message>

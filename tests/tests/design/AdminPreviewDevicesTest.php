@@ -95,7 +95,7 @@ class AdminPreviewDevicesTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( "if (!current || !width || (force !== true && width === lastWidth)) return;", $admin4, 'no redraw loop, no drawing into a hidden stage' );
         $this->assertStringContainsString( 'new ResizeObserver(draw).observe(stage)', $admin4, 'follows the column\'s width' );
         $prefs = self::read( 'design/admin4/templates/parts/a4_preference_attributes.tpl' );
-        $this->assertStringContainsString( "'admin_preview_device', 'admin_preview_landscape' ) as \$a4_pref", $prefs, 'written on <html> for a4Pref' );
+        $this->assertStringContainsString( "'admin_preview_device', 'admin_preview_landscape', ", $prefs, 'written on <html> for a4Pref' );
 
         $s = self::harness();
         if ( $s === null )

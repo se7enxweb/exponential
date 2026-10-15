@@ -142,6 +142,7 @@
 {* ---- The tabs (unchanged template: extensions add theirs) ---- *}
 <div id="window-controls" class="tab-block a4-node-tabs">
 {include uri='design:window_controls.tpl'}
+{include uri='design:parts/a4_tabs_height.tpl'}
 </div>
 
 {undef $js_class_languages $disable_another_language $disabled_sub_menu $has_content_class $object $section
