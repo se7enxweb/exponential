@@ -485,22 +485,9 @@ function _moveTopLevelOnScreen( menuID, mousePos, anchor )
     var areaTop = screenData.ScrollY + _fixedHeaderHeight(), areaBottom = screenData.ScrollY + screenData.Height;
     var below = anchor ? anchor.bottom : mousePos.y + EZPOPMENU_OFFSET;
     var above = anchor ? anchor.top : mousePos.y - EZPOPMENU_OFFSET;
-    var height = menuElement.offsetHeight;
-    if ( below + height <= areaBottom )
-        newY = below;
-    else if ( above - height >= areaTop )
-        newY = above - height;
-    else if ( areaBottom - below >= above - areaTop )
-    {
-        newY = below;
-        menuElement.style.maxHeight = Math.max( areaBottom - below, EZPOPMENU_MIN_HEIGHT ) + 'px';
-    }
-    else
-    {
-        var room = Math.max( above - areaTop, EZPOPMENU_MIN_HEIGHT );
-        newY = above - room;
-        menuElement.style.maxHeight = room + 'px';
-    }
+    var place = _verticalPlace( areaTop, areaBottom, above, below, menuElement.offsetHeight, EZPOPMENU_MIN_HEIGHT );
+    newY = place.top;
+    if ( place.maxHeight !== null ) menuElement.style.maxHeight = place.maxHeight + 'px';
 
     // compensate if we are to the right of the screen
     if ( (screenData.ScrollX + screenData.Width) < ( mousePos.x + EZPOPMENU_OFFSET + menuElement.offsetWidth ) )
@@ -513,6 +500,30 @@ function _moveTopLevelOnScreen( menuID, mousePos, anchor )
     // reposition menu
     menuElement.style.left = newX + "px";
     menuElement.style.top = newY + "px";
+}
+
+/*!
+  Where a menu of the given height goes in the visible area areaTop..areaBottom (page coordinates), opened from a
+  point or trigger whose free edges are above (its top) and below (its bottom): { top, maxHeight }, maxHeight null
+  when the menu keeps its own height. Below when it fits, else above, else on the side with more room, as tall as
+  that room but at least minHeight; a menu that needs more than the room on that side stays inside the visible area
+  (it then covers the trigger) instead of reaching under the header or past the window's bottom edge.
+*/
+function _verticalPlace( areaTop, areaBottom, above, below, height, minHeight )
+{
+    var visible = Math.max( areaBottom - areaTop, 0 );
+    if ( below + height <= areaBottom )
+        return { 'top': below, 'maxHeight': null };
+    if ( above - height >= areaTop )
+        return { 'top': above - height, 'maxHeight': null };
+    var maxHeight;
+    if ( areaBottom - below >= above - areaTop )
+    {
+        maxHeight = Math.min( Math.max( areaBottom - below, minHeight ), visible );
+        return { 'top': Math.max( areaTop, Math.min( below, areaBottom - maxHeight ) ), 'maxHeight': maxHeight };
+    }
+    maxHeight = Math.min( Math.max( above - areaTop, minHeight ), visible );
+    return { 'top': Math.max( areaTop, above - maxHeight ), 'maxHeight': maxHeight };
 }
 
 /*!
@@ -553,6 +564,9 @@ function _moveSubLevelOnScreen( menuID, alignItem )
 {
     var menuElement = document.getElementById( menuID ), screenData = _getScreenProperties();
     var newX = 0; var newY = 0;
+    // a submenu gets no height limit; one left from an earlier opening would cut it off
+    menuElement.style.maxHeight = '';
+    var areaTop = screenData.ScrollY + _fixedHeaderHeight();
 
     var alignElement = document.getElementById( alignItem );
     var parentElement = document.getElementById( VisibleMenus[menuArray[menuID]['depth'] - 1] );
@@ -566,9 +580,9 @@ function _moveSubLevelOnScreen( menuID, alignItem )
     // compensate if we are below the screen
     if ( ( screenData.ScrollY + screenData.Height ) < ( newY + menuElement.offsetHeight ) )
         newY = screenData.ScrollY + screenData.Height - menuElement.offsetHeight;
-    // compensate if above the screen
-    else if ( screenData.ScrollY > newY )
-        newY = screenData.ScrollY;
+    // compensate if above the screen (its visible part, under a fixed header)
+    if ( newY < areaTop )
+        newY = areaTop;
 
     // compensate if we are to the right of the screen
     // (without its parent menu the submenu stays where it is: there is no side to move it to)
