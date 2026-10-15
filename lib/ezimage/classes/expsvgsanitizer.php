@@ -598,7 +598,7 @@ class expSvgSanitizer
                     $kept[] = array( self::XLINK_NS, 'xlink:href', $href );
                     $hasHref = true;
                 }
-                else if ( $local === 'title' && !static::hasDangerousValue( $value ) )
+                else if ( $local === 'title' && !static::hasScriptInText( $value ) )
                 {
                     $kept[] = array( self::XLINK_NS, 'xlink:title', $value );
                 }
@@ -606,7 +606,7 @@ class expSvgSanitizer
             }
             if ( $namespace === self::XML_NS )
             {
-                if ( ( $local === 'space' || $local === 'lang' ) && !static::hasDangerousValue( $value ) )
+                if ( ( $local === 'space' || $local === 'lang' ) && !static::hasScriptInText( $value ) )
                     $kept[] = array( self::XML_NS, 'xml:' . $local, $value );
                 continue;
             }
@@ -615,9 +615,11 @@ class expSvgSanitizer
 
             if ( strncmp( $local, 'on', 2 ) === 0 )
                 continue;
-            if ( strncmp( $local, 'aria-', 5 ) === 0 && preg_match( '/^aria-[a-z]+$/', $local ) )
+            // text for people (a label, a tooltip): never loaded or run, so only a script or data URL in it
+            // goes; CSS checks would drop ordinary words such as "image(2)" or "metadata:"
+            if ( ( strncmp( $local, 'aria-', 5 ) === 0 && preg_match( '/^aria-[a-z]+$/', $local ) ) || $local === 'title' )
             {
-                if ( !static::hasDangerousValue( $value ) )
+                if ( !static::hasScriptInText( $value ) )
                     $kept[] = array( null, $local, $value );
                 continue;
             }
@@ -718,6 +720,21 @@ class expSvgSanitizer
         if ( $entities )
             $value = html_entity_decode( $value, ENT_QUOTES | ENT_HTML5, 'UTF-8' );
         return strtolower( preg_replace( '/[\x00-\x20\x7F]+/', '', $value ) );
+    }
+
+    /**
+     * Whether the text $value (an aria-* label, a title) carries a script or data URL: one of the schemes
+     * javascript:, vbscript:, livescript: or data: at the start of a word, also with white space or
+     * control characters inside the scheme, character references decoded.
+     *
+     * @param string $value
+     * @return bool
+     */
+    protected static function hasScriptInText( $value )
+    {
+        $text = strtolower( html_entity_decode( (string)$value, ENT_QUOTES | ENT_HTML5, 'UTF-8' ) );
+        $text = preg_replace( '/[\x00-\x20\x7F]+/', ' ', $text );
+        return preg_match( '/(?<![a-z0-9+.\-])(?:j ?a ?v ?a ?s ?c ?r ?i ?p ?t|v ?b ?s ?c ?r ?i ?p ?t|l ?i ?v ?e ?s ?c ?r ?i ?p ?t|d ?a ?t ?a) ?:/', $text ) === 1;
     }
 
     /**

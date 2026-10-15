@@ -15,6 +15,7 @@
  *  SV-10 - CSS outside the innermost rule blocks (nested rules, an open last block, text before a rule) and
  *          image functions that take a plain string are checked like any declaration
  *  SV-11 - isSVGFile() recognises SVG behind a DOCTYPE or processing instruction with ">" and a prolog longer than 64 kB
+ *  SV-12 - labels and titles (aria-*, title, xlink:title) keep ordinary text; only a script or data URL in them goes
  *
  * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -129,7 +130,18 @@ class expSvgSanitizerTest extends PHPUnit\Framework\TestCase
             'presentation attribute image-set' => "$o<rect width=\"10\" height=\"10\" mask=\"image-set('https://evil.example/m.png' 1x)\"/></svg>",
             'set mask to image-set' => "$o$r<set attributeName=\"mask\" to=\"image-set('https://evil.example/m.png' 1x)\"/></svg>",
             'style element attr' => "$o<style>rect{mask-image:attr(id type(*))}</style><rect id=\"https://evil.example/m.png\" width=\"10\" height=\"10\"/></svg>",
-            'url with a character reference for #' => "$o<rect width=\"10\" height=\"10\" fill=\"url(&amp;#35;p/../../x)\"/></svg>",
+            'style element nested media image-set' => "$o<style>@media screen{@supports (fill:red){rect{fill:red;mask-image:image-set(\"https://evil.example/m.png\" 1x)}}}</style>$r</svg>",
+            'style element escaped image-set' => "$o<style>rect{mask-image:\\69mage-set('https://evil.example/m.png' 1x)}</style>$r</svg>",
+            'style element upper case image-set' => "$o<style>rect{mask-image:IMAGE-SET('https://evil.example/m.png' 1x)}</style>$r</svg>",
+            'style element webkit cross-fade' => "$o<style>rect{mask-image:-webkit-cross-fade(url(#a),url(https://evil.example/m.png),50%)}</style>$r</svg>",
+            'style element declaration after nested rule' => "$o<style>rect{g{fill:red} fill:url(https://evil.example/x.svg#p)}</style>$r</svg>",
+            'style element open block after nested rule' => "$o<style>@media screen{rect{fill:red} g{mask:url(//evil.example/m)</style>$r</svg>",
+            'style element character reference url' => "$o<style>rect{fill:url(&amp;#35;p/../../x)}</style>$r</svg>",
+            'style attribute character reference url' => "$o<rect width=\"10\" height=\"10\" style=\"fill:url(&amp;#x23;p/../x)\"/></svg>",
+            'animate values image-set' => "$o<rect width=\"10\" height=\"10\"><animate attributeName=\"mask\" values=\"none;image-set('https://evil.example/m.png' 1x)\"/></rect></svg>",
+            'a href character reference scheme' => "$o<a xlink:href=\"&amp;#x6A;avascript:alert(1)\">$r</a></svg>",
+            'title attribute javascript' => "$o<rect width=\"10\" height=\"10\" title=\"javascript:alert(1)\" aria-label=\"java&#9;script:alert(1)\"/></svg>",
+            'url with a character reference for #' =>"$o<rect width=\"10\" height=\"10\" fill=\"url(&amp;#35;p/../../x)\"/></svg>",
         );
         $out = array();
         foreach ( $c as $name => $markup )
@@ -373,6 +385,26 @@ class expSvgSanitizerTest extends PHPUnit\Framework\TestCase
         $this->assertStringNotContainsString( 'href=', $clean );
     }
 
+    /** SV-12 */
+    public function testLabelsAndTitlesKeepOrdinaryText()
+    {
+        $markup = self::OPEN . '<g role="img" aria-label="Image (2) of 3: metadata: data sheet, url(cover)" title="Element (b) by attr(s)">' .
+                  '<title>Logo</title>' . self::RECT . '</g><rect width="1" height="1" aria-describedby="d" xlink:title="Source(s): image-set(x)"/></svg>';
+        $clean = expSvgSanitizer::sanitize( $markup );
+        $this->assertIsString( $clean );
+        $this->assertHarmless( $clean );
+        $this->assertStringContainsString( 'aria-label="Image (2) of 3: metadata: data sheet, url(cover)"', $clean );
+        $this->assertStringContainsString( 'title="Element (b) by attr(s)"', $clean );
+        $this->assertStringContainsString( 'aria-describedby="d"', $clean );
+        $this->assertStringContainsString( 'xlink:title="Source(s): image-set(x)"', $clean );
+        // a script or data URL in such a text still goes
+        foreach ( array( 'javascript:alert(1)', 'Data: text/html', 'x j a v a s c r i p t:1', '&#106;avascript:1' ) as $text )
+        {
+            $clean = expSvgSanitizer::sanitize( self::OPEN . '<rect width="1" height="1" aria-label="' . $text . '"/></svg>' );
+            $this->assertStringNotContainsString( 'aria-label', $clean, $text );
+        }
+    }
+
     /** SV-11 */
     public function testRecognisesSvgBehindAnyProlog()
     {
@@ -425,6 +457,13 @@ class expSvgSanitizerTest extends PHPUnit\Framework\TestCase
                     $ok = $value === '' || $value[0] === '#' || preg_match( '#^(?:https?://|mailto:)#', $value ) && $element->localName === 'a' ||
                           preg_match( '#^data:image/(?:png|jpeg|gif|webp);base64,#', $value ) && $element->localName === 'image';
                     $this->assertTrue( (bool)$ok, "href $value on {$element->localName}" );
+                }
+                else if ( strncmp( $name, 'aria-', 5 ) === 0 || $name === 'title' || $name === 'lang' || $name === 'space' )
+                {
+                    // text for people, never loaded: no script or data URL at the start of a word
+                    $text = strtolower( preg_replace( '/[\s\x00-\x1f]+/', ' ', $attribute->value ) );
+                    $this->assertDoesNotMatchRegularExpression( '/(?<![a-z0-9+.\-])(?:javascript|vbscript|livescript|data) ?:/', $text );
+                    continue;
                 }
                 else
                 {
