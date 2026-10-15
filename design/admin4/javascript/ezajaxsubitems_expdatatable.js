@@ -122,8 +122,10 @@ var eZAjaxSubitemsExpDataTable = (function () {
 
         // ---- cell formatters ----------------------------------------------------
         var formatName = function (row) {
-            return '<a href="' + row.url + '" title="' + row.name + '">' + row.class_icon + '</a>' + '&nbsp;' +
-                   '<a href="' + row.url + '" title="' + row.name + '">' + row.name + '</a>';
+            // one box for icon and name (admin4.css .a4-subitem-name): a narrow column wraps the name, never
+            // between the icon and the name
+            return '<span class="a4-subitem-name"><a href="' + row.url + '" title="' + row.name + '">' + row.class_icon + '</a>' +
+                   '<a href="' + row.url + '" title="' + row.name + '">' + row.name + '</a></span>';
         };
         // The text of an HTML-encoded value: the server sends names encoded for markup, an attribute set from
         // script and the menu's header take text ("Tom & Jerry", not "Tom &amp; Jerry").

@@ -54,7 +54,7 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
     /**
      * Token name prefixes that are the same in light and dark mode (sizes, radius, type), so need no dark value
      */
-    const THEME_INDEPENDENT = array( '--a4-space-', '--a4-text-', '--a4-radius', '--a4-font', '--a4-mono', '--a4-leading', '--a4-control-h', '--a4-list-pad', '--a4-cell-pad-', '--a4-card-pad-', '--a4-z-' );
+    const THEME_INDEPENDENT = array( '--a4-space-', '--a4-text-', '--a4-radius', '--a4-font', '--a4-mono', '--a4-leading', '--a4-control-h', '--a4-content-max', '--a4-gutter', '--a4-list-pad', '--a4-cell-pad-', '--a4-card-pad-', '--a4-z-' );
 
     private static $root;
 

@@ -1670,7 +1670,9 @@ div:has(.modal-window) {
    sideways and hid the end of a long node name; Quick settings labels inherited core.css's nowrap). */
 div#contentstructure ul#content_tree_menu li {
     white-space: normal;
-    overflow-wrap: anywhere;
+    overflow-wrap: break-word;   /* "anywhere" broke words mid-syllable; a long word now breaks with a hyphen */
+    -webkit-hyphens: auto;
+    hyphens: auto;
 }
 div#contentstructure ul#content_tree_menu li > a.image-text {
     display: inline-block;

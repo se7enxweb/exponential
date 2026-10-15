@@ -14,7 +14,7 @@
 class AdminDensityTest extends PHPUnit\Framework\TestCase
 {
     /** The tokens the compact block may set; anything else would make the density change more than spacing */
-    const DENSITY_TOKENS = array( '--a4-control-h', '--a4-list-pad', '--a4-cell-pad-y', '--a4-cell-pad-x', '--a4-card-pad-y', '--a4-card-pad-x' );
+    const DENSITY_TOKENS = array( '--a4-gutter', '--a4-control-h', '--a4-list-pad', '--a4-cell-pad-y', '--a4-cell-pad-x', '--a4-card-pad-y', '--a4-card-pad-x' );
 
     private static function file( $path )
     {

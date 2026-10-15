@@ -3,18 +3,21 @@
 // by admin4.js.
 (($) => {
     // Sidebar toggling feature
-    // On a wide window (1024px and up) each sidebar follows the user's choice, kept through window.a4Pref (the head's
-    // first script) as the eZPreferences admin_left_sidebar and admin_right_sidebar (1 open, the default, 0 closed),
-    // like the column width; an anonymous page keeps it in the browser. On a narrow window both start closed
-    // and at most one is open, and nothing is saved: a narrow window, or a sidebar opened over the page there, must not
-    // change what a wide window shows later. Only a click on a wide window saves a choice. The browser storage keys
-    // used before (ezpAdminSidebarLeft/Right, ezpAdminLeftSidebar/RightSidebar) are dropped.
+    // A column beside the content (the left one from 1024px, the right one from 1280px, the breakpoints of
+    // admin4.css) follows the user's choice, kept through window.a4Pref (the head's first script) as the eZPreferences
+    // admin_left_sidebar and admin_right_sidebar (1 open, the default, 0 closed), like the column width; an anonymous
+    // page keeps it in the browser. Below its breakpoint a column is a drawer over the page: it starts closed, at most
+    // one column is open while a drawer is (an inline column steps aside meanwhile), Escape closes it and gives the
+    // focus back to its tab, and nothing is saved: a narrow window, or a column opened over the page there, must not
+    // change what a wide window shows later. Only a click on a column beside the content saves a choice. The browser
+    // storage keys used before (ezpAdminSidebarLeft/Right, ezpAdminLeftSidebar/RightSidebar) are dropped.
     function sidebarToggle() {
         const narrow = window.matchMedia("(max-width: 1023.98px)");
+        const drawerQuery = { left: narrow, right: window.matchMedia("(max-width: 1279.98px)") };
         const prefs = { left: "admin_left_sidebar", right: "admin_right_sidebar" };
         const pref = window.a4Pref || { get: () => null, set: () => {} };
         const choice = { left: pref.get(prefs.left) !== "0", right: pref.get(prefs.right) !== "0" };
-        let narrowOpen = null; // the sidebar open over the page on a narrow window: "left", "right" or null
+        let drawerOpen = null; // the column open over the page as a drawer: "left", "right" or null
 
         function stored(side) {
             return choice[side];
@@ -23,6 +26,10 @@
         function store(side, open) {
             choice[side] = open;
             pref.set(prefs[side], open ? "1" : "0");
+        }
+
+        function isDrawer(side) {
+            return drawerQuery[side].matches;
         }
 
         try {
@@ -45,22 +52,28 @@
             tab.attr("aria-expanded", open ? "true" : "false");
         }
 
+        function shown(side) {
+            return isDrawer(side) ? drawerOpen === side : drawerOpen === null && stored(side);
+        }
+
         function apply() {
-            if (narrow.matches) {
-                show("left", narrowOpen === "left");
-                show("right", narrowOpen === "right");
-                return;
+            if (drawerOpen !== null && !isDrawer(drawerOpen)) {
+                drawerOpen = null;
             }
-            narrowOpen = null;
-            show("left", stored("left"));
-            show("right", stored("right"));
+            show("left", shown("left"));
+            show("right", shown("right"));
         }
 
         function toggle(side) {
-            if (narrow.matches) {
-                narrowOpen = narrowOpen === side ? null : side;
+            if (isDrawer(side)) {
+                drawerOpen = drawerOpen === side ? null : side;
             } else {
-                store(side, !stored(side));
+                // beside the content: a column that stepped aside for a drawer comes back without a new choice
+                const visible = shown(side);
+                drawerOpen = null;
+                if (visible || !stored(side)) {
+                    store(side, !visible);
+                }
             }
             apply();
         }
@@ -68,14 +81,14 @@
         $(".sidebar-control.left").on("click", () => toggle("left"));
         $(".sidebar-control.right").on("click", () => toggle("right"));
 
-        // Escape closes a column open over the page on a narrow window and gives the focus back to its tab, when the focus
-        // is in that column or on its tab. While a context menu (ezpopupmenu.js) is shown, Escape belongs to the menu: this
+        // Escape closes a column open over the page as a drawer and gives the focus back to its tab, when the focus is
+        // in that column or on its tab. While a context menu (ezpopupmenu.js) is shown, Escape belongs to the menu: this
         // does not rely on the order the scripts load in or on the menu stopping the event.
         document.addEventListener("keydown", (e) => {
-            if (e.key !== "Escape" || e.defaultPrevented || !narrow.matches || narrowOpen === null) {
+            if (e.key !== "Escape" || e.defaultPrevented || drawerOpen === null || !isDrawer(drawerOpen)) {
                 return;
             }
-            const side = narrowOpen;
+            const side = drawerOpen;
             const control = document.querySelector(".sidebar-control." + side);
             const column = document.querySelector(".sidebar." + side);
             const active = document.activeElement;
@@ -92,18 +105,20 @@
                     return;
                 }
             }
-            narrowOpen = null;
+            drawerOpen = null;
             apply();
             if (control) {
                 control.focus();
             }
         });
 
-        if (narrow.addEventListener) {
-            narrow.addEventListener("change", apply);
-        } else if (narrow.addListener) {
-            narrow.addListener(apply);
-        }
+        [drawerQuery.left, drawerQuery.right].forEach((query) => {
+            if (query.addEventListener) {
+                query.addEventListener("change", apply);
+            } else if (query.addListener) {
+                query.addListener(apply);
+            }
+        });
 
         apply();
     }
