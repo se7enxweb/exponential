@@ -10803,6 +10803,14 @@
         <source>Translate into %language</source>
         <translation>Translate into %language</translation>
     </message>
+    <message>
+        <source>Import/Export</source>
+        <translation>Import/Export</translation>
+    </message>
+    <message>
+        <source>Export this item or import into it.</source>
+        <translation>Export this item or import into it.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/node/view/line</name>
@@ -15754,6 +15762,10 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>Open the package wizard…</source>
         <translation>Open the package wizard…</translation>
+    </message>
+    <message>
+        <source>Import/Export</source>
+        <translation>Import/Export</translation>
     </message>
 </context>
 <context>

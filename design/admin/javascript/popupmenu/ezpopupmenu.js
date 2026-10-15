@@ -335,6 +335,15 @@ function _doItemSubstitution( menuID, menuHeader )
             hrefElement.setAttribute( "href", replaceString );
         }
 
+        // shown only when a value of the menu is set (shown_if: '%canImport%'): an item that does not apply to this
+        // item of the page (the Import of the Import/Export menu outside a container) is left out, not disabled
+        var shownIf = menuArray[menuID]['elements'][i]['shown_if'];
+        if ( shownIf )
+        {
+            var shownValue = CurrentSubstituteValues != -1 ? CurrentSubstituteValues[shownIf] : undefined;
+            hrefElement.style.display = ( shownValue && String( shownValue ) !== '0' ) ? '' : 'none';
+        }
+
         // dynamic generation
         var loopingVariable = menuArray[menuID]['elements'][i]['variable'];
 

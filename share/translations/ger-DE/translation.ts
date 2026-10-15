@@ -12993,6 +12993,14 @@
         <source>Translate into %language</source>
         <translation>In %language übersetzen</translation>
     </message>
+    <message>
+        <source>Import/Export</source>
+        <translation>Import/Export</translation>
+    </message>
+    <message>
+        <source>Export this item or import into it.</source>
+        <translation>Dieses Element exportieren oder in es importieren.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/node/view/line</name>
@@ -18207,6 +18215,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Open the package wizard…</source>
         <translation>Paket-Assistenten öffnen…</translation>
+    </message>
+    <message>
+        <source>Import/Export</source>
+        <translation>Import/Export</translation>
     </message>
 </context>
 <context>

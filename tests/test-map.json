@@ -725,6 +725,24 @@
     ],
     "design/admin/templates/popupmenu/popup_sub_advance_menu.tpl": [
       "tests/tests/design/AdminContextMenuNestedSubmenuTest.php"
+    ],
+    "design/admin4/templates/popupmenu/popup_export_items.tpl": [
+      "tests/tests/design/AdminContextMenuNestedSubmenuTest.php"
+    ],
+    "design/admin/templates/popupmenu/popup_export_items.tpl": [
+      "tests/tests/design/AdminContextMenuNestedSubmenuTest.php"
+    ],
+    "design/admin4/templates/popupmenu/popup_import_export_menu.tpl": [
+      "tests/tests/design/AdminContextMenuNestedSubmenuTest.php"
+    ],
+    "design/admin/templates/popupmenu/popup_import_export_menu.tpl": [
+      "tests/tests/design/AdminContextMenuNestedSubmenuTest.php"
+    ],
+    "design/admin4/templates/node/view/import_export_button.tpl": [
+      "tests/tests/design/AdminContextMenuNestedSubmenuTest.php"
+    ],
+    "design/admin/templates/node/view/import_export_button.tpl": [
+      "tests/tests/design/AdminContextMenuNestedSubmenuTest.php"
     ]
   },
   "generated": {

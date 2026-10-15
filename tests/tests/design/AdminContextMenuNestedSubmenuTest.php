@@ -97,19 +97,65 @@ class AdminContextMenuNestedSubmenuTest extends PHPUnit\Framework\TestCase
     }
 
     /** The Export submenu: the package entries for the policy, the extension hooks, the keyboard pattern's markup */
-    public function testTheExportMenuTemplate()
+    /** The design/admin and design/admin4 copies of a template are the same */
+    private function template( $path )
     {
-        $tpl = (string)file_get_contents( self::root() . '/design/admin4/templates/popupmenu/popup_sub_advance_menu.tpl' );
-        $this->assertFileEquals( self::root() . '/design/admin4/templates/popupmenu/popup_sub_advance_menu.tpl',
-            self::root() . '/design/admin/templates/popupmenu/popup_sub_advance_menu.tpl', 'design/admin and design/admin4 differ' );
-        $this->assertStringContainsString( "fetch( 'package', 'content_export_access' )", $tpl );
-        $this->assertStringContainsString( "'ExportMenuTemplateArray'", $tpl );
-        $this->assertStringContainsString( "'ExportSubMenuTemplateArray'", $tpl );
-        $this->assertStringContainsString( 'id="menu-export" class="more"', $tpl, 'Export opens a submenu (aria-haspopup from the class more)' );
-        $this->assertStringContainsString( "menuArray['ExportMenu'] = {ldelim} 'depth': 2 {rdelim};", $tpl );
-        $this->assertStringContainsString( 'package/create/(creator)/ezcontentobject/(node)/%nodeID%', $tpl );
-        $this->assertDoesNotMatchRegularExpression( '/<style|style="/i', $tpl, 'no inline CSS' );
-        $this->assertDoesNotMatchRegularExpression( '/onclick="[^"]*submitForm/', substr( $tpl, strpos( $tpl, 'set-block variable=$export_package_items' ), strpos( $tpl, '{/set-block}' ) - strpos( $tpl, 'set-block variable=$export_package_items' ) ),
-            'an entry opens a form, never submits one' );
+        $this->assertFileEquals( self::root() . "/design/admin4/templates/$path", self::root() . "/design/admin/templates/$path",
+            "design/admin and design/admin4 differ: $path" );
+        $tpl = (string)file_get_contents( self::root() . "/design/admin4/templates/$path" );
+        $this->assertDoesNotMatchRegularExpression( '/<style|style="/i', $tpl, "$path: no inline CSS" );
+        return $tpl;
+    }
+
+    /** One definition of the export entries (popup_export_items.tpl), used by Advanced > Export and the node view's menu */
+    public function testTheExportEntriesAreDefinedOnce()
+    {
+        $items = $this->template( 'popupmenu/popup_export_items.tpl' );
+        $this->assertStringContainsString( "fetch( 'package', 'content_export_access' )", $items );
+        $this->assertStringContainsString( "'ExportMenuTemplateArray'", $items );
+        $this->assertStringContainsString( "'ImportExportMenuTemplateArray'", $items );
+        $this->assertStringContainsString( 'package/create/(creator)/ezcontentobject/(node)/%nodeID%', $items );
+        $this->assertStringNotContainsString( 'submitForm', $items, 'an entry opens a form, never submits one' );
+
+        $advanced = $this->template( 'popupmenu/popup_sub_advance_menu.tpl' );
+        $this->assertStringContainsString( "popupmenu/popup_export_items.tpl' menu_id='ExportMenu' item_prefix='menu-export' sub_menu_depth=3 with_import=false()", $advanced );
+        $this->assertStringContainsString( 'id="menu-export" class="more"', $advanced, 'Export opens a submenu (aria-haspopup from the class more)' );
+        $this->assertStringContainsString( "menuArray['ExportMenu'] = {ldelim} 'depth': 2 {rdelim};", $advanced );
+        $this->assertStringNotContainsString( 'package/create/', $advanced, 'the entries are not repeated here' );
+
+        $menu = $this->template( 'popupmenu/popup_import_export_menu.tpl' );
+        $this->assertStringContainsString( "popupmenu/popup_export_items.tpl' menu_id='ImportExportMenu' item_prefix='node-export' sub_menu_depth=1 with_import=true()", $menu );
+        $this->assertStringContainsString( "menuArray['ImportExportMenu'] = {ldelim} 'depth': 0", $menu );
+        $this->assertStringContainsString( "popupmenu/popup_import_export_menu.tpl", $this->template( 'popupmenu/popup_menu.tpl' ) );
+    }
+
+    /** The node view's Import/Export button: a menu button after Upload and before Move, published objects only */
+    public function testTheImportExportButton()
+    {
+        $button = $this->template( 'node/view/import_export_button.tpl' );
+        $this->assertStringContainsString( 'eq( $node.object.status, 1 )', $button, 'published objects only (no drafts, no edit pages)' );
+        $this->assertStringContainsString( "popupmenu/popup_export_items.tpl' menu_id='ImportExportMenu' item_prefix='node-export' sub_menu_depth=1 with_import=true()", $button,
+            'shown only when the shared definition has an entry' );
+        $this->assertStringContainsString( 'role="button" aria-haspopup="menu" aria-expanded="false"', $button );
+        $this->assertStringContainsString( "ezpopmenu_showTopLevel( event, 'ImportExportMenu'", $button );
+        $this->assertStringContainsString( "'%canImport%', {\$node_can_import}", $button );
+        $this->assertStringContainsString( 'and( $node.object.content_class.is_container, $node.can_create )', $button );
+        $this->assertStringContainsString( 'a4-bi-arrow-down-up', $button );
+        foreach ( array( 'admin4' => 'node/view/a4_full_body.tpl', 'admin' => 'node/view/full.tpl' ) as $design => $view )
+        {
+            $text = (string)file_get_contents( self::root() . "/design/$design/templates/$view" );
+            $upload = strpos( $text, "node/view/upload_button.tpl" );
+            $here = strpos( $text, "node/view/import_export_button.tpl' node=\$node" );
+            $move = strpos( $text, 'name="MoveNodeButton"' );
+            $this->assertNotFalse( $here, "$design: the button is included" );
+            $this->assertTrue( $upload < $here && $here < $move, "$design: after Upload, before Move" );
+        }
+    }
+
+    public function testAnItemCanBeShownOnlyWhenAValueIsSet()
+    {
+        $js = self::js();
+        $this->assertStringContainsString( "var shownIf = menuArray[menuID]['elements'][i]['shown_if'];", $js );
+        $this->assertStringContainsString( "hrefElement.style.display = ( shownValue && String( shownValue ) !== '0' ) ? '' : 'none';", $js );
     }
 }
