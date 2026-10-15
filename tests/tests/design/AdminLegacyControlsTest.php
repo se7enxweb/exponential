@@ -289,11 +289,16 @@ class AdminLegacyControlsTest extends PHPUnit\Framework\TestCase
 
     public function testAnExtensionsNavigationPartFindsItsMenu()
     {
-        // <name>navigationpart without the ez prefix => parts/<name>/menu.tpl, not a name two letters short
-        $leftmenu = self::template( 'page_leftmenu.tpl' );
-        $this->assertStringContainsString( "{elseif \$navigation_part_name|begins_with( 'ez' )|not}{set \$part_name = \$navigation_part_name|explode( 'navigationpart' )[0]}{/if}", $leftmenu );
-        // the exp prefix is cut only from the kernel's own parts, named in a list
-        $this->assertStringContainsString( "hash( 'expauditnavigationpart', 'audit' )", $leftmenu );
-        $this->assertStringNotContainsString( "begins_with( 'exp' )", $leftmenu );
+        // <name>navigationpart without the ez prefix => parts/<name>/menu.tpl, not a name two letters short; the same
+        // rule in admin4l's left menu block (the admin siteaccess draws its left column through it)
+        foreach ( array( 'admin4' => self::template( 'page_leftmenu.tpl' ),
+                         'admin4l' => (string)file_get_contents( self::root() . '/design/admin4l/templates/explayouts/block/admin_left_menu.tpl' ) )
+                  as $design => $leftmenu )
+        {
+            $this->assertStringContainsString( "{elseif \$navigation_part_name|begins_with( 'ez' )|not}{set \$part_name = \$navigation_part_name|explode( 'navigationpart' )[0]}{/if}", $leftmenu, $design );
+            // the exp prefix is cut only from the kernel's own parts, named in a list
+            $this->assertStringContainsString( "hash( 'expauditnavigationpart', 'audit' )", $leftmenu, $design );
+            $this->assertStringNotContainsString( "begins_with( 'exp' )", $leftmenu, $design );
+        }
     }
 }
