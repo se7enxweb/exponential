@@ -124,6 +124,8 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
   opens). The current page's link carries `aria-current="page"` and is marked with the accent tint and a bar. A menu
   is grouped through menu.ini (`Groups[]`, `GroupNames[<group>]`, `GroupLinks_<group>[]`); without `Groups[]`, or with
   `Groups[]` reset to no values, it is one list, named by its heading. Access is checked per link as before.
+  Under every left menu, the width of the column (narrow, medium, wide) is one pill of three round icon buttons
+  (`.a4-tabs.is-segmented.is-icons`); the current width is tinted in the accent and pressed (`aria-pressed="true"`).
 - **Setup overview.** The Setup tab opens an overview of every Setup function as a tile, in the groups of the left
   menu (see [Setup overview](#setup-overview)).
 - **Tables.** A list table's sorted column is readable (soft orange header).
