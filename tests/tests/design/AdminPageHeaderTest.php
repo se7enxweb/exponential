@@ -80,4 +80,22 @@ class AdminPageHeaderTest extends PHPUnit\Framework\TestCase
                          'a4-node-actions a4-pagehead-actions' ) as $class )
             $this->assertStringContainsString( $class, $node );
     }
+
+    /**
+     * The logo's name in the header says the release to signed-in users only: anonymous pages of the admin (the 401
+     * page, user/register, user/forgotpassword) draw the same frame. The header's cache blocks are keyed by whether
+     * the user is signed in, so the two names are never served from the same cache entry.
+     */
+    public function testTheVersionIsShownToSignedInUsersOnly()
+    {
+        foreach ( array( 'design/admin4/templates/page_topmenu.tpl', 'design/admin4l/templates/explayouts/block/admin_logo.tpl' ) as $path )
+        {
+            $tpl = preg_replace( '/\{\*.*?\*\}/s', '', self::read( $path ) );
+            $this->assertSame( 1, substr_count( $tpl, "fetch( 'setup', 'version' )" ), "$path: the version is fetched once, for the brand name" );
+            $this->assertStringContainsString( '{def $a4_brand_name = $current_user.is_logged_in|choose( \'Exponential\', concat( \'Exponential \', fetch( \'setup\', \'version\' ) ) )}', $tpl, $path );
+            $this->assertSame( 2, substr_count( $tpl, 'title="{$a4_brand_name|wash}" aria-label="{$a4_brand_name|wash}"' ), $path );
+        }
+        foreach ( array( 'design/admin4/templates/pagelayout.tpl', 'design/admin4l/templates/pagelayout.tpl' ) as $path )
+            $this->assertMatchesRegularExpression( '/\$user_hash = concat\([^\n]*\$current_user\.is_logged_in\|choose\( \'anonymous\', \'user\' \) \)/', self::read( $path ), $path );
+    }
 }

@@ -133,7 +133,9 @@ var eZAjaxSubitemsExpDataTable = (function () {
             return textarea.value;
         };
         var customMenu = function (row) {
-            var createhereMenu = (confObj.classesString != '') ? -1 : "'child-menu-create-here'";
+            // the id of the item ezpopupmenu.js disables when no class may be created here (no quotes in the value:
+            // with them it matched no element and Create here stayed enabled)
+            var createhereMenu = (confObj.classesString != '') ? -1 : 'child-menu-create-here';
             var translationArray = [];
             var name = htmlText(row.name);
             $.each(row.translations || [], function (i, e) { translationArray.push({ 'locale': e, 'name': confObj.languages[e] }); });
@@ -157,7 +159,7 @@ var eZAjaxSubitemsExpDataTable = (function () {
                 var thBack = 'background: url(\'' + url.replace(/'/g, "\\'") + '\') no-repeat;';
                 var thWidth = ' width: ' + row.thumbnail_width + 'px;';
                 var thHeight = ' height: ' + row.thumbnail_height + 'px;';
-                return '<div class="thumbview"><div id="thumbfield" class="thumbfield"></div><span><div style="' + thBack + thWidth + thHeight + '"></div></span></div>';
+                return '<div class="thumbview"><div class="thumbfield"></div><span><div style="' + thBack + thWidth + thHeight + '"></div></span></div>';
             }
             return '';
         };

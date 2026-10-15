@@ -2,9 +2,11 @@
 
 This page is for administrators who choose the look of the admin, and for developers who style it. admin4 is a
 complete administration design in the look of the setup wizard, with a light and a dark mode. It holds every file the
-admin siteaccess served from `admin3`, `admin2` and `admin` (463 files when it was created, 469 at the time of writing;
-for each path, the file that won in the search order), so it works with none of them present. Added 2026-10-02 and
-refined during the day.
+admin siteaccess served from `admin3`, `admin2` (no longer part of the tree) and `admin` (463 files when it was
+created, 491 at the time of writing; for each path, the file that won in the search order), so it works with none of them
+present: every template a view of the kernel fetches or an admin4 template includes is in `design/admin4` or
+`design/standard` (`tests/tests/design/AdminSelfContainedTest.php` fails for one that only `design/admin` or
+`design/admin3` has). Added 2026-10-02 and refined during the day.
 
 ## Switch to it
 
@@ -38,8 +40,8 @@ refined during the day.
 
 The siteaccess's design list still names `admin3`, `admin2` and `admin`, for the extensions' folders of those names
 (the three templates that `bccie` and `enhancedezbinaryfile` override in their own admin2 folder stay with the
-extension). The editor siteaccess falls back to `admin4` first, then `admin3`, `admin2`, `admin`. A test siteaccess
-`admintest_admin4` also exists.
+extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` first, then `admin4`, `admin3`,
+`admin2`, `admin` (`kernel/setup/steps/ezstep_create_sites.php`).
 
 ## What you get
 
@@ -143,7 +145,7 @@ are in `share/icons/bootstrap-icons/svg/`, unchanged, with the license beside th
   `AdditionalThemeList[]`, but the content tree (`icon_info`) reads only the first theme and shows the theme's
   `Default`: add a class of your own to `ClassMap` in an `icon.ini.append.php`. In dark mode a filter in `admin4.css` turns these
   `<img>` icons light, since an SVG in an `<img>` cannot take the page's colours.
-- The classic designs (`admin`, `admin2`, `admin3`) keep their images; `.a4-icon` and `.a4-icon-btn` are in their
+- The classic designs (`admin`, `admin3`) keep their images; `.a4-icon` and `.a4-icon-btn` are in their
   copy of `components.css` as well, for templates shared by every administration design.
 
 To add an icon: copy the SVG from the Bootstrap Icons 1.13.1 package unchanged into
@@ -273,9 +275,33 @@ tree's roles, states, Tab stop and keys.
 | File | Block | Key | Default | Scope |
 |---|---|---|---|---|
 | `settings/design.ini` | `AdminDesignSettings` | `ShowCommunityLinks` | `disabled` | siteaccess |
+| `settings/design.ini` | `StylesheetSettings` | `AdminComponentCSSFileList[]` | `components.css` and the five `modules/*.css` | siteaccess |
+| `settings/menu.ini` | `MenuAccessSettings` | `CheckViewAccess` | `enabled` | siteaccess |
+| `settings/menu.ini` | `MenuAccessSettings` | `NoAccessLinks` | `hidden` | siteaccess |
+| `settings/menu.ini` | `TopAdminMenu` | `HiddenTabs[]` | empty | siteaccess |
+| `settings/menu.ini` | `Topmenu_<tab>` | `Name`, `Tooltip`, `TranslationContext` | the default tab names, context `design/admin/pagelayout` | siteaccess |
+| `settings/menu.ini` | `Leftmenu_<menu>` | `Groups[]`, `GroupNames[<group>]`, `GroupLinks_<group>[]` | the five groups of `Leftmenu_setup` | siteaccess |
+| `settings/menu.ini` | `Leftmenu_<menu>` | `PolicyList_<link>[]` | a node id, `<module>/<function>`, or `<module>/*` for a module without policy functions | siteaccess |
+| `settings/site.ini` | `SiteAccessSettings` | `FrontSiteAccess` | empty (`DefaultAccess`) | siteaccess |
 
 `ShowCommunityLinks=enabled` shows the footer line "Evaluate Exponential / Become a member of the Exponential
 Community". A template can also set `$show_community_links`.
+
+- `AdminComponentCSSFileList[]`: the shared `.a4-*` components and the module stylesheets, loaded after the design's
+  own stylesheets and before `BackendCSSFileList` ([Styling the administration](../../bc/6.0/admin4-styling.md)).
+- `CheckViewAccess=enabled` shows a top tab or a left menu link only to a user who can open its address, checked like
+  the request itself; `NoAccessLinks=hidden` leaves such a link out (`disabled` shows its name without a link).
+- `HiddenTabs[]` leaves top tabs out whatever `Tabs[]` says, also tabs an extension appends.
+- `Name`, `Tooltip` and `TranslationContext` of a `[Topmenu_<tab>]` give the tab's label and tooltip in English and the
+  translation context they are looked up in.
+- `Groups[]`, `GroupNames[<group>]` and `GroupLinks_<group>[]` group a long left menu (see "Left menu" above).
+- `PolicyList_<link>[]` names a node id that must be readable, a policy function, or `<module>/*` for the modules that
+  have no policy functions (visual, class, role, workflow, trigger, url, search, settings, collaboration);
+  `tests/tests/design/AdminMenuPolicyListTest.php` fails for a function a module does not have. The Design tab opens
+  the design top node by its id (`content/view/full/58`, `content.ini [NodeSettings] DesignRootNode`).
+- `FrontSiteAccess` is the site an admin siteaccess belongs to: its "Open the site" and "View on site" links go there.
+- The logo's name in the header carries the release only for signed-in users; the anonymous pages of the admin
+  (the 401 page, `user/register`, `user/forgotpassword`) say "Exponential".
 
 ## For developers
 

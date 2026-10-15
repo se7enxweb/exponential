@@ -1,7 +1,7 @@
 # Styling the administration: one component stylesheet, tokens, no inline CSS
 
-Read this page before you write or review a template or stylesheet of an administration design (`admin`, `admin2`,
-`admin3`, `admin4`, `admin4l`) or of an extension's admin design. It holds the rules, the shared component and token
+Read this page before you write or review a template or stylesheet of an administration design (`admin`, `admin3`,
+`admin4`, `admin4l`) or of an extension's admin design (some extensions still carry an `admin2` folder). It holds the rules, the shared component and token
 API, how the stylesheets are loaded, and the checklist for code review. Since 2026-10-14.
 
 ## Why
@@ -69,8 +69,8 @@ bundle per module.
 | `modules/structure.css` | class, pdf, rss, package |
 | `modules/workflow.css` | workflow, trigger, audit, shop, settings, infocollector, search, url, visual, contentfinder |
 
-Each module file exists in `design/admin4/stylesheets/modules/` and `design/admin/stylesheets/modules/` (`admin2`
-and `admin3` find the `design/admin` files through their fallback). `admin4.css` stays the frame of admin4 (header,
+Each module file exists in `design/admin4/stylesheets/modules/` and `design/admin/stylesheets/modules/` (`admin3`
+finds the `design/admin` files through its fallback). `admin4.css` stays the frame of admin4 (header,
 columns, dashboard, sign-in page).
 
 **Extensions** keep their stylesheet in their own design folder and add it to `BackendCSSFileList[]`, not to
@@ -245,10 +245,11 @@ The left column's preset sizes (small, medium, large) are `html[data-a4-left-siz
 
 `tests/tests/design/AdminStylingRulesTest.php` (testsuite `design`, no database) fails when:
 
-- a template of `admin4`, `admin4l`, `admin3`, `admin2` or `admin` has a `<style>` block or a `style=""` attribute
-  (template comments are not read), outside the exceptions above and the `ALLOWLIST` of templates still being
+- a template of `admin4`, `admin4l`, `admin3` or `admin` (in `templates/` or `override/templates/`) has a `<style>`
+  block or a `style=""` attribute (template comments are not read), outside the exceptions above and the `ALLOWLIST` of templates still being
   migrated. The allowlist only shrinks: a listed file without inline CSS fails until it is taken off. It is empty
-  when the migration is complete;
+  when the migration is complete. A design on the test's list that does not exist fails the test, rather than being
+  skipped;
 - a rule in `stylesheets/modules/*.css` (admin4 and admin) has a colour literal, a radius that is not a token, `0` or
   `50%`, a spacing length that is not a token (`0`, `1px`, `2px`, `auto` and `calc()` of tokens are allowed), a font
   family or pixel font size of its own, a custom property of its own, or a selector without an `.a4-` class;

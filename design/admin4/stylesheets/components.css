@@ -1663,6 +1663,7 @@ a.a4-icon-btn, a.a4-icon-btn:visited { color: var(--a4-muted); }
 /* ---- Small utilities that replaced style="" attributes in the shared admin templates ---------------------- */
 .a4-middle,
 .a4-flag { vertical-align: middle; }
+.a4-embed-caption { max-width: 100%; overflow-wrap: anywhere; }   /* embed_image.tpl: was style="width: …px" */
 .a4-end { text-align: right; }
 .a4-inset { padding: var(--a4-space-2) var(--a4-space-3); }
 .a4-overflow-visible { overflow: visible; }

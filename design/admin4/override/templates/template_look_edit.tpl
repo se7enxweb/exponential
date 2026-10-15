@@ -1,3 +1,7 @@
+{* admin4's edit page for objects of the template_look class (the site look of the eZ Webin site packages). admin4
+   ships no override rule for it; it is used where the admin siteaccess's override.ini has one, such as
+   [template_look] Source=content/edit.tpl MatchFile=template_look_edit.tpl Match[class_identifier]=template_look.
+   Without such a rule the class is edited with content/edit.tpl. *}
 <form name="editform" id="editform" enctype="multipart/form-data" method="post" action={concat( '/content/edit/', $object.id, '/', $edit_version, '/', $edit_language|not|choose( concat( $edit_language, '/' ), '/' ), $is_translating_content|not|choose( concat( $from_language, '/' ), '' ) )|ezurl}>
 
 <div id="leftmenu">

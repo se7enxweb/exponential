@@ -6,8 +6,9 @@
    Edit, View and Remove (confirmed in place). Below the list: Remove selected, Remove the drafts older than N days and
    Remove all, each confirmed in place. Only the user's own drafts are listed and removed.
 
-   The same file is in design/admin and design/admin4; the look is content/history_exp_style.tpl (.a4-content-history). The
-   list comes from the view (draft_rows, draft_overview, draft_filters ...), worked out by expContentDraftList. The
+   The same file is in design/admin and design/admin4; the look is .a4-content-history in
+   stylesheets/modules/content.css. The list comes from the view (draft_rows, draft_overview, draft_filters ...),
+   worked out by expContentDraftList. The
    POST names of the page before are kept (DeleteIDArray[], RemoveButton, EmptyButton); RemoveDraftButton[id],
    RemoveOldButton and OldDraftDays are new. Everything works without javascript; the script only adds Select all and
    the count of ticked drafts. Guide: doc/guides/drafts-and-pending.md *}

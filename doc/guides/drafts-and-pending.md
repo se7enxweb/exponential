@@ -61,6 +61,6 @@ look at **Setup > Workflow processes**.
 - Views: `kernel/private/classes/views/content/draft.php`, `kernel/private/classes/views/content/pendinglist.php`
 - Lists: `kernel/classes/expcontentdraftlist.php` (`removable()` decides what may be removed),
   `kernel/classes/expcontentpendinglist.php`
-- Templates: `design/admin4/templates/content/draft.tpl`, `pendinglist.tpl`, `draft_exp_style.tpl` (the same in
-  `design/admin`), with `content/history_exp_style.tpl`
+- Templates: `design/admin4/templates/content/draft.tpl`, `pendinglist.tpl` (the same in `design/admin`); the
+  look is in the history and draft sections of `stylesheets/modules/content.css`
 - Test: `tests/tests/kernel/classes/expContentDraftListTest.php` (no database)
