@@ -894,7 +894,8 @@
       "tests/tests/kernel/classes/uiswitch/expUISwitchTest.php"
     ],
     "settings/uiswitch.ini": [
-      "tests/tests/kernel/classes/uiswitch/expUISwitchTest.php"
+      "tests/tests/kernel/classes/uiswitch/expUISwitchTest.php",
+      "tests/tests/kernel/classes/uiswitch/expUISwitchDesignProviderTest.php"
     ],
     "lib/eztemplate/classes/eztemplatecompiler.php": [
       "tests/tests/kernel/classes/uiswitch/expUISwitchTest.php"
@@ -905,6 +906,15 @@
     "kernel/classes/audit/expaudittaxonomy.php": [
       "tests/tests/kernel/classes/audit/expAuditRecordTest.php",
       "tests/tests/kernel/classes/audit/expAuditHookTest.php"
+    ],
+    "kernel/classes/uiswitch/expuiswitchdesignprovider.php": [
+      "tests/tests/kernel/classes/uiswitch/expUISwitchDesignProviderTest.php"
+    ],
+    "kernel/common/eztemplatedesignresource.php": [
+      "tests/tests/kernel/classes/uiswitch/expUISwitchDesignProviderTest.php"
+    ],
+    "design/admin/templates/uiswitch/*": [
+      "tests/tests/kernel/classes/uiswitch/expUISwitchDesignProviderTest.php"
     ]
   },
   "generated": {

@@ -116,9 +116,9 @@ class expUISwitchTest extends PHPUnit\Framework\TestCase
     {
         $ini = $this->settings();
         $this->assertTrue( expUISwitch::isEnabled( $ini ) );
-        $this->assertSame( array( 'language' ), expUISwitch::providerIdentifiers( $ini ) );
+        $this->assertSame( array( 'language', 'design' ), expUISwitch::providerIdentifiers( $ini ), 'the language first, then the design' );
         $providers = expUISwitch::buildProviders( $ini );
-        $this->assertSame( array( 'language' ), array_keys( $providers ) );
+        $this->assertSame( array( 'language', 'design' ), array_keys( $providers ) );
         $this->assertInstanceOf( 'expUISwitchLanguageProvider', $providers['language'] );
         $this->assertSame( 'disabled', $ini->variable( 'UISwitch_language', 'RememberPreference' ), 'the choice ends with the session by default' );
         $this->assertFalse( $providers['language']->remembersPreference() );
@@ -147,7 +147,7 @@ class expUISwitchTest extends PHPUnit\Framework\TestCase
 
     public function testPolicyFunctionsComeFromTheProviderList()
     {
-        $this->assertSame( array( 'language' ), expUISwitch::policyFunctions( $this->settings() ) );
+        $this->assertSame( array( 'language', 'design' ), expUISwitch::policyFunctions( $this->settings() ) );
         $this->assertSame( array( 'language', 'fake' ), expUISwitch::policyFunctions( $this->fakeSettings() ) );
         $this->assertSame( array( 'language', 'design' ),
             expUISwitch::policyFunctions( $this->settings( array( 'UISwitchSettings' => array( 'ProviderList' => array( 'design' ) ) ) ) ),

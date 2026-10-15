@@ -1195,6 +1195,7 @@ return array(
       'expSystemReportMask'                                          => 'kernel/classes/expsystemreportmask.php',
       'expTemplateExtensionWizard'                                   => 'kernel/setup/exptemplateextensionwizard.php',
       'expUISwitch'                                                  => 'kernel/classes/uiswitch/expuiswitch.php',
+      'expUISwitchDesignProvider'                                    => 'kernel/classes/uiswitch/expuiswitchdesignprovider.php',
       'expUISwitchLanguageProvider'                                  => 'kernel/classes/uiswitch/expuiswitchlanguageprovider.php',
       'expUISwitchProvider'                                          => 'kernel/classes/uiswitch/expuiswitchprovider.php',
       'expUISwitchProviderInterface'                                 => 'kernel/classes/uiswitch/expuiswitchproviderinterface.php',

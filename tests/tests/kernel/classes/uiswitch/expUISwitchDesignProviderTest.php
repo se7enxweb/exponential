@@ -83,12 +83,12 @@ class expUISwitchDesignProviderTest extends PHPUnit\Framework\TestCase
     public function testAllowListOffersExistingDesignsWithAChainAndTheDefaultFirst()
     {
         $provider = $this->provider();
-        // adminui lives in the exp_adminui extension, which is not a design extension here
-        $this->assertSame( array( 'admin4l', 'admin4', 'admin' ), $provider->allowedValues() );
+        // adminui lives in the exp_adminui extension, which is not a design extension here; admin_classic is not installed
+        $this->assertSame( array( 'admin4l', 'admin4', 'admin3', 'admin' ), $provider->allowedValues() );
         $this->assertSame( 'admin4l', $provider->defaultValue() );
 
         $editor = $this->provider( null, 'editor' );
-        $this->assertSame( array( 'editor', 'admin4l', 'admin4', 'admin' ), $editor->allowedValues(), 'the siteaccess design is offered even without a chain' );
+        $this->assertSame( array( 'editor', 'admin4l', 'admin4', 'admin3', 'admin' ), $editor->allowedValues(), 'the siteaccess design is offered even without a chain' );
     }
 
     public function testDesignsOfDesignExtensionsAreOffered()
@@ -96,7 +96,7 @@ class expUISwitchDesignProviderTest extends PHPUnit\Framework\TestCase
         if ( !is_dir( $this->root . '/extension/exp_adminui/design/adminui' ) )
             $this->markTestSkipped( 'exp_adminui is not installed' );
         $provider = $this->provider( null, 'admin4l', array( 'exp_adminui' ) );
-        $this->assertSame( array( 'admin4l', 'admin4', 'adminui', 'admin' ), $provider->allowedValues() );
+        $this->assertSame( array( 'admin4l', 'admin4', 'adminui', 'admin3', 'admin' ), $provider->allowedValues() );
     }
 
     public function testDesignsWithoutAChainOrADirectoryOrAWellFormedNameAreNotOffered()
