@@ -58,8 +58,12 @@ class expReverseRelationCheckTest extends PHPUnit\Framework\TestCase
                 $ini->setVariable( $section, $name, $value[0] );
         }
         $this->savedIni = array();
+        // put back the database of the run, or none: an in-memory database left as the global instance makes every
+        // later test that reads content get false from its queries
         if ( $this->savedDB )
             eZDB::setInstance( $this->savedDB );
+        else
+            unset( $GLOBALS['eZDBGlobalInstance'] );
     }
 
     private function setting( $section, $value )

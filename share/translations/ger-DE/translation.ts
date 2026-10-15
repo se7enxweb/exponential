@@ -18140,6 +18140,30 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Broken relations in subtree</source>
         <translation>Ungültige Relationen im Teilbaum</translation>
     </message>
+    <message>
+        <source>Export</source>
+        <translation>Exportieren</translation>
+    </message>
+    <message>
+        <source>This item as package…</source>
+        <translation>Dieses Element als Paket…</translation>
+    </message>
+    <message>
+        <source>This item and its subtree as package…</source>
+        <translation>Dieses Element mit Teilbaum als Paket…</translation>
+    </message>
+    <message>
+        <source>Subtree as package, without class definitions…</source>
+        <translation>Teilbaum als Paket, ohne Klassendefinitionen…</translation>
+    </message>
+    <message>
+        <source>Subtree as package, with all versions…</source>
+        <translation>Teilbaum als Paket, mit allen Versionen…</translation>
+    </message>
+    <message>
+        <source>Open the package wizard…</source>
+        <translation>Paket-Assistenten öffnen…</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>

@@ -374,10 +374,14 @@
       "tests/tests/extension/ezjscore/ezjscoreAnonymousAccessTest.php"
     ],
     "design/admin/javascript/popupmenu/ezpopupmenu.js": [
-      "tests/tests/design/AdminContextMenuTest.php"
+      "tests/tests/design/AdminContextMenuTest.php",
+      "tests/tests/design/AdminContextMenuNestedSubmenuTest.php",
+      "tests/tests/design/AdminScriptsTest.php"
     ],
     "design/admin4/javascript/popupmenu/ezpopupmenu.js": [
-      "tests/tests/design/AdminContextMenuTest.php"
+      "tests/tests/design/AdminContextMenuTest.php",
+      "tests/tests/design/AdminContextMenuNestedSubmenuTest.php",
+      "tests/tests/design/AdminScriptsTest.php"
     ],
     "design/admin3/templates/content/browse_current_node.tpl": [
       "tests/tests/design/AdminBrowseCurrentNodeTest.php"
@@ -671,6 +675,27 @@
     ],
     "cronjobs/contentcheck.php": [
       "tests/tests/kernel/contentcheck/expContentCheckReferencesTest.php"
+    ],
+    "kernel/classes/packagecreators/ezcontentobject/ezcontentobjectpackagecreator.php": [
+      "tests/tests/kernel/classes/expContentExportEntryTest.php"
+    ],
+    "kernel/private/classes/views/package/create.php": [
+      "tests/tests/kernel/classes/expContentExportEntryTest.php"
+    ],
+    "kernel/package/module.php": [
+      "tests/tests/kernel/classes/expContentExportEntryTest.php"
+    ],
+    "kernel/package/ezpackagefunctioncollection.php": [
+      "tests/tests/kernel/classes/expContentExportEntryTest.php"
+    ],
+    "kernel/package/function_definition.php": [
+      "tests/tests/kernel/classes/expContentExportEntryTest.php"
+    ],
+    "design/admin4/templates/popupmenu/popup_sub_advance_menu.tpl": [
+      "tests/tests/design/AdminContextMenuNestedSubmenuTest.php"
+    ],
+    "design/admin/templates/popupmenu/popup_sub_advance_menu.tpl": [
+      "tests/tests/design/AdminContextMenuNestedSubmenuTest.php"
     ]
   },
   "generated": {

@@ -77,7 +77,9 @@ class eZContentObjectPackageCreator extends eZPackageCreationHandler
 
     function initializeObjectList( $package, $http, $step, &$persistentData, $tpl )
     {
-        $persistentData['node_list'] = array();
+        // An entry (package/create/(creator)/ezcontentobject/(node)/N ...) starts with its node or subtree selected
+        $persistentData['node_list'] = isset( $persistentData['entry']['node_list'] ) && is_array( $persistentData['entry']['node_list'] )
+                                     ? $persistentData['entry']['node_list'] : array();
     }
 
     function loadObjectList( $package, $http, $step, &$persistentData, $tpl, &$module )
@@ -173,6 +175,16 @@ class eZContentObjectPackageCreator extends eZPackageCreationHandler
         {
             $persistentData['object_options']['language_array'][] = $language->attribute( 'locale_code' );
         }
+
+        // The choices an entry preset (the content tree's Export menu): only the ones it may set
+        if ( isset( $persistentData['entry']['object_options'] ) && is_array( $persistentData['entry']['object_options'] ) )
+        {
+            foreach ( $persistentData['entry']['object_options'] as $name => $value )
+            {
+                if ( in_array( $name, array( 'include_classes', 'versions' ), true ) )
+                    $persistentData['object_options'][$name] = $value;
+            }
+        }
     }
 
     function loadObjectLimits( $package, $http, $step, &$persistentData, $tpl, &$module )
@@ -226,6 +238,129 @@ class eZContentObjectPackageCreator extends eZPackageCreationHandler
         }
 
         return $result;
+    }
+
+    /**
+     * The entry parameters of package/create that open this wizard pre-filled (the content tree's Advanced > Export
+     * menu): package/create/(creator)/ezcontentobject/(node)/<node id>[/(subtree)/1][/(classes)/0|1][/(versions)/current|all].
+     * Only reads and checks them; the view checks the node and the policies. Each value is false when it was not
+     * given (eZModule's unordered parameters), a string when it was.
+     *
+     * @param array<string, mixed> $params the view's parameters: Creator, NodeID, Subtree, IncludeClasses, Versions
+     * @return array{node_id: int, subtree: bool, object_options: array<string, mixed>, node_list: array<int, array{id: int, type: string}>, errors: array<int, string>}
+     */
+    static function entryParameters( array $params )
+    {
+        $value = function ( $name ) use ( $params )
+        {
+            return isset( $params[$name] ) && $params[$name] !== false && $params[$name] !== null ? (string)$params[$name] : null;
+        };
+        $errors = array();
+        $creator = $value( 'Creator' );
+        if ( $creator !== 'ezcontentobject' )
+            $errors[] = 'creator';
+        $nodeID = self::positiveID( $value( 'NodeID' ) );
+        if ( $nodeID === 0 )
+            $errors[] = 'node';
+        $subtree = $value( 'Subtree' );
+        if ( $subtree !== null && $subtree !== '0' && $subtree !== '1' )
+            $errors[] = 'subtree';
+        $options = array();
+        $classes = $value( 'IncludeClasses' );
+        if ( $classes !== null )
+        {
+            if ( $classes === '0' || $classes === '1' )
+                $options['include_classes'] = (int)$classes;
+            else
+                $errors[] = 'classes';
+        }
+        $versions = $value( 'Versions' );
+        if ( $versions !== null )
+        {
+            if ( $versions === 'current' || $versions === 'all' )
+                $options['versions'] = $versions;
+            else
+                $errors[] = 'versions';
+        }
+        $type = $subtree === '1' ? 'subtree' : 'node';
+        return array( 'node_id' => $nodeID,
+                      'subtree' => $type === 'subtree',
+                      'object_options' => $options,
+                      'node_list' => $nodeID ? array( array( 'id' => $nodeID, 'type' => $type ) ) : array(),
+                      'errors' => $errors );
+    }
+
+    /**
+     * Whether the view was opened with entry parameters (any of them given).
+     *
+     * @param array<string, mixed> $params the view's parameters
+     */
+    static function isEntry( array $params )
+    {
+        foreach ( array( 'Creator', 'NodeID', 'Subtree', 'IncludeClasses', 'Versions' ) as $name )
+        {
+            if ( isset( $params[$name] ) && $params[$name] !== false && $params[$name] !== null )
+                return true;
+        }
+        return false;
+    }
+
+    /**
+     * A database id given as text: 1 to 2147483647 in plain digits, else 0.
+     *
+     * @param mixed $value
+     */
+    static function positiveID( $value )
+    {
+        if ( is_int( $value ) )
+            return $value > 0 && $value <= 2147483647 ? $value : 0;
+        if ( !is_string( $value ) || $value === '' || strlen( $value ) > 10 || !ctype_digit( $value ) || $value[0] === '0' )
+            return 0;
+        return (int)$value <= 2147483647 ? (int)$value : 0;
+    }
+
+    /**
+     * Whether the results of hasAccessTo() for package/create and package/export let a user export content as a
+     * package: the content object wizard (CreatorType ezcontentobject) for content object packages (Type
+     * contentobject), and the download of the package made. A limited policy counts when it does not leave either
+     * out.
+     *
+     * @param array<string, mixed> $createAccess hasAccessTo( 'package', 'create' )
+     * @param array<string, mixed> $exportAccess hasAccessTo( 'package', 'export' )
+     */
+    static function policyAllowsContentExport( array $createAccess, array $exportAccess )
+    {
+        $allows = function ( array $access, array $required )
+        {
+            $word = isset( $access['accessWord'] ) ? $access['accessWord'] : 'no';
+            if ( $word === 'yes' )
+                return true;
+            if ( $word !== 'limited' || !isset( $access['policies'] ) || !is_array( $access['policies'] ) )
+                return false;
+            foreach ( $access['policies'] as $limitations )
+            {
+                $fits = true;
+                foreach ( $required as $identifier => $needed )
+                {
+                    if ( is_array( $limitations ) && isset( $limitations[$identifier] ) && !in_array( $needed, (array)$limitations[$identifier] ) )
+                        $fits = false;
+                }
+                if ( $fits )
+                    return true;
+            }
+            return false;
+        };
+        return $allows( $createAccess, array( 'CreatorType' => 'ezcontentobject', 'Type' => 'contentobject' ) )
+            && $allows( $exportAccess, array( 'Type' => 'contentobject' ) );
+    }
+
+    /**
+     * policyAllowsContentExport() for the current user.
+     */
+    static function currentUserCanExportContent()
+    {
+        $user = eZUser::currentUser();
+        return self::policyAllowsContentExport( $user->hasAccessTo( 'package', 'create' ), $user->hasAccessTo( 'package', 'export' ) );
     }
 
     /*!

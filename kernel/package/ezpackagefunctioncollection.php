@@ -263,6 +263,15 @@ class eZPackageFunctionCollection
         return array( 'result' => eZPackage::canUsePolicyFunction( 'read' ) );
     }
 
+    /**
+     * Whether the current user may export content as a package (the content object wizard and the download of the
+     * package): fetch( 'package', 'content_export_access' ).
+     */
+    function contentExportAccess()
+    {
+        return array( 'result' => eZContentObjectPackageCreator::currentUserCanExportContent() );
+    }
+
     function canList()
     {
         return array( 'result' => eZPackage::canUsePolicyFunction( 'list' ) );

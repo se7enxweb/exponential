@@ -15687,6 +15687,30 @@ Note: The packages will not be uninstalled.</translation>
         <source>Broken relations in subtree</source>
         <translation>Broken relations in subtree</translation>
     </message>
+    <message>
+        <source>Export</source>
+        <translation>Export</translation>
+    </message>
+    <message>
+        <source>This item as package…</source>
+        <translation>This item as package…</translation>
+    </message>
+    <message>
+        <source>This item and its subtree as package…</source>
+        <translation>This item and its subtree as package…</translation>
+    </message>
+    <message>
+        <source>Subtree as package, without class definitions…</source>
+        <translation>Subtree as package, without class definitions…</translation>
+    </message>
+    <message>
+        <source>Subtree as package, with all versions…</source>
+        <translation>Subtree as package, with all versions…</translation>
+    </message>
+    <message>
+        <source>Open the package wizard…</source>
+        <translation>Open the package wizard…</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
