@@ -591,6 +591,9 @@
     "kernel/private/classes/views/content/removeobject.php": [
       "tests/tests/kernel/classes/expReverseRelationCheckTest.php"
     ],
+    "kernel/private/classes/webdav/ezwebdavcontentbackend.php": [
+      "tests/tests/kernel/classes/expReverseRelationCheckTest.php"
+    ],
     "design/*/templates/node/removeobject.tpl": [
       "tests/tests/design/AdminReverseRelationCheckTest.php"
     ],

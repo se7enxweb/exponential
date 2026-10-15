@@ -56164,11 +56164,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>There are further references that you may not see.</source>
+        <source>1 reference you cannot see</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>There are further locations that you may not see.</source>
+        <source>%count references you cannot see</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1 further location you cannot see</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count further locations you cannot see</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -56201,6 +56209,10 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Relation field</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Layouts block</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

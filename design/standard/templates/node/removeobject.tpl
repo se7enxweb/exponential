@@ -29,6 +29,9 @@
 </ul>
 </div>
 
+{def $rr_blocked = false()}
+{if and( is_set( $reverse_relation_check ), $reverse_relation_check )}{set $rr_blocked = $reverse_relation_check.blocked}{include uri='design:content/reverse_relation_check.tpl' check=$reverse_relation_check operation='remove'}{/if}
+
 {if and( $move_to_trash_allowed, eq( $exceeded_limit, false() ) )}
   <input type="hidden" name="SupportsMoveToTrash" value="1" />
   <p><input type="checkbox" name="MoveToTrash" value="1" checked="checked" />{'Move to trash'|i18n('design/standard/node')}</p>
@@ -41,8 +44,9 @@
 
 
 <div class="buttonblock">
-{include uri="design:gui/button.tpl" name=Store id_name=ConfirmButton value="Confirm"|i18n("design/standard/node") disabled=$exceeded_limit}
+{include uri="design:gui/button.tpl" name=Store id_name=ConfirmButton value="Confirm"|i18n("design/standard/node") disabled=or( $exceeded_limit, $rr_blocked )}
 {include uri="design:gui/defaultbutton.tpl" name=Discard id_name=CancelButton value="Cancel"|i18n("design/standard/node")}
 </div>
 
 </form>
+{undef $rr_blocked}

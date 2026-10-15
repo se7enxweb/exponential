@@ -12,7 +12,8 @@ Both settings are in `content.ini`.
 | Setting | Values | Default | What it does |
 |---|---|---|---|
 | `[RemoveSettings] ReverseRelationCheck` | `disabled`, `warn`, `block` | `warn` | content/removeobject, also where it is reached as content/removeuserobject and content/removemediaobject |
-| `[HideSettings] ReverseRelationCheck` | `disabled`, `warn` | `disabled` | content/hide and "Hide selected" of the sub items list |
+| `[HideSettings] ReverseRelationCheck` | `disabled`, `warn` | `warn` | content/hide and "Hide selected" of the sub items list |
+| `[ReverseRelationSettings] ProviderClassList[]` | class names | none in the kernel; explayouts adds its own | references kept outside `ezcontentobject_link` (Layouts blocks) |
 
 A missing setting takes the default; an unknown value takes the default too and writes a warning to the debug log.
 `block` under `[HideSettings]` is taken as `warn`: a hide is never refused.
@@ -34,9 +35,15 @@ A missing setting takes the default; an unknown value takes the default too and 
 
 `warn` is the default because it adds information (and, in the one case above, a page) before content and its
 references are lost, and never refuses anything; `block` changes what an editor can do and is a decision for each
-site. The block itself is in the view, so it holds in every design; the explanation and the disabled OK button are
-in the admin4 and admin templates of `node/removeobject.tpl`. A site whose administration draws the standard
-design's `node/removeobject.tpl` sees the removal refused without the list.
+site. The block itself is on the server, so it holds in every design; the list and the disabled OK button are in
+the admin4, admin and standard templates of `node/removeobject.tpl`.
+
+The refusal (`block`, off by default) holds on every way the kernel removes content from a request: the
+confirmation of content/removeobject (also as content/removeuserobject and content/removemediaobject),
+`HideRemoveConfirmation=true`, a removal as a content job, the move to the trash (it is the same removal), the
+removal of the last locations of an object on the Locations tab (content/action sends a removal with findings to
+content/removeobject, which lists or refuses it) and a delete over WebDAV (refused as forbidden). ezjscore and the
+REST interface of the kernel have no removal. Scripts, cronjobs and the content API called directly are not checked.
 
 ### Hiding
 
@@ -48,7 +55,9 @@ design's `node/removeobject.tpl` sees the removal refused without the list.
   hide is done. A large hide also offers the choice between now and a content job on the same page. Revealing a
   hidden node is never checked.
 
-`disabled` is the default because `warn` adds a page where there was none.
+`warn` is the default: a hide with neither references nor further locations is done as before, and one that has
+them shows what it affects first (from the context menu a hide is a POST without a page of its own). Set
+`disabled` for the behaviour of earlier releases.
 
 ## What counts as a reference
 
@@ -66,29 +75,53 @@ below it). An object that keeps a location elsewhere stays, and the references t
 some locations of an object therefore never shows the list. For the same reason a reference from an object that
 goes as well is not listed.
 
+### Layouts blocks and other references outside ezcontentobject_link
+
+Classes listed in `[ReverseRelationSettings] ProviderClassList[]` add references the kernel does not store as
+relations. Each has a static method `reverseRelations( array $paths, int $limit )` that receives the path strings
+of the selected subtrees and answers `array( 'total' => int, 'rows' => array( ... ) )` (each row: `to_node_id`,
+`to_object_id`, `to_name`, `to_path`, `label`, `type`, `url`, `readable`), or `false` when it could not check (the
+check then counts as failed, so `block` refuses). A class that does not exist is skipped, so a process that
+started before an extension added its class keeps working.
+
+explayouts registers `expLayoutsReverseRelationProvider` in its `content.ini.append.php`: every block of a
+published layout whose collection names a node inside the subtrees (collection items hold node ids, whatever their
+value type). Unlike a relation, this counts a location, not an object: the block loses its item when that node
+goes, even when the object keeps a location elsewhere. The list shows "Layout: block" with a link to the layout
+editor, the type "Layouts block"; a user without `explayouts/read` sees it only counted.
+
+### The list
+
 The list shows for each reference the referring object (a link to its main location), its class, the kind of
 reference and, for a relation field, the name of the field, and which object it points at ("This item" for the
 selected one, else the name of the object below it).
 
 Only what the current user may read is described. A reference from an object the user may not read (by section,
-state, subtree or class; read access is checked once for all objects of the list) is not listed, and neither
-is its number: the item says only, in a fixed sentence, "There are further references that you may not see". The
-same goes for further locations the user may not read. A target the user may not read is named "An object you may
-not read". No name, class, ID or count of such objects reaches the page, a log or an audit record; the check has
-no JSON or AJAX output.
+state, subtree or class; read access is checked once for all objects of the list) is not listed; the item counts
+them: "1 reference you cannot see", "3 references you cannot see". The same goes for further locations the user
+may not read ("2 further locations you cannot see"). A target the user may not read is named "An object you may
+not read". No name, class or ID of such objects reaches the page, a log or an audit record; the check has no JSON
+or AJAX output.
 
-The fixed sentence itself cannot be avoided. The checks count every reference, so `block` refuses a removal
-even when the user sees none of them, and a hide asks first even when every reference comes from an object the
-user may not read; without the sentence the page could not explain why. It therefore tells the user that such
-objects exist, but only when the removal is refused or warned about because of them, and never how many.
+The count cannot be avoided. The checks count every reference, so `block` refuses a removal even when the user
+sees none of them, and a hide asks first even when every reference comes from an object the user may not read;
+without the sentence the page could not explain why, and with the number the editor knows how much there is to
+ask an administrator about. It tells the user how many such references exist per selected item, never which.
 
 At most 100 references are read per page; the total is counted in full, and when more exist than are read the
 page says so in a fixed sentence, without a number.
 
 Not covered: links to a location (`eznode://`) in rich text are stored as a relation to the location's object and
-count only when that object goes. Removals outside content/removeobject are not checked: removing a location on
-the Locations tab (content/removeassignment), the content API and operations called directly, scripts, REST and
-the trash purge.
+count only when that object goes. URL aliases and URL wildcards that name a node are not references (the system
+removes or redirects them with the node). Block parameters of Layouts other than collections are not read.
+Not checked: the content API and operations called directly, scripts and cronjobs, and the trash purge (the
+content was checked when it went to the trash).
+
+Performance: two statements over `ezcontentobject_link` (a count and at most 100 rows), one over the target
+locations, one per provider (a count and at most 100 rows), the selected nodes in one fetch, read access of every
+named object in one fetch, class and field names once per request. A removal of many items or of a subtree costs
+the same number of statements; the subtree is matched with `path_string LIKE`, which the index of
+`ezcontentobject_tree` serves.
 
 ## Implementation
 
@@ -99,9 +132,10 @@ the trash purge.
   refuses in mode `block` before each way it removes (the content job, the confirmation and the direct removal of
   locations). Nested selections are queried once, through the outer subtree.
 - Templates: `design/standard/templates/content/reverse_relation_check.tpl` (the list), included by
-  `node/removeobject.tpl` (admin4 and admin) and `content/job_confirm.tpl` (admin4, admin, standard). Strings in
+  `node/removeobject.tpl` (admin4, admin and standard) and `content/job_confirm.tpl` (admin4, admin, standard). Strings in
   the translation context `design/admin/content/reverserelations`.
 - Permissions, form tokens and audit records are those of the operations themselves: the confirmation pages post
   with the form token where `ezformtoken` is active, and nothing is written before the operation runs.
 - Tests: `expReverseRelationCheckTest` (modes, decisions, the query on SQLite, the order of the checks in the
-  views) and `AdminReverseRelationCheckTest` (the pages in admin4, the translations).
+  views, the providers, the Locations tab and WebDAV) and `AdminReverseRelationCheckTest` (the pages in admin4,
+  the counts, the Layouts row, the translations); explayouts: `tests/explayoutsreverserelationprovidertest.php`.

@@ -47,14 +47,14 @@ class ReverseRelationCheck
 
     /**
      * The mode of content/hide and the Hide action: content.ini [HideSettings] ReverseRelationCheck. Without the
-     * setting "disabled": a hide that has no confirmation page keeps having none. A hide is never refused: "block"
-     * is taken as "warn".
+     * setting "warn": a hide that other objects point at, or whose object has further locations, shows the list first;
+     * any other hide is done as before. A hide is never refused: "block" is taken as "warn".
      *
      * @return string disabled | warn
      */
     public static function hideMode()
     {
-        $mode = self::mode( 'HideSettings', array( self::DISABLED, self::WARN, self::BLOCK ), self::DISABLED );
+        $mode = self::mode( 'HideSettings', array( self::DISABLED, self::WARN, self::BLOCK ), self::WARN );
         return $mode === self::BLOCK ? self::WARN : $mode;
     }
 
@@ -129,9 +129,9 @@ class ReverseRelationCheck
 
     /**
      * What the template gets: the items with what the user may read, the mode, and whether the action is blocked
-     * or was just refused. No count leaves this method: that there are references or locations the user may not
-     * read is a yes or no per item (the page has to explain a block or a warning), and that more references exist
-     * than are listed is a yes or no as well, so the page cannot be used to count hidden content.
+     * or was just refused. References and locations the user may not read are counted per item, never named
+     * ("2 references you cannot see"), so the page explains a block or a warning; that more references exist than
+     * are listed is a yes or no.
      *
      * @param string $mode
      * @param array|null $check of forNodes()
@@ -146,8 +146,8 @@ class ReverseRelationCheck
         $items = array();
         foreach ( $check['items'] as $item )
         {
-            $item['unreadable'] = !empty( $item['unreadable'] );
-            $item['unreadable_locations'] = !empty( $item['unreadable_locations'] );
+            $item['unreadable'] = isset( $item['unreadable'] ) ? (int) $item['unreadable'] : 0;
+            $item['unreadable_locations'] = isset( $item['unreadable_locations'] ) ? (int) $item['unreadable_locations'] : 0;
             $items[] = $item;
         }
         $unreadable = isset( $check['unreadable'] ) ? (int) $check['unreadable'] : 0;
@@ -171,22 +171,36 @@ class ReverseRelationCheck
     public static function forNodes( array $nodeIDs, $withLocations = false )
     {
         $roots = array();
-        foreach ( array_unique( array_map( 'intval', $nodeIDs ) ) as $nodeID )
-        {
-            $node = \eZContentObjectTreeNode::fetch( $nodeID );
+        $nodeIDs = array_values( array_filter( array_unique( array_map( 'intval', $nodeIDs ) ) ) );
+        // one query for the whole selection (fetch() answers a single node for a list of one)
+        $nodes = $nodeIDs ? \eZContentObjectTreeNode::fetch( $nodeIDs ) : array();
+        if ( $nodes instanceof \eZContentObjectTreeNode )
+            $nodes = array( $nodes );
+        $byID = array();
+        foreach ( is_array( $nodes ) ? $nodes : array() as $node )
             if ( $node instanceof \eZContentObjectTreeNode )
-                $roots[] = array( 'node_id' => (int) $node->attribute( 'node_id' ),
-                                  'object_id' => (int) $node->attribute( 'contentobject_id' ),
-                                  'path_string' => (string) $node->attribute( 'path_string' ),
-                                  'name' => (string) $node->attribute( 'name' ) );
+                $byID[(int) $node->attribute( 'node_id' )] = $node;
+        foreach ( $nodeIDs as $nodeID )
+        {
+            if ( !isset( $byID[$nodeID] ) )
+                continue;
+            $node = $byID[$nodeID];
+            $roots[] = array( 'node_id' => (int) $node->attribute( 'node_id' ),
+                              'object_id' => (int) $node->attribute( 'contentobject_id' ),
+                              'path_string' => (string) $node->attribute( 'path_string' ),
+                              'name' => (string) $node->attribute( 'name' ) );
         }
         $found = self::references( $roots );
 
-        // read access, fetched in one go for every object the rows name
+        // read access, fetched in one go for every object the rows name (rows of a provider carry their own)
         $ids = array();
         foreach ( $found['by_root'] as $rows )
             foreach ( $rows as $row )
-                $ids[$row['from_id']] = $ids[$row['to_id']] = true;
+            {
+                if ( $row['from_id'] > 0 )
+                    $ids[$row['from_id']] = true;
+                $ids[$row['to_id']] = true;
+            }
         $readable = array();
         if ( $ids )
         {
@@ -225,7 +239,8 @@ class ReverseRelationCheck
             $unreadable = 0;
             foreach ( isset( $found['by_root'][$index] ) ? $found['by_root'][$index] : array() as $row )
             {
-                if ( $canRead( $row['from_id'] ) )
+                $readable = array_key_exists( 'readable', $row ) ? (bool) $row['readable'] : $canRead( $row['from_id'] );
+                if ( $readable )
                     $relations[] = self::describe( $row, $root['object_id'], $canRead( $row['to_id'] ) );
                 else
                     $unreadable++;
@@ -304,52 +319,154 @@ class ReverseRelationCheck
             return array_merge( $none, array( 'failed' => true ) );
         }
         $total = $count ? (int) $count[0]['cnt'] : 0;
-        if ( $total === 0 )
-            return $none;
-        $rows = self::rows( $db, 'SELECT l.from_contentobject_id AS from_id, f.name AS from_name, f.contentclass_id AS from_class_id,'
-                           . ' fn.node_id AS from_node_id, l.to_contentobject_id AS to_id, tobj.name AS to_name,'
-                           . " l.relation_type AS relation_type, l.contentclassattribute_id AS attribute_id $from"
-                           . ' ORDER BY l.to_contentobject_id, l.from_contentobject_id, l.contentclassattribute_id',
-                           array( 'limit' => self::LIST_LIMIT ) );
-        if ( !is_array( $rows ) )
+        $failed = false;
+        $byRoot = array();
+        $rows = array();
+        if ( $total > 0 )
         {
-            \eZDebug::writeError( 'The reverse relations could not be read', __METHOD__ );
-            return array( 'by_root' => array(), 'total' => $total, 'failed' => true );
-        }
-
-        // which selected subtree each target lies in (the first in the order of the selection)
-        $targetIDs = array();
-        foreach ( $rows as $row )
-            $targetIDs[(int) $row['to_id']] = true;
-        $rootOf = array();
-        $locations = self::rows( $db, 'SELECT contentobject_id, path_string FROM ezcontentobject_tree WHERE '
-                                . $db->generateSQLINStatement( array_keys( $targetIDs ), 'contentobject_id', false, true, 'int' ) );
-        foreach ( is_array( $locations ) ? $locations : array() as $location )
-        {
-            foreach ( $paths as $index => $path )
+            $rows = self::rows( $db, 'SELECT l.from_contentobject_id AS from_id, f.name AS from_name, f.contentclass_id AS from_class_id,'
+                               . ' fn.node_id AS from_node_id, l.to_contentobject_id AS to_id, tobj.name AS to_name,'
+                               . " l.relation_type AS relation_type, l.contentclassattribute_id AS attribute_id $from"
+                               . ' ORDER BY l.to_contentobject_id, l.from_contentobject_id, l.contentclassattribute_id',
+                               array( 'limit' => self::LIST_LIMIT ) );
+            if ( !is_array( $rows ) )
             {
-                if ( strpos( $location['path_string'], $path ) === 0 )
-                {
-                    $id = (int) $location['contentobject_id'];
-                    if ( !isset( $rootOf[$id] ) || $index < $rootOf[$id] )
-                        $rootOf[$id] = $index;
-                    break;
-                }
+                \eZDebug::writeError( 'The reverse relations could not be read', __METHOD__ );
+                $rows = array();
+                $failed = true;
             }
         }
-        $byRoot = array();
-        foreach ( $rows as $row )
+
+        if ( $rows )
         {
-            $to = (int) $row['to_id'];
-            $index = isset( $rootOf[$to] ) ? $rootOf[$to] : array_key_first( $paths );
-            $byRoot[$index][] = array( 'from_id' => (int) $row['from_id'], 'from_name' => (string) $row['from_name'],
-                                       'from_class_id' => (int) $row['from_class_id'],
-                                       'from_node_id' => $row['from_node_id'] === null ? 0 : (int) $row['from_node_id'],
-                                       'to_id' => $to, 'to_name' => (string) $row['to_name'],
-                                       'relation_type' => (int) $row['relation_type'], 'attribute_id' => (int) $row['attribute_id'] );
+            // which selected subtree each target lies in (the first in the order of the selection)
+            $targetIDs = array();
+            foreach ( $rows as $row )
+                $targetIDs[(int) $row['to_id']] = true;
+            $rootOf = array();
+            $locations = self::rows( $db, 'SELECT contentobject_id, path_string FROM ezcontentobject_tree WHERE '
+                                    . $db->generateSQLINStatement( array_keys( $targetIDs ), 'contentobject_id', false, true, 'int' ) );
+            foreach ( is_array( $locations ) ? $locations : array() as $location )
+            {
+                $index = self::rootIndexOf( (string) $location['path_string'], $paths );
+                $id = (int) $location['contentobject_id'];
+                if ( $index !== null && ( !isset( $rootOf[$id] ) || $index < $rootOf[$id] ) )
+                    $rootOf[$id] = $index;
+            }
+            foreach ( $rows as $row )
+            {
+                $to = (int) $row['to_id'];
+                $index = isset( $rootOf[$to] ) ? $rootOf[$to] : array_key_first( $paths );
+                $byRoot[$index][] = array( 'from_id' => (int) $row['from_id'], 'from_name' => (string) $row['from_name'],
+                                           'from_class_id' => (int) $row['from_class_id'],
+                                           'from_node_id' => $row['from_node_id'] === null ? 0 : (int) $row['from_node_id'],
+                                           'to_id' => $to, 'to_name' => (string) $row['to_name'],
+                                           'relation_type' => (int) $row['relation_type'], 'attribute_id' => (int) $row['attribute_id'] );
+            }
+        }
+
+        // references kept outside ezcontentobject_link (Layouts blocks and the like), from the providers of
+        // content.ini [ReverseRelationSettings] ProviderClassList[]
+        $external = self::providerReferences( $queryPaths );
+        $total += $external['total'];
+        $failed = $failed || $external['failed'];
+        foreach ( $external['rows'] as $row )
+        {
+            $index = self::rootIndexOf( $row['to_path'], $paths );
+            unset( $row['to_path'] );
+            $byRoot[$index === null ? array_key_first( $paths ) : $index][] = $row;
         }
         ksort( $byRoot );
-        return array( 'by_root' => $byRoot, 'total' => $total, 'failed' => false );
+        return array( 'by_root' => $byRoot, 'total' => $total, 'failed' => $failed );
+    }
+
+    /**
+     * The first selected subtree (in the order of the selection) that holds a location.
+     *
+     * @param string $pathString
+     * @param string[] $paths index => path_string of a selected node
+     * @return int|null
+     */
+    protected static function rootIndexOf( $pathString, array $paths )
+    {
+        foreach ( $paths as $index => $path )
+            if ( strpos( $pathString, $path ) === 0 )
+                return $index;
+        return null;
+    }
+
+    /**
+     * The classes of content.ini [ReverseRelationSettings] ProviderClassList[] that exist and answer
+     * reverseRelations(). A class that is missing (an extension that is not active, or a process that started
+     * before it was added) is skipped, never called.
+     *
+     * @return string[]
+     */
+    public static function providers()
+    {
+        $ini = \eZINI::instance( 'content.ini' );
+        if ( !$ini->hasVariable( 'ReverseRelationSettings', 'ProviderClassList' ) )
+            return array();
+        $providers = array();
+        foreach ( (array) $ini->variable( 'ReverseRelationSettings', 'ProviderClassList' ) as $class )
+        {
+            $class = trim( (string) $class );
+            if ( $class !== '' && class_exists( $class ) && is_callable( array( $class, 'reverseRelations' ) ) )
+                $providers[] = $class;
+        }
+        return array_values( array_unique( $providers ) );
+    }
+
+    /**
+     * What the providers report for the subtrees. A provider's reverseRelations( array $paths, int $limit ) answers
+     * array( 'total' => int, 'rows' => array( array( 'to_node_id', 'to_object_id', 'to_name', 'to_path', 'label',
+     * 'type', 'url', 'readable' ) ) ) for every reference to a location inside the subtrees (a location, not only an
+     * object that goes: a block that names a node loses it even when the object stays elsewhere), or false when it
+     * could not check. Rows become references of the kind "layout"; 'readable' says whether the current user may
+     * see what refers.
+     *
+     * @param string[] $paths the selected subtrees, digits and slashes only
+     * @param string[]|null $providers class names (default: providers())
+     * @return array( 'rows' => array, 'total' => int, 'failed' => bool )
+     */
+    public static function providerReferences( array $paths, $providers = null )
+    {
+        $result = array( 'rows' => array(), 'total' => 0, 'failed' => false );
+        if ( !$paths )
+            return $result;
+        foreach ( $providers === null ? self::providers() : $providers as $class )
+        {
+            try
+            {
+                $answer = call_user_func( array( $class, 'reverseRelations' ), array_values( $paths ), self::LIST_LIMIT );
+            }
+            catch ( \Throwable $e )
+            {
+                \eZDebug::writeError( $class . ': ' . get_class( $e ) . ': ' . $e->getMessage(), __METHOD__ );
+                $answer = false;
+            }
+            if ( !is_array( $answer ) || !isset( $answer['rows'] ) || !is_array( $answer['rows'] ) )
+            {
+                $result['failed'] = true;
+                continue;
+            }
+            $result['total'] += isset( $answer['total'] ) ? (int) $answer['total'] : count( $answer['rows'] );
+            foreach ( array_slice( $answer['rows'], 0, self::LIST_LIMIT ) as $row )
+            {
+                $result['rows'][] = array( 'from_id' => 0,
+                                           'from_name' => isset( $row['label'] ) ? (string) $row['label'] : '',
+                                           'from_class_id' => 0,
+                                           'from_class' => isset( $row['type'] ) ? (string) $row['type'] : '',
+                                           'from_node_id' => 0,
+                                           'from_url' => isset( $row['url'] ) ? (string) $row['url'] : '',
+                                           'readable' => !empty( $row['readable'] ),
+                                           'to_id' => isset( $row['to_object_id'] ) ? (int) $row['to_object_id'] : 0,
+                                           'to_name' => isset( $row['to_name'] ) ? (string) $row['to_name'] : '',
+                                           'to_path' => isset( $row['to_path'] ) ? (string) $row['to_path'] : '',
+                                           'relation_type' => 0, 'attribute_id' => 0, 'kind' => 'layout' );
+            }
+        }
+        return $result;
     }
 
     /**
@@ -403,22 +520,37 @@ class ReverseRelationCheck
      */
     protected static function describe( array $row, $selectedObjectID, $targetReadable )
     {
-        $className = '';
-        $class = $row['from_class_id'] > 0 ? \eZContentClass::fetch( $row['from_class_id'] ) : null;
-        if ( $class instanceof \eZContentClass )
-            $className = (string) $class->attribute( 'name' );
-        $field = '';
-        if ( $row['attribute_id'] > 0 )
+        // class and field names, looked up once per request however many rows name them
+        static $classNames = array(), $fieldNames = array();
+        $isExternal = isset( $row['kind'] ) && $row['kind'] === 'layout';
+        $className = $isExternal && isset( $row['from_class'] ) ? (string) $row['from_class'] : '';
+        $classID = (int) $row['from_class_id'];
+        if ( !$isExternal && $classID > 0 )
         {
-            $attribute = \eZContentClassAttribute::fetch( $row['attribute_id'] );
-            if ( $attribute instanceof \eZContentClassAttribute )
-                $field = (string) $attribute->attribute( 'name' );
+            if ( !isset( $classNames[$classID] ) )
+            {
+                $class = \eZContentClass::fetch( $classID );
+                $classNames[$classID] = $class instanceof \eZContentClass ? (string) $class->attribute( 'name' ) : '';
+            }
+            $className = $classNames[$classID];
+        }
+        $field = '';
+        $attributeID = (int) $row['attribute_id'];
+        if ( $attributeID > 0 )
+        {
+            if ( !isset( $fieldNames[$attributeID] ) )
+            {
+                $attribute = \eZContentClassAttribute::fetch( $attributeID );
+                $fieldNames[$attributeID] = $attribute instanceof \eZContentClassAttribute ? (string) $attribute->attribute( 'name' ) : '';
+            }
+            $field = $fieldNames[$attributeID];
         }
         return array( 'from_id' => $row['from_id'],
                       'from_name' => $row['from_name'],
                       'from_node_id' => $row['from_node_id'],
+                      'from_url' => $isExternal && isset( $row['from_url'] ) ? (string) $row['from_url'] : '',
                       'from_class' => $className,
-                      'kinds' => self::kinds( $row['relation_type'] ),
+                      'kinds' => $isExternal ? array( 'layout' ) : self::kinds( $row['relation_type'] ),
                       'field' => $field,
                       'to_id' => $row['to_id'],
                       'to_name' => $targetReadable ? $row['to_name'] : '',

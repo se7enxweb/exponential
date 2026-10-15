@@ -3,7 +3,7 @@
  * The check of reverse relations before a removal or a hide (Exponential\Service\ReverseRelationCheck,
  * doc/features/6.0/reverse-relation-check.md).
  *
- *  RC-01 - the modes: defaults (remove warn, hide disabled), known values, unknown values, block for a hide is warn
+ *  RC-01 - the modes: defaults (remove warn, hide warn), known values, unknown values, block for a hide is warn
  *  RC-02 - block refuses while references exist or the check failed; disabled and warn never refuse
  *  RC-03 - a hide asks first only with warn, findings and no confirmation
  *  RC-04 - what the template gets: nothing for disabled or without findings, blocked and refused flags
@@ -19,6 +19,9 @@
  *  RC-12 - content/hide and "Hide selected" of content/action ask first with warn, only when hiding
  *  RC-13 - content.ini ships the settings with their defaults
  *  RC-14 - objects and locations the user may not read are counted, never named; a block holds all the same
+ *  RC-15 - providers of [ReverseRelationSettings] (Layouts blocks): missing classes skipped, rows of the kind layout
+ *          given to the subtree that holds the node, readable as the provider says, a failing provider is failed
+ *  RC-16 - removing the last locations on the Locations tab and a WebDAV delete go through the check
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -85,7 +88,7 @@ class expReverseRelationCheckTest extends PHPUnit\Framework\TestCase
         $this->setting( 'RemoveSettings', null );
         $this->setting( 'HideSettings', null );
         $this->assertSame( 'warn', ReverseRelationCheck::removeMode(), 'without the setting, removal only adds the list' );
-        $this->assertSame( 'disabled', ReverseRelationCheck::hideMode(), 'without the setting, a hide has no new page' );
+        $this->assertSame( 'warn', ReverseRelationCheck::hideMode(), 'without the setting, a hide with findings lists them first' );
         foreach ( array( 'disabled', 'warn', 'block', ' Block ' ) as $value )
         {
             $this->setting( 'RemoveSettings', $value );
@@ -98,6 +101,8 @@ class expReverseRelationCheckTest extends PHPUnit\Framework\TestCase
         $this->setting( 'HideSettings', 'block' );
         $this->assertSame( 'warn', ReverseRelationCheck::hideMode(), 'a hide is never refused' );
         $this->setting( 'HideSettings', 'nonsense' );
+        $this->assertSame( 'warn', ReverseRelationCheck::hideMode() );
+        $this->setting( 'HideSettings', 'disabled' );
         $this->assertSame( 'disabled', ReverseRelationCheck::hideMode() );
     }
 
@@ -133,15 +138,16 @@ class expReverseRelationCheckTest extends PHPUnit\Framework\TestCase
         $this->assertNull( ReverseRelationCheck::templateData( 'block', null ) );
         $warn = ReverseRelationCheck::templateData( 'warn', self::check( 2 ) );
         $this->assertSame( array( 'warn', false, false, true, false ), array( $warn['mode'], $warn['blocked'], $warn['refused'], $warn['has_references'], $warn['more'] ) );
-        // no count reaches the page
+        // the keys the page gets
         $this->assertSame( array( 'items', 'has_references', 'more', 'failed', 'mode', 'blocked', 'refused' ), array_keys( $warn ) );
         $raw = self::check( 150 );
         $raw['listed'] = 90;
         $raw['unreadable'] = 37;
         $raw['items'] = array( array( 'node_id' => 10, 'name' => 'Folder', 'relations' => array(), 'unreadable' => 37, 'locations' => array(), 'unreadable_locations' => 23 ) );
         $data = ReverseRelationCheck::templateData( 'warn', $raw );
-        $this->assertSame( array( true, true, true ), array( $data['more'], $data['items'][0]['unreadable'], $data['items'][0]['unreadable_locations'] ) );
-        foreach ( array( '37', '23', '150', '90' ) as $count )
+        // per item, what the user may not read is counted ("37 references you cannot see"), the totals are not
+        $this->assertSame( array( true, 37, 23 ), array( $data['more'], $data['items'][0]['unreadable'], $data['items'][0]['unreadable_locations'] ) );
+        foreach ( array( '150', '90' ) as $count )
             $this->assertStringNotContainsString( $count, json_encode( $data ) );
         $block = ReverseRelationCheck::templateData( 'block', self::check( 2 ), true );
         $this->assertSame( array( 'block', true, true ), array( $block['mode'], $block['blocked'], $block['refused'] ) );
@@ -341,7 +347,9 @@ class expReverseRelationCheckTest extends PHPUnit\Framework\TestCase
     {
         $ini = self::code( 'settings/content.ini' );
         $this->assertMatchesRegularExpression( '/^\[RemoveSettings\]\n(?:(?!\[).*\n)*?ReverseRelationCheck=warn\n/m', $ini );
-        $this->assertMatchesRegularExpression( '/^\[HideSettings\]\n(?:(?!\[).*\n)*?ReverseRelationCheck=disabled\n/m', $ini );
+        $this->assertMatchesRegularExpression( '/^\[HideSettings\]\n(?:(?!\[).*\n)*?ReverseRelationCheck=warn\n/m', $ini );
+        $this->assertMatchesRegularExpression( '/^\[ReverseRelationSettings\]\n(?:(?!\[).*\n)*?ProviderClassList\[\]\n/m', $ini );
+        $this->assertDoesNotMatchRegularExpression( '/^ReverseRelationCheck=block/m', $ini, 'the refusal is off by default' );
     }
 
     /** RC-14 */
@@ -383,5 +391,86 @@ class expReverseRelationCheckTest extends PHPUnit\Framework\TestCase
         $this->assertTrue( ReverseRelationCheck::refusesRemoval( 'block', $none ) );
         $data = ReverseRelationCheck::templateData( 'block', $none );
         $this->assertTrue( $data['blocked'] );
+    }
+
+    private function providerSetting( array $classes )
+    {
+        $ini = eZINI::instance( 'content.ini' );
+        $key = 'ReverseRelationSettings/ProviderClassList';
+        if ( !array_key_exists( $key, $this->savedIni ) )
+            $this->savedIni[$key] = $ini->hasVariable( 'ReverseRelationSettings', 'ProviderClassList' )
+                                    ? array( $ini->variable( 'ReverseRelationSettings', 'ProviderClassList' ) ) : null;
+        $ini->setVariable( 'ReverseRelationSettings', 'ProviderClassList', $classes );
+    }
+
+    /** RC-15 */
+    public function testProvidersAddTheirReferences()
+    {
+        $this->providerSetting( array( 'NoSuchReverseRelationProvider', 'expReverseRelationTestProvider', 'eZINI', '' ) );
+        $this->assertSame( array( 'expReverseRelationTestProvider' ), ReverseRelationCheck::providers(),
+                           'a missing class, or one without reverseRelations(), is skipped' );
+
+        $this->sqlite();
+        expReverseRelationTestProvider::$answer = array( 'total' => 3, 'rows' => array(
+            array( 'to_node_id' => 12, 'to_object_id' => 102, 'to_name' => 'Shared', 'to_path' => '/1/2/10/12/',
+                   'label' => 'Front page: Teaser', 'type' => 'Layouts block', 'url' => '/explayouts_ui_api/app#layout/19', 'readable' => true ),
+            array( 'to_node_id' => 40, 'to_object_id' => 400, 'to_name' => 'Second', 'to_path' => '/1/2/40/',
+                   'label' => 'Secret layout', 'type' => 'Layouts block', 'url' => '', 'readable' => false ) ) );
+        $found = ReverseRelationCheck::references( array( array( 'path_string' => '/1/2/40/' ), array( 'path_string' => '/1/2/10/12/' ) ) );
+        $this->assertSame( array( '/1/2/40/', '/1/2/10/12/' ), expReverseRelationTestProvider::$paths );
+        $this->assertSame( 1 + 3, $found['total'], 'the link to 400 and the three the provider counted' );
+        $this->assertFalse( $found['failed'] );
+        // the block that names node 12 counts although object 102 stays at node 30: the block loses its node
+        $this->assertSame( 'Front page: Teaser', $found['by_root'][1][0]['from_name'] );
+        $this->assertSame( 'layout', $found['by_root'][1][0]['kind'] );
+
+        $roots = array( array( 'node_id' => 40, 'object_id' => 400, 'path_string' => '/1/2/40/', 'name' => 'Second' ),
+                        array( 'node_id' => 12, 'object_id' => 102, 'path_string' => '/1/2/10/12/', 'name' => 'Shared' ) );
+        // Page A (class 7, which the database in memory cannot describe) is left unreadable here
+        $check = ReverseRelationCheck::summarise( $roots, $found, function ( $id ) { return $id !== 201; } );
+        $this->assertSame( 2, $check['items'][0]['unreadable'], 'Page A, and the block the provider says the user may not see' );
+        $this->assertStringNotContainsString( 'Secret layout', serialize( $check ) );
+        $relation = $check['items'][1]['relations'][0];
+        $this->assertSame( array( array( 'layout' ), 'Layouts block', '/explayouts_ui_api/app#layout/19', true ),
+                           array( $relation['kinds'], $relation['from_class'], $relation['from_url'], $relation['is_selected'] ) );
+
+        // a provider that fails, or throws, makes the check failed (block refuses), never "no references"
+        expReverseRelationTestProvider::$answer = false;
+        $this->assertTrue( ReverseRelationCheck::providerReferences( array( '/1/2/40/' ), array( 'expReverseRelationTestProvider' ) )['failed'] );
+        expReverseRelationTestProvider::$answer = 'throw';
+        $this->assertTrue( ReverseRelationCheck::providerReferences( array( '/1/2/40/' ), array( 'expReverseRelationTestProvider' ) )['failed'] );
+        $this->assertSame( array( 'rows' => array(), 'total' => 0, 'failed' => false ), ReverseRelationCheck::providerReferences( array(), array( 'expReverseRelationTestProvider' ) ) );
+    }
+
+    /** RC-16 */
+    public function testTheLastLocationsAndWebDAVGoThroughTheCheck()
+    {
+        $action = self::code( 'kernel/private/classes/views/content/action.php' );
+        $this->assertMatchesRegularExpression( '/ReverseRelationCheck::forNodes\( array_keys\( \$removeList \) \);\s+if \( \\\\Exponential\\\\Service\\\\ReverseRelationCheck::templateData\( \$relationMode, \$relationCheck \) !== null \)\s+\$hasChildren = true;/', $action,
+                                               'the Locations tab sends a removal with findings to content/removeobject' );
+        $this->assertLessThan( strpos( $action, "if ( \$hasChildren )\n            {\n                \$http->setSessionVariable( 'CurrentViewMode'" ),
+                               strpos( $action, 'ReverseRelationCheck::forNodes( array_keys( $removeList ) )' ) );
+        $webdav = self::code( 'kernel/private/classes/webdav/ezwebdavcontentbackend.php' );
+        $check = strpos( $webdav, 'ReverseRelationCheck::refusesRemoval' );
+        $this->assertNotFalse( $check );
+        $this->assertLessThan( strpos( $webdav, '$node->removeNodeFromTree( $moveToTrash );' ), $check );
+        $this->assertStringContainsString( "class_exists( 'Exponential\\\\Service\\\\ReverseRelationCheck' )", $webdav );
+    }
+}
+
+/** A provider of references for RC-15 */
+class expReverseRelationTestProvider
+{
+    /** @var array|false|string what reverseRelations() answers ('throw' throws) */
+    public static $answer = false;
+    /** @var string[] the paths of the last call */
+    public static $paths = array();
+
+    public static function reverseRelations( array $paths, $limit )
+    {
+        self::$paths = $paths;
+        if ( self::$answer === 'throw' )
+            throw new RuntimeException( 'provider down' );
+        return self::$answer;
     }
 }

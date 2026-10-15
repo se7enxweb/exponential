@@ -61601,12 +61601,20 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Further references are not listed.</translation>
     </message>
     <message>
-        <source>There are further references that you may not see.</source>
-        <translation>There are further references that you may not see.</translation>
+        <source>1 reference you cannot see</source>
+        <translation>1 reference you cannot see</translation>
     </message>
     <message>
-        <source>There are further locations that you may not see.</source>
-        <translation>There are further locations that you may not see.</translation>
+        <source>%count references you cannot see</source>
+        <translation>%count references you cannot see</translation>
+    </message>
+    <message>
+        <source>1 further location you cannot see</source>
+        <translation>1 further location you cannot see</translation>
+    </message>
+    <message>
+        <source>%count further locations you cannot see</source>
+        <translation>%count further locations you cannot see</translation>
     </message>
     <message>
         <source>Used by</source>
@@ -61639,6 +61647,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Relation field</source>
         <translation>Relation field</translation>
+    </message>
+    <message>
+        <source>Layouts block</source>
+        <translation>Layouts block</translation>
     </message>
     <message>
         <source>Object relation</source>

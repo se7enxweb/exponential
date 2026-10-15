@@ -1207,6 +1207,18 @@ class Action extends \Exponential\Runnable\ModuleView
                 }
             }
 
+            // Reverse relations (content.ini [RemoveSettings] ReverseRelationCheck): removing the last locations of an
+            // object that others point at (or a location a Layouts block names) goes through content/removeobject,
+            // which lists the references, and refuses the removal with block
+            if ( !$hasChildren && $removeList
+                 && \Exponential\Service\ReverseRelationCheck::removeMode() !== \Exponential\Service\ReverseRelationCheck::DISABLED )
+            {
+                $relationMode = \Exponential\Service\ReverseRelationCheck::removeMode();
+                $relationCheck = \Exponential\Service\ReverseRelationCheck::forNodes( array_keys( $removeList ) );
+                if ( \Exponential\Service\ReverseRelationCheck::templateData( $relationMode, $relationCheck ) !== null )
+                    $hasChildren = true;
+            }
+
             if ( $hasChildren )
             {
                 $http->setSessionVariable( 'CurrentViewMode', $viewMode );

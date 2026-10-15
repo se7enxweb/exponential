@@ -69024,12 +69024,20 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Weitere Verweise sind nicht aufgeführt.</translation>
     </message>
     <message>
-        <source>There are further references that you may not see.</source>
-        <translation>Es gibt weitere Verweise, die Sie nicht sehen dürfen.</translation>
+        <source>1 reference you cannot see</source>
+        <translation>1 Verweis, den Sie nicht sehen dürfen</translation>
     </message>
     <message>
-        <source>There are further locations that you may not see.</source>
-        <translation>Es gibt weitere Orte, die Sie nicht sehen dürfen.</translation>
+        <source>%count references you cannot see</source>
+        <translation>%count Verweise, die Sie nicht sehen dürfen</translation>
+    </message>
+    <message>
+        <source>1 further location you cannot see</source>
+        <translation>1 weiterer Ort, den Sie nicht sehen dürfen</translation>
+    </message>
+    <message>
+        <source>%count further locations you cannot see</source>
+        <translation>%count weitere Orte, die Sie nicht sehen dürfen</translation>
     </message>
     <message>
         <source>Used by</source>
@@ -69062,6 +69070,10 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Relation field</source>
         <translation>Beziehungsfeld</translation>
+    </message>
+    <message>
+        <source>Layouts block</source>
+        <translation>Layouts-Block</translation>
     </message>
     <message>
         <source>Object relation</source>

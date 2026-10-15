@@ -7,9 +7,11 @@
  *  RR-02 - with block the OK button is disabled and says why; with warn it stays; a refused POST says nothing was
  *          removed
  *  RR-03 - without the check (disabled) the removal page is the one before, with its hint
- *  RR-04 - objects the user may not read: a fixed sentence per item, no name, no number; names are escaped
+ *  RR-04 - objects the user may not read: counted per item ("2 references you cannot see"), never named; names
+ *          are escaped; a Layouts block links to the layout editor
  *  RR-05 - the hide confirmation lists references and further locations and posts the confirmation back
- *  RR-06 - every design that has the pages includes the list; the list lives in standard (admin4 needs no other)
+ *  RR-06 - every design that has the pages includes the list (standard's removal page too); the list lives in
+ *          standard (admin4 needs no other)
  *  RR-07 - the strings are translated into German and American English, and listed for translators
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
@@ -105,7 +107,7 @@ class AdminReverseRelationCheckTest extends PHPUnit\Framework\TestCase
     {
         $relation = function ( $fromID, $fromName, $nodeID, $class, array $kinds, $field, $toID, $toName, $selected )
         {
-            return array( 'from_id' => $fromID, 'from_name' => $fromName, 'from_node_id' => $nodeID, 'from_class' => $class,
+            return array( 'from_id' => $fromID, 'from_name' => $fromName, 'from_node_id' => $nodeID, 'from_url' => '', 'from_class' => $class,
                           'kinds' => $kinds, 'field' => $field, 'to_id' => $toID, 'to_name' => $toName, 'is_selected' => $selected );
         };
         $items = array(
@@ -114,7 +116,9 @@ class AdminReverseRelationCheckTest extends PHPUnit\Framework\TestCase
                    'relations' => array(
                        $relation( 201, 'Annual report <2026>', 211, 'Article', array( 'embed' ), '', 161, 'Team photo', false ),
                        $relation( 202, 'Team page', 212, 'Folder', array( 'attribute' ), 'Header image', 160, 'Press photos', true ),
-                       $relation( 205, 'Gallery', 215, 'Article', array( 'link', 'embed' ), '', 162, '', false ) ) ),
+                       $relation( 205, 'Gallery', 215, 'Article', array( 'link', 'embed' ), '', 162, '', false ),
+                       array_merge( $relation( 0, 'Front page: Teaser <list>', 0, 'Layouts block', array( 'layout' ), '', 160, 'Press photos', true ),
+                                    array( 'from_url' => '/explayouts_ui_api/app#layout/19' ) ) ) ),
             array( 'node_id' => 62, 'object_id' => 170, 'name' => 'Logos', 'path_string' => '/1/2/62/', 'locations' => array(),
                    'unreadable' => 1, 'unreadable_locations' => 0,
                    'relations' => array( $relation( 204, 'Imprint', 214, 'Page', array( 'common' ), '', 170, 'Logos', true ) ) ) );
@@ -217,9 +221,10 @@ class AdminReverseRelationCheckTest extends PHPUnit\Framework\TestCase
     public function testObjectsTheUserMayNotReadAreOnlyCountedAndNamesAreEscaped()
     {
         $html = self::render( 'design/admin4/templates/node/removeobject.tpl', self::removeVariables( self::check( 'warn' ) ) );
-        // a fixed sentence per item, never a number: the page is no counter of hidden content
-        $this->assertSame( 2, substr_count( $html, '<p class="reverse-relation-unreadable">There are further references that you may not see.</p>' ) );
-        $this->assertDoesNotMatchRegularExpression( '#\b[0-9]+ (further|more) #', $html );
+        // counted per item, never named
+        $this->assertStringContainsString( '<p class="reverse-relation-unreadable">2 references you cannot see</p>', $html );
+        $this->assertStringContainsString( '<p class="reverse-relation-unreadable">1 reference you cannot see</p>', $html );
+        $this->assertMatchesRegularExpression( '#<a href="[^"]*/explayouts_ui_api/app\#layout/19">Front page: Teaser &lt;list&gt;</a></td>\s*<td>Layouts block</td>\s*<td>Layouts block</td>\s*<td>This item</td>#', $html );
         $this->assertMatchesRegularExpression( '#<td>Linked in rich text, Embedded in rich text</td>\s*<td><em>An object you may not read</em></td>#', $html,
                                                'a target the user may not read is not named' );
         $this->assertStringContainsString( 'Annual report &lt;2026&gt;', $html );
@@ -238,8 +243,7 @@ class AdminReverseRelationCheckTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( 'The object has further locations. Hiding this one leaves them as they are:', $html );
         $this->assertMatchesRegularExpression( '#<a href="[^"]*/content/view/full/90">Home / Partners / Logos</a></li>#', $html );
         $this->assertMatchesRegularExpression( '#/content/view/full/91">Home / Archive / Logos</a> \(hidden by a parent\)</li>#', $html );
-        $this->assertStringContainsString( '<p class="reverse-relation-unreadable">There are further locations that you may not see.</p>', $html );
-        $this->assertStringNotContainsString( '2 further', $html );
+        $this->assertStringContainsString( '<p class="reverse-relation-unreadable">2 further locations you cannot see</p>', $html );
         $this->assertStringContainsString( '<input type="hidden" name="ReverseRelationCheckConfirmed" value="1" />', $html );
         $this->assertStringContainsString( 'name="ConfirmJobButton"', $html );
         // an operation without the check draws the page as before
@@ -263,6 +267,9 @@ class AdminReverseRelationCheckTest extends PHPUnit\Framework\TestCase
             $this->assertStringContainsString( "{include uri='design:content/reverse_relation_check.tpl' check=\$rr_check operation='remove'}", $template, $design );
             $this->assertStringContainsString( '$rr_blocked|not )}', $template, $design );
         }
+        $standard = self::read( 'design/standard/templates/node/removeobject.tpl' );
+        $this->assertStringContainsString( "{include uri='design:content/reverse_relation_check.tpl' check=\$reverse_relation_check operation='remove'}", $standard );
+        $this->assertStringContainsString( 'disabled=or( $exceeded_limit, $rr_blocked )}', $standard );
     }
 
     /** RR-07 */
@@ -287,6 +294,8 @@ class AdminReverseRelationCheckTest extends PHPUnit\Framework\TestCase
             }
         }
         $this->assertStringContainsString( "<source>Check before hiding</source>\n        <translation>Vor dem Verbergen prüfen</translation>",
+                                           self::read( 'share/translations/ger-DE/translation.ts' ) );
+        $this->assertStringContainsString( "<source>%count references you cannot see</source>\n        <translation>%count Verweise, die Sie nicht sehen dürfen</translation>",
                                            self::read( 'share/translations/ger-DE/translation.ts' ) );
     }
 }
