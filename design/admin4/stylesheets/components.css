@@ -709,7 +709,7 @@ html[data-a4-theme="dark"] {
      .is-locked            a filled square (--a4-warn)    user account locked after failed logins
    Alone it is role="img" with aria-label and title; beside its own text it is aria-hidden. Each colour reaches 3:1
    on the card, the zebra row and its badge tint in both modes (AdminVisibilityStatusTest). */
-.a4-status {
+.a4-mark {
   position: relative;
   display: inline-block;
   flex: none;
@@ -721,13 +721,13 @@ html[data-a4-theme="dark"] {
   color: var(--a4-muted);
   vertical-align: middle;
 }
-.a4-status.is-visible { color: var(--a4-ok); background-color: currentColor; }
-.a4-status.is-hidden,
-.a4-status.is-hidden-by-parent { color: var(--a4-bad); }
-.a4-status.is-disabled { color: var(--a4-muted); }
-.a4-status.is-locked { color: var(--a4-warn); border-radius: 2px; background-color: currentColor; }
-.a4-status.is-hidden-by-parent::after,
-.a4-status.is-disabled::after {
+.a4-mark.is-visible { color: var(--a4-ok); background-color: currentColor; }
+.a4-mark.is-hidden,
+.a4-mark.is-hidden-by-parent { color: var(--a4-bad); }
+.a4-mark.is-disabled { color: var(--a4-muted); }
+.a4-mark.is-locked { color: var(--a4-warn); border-radius: 2px; background-color: currentColor; }
+.a4-mark.is-hidden-by-parent::after,
+.a4-mark.is-disabled::after {
   content: "";
   position: absolute;
   top: calc(50% - 1px);
@@ -736,13 +736,13 @@ html[data-a4-theme="dark"] {
   height: 2px;
   background-color: currentColor;
 }
-.a4-status.is-disabled::after { transform: rotate(-45deg); }
+.a4-mark.is-disabled::after { transform: rotate(-45deg); }
 /* in a badge the mark sits on the text's middle; .a4-badge keeps its gap */
-.a4-badge > .a4-status { align-self: center; }
+.a4-badge > .a4-mark { align-self: center; }
 @media (forced-colors: active) {
   /* the system colours replace the state colours; the shapes stay, the fills are kept on purpose */
-  .a4-status { forced-color-adjust: none; color: CanvasText; }
-  .a4-status.is-visible, .a4-status.is-locked { background-color: CanvasText; }
+  .a4-mark { forced-color-adjust: none; color: CanvasText; }
+  .a4-mark.is-visible, .a4-mark.is-locked { background-color: CanvasText; }
 }
 
 /* A content language as a short code (DE, EN-GB) where the admin showed a flag: design:parts/language_badge.tpl.

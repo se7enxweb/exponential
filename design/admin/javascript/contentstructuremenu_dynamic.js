@@ -259,7 +259,7 @@ function ContentStructureMenu( params, i18n )
         div.appendChild( span );
         html += div.innerHTML;
 
-        // A status mark (components.css .a4-status) after the name, only where something differs, so the tree
+        // A status mark (components.css .a4-mark) after the name, only where something differs, so the tree
         // stays quiet: a ring for a hidden node, a ring with a bar for one hidden by a node above it, a crossed
         // ring for a disabled user account (treemenu.php sends user_status only to users with role/read).
         // The hidden marks are decorative (title only): the "(Hidden)" text after them names the state for screen
@@ -267,13 +267,13 @@ function ContentStructureMenu( params, i18n )
         if ( item.is_hidden || item.is_invisible )
         {
             var visibilityName = item.is_hidden ? i18n.hidden : i18n.hiddenbyparent;
-            html += '<span class="a4-status is-' + ( item.is_hidden ? 'hidden' : 'hidden-by-parent' )
+            html += '<span class="a4-mark is-' + ( item.is_hidden ? 'hidden' : 'hidden-by-parent' )
                 + '" title="' + visibilityName + '" aria-hidden="true"><\/span>';
         }
         if ( item.user_status === 'disabled' )
         {
             var accountName = i18n.account_disabled || 'Disabled';
-            html += '<span class="a4-status is-disabled" role="img" aria-label="' + accountName + '" title="' + accountName + '"><\/span>';
+            html += '<span class="a4-mark is-disabled" role="img" aria-label="' + accountName + '" title="' + accountName + '"><\/span>';
         }
 
         if ( item.is_hidden )

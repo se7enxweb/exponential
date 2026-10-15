@@ -62,8 +62,8 @@
             {include uri='design:parts/visibility_status.tpl' status_node=$node status_badge=true() status_quiet=false()}
             {* a user account that is disabled or locked, for those who may see it (expUserAccountStatus) *}
             {def $a4_account_status = fetch( 'user', 'account_status', hash( 'user_id', $node.contentobject_id ) )}
-            {if eq( $a4_account_status, 'disabled' )}<span class="a4-badge a4-account-status" title="{'Account disabled: this user cannot log in.'|i18n( 'design/admin/node/view/full' )|wash}"><span class="a4-status is-disabled" aria-hidden="true"></span>{'Disabled'|i18n( 'design/admin/node/view/full' )|wash}</span>
-            {elseif eq( $a4_account_status, 'locked' )}<span class="a4-badge is-warn a4-account-status" title="{'Locked after too many failed logins.'|i18n( 'design/admin/node/view/full' )|wash}"><span class="a4-status is-locked" aria-hidden="true"></span>{'Locked'|i18n( 'design/admin/node/view/full' )|wash}</span>{/if}
+            {if eq( $a4_account_status, 'disabled' )}<span class="a4-badge a4-account-status" title="{'Account disabled: this user cannot log in.'|i18n( 'design/admin/node/view/full' )|wash}"><span class="a4-mark is-disabled" aria-hidden="true"></span>{'Disabled'|i18n( 'design/admin/node/view/full' )|wash}</span>
+            {elseif eq( $a4_account_status, 'locked' )}<span class="a4-badge is-warn a4-account-status" title="{'Locked after too many failed logins.'|i18n( 'design/admin/node/view/full' )|wash}"><span class="a4-mark is-locked" aria-hidden="true"></span>{'Locked'|i18n( 'design/admin/node/view/full' )|wash}</span>{/if}
             {undef $a4_account_status}
             {if ne( $node.node_id, $node.main_node_id )}<span class="a4-badge">{'Secondary location'|i18n( 'design/admin/node/view/full' )}</span>{/if}
         </span>

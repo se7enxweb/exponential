@@ -190,7 +190,7 @@ var eZAjaxSubitemsExpDataTable = (function () {
             return function (row) { var v = row[key]; return v === null || v === undefined ? '' : String(v).replace(/&/g, '&#38;').replace(/</g, '&#60;').replace(/>/g, '&#62;'); };
         };
 
-        // ---- the status marks (components.css .a4-status) -------------------------
+        // ---- the status marks (components.css .a4-mark) -------------------------
         // labelsObj.STATUS holds the names and the explanations (children_detailed.tpl); without it (an older
         // template) the marks are drawn with the English words.
         var S = $.extend({
@@ -216,21 +216,21 @@ var eZAjaxSubitemsExpDataTable = (function () {
             if (!state) { return ''; }
             var name = S[VISIBILITY[state][0]], title = S[VISIBILITY[state][1]] || name;
             return state === 'visible'
-                ? '<span class="a4-status is-visible" title="' + attr(title) + '" aria-hidden="true"></span>'
-                : '<span class="a4-status is-' + state + '" role="img" aria-label="' + attr(name) + '" title="' + attr(title) + '"></span>';
+                ? '<span class="a4-mark is-visible" title="' + attr(title) + '" aria-hidden="true"></span>'
+                : '<span class="a4-mark is-' + state + '" role="img" aria-label="' + attr(name) + '" title="' + attr(title) + '"></span>';
         };
         // The Visibility column: the mark beside the server's text (Visible, Hidden, Hidden by superior)
         var visibilityView = function (row) {
             var state = visibilityState(row), label = text('hidden_status_string')(row);
             if (!state) { return label; }
-            return '<span class="a4-subitem-status"><span class="a4-status is-' + state + '" aria-hidden="true"></span>' + label + '</span>';
+            return '<span class="a4-subitem-status"><span class="a4-mark is-' + state + '" aria-hidden="true"></span>' + label + '</span>';
         };
         // A user account the server marks as disabled or locked (expUserAccountStatus, row.user_status): a badge
         var accountBadge = function (row) {
             if (row.user_status !== 'disabled' && row.user_status !== 'locked') { return ''; }
             var name = S[row.user_status], title = S[row.user_status + '_title'] || name;
             return '<span class="a4-badge' + (row.user_status === 'locked' ? ' is-warn' : '') + '" title="' + attr(title) + '">' +
-                   '<span class="a4-status is-' + row.user_status + '" aria-hidden="true"></span>' + attr(name) + '</span>';
+                   '<span class="a4-mark is-' + row.user_status + '" aria-hidden="true"></span>' + attr(name) + '</span>';
         };
 
         var columns = [

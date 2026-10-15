@@ -398,7 +398,7 @@ div#contentstructure li.currentnode li a.image-text span.node-name-hiddenbyparen
     padding: 0 0.2em 0 0.2em;
 }
 
-/* the state as text for screen readers; the status mark before it (components.css .a4-status) shows it */
+/* the state as text for screen readers; the status mark before it (components.css .a4-mark) shows it */
 div#contentstructure span.node-hidden,
 div#contentstructure span.node-hiddenbyparent {
     position: absolute;

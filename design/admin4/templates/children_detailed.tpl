@@ -104,7 +104,7 @@ var labelsObj = {ldelim}
                         objectstate: "{'Object state'|i18n( 'design/admin/node/view/full' )|wash('javascript')}"
                     {rdelim},
 
-    {* The status marks before each name: a node's visibility, a user account's state (components.css .a4-status) *}
+    {* The status marks before each name: a node's visibility, a user account's state (components.css .a4-mark) *}
     STATUS: {ldelim}
 
                         visible: "{'Visible'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",

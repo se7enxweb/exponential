@@ -417,7 +417,7 @@ either design's sub-items table.
 ## Visibility and account status
 
 Whether visitors of the site see an item, and whether a user can log in, shows at a glance as a small status mark
-(`.a4-status` in both copies of `components.css`, 10 px). The shape tells the state as well as the colour, so it
+(`.a4-mark` in both copies of `components.css`, 10 px). The shape tells the state as well as the colour, so it
 reads in grey scale, for colour-blind users and in forced colours (where the marks take the system text colour):
 
 | Mark | Shape | Colour token | Meaning |

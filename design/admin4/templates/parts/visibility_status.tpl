@@ -1,4 +1,4 @@
-{* A node's visibility as a status mark (components.css .a4-status): a filled disc for visible, a ring for hidden,
+{* A node's visibility as a status mark (components.css .a4-mark): a filled disc for visible, a ring for hidden,
    a ring with a bar for hidden because a node above it is hidden (is_invisible without is_hidden). The shape tells
    the state as well as the colour; the title explains it.
 
@@ -22,7 +22,7 @@
                  $a4_vis_title = 'Visible: visitors of the site can see it.'|i18n( 'design/admin/node/view/full' )}{/case}{*
 *}{/switch}{*
 *}{if and( is_set( $status_quiet ), $status_quiet, eq( $a4_vis_state, 'visible' ) )}{*
-*}{elseif and( is_set( $status_badge ), $status_badge )}<span class="a4-badge {if eq( $a4_vis_state, 'visible' )}is-ok{else}is-bad{/if} a4-visibility" title="{$a4_vis_title|wash}"><span class="a4-status is-{$a4_vis_state}" aria-hidden="true"></span>{$a4_vis_name|wash}</span>{*
-*}{elseif eq( $a4_vis_state, 'visible' )}<span class="a4-status is-visible" title="{$a4_vis_title|wash}" aria-hidden="true"></span>{*
-*}{else}<span class="a4-status is-{$a4_vis_state}" role="img" aria-label="{$a4_vis_name|wash}" title="{$a4_vis_title|wash}"></span>{/if}{*
+*}{elseif and( is_set( $status_badge ), $status_badge )}<span class="a4-badge {if eq( $a4_vis_state, 'visible' )}is-ok{else}is-bad{/if} a4-visibility" title="{$a4_vis_title|wash}"><span class="a4-mark is-{$a4_vis_state}" aria-hidden="true"></span>{$a4_vis_name|wash}</span>{*
+*}{elseif eq( $a4_vis_state, 'visible' )}<span class="a4-mark is-visible" title="{$a4_vis_title|wash}" aria-hidden="true"></span>{*
+*}{else}<span class="a4-mark is-{$a4_vis_state}" role="img" aria-label="{$a4_vis_name|wash}" title="{$a4_vis_title|wash}"></span>{/if}{*
 *}{undef $a4_vis_state $a4_vis_name $a4_vis_title}

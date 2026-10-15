@@ -1,7 +1,7 @@
 <?php
 /**
  * The status marks of the administration: a node's visibility (visible, hidden, hidden by a parent) and the state
- * of a user account (disabled, locked) as one component, components.css .a4-status.
+ * of a user account (disabled, locked) as one component, components.css .a4-mark.
  *
  *  VS-01 - The shape tells the state, not only the colour: a filled disc, a ring, a ring with a bar, a crossed
  *          ring, a filled square; in forced colours the shapes and fills stay (system colour)
@@ -54,41 +54,61 @@ class AdminVisibilityStatusTest extends PHPUnit\Framework\TestCase
         return $out;
     }
 
+    /**
+     * VS-01: the mark is its own class. .a4-status is the older component of a status with a dot and its text
+     * (setup/cronjobs, setup/preload, workflow/processlist): the mark's size, ring and radius must never reach it.
+     */
+    public function testTheMarkLeavesTheStatusComponentAlone()
+    {
+        $r = self::rules();
+        foreach ( array( 'width', 'height', 'border', 'border-radius', 'position' ) as $property )
+            $this->assertArrayNotHasKey( $property, $r['.a4-status'], ".a4-status has no $property of the mark" );
+        $this->assertSame( 'inline-flex', $r['.a4-status']['display'] );
+        foreach ( array( 'design/admin4/stylesheets/components.css', 'design/admin/stylesheets/components.css' ) as $path )
+            $this->assertDoesNotMatchRegularExpression( '#\.a4-status\.is-(visible|hidden|hidden-by-parent|disabled|locked)\b#', self::file( $path ), $path );
+        foreach ( array( 'design/admin4/templates/setup/cronjobs.tpl', 'design/admin4/templates/setup/preload.tpl', 'design/admin4/templates/workflow/processlist.tpl' ) as $path )
+        {
+            $template = self::file( $path );
+            $this->assertStringContainsString( 'a4-status', $template, $path );
+            $this->assertStringNotContainsString( 'a4-mark', $template, $path );
+        }
+    }
+
     /** VS-01 */
     public function testTheShapeTellsTheState()
     {
         $r = self::rules();
-        $this->assertSame( '50%', $r['.a4-status']['border-radius'] );
-        $this->assertSame( '2px solid currentColor', $r['.a4-status']['border'] );
-        $this->assertSame( '10px', $r['.a4-status']['width'] );
-        $this->assertSame( '10px', $r['.a4-status']['height'] );
+        $this->assertSame( '50%', $r['.a4-mark']['border-radius'] );
+        $this->assertSame( '2px solid currentColor', $r['.a4-mark']['border'] );
+        $this->assertSame( '10px', $r['.a4-mark']['width'] );
+        $this->assertSame( '10px', $r['.a4-mark']['height'] );
 
         // visible: a filled disc
-        $this->assertSame( 'var(--a4-ok)', $r['.a4-status.is-visible']['color'] );
-        $this->assertSame( 'currentColor', $r['.a4-status.is-visible']['background-color'] );
+        $this->assertSame( 'var(--a4-ok)', $r['.a4-mark.is-visible']['color'] );
+        $this->assertSame( 'currentColor', $r['.a4-mark.is-visible']['background-color'] );
         // hidden: a ring (no fill, no bar)
-        $this->assertSame( 'var(--a4-bad)', $r['.a4-status.is-hidden']['color'] );
-        $this->assertArrayNotHasKey( 'background-color', $r['.a4-status.is-hidden'] );
-        $this->assertArrayNotHasKey( '.a4-status.is-hidden::after', $r );
+        $this->assertSame( 'var(--a4-bad)', $r['.a4-mark.is-hidden']['color'] );
+        $this->assertArrayNotHasKey( 'background-color', $r['.a4-mark.is-hidden'] );
+        $this->assertArrayNotHasKey( '.a4-mark.is-hidden::after', $r );
         // hidden by a parent: the ring with a bar across
-        $this->assertSame( 'var(--a4-bad)', $r['.a4-status.is-hidden-by-parent']['color'] );
-        $this->assertArrayNotHasKey( 'background-color', $r['.a4-status.is-hidden-by-parent'] );
-        $this->assertSame( '""', $r['.a4-status.is-hidden-by-parent::after']['content'] );
-        $this->assertSame( 'currentColor', $r['.a4-status.is-hidden-by-parent::after']['background-color'] );
-        $this->assertArrayNotHasKey( 'transform', $r['.a4-status.is-hidden-by-parent::after'] );
+        $this->assertSame( 'var(--a4-bad)', $r['.a4-mark.is-hidden-by-parent']['color'] );
+        $this->assertArrayNotHasKey( 'background-color', $r['.a4-mark.is-hidden-by-parent'] );
+        $this->assertSame( '""', $r['.a4-mark.is-hidden-by-parent::after']['content'] );
+        $this->assertSame( 'currentColor', $r['.a4-mark.is-hidden-by-parent::after']['background-color'] );
+        $this->assertArrayNotHasKey( 'transform', $r['.a4-mark.is-hidden-by-parent::after'] );
         // a disabled account: the ring crossed out
-        $this->assertSame( 'var(--a4-muted)', $r['.a4-status.is-disabled']['color'] );
-        $this->assertSame( 'rotate(-45deg)', $r['.a4-status.is-disabled::after']['transform'] );
+        $this->assertSame( 'var(--a4-muted)', $r['.a4-mark.is-disabled']['color'] );
+        $this->assertSame( 'rotate(-45deg)', $r['.a4-mark.is-disabled::after']['transform'] );
         // a locked account: a filled square
-        $this->assertSame( 'var(--a4-warn)', $r['.a4-status.is-locked']['color'] );
-        $this->assertSame( '2px', $r['.a4-status.is-locked']['border-radius'] );
-        $this->assertSame( 'currentColor', $r['.a4-status.is-locked']['background-color'] );
+        $this->assertSame( 'var(--a4-warn)', $r['.a4-mark.is-locked']['color'] );
+        $this->assertSame( '2px', $r['.a4-mark.is-locked']['border-radius'] );
+        $this->assertSame( 'currentColor', $r['.a4-mark.is-locked']['background-color'] );
 
         $f = self::rules( true );
-        $this->assertSame( 'none', $f['.a4-status']['forced-color-adjust'], 'the fills would be dropped otherwise' );
-        $this->assertSame( 'CanvasText', $f['.a4-status']['color'] );
-        $this->assertSame( 'CanvasText', $f['.a4-status.is-visible']['background-color'] );
-        $this->assertSame( 'CanvasText', $f['.a4-status.is-locked']['background-color'] );
+        $this->assertSame( 'none', $f['.a4-mark']['forced-color-adjust'], 'the fills would be dropped otherwise' );
+        $this->assertSame( 'CanvasText', $f['.a4-mark']['color'] );
+        $this->assertSame( 'CanvasText', $f['.a4-mark.is-visible']['background-color'] );
+        $this->assertSame( 'CanvasText', $f['.a4-mark.is-locked']['background-color'] );
 
         $this->assertFileEquals( self::root() . '/design/admin4/stylesheets/components.css', self::root() . '/design/admin/stylesheets/components.css' );
     }
@@ -135,9 +155,9 @@ class AdminVisibilityStatusTest extends PHPUnit\Framework\TestCase
         $part = self::file( 'design/admin4/templates/parts/visibility_status.tpl' );
         $this->assertStringContainsString( "cond( \$status_node.is_hidden, 'hidden', \$status_node.is_invisible, 'hidden-by-parent', 'visible' )", $part,
             'hidden wins over hidden by a parent: a hidden node is invisible too' );
-        $this->assertStringContainsString( '<span class="a4-status is-{$a4_vis_state}" role="img" aria-label="{$a4_vis_name|wash}" title="{$a4_vis_title|wash}"></span>', $part );
-        $this->assertStringContainsString( '<span class="a4-status is-visible" title="{$a4_vis_title|wash}" aria-hidden="true"></span>', $part );
-        $this->assertStringContainsString( '<span class="a4-status is-{$a4_vis_state}" aria-hidden="true"></span>{$a4_vis_name|wash}</span>', $part,
+        $this->assertStringContainsString( '<span class="a4-mark is-{$a4_vis_state}" role="img" aria-label="{$a4_vis_name|wash}" title="{$a4_vis_title|wash}"></span>', $part );
+        $this->assertStringContainsString( '<span class="a4-mark is-visible" title="{$a4_vis_title|wash}" aria-hidden="true"></span>', $part );
+        $this->assertStringContainsString( '<span class="a4-mark is-{$a4_vis_state}" aria-hidden="true"></span>{$a4_vis_name|wash}</span>', $part,
             'in the badge the mark is beside its text and hidden from screen readers' );
         $this->assertStringContainsString( '{undef $a4_vis_state $a4_vis_name $a4_vis_title}', $part );
         foreach ( array( 'Visible', 'Hidden', 'Hidden by a parent', 'Visible: visitors of the site can see it.',
@@ -149,8 +169,8 @@ class AdminVisibilityStatusTest extends PHPUnit\Framework\TestCase
         $head = self::file( 'design/admin4/templates/node/view/a4_full_body.tpl' );
         $this->assertStringContainsString( "{include uri='design:parts/visibility_status.tpl' status_node=\$node status_badge=true() status_quiet=false()}", $head );
         $this->assertStringContainsString( "fetch( 'user', 'account_status', hash( 'user_id', \$node.contentobject_id ) )", $head );
-        $this->assertStringContainsString( '<span class="a4-status is-disabled" aria-hidden="true"></span>', $head );
-        $this->assertStringContainsString( '<span class="a4-status is-locked" aria-hidden="true"></span>', $head );
+        $this->assertStringContainsString( '<span class="a4-mark is-disabled" aria-hidden="true"></span>', $head );
+        $this->assertStringContainsString( '<span class="a4-mark is-locked" aria-hidden="true"></span>', $head );
         $this->assertStringNotContainsString( 'a4-badge-warn', $head );
 
         $browse = self::file( 'design/admin4/templates/content/browse_mode_list.tpl' );
@@ -160,8 +180,8 @@ class AdminVisibilityStatusTest extends PHPUnit\Framework\TestCase
         {
             $tree = self::file( "design/$design/templates/contentstructuremenu/show_content_structure.tpl" );
             // decorative: the "(Hidden)" text after the mark names the state
-            $this->assertSame( 2, substr_count( $tree, '<span class="a4-status is-hidden" aria-hidden="true" title=' ), "$design: both branches of the static tree" );
-            $this->assertSame( 2, substr_count( $tree, '<span class="a4-status is-hidden-by-parent" aria-hidden="true" title=' ), $design );
+            $this->assertSame( 2, substr_count( $tree, '<span class="a4-mark is-hidden" aria-hidden="true" title=' ), "$design: both branches of the static tree" );
+            $this->assertSame( 2, substr_count( $tree, '<span class="a4-mark is-hidden-by-parent" aria-hidden="true" title=' ), $design );
         }
         // admin4 keeps that text for screen readers instead of display: none
         $pagelayout = AdminBaseStylesheetsTest::rules( preg_replace( '#/\*.*?\*/#s', '', self::file( 'design/admin4/stylesheets/pagelayout.css' ) ) );
@@ -192,35 +212,35 @@ class AdminVisibilityStatusTest extends PHPUnit\Framework\TestCase
             $this->assertCount( 13, $s, $design );
 
             // the table: a mark before the icon and name of every row with the flags
-            $this->assertStringStartsWith( '<span class="a4-subitem-name"><span class="a4-status is-visible" title="V title" aria-hidden="true"></span><a href="/n"',
+            $this->assertStringStartsWith( '<span class="a4-subitem-name"><span class="a4-mark is-visible" title="V title" aria-hidden="true"></span><a href="/n"',
                 $s['subitems: visible']['cell'] );
-            $this->assertStringContainsString( '<span class="a4-status is-hidden" role="img" aria-label="Versteckt" title="H title"></span><a href',
+            $this->assertStringContainsString( '<span class="a4-mark is-hidden" role="img" aria-label="Versteckt" title="H title"></span><a href',
                 $s['subitems: hidden']['cell'], 'is_hidden wins over is_invisible' );
-            $this->assertStringContainsString( '<span class="a4-status is-hidden-by-parent" role="img" aria-label="Versteckt durch übergeordneten Eintrag" title="P title &#34;quoted&#34;">',
+            $this->assertStringContainsString( '<span class="a4-mark is-hidden-by-parent" role="img" aria-label="Versteckt durch übergeordneten Eintrag" title="P title &#34;quoted&#34;">',
                 $s['subitems: hidden by parent']['cell'], 'the texts are escaped for the attribute' );
-            $this->assertStringNotContainsString( 'a4-status', $s['subitems: no flags']['cell'], 'an older server: no mark rather than a wrong one' );
+            $this->assertStringNotContainsString( 'a4-mark', $s['subitems: no flags']['cell'], 'an older server: no mark rather than a wrong one' );
             $this->assertSame( 'Text', $s['subitems: no flags']['visibility'] );
             $this->assertStringContainsString( 'Tom &amp; Jerry</a></span>', $s['subitems: visible']['cell'], 'the encoded name stays encoded once' );
 
             // the table: a badge after the name of a disabled or locked account, none for an enabled one
-            $this->assertStringEndsWith( '</a><span class="a4-badge" title="D title"><span class="a4-status is-disabled" aria-hidden="true"></span>Deaktiviert</span></span>',
+            $this->assertStringEndsWith( '</a><span class="a4-badge" title="D title"><span class="a4-mark is-disabled" aria-hidden="true"></span>Deaktiviert</span></span>',
                 $s['subitems: disabled user']['cell'] );
-            $this->assertStringEndsWith( '</a><span class="a4-badge is-warn" title="L title"><span class="a4-status is-locked" aria-hidden="true"></span>Gesperrt</span></span>',
+            $this->assertStringEndsWith( '</a><span class="a4-badge is-warn" title="L title"><span class="a4-mark is-locked" aria-hidden="true"></span>Gesperrt</span></span>',
                 $s['subitems: locked user']['cell'] );
             $this->assertStringNotContainsString( 'a4-badge', $s['subitems: enabled user']['cell'] );
-            $this->assertSame( '<span class="a4-subitem-status"><span class="a4-status is-hidden-by-parent" aria-hidden="true"></span>Text</span>',
+            $this->assertSame( '<span class="a4-subitem-status"><span class="a4-mark is-hidden-by-parent" aria-hidden="true"></span>Text</span>',
                 $s['subitems: hidden by parent']['visibility'] );
             $this->assertStringContainsString( 'aria-label="Hidden" title="Hidden: visitors of the site do not see it."', $s['subitems: no labels']['cell'] );
 
             // the tree: a mark after the name, only where something differs
-            $this->assertStringNotContainsString( 'a4-status', $s['tree: visible']['html'] );
-            $this->assertStringContainsString( '<span class="node-name-hidden">Node</span><span class="a4-status is-hidden" title="Versteckt" aria-hidden="true"></span><span class="node-hidden"> (Versteckt)</span>',
+            $this->assertStringNotContainsString( 'a4-mark', $s['tree: visible']['html'] );
+            $this->assertStringContainsString( '<span class="node-name-hidden">Node</span><span class="a4-mark is-hidden" title="Versteckt" aria-hidden="true"></span><span class="node-hidden"> (Versteckt)</span>',
                 $s['tree: hidden']['html'], 'decorative; the text after it is read once' );
-            $this->assertStringContainsString( '<span class="a4-status is-hidden-by-parent" title="Vom übergeordneten Element versteckt" aria-hidden="true"></span><span class="node-hiddenbyparent">',
+            $this->assertStringContainsString( '<span class="a4-mark is-hidden-by-parent" title="Vom übergeordneten Element versteckt" aria-hidden="true"></span><span class="node-hiddenbyparent">',
                 $s['tree: hidden by parent']['html'] );
-            $this->assertStringContainsString( '<span class="a4-status is-disabled" role="img" aria-label="Konto deaktiviert" title="Konto deaktiviert"></span></a>',
+            $this->assertStringContainsString( '<span class="a4-mark is-disabled" role="img" aria-label="Konto deaktiviert" title="Konto deaktiviert"></span></a>',
                 $s['tree: disabled user']['html'] );
-            $this->assertStringNotContainsString( 'a4-status', $s['tree: locked user']['html'], 'the tree marks only disabled accounts' );
+            $this->assertStringNotContainsString( 'a4-mark', $s['tree: locked user']['html'], 'the tree marks only disabled accounts' );
         }
     }
 
