@@ -464,7 +464,10 @@ class expUserHygieneTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 2, substr_count( $menu, "Links[user_hygiene]=user/hygiene\n" ), 'in the Users and the Setup menu' );
         $this->assertSame( 2, substr_count( $menu, "PolicyList_user_hygiene[]=user/hygiene\n" ) );
         $this->assertStringContainsString( "GroupLinks_users[]=user_hygiene\n", $menu );
-        $this->assertStringContainsString( "LinkIcons[user_hygiene]=person-check\n", $menu );
+        $this->assertSame( 2, substr_count( $menu, "LinkIcons[user_hygiene]=person-badge\n" ), 'in the Setup and the Users menu' );
+        $this->assertStringContainsString( "MegaMenuLinks[]=access-user_hygiene\n", $menu, 'offered in the Users tab\'s mega menu' );
+        $this->assertStringContainsString( "'access-user_hygiene',       'Check user accounts'|i18n( 'design/admin/parts/user/menu' )",
+                                           self::read( 'design/admin4/templates/parts/user/mega_menu.tpl' ) );
         foreach ( array( 'design/admin', 'design/admin3', 'design/admin4' ) as $design )
             $this->assertStringContainsString( "'user_hygiene',       'Check user accounts'|i18n( 'design/admin/parts/user/menu' )", self::read( "$design/templates/parts/user/menu.tpl" ) );
         foreach ( array( 'design/admin', 'design/admin4' ) as $design )

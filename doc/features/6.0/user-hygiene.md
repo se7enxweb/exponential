@@ -102,9 +102,11 @@ The page needs an SQL database (MySQL, MariaDB, PostgreSQL, SQLite, Oracle); on 
 
 ## In the menus
 
-- Users tab, left menu: `menu.ini [Leftmenu_user] Links[user_hygiene]`.
+- Users tab, left menu: `menu.ini [Leftmenu_user] Links[user_hygiene]`, with its icon and description, and in the
+  Users tab's mega menu (`[Leftmenu_user_mega] MegaMenuLinks[]=access-user_hygiene`, group *Access control*).
 - Setup overview and Setup menu: `menu.ini [Leftmenu_setup] Links[user_hygiene]` in `GroupLinks_users[]`, with the
-  icon `person-check` (`LinkIcons[user_hygiene]`) and its description (`LinkDescriptions[user_hygiene]`).
+  icon `person-badge` (`LinkIcons[user_hygiene]`, added to `design.ini [AdminDesignSettings] IconList[]`) and its
+  description (`LinkDescriptions[user_hygiene]`).
 
 Both use the link key `user_hygiene`, so a menu that lists links by key can name it as well.
 
