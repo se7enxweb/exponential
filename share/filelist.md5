@@ -3315,7 +3315,7 @@ c4809a3b611073bdcad4b38e9ea7dd6d  doc/features/6.0/additional-extension-director
 8ee6875c6693489d567c309177b49b81  doc/features/6.0/admin-list-paging.md
 41099ca247392d7ed963caa4b857e51c  doc/features/6.0/admin3-responsive-admin.md
 98b1eb658a2475fc31af9b9cbfaba709  doc/features/6.0/admin3-sidebar-width-and-font-size.md
-6c0be5e9bfdd4ead305e09e1da388366  doc/features/6.0/admin4-design.md
+8132445d7b559b6a97cfa5df2859f03f  doc/features/6.0/admin4-design.md
 7d8b3d248d27baa55bbf5f7f22040693  doc/features/6.0/admin4l.md
 cb077d1f37f8e8811c377ede4bc99357  doc/features/6.0/adminneo-database-manager.md
 ae7d698fad5f10287ad37ade2f97d8aa  doc/features/6.0/audit-trail.md
@@ -7122,7 +7122,7 @@ af4ee083e29821c5729a00f10818511c  tests/tests/design/AdminHeaderTest.php
 302b27352564e90e744b9a788bfcedb8  tests/tests/design/AdminKeyboardTest.php
 f1af30bb607758cf5d815836baaf88a6  tests/tests/design/AdminLandmarksTest.php
 859c93ecb4d2d3c59b4fcc748587fcd6  tests/tests/design/AdminLanguageBadgeTest.php
-4496ca7f53317258e2f92619d8a720d1  tests/tests/design/AdminLeftMenuGroupsTest.php
+9eb150cabee543d7d153360ae271431d  tests/tests/design/AdminLeftMenuGroupsTest.php
 fb0b6fa6e7532e7f2ac28b25e65a4a6a  tests/tests/design/AdminLegacyControlsTest.php
 581b1a9e22de7c70a61a13e56d219070  tests/tests/design/AdminMenuPolicyListTest.php
 f2f45d0be8a363de1fa024e40ff34fd2  tests/tests/design/AdminNewsletterPreviewTest.php
