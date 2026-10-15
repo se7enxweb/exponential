@@ -1,6 +1,6 @@
 {*
    The links of a left menu as the groups of admin4's mega menu (parts/ini_menu.tpl with menu_layout='tiles' and
-   tiles_layout='mega'; setup/megamenu.tpl). The links, their groups and the access checks are those of the menu.
+   tiles_layout='mega'; user/megamenu.tpl). The links, their groups and the access checks are those of the menu.
 
    Variables: groups (hash id, name, items; translated when the name is translated already), mega_links,
    mega_id_prefix, i18n_section (the groups' names), known_icons, and per item, from the menu.ini section the link

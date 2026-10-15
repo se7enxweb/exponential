@@ -1,6 +1,9 @@
 /*
- * admin4 (prototype): the mega menu of a top tab (menu.ini [TopAdminMenu] MegaMenuTabs[], only setup so far;
- * page_topmenuitem.tpl). Loaded only while that setting names a tab (page_head_script.tpl).
+ * admin4 (prototype): the mega menu of a top tab (menu.ini [TopAdminMenu] MegaMenuTabs[], each tab whose
+ * [Topmenu_<tab>] names a MegaMenuTemplate; page_topmenuitem.tpl). Loaded only while that setting names a tab
+ * (page_head_script.tpl). Each tab has its own button and panel, and one panel is open at a time: opening one, by
+ * a click, a key or the hover preview, closes the other; a panel opened by a click or a key is not replaced by the
+ * hover preview of another tab.
  *
  * The WAI-ARIA disclosure navigation pattern, not a menu: the tab stays a link, the button beside it
  * (.a4-mega-toggle, aria-expanded, aria-controls) opens and closes a panel of plain links under the header.
@@ -15,10 +18,10 @@
  *   menu of the header is open.
  * - From 1280px only (one header row): below, or while the tab sits in the "More" list, admin4.css hides the button
  *   and the script keeps the panel closed; the tab is then a plain link, and the phone menu is unchanged.
- * - The panel's groups and links are loaded once, from the button's data-a4-mega-src (setup/megamenu), the first
- *   time it opens: the page itself carries only the button, a status line and the link to the overview. A failed
+ * - The panel's groups and links are loaded once, from the button's data-a4-mega-src (user/megamenu/<tab>), the
+ *   first time it opens: the page itself carries only the button, a status line and the link to the tab's page. A failed
  *   load says so in the panel (data-a4-mega-error) and is tried again on the next opening. A link to the page
- *   shown (the overview link included) is marked aria-current="page".
+ *   shown (the tab's link included) is marked aria-current="page".
  * Plain JavaScript, no library; window.matchMedia, setTimeout and fetch are read from window, so the behaviour can
  * be run outside a browser (tests/tests/design/js/mega_menu.js).
  */
@@ -26,6 +29,7 @@
     'use strict';
 
     var ENTER_DELAY = 300, LEAVE_DELAY = 400;
+    var menus = [];      // per tab with a mega menu: { close, isOpen }; one panel is open at a time
 
     function megaMenu(item) {
         var toggle = item.querySelector('.a4-mega-toggle');
@@ -73,7 +77,7 @@
             body.appendChild(p);
         }
 
-        // the links to the page shown, the overview link included
+        // the links to the page shown, the tab's link included
         function markCurrent(root) {
             var here = window.location ? window.location.pathname : null;
             if (!here) return;
@@ -116,8 +120,27 @@
             toggle.setAttribute('aria-expanded', next ? 'true' : 'false');
             panel.hidden = !next;
             item.classList.toggle('is-mega-open', !!next);
-            if (next) load();
+            if (next) {
+                menus.forEach(function (m) { if (m !== self) m.close(); });
+                load();
+            }
             else if (focusToggle) toggle.focus();
+        }
+
+        // this tab's panel to the others: closed when another opens; opened on purpose (not a preview), it keeps
+        // the hover preview of another tab from opening
+        var self = {
+            close: function () {
+                if (mode) set(null, false);
+                else stop();
+            },
+            isOpen: function () { return mode === 'open'; }
+        };
+        menus.push(self);
+
+        // another tab's panel opened by a click or a key
+        function otherMegaOpen() {
+            return menus.some(function (m) { return m !== self && m.isOpen(); });
         }
 
         toggle.addEventListener('click', function () {
@@ -165,7 +188,7 @@
                 return;
             }
             wait(function () {
-                if (!mode && usable() && !otherOpen()) set('preview', false);
+                if (!mode && usable() && !otherOpen() && !otherMegaOpen()) set('preview', false);
             }, ENTER_DELAY);
         });
         item.addEventListener('pointerleave', function (e) {

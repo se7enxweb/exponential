@@ -1,19 +1,23 @@
 <?php
 /**
- * admin4's mega menu of the Setup tab (prototype, opt-in), checked on the files alone (no database):
+ * admin4's mega menu of the Setup and Users tabs (prototype, opt-in), checked on the files alone (no database):
  *
  *  MM-01 - off by default: menu.ini [TopAdminMenu] MegaMenuTabs[] is empty, the header draws the button and the page
  *          loads the script only while the setting names a tab
  *  MM-02 - the disclosure navigation pattern: the tab stays a link, a button beside it with aria-expanded,
  *          aria-controls and a name, a hidden panel of plain links with a heading per group; no role="menu"
  *  MM-03 - one source and the rights: the header carries no link of the panel (it sits in the header's cache block,
- *          keyed by the user's roles); the links come from setup/megamenu, a view without page layout with the
- *          functions of setup/menu, drawn from menu.ini [Leftmenu_setup] by parts/ini_menu.tpl, without figures
+ *          keyed by the user's roles); the links come from user/megamenu/<tab>, a view without page layout that
+ *          answers only for a tab of MegaMenuTabs[] with a MegaMenuTemplate that is open to the user (the topmenu
+ *          operator's verdict), drawn from the tab's menu.ini section by parts/ini_menu.tpl, without figures
  *  MM-04 - from 1280px only, hidden in the "More" list, with forced-colors and reduced-motion rules
  *  MM-05 - the strings in ger-DE and eng-US
  *  MM-06 - the script: click, ArrowDown, Escape, Tab, a click outside, the delayed hover preview (300 ms in, 400 ms
  *          out, mouse only; the focus coming in keeps it), the width, the "More" list, one load and a failed one
  *          (a4_mega_menu.js run in node, tests/tests/design/js/mega_menu.js; skipped without node)
+ *  MM-08 - the Users tab: [Topmenu_users] MegaMenuTemplate draws [Leftmenu_user_mega], which adds [Leftmenu_user] and
+ *          [Leftmenu_my] instead of restating their links; its MegaMenuLinks[] names existing links with icons,
+ *          descriptions and names in ger-DE and eng-US
  *  MM-07 - curated: menu.ini [Leftmenu_setup] MegaMenuLinks[] names at most 12 existing links; the panel's template
  *          shows only those, in that order, the user may open, each in its group, groups without one left out, at most
  *          12; with no MegaMenuLinks[] every link (parts/a4_mega_menu.tpl rendered with eZTemplate, no database)
@@ -39,6 +43,31 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
         $text = file_get_contents( self::root() . '/' . $path );
         self::assertIsString( $text, "$path is readable" );
         return $text;
+    }
+
+    /** settings/menu.ini as [ section => [ key => value | [ key => value ] ] ], arrays without their reset line */
+    private static function iniSections()
+    {
+        $out = array();
+        $section = null;
+        foreach ( explode( "\n", self::read( 'settings/menu.ini' ) ) as $line )
+        {
+            if ( preg_match( '/^\[([^\]]+)\]\s*$/', $line, $m ) )
+            {
+                $section = $m[1];
+                $out[$section] = $out[$section] ?? array();
+            }
+            elseif ( $section !== null && preg_match( '/^([A-Za-z0-9_]+)\[([^\]]*)\]=(.*)$/', $line, $m ) )
+            {
+                if ( $m[2] === '' )
+                    $out[$section][$m[1]][] = $m[3];
+                else
+                    $out[$section][$m[1]][$m[2]] = $m[3];
+            }
+            elseif ( $section !== null && preg_match( '/^([A-Za-z0-9_]+)=(.*)$/', $line, $m ) )
+                $out[$section][$m[1]] = $m[2];
+        }
+        return $out;
     }
 
     private static function css()
@@ -78,19 +107,23 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
         $this->assertMatchesRegularExpression( '/^MegaMenuTabs\[\]$/m', $section, 'MegaMenuTabs[] is declared, empty' );
         $this->assertDoesNotMatchRegularExpression( '/^MegaMenuTabs\[\]=/m', $ini, 'no tab has a mega menu by default' );
         $this->assertStringContainsString( '#   MegaMenuTabs[]=setup', $section, 'the comment says how to switch it on' );
+        $this->assertStringContainsString( '#   MegaMenuTabs[]=users', $section );
 
         // the header asks for the setting, and for the user's access to the fragment, before it draws a button
         $top = self::read( 'design/admin4/templates/page_topmenu.tpl' );
         $check = strpos( $top, "ezini_hasvariable( 'TopAdminMenu', 'MegaMenuTabs', 'menu.ini' )" );
         $this->assertNotFalse( $check );
-        $this->assertStringContainsString( "ezini( 'TopAdminMenu', 'MegaMenuTabs', 'menu.ini' )|contains( 'setup' )", $top );
-        $this->assertStringContainsString( "fetch( 'user', 'can_open', hash( 'uri', 'setup/megamenu' ) )", $top );
+        $this->assertStringContainsString( "{foreach ezini( 'TopAdminMenu', 'MegaMenuTabs', 'menu.ini' ) as \$a4_mega_tab}", $top );
+        $this->assertStringContainsString( "fetch( 'user', 'can_open', hash( 'uri', 'user/megamenu' ) )", $top );
         $this->assertStringContainsString( '$ui_context_edit|not', $top, 'no mega menu on edit pages' );
-        $this->assertLessThan( strpos( $top, '{foreach topmenu(' ), strpos( $top, "{set \$a4_mega_part = ezini( 'Topmenu_setup', 'NavigationPartIdentifier', 'menu.ini' )}" ) );
-        // the item draws a button only for the part the header chose
+        // a tab named there takes part only with its MegaMenuTemplate; the header maps its navigation part to the tab
+        $this->assertStringContainsString( "ezini_hasvariable( concat( 'Topmenu_', \$a4_mega_tab ), 'MegaMenuTemplate', 'menu.ini' )", $top );
+        $this->assertLessThan( strpos( $top, '{foreach topmenu(' ), strpos( $top, "{set \$a4_mega_tabs = \$a4_mega_tabs|merge( hash( ezini( concat( 'Topmenu_', \$a4_mega_tab ), 'NavigationPartIdentifier', 'menu.ini' ), \$a4_mega_tab ) )}" ) );
+        $this->assertStringNotContainsString( "|contains( 'setup' )", $top, 'no tab is named in the header' );
+        // the item draws a button only for a tab the header chose, enabled and open to the user
         $item = self::read( 'design/admin4/templates/page_topmenuitem.tpl' );
-        $this->assertStringContainsString( '{if is_set( $a4_mega_part )}', $item );
-        $this->assertStringContainsString( 'eq( $a4_mega_part, $menu_item.navigationpart_identifier )', $item );
+        $this->assertStringContainsString( '{if is_set( $a4_mega_tabs )}', $item );
+        $this->assertStringContainsString( 'is_set( $a4_mega_tabs[ $menu_item.navigationpart_identifier ] ), $menu_item.enabled, or( is_unset( $menu_item.access ), $menu_item.access )', $item );
 
         // the script is loaded only while the setting names a tab
         $head = self::read( 'design/admin4/templates/page_head_script.tpl' );
@@ -112,14 +145,15 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
         $this->assertLessThan( $button, $link );
         $tag = substr( $item, $button, strpos( $item, '>', strpos( $item, 'data-a4-mega-src', $button ) ) - $button );
         $this->assertStringContainsString( 'aria-expanded="false"', $tag );
-        $this->assertStringContainsString( 'aria-controls="a4-mega-setup"', $tag );
-        $this->assertStringContainsString( "aria-label=\"{'Open the Setup menu'|i18n( 'design/admin/pagelayout' )|wash}\"", $tag );
-        $this->assertStringContainsString( "data-a4-mega-src={'setup/megamenu'|ezurl}", $tag );
+        $this->assertStringContainsString( 'aria-controls="a4-mega-{$item_mega|wash}"', $tag );
+        $this->assertStringContainsString( "aria-label=\"{'Open the %tab menu'|i18n( 'design/admin/pagelayout',, hash( '%tab', \$menu_item.name ) )|wash}\"", $tag );
+        $this->assertStringContainsString( "data-a4-mega-src={concat( 'user/megamenu/', \$item_mega )|ezurl}", $tag );
         $this->assertStringContainsString( '<span class="a4-icon a4-bi-chevron-down" aria-hidden="true"></span>', $item );
-        // the panel it controls: hidden, a status line until the links arrive, the overview link
-        $this->assertStringContainsString( '<div id="a4-mega-setup" class="a4-mega-panel" hidden', $item );
+        // the panel it controls: hidden, a status line until the links arrive, the link to the tab
+        $this->assertStringContainsString( '<div id="a4-mega-{$item_mega|wash}" class="a4-mega-panel" hidden', $item );
         $this->assertStringContainsString( '<p class="a4-mega-status" role="status">', $item );
-        $this->assertStringContainsString( "<a href={'setup/menu'|ezurl}>{'All Setup functions'|i18n( 'design/admin/pagelayout' )|wash}", $item );
+        // the way to the tab's own page, which stays when the links cannot be loaded
+        $this->assertStringContainsString( "<a href={\$menu_item.url|ezurl}>{'Go to %tab'|i18n( 'design/admin/pagelayout',, hash( '%tab', \$menu_item.name ) )|wash}", $item );
 
         // the groups: a section with a heading each, plain links in lists; no menu roles anywhere
         $groups = self::read( 'design/admin4/templates/parts/a4_mega_menu.tpl' );
@@ -128,7 +162,7 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( '<ul class="a4-mega-links">', $groups );
         $this->assertStringContainsString( '<a href={$item.url|ezurl}{if $mega_text} aria-describedby=', $groups );
         foreach ( array( 'design/admin4/templates/page_topmenuitem.tpl', 'design/admin4/templates/parts/a4_mega_menu.tpl',
-                         'design/admin4/templates/setup/megamenu.tpl', 'design/admin4/javascript/a4_mega_menu.js' ) as $file )
+                         'design/admin4/templates/user/megamenu.tpl', 'design/admin4/javascript/a4_mega_menu.js' ) as $file )
         {
             $this->assertStringNotContainsString( 'role="menu', self::read( $file ), "$file: a disclosure of links, not a menu" );
             $this->assertStringNotContainsString( "'menuitem'", self::read( $file ), $file );
@@ -136,7 +170,7 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
     }
 
     /** MM-03 */
-    public function testTheLinksAreLoadedFromTheSetupMenuSource()
+    public function testTheLinksAreLoadedFromTheTabsMenuSource()
     {
         // the header, where the button is, is cached per role set
         $layout = self::read( 'design/admin4/templates/pagelayout.tpl' );
@@ -149,31 +183,51 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
             $this->assertStringNotContainsString( 'ini_menu', $text, $file );
         }
 
-        // the view: the functions of the overview, ajax, without page layout and kept by no shared cache
-        $module = self::read( 'kernel/setup/module.php' );
-        $this->assertMatchesRegularExpression( "/\\\$ViewList\['menu'\] = array\(\s*'functions' => array\( '([^']+)' \)/", $module );
-        preg_match( "/\\\$ViewList\['menu'\] = array\(\s*'functions' => array\( '([^']+)' \)/", $module, $menu );
+        // the view: one for every tab, in the user module with the policy of any user of the siteaccess (the tabs belong
+        // to different modules); ajax, without page layout and kept by no shared cache
+        $module = self::read( 'kernel/user/module.php' );
         preg_match( "/\\\$ViewList\['megamenu'\] = array\((.*?)\);/s", $module, $mega );
-        $this->assertNotEmpty( $mega, 'setup/megamenu is a view' );
-        $this->assertStringContainsString( "'functions' => array( '" . $menu[1] . "' )", $mega[1] );
+        $this->assertNotEmpty( $mega, 'user/megamenu is a view' );
+        $this->assertStringContainsString( "'functions' => array( 'login' )", $mega[1] );
         $this->assertStringContainsString( "'script' => 'megamenu.php'", $mega[1] );
         $this->assertStringContainsString( "'ui_context' => 'ajax'", $mega[1] );
-        $view = self::read( 'kernel/private/classes/views/setup/megamenu.php' );
+        $this->assertStringContainsString( "'params' => array( 'Tab' )", $mega[1] );
+        $this->assertFileDoesNotExist( self::root() . '/kernel/setup/megamenu.php', 'one view for every tab, no second one for Setup' );
+        $this->assertStringNotContainsString( "\$ViewList['megamenu']", self::read( 'kernel/setup/module.php' ) );
+        $view = self::read( 'kernel/private/classes/views/user/megamenu.php' );
         $this->assertStringContainsString( "\$Result['pagelayout'] = false;", $view );
         $this->assertStringContainsString( "header( 'Cache-Control: private, no-store' );", $view );
         $this->assertStringContainsString( "'debug-enabled' => false", $view );
-        $this->assertStringContainsString( "\$tpl->fetch( 'design:setup/megamenu.tpl' )", $view );
-        $this->assertStringContainsString( "'Exponential\\\\View\\\\Kernel\\\\Setup\\\\Megamenu'", self::read( 'autoload/ezp_kernel.php' ) );
-        $this->assertStringContainsString( '\Exponential\View\Kernel\Setup\Megamenu::main(', self::read( 'kernel/setup/megamenu.php' ) );
+        $this->assertStringContainsString( "\$tpl->fetch( 'design:user/megamenu.tpl' )", $view );
+        // the tab is checked before anything is drawn: not a tab of the setting (not available), not open (denied)
+        $fetch = strpos( $view, "\$tpl->fetch(" );
+        $this->assertLessThan( $fetch, strpos( $view, 'return $Module->handleError( \eZError::KERNEL_NOT_AVAILABLE' ) );
+        $this->assertLessThan( $fetch, strpos( $view, 'return $Module->handleError( \eZError::KERNEL_ACCESS_DENIED' ) );
+        $this->assertStringContainsString( 'new \eZTopMenuOperator()', $view, 'the header\'s own verdict on the tab' );
+        $this->assertLessThan( $fetch, strpos( $view, '\eZUser::currentUser()->isRegistered()' ), 'never for the anonymous user' );
+        $this->assertStringContainsString( "'Exponential\\\\View\\\\Kernel\\\\User\\\\Megamenu'", self::read( 'autoload/ezp_kernel.php' ) );
+        $this->assertStringNotContainsString( 'Setup\\\\Megamenu', self::read( 'autoload/ezp_kernel.php' ) );
+        $this->assertStringContainsString( '\Exponential\View\Kernel\User\Megamenu::main(', self::read( 'kernel/user/megamenu.php' ) );
 
-        // the fragment: the Setup menu's own template, as for the overview's tiles, drawn as the mega menu's groups
-        $fragment = self::read( 'design/admin4/templates/setup/megamenu.tpl' );
+        // the fragment: the tab's MegaMenuTemplate, which draws the tab's menu as the mega menu's groups
+        $fragment = self::read( 'design/admin4/templates/user/megamenu.tpl' );
         $this->assertStringContainsString( '<div class="a4-mega-groups" data-a4-mega-groups>', $fragment );
-        $this->assertStringContainsString( "{include uri='design:parts/setup/menu.tpl'}", $fragment );
-        $this->assertStringContainsString( "\$setup_menu_layout = 'tiles'", $fragment );
-        $this->assertStringContainsString( "\$setup_tiles_layout = 'mega'", $fragment );
+        $this->assertStringContainsString( '{include uri=$mega_template}', $fragment );
         $this->assertStringNotContainsString( 'ezini(', $fragment, 'no second configuration' );
+        $setup = self::read( 'design/admin4/templates/parts/setup/mega_menu.tpl' );
+        $this->assertStringContainsString( "{include uri='design:parts/setup/menu.tpl' setup_menu_layout='tiles' setup_tiles_layout='mega'}", $setup );
         $this->assertStringContainsString( 'tiles_layout=$setup_tiles_layout', self::read( 'design/admin4/templates/parts/setup/menu.tpl' ) );
+        $users = self::read( 'design/admin4/templates/parts/user/mega_menu.tpl' );
+        $this->assertStringContainsString( "{include uri='design:parts/ini_menu.tpl' ini_section='Leftmenu_user_mega'", $users );
+        $this->assertStringContainsString( "menu_layout='tiles'", $users );
+        $this->assertStringContainsString( "tiles_layout='mega'", $users );
+        // every tab with a template names one that exists in admin4
+        $ini = self::iniSections();
+        foreach ( array( 'setup' => 'parts/setup/mega_menu.tpl', 'users' => 'parts/user/mega_menu.tpl' ) as $tab => $file )
+        {
+            $this->assertSame( "design:$file", $ini["Topmenu_$tab"]['MegaMenuTemplate'] ?? null, "[Topmenu_$tab] MegaMenuTemplate" );
+            $this->assertFileExists( self::root() . "/design/admin4/templates/$file" );
+        }
         $menu = self::read( 'design/admin4/templates/parts/ini_menu.tpl' );
         $this->assertStringContainsString( "{if eq( \$tiles_layout, 'mega' )}", $menu );
         $this->assertStringContainsString( "{include uri='design:parts/a4_mega_menu.tpl' groups=\$groups", $menu );
@@ -184,8 +238,8 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
         $this->assertStringNotContainsString( 'item.figure', $groups );
         $this->assertStringNotContainsString( 'fetch(', $groups );
         $this->assertStringContainsString( '$known_icons|contains( $item.icon )', $groups, 'only icons of IconList[]' );
-        // a classic design gets a pointer to the Setup menu instead of an error
-        $this->assertStringContainsString( 'data-a4-mega-groups', self::read( 'design/standard/templates/setup/megamenu.tpl' ) );
+        // a classic design gets an empty fragment instead of an error; the panel's link to the tab stays
+        $this->assertStringContainsString( 'data-a4-mega-groups', self::read( 'design/standard/templates/user/megamenu.tpl' ) );
     }
 
     /** MM-04 */
@@ -215,9 +269,9 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
     /** MM-05 */
     public function testTheStringsAreTranslated()
     {
-        $strings = array( 'Open the Setup menu' => 'Setup-Menü öffnen', 'Loading the Setup menu' => 'Setup-Menü wird geladen',
-                          'The Setup menu could not be loaded.' => 'Das Setup-Menü konnte nicht geladen werden.',
-                          'All Setup functions' => 'Alle Setup-Funktionen' );
+        $strings = array( 'Open the %tab menu' => 'Menü „%tab“ öffnen', 'Loading the %tab menu' => 'Menü „%tab“ wird geladen',
+                          'The %tab menu could not be loaded.' => 'Das Menü „%tab“ konnte nicht geladen werden.',
+                          'Go to %tab' => 'Weiter zu „%tab“' );
         foreach ( array( 'ger-DE', 'eng-US' ) as $language )
         {
             $dom = new DOMDocument();
@@ -393,7 +447,7 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
             $this->assertIsArray( $row, 'the harness ran: ' . $out );
             $s[$row['name']] = $row;
         }
-        $this->assertCount( 31, $s );
+        $this->assertCount( 36, $s );
 
         $open = function ( $name ) use ( $s ) {
             $this->assertSame( 'true', $s[$name]['expanded'], $name );
@@ -464,5 +518,215 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
         }
         $this->assertSame( 2, $s['a failed load is tried again']['fetches'] );
         $this->assertSame( 'all link', $s['arrowdown after a failed load focuses the overview link']['focus'] );
+
+        // two tabs: one panel at a time, whatever opens the other (a click, the hover preview)
+        $second = function ( $name, $open ) use ( $s ) {
+            $this->assertSame( $open ? 'true' : 'false', $s[$name]['secondExpanded'], $name );
+            $this->assertSame( $open, $s[$name]['secondOpen'], $name );
+            $this->assertSame( $open, $s[$name]['secondItemClass'], $name );
+        };
+        $closed( 'two tabs: opening the second closes the first' );
+        $second( 'two tabs: opening the second closes the first', true );
+        $this->assertSame( 2, $s['two tabs: opening the second closes the first']['fetches'], 'each tab loads its own links' );
+        $open( 'two tabs: opening the first again closes the second' );
+        $second( 'two tabs: opening the first again closes the second', false );
+        $closed( 'two tabs: a preview of the second closes the first' );
+        $second( 'two tabs: a preview of the second closes the first', true );
+        $closed( 'two tabs: each opens on its own' );
+        $second( 'two tabs: each opens on its own', true );
+        // a panel opened on purpose is not replaced by the hover preview of another tab
+        $open( 'two tabs: hovering the second keeps the first opened by a click' );
+        $second( 'two tabs: hovering the second keeps the first opened by a click', false );
+    }
+
+    /** menu.ini with the given values set in this process; undone in tearDown() */
+    private function menuIni( array $values )
+    {
+        $ini = eZINI::instance( 'menu.ini' );
+        foreach ( $values as $section => $keys )
+            foreach ( $keys as $key => $value )
+            {
+                $this->iniBackup[] = array( $section, $key, $ini->hasVariable( $section, $key ) ? $ini->variable( $section, $key ) : null );
+                $ini->setVariable( $section, $key, $value );
+            }
+        return $ini;
+    }
+
+    private $iniBackup = array();
+
+    protected function tearDown(): void
+    {
+        $ini = eZINI::instance( 'menu.ini' );
+        foreach ( array_reverse( $this->iniBackup ) as $entry )
+        {
+            if ( $entry[2] === null )
+                $ini->removeSetting( $entry[0], $entry[1] );
+            else
+                $ini->setVariable( $entry[0], $entry[1], $entry[2] );
+        }
+        $this->iniBackup = array();
+        parent::tearDown();
+    }
+
+    /** Renders page_topmenuitem.tpl for one tab with the header's hash of mega menu tabs; returns the HTML */
+    private static function renderItem( array $item, array $megaTabs )
+    {
+        $tpl = eZTemplate::factory();
+        $tpl->setVariable( 'menu_item', $item + array( 'url' => 'x', 'name' => 'X', 'tooltip' => '', 'position' => 'middle',
+                                                       'enabled' => true, 'access' => true ) );
+        $tpl->setVariable( 'navigationpart_identifier', '' );
+        $tpl->setVariable( 'a4_mega_tabs', $megaTabs );
+        return $tpl->fetch( 'file:design/admin4/templates/page_topmenuitem.tpl' );
+    }
+
+    /** MM-02: the item, rendered: a button and panel per tab the header names, none for the others */
+    public function testEachTabGetsItsOwnButtonAndPanel()
+    {
+        $tabs = array( 'ezusernavigationpart' => 'users', 'ezsetupnavigationpart' => 'setup' );
+        $users = self::renderItem( array( 'navigationpart_identifier' => 'ezusernavigationpart', 'url' => 'content/view/full/5', 'name' => 'Users' ), $tabs );
+        $this->assertStringContainsString( '<li class="a4-mega-item">', $users );
+        $this->assertMatchesRegularExpression( '#<button type="button" class="a4-mega-toggle" aria-expanded="false" aria-controls="a4-mega-users"#', $users );
+        $this->assertMatchesRegularExpression( '#data-a4-mega-src="[^"]*/user/megamenu/users"#', $users );
+        $this->assertStringContainsString( '<div id="a4-mega-users" class="a4-mega-panel" hidden', $users );
+        $this->assertMatchesRegularExpression( '#aria-label="[^"]*Users[^"]*"#', $users, 'the button names the tab' );
+        $this->assertMatchesRegularExpression( '#<p class="a4-mega-all"><a href="[^"]*/content/view/full/5">#', $users, 'the way to the tab\'s page' );
+
+        $setup = self::renderItem( array( 'navigationpart_identifier' => 'ezsetupnavigationpart', 'url' => 'setup/menu', 'name' => 'Setup' ), $tabs );
+        $this->assertMatchesRegularExpression( '#data-a4-mega-src="[^"]*/user/megamenu/setup"#', $setup );
+        $this->assertStringContainsString( 'aria-controls="a4-mega-setup"', $setup );
+
+        // a tab the header does not name, one the user may not open, a disabled one, and no hash at all: no button
+        foreach ( array( self::renderItem( array( 'navigationpart_identifier' => 'ezcontentnavigationpart' ), $tabs ),
+                         self::renderItem( array( 'navigationpart_identifier' => 'ezusernavigationpart', 'access' => false ), $tabs ),
+                         self::renderItem( array( 'navigationpart_identifier' => 'ezusernavigationpart', 'enabled' => false ), $tabs ),
+                         self::renderItem( array( 'navigationpart_identifier' => 'ezusernavigationpart' ), array() ) ) as $html )
+        {
+            $this->assertStringNotContainsString( 'a4-mega', $html );
+        }
+    }
+
+    /** MM-03: the view answers only for a tab of MegaMenuTabs[] with a template of the design */
+    public function testTheViewServesOnlyTheTabsSwitchedOn()
+    {
+        $view = 'Exponential\View\Kernel\User\Megamenu';
+        $ini = $this->menuIni( array(
+            'TopAdminMenu' => array( 'MegaMenuTabs' => array( 'setup', 'users', 'mmt_none', 'mmt_file', 'mmt_up' ) ),
+            'Topmenu_mmt_none' => array( 'NavigationPartIdentifier' => 'mmtnone' ),
+            'Topmenu_mmt_file' => array( 'NavigationPartIdentifier' => 'mmtfile', 'MegaMenuTemplate' => 'file:/etc/passwd' ),
+            'Topmenu_mmt_up' => array( 'NavigationPartIdentifier' => 'mmtup', 'MegaMenuTemplate' => 'design:../../settings/x.tpl' ),
+        ) );
+        $this->assertSame( 'design:parts/setup/mega_menu.tpl', $view::templateFor( 'setup', $ini ) );
+        $this->assertSame( 'design:parts/user/mega_menu.tpl', $view::templateFor( 'users', $ini ) );
+        $this->assertNull( $view::templateFor( 'content', $ini ), 'a tab not named in MegaMenuTabs[]' );
+        $this->assertNull( $view::templateFor( 'mmt_none', $ini ), 'a tab without MegaMenuTemplate' );
+        $this->assertNull( $view::templateFor( 'mmt_file', $ini ), 'only a design: template' );
+        $this->assertNull( $view::templateFor( 'mmt_up', $ini ), 'no path out of the design' );
+        $this->assertNull( $view::templateFor( 'Setup', $ini ), 'the tab as named, nothing else' );
+        $this->assertNull( $view::templateFor( '', $ini ) );
+
+        $this->menuIni( array( 'TopAdminMenu' => array( 'MegaMenuTabs' => array() ) ) );
+        $this->assertNull( $view::templateFor( 'setup', $ini ), 'off by default' );
+    }
+
+    /** MM-03: the view's verdict on the tab is the header's: shown, enabled and open to the user */
+    public function testTheViewServesOnlyATabTheUserHas()
+    {
+        $view = 'Exponential\View\Kernel\User\Megamenu';
+        // a tab without policies or address check (no database needed), then hidden, disabled, not shown, not listed
+        $tab = array( 'NavigationPartIdentifier' => 'mmtnavigationpart', 'Name' => 'MMT', 'URL' => array( 'default' => 'mmt/view' ),
+                      'Enabled' => array( 'default' => 'true' ), 'Shown' => array( 'default' => 'true' ) );
+        $ini = $this->menuIni( array(
+            'TopAdminMenu' => array( 'Tabs' => array( 'mmt' ), 'HiddenTabs' => array(), 'SetupTabs' => array() ),
+            'MenuAccessSettings' => array( 'CheckViewAccess' => 'disabled' ),
+            'Topmenu_mmt' => $tab,
+        ) );
+        $this->assertTrue( $view::tabIsOpen( 'mmt', $ini ) );
+
+        $this->menuIni( array( 'TopAdminMenu' => array( 'HiddenTabs' => array( 'mmt' ) ) ) );
+        $this->assertFalse( $view::tabIsOpen( 'mmt', $ini ), 'a hidden tab' );
+        $this->menuIni( array( 'TopAdminMenu' => array( 'HiddenTabs' => array() ),
+                               'Topmenu_mmt' => array( 'Enabled' => array( 'default' => 'true', 'navigation' => 'false' ) ) ) );
+        $this->assertFalse( $view::tabIsOpen( 'mmt', $ini ), 'a disabled tab' );
+        $this->menuIni( array( 'Topmenu_mmt' => array( 'Enabled' => array( 'default' => 'true' ), 'Shown' => array( 'default' => 'true', 'navigation' => 'false' ) ) ) );
+        $this->assertFalse( $view::tabIsOpen( 'mmt', $ini ), 'a tab not shown' );
+        $this->menuIni( array( 'Topmenu_mmt' => array( 'Shown' => array( 'default' => 'true' ) ), 'TopAdminMenu' => array( 'Tabs' => array() ) ) );
+        $this->assertFalse( $view::tabIsOpen( 'mmt', $ini ), 'a tab not in Tabs[]' );
+    }
+
+    /** MM-08 */
+    public function testTheUsersTabReusesTheMenusThatDefineItsLinks()
+    {
+        $ini = self::iniSections();
+        $mega = $ini['Leftmenu_user_mega'];
+        $this->assertSame( array( 'users', 'access', 'account' ), $mega['Groups'] );
+        $this->assertSame( array( 'access' => 'Leftmenu_user', 'account' => 'Leftmenu_my' ), $mega['GroupSections'] );
+        // its own links: only the two the tab has no menu entry for; the tab's page is the first
+        $this->assertSame( array( 'accounts' => 'content/view/full/5', 'sessions' => 'setup/session' ), $mega['Links'] );
+        $this->assertSame( $ini['Topmenu_users']['URL']['default'], $mega['Links']['accounts'] );
+        $this->assertSame( $ini['Topmenu_users']['PolicyList'], $mega['PolicyList_accounts'] );
+        $this->assertSame( $ini['Leftmenu_setup']['PolicyList_sessions'], $mega['PolicyList_sessions'], 'the policy of the Setup menu\'s link' );
+        // the left menu of the tab is unchanged: its two links, no groups
+        $this->assertSame( array( 'roles_and_policies' => 'role/list', 'unactivated' => 'user/unactivated' ), $ini['Leftmenu_user']['Links'] );
+        $this->assertArrayNotHasKey( 'Groups', $ini['Leftmenu_user'] );
+        $this->assertStringContainsString( "{include uri='design:parts/ini_menu.tpl' ini_section='Leftmenu_user' i18n_hash=", self::read( 'design/admin4/templates/parts/user/menu.tpl' ) );
+    }
+
+    /** MM-08 */
+    public function testTheUsersChoiceNamesExistingLinksWithIconsAndStrings()
+    {
+        $ini = self::iniSections();
+        $mega = $ini['Leftmenu_user_mega'];
+        $choice = $mega['MegaMenuLinks'];
+        $this->assertMatchesRegularExpression( '/^MegaMenuLinks\[\]$/m', substr( self::read( 'settings/menu.ini' ), strpos( self::read( 'settings/menu.ini' ), '[Leftmenu_user_mega]' ) ), 'the list is reset before it is set' );
+        $this->assertGreaterThanOrEqual( 6, count( $choice ) );
+        $this->assertLessThanOrEqual( 12, count( $choice ) );
+        $this->assertSame( array_values( array_unique( $choice ) ), $choice );
+
+        preg_match_all( '/^IconList\[\]=(\S+)$/m', self::read( 'settings/design.ini' ), $icons );
+        $hash = self::read( 'design/admin4/templates/parts/user/mega_menu.tpl' );
+        $strings = array();
+        foreach ( $choice as $key )
+        {
+            // an own link, or <group>-<key> of the section the group adds
+            if ( strpos( $key, '-' ) === false )
+            {
+                $section = 'Leftmenu_user_mega';
+                $link = $key;
+                $this->assertContains( $key, $mega['GroupLinks_users'] ?? array(), "$key is in a group" );
+            }
+            else
+            {
+                list( $group, $link ) = explode( '-', $key, 2 );
+                $this->assertArrayHasKey( $group, $mega['GroupSections'], "MegaMenuLinks[]=$key: no such group adds a section" );
+                $section = $mega['GroupSections'][$group];
+            }
+            $this->assertArrayHasKey( $link, $ini[$section]['Links'] ?? array(), "MegaMenuLinks[]=$key is no link of [$section]" );
+            $icon = $ini[$section]['LinkIcons'][$link] ?? null;
+            $this->assertNotNull( $icon, "[$section] LinkIcons[$link]" );
+            $this->assertContains( $icon, $icons[1], "LinkIcons[$link]=$icon is not in design.ini IconList[]" );
+            $this->assertStringStartsWith( '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-' . $icon . '"',
+                                           (string)file_get_contents( self::root() . "/share/icons/bootstrap-icons/svg/$icon.svg" ), "$icon.svg" );
+            $text = $ini[$section]['LinkDescriptions'][$link] ?? null;
+            $this->assertNotNull( $text, "[$section] LinkDescriptions[$link]" );
+            // the description is translated in its section's context, the name comes from the template's i18n_hash
+            $strings[] = array( 'design/admin/parts/' . explode( '_', $section )[1] . '/menu', $text );
+            $this->assertMatchesRegularExpression( "/^\s*'" . preg_quote( $key, '/' ) . "',\s+'([^']+)'\|i18n\( '([^']+)' \),$/m", $hash, "the name of $key" );
+            preg_match( "/^\s*'" . preg_quote( $key, '/' ) . "',\s+'([^']+)'\|i18n\( '([^']+)' \),$/m", $hash, $name );
+            $strings[] = array( $name[2], $name[1] );
+        }
+        foreach ( $mega['GroupNames'] as $name )
+            $strings[] = array( 'design/admin/parts/user/menu', $name );
+        foreach ( array( 'ger-DE', 'eng-US' ) as $language )
+        {
+            $dom = new DOMDocument();
+            $this->assertTrue( $dom->load( self::root() . "/share/translations/$language/translation.ts" ) );
+            $xpath = new DOMXPath( $dom );
+            foreach ( $strings as list( $context, $source ) )
+            {
+                $found = $xpath->query( "//context[name='$context']/message[source=" . self::xpathString( $source ) . ']/translation' );
+                $this->assertGreaterThanOrEqual( 1, $found->length, "$language, $context: $source" );
+                $this->assertNotSame( '', trim( $found->item( 0 )->textContent ), "$language, $context: $source" );
+            }
+        }
     }
 }

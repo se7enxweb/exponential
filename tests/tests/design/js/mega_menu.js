@@ -1,5 +1,5 @@
 // Runs design/admin4/javascript/a4_mega_menu.js against a small stand-in for the browser (the tab's list item with the
-// tab link, the button and the panel, the document's listeners, matchMedia, timers that only move when told, fetch)
+// tab link, the button and the panel, with { second: true } a second tab's (users) as well, the document's listeners, matchMedia, timers that only move when told, fetch)
 // and prints one JSON line per scenario.
 // Usage: node mega_menu.js <path to a4_mega_menu.js>
 'use strict';
@@ -16,7 +16,7 @@ function listeners() {
 }
 
 async function run(steps, options) {
-    const opts = Object.assign({ wide: true, fine: true, fetchOk: true, fragment: true, other: false, inMore: false }, options || {});
+    const opts = Object.assign({ wide: true, fine: true, fetchOk: true, fragment: true, other: false, inMore: false, second: false }, options || {});
     const log = [];
     let fetches = 0;
     let now = 0;
@@ -67,11 +67,20 @@ async function run(steps, options) {
     });
     const tab = item.appendChild(element('tab'));
     const toggle = item.appendChild(element('toggle', { selectors: ['.a4-mega-toggle'] }));
-    toggle.attrs = { 'aria-expanded': 'false', 'aria-controls': 'a4-mega-setup', 'data-a4-mega-src': '/setup/megamenu' };
+    toggle.attrs = { 'aria-expanded': 'false', 'aria-controls': 'a4-mega-setup', 'data-a4-mega-src': '/user/megamenu/setup' };
     const panel = item.appendChild(element('panel', { hidden: true }));
     panel.attrs = { 'data-a4-mega-error': 'could not be loaded' };
     const body = panel.appendChild(element('body', { selectors: ['[data-a4-mega-body]'] }));
     const all = panel.appendChild(element('all link', { selectors: ['a[href]'], pathname: '/setup/menu' }));
+    // the second tab with a mega menu (users): its own item, button and panel
+    const classes2 = new Set();
+    const item2 = element('item2', {
+        classList: { toggle(c, on) { if (on) { classes2.add(c); } else { classes2.delete(c); } } },
+    });
+    const toggle2 = item2.appendChild(element('toggle2', { selectors: ['.a4-mega-toggle'] }));
+    toggle2.attrs = { 'aria-expanded': 'false', 'aria-controls': 'a4-mega-users', 'data-a4-mega-src': '/user/megamenu/users' };
+    const panel2 = item2.appendChild(element('panel2', { hidden: true }));
+    panel2.appendChild(element('body2', { selectors: ['[data-a4-mega-body]'] }));
     const outside = element('page link');
     const otherToggle = element('more');
 
@@ -109,8 +118,8 @@ async function run(steps, options) {
             body: element('body'),
             activeElement: null,
             addEventListener: doc.addEventListener,
-            getElementById(id) { return id === 'a4-mega-setup' ? panel : null; },
-            querySelectorAll(sel) { return sel === '#header .a4-mega-item' ? [item] : []; },
+            getElementById(id) { return id === 'a4-mega-setup' ? panel : (id === 'a4-mega-users' ? panel2 : null); },
+            querySelectorAll(sel) { return sel === '#header .a4-mega-item' ? (opts.second ? [item, item2] : [item]) : []; },
             querySelector(sel) { return opts.other && sel.indexOf('.a4-nav-more-toggle') !== -1 ? otherToggle : null; },
             createElement(tag) {
                 if (tag === 'template') {
@@ -164,6 +173,9 @@ async function run(steps, options) {
         else if (what === 'into more') { opts.inMore = true; window.fire('resize', {}); }
         else if (what === 'focus in') { item.fire('focusin', {}); sandbox.document.activeElement = all; }
         else if (what === 'on overview') { window.location.pathname = '/setup/menu'; }
+        else if (what === 'click second') { toggle2.fire('click', {}); doc.fire('click', { target: toggle2 }); }
+        else if (what === 'enter second') { item2.fire('pointerenter', { pointerType: 'mouse' }); }
+        else if (what === 'leave second') { item2.fire('pointerleave', { pointerType: 'mouse' }); }
         await flush();
     }
     const groups = body.children[0];
@@ -179,6 +191,9 @@ async function run(steps, options) {
         current,
         allCurrent: all.getAttribute('aria-current'),
         focus: sandbox.document.activeElement ? sandbox.document.activeElement.name : null,
+        secondExpanded: toggle2.getAttribute('aria-expanded'),
+        secondOpen: !panel2.hidden,
+        secondItemClass: classes2.has('is-mega-open'),
         log,
     };
 }
@@ -215,6 +230,11 @@ const scenarios = {
     'a failed load is tried again': [['click', 'click', 'click'], { fetchOk: false }],
     'a page in place of the fragment is no menu': [['click'], { fragment: false }],
     'arrowdown after a failed load focuses the overview link': [['focus toggle', 'arrowdown'], { fetchOk: false }],
+    'two tabs: opening the second closes the first': [['click', 'click second'], { second: true }],
+    'two tabs: opening the first again closes the second': [['click', 'click second', 'click'], { second: true }],
+    'two tabs: a preview of the second closes the first': [['enter', 'wait:300', 'leave', 'enter second', 'wait:300'], { second: true }],
+    'two tabs: each opens on its own': [['click second'], { second: true }],
+    'two tabs: hovering the second keeps the first opened by a click': [['click', 'enter second', 'wait:1000'], { second: true }],
 };
 (async () => {
     for (const name of Object.keys(scenarios)) {
