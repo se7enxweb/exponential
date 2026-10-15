@@ -257,6 +257,72 @@ not listed, has no rule or no file, an icon used twice, a missing access check, 
 from another fetch, an image in the page, or a missing translation; it draws the tiles of a fixture menu with an
 extension's link (icon, description, figure) and one with an unknown icon.
 
+### Moving a tab into Setup
+
+A site that wants fewer top tabs leaves Design, Audit or the Dashboard out of the top menu and loses no page:
+
+```ini
+<?php /* #?ini charset="utf-8"?
+
+[TopAdminMenu]
+HiddenTabs[]
+HiddenTabs[]=dashboard
+HiddenTabs[]=design
+HiddenTabs[]=audit
+
+*/ ?>
+```
+
+in `settings/siteaccess/<admin siteaccess>/menu.ini.append.php` or `settings/override/menu.ini.append.php`, then clear
+the INI and template caches (`php bin/php/ezcache.php --clear-tag=ini` and `--clear-tag=template`): `ezini()` values
+are compiled into the templates. Restating `Tabs[]` (a line `Tabs[]` without value, then the tabs to keep) works as
+well for the core tabs; an extension's tab is left out only with `HiddenTabs[]`. Every tab stays by default.
+
+- **Design and Audit** have a group of the Setup menu and the overview, named by `[Leftmenu_setup] GroupTabs[]`
+  (`GroupTabs[design]=design`, `GroupTabs[audit]=audit`). Such a group is drawn only while its tab is not in the top
+  menu (left out of `Tabs[]` or named in `HiddenTabs[]`); while the tab is there, the group and the links it names are
+  not drawn at all, so nothing shows twice.
+- **One source.** `GroupSections[design]=Leftmenu_design` and `GroupSections[audit]=Leftmenu_audit` add the links of
+  the tab's own left menu to the group, after the group's own `GroupLinks_<group>[]`: the same links, names
+  (`LinkNames[]` in that menu's context, else `parts/setup/menu.tpl` names them `<group>-<key>`), access checks
+  (`PolicyList[]`, `PolicyList_<key>[]`, `CheckViewAccess`, the audit channels the user may not read) and tile
+  settings (`LinkIcons[]`, `LinkDescriptions[]`, `LinkFigureTemplates[]` of that section, the descriptions translated
+  in its context, e.g. `design/admin/parts/audit/menu`). A link an extension adds to `[Leftmenu_audit]` is in the
+  group too. The Design group starts with the Design tab's own page, `Links[design_node]=content/view/full/58` in
+  `[Leftmenu_setup]` with the tab's `PolicyList[]=58`.
+- **A link once.** A Setup link to an address the added menu has as well shows in that group only: with the Audit
+  group, "Settings" (`audit/settings`) is there and the "Audit" link of "Users and messages" is not.
+- **Navigation.** A page of such a tab (its `NavigationPartIdentifier`, e.g. `audit/console` or `visual/toolbarlist`)
+  marks the Setup tab and draws the Setup menu, with its group open at the current link. No page marks a tab that is
+  not in the top menu or draws a menu no tab leads to; the breadcrumb is the page's own. While the tab is in the top
+  menu, its pages keep their tab and left menu. `parts/a4_navigation_part.tpl` gives the navigation part both menus
+  use, in admin4 and in admin4l's header and left menu blocks.
+- **Dashboard.** Without the Dashboard tab the logo leads to the dashboard (`[Topmenu_dashboard] URL[default]`) for a
+  user who may open it (`content/dashboard`), instead of the content root, which the Content tab still opens. The
+  dashboard is also the admin's start page after login when `site.ini [SiteSettings] DefaultPage=content/dashboard`,
+  as the setup wizard writes it; its left menu holds the account's pages (password, drafts, bookmarks, notifications).
+  The dashboard has no Setup group: it belongs to every user, Setup to administrators.
+
+An extension's tab moves the same way, in the extension's or the site's `menu.ini.append.php`: a group in
+`[Leftmenu_setup] Groups[]` with `GroupNames[<group>]`, `GroupTabs[<group>]=<tab>`, `GroupSections[<group>]=<its
+Leftmenu_ section>` (or `GroupLinks_<group>[]` with links of its own), the tile settings in its section, and the tab
+in `HiddenTabs[]`. `GroupTabs[]` and `GroupSections[]` are read by admin4's `parts/ini_menu.tpl` only; the classic
+designs keep their tabs.
+
+| Link key | Icon | Link key | Icon |
+|---|---|---|---|
+| design_node | `brush` | audit-dashboard | `speedometer` |
+| design-look_and_feel | `palette` | audit-console | `terminal` |
+| design-toolbar_management | `tools` | audit-recent | `list-ul` |
+| design-template_editor | `code-square` | audit-charts | `graph-up-arrow` |
+| design-templates | `file-earmark-code` | audit-alerts | `exclamation-triangle` |
+| | | audit-export | `download` |
+| | | audit-archives | `archive` |
+| | | audit-settings | `journal-check` |
+
+`AdminSetupOverviewTest` fails when a moved tab's group, section, page, icon, description or translation is missing,
+when a tab is hidden by default, and draws `parts/a4_navigation_part.tpl` with the tabs shown and hidden.
+
 ## Languages
 
 A flag stands for a country, not for a language: English is spoken under several flags, and one country has several
@@ -386,6 +452,7 @@ tree's roles, states, Tab stop and keys.
 | `settings/menu.ini` | `Topmenu_<tab>` | `Name`, `Tooltip`, `TranslationContext` | the default tab names, context `design/admin/pagelayout` | siteaccess |
 | `settings/menu.ini` | `Leftmenu_<menu>` | `Groups[]`, `GroupNames[<group>]`, `GroupLinks_<group>[]` | the five groups of `Leftmenu_setup` | siteaccess |
 | `settings/menu.ini` | `Leftmenu_<menu>` | `LeadLinks[]` | `overview` in `Leftmenu_setup` | siteaccess |
+| `settings/menu.ini` | `Leftmenu_setup` | `GroupTabs[<group>]`, `GroupSections[<group>]` | `design` and `audit` (see [Moving a tab into Setup](#moving-a-tab-into-setup)) | siteaccess |
 | `settings/menu.ini` | `Leftmenu_<menu>` | `LinkIcons[<link>]`, `LinkDescriptions[<link>]`, `LinkFigureTemplates[<link>]` | the core Setup links | siteaccess |
 | `settings/design.ini` | `AdminDesignSettings` | `IconList[]` | every `.a4-bi-*` icon of `components.css` | siteaccess |
 | `settings/menu.ini` | `Topmenu_setup` | `URL[default]` | `setup/menu` (the Setup overview) | siteaccess |
@@ -399,7 +466,9 @@ Community". A template can also set `$show_community_links`.
   own stylesheets and before `BackendCSSFileList` ([Styling the administration](../../bc/6.0/admin4-styling.md)).
 - `CheckViewAccess=enabled` shows a top tab or a left menu link only to a user who can open its address, checked like
   the request itself; `NoAccessLinks=hidden` leaves such a link out (`disabled` shows its name without a link).
-- `HiddenTabs[]` leaves top tabs out whatever `Tabs[]` says, also tabs an extension appends.
+- `HiddenTabs[]` leaves top tabs out whatever `Tabs[]` says, also tabs an extension appends. Design and Audit then
+  show in the Setup menu, and without the Dashboard tab the logo leads to the dashboard (see
+  [Moving a tab into Setup](#moving-a-tab-into-setup)).
 - `Name`, `Tooltip` and `TranslationContext` of a `[Topmenu_<tab>]` give the tab's label and tooltip in English and the
   translation context they are looked up in.
 - `Groups[]`, `GroupNames[<group>]` and `GroupLinks_<group>[]` group a long left menu (see "Left menu" above).
