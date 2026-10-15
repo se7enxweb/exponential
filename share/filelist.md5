@@ -2989,7 +2989,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-6ffd64baaca5845d7a9218a7f1a35de7  doc/changelogs/6.0/6.0.15.md
+1a6185a68b3d902f36b5aa00b34a61e7  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -7034,7 +7034,7 @@ dd5f5f3cf2348a6cc17bd0ee76983225  share/translations/dut-NL/translation.ts
 edfd3efb7eca1e2bd6d6d7d08bd78a77  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-51bea2f946dc52ed901cf44793463d84  share/translations/ger-DE/translation.ts
+578951ea5ad63890eb7b9b80b452eda2  share/translations/ger-DE/translation.ts
 75d657fed5de11db9e059cdcff2046a8  share/translations/ita-IT/translation.ts
 a45e2d26b1c24ac4cb6ae1d7197e5b0e  share/translations/jpn-JP/translation.ts
 d1dc34034ddce2d64c4f8df7fcc41c85  share/translations/nno-NO/translation.ts
@@ -7152,7 +7152,7 @@ d3aa163841a3b7ef9a8ce4048f7b1980  tests/tests/design/AdminTimelineTest.php
 a998bae7f6c7a83dd1eb0f05afc6a6ef  tests/tests/design/AdminTopNodeNameTest.php
 15e49ddad018f337900b8c06c5486efb  tests/tests/design/AdminTreeMenuEscapingTest.php
 3e871accb7d56ac483c1150496cb8d3c  tests/tests/design/AdminTreeViewTest.php
-cc46f683e794099b3fea6badc74fe1af  tests/tests/design/AdminVisibilityStatusTest.php
+fbd22f19289f4bb0815961f478f8c54e  tests/tests/design/AdminVisibilityStatusTest.php
 ea2584f9208c35d5087694b08ebd88aa  tests/tests/design/js/editor_skin.js
 63ea2b0621c3e9cdf0b21f8336a82853  tests/tests/design/js/phone_menu.js
 930596724f30405be9cbdd8bff9ffc4f  tests/tests/design/js/sidebar_drawer.js

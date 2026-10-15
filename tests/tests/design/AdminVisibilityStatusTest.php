@@ -262,6 +262,16 @@ class AdminVisibilityStatusTest extends PHPUnit\Framework\TestCase
         $dom->load( self::root() . '/share/translations/ger-DE/translation.ts' );
         $german = ( new DOMXPath( $dom ) )->query( "//context[name='" . self::CONTEXT . "']/message[source='Hidden by a parent']/translation" )->item( 0 )->textContent;
         $this->assertSame( 'Versteckt durch übergeordneten Eintrag', $german, 'the same word as Hidden (Versteckt)' );
+        // the Visibility column (hidden_status_string, kernel/content) and the tree say the same in German
+        $xpath = new DOMXPath( $dom );
+        foreach ( array( 'kernel/content', 'design/admin/contentstructuremenu', self::CONTEXT ) as $context )
+        {
+            $this->assertSame( 'Versteckt durch übergeordneten Eintrag',
+                $xpath->query( "//context[name='$context']/message[source='Hidden by superior']/translation" )->item( 0 )->textContent, $context );
+        }
+        $this->assertSame( '(Versteckt durch übergeordneten Eintrag)',
+            $xpath->query( "//context[name='design/admin/contentstructuremenu']/message[source='(Hidden by parent)']/translation" )->item( 0 )->textContent );
+        $this->assertStringNotContainsString( 'übergeordneten Element versteckt', file_get_contents( self::root() . '/share/translations/ger-DE/translation.ts' ) );
     }
 
     private static function xpathString( $s )

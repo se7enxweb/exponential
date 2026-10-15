@@ -2631,7 +2631,7 @@
     </message>
     <message>
         <source>Hidden by a parent</source>
-        <translation>Durch übergeordneten Eintrag verborgen</translation>
+        <translation>Versteckt durch übergeordneten Eintrag</translation>
     </message>
     <message>
         <source>Not found</source>
@@ -3833,7 +3833,7 @@
     </message>
     <message>
         <source>Hidden by parent</source>
-        <translation>Vom übergeordneten Element versteckt</translation>
+        <translation>Versteckt durch übergeordneten Eintrag</translation>
     </message>
     <message>
         <source>Visible</source>
@@ -8911,7 +8911,7 @@
     </message>
     <message>
         <source>Hidden by superior</source>
-        <translation>Vom übergeordneten Element versteckt</translation>
+        <translation>Versteckt durch übergeordneten Eintrag</translation>
     </message>
     <message>
         <source>Visible</source>
@@ -8951,7 +8951,7 @@
     </message>
     <message>
         <source>(Hidden by parent)</source>
-        <translation>(Durch übergeordneten Knoten versteckt)</translation>
+        <translation>(Versteckt durch übergeordneten Eintrag)</translation>
     </message>
     <message>
         <source>Items below %name</source>
@@ -10923,7 +10923,7 @@
     </message>
     <message>
         <source>Hidden by superior</source>
-        <translation>Vom übergeordneten Element versteckt</translation>
+        <translation>Versteckt durch übergeordneten Eintrag</translation>
     </message>
     <message>
         <source>Hide location and all sub items.</source>
@@ -11783,7 +11783,7 @@
     </message>
     <message>
         <source>Visible, Hidden or Hidden by superior.</source>
-        <translation>Sichtbar, Versteckt oder Durch übergeordnetes Element versteckt.</translation>
+        <translation>Sichtbar, Versteckt oder Versteckt durch übergeordneten Eintrag.</translation>
     </message>
     <message>
         <source>The name of the item's content class.</source>
@@ -48591,7 +48591,7 @@ Wenn Sie noch mehr Objekte hinzufügen wollen, klicken Sie die %emphasize_startL
     </message>
     <message>
         <source>Hidden by superior</source>
-        <translation>Vom übergeordneten Element versteckt</translation>
+        <translation>Versteckt durch übergeordneten Eintrag</translation>
     </message>
     <message>
         <source>Hidden</source>
@@ -48603,7 +48603,7 @@ Wenn Sie noch mehr Objekte hinzufügen wollen, klicken Sie die %emphasize_startL
     </message>
     <message>
         <source>(Hidden by parent)</source>
-        <translation>(Durch übergeordneten Knoten versteckt)</translation>
+        <translation>(Versteckt durch übergeordneten Eintrag)</translation>
     </message>
 </context>
 <context>
@@ -57581,7 +57581,7 @@ Wählen Sie Ihre Kunden und klicken Sie die Schaltfläche %buttonname.
     </message>
     <message>
         <source>Hidden by superior</source>
-        <translation>Vom übergeordneten Element versteckt</translation>
+        <translation>Versteckt durch übergeordneten Eintrag</translation>
     </message>
     <message>
         <source>Hidden</source>
@@ -57593,7 +57593,7 @@ Wählen Sie Ihre Kunden und klicken Sie die Schaltfläche %buttonname.
     </message>
     <message>
         <source>(Hidden by parent)</source>
-        <translation>(Durch übergeordneten Knoten versteckt)</translation>
+        <translation>(Versteckt durch übergeordneten Eintrag)</translation>
     </message>
 </context>
 <context>
@@ -61109,7 +61109,7 @@ wenn Sie die Option &quot;%3&quot; von &quot;%4&quot; ausgewählt haben </transl
     </message>
     <message>
         <source>Hidden by superior</source>
-        <translation>Vom übergeordneten Element versteckt</translation>
+        <translation>Versteckt durch übergeordneten Eintrag</translation>
     </message>
     <message>
         <source>Visible</source>
@@ -61926,7 +61926,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>Hidden by its parent</source>
-        <translation>Durch übergeordneten Knoten verborgen</translation>
+        <translation>Versteckt durch übergeordneten Eintrag</translation>
     </message>
     <message>
         <source>None: the object is in the trash.</source>
