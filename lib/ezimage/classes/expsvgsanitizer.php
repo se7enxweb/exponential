@@ -28,8 +28,10 @@
  *   base64 (an <image> with any other source is left out). javascript:, vbscript: and every other
  *   data: URL are removed wherever they appear;
  * - url(...) in style, a <style> element and presentation attributes (fill, mask, filter ...)
- *   only to an internal #fragment; @import, expression(), behavior and -moz-binding are removed,
- *   after CSS escapes are decoded;
+ *   only to an internal #fragment; @import, expression(), behavior, -moz-binding and the image
+ *   functions that load from a plain string (image-set() ...) are removed, after CSS escapes are
+ *   decoded. In a <style> element every piece a browser can read as a declaration is checked, also
+ *   outside the innermost rule blocks;
  * - <animate>, <set>, <animateTransform>, <animateMotion> may not target href, style or an event
  *   attribute, and their values are checked like any other value.
  *
@@ -263,7 +265,22 @@ class expSvgSanitizer
             $head = (string)@gzread( $fp, 65536 );
             gzclose( $fp );
         }
-        return static::isSVGMarkup( $head );
+        if ( static::isSVGMarkup( $head ) )
+            return true;
+        // a prolog the pattern could not finish is taken as SVG, so the sanitizer decides (and refuses)
+        if ( preg_last_error() !== PREG_NO_ERROR )
+            return true;
+        // markup with a prolog longer than the head read (long comments before <svg>): the whole file decides
+        if ( strlen( $head ) >= 65536 && preg_match( '/^(?:\xEF\xBB\xBF)?\s*</', $head ) )
+        {
+            $error = static::$lastError;
+            $markup = static::readFile( $path );
+            static::$lastError = $error;
+            if ( $markup === false )
+                return false;
+            return static::isSVGMarkup( $markup ) || preg_last_error() !== PREG_NO_ERROR;
+        }
+        return false;
     }
 
     /**
@@ -278,7 +295,9 @@ class expSvgSanitizer
             return false;
         // a byte order mark, then the prolog: XML declaration, comments, PIs, DOCTYPE, white space
         $markup = preg_replace( '/^\xEF\xBB\xBF/', '', $markup );
-        $prolog = '/^\s*(?:<\?xml[^>]*\?>\s*)?(?:(?:<!--.*?-->|<\?[^>]*\?>|<!DOCTYPE[^>\[]*(?:\[.*?\])?\s*>)\s*)*<((?:[A-Za-z_][\w.-]*:)?svg)[\s>\/]/is';
+        // a DOCTYPE may carry ">" in its quoted identifiers and a processing instruction in its data, as
+        // XML allows; each part is matched atomically, so a long prolog cannot backtrack without end
+        $prolog = '/^\s*(?>(?:<!--.*?-->|<\?.*?\?>|<!DOCTYPE(?:[^>\[\'"]++|"[^"]*+"|\'[^\']*+\')*+(?:\[.*?\])?\s*>)\s*)*<((?:[A-Za-z_][\w.-]*:)?svg)[\s>\/]/is';
         return preg_match( $prolog, $markup ) === 1;
     }
 
@@ -667,7 +686,9 @@ class expSvgSanitizer
 
         if ( $name === 'a' )
         {
-            if ( preg_match( '#^(?:https?://|mailto:)#', $plain ) && !preg_match( '/[\s"<>]/', trim( $value ) ) )
+            // the value as written must start with the scheme too, not only after decoding
+            if ( preg_match( '#^(?:https?://|mailto:)#', $plain ) && preg_match( '#^(?:https?://|mailto:)#i', trim( $value ) ) &&
+                 !preg_match( '/[\s"<>]/', trim( $value ) ) )
                 return trim( $value );
             return false;
         }
@@ -688,35 +709,45 @@ class expSvgSanitizer
      * $value in lower case without white space, control characters and CSS escapes, for the checks.
      *
      * @param string $value
+     * @param bool $entities whether HTML character references are decoded as well
      * @return string
      */
-    protected static function normalizedValue( $value )
+    protected static function normalizedValue( $value, $entities = true )
     {
         $value = static::decodeCSSEscapes( (string)$value );
-        $value = html_entity_decode( $value, ENT_QUOTES | ENT_HTML5, 'UTF-8' );
+        if ( $entities )
+            $value = html_entity_decode( $value, ENT_QUOTES | ENT_HTML5, 'UTF-8' );
         return strtolower( preg_replace( '/[\x00-\x20\x7F]+/', '', $value ) );
     }
 
     /**
-     * Whether $value carries a script URL, a data: URL or a url() that is not an internal fragment.
+     * Whether $value carries a script URL, a data: URL, a url() that is not an internal fragment or a
+     * CSS function that loads an image from a plain string or an attribute (image-set(), image(),
+     * cross-fade(), element(), src(), attr()).
      *
      * @param string $value
      * @return bool
      */
     protected static function hasDangerousValue( $value )
     {
-        $plain = static::normalizedValue( $value );
-        if ( preg_match( '/(?:javascript|vbscript|livescript|data):/', $plain ) )
-            return true;
-        if ( strpos( $plain, 'expression(' ) !== false || strpos( $plain, '@import' ) !== false )
-            return true;
-        if ( preg_match_all( '/url\(([^)]*)\)?/', $plain, $m ) )
+        // checked with and without HTML character references decoded: CSS does not decode them, so
+        // "url(&#35;x)" is not a fragment there
+        foreach ( array( static::normalizedValue( $value ), static::normalizedValue( $value, false ) ) as $plain )
         {
-            foreach ( $m[1] as $target )
+            if ( preg_match( '/(?:javascript|vbscript|livescript|data):/', $plain ) )
+                return true;
+            if ( strpos( $plain, 'expression(' ) !== false || strpos( $plain, '@import' ) !== false )
+                return true;
+            if ( preg_match( '/(?:image-set|image|cross-fade|element|src|attr)\(/', $plain ) )
+                return true;
+            if ( preg_match_all( '/url\(([^)]*)\)?/', $plain, $m ) )
             {
-                $target = trim( $target, '\'"' );
-                if ( $target === '' || $target[0] !== '#' )
-                    return true;
+                foreach ( $m[1] as $target )
+                {
+                    $target = trim( $target, '\'"' );
+                    if ( $target === '' || $target[0] !== '#' )
+                        return true;
+                }
             }
         }
         return false;
@@ -767,9 +798,21 @@ class expSvgSanitizer
             $css = preg_replace( '/@import[^;{}]*(?:;|$)/i', '', $css );
             $css = preg_replace( '/@(?:namespace|charset)[^;{}]*(?:;|$)/i', '', $css );
             // each rule's declarations are cleaned on their own
-            return preg_replace_callback( '/\{([^{}]*)\}/', static function ( $m ) {
+            $css = preg_replace_callback( '/\{([^{}]*)\}/', static function ( $m ) {
                 return '{' . expSvgSanitizer::sanitizeCSS( $m[1], true ) . '}';
             }, $css );
+            // a browser also reads declarations outside the innermost blocks: next to a nested rule, in
+            // a last block left open, before the first rule. Every piece between "{", "}" and ";" is
+            // checked as well, and one that loads or runs something is left out
+            $pieces = preg_split( '/([{};])/', $css, -1, PREG_SPLIT_DELIM_CAPTURE );
+            $css = '';
+            foreach ( $pieces as $index => $piece )
+            {
+                if ( $index % 2 === 0 && !static::safeStyleSheetPiece( $piece, ( $pieces[$index + 1] ?? '' ) === '{' ) )
+                    continue;
+                $css .= $piece;
+            }
+            return $css;
         }
 
         $kept = array();
@@ -791,6 +834,27 @@ class expSvgSanitizer
             $kept[] = $property . ':' . $value;
         }
         return implode( ';', $kept );
+    }
+
+    /**
+     * Whether a piece of a style sheet between "{", "}" and ";" may stay. A prelude (the piece before
+     * a "{": a selector or an at-rule) loads nothing by its "data:" or "javascript:" text, as in
+     * ".has-data:hover", so only what loads or runs is looked for there; any other piece is checked
+     * like a declaration.
+     *
+     * @param string $piece
+     * @param bool $prelude
+     * @return bool
+     */
+    protected static function safeStyleSheetPiece( $piece, $prelude )
+    {
+        if ( stripos( $piece, '@import' ) !== false || preg_match( '/^\s*(?:behavior|-moz-binding|binding)\s*:/i', $piece ) )
+            return false;
+        if ( !$prelude )
+            return !static::hasDangerousValue( $piece );
+        $plain = static::normalizedValue( $piece, false );
+        return !static::hasDangerousValue( preg_replace( '/(?:javascript|vbscript|livescript|data):/', '', $plain ) ) &&
+               !static::hasDangerousValue( preg_replace( '/(?:javascript|vbscript|livescript|data):/', '', static::normalizedValue( $piece ) ) );
     }
 
     /**
