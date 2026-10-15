@@ -56392,11 +56392,11 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%count more below this node that you may not see.</source>
+        <source>Not available to you</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%count more objects in this range that you may not see were not checked.</source>
+        <source>Target not available</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

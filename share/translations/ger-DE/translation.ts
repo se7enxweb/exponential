@@ -62361,12 +62361,12 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Nicht verknüpfte Objekte</translation>
     </message>
     <message>
-        <source>%count more below this node that you may not see.</source>
-        <translation>%count weitere unterhalb dieses Knotens, die Sie nicht sehen dürfen.</translation>
+        <source>Not available to you</source>
+        <translation>Für Sie nicht verfügbar</translation>
     </message>
     <message>
-        <source>%count more objects in this range that you may not see were not checked.</source>
-        <translation>%count weitere Objekte in diesem Bereich, die Sie nicht sehen dürfen, wurden nicht geprüft.</translation>
+        <source>Target not available</source>
+        <translation>Ziel nicht verfügbar</translation>
     </message>
 </context>
 <context>

@@ -213,6 +213,36 @@ class expContentCheck
         return $pathString . '%';
     }
 
+    /**
+     * The content/read condition of the current user for any node, for the queries that read what a page shows
+     * besides its rows (locations, sub-items, the targets of relations). 'limited' is false for a user who may read
+     * everything: the queries then need no condition at all. The caller drops 'temp_tables'.
+     *
+     * @return array array( 'limited' => bool, 'from' => string, 'where' => string, 'temp_tables' => array )
+     */
+    public static function readPermission()
+    {
+        $user = eZUser::currentUser();
+        $access = $user instanceof eZUser ? $user->hasAccessTo( 'content', 'read' ) : array( 'accessWord' => 'no' );
+        if ( isset( $access['accessWord'] ) && $access['accessWord'] === 'yes' )
+            return array( 'limited' => false, 'from' => '', 'where' => '', 'temp_tables' => array() );
+        $limitation = false;
+        $sql = eZContentObjectTreeNode::createPermissionCheckingSQL( eZContentObjectTreeNode::getLimitationList( $limitation ) );
+        return array( 'limited' => true, 'from' => (string)$sql['from'], 'where' => (string)$sql['where'],
+                      'temp_tables' => isset( $sql['temp_tables'] ) ? (array)$sql['temp_tables'] : array() );
+    }
+
+    /**
+     * Drops the temporary tables of a permission condition.
+     *
+     * @param array $permission
+     */
+    public static function dropPermission( array $permission )
+    {
+        if ( !empty( $permission['temp_tables'] ) )
+            eZDB::instance()->dropTempTableList( $permission['temp_tables'] );
+    }
+
     // ------------------------------------------------------------------ what counts as a reference
 
     /**

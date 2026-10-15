@@ -8,6 +8,13 @@
  * page of them, each with the permission condition of content/read in its SQL; the sizes, locations and whether
  * the user may remove them are then read for that page only, a fixed number of queries per page.
  *
+ * What the user may not read is left out everywhere: from the list, the count, the pages, the locations and the
+ * sub-items shown. Whether a readable object is unreferenced is decided against every reference, also from objects
+ * the user may not read, and an object with sub-items the user may not read is not offered for the trash: otherwise
+ * content in use would go to the trash. That a readable object is missing from the list is therefore a weak hint
+ * that something refers to it; nothing about that something (number, name, id, class) is shown anywhere, and there
+ * is no view that says why an object is not listed.
+ *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
@@ -120,13 +127,13 @@ class expContentCheckUnreferenced
      * One page of the list.
      *
      * @param array $params from parameters()
-     * @return array array( 'node' => start node or null, 'count' => int, 'hidden' => how many more the user may not
-     *               read (a number, nothing else of them is read), 'rows' => array of rows (describe()),
+     * @return array array( 'node' => start node or null, 'count' => int (only objects the user may read),
+     *               'rows' => array of rows (describe()),
      *               'error' => '' | not_found | database )
      */
     public static function fetch( array $params )
     {
-        $result = array( 'node' => null, 'count' => 0, 'hidden' => 0, 'rows' => array(), 'error' => '' );
+        $result = array( 'node' => null, 'count' => 0, 'rows' => array(), 'error' => '' );
         if ( !expContentCheck::isSupportedDatabase() )
             return array_merge( $result, array( 'error' => 'database' ) );
         $node = expContentCheck::readableNode( $params['node_id'] );
@@ -142,12 +149,6 @@ class expContentCheckUnreferenced
             $queries = self::queries( $params, $pattern, $permission );
             $count = $db->arrayQuery( $queries['count'] );
             $result['count'] = isset( $count[0]['row_count'] ) ? (int)$count[0]['row_count'] : 0;
-            // with a limited content/read: how many more there are that the user may not read, as a number only
-            if ( trim( isset( $permission['where'] ) ? (string)$permission['where'] : '' ) !== '' )
-            {
-                $all = $db->arrayQuery( self::queries( $params, $pattern, array() )['count'] );
-                $result['hidden'] = max( 0, ( isset( $all[0]['row_count'] ) ? (int)$all[0]['row_count'] : 0 ) - $result['count'] );
-            }
             $rows = array();
             if ( $result['count'] > $params['offset'] )
                 $rows = $db->arrayQuery( $queries['list'], array( 'offset' => (int)$params['offset'], 'limit' => (int)$params['limit'] ) );
@@ -201,14 +202,34 @@ class expContentCheckUnreferenced
             $nodeIDs[] = (int)$row['node_id'];
         }
 
+        // the locations and sub-items the page shows: only those the user may read. Whether a row may be moved to
+        // the trash counts every sub-item (allChildren): a hidden one keeps the object, it is never shown as a number
+        $read = expContentCheck::readPermission();
         $locations = array();
-        foreach ( (array)$db->arrayQuery( 'SELECT contentobject_id, COUNT(*) AS row_count FROM ezcontentobject_tree WHERE contentobject_id IN ( ' .
-                                          expContentCheck::inList( $objectIDs ) . ' ) GROUP BY contentobject_id' ) as $row )
-            $locations[(int)$row['contentobject_id']] = (int)$row['row_count'];
         $children = array();
+        $allChildren = array();
+        try
+        {
+            foreach ( (array)$db->arrayQuery( 'SELECT ezcontentobject_tree.contentobject_id AS object_id, COUNT(*) AS row_count' .
+                                              ' FROM ezcontentobject_tree, ezcontentobject' . $read['from'] .
+                                              ' WHERE ezcontentobject.id = ezcontentobject_tree.contentobject_id' .
+                                              ' AND ezcontentobject_tree.contentobject_id IN ( ' . expContentCheck::inList( $objectIDs ) . ' ) ' . $read['where'] .
+                                              ' GROUP BY ezcontentobject_tree.contentobject_id' ) as $row )
+                $locations[(int)$row['object_id']] = (int)$row['row_count'];
+            foreach ( (array)$db->arrayQuery( 'SELECT ezcontentobject_tree.parent_node_id AS parent_id, COUNT(*) AS row_count' .
+                                              ' FROM ezcontentobject_tree, ezcontentobject' . $read['from'] .
+                                              ' WHERE ezcontentobject.id = ezcontentobject_tree.contentobject_id' .
+                                              ' AND ezcontentobject_tree.parent_node_id IN ( ' . expContentCheck::inList( $nodeIDs ) . ' ) ' . $read['where'] .
+                                              ' GROUP BY ezcontentobject_tree.parent_node_id' ) as $row )
+                $children[(int)$row['parent_id']] = (int)$row['row_count'];
+        }
+        finally
+        {
+            expContentCheck::dropPermission( $read );
+        }
         foreach ( (array)$db->arrayQuery( 'SELECT parent_node_id, COUNT(*) AS row_count FROM ezcontentobject_tree WHERE parent_node_id IN ( ' .
                                           expContentCheck::inList( $nodeIDs ) . ' ) GROUP BY parent_node_id' ) as $row )
-            $children[(int)$row['parent_node_id']] = (int)$row['row_count'];
+            $allChildren[(int)$row['parent_node_id']] = (int)$row['row_count'];
 
         $removable = array();
         $nodes = eZContentObjectTreeNode::fetch( $nodeIDs );
@@ -225,6 +246,7 @@ class expContentCheckUnreferenced
             $objectID = (int)$row['object_id'];
             $nodeID = (int)$row['node_id'];
             $childCount = isset( $children[$nodeID] ) ? $children[$nodeID] : 0;
+            $anyChild = isset( $allChildren[$nodeID] ) && $allChildren[$nodeID] > 0;
             $described[] = array( 'object_id' => $objectID,
                                   'node_id' => $nodeID,
                                   'name' => (string)$row['object_name'],
@@ -239,7 +261,7 @@ class expContentCheckUnreferenced
                                   'children' => $childCount,
                                   'size' => isset( $files[$objectID] ) ? $files[$objectID]['size'] : null,
                                   'files' => isset( $files[$objectID] ) ? $files[$objectID]['count'] : 0,
-                                  'can_trash' => $childCount === 0 && !empty( $removable[$nodeID] ) );
+                                  'can_trash' => !$anyChild && !empty( $removable[$nodeID] ) );
         }
         return $described;
     }

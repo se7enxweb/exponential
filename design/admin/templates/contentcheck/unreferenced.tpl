@@ -1,7 +1,7 @@
 {* The contentcheck/unreferenced view (doc/features/6.0/content-checks.md, "Unreferenced objects").
 
    Variables: result (node, count, rows, error), params (node_id, class_ids, sort, order, containers, offset,
-   limit), result.hidden (how many more the user may not read, a number only), class_options, sorts, page_uri, page_uri_suffix, view_parameters, limit, limit_choices,
+   limit), class_options, sorts, page_uri, page_uri_suffix, view_parameters, limit, limit_choices,
    limit_preference, feedback (the outcome of a move to the trash, or null), can_trash, batch_limit, form_token,
    token_field. Only what the user may read is in result.rows; a row can be ticked only when the user may move it
    to the trash. The filters are a GET form; the ticked rows are posted to contentcheck/trash, which asks for a
@@ -87,10 +87,6 @@
     <span class="a4-meta">{'%from to %to of %count'|i18n( 'kernel/contentcheck',, hash( '%from', sum( $params.offset, 1 ), '%to', min( sum( $params.offset, $limit ), $result.count ), '%count', $result.count ) )}</span>
     {/if}
 </div>
-
-{if $result.hidden|gt( 0 )}
-<p class="a4-meta">{'%count more below this node that you may not see.'|i18n( 'kernel/contentcheck',, hash( '%count', $result.hidden ) )}</p>
-{/if}
 
 {if $rows|count|eq( 0 )}
 <p class="a4-empty">{'No unreferenced object below this node matches the filter.'|i18n( 'kernel/contentcheck' )}</p>

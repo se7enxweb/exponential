@@ -1,16 +1,17 @@
 {* The contentcheck/brokenrelations view (doc/features/6.0/content-checks.md, "Broken relations"). Read only.
 
-   Variables: result (node, excluded, findings, checked, hidden: sources the user may not read, a number only, last,
-   done, error), params (node_id, exclude, kinds,
+   Variables: result (node, excluded, findings, checked, last, done, error), params (node_id, exclude, kinds,
    relations, after, limit), kinds, relations, page_uri, filter_suffix, limit, limit_choices, limit_preference.
    The sources are walked by object id: a page shows the findings of the objects checked for it, and "Next page"
-   goes on after the last of them (After). The same file is in design/admin and design/admin4. *}
+   goes on after the last of them (After). A target the user may not read is "unavailable",
+   without id or state. The same file is in design/admin and design/admin4. *}
 {def $kind_names = hash( 'deleted', 'Deleted'|i18n( 'kernel/contentcheck' ),
                          'trash', 'In the trash'|i18n( 'kernel/contentcheck' ),
                          'hidden', 'Hidden'|i18n( 'kernel/contentcheck' ),
                          'unpublished', 'Never published'|i18n( 'kernel/contentcheck' ),
-                         'no_location', 'Without location'|i18n( 'kernel/contentcheck' ) )
-     $kind_classes = hash( 'deleted', 'is-bad', 'trash', 'is-bad', 'hidden', 'is-warn', 'unpublished', 'is-warn', 'no_location', 'is-warn' )
+                         'no_location', 'Without location'|i18n( 'kernel/contentcheck' ),
+                         'unavailable', 'Not available to you'|i18n( 'kernel/contentcheck' ) )
+     $kind_classes = hash( 'deleted', 'is-bad', 'trash', 'is-bad', 'hidden', 'is-warn', 'unpublished', 'is-warn', 'no_location', 'is-warn', 'unavailable', 'is-info' )
      $relation_names = hash( 'xml', 'Links and embeds in rich text'|i18n( 'kernel/contentcheck' ),
                              'object', 'Object relations and relation fields'|i18n( 'kernel/contentcheck' ) )
      $via_names = hash( 'link', 'Link'|i18n( 'kernel/contentcheck' ),
@@ -77,10 +78,6 @@
     <span class="a4-meta">{if $params.after|gt( 0 )}{'%count objects checked after object %after.'|i18n( 'kernel/contentcheck',, hash( '%count', $result.checked, '%after', $params.after ) )}{else}{'%count objects checked.'|i18n( 'kernel/contentcheck',, hash( '%count', $result.checked ) )}{/if}</span>
 </div>
 
-{if $result.hidden|gt( 0 )}
-<p class="a4-meta">{'%count more objects in this range that you may not see were not checked.'|i18n( 'kernel/contentcheck',, hash( '%count', $result.hidden ) )}</p>
-{/if}
-
 {if $findings|count|eq( 0 )}
 <p class="a4-empty">{if $result.done}{'No broken relation found.'|i18n( 'kernel/contentcheck' )}{else}{'No broken relation found among these objects. Go on with the next page.'|i18n( 'kernel/contentcheck' )}{/if}</p>
 {else}
@@ -102,7 +99,7 @@
         <div class="a4-meta">{$finding.class_name|wash} &middot; {'Object %id'|i18n( 'kernel/contentcheck',, hash( '%id', $finding.source_id ) )}</div></td>
     <td>{if $finding.field_name|ne( '' )}{$finding.field_name|wash}{else}&ndash;{/if}{if $finding.language|ne( '' )} <span class="a4-tag is-mono">{$finding.language|wash}</span>{/if}
         <div class="a4-meta">{$via_names[$finding.via]|wash}</div></td>
-    <td>{if eq( $finding.target_type, 'node' )}{'Node %id'|i18n( 'kernel/contentcheck',, hash( '%id', $finding.target_id ) )}{else}{'Object %id'|i18n( 'kernel/contentcheck',, hash( '%id', $finding.target_id ) )}{/if}
+    <td>{if eq( $finding.kind, 'unavailable' )}{'Target not available'|i18n( 'kernel/contentcheck' )}{elseif eq( $finding.target_type, 'node' )}{'Node %id'|i18n( 'kernel/contentcheck',, hash( '%id', $finding.target_id ) )}{else}{'Object %id'|i18n( 'kernel/contentcheck',, hash( '%id', $finding.target_id ) )}{/if}
         {if $finding.target_name|ne( '' )}<div class="a4-meta">{$finding.target_name|wash}</div>{/if}</td>
     <td><span class="a4-tag {$kind_classes[$finding.kind]}">{$kind_names[$finding.kind]|wash}</span></td>
     <td>{if $finding.can_edit}<a class="a4-btn a4-btn-small" href={concat( '/content/edit/', $finding.source_id )|ezurl}>{'Edit'|i18n( 'kernel/contentcheck' )}</a>{/if}</td>

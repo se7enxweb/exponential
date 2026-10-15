@@ -15,8 +15,9 @@
  *         node embed), hidden, never published; a target that is fine is not reported; the kinds, the reference
  *         types and the excluded subtrees filter; the edit link only for a user who may edit the source
  *  CS-06  the scan pages by object id and ends after the last source
- *  CS-07  what a user may not read is only counted: no name of an unreadable object below the node, of an
- *         unreadable source or of a hidden or trashed target
+ *  CS-07  what a user may not read is left out: from the list, the counts and the locations of the unreferenced
+ *         objects, and from the sources of the broken relations; every target the user may not read is
+ *         "unavailable", without id, whatever its state; adding unreadable content changes nothing the user sees
  *  CS-08  who may open which view: the module functions, ANDed for the trash view
  *
  * It WRITES to the database (content, users, roles), so it runs ONLY in a throwaway installation named by
@@ -255,7 +256,12 @@ class expContentCheckSandboxTest extends PHPUnit\Framework\TestCase
         self::make( 'brokenfolder', $b, 'folder' );
         self::make( 'closed', $root, 'folder' );
         self::make( 'closedhidden', self::node( 'closed' ) );
+        self::make( 'closedfine', self::node( 'closed' ) );
         self::relate( 'page', 'closedhidden' );
+        self::relate( 'page', 'closedfine' );
+        // a second location of inbox where the box readers may not read
+        self::$o['inbox']->addLocation( self::node( 'closed' ) );
+        eZContentObjectTreeNode::fetch( self::node( 'inbox' ) )->updateSubTreePath();
         self::relate( 'brokenfolder', 'binned' );
         eZContentObjectTreeNode::hideSubTree( eZContentObjectTreeNode::fetch( self::node( 'closedhidden' ) ) );
         foreach ( array( 'binned', 'hidden', 'fine' ) as $key )
@@ -326,7 +332,6 @@ class expContentCheckSandboxTest extends PHPUnit\Framework\TestCase
         list( $r, $ids ) = $this->unreferenced( array( 'NodeID' => self::node( 'root' ), 'ClassID' => array( $folder ), 'Containers' => '1' ) );
         $this->assertSame( array( self::id( 'box' ), self::id( 'boxfolder' ), self::id( 'hidbox' ) ), $ids );
         $this->assertSame( 3, $r['count'] );
-        $this->assertSame( 0, $r['hidden'], 'an unlimited reader sees everything' );
 
         list( $all, $allIDs ) = $this->unreferenced( array( 'NodeID' => self::node( 'root' ), 'Sort' => 'id', 'Order' => 'asc' ) );
         $this->assertSame( count( $allIDs ), $all['count'] );
@@ -338,7 +343,6 @@ class expContentCheckSandboxTest extends PHPUnit\Framework\TestCase
         $this->assertSame( $all['count'], $page['count'] );
         foreach ( $all['rows'] as $row )
             $this->assertTrue( $row['can_trash'], $row['name'] );
-        $this->assertSame( 0, $all['hidden'] );
     }
 
     /** CS-03 */
@@ -359,32 +363,66 @@ class expContentCheckSandboxTest extends PHPUnit\Framework\TestCase
     }
 
     /** CS-07 */
-    public function testWhatAReaderMayNotReadIsOnlyCounted()
+    public function testWhatAReaderMayNotReadIsLeftOut()
     {
+        // the list, its count and the locations hold only what the reader may read; adding content the reader may
+        // not read changes nothing the reader sees
         self::signIn( 'cc_classreader_' . self::$run );
-        list( $r, $ids ) = $this->unreferenced( array( 'NodeID' => self::node( 'box' ), 'Containers' => '1' ) );
+        list( $before, $ids ) = $this->unreferenced( array( 'NodeID' => self::node( 'box' ), 'Containers' => '1' ) );
         $this->assertSame( array( self::id( 'inbox' ) ), $ids, 'the folder below box is not readable for this user' );
-        $this->assertSame( 1, $r['hidden'] );
-        $this->assertStringNotContainsString( 'CC boxfolder', serialize( $r['rows'] ) );
+        $this->assertSame( 1, $before['count'] );
+        $this->assertArrayNotHasKey( 'hidden', $before );
+        $this->assertSame( 1, $before['rows'][0]['locations'], 'the second location, outside the reader\'s access, is not counted' );
+        $this->assertStringNotContainsString( 'CC boxfolder', serialize( $before ) );
+        self::signIn( 'admin' );
+        $adminRows = $this->unreferenced( array( 'NodeID' => self::node( 'box' ), 'Containers' => '1' ) )[0]['rows'];
+        $this->assertSame( array( 2 ), array_values( array_column( array_filter( $adminRows, function ( $row ) { return $row['object_id'] === self::id( 'inbox' ); } ), 'locations' ) ) );
+        self::make( 'boxfolder2', self::node( 'box' ), 'folder' );
+        self::signIn( 'cc_classreader_' . self::$run );
+        list( $after, ) = $this->unreferenced( array( 'NodeID' => self::node( 'box' ), 'Containers' => '1' ) );
+        $this->assertSame( $before['count'], $after['count'], 'an object the reader may not read changes no count' );
+        $this->assertSame( serialize( $before['rows'] ), serialize( $after['rows'] ) );
 
+        // broken relations: unreadable sources are not checked, unreadable targets are all alike
         self::signIn( 'cc_brokenreader_' . self::$run );
-        eZContentObject::clearCache();
-        $scan = expContentCheckBrokenRelations::scan( expContentCheckBrokenRelations::parameters( array( 'NodeID' => self::node( 'broken' ), 'Limit' => 100 ) ) );
-        $this->assertSame( '', $scan['error'] );
-        $sources = array_unique( array_column( $scan['findings'], 'source_id' ) );
-        $this->assertSame( array( self::id( 'page' ) ), array_values( $sources ), 'the folder source is not readable: not checked' );
-        $this->assertSame( 1, $scan['hidden'], 'brokenfolder is counted, not shown' );
-        $closed = null;
-        foreach ( $scan['findings'] as $finding )
+        $scan = function () {
+            eZContentObject::clearCache();
+            return expContentCheckBrokenRelations::scan( expContentCheckBrokenRelations::parameters( array( 'NodeID' => self::node( 'broken' ), 'Limit' => 100 ) ) );
+        };
+        $first = $scan();
+        $this->assertSame( '', $first['error'] );
+        $this->assertSame( array( self::id( 'page' ) ), array_values( array_unique( array_column( $first['findings'], 'source_id' ) ) ),
+                           'the folder source is not readable: not checked' );
+        $kinds = array_count_values( array_column( $first['findings'], 'kind' ) );
+        $this->assertSame( 1, isset( $kinds['hidden'] ) ? $kinds['hidden'] : 0, 'the hidden target the reader may read keeps its state' );
+        $this->assertArrayNotHasKey( 'trash', $kinds );
+        $this->assertArrayNotHasKey( 'deleted', $kinds );
+        $this->assertArrayNotHasKey( 'unpublished', $kinds );
+        foreach ( $first['findings'] as $finding )
         {
-            if ( $finding['target_id'] === self::id( 'closedhidden' ) )
-                $closed = $finding;
+            if ( $finding['kind'] !== 'unavailable' )
+                continue;
+            $this->assertSame( array( 0, '', '' ), array( $finding['target_id'], $finding['target_type'], $finding['target_name'] ) );
         }
-        $this->assertNotNull( $closed );
-        $this->assertSame( 'hidden', $closed['kind'] );
-        $this->assertSame( '', $closed['target_name'], 'a hidden target outside the reader\'s access: id and state only' );
-        $this->assertStringNotContainsString( 'CC closedhidden', serialize( $scan ) );
-        $this->assertStringNotContainsString( 'CC brokenfolder', serialize( $scan['findings'] ) );
+        // closedhidden (hidden), closedfine (fine), binned (trash), draft (never published) and, with rich text,
+        // gone (deleted) and nodebinned (node in the trash): one shape, "unavailable"
+        $hasXml = (bool)self::attribute( eZContentClass::fetchByIdentifier( 'article' ) ? 'article' : 'folder', 'ezxmltext' );
+        $this->assertSame( $hasXml ? 6 : 4, $kinds['unavailable'] );
+        $text = serialize( $first );
+        foreach ( array( 'closedhidden', 'closedfine', 'binned', 'gone', 'brokenfolder' ) as $key )
+        {
+            $this->assertStringNotContainsString( 'CC ' . $key, $text, $key );
+            $this->assertStringNotContainsString( '"' . self::id( $key ) . '"', $text, $key );
+        }
+
+        self::signIn( 'admin' );
+        self::make( 'brokenfolder2', self::node( 'broken' ), 'folder' );
+        self::relate( 'brokenfolder2', 'binned' );
+        self::signIn( 'cc_brokenreader_' . self::$run );
+        $second = $scan();
+        $this->assertSame( $first['checked'], $second['checked'], 'a source the reader may not read changes no count' );
+        $this->assertSame( serialize( $first['findings'] ), serialize( $second['findings'] ) );
+        $this->assertSame( $first['done'], $second['done'] );
     }
 
     /** CS-08 */
@@ -434,6 +472,15 @@ class expContentCheckSandboxTest extends PHPUnit\Framework\TestCase
         $this->assertFalse( $again['done'], 'a second post of the same confirmation does nothing' );
     }
 
+    /** the sources with broken relations below CC broken (brokenfolder2 is made by CS-07) */
+    protected function brokenSources()
+    {
+        $ids = array( self::id( 'page' ), self::id( 'brokenfolder' ) );
+        if ( isset( self::$o['brokenfolder2'] ) )
+            $ids[] = self::id( 'brokenfolder2' );
+        return $ids;
+    }
+
     protected function findings( array $input )
     {
         eZContentObject::clearCache();
@@ -441,7 +488,7 @@ class expContentCheckSandboxTest extends PHPUnit\Framework\TestCase
         $found = array();
         foreach ( $r['findings'] as $f )
         {
-            $this->assertContains( $f['source_id'], array( self::id( 'page' ), self::id( 'brokenfolder' ) ) );
+            $this->assertContains( $f['source_id'], $this->brokenSources() );
             if ( $f['source_id'] === self::id( 'page' ) )
                 $found[$f['target_type'] . ':' . $f['target_id']] = $f['kind'];
         }
@@ -488,12 +535,22 @@ class expContentCheckSandboxTest extends PHPUnit\Framework\TestCase
         $first = expContentCheckBrokenRelations::scan( expContentCheckBrokenRelations::parameters( array( 'NodeID' => self::node( 'broken' ), 'Limit' => 1 ) ) );
         $this->assertGreaterThanOrEqual( 1, count( $first['findings'] ), 'a page ends after a whole source' );
         $this->assertSame( self::id( 'page' ), $first['last'] );
-        $next = expContentCheckBrokenRelations::scan( expContentCheckBrokenRelations::parameters( array( 'NodeID' => self::node( 'broken' ), 'Limit' => 1,
-                                                                                                          'After' => $first['last'] ) ) );
-        $this->assertSame( array( self::id( 'brokenfolder' ) ), array_values( array_unique( array_column( $next['findings'], 'source_id' ) ) ) );
-        $last = expContentCheckBrokenRelations::scan( expContentCheckBrokenRelations::parameters( array( 'NodeID' => self::node( 'broken' ), 'Limit' => 1,
-                                                                                                          'After' => $next['last'] ) ) );
-        $this->assertSame( array(), $last['findings'] );
-        $this->assertTrue( $last['done'] );
+        // one source per page, to the end, every source once
+        $seen = array( self::id( 'page' ) );
+        $after = $first['last'];
+        for ( $guard = 0; $guard < 10; $guard++ )
+        {
+            $next = expContentCheckBrokenRelations::scan( expContentCheckBrokenRelations::parameters( array( 'NodeID' => self::node( 'broken' ), 'Limit' => 1,
+                                                                                                              'After' => $after ) ) );
+            $seen = array_merge( $seen, array_unique( array_column( $next['findings'], 'source_id' ) ) );
+            $after = $next['last'];
+            if ( $next['done'] )
+                break;
+        }
+        $this->assertTrue( $next['done'] );
+        sort( $seen );
+        $expected = $this->brokenSources();
+        sort( $expected );
+        $this->assertSame( $expected, array_values( $seen ) );
     }
 }

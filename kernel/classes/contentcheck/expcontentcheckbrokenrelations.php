@@ -14,7 +14,11 @@
  *     node_id="..." of <link>, <embed> and <embed-inline>. These still name an object or node after it has been
  *     deleted, when its relation rows are gone with it.
  * A target is reported as deleted (no object or node with the id), in the trash, hidden (every location hidden or
- * invisible), unpublished (a draft that was never published) or without location.
+ * invisible), unpublished (a draft that was never published) or without location. For a user whose content/read is
+ * limited, every target the user may not read (no readable location) is reported as unavailable, whatever its state,
+ * and without its id: deleted, trashed, hidden and fine targets the user may not read look the same, so the list says
+ * nothing about content the user may not see. Sources the user may not read are left out of the query itself, and
+ * so of the pages, the number of objects checked and the paging.
  *
  * The scan walks the sources by object id in chunks (ChunkSize objects, a fixed number of queries per chunk) and
  * stops after a page of findings or after ScanLimit objects; the next page goes on after the last object checked.
@@ -28,7 +32,7 @@
 class expContentCheckBrokenRelations
 {
     /** The kinds of broken targets */
-    const KINDS = array( 'deleted', 'trash', 'hidden', 'unpublished', 'no_location' );
+    const KINDS = array( 'deleted', 'trash', 'hidden', 'unpublished', 'no_location', 'unavailable' );
 
     /** The kinds of references: in the text of an XML field, or an object relation (also a relation attribute) */
     const RELATIONS = array( 'xml', 'object' );
@@ -182,13 +186,12 @@ class expContentCheckBrokenRelations
      *
      * @param array $params from parameters()
      * @return array array( 'node' => start node or null, 'excluded' => nodes, 'findings' => list (see collect()),
-     *               'hidden' => sources in the range checked that the user may not read (a number only),
      *               'checked' => objects checked, 'last' => last object id checked, 'done' => true when no object
      *               is left after it, 'error' => '' | not_found | database )
      */
     public static function scan( array $params )
     {
-        $result = array( 'node' => null, 'excluded' => array(), 'findings' => array(), 'checked' => 0, 'hidden' => 0,
+        $result = array( 'node' => null, 'excluded' => array(), 'findings' => array(), 'checked' => 0,
                          'last' => (int)$params['after'], 'done' => true, 'error' => '' );
         if ( !expContentCheck::isSupportedDatabase() )
             return array_merge( $result, array( 'error' => 'database' ) );
@@ -202,20 +205,22 @@ class expContentCheckBrokenRelations
         $excludePatterns = array();
         foreach ( $params['exclude'] as $excludeID )
         {
-            $excluded = eZContentObjectTreeNode::fetch( (int)$excludeID );
+            // only a node the user may read: an id of one the user may not read is ignored like an unknown one
+            $excluded = expContentCheck::readableNode( (int)$excludeID );
             if ( !$excluded instanceof eZContentObjectTreeNode )
                 continue;
             $excludePattern = expContentCheck::subtreePattern( $excluded->attribute( 'path_string' ) );
             if ( $excludePattern === null )
                 continue;
             $excludePatterns[] = $excludePattern;
-            $result['excluded'][] = array( 'node_id' => (int)$excludeID, 'name' => $excluded->canRead() ? (string)$excluded->attribute( 'name' ) : '' );
+            $result['excluded'][] = array( 'node_id' => (int)$excludeID, 'name' => (string)$excluded->attribute( 'name' ) );
         }
 
         $chunk = expContentCheck::intSetting( 'BrokenRelationsSettings', 'ChunkSize', 200, 10, 1000 );
         $scanLimit = expContentCheck::intSetting( 'BrokenRelationsSettings', 'ScanLimit', 5000, $chunk, 100000 );
         $db = eZDB::instance();
         $permission = expContentCheckUnreferenced::permission( $node->attribute( 'path_string' ), (int)$node->attribute( 'node_id' ) );
+        $read = expContentCheck::readPermission();
         try
         {
             $after = (int)$params['after'];
@@ -231,7 +236,7 @@ class expContentCheckBrokenRelations
                 }
                 // a page ends after a whole object, never in the middle of the findings of one source
                 $bySource = array();
-                foreach ( self::collect( $sources, $params ) as $finding )
+                foreach ( self::collect( $sources, $params, $read ) as $finding )
                     $bySource[$finding['source_id']][] = $finding;
                 $stopped = false;
                 $index = 0;
@@ -255,19 +260,12 @@ class expContentCheckBrokenRelations
                     break;
                 }
             }
-            // with a limited content/read: how many sources in the range checked (to the end, on the last page) the
-            // user may not read, as a number only; they are not checked and nothing of them is shown
-            if ( trim( isset( $permission['where'] ) ? (string)$permission['where'] : '' ) !== '' )
-            {
-                $all = $db->arrayQuery( 'SELECT COUNT(*) AS row_count FROM ( ' .
-                                        self::sourceQuery( $pattern, $excludePatterns, array(), (int)$params['after'], $result['done'] ? 0 : $result['last'] ) . ' ) cc_sources' );
-                $result['hidden'] = max( 0, ( isset( $all[0]['row_count'] ) ? (int)$all[0]['row_count'] : 0 ) - $result['checked'] );
-            }
         }
         finally
         {
             if ( !empty( $permission['temp_tables'] ) )
                 $db->dropTempTableList( $permission['temp_tables'] );
+            expContentCheck::dropPermission( $read );
         }
         $result['findings'] = self::describeSources( $result['findings'] );
         return $result;
@@ -279,12 +277,13 @@ class expContentCheckBrokenRelations
      *
      * @param array $sources rows of sourceQuery()
      * @param array $params
+     * @param array|null $read from expContentCheck::readPermission(); null: the user may read every target
      * @return array list of array( 'source_id', 'source_name', 'source_node_id', 'source_path', 'class_id',
      *               'attribute_id' (class attribute, 0 for a relation of the object), 'language', 'relation' (xml|object),
      *               'via' (link, embed, embed-inline, relation, attribute), 'target_type' (object|node), 'target_id',
      *               'kind' )
      */
-    public static function collect( array $sources, array $params )
+    public static function collect( array $sources, array $params, $read = null )
     {
         if ( !$sources )
             return array();
@@ -375,17 +374,39 @@ class expContentCheckBrokenRelations
                 $trashed[(int)$row['node_id']] = true;
         }
 
+        // for a user with a limited content/read: the targets the user may read (a readable location), in two queries
+        $limited = is_array( $read ) && !empty( $read['limited'] );
+        $readableObjects = array();
+        $readableNodes = array();
+        if ( $limited )
+        {
+            foreach ( array_chunk( array_keys( $objectIDs ), 500 ) as $ids )
+            {
+                foreach ( (array)$db->arrayQuery( 'SELECT DISTINCT ezcontentobject.id AS id FROM ezcontentobject, ezcontentobject_tree' . $read['from'] .
+                                                  ' WHERE ezcontentobject_tree.contentobject_id = ezcontentobject.id' .
+                                                  ' AND ezcontentobject.id IN ( ' . expContentCheck::inList( $ids ) . ' ) ' . $read['where'] ) as $row )
+                    $readableObjects[(int)$row['id']] = true;
+            }
+            foreach ( array_chunk( array_keys( $nodeIDs ), 500 ) as $ids )
+            {
+                foreach ( (array)$db->arrayQuery( 'SELECT ezcontentobject_tree.node_id AS id FROM ezcontentobject_tree, ezcontentobject' . $read['from'] .
+                                                  ' WHERE ezcontentobject.id = ezcontentobject_tree.contentobject_id' .
+                                                  ' AND ezcontentobject_tree.node_id IN ( ' . expContentCheck::inList( $ids ) . ' ) ' . $read['where'] ) as $row )
+                    $readableNodes[(int)$row['id']] = true;
+            }
+        }
+
         $findings = array();
         foreach ( $references as $reference )
         {
             $targetID = $reference['target_id'];
-            if ( $reference['target_type'] === 'object' )
-            {
-                // the object itself: a page that embeds itself is not broken by that
-                if ( $targetID === $reference['source_id'] )
-                    continue;
+            if ( $reference['target_type'] === 'object' && $targetID === $reference['source_id'] )
+                continue; // the object itself: a page that embeds itself is not broken by that
+            $readable = $reference['target_type'] === 'object' ? isset( $readableObjects[$targetID] ) : isset( $readableNodes[$targetID] );
+            if ( $limited && !$readable )
+                $kind = 'unavailable';
+            else if ( $reference['target_type'] === 'object' )
                 $kind = self::objectState( isset( $objects[$targetID] ) ? $objects[$targetID] : null, isset( $visibility[$targetID] ) ? $visibility[$targetID] : null );
-            }
             else
                 $kind = self::nodeState( isset( $nodes[$targetID] ) ? $nodes[$targetID] : null, isset( $trashed[$targetID] ) );
             if ( $kind === null || !in_array( $kind, $params['kinds'], true ) )
@@ -438,7 +459,7 @@ class expContentCheckBrokenRelations
                 $attributeIDs[$finding['attribute_id']] = true;
             $sourceIDs[$finding['source_id']] = true;
             // a target in the trash or hidden is shown by its id and state only
-            if ( $finding['target_type'] === 'object' && !in_array( $finding['kind'], array( 'deleted', 'trash', 'hidden' ), true ) )
+            if ( $finding['target_type'] === 'object' && !in_array( $finding['kind'], array( 'deleted', 'trash', 'hidden', 'unavailable' ), true ) )
                 $targetObjectIDs[$finding['target_id']] = true;
         }
         $db = eZDB::instance();
@@ -472,6 +493,13 @@ class expContentCheckBrokenRelations
             $finding['class_name'] = isset( $classNames[$finding['class_id']] ) ? $classNames[$finding['class_id']] : '';
             $finding['field_name'] = isset( $fieldNames[$finding['attribute_id']] ) ? $fieldNames[$finding['attribute_id']] : '';
             $finding['target_name'] = $finding['target_type'] === 'object' && isset( $targetNames[$finding['target_id']] ) ? $targetNames[$finding['target_id']] : '';
+            // a target the user may not read: neither its id nor whether it was an object or a node
+            if ( $finding['kind'] === 'unavailable' )
+            {
+                $finding['target_id'] = 0;
+                $finding['target_type'] = '';
+                $finding['target_name'] = '';
+            }
             $finding['can_edit'] = !empty( $canEdit[$finding['source_id']] );
             $described[] = $finding;
         }
