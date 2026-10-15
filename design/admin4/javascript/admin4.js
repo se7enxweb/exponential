@@ -100,7 +100,15 @@
         });
     }
 
-    function disclosure(button, panel) {
+    // the choices of a panel that holds buttons (uiswitch/choices.tpl): its buttons and links, as shown
+    function choices(panel) {
+        return Array.prototype.filter.call(panel.querySelectorAll('a[href], button:not([disabled])'), function (a) {
+            return a.offsetParent !== null;
+        });
+    }
+
+    function disclosure(button, panel, list) {
+        var items = list || links;
         if (!button || !panel) return;
         button.addEventListener('click', function () {
             setOpen(button, panel, button.getAttribute('aria-expanded') !== 'true', false);
@@ -109,11 +117,11 @@
             if (e.key !== 'ArrowDown') return;
             e.preventDefault();
             setOpen(button, panel, true, false);
-            var first = links(panel)[0];
+            var first = items(panel)[0];
             if (first) first.focus();
         });
         panel.addEventListener('keydown', function (e) {
-            var list = links(panel), i = list.indexOf(document.activeElement), next = null;
+            var list = items(panel), i = list.indexOf(document.activeElement), next = null;
             if (e.key === 'ArrowDown') next = list[Math.min(list.length - 1, i + 1)];
             else if (e.key === 'ArrowUp') next = i <= 0 ? null : list[i - 1];
             else if (e.key === 'Home') next = list[0];
@@ -238,6 +246,15 @@
         overflowMenu();
         disclosure(document.getElementById('a4-user-toggle'), document.getElementById('a4-user-menu'));
         siteMenu();
+        // any other disclosure (uiswitch/choices.tpl): a hidden button[data-a4-disclosure] with aria-controls; the
+        // script shows the button and closes its panel, which stays open without the script
+        Array.prototype.forEach.call(document.querySelectorAll('button[data-a4-disclosure][aria-controls]'), function (button) {
+            var panel = document.getElementById(button.getAttribute('aria-controls'));
+            if (!panel) return;
+            button.hidden = false;
+            panel.hidden = true;
+            disclosure(button, panel, choices);
+        });
     }
 
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);

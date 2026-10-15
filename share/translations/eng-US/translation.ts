@@ -63302,6 +63302,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Package remove</source>
         <translation>Package remove</translation>
     </message>
+    <message>
+        <source>Interface switch change</source>
+        <translation>Interface switch change</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard</name>
@@ -67607,6 +67611,55 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Administration</source>
         <translation>Administration</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/uiswitch</name>
+    <message>
+        <source>Interface</source>
+        <translation>Interface</translation>
+    </message>
+    <message>
+        <source>Interface language</source>
+        <translation>Interface language</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/toolbar/uiswitch</name>
+    <message>
+        <source>Interface</source>
+        <translation>Interface</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/uiswitch</name>
+    <message>
+        <source>The interface was not changed</source>
+        <translation>The interface was not changed</translation>
+    </message>
+    <message>
+        <source>A change is only accepted from the form of the toolbar.</source>
+        <translation>A change is only accepted from the form of the toolbar.</translation>
+    </message>
+    <message>
+        <source>The request came from another site.</source>
+        <translation>The request came from another site.</translation>
+    </message>
+    <message>
+        <source>This choice is not offered here.</source>
+        <translation>This choice is not offered here.</translation>
+    </message>
+    <message>
+        <source>This choice is not available on this site.</source>
+        <translation>This choice is not available on this site.</translation>
+    </message>
+    <message>
+        <source>You are not allowed to make this choice.</source>
+        <translation>You are not allowed to make this choice.</translation>
+    </message>
+    <message>
+        <source>Back to the dashboard</source>
+        <translation>Back to the dashboard</translation>
     </message>
 </context>
 </TS>

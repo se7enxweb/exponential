@@ -55609,6 +55609,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Package remove</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Interface switch change</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/state/assign</name>
@@ -57142,6 +57146,55 @@ You will need to change the class of the node by using the swap functionality.</
     <name>design/admin/user/deactivate</name>
     <message>
         <source>Roles are assigned to the group of deactivated users, so the accounts moved into it would get them. Remove those role assignments first. Nothing was changed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>kernel/uiswitch</name>
+    <message>
+        <source>Interface</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Interface language</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/toolbar/uiswitch</name>
+    <message>
+        <source>Interface</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/uiswitch</name>
+    <message>
+        <source>The interface was not changed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A change is only accepted from the form of the toolbar.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The request came from another site.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This choice is not offered here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This choice is not available on this site.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You are not allowed to make this choice.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back to the dashboard</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

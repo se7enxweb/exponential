@@ -2850,6 +2850,71 @@ div#contentstructure ul#content_tree_menu ul a.openclose-close::after {
   white-space: nowrap;
 }
 
+/* The interface choices (toolbar/full/admin_ui_switch.tpl, uiswitch/choices.tpl): per provider its name, then a
+   disclosure button with the current choice (a chevron after it, turned while open) and below it the list of the
+   choices, each a full-width submit button at least 24px high (WCAG 2.5.8); the current one in the accent tint with
+   the bar on its left, as the tree's current node. Without the script the button stays hidden and the list open. */
+.a4-uiswitch-provider { display: grid; gap: var(--a4-space-1); padding-block: var(--a4-space-1); }
+.a4-uiswitch-label { color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-uiswitch-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--a4-space-2);
+  width: 100%;
+  min-height: var(--a4-control-h);
+  padding: 0 var(--a4-space-2);
+  border: 1px solid var(--a4-field-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  color: var(--a4-ink);
+  font-family: inherit;
+  font-size: var(--a4-text-s);
+  text-align: start;
+  cursor: pointer;
+}
+.a4-uiswitch-toggle[hidden] { display: none; }
+.a4-uiswitch-toggle::after {
+  content: "";
+  flex: none;
+  width: .45em;
+  height: .45em;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-25%) rotate(45deg);
+}
+.a4-uiswitch-toggle[aria-expanded="true"]::after { transform: translateY(25%) rotate(-135deg); }
+.a4-uiswitch-toggle:hover { border-color: var(--a4-line-strong); background-color: var(--a4-soft); }
+.a4-uiswitch-menu { margin: 0; }
+.a4-uiswitch-menu[hidden] { display: none; }
+.a4-uiswitch-list { display: grid; gap: 2px; margin: 0; padding: 0; list-style: none; }
+.a4-uiswitch-list li { margin: 0; padding: 0; }
+.a4-uiswitch-option {
+  display: block;
+  width: 100%;
+  min-height: var(--a4-space-5);
+  padding: var(--a4-space-1) var(--a4-space-2);
+  border: 0;
+  border-radius: var(--a4-radius-s);
+  background-color: transparent;
+  color: var(--a4-ink);
+  font-family: inherit;
+  font-size: var(--a4-text-s);
+  text-align: start;
+  cursor: pointer;
+}
+.a4-uiswitch-option:hover { background-color: var(--a4-soft); }
+.a4-uiswitch-option[aria-current="true"] {
+  background-color: var(--a4-accent-soft);
+  box-shadow: inset 3px 0 0 var(--a4-accent);
+  color: var(--a4-accent-text);
+  font-weight: 600;
+}
+@media (forced-colors: active) {
+  .a4-uiswitch-toggle { border: 1px solid ButtonText; }
+  .a4-uiswitch-option[aria-current="true"] { outline: 2px solid Highlight; outline-offset: -2px; }
+}
+
 /* The content tree: rows 24px apart at the small and medium column sizes (a 20px line and the item's 4px below it),
    the smallest spacing WCAG 2.5.8 allows for its links and the 20px open/close areas; a larger font (the "Large"
    column size) gets a line of 1.25em instead. The connector elbow, the open/close symbol and the class icon sit on

@@ -70851,6 +70851,10 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Package remove</source>
         <translation>Paket entfernt</translation>
     </message>
+    <message>
+        <source>Interface switch change</source>
+        <translation>Oberflächenauswahl geändert</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard</name>
@@ -74194,6 +74198,55 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Administration</source>
         <translation>Administration</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/uiswitch</name>
+    <message>
+        <source>Interface</source>
+        <translation>Oberfläche</translation>
+    </message>
+    <message>
+        <source>Interface language</source>
+        <translation>Sprache der Oberfläche</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/toolbar/uiswitch</name>
+    <message>
+        <source>Interface</source>
+        <translation>Oberfläche</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/uiswitch</name>
+    <message>
+        <source>The interface was not changed</source>
+        <translation>Die Oberfläche wurde nicht geändert</translation>
+    </message>
+    <message>
+        <source>A change is only accepted from the form of the toolbar.</source>
+        <translation>Eine Änderung wird nur über das Formular der Werkzeugleiste angenommen.</translation>
+    </message>
+    <message>
+        <source>The request came from another site.</source>
+        <translation>Die Anfrage kam von einer anderen Website.</translation>
+    </message>
+    <message>
+        <source>This choice is not offered here.</source>
+        <translation>Diese Auswahl wird hier nicht angeboten.</translation>
+    </message>
+    <message>
+        <source>This choice is not available on this site.</source>
+        <translation>Diese Auswahl ist auf dieser Website nicht verfügbar.</translation>
+    </message>
+    <message>
+        <source>You are not allowed to make this choice.</source>
+        <translation>Sie dürfen diese Auswahl nicht treffen.</translation>
+    </message>
+    <message>
+        <source>Back to the dashboard</source>
+        <translation>Zurück zum Dashboard</translation>
     </message>
 </context>
 </TS>
