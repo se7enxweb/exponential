@@ -340,6 +340,9 @@ class eZTemplateCompiler
             $cacheFileKey = $key . '-' . $language;
         else
             $cacheFileKey = $key . '-' . $internalCharset . '-' . $language . '-' . $useFullUrlText . $accessText . "-" . $pageLayoutVariable . '-' . eZSys::indexFile();
+        // the signed-in user's interface choices (expUISwitch: another design, ...); only when one is applied
+        if ( !empty( $GLOBALS['expUISwitchVariantKey'] ) )
+            $cacheFileKey .= '-' . $GLOBALS['expUISwitchVariantKey'];
 
         $cacheFileName = $extraName . md5( $cacheFileKey ) . '.php';
         return $cacheFileName;

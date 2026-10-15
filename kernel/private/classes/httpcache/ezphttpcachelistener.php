@@ -393,6 +393,10 @@ class ezpHttpCacheListener
         // address, not a language
         if ( !empty( $GLOBALS['eZCurrentAccess']['vary'] ) )
             return 'varies by ' . $GLOBALS['eZCurrentAccess']['vary'];
+        // The page was rendered with the user's own interface choices (expUISwitch: another interface language,
+        // ...); the role context it would be kept for is shared with users who did not choose them
+        if ( !empty( $GLOBALS['expUISwitchVariantKey'] ) )
+            return 'ui switch';
         foreach ( headers_list() as $h )
         {
             // A cookie set for this response belongs to this visitor alone,

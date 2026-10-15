@@ -341,6 +341,11 @@ class eZNodeviewfunctions
 
         $cacheHashArray['access_path'] = eZSys::indexFile();
 
+        // the signed-in user's interface choices (expUISwitch: another interface language, ...); only when one is
+        // applied, so every other cache file keeps its name
+        if ( !empty( $GLOBALS['expUISwitchVariantKey'] ) )
+            $cacheHashArray['uiswitch'] = (string)$GLOBALS['expUISwitchVariantKey'];
+
         // Add access type to cache hash if current access is uri type (so uri and host doesn't share cache)
         if ( strpos( $viewCacheTweak, 'ignore_siteaccess_type' ) === false && $GLOBALS['eZCurrentAccess']['type'] === eZSiteAccess::TYPE_URI )
         {

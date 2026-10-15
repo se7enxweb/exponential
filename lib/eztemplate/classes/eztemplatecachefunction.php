@@ -116,15 +116,21 @@ class eZTemplateCacheFunction
             $newNodes[] = eZTemplateNodeTool::createVariableNode( false, $keysData, false, array(), 'cacheKeys' );
             $newNodes[] = eZTemplateNodeTool::createVariableNode( false, $subtreeExpiryData, false, array(), 'subtreeExpiry' );
 
-            $code = "\$cacheKeys = array( \$cacheKeys, $placementKeyStringText, $accessNameText );\n";
+            // The UI switch variant (expUISwitch, e.g. another interface language) is read at run time and only
+            // joins the key when a switch is applied, so the keys of everybody else stay as they were.
+            $code = "\$cacheKeys = array( \$cacheKeys, $placementKeyStringText, $accessNameText . ( empty( \$GLOBALS['expUISwitchVariantKey'] ) ? '' : '-' . \$GLOBALS['expUISwitchVariantKey'] ) );\n";
             $cachePathText = "\$cachePath";
         }
         else
         {
             $nodeID = $subtreeValue ? eZTemplateCacheBlock::decodeNodeID( $subtreeValue ) : false;
             $cachePath = eZTemplateCacheBlock::cachePath( eZTemplateCacheBlock::keyString( array( $placementKeyString, $accessName ) ), $nodeID );
-            $code = "";
-            $cachePathText = eZPHPCreator::variableText( $cachePath, 0, 0, false );
+            $placementKeyStringText = eZPHPCreator::variableText( $placementKeyString, 0, 0, false );
+            $accessNameText = eZPHPCreator::variableText( $accessName, 0, 0, false );
+            $nodeIDText = var_export( $nodeID, true );
+            $code = "\$cachePath = empty( \$GLOBALS['expUISwitchVariantKey'] ) ? " . eZPHPCreator::variableText( $cachePath, 0, 0, false ) .
+                    " : eZTemplateCacheBlock::cachePath( eZTemplateCacheBlock::keyString( array( $placementKeyStringText, $accessNameText . '-' . \$GLOBALS['expUISwitchVariantKey'] ) ), $nodeIDText );\n";
+            $cachePathText = "\$cachePath";
         }
 
         $newNodes[] = eZTemplateNodeTool::createCodePieceNode( $code );
@@ -241,6 +247,9 @@ class eZTemplateCacheFunction
         $accessName = false;
         if ( isset( $GLOBALS['eZCurrentAccess']['name'] ) )
             $accessName = $GLOBALS['eZCurrentAccess']['name'];
+        // the UI switch variant, as in the compiled code
+        if ( !empty( $GLOBALS['expUISwitchVariantKey'] ) )
+            $accessName .= '-' . $GLOBALS['expUISwitchVariantKey'];
         if ( $keys === null )
         {
             $keyArray = array( $placementString, $accessName );

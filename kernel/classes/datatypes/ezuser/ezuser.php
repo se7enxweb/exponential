@@ -1465,6 +1465,9 @@ WHERE user_id = '" . $userID . "' AND
         // the password stamp of the sign-in that ends (expPasswordPolicy::stampSession())
         if ( eZSession::hasStarted() )
             eZSession::unsetkey( 'eZUserPasswordStamp', false );
+        // the interface choices of the sign-in that ends (expUISwitch::SESSION_VARIABLE)
+        if ( eZSession::hasStarted() )
+            eZSession::unsetkey( 'expUISwitch', false );
 
         // Clear current basket if necessary
         $db = eZDB::instance();

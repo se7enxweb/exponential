@@ -102,6 +102,7 @@ class expAuditTaxonomy
         'access.user.lock' => array( 'severity' => 'warning', 'default' => 'on', 'channel' => 'access' ),
         'access.user.unlock' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'access' ),
         'access.permission.refused' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'access' ),
+        'access.uiswitch.change' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'access', 'label' => 'Interface switch change' ),
         'access.token.refused' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'access' ),
         'access.view.sensitive' => array( 'severity' => 'info', 'default' => 'always', 'channel' => 'access' ),
         'access.user.create' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'access' ),

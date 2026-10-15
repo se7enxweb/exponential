@@ -2166,6 +2166,7 @@ only with `Reads=enabled`).
 | `access.user.lock` | failed logins reach `[UserSettings] MaxNumberOfFailedLogin` | attempts → attempts, enabled | `datatypes/ezuser/ezuser.php:setFailedLoginAttempts` | lock | warning | on | yes | access | at once |
 | `access.user.unlock` | the failed-login counter is reset by an administrator | attempts → 0 | `datatypes/ezuser/ezuser.php:setFailedLoginAttempts` | unlock | notice | on | yes | access | at once |
 | `access.permission.refused` | a module view is refused by policy | – → the policy asked (module/function), limitation that failed | `lib/ezutils/classes/ezmodule.php:handleError` | access | notice | on | yes | access | at once |
+| `access.uiswitch.change` | a signed-in user changes an interface choice of the administration (uiswitch/set: the display language, ...) | value, siteaccess → value, siteaccess; target the provider | `classes/uiswitch/expuiswitch.php:set` | update | info | on | yes | access | at once |
 | `access.token.refused` | a POST is refused for a missing or wrong form token | post · module/view | `ezpkernelweb.php:formTokenRefusalResult` | post | notice | on | yes | access | at once |
 | `access.view.sensitive` | a view of setup, role, user or audit is opened (Z6 "always") | – (never POST bodies) | `ezpkernelweb.php:auditSensitiveView` | read | info | always | yes | access | at once |
 | `access.user.create` | a user account is created | – → login, email (privacy rules), groups | `datatypes/ezuser/ezuser.php:auditStore` | create | notice | on | yes | access | at once |

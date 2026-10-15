@@ -1653,6 +1653,18 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
             );
         }
 
+        // The signed-in user's interface choices (the display language, ...): after the session start, before the
+        // locale, the translations, the design and any template are set up. beginRequest() forgets the request
+        // before (persistent Velocity workers). class_exists: a worker started before the class was added.
+        if ( class_exists( 'expUISwitch' ) )
+        {
+            expUISwitch::beginRequest();
+            // not in the setup wizard (no session, no database); db-required follows the session handler here
+            // (false for file sessions), and the user check opens the database when it needs it
+            if ( $this->siteBasics['session-required'] && empty( $this->siteBasics['validity-check-required'] ) )
+                expUISwitch::applyRequest();
+        }
+
         // pre check, RequireUserLogin & FORCE_LOGIN related so needs to be after session init
         if ( !isset( $this->check ) )
         {
