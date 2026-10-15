@@ -1,6 +1,8 @@
 {* The header search: the field, the search button and the scope popup (section, where to search, advanced search).
    Included twice by page_topmenu.tpl, in the header and in the narrow screen menu: $search_box ('' or '-mobile')
-   keeps the ids of the two copies apart, and the script works on the copy it belongs to, never on an id. *}
+   keeps the ids of the two copies apart, and the script works on the copy it belongs to, never on an id.
+   $search_sections: the sections of the popup, fetched once by page_topmenu.tpl before both copies; a page that
+   includes this template without it gets them fetched here. *}
 {def $search_node_id = first_set( $search_subtree_array[0], $module_result.path[0].node_id, 1 )
      $search_title = "Search in all content"|i18n( 'design/admin/pagelayout' )
      $section_id = -1
@@ -17,7 +19,18 @@
         <button id="searchbutton{$box}" class="searchbuttonfield disabled" name="SearchButton" type="submit" value="{'Search'|i18n( 'design/admin/pagelayout' )}" disabled="disabled" title="{'Search'|i18n( 'design/admin/pagelayout' )}"><span class="hide">{'Search'|i18n( 'design/admin/pagelayout' )}</span></button>
     {else}
         {if $search_node_id|gt( 1 )}
-            {set $search_title = "Search in '%node'"|i18n( 'design/admin/pagelayout',, hash( '%node', fetch( 'content', 'node', hash( 'node_id', $search_node_id ) ).name ) )}
+            {* The name from the page's path when the node is on it; only a node elsewhere is fetched *}
+            {def $search_node_name = false()}
+            {if is_set( $module_result.path )}
+                {foreach $module_result.path as $search_path_item}
+                    {if and( is_set( $search_path_item.node_id ), eq( $search_path_item.node_id, $search_node_id ) )}{set $search_node_name = $search_path_item.text}{/if}
+                {/foreach}
+            {/if}
+            {if $search_node_name|not}
+                {set $search_node_name = fetch( 'content', 'node', hash( 'node_id', $search_node_id ) ).name}
+            {/if}
+            {set $search_title = "Search in '%node'"|i18n( 'design/admin/pagelayout',, hash( '%node', $search_node_name ) )}
+            {undef $search_node_name}
         {/if}
         {def $disabled = false()
              $nd = 1
@@ -51,7 +64,8 @@
         <button id="searchbutton{$box}" class="searchbuttonfield" name="SearchButton" type="submit" value="{'Search'|i18n( 'design/admin/pagelayout' )}" title="{'Search'|i18n( 'design/admin/pagelayout' )}"><span class="hide">{'Search'|i18n( 'design/admin/pagelayout' )}</span></button>
         {if eq( $ui_context, 'browse' )}
             <input name="Mode" type="hidden" value="browse" />
-            <input name="BrowsePageLimit" type="hidden" value="{min( ezpreference( 'admin_list_limit' ), 3)|choose( 10, 10, 25, 50 )}" />
+            {* the user's list size, never more than the search gives (site.ini [SearchSettings] MaximumSearchLimit) *}
+            <input name="BrowsePageLimit" type="hidden" value="{min( min( ezpreference( 'admin_list_limit' ), 3 )|choose( 10, 10, 25, 50 ), ezini( 'SearchSettings', 'MaximumSearchLimit' ) )}" />
         {/if}
 
         <div class="searchscope-pane" id="searchscope-pane{$box}" role="dialog" aria-label="{'Search scope'|i18n( 'design/admin/pagelayout' )}" hidden="hidden">
@@ -63,7 +77,8 @@
                 <label class="searchscope-section">{'Section'|i18n( 'design/admin/pagelayout' )}
                 <select name="SectionID"{if $disabled} disabled="disabled"{/if}>
                     <option value="-1">{'All'|i18n( 'design/admin/pagelayout' )}</option>
-                    {foreach fetch( 'section', 'list' ) as $section}
+                    {if is_set( $search_sections )|not}{def $search_sections = fetch( 'section', 'list' )}{/if}
+                    {foreach $search_sections as $section}
                     <option value="{$section.id}"{if eq( $section.id, $section_id )} selected="selected"{/if}>{$section.name|wash()}</option>
                     {/foreach}
                 </select>

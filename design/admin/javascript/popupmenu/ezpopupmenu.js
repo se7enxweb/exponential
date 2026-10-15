@@ -188,7 +188,7 @@ function _setSubstituteValue( key, value )
    'event' This parameter is for the mouse event.
    'menuID' is the identification of the menu to use.
    'substituteValues' is an associative array. The string value of each item in the menu will have they keys, substituted by the value in this array.
-   'menuHeader' If the menu has a header it is replaced with this value.
+   'menuHeader' If the menu has a header it is replaced with this text (plain text, not markup).
    'disableID' If this id is found in the list of known disabled for this menu the item is disabled.
  */
 function _showTopLevel( event, menuID, substituteValues, menuHeader, disableIDList, disableMenuID )
@@ -266,9 +266,29 @@ function _makeVisible( menuID )
     VisibleMenus[menuArray[menuID]['depth']] = menuID;
     _decorate( menuID );
 
-    document.getElementById( menuID ).onmouseover = function() { document.onmousedown = null; }
-    document.getElementById( menuID ).onmouseout = function() { document.onmousedown = _hideAll; }
-    document.onmousedown = _hideAll;
+    _listenForOutsideClicks();
+}
+
+/*!
+  A press of the mouse outside every shown menu hides them all. The listener is added once, beside any other
+  mousedown handler of the page (an assignment to document.onmousedown replaced the page's own), and does nothing
+  while no menu is shown.
+*/
+var OutsideClickListening = false;
+function _listenForOutsideClicks()
+{
+    if ( OutsideClickListening || !document.addEventListener ) return;
+    OutsideClickListening = true;
+    document.addEventListener( 'mousedown', function( e )
+    {
+        if ( !VisibleMenus[0] || VisibleMenus[0] == 'none' ) return;
+        for ( var i = 0, l = VisibleMenus.length; i < l && VisibleMenus[i] != 'none'; i++ )
+        {
+            var menu = document.getElementById( VisibleMenus[i] );
+            if ( menu && e.target && menu.contains( e.target ) ) return;
+        }
+        _hideAll();
+    }, false );
 }
 
 /*!
@@ -301,30 +321,7 @@ function _doItemSubstitution( menuID, menuHeader )
 
         if ( loopingVariable )
         {
-            var content = '';
-
-            for ( var localVariableIndex in CurrentSubstituteValues[loopingVariable] )
-            {
-                var localVariable = CurrentSubstituteValues[loopingVariable][localVariableIndex];
-                if ( typeof localVariable != 'object' )
-                    continue;
-
-                var partialContent = menuArray[menuID]['elements'][i]['content'];
-                for ( var substItem in CurrentSubstituteValues )
-                {
-                    if ( typeof CurrentSubstituteValues[substItem] != 'object' && typeof CurrentSubstituteValues[substItem] != 'function' )
-                    {
-                        partialContent = partialContent.replace( substItem, CurrentSubstituteValues[substItem] );
-                    }
-                }
-                for ( var localItem in localVariable )
-                {
-                    partialContent = partialContent.replace( '%' + localItem + '%', localVariable[localItem] );
-                }
-                content += partialContent;
-            }
-
-            hrefElement.innerHTML = content;
+            _fillItems( hrefElement, menuArray[menuID]['elements'][i]['content'], CurrentSubstituteValues[loopingVariable] );
         }
 
         var disabledForElement = false;
@@ -367,12 +364,87 @@ function _doItemSubstitution( menuID, menuHeader )
         }
     }
 
-    // set header
+    // set header: the header is text (a node or class name), never markup
     if ( menuHeader && typeof( menuArray[menuID]['headerID'] ) != 'undefined' )
     {
         var header = document.getElementById( menuArray[menuID]['headerID'] );
-        if ( header ) header.innerHTML = menuHeader;
+        if ( header ) header.textContent = String( menuHeader );
     }
+}
+
+/*!
+  Fills element with one copy of the item markup 'content' (the menu template's own markup) per entry of the
+  looping variable (%languages%, %classList%). The values - the entry's own (%name%, %locale%, %classID%) and the
+  plain values of the menu (%nodeID%, ...) - are data: they are put into the parsed copy as text and as attribute
+  values, escaped for a script in an event handler attribute, so a language or class name never becomes markup.
+ */
+function _fillItems( element, content, entries )
+{
+    while ( element.firstChild ) element.removeChild( element.firstChild );
+    if ( !content ) return;
+    for ( var index in entries )
+    {
+        var entry = entries[index];
+        if ( typeof entry != 'object' || entry === null )
+            continue;
+
+        var values = {};
+        for ( var localItem in entry )
+        {
+            values['%' + localItem + '%'] = entry[localItem];
+        }
+        for ( var substItem in CurrentSubstituteValues )
+        {
+            if ( typeof CurrentSubstituteValues[substItem] != 'object' && typeof CurrentSubstituteValues[substItem] != 'function' )
+            {
+                values[substItem] = CurrentSubstituteValues[substItem];
+            }
+        }
+
+        var holder = document.createElement( 'div' );
+        holder.innerHTML = content;
+        _fillNodes( holder, values );
+        while ( holder.firstChild ) element.appendChild( holder.firstChild );
+    }
+}
+
+function _fillNodes( parent, values )
+{
+    for ( var node = parent.firstChild; node; node = node.nextSibling )
+    {
+        if ( node.nodeType === 3 )
+        {
+            node.nodeValue = _fillString( node.nodeValue, values, false );
+        }
+        else if ( node.nodeType === 1 )
+        {
+            for ( var a = 0; a < node.attributes.length; a++ )
+            {
+                var name = node.attributes[a].name, value = node.attributes[a].value;
+                var filled = _fillString( value, values, /^on/i.test( name ) );
+                if ( filled !== value ) node.setAttribute( name, filled );
+            }
+            _fillNodes( node, values );
+        }
+    }
+}
+
+// Every placeholder of values in text, in one pass (a value that holds a placeholder stays as it is); in a script
+// (an event handler attribute) as the content of a string literal.
+function _fillString( text, values, inScript )
+{
+    var keys = [];
+    for ( var key in values )
+    {
+        if ( text.indexOf( key ) !== -1 ) keys.push( key.replace( /[.*+?^${}()|[\]\\]/g, '\\$&' ) );
+    }
+    if ( !keys.length ) return text;
+    keys.sort( function( x, y ) { return y.length - x.length; } );
+    return text.replace( new RegExp( keys.join( '|' ), 'g' ), function( key )
+    {
+        var value = String( values[key] );
+        return inScript ? JSON.stringify( value ).slice( 1, -1 ).replace( /'/g, "\\'" ) : value;
+    } );
 }
 
 function _substituteString( replaceString, substituteValues )
@@ -450,8 +522,8 @@ function _moveSubLevelOnScreen( menuID, alignItem )
     var menuElement = document.getElementById( menuID ), screenData = _getScreenProperties();
     var newX = 0; var newY = 0;
 
-    alignElement = document.getElementById( alignItem );
-    parentElement = document.getElementById( VisibleMenus[menuArray[menuID]['depth'] - 1] );
+    var alignElement = document.getElementById( alignItem );
+    var parentElement = document.getElementById( VisibleMenus[menuArray[menuID]['depth'] - 1] );
 
     if ( alignElement && parentElement )
     {
@@ -467,7 +539,8 @@ function _moveSubLevelOnScreen( menuID, alignItem )
         newY = screenData.ScrollY;
 
     // compensate if we are to the right of the screen
-    if ( ( screenData.ScrollX + screenData.Width ) < ( newX + menuElement.offsetWidth ) )
+    // (without its parent menu the submenu stays where it is: there is no side to move it to)
+    if ( parentElement && ( screenData.ScrollX + screenData.Width ) < ( newX + menuElement.offsetWidth ) )
     {
         newX = parseInt( parentElement.style.left ) + EZPOPMENU_SUBOFFSET - menuElement.offsetWidth;
     }
@@ -479,7 +552,7 @@ function _moveSubLevelOnScreen( menuID, alignItem )
 }
 
 /*!
-  Submit the form with id formID. All fields of type hidden will have the texts %nodeID%
+  Submit the form with id formID. All fields of type hidden, and the form's action, will have the texts %nodeID%
   and %objectID% replaced with the corresponding real values.
 */
 function _submitForm( formID, customSubstitute )
@@ -487,6 +560,18 @@ function _submitForm( formID, customSubstitute )
     var formElement = document.getElementById( formID );
     if ( formElement )
     {
+        var action = formElement.getAttribute( 'action' );
+        if ( action && action.indexOf( '%' ) !== -1 )
+        {
+            // Numbers in a path (%nodeID%): each value is URL-encoded
+            var encoded = {};
+            for ( var key in CurrentSubstituteValues )
+            {
+                if ( typeof CurrentSubstituteValues[key] != 'object' && typeof CurrentSubstituteValues[key] != 'function' )
+                    encoded[key] = encodeURIComponent( String( CurrentSubstituteValues[key] ) );
+            }
+            formElement.setAttribute( 'action', _fillString( action, encoded, false ) );
+        }
         // for all children do replacement
         var children = formElement.childNodes,
             origValue = '', resetInputs = [];
@@ -518,6 +603,7 @@ function _submitForm( formID, customSubstitute )
 
         // restoring the form so that it gets correctly filled
         // if another click from the user occurs
+        if ( action ) formElement.setAttribute( 'action', action );
         for( var i = 0; i != resetInputs.length; i++ )
         {
             resetInputs[i].input.value = resetInputs[i].originalValue;
@@ -539,7 +625,6 @@ function _hide( id )
 */
 function _hideAll()
 {
-    document.onmousedown = null;
     _hideHigher( -1 );
     if ( MenuOpener ) MenuOpener.setAttribute( 'aria-expanded', 'false' );
 }

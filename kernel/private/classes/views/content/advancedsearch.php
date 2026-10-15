@@ -77,13 +77,13 @@ class Advancedsearch extends \Exponential\Runnable\ModuleView
         $originalSearchText = '';
         $phraseSearchText = '';
 
-        if ( !is_numeric( $Offset ) )
-            $Offset = 0;
+        // a negative offset makes the search engine fail
+        $Offset = is_numeric( $Offset ) ? max( 0, (int)$Offset ) : 0;
 
         $searchPageLimit = 2;
         if ( $http->hasVariable( 'SearchPageLimit' ) )
         {
-            $searchPageLimit = $http->variable( 'SearchPageLimit' );
+            $searchPageLimit = (int)$http->variable( 'SearchPageLimit' );
         }
 
         $pageLimit = pageLimit( $searchPageLimit );
@@ -92,63 +92,83 @@ class Advancedsearch extends \Exponential\Runnable\ModuleView
         if ( $pageLimit > $maximumSearchLimit )
             $pageLimit = $maximumSearchLimit;
 
-        if ( $http->hasVariable( 'PhraseSearchText' ) and trim( $http->variable( 'PhraseSearchText' ) ) != '' )
+        // The phrase and the words together are cut to site.ini [SearchSettings] MaximumSearchTextWords words and
+        // MaximumSearchTextLength characters: a very long text makes the search engine fail
+        list( $maximumWords, $maximumLength ) = Search::searchTextLimits( $ini );
+        $searchTextShortened = false;
+        if ( $http->hasVariable( 'PhraseSearchText' ) and is_string( $http->variable( 'PhraseSearchText' ) )
+             and trim( $http->variable( 'PhraseSearchText' ) ) != '' )
         {
-            $searchText = '"' . $http->variable( 'PhraseSearchText' ) . '"';
-            $phraseSearchText = $http->variable( 'PhraseSearchText' );
+            $phraseSearchText = Search::limitSearchText( $http->variable( 'PhraseSearchText' ), $maximumWords, $maximumLength );
+            $searchTextShortened = $phraseSearchText !== $http->variable( 'PhraseSearchText' );
+            $searchText = '"' . $phraseSearchText . '"';
         }
 
         $fullSearchText = '';
-        if ( $http->hasVariable( 'SearchText' ) )
+        if ( $http->hasVariable( 'SearchText' ) and is_string( $http->variable( 'SearchText' ) ) )
         {
-            if ( $searchText != '' )
+            $usedWords = $phraseSearchText !== '' ? count( preg_split( '/\s+/u', trim( $phraseSearchText ), -1, PREG_SPLIT_NO_EMPTY ) ?: array() ) : 0;
+            $originalSearchText = Search::limitSearchText( $http->variable( 'SearchText' ),
+                                                           $maximumWords - $usedWords,
+                                                           $maximumLength - mb_strlen( $searchText, 'UTF-8' ) );
+            if ( $originalSearchText !== $http->variable( 'SearchText' ) )
+                $searchTextShortened = true;
+            if ( $searchText != '' && $originalSearchText != '' )
                 $searchText .= ' ';
-            $originalSearchText = $http->variable( 'SearchText' );
             $searchText .= $originalSearchText;
-            $fullSearchText = $http->variable( 'SearchText' );
+            $fullSearchText = $originalSearchText;
         }
 
+        // Ids of the request are integers; a class, attribute, section or period that is not there is none
         $searchContentClassID = -1;
-        $searchContentClassAttributes = 0;
         $searchContentClassAttributeArray = array();
-        if ( $http->hasVariable( 'SearchContentClassID' ) and
-             $http->variable( 'SearchContentClassID' ) != -1 )
+        if ( $http->hasVariable( 'SearchContentClassID' ) )
         {
-            $searchContentClassID = $http->variable( 'SearchContentClassID' );
-            if ( (int) $searchContentClassID > 0 )
+            $searchContentClassID = self::classID( $http->variable( 'SearchContentClassID' ) );
+            if ( $searchContentClassID > 0 )
             {
-                $searchContentClass = \eZContentClass::fetch( (int) $searchContentClassID );
+                $searchContentClass = \eZContentClass::fetch( $searchContentClassID );
                 if ( is_object( $searchContentClass ) )
                     $searchContentClassAttributeArray = $searchContentClass->fetchSearchableAttributes();
+                else
+                    $searchContentClassID = -1;
             }
         }
 
         $searchContentClassAttributeID = -1;
-        if ( $http->hasVariable( 'SearchContentClassAttributeID' ) and
-             $http->variable( 'SearchContentClassAttributeID' ) != -1 )
+        if ( $http->hasVariable( 'SearchContentClassAttributeID' ) )
         {
-            $searchContentClassAttributeID = $http->variable( 'SearchContentClassAttributeID' );
+            $searchContentClassAttributeID = self::classAttributeID( $http->variable( 'SearchContentClassAttributeID' ),
+                                                                     $searchContentClassID,
+                                                                     $searchContentClassAttributeArray );
         }
 
         $searchDate = -1;
-        if ( $http->hasVariable( 'SearchDate' ) and
-             $http->variable( 'SearchDate' ) != -1 )
+        if ( $http->hasVariable( 'SearchDate' ) )
         {
-            $searchDate = $http->variable( 'SearchDate' );
+            $searchDate = self::searchDate( $http->variable( 'SearchDate' ) );
         }
 
         $searchTimestamp = false;
         if ( $http->hasVariable( 'SearchTimestamp' ) and
              $http->variable( 'SearchTimestamp' ) )
         {
-            $searchTimestamp = $http->variable( 'SearchTimestamp' );
+            $searchTimestamp = self::positiveID( $http->variable( 'SearchTimestamp' ) );
+            if ( $searchTimestamp < 1 )
+                $searchTimestamp = false;
         }
 
         $searchSectionID = -1;
-        if ( $http->hasVariable( 'SearchSectionID' ) and
-             $http->variable( 'SearchSectionID' ) != -1 )
+        $searchSection = null;
+        if ( $http->hasVariable( 'SearchSectionID' ) )
         {
-            $searchSectionID = $http->variable( 'SearchSectionID' );
+            $searchSectionID = self::positiveID( $http->variable( 'SearchSectionID' ) );
+            if ( $searchSectionID > 0 )
+            {
+                $searchSection = \eZSection::fetch( $searchSectionID );
+                if ( !$searchSection instanceof \eZSection )
+                    $searchSectionID = -1;
+            }
         }
 
         $subTreeArray = array();
@@ -165,14 +185,14 @@ class Advancedsearch extends \Exponential\Runnable\ModuleView
             foreach ( $subTreeList as $subTreeItem )
             {
                 // as form input is generally a string, is_int cannot be used for checking the value type
-                if ( is_numeric( $subTreeItem ) && $subTreeItem > 0  )
+                if ( is_numeric( $subTreeItem ) && (int)$subTreeItem > 0  )
                 {
-                    $subTreeArray[] = $subTreeItem;
+                    $subTreeArray[] = (int)$subTreeItem;
                 }
             }
         }
 
-        $Module->setTitle( "Search for: $searchText" );
+        $Module->setTitle( "Search for: " . htmlspecialchars( $searchText, ENT_QUOTES, 'UTF-8' ) );
 
         $classArray = \eZContentClass::fetchList( \eZContentClass::VERSION_STATUS_DEFINED, true, false, array( 'name' => 'asc' ) );
 
@@ -180,7 +200,11 @@ class Advancedsearch extends \Exponential\Runnable\ModuleView
 
         $searchArray = \eZSearch::buildSearchArray();
 
-        if ( $useSearchCode )
+        // The page itself, opened without anything to search for, runs no search: it would list every object
+        $searchRequested = self::hasCriteria( $searchText, $searchContentClassID, $searchSectionID, $searchDate, $searchArray );
+        $searchResult = Search::emptySearchResult();
+
+        if ( $useSearchCode && $searchRequested )
         {
             $searchResult = \eZSearch::search( $searchText, array( 'SearchSectionID' => $searchSectionID,
                                                                   'SearchContentClassID' => $searchContentClassID,
@@ -218,6 +242,8 @@ class Advancedsearch extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'search_timestamp', $searchTimestamp );
         $tpl->setVariable( 'search_sub_tree', $subTreeArray );
         $tpl->setVariable( 'search_text', $searchText );
+        $tpl->setVariable( 'search_text_shortened', $searchTextShortened );
+        $tpl->setVariable( 'search_requested', $searchRequested );
         $tpl->setVariable( 'search_page_limit', $searchPageLimit );
         $tpl->setVariable( 'full_search_text', $fullSearchText );
         $tpl->setVariable( 'phrase_search_text', $phraseSearchText );
@@ -291,10 +317,9 @@ class Advancedsearch extends \Exponential\Runnable\ModuleView
 
         if ( $searchSectionID != -1 )
         {
-            $section = \eZSection::fetch( $searchSectionID );
             $res = \eZTemplateDesignResource::instance();
             $keyArray = array( array( 'section', $searchSectionID ),
-                               array( 'section_identifier', $section->attribute( 'identifier' ) ) );
+                               array( 'section_identifier', $searchSection->attribute( 'identifier' ) ) );
             $res->setKeys( $keyArray );
         }
 
@@ -337,6 +362,103 @@ class Advancedsearch extends \Exponential\Runnable\ModuleView
         }
 
         return $this->viewResult( isset( $Result ) ? $Result : null, null );
+    }
+
+    /**
+     * An id of the request as a positive integer, or -1 for none (also for anything that is no number).
+     *
+     * @param mixed $value
+     * @return int
+     */
+    public static function positiveID( $value )
+    {
+        $id = is_scalar( $value ) ? (int)$value : 0;
+        return $id > 0 ? $id : -1;
+    }
+
+    /**
+     * The class of the request as a positive integer id, or -1 for none: a number is an id (positiveID()), a class
+     * identifier (article, folder ...) is looked up, as eZ Find always did with SearchContentClassID. Anything else,
+     * and an identifier that names no class, is -1.
+     *
+     * @param mixed $value
+     * @param callable|null $byIdentifier identifier => class id or false; defaults to eZContentClass::classIDByIdentifier()
+     * @return int
+     */
+    public static function classID( $value, $byIdentifier = null )
+    {
+        if ( !is_scalar( $value ) )
+            return -1;
+        $value = trim( (string)$value );
+        if ( preg_match( '/^[A-Za-z_][A-Za-z0-9_]*$/', $value ) )
+        {
+            $id = $byIdentifier ? $byIdentifier( $value ) : \eZContentClass::classIDByIdentifier( $value );
+            return is_scalar( $id ) && ctype_digit( (string)$id ) && (int)$id > 0 ? (int)$id : -1;
+        }
+        return self::positiveID( $value );
+    }
+
+    /**
+     * The period of the request (1 last day, 2 last week, 3 last month, 4 last three months, 5 last year), or -1.
+     *
+     * @param mixed $value
+     * @return int
+     */
+    public static function searchDate( $value )
+    {
+        $date = self::positiveID( $value );
+        return $date <= 5 ? $date : -1;
+    }
+
+    /**
+     * The class attribute to search in: with a class, one of its searchable attributes; without a class, a
+     * searchable attribute that exists. Anything else is -1 (all attributes). Before, an attribute that does not
+     * exist stopped the search with an error and one of another class gave no result.
+     *
+     * @param mixed $value the requested class attribute id
+     * @param int $classID the class searched, -1 for any
+     * @param array $classAttributes the searchable attributes of that class (objects or arrays with an id)
+     * @param callable|null $fetch class attribute id => eZContentClassAttribute or null, for a search without a
+     *                             class; defaults to eZContentClassAttribute::fetch()
+     * @return int
+     */
+    public static function classAttributeID( $value, $classID, array $classAttributes, $fetch = null )
+    {
+        $attributeID = self::positiveID( $value );
+        if ( $attributeID < 1 )
+            return -1;
+        if ( $classID > 0 )
+        {
+            foreach ( $classAttributes as $classAttribute )
+            {
+                $id = is_object( $classAttribute ) ? $classAttribute->attribute( 'id' ) : ( isset( $classAttribute['id'] ) ? $classAttribute['id'] : 0 );
+                if ( (int)$id === $attributeID )
+                    return $attributeID;
+            }
+            return -1;
+        }
+        if ( $fetch === null )
+            $fetch = function ( $id ) { return \eZContentClassAttribute::fetch( $id ); };
+        $classAttribute = call_user_func( $fetch, $attributeID );
+        if ( is_object( $classAttribute ) && $classAttribute->attribute( 'is_searchable' ) )
+            return $attributeID;
+        return -1;
+    }
+
+    /**
+     * Whether there is something to search for: a text, a class, a section, a period or an attribute search.
+     * Subtrees alone are not: they come along as hidden fields of the form.
+     *
+     * @param string $searchText
+     * @param int $classID
+     * @param int $sectionID
+     * @param int $searchDate
+     * @param array $searchArray eZSearch::buildSearchArray()
+     * @return bool
+     */
+    public static function hasCriteria( $searchText, $classID, $sectionID, $searchDate, array $searchArray )
+    {
+        return trim( (string)$searchText ) !== '' || $classID > 0 || $sectionID > 0 || $searchDate > 0 || count( $searchArray ) > 0;
     }
 }
 

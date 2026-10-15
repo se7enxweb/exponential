@@ -96,6 +96,39 @@ class AdminIconsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array(), $missing, 'icon.ini names files that are not in svg/' );
     }
 
+    /**
+     * The crystal themes that admin4 falls back to (AdditionalThemeList[]) and the classic designs use: every file
+     * icon.ini names is there in every size of [IconSettings] Sizes[] (a missing size is a broken image wherever that
+     * size is asked for), and every MimeMap key is one MIME type (type/subtype) or a top-level type alone
+     */
+    public function testEveryFileOfTheCrystalThemesIsThereInEverySize()
+    {
+        $problems = array();
+        foreach ( array( 'share/icons/crystal-admin', 'share/icons/crystal' ) as $theme )
+        {
+            $ini = (string)file_get_contents( self::root() . "/$theme/icon.ini" );
+            preg_match_all( '/^Sizes\[\w+\]=(\S+)\s*$/m', $ini, $sizes );
+            preg_match_all( '/^(?:Default|\w+Map\[[^\]]*\])=(\S+)\s*$/m', $ini, $files );
+            $this->assertNotEmpty( $sizes[1], "$theme: no sizes" );
+            foreach ( $sizes[1] as $size )
+            {
+                foreach ( array_unique( $files[1] ) as $file )
+                {
+                    if ( !is_file( self::root() . "/$theme/$size/$file" ) )
+                        $problems[] = "$theme/$size/$file";
+                }
+            }
+            preg_match_all( '/^MimeMap\[([^\]]*)\]=/m', $ini, $types );
+            foreach ( $types[1] as $type )
+            {
+                if ( !preg_match( '#^[a-z0-9][\w.+-]*(?:/[\w.+-]+)?$#i', $type ) )
+                    $problems[] = "$theme: MimeMap[$type] is not one MIME type or top-level type";
+            }
+        }
+        $this->assertMatchesRegularExpression( '/^ClassMap\[job\]=apps\/job\.png$/m', (string)file_get_contents( self::root() . '/share/icons/crystal-admin/icon.ini' ) );
+        $this->assertSame( array(), $problems, 'The crystal icon themes name files or types that do not exist' );
+    }
+
     public function testEveryUrlOfTheStylesheetsResolves()
     {
         $broken = array();

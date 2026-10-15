@@ -2,8 +2,8 @@ name: Quality
 
 # The checks of the git hooks (.githooks/), run for every push and pull request.
 # Blocking: PHP syntax (also every file with PHP 8.0, the oldest supported version,
-# and a boot smoke test on 8.0), the file manifest, commit messages, PHPStan and
-# the tests of the own sniffs.
+# and a boot smoke test on 8.0), JavaScript syntax of changed scripts (node --check),
+# the file manifest, commit messages, PHPStan and the tests of the own sniffs.
 # Warning only for now: the code style of changed files (phpcs.xml.dist).
 # See doc/features/6.0/quality-checks.md.
 
@@ -54,6 +54,20 @@ jobs:
           status=0
           for file in $(git diff --name-only --diff-filter=ACMR ${{ steps.range.outputs.base }} ${{ steps.range.outputs.head }} -- '*.php'); do
             php -l "$file" >/dev/null || status=1
+          done
+          exit $status
+
+      # Node 22 or later: it reads the syntax of an ES module in a .js file without a package.json
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: JavaScript syntax of changed files
+        run: |
+          status=0
+          for file in $(git diff --name-only --diff-filter=ACMR ${{ steps.range.outputs.base }} ${{ steps.range.outputs.head }} -- '*.js' ':!*.min.js'); do
+            node --check "$file" || status=1
           done
           exit $status
 

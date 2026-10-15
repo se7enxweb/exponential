@@ -17,7 +17,7 @@
 {def $path=concat( 'package/uninstall/', $package.name )}
 <form method="post" action={$path|ezurl}>
 {if is_set($error.description)}
-    <h3 class="a4-h3">{$error.description}</h3>
+    <h3 class="a4-h3">{$error.description|wash}</h3>
     {if is_set($error.actions)}
         <h4>{'Please choose action:'|i18n('design/standard/package')|break}</h4>
         <div class="optionslist">

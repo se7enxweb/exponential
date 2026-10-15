@@ -55,7 +55,8 @@
 <div class="a4-filterbar">
     <div class="a4-field a4-workflow-js-only" hidden>
         <label for="wfgroups-search">{'Find a group or workflow'|i18n( 'design/admin/workflow/grouplist' )}</label>
-        <input type="search" id="wfgroups-search" autocomplete="off" spellcheck="false" aria-controls="wfgroups-list" aria-describedby="wfgroups-filter-count" />
+        <input type="search" id="wfgroups-search" autocomplete="off" spellcheck="false" aria-controls="wfgroups-list" aria-describedby="wfgroups-filter-count{if $group_count|gt( $limit )} wfgroups-search-page{/if}" />
+        {if $group_count|gt( $limit )}<span class="a4-help" id="wfgroups-search-page">{'Only this page is searched: %from to %to of %count.'|i18n( 'design/admin/workflow/grouplist',, hash( '%from', sum( $view_parameters.offset, 1 ), '%to', min( sum( $view_parameters.offset, $limit ), $group_count ), '%count', $group_count ) )}</span>{/if}
     </div>
     <div class="a4-field">
         <span class="a4-help">{'Open a group to create workflows in it, change their order of events or remove them. Triggers connect a workflow to an operation.'|i18n( 'design/admin/workflow/grouplist' )}</span>

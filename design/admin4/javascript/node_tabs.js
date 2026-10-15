@@ -161,7 +161,7 @@ jQuery(function( $ )
         {
             if ( id.indexOf( 'node-tab-' ) === 0 )
             {
-                expireDate  = new Date();
+                var expireDate = new Date();
                 expireDate.setTime( expireDate.getTime() + 365 * 86400000 );
                 NodeTab.setCookie( 'adminNavigationTab', id.split('tab-')[1], expireDate );
             }
@@ -188,7 +188,9 @@ jQuery(function( $ )
     $('div.tab-block ul.tabs li a').on( 'click', NodeTab.click ).on( 'keydown', NodeTab.keydown );
     $('div.tab-block ul.tabs').each( function(){ NodeTab.aria( this ); } );
 
-    $('#maincontent-hide').on( 'click', NodeTab.toggleClick );
+    // Both states of the switch: the show link (#maincontent-show) followed its href before, a GET that changed
+    // the preference and reloaded the page; the script changes the id between the two.
+    $('a.show-hide-tabs').on( 'click', NodeTab.toggleClick );
     $('a.show-hide-tabs').on( 'keydown', function( e )
     {
         // role="button": Space presses it like Enter

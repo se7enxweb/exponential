@@ -106,7 +106,7 @@ var treeMenu;
         params.autoOpen       = {if ezini('TreeMenu','AutoopenCurrentNode','contentstructuremenu.ini')|eq('enabled')}true{else}false{/if};
 
         var i18n = {ldelim}{*
-            *}"expand":"{'Click on the icon to display a context-sensitive menu.'|i18n('design/admin/contentstructuremenu')|wash(xhtml)|wash(javascript)}",{*
+            *}"expand":"{'Click on the icon to display a context-sensitive menu.'|i18n('design/admin/contentstructuremenu')|wash(javascript)}",{*
             *}"node_id":"{'Node ID'|i18n('design/admin/contentstructuremenu')|wash(xhtml)|wash(javascript)}",{*
             *}"object_id":"{'Object ID'|i18n('design/admin/contentstructuremenu')|wash(xhtml)|wash(javascript)}",{*
             *}"visibility":"{'Visibility'|i18n('design/admin/contentstructuremenu')|wash(xhtml)|wash(javascript)}",{*

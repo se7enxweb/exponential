@@ -106,6 +106,9 @@
     });
     // another tab changed it: follow
     window.addEventListener('storage', function (e) { if (e.key === KEY) apply(e.newValue); });
+    // paper is light: print with the light tokens, then go back to the chosen mode
+    window.addEventListener('beforeprint', function () { root.setAttribute('data-a4-theme', 'light'); });
+    window.addEventListener('afterprint', function () { apply(root.getAttribute('data-a4-theme-choice')); });
 })();
 /* Normal or compact density: html[data-a4-density] from window.a4Pref (the eZPreference admin_density; localStorage
    "exp-admin4-density" on an anonymous page),
@@ -171,7 +174,6 @@
                         'debug.css',
                         'pagelayout.css',
                         'content.css',
-                        'responsive.css',
                         $admin_theme_css,
                         'theme/admin_datatable.css',
                         'admin4.css',

@@ -12,7 +12,7 @@
      $admin_theme          = ezpreference( 'admin_theme' )
      $left_size_hash       = 0
      $search_hash          = array( cond( ezhttp_hasvariable( 'SectionID', 'get' ), ezhttp( 'SectionID', 'get' ) ) )
-     $user_hash = concat( $current_user.role_id_list|implode( ',' ), ',', $current_user.limited_assignment_value_list|implode( ',' ) )
+     $user_hash = concat( $current_user.role_id_list|implode( ',' ), ',', $current_user.limited_assignment_value_list|implode( ',' ), ',', $current_user.is_logged_in|choose( 'anonymous', 'user' ) )
      $uri_cache_key        = $module_result.uri
 }
 {* Error pages can arrive with the same URI while their title and path name the error: key them

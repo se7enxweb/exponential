@@ -204,7 +204,7 @@
                         <div class="box-ml">
 
                             <h1 class="context-title"><a href={concat( '/class/view/', $object.contentclass_id )|ezurl} aria-haspopup="menu" aria-expanded="false"
-                                    onclick="ezpopmenu_showTopLevel( event, 'ClassMenu', ez_createAArray( new Array( '%classID%', {$object.contentclass_id},'%objectID%',{$object.id}, '%nodeID%', {if $node.node_id}{$node.node_id}{else}null{/if}, '%currentURL%','{$node.url|wash( javascript )}')), '{$object.content_class.name|wash(javascript)}', ['class-createnodefeed', 'class-removenodefeed' {if $node.node_id|is_null()}, 'class-history', 'url-alias'{/if}] ); return false;">{$object.content_class.identifier|class_icon( normal, $node.class_name )}</a>&nbsp;{$object.name|wash}&nbsp;[{$object.content_class.name|wash}]
+                                    onclick="ezpopmenu_showTopLevel( event, 'ClassMenu', ez_createAArray( new Array( '%classID%', {$object.contentclass_id},'%objectID%',{$object.id}, '%nodeID%', {if $node.node_id}{$node.node_id}{else}null{/if}, '%currentURL%','{$node.url|wash( javascript )|wash}')), '{$object.content_class.name|wash(javascript)|wash}', ['class-createnodefeed', 'class-removenodefeed' {if $node.node_id|is_null()}, 'class-history', 'url-alias'{/if}] ); return false;">{$object.content_class.identifier|class_icon( normal, $node.class_name )}</a>&nbsp;{$object.name|wash}&nbsp;[{$object.content_class.name|wash}]
                             </h1>
 
 
@@ -224,7 +224,7 @@
                                 </p>
                                 <p class="center full-screen">
                                     <a href={concat("content/versionview/",$object.id,"/",$view_version.version,"/",$language, "/site_access/", $siteaccess, $view_mode_uri)|ezurl}
-                                        target="_blank"><img src={"images/view-fullscreen.png"|ezdesign} /></a>
+                                        target="_blank"><img src={"images/view-fullscreen.png"|ezdesign} alt="{'Open the preview in a new window'|i18n( 'design/admin/content/view/versionview' )}" /></a>
                                 </p>
                                 <div class="break"></div>
                             </div>
@@ -278,7 +278,7 @@
                                             title="{'Publish the draft that is being displayed.'|i18n( 'design/admin/content/view/versionview' )}" />
 
                                         {if is_set( $redirect_uri )}
-                                            <input class="text" type="hidden" name="RedirectURI" value="{$redirect_uri}" />
+                                            <input class="text" type="hidden" name="RedirectURI" value="{$redirect_uri|wash}" />
                                         {/if}
                                         <input class="button" type="submit" name="BackButton"
                                             value="{'Back'|i18n( 'design/admin/content/view/versionview' )}" />

@@ -54,7 +54,7 @@ var confObj = {ldelim}
     editPrefixURL: {'/content/edit/'|ezurl},
     rowsPrPage: {$number_of_items},
     sortOrder: {$node.sort_order},
-    nameFilter: '{$view_parameters.namefilter}',
+    nameFilter: '{$view_parameters.namefilter|wash(javascript)}',
     defaultShownColumns: vcols,
     navigationPart: "{$section.navigation_part_identifier}",
     cookieName: "eZSubitemColumns",
@@ -179,7 +179,7 @@ var labelsObj = {ldelim}
     var createGroups = [
 
     {foreach $can_create_classes as $group}
-        "{$group.group_name}"
+        "{$group.group_name|wash(javascript)}"
         {delimiter}
         ,
         {/delimiter}

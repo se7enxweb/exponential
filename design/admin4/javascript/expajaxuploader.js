@@ -140,10 +140,20 @@
                 }
                 if (json.error_text) {
                     self.displayError(json.error_text);
-                } else {
-                    // the server URL-encodes the HTML of this answer (see ezjscServerFunctionsAjaxUploader::upload())
-                    self.setContent(decodeURIComponent(json.html));
+                    return;
                 }
+                // the server URL-encodes the HTML of this answer (see ezjscServerFunctionsAjaxUploader::upload());
+                // a malformed sequence (URIError) is an answer that is not the one expected
+                var html;
+                if (typeof json.html !== 'string') {
+                    self.displayError(self.conf.parseJSONErrorText);
+                    return;
+                }
+                try { html = decodeURIComponent(json.html); } catch (e) {
+                    self.displayError(self.conf.parseJSONErrorText);
+                    return;
+                }
+                self.setContent(html);
             },
             onFail: function (error) {
                 if (!current()) { return; }
@@ -201,11 +211,13 @@
             $c.find('label').removeClass(conf.labelErrorClass);
             $c.find('.' + conf.defaultValuedInputClass).val('');
             $c.find(conf.validationErrorTextElement).first().text('');
+            // added once: a second press (a step shown again, a refused submit) replaces them instead of doubling
+            $hiddenPlace.find('input[data-exp-uploader-field]').remove();
             self.handlerData().forEach(function (f) {
-                $hiddenPlace.append($('<input type="hidden">').attr('name', f.name).val(f.value));
+                $hiddenPlace.append($('<input type="hidden" data-exp-uploader-field="1">').attr('name', f.name).val(f.value));
             });
             if (conf.token) {
-                $hiddenPlace.append($('<input type="hidden" name="ezxform_token">').val(conf.token));
+                $hiddenPlace.append($('<input type="hidden" name="ezxform_token" data-exp-uploader-field="1">').val(conf.token));
             }
         });
 

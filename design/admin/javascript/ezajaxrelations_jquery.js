@@ -3,9 +3,9 @@ jQuery(function( $ )
     // Attache click event to search button and show input fields
     $('input.ezobject-relation-search-btn').on( 'click', _search ).removeClass('hide');
 
-    // Attache key press event to catch enter and show input fields
-    $('input.ezobject-relation-search-text').on( 'keypress', function( e ){
-        if ( e.which == 13 )
+    // Enter in the search field searches (keydown and e.key: keypress and e.which are deprecated); show the fields
+    $('input.ezobject-relation-search-text').on( 'keydown', function( e ){
+        if ( e.key === 'Enter' && !e.isComposing )
         {
             return _search.call( this, e );
         }
@@ -58,13 +58,22 @@ jQuery(function( $ )
             }
             else
             {
-                var html = '<p class="ezobjectrelation-search-empty-result">' + $('#ezobjectrelation-search-empty-result-text').html().replace( '--search-string--', '<em>' + data.content.SearchString + '<\/em>' ) + '<\/p>';
-                boxElem.html( html ).show();
+                // The message is the template's markup; the search string goes in as text.
+                var parts = $('#ezobjectrelation-search-empty-result-text').html().split( '--search-string--' ),
+                    message = $( '<p class="ezobjectrelation-search-empty-result"><\/p>' );
+                for ( var k = 0; k < parts.length; k++ )
+                {
+                    if ( k > 0 ) message.append( $( '<em><\/em>' ).text( data.content.SearchString ) );
+                    message.append( parts[k] );
+                }
+                boxElem.empty().append( message ).show();
             }
         }
         else
         {
-            alert( data.content.error_text );
+            // ezjscore reports a failure in error_text beside an empty content; no answer at all says nothing
+            var message = data && ( data.error_text || ( data.content && data.content.error_text ) );
+            if ( message ) alert( message );
         }
     }
 
@@ -94,10 +103,11 @@ jQuery(function( $ )
         {
             $( boxID + ' input[name*=_data_object_relation_id_]' ).val( id )
         }
+        // The name arrives HTML-encoded (ezjscAjaxContent); the class and section names and the date are text.
         tds.eq( 0 ).html( name );
-        tds.eq( 1 ).html( className );
-        tds.eq( 2 ).html( sectionName );
-        tds.eq( 3 ).html( publishedTxt );
+        tds.eq( 1 ).text( className );
+        tds.eq( 2 ).text( sectionName );
+        tds.eq( 3 ).text( publishedTxt );
         $( boxID + ' table' ).removeClass('hide');
         $(boxID + ' .ezobject-relation-remove-button').removeClass('button-disabled').addClass('button').prop('disabled', false);
         $(boxID + ' .ezobject-relation-no-relation').addClass('hide');

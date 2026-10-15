@@ -575,3 +575,13 @@
 .a4-notification-selectall { font-weight: 400; }
 .a4-notification-toggle b,
 .a4-notification-choice label b { font-weight: 650; }
+
+/* Forced colors (Windows high contrast) drop backgrounds and box-shadows and repaint borders in one colour: a state
+   that differs only by them (current, selected, moved, pressed, changed) gets a Highlight outline. */
+@media (forced-colors: active) {
+  .a4-role-policy.is-selected,
+  .a4-role-policy.is-moved,
+  .a4-notification-chip.is-current,
+  .a4-page a.a4-collaboration-chip.is-current,
+  .a4-user-pw-toggle[aria-pressed="true"] { outline: 2px solid Highlight; outline-offset: -2px; }
+}

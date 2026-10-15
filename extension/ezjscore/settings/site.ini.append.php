@@ -20,7 +20,12 @@ PolicyOmitList[]=ezjscore/call
 
 [SiteAccessSettings]
 AnonymousAccessList[]=ezjscore/hello
-AnonymousAccessList[]=ezjscore/call
+# ezjscore/call is not listed. AnonymousAccessList only matters on a siteaccess with
+# RequireUserLogin=true, normally the admin, where ezjscore/call needs a signed-in user.
+# A front end (RequireUserLogin=false) does not need the entry. A siteaccess with
+# RequireUserLogin=true whose pages call ezjscore/call anonymously adds the entry to its
+# own settings; this file cannot leave it in, since extension settings rank above
+# siteaccess settings and a siteaccess could not take it back.
 
 # Cache item entry (for eZ Publish 4.3 and up)
 [Cache]

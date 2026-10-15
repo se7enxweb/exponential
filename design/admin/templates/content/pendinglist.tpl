@@ -6,9 +6,9 @@
    version, the approval (when you take part in it) and the object. A version waiting for your approval is shown only
    when you may read it (content/versionread).
 
-   The same file is in design/admin and design/admin4; the look is content/history_exp_style.tpl (.a4-content-history) and
-   content/draft_exp_style.tpl. The list comes from the view (pending_rows, pending_overview, pending_filters ...),
-   worked out by expContentPendingList. Guide: doc/guides/drafts-and-pending.md *}
+   The same file is in design/admin and design/admin4; the look is .a4-content-history and
+   .a4-content-draft in stylesheets/modules/content.css. The list comes from the view (pending_rows,
+   pending_overview, pending_filters ...), worked out by expContentPendingList. Guide: doc/guides/drafts-and-pending.md *}
 
 {def $rows = first_set( $pending_rows, array() )
      $overview = first_set( $pending_overview, hash( 'mine', 0, 'approve', 0, 'held_by_approval', 0, 'classes', hash() ) )

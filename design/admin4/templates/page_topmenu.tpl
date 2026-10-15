@@ -1,3 +1,6 @@
+{* The logo's name carries the version for signed-in users only: an anonymous page of the admin (the 401 page,
+   user/register, user/forgotpassword) draws this frame too and should not tell anyone the release. *}
+{def $a4_brand_name = $current_user.is_logged_in|choose( 'Exponential', concat( 'Exponential ', fetch( 'setup', 'version' ) ) )}
 <div id="navbar" class="navbar-main">
     <div id="header-logo" class="header-logo">
         {if $ui_context_edit}
@@ -6,7 +9,7 @@
             </a> *}
             {* The content root of content.ini, through ezurl: with the siteaccess path when
                the siteaccess is matched by URI (/admin/...), without when by host. *}
-            <a class="brand" href={concat( 'content/view/full/', ezini( 'NodeSettings', 'RootNode', 'content.ini' ) )|ezurl} title="Exponential {fetch( 'setup', 'version' )}" aria-label="Exponential {fetch( 'setup', 'version' )}">
+            <a class="brand" href={concat( 'content/view/full/', ezini( 'NodeSettings', 'RootNode', 'content.ini' ) )|ezurl} title="{$a4_brand_name|wash}" aria-label="{$a4_brand_name|wash}">
             </a>
             {* The front page of the default siteaccess: scheme, host, port and siteaccess
                path as the settings and this request call for (ezpSiteAccessURL). *}
@@ -18,7 +21,7 @@
             </a> *}
             {* The content root of content.ini, through ezurl: with the siteaccess path when
                the siteaccess is matched by URI (/admin/...), without when by host. *}
-            <a class="brand" href={concat( 'content/view/full/', ezini( 'NodeSettings', 'RootNode', 'content.ini' ) )|ezurl} title="Exponential {fetch( 'setup', 'version' )}" aria-label="Exponential {fetch( 'setup', 'version' )}">
+            <a class="brand" href={concat( 'content/view/full/', ezini( 'NodeSettings', 'RootNode', 'content.ini' ) )|ezurl} title="{$a4_brand_name|wash}" aria-label="{$a4_brand_name|wash}">
             </a>
             {* The front page of the default siteaccess: scheme, host, port and siteaccess
                path as the settings and this request call for (ezpSiteAccessURL). *}
@@ -28,6 +31,8 @@
         {/if}
     </div>
     <div id="header-search" class="header-search">
+        {* the sections of the search popup, fetched once for both copies of the search (page_search.tpl reads them) *}
+        {def $search_sections = cond( $ui_context_edit, array(), fetch( 'section', 'list' ) )}
         {include uri='design:page_search.tpl'}
     </div>
     {* admin4: light, dark or system mode; the button names the mode in use and steps to the next; a status region announces a press. The choice is the user's eZPreference admin_color_mode (this browser's localStorage "exp-admin4-theme" when anonymous); the
@@ -82,9 +87,11 @@
             </li>
             <li class="header-search-mobile">
                 {include uri='design:page_search.tpl' search_box='-mobile'}
+                {if is_set( $search_sections )}{undef $search_sections}{/if}
             </li>
         </ul>
     </div>
     <!-- end::Navbar Menu -->
 </div>
  
+{undef $a4_brand_name}

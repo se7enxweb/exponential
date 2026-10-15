@@ -423,8 +423,7 @@ class eZTemplateStringOperator
 
             case 'javascript':
             {
-                $operatorValue = str_replace( array( "\\", "\"", "'"),
-                                              array( "\\\\", "\\042", "\\047" ) , $operatorValue );
+                $operatorValue = self::javascriptString( $operatorValue );
             } break;
         }
         return $operatorValue;
@@ -497,8 +496,7 @@ class eZTemplateStringOperator
         else if ( ( $paramCount == 2 ) && isset( $staticValues[1] ) && ( $staticValues[1] == 'javascript' ) )
         {
             $values[] = $parameters[0];
-            $code = '%output% = str_replace( array( "\\\\", "\"", "\'" ),
-                                             array( "\\\\\\\\", "\\\\042", "\\\\047" ) , %1% ); ';
+            $code = '%output% = eZTemplateStringOperator::javascriptString( %1% );' . "\n";
 
 
 
@@ -756,6 +754,22 @@ class eZTemplateStringOperator
     public $OrdName;
     public $phpMap;
     public $customMap;
+
+    /**
+     * The content of a JavaScript string literal (wash( 'javascript' )): backslash and both quotes are escaped as
+     * before, and so are < and > (a value inside a script element cannot close it with </script>), & (inside an HTML
+     * attribute the browser decodes character references before the script runs, so a value cannot spell a quote
+     * as &#39;), line breaks and the line and paragraph separators (they end a string literal).
+     *
+     * @param mixed $value
+     * @return string
+     */
+    public static function javascriptString( $value )
+    {
+        return str_replace( array( "\\", "\"", "'", "<", ">", "&", "\r", "\n", "\u{2028}", "\u{2029}" ),
+                            array( "\\\\", "\\042", "\\047", "\\x3C", "\\x3E", "\\x26", "\\r", "\\n", "\\u2028", "\\u2029" ),
+                            (string) $value );
+    }
 }
 
 ?>

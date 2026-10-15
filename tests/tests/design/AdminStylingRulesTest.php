@@ -4,7 +4,8 @@
  * installation.
  *
  * - No <style> block and no style="" attribute in the templates of the admin designs (admin4, admin4l, admin3,
- *   admin2, admin); template comments {* ... *} are not read. Files still being migrated are in ALLOWLIST, which
+ *   admin), in templates/ and override/templates/; template comments {* ... *} are not read. A listed design that
+ *   does not exist fails the test instead of being skipped. Files still being migrated are in ALLOWLIST, which
  *   only shrinks: a listed file that has no inline CSS any more fails the test until it is taken off the list.
  *   EXCEPTIONS are the documented, permanent ones.
  * - The module stylesheets (stylesheets/modules/*.css of admin4 and admin) take colours, radii, spacing and fonts
@@ -14,10 +15,10 @@
  * - components.css: every colour token of :root has a value for html[data-a4-theme="dark"], and the copies in
  *   design/admin4 and design/admin are the same file.
  * - Every file of design.ini [StylesheetSettings] AdminComponentCSSFileList exists in both designs.
- * - admin4's frame (admin4.css) and its page stylesheets (PAGE_STYLESHEETS) take their colours from the tokens too:
- *   no colour literal outside a custom property's own definition, so every colour has its dark value. The other
- *   base stylesheets inherited from admin3 (pagelayout, core, content, theme/*) are overridden through tokens in
- *   admin4.css and are not checked yet.
+ * - admin4's frame (admin4.css), its page stylesheets (PAGE_STYLESHEETS) and the base stylesheets inherited from
+ *   admin3 (BASE_STYLESHEETS: core, content, pagelayout, theme/*) take their colours from the tokens too: no colour
+ *   literal outside a custom property's own definition, so every colour has its dark value. Legacy literals that
+ *   are kept on purpose would be listed in BASE_COLOUR_ALLOWLIST, which only shrinks (it is empty).
  * - No :focus or :focus-visible rule of an admin4 stylesheet sets its outline to none or 0.
  * - components.css sets the colour scheme of both themes and has forced-colors and touch rules; admin4.css stops
  *   motion for prefers-reduced-motion; no admin4 stylesheet transitions "all".
@@ -35,7 +36,7 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
     /**
      * The admin designs whose templates may carry no inline CSS
      */
-    const DESIGNS = array( 'admin4', 'admin4l', 'admin3', 'admin2', 'admin' );
+    const DESIGNS = array( 'admin4', 'admin4l', 'admin3', 'admin' );
 
     /**
      * Permanent exceptions, path => why (each is documented in doc/bc/6.0/admin4-styling.md, "Exceptions")
@@ -72,18 +73,34 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
     }
 
     /**
+     * Returns the template directories of the admin designs that exist: templates/ (which every listed design must
+     * have) and override/templates/ (where a design has one)
+     */
+    private static function templateDirectories()
+    {
+        $dirs = array();
+        foreach ( self::DESIGNS as $design )
+        {
+            foreach ( array( 'templates', 'override/templates' ) as $sub )
+            {
+                $dir = self::$root . "/design/$design/$sub";
+                if ( is_dir( $dir ) )
+                {
+                    $dirs[] = $dir;
+                }
+            }
+        }
+        return $dirs;
+    }
+
+    /**
      * Returns the templates (paths from the root) of the admin designs that carry inline CSS
      */
     private static function templatesWithInlineCss()
     {
         $found = array();
-        foreach ( self::DESIGNS as $design )
+        foreach ( self::templateDirectories() as $dir )
         {
-            $dir = self::$root . "/design/$design/templates";
-            if ( !is_dir( $dir ) )
-            {
-                continue;
-            }
             $files = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( $dir, FilesystemIterator::SKIP_DOTS ) );
             foreach ( $files as $file )
             {
@@ -95,6 +112,22 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
         }
         sort( $found );
         return $found;
+    }
+
+    public function testEveryListedDesignExists()
+    {
+        foreach ( self::DESIGNS as $design )
+        {
+            $this->assertDirectoryExists( self::$root . "/design/$design/templates",
+                "design/$design is listed in DESIGNS but has no templates: take it off the list rather than skip it" );
+        }
+    }
+
+    public function testOverrideTemplatesAreScanned()
+    {
+        $dirs = array_map( function ( $dir ) { return substr( $dir, strlen( self::$root ) + 1 ); }, self::templateDirectories() );
+        $this->assertContains( 'design/admin4/override/templates', $dirs );
+        $this->assertContains( 'design/admin/override/templates', $dirs );
     }
 
     public function testDetectsStyleBlocksAndAttributesButNotComments()
@@ -287,7 +320,68 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
     /**
      * admin4 stylesheets outside modules/ that take every colour from the tokens
      */
-    const PAGE_STYLESHEETS = array( 'admin4.css', 'ezinfo.css', 'packagecompare.css', 'setup-extensions.css', 'visual-templateview.css' );
+    const PAGE_STYLESHEETS = array( 'admin4.css', 'ezinfo.css', 'packagecompare.css', 'visual-templateview.css' );
+
+    /**
+     * admin4's base stylesheets, inherited from admin3 and loaded on every admin4 page before admin4.css: the same
+     * rule. A colour admin4.css overrides today is still a token here, so the next selector that slips past the
+     * override (a dark-mode link at 1.8:1, a yellow diff mark under light text) cannot show it.
+     */
+    const BASE_STYLESHEETS = array( 'core.css', 'content.css', 'pagelayout.css', 'theme/rounded.css', 'theme/admin_datatable.css', 'theme/modalwindow.css' );
+
+    /**
+     * Colour literals of the base stylesheets kept on purpose, as "file: selector { property: value }". It only
+     * shrinks: an entry whose declaration is gone fails the test until it is taken off. Empty since 2026-10-14.
+     */
+    const BASE_COLOUR_ALLOWLIST = array(
+    );
+
+    /**
+     * Returns the colour literals of admin4 stylesheets (paths under design/admin4/stylesheets) as
+     * "file: selector { property: value } -- problem"
+     */
+    private static function colourLiterals( array $files )
+    {
+        $problems = array();
+        foreach ( $files as $file )
+        {
+            $path = self::$root . '/design/admin4/stylesheets/' . $file;
+            foreach ( self::declarations( (string)file_get_contents( $path ) ) as $d )
+            {
+                list( $selector, $property, $value ) = $d;
+                if ( strpos( $property, '--' ) === 0 )
+                {
+                    continue;
+                }
+                $problem = self::moduleDeclarationProblem( $selector, $property, $value );
+                if ( $problem !== null && strpos( $problem, 'colour' ) !== false )
+                {
+                    $problems["$file: $selector { $property: $value }"] = $problem;
+                }
+            }
+        }
+        return $problems;
+    }
+
+    public function testBaseStylesheetsUseOnlyColourTokens()
+    {
+        foreach ( self::BASE_STYLESHEETS as $file )
+        {
+            $this->assertFileExists( self::$root . '/design/admin4/stylesheets/' . $file );
+        }
+        $found = self::colourLiterals( self::BASE_STYLESHEETS );
+        $new = array();
+        foreach ( $found as $where => $problem )
+        {
+            if ( !in_array( $where, self::BASE_COLOUR_ALLOWLIST, true ) )
+            {
+                $new[] = "design/admin4/stylesheets/$where -- $problem";
+            }
+        }
+        $this->assertSame( array(), $new, 'use a --a4-* colour token (doc/bc/6.0/admin4-styling.md)' );
+        $this->assertSame( array(), array_values( array_diff( self::BASE_COLOUR_ALLOWLIST, array_keys( $found ) ) ),
+            'These allowlisted colour literals are gone: take them off BASE_COLOUR_ALLOWLIST' );
+    }
 
     public function testPageStylesheetsUseOnlyColourTokens()
     {
@@ -381,8 +475,8 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
      * where box-shadow rings are not drawn: it keeps an outline (a transparent one is enough, forced colors paint it)
      *
      * Its limit: it reads rules whose selector names :focus or :focus-visible. A plain rule that outranks the
-     * global ring (an id selector such as pagelayout.css's #logintext { outline: none }) removes the indicator
-     * as well and is not seen here; such a rule needs a :focus rule of its own that restores the outline.
+     * global ring (an id selector such as #logintext { outline: none }) removes the indicator as well and is not
+     * seen here; such a rule needs a :focus rule of its own that restores the outline.
      */
     public function testNoFocusRuleRemovesTheOutline()
     {

@@ -276,7 +276,7 @@
 <div class="a4-toolbar is-bottom">
 {if $aliasList|count|gt( 0 )}
     <div class="a4-actions">
-        <button type="submit" class="a4-btn a4-btn-outline-danger" name="RemoveAliasButton" value="{'Remove selected'|i18n( 'design/admin/content/urlalias_global' )}" title="{'Remove selected aliases from the list above.'|i18n( 'design/admin/content/urlalias_global' )}" onclick="return confirm( '{'Are you sure you want to remove the selected aliases?'|i18n( 'design/admin/content/urlalias_global' )|wash( javascript )}' );">{'Remove selected'|i18n( 'design/admin/content/urlalias_global' )}</button>
+        <button type="submit" class="a4-btn a4-btn-outline-danger" name="RemoveAliasButton" value="{'Remove selected'|i18n( 'design/admin/content/urlalias_global' )}" title="{'Remove selected aliases from the list above.'|i18n( 'design/admin/content/urlalias_global' )}" onclick="return confirm( '{'Are you sure you want to remove the selected aliases?'|i18n( 'design/admin/content/urlalias_global' )|wash( javascript )|wash}' );">{'Remove selected'|i18n( 'design/admin/content/urlalias_global' )}</button>
     </div>
     <p class="a4-meta">{'A removed alias stops working at once; links to it then lead to an error page. The destination itself is not changed.'|i18n( 'design/admin/content/urlalias_global' )} <span id="alias-selected-count" aria-live="polite"></span></p>
     <details class="a4-confirm">
