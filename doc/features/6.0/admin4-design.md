@@ -695,7 +695,10 @@ template sets `confObj.priorityDrag`, so the other admin designs are unchanged.
   priorities, checked the same way. A failed save puts the rows back and shows the error.
 - **The server side** (`ezjscnode::updatepriority`): the lists go as one text each (`PriorityList`,
   `ExpectedPriorityList`, "node_id:priority,..."), so a page of 500 rows stays far below `max_input_vars`; the check
-  and the write run in one transaction (rows locked on MySQL and PostgreSQL). Lists sorted by priority order equal
+  and the write run in one transaction (rows locked on MySQL, PostgreSQL and Oracle). Every node to be written must
+  come with the priority the table showed, and the lists are refused for a node that does not sort by priority or that
+  the user may not edit (the classic form's rule); the write goes through the kernel's `content/updatepriority`
+  operation, so its workflows, cache clearing and search index updates run. Lists sorted by priority order equal
   priorities by node id, the order the renumbering takes. While a new order is being saved, the pagers, the sorting
   and the filter wait (`inert`); a save that ends after the table loaded other rows does not draw over them.
 - **Limits**: a row moves within its page only (to move it to another page, change the rows per page or type its
