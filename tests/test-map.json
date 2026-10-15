@@ -283,7 +283,8 @@
       "tests/tests/design/AdminEditBarTest.php",
       "tests/tests/design/AdminContentEditFormsTest.php",
       "tests/tests/design/AdminEditorSkinTest.php",
-      "tests/tests/design/AdminNodeTabsHeightTest.php"
+      "tests/tests/design/AdminNodeTabsHeightTest.php",
+      "tests/tests/design/AdminSubitemsPriorityDragTest.php"
     ],
     "extension/ezjscore/design/standard/javascript/*": [
       "tests/tests/extension/ezjscore/ezjscoreVendoredLibrariesTest.php"
@@ -336,7 +337,8 @@
       "tests/tests/design/AdminJobTranslationsTest.php"
     ],
     "design/admin4/templates/children_detailed.tpl": [
-      "tests/tests/design/AdminJobTranslationsTest.php"
+      "tests/tests/design/AdminJobTranslationsTest.php",
+      "tests/tests/design/AdminSubitemsPriorityDragTest.php"
     ],
     "design/admin/templates/contentstructuremenu/content_structure_menu_dynamic.tpl": [
       "tests/tests/design/AdminJobTranslationsTest.php"
@@ -454,6 +456,33 @@
     ],
     "design/admin4/templates/node/top_node_full.tpl": [
       "tests/tests/design/AdminNodeTabsHeightTest.php"
+    ],
+    "design/admin4/javascript/subitems_priority_drag.js": [
+      "tests/tests/design/AdminSubitemsPriorityDragTest.php"
+    ],
+    "design/admin4/javascript/ezajaxsubitems_expdatatable.js": [
+      "tests/tests/design/AdminSubitemsPriorityDragTest.php"
+    ],
+    "design/admin/javascript/ezajaxsubitems_expdatatable.js": [
+      "tests/tests/design/AdminSubitemsPriorityDragTest.php"
+    ],
+    "design/admin4/templates/children.tpl": [
+      "tests/tests/design/AdminSubitemsPriorityDragTest.php"
+    ],
+    "design/admin4/stylesheets/modules/content.css": [
+      "tests/tests/design/AdminSubitemsPriorityDragTest.php"
+    ],
+    "design/admin/stylesheets/modules/content.css": [
+      "tests/tests/design/AdminSubitemsPriorityDragTest.php"
+    ],
+    "design/admin4/stylesheets/components.css": [
+      "tests/tests/design/AdminSubitemsPriorityDragTest.php"
+    ],
+    "design/admin/stylesheets/components.css": [
+      "tests/tests/design/AdminSubitemsPriorityDragTest.php"
+    ],
+    "extension/ezjscore/classes/ezjscserverfunctionsnode.php": [
+      "tests/tests/extension/ezjscore/ezjscServerFunctionsNodePriorityTest.php"
     ]
   },
   "generated": {

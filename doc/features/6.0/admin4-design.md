@@ -501,6 +501,47 @@ and its overrides.
 files are the same in both designs, and that no admin4 template has a clickable image. `tests/tests/design/AdminTreeViewTest.php` holds the
 tree's roles, states, Tab stop and keys.
 
+## Reordering sub items by drag and drop
+
+Where a node sorts its children by priority and the user may change the priorities (`$node.can_edit`: the same
+condition as the classic priority fields), the sub items table has a column of grips before the names. It shows while
+the table is sorted as the node sorts (by priority, in the node's direction), with no name filter and more than one
+row; sorted by another column the column is hidden. `design/admin4/javascript/subitems_priority_drag.js` brings it;
+the table script (`ezajaxsubitems_expdatatable.js`, the same file in `design/admin`) adds the column only when the
+template sets `confObj.priorityDrag`, so the other admin designs are unchanged.
+
+- **Pointer** (mouse, touch, pen; pointer events, no HTML5 drag and drop, no library): drag the grip; the row is
+  its own placeholder (dashed, tinted), a ghost with the name follows the pointer, the window scrolls when the pointer
+  nears its top or bottom edge. Escape or a cancelled touch puts the row back.
+- **Keyboard**: the grip is a button named "Move <name>" with the instructions as its description. Space or Enter
+  picks the row up (`aria-pressed`), the arrow keys move it, Home and End to the first and last place, Space or Enter
+  drops it, Escape or Tab cancels. Alt+Up and Alt+Down move it by one place at once. Each step is announced
+  through the table's status region.
+- **Saving** happens right after the drop, through `ezjscnode::updatepriority`. Only the current page is reordered:
+  its own priorities are given out again to its rows in the new order, so nothing moves to another page. When the page
+  has equal priorities, or shares one with the last row of the page before or the first of the page after, the rows
+  get distinct values strictly between those two neighbours (steps of 10 where there is room, smaller steps where
+  not; the first page may go below 0, the last page above the page before). When the neighbours leave no room (equal
+  priorities across a page border), the server numbers all children again in steps of 10, the page's rows at their
+  place. The priorities the table showed and the neighbours' are sent along; when one changed in the meantime nothing
+  is written, the table loads again and a toast says so. "Order saved" offers Undo for 10 seconds; it posts the old
+  priorities, checked the same way. A failed save puts the rows back and shows the error.
+- **The server side** (`ezjscnode::updatepriority`): the lists go as one text each (`PriorityList`,
+  `ExpectedPriorityList`, "node_id:priority,..."), so a page of 500 rows stays far below `max_input_vars`; the check
+  and the write run in one transaction (rows locked on MySQL and PostgreSQL). Lists sorted by priority order equal
+  priorities by node id, the order the renumbering takes. While a new order is being saved, the pagers, the sorting
+  and the filter wait (`inert`); a save that ends after the table loaded other rows does not draw over them.
+- **Limits**: a row moves within its page only (to move it to another page, change the rows per page or type its
+  priority); a page of one row has no grip; a key that moves a row while the previous move is still being saved is
+  refused with "Please wait until the order is saved."
+- **The priority cells stay** and can still be edited by hand; they show the new values after a move. A move does
+  not start while a priority is being edited with a changed value (a toast asks to save or cancel it first) or while
+  it is being saved, and no cell can be edited while a new order is being saved.
+- Light and dark, forced colours (the placeholder's outline and the pressed grip in Highlight), reduced motion (no
+  tilt of the ghost, no fade), print (no grips). Styles: `modules/content.css` (`.a4-content-drag-*`) and
+  `.a4-toast-action` in `components.css`. Tests: `AdminSubitemsPriorityDragTest`,
+  `ezjscServerFunctionsNodePriorityTest`.
+
 ## Settings
 
 | File | Block | Key | Default | Scope |

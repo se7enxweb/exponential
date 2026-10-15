@@ -94,7 +94,8 @@
 </div>
 
 {* Load the sub-items table (Exponential UI's exp::datatable) even if the node has no children (cache blocks do not vary by this) *}
-{ezscript_require( array( 'ezajaxsubitems_expdatatable.js' ) )}
+{* subitems_priority_drag.js first: the table script picks it up when it builds the table *}
+{ezscript_require( array( 'subitems_priority_drag.js', 'ezajaxsubitems_expdatatable.js' ) )}
 
 <!-- Children END -->
 

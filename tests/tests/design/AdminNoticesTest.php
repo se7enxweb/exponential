@@ -120,7 +120,8 @@ class AdminNoticesTest extends PHPUnit\Framework\TestCase
     public function testToastsStayFewAndGiveTheFocusBack()
     {
         $js = (string)file_get_contents( self::root() . '/design/admin4/javascript/admin4.js' );
-        $this->assertStringContainsString( 'window.a4Toast = function (message, kind, opener)', $js );
+        $this->assertStringContainsString( 'window.a4Toast = function (message, kind, opener, delay)', $js );
+        $this->assertStringContainsString( 'timer = setTimeout(remove, delay > 0 ? delay : DELAY)', $js, 'a toast with an action may stay longer' );
         $this->assertStringContainsString( 'MAX = 3', $js );
         $this->assertStringContainsString( "t.textContent === String(message)", $js );
         $this->assertStringContainsString( 'opener.focus()', $js );

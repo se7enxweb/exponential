@@ -279,6 +279,10 @@ class expSubitemsColumnRegistryTest extends ezpTestCase
         $this->assertSame( 'published', $s['key'], 'legacy name mapped to the built-in' );
         $this->assertSame( array( array( 'published', false ) ), $s['sort_by'] );
 
+        // equal priorities in node id order, in the same direction (the renumbering of ezjscnode::updatepriority)
+        $s = $r->sortFor( 'priority', false, $parent );
+        $this->assertSame( array( array( 'priority', false ), array( 'node_id', false ) ), $s['sort_by'] );
+
         $s = $r->sortFor( 'hidden_status_string', true, $parent );
         $this->assertSame( array( array( 'visibility', true ) ), $s['sort_by'] );
 

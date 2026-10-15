@@ -9,7 +9,8 @@
  * It does: the ezjscnode::subtree request (GET, same arguments), the
  * cache of 20 pages, sorting, the pagers in #bpg and #tpg, rows per page saved as admin_list_limit (and a custom
  * number that is not saved), the shown columns in the eZSubitemColumns cookie (one sub-value per navigation part),
- * inline priority editing through ezjscnode::updatepriority, the Select, Create new, Create multiple new, More
+ * inline priority editing through ezjscnode::updatepriority (in admin4 also reordering by drag and drop,
+ * subitems_priority_drag.js), the Select, Create new, Create multiple new, More
  * actions and Table options controls (same ids, same form fields posted) and the context menu of each row.
  *
  * With the subitems column registry (confObj.subitemsServer, settings/subitemscolumns.ini) the columns come from
@@ -389,6 +390,14 @@ var eZAjaxSubitemsExpDataTable = (function () {
             };
         }
 
+        // admin4 (subitems_priority_drag.js): a column of grips after the row menu to reorder the rows by drag and
+        // drop, when the parent sorts by priority and the user may change it (confObj.priorityDrag)
+        var drag = confObj.priorityDrag && window.a4SubitemsPriorityDrag ? window.a4SubitemsPriorityDrag.create(confObj, labelsObj.DRAG) : null;
+        if (drag) {
+            var crankAt = columns.map(function (c) { return c.key; }).indexOf('crank');
+            columns.splice(crankAt + 1, 0, drag.column);
+        }
+
         $list.expDataTable({
             columns: columns,
             rowKey: 'node_id',
@@ -424,7 +433,8 @@ var eZAjaxSubitemsExpDataTable = (function () {
                 }
             },
             inlineEdit: {
-                canEdit: function (row) { return row.can_edit === true; },
+                // not while a new order of the rows is being moved or saved
+                canEdit: function (row) { return row.can_edit === true && !(drag && drag.busy()); },
                 fn: 'ezjscnode::updatepriority',
                 data: function (row, key, value) {
                     return { ContentNodeID: row.parent_node_id, ContentObjectID: row.contentobject_id,
@@ -511,6 +521,7 @@ var eZAjaxSubitemsExpDataTable = (function () {
                 if (d && d.limit && Number(d.limit) !== rowsPerPage) { rowsPerPage = Number(d.limit); server.limitSaved(rowsPerPage); }
             });
         }
+        if (drag) { drag.attach($list.data('expDataTable')); }
         return $list.data('expDataTable');
     }
 

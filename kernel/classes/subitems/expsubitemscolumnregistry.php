@@ -678,6 +678,10 @@ class expSubitemsColumnRegistry
             return array( 'key' => $accepted, 'sort_by' => array( array( 'attribute', (bool)$ascending, $identifier ) ),
                           'class_filter' => $classIdentifier !== '' ? $classIdentifier : null );
         }
+        // equal priorities in node id order, the order ezjscnode::updatepriority's renumbering takes (admin4's drag
+        // and drop), so a page shows the same rows each time it is loaded
+        if ( $field === 'priority' )
+            return array( 'key' => $accepted, 'sort_by' => array( array( 'priority', (bool)$ascending ), array( 'node_id', (bool)$ascending ) ), 'class_filter' => null );
         return array( 'key' => $accepted, 'sort_by' => array( array( $field, (bool)$ascending ) ), 'class_filter' => null );
     }
 }

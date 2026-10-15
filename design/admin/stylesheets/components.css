@@ -1293,6 +1293,22 @@ body.exp-debug-bar .a4-toasts { bottom: calc(var(--exp-debug-bar-h, 38px) + var(
   cursor: pointer;
 }
 .a4-toast .a4-toast-close:hover { background-color: var(--a4-soft); color: var(--a4-ink); }
+/* an action in a toast (Undo): a small text button before the close button */
+.a4-toast .a4-toast-action {
+  flex: none;
+  min-height: var(--a4-space-5);
+  margin: 0;
+  padding: 0 var(--a4-space-2);
+  border: 1px solid var(--a4-line-strong);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+  color: var(--a4-accent-text);
+  font: inherit;
+  font-weight: 650;
+  cursor: pointer;
+}
+.a4-toast .a4-toast-action:hover { border-color: var(--a4-accent); }
+.a4-toast :is(.a4-toast-action, .a4-toast-close):focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
 @keyframes a4-toast-in { from { opacity: 0; transform: translateY(var(--a4-space-2)); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) {
   .a4-toast { animation: none; }
@@ -1300,6 +1316,7 @@ body.exp-debug-bar .a4-toasts { bottom: calc(var(--exp-debug-bar-h, 38px) + var(
 @media (forced-colors: active) {
   .a4-notice:is(.is-ok, .is-bad, .is-warn, .is-info):not(.no-icon)::before { forced-color-adjust: none; background-color: CanvasText; }
   .a4-toast { border: 1px solid CanvasText; border-left-width: 4px; }
+  .a4-toast .a4-toast-action { border-color: ButtonText; color: ButtonText; }
 }
 
 /* ---- Folding: <details class="a4-fold">, and the in-place confirmation <details class="a4-confirm"> ------------ */

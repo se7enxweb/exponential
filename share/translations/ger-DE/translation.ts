@@ -11694,6 +11694,82 @@
         <translation>Nicht kopiert</translation>
     </message>
     <message>
+        <source>Order</source>
+        <translation>Reihenfolge</translation>
+    </message>
+    <message>
+        <source>Move %name</source>
+        <translation>%name verschieben</translation>
+    </message>
+    <message>
+        <source>Drag to change the order</source>
+        <translation>Ziehen, um die Reihenfolge zu ändern</translation>
+    </message>
+    <message>
+        <source>Drag the grip to change the order. With the keyboard: Space picks the row up, the arrow keys move it, Space drops it, Escape cancels. Alt+Up and Alt+Down move it by one place at once.</source>
+        <translation>Zum Ändern der Reihenfolge den Griff ziehen. Mit der Tastatur: Leertaste nimmt die Zeile auf, die Pfeiltasten verschieben sie, Leertaste legt sie ab, Escape bricht ab. Alt+Pfeil hoch und Alt+Pfeil runter verschieben sie sofort um eine Stelle.</translation>
+    </message>
+    <message>
+        <source>Picked up %name. Position %position of %count.</source>
+        <translation>%name aufgenommen. Position %position von %count.</translation>
+    </message>
+    <message>
+        <source>Position %position of %count</source>
+        <translation>Position %position von %count</translation>
+    </message>
+    <message>
+        <source>Moved to position %position of %count</source>
+        <translation>Verschoben auf Position %position von %count</translation>
+    </message>
+    <message>
+        <source>Dropped. The order is unchanged.</source>
+        <translation>Abgelegt. Die Reihenfolge ist unverändert.</translation>
+    </message>
+    <message>
+        <source>Move cancelled. %name is back at position %position of %count.</source>
+        <translation>Verschieben abgebrochen. %name ist wieder auf Position %position von %count.</translation>
+    </message>
+    <message>
+        <source>Order saved</source>
+        <translation>Reihenfolge gespeichert</translation>
+    </message>
+    <message>
+        <source>Undo</source>
+        <translation>Rückgängig</translation>
+    </message>
+    <message>
+        <source>Previous order restored</source>
+        <translation>Vorherige Reihenfolge wiederhergestellt</translation>
+    </message>
+    <message>
+        <source>The order was not saved: %error</source>
+        <translation>Die Reihenfolge wurde nicht gespeichert: %error</translation>
+    </message>
+    <message>
+        <source>The previous order was not restored: %error</source>
+        <translation>Die vorherige Reihenfolge wurde nicht wiederhergestellt: %error</translation>
+    </message>
+    <message>
+        <source>unknown error</source>
+        <translation>unbekannter Fehler</translation>
+    </message>
+    <message>
+        <source>Someone else changed the order in the meantime. Nothing was saved; the list shows the current order now.</source>
+        <translation>Die Reihenfolge wurde inzwischen von jemand anderem geändert. Es wurde nichts gespeichert; die Liste zeigt jetzt die aktuelle Reihenfolge.</translation>
+    </message>
+    <message>
+        <source>Save the priority you are editing (Enter) or cancel it (Escape) before you move a row.</source>
+        <translation>Speichern Sie die bearbeitete Priorität (Enter) oder verwerfen Sie sie (Escape), bevor Sie eine Zeile verschieben.</translation>
+    </message>
+    <message>
+        <source>Please wait until the order is saved.</source>
+        <translation>Bitte warten, bis die Reihenfolge gespeichert ist.</translation>
+    </message>
+    <message>
+        <source>Please wait until the priority is saved.</source>
+        <translation>Bitte warten, bis die Priorität gespeichert ist.</translation>
+    </message>
+    <message>
         <source>Object</source>
         <translation>Objekt</translation>
     </message>
