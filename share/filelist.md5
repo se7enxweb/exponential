@@ -4,9 +4,9 @@ d3c3da531de3f903a6857f522f3ba0db  .gitattributes
 5ed5bd1f59052ec6efe88df6332ff49e  .githooks/pre-commit
 e399d1ae8564340ae3012f346d90bfa0  .githooks/pre-push
 a65c763ef0340e232cfe8c274f56fca0  .github/FUNDING.yml
-c0109dc6b712cfb2edaf1634f9613f51  .github/workflows/performance.yml
-57ca66c9047538723f176eb991e5e98c  .github/workflows/phpunit.yml
-baeb71427c77282aa3b16047e254fd23  .github/workflows/quality.yml
+a5e5334f58df49e18097ed70241e9ba0  .github/workflows/performance.yml
+957c53e2fb7596b9f1c0e964c15c3d3e  .github/workflows/phpunit.yml
+cdcb6cd45f926a7f3e35a796384c81d4  .github/workflows/quality.yml
 1378291033e16daa1ef6e265447a2201  .gitignore
 9ae9da440bdbe3c882b160ce651bbbca  .htaccess_root
 cae6b5db9c9f45f8e87552cdc09e083a  .htaccess_root_static

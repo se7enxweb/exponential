@@ -45,6 +45,15 @@ on:
 permissions:
   contents: read
 
+# The version Composer gives the root package. On a push to main it reads "dev-main" from the
+# checked-out branch, and the branch alias "dev-main": "6.0.x-dev" in composer.json lets packages
+# that require se7enxweb/exponential (expai, expqueue: ^6.0.14) resolve against it. A pull request
+# is checked out as a detached merge commit, so Composer would see "dev-<sha>" or "1.0.0", which
+# satisfies no such constraint, and every install stopped with "could not be resolved". A pull
+# request targets main, so it is resolved as main.
+env:
+  COMPOSER_ROOT_VERSION: dev-main
+
 concurrency:
   group: performance-${{ github.ref }}
   cancel-in-progress: true
