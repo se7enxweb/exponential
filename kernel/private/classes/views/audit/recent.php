@@ -116,6 +116,8 @@ class Recent extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'log_dir', \expAudit::relativePath( $config['logDir'] ) );
         $tpl->setVariable( 'verified_today_only', isset( $options['date'] ) );
         $tpl->setVariable( 'limit', self::LIMIT );
+        // the Verify now button only for those who may press it (audit/manage)
+        $tpl->setVariable( 'can_manage', class_exists( 'expAuditConsole' ) && \expAuditConsole::canManage() );
         $tpl->setVariable( 'request_id', \expAudit::requestId() );
         // the links of the extensions' sources (audit.ini [AuditSourceSettings] Sources[]); none without one
         $tpl->setVariable( 'audit_sources', class_exists( 'expAuditConsole' ) ? \expAuditConsole::sourceLinks( 'audit/recent', $channel === null ? array() : array( 'channel' => $channel ), $allowed ) : array() );
