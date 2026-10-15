@@ -7253,7 +7253,7 @@ a15f60da55163c3055ee1c45bfd5a806  tests/tests/design/AdminCardsTest.php
 6751de7b21435891c324c21c35922dcc  tests/tests/design/AdminEnvironmentBadgeTest.php
 e0969685ae94ce6950d89ebe71ea65d1  tests/tests/design/AdminFormErrorsTest.php
 c76f86863ef135a2c51d2083890f9380  tests/tests/design/AdminFormLabelsTest.php
-449ae97ef48646cc2b7461aa6d516aa5  tests/tests/design/AdminHeaderTest.php
+64818fedf19a1509d3cc81d2aef3dda0  tests/tests/design/AdminHeaderTest.php
 25912faaa23dfacdd632d61eeacbe18e  tests/tests/design/AdminIconsTest.php
 6d1b6edb0965bdac475abd8af045e416  tests/tests/design/AdminJobTranslationsTest.php
 302b27352564e90e744b9a788bfcedb8  tests/tests/design/AdminKeyboardTest.php
