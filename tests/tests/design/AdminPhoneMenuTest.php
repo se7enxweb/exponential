@@ -8,7 +8,8 @@
  *          phone_menu.js; skipped without node)
  *  PM-02 - the open phone menu ends under its search field (admin3's 7rem under the list left about 80px of empty
  *          panel), and the search field takes the panel's width
- *  PM-03 - from 576px the header search field gives way last: 166px at 576px (106px before), 230px from 640px
+ *  PM-03 - from 576px the header search field gives way last: 122px at 576px beside the 158px logo (166px beside the
+ *          old 114px image, 106px before that), 230px from 684px
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminPhoneMenuTest.php
  *
@@ -110,6 +111,7 @@ class AdminPhoneMenuTest extends PHPUnit\Framework\TestCase
     {
         $tablet = AdminBaseStylesheetsTest::rules( self::media( self::css( 'admin4.css' ), 'screen and (min-width: 576px)' ) );
         $width = $tablet['#header .searchblock input.searchtext']['width'];
-        $this->assertSame( 'clamp(6rem, calc(100vw - 410px), 230px)', $width );
+        // 454px with the inline logo (158px wide, the old image 114px): the tools keep one row at 576px
+        $this->assertSame( 'clamp(6rem, calc(100vw - 454px), 230px)', $width );
     }
 }

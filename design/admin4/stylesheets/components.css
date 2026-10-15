@@ -697,6 +697,54 @@ html[data-a4-theme="dark"] {
 .a4-tag.is-ok, .a4-tag.is-warn, .a4-tag.is-bad, .a4-tag.is-info, .a4-tag.is-accent { border-color: transparent; }
 .a4-tag.is-mono, .a4-badge.is-mono { font-family: var(--a4-mono); font-weight: 400; }
 
+/* ---- Status mark ------------------------------------------------------------------------------------------------
+   A 10px mark for the state of an item, shown before its name in lists and in a badge beside a title: a node's
+   visibility (design:parts/visibility_status.tpl, the sub-items table, the content tree, the browse list) and the
+   state of a user account. The shape tells the state as well as the color, so it reads in gray scale and in
+   forced colors:
+     .is-visible           a filled disc   (--a4-ok)      visible
+     .is-hidden            a ring          (--a4-bad)     hidden
+     .is-hidden-by-parent  a ring with a bar (--a4-bad)   hidden because an item above it is hidden
+     .is-disabled          a crossed ring  (--a4-muted)   user account disabled
+     .is-locked            a filled square (--a4-warn)    user account locked after failed logins
+   Alone it is role="img" with aria-label and title; beside its own text it is aria-hidden. Each color reaches 3:1
+   on the card, the zebra row and its badge tint in both modes (AdminVisibilityStatusTest). */
+.a4-mark {
+  position: relative;
+  display: inline-block;
+  flex: none;
+  box-sizing: border-box;
+  width: 10px;
+  height: 10px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  color: var(--a4-muted);
+  vertical-align: middle;
+}
+.a4-mark.is-visible { color: var(--a4-ok); background-color: currentColor; }
+.a4-mark.is-hidden,
+.a4-mark.is-hidden-by-parent { color: var(--a4-bad); }
+.a4-mark.is-disabled { color: var(--a4-muted); }
+.a4-mark.is-locked { color: var(--a4-warn); border-radius: 2px; background-color: currentColor; }
+.a4-mark.is-hidden-by-parent::after,
+.a4-mark.is-disabled::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 1px);
+  left: -1px;
+  right: -1px;
+  height: 2px;
+  background-color: currentColor;
+}
+.a4-mark.is-disabled::after { transform: rotate(-45deg); }
+/* in a badge the mark sits on the text's middle; .a4-badge keeps its gap */
+.a4-badge > .a4-mark { align-self: center; }
+@media (forced-colors: active) {
+  /* the system colors replace the state colors; the shapes stay, the fills are kept on purpose */
+  .a4-mark { forced-color-adjust: none; color: CanvasText; }
+  .a4-mark.is-visible, .a4-mark.is-locked { background-color: CanvasText; }
+}
+
 /* A content language as a short code (DE, EN) where the admin showed a flag: design:parts/language_badge.tpl.
    The name is the title and, where it is not written next to it, the accessible name. .a4-langs holds several;
    a link (edit or view a translation) gets the hover and focus of a link, .is-current marks the one shown.
@@ -1708,6 +1756,7 @@ a.a4-icon-btn, a.a4-icon-btn:visited { color: var(--a4-muted); }
 .a4-bi-arrow-clockwise { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-clockwise.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-clockwise.svg); }
 .a4-bi-arrow-counterclockwise { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-counterclockwise.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-counterclockwise.svg); }
 .a4-bi-arrow-down { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-down.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-down.svg); }
+.a4-bi-arrow-down-up { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-down-up.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-down-up.svg); }
 .a4-bi-arrow-down-right { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-down-right.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-down-right.svg); }
 .a4-bi-arrow-up { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-up.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-up.svg); }
 .a4-bi-arrow-up-circle { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-up-circle.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-up-circle.svg); }

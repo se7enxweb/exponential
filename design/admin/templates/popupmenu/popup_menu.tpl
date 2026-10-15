@@ -20,6 +20,9 @@
 
 {include uri='design:popupmenu/popup_sub_advance_menu.tpl'}
 
+{* The node view's Import/Export menu (node/view/import_export_button.tpl) *}
+{include uri='design:popupmenu/popup_import_export_menu.tpl'}
+
 {include uri='design:popupmenu/popup_sub_editclass_menu.tpl'}
 
 {include uri='design:popupmenu/popup_sub_siteaccess_menus.tpl'}

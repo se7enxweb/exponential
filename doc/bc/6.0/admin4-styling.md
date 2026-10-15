@@ -167,7 +167,7 @@ toasts, and on a `var(--a4-z-…)` that `components.css` does not define (a typo
 | Breadcrumb | `ol.a4-crumbs` (`role="list"`) > `li` (`.is-middle`, `.is-fold`: the middle steps fold into "..." up to 600px, visually only, a focused step shows again), separators from the stylesheet, the current step `aria-current="page"`, inside the `#path` navigation landmark |
 | Card | `.a4-card` (`.is-soft`, `.is-selected`, `.is-attention`, `.is-warn`, `.is-bad`, `.is-ok`, `.is-info`, `.is-flush`, `.is-link`, `.is-busy`), `.a4-cards`, `.a4-card-head` (title, a `<p>` as subtitle, `.a4-card-actions` at its end), `.a4-card-title`, `.a4-card-body`, `.a4-card-foot` (the card's actions on a strip at its bottom edge), `.a4-pick` (the selection checkbox) |
 | Figures, facts | `.a4-figures` > `.a4-figure` (`.is-attention`, `.is-bad`, `.is-ok`, `.is-warn`, `.is-info`, `.is-current`); `dl.a4-facts` (`.is-rows`) |
-| Tag, badge, status | `.a4-tag`, `.a4-badge` (`.is-ok`, `.is-warn`, `.is-bad`, `.is-info`, `.is-accent`, `.is-mono`), `.a4-badges`; `.a4-status` (`.is-ok`, `.is-running`, `.is-warn`, `.is-bad`) with `.a4-dot` |
+| Tag, badge, status | `.a4-tag`, `.a4-badge` (`.is-ok`, `.is-warn`, `.is-bad`, `.is-info`, `.is-accent`, `.is-mono`), `.a4-badges`; `.a4-status` (`.is-ok`, `.is-running`, `.is-warn`, `.is-bad`) with `.a4-dot` (a status with its text); `.a4-mark` (`.is-visible`, `.is-hidden`, `.is-hidden-by-parent`, `.is-disabled`, `.is-locked`): a 10 px mark whose shape tells the state, named by `role="img"` and `aria-label` when it stands alone, `aria-hidden` beside its own text (`design:parts/visibility_status.tpl`). Two classes: the mark never styles `.a4-status` |
 | Buttons | `.a4-btn`, `.a4-btn-primary`, `.a4-btn-danger`, `.a4-btn-outline-danger`, `.a4-btn-ghost`, `.a4-btn-small`, `.a4-btn-large`, `.a4-btn-icon`; `.a4-actions` (a row of them) |
 | Toolbar | `.a4-toolbar` (an action bar), `.is-bottom` (under a list), `.is-sticky` (stays at the window's bottom) |
 | Filter bar | `.a4-filterbar` (a grid of fields above a list), `.a4-filter-count` |
@@ -425,7 +425,9 @@ Inline CSS that stays, each documented where it is:
 | admin3 `pagelayout.tpl`: a two-line script | the hand-dragged left column width, as above (admin3 has no theme script) |
 | `design/admin/templates/pagelayout.tpl`: one `<style>` block | the column widths of the editor's preferences, in em from `menu.ini [LeftMenuSettings] MenuWidth` or a dragged width, which a stylesheet cannot know, needed before the page is drawn |
 
-The left column's preset sizes (small, medium, large) are `html[data-a4-left-size]` rules in `pagelayout.css`.
+The left column's preset sizes (small, medium, large) are `html[data-a4-left-size]` rules in `pagelayout.css`. They
+set the width only (`--left-sidebar-width`): the column's text keeps the body's size at every width
+(`AdminLeftColumnFontTest`).
 
 ## Checked in CI
 

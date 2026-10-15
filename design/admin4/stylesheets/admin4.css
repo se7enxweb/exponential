@@ -55,7 +55,21 @@
   --a4-footer-ink: #5d6573;   /* 5.1:1 on the page colour (#6b7280 was 4.3:1) */
   --a4-footer-link: #4b5563;
   --a4-footer-link-hover: #1f2430;
-  --a4-logo: url('../images/admin4/logo-light.png');
+  --a4-brand: #f15a28;        /* the logo's orange square (parts/a4_logo.tpl), the artwork's brand color */
+  /* the environment badge (site.ini [AdminEnvironment]): fill, text and edge per level; the text 4.5:1 on the fill,
+     the edge 3:1 on the header */
+  --a4-env-development: #067647;
+  --a4-env-development-ink: #fff;
+  --a4-env-development-line: #067647;
+  --a4-env-test: #fdb022;
+  --a4-env-test-ink: #1f1300;
+  --a4-env-test-line: #b54708;
+  --a4-env-staging: #6941c6;
+  --a4-env-staging-ink: #fff;
+  --a4-env-staging-line: #6941c6;
+  --a4-env-production: #b42318;
+  --a4-env-production-ink: #fff;
+  --a4-env-production-line: #b42318;
 }
 
 /* ---- Tokens: dark (slate page, slate columns; the shared tokens switch in components.css) --------------------- */
@@ -80,7 +94,19 @@ html[data-a4-theme="dark"] {
   --a4-footer-ink: #8d95a3;
   --a4-footer-link: #c8cdd6;
   --a4-footer-link-hover: #fff;
-  --a4-logo: url('../images/3/logo_separator_sprite.png');
+  --a4-brand: #f15a28;        /* the same artwork on dark pages */
+  --a4-env-development: #047857;
+  --a4-env-development-line: #047857;
+  --a4-env-test-line: #fdb022;
+  --a4-env-staging: #7a5af8;
+  --a4-env-staging-line: #7a5af8;
+  --a4-env-production: #d92d20;
+  --a4-env-production-line: #d92d20;
+  --a4-env-development-ink: #fff;
+  --a4-env-test: #fdb022;
+  --a4-env-test-ink: #1f1300;
+  --a4-env-staging-ink: #fff;
+  --a4-env-production-ink: #fff;
 }
 
 /* ---- The page -------------------------------------------------------------------------------------------- */
@@ -146,15 +172,29 @@ body,
     pointer-events: none;
   }
 }
-/* the logo: dark letters on the light header, admin3's white ones on the dark */
+/* The logo (parts/a4_logo.tpl): an inline drawing in the link's color, so the letters are dark on the light header and
+   light on the dark one; the box stays 32px high, as the old image's was, so the rows keep their heights. 24px high,
+   the full logo is 158px wide (388 x 59). */
 #header-logo .brand {
-  background-image: var(--a4-logo);
+  display: inline-flex;
+  align-items: center;
+  width: auto;
+  height: 32px;
+  background: none;
+  color: var(--a4-ink);
 }
-/* the light logo (400x100) drawn 28px tall is 112px wide: it fits the 114px box the dark logo has, so the
-   header items after it stand in the same place in both modes */
-html:not([data-a4-theme="dark"]) #header-logo .brand {
-  background-position: 0 50%;
-  background-size: auto 28px;
+.a4-logo { display: block; flex: none; }
+.a4-logo-full { width: calc(24px * 388 / 59); height: 24px; }
+.a4-logo-mark { display: none; width: 28px; height: 28px; }
+/* the inner square of the back mark: white on light pages, as in the artwork; on dark pages the surface color, so the
+   mark keeps its drawing (a light outline around a dark square, the orange square in front) instead of a white
+   block brighter than everything else on the page */
+.a4-logo-paper { fill: var(--a4-surface); }
+.a4-logo-brand { fill: var(--a4-brand); }   /* the orange square, the brand color from its token */
+@media (forced-colors: active) {
+  #header-logo .brand,
+  .a4-login-logo { color: CanvasText; }
+  .a4-logo-paper { fill: Canvas; }
 }
 #header .navbar-icon {
   color: var(--a4-header-ink);
@@ -240,11 +280,11 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
     flex: 0 0 auto;
   }
   .navbar-bar a:focus-visible { outline-offset: -3px; }   /* a scrolling row clips: the ring is drawn inside the tab */
-  /* the field gives way first, so the tools keep one row down to 576px. The rest of the row takes 395px (the
-     paddings 48, the logo with the site link 154, the gaps, the search button 41, light/dark 36, the user menu and
-     logout 80); 410px leaves room for one more tool, so the field is 166px wide at 576px (106px until 2026-10,
-     with 470px) and its full 230px from 640px. */
-  #header .searchblock input.searchtext { width: clamp(6rem, calc(100vw - 410px), 230px); }
+  /* the field gives way first, so the tools keep one row down to 576px. The rest of the row takes 439px (the
+     paddings 48, the logo 158 (114 until the inline logo), the site link, the gaps, the search button 41, light/dark
+     36, the user menu and logout 80); 454px leaves room for one more tool, so the field is 122px wide at 576px
+     (166px with the old 114px logo, 106px until 2026-10) and its full 230px from 684px. */
+  #header .searchblock input.searchtext { width: clamp(6rem, calc(100vw - 454px), 230px); }
   /* With the script the row never overflows (ezadmin_menubar.js moves what does not fit into "More"), so it need not
      clip, and the "More" list can open below it. */
   .navbar-menu.a4-nav-fits .navbar-bar { overflow: visible; }
@@ -288,6 +328,10 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
     padding: 0 var(--a4-space-4);
   }
   .header-site { margin-left: auto; }   /* the tools stand together at the row's end */
+  /* the mark alone: the full logo (158px) left the row's tools 8px apart at 390px and squeezed the menu button */
+  #header-logo .a4-logo-full { display: none; }
+  #header-logo .a4-logo-mark { display: block; }
+  #header-logo .brand { justify-content: center; min-width: 36px; height: 36px; }   /* a target as large as the tools */
   #header .navbar-icon {
     order: 10;
     width: 36px;
@@ -305,6 +349,120 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
     align-self: stretch;
     padding-inline: var(--a4-space-4);
   }
+}
+
+/* ---- The environment badge ----------------------------------------------------------------------------------
+   parts/a4_environment_badge.tpl, beside the logo and on the sign-in page; only with site.ini [AdminEnvironment]
+   Level set. A filled pill in the level's color with the name in capitals (and, for signed-in users, the release).
+   It takes no height: 24px in the header's 36px row. Up to 767px the short code (DEV, TEST, STAGE, PROD; the logo is
+   the mark alone then), from 768px the name. What is not shown stays for screen readers (the name) or in the title
+   (the release). The search field gives the badge its room up to 1279px (--a4-env-room); from 1280px the main menu does,
+   its tabs going into "More". */
+.a4-env {
+  --a4-env-bg: var(--a4-env-production);
+  --a4-env-fg: var(--a4-env-production-ink);
+  --a4-env-edge: var(--a4-env-production-line);
+  box-sizing: border-box;
+  display: inline-flex;
+  flex: 0 1 auto;
+  align-items: center;
+  align-self: center;
+  gap: var(--a4-space-1);
+  min-width: 0;
+  max-width: 13rem;
+  height: 24px;
+  padding: 0 var(--a4-space-2);
+  border: 1px solid var(--a4-env-edge);
+  border-radius: 999px;
+  background-color: var(--a4-env-bg);
+  color: var(--a4-env-fg);
+  font-family: var(--a4-font);
+  font-size: var(--a4-text-xs);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: .04em;
+  white-space: nowrap;
+  cursor: default;
+}
+.a4-env-development { --a4-env-bg: var(--a4-env-development); --a4-env-fg: var(--a4-env-development-ink); --a4-env-edge: var(--a4-env-development-line); }
+.a4-env-test { --a4-env-bg: var(--a4-env-test); --a4-env-fg: var(--a4-env-test-ink); --a4-env-edge: var(--a4-env-test-line); }
+.a4-env-staging { --a4-env-bg: var(--a4-env-staging); --a4-env-fg: var(--a4-env-staging-ink); --a4-env-edge: var(--a4-env-staging-line); }
+.a4-env-production { --a4-env-bg: var(--a4-env-production); --a4-env-fg: var(--a4-env-production-ink); --a4-env-edge: var(--a4-env-production-line); }
+.a4-env-dot {
+  flex: 0 0 auto;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+/* the name shrinks only after the release is gone to an ellipsis */
+.a4-env-name,
+.a4-env-release {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.a4-env-name { flex: 0 1 auto; text-transform: uppercase; }
+.a4-env-short { display: none; }
+.a4-env-release {
+  flex: 0 1000 auto;
+  padding-left: var(--a4-space-1);
+  border-left: 1px solid currentColor;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+.header-logo:has(> .a4-env) { gap: var(--a4-space-2); }
+/* Up to 767px: the short code in words, no dot, so the environment is never told by its color alone (phones too:
+   the logo is the mark alone there, which leaves the room) */
+@media screen and (max-width: 767.98px) {
+  #header .a4-env { max-width: 4rem; padding: 0 var(--a4-space-2); }
+  #header .a4-env-dot { display: none; }
+  #header .a4-env-short { display: block; overflow: hidden; text-overflow: ellipsis; }
+  #header .a4-env-name,
+  #header .a4-env-release {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    border: 0;
+  }
+  #header:has(.a4-env) { --a4-env-room: calc(4rem + var(--a4-space-2) - 122px); }   /* the code, less the 122px the logo gives up below */
+}
+/* 576 to 767px with a badge: the logo is the mark alone, as on phones (36px instead of 158px), so the search field
+   keeps its width beside the short code */
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+  #header:has(.a4-env) #header-logo .a4-logo-full { display: none; }
+  #header:has(.a4-env) #header-logo .a4-logo-mark { display: block; }
+  #header:has(.a4-env) #header-logo .brand { justify-content: center; min-width: 36px; height: 36px; }
+}
+@media screen and (min-width: 768px) and (max-width: 1279.98px) {
+  #header:has(.a4-env) { --a4-env-room: calc(13rem + var(--a4-space-2)); }
+}
+@media screen and (min-width: 1280px) {
+  #header .a4-env { max-width: 18rem; }   /* the main menu gives the room, its last tabs going into "More" */
+}
+@media screen and (min-width: 576px) and (max-width: 1279.98px) {
+  #header:has(.a4-env) .searchblock input.searchtext { width: clamp(5.5rem, calc(100vw - 454px - var(--a4-env-room)), 230px); }
+}
+/* the sign-in page: the name beside the logo at every width (it has the room), no release (nobody is signed in) */
+.a4-login-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--a4-space-3);
+}
+@media (forced-colors: active) {
+  .a4-env {
+    border-color: CanvasText;
+    background-color: Canvas;
+    color: CanvasText;
+    forced-color-adjust: none;
+  }
+  .a4-env-dot { background-color: CanvasText; }
+  .a4-env-production { border-width: 2px; }
 }
 
 /* "More": the tabs the one-line menu has no room for, in a list under the button (a disclosure: aria-expanded,
@@ -419,6 +577,18 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
 }
 .a4-user-menu-display { font-weight: 600; overflow-wrap: anywhere; }
 .a4-user-menu-login { color: var(--a4-muted); font-size: var(--a4-text-xs); }
+/* The name as a link to the user's own object: the whole name block is the target, hover and focus as the links below */
+.a4-user-menu-self {
+  display: flex;
+  flex-direction: column;
+  margin: calc(-1 * var(--a4-space-2)) calc(-1 * var(--a4-space-3));
+  padding: var(--a4-space-2) var(--a4-space-3);
+  border-radius: var(--a4-radius-s);
+  color: var(--a4-ink);
+  text-decoration: none;
+}
+.a4-user-menu-self:hover { background-color: var(--a4-soft); color: var(--a4-ink); }
+.a4-user-menu-self:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: -3px; }
 .a4-user-menu-links { margin: 0; padding: 0; list-style: none; }
 .a4-user-menu-links li { margin: 0; }
 .a4-user-menu-links :is(a, span) {
@@ -440,6 +610,9 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
   .a4-header-btn[aria-expanded="true"],
   .a4-nav-more-toggle[aria-expanded="true"],
   .a4-nav-more-toggle.has-current { outline: 2px solid Highlight; }
+  /* the hover background is dropped in forced colors: an underline shows the pointer on a user menu link */
+  .a4-user-menu-links a:hover,
+  .a4-user-menu-self:hover { text-decoration: underline; }
 }
 @media (prefers-reduced-motion: reduce) {
   .a4-nav-more-toggle .a4-icon { transition: none; }
@@ -1361,7 +1534,8 @@ span.classattribute-description {
   background: var(--a4-soft); box-shadow: inset 0 0 0 1px var(--a4-line);
 }
 .a4-badge-class { color: var(--a4-accent-text); background-color: var(--a4-accent-soft); box-shadow: none; }
-.a4-badge-warn { color: var(--a4-warn); background-color: var(--a4-warn-bg); box-shadow: none; }
+/* a state badge (the visibility and account status beside the title) has its tint and no line */
+.a4-badge.is-ok, .a4-badge.is-warn, .a4-badge.is-bad { box-shadow: none; }
 
 /* the actions, on the title's row (wrapping under it on narrow windows) */
 .controlbar.a4-node-actions {
@@ -1566,14 +1740,9 @@ body.a4-login-page {
 html:has(body.a4-login-page) { background: var(--a4-surface); }
 .a4-login { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-height: 100vh; min-height: 100dvh; }
 .a4-login-side { display: flex; flex-direction: column; padding: var(--a4-space-5) var(--a4-space-6); }
-.a4-login-top { flex: 0 0 auto; }
-.a4-login-logo {
-  display: block; width: 168px; height: 40px;
-  background: url('../images/admin4/logo-light.png') no-repeat 0 50% / auto 36px;
-}
-/* the dark logo is the white one of admin3's sprite (500x100): 114x32 at x 124, in the top band, so the sprite is
-   placed by pixels like admin3's header does, not centred (centred, the box showed the separator blocks below it) */
-html[data-a4-theme="dark"] .a4-login-logo { background-image: url('../images/3/logo_separator_sprite.png'); background-position: -124px 4px; background-size: auto; width: 114px; }
+.a4-login-top { flex: 0 0 auto; }   /* a row: the logo and the environment badge (see the badge's rules) */
+.a4-login-logo { display: inline-flex; align-items: center; height: 40px; color: var(--a4-ink); }   /* parts/a4_logo.tpl */
+.a4-login-logo .a4-logo-full { width: calc(28px * 388 / 59); height: 28px; }
 .a4-login-box { flex: 1 0 auto; display: flex; flex-direction: column; justify-content: center; width: 100%; max-width: 380px; margin: 0 auto; padding: var(--a4-space-6) 0; }
 .a4-login-legal { flex: 0 0 auto; text-align: center; font-size: var(--a4-text-xs); color: var(--a4-muted); }
 .a4-login-legal p { margin: var(--a4-space-1) 0; }
@@ -2179,7 +2348,7 @@ div#contentstructure ul#content_tree_menu ul a.openclose-close::after {
 /* a block ends at its content: the last element's bottom margin (a .block's .5em) would add to the gutter */
 :is(#leftmenu-design, #rightmenu-design) .box-content > :last-child { margin-bottom: 0; }
 /* The block titles of both side columns: one size, weight and spacing in every module (the content tree's title as
-   the ini menus' and the tools'), sized from the column's font so the column sizes scale it; a long word breaks
+   the ini menus' and the tools'), sized from the column's font (the body's, at every column size); a long word breaks
    with a hyphen instead of running past the right column's 208px card. */
 :is(#leftmenu-design, #rightmenu-design) .box-header { font-size: inherit; }
 :is(#leftmenu-design, #rightmenu-design) .box-header h4 {
@@ -2675,15 +2844,22 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
   #window-controls.a4-node-tabs > .tabs-content { grid-row: 3; }
 }
 
-/* A sub-item's class icon and name stay together; the name wraps on its own */
+/* A sub-item's status mark, class icon and name stay together; the name wraps on its own. The mark (components.css
+   .a4-mark) and a user account's badge sit on the line's middle. */
 .a4-subitem-name {
   display: inline-flex;
   align-items: baseline;
   gap: var(--a4-space-1);
   max-width: 100%;
 }
-.a4-subitem-name > a:first-child { flex: none; }
-.a4-subitem-name > a:last-child { min-width: 0; overflow-wrap: break-word; }
+.a4-subitem-name > a:first-of-type { flex: none; }
+.a4-subitem-name > a:last-of-type { min-width: 0; overflow-wrap: break-word; }
+.a4-subitem-name > .a4-mark,
+.a4-subitem-name > .a4-badge { align-self: center; }
+/* the Visibility column: the mark beside the text */
+.a4-subitem-status { display: inline-flex; align-items: center; gap: var(--a4-space-1); }
+/* The content tree marks only what differs (a hidden node, a disabled account), after the name */
+div#contentstructure a.image-text .a4-mark { margin-left: var(--a4-space-1); }
 
 /* The sub-items toolbar wraps with an even gap instead of each button's left margin */
 html #action-controls {

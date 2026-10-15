@@ -7458,6 +7458,10 @@
         <source>Content tree</source>
         <translation>Content tree</translation>
     </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Account disabled</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/all_latest_content</name>
@@ -10756,6 +10760,30 @@
         <translation>Attributes: %1</translation>
     </message>
     <message>
+        <source>Visible: visitors of the site can see it.</source>
+        <translation>Visible: visitors of the site can see it.</translation>
+    </message>
+    <message>
+        <source>Hidden: visitors of the site do not see it.</source>
+        <translation>Hidden: visitors of the site do not see it.</translation>
+    </message>
+    <message>
+        <source>An item above it is hidden, so visitors of the site do not see it.</source>
+        <translation>An item above it is hidden, so visitors of the site do not see it.</translation>
+    </message>
+    <message>
+        <source>Disabled</source>
+        <translation>Disabled</translation>
+    </message>
+    <message>
+        <source>Account disabled: this user cannot log in.</source>
+        <translation>Account disabled: this user cannot log in.</translation>
+    </message>
+    <message>
+        <source>Locked after too many failed logins.</source>
+        <translation>Locked after too many failed logins.</translation>
+    </message>
+    <message>
         <source>%language – main language</source>
         <translation>%language – main language</translation>
     </message>
@@ -10774,6 +10802,14 @@
     <message>
         <source>Translate into %language</source>
         <translation>Translate into %language</translation>
+    </message>
+    <message>
+        <source>Import/Export</source>
+        <translation>Import/Export</translation>
+    </message>
+    <message>
+        <source>Export this item or import into it.</source>
+        <translation>Export this item or import into it.</translation>
     </message>
 </context>
 <context>
@@ -13558,6 +13594,42 @@ Note: The packages will not be uninstalled.</translation>
 <context>
     <name>design/admin/pagelayout</name>
     <message>
+        <source>Environment</source>
+        <translation>Environment</translation>
+    </message>
+    <message>
+        <source>Development</source>
+        <translation>Development</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Test</translation>
+    </message>
+    <message>
+        <source>Staging</source>
+        <translation>Staging</translation>
+    </message>
+    <message>
+        <source>Production</source>
+        <translation>Production</translation>
+    </message>
+    <message>
+        <source>DEV</source>
+        <translation>DEV</translation>
+    </message>
+    <message>
+        <source>TEST</source>
+        <translation>TEST</translation>
+    </message>
+    <message>
+        <source>STAGE</source>
+        <translation>STAGE</translation>
+    </message>
+    <message>
+        <source>PROD</source>
+        <translation>PROD</translation>
+    </message>
+    <message>
         <source>Breadcrumb</source>
         <translation>Breadcrumb</translation>
     </message>
@@ -13936,6 +14008,10 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>User menu (%name)</source>
         <translation>User menu (%name)</translation>
+    </message>
+    <message>
+        <source>Open your user object</source>
+        <translation>Open your user object</translation>
     </message>
 </context>
 <context>
@@ -15710,6 +15786,10 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>Open the package wizard…</source>
         <translation>Open the package wizard…</translation>
+    </message>
+    <message>
+        <source>Import/Export</source>
+        <translation>Import/Export</translation>
     </message>
 </context>
 <context>

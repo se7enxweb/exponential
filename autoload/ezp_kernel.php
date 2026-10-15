@@ -1192,6 +1192,7 @@ return array(
       'expTemplateExtensionWizard'                                   => 'kernel/setup/exptemplateextensionwizard.php',
       'expUnactivatedUsers'                                          => 'kernel/classes/user/expunactivatedusers.php',
       'expUserAccountOverview'                                       => 'kernel/classes/user/expuseraccountoverview.php',
+      'expUserAccountStatus'                                         => 'kernel/classes/user/expuseraccountstatus.php',
       'expUserActivation'                                            => 'kernel/classes/user/expuseractivation.php',
       'expUserHygiene'                                               => 'kernel/classes/user/expuserhygiene.php',
       'expUserLoginIntegrity'                                        => 'kernel/classes/expuserloginintegrity.php',

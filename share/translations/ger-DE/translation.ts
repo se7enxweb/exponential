@@ -2631,7 +2631,7 @@
     </message>
     <message>
         <source>Hidden by a parent</source>
-        <translation>Durch übergeordneten Eintrag verborgen</translation>
+        <translation>Versteckt durch übergeordneten Eintrag</translation>
     </message>
     <message>
         <source>Not found</source>
@@ -3833,7 +3833,7 @@
     </message>
     <message>
         <source>Hidden by parent</source>
-        <translation>Vom übergeordneten Element versteckt</translation>
+        <translation>Versteckt durch übergeordneten Eintrag</translation>
     </message>
     <message>
         <source>Visible</source>
@@ -8947,7 +8947,7 @@
     </message>
     <message>
         <source>Hidden by superior</source>
-        <translation>Vom übergeordneten Element versteckt</translation>
+        <translation>Versteckt durch übergeordneten Eintrag</translation>
     </message>
     <message>
         <source>Visible</source>
@@ -8987,7 +8987,7 @@
     </message>
     <message>
         <source>(Hidden by parent)</source>
-        <translation>(Durch übergeordneten Knoten versteckt)</translation>
+        <translation>(Versteckt durch übergeordneten Eintrag)</translation>
     </message>
     <message>
         <source>Items below %name</source>
@@ -9000,6 +9000,10 @@
     <message>
         <source>Content tree</source>
         <translation>Inhaltsbaum</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Konto deaktiviert</translation>
     </message>
 </context>
 <context>
@@ -10975,7 +10979,7 @@
     </message>
     <message>
         <source>Hidden by superior</source>
-        <translation>Vom übergeordneten Element versteckt</translation>
+        <translation>Versteckt durch übergeordneten Eintrag</translation>
     </message>
     <message>
         <source>Hide location and all sub items.</source>
@@ -11703,7 +11707,7 @@
     </message>
     <message>
         <source>Hidden by a parent</source>
-        <translation>Durch übergeordneten Knoten verborgen</translation>
+        <translation>Versteckt durch übergeordneten Eintrag</translation>
     </message>
     <message>
         <source>Language to edit</source>
@@ -11911,7 +11915,7 @@
     </message>
     <message>
         <source>Visible, Hidden or Hidden by superior.</source>
-        <translation>Sichtbar, Versteckt oder Durch übergeordnetes Element versteckt.</translation>
+        <translation>Sichtbar, Versteckt oder Versteckt durch übergeordneten Eintrag.</translation>
     </message>
     <message>
         <source>The name of the item's content class.</source>
@@ -12946,6 +12950,30 @@
         <translation>Attribute: %1</translation>
     </message>
     <message>
+        <source>Visible: visitors of the site can see it.</source>
+        <translation>Sichtbar: Besucher der Website sehen diesen Eintrag.</translation>
+    </message>
+    <message>
+        <source>Hidden: visitors of the site do not see it.</source>
+        <translation>Versteckt: Besucher der Website sehen diesen Eintrag nicht.</translation>
+    </message>
+    <message>
+        <source>An item above it is hidden, so visitors of the site do not see it.</source>
+        <translation>Ein übergeordneter Eintrag ist versteckt, daher sehen Besucher der Website diesen Eintrag nicht.</translation>
+    </message>
+    <message>
+        <source>Disabled</source>
+        <translation>Deaktiviert</translation>
+    </message>
+    <message>
+        <source>Account disabled: this user cannot log in.</source>
+        <translation>Konto deaktiviert: Dieser Benutzer kann sich nicht anmelden.</translation>
+    </message>
+    <message>
+        <source>Locked after too many failed logins.</source>
+        <translation>Nach zu vielen fehlgeschlagenen Anmeldungen gesperrt.</translation>
+    </message>
+    <message>
         <source>%language – main language</source>
         <translation>%language – Hauptsprache</translation>
     </message>
@@ -12964,6 +12992,14 @@
     <message>
         <source>Translate into %language</source>
         <translation>In %language übersetzen</translation>
+    </message>
+    <message>
+        <source>Import/Export</source>
+        <translation>Import/Export</translation>
+    </message>
+    <message>
+        <source>Export this item or import into it.</source>
+        <translation>Dieses Element exportieren oder in es importieren.</translation>
     </message>
 </context>
 <context>
@@ -15855,6 +15891,42 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
 <context>
     <name>design/admin/pagelayout</name>
     <message>
+        <source>Environment</source>
+        <translation>Umgebung</translation>
+    </message>
+    <message>
+        <source>Development</source>
+        <translation>Entwicklung</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Test</translation>
+    </message>
+    <message>
+        <source>Staging</source>
+        <translation>Staging</translation>
+    </message>
+    <message>
+        <source>Production</source>
+        <translation>Produktion</translation>
+    </message>
+    <message>
+        <source>DEV</source>
+        <translation>DEV</translation>
+    </message>
+    <message>
+        <source>TEST</source>
+        <translation>TEST</translation>
+    </message>
+    <message>
+        <source>STAGE</source>
+        <translation>STAGE</translation>
+    </message>
+    <message>
+        <source>PROD</source>
+        <translation>PROD</translation>
+    </message>
+    <message>
         <source>Breadcrumb</source>
         <translation>Brotkrumennavigation</translation>
     </message>
@@ -16301,6 +16373,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>User menu (%name)</source>
         <translation>Benutzermenü (%name)</translation>
+    </message>
+    <message>
+        <source>Open your user object</source>
+        <translation>Eigenes Benutzerobjekt öffnen</translation>
     </message>
 </context>
 <context>
@@ -18163,6 +18239,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Open the package wizard…</source>
         <translation>Paket-Assistenten öffnen…</translation>
+    </message>
+    <message>
+        <source>Import/Export</source>
+        <translation>Import/Export</translation>
     </message>
 </context>
 <context>
@@ -49414,7 +49494,7 @@ Wenn Sie noch mehr Objekte hinzufügen wollen, klicken Sie die %emphasize_startL
     </message>
     <message>
         <source>Hidden by superior</source>
-        <translation>Vom übergeordneten Element versteckt</translation>
+        <translation>Versteckt durch übergeordneten Eintrag</translation>
     </message>
     <message>
         <source>Hidden</source>
@@ -49426,7 +49506,7 @@ Wenn Sie noch mehr Objekte hinzufügen wollen, klicken Sie die %emphasize_startL
     </message>
     <message>
         <source>(Hidden by parent)</source>
-        <translation>(Durch übergeordneten Knoten versteckt)</translation>
+        <translation>(Versteckt durch übergeordneten Eintrag)</translation>
     </message>
 </context>
 <context>
@@ -58404,7 +58484,7 @@ Wählen Sie Ihre Kunden und klicken Sie die Schaltfläche %buttonname.
     </message>
     <message>
         <source>Hidden by superior</source>
-        <translation>Vom übergeordneten Element versteckt</translation>
+        <translation>Versteckt durch übergeordneten Eintrag</translation>
     </message>
     <message>
         <source>Hidden</source>
@@ -58416,7 +58496,7 @@ Wählen Sie Ihre Kunden und klicken Sie die Schaltfläche %buttonname.
     </message>
     <message>
         <source>(Hidden by parent)</source>
-        <translation>(Durch übergeordneten Knoten versteckt)</translation>
+        <translation>(Versteckt durch übergeordneten Eintrag)</translation>
     </message>
 </context>
 <context>
@@ -61932,7 +62012,7 @@ wenn Sie die Option &quot;%3&quot; von &quot;%4&quot; ausgewählt haben </transl
     </message>
     <message>
         <source>Hidden by superior</source>
-        <translation>Vom übergeordneten Element versteckt</translation>
+        <translation>Versteckt durch übergeordneten Eintrag</translation>
     </message>
     <message>
         <source>Visible</source>
@@ -63240,7 +63320,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>Hidden by its parent</source>
-        <translation>Durch übergeordneten Knoten verborgen</translation>
+        <translation>Versteckt durch übergeordneten Eintrag</translation>
     </message>
     <message>
         <source>None: the object is in the trash.</source>

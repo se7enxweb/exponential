@@ -59,8 +59,13 @@
         <h1 class="context-title a4-pagehead-title">{$node.name|wash}</h1>
         <span class="a4-node-badges">
             <span class="a4-badge a4-badge-class">{$node.class_name|wash}</span>
-            {if $node.is_hidden}<span class="a4-badge a4-badge-warn">{'Hidden'|i18n( 'design/admin/node/view/full' )}</span>
-            {elseif $node.is_invisible}<span class="a4-badge a4-badge-warn">{'Hidden by a parent'|i18n( 'design/admin/node/view/full' )}</span>{/if}
+            {* visible, hidden or hidden by a parent: a badge with its status mark (parts/visibility_status.tpl) *}
+            {include uri='design:parts/visibility_status.tpl' status_node=$node status_badge=true() status_quiet=false()}
+            {* a user account that is disabled or locked, for those who may see it (expUserAccountStatus) *}
+            {def $a4_account_status = fetch( 'user', 'account_status', hash( 'user_id', $node.contentobject_id ) )}
+            {if eq( $a4_account_status, 'disabled' )}<span class="a4-badge a4-account-status" title="{'Account disabled: this user cannot log in.'|i18n( 'design/admin/node/view/full' )|wash}"><span class="a4-mark is-disabled" aria-hidden="true"></span>{'Disabled'|i18n( 'design/admin/node/view/full' )|wash}</span>
+            {elseif eq( $a4_account_status, 'locked' )}<span class="a4-badge is-warn a4-account-status" title="{'Locked after too many failed logins.'|i18n( 'design/admin/node/view/full' )|wash}"><span class="a4-mark is-locked" aria-hidden="true"></span>{'Locked'|i18n( 'design/admin/node/view/full' )|wash}</span>{/if}
+            {undef $a4_account_status}
             {if ne( $node.node_id, $node.main_node_id )}<span class="a4-badge">{'Secondary location'|i18n( 'design/admin/node/view/full' )}</span>{/if}
         </span>
     </div>
@@ -96,6 +101,8 @@
     {undef $can_create_languages}
     {* Upload: ezmultiupload's upload page for this node, only where the user can upload (node/view/upload_button.tpl) *}
     {include uri='design:node/view/upload_button.tpl' node=$node}
+    {* Import/Export: the export and import menu of this node (node/view/import_export_button.tpl), only with an entry for the user *}
+    {include uri='design:node/view/import_export_button.tpl' node=$node}
     {if $node.can_move}
         <input class="button" type="submit" name="MoveNodeButton" value="{'Move'|i18n( 'design/admin/node/view/full' )}" title="{'Move this item to another location.'|i18n( 'design/admin/node/view/full' )}" />
     {else}

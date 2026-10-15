@@ -114,6 +114,7 @@ var treeMenu;
             *}"hidden":"{'Hidden'|i18n('design/admin/contentstructuremenu')|wash(xhtml)|wash(javascript)}",{*
             *}"visible":"{'Visible'|i18n('design/admin/contentstructuremenu')|wash(xhtml)|wash(javascript)}",{*
             *}"hiddenbyparent":"{'Hidden by superior'|i18n('design/admin/contentstructuremenu')|wash(xhtml)|wash(javascript)}",{*
+            *}"account_disabled":"{'Account disabled'|i18n('design/admin/contentstructuremenu')|wash(xhtml)|wash(javascript)}",{*
             *}"disabled":"{'Dynamic tree menu is disabled for this siteaccess!'|i18n("design/admin/contentstructuremenu")|wash("javascript")}",{*
             *}"not_exist":"{'Node does not exist'|i18n("design/admin/contentstructuremenu")|wash("javascript")}",{*
             *}"internal_error":"{'Internal error'|i18n("design/admin/contentstructuremenu")|wash("javascript")}",{*

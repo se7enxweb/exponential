@@ -123,10 +123,10 @@ var eZAjaxSubitemsExpDataTable = (function () {
 
         // ---- cell formatters ----------------------------------------------------
         var formatName = function (row) {
-            // one box for icon and name (admin4.css .a4-subitem-name): a narrow column wraps the name, never
-            // between the icon and the name
-            return '<span class="a4-subitem-name"><a href="' + row.url + '" title="' + row.name + '">' + row.class_icon + '</a>' +
-                   '<a href="' + row.url + '" title="' + row.name + '">' + row.name + '</a></span>';
+            // one box for the status mark, icon and name (admin4.css .a4-subitem-name): a narrow column wraps the
+            // name, never between the icon and the name; a disabled or locked user account gets a badge after it
+            return '<span class="a4-subitem-name">' + visibilityMark(row) + '<a href="' + row.url + '" title="' + row.name + '">' + row.class_icon + '</a>' +
+                   '<a href="' + row.url + '" title="' + row.name + '">' + row.name + '</a>' + accountBadge(row) + '</span>';
         };
         // The text of an HTML-encoded value: the server sends names encoded for markup, an attribute set from
         // script and the menu's header take text ("Tom & Jerry", not "Tom &amp; Jerry").
@@ -206,12 +206,55 @@ var eZAjaxSubitemsExpDataTable = (function () {
             return function (row) { var v = row[key]; return v === null || v === undefined ? '' : String(v).replace(/&/g, '&#38;').replace(/</g, '&#60;').replace(/>/g, '&#62;'); };
         };
 
+        // ---- the status marks (components.css .a4-mark) -------------------------
+        // labelsObj.STATUS holds the names and the explanations (children_detailed.tpl); without it (an older
+        // template) the marks are drawn with the English words.
+        var S = $.extend({
+            visible: 'Visible', hidden: 'Hidden', hidden_by_parent: 'Hidden by a parent',
+            visible_title: 'Visible: visitors of the site can see it.', hidden_title: 'Hidden: visitors of the site do not see it.',
+            hidden_by_parent_title: 'An item above it is hidden, so visitors of the site do not see it.',
+            disabled: 'Disabled', disabled_title: 'Account disabled: this user cannot log in.',
+            locked: 'Locked', locked_title: 'Locked after too many failed logins.'
+        }, labelsObj.STATUS || {});
+        // The node's visibility from the row's flags (ezjscAjaxContent): 'visible', 'hidden', 'hidden-by-parent',
+        // or null when the server sent no flags.
+        var visibilityState = function (row) {
+            if (row.is_hidden === true) { return 'hidden'; }
+            if (row.is_invisible === true) { return 'hidden-by-parent'; }
+            return row.is_hidden === false && row.is_invisible === false ? 'visible' : null;
+        };
+        var VISIBILITY = { 'visible': ['visible', 'visible_title'], 'hidden': ['hidden', 'hidden_title'],
+                           'hidden-by-parent': ['hidden_by_parent', 'hidden_by_parent_title'] };
+        // A filled disc, a ring or a ring with a bar before the name. Hidden and hidden by a parent are named for
+        // screen readers (role="img"); visible, the usual state, only shows (and explains in its title).
+        var visibilityMark = function (row) {
+            var state = visibilityState(row);
+            if (!state) { return ''; }
+            var name = S[VISIBILITY[state][0]], title = S[VISIBILITY[state][1]] || name;
+            return state === 'visible'
+                ? '<span class="a4-mark is-visible" title="' + attr(title) + '" aria-hidden="true"></span>'
+                : '<span class="a4-mark is-' + state + '" role="img" aria-label="' + attr(name) + '" title="' + attr(title) + '"></span>';
+        };
+        // The Visibility column: the mark beside the server's text (Visible, Hidden, Hidden by superior)
+        var visibilityView = function (row) {
+            var state = visibilityState(row), label = text('hidden_status_string')(row);
+            if (!state) { return label; }
+            return '<span class="a4-subitem-status"><span class="a4-mark is-' + state + '" aria-hidden="true"></span>' + label + '</span>';
+        };
+        // A user account the server marks as disabled or locked (expUserAccountStatus, row.user_status): a badge
+        var accountBadge = function (row) {
+            if (row.user_status !== 'disabled' && row.user_status !== 'locked') { return ''; }
+            var name = S[row.user_status], title = S[row.user_status + '_title'] || name;
+            return '<span class="a4-badge' + (row.user_status === 'locked' ? ' is-warn' : '') + '" title="' + attr(title) + '">' +
+                   '<span class="a4-mark is-' + row.user_status + '" aria-hidden="true"></span>' + attr(name) + '</span>';
+        };
+
         var columns = [
             { key: 'checkbox', label: '' },
             { key: 'crank', label: '', render: customMenu },
             { key: 'thumbnail', label: L.thumbnail, labelHidden: true, render: thumbView },
             { key: 'name', label: L.name, sortable: true, render: formatName },
-            { key: 'hidden_status_string', label: L.visibility, sortable: true, render: text('hidden_status_string') },
+            { key: 'hidden_status_string', label: L.visibility, sortable: true, render: visibilityView },
             { key: 'class_name', label: L.type, sortable: true, render: text('class_name') },
             { key: 'creator', label: L.modifier, render: text('creator') },
             { key: 'modified_date', label: L.modified, sortable: true, render: text('modified_date') },

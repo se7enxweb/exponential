@@ -77,8 +77,19 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
   two rows of 48 + 40 px from 576 px, one row of 56 px on a phone with the hamburger menu (logo, site, light/dark,
   user menu, logout, menu button). The menu stays on one line; tabs that do not fit go into a "More" list. "Open the
   site" is the first of the tools, a round icon button like the others; logout is an icon button ("Logout
-  (admin)"); the user menu holds the user's name and links. The Tab key reaches the tools in the order they are
+  (admin)"); the user menu holds the user's name and links, and the name leads to the user's own object when the
+  user may read it (not on edit and browse pages). The Tab key reaches the tools in the order they are
   drawn. "/" jumps to the search. The page always starts below the header (`AdminHeaderTest`).
+- **Logo.** One template draws it, `parts/a4_logo.tpl`, included in the header (`page_topmenu.tpl`, admin4l's
+  `admin_logo` block) and on the sign-in page. It is inline SVG: letters and outlines in `currentColor` (the link's
+  `--a4-ink`, so dark on light pages and light on dark ones), the orange square in the brand color `#f15a28`, the
+  inner square of the back mark in `--a4-surface` (white on light pages as in the artwork; on dark pages the page's
+  color instead of a white block). Under forced colors CanvasText and Canvas. 24 px high in the header (158 px wide,
+  in the 32 px box of the old image, so the header keeps 56/88 px), 28 px on the sign-in page; below 576 px the
+  header shows the mark alone (in a 36 px link, like the tools). The drawings are `aria-hidden`; the links around them carry the name. The same
+  drawing as files: `images/admin4/exponential-logo.svg` (word and mark, viewBox cut to the drawing) and
+  `images/admin4/exponential-mark.svg` (the mark, square). `AdminLogoTest` keeps the partial and the files equal and
+  checks that they hold no script, style or outside reference.
 - **Sign-in page.** One calm form, fast on phones: labels above 46-48 px fields, 16 px text so mobile Safari does not
   zoom, autofill hints, Enter moves from the username to the password and signs in, a show/hide button, one full-width
   button that cannot be sent twice, and forgot-password and register links when those modules exist. The kernel reads
@@ -125,6 +136,19 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
   preference that cannot be saved (a network error, an error status, the login page of an expired session), keep it
   in the browser; the preference wins over the browser's copy. Without JavaScript the box keeps the browser's own
   resize grip. The top node's view has the same control. `tests/tests/design/AdminNodeTabsHeightTest.php` checks it.
+- **Environment badge.** Off by default. With `site.ini [AdminEnvironment] Level` set, the header shows the
+  environment's name beside the logo, in the level's color: development green, test amber, staging violet,
+  production red, each with a darker or lighter edge for the dark mode (`--a4-env-<level>`, `-ink`, `-line` in
+  `admin4.css`; text 4.5:1 on the fill, the edge 3:1 on the header). The page title starts with the name in capitals,
+  "[PRODUCTION] Dashboard - Site", so windows and tabs can be told apart; the sign-in page shows the badge and the
+  prefix too. The badge is text, not only color: from 768 px the name (and, for signed-in users, `Release` and with
+  `ShowVersion=enabled` the Exponential version), up to 767 px, phones included, the short code (`ShortName`, default DEV,
+  TEST, STAGE, PROD; the full logo gives way to the mark alone from 576 to 767 px too), the name always read out by
+  screen readers; the title attribute holds the whole text. It is 24 px high in the 36 px row of the header tools,
+  so the header keeps 56, 88 and 56 px; up to 1279 px the search field gives it its room,
+  from 1280 px the main menu does (its last tabs go into "More"). In forced colors it is drawn in the system colors
+  with its text. The same in admin4l (the logo block). See [Settings](#settings).
+  `tests/tests/design/AdminEnvironmentBadgeTest.php` checks it.
 - **Edit form.** The button bars (Send for publishing, Store draft, Store draft and exit, Discard draft) stay in view
   while the form scrolls (CSS `position: sticky`, replacing the YUI script that stopped working). They are slim
   (42 px on a desktop) and fit a phone screen. Edit pages show one left column, not two. Required fields carry a red
@@ -591,6 +615,47 @@ variables of the template that includes it: a parameter called `class` would rea
 other designs. `tests/tests/design/AdminLanguageBadgeTest.php` fails for a flag in an admin4 template or script, or in
 either design's sub-items table.
 
+## Visibility and account status
+
+Whether visitors of the site see an item, and whether a user can log in, shows at a glance as a small status mark
+(`.a4-mark` in both copies of `components.css`, 10 px). The shape tells the state as well as the color, so it
+reads in gray scale, for color-blind users and in forced colors (where the marks take the system text color):
+
+| Mark | Shape | Color token | Meaning |
+|---|---|---|---|
+| `is-visible` | filled disc | `--a4-ok` | visible |
+| `is-hidden` | ring | `--a4-bad` | hidden (`is_hidden`) |
+| `is-hidden-by-parent` | ring with a bar | `--a4-bad` | hidden because an item above it is hidden (`is_invisible` without `is_hidden`) |
+| `is-disabled` | crossed ring | `--a4-muted` | user account disabled (Setup > Users, `ezuser_setting.is_enabled`) |
+| `is-locked` | filled square | `--a4-warn` | user account locked after more failed logins than `site.ini [UserSettings] MaxNumberOfFailedLogin` (`eZUser::isLocked()`) |
+
+Each color reaches 3:1 against the card, the zebra and hovered rows and its own badge tint, in light and dark mode.
+Where the mark stands alone it is `role="img"` with an `aria-label` and a `title` that explains it; next to its own
+text it is `aria-hidden`. A visible item's mark is only seen: a screen reader hears the exceptions.
+
+Where it shows:
+
+- **Node view header:** a badge beside the class (Visible, Hidden, or Hidden by a parent, each with its mark and the
+  explanation as title); for a user object also "Disabled" or "Locked". The badge comes from
+  `design:parts/visibility_status.tpl` (parameters `status_node`, `status_badge`, `status_quiet`).
+- **Sub-items table:** the mark before every name (all three states, so a hidden item stands out among green ones),
+  and a "Disabled" or "Locked" badge after the name of a user account. The Visibility column, when chosen in the
+  table options, shows the mark beside its text. The rows of `ezjscnode::subtree` and `expsubitems::rows` carry
+  `is_hidden` and `is_invisible` (`ezjscAjaxContent`) and, for user accounts, `user_status`.
+- **Content tree:** only what differs, so the tree stays quiet: a ring or a ring with a bar after the name of a
+  hidden node (decorative: the "(Hidden)" text after it, which admin4 used to remove with `display: none`, is now
+  kept for screen readers), and a crossed ring after a disabled user account. A lock after failed logins is not shown there: the
+  tree is cached by the nodes' `modified_subnode`, which enabling and disabling an account now renews
+  (`eZUserOperationCollection::setSettings()` and `activation()`), but a failed login does not.
+- **Browse dialog** (list view): the mark before a hidden node.
+
+The account status comes from `expUserAccountStatus` (`kernel/classes/user/`), which reads it for a whole page with at
+most two queries (`ezuser_setting`, then `ezuservisit` for the enabled users among them), never one per row; templates
+ask `fetch( 'user', 'account_status', hash( 'user_id', ... ) )` (`enabled`, `disabled`, `locked` or false). It is shown
+to users with `role/read`, the same who may see the sub-items columns "Account enabled" and "Locked out". Tests:
+`AdminVisibilityStatusTest` (shapes, contrast, templates, the scripts through a node harness, the texts in German and
+American English) and `expUserAccountStatusTest` (the bundled reads, the order disabled before locked, the access
+check).
 ### The state of a language
 
 For one object a badge also shows the state of its language, by its shape and never by a color per language (green,
@@ -788,6 +853,7 @@ template sets `confObj.priorityDrag`, so the other admin designs are unchanged.
 | `settings/menu.ini` | `Topmenu_setup` | `URL[default]` | `setup/menu` (the Setup overview) | siteaccess |
 | `settings/menu.ini` | `Leftmenu_<menu>` | `PolicyList_<link>[]` | a node id, `<module>/<function>`, or `<module>/*` for a module without policy functions | siteaccess |
 | `settings/site.ini` | `SiteAccessSettings` | `FrontSiteAccess` | empty (`DefaultAccess`) | siteaccess |
+| `settings/site.ini` | `AdminEnvironment` | `Level`, `Name`, `ShortName`, `Release`, `ShowVersion`, `ShowInTitle` | empty (no badge), empty, empty, empty, `disabled`, `enabled` | siteaccess |
 
 `ShowCommunityLinks=enabled` shows the footer line "Evaluate Exponential / Become a member of the Exponential
 Community". A template can also set `$show_community_links`.
@@ -812,6 +878,15 @@ Community". A template can also set `$show_community_links`.
 - `FrontSiteAccess` is the site an admin siteaccess belongs to: its "Open the site" and "View on site" links go there.
   Both show the globe (Bootstrap Icons `globe2`, `.a4-bi-globe2`), so a link to the site does not look like a link
   that leaves the administration for something else (`box-arrow-up-right`).
+- `[AdminEnvironment]`: the environment badge (see "Environment badge" above). `Level` is `development`, `test`,
+  `staging` or `production`, or `auto` for the level of `EXP_ENV` (`dev`, `development`; `test`; `stage`, `staging`;
+  `prod`, `production`, `live`; another name or none: no badge). An empty `Name` takes the level's translated name.
+  Set it per environment, for example in `settings/override/site.ini.prod.append.php`
+  ([Settings per environment](environment-settings.md)); the setting is read on every request. The header's and the
+  sign-in page's cache-blocks are keyed by the badge, so a changed setting shows on the next request without clearing
+  the template cache; where `EZP_INI_FILEMTIME_CHECK` is off, clear the INI cache
+  (`php bin/php/ezcache.php --clear-id=global_ini`). `Release` and the version are shown to signed-in users only.
+  The template operator is `exp_environment_badge()`.
 - The logo's name in the header carries the release only for signed-in users; the anonymous pages of the admin
   (the 401 page, `user/register`, `user/forgotpassword`) say "Exponential".
 
