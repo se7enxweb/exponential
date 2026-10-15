@@ -24,20 +24,10 @@ when did it change, and can I take a copy of it?
 A download is a button of the page's form: it posts `ExtensionDownload=<extension name>/<format>` with the form
 token. Since 14 October 2026 the address `/setup/extensions/<extension name>/<format>` no longer downloads; it shows
 the list. An extension that holds a secret value or key material is not packed, and the page says which files and
-settings stopped it ([the secret check](../../bc/6.0/extension-package-secret-check.md)).
-3. Click one of the four download buttons: `tar.gz`, `.zip`, `tar.bz2` or `.ezpkg`.
-
-Since 14 October 2026 a download is a button of the page's form (POST, with the form token); the former address
-`/setup/extensions/<extension name>/<format>` no longer packs anything. The buttons are only there when the
-extension may be exported: package.ini `[ExtensionExportSettings] AllowedExtensions[]` lists it (or `*`) and your role
-has the policy `package/export_extension` (unless `RequirePolicy=disabled`); otherwise the card shows the reason and
-the page a notice. An extension that holds secret values or key material is never packed
-(`eZExtensionPackageHandler::packRefusal()`, see the [6.0.15 changelog](../../changelogs/6.0/6.0.15.md)).
-the list. The buttons are only there when the extension may be exported: package.ini
-`[ExtensionExportSettings] AllowedExtensions[]` lists it (or `*`) and your role has the policy
-`package/export_extension` (unless `RequirePolicy=disabled`); otherwise the card shows the reason and the page a
-notice. An extension that holds a secret value or key material is not packed, and the page says which files and
-settings stopped it ([the secret check](../../bc/6.0/extension-package-secret-check.md)).
+settings stopped it ([the secret check](../../bc/6.0/extension-package-secret-check.md)). The buttons are only there when
+the extension may be exported: package.ini `[ExtensionExportSettings] AllowedExtensions[]` lists it (or `*`) and your
+role has the policy `package/export_extension` (unless `RequirePolicy=disabled`); otherwise the card shows the reason
+and the page a notice.
 
 `<format>` is one of `tar.gz`, `tar.bz2`, `zip`, `ezpkg`. The server builds a package of the extension with the
 `ezextension` package handler, streams it as an attachment named `<name>.<format>`, and removes the temporary file
