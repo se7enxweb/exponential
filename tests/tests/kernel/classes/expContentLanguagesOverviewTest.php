@@ -159,5 +159,19 @@ class expContentLanguagesOverviewTest extends ezpTestCase
         $this->assertSame( 'Norwegian [Bokmål]', $choices[2]['label'] );
         $this->assertStringContainsString( 'deutsch', $choices[1]['search'] );
         $this->assertStringContainsString( 'ger-de', $choices[1]['search'] );
+        $this->assertSame( 'Germany', $choices[1]['country'] );
+    }
+
+    public function testLocaleChoicesDoNotRepeatTheCountryOfARegionalName()
+    {
+        $choices = Translations::localeChoices( array(
+            array( 'code' => 'ger-AT', 'intl_name' => 'German (Austria)', 'native_name' => 'Deutsch (Österreich)', 'country' => 'Austria', 'comment' => '' ),
+            array( 'code' => 'fas-IR', 'intl_name' => 'Persian', 'native_name' => 'فارسی', 'country' => 'Iran', 'comment' => '' ),
+        ), array() );
+        $this->assertSame( array( 'ger-AT', 'fas-IR' ), array_column( $choices, 'code' ), 'sorted by English name' );
+        $this->assertSame( 'Iran', $choices[1]['country'] );
+        $this->assertSame( '', $choices[0]['country'], 'the name already says Austria' );
+        $this->assertStringContainsString( 'austria', $choices[0]['search'], 'the search still finds the country' );
+        $this->assertStringContainsString( 'فارسی', $choices[1]['search'] );
     }
 }

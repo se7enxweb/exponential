@@ -284,8 +284,19 @@ class eZTemplateExecuteOperator
             $parametersCode .= ' )';
         }
 
-        $code = '%output% = call_user_func_array( array( new ' . $functionDefinition['call_method']['class'] . '(), \'' . $functionDefinition['call_method']['method'] . '\' ),' . "\n" .
-                 '  array_values( ' . $parametersCode . ' ) );';
+        // Guarded like eZModuleFunctionInfo::executeClassMethod(): a class or method this process cannot load yet (a
+        // new kernel class whose autoload a running PHP-FPM or Velocity worker has not read) gives no result and an
+        // error in the debug output, never a fatal error on the page.
+        $className = $functionDefinition['call_method']['class'];
+        $methodName = $functionDefinition['call_method']['method'];
+        $code = 'if ( class_exists( ' . var_export( $className, true ) . ' ) && method_exists( ' . var_export( $className, true ) . ', ' . var_export( $methodName, true ) . ' ) )' . "\n" .
+                '    %output% = call_user_func_array( array( new ' . $className . '(), ' . var_export( $methodName, true ) . ' ),' . "\n" .
+                '      array_values( ' . $parametersCode . ' ) );' . "\n" .
+                'else' . "\n" .
+                '{' . "\n" .
+                '    eZDebug::writeError( ' . var_export( "fetch() needs $className::$methodName(), which this process cannot load", true ) . ', \'eZTemplateExecuteOperator\' );' . "\n" .
+                '    %output% = null;' . "\n" .
+                '}';
         $code .= "\n";
 
         $code .= '%output% = isset( %output%[\'result\'] ) ? %output%[\'result\'] : null;' . "\n";

@@ -113,7 +113,8 @@
       "tests/tests/design/AdminLeftMenuGroupsTest.php",
       "tests/tests/design/AdminRetiredClassesTest.php",
       "tests/tests/design/AdminSelfContainedTest.php",
-      "tests/tests/design/AdminMegaMenuTest.php"
+      "tests/tests/design/AdminMegaMenuTest.php",
+      "tests/tests/design/AdminLanguageStatesTest.php"
     ],
     "design/admin*/stylesheets/*": [
       "tests/tests/design/AdminStylingRulesTest.php",
@@ -130,13 +131,16 @@
       "tests/tests/design/AdminCardsTest.php",
       "tests/tests/design/AdminBaseStylesheetsTest.php",
       "tests/tests/design/AdminRetiredClassesTest.php",
-      "tests/tests/design/AdminMegaMenuTest.php"
+      "tests/tests/design/AdminMegaMenuTest.php",
+      "tests/tests/design/AdminLanguageStatesTest.php"
     ],
     "design/admin*/javascript/ezajaxsubitems_expdatatable.js": [
-      "tests/tests/design/AdminLanguageBadgeTest.php"
+      "tests/tests/design/AdminLanguageBadgeTest.php",
+      "tests/tests/design/AdminLanguageStatesTest.php"
     ],
     "lib/ezlocale/classes/ezlocale.php": [
-      "tests/tests/design/AdminLanguageBadgeTest.php"
+      "tests/tests/design/AdminLanguageBadgeTest.php",
+      "tests/tests/lib/ezlocale/expLocaleFilesTest.php"
     ],
     "share/icons/bootstrap-icons/*": [
       "tests/tests/design/AdminIconsTest.php",
@@ -603,6 +607,16 @@
     ],
     "design/standard/templates/content/reverse_relation_check.tpl": [
       "tests/tests/design/AdminReverseRelationCheckTest.php"
+    ],
+    "share/locale/*": [
+      "tests/tests/lib/ezlocale/expLocaleFilesTest.php",
+      "tests/tests/lib/ezlocale/eZLocaleFormattingTest.php"
+    ],
+    "tests/tests/design/js/language_states.js": [
+      "tests/tests/design/AdminLanguageStatesTest.php"
+    ],
+    "lib/eztemplate/classes/eztemplateexecuteoperator.php": [
+      "tests/tests/lib/eztemplate/eZTemplateFetchOperatorTest.php"
     ]
   },
   "generated": {
@@ -711,7 +725,8 @@
       "tests/tests/kernel/private/expAdminViewsDebugCleanTest.php"
     ],
     "design/admin4/templates/node/view/a4_full_body.tpl": [
-      "tests/tests/kernel/content/eZAdminFullViewCopyButtonTest.php"
+      "tests/tests/kernel/content/eZAdminFullViewCopyButtonTest.php",
+      "tests/tests/design/AdminLanguageStatesTest.php"
     ],
     "design/admin4/templates/setup/sitedata.tpl": [
       "tests/tests/kernel/content/eZContentFunctionCollectionSiteDataTest.php"
@@ -945,7 +960,8 @@
       "tests/tests/kernel/content/eZPublishRegisterSearchObjectTest.php"
     ],
     "kernel/content/function_definition.php": [
-      "tests/tests/kernel/content/eZContentFunctionCollectionSiteDataTest.php"
+      "tests/tests/kernel/content/eZContentFunctionCollectionSiteDataTest.php",
+      "tests/tests/design/AdminLanguageStatesTest.php"
     ],
     "kernel/content/module.php": [
       "tests/tests/kernel/classes/eZContentHistoryAccessTest.php",
@@ -1368,6 +1384,30 @@
       "tests/tests/kernel/classes/updatesql/CheckDbFilesVersionListTest.php",
       "tests/tests/kernel/classes/updatesql/PasswordHashWideningUpdateSqlTest.php",
       "tests/tests/kernel/classes/updatesql/SixZeroPathSchemaUpdateSqlTest.php"
+    ],
+    "design/admin/stylesheets/components.css": [
+      "tests/tests/design/AdminLanguageStatesTest.php"
+    ],
+    "design/admin/templates/children_detailed.tpl": [
+      "tests/tests/design/AdminLanguageStatesTest.php"
+    ],
+    "design/admin4/javascript/ezajaxsubitems_expdatatable.js": [
+      "tests/tests/design/AdminLanguageStatesTest.php"
+    ],
+    "design/admin4/stylesheets/components.css": [
+      "tests/tests/design/AdminLanguageStatesTest.php"
+    ],
+    "design/admin4/templates/children_detailed.tpl": [
+      "tests/tests/design/AdminLanguageStatesTest.php"
+    ],
+    "design/admin4/templates/parts/language_state_badge.tpl": [
+      "tests/tests/design/AdminLanguageStatesTest.php"
+    ],
+    "design/admin4/templates/translations.tpl": [
+      "tests/tests/design/AdminLanguageStatesTest.php"
+    ],
+    "extension/ezjscore/classes/ezjscajaxcontent.php": [
+      "tests/tests/design/AdminLanguageStatesTest.php"
     ]
   }
 }
