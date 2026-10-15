@@ -9565,11 +9565,1063 @@
     </message>
     <message>
         <source>This is the top node of the content structure. It is not a content object: it has no class, attributes, translations, versions or other locations, and it cannot be edited, moved or removed. The top-level nodes it holds are listed under Sub items.</source>
-        <translation>This is the top node of the content structure. It is not a content object: it has no class, attributes, translations, versions or other locations, and it cannot be edited, moved or removed. The top-level nodes it holds are listed under Sub items.</translation>
+        <translation>This is the top node of the content structure. It is not a content object: it has no class, attributes, translations, versions or other locations, and it cannot be edited, moved or removed. The content below it is listed under Sub items.</translation>
     </message>
     <message>
         <source>Top node</source>
         <translation>Top node</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Basic</translation>
+    </message>
+    <message>
+        <source>A small preview of the item's image, or its class icon.</source>
+        <translation>A small preview of the item's image, or its class icon.</translation>
+    </message>
+    <message>
+        <source>The item's name, linked to its page in the admin.</source>
+        <translation>The item's name, linked to its page in the admin.</translation>
+    </message>
+    <message>
+        <source>Visible, Hidden or Hidden by superior.</source>
+        <translation>Visible, Hidden or Hidden by superior.</translation>
+    </message>
+    <message>
+        <source>The name of the item's content class.</source>
+        <translation>The name of the item's content class.</translation>
+    </message>
+    <message>
+        <source>People</source>
+        <translation>People</translation>
+    </message>
+    <message>
+        <source>Who published the current version.</source>
+        <translation>Who published the current version.</translation>
+    </message>
+    <message>
+        <source>Dates</source>
+        <translation>Dates</translation>
+    </message>
+    <message>
+        <source>When the current version was published.</source>
+        <translation>When the current version was published.</translation>
+    </message>
+    <message>
+        <source>When the item was first published.</source>
+        <translation>When the item was first published.</translation>
+    </message>
+    <message>
+        <source>The flags of the languages the item is translated into.</source>
+        <translation>The flags of the languages the item is translated into.</translation>
+    </message>
+    <message>
+        <source>The name of the item's section.</source>
+        <translation>The name of the item's section.</translation>
+    </message>
+    <message>
+        <source>The ID of the location (node).</source>
+        <translation>The ID of the location (node).</translation>
+    </message>
+    <message>
+        <source>The remote ID of the location, stable across installations.</source>
+        <translation>The remote ID of the location, stable across installations.</translation>
+    </message>
+    <message>
+        <source>The ID of the content object.</source>
+        <translation>The ID of the content object.</translation>
+    </message>
+    <message>
+        <source>The remote ID of the content object, stable across installations.</source>
+        <translation>The remote ID of the content object, stable across installations.</translation>
+    </message>
+    <message>
+        <source>Workflow</source>
+        <translation>Workflow</translation>
+    </message>
+    <message>
+        <source>The item's object states, as group/state identifiers.</source>
+        <translation>The item's object states, as group/state identifiers.</translation>
+    </message>
+    <message>
+        <source>The priority within the parent; editable in place when the parent sorts by priority.</source>
+        <translation>The priority within the parent; editable in place when the parent sorts by priority.</translation>
+    </message>
+    <message>
+        <source>Parent node ID</source>
+        <translation>Parent node ID</translation>
+    </message>
+    <message>
+        <source>The node ID of the item's parent location.</source>
+        <translation>The node ID of the item's parent location.</translation>
+    </message>
+    <message>
+        <source>How deep the location is in the tree (the content root is 1).</source>
+        <translation>How deep the location is in the tree (the content root is 1).</translation>
+    </message>
+    <message>
+        <source>Path string</source>
+        <translation>Path string</translation>
+    </message>
+    <message>
+        <source>The node IDs from the top of the tree down to the item: /1/2/89/120/.</source>
+        <translation>The node IDs from the top of the tree down to the item: /1/2/89/120/.</translation>
+    </message>
+    <message>
+        <source>Path identification string</source>
+        <translation>Path identification string</translation>
+    </message>
+    <message>
+        <source>The location's path as identifiers (ezcontentobject_tree.path_identification_string).</source>
+        <translation>The location's path as identifiers (ezcontentobject_tree.path_identification_string).</translation>
+    </message>
+    <message>
+        <source>Main node ID</source>
+        <translation>Main node ID</translation>
+    </message>
+    <message>
+        <source>The node ID of the object's main location (the same as Node ID when this is it).</source>
+        <translation>The node ID of the object's main location (the same as Node ID when this is it).</translation>
+    </message>
+    <message>
+        <source>Children sorted by</source>
+        <translation>Children sorted by</translation>
+    </message>
+    <message>
+        <source>How the item sorts its own children: published, name, priority, modified ...</source>
+        <translation>How the item sorts its own children: published, name, priority, modified ...</translation>
+    </message>
+    <message>
+        <source>Children sort order</source>
+        <translation>Children sort order</translation>
+    </message>
+    <message>
+        <source>Ascending or descending, for the item's own children.</source>
+        <translation>Ascending or descending, for the item's own children.</translation>
+    </message>
+    <message>
+        <source>Hidden by an editor: the item itself was hidden (not one of its parents).</source>
+        <translation>Hidden by an editor: the item itself was hidden (not one of its parents).</translation>
+    </message>
+    <message>
+        <source>Invisible</source>
+        <translation>Invisible</translation>
+    </message>
+    <message>
+        <source>Not shown to visitors: hidden itself or below a hidden location.</source>
+        <translation>Not shown to visitors: hidden itself or below a hidden location.</translation>
+    </message>
+    <message>
+        <source>Container</source>
+        <translation>Container</translation>
+    </message>
+    <message>
+        <source>Whether the item's class can have children.</source>
+        <translation>Whether the item's class can have children.</translation>
+    </message>
+    <message>
+        <source>Node children count</source>
+        <translation>Node children count</translation>
+    </message>
+    <message>
+        <source>The direct children you may read. One count query per row.</source>
+        <translation>The direct children you may read. One count query per row.</translation>
+    </message>
+    <message>
+        <source>Subtree size</source>
+        <translation>Subtree size</translation>
+    </message>
+    <message>
+        <source>Every item below, all depths, that you may read. One count query per row over the whole subtree: slower for big trees.</source>
+        <translation>Every item below, all depths, that you may read. One count query per row over the whole subtree: slower for big trees.</translation>
+    </message>
+    <message>
+        <source>Child classes</source>
+        <translation>Child classes</translation>
+    </message>
+    <message>
+        <source>The classes of the direct children with their numbers, most frequent first. One grouped query per row; counts every child.</source>
+        <translation>The classes of the direct children with their numbers, most frequent first. One grouped query per row; counts every child.</translation>
+    </message>
+    <message>
+        <source>Newest child</source>
+        <translation>Newest child</translation>
+    </message>
+    <message>
+        <source>The name of the most recently published child you may read. One limited query per row.</source>
+        <translation>The name of the most recently published child you may read. One limited query per row.</translation>
+    </message>
+    <message>
+        <source>The identifier of the item's class, as templates and fetches use it.</source>
+        <translation>The identifier of the item's class, as templates and fetches use it.</translation>
+    </message>
+    <message>
+        <source>Class ID</source>
+        <translation>Class ID</translation>
+    </message>
+    <message>
+        <source>The ID of the item's class.</source>
+        <translation>The ID of the item's class.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Class groups</translation>
+    </message>
+    <message>
+        <source>The class groups the item's class belongs to (one query per class, not per row).</source>
+        <translation>The class groups the item's class belongs to (one query per class, not per row).</translation>
+    </message>
+    <message>
+        <source>Section identifier</source>
+        <translation>Section identifier</translation>
+    </message>
+    <message>
+        <source>The identifier of the item's section (sorting orders by section ID).</source>
+        <translation>The identifier of the item's section (sorting orders by section ID).</translation>
+    </message>
+    <message>
+        <source>Section ID</source>
+        <translation>Section ID</translation>
+    </message>
+    <message>
+        <source>The ID of the item's section.</source>
+        <translation>The ID of the item's section.</translation>
+    </message>
+    <message>
+        <source>Word count</source>
+        <translation>Word count</translation>
+    </message>
+    <message>
+        <source>Words in the main text: the first of body, description, intro, short_description, else the first rich text, XML or text block with content. Reads the data map.</source>
+        <translation>Words in the main text: the first of body, description, intro, short_description, else the first rich text, XML or text block with content. Reads the data map.</translation>
+    </message>
+    <message>
+        <source>Text length</source>
+        <translation>Text length</translation>
+    </message>
+    <message>
+        <source>Characters in the main text, markup left out. Reads the data map.</source>
+        <translation>Characters in the main text, markup left out. Reads the data map.</translation>
+    </message>
+    <message>
+        <source>Reading time</source>
+        <translation>Reading time</translation>
+    </message>
+    <message>
+        <source>Minutes a reader needs for the main text (see Word count), at WordsPerMinute words a minute. Reads the data map.</source>
+        <translation>Minutes a reader needs for the main text (see Word count), at WordsPerMinute words a minute. Reads the data map.</translation>
+    </message>
+    <message>
+        <source>Name length</source>
+        <translation>Name length</translation>
+    </message>
+    <message>
+        <source>Characters in the item's name.</source>
+        <translation>Characters in the item's name.</translation>
+    </message>
+    <message>
+        <source>Rating</source>
+        <translation>Rating</translation>
+    </message>
+    <message>
+        <source>The average star rating (needs the ezstarrating extension); empty when never rated.</source>
+        <translation>The average star rating (needs the ezstarrating extension); empty when never rated.</translation>
+    </message>
+    <message>
+        <source>Ratings</source>
+        <translation>Ratings</translation>
+    </message>
+    <message>
+        <source>How many star ratings were given (needs the ezstarrating extension).</source>
+        <translation>How many star ratings were given (needs the ezstarrating extension).</translation>
+    </message>
+    <message>
+        <source>Object version</source>
+        <translation>Object version</translation>
+    </message>
+    <message>
+        <source>The number of the current (published) version.</source>
+        <translation>The number of the current (published) version.</translation>
+    </message>
+    <message>
+        <source>Every stored version: published, archived, drafts and the rest.</source>
+        <translation>Every stored version: published, archived, drafts and the rest.</translation>
+    </message>
+    <message>
+        <source>Drafts</source>
+        <translation>Drafts</translation>
+    </message>
+    <message>
+        <source>Open drafts that are not published yet.</source>
+        <translation>Open drafts that are not published yet.</translation>
+    </message>
+    <message>
+        <source>Draft authors</source>
+        <translation>Draft authors</translation>
+    </message>
+    <message>
+        <source>Who has an open draft of the item.</source>
+        <translation>Who has an open draft of the item.</translation>
+    </message>
+    <message>
+        <source>Latest draft</source>
+        <translation>Latest draft</translation>
+    </message>
+    <message>
+        <source>When the most recent open draft was last changed.</source>
+        <translation>When the most recent open draft was last changed.</translation>
+    </message>
+    <message>
+        <source>Archived versions</source>
+        <translation>Archived versions</translation>
+    </message>
+    <message>
+        <source>Earlier versions kept in the history.</source>
+        <translation>Earlier versions kept in the history.</translation>
+    </message>
+    <message>
+        <source>Version created</source>
+        <translation>Version created</translation>
+    </message>
+    <message>
+        <source>When the current version was started (Modified says when it was published).</source>
+        <translation>When the current version was started (Modified says when it was published).</translation>
+    </message>
+    <message>
+        <source>Parent</source>
+        <translation>Parent</translation>
+    </message>
+    <message>
+        <source>The name of the parent location (fetched once per page).</source>
+        <translation>The name of the parent location (fetched once per page).</translation>
+    </message>
+    <message>
+        <source>Whether this is the object's main location.</source>
+        <translation>Whether this is the object's main location.</translation>
+    </message>
+    <message>
+        <source>How many locations the object has. One query per row.</source>
+        <translation>How many locations the object has. One query per row.</translation>
+    </message>
+    <message>
+        <source>Other locations</source>
+        <translation>Other locations</translation>
+    </message>
+    <message>
+        <source>The URL aliases of the object's other locations.</source>
+        <translation>The URL aliases of the object's other locations.</translation>
+    </message>
+    <message>
+        <source>Main location path</source>
+        <translation>Main location path</translation>
+    </message>
+    <message>
+        <source>The URL alias of the main location, when this row is not it.</source>
+        <translation>The URL alias of the main location, when this row is not it.</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL alias</translation>
+    </message>
+    <message>
+        <source>URLs</source>
+        <translation>URLs</translation>
+    </message>
+    <message>
+        <source>The item's URL alias as the admin uses it (the path from the content root); / for the node at the site root.</source>
+        <translation>The item's URL alias as the admin uses it (the path from the content root); / for the node at the site root.</translation>
+    </message>
+    <message>
+        <source>All URL aliases</source>
+        <translation>All URL aliases</translation>
+    </message>
+    <message>
+        <source>Every own URL alias of the item, in all its languages (/ is the site root). Shares the alias query with the other alias columns.</source>
+        <translation>Every own URL alias of the item, in all its languages (/ is the site root). Shares the alias query with the other alias columns.</translation>
+    </message>
+    <message>
+        <source>System URL</source>
+        <translation>System URL</translation>
+    </message>
+    <message>
+        <source>content/view/full/&lt;node id&gt;: the address that always works, whatever the aliases.</source>
+        <translation>content/view/full/&lt;node id&gt;: the address that always works, whatever the aliases.</translation>
+    </message>
+    <message>
+        <source>Public path</source>
+        <translation>Public path</translation>
+    </message>
+    <message>
+        <source>The path visitors use on the public siteaccess: the URL alias without that siteaccess's PathPrefix.</source>
+        <translation>The path visitors use on the public siteaccess: the URL alias without that siteaccess's PathPrefix.</translation>
+    </message>
+    <message>
+        <source>Public URL</source>
+        <translation>Public URL</translation>
+    </message>
+    <message>
+        <source>The full address on the public site: the public siteaccess's SiteURL and the public path.</source>
+        <translation>The full address on the public site: the public siteaccess's SiteURL and the public path.</translation>
+    </message>
+    <message>
+        <source>URL slug</source>
+        <translation>URL slug</translation>
+    </message>
+    <message>
+        <source>The last element of the URL alias.</source>
+        <translation>The last element of the URL alias.</translation>
+    </message>
+    <message>
+        <source>URL aliases</source>
+        <translation>URL aliases</translation>
+    </message>
+    <message>
+        <source>The item's own URL aliases, one per translation normally. One query per row, shared with the other alias columns.</source>
+        <translation>The item's own URL aliases, one per translation normally. One query per row, shared with the other alias columns.</translation>
+    </message>
+    <message>
+        <source>Custom URL aliases</source>
+        <translation>Custom URL aliases</translation>
+    </message>
+    <message>
+        <source>The extra aliases made in Manage URL aliases.</source>
+        <translation>The extra aliases made in Manage URL aliases.</translation>
+    </message>
+    <message>
+        <source>Custom URL alias count</source>
+        <translation>Custom URL alias count</translation>
+    </message>
+    <message>
+        <source>How many extra aliases were made in Manage URL aliases.</source>
+        <translation>How many extra aliases were made in Manage URL aliases.</translation>
+    </message>
+    <message>
+        <source>Old URLs</source>
+        <translation>Old URLs</translation>
+    </message>
+    <message>
+        <source>Former addresses (after renames and moves) that still redirect to the item.</source>
+        <translation>Former addresses (after renames and moves) that still redirect to the item.</translation>
+    </message>
+    <message>
+        <source>Page title in the browser</source>
+        <translation>Page title in the browser</translation>
+    </message>
+    <message>
+        <source>SEO</source>
+        <translation>SEO</translation>
+    </message>
+    <message>
+        <source>The public site's title for the item's page, worked out as its pagelayout does, without rendering the page.</source>
+        <translation>The public site's title for the item's page, worked out as its pagelayout does, without rendering the page.</translation>
+    </message>
+    <message>
+        <source>Page title length</source>
+        <translation>Page title length</translation>
+    </message>
+    <message>
+        <source>Characters in the page title; search engines show about 60.</source>
+        <translation>Characters in the page title; search engines show about 60.</translation>
+    </message>
+    <message>
+        <source>Meta title</source>
+        <translation>Meta title</translation>
+    </message>
+    <message>
+        <source>The title set in the item's metadata attribute (xrowmetadata); empty when none.</source>
+        <translation>The title set in the item's metadata attribute (xrowmetadata); empty when none.</translation>
+    </message>
+    <message>
+        <source>Meta description</source>
+        <translation>Meta description</translation>
+    </message>
+    <message>
+        <source>The description set in the item's metadata attribute (xrowmetadata).</source>
+        <translation>The description set in the item's metadata attribute (xrowmetadata).</translation>
+    </message>
+    <message>
+        <source>Meta keywords</source>
+        <translation>Meta keywords</translation>
+    </message>
+    <message>
+        <source>The keywords set in the item's metadata attribute (xrowmetadata).</source>
+        <translation>The keywords set in the item's metadata attribute (xrowmetadata).</translation>
+    </message>
+    <message>
+        <source>Subtree modified</source>
+        <translation>Subtree modified</translation>
+    </message>
+    <message>
+        <source>When anything in the item's subtree last changed.</source>
+        <translation>When anything in the item's subtree last changed.</translation>
+    </message>
+    <message>
+        <source>Published (age)</source>
+        <translation>Published (age)</translation>
+    </message>
+    <message>
+        <source>How long ago the item was first published: 3 days ago.</source>
+        <translation>How long ago the item was first published: 3 days ago.</translation>
+    </message>
+    <message>
+        <source>Modified (age)</source>
+        <translation>Modified (age)</translation>
+    </message>
+    <message>
+        <source>How long ago the current version was published.</source>
+        <translation>How long ago the current version was published.</translation>
+    </message>
+    <message>
+        <source>Days since published</source>
+        <translation>Days since published</translation>
+    </message>
+    <message>
+        <source>Whole days since the item was first published.</source>
+        <translation>Whole days since the item was first published.</translation>
+    </message>
+    <message>
+        <source>Days since modified</source>
+        <translation>Days since modified</translation>
+    </message>
+    <message>
+        <source>Whole days since the current version was published.</source>
+        <translation>Whole days since the current version was published.</translation>
+    </message>
+    <message>
+        <source>Published (ISO 8601)</source>
+        <translation>Published (ISO 8601)</translation>
+    </message>
+    <message>
+        <source>The publishing time as 2026-10-02T09:30:00+00:00, for copying.</source>
+        <translation>The publishing time as 2026-10-02T09:30:00+00:00, for copying.</translation>
+    </message>
+    <message>
+        <source>Modified (ISO 8601)</source>
+        <translation>Modified (ISO 8601)</translation>
+    </message>
+    <message>
+        <source>The modification time as 2026-10-02T09:30:00+00:00, for copying.</source>
+        <translation>The modification time as 2026-10-02T09:30:00+00:00, for copying.</translation>
+    </message>
+    <message>
+        <source>Newest child published</source>
+        <translation>Newest child published</translation>
+    </message>
+    <message>
+        <source>When the most recently published child you may read was published. One limited query per row.</source>
+        <translation>When the most recently published child you may read was published. One limited query per row.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Owner</translation>
+    </message>
+    <message>
+        <source>The user who created the object (its owner).</source>
+        <translation>The user who created the object (its owner).</translation>
+    </message>
+    <message>
+        <source>Owner ID</source>
+        <translation>Owner ID</translation>
+    </message>
+    <message>
+        <source>The object ID of the owner.</source>
+        <translation>The object ID of the owner.</translation>
+    </message>
+    <message>
+        <source>First author</source>
+        <translation>First author</translation>
+    </message>
+    <message>
+        <source>Who wrote the first version still stored.</source>
+        <translation>Who wrote the first version still stored.</translation>
+    </message>
+    <message>
+        <source>Contributors</source>
+        <translation>Contributors</translation>
+    </message>
+    <message>
+        <source>Everyone who wrote a version, in the order of their first version.</source>
+        <translation>Everyone who wrote a version, in the order of their first version.</translation>
+    </message>
+    <message>
+        <source>Related objects</source>
+        <translation>Related objects</translation>
+    </message>
+    <message>
+        <source>Objects the item relates to (all relation types). One count query per row.</source>
+        <translation>Objects the item relates to (all relation types). One count query per row.</translation>
+    </message>
+    <message>
+        <source>Related object names</source>
+        <translation>Related object names</translation>
+    </message>
+    <message>
+        <source>The names of the first related objects you may read, by name.</source>
+        <translation>The names of the first related objects you may read, by name.</translation>
+    </message>
+    <message>
+        <source>Reverse related objects</source>
+        <translation>Reverse related objects</translation>
+    </message>
+    <message>
+        <source>Objects that relate to the item: what would point nowhere if it were removed. One count query per row.</source>
+        <translation>Objects that relate to the item: what would point nowhere if it were removed. One count query per row.</translation>
+    </message>
+    <message>
+        <source>Reverse related names</source>
+        <translation>Reverse related names</translation>
+    </message>
+    <message>
+        <source>The names of the first objects that relate to the item and that you may read.</source>
+        <translation>The names of the first objects that relate to the item and that you may read.</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Tags</translation>
+    </message>
+    <message>
+        <source>The tags on the item (needs the eztags extension and a tags attribute).</source>
+        <translation>The tags on the item (needs the eztags extension and a tags attribute).</translation>
+    </message>
+    <message>
+        <source>Tag count</source>
+        <translation>Tag count</translation>
+    </message>
+    <message>
+        <source>How many tags the item has (needs the eztags extension).</source>
+        <translation>How many tags the item has (needs the eztags extension).</translation>
+    </message>
+    <message>
+        <source>Initial language</source>
+        <translation>Initial language</translation>
+    </message>
+    <message>
+        <source>The language the item was first written in.</source>
+        <translation>The language the item was first written in.</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Languages</translation>
+    </message>
+    <message>
+        <source>How many languages the item is translated into.</source>
+        <translation>How many languages the item is translated into.</translation>
+    </message>
+    <message>
+        <source>Language codes</source>
+        <translation>Language codes</translation>
+    </message>
+    <message>
+        <source>The locales of the translations, e.g. eng-US, ger-DE.</source>
+        <translation>The locales of the translations, e.g. eng-US, ger-DE.</translation>
+    </message>
+    <message>
+        <source>Missing translations</source>
+        <translation>Missing translations</translation>
+    </message>
+    <message>
+        <source>The installation's languages the item is not translated into.</source>
+        <translation>The installation's languages the item is not translated into.</translation>
+    </message>
+    <message>
+        <source>Always available</source>
+        <translation>Always available</translation>
+    </message>
+    <message>
+        <source>Shown in every language, also those it has no translation in.</source>
+        <translation>Shown in every language, also those it has no translation in.</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>One badge: Visible, Hidden, Hidden by a parent or Locked (a template column).</source>
+        <translation>One badge: Visible, Hidden, Hidden by a parent or Locked (a template column).</translation>
+    </message>
+    <message>
+        <source>Locked</source>
+        <translation>Locked</translation>
+    </message>
+    <message>
+        <source>In the &quot;locked&quot; state of the Lock (ez_lock) state group.</source>
+        <translation>In the &quot;locked&quot; state of the Lock (ez_lock) state group.</translation>
+    </message>
+    <message>
+        <source>Pending versions</source>
+        <translation>Pending versions</translation>
+    </message>
+    <message>
+        <source>Versions waiting in a workflow, an approval for instance.</source>
+        <translation>Versions waiting in a workflow, an approval for instance.</translation>
+    </message>
+    <message>
+        <source>Rejected versions</source>
+        <translation>Rejected versions</translation>
+    </message>
+    <message>
+        <source>Versions an approver rejected.</source>
+        <translation>Versions an approver rejected.</translation>
+    </message>
+    <message>
+        <source>Workflow processes</source>
+        <translation>Workflow processes</translation>
+    </message>
+    <message>
+        <source>Workflow processes running for the item (an approval, a delayed publication). One count query per row.</source>
+        <translation>Workflow processes running for the item (an approval, a delayed publication). One count query per row.</translation>
+    </message>
+    <message>
+        <source>You can edit</source>
+        <translation>You can edit</translation>
+    </message>
+    <message>
+        <source>Whether you may edit the item.</source>
+        <translation>Whether you may edit the item.</translation>
+    </message>
+    <message>
+        <source>You can remove</source>
+        <translation>You can remove</translation>
+    </message>
+    <message>
+        <source>Whether you may remove the item.</source>
+        <translation>Whether you may remove the item.</translation>
+    </message>
+    <message>
+        <source>You can move</source>
+        <translation>You can move</translation>
+    </message>
+    <message>
+        <source>Whether you may move the item.</source>
+        <translation>Whether you may move the item.</translation>
+    </message>
+    <message>
+        <source>You can hide</source>
+        <translation>You can hide</translation>
+    </message>
+    <message>
+        <source>Whether you may hide and reveal the item.</source>
+        <translation>Whether you may hide and reveal the item.</translation>
+    </message>
+    <message>
+        <source>You can translate</source>
+        <translation>You can translate</translation>
+    </message>
+    <message>
+        <source>Whether you may translate the item.</source>
+        <translation>Whether you may translate the item.</translation>
+    </message>
+    <message>
+        <source>You can create below</source>
+        <translation>You can create below</translation>
+    </message>
+    <message>
+        <source>Whether you may create content below the item; empty when it is not a container.</source>
+        <translation>Whether you may create content below the item; empty when it is not a container.</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Login</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Users</translation>
+    </message>
+    <message>
+        <source>The user's login name.</source>
+        <translation>The user's login name.</translation>
+    </message>
+    <message>
+        <source>E-mail</source>
+        <translation>E-mail</translation>
+    </message>
+    <message>
+        <source>The user's e-mail address. Only for users who may assign roles.</source>
+        <translation>The user's e-mail address. Only for users who may assign roles.</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Account enabled</translation>
+    </message>
+    <message>
+        <source>Whether the account may log in.</source>
+        <translation>Whether the account may log in.</translation>
+    </message>
+    <message>
+        <source>Locked out</source>
+        <translation>Locked out</translation>
+    </message>
+    <message>
+        <source>Locked out after too many failed logins (site.ini [UserSettings] MaxNumberOfFailedLogin).</source>
+        <translation>Locked out after too many failed logins (site.ini [UserSettings] MaxNumberOfFailedLogin).</translation>
+    </message>
+    <message>
+        <source>Last visit</source>
+        <translation>Last visit</translation>
+    </message>
+    <message>
+        <source>When the user's last visit began; empty when they never logged in.</source>
+        <translation>When the user's last visit began; empty when they never logged in.</translation>
+    </message>
+    <message>
+        <source>Logins</source>
+        <translation>Logins</translation>
+    </message>
+    <message>
+        <source>How many times the user has logged in.</source>
+        <translation>How many times the user has logged in.</translation>
+    </message>
+    <message>
+        <source>Failed logins</source>
+        <translation>Failed logins</translation>
+    </message>
+    <message>
+        <source>Failed login attempts since the last successful one.</source>
+        <translation>Failed login attempts since the last successful one.</translation>
+    </message>
+    <message>
+        <source>The roles that apply to the user, directly or through their groups. Two queries per row.</source>
+        <translation>The roles that apply to the user, directly or through their groups. Two queries per row.</translation>
+    </message>
+    <message>
+        <source>Role count</source>
+        <translation>Role count</translation>
+    </message>
+    <message>
+        <source>How many roles apply to the user.</source>
+        <translation>How many roles apply to the user.</translation>
+    </message>
+    <message>
+        <source>Has image</source>
+        <translation>Has image</translation>
+    </message>
+    <message>
+        <source>Media</source>
+        <translation>Media</translation>
+    </message>
+    <message>
+        <source>Whether the item has an image; empty when its class has no image attribute.</source>
+        <translation>Whether the item has an image; empty when its class has no image attribute.</translation>
+    </message>
+    <message>
+        <source>Images</source>
+        <translation>Images</translation>
+    </message>
+    <message>
+        <source>Image attributes that hold an image.</source>
+        <translation>Image attributes that hold an image.</translation>
+    </message>
+    <message>
+        <source>Image dimensions</source>
+        <translation>Image dimensions</translation>
+    </message>
+    <message>
+        <source>Width x height of the original image, in pixels.</source>
+        <translation>Width x height of the original image, in pixels.</translation>
+    </message>
+    <message>
+        <source>Image width</source>
+        <translation>Image width</translation>
+    </message>
+    <message>
+        <source>The width of the original image, in pixels.</source>
+        <translation>The width of the original image, in pixels.</translation>
+    </message>
+    <message>
+        <source>Image height</source>
+        <translation>Image height</translation>
+    </message>
+    <message>
+        <source>The height of the original image, in pixels.</source>
+        <translation>The height of the original image, in pixels.</translation>
+    </message>
+    <message>
+        <source>Image file size</source>
+        <translation>Image file size</translation>
+    </message>
+    <message>
+        <source>The size of the original image file (in bytes in the CSV).</source>
+        <translation>The size of the original image file (in bytes in the CSV).</translation>
+    </message>
+    <message>
+        <source>Image type</source>
+        <translation>Image type</translation>
+    </message>
+    <message>
+        <source>The MIME type of the original image.</source>
+        <translation>The MIME type of the original image.</translation>
+    </message>
+    <message>
+        <source>Image alternative text</source>
+        <translation>Image alternative text</translation>
+    </message>
+    <message>
+        <source>The image's alternative text; empty when it has none, which is worth fixing.</source>
+        <translation>The image's alternative text; empty when it has none, which is worth fixing.</translation>
+    </message>
+    <message>
+        <source>File name</source>
+        <translation>File name</translation>
+    </message>
+    <message>
+        <source>The name the file (binary file or media) was uploaded with.</source>
+        <translation>The name the file (binary file or media) was uploaded with.</translation>
+    </message>
+    <message>
+        <source>File size</source>
+        <translation>File size</translation>
+    </message>
+    <message>
+        <source>The size of the stored file (in bytes in the CSV).</source>
+        <translation>The size of the stored file (in bytes in the CSV).</translation>
+    </message>
+    <message>
+        <source>File type</source>
+        <translation>File type</translation>
+    </message>
+    <message>
+        <source>The MIME type of the file.</source>
+        <translation>The MIME type of the file.</translation>
+    </message>
+    <message>
+        <source>Downloads</source>
+        <translation>Downloads</translation>
+    </message>
+    <message>
+        <source>How often the file was downloaded through content/download.</source>
+        <translation>How often the file was downloaded through content/download.</translation>
+    </message>
+    <message>
+        <source>Search index words</source>
+        <translation>Search index words</translation>
+    </message>
+    <message>
+        <source>Technical</source>
+        <translation>Technical</translation>
+    </message>
+    <message>
+        <source>Word positions the built-in search engine indexed for the item (0: not indexed). One count query per row; empty with another search engine.</source>
+        <translation>Word positions the built-in search engine indexed for the item (0: not indexed). One count query per row; empty with another search engine.</translation>
+    </message>
+    <message>
+        <source>View count</source>
+        <translation>View count</translation>
+    </message>
+    <message>
+        <source>Views counted in ezview_counter (filled by the updateviewcount cronjob); empty when never counted.</source>
+        <translation>Views counted in ezview_counter (filled by the updateviewcount cronjob); empty when never counted.</translation>
+    </message>
+    <message>
+        <source>Language mask</source>
+        <translation>Language mask</translation>
+    </message>
+    <message>
+        <source>The object's language bit mask (bit 0: always available).</source>
+        <translation>The object's language bit mask (bit 0: always available).</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Attributes</translation>
+    </message>
+    <message>
+        <source>Attributes of the current version in the shown language. Reads the data map.</source>
+        <translation>Attributes of the current version in the shown language. Reads the data map.</translation>
+    </message>
+    <message>
+        <source>Teaser</source>
+        <translation>Teaser</translation>
+    </message>
+    <message>
+        <source>The first words of the intro, description or body (a template column).</source>
+        <translation>The first words of the intro, description or body (a template column).</translation>
+    </message>
+    <message>
+        <source>Edit link</source>
+        <translation>Edit link</translation>
+    </message>
+    <message>
+        <source>The address of the item's edit page, when you may edit it (a Handler column).</source>
+        <translation>The address of the item's edit page, when you may edit it (a Handler column).</translation>
+    </message>
+    <message>
+        <source>Days online</source>
+        <translation>Days online</translation>
+    </message>
+    <message>
+        <source>Whole days since the item was first published (a Handler column).</source>
+        <translation>Whole days since the item was first published (a Handler column).</translation>
+    </message>
+    <message>
+        <source>year</source>
+        <translation>year</translation>
+    </message>
+    <message>
+        <source>years</source>
+        <translation>years</translation>
+    </message>
+    <message>
+        <source>month</source>
+        <translation>month</translation>
+    </message>
+    <message>
+        <source>months</source>
+        <translation>months</translation>
+    </message>
+    <message>
+        <source>week</source>
+        <translation>week</translation>
+    </message>
+    <message>
+        <source>weeks</source>
+        <translation>weeks</translation>
+    </message>
+    <message>
+        <source>day</source>
+        <translation>day</translation>
+    </message>
+    <message>
+        <source>days</source>
+        <translation>days</translation>
+    </message>
+    <message>
+        <source>hour</source>
+        <translation>hour</translation>
+    </message>
+    <message>
+        <source>hours</source>
+        <translation>hours</translation>
+    </message>
+    <message>
+        <source>minute</source>
+        <translation>minute</translation>
+    </message>
+    <message>
+        <source>minutes</source>
+        <translation>minutes</translation>
+    </message>
+    <message>
+        <source>%1 ago</source>
+        <translation>%1 ago</translation>
+    </message>
+    <message>
+        <source>in %1</source>
+        <translation>in %1</translation>
+    </message>
+    <message>
+        <source>just now</source>
+        <translation>just now</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>No</translation>
+    </message>
+    <message>
+        <source>min</source>
+        <translation>min</translation>
+    </message>
+    <message>
+        <source>Attributes: %1</source>
+        <translation>Attributes: %1</translation>
     </message>
 </context>
 <context>
@@ -12748,6 +13800,41 @@ Note: The packages will not be uninstalled.</translation>
     </message>
 </context>
 <context>
+    <name>design/admin/parts/audit/menu</name>
+    <message>
+        <source>Health, activity, security and alerts at a glance.</source>
+        <translation>Health, activity, security and alerts at a glance.</translation>
+    </message>
+    <message>
+        <source>The timeline of events, with filters and search.</source>
+        <translation>The timeline of events, with filters and search.</translation>
+    </message>
+    <message>
+        <source>The latest 100 events of all channels.</source>
+        <translation>The latest 100 events of all channels.</translation>
+    </message>
+    <message>
+        <source>Events, refusals and logins per day.</source>
+        <translation>Events, refusals and logins per day.</translation>
+    </message>
+    <message>
+        <source>The alerts that fired and the rules in use.</source>
+        <translation>The alerts that fired and the rules in use.</translation>
+    </message>
+    <message>
+        <source>The console's filter as CSV or JSON.</source>
+        <translation>The console's filter as CSV or JSON.</translation>
+    </message>
+    <message>
+        <source>Live files, archives and their verification.</source>
+        <translation>Live files, archives and their verification.</translation>
+    </message>
+    <message>
+        <source>The effective audit settings, sinks and index.</source>
+        <translation>The effective audit settings, sinks and index.</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/parts/content/menu</name>
     <message>
         <source>Content structure</source>
@@ -12788,6 +13875,25 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>Site structure</source>
         <translation>Site structure</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/parts/design/menu</name>
+    <message>
+        <source>The look of the site.</source>
+        <translation>The look of the site.</translation>
+    </message>
+    <message>
+        <source>The toolbars and their tools.</source>
+        <translation>The toolbars and their tools.</translation>
+    </message>
+    <message>
+        <source>List and edit templates.</source>
+        <translation>List and edit templates.</translation>
+    </message>
+    <message>
+        <source>The templates of the designs and their overrides.</source>
+        <translation>The templates of the designs and their overrides.</translation>
     </message>
 </context>
 <context>
@@ -13241,8 +14347,60 @@ Note: The packages will not be uninstalled.</translation>
         <translation>System</translation>
     </message>
     <message>
+        <source>AI</source>
+        <translation>AI</translation>
+    </message>
+    <message>
+        <source>Updates</source>
+        <translation>Updates</translation>
+    </message>
+    <message>
         <source>More</source>
         <translation>More</translation>
+    </message>
+    <message>
+        <source>What the AI features send where, on one printable page.</source>
+        <translation>What the AI features send where, on one printable page.</translation>
+    </message>
+    <message>
+        <source>The AI providers and models, and their tests.</source>
+        <translation>The AI providers and models, and their tests.</translation>
+    </message>
+    <message>
+        <source>AI budgets, queued requests and what they cost.</source>
+        <translation>AI budgets, queued requests and what they cost.</translation>
+    </message>
+    <message>
+        <source>Background jobs: waiting, running and failed.</source>
+        <translation>Background jobs: waiting, running and failed.</translation>
+    </message>
+    <message>
+        <source>Browse and query the database directly.</source>
+        <translation>Browse and query the database directly.</translation>
+    </message>
+    <message>
+        <source>Packages with a newer release, and their updates.</source>
+        <translation>Packages with a newer release, and their updates.</translation>
+    </message>
+    <message>
+        <source>The Git checkout of the installation and its updates.</source>
+        <translation>The Git checkout of the installation and its updates.</translation>
+    </message>
+    <message>
+        <source>Make, download and remove backups.</source>
+        <translation>Make, download and remove backups.</translation>
+    </message>
+    <message>
+        <source>Design</source>
+        <translation>Design</translation>
+    </message>
+    <message>
+        <source>Design content</source>
+        <translation>Design content</translation>
+    </message>
+    <message>
+        <source>The design's top node and the objects below it.</source>
+        <translation>The design's top node and the objects below it.</translation>
     </message>
 </context>
 <context>
@@ -53261,7 +54419,7 @@ your account.</translation>
     <name>kernel/content</name>
     <message>
         <source>Top Level Nodes</source>
-        <translation>Top Level Nodes</translation>
+        <translation>Content</translation>
     </message>
     <message>
         <source>Hidden</source>

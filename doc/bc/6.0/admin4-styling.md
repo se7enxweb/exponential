@@ -267,6 +267,18 @@ menu of admin4 ends with `design:parts/left_width_control.tpl` (three icon butto
 pressed) and a tree menu shows its trash link through `design:parts/left_trash.tpl`: include them, never copy their
 markup (`AdminLegacyControlsTest`).
 
+The User preferences block of the right column (`toolbar/full/admin_preferences.tpl`) shows each on/off preference as
+its name and the design's tabs (`ul.tabs`), not as a segmented button switch. The two states are the buttons of a
+POST form to `user/preferences/set` (`Key`, `Value`, `RedirectURIAfterSet`), like the left column's width switch, so a
+preference is written only from this site (ezformtoken adds its token) and never by a GET link: the current state is
+the pressed button (`<li class="selected"><button ... aria-pressed="true">`), drawn like the node view's current tab
+(the accent tint with the bar under it), the other one a quiet button. A screen reader says the preference's name,
+the state and "pressed". A `<div class="a4-pref-tabs" role="group" aria-labelledby="...">` around the list names it
+after the preference's label (`.a4-pref-label`); the list keeps its list role. In the column the tabs sit side by
+side, at least 24px high, and under forced colors an outline in `Highlight` marks the current one (for every
+`ul.tabs`). A new on/off preference in the right column is one more entry of the template's list
+(`AdminLegacyControlsTest`).
+
 ## Edit forms
 
 The datatype edit templates live in `design/standard` and still write the classic markup: `input.box`,
@@ -310,6 +322,16 @@ the same field names and ids and keeps the template blocks and table structure o
 through the stylesheet alone. admin4's `theme/rounded.css` no longer styles `.datepicker-icon` (the calendar is an
 `.a4-btn` now); the class stays in `design/admin`, whose calendar is still the image.
 `tests/tests/design/AdminContentEditFormsTest.php` checks the rules and the templates.
+
+ezoe's engine switch below a rich text field (`ezxmltext_ezoe_engine_switch.tpl`, `EngineSwitch=enabled`) writes
+neutral markup: `div.ezoe-engine-switch` (`role="group"`, named by its label `span.ezoe-engine-switch-label`
+"Editor"), the engine in use as the pressed toggle `button.ezoe-engine-switch-option.current` (`type="button"`, `aria-pressed="true"`), every other
+engine as a `button.button.ezoe-engine-switch-option` (`aria-pressed="false"`) that posts `CustomActionButton[<attribute id>_switch_engine_<id>]`.
+`modules/content.css` draws it as one segmented control like `.a4-tabs.is-segmented`: the segments joined at
+`--a4-control-h`, the engine in use filled in `--a4-accent-strong` (an outline in `Highlight` under forced colors),
+the label muted beside them on the same centre line. It stands left-aligned under the field, like the field's other
+controls and its label, `--a4-space-2` below the editor's status bar; on a narrow screen the joined segments move under the
+label as one piece (`AdminContentEditFormsTest`).
 
 The rich text editors (TinyMCE 3 and 8) draw a field's text in an iframe with ezoe's light content stylesheet. The
 edit form names `components.css` and `editor_content.css` in `data-a4-editor-css`; `admin4.js` adds both to each
@@ -460,7 +482,8 @@ For every template or stylesheet change in an administration design or an extens
       hand-written glyph ("!", a tick) at the start of a notice: the state class draws the icon. Feedback of an action done in the page without reload (copied, stored by
       Ajax) is a toast (`window.a4Toast`), not a notice that appears; it never takes the focus (`AdminNoticesTest`).
 - [ ] A new left-menu link (menu.ini `Links[]` of a section with `Groups[]`) is placed in a group
-      (`GroupLinks_<group>[]`); otherwise it shows under "More" (`AdminLeftMenuGroupsTest` checks Leftmenu_setup).
+      (`GroupLinks_<group>[]`, in the extension's own menu.ini.append.php for an extension's link: `GroupLinks_ai[]`,
+      `GroupLinks_updates[]`, ...); otherwise it shows under "More" (`AdminLeftMenuGroupsTest` checks Leftmenu_setup).
 - [ ] A new module stylesheet is listed in `AdminComponentCSSFileList` and exists in `design/admin4` and `design/admin`.
 - [ ] The page was checked in light and dark mode at 1440 px and at 960 px with scale 2: no light card on the dark
       page, text contrast at least 4.5:1, no horizontal overflow, no console errors.

@@ -222,11 +222,21 @@ $OperationList['publish'] = array( 'name' => 'publish',
                                                            'parameters' => array(  array( 'name' => 'object_id',
                                                                                           'type' => 'integer',
                                                                                           'required' => true ) ) ),
+                                                    // Its own parameters: without them the step gets every parameter of
+                                                    // the operation by position, and notify (true by default) lands in
+                                                    // registerSearchObject()'s $isMoved, which queues index_moved_node
+                                                    // (a reindex of the whole subtree) with DelayedIndexing instead of
+                                                    // index_object
                                                     array( 'type' => 'method',
                                                            'name' => 'register-search-object',
                                                            'frequency' => 'once',
                                                            'method' => 'registerSearchObject',
-                                                           ),
+                                                           'parameters' => array( array( 'name' => 'object_id',
+                                                                                         'type' => 'integer',
+                                                                                         'required' => true ),
+                                                                                  array( 'name' => 'version',
+                                                                                         'type' => 'integer',
+                                                                                         'required' => true ) ) ),
                                                     array( 'type' => 'method',
                                                            'name' => 'create-notification',
                                                            'frequency' => 'once',

@@ -55,6 +55,13 @@ Find every place that reads the settings:
 grep -rn HiddenTabs kernel design settings
 ```
 
+## Design, Audit and Dashboard without their tabs (admin4)
+
+In admin4, hiding `design` or `audit` loses no page: the Setup menu and the Setup overview then show a Design or an
+Audit group with the tab's links, and the tab's pages mark the Setup tab. Without `dashboard` the logo leads to the
+dashboard. See [Moving a tab into Setup](admin4-design.md#moving-a-tab-into-setup). Clear the template cache as well:
+the menus compile the settings in.
+
 ## The shipped editor siteaccess
 
 The editor siteaccess uses both settings. It hides `explayouts_ui_dashboard`, `setup`, `design`, `gitmanager`,

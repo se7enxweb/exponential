@@ -33,7 +33,7 @@ any INI file.
 | Key | Default | Meaning |
 |---|---|---|
 | `EditorEngine` | `tinymce3` | The engine of every user without a preference. |
-| `EngineSwitch` | `disabled` | `enabled` shows a button below the editor for each other registered engine. |
+| `EngineSwitch` | `disabled` | `enabled` shows the engine switch below the editor: a group named "Editor" with every available engine, toggle buttons, the one in use pressed (`aria-pressed="true"`), each other one a submit button that switches to it. |
 | `Engines[<id>]` | `tinymce3`, `tinymce8` | The registry: identifier = class implementing `expOEEditorEngine`. |
 | `UploadFileExtensions[]` | images, pdf, office, text, zip, audio, video | File types of the embed dialog's upload tab. |
 | `UploadExtensionCheck` | `engine` | Server-side check of those types: `engine` (only when the user's engine is not tinymce3), `always`, `disabled`. |
@@ -62,7 +62,7 @@ A user chooses with:
 
 - the page `/ezoe/engine` (a table of every registered engine with its version, description and status, the ones
   that cannot be used included, and a select over the available ones; needs the policy `ezoe/editor`);
-- the switch button below the editor (`EngineSwitch=enabled`);
+- the engine switch below the editor (`EngineSwitch=enabled`);
 - the URL `/user/preferences/set/ezoe_engine/tinymce8`;
 - the remote service `expeditor::set` (POST `engine`; empty means the site default).
 

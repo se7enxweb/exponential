@@ -443,6 +443,10 @@
  * them once, and html[data-a4-theme] of the page is copied to it when the editor is ready and whenever the mode
  * changes. Editors are found by their body class (mceContentBody in TinyMCE 3, mce-content-body in 8), through the
  * editor API where it exists and on the page's load as a fallback. Plain JavaScript, no library.
+ * TinyMCE 8's own interface (toolbar, menus, dialogs, status bar) follows the mode too: an editor made on a dark page
+ * starts with the skin oxide-dark instead of oxide (the skin option is set before the theme loads it; an editor
+ * configured with another skin keeps it), and a change of the mode swaps the loaded oxide and oxide-dark
+ * stylesheets of the page and of the editors' documents. TinyMCE 3 keeps its skin.
  */
 (function () {
     'use strict';
@@ -472,10 +476,48 @@
         });
     }
 
+    function dark() {
+        return document.documentElement.getAttribute('data-a4-theme') === 'dark';
+    }
+
+    // TinyMCE 8: the skin of an editor that is not rendered yet. The silver theme registers the option only when it
+    // loads, and registering it again keeps a value set before, so it is registered here with the same rule.
+    function skin(editor) {
+        var options = editor.options;
+        if (!options || !options.register || editor.initialized) return;
+        if (!options.isRegistered('skin')) {
+            options.register('skin', { processor: function (value) { return typeof value === 'string' || value === false; }, default: 'oxide' });
+        }
+        if (options.get('skin') === 'oxide' && dark()) options.set('skin', 'oxide-dark');
+        else if (options.get('skin') === 'oxide-dark' && !dark()) options.set('skin', 'oxide');
+    }
+
+    // TinyMCE 8: the oxide stylesheets already loaded (skin.min.css on the page, content.min.css in each editor's
+    // document) are swapped for the mode's
+    function swapSkins() {
+        var from = dark() ? '/skins/ui/oxide/' : '/skins/ui/oxide-dark/';
+        var to = dark() ? '/skins/ui/oxide-dark/' : '/skins/ui/oxide/';
+        var docs = [document];
+        Array.prototype.forEach.call(document.querySelectorAll('iframe'), function (frame) {
+            try { if (frame.contentDocument) docs.push(frame.contentDocument); } catch (e) { /* another origin */ }
+        });
+        docs.forEach(function (doc) {
+            Array.prototype.forEach.call(doc.querySelectorAll('link[rel="stylesheet"][href*="' + from + '"]'), function (link) {
+                link.setAttribute('href', link.getAttribute('href').replace(from, to));
+            });
+        });
+    }
+
     function hook() {
         var mce = window.tinymce;
-        if (!mce || !sheets().length) return;
+        if (!mce) return;
         var v3 = !!(mce.onAddEditor && mce.onAddEditor.add);
+        if (!v3 && mce.on) {
+            // editors made before this script ran are rendered already: swapSkins() dresses them
+            Array.prototype.forEach.call(mce.get ? mce.get() : [], skin);
+            mce.on('AddEditor', function (e) { skin(e.editor); });
+        }
+        if (!sheets().length) return;
         // PreInit: the editor's document exists but is not shown yet, so a dark page shows no light flash; init again
         // for an editor that sets its body class only then
         function watch(editor) {
@@ -495,8 +537,12 @@
     }
 
     function init() {
-        if (!sheets().length) return;
         hook();
+        window.addEventListener('load', swapSkins);
+        if (window.MutationObserver) {
+            new MutationObserver(swapSkins).observe(document.documentElement, { attributes: true, attributeFilter: ['data-a4-theme'] });
+        }
+        if (!sheets().length) return;
         window.addEventListener('load', all);
         all();
         if (window.MutationObserver) {

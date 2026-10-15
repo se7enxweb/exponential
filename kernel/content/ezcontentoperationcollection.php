@@ -27,6 +27,16 @@ class eZContentOperationCollection
      */
     private static $operationsStack = 0;
 
+    /**
+     * Object versions whose publication moved a node of the object (publishNode(), a parent changed in the edit
+     * form), keyed "<object id>/<version>"; registerSearchObject() hands them to the search engine as a move, as
+     * content/move does, and removes the entry. Request-local; a persistent worker drops it at the next publication
+     * of the same version at the latest.
+     *
+     * @var array
+     */
+    private static $movedByPublication = array();
+
     static public function readNode( $nodeID )
     {
 
@@ -461,6 +471,9 @@ class eZContentOperationCollection
                     $originalNode->move( $parentNodeID );
                     $existingNode = eZContentObjectTreeNode::fetchNode( $originalObjectID, $parentNodeID );
                     $updateFields = true;
+                    // the node and its subtree have a new path: the search engine hears of a move once the
+                    // version is published (registerSearchObject())
+                    self::$movedByPublication[(int)$objectID . '/' . (int)$versionNum] = true;
                 }
             }
         }
@@ -673,19 +686,72 @@ class eZContentOperationCollection
     }
 
     /**
+     * Removes the queued search index entries of objects that leave the tree (deleteObject()): index_object and
+     * index_moved_node, as a moved object in the trash has no subtree left to reindex either.
+     *
+     * @param int[] $objectIDList
+     */
+    private static function removePendingIndexActions( array $objectIDList )
+    {
+        if ( empty( $objectIDList ) )
+            return;
+        $filterConds = array( 'param' => array( array_values( $objectIDList ) ) );
+        eZPendingActions::removeByAction( 'index_object', $filterConds );
+        eZPendingActions::removeByAction( 'index_moved_node', $filterConds );
+    }
+
+    /**
+     * Whether the publication of $version moved a node of the object; removes the mark.
+     *
+     * @param int $objectID
+     * @param int $version
+     * @return bool
+     */
+    private static function takeMovedByPublication( $objectID, $version )
+    {
+        $key = (int)$objectID . '/' . (int)$version;
+        if ( !isset( self::$movedByPublication[$key] ) )
+            return false;
+        unset( self::$movedByPublication[$key] );
+        return true;
+    }
+
+    /**
      * Registers the object in search engine.
      *
      * @note Transaction unsafe. If you call several transaction unsafe methods you must enclose
      *       the calls within a db transaction; thus within db->begin and db->commit.
      *
      * @param int $objectID Id of the object.
-     * @param int $version Operation collection passes this default param. Not used in the method
-     * @param bool $isMoved true if node is being moved
+     * @param int $version The version the publish operation published (its step register-search-object passes
+     *                     object_id and version); a version whose publication moved a node of the object
+     *                     is handed to the search engine as a move ({@see eZSearch::addNodeAssignment()})
+     * @param bool $isMoved true if node is being moved: with delayed indexing the entry is index_moved_node
+     *                      (the cronjob reindexes the subtree) instead of index_object
      */
     static public function registerSearchObject( $objectID, $version = null, $isMoved = false )
     {
         $objectID = (int)$objectID;
         eZDebug::createAccumulatorGroup( 'search_total', 'Search Total' );
+
+        if ( $version !== null && self::takeMovedByPublication( $objectID, $version ) && !$isMoved )
+        {
+            // A parent changed in the edit form moves the node like content/move: an engine that implements
+            // addNodeAssignment() registers the object as moved itself (ezfind: index_moved_node with delayed
+            // indexing, so the subtree's paths are reindexed); for any other engine nothing changes
+            $object = eZContentObject::fetch( $objectID );
+            $engine = eZSearch::getEngine();
+            if ( $object instanceof eZContentObject && $engine instanceof ezpSearchEngine &&
+                 method_exists( $engine, 'addNodeAssignment' ) && !eZSearch::isDisabled() )
+            {
+                $nodeIDList = array();
+                $rows = $object->assignedNodes( false );
+                foreach ( is_array( $rows ) ? $rows : array() as $row )
+                    $nodeIDList[] = (int)$row['node_id'];
+                eZSearch::addNodeAssignment( (int)$object->attribute( 'main_node_id' ), $objectID, $nodeIDList, true );
+                return;
+            }
+        }
 
         $ini = eZINI::instance( 'site.ini' );
         $insertPendingAction = false;
@@ -708,15 +774,17 @@ class eZContentOperationCollection
         if ( $insertPendingAction )
         {
             $action = $isMoved ? 'index_moved_node' : 'index_object';
+            // the time the entry was queued: the cronjob takes the oldest first, and the row tells when it came
+            $created = time();
 
             $pendingDB = eZDB::instance();
             if ( $pendingDB->databaseName() === 'mongo' )
             {
-                $pendingDB->insert( 'ezpending_actions', [ 'action' => $action, 'param' => (string)$objectID ] );
+                $pendingDB->insert( 'ezpending_actions', [ 'action' => $action, 'created' => $created, 'param' => (string)$objectID ] );
             }
             else
             {
-                $pendingDB->query( "INSERT INTO ezpending_actions( action, param ) VALUES ( '$action', '$objectID' )" );
+                $pendingDB->query( "INSERT INTO ezpending_actions( action, created, param ) VALUES ( '$action', $created, '$objectID' )" );
             }
             return;
         }
@@ -1418,11 +1486,7 @@ class eZContentOperationCollection
                 }
             }
 
-            if ( !empty( $pendingActionsToDelete ) )
-            {
-                $filterConds = array( 'param' => array ( $pendingActionsToDelete ) );
-                eZPendingActions::removeByAction( 'index_object', $filterConds );
-            }
+            self::removePendingIndexActions( $pendingActionsToDelete );
         }
 
         // Add assigned nodes to the clear cache list

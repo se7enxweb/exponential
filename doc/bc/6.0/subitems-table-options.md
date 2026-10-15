@@ -558,11 +558,11 @@ the user may not see are left out for that user.
 | `Template=design:...tpl` | a template; `$node`, `$column`, `$key`; output = cell, text = value |
 | `Field=` | for the shipped family classes: which column of the family |
 | `Name=` | the column's name, translated in the context `design/admin/node/view/full` |
-| `Group=` | Basic, Node, Object, Version, Location, URLs, SEO, Dates, People, Relations, Translations, Workflow, Users, Media, Technical, Custom |
+| `Group=` | Basic, Node, Object, Version, Location, URLs, SEO, Dates, People, Relations, Translations, Workflow, Users, Media, Technical, Custom; translated like `Name=` |
 | `Type=` | text, html (trusted markup), number, date, datetime, bool, link (http(s), // or / only), code, list, image |
 | `SortField=` | path, path_string, published, modified, section, depth, class_identifier, class_name, priority, name, modified_subnode, node_id, contentobject_id, visibility, or `attribute:<class>/<attribute>`; empty: not sortable |
 | `Policy[]` | module/function entries the user must all have |
-| `Description=` | the tooltip in Table options |
+| `Description=` | the tooltip in Table options, translated like `Name=` |
 | `Copy=true` | a click on a cell copies the value |
 | `Align=right` | right aligned |
 | `Order=` | position in Table options and among defaults |

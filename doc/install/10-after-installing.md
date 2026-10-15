@@ -514,6 +514,20 @@ database. Content is indexed when it is published, unless `DelayedIndexing` is `
 `DelayedIndexingClassList[]`): then publishing only queues it and the default cron part's `indexcontent.php`
 indexes it later, which makes publishing faster for large objects.
 
+The queue is the table `ezpending_actions`: `index_object` reindexes the object, `index_moved_node` the object and
+every object below its main node (for a search engine that keeps paths, such as ezfind's Solr). Each row carries the
+time it was queued (`created`); the cronjob takes the oldest first and removes a row once it is indexed. What an
+operation queues with delayed indexing:
+
+| Operation | `eZSearchEngine` (built in) | An engine with `addNodeAssignment()` (ezfind) |
+|---|---|---|
+| Publish a new object or a new version (with or without notification, any number of locations) | one `index_object` | one `index_object` |
+| Publish a version that moves a location (a parent changed in the edit form) | one `index_object` | one `index_moved_node` |
+| Move (content/move) | nothing: the index holds no paths | `index_moved_node` and `index_object` |
+| Add a location, swap | nothing | `index_object` |
+| Hide, reveal | nothing | ezfind indexes at once and queues its own subtree action |
+| Move to the trash, delete | removes the object's queued `index_object` and `index_moved_node` rows | the same |
+
 Rebuild the whole index after an import, a database move or when search results are wrong:
 
 ```bash

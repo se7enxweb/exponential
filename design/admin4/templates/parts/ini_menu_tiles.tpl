@@ -5,12 +5,12 @@
    as the menu shows its name without link.
 
    Variables: groups (hash id, name, items; translated when the name is translated already), tile_id_prefix,
-   i18n_section, and from the menu's section of menu.ini, per link key:
-   * tile_icons (LinkIcons[]): an icon name; only a name of known_icons (design.ini [AdminDesignSettings] IconList[],
+   i18n_section (the groups' names), known_icons, and per item, from the menu.ini section the link comes from:
+   * item.icon (LinkIcons[]): an icon name; only a name of known_icons (design.ini [AdminDesignSettings] IconList[],
      each with a mask rule .a4-bi-<name>) is drawn, any other name or none draws the plug icon
-   * tile_texts (LinkDescriptions[]): one line on what the function does, translated in i18n_section
-   * tile_figures (LinkFigureTemplates[]): a design: template drawing the tile's figure, included with
-     figure_key = the link key, on a tile the user may open only; anything else draws none
+   * item.text (LinkDescriptions[]): one line on what the function does, translated in item.context
+   * item.figure (LinkFigureTemplates[]): a design: template drawing the tile's figure, included with
+     figure_key = the item's key, on a tile the user may open only; anything else draws none
    A tile is a card with a Bootstrap icon, the link's name as its link (stretched over the card) and the description
    and figure as the link's description.
 *}
@@ -31,14 +31,14 @@
         {set $tile_icon = 'plug'
              $tile_text = ''
              $tile_figure = ''}
-        {if and( is_set( $tile_icons[ $item.key ] ), $known_icons|contains( $tile_icons[ $item.key ] ) )}
-            {set $tile_icon = $tile_icons[ $item.key ]}
+        {if and( is_set( $item.icon ), $known_icons|contains( $item.icon ) )}
+            {set $tile_icon = $item.icon}
         {/if}
-        {if and( is_set( $tile_texts[ $item.key ] ), $tile_texts[ $item.key ] )}
-            {set $tile_text = $tile_texts[ $item.key ]|d18n( $i18n_section )}
+        {if and( is_set( $item.text ), $item.text )}
+            {set $tile_text = $item.text|d18n( first_set( $item.context, $i18n_section ) )}
         {/if}
-        {if and( is_set( $tile_figures[ $item.key ] ), $tile_figures[ $item.key ]|begins_with( 'design:' ) )}
-            {set $tile_figure = $tile_figures[ $item.key ]}
+        {if and( is_set( $item.figure ), $item.figure|begins_with( 'design:' ) )}
+            {set $tile_figure = $item.figure}
         {/if}
         <li class="a4-card a4-setup-tile{if eq( $item.state, 'no-access' )} is-disabled{/if}">
             <span class="a4-setup-tile-icon" aria-hidden="true"><span class="a4-icon a4-bi-{$tile_icon|wash}"></span></span>

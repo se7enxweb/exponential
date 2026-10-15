@@ -151,18 +151,10 @@ body,
   background-image: var(--a4-logo);
 }
 /* the light logo (400x100) drawn 28px tall is 112px wide: it fits the 114px box the dark logo has, so the
-   header items after it (site preview, sidebar control) stand in the same place in both modes */
+   header items after it stand in the same place in both modes */
 html:not([data-a4-theme="dark"]) #header-logo .brand {
   background-position: 0 50%;
   background-size: auto 28px;
-}
-/* the header row (.header-logo) aligns its items to the bottom; the site-preview icon (24px) is shorter than the
-   logo box (32px), so it is centred on the logo's line instead, level with the logo and the search box */
-#header .site-preview {
-  align-self: center;
-}
-#header .site-preview .a4-icon {
-  color: var(--a4-header-ink);
 }
 #header .navbar-icon {
   color: var(--a4-header-ink);
@@ -191,7 +183,7 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
 }
 
 /* ---- The header's rows ------------------------------------------------------------------------------------------
-   From 1280px one row of 56px: logo | main menu | search | light/dark | user menu | logout. From 576px two rows,
+   From 1280px one row of 56px: logo | main menu | search | site | light/dark | user menu | logout. From 576px two rows,
    48px for the logo and the tools, 40px for the main menu. Below 576px one row of 56px with the phone menu. The main
    menu stays on one line at every width from 576px: ezadmin_menubar.js moves the tabs that do not fit into its "More"
    list; without the script the row scrolls sideways. --header-height (the space the page leaves for the fixed
@@ -216,7 +208,8 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
     order: 2;
     margin-left: auto;
   }
-  .header-theme { order: 3; }
+  .header-site,
+  .header-theme { order: 3; }   /* the site link first: same order, so the markup's order decides */
   .header-user { order: 4; }
   .navbar-menu {
     order: 5;
@@ -247,8 +240,11 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
     flex: 0 0 auto;
   }
   .navbar-bar a:focus-visible { outline-offset: -3px; }   /* a scrolling row clips: the ring is drawn inside the tab */
-  /* the field gives way first, so the tools keep one row down to 576px */
-  #header .searchblock input.searchtext { width: clamp(6rem, calc(100vw - 470px), 230px); }
+  /* the field gives way first, so the tools keep one row down to 576px. The rest of the row takes 395px (the
+     paddings 48, the logo with the site link 154, the gaps, the search button 41, light/dark 36, the user menu and
+     logout 80); 410px leaves room for one more tool, so the field is 166px wide at 576px (106px until 2026-10,
+     with 470px) and its full 230px from 640px. */
+  #header .searchblock input.searchtext { width: clamp(6rem, calc(100vw - 410px), 230px); }
   /* With the script the row never overflows (ezadmin_menubar.js moves what does not fit into "More"), so it need not
      clip, and the "More" list can open below it. */
   .navbar-menu.a4-nav-fits .navbar-bar { overflow: visible; }
@@ -283,7 +279,7 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
   border-radius: 999px;
 }
 
-/* Phones: one row of 56px, logo | light/dark | user menu | logout | menu button; the menu opens under the header */
+/* Phones: one row of 56px, logo | site | light/dark | user menu | logout | menu button; the menu opens under the header */
 @media screen and (max-width: 575.98px) {
   .navbar-main {
     flex-wrap: nowrap;
@@ -291,7 +287,7 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
     gap: var(--a4-space-2);
     padding: 0 var(--a4-space-4);
   }
-  .header-theme { margin-left: auto; }
+  .header-site { margin-left: auto; }   /* the tools stand together at the row's end */
   #header .navbar-icon {
     order: 10;
     width: 36px;
@@ -302,6 +298,13 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
     line-height: 1;
   }
   .navbar-menu.show { padding-top: var(--header-height); }
+  /* the open menu ends under the search: admin3's 7rem under the list left about 80px of empty panel there */
+  .navbar-bar { padding-block: var(--a4-space-2) var(--a4-space-5); }
+  /* the search field takes the panel's width (with the menu's gutter) instead of its own 128px */
+  .navbar-bar > .header-search-mobile {
+    align-self: stretch;
+    padding-inline: var(--a4-space-4);
+  }
 }
 
 /* "More": the tabs the one-line menu has no room for, in a list under the button (a disclosure: aria-expanded,
@@ -375,8 +378,9 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
 }
 .navbar-menu .a4-nav-more-list li a:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: -3px; }
 
-/* The user menu and the logout button: round icon buttons as high as light/dark and the search field (36px, more
+/* The site link, the user menu and the logout button: round icon buttons as high as light/dark and the search field (36px, more
    than the 32px a header control is meant to have at least), in the header's colours */
+.header-site,
 .header-user {
   display: flex;
   align-items: center;
@@ -632,7 +636,8 @@ html[data-a4-theme-choice="system"] .a4-theme-toggle .a4-icon-system { display: 
 
 /* Tabs (the node view's View/Details/..., and every ul.tabs): a quiet row, the current one marked in orange */
 ul.tabs li a,
-ul.tabs li span.disabled {
+ul.tabs li span.disabled,
+ul.tabs li span.current {
   border-radius: var(--a4-radius-s);
   color: var(--a4-muted);
   text-decoration: none;
@@ -643,10 +648,15 @@ ul.tabs li a:hover {
   color: var(--a4-ink);
 }
 ul.tabs li.selected a,
-ul.tabs li.selected span.disabled {
+ul.tabs li.selected span.disabled,
+ul.tabs li.selected span.current {
   background-color: var(--a4-accent-soft);
   color: var(--a4-accent-text);
   box-shadow: inset 0 -2px 0 var(--a4-accent);
+}
+/* forced colors drop the tint and the bar: an outline marks the current tab */
+@media (forced-colors: active) {
+  ul.tabs li.selected :is(a, span.disabled, span.current) { outline: 2px solid Highlight; outline-offset: -2px; }
 }
 .tab-content {
   border-color: var(--a4-line);
@@ -1956,8 +1966,11 @@ div#contentstructure ul#content_tree_menu ul a.openclose-close::after {
 :is(#clearcache-tool, #quicksettings-tool, #bookmarks) .box-content form > .block { margin: 0; padding: 0; }
 :is(#clearcache-tool, #quicksettings-tool, #bookmarks) .box-content div.block { padding-bottom: 0; }
 :is(#clearcache-tool, #quicksettings-tool, #bookmarks) .box-content form > :is(input.button, input.defaultbutton, input.button-disabled) { justify-self: end; }
-/* The user preferences: the setting's name and its on/off switch (.a4-tabs.is-segmented) on one row; only a
-   name too long for the column puts the switch under it. */
+/* The user preferences: the setting's name and its on/off choice on one row, the choice drawn as the design's tabs
+   (ul.tabs: muted, the current one, the pressed button in li.selected, in the accent tint with the bar under it);
+   only a name too long for the column puts the tabs under it. In the narrow column the tabs sit side by side,
+   unfloated, each at least 24px high (WCAG 2.5.8). The two states are buttons of a POST form
+   (toolbar/full/admin_preferences.tpl): drawn like the tabs' links, without the native button's face. */
 #currentuserpreferences .settings > ul > li {
   display: flex;
   flex-wrap: wrap;
@@ -1967,6 +1980,44 @@ div#contentstructure ul#content_tree_menu ul a.openclose-close::after {
   padding-block: var(--a4-space-1);
 }
 #currentuserpreferences .a4-pref-label { min-width: 0; overflow-wrap: break-word; }
+#currentuserpreferences .a4-pref-tabs ul.tabs { display: flex; flex-wrap: nowrap; gap: 2px; width: auto; margin: 0; padding: 0; }
+#currentuserpreferences .a4-pref-tabs ul.tabs li { float: none; margin: 0; padding: 0; }
+#currentuserpreferences .a4-pref-form { margin: 0; }
+#currentuserpreferences .a4-pref-tabs ul.tabs li button {
+  border: 0;
+  border-radius: var(--a4-radius-s);
+  background-color: transparent;
+  color: var(--a4-muted);
+  font-family: inherit;
+  line-height: var(--a4-leading-tight);
+  cursor: pointer;
+  transition: background-color .15s ease, color .15s ease;
+}
+#currentuserpreferences .a4-pref-tabs ul.tabs li button:hover {
+  background-color: var(--a4-soft);
+  color: var(--a4-ink);
+}
+#currentuserpreferences .a4-pref-tabs ul.tabs li.selected button {
+  background-color: var(--a4-accent-soft);
+  color: var(--a4-accent-text);
+  box-shadow: inset 0 -2px 0 var(--a4-accent);
+}
+@media (forced-colors: active) {
+  #currentuserpreferences .a4-pref-tabs ul.tabs li button { border: 1px solid ButtonText; }
+  #currentuserpreferences .a4-pref-tabs ul.tabs li.selected button { outline: 2px solid Highlight; outline-offset: -2px; }
+}
+#currentuserpreferences .a4-pref-tabs ul.tabs li :is(a, span.current, button) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--a4-space-6);
+  min-height: var(--a4-space-5);
+  margin: 0;
+  padding: 0 var(--a4-space-2);
+  font-size: var(--a4-text-s);
+  font-weight: 700;
+  white-space: nowrap;
+}
 
 /* The content tree: rows 24px apart at the small and medium column sizes (a 20px line and the item's 4px below it),
    the smallest spacing WCAG 2.5.8 allows for its links and the 20px open/close areas; a larger font (the "Large"

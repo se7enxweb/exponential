@@ -618,11 +618,11 @@ class expSubitemsColumnRegistry
         return array(
             'key' => $column->key(),
             'name' => $column->name(),
-            'group' => (string)$column->setting( 'Group', 'Custom' ),
+            'group' => $column->group(),
             'type' => (string)$column->setting( 'Type', 'text' ),
             'sortable' => $column->sortBy() !== false,
             'align' => (string)$column->setting( 'Align', '' ),
-            'description' => (string)$column->setting( 'Description', '' ),
+            'description' => $column->description(),
             'copy' => self::isTrue( $column->setting( 'Copy', 'false' ) ),
             'builtin' => $this->isBuiltin( $column->key() ),
             'order' => (int)$column->setting( 'Order', 50000 ),

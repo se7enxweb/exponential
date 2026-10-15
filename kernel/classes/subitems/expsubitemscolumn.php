@@ -35,6 +35,14 @@ abstract class expSubitemsColumn
     public function settings() { return $this->settings; }
     public function setting( $name, $default = null ) { return isset( $this->settings[$name] ) ? $this->settings[$name] : $default; }
     public function name() { return self::tr( $this->setting( 'Name', $this->key ) ); }
+    /** The group the table options list the column under (Group=, Custom when unset), translated like the name. */
+    public function group() { return self::tr( (string)$this->setting( 'Group', 'Custom' ) ); }
+    /** One line on what the column shows (Description=, the header's title), translated like the name; '' for none. */
+    public function description()
+    {
+        $description = (string)$this->setting( 'Description', '' );
+        return $description === '' ? '' : self::tr( $description );
+    }
 
     /** The raw value: null, a scalar, or a list/map of scalars (JSON-safe). Called only for visible columns. */
     abstract public function value( eZContentObjectTreeNode $node );

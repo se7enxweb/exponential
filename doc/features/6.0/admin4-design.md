@@ -70,10 +70,12 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
   (`design:parts/a4_preference_attributes.tpl`, `data-a4-pref-*`) and saves them through
   `user/preferences/set_and_exit`. An anonymous page keeps them in the browser (`localStorage`) only; a browser
   choice made before is taken along once. `tests/tests/design/AdminPreferencesTest.php` checks it.
-- **Header and top menu.** One row of 56 px from 1280 px (logo, menu, search, light/dark, user menu, logout), two rows
-  of 48 + 40 px from 576 px, one row of 56 px on a phone with the hamburger menu. The menu stays on one line; tabs that
-  do not fit go into a "More" list. Logout is an icon button ("Logout (admin)"); the user menu holds the user's name
-  and links. "/" jumps to the search. The page always starts below the header (`AdminHeaderTest`).
+- **Header and top menu.** One row of 56 px from 1280 px (logo, menu, search, site, light/dark, user menu, logout),
+  two rows of 48 + 40 px from 576 px, one row of 56 px on a phone with the hamburger menu (logo, site, light/dark,
+  user menu, logout, menu button). The menu stays on one line; tabs that do not fit go into a "More" list. "Open the
+  site" is the first of the tools, a round icon button like the others; logout is an icon button ("Logout
+  (admin)"); the user menu holds the user's name and links. The Tab key reaches the tools in the order they are
+  drawn. "/" jumps to the search. The page always starts below the header (`AdminHeaderTest`).
 - **Sign-in page.** One calm form, fast on phones: labels above 46-48 px fields, 16 px text so mobile Safari does not
   zoom, autofill hints, Enter moves from the username to the password and signs in, a show/hide button, one full-width
   button that cannot be sent twice, and forgot-password and register links when those modules exist. The kernel reads
@@ -113,8 +115,11 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
 - **Frame.** Side column margins are halved (a 16 px gap). The sidebar buttons sit on the window edges at 48% of the
   window height; they are named after their column ("Left column", "Right column"), say with `aria-expanded` whether
   it shows, and on a narrow window Escape closes a column open over the page and returns the focus to its tab. Long names in the side columns wrap instead of being cut off.
+  The User preferences block of the right column (Locations, Re-edit) shows "on" and "off" as tabs, like the node
+  view's tabs: the current state in the accent tint with a bar under it (the pressed button of a POST form, `aria-pressed`), the other one quiet
+  ([styling rules, "Legacy controls and the side columns"](../../bc/6.0/admin4-styling.md#legacy-controls-and-the-side-columns)).
 - **Left menu.** The left column is the "Side menu" navigation. A long menu shows in groups: Setup in Content model,
-  Site and URLs, Workflows, Users and messages, System, and "More" for links an extension adds. Each group has a small
+  Site and URLs, Design (while its tab is left out), Workflows, Users and messages, Audit (likewise), System, AI, Updates, and "More" last for links in no group. Each group has a small
   capital title with a caret and opens and closes (the eZPreference `admin_navgroups` keeps the choice; the group of the current page always
   opens). The current page's link carries `aria-current="page"` and is marked with the accent tint and a bar. A menu
   is grouped through menu.ini (`Groups[]`, `GroupNames[<group>]`, `GroupLinks_<group>[]`); without `Groups[]`, or with
@@ -162,14 +167,22 @@ no file, a changed file, and a GIF icon, inline SVG or image button in an admin4
 ## Setup overview
 
 The Setup tab opens `setup/menu`: a page header and every function of the Setup menu as a tile, in the groups of the
-left menu (Content model, Site and URLs, Workflows, Users and messages, System, and "More" for links an extension adds).
+left menu (Content model, Site and URLs, Design, Workflows, Users and messages, Audit, System, AI, Updates; Design and Audit only while their tabs are left out; and "More" last for links
+in no group).
 
 - **One source.** The tiles are the left menu, drawn another way: `setup/setupmenu.tpl` includes
   `parts/setup/menu.tpl`, which hands `[Leftmenu_setup]` of `menu.ini` to `parts/ini_menu.tpl` with
   `menu_layout='tiles'`. The links, their names, their groups and the access checks (`PolicyList_<link>[]`,
   `CheckViewAccess`, `NoAccessLinks`) are the menu's: a function the user may not open has no tile, and an
-  extension's link appears under "More" by adding it to `[Leftmenu_setup] Links[]`, as for the menu. The order inside
-  a group is that of `Links[]`.
+  extension's link appears by adding it to `[Leftmenu_setup] Links[]`, as for the menu: in the group that names it in
+  `GroupLinks_<group>[]`, else under "More". The order inside a group is that of `Links[]`.
+- **Groups for extensions.** "AI" and "Updates" hold the Setup links of the se7enx extensions, already named in core
+  `menu.ini`, so they do not land under "More" where an unsorted entry looks out of place: `expai` (`expai_summary`,
+  `expai_models`, `expai_budgets`) under AI; `ezupdate` (`ezupdate`) and `git_manager` (`git_manager`,
+  `git_manager_backup`) under Updates. The job queue (`expqueue`, also shipped with `expai`) and the database editor of
+  `sevenx_dse` (`dse`) are System tools and sit under System. A key whose extension is not active has no link and shows
+  nothing; a group with no link the user may open is not drawn, so without these extensions the page looks as before.
+  "More" stays the last group, for links that name no group yet.
 - **A tile** is a card (`.a4-card`) with a Bootstrap icon in an accent square, the
   function's name as its link, stretched over the card with one focus ring around it, and one line on what the
   function does as the link's description. Icon, description and figure come from the menu's own section in
@@ -211,6 +224,10 @@ left menu (Content model, Site and URLs, Workflows, Users and messages, System, 
 | roles_and_policies | `person-lock` | templates | `file-earmark-code` |
 | template_editor | `code-square` | toolbar_management | `tools` |
 | look_and_feel | `palette` | global_setting | `globe` |
+| expai_summary | `stars` | ezupdate | `cloud-arrow-down` |
+| expai_models | `cpu` | git_manager | `git` |
+| expai_budgets | `piggy-bank` | git_manager_backup | `archive` |
+| expqueue | `list-task` | dse | `database` |
 | (an extension's link) | `plug` | | |
 
 ### Extending it
@@ -240,7 +257,19 @@ LinkFigureTemplates[myreports]=design:myreports/setup_figure.tpl
 */ ?>
 ```
 
-The link shows under "More" in the menu and on the overview (or in a group, with `GroupLinks_<group>[]=myreports`).
+The link shows under "More" in the menu and on the overview until it names a group. An extension sorts its link into
+a group of the menu with one more line in the same section, so that "More" is only the catch-all for links without a
+category:
+
+```ini
+# one of: ai (assistants, models, their costs), updates (packages, updates, backups) or any other group of Groups[]
+GroupLinks_ai[]=myreports
+```
+
+A group lists the keys of several extensions; each one adds its own line, and a key whose extension is missing shows
+nothing. A link named in two groups shows in the first only. A new group goes into `Groups[]` with a name in
+`GroupNames[<group>]` (translated in the menu's context); it is drawn after the groups before it, and only when it
+holds a link the user may open.
 The figure template draws one short `<span class="a4-setup-tile-figure">`, asks only what its tile's function may
 show, and stays cheap: it runs on every view of the overview. The description is translated when the extension's
 translation file has the string in the menu's context.
@@ -260,6 +289,81 @@ admin4 ships is listed (see [Icons](#icons)). An extension that needs another on
 not listed, has no rule or no file, an icon used twice, a missing access check, a figure outside the link branch or
 from another fetch, an image in the page, or a missing translation; it draws the tiles of a fixture menu with an
 extension's link (icon, description, figure) and one with an unknown icon.
+
+### Moving a tab into Setup
+
+A site that wants fewer top tabs leaves Design, Audit or the Dashboard out of the top menu and loses no page:
+
+```ini
+<?php /* #?ini charset="utf-8"?
+
+[TopAdminMenu]
+HiddenTabs[]
+HiddenTabs[]=dashboard
+HiddenTabs[]=design
+HiddenTabs[]=audit
+
+*/ ?>
+```
+
+in `settings/siteaccess/<admin siteaccess>/menu.ini.append.php` or `settings/override/menu.ini.append.php`, then clear
+the INI and template caches (`php bin/php/ezcache.php --clear-tag=ini` and `--clear-tag=template`): `ezini()` values
+are compiled into the templates. Restating `Tabs[]` (a line `Tabs[]` without value, then the tabs to keep) works as
+well for the core tabs; an extension's tab is left out only with `HiddenTabs[]`. Every tab stays by default.
+
+- **Per role:** `[TopAdminMenu] SetupTabs[]` names tabs that leave the top menu only for a user who may open the
+  Setup overview (`setup/menu`, checked as the request is). That user finds the tab's group under Setup; a user who
+  may not open the overview, such as a role that holds only the tab's own policy, keeps the tab with its own left
+  menu, and its pages keep marking it. The top menu operator, the Setup menu, `parts/a4_navigation_part.tpl` and the
+  logo ask the same question. The header is cached per set of roles (`$user_hash`), which decides the answer; after
+  a change of a role's policies clear the template cache.
+- **Design and Audit** have a group of the Setup menu and the overview, named by `[Leftmenu_setup] GroupTabs[]`
+  (`GroupTabs[design]=design`, `GroupTabs[audit]=audit`). Such a group is drawn only while its tab is not in the top
+  menu (left out of `Tabs[]`, named in `HiddenTabs[]`, or in `SetupTabs[]` for a user who may open `setup/menu`); while the tab is there, the group and the links it names are
+  not drawn at all, so nothing shows twice.
+- **One source.** `GroupSections[design]=Leftmenu_design` and `GroupSections[audit]=Leftmenu_audit` add the links of
+  the tab's own left menu to the group, after the group's own `GroupLinks_<group>[]`: the same links, names
+  (`LinkNames[]` in that menu's context, else `parts/setup/menu.tpl` names them `<group>-<key>`), access checks
+  (`PolicyList[]`, `PolicyList_<key>[]`, `CheckViewAccess`, the audit channels the user may not read) and tile
+  settings (`LinkIcons[]`, `LinkDescriptions[]`, `LinkFigureTemplates[]` of that section, the descriptions translated
+  in its context, e.g. `design/admin/parts/audit/menu`). A link an extension adds to `[Leftmenu_audit]` is in the
+  group too; give it `LinkNames[<key>]`, or it shows its key as its name there. The Design group starts with the Design tab's own page, `Links[design_node]=content/view/full/58` in
+  `[Leftmenu_setup]` with the tab's `PolicyList[]=58`.
+- **A link once.** A Setup link to an address the added menu has as well shows in that group only: with the Audit
+  group, "Settings" (`audit/settings`) is there and the "Audit" link of "Users and messages" is not. A link the
+  added menu leaves out for the user (an audit channel the user may not read) keeps the Setup link to its address
+  out too.
+- **Navigation.** A page of such a tab (its `NavigationPartIdentifier`, e.g. `audit/console` or `visual/toolbarlist`)
+  marks the Setup tab and draws the Setup menu, with its group open at the current link, also when its view names a
+  left menu of its own (`$module_result.left_menu`, as the audit views do). No page marks a tab that is
+  not in the top menu or draws a menu no tab leads to; the breadcrumb is the page's own. While the tab is in the top
+  menu, its pages keep their tab and left menu. `parts/a4_navigation_part.tpl` gives the navigation part both menus
+  use, in admin4 and in admin4l's header and left menu blocks.
+- **Dashboard.** Without the Dashboard tab the logo leads to the dashboard (`[Topmenu_dashboard] URL[default]`) for a
+  user who may open it (`content/dashboard`), instead of the content root, which the Content tab still opens. The
+  dashboard is also the admin's start page after login when `site.ini [SiteSettings] DefaultPage=content/dashboard`,
+  as the setup wizard writes it; its left menu holds the account's pages (password, drafts, bookmarks, notifications).
+  The dashboard has no Setup group: it belongs to every user, Setup to administrators.
+
+An extension's tab moves the same way, in the extension's or the site's `menu.ini.append.php`: a group in
+`[Leftmenu_setup] Groups[]` with `GroupNames[<group>]`, `GroupTabs[<group>]=<tab>`, `GroupSections[<group>]=<its
+Leftmenu_ section>` (or `GroupLinks_<group>[]` with links of its own), the tile settings in its section, and the tab
+in `HiddenTabs[]`. `GroupTabs[]` and `GroupSections[]` are read by admin4's `parts/ini_menu.tpl` only; the classic
+designs keep their tabs.
+
+| Link key | Icon | Link key | Icon |
+|---|---|---|---|
+| design_node | `brush` | audit-dashboard | `speedometer` |
+| design-look_and_feel | `palette` | audit-console | `terminal` |
+| design-toolbar_management | `tools` | audit-recent | `list-ul` |
+| design-template_editor | `code-square` | audit-charts | `graph-up-arrow` |
+| design-templates | `file-earmark-code` | audit-alerts | `exclamation-triangle` |
+| | | audit-export | `download` |
+| | | audit-archives | `archive` |
+| | | audit-settings | `journal-check` |
+
+`AdminSetupOverviewTest` fails when a moved tab's group, section, page, icon, description or translation is missing,
+when a tab is hidden by default, and draws `parts/a4_navigation_part.tpl` with the tabs shown and hidden.
 
 ## Languages
 
@@ -387,9 +491,11 @@ tree's roles, states, Tab stop and keys.
 | `settings/menu.ini` | `MenuAccessSettings` | `CheckViewAccess` | `enabled` | siteaccess |
 | `settings/menu.ini` | `MenuAccessSettings` | `NoAccessLinks` | `hidden` | siteaccess |
 | `settings/menu.ini` | `TopAdminMenu` | `HiddenTabs[]` | empty | siteaccess |
+| `settings/menu.ini` | `TopAdminMenu` | `SetupTabs[]` | empty (see [Moving a tab into Setup](#moving-a-tab-into-setup)) | siteaccess |
 | `settings/menu.ini` | `Topmenu_<tab>` | `Name`, `Tooltip`, `TranslationContext` | the default tab names, context `design/admin/pagelayout` | siteaccess |
-| `settings/menu.ini` | `Leftmenu_<menu>` | `Groups[]`, `GroupNames[<group>]`, `GroupLinks_<group>[]` | the five groups of `Leftmenu_setup` | siteaccess |
+| `settings/menu.ini` | `Leftmenu_<menu>` | `Groups[]`, `GroupNames[<group>]`, `GroupLinks_<group>[]` | the nine groups of `Leftmenu_setup` (Design and Audit for moved tabs, AI and Updates for extensions' links) | siteaccess |
 | `settings/menu.ini` | `Leftmenu_<menu>` | `LeadLinks[]` | `overview` in `Leftmenu_setup` | siteaccess |
+| `settings/menu.ini` | `Leftmenu_setup` | `GroupTabs[<group>]`, `GroupSections[<group>]` | `design` and `audit` (see [Moving a tab into Setup](#moving-a-tab-into-setup)) | siteaccess |
 | `settings/menu.ini` | `Leftmenu_<menu>` | `LinkIcons[<link>]`, `LinkDescriptions[<link>]`, `LinkFigureTemplates[<link>]` | the core Setup links | siteaccess |
 | `settings/design.ini` | `AdminDesignSettings` | `IconList[]` | every `.a4-bi-*` icon of `components.css` | siteaccess |
 | `settings/menu.ini` | `Topmenu_setup` | `URL[default]` | `setup/menu` (the Setup overview) | siteaccess |
@@ -403,7 +509,9 @@ Community". A template can also set `$show_community_links`.
   own stylesheets and before `BackendCSSFileList` ([Styling the administration](../../bc/6.0/admin4-styling.md)).
 - `CheckViewAccess=enabled` shows a top tab or a left menu link only to a user who can open its address, checked like
   the request itself; `NoAccessLinks=hidden` leaves such a link out (`disabled` shows its name without a link).
-- `HiddenTabs[]` leaves top tabs out whatever `Tabs[]` says, also tabs an extension appends.
+- `HiddenTabs[]` leaves top tabs out whatever `Tabs[]` says, also tabs an extension appends. Design and Audit then
+  show in the Setup menu, and without the Dashboard tab the logo leads to the dashboard (see
+  [Moving a tab into Setup](#moving-a-tab-into-setup)).
 - `Name`, `Tooltip` and `TranslationContext` of a `[Topmenu_<tab>]` give the tab's label and tooltip in English and the
   translation context they are looked up in.
 - `Groups[]`, `GroupNames[<group>]` and `GroupLinks_<group>[]` group a long left menu (see "Left menu" above).
