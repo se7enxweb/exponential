@@ -71,10 +71,39 @@ class ezjscServerFunctionsJsSearchIDsTest extends PHPUnit\Framework\TestCase
     public function testEveryIdParameterGoesThroughTheIdFilter()
     {
         $code = (string)file_get_contents( 'extension/ezjscore/classes/ezjscserverfunctionsjs.php' );
-        foreach ( array( 'SearchContentClassAttributeID', 'SearchContentClassID', 'SearchSubTreeArray', 'SearchSectionID', 'SearchTimestamp' ) as $key )
+        foreach ( array( 'SearchContentClassAttributeID', 'SearchSubTreeArray', 'SearchSectionID', 'SearchTimestamp' ) as $key )
         {
             $this->assertStringContainsString( "self::makePostIDArray( \$http, '$key' )", $code, $key );
             $this->assertStringNotContainsString( "self::makePostArray( \$http, '$key' )", $code, $key );
         }
+        // classes: ids or identifiers, both ending as integers
+        foreach ( array( 'SearchContentClassID', 'SearchContentClassIdentifier' ) as $key )
+        {
+            $this->assertStringContainsString( "self::makePostClassIDArray( \$http, '$key' )", $code, $key );
+            $this->assertStringNotContainsString( "self::makePostArray( \$http, '$key' )", $code, $key );
+        }
+    }
+
+    public function testClassIdentifiersAreLookedUpToTheirIds()
+    {
+        $method = new ReflectionMethod( 'ezjscServerFunctionsJsSearchIDsTestClasses', 'makePostClassIDArray' );
+        $_POST['SearchContentClassID'] = array( '2', 'article', 'folder', 'unknown', '-3', '1e5', ' 4 ', 'a b', '7 OR other', array( 9 ), '2' );
+        $this->assertSame( array( 2, 4, 16, 1 ), $method->invoke( null, eZHTTPTool::instance(), 'SearchContentClassID' ) );
+        $_POST['SearchContentClassIdentifier'] = 'folder,article';
+        $this->assertSame( array( 1, 16 ), $method->invoke( null, eZHTTPTool::instance(), 'SearchContentClassIdentifier' ) );
+    }
+}
+
+/** Class lookups without a database: article is 16, folder 1, a lookup that answers a non-id is ignored */
+class ezjscServerFunctionsJsSearchIDsTestClasses extends ezjscServerFunctionsJs
+{
+    protected static function classIDsByIdentifiers( array $identifiers )
+    {
+        $map = array( 'article' => 16, 'folder' => 1, 'unknown' => '1 OR 1' );
+        $ids = array();
+        foreach ( $identifiers as $identifier )
+            if ( isset( $map[$identifier] ) )
+                $ids[] = $map[$identifier];
+        return $ids;
     }
 }

@@ -260,11 +260,11 @@ class ezjscServerFunctionsJs extends ezjscServerFunctions
         }
         else if ( self::hasPostValue( $http, 'SearchContentClassID' ) )
         {
-             $params['SearchContentClassID'] = self::makePostIDArray( $http, 'SearchContentClassID' );
+             $params['SearchContentClassID'] = self::makePostClassIDArray( $http, 'SearchContentClassID' );
         }
         else if ( self::hasPostValue( $http, 'SearchContentClassIdentifier' ) )
         {
-             $params['SearchContentClassID'] = eZContentClass::classIDByIdentifier( self::makePostArray( $http, 'SearchContentClassIdentifier' ) );
+             $params['SearchContentClassID'] = self::makePostClassIDArray( $http, 'SearchContentClassIdentifier' );
         }
 
         if ( self::hasPostValue( $http, 'SearchSubTreeArray' ) )
@@ -404,6 +404,51 @@ class ezjscServerFunctionsJs extends ezjscServerFunctions
                 $idList[] = $id;
         }
         return $idList;
+    }
+
+    /**
+     * makePostArray() for classes: a number is a class id (kept when above 0), a class identifier is looked up to its
+     * id, anything else is left out. SearchContentClassID has always taken identifiers too (eZ Find looked them up),
+     * and the engine gets only integers.
+     *
+     * @param eZHTTPTool $http
+     * @param string $key
+     * @return int[]
+     */
+    protected static function makePostClassIDArray( eZHTTPTool $http, $key )
+    {
+        $idList = array();
+        $identifiers = array();
+        foreach ( self::makePostArray( $http, $key ) as $value )
+        {
+            if ( !is_scalar( $value ) )
+                continue;
+            $value = trim( (string)$value );
+            if ( ctype_digit( $value ) && (int)$value > 0 )
+                $idList[] = (int)$value;
+            else if ( preg_match( '/^[A-Za-z_][A-Za-z0-9_]*$/', $value ) )
+                $identifiers[] = $value;
+        }
+        if ( $identifiers )
+        {
+            foreach ( (array)static::classIDsByIdentifiers( $identifiers ) as $id )
+            {
+                if ( is_scalar( $id ) && ctype_digit( (string)$id ) && (int)$id > 0 )
+                    $idList[] = (int)$id;
+            }
+        }
+        return array_values( array_unique( $idList ) );
+    }
+
+    /**
+     * The ids of the classes named by $identifiers (unknown ones left out).
+     *
+     * @param string[] $identifiers
+     * @return array
+     */
+    protected static function classIDsByIdentifiers( array $identifiers )
+    {
+        return eZContentClass::classIDByIdentifier( $identifiers );
     }
 
     /**

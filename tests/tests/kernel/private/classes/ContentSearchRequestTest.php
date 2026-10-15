@@ -115,6 +115,14 @@ class ContentSearchRequestTest extends PHPUnit\Framework\TestCase
         $this->assertSame( -1, $advanced::positiveID( '-1' ) );
         $this->assertSame( -1, $advanced::positiveID( 'x' ) );
         $this->assertSame( -1, $advanced::positiveID( array( 5 ) ) );
+        // a class is an id or an identifier; the lookup's answer is used only when it is an id
+        $lookup = function ( $identifier ) { return array( 'article' => 16, 'odd' => '3 OR 1' )[$identifier] ?? false; };
+        $this->assertSame( 16, $advanced::classID( 'article', $lookup ) );
+        $this->assertSame( 7, $advanced::classID( '7', $lookup ) );
+        $this->assertSame( -1, $advanced::classID( 'unknown', $lookup ) );
+        $this->assertSame( -1, $advanced::classID( 'odd', $lookup ) );
+        $this->assertSame( -1, $advanced::classID( 'a b', $lookup ) );
+        $this->assertSame( -1, $advanced::classID( array( 'article' ), $lookup ) );
 
         $this->assertSame( 1, $advanced::searchDate( '1' ) );
         $this->assertSame( 5, $advanced::searchDate( 5 ) );

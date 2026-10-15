@@ -124,7 +124,7 @@ class Advancedsearch extends \Exponential\Runnable\ModuleView
         $searchContentClassAttributeArray = array();
         if ( $http->hasVariable( 'SearchContentClassID' ) )
         {
-            $searchContentClassID = self::positiveID( $http->variable( 'SearchContentClassID' ) );
+            $searchContentClassID = self::classID( $http->variable( 'SearchContentClassID' ) );
             if ( $searchContentClassID > 0 )
             {
                 $searchContentClass = \eZContentClass::fetch( $searchContentClassID );
@@ -374,6 +374,28 @@ class Advancedsearch extends \Exponential\Runnable\ModuleView
     {
         $id = is_scalar( $value ) ? (int)$value : 0;
         return $id > 0 ? $id : -1;
+    }
+
+    /**
+     * The class of the request as a positive integer id, or -1 for none: a number is an id (positiveID()), a class
+     * identifier (article, folder ...) is looked up, as eZ Find always did with SearchContentClassID. Anything else,
+     * and an identifier that names no class, is -1.
+     *
+     * @param mixed $value
+     * @param callable|null $byIdentifier identifier => class id or false; defaults to eZContentClass::classIDByIdentifier()
+     * @return int
+     */
+    public static function classID( $value, $byIdentifier = null )
+    {
+        if ( !is_scalar( $value ) )
+            return -1;
+        $value = trim( (string)$value );
+        if ( preg_match( '/^[A-Za-z_][A-Za-z0-9_]*$/', $value ) )
+        {
+            $id = $byIdentifier ? $byIdentifier( $value ) : \eZContentClass::classIDByIdentifier( $value );
+            return is_scalar( $id ) && ctype_digit( (string)$id ) && (int)$id > 0 ? (int)$id : -1;
+        }
+        return self::positiveID( $value );
     }
 
     /**
