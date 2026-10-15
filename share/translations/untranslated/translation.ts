@@ -4943,7 +4943,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%used of at most %max languages are in use.</source>
+        <source>%used of at most %max content languages are in use. Only the languages added here count, not the locales in the list below; removing a language no content uses frees a place.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5090,7 +5090,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>More can be added (at most %max)</source>
+        <source>More can be added (at most %max content languages)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5330,7 +5330,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>No language was added: this installation already has the most languages it can hold (%max).</source>
+        <source>No language was added: this installation already has the most content languages it can hold (%max). Remove a language that no object or class uses to free a place.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

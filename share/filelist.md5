@@ -430,8 +430,8 @@ deffb644bbfdf3644f9cf76d6a4901d8  design/admin/templates/content/related/file.tp
 32579aafc19e699a1340fba20c4d339e  design/admin/templates/content/reverserelatedlist.tpl
 279c0497b4256bea8b803f6fc108a58e  design/admin/templates/content/search.tpl
 c58456f930801986a94ae1c6a68e4fdc  design/admin/templates/content/searchresult.tpl
-8c395bea9d0747d5466f5af51d0b6d10  design/admin/templates/content/translationnew.tpl
-93292f4b57a58750fa53e9e4dc05ef08  design/admin/templates/content/translations.tpl
+1ce579d8e06e7939fca678db0352b482  design/admin/templates/content/translationnew.tpl
+3439a2667c9fc9e49022b08c76125db3  design/admin/templates/content/translations.tpl
 658082fdb903a31556204e442844a3ed  design/admin/templates/content/translationview.tpl
 286b68048bdf3a24a356ab5b199adba4  design/admin/templates/content/trash.tpl
 522a5244456835aa40cce7958b3654df  design/admin/templates/content/upload.tpl
@@ -1025,8 +1025,8 @@ ee9413387057151e421be661a3e3f0a1  design/admin4/templates/content/removeeditvers
 32579aafc19e699a1340fba20c4d339e  design/admin4/templates/content/reverserelatedlist.tpl
 9c83ee619bfda8166a3eb408cdc43b00  design/admin4/templates/content/search.tpl
 a0b08bb545257e2ec0cb80586f65d086  design/admin4/templates/content/searchresult.tpl
-8c395bea9d0747d5466f5af51d0b6d10  design/admin4/templates/content/translationnew.tpl
-24487324e943fe6c7f82318087bec12d  design/admin4/templates/content/translations.tpl
+1ce579d8e06e7939fca678db0352b482  design/admin4/templates/content/translationnew.tpl
+b3393f1abf9f26699c5f2bb220088cb2  design/admin4/templates/content/translations.tpl
 0288113ce68d85ab98f81f090fc5d4ba  design/admin4/templates/content/translationview.tpl
 e80baee3c22e4e4bc226a6355854788e  design/admin4/templates/content/trash.tpl
 a2b172b8944ff150c68ffddee1372eba  design/admin4/templates/content/upload.tpl
@@ -5644,7 +5644,7 @@ c75e831d1d57e3a1709fb41a3c094441  kernel/private/classes/views/content/reversere
 ea6d82cea689a55292679f82eaff72a7  kernel/private/classes/views/content/subitemsexport.php
 e7f6b7b2a1cb6cc5b80c5da35be68003  kernel/private/classes/views/content/tipafriend.php
 8633e40b09f4a5a11c208e5424129bad  kernel/private/classes/views/content/translation.php
-b652fa504b00bbcaf2cb7b80617b91f5  kernel/private/classes/views/content/translations.php
+6a5221deb0b194b4dad8001d71cb708a  kernel/private/classes/views/content/translations.php
 82d768f954cd114a2104038982ca89aa  kernel/private/classes/views/content/trash.php
 ade3050a695a1188b44283460111d3c9  kernel/private/classes/views/content/treemenu.php
 932c6f9d2130a6886f4e57d1683661fb  kernel/private/classes/views/content/upload.php
@@ -7024,7 +7024,7 @@ fa7d8f07f3293c3eebc0ac3b4ef6744e  share/locale/nor-NO@spraakraad.ini
 98a0d62a6f771aa50a488cdbbf49bf51  share/locale/por-PT.ini
 db8b0e327e55105736724149b06c0fc7  share/locale/por-PT@euro.ini
 bb49992c78eb95dc407fefc12e64863f  share/locale/rus-RU.ini
-61d750e73772b8e8f04a0ff8ca521cd6  share/locale/ser-SR.ini
+7bf3063319bb1bc19a2e35b9445540a1  share/locale/ser-SR.ini
 b490a9bd829bdd44f0da3c2f99bfa033  share/locale/slk-SK.ini
 50d5c38c3c29e7e666a67b4f91d28927  share/locale/srp-RS.ini
 eee6c9ac5d8eaeb551666d119c83755e  share/locale/swe-SE.ini
@@ -7050,14 +7050,14 @@ dd5f5f3cf2348a6cc17bd0ee76983225  share/translations/dut-NL/translation.ts
 284321a9de29bf9268c27abb13f56f2c  share/translations/ell-GR/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-AU/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-NZ/translation.ts
-575971e34ad9294ab30299e3ed85b9ec  share/translations/eng-US/translation.ts
+48fc41159f3c381c2302208e581c4b8a  share/translations/eng-US/translation.ts
 5f0920d5b4e8bbaff2a4a6d5b3995c90  share/translations/esl-ES/translation.ts
 27846e3f6408cd74f58cef8adcbab573  share/translations/esl-MX/translation.ts
 4b104d4d337601b4bc6ae0482e6478ea  share/translations/fin-FI/translation.ts
 edfd3efb7eca1e2bd6d6d7d08bd78a77  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-752ea5bb10e7e45dc7869f97db00a449  share/translations/ger-DE/translation.ts
+1c785e8794908c11bb662de25885e7d7  share/translations/ger-DE/translation.ts
 75d657fed5de11db9e059cdcff2046a8  share/translations/ita-IT/translation.ts
 a45e2d26b1c24ac4cb6ae1d7197e5b0e  share/translations/jpn-JP/translation.ts
 d1dc34034ddce2d64c4f8df7fcc41c85  share/translations/nno-NO/translation.ts
@@ -7070,7 +7070,7 @@ e33e059c205f7c0a49e112ce9ba6147d  share/translations/ser-SR/translation.ts
 e9e308757570f0321486d498fc993d17  share/translations/srp-RS/translation.ts
 718ecc8ecbbe8ebec7a88fb2697f401f  share/translations/swe-SE/translation.ts
 0b1b76b5ad6b2f923afd6fd9a9937a8b  share/translations/untranslated/readme.txt
-4a8b2af8c7ee5914d201f1120542b9a3  share/translations/untranslated/translation.ts
+5a0d5502c91482123555dabfa1c48dcd  share/translations/untranslated/translation.ts
 bae9ff85781e52af001213bdb213a013  shippable.yml
 414f4d1129273ab3dea38b878d554eae  soap.php
 3b6d156f31df70e093aa1a6d8a525cd3  support/ezlupdate-qt4.5/README.txt
@@ -7518,7 +7518,7 @@ d2e32a52cf0830e74fa5377be864c38c  tests/tests/kernel/classes/expContentDraftList
 c982ecbf9fc8545773311219e66b95fa  tests/tests/kernel/classes/expContentHideReturnTest.php
 3d4aea56bbd6b88864909c0e1ea1ec2a  tests/tests/kernel/classes/expContentHistoryListTest.php
 201f85cc8198f7389a66a982878dcf6a  tests/tests/kernel/classes/expContentLanguagesCountsLiveTest.php
-8a09334d1220ca0936f37a308b5be245  tests/tests/kernel/classes/expContentLanguagesOverviewTest.php
+7ee96bfa824347d7b45c2c009a527c29  tests/tests/kernel/classes/expContentLanguagesOverviewTest.php
 4799a37a0347c83794a9d7d43a865107  tests/tests/kernel/classes/expCronjobPauseTest.php
 e1d9c99f5f0c0a4a5f1dc95cdeae4a5d  tests/tests/kernel/classes/expCronjobRunnerScheduleTest.php
 92f303e359766f9135f828f2da64ac5a  tests/tests/kernel/classes/expCronjobScriptDocumentationTest.php
