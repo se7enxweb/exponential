@@ -173,7 +173,7 @@ toasts, and on a `var(--a4-z-…)` that `components.css` does not define (a typo
 | Forms | `.a4-field`, `.a4-field-wide`, `.a4-label`, `.a4-input` (`.is-auto`), `.a4-field-error`, `.a4-form` (`.is-wide`), `.a4-formrow` (label beside control), `.a4-searchrow`, `.a4-check`, `.a4-radios`, `.a4-chips` > `.a4-chip`, `.a4-inline-label` (a label around text that was plain before: an inline radio or checkbox with its text, or the words in front of a control in a table cell; drawn like the text around it) |
 | Forms | `.a4-field`, `.a4-field-wide`, `.a4-label`, `.a4-input` (`.is-auto`), `.a4-field-error`, `.a4-required-mark` + `.a4-required-hint` (required fields), `.a4-error-summary` (the summary of a failed store), `.a4-form` (`.is-wide`), `.a4-formrow` (label beside control), `.a4-searchrow`, `.a4-check`, `.a4-radios`, `.a4-chips` > `.a4-chip` |
 | Tables | `.a4-table-wrap` > `table.a4-table` (`.is-compact`), `tr.is-selected` |
-| Under a list | `.a4-listfoot`, `.a4-sizes`, `.a4-pager`; `.a4-tabs` (links, buttons, `span.current`, `a.current`, `.is-current`), `.a4-count` |
+| Under a list | `.a4-listfoot`, `.a4-sizes`, `.a4-pager`; `.a4-tabs` (links, buttons, `span.current`, `a.current`, `.is-current`; `.is-segmented`: joined into one compact switch, a pressed button is `aria-pressed="true"`; `.is-icons`: square icon buttons, each named by `.a4-sr-only` text and its `title`), `.a4-count` |
 | Empty state, notices | `.a4-empty`; `.a4-notice` (`.is-ok`, `.is-warn`, `.is-bad`, `.is-info`: each with its icon left of the text, `.no-icon` leaves it out; `.a4-notice-title` for a bold first line) |
 | Toasts | `.a4-toasts` (the two live regions of the frame, `#a4-toasts` polite and `#a4-toasts-alert` assertive) and `.a4-toast` (`.is-ok`, `.is-warn`, `.is-bad`); added only by `window.a4Toast( message, kind )` from `admin4.js` |
 | Folding | `details.a4-fold` > `summary` + `.a4-fold-body` (`.is-bad`, `.is-warn`); `details.a4-confirm` (a confirmation that opens in place) |
@@ -217,6 +217,23 @@ Example, a list page:
   <p class="a4-empty">No roles match.</p>
 </div>
 ```
+
+## Legacy controls and the side columns
+
+The kernel's module templates still write `input.button`, `input.defaultbutton`, `input.button-disabled`,
+`button.button`, and selects and text fields without a class. Inside `#page`, `admin4.css` gives them the size of the
+`.a4-btn` components and of the node's action row: `min-height: var(--a4-control-h)` (28px in compact density), the
+type scale's small step and the space tokens; a select gets the field's edge and a chevron drawn in `--a4-muted`, and
+forced colors get the native select back. The selectors keep the base rules' weight (element plus class, the scope
+inside `:where()`), so a rule with one more class (the node's action row, the edit bars, `.a4-input`, an extension's
+own control) always wins; a select or field with a class of its own is not touched. New markup still uses `.a4-btn`
+and `.a4-field`.
+
+Side columns: the rule between blocks is drawn only above a heading that follows a block, whatever the menu template
+nests; block titles have one size (1.25em of the column's font, hyphenated); link lists have no bullets. Every left
+menu of admin4 ends with `design:parts/left_width_control.tpl` (three icon buttons in a POST form, the current width
+pressed) and a tree menu shows its trash link through `design:parts/left_trash.tpl`: include them, never copy their
+markup (`AdminLegacyControlsTest`).
 
 ## Dark mode
 

@@ -20,8 +20,14 @@
             {def $extract_length = sub( count_chars( $navigation_part_name ), '14' ) 
                     $part_name = $navigation_part_name|extract( '2', $extract_length )}
 
-            {* a kernel navigation part with the exp prefix: exp<name>navigationpart => parts/<name>/menu.tpl *}
-            {if $navigation_part_name|begins_with( 'exp' )}{set $part_name = $navigation_part_name|explode( 'navigationpart' )[0]|extract( 3 )}{/if}
+            {* a kernel navigation part with the exp prefix, named in $kernel_exp_parts (a prefix test would turn an
+               extension's "experiment..." into "eriment"): exp<name>navigationpart => parts/<name>/menu.tpl; an
+               extension's part without the ez prefix: <name>navigationpart => parts/<name>/menu.tpl (cutting two
+               letters off it named a directory nobody has, and the left column stayed an empty card) *}
+            {def $kernel_exp_parts = hash( 'expauditnavigationpart', 'audit' )}
+            {if is_set( $kernel_exp_parts[ $navigation_part_name ] )}{set $part_name = $kernel_exp_parts[ $navigation_part_name ]}
+            {elseif $navigation_part_name|begins_with( 'ez' )|not}{set $part_name = $navigation_part_name|explode( 'navigationpart' )[0]}{/if}
+            {undef $kernel_exp_parts}
             {include uri=concat( 'design:parts/', $part_name, '/menu.tpl' )}
 
             {undef $extract_length $part_name $navigation_part_name}

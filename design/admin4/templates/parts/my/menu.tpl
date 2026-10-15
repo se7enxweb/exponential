@@ -20,16 +20,17 @@
 {def $cb_counts = fetch( 'collaboration', 'inbox', hash( 'limit', 1 ) ).counts}
 <div id="collaboration-menu">
 {* DESIGN: Header START *}<div class="box-header"><div class="box-ml">
-<h4>{'Inbox'|i18n( 'design/admin/collaboration/inbox' )}</h4>
+<h4 id="leftmenu-title-collaboration">{'Inbox'|i18n( 'design/admin/collaboration/inbox' )}</h4>
 {* DESIGN: Header END *}</div></div>
 {* DESIGN: Content START *}<div class="box-bc"><div class="box-ml"><div class="box-content">
-<ul>
-    <li><a href={'collaboration/view/summary'|ezurl}>{'All items'|i18n( 'design/admin/collaboration/inbox' )} ({$cb_counts.all})</a></li>
-    <li><a href={'collaboration/view/summary/(status)/waiting/(role)/approver'|ezurl}>{'Waiting for your decision'|i18n( 'design/admin/collaboration/inbox' )} ({$cb_counts.waiting_for_me})</a></li>
-    <li><a href={'collaboration/view/summary/(status)/waiting/(role)/author'|ezurl}>{'Your items waiting for others'|i18n( 'design/admin/collaboration/inbox' )} ({$cb_counts.waiting_for_others})</a></li>
-    <li><a href={'collaboration/view/summary/(status)/approved'|ezurl}>{'Approved'|i18n( 'design/admin/collaboration/inbox' )} ({$cb_counts.approved})</a></li>
-    <li><a href={'collaboration/view/summary/(status)/denied'|ezurl}>{'Denied'|i18n( 'design/admin/collaboration/inbox' )} ({$cb_counts.denied})</a></li>
-</ul>
+{* the same list as every ini menu (parts/ini_menu_items.tpl): no bullets, 24px targets, the current one marked *}
+{include uri='design:parts/ini_menu_items.tpl' labelledby='leftmenu-title-collaboration' current_uri_string=$uri_string items=array(
+    hash( 'key', 'all',       'state', 'link', 'url', 'collaboration/view/summary',                                    'name', concat( 'All items'|i18n( 'design/admin/collaboration/inbox' )|wash, ' (', $cb_counts.all, ')' ) ),
+    hash( 'key', 'waiting',   'state', 'link', 'url', 'collaboration/view/summary/(status)/waiting/(role)/approver', 'name', concat( 'Waiting for your decision'|i18n( 'design/admin/collaboration/inbox' )|wash, ' (', $cb_counts.waiting_for_me, ')' ) ),
+    hash( 'key', 'others',    'state', 'link', 'url', 'collaboration/view/summary/(status)/waiting/(role)/author',   'name', concat( 'Your items waiting for others'|i18n( 'design/admin/collaboration/inbox' )|wash, ' (', $cb_counts.waiting_for_others, ')' ) ),
+    hash( 'key', 'approved',  'state', 'link', 'url', 'collaboration/view/summary/(status)/approved',                'name', concat( 'Approved'|i18n( 'design/admin/collaboration/inbox' )|wash, ' (', $cb_counts.approved, ')' ) ),
+    hash( 'key', 'denied',    'state', 'link', 'url', 'collaboration/view/summary/(status)/denied',                  'name', concat( 'Denied'|i18n( 'design/admin/collaboration/inbox' )|wash, ' (', $cb_counts.denied, ')' ) )
+)}
 {* DESIGN: Content END *}</div></div></div>
 </div>
 {undef $cb_counts}
@@ -55,32 +56,4 @@
 {/if}
 
 {* Left menu width control. *}
-<div id="widthcontrol-links" class="widthcontrol">
-<p>
-{switch match=ezpreference( 'admin_left_menu_size' )}
-    {case match='medium'}
-    <a href={'/user/preferences/set/admin_left_menu_size/small'|ezurl} title="{'Change the left menu width to small size.'|i18n( 'design/admin/parts/user/menu' )}">{'Small'|i18n( 'design/admin/parts/user/menu' )}</a>
-    <span class="current">{'Medium'|i18n( 'design/admin/parts/user/menu' )}</span>
-    <a href={'/user/preferences/set/admin_left_menu_size/large'|ezurl} title="{'Change the left menu width to large size.'|i18n( 'design/admin/parts/user/menu' )}">{'Large'|i18n( 'design/admin/parts/user/menu' )}</a>
-    {/case}
-
-    {case match='large'}
-    <a href={'/user/preferences/set/admin_left_menu_size/small'|ezurl} title="{'Change the left menu width to small size.'|i18n( 'design/admin/parts/user/menu' )}">{'Small'|i18n( 'design/admin/parts/user/menu' )}</a>
-    <a href={'/user/preferences/set/admin_left_menu_size/medium'|ezurl} title="{'Change the left menu width to medium size.'|i18n( 'design/admin/parts/user/menu' )}">{'Medium'|i18n( 'design/admin/parts/user/menu' )}</a>
-    <span class="current">{'Large'|i18n( 'design/admin/parts/user/menu' )}</span>
-    {/case}
-
-    {case in=array( 'small', '' )}
-    <span class="current">{'Small'|i18n( 'design/admin/parts/user/menu' )}</span>
-    <a href={'/user/preferences/set/admin_left_menu_size/medium'|ezurl} title="{'Change the left menu width to medium size.'|i18n( 'design/admin/parts/user/menu' )}">{'Medium'|i18n( 'design/admin/parts/user/menu' )}</a>
-    <a href={'/user/preferences/set/admin_left_menu_size/large'|ezurl} title="{'Change the left menu width to large size.'|i18n( 'design/admin/parts/user/menu' )}">{'Large'|i18n( 'design/admin/parts/user/menu' )}</a>
-    {/case}
-
-    {case}
-    <a href={'/user/preferences/set/admin_left_menu_size/small'|ezurl} title="{'Change the left menu width to small size.'|i18n( 'design/admin/parts/user/menu' )}">{'Small'|i18n( 'design/admin/parts/user/menu' )}</a>
-    <a href={'/user/preferences/set/admin_left_menu_size/medium'|ezurl} title="{'Change the left menu width to medium size.'|i18n( 'design/admin/parts/user/menu' )}">{'Medium'|i18n( 'design/admin/parts/user/menu' )}</a>
-    <a href={'/user/preferences/set/admin_left_menu_size/large'|ezurl} title="{'Change the left menu width to large size.'|i18n( 'design/admin/parts/user/menu' )}">{'Large'|i18n( 'design/admin/parts/user/menu' )}</a>
-    {/case}
-{/switch}
-</p>
-</div>
+{include uri='design:parts/left_width_control.tpl'}
