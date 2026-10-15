@@ -296,16 +296,7 @@ html[data-a4-theme-choice="system"] .a4-theme-toggle .a4-icon-system { display: 
   position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden;
   clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0;
 }
-/* The density switch beside it: the same round button; pressed (compact) it carries the accent tint */
 .header-theme { gap: var(--a4-space-2); }
-.a4-density-toggle[aria-pressed="true"] {
-  border-color: var(--a4-accent);
-  background-color: var(--a4-accent-soft);
-}
-.a4-density-toggle[aria-pressed="true"]:hover { border-color: var(--a4-accent-strong); }
-@media (forced-colors: active) {
-  .a4-density-toggle[aria-pressed="true"] { border-color: Highlight; }
-}
 @media (max-width: 1023.98px) {
   .header-theme { padding: 0 var(--a4-space-2); }
 }
@@ -330,7 +321,7 @@ html[data-a4-theme-choice="system"] .a4-theme-toggle .a4-icon-system { display: 
   padding: var(--a4-space-2) var(--a4-space-2) var(--a4-space-3);   /* the right column is 240px wide: more would push its buttons past the card */
 }
 
-/* One gutter between the cards: --a4-gutter (24px, compact 16px) between a side column's card and the content, under
+/* One gutter between the cards: --a4-gutter (24px) between a side column's card and the content, under
    the header and at the cards' bottom, the gap of a common 24px layout grid. The window's edges keep at least 24px
    (--a4-space-5): the side columns' tabs are 24px wide and stand there. Until 2026-10 a card's 16px margin, the
    body's 8px and the content's 24px padding added up to 48px between the columns. */
@@ -496,8 +487,8 @@ input.defaultbutton:active {
   color: var(--a4-on-accent);
 }
 /* The legacy controls of the module pages (input.button, input.defaultbutton, input.button-disabled, button.button)
-   take the size of the .a4-btn components and of the node's action row: --a4-control-h high (28px in compact
-   density), the type scale's small step, the space tokens. Selectors keep the base rules' weight, element plus class
+   take the size of the .a4-btn components and of the node's action row: --a4-control-h high (32px), the type
+   scale's small step, the space tokens. Selectors keep the base rules' weight, element plus class
    (:where(#page *) adds none and keeps the login page and the editor's dialogs, which have no #page, out of it), so
    they win over core.css, pagelayout.css and theme/rounded.css by loading later, and every rule with one more class
    (the node's action row, the edit bars, an extension's own button) still wins. A minimum height, never a fixed one:
@@ -539,7 +530,7 @@ input:where(#page *):where(:not([type]), [type=text], [type=password], [type=ema
   min-height: var(--a4-control-h);
   margin-block: var(--a4-space-1);
   padding: 0 var(--a4-space-2);
-  font-size: var(--a4-text-s);
+  font-size: var(--a4-text-m);   /* field text as .a4-input's */
   line-height: 1.2;
   vertical-align: middle;
 }
@@ -603,7 +594,7 @@ select:where(#page *):where(:not([class])):disabled { color: var(--a4-disabled);
 }
 
 /* List tables (table.list, the kernel's and most extensions'): a light header in place of the black bar.
-   Their cell spacing is core.css's .4em, as the density token --a4-list-pad (compact: .25em). */
+   Their cells take --a4-list-pad: the same 8/12px as .a4-table (core.css had .4em). */
 table.list th, table.list td { padding: var(--a4-list-pad); }
 table.list th, table.special th {
   background-color: var(--a4-soft);

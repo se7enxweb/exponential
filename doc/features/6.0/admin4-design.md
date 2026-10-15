@@ -58,12 +58,11 @@ extension). The editor siteaccess falls back to `admin4` first, then `admin3`, `
 - **Printing.** A printed page is the content alone on the full width (no header, menus, side columns, control bars,
   toasts or footer, no shadows), and always in the light colours: the head script switches to light before printing
   and back afterwards.
-- **Normal or compact density.** A second header button (pressed = compact) tightens the cells of `table.list` and
-  `.a4-table`, cards and the height of the controls in a row (32 to 28 px), not `table.special`; the eZPreference
-  `admin_density`, applied before the page is drawn. Every target stays at least 24 px, the content tree
-  keeps its row pitch.
-- **Remembered choices.** The color mode, the density, the side columns on a wide window and the closed groups of
-  the left menus are the signed-in user's eZPreferences (`admin_color_mode`, `admin_density`,
+- **One density.** Lists, tables, cards and controls have one spacing, tuned for 1440 to 1920 px: one control
+  height (32 px), list cells as `.a4-table` cells (8/12 px), a 24 px gutter between the frame's cards. The compact
+  view of October 2026 and its header switch are gone; a stored choice does nothing.
+- **Remembered choices.** The color mode, the side columns on a wide window and the closed groups of
+  the left menus are the signed-in user's eZPreferences (`admin_color_mode`,
   `admin_left_sidebar`, `admin_right_sidebar`, `admin_navgroups`), like the column width. One helper,
   `window.a4Pref` (the first script of `page_head_style.tpl`), reads them from `<html>`
   (`design:parts/a4_preference_attributes.tpl`, `data-a4-pref-*`) and saves them through

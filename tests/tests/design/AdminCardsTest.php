@@ -31,14 +31,14 @@ class AdminCardsTest extends PHPUnit\Framework\TestCase
 
     public function testTheFootAndTheFlushHeadReadTheCardsPadding()
     {
-        // --a4-card-pad-x/-y come from a density setting when one defines them; else the spacing scale the card uses
+        // --a4-card-pad-x/-y are tokens of the token block; the spacing scale is their fallback
         $css = self::css( 'admin4' );
         $x = 'var(--a4-card-pad-x, var(--a4-space-4))';
         $y = 'var(--a4-card-pad-y, var(--a4-space-3))';
         $this->assertMatchesRegularExpression( '/\.a4-card-foot \{[^}]*margin: var\(--a4-space-3\) calc\(-1 \* ' . preg_quote( $x, '/' ) . '\) calc\(-1 \* ' . preg_quote( $y, '/' ) . '\);[^}]*padding: var\(--a4-space-3\) ' . preg_quote( $x, '/' ) . ';/', $css );
         $this->assertStringContainsString( '.a4-card.is-flush > .a4-card-head { padding: ' . $y . ' ' . $x . ';', $css );
-        // the density setting (normal and compact) defines the card padding tokens; the card component only reads them
-        $this->assertSame( 2, substr_count( $css, '--a4-card-pad-x:' ), 'the density setting defines the card padding tokens, not the card component' );
+        // the token block defines the card padding tokens; the card component only reads them
+        $this->assertSame( 1, substr_count( $css, '--a4-card-pad-x:' ), 'the token block defines the card padding tokens, not the card component' );
     }
 
     public function testTheLinkCardRingsTheCardAndKeepsOtherControlsClickable()

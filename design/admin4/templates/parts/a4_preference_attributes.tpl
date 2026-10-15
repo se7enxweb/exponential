@@ -4,9 +4,8 @@
    (no flash) in every browser the user signs in with. An anonymous page gets none of these attributes and keeps
    the choices in the browser (localStorage) only.
      admin_color_mode     light | dark | system (empty: light)
-     admin_density        normal | compact (empty: normal)
      admin_left_sidebar   1 | 0, the left column on a wide window (empty: open)
      admin_right_sidebar  1 | 0, the right column on a wide window (empty: open)
      admin_navgroups      the closed groups of the left menus, comma separated ids (empty or "-": none)
    Used by the page layouts of admin4 and admin4l. No output for anonymous pages; no line breaks (it sits in a tag). *}
-{if fetch( 'user', 'current_user' ).is_logged_in} data-a4-pref-url="{'/user/preferences/set_and_exit'|ezurl( 'no' )|wash}"{foreach array( 'admin_color_mode', 'admin_density', 'admin_left_sidebar', 'admin_right_sidebar', 'admin_navgroups' ) as $a4_pref} data-a4-pref-{$a4_pref|explode( '_' )|implode( '-' )}="{ezpreference( $a4_pref )|wash}"{/foreach}{/if}
+{if fetch( 'user', 'current_user' ).is_logged_in} data-a4-pref-url="{'/user/preferences/set_and_exit'|ezurl( 'no' )|wash}"{foreach array( 'admin_color_mode', 'admin_left_sidebar', 'admin_right_sidebar', 'admin_navgroups' ) as $a4_pref} data-a4-pref-{$a4_pref|explode( '_' )|implode( '-' )}="{ezpreference( $a4_pref )|wash}"{/foreach}{/if}

@@ -1,6 +1,6 @@
 <?php
 /**
- * admin4's remembered choices (color mode, density, the side columns on a wide window, the closed groups of the left
+ * admin4's remembered choices (color mode, the side columns on a wide window, the closed groups of the left
  * menus) go through one helper, window.a4Pref, defined first in the head script. For a signed-in user each is an
  * eZPreference: parts/a4_preference_attributes.tpl writes them on <html> (both page layouts, outside any
  * cache-block) and the helper saves them through user/preferences/set_and_exit. An anonymous page keeps them in the
@@ -15,7 +15,7 @@
 
 class AdminPreferencesTest extends PHPUnit\Framework\TestCase
 {
-    const NAMES = array( 'admin_color_mode', 'admin_density', 'admin_left_sidebar', 'admin_right_sidebar', 'admin_navgroups' );
+    const NAMES = array( 'admin_color_mode', 'admin_left_sidebar', 'admin_right_sidebar', 'admin_navgroups' );
 
     private static function read( $path )
     {
@@ -59,7 +59,6 @@ class AdminPreferencesTest extends PHPUnit\Framework\TestCase
     {
         $head = self::read( 'design/admin4/templates/page_head_style.tpl' );
         $this->assertStringContainsString( "window.a4Pref.set('admin_color_mode', next, KEY)", $head );
-        $this->assertStringContainsString( "window.a4Pref.set('admin_density', next, KEY)", $head );
         $menubar = self::read( 'design/admin4/javascript/ezadmin_menubar.js' );
         $this->assertStringContainsString( 'const prefs = { left: "admin_left_sidebar", right: "admin_right_sidebar" };', $menubar );
         $this->assertStringContainsString( 'pref.set(prefs[side], open ? "1" : "0");', $menubar );
