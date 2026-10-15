@@ -4943,7 +4943,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%used of at most %max languages are in use.</source>
+        <source>%used of at most %max content languages are in use. Only the languages added here count, not the locales in the list below; removing a language no content uses frees a place.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5090,7 +5090,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>More can be added (at most %max)</source>
+        <source>More can be added (at most %max content languages)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5330,7 +5330,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>No language was added: this installation already has the most languages it can hold (%max).</source>
+        <source>No language was added: this installation already has the most content languages it can hold (%max). Remove a language that no object or class uses to free a place.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -56637,6 +56637,129 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Open the result</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/reverserelations</name>
+    <message>
+        <source>The removal is blocked: other objects use the items</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing was removed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This site refuses to remove content while other objects point at it. Change or remove the references listed here first, then remove the items.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Check before hiding</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Other objects point at what you are about to hide. After hiding, their links, embedded items and relation fields lead to content the site no longer shows.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Other objects use the items</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>After the removal, their links, embedded items and relation fields point at content that is gone.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The references could not be checked.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Further references are not listed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1 reference you cannot see</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count references you cannot see</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1 further location you cannot see</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count further locations you cannot see</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Used by</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Points at</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An object you may not read</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Embedded in rich text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Linked in rich text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Relation field</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Layouts block</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Object relation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This item</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The object has further locations. Hiding this one leaves them as they are:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>hidden</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>hidden by a parent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You cannot continue while other objects use the items (see the list above).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide the selected items</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The selected items and everything below them are hidden from the site.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

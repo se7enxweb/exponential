@@ -2381,6 +2381,20 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
             return false; // @as self::FAILED_FORBIDDEN;
         }
 
+        // content.ini [RemoveSettings] ReverseRelationCheck=block: no removal while other objects point at what goes
+        // (doc/features/6.0/reverse-relation-check.md); a process that started before the class existed skips it
+        if ( class_exists( 'Exponential\\Service\\ReverseRelationCheck' ) )
+        {
+            $relationMode = \Exponential\Service\ReverseRelationCheck::removeMode();
+            if ( $relationMode === \Exponential\Service\ReverseRelationCheck::BLOCK
+                 && \Exponential\Service\ReverseRelationCheck::refusesRemoval( $relationMode,
+                        \Exponential\Service\ReverseRelationCheck::forNodes( array( (int) $node->attribute( 'node_id' ) ) ) ) )
+            {
+                eZDebug::writeNotice( 'Removal refused: other objects point at ' . $node->attribute( 'node_id' ), __METHOD__ );
+                return false; // @as self::FAILED_FORBIDDEN;
+            }
+        }
+
         // added by @as: use the content.ini setting for handling delete: 'delete' or 'trash'
         // default is 'trash'
         $contentINI = eZINI::instance( 'content.ini' );

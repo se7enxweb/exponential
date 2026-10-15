@@ -697,7 +697,7 @@ html[data-a4-theme="dark"] {
 .a4-tag.is-ok, .a4-tag.is-warn, .a4-tag.is-bad, .a4-tag.is-info, .a4-tag.is-accent { border-color: transparent; }
 .a4-tag.is-mono, .a4-badge.is-mono { font-family: var(--a4-mono); font-weight: 400; }
 
-/* A content language as a short code (DE, EN-GB) where the admin showed a flag: design:parts/language_badge.tpl.
+/* A content language as a short code (DE, EN) where the admin showed a flag: design:parts/language_badge.tpl.
    The name is the title and, where it is not written next to it, the accessible name. .a4-langs holds several;
    a link (edit or view a translation) gets the hover and focus of a link, .is-current marks the one shown.
    A plain badge is outlined: a language that exists.
@@ -1783,6 +1783,7 @@ a.a4-icon-btn, a.a4-icon-btn:visited { color: var(--a4-muted); }
 .a4-bi-pencil-square { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/pencil-square.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/pencil-square.svg); }
 .a4-bi-people { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/people.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/people.svg); }
 .a4-bi-person { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/person.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/person.svg); }
+.a4-bi-person-badge { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/person-badge.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/person-badge.svg); }
 .a4-bi-person-check { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/person-check.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/person-check.svg); }
 .a4-bi-person-circle { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/person-circle.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/person-circle.svg); }
 .a4-bi-person-lock { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/person-lock.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/person-lock.svg); }

@@ -36,6 +36,18 @@
     "design/admin*/templates/popupmenu/popup_sub_advance_menu.tpl": [
       "tests/tests/design/AdminContextMenuTest.php"
     ],
+    "kernel/user/hygiene.php": [
+      "tests/tests/kernel/classes/user/expUserHygieneTest.php"
+    ],
+    "kernel/private/classes/views/user/hygiene.php": [
+      "tests/tests/kernel/classes/user/expUserHygieneTest.php"
+    ],
+    "design/admin4/templates/user/hygiene.tpl": [
+      "tests/tests/kernel/classes/user/expUserHygieneTest.php"
+    ],
+    "design/admin/templates/user/hygiene.tpl": [
+      "tests/tests/kernel/classes/user/expUserHygieneTest.php"
+    ],
     "lib/ezimage/classes/expsvgsanitizer.php": [
       "tests/tests/lib/ezimage/expSvgSanitizerTest.php",
       "tests/tests/kernel/datatypes/ezimage/expImageSvgTest.php"
@@ -160,8 +172,12 @@
       "tests/tests/design/AdminLanguageBadgeTest.php",
       "tests/tests/design/AdminLanguageStatesTest.php"
     ],
-    "lib/ezlocale/classes/ezlocale.php": [
+    "design/admin*/templates/parts/language_badge.tpl": [
       "tests/tests/design/AdminLanguageBadgeTest.php"
+    ],
+    "lib/ezlocale/classes/ezlocale.php": [
+      "tests/tests/design/AdminLanguageBadgeTest.php",
+      "tests/tests/lib/ezlocale/expLocaleFilesTest.php"
     ],
     "share/icons/bootstrap-icons/*": [
       "tests/tests/design/AdminIconsTest.php",
@@ -402,7 +418,8 @@
       "tests/tests/extension/ezjscore/ezjscPackerNoVersionQueryTest.php"
     ],
     "kernel/private/classes/views/content/hide.php": [
-      "tests/tests/kernel/classes/expContentHideReturnTest.php"
+      "tests/tests/kernel/classes/expContentHideReturnTest.php",
+      "tests/tests/kernel/classes/expReverseRelationCheckTest.php"
     ],
     "design/admin4/templates/content/edit.tpl": [
       "tests/tests/design/AdminContentEditFormsTest.php"
@@ -457,7 +474,8 @@
       "tests/tests/design/AdminSubitemsTranslationsTest.php"
     ],
     "kernel/private/classes/views/content/action.php": [
-      "tests/tests/design/AdminCreateLanguagesTitleTest.php"
+      "tests/tests/design/AdminCreateLanguagesTitleTest.php",
+      "tests/tests/kernel/classes/expReverseRelationCheckTest.php"
     ],
     "kernel/classes/subitems/expsubitemscolumn.php": [
       "tests/tests/design/AdminSubitemsTranslationsTest.php"
@@ -611,6 +629,26 @@
     "extension/ezjscore/classes/ezjscserverfunctionsnode.php": [
       "tests/tests/extension/ezjscore/ezjscServerFunctionsNodePriorityTest.php"
     ],
+    "kernel/private/classes/views/content/removeobject.php": [
+      "tests/tests/kernel/classes/expReverseRelationCheckTest.php"
+    ],
+    "kernel/private/classes/webdav/ezwebdavcontentbackend.php": [
+      "tests/tests/kernel/classes/expReverseRelationCheckTest.php"
+    ],
+    "design/*/templates/node/removeobject.tpl": [
+      "tests/tests/design/AdminReverseRelationCheckTest.php"
+    ],
+    "design/*/templates/content/job_confirm.tpl": [
+      "tests/tests/design/AdminReverseRelationCheckTest.php",
+      "tests/tests/kernel/classes/expContentHideReturnTest.php"
+    ],
+    "design/standard/templates/content/reverse_relation_check.tpl": [
+      "tests/tests/design/AdminReverseRelationCheckTest.php"
+    ],
+    "share/locale/*": [
+      "tests/tests/lib/ezlocale/expLocaleFilesTest.php",
+      "tests/tests/lib/ezlocale/eZLocaleFormattingTest.php"
+    ],
     "tests/tests/design/js/language_states.js": [
       "tests/tests/design/AdminLanguageStatesTest.php"
     ],
@@ -691,12 +729,6 @@
       "tests/tests/kernel/classes/runnable/MovedEntryPointsTest.php",
       "tests/tests/kernel/content/eZPublishWithoutNotificationLiveTest.php"
     ],
-    "design/admin/stylesheets/components.css": [
-      "tests/tests/design/AdminLanguageStatesTest.php"
-    ],
-    "design/admin/templates/children_detailed.tpl": [
-      "tests/tests/design/AdminLanguageStatesTest.php"
-    ],
     "design/admin/templates/content/edit.tpl": [
       "tests/tests/kernel/content/eZPublishWithoutNotificationTest.php"
     ],
@@ -736,15 +768,6 @@
       "tests/tests/kernel/content/eZPublishWithoutNotificationTest.php",
       "tests/tests/kernel/private/expAdminViewsDebugCleanTest.php"
     ],
-    "design/admin4/javascript/ezajaxsubitems_expdatatable.js": [
-      "tests/tests/design/AdminLanguageStatesTest.php"
-    ],
-    "design/admin4/stylesheets/components.css": [
-      "tests/tests/design/AdminLanguageStatesTest.php"
-    ],
-    "design/admin4/templates/children_detailed.tpl": [
-      "tests/tests/design/AdminLanguageStatesTest.php"
-    ],
     "design/admin4/templates/content/edit.tpl": [
       "tests/tests/kernel/content/eZPublishWithoutNotificationTest.php"
     ],
@@ -757,9 +780,6 @@
     ],
     "design/admin4/templates/node/view/a4_full_body.tpl": [
       "tests/tests/kernel/content/eZAdminFullViewCopyButtonTest.php",
-      "tests/tests/design/AdminLanguageStatesTest.php"
-    ],
-    "design/admin4/templates/parts/language_state_badge.tpl": [
       "tests/tests/design/AdminLanguageStatesTest.php"
     ],
     "design/admin4/templates/setup/sitedata.tpl": [
@@ -776,9 +796,6 @@
     ],
     "design/admin4/templates/shop/orderlist.tpl": [
       "tests/tests/kernel/classes/eZShopCustomerOrderViewEmailTest.php"
-    ],
-    "design/admin4/templates/translations.tpl": [
-      "tests/tests/design/AdminLanguageStatesTest.php"
     ],
     "design/admin4l/templates/explayouts/admin_zone.tpl": [
       "tests/tests/extension/explayouts_admin/expLayoutsAdminLayoutsTest.php"
@@ -835,9 +852,6 @@
     ],
     "extension/expservices/classes/users/expuserservices.php": [
       "tests/tests/kernel/classes/mailpreferences/MailPreferencesIntegrationTest.php"
-    ],
-    "extension/ezjscore/classes/ezjscajaxcontent.php": [
-      "tests/tests/design/AdminLanguageStatesTest.php"
     ],
     "extension/ezoe/classes/ezoeserverfunctions.php": [
       "tests/tests/extension/ezoe/expOECustomTagListTest.php"
@@ -1424,6 +1438,30 @@
       "tests/tests/kernel/classes/updatesql/CheckDbFilesVersionListTest.php",
       "tests/tests/kernel/classes/updatesql/PasswordHashWideningUpdateSqlTest.php",
       "tests/tests/kernel/classes/updatesql/SixZeroPathSchemaUpdateSqlTest.php"
+    ],
+    "design/admin/stylesheets/components.css": [
+      "tests/tests/design/AdminLanguageStatesTest.php"
+    ],
+    "design/admin/templates/children_detailed.tpl": [
+      "tests/tests/design/AdminLanguageStatesTest.php"
+    ],
+    "design/admin4/javascript/ezajaxsubitems_expdatatable.js": [
+      "tests/tests/design/AdminLanguageStatesTest.php"
+    ],
+    "design/admin4/stylesheets/components.css": [
+      "tests/tests/design/AdminLanguageStatesTest.php"
+    ],
+    "design/admin4/templates/children_detailed.tpl": [
+      "tests/tests/design/AdminLanguageStatesTest.php"
+    ],
+    "design/admin4/templates/parts/language_state_badge.tpl": [
+      "tests/tests/design/AdminLanguageStatesTest.php"
+    ],
+    "design/admin4/templates/translations.tpl": [
+      "tests/tests/design/AdminLanguageStatesTest.php"
+    ],
+    "extension/ezjscore/classes/ezjscajaxcontent.php": [
+      "tests/tests/design/AdminLanguageStatesTest.php"
     ]
   }
 }

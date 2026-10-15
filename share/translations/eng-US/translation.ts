@@ -5270,8 +5270,8 @@
         <translation>Adds a language content can be translated into. It does not translate anything and changes no siteaccess: afterwards, translate content into it in the editor and add it to the SiteLanguageList of the siteaccesses that should show it.</translation>
     </message>
     <message>
-        <source>%used of at most %max languages are in use.</source>
-        <translation>%used of at most %max languages are in use.</translation>
+        <source>%used of at most %max content languages are in use. Only the languages added here count, not the locales in the list below; removing a language no content uses frees a place.</source>
+        <translation>%used of at most %max content languages are in use. Only the languages added here count, not the locales in the list below; removing a language no content uses frees a place.</translation>
     </message>
     <message>
         <source>Language and country</source>
@@ -5417,8 +5417,8 @@
         <translation>Overview</translation>
     </message>
     <message>
-        <source>More can be added (at most %max)</source>
-        <translation>More can be added (at most %max)</translation>
+        <source>More can be added (at most %max content languages)</source>
+        <translation>More can be added (at most %max content languages)</translation>
     </message>
     <message>
         <source>Need a look</source>
@@ -5657,8 +5657,8 @@
         <translation>%name (%locale) was added. Content can now be translated into it; add %locale to the SiteLanguageList of each siteaccess that should show it.</translation>
     </message>
     <message>
-        <source>No language was added: this installation already has the most languages it can hold (%max).</source>
-        <translation>No language was added: this installation already has the most languages it can hold (%max).</translation>
+        <source>No language was added: this installation already has the most content languages it can hold (%max). Remove a language that no object or class uses to free a place.</source>
+        <translation>No language was added: this installation already has the most content languages it can hold (%max). Remove a language that no object or class uses to free a place.</translation>
     </message>
     <message>
         <source>There is no locale %locale in share/locale. Choose one from the list, or add its .ini file to share/locale first.</source>
@@ -14601,6 +14601,12 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>Objects nothing refers to, to tidy up or move to the trash.</source>
         <translation>Objects nothing refers to, to tidy up or move to the trash.</translation>
+        <source>Check user accounts</source>
+        <translation>Check user accounts</translation>
+    </message>
+    <message>
+        <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
+        <translation>Accounts nobody uses or that need a look; disable, unlock or export them.</translation>
     </message>
 </context>
 <context>
@@ -14732,6 +14738,10 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Access control</translation>
     </message>
     <message>
+        <source>Check user accounts</source>
+        <translation>Check user accounts</translation>
+    </message>
+    <message>
         <source>Users and user groups</source>
         <translation>Users and user groups</translation>
     </message>
@@ -14758,6 +14768,10 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>Accounts not yet activated; activate or remove them.</source>
         <translation>Accounts not yet activated; activate or remove them.</translation>
+    </message>
+    <message>
+        <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
+        <translation>Accounts nobody uses or that need a look; disable, unlock or export them.</translation>
     </message>
 </context>
 <context>
@@ -17175,6 +17189,10 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>use the website toolbar</source>
         <translation>use the website toolbar</translation>
+    </message>
+    <message>
+        <source>check user accounts, and disable, enable and unlock them</source>
+        <translation>check user accounts, and disable, enable and unlock them</translation>
     </message>
 </context>
 <context>
@@ -37291,6 +37309,369 @@ your account.</translation>
     <message>
         <source>Show and revoke the API keys of this user</source>
         <translation>Show and revoke the API keys of this user</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/hygiene</name>
+    <message>
+        <source>Shared login</source>
+        <translation>Shared login</translation>
+    </message>
+    <message>
+        <source>%count accounts use this login.</source>
+        <translation>%count accounts use this login.</translation>
+    </message>
+    <message>
+        <source>Accounts without a counted sign-in. The anonymous user is not one of them: it cannot sign in.</source>
+        <translation>Accounts without a counted sign-in. The anonymous user is not one of them: it cannot sign in.</translation>
+    </message>
+    <message>
+        <source>Accounts that signed in at least once and whose last visit is longer ago than the number of days.</source>
+        <translation>Accounts that signed in at least once and whose last visit is longer ago than the number of days.</translation>
+    </message>
+    <message>
+        <source>Accounts that cannot sign in because they are disabled, including those never activated.</source>
+        <translation>Accounts that cannot sign in because they are disabled, including those never activated.</translation>
+    </message>
+    <message>
+        <source>Accounts with more failed sign-ins than the limit (%max); none while the limit is 0.</source>
+        <translation>Accounts with more failed sign-ins than the limit (%max); none while the limit is 0.</translation>
+    </message>
+    <message>
+        <source>Accounts whose user object is missing, was never published, or has no location in the tree.</source>
+        <translation>Accounts whose user object is missing, was never published, or has no location in the tree.</translation>
+    </message>
+    <message>
+        <source>Logins that more than one account has, in any case. Resolve them, then the unique index on logins can be added (exp:user-login-check --fix-index).</source>
+        <translation>Logins that more than one account has, in any case. Resolve them, then the unique index on logins can be added (exp:user-login-check --fix-index).</translation>
+    </message>
+    <message>
+        <source>E-mail addresses that more than one account has, in any case.</source>
+        <translation>E-mail addresses that more than one account has, in any case.</translation>
+    </message>
+    <message>
+        <source>Every account whose user object is not in the trash.</source>
+        <translation>Every account whose user object is not in the trash.</translation>
+    </message>
+    <message>
+        <source>%count published user objects have no account. They cannot sign in, are not listed here and no action applies to them; open them in the content tree.</source>
+        <translation>%count published user objects have no account. They cannot sign in, are not listed here and no action applies to them; open them in the content tree.</translation>
+    </message>
+    <message>
+        <source>Active</source>
+        <translation>Active</translation>
+    </message>
+    <message>
+        <source>Disabled</source>
+        <translation>Disabled</translation>
+    </message>
+    <message>
+        <source>Not activated</source>
+        <translation>Not activated</translation>
+    </message>
+    <message>
+        <source>Locked</source>
+        <translation>Locked</translation>
+    </message>
+    <message>
+        <source>No user object</source>
+        <translation>No user object</translation>
+    </message>
+    <message>
+        <source>Never published</source>
+        <translation>Never published</translation>
+    </message>
+    <message>
+        <source>No location</source>
+        <translation>No location</translation>
+    </message>
+    <message>
+        <source>Never signed in</source>
+        <translation>Never signed in</translation>
+    </message>
+    <message>
+        <source>the anonymous user, the administrator account or you</source>
+        <translation>the anonymous user, the administrator account or you</translation>
+    </message>
+    <message>
+        <source>not found, removed meanwhile</source>
+        <translation>not found, removed meanwhile</translation>
+    </message>
+    <message>
+        <source>without a user object</source>
+        <translation>without a user object</translation>
+    </message>
+    <message>
+        <source>you may not edit them</source>
+        <translation>you may not edit them</translation>
+    </message>
+    <message>
+        <source>never activated: activate them under Unactivated users</source>
+        <translation>never activated: activate them under Unactivated users</translation>
+    </message>
+    <message>
+        <source>already in that state</source>
+        <translation>already in that state</translation>
+    </message>
+    <message>
+        <source>Disable</source>
+        <translation>Disable</translation>
+    </message>
+    <message>
+        <source>Enable</source>
+        <translation>Enable</translation>
+    </message>
+    <message>
+        <source>Unlock</source>
+        <translation>Unlock</translation>
+    </message>
+    <message>
+        <source>Check user accounts</source>
+        <translation>Check user accounts</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB.</source>
+        <translation>This page needs an SQL database; it is not available on MongoDB.</translation>
+    </message>
+    <message>
+        <source>Disable %count accounts?</source>
+        <translation>Disable %count accounts?</translation>
+    </message>
+    <message>
+        <source>Enable %count accounts?</source>
+        <translation>Enable %count accounts?</translation>
+    </message>
+    <message>
+        <source>Unlock %count accounts?</source>
+        <translation>Unlock %count accounts?</translation>
+    </message>
+    <message>
+        <source>A disabled account cannot sign in, and its sessions end now. Its content, groups and roles stay; enable it again at any time.</source>
+        <translation>A disabled account cannot sign in, and its sessions end now. Its content, groups and roles stay; enable it again at any time.</translation>
+    </message>
+    <message>
+        <source>The accounts can sign in again.</source>
+        <translation>The accounts can sign in again.</translation>
+    </message>
+    <message>
+        <source>The count of failed sign-ins goes back to zero, so the accounts can sign in again.</source>
+        <translation>The count of failed sign-ins goes back to zero, so the accounts can sign in again.</translation>
+    </message>
+    <message>
+        <source>%selected selected; each is checked again when you confirm.</source>
+        <translation>%selected selected; each is checked again when you confirm.</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>and %count more</translation>
+    </message>
+    <message>
+        <source>Left out:</source>
+        <translation>Left out:</translation>
+    </message>
+    <message>
+        <source>%count %reason</source>
+        <translation>%count %reason</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
+    </message>
+    <message>
+        <source>Find accounts nobody uses or that need a look: never signed in, not seen for a long time, disabled, locked after failed sign-ins, without a user object or location, or sharing an e-mail address. Disable, enable or unlock them in bulk, or export the list.</source>
+        <translation>Find accounts nobody uses or that need a look: never signed in, not seen for a long time, disabled, locked after failed sign-ins, without a user object or location, or sharing an e-mail address. Disable, enable or unlock them in bulk, or export the list.</translation>
+    </message>
+    <message>
+        <source>%count accounts disabled.</source>
+        <translation>%count accounts disabled.</translation>
+    </message>
+    <message>
+        <source>%count accounts enabled.</source>
+        <translation>%count accounts enabled.</translation>
+    </message>
+    <message>
+        <source>%count accounts unlocked.</source>
+        <translation>%count accounts unlocked.</translation>
+    </message>
+    <message>
+        <source>%count left out: %reason</source>
+        <translation>%count left out: %reason</translation>
+    </message>
+    <message>
+        <source>%count could not be changed</source>
+        <translation>%count could not be changed</translation>
+    </message>
+    <message>
+        <source>No account was selected. Tick the accounts first.</source>
+        <translation>No account was selected. Tick the accounts first.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filter</translation>
+    </message>
+    <message>
+        <source>All accounts</source>
+        <translation>All accounts</translation>
+    </message>
+    <message>
+        <source>Not seen for %days days</source>
+        <translation>Not seen for %days days</translation>
+    </message>
+    <message>
+        <source>Orphaned</source>
+        <translation>Orphaned</translation>
+    </message>
+    <message>
+        <source>Shared e-mail address</source>
+        <translation>Shared e-mail address</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Narrow the list</translation>
+    </message>
+    <message>
+        <source>Find an account</source>
+        <translation>Find an account</translation>
+    </message>
+    <message>
+        <source>Any part of the name, the login or the e-mail address.</source>
+        <translation>Any part of the name, the login or the e-mail address.</translation>
+    </message>
+    <message>
+        <source>Any part of the name or the login.</source>
+        <translation>Any part of the name or the login.</translation>
+    </message>
+    <message>
+        <source>User group</source>
+        <translation>User group</translation>
+    </message>
+    <message>
+        <source>Every group</source>
+        <translation>Every group</translation>
+    </message>
+    <message>
+        <source>Not seen for at least (days)</source>
+        <translation>Not seen for at least (days)</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Per page</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Show</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Clear</translation>
+    </message>
+    <message>
+        <source>Accounts</source>
+        <translation>Accounts</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from to %to of %count</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Select</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Select all on this page</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Name</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Login</translation>
+    </message>
+    <message>
+        <source>E-mail</source>
+        <translation>E-mail</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Last visit</source>
+        <translation>Last visit</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Sign-ins</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation>Groups</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Roles</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Reverse the order</translation>
+    </message>
+    <message>
+        <source>Never changed here: the anonymous user, the administrator account or you.</source>
+        <translation>Never changed here: the anonymous user, the administrator account or you.</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(no name)</translation>
+    </message>
+    <message>
+        <source>%count accounts use this address.</source>
+        <translation>%count accounts use this address.</translation>
+    </message>
+    <message>
+        <source>×%count</source>
+        <translation>×%count</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins; the limit is %max.</source>
+        <translation>%count failed sign-ins; the limit is %max.</translation>
+    </message>
+    <message>
+        <source>%count days ago</source>
+        <translation>%count days ago</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Never</translation>
+    </message>
+    <message>
+        <source>No account matches.</source>
+        <translation>No account matches.</translation>
+    </message>
+    <message>
+        <source>Disable the ticked accounts</source>
+        <translation>Disable the ticked accounts</translation>
+    </message>
+    <message>
+        <source>Enable the ticked accounts</source>
+        <translation>Enable the ticked accounts</translation>
+    </message>
+    <message>
+        <source>Unlock the ticked accounts</source>
+        <translation>Unlock the ticked accounts</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Export the list as CSV (%count)</translation>
+    </message>
+    <message>
+        <source>%count selected.</source>
+        <translation>%count selected.</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>User ID</translation>
     </message>
 </context>
 <context>
@@ -61604,6 +61985,129 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Node %id</source>
         <translation>Node %id</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/content/reverserelations</name>
+    <message>
+        <source>The removal is blocked: other objects use the items</source>
+        <translation>The removal is blocked: other objects use the items</translation>
+    </message>
+    <message>
+        <source>Nothing was removed.</source>
+        <translation>Nothing was removed.</translation>
+    </message>
+    <message>
+        <source>This site refuses to remove content while other objects point at it. Change or remove the references listed here first, then remove the items.</source>
+        <translation>This site refuses to remove content while other objects point at it. Change or remove the references listed here first, then remove the items.</translation>
+    </message>
+    <message>
+        <source>Check before hiding</source>
+        <translation>Check before hiding</translation>
+    </message>
+    <message>
+        <source>Other objects point at what you are about to hide. After hiding, their links, embedded items and relation fields lead to content the site no longer shows.</source>
+        <translation>Other objects point at what you are about to hide. After hiding, their links, embedded items and relation fields lead to content the site no longer shows.</translation>
+    </message>
+    <message>
+        <source>Other objects use the items</source>
+        <translation>Other objects use the items</translation>
+    </message>
+    <message>
+        <source>After the removal, their links, embedded items and relation fields point at content that is gone.</source>
+        <translation>After the removal, their links, embedded items and relation fields point at content that is gone.</translation>
+    </message>
+    <message>
+        <source>The references could not be checked.</source>
+        <translation>The references could not be checked.</translation>
+    </message>
+    <message>
+        <source>Further references are not listed.</source>
+        <translation>Further references are not listed.</translation>
+    </message>
+    <message>
+        <source>1 reference you cannot see</source>
+        <translation>1 reference you cannot see</translation>
+    </message>
+    <message>
+        <source>%count references you cannot see</source>
+        <translation>%count references you cannot see</translation>
+    </message>
+    <message>
+        <source>1 further location you cannot see</source>
+        <translation>1 further location you cannot see</translation>
+    </message>
+    <message>
+        <source>%count further locations you cannot see</source>
+        <translation>%count further locations you cannot see</translation>
+    </message>
+    <message>
+        <source>Used by</source>
+        <translation>Used by</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Type</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>How</translation>
+    </message>
+    <message>
+        <source>Points at</source>
+        <translation>Points at</translation>
+    </message>
+    <message>
+        <source>An object you may not read</source>
+        <translation>An object you may not read</translation>
+    </message>
+    <message>
+        <source>Embedded in rich text</source>
+        <translation>Embedded in rich text</translation>
+    </message>
+    <message>
+        <source>Linked in rich text</source>
+        <translation>Linked in rich text</translation>
+    </message>
+    <message>
+        <source>Relation field</source>
+        <translation>Relation field</translation>
+    </message>
+    <message>
+        <source>Layouts block</source>
+        <translation>Layouts block</translation>
+    </message>
+    <message>
+        <source>Object relation</source>
+        <translation>Object relation</translation>
+    </message>
+    <message>
+        <source>This item</source>
+        <translation>This item</translation>
+    </message>
+    <message>
+        <source>The object has further locations. Hiding this one leaves them as they are:</source>
+        <translation>The object has further locations. Hiding this one leaves them as they are:</translation>
+    </message>
+    <message>
+        <source>hidden</source>
+        <translation>hidden</translation>
+    </message>
+    <message>
+        <source>hidden by a parent</source>
+        <translation>hidden by a parent</translation>
+    </message>
+    <message>
+        <source>You cannot continue while other objects use the items (see the list above).</source>
+        <translation>You cannot continue while other objects use the items (see the list above).</translation>
+    </message>
+    <message>
+        <source>Hide the selected items</source>
+        <translation>Hide the selected items</translation>
+    </message>
+    <message>
+        <source>The selected items and everything below them are hidden from the site.</source>
+        <translation>The selected items and everything below them are hidden from the site.</translation>
     </message>
 </context>
 <context>

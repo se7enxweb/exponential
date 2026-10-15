@@ -21,7 +21,7 @@
 <div class="box-bc"><div class="box-ml"><div class="box-content">
 
 <p class="a4-intro">{'Adds a language content can be translated into. It does not translate anything and changes no siteaccess: afterwards, translate content into it in the editor and add it to the SiteLanguageList of the siteaccesses that should show it.'|i18n( 'design/admin/content/translationnew' )}
-{if is_set( $language_slots )} {'%used of at most %max languages are in use.'|i18n( 'design/admin/content/translationnew',, hash( '%used', $language_slots.used, '%max', $language_slots.max ) )}{/if}</p>
+{if is_set( $language_slots )} {'%used of at most %max content languages are in use. Only the languages added here count, not the locales in the list below; removing a language no content uses frees a place.'|i18n( 'design/admin/content/translationnew',, hash( '%used', $language_slots.used, '%max', $language_slots.max ) )}{/if}</p>
 
 {if and( is_set( $error ), $error|ne('') )}
 <div class="a4-notice is-bad" role="alert" id="language-new-error">{$error|wash}</div>

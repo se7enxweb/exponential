@@ -1,7 +1,7 @@
 <?php
 /**
- * admin4 shows a content language as a short code badge (DE, EN; EN-GB and EN-US when the installation has both)
- * and its name, not as a flag: a flag stands for a country. Every place goes through design:parts/language_badge.tpl
+ * admin4 shows a content language as a short code badge (DE, EN: the language part of the tag, also for eng-GB and
+ * eng-US side by side) and its name, not as a flag: a flag stands for a country. Every place goes through design:parts/language_badge.tpl
  * (templates) or the languageBadges map of children_detailed.tpl (the sub-items table's Translations column). The
  * code comes from eZLocale's content_language_code, the locale file's [HTTP] ContentLanguage, which site.ini
  * [RegionalSettings] HTTPLocale does not override. doc/features/6.0/admin4-design.md, doc/bc/6.0/admin4-styling.md.
@@ -58,6 +58,56 @@ class AdminLanguageBadgeTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( 'class="a4-lang', $source );
         $this->assertStringContainsString( 'aria-label=', $source, 'A badge without its name next to it needs an accessible name' );
         $this->assertStringEndsNotWith( "\n", $source, 'A trailing newline would end up in the scripts and attributes that use plain=true()' );
+    }
+
+    /**
+     * The badge is the language part of the language tag, never the region: eng-GB and eng-US are both EN, and a row
+     * with ger-DE and eng-GB reads DE, EN. The full name (title, accessible name) tells two of the same language
+     * apart, so the include needs no list of the installation's languages: no fetch per badge.
+     */
+    public function testTheBadgeIsTheLanguagePartOfTheTag()
+    {
+        $source = (string)file_get_contents( self::root() . '/' . self::INCLUDE_FILE );
+        $code = (string)preg_replace( '/\{\*.*?\*\}/s', '', $source );
+        $this->assertStringContainsString( "\$a4_lang_tag|explode( '-' )", $code );
+        $this->assertStringContainsString( '{set $a4_lang_badge = $a4_lang_primary[0]|upcase}', $code );
+        $this->assertStringNotContainsString( '$a4_lang_tag|upcase', $code, 'The badge shows the region (EN-GB)' );
+        $this->assertStringNotContainsString( 'fetch(', $code, 'The include fetches per badge' );
+        $this->assertStringNotContainsString( 'translation_list', $code );
+        $this->assertStringContainsString( 'title="{$a4_lang_label|wash}"', $code, 'The name tells eng-GB and eng-US apart' );
+        $this->assertStringContainsString( 'aria-label="{$a4_lang_label|wash}"', $code );
+    }
+
+    /**
+     * The code a badge shows for every locale the kernel ships (share/locale/*.ini [HTTP] ContentLanguage), the
+     * include's rule applied: the language part, upper case. A locale added later (esl-AR: es-AR) is checked as well:
+     * two or three letters, the same code for every region of a language (esl-ES, esl-MX: ES; eng-GB, eng-US: EN).
+     */
+    public function testEveryShippedLocaleShowsItsLanguagePart()
+    {
+        $codes = array();
+        foreach ( glob( self::root() . '/share/locale/*.ini' ) as $file )
+        {
+            // read as eZINI does, line by line: parse_ini_file() gives up on some locale files (characters it reserves)
+            $tag = preg_match( '/^ContentLanguage=([^\r\n]*)$/m', (string)file_get_contents( $file ), $m ) ? trim( $m[1] ) : '';
+            if ( $tag === '' )
+                continue;
+            $parts = explode( '-', $tag );
+            $code = strtoupper( $parts[0] );
+            $this->assertMatchesRegularExpression( '/^[A-Z]{2,3}$/', $code, basename( $file ) . ": $tag" );
+            $codes[basename( $file, '.ini' )] = $code;
+        }
+        $this->assertGreaterThan( 10, count( $codes ) );
+        foreach ( array( 'eng-GB' => 'EN', 'eng-US' => 'EN', 'esl-ES' => 'ES', 'esl-MX' => 'ES', 'esl-AR' => 'ES', 'ger-DE' => 'DE', 'por-BR' => 'PT' ) as $locale => $expected )
+        {
+            if ( isset( $codes[$locale] ) )
+                $this->assertSame( $expected, $codes[$locale], $locale );
+        }
+        foreach ( $codes as $locale => $code )
+        {
+            if ( strpos( $locale, 'esl-' ) === 0 )
+                $this->assertSame( 'ES', $code, $locale );
+        }
     }
 
     public function testEveryBadgeGoesThroughTheInclude()

@@ -122,7 +122,7 @@ class Translations extends \Exponential\Runnable\ModuleView
                     {
                         // addLanguage() refuses when every bit of the language mask is taken.
                         $feedback[] = array( 'ok' => false,
-                                             'message' => \ezpI18n::tr( self::I18N, 'No language was added: this installation already has the most languages it can hold (%max).', null,
+                                             'message' => \ezpI18n::tr( self::I18N, 'No language was added: this installation already has the most content languages it can hold (%max). Remove a language that no object or class uses to free a place.', null,
                                                                         array( '%max' => \eZContentLanguage::maxCount() ) ) );
                     }
                 }
@@ -449,7 +449,7 @@ class Translations extends \Exponential\Runnable\ModuleView
 
     /**
      * The locales the add form offers, sorted by name, each with the text its search looks through and whether it is
-     * already a content language.
+     * already a content language. 'country' is empty when the name already ends in it, as "German (Austria)" does.
      *
      * @param array $locales array( array( 'code', 'intl_name', 'native_name', 'country', 'comment' ) )
      * @param array $existing locale codes already added
@@ -467,11 +467,14 @@ class Translations extends \Exponential\Runnable\ModuleView
                 $label = $code;
             if ( trim( (string) ( $locale['comment'] ?? '' ) ) !== '' )
                 $label .= ' [' . trim( $locale['comment'] ) . ']';
+            // "German (Austria) · Deutsch (Österreich) · Austria": the country is left out of the option text when
+            // the name already gives it; the search still finds it.
+            $country = trim( (string) ( $locale['country'] ?? '' ) );
             $choices[] = array(
                 'code' => $code,
                 'label' => $label,
                 'native_name' => (string) ( $locale['native_name'] ?? '' ),
-                'country' => (string) ( $locale['country'] ?? '' ),
+                'country' => ( $country !== '' && mb_stripos( $label, "($country)" ) !== false ) ? '' : $country,
                 'exists' => in_array( $code, $existing, true ),
                 'search' => mb_strtolower( implode( ' ', array( $label, $code, $locale['native_name'] ?? '', $locale['country'] ?? '' ) ) ),
             );

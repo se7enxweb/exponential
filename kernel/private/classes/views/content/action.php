@@ -44,6 +44,57 @@ class Action extends \Exponential\Runnable\ModuleView
             return $default;
         }
     }
+
+    /**
+     * The confirmation page of "Hide selected" (HideButton) with content.ini [HideSettings]
+     * ReverseRelationCheck=warn: the selected nodes that other objects point at, or whose objects have further
+     * locations, each with its list. Its OK posts the same selection again, with ReverseRelationCheckConfirmed.
+     * Null when nothing needs confirming, or when a node is missing or may not be hidden (the action reports that).
+     * doc/features/6.0/reverse-relation-check.md
+     *
+     * @param array $nodeIDArray
+     * @param int $parentNodeID
+     * @param string $viewMode
+     * @param string|false $languageCode
+     * @return array|null the view's result
+     */
+    protected static function hideConfirmation( array $nodeIDArray, $parentNodeID, $viewMode, $languageCode )
+    {
+        $toHide = array();
+        foreach ( $nodeIDArray as $nodeID )
+        {
+            $node = \eZContentObjectTreeNode::fetch( (int) $nodeID );
+            if ( !$node || !$node->attribute( 'can_hide' ) )
+                return null;
+            if ( !$node->attribute( 'is_hidden' ) )
+                $toHide[] = (int) $nodeID;
+        }
+        if ( !$toHide )
+            return null;
+        $check = \Exponential\Service\ReverseRelationCheck::forNodes( $toHide, true );
+        if ( !\Exponential\Service\ReverseRelationCheck::hideNeedsConfirmation( \Exponential\Service\ReverseRelationCheck::WARN, $check, false ) )
+            return null;
+
+        $hidden = array( 'HideButton' => '1', 'SelectedIDArray[]' => array_values( array_map( 'intval', $nodeIDArray ) ),
+                         'ContentNodeID' => (int) $parentNodeID, 'ViewMode' => (string) $viewMode,
+                         \Exponential\Service\ReverseRelationCheck::CONFIRMED_POST => '1' );
+        if ( is_string( $languageCode ) && $languageCode !== '' )
+            $hidden['ContentObjectLanguageCode'] = $languageCode;
+        $tpl = \eZTemplate::factory();
+        $tpl->setVariable( 'title', \ezpI18n::tr( 'design/admin/content/reverserelations', 'Hide the selected items' ) );
+        $tpl->setVariable( 'text', \ezpI18n::tr( 'design/admin/content/reverserelations', 'The selected items and everything below them are hidden from the site.' ) );
+        $tpl->setVariable( 'action_url', '/content/action' );
+        $tpl->setVariable( 'back_url', '/content/view/' . rawurlencode( (string) $viewMode ) . '/' . (int) $parentNodeID );
+        $tpl->setVariable( 'hidden', $hidden );
+        $tpl->setVariable( 'operation', 'hide' );
+        $tpl->setVariable( 'job_mode', null );
+        $tpl->setVariable( 'job_summary', null );
+        $tpl->setVariable( 'reverse_relation_check',
+                           \Exponential\Service\ReverseRelationCheck::templateData( \Exponential\Service\ReverseRelationCheck::WARN, $check ) );
+        return array( 'content' => $tpl->fetch( 'design:content/job_confirm.tpl' ),
+                      'path' => array( array( 'text' => $tpl->variable( 'title' ), 'url' => false ) ) );
+    }
+
     /**
      * "Add a location for selected" (the sub items list, SelectedIDArray / DeleteIDArray): AddLocationsButton
      * opens the browse page for the new parent, with what the operation touches and the now-or-background choice;
@@ -1156,6 +1207,18 @@ class Action extends \Exponential\Runnable\ModuleView
                 }
             }
 
+            // Reverse relations (content.ini [RemoveSettings] ReverseRelationCheck): removing the last locations of an
+            // object that others point at (or a location a Layouts block names) goes through content/removeobject,
+            // which lists the references, and refuses the removal with block
+            if ( !$hasChildren && $removeList
+                 && \Exponential\Service\ReverseRelationCheck::removeMode() !== \Exponential\Service\ReverseRelationCheck::DISABLED )
+            {
+                $relationMode = \Exponential\Service\ReverseRelationCheck::removeMode();
+                $relationCheck = \Exponential\Service\ReverseRelationCheck::forNodes( array_keys( $removeList ) );
+                if ( \Exponential\Service\ReverseRelationCheck::templateData( $relationMode, $relationCheck ) !== null )
+                    $hasChildren = true;
+            }
+
             if ( $hasChildren )
             {
                 $http->setSessionVariable( 'CurrentViewMode', $viewMode );
@@ -1560,6 +1623,17 @@ class Action extends \Exponential\Runnable\ModuleView
                     $nodeIDArray = $http->postVariable( 'SelectedIDArray' );
                 else
                     $nodeIDArray = $http->postVariable( 'DeleteIDArray' );
+
+                if ( is_array( $nodeIDArray ) && count( $nodeIDArray ) > 0 && $hideSelected
+                     && \Exponential\Service\ReverseRelationCheck::hideMode() === \Exponential\Service\ReverseRelationCheck::WARN
+                     && !$http->hasPostVariable( \Exponential\Service\ReverseRelationCheck::CONFIRMED_POST ) )
+                {
+                    // Reverse relations (content.ini [HideSettings] ReverseRelationCheck): the nodes about to be hidden
+                    // that other objects point at, or whose objects have further locations, are listed first
+                    $confirmation = self::hideConfirmation( $nodeIDArray, $parentNodeID, $viewMode, $languageCode );
+                    if ( $confirmation !== null )
+                        return $this->viewResult( $confirmation, null );
+                }
 
                 if ( is_array( $nodeIDArray ) && count( $nodeIDArray ) > 0 )
                 {
