@@ -220,7 +220,8 @@ function eZOe8Init( id, attributeId, buttons, pathLocation, rows )
         toolbar: eZOe8Toolbar( buttons ),
         toolbar_mode: 'wrap',
         // the toolbar stays in view while the editor scrolls, below a fixed header and sticky button bar when the
-        // admin design names their bottom (--a4-sticky-edge on <html>)
+        // admin design names their bottom (--a4-sticky-edge on <html>); the offset is set again when the editor is
+        // ready and whenever the edge moves (the bar wraps, the header grows), see setup
         toolbar_sticky: true,
         toolbar_sticky_offset: eZOe8StickyOffset(),
         statusbar: pathLocation !== 'none',
@@ -228,6 +229,20 @@ function eZOe8Init( id, attributeId, buttons, pathLocation, rows )
         setup: function( editor ) {
             editor.options.register( 'ez_skin_class', { processor: 'string', default: '' } );
             editor.options.register( 'ez_disable_editor_text', { processor: 'string', default: 'Disable editor' } );
+
+            // This script runs while the page is parsed, before the admin design has measured its header and
+            // button bar: the sticky toolbar's offset is read when the editor is ready and again on every change
+            // of the edge (admin4.js sends a4:sticky-edge). TinyMCE reads the option on each scroll.
+            var stickyOffset = function() {
+                editor.options.set( 'toolbar_sticky_offset', eZOe8StickyOffset() );
+                if ( editor.initialized )
+                    editor.dispatch( 'ResizeWindow' );
+            };
+            editor.on( 'init', stickyOffset );
+            document.addEventListener( 'a4:sticky-edge', stickyOffset );
+            editor.on( 'remove', function() {
+                document.removeEventListener( 'a4:sticky-edge', stickyOffset );
+            });
 
             // skin class for skins/<skin>/skin.css on the editor container
             editor.on( 'PostRender', function() {

@@ -7,7 +7,7 @@
  *          line of its own under the buttons
  *  EB-02 - admin4.js keeps --a4-sticky-edge on <html>: the header's height, on edit pages the bottom of the bar
  *  EB-03 - the page scrolls fields to below that edge, and the rich text editor's toolbar (TinyMCE 3 and 8) stays
- *          below it while the editor is in view
+ *          below it while the editor is in view; TinyMCE 8 takes the edge when it is ready and whenever it moves
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminEditBarTest.php
  *
@@ -73,5 +73,12 @@ class AdminEditBarTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( 'toolbar_sticky: true,', $tpl );
         $this->assertStringContainsString( 'toolbar_sticky_offset: eZOe8StickyOffset(),', $tpl );
         $this->assertStringContainsString( "getPropertyValue( '--a4-sticky-edge' )", $tpl );
+        // the template runs while the page is parsed, before admin4.js measured the edge: the offset is set again
+        // when the editor is ready and on every change of the edge
+        $this->assertStringContainsString( "editor.options.set( 'toolbar_sticky_offset', eZOe8StickyOffset() );", $tpl );
+        $this->assertStringContainsString( "editor.on( 'init', stickyOffset );", $tpl );
+        $this->assertStringContainsString( "document.addEventListener( 'a4:sticky-edge', stickyOffset );", $tpl );
+        $this->assertStringContainsString( "document.removeEventListener( 'a4:sticky-edge', stickyOffset );", $tpl );
+        $this->assertStringContainsString( "document.dispatchEvent(new CustomEvent('a4:sticky-edge'", self::file( 'design/admin4/javascript/admin4.js' ) );
     }
 }

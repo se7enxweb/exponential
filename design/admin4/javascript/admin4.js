@@ -34,6 +34,8 @@
         edge = Math.ceil(edge) + 'px';
         if (document.documentElement.style.getPropertyValue('--a4-sticky-edge') !== edge) {
             document.documentElement.style.setProperty('--a4-sticky-edge', edge);
+            // for scripts that cannot read it from CSS, such as a rich text editor's sticky toolbar offset
+            document.dispatchEvent(new CustomEvent('a4:sticky-edge', { detail: { edge: parseFloat(edge) } }));
         }
     }
 
