@@ -88,7 +88,7 @@
 .ezinfo-page table.list td { vertical-align: top; overflow-wrap: anywhere; line-height: 1.4; }
 .ezinfo-page table.list td.ezinfo-cell-name { min-width: 11em; }
 .ezinfo-page table.list td.ezinfo-cell-version { white-space: nowrap; overflow-wrap: normal; }
-.ezinfo-page table.list td.ezinfo-cell-identifier { font-family: Consolas, "DejaVu Sans Mono", "Liberation Mono", monospace; font-size: 1em; overflow-wrap: anywhere; }
+.ezinfo-page table.list td.ezinfo-cell-identifier { font-family: var(--a4-mono); font-size: 1em; overflow-wrap: anywhere; }
 .ezinfo-page table.list td.ezinfo-cell-license { min-width: 6em; }
 .ezinfo-page table.list td.ezinfo-cell-website { overflow-wrap: normal; }
 .ezinfo-page tr:target td { background: var(--a4-warn-bg); }
@@ -177,7 +177,7 @@
         content: attr(data-label) ":";
         margin-right: 0.4em;
         color: var(--a4-muted);
-        font-family: sans-serif;
+        font-family: var(--a4-font);
         font-size: var(--a4-text-xs);
     }
     .ezinfo-page table.list td.ezinfo-cell-order { float: right; padding: 0; }

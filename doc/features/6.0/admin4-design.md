@@ -60,6 +60,13 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
 - **Printing.** A printed page is the content alone on the full width (no header, menus, side columns, control bars,
   toasts or footer, no shadows), and always in the light colours: the head script switches to light before printing
   and back afterwards.
+- **Typography.** One typeface for all text: `--a4-font` (`components.css`) is `"Helvetica Neue", "Noto Sans",
+  "Liberation Sans", Arial, sans-serif`, followed by the colour emoji fonts of macOS, Windows and Linux (`"Apple Color
+  Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"`). Only system fonts, nothing is downloaded. Code
+  and literal text use `--a4-mono`. The body, headings, form fields, buttons, the pagers and the text of the rich text
+  editor name `var(--a4-font)`; no admin4 stylesheet sets a font list of its own (icon fonts aside; `core.css` gives
+  Arial as the fallback of `var()` for layouts without `components.css`), so a theme changes the typeface by
+  redefining the token alone. Test: `AdminFontStackTest`.
 - **One density.** Lists, tables, cards and controls have one spacing, tuned for 1440 to 1920 px: one control
   height (32 px), list cells as `.a4-table` cells (8/12 px), a 24 px gutter between the frame's cards. The compact
   view of October 2026 and its header switch are gone; a stored choice does nothing.

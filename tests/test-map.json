@@ -540,7 +540,8 @@
       "tests/tests/design/AdminLegacyControlsTest.php",
       "tests/tests/design/AdminPreviewDevicesTest.php",
       "tests/tests/design/AdminIconsTest.php",
-      "tests/tests/design/AdminSubitemsPriorityDragTest.php"
+      "tests/tests/design/AdminSubitemsPriorityDragTest.php",
+      "tests/tests/design/AdminFontStackTest.php"
     ],
     "design/admin4/templates/parts/left_width_control.tpl": [
       "tests/tests/design/AdminLegacyControlsTest.php"
@@ -826,6 +827,9 @@
     ],
     "design/admin/templates/node/view/import_export_button.tpl": [
       "tests/tests/design/AdminContextMenuNestedSubmenuTest.php"
+    ],
+    "design/admin4*/stylesheets/*.css": [
+      "tests/tests/design/AdminFontStackTest.php"
     ]
   },
   "generated": {

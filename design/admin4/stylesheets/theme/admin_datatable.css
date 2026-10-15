@@ -414,7 +414,7 @@ a.admin-dt-page {
 
 .admin-pg-first,.admin-pg-previous,.admin-pg-next,.admin-pg-last,.admin-pg-current,.admin-pg-pages,.admin-pg-page {
     display: inline-block;
-    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-family: var(--a4-font);
     font-size: 1em;
 }
 

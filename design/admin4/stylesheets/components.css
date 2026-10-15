@@ -94,7 +94,7 @@
   --a4-space-5: 24px;
   --a4-space-6: 32px;
   --a4-space-7: 48px;
-  --a4-font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --a4-font: "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --a4-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   --a4-text-xs: 12px;
   --a4-text-s: 13px;
