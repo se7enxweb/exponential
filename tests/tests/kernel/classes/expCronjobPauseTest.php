@@ -1,8 +1,8 @@
 <?php
 /**
  * Pausing cronjob parts (expCronjobPause): a paused part, or "all", is left out by runcronjobs.php until it is
- * resumed; a script run alone is left out while a part that lists it is paused; the state files are those of
- * cjw_admincockpit; every pause and resume is recorded with its user; part names cannot leave the directory.
+ * resumed; a script run alone is left out while a part that lists it is paused; state files written by others are
+ * read; every pause and resume is recorded with its user; part names cannot leave the directory.
  *
  * No database: the paths point into a temporary directory and the user is a stand-in.
  *
@@ -122,7 +122,7 @@ class expCronjobPauseTest extends PHPUnit\Framework\TestCase
         $this->assertFalse( $state['by'] );
     }
 
-    public function testFilesOfCjwAdminCockpitAreHonoured()
+    public function testStateFilesWrittenByOthersAreHonoured()
     {
         file_put_contents( $this->dir . '/control/cronpart_deactivated_frequent.txt', "1\n" );
         file_put_contents( $this->dir . '/control/cronpart_deactivated_infrequent.txt', '0 - set to -> 1 <- if you want do disable running the cronpart' );
