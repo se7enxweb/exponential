@@ -10802,6 +10802,8 @@
     <message>
         <source>Translate into %language</source>
         <translation>Translate into %language</translation>
+    </message>
+    <message>
         <source>Deactivate and move</source>
         <translation>Deactivate and move</translation>
     </message>
@@ -15768,6 +15770,8 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>Open the package wizard…</source>
         <translation>Open the package wizard…</translation>
+    </message>
+    <message>
         <source>Deactivate and move (user accounts)</source>
         <translation>Deactivate and move (user accounts)</translation>
     </message>

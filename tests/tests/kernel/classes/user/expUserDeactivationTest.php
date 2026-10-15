@@ -20,7 +20,8 @@
  *          audit names in the catalogue
  *  UD-07 - The group has no roles: the role views leave it out of an assignment and say so on role/view (the same
  *          notice in admin and admin4), Deactivate and move refuses while roles are assigned to it; disabling ends
- *          the sessions; the list of Check user accounts survives a process that has not loaded the class
+ *          the sessions; the list of Check user accounts survives a process that has not loaded the class; the
+ *          translations stay valid for the translator's schema
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -249,7 +250,7 @@ class expUserDeactivationTest extends PHPUnit\Framework\TestCase
         $hygiene = self::read( 'design/admin4/templates/user/hygiene.tpl' );
         $this->assertSame( $hygiene, self::read( 'design/admin/templates/user/hygiene.tpl' ) );
         $this->assertMatchesRegularExpression( '/\{if \$hygiene_deactivate\}\s*<button class="a4-btn" type="submit" name="DeactivateMoveButton"/', $hygiene );
-        $this->assertStringContainsString( "\$deactivate = \\expUserDeactivation::isEnabled() && self::canDeactivate( \$currentUser );",
+        $this->assertStringContainsString( "\$deactivate = class_exists( '\\expUserDeactivation' ) && \\expUserDeactivation::isEnabled() && self::canDeactivate( \$currentUser );",
                                            self::read( 'kernel/private/classes/views/user/hygiene.php' ) );
         $this->assertStringContainsString( "if ( !self::isEnabled() )\n            return \$offers;", self::read( 'kernel/classes/user/expuserdeactivation.php' ) );
 
@@ -344,10 +345,14 @@ class expUserDeactivationTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( "class_exists( '\\expUserDeactivation' ) && \\expUserDeactivation::isEnabled()",
                                            self::read( 'kernel/private/classes/views/user/hygiene.php' ) );
 
-        // the texts
+        // the texts; each file still valid for the translator's schema (a message without its closing tag after a
+        // merge made eZTSTranslator drop the whole file)
         foreach ( array( 'eng-US', 'ger-DE' ) as $locale )
         {
             $ts = self::read( "share/translations/$locale/translation.ts" );
+            $dom = new DOMDocument();
+            $this->assertTrue( $dom->loadXML( $ts ), "$locale: XML" );
+            $this->assertTrue( @$dom->relaxNGValidate( dirname( __DIR__, 5 ) . '/schemas/translation/ts.rng' ), "$locale: valid for ts.rng" );
             foreach ( array( 'The role was not assigned to the group of deactivated users.',
                              'Roles are assigned to the group of deactivated users, so the accounts moved into it would get them. Remove those role assignments first. Nothing was changed.' ) as $source )
                 $this->assertStringContainsString( '<source>' . $source . '</source>', $ts, "$locale: $source" );

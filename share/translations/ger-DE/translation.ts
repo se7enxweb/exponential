@@ -12992,6 +12992,8 @@
     <message>
         <source>Translate into %language</source>
         <translation>In %language übersetzen</translation>
+    </message>
+    <message>
         <source>Deactivate and move</source>
         <translation>Deaktivieren und verschieben</translation>
     </message>
@@ -18221,6 +18223,8 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Open the package wizard…</source>
         <translation>Paket-Assistenten öffnen…</translation>
+    </message>
+    <message>
         <source>Deactivate and move (user accounts)</source>
         <translation>Deaktivieren und verschieben (Benutzerkonten)</translation>
     </message>
