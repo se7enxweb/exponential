@@ -240,7 +240,10 @@ class expOEEngineConfigTest extends expOETestCase
         $this->assertSame( 'tinymce8', $handler->attribute( 'engine' )['identifier'] );
         $this->preference( 'tinymce3' );
         $this->assertSame( 'tinymce3', $handler->attribute( 'engine' )['identifier'] );
-        $this->assertSame( array( 'tinymce8' ), array_column( $handler->attribute( 'engine_switch_choices' ), 'identifier' ) );
+        // every other engine: ezoe's tinymce8 and the engines of other active extensions (exp_oe_tiptap's tiptap)
+        $this->assertSame( array_values( array_diff( array_keys( expOEEditor::engines() ), array( 'tinymce3' ) ) ),
+            array_column( $handler->attribute( 'engine_switch_choices' ), 'identifier' ) );
+        $this->assertContains( 'tinymce8', array_column( $handler->attribute( 'engine_switch_choices' ), 'identifier' ) );
         $options = $handler->attribute( 'engine_switch_options' );
         $this->assertSame( array( 'tinymce3' ), array_column( array_filter( $options, function ( $o ) { return $o['current']; } ), 'identifier' ) );
     }
