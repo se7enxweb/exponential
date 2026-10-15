@@ -4690,7 +4690,7 @@
         <translation type="obsolete">Jeżeli instalacja nie jest uruchomiona jako Exponential Enterprise możesz nie otrzymywać na bieżąco informacji o nowych dodatkach Service Pack. Skontaktuj się z 7x.</translation>
     </message>
     <message>
-        <source>You are running &lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt;, it might not be up to date with the latest hot fixes and service packs. Contact &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; for more infomation.</source>
+        <source>You are running &lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt;, it might not be up to date with the latest hot fixes and service packs. Contact &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; for more information.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

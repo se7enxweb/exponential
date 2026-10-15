@@ -4722,7 +4722,7 @@
         <translation type="obsolete">Als uw installatie niet op Exponential Enterprise draait, dan is deze mogelijk niet up to date. Neem contact op met 7x.</translation>
     </message>
     <message>
-        <source>You are running &lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt;, it might not be up to date with the latest hot fixes and service packs. Contact &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; for more infomation.</source>
+        <source>You are running &lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt;, it might not be up to date with the latest hot fixes and service packs. Contact &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; for more information.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

@@ -7598,8 +7598,8 @@
         <translation>Your installation: &lt;span id=&quot;ez-version&quot;&gt;%1&lt;/span&gt;</translation>
     </message>
     <message>
-        <source>You are running &lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt;, it might not be up to date with the latest hot fixes and service packs. Contact &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; for more infomation.</source>
-        <translation>You are running &lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt;, it might not be up to date with the latest hot fixes and service packs. Contact &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; for more infomation.</translation>
+        <source>You are running &lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt;, it might not be up to date with the latest hot fixes and service packs. Contact &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; for more information.</source>
+        <translation>You are running &lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt;, it might not be up to date with the latest hot fixes and service packs. Contact &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; for more information.</translation>
     </message>
     <message>
         <source>You are using %edition, the &lt;span id=&quot;Exponential-community-project-is-innovative-and-cutting-edge&quot;&gt;innovative and cutting-edge&lt;/span&gt; version of Exponential, built by &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; and the &lt;a href=&quot;%ez_community_link&quot;&gt;Exponential Community&lt;/a&gt;.&lt;/p&gt;
@@ -27200,6 +27200,26 @@ Note: The packages will not be uninstalled.</translation>
         <source>exp:ini has %actions actions and %providers scope providers; an extension adds its own in ini.ini.</source>
         <translation>exp:ini has %actions actions and %providers scope providers; an extension adds its own in ini.ini.</translation>
     </message>
+    <message>
+        <source>A callable taking ( $run, $part, $siteaccess, $scripts, $single ) and returning true to run the part</source>
+        <translation>A callable taking ( $run, $part, $siteaccess, $scripts, $single ) and returning true to run the part</translation>
+    </message>
+    <message>
+        <source>Content policy limitation</source>
+        <translation>Content policy limitation</translation>
+    </message>
+    <message>
+        <source>A limitation of your own for a content function such as content/read, next to Class, Section and Subtree: an extension adds it to the function, and its handler decides for objects, nodes and versions and gives the SQL condition of list and tree fetches. Without a handler the limitation denies everywhere.</source>
+        <translation>A limitation of your own for a content function such as content/read, next to Class, Section and Subtree: an extension adds it to the function, and its handler decides for objects, nodes and versions and gives the SQL condition of list and tree fetches. Without a handler the limitation denies everywhere.</translation>
+    </message>
+    <message>
+        <source>Cronjob part left out</source>
+        <translation>Cronjob part left out</translation>
+    </message>
+    <message>
+        <source>Something that decides whether a cronjob part runs at all, for example a stop switch while a release is deployed. runcronjobs.php asks the filter cronjob/part/run with the part, the siteaccess and the scripts before the first script starts; only true runs the part.</source>
+        <translation>Something that decides whether a cronjob part runs at all, for example a stop switch while a release is deployed. runcronjobs.php asks the filter cronjob/part/run with the part, the siteaccess and the scripts before the first script starts; only true runs the part.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/rad/content</name>
@@ -39356,6 +39376,42 @@ your account.</translation>
         <source>Try %name later</source>
         <translation>Try %name later</translation>
     </message>
+    <message>
+        <source>%file cannot be written.</source>
+        <translation>%file cannot be written.</translation>
+    </message>
+    <message>
+        <source>No condition was changed.</source>
+        <translation>No condition was changed.</translation>
+    </message>
+    <message>
+        <source>No copy of %file could be kept; nothing was written.</source>
+        <translation>No copy of %file could be kept; nothing was written.</translation>
+    </message>
+    <message>
+        <source>Order saved; a copy of the previous settings is in %file.</source>
+        <translation>Order saved; a copy of the previous settings is in %file.</translation>
+    </message>
+    <message>
+        <source>The conditions of %count overrides were saved.</source>
+        <translation>The conditions of %count overrides were saved.</translation>
+    </message>
+    <message>
+        <source>The order was written to %file, but other settings still decide it. Check the Priority of these overrides in the extensions&apos; override.ini files.</source>
+        <translation>The order was written to %file, but other settings still decide it. Check the Priority of these overrides in the extensions&apos; override.ini files.</translation>
+    </message>
+    <message>
+        <source>The overrides of this template changed since this page was loaded. Reload the page and try again.</source>
+        <translation>The overrides of this template changed since this page was loaded. Reload the page and try again.</translation>
+    </message>
+    <message>
+        <source>The siteaccess %siteaccess has no settings directory.</source>
+        <translation>The siteaccess %siteaccess has no settings directory.</translation>
+    </message>
+    <message>
+        <source>Writing %file did not give the expected settings, so the previous file was put back.</source>
+        <translation>Writing %file did not give the expected settings, so the previous file was put back.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/visual/toolbar</name>
@@ -50658,6 +50714,46 @@ See the requirements page for more information.</translation>
         <source>Who sends the optional e-mail of the site (newsletters, notifications) and their postal address, as the law requires in every such e-mail. Both can be changed later on the e-mail preferences status page; an empty address is allowed and shows a warning there.</source>
         <translation>Who sends the optional e-mail of the site (newsletters, notifications) and their postal address, as the law requires in every such e-mail. Both can be changed later on the e-mail preferences status page; an empty address is allowed and shows a warning there.</translation>
     </message>
+    <message>
+        <source>Editor site</source>
+        <translation>Editor site</translation>
+    </message>
+    <message>
+        <source>Editor hostname</source>
+        <translation>Editor hostname</translation>
+    </message>
+    <message>
+        <source>Editor path</source>
+        <translation>Editor path</translation>
+    </message>
+    <message>
+        <source>Editor port</source>
+        <translation>Editor port</translation>
+    </message>
+    <message>
+        <source>%count database files are there already; pick one from the field&apos;s list or type a new name.</source>
+        <translation>%count database files are there already; pick one from the field&apos;s list or type a new name.</translation>
+    </message>
+    <message>
+        <source>Download of package &apos;%pkg&apos; failed after %count attempts: %reason. You may upload the package manually.</source>
+        <translation>Download of package &apos;%pkg&apos; failed after %count attempts: %reason. You may upload the package manually.</translation>
+    </message>
+    <message>
+        <source>Download of package &apos;%pkg&apos; failed: %reason. You may upload the package manually.</source>
+        <translation>Download of package &apos;%pkg&apos; failed: %reason. You may upload the package manually.</translation>
+    </message>
+    <message>
+        <source>Every installation gets three siteaccesses: the site itself, the admin siteaccess (the full administration interface) and the editor siteaccess (the administration interface for content editing only, without setup, design and developer tools). The next step lets you name the path, port or host name of each.</source>
+        <translation>Every installation gets three siteaccesses: the site itself, the admin siteaccess (the full administration interface) and the editor siteaccess (the administration interface for content editing only, without setup, design and developer tools). The next step lets you name the path, port or host name of each.</translation>
+    </message>
+    <message>
+        <source>The editor siteaccess: the administration interface for content editing only, without setup, design and developer tools. Editors sign in here to write, edit and publish content and to manage media, users, orders, tags and newsletters. Layouts, Setup, Design, the Git, Export and CIE tools and the developer toolbar stay in the admin siteaccess, so editors cannot change how the site is built.</source>
+        <translation>The editor siteaccess: the administration interface for content editing only, without setup, design and developer tools. Editors sign in here to write, edit and publish content and to manage media, users, orders, tags and newsletters. Layouts, Setup, Design, the Git, Export and CIE tools and the developer toolbar stay in the admin siteaccess, so editors cannot change how the site is built.</translation>
+    </message>
+    <message>
+        <source>With hostname access the convention is %site for the site, %admin for the administration and %editor for content editing.</source>
+        <translation>With hostname access the convention is %site for the site, %admin for the administration and %editor for content editing.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -54337,6 +54433,18 @@ your account.</translation>
         <source>Expiry cache</source>
         <translation>Expiry cache</translation>
     </message>
+    <message>
+        <source>REST Application cache</source>
+        <translation>REST Application cache</translation>
+    </message>
+    <message>
+        <source>REST Routes memory cache</source>
+        <translation>REST Routes memory cache</translation>
+    </message>
+    <message>
+        <source>eZJSCore Public Packer cache</source>
+        <translation>eZJSCore Public Packer cache</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -54552,6 +54660,22 @@ your account.</translation>
     <message>
         <source>Canceled whole workflow</source>
         <translation>Canceled whole workflow</translation>
+    </message>
+    <message>
+        <source>Event redirects the user</source>
+        <translation>Event redirects the user</translation>
+    </message>
+    <message>
+        <source>Event redirects the user, event will be rerun</source>
+        <translation>Event redirects the user, event will be rerun</translation>
+    </message>
+    <message>
+        <source>Event shows a page to the user</source>
+        <translation>Event shows a page to the user</translation>
+    </message>
+    <message>
+        <source>Event shows a page to the user, event will be rerun</source>
+        <translation>Event shows a page to the user, event will be rerun</translation>
     </message>
 </context>
 <context>
@@ -55228,6 +55352,10 @@ your account.</translation>
     <message>
         <source>An alternative text is required for this image.</source>
         <translation>An alternative text is required for this image.</translation>
+    </message>
+    <message>
+        <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
+        <translation>The SVG image could not be read, or nothing in it can be shown safely.</translation>
     </message>
 </context>
 <context>
@@ -56102,6 +56230,16 @@ You will need to change the class of the node by using the swap functionality.</
         <comment>Navigation part</comment>
         <translation>CIE</translation>
     </message>
+    <message>
+        <source>AdminAid</source>
+        <comment>Navigation part</comment>
+        <translation>AdminAid</translation>
+    </message>
+    <message>
+        <source>eZFind</source>
+        <comment>Navigation part</comment>
+        <translation>eZFind</translation>
+    </message>
 </context>
 <context>
     <name>kernel/notification</name>
@@ -56770,6 +56908,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Installed</source>
         <translation>Installed</translation>
+    </message>
+    <message>
+        <source>Package</source>
+        <translation>Package</translation>
     </message>
 </context>
 <context>
@@ -58766,6 +58908,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The editors the Online Editor offers (ezoe.ini [EditorSettings] Engines[&lt;id&gt;]=&lt;class&gt;), each a class implementing expOEEditorEngine.</source>
         <translation>The editors the Online Editor offers (ezoe.ini [EditorSettings] Engines[&lt;id&gt;]=&lt;class&gt;), each a class implementing expOEEditorEngine.</translation>
+    </message>
+    <message>
+        <source>the class does not exist</source>
+        <translation>the class does not exist</translation>
     </message>
 </context>
 <context>
@@ -62351,6 +62497,30 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Node %id</source>
         <translation>Node %id</translation>
     </message>
+    <message>
+        <source>%h h %m min</source>
+        <translation>%h h %m min</translation>
+    </message>
+    <message>
+        <source>%m min %s s</source>
+        <translation>%m min %s s</translation>
+    </message>
+    <message>
+        <source>(this node only)</source>
+        <translation>(this node only)</translation>
+    </message>
+    <message>
+        <source>Assign the section %section to %name</source>
+        <translation>Assign the section %section to %name</translation>
+    </message>
+    <message>
+        <source>Every object in the subtree gets the section; objects you may not assign it to are skipped.</source>
+        <translation>Every object in the subtree gets the section; objects you may not assign it to are skipped.</translation>
+    </message>
+    <message>
+        <source>the system (cronjob or command line)</source>
+        <translation>the system (cronjob or command line)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/reverserelations</name>
@@ -63079,6 +63249,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Main location change</source>
         <translation>Main location change</translation>
+    </message>
+    <message>
+        <source>Finder search</source>
+        <translation>Finder search</translation>
+    </message>
+    <message>
+        <source>Finder action</source>
+        <translation>Finder action</translation>
+    </message>
+    <message>
+        <source>Session revoke</source>
+        <translation>Session revoke</translation>
+    </message>
+    <message>
+        <source>User deactivate move</source>
+        <translation>User deactivate move</translation>
+    </message>
+    <message>
+        <source>User reactivate move</source>
+        <translation>User reactivate move</translation>
+    </message>
+    <message>
+        <source>User deactivated group create</source>
+        <translation>User deactivated group create</translation>
+    </message>
+    <message>
+        <source>Apikey create</source>
+        <translation>Apikey create</translation>
+    </message>
+    <message>
+        <source>Apikey revoke</source>
+        <translation>Apikey revoke</translation>
+    </message>
+    <message>
+        <source>Apikey use</source>
+        <translation>Apikey use</translation>
+    </message>
+    <message>
+        <source>Apikey use failed</source>
+        <translation>Apikey use failed</translation>
+    </message>
+    <message>
+        <source>Cronjob pause</source>
+        <translation>Cronjob pause</translation>
+    </message>
+    <message>
+        <source>Cronjob resume</source>
+        <translation>Cronjob resume</translation>
+    </message>
+    <message>
+        <source>Package remove</source>
+        <translation>Package remove</translation>
     </message>
 </context>
 <context>
@@ -67065,6 +67287,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>with the path prefix %prefix of siteaccess %siteaccess</source>
         <translation>with the path prefix %prefix of siteaccess %siteaccess</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Confirm</translation>
     </message>
 </context>
 <context>

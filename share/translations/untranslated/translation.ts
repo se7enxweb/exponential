@@ -7043,7 +7043,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>You are running &lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt;, it might not be up to date with the latest hot fixes and service packs. Contact &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; for more infomation.</source>
+        <source>You are running &lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt;, it might not be up to date with the latest hot fixes and service packs. Contact &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; for more information.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -24092,6 +24092,26 @@ Note: The packages will not be uninstalled.</source>
         <source>A listener of a filter event in site.ini [Event] Listeners[]. The kernel passes a value and goes on with what the listener returns, so a listener that forgets to return it destroys the value.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>A callable taking ( $run, $part, $siteaccess, $scripts, $single ) and returning true to run the part</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content policy limitation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A limitation of your own for a content function such as content/read, next to Class, Section and Subtree: an extension adds it to the function, and its handler decides for objects, nodes and versions and gives the SQL condition of list and tree fetches. Without a handler the limitation denies everywhere.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cronjob part left out</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Something that decides whether a cronjob part runs at all, for example a stop switch while a release is deployed. runcronjobs.php asks the filter cronjob/part/run with the part, the siteaccess and the scripts before the first script starts; only true runs the part.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/rad/content</name>
@@ -35187,6 +35207,42 @@ your account.</source>
     </message>
     <message>
         <source>Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%file cannot be written.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No condition was changed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No copy of %file could be kept; nothing was written.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Order saved; a copy of the previous settings is in %file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The conditions of %count overrides were saved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The order was written to %file, but other settings still decide it. Check the Priority of these overrides in the extensions&apos; override.ini files.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The overrides of this template changed since this page was loaded. Reload the page and try again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The siteaccess %siteaccess has no settings directory.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Writing %file did not give the expected settings, so the previous file was put back.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -46319,6 +46375,46 @@ See the requirements page for more information.</source>
         <source>None.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Editor site</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Editor hostname</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Editor path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Editor port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count database files are there already; pick one from the field&apos;s list or type a new name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download of package &apos;%pkg&apos; failed after %count attempts: %reason. You may upload the package manually.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download of package &apos;%pkg&apos; failed: %reason. You may upload the package manually.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every installation gets three siteaccesses: the site itself, the admin siteaccess (the full administration interface) and the editor siteaccess (the administration interface for content editing only, without setup, design and developer tools). The next step lets you name the path, port or host name of each.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The editor siteaccess: the administration interface for content editing only, without setup, design and developer tools. Editors sign in here to write, edit and publish content and to manage media, users, orders, tags and newsletters. Layouts, Setup, Design, the Git, Export and CIE tools and the developer toolbar stay in the admin siteaccess, so editors cannot change how the site is built.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>With hostname access the convention is %site for the site, %admin for the administration and %editor for content editing.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -49977,6 +50073,18 @@ your account.</source>
         <source>Query cache (SQL results)</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>REST Application cache</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>REST Routes memory cache</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>eZJSCore Public Packer cache</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>kernel/class</name>
@@ -50191,6 +50299,22 @@ your account.</source>
     </message>
     <message>
         <source>Canceled whole workflow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Event redirects the user</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Event redirects the user, event will be rerun</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Event shows a page to the user</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Event shows a page to the user, event will be rerun</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -50759,6 +50883,10 @@ your account.</source>
     </message>
     <message>
         <source>An alternative text is required for this image.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -51473,6 +51601,16 @@ You will need to change the class of the node by using the swap functionality.</
         <comment>Navigation part</comment>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>AdminAid</source>
+        <comment>Navigation part</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>eZFind</source>
+        <comment>Navigation part</comment>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>kernel/notification</name>
@@ -52068,6 +52206,10 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Installed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Package</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -53985,6 +54127,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The editors the Online Editor offers (ezoe.ini [EditorSettings] Engines[&lt;id&gt;]=&lt;class&gt;), each a class implementing expOEEditorEngine.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>the class does not exist</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/shop/dashboard</name>
@@ -55411,6 +55557,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Main location change</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Finder search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Finder action</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Session revoke</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User deactivate move</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User reactivate move</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User deactivated group create</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Apikey create</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Apikey revoke</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Apikey use</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Apikey use failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cronjob pause</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cronjob resume</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Package remove</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/state/assign</name>
@@ -56550,6 +56748,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Setup</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Confirm</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/audit</name>
@@ -56681,6 +56883,30 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Open the result</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%h h %m min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%m min %s s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(this node only)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Assign the section %section to %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every object in the subtree gets the section; objects you may not assign it to are skipped.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the system (cronjob or command line)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

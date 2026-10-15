@@ -45,7 +45,7 @@
 </a>
 <ul class="a4-tabs a4-setup-rad-survey-groups">
 {foreach $rad_survey_groups as $rad_count}
-    <li{if $rad_count.in_total|not} class="is-inside"{/if}><a href={concat( 'setup/radsurvey/(show)/', $rad_count.section )|ezurl}{if and( is_set( $rad_count.description ), $rad_count.description )} title="{$rad_count.description|wash}"{/if}><b>{$rad_count.count}</b> {$rad_count.label|i18n( 'design/admin/setup/rad' )|wash}{if and( $rad_count.in_total|not, $rad_count.counted|gt( 0 ) )} <span class="a4-meta">({'%counted of them counted as settings'|i18n( 'design/admin/setup/rad',, hash( '%counted', $rad_count.counted ) )})</span>{/if}</a></li>
+    <li{if $rad_count.in_total|not} class="is-inside"{/if}><a href={concat( 'setup/radsurvey/(show)/', $rad_count.section )|ezurl}{if and( is_set( $rad_count.description ), $rad_count.description )} title="{$rad_count.description|wash}"{/if}><b>{$rad_count.count}</b> {$rad_count.label|wash}{if and( $rad_count.in_total|not, $rad_count.counted|gt( 0 ) )} <span class="a4-meta">({'%counted of them counted as settings'|i18n( 'design/admin/setup/rad',, hash( '%counted', $rad_count.counted ) )})</span>{/if}</a></li>
 {/foreach}
 </ul>
 </div>

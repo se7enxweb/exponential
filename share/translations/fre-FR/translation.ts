@@ -4729,11 +4729,11 @@
         <translation type="obsolete">Si vous n&apos;avez pas souscrit à Exponential Enterprise, votre installation n&apos;est peut-être pas à jour. Contactez 7x.</translation>
     </message>
     <message>
-        <source>You are running %edition, it might not be up to date with the latest hot fixes and service packs. Contact &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; for more infomation.</source>
+        <source>You are running %edition, it might not be up to date with the latest hot fixes and service packs. Contact &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; for more information.</source>
         <translation type="obsolete">Vous utilisez %edition, cette version n&apos;est peut être pas à jour avec les dernières corrections et service packs. Contactez &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; pour plus d&apos;informations.</translation>
     </message>
     <message>
-        <source>You are running &lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt;, it might not be up to date with the latest hot fixes and service packs. Contact &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; for more infomation.</source>
+        <source>You are running &lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt;, it might not be up to date with the latest hot fixes and service packs. Contact &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; for more information.</source>
         <translation>Vous utilisez &lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt;, qui peut ne pas être à jour avec les dernières corrections et service packs. Contactez &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; pour plus d&apos;information.</translation>
     </message>
     <message>

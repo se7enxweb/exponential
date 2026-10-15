@@ -535,14 +535,17 @@ class expRADSurvey
         $survey = $survey === null ? self::survey() : $survey;
         $counts = $survey['counts'];
         $groups = array();
+        // Every label is translated here, so the page shows it as it is: a group's in design/admin/setup/rad, a
+        // registry's title as the survey page does (a declared registry's in its own context, the kernel's in
+        // kernel/setup/rad). Translating a label a second time in the page found nothing and wrote a missing
+        // translation to the debug output for each of them.
+        $tr = class_exists( 'ezpI18n' );
         foreach ( self::totalGroups() as $key => $group )
-            $groups[] = array( 'key' => $key, 'label' => $group['label'], 'count' => $counts[$key],
-                               'section' => $group['section'], 'in_total' => true, 'counted' => 0 );
-        // A declared registry's title is translated here, in its own context; the page's i18n then finds nothing
-        // for it and leaves it as it is.
+            $groups[] = array( 'key' => $key, 'label' => $tr ? ezpI18n::tr( 'design/admin/setup/rad', $group['label'] ) : $group['label'],
+                               'count' => $counts[$key], 'section' => $group['section'], 'in_total' => true, 'counted' => 0 );
         foreach ( $survey['registries'] as $key => $registry )
             $groups[] = array( 'key' => 'registry_' . $key,
-                               'label' => !empty( $registry['declared'] ) ? self::registryTitle( $registry ) : $registry['title'],
+                               'label' => self::registryTitle( $registry ),
                                'count' => $counts['registry_' . $key],
                                'section' => 'registries', 'in_total' => false,
                                'counted' => isset( $counts['registry_' . $key . '_settings'] ) ? $counts['registry_' . $key . '_settings']

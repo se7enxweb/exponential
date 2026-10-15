@@ -247,8 +247,9 @@ class eZCache
                 }
 
                 $cacheItem = array();
+                // the name an extension gives its cache is English, like the kernel's, and translated in the same context
                 if ( $ini->hasVariable( $name, 'name' ) )
-                    $cacheItem['name'] = $ini->variable( $name, 'name' );
+                    $cacheItem['name'] = ezpI18n::tr( 'kernel/cache', $ini->variable( $name, 'name' ) );
                 else
                     $cacheItem['name'] = ucwords( $cacheItemKey );
 

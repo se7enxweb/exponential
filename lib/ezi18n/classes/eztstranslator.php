@@ -517,7 +517,12 @@ class eZTSTranslator extends eZTranslatorHandler
         }
         if ( $translation === null ) // No translation provided, then take the source as a reference
         {
-//             eZDebug::writeError( "No translation, skipping message", __METHOD__ );
+            // An empty translation (Qt's placeholder for a message nobody translated yet) only stands in for the
+            // source. When a catalogue loaded before this one (the kernel's, or an earlier extension's) already has
+            // the message, that translation is kept: extensions ship copies of kernel contexts with empty
+            // placeholders, and these replaced the kernel's German with the English source.
+            if ( isset( $this->Messages[eZTranslatorManager::instance()->createKey( $contextName, $source, $comment )] ) )
+                return true;
             $translation = $source;
         }
         /* we need to convert ourselves if we're using libxml stuff here */

@@ -3,7 +3,8 @@
  * eZTSTranslator (lib/ezi18n), the reader of the Qt Linguist translation files, with its cache off:
  *   - a translation file of its own in a private repository: contexts, messages, comments (and the empty
  *     <comment/> the schema allows), <byte> elements, untranslated (empty) messages falling back to the source,
- *     several contexts, a context without messages, a file that does not validate, a missing file
+ *     several contexts, a context without messages, a file that does not validate, a missing file, an empty
+ *     placeholder read after a translated copy of the message (the translation is kept)
  *   - translate(), findMessage() with and without comment, findKey()/keyTranslate(), insert(), remove() and
  *     removeKey() with their return values, the "default" context
  *   - initialize() registering the translator with eZTranslatorManager, fetchList()
@@ -126,6 +127,34 @@ class eZTSTranslatorTest extends PHPUnit\Framework\TestCase
     public function testUnfinishedMessageFallsBackToTheSource()
     {
         $this->assertSame( 'Not yet', $this->sample()->translate( 'kernel/test', 'Not yet' ) );
+    }
+
+    /**
+     * A message read later with an empty translation (an extension's copy of a kernel context, its placeholders
+     * unfinished) keeps the translation read before it; a later message with a translation still replaces it. The
+     * empty copies of an extension had turned the kernel's German back into English.
+     */
+    public function testEmptyPlaceholderKeepsAnEarlierTranslation()
+    {
+        $this->writeTs(
+            "<context><name>kernel/test</name>\n" .
+            "<message><source>Hello</source><translation>Hallo</translation></message>\n" .
+            "<message><source>Save</source><comment>button</comment><translation>Speichern</translation></message>\n" .
+            "<message><source>Replaced</source><translation>Alt</translation></message>\n" .
+            "</context>\n" .
+            "<context><name>kernel/test</name>\n" .
+            "<message><source>Hello</source><translation type=\"unfinished\"></translation></message>\n" .
+            "<message><source>Save</source><comment>button</comment><translation/></message>\n" .
+            "<message><source>Replaced</source><translation>Neu</translation></message>\n" .
+            "<message><source>Only here</source><translation type=\"unfinished\"></translation></message>\n" .
+            "</context>\n"
+        );
+        $t = new eZTSTranslator( self::LOCALE, 'translation.ts', false );
+        $this->assertTrue( $t->load( 'kernel/test' ) );
+        $this->assertSame( 'Hallo', $t->translate( 'kernel/test', 'Hello' ) );
+        $this->assertSame( 'Speichern', $t->translate( 'kernel/test', 'Save', 'button' ) );
+        $this->assertSame( 'Neu', $t->translate( 'kernel/test', 'Replaced' ), 'a later translation still wins' );
+        $this->assertSame( 'Only here', $t->translate( 'kernel/test', 'Only here' ), 'with nothing before it, the source' );
     }
 
     /**
