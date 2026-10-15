@@ -120,6 +120,64 @@ class expUserDeactivation
     }
 
     /**
+     * The object id of the group, 0 when there is none (yet).
+     *
+     * @return int
+     */
+    public static function groupObjectID()
+    {
+        $node = self::groupNode();
+        return $node instanceof eZContentObjectTreeNode ? (int)$node->attribute( 'contentobject_id' ) : 0;
+    }
+
+    /**
+     * Whether roles are assigned to the group itself. The group must have none: an account moved into it would
+     * get them. Deactivate and move refuses while it has any, and the role views never assign one to it
+     * (withoutGroup()).
+     *
+     * @param eZContentObjectTreeNode|null $group
+     * @return bool
+     */
+    public static function groupHasRoles( $group )
+    {
+        if ( !$group instanceof eZContentObjectTreeNode )
+            return false;
+        return count( eZRole::fetchByUser( array( (int)$group->attribute( 'contentobject_id' ) ) ) ) > 0;
+    }
+
+    /**
+     * The object ids to assign a role to, without the group's object: the group has no roles, whether the feature
+     * is switched on or not (it may still hold accounts). See withoutID().
+     *
+     * @param int[] $objectIDs
+     * @return array ids (the rest, in order), refused (bool: the group was among them)
+     */
+    public static function withoutGroup( array $objectIDs )
+    {
+        return self::withoutID( $objectIDs, self::groupObjectID() );
+    }
+
+    /**
+     * @param int[] $objectIDs
+     * @param int $groupObjectID 0: none
+     * @return array ids, refused (see withoutGroup())
+     */
+    public static function withoutID( array $objectIDs, $groupObjectID )
+    {
+        $groupObjectID = (int)$groupObjectID;
+        $ids = array();
+        $refused = false;
+        foreach ( $objectIDs as $key => $id )
+        {
+            if ( $groupObjectID > 0 && (int)$id === $groupObjectID )
+                $refused = true;
+            else
+                $ids[$key] = $id;
+        }
+        return array( 'ids' => $ids, 'refused' => $refused );
+    }
+
+    /**
      * Whether the group may be created on first use: no node id is configured and nothing has the remote id.
      *
      * @return bool

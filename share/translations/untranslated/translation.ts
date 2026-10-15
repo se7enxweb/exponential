@@ -13871,6 +13871,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Narrow them to what your own roles allow, or ask an administrator with full access.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>The role was not assigned to the group of deactivated users.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>That group has no roles, so the accounts moved into it by Deactivate and move can do nothing. Any other users and groups you chose were assigned.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/role/list</name>
@@ -56386,6 +56394,13 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>There is no site data.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/deactivate</name>
+    <message>
+        <source>Roles are assigned to the group of deactivated users, so the accounts moved into it would get them. Remove those role assignments first. Nothing was changed.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

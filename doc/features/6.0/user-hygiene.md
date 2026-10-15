@@ -131,8 +131,16 @@ DeactivatedUserGroupNodeID=
   installer creates nothing.
 
 The group is hidden so that deactivated accounts do not show on the site, in its lists of users or in a search of
-it (`ShowHiddenNodes=false`); the administration shows them, marked *Hidden by a parent*. Give the group no roles:
-a role assigned to it would be a role of every deactivated account.
+it (`ShowHiddenNodes=false`); the administration shows them, marked *Hidden by a parent*. The group has no roles:
+a role assigned to it would be a role of every deactivated account. So:
+
+- **Assign** on a role (role/view and role/assign, with or without a limitation) leaves the group out of the
+  chosen users and groups, assigns the others, and says on the role's page that the group was left out
+  (`expUserDeactivation::withoutGroup()`). This holds whether the feature is switched on or not, as long as the
+  group exists.
+- A role given to the group some other way (a script, the database) is noticed: **Deactivate and move** then
+  refuses, before anything is changed, until the assignment is removed (`expUserDeactivation::groupHasRoles()`).
+- Roles assigned to an account itself stay with it; it cannot sign in while it is disabled.
 
 ### Deactivate and move
 

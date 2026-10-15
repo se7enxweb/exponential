@@ -88,7 +88,7 @@ class Hygiene extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'hygiene_supported', $hygiene !== null );
         // Deactivate and move (user/deactivate, expUserDeactivation): offered when switched on and allowed; the
         // group's node marks the accounts already moved there
-        $deactivate = \expUserDeactivation::isEnabled() && self::canDeactivate( $currentUser );
+        $deactivate = class_exists( '\expUserDeactivation' ) && \expUserDeactivation::isEnabled() && self::canDeactivate( $currentUser );
         $deactivateGroup = $deactivate ? \expUserDeactivation::groupNode() : null;
         $tpl->setVariable( 'hygiene_deactivate', $deactivate );
         $tpl->setVariable( 'hygiene_deactivate_group_id', $deactivateGroup ? (int)$deactivateGroup->attribute( 'node_id' ) : 0 );

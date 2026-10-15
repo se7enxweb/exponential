@@ -15,6 +15,8 @@
  *  UL-06 - Rights: a user who may not read the account gets "gone"; the protected accounts are never touched
  *  UL-07 - Deactivated again after a location was added meanwhile: that location is remembered too, not lost; an
  *          account disabled before is marked so on the way back
+ *  UL-08 - The group keeps no roles: withoutGroup() leaves its object out of an assignment, and groupHasRoles() sees a
+ *          role assigned to it
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -317,5 +319,27 @@ class expUserDeactivationLiveTest extends PHPUnit\Framework\TestCase
 
         $this->assertSame( array( $id ), self::bulk( 'reactivate_move', array( $id ) )['done'] );
         $this->assertSame( array( $account['a'], $account['b'] ), self::parents( $id ) );
+    }
+
+    /** UL-08 */
+    public function testGroupKeepsNoRoles()
+    {
+        $account = $this->account( 1 );
+        $group = expUserDeactivation::createGroup()['node'];
+        $this->assertInstanceOf( 'eZContentObjectTreeNode', $group );
+        $groupObjectID = (int)$group->attribute( 'contentobject_id' );
+        $this->assertSame( $groupObjectID, expUserDeactivation::groupObjectID() );
+        $this->assertFalse( expUserDeactivation::groupHasRoles( $group ), 'created without roles' );
+
+        $kept = expUserDeactivation::withoutGroup( array( $groupObjectID => $groupObjectID, $account['user'] => $account['user'] ) );
+        $this->assertTrue( $kept['refused'] );
+        $this->assertSame( array( $account['user'] => $account['user'] ), $kept['ids'] );
+
+        // a role given to it by other means (not the role views) is seen, and Deactivate and move refuses then
+        $roles = eZRole::fetchList();
+        $this->assertNotEmpty( $roles );
+        $roles[0]->assignToUser( $groupObjectID );
+        eZRole::expireCache();
+        $this->assertTrue( expUserDeactivation::groupHasRoles( $group ) );
     }
 }

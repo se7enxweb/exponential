@@ -19112,6 +19112,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Narrow them to what your own roles allow, or ask an administrator with full access.</source>
         <translation>Schränken Sie sie auf das ein, was Ihre eigenen Rollen erlauben, oder fragen Sie einen Administrator mit vollem Zugriff.</translation>
     </message>
+    <message>
+        <source>The role was not assigned to the group of deactivated users.</source>
+        <translation>Die Rolle wurde der Gruppe der deaktivierten Benutzer nicht zugewiesen.</translation>
+    </message>
+    <message>
+        <source>That group has no roles, so the accounts moved into it by Deactivate and move can do nothing. Any other users and groups you chose were assigned.</source>
+        <translation>Diese Gruppe hat keine Rollen, damit die mit „Deaktivieren und verschieben“ dorthin verschobenen Konten nichts tun können. Alle anderen gewählten Benutzer und Gruppen wurden zugewiesen.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/role/list</name>
@@ -41001,6 +41009,10 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     <message>
         <source>was disabled already before; enabled now</source>
         <translation>war schon vorher deaktiviert; wird jetzt aktiviert</translation>
+    </message>
+    <message>
+        <source>Roles are assigned to the group of deactivated users, so the accounts moved into it would get them. Remove those role assignments first. Nothing was changed.</source>
+        <translation>Der Gruppe der deaktivierten Benutzer sind Rollen zugewiesen, die verschobene Konten erhalten würden. Entfernen Sie diese Rollenzuweisungen zuerst. Es wurde nichts geändert.</translation>
     </message>
 </context>
 <context>

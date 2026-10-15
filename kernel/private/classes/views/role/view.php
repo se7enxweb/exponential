@@ -89,6 +89,16 @@ class View extends \Exponential\Runnable\ModuleView
         if ( $Module->isCurrentAction( 'AssignRole' ) )
         {
             $selectedObjectIDArray = \eZContentBrowse::result( 'AssignRole' );
+            // Never to the group of deactivated users (Deactivate and move): it has no roles
+            if ( is_array( $selectedObjectIDArray ) && class_exists( '\expUserDeactivation' ) )
+            {
+                $kept = \expUserDeactivation::withoutGroup( $selectedObjectIDArray );
+                if ( $kept['refused'] )
+                {
+                    $selectedObjectIDArray = $kept['ids'];
+                    \expRoleGrantCheck::remember( 'deactivated_group', array() );
+                }
+            }
             // Only a role the editor could grant (site.ini [RoleSettings] PreventPrivilegeEscalation)
             $grantCheck = \expRoleGrantCheck::forCurrentUser();
             if ( $grantCheck && $selectedObjectIDArray && $grantCheck->uncovered( \expRoleGrantCheck::grantsOfRole( $role ) ) )

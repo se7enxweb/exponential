@@ -16595,6 +16595,14 @@ Note: The packages will not be uninstalled.</translation>
         <source>Narrow them to what your own roles allow, or ask an administrator with full access.</source>
         <translation>Narrow them to what your own roles allow, or ask an administrator with full access.</translation>
     </message>
+    <message>
+        <source>The role was not assigned to the group of deactivated users.</source>
+        <translation>The role was not assigned to the group of deactivated users.</translation>
+    </message>
+    <message>
+        <source>That group has no roles, so the accounts moved into it by Deactivate and move can do nothing. Any other users and groups you chose were assigned.</source>
+        <translation>That group has no roles, so the accounts moved into it by Deactivate and move can do nothing. Any other users and groups you chose were assigned.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/role/list</name>
@@ -37973,6 +37981,10 @@ your account.</translation>
     <message>
         <source>was disabled already before; enabled now</source>
         <translation>was disabled already before; enabled now</translation>
+    </message>
+    <message>
+        <source>Roles are assigned to the group of deactivated users, so the accounts moved into it would get them. Remove those role assignments first. Nothing was changed.</source>
+        <translation>Roles are assigned to the group of deactivated users, so the accounts moved into it would get them. Remove those role assignments first. Nothing was changed.</translation>
     </message>
 </context>
 <context>

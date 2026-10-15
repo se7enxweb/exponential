@@ -135,7 +135,7 @@ not seen for a long time, disabled, locked, orphaned or sharing an e-mail addres
 them in bulk: [Check user accounts](../features/6.0/user-hygiene.md). With `[UserSettings]
 DeactivateAndMove=enabled`, **Deactivate and move** retires accounts instead of removing them, and moves them back
 on reactivation ([Deactivate and move](../features/6.0/user-hygiene.md#deactivate-and-move), function
-`user/deactivate`).
+`user/deactivate`). A role is never assigned to the group of deactivated users: Assign leaves it out and says so.
 
 ## 8. Decide who may register and who may read node data
 

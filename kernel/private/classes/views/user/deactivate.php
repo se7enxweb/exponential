@@ -122,6 +122,12 @@ class Deactivate extends \Exponential\Runnable\ModuleView
             else
                 $groupProblem = 'create_failed';
         }
+        // the group must have no roles: an account moved into it would get them
+        if ( $action === 'deactivate_move' && $group && \expUserDeactivation::groupHasRoles( $group ) )
+        {
+            $groupProblem = 'group_roles';
+            $confirmed = false;
+        }
         $tpl->setVariable( 'deactivate_group_problem', $groupProblem );
 
         $protected = \expUserHygiene::protectedIDs( $currentUser->attribute( 'contentobject_id' ) );

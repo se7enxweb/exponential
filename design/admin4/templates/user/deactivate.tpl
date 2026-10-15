@@ -18,7 +18,8 @@
      $group_problems = hash( 'configured_missing', 'The node set in site.ini [UserSettings] DeactivatedUserGroupNodeID does not exist. Correct the setting or leave it empty.'|i18n( 'design/admin/user/deactivate' ),
                              'unpublished', 'An object with the remote id of the group of deactivated users exists but has no published location. Publish it, or set [UserSettings] DeactivatedUserGroupNodeID.'|i18n( 'design/admin/user/deactivate' ),
                              'create_denied', 'The group of deactivated users does not exist yet, and you may not create it (a user group below the Users node). Ask an administrator to create it, for instance with bin/php/ezcreatedeactivatedusergroup.php.'|i18n( 'design/admin/user/deactivate' ),
-                             'create_failed', 'The group of deactivated users could not be created. Nothing was changed.'|i18n( 'design/admin/user/deactivate' ) )
+                             'create_failed', 'The group of deactivated users could not be created. Nothing was changed.'|i18n( 'design/admin/user/deactivate' ),
+                             'group_roles', 'Roles are assigned to the group of deactivated users, so the accounts moved into it would get them. Remove those role assignments first. Nothing was changed.'|i18n( 'design/admin/user/deactivate' ) )
      $back = $deactivate_redirect}
 
 <div class="context-block a4-page">

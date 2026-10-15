@@ -42,14 +42,6 @@
       "tests/tests/kernel/classes/user/expUserDeactivationTest.php",
       "tests/tests/kernel/classes/user/expUserDeactivationLiveTest.php"
     ],
-    "design/admin4/templates/popupmenu/popup_sub_advance_menu.tpl": [
-      "tests/tests/kernel/classes/user/expUserDeactivationTest.php",
-      "tests/tests/kernel/classes/user/expUserDeactivationLiveTest.php"
-    ],
-    "design/admin/templates/popupmenu/popup_sub_advance_menu.tpl": [
-      "tests/tests/kernel/classes/user/expUserDeactivationTest.php",
-      "tests/tests/kernel/classes/user/expUserDeactivationLiveTest.php"
-    ],
     "kernel/user/hygiene.php": [
       "tests/tests/kernel/classes/user/expUserHygieneTest.php"
     ],
@@ -756,10 +748,26 @@
       "tests/tests/kernel/classes/expContentExportEntryTest.php"
     ],
     "design/admin4/templates/popupmenu/popup_sub_advance_menu.tpl": [
-      "tests/tests/design/AdminContextMenuNestedSubmenuTest.php"
+      "tests/tests/design/AdminContextMenuNestedSubmenuTest.php",
+      "tests/tests/kernel/classes/user/expUserDeactivationTest.php",
+      "tests/tests/kernel/classes/user/expUserDeactivationLiveTest.php"
     ],
     "design/admin/templates/popupmenu/popup_sub_advance_menu.tpl": [
-      "tests/tests/design/AdminContextMenuNestedSubmenuTest.php"
+      "tests/tests/design/AdminContextMenuNestedSubmenuTest.php",
+      "tests/tests/kernel/classes/user/expUserDeactivationTest.php",
+      "tests/tests/kernel/classes/user/expUserDeactivationLiveTest.php"
+    ],
+    "kernel/private/classes/views/role/assign.php": [
+      "tests/tests/kernel/classes/user/expUserDeactivationTest.php"
+    ],
+    "kernel/private/classes/views/role/view.php": [
+      "tests/tests/kernel/classes/user/expUserDeactivationTest.php"
+    ],
+    "design/admin4/templates/role/exp_grant_refused.tpl": [
+      "tests/tests/kernel/classes/user/expUserDeactivationTest.php"
+    ],
+    "design/admin/templates/role/exp_grant_refused.tpl": [
+      "tests/tests/kernel/classes/user/expUserDeactivationTest.php"
     ]
   },
   "generated": {

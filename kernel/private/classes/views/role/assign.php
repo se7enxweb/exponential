@@ -94,6 +94,18 @@ class Assign extends \Exponential\Runnable\ModuleView
             if ( $limitIdent && !isset( $limitValue ) )
                 $limitIdent = '';
 
+            // Never to the group of deactivated users (Deactivate and move): it has no roles, or the accounts in it
+            // would get them. The others are still assigned; role/view says why the group was left out.
+            if ( class_exists( '\expUserDeactivation' ) )
+            {
+                $kept = \expUserDeactivation::withoutGroup( $selectedObjectIDArray );
+                if ( $kept['refused'] )
+                {
+                    $selectedObjectIDArray = $kept['ids'];
+                    \expRoleGrantCheck::remember( 'deactivated_group', array() );
+                }
+            }
+
             // Only a role the editor could grant, narrowed by the assignment's limitation (PreventPrivilegeEscalation)
             if ( $selectedObjectIDArray && ( $grantCheck = \expRoleGrantCheck::forCurrentUser() ) )
             {

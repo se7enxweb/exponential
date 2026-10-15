@@ -18,6 +18,9 @@
  *          changes are POSTs after a confirmation; the way back never leaves the site; every button and menu entry
  *          only with the setting enabled; the same templates in admin and admin4; texts washed and translated; the
  *          audit names in the catalogue
+ *  UD-07 - The group has no roles: the role views leave it out of an assignment and say so on role/view (the same
+ *          notice in admin and admin4), Deactivate and move refuses while roles are assigned to it; disabling ends
+ *          the sessions; the list of Check user accounts survives a process that has not loaded the class
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -294,5 +297,60 @@ class expUserDeactivationTest extends PHPUnit\Framework\TestCase
             $this->assertStringContainsString( "| `$name` |", self::read( 'doc/bc/6.0/audit.md' ) );
         }
         $this->assertSame( 'create', expAuditHook::withVerb( 'access.user.deactivated_group.create', array() )['verb'] );
+    }
+
+    /** UD-07 */
+    public function testGroupKeepsNoRoles()
+    {
+        // withoutID(): the group's object left out, the rest kept with its keys and in order
+        $this->assertSame( array( 'ids' => array( 14 => 14, 99 => 99 ), 'refused' => true ),
+                           expUserDeactivation::withoutID( array( 14 => 14, 42 => 42, 99 => 99 ), 42 ) );
+        $this->assertSame( array( 'ids' => array( 0 => '42', 1 => 7 ), 'refused' => false ),
+                           expUserDeactivation::withoutID( array( '42', 7 ), 0 ) );
+        $this->assertSame( array( 'ids' => array(), 'refused' => true ), expUserDeactivation::withoutID( array( '42' ), 42 ) );
+        $this->assertSame( array( 'ids' => array(), 'refused' => false ), expUserDeactivation::withoutID( array(), 42 ) );
+        $this->assertFalse( expUserDeactivation::groupHasRoles( null ) );
+
+        // both ways of assigning a role leave the group out and remember why, guarded for a process without the class
+        foreach ( array( 'kernel/private/classes/views/role/assign.php', 'kernel/private/classes/views/role/view.php' ) as $path )
+        {
+            $code = self::read( $path );
+            $this->assertStringContainsString( "class_exists( '\\expUserDeactivation' )", $code, $path );
+            $this->assertStringContainsString( '\\expUserDeactivation::withoutGroup( $selectedObjectIDArray )', $code, $path );
+            $this->assertStringContainsString( "\\expRoleGrantCheck::remember( 'deactivated_group', array() )", $code, $path );
+            $this->assertLessThan( strpos( $code, '->assignToUser(' ), strpos( $code, 'withoutGroup(' ), "$path: before the assignment" );
+        }
+        $notice = self::read( 'design/admin4/templates/role/exp_grant_refused.tpl' );
+        $this->assertSame( $notice, self::read( 'design/admin/templates/role/exp_grant_refused.tpl' ) );
+        $this->assertStringContainsString( "eq( \$refusal.what, 'deactivated_group' )", $notice );
+        $this->assertStringNotContainsString( 'style=', $notice );
+
+        // Deactivate and move refuses while the group has roles, before anything is done
+        $view = self::read( 'kernel/private/classes/views/user/deactivate.php' );
+        $check = strpos( $view, '\\expUserDeactivation::groupHasRoles( $group )' );
+        $this->assertNotFalse( $check );
+        $this->assertStringContainsString( "\$groupProblem = 'group_roles';\n            \$confirmed = false;", $view );
+        $this->assertLessThan( strpos( $view, '\\expUserDeactivation::applyWith( $action, $ids, $stateOf' ), $check );
+        foreach ( array( 'admin', 'admin4' ) as $design )
+            $this->assertStringContainsString( "'group_roles', 'Roles are assigned to the group of deactivated users",
+                                               self::read( "design/$design/templates/user/deactivate.tpl" ) );
+
+        // disabling goes through setsettings, which ends the account's sessions
+        $this->assertStringContainsString( "expUserHygiene::perform( 'disable', \$id )", self::read( 'kernel/classes/user/expuserdeactivation.php' ) );
+        $setSettings = self::read( 'kernel/user/ezuseroperationcollection.php' );
+        $this->assertStringContainsString( 'eZUser::removeSessionData( $userID );', $setSettings );
+
+        // the list of Check user accounts with a process that has not loaded the class yet (Velocity before a restart)
+        $this->assertStringContainsString( "class_exists( '\\expUserDeactivation' ) && \\expUserDeactivation::isEnabled()",
+                                           self::read( 'kernel/private/classes/views/user/hygiene.php' ) );
+
+        // the texts
+        foreach ( array( 'eng-US', 'ger-DE' ) as $locale )
+        {
+            $ts = self::read( "share/translations/$locale/translation.ts" );
+            foreach ( array( 'The role was not assigned to the group of deactivated users.',
+                             'Roles are assigned to the group of deactivated users, so the accounts moved into it would get them. Remove those role assignments first. Nothing was changed.' ) as $source )
+                $this->assertStringContainsString( '<source>' . $source . '</source>', $ts, "$locale: $source" );
+        }
     }
 }
