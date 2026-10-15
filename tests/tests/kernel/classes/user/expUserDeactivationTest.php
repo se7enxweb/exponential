@@ -53,9 +53,10 @@ class expUserDeactivationTest extends PHPUnit\Framework\TestCase
         $section = substr( $ini, $start + 1, (int)strpos( $ini, "\n[", $start + 1 ) - $start );
         $this->assertStringContainsString( "\nDeactivateAndMove=disabled\n", $section );
         $this->assertStringContainsString( "\nDeactivatedUserGroupNodeID=\n", $section );
-        foreach ( array( 'enabled', 'Enabled', ' enabled ' ) as $on )
+        foreach ( array( 'enabled', ' enabled ' ) as $on )
             $this->assertTrue( expUserDeactivation::isEnabledValue( $on ), var_export( $on, true ) );
-        foreach ( array( 'disabled', '', 'true', '1', 'yes', null, false, true, 1, array( 'enabled' ) ) as $off )
+        // exactly "enabled", as the templates compare it
+        foreach ( array( 'Enabled', 'ENABLED', 'disabled', '', 'true', '1', 'yes', null, false, true, 1, array( 'enabled' ) ) as $off )
             $this->assertFalse( expUserDeactivation::isEnabledValue( $off ), var_export( $off, true ) );
         foreach ( array( '42' => 42, ' 42 ' => 42, '' => 0, '0' => 0, '-5' => 0, '4.2' => 0, 'abc' => 0 ) as $value => $id )
             $this->assertSame( $id, expUserDeactivation::normaliseNodeID( (string)$value ), "'$value'" );
@@ -66,10 +67,25 @@ class expUserDeactivationTest extends PHPUnit\Framework\TestCase
     /** UD-02 */
     public function testRecord()
     {
-        $record = array( 'main' => 12, 'parents' => array( 60, '61', 60, 12, 0, 'x' ), 'group' => 300, 'at' => 1790000000, 'by' => 14 );
+        $record = array( 'main' => 12, 'parents' => array( 60, '61', 60, 12, 0, 'x', 300 ), 'group' => 300, 'was_enabled' => false, 'at' => 1790000000, 'by' => 14 );
         $json = expUserDeactivation::encodeRecord( $record );
-        $this->assertSame( array( 'v' => 1, 'main' => 12, 'parents' => array( 60, 61 ), 'group' => 300, 'at' => 1790000000, 'by' => 14 ),
-                           expUserDeactivation::decodeRecord( $json ) );
+        $this->assertSame( array( 'v' => 1, 'main' => 12, 'parents' => array( 60, 61 ), 'group' => 300, 'was_enabled' => false, 'at' => 1790000000, 'by' => 14 ),
+                           expUserDeactivation::decodeRecord( $json ), 'the group itself is never a remembered location' );
+        $this->assertTrue( expUserDeactivation::decodeRecord( '{"main":12}' )['was_enabled'], 'an older record: enabled before' );
+        $this->assertNull( expUserDeactivation::decodeRecord( '{"main":300,"group":300}' ), 'the group as the main location is no record' );
+
+        // what is stored on deactivation
+        $now = array( 'main' => 12, 'parents' => array( 60, 300 ) );
+        $this->assertSame( array( 'v' => 1, 'main' => 12, 'parents' => array( 60 ), 'group' => 300, 'was_enabled' => true, 'at' => 5, 'by' => 14 ),
+                           expUserDeactivation::recordFor( null, $now, 300, true, 14, 5 ), 'not in the group yet: where it is now' );
+        $old = expUserDeactivation::normaliseRecord( array( 'main' => 12, 'parents' => array( 60 ), 'group' => 300, 'was_enabled' => false, 'at' => 1, 'by' => 2 ) );
+        $this->assertSame( array( 'v' => 1, 'main' => 12, 'parents' => array( 60, 61, 62 ), 'group' => 300, 'was_enabled' => false, 'at' => 1, 'by' => 2 ),
+                           expUserDeactivation::recordFor( $old, array( 'main' => 300, 'parents' => array( 61, 62, 60 ) ), 300, false, 14, 5 ),
+                           'in the group with locations added since: merged, nothing lost' );
+        $this->assertNull( expUserDeactivation::recordFor( $old, array( 'main' => 300, 'parents' => array() ), 300, false, 14, 5 ), 'nothing new: kept as it is' );
+        $this->assertSame( 61, expUserDeactivation::recordFor( null, array( 'main' => 300, 'parents' => array( 61, 62 ) ), 300, false, 14, 5 )['main'],
+                           'moved into the group by hand: the first location outside becomes the main one' );
+        $this->assertNull( expUserDeactivation::recordFor( null, array( 'main' => 300, 'parents' => array() ), 300, false, 14, 5 ) );
         foreach ( array( '', 'null', '[]', '{"main":0}', '{"parents":[1,2]}', 'not json', '{"main":"x"}' ) as $bad )
             $this->assertNull( expUserDeactivation::decodeRecord( $bad ), $bad );
         $this->assertNull( expUserDeactivation::decodeRecord( null ) );
@@ -132,7 +148,7 @@ class expUserDeactivationTest extends PHPUnit\Framework\TestCase
     /** UD-04 */
     public function testPlanRestore()
     {
-        $exists = function ( array $ids ) { return function ( $id ) use ( $ids ) { return in_array( $id, $ids, true ); }; };
+        $exists = function ( array $ids ) { return function ( $id, $main ) use ( $ids ) { return in_array( $id, $ids, true ); }; };
         $record = array( 'main' => 12, 'parents' => array( 60, 61 ) );
 
         $this->assertSame( array( 'main' => 12, 'fallback' => false, 'add' => array( 60, 61 ), 'not_restored' => 0 ),
@@ -146,6 +162,11 @@ class expUserDeactivationTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'main' => 12, 'fallback' => false, 'add' => array( 61 ), 'not_restored' => 0 ),
                            expUserDeactivation::planRestore( $record, $exists( array( 12, 60, 61 ) ), 70, 60 ), 'not the parent it has now' );
         $this->assertSame( 0, expUserDeactivation::planRestore( null, $exists( array( 70 ) ), 0, 300 )['main'], 'no fallback set' );
+        // a node that may take another location but not the main one (add location, no create)
+        $addOnly = function ( $id, $main ) { return $id === 70 || ( !$main && in_array( $id, array( 12, 60 ), true ) ); };
+        $this->assertSame( array( 'main' => 70, 'fallback' => true, 'add' => array( 60 ), 'not_restored' => 2 ),
+                           expUserDeactivation::planRestore( array( 'main' => 12, 'parents' => array( 60, 61 ) ), $addOnly, 70, 300 ),
+                           'the main location only where the account may be moved' );
     }
 
     /** UD-05 */
@@ -234,6 +255,9 @@ class expUserDeactivationTest extends PHPUnit\Framework\TestCase
         $this->assertSame( $tpl, self::read( 'design/admin/templates/user/deactivate.tpl' ) );
         $this->assertStringContainsString( "<form method=\"post\" action={'user/deactivate'|ezurl}>", $tpl );
         $this->assertStringContainsString( 'name="ConfirmButton"', $tpl );
+        $this->assertStringContainsString( '<input type="hidden" name="DeactivateToken" value="{$deactivate_confirm.token|wash}" />', $tpl );
+        $this->assertStringContainsString( '$confirmed = $action !== null && self::checkConfirmToken( $http );', $view, 'confirm needs the page\'s own token' );
+        $this->assertStringContainsString( 'hash_equals( $expected, $given )', $view );
         $this->assertDoesNotMatchRegularExpression( '/\{\$(account|name|id|back)(\.[a-z_]+)?\}/', $tpl, 'every value is washed' );
 
         // the texts in both translations

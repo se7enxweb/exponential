@@ -13,6 +13,8 @@
  *          remembered; Reactivate and move back: enabled, the main one and the others back, the record gone
  *  UL-05 - A former location that is gone: left out and counted; the main one gone: the default user group
  *  UL-06 - Rights: a user who may not read the account gets "gone"; the protected accounts are never touched
+ *  UL-07 - Deactivated again after a location was added meanwhile: that location is remembered too, not lost; an
+ *          account disabled before is marked so on the way back
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -41,8 +43,17 @@ class expUserDeactivationLiveTest extends PHPUnit\Framework\TestCase
         $this->set( 'DeactivateAndMove', 'enabled' );
         $this->set( 'DeactivatedUserGroupNodeID', '' );
         eZDB::instance()->begin();
+        // an installation that has the group already: inside the transaction (rolled back) it gets another remote
+        // id, so every test starts without one
+        $existing = eZContentObject::fetchByRemoteID( expUserDeactivation::REMOTE_ID );
+        if ( $existing instanceof eZContentObject )
+        {
+            $existing->setAttribute( 'remote_id', 'ul-moved-' . uniqid() );
+            $existing->store();
+            eZContentObject::clearCache();
+        }
         if ( expUserDeactivation::groupNode() || !expUserDeactivation::groupMayBeCreated() )
-            $this->markTestSkipped( 'the installation has a group of deactivated users already; the tests start without one' );
+            $this->markTestSkipped( 'the tests start without a group of deactivated users' );
     }
 
     protected function tearDown(): void
@@ -280,5 +291,31 @@ class expUserDeactivationLiveTest extends PHPUnit\Framework\TestCase
                            'an account they may not read and one that does not exist: the same answer' );
         $this->assertSame( array( 'deactivate' => false, 'reactivate' => false ), expUserDeactivation::offers( $account['user'] ) );
         $this->assertTrue( self::enabled( $account['user'] ) );
+    }
+
+    /** UL-07 */
+    public function testDeactivatedAgainKeepsWhatWasAdded()
+    {
+        $account = $this->account( 1 );
+        $id = $account['user'];
+        eZOperationHandler::execute( 'user', 'setsettings', array( 'user_id' => $id, 'is_enabled' => 0, 'max_login' => 0 ) );
+        $this->assertFalse( self::enabled( $id ) );
+        $this->assertSame( array( $id ), self::bulk( 'deactivate_move', array( $id ) )['done'], 'disabled already, but not moved yet' );
+        $this->assertFalse( expUserDeactivation::remembered( $id )['was_enabled'] );
+        $group = (int)expUserDeactivation::groupNode()->attribute( 'node_id' );
+
+        // someone gives it a location again while it is deactivated
+        eZContentObject::fetch( $id )->addLocation( $account['b'], true );
+        eZContentObject::clearCache();
+        $this->assertSame( array( $id ), self::bulk( 'deactivate_move', array( $id ) )['done'] );
+        $this->assertSame( array( $group ), self::parents( $id ) );
+        $record = expUserDeactivation::remembered( $id );
+        $this->assertSame( $account['a'], $record['main'] );
+        $this->assertSame( array( $account['b'] ), $record['parents'], 'the added location is remembered, not lost' );
+        $this->assertNotContains( $group, $record['parents'] );
+        $this->assertTrue( expUserDeactivation::preview( $id, 'reactivate_move', expUserDeactivation::groupNode() )['was_disabled'] );
+
+        $this->assertSame( array( $id ), self::bulk( 'reactivate_move', array( $id ) )['done'] );
+        $this->assertSame( array( $account['a'], $account['b'] ), self::parents( $id ) );
     }
 }

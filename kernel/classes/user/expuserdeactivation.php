@@ -51,8 +51,8 @@ class expUserDeactivation
     const CONTEXT = 'design/admin/user/deactivate';
 
     /**
-     * Whether the feature is switched on: [UserSettings] DeactivateAndMove=enabled. Anything else, a missing setting
-     * included, is off.
+     * Whether the feature is switched on: [UserSettings] DeactivateAndMove=enabled (exactly). Anything else, a
+     * missing setting included, is off.
      *
      * @param eZINI|null $ini
      * @return bool
@@ -70,7 +70,8 @@ class expUserDeactivation
      */
     public static function isEnabledValue( $value )
     {
-        return is_string( $value ) && strtolower( trim( $value ) ) === 'enabled';
+        // exactly "enabled", as the templates compare it ( ezini( ... )|eq( 'enabled' ) )
+        return is_string( $value ) && trim( $value ) === 'enabled';
     }
 
     /**
@@ -247,7 +248,7 @@ class expUserDeactivation
 
     /**
      * The JSON of a record: main (the parent node of the main location), parents (the parent nodes of the other
-     * locations), group (the group's node), at (time), by (the user who acted).
+     * locations), group (the group's node), was_enabled, at (time), by (the user who acted).
      *
      * @param array $record
      * @return string
@@ -272,22 +273,25 @@ class expUserDeactivation
 
     /**
      * @param array $data
-     * @return array|null v, main, parents (unique, without main), group, at, by; null without a main parent
+     * @return array|null v, main, parents (unique, without main and without the group), group, was_enabled (whether
+     *                    the account was enabled before it was deactivated), at, by; null without a main parent or
+     *                    with the group as the main parent
      */
     public static function normaliseRecord( array $data )
     {
         $main = isset( $data['main'] ) ? self::normaliseNodeID( $data['main'] ) : 0;
-        if ( $main === 0 )
+        $group = isset( $data['group'] ) ? self::normaliseNodeID( $data['group'] ) : 0;
+        if ( $main === 0 || $main === $group )
             return null;
         $parents = array();
         foreach ( isset( $data['parents'] ) && is_array( $data['parents'] ) ? $data['parents'] : array() as $parent )
         {
             $parent = self::normaliseNodeID( $parent );
-            if ( $parent > 0 && $parent !== $main )
+            if ( $parent > 0 && $parent !== $main && $parent !== $group )
                 $parents[$parent] = $parent;
         }
-        return array( 'v' => 1, 'main' => $main, 'parents' => array_values( $parents ),
-                      'group' => isset( $data['group'] ) ? self::normaliseNodeID( $data['group'] ) : 0,
+        return array( 'v' => 1, 'main' => $main, 'parents' => array_values( $parents ), 'group' => $group,
+                      'was_enabled' => !isset( $data['was_enabled'] ) || (bool)$data['was_enabled'],
                       'at' => isset( $data['at'] ) ? max( 0, (int)$data['at'] ) : 0,
                       'by' => isset( $data['by'] ) ? max( 0, (int)$data['by'] ) : 0 );
     }
@@ -408,7 +412,8 @@ class expUserDeactivation
      * the count tells nothing about nodes the user who acts may not see).
      *
      * @param array|null $record see normaliseRecord()
-     * @param callable $place ( int $nodeID ) => bool whether that node exists, may be read and may take the account
+     * @param callable $place ( int $nodeID, bool $main ) => bool whether that node exists, may be read and may take
+     *                       the account: as its main location (moved there), or as another location (added)
      * @param int $fallbackID
      * @param int $currentMainParent the parent of the account's main location now
      * @return array main (parent node id, 0 = none), fallback (bool), add (parent node ids), not_restored (int)
@@ -419,7 +424,7 @@ class expUserDeactivation
         $record = is_array( $record ) ? self::normaliseRecord( $record ) : null;
         if ( $record !== null )
         {
-            if ( call_user_func( $place, $record['main'] ) )
+            if ( call_user_func( $place, $record['main'], true ) )
                 $plan['main'] = $record['main'];
             else
                 $plan['not_restored']++;
@@ -427,7 +432,7 @@ class expUserDeactivation
         if ( $plan['main'] === 0 )
         {
             $fallbackID = self::normaliseNodeID( $fallbackID );
-            if ( $fallbackID > 0 && call_user_func( $place, $fallbackID ) )
+            if ( $fallbackID > 0 && call_user_func( $place, $fallbackID, true ) )
             {
                 $plan['main'] = $fallbackID;
                 $plan['fallback'] = true;
@@ -437,9 +442,9 @@ class expUserDeactivation
         {
             foreach ( $record['parents'] as $parent )
             {
-                if ( $parent === $plan['main'] || $parent === (int)$currentMainParent )
+                if ( $parent === $plan['main'] || $parent === (int)$currentMainParent || $parent === $record['group'] )
                     continue;
-                if ( call_user_func( $place, $parent ) )
+                if ( call_user_func( $place, $parent, false ) )
                     $plan['add'][] = $parent;
                 else
                     $plan['not_restored']++;
@@ -547,7 +552,7 @@ class expUserDeactivation
         }
         $record = self::remembered( $id );
         $state['remembered'] = $record !== null;
-        $plan = self::planRestore( $record, function ( $nodeID ) use ( $classID ) { return self::mayPlace( $nodeID, $classID ); },
+        $plan = self::planRestore( $record, function ( $nodeID, $main ) use ( $classID ) { return self::mayPlace( $nodeID, $classID, $main ); },
                                    self::fallbackNodeID(), $mainParent );
         $state['target_ok'] = $plan['main'] > 0;
         return $state;
@@ -565,14 +570,16 @@ class expUserDeactivation
     }
 
     /**
-     * Whether a node exists, the current user may read it and may place an object of the class there
-     * (content/create of that class, or the right to add a location there).
+     * Whether a node exists, the current user may read it and may place an object of the class there: as the main
+     * location, moved there, only with content/create of that class (canMoveTo(), as content/move asks); as another
+     * location, added, also with the right to add a location there (as the operation addlocation asks).
      *
      * @param int $nodeID
      * @param int $classID
+     * @param bool $main
      * @return bool
      */
-    public static function mayPlace( $nodeID, $classID )
+    public static function mayPlace( $nodeID, $classID, $main = true )
     {
         $node = eZContentObjectTreeNode::fetch( (int)$nodeID );
         if ( !$node instanceof eZContentObjectTreeNode || !$node->canRead() )
@@ -580,7 +587,9 @@ class expUserDeactivation
         $parentObject = $node->object();
         if ( !$parentObject instanceof eZContentObject || (int)$parentObject->attribute( 'status' ) !== eZContentObject::STATUS_PUBLISHED )
             return false;
-        return $node->checkAccess( 'create', (int)$classID, $parentObject->attribute( 'contentclass_id' ) ) == 1 || $node->canAddLocation();
+        if ( $node->checkAccess( 'create', (int)$classID, $parentObject->attribute( 'contentclass_id' ) ) == 1 )
+            return true;
+        return !$main && $node->canAddLocation();
     }
 
     /**
@@ -650,15 +659,12 @@ class expUserDeactivation
         $before = array( 'main' => (int)$main->attribute( 'parent_node_id' ), 'parents' => array() );
         foreach ( $others as $node )
             $before['parents'][] = (int)$node->attribute( 'parent_node_id' );
-        $record = self::remembered( $id );
-        // already in the group: keep what was remembered when it was moved there
-        $keepRecord = $record !== null && $before['main'] === $groupID;
+        $remember = self::recordFor( self::remembered( $id ), $before, $groupID, $wasEnabled, (int)eZUser::currentUserID(), time() );
 
         $db = eZDB::instance();
         $db->begin();
-        if ( !$keepRecord && $before['main'] !== $groupID )
-            self::remember( $id, array( 'main' => $before['main'], 'parents' => $before['parents'], 'group' => $groupID,
-                                        'at' => time(), 'by' => (int)eZUser::currentUserID() ) );
+        if ( $remember !== null )
+            self::remember( $id, $remember );
         $ok = !$wasEnabled || expUserHygiene::perform( 'disable', $id );
         $removeIDs = array();
         foreach ( $others as $node )
@@ -680,8 +686,51 @@ class expUserDeactivation
             expAuditHook::emit( 'access.user.deactivate_move', array( 'object' => expAuditHook::user( $id ),
                 'before' => array( 'enabled' => $wasEnabled, 'main_parent_node_id' => $before['main'], 'parent_node_ids' => $before['parents'] ),
                 'after' => array( 'enabled' => false, 'main_parent_node_id' => $groupID, 'parent_node_ids' => array(),
-                                  'removed_node_ids' => $removeIDs, 'remembered' => !$keepRecord && $before['main'] !== $groupID ) ) );
+                                  'removed_node_ids' => $removeIDs, 'remembered' => $remember !== null ) ) );
         return array( 'ok' => true, 'error' => '' );
+    }
+
+    /**
+     * The record to store when an account is deactivated, from where it is now ($before: main, the parent of its main
+     * location; parents, those of the others) and what was remembered before; null when nothing is to be stored.
+     *
+     * - Not in the group yet: where it is now, a record that existed is replaced.
+     * - Already in the group (moved there by hand, or deactivated before and given locations since): the locations
+     *   outside the group are added to the remembered ones, so the ones about to be removed are not lost; without
+     *   an earlier record the first of them becomes the main one. Nothing outside the group: nothing to store.
+     *
+     * @param array|null $record what was remembered before
+     * @param array $before main, parents
+     * @param int $groupID
+     * @param bool $wasEnabled
+     * @param int $by
+     * @param int $at
+     * @return array|null
+     */
+    public static function recordFor( $record, array $before, $groupID, $wasEnabled, $by, $at )
+    {
+        $groupID = (int)$groupID;
+        $parents = array();
+        foreach ( $before['parents'] as $parent )
+        {
+            if ( (int)$parent !== $groupID )
+                $parents[] = (int)$parent;
+        }
+        if ( (int)$before['main'] !== $groupID )
+            return self::normaliseRecord( array( 'main' => (int)$before['main'], 'parents' => $parents, 'group' => $groupID,
+                                                 'was_enabled' => $wasEnabled, 'at' => $at, 'by' => $by ) );
+        if ( is_array( $record ) )
+        {
+            if ( !$parents )
+                return null;
+            $record['parents'] = array_merge( $record['parents'], $parents );
+            $record['group'] = $groupID;
+            return self::normaliseRecord( $record );
+        }
+        if ( !$parents )
+            return null;
+        return self::normaliseRecord( array( 'main' => array_shift( $parents ), 'parents' => $parents, 'group' => $groupID,
+                                             'was_enabled' => $wasEnabled, 'at' => $at, 'by' => $by ) );
     }
 
     /**
@@ -711,7 +760,7 @@ class expUserDeactivation
         $wasEnabled = !$setting || (int)$setting->attribute( 'is_enabled' ) !== 0;
 
         $record = self::remembered( $id );
-        $plan = self::planRestore( $record, function ( $nodeID ) use ( $classID ) { return self::mayPlace( $nodeID, $classID ); },
+        $plan = self::planRestore( $record, function ( $nodeID, $main ) use ( $classID ) { return self::mayPlace( $nodeID, $classID, $main ); },
                                    self::fallbackNodeID(), $mainParent );
         if ( $inGroup && $plan['main'] === 0 )
             return array( 'ok' => false, 'error' => 'no_target' );
@@ -758,12 +807,14 @@ class expUserDeactivation
      * @param int $id
      * @param string $action
      * @param eZContentObjectTreeNode|null $group
-     * @return array name, groups (names), target (names), fallback (bool), not_restored (int)
+     * @return array name, groups (names), target (names), fallback (bool), not_restored (int), was_disabled (reactivate:
+     *               the account was disabled already before it was deactivated and moved)
      */
     public static function preview( $id, $action, $group = null )
     {
         $object = eZContentObject::fetch( (int)$id );
-        $preview = array( 'id' => (int)$id, 'name' => '', 'groups' => array(), 'target' => array(), 'fallback' => false, 'not_restored' => 0 );
+        $preview = array( 'id' => (int)$id, 'name' => '', 'groups' => array(), 'target' => array(), 'fallback' => false, 'not_restored' => 0,
+                          'was_disabled' => false );
         if ( !$object instanceof eZContentObject )
             return $preview;
         $preview['name'] = (string)$object->attribute( 'name' );
@@ -783,7 +834,9 @@ class expUserDeactivation
             return $preview;
         }
         $classID = (int)$object->attribute( 'contentclass_id' );
-        $plan = self::planRestore( self::remembered( (int)$id ), function ( $nodeID ) use ( $classID ) { return self::mayPlace( $nodeID, $classID ); },
+        $record = self::remembered( (int)$id );
+        $preview['was_disabled'] = $record !== null && !$record['was_enabled'];
+        $plan = self::planRestore( $record, function ( $nodeID, $main ) use ( $classID ) { return self::mayPlace( $nodeID, $classID, $main ); },
                                    self::fallbackNodeID(), $mainParent );
         $groupID = $group instanceof eZContentObjectTreeNode ? (int)$group->attribute( 'node_id' ) : 0;
         $main = $groupID > 0 && $mainParent === $groupID ? $plan['main'] : $mainParent;

@@ -37734,6 +37734,10 @@ your account.</translation>
         <source>Check user accounts</source>
         <translation>Check user accounts</translation>
     </message>
+    <message>
+        <source>was disabled already before; enabled now</source>
+        <translation>was disabled already before; enabled now</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/unactivated</name>

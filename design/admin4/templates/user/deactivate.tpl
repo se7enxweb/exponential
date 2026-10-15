@@ -56,6 +56,7 @@
         <td>{$account.groups|implode( ', ' )|wash}</td>
         <td>{$account.target|implode( ', ' )|wash}
             {if $account.fallback}<br /><span class="a4-badge is-warn">{'default user group: the former main location is gone or not yours to use'|i18n( 'design/admin/user/deactivate' )}</span>{/if}
+            {if $account.was_disabled}<br /><span class="a4-badge is-info">{'was disabled already before; enabled now'|i18n( 'design/admin/user/deactivate' )}</span>{/if}
             {if $account.not_restored|gt( 0 )}<br /><span class="a4-badge is-warn">{'%count former locations left out (gone or not yours to use)'|i18n( 'design/admin/user/deactivate',, hash( '%count', $account.not_restored ) )}</span>{/if}</td>
     </tr>
     {/foreach}
@@ -73,6 +74,7 @@
 
     {foreach $deactivate_confirm.ids as $id}<input type="hidden" name="UserIDArray[]" value="{$id|wash}" />{/foreach}
     <input type="hidden" name="DeactivateAction" value="{$deactivate_confirm.action|wash}" />
+    <input type="hidden" name="DeactivateToken" value="{$deactivate_confirm.token|wash}" />
     <input type="hidden" name="RedirectURI" value="{$back|wash}" />
     <div class="a4-actions">
         {if $deactivate_confirm.can_confirm}

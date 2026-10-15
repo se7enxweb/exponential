@@ -107,8 +107,9 @@ DeactivatedUserGroupNodeID=
   the first **Deactivate and move** creates it below `content.ini [NodeSettings] UserRootNode` (the Users node):
   a user group (`[UserSettings] UserGroupClassID`) named *Deactivated users* in the language of the
   administration, hidden, without roles, in one transaction, recorded as `access.user.deactivated_group.create`. It
-  is created only by a user who may create a user group there (`content/create`); anyone else gets a message saying
-  so, and nothing changes.
+  is created only by a user who may create a user group there (`content/create`), and only when at least one of the
+  confirmed accounts goes into it; anyone else gets a message saying so, and nothing changes. Hiding it is part of
+  creating it (no separate `content/hide` is asked).
 - Or create it beforehand, for instance on a site whose editors may not create groups:
 
   ```bash
@@ -129,7 +130,9 @@ a role assigned to it would be a role of every deactivated account.
 
 For each account, in one transaction (nothing stays when a step fails):
 
-1. its locations are remembered: the parent of the main location and the parents of the others;
+1. its locations are remembered: the parent of the main location, the parents of the others and whether it was
+   enabled. An account that is in the group already and has gained locations since keeps its record, and the new
+   locations are added to it, so nothing is removed without being remembered;
 2. it is disabled through the operation `user/setsettings` (as **Disable**; its sessions end; `access.user.disable`);
 3. the locations other than the main one are removed (operation `content/removelocation`);
 4. the main location is moved into the group (operation `content/move`); the node keeps its id.
@@ -151,13 +154,14 @@ For each account, in one transaction:
 The confirmation and the result say how many former locations are left out, *gone or not yours to use* together,
 so the number tells nothing about nodes you may not see. Recorded as `access.user.reactivate_move`. An account that
 never activated is left out (activate it on **Unactivated users**); one with nowhere to go (no remembered main
-parent and no default user group it may enter) is left out too.
+parent and no default user group it may enter) is left out too. An account that was disabled already before it was
+deactivated is marked so on the confirmation, as reactivating enables it.
 
 ### Where the locations are remembered
 
 One row of `ezsite_data` (`eZSiteData`) per deactivated account, named `exp_user_deactivation_<user id>`, its
-value JSON: `main` (parent node of the main location), `parents` (parents of the other locations), `group`, `at`,
-`by`. Chosen over a table of its own because it needs no database update, works on every engine the kernel
+value JSON: `main` (parent node of the main location), `parents` (parents of the other locations, never the group),
+`group`, `was_enabled`, `at`, `by`. Chosen over a table of its own because it needs no database update, works on every engine the kernel
 supports through `eZPersistentObject` (measured on MySQL/MariaDB; MongoDB is not tested), and an installation
 can switch the feature on without running anything. The row holds node ids only, no names; it is removed on
 reactivation. **Setup > Site data** lists it (for `setup/system_info`). A row of an account that was removed later
@@ -179,17 +183,18 @@ changed. At most 100 accounts at once.
 
 | What | Needs |
 |---|---|
-| The buttons, the menu entries and `user/deactivate` | the function **user/deactivate** (in no role of a clean installation but *Administrator*, `*/*`); with `user/hygiene` for the bulk actions on Check user accounts |
+| The buttons, the menu entries and `user/deactivate` | the function **user/deactivate** (in no role of a clean installation but *Administrator*, `*/*`; a role with the policy `user/*` gets it too, so look at those roles before switching the feature on); with `user/hygiene` for the bulk actions on Check user accounts |
 | Each account | `content/edit` on its user object, and `content/read` on each of its locations |
 | Deactivate | at the main location `content/edit` and `content/remove` (moving it, `canMoveFrom()`), `content/create` of the user class in the group (`canMoveTo()`); at every other location `content/remove` or the right to remove a location |
-| Reactivate | moving the main location out of the group (`canMoveFrom()`), and `content/create` of the user class or the right to add a location where it goes |
+| Reactivate | moving the main location out of the group (`canMoveFrom()`) and `content/create` of the user class where it goes (`canMoveTo()`, as Move asks); for each other location `content/create` or the right to add a location there (as Add location asks) |
 | Creating the group on first use | `content/create` of the user group class below the Users node |
 
 Never touched: the anonymous user, the user creator, the administrator account (id 14, login `admin`) and you (as
 for the other actions). An account whose object you may not read is answered as *not found, or not visible to
 you*, the same as an id that does not exist, so the page tells nothing about objects you may not see. Names are
 shown only of accounts you may change and of groups you may read. Every change is a POST with the form token of
-`ezformtoken`; the way back after the result is the page you came from (`user/hygiene` or the user's node), never
+`ezformtoken`, and **Confirm** also carries a token of its own, kept in the session, so no request but the
+confirmation page itself can do it, with or without `ezformtoken`; the way back after the result is the page you came from (`user/hygiene` or the user's node), never
 an address from outside.
 
 ## The CSV

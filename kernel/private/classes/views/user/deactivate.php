@@ -23,7 +23,8 @@ namespace Exponential\View\Kernel\User
  * content/move (edit and remove at the main location), content/remove (or the right to remove a location) at the
  * others and content/create (or add location) where it goes. Never touches the anonymous user, the administrator
  * account or the user who acts. Changes take a POST (with the form token where ezformtoken is active); at most
- * expUserDeactivation::MAX_IDS accounts at once.
+ * expUserDeactivation::MAX_IDS accounts at once. Confirm also needs the token of the confirmation page, kept in the
+ * session (DeactivateToken), so a change is never done by a request the page did not make, even without ezformtoken.
  * Guide: doc/features/6.0/user-hygiene.md, section "Deactivate and move"
  */
 class Deactivate extends \Exponential\Runnable\ModuleView
@@ -53,7 +54,9 @@ class Deactivate extends \Exponential\Runnable\ModuleView
             if ( $http->hasPostVariable( 'ConfirmButton' ) && $http->hasPostVariable( 'DeactivateAction' ) )
             {
                 $action = \expUserDeactivation::normaliseAction( $http->postVariable( 'DeactivateAction' ) );
-                $confirmed = $action !== null;
+                // only from the confirmation page of this session: its token, besides the form token of ezformtoken
+                // (which an installation may not have active)
+                $confirmed = $action !== null && self::checkConfirmToken( $http );
             }
             if ( $http->hasPostVariable( 'UserIDArray' ) )
                 $ids = \expUnactivatedUsers::normaliseIDs( $http->postVariable( 'UserIDArray' ) );
@@ -102,6 +105,12 @@ class Deactivate extends \Exponential\Runnable\ModuleView
             else
                 $groupCreatable = true;
         }
+        // the group is created on first use only when at least one account would go into it
+        if ( $confirmed && $groupCreatable && !\expUserDeactivation::applyWith( $action, $ids, function ( $id )
+             {
+                 return \expUserDeactivation::accountState( $id, null, true );
+             }, function () { return false; }, \expUserHygiene::protectedIDs( $currentUser->attribute( 'contentobject_id' ) ), true )['done'] )
+            $confirmed = false;
         if ( $confirmed && $groupCreatable )
         {
             $created = \expUserDeactivation::createGroup();
@@ -135,7 +144,8 @@ class Deactivate extends \Exponential\Runnable\ModuleView
             foreach ( $result['done'] as $id )
                 $previews[] = \expUserDeactivation::preview( $id, $action, $group );
             $tpl->setVariable( 'deactivate_confirm', array( 'action' => $action, 'ids' => $ids, 'result' => $result, 'accounts' => $previews,
-                                                            'can_confirm' => $result['done'] && $groupProblem === '' ) );
+                                                            'can_confirm' => $result['done'] && $groupProblem === '',
+                                                            'token' => self::confirmToken( $http ) ) );
             $Result['content'] = $tpl->fetch( 'design:user/deactivate.tpl' );
             return $this->viewResult( $Result, $Result );
         }
@@ -160,6 +170,39 @@ class Deactivate extends \Exponential\Runnable\ModuleView
                                                        'fallback' => $fallback, 'not_restored' => $notRestored ) );
         $Result['content'] = $tpl->fetch( 'design:user/deactivate.tpl' );
         return $this->viewResult( $Result, $Result );
+    }
+
+    /** The session variable of the confirmation token */
+    const TOKEN_SESSION = 'expUserDeactivateToken';
+
+    /**
+     * The token of the confirmation form: random, kept in the session, the same for the session's confirmation pages.
+     *
+     * @param \eZHTTPTool $http
+     * @return string
+     */
+    protected static function confirmToken( $http )
+    {
+        $token = $http->hasSessionVariable( self::TOKEN_SESSION ) ? (string)$http->sessionVariable( self::TOKEN_SESSION ) : '';
+        if ( strlen( $token ) !== 64 )
+        {
+            $token = bin2hex( random_bytes( 32 ) );
+            $http->setSessionVariable( self::TOKEN_SESSION, $token );
+        }
+        return $token;
+    }
+
+    /**
+     * Whether the POST carries the session's confirmation token (DeactivateToken).
+     *
+     * @param \eZHTTPTool $http
+     * @return bool
+     */
+    protected static function checkConfirmToken( $http )
+    {
+        $expected = $http->hasSessionVariable( self::TOKEN_SESSION ) ? (string)$http->sessionVariable( self::TOKEN_SESSION ) : '';
+        $given = $http->hasPostVariable( 'DeactivateToken' ) ? $http->postVariable( 'DeactivateToken' ) : '';
+        return strlen( $expected ) === 64 && is_string( $given ) && hash_equals( $expected, $given );
     }
 
     /**

@@ -40762,6 +40762,10 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
         <source>Check user accounts</source>
         <translation>Benutzerkonten prüfen</translation>
     </message>
+    <message>
+        <source>was disabled already before; enabled now</source>
+        <translation>war schon vorher deaktiviert; wird jetzt aktiviert</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/unactivated</name>
