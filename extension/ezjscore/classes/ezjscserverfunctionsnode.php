@@ -193,8 +193,10 @@ class ezjscServerFunctionsNode extends ezjscServerFunctions
      *    every child is numbered again in steps of 10 in the parent's sort direction, the page's rows in their new
      *    order at their place (renumberedOrder()).
      *
-     * ExpectedPriorityList is required with PriorityList and Renumber; the check and the write run in one transaction
-     * (rows locked on MySQL and PostgreSQL). With ExpectedPriorityList the answer is array( 'conflict' => false, 'changed' => array( node_id => array( old,
+     * ExpectedPriorityList is required with PriorityList and Renumber and must name every node to be written (the
+     * PriorityList's, or PageOrder's); these modes need a parent that sorts its children by priority. The check and
+     * the write run in one transaction (rows locked on MySQL, PostgreSQL and Oracle), rolled back together on an
+     * error; a workflow that stops or defers the operation is an error, not "changed". With ExpectedPriorityList the answer is array( 'conflict' => false, 'changed' => array( node_id => array( old,
      * new ) ) ) for the children whose priority changed, which is what an undo posts back.
      *
      * @since 1.2
@@ -213,8 +215,12 @@ class ezjscServerFunctionsNode extends ezjscServerFunctions
         }
 
         $contentNodeID = $http->postVariable('ContentNodeID');
+        if ( !is_string( $contentNodeID ) || !preg_match( '/^[1-9][0-9]{0,9}$/', $contentNodeID ) )
+        {
+            throw new InvalidArgumentException( 'Argument ContentNodeID is not a node id' );
+        }
 
-        $contentNode = eZContentObjectTreeNode::fetch( $contentNodeID );
+        $contentNode = eZContentObjectTreeNode::fetch( (int)$contentNodeID );
         if ( !$contentNode instanceof eZContentObjectTreeNode )
         {
            throw new InvalidArgumentException( "Argument ContentNodeID: '$contentNodeID' does not exist" );
@@ -228,6 +234,9 @@ class ezjscServerFunctionsNode extends ezjscServerFunctions
         $expected = null;
         if ( $lists )
         {
+            // reordering is for a parent that sorts its children by priority (the table only offers it there)
+            if ( (int)$contentNode->attribute( 'sort_field' ) !== eZContentObjectTreeNode::SORT_FIELD_PRIORITY )
+                throw new InvalidArgumentException( "Node '$contentNodeID' does not sort its children by priority" );
             // the new modes always check what the table showed: without the expected priorities nothing is written
             if ( !$http->hasPostVariable( 'ExpectedPriorityList' ) )
                 throw new InvalidArgumentException( 'ExpectedPriorityList is required with PriorityList and Renumber' );
@@ -236,73 +245,106 @@ class ezjscServerFunctionsNode extends ezjscServerFunctions
             $renumber = $http->postVariable( 'Renumber', '' ) === '1';
             $page = $renumber ? self::parseIDList( $http->postVariable( 'PageOrder', '' ) ) : array();
             $set = $renumber ? array() : self::parsePriorityList( $http->postVariable( 'PriorityList', '' ) );
-            // the check and the write in one transaction; MySQL and PostgreSQL lock the rows read (FOR UPDATE), so
-            // two drops at the same moment cannot both pass the check
+            // nothing is written unchecked: every node to be written is one whose shown priority came along
+            $unchecked = self::uncheckedNodes( $renumber ? $page : array_keys( $set ), $expected );
+            if ( $unchecked )
+                throw new InvalidArgumentException( 'Not in ExpectedPriorityList: ' . implode( ',', array_slice( $unchecked, 0, 10 ) ) );
+            // the check and the write in one transaction; MySQL, PostgreSQL and Oracle lock the rows read (FOR
+            // UPDATE), so two drops at the same moment cannot both pass the check
             $db = eZDB::instance();
             $db->begin();
-            if ( $renumber )
+            try
             {
-                $children = self::childPriorities( $contentNodeID, null, (int)$contentNode->attribute( 'sort_order' ) === 1 );
-                $set = self::renumberedOrder( array_keys( $children ), $page, (int)$http->postVariable( 'PageOffset', 0 ),
-                                              (int)$contentNode->attribute( 'sort_order' ) === 1 );
-            }
-            else
-            {
-                $children = self::childPriorities( $contentNodeID, array_keys( $set + $expected ) );
-            }
-            $conflicts = self::priorityConflicts( $expected, $children );
-            if ( $conflicts )
-            {
+                if ( $renumber )
+                {
+                    $children = self::childPriorities( $contentNodeID, null, (int)$contentNode->attribute( 'sort_order' ) === 1 );
+                    $set = self::renumberedOrder( array_keys( $children ), $page, (int)$http->postVariable( 'PageOffset', 0 ),
+                                                  (int)$contentNode->attribute( 'sort_order' ) === 1 );
+                }
+                else
+                {
+                    $children = self::childPriorities( $contentNodeID, array_keys( $set + $expected ) );
+                }
+                $conflicts = self::priorityConflicts( $expected, $children );
+                if ( $conflicts )
+                {
+                    $db->commit();
+                    return array( 'conflict' => true, 'nodes' => $conflicts );
+                }
+                $changed = array();
+                foreach ( $set as $nodeID => $priority )
+                {
+                    // a node that is not a child is not written (updatePriority() matches the parent too)
+                    if ( isset( $children[$nodeID] ) && $children[$nodeID] !== $priority )
+                        $changed[$nodeID] = array( $children[$nodeID], $priority );
+                }
+                if ( !$changed )
+                {
+                    $db->commit();
+                    return array( 'conflict' => false, 'changed' => new stdClass() );
+                }
+                $priorityArray = array();
+                foreach ( $changed as $pair )
+                    $priorityArray[] = $pair[1];
+                $status = self::runUpdatePriority( $contentNodeID, $priorityArray, array_keys( $changed ) );
                 $db->commit();
-                return array( 'conflict' => true, 'nodes' => $conflicts );
             }
-            $changed = array();
-            foreach ( $set as $nodeID => $priority )
+            catch ( Throwable $e )
             {
-                // a node that is not a child is not written (updatePriority() matches the parent too)
-                if ( isset( $children[$nodeID] ) && $children[$nodeID] !== $priority )
-                    $changed[$nodeID] = array( $children[$nodeID], $priority );
+                // nothing half written: the check and the write go back together
+                $db->rollback();
+                throw $e;
             }
-            if ( !$changed )
-            {
-                $db->commit();
-                return array( 'conflict' => false, 'changed' => new stdClass() );
-            }
-            $priorityIDArray = array_keys( $changed );
-            $priorityArray = array();
-            foreach ( $changed as $pair )
-                $priorityArray[] = $pair[1];
-        }
-        else
-        {
-            $priorityArray = $http->postVariable('Priority');
-            $priorityIDArray = $http->postVariable('PriorityID');
+            self::clearObjectCache( $http );
+            // a workflow on pre_updatepriority that stopped or queued the operation: the priorities are not the new
+            // ones (yet), and the table must not show them as saved
+            if ( $status !== eZModuleOperationInfo::STATUS_CONTINUE )
+                throw new RuntimeException( "The new order was not written: a workflow stopped or deferred it (operation status $status)" );
+            return array( 'conflict' => false, 'changed' => $changed );
         }
 
+        self::runUpdatePriority( $contentNodeID, $http->postVariable( 'Priority' ), $http->postVariable( 'PriorityID' ) );
+        self::clearObjectCache( $http );
+    }
+
+    /**
+     * The kernel's own way of writing priorities, as content/action's UpdatePriorityButton: the content/updatepriority
+     * operation (with its pre_ and post_updatepriority triggers) when it is available, else
+     * eZContentOperationCollection::updatePriority() (cache, search index and audit).
+     *
+     * @param int $parentNodeID
+     * @param mixed $priorityArray
+     * @param mixed $priorityIDArray
+     * @return int the operation's status (eZModuleOperationInfo::STATUS_*)
+     */
+    protected static function runUpdatePriority( $parentNodeID, $priorityArray, $priorityIDArray )
+    {
         if ( eZOperationHandler::operationIsAvailable( 'content_updatepriority' ) )
         {
             $operationResult = eZOperationHandler::execute( 'content', 'updatepriority',
-                                                             array( 'node_id' => $contentNodeID,
+                                                             array( 'node_id' => $parentNodeID,
                                                                     'priority' => $priorityArray,
                                                                     'priority_id' => $priorityIDArray ), null, true );
+            if ( is_array( $operationResult ) && isset( $operationResult['status'] ) && is_int( $operationResult['status'] ) )
+                return $operationResult['status'];
+            return eZModuleOperationInfo::STATUS_CONTINUE;
         }
-        else
-        {
-            eZContentOperationCollection::updatePriority( $contentNodeID, $priorityArray, $priorityIDArray );
-        }
+        eZContentOperationCollection::updatePriority( $parentNodeID, $priorityArray, $priorityIDArray );
+        return eZModuleOperationInfo::STATUS_CONTINUE;
+    }
 
-        if ( $expected !== null )
-            $db->commit();
-
+    /**
+     * The view cache of the posted ContentObjectID (the parent's object), as content/action does after new priorities.
+     *
+     * @param eZHTTPTool $http
+     */
+    protected static function clearObjectCache( eZHTTPTool $http )
+    {
         if ( $http->hasPostVariable( 'ContentObjectID' ) )
         {
-            $objectID = $http->postVariable( 'ContentObjectID' );
-            eZContentCacheManager::clearContentCacheIfNeeded( $objectID );
-        }
-
-        if ( $expected !== null )
-        {
-            return array( 'conflict' => false, 'changed' => $changed );
+            $objectID = (int)$http->postVariable( 'ContentObjectID' );
+            if ( $objectID > 0 )
+                eZContentCacheManager::clearContentCacheIfNeeded( $objectID );
         }
     }
 
@@ -350,6 +392,25 @@ class ezjscServerFunctionsNode extends ezjscServerFunctions
         if ( count( $ids ) > 10000 || count( array_unique( $ids ) ) !== count( $ids ) )
             throw new InvalidArgumentException( 'Not a list of node ids' );
         return $ids;
+    }
+
+    /**
+     * The nodes to be written ($nodeIDs: PriorityList's ids, or PageOrder's) whose shown priority did not come along
+     * in $expected, as a list of node ids; empty when every one is checked. updatepriority writes nothing then.
+     *
+     * @param int[] $nodeIDs
+     * @param array $expected node_id => priority the client showed
+     * @return int[]
+     */
+    public static function uncheckedNodes( array $nodeIDs, array $expected )
+    {
+        $unchecked = array();
+        foreach ( $nodeIDs as $nodeID )
+        {
+            if ( !array_key_exists( (int)$nodeID, $expected ) )
+                $unchecked[] = (int)$nodeID;
+        }
+        return $unchecked;
     }
 
     /**
@@ -420,7 +481,7 @@ class ezjscServerFunctionsNode extends ezjscServerFunctions
             $where .= ' AND ' . $db->generateSQLINStatement( array_map( 'intval', $nodeIDs ), 'node_id', false, true, 'int' );
         }
         $dir = $ascending ? 'ASC' : 'DESC';
-        $lock = in_array( $db->databaseName(), array( 'mysql', 'postgresql' ), true ) ? ' FOR UPDATE' : '';
+        $lock = in_array( $db->databaseName(), array( 'mysql', 'postgresql', 'oracle' ), true ) ? ' FOR UPDATE' : '';
         $rows = $db->arrayQuery( "SELECT node_id, priority FROM ezcontentobject_tree WHERE $where ORDER BY priority $dir, node_id $dir$lock" );
         $priorities = array();
         foreach ( $rows as $row )

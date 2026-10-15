@@ -61,6 +61,33 @@ class ezjscServerFunctionsNodePriorityTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array(), ezjscServerFunctionsNode::priorityConflicts( array(), $current ) );
     }
 
+    public function testEveryNodeToBeWrittenMustHaveAnExpectedPriority()
+    {
+        $expected = array( 4 => 10, 5 => 20, 6 => 30 );
+        $this->assertSame( array(), ezjscServerFunctionsNode::uncheckedNodes( array( 6, 4 ), $expected ) );
+        $this->assertSame( array(), ezjscServerFunctionsNode::uncheckedNodes( array(), $expected ) );
+        // a node posted to be written without the priority the table showed is refused, not written unchecked
+        $this->assertSame( array( 9, 2 ), ezjscServerFunctionsNode::uncheckedNodes( array( 4, 9, 2 ), $expected ) );
+        $this->assertSame( array( 4 ), ezjscServerFunctionsNode::uncheckedNodes( array( 4 ), array() ) );
+    }
+
+    public function testListModesAreGuardedInUpdatePriority()
+    {
+        // the rules updatePriority() applies before it writes, read from its source (they need a database to run):
+        // a positive integer ContentNodeID, the parent's canEdit(), a parent sorted by priority, every written node
+        // checked, the check and the write rolled back together, a stopped workflow not reported as saved
+        $source = file_get_contents( __DIR__ . '/../../../../extension/ezjscore/classes/ezjscserverfunctionsnode.php' );
+        $start = strpos( $source, 'public static function updatePriority(' );
+        $body = substr( $source, $start, strpos( $source, 'protected static function runUpdatePriority(' ) - $start );
+        $this->assertStringContainsString( "preg_match( '/^[1-9][0-9]{0,9}$/', \$contentNodeID )", $body );
+        $this->assertStringContainsString( '$contentNode->canEdit()', $body );
+        $this->assertStringContainsString( 'eZContentObjectTreeNode::SORT_FIELD_PRIORITY', $body );
+        $this->assertStringContainsString( 'self::uncheckedNodes(', $body );
+        $this->assertStringContainsString( '$db->rollback();', $body );
+        $this->assertStringContainsString( 'eZModuleOperationInfo::STATUS_CONTINUE', $body );
+        $this->assertLessThan( strpos( $body, '$db->begin();' ), strpos( $body, 'SORT_FIELD_PRIORITY' ), 'the sort is checked before the transaction' );
+    }
+
     public function testRenumberingPutsThePageInPlace()
     {
         // seven children, a page of three at offset 2 moved to 5, 3, 4
