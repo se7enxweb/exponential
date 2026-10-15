@@ -261,7 +261,7 @@ they stay. `modules/content.css` draws them as the components instead, inside tw
 
 | Markup | Drawn as |
 |---|---|
-| a text field, select or textarea (any class) | `.a4-input`: `--a4-control-h`, `--a4-text-m`, `--a4-field-line`, `--a4-radius-s`, the accent edge and ring on focus; a one-line select gets the chevron of the legacy selects; a field with a `size` keeps its width, `.box`/`.halfbox` are full width |
+| a text field, select or textarea (any class) | `.a4-input`: `--a4-control-h`, `--a4-text-m`, `--a4-field-line`, `--a4-radius-s`, the accent edge and ring on focus; a one-line select gets the chevron of the legacy selects; a field with a `size` keeps its width, `.box` is full width, `.halfbox` keeps its half width |
 | `input.button`, `input.button-disabled`, `button.button` | `.a4-btn`: outlined, the accent edge and text on hover, faded at `opacity: .55` when disabled (no hatch) |
 | `input.defaultbutton` | `.a4-btn-primary` |
 | a checkbox or radio | as in `.a4-check`: 18 px in `--a4-accent-strong`; a `<label>` around one and its text is a row, not a bold block |
@@ -280,8 +280,10 @@ admin4 carries the edit templates of `ezdate`, `ezdatetime`, `eztime`, `ezurl`, 
 row (`.a4-content-parts`, the date and the time of `ezdatetime` in `.a4-content-datetime`), each with its label above
 the field and without a colon; a heading without a control of its own is a `p.a4-label`; the calendar is a
 `button.a4-btn.a4-btn-icon` with `.a4-icon.a4-bi-calendar3`; no `div.element` floats, `div.break` or `&nbsp;` spacing.
-The other datatypes take the look through the stylesheet alone; a few still put a colon after a part's label
-(`ezmedia`, `ezmultioption`, `ezrangeoption`, `ezmultiprice`, `ezinisetting`, `ezpackage`).
+The other datatypes take the look through the stylesheet alone; some still put a colon after a part's label, for
+example `ezmedia`, `ezmultioption`, `ezrangeoption`, `ezmultiprice`, `ezinisetting`, `ezpackage` and the inline edit
+of `ezobjectrelationlist`. admin4's `theme/rounded.css` no longer styles `.datepicker-icon` (the calendar is an
+`.a4-btn` now); the class stays in `design/admin`, whose calendar is still the image.
 `tests/tests/design/AdminContentEditFormsTest.php` checks the rules and the templates.
 
 ## Dark mode

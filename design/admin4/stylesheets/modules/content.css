@@ -389,7 +389,7 @@ div.block.a4-content-attr { margin: 0 0 var(--a4-space-5); padding-bottom: 0; } 
   box-shadow: none;
   vertical-align: middle;
 }
-.a4-content-attr :is(input, textarea):is(.box, .halfbox) { width: 100%; }
+.a4-content-attr :is(input, textarea).box { width: 100%; }   /* .halfbox keeps core.css's half width */
 .a4-content-attr textarea { min-height: 96px; line-height: var(--a4-leading); }
 .a4-content-attr :is(input, select, textarea):where(:not([type]), [type=text], [type=password], [type=email], [type=number],
     [type=url], [type=tel], [type=search], [type=date], [type=time], [type=datetime-local], select, textarea):focus {

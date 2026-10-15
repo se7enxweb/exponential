@@ -170,6 +170,36 @@ class AdminContentEditFormsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( '0', $rules['#page fieldset.a4-content-attr-group']['border'], 'no box of its own around a grouped input' );
     }
 
+    /** The form fields a template posts: the names and the ids of its controls, the targets of its labels */
+    private static function formFields( $source )
+    {
+        $source = preg_replace( '/\{\*.*?\*\}/s', '', $source );
+        preg_match_all( '/<(?:input|select|textarea)\b[^>]*?\sname="([^"]*)"/', $source, $names );
+        preg_match_all( '/<(?:input|select|textarea)\b[^>]*?\sid="([^"]*)"/', $source, $ids );
+        preg_match_all( '/<label\b[^>]*?\sfor="([^"]*)"/', $source, $for );
+        $blocks = array();
+        foreach ( array( 'section', 'if', 'def', 'default', 'foreach', 'let' ) as $block )
+            $blocks[$block] = preg_match_all( '/\{' . $block . '\b/', $source ) . '/' . preg_match_all( '/\{\/' . $block . '\}/', $source );
+        $sorted = function ( array $list ) { sort( $list ); return $list; };
+        return array( 'names' => $sorted( $names[1] ), 'ids' => $sorted( $ids[1] ), 'for' => $sorted( $for[1] ), 'blocks' => $blocks );
+    }
+
+    /**
+     * The copies of design/standard's templates post the same fields with the same ids and label targets and keep the
+     * template blocks balanced as the original: only the markup around them changed (ezdate and ezdatetime were
+     * admin4 templates before and inline their ids)
+     */
+    public function testTheCopiesPostWhatTheOriginalsPost()
+    {
+        foreach ( array_diff( self::DATATYPES, array( 'ezdate', 'ezdatetime' ) ) as $datatype )
+        {
+            $original = self::formFields( self::read( "design/standard/templates/content/datatype/edit/$datatype.tpl" ) );
+            $copy = self::formFields( self::read( "design/admin4/templates/content/datatype/edit/$datatype.tpl" ) );
+            $this->assertNotEmpty( $copy['names'], $datatype );
+            $this->assertSame( $original, $copy, "$datatype.tpl posts other fields than design/standard's" );
+        }
+    }
+
     public function testTheLanguagesToTranslateFromAreCheckRows()
     {
         $menu = self::read( 'design/admin4/templates/content/edit_menu.tpl' );
@@ -185,6 +215,7 @@ class AdminContentEditFormsTest extends PHPUnit\Framework\TestCase
             $this->assertFileExists( self::root() . '/' . $path );
             $tpl = preg_replace( '/\{\*.*?\*\}/s', '', self::read( $path ) );
             $this->assertDoesNotMatchRegularExpression( '/:\s*<\/label>/', $tpl, "$path: a label ends without a colon" );
+            $this->assertDoesNotMatchRegularExpression( '/\{\/if\}:\s*<\/label>/', $tpl, "$path: a label ends without a colon" );
             $this->assertDoesNotMatchRegularExpression( '/<label>[^<]*<\/label>/', $tpl, "$path: a heading without a control of its own is a .a4-label paragraph" );
             $this->assertStringNotContainsString( '|ezimage', $tpl, "$path: icons are .a4-icon" );
             $this->assertStringNotContainsString( 'class="element"', $tpl, "$path: parts stand in .a4-content-parts, not in floats" );
