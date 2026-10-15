@@ -242,7 +242,8 @@ class AdminLegacyControlsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'calc(var(--a4-control-h) - 6px)', $rules['.a4-tabs.is-segmented > :is(a, button, span.current, .is-current)']['min-height'] );
         $pressed = self::rule( $rules, '.a4-tabs.is-segmented > :is(span.current, a.current, .is-current, [aria-pressed="true"], [aria-current="true"], [aria-current="page"])' );
         $this->assertNotNull( $pressed, 'one rule marks the current choice of buttons and of links' );
-        $this->assertSame( 'var(--a4-accent-soft)', $pressed['background-color'], 'tinted, not filled' );
+        $this->assertSame( 'var(--a4-card)', $pressed['background-color'], 'tinted over the card, not filled' );
+        $this->assertSame( 'linear-gradient(var(--a4-accent-soft), var(--a4-accent-soft))', $pressed['background-image'], 'the tint over the card keeps the text at 4.5:1' );
         $this->assertSame( 'var(--a4-accent-text)', $pressed['color'] );
         $this->assertSame( 'var(--a4-accent-text)', $pressed['border-color'], 'an edge of 3:1 on the track in both modes' );
         $forced = AdminBaseStylesheetsTest::rules( self::css( 'components.css' ), true );
@@ -284,6 +285,13 @@ class AdminLegacyControlsTest extends PHPUnit\Framework\TestCase
         $current = self::rule( $forced, '.a4-tabs.is-segmented > :is(span.current, a.current, .is-current, [aria-pressed="true"], [aria-current="true"], [aria-current="page"])' );
         $this->assertSame( 'Highlight', $current['border-color'] );
         $this->assertSame( '2px solid Highlight', $current['outline'] );
+        $this->assertSame( 'none', $current['background-image'], 'no tint left over the system colours' );
+        $focus = $forced['.a4-tabs.is-segmented > :is(a, button):focus-visible'];
+        $this->assertSame( '3px solid CanvasText', $focus['outline'], 'the focus ring is not replaced by the current outline' );
+        $this->assertSame( '1px', $focus['outline-offset'] );
+        $order = array_keys( $forced );
+        $this->assertGreaterThan( array_search( '.a4-tabs.is-segmented > :is(span.current, a.current, .is-current, [aria-pressed="true"], [aria-current="true"], [aria-current="page"])', $order, true ),
+                                  array_search( '.a4-tabs.is-segmented > :is(a, button):focus-visible', $order, true ), 'the focus rule comes after the current rule' );
         $this->assertFileEquals( self::root() . '/design/admin4/stylesheets/components.css', self::root() . '/design/admin/stylesheets/components.css', 'design/admin keeps a copy' );
     }
 

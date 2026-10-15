@@ -10,7 +10,7 @@
 {* DESIGN: Content START *}<div class="box-bc"><div class="box-ml"><div class="box-content">
 
 {* Each preference: its name and an on/off switch (.a4-tabs.is-segmented) on one row; the current state is the
-   filled part (aria-current), the other one the link that changes it. *}
+   marked part (aria-current), the other one the link that changes it. *}
 <div class="settings">
 <ul>
     <li class="nobullet"><span class="a4-pref-label" id="a4-pref-locations">{'Locations'|i18n( 'design/admin/parts/my/menu')}</span>

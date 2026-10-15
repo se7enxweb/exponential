@@ -1123,9 +1123,9 @@ fieldset.a4-field > legend + * { clear: both; }
 .a4-tabs .a4-count { font-variant-numeric: tabular-nums; opacity: .9; }
 /* A segmented switch (on | off, small | medium | large): one pill as high as the other controls (--a4-control-h), for
    narrow places such as the side columns. The track is drawn once around every choice (a 1px edge, 2px inset); each
-   choice is a pill inside it, and the current one is tinted in the accent with an edge in the accent text colour,
-   its text in that colour too (6.5:1 light, 5.5:1 dark on the tint). A switch of buttons marks the current choice
-   with aria-pressed="true", a switch of links with span.current, a.current, .is-current or aria-current.
+   choice is a pill inside it, and the current one is tinted in the accent (over the card) with an edge in the
+   accent text colour, its text in that colour too (4.8:1 light, 6.1:1 dark). A switch of buttons marks the current
+   choice with aria-pressed="true", a switch of links with span.current, a.current or .is-current (with aria-current).
    .is-icons makes each button a round target around one .a4-icon (its name in .a4-sr-only inside it, and in its
    title). */
 .a4-tabs.is-segmented {
@@ -1163,7 +1163,8 @@ fieldset.a4-field > legend + * { clear: both; }
 .a4-tabs.is-segmented > :is(span.current, a.current, .is-current, [aria-pressed="true"], [aria-current="true"], [aria-current="page"]),
 .a4-tabs.is-segmented > :is(a.current, .is-current, [aria-pressed="true"], [aria-current="true"], [aria-current="page"]):hover {
   border-color: var(--a4-accent-text);   /* the edge keeps 3:1 on the track in light and dark mode */
-  background-color: var(--a4-accent-soft);
+  background-color: var(--a4-card);   /* the tint over the card, not over the track: the text keeps 4.5:1 */
+  background-image: linear-gradient(var(--a4-accent-soft), var(--a4-accent-soft));
   color: var(--a4-accent-text);
   font-weight: 650;
 }
@@ -1799,7 +1800,9 @@ a.a4-current-user-name { color: var(--a4-ink); font-weight: 400; text-decoration
   .a4-tabs .is-current, .a4-tabs button[aria-pressed="true"], .a4-table tr.is-selected td, .a4-card.is-selected, .a4-figure.is-current { outline: 2px solid Highlight; outline-offset: -2px; }
   /* the segmented pill: its track in the text colour, the current choice inside it in Highlight */
   .a4-tabs.is-segmented { border-color: CanvasText; }
-  .a4-tabs.is-segmented > :is(span.current, a.current, .is-current, [aria-pressed="true"], [aria-current="true"], [aria-current="page"]) { border-color: Highlight; outline: 2px solid Highlight; outline-offset: -2px; }
+  .a4-tabs.is-segmented > :is(span.current, a.current, .is-current, [aria-pressed="true"], [aria-current="true"], [aria-current="page"]) { border-color: Highlight; background-image: none; outline: 2px solid Highlight; outline-offset: -2px; }
+  /* the focus ring stays a ring outside the choice, also on the current one (the outline above would replace it) */
+  .a4-tabs.is-segmented > :is(a, button):focus-visible { outline: 3px solid CanvasText; outline-offset: 1px; }
   .a4-chip input:checked + span { background-color: Highlight; color: HighlightText; }
   .a4-steps li.is-current::before { background-color: Highlight; color: HighlightText; }
   .a4-steps li.is-done::before { border: 1px solid CanvasText; }
