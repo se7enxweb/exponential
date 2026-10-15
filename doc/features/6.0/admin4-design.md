@@ -408,7 +408,7 @@ replaced by the hover preview of another tab.
 #### Which tabs take part, and how to add one
 
 A tab takes part when it is named in `MegaMenuTabs[]` **and** its `[Topmenu_<tab>]` names a `MegaMenuTemplate`; a
-name without one does nothing. The template draws the tab's menu as the panel's groups, always through
+name without one is ignored. The template draws the tab's menu as the panel's groups, always through
 `parts/ini_menu.tpl` with `menu_layout='tiles'` and `tiles_layout='mega'`, so that the links keep the names, groups,
 icons, descriptions and access checks of a menu.ini section:
 
@@ -419,7 +419,8 @@ icons, descriptions and access checks of a menu.ini section:
 
 To give another tab one (an extension's, say): write a template in admin4 that includes `parts/ini_menu.tpl` with
 the tab's section, `menu_layout='tiles'`, `tiles_layout='mega'` and the `i18n_hash` of its link names; name it in
-`[Topmenu_<tab>] MegaMenuTemplate=design:...` (a `design:` template, nothing else is accepted); give the section's
+`[Topmenu_<tab>] MegaMenuTemplate=design:...` (a `design:` template, nothing else is accepted) and its section in
+`MegaMenuSection=<section>` (read only by the check of the settings, below); give the section's
 links `LinkIcons[]` (names of `design.ini [AdminDesignSettings] IconList[]`) and `LinkDescriptions[]`, and a
 `MegaMenuLinks[]`; then add the tab to `MegaMenuTabs[]`. A tab whose left menu is no menu.ini list (a tree, a
 template of its own) gets a section that only gathers its functions, as the Users tab does.
@@ -473,7 +474,8 @@ opens the user form directly. A permission check for one user has no view in the
   The default is in `settings/menu.ini` rather than in the template so that it can be read and changed where the
   links are defined.
 - **The tab stays a link.** The button beside it is a disclosure (the WAI-ARIA disclosure navigation pattern, not a
-  menu): `aria-expanded`, `aria-controls`, named "Open the <tab> menu". Click, Enter or Space opens and closes the
+  menu): `aria-expanded`, `aria-controls`, named "<tab> menu" (a screen reader adds "collapsed" or "expanded"
+  from `aria-expanded`, so the name does not say "open"). Click, Enter or Space opens and closes the
   panel; ArrowDown opens it and goes to its first link; Tab goes through its links in order and on past the panel,
   which closes it, as does a click outside; Escape closes it and gives the focus back to the button. Each group is a
   section with a heading (`h2`, drawn small); the links are plain links, the description is the link's description
@@ -484,9 +486,18 @@ opens the user form directly. A permission check for one user has no view in the
   the preview open. Only a pointer of type
   mouse on a device that reports `(hover: hover) and (pointer: fine)`; never on touch, and not while the header's
   "More" list or user menu is open.
-- **From 1280px only**, where the header is one row. Below, on the two-row header and on phones, the button is not
-  drawn and the tab is a plain link; the phone menu is unchanged. A tab moved into the "More" list loses its button
-  there.
+- **From 576px**, wherever the main menu is one line: the one-row header from 1280px and the two-row header from 576
+  to 1279px, which is also what a browser at 200% zoom shows on a 1920px screen (960px). The panel is placed under
+  the header's measured height (`--header-height`) and its groups wrap to two or one column on a narrower window,
+  scrolling inside the panel when they are taller than the window. Below 576px, in the phone menu, the button and the
+  panel are not drawn and the tab is a plain link. A tab moved into the "More" list loses its button there.
+- **Unknown settings are named in the debug report.** `parts/a4_mega_menu_check.tpl` (included with the script, so
+  only while `MegaMenuTabs[]` names a tab) writes a debug message for a `MegaMenuTabs[]` value without
+  `MegaMenuTemplate` and `NavigationPartIdentifier`, for a key of the section's `MegaMenuLinks[]`
+  (`[Topmenu_<tab>] MegaMenuSection`) that is no link of the section and no `<group>-<key>` of a section its
+  `GroupSections[]` adds (an unknown key, or the link of an extension that is not active on this siteaccess), and
+  for more than 12 keys. The header and the panel simply leave out what they cannot use. The message is written when
+  the page's cache block is built, so clear the template-block cache to see it again.
 - **One source, loaded when needed.** The links are those of the tab's menu: `user/megamenu/<tab>`, one view for
   every tab, without page layout (`ui_context` ajax, `Cache-Control: private, no-store`), draws the tab's
   `MegaMenuTemplate` (`user/megamenu.tpl`), which goes through `parts/ini_menu.tpl` with `tiles_layout='mega'`
@@ -512,14 +523,20 @@ opens the user form directly. A permission check for one user has no view in the
   and as wide as its groups need: up to three groups of 17rem side by side, so a short choice makes a narrow card;
   descriptions wrap instead of being cut. Light and dark, a CanvasText border and Highlight states under forced colors, no transition
   with reduced motion. Styles in `admin4.css`.
-- **Not in admin4l:** its tab menu block draws no button.
+- **admin4 and admin4l alike:** the tabs are drawn by one template, `parts/a4_topmenu_items.tpl`, which decides
+  which tabs get a mega menu; admin4's `page_topmenu.tpl` and admin4l's tab menu block
+  (`design/admin4l/templates/explayouts/block/admin_tab_menu.tpl`) both include it.
+- **Layers:** the panel is `z-index: var(--a4-z-menu)` inside the fixed header (`--a4-z-header`): over the side
+  columns' edge tabs, under a dialog's mask and the dialog (`--a4-z-overlay`, `--a4-z-modal`) and under toasts
+  (`--a4-z-toast`); the debug report's bar stays above everything.
 
 `tests/tests/design/AdminMegaMenuTest.php` holds the defaults of both tabs, the markup, the source and the view
 (which tabs it serves, and only while the user has them: hidden, disabled, not shown, not listed), the widths and
 the strings, the Users section (its added menus, existing links, icons, names and descriptions in both languages), renders the panel's template with fake groups (the choice, its order, access, groups left out, the
 limit of 12, no choice, a key of a moved tab that falls back to the group's link of the same address), and runs the script in node (`tests/tests/design/js/mega_menu.js`: click, ArrowDown, Escape, Tab, a
 click outside, the delays, touch, the focus coming into a preview, the width, the "More" list, one load and a
-failed one, two tabs with one panel open at a time).
+failed one, two tabs with one panel open at a time), checks that admin4 and admin4l draw the tabs with the one
+template, and renders the settings check with unknown tabs and keys and reads the debug messages it writes.
 
 ## Languages
 
