@@ -24,9 +24,10 @@
 
    * menu_layout : (optional) 'tiles' draws the same links, groups and access checks as an overview page of tiles
      (parts/ini_menu_tiles.tpl; the Setup overview, setup/setupmenu.tpl) instead of the menu; the lead links are
-     left out there. With it:
-   * tiles : (optional) hash link key => hash( 'icon', 'a4-bi-<name>', 'text', a one-line description )
-   * tile_figures : (optional) a template that draws a tile's figure, included with figure_key = the link key
+     left out there. A tile takes its icon, description and figure from the menu's section as well:
+     LinkIcons[<key>] (a name of design.ini [AdminDesignSettings] IconList[], else the plug icon),
+     LinkDescriptions[<key>] (translated in the menu's context, like LinkNames[]) and LinkFigureTemplates[<key>]
+     (a design: template included with figure_key=<key>).
 *}
 
 {if is_unset( $ini_section )}
@@ -48,12 +49,6 @@
 
 {if is_unset( $menu_layout )}
     {def $menu_layout = 'menu'}
-{/if}
-{if is_unset( $tiles )}
-    {def $tiles = hash()}
-{/if}
-{if is_unset( $tile_figures )}
-    {def $tile_figures = ''}
 {/if}
 
 {if $uri_string}
@@ -217,7 +212,11 @@
                     {set $groups = array( hash( 'id', 'all', 'name', '', 'translated', true(), 'items', $group_items ) )}
                 {/if}
             {/if}
-            {include uri='design:parts/ini_menu_tiles.tpl' groups=$groups tiles=$tiles tile_figures=$tile_figures
+            {include uri='design:parts/ini_menu_tiles.tpl' groups=$groups
+                     tile_icons=cond( ezini_hasvariable( $ini_section, 'LinkIcons', 'menu.ini' ), ezini( $ini_section, 'LinkIcons', 'menu.ini' ), hash() )
+                     tile_texts=cond( ezini_hasvariable( $ini_section, 'LinkDescriptions', 'menu.ini' ), ezini( $ini_section, 'LinkDescriptions', 'menu.ini' ), hash() )
+                     tile_figures=cond( ezini_hasvariable( $ini_section, 'LinkFigureTemplates', 'menu.ini' ), ezini( $ini_section, 'LinkFigureTemplates', 'menu.ini' ), hash() )
+                     known_icons=cond( ezini_hasvariable( 'AdminDesignSettings', 'IconList', 'design.ini' ), ezini( 'AdminDesignSettings', 'IconList', 'design.ini' ), array() )
                      tile_id_prefix=concat( 'a4-tiles-', $ini_section|explode( '_' )|implode( '-' ) ) i18n_section=$i18n_section}
         {else}
         {* DESIGN: Header START *}<div class="box-header"><div class="box-ml">

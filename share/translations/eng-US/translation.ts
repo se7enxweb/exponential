@@ -12891,6 +12891,158 @@ Note: The packages will not be uninstalled.</translation>
 <context>
     <name>design/admin/parts/setup/menu</name>
     <message>
+        <source>Who changed what: the audit settings and archives.</source>
+        <translation>Who changed what: the audit settings and archives.</translation>
+    </message>
+    <message>
+        <source>Clear or regenerate the caches.</source>
+        <translation>Clear or regenerate the caches.</translation>
+    </message>
+    <message>
+        <source>The content classes and their attributes.</source>
+        <translation>The content classes and their attributes.</translation>
+    </message>
+    <message>
+        <source>What visitors sent through forms.</source>
+        <translation>What visitors sent through forms.</translation>
+    </message>
+    <message>
+        <source>Find content by its id, remote id or path.</source>
+        <translation>Find content by its id, remote id or path.</translation>
+    </message>
+    <message>
+        <source>The cronjob parts, their scripts and last runs.</source>
+        <translation>The cronjob parts, their scripts and last runs.</translation>
+    </message>
+    <message>
+        <source>Activate and deactivate extensions.</source>
+        <translation>Activate and deactivate extensions.</translation>
+    </message>
+    <message>
+        <source>The settings of the whole site.</source>
+        <translation>The settings of the whole site.</translation>
+    </message>
+    <message>
+        <source>Read and edit the INI settings.</source>
+        <translation>Read and edit the INI settings.</translation>
+    </message>
+    <message>
+        <source>The languages content is written in.</source>
+        <translation>The languages content is written in.</translation>
+    </message>
+    <message>
+        <source>The look of the site.</source>
+        <translation>The look of the site.</translation>
+    </message>
+    <message>
+        <source>E-mail categories, suppressions and consents.</source>
+        <translation>E-mail categories, suppressions and consents.</translation>
+    </message>
+    <message>
+        <source>Run the maintenance tasks of the installation.</source>
+        <translation>Run the maintenance tasks of the installation.</translation>
+    </message>
+    <message>
+        <source>The menus of the classic site designs.</source>
+        <translation>The menus of the classic site designs.</translation>
+    </message>
+    <message>
+        <source>Pending notifications and the last runs.</source>
+        <translation>Pending notifications and the last runs.</translation>
+    </message>
+    <message>
+        <source>The OAuth clients and their access.</source>
+        <translation>The OAuth clients and their access.</translation>
+    </message>
+    <message>
+        <source>Import, export and install packages.</source>
+        <translation>Import, export and install packages.</translation>
+    </message>
+    <message>
+        <source>Export parts of the content tree as PDF.</source>
+        <translation>Export parts of the content tree as PDF.</translation>
+    </message>
+    <message>
+        <source>Warm the caches of the sites.</source>
+        <translation>Warm the caches of the sites.</translation>
+    </message>
+    <message>
+        <source>Wizards for template operators and datatypes.</source>
+        <translation>Wizards for template operators and datatypes.</translation>
+    </message>
+    <message>
+        <source>Who may do what, and where.</source>
+        <translation>Who may do what, and where.</translation>
+    </message>
+    <message>
+        <source>RSS imports and exports.</source>
+        <translation>RSS imports and exports.</translation>
+    </message>
+    <message>
+        <source>What visitors searched for.</source>
+        <translation>What visitors searched for.</translation>
+    </message>
+    <message>
+        <source>Sections group content for access and design.</source>
+        <translation>Sections group content for access and design.</translation>
+    </message>
+    <message>
+        <source>Who is signed in; end sessions.</source>
+        <translation>Who is signed in; end sessions.</translation>
+    </message>
+    <message>
+        <source>The site data rows, read only.</source>
+        <translation>The site data rows, read only.</translation>
+    </message>
+    <message>
+        <source>Object state groups and their states.</source>
+        <translation>Object state groups and their states.</translation>
+    </message>
+    <message>
+        <source>PHP, database and server, with health checks.</source>
+        <translation>PHP, database and server, with health checks.</translation>
+    </message>
+    <message>
+        <source>The templates of the designs and their overrides.</source>
+        <translation>The templates of the designs and their overrides.</translation>
+    </message>
+    <message>
+        <source>List and edit templates.</source>
+        <translation>List and edit templates.</translation>
+    </message>
+    <message>
+        <source>The toolbars and their tools.</source>
+        <translation>The toolbars and their tools.</translation>
+    </message>
+    <message>
+        <source>Which workflow runs on which event.</source>
+        <translation>Which workflow runs on which event.</translation>
+    </message>
+    <message>
+        <source>Compare files and database with this release.</source>
+        <translation>Compare files and database with this release.</translation>
+    </message>
+    <message>
+        <source>Check the links in the content.</source>
+        <translation>Check the links in the content.</translation>
+    </message>
+    <message>
+        <source>Custom URL aliases and forwards.</source>
+        <translation>Custom URL aliases and forwards.</translation>
+    </message>
+    <message>
+        <source>URL patterns that redirect or forward.</source>
+        <translation>URL patterns that redirect or forward.</translation>
+    </message>
+    <message>
+        <source>Workflows that are running or waiting.</source>
+        <translation>Workflows that are running or waiting.</translation>
+    </message>
+    <message>
+        <source>Workflow groups, workflows and their events.</source>
+        <translation>Workflow groups, workflows and their events.</translation>
+    </message>
+    <message>
         <source>Overview</source>
         <translation>Overview</translation>
     </message>
@@ -63827,172 +63979,44 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Functions</translation>
     </message>
     <message>
-        <source>%count defined</source>
-        <translation>%count defined</translation>
+        <source>1 class</source>
+        <translation>1 class</translation>
     </message>
     <message>
-        <source>%count in use</source>
-        <translation>%count in use</translation>
+        <source>%count classes</source>
+        <translation>%count classes</translation>
+    </message>
+    <message>
+        <source>1 section</source>
+        <translation>1 section</translation>
+    </message>
+    <message>
+        <source>%count sections</source>
+        <translation>%count sections</translation>
+    </message>
+    <message>
+        <source>1 language</source>
+        <translation>1 language</translation>
+    </message>
+    <message>
+        <source>%count languages</source>
+        <translation>%count languages</translation>
+    </message>
+    <message>
+        <source>1 active</source>
+        <translation>1 active</translation>
     </message>
     <message>
         <source>%count active</source>
         <translation>%count active</translation>
     </message>
     <message>
-        <source>%count signed in</source>
-        <translation>%count signed in</translation>
+        <source>1 user signed in</source>
+        <translation>1 user signed in</translation>
     </message>
     <message>
-        <source>Who changed what: the audit settings and archives.</source>
-        <translation>Who changed what: the audit settings and archives.</translation>
-    </message>
-    <message>
-        <source>Clear or regenerate the caches.</source>
-        <translation>Clear or regenerate the caches.</translation>
-    </message>
-    <message>
-        <source>The content classes and their attributes.</source>
-        <translation>The content classes and their attributes.</translation>
-    </message>
-    <message>
-        <source>What visitors sent through forms.</source>
-        <translation>What visitors sent through forms.</translation>
-    </message>
-    <message>
-        <source>Find content by its id, remote id or path.</source>
-        <translation>Find content by its id, remote id or path.</translation>
-    </message>
-    <message>
-        <source>The cronjob parts, their scripts and last runs.</source>
-        <translation>The cronjob parts, their scripts and last runs.</translation>
-    </message>
-    <message>
-        <source>Activate and deactivate extensions.</source>
-        <translation>Activate and deactivate extensions.</translation>
-    </message>
-    <message>
-        <source>The settings of the whole site.</source>
-        <translation>The settings of the whole site.</translation>
-    </message>
-    <message>
-        <source>Read and edit the INI settings.</source>
-        <translation>Read and edit the INI settings.</translation>
-    </message>
-    <message>
-        <source>The languages content is written in.</source>
-        <translation>The languages content is written in.</translation>
-    </message>
-    <message>
-        <source>The look of the site.</source>
-        <translation>The look of the site.</translation>
-    </message>
-    <message>
-        <source>E-mail categories, suppressions and consents.</source>
-        <translation>E-mail categories, suppressions and consents.</translation>
-    </message>
-    <message>
-        <source>Run the maintenance tasks of the installation.</source>
-        <translation>Run the maintenance tasks of the installation.</translation>
-    </message>
-    <message>
-        <source>The menus of the classic site designs.</source>
-        <translation>The menus of the classic site designs.</translation>
-    </message>
-    <message>
-        <source>Pending notifications and the last runs.</source>
-        <translation>Pending notifications and the last runs.</translation>
-    </message>
-    <message>
-        <source>The OAuth clients and their access.</source>
-        <translation>The OAuth clients and their access.</translation>
-    </message>
-    <message>
-        <source>Import, export and install packages.</source>
-        <translation>Import, export and install packages.</translation>
-    </message>
-    <message>
-        <source>Export parts of the content tree as PDF.</source>
-        <translation>Export parts of the content tree as PDF.</translation>
-    </message>
-    <message>
-        <source>Warm the caches of the sites.</source>
-        <translation>Warm the caches of the sites.</translation>
-    </message>
-    <message>
-        <source>Wizards for template operators and datatypes.</source>
-        <translation>Wizards for template operators and datatypes.</translation>
-    </message>
-    <message>
-        <source>Who may do what, and where.</source>
-        <translation>Who may do what, and where.</translation>
-    </message>
-    <message>
-        <source>RSS imports and exports.</source>
-        <translation>RSS imports and exports.</translation>
-    </message>
-    <message>
-        <source>What visitors searched for.</source>
-        <translation>What visitors searched for.</translation>
-    </message>
-    <message>
-        <source>Sections group content for access and design.</source>
-        <translation>Sections group content for access and design.</translation>
-    </message>
-    <message>
-        <source>Who is signed in; end sessions.</source>
-        <translation>Who is signed in; end sessions.</translation>
-    </message>
-    <message>
-        <source>The site data rows, read only.</source>
-        <translation>The site data rows, read only.</translation>
-    </message>
-    <message>
-        <source>Object state groups and their states.</source>
-        <translation>Object state groups and their states.</translation>
-    </message>
-    <message>
-        <source>PHP, database and server, with health checks.</source>
-        <translation>PHP, database and server, with health checks.</translation>
-    </message>
-    <message>
-        <source>The templates of the designs and their overrides.</source>
-        <translation>The templates of the designs and their overrides.</translation>
-    </message>
-    <message>
-        <source>List and edit templates.</source>
-        <translation>List and edit templates.</translation>
-    </message>
-    <message>
-        <source>The toolbars and their tools.</source>
-        <translation>The toolbars and their tools.</translation>
-    </message>
-    <message>
-        <source>Which workflow runs on which event.</source>
-        <translation>Which workflow runs on which event.</translation>
-    </message>
-    <message>
-        <source>Compare files and database with this release.</source>
-        <translation>Compare files and database with this release.</translation>
-    </message>
-    <message>
-        <source>Check the links in the content.</source>
-        <translation>Check the links in the content.</translation>
-    </message>
-    <message>
-        <source>Custom URL aliases and forwards.</source>
-        <translation>Custom URL aliases and forwards.</translation>
-    </message>
-    <message>
-        <source>URL patterns that redirect or forward.</source>
-        <translation>URL patterns that redirect or forward.</translation>
-    </message>
-    <message>
-        <source>Workflows that are running or waiting.</source>
-        <translation>Workflows that are running or waiting.</translation>
-    </message>
-    <message>
-        <source>Workflow groups, workflows and their events.</source>
-        <translation>Workflow groups, workflows and their events.</translation>
+        <source>%count users signed in</source>
+        <translation>%count users signed in</translation>
     </message>
 </context>
 <context>

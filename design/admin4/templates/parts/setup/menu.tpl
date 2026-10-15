@@ -5,18 +5,14 @@
   For extensions that need to extend this, you either have to override this
   template or let translations use LinkNames as described in menu.ini.
 
-  The Setup overview (setup/setupmenu.tpl) includes this template with setup_menu_layout='tiles' and
-  setup_menu_tiles (icons and descriptions): the same links, names and access checks, drawn as tiles, without the
-  width control.
+  The Setup overview (setup/setupmenu.tpl) includes this template with setup_menu_layout='tiles': the same links,
+  names and access checks, drawn as tiles with the icons, descriptions and figures of menu.ini [Leftmenu_setup]
+  (LinkIcons[], LinkDescriptions[], LinkFigureTemplates[]), without the width control.
 *}
 {if is_unset( $setup_menu_layout )}{def $setup_menu_layout = 'menu'}{/if}
-{if is_unset( $setup_menu_tiles )}{def $setup_menu_tiles = hash()}{/if}
-{if is_unset( $setup_menu_figures )}{def $setup_menu_figures = ''}{/if}
 
 {include uri='design:parts/ini_menu.tpl' ini_section='Leftmenu_setup'
     menu_layout=$setup_menu_layout
-    tiles=$setup_menu_tiles
-    tile_figures=$setup_menu_figures
     i18n_hash=hash(
     'setup',              'Setup'|i18n( 'design/admin/parts/setup/menu' ),
     'overview',           'Overview'|i18n( 'design/admin/parts/setup/menu' ),
