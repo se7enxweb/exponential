@@ -143,8 +143,8 @@ class ezjscPacker
     }
 
     /**
-     * Whether an entry of packFiles() is the URL of a file (an http(s) URL, or a path ending in $extension, with the
-     * file's time as ?v=<time> or without) rather than generated content to write inline.
+     * Whether an entry of packFiles() is the URL of a file (an http(s) URL, or a path ending in $extension) rather
+     * than generated content to write inline.
      *
      * @param string $entry
      * @param string $extension '.js' or '.css'
@@ -156,7 +156,7 @@ class ezjscPacker
             return false;
         if ( strpos( $entry, 'http://' ) === 0 || strpos( $entry, 'https://' ) === 0 )
             return true;
-        return (bool) preg_match( '/' . preg_quote( $extension, '/' ) . '(\?v=\d+)?$/i', $entry );
+        return (bool) preg_match( '/' . preg_quote( $extension, '/' ) . '$/i', $entry );
     }
 
     /**
@@ -391,10 +391,9 @@ class ezjscPacker
             // Calculate last modified time and store in arrays
             $data['last_modified'] = max( $data['last_modified'], $fileTime );
             $data['locale'][]      = $file;
-            // The unpacked URL (packing off, as with DevelopmentMode) carries the file's time, like the packed file's
-            // name does: the files are served with a long browser cache lifetime, and without it a browser kept
-            // its old copy of a script or stylesheet after an update
-            $data['www'][]         = $wwwFile . '?v=' . $fileTime;
+            // The unpacked URL (packing off, as with DevelopmentMode) is the file's own address, never with a version
+            // query (owner rule: no version query on script and stylesheet links; an old copy is reloaded by hand)
+            $data['www'][]         = $wwwFile;
             $data['cache_name']   .= $file . '_';
         }
 

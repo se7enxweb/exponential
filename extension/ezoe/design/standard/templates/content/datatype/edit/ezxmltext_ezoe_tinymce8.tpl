@@ -71,22 +71,20 @@
     {set $tiny_language = ''}
 {/if}
 
-{def $cache_query = concat( '?v=', $input_handler.tinymce8_cache_key )
-     $plugin_urls = hash()}
+{* no version query on the asset links (owner rule): a browser that kept an old copy is reloaded by hand *}
+{def $plugin_urls = hash()}
 {foreach $input_handler.engine.plugins as $plugin_name => $plugin_path}
     {set $plugin_urls = $plugin_urls|merge( hash( $plugin_name, $plugin_path|ezdesign( 'no' ) ) )}
 {/foreach}
-<script src="{'javascript/tinymce8/tinymce.min.js'|ezdesign( 'no' )}{$cache_query}" charset="utf-8"></script>
-<script src="{'javascript/tinymce8_ez/ezoe_dialog.js'|ezdesign( 'no' )}{$cache_query}" charset="utf-8"></script>
-<link rel="stylesheet" type="text/css" href="{'javascript/tinymce8_ez/ezoe_dialog.css'|ezdesign( 'no' )}{$cache_query}" />
+<script src="{'javascript/tinymce8/tinymce.min.js'|ezdesign( 'no' )}" charset="utf-8"></script>
+<script src="{'javascript/tinymce8_ez/ezoe_dialog.js'|ezdesign( 'no' )}" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="{'javascript/tinymce8_ez/ezoe_dialog.css'|ezdesign( 'no' )}" />
 {if $skin|eq( 'o2k7' )}
-<link rel="stylesheet" type="text/css" href="{'javascript/tinymce8_ez/skins/o2k7/skin.css'|ezdesign( 'no' )}{$cache_query}" />
+<link rel="stylesheet" type="text/css" href="{'javascript/tinymce8_ez/skins/o2k7/skin.css'|ezdesign( 'no' )}" />
 {/if}
 <script type="text/javascript">
 var eZOe8GlobalSettings = {ldelim}
     license_key: 'gpl',
-    // TinyMCE loads plugins, skins and language packs itself, the suffix makes browsers reload changed files
-    cache_suffix: '{$cache_query}',
     {if $tiny_language}
     language: '{$tiny_language}',
     language_url: {concat( 'javascript/tinymce8/langs/', $tiny_language, '.js' )|ezdesign},

@@ -313,7 +313,7 @@
       "tests/tests/design/AdminEditBarTest.php"
     ],
     "extension/ezjscore/classes/ezjscpacker.php": [
-      "tests/tests/extension/ezjscore/ezjscPackerCacheBustingTest.php"
+      "tests/tests/extension/ezjscore/ezjscPackerNoVersionQueryTest.php"
     ],
     "kernel/private/classes/views/content/hide.php": [
       "tests/tests/kernel/classes/expContentHideReturnTest.php"
