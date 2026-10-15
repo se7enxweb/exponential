@@ -403,7 +403,9 @@ Inline CSS that stays, each documented where it is:
 | admin3 `pagelayout.tpl`: a two-line script | the hand-dragged left column width, as above (admin3 has no theme script) |
 | `design/admin/templates/pagelayout.tpl`: one `<style>` block | the column widths of the editor's preferences, in em from `menu.ini [LeftMenuSettings] MenuWidth` or a dragged width, which a stylesheet cannot know, needed before the page is drawn |
 
-The left column's preset sizes (small, medium, large) are `html[data-a4-left-size]` rules in `pagelayout.css`.
+The left column's preset sizes (small, medium, large) are `html[data-a4-left-size]` rules in `pagelayout.css`. They
+set the width only (`--left-sidebar-width`): the column's text keeps the body's size at every width
+(`AdminLeftColumnFontTest`).
 
 ## Checked in CI
 

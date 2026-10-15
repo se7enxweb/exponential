@@ -1153,24 +1153,23 @@ input::placeholder {
 }
 
 /* The left column's size (the admin_left_menu_size preference), named on <html> by the pagelayout; a width dragged
-   by hand is set as --left-sidebar-width on <html> by a script in the head (no inline CSS in the templates). */
+   by hand is set as --left-sidebar-width on <html> by a script in the head (no inline CSS in the templates).
+   The size is a width only: the column's text keeps the body's size (--a4-text-body, as the right column) at every
+   width. admin3 also scaled the font with the size (0.8225rem, 1rem, 1.305rem); admin4 does not. */
 :root {
     --left-sidebar-width: 16rem;
-    --left-sidebar-font-size: 0.8225rem;
 }
 html[data-a4-left-size="medium"] {
     --left-sidebar-width: 22rem;
-    --left-sidebar-font-size: 1rem;
 }
 html[data-a4-left-size="large"] {
     --left-sidebar-width: 30rem;
-    --left-sidebar-font-size: 1.305rem;
 }
 
 .sidebar.left {
     left: 0;
     width: var(--left-sidebar-width, 15rem);
-    font-size: var(--left-sidebar-font-size, 0.8225rem);
+    font-size: inherit;
 }
 
 .sidebar.left > div {
