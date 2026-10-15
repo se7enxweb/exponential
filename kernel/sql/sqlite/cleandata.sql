@@ -26832,6 +26832,19 @@ INSERT INTO ezpolicy (
   0,
   3
 );
+INSERT INTO ezpolicy (
+  function_name,
+  id,
+  module_name,
+  original_id,
+  role_id
+) VALUES (
+  'design',
+  333,
+  'uiswitch',
+  0,
+  3
+);
 
 INSERT INTO ezpolicy_limitation (
   id,
