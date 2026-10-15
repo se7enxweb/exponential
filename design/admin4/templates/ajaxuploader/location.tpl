@@ -11,7 +11,7 @@
         {/if}
         <p>{"Please choose a location for the '%class' object that is going to be created from it."|i18n( 'design/admin/ajaxuploader', '', hash( '%class', $class.name|wash() ) )}</p>
         <div class="ajaxuploader-browse">
-            {include uri="design:ajaxuploader/browse.tpl" browse_start=$browse_start class=$class browse=$browse default_parent_node=$default_parent_node}
+            {include uri="design:ajaxuploader/browse.tpl" browse_start=$browse_start class=$class browse=$browse default_parent_node=$default_parent_node handler_id=$handler_id}
         </div>
 
         <p class="ajaxuploader-button-bar">

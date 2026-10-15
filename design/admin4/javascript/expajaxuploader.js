@@ -236,12 +236,13 @@
             e.stopPropagation();
         });
 
-        // step 2: browsing for the location (the links' href is the call: ezajaxuploader::browse::<node>::<class>)
+        // step 2: browsing for the location (the links' href is the call: ezajaxuploader::browse::<handler>::<node>::<class>;
+        // the target goes with it, so the server asks the handler whether the user may upload, as in the other steps)
         $c.on('click' + NS, conf.location.browse + ' a', function (e) {
             e.preventDefault();
             e.stopImmediatePropagation();
             var $place = $c.find(conf.location.browse).first();
-            self.call(this.getAttribute('href'), { method: 'GET' }, $place).then(function (content) {
+            self.call(this.getAttribute('href'), { data: self.handlerData() }, $place).then(function (content) {
                 if (content) { $c.find('input[type="submit"]').first().removeClass('defaultbutton').addClass('button'); }
             });
         });
