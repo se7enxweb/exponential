@@ -1,6 +1,7 @@
 {* The contentcheck/brokenrelations view (doc/features/6.0/content-checks.md, "Broken relations"). Read only.
 
-   Variables: result (node, excluded, findings, checked, last, done, error), params (node_id, exclude, kinds,
+   Variables: result (node, excluded, findings, checked, hidden: sources the user may not read, a number only, last,
+   done, error), params (node_id, exclude, kinds,
    relations, after, limit), kinds, relations, page_uri, filter_suffix, limit, limit_choices, limit_preference.
    The sources are walked by object id: a page shows the findings of the objects checked for it, and "Next page"
    goes on after the last of them (After). The same file is in design/admin and design/admin4. *}
@@ -75,6 +76,10 @@
     <h2 class="a4-h2" id="cc-list-title">{'Findings'|i18n( 'kernel/contentcheck' )}</h2>
     <span class="a4-meta">{if $params.after|gt( 0 )}{'%count objects checked after object %after.'|i18n( 'kernel/contentcheck',, hash( '%count', $result.checked, '%after', $params.after ) )}{else}{'%count objects checked.'|i18n( 'kernel/contentcheck',, hash( '%count', $result.checked ) )}{/if}</span>
 </div>
+
+{if $result.hidden|gt( 0 )}
+<p class="a4-meta">{'%count more objects in this range that you may not see were not checked.'|i18n( 'kernel/contentcheck',, hash( '%count', $result.hidden ) )}</p>
+{/if}
 
 {if $findings|count|eq( 0 )}
 <p class="a4-empty">{if $result.done}{'No broken relation found.'|i18n( 'kernel/contentcheck' )}{else}{'No broken relation found among these objects. Go on with the next page.'|i18n( 'kernel/contentcheck' )}{/if}</p>

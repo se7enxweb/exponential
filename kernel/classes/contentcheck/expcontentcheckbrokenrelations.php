@@ -63,9 +63,10 @@ class expContentCheckBrokenRelations
      * @param string[] $excludePatterns subtree patterns left out
      * @param array $permission array( 'from', 'where' ) of the content/read condition
      * @param int $after the last object id already checked
+     * @param int $upTo when above 0: only objects up to this id (the range a page checked)
      * @return string
      */
-    public static function sourceQuery( $subtreePattern, array $excludePatterns, array $permission, $after )
+    public static function sourceQuery( $subtreePattern, array $excludePatterns, array $permission, $after, $upTo = 0 )
     {
         foreach ( array_merge( array( $subtreePattern ), $excludePatterns ) as $pattern )
         {
@@ -81,6 +82,8 @@ class expContentCheckBrokenRelations
                         'ezcontentobject.id > ' . max( 0, (int)$after ) );
         foreach ( $excludePatterns as $pattern )
             $where[] = "ezcontentobject_tree.path_string NOT LIKE '" . $pattern . "'";
+        if ( (int)$upTo > 0 )
+            $where[] = 'ezcontentobject.id <= ' . (int)$upTo;
         return 'SELECT ezcontentobject.id AS object_id, ezcontentobject.current_version AS current_version,' .
                ' ezcontentobject.name AS object_name, ezcontentobject.contentclass_id AS class_id,' .
                ' ezcontentobject_tree.node_id AS node_id, ezcontentobject_tree.path_identification_string AS node_path' .
@@ -179,12 +182,13 @@ class expContentCheckBrokenRelations
      *
      * @param array $params from parameters()
      * @return array array( 'node' => start node or null, 'excluded' => nodes, 'findings' => list (see collect()),
+     *               'hidden' => sources in the range checked that the user may not read (a number only),
      *               'checked' => objects checked, 'last' => last object id checked, 'done' => true when no object
      *               is left after it, 'error' => '' | not_found | database )
      */
     public static function scan( array $params )
     {
-        $result = array( 'node' => null, 'excluded' => array(), 'findings' => array(), 'checked' => 0,
+        $result = array( 'node' => null, 'excluded' => array(), 'findings' => array(), 'checked' => 0, 'hidden' => 0,
                          'last' => (int)$params['after'], 'done' => true, 'error' => '' );
         if ( !expContentCheck::isSupportedDatabase() )
             return array_merge( $result, array( 'error' => 'database' ) );
@@ -250,6 +254,14 @@ class expContentCheckBrokenRelations
                     $result['done'] = $lastOfAll;
                     break;
                 }
+            }
+            // with a limited content/read: how many sources in the range checked (to the end, on the last page) the
+            // user may not read, as a number only; they are not checked and nothing of them is shown
+            if ( trim( isset( $permission['where'] ) ? (string)$permission['where'] : '' ) !== '' )
+            {
+                $all = $db->arrayQuery( 'SELECT COUNT(*) AS row_count FROM ( ' .
+                                        self::sourceQuery( $pattern, $excludePatterns, array(), (int)$params['after'], $result['done'] ? 0 : $result['last'] ) . ' ) cc_sources' );
+                $result['hidden'] = max( 0, ( isset( $all[0]['row_count'] ) ? (int)$all[0]['row_count'] : 0 ) - $result['checked'] );
             }
         }
         finally
@@ -425,7 +437,8 @@ class expContentCheckBrokenRelations
             if ( $finding['attribute_id'] > 0 )
                 $attributeIDs[$finding['attribute_id']] = true;
             $sourceIDs[$finding['source_id']] = true;
-            if ( $finding['target_type'] === 'object' && $finding['kind'] !== 'deleted' )
+            // a target in the trash or hidden is shown by its id and state only
+            if ( $finding['target_type'] === 'object' && !in_array( $finding['kind'], array( 'deleted', 'trash', 'hidden' ), true ) )
                 $targetObjectIDs[$finding['target_id']] = true;
         }
         $db = eZDB::instance();
@@ -437,7 +450,7 @@ class expContentCheckBrokenRelations
             foreach ( is_array( $attributes ) ? $attributes : array() as $attribute )
                 $fieldNames[(int)$attribute->attribute( 'id' )] = (string)$attribute->attribute( 'name' );
         }
-        // the name of a target only when the user may read it; else its id alone
+        // the name of a target (never published, without location) only when the user may read it; else its id alone
         $targetNames = array();
         if ( $targetObjectIDs )
         {

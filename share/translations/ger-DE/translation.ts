@@ -62360,6 +62360,14 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Unreferenced objects</source>
         <translation>Nicht verknüpfte Objekte</translation>
     </message>
+    <message>
+        <source>%count more below this node that you may not see.</source>
+        <translation>%count weitere unterhalb dieses Knotens, die Sie nicht sehen dürfen.</translation>
+    </message>
+    <message>
+        <source>%count more objects in this range that you may not see were not checked.</source>
+        <translation>%count weitere Objekte in diesem Bereich, die Sie nicht sehen dürfen, wurden nicht geprüft.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>

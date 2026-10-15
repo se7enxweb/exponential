@@ -56391,6 +56391,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Unreferenced objects</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>%count more below this node that you may not see.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count more objects in this range that you may not see were not checked.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>

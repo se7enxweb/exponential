@@ -120,12 +120,13 @@ class expContentCheckUnreferenced
      * One page of the list.
      *
      * @param array $params from parameters()
-     * @return array array( 'node' => start node or null, 'count' => int, 'rows' => array of rows (describe()),
+     * @return array array( 'node' => start node or null, 'count' => int, 'hidden' => how many more the user may not
+     *               read (a number, nothing else of them is read), 'rows' => array of rows (describe()),
      *               'error' => '' | not_found | database )
      */
     public static function fetch( array $params )
     {
-        $result = array( 'node' => null, 'count' => 0, 'rows' => array(), 'error' => '' );
+        $result = array( 'node' => null, 'count' => 0, 'hidden' => 0, 'rows' => array(), 'error' => '' );
         if ( !expContentCheck::isSupportedDatabase() )
             return array_merge( $result, array( 'error' => 'database' ) );
         $node = expContentCheck::readableNode( $params['node_id'] );
@@ -141,6 +142,12 @@ class expContentCheckUnreferenced
             $queries = self::queries( $params, $pattern, $permission );
             $count = $db->arrayQuery( $queries['count'] );
             $result['count'] = isset( $count[0]['row_count'] ) ? (int)$count[0]['row_count'] : 0;
+            // with a limited content/read: how many more there are that the user may not read, as a number only
+            if ( trim( isset( $permission['where'] ) ? (string)$permission['where'] : '' ) !== '' )
+            {
+                $all = $db->arrayQuery( self::queries( $params, $pattern, array() )['count'] );
+                $result['hidden'] = max( 0, ( isset( $all[0]['row_count'] ) ? (int)$all[0]['row_count'] : 0 ) - $result['count'] );
+            }
             $rows = array();
             if ( $result['count'] > $params['offset'] )
                 $rows = $db->arrayQuery( $queries['list'], array( 'offset' => (int)$params['offset'], 'limit' => (int)$params['limit'] ) );
