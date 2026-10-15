@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!-- A small bar chart, as drawing programs export it -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="120pt" height="90pt" viewBox="0 0 160 120">
+  <desc>Quarterly figures</desc>
+  <pattern id="p" width="6" height="6" patternUnits="userSpaceOnUse"><path d="M0 6 L6 0" stroke="#94a3b8" stroke-width="1"/></pattern>
+  <rect width="160" height="120" fill="#f8fafc"/>
+  <rect x="10" y="10" width="140" height="100" fill="url(#p)" opacity="0.4"/>
+  <g transform="translate(20 100) scale(1 -1)">
+    <rect x="0" width="20" height="40" fill="#2563eb"/>
+    <rect x="30" width="20" height="65" fill="#2563eb"/>
+    <rect x="60" width="20" height="30" fill="#2563eb"/>
+    <rect x="90" width="20" height="80" fill="#16a34a"/>
+  </g>
+  <polyline points="30,60 60,35 90,70 120,20" fill="none" stroke="#dc2626" stroke-width="2" stroke-dasharray="4 2"/>
+  <line x1="15" y1="100" x2="150" y2="100" stroke="#0f172a"/>
+  <marker id="m" markerWidth="4" markerHeight="4" refX="2" refY="2"><circle cx="2" cy="2" r="2"/></marker>
+</svg>

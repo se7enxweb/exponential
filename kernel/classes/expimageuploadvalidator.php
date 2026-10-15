@@ -15,9 +15,10 @@
  * than by its name.
  *
  * The type is read with PHP's fileinfo extension (finfo) and compared with the allow-list
- * image.ini [ImageUploadSettings] AllowedMIMETypes[] (JPEG, PNG, GIF, WebP, AVIF, TIFF and BMP as
- * shipped; SVG is not on it, since a browser runs script from an SVG served from the site's own
- * origin). ValidateMIMEType=disabled turns the allow-list off and leaves the older check: the
+ * image.ini [ImageUploadSettings] AllowedMIMETypes[] (JPEG, PNG, GIF, WebP, AVIF, TIFF, BMP and SVG
+ * as shipped; an SVG, recognised by its root element, also when gzip-compressed, is stored only
+ * after expSvgSanitizer has made it safe, see eZImageType::svgAccepted()). ValidateMIMEType=disabled
+ * turns the allow-list off and leaves the older check: the
  * file must be an image by getimagesize(), or by its name where getimagesize() is not there.
  *
  * Without fileinfo the same older check gives the type, which is still compared with the list,
@@ -35,7 +36,7 @@ class expImageUploadValidator
 {
     /** The allow-list when image.ini does not set one */
     const DEFAULT_ALLOWED_MIME_TYPES = array( 'image/jpeg', 'image/png', 'image/gif', 'image/webp',
-                                              'image/avif', 'image/tiff', 'image/bmp' );
+                                              'image/avif', 'image/tiff', 'image/bmp', 'image/svg+xml' );
 
     /** Other names libmagic and browsers give the same formats */
     const MIME_ALIASES = array( 'image/pjpeg' => 'image/jpeg',
@@ -45,7 +46,8 @@ class expImageUploadValidator
                                 'image/x-bmp' => 'image/bmp',
                                 'image/x-windows-bmp' => 'image/bmp',
                                 'image/x-tiff' => 'image/tiff',
-                                'image/tiff-fx' => 'image/tiff' );
+                                'image/tiff-fx' => 'image/tiff',
+                                'image/svg' => 'image/svg+xml' );
 
     /** @var int How often the "fileinfo is missing" warning was written in this process (once at most) */
     protected static $finfoMissingWarnings = 0;
@@ -95,6 +97,9 @@ class expImageUploadValidator
             static::warnFileInfoMissing();
             $mime = static::fallbackMIMEType( $path, $originalName );
         }
+        // An SVG by its root element: libmagic says text/xml, text/plain or application/gzip (.svgz) for many
+        if ( $mime !== 'image/svg+xml' && strpos( $mime, 'image/' ) !== 0 && expSvgSanitizer::isSVGFile( $path ) )
+            $mime = 'image/svg+xml';
 
         $allowed = array();
         foreach ( $allowedMIMETypes as $type )
