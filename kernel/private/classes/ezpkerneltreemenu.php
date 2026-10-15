@@ -337,6 +337,24 @@ class ezpKernelTreeMenu implements ezpKernelHandler
     }
 
     /**
+     * The HTTP status (code and reason) sent for an error code of exitWithInternalError().
+     *
+     * @param int $errorCode
+     * @return string
+     */
+    public static function statusForErrorCode( $errorCode )
+    {
+        switch ( (int)$errorCode )
+        {
+            case 403:
+                return '403 Forbidden';
+
+            default:
+                return '500 Internal Server Error';
+        }
+    }
+
+    /**
      * Handles an internal error.
      * If not using exceptions, will return an ezpKernelResult object with JSON encoded message.
      *
@@ -365,7 +383,10 @@ class ezpKernelTreeMenu implements ezpKernelHandler
         }
         else
         {
-            header( $_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error' );
+            // The status follows the error code: a visitor without access (a request that
+            // arrives after a logout, for example) is answered 403, not 500.
+            header( $_SERVER['SERVER_PROTOCOL'] . ' ' . self::statusForErrorCode( $errorCode ) );
+            header( 'Content-Type: application/json' );
             eZExecution::cleanup();
             eZExecution::setCleanExit();
 

@@ -5612,7 +5612,7 @@ dad70a135e50fcc3415d197dd961caad  kernel/private/classes/ezpcontentpublishingque
 cecedcc8d3f8f0c9cd7745fb3a8c67db  kernel/private/classes/ezpkernel.php
 28b56f2df1290892158aedc26b81b0c8  kernel/private/classes/ezpkernelredirect.php
 177993fa9e64be25d35ab1bc40e66544  kernel/private/classes/ezpkernelresult.php
-ddec744dfff68595b33fab3f301af457  kernel/private/classes/ezpkerneltreemenu.php
+e6ce6d62141661a4cf4b57a97febf591  kernel/private/classes/ezpkerneltreemenu.php
 4b971e0b9fe1195f9e0d045ca8a90769  kernel/private/classes/ezpkernelweb.php
 2b8a42157ac99a624a5cd28409ac43d6  kernel/private/classes/ezplanguageswitcher.php
 c40373eb533e1704ca522996e35b8e1e  kernel/private/classes/ezpmail.php
@@ -8107,6 +8107,7 @@ f6f7a6d0fedaac36b1b7a203e3f349cf  tests/tests/kernel/private/classes/ezpKernelRe
 f8bd96cb7671e92382f05210af3b11eb  tests/tests/kernel/private/classes/ezpTopologicalSortOrderTest.php
 ccedf985750dd7fe3adf44e8e474cdc3  tests/tests/kernel/private/contentapi/ezpContentCriteriaTest.php
 6b7f3234a135dd559ce03c87c04cd259  tests/tests/kernel/private/expAdminViewsDebugCleanTest.php
+69ed472b64dcf9aa536c72dc727301ee  tests/tests/kernel/private/expTreeMenuErrorStatusTest.php
 b6b6e540825226d42728ede902f6b71e  tests/tests/kernel/private/ezp_api/ezpcontent_regression.php
 d99d278d87120c88f0d79c961fc6ccdc  tests/tests/kernel/private/ezp_api/suite.php
 4da85a88c01da664a6eee41080c9ed23  tests/tests/kernel/private/ezpautoloadgenerator_test.php
