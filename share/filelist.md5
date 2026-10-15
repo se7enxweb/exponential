@@ -2966,7 +2966,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-fa062833985f55bce688d90ac31eb8cd  doc/changelogs/6.0/6.0.15.md
+c721964b619131cedbf223546a286c22  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -4600,7 +4600,7 @@ f3bffc88e81741de46f06135aac557bf  extension/ezoe/design/standard/templates/ezoe/
 432508f8b8c2b01e6ced699e524f4abe  extension/ezoe/doc/oe5_intro.pdf
 70322a77a52a65c55b7f33427a6c6eb4  extension/ezoe/doc/path_concept.gif
 b9fd60ca35c9e3786ffd14bb18c1ed1f  extension/ezoe/extension.xml
-fa78c13489b745a7ac8d722d12634244  extension/ezoe/ezxmltext/handlers/input/ezoeinputparser.php
+26213258f15b8fcc4dbd0f5ad39374b6  extension/ezoe/ezxmltext/handlers/input/ezoeinputparser.php
 dae856cd7b3f91a83678140f224c8a11  extension/ezoe/ezxmltext/handlers/input/ezoexmlinput.php
 ec9d0894a9b5155ca5bfa598488a5854  extension/ezoe/modules/ezoe/atd_rpc.php
 84be03f87c6a63ead6d791281c09bda5  extension/ezoe/modules/ezoe/classes/EnchantSpell.php
@@ -4636,11 +4636,11 @@ f8a85b1a0304fa337737229280fcb45c  extension/ezoe/tests/suite.php
 89352618462fa235c9a4d73edfcde79a  extension/ezoe/translations/cze-CZ/translation.ts
 7a01cb19a8749a323545c01659a2ddba  extension/ezoe/translations/dan-DK/translation.ts
 78a42e2ad90b2c482030782011ab6e00  extension/ezoe/translations/dut-NL/translation.ts
-93f125ed94c4c4c28c7e21806b296f6c  extension/ezoe/translations/eng-US/translation.ts
+48607f442eb14c1219cda08be5bf0891  extension/ezoe/translations/eng-US/translation.ts
 a2513942156d811b6633ed45a77daeaa  extension/ezoe/translations/esl-ES/translation.ts
 bb5bd9726ef6de446fc6c037ac7cd59a  extension/ezoe/translations/fin-FI/translation.ts
 fa1dcd341369fc539d0a397f66e9aec7  extension/ezoe/translations/fre-FR/translation.ts
-996a08786fac3cb2ea1da6a22b38178a  extension/ezoe/translations/ger-DE/translation.ts
+fbcb8db6363974ba0a2d1d0590e44b42  extension/ezoe/translations/ger-DE/translation.ts
 27a456dec6d79d2cd1099446cf723ba6  extension/ezoe/translations/ita-IT/translation.ts
 83cb07d4be4e2d1cff883ca7d8b5d984  extension/ezoe/translations/jpn-JP/translation.ts
 eec45b2adf10df254f61640cf79d23f7  extension/ezoe/translations/nor-NO/translation.ts
@@ -4649,7 +4649,7 @@ eec45b2adf10df254f61640cf79d23f7  extension/ezoe/translations/nor-NO/translation
 2d1041a369218b69c7497cdfe94a712a  extension/ezoe/translations/rus-RU/translation.ts
 79cb4dd5f6a0d6d832a63dbe95aa7f42  extension/ezoe/translations/ser-SR/translation.ts
 442b8f5ff21eaf472a640c8ae88744c0  extension/ezoe/translations/swe-SE/translation.ts
-297e1ee3d8d9e1922797778a1d115935  extension/ezoe/translations/untranslated/translation.ts
+725ce14d91cfd1bc078dab3af8fd83eb  extension/ezoe/translations/untranslated/translation.ts
 8d1d60689df854dd7cdff2bb0d921bd5  extension/ezoe/update/database/5.0/dbupdate-5.0.0-to-5.0.1.sql
 095a3ffdbaa76a73898ba20f893b9aad  ezpm.php
 855e225a60e154204dde78feafe5d1b5  ezpublish.cron
@@ -7183,6 +7183,7 @@ d5ef0a34d06298d2da7f951273c12e1d  tests/tests/extension/ezjscore/ezjscoreCallThr
 be082c2cbbd69c12eee01261f6b2f622  tests/tests/extension/ezoe/expOEContentTypeAndLoadTest.php
 6906807b9889862db50ae887ad8a8a8d  tests/tests/extension/ezoe/expOECustomTagAssetsTest.php
 a56857590b9af32b6f4cfd20e9958443  tests/tests/extension/ezoe/expOECustomTagListTest.php
+92b926c82547472d39b11ffda643e4f6  tests/tests/extension/ezoe/expOEDeadLinkMessageTest.php
 b35407af9e2ca6ea1f275c2f3ebbb002  tests/tests/extension/ezoe/expOEDialogAccessRulesTest.php
 9c2ff5a50c1feff03a2718dd04f3a755  tests/tests/extension/ezoe/expOEDialogAccessTest.php
 a4f08d5ac6c237ea03f696e86a6b5fc6  tests/tests/extension/ezoe/expOEEditorRegistryTest.php

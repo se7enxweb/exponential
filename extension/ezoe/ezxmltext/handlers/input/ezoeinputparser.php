@@ -1252,10 +1252,7 @@ class eZOEInputParser extends eZXMLInputParser
                 $element->setAttribute( 'object_id', $objectID );
                 if ( !eZContentObject::exists( $objectID ))
                 {
-                    $this->Messages[] = ezpI18n::tr( 'design/standard/ezoe/handler',
-                                                'Invalid link: "%1". Target object does not exist.',
-                                                false,
-                                                array( $matches[0] ) );
+                    $this->Messages[] = self::deadLinkMessage( self::linkLabel( $element, $matches[0] ), $matches[0], null );
                 }
             }
             /*
@@ -1275,10 +1272,8 @@ class eZOEInputParser extends eZXMLInputParser
                     $node = eZContentObjectTreeNode::fetch( $nodeID );
                     if ( !$node instanceOf eZContentObjectTreeNode )
                     {
-                        $this->Messages[] = ezpI18n::tr( 'design/standard/ezoe/handler',
-                                                    'Invalid link: "%1". Target node does not exist.',
-                                                    false,
-                                                    array( $matches[0] ) );
+                        $this->Messages[] = self::deadLinkMessage( self::linkLabel( $element, $matches[0] ), $matches[0],
+                                                                   self::trashedLinkTarget( array( 'node_id' => (int)$nodeID ) ), true );
                     }
                 }
                 else
@@ -1286,10 +1281,8 @@ class eZOEInputParser extends eZXMLInputParser
                     $node = eZContentObjectTreeNode::fetchByURLPath( $nodePath );
                     if ( !$node instanceOf eZContentObjectTreeNode )
                     {
-                        $this->Messages[] = ezpI18n::tr( 'design/standard/ezoe/handler',
-                                                    'Invalid link: "%1". Target node does not exist.',
-                                                    false,
-                                                    array( $matches[0] ) );
+                        $this->Messages[] = self::deadLinkMessage( self::linkLabel( $element, $matches[0] ), $matches[0],
+                                                                   self::trashedLinkTarget( array( 'path_identification_string' => $nodePath ) ), false );
                     }
                     else
                     {
@@ -1327,7 +1320,7 @@ class eZOEInputParser extends eZXMLInputParser
                     if ( preg_match( "/^(java|vb)script:.*/i" , $url ) )
                     {
                         $this->isInputValid = false;
-                        $this->Messages[] = "Using scripts in links is not allowed, '$url' has been removed";
+                        $this->Messages[] = "Using scripts in links is not allowed, '" . self::messageText( $url ) . "' has been removed";
                         $element->removeAttribute( 'href' );
                         return $ret;
                     }
@@ -1558,6 +1551,124 @@ class eZOEInputParser extends eZXMLInputParser
                 }
             }
         }
+    }
+
+    /**
+     * The text of a link for a message about it: the link text, shortened to 70 characters, or the address when the
+     * link has no text.
+     *
+     * @param DOMElement $element
+     * @param string $href
+     * @return string
+     */
+    public static function linkLabel( $element, $href )
+    {
+        $label = trim( (string)$element->textContent );
+        if ( $label === '' )
+        {
+            return (string)$href;
+        }
+        return mb_strlen( $label, 'UTF-8' ) > 70 ? mb_substr( $label, 0, 67, 'UTF-8' ) . '...' : $label;
+    }
+
+    /**
+     * The trash entry of a link target that has no location any more. It is looked up only when a link is saved
+     * with a target that is gone, so a link to a live target costs no query.
+     *
+     * @param array $conds node_id or path_identification_string of the target
+     * @return array|null name, class, trashed (timestamp, 0 when the trash row has none) and path of the target;
+     *                    an empty array when it is in the trash but the current user may not read it; null when it
+     *                    is not in the trash either
+     */
+    protected static function trashedLinkTarget( array $conds )
+    {
+        // the columns definition() reads
+        eZContentObjectTrashNode::hasTrashedByColumns();
+        $rows = eZPersistentObject::fetchObjectList( eZContentObjectTrashNode::definition(), null, $conds,
+                                                     array( 'trashed' => 'desc' ), array( 'offset' => 0, 'limit' => 1 ),
+                                                     true );
+        if ( !$rows )
+        {
+            return null;
+        }
+        $object = eZContentObject::fetch( (int)$rows[0]->attribute( 'contentobject_id' ) );
+        // Name, class and place of the target only for a user who may read it; otherwise the message says no more
+        // than that the target is in the trash.
+        if ( !$object instanceof eZContentObject || !$object->canRead() )
+        {
+            return array();
+        }
+        return array( 'name' => (string)$object->attribute( 'name' ),
+                      'class' => (string)$object->attribute( 'class_name' ),
+                      'trashed' => (int)$rows[0]->attribute( 'trashed' ),
+                      'path' => '/' . $rows[0]->attribute( 'path_identification_string' ) );
+    }
+
+    /**
+     * A value from the editor for a message of the validation log. The log is printed as it is by design/admin and
+     * design/standard, and design/admin4 turns &lt; and &gt; back before it washes the message, so < and > are escaped
+     * and nothing else: safe in all three, readable in admin4.
+     *
+     * @param string $value
+     * @return string
+     */
+    public static function messageText( $value )
+    {
+        return str_replace( array( '<', '>' ), array( '&lt;', '&gt;' ), (string)$value );
+    }
+
+    /**
+     * The message for a link whose target is gone: what the target was, where it was, since when it is in the trash
+     * and how to repair the link, instead of "Target node does not exist".
+     *
+     * @param string $label the link text, see linkLabel()
+     * @param string $href the address of the link (eznode://..., ezobject://...)
+     * @param array|null $trashed see trashedLinkTarget()
+     * @param bool $byLocationID true: the link names the location by its id (eznode://42). Restoring the target gives
+     *                           it a new location id, so the message says that restoring does not repair the link; a
+     *                           link by path works again when the target is restored to its old place.
+     * @return string
+     */
+    public static function deadLinkMessage( $label, $href, $trashed, $byLocationID = false )
+    {
+        $label = self::messageText( $label );
+        $href = self::messageText( $href );
+        if ( $trashed === null )
+        {
+            return ezpI18n::tr( 'design/standard/ezoe/handler',
+                                'The link "%1" cannot be saved: its target (%2) no longer exists, not even in the trash. Remove the link or choose a new target.',
+                                false, array( $label, $href ) );
+        }
+        if ( !$trashed )
+        {
+            $message = ezpI18n::tr( 'design/standard/ezoe/handler',
+                                    'The link "%1" cannot be saved: its target (%2) is in the trash. Remove the link or choose a new target.',
+                                    false, array( $label, $href ) );
+        }
+        else
+        {
+            $arguments = array( $label, self::messageText( $trashed['name'] ), self::messageText( $trashed['class'] ),
+                                self::messageText( $trashed['path'] ), $href );
+            if ( $trashed['trashed'] > 0 )
+            {
+                $arguments[] = eZLocale::instance()->formatShortDateTime( $trashed['trashed'] );
+                $message = ezpI18n::tr( 'design/standard/ezoe/handler',
+                                        'The link "%1" cannot be saved: its target "%2" (%3), located at %4, was moved to the trash on %6. Remove the link or choose a new target. (Link: %5)',
+                                        false, $arguments );
+            }
+            else
+            {
+                $message = ezpI18n::tr( 'design/standard/ezoe/handler',
+                                        'The link "%1" cannot be saved: its target "%2" (%3), located at %4, was moved to the trash. Remove the link or choose a new target. (Link: %5)',
+                                        false, $arguments );
+            }
+        }
+        if ( $byLocationID )
+        {
+            $message .= ' ' . ezpI18n::tr( 'design/standard/ezoe/handler',
+                                           'Restoring the target from the trash does not repair the link, because the restored object gets a new location: set the link again afterwards, or link to the object instead of its location.' );
+        }
+        return $message;
     }
 
     protected $urlIDArray = array();
