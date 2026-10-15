@@ -307,7 +307,7 @@ d1f3e1ef98e8cee2e52a5446280eadc3  design/admin/override/templates/embed-inline_i
 e0c996a801b1373df9824852298b20d9  design/admin/override/templates/tiny_image.tpl
 a2c561e93ef63c93201e81acd4f32741  design/admin/override/templates/window_controls_user.tpl
 f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin/override/templates/windows_user.tpl
-30f5fd5b931da8978c73927bfe1119fd  design/admin/stylesheets/components.css
+e058f976967bc9ee453f126f75a6eee0  design/admin/stylesheets/components.css
 ce90ff045aa9ad5f6b74ebb4adb49d1f  design/admin/stylesheets/content.css
 9176b99cf9d39d3d3f7c8c50d1554eb5  design/admin/stylesheets/core.css
 3467a1c4602619c56bfc506613bebb91  design/admin/stylesheets/ezinfo.css
@@ -920,8 +920,8 @@ d1f3e1ef98e8cee2e52a5446280eadc3  design/admin4/override/templates/embed-inline_
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
 a2c561e93ef63c93201e81acd4f32741  design/admin4/override/templates/window_controls_user.tpl
 f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin4/override/templates/windows_user.tpl
-3e70dac077e9e73017405bb1780e1566  design/admin4/stylesheets/admin4.css
-30f5fd5b931da8978c73927bfe1119fd  design/admin4/stylesheets/components.css
+49008d567ce35ffc19472401500dce35  design/admin4/stylesheets/admin4.css
+e058f976967bc9ee453f126f75a6eee0  design/admin4/stylesheets/components.css
 9e90db5915f1915b7c9175b18868a205  design/admin4/stylesheets/content.css
 0368a507892a9eb10f58c7a00b0365bf  design/admin4/stylesheets/core.css
 024901334b90c0e08bf8b8fe9197604e  design/admin4/stylesheets/ezinfo.css
@@ -2762,7 +2762,7 @@ cdbe0fdc9c9011438bf808f4842b0982  doc/bc/5.90/relation_indexing.md
 94f95a803fffdb657972e1a81769e82f  doc/bc/6.0/LAYOUTS.md
 d386923e32f7abc18de9e5392795bb5f  doc/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md
 d95203ddf57747c5dcb15b6923bd0356  doc/bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXPANSION_HIDE_UNHIDE.md
-e5e6986afb2c6b413ed5a9f65978c748  doc/bc/6.0/admin4-styling.md
+fd5b2d4e213af8a2455ae26884ed2608  doc/bc/6.0/admin4-styling.md
 b8b0564ea1db716863a85739a1f4c06d  doc/bc/6.0/admin4l.md
 f0b57cd68a5b41cc14ca22727186740c  doc/bc/6.0/api-keys.md
 c9f20a03afc08795fea37b7b66458194  doc/bc/6.0/audit.md
@@ -2991,7 +2991,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-d8494468b2267817ba9c7782e44b4e31  doc/changelogs/6.0/6.0.15.md
+73364226deb09d15f44d88a2699c551e  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -7076,7 +7076,7 @@ a170729e7e161686001ae10895d34d53  tests/tests/design/AdminBaseStylesheetsTest.ph
 a15f60da55163c3055ee1c45bfd5a806  tests/tests/design/AdminCardsTest.php
 c074a5a5c27a2455e9bf5e8d4b39d19d  tests/tests/design/AdminContextMenuTest.php
 9de098ad350169c753d7ecdaa5244310  tests/tests/design/AdminDashboardTest.php
-80c9fc8cef6cd97774f062145ff65cc8  tests/tests/design/AdminDensityTest.php
+2e80f649572a60434b7e5f10f7a7078b  tests/tests/design/AdminDensityTest.php
 c805f3b778d5e27530594a38b05712ba  tests/tests/design/AdminFormErrorsTest.php
 c4dbc84de70b3ac212233446d50a8b64  tests/tests/design/AdminFormLabelsTest.php
 4cb69e09484ef10d1f56d5b1d4610ca9  tests/tests/design/AdminIconsTest.php
@@ -7084,7 +7084,7 @@ a279dc1d15cd330c560350bc794414f7  tests/tests/design/AdminKeyboardTest.php
 f1af30bb607758cf5d815836baaf88a6  tests/tests/design/AdminLandmarksTest.php
 859c93ecb4d2d3c59b4fcc748587fcd6  tests/tests/design/AdminLanguageBadgeTest.php
 962e411349c1edf829923a255be0bee7  tests/tests/design/AdminLeftMenuGroupsTest.php
-a92a0c148ba0539a663728d48cc47332  tests/tests/design/AdminLegacyControlsTest.php
+9e57fee7bae696cf5f3158e40aaa2260  tests/tests/design/AdminLegacyControlsTest.php
 a33e9d573eb8e846797e949212bf192e  tests/tests/design/AdminNoticesTest.php
 0c55571a81de40303f49848a033d4661  tests/tests/design/AdminPageHeaderTest.php
 273675d78913b14fc00f3ffd3e909957  tests/tests/design/AdminPreferencesTest.php
