@@ -36,6 +36,24 @@ class expOEEngineConfigTest extends expOETestCase
         $this->assertFalse( expOEEditor::switchEnabled() );
     }
 
+    public function testSwitchIsOffWhenTheSettingIsMissing()
+    {
+        // the shipped ezoe.ini sets no EngineSwitch: hasVariable() is false, and switchEnabled() must not read it
+        $ini = eZINI::instance( 'ezoe.ini' );
+        $ini->removeSetting( 'EditorSettings', 'EngineSwitch' );
+        $this->assertFalse( $ini->hasVariable( 'EditorSettings', 'EngineSwitch' ) );
+        $this->assertFalse( expOEEditor::switchEnabled() );
+    }
+
+    public function testSwitchIsOnOnlyWhenEnabled()
+    {
+        $ini = eZINI::instance( 'ezoe.ini' );
+        $ini->setVariable( 'EditorSettings', 'EngineSwitch', 'enabled' );
+        $this->assertTrue( expOEEditor::switchEnabled() );
+        $ini->setVariable( 'EditorSettings', 'EngineSwitch', 'disabled' );
+        $this->assertFalse( expOEEditor::switchEnabled() );
+    }
+
     public function testTinyMCE3IsRenderedByTheBuiltInTemplate()
     {
         $info = expOEEditor::info( 'tinymce3' );
