@@ -1035,6 +1035,7 @@ return array(
       'expContentJobStore'                                           => 'kernel/classes/contentjob/expcontentjobstore.php',
       'expContentJobType'                                            => 'kernel/classes/contentjob/expcontentjobtype.php',
       'expContentJobWorker'                                          => 'kernel/classes/contentjob/expcontentjobworker.php',
+      'expContentLanguageStates'                                     => 'kernel/classes/expcontentlanguagestates.php',
       'expContentPendingList'                                        => 'kernel/classes/expcontentpendinglist.php',
       'expCronjobPause'                                              => 'kernel/classes/expcronjobpause.php',
       'expCronjobRunner'                                             => 'kernel/setup/expcronjobrunner.php',
