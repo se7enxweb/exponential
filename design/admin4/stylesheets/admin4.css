@@ -1654,22 +1654,22 @@ div#contentstructure ul#content_tree_menu ul a.openclose-close::after {
 }
 :is(#leftmenu, #rightmenu) :is(ul.leftmenu-items, .box-content > ul, .settings > ul) > li { margin: 0; list-style: none; }
 
-/* The tools of the right column (240px): fields on the column's width, the buttons at its end, right under the
-   field they belong to (the cache tool's choice and "Clear", the siteaccess and "Set"). A long cache name keeps
+/* The core tools of the right column (240px; cache, quick settings, bookmarks — an extension's box keeps its own
+   layout): fields on the column's width, the buttons at its end, right under the field they belong to (the cache tool's choice and "Clear", the siteaccess and "Set"). A long cache name keeps
    its whole width instead of sharing a row with the button. */
-#rightmenu-design .box-content :is(select, input[type=text]) { width: 100%; }
-#rightmenu-design .block:has(> :is(input.button, input.defaultbutton, input.button-disabled)) {
+:is(#clearcache-tool, #quicksettings-tool, #bookmarks) .box-content :is(select, input[type=text]) { width: 100%; }
+:is(#clearcache-tool, #quicksettings-tool, #bookmarks) .block:has(> :is(input.button, input.defaultbutton, input.button-disabled)) {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: var(--a4-space-2);
 }
-#rightmenu-design .box-content :is(input.button, input.defaultbutton, input.button-disabled) { margin: 0; }
-#rightmenu-design .box-content :is(select, input[type=text]) { display: block; margin: 0; }
-#rightmenu-design .box-content form { display: grid; gap: var(--a4-space-2); }
-#rightmenu-design .box-content form > .block { margin: 0; padding: 0; }
-#rightmenu-design .box-content div.block { padding-bottom: 0; }
-#rightmenu-design .box-content form > :is(input.button, input.defaultbutton, input.button-disabled) { justify-self: end; }
+:is(#clearcache-tool, #quicksettings-tool, #bookmarks) .box-content :is(input.button, input.defaultbutton, input.button-disabled) { margin: 0; }
+:is(#clearcache-tool, #quicksettings-tool, #bookmarks) .box-content :is(select, input[type=text]) { display: block; margin: 0; }
+:is(#clearcache-tool, #quicksettings-tool, #bookmarks) .box-content form { display: grid; gap: var(--a4-space-2); }
+:is(#clearcache-tool, #quicksettings-tool, #bookmarks) .box-content form > .block { margin: 0; padding: 0; }
+:is(#clearcache-tool, #quicksettings-tool, #bookmarks) .box-content div.block { padding-bottom: 0; }
+:is(#clearcache-tool, #quicksettings-tool, #bookmarks) .box-content form > :is(input.button, input.defaultbutton, input.button-disabled) { justify-self: end; }
 /* The user preferences: the setting's name and its on/off switch (.a4-tabs.is-segmented) on one row; only a
    name too long for the column puts the switch under it. */
 #currentuserpreferences .settings > ul > li {
