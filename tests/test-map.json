@@ -337,6 +337,12 @@
     ],
     "design/admin4/stylesheets/editor_content.css": [
       "tests/tests/design/AdminContentEditFormsTest.php"
+    ],
+    "design/admin4/templates/page_leftmenu.tpl": [
+      "tests/tests/design/AdminSetupTabsLeftMenuTest.php"
+    ],
+    "design/admin4l/templates/explayouts/block/admin_left_menu.tpl": [
+      "tests/tests/design/AdminSetupTabsLeftMenuTest.php"
     ]
   },
   "generated": {

@@ -305,7 +305,8 @@ well for the core tabs; an extension's tab is left out only with `HiddenTabs[]`.
   added menu leaves out for the user (an audit channel the user may not read) keeps the Setup link to its address
   out too.
 - **Navigation.** A page of such a tab (its `NavigationPartIdentifier`, e.g. `audit/console` or `visual/toolbarlist`)
-  marks the Setup tab and draws the Setup menu, with its group open at the current link. No page marks a tab that is
+  marks the Setup tab and draws the Setup menu, with its group open at the current link, also when its view names a
+  left menu of its own (`$module_result.left_menu`, as the audit views do). No page marks a tab that is
   not in the top menu or draws a menu no tab leads to; the breadcrumb is the page's own. While the tab is in the top
   menu, its pages keep their tab and left menu. `parts/a4_navigation_part.tpl` gives the navigation part both menus
   use, in admin4 and in admin4l's header and left menu blocks.
