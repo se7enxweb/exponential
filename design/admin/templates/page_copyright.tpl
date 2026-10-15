@@ -5,5 +5,6 @@
 {'<a href="%ezpublish_link">Exponential</a> Copyright &copy; 1998-2026 <a href="%ez_link">7x</a> and others.'|i18n( 'design/admin/page_copyright',, hash( '%ezpublish_link', 'https://se7enx.com/Exponential', '%ez_link', 'https://se7enx.com' ) )}
 </p>
 <p>
-{'<a href="%evaluate_link">Evaluate Exponential (From 7x)</a> - <a href="%share_link">Become a member of the Exponential Community, get support and contribute</a>.'|i18n( 'design/admin/page_copyright',, hash( '%evaluate_link', 'https://se7enx.com', '%share_link', concat( 'https://share.exponential.earth?utm_content=Exponential+Community+Project+', fetch( 'setup', 'version' ) , '&utm_source=Exponential+Community+Project+Dashboard&utm_medium=Exponential+Community+Project+Dashboard&utm_campaign=Exponential+Community+Project+Dashboard' ) ) )}
+{* The share link names the release to signed-in users only, as the header does (also under layouts that define no $current_user) *}
+{'<a href="%evaluate_link">Evaluate Exponential (From 7x)</a> - <a href="%share_link">Become a member of the Exponential Community, get support and contribute</a>.'|i18n( 'design/admin/page_copyright',, hash( '%evaluate_link', 'https://se7enx.com', '%share_link', concat( 'https://share.exponential.earth?utm_content=Exponential+Community+Project', fetch( 'user', 'current_user' ).is_logged_in|choose( '', concat( '+', fetch( 'setup', 'version' ) ) ) , '&utm_source=Exponential+Community+Project+Dashboard&utm_medium=Exponential+Community+Project+Dashboard&utm_campaign=Exponential+Community+Project+Dashboard' ) ) )}
 </p>

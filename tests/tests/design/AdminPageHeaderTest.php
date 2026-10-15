@@ -95,7 +95,22 @@ class AdminPageHeaderTest extends PHPUnit\Framework\TestCase
             $this->assertStringContainsString( '{def $a4_brand_name = $current_user.is_logged_in|choose( \'Exponential\', concat( \'Exponential \', fetch( \'setup\', \'version\' ) ) )}', $tpl, $path );
             $this->assertSame( 2, substr_count( $tpl, 'title="{$a4_brand_name|wash}" aria-label="{$a4_brand_name|wash}"' ), $path );
         }
-        foreach ( array( 'design/admin4/templates/pagelayout.tpl', 'design/admin4l/templates/pagelayout.tpl' ) as $path )
+        foreach ( array( 'design/admin4/templates/pagelayout.tpl', 'design/admin4l/templates/pagelayout.tpl',
+                         'design/admin/templates/pagelayout.tpl', 'design/admin3/templates/pagelayout.tpl' ) as $path )
             $this->assertMatchesRegularExpression( '/\$user_hash = concat\([^\n]*\$current_user\.is_logged_in\|choose\( \'anonymous\', \'user\' \) \)/', self::read( $path ), $path );
+        // the footer's share link and the headers of admin and admin3 do the same
+        foreach ( array( 'design/admin4/templates/page_copyright.tpl', 'design/admin/templates/page_copyright.tpl' ) as $path )
+        {
+            $tpl = self::read( $path );
+            $this->assertSame( 1, substr_count( $tpl, "fetch( 'setup', 'version' )" ), $path );
+            $this->assertStringContainsString( "fetch( 'user', 'current_user' ).is_logged_in|choose( '', concat( '+', fetch( 'setup', 'version' ) ) )", $tpl, $path );
+        }
+        foreach ( array( 'design/admin/templates/page_header.tpl' => "{if fetch( 'user', 'current_user' ).is_logged_in} {fetch( 'setup', 'version' )}{/if}",
+                         'design/admin3/templates/page_topmenu.tpl' => "{if \$current_user.is_logged_in} {fetch( 'setup', 'version' )}{/if}" ) as $path => $guard )
+        {
+            $tpl = preg_replace( '/\{\*.*?\*\}/s', '', self::read( $path ) );
+            $this->assertSame( substr_count( $tpl, "fetch( 'setup', 'version' )" ), substr_count( $tpl, $guard ), "$path: every version is guarded" );
+            $this->assertGreaterThan( 0, substr_count( $tpl, $guard ), $path );
+        }
     }
 }

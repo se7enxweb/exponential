@@ -6,7 +6,7 @@
             </a> *}
             {* The content root of content.ini, through ezurl: with the siteaccess path when
                the siteaccess is matched by URI (/admin/...), without when by host. *}
-            <a class="brand" href={concat( 'content/view/full/', ezini( 'NodeSettings', 'RootNode', 'content.ini' ) )|ezurl} title="Exponential {fetch( 'setup', 'version' )}">
+            <a class="brand" href={concat( 'content/view/full/', ezini( 'NodeSettings', 'RootNode', 'content.ini' ) )|ezurl} title="Exponential{if $current_user.is_logged_in} {fetch( 'setup', 'version' )}{/if}">
             </a>
             {* The front page of the default siteaccess: scheme, host, port and siteaccess
                path as the settings and this request call for (ezpSiteAccessURL). *}
@@ -18,7 +18,7 @@
             </a> *}
             {* The content root of content.ini, through ezurl: with the siteaccess path when
                the siteaccess is matched by URI (/admin/...), without when by host. *}
-            <a class="brand" href={concat( 'content/view/full/', ezini( 'NodeSettings', 'RootNode', 'content.ini' ) )|ezurl} title="Exponential {fetch( 'setup', 'version' )}">
+            <a class="brand" href={concat( 'content/view/full/', ezini( 'NodeSettings', 'RootNode', 'content.ini' ) )|ezurl} title="Exponential{if $current_user.is_logged_in} {fetch( 'setup', 'version' )}{/if}">
             </a>
             {* The front page of the default siteaccess: scheme, host, port and siteaccess
                path as the settings and this request call for (ezpSiteAccessURL). *}
