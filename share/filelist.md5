@@ -5589,7 +5589,7 @@ df872c5ec934f64aa7579eca83cbe3cd  kernel/private/classes/views/content/copysubtr
 857bdbfb58efbb90288756c604c2c2bc  kernel/private/classes/views/content/download.php
 34575b3cf8f61d2b53dd79be756cd20d  kernel/private/classes/views/content/draft.php
 589c1932dd859b4d9ea2c85bef7e2292  kernel/private/classes/views/content/edit.php
-44fa1ea90732a14b1e65ec56f699a6b1  kernel/private/classes/views/content/hide.php
+96dd1027c73535ddeed0fc8eb86777f4  kernel/private/classes/views/content/hide.php
 9bcffdceb229f64701758f1338c52c54  kernel/private/classes/views/content/history.php
 c7438e1905a3688461b8b3c88c80edee  kernel/private/classes/views/content/job.php
 f2b10780650551125b5ed1c6bb190ed4  kernel/private/classes/views/content/jobs.php
@@ -7205,7 +7205,7 @@ a26c7abb7aa53e9ce49166a23824422d  tests/tests/extension/expservices/users/expNot
 b977ef5a409ff4c1d2e4c734c839d6e3  tests/tests/extension/expservices/users/expUserServicesTest.php
 1d8e114d714c6cc4edbaaf7d046993bc  tests/tests/extension/expservices/users/expUsersDeclarationsTest.php
 c2d1d9f4d1d3bfd48c427cac7ccaace7  tests/tests/extension/expservices/users/expUsersTestCase.php
-c0ee7867b48607d01fa1d35d2f9df765  tests/tests/extension/ezjscore/ezjscPackerNoVersionQueryTest.php
+8c8fe43ba131f52c8d6b8d6a54151029  tests/tests/extension/ezjscore/ezjscPackerNoVersionQueryTest.php
 815c9c214d99424bb693376c627ac29b  tests/tests/extension/ezjscore/ezjscServerFunctionsAjaxUploaderAltTextTest.php
 71fc0cf2666b1e6e8f8fdd9894f25476  tests/tests/extension/ezjscore/ezjscServerFunctionsAjaxUploaderHandlerArgumentsTest.php
 df797f976ce5f225fe73f393ff910b74  tests/tests/extension/ezjscore/ezjscServerFunctionsAjaxUploaderImageTest.php
