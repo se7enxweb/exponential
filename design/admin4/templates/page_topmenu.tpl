@@ -31,6 +31,7 @@
             <a class="brand" href={$a4_brand_url|ezurl} title="{$a4_brand_name|wash}" aria-label="{$a4_brand_name|wash}">
             </a>
         {/if}
+        {include uri='design:parts/a4_environment_badge.tpl'}
     </div>
     {* The menu button stands before the menu it opens, so the Tab key goes from it into the open menu; admin4.css draws
        it at the row's end. The menu comes right after the logo, as it is drawn from 1280px; from 576 to 1279px it is

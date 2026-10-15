@@ -33,5 +33,6 @@
             <a class="brand" href={$a4_brand_url|ezurl} title="{$a4_brand_name|wash}" aria-label="{$a4_brand_name|wash}">
             </a>
         {/if}
+        {include uri='design:parts/a4_environment_badge.tpl'}
     </div>
 {undef $a4_brand_name $a4_brand_url}

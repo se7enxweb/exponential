@@ -115,6 +115,18 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
   preference that cannot be saved (a network error, an error status, the login page of an expired session), keep it
   in the browser; the preference wins over the browser's copy. Without JavaScript the box keeps the browser's own
   resize grip. The top node's view has the same control. `tests/tests/design/AdminNodeTabsHeightTest.php` checks it.
+- **Environment badge.** Off by default. With `site.ini [AdminEnvironment] Level` set, the header shows the
+  environment's name beside the logo, in the level's colour: development green, test amber, staging violet,
+  production red, each with a darker or lighter edge for the dark mode (`--a4-env-<level>`, `-ink`, `-line` in
+  `admin4.css`; text 4.5:1 on the fill, the edge 3:1 on the header). The page title starts with the name in capitals,
+  "[PRODUCTION] Dashboard - Site", so windows and tabs can be told apart; the sign-in page shows the badge and the
+  prefix too. The badge is text, not only colour: from 768 px the name (and, for signed-in users, `Release` and with
+  `ShowVersion=enabled` the Exponential version), from 576 to 767 px the short code (`ShortName`, default DEV, TEST,
+  STAGE, PROD), on phones a 14 px dot whose name is read out by screen readers; the title attribute holds the whole
+  text. It is 24 px high in the 36 px row of the header tools, so the header keeps 56, 88 and 56 px; up to 1279 px the
+  search field gives it its room, from 1280 px the main menu does (its last tabs go into "More"). In forced colors it
+  is drawn in the system colours with its text. The same in admin4l (the logo block). See [Settings](#settings).
+  `tests/tests/design/AdminEnvironmentBadgeTest.php` checks it.
 - **Edit form.** The button bars (Send for publishing, Store draft, Store draft and exit, Discard draft) stay in view
   while the form scrolls (CSS `position: sticky`, replacing the YUI script that stopped working). They are slim
   (42 px on a desktop) and fit a phone screen. Edit pages show one left column, not two. Required fields carry a red
@@ -521,6 +533,7 @@ tree's roles, states, Tab stop and keys.
 | `settings/menu.ini` | `Topmenu_setup` | `URL[default]` | `setup/menu` (the Setup overview) | siteaccess |
 | `settings/menu.ini` | `Leftmenu_<menu>` | `PolicyList_<link>[]` | a node id, `<module>/<function>`, or `<module>/*` for a module without policy functions | siteaccess |
 | `settings/site.ini` | `SiteAccessSettings` | `FrontSiteAccess` | empty (`DefaultAccess`) | siteaccess |
+| `settings/site.ini` | `AdminEnvironment` | `Level`, `Name`, `ShortName`, `Release`, `ShowVersion`, `ShowInTitle` | empty (no badge), empty, empty, empty, `disabled`, `enabled` | siteaccess |
 
 `ShowCommunityLinks=enabled` shows the footer line "Evaluate Exponential / Become a member of the Exponential
 Community". A template can also set `$show_community_links`.
@@ -543,6 +556,15 @@ Community". A template can also set `$show_community_links`.
   `tests/tests/design/AdminMenuPolicyListTest.php` fails for a function a module does not have. The Design tab opens
   the design top node by its id (`content/view/full/58`, `content.ini [NodeSettings] DesignRootNode`).
 - `FrontSiteAccess` is the site an admin siteaccess belongs to: its "Open the site" and "View on site" links go there.
+- `[AdminEnvironment]`: the environment badge (see "Environment badge" above). `Level` is `development`, `test`,
+  `staging` or `production`, or `auto` for the level of `EXP_ENV` (`dev`, `development`; `test`; `stage`, `staging`;
+  `prod`, `production`, `live`; another name or none: no badge). An empty `Name` takes the level's translated name.
+  Set it per environment, for example in `settings/override/site.ini.prod.append.php`
+  ([Settings per environment](environment-settings.md)); the setting is read on every request. The header's and the
+  sign-in page's cache-blocks are keyed by the badge, so a changed setting shows on the next request without clearing
+  the template cache; where `EZP_INI_FILEMTIME_CHECK` is off, clear the INI cache
+  (`php bin/php/ezcache.php --clear-id=global_ini`). `Release` and the version are shown to signed-in users only.
+  The template operator is `exp_environment_badge()`.
 - The logo's name in the header carries the release only for signed-in users; the anonymous pages of the admin
   (the 401 page, `user/register`, `user/forgotpassword`) say "Exponential".
 

@@ -15715,6 +15715,42 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
 <context>
     <name>design/admin/pagelayout</name>
     <message>
+        <source>Environment</source>
+        <translation>Umgebung</translation>
+    </message>
+    <message>
+        <source>Development</source>
+        <translation>Entwicklung</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Test</translation>
+    </message>
+    <message>
+        <source>Staging</source>
+        <translation>Staging</translation>
+    </message>
+    <message>
+        <source>Production</source>
+        <translation>Produktion</translation>
+    </message>
+    <message>
+        <source>DEV</source>
+        <translation>DEV</translation>
+    </message>
+    <message>
+        <source>TEST</source>
+        <translation>TEST</translation>
+    </message>
+    <message>
+        <source>STAGE</source>
+        <translation>STAGE</translation>
+    </message>
+    <message>
+        <source>PROD</source>
+        <translation>PROD</translation>
+    </message>
+    <message>
         <source>Breadcrumb</source>
         <translation>Brotkrumennavigation</translation>
     </message>

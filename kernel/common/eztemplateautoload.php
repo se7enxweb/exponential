@@ -73,7 +73,7 @@ $eZTemplateOperatorArray[] = array( 'class' => 'expAuditTemplateOperator',
                                     'operator_names' => array( 'audit_label' ) );
 
 $eZTemplateOperatorArray[] = array( 'class' => 'expEnvironmentOperator',
-                                    'operator_names' => array( 'exp_environment' ) );
+                                    'operator_names' => array( 'exp_environment', 'exp_environment_badge' ) );
 
 // Function autoloading
 

@@ -11348,6 +11348,42 @@ Note: The packages will not be uninstalled.</source>
 <context>
     <name>design/admin/pagelayout</name>
     <message>
+        <source>Environment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Development</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Staging</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Production</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>DEV</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>TEST</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>STAGE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>PROD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Breadcrumb</source>
         <translation type="unfinished"></translation>
     </message>
