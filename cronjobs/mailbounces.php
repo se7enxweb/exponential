@@ -1,6 +1,7 @@
 <?php
 /**
  * @description The bounce mailbox: hard bounces and spam complaints go on the suppression list (mailpreferences.ini [BounceSettings])
+ * @link doc/guides/mail-preferences-administrator.md
  *
  * File containing the mailbounces.php cronjob
  *

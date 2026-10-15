@@ -271,6 +271,8 @@ class Cronjobs extends \Exponential\Runnable\ModuleView
                     \expCronjobRunner::targetLogFile( $part['name'], $script['name'] );
                 $parts[$index]['scripts'][$scriptIndex]['description'] =
                     \expCronjobRunner::scriptDescription( $script['path'] );
+                $parts[$index]['scripts'][$scriptIndex]['documentation'] =
+                    \expCronjobRunner::scriptDocumentation( $script['name'], $script['path'] );
                 $parts[$index]['scripts'][$scriptIndex]['command'] =
                     $splitCommand( \expCronjobRunner::commandLine( $part['name'], $siteAccessMark, $script['name'] ) );
                 $searchText[] = $script['name'];
@@ -306,7 +308,11 @@ class Cronjobs extends \Exponential\Runnable\ModuleView
         // On disk, named by no part, so never run by anything.
         $availableScripts = \expCronjobRunner::availableScripts();
         foreach ( $availableScripts as $spareIndex => $spare )
+        {
             $availableScripts[$spareIndex]['description'] = \expCronjobRunner::scriptDescription( $spare['path'] );
+            $availableScripts[$spareIndex]['documentation'] =
+                \expCronjobRunner::scriptDocumentation( $spare['name'], $spare['path'] );
+        }
         $tpl->setVariable( 'cronjob_available_scripts', $availableScripts );
         // What ran, when, and whether it complained.
         $cronjobHistory = \expCronjobRunner::history( 20 );

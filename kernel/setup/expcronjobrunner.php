@@ -44,6 +44,11 @@ class expCronjobRunner
     const GLOBAL_PART = 'global';
 
     /**
+     * Where documentation is when a cronjob script names it as a path, not a URL.
+     */
+    const DOCUMENTATION_BASE = 'https://github.com/se7enxweb/exponential/blob/main/';
+
+    /**
      * Runs one of this class's own static methods and always comes back with
      * something to report.
      *
@@ -1074,11 +1079,75 @@ class expCronjobRunner
      */
     public static function scriptDescription( $path )
     {
+        return self::headerTag( $path, 'description' );
+    }
+
+    /**
+     * Where to read more about a cronjob script, as a link for the console.
+     *
+     * The installation decides first: cronjob.ini [ScriptDocumentation] Link[<script>], by the script's file name
+     * (none leaves the script without a link, and so does a value that is no link). Otherwise the @link tag of the script's header, or of its class file
+     * (#207), the phpDoc tag for a URL. A path such as doc/guides/cronjobs.md is put after DocumentationBase. Only
+     * http and https come out; anything else gives no link.
+     *
+     * @param string $name the script as its part names it.
+     * @param string|false $path
+     * @return string a URL, or an empty string when nothing says.
+     */
+    public static function scriptDocumentation( $name, $path )
+    {
+        $ini = eZINI::instance( 'cronjob.ini' );
+        $base = $ini->hasVariable( 'ScriptDocumentation', 'DocumentationBase' )
+              ? trim( (string)$ini->variable( 'ScriptDocumentation', 'DocumentationBase' ) ) : '';
+        if ( $base === '' )
+            $base = self::DOCUMENTATION_BASE;
+
+        $links = $ini->hasVariable( 'ScriptDocumentation', 'Link' ) ? $ini->variable( 'ScriptDocumentation', 'Link' ) : array();
+        $key = basename( (string)$name );
+        if ( is_array( $links ) && isset( $links[$key] ) && is_scalar( $links[$key] ) && trim( (string)$links[$key] ) !== '' )
+            return strcasecmp( trim( (string)$links[$key] ), 'none' ) === 0 ? '' : self::documentationUrl( $links[$key], $base );
+
+        $tag = self::headerTag( $path, 'link' );
+        return $tag === '' ? '' : self::documentationUrl( $tag, $base );
+    }
+
+    /**
+     * A documentation reference as a URL: an http(s) URL as it is, a relative path after the base.
+     *
+     * A path is letters, digits, "_", "-", ".", "/" and an optional #anchor, without "..", so it stays below the
+     * base. Anything else - another scheme, spaces, quotes - gives an empty string.
+     *
+     * @param string $value
+     * @param string $base an http(s) URL.
+     * @return string
+     */
+    public static function documentationUrl( $value, $base = self::DOCUMENTATION_BASE )
+    {
+        $value = trim( (string)$value );
+        if ( preg_match( '#^https?://[^\s"\'<>`]+$#i', $value ) )
+            return $value;
+        if ( preg_match( '#^[A-Za-z0-9_][A-Za-z0-9_./-]*(\#[A-Za-z0-9_-]+)?$#', $value )
+             && strpos( $value, '..' ) === false && preg_match( '#^https?://[^\s"\'<>`]+$#i', (string)$base ) )
+            return rtrim( $base, '/' ) . '/' . $value;
+
+        return '';
+    }
+
+    /**
+     * One tag of a cronjob script's header, or of its class file (#207) when the entry point has none.
+     *
+     * @param string|false $path
+     * @param string $tag without the @.
+     * @return string
+     */
+    private static function headerTag( $path, $tag )
+    {
         if ( $path === false || !is_file( $path ) )
             return '';
 
+        $quoted = preg_quote( $tag, '/' );
         $head = (string)@file_get_contents( $path, false, null, 0, 8192 );
-        if ( preg_match( '/^\s*(?:\*|\/\/)\s*@description\s+(.+)$/m', $head, $match ) )
+        if ( preg_match( '/^\s*(?:\*|\/\/)\s*@' . $quoted . '\s+(.+)$/m', $head, $match ) )
             return trim( $match[1] );
 
         if ( preg_match( '/The code is in (\S+\.php) \(#207\)/', $head, $match ) )
@@ -1087,7 +1156,7 @@ class expCronjobRunner
             if ( is_file( $code ) )
             {
                 $head = (string)@file_get_contents( $code, false, null, 0, 16384 );
-                if ( preg_match( '/^\s*\*\s*@description\s+(.+)$/m', $head, $match ) )
+                if ( preg_match( '/^\s*\*\s*@' . $quoted . '\s+(.+)$/m', $head, $match ) )
                     return trim( $match[1] );
             }
         }

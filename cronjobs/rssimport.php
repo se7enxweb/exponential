@@ -1,6 +1,7 @@
 <?php
 /**
  * @description Fetch and import configured RSS feeds into the content tree
+ * @link doc/guides/rss-feeds.md
  *
  * File containing the rssimport.php cronjob
  *

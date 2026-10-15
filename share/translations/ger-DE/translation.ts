@@ -22948,6 +22948,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
 <context>
     <name>design/admin/setup/cronjobs</name>
     <message>
+        <source>Docs</source>
+        <translation>Doku</translation>
+    </message>
+    <message>
+        <source>Documentation of %script (opens in a new window)</source>
+        <translation>Dokumentation zu %script (öffnet in einem neuen Fenster)</translation>
+    </message>
+    <message>
         <source>Kernel</source>
         <translation>Kern</translation>
     </message>
