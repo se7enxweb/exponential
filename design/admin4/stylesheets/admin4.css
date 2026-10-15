@@ -419,6 +419,18 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
 }
 .a4-user-menu-display { font-weight: 600; overflow-wrap: anywhere; }
 .a4-user-menu-login { color: var(--a4-muted); font-size: var(--a4-text-xs); }
+/* The name as a link to the user's own object: the whole name block is the target, hover and focus as the links below */
+.a4-user-menu-self {
+  display: flex;
+  flex-direction: column;
+  margin: calc(-1 * var(--a4-space-2)) calc(-1 * var(--a4-space-3));
+  padding: var(--a4-space-2) var(--a4-space-3);
+  border-radius: var(--a4-radius-s);
+  color: var(--a4-ink);
+  text-decoration: none;
+}
+.a4-user-menu-self:hover { background-color: var(--a4-soft); color: var(--a4-ink); }
+.a4-user-menu-self:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: -3px; }
 .a4-user-menu-links { margin: 0; padding: 0; list-style: none; }
 .a4-user-menu-links li { margin: 0; }
 .a4-user-menu-links :is(a, span) {
@@ -440,6 +452,9 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
   .a4-header-btn[aria-expanded="true"],
   .a4-nav-more-toggle[aria-expanded="true"],
   .a4-nav-more-toggle.has-current { outline: 2px solid Highlight; }
+  /* the hover background is dropped in forced colors: an underline shows the pointer on a user menu link */
+  .a4-user-menu-links a:hover,
+  .a4-user-menu-self:hover { text-decoration: underline; }
 }
 @media (prefers-reduced-motion: reduce) {
   .a4-nav-more-toggle .a4-icon { transition: none; }

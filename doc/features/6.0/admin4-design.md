@@ -76,7 +76,8 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
   two rows of 48 + 40 px from 576 px, one row of 56 px on a phone with the hamburger menu (logo, site, light/dark,
   user menu, logout, menu button). The menu stays on one line; tabs that do not fit go into a "More" list. "Open the
   site" is the first of the tools, a round icon button like the others; logout is an icon button ("Logout
-  (admin)"); the user menu holds the user's name and links. The Tab key reaches the tools in the order they are
+  (admin)"); the user menu holds the user's name and links, and the name leads to the user's own object when the
+  user may read it (not on edit and browse pages). The Tab key reaches the tools in the order they are
   drawn. "/" jumps to the search. The page always starts below the header (`AdminHeaderTest`).
 - **Sign-in page.** One calm form, fast on phones: labels above 46-48 px fields, 16 px text so mobile Safari does not
   zoom, autofill hints, Enter moves from the username to the password and signs in, a show/hide button, one full-width

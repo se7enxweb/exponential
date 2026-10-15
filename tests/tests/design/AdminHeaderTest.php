@@ -9,6 +9,8 @@
  *   aria-controls), hidden until the script needs it; without the script the row scrolls;
  * - logout is an icon button of its own beside the user menu, named "Logout (<login>)", one click away; the user
  *   menu is a disclosure with the user's name and links; the header's cache blocks are keyed by the user;
+ * - the name at the top of the user menu links to the full view of the user's own object, when the user may read its
+ *   main node and not on edit and browse pages (rendered with the real template engine, no database);
  * - "Open the site" is the first of the header's tools, a round icon button before light/dark, the user menu and
  *   logout, in the markup in the order they are drawn; the logo stands alone;
  * - "/" puts the focus in the header search; the new rules take their colours from the tokens.
@@ -139,6 +141,116 @@ class AdminHeaderTest extends PHPUnit\Framework\TestCase
         $this->assertSame( '3px solid var(--a4-ring)', $rules['.a4-header-btn:focus-visible']['outline'] );
         foreach ( array( 'ger-DE' => 'Abmelden (%login)', 'eng-US' => 'Logout (%login)' ) as $language => $translation )
             $this->assertStringContainsString( "<source>Logout (%login)</source>\n        <translation>$translation</translation>", self::file( "share/translations/$language/translation.ts" ) );
+    }
+
+    /** Renders parts/a4_header_user.tpl with the real template engine for a user given as nested arrays (no database) */
+    private function renderUserMenu( array $user, $uiContext = 'navigation' )
+    {
+        $basics = array_key_exists( 'eZSiteBasics', $GLOBALS ) ? array( $GLOBALS['eZSiteBasics'] ) : null;
+        // not compiled: each case renders the same template with other variables
+        $GLOBALS['eZSiteBasics']['no-cache-adviced'] = true;
+        try
+        {
+            $tpl = eZTemplate::factory();
+            $tpl->setVariable( 'current_user', $user );
+            $tpl->setVariable( 'ui_context', $uiContext );
+            $tpl->setVariable( 'ui_context_edit', $uiContext === 'edit' );
+            $html = $tpl->fetch( dirname( __DIR__, 3 ) . '/design/admin4/templates/parts/a4_header_user.tpl' );
+            $this->assertSame( array(), $tpl->errorLog() );
+            return $html;
+        }
+        finally
+        {
+            eZTemplate::resetInstance();
+            if ( $basics === null )
+                unset( $GLOBALS['eZSiteBasics'] );
+            else
+                $GLOBALS['eZSiteBasics'] = $basics[0];
+        }
+    }
+
+    private static function user( $objectId, $login, $name, $mainNode )
+    {
+        return array( 'is_logged_in' => true, 'login' => $login, 'contentobject_id' => $objectId,
+                      'contentobject' => array( 'name' => $name, 'can_edit' => true, 'main_node' => $mainNode ) );
+    }
+
+    /**
+     * The name at the top of the user menu (display name and login) links to content/view/full/<main node> of the
+     * signed-in user's own object, as the right column's "Current user" box links the name: only with a main node the
+     * user may read, and not on edit and browse pages, where the menu's links lead nowhere. The link is a plain link
+     * of the disclosure (no menu role), named by the text it shows, with "Open your user object" as its tooltip and
+     * description. The header's cache blocks are keyed by the user's role hash and object id, so one user's link is
+     * never served to another.
+     */
+    public function testTheNameLinksToTheUsersOwnObject()
+    {
+        $hint = ezpI18n::tr( 'design/admin/pagelayout', 'Open your user object' );
+        $html = $this->renderUserMenu( self::user( 14, 'admin', 'Administrator User', array( 'node_id' => 2042, 'can_read' => true ) ) );
+        $this->assertSame( 1, preg_match( '#<a id="a4-user-menu-self" class="a4-user-menu-self" href="([^"]*)" title="([^"]*)" aria-describedby="a4-user-menu-self-hint">\s*<span class="a4-user-menu-display">Administrator User</span>\s*<span class="a4-user-menu-login" translate="no">admin</span>\s*</a>#', $html, $link ), $html );
+        $this->assertMatchesRegularExpression( '#/content/view/full/2042$#', $link[1], 'the full view of the main node' );
+        // tooltip and description: the same translated hint, whatever the language the test runs in
+        $this->assertSame( 1, preg_match( '#<span id="a4-user-menu-self-hint" hidden>([^<]+)</span>#', $html, $described ) );
+        $this->assertSame( $link[2], $described[1] );
+        $this->assertSame( $hint, html_entity_decode( $link[2], ENT_QUOTES | ENT_HTML5 ) );
+        $this->assertStringNotContainsString( 'role="menuitem"', $html, 'a disclosure of plain links' );
+        // the first link of the panel: ArrowDown on the button reaches it first (links() in admin4.js takes a[href])
+        $this->assertLessThan( strpos( $html, '<ul class="a4-user-menu-links">' ), strpos( $html, 'id="a4-user-menu-self"' ) );
+        $this->assertStringContainsString( "return Array.prototype.filter.call(panel.querySelectorAll('a[href]'), function (a) {", self::file( 'design/admin4/javascript/admin4.js' ) );
+
+        // no read access, no main node, an edit or browse page: the name as text, as before
+        $text = '#<p class="a4-user-menu-name">\s*<span class="a4-user-menu-display">Administrator User</span>\s*<span class="a4-user-menu-login" translate="no">admin</span>\s*</p>#';
+        $cases = array(
+            'no read access' => array( self::user( 14, 'admin', 'Administrator User', array( 'node_id' => 2042, 'can_read' => false ) ), 'navigation' ),
+            'no main node' => array( self::user( 14, 'admin', 'Administrator User', false ), 'navigation' ),
+            'edit page' => array( self::user( 14, 'admin', 'Administrator User', array( 'node_id' => 2042, 'can_read' => true ) ), 'edit' ),
+            'browse page' => array( self::user( 14, 'admin', 'Administrator User', array( 'node_id' => 2042, 'can_read' => true ) ), 'browse' ) );
+        foreach ( $cases as $case => list( $user, $context ) )
+        {
+            $html = $this->renderUserMenu( $user, $context );
+            $this->assertMatchesRegularExpression( $text, $html, $case );
+            $this->assertStringNotContainsString( 'content/view/full', $html, $case );
+            $this->assertStringNotContainsString( 'a4-user-menu-self', $html, $case );
+        }
+
+        // two users, two links: each names its own node
+        $other = $this->renderUserMenu( self::user( 99, 'editor', 'Editor', array( 'node_id' => 3077, 'can_read' => true ) ) );
+        $this->assertMatchesRegularExpression( '#href="[^"]*/content/view/full/3077"#', $other );
+        $this->assertStringNotContainsString( '2042', $other );
+
+        // the cache: page_header.tpl (and with it this template) is drawn inside the header's cache blocks, which are
+        // keyed by the page context ($ui_context: edit and browse apart), the role hash ($user_hash: roles and limitation
+        // values decide can_read) and the object id (whose main node the link names), in admin4 and admin4l
+        foreach ( array( 'design/admin4/templates/pagelayout.tpl', 'design/admin4l/templates/pagelayout.tpl' ) as $path )
+        {
+            $layout = self::file( $path );
+            // the innermost cache block around page_header.tpl, whatever the order of its keys
+            $at = strpos( $layout, "{include uri='design:page_header.tpl'}" );
+            $this->assertNotFalse( $at, $path );
+            $open = strrpos( substr( $layout, 0, $at ), '{cache-block keys=array(' );
+            $this->assertNotFalse( $open, $path );
+            $this->assertStringNotContainsString( '{/cache-block}', substr( $layout, $open, $at - $open ), "$path: page_header.tpl is inside the block" );
+            $keys = substr( $layout, $open, strpos( $layout, "\n", $open ) - $open );
+            foreach ( array( '$ui_context,', '$user_hash,', '$current_user.contentobject_id,' ) as $key )
+                $this->assertStringContainsString( ' ' . $key, $keys, "$path: $key" );
+            $block = array( 1 => substr( $layout, $open, strpos( $layout, '{/cache-block}', $at ) - $open ) );
+        }
+        // admin4l draws the header zone (admin_theme_switch.tpl includes this template) in the same block
+        $this->assertStringContainsString( "{include uri='design:explayouts/admin_zone.tpl' layout=\$admin_layout zone_identifier='header'}", $block[1] );
+        $this->assertStringContainsString( "{include uri='design:page_topmenu.tpl'}", self::file( 'design/admin4/templates/page_header.tpl' ) );
+        $this->assertStringContainsString( '$user_hash = concat( $current_user.role_id_list|implode( \',\' ), \',\', $current_user.limited_assignment_value_list|implode( \',\' )', self::file( 'design/admin4/templates/pagelayout.tpl' ) );
+
+        // hover and focus as the menu's links, an underline on hover in forced colors
+        $css = self::css( 'admin4.css' );
+        $rules = AdminBaseStylesheetsTest::rules( $css );
+        $this->assertSame( $rules['.a4-user-menu-links a:hover']['background-color'], $rules['.a4-user-menu-self:hover']['background-color'] );
+        $this->assertSame( $rules['.a4-user-menu-links a:focus-visible']['outline'], $rules['.a4-user-menu-self:focus-visible']['outline'] );
+        $this->assertSame( 'none', $rules['.a4-user-menu-self']['text-decoration'] );
+        $forced = AdminBaseStylesheetsTest::rules( $css, true );
+        $this->assertSame( 'underline', $forced['.a4-user-menu-links a:hover, .a4-user-menu-self:hover']['text-decoration'] );
+
+        foreach ( array( 'ger-DE' => 'Eigenes Benutzerobjekt öffnen', 'eng-US' => 'Open your user object' ) as $language => $translation )
+            $this->assertStringContainsString( "<source>Open your user object</source>\n        <translation>$translation</translation>", self::file( "share/translations/$language/translation.ts" ) );
     }
 
     /**
