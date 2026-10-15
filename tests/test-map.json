@@ -14,6 +14,25 @@
     "tests/test-map.json"
   ],
   "map": {
+    "kernel/contentcheck/*": [
+      "tests/tests/kernel/contentcheck/expContentCheckQueryTest.php",
+      "tests/tests/kernel/contentcheck/expContentCheckSandboxTest.php"
+    ],
+    "kernel/private/classes/views/contentcheck/*": [
+      "tests/tests/kernel/contentcheck/expContentCheckQueryTest.php",
+      "tests/tests/kernel/contentcheck/expContentCheckSandboxTest.php"
+    ],
+    "settings/contentcheck.ini": [
+      "tests/tests/kernel/contentcheck/expContentCheckSandboxTest.php"
+    ],
+    "design/admin*/templates/contentcheck/*": [
+      "tests/tests/design/AdminSelfContainedTest.php",
+      "tests/tests/design/AdminFormLabelsTest.php",
+      "tests/tests/design/AdminStylingRulesTest.php"
+    ],
+    "design/admin*/templates/popupmenu/popup_sub_advance_menu.tpl": [
+      "tests/tests/design/AdminContextMenuTest.php"
+    ],
     "lib/ezimage/classes/expsvgsanitizer.php": [
       "tests/tests/lib/ezimage/expSvgSanitizerTest.php",
       "tests/tests/kernel/datatypes/ezimage/expImageSvgTest.php"

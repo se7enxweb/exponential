@@ -1746,9 +1746,11 @@ a.a4-icon-btn, a.a4-icon-btn:visited { color: var(--a4-muted); }
 .a4-bi-download { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/download.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/download.svg); }
 .a4-bi-envelope { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/envelope.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/envelope.svg); }
 .a4-bi-envelope-paper { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/envelope-paper.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/envelope-paper.svg); }
+.a4-bi-exclamation-diamond { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/exclamation-diamond.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/exclamation-diamond.svg); }
 .a4-bi-exclamation-triangle { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/exclamation-triangle.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/exclamation-triangle.svg); }
 .a4-bi-eye { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/eye.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/eye.svg); }
 .a4-bi-eye-slash { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/eye-slash.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/eye-slash.svg); }
+.a4-bi-file-earmark-break { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/file-earmark-break.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/file-earmark-break.svg); }
 .a4-bi-file-earmark-code { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/file-earmark-code.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/file-earmark-code.svg); }
 .a4-bi-file-earmark-pdf { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/file-earmark-pdf.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/file-earmark-pdf.svg); }
 .a4-bi-files { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/files.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/files.svg); }

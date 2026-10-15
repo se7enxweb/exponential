@@ -260,6 +260,7 @@ in no group).
 | expai_models | `cpu` | git_manager | `git` |
 | expai_budgets | `piggy-bank` | git_manager_backup | `archive` |
 | expqueue | `list-task` | dse | `database` |
+| unreferenced_objects | `file-earmark-break` | broken_relations | `exclamation-diamond` |
 | (an extension's link) | `plug` | | |
 
 ### Extending it
