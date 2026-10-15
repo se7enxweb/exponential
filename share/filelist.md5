@@ -604,7 +604,7 @@ dcdfd28ff236916b7773ca84b5d3172e  design/admin/templates/settings/exp_origin.tpl
 19c62afa174fad3a41db2b69698eec2d  design/admin/templates/settings/view.tpl
 017371a2ce85ecc09681cca0c55ed63c  design/admin/templates/setup/cache.tpl
 fe18732ea4fb6a55915d651691c697e6  design/admin/templates/setup/contentextension.tpl
-228faf0c413f768317ea65c892920a52  design/admin/templates/setup/cronjobs.tpl
+449aa1be700736e2db950db79e4ffa0d  design/admin/templates/setup/cronjobs.tpl
 ed52e10a5f47b691c8e15ae490adb105  design/admin/templates/setup/datatype.tpl
 161a4466280769f50dfb372278524759  design/admin/templates/setup/datatype_basic.tpl
 dcb722bfda3d71da901504f9da33f0f5  design/admin/templates/setup/datatype_code.tpl
@@ -1204,7 +1204,7 @@ dcdfd28ff236916b7773ca84b5d3172e  design/admin4/templates/settings/exp_origin.tp
 19c62afa174fad3a41db2b69698eec2d  design/admin4/templates/settings/view.tpl
 017371a2ce85ecc09681cca0c55ed63c  design/admin4/templates/setup/cache.tpl
 38e990a2b8e388bbb0475607e7912f97  design/admin4/templates/setup/contentextension.tpl
-1483cd0ff14d526820f74b53961d9827  design/admin4/templates/setup/cronjobs.tpl
+8922fa6f63a9b0b5e6651f8420c60faf  design/admin4/templates/setup/cronjobs.tpl
 7d1dcd401320ffcb01fcd00a45947745  design/admin4/templates/setup/datatype.tpl
 903e5e3317285c154668c2676fe88c22  design/admin4/templates/setup/datatype_basic.tpl
 dcb722bfda3d71da901504f9da33f0f5  design/admin4/templates/setup/datatype_code.tpl
@@ -2763,7 +2763,7 @@ c9f20a03afc08795fea37b7b66458194  doc/bc/6.0/audit.md
 e8465b9099e38bb4731675ba1ea462c2  doc/bc/6.0/backend_ezjscore_services.md
 e13e79599730e77b94efa91126e45ed9  doc/bc/6.0/behaviour-changes-2026-07-08.md
 250a9d7e6948ddd176f5c6c54bb0febb  doc/bc/6.0/behaviour-changes-2026-09b.md
-2d0996bc7938266f3b5ce10e9edef84c  doc/bc/6.0/behaviour-changes-2026-10.md
+79c3d7ac218a5a0a895effe062dc82b2  doc/bc/6.0/behaviour-changes-2026-10.md
 634c9b738dac08042ef4b52dee1d3212  doc/bc/6.0/bookmark-folders.md
 d4b597204d5099e2bd8f5e498fd4d1ad  doc/bc/6.0/cache-console.md
 fdba75c8c79a1b17f63cb3a6e013e134  doc/bc/6.0/cleanuprss.md
@@ -2986,7 +2986,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-92be462965cd467df1f85783cc353dca  doc/changelogs/6.0/6.0.15.md
+1c8fa31b362bf87373715b10e6d06ce2  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3327,7 +3327,7 @@ a7de42ade5e309311b5e346ced1a7cf2  doc/features/6.0/clean-install-defaults.md
 f1c1fb56a9242d2efa91dd58ead7449e  doc/features/6.0/content-jobs.md
 0e0369149f51247d6b31d8fcfe8fb949  doc/features/6.0/content-limitation-handlers.md
 75c167003b97bad4b0226315b2182509  doc/features/6.0/cronjob-part-filter.md
-d08c773e34c35ff850790b6fe0e586a0  doc/features/6.0/cronjob-pause.md
+fc530f8241756662c94f9aa9a00dc827  doc/features/6.0/cronjob-pause.md
 ce637f381c74883c3ab6b55b59ce3761  doc/features/6.0/cronjobs-console.md
 e6f3c790828c4532db21659841921631  doc/features/6.0/custom-items-per-page.md
 f2bff77e9a094481e27aa23236fdc3e5  doc/features/6.0/debug-output-improvements.md
@@ -4903,7 +4903,7 @@ e7456184eb299387e3eed677ae8ea469  kernel/classes/expcollaborationsampledata.php
 adcf0106cb325d58b6535e3119c86124  kernel/classes/expcontentdraftlist.php
 817ffe4f29fcb2fc58741e44fdd18603  kernel/classes/expcontenthistorylist.php
 060a5c445d16458886b00db1d94da18c  kernel/classes/expcontentpendinglist.php
-ca97f4f9883aa8738b24ad21d7576e21  kernel/classes/expcronjobpause.php
+218c3d3df228b17d35639cacb0c2564a  kernel/classes/expcronjobpause.php
 06c3fd9f915b90205f43300f8a58fe55  kernel/classes/experrorheaderlist.php
 4f8b979e7bac49349e8bab2c65a8e142  kernel/classes/expextensioncatalogue.php
 e0b74fce97e793dcf8a5c7ccd1ad86c0  kernel/classes/expextensionchangeplan.php
@@ -6402,7 +6402,7 @@ b936eef92173ffa13f6784da049f28ac  settings/content.ini
 850a0458284805760eaa0832567cecc1  settings/contentfinder.ini
 1dbcfc8da1b2cb204ea10c28c2caec6b  settings/contentstructuremenu.ini
 bbef6be3b98786e0ac5391c2f9993b6f  settings/country.ini
-34ed55a7026d1197d3cc94a31dbf2a61  settings/cronjob.ini
+3737dd049a0f2160a4ee84214108df16  settings/cronjob.ini
 0f6f37b81c63b1ae28ad925550b8cd49  settings/dashboard.ini
 d5020c505e699f2d0f7606e505c9a8d2  settings/datatype.ini
 ea68c5ba8eb753c5292a1c4dd3a5b2bc  settings/datetime.ini
@@ -7457,7 +7457,7 @@ c982ecbf9fc8545773311219e66b95fa  tests/tests/kernel/classes/expContentHideRetur
 3d4aea56bbd6b88864909c0e1ea1ec2a  tests/tests/kernel/classes/expContentHistoryListTest.php
 201f85cc8198f7389a66a982878dcf6a  tests/tests/kernel/classes/expContentLanguagesCountsLiveTest.php
 8a09334d1220ca0936f37a308b5be245  tests/tests/kernel/classes/expContentLanguagesOverviewTest.php
-883fab6a7574056b432a2ffb7e91d0b9  tests/tests/kernel/classes/expCronjobPauseTest.php
+b0752151a135bb52161e1903b5d929a8  tests/tests/kernel/classes/expCronjobPauseTest.php
 e1d9c99f5f0c0a4a5f1dc95cdeae4a5d  tests/tests/kernel/classes/expCronjobRunnerScheduleTest.php
 c3c626e3450b8775e3ca74608825e7db  tests/tests/kernel/classes/expImageUploadValidatorTest.php
 629ef4db40bb3ea9ff3f8b56bcae400a  tests/tests/kernel/classes/expLinkCheckTest.php
