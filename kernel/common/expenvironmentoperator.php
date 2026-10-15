@@ -81,8 +81,7 @@ class expEnvironmentOperator
             if ( $ini->hasVariable( 'AdminEnvironment', $name ) )
                 $settings[$name] = $ini->variable( 'AdminEnvironment', $name );
         }
-        $level = isset( $settings['Level'] ) ? strtolower( trim( (string)$settings['Level'] ) ) : '';
-        $version = isset( $settings['ShowVersion'] ) && $settings['ShowVersion'] === 'enabled' && $level !== ''
+        $version = isset( $settings['ShowVersion'] ) && $settings['ShowVersion'] === 'enabled'
                    ? ExponentialSDK::version( true, false, false ) : '';
         return self::badge( $settings, eZINI::environment(), $version, function ( $text ) {
             return ezpI18n::tr( 'design/admin/pagelayout', $text );

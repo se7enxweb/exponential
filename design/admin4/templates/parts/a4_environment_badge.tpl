@@ -5,7 +5,7 @@
    The pagelayouts key their header cache-blocks by the badge's key. *}
 {def $a4_env_badge = exp_environment_badge()}
 {if $a4_env_badge.level|ne( '' )}
-{def $a4_env_release = cond( $current_user.is_logged_in, $a4_env_badge.release, '' )}
+{def $a4_env_release = cond( first_set( $current_user.is_logged_in, false() ), $a4_env_badge.release, '' )}
 <span class="a4-env a4-env-{$a4_env_badge.level}" title="{'Environment'|i18n( 'design/admin/pagelayout' )|wash}: {$a4_env_badge.name|wash}{if $a4_env_release|ne( '' )} · {$a4_env_release|wash}{/if}">
     <span class="a4-env-dot" aria-hidden="true"></span>
     <span class="a4-sr-only">{'Environment'|i18n( 'design/admin/pagelayout' )|wash}:</span>

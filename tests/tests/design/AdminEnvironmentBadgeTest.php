@@ -12,7 +12,8 @@
  * - the page title starts with "[NAME] " (page_head.tpl's title_prefix), and every cache-block that holds the title
  *   or the header is keyed by the badge;
  * - the header keeps its heights (56, 88, 56px): the badge is 24px in the 36px row, a 14px dot on phones, and the
- *   search field gives it room only from 576 to 1279px;
+ *   search field gives it room only from 576 to 1279px (the rules that make it so; the rendered heights were
+ *   measured in a browser at 390, 576, 768, 1280 and 1440px, which this file alone cannot do);
  * - each level's text 4.5:1 on its fill and its edge 3:1 on the header, in both modes; forced colors keep the text;
  * - German and American English for the new strings.
  *
@@ -165,7 +166,7 @@ class AdminEnvironmentBadgeTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( "<span class=\"a4-sr-only\">{'Environment'|i18n( 'design/admin/pagelayout' )|wash}:</span>", $partial );
         $this->assertStringContainsString( '<span class="a4-env-name">{$a4_env_badge.name|wash}</span>', $partial );
         $this->assertStringContainsString( '<span class="a4-env-short" aria-hidden="true">{$a4_env_badge.short|wash}</span>', $partial );
-        $this->assertStringContainsString( "cond( \$current_user.is_logged_in, \$a4_env_badge.release, '' )", $partial, 'the release only for signed-in users' );
+        $this->assertStringContainsString( "cond( first_set( \$current_user.is_logged_in, false() ), \$a4_env_badge.release, '' )", $partial, 'the release only for signed-in users' );
         // every value written into the markup is washed (the level is one of four words, see badge())
         preg_match_all( '/\{\$a4_env_(?:badge\.(?!level\b)\w+|release)([^}]*)\}/', $partial, $outputs, PREG_SET_ORDER );
         $this->assertNotEmpty( $outputs );
@@ -187,22 +188,24 @@ class AdminEnvironmentBadgeTest extends PHPUnit\Framework\TestCase
             $this->assertMatchesRegularExpression( '/\$env_badge\s+= exp_environment_badge\(\)/', $tpl, $path );
             $this->assertStringContainsString( "{include uri='design:page_head.tpl' title_prefix=cond( \$env_badge.title, concat( '[', \$env_badge.name|upcase, '] ' ), '' )}", $tpl, $path );
             // each cache-block that holds the head or the header carries the badge's key
-            preg_match_all( '/\{cache-block keys=array\((.*?)\)( ignore_content_expiry)?\}(.*?)\{\/cache-block\}/s', $tpl, $blocks, PREG_SET_ORDER );
+            // the innermost cache-block around each include of the head and the header carries the badge's key
+            preg_match_all( '/\{cache-block keys=array\((.*)\)( ignore_content_expiry)?\}|\{\/cache-block\}|design:page_head(?:er)?\.tpl/', $tpl, $tokens, PREG_SET_ORDER );
+            $open = array();
             $checked = 0;
-            foreach ( $blocks as $block )
+            foreach ( $tokens as $token )
             {
-                if ( strpos( $block[3], 'page_head.tpl' ) !== false || strpos( $block[3], 'page_header.tpl' ) !== false )
+                if ( strpos( $token[0], '{cache-block' ) === 0 )
+                    $open[] = $token[1];
+                elseif ( $token[0] === '{/cache-block}' )
+                    array_pop( $open );
+                else
                 {
-                    $this->assertStringContainsString( '$env_badge.key', $block[1], $path );
+                    $this->assertNotEmpty( $open, "$path: {$token[0]} is cached" );
+                    $this->assertStringContainsString( '$env_badge.key', end( $open ), "$path: {$token[0]}" );
                     $checked++;
                 }
             }
-            $this->assertGreaterThanOrEqual( 1, $checked, $path );
-            // the header's own block too (it is nested in the outer one, so look at its keys directly)
-            if ( strpos( $tpl, 'page_header.tpl' ) !== false )
-            {
-                $this->assertMatchesRegularExpression( '/\{cache-block keys=array\(.*, \$env_badge\.key \) ignore_content_expiry\}\n\s*\{\* HEADER/', $tpl, $path );
-            }
+            $this->assertSame( strpos( $tpl, 'page_header.tpl' ) !== false ? 2 : 1, $checked, $path );
         }
     }
 
