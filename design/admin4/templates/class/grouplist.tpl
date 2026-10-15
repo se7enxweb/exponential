@@ -41,8 +41,9 @@
 <div class="a4-filterbar">
     <div class="a4-field exp-js-only" hidden>
         <label for="classgroups-search">{'Find a group or class'|i18n( 'design/admin/class/grouplist' )}</label>
-        <input type="search" id="classgroups-search" autocomplete="off" spellcheck="false" aria-controls="classgroups-list" aria-describedby="classgroups-filter-count classgroups-search-help" />
+        <input type="search" id="classgroups-search" autocomplete="off" spellcheck="false" aria-controls="classgroups-list" aria-describedby="classgroups-filter-count classgroups-search-help{if $group_count|gt( $limit )} classgroups-search-page{/if}" />
         <span class="a4-help" id="classgroups-search-help">{'Group name, class name or identifier.'|i18n( 'design/admin/class/grouplist' )}</span>
+        {if $group_count|gt( $limit )}<span class="a4-help" id="classgroups-search-page">{'Only this page is searched: %from to %to of %count.'|i18n( 'design/admin/class/grouplist',, hash( '%from', sum( $view_parameters.offset, 1 ), '%to', min( sum( $view_parameters.offset, $limit ), $group_count ), '%count', $group_count ) )}</span>{/if}
     </div>
     <div class="a4-field">
         <span class="a4-help">{'Open a group to create classes in it, copy or remove them.'|i18n( 'design/admin/class/grouplist' )}</span>

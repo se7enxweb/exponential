@@ -28,6 +28,8 @@
         {/if}
     </div>
     <div id="header-search" class="header-search">
+        {* the sections of the search popup, fetched once for both copies of the search (page_search.tpl reads them) *}
+        {def $search_sections = cond( $ui_context_edit, array(), fetch( 'section', 'list' ) )}
         {include uri='design:page_search.tpl'}
     </div>
     {* admin4: light, dark or system mode; the button names the mode in use and steps to the next; a status region announces a press. The choice is the user's eZPreference admin_color_mode (this browser's localStorage "exp-admin4-theme" when anonymous); the
@@ -82,6 +84,7 @@
             </li>
             <li class="header-search-mobile">
                 {include uri='design:page_search.tpl' search_box='-mobile'}
+                {undef $search_sections}
             </li>
         </ul>
     </div>

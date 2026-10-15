@@ -58,7 +58,7 @@
     <input type="text" class="a4-input" id="radFindInput" autocomplete="off" aria-label="{'Find'|i18n( 'design/admin/setup/rad' )|wash}"
            placeholder="{'Type to narrow: a name, a setting, a class, a file'|i18n( 'design/admin/setup/rad' )}" />
     <button type="button" class="a4-btn a4-btn-small a4-btn-icon" id="radFindClear" title="{'Clear'|i18n( 'design/admin/setup/rad' )}">&times;</button>
-    <span class="a4-setup-rad-find-count a4-meta" id="radFindCount"></span>
+    <span class="a4-setup-rad-find-count a4-meta" id="radFindCount" aria-live="polite" data-text="{'%shown of %count'|i18n( 'design/admin/setup/rad' )|wash}"></span>
 </div>
 
 {* Which of them to list. Links rather than a script, so a filtered list can be
@@ -210,15 +210,15 @@
             show( groups[g], any );
         }
 
-        count.innerHTML = words.length === 0
-                          ? ''
-                          : shown + ' of ' + cards.length;
+        count.textContent = words.length === 0
+                            ? ''
+                            : ( count.getAttribute( 'data-text' ) || '%shown / %count' ).split( '%shown' ).join( shown ).split( '%count' ).join( cards.length );
 
         if ( none ) none.hidden = !( words.length && shown === 0 );
     }
 
-    input.onkeyup = run;
-    input.onsearch = run;
+    // input: typing, pasting, cutting and dictation alike, not only a key let go
+    input.addEventListener( 'input', run );
 
     if ( clear )
         clear.onclick = function () { input.value = ''; run(); input.focus(); return false; };
