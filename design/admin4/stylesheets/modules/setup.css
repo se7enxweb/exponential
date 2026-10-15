@@ -951,3 +951,61 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
   .a4-page a.a4-setup-survey-tab.is-current,
   .a4-page a.a4-setup-survey-kind.is-current { outline: 2px solid Highlight; outline-offset: -2px; }
 }
+
+/* ---- setup/menu: the Setup overview -------------------------------------------------------------------------- */
+
+/* One section per group of the Setup menu, the tiles in a grid that counts the width of the content column, not
+   of the window: one column on a phone, two, three, four on a wide screen. A tile is a card with an icon square, the
+   function's name as the link, stretched over the card, and one line on what it does; the description and figure are the link's description (aria-describedby). */
+.a4-setup-overview { container-type: inline-size; }
+.a4-setup-tilegroup-title { margin: 0 0 var(--a4-space-2); }
+.a4-setup-tiles {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--a4-space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+@container (min-width: 520px) { .a4-setup-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@container (min-width: 800px) { .a4-setup-tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@container (min-width: 1080px) { .a4-setup-tiles { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.a4-setup-tiles > .a4-setup-tile + .a4-setup-tile { margin-top: 0; }
+.a4-setup-tile {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--a4-space-3);
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.a4-setup-tile:hover { border-color: var(--a4-accent); }
+.a4-setup-tile-icon {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-accent-soft);
+  color: var(--a4-accent-text);
+  font-size: var(--a4-text-l);
+}
+.a4-setup-tile-icon .a4-icon { width: 1.25em; height: 1.25em; }
+.a4-setup-tile-body { display: grid; gap: 2px; min-width: 0; }
+.a4-setup-tile-link { color: var(--a4-ink); font-weight: 650; overflow-wrap: anywhere; }
+a.a4-setup-tile-link, a.a4-setup-tile-link:visited { color: var(--a4-ink); text-decoration: none; }
+/* the whole card is the link's target; the focus ring is drawn around the card */
+a.a4-setup-tile-link::after { content: ""; position: absolute; inset: 0; border-radius: var(--a4-radius-s); }
+a.a4-setup-tile-link:hover, a.a4-setup-tile-link:focus-visible { color: var(--a4-accent-text); text-decoration: underline; text-underline-offset: 2px; }
+a.a4-setup-tile-link:focus-visible { outline: 2px solid transparent; }
+a.a4-setup-tile-link:focus-visible::after { outline: 3px solid var(--a4-ring); outline-offset: 1px; }
+.a4-setup-tile-text { display: grid; gap: 2px; color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-setup-tile-figure { color: var(--a4-ink); font-size: var(--a4-text-xs); font-variant-numeric: tabular-nums; font-weight: 600; }
+.a4-setup-tile.is-disabled { box-shadow: none; background-color: var(--a4-soft); }
+.a4-setup-tile.is-disabled .a4-setup-tile-link { color: var(--a4-disabled); }
+@media (forced-colors: active) {
+  .a4-setup-tile-icon { border: 1px solid CanvasText; }
+  .a4-setup-tile:hover { border-color: Highlight; }
+  a.a4-setup-tile-link:focus-visible::after { outline-color: Highlight; }
+}

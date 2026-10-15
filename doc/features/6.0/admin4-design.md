@@ -114,6 +114,8 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
   opens). The current page's link carries `aria-current="page"` and is marked with the accent tint and a bar. A menu
   is grouped through menu.ini (`Groups[]`, `GroupNames[<group>]`, `GroupLinks_<group>[]`); without `Groups[]`, or with
   `Groups[]` reset to no values, it is one list, named by its heading. Access is checked per link as before.
+- **Setup overview.** The Setup tab opens an overview of every Setup function as a tile, in the groups of the left
+  menu (see [Setup overview](#setup-overview)).
 - **Tables.** A list table's sorted column is readable (soft orange header).
 - **Icons.** Bootstrap Icons in the text colour, so they follow links, buttons, hover and the dark mode (see below).
 - **Languages.** A short code instead of a flag (see [Languages](#languages)).
@@ -151,6 +153,108 @@ To add an icon: copy the SVG from the Bootstrap Icons 1.13.1 package unchanged i
 `share/icons/bootstrap-icons/svg/`, add `.a4-bi-<name>` to both copies of `components.css` (or name the file in the
 theme's `icon.ini`), and use it. `tests/tests/design/AdminIconsTest.php` fails for a file nothing names, a name with
 no file, a changed file, and a GIF icon, inline SVG or image button in an admin4 template.
+
+## Setup overview
+
+The Setup tab opens `setup/menu`: a page header and every function of the Setup menu as a tile, in the groups of the
+left menu (Content model, Site and URLs, Workflows, Users and messages, System, and "More" for links an extension adds).
+
+- **One source.** The tiles are the left menu, drawn another way: `setup/setupmenu.tpl` includes
+  `parts/setup/menu.tpl`, which hands `[Leftmenu_setup]` of `menu.ini` to `parts/ini_menu.tpl` with
+  `menu_layout='tiles'`. The links, their names, their groups and the access checks (`PolicyList_<link>[]`,
+  `CheckViewAccess`, `NoAccessLinks`) are the menu's: a function the user may not open has no tile, and an
+  extension's link appears under "More" by adding it to `[Leftmenu_setup] Links[]`, as for the menu. The order inside
+  a group is that of `Links[]`.
+- **A tile** is a card (`.a4-card`) with a Bootstrap icon in an accent square, the
+  function's name as its link, stretched over the card with one focus ring around it, and one line on what the
+  function does as the link's description. Icon, description and figure come from the menu's own section in
+  `menu.ini`, per link key (see "Extending it" below); a link without them takes the plug icon and no description.
+  With `NoAccessLinks=disabled` a function the user may not open is a tile without link and without figure, as the
+  menu shows its name without link.
+- **Figures**, only where one cheap fetch gives them and only on a tile the user may open
+  (`setup/setupmenu_figure.tpl`, named by `LinkFigureTemplates[]`): classes, sections, content languages, active
+  extensions that exist (`expinfo( 'active' )`), signed-in users; one and many are two strings.
+- **Grid.** One column on a phone, then two, three and four as the content column grows (container queries on
+  `.a4-setup-overview`, so a wide left column counts). Styles in `stylesheets/modules/setup.css`, tokens only, light and
+  dark, forced colors.
+- **Left menu.** "Overview" is the first entry of the Setup menu, before the groups: menu.ini `LeadLinks[]` names
+  links that stand before the groups and in none of them (`.a4-navlead`). It is marked as the current page on the
+  overview, which leaves it out of its tiles.
+- **Access.** The view `setup/menu` opens with any one of the setup module's functions (`setup`, `administrate`,
+  `managecache`, `managecronjobs`, `preload`, `system_info`), so a role that reached the tab's former page
+  (`setup/cache`) keeps the tab.
+- **Classic designs** show a short page with a pointer to the Setup menu and the `setup` toolbar of toolbar.ini.
+
+| Link key | Icon | Link key | Icon |
+|---|---|---|---|
+| classes | `diagram-3` | cache | `arrow-clockwise` |
+| sections | `collection` | system_information | `info-circle` |
+| states | `toggles` | upgrade_check | `arrow-up-circle` |
+| languages | `translate` | maintenance | `wrench-adjustable` |
+| contentfinder | `search` | cronjobs | `clock` |
+| collected | `inbox` | extensions | `puzzle` |
+| url_management | `link-45deg` | ini | `sliders` |
+| url_translator | `signpost-split` | sitedata | `table` |
+| url_wildcards | `asterisk` | sessions | `people` |
+| menu_management | `menu-button-wide` | notification | `bell` |
+| rss | `rss` | mailpreferences | `envelope-paper` |
+| pdf_export | `file-earmark-pdf` | oauth_list | `key` |
+| packages | `box-seam` | audit | `journal-check` |
+| rad | `magic` | workflows | `diagram-2` |
+| preload | `speedometer2` | workflow_processes | `hourglass-split` |
+| search_statistics | `bar-chart-line` | triggers | `lightning` |
+| roles_and_policies | `person-lock` | templates | `file-earmark-code` |
+| template_editor | `code-square` | toolbar_management | `tools` |
+| look_and_feel | `palette` | global_setting | `globe` |
+| (an extension's link) | `plug` | | |
+
+### Extending it
+
+Any left menu drawn as tiles (`parts/ini_menu.tpl` with `menu_layout='tiles'`) reads three optional settings of its
+section, per link key; the core Setup links carry theirs in `settings/menu.ini [Leftmenu_setup]`:
+
+| Key | Value | Without it |
+|---|---|---|
+| `LinkIcons[<key>]` | an icon name of `design.ini [AdminDesignSettings] IconList[]`, e.g. `bar-chart` | the plug icon; a name not in the list draws the plug icon too |
+| `LinkDescriptions[<key>]` | one line in English, translated in the menu's context (`design/admin/parts/setup/menu` for Setup), like `LinkNames[]` | no description |
+| `LinkFigureTemplates[<key>]` | `design:<path>.tpl`, included with `figure_key=<key>` on a tile the user may open | no figure; a value that does not start with `design:` is ignored |
+
+An extension that adds a Setup function gives it a tile in its own `settings/menu.ini.append.php`:
+
+```ini
+<?php /* #?ini charset="utf-8"?
+
+[Leftmenu_setup]
+Links[myreports]=myreports/list
+LinkNames[myreports]=Reports
+PolicyList_myreports[]=myreports/read
+LinkIcons[myreports]=bar-chart
+LinkDescriptions[myreports]=Monthly reports of the shop.
+LinkFigureTemplates[myreports]=design:myreports/setup_figure.tpl
+
+*/ ?>
+```
+
+The link shows under "More" in the menu and on the overview (or in a group, with `GroupLinks_<group>[]=myreports`).
+The figure template draws one short `<span class="a4-setup-tile-figure">`, asks only what its tile's function may
+show, and stays cheap: it runs on every view of the overview. The description is translated when the extension's
+translation file has the string in the menu's context.
+
+**Icons.** A tile draws only icons listed in `IconList[]`, each a mask rule `.a4-bi-<name>` over a Bootstrap Icons
+SVG; no inline style, no image, and a setting cannot put markup or an unknown class on the page. Every Bootstrap icon
+admin4 ships is listed (see [Icons](#icons)). An extension that needs another one ships it itself:
+
+1. the SVG, unchanged from Bootstrap Icons 1.13.1 (MIT), in the extension, e.g.
+   `extension/myreports/design/admin4/images/icons/bar-chart.svg`;
+2. a mask rule in a stylesheet of the extension registered in `design.ini [StylesheetSettings] BackendCSSFileList[]`,
+   with the path relative to that stylesheet:
+   `.a4-bi-bar-chart { -webkit-mask-image: url(../images/icons/bar-chart.svg); mask-image: url(../images/icons/bar-chart.svg); }`;
+3. `IconList[]=bar-chart` under `[AdminDesignSettings]` in the extension's `design.ini.append.php`.
+
+`tests/tests/design/AdminSetupOverviewTest.php` fails for a Setup link without icon or description, an icon that is
+not listed, has no rule or no file, an icon used twice, a missing access check, a figure outside the link branch or
+from another fetch, an image in the page, or a missing translation; it draws the tiles of a fixture menu with an
+extension's link (icon, description, figure) and one with an unknown icon.
 
 ## Languages
 
@@ -280,6 +384,10 @@ tree's roles, states, Tab stop and keys.
 | `settings/menu.ini` | `TopAdminMenu` | `HiddenTabs[]` | empty | siteaccess |
 | `settings/menu.ini` | `Topmenu_<tab>` | `Name`, `Tooltip`, `TranslationContext` | the default tab names, context `design/admin/pagelayout` | siteaccess |
 | `settings/menu.ini` | `Leftmenu_<menu>` | `Groups[]`, `GroupNames[<group>]`, `GroupLinks_<group>[]` | the five groups of `Leftmenu_setup` | siteaccess |
+| `settings/menu.ini` | `Leftmenu_<menu>` | `LeadLinks[]` | `overview` in `Leftmenu_setup` | siteaccess |
+| `settings/menu.ini` | `Leftmenu_<menu>` | `LinkIcons[<link>]`, `LinkDescriptions[<link>]`, `LinkFigureTemplates[<link>]` | the core Setup links | siteaccess |
+| `settings/design.ini` | `AdminDesignSettings` | `IconList[]` | every `.a4-bi-*` icon of `components.css` | siteaccess |
+| `settings/menu.ini` | `Topmenu_setup` | `URL[default]` | `setup/menu` (the Setup overview) | siteaccess |
 | `settings/menu.ini` | `Leftmenu_<menu>` | `PolicyList_<link>[]` | a node id, `<module>/<function>`, or `<module>/*` for a module without policy functions | siteaccess |
 | `settings/site.ini` | `SiteAccessSettings` | `FrontSiteAccess` | empty (`DefaultAccess`) | siteaccess |
 
@@ -294,6 +402,8 @@ Community". A template can also set `$show_community_links`.
 - `Name`, `Tooltip` and `TranslationContext` of a `[Topmenu_<tab>]` give the tab's label and tooltip in English and the
   translation context they are looked up in.
 - `Groups[]`, `GroupNames[<group>]` and `GroupLinks_<group>[]` group a long left menu (see "Left menu" above).
+- `LeadLinks[]` names links of a grouped left menu that stand before the groups and in none of them (the Setup
+  overview); `URL[default]` of `[Topmenu_setup]` is the page the Setup tab opens (see [Setup overview](#setup-overview)).
 - `PolicyList_<link>[]` names a node id that must be readable, a policy function, or `<module>/*` for the modules that
   have no policy functions (visual, class, role, workflow, trigger, url, search, settings, collaboration);
   `tests/tests/design/AdminMenuPolicyListTest.php` fails for a function a module does not have. The Design tab opens
