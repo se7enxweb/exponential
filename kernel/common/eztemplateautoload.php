@@ -47,6 +47,9 @@ $eZTemplateOperatorArray[] = array( 'class' => 'eZKernelOperator',
 $eZTemplateOperatorArray[] = array( 'class' => 'ezpSiteAccessURLOperator',
                                     'operator_names' => array( 'siteaccess_url' ) );
 
+$eZTemplateOperatorArray[] = array( 'class' => 'ezpSiteAccessMenuOperator',
+                                    'operator_names' => array( 'siteaccess_menu', 'siteaccess_menu_key' ) );
+
 
 $eZTemplateOperatorArray[] = array( 'function' => 'eZPHPOperatorInit',
                                     'operator_names_function' => 'eZPHPOperatorNameInit' );

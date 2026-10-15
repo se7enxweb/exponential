@@ -275,12 +275,16 @@ class AdminHeaderTest extends PHPUnit\Framework\TestCase
      */
     public function testTheSiteLinkIsTheFirstOfTheTools()
     {
-        $link = '<a class="site-preview a4-header-btn" href="{siteaccess_url()|wash}" title="{\'Open the site\'|i18n( \'design/admin/pagelayout\' )|wash}" aria-label="{\'Open the site\'|i18n( \'design/admin/pagelayout\' )|wash}">';
+        $link = '<a class="site-preview a4-header-btn" href="{siteaccess_url()|wash}" title="{$a4_site_label|wash}" aria-label="{$a4_site_label|wash}">';
+        $part = self::file( 'design/admin4/templates/parts/a4_header_site.tpl' );
+        $this->assertSame( 1, substr_count( $part, $link ), 'one link, on edit pages as on the others' );
+        $this->assertStringContainsString( "{def \$a4_site_label = 'Open the site'|i18n( 'design/admin/pagelayout' )", $part );
+        $this->assertStringNotContainsString( 'target=', $part, 'it opens in the same window: no "new window" hint needed' );
+        $this->assertLessThan( strpos( $part, '<div id="a4-site-menu-wrap"' ), strpos( $part, $link ), 'the link, then the site menu that takes its place' );
+        $include = "{include uri='design:parts/a4_header_site.tpl'}";
         $top = self::file( 'design/admin4/templates/page_topmenu.tpl' );
-        $this->assertSame( 1, substr_count( $top, $link ), 'one link, on edit pages as on the others' );
-        $site = substr( $top, strpos( $top, '<div id="header-site"' ), strpos( $top, '<div id="header-theme"' ) - strpos( $top, '<div id="header-site"' ) );
-        $this->assertStringNotContainsString( 'target=', $site, 'it opens in the same window: no "new window" hint needed' );
-        $order = array( '<div id="header-logo"', '<div id="a4-navbar-menu"', '<div id="header-search"', '<div id="header-site"', $link,
+        $this->assertSame( 1, substr_count( $top, $include ) );
+        $order = array( '<div id="header-logo"', '<div id="a4-navbar-menu"', '<div id="header-search"', $include,
                         '<div id="header-theme"', "{include uri='design:parts/a4_header_user.tpl'}", '<div class="sidebar-controls">' );
         $last = -1;
         foreach ( $order as $needle )
@@ -295,13 +299,13 @@ class AdminHeaderTest extends PHPUnit\Framework\TestCase
 
         // admin4l: the tools block carries it, before light/dark; the logo block no longer does
         $tools = self::file( 'design/admin4l/templates/explayouts/block/admin_theme_switch.tpl' );
-        $this->assertSame( 1, substr_count( $tools, $link ) );
-        $this->assertLessThan( strpos( $tools, '<div id="header-theme"' ), strpos( $tools, '<div id="header-site"' ) );
+        $this->assertSame( 1, substr_count( $tools, $include ) );
+        $this->assertLessThan( strpos( $tools, '<div id="header-theme"' ), strpos( $tools, $include ) );
         $this->assertStringNotContainsString( 'siteaccess_url()', self::file( 'design/admin4l/templates/explayouts/block/admin_logo.tpl' ) );
 
-        // the header's cache blocks keep siteaccess_url() in their keys, and no more keys than before
+        // the header's cache blocks keep siteaccess_url() in their keys, and the site menu's key after it
         foreach ( array( 'design/admin4/templates/pagelayout.tpl', 'design/admin4l/templates/pagelayout.tpl' ) as $path )
-            $this->assertSame( 2, preg_match_all( '/\{cache-block keys=array\( [^\n}]*siteaccess_url\(\)/', self::file( $path ) ), $path );
+            $this->assertSame( 2, preg_match_all( '/\{cache-block keys=array\( [^\n}]*siteaccess_url\(\), siteaccess_menu_key\(\)/', self::file( $path ) ), $path );
 
         $css = self::css( 'admin4.css' );
         $tablet = AdminBaseStylesheetsTest::rules( self::media( $css, 'screen and (min-width: 576px)' ) );

@@ -230,14 +230,13 @@ class AdminIconsTest extends PHPUnit\Framework\TestCase
 
     /** The site links of admin4 and admin4l, by template, with the markup of their icon */
     const SITE_LINKS = array(
-        'design/admin4/templates/page_topmenu.tpl' => '<span class="a4-icon a4-bi-globe2" aria-hidden="true"></span>',
-        'design/admin4l/templates/explayouts/block/admin_theme_switch.tpl' => '<span class="a4-icon a4-bi-globe2" aria-hidden="true"></span>',
+        'design/admin4/templates/parts/a4_header_site.tpl' => '<span class="a4-icon a4-bi-globe2" aria-hidden="true"></span>',
         'design/admin4/templates/node/view/a4_full_body.tpl' => '<span class="a4-icon a4-bi-globe2 is-medium" aria-hidden="true"></span>',
     );
 
     /**
      * A link that opens the site shows the globe (Bootstrap Icons globe2), wherever it stands: the header's "Open
-     * the site" (admin4 and admin4l) and the node view's "View on site". The arrow out of a box (box-arrow-up-right)
+     * the site" (admin4 and admin4l, parts/a4_header_site.tpl, with the site menu's button) and the node view's "View on site". The arrow out of a box (box-arrow-up-right)
      * stays for links that leave the administration for something else, so the two no longer look alike.
      */
     public function testEveryLinkToTheSiteShowsTheGlobe()
@@ -246,10 +245,14 @@ class AdminIconsTest extends PHPUnit\Framework\TestCase
         foreach ( self::SITE_LINKS as $file => $icon )
         {
             $text = (string)file_get_contents( "$root/$file" );
-            $this->assertSame( 1, substr_count( $text, $icon ), "$file: the site link shows the globe" );
+            // the header's part: the site link and, in its place with the script, the site menu's button
+            $this->assertSame( $file === 'design/admin4/templates/parts/a4_header_site.tpl' ? 2 : 1, substr_count( $text, $icon ), "$file: the site link shows the globe" );
             $this->assertStringNotContainsString( 'a4-bi-box-arrow-up-right', $text, "$file: no arrow on the site link" );
         }
-        $this->assertMatchesRegularExpression( '/<a class="site-preview a4-header-btn" href="\{siteaccess_url\(\)\|wash\}"[^>]*>\s*' . preg_quote( self::SITE_LINKS['design/admin4/templates/page_topmenu.tpl'], '/' ) . '/', (string)file_get_contents( "$root/design/admin4/templates/page_topmenu.tpl" ) );
+        $this->assertMatchesRegularExpression( '/<a class="site-preview a4-header-btn" href="\{siteaccess_url\(\)\|wash\}"[^>]*>\s*' . preg_quote( self::SITE_LINKS['design/admin4/templates/parts/a4_header_site.tpl'], '/' ) . '/', (string)file_get_contents( "$root/design/admin4/templates/parts/a4_header_site.tpl" ) );
+        $this->assertMatchesRegularExpression( '/<button type="button" id="a4-site-toggle" [^>]*>\s*' . preg_quote( self::SITE_LINKS['design/admin4/templates/parts/a4_header_site.tpl'], '/' ) . '/', (string)file_get_contents( "$root/design/admin4/templates/parts/a4_header_site.tpl" ) );
+        foreach ( array( 'design/admin4/templates/page_topmenu.tpl', 'design/admin4l/templates/explayouts/block/admin_theme_switch.tpl' ) as $file )
+            $this->assertStringContainsString( "{include uri='design:parts/a4_header_site.tpl'}", (string)file_get_contents( "$root/$file" ), $file );
         $this->assertMatchesRegularExpression( '/<a class="a4-icon-button" href="\{\$site_url\|wash\}"[^>]*>' . preg_quote( self::SITE_LINKS['design/admin4/templates/node/view/a4_full_body.tpl'], '/' ) . '<\/a>/', (string)file_get_contents( "$root/design/admin4/templates/node/view/a4_full_body.tpl" ) );
         $rule = '.a4-bi-globe2 { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/globe2.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/globe2.svg); }';
         foreach ( array( 'admin4', 'admin' ) as $design )

@@ -59,7 +59,7 @@
 })();
 
 /*
- * admin4 header menus: the main menu's "More" list, the user menu and the "/" key.
+ * admin4 header menus: the main menu's "More" list, the user menu, the site menu and the "/" key.
  *
  * From 576px the main menu is one line (admin4.css). The tabs that do not fit move, in their order, into the list of
  * the "More" item at the row's end (page_topmenu.tpl: li.a4-nav-more, hidden until needed); they move back when there
@@ -69,7 +69,7 @@
  * The panel gets .a4-nav-fits once the script runs: the row no longer clips or scrolls (the CSS fallback without the
  * script), so the list can open below it.
  *
- * "More" and the user menu (parts/a4_header_user.tpl) are disclosures: a button with aria-expanded and aria-controls
+ * "More", the user menu (parts/a4_header_user.tpl) and the site menu (parts/a4_header_site.tpl) are disclosures: a button with aria-expanded and aria-controls
  * and a list of plain links. A click or Enter/Space on the button opens and closes it, ArrowDown opens it and goes to
  * its first link, ArrowDown/ArrowUp/Home/End move between the links, Escape closes it and gives the focus back to the
  * button; a click outside or the focus leaving it closes it. At most one is open.
@@ -211,9 +211,23 @@
         if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
     }
 
+    // the site menu (parts/a4_header_site.tpl): its button takes the place of the site link, which stays for a browser
+    // without the script
+    function siteMenu() {
+        var wrap = document.getElementById('a4-site-menu-wrap');
+        var button = document.getElementById('a4-site-toggle');
+        var panel = document.getElementById('a4-site-menu');
+        if (!wrap || !button || !panel) return;
+        var link = wrap.parentNode.querySelector('.site-preview');
+        wrap.hidden = false;
+        if (link) link.hidden = true;
+        disclosure(button, panel);
+    }
+
     function init() {
         overflowMenu();
         disclosure(document.getElementById('a4-user-toggle'), document.getElementById('a4-user-menu'));
+        siteMenu();
     }
 
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);

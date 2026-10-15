@@ -75,6 +75,26 @@ class ezpSiteAccessURL
     }
 
     /**
+     * The name of the siteaccess front() links to: FrontSiteAccess of the
+     * current siteaccess when it is in AvailableSiteAccessList, else
+     * DefaultAccess. Without the warning, which front() gives.
+     *
+     * @return string the siteaccess name; an empty string when DefaultAccess
+     *                is not set either
+     */
+    public static function frontSiteAccess()
+    {
+        $ini = eZINI::instance( 'site.ini' );
+        $front = $ini->hasVariable( 'SiteSettings', 'FrontSiteAccess' )
+               ? trim( (string)$ini->variable( 'SiteSettings', 'FrontSiteAccess' ) )
+               : '';
+        if ( $front !== '' && self::root( $front ) !== false )
+            return $front;
+        $settings = new eZINI( 'site.ini', 'settings', null, null, true );
+        return (string)$settings->variable( 'SiteSettings', 'DefaultAccess' );
+    }
+
+    /**
      * @param string|null $siteaccess null: [SiteSettings] DefaultAccess
      * @return string|false the URL (ending in /), or false for a siteaccess
      *                      that is not in AvailableSiteAccessList

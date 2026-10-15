@@ -47,9 +47,9 @@
             return wide.matches && !(item.closest && item.closest('.a4-nav-more-list'));
         }
 
-        // the "More" list or the user menu of the header is open
+        // the "More" list, the user menu or the site menu of the header is open
         function otherOpen() {
-            return !!document.querySelector('.a4-nav-more-toggle[aria-expanded="true"], #a4-user-toggle[aria-expanded="true"]');
+            return !!document.querySelector('.a4-nav-more-toggle[aria-expanded="true"], #a4-user-toggle[aria-expanded="true"], #a4-site-toggle[aria-expanded="true"]');
         }
 
         function wait(fn, ms) {

@@ -16295,6 +16295,22 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Website öffnen</translation>
     </message>
     <message>
+        <source>Open the site or another siteaccess</source>
+        <translation>Website oder einen anderen Siteaccess öffnen</translation>
+    </message>
+    <message>
+        <source>Sites</source>
+        <translation>Websites</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Administration</translation>
+    </message>
+    <message>
+        <source>in use</source>
+        <translation>aktuell</translation>
+    </message>
+    <message>
         <source>Switch between light and dark mode</source>
         <translation>Zwischen hellem und dunklem Modus wechseln</translation>
     </message>
