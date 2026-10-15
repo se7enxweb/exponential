@@ -170,10 +170,16 @@
 <section class="a4-section" aria-labelledby="cronjob-parts-title">
 <div class="a4-section-head">
     <h2 class="a4-h2" id="cronjob-parts-title">{'Cronjob parts'|i18n( 'design/admin/setup/cronjobs' )}</h2>
-    <span class="a4-meta a4-setup-view" role="group" aria-label="{'View'|i18n( 'design/admin/setup/cronjobs' )|wash}">
-        {if $cronjob_view|eq('compact')}<strong aria-current="true">{'Compact'|i18n( 'design/admin/setup/cronjobs' )}</strong>{else}<a href={'/user/preferences/set/admin_cronjobs_view/compact/setup/cronjobs'|ezurl}>{'Compact'|i18n( 'design/admin/setup/cronjobs' )}</a>{/if}
-        &middot;
-        {if $cronjob_view|eq('cards')}<strong aria-current="true">{'Detailed'|i18n( 'design/admin/setup/cronjobs' )}</strong>{else}<a href={'/user/preferences/set/admin_cronjobs_view/cards/setup/cronjobs'|ezurl}>{'Detailed'|i18n( 'design/admin/setup/cronjobs' )}</a>{/if}
+    {* The view is written by a POST to user/preferences/set, as every admin4 preference switch (no GET link writes
+       one): the two buttons send this form there instead of to setup/cronjobs, with its form token, and the
+       preference view returns to this page. The current view is the pressed button. *}
+    <span class="a4-setup-view">
+    <input type="hidden" name="Key" value="admin_cronjobs_view" />
+    <input type="hidden" name="RedirectURIAfterSet" value="setup/cronjobs" />
+    <span class="a4-tabs is-segmented" role="group" aria-label="{'View'|i18n( 'design/admin/setup/cronjobs' )|wash}">
+        <button type="submit" formaction={'/user/preferences/set'|ezurl} name="Value" value="compact" aria-pressed="{if $cronjob_view|eq('compact')}true{else}false{/if}">{'Compact'|i18n( 'design/admin/setup/cronjobs' )}</button>
+        <button type="submit" formaction={'/user/preferences/set'|ezurl} name="Value" value="cards" aria-pressed="{if $cronjob_view|eq('cards')}true{else}false{/if}">{'Detailed'|i18n( 'design/admin/setup/cronjobs' )}</button>
+    </span>
     </span>
     {if and( $cronjob_view|eq('cards'), $cronjob_parts_count|gt( $limit ) )}
     <span class="a4-meta">{'%from to %to of %count'|i18n( 'design/admin/setup/cronjobs',, hash( '%from', sum( $view_parameters.offset, 1 ), '%to', min( sum( $view_parameters.offset, $limit ), $cronjob_parts_count ), '%count', $cronjob_parts_count ) )}</span>

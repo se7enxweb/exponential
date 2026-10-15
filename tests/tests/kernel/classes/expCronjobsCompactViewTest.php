@@ -35,8 +35,17 @@ class expCronjobsCompactViewTest extends PHPUnit\Framework\TestCase
     {
         $tpl = $this->template( $design );
         $this->assertStringContainsString( "cond( ezpreference( 'admin_cronjobs_view' )|eq( 'cards' ), 'cards', 'compact' )", $tpl );
-        $this->assertStringContainsString( "/user/preferences/set/admin_cronjobs_view/compact/setup/cronjobs", $tpl );
-        $this->assertStringContainsString( "/user/preferences/set/admin_cronjobs_view/cards/setup/cronjobs", $tpl );
+        // Written by a POST (the buttons send the page's form, with its token, to user/preferences/set), never a GET link.
+        $this->assertStringNotContainsString( '/user/preferences/set/admin_cronjobs_view', $tpl );
+        $this->assertStringContainsString( '<input type="hidden" name="Key" value="admin_cronjobs_view" />', $tpl );
+        $this->assertStringContainsString( '<input type="hidden" name="RedirectURIAfterSet" value="setup/cronjobs" />', $tpl );
+        foreach ( array( 'compact', 'cards' ) as $value )
+        {
+            $this->assertMatchesRegularExpression(
+                '#<button type="submit" formaction=\{\'/user/preferences/set\'\|ezurl\} name="Value" value="' . $value . '" aria-pressed="\{if \$cronjob_view\|eq\(\'' . $value . '\'\)\}true\{else\}false\{/if\}">#',
+                $tpl );
+        }
+        $this->assertStringContainsString( '<span class="a4-tabs is-segmented" role="group"', $tpl );
     }
 
     /**

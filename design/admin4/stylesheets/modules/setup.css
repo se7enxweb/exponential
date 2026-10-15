@@ -604,8 +604,7 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
 /* The compact view of the cronjob parts: one table row per part. The row head is the part, not a column heading:
    it takes the body's type and wraps, against .a4-table th (small, uppercase, bold, no wrap). The row of a part that
    needs attention is marked at the left edge like its card, a paused one in red, the running one in green. */
-.a4-setup-cron .a4-setup-view { margin-left: auto; font-size: var(--a4-text-s); }
-.a4-setup-cron .a4-setup-view strong { color: var(--a4-ink); }
+.a4-setup-cron .a4-setup-view { margin-left: auto; display: inline-flex; align-items: center; }
 .a4-setup-cron .a4-setup-compact .a4-badges { margin: 0; }
 .a4-setup-cron .a4-setup-compact .a4-table > tbody > tr > th[scope="row"] {
   width: 1%; min-width: 8em; max-width: 14em;
