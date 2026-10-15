@@ -7320,7 +7320,7 @@ f2f45d0be8a363de1fa024e40ff34fd2  tests/tests/design/AdminNewsletterPreviewTest.
 473533c0e50576ba042de2b36bd74dc7  tests/tests/design/AdminNodeUploadButtonTest.php
 3e58daec4ebebe4c5c7f8929dcab5727  tests/tests/design/AdminNoticesTest.php
 917f288f4825456962ee3eabc46c89c2  tests/tests/design/AdminPageHeaderTest.php
-78c4c703a51e4fd14e56241250df7813  tests/tests/design/AdminPhoneMenuTest.php
+ff55a42a43e94dd5be1f1e216c2fdf41  tests/tests/design/AdminPhoneMenuTest.php
 77e0c30ffdd7d184e4f30730cbb24816  tests/tests/design/AdminPreferencesTest.php
 fe3ae8677e701b3a8e7d50707d46a9ae  tests/tests/design/AdminPreviewDevicesTest.php
 cac53599c9c6b1874c2c8f7c1bf97945  tests/tests/design/AdminResponsiveTest.php
