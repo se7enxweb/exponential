@@ -1,5 +1,5 @@
 {* A language badge (design:parts/language_badge.tpl) that also shows the language's state for one object, by its
-   shape and not by a colour of its own (components.css .a4-lang):
+   shape and not by a color of its own (components.css .a4-lang):
      main      filled: the object's main language
      present   outlined: a translation that exists
      missing   dashed and pale: a language of the site the object does not have; a link "Translate into ..."

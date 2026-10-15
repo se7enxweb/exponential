@@ -703,11 +703,11 @@ html[data-a4-theme="dark"] {
    A plain badge is outlined: a language that exists.
 
    The state of a language for one object (design:parts/language_state_badge.tpl, the Translations column of the
-   sub-items) is a shape, never a colour per language and none of the status colours (green, amber and red are the
+   sub-items) is a shape, never a color per language and none of the status colors (green, amber and red are the
    visibility's and the states'): .is-main filled in the ink, .is-present outlined, .is-missing dashed with muted
    text, .is-outdated a small dot at the top right. The code is always the text; the state is in the title and the
    accessible name. Text and edges keep their contrast (AdminTokenContrastTest: ink on card for the fill, muted
-   text, --a4-field-line edges 3:1); under forced colours the fill and the dot keep their shape in system colours. */
+   text, --a4-field-line edges 3:1); under forced colors the fill and the dot keep their shape in system colors. */
 .a4-langs { display: inline-flex; flex-wrap: wrap; gap: var(--a4-space-1); vertical-align: middle; }
 .a4-lang {
   position: relative;
@@ -733,6 +733,8 @@ a.a4-lang:focus-visible { outline: 2px solid var(--a4-accent-strong); outline-of
 a.a4-lang.is-main:hover, .a4-lang.is-main.is-current { border-color: var(--a4-accent); background-color: var(--a4-ink); color: var(--a4-card); }
 .a4-lang.is-missing { border-style: dashed; color: var(--a4-muted); font-weight: 500; }
 a.a4-lang.is-missing:hover { border-style: solid; }
+/* a badge in front of the language's name in a table cell (the Translations tab) keeps a gap to the name */
+td > .a4-lang { margin-right: var(--a4-space-1); }
 .a4-lang.is-outdated::after {
   content: "";
   position: absolute;
