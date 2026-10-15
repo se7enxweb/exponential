@@ -97,6 +97,7 @@ Every kernel command, cronjob part and module view is now a class
 | Removing a subtree that holds every location of an object removes the object. | Nothing. |
 | Removing, copying or moving more than 50 nodes offers a [content job](../../features/6.0/content-jobs.md) first. | Tune `content.ini [ContentJobSettings] SynchronousLimit` (default `50`). |
 | The static cache refresh on publish fetches each page once, in parallel. | See the [static cache generator](../../features/6.0/static-cache-generator.md); tune `staticcache.ini [CacheSettings] FetchConcurrency` (default `8`, not listed in the shipped file). |
+| `runcronjobs.php` leaves out a part paused at **Setup > Cronjobs**, including one that the `cjw_admincockpit` Cronjob Control page left paused (`<cache>/cronjob_control/cronpart_deactivated_<part>.txt` holding `1`). Added 15 October 2026. | After the update, look at **Setup > Cronjobs** and resume what should run; or set `cronjob.ini [PauseSettings] Pause=disabled`. See [pausing cronjob parts](../../features/6.0/cronjob-pause.md). |
 | SQLite transactions queue for the write lock. | See [SQLite transactions](sqlite-transactions.md). |
 
 ## Missing libraries

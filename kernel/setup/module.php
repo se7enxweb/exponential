@@ -270,7 +270,9 @@ $ViewList['cronjobs'] = array(
     'single_post_actions' => array( 'LaunchCronjobButton' => 'LaunchCronjob',
                                     'LaunchCronjobScriptButton' => 'LaunchCronjobScript',
                                     'StopCronjobButton' => 'StopCronjob',
-                                    'ClearCronjobLogButton' => 'ClearCronjobLog' ),
+                                    'ClearCronjobLogButton' => 'ClearCronjobLog',
+                                    'PauseCronjobButton' => 'PauseCronjob',
+                                    'ResumeCronjobButton' => 'ResumeCronjob' ),
     // Each part's own submit button carries the part name as its value, so one
     // form serves every part and the page needs no javascript to launch one.
     'post_action_parameters' => array( 'LaunchCronjob' => array( 'CronjobPart' => 'LaunchCronjobButton',
@@ -279,7 +281,11 @@ $ViewList['cronjobs'] = array(
                                        // form can run any single script without a
                                        // field per row.
                                        'LaunchCronjobScript' => array( 'CronjobTarget' => 'LaunchCronjobScriptButton',
-                                                                       'CronjobSiteAccess' => 'CronjobSiteAccess' ) ),
+                                                                       'CronjobSiteAccess' => 'CronjobSiteAccess' ),
+                                       // Pause and resume carry the part as the button's value too ("all" for every
+                                       // part, "global" for the scripts of [CronjobSettings]).
+                                       'PauseCronjob' => array( 'CronjobPart' => 'PauseCronjobButton' ),
+                                       'ResumeCronjob' => array( 'CronjobPart' => 'ResumeCronjobButton' ) ),
     'params' => array() );
 
 $ViewList['cronjobsstream'] = array(

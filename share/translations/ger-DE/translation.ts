@@ -22948,6 +22948,126 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
 <context>
     <name>design/admin/setup/cronjobs</name>
     <message>
+        <source>Global</source>
+        <translation>Global</translation>
+    </message>
+    <message>
+        <source>Pausing cronjob parts is switched off (cronjob.ini [PauseSettings] Pause=disabled).</source>
+        <translation>Das Anhalten von Cronjob-Teilen ist abgeschaltet (cronjob.ini [PauseSettings] Pause=disabled).</translation>
+    </message>
+    <message>
+        <source>All cronjob parts are paused. Resume them to run one.</source>
+        <translation>Alle Cronjob-Teile sind angehalten. Zum Ausführen erst fortsetzen.</translation>
+    </message>
+    <message>
+        <source>The &quot;%part&quot; part is paused. Resume it to run it.</source>
+        <translation>Der Teil „%part“ ist angehalten. Zum Ausführen erst fortsetzen.</translation>
+    </message>
+    <message>
+        <source>No cronjob part named &quot;%part&quot; can be paused.</source>
+        <translation>Es gibt keinen Cronjob-Teil „%part“, der angehalten werden kann.</translation>
+    </message>
+    <message>
+        <source>The pause of &quot;%part&quot; could not be written to %directory.</source>
+        <translation>Die Pause von „%part“ konnte nicht nach %directory geschrieben werden.</translation>
+    </message>
+    <message>
+        <source>All cronjob parts are paused. A job that runs now goes on to its end.</source>
+        <translation>Alle Cronjob-Teile sind angehalten. Ein Job, der gerade läuft, läuft zu Ende.</translation>
+    </message>
+    <message>
+        <source>All cronjob parts are resumed.</source>
+        <translation>Alle Cronjob-Teile laufen wieder.</translation>
+    </message>
+    <message>
+        <source>The &quot;%part&quot; part is paused. A run that has started goes on to its end.</source>
+        <translation>Der Teil „%part“ ist angehalten. Ein Lauf, der schon begonnen hat, läuft zu Ende.</translation>
+    </message>
+    <message>
+        <source>The &quot;%part&quot; part is resumed.</source>
+        <translation>Der Teil „%part“ läuft wieder.</translation>
+    </message>
+    <message>
+        <source>All cronjob parts are paused since %since by %user. Nothing runs, from here or from the crontab, until they are resumed.</source>
+        <translation>Alle Cronjob-Teile sind seit %since angehalten (von %user). Nichts läuft, weder von hier noch aus der Crontab, bis sie fortgesetzt werden.</translation>
+    </message>
+    <message>
+        <source>All cronjob parts are paused since %since. Nothing runs, from here or from the crontab, until they are resumed.</source>
+        <translation>Alle Cronjob-Teile sind seit %since angehalten. Nichts läuft, weder von hier noch aus der Crontab, bis sie fortgesetzt werden.</translation>
+    </message>
+    <message>
+        <source>Resume all parts</source>
+        <translation>Alle Teile fortsetzen</translation>
+    </message>
+    <message>
+        <source>Pause all parts</source>
+        <translation>Alle Teile anhalten</translation>
+    </message>
+    <message>
+        <source>Leave every cronjob part out until resumed, whoever starts it</source>
+        <translation>Jeden Cronjob-Teil auslassen, bis er fortgesetzt wird – egal, wer ihn startet</translation>
+    </message>
+    <message>
+        <source>Left out by runcronjobs.php until resumed</source>
+        <translation>Wird von runcronjobs.php ausgelassen, bis er fortgesetzt wird</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Angehalten</translation>
+    </message>
+    <message>
+        <source>Resume the %part part</source>
+        <translation>Teil %part fortsetzen</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Fortsetzen</translation>
+    </message>
+    <message>
+        <source>Leave the %part part out until resumed, whoever starts it</source>
+        <translation>Teil %part auslassen, bis er fortgesetzt wird – egal, wer ihn startet</translation>
+    </message>
+    <message>
+        <source>Pause</source>
+        <translation>Anhalten</translation>
+    </message>
+    <message>
+        <source>Since %since by %user</source>
+        <translation>Seit %since, von %user</translation>
+    </message>
+    <message>
+        <source>Since %since</source>
+        <translation>Seit %since</translation>
+    </message>
+    <message>
+        <source>Pauses</source>
+        <translation>Pausen</translation>
+    </message>
+    <message>
+        <source>Paused and resumed from this page, newest first</source>
+        <translation>Von dieser Seite angehalten und fortgesetzt, neueste zuerst</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Wann</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Aktion</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Benutzer</translation>
+    </message>
+    <message>
+        <source>Resumed</source>
+        <translation>Fortgesetzt</translation>
+    </message>
+    <message>
+        <source>Nothing has been paused from here yet.</source>
+        <translation>Von hier wurde noch nichts angehalten.</translation>
+    </message>
+    <message>
         <source>The cronjob console got no answer from %method.</source>
         <translation>Die Cronjob-Konsole hat keine Antwort von %method erhalten.</translation>
     </message>
