@@ -112,7 +112,7 @@
     {/if}
     </div></div>
     <div class="button-right a4-node-links">
-        <a class="a4-icon-button" href="{$site_url|wash}" target="_blank" rel="noopener" title="{'View on site (new window)'|i18n( 'design/admin/node/view/full' )|wash}" aria-label="{'View on site'|i18n( 'design/admin/node/view/full' )|wash}"><span class="a4-icon a4-bi-box-arrow-up-right is-medium" aria-hidden="true"></span></a>
+        <a class="a4-icon-button" href="{$site_url|wash}" target="_blank" rel="noopener" title="{'View on site (new window)'|i18n( 'design/admin/node/view/full' )|wash}" aria-label="{'View on site'|i18n( 'design/admin/node/view/full' )|wash}"><span class="a4-icon a4-bi-globe2 is-medium" aria-hidden="true"></span></a>
         <a class="a4-icon-button" href={concat( 'content/versionview/', $object.id, '/', $object.current_version, '/', $object.current_language )|ezurl} title="{'Preview the current version'|i18n( 'design/admin/node/view/full' )|wash}" aria-label="{'Preview'|i18n( 'design/admin/node/view/full' )|wash}"><span class="a4-icon a4-bi-eye is-medium" aria-hidden="true"></span></a>
         <span class="versions"><a class="a4-icon-button" href={concat( 'content/history/', $node.contentobject_id )|ezurl} title="{'View and manage (copy, delete, etc.) the versions of this object.'|i18n( 'design/admin/content/edit' )|wash}" aria-label="{'Manage versions'|i18n( 'design/admin/content/edit' )|wash}"><span class="a4-icon a4-bi-clock-history is-medium" aria-hidden="true"></span></a></span>
     </div>
