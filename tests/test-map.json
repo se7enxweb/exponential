@@ -120,7 +120,8 @@
     ],
     "design/admin4/javascript/ezadmin_menubar.js": [
       "tests/tests/design/AdminStylingRulesTest.php",
-      "tests/tests/design/AdminPreferencesTest.php"
+      "tests/tests/design/AdminPreferencesTest.php",
+      "tests/tests/design/AdminPhoneMenuTest.php"
     ],
     "design/admin4/templates/page_topmenu.tpl": [
       "tests/tests/design/AdminStylingRulesTest.php"
@@ -197,6 +198,9 @@
     "extension/ezoe/design/standard/javascript/tinymce8_ez/plugins/ezcustomtag/plugin.js": [
       "tests/tests/extension/ezoe/expOECustomTagAssetsTest.php"
     ],
+    "extension/ezoe/design/standard/javascript/tinymce8_ez/ezoe_dialog.js": [
+      "tests/tests/design/AdminTopNodeNameTest.php"
+    ],
     "extension/ezoe/design/standard/stylesheets/ezoe_customtags.css": [
       "tests/tests/extension/ezoe/expOECustomTagAssetsTest.php"
     ],
@@ -243,7 +247,8 @@
       "tests/tests/design/AdminLeftMenuGroupsTest.php",
       "tests/tests/design/AdminPreferencesTest.php",
       "tests/tests/design/AdminEditBarTest.php",
-      "tests/tests/design/AdminContentEditFormsTest.php"
+      "tests/tests/design/AdminContentEditFormsTest.php",
+      "tests/tests/design/AdminEditorSkinTest.php"
     ],
     "extension/ezjscore/design/standard/javascript/*": [
       "tests/tests/extension/ezjscore/ezjscoreVendoredLibrariesTest.php"
@@ -271,6 +276,9 @@
     ],
     "settings/menu.ini": [
       "tests/tests/design/AdminMenuPolicyListTest.php"
+    ],
+    "settings/subitemscolumns.ini": [
+      "tests/tests/design/AdminSubitemsTranslationsTest.php"
     ],
     "kernel/*/module.php": [
       "tests/tests/design/AdminMenuPolicyListTest.php"
@@ -309,7 +317,8 @@
       "tests/tests/design/AdminJobTranslationsTest.php"
     ],
     "design/admin4/stylesheets/admin4.css": [
-      "tests/tests/design/AdminEditBarTest.php"
+      "tests/tests/design/AdminEditBarTest.php",
+      "tests/tests/design/AdminPhoneMenuTest.php"
     ],
     "extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe_tinymce8.tpl": [
       "tests/tests/design/AdminEditBarTest.php"
@@ -319,6 +328,18 @@
     ],
     "kernel/private/classes/views/content/hide.php": [
       "tests/tests/kernel/classes/expContentHideReturnTest.php"
+    ],
+    "kernel/private/classes/views/content/action.php": [
+      "tests/tests/design/AdminCreateLanguagesTitleTest.php"
+    ],
+    "kernel/classes/subitems/expsubitemscolumn.php": [
+      "tests/tests/design/AdminSubitemsTranslationsTest.php"
+    ],
+    "kernel/classes/subitems/expsubitemsattributecolumn.php": [
+      "tests/tests/design/AdminSubitemsTranslationsTest.php"
+    ],
+    "kernel/classes/subitems/expsubitemscolumnregistry.php": [
+      "tests/tests/design/AdminSubitemsTranslationsTest.php"
     ],
     "design/admin4/templates/content/edit.tpl": [
       "tests/tests/design/AdminContentEditFormsTest.php"
