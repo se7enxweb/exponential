@@ -646,8 +646,8 @@ class eZStepCreateSites extends eZStepInstaller
         $menu->setVariable( 'TopAdminMenu', 'Tabs', array( 'dashboard', 'content', 'media', 'users', 'shop', 'eztags', 'newsletter' ) );
         $menu->setVariable( 'TopAdminMenu', 'HiddenTabs', self::EDITOR_HIDDEN_TABS );
         $toolbar = new eZINI( 'toolbar.ini.append.php', $editorDir, null, null, null, true, true );
-        // Bookmarks first; no Clear cache (the editor has no setup module)
-        $toolbar->setVariable( 'Toolbar_admin_right', 'Tool', array( 'admin_bookmarks', 'admin_current_user', 'admin_preferences' ) );
+        // Bookmarks first, then the interface choices (uiswitch); no Clear cache (the editor has no setup module)
+        $toolbar->setVariable( 'Toolbar_admin_right', 'Tool', array( 'admin_bookmarks', 'admin_ui_switch', 'admin_current_user', 'admin_preferences' ) );
         $toolbar->setVariable( 'Toolbar_admin_developer', 'Tool', array() );
         $interface = new eZINI( 'admininterface.ini.append.php', $editorDir, null, null, null, true, true );
         $accessExtensions = $site->hasVariable( 'ExtensionSettings', 'ActiveAccessExtensions' )
