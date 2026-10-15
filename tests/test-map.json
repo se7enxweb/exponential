@@ -548,7 +548,8 @@
       "tests/tests/design/AdminLegacyControlsTest.php",
       "tests/tests/design/AdminPreviewDevicesTest.php",
       "tests/tests/design/AdminIconsTest.php",
-      "tests/tests/design/AdminSubitemsPriorityDragTest.php"
+      "tests/tests/design/AdminSubitemsPriorityDragTest.php",
+      "tests/tests/design/AdminFontStackTest.php"
     ],
     "design/admin4/templates/parts/left_width_control.tpl": [
       "tests/tests/design/AdminLegacyControlsTest.php"
@@ -856,6 +857,9 @@
     ],
     "tests/tests/design/js/site_menu.js": [
       "tests/tests/design/AdminSiteAccessMenuTest.php"
+    ],
+    "design/admin4*/stylesheets/*.css": [
+      "tests/tests/design/AdminFontStackTest.php"
     ]
   },
   "generated": {

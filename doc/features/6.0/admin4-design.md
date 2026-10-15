@@ -60,6 +60,13 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
 - **Printing.** A printed page is the content alone on the full width (no header, menus, side columns, control bars,
   toasts or footer, no shadows), and always in the light colours: the head script switches to light before printing
   and back afterwards.
+- **Typography.** One typeface for all text: `--a4-font` (`components.css`) is `"Helvetica Neue", "Noto Sans",
+  "Liberation Sans", Arial, sans-serif`, followed by the color emoji fonts of macOS, Windows and Linux (`"Apple Color
+  Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"`). Only system fonts, nothing is downloaded. Code
+  and literal text use `--a4-mono`. The body, headings, form fields, buttons, the pagers and the text of the rich text
+  editor name `var(--a4-font)`; no admin4 stylesheet sets a font list of its own (icon fonts aside; `core.css` gives
+  Arial as the fallback of `var()` for layouts without `components.css`), so a theme changes the typeface by
+  redefining the token alone. Test: `AdminFontStackTest`.
 - **One density.** Lists, tables, cards and controls have one spacing, tuned for 1440 to 1920 px: one control
   height (32 px), list cells as `.a4-table` cells (8/12 px), a 24 px gutter between the frame's cards. The compact
   view of October 2026 and its header switch are gone; a stored choice does nothing.
@@ -89,12 +96,15 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
   `admin_logo` block) and on the sign-in page. It is inline SVG: letters and outlines in `currentColor` (the link's
   `--a4-ink`, so dark on light pages and light on dark ones), the orange square in the brand color `#f15a28`, the
   inner square of the back mark in `--a4-surface` (white on light pages as in the artwork; on dark pages the page's
-  color instead of a white block). Under forced colors CanvasText and Canvas. 24 px high in the header (158 px wide,
+  color instead of a white block). Under forced colors CanvasText and Canvas. 24 px high in the header (152 px wide,
   in the 32 px box of the old image, so the header keeps 56/88 px), 28 px on the sign-in page; below 576 px the
   header shows the mark alone (in a 36 px link, like the tools). The drawings are `aria-hidden`; the links around them carry the name. The same
   drawing as files: `images/admin4/exponential-logo.svg` (word and mark, viewBox cut to the drawing) and
   `images/admin4/exponential-mark.svg` (the mark, square). `AdminLogoTest` keeps the partial and the files equal and
-  checks that they hold no script, style or outside reference.
+  checks that they hold no script, style or outside reference. The word is as high as the mark (the E shares the
+  squares' top and baseline). The raster logos (`logo-light.png`, setup's `Exponential-logo-title.png`, the standard
+  design's `Exponential-logo.gif`, AdminUI's white logo) are rendered from this drawing at twice the size they are
+  drawn at.
 - **Sign-in page.** One calm form, fast on phones: labels above 46-48 px fields, 16 px text so mobile Safari does not
   zoom, autofill hints, Enter moves from the username to the password and signs in, a show/hide button, one full-width
   button that cannot be sent twice, and forgot-password and register links when those modules exist. The kernel reads
@@ -141,16 +151,26 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
   preference that cannot be saved (a network error, an error status, the login page of an expired session), keep it
   in the browser; the preference wins over the browser's copy. Without JavaScript the box keeps the browser's own
   resize grip. The top node's view has the same control. `tests/tests/design/AdminNodeTabsHeightTest.php` checks it.
-- **Environment badge.** Off by default. With `site.ini [AdminEnvironment] Level` set, the header shows the
-  environment's name beside the logo, in the level's color: development green, test amber, staging violet,
+- **Environment badge.** Off by default. With `site.ini [AdminEnvironment] Level` set, the header names the
+  environment at the logo, in the level's color: development green, test amber, staging violet,
   production red, each with a darker or lighter edge for the dark mode (`--a4-env-<level>`, `-ink`, `-line` in
   `admin4.css`; text 4.5:1 on the fill, the edge 3:1 on the header). The page title starts with the name in capitals,
   "[PRODUCTION] Dashboard - Site", so windows and tabs can be told apart; the sign-in page shows the badge and the
-  prefix too. The badge is text, not only color: from 768 px the name (and, for signed-in users, `Release` and with
+  prefix too. By default (`BadgeDisplay=hover`) the badge takes no room and shows nothing until a mouse or trackpad
+  pointer rests on the logo, or the logo has the keyboard focus: then the name (and, for signed-in users, the release)
+  appears as a small label beside the logo (576 to 1279 px and on the sign-in page) or under it (from 1280 px, where
+  the main menu follows the logo, and below 576 px), out of the flow, so nothing moves. Only for a fine pointer that
+  can hover (`@media (hover: hover) and (pointer: fine)`). A touch screen cannot hover, and a tap on the logo
+  follows the link, so there the badge stands beside the logo as with `always` (the short code up to 767 px). The
+  pointer can move onto the label without losing it, the label stays until the pointer or the focus leaves, and
+  Escape hides it until the pointer or the focus comes back (WCAG 1.4.13: hoverable, persistent, dismissible;
+  `admin4.js`); it fades in over 120 ms, at once with reduced motion. Screen readers
+  keep it: the label is clipped, not removed, and the logo link names it in `aria-describedby` ("Environment:
+  Production"). With `BadgeDisplay=always` the badge stays beside the logo. The badge is text, not only color: from 768 px the name (and, for signed-in users, `Release` and with
   `ShowVersion=enabled` the Exponential version), up to 767 px, phones included, the short code (`ShortName`, default DEV,
   TEST, STAGE, PROD; the full logo gives way to the mark alone from 576 to 767 px too), the name always read out by
   screen readers; the title attribute holds the whole text. It is 24 px high in the 36 px row of the header tools,
-  so the header keeps 56, 88 and 56 px; up to 1279 px the search field gives it its room,
+  so the header keeps 56, 88 and 56 px; with `always` up to 1279 px the search field gives it its room,
   from 1280 px the main menu does (its last tabs go into "More"). In forced colors it is drawn in the system colors
   with its text. The same in admin4l (the logo block). See [Settings](#settings).
   `tests/tests/design/AdminEnvironmentBadgeTest.php` checks it.
@@ -913,6 +933,8 @@ Community". A template can also set `$show_community_links`.
 - `[AdminEnvironment]`: the environment badge (see "Environment badge" above). `Level` is `development`, `test`,
   `staging` or `production`, or `auto` for the level of `EXP_ENV` (`dev`, `development`; `test`; `stage`, `staging`;
   `prod`, `production`, `live`; another name or none: no badge). An empty `Name` takes the level's translated name.
+  `BadgeDisplay` is `hover` (the default: shown only while a fine pointer rests on the logo or the logo has the
+  keyboard focus) or `always`; the title prefix (`ShowInTitle`) does not depend on it.
   Set it per environment, for example in `settings/override/site.ini.prod.append.php`
   ([Settings per environment](environment-settings.md)); the setting is read on every request. The header's and the
   sign-in page's cache-blocks are keyed by the badge, so a changed setting shows on the next request without clearing

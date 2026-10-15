@@ -868,3 +868,38 @@
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
     else init();
 })();
+
+/*
+ * admin4: Escape dismisses the environment badge shown on hover (parts/a4_environment_badge.tpl, BadgeDisplay=hover).
+ *
+ * With a mouse or a trackpad the badge shows while the pointer rests on the logo or on the badge, or the logo has the
+ * keyboard focus (admin4.css). Content that appears on hover or focus must be dismissible without moving the pointer
+ * or the focus (WCAG 1.4.13): Escape adds .a4-env-dismissed, which hides it, and it shows again once the pointer
+ * comes back to the logo or the logo gets the focus again. Without the script the badge still goes when the pointer
+ * or the focus leaves. The Escape of an open menu or dialog comes first (defaultPrevented).
+ */
+(function () {
+    'use strict';
+
+    function init() {
+        var badge = document.getElementById('a4-env-badge');
+        if (!badge || !badge.classList.contains('a4-env-hover')) return;
+        var logo = badge.previousElementSibling;
+        if (!logo || logo.tagName !== 'A') return;
+
+        function shown() {
+            return logo.matches(':hover') || logo.matches(':focus-visible') || badge.matches(':hover');
+        }
+        function again() { badge.classList.remove('a4-env-dismissed'); }
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key !== 'Escape' || e.defaultPrevented || badge.classList.contains('a4-env-dismissed') || !shown()) return;
+            badge.classList.add('a4-env-dismissed');
+        });
+        logo.addEventListener('pointerenter', again);
+        logo.addEventListener('focus', again);
+    }
+
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+    else init();
+})();

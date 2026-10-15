@@ -11,14 +11,17 @@ html[data-a4-theme="dark"] { color-scheme: dark; }
 html[data-a4-theme] body:is(.mceContentBody, .mce-content-body) {
   background-color: var(--a4-field);
   color: var(--a4-ink);
+  font-family: var(--a4-font);
 }
-html[data-a4-theme] body:is(.mceContentBody, .mce-content-body) td { color: inherit; }
+html[data-a4-theme] body:is(.mceContentBody, .mce-content-body) td { color: inherit; font-family: inherit; }
+html[data-a4-theme] body:is(.mceContentBody, .mce-content-body) th { font-family: inherit; }
 html[data-a4-theme] body:is(.mceContentBody, .mce-content-body) a { color: var(--a4-accent-text); }
 
 /* literal text */
 html[data-a4-theme] body:is(.mceContentBody, .mce-content-body) pre {
   background-color: var(--a4-code-bg);
   color: var(--a4-code-ink);
+  font-family: var(--a4-mono);
 }
 
 /* custom tags and embedded objects: a tint with the line token as their edge */

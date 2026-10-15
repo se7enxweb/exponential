@@ -15,6 +15,10 @@
  *          square in the surface color; under forced colors CanvasText and Canvas
  *  LG-06 - the header keeps its heights (56px, 88px from 576px, 56px from 1280px) and the logo box its 32px; the logo is
  *          24px high, and below 576px the mark stands alone in a 36px link, as large a target as the tools
+ *  LG-07 - the word stands as high as the mark: the E shares the back square's top and the front square's baseline
+ *  LG-08 - the raster logos are rendered from this drawing at twice the size they are drawn at (a device pixel ratio of
+ *          2): logo-light.png and setup's Exponential-logo-title.png 400 x 100 (the same file), the standard login
+ *          page's Exponential-logo.gif 420 x 120; small files
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminLogoTest.php
  *
@@ -111,10 +115,10 @@ class AdminLogoTest extends PHPUnit\Framework\TestCase
             $this->assertSame( $count, substr_count( self::file( $path ), self::INCLUDE ), $path );
         // the include sits inside the logo links
         $this->assertSame( 2, substr_count( self::file( 'design/admin4/templates/page_topmenu.tpl' ),
-            'aria-label="{$a4_brand_name|wash}">' . self::INCLUDE . '</a>' ) );
+            'aria-label="{$a4_brand_name|wash}"{if $a4_brand_env} aria-describedby="a4-env-badge"{/if}>' . self::INCLUDE . '</a>' ) );
         $this->assertSame( 2, substr_count( self::file( 'design/admin4l/templates/explayouts/block/admin_logo.tpl' ),
-            'aria-label="{$a4_brand_name|wash}">' . self::INCLUDE . '</a>' ) );
-        $this->assertStringContainsString( '<a class="a4-login-logo" href={\'/\'|ezurl} aria-label="Exponential">' . self::INCLUDE . '</a>',
+            'aria-label="{$a4_brand_name|wash}"{if $a4_brand_env} aria-describedby="a4-env-badge"{/if}>' . self::INCLUDE . '</a>' ) );
+        $this->assertStringContainsString( '<a class="a4-login-logo" href={\'/\'|ezurl} aria-label="Exponential"{if $env_badge.level|ne( \'\' )} aria-describedby="a4-env-badge"{/if}>' . self::INCLUDE . '</a>',
             self::file( 'design/admin4/templates/loginpagelayout.tpl' ) );
 
         // no other template of admin4 or admin4l draws it
@@ -195,7 +199,7 @@ class AdminLogoTest extends PHPUnit\Framework\TestCase
         $this->assertSame( self::drawing( $mark ), self::drawing( $inline[1] ) );
         $this->assertSame( $full->getAttribute( 'viewBox' ), $inline[0]->getAttribute( 'viewBox' ) );
         $this->assertSame( $mark->getAttribute( 'viewBox' ), $inline[1]->getAttribute( 'viewBox' ) );
-        $this->assertSame( '6 6 388 59', $full->getAttribute( 'viewBox' ), 'cut to the drawing, no white margin' );
+        $this->assertSame( '6 6 380 60', $full->getAttribute( 'viewBox' ), 'cut to the drawing, no white margin' );
         // the mark is the end of the full logo's drawing: the word, then the mark
         $this->assertSame( self::drawing( $mark ), array_slice( self::drawing( $full ), -4 ) );
         $this->assertCount( 11 + 4, self::drawing( $full ), 'eleven letters, two squares with their outlines' );
@@ -241,9 +245,9 @@ class AdminLogoTest extends PHPUnit\Framework\TestCase
         $rules = AdminBaseStylesheetsTest::rules( preg_replace( '/@media[^{]*\{((?:[^{}]*\{[^{}]*\})*)[^{}]*\}/s', '', $css ) );
         $this->assertSame( '32px', $rules['#header-logo .brand']['height'], 'the box of the old logo image' );
         $this->assertSame( '24px', $rules['.a4-logo-full']['height'] );
-        $this->assertSame( 'calc(24px * 388 / 59)', $rules['.a4-logo-full']['width'], 'the viewBox\'s ratio' );
+        $this->assertSame( 'calc(24px * 380 / 60)', $rules['.a4-logo-full']['width'], 'the viewBox\'s ratio' );
         $this->assertSame( 'none', $rules['.a4-logo-mark']['display'] );
-        $this->assertSame( 'calc(28px * 388 / 59)', $rules['.a4-login-logo .a4-logo-full']['width'] );
+        $this->assertSame( 'calc(28px * 380 / 60)', $rules['.a4-login-logo .a4-logo-full']['width'] );
 
         $phone = AdminBaseStylesheetsTest::rules( self::media( $css, 'screen and (max-width: 575.98px)' ) );
         $this->assertSame( 'none', $phone['#header-logo .a4-logo-full']['display'] );
@@ -253,5 +257,59 @@ class AdminLogoTest extends PHPUnit\Framework\TestCase
         $tablet = AdminBaseStylesheetsTest::rules( self::media( $css, 'screen and (min-width: 576px)' ) );
         $this->assertSame( 'clamp(6rem, calc(100vw - 454px), 230px)', $tablet['#header .searchblock input.searchtext']['width'],
             'the field gives the wider logo its 44px, so the tools keep one row at 576px' );
+    }
+
+    /** The smallest and largest y of a path's absolute coordinates (the letters and squares use M, V, H, L, Q, Z) */
+    private static function verticalExtent( $d )
+    {
+        $ys = array();
+        preg_match_all( '/([MLQVHZmlqvhz])([^MLQVHZmlqvhz]*)/', $d, $m, PREG_SET_ORDER );
+        foreach ( $m as $command )
+        {
+            $numbers = array_map( 'floatval', preg_split( '/[\s,]+/', trim( $command[2] ), -1, PREG_SPLIT_NO_EMPTY ) );
+            if ( $command[1] === 'V' )
+                $ys = array_merge( $ys, $numbers );
+            elseif ( in_array( $command[1], array( 'M', 'L', 'Q' ), true ) )
+            {
+                for ( $i = 1; $i < count( $numbers ); $i += 2 )
+                    $ys[] = $numbers[$i];
+            }
+        }
+        return array( min( $ys ), max( $ys ) );
+    }
+
+    /** LG-07 */
+    public function testTheWordIsAsHighAsTheMark()
+    {
+        $full = self::svgs( self::file( 'design/admin4/images/admin4/exponential-logo.svg' ) )[0];
+        $paths = $full->getElementsByTagName( 'path' );
+        $e = self::verticalExtent( $paths->item( 0 )->getAttribute( 'd' ) );
+        $l = self::verticalExtent( $paths->item( 10 )->getAttribute( 'd' ) );
+        $rects = $full->getElementsByTagName( 'rect' );
+        $back = (float)$rects->item( 0 )->getAttribute( 'y' ) - 2;   // the outline is 2 units outside the paper
+        $front = (float)$rects->item( 1 )->getAttribute( 'y' ) + (float)$rects->item( 1 )->getAttribute( 'height' ) + 2;
+        $this->assertEqualsWithDelta( $back, $e[0], 0.01, 'the E starts at the top of the back square' );
+        $this->assertEqualsWithDelta( $front, $e[1], 0.01, 'the E stands on the baseline of the front square' );
+        $this->assertEqualsWithDelta( $e[0], $l[0], 0.01, 'the l as high as the E' );
+        $this->assertEqualsWithDelta( $e[1], $l[1], 0.01 );
+    }
+
+    /** LG-08 */
+    public function testTheRasterLogosAreRenderedForTwoDevicePixels()
+    {
+        $light = 'design/admin4/images/admin4/logo-light.png';
+        $this->assertSame( array( 400, 100 ), array_slice( getimagesize( self::root() . '/' . $light ), 0, 2 ) );
+        $this->assertSame( md5( self::file( $light ) ), md5( self::file( 'design/standard/images/setup/2/Exponential-logo-title.png' ) ),
+            'the setup wizard shows the same file' );
+        // drawn at half its size where it is used
+        $this->assertStringContainsString( 'logo-light.png" alt="Exponential" width="200" height="50"', self::file( 'lib/ezutils/classes/ezexecution.php' ) );
+        $this->assertMatchesRegularExpression( '#logo-light\.png[^;]*;\s*background-size: auto 50px;#', self::file( 'design/admin/stylesheets/pagelayout.css' ) );
+
+        $gif = 'design/standard/images/Exponential-logo.gif';
+        $this->assertSame( array( 420, 120 ), array_slice( getimagesize( self::root() . '/' . $gif ), 0, 2 ) );
+        $this->assertStringContainsString( '{"Exponential-logo.gif"|ezimage} width="210" height="60"', self::file( 'design/standard/templates/loginpagelayout.tpl' ) );
+
+        foreach ( array( $light, $gif ) as $path )
+            $this->assertLessThan( 10 * 1024, strlen( self::file( $path ) ), "$path: compressed" );
     }
 }

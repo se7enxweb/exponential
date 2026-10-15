@@ -12,7 +12,7 @@
  *  PM-02 - the open phone menu is a grid of tiles: the search first and on a row of its own, then the tabs two or
  *          three to a row instead of admin3's column of centred links, with more room around them (16px above, 24px
  *          at the sides and the end) and one scroller, the panel
- *  PM-03 - from 576px the header search field gives way last: 122px at 576px beside the 158px logo (166px beside the
+ *  PM-03 - from 576px the header search field gives way last: 122px at 576px beside the 152px logo (166px beside the
  *          old 114px image, 106px before that), 230px from 684px
  *  PM-04 - the open phone menu always fits the visible window: it starts under the header's row and is at most the
  *          dynamic viewport height (100dvh, after a 100vh fallback) less the header, so on iOS, where 100vh is the
@@ -179,7 +179,7 @@ class AdminPhoneMenuTest extends PHPUnit\Framework\TestCase
     {
         $tablet = AdminBaseStylesheetsTest::rules( self::media( self::css( 'admin4.css' ), 'screen and (min-width: 576px)' ) );
         $width = $tablet['#header .searchblock input.searchtext']['width'];
-        // 454px with the inline logo (158px wide, the old image 114px): the tools keep one row at 576px
+        // 454px with the inline logo (152px wide, the old image 114px): the tools keep one row at 576px
         $this->assertSame( 'clamp(6rem, calc(100vw - 454px), 230px)', $width );
     }
 
