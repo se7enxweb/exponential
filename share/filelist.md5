@@ -7621,7 +7621,7 @@ bb8499047a14bfaded92aa6ed5af9d6c  tests/tests/kernel/classes/ezrss/testCreateRSS
 842235247153939617e2f6808ba9626f  tests/tests/kernel/classes/ezrss/testCreateRSS2With2Items1Hidden.xml
 921b53a9271cb854bf72081c3a8524b4  tests/tests/kernel/classes/ezrss_export_test.php
 ec496f6cf7c5e33c88b32ec1d1522127  tests/tests/kernel/classes/ezsection_test.php
-68d772f3db6a9ae2a865ce3eb3a607e3  tests/tests/kernel/classes/ezsiteaccess_test.php
+caf171103b405564fcc436e60c0408f5  tests/tests/kernel/classes/ezsiteaccess_test.php
 7e30c7f0f6736df0086e0a6e28d21b1c  tests/tests/kernel/classes/ezsiteaccessmatchhosturi_test.php
 d04c7963df8ab9f8eeef0f4cedf5b736  tests/tests/kernel/classes/ezsitedata_test.php
 0a0fc572221e7a22f24d824ff568e76e  tests/tests/kernel/classes/ezsiteinstaller_test.php
