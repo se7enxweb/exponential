@@ -2,7 +2,8 @@
 /**
  * admin4's typeface: --a4-font is the Helvetica Neue stack with its emoji fallbacks, and every text rule of the
  * admin4 stylesheets names var(--a4-font) (or var(--a4-mono) for code) instead of a font list of its own. Icon
- * fonts (IcoMoon), inherit and a var() fallback (core.css) stay allowed.
+ * fonts (IcoMoon), inherit and a var() fallback (core.css) stay allowed. The emoji faces follow the text faces, and
+ * no font is downloaded: the one @font-face is the icon font from the design's folder.
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminFontStackTest.php
  *
@@ -74,6 +75,50 @@ class AdminFontStackTest extends PHPUnit\Framework\TestCase
             }
         }
         $this->assertSame( array(), $problems, 'use var(--a4-font) for text and var(--a4-mono) for code' );
+    }
+
+    public function testTheEmojiFacesComeAfterTheTextFaces()
+    {
+        $faces = array_map( 'trim', explode( ',', self::STACK ) );
+        $generic = array_search( 'sans-serif', $faces, true );
+        $this->assertSame( array( '"Helvetica Neue"', '"Noto Sans"', '"Liberation Sans"', 'Arial', 'sans-serif' ), array_slice( $faces, 0, $generic + 1 ),
+            'the text faces first, the generic family last of them, so a text character never takes an emoji face' );
+        $this->assertSame( array( '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"' ), array_slice( $faces, $generic + 1 ),
+            'then the color emoji of macOS, Windows (its color face before its monochrome symbols) and Linux' );
+    }
+
+    /** System fonts only: the one @font-face of admin4 is the IcoMoon icon font, from the design's own folder; no
+        stylesheet or template of admin4 or admin4l loads a font from elsewhere */
+    public function testNoWebFontIsDownloaded()
+    {
+        $faces = array();
+        foreach ( self::stylesheets() as $path )
+        {
+            $css = preg_replace( '#/\*.*?\*/#s', '', (string)file_get_contents( self::root() . '/' . $path ) );
+            preg_match_all( '/@font-face\s*\{([^}]*)\}/i', $css, $m );
+            foreach ( $m[1] as $body )
+            {
+                $this->assertMatchesRegularExpression( '/font-family:\s*[\'"]?IcoMoon/i', $body, "$path: only the icon font" );
+                preg_match_all( '/url\(\s*[\'"]?([^\'")]+)/i', $body, $urls );
+                foreach ( $urls[1] as $url )
+                    $this->assertStringStartsWith( '../fonts/', $url, "$path: the icon font from the design's folder" );
+                $faces[] = $path;
+            }
+            $this->assertDoesNotMatchRegularExpression( '/@import[^;]*(font|googleapis)/i', $css, "$path imports no font" );
+        }
+        $this->assertSame( array( 'design/admin4/stylesheets/core.css' ), $faces );
+
+        foreach ( array( 'design/admin4/templates', 'design/admin4l/templates' ) as $dir )
+        {
+            $it = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( self::root() . '/' . $dir, FilesystemIterator::SKIP_DOTS ) );
+            foreach ( $it as $file )
+            {
+                if ( substr( $file->getFilename(), -4 ) !== '.tpl' )
+                    continue;
+                $this->assertDoesNotMatchRegularExpression( '#fonts\.(googleapis|gstatic|bunny)|use\.typekit|\.woff2?\b#i',
+                    (string)file_get_contents( $file->getPathname() ), $file->getPathname() . ' loads no web font' );
+            }
+        }
     }
 
     public function testTheBodyAndTheEditorContentUseTheFontToken()
