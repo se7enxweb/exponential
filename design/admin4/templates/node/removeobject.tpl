@@ -1,3 +1,8 @@
+{* The objects that point at what goes (content.ini [RemoveSettings] ReverseRelationCheck): listed with warn, and with
+   block the OK button stays disabled while there are any; the view refuses the removal itself as well. *}
+{def $rr_check = false()
+     $rr_blocked = false()}
+{if and( is_set( $reverse_relation_check ), $reverse_relation_check )}{set $rr_check = $reverse_relation_check}{set $rr_blocked = $reverse_relation_check.blocked}{/if}
 <form action={concat($module.functions.removeobject.uri)|ezurl} method="post" name="ObjectRemove">
 
 <div class="context-block">
@@ -37,7 +42,7 @@
 <div class="block">
     <p>{'Some of the items that are about to be removed contain sub items.'|i18n( 'design/admin/node/removeobject' )}</p>
 
-    {if $reverse_related}
+    {if and( $reverse_related, $rr_check|not )}
         <p>{'Some of the subtrees or objects selected for removal are used by other objects. Select the menu from the content tree, and'|i18n( 'design/admin/node/removeobject' )}
            <strong>{'Advanced'|i18n( 'design/admin/node/removeobject' )}</strong>-&gt;
            <strong>{'Reverse related for subtree'|i18n( 'design/admin/node/removeobject' )}</strong>
@@ -60,7 +65,7 @@
     {/if}
 </div>
 {else}
-   {if $reverse_related}
+   {if and( $reverse_related, $rr_check|not )}
    <div class="block">
         <p>{'Some of the objects selected for removal are used by other objects. Select the menu from the content tree, and'|i18n( 'design/admin/node/removeobject' )}
            <strong>{'Advanced'|i18n( 'design/admin/node/removeobject' )}</strong>-&gt;
@@ -70,6 +75,8 @@
    {/if}
 {/if}
 {/if}
+
+{if $rr_check}{include uri='design:content/reverse_relation_check.tpl' check=$rr_check operation='remove'}{/if}
 
 <table class="list" cellspacing="0">
 <tr>
@@ -147,8 +154,10 @@
 
 <div class="block">
 
-    {if and( $remove_info.can_remove_all, eq( $delete_items_exist, true() ), not( $remove_info.has_pending_object ) )}
+    {if and( $remove_info.can_remove_all, eq( $delete_items_exist, true() ), not( $remove_info.has_pending_object ), $rr_blocked|not )}
         <input class="button" type="submit" name="ConfirmButton" value="{'OK'|i18n( 'design/admin/node/removeobject' )}" />
+    {elseif $rr_blocked}
+        <input class="button-disabled" type="submit" name="ConfirmButton" value="{'OK'|i18n( 'design/admin/node/removeobject' )}" title="{'You cannot continue while other objects use the items (see the list above).'|i18n( 'design/admin/content/reverserelations' )}" disabled="disabled" aria-describedby="reverse-relation-check" />
     {else}
         <input class="button-disabled" type="submit" name="ConfirmButton" value="{'OK'|i18n( 'design/admin/node/removeobject' )}" title="{'You cannot continue because you do not have permission to remove some of the selected locations.'|i18n( 'design/admin/node/removeobject' )}" disabled="disabled" />
     {/if}
@@ -163,3 +172,4 @@
 </div>
 
 </form>
+{undef $rr_check $rr_blocked}

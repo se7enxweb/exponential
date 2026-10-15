@@ -16,7 +16,7 @@ var availableLanguages = {ldelim}{*
     *}{/foreach}{*
 *}{rdelim};
 
-{* The short code of each language for the Translations column (DE, EN; EN-GB and EN-US when both exist). *}
+{* The short code of each language for the Translations column (DE, EN: the language, never the region; the name tells eng-GB and eng-US apart). *}
 var languageBadges = {ldelim}{*
     *}{foreach $locales as $locale}{*
         *}'{$locale.locale_code|wash(javascript)}': '{include uri='design:parts/language_badge.tpl' locale=$locale.locale_code badge_plain=true()}'{*

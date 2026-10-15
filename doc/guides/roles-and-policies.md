@@ -130,6 +130,10 @@ On the role page:
 
 Every action, here and on the role pages, needs the form token of the page. A request without it is refused with 403.
 
+For the accounts that did activate, **Users > Check user accounts** (`user/hygiene`) lists those never signed in,
+not seen for a long time, disabled, locked, orphaned or sharing an e-mail address, and disables, enables or unlocks
+them in bulk: [Check user accounts](../features/6.0/user-hygiene.md).
+
 ## 8. Decide who may register and who may read node data
 
 Two permissions were open to everyone by default and can now be given through roles instead. Both ideas come from
@@ -176,7 +180,8 @@ policy *ezjscore / call* with the function list **ezjscnode**; a request whose c
 
 ## Who may do this
 
-- The role pages need access to the `role` module. The unactivated users page needs `user/activation`.
+- The role pages need access to the `role` module. The unactivated users page needs `user/activation`; Check user
+  accounts needs `user/hygiene`, and `role/assign` for the e-mail addresses.
 - **Nobody gives more than they have.** With `site.ini [RoleSettings] PreventPrivilegeEscalation=enabled` (the
   default), a user who may edit roles can only grant what their own roles cover:
   - In the policy wizard, a policy they do not hold is taken out again at once and the page says *The policy was not
