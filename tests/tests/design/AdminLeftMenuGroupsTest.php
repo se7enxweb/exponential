@@ -3,7 +3,8 @@
  * admin4's left menu (parts/ini_menu.tpl, parts/ini_menu_items.tpl): a long menu can be arranged in groups from
  * menu.ini (Groups[], GroupNames[], GroupLinks_<group>[]); links in no group follow under "More"; the current page's
  * link carries aria-current="page"; a plain menu's list is named by its heading; the left column is the "Side menu"
- * navigation. The access checks per link are untouched.
+ * navigation. The access checks per link are untouched. The Setup menu ends with the groups "AI" and "Updates" for
+ * the links of the se7enx extensions (expai; ezupdate, git_manager) before "More"; a group without a link is not drawn.
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminLeftMenuGroupsTest.php
  *
@@ -14,6 +15,16 @@
 
 class AdminLeftMenuGroupsTest extends PHPUnit\Framework\TestCase
 {
+    /**
+     * The Setup links of extensions that core menu.ini places in a group: the keys their menu.ini.append[.php] sets
+     * in [Leftmenu_setup] Links[]. Without the extension the key is in no Links[] and the group shows nothing of it.
+     */
+    const EXTENSION_LINKS = array(
+        'system'  => array( 'expqueue', 'dse' ),
+        'ai'      => array( 'expai_summary', 'expai_models', 'expai_budgets' ),
+        'updates' => array( 'ezupdate', 'git_manager', 'git_manager_backup' ),
+    );
+
     private static function read( $path )
     {
         return (string)file_get_contents( dirname( __DIR__, 3 ) . '/' . $path );
@@ -49,6 +60,7 @@ class AdminLeftMenuGroupsTest extends PHPUnit\Framework\TestCase
         $setup = self::iniSection( 'Leftmenu_setup' );
         $this->assertNotEmpty( $setup['Groups'] ?? array(), 'Leftmenu_setup has no Groups[]' );
         $links = array_keys( $setup['Links'] ?? array() );
+        $extensionLinks = array_merge( ...array_values( self::EXTENSION_LINKS ) );
         $seen = array();
         foreach ( $setup['Groups'] as $group )
         {
@@ -57,7 +69,7 @@ class AdminLeftMenuGroupsTest extends PHPUnit\Framework\TestCase
             foreach ( $setup["GroupLinks_$group"] as $key )
             {
                 $this->assertNotContains( $key, $seen, "link $key is in two groups" );
-                $this->assertContains( $key, $links, "GroupLinks_{$group}[] names $key, which is no Links[] key of Leftmenu_setup" );
+                $this->assertContains( $key, array_merge( $links, $extensionLinks ), "GroupLinks_{$group}[] names $key, which is no Links[] key of Leftmenu_setup nor a known extension's" );
                 $seen[] = $key;
             }
         }
@@ -71,6 +83,160 @@ class AdminLeftMenuGroupsTest extends PHPUnit\Framework\TestCase
         // every other active link of the setup menu sits in a group; extensions' links go to "More" by themselves
         foreach ( array_diff( $links, $lead ) as $key )
             $this->assertContains( $key, $seen, "Links[{$key}] of Leftmenu_setup is in no group" );
+    }
+
+    public function testAiAndUpdatesAreTheLastGroupsBeforeMore()
+    {
+        $setup = self::iniSection( 'Leftmenu_setup' );
+        $this->assertSame( array( 'content_model', 'site', 'workflow', 'users', 'system', 'ai', 'updates' ), $setup['Groups'] );
+        $this->assertSame( 'AI', $setup['GroupNames']['ai'] ?? null );
+        $this->assertSame( 'Updates', $setup['GroupNames']['updates'] ?? null );
+        $links = array_keys( $setup['Links'] ?? array() );
+        foreach ( self::EXTENSION_LINKS as $group => $keys )
+        {
+            foreach ( $keys as $key )
+            {
+                $this->assertContains( $key, $setup["GroupLinks_$group"], "$key belongs in GroupLinks_{$group}[]" );
+                // the core menu does not ship the link itself: the extension does, and only then it shows
+                $this->assertNotContains( $key, $links, "Links[$key] is the extension's, not core's" );
+            }
+        }
+        // the two new groups hold nothing but extension links: the core links stay where they were
+        $this->assertSame( self::EXTENSION_LINKS['ai'], $setup['GroupLinks_ai'] );
+        $this->assertSame( self::EXTENSION_LINKS['updates'], $setup['GroupLinks_updates'] );
+
+        // "More" is built after every group of Groups[]: it stays last, and only links in no group go there
+        $tpl = self::read( 'design/admin4/templates/parts/ini_menu.tpl' );
+        $loop = strpos( $tpl, '{foreach $group_list as $group}' );
+        $this->assertNotFalse( $loop );
+        $this->assertGreaterThan( $loop, strpos( $tpl, "'more', 'name', 'More'" ) );
+        // a group is added only when it holds a link the user may see: an empty group (no extension) is not drawn
+        $this->assertMatchesRegularExpression( '/\{if \$group_items\|count\}\s*\{set \$groups = \$groups\|append\( hash\( \'id\', \$group,/', $tpl );
+    }
+
+    /**
+     * Draws the Setup menu (parts/ini_menu.tpl of admin4, the real template engine, no database) with the real
+     * Groups[] of Leftmenu_setup and the links that active extensions would add: three of expai, two of the update
+     * extensions and one of an extension that names no group. Links of core are left out, so the core groups have no
+     * link and must not be drawn; access checks per address are switched off, no link carries a PolicyList.
+     */
+    public function testExtensionLinksRenderInTheirGroupsAndEmptyGroupsAreLeftOut()
+    {
+        $links = array( 'overview' => 'setup/menu', 'myext_report' => 'myext/report', 'expai_summary' => 'expai/summary',
+                        'git_manager_backup' => 'git_manager/backup', 'expai_models' => 'expai/models', 'ezupdate' => 'update/dashboard',
+                        'expqueue' => 'expqueue/dashboard' );
+        $names = array( 'overview' => 'Overview', 'myext_report' => 'My report', 'expai_summary' => 'EI: Summary',
+                        'git_manager_backup' => 'Backup', 'expai_models' => 'EI: Models', 'ezupdate' => 'Updates and packages',
+                        'expqueue' => 'Job queue' );
+
+        $html = self::renderSetupMenu( $links, $names, 'menu' );
+        preg_match_all( '/<details class="a4-navgroup" id="leftmenu-title-Leftmenu-setup-([a-z_]+)"/', $html, $m );
+        $this->assertSame( array( 'system', 'ai', 'updates', 'more' ), $m[1], 'only groups with a link, in their order, "More" last' );
+        $groups = array_combine( $m[1], array_slice( preg_split( '/<details class="a4-navgroup"/', $html ), 1 ) );
+        $this->assertStringContainsString( '<summary class="a4-nav-title">AI</summary>', $groups['ai'] );
+        $this->assertStringContainsString( '<summary class="a4-nav-title">Updates</summary>', $groups['updates'] );
+        // the order inside a group is that of Links[]
+        $this->assertMatchesRegularExpression( '#expai/summary".*expai/models"#s', $groups['ai'] );
+        $this->assertMatchesRegularExpression( '#git_manager/backup".*update/dashboard"#s', $groups['updates'] );
+        $this->assertStringContainsString( 'expqueue/dashboard"', $groups['system'] );
+        $this->assertStringContainsString( 'myext/report"', $groups['more'] );
+        $this->assertStringContainsString( ' open data-a4-current>', $groups['updates'], 'the group of the current page (update/dashboard) is marked' );
+        foreach ( array( 'expai', 'update/', 'git_manager', 'expqueue' ) as $placed )
+            $this->assertStringNotContainsString( $placed, $groups['more'], "$placed is grouped and must not show under More" );
+        // the overview stands before the groups
+        $this->assertLessThan( strpos( $html, '<details' ), strpos( $html, 'setup/menu"' ) );
+
+        // the overview page draws the same groups as tiles, without the overview itself
+        $tiles = self::renderSetupMenu( $links, $names, 'tiles' );
+        preg_match_all( '/<h2 class="a4-h2 a4-setup-tilegroup-title" id="a4-tiles-Leftmenu-setup-([a-z_]+)">([^<]*)</', $tiles, $t );
+        $this->assertSame( array( 'system', 'ai', 'updates', 'more' ), $t[1] );
+        $this->assertSame( array( 'AI', 'Updates' ), array_slice( $t[2], 1, 2 ) );
+        $this->assertStringContainsString( '<span class="a4-icon a4-bi-stars"></span>', $tiles );
+        $this->assertStringContainsString( '<span class="a4-icon a4-bi-cloud-arrow-down"></span>', $tiles );
+        $this->assertStringContainsString( '<span>What the AI features send where, on one printable page.</span>', $tiles );
+        // the extension with no settings of its own draws the plug icon under "More"
+        $more = substr( $tiles, strpos( $tiles, 'id="a4-tiles-Leftmenu-setup-more"' ) );
+        $this->assertStringContainsString( '<span class="a4-icon a4-bi-plug"></span>', $more );
+        $this->assertStringNotContainsString( 'setup/menu"', $tiles );
+
+        // without a single extension link the AI and Updates groups are gone, and so is "More"
+        $html = self::renderSetupMenu( array( 'overview' => 'setup/menu', 'expqueue' => 'expqueue/dashboard' ), $names, 'menu' );
+        preg_match_all( '/<details class="a4-navgroup" id="leftmenu-title-Leftmenu-setup-([a-z_]+)"/', $html, $m );
+        $this->assertSame( array( 'system' ), $m[1] );
+    }
+
+    /**
+     * Fetches design/admin4/templates/parts/ini_menu.tpl for [Leftmenu_setup] with the given Links[] and LinkNames[]
+     * in place of the menu's own, the site design admin4 and CheckViewAccess=disabled; restores every setting after.
+     */
+    private static function renderSetupMenu( array $links, array $names, $layout )
+    {
+        $root = dirname( __DIR__, 3 );
+        $menu = eZINI::instance( 'menu.ini' );
+        $site = eZINI::instance( 'site.ini' );
+        $savedIni = array(
+            array( $menu, 'Leftmenu_setup', 'Links' ), array( $menu, 'Leftmenu_setup', 'LinkNames' ),
+            array( $menu, 'MenuAccessSettings', 'CheckViewAccess' ), array( $menu, 'MenuAccessSettings', 'NoAccessLinks' ),
+            array( $site, 'DesignSettings', 'AdditionalSiteDesignList' ),
+        );
+        foreach ( $savedIni as $i => $entry )
+            $savedIni[$i][] = $entry[0]->hasVariable( $entry[1], $entry[2] ) ? array( $entry[0]->variable( $entry[1], $entry[2] ) ) : null;
+        $savedGlobals = array();
+        foreach ( array( 'eZSiteBasics', 'eZOverrideTemplateCacheMap', 'eZTemplateDesignSetting', 'eZTemplateDesignResourceBases', 'eZCurrentAccess' ) as $name )
+            $savedGlobals[$name] = array_key_exists( $name, $GLOBALS ) ? array( $GLOBALS[$name] ) : null;
+        $handler = set_exception_handler( null );
+        restore_exception_handler();
+        $overrides = new ReflectionProperty( 'eZTemplateDesignResource', 'overrideArrayCache' );
+        try
+        {
+            $menu->setVariable( 'Leftmenu_setup', 'Links', $links );
+            $menu->setVariable( 'Leftmenu_setup', 'LinkNames', $names );
+            $menu->setVariable( 'MenuAccessSettings', 'CheckViewAccess', 'disabled' );
+            $menu->setVariable( 'MenuAccessSettings', 'NoAccessLinks', 'enabled' );
+            $site->setVariable( 'DesignSettings', 'AdditionalSiteDesignList', array() );
+            $GLOBALS['eZSiteBasics']['no-cache-adviced'] = true;
+            $GLOBALS['eZCurrentAccess'] = array( 'name' => 'menu_groups_test', 'type' => 1 );
+            unset( $GLOBALS['eZOverrideTemplateCacheMap'], $GLOBALS['eZTemplateDesignResourceBases'] );
+            $GLOBALS['eZTemplateDesignSetting'] = array( 'site' => 'admin4' );
+            $overrides->setValue( null, null );
+            $tpl = eZTemplate::factory();
+            $tpl->setVariable( 'ini_section', 'Leftmenu_setup' );
+            $tpl->setVariable( 'ui_context', 'navigation' );
+            $tpl->setVariable( 'uri_string', 'update/dashboard' );
+            $tpl->setVariable( 'menu_layout', $layout );
+            $html = $tpl->fetch( "$root/design/admin4/templates/parts/ini_menu.tpl" );
+            PHPUnit\Framework\Assert::assertSame( array(), $tpl->errorLog() );
+            return $html;
+        }
+        finally
+        {
+            // the next eZTemplate::factory() starts clean: no variable or error of this fetch is left on the singleton
+            eZTemplate::resetInstance();
+            foreach ( $savedIni as list( $ini, $block, $name, $value ) )
+            {
+                if ( $value === null )
+                    $ini->removeSetting( $block, $name );
+                else
+                    $ini->setVariable( $block, $name, $value[0] );
+            }
+            $overrides->setValue( null, null );
+            foreach ( $savedGlobals as $name => $value )
+            {
+                if ( $value === null )
+                    unset( $GLOBALS[$name] );
+                else
+                    $GLOBALS[$name] = $value[0];
+            }
+            // the kernel's bootstrap installs its exception handler; the test leaves the one it found
+            for ( $i = 0; $i < 5; $i++ )
+            {
+                $current = set_exception_handler( null );
+                restore_exception_handler();
+                if ( $current === $handler )
+                    break;
+                restore_exception_handler();
+            }
+        }
     }
 
     public function testMenuTemplateGroupsWithDetailsAndKeepsTheFlatList()

@@ -15657,8 +15657,48 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>System</translation>
     </message>
     <message>
+        <source>AI</source>
+        <translation>KI</translation>
+    </message>
+    <message>
+        <source>Updates</source>
+        <translation>Updates</translation>
+    </message>
+    <message>
         <source>More</source>
         <translation>Weitere</translation>
+    </message>
+    <message>
+        <source>What the AI features send where, on one printable page.</source>
+        <translation>Was die KI-Funktionen wohin senden, auf einer druckbaren Seite.</translation>
+    </message>
+    <message>
+        <source>The AI providers and models, and their tests.</source>
+        <translation>Die KI-Anbieter und -Modelle und ihre Tests.</translation>
+    </message>
+    <message>
+        <source>AI budgets, queued requests and what they cost.</source>
+        <translation>KI-Budgets, wartende Anfragen und ihre Kosten.</translation>
+    </message>
+    <message>
+        <source>Background jobs: waiting, running and failed.</source>
+        <translation>Hintergrundaufträge: wartend, laufend und fehlgeschlagen.</translation>
+    </message>
+    <message>
+        <source>Browse and query the database directly.</source>
+        <translation>Die Datenbank direkt durchsehen und abfragen.</translation>
+    </message>
+    <message>
+        <source>Packages with a newer release, and their updates.</source>
+        <translation>Pakete mit neuerem Release und ihre Aktualisierung.</translation>
+    </message>
+    <message>
+        <source>The Git checkout of the installation and its updates.</source>
+        <translation>Der Git-Stand der Installation und seine Aktualisierung.</translation>
+    </message>
+    <message>
+        <source>Make, download and remove backups.</source>
+        <translation>Sicherungen anlegen, herunterladen und entfernen.</translation>
     </message>
 </context>
 <context>

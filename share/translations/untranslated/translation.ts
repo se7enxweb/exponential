@@ -11979,6 +11979,14 @@ Note: The packages will not be uninstalled.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>AI</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Updates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>More</source>
         <translation type="unfinished"></translation>
     </message>

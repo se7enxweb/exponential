@@ -102,6 +102,15 @@ class AdminSetupOverviewTest extends PHPUnit\Framework\TestCase
             $this->assertArrayHasKey( $key, $icons, "Links[$key] of Leftmenu_setup has no LinkIcons[$key]" );
             $this->assertNotSame( '', trim( $texts[$key] ?? '' ), "Links[$key] of Leftmenu_setup has no LinkDescriptions[$key]" );
         }
+        // every link a group names, an extension's as well (GroupLinks_ai[], GroupLinks_updates[]), has its tile settings
+        foreach ( $setup['Groups'] as $group )
+        {
+            foreach ( $setup["GroupLinks_$group"] ?? array() as $key )
+            {
+                $this->assertArrayHasKey( $key, $icons, "GroupLinks_{$group}[] names $key, which has no LinkIcons[$key]" );
+                $this->assertNotSame( '', trim( $texts[$key] ?? '' ), "GroupLinks_{$group}[] names $key, which has no LinkDescriptions[$key]" );
+            }
+        }
         // the links that menu.ini keeps commented out and parts/setup/menu.tpl still names get a tile when enabled
         foreach ( array( 'roles_and_policies', 'templates', 'toolbar_management', 'global_setting', 'look_and_feel' ) as $key )
         {
@@ -329,6 +338,8 @@ class AdminSetupOverviewTest extends PHPUnit\Framework\TestCase
         }
         finally
         {
+            // the next eZTemplate::factory() starts clean: no variable or error of this fetch is left on the singleton
+            eZTemplate::resetInstance();
             array_map( 'unlink', glob( "$dir/*" ) );
             rmdir( $dir );
             $overrides->setValue( null, null );
