@@ -859,7 +859,7 @@ bb57d7d50de510183570d8844efbd49f  design/admin4/images/up-16x16-grey.png
 bc1f590f32f5d71f9bfdf7781f2135fc  design/admin4/images/url_translator.png
 ac084a07607e6d6c5a845da15423854f  design/admin4/images/view-fullscreen.png
 87c7f50b767b88808db455ec50b39bd8  design/admin4/javascript/a4_mega_menu.js
-1b8d0bb9a9d575ee3c2c144f2bca1ad7  design/admin4/javascript/admin4.js
+4407952178a9760f35a7433a2f0bfa59  design/admin4/javascript/admin4.js
 611b86193bc31bf56218fc25131e04b8  design/admin4/javascript/contentstructuremenu_dynamic.js
 a5e25bc5b912c88678afe25d798ade81  design/admin4/javascript/expajaxuploader.js
 87a99714e893b77932b199e1d51c5297  design/admin4/javascript/ezadmin_menubar.js
@@ -897,7 +897,7 @@ f91a366a6abfa6b8a706b154b7aec12c  design/admin4/override/templates/template_look
 03505c55345b654eeb275f3b614a92bf  design/admin4/override/templates/thumbnail/image.tpl
 6971adb19c3c39b21f245c72b7f73305  design/admin4/override/templates/thumbnail/image_browse.tpl
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
-2645bbc90a1664f3dbebceefcb8f997a  design/admin4/stylesheets/admin4.css
+c65108292824f96571ea47512867a729  design/admin4/stylesheets/admin4.css
 30a645c1835fdad5b8f8a3801999d92e  design/admin4/stylesheets/components.css
 e907d0bf7b66f4bd6da6699efc5b84a7  design/admin4/stylesheets/content.css
 0368a507892a9eb10f58c7a00b0365bf  design/admin4/stylesheets/core.css
@@ -7323,7 +7323,7 @@ fba3ae0ecf105bfaa378adaaf45cb2f7  tests/tests/design/AdminSearchTest.php
 8892c665f96685e851dd5483047ce234  tests/tests/design/AdminSetupOverviewTest.php
 889cffb91a4dc4f7c3807a7652b1d768  tests/tests/design/AdminSetupTabsLeftMenuTest.php
 b0234df6346ce8c89c9b8267dcfa47f4  tests/tests/design/AdminSidebarDrawerTest.php
-c42a7504de734d7a835c4b61f530caf2  tests/tests/design/AdminSiteAccessMenuTest.php
+25f5a1de918c6e7d5d45c08b471f986f  tests/tests/design/AdminSiteAccessMenuTest.php
 26cd1c78167aa9312aeffcbfe9b95bb1  tests/tests/design/AdminStylingRulesTest.php
 30d12ad7dc5a6ad97ac28b8f844f1ff3  tests/tests/design/AdminSubitemsPriorityDragTest.php
 0b4a969bd98da9c835eb609ba5cd0a8f  tests/tests/design/AdminSubitemsTranslationsTest.php
@@ -7341,7 +7341,7 @@ a134e1113ff97edab51d735f9fc9fb26  tests/tests/design/js/mega_menu.js
 31267149d8f443736a92676d6f7b1afa  tests/tests/design/js/priority_drag.js
 d2faa77782cb14493e2d79691451b89d  tests/tests/design/js/segmented_switch.js
 930596724f30405be9cbdd8bff9ffc4f  tests/tests/design/js/sidebar_drawer.js
-958bf61bec11dd1450a4edb50392aa44  tests/tests/design/js/site_menu.js
+51285e3093b8e63dcc0d1fe71117c03b  tests/tests/design/js/site_menu.js
 a81613e46954d0ba7b4e578a0831e33a  tests/tests/design/js/tabs_height.js
 434787210214832488331f2a52f7ceb2  tests/tests/design/js/visibility_status.js
 dcc45e4631fc358b0384c51d17ff8d67  tests/tests/extension/bccie/ezBccieTest.php
