@@ -86,7 +86,7 @@ class AdminPhoneMenuTest extends PHPUnit\Framework\TestCase
             $this->assertIsArray( $row, 'the harness ran: ' . $out );
             $s[$row['name']] = $row;
         }
-        $this->assertCount( 19, $s );
+        $this->assertCount( 21, $s );
 
         $this->assertTrue( $s['click opens']['open'] );
         $this->assertSame( 'true', $s['click opens']['expanded'] );
