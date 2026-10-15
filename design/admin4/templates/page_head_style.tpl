@@ -17,26 +17,32 @@
    (data-a4-pref-<name>) and set() saves it through user/preferences/set_and_exit (data-a4-pref-url), so it
    follows the user from browser to browser. An anonymous page has no data-a4-pref-url and keeps the choice in this
    browser's localStorage only. get( name, legacyKey ): a signed-in user without the preference yet takes the
-   browser's old choice under legacyKey along once. */
+   browser's old choice under legacyKey along once. A preference that cannot be saved (no fetch, a network error,
+   an error status, or a redirect such as the login page of an expired session) is kept in localStorage instead,
+   which get() reads while the preference is empty (that copy belongs to the browser, not to the user: the next user
+   without the preference takes it along). set( name, '' ) forgets a choice: the preference is set empty ("-") and
+   the browser's copy removed. */
 (function () {
     var root = document.documentElement, url = root.getAttribute('data-a4-pref-url');
     function attr(name) { return 'data-a4-pref-' + name.replace(/_/g, '-'); }
     function local(key, value) {
         try {
             if (value === undefined) return window.localStorage.getItem(key);
-            window.localStorage.setItem(key, value);
+            if (value === '') window.localStorage.removeItem(key);
+            else window.localStorage.setItem(key, value);
         } catch (e) { /* blocked storage: the choice lasts for this page */ }
         return null;
     }
-    function send(name, value) {
+    function send(name, value, failed) {
+        var fail = function () { if (failed) failed(); };
         var go = function () {
             var t = document.getElementById('ezxform_token_js'), token = t ? t.getAttribute('title') : '';
-            if (!window.fetch) return;
+            if (!window.fetch) { fail(); return; }
             window.fetch(url + '/' + encodeURIComponent(name) + '/' + encodeURIComponent(value === '' ? '-' : value), {
-                method: 'POST', credentials: 'same-origin',
+                method: 'POST', credentials: 'same-origin', keepalive: true,
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: 'ezxform_token=' + encodeURIComponent(token)
-            }).catch(function () {});
+            }).then(function (r) { if (!r.ok || r.redirected) fail(); }, fail);
         };
         if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', go); else go();
     }
@@ -47,14 +53,17 @@
             var value = root.getAttribute(attr(name));
             if (value) return value === '-' ? '' : value;
             var old = legacyKey ? local(legacyKey) : null;
-            if (old) window.a4Pref.set(name, old);
+            if (old) window.a4Pref.set(name, old, legacyKey);
             return old;
         },
         set: function (name, value, legacyKey) {
             value = String(value);
             if (!url) { local(legacyKey || 'exp-a4-' + name, value); return; }
-            root.setAttribute(attr(name), value === '' ? '-' : value);
-            send(name, value);
+            var key = legacyKey || 'exp-a4-' + name, shown = value === '' ? '-' : value;
+            root.setAttribute(attr(name), shown);
+            if (value === '') local(key, '');
+            // not saved: this browser keeps it, unless a later choice has replaced it meanwhile
+            send(name, value, function () { if (root.getAttribute(attr(name)) === shown) local(key, value); });
         }
     };
 })();
