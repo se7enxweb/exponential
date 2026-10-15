@@ -757,16 +757,17 @@ class eZTemplateStringOperator
 
     /**
      * The content of a JavaScript string literal (wash( 'javascript' )): backslash and both quotes are escaped as
-     * before, and so are < and > (a value inside a script element cannot close it with </script>), line breaks and
-     * the line and paragraph separators (they end a string literal).
+     * before, and so are < and > (a value inside a script element cannot close it with </script>), & (inside an HTML
+     * attribute the browser decodes character references before the script runs, so a value cannot spell a quote
+     * as &#39;), line breaks and the line and paragraph separators (they end a string literal).
      *
      * @param mixed $value
      * @return string
      */
     public static function javascriptString( $value )
     {
-        return str_replace( array( "\\", "\"", "'", "<", ">", "\r", "\n", "\u{2028}", "\u{2029}" ),
-                            array( "\\\\", "\\042", "\\047", "\\x3C", "\\x3E", "\\r", "\\n", "\\u2028", "\\u2029" ),
+        return str_replace( array( "\\", "\"", "'", "<", ">", "&", "\r", "\n", "\u{2028}", "\u{2029}" ),
+                            array( "\\\\", "\\042", "\\047", "\\x3C", "\\x3E", "\\x26", "\\r", "\\n", "\\u2028", "\\u2029" ),
                             (string) $value );
     }
 }
