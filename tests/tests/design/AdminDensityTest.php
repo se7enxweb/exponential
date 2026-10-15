@@ -16,7 +16,7 @@
 class AdminDensityTest extends PHPUnit\Framework\TestCase
 {
     /** The tokens the compact view used to set anew; each now has one value */
-    const SPACING_TOKENS = array( '--a4-gutter' => 'var(--a4-space-5)', '--a4-control-h' => '32px', '--a4-list-pad' => 'var(--a4-cell-pad-y) var(--a4-cell-pad-x)',
+    const SPACING_TOKENS = array( '--a4-gutter' => 'var(--a4-space-5)', '--a4-control-h' => '32px', '--a4-list-pad' => 'var(--a4-cell-pad-y) calc(var(--a4-space-1) + 2px)',
                                   '--a4-cell-pad-y' => 'var(--a4-space-2)', '--a4-cell-pad-x' => 'var(--a4-space-3)',
                                   '--a4-card-pad-y' => 'var(--a4-space-3)', '--a4-card-pad-x' => 'var(--a4-space-4)' );
 
@@ -80,7 +80,7 @@ class AdminDensityTest extends PHPUnit\Framework\TestCase
     public function testEveryControlHasTheOneControlHeight()
     {
         $css = preg_replace( '#/\*.*?\*/#s', '', self::file( 'design/admin4/stylesheets/components.css' ) );
-        foreach ( array( '.a4-btn {', ".a4-input,\n.a4-field select,", '.a4-chip span {', ".a4-tabs a,\n.a4-tabs button,", ".a4-sizes a,\n.a4-sizes span.current {" ) as $start )
+        foreach ( array( '.a4-btn {', ".a4-input,\n.a4-field select,", '.a4-chip span {', ".a4-tabs a,\n.a4-tabs button,", ".a4-sizes a,\n.a4-sizes span.current {", '.a4-confirm > summary { display: inline-flex;' ) as $start )
         {
             $at = strpos( $css, $start );
             $this->assertNotFalse( $at, "no rule $start" );

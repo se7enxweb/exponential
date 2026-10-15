@@ -169,9 +169,14 @@ class AdminLegacyControlsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( '0', $rules['.box-header']['border-top'], 'admin4.css takes the base\'s dashed line away' );
         // a heading after a block in a side column: 24px (the gutter) above it, its own 12px margin included,
         // however deep the menu template nests it
+        // the space is the header's padding: margins collapse once no border stands between them (measured 12px
+        // instead of 24px with a margin); the heading inside adds none, the block above ends at its content
         $between = self::rule( $rules, ':is(#leftmenu-design, #rightmenu-design) :is(.box-bc, :has(.box-bc)) ~ .box-header' );
         $this->assertNotNull( $between );
-        $this->assertSame( 'calc(var(--a4-gutter) - var(--a4-space-3))', $between['margin-top'] );
+        $this->assertSame( 'var(--a4-gutter)', $between['padding-top'] );
+        $this->assertSame( '0', $between['margin-top'] );
+        $this->assertSame( '0', self::rule( $rules, ':is(#leftmenu-design, #rightmenu-design) :is(.box-bc, :has(.box-bc)) ~ .box-header h4' )['margin-top'] );
+        $this->assertSame( '0', $rules[':is(#leftmenu-design, #rightmenu-design) .box-content > :last-child']['margin-bottom'] );
         $this->assertNotNull( self::rule( $rules, ':is(#leftmenu-design, #rightmenu-design) :is(.box-bc, :has(.box-bc)) ~ * .box-header' ),
             'also a header inside a wrapper (#content-tree) after a block' );
         $this->assertSame( 'var(--a4-space-3) 0 var(--a4-space-2)', $rules[':is(#leftmenu-design, #rightmenu-design) .box-header h4']['margin'] );

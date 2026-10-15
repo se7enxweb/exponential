@@ -318,7 +318,7 @@ html[data-a4-theme-choice="system"] .a4-theme-toggle .a4-icon-system { display: 
 }
 #leftmenu-design,
 #rightmenu-design {
-  padding: var(--a4-space-2) var(--a4-space-2) var(--a4-space-3);   /* the right column is 240px wide: more would push its buttons past the card */
+  padding: var(--a4-space-2) var(--a4-space-2) var(--a4-space-3);   /* the right column's card is 208px wide (16rem less the 24px edge and the gutter): more would push its buttons past the card */
 }
 
 /* One gutter between the cards: --a4-gutter (24px) between a side column's card and the content, under
@@ -1630,15 +1630,20 @@ div#contentstructure ul#content_tree_menu ul a.openclose-close::after {
 
 /* Blocks in a side column are separated by space, not by a line: a heading that follows a block (an earlier sibling
    of it, or of one of its wrappers, holds a block's content, .box-bc) stands --a4-gutter (24px) below that block,
-   its own top margin (12px) included, however deep the menu template nests it. The first heading sits at the
-   card's top. */
+   however deep the menu template nests it. The space is the header's padding, not a margin: without the old border
+   the header's and its heading's margins collapsed into one 12px. The first heading sits at the card's top. */
 :is(#leftmenu-design, #rightmenu-design) :is(.box-bc, :has(.box-bc)) ~ .box-header,
 :is(#leftmenu-design, #rightmenu-design) :is(.box-bc, :has(.box-bc)) ~ * .box-header {
-  margin-top: calc(var(--a4-gutter) - var(--a4-space-3));
+  margin-top: 0;
+  padding-top: var(--a4-gutter);
 }
+:is(#leftmenu-design, #rightmenu-design) :is(.box-bc, :has(.box-bc)) ~ .box-header h4,
+:is(#leftmenu-design, #rightmenu-design) :is(.box-bc, :has(.box-bc)) ~ * .box-header h4 { margin-top: 0; }
+/* a block ends at its content: the last element's bottom margin (a .block's .5em) would add to the gutter */
+:is(#leftmenu-design, #rightmenu-design) .box-content > :last-child { margin-bottom: 0; }
 /* The block titles of both side columns: one size, weight and spacing in every module (the content tree's title as
    the ini menus' and the tools'), sized from the column's font so the column sizes scale it; a long word breaks
-   with a hyphen instead of running past the 240px column. */
+   with a hyphen instead of running past the right column's 208px card. */
 :is(#leftmenu-design, #rightmenu-design) .box-header { font-size: inherit; }
 :is(#leftmenu-design, #rightmenu-design) .box-header h4 {
   margin: var(--a4-space-3) 0 var(--a4-space-2);
@@ -1661,7 +1666,7 @@ div#contentstructure ul#content_tree_menu ul a.openclose-close::after {
 }
 :is(#leftmenu, #rightmenu) :is(ul.leftmenu-items, .box-content > ul, .settings > ul) > li { margin: 0; list-style: none; }
 
-/* The core tools of the right column (240px; cache, quick settings, bookmarks — an extension's box keeps its own
+/* The core tools of the right column (a 208px card; cache, quick settings, bookmarks — an extension's box keeps its own
    layout): fields on the column's width, the buttons at its end, right under the field they belong to (the cache tool's choice and "Clear", the siteaccess and "Set"). A long cache name keeps
    its whole width instead of sharing a row with the button. */
 :is(#clearcache-tool, #quicksettings-tool, #bookmarks) .box-content :is(select, input[type=text]) { width: 100%; }

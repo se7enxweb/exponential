@@ -159,12 +159,12 @@
   --a4-z-skip-link: 10000;   /* the skip link, shown while focused, over everything */
   --a4-z-drag-mask: 9500;
   /* The spacing of list cells and cards: one density (the compact view was removed in October 2026) */
-  --a4-list-pad: var(--a4-cell-pad-y) var(--a4-cell-pad-x);   /* table.list cells as .a4-table's (was .4em) */
+  --a4-list-pad: var(--a4-cell-pad-y) calc(var(--a4-space-1) + 2px);   /* table.list: 8px rows, 6px a side (was .4em, 5px): a list of ten columns still fits a 944px content column */
   --a4-cell-pad-y: var(--a4-space-2);
   --a4-cell-pad-x: var(--a4-space-3);
   --a4-card-pad-y: var(--a4-space-3);
   --a4-card-pad-x: var(--a4-space-4);
-  /* the gap between the frame's cards: side columns, content, header (admin4.css); 24px, a 24px layout grid */
+  /* the gap between the frame's cards: side columns and content, under the header, at the bottom (admin4.css) */
   --a4-gutter: var(--a4-space-5);
 
   /* the browser's own parts (scrollbars, select popups, date pickers, autofill) follow the mode */
@@ -1314,7 +1314,7 @@ body.exp-debug-bar .a4-toasts { bottom: calc(var(--exp-debug-bar-h, 38px) + var(
 .a4-fold > summary:hover { color: var(--a4-accent-text); }
 .a4-fold-body { padding: 0 var(--a4-space-3) var(--a4-space-3); }
 .a4-confirm { flex: 1 1 100%; }
-.a4-confirm > summary { display: inline-flex; min-height: var(--a4-control-h); padding: var(--a4-space-2) var(--a4-space-3); color: var(--a4-bad); }
+.a4-confirm > summary { display: inline-flex; align-items: center; min-height: var(--a4-control-h); padding: var(--a4-space-1) var(--a4-space-3); color: var(--a4-bad); }
 .a4-confirm > div {
   display: flex;
   flex-wrap: wrap;
