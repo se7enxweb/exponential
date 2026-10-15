@@ -342,7 +342,8 @@
       "tests/tests/design/AdminLegacyControlsTest.php",
       "tests/tests/design/AdminPreviewDevicesTest.php",
       "tests/tests/design/AdminNodeTabsHeightTest.php",
-      "tests/tests/design/AdminSubitemsPriorityDragTest.php"
+      "tests/tests/design/AdminSubitemsPriorityDragTest.php",
+      "tests/tests/design/AdminSiteAccessMenuTest.php"
     ],
     "extension/ezjscore/design/standard/javascript/*": [
       "tests/tests/extension/ezjscore/ezjscoreVendoredLibrariesTest.php"
@@ -616,7 +617,8 @@
     ],
     "design/admin4/javascript/a4_mega_menu.js": [
       "tests/tests/design/AdminMegaMenuTest.php",
-      "tests/tests/design/AdminStylingRulesTest.php"
+      "tests/tests/design/AdminStylingRulesTest.php",
+      "tests/tests/design/AdminSiteAccessMenuTest.php"
     ],
     "kernel/setup/module.php": [
       "tests/tests/design/AdminMegaMenuTest.php"
@@ -782,6 +784,25 @@
     ],
     "design/admin/templates/node/view/import_export_button.tpl": [
       "tests/tests/design/AdminContextMenuNestedSubmenuTest.php"
+    ],
+    "kernel/private/classes/ezpsiteaccessmenu.php": [
+      "tests/tests/design/AdminSiteAccessMenuTest.php"
+    ],
+    "kernel/common/ezpsiteaccessmenuoperator.php": [
+      "tests/tests/design/AdminSiteAccessMenuTest.php"
+    ],
+    "kernel/private/classes/ezpsiteaccessurl.php": [
+      "tests/tests/kernel/private/classes/ezpSiteAccessURLTest.php",
+      "tests/tests/design/AdminSiteAccessMenuTest.php"
+    ],
+    "design/admin4/templates/parts/a4_header_site.tpl": [
+      "tests/tests/design/AdminSiteAccessMenuTest.php",
+      "tests/tests/design/AdminHeaderTest.php",
+      "tests/tests/design/AdminIconsTest.php",
+      "tests/tests/design/AdminLandmarksTest.php"
+    ],
+    "tests/tests/design/js/site_menu.js": [
+      "tests/tests/design/AdminSiteAccessMenuTest.php"
     ]
   },
   "generated": {
@@ -880,7 +901,8 @@
       "tests/tests/kernel/private/expAdminViewsDebugCleanTest.php"
     ],
     "design/admin4/stylesheets/admin4.css": [
-      "tests/tests/design/AdminEnvironmentBadgeTest.php"
+      "tests/tests/design/AdminEnvironmentBadgeTest.php",
+      "tests/tests/design/AdminSiteAccessMenuTest.php"
     ],
     "design/admin4/javascript/ezajaxsubitems_expdatatable.js": [
       "tests/tests/design/AdminLanguageStatesTest.php"
@@ -912,10 +934,12 @@
       "tests/tests/design/AdminLanguageStatesTest.php"
     ],
     "design/admin4/templates/page_topmenu.tpl": [
-      "tests/tests/design/AdminEnvironmentBadgeTest.php"
+      "tests/tests/design/AdminEnvironmentBadgeTest.php",
+      "tests/tests/design/AdminSiteAccessMenuTest.php"
     ],
     "design/admin4/templates/pagelayout.tpl": [
-      "tests/tests/design/AdminEnvironmentBadgeTest.php"
+      "tests/tests/design/AdminEnvironmentBadgeTest.php",
+      "tests/tests/design/AdminSiteAccessMenuTest.php"
     ],
     "design/admin4/templates/parts/a4_environment_badge.tpl": [
       "tests/tests/design/AdminEnvironmentBadgeTest.php"
@@ -943,7 +967,8 @@
     ],
     "design/admin4l/templates/pagelayout.tpl": [
       "tests/tests/design/AdminEnvironmentBadgeTest.php",
-      "tests/tests/extension/explayouts_admin/expLayoutsAdminLayoutsTest.php"
+      "tests/tests/extension/explayouts_admin/expLayoutsAdminLayoutsTest.php",
+      "tests/tests/design/AdminSiteAccessMenuTest.php"
     ],
     "design/standard/javascript/expdebugbar.js": [
       "tests/tests/kernel/classes/debugbar/expDebugBarSettingsTest.php",
@@ -1156,7 +1181,8 @@
       "tests/tests/lib/eztemplate/eZTemplatePHP8RegressionTest.php"
     ],
     "kernel/common/eztemplateautoload.php": [
-      "tests/tests/design/AdminEnvironmentBadgeTest.php"
+      "tests/tests/design/AdminEnvironmentBadgeTest.php",
+      "tests/tests/design/AdminSiteAccessMenuTest.php"
     ],
     "kernel/content/ezcontentoperationcollection.php": [
       "tests/tests/kernel/content/eZPublishRegisterSearchObjectTest.php"
@@ -1524,7 +1550,8 @@
       "tests/tests/kernel/content/eZContentFunctionCollectionSiteDataTest.php",
       "tests/tests/lib/ezdb/eZSQLite3TransactionWaitTest.php",
       "tests/tests/lib/ezfile/eZLogMaxSizeTest.php",
-      "tests/tests/lib/ezutils/eZINIEnvironmentTest.php"
+      "tests/tests/lib/ezutils/eZINIEnvironmentTest.php",
+      "tests/tests/design/AdminSiteAccessMenuTest.php"
     ],
     "settings/subitems.ini": [
       "tests/tests/kernel/classes/subitems/expSubitemsColumnRegistryTest.php"
@@ -1599,6 +1626,18 @@
     ],
     "extension/ezjscore/classes/ezjscajaxcontent.php": [
       "tests/tests/design/AdminLanguageStatesTest.php"
+    ],
+    "design/admin4/javascript/a4_mega_menu.js": [
+      "tests/tests/design/AdminSiteAccessMenuTest.php"
+    ],
+    "design/admin4/javascript/admin4.js": [
+      "tests/tests/design/AdminSiteAccessMenuTest.php"
+    ],
+    "design/admin4/templates/parts/a4_header_site.tpl": [
+      "tests/tests/design/AdminSiteAccessMenuTest.php"
+    ],
+    "design/admin4l/templates/explayouts/block/admin_theme_switch.tpl": [
+      "tests/tests/design/AdminSiteAccessMenuTest.php"
     ]
   }
 }
