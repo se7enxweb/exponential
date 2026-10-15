@@ -62,7 +62,7 @@ abstract class expOETestCase extends expServicesCoreTestCase
         $this->savedConfigured = $ini->variable( 'EditorSettings', 'EditorEngine' );
         $this->savedCheck = $ini->hasVariable( 'EditorSettings', 'UploadExtensionCheck' ) ? $ini->variable( 'EditorSettings', 'UploadExtensionCheck' ) : 'engine';
         $this->savedExtensions = $ini->variable( 'EditorSettings', 'UploadFileExtensions' );
-        $this->savedSwitch = $ini->variable( 'EditorSettings', 'EngineSwitch' );
+        $this->savedSwitch = $ini->hasVariable( 'EditorSettings', 'EngineSwitch' ) ? $ini->variable( 'EditorSettings', 'EngineSwitch' ) : 'disabled';
         $this->savedPreference = $this->dbPreference();
         expOEEditor::reset();
     }

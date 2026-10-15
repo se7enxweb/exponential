@@ -14,8 +14,26 @@ class expOEEngineConfigTest extends expOETestCase
     {
         $ini = file_get_contents( $this->root() . '/settings/ezoe.ini' );
         $this->assertMatchesRegularExpression( '/^EditorEngine=tinymce3$/m', $ini );
-        $this->assertMatchesRegularExpression( '/^EngineSwitch=disabled$/m', $ini );
+        // EngineSwitch is not set: switchEnabled() is false without it, and a siteaccess can turn it on
+        $this->assertDoesNotMatchRegularExpression( '/^EngineSwitch=/m', $ini );
         $this->assertMatchesRegularExpression( '/^UploadExtensionCheck=engine$/m', $ini );
+    }
+
+    public function testShippedEnginesAreListedWithoutResettingTheList()
+    {
+        $ini = file_get_contents( $this->root() . '/settings/ezoe.ini' );
+        // an empty Engines[] here, read at the extension level, would drop engines registered by siteaccess
+        // settings or by an extension activated for one siteaccess only
+        $this->assertDoesNotMatchRegularExpression( '/^Engines\[\]\s*$/m', $ini );
+        $this->assertMatchesRegularExpression( '/^Engines\[tinymce3\]=expOETinyMCE3Engine$/m', $ini );
+        $this->assertMatchesRegularExpression( '/^Engines\[tinymce8\]=expOETinyMCE8Engine$/m', $ini );
+    }
+
+    public function testSwitchIsOffWhenNotSet()
+    {
+        $ini = eZINI::instance( 'ezoe.ini' );
+        $ini->setVariable( 'EditorSettings', 'EngineSwitch', '' );
+        $this->assertFalse( expOEEditor::switchEnabled() );
     }
 
     public function testTinyMCE3IsRenderedByTheBuiltInTemplate()
