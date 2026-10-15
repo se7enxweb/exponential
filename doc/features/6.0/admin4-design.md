@@ -149,6 +149,17 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
   from 1280 px the main menu does (its last tabs go into "More"). In forced colors it is drawn in the system colors
   with its text. The same in admin4l (the logo block). See [Settings](#settings).
   `tests/tests/design/AdminEnvironmentBadgeTest.php` checks it.
+- **Site menu.** On by default. The globe in the header, which opens the site, is a button for signed-in users:
+  its list opens the site first, highlighted, then the installation's other siteaccesses, grouped into Sites and
+  Administration, each with its name (`SiteName`, else the identifier), identifier, locale and address; the
+  siteaccess in use is marked (`aria-current`). The addresses are worked out as the globe's own
+  (`ezpSiteAccessURL::root()`: MatchOrder, URIMatchType, HostMatchMapItems, SiteURL, the scheme, host and port of
+  the request) and open in the same window. A disclosure as the user menu: ArrowDown opens it and goes to the first
+  link, the arrow keys, Home and End move, Escape closes it and gives the focus back, a click outside closes it. One
+  button in the place of the link, so the header takes no more room; on a phone the list opens under the header.
+  Without JavaScript, with `Show=disabled`, or with no siteaccess besides the site, the globe stays a plain link.
+  The same in admin4l (the tools block). See [Settings](#settings). `tests/tests/design/AdminSiteAccessMenuTest.php`
+  checks it.
 - **Edit form.** The button bars (Send for publishing, Store draft, Store draft and exit, Discard draft) stay in view
   while the form scrolls (CSS `position: sticky`, replacing the YUI script that stopped working). They are slim
   (42 px on a desktop) and fit a phone screen. Edit pages show one left column, not two. Required fields carry a red
@@ -878,6 +889,18 @@ Community". A template can also set `$show_community_links`.
 - `FrontSiteAccess` is the site an admin siteaccess belongs to: its "Open the site" and "View on site" links go there.
   Both show the globe (Bootstrap Icons `globe2`, `.a4-bi-globe2`), so a link to the site does not look like a link
   that leaves the administration for something else (`box-arrow-up-right`).
+- `[AdminSiteAccessMenu]`: the site menu (see "Site menu" above), read from the admin siteaccess's settings.
+  `Show=disabled` turns it off. `List=related` (the default) lists `[SiteAccessSettings] RelatedSiteAccessList[]` of
+  the admin siteaccess, the siteaccesses that share its database, or `AvailableSiteAccessList[]` where it is empty;
+  `List=available` lists `AvailableSiteAccessList[]`; a siteaccess that is not in `AvailableSiteAccessList[]` is never
+  listed; an installation that serves several sites with separate databases sets `RelatedSiteAccessList[]` for each
+  administration, so that it lists its own site only. `HiddenSiteAccessList[]` leaves siteaccesses out (the site the
+  globe opens stays the first entry). `AdminSiteAccessList[]` names the administrations; empty,
+  a siteaccess whose `SiteDesign` begins with `admin` or that sets `FrontSiteAccess` is one. The header's cache-blocks
+  are keyed by `siteaccess_menu_key()` (the list and the request), so a changed list shows on the next request; a
+  changed `SiteName`, `Locale` or `SiteDesign` of a listed siteaccess shows once the template caches of the
+  administration siteaccess are cleared.
+  The template operators are `siteaccess_menu()` and `siteaccess_menu_key()`.
 - `[AdminEnvironment]`: the environment badge (see "Environment badge" above). `Level` is `development`, `test`,
   `staging` or `production`, or `auto` for the level of `EXP_ENV` (`dev`, `development`; `test`; `stage`, `staging`;
   `prod`, `production`, `live`; another name or none: no badge). An empty `Name` takes the level's translated name.
