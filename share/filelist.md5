@@ -5268,7 +5268,7 @@ f58b3f356b8f96b903278574f96973c7  kernel/content/move.php
 a428275a337ca0f65ddd7004a5206277  kernel/content/multiedit_functions.php
 99dc0c21059915887c3ee52f2d4f8503  kernel/content/newcontent.php
 b0e94efe4e763a06e067e5137d7f8ad1  kernel/content/node_edit.php
-a626e69ea2db513ab3d8aa3ca1d543f7  kernel/content/operation_definition.php
+6a122b365b6f4580e76463ffffb57e56  kernel/content/operation_definition.php
 f64ec1e3937367aded4247679c879a6a  kernel/content/pdf.php
 281ebfd81cb62d8b2cc014c95739ff4a  kernel/content/pendinglist.php
 6e95dc799d24a1ec14ac030e9513a569  kernel/content/queued.php
@@ -7780,6 +7780,7 @@ f39889af608be04ca56239a1de0a09c6  tests/tests/kernel/content/eZContentFunctionCo
 4399e626b4880c761281bb1f8af5a94c  tests/tests/kernel/content/eZContentVersionviewPlacementTest.php
 ac7874f3a658d9f604008926a802fa10  tests/tests/kernel/content/eZEditLocationsVisibilityTest.php
 6e8d2af722d64f799200531b5cff5cfb  tests/tests/kernel/content/eZLoginTemplatesRegisterLinkTest.php
+04dcb6561ccce70a1573cbbdd25e7c69  tests/tests/kernel/content/eZPublishRegisterSearchObjectTest.php
 b460bd68c74256811a99815a5fe6b24d  tests/tests/kernel/content/eZPublishWithoutNotificationLiveTest.php
 5e5e8f579e9972bdb3388b9b5f3c5b9c  tests/tests/kernel/content/eZPublishWithoutNotificationTest.php
 6038765c0dc312d869a30b1a35df4518  tests/tests/kernel/content/ezcontentaction_hide_unhide_regression.php
