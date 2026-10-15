@@ -483,11 +483,13 @@ div.block.a4-content-attr { margin: 0 0 var(--a4-space-5); padding-bottom: 0; } 
   cursor: not-allowed;
 }
 /* the editor engine switch below a rich text field (ezoe's ezxmltext_ezoe_engine_switch.tpl, EngineSwitch=enabled):
-   the label "Editor" and the engines as one segmented control, drawn like .a4-tabs.is-segmented (components.css) at
-   the one control height. The engine in use (the pressed toggle, aria-pressed="true") is filled; the others are the outlined
-   buttons that switch. Left-aligned under the field like its other controls, 8px below the editor's status bar; on a
-   narrow screen the joined engines move under the label as one piece. The selectors carry the group class, so they beat the button look
-   above (:is(.a4-content-attr, ...) button.button). */
+   the label "Editor" and the engines. The engines are the shared segmented pill (their span carries
+   .a4-tabs.is-segmented, components.css draws it: the track, each engine round inside it, the engine in use, the
+   pressed toggle aria-pressed="true", tinted in the accent with an accent edge, the focus ring, forced colors), so
+   the switch looks like the left menu's width switch. Left-aligned under the field like its other controls, 8px
+   below the editor's status bar; on a narrow screen the pill moves under the label as one piece. What is left here
+   is what the legacy button look of this file (:is(.a4-content-attr, ...) button.button:hover) would otherwise
+   paint over the pill on hover. */
 .a4-content-attr .ezoe-engine-switch {
   display: flex;
   flex-wrap: wrap;
@@ -496,36 +498,14 @@ div.block.a4-content-attr { margin: 0 0 var(--a4-space-5); padding-bottom: 0; } 
   margin: var(--a4-space-2) 0 0;
 }
 .a4-content-attr .ezoe-engine-switch .ezoe-engine-switch-label { color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 650; }
-.a4-content-attr .ezoe-engine-switch .ezoe-engine-switch-options { display: inline-flex; flex-wrap: nowrap; }
-.a4-content-attr .ezoe-engine-switch .ezoe-engine-switch-option {
-  box-sizing: border-box;
-  display: inline-flex;
-  align-items: center;
-  min-height: var(--a4-control-h);
-  margin: 0;
-  padding: 0 var(--a4-space-3);
-  border: 1px solid var(--a4-line-strong);
-  border-radius: 0;
+.a4-content-attr .ezoe-engine-switch .a4-tabs.is-segmented > button.ezoe-engine-switch-option:hover:not(:disabled) {
+  border-color: var(--a4-line-strong);
   background-color: var(--a4-card);
-  color: var(--a4-ink);
-  font-family: var(--a4-font);
-  font-size: var(--a4-text-s);
-  font-weight: 600;
-  line-height: 1.2;
-  white-space: nowrap;
+  color: var(--a4-accent-text);
 }
-.a4-content-attr .ezoe-engine-switch .ezoe-engine-switch-option:not(:first-child) { margin-left: -1px; }
-.a4-content-attr .ezoe-engine-switch .ezoe-engine-switch-option:first-child { border-radius: var(--a4-radius-s) 0 0 var(--a4-radius-s); }
-.a4-content-attr .ezoe-engine-switch .ezoe-engine-switch-option:last-child { border-radius: 0 var(--a4-radius-s) var(--a4-radius-s) 0; }
-.a4-content-attr .ezoe-engine-switch button.ezoe-engine-switch-option:hover:not(:disabled, .current),
-.a4-content-attr .ezoe-engine-switch button.ezoe-engine-switch-option:focus-visible { position: relative; z-index: 1; }
-.a4-content-attr .ezoe-engine-switch button.ezoe-engine-switch-option:hover:not(:disabled, .current) { border-color: var(--a4-accent); color: var(--a4-accent-text); }
-.a4-content-attr .ezoe-engine-switch .ezoe-engine-switch-option.current {
-  position: relative;
-  border-color: var(--a4-accent-strong);
-  background-color: var(--a4-accent-strong);
-  color: var(--a4-on-accent);
-  font-weight: 650;
+.a4-content-attr .ezoe-engine-switch .a4-tabs.is-segmented > button.ezoe-engine-switch-option.current,
+.a4-content-attr .ezoe-engine-switch .a4-tabs.is-segmented > button.ezoe-engine-switch-option.current:hover:not(:disabled) {
+  border-color: var(--a4-accent-text);
   cursor: default;
 }
 
@@ -580,6 +560,4 @@ div.block.a4-content-attr { margin: 0 0 var(--a4-space-5); padding-bottom: 0; } 
   .a4-content-attr select:where(:not([multiple]):not([size]), [size="1"]) { -webkit-appearance: auto; appearance: auto; padding-right: var(--a4-space-2); background-image: none; }
   :is(.a4-content-attr, .a4-content-edit) input.defaultbutton { border-width: 2px; }
   :is(.a4-content-attr, .a4-content-edit) :is(input.button-disabled, input.button, button.button, input.defaultbutton):disabled { border-color: GrayText; color: GrayText; opacity: 1; }
-  /* the engine in use of the editor switch loses its fill: an outline marks it */
-  .a4-content-attr .ezoe-engine-switch .ezoe-engine-switch-option.current { outline: 2px solid Highlight; outline-offset: -2px; }
 }

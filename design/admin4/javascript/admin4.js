@@ -553,3 +553,37 @@
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
     else init();
 })();
+
+/*
+ * The segmented switches answer the arrow keys like a toolbar of toggle buttons (the left menu's width switch, the
+ * version preview's devices, ezoe's engine switch: .a4-tabs.is-segmented). Left and Right
+ * move the focus to the previous and next choice (round), Home and End to the first and last; disabled choices are
+ * skipped. Every choice keeps its Tab stop and is pressed with Enter or Space as before, and Up and Down keep
+ * scrolling the page. One listener on the document, so a switch drawn later answers too.
+ */
+(function () {
+    'use strict';
+
+    var GROUP = '.a4-tabs.is-segmented';
+
+    function choices(group) {
+        return Array.prototype.filter.call(group.children, function (el) {
+            return (el.tagName === 'BUTTON' || (el.tagName === 'A' && el.hasAttribute('href'))) && !el.disabled;
+        });
+    }
+
+    document.addEventListener('keydown', function (event) {
+        var key = event.key, target = event.target;
+        if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+        if (key !== 'ArrowLeft' && key !== 'ArrowRight' && key !== 'Home' && key !== 'End') return;
+        var group = target && target.parentNode;
+        if (!group || !group.matches || !group.matches(GROUP)) return;
+        var list = choices(group), at = list.indexOf(target), next;
+        if (at < 0 || list.length < 2) return;
+        if (key === 'Home') next = list[0];
+        else if (key === 'End') next = list[list.length - 1];
+        else next = list[(at + (key === 'ArrowRight' ? 1 : -1) + list.length) % list.length];
+        event.preventDefault();
+        next.focus();
+    });
+})();

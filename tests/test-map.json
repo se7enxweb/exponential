@@ -255,7 +255,8 @@
       "tests/tests/design/AdminPreferencesTest.php",
       "tests/tests/design/AdminEditBarTest.php",
       "tests/tests/design/AdminContentEditFormsTest.php",
-      "tests/tests/design/AdminEditorSkinTest.php"
+      "tests/tests/design/AdminEditorSkinTest.php",
+      "tests/tests/design/AdminLegacyControlsTest.php"
     ],
     "extension/ezjscore/design/standard/javascript/*": [
       "tests/tests/extension/ezjscore/ezjscoreVendoredLibrariesTest.php"
@@ -378,7 +379,9 @@
       "tests/tests/design/AdminHeaderTest.php"
     ],
     "extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe_engine_switch.tpl": [
-      "tests/tests/extension/ezoe/expOEEngineConfigTest.php"
+      "tests/tests/extension/ezoe/expOEEngineConfigTest.php",
+      "tests/tests/design/AdminContentEditFormsTest.php",
+      "tests/tests/design/AdminLegacyControlsTest.php"
     ],
     "extension/ezoe/design/standard/javascript/tinymce8_ez/ezoe_dialog.js": [
       "tests/tests/design/AdminTopNodeNameTest.php"

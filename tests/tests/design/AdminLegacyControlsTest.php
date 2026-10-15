@@ -295,6 +295,36 @@ class AdminLegacyControlsTest extends PHPUnit\Framework\TestCase
         $this->assertFileEquals( self::root() . '/design/admin4/stylesheets/components.css', self::root() . '/design/admin/stylesheets/components.css', 'design/admin keeps a copy' );
     }
 
+    /**
+     * Every segmented switch answers the arrow keys (admin4.js, run in node by tests/tests/design/js/segmented_switch.js):
+     * Left/Right to the previous/next choice (round, a disabled one skipped), Home/End to the first/last; Up/Down,
+     * a key with Shift and a button outside a switch are left alone. ezoe's engine switch is the same pill.
+     */
+    public function testTheSegmentedSwitchesAnswerTheArrowKeys()
+    {
+        $engine = (string)file_get_contents( self::root() . '/extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe_engine_switch.tpl' );
+        $this->assertStringContainsString( '<span class="ezoe-engine-switch-options a4-tabs is-segmented">', $engine, 'the engine switch is the shared pill' );
+        $this->assertStringContainsString( 'role="group"', self::template( 'parts/left_width_control.tpl' ) );
+        $node = trim( (string)shell_exec( 'command -v node 2>/dev/null' ) );
+        if ( $node === '' )
+        {
+            $this->markTestSkipped( 'node is not installed' );
+        }
+        $out = shell_exec( escapeshellarg( $node ) . ' ' . escapeshellarg( __DIR__ . '/js/segmented_switch.js' ) . ' '
+                           . escapeshellarg( self::root() . '/design/admin4/javascript/admin4.js' ) );
+        $s = json_decode( (string)$out, true );
+        $this->assertIsArray( $s, 'the harness ran: ' . $out );
+        $k = $s['keys'];
+        $this->assertSame( array( 'to' => 'medium', 'prevented' => true ), $k['right'] );
+        $this->assertSame( array( 'to' => 'small', 'prevented' => true ), $k['rightFromLastSkipsDisabled'], 'round, the disabled choice skipped' );
+        $this->assertSame( array( 'to' => 'large', 'prevented' => true ), $k['left'] );
+        $this->assertSame( 'small', $k['home']['to'] );
+        $this->assertSame( 'large', $k['end']['to'] );
+        $this->assertSame( array( 'to' => 'small', 'prevented' => false ), $k['down'], 'Up and Down keep scrolling the page' );
+        $this->assertFalse( $k['shift']['prevented'] );
+        $this->assertFalse( $k['outside']['prevented'], 'only the choices of a switch' );
+    }
+
     public function testTheTreeMenusShareOneTrashLink()
     {
         $trash = self::template( 'parts/left_trash.tpl' );
