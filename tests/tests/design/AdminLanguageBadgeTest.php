@@ -78,6 +78,38 @@ class AdminLanguageBadgeTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( 'aria-label="{$a4_lang_label|wash}"', $code );
     }
 
+    /**
+     * The code a badge shows for every locale the kernel ships (share/locale/*.ini [HTTP] ContentLanguage), the
+     * include's rule applied: the language part, upper case. A locale added later (esl-AR: es-AR) is checked as well:
+     * two or three letters, the same code for every region of a language (esl-ES, esl-MX: ES; eng-GB, eng-US: EN).
+     */
+    public function testEveryShippedLocaleShowsItsLanguagePart()
+    {
+        $codes = array();
+        foreach ( glob( self::root() . '/share/locale/*.ini' ) as $file )
+        {
+            $ini = @parse_ini_file( $file, true, INI_SCANNER_RAW );
+            $tag = isset( $ini['HTTP']['ContentLanguage'] ) ? trim( (string)$ini['HTTP']['ContentLanguage'] ) : '';
+            if ( $tag === '' )
+                continue;
+            $parts = explode( '-', $tag );
+            $code = strtoupper( $parts[0] );
+            $this->assertMatchesRegularExpression( '/^[A-Z]{2,3}$/', $code, basename( $file ) . ": $tag" );
+            $codes[basename( $file, '.ini' )] = $code;
+        }
+        $this->assertGreaterThan( 10, count( $codes ) );
+        foreach ( array( 'eng-GB' => 'EN', 'eng-US' => 'EN', 'esl-ES' => 'ES', 'esl-MX' => 'ES', 'ger-DE' => 'DE', 'por-BR' => 'PT' ) as $locale => $expected )
+        {
+            if ( isset( $codes[$locale] ) )
+                $this->assertSame( $expected, $codes[$locale], $locale );
+        }
+        foreach ( $codes as $locale => $code )
+        {
+            if ( strpos( $locale, 'esl-' ) === 0 )
+                $this->assertSame( 'ES', $code, $locale );
+        }
+    }
+
     public function testEveryBadgeGoesThroughTheInclude()
     {
         $uses = 0;
