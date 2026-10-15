@@ -21,7 +21,9 @@
  *  ED-10 - fail closed: a failing pattern (PCRE limit), too many entries, long names, "0", missing directories,
  *          names that are not UTF-8
  *  ED-11 - addExtension() decides on the copy it makes, not only on the source
- *  ED-12 - package.ini [ExtensionExportSettings] AllowedExtensions[] and the policy package/export_extension
+ *  ED-12 - package.ini [ExtensionExportSettings], closed by default: AllowedExtensions[] (empty: none, "*": all) and
+ *          RequirePolicy (enabled unless disabled) with the policy package/export_extension
+ *  ED-13 - where exporting is not allowed, Setup > Extensions and the package wizard say so and offer no download
  *  ED-04 - the view no longer packs from the address (/setup/extensions/<name>/<format>), and both designs post a
  *          button instead of linking
  *
@@ -66,6 +68,17 @@ class ExtensionDownloadTestBlindHandler extends eZExtensionPackageHandler
     }
 }
 
+/** The package handler with the policy answer set by the test */
+class ExtensionDownloadTestPolicyHandler extends eZExtensionPackageHandler
+{
+    public static $hasPolicy = false;
+
+    protected static function hasExportPolicy()
+    {
+        return self::$hasPolicy;
+    }
+}
+
 /** The extension wizard with its package made in a throwaway directory */
 class ExtensionDownloadTestCreator extends eZExtensionPackageCreator
 {
@@ -82,6 +95,9 @@ class ExtensionDownloadTest extends PHPUnit\Framework\TestCase
     /** @var string the working directory before the test */
     private $cwd;
 
+    /** @var array package.ini [ExtensionExportSettings] AllowedExtensions and RequirePolicy before the test */
+    private $savedExportSettings;
+
     /** @var string an extension made for the test, below extension/ */
     private $name;
 
@@ -93,10 +109,20 @@ class ExtensionDownloadTest extends PHPUnit\Framework\TestCase
         $settings = eZExtension::baseDirectory() . '/' . $this->name . '/settings';
         mkdir( $settings . '/siteaccess/site', 0777, true );
         file_put_contents( $settings . '/plain.ini', "<?php /* #?ini charset=\"utf-8\"?\n[Limits]\nMaxTokens=4096\nRequireToken=enabled\nPassword=\n# a comment\n*/ ?>\n" );
+        // exporting is closed by default: the tests of the package check open it for every extension, without the
+        // policy (asking it needs a database); the tests of the settings close it again
+        $ini = eZINI::instance( 'package.ini' );
+        $this->savedExportSettings = array( $ini->variable( 'ExtensionExportSettings', 'AllowedExtensions' ),
+                                            $ini->variable( 'ExtensionExportSettings', 'RequirePolicy' ) );
+        $ini->setVariable( 'ExtensionExportSettings', 'AllowedExtensions', array( '*' ) );
+        $ini->setVariable( 'ExtensionExportSettings', 'RequirePolicy', 'disabled' );
     }
 
     protected function tearDown(): void
     {
+        $ini = eZINI::instance( 'package.ini' );
+        $ini->setVariable( 'ExtensionExportSettings', 'AllowedExtensions', $this->savedExportSettings[0] );
+        $ini->setVariable( 'ExtensionExportSettings', 'RequirePolicy', $this->savedExportSettings[1] );
         eZDir::recursiveDelete( eZExtension::baseDirectory() . '/' . $this->name );
         chdir( $this->cwd );
     }
@@ -484,29 +510,62 @@ class ExtensionDownloadTest extends PHPUnit\Framework\TestCase
     public function testTheExportSettings()
     {
         $ini = eZINI::instance( 'package.ini' );
-        $this->assertSame( array(), array_values( array_filter( (array)$ini->variable( 'ExtensionExportSettings', 'AllowedExtensions' ), 'strlen' ) ), 'shipped empty' );
-        $this->assertSame( 'disabled', $ini->variable( 'ExtensionExportSettings', 'RequirePolicy' ) );
-        $this->assertSame( '', eZExtensionPackageHandler::exportRefusal( $this->name, false ) );
-        $saved = $ini->variable( 'ExtensionExportSettings', 'AllowedExtensions' );
+        $shipped = eZINI::fetchFromFile( 'settings/package.ini' );
+        $this->assertSame( array(), array_values( array_filter( (array)$shipped->variable( 'ExtensionExportSettings', 'AllowedExtensions' ), 'strlen' ) ), 'shipped empty: closed' );
+        $this->assertSame( 'enabled', $shipped->variable( 'ExtensionExportSettings', 'RequirePolicy' ), 'shipped: the policy is needed' );
+
+        // empty list: nothing may be exported, on every way, and the reason says how to switch it on
+        $ini->setVariable( 'ExtensionExportSettings', 'AllowedExtensions', array() );
+        $refusal = eZExtensionPackageHandler::exportRefusal( $this->name, false );
+        $this->assertSame( eZExtensionPackageHandler::exportSwitchedOffText(), $refusal );
+        $this->assertStringContainsString( 'AllowedExtensions[]', $refusal );
+        $this->assertStringContainsString( 'package/export_extension', $refusal );
         try
         {
-            $ini->setVariable( 'ExtensionExportSettings', 'AllowedExtensions', array( '0' ) );
-            $this->assertSame( '', eZExtensionPackageHandler::exportRefusal( '0', false ), 'an extension named "0" stays in the list' );
-            $this->assertStringContainsString( 'AllowedExtensions', eZExtensionPackageHandler::exportRefusal( $this->name, false ) );
-            try
-            {
-                eZExtensionPackageHandler::addExtension( null, $this->name );
-                $this->fail( 'addExtension() ignores AllowedExtensions[]' );
-            }
-            catch ( RuntimeException $e )
-            {
-                $this->assertStringContainsString( 'AllowedExtensions', $e->getMessage() );
-            }
+            eZExtensionPackageHandler::addExtension( null, $this->name );
+            $this->fail( 'addExtension() exports with an empty AllowedExtensions[]' );
         }
-        finally
+        catch ( RuntimeException $e )
         {
-            $ini->setVariable( 'ExtensionExportSettings', 'AllowedExtensions', $saved );
+            $this->assertStringContainsString( 'switched off', $e->getMessage() );
         }
+        $ini->setVariable( 'ExtensionExportSettings', 'AllowedExtensions', array( '', ' ' ) );
+        $this->assertNotSame( '', eZExtensionPackageHandler::exportRefusal( $this->name, false ), 'blank entries list nothing' );
+
+        // "*" allows every extension; a list allows the listed ones, "0" included
+        $ini->setVariable( 'ExtensionExportSettings', 'AllowedExtensions', array( '*' ) );
+        $this->assertSame( '', eZExtensionPackageHandler::exportRefusal( $this->name, false ) );
+        $ini->setVariable( 'ExtensionExportSettings', 'AllowedExtensions', array( '0' ) );
+        $this->assertSame( '', eZExtensionPackageHandler::exportRefusal( '0', false ), 'an extension named "0" stays in the list' );
+        $this->assertStringContainsString( 'AllowedExtensions', eZExtensionPackageHandler::exportRefusal( $this->name, false ) );
+        try
+        {
+            eZExtensionPackageHandler::addExtension( null, $this->name );
+            $this->fail( 'addExtension() ignores AllowedExtensions[]' );
+        }
+        catch ( RuntimeException $e )
+        {
+            $this->assertStringContainsString( 'AllowedExtensions', $e->getMessage() );
+        }
+
+        // the policy: needed unless RequirePolicy=disabled, a missing setting included
+        $ini->setVariable( 'ExtensionExportSettings', 'AllowedExtensions', array( '*' ) );
+        $ini->setVariable( 'ExtensionExportSettings', 'RequirePolicy', 'enabled' );
+        ExtensionDownloadTestPolicyHandler::$hasPolicy = false;
+        $this->assertStringContainsString( 'package/export_extension', ExtensionDownloadTestPolicyHandler::exportRefusal( $this->name, true ) );
+        $this->assertSame( '', ExtensionDownloadTestPolicyHandler::exportRefusal( $this->name, false ), 'the command line is not asked' );
+        ExtensionDownloadTestPolicyHandler::$hasPolicy = true;
+        $this->assertSame( '', ExtensionDownloadTestPolicyHandler::exportRefusal( $this->name, true ) );
+        ExtensionDownloadTestPolicyHandler::$hasPolicy = false;
+        $ini->setVariable( 'ExtensionExportSettings', 'RequirePolicy', 'disabled' );
+        $this->assertSame( '', ExtensionDownloadTestPolicyHandler::exportRefusal( $this->name, true ) );
+        $ini->setVariable( 'ExtensionExportSettings', 'RequirePolicy', 'something' );
+        $this->assertNotSame( '', ExtensionDownloadTestPolicyHandler::exportRefusal( $this->name, true ), 'anything but disabled needs the policy' );
+        $ini->removeSetting( 'ExtensionExportSettings', 'RequirePolicy' );
+        $this->assertNotSame( '', ExtensionDownloadTestPolicyHandler::exportRefusal( $this->name, true ), 'a missing setting needs the policy' );
+        $ini->setVariable( 'ExtensionExportSettings', 'RequirePolicy', 'enabled' );
+        $ini->removeSetting( 'ExtensionExportSettings', 'AllowedExtensions' );
+        $this->assertNotSame( '', ExtensionDownloadTestPolicyHandler::exportRefusal( $this->name, false ), 'a missing list allows nothing' );
 
         $root = dirname( __DIR__, 5 );
         include $root . '/kernel/package/module.php';
@@ -515,6 +574,42 @@ class ExtensionDownloadTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( "hasAccessTo( 'package', 'export_extension' )", $handler );
         foreach ( array( 'kernel/private/classes/views/setup/extensions.php', 'kernel/classes/packagecreators/ezextension/ezextensionpackagecreator.php' ) as $caller )
             $this->assertStringContainsString( 'exportRefusal( ', file_get_contents( $root . '/' . $caller ), $caller );
+    }
+
+    /** ED-13, where exporting is not allowed the pages say so in bold and offer no download or choice */
+    public function testThePagesShowTheHintInsteadOfTheButtons()
+    {
+        $root = dirname( __DIR__, 5 );
+        foreach ( array( 'admin' => 'message-warning a4-notice is-warn', 'admin4' => 'a4-notice is-warn' ) as $design => $class )
+        {
+            $tpl = file_get_contents( $root . "/design/$design/templates/setup/extensions.tpl" );
+            $this->assertStringContainsString( '<div class="' . $class . ' a4-setup-export-off" role="status"><p><strong>{$export_notice|wash}</strong></p></div>', $tpl, $design );
+            $this->assertMatchesRegularExpression( '/\{if \$row\.export_refusal\}<strong class="a4-setup-export-off">\{\$row\.export_refusal\|wash\}<\/strong>\{else\}\{foreach [^}]*\}<button type="submit" class="a4-btn" name="ExtensionDownload"/', $tpl, $design );
+        }
+        $wizard = file_get_contents( $root . '/design/standard/templates/package/creators/ezextension/extension.tpl' );
+        $this->assertStringContainsString( '<p><strong>{$export_notice|wash}</strong></p>', $wizard );
+        $this->assertStringContainsString( '{if $refusal} disabled="disabled"', $wizard );
+        $view = file_get_contents( $root . '/kernel/private/classes/views/setup/extensions.php' );
+        $this->assertStringContainsString( "\$rows[\$i]['export_refusal'] = \\eZExtensionPackageHandler::exportRefusal( \$row['name'], true );", $view );
+        $creator = file_get_contents( $root . '/kernel/classes/packagecreators/ezextension/ezextensionpackagecreator.php' );
+        $this->assertStringContainsString( "\$tpl->setVariable( 'export_notice', \$exportNotice );", $creator );
+
+        // the wizard's step: what may not be exported is refused even when posted
+        $ini = eZINI::instance( 'package.ini' );
+        $ini->setVariable( 'ExtensionExportSettings', 'AllowedExtensions', array() );
+        $_POST = array( 'PackageExtensionNames' => array( $this->name ) );
+        $errors = array();
+        $stepMap = array();
+        $persistent = array();
+        try
+        {
+            $this->assertFalse( ( new eZExtensionPackageCreator( 'ezextension' ) )->validateExtensionName( null, eZHTTPTool::instance(), 'extensionname', $stepMap, $persistent, $errors ) );
+        }
+        finally
+        {
+            $_POST = array();
+        }
+        $this->assertStringContainsString( 'switched off', $errors[0]['description'] );
     }
 
     /** ED-05, names in any case, hidden files, links and files the check cannot read */

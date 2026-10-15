@@ -60779,6 +60779,10 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
 <context>
     <name>kernel/package</name>
     <message>
+        <source>Exporting extensions is switched off by default: to switch it on, list the extension in package.ini [ExtensionExportSettings] AllowedExtensions[] (or * for every extension) and grant the policy package/export_extension to the role.</source>
+        <translation>Der Export von Extensions ist standardmäßig ausgeschaltet: Zum Einschalten die Extension in package.ini [ExtensionExportSettings] AllowedExtensions[] eintragen (oder * für alle Extensions) und der Rolle die Policy package/export_extension geben.</translation>
+    </message>
+    <message>
         <source>The extension %name may not be exported: it is not in package.ini [ExtensionExportSettings] AllowedExtensions[].</source>
         <translation>Die Extension %name darf nicht exportiert werden: sie steht nicht in package.ini [ExtensionExportSettings] AllowedExtensions[].</translation>
     </message>

@@ -774,10 +774,34 @@ class eZExtensionPackageHandler extends eZPackageHandler
     }
 
     /**
-     * Why the extension $extensionName may not be exported here, or an empty string when it may: package.ini
-     * [ExtensionExportSettings] AllowedExtensions[] (when it lists any extension, only those), and with $checkPolicy
-     * and RequirePolicy=enabled the policy package/export_extension of the current user. The command line asks
-     * without $checkPolicy: it runs as no user.
+     * The hint shown wherever exporting an extension is refused by the settings or the policy: one sentence that
+     * says it is switched off by default and how to switch it on.
+     *
+     * @return string
+     */
+    static function exportSwitchedOffText()
+    {
+        return ezpI18n::tr( 'kernel/package', 'Exporting extensions is switched off by default: to switch it on, list the extension in package.ini [ExtensionExportSettings] AllowedExtensions[] (or * for every extension) and grant the policy package/export_extension to the role.' );
+    }
+
+    /**
+     * Whether the current user has the policy package/export_extension.
+     *
+     * @return bool
+     */
+    protected static function hasExportPolicy()
+    {
+        $access = eZUser::currentUser()->hasAccessTo( 'package', 'export_extension' );
+        return isset( $access['accessWord'] ) && $access['accessWord'] !== 'no';
+    }
+
+    /**
+     * Why the extension $extensionName may not be exported here, or an empty string when it may. Closed by default:
+     *  - package.ini [ExtensionExportSettings] AllowedExtensions[] must list the extension, or hold "*" for every
+     *    extension; an empty or missing list allows none (on every way, the command line included);
+     *  - with $checkPolicy, unless RequirePolicy=disabled, the current user needs the policy
+     *    package/export_extension; a missing RequirePolicy counts as enabled. The command line asks without
+     *    $checkPolicy: it runs as no user.
      *
      * @param string $extensionName
      * @param bool $checkPolicy
@@ -796,16 +820,15 @@ class eZExtensionPackageHandler extends eZPackageHandler
                     $allowed[] = trim( $item );
             }
         }
-        if ( count( $allowed ) > 0 && !in_array( (string)$extensionName, $allowed, true ) )
+        if ( count( $allowed ) === 0 )
+            return static::exportSwitchedOffText();
+        if ( !in_array( '*', $allowed, true ) && !in_array( (string)$extensionName, $allowed, true ) )
             return ezpI18n::tr( 'kernel/package', 'The extension %name may not be exported: it is not in package.ini [ExtensionExportSettings] AllowedExtensions[].', null,
-                                array( '%name' => (string)$extensionName ) );
-        if ( $checkPolicy && $ini->hasVariable( 'ExtensionExportSettings', 'RequirePolicy' )
-             && $ini->variable( 'ExtensionExportSettings', 'RequirePolicy' ) === 'enabled' )
-        {
-            $access = eZUser::currentUser()->hasAccessTo( 'package', 'export_extension' );
-            if ( !isset( $access['accessWord'] ) || $access['accessWord'] === 'no' )
-                return ezpI18n::tr( 'kernel/package', 'Exporting an extension needs the policy package/export_extension.' );
-        }
+                                array( '%name' => (string)$extensionName ) ) . ' ' . static::exportSwitchedOffText();
+        $requirePolicy = !$ini->hasVariable( 'ExtensionExportSettings', 'RequirePolicy' )
+                         || $ini->variable( 'ExtensionExportSettings', 'RequirePolicy' ) !== 'disabled';
+        if ( $checkPolicy && $requirePolicy && !static::hasExportPolicy() )
+            return ezpI18n::tr( 'kernel/package', 'Exporting an extension needs the policy package/export_extension.' ) . ' ' . static::exportSwitchedOffText();
         return '';
     }
 

@@ -7,6 +7,11 @@
 
 {include uri="design:package/header.tpl"}
 
+{* Exporting extensions is switched off by default: how to switch it on *}
+{if and( is_set( $export_notice ), $export_notice )}
+<div class="message-warning a4-notice is-warn" role="status"><p><strong>{$export_notice|wash}</strong></p></div>
+{/if}
+
 <p>{'Please select the extensions to be exported.'|i18n('design/standard/package')}</p>
 
 <table class="list" cellspacing="0">
@@ -20,8 +25,10 @@
 {foreach $extension_list as $extension}
 {def $ext = $extension_info[$extension]}
 <tr>
-    <td><input name="PackageExtensionNames[]" type="checkbox" value="{$extension|wash}"{if and( is_set( $persistent_data.extensionlist ), $persistent_data.extensionlist|contains( $extension ) )} checked="checked"{/if} /></td>
-    <td><a href="#" class="extension-name-link" data-name="{$extension|wash}">{$extension|wash}</a></td>
+    {def $refusal = ''}{if and( is_set( $export_refusals ), is_set( $export_refusals[$extension] ) )}{set $refusal = $export_refusals[$extension]}{/if}
+    <td><input name="PackageExtensionNames[]" type="checkbox" value="{$extension|wash}"{if $refusal} disabled="disabled"{elseif and( is_set( $persistent_data.extensionlist ), $persistent_data.extensionlist|contains( $extension ) )} checked="checked"{/if} /></td>
+    <td><a href="#" class="extension-name-link" data-name="{$extension|wash}">{$extension|wash}</a>{if $refusal}<br /><strong class="extension-export-off">{$refusal|wash}</strong>{/if}</td>
+    {undef $refusal}
     <td>{if $ext.version}{$ext.version|wash}{else}—{/if}</td>
     <td>{if $ext.mtime_formatted}{$ext.mtime_formatted|wash}{else}—{/if}</td>
     <td><a href="#" class="extension-info-link" data-name="{$extension|wash}">{'Details'|i18n( 'design/standard/package' )}</a></td>

@@ -115,6 +115,18 @@ class eZExtensionPackageCreator extends eZPackageCreationHandler
         }
 
         $extensionList = array_values( $extensionList );
+        // exporting is closed by default: an extension that may not be exported cannot be chosen, and the step
+        // says why and how to switch exporting on
+        $exportRefusals = array();
+        $exportNotice = '';
+        foreach ( $extensionList as $extensionName )
+        {
+            $exportRefusals[$extensionName] = eZExtensionPackageHandler::exportRefusal( (string)$extensionName, true );
+            if ( $exportRefusals[$extensionName] !== '' )
+                $exportNotice = eZExtensionPackageHandler::exportSwitchedOffText();
+        }
+        $tpl->setVariable( 'export_refusals', $exportRefusals );
+        $tpl->setVariable( 'export_notice', $exportNotice );
         $tpl->setVariable( 'extension_list', $extensionList );
         $tpl->setVariable( 'extension_info', $extensionInfo );
     }
