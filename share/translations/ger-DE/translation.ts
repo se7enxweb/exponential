@@ -16051,20 +16051,20 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Heller Modus</translation>
     </message>
     <message>
-        <source>Open the Setup menu</source>
-        <translation>Setup-Menü öffnen</translation>
+        <source>Open the %tab menu</source>
+        <translation>Menü „%tab“ öffnen</translation>
     </message>
     <message>
-        <source>Loading the Setup menu</source>
-        <translation>Setup-Menü wird geladen</translation>
+        <source>Loading the %tab menu</source>
+        <translation>Menü „%tab“ wird geladen</translation>
     </message>
     <message>
-        <source>The Setup menu could not be loaded.</source>
-        <translation>Das Setup-Menü konnte nicht geladen werden.</translation>
+        <source>The %tab menu could not be loaded.</source>
+        <translation>Das Menü „%tab“ konnte nicht geladen werden.</translation>
     </message>
     <message>
-        <source>All Setup functions</source>
-        <translation>Alle Setup-Funktionen</translation>
+        <source>Go to %tab</source>
+        <translation>Weiter zu „%tab“</translation>
     </message>
     <message>
         <source>Open the site</source>
@@ -16332,7 +16332,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <name>design/admin/parts/my/menu</name>
     <message>
         <source>My notification settings</source>
-        <translation>Meine Benachrichtigungs- Einstellungen</translation>
+        <translation>Meine Benachrichtigungseinstellungen</translation>
     </message>
     <message>
         <source>My bookmarks</source>
@@ -16457,6 +16457,22 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>My e-mail preferences</source>
         <translation>Meine E-Mail-Einstellungen</translation>
+    </message>
+    <message>
+        <source>The content you follow and how you are told.</source>
+        <translation>Inhalte, denen Sie folgen, und wie Sie benachrichtigt werden.</translation>
+    </message>
+    <message>
+        <source>Which optional e-mail you get; your consents.</source>
+        <translation>Welche optionalen E-Mails Sie erhalten; Ihre Einwilligungen.</translation>
+    </message>
+    <message>
+        <source>Set a new password for your account.</source>
+        <translation>Ein neues Passwort für Ihr Konto setzen.</translation>
+    </message>
+    <message>
+        <source>Your name, e-mail address and other details.</source>
+        <translation>Ihr Name, Ihre E-Mail-Adresse und weitere Angaben.</translation>
     </message>
 </context>
 <context>
@@ -16963,6 +16979,34 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Access control</source>
         <translation>Zugangskontrolle</translation>
+    </message>
+    <message>
+        <source>Users and user groups</source>
+        <translation>Benutzer und Gruppen</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Benutzer</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>Mein Konto</translation>
+    </message>
+    <message>
+        <source>Users and user groups; create and edit accounts.</source>
+        <translation>Benutzer und Benutzergruppen; Konten anlegen und bearbeiten.</translation>
+    </message>
+    <message>
+        <source>Who is signed in; end sessions.</source>
+        <translation>Wer angemeldet ist; Sitzungen beenden.</translation>
+    </message>
+    <message>
+        <source>Who may do what, and where.</source>
+        <translation>Wer was wo darf.</translation>
+    </message>
+    <message>
+        <source>Accounts not yet activated; activate or remove them.</source>
+        <translation>Noch nicht aktivierte Konten; aktivieren oder entfernen.</translation>
     </message>
 </context>
 <context>

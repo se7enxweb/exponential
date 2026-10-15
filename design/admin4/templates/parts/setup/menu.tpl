@@ -9,7 +9,7 @@
   names and access checks, drawn as tiles with the icons, descriptions and figures of menu.ini [Leftmenu_setup]
   (LinkIcons[], LinkDescriptions[], LinkFigureTemplates[]), without the width control.
 
-  admin4's mega menu (setup/megamenu.tpl) sets setup_menu_layout='tiles' and setup_tiles_layout='mega': the same
+  admin4's mega menu (parts/setup/mega_menu.tpl) sets setup_menu_layout='tiles' and setup_tiles_layout='mega': the same
   links, names, groups, icons and descriptions, drawn as the groups of the panel under the header, without figures.
 
   The groups Design and Audit stand for their top tabs (menu.ini [Leftmenu_setup] GroupTabs[], GroupSections[]):

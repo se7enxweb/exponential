@@ -13662,20 +13662,20 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Light mode</translation>
     </message>
     <message>
-        <source>Open the Setup menu</source>
-        <translation>Open the Setup menu</translation>
+        <source>Open the %tab menu</source>
+        <translation>Open the %tab menu</translation>
     </message>
     <message>
-        <source>Loading the Setup menu</source>
-        <translation>Loading the Setup menu</translation>
+        <source>Loading the %tab menu</source>
+        <translation>Loading the %tab menu</translation>
     </message>
     <message>
-        <source>The Setup menu could not be loaded.</source>
-        <translation>The Setup menu could not be loaded.</translation>
+        <source>The %tab menu could not be loaded.</source>
+        <translation>The %tab menu could not be loaded.</translation>
     </message>
     <message>
-        <source>All Setup functions</source>
-        <translation>All Setup functions</translation>
+        <source>Go to %tab</source>
+        <translation>Go to %tab</translation>
     </message>
     <message>
         <source>Open the site</source>
@@ -14048,6 +14048,22 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>My e-mail preferences</source>
         <translation>My e-mail preferences</translation>
+    </message>
+    <message>
+        <source>The content you follow and how you are told.</source>
+        <translation>The content you follow and how you are told.</translation>
+    </message>
+    <message>
+        <source>Which optional e-mail you get; your consents.</source>
+        <translation>Which optional e-mail you get; your consents.</translation>
+    </message>
+    <message>
+        <source>Set a new password for your account.</source>
+        <translation>Set a new password for your account.</translation>
+    </message>
+    <message>
+        <source>Your name, e-mail address and other details.</source>
+        <translation>Your name, e-mail address and other details.</translation>
     </message>
 </context>
 <context>
@@ -14546,6 +14562,34 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>Access control</source>
         <translation>Access control</translation>
+    </message>
+    <message>
+        <source>Users and user groups</source>
+        <translation>Users and user groups</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Users</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>My account</translation>
+    </message>
+    <message>
+        <source>Users and user groups; create and edit accounts.</source>
+        <translation>Users and user groups; create and edit accounts.</translation>
+    </message>
+    <message>
+        <source>Who is signed in; end sessions.</source>
+        <translation>Who is signed in; end sessions.</translation>
+    </message>
+    <message>
+        <source>Who may do what, and where.</source>
+        <translation>Who may do what, and where.</translation>
+    </message>
+    <message>
+        <source>Accounts not yet activated; activate or remove them.</source>
+        <translation>Accounts not yet activated; activate or remove them.</translation>
     </message>
 </context>
 <context>
