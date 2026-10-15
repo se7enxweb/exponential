@@ -203,13 +203,14 @@
         }
         // what Tab can reach while the phone menu is open: the header's visible controls in their order (the logo,
         // the menu button, the panel, the tools of the header's row), so nothing a finger can reach is out of the
-        // keyboard's reach
+        // keyboard's reach. A control with a box but visibility: hidden (the side columns' tabs, hidden while the
+        // menu is open) is skipped by Tab: counted as the last one, it let the focus leave the header.
         function trapItems( header ) {
             const items = [];
             if (header && typeof header.querySelectorAll === "function") {
                 header.querySelectorAll('a[href], button:not([disabled]), input:not([disabled]):not([type="hidden"]), ' +
                     'select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])').forEach((el) => {
-                    if (el.getClientRects().length) {
+                    if (el.getClientRects().length && window.getComputedStyle(el).visibility !== "hidden") {
                         items.push(el);
                     }
                 });

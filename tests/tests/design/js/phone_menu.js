@@ -34,15 +34,18 @@ function run(steps) {
     const outside = element('page link');
     const logo = element('logo');
     const site = element('site link');
+    // a side column's tab in the header: it has a box but is visibility: hidden while the menu is open
+    const sideTab = element('hidden side tab', { hiddenStyle: true });
     const menu = element('menu', {
         classList: { contains: (c) => classes.menu.has(c) },
         contains: (el) => el === inside || el === close,
         querySelector: (sel) => (sel === '.searchscope-pane:not([hidden])' && !pane.hidden ? pane : null),
     });
-    // the header's controls in their order: the logo, the menu button, the panel's link and close button, a tool of the row
+    // the header's controls in their order: the logo, the menu button, the panel's link and close button, a tool of the row,
+    // the hidden side tab
     const header = element('header', {
         contains: (el) => [logo, icon, menu, site].includes(el) || menu.contains(el),
-        querySelectorAll: () => [logo, icon, inside, close, site],
+        querySelectorAll: () => [logo, icon, inside, close, site, sideTab],
     });
     const handlers = { icon: {}, close: {} };
     const phone = { matches: true, change: [], addEventListener(type, fn) { if (type === 'change') { this.change.push(fn); } } };
@@ -67,7 +70,7 @@ function run(steps) {
     sandbox = {
         $,
         window: {
-            getComputedStyle: () => ({ display: 'none', visibility: 'visible' }),
+            getComputedStyle: (el) => ({ display: 'none', visibility: el && el.hiddenStyle ? 'hidden' : 'visible' }),
             matchMedia: (q) => { if (q !== '(max-width: 575.98px)') { throw new Error('unexpected query ' + q); } return phone; },
         },
         document: {
