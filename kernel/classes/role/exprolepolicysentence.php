@@ -290,6 +290,7 @@ class expRolePolicySentence
             'user/register'              => 'register an account',
             'user/selfedit'              => 'edit their own account',
             'user/activation'            => 'activate user accounts',
+            'user/hygiene'               => 'check user accounts, and disable, enable and unlock them',
             'setup/administrate'         => 'use the setup pages',
             'setup/managecache'          => 'clear caches',
             'setup/system_info'          => 'view the system information',

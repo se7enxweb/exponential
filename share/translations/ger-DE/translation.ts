@@ -16823,6 +16823,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>The design's top node and the objects below it.</source>
         <translation>Der oberste Knoten des Designs und die Objekte darunter.</translation>
     </message>
+    <message>
+        <source>Check user accounts</source>
+        <translation>Benutzerkonten prüfen</translation>
+    </message>
+    <message>
+        <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
+        <translation>Konten, die niemand nutzt oder die Aufmerksamkeit brauchen; deaktivieren, entsperren oder exportieren.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -16959,6 +16967,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Access control</source>
         <translation>Zugangskontrolle</translation>
+    </message>
+    <message>
+        <source>Check user accounts</source>
+        <translation>Benutzerkonten prüfen</translation>
     </message>
 </context>
 <context>
@@ -19484,6 +19496,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>use the website toolbar</source>
         <translation>die Website-Werkzeugleiste nutzen</translation>
+    </message>
+    <message>
+        <source>check user accounts, and disable, enable and unlock them</source>
+        <translation>Benutzerkonten prüfen sowie deaktivieren, aktivieren und entsperren</translation>
     </message>
 </context>
 <context>
@@ -40079,6 +40095,325 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     <message>
         <source>OK</source>
         <translation type="obsolete">OK</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/hygiene</name>
+    <message>
+        <source>Active</source>
+        <translation>Aktiv</translation>
+    </message>
+    <message>
+        <source>Disabled</source>
+        <translation>Deaktiviert</translation>
+    </message>
+    <message>
+        <source>Not activated</source>
+        <translation>Nicht aktiviert</translation>
+    </message>
+    <message>
+        <source>Locked</source>
+        <translation>Gesperrt</translation>
+    </message>
+    <message>
+        <source>No user object</source>
+        <translation>Kein Benutzerobjekt</translation>
+    </message>
+    <message>
+        <source>Never published</source>
+        <translation>Nie veröffentlicht</translation>
+    </message>
+    <message>
+        <source>No location</source>
+        <translation>Ohne Platzierung</translation>
+    </message>
+    <message>
+        <source>Never signed in</source>
+        <translation>Nie angemeldet</translation>
+    </message>
+    <message>
+        <source>the anonymous user, the administrator account or you</source>
+        <translation>der anonyme Benutzer, das Administratorkonto oder Sie selbst</translation>
+    </message>
+    <message>
+        <source>not found, removed meanwhile</source>
+        <translation>nicht gefunden, inzwischen entfernt</translation>
+    </message>
+    <message>
+        <source>without a user object</source>
+        <translation>ohne Benutzerobjekt</translation>
+    </message>
+    <message>
+        <source>you may not edit them</source>
+        <translation>Sie dürfen sie nicht bearbeiten</translation>
+    </message>
+    <message>
+        <source>never activated: activate them under Unactivated users</source>
+        <translation>nie aktiviert: aktivieren Sie sie unter „Nicht aktivierte Benutzer“</translation>
+    </message>
+    <message>
+        <source>already in that state</source>
+        <translation>schon in diesem Zustand</translation>
+    </message>
+    <message>
+        <source>Disable</source>
+        <translation>Deaktivieren</translation>
+    </message>
+    <message>
+        <source>Enable</source>
+        <translation>Aktivieren</translation>
+    </message>
+    <message>
+        <source>Unlock</source>
+        <translation>Entsperren</translation>
+    </message>
+    <message>
+        <source>Check user accounts</source>
+        <translation>Benutzerkonten prüfen</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB.</source>
+        <translation>Diese Seite braucht eine SQL-Datenbank; mit MongoDB ist sie nicht verfügbar.</translation>
+    </message>
+    <message>
+        <source>Disable %count accounts?</source>
+        <translation>%count Konten deaktivieren?</translation>
+    </message>
+    <message>
+        <source>Enable %count accounts?</source>
+        <translation>%count Konten aktivieren?</translation>
+    </message>
+    <message>
+        <source>Unlock %count accounts?</source>
+        <translation>%count Konten entsperren?</translation>
+    </message>
+    <message>
+        <source>A disabled account cannot sign in, and its sessions end now. Its content, groups and roles stay; enable it again at any time.</source>
+        <translation>Ein deaktiviertes Konto kann sich nicht anmelden, und seine Sitzungen enden sofort. Inhalte, Gruppen und Rollen bleiben erhalten; Sie können es jederzeit wieder aktivieren.</translation>
+    </message>
+    <message>
+        <source>The accounts can sign in again.</source>
+        <translation>Die Konten können sich wieder anmelden.</translation>
+    </message>
+    <message>
+        <source>The count of failed sign-ins goes back to zero, so the accounts can sign in again.</source>
+        <translation>Die Zahl der fehlgeschlagenen Anmeldungen wird auf null gesetzt, die Konten können sich also wieder anmelden.</translation>
+    </message>
+    <message>
+        <source>%selected selected; each is checked again when you confirm.</source>
+        <translation>%selected ausgewählt; jedes wird beim Bestätigen noch einmal geprüft.</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>und %count weitere</translation>
+    </message>
+    <message>
+        <source>Left out:</source>
+        <translation>Ausgelassen:</translation>
+    </message>
+    <message>
+        <source>%count %reason</source>
+        <translation>%count: %reason</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abbrechen</translation>
+    </message>
+    <message>
+        <source>Find accounts nobody uses or that need a look: never signed in, not seen for a long time, disabled, locked after failed sign-ins, without a user object or location, or sharing an e-mail address. Disable, enable or unlock them in bulk, or export the list.</source>
+        <translation>Finden Sie Konten, die niemand nutzt oder die Aufmerksamkeit brauchen: nie angemeldet, lange nicht gesehen, deaktiviert, nach fehlgeschlagenen Anmeldungen gesperrt, ohne Benutzerobjekt oder Platzierung, oder mit einer E-Mail-Adresse, die auch ein anderes Konto hat. Deaktivieren, aktivieren oder entsperren Sie sie gesammelt, oder exportieren Sie die Liste.</translation>
+    </message>
+    <message>
+        <source>%count accounts disabled.</source>
+        <translation>%count Konten deaktiviert.</translation>
+    </message>
+    <message>
+        <source>%count accounts enabled.</source>
+        <translation>%count Konten aktiviert.</translation>
+    </message>
+    <message>
+        <source>%count accounts unlocked.</source>
+        <translation>%count Konten entsperrt.</translation>
+    </message>
+    <message>
+        <source>%count left out: %reason</source>
+        <translation>%count ausgelassen: %reason</translation>
+    </message>
+    <message>
+        <source>%count could not be changed</source>
+        <translation>%count konnten nicht geändert werden</translation>
+    </message>
+    <message>
+        <source>No account was selected. Tick the accounts first.</source>
+        <translation>Es wurde kein Konto ausgewählt. Haken Sie zuerst die Konten an.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filter</translation>
+    </message>
+    <message>
+        <source>All accounts</source>
+        <translation>Alle Konten</translation>
+    </message>
+    <message>
+        <source>Not seen for %days days</source>
+        <translation>Seit %days Tagen nicht gesehen</translation>
+    </message>
+    <message>
+        <source>Orphaned</source>
+        <translation>Verwaist</translation>
+    </message>
+    <message>
+        <source>Shared e-mail address</source>
+        <translation>Doppelte E-Mail-Adresse</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Liste eingrenzen</translation>
+    </message>
+    <message>
+        <source>Find an account</source>
+        <translation>Konto suchen</translation>
+    </message>
+    <message>
+        <source>Any part of the name, the login or the e-mail address.</source>
+        <translation>Ein beliebiger Teil des Namens, des Benutzernamens oder der E-Mail-Adresse.</translation>
+    </message>
+    <message>
+        <source>Any part of the name or the login.</source>
+        <translation>Ein beliebiger Teil des Namens oder des Benutzernamens.</translation>
+    </message>
+    <message>
+        <source>User group</source>
+        <translation>Benutzergruppe</translation>
+    </message>
+    <message>
+        <source>Every group</source>
+        <translation>Alle Gruppen</translation>
+    </message>
+    <message>
+        <source>Not seen for at least (days)</source>
+        <translation>Mindestens so lange nicht gesehen (Tage)</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Pro Seite</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Anzeigen</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Zurücksetzen</translation>
+    </message>
+    <message>
+        <source>Accounts</source>
+        <translation>Konten</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from bis %to von %count</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Auswählen</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Alle auf dieser Seite auswählen</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Name</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Benutzername</translation>
+    </message>
+    <message>
+        <source>E-mail</source>
+        <translation>E-Mail</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Last visit</source>
+        <translation>Letzter Besuch</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Anmeldungen</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation>Gruppen</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Rollen</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Reihenfolge umkehren</translation>
+    </message>
+    <message>
+        <source>Never changed here: the anonymous user, the administrator account or you.</source>
+        <translation>Wird hier nie geändert: der anonyme Benutzer, das Administratorkonto oder Sie selbst.</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(ohne Namen)</translation>
+    </message>
+    <message>
+        <source>%count accounts use this address.</source>
+        <translation>%count Konten verwenden diese Adresse.</translation>
+    </message>
+    <message>
+        <source>×%count</source>
+        <translation>×%count</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins; the limit is %max.</source>
+        <translation>%count fehlgeschlagene Anmeldungen; die Grenze liegt bei %max.</translation>
+    </message>
+    <message>
+        <source>%count days ago</source>
+        <translation>vor %count Tagen</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Nie</translation>
+    </message>
+    <message>
+        <source>No account matches.</source>
+        <translation>Kein Konto passt.</translation>
+    </message>
+    <message>
+        <source>Disable the ticked accounts</source>
+        <translation>Angehakte Konten deaktivieren</translation>
+    </message>
+    <message>
+        <source>Enable the ticked accounts</source>
+        <translation>Angehakte Konten aktivieren</translation>
+    </message>
+    <message>
+        <source>Unlock the ticked accounts</source>
+        <translation>Angehakte Konten entsperren</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Liste als CSV exportieren (%count)</translation>
+    </message>
+    <message>
+        <source>%count selected.</source>
+        <translation>%count ausgewählt.</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>Benutzer-ID</translation>
     </message>
 </context>
 <context>
