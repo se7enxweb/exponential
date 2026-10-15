@@ -88,8 +88,8 @@ class AdminLanguageBadgeTest extends PHPUnit\Framework\TestCase
         $codes = array();
         foreach ( glob( self::root() . '/share/locale/*.ini' ) as $file )
         {
-            $ini = @parse_ini_file( $file, true, INI_SCANNER_RAW );
-            $tag = isset( $ini['HTTP']['ContentLanguage'] ) ? trim( (string)$ini['HTTP']['ContentLanguage'] ) : '';
+            // read as eZINI does, line by line: parse_ini_file() gives up on some locale files (characters it reserves)
+            $tag = preg_match( '/^ContentLanguage=([^\r\n]*)$/m', (string)file_get_contents( $file ), $m ) ? trim( $m[1] ) : '';
             if ( $tag === '' )
                 continue;
             $parts = explode( '-', $tag );
@@ -98,7 +98,7 @@ class AdminLanguageBadgeTest extends PHPUnit\Framework\TestCase
             $codes[basename( $file, '.ini' )] = $code;
         }
         $this->assertGreaterThan( 10, count( $codes ) );
-        foreach ( array( 'eng-GB' => 'EN', 'eng-US' => 'EN', 'esl-ES' => 'ES', 'esl-MX' => 'ES', 'ger-DE' => 'DE', 'por-BR' => 'PT' ) as $locale => $expected )
+        foreach ( array( 'eng-GB' => 'EN', 'eng-US' => 'EN', 'esl-ES' => 'ES', 'esl-MX' => 'ES', 'esl-AR' => 'ES', 'ger-DE' => 'DE', 'por-BR' => 'PT' ) as $locale => $expected )
         {
             if ( isset( $codes[$locale] ) )
                 $this->assertSame( $expected, $codes[$locale], $locale );
