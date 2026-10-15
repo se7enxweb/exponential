@@ -276,7 +276,7 @@ ac084a07607e6d6c5a845da15423854f  design/admin/images/view-fullscreen.png
 2342a8f4be9ea928ca5601b4bd3b2cc1  design/admin/javascript/ezajaxsubitems_expdatatable.js
 2c35ad74f3ae96723bd750231c27cbe4  design/admin/javascript/leftmenu_widthcontrol.js
 d5da958d6db22f93e9b4cffa6342bef5  design/admin/javascript/node_tabs.js
-267646a3a80a5891e165cccec10d1b53  design/admin/javascript/popupmenu/ezpopupmenu.js
+5ab9d6774fdb0f3b51087e8619eb9f01  design/admin/javascript/popupmenu/ezpopupmenu.js
 54cb1a1df10aa18ea280c08a9d97a328  design/admin/override/templates/admin_preview/article.tpl
 fa42107d7f6c82b26eed48050374e9a5  design/admin/override/templates/admin_preview/comment.tpl
 0c4cec334b8bff8d319219e52813802e  design/admin/override/templates/admin_preview/company.tpl
@@ -843,14 +843,14 @@ a54e5021b1c597539a60da86ef766f0c  design/admin4/images/trash-icon-16x16.gif
 bb57d7d50de510183570d8844efbd49f  design/admin4/images/up-16x16-grey.png
 bc1f590f32f5d71f9bfdf7781f2135fc  design/admin4/images/url_translator.png
 ac084a07607e6d6c5a845da15423854f  design/admin4/images/view-fullscreen.png
-72d10cb8e7ead298886f4388c9503e72  design/admin4/javascript/admin4.js
+0e3db09a48283ee0d65b9a73ba03905f  design/admin4/javascript/admin4.js
 9f30c46fcd1a3ca27329392a80624514  design/admin4/javascript/contentstructuremenu_dynamic.js
 2f943a032eaebbf3592d4d2de8e7df87  design/admin4/javascript/expajaxuploader.js
 566b96e3b793f21501903283771e9b64  design/admin4/javascript/ezadmin_menubar.js
 59795cfe15e8bc99974d7d9099794478  design/admin4/javascript/ezajaxrelations_jquery.js
 2342a8f4be9ea928ca5601b4bd3b2cc1  design/admin4/javascript/ezajaxsubitems_expdatatable.js
 031d335156c09ec9dc3db2f2d3730087  design/admin4/javascript/node_tabs.js
-267646a3a80a5891e165cccec10d1b53  design/admin4/javascript/popupmenu/ezpopupmenu.js
+5ab9d6774fdb0f3b51087e8619eb9f01  design/admin4/javascript/popupmenu/ezpopupmenu.js
 54cb1a1df10aa18ea280c08a9d97a328  design/admin4/override/templates/admin_preview/article.tpl
 fa42107d7f6c82b26eed48050374e9a5  design/admin4/override/templates/admin_preview/comment.tpl
 0c4cec334b8bff8d319219e52813802e  design/admin4/override/templates/admin_preview/company.tpl
@@ -4555,7 +4555,7 @@ ce63529c93d6f4be3747d350bd9b0435  extension/ezoe/design/standard/stylesheets/ski
 f66b026fe40921b62c0b77798876760a  extension/ezoe/design/standard/stylesheets/skins/o2k7/ui_silver.css
 178f75dd2a0a580276bb5431cee6c261  extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe.tpl
 38e700dfd11c287fa5f643682d7e5543  extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe_engine_switch.tpl
-97b4d9a583faf6fa0ca49c57a35822c9  extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe_tinymce8.tpl
+ff21bff84a72fdae5a06f251ad8aef8b  extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe_tinymce8.tpl
 045d0b39a14a481c5a1adba061e2522f  extension/ezoe/design/standard/templates/content/datatype/view/ezxmltags/underline.tpl
 9863bdadb7a1227726fb97d738e888ba  extension/ezoe/design/standard/templates/ezoe/box_bookmarks.tpl
 73baaf2adee2354e62db9f8a10976db6  extension/ezoe/design/standard/templates/ezoe/box_browse.tpl
@@ -7043,10 +7043,10 @@ e4bf6de123dc6000c6655946dc43630f  tests/test-map.json
 a170729e7e161686001ae10895d34d53  tests/tests/design/AdminBaseStylesheetsTest.php
 913c142ba568d53a81be2b3a901ab0b2  tests/tests/design/AdminBrowseCurrentNodeTest.php
 29cef3e64abdd6f9f23f9463f69e25d5  tests/tests/design/AdminCardsTest.php
-bc84444151b078a6a03da1246257ea35  tests/tests/design/AdminContextMenuTest.php
+9199e2e95fe9c5fca76132b8b74bc5c4  tests/tests/design/AdminContextMenuTest.php
 9de098ad350169c753d7ecdaa5244310  tests/tests/design/AdminDashboardTest.php
 d733a0e95c95e388ea2d3580231f5fa4  tests/tests/design/AdminDensityTest.php
-6bc0acf7d37a0edfda5a4930bf1b9651  tests/tests/design/AdminEditBarTest.php
+7a6d21774343c1bfa611fd993416166c  tests/tests/design/AdminEditBarTest.php
 c805f3b778d5e27530594a38b05712ba  tests/tests/design/AdminFormErrorsTest.php
 c4dbc84de70b3ac212233446d50a8b64  tests/tests/design/AdminFormLabelsTest.php
 04f6c21d6c646ab0806a9f3eebe0e13c  tests/tests/design/AdminIconsTest.php
