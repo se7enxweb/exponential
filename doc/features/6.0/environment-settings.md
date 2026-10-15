@@ -62,6 +62,10 @@ Templates read the name with `{exp_environment()}`, an empty string without an e
 {if eq( exp_environment(), 'test' )}<div class="test-site-banner">Test site</div>{/if}
 ```
 
+The administration designs admin4 and admin4l can show the environment as a badge in the header, on the sign-in page
+and before the page title: `site.ini [AdminEnvironment] Level=auto` takes the level from this name, or set the level
+in the environment's variant file. See [The admin4 design](admin4-design.md#settings).
+
 ## PHP
 
 `eZINI::environment()` returns the name or `false`, `eZINI::environmentName( $value )` checks a name,

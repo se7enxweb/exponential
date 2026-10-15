@@ -25,6 +25,7 @@
      $user_hash = concat( $current_user.role_id_list|implode( ',' ), ',', $current_user.limited_assignment_value_list|implode( ',' ), ',', $current_user.is_logged_in|choose( 'anonymous', 'user' ) )
      $uri_cache_key        = $module_result.uri
      $main_wrapped         = false()
+     $env_badge            = exp_environment_badge()
 }
     {* admin4l: the admin layout for this page. The safety switch is explayouts.ini [AdminLayoutSettings]
        Enabled=enabled|disabled: anything but "enabled" gives the plain admin4 page. When no layout resolves, or
@@ -69,9 +70,10 @@
  Need navigation part for cases like content/browse where node id is taken from caller params *}
     {* siteaccess_url() here too: this block holds the header block below, whose
        site link depends on the scheme, host and port of the request. *}
-    {cache-block keys=array( $uri_cache_key, $user_hash, $current_user.contentobject_id, $admin_theme, $admin_left_size, $access_type, first_set( $module_result.navigation_part, $navigation_part.identifier ), $search_hash, siteaccess_url(), $admin_layout_id, $main_wrapped ) ignore_content_expiry}
+    {cache-block keys=array( $uri_cache_key, $user_hash, $current_user.contentobject_id, $admin_theme, $admin_left_size, $access_type, first_set( $module_result.navigation_part, $navigation_part.identifier ), $search_hash, siteaccess_url(), $admin_layout_id, $env_badge.key, $main_wrapped ) ignore_content_expiry}
 
-    {include uri='design:page_head.tpl'}
+    {* The environment's name before the title (site.ini [AdminEnvironment] ShowInTitle), as in the header's badge *}
+    {include uri='design:page_head.tpl' title_prefix=cond( $env_badge.title, concat( '[', $env_badge.name|upcase, '] ' ), '' )}
 
     {include uri='design:page_head_style.tpl'}
     {include uri='design:page_head_script.tpl'}
@@ -92,7 +94,7 @@
                 {* siteaccess_url(): the header links to the site with the scheme, host and port
                    of the request, and Apache and Velocity share this cache. The user's object id: the header's
                    user menu and logout button name the signed-in user (parts/a4_header_user.tpl). *}
-                {cache-block keys=array( $ui_context, $ui_component, $user_hash, $current_user.contentobject_id, $access_type, first_set( $module_result.navigation_part, $navigation_part.identifier ), siteaccess_url(), $admin_layout_id ) ignore_content_expiry}
+                {cache-block keys=array( $ui_context, $ui_component, $user_hash, $current_user.contentobject_id, $access_type, first_set( $module_result.navigation_part, $navigation_part.identifier ), siteaccess_url(), $admin_layout_id, $env_badge.key ) ignore_content_expiry}
 
                 {* HEADER ( SEARCH, LOGO AND USERMENU ): the navbar. The header zone fills it with the logo,
                    search, theme switch and sidebar toggles, the topmenu zone with the tab menu. Either zone

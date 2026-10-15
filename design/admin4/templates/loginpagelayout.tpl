@@ -9,9 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="color-scheme" content="light dark">
     <meta name="robots" content="noindex, nofollow">
-    {def $admin_theme = ezpreference( 'admin_theme' )}
-    {cache-block keys=array( $navigation_part.identifier, $ui_context, $ui_component, $admin_theme, $access_type )}
-    {include uri='design:page_head.tpl'}
+    {def $admin_theme = ezpreference( 'admin_theme' )
+         $env_badge   = exp_environment_badge()}
+    {* keyed by the environment badge too: its name goes before the title (site.ini [AdminEnvironment]) *}
+    {cache-block keys=array( $navigation_part.identifier, $ui_context, $ui_component, $admin_theme, $access_type, $env_badge.key )}
+    {include uri='design:page_head.tpl' title_prefix=cond( $env_badge.title, concat( '[', $env_badge.name|upcase, '] ' ), '' )}
     {include uri='design:page_head_style.tpl'}
     {include uri='design:page_head_script.tpl'}
     {/cache-block}
@@ -22,6 +24,7 @@
     <section class="a4-login-side">
         <header class="a4-login-top">
             <a class="a4-login-logo" href={'/'|ezurl} aria-label="Exponential">{include uri='design:parts/a4_logo.tpl'}</a>
+            {include uri='design:parts/a4_environment_badge.tpl'}
         </header>
 
         <div class="a4-login-box">

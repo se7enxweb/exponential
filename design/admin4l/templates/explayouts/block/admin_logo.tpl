@@ -31,5 +31,6 @@
                path when the siteaccess is matched by URI (/admin/...), without when by host. *}
             <a class="brand" href={$a4_brand_url|ezurl} title="{$a4_brand_name|wash}" aria-label="{$a4_brand_name|wash}">{include uri='design:parts/a4_logo.tpl'}</a>
         {/if}
+        {include uri='design:parts/a4_environment_badge.tpl'}
     </div>
 {undef $a4_brand_name $a4_brand_url}

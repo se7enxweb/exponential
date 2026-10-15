@@ -56,6 +56,20 @@
   --a4-footer-link: #4b5563;
   --a4-footer-link-hover: #1f2430;
   --a4-brand: #f15a28;        /* the logo's orange square (parts/a4_logo.tpl), the artwork's brand color */
+  /* the environment badge (site.ini [AdminEnvironment]): fill, text and edge per level; the text 4.5:1 on the fill,
+     the edge 3:1 on the header */
+  --a4-env-development: #067647;
+  --a4-env-development-ink: #fff;
+  --a4-env-development-line: #067647;
+  --a4-env-test: #fdb022;
+  --a4-env-test-ink: #1f1300;
+  --a4-env-test-line: #b54708;
+  --a4-env-staging: #6941c6;
+  --a4-env-staging-ink: #fff;
+  --a4-env-staging-line: #6941c6;
+  --a4-env-production: #b42318;
+  --a4-env-production-ink: #fff;
+  --a4-env-production-line: #b42318;
 }
 
 /* ---- Tokens: dark (slate page, slate columns; the shared tokens switch in components.css) --------------------- */
@@ -81,6 +95,13 @@ html[data-a4-theme="dark"] {
   --a4-footer-link: #c8cdd6;
   --a4-footer-link-hover: #fff;
   --a4-brand: #f15a28;        /* the same artwork on dark pages */
+  --a4-env-development: #047857;
+  --a4-env-development-line: #047857;
+  --a4-env-test-line: #fdb022;
+  --a4-env-staging: #7a5af8;
+  --a4-env-staging-line: #7a5af8;
+  --a4-env-production: #d92d20;
+  --a4-env-production-line: #d92d20;
 }
 
 /* ---- The page -------------------------------------------------------------------------------------------- */
@@ -323,6 +344,133 @@ body,
     align-self: stretch;
     padding-inline: var(--a4-space-4);
   }
+}
+
+/* ---- The environment badge ----------------------------------------------------------------------------------
+   parts/a4_environment_badge.tpl, beside the logo and on the sign-in page; only with site.ini [AdminEnvironment]
+   Level set. A filled pill in the level's colour with the name in capitals (and, for signed-in users, the release).
+   It takes no height: 24px in the header's 36px row. Phones show the colour alone, as a 14px dot; 576 to 767px the
+   short code; from 768px the name. What is not shown stays for screen readers (the name) or in the title (the
+   release). The search field gives the badge its room up to 1279px (--a4-env-room); from 1280px the main menu does,
+   its tabs going into "More". */
+.a4-env {
+  --a4-env-bg: var(--a4-env-production);
+  --a4-env-fg: var(--a4-env-production-ink);
+  --a4-env-edge: var(--a4-env-production-line);
+  box-sizing: border-box;
+  display: inline-flex;
+  flex: 0 1 auto;
+  align-items: center;
+  align-self: center;
+  gap: var(--a4-space-1);
+  min-width: 0;
+  max-width: 13rem;
+  height: 24px;
+  padding: 0 var(--a4-space-2);
+  border: 1px solid var(--a4-env-edge);
+  border-radius: 999px;
+  background-color: var(--a4-env-bg);
+  color: var(--a4-env-fg);
+  font-family: var(--a4-font);
+  font-size: var(--a4-text-xs);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: .04em;
+  white-space: nowrap;
+  cursor: default;
+}
+.a4-env-development { --a4-env-bg: var(--a4-env-development); --a4-env-fg: var(--a4-env-development-ink); --a4-env-edge: var(--a4-env-development-line); }
+.a4-env-test { --a4-env-bg: var(--a4-env-test); --a4-env-fg: var(--a4-env-test-ink); --a4-env-edge: var(--a4-env-test-line); }
+.a4-env-staging { --a4-env-bg: var(--a4-env-staging); --a4-env-fg: var(--a4-env-staging-ink); --a4-env-edge: var(--a4-env-staging-line); }
+.a4-env-production { --a4-env-bg: var(--a4-env-production); --a4-env-fg: var(--a4-env-production-ink); --a4-env-edge: var(--a4-env-production-line); }
+.a4-env-dot {
+  flex: 0 0 auto;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+/* the name shrinks only after the release is gone to an ellipsis */
+.a4-env-name,
+.a4-env-release {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.a4-env-name { flex: 0 1 auto; text-transform: uppercase; }
+.a4-env-short { display: none; }
+.a4-env-release {
+  flex: 0 1000 auto;
+  padding-left: var(--a4-space-1);
+  border-left: 1px solid currentColor;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+.header-logo:has(> .a4-env) { gap: var(--a4-space-2); }
+/* Phones: the colour as a dot; the name is read out, the title names it on hover */
+@media screen and (max-width: 575.98px) {
+  #header .a4-env {
+    width: 14px;
+    height: 14px;
+    padding: 0;
+  }
+  #header .a4-env-dot,
+  #header .a4-env-short { display: none; }
+  #header .a4-env-name,
+  #header .a4-env-release {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    border: 0;
+  }
+}
+/* 576 to 767px: the short code, no dot (the room the search field can spare at 576px) */
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+  #header .a4-env { max-width: 4rem; padding: 0 var(--a4-space-2); }
+  #header .a4-env-dot { display: none; }
+  #header .a4-env-short { display: block; overflow: hidden; text-overflow: ellipsis; }
+  #header .a4-env-name,
+  #header .a4-env-release {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    border: 0;
+  }
+  #header:has(.a4-env) { --a4-env-room: calc(4rem + var(--a4-space-2)); }
+}
+@media screen and (min-width: 768px) and (max-width: 1279.98px) {
+  #header:has(.a4-env) { --a4-env-room: calc(13rem + var(--a4-space-2)); }
+}
+@media screen and (min-width: 1280px) {
+  #header .a4-env { max-width: 18rem; }   /* the main menu gives the room, its last tabs going into "More" */
+}
+@media screen and (min-width: 576px) and (max-width: 1279.98px) {
+  #header:has(.a4-env) .searchblock input.searchtext { width: clamp(5.5rem, calc(100vw - 410px - var(--a4-env-room)), 230px); }
+}
+/* the sign-in page: the name beside the logo at every width (it has the room), no release (nobody is signed in) */
+.a4-login-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--a4-space-3);
+}
+@media (forced-colors: active) {
+  .a4-env {
+    border-color: CanvasText;
+    background-color: Canvas;
+    color: CanvasText;
+    forced-color-adjust: none;
+  }
+  .a4-env-dot { background-color: CanvasText; }
+  .a4-env-production { border-width: 2px; }
 }
 
 /* "More": the tabs the one-line menu has no room for, in a list under the button (a disclosure: aria-expanded,
@@ -1409,7 +1557,7 @@ body.a4-login-page {
 html:has(body.a4-login-page) { background: var(--a4-surface); }
 .a4-login { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-height: 100vh; min-height: 100dvh; }
 .a4-login-side { display: flex; flex-direction: column; padding: var(--a4-space-5) var(--a4-space-6); }
-.a4-login-top { flex: 0 0 auto; }
+.a4-login-top { flex: 0 0 auto; }   /* a row: the logo and the environment badge (see the badge's rules) */
 .a4-login-logo { display: inline-flex; align-items: center; height: 40px; color: var(--a4-ink); }   /* parts/a4_logo.tpl */
 .a4-login-logo .a4-logo-full { width: calc(28px * 388 / 59); height: 28px; }
 .a4-login-box { flex: 1 0 auto; display: flex; flex-direction: column; justify-content: center; width: 100%; max-width: 380px; margin: 0 auto; padding: var(--a4-space-6) 0; }

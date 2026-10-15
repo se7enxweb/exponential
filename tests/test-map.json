@@ -520,6 +520,10 @@
     ],
     "design/admin4/images/admin4/exponential-*.svg": [
       "tests/tests/design/AdminLogoTest.php"
+    ],
+    "kernel/common/expenvironmentoperator.php": [
+      "tests/tests/design/AdminEnvironmentBadgeTest.php",
+      "tests/tests/kernel/classes/templateside/eZKernelTemplateOperatorsTest.php"
     ]
   },
   "generated": {
@@ -617,6 +621,9 @@
       "tests/tests/kernel/content/eZPublishWithoutNotificationTest.php",
       "tests/tests/kernel/private/expAdminViewsDebugCleanTest.php"
     ],
+    "design/admin4/stylesheets/admin4.css": [
+      "tests/tests/design/AdminEnvironmentBadgeTest.php"
+    ],
     "design/admin4/templates/content/edit.tpl": [
       "tests/tests/kernel/content/eZPublishWithoutNotificationTest.php"
     ],
@@ -627,8 +634,20 @@
       "tests/tests/kernel/content/eZPublishWithoutNotificationTest.php",
       "tests/tests/kernel/private/expAdminViewsDebugCleanTest.php"
     ],
+    "design/admin4/templates/loginpagelayout.tpl": [
+      "tests/tests/design/AdminEnvironmentBadgeTest.php"
+    ],
     "design/admin4/templates/node/view/a4_full_body.tpl": [
       "tests/tests/kernel/content/eZAdminFullViewCopyButtonTest.php"
+    ],
+    "design/admin4/templates/page_topmenu.tpl": [
+      "tests/tests/design/AdminEnvironmentBadgeTest.php"
+    ],
+    "design/admin4/templates/pagelayout.tpl": [
+      "tests/tests/design/AdminEnvironmentBadgeTest.php"
+    ],
+    "design/admin4/templates/parts/a4_environment_badge.tpl": [
+      "tests/tests/design/AdminEnvironmentBadgeTest.php"
     ],
     "design/admin4/templates/setup/sitedata.tpl": [
       "tests/tests/kernel/content/eZContentFunctionCollectionSiteDataTest.php"
@@ -648,7 +667,11 @@
     "design/admin4l/templates/explayouts/admin_zone.tpl": [
       "tests/tests/extension/explayouts_admin/expLayoutsAdminLayoutsTest.php"
     ],
+    "design/admin4l/templates/explayouts/block/admin_logo.tpl": [
+      "tests/tests/design/AdminEnvironmentBadgeTest.php"
+    ],
     "design/admin4l/templates/pagelayout.tpl": [
+      "tests/tests/design/AdminEnvironmentBadgeTest.php",
       "tests/tests/extension/explayouts_admin/expLayoutsAdminLayoutsTest.php"
     ],
     "design/standard/javascript/expdebugbar.js": [
@@ -688,6 +711,9 @@
     ],
     "design/standard/templates/notification/handler/ezcollaboration/view/digest_plain.tpl": [
       "tests/tests/kernel/classes/mailpreferences/MailPreferencesIntegrationTest.php"
+    ],
+    "design/standard/templates/page_head.tpl": [
+      "tests/tests/design/AdminEnvironmentBadgeTest.php"
     ],
     "design/standard/templates/setup/init/site_details.tpl": [
       "tests/tests/kernel/classes/mailpreferences/MailPreferencesIntegrationTest.php"
@@ -857,6 +883,9 @@
     ],
     "kernel/common/ezobjectforwarder.php": [
       "tests/tests/lib/eztemplate/eZTemplatePHP8RegressionTest.php"
+    ],
+    "kernel/common/eztemplateautoload.php": [
+      "tests/tests/design/AdminEnvironmentBadgeTest.php"
     ],
     "kernel/content/ezcontentoperationcollection.php": [
       "tests/tests/kernel/content/eZPublishRegisterSearchObjectTest.php"
@@ -1206,6 +1235,7 @@
       "tests/tests/kernel/classes/setup/SetupPhpVersionTest.php"
     ],
     "settings/site.ini": [
+      "tests/tests/design/AdminEnvironmentBadgeTest.php",
       "tests/tests/extension/cjw_newsletter/cjwNewsletterImportExportTest.php",
       "tests/tests/extension/expservices/core/expIniCacheServicesTest.php",
       "tests/tests/extension/expservices/misc/expDesignServicesTest.php",

@@ -13446,6 +13446,42 @@ Note: The packages will not be uninstalled.</translation>
 <context>
     <name>design/admin/pagelayout</name>
     <message>
+        <source>Environment</source>
+        <translation>Environment</translation>
+    </message>
+    <message>
+        <source>Development</source>
+        <translation>Development</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Test</translation>
+    </message>
+    <message>
+        <source>Staging</source>
+        <translation>Staging</translation>
+    </message>
+    <message>
+        <source>Production</source>
+        <translation>Production</translation>
+    </message>
+    <message>
+        <source>DEV</source>
+        <translation>DEV</translation>
+    </message>
+    <message>
+        <source>TEST</source>
+        <translation>TEST</translation>
+    </message>
+    <message>
+        <source>STAGE</source>
+        <translation>STAGE</translation>
+    </message>
+    <message>
+        <source>PROD</source>
+        <translation>PROD</translation>
+    </message>
+    <message>
         <source>Breadcrumb</source>
         <translation>Breadcrumb</translation>
     </message>
