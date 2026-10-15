@@ -276,7 +276,8 @@ Each card shows, from the top:
   in any cronjob directory).
 - **The edge.** Red on the left for a part that needs attention, green around the part that is running now.
 - **Run part** (section 7.1), and **Pause** or **Resume**: a paused part shows *Paused* and since when and by whom,
-  and is left out by every run - the crontab's too - until it is resumed; **Pause all parts** in the status bar does
+  and is left out by every run - the crontab's too - until it is resumed (a part paused while it runs finishes
+  the script that runs and leaves out the rest); **Pause all parts** in the status bar does
   the same for every part. See [Pausing cronjob parts](../features/6.0/cronjob-pause.md).
 - **Schedule**, or **Suggested schedule** for a part nothing runs: the schedule in words for the common shapes and the
   cron expression beside it. *Every minute*, *Every 5 minutes*, *Every hour at minute 17*, *Every 6 hours at minute

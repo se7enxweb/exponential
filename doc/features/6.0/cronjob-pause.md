@@ -8,7 +8,8 @@ rebuild - without editing the crontab on every server, or if you used the Cronjo
 
 - **Setup > Cronjobs** pauses a part (**Pause** on its card) or every part (**Pause all parts**) until someone
   resumes it. A paused part is left out by `runcronjobs.php`, whoever starts it: the crontab,
-  `./console cron:<part>` or the console. A run that has started goes on to its end.
+  `./console cron:<part>`, Velocity's `cron:` commands or the console. A part paused while it runs finishes the
+  script that runs and leaves out the scripts after it.
 - A script run alone (`--script`, or **Run** next to a script) is left out while a part that lists it is paused.
 - The console shows **Paused** on the card, since when and by whom, a notice while every part is paused, and a
   **Pauses** section with who paused and resumed what. A paused part cannot be run from the console.
@@ -31,6 +32,23 @@ runs. `all` pauses every part; the scripts of `[CronjobSettings]` (the part *glo
 name, `cronpart_deactivated_.txt`. The files are in `<cache directory>/cronjob_control/` - where `cjw_admincockpit`
 keeps them - or in the directory `[PauseSettings] Directory` names below the var directory.
 
+**A pause while a part runs.** `runcronjobs.php` asks again before each further script of the part. The script that
+runs when the part is paused goes on to its end (nothing is stopped half way); the scripts after it are left out:
+
+```
+Completing cronjobs/notification.php at: 10/15/2026 05:10 am
+Notice: The cronjob part 'frequent' is paused (Setup > Cronjobs). Left out: 'workflow.php' and the scripts after it.
+```
+
+**Every run a pause leaves out is logged** in `<log directory>/cronjob_skipped.log` (the notice, the part, the script
+and the siteaccess), besides the notice in the run's own output, so you can tell afterwards which runs a pause held
+back. The console refuses to start a paused part, so its runs never reach that log.
+
+**What a pause does not hold back.** A pause is read by `runcronjobs.php` only. The `cron:` commands of
+`./console` and of Velocity run `runcronjobs.php`, so they are held back too; the queue workers of `expqueue` that
+run as a service (systemd) are not cronjobs and keep working - stop the service for that. Pausing the part that
+starts a worker from the crontab holds back that start.
+
 The check comes before the filter so that a site's listeners still decide about every part that is not paused, and
 so that a pause holds even when a site resets `[RunnableSettings] Listeners[]`.
 
@@ -42,6 +60,19 @@ so both find the same directory. `cjw_admincockpit` had the same property.
 
 The names `all` and `global` are reserved: `all` pauses every part, and `global` is how the console calls the
 scripts of `[CronjobSettings]`. A cronjob part named `all` or `global` cannot be paused on its own.
+
+**Several servers.** The files are local to a server unless the directory is shared. When the crontab runs on
+another server than the one the console is served from (a cluster behind a load balancer), set `[PauseSettings]
+Directory` to a directory below the var directory that every server shares (for instance on the shared storage of
+the cluster), or pause on the server the crontab runs on.
+
+**Users.** The command line and Velocity's workers may run as root, the web server as the site user; both write
+these files. A pause is written to a temporary file that is renamed over the old one (so a file the other user owns
+is replaced, not opened), and the file and the history get the installation's file mode (`site.ini [FileSettings]
+StorageFilePermissions`, within its limits), so the other user can replace and append to them in turn.
+
+**Audit.** Each pause and resume is recorded as `system.cronjob.pause` or `system.cronjob.resume` (object: the part,
+`all` or `global`), see [the audit trail](../../bc/6.0/audit.md).
 
 Pausing from the console writes the file through `eZFile::create()` (the installation's file mode limits apply) and
 adds a line to `var/<vardir>/log/cronjob_pause.log`: time, part, pause or resume, the user's object id and login. A
@@ -75,7 +106,9 @@ them:
 `expCronjobPauseTest` (no database): nothing is paused at first; pausing and resuming a part, with the history and
 who did it; `all`; a script run alone while its part is paused, also with a directory in its name; who paused is
 forgotten when the file changed since; the files of `cjw_admincockpit`; part names that would leave the directory;
-broken history lines; `Pause=disabled`; `runcronjobs.php` asks the pause before the filter (read from its source).
+broken history lines; `Pause=disabled`; `runcronjobs.php` asks the pause before the filter and again before each
+further script, and logs both skips (read from its source); a state file that cannot be opened is replaced; the
+state file and the history get `StorageFilePermissions`.
 
 ## Related pages
 

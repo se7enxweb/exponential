@@ -34,8 +34,9 @@ From top to bottom:
   *Need attention*), and **Cronjob part** with **Run**: with *All parts* it runs every part that may be run, one after
   another, on every page of the list; with one part chosen it runs that part and shows only its card.
 - **Output** (folds): the output of the current or last run. It opens by itself when a job starts.
-- **Cronjob parts**, in two views chosen next to the heading and kept per user (the preference
-  `admin_cronjobs_view`):
+- **Cronjob parts**, in two views chosen next to the heading with two toggle buttons, kept per user (the preference
+  `admin_cronjobs_view`, written by a POST to `user/preferences/set` with the form token; the current view is the
+  pressed button):
   - **Compact** (the default): one table row per part, every part on one page - the part (the key as its title) with
     *n scripts* below it, which opens the scripts one per line, in columns - *Kernel* or the extension it comes from,
     its path with the file name, what it does - in a row below the part, across
