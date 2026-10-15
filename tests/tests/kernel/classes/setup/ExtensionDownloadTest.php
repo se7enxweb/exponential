@@ -459,7 +459,8 @@ class ExtensionDownloadTest extends PHPUnit\Framework\TestCase
 
         if ( @file_put_contents( $this->dir() . "/\xFF.pem", 'x' ) === false || @file_put_contents( $this->dir() . "/settings/\xFE", "Password=hunter2\n" ) === false )
             $this->markTestSkipped( 'the file system takes UTF-8 names only' );
-        $this->assertSame( array( "\xFF.pem: key material", "settings/\xFE: Password" ), $this->secrets() );
+        // sorted byte by byte: "s" (0x73) before 0xFF
+        $this->assertSame( array( "settings/\xFE: Password", "\xFF.pem: key material" ), $this->secrets() );
     }
 
     /** ED-11, the decision is made on the copy in the package: a source check that missed something does not pack it */
