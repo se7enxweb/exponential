@@ -47,10 +47,6 @@ font-size:1.05em;
     left: -1500px;
 }
 
-.admin-dt-scrollable tbody {
-    -moz-outline: none;
-}
-
 thead .admin-dt-sortable {
     cursor: pointer;
 }
@@ -64,10 +60,6 @@ thead .admin-dt-draggable {
     z-index: var(--a4-z-drag-target);
 }
 
-.admin-dt-hd {
-    zoom: 1;
-}
-
 th.admin-dt-resizeable .admin-dt-resizerliner {
     position: relative;
 }
@@ -79,18 +71,16 @@ th.admin-dt-resizeable .admin-dt-resizerliner {
     height: 100%;
     cursor: e-resize;
     cursor: col-resize;
-    background-color: #CCC;
+    background-color: var(--a4-line-strong);
     opacity: 0;
-    filter: alpha(opacity = 0);
 }
 
 .admin-dt-resizerproxy {
     visibility: hidden;
     position: absolute;
     z-index: var(--a4-z-drag);
-    background-color: #CCC;
+    background-color: var(--a4-line-strong);
     opacity: 0;
-    filter: alpha(opacity = 0);
 }
 
 th.admin-dt-hidden .admin-dt-liner,td.admin-dt-hidden .admin-dt-liner,th.admin-dt-hidden .admin-dt-resizer
@@ -135,11 +125,11 @@ th.admin-dt-hidden, tr.admin-dt-odd .admin-dt-hidden, tr.admin-dt-even .admin-dt
     text-decoration: none;
     text-align: left;
     vertical-align: bottom;
-    color:#eee;
+    color: var(--a4-ink);
 }
 
 .admin-dt th {
-    background-color: #6f6e6b;
+    background-color: var(--a4-soft);
     margin: 0;
     padding: 0;
     border: none;
@@ -148,7 +138,7 @@ th.admin-dt-hidden, tr.admin-dt-odd .admin-dt-hidden, tr.admin-dt-even .admin-dt
 
 .admin-dt th.admin-dt-sortable
 {
-    background: #44484d;
+    background: var(--a4-soft);
 }
 
 .admin-dt tr.admin-dt-first td {
@@ -167,7 +157,7 @@ th.admin-dt-hidden, tr.admin-dt-odd .admin-dt-hidden, tr.admin-dt-even .admin-dt
 
 .admin-dt-coltarget {
     width: 5px;
-    background-color: red;
+    background-color: var(--a4-accent);
 }
 
 .admin-dt td {
@@ -196,9 +186,7 @@ th.admin-dt-hidden, tr.admin-dt-odd .admin-dt-hidden, tr.admin-dt-even .admin-dt
 }
 
 .admin-dt-mask {
-    background-color: #000;
-    opacity: .25;
-    filter: alpha(opacity = 25);
+    background-color: var(--a4-overlay);
 }
 
 .admin-dt-message {
@@ -227,7 +215,7 @@ th.admin-dt-hidden, tr.admin-dt-odd .admin-dt-hidden, tr.admin-dt-even .admin-dt
 }
 
 th.admin-dt-asc,th.admin-dt-desc {
-    background-color: #6f6e6b;
+    background-color: var(--a4-accent-soft);
 }
 
 th.admin-dt-sortable .admin-dt-label {
@@ -263,21 +251,16 @@ th.admin-dt-asc .admin-dt-liner::after {
     mask-image: url(../../../../share/icons/bootstrap-icons/svg/caret-up-fill.svg);
 }
 
-th.admin-dt-asc, th.admin-dt-desc
-{
-    background: black !important;
-}
-
 tbody .admin-dt-editable {
     cursor: pointer;
     text-decoration: underline;
-    color: #0B4E7A;
+    color: var(--a4-accent-text);
 }
 
 .admin-dt-editor {
     text-align: left;
     background-color: var(--a4-soft);
-    border: 1px solid #808080;
+    border: 1px solid var(--a4-field-line);
     padding: 6px;
 }
 
@@ -417,7 +400,7 @@ a.admin-dt-page {
 }
 
 .admin-dt-selected {
-    border: 1px solid #fff;
+    border: 1px solid var(--a4-surface);
     background-color: var(--a4-surface);
 }
 
@@ -433,17 +416,11 @@ a.admin-dt-page {
     display: inline-block;
     font-family: Verdana,Arial,Helvetica,sans-serif;
     font-size: 1em;
-    zoom: 1;
 }
 
 .admin-pg-first,.admin-pg-previous,.admin-pg-next,.admin-pg-last {
     color: var(--a4-ink);
     background: var(--a4-surface);
-    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#eee));
-    background-image: -moz-linear-gradient(top,  #fff,  #eee);
-    background-image: -ms-linear-gradient(top,  #fff,  #eee);
-    background-image: -o-linear-gradient(top,  #fff,  #eee);
-    background-image: linear-gradient(top,  #fff,  #eee);
     border: 1px solid var(--a4-line);
     border-radius: 3px;
     width: 31px;
@@ -457,7 +434,7 @@ a.admin-dt-page {
 
 span.admin-pg-first,span.admin-pg-previous,span.admin-pg-next,span.admin-pg-last
 {
-    color: #A6A6A6;
+    color: var(--a4-disabled);
     background-image: url('../../images/3/diagonal_pattern.png');
 }
 
@@ -484,11 +461,6 @@ a.admin-pg-first:hover,a.admin-pg-previous:hover,a.admin-pg-next:hover,a.admin-p
     padding: 3px 0;
 }
 
-
-span.admin-pg-first,span.admin-pg-previous,span.admin-pg-next,span.admin-pg-last
-    {
-    color: #a6a6a6;
-}
 
 .admin-pg-page {
     background-color: var(--a4-surface);
@@ -845,9 +817,7 @@ a:focus-visible > .crankfield::before {
 }
 
 .mask {
-    background-color: #000;
-    opacity: .25;
-    filter: alpha(opacity = 25);
+    background-color: var(--a4-overlay);
 }
 
 .table-options-row {

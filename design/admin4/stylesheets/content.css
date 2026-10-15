@@ -126,7 +126,7 @@ table.list img
 
 table.list tr.object-cannot-remove td
 {
-    color: red;
+    color: var(--a4-bad);
 }
 
 table.list td.modifier, table.list td.modified, table.list td.class, div.content-edit table.list td.filesize
@@ -136,7 +136,7 @@ table.list td.modifier, table.list td.modified, table.list td.class, div.content
 
 div.list-thumbnails div.list-thumbnails-item
 {
-    border: 4px solid #ffffff;
+    border: 4px solid var(--a4-surface);
     padding: 0.5em;
     vertical-align: middle;
     background-color: var(--a4-soft);
@@ -178,18 +178,20 @@ table tbody tr.ezasi-sort-drag-handler
     font-weight: bold;
 }
 
-/* GENERIC DIFF STYLES */
+/* GENERIC DIFF STYLES: added text in the ok colour, removed text in the bad colour, both readable on every surface
+   in both modes; the version views mark the shown side's changes with the warn tint (as modules/content.css does
+   for the history page) */
 
 ins
 {
-    color: #008000;
+    color: var(--a4-ok);
     text-decoration: none;
-    border-bottom: 1px solid #00b000;
+    border-bottom: 1px solid var(--a4-ok);
 }
 
 del
 {
-    color: #d98078;
+    color: var(--a4-bad);
     text-decoration: line-through;
 }
 
@@ -200,13 +202,11 @@ ins:hover, del:hover
 
 ins:hover
 {
-    color: #006000;
     border-bottom-width: 0;
 }
 
 del:hover
 {
-    color: #852c25;
     text-decoration: none;
 }
 
@@ -221,12 +221,14 @@ div.blockchanges ins, div.blockchanges del
 
 div.blockchanges ins
 {
-    border-left: 0.5em solid #008000;
+    border-left: 0.5em solid var(--a4-ok);
+    background-color: var(--a4-ok-bg);
 }
 
 div.blockchanges del
 {
-    border-left: 0.5em solid #d98078;
+    border-left: 0.5em solid var(--a4-bad);
+    background-color: var(--a4-bad-bg);
 }
 
 div.previous ins
@@ -237,7 +239,7 @@ div.previous ins
 div.previous del
 {
     color: var(--a4-ink);
-    background-color: #ffff00;
+    background-color: var(--a4-warn-bg);
     border-bottom-width: 0;
     text-decoration: none
 }
@@ -250,7 +252,7 @@ div.latest del
 div.latest ins
 {
     color: var(--a4-ink);
-    background-color: #ffff00;
+    background-color: var(--a4-warn-bg);
     border-bottom-width: 0;
     text-decoration: none;
 }

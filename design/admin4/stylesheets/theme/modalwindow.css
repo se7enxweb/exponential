@@ -6,12 +6,10 @@
     left:0;
     top:0;
     z-index: var(--a4-z-overlay);
-    background:#333;
+    background: var(--a4-overlay);
     opacity:0;
     width:100%;
     height:100%;
-    /* IE workaround */
-    filter: alpha(opacity = 0);
 }
 
 .modal-window
@@ -29,11 +27,11 @@
 
 .modal-window h2
 {
-    background-color: #6f6e68;
+    background-color: var(--a4-soft);
     margin-top:0;
     font-size:1.1em;
     padding:4px 3px 4px 6px;
-    color:#eee;
+    color: var(--a4-ink);
 }
 
 .modal-window fieldset
@@ -50,8 +48,8 @@ div.box-content .modal-window div.message-error
 {
     margin:1em;
     padding:1em;
-    background:#f3dfdf;
-    border:2px solid #c11b17;
+    background: var(--a4-bad-bg);
+    border: 2px solid var(--a4-bad);
     border-radius:3px;
 }
 
@@ -84,7 +82,7 @@ div.box-content .modal-window div.message-error
 
 .ajaxuploader-error
 {
-    color:maroon;
+    color: var(--a4-bad);
     font-weight:bold;
     padding-left:1em;
 }

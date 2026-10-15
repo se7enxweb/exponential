@@ -937,3 +937,17 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
 /* The note under the buttons of a page's action bar takes its own line (System information, Caches) */
 .a4-setup-info .a4-toolbar > .a4-meta,
 .a4-setup-cache .a4-toolbar > .a4-meta { flex-basis: 100%; }
+
+/* Forced colors (Windows high contrast) drop backgrounds and box-shadows and repaint borders in one colour: a state
+   that differs only by them (current, selected, moved, pressed, changed) gets a Highlight outline. */
+@media (forced-colors: active) {
+  .a4-setup-bar.is-dirty,
+  .a4-setup-ext .a4-grip[aria-pressed="true"],
+  .a4-setup-lines .is-moved,
+  .a4-setup-preset[aria-pressed="true"],
+  .a4-setup-part-row.is-current,
+  .a4-setup-wz-match.is-current,
+  .a4-setup-wz-tables tr.is-selected,
+  .a4-page a.a4-setup-survey-tab.is-current,
+  .a4-page a.a4-setup-survey-kind.is-current { outline: 2px solid Highlight; outline-offset: -2px; }
+}

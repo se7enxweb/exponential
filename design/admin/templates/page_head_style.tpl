@@ -21,8 +21,9 @@
 {if $load_main_css}
   {* load main css files and required css files *}
   {if $load_css_file_list}
-    {* BackendCSSFileList names responsive.css, the responsive layout of the admin3 and admin4 designs; this
-       design (and admin2, which uses it) has no such file, so it is left out instead of being looked for *}
+    {* BackendCSSFileList named responsive.css, admin3's responsive layout, until admin3 loaded it itself; a site
+       whose own settings still name it would have this design (and admin2, which uses it) look for a file it does
+       not have, so it is left out *}
     {def $admin_backend_css_list = array()}
     {foreach ezini( 'StylesheetSettings', 'BackendCSSFileList', 'design.ini' ) as $admin_backend_css}
       {if $admin_backend_css|ne( 'responsive.css' )}

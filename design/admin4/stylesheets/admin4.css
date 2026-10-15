@@ -161,8 +161,7 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
 #header .site-preview {
   align-self: center;
 }
-#header .site-preview .a4-icon,
-#header .sidebar-control .a4-icon {
+#header .site-preview .a4-icon {
   color: var(--a4-header-ink);
 }
 #header .navbar-icon {
@@ -450,7 +449,9 @@ input.button {
   border: 1px solid var(--a4-line-strong);
   color: var(--a4-ink);
 }
-input.button:hover {
+/* a focused button looks hovered (theme/rounded.css paints both); the ring marks the keyboard focus */
+input.button:hover,
+input.button:focus {
   background-color: var(--a4-soft);
   border-color: var(--a4-field-line);
 }
@@ -520,10 +521,9 @@ table.list th, table.special th {
 table.list th a, table.special th a {
   color: var(--a4-ink);
 }
-/* The sorted column of a list table (trash: "Date trashed" ...): the datatable theme paints it black with
-   !important, under the dark header text above. A soft orange keeps it marked and readable. Scoped to
-   table.list so the dark datatable headers (.admin-dt, light text) keep theirs. A list table inside an
-   .admin-dt wrapper (trash) also got the datatable's grey bar on its sortable headers: the light header too. */
+/* The sorted column of a list table (trash: "Date trashed" ...): a soft orange keeps it marked and readable, over
+   the datatable theme's own header colours (theme/admin_datatable.css, tokens as well since 2026-10). A list table
+   inside an .admin-dt wrapper (trash) takes the light header on its sortable headers too. */
 .admin-dt table.list th.admin-dt-sortable {
   background-color: var(--a4-soft);
 }
@@ -1002,7 +1002,7 @@ html[data-a4-theme="dark"] .a4-login-logo { background-image: url('../images/3/l
 .a4-field-head .a4-field-label { margin-bottom: var(--a4-space-2); }
 .a4-login-forgot { font-size: var(--a4-text-s); color: var(--a4-accent-text); text-decoration: none; }
 .a4-login-forgot:hover { text-decoration: underline; }
-.a4-login-form #logintext, .a4-login-form #passwordtext {   /* by id: the old login stylesheet styles them by id */
+.a4-login-form #logintext, .a4-login-form #passwordtext {   /* by id, so the rule wins over the global field rules */
   box-shadow: none; outline: none;
   box-sizing: border-box; width: 100%; height: 46px; margin: 0; padding: 0 var(--a4-space-3);
   border: 1px solid var(--a4-field-line); border-radius: var(--a4-radius-s); background-color: var(--a4-field); color: var(--a4-ink);
@@ -1807,4 +1807,29 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
   align-items: center;
   gap: var(--a4-space-2);
   min-height: var(--a4-space-5);
+}
+
+/* Printing: the page's content on the full width of the paper, without the frame around it (header, menus, side
+   columns, control bars, notices that come and go) and without shadows. Paper is light: the head script switches
+   html[data-a4-theme] to light before printing and back afterwards (page_head_style.tpl), so no print colours. */
+@media print {
+  #header,
+  .navbar-menu,
+  .header-search-mobile,
+  .sidebar,
+  .sidebar-controls,
+  .leftmenu-resize-handle,
+  #controlbar-top,
+  .controlbar-fixed,
+  .scroll-to-top,
+  .a4-skip-link,
+  .a4-toasts,
+  div.popupmenu,
+  #overlay-mask,
+  #footer { display: none !important; }
+  html { background: none; }
+  body { margin: 0 !important; }
+  .dashboard-flex { padding-top: 0; }
+  .content-wrapper { min-width: 0 !important; padding: 0; border-image-source: none; }
+  *, *::before, *::after { box-shadow: none !important; text-shadow: none !important; }
 }

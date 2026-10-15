@@ -1481,7 +1481,7 @@ body.exp-debug-bar .a4-toasts { bottom: calc(var(--exp-debug-bar-h, 38px) + var(
   width: calc(var(--a4-pct, 0) * 1%);
   height: 100%;
   border-radius: inherit;
-  background-color: var(--a4-accent);
+  background-color: var(--a4-accent-text);   /* 5.1:1 (light) and 7.0:1 (dark) on the --a4-soft track; --a4-accent was 2.9:1 */
 }
 .a4-meter.is-ok > span { background-color: var(--a4-ok); }
 .a4-meter.is-warn > span { background-color: var(--a4-warn); }
