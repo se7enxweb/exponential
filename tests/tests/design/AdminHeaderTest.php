@@ -176,7 +176,7 @@ class AdminHeaderTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * The name at the top of the user menu (display name and login) links to content/view/full/<main node> of the
+     * The name at the top of the user menu (display name and login) links to the URL alias of the main node of the
      * signed-in user's own object, as the right column's "Current user" box links the name: only with a main node the
      * user may read, and not on edit and browse pages, where the menu's links lead nowhere. The link is a plain link
      * of the disclosure (no menu role), named by the text it shows, with "Open your user object" as its tooltip and
@@ -186,9 +186,9 @@ class AdminHeaderTest extends PHPUnit\Framework\TestCase
     public function testTheNameLinksToTheUsersOwnObject()
     {
         $hint = ezpI18n::tr( 'design/admin/pagelayout', 'Open your user object' );
-        $html = $this->renderUserMenu( self::user( 14, 'admin', 'Administrator User', array( 'node_id' => 2042, 'can_read' => true ) ) );
+        $html = $this->renderUserMenu( self::user( 14, 'admin', 'Administrator User', array( 'node_id' => 2042, 'url_alias' => 'Users/Administrator-users/Administrator-User', 'can_read' => true ) ) );
         $this->assertSame( 1, preg_match( '#<a id="a4-user-menu-self" class="a4-user-menu-self" href="([^"]*)" title="([^"]*)" aria-describedby="a4-user-menu-self-hint">\s*<span class="a4-user-menu-display">Administrator User</span>\s*<span class="a4-user-menu-login" translate="no">admin</span>\s*</a>#', $html, $link ), $html );
-        $this->assertMatchesRegularExpression( '#/content/view/full/2042$#', $link[1], 'the full view of the main node' );
+        $this->assertMatchesRegularExpression( '#/Users/Administrator-users/Administrator-User$#', $link[1], 'the URL alias of the main node' );
         // tooltip and description: the same translated hint, whatever the language the test runs in
         $this->assertSame( 1, preg_match( '#<span id="a4-user-menu-self-hint" hidden>([^<]+)</span>#', $html, $described ) );
         $this->assertSame( $link[2], $described[1] );
@@ -213,8 +213,8 @@ class AdminHeaderTest extends PHPUnit\Framework\TestCase
             $this->assertStringNotContainsString( 'a4-user-menu-self', $html, $case );
         }
 
-        // two users, two links: each names its own node
-        $other = $this->renderUserMenu( self::user( 99, 'editor', 'Editor', array( 'node_id' => 3077, 'can_read' => true ) ) );
+        // two users, two links: each names its own node; a node without a URL alias is linked by its id
+        $other = $this->renderUserMenu( self::user( 99, 'editor', 'Editor', array( 'node_id' => 3077, 'url_alias' => '', 'can_read' => true ) ) );
         $this->assertMatchesRegularExpression( '#href="[^"]*/content/view/full/3077"#', $other );
         $this->assertStringNotContainsString( '2042', $other );
 
