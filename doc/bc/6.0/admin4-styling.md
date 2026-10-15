@@ -268,13 +268,16 @@ pressed) and a tree menu shows its trash link through `design:parts/left_trash.t
 markup (`AdminLegacyControlsTest`).
 
 The User preferences block of the right column (`toolbar/full/admin_preferences.tpl`) shows each on/off preference as
-its name and the design's tabs (`ul.tabs`), not as a segmented button switch: the current state is
-`<li class="selected"><span class="current" aria-current="true">`, drawn like the node view's current tab (the accent
-tint with the bar under it), the other state is the plain link (`user/preferences/set/...`) that changes it. A
-`<div class="a4-pref-tabs" role="group" aria-labelledby="...">` around the list names it after the preference's
-label (`.a4-pref-label`); the list keeps its list role. In the column the tabs sit side by side, at least 24px high,
-and under forced colors an outline in `Highlight` marks the current one (for every `ul.tabs`). A new on/off
-preference in the right column uses the same markup (`AdminLegacyControlsTest`).
+its name and the design's tabs (`ul.tabs`), not as a segmented button switch. The two states are the buttons of a
+POST form to `user/preferences/set` (`Key`, `Value`, `RedirectURIAfterSet`), like the left column's width switch, so a
+preference is written only from this site (ezformtoken adds its token) and never by a GET link: the current state is
+the pressed button (`<li class="selected"><button ... aria-pressed="true">`), drawn like the node view's current tab
+(the accent tint with the bar under it), the other one a quiet button. A screen reader says the preference's name,
+the state and "pressed". A `<div class="a4-pref-tabs" role="group" aria-labelledby="...">` around the list names it
+after the preference's label (`.a4-pref-label`); the list keeps its list role. In the column the tabs sit side by
+side, at least 24px high, and under forced colors an outline in `Highlight` marks the current one (for every
+`ul.tabs`). A new on/off preference in the right column is one more entry of the template's list
+(`AdminLegacyControlsTest`).
 
 ## Edit forms
 

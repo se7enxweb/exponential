@@ -114,7 +114,7 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
   window height; they are named after their column ("Left column", "Right column"), say with `aria-expanded` whether
   it shows, and on a narrow window Escape closes a column open over the page and returns the focus to its tab. Long names in the side columns wrap instead of being cut off.
   The User preferences block of the right column (Locations, Re-edit) shows "on" and "off" as tabs, like the node
-  view's tabs: the current state in the accent tint with a bar under it (`aria-current`), the other one a quiet link
+  view's tabs: the current state in the accent tint with a bar under it (the pressed button of a POST form, `aria-pressed`), the other one quiet
   ([styling rules, "Legacy controls and the side columns"](../../bc/6.0/admin4-styling.md#legacy-controls-and-the-side-columns)).
 - **Left menu.** The left column is the "Side menu" navigation. A long menu shows in groups: Setup in Content model,
   Site and URLs, Design (while its tab is left out), Workflows, Users and messages, Audit (likewise), System, AI, Updates, and "More" last for links in no group. Each group has a small

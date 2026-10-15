@@ -1963,9 +1963,10 @@ div#contentstructure ul#content_tree_menu ul a.openclose-close::after {
 :is(#clearcache-tool, #quicksettings-tool, #bookmarks) .box-content div.block { padding-bottom: 0; }
 :is(#clearcache-tool, #quicksettings-tool, #bookmarks) .box-content form > :is(input.button, input.defaultbutton, input.button-disabled) { justify-self: end; }
 /* The user preferences: the setting's name and its on/off choice on one row, the choice drawn as the design's tabs
-   (ul.tabs: muted, the current one, a span.current with aria-current, in the accent tint with the bar under it);
+   (ul.tabs: muted, the current one, the pressed button in li.selected, in the accent tint with the bar under it);
    only a name too long for the column puts the tabs under it. In the narrow column the tabs sit side by side,
-   unfloated, each at least 24px high (WCAG 2.5.8). */
+   unfloated, each at least 24px high (WCAG 2.5.8). The two states are buttons of a POST form
+   (toolbar/full/admin_preferences.tpl): drawn like the tabs' links, without the native button's face. */
 #currentuserpreferences .settings > ul > li {
   display: flex;
   flex-wrap: wrap;
@@ -1977,7 +1978,31 @@ div#contentstructure ul#content_tree_menu ul a.openclose-close::after {
 #currentuserpreferences .a4-pref-label { min-width: 0; overflow-wrap: break-word; }
 #currentuserpreferences .a4-pref-tabs ul.tabs { display: flex; flex-wrap: nowrap; gap: 2px; width: auto; margin: 0; padding: 0; }
 #currentuserpreferences .a4-pref-tabs ul.tabs li { float: none; margin: 0; padding: 0; }
-#currentuserpreferences .a4-pref-tabs ul.tabs li :is(a, span.current) {
+#currentuserpreferences .a4-pref-form { margin: 0; }
+#currentuserpreferences .a4-pref-tabs ul.tabs li button {
+  border: 0;
+  border-radius: var(--a4-radius-s);
+  background-color: transparent;
+  color: var(--a4-muted);
+  font-family: inherit;
+  line-height: var(--a4-leading-tight);
+  cursor: pointer;
+  transition: background-color .15s ease, color .15s ease;
+}
+#currentuserpreferences .a4-pref-tabs ul.tabs li button:hover {
+  background-color: var(--a4-soft);
+  color: var(--a4-ink);
+}
+#currentuserpreferences .a4-pref-tabs ul.tabs li.selected button {
+  background-color: var(--a4-accent-soft);
+  color: var(--a4-accent-text);
+  box-shadow: inset 0 -2px 0 var(--a4-accent);
+}
+@media (forced-colors: active) {
+  #currentuserpreferences .a4-pref-tabs ul.tabs li button { border: 1px solid ButtonText; }
+  #currentuserpreferences .a4-pref-tabs ul.tabs li.selected button { outline: 2px solid Highlight; outline-offset: -2px; }
+}
+#currentuserpreferences .a4-pref-tabs ul.tabs li :is(a, span.current, button) {
   display: inline-flex;
   align-items: center;
   justify-content: center;
