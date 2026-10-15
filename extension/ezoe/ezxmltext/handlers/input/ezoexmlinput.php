@@ -1460,11 +1460,19 @@ class eZOEXMLInput extends eZXMLInputHandler
 
                             if ( $content->hasAttribute( $size ) )
                             {
-                                $imageAlias  = $content->imageAlias( $size );
-                                eZURI::transformURI( $imageAlias['url'], true );
-                                $srcString   = $imageAlias['url'];
-                                $imageWidth  = $imageAlias['width'];
-                                $imageHeight = $imageAlias['height'];
+                                $preview = self::embedImageAliasPreview( $content->imageAlias( $size ), $imageWidth, $imageHeight );
+                                if ( $preview === null )
+                                {
+                                    // the alias could not be created (its original is missing from the storage):
+                                    // the attachment icon stands in
+                                    eZDebug::writeWarning( "Image alias $size could not be created for object " . $object->attribute( 'id' ),
+                                        __METHOD__ );
+                                    continue;
+                                }
+                                eZURI::transformURI( $preview['url'], true );
+                                $srcString   = $preview['url'];
+                                $imageWidth  = $preview['width'];
+                                $imageHeight = $preview['height'];
                                 break;
                             }
                             else
@@ -2057,6 +2065,25 @@ class eZOEXMLInput extends eZXMLInputHandler
     /*
      * Get server url in relative or absolute format depending on ezoe settings.
      */
+    /**
+     * The url, width and height of an image alias for the embed preview of the editor, or null when the alias has no
+     * url (it could not be created, for instance because its original is missing from the storage). A missing width
+     * or height falls back to the given default; an alias array without them wrote "Undefined array key height".
+     *
+     * @param array|mixed $imageAlias eZImageAliasHandler::imageAlias()
+     * @param int $defaultWidth
+     * @param int $defaultHeight
+     * @return array|null array( 'url' => string, 'width' => int, 'height' => int )
+     */
+    public static function embedImageAliasPreview( $imageAlias, $defaultWidth = 32, $defaultHeight = 32 )
+    {
+        if ( !is_array( $imageAlias ) || !isset( $imageAlias['url'] ) || $imageAlias['url'] === '' )
+            return null;
+        return array( 'url' => $imageAlias['url'],
+                      'width' => isset( $imageAlias['width'] ) ? $imageAlias['width'] : $defaultWidth,
+                      'height' => isset( $imageAlias['height'] ) ? $imageAlias['height'] : $defaultHeight );
+    }
+
     public static function getServerURL()
     {
         if ( self::$serverURL === null  )
