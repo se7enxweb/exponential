@@ -35,7 +35,7 @@ class expOEInputBreakAttributesTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * Parses editor HTML and returns the stored XML and the PHP warnings and notices raised meanwhile.
+     * Parses editor HTML and returns the stored XML and the PHP warnings, notices and deprecations raised meanwhile.
      */
     private function parse( $html )
     {
@@ -44,7 +44,7 @@ class expOEInputBreakAttributesTest extends PHPUnit\Framework\TestCase
         {
             $raised[] = $message . ' (' . basename( $file ) . ':' . $line . ')';
             return true;
-        }, E_WARNING | E_NOTICE | E_USER_WARNING | E_USER_NOTICE );
+        }, E_WARNING | E_NOTICE | E_DEPRECATED | E_USER_WARNING | E_USER_NOTICE | E_USER_DEPRECATED );
         try
         {
             $parser = new eZOEInputParser();
