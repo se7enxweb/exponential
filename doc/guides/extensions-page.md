@@ -1,5 +1,10 @@
 # The Extensions page: activate, deactivate and order extensions
 
+> **Action required:** exporting extensions is now off by default — list the extension in package.ini
+> [ExtensionExportSettings] AllowedExtensions[] (or `*` for every extension) and grant the policy
+> package/export_extension to the role. Without both, Setup > Extensions shows no download buttons and the package
+> wizard does not let you choose the extension; the command line (`ezpm.php add`) needs the list entry.
+
 This guide is for administrators. **Setup > Extensions** (`/setup/extensions`) lists every extension the installation
 can see, shows which ones are active and in which order, and changes that list. After this page you can read a card,
 move, activate and deactivate extensions safely, and know what happens when you apply. About 10 minutes.

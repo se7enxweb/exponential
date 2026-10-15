@@ -13,6 +13,7 @@
  *  AT-06 - upload() without canUpload(): refused before the file is looked at
  *  AT-07 - the location forms of design/admin and design/admin4 carry the token, not the path
  *  AT-08 - the pending list keeps at most PENDING_MAX entries
+ *  AT-09 - browse() asks the handler's canUpload() and the node's canRead(); the browse links name the handler
  *
  * The handler is a stand-in registered in memory ([AjaxUploader] AjaxUploadHandler[]), the user id comes from a
  * subclass and the session is $_SESSION; no database.
@@ -35,14 +36,47 @@ class ezjscAjaxUploaderTokenTestCreated extends Exception
 {
 }
 
-/** The upload functions with a fixed current user */
+/** A node held in memory that the user may or may not read */
+class ezjscAjaxUploaderTokenTestNode extends eZContentObjectTreeNode
+{
+    public $readable = true;
+
+    function canRead()
+    {
+        return $this->readable;
+    }
+}
+
+/** The upload functions with a fixed current user, and the browse step's database parts held in memory */
 class ezjscAjaxUploaderTokenTestFunctions extends ezjscServerFunctionsAjaxUploader
 {
     public static $userID = 14;
 
+    /** @var ezjscAjaxUploaderTokenTestNode|null */
+    public static $node = null;
+
+    /** @var array|null what browseResult() was given */
+    public static $browsed = null;
+
     protected static function currentUserID()
     {
         return self::$userID;
+    }
+
+    protected static function fetchNode( $nodeID )
+    {
+        return self::$node;
+    }
+
+    protected static function fetchClass( $classID )
+    {
+        return ( new ReflectionClass( 'eZContentClass' ) )->newInstanceWithoutConstructor();
+    }
+
+    protected static function browseResult( $handlerID, $node, $class, $offset )
+    {
+        self::$browsed = array( $handlerID, $offset );
+        return array( 'meta_data' => false, 'html' => 'browsed' );
     }
 }
 
@@ -328,6 +362,70 @@ class ezjscServerFunctionsAjaxUploaderTokenTest extends PHPUnit\Framework\TestCa
         $result = json_decode( ezjscAjaxUploaderTokenTestFunctions::upload( array( 'tokentest' ) ), true );
         $this->assertSame( 'You are not allowed to upload a file.', $result['error_text'] );
         $this->assertFalse( ezjscAjaxUploaderTokenTestHandler::$fileInfoAsked );
+    }
+
+    /** AT-09, browsing for a location is asked like the other steps: the handler's canUpload(), then the node */
+    public function testBrowseAsksTheHandler()
+    {
+        ezjscAjaxUploaderTokenTestFunctions::$node = ( new ReflectionClass( 'ezjscAjaxUploaderTokenTestNode' ) )->newInstanceWithoutConstructor();
+        ezjscAjaxUploaderTokenTestFunctions::$node->readable = true;
+        ezjscAjaxUploaderTokenTestFunctions::$browsed = null;
+        $_POST = array( 'AjaxUploadHandlerData' => array( 'ObjectRelationsAttributeId' => 7, 'Version' => 1 ) );
+
+        // not allowed to upload (an anonymous visitor, a user without content/create): refused before the node is read
+        ezjscAjaxUploaderTokenTestHandler::$canUpload = false;
+        try
+        {
+            ezjscAjaxUploaderTokenTestFunctions::browse( array( 'tokentest', '2', '5' ) );
+            $this->fail( 'browse() answers a user who may not upload' );
+        }
+        catch ( RuntimeException $e )
+        {
+            $this->assertSame( 'You are not allowed to upload a file.', $e->getMessage() );
+        }
+        $this->assertNull( ezjscAjaxUploaderTokenTestFunctions::$browsed );
+
+        // the former form without the handler (node, class): no handler, refused
+        try
+        {
+            ezjscAjaxUploaderTokenTestFunctions::browse( array( '2', '5' ) );
+            $this->fail( 'browse() answers without a handler' );
+        }
+        catch ( InvalidArgumentException $e )
+        {
+        }
+        $this->assertNull( ezjscAjaxUploaderTokenTestFunctions::$browsed );
+
+        // allowed to upload, node readable: the containers
+        ezjscAjaxUploaderTokenTestHandler::$canUpload = true;
+        $this->assertSame( 'browsed', ezjscAjaxUploaderTokenTestFunctions::browse( array( 'tokentest', '2', '5', '10' ) )['html'] );
+        $this->assertSame( array( 'tokentest', 10 ), ezjscAjaxUploaderTokenTestFunctions::$browsed );
+
+        // allowed to upload, node not readable: refused
+        ezjscAjaxUploaderTokenTestFunctions::$browsed = null;
+        ezjscAjaxUploaderTokenTestFunctions::$node->readable = false;
+        try
+        {
+            ezjscAjaxUploaderTokenTestFunctions::browse( array( 'tokentest', '2', '5' ) );
+            $this->fail( 'browse() answers for a node the user may not read' );
+        }
+        catch ( InvalidArgumentException $e )
+        {
+        }
+        $this->assertNull( ezjscAjaxUploaderTokenTestFunctions::$browsed );
+    }
+
+    /** AT-09, the browse links and the script send the handler and its data */
+    public function testTheBrowseLinksNameTheHandler()
+    {
+        foreach ( array( 'admin', 'admin4' ) as $design )
+        {
+            $tpl = file_get_contents( "design/$design/templates/ajaxuploader/browse.tpl" );
+            $this->assertSame( substr_count( $tpl, 'href="ezajaxuploader::browse::' ), substr_count( $tpl, 'href="ezajaxuploader::browse::{$handler_id|wash()}::' ), $design );
+            $this->assertStringContainsString( 'handler_id=$handler_id', file_get_contents( "design/$design/templates/ajaxuploader/location.tpl" ), $design );
+            $js = file_get_contents( "design/$design/javascript/expajaxuploader.js" );
+            $this->assertStringContainsString( "self.call(this.getAttribute('href'), { data: self.handlerData() }, \$place)", $js, $design );
+        }
     }
 
     /** AT-07 */

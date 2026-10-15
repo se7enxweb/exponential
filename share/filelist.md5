@@ -271,7 +271,7 @@ bb57d7d50de510183570d8844efbd49f  design/admin/images/up-16x16-grey.png
 bc1f590f32f5d71f9bfdf7781f2135fc  design/admin/images/url_translator.png
 ac084a07607e6d6c5a845da15423854f  design/admin/images/view-fullscreen.png
 9f30c46fcd1a3ca27329392a80624514  design/admin/javascript/contentstructuremenu_dynamic.js
-2f943a032eaebbf3592d4d2de8e7df87  design/admin/javascript/expajaxuploader.js
+a5e25bc5b912c88678afe25d798ade81  design/admin/javascript/expajaxuploader.js
 59795cfe15e8bc99974d7d9099794478  design/admin/javascript/ezajaxrelations_jquery.js
 26c9312eb419a72cc0a924d08a389382  design/admin/javascript/ezajaxsubitems_expdatatable.js
 2c35ad74f3ae96723bd750231c27cbe4  design/admin/javascript/leftmenu_widthcontrol.js
@@ -322,8 +322,8 @@ c88a47e792d2074b8f41a4b176ac9812  design/admin/stylesheets/pagelayout.css
 80e40d820b12263064128a75be2de07b  design/admin/stylesheets/theme/modalwindow.css
 0db1844ab2952f8bf22c404c41866264  design/admin/stylesheets/theme/rounded.css
 4c5d17d9e5889a0f8907ad075f34c3d9  design/admin/stylesheets/visual-templateview.css
-b2cbae36bac438158f9f947a2e58e18c  design/admin/templates/ajaxuploader/browse.tpl
-00d13efcf10eeffbc37846913dbd0d8a  design/admin/templates/ajaxuploader/location.tpl
+889ddd71812316abb93a823e90d6c454  design/admin/templates/ajaxuploader/browse.tpl
+66e556ddbb2a268470dd9b7c34d65393  design/admin/templates/ajaxuploader/location.tpl
 f5c677b2579053f3f5a23f2a3dd3b87d  design/admin/templates/ajaxuploader/preview.tpl
 e002d70967d5f151cca6861170e9584f  design/admin/templates/ajaxuploader/upload.tpl
 e3d02557044b7bc71d9324c6527a42f0  design/admin/templates/audit/alerts.tpl
@@ -610,7 +610,7 @@ ed52e10a5f47b691c8e15ae490adb105  design/admin/templates/setup/datatype.tpl
 dcb722bfda3d71da901504f9da33f0f5  design/admin/templates/setup/datatype_code.tpl
 29d3e871e6de1979d29105f427637288  design/admin/templates/setup/datatype_describe.tpl
 0179400da0c016c0d78216a115fd0f6c  design/admin/templates/setup/designextension.tpl
-2bc6812f870b634781ada2a28baaf5e9  design/admin/templates/setup/extensions.tpl
+bf158ec49ae8bf112c00c9fe66ac5c0a  design/admin/templates/setup/extensions.tpl
 a925a224cc78a74747132267d11b2cfa  design/admin/templates/setup/handlerextension.tpl
 bdcdfa5742405bda0f2c054e42741b83  design/admin/templates/setup/info.tpl
 af31fc447e00b08df2231c45cc83aff5  design/admin/templates/setup/kerneloverride.tpl
@@ -845,7 +845,7 @@ bc1f590f32f5d71f9bfdf7781f2135fc  design/admin4/images/url_translator.png
 ac084a07607e6d6c5a845da15423854f  design/admin4/images/view-fullscreen.png
 d7d11d12cef327ec0d54a0f346cdfc5b  design/admin4/javascript/admin4.js
 9f30c46fcd1a3ca27329392a80624514  design/admin4/javascript/contentstructuremenu_dynamic.js
-2f943a032eaebbf3592d4d2de8e7df87  design/admin4/javascript/expajaxuploader.js
+a5e25bc5b912c88678afe25d798ade81  design/admin4/javascript/expajaxuploader.js
 78723bbe11b26f066415dacaab8721a5  design/admin4/javascript/ezadmin_menubar.js
 59795cfe15e8bc99974d7d9099794478  design/admin4/javascript/ezajaxrelations_jquery.js
 26c9312eb419a72cc0a924d08a389382  design/admin4/javascript/ezajaxsubitems_expdatatable.js
@@ -896,8 +896,8 @@ cbd222e879b5be405bb709dd9fc1315b  design/admin4/stylesheets/pagelayout.css
 35eebb3baea1095a0aae748f750e4917  design/admin4/stylesheets/theme/modalwindow.css
 195bf0679274a9a6cffec53657044762  design/admin4/stylesheets/theme/rounded.css
 5dd996271ae1077ba68072e6f520b74d  design/admin4/stylesheets/visual-templateview.css
-e92ed971bdc20f0f00266930acf8e0ea  design/admin4/templates/ajaxuploader/browse.tpl
-00d13efcf10eeffbc37846913dbd0d8a  design/admin4/templates/ajaxuploader/location.tpl
+022eb4fed292327e7a10f4812af68540  design/admin4/templates/ajaxuploader/browse.tpl
+66e556ddbb2a268470dd9b7c34d65393  design/admin4/templates/ajaxuploader/location.tpl
 f5c677b2579053f3f5a23f2a3dd3b87d  design/admin4/templates/ajaxuploader/preview.tpl
 e002d70967d5f151cca6861170e9584f  design/admin4/templates/ajaxuploader/upload.tpl
 c20531ad4a051efb351cbda3956a85f9  design/admin4/templates/audit/alerts.tpl
@@ -1192,7 +1192,7 @@ dcdfd28ff236916b7773ca84b5d3172e  design/admin4/templates/settings/exp_origin.tp
 dcb722bfda3d71da901504f9da33f0f5  design/admin4/templates/setup/datatype_code.tpl
 cbc413d613bb196f6da70a5caeea8d01  design/admin4/templates/setup/datatype_describe.tpl
 dda583dc1b439af6d17813d3d415e4ea  design/admin4/templates/setup/designextension.tpl
-ffe9327d6bbf95cd535dae11fb8cf558  design/admin4/templates/setup/extensions.tpl
+74fd403b888aaac08097ad34b43626b5  design/admin4/templates/setup/extensions.tpl
 7221793f43d4526f224d2bba4932db27  design/admin4/templates/setup/handlerextension.tpl
 bdcdfa5742405bda0f2c054e42741b83  design/admin4/templates/setup/info.tpl
 7f200b3f632376d62e444bfaae08d28f  design/admin4/templates/setup/kerneloverride.tpl
@@ -2400,7 +2400,7 @@ cd4eaa75737c627ed253535adea6b04a  design/standard/templates/package/creators/ezc
 f8d588b8d82bcbb1e3d43b743cc1dc3c  design/standard/templates/package/creators/ezcontentobject/browse_subtree.tpl
 846a25648ce2c720d4c35f0aa2cc7eea  design/standard/templates/package/creators/ezcontentobject/object_limit.tpl
 630686c35bed9048b7ff4b6d18325b01  design/standard/templates/package/creators/ezcontentobject/object_select.tpl
-f79ff2cefb3fa31c7d9f08030f51d4e4  design/standard/templates/package/creators/ezextension/extension.tpl
+5838991c5f985528a0d0226a3cedb34d  design/standard/templates/package/creators/ezextension/extension.tpl
 509a614164d9bf7ca22a461d47ea27ce  design/standard/templates/package/creators/ezstyle/cssfile.tpl
 1dee394bd18429b0caab697f4f4c4112  design/standard/templates/package/creators/ezstyle/imagefiles.tpl
 c596331dd7028592b8f089fb0b69126d  design/standard/templates/package/header.tpl
@@ -2966,7 +2966,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-b577d425e918a06b692d09b01f10eb86  doc/changelogs/6.0/6.0.15.md
+af500bb4cb5d391f6401e92ca79d729c  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3315,7 +3315,7 @@ f8d44bca99ffe43f048fc03fc7ca6cc2  doc/features/6.0/environment-settings.md
 d26f78ed5cf8ef8757d508dde440e55d  doc/features/6.0/exp-adminui.md
 33624440c66ad7b66edbd95e0ba6e61a  doc/features/6.0/exp-debug-bar.md
 5eb04007ff0095dc046839caaae709eb  doc/features/6.0/exp-ini-command.md
-630260ceec861be23c83c3c64c36b98d  doc/features/6.0/extension-list-and-downloads.md
+85fb79b7ad4d9ff7a10769c6310c90b3  doc/features/6.0/extension-list-and-downloads.md
 244d74a450d733edbbb098d118101a62  doc/features/6.0/extension-loading-order.md
 8f1fcebd72db9526f18bbcbb0cdef769  doc/features/6.0/extension-module-override.md
 2d0a604152c0b63239f761b1fae94615  doc/features/6.0/extensions/AdminAid.md
@@ -3465,7 +3465,7 @@ c8ab87aa91d7a0e71e2a5e05e24e11ce  doc/guides/content-model-and-editing.md
 8220e6a9471f3472469761366ea47979  doc/guides/cronjobs.md
 9ea97a05fa2a16e68fe3ddeaf00535b2  doc/guides/deploying.md
 b790dd482cd361bdb034bae2f8ee60a5  doc/guides/drafts-and-pending.md
-a78df013a44071120b6e7089c4d291ba  doc/guides/extensions-page.md
+8ef6b37beb573032a80a3c90b67dbd20  doc/guides/extensions-page.md
 d846df5846d7ca84030fee813bad0ac6  doc/guides/extensions.md
 9ab2a55cb8c3f5b50331448d91683c53  doc/guides/getting-started.md
 b53242f489a852760b7b824ee3e042a2  doc/guides/images/cronjobs/available-scripts.png
@@ -4094,7 +4094,7 @@ e182699a31b59c20ea1ba8a0801f3460  extension/ezjscore/classes/ezjsccachemanager.p
 ac3dd65ba7ed3f9a5b14ff27ebdd4746  extension/ezjscore/classes/ezjscjavascriptoptimizer.php
 27ca4fdc9b658e488cf5b50324088d11  extension/ezjscore/classes/ezjscpacker.php
 1f9804412c3ba9cc36ec68bb52c2e242  extension/ezjscore/classes/ezjscserverfunctions.php
-7e278ff79e9321f18c0ad5dc3ec8fd11  extension/ezjscore/classes/ezjscserverfunctionsajaxuploader.php
+b1ae551c2a367b57f73e8fc60a57e3ef  extension/ezjscore/classes/ezjscserverfunctionsajaxuploader.php
 018dec8d9a0a8011f55ff30d2e4c2702  extension/ezjscore/classes/ezjscserverfunctionsjs.php
 6f13a2277478c637ee2eac9ed933e320  extension/ezjscore/classes/ezjscserverfunctionsnode.php
 dbea24715af6c5d5d6b1d551aa97dbca  extension/ezjscore/classes/ezjscserverfunctionspublishingqueue.php
@@ -5127,12 +5127,12 @@ b8c2fd803be545423c0029be897f12ca  kernel/classes/notification/handler/ezcollabor
 73d71015e39a0202b99ee869ed0a89e7  kernel/classes/notification/handler/ezsubtree/ezsubtreenotificationrule.php
 b6e0eb67e9d64bc90af7f845e8208208  kernel/classes/packagecreators/ezcontentclass/ezcontentclasspackagecreator.php
 26721b53e623366b4253430908db5bee  kernel/classes/packagecreators/ezcontentobject/ezcontentobjectpackagecreator.php
-5fb265ddb7d24c8bec6a9ed346f7a639  kernel/classes/packagecreators/ezextension/ezextensionpackagecreator.php
+96837b88c9f21eb374ddcbd217ea3d10  kernel/classes/packagecreators/ezextension/ezextensionpackagecreator.php
 465042c1b2063952766489798dc5d675  kernel/classes/packagecreators/ezstyle/ezstylepackagecreator.php
 345e8a3f3a19b13d6aeefc0bea5193ff  kernel/classes/packagehandlers/ezcontentclass/ezcontentclasspackagehandler.php
 7f52b8ed6e4c0bca419915f16389ccd9  kernel/classes/packagehandlers/ezcontentobject/ezcontentobjectpackagehandler.php
 43fdcc2147331027b2804b9923b768b9  kernel/classes/packagehandlers/ezdb/ezdbpackagehandler.php
-a67f8d2b454dafedfeca05198a613135  kernel/classes/packagehandlers/ezextension/ezextensionpackagehandler.php
+92985292ea67102fb65a29da4787dc1b  kernel/classes/packagehandlers/ezextension/ezextensionpackagehandler.php
 67c3fad221510ea847e17b6b6bc0ab07  kernel/classes/packagehandlers/ezfile/ezfilepackagehandler.php
 9f2c7f09bb3b812d8325b397d1ca7701  kernel/classes/packagehandlers/eziniaddon/eziniaddonpackagehandler.php
 9293334bc191a66cd75a0f72469ac6ef  kernel/classes/packagehandlers/ezinstallscript/ezinstallscriptpackagehandler.php
@@ -5674,7 +5674,7 @@ b39696f0ecc6c1fde06f85def7b0aace  kernel/private/classes/views/setup/cronjobs.ph
 7d08d5aac41889ecbc986434986c09e6  kernel/private/classes/views/setup/cronjobsstream.php
 c82e5ac21ed1b61b72a5e91d6550bf9c  kernel/private/classes/views/setup/datatype.php
 5f37b9085a959384971d12d73b481856  kernel/private/classes/views/setup/designextension.php
-79901b292249eb094a6f0342738ebfa9  kernel/private/classes/views/setup/extensions.php
+37b9eef82eb7d996b71e5671ea0ae92e  kernel/private/classes/views/setup/extensions.php
 ba095e1065f22b1f8ce06eaaaeaeb8a6  kernel/private/classes/views/setup/ezsetup.php
 af13a15fd346cd3c53de7f9c8fb7bb81  kernel/private/classes/views/setup/handlerextension.php
 1bd4407f2dcc1e4de24a4daaca3a7acd  kernel/private/classes/views/setup/info.php
@@ -6407,7 +6407,7 @@ e16526d1b9fa29b359a2fe94ef91152c  settings/menu.ini
 79f9e8a2d7e832b4a243fcc9348ef492  settings/module.ini
 1b0c7c323c1ab385b32320c172cb4032  settings/notification.ini
 ebc1c25ced143cfaaa5d343350676ecc  settings/override.ini
-cc2193b6acf2887f1a58c7bc4fccce05  settings/package.ini
+9f0b7ccb49caba6cf5728600364d5857  settings/package.ini
 33feee634197eb5cde08585beacd9d73  settings/paymentgateways.ini
 3a13a85a0747ba7150891dfbb20b25db  settings/pdf.ini
 660b0d81b874343b1ffa494dc1fd6dbf  settings/querycache.ini
@@ -6962,14 +6962,14 @@ dd5f5f3cf2348a6cc17bd0ee76983225  share/translations/dut-NL/translation.ts
 284321a9de29bf9268c27abb13f56f2c  share/translations/ell-GR/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-AU/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-NZ/translation.ts
-c1b4c3562994a0450bad96ed6fcd8d70  share/translations/eng-US/translation.ts
+c558f07b7ef0ffac86ad94831e42f982  share/translations/eng-US/translation.ts
 5f0920d5b4e8bbaff2a4a6d5b3995c90  share/translations/esl-ES/translation.ts
 27846e3f6408cd74f58cef8adcbab573  share/translations/esl-MX/translation.ts
 4b104d4d337601b4bc6ae0482e6478ea  share/translations/fin-FI/translation.ts
 edfd3efb7eca1e2bd6d6d7d08bd78a77  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-659db76401d927e9621c162eac72533b  share/translations/ger-DE/translation.ts
+6506aabf13e72fe8ad06591a9cbb6601  share/translations/ger-DE/translation.ts
 75d657fed5de11db9e059cdcff2046a8  share/translations/ita-IT/translation.ts
 a45e2d26b1c24ac4cb6ae1d7197e5b0e  share/translations/jpn-JP/translation.ts
 d1dc34034ddce2d64c4f8df7fcc41c85  share/translations/nno-NO/translation.ts
@@ -6982,7 +6982,7 @@ e33e059c205f7c0a49e112ce9ba6147d  share/translations/ser-SR/translation.ts
 e9e308757570f0321486d498fc993d17  share/translations/srp-RS/translation.ts
 718ecc8ecbbe8ebec7a88fb2697f401f  share/translations/swe-SE/translation.ts
 0b1b76b5ad6b2f923afd6fd9a9937a8b  share/translations/untranslated/readme.txt
-a7a4d88099ee5fc7f5c3968ca33000b8  share/translations/untranslated/translation.ts
+b400bd7d46119811d50655ab638a8c0f  share/translations/untranslated/translation.ts
 bae9ff85781e52af001213bdb213a013  shippable.yml
 414f4d1129273ab3dea38b878d554eae  soap.php
 3b6d156f31df70e093aa1a6d8a525cd3  support/ezlupdate-qt4.5/README.txt
@@ -7174,7 +7174,7 @@ b977ef5a409ff4c1d2e4c734c839d6e3  tests/tests/extension/expservices/users/expUse
 c2d1d9f4d1d3bfd48c427cac7ccaace7  tests/tests/extension/expservices/users/expUsersTestCase.php
 815c9c214d99424bb693376c627ac29b  tests/tests/extension/ezjscore/ezjscServerFunctionsAjaxUploaderAltTextTest.php
 df797f976ce5f225fe73f393ff910b74  tests/tests/extension/ezjscore/ezjscServerFunctionsAjaxUploaderImageTest.php
-c22d933082015eac7cf9b850444d4dbc  tests/tests/extension/ezjscore/ezjscServerFunctionsAjaxUploaderTokenTest.php
+873d6c72d3c5f022bc235ec3ba7be598  tests/tests/extension/ezjscore/ezjscServerFunctionsAjaxUploaderTokenTest.php
 d1578e74a3b133f4e710d5793b7479ad  tests/tests/extension/ezjscore/ezjscServerFunctionsJsSearchIDsTest.php
 3ef20c0512a951483e7cb7761a9f87f7  tests/tests/extension/ezjscore/ezjscServerFunctionsJsSearchSortByTest.php
 1045d4d1d9f875ee35726dfa45431264  tests/tests/extension/ezjscore/ezjscServerRouterPolicyTest.php
@@ -7608,7 +7608,7 @@ c8f42593fb63a6e7e3de2de5029d8368  tests/tests/kernel/classes/security/fixtures/e
 b26468a072e87640022ee9fe0bbb360e  tests/tests/kernel/classes/setup/EditorSiteaccessModulesTest.php
 728b364a823ae2d29c689cdff5b1c557  tests/tests/kernel/classes/setup/EditorSiteaccessTabsTest.php
 f2423dc1a4140e9f8bb33a822575aec8  tests/tests/kernel/classes/setup/ExtensionChangePlanTest.php
-2dbcbe5f3503183f32cca11d1f24aba2  tests/tests/kernel/classes/setup/ExtensionDownloadTest.php
+56cb7815ef06c0e7a095668c99ff57c8  tests/tests/kernel/classes/setup/ExtensionDownloadTest.php
 84a806754eee94940f2ff8fab608690f  tests/tests/kernel/classes/setup/KickstarterFailureReasonTest.php
 b9ab3dc75242d91d9686047634059862  tests/tests/kernel/classes/setup/KickstarterIniDefaultsTest.php
 2e4f85464804cc2fe00e7e80aa8a3a24  tests/tests/kernel/classes/setup/KickstarterOptionsTest.php

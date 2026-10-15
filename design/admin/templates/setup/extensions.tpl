@@ -27,6 +27,11 @@
 
 <p class="a4-intro">{'Every extension this installation can see, in one list. The active ones come first, in the order of ActiveExtensions in %file: an extension higher in the list has the higher priority for settings, templates and designs. Move, activate and deactivate them here, then review and apply the changes in one step.'|i18n( 'design/admin/setup/extensions',, hash( '%file', $settings_file ) )|wash}</p>
 
+{* Exporting extensions is switched off by default: how to switch it on *}
+{if and( is_set( $export_notice ), $export_notice )}
+<div class="message-warning a4-notice is-warn a4-setup-export-off" role="status"><p><strong>{$export_notice|wash}</strong></p></div>
+{/if}
+
 {* What happened *}
 {if and( is_set( $download_error ), $download_error )}
 <div class="a4-notice is-bad" role="alert"><p>{$download_error|wash}</p></div>
@@ -224,7 +229,7 @@
                 {if $row.copyright}<div><dt>{'Copyright'|i18n( 'design/admin/setup/extensions' )}</dt><dd>{$row.copyright|wash}</dd></div>{/if}
                 {if $row.mtime}<div><dt>{'Modified'|i18n( 'design/admin/setup/extensions' )}</dt><dd>{$row.mtime|wash}</dd></div>{/if}
                 <div><dt>{'Download'|i18n( 'design/admin/setup/extensions' )}</dt><dd>
-                    {foreach array( 'tar.gz', 'zip', 'tar.bz2', 'ezpkg' ) as $format}<button type="submit" class="a4-btn" name="ExtensionDownload" value="{concat( $row.name, '/', $format )|wash}" aria-label="{'Download %name as %format'|i18n( 'design/admin/setup/extensions',, hash( '%name', $row.name, '%format', $format ) )|wash}">{$format|wash}</button>{delimiter} {/delimiter}{/foreach}</dd></div>
+                    {if $row.export_refusal}<strong class="a4-setup-export-off">{$row.export_refusal|wash}</strong>{else}{foreach array( 'tar.gz', 'zip', 'tar.bz2', 'ezpkg' ) as $format}<button type="submit" class="a4-btn" name="ExtensionDownload" value="{concat( $row.name, '/', $format )|wash}" aria-label="{'Download %name as %format'|i18n( 'design/admin/setup/extensions',, hash( '%name', $row.name, '%format', $format ) )|wash}">{$format|wash}</button>{delimiter} {/delimiter}{/foreach}{/if}</dd></div>
             </dl>
             {if $row.problems}
             <ul class="a4-setup-problems">

@@ -372,6 +372,8 @@ class ezjscServerFunctionsAjaxUploader extends ezjscServerFunctions
         $tpl->setVariable( 'browse_start', $defaultParentNode->attribute( 'parent' ) );
         $tpl->setVariable( 'default_parent_node', $defaultParentNode );
         $tpl->setVariable( 'browse', $browseItems );
+        // the browse links name the upload handler: browse() asks it as the other steps do
+        $tpl->setVariable( 'handler_id', (string)$args[0] );
         // An alternative text field for a class with an image attribute, marked when the class requires the text
         $altTextRequired = eZImageType::classAltTextRequired( $class );
         $tpl->setVariable( 'alt_text_field', $altTextRequired !== null );
@@ -476,18 +478,22 @@ class ezjscServerFunctionsAjaxUploader extends ezjscServerFunctions
     }
 
     /**
-     * Browse AJAX action
+     * Browse AJAX action: the containers below a node, for the location step. Asked like the other steps: the upload
+     * handler (with its posted data, AjaxUploadHandlerData) must allow the current user to upload (canUpload()),
+     * and the user must be able to read the node.
      *
      * @param array $args containing the following values:
-     *          - 0 the parent node id of the elements to display
-     *          - 1 the class id of the element that is going to be created
-     *          - 2 [optional] the offset
+     *          - 0 the identifier of the AJAX upload handler ({@link ezjscServerFunctionsAjaxUploader::getHandler})
+     *          - 1 the parent node id of the elements to display
+     *          - 2 the class id of the element that is going to be created
+     *          - 3 [optional] the offset
      * @return array
      * @throws InvalidArgumentException if the node or the class cannot be loaded
+     * @throws RuntimeException if the user is not allowed to upload a file
      */
     static function browse( $args )
     {
-        if ( count( $args ) < 2 )
+        if ( count( $args ) < 3 )
         {
             throw new InvalidArgumentException(
                 ezpI18n::tr(
@@ -495,14 +501,25 @@ class ezjscServerFunctionsAjaxUploader extends ezjscServerFunctions
                 )
             );
         }
-        list( $nodeID, $classId ) = $args;
-        $offset = 0;
-        if ( isset( $args[2] ) )
+        $handler = self::getHandler( $args );
+        if ( !$handler->canUpload() )
         {
-            $offset = (int) $args[2];
+            throw new RuntimeException(
+                ezpI18n::tr(
+                    'extension/ezjscore/ajaxuploader',
+                    'You are not allowed to upload a file.'
+                )
+            );
         }
-        $node = eZContentObjectTreeNode::fetch( $nodeID );
-        $class = eZContentClass::fetch( $classId );
+        $nodeID = $args[1];
+        $classId = $args[2];
+        $offset = 0;
+        if ( isset( $args[3] ) )
+        {
+            $offset = max( 0, (int) $args[3] );
+        }
+        $node = static::fetchNode( $nodeID );
+        $class = static::fetchClass( $classId );
         if ( !$node instanceof eZContentObjectTreeNode
                 || !$class instanceof eZContentClass )
         {
@@ -520,6 +537,32 @@ class ezjscServerFunctionsAjaxUploader extends ezjscServerFunctions
                 )
             );
         }
+        return static::browseResult( (string)$args[0], $node, $class, $offset );
+    }
+
+    /** @return eZContentObjectTreeNode|null */
+    protected static function fetchNode( $nodeID )
+    {
+        return eZContentObjectTreeNode::fetch( (int)$nodeID );
+    }
+
+    /** @return eZContentClass|null */
+    protected static function fetchClass( $classID )
+    {
+        return eZContentClass::fetch( (int)$classID );
+    }
+
+    /**
+     * The browse step's HTML for $node.
+     *
+     * @param string $handlerID
+     * @param eZContentObjectTreeNode $node
+     * @param eZContentClass $class
+     * @param int $offset
+     * @return array
+     */
+    protected static function browseResult( $handlerID, $node, $class, $offset )
+    {
         $browseItems = self::getBrowseItems( $node, $class, $offset );
 
         $tpl = eZTemplate::factory();
@@ -527,6 +570,7 @@ class ezjscServerFunctionsAjaxUploader extends ezjscServerFunctions
         $tpl->setVariable( 'browse_start', $node );
         $tpl->setVariable( 'default_parent_node', array( 'node_id' => 0 ) );
         $tpl->setVariable( 'class', $class );
+        $tpl->setVariable( 'handler_id', $handlerID );
 
         return array(
             'meta_data' => false,

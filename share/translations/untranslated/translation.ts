@@ -51423,6 +51423,10 @@ You will need to change the class of the node by using the swap functionality.</
 <context>
     <name>kernel/package</name>
     <message>
+        <source>Exporting extensions is switched off by default: to switch it on, list the extension in package.ini [ExtensionExportSettings] AllowedExtensions[] (or * for every extension) and grant the policy package/export_extension to the role.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>The extension %name may not be exported: it is not in package.ini [ExtensionExportSettings] AllowedExtensions[].</source>
         <translation type="unfinished"></translation>
     </message>

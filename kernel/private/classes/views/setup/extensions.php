@@ -231,6 +231,18 @@ class Extensions extends \Exponential\Runnable\ModuleView
             $velocityRunning = null;
         }
 
+        // Exporting is closed by default (package.ini [ExtensionExportSettings], policy package/export_extension): a
+        // card shows its download buttons only when the extension may be exported, else the reason, and the page
+        // says once how to switch exporting on.
+        $exportNotice = '';
+        foreach ( $rows as $i => $row )
+        {
+            $rows[$i]['export_refusal'] = \eZExtensionPackageHandler::exportRefusal( $row['name'], true );
+            if ( $rows[$i]['export_refusal'] !== '' )
+                $exportNotice = \eZExtensionPackageHandler::exportSwitchedOffText();
+        }
+        $tpl->setVariable( 'export_notice', $exportNotice );
+
         $tpl->setVariable( 'extension_rows', $rows );
         $tpl->setVariable( 'extension_summary', \expExtensionCatalogue::summary( $rows ) );
         $tpl->setVariable( 'extension_plan', array(
