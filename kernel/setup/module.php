@@ -220,7 +220,8 @@ $ViewList["extensions"] = array(
 
 // The Setup overview (the Setup tab's first page) shows only the functions the user may open, so it opens for
 // anyone with one of the setup module's functions (install aside): the tab used to open setup/cache, and a role
-// with managecache alone must keep it.
+// with managecache alone must keep it. A user with none of them gets the access denied page, which names the policy
+// of the last function eZUser::hasAccessToView() asked (system_info); any one of the listed functions opens the view.
 $ViewList['menu'] = array(
     'functions' => array( 'setup or administrate or managecache or managecronjobs or preload or system_info' ),
     'script' => 'setupmenu.php',
