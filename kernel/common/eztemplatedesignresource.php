@@ -695,16 +695,7 @@ class eZTemplateDesignResource extends eZTemplateFileResource
 
         if ( eZINI::instance( 'site.ini' )->variable( 'DesignSettings', 'DesignLocationCache' ) === 'enabled' )
         {
-            // Using current SA if none given
-            // A script without a siteaccess has no current access: its cache is
-            // the one of no siteaccess, as findDesignBase() reads the settings it has
-            $siteAccessName = $siteAccess ? (string)$siteAccess : ( $GLOBALS['eZCurrentAccess']['name'] ?? '' );
-
-            $cachePath = eZSys::cacheDirectory()
-                         . '/'
-                         . self::DESIGN_BASE_CACHE_NAME
-                         . md5( $siteAccessName )
-                         . '.php';
+            $cachePath = self::designBaseCachePath( $siteAccess );
 
             $clusterFileHandler = eZClusterFileHandler::instance( $cachePath );
 
@@ -737,6 +728,26 @@ class eZTemplateDesignResource extends eZTemplateFileResource
         }
 
         return $designBaseList;
+    }
+
+    /**
+     * The file the design base list of a siteaccess is cached in (DesignLocationCache=enabled).
+     *
+     * A script without a siteaccess has no current access: its cache is the one of no siteaccess, as findDesignBase()
+     * reads the settings it has. The current siteaccess with a signed-in user's interface choice (expUISwitch: another
+     * design) has a design list of its own, so a cache of its own; without a choice the name stays as it was. A
+     * siteaccess asked for by name is read from its settings on disk, never switched.
+     *
+     * @param string|false $siteAccess false for the current siteaccess
+     * @return string
+     */
+    static function designBaseCachePath( $siteAccess = false )
+    {
+        $siteAccessName = $siteAccess ? (string)$siteAccess : ( $GLOBALS['eZCurrentAccess']['name'] ?? '' );
+        if ( !$siteAccess && !empty( $GLOBALS['expUISwitchVariantKey'] ) )
+            $siteAccessName .= '-' . $GLOBALS['expUISwitchVariantKey'];
+
+        return eZSys::cacheDirectory() . '/' . self::DESIGN_BASE_CACHE_NAME . md5( $siteAccessName ) . '.php';
     }
 
     /**
