@@ -12,7 +12,8 @@
  * rights are the tab's and the links': the view answers only for a tab named in MegaMenuTabs[] with a
  * MegaMenuTemplate, and only while that tab is in the user's top menu, enabled and open to the user, as the topmenu
  * operator decides it for the header (Tabs[], HiddenTabs[], SetupTabs[], PolicyList[] and CheckViewAccess of the tab's
- * address); every link in it is then checked as in the left menu (PolicyList_<link>[], CheckViewAccess).
+ * address), in the context of the admin's pages (navigation), and never for the anonymous user; every link in it is
+ * then checked as in the left menu (PolicyList_<link>[], CheckViewAccess).
  * Guide: doc/features/6.0/admin4-design.md ("Mega menu").
  *
  * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
@@ -35,7 +36,9 @@ class Megamenu extends \Exponential\Runnable\ModuleView
         $template = self::templateFor( $tab, $ini );
         if ( $template === null )
             return $Module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' );
-        if ( !self::tabIsOpen( $tab, $ini ) )
+        // user/login is a policy the anonymous user may hold: no menu without a signed-in user, whatever the tab's
+        // own policies
+        if ( !\eZUser::currentUser()->isRegistered() || !self::tabIsOpen( $tab, $ini ) )
             return $Module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' );
 
         // a fragment for a script: no debug report appended to it

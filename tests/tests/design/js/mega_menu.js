@@ -234,6 +234,7 @@ const scenarios = {
     'two tabs: opening the first again closes the second': [['click', 'click second', 'click'], { second: true }],
     'two tabs: a preview of the second closes the first': [['enter', 'wait:300', 'leave', 'enter second', 'wait:300'], { second: true }],
     'two tabs: each opens on its own': [['click second'], { second: true }],
+    'two tabs: hovering the second keeps the first opened by a click': [['click', 'enter second', 'wait:1000'], { second: true }],
 };
 (async () => {
     for (const name of Object.keys(scenarios)) {

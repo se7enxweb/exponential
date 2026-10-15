@@ -2,7 +2,8 @@
  * admin4 (prototype): the mega menu of a top tab (menu.ini [TopAdminMenu] MegaMenuTabs[], each tab whose
  * [Topmenu_<tab>] names a MegaMenuTemplate; page_topmenuitem.tpl). Loaded only while that setting names a tab
  * (page_head_script.tpl). Each tab has its own button and panel, and one panel is open at a time: opening one, by
- * a click, a key or the hover preview, closes the other.
+ * a click, a key or the hover preview, closes the other; a panel opened by a click or a key is not replaced by the
+ * hover preview of another tab.
  *
  * The WAI-ARIA disclosure navigation pattern, not a menu: the tab stays a link, the button beside it
  * (.a4-mega-toggle, aria-expanded, aria-controls) opens and closes a panel of plain links under the header.
@@ -28,7 +29,7 @@
     'use strict';
 
     var ENTER_DELAY = 300, LEAVE_DELAY = 400;
-    var closers = [];    // per tab with a mega menu: closes its panel; one panel is open at a time
+    var menus = [];      // per tab with a mega menu: { close, isOpen }; one panel is open at a time
 
     function megaMenu(item) {
         var toggle = item.querySelector('.a4-mega-toggle');
@@ -120,17 +121,27 @@
             panel.hidden = !next;
             item.classList.toggle('is-mega-open', !!next);
             if (next) {
-                closers.forEach(function (close) { if (close !== closeThis) close(); });
+                menus.forEach(function (m) { if (m !== self) m.close(); });
                 load();
             }
             else if (focusToggle) toggle.focus();
         }
 
-        function closeThis() {
-            if (mode) set(null, false);
-            else stop();
+        // this tab's panel to the others: closed when another opens; opened on purpose (not a preview), it keeps
+        // the hover preview of another tab from opening
+        var self = {
+            close: function () {
+                if (mode) set(null, false);
+                else stop();
+            },
+            isOpen: function () { return mode === 'open'; }
+        };
+        menus.push(self);
+
+        // another tab's panel opened by a click or a key
+        function otherMegaOpen() {
+            return menus.some(function (m) { return m !== self && m.isOpen(); });
         }
-        closers.push(closeThis);
 
         toggle.addEventListener('click', function () {
             // a preview the button is clicked on stays open
@@ -177,7 +188,7 @@
                 return;
             }
             wait(function () {
-                if (!mode && usable() && !otherOpen()) set('preview', false);
+                if (!mode && usable() && !otherOpen() && !otherMegaOpen()) set('preview', false);
             }, ENTER_DELAY);
         });
         item.addEventListener('pointerleave', function (e) {

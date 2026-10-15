@@ -204,6 +204,7 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
         $this->assertLessThan( $fetch, strpos( $view, 'return $Module->handleError( \eZError::KERNEL_NOT_AVAILABLE' ) );
         $this->assertLessThan( $fetch, strpos( $view, 'return $Module->handleError( \eZError::KERNEL_ACCESS_DENIED' ) );
         $this->assertStringContainsString( 'new \eZTopMenuOperator()', $view, 'the header\'s own verdict on the tab' );
+        $this->assertLessThan( $fetch, strpos( $view, '\eZUser::currentUser()->isRegistered()' ), 'never for the anonymous user' );
         $this->assertStringContainsString( "'Exponential\\\\View\\\\Kernel\\\\User\\\\Megamenu'", self::read( 'autoload/ezp_kernel.php' ) );
         $this->assertStringNotContainsString( 'Setup\\\\Megamenu', self::read( 'autoload/ezp_kernel.php' ) );
         $this->assertStringContainsString( '\Exponential\View\Kernel\User\Megamenu::main(', self::read( 'kernel/user/megamenu.php' ) );
@@ -446,7 +447,7 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
             $this->assertIsArray( $row, 'the harness ran: ' . $out );
             $s[$row['name']] = $row;
         }
-        $this->assertCount( 35, $s );
+        $this->assertCount( 36, $s );
 
         $open = function ( $name ) use ( $s ) {
             $this->assertSame( 'true', $s[$name]['expanded'], $name );
@@ -533,6 +534,9 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
         $second( 'two tabs: a preview of the second closes the first', true );
         $closed( 'two tabs: each opens on its own' );
         $second( 'two tabs: each opens on its own', true );
+        // a panel opened on purpose is not replaced by the hover preview of another tab
+        $open( 'two tabs: hovering the second keeps the first opened by a click' );
+        $second( 'two tabs: hovering the second keeps the first opened by a click', false );
     }
 
     /** menu.ini with the given values set in this process; undone in tearDown() */
@@ -562,6 +566,43 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
         }
         $this->iniBackup = array();
         parent::tearDown();
+    }
+
+    /** Renders page_topmenuitem.tpl for one tab with the header's hash of mega menu tabs; returns the HTML */
+    private static function renderItem( array $item, array $megaTabs )
+    {
+        $tpl = eZTemplate::factory();
+        $tpl->setVariable( 'menu_item', $item + array( 'url' => 'x', 'name' => 'X', 'tooltip' => '', 'position' => 'middle',
+                                                       'enabled' => true, 'access' => true ) );
+        $tpl->setVariable( 'navigationpart_identifier', '' );
+        $tpl->setVariable( 'a4_mega_tabs', $megaTabs );
+        return $tpl->fetch( 'file:design/admin4/templates/page_topmenuitem.tpl' );
+    }
+
+    /** MM-02: the item, rendered: a button and panel per tab the header names, none for the others */
+    public function testEachTabGetsItsOwnButtonAndPanel()
+    {
+        $tabs = array( 'ezusernavigationpart' => 'users', 'ezsetupnavigationpart' => 'setup' );
+        $users = self::renderItem( array( 'navigationpart_identifier' => 'ezusernavigationpart', 'url' => 'content/view/full/5', 'name' => 'Users' ), $tabs );
+        $this->assertStringContainsString( '<li class="a4-mega-item">', $users );
+        $this->assertMatchesRegularExpression( '#<button type="button" class="a4-mega-toggle" aria-expanded="false" aria-controls="a4-mega-users"#', $users );
+        $this->assertMatchesRegularExpression( '#data-a4-mega-src="[^"]*/user/megamenu/users"#', $users );
+        $this->assertStringContainsString( '<div id="a4-mega-users" class="a4-mega-panel" hidden', $users );
+        $this->assertMatchesRegularExpression( '#aria-label="[^"]*Users[^"]*"#', $users, 'the button names the tab' );
+        $this->assertMatchesRegularExpression( '#<p class="a4-mega-all"><a href="[^"]*/content/view/full/5">#', $users, 'the way to the tab\'s page' );
+
+        $setup = self::renderItem( array( 'navigationpart_identifier' => 'ezsetupnavigationpart', 'url' => 'setup/menu', 'name' => 'Setup' ), $tabs );
+        $this->assertMatchesRegularExpression( '#data-a4-mega-src="[^"]*/user/megamenu/setup"#', $setup );
+        $this->assertStringContainsString( 'aria-controls="a4-mega-setup"', $setup );
+
+        // a tab the header does not name, one the user may not open, a disabled one, and no hash at all: no button
+        foreach ( array( self::renderItem( array( 'navigationpart_identifier' => 'ezcontentnavigationpart' ), $tabs ),
+                         self::renderItem( array( 'navigationpart_identifier' => 'ezusernavigationpart', 'access' => false ), $tabs ),
+                         self::renderItem( array( 'navigationpart_identifier' => 'ezusernavigationpart', 'enabled' => false ), $tabs ),
+                         self::renderItem( array( 'navigationpart_identifier' => 'ezusernavigationpart' ), array() ) ) as $html )
+        {
+            $this->assertStringNotContainsString( 'a4-mega', $html );
+        }
     }
 
     /** MM-03: the view answers only for a tab of MegaMenuTabs[] with a template of the design */

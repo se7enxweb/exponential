@@ -386,7 +386,8 @@ MegaMenuTabs[]=users
 
 Then clear the caches (the INI cache and the template caches: the header reads the setting when its template is
 compiled). With `MegaMenuTabs[]` empty the header draws no button and the page loads no script. One panel is open
-at a time: opening one, by a click, a key or the hover preview, closes the other.
+at a time: opening one, by a click, a key or the hover preview, closes the other. A panel opened by a click or a key is not
+replaced by the hover preview of another tab.
 
 #### Which tabs take part, and how to add one
 
@@ -415,7 +416,8 @@ section of its own, `[Leftmenu_user_mega]`, which defines no link a menu already
 `[Leftmenu_user]` to its group "Access control" and `[Leftmenu_my]` (the user's own settings, the Dashboard tab's
 menu) to "My account", with their addresses, policies, icons and descriptions (`LinkIcons[]`/`LinkDescriptions[]`
 are set in those sections; they are read only where a menu is drawn as tiles or as a mega menu). Its own links are
-the two the tab has no menu entry for: the user tree (`content/view/full/5`, the tab's own page and policy) and the
+the two the tab has no menu entry for: the user tree (`content/view/full/5`, the tab's own page and policy, as
+`[Topmenu_users]` has it; a site with another `content.ini [NodeSettings] UserRootNode` changes both) and the
 sessions (`setup/session`, the Setup menu's policy). It is named `Leftmenu_user_*` so that it shares the translation
 context of the tab's menu, `design/admin/parts/user/menu`. The default choice, by group:
 
@@ -481,9 +483,13 @@ opens the user form directly. A permission check for one user has no view in the
   tabs belong to different modules and a policy of one of them would keep the others' users out. The rights are
   the tab's and the links': the view answers only for a tab named in `MegaMenuTabs[]` with a `MegaMenuTemplate`
   (any other: not available), and only while the tab is in the user's top menu, enabled and open to the user
-  (denied otherwise). That verdict is the topmenu operator's, the one the header draws the tabs with: `Tabs[]`,
-  `HiddenTabs[]`, `SetupTabs[]`, the tab's `PolicyList[]` and, with `CheckViewAccess`, its address. Each link is then
-  checked as in the left menu. The header draws a button only on a tab it shows enabled and open. The request is a
+  (denied otherwise), never for the anonymous user. That verdict is the topmenu operator's, the one the header draws
+  the tabs with: `Tabs[]`, `HiddenTabs[]`, `SetupTabs[]`, the tab's `PolicyList[]` and, with `CheckViewAccess`, its
+  address; `Shown[]` and `Enabled[]` are read for the `navigation` context, the one of the admin's pages (a tab
+  that differs there from the page's context gets a button whose panel is refused). Each link is then checked as in
+  the left menu. The header draws a button only on a tab it shows enabled and open. A tab name is lower case
+  letters, digits and `_` (as `[Topmenu_<tab>]`); give a tab with a mega menu a `PolicyList[]`, as the shipped
+  ones have. The request is a
   view of the user module, so the audit trail records it as `access.view.sensitive` once per page on which a panel
   is opened.
 - **Look:** an admin4 card (`--a4-card`, `--a4-line`, `--a4-radius-s`, `--a4-shadow-m`), centred under the header
