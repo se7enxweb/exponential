@@ -899,7 +899,7 @@ f91a366a6abfa6b8a706b154b7aec12c  design/admin4/override/templates/template_look
 03505c55345b654eeb275f3b614a92bf  design/admin4/override/templates/thumbnail/image.tpl
 6971adb19c3c39b21f245c72b7f73305  design/admin4/override/templates/thumbnail/image_browse.tpl
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
-5428270ed98144213bce63521dfe49ca  design/admin4/stylesheets/admin4.css
+fe47239c63c820734c9c1a5758fb64f4  design/admin4/stylesheets/admin4.css
 9b3e0d4508d61bd3c6e14773293faf2c  design/admin4/stylesheets/components.css
 29dbb2aaee5436f235093d29c633111b  design/admin4/stylesheets/content.css
 6d085bb1402a87ddff87deb24588c597  design/admin4/stylesheets/core.css
@@ -1095,7 +1095,7 @@ c6caf8a9fa0db2771a975b122bcb5226  design/admin4/templates/navigator/google.tpl
 c49f6538ab403d0457921734f2327d39  design/admin4/templates/node/removenode.tpl
 cc3560235bfe3988d0e9b1cfe0b55ea5  design/admin4/templates/node/removeobject.tpl
 2f5bd72b8c887844a74775e01433d813  design/admin4/templates/node/top_node_full.tpl
-9230200d0cf92dbe3d5d0e298e6a9f5b  design/admin4/templates/node/view/a4_full_body.tpl
+5bfb5a999bd36e44a05c88f955895df3  design/admin4/templates/node/view/a4_full_body.tpl
 ea465bb76b53128ff5a195583ce942a2  design/admin4/templates/node/view/admin_preview.tpl
 dc142438409e90d072cf19d700673a82  design/admin4/templates/node/view/ajaxuploader_preview.tpl
 b9a3fa9fe69402b67871fc1aac68fcad  design/admin4/templates/node/view/browse_thumbnail.tpl

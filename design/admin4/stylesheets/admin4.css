@@ -1998,13 +1998,16 @@ div.context-information.a4-node-meta {
 .a4-node-meta > * + *::before { content: "\00b7"; margin: 0 var(--a4-space-2); color: var(--a4-muted); }
 .a4-node-meta button.a4-copy {
   margin: 0; padding: 0; border: 0; background: none; font: inherit; color: inherit; cursor: copy;
-  border-bottom: 1px dashed var(--a4-line-strong);
   /* a 24px target at every pointer (WCAG 2.5.8): the language badges of the same line are 24px high and wrap beside
      it on a phone, where a shorter button failed axe target-size; the line is 24px high anyway */
   display: inline-flex; align-items: center; min-height: var(--a4-space-5);
 }
-.a4-node-meta button.a4-copy:hover { color: var(--a4-ink); border-bottom-color: var(--a4-accent); }
-.a4-node-meta button.a4-copied { color: var(--a4-ok); border-bottom-color: var(--a4-ok); }
+.a4-node-meta button.a4-copy:hover { color: var(--a4-ink); }
+/* the underline sits on the label, so it starts at the text and not at the separator before it */
+.a4-node-meta button.a4-copy .a4-copy-label { border-bottom: 1px dashed var(--a4-line-strong); }
+.a4-node-meta button.a4-copy:hover .a4-copy-label { border-bottom-color: var(--a4-accent); }
+.a4-node-meta button.a4-copied { color: var(--a4-ok); }
+.a4-node-meta button.a4-copied .a4-copy-label { border-bottom-color: var(--a4-ok); }
 .a4-node-meta button.a4-copied::after { content: " \2713"; }
 .a4-node-langs { display: inline-flex; flex-wrap: wrap; gap: var(--a4-space-1); }
 /* each language badge of the node (a link, or the state of a missing one) is at least 24px high (WCAG 2.5.8), so a
