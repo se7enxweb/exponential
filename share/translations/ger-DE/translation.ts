@@ -16823,6 +16823,22 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>The design's top node and the objects below it.</source>
         <translation>Der oberste Knoten des Designs und die Objekte darunter.</translation>
     </message>
+    <message>
+        <source>Unreferenced objects</source>
+        <translation>Nicht verknüpfte Objekte</translation>
+    </message>
+    <message>
+        <source>Broken relations</source>
+        <translation>Ungültige Relationen</translation>
+    </message>
+    <message>
+        <source>Visible content that links to deleted, hidden or trashed content.</source>
+        <translation>Sichtbare Inhalte, die auf gelöschte, versteckte oder im Papierkorb liegende Inhalte verweisen.</translation>
+    </message>
+    <message>
+        <source>Objects nothing refers to, to tidy up or move to the trash.</source>
+        <translation>Objekte, auf die nichts verweist – zum Aufräumen oder für den Papierkorb.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -17899,6 +17915,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Upload multiple files</source>
         <translation>Mehrere Dateien hochladen</translation>
+    </message>
+    <message>
+        <source>Unreferenced objects in subtree</source>
+        <translation>Nicht verknüpfte Objekte im Teilbaum</translation>
+    </message>
+    <message>
+        <source>Broken relations in subtree</source>
+        <translation>Ungültige Relationen im Teilbaum</translation>
     </message>
 </context>
 <context>
@@ -61760,6 +61784,393 @@ wenn Sie die Option &quot;%3&quot; von &quot;%4&quot; ausgewählt haben </transl
 You will need to change the class of the node by using the swap functionality.</source>
         <translation>Die Klasse wird von einem Knoten der obersten Ebene verwendet und kann nicht entfernt werden.
 Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentcheck</name>
+    <message>
+        <source>Deleted</source>
+        <translation>Gelöscht</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Im Papierkorb</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Versteckt</translation>
+    </message>
+    <message>
+        <source>Never published</source>
+        <translation>Nie veröffentlicht</translation>
+    </message>
+    <message>
+        <source>Without location</source>
+        <translation>Ohne Ort</translation>
+    </message>
+    <message>
+        <source>Links and embeds in rich text</source>
+        <translation>Links und Einbettungen im Rich Text</translation>
+    </message>
+    <message>
+        <source>Object relations and relation fields</source>
+        <translation>Objektbeziehungen und Beziehungsfelder</translation>
+    </message>
+    <message>
+        <source>Link</source>
+        <translation>Link</translation>
+    </message>
+    <message>
+        <source>Embed</source>
+        <translation>Einbettung</translation>
+    </message>
+    <message>
+        <source>Inline embed</source>
+        <translation>Eingebettet im Text</translation>
+    </message>
+    <message>
+        <source>Object relation</source>
+        <translation>Objektbeziehung</translation>
+    </message>
+    <message>
+        <source>Relation field</source>
+        <translation>Beziehungsfeld</translation>
+    </message>
+    <message>
+        <source>Broken relations</source>
+        <translation>Ungültige Relationen</translation>
+    </message>
+    <message>
+        <source>Visible, published content that refers to something a visitor cannot reach: an object or node that was deleted, is in the trash, is hidden or was never published. Checked are the object relations and relation fields of the published version and the links and embeds in its rich text. Nothing is changed here; open a source to edit it.</source>
+        <translation>Sichtbare, veröffentlichte Inhalte, die auf etwas verweisen, das Besucher nicht erreichen: ein Objekt oder Knoten, der gelöscht wurde, im Papierkorb liegt, versteckt ist oder nie veröffentlicht wurde. Geprüft werden die Objektbeziehungen und Beziehungsfelder der veröffentlichten Version und die Links und Einbettungen in ihrem Rich Text. Hier wird nichts geändert; öffnen Sie eine Quelle, um sie zu bearbeiten.</translation>
+    </message>
+    <message>
+        <source>This check is not available on this database.</source>
+        <translation>Diese Prüfung ist auf dieser Datenbank nicht verfügbar.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filter</translation>
+    </message>
+    <message>
+        <source>Below node</source>
+        <translation>Unterhalb von Knoten</translation>
+    </message>
+    <message>
+        <source>Now: %name. 1 checks the whole tree.</source>
+        <translation>Jetzt: %name. 1 prüft den ganzen Baum.</translation>
+    </message>
+    <message>
+        <source>Whole tree</source>
+        <translation>Ganzer Baum</translation>
+    </message>
+    <message>
+        <source>Leave out the nodes below</source>
+        <translation>Knoten auslassen (mit allem darunter)</translation>
+    </message>
+    <message>
+        <source>Node ids, separated by commas.</source>
+        <translation>Knoten-IDs, durch Kommas getrennt.</translation>
+    </message>
+    <message>
+        <source>Left out: %count subtrees.</source>
+        <translation>Ausgelassen: %count Teilbäume.</translation>
+    </message>
+    <message>
+        <source>Targets</source>
+        <translation>Ziele</translation>
+    </message>
+    <message>
+        <source>References</source>
+        <translation>Verweise</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Prüfen</translation>
+    </message>
+    <message>
+        <source>Findings</source>
+        <translation>Befunde</translation>
+    </message>
+    <message>
+        <source>%count objects checked after object %after.</source>
+        <translation>%count Objekte nach Objekt %after geprüft.</translation>
+    </message>
+    <message>
+        <source>%count objects checked.</source>
+        <translation>%count Objekte geprüft.</translation>
+    </message>
+    <message>
+        <source>No broken relation found.</source>
+        <translation>Keine ungültige Relation gefunden.</translation>
+    </message>
+    <message>
+        <source>No broken relation found among these objects. Go on with the next page.</source>
+        <translation>Unter diesen Objekten keine ungültige Relation gefunden. Weiter mit der nächsten Seite.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Quelle</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Feld</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Ziel</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Zustand</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Aktionen</translation>
+    </message>
+    <message>
+        <source>Object %id</source>
+        <translation>Objekt %id</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Knoten %id</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Bearbeiten</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Pro Seite</translation>
+    </message>
+    <message>
+        <source>Show %count findings per page.</source>
+        <translation>%count Befunde pro Seite zeigen.</translation>
+    </message>
+    <message>
+        <source>From the start</source>
+        <translation>Von vorn</translation>
+    </message>
+    <message>
+        <source>Next page</source>
+        <translation>Nächste Seite</translation>
+    </message>
+    <message>
+        <source>Move to the trash</source>
+        <translation>In den Papierkorb</translation>
+    </message>
+    <message>
+        <source>No object was ticked. Tick the objects to move first.</source>
+        <translation>Kein Objekt angekreuzt. Kreuzen Sie zuerst die zu verschiebenden Objekte an.</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Zurück zur Liste</translation>
+    </message>
+    <message>
+        <source>Only the first %count ticked objects are taken; move the others afterwards.</source>
+        <translation>Nur die ersten %count angekreuzten Objekte werden übernommen; verschieben Sie die übrigen danach.</translation>
+    </message>
+    <message>
+        <source>%count objects will be moved to the trash with every location they have. Nothing is deleted permanently: they can be restored from the trash until it is emptied.</source>
+        <translation>%count Objekte werden mit allen ihren Orten in den Papierkorb verschoben. Nichts wird endgültig gelöscht: Sie lassen sich aus dem Papierkorb wiederherstellen, bis er geleert wird.</translation>
+    </message>
+    <message>
+        <source>None of the ticked objects can be moved to the trash.</source>
+        <translation>Keines der angekreuzten Objekte kann in den Papierkorb verschoben werden.</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Name</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klasse</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Ort</translation>
+    </message>
+    <message>
+        <source>What happens</source>
+        <translation>Was geschieht</translation>
+    </message>
+    <message>
+        <source>Moved to the trash</source>
+        <translation>Kommt in den Papierkorb</translation>
+    </message>
+    <message>
+        <source>Not moved</source>
+        <translation>Wird nicht verschoben</translation>
+    </message>
+    <message>
+        <source>Move %count objects to the trash</source>
+        <translation>%count Objekte in den Papierkorb verschieben</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abbrechen</translation>
+    </message>
+    <message>
+        <source>Not found, or you have no access to it.</source>
+        <translation>Nicht gefunden, oder Sie haben keinen Zugriff darauf.</translation>
+    </message>
+    <message>
+        <source>It is not published.</source>
+        <translation>Es ist nicht veröffentlicht.</translation>
+    </message>
+    <message>
+        <source>Another object refers to it now.</source>
+        <translation>Inzwischen verweist ein anderes Objekt darauf.</translation>
+    </message>
+    <message>
+        <source>You may not remove it, or one of its locations.</source>
+        <translation>Sie dürfen es oder einen seiner Orte nicht entfernen.</translation>
+    </message>
+    <message>
+        <source>It has sub-items. Remove it from the content tree if that is meant.</source>
+        <translation>Es hat Unterelemente. Entfernen Sie es im Inhaltsbaum, wenn das gewollt ist.</translation>
+    </message>
+    <message>
+        <source>Its class does not allow the trash.</source>
+        <translation>Seine Klasse erlaubt den Papierkorb nicht.</translation>
+    </message>
+    <message>
+        <source>It has a version waiting to be published.</source>
+        <translation>Eine Version wartet auf die Veröffentlichung.</translation>
+    </message>
+    <message>
+        <source>A content job is working on it.</source>
+        <translation>Ein Inhaltsauftrag bearbeitet es gerade.</translation>
+    </message>
+    <message>
+        <source>It cannot be moved.</source>
+        <translation>Es kann nicht verschoben werden.</translation>
+    </message>
+    <message>
+        <source>This page only takes the form of the list of unreferenced objects.</source>
+        <translation>Diese Seite nimmt nur das Formular der Liste nicht verknüpfter Objekte an.</translation>
+    </message>
+    <message>
+        <source>The form has expired. Open the list again and tick the objects once more.</source>
+        <translation>Das Formular ist abgelaufen. Öffnen Sie die Liste erneut und kreuzen Sie die Objekte noch einmal an.</translation>
+    </message>
+    <message>
+        <source>Last modified</source>
+        <translation>Zuletzt geändert</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Veröffentlicht</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>Objekt-ID</translation>
+    </message>
+    <message>
+        <source>Unreferenced objects (%count)</source>
+        <translation>Nicht verknüpfte Objekte (%count)</translation>
+    </message>
+    <message>
+        <source>Published objects below “%node” that no other object refers to: no object relation, no relation field and no link or embed in rich text, from a published version or a current draft. References from objects in the trash and from old versions do not count. An object is listed where its main location is.</source>
+        <translation>Veröffentlichte Objekte unterhalb von „%node“, auf die kein anderes Objekt verweist: keine Objektbeziehung, kein Beziehungsfeld und kein Link und keine Einbettung im Rich Text, aus einer veröffentlichten Version oder einem aktuellen Entwurf. Verweise aus Objekten im Papierkorb und aus alten Versionen zählen nicht. Ein Objekt steht dort, wo sein Hauptort ist.</translation>
+    </message>
+    <message>
+        <source>%count objects were moved to the trash. They can be restored from the trash.</source>
+        <translation>%count Objekte wurden in den Papierkorb verschoben. Sie lassen sich aus dem Papierkorb wiederherstellen.</translation>
+    </message>
+    <message>
+        <source>%count could not be moved.</source>
+        <translation>%count konnten nicht verschoben werden.</translation>
+    </message>
+    <message>
+        <source>Nothing was moved: the objects or your access changed after the confirmation. Tick them again.</source>
+        <translation>Nichts wurde verschoben: Die Objekte oder Ihre Rechte haben sich nach der Bestätigung geändert. Kreuzen Sie sie erneut an.</translation>
+    </message>
+    <message>
+        <source>Nothing was moved to the trash.</source>
+        <translation>Nichts wurde in den Papierkorb verschoben.</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Klassen</translation>
+    </message>
+    <message>
+        <source>None chosen: every class. Hold Ctrl or Cmd to choose several, for example Image and File.</source>
+        <translation>Keine gewählt: alle Klassen. Mit gedrückter Strg- oder Cmd-Taste mehrere wählen, etwa Bild und Datei.</translation>
+    </message>
+    <message>
+        <source>Order by</source>
+        <translation>Sortieren nach</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Richtung</translation>
+    </message>
+    <message>
+        <source>Ascending</source>
+        <translation>Aufsteigend</translation>
+    </message>
+    <message>
+        <source>Descending</source>
+        <translation>Absteigend</translation>
+    </message>
+    <message>
+        <source>Also objects with sub-items</source>
+        <translation>Auch Objekte mit Unterelementen</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Anzeigen</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Objekte</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from bis %to von %count</translation>
+    </message>
+    <message>
+        <source>No unreferenced object below this node matches the filter.</source>
+        <translation>Unterhalb dieses Knotens passt kein nicht verknüpftes Objekt zum Filter.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Auswählen</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Größe</translation>
+    </message>
+    <message>
+        <source>%count sub-items</source>
+        <translation>%count Unterelemente</translation>
+    </message>
+    <message>
+        <source>(%count locations)</source>
+        <translation>(%count Orte)</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>%count Einträge pro Seite zeigen.</translation>
+    </message>
+    <message>
+        <source>Move ticked objects to the trash</source>
+        <translation>Angekreuzte Objekte in den Papierkorb</translation>
+    </message>
+    <message>
+        <source>The next page shows what will happen and asks you to confirm. At most %count objects at a time; they can be restored from the trash.</source>
+        <translation>Die nächste Seite zeigt, was geschieht, und fragt nach Bestätigung. Höchstens %count Objekte auf einmal; sie lassen sich aus dem Papierkorb wiederherstellen.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Setup</translation>
+    </message>
+    <message>
+        <source>Unreferenced objects</source>
+        <translation>Nicht verknüpfte Objekte</translation>
     </message>
 </context>
 <context>

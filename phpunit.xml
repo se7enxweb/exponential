@@ -67,6 +67,12 @@
             <directory suffix="Test.php">tests/tests/kernel/contentfinder</directory>
         </testsuite>
 
+        <!-- the content checks (doc/features/6.0/content-checks.md): the query tests need no database; the database
+             tests write, so they run only in a throwaway installation named by EXP_CONTENTCHECK_SANDBOX and skip elsewhere -->
+        <testsuite name="kernel-contentcheck">
+            <directory suffix="Test.php">tests/tests/kernel/contentcheck</directory>
+        </testsuite>
+
         <testsuite name="lib">
             <directory suffix="Test.php">tests/tests/lib</directory>
             <exclude>tests/tests/lib/ezdb/mongodb</exclude>

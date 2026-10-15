@@ -1,9 +1,18 @@
 <!-- Advanced menu -->
+{* The content checks (doc/features/6.0/content-checks.md) for the subtree, only for a user with their policies *}
+{def $contentcheck_unreferenced = fetch( 'user', 'has_access_to', hash( 'module', 'contentcheck', 'function', 'unreferenced' ) )
+     $contentcheck_broken = fetch( 'user', 'has_access_to', hash( 'module', 'contentcheck', 'function', 'brokenrelations' ) )}
 <script type="text/javascript">
 menuArray['Advanced'] = {ldelim} 'depth': 1 {rdelim};
 menuArray['Advanced']['elements'] = {ldelim}{rdelim};
 menuArray['Advanced']['elements']['menu-list'] = {ldelim} 'url': {"content/view/sitemap/%nodeID%"|ezurl} {rdelim};
 menuArray['Advanced']['elements']['reverse-related'] = {ldelim} 'url': {"content/reverserelatedlist/%nodeID%"|ezurl} {rdelim};
+{if $contentcheck_unreferenced}
+menuArray['Advanced']['elements']['menu-unreferenced'] = {ldelim} 'url': {"contentcheck/unreferenced/%nodeID%"|ezurl} {rdelim};
+{/if}
+{if $contentcheck_broken}
+menuArray['Advanced']['elements']['menu-brokenrelations'] = {ldelim} 'url': {"contentcheck/brokenrelations/%nodeID%"|ezurl} {rdelim};
+{/if}
 menuArray['Advanced']['elements']['menu-history'] = {ldelim} 'url': {"content/history/%objectID%"|ezurl} {rdelim};
 menuArray['Advanced']['elements']['menu-url-alias'] = {ldelim} 'url': {"content/urlalias/%nodeID%"|ezurl} {rdelim};
 </script>
@@ -14,6 +23,8 @@ menuArray['Advanced']['elements']['menu-url-alias'] = {ldelim} 'url': {"content/
     <hr />
     <a id="menu-list" href="#" onmouseover="ezpopmenu_mouseOver( 'Advanced' )">{'Sitemap for subtree'|i18n( 'design/admin/popupmenu' )}</a>
     <a id="reverse-related" href="#" onmouseover="ezpopmenu_mouseOver( 'Advanced' )">{'Reverse related for subtree'|i18n( 'design/admin/popupmenu' )}</a>
+    {if $contentcheck_unreferenced}<a id="menu-unreferenced" href="#" onmouseover="ezpopmenu_mouseOver( 'Advanced' )">{'Unreferenced objects in subtree'|i18n( 'design/admin/popupmenu' )}</a>{/if}
+    {if $contentcheck_broken}<a id="menu-brokenrelations" href="#" onmouseover="ezpopmenu_mouseOver( 'Advanced' )">{'Broken relations in subtree'|i18n( 'design/admin/popupmenu' )}</a>{/if}
     <hr />
     <a id="menu-history" href="#" onmouseover="ezpopmenu_mouseOver( 'Advanced' )">{'Manage versions'|i18n( 'design/admin/popupmenu' )}</a>
     <a id="menu-url-alias" href="#" onmouseover="ezpopmenu_mouseOver( 'Advanced' )">{'Manage URL aliases'|i18n( 'design/admin/popupmenu' )}</a>
@@ -35,3 +46,4 @@ menuArray['Advanced']['elements']['menu-url-alias'] = {ldelim} 'url': {"content/
   <input type="hidden" name="ContentObjectID" value="%objectID%" />
   <input type="hidden" name="SwapNodeButton" value="x" />
 </form>
+{undef $contentcheck_unreferenced $contentcheck_broken}
