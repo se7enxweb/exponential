@@ -78,6 +78,7 @@ Read them in this order the first time. Each one also stands on its own.
 | [Class groups](class-groups.md) | Every class group read with its classes and objects, what removing a group would remove known before it is ticked, a group removed safely | 15 minutes |
 | [Sections](sections.md) | Sections understood and seen on the redesigned pages, one created, content assigned to it, a role limited to it, a template overridden for it, an unused one removed, the usual problems solved | 30 minutes |
 | [Roles, policies and unactivated users](roles-and-policies.md) | Every role read with what it gives and to whom, its policies as sentences, a role built with limited policies and put in order by drag and drop, assigned to a group, and unfinished registrations activated, mailed again or removed | 25 minutes |
+| [The administration design switch](ui-switch-design.md) | The designs a user may choose for their own session set up, an installed or extension design added with its fallback chain, the switch tool in every offered design, `uiswitch/design` given to a role, the switch tested and the usual problems solved | 20 minutes |
 | [Packages](packages.md) | Every repository and package read on Setup > Packages with its install state, size and dependencies, the installer's own packages recognised, a package downloaded in the classic or the JSON format, an upload validated before it is accepted, a package installed in the background or as drafts, a package removed knowing what goes | 20 minutes |
 | [Classic menus](classic-menu-settings.md) | Whether Setup > Menus (classic) matters for your siteaccess or Layouts does, the four arrangements and what each lists, five recipes with their exact lines, classic menus drawn from templates of your own | 20 minutes |
 | [Sessions](sessions.md) | Who signed in recently and who is signed in now, the session handler understood, sessions searched, sorted and removed safely without signing yourself out | 15 minutes |
@@ -129,6 +130,7 @@ You shape how the site looks and which extensions it uses.
    - [Template editor](../features/6.0/template-editor-overrides.md) and [override order](../features/6.0/template-override-ordering.md)
    - [The Exp Debug bar](../features/6.0/exp-debug-bar.md)
    - [Exponential Admin UI](../features/6.0/exp-adminui.md): the Admin UI look for the administration, as its own `adminui` siteaccess
+   - [Choosing the administration design](../features/6.0/ui-switch-design.md): admin4l, admin4, AdminUI or the classic design per user and session, and [its guide](ui-switch-design.md)
    - [Exponential Layouts](../bc/6.0/LAYOUTS.md): blocks, zones and rules built in the browser
 4. [Extensions](extensions.md): find, install, switch on and configure an extension. Depth:
    - [What a new installation comes with](../features/6.0/default-extension-distribution.md), [the extension list](../features/6.0/extension-list-and-downloads.md), [loading order](../features/6.0/extension-loading-order.md)
