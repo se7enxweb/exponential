@@ -171,6 +171,8 @@ class AdminLegacyControlsTest extends PHPUnit\Framework\TestCase
         $list = $rules[':is(#leftmenu, #rightmenu) :is(ul.leftmenu-items, .box-content > ul, .settings > ul)'];
         $this->assertSame( 'none', $list['list-style'], 'no bullets in any menu' );
         $this->assertSame( '0', $list['padding'] );
+        // without the list margins a plain menu's links need their own 24px target (the newsletter menu)
+        $this->assertSame( 'var(--a4-space-5)', $rules[':is(#leftmenu, #rightmenu) .box-content > ul > li > a']['min-height'] );
         $links = $rules['#leftmenu ul.leftmenu-items li > div > :is(a, span)'];
         $this->assertSame( 'var(--a4-space-2)', $links['padding-inline'], 'every ini menu has the grouped menu\'s inset' );
     }

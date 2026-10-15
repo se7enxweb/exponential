@@ -1667,6 +1667,13 @@ div#contentstructure ul#content_tree_menu ul a.openclose-close::after {
   list-style: none;
 }
 :is(#leftmenu, #rightmenu) :is(ul.leftmenu-items, .box-content > ul, .settings > ul) > li { margin: 0; list-style: none; }
+/* their links are 24px targets (WCAG 2.5.8): with the list margins gone, an extension's plain menu (the newsletter
+   menu, the current user's links) would otherwise put 15px links right under each other */
+:is(#leftmenu, #rightmenu) .box-content > ul > li > a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--a4-space-5);
+}
 
 /* The core tools of the right column (240px; cache, quick settings, bookmarks — an extension's box keeps its own
    layout): fields on the column's width, the buttons at its end, right under the field they belong to (the cache tool's choice and "Clear", the siteaccess and "Set"). A long cache name keeps
