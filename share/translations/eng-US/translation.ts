@@ -10671,6 +10671,22 @@
         <source>Attributes: %1</source>
         <translation>Attributes: %1</translation>
     </message>
+    <message>
+        <source>Deactivate and move</source>
+        <translation>Deactivate and move</translation>
+    </message>
+    <message>
+        <source>Reactivate and move back</source>
+        <translation>Reactivate and move back</translation>
+    </message>
+    <message>
+        <source>Disable this account and move it to the group of deactivated users, remembering where it was. Nothing is removed.</source>
+        <translation>Disable this account and move it to the group of deactivated users, remembering where it was. Nothing is removed.</translation>
+    </message>
+    <message>
+        <source>Enable this account and move it back to the locations it had.</source>
+        <translation>Enable this account and move it back to the locations it had.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/node/view/line</name>
@@ -15559,6 +15575,14 @@ Note: The packages will not be uninstalled.</translation>
         <source>Upload multiple files</source>
         <translation>Upload multiple files</translation>
     </message>
+    <message>
+        <source>Deactivate and move (user accounts)</source>
+        <translation>Deactivate and move (user accounts)</translation>
+    </message>
+    <message>
+        <source>Reactivate and move back (user accounts)</source>
+        <translation>Reactivate and move back (user accounts)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/preview/article</name>
@@ -17067,6 +17091,10 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>check user accounts, and disable, enable and unlock them</source>
         <translation>check user accounts, and disable, enable and unlock them</translation>
+    </message>
+    <message>
+        <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
+        <translation>deactivate user accounts and move them to the group of deactivated users, and move them back</translation>
     </message>
 </context>
 <context>
@@ -37502,6 +37530,209 @@ your account.</translation>
     <message>
         <source>User ID</source>
         <translation>User ID</translation>
+    </message>
+    <message>
+        <source>Deactivate and move the ticked accounts</source>
+        <translation>Deactivate and move the ticked accounts</translation>
+    </message>
+    <message>
+        <source>Reactivate and move back the ticked accounts</source>
+        <translation>Reactivate and move back the ticked accounts</translation>
+    </message>
+    <message>
+        <source>deactivated</source>
+        <translation>deactivated</translation>
+    </message>
+    <message>
+        <source>Moved here by Deactivate and move; Reactivate and move back puts it back.</source>
+        <translation>Moved here by Deactivate and move; Reactivate and move back puts it back.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/deactivate</name>
+    <message>
+        <source>Deactivate and move</source>
+        <translation>Deactivate and move</translation>
+    </message>
+    <message>
+        <source>Reactivate and move back</source>
+        <translation>Reactivate and move back</translation>
+    </message>
+    <message>
+        <source>Deactivated users</source>
+        <translation>Deactivated users</translation>
+    </message>
+    <message>
+        <source>Deactivated users (created now)</source>
+        <translation>Deactivated users (created now)</translation>
+    </message>
+    <message>
+        <source>Disabled accounts, kept instead of removed. No roles; hidden.</source>
+        <translation>Disabled accounts, kept instead of removed. No roles; hidden.</translation>
+    </message>
+    <message>
+        <source>the anonymous user, the administrator account or you</source>
+        <translation>the anonymous user, the administrator account or you</translation>
+    </message>
+    <message>
+        <source>not found, or not visible to you</source>
+        <translation>not found, or not visible to you</translation>
+    </message>
+    <message>
+        <source>not a user account</source>
+        <translation>not a user account</translation>
+    </message>
+    <message>
+        <source>you may not edit, move or remove them, or not place them where they go</source>
+        <translation>you may not edit, move or remove them, or not place them where they go</translation>
+    </message>
+    <message>
+        <source>without a location</source>
+        <translation>without a location</translation>
+    </message>
+    <message>
+        <source>a location has sub-items</source>
+        <translation>a location has sub-items</translation>
+    </message>
+    <message>
+        <source>the group of deactivated users is missing</source>
+        <translation>the group of deactivated users is missing</translation>
+    </message>
+    <message>
+        <source>never activated: activate them under Unactivated users</source>
+        <translation>never activated: activate them under Unactivated users</translation>
+    </message>
+    <message>
+        <source>neither a former location nor the default user group can take them</source>
+        <translation>neither a former location nor the default user group can take them</translation>
+    </message>
+    <message>
+        <source>already in that state</source>
+        <translation>already in that state</translation>
+    </message>
+    <message>
+        <source>The node set in site.ini [UserSettings] DeactivatedUserGroupNodeID does not exist. Correct the setting or leave it empty.</source>
+        <translation>The node set in site.ini [UserSettings] DeactivatedUserGroupNodeID does not exist. Correct the setting or leave it empty.</translation>
+    </message>
+    <message>
+        <source>An object with the remote id of the group of deactivated users exists but has no published location. Publish it, or set [UserSettings] DeactivatedUserGroupNodeID.</source>
+        <translation>An object with the remote id of the group of deactivated users exists but has no published location. Publish it, or set [UserSettings] DeactivatedUserGroupNodeID.</translation>
+    </message>
+    <message>
+        <source>The group of deactivated users does not exist yet, and you may not create it (a user group below the Users node). Ask an administrator to create it, for instance with bin/php/ezcreatedeactivatedusergroup.php.</source>
+        <translation>The group of deactivated users does not exist yet, and you may not create it (a user group below the Users node). Ask an administrator to create it, for instance with bin/php/ezcreatedeactivatedusergroup.php.</translation>
+    </message>
+    <message>
+        <source>The group of deactivated users could not be created. Nothing was changed.</source>
+        <translation>The group of deactivated users could not be created. Nothing was changed.</translation>
+    </message>
+    <message>
+        <source>Deactivate and move %count accounts?</source>
+        <translation>Deactivate and move %count accounts?</translation>
+    </message>
+    <message>
+        <source>Reactivate and move back %count accounts?</source>
+        <translation>Reactivate and move back %count accounts?</translation>
+    </message>
+    <message>
+        <source>Each account is disabled, so it cannot sign in, and its sessions end. Its locations are brought together in the group of deactivated users, which has no roles and is hidden; where it was is remembered. Its content and the roles assigned to the account itself stay. Nothing is removed.</source>
+        <translation>Each account is disabled, so it cannot sign in, and its sessions end. Its locations are brought together in the group of deactivated users, which has no roles and is hidden; where it was is remembered. Its content and the roles assigned to the account itself stay. Nothing is removed.</translation>
+    </message>
+    <message>
+        <source>Each account is enabled and moved back to the locations it had. A former location that no longer exists or that you may not use is left out; when the main one is, the account goes to the default user group.</source>
+        <translation>Each account is enabled and moved back to the locations it had. A former location that no longer exists or that you may not use is left out; when the main one is, the account goes to the default user group.</translation>
+    </message>
+    <message>
+        <source>%selected selected; each is checked again when you confirm.</source>
+        <translation>%selected selected; each is checked again when you confirm.</translation>
+    </message>
+    <message>
+        <source>Accounts</source>
+        <translation>Accounts</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Name</translation>
+    </message>
+    <message>
+        <source>In the groups now</source>
+        <translation>In the groups now</translation>
+    </message>
+    <message>
+        <source>Goes to</source>
+        <translation>Goes to</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(no name)</translation>
+    </message>
+    <message>
+        <source>default user group: the former main location is gone or not yours to use</source>
+        <translation>default user group: the former main location is gone or not yours to use</translation>
+    </message>
+    <message>
+        <source>%count former locations left out (gone or not yours to use)</source>
+        <translation>%count former locations left out (gone or not yours to use)</translation>
+    </message>
+    <message>
+        <source>Left out:</source>
+        <translation>Left out:</translation>
+    </message>
+    <message>
+        <source>%count %reason</source>
+        <translation>%count %reason</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
+    </message>
+    <message>
+        <source>%count accounts deactivated and moved.</source>
+        <translation>%count accounts deactivated and moved.</translation>
+    </message>
+    <message>
+        <source>%count accounts reactivated and moved back.</source>
+        <translation>%count accounts reactivated and moved back.</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>and %count more</translation>
+    </message>
+    <message>
+        <source>%count left out: %reason</source>
+        <translation>%count left out: %reason</translation>
+    </message>
+    <message>
+        <source>%count could not be changed; nothing was changed for them</source>
+        <translation>%count could not be changed; nothing was changed for them</translation>
+    </message>
+    <message>
+        <source>%count went to the default user group, as their former main location is gone or not yours to use</source>
+        <translation>%count went to the default user group, as their former main location is gone or not yours to use</translation>
+    </message>
+    <message>
+        <source>%count former locations were left out (gone or not yours to use)</source>
+        <translation>%count former locations were left out (gone or not yours to use)</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Back</translation>
+    </message>
+    <message>
+        <source>Retire user accounts instead of removing them: users never go to the trash, so removing one cannot be undone. Deactivate and move disables an account and brings its locations together in the group of deactivated users; Reactivate and move back puts it back where it was.</source>
+        <translation>Retire user accounts instead of removing them: users never go to the trash, so removing one cannot be undone. Deactivate and move disables an account and brings its locations together in the group of deactivated users; Reactivate and move back puts it back where it was.</translation>
+    </message>
+    <message>
+        <source>No account was selected. Tick the accounts first.</source>
+        <translation>No account was selected. Tick the accounts first.</translation>
+    </message>
+    <message>
+        <source>Choose the accounts on Users &gt; Check user accounts, or use the button on a user’s page.</source>
+        <translation>Choose the accounts on Users &gt; Check user accounts, or use the button on a user’s page.</translation>
+    </message>
+    <message>
+        <source>Check user accounts</source>
+        <translation>Check user accounts</translation>
     </message>
 </context>
 <context>

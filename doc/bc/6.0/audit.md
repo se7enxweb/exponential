@@ -71,7 +71,7 @@ What it is made of:
 - **Channels and files.** Five channels: `content`, `access`, `system`, `commerce` (with `data`), and `read` for
   sampled reads, which is off by default. Each channel writes one file per UTC day,
   `var/<site>/log/audit/<channel>-<YYYY-MM-DD>.jsonl`, and starts a new part past `MaxFileSize`.
-- **145 event names** in a taxonomy (`domain.subject.action[.detail]`), switchable at any rank (`content.*`,
+- **148 event names** in a taxonomy (`domain.subject.action[.detail]`), switchable at any rank (`content.*`,
   `content.node.remove.*`). Extensions add their own branches. See the [event reference](#8-event-reference).
 - **A hash chain per channel**, daily signed checkpoints and signed archive manifests (HMAC-SHA-256 with a key that is
   generated on first use and never leaves `settings/override`).
@@ -2107,7 +2107,7 @@ generator. Columns: Sev. = severity; Default = shipped (`always` cannot be switc
 only with `Reads=enabled`).
 
 <!-- event-reference:start (generated from expAuditTaxonomy::registry() and the settings in effect on 2026-10-03; do not edit by hand) -->
-145 names (44 content, 37 access, 43 system, 12 commerce, 9 data); shipped default: 96 on, 23 off, 23 always, 3 sampled.
+148 names (44 content, 40 access, 43 system, 12 commerce, 9 data); shipped default: 99 on, 23 off, 23 always, 3 sampled.
 
 | Event | Fires when | Records (before → after; never) | Raised in | Verb | Sev. | Default | On here | Ch. | Written |
 |---|---|---|---|---|---|---|---|---|---|
@@ -2173,6 +2173,9 @@ only with `Reads=enabled`).
 | `access.user.enable` | an administrator enables or disables an account | enabled, max_login → the same | `user/ezuseroperationcollection.php:setSettings` | enable | notice | on | yes | access | at once |
 | `access.user.disable` | an administrator enables or disables an account | enabled, max_login → the same | `user/ezuseroperationcollection.php:setSettings` | disable | notice | on | yes | access | at once |
 | `access.user.remove` | a user is removed | login, email (privacy rules) → – | `datatypes/ezuser/ezuser.php:removeUser` | remove | notice | on | yes | access | at once |
+| `access.user.deactivate_move` | an account is deactivated and its locations are brought together in the group of deactivated users (Deactivate and move) | enabled, main parent node, other parent nodes → enabled, the group's node, the removed location nodes, whether the locations were remembered | `user/expuserdeactivation.php:deactivate` | disable | notice | on | yes | access | at once |
+| `access.user.reactivate_move` | an account is enabled and moved back to its remembered locations (Reactivate and move back) | enabled, main parent node, parent nodes → enabled, main parent node, added parent nodes, fallback used, count not restored | `user/expuserdeactivation.php:reactivate` | enable | notice | on | yes | access | at once |
+| `access.user.deactivated_group.create` | the group of deactivated users is created on first use or by `bin/php/ezcreatedeactivatedusergroup.php` | – → node, object, parent node, remote id, section, hidden | `user/expuserdeactivation.php:createGroup` | create | notice | on | yes | access | at once |
 | `access.user.email.change` | the e-mail address of an account changes | email → email (privacy rules: hashed by default) | `datatypes/ezuser/ezuser.php:auditStore` | change | notice | on | yes | access | at once |
 | `access.user.login.change` | the login name changes | login → login | `datatypes/ezuser/ezuser.php:auditStore` | change | notice | on | yes | access | at once |
 | `access.user.password.change` | a password is changed `[user-password-change*]` | – (never the password, the hash or its type) | `datatypes/ezuser/ezuser.php:auditStore` | change | notice | on | yes | access | at once |

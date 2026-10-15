@@ -110,6 +110,19 @@
     {else}
         <input class="button-disabled" type="submit" name="ActionRemove" value="{'Remove'|i18n( 'design/admin/node/view/full' )}" title="{'You do not have permission to remove this item.'|i18n( 'design/admin/node/view/full' )}" disabled="disabled" />
     {/if}
+    {* Deactivate and move / Reactivate and move back (user/deactivate): for a user account, when site.ini
+       [UserSettings] DeactivateAndMove=enabled and you may (user/deactivate, edit the account); a confirmation follows.
+       Guide: doc/features/6.0/user-hygiene.md *}
+    {if ezini( 'UserSettings', 'DeactivateAndMove' )|eq( 'enabled' )}
+        {def $deactivation_offers = fetch( 'user', 'deactivation_offers', hash( 'object_id', $node.contentobject_id ) )}
+        {if $deactivation_offers.deactivate}
+        <input class="button" type="submit" name="DeactivateMoveButton" formaction={'user/deactivate'|ezurl} value="{'Deactivate and move'|i18n( 'design/admin/node/view/full' )}" title="{'Disable this account and move it to the group of deactivated users, remembering where it was. Nothing is removed.'|i18n( 'design/admin/node/view/full' )}" />
+        {/if}
+        {if $deactivation_offers.reactivate}
+        <input class="button" type="submit" name="ReactivateMoveButton" formaction={'user/deactivate'|ezurl} value="{'Reactivate and move back'|i18n( 'design/admin/node/view/full' )}" title="{'Enable this account and move it back to the locations it had.'|i18n( 'design/admin/node/view/full' )}" />
+        {/if}
+        {undef $deactivation_offers}
+    {/if}
     </div></div>
     <div class="button-right a4-node-links">
         <a class="a4-icon-button" href="{$site_url|wash}" target="_blank" rel="noopener" title="{'View on site (new window)'|i18n( 'design/admin/node/view/full' )|wash}" aria-label="{'View on site'|i18n( 'design/admin/node/view/full' )|wash}"><span class="a4-icon a4-bi-globe2 is-medium" aria-hidden="true"></span></a>

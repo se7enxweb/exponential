@@ -16,6 +16,8 @@ namespace Exponential\View\Kernel\User
  * expUserHygiene. Three bulk actions on the ticked accounts (UserIDArray[]): DisableButton, EnableButton and
  * UnlockButton show a confirmation page with the counts, whose ConfirmButton (HygieneAction) does the action, each
  * account decided again just before (expUserHygiene::decide()). ExportButton sends the CSV of the whole filtered list.
+ * With site.ini [UserSettings] DeactivateAndMove=enabled and the function user/deactivate, two more buttons send the
+ * ticked accounts to user/deactivate (Deactivate and move, Reactivate and move back), which confirms and does them.
  *
  * Every change and the CSV take a POST (with the form token where ezformtoken is active). The view opens with the
  * function user/hygiene; each action also needs the right to edit the account's object, and never touches the
@@ -84,6 +86,12 @@ class Hygiene extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'hygiene_clear_query', $links['clear'] );
         $tpl->setVariable( 'hygiene_can_see_email', $canSeeEmail );
         $tpl->setVariable( 'hygiene_supported', $hygiene !== null );
+        // Deactivate and move (user/deactivate, expUserDeactivation): offered when switched on and allowed; the
+        // group's node marks the accounts already moved there
+        $deactivate = \expUserDeactivation::isEnabled() && self::canDeactivate( $currentUser );
+        $deactivateGroup = $deactivate ? \expUserDeactivation::groupNode() : null;
+        $tpl->setVariable( 'hygiene_deactivate', $deactivate );
+        $tpl->setVariable( 'hygiene_deactivate_group_id', $deactivateGroup ? (int)$deactivateGroup->attribute( 'node_id' ) : 0 );
 
         if ( $hygiene !== null && $action !== null )
         {
@@ -148,6 +156,18 @@ class Hygiene extends \Exponential\Runnable\ModuleView
     public static function canSeeEmail( $user )
     {
         $access = $user->hasAccessTo( 'role', 'assign' );
+        return isset( $access['accessWord'] ) && $access['accessWord'] !== 'no';
+    }
+
+    /**
+     * Whether the user may use Deactivate and move: the function user/deactivate.
+     *
+     * @param \eZUser $user
+     * @return bool
+     */
+    public static function canDeactivate( $user )
+    {
+        $access = $user->hasAccessTo( 'user', 'deactivate' );
         return isset( $access['accessWord'] ) && $access['accessWord'] !== 'no';
     }
 

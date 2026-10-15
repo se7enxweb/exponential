@@ -6,7 +6,9 @@
    Disable, enable and unlock the ticked accounts: each button shows a confirmation with the counts, whose Confirm
    does it; every account is checked again then (expUserHygiene::decide()). The anonymous user, the administrator
    account and you are never ticked. Export as CSV sends the whole filtered list. Every change and the CSV are POSTs.
-   Works without javascript; the script only adds Select all and the selection count. The same file is in
+   With [UserSettings] DeactivateAndMove=enabled and user/deactivate, Deactivate and move and Reactivate and move
+   back send the ticked accounts to user/deactivate, which confirms them; an account in the group of deactivated
+   users carries a badge. Works without javascript; the script only adds Select all and the selection count. The same file is in
    design/admin and design/admin4. Guide: doc/features/6.0/user-hygiene.md *}
 
 {def $uri = 'user/hygiene'
@@ -156,6 +158,7 @@
 </section>
 
 <form name="hygiene" method="post" action={$form_uri|ezurl}>
+{if $hygiene_deactivate}<input type="hidden" name="RedirectURI" value="{$form_uri|wash}" />{/if}
 <section class="a4-section" aria-labelledby="hygiene-list-title">
 <div class="a4-section-head">
     <h2 class="a4-h2" id="hygiene-list-title">{'Accounts'|i18n( 'design/admin/user/hygiene' )} ({$hygiene_account_count})</h2>
@@ -193,7 +196,7 @@
     <td><span class="a4-badges">{foreach $account.states as $state}<span class="a4-badge {$state_levels[$state]}"{if eq( $state, 'locked' )} title="{'%count failed sign-ins; the limit is %max.'|i18n( 'design/admin/user/hygiene',, hash( '%count', $account.failed_attempts, '%max', $hygiene_max_failed_logins ) )}"{/if}>{if array( 'disabled', 'locked' )|contains( $state )}<span class="a4-status is-{$state}" aria-hidden="true"></span>{/if}{$state_names[$state]|wash}</span>{/foreach}</span></td>
     <td class="a4-nowrap">{if $account.last_visit}{$account.last_visit|l10n( 'shortdate' )}<br /><span class="a4-muted">{'%count days ago'|i18n( 'design/admin/user/hygiene',, hash( '%count', $account.idle_days ) )}</span>{else}<span class="a4-muted">{'Never'|i18n( 'design/admin/user/hygiene' )}</span>{/if}</td>
     <td class="a4-num">{$account.login_count}</td>
-    <td>{foreach $account.groups as $group_index => $group}{if $group_index|gt( 0 )}, {/if}<a href={concat( 'content/view/full/', $group.node_id )|ezurl}>{$group.name|wash}</a>{/foreach}</td>
+    <td>{foreach $account.groups as $group_index => $group}{if $group_index|gt( 0 )}, {/if}<a href={concat( 'content/view/full/', $group.node_id )|ezurl}>{$group.name|wash}</a>{if and( $hygiene_deactivate_group_id|gt( 0 ), eq( $group.node_id, $hygiene_deactivate_group_id ) )} <span class="a4-badge is-info" title="{'Moved here by Deactivate and move; Reactivate and move back puts it back.'|i18n( 'design/admin/user/hygiene' )}">{'deactivated'|i18n( 'design/admin/user/hygiene' )}</span>{/if}{/foreach}</td>
     <td>{$account.roles|implode( ', ' )|wash}</td>
 </tr>
 {undef $is_protected}
@@ -224,6 +227,10 @@
         <button class="a4-btn" type="submit" name="DisableButton" value="1">{'Disable the ticked accounts'|i18n( 'design/admin/user/hygiene' )}</button>
         <button class="a4-btn" type="submit" name="EnableButton" value="1">{'Enable the ticked accounts'|i18n( 'design/admin/user/hygiene' )}</button>
         <button class="a4-btn" type="submit" name="UnlockButton" value="1">{'Unlock the ticked accounts'|i18n( 'design/admin/user/hygiene' )}</button>
+        {if $hygiene_deactivate}
+        <button class="a4-btn" type="submit" name="DeactivateMoveButton" value="1" formaction={'user/deactivate'|ezurl}>{'Deactivate and move the ticked accounts'|i18n( 'design/admin/user/hygiene' )}</button>
+        <button class="a4-btn" type="submit" name="ReactivateMoveButton" value="1" formaction={'user/deactivate'|ezurl}>{'Reactivate and move back the ticked accounts'|i18n( 'design/admin/user/hygiene' )}</button>
+        {/if}
         {/if}
         <button class="a4-btn" type="submit" name="ExportButton" value="1"{if $hygiene_account_count|eq( 0 )} disabled="disabled"{/if}>{'Export the list as CSV (%count)'|i18n( 'design/admin/user/hygiene',, hash( '%count', $hygiene_account_count ) )}</button>
     </div>

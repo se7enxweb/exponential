@@ -114,4 +114,16 @@ $FunctionList['can_open'] = array( 'name' => 'can_open',
                                                                  'type' => 'string',
                                                                  'required' => true ) ) );
 
+// Deactivate and move (doc/features/6.0/user-hygiene.md): whether a user's page and the context menu offer
+// Deactivate and move and Reactivate and move back for an object, for the current user: hash( deactivate, reactivate ),
+// both false when [UserSettings] DeactivateAndMove is not enabled or the user may not (see expUserDeactivation::offers())
+$FunctionList['deactivation_offers'] = array( 'name' => 'deactivation_offers',
+                                              'operation_types' => array( 'read' ),
+                                              'call_method' => array( 'class' => 'eZUserFunctionCollection',
+                                                                      'method' => 'fetchDeactivationOffers' ),
+                                              'parameter_type' => 'standard',
+                                              'parameters' => array( array( 'name' => 'object_id',
+                                                                            'type' => 'integer',
+                                                                            'required' => true ) ) );
+
 ?>

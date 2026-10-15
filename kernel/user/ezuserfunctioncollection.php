@@ -40,6 +40,18 @@ class eZUserFunctionCollection
         return array( 'result' => $isLoggedIn );
     }
 
+    /**
+     * fetch( 'user', 'deactivation_offers', hash( 'object_id', ... ) ): whether to offer Deactivate and move and
+     * Reactivate and move back for the object (expUserDeactivation::offers()).
+     *
+     * @param int $objectID
+     * @return array
+     */
+    function fetchDeactivationOffers( $objectID )
+    {
+        return array( 'result' => expUserDeactivation::offers( (int)$objectID ) );
+    }
+
     function fetchLoggedInCount()
     {
         $count = eZUser::fetchLoggedInCount();
