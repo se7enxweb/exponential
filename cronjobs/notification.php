@@ -1,6 +1,7 @@
 <?php
 /**
  * @description Process and dispatch pending notification events to subscribers
+ * @link doc/guides/notifications-administrator.md
  *
  * File containing the notification.php cronjob
  *

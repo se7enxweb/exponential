@@ -39,7 +39,7 @@ From top to bottom:
   pressed button):
   - **Compact** (the default): one table row per part, every part on one page - the part (the key as its title) with
     *n scripts* below it, which opens the scripts one per line, in columns - *Kernel* or the extension it comes from,
-    its path with the file name, what it does - in a row below the part, across
+    its path with the file name, what it does and **Docs** - in a row below the part, across
     the table, so several parts can be open at once (without javascript, one below the other in the cell; a missing
     script shows *missing* instead of its path); the badges
     (*Scheduled* or *Not scheduled*, *Blocked*, *n missing*, *Paused*); the schedule in words (the cron expression, or
@@ -59,7 +59,7 @@ From top to bottom:
   - **Last run from here**: when it was last started from this page, how long it took and *OK* or *n issues*;
   - **Shell command**: the exact command that runs it now, with **Copy**;
   - **Scripts (n)**: the script names on one line; opened, each script with what it does (the `@description` of its
-    header), the directory it was found in, **Copy command** (runs that script alone) and **Run**.
+    header) and **Docs** (below), the directory it was found in, **Copy command** (runs that script alone) and **Run**.
   
   A card with a problem has a red edge; the card of the running part a green one. The list is paged (see Settings).
 - **Available but not activated** (folds): scripts in a cronjob directory that no part names, so they never run.
@@ -107,6 +107,8 @@ Name it in `[CronjobSettings] Scripts[]` or in a `[CronjobPart-<name>]` block of
 | `settings/cronjob.ini` | `AdminSettings` | `CrontabSchedule_<part>` | `*/5 * * * *` (frequent), `*/15 * * * *` (global), `17 * * * *` (infrequent), `0 * * * *` (others) | global | The schedule the page suggests for a part the crontab does not run |
 | `settings/cronjob.ini` | `AdminSettings` | `HistoryLength` | `100` | global | How many runs the history keeps |
 | `settings/cronjob.ini` | `PauseSettings` | `Pause`, `Directory` | `enabled`, empty | global | Pausing parts, see [Pausing cronjob parts](cronjob-pause.md) |
+| `settings/cronjob.ini` | `ScriptDocumentation` | `Link[<script>]` | empty | global | The **Docs** link of a script, by its file name: a URL, a path below `DocumentationBase`, or `none` for no link. Goes before the `@link` tag of the script's header ([guide](../../guides/cronjobs.md), section 11) |
+| `settings/cronjob.ini` | `ScriptDocumentation` | `DocumentationBase` | empty: `https://github.com/se7enxweb/exponential/blob/main/` | global | Where a path in `Link[]` or `@link` is looked up. Only `http` and `https` links are shown |
 | `settings/admininterface.ini` | `PaginationSettings` | `ItemsPerPage[setup/cronjobs]` | see [page sizes](../../bc/6.0/pagination-settings.md) | global | How many part cards one page shows |
 
 ## Related pages

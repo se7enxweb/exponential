@@ -668,6 +668,9 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
 .a4-setup-script-main { flex: 1 1 260px; min-width: 0; }
 .a4-setup-script-name { color: var(--a4-ink); font-weight: 650; overflow-wrap: anywhere; }
 .a4-setup-script-desc { margin: 2px 0 0; }
+/* The link to what a script's documentation says (cronjob.ini [ScriptDocumentation], or @link in its header). */
+.a4-setup-script-doc { margin: 2px 0 0; font-size: var(--a4-text-xs); }
+.a4-setup-cron .a4-setup-doc-link { white-space: nowrap; font-size: var(--a4-text-xs); }
 .a4-setup-script-where { margin: 2px 0 0; color: var(--a4-muted); font-size: var(--a4-text-xs); overflow-wrap: anywhere; }
 .a4-setup-script-where.is-missing { color: var(--a4-bad); font-weight: 650; }
 .a4-setup-script-actions { display: flex; flex-wrap: wrap; gap: var(--a4-space-1); }

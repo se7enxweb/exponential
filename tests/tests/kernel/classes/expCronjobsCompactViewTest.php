@@ -94,7 +94,7 @@ class expCronjobsCompactViewTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( '{if $cronjob_script.origin|eq(\'kernel\')}', $tpl );
         $this->assertStringContainsString( '{$cronjob_script.directory|wash}/', $tpl );
         // In columns: origin, the path in front of the file name, then what it does; in the cell and in the row below.
-        $this->assertSame( 2, preg_match_all( '#<li(?: role="listitem")?><span class="a4-setup-compact-origin">.*?</span><span class="a4-setup-compact-file">.*?\{\$cronjob_script\.directory\|wash\}/</span>\{/if\}<code>\{\$cronjob_script\.name\|wash\}</code>.*?<span class="a4-setup-compact-desc">\{\$cronjob_script\.description\|wash\}</span></li>#', $tpl ) );
+        $this->assertSame( 2, preg_match_all( '#<li(?: role="listitem")?><span class="a4-setup-compact-origin">.*?</span><span class="a4-setup-compact-file">.*?\{\$cronjob_script\.directory\|wash\}/</span>\{/if\}<code>\{\$cronjob_script\.name\|wash\}</code>.*?<span class="a4-setup-compact-desc">\{\$cronjob_script\.description\|wash\}\{if \$cronjob_script\.documentation\|ne\(\'\'\)\} <a class="a4-setup-doc-link" [^>]*>.*?</a>\{/if\}</span></li>#', $tpl ) );
         // The grid drops the list semantics in some screen readers; the row below says it is a list.
         $this->assertStringContainsString( '<td colspan="5"><ul role="list">', $tpl );
     }

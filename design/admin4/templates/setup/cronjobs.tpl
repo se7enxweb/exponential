@@ -219,7 +219,7 @@
     <th scope="row" title="{$cronjob_part.name|wash}"><span class="a4-setup-compact-part">{$cronjob_part.label|wash}</span>
         <details class="a4-setup-compact-scripts"><summary>{if $cronjob_part.scripts|count|eq(1)}{'1 script'|i18n( 'design/admin/setup/cronjobs' )}{else}{'%count scripts'|i18n( 'design/admin/setup/cronjobs',, hash( '%count', $cronjob_part.scripts|count ) )}{/if}</summary>
             <ul class="a4-setup-compact-inline">{foreach $cronjob_part.scripts as $cronjob_script}
-                <li><span class="a4-setup-compact-origin">{if $cronjob_script.origin|eq('kernel')}<span class="a4-badge is-info">{'Kernel'|i18n( 'design/admin/setup/cronjobs' )}</span>{elseif $cronjob_script.origin|ne('')}<span class="a4-badge">{$cronjob_script.origin|wash}</span>{/if}</span><span class="a4-setup-compact-file">{if $cronjob_script.path|ne(false())}<span class="a4-setup-compact-path">{$cronjob_script.directory|wash}/</span>{/if}<code>{$cronjob_script.name|wash}</code>{if $cronjob_script.path|eq(false())} <span class="a4-badge is-bad">{'missing'|i18n( 'design/admin/setup/cronjobs' )}</span>{/if}</span><span class="a4-setup-compact-desc">{$cronjob_script.description|wash}</span></li>
+                <li><span class="a4-setup-compact-origin">{if $cronjob_script.origin|eq('kernel')}<span class="a4-badge is-info">{'Kernel'|i18n( 'design/admin/setup/cronjobs' )}</span>{elseif $cronjob_script.origin|ne('')}<span class="a4-badge">{$cronjob_script.origin|wash}</span>{/if}</span><span class="a4-setup-compact-file">{if $cronjob_script.path|ne(false())}<span class="a4-setup-compact-path">{$cronjob_script.directory|wash}/</span>{/if}<code>{$cronjob_script.name|wash}</code>{if $cronjob_script.path|eq(false())} <span class="a4-badge is-bad">{'missing'|i18n( 'design/admin/setup/cronjobs' )}</span>{/if}</span><span class="a4-setup-compact-desc">{$cronjob_script.description|wash}{if $cronjob_script.documentation|ne('')} <a class="a4-setup-doc-link" href="{$cronjob_script.documentation|wash}" target="_blank" rel="noopener noreferrer" aria-label="{'Documentation of %script (opens in a new window)'|i18n( 'design/admin/setup/cronjobs',, hash( '%script', $cronjob_script.name ) )|wash}">{'Docs'|i18n( 'design/admin/setup/cronjobs' )}</a>{/if}</span></li>
             {/foreach}</ul></details></th>
     <td><ul class="a4-badges">
         {if $cronjob_part.scheduled}<li class="a4-badge is-ok">{'Scheduled'|i18n( 'design/admin/setup/cronjobs' )}</li>{else}<li class="a4-badge is-warn">{'Not scheduled'|i18n( 'design/admin/setup/cronjobs' )}</li>{/if}
@@ -249,7 +249,7 @@
 </tr>
 <tr class="a4-setup-compact-detail" data-part="{$cronjob_part.name|wash}" hidden>
     <td colspan="5"><ul role="list">{foreach $cronjob_part.scripts as $cronjob_script}
-                <li role="listitem"><span class="a4-setup-compact-origin">{if $cronjob_script.origin|eq('kernel')}<span class="a4-badge is-info">{'Kernel'|i18n( 'design/admin/setup/cronjobs' )}</span>{elseif $cronjob_script.origin|ne('')}<span class="a4-badge">{$cronjob_script.origin|wash}</span>{/if}</span><span class="a4-setup-compact-file">{if $cronjob_script.path|ne(false())}<span class="a4-setup-compact-path">{$cronjob_script.directory|wash}/</span>{/if}<code>{$cronjob_script.name|wash}</code>{if $cronjob_script.path|eq(false())} <span class="a4-badge is-bad">{'missing'|i18n( 'design/admin/setup/cronjobs' )}</span>{/if}</span><span class="a4-setup-compact-desc">{$cronjob_script.description|wash}</span></li>
+                <li role="listitem"><span class="a4-setup-compact-origin">{if $cronjob_script.origin|eq('kernel')}<span class="a4-badge is-info">{'Kernel'|i18n( 'design/admin/setup/cronjobs' )}</span>{elseif $cronjob_script.origin|ne('')}<span class="a4-badge">{$cronjob_script.origin|wash}</span>{/if}</span><span class="a4-setup-compact-file">{if $cronjob_script.path|ne(false())}<span class="a4-setup-compact-path">{$cronjob_script.directory|wash}/</span>{/if}<code>{$cronjob_script.name|wash}</code>{if $cronjob_script.path|eq(false())} <span class="a4-badge is-bad">{'missing'|i18n( 'design/admin/setup/cronjobs' )}</span>{/if}</span><span class="a4-setup-compact-desc">{$cronjob_script.description|wash}{if $cronjob_script.documentation|ne('')} <a class="a4-setup-doc-link" href="{$cronjob_script.documentation|wash}" target="_blank" rel="noopener noreferrer" aria-label="{'Documentation of %script (opens in a new window)'|i18n( 'design/admin/setup/cronjobs',, hash( '%script', $cronjob_script.name ) )|wash}">{'Docs'|i18n( 'design/admin/setup/cronjobs' )}</a>{/if}</span></li>
             {/foreach}</ul></td>
 </tr>
     {undef $cronjob_paused $cronjob_blocked $cronjob_runnable}
@@ -362,6 +362,7 @@
                 <div class="a4-setup-script-main">
                     <code class="a4-setup-script-name">{$cronjob_script.name|wash}</code>
                     {if $cronjob_script.description|ne('')}<p class="a4-setup-script-desc">{$cronjob_script.description|wash}</p>{/if}
+                    {if $cronjob_script.documentation|ne('')}<p class="a4-setup-script-doc"><a class="a4-setup-doc-link" href="{$cronjob_script.documentation|wash}" target="_blank" rel="noopener noreferrer" aria-label="{'Documentation of %script (opens in a new window)'|i18n( 'design/admin/setup/cronjobs',, hash( '%script', $cronjob_script.name ) )|wash}">{'Docs'|i18n( 'design/admin/setup/cronjobs' )}</a></p>{/if}
                     {if $cronjob_script.path|eq(false())}
                     <p class="a4-setup-script-where is-missing">{'not found in any cronjob directory'|i18n( 'design/admin/setup/cronjobs' )}</p>
                     {else}
@@ -426,6 +427,7 @@
                 <div class="a4-setup-script-main">
                     <code class="a4-setup-script-name">{$cronjob_spare.name|wash}</code>
                     {if $cronjob_spare.description|ne('')}<p class="a4-setup-script-desc">{$cronjob_spare.description|wash}</p>{/if}
+                    {if $cronjob_spare.documentation|ne('')}<p class="a4-setup-script-doc"><a class="a4-setup-doc-link" href="{$cronjob_spare.documentation|wash}" target="_blank" rel="noopener noreferrer" aria-label="{'Documentation of %script (opens in a new window)'|i18n( 'design/admin/setup/cronjobs',, hash( '%script', $cronjob_spare.name ) )|wash}">{'Docs'|i18n( 'design/admin/setup/cronjobs' )}</a></p>{/if}
                     <p class="a4-setup-script-where">{$cronjob_spare.directory|wash}</p>
                 </div>
                 <span class="a4-badge is-warn">{'Available'|i18n( 'design/admin/setup/cronjobs' )}</span>

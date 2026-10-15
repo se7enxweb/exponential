@@ -21270,6 +21270,14 @@ Note: The packages will not be uninstalled.</translation>
 <context>
     <name>design/admin/setup/cronjobs</name>
     <message>
+        <source>Docs</source>
+        <translation>Docs</translation>
+    </message>
+    <message>
+        <source>Documentation of %script (opens in a new window)</source>
+        <translation>Documentation of %script (opens in a new window)</translation>
+    </message>
+    <message>
         <source>Kernel</source>
         <translation>Kernel</translation>
     </message>
