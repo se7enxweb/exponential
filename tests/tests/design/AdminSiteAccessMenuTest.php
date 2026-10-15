@@ -475,6 +475,8 @@ class AdminSiteAccessMenuTest extends PHPUnit\Framework\TestCase
             'clickOutsideCloses' => $closed,
             'userMenuClosesTheSiteMenu' => $closed + array( 'userExpanded' => 'true' ),
             'focusLeavingCloses' => $closed,
+            'siteMenuClosesThePhoneMenu' => $opened + array( 'phoneOpen' => false ),
+            'phoneMenuClosesTheSiteMenu' => $closed + array( 'phoneOpen' => true ),
         );
         foreach ( $expect as $scenario => $state )
         {
@@ -507,6 +509,7 @@ class AdminSiteAccessMenuTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'ButtonText', $forced['.a4-site-menu']['border-color'] );
         $this->assertSame( '2px solid Highlight', $forced['.a4-site-menu a[aria-current="true"]']['outline'] );
         $flat = preg_replace( '/\s+/', ' ', $css );
+        $this->assertStringContainsString( 'max-height: calc(100vh - var(--header-height) - var(--a4-space-5)); max-height: calc(100dvh - var(--header-height) - var(--a4-space-5));', $flat, 'the visible height on iOS, 100vh where dvh is unknown' );
         $this->assertStringContainsString( '@media screen and (max-width: 575.98px) { .a4-site-menu { position: fixed; top: calc(var(--header-height) + var(--a4-space-2)); left: var(--a4-space-4); right: var(--a4-space-4); z-index: var(--a4-z-menu);', $flat, 'under the header on a phone, with the gutters' );
     }
 

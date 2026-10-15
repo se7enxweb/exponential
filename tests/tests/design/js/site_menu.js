@@ -1,6 +1,7 @@
 // Runs the header menus of design/admin4/javascript/admin4.js (the block from "admin4 header menus" to the toasts)
 // against a small stand-in for the browser: the site link, the site menu's wrapper, button and panel with three links,
-// the user menu's button and panel with one link, a link outside, the document's listeners. Prints one JSON line per
+// the user menu's button and panel with one link, a link outside, the phone menu's button (it toggles the body's
+// navbar-open, as ezadmin_menubar.js does), the document's listeners. Prints one JSON line per
 // scenario.
 // Usage: node site_menu.js <path to admin4.js>
 'use strict';
@@ -68,6 +69,9 @@ function run(steps, options) {
     const userPanel = userWrap.add(element('user panel', { hidden: true }));
     userPanel.add(element('user link', { isLink: true }));
     const outside = body.add(element('outside', { isLink: true }));
+    let phoneOpen = false;
+    const phoneIcon = body.add(element('phone button'));
+    phoneIcon.addEventListener('click', () => { phoneOpen = !phoneOpen; });
     const ids = { 'a4-user-toggle': userButton, 'a4-user-menu': userPanel };
     if (opts.menu) {
         Object.assign(ids, { 'a4-site-menu-wrap': wrap, 'a4-site-toggle': button, 'a4-site-menu': panel });
@@ -79,7 +83,9 @@ function run(steps, options) {
             readyState: 'complete',
             activeElement: body,
             getElementById: (id) => ids[id] || null,
-            querySelector: () => null,
+            querySelector: (sel) => (sel === '.navbar-icon' ? phoneIcon : null),
+            body: { classList: { contains: (c) => c === 'navbar-open' && phoneOpen, remove: (c) => { if (c === 'navbar-open') { phoneOpen = false; } } } },
+            querySelectorAll: () => [],
             addEventListener(type, fn) { (docListeners[type] = docListeners[type] || []).push(fn); },
             contains: () => true,
         },
@@ -104,8 +110,9 @@ function run(steps, options) {
         panelHidden: panel.hidden,
         userExpanded: userButton.getAttribute('aria-expanded'),
         active: sandbox.document.activeElement.name,
+        phoneOpen,
     });
-    const elements = { button, panel, front, en, admin, outside, userButton, link };
+    const elements = { button, panel, front, en, admin, outside, userButton, link, phoneIcon };
     steps({ key, click, elements, state, log });
     return state();
 }
@@ -140,6 +147,8 @@ out.escapeClosesAndReturnsTheFocus = run(({ key, elements }) => {
 });
 out.clickOutsideCloses = run(({ click, elements }) => { click(elements.button); click(elements.outside); });
 out.userMenuClosesTheSiteMenu = run(({ click, elements }) => { click(elements.button); click(elements.userButton); });
+out.siteMenuClosesThePhoneMenu = run(({ click, elements }) => { click(elements.phoneIcon); click(elements.button); });
+out.phoneMenuClosesTheSiteMenu = run(({ click, elements }) => { click(elements.button); click(elements.phoneIcon); });
 out.focusLeavingCloses = run(({ click, elements }) => {
     click(elements.button);
     elements.panel.parentNode.fire('focusout', { relatedTarget: elements.outside });

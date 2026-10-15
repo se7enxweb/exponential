@@ -222,6 +222,15 @@
         wrap.hidden = false;
         if (link) link.hidden = true;
         disclosure(button, panel);
+        // one menu over the page at a time on a phone: opening the site menu closes the open phone menu as
+        // ezadmin_menubar.js does (a click on the phone menu's button closes the site menu as any click outside)
+        button.addEventListener('click', function () {
+            var icon = document.querySelector('.navbar-icon');
+            if (!icon || button.getAttribute('aria-expanded') !== 'true' || !document.body.classList.contains('navbar-open')) return;
+            document.body.classList.remove('navbar-open');
+            Array.prototype.forEach.call(document.querySelectorAll('.navbar-menu'), function (m) { m.classList.remove('show'); });
+            icon.setAttribute('aria-expanded', 'false');
+        });
     }
 
     function init() {
