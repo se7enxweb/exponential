@@ -18,6 +18,9 @@ and the setting (or the kind of secret), never the value.
 Settings files (below `settings/`, or named `*.ini*`) are read as text, commented lines included, so a password that
 eZINI would skip is still found.
 
+A `node_modules` directory (the dependencies of a build, such as exp_oe_tiptap's editor) is not packed and not read:
+the extension runs from its design files, and a library's test certificates are not the extension's.
+
 ## What passes
 
 The check takes these for what they are, under any name:

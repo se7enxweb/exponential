@@ -682,6 +682,20 @@ class ExtensionDownloadTest extends PHPUnit\Framework\TestCase
     }
 
     /** ED-13, the extension's package_check.ini narrows the findings it names, and nothing else */
+    /** A build's dependencies (node_modules) are not packed and not read: a test key of a library in them refuses nothing */
+    public function testNodeModulesAreNeitherPackedNorRead()
+    {
+        $this->put( 'node_modules/lib/cert.js', "const key = '-----BEGIN PRIVATE KEY-----\\nMIIx\\n-----END PRIVATE KEY-----';\n" );
+        $this->put( 'design/standard/javascript/editor.js', "x\n" );
+        $this->assertSame( array(), $this->secrets() );
+        $entries = eZExtensionPackageHandler::packEntries( $this->dir() );
+        $this->assertSame( array( 'type' => 'dir', 'packed' => false ), $entries['node_modules'] );
+        $this->assertArrayNotHasKey( 'node_modules/lib', $entries );
+        // the same key outside node_modules still refuses the extension
+        $this->put( 'design/standard/javascript/cert.js', "const key = '-----BEGIN PRIVATE KEY-----\\nMIIx\\n-----END PRIVATE KEY-----';\n" );
+        $this->assertNotSame( array(), $this->secrets() );
+    }
+
     public function testTheAllowFileNarrowsOnlyWhatItNames()
     {
         $this->put( 'settings/recaptcha.ini', "#   PrivateKey=6LcAbCdEfGhIjKlMnOpQrStUvWxYz0123456789\nApiKey=s3cretvalue\n" );

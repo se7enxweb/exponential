@@ -323,9 +323,17 @@ class eZExtensionPackageHandler extends eZPackageHandler
     }
 
     /**
+     * Directories that hold the dependencies of a build, not the extension: an extension package never takes them
+     * (a checkout of exp_oe_tiptap has node_modules for its editor build; the extension runs from its design files),
+     * and the check does not read them.
+     */
+    const UNPACKED_DIRECTORY_NAMES = array( 'node_modules' );
+
+    /**
      * Every entry below $dir, breadth first as eZDir::copy() walks, with what the package takes of it: a file or a
      * directory whose name and parents do not start with "." (eZDir::copy() without hidden items) and that is not
-     * a symbolic link (eZDir::findSubitems() without "l"); a link is listed, not followed. addExtension() copies
+     * a symbolic link (eZDir::findSubitems() without "l"); a link is listed, not followed; a directory of
+     * UNPACKED_DIRECTORY_NAMES is listed as not packed and not walked. addExtension() copies
      * exactly the entries marked 'packed', so the check and the package see the same files.
      *
      * @param string $dir
@@ -359,6 +367,9 @@ class eZExtensionPackageHandler extends eZPackageHandler
                 $full = $absolute . '/' . $name;
                 if ( is_link( $full ) )
                     $entries[$path] = array( 'type' => 'link', 'packed' => false );
+                else if ( is_dir( $full ) && in_array( $name, self::UNPACKED_DIRECTORY_NAMES, true ) )
+                    // the dependencies of a build (node_modules): never packed, and not read either
+                    $entries[$path] = array( 'type' => 'dir', 'packed' => false );
                 else if ( is_dir( $full ) )
                 {
                     $entries[$path] = array( 'type' => 'dir', 'packed' => !$isHidden );
