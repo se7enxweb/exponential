@@ -76,6 +76,16 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
   site" is the first of the tools, a round icon button like the others; logout is an icon button ("Logout
   (admin)"); the user menu holds the user's name and links. The Tab key reaches the tools in the order they are
   drawn. "/" jumps to the search. The page always starts below the header (`AdminHeaderTest`).
+- **Logo.** One template draws it, `parts/a4_logo.tpl`, included in the header (`page_topmenu.tpl`, admin4l's
+  `admin_logo` block) and on the sign-in page. It is inline SVG: letters and outlines in `currentColor` (the link's
+  `--a4-ink`, so dark on light pages and light on dark ones), the orange square in the brand colour `#f15a28`, the
+  inner square of the back mark in `--a4-surface` (white on light pages as in the artwork; on dark pages the page's
+  colour instead of a white block). Under forced colors CanvasText and Canvas. 24 px high in the header (158 px wide,
+  in the 32 px box of the old image, so the header keeps 56/88 px), 28 px on the sign-in page; below 576 px the
+  header shows the mark alone. The drawings are `aria-hidden`; the links around them carry the name. The same
+  drawing as files: `images/admin4/exponential-logo.svg` (word and mark, viewBox cut to the drawing) and
+  `images/admin4/exponential-mark.svg` (the mark, square). `AdminLogoTest` keeps the partial and the files equal and
+  checks that they hold no script, style or outside reference.
 - **Sign-in page.** One calm form, fast on phones: labels above 46-48 px fields, 16 px text so mobile Safari does not
   zoom, autofill hints, Enter moves from the username to the password and signs in, a show/hide button, one full-width
   button that cannot be sent twice, and forgot-password and register links when those modules exist. The kernel reads
