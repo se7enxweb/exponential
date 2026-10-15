@@ -82,7 +82,7 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
   inner square of the back mark in `--a4-surface` (white on light pages as in the artwork; on dark pages the page's
   colour instead of a white block). Under forced colors CanvasText and Canvas. 24 px high in the header (158 px wide,
   in the 32 px box of the old image, so the header keeps 56/88 px), 28 px on the sign-in page; below 576 px the
-  header shows the mark alone. The drawings are `aria-hidden`; the links around them carry the name. The same
+  header shows the mark alone (in a 36 px link, like the tools). The drawings are `aria-hidden`; the links around them carry the name. The same
   drawing as files: `images/admin4/exponential-logo.svg` (word and mark, viewBox cut to the drawing) and
   `images/admin4/exponential-mark.svg` (the mark, square). `AdminLogoTest` keeps the partial and the files equal and
   checks that they hold no script, style or outside reference.

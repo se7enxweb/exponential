@@ -159,7 +159,7 @@ body,
 .a4-logo-full { width: calc(24px * 388 / 59); height: 24px; }
 .a4-logo-mark { display: none; width: 28px; height: 28px; }
 /* the inner square of the back mark: white on light pages, as in the artwork; on dark pages the surface colour, so the
-   mark keeps its drawing (a light outline around the page's colour, the orange square in front) instead of a white
+   mark keeps its drawing (a light outline around a dark square, the orange square in front) instead of a white
    block brighter than everything else on the page */
 .a4-logo-paper { fill: var(--a4-surface); }
 @media (forced-colors: active) {
@@ -302,6 +302,7 @@ body,
   /* the mark alone: the full logo (158px) left the row's tools 8px apart at 390px and squeezed the menu button */
   #header-logo .a4-logo-full { display: none; }
   #header-logo .a4-logo-mark { display: block; }
+  #header-logo .brand { justify-content: center; min-width: 36px; height: 36px; }   /* a target as large as the tools */
   #header .navbar-icon {
     order: 10;
     width: 36px;

@@ -14,7 +14,7 @@
  *  LG-05 - the colours: letters and outlines in currentColor, the orange square in the brand colour #f15a28, the inner
  *          square in the surface colour; under forced colors CanvasText and Canvas
  *  LG-06 - the header keeps its heights (56px, 88px from 576px, 56px from 1280px) and the logo box its 32px; the logo is
- *          24px high, and below 576px the mark stands alone
+ *          24px high, and below 576px the mark stands alone in a 36px link, as large a target as the tools
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminLogoTest.php
  *
@@ -174,7 +174,7 @@ class AdminLogoTest extends PHPUnit\Framework\TestCase
         foreach ( $sources as $name => $markup )
         {
             $this->assertNotEmpty( self::svgs( $markup ), "$name is well-formed" );
-            $this->assertDoesNotMatchRegularExpression( '/<(script|style|foreignObject|image|use|a|iframe|object|embed)\b/i', $markup, $name );
+            $this->assertDoesNotMatchRegularExpression( '/<(script|style|foreignObject|image|use|a|iframe|object|embed|animate\w*|set|filter|mpath)\b/i', $markup, $name );
             $this->assertDoesNotMatchRegularExpression( '/\son\w+\s*=/i', $markup, "$name: no event handler" );
             $this->assertDoesNotMatchRegularExpression( '/\b(href|src)\s*=|url\(|javascript:|data:|@import/i', $markup, "$name: no reference" );
             $this->assertStringNotContainsString( 'http://', str_replace( 'xmlns="http://www.w3.org/2000/svg"', '', $markup ), "$name: no address but the SVG namespace" );
@@ -244,6 +244,8 @@ class AdminLogoTest extends PHPUnit\Framework\TestCase
         $phone = AdminBaseStylesheetsTest::rules( self::media( $css, 'screen and (max-width: 575.98px)' ) );
         $this->assertSame( 'none', $phone['#header-logo .a4-logo-full']['display'] );
         $this->assertSame( 'block', $phone['#header-logo .a4-logo-mark']['display'] );
+        $this->assertSame( '36px', $phone['#header-logo .brand']['min-width'], 'the mark\'s link as large a target as the tools' );
+        $this->assertSame( '36px', $phone['#header-logo .brand']['height'] );
         $tablet = AdminBaseStylesheetsTest::rules( self::media( $css, 'screen and (min-width: 576px)' ) );
         $this->assertSame( 'clamp(6rem, calc(100vw - 454px), 230px)', $tablet['#header .searchblock input.searchtext']['width'],
             'the field gives the wider logo its 44px, so the tools keep one row at 576px' );
