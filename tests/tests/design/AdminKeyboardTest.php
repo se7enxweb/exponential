@@ -80,7 +80,7 @@ class AdminKeyboardTest extends PHPUnit\Framework\TestCase
         foreach ( array( 'ezdate' => 'date', 'ezdatetime' => 'datetime' ) as $template => $kind )
         {
             $tpl = self::file( "design/admin4/templates/content/datatype/edit/$template.tpl" );
-            $this->assertMatchesRegularExpression( '#<button type="button" class="datepicker-icon a4-content-datepicker-icon" id="\{\$attribute_base\}_' . $kind . '_cal_\{\$attribute\.id\}" aria-haspopup="dialog"[^>]* aria-label="#', $tpl, $template );
+            $this->assertMatchesRegularExpression( '#<button type="button" class="a4-btn a4-btn-icon a4-content-datepicker-icon" id="\{\$attribute_base\}_' . $kind . '_cal_\{\$attribute\.id\}" aria-haspopup="dialog"[^>]* aria-label="#', $tpl, $template );
         }
     }
 

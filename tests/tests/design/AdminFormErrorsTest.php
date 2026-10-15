@@ -26,7 +26,7 @@ class AdminFormErrorsTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( ' id="ezcca-attr-{$attribute.id}" tabindex="-1"{if $a4_own_fieldset|not} role="group" aria-labelledby="ezcca-name-{$attribute.id}"{if and( $attribute.has_validation_error, $a4_view_only|not )} aria-describedby="ezcca-error-{$attribute.id}"{/if}{/if}>', $tpl,
             'a named group, described by its message only where one is drawn, and no second name for a grouped input' );
         // a grouped input (fieldset + legend) carries the description on its fieldset
-        $this->assertStringContainsString( '<fieldset{if $attribute.has_validation_error} aria-describedby="ezcca-error-{$attribute.id}"{/if}>', $tpl );
+        $this->assertStringContainsString( '<fieldset class="a4-content-attr-group"{if $attribute.has_validation_error} aria-describedby="ezcca-error-{$attribute.id}"{/if}>', $tpl );
         // the name the group points at exists in each of the four exclusive label/legend branches
         $this->assertSame( 4, substr_count( $tpl, '<span id="ezcca-name-{$attribute.id}">' ) );
     }

@@ -1,4 +1,4 @@
-<form name="editform" id="editform" enctype="multipart/form-data" method="post"
+<form name="editform" id="editform" class="a4-content-edit" enctype="multipart/form-data" method="post"
     action={concat( '/content/edit/', $object.id, '/', $edit_version, '/', $edit_language|not|choose( concat( $edit_language, '/' ), '/' ), $is_translating_content|not|choose( concat( $from_language, '/' ), '' ) )|ezurl}>
 
     {* This is to force form to use publish action instead of 'Manage version' button on enter key press in input and textarea elements. *}

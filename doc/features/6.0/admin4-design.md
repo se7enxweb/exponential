@@ -104,7 +104,10 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
   description. Each attribute is a named group (`role="group"`, id `ezcca-attr-<attribute id>`). The datatype
   templates are unchanged: the marks are set on their data controls by the page's script (not on buttons, file inputs
   or remove checkboxes); a datatype template opts a control out with the class `a4-no-field-mark`. Multiedit, user
-  registration and the template look editor include the same attribute template and behave the same.
+  registration and the template look editor include the same attribute template and behave the same. The fields,
+  buttons and checkboxes of the datatype templates look like admin4's components (`.a4-input`, `.a4-btn`,
+  `.a4-check`), the attribute names carry no trailing colon, and a grouped input has no grey box of its own
+  ([styling rules, "Edit forms"](../../bc/6.0/admin4-styling.md#edit-forms)).
 - **Frame.** Side column margins are halved (a 16 px gap). The sidebar buttons sit on the window edges at 48% of the
   window height; they are named after their column ("Left column", "Right column"), say with `aria-expanded` whether
   it shows, and on a narrow window Escape closes a column open over the page and returns the focus to its tab. Long names in the side columns wrap instead of being cut off.

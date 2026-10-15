@@ -166,7 +166,8 @@
       "tests/tests/kernel/content/eZEditLocationsVisibilityTest.php"
     ],
     "design/admin4/templates/content/edit_attribute.tpl": [
-      "tests/tests/design/AdminFormErrorsTest.php"
+      "tests/tests/design/AdminFormErrorsTest.php",
+      "tests/tests/design/AdminContentEditFormsTest.php"
     ],
     "design/admin4/templates/content/edit_validation.tpl": [
       "tests/tests/design/AdminFormErrorsTest.php"
@@ -273,6 +274,21 @@
     ],
     "extension/ezjscore/settings/site.ini.append.php": [
       "tests/tests/extension/ezjscore/ezjscoreAnonymousAccessTest.php"
+    ],
+    "design/admin4/templates/content/edit.tpl": [
+      "tests/tests/design/AdminContentEditFormsTest.php"
+    ],
+    "design/admin4/templates/content/edit_menu.tpl": [
+      "tests/tests/design/AdminContentEditFormsTest.php"
+    ],
+    "design/admin4/templates/content/datatype/edit/*": [
+      "tests/tests/design/AdminContentEditFormsTest.php",
+      "tests/tests/design/AdminKeyboardTest.php",
+      "tests/tests/design/AdminFormLabelsTest.php"
+    ],
+    "design/admin*/stylesheets/modules/content.css": [
+      "tests/tests/design/AdminContentEditFormsTest.php",
+      "tests/tests/design/AdminFormErrorsTest.php"
     ]
   },
   "generated": {

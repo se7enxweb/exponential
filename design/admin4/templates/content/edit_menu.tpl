@@ -57,7 +57,7 @@
 
 	{* DESIGN: Content START *}<div class="box-content">
 		<p>{'Base translation on'|i18n( 'design/admin/content/edit' )}:</p>
-		<label>
+		<label class="a4-check">
 			<input type="radio" name="FromLanguage" value="" {if $from_language|not} checked="checked"
 					{/if}{if $object.status|eq(0)} disabled="disabled" {/if} /> {'None'|i18n( 'design/admin/content/edit' )}
 			</label>
@@ -66,7 +66,7 @@
 				{foreach $object.languages as $language}
 					{if not( eq($language.locale, $object.current_language_object.locale) )}
 						{* Only providing other languages than current *}
-						<label>
+						<label class="a4-check">
 							<input type="radio" name="FromLanguage" value="{$language.locale|wash}"
 								{if $language.locale|eq($from_language)} checked="checked" {/if} />
 							{include uri='design:parts/language_badge.tpl' locale=$language.locale badge_named=true()}
