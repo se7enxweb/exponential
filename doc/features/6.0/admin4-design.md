@@ -582,7 +582,7 @@ either design's sub-items table.
 
 ### The state of a language
 
-For one object a badge also shows the state of its language, by its shape and never by a colour per language (green,
+For one object a badge also shows the state of its language, by its shape and never by a color per language (green,
 amber and red belong to visibility and states):
 
 | State | Shape | Title and accessible name |
@@ -611,8 +611,15 @@ per row.
 
 The fetch function `fetch( 'content', 'language_states', hash( 'object', $object ) )` returns a list of `locale`,
 `name`, `state`, `outdated` and `can_translate`; `design:parts/language_state_badge.tpl` draws one (`state_entry`,
-`state_main_name`, optional `state_object_id`, `state_href`, `state_current`). Under forced colours the fill and the
-dot are drawn in system colours. `tests/tests/design/AdminLanguageStatesTest.php`.
+`state_main_name`, optional `state_object_id`, `state_href`, `state_current`). Under forced colors the fill and the
+dot are drawn in system colors. `tests/tests/design/AdminLanguageStatesTest.php`.
+
+Cost, measured on alpha with a folder of 50 articles: the sub-items request (`ezjscnode::subtree`, 50 rows) takes
+the same number of queries before and after the states (357 for 50 rows, 42 for 5, the same both times: nothing per
+row is added); the node view adds the one grouped query of `lastEdited()`, which the SQL query cache answers on the
+second use in the same page (meta line and Translations tab). Since the fetch function belongs to a kernel class, a
+template that uses it must not go live before the workers know the class: deploy with `exp:velocity deploy
+--kernel`; a compiled `fetch()` of a class a worker cannot load renders nothing instead of a fatal error.
 
 ## Context menus
 
