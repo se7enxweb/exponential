@@ -21,15 +21,13 @@
             </a> *}
             {* The content root of content.ini (the dashboard without its tab), through ezurl: with the siteaccess
                path when the siteaccess is matched by URI (/admin/...), without when by host. *}
-            <a class="brand" href={$a4_brand_url|ezurl} title="{$a4_brand_name|wash}" aria-label="{$a4_brand_name|wash}">
-            </a>
+            <a class="brand" href={$a4_brand_url|ezurl} title="{$a4_brand_name|wash}" aria-label="{$a4_brand_name|wash}">{include uri='design:parts/a4_logo.tpl'}</a>
         {else}
             {* <a href="{ezini('SiteSettings', 'DefaultPage', 'site.ini')|ezurl( 'no' )}" title="Exponential {fetch( 'setup', 'version' )}">
             </a> *}
             {* The content root of content.ini (the dashboard without its tab), through ezurl: with the siteaccess
                path when the siteaccess is matched by URI (/admin/...), without when by host. *}
-            <a class="brand" href={$a4_brand_url|ezurl} title="{$a4_brand_name|wash}" aria-label="{$a4_brand_name|wash}">
-            </a>
+            <a class="brand" href={$a4_brand_url|ezurl} title="{$a4_brand_name|wash}" aria-label="{$a4_brand_name|wash}">{include uri='design:parts/a4_logo.tpl'}</a>
         {/if}
     </div>
     {* The menu button stands before the menu it opens, so the Tab key goes from it into the open menu; admin4.css draws
