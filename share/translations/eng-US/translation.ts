@@ -9565,7 +9565,7 @@
     </message>
     <message>
         <source>This is the top node of the content structure. It is not a content object: it has no class, attributes, translations, versions or other locations, and it cannot be edited, moved or removed. The top-level nodes it holds are listed under Sub items.</source>
-        <translation>This is the top node of the content structure. It is not a content object: it has no class, attributes, translations, versions or other locations, and it cannot be edited, moved or removed. The top-level nodes it holds are listed under Sub items.</translation>
+        <translation>This is the top node of the content structure. It is not a content object: it has no class, attributes, translations, versions or other locations, and it cannot be edited, moved or removed. The content below it is listed under Sub items.</translation>
     </message>
     <message>
         <source>Top node</source>
@@ -54133,7 +54133,7 @@ your account.</translation>
     <name>kernel/content</name>
     <message>
         <source>Top Level Nodes</source>
-        <translation>Top Level Nodes</translation>
+        <translation>Content</translation>
     </message>
     <message>
         <source>Hidden</source>

@@ -1821,7 +1821,7 @@ Do you want more information about this issue?</translation>
     <name>kernel/content</name>
     <message>
         <source>Top Level Nodes</source>
-        <translation>Top Level Nodes</translation>
+        <translation>Content</translation>
     </message>
 </context>
 </TS>

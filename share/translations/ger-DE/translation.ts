@@ -11587,7 +11587,7 @@
     </message>
     <message>
         <source>This is the top node of the content structure. It is not a content object: it has no class, attributes, translations, versions or other locations, and it cannot be edited, moved or removed. The top-level nodes it holds are listed under Sub items.</source>
-        <translation>Dies ist der Hauptknoten der Inhaltsstruktur. Er ist kein Inhaltsobjekt: Er hat keine Klasse, keine Attribute, keine Übersetzungen, keine Versionen und keine weiteren Platzierungen und kann weder bearbeitet noch verschoben oder entfernt werden. Die Knoten der obersten Ebene, die er enthält, sind unter Unterelemente aufgeführt.</translation>
+        <translation>Dies ist der Hauptknoten der Inhaltsstruktur. Er ist kein Inhaltsobjekt: Er hat keine Klasse, keine Attribute, keine Übersetzungen, keine Versionen und keine weiteren Platzierungen und kann weder bearbeitet noch verschoben oder entfernt werden. Die Inhalte darunter sind unter Unterelemente aufgeführt.</translation>
     </message>
     <message>
         <source>Details of the top node: its node ID, depth and path, the number of sub items and the time of the latest change below it.</source>
@@ -60970,7 +60970,7 @@ wenn Sie die Option &quot;%3&quot; von &quot;%4&quot; ausgewählt haben </transl
     </message>
     <message>
         <source>Top Level Nodes</source>
-        <translation>Knoten der obersten Ebene</translation>
+        <translation>Inhalte</translation>
     </message>
     <message>
         <source>Hidden</source>
