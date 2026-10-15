@@ -90,7 +90,7 @@ class AdminLeftMenuGroupsTest extends PHPUnit\Framework\TestCase
     public function testAiAndUpdatesAreTheLastGroupsBeforeMore()
     {
         $setup = self::iniSection( 'Leftmenu_setup' );
-        $this->assertSame( array( 'content_model', 'site', 'workflow', 'users', 'system', 'ai', 'updates' ), $setup['Groups'] );
+        $this->assertSame( array( 'content_model', 'site', 'design', 'workflow', 'users', 'audit', 'system', 'ai', 'updates' ), $setup['Groups'] );
         $this->assertSame( 'AI', $setup['GroupNames']['ai'] ?? null );
         $this->assertSame( 'Updates', $setup['GroupNames']['updates'] ?? null );
         $links = array_keys( $setup['Links'] ?? array() );

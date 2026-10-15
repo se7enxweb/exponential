@@ -114,7 +114,7 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
   window height; they are named after their column ("Left column", "Right column"), say with `aria-expanded` whether
   it shows, and on a narrow window Escape closes a column open over the page and returns the focus to its tab. Long names in the side columns wrap instead of being cut off.
 - **Left menu.** The left column is the "Side menu" navigation. A long menu shows in groups: Setup in Content model,
-  Site and URLs, Workflows, Users and messages, System, AI, Updates, and "More" last for links in no group. Each group has a small
+  Site and URLs, Design (while its tab is left out), Workflows, Users and messages, Audit (likewise), System, AI, Updates, and "More" last for links in no group. Each group has a small
   capital title with a caret and opens and closes (the eZPreference `admin_navgroups` keeps the choice; the group of the current page always
   opens). The current page's link carries `aria-current="page"` and is marked with the accent tint and a bar. A menu
   is grouped through menu.ini (`Groups[]`, `GroupNames[<group>]`, `GroupLinks_<group>[]`); without `Groups[]`, or with
@@ -162,7 +162,7 @@ no file, a changed file, and a GIF icon, inline SVG or image button in an admin4
 ## Setup overview
 
 The Setup tab opens `setup/menu`: a page header and every function of the Setup menu as a tile, in the groups of the
-left menu (Content model, Site and URLs, Workflows, Users and messages, System, AI, Updates, and "More" last for links
+left menu (Content model, Site and URLs, Design, Workflows, Users and messages, Audit, System, AI, Updates; Design and Audit only while their tabs are left out; and "More" last for links
 in no group).
 
 - **One source.** The tiles are the left menu, drawn another way: `setup/setupmenu.tpl` includes
@@ -488,7 +488,7 @@ tree's roles, states, Tab stop and keys.
 | `settings/menu.ini` | `TopAdminMenu` | `HiddenTabs[]` | empty | siteaccess |
 | `settings/menu.ini` | `TopAdminMenu` | `SetupTabs[]` | empty (see [Moving a tab into Setup](#moving-a-tab-into-setup)) | siteaccess |
 | `settings/menu.ini` | `Topmenu_<tab>` | `Name`, `Tooltip`, `TranslationContext` | the default tab names, context `design/admin/pagelayout` | siteaccess |
-| `settings/menu.ini` | `Leftmenu_<menu>` | `Groups[]`, `GroupNames[<group>]`, `GroupLinks_<group>[]` | the seven groups of `Leftmenu_setup` (AI and Updates for extensions' links) | siteaccess |
+| `settings/menu.ini` | `Leftmenu_<menu>` | `Groups[]`, `GroupNames[<group>]`, `GroupLinks_<group>[]` | the nine groups of `Leftmenu_setup` (Design and Audit for moved tabs, AI and Updates for extensions' links) | siteaccess |
 | `settings/menu.ini` | `Leftmenu_<menu>` | `LeadLinks[]` | `overview` in `Leftmenu_setup` | siteaccess |
 | `settings/menu.ini` | `Leftmenu_setup` | `GroupTabs[<group>]`, `GroupSections[<group>]` | `design` and `audit` (see [Moving a tab into Setup](#moving-a-tab-into-setup)) | siteaccess |
 | `settings/menu.ini` | `Leftmenu_<menu>` | `LinkIcons[<link>]`, `LinkDescriptions[<link>]`, `LinkFigureTemplates[<link>]` | the core Setup links | siteaccess |
