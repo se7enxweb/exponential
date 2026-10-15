@@ -881,7 +881,7 @@ f91a366a6abfa6b8a706b154b7aec12c  design/admin4/override/templates/template_look
 03505c55345b654eeb275f3b614a92bf  design/admin4/override/templates/thumbnail/image.tpl
 6971adb19c3c39b21f245c72b7f73305  design/admin4/override/templates/thumbnail/image_browse.tpl
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
-7763483898fd493e53452e266763b697  design/admin4/stylesheets/admin4.css
+4d0f38019d58ba58a0f71b494764cdd3  design/admin4/stylesheets/admin4.css
 e846e5824afe1df7dc164bde027237f3  design/admin4/stylesheets/components.css
 e907d0bf7b66f4bd6da6699efc5b84a7  design/admin4/stylesheets/content.css
 0368a507892a9eb10f58c7a00b0365bf  design/admin4/stylesheets/core.css
@@ -4605,7 +4605,7 @@ f3bffc88e81741de46f06135aac557bf  extension/ezoe/design/standard/templates/ezoe/
 70322a77a52a65c55b7f33427a6c6eb4  extension/ezoe/doc/path_concept.gif
 b9fd60ca35c9e3786ffd14bb18c1ed1f  extension/ezoe/extension.xml
 5e39b4dbf6908a0056f6c019102502d7  extension/ezoe/ezxmltext/handlers/input/ezoeinputparser.php
-dae856cd7b3f91a83678140f224c8a11  extension/ezoe/ezxmltext/handlers/input/ezoexmlinput.php
+d5d49784be3ff92fa563ced3bbc9cc07  extension/ezoe/ezxmltext/handlers/input/ezoexmlinput.php
 ec9d0894a9b5155ca5bfa598488a5854  extension/ezoe/modules/ezoe/atd_rpc.php
 84be03f87c6a63ead6d791281c09bda5  extension/ezoe/modules/ezoe/classes/EnchantSpell.php
 18f870446f4fbe17ed7e04874d42d544  extension/ezoe/modules/ezoe/classes/GoogleSpell.php
@@ -4627,7 +4627,7 @@ ddbd8bb6073d636e28f3a13a50dc0b05  extension/ezoe/settings/content.ini.append.php
 0d9ca8185059a2156f5f03e2ff6c8d6f  extension/ezoe/settings/debugbar.ini.append.php
 0ea023f7c14946314bd9378e2d852bbb  extension/ezoe/settings/design.ini.append.php
 fb62ab1a4f8fd741f07e8d2094e2c6df  extension/ezoe/settings/ezjscore.ini.append.php
-19fac11424bc1d80713aaa627565813e  extension/ezoe/settings/ezoe.ini
+415ed21e235e7f67379ad9ac617c46cd  extension/ezoe/settings/ezoe.ini
 9319f1ac3f64704e50b2256afa058b92  extension/ezoe/settings/ezoe_attributes.ini
 f3cc73ac008d6dbc08c5be61fac64520  extension/ezoe/settings/ezxml.ini.append.php
 e51e2b0c9d84573797d5e4921625f2f7  extension/ezoe/settings/image.ini.append.php
@@ -7226,7 +7226,8 @@ b35407af9e2ca6ea1f275c2f3ebbb002  tests/tests/extension/ezoe/expOEDialogAccessRu
 a4f08d5ac6c237ea03f696e86a6b5fc6  tests/tests/extension/ezoe/expOEEditorRegistryTest.php
 ec537531a37d13e0a1a90a8f3a112d4d  tests/tests/extension/ezoe/expOEEditorServicesTest.php
 c986f5766a23f4b954a6b74c5c4f8931  tests/tests/extension/ezoe/expOEEditorViewAccessTest.php
-1f431d2787ac5ae352d9bc4e7c3e5ef0  tests/tests/extension/ezoe/expOEEngineConfigTest.php
+c41c31f51231d61133a36baf5a601830  tests/tests/extension/ezoe/expOEEmbedImageAliasTest.php
+808844d0b0af49a28d3156d2db5139b3  tests/tests/extension/ezoe/expOEEngineConfigTest.php
 fc96db66db0ea2664cf805a08fca8284  tests/tests/extension/ezoe/expOEEngineViewTest.php
 6834ab097cfc296675fecaebdf5dfcb3  tests/tests/extension/ezoe/expOEInputTableCellTextTest.php
 dbd0bda355096c5da0a52429cb51a1a9  tests/tests/extension/ezoe/expOEInputValidFlagTest.php
@@ -7236,7 +7237,7 @@ dbd0bda355096c5da0a52429cb51a1a9  tests/tests/extension/ezoe/expOEInputValidFlag
 9a7f16efa0e2944384ae92ca524a9ede  tests/tests/extension/ezoe/expOEPastedStylesTest.php
 56d13995de752f9df356105bb88a23d9  tests/tests/extension/ezoe/expOERelationsEmbedIdTest.php
 12e337e5d6b9e90a74cd6889c0936ef8  tests/tests/extension/ezoe/expOERoundTripTest.php
-10becba9add2f221837f6d4eb8cdef5e  tests/tests/extension/ezoe/expOETestCase.php
+d758f405cb0625ce7c0abbba6c8f283e  tests/tests/extension/ezoe/expOETestCase.php
 1ed3c1be8e04c209b35c7ecc5c8bfe83  tests/tests/extension/ezoe/expOEUploadPostStringTest.php
 1236b3c9d5976285c3e0a842868d1392  tests/tests/extension/ezoe/expOEUploadRulesTest.php
 4d69e74b0fc9c3fa8fb53eaf079a9fde  tests/tests/extension/ezoe/expOEUrlFetcherTest.php
@@ -7637,6 +7638,7 @@ cd0df33127aea30289ff55824df77907  tests/tests/kernel/classes/runnable/fixtures/r
 822ca872c02124807db0d09eb77e51da  tests/tests/kernel/classes/security/eZRSSSecurityTest.php
 3b012276860b70c1bf74047f97abfcfb  tests/tests/kernel/classes/security/eZSecurityHardeningTest.php
 739251cc13a7ba8557d0eff16b8e68a8  tests/tests/kernel/classes/security/expFileModeLimitsTest.php
+83e5d0248cb3a7fdd605f728629f8214  tests/tests/kernel/classes/security/expIniPhpWrapperTest.php
 c8f42593fb63a6e7e3de2de5029d8368  tests/tests/kernel/classes/security/fixtures/expfilemodecalls.php
 01cfa4440a2c6387c1d3ba0efb08b7f8  tests/tests/kernel/classes/security/stubs.php
 6c08da7b445e9c728db1abe71452c45c  tests/tests/kernel/classes/setup/AdminUISiteaccessTest.php

@@ -62,7 +62,7 @@ abstract class expOETestCase extends expServicesCoreTestCase
         $this->savedConfigured = $ini->variable( 'EditorSettings', 'EditorEngine' );
         $this->savedCheck = $ini->hasVariable( 'EditorSettings', 'UploadExtensionCheck' ) ? $ini->variable( 'EditorSettings', 'UploadExtensionCheck' ) : 'engine';
         $this->savedExtensions = $ini->variable( 'EditorSettings', 'UploadFileExtensions' );
-        $this->savedSwitch = $ini->variable( 'EditorSettings', 'EngineSwitch' );
+        $this->savedSwitch = $ini->hasVariable( 'EditorSettings', 'EngineSwitch' ) ? $ini->variable( 'EditorSettings', 'EngineSwitch' ) : null;
         $this->savedPreference = $this->dbPreference();
         expOEEditor::reset();
     }
@@ -76,7 +76,11 @@ abstract class expOETestCase extends expServicesCoreTestCase
             $ini->setVariable( 'EditorSettings', 'EditorEngine', $this->savedConfigured );
             $ini->setVariable( 'EditorSettings', 'UploadExtensionCheck', $this->savedCheck );
             $ini->setVariable( 'EditorSettings', 'UploadFileExtensions', $this->savedExtensions );
-            $ini->setVariable( 'EditorSettings', 'EngineSwitch', $this->savedSwitch );
+            // an EngineSwitch that was not set is removed again, not set to a value
+            if ( $this->savedSwitch === null )
+                $ini->removeSetting( 'EditorSettings', 'EngineSwitch' );
+            else
+                $ini->setVariable( 'EditorSettings', 'EngineSwitch', $this->savedSwitch );
             $this->loginAdmin();
             // put the admin's stored preference back exactly as it was (no row stays no row)
             $admin = eZUser::fetchByName( 'admin' );

@@ -709,14 +709,16 @@ html .exp-dt tbody tr:has(> td > input[type="checkbox"]:checked) > td { backgrou
 
 /* ---- Compatibility: extensions that paint a column themselves ----------------------------------------------- */
 
-/* explayouts_ui paints the left column navy on its own pages (#page.ezexplayoutsuinavigationpart #leftmenu) with
-   light menu text, and expects the box inside it to stay clear. admin4's card is that inner box, so on those
-   pages the card takes explayouts' navy and the column around it stays clear: the extension's dark menu, in
-   admin4's card. (Its rule has two ids and a class and loads after this file, hence the html and .sidebar.) */
+/* explayouts_ui's design/admin menu (nav.explayouts-sidebar) paints the left column navy on its own pages
+   (#page.ezexplayoutsuinavigationpart #leftmenu) with light menu text, and expects the box inside it to stay
+   clear. admin4's card is that inner box, so on those pages the card takes explayouts' navy and the column around
+   it stays clear: the extension's dark menu, in admin4's card. (Its rule has two ids and a class and loads after
+   this file, hence the html and .sidebar.) Only while that menu is in the card: an explayouts_ui with admin4
+   templates draws admin4's left menu (parts/ini_menu.tpl), which keeps admin4's card. */
 html #page.ezexplayoutsuinavigationpart #leftmenu.sidebar {
   background-color: transparent;
 }
-#page.ezexplayoutsuinavigationpart #leftmenu-design {
+#page.ezexplayoutsuinavigationpart #leftmenu-design:has(.explayouts-sidebar) {
   background-color: var(--a4-explayouts-nav);
   box-shadow: 0 0 0 1px var(--a4-explayouts-nav-edge), var(--a4-card-shadow);
 }
