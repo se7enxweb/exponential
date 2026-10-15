@@ -34,11 +34,14 @@ class expCronjobPauseTest extends PHPUnit\Framework\TestCase
         mkdir( $this->dir . '/control', 0700, true );
         expCronjobPause::setPaths( $this->dir . '/control', $this->dir . '/pause.log' );
         $this->user = new expCronjobPauseTestUser();
+        // The history keeps the user id; the login shown is looked up by it (the stand-in user is 42, "tester").
+        expCronjobPause::setUserResolver( function ( $id ) { return $id === 42 ? 'tester' : null; } );
     }
 
     protected function tearDown(): void
     {
         expCronjobPause::setPaths( null, null );
+        expCronjobPause::setUserResolver( null );
         if ( $this->dir && is_dir( $this->dir ) )
         {
             foreach ( (array)glob( $this->dir . '/control/*' ) as $file )
@@ -347,5 +350,65 @@ class expCronjobPauseTest extends PHPUnit\Framework\TestCase
             $this->assertStringContainsString( '{$cronjob_pause.note|wash}', $tpl );
             $this->assertStringContainsString( '{$cronjob_summary.paused}', $tpl );
         }
+    }
+
+    /**
+     * Who paused is kept as the user id only; the login shown is the user's current one, so a renamed user shows under
+     * the new name. An older line's login is used only when the user cannot be found, and "#<id>" when there is none.
+     */
+    public function testWhoPausedIsKeptByIdAndShownByTheCurrentLogin()
+    {
+        $this->assertTrue( expCronjobPause::pause( 'frequent', $this->user, 'release' ) );
+        $line = json_decode( trim( (string)file_get_contents( $this->dir . '/pause.log' ) ), true );
+        $this->assertSame( 42, $line['user_id'] );
+        $this->assertArrayNotHasKey( 'login', $line, 'no copy of the name' );
+        $this->assertSame( 'tester', expCronjobPause::state( 'frequent' )['by']['login'] );
+        $this->assertStringContainsString( ' by tester: release.', expCronjobPause::notice( 'frequent' ) );
+
+        expCronjobPause::setUserResolver( function ( $id ) { return $id === 42 ? 'renamed' : null; } );
+        $this->assertSame( 'renamed', expCronjobPause::state( 'frequent' )['by']['login'] );
+
+        file_put_contents( $this->dir . '/pause.log',
+            json_encode( array( 'time' => time(), 'part' => 'infrequent', 'action' => 'resume', 'user_id' => 14, 'login' => 'old' ) ) . "\n" .
+            json_encode( array( 'time' => time(), 'part' => 'infrequent', 'action' => 'resume', 'user_id' => 15 ) ) . "\n", FILE_APPEND );
+        expCronjobPause::setUserResolver( function ( $id ) { return null; } );
+        $this->assertSame( array( '#15', 'old', '#42' ), array_column( expCronjobPause::history(), 'login' ) );
+    }
+
+    /**
+     * A persistent worker (Velocity) keeps the class's statics: the history read in one request is read again in the
+     * next, so a pause made meanwhile by another process shows.
+     */
+    public function testTheHistoryIsReadAgainInTheNextRequest()
+    {
+        $had = isset( $_SERVER['REQUEST_TIME_FLOAT'] ) ? $_SERVER['REQUEST_TIME_FLOAT'] : null;
+        try
+        {
+            $_SERVER['REQUEST_TIME_FLOAT'] = 1000.5;
+            $this->assertSame( array(), expCronjobPause::history() );
+            file_put_contents( $this->dir . '/pause.log',
+                json_encode( array( 'time' => time(), 'part' => 'frequent', 'action' => 'pause', 'user_id' => 42 ) ) . "\n" );
+            $this->assertSame( array(), expCronjobPause::history(), 'the same request keeps what it read' );
+            $_SERVER['REQUEST_TIME_FLOAT'] = 1001.5;
+            $this->assertCount( 1, expCronjobPause::history() );
+        }
+        finally
+        {
+            if ( $had === null )
+                unset( $_SERVER['REQUEST_TIME_FLOAT'] );
+            else
+                $_SERVER['REQUEST_TIME_FLOAT'] = $had;
+        }
+    }
+
+    /**
+     * The Setup overview counts only the parts cronjob.ini defines: a state file left by a removed part pauses nothing.
+     */
+    public function testTheSetupOverviewLeavesOutPartsThatAreNotDefined()
+    {
+        expCronjobPause::pause( 'frequent', $this->user );
+        expCronjobPause::pause( 't471-removed-part', $this->user );
+        $collection = new eZSetupFunctionCollection();
+        $this->assertSame( 1, $collection->fetchCronjobPauses()['result']['count'] );
     }
 }

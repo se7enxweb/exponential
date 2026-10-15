@@ -91,9 +91,14 @@ class eZSetupFunctionCollection
             return array( 'result' => array( 'enabled' => false, 'all' => false, 'count' => 0 ) );
         $paused = expCronjobPause::pausedParts();
         $all = in_array( expCronjobPause::ALL, $paused, true );
+        // Only the parts cronjob.ini defines, as Setup > Cronjobs counts them: a state file left behind by a part
+        // that was removed since pauses nothing.
+        $defined = array();
+        foreach ( expCronjobRunner::parts() as $part )
+            $defined[] = $part['name'] === expCronjobRunner::GLOBAL_PART ? '' : (string)$part['name'];
         return array( 'result' => array( 'enabled' => true,
                                          'all' => $all,
-                                         'count' => count( $paused ) - ( $all ? 1 : 0 ) ) );
+                                         'count' => count( array_intersect( $paused, $defined ) ) ) );
     }
 }
 }

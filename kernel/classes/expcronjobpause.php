@@ -45,6 +45,15 @@ class expCronjobPause
     /** @var array[]|null The history read in this request, newest first; dropped when this request writes. */
     protected static $historyCache = null;
 
+    /** @var callable|null Set by a test: a user id to a login, instead of eZUser::fetch(). */
+    protected static $userResolver = null;
+
+    /** @var array<int, string|null> The logins looked up in this request, by user id. */
+    protected static $logins = array();
+
+    /** @var string|null The request the caches above belong to (REQUEST_TIME_FLOAT). */
+    protected static $request = null;
+
     /**
      * The notice runcronjobs.php prints when it leaves a run out because of a pause, or false when the run may go
      * ahead.
@@ -237,6 +246,7 @@ class expCronjobPause
      */
     public static function history( $limit = 20 )
     {
+        self::forThisRequest();
         if ( self::$historyCache === null )
             self::$historyCache = self::readHistory();
         return array_slice( self::$historyCache, 0, max( 0, (int)$limit ) );
@@ -277,7 +287,10 @@ class expCronjobPause
                                 'part'    => $entry['part'],
                                 'action'  => $entry['action'] === 'pause' ? 'pause' : 'resume',
                                 'user_id' => isset( $entry['user_id'] ) && is_scalar( $entry['user_id'] ) ? (int)$entry['user_id'] : 0,
-                                'login'   => isset( $entry['login'] ) && is_string( $entry['login'] ) ? $entry['login'] : '',
+                                // The user's current login, looked up by the id; the login an older line carries is
+                                // used only when the user cannot be found.
+                                'login'   => self::currentLogin( isset( $entry['user_id'] ) && is_scalar( $entry['user_id'] ) ? (int)$entry['user_id'] : 0,
+                                                                 isset( $entry['login'] ) && is_string( $entry['login'] ) ? $entry['login'] : '' ),
                                 // Lines written before notes existed have none.
                                 'note'    => isset( $entry['note'] ) ? self::cleanNote( $entry['note'] ) : '' );
             if ( count( $entries ) >= self::HISTORY_READ )
@@ -326,6 +339,75 @@ class expCronjobPause
         self::$directory = $directory;
         self::$historyFile = $historyFile;
         self::$historyCache = null;
+        self::$logins = array();
+    }
+
+    /**
+     * Drops what an earlier request read: a persistent worker (Exponential Velocity) keeps this class's statics from
+     * one request to the next, and a pause made meanwhile by another process must show. Keyed on the request's
+     * REQUEST_TIME_FLOAT, which Velocity sets per request.
+     */
+    private static function forThisRequest()
+    {
+        $request = isset( $_SERVER['REQUEST_TIME_FLOAT'] ) ? (string)$_SERVER['REQUEST_TIME_FLOAT'] : '';
+        if ( self::$request !== $request )
+        {
+            self::$request = $request;
+            self::$historyCache = null;
+            self::$logins = array();
+        }
+    }
+
+    /**
+     * For tests: how a user id becomes a login (a callable taking the id and giving a login or null), instead of
+     * eZUser::fetch(); null goes back to eZUser.
+     *
+     * @param callable|null $resolver
+     */
+    public static function setUserResolver( $resolver )
+    {
+        self::$userResolver = $resolver;
+        self::$historyCache = null;
+        self::$logins = array();
+    }
+
+    /**
+     * The current login of the user with this id, so a renamed user shows under the new name; $stored (the login an
+     * older history line carries) when the user cannot be found, and "#<id>" when there is neither. The history keeps
+     * only the id. Looked up once per id and request; never with paths set by a test, unless a resolver is set.
+     *
+     * @param int $userId
+     * @param string $stored
+     * @return string
+     */
+    private static function currentLogin( $userId, $stored )
+    {
+        $userId = (int)$userId;
+        if ( $userId <= 0 )
+            return (string)$stored;
+        self::forThisRequest();
+        if ( !array_key_exists( $userId, self::$logins ) )
+        {
+            $login = null;
+            try
+            {
+                if ( self::$userResolver !== null )
+                    $login = call_user_func( self::$userResolver, $userId );
+                elseif ( self::$directory === null && class_exists( 'eZUser' ) )
+                {
+                    $user = eZUser::fetch( $userId );
+                    $login = $user instanceof eZUser ? (string)$user->attribute( 'login' ) : null;
+                }
+            }
+            catch ( Throwable $e )
+            {
+                $login = null;
+            }
+            self::$logins[$userId] = is_string( $login ) && $login !== '' ? $login : null;
+        }
+        if ( self::$logins[$userId] !== null )
+            return self::$logins[$userId];
+        return (string)$stored !== '' ? (string)$stored : '#' . $userId;
     }
 
     /**
@@ -426,7 +508,6 @@ class expCronjobPause
                                     'part'    => $part,
                                     'action'  => $pause ? 'pause' : 'resume',
                                     'user_id' => $user ? (int)$user->attribute( 'contentobject_id' ) : 0,
-                                    'login'   => $user ? (string)$user->attribute( 'login' ) : '',
                                     'note'    => $note ) );
         $history = self::historyFile();
         if ( !is_dir( dirname( $history ) ) )
