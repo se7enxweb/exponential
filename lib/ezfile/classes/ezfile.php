@@ -378,6 +378,12 @@ class eZFile
         header( 'X-Powered-By: Exponential' );
         $mimeinfo = eZMimeType::findByURL( $file );
         header( "Content-Type: {$mimeinfo['name']}" );
+        // An SVG opened from the download view runs nothing and loads nothing
+        if ( $mimeinfo['name'] === 'image/svg+xml' )
+        {
+            header( "Content-Security-Policy: sandbox; default-src 'none'; style-src 'unsafe-inline'" );
+            header( 'X-Content-Type-Options: nosniff' );
+        }
 
         // Fixes problems with IE when opening a file directly
         header( "Pragma: " );

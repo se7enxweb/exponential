@@ -16,6 +16,14 @@ RewriteRule ^api/ index_rest.php [L]
 RewriteRule ^index_rest\.php - [L]
 RewriteRule ^([^/]+/)?content/treemenu.* index_treemenu.php [L]
 RewriteRule ^var/([^/]+/)?storage/images(-versioned)?/.* - [L]
+# SVG images are sanitized on upload; served from the storage they also run
+# nothing and load nothing when opened directly (needs mod_headers).
+<IfModule mod_headers.c>
+    <FilesMatch "\.svgz?$">
+        Header always set Content-Security-Policy "sandbox; default-src 'none'; style-src 'unsafe-inline'"
+        Header always set X-Content-Type-Options "nosniff"
+    </FilesMatch>
+</IfModule>
 # The stored files of PDF exports generated once (Setup > PDF export): only
 # names of letters, digits, ".", "_" and "-" ending in .pdf, as the export writes them.
 RewriteRule ^var/([^/]+/)?storage/pdf/[A-Za-z0-9][A-Za-z0-9._-]*\.pdf$ - [L]
