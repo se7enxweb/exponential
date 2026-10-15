@@ -448,12 +448,12 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
 /* The mega menu (prototype, opt-in: menu.ini [TopAdminMenu] MegaMenuTabs[]; page_topmenuitem.tpl, a4_mega_menu.js):
    a small disclosure button beside its tab and a card under the header with a choice of the links of the tab's left
    menu in their groups: up to three groups side by side, each 17rem wide, so a short choice makes a narrower card,
-   centred under the header. From 1280px only,
-   where the header is one row: below that, and in the "More" list, the button is not drawn and the tab is a plain
-   link (the phone menu is unchanged). */
+   centred under the header. From 576px, where the main menu is one line (the second header row up to 1279px, so also
+   at 960px with 200% zoom): below that (the phone menu), and in the "More" list, the button is not drawn and the tab
+   is a plain link. */
 .a4-mega-toggle,
 .a4-mega-panel { display: none; }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 576px) {
   .navbar-bar > li.a4-mega-item {
     display: flex;
     align-items: center;
@@ -625,7 +625,7 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
   .navbar-menu .a4-mega-all a:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: -3px; }
   .a4-mega-all .a4-icon { width: 12px; height: 12px; }
 }
-@media screen and (min-width: 1280px) and (forced-colors: active) {
+@media screen and (min-width: 576px) and (forced-colors: active) {
   .a4-mega-panel { border-color: CanvasText; }
   .a4-mega-toggle[aria-expanded="true"] { outline: 2px solid Highlight; }
   .navbar-menu .a4-mega-link a[aria-current="page"] { text-decoration: underline; }

@@ -95,7 +95,7 @@ async function run(steps, options) {
     const doc = listeners();
     function media(query) {
         return {
-            get matches() { return query.indexOf('1280') !== -1 ? opts.wide : opts.fine; },
+            get matches() { return query.indexOf('min-width: 576px') !== -1 ? opts.wide : opts.fine; },
             addEventListener() {},
         };
     }
@@ -220,7 +220,7 @@ const scenarios = {
     'touch never previews': [['enter:touch', 'wait:1000']],
     'a coarse pointer never previews': [['enter', 'wait:1000'], { fine: false }],
     'no preview while another menu is open': [['enter', 'wait:1000'], { other: true }],
-    'below 1280px a click opens nothing': [['click'], { wide: false }],
+    'below 576px a click opens nothing': [['click'], { wide: false }],
     'getting narrower closes it': [['click', 'narrow']],
     'focus coming into a preview keeps it open': [['enter', 'wait:300', 'focus in', 'leave', 'wait:1000']],
     'in the More list a click opens nothing': [['click'], { inMore: true }],

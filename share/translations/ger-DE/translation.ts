@@ -16063,8 +16063,8 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Heller Modus</translation>
     </message>
     <message>
-        <source>Open the %tab menu</source>
-        <translation>Menü „%tab“ öffnen</translation>
+        <source>%tab menu</source>
+        <translation>Menü „%tab“</translation>
     </message>
     <message>
         <source>Loading the %tab menu</source>

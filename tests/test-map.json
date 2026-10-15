@@ -158,7 +158,8 @@
     "design/admin4/templates/page_topmenu.tpl": [
       "tests/tests/design/AdminStylingRulesTest.php",
       "tests/tests/design/AdminHeaderTest.php",
-      "tests/tests/design/AdminMegaMenuTest.php"
+      "tests/tests/design/AdminMegaMenuTest.php",
+      "tests/tests/design/AdminIconsTest.php"
     ],
     "kernel/private/classes/views/error/view.php": [
       "tests/tests/kernel/error/ErrorHeaderListTest.php"
@@ -501,6 +502,17 @@
     ],
     "kernel/common/eztopmenuoperator.php": [
       "tests/tests/design/AdminMegaMenuTest.php"
+    ],
+    "design/admin4/templates/parts/a4_topmenu_items.tpl": [
+      "tests/tests/design/AdminMegaMenuTest.php",
+      "tests/tests/design/AdminIconsTest.php"
+    ],
+    "design/admin4/templates/parts/a4_mega_menu_check.tpl": [
+      "tests/tests/design/AdminMegaMenuTest.php"
+    ],
+    "design/admin4l/templates/explayouts/block/admin_tab_menu.tpl": [
+      "tests/tests/design/AdminMegaMenuTest.php",
+      "tests/tests/design/AdminIconsTest.php"
     ]
   },
   "generated": {

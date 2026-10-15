@@ -13674,8 +13674,8 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Light mode</translation>
     </message>
     <message>
-        <source>Open the %tab menu</source>
-        <translation>Open the %tab menu</translation>
+        <source>%tab menu</source>
+        <translation>%tab menu</translation>
     </message>
     <message>
         <source>Loading the %tab menu</source>

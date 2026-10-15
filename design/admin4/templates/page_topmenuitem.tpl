@@ -22,8 +22,8 @@
                loaded by a4_mega_menu.js when it is first opened; until then it holds a status line and the link to
                the tab's page, which also stays when the links cannot be loaded. *}
             <button type="button" class="a4-mega-toggle" aria-expanded="false" aria-controls="a4-mega-{$item_mega|wash}"
-                    aria-label="{'Open the %tab menu'|i18n( 'design/admin/pagelayout',, hash( '%tab', $menu_item.name ) )|wash}"
-                    title="{'Open the %tab menu'|i18n( 'design/admin/pagelayout',, hash( '%tab', $menu_item.name ) )|wash}"
+                    aria-label="{'%tab menu'|i18n( 'design/admin/pagelayout',, hash( '%tab', $menu_item.name ) )|wash}"
+                    title="{'%tab menu'|i18n( 'design/admin/pagelayout',, hash( '%tab', $menu_item.name ) )|wash}"
                     data-a4-mega-src={concat( 'user/megamenu/', $item_mega )|ezurl}><span class="a4-icon a4-bi-chevron-down" aria-hidden="true"></span></button>
             <div id="a4-mega-{$item_mega|wash}" class="a4-mega-panel" hidden
                  data-a4-mega-error="{'The %tab menu could not be loaded.'|i18n( 'design/admin/pagelayout',, hash( '%tab', $menu_item.name ) )|wash}">

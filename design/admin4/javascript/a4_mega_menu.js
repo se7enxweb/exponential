@@ -16,7 +16,7 @@
  *   A click on the button, or the focus moving into it, while the preview is shown keeps it open. Never on touch (only a pointer of type mouse,
  *   and only while the device reports (hover: hover) and (pointer: fine)); never while the "More" list or the user
  *   menu of the header is open.
- * - From 1280px only (one header row): below, or while the tab sits in the "More" list, admin4.css hides the button
+ * - From 576px (the one-line main menu; also 960px at 200% zoom): below (the phone menu), or while the tab sits in the "More" list, admin4.css hides the button
  *   and the script keeps the panel closed; the tab is then a plain link, and the phone menu is unchanged.
  * - The panel's groups and links are loaded once, from the button's data-a4-mega-src (user/megamenu/<tab>), the
  *   first time it opens: the page itself carries only the button, a status line and the link to the tab's page. A failed
@@ -36,7 +36,7 @@
         var panel = toggle ? document.getElementById(toggle.getAttribute('aria-controls')) : null;
         var body = panel ? panel.querySelector('[data-a4-mega-body]') : null;
         if (!panel || !body) return;
-        var wide = window.matchMedia('(min-width: 1280px)');
+        var wide = window.matchMedia('(min-width: 576px)');
         var fine = window.matchMedia('(hover: hover) and (pointer: fine)');
         var mode = null;     // null (closed), 'preview' (opened by the mouse resting on it) or 'open'
         var timer = null;    // the pending preview or close

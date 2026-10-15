@@ -10,7 +10,7 @@
  *          keyed by the user's roles); the links come from user/megamenu/<tab>, a view without page layout that
  *          answers only for a tab of MegaMenuTabs[] with a MegaMenuTemplate that is open to the user (the topmenu
  *          operator's verdict), drawn from the tab's menu.ini section by parts/ini_menu.tpl, without figures
- *  MM-04 - from 1280px only, hidden in the "More" list, with forced-colors and reduced-motion rules
+ *  MM-04 - from 576px (the one-line main menu, also 960px at 200% zoom), not in the phone menu, hidden in the "More" list, with forced-colors and reduced-motion rules
  *  MM-05 - the strings in ger-DE and eng-US
  *  MM-06 - the script: click, ArrowDown, Escape, Tab, a click outside, the delayed hover preview (300 ms in, 400 ms
  *          out, mouse only; the focus coming in keeps it), the width, the "More" list, one load and a failed one
@@ -110,7 +110,13 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( '#   MegaMenuTabs[]=users', $section );
 
         // the header asks for the setting, and for the user's access to the fragment, before it draws a button
-        $top = self::read( 'design/admin4/templates/page_topmenu.tpl' );
+        // one template draws the tabs for every header: admin4's page_topmenu.tpl and admin4l's tab menu block
+        foreach ( array( 'design/admin4/templates/page_topmenu.tpl', 'design/admin4l/templates/explayouts/block/admin_tab_menu.tpl' ) as $header )
+        {
+            $this->assertStringContainsString( "{include uri='design:parts/a4_topmenu_items.tpl' navigationpart_identifier=\$a4_current_part|trim}", self::read( $header ), $header );
+            $this->assertStringNotContainsString( '{foreach topmenu(', self::read( $header ), "$header draws no tabs of its own" );
+        }
+        $top = self::read( 'design/admin4/templates/parts/a4_topmenu_items.tpl' );
         $check = strpos( $top, "ezini_hasvariable( 'TopAdminMenu', 'MegaMenuTabs', 'menu.ini' )" );
         $this->assertNotFalse( $check );
         $this->assertStringContainsString( "{foreach ezini( 'TopAdminMenu', 'MegaMenuTabs', 'menu.ini' ) as \$a4_mega_tab}", $top );
@@ -146,7 +152,7 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
         $tag = substr( $item, $button, strpos( $item, '>', strpos( $item, 'data-a4-mega-src', $button ) ) - $button );
         $this->assertStringContainsString( 'aria-expanded="false"', $tag );
         $this->assertStringContainsString( 'aria-controls="a4-mega-{$item_mega|wash}"', $tag );
-        $this->assertStringContainsString( "aria-label=\"{'Open the %tab menu'|i18n( 'design/admin/pagelayout',, hash( '%tab', \$menu_item.name ) )|wash}\"", $tag );
+        $this->assertStringContainsString( "aria-label=\"{'%tab menu'|i18n( 'design/admin/pagelayout',, hash( '%tab', \$menu_item.name ) )|wash}\"", $tag );
         $this->assertStringContainsString( "data-a4-mega-src={concat( 'user/megamenu/', \$item_mega )|ezurl}", $tag );
         $this->assertStringContainsString( '<span class="a4-icon a4-bi-chevron-down" aria-hidden="true"></span>', $item );
         // the panel it controls: hidden, a status line until the links arrive, the link to the tab
@@ -243,12 +249,12 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
     }
 
     /** MM-04 */
-    public function testItShowsFromOneHeaderRowOnly()
+    public function testItShowsWhereTheMainMenuIsOneLine()
     {
         $css = self::css();
         $outside = preg_replace( '/@media[^{]*\{(?:[^{}]*\{[^{}]*\})*[^{}]*\}/s', '', $css );
-        $this->assertMatchesRegularExpression( '/\.a4-mega-toggle,\s*\.a4-mega-panel \{ display: none; \}/', $outside, 'hidden below 1280px' );
-        $wide = self::media( $css, 'screen and (min-width: 1280px)' );
+        $this->assertMatchesRegularExpression( '/\.a4-mega-toggle,\s*\.a4-mega-panel \{ display: none; \}/', $outside, 'hidden below 576px (the phone menu)' );
+        $wide = self::media( $css, 'screen and (min-width: 576px)' );
         $this->assertStringContainsString( '.a4-mega-toggle {', $wide );
         $this->assertMatchesRegularExpression( '/\.a4-nav-more-list \.a4-mega-toggle,\s*\.a4-nav-more-list \.a4-mega-panel \{ display: none; \}/', $wide );
         $this->assertStringContainsString( '.a4-mega-panel[hidden] { display: none; }', $wide );
@@ -259,17 +265,17 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
         $this->assertDoesNotMatchRegularExpression( '/\.a4-mega-text \{[^}]*(ellipsis|nowrap)/', $wide );
         $this->assertStringContainsString( '.a4-mega-panel::before {', $wide, 'the hover bridge' );
         $this->assertStringContainsString( '.a4-mega-toggle:focus-visible { outline: 3px solid var(--a4-ring);', $wide );
-        $forced = self::media( $css, 'screen and (min-width: 1280px) and (forced-colors: active)' );
+        $forced = self::media( $css, 'screen and (min-width: 576px) and (forced-colors: active)' );
         $this->assertStringContainsString( '.a4-mega-panel { border-color: CanvasText; }', $forced );
         $this->assertStringContainsString( '.a4-mega-toggle .a4-icon { transition: none; }', self::media( $css, '(prefers-reduced-motion: reduce)' ) );
         // the script agrees on the width
-        $this->assertStringContainsString( "window.matchMedia('(min-width: 1280px)')", self::read( 'design/admin4/javascript/a4_mega_menu.js' ) );
+        $this->assertStringContainsString( "window.matchMedia('(min-width: 576px)')", self::read( 'design/admin4/javascript/a4_mega_menu.js' ) );
     }
 
     /** MM-05 */
     public function testTheStringsAreTranslated()
     {
-        $strings = array( 'Open the %tab menu' => 'Menü „%tab“ öffnen', 'Loading the %tab menu' => 'Menü „%tab“ wird geladen',
+        $strings = array( '%tab menu' => 'Menü „%tab“', 'Loading the %tab menu' => 'Menü „%tab“ wird geladen',
                           'The %tab menu could not be loaded.' => 'Das Menü „%tab“ konnte nicht geladen werden.',
                           'Go to %tab' => 'Weiter zu „%tab“' );
         foreach ( array( 'ger-DE', 'eng-US' ) as $language )
@@ -501,8 +507,8 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
         $closed( 'no preview while another menu is open' );
 
         // the width
-        $closed( 'below 1280px a click opens nothing' );
-        $this->assertSame( 0, $s['below 1280px a click opens nothing']['fetches'] );
+        $closed( 'below 576px a click opens nothing' );
+        $this->assertSame( 0, $s['below 576px a click opens nothing']['fetches'] );
         $closed( 'getting narrower closes it' );
         // the "More" list of the header
         $closed( 'in the More list a click opens nothing' );
@@ -728,5 +734,69 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
                 $this->assertNotSame( '', trim( $found->item( 0 )->textContent ), "$language, $context: $source" );
             }
         }
+    }
+
+    /** MM-09: what the settings name and the menus cannot use is ignored, and named in the debug report */
+    public function testIgnoredSettingsAreNamedInTheDebugReport()
+    {
+        // the check is included where the script is loaded, so only while a tab is named
+        $head = self::read( 'design/admin4/templates/page_head_script.tpl' );
+        $this->assertLessThan( strpos( $head, "{include uri='design:parts/a4_mega_menu_check.tpl'}" ),
+                               strpos( $head, "{ezscript_load( array( 'a4_mega_menu.js' ) )}" ) );
+        // each tab's section is named for the check
+        $ini = self::read( 'settings/menu.ini' );
+        $this->assertStringContainsString( "MegaMenuSection=Leftmenu_setup", $ini );
+        $this->assertStringContainsString( "MegaMenuSection=Leftmenu_user_mega", $ini );
+
+        // the sections as in settings/menu.ini, set here so the check does not depend on a cached menu.ini
+        $this->menuIni( array(
+            'TopAdminMenu' => array( 'MegaMenuTabs' => array( 'setup', 'users', 'mmt_unknown' ) ),
+            'Topmenu_setup' => array( 'NavigationPartIdentifier' => 'ezsetupnavigationpart', 'MegaMenuTemplate' => 'design:parts/setup/mega_menu.tpl' ),
+            'Topmenu_users' => array( 'NavigationPartIdentifier' => 'ezusernavigationpart', 'MegaMenuTemplate' => 'design:parts/user/mega_menu.tpl',
+                                      'MegaMenuSection' => 'Leftmenu_user_mega' ),
+            'Leftmenu_user' => array( 'Links' => array( 'roles_and_policies' => 'role/list', 'unactivated' => 'user/unactivated' ) ),
+            'Leftmenu_user_mega' => array( 'Links' => array( 'accounts' => 'content/view/full/5', 'sessions' => 'setup/session' ),
+                                           'GroupSections' => array( 'access' => 'Leftmenu_user' ),
+                                           'MegaMenuLinks' => array( 'accounts', 'access-roles_and_policies', 'mmt_nolink', 'access-mmt_nolink', 'mmtgroup-x' ) ),
+        ) );
+        $messages = self::debugMessagesOf( 'file:design/admin4/templates/parts/a4_mega_menu_check.tpl' );
+        $text = implode( "\n", $messages );
+        $this->assertStringContainsString( 'MegaMenuTabs[]=mmt_unknown: no [Topmenu_mmt_unknown] MegaMenuTemplate', $text );
+        $this->assertStringContainsString( '[Leftmenu_user_mega] MegaMenuLinks[]=mmt_nolink:', $text );
+        $this->assertStringContainsString( '[Leftmenu_user_mega] MegaMenuLinks[]=access-mmt_nolink:', $text );
+        $this->assertStringContainsString( '[Leftmenu_user_mega] MegaMenuLinks[]=mmtgroup-x:', $text );
+        $this->assertStringNotContainsString( 'MegaMenuLinks[]=accounts:', $text, 'a link of the section is known' );
+        $this->assertStringNotContainsString( 'MegaMenuLinks[]=access-roles_and_policies:', $text, 'a link of an added section is known' );
+        $this->assertStringNotContainsString( 'MegaMenuTabs[]=setup:', $text );
+        $this->assertStringNotContainsString( 'MegaMenuTabs[]=users:', $text );
+
+        $this->menuIni( array( 'Leftmenu_user_mega' => array( 'MegaMenuLinks' => array_fill( 0, 13, 'accounts' ) ) ) );
+        $this->assertStringContainsString( '13 keys, the mega menu shows the first 12', implode( "\n", self::debugMessagesOf( 'file:design/admin4/templates/parts/a4_mega_menu_check.tpl' ) ) );
+    }
+
+    /** Renders a template with the debug report switched on; returns the debug messages it wrote */
+    private static function debugMessagesOf( $uri )
+    {
+        $debug = eZDebug::instance();
+        $saved = array( isset( $GLOBALS['eZDebugEnabled'] ) ? $GLOBALS['eZDebugEnabled'] : null, $debug->ShowTypes,
+                        $debug->HandleType, $debug->MessageOutput, $debug->DebugStrings );
+        $GLOBALS['eZDebugEnabled'] = true;
+        $debug->ShowTypes = $debug->ShowTypes | eZDebug::SHOW_DEBUG;
+        $debug->HandleType = eZDebug::HANDLE_NONE;
+        $debug->MessageOutput = eZDebug::OUTPUT_MESSAGE_STORE;
+        $debug->DebugStrings = array();
+        try
+        {
+            eZTemplate::factory()->fetch( $uri );
+            $messages = array();
+            foreach ( $debug->DebugStrings as $entry )
+                $messages[] = is_array( $entry ) && isset( $entry['String'] ) ? (string)$entry['String'] : '';
+        }
+        finally
+        {
+            if ( $saved[0] === null ) unset( $GLOBALS['eZDebugEnabled'] ); else $GLOBALS['eZDebugEnabled'] = $saved[0];
+            list( , $debug->ShowTypes, $debug->HandleType, $debug->MessageOutput, $debug->DebugStrings ) = $saved;
+        }
+        return $messages;
     }
 }
