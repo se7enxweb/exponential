@@ -883,7 +883,7 @@ ac084a07607e6d6c5a845da15423854f  design/admin4/images/view-fullscreen.png
 d7d11d12cef327ec0d54a0f346cdfc5b  design/admin4/javascript/admin4.js
 b05092d370a223ac22e7c4b388174054  design/admin4/javascript/contentstructuremenu_dynamic.js
 2208f27da9ddaa11d336d07c190cbc4b  design/admin4/javascript/expajaxuploader.js
-5b924bb6c38c2aa71ee82f2185b8cac6  design/admin4/javascript/ezadmin_menubar.js
+b8a53242c5d3ffa978546d6aac930f15  design/admin4/javascript/ezadmin_menubar.js
 2b984f2f31802646942901f436bf277b  design/admin4/javascript/ezajaxrelations_jquery.js
 def856500eb25e4c354688eaf1c1f790  design/admin4/javascript/ezajaxsubitems_expdatatable.js
 2c35ad74f3ae96723bd750231c27cbe4  design/admin4/javascript/leftmenu_widthcontrol.js
@@ -920,7 +920,7 @@ d1f3e1ef98e8cee2e52a5446280eadc3  design/admin4/override/templates/embed-inline_
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
 a2c561e93ef63c93201e81acd4f32741  design/admin4/override/templates/window_controls_user.tpl
 f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin4/override/templates/windows_user.tpl
-4d0392d550dfffe58f5a0afb7b7d568b  design/admin4/stylesheets/admin4.css
+c98b7f55b0ccf3ec3b033713fd171222  design/admin4/stylesheets/admin4.css
 2d35841f85e0e6b28e6a359545f37c5c  design/admin4/stylesheets/components.css
 9e90db5915f1915b7c9175b18868a205  design/admin4/stylesheets/content.css
 0368a507892a9eb10f58c7a00b0365bf  design/admin4/stylesheets/core.css
@@ -1130,7 +1130,7 @@ af46a950a91555aad32cb5f618995f19  design/admin4/templates/package/view/files.tpl
 9e3c131cdb356ea06a5375f131c68842  design/admin4/templates/page_head_style.tpl
 dbcd6a019f44c7b1bcf92f13c30f641f  design/admin4/templates/page_head_style_inline.tpl
 cb128a4645e891cd796919aad3ed36d1  design/admin4/templates/page_header.tpl
-e914f9b0e9ca50db0c8ad05340bb8e2f  design/admin4/templates/page_leftmenu.tpl
+8f4dff577f0aaa25723c579d16ddc084  design/admin4/templates/page_leftmenu.tpl
 169f988a44a2a3bfa2f9dfc53663645c  design/admin4/templates/page_login_copyright.tpl
 1a7132e097c854ce731d22d75ca6db9a  design/admin4/templates/page_mainarea.tpl
 1bf2256ccd6061ee7f354a26834937c1  design/admin4/templates/page_menuheadenabled.tpl
@@ -1149,7 +1149,7 @@ e6fe56c836e1e8315b4d7aa9e9fb4b74  design/admin4/templates/parts/audit_timeline.t
 3dff8ecf3c880bf2261cc89a9b39d8bd  design/admin4/templates/parts/ini_menu_items.tpl
 5e0f6d3ec0e18268701f66051d24f387  design/admin4/templates/parts/language_badge.tpl
 fa8f8c371e071bca043dc0ab05acd3dd  design/admin4/templates/parts/left_trash.tpl
-4343892ba5a487d9dc967ee91388c533  design/admin4/templates/parts/left_width_control.tpl
+6d80823e605192a5da410871071737be  design/admin4/templates/parts/left_width_control.tpl
 3e68bfa74f1b07404548df2be1068041  design/admin4/templates/parts/media/menu.tpl
 51fc36d364bb546ff37261917ffebdf1  design/admin4/templates/parts/my/menu.tpl
 23ce59c74a64027dd255eac674ff7ce0  design/admin4/templates/parts/setup/menu.tpl
@@ -7084,7 +7084,7 @@ a279dc1d15cd330c560350bc794414f7  tests/tests/design/AdminKeyboardTest.php
 f1af30bb607758cf5d815836baaf88a6  tests/tests/design/AdminLandmarksTest.php
 859c93ecb4d2d3c59b4fcc748587fcd6  tests/tests/design/AdminLanguageBadgeTest.php
 962e411349c1edf829923a255be0bee7  tests/tests/design/AdminLeftMenuGroupsTest.php
-40e268a0f1ad5b5ed20d5b76ae9bbc89  tests/tests/design/AdminLegacyControlsTest.php
+3a99a41d378e26909d647ace9fd7e477  tests/tests/design/AdminLegacyControlsTest.php
 a33e9d573eb8e846797e949212bf192e  tests/tests/design/AdminNoticesTest.php
 0c55571a81de40303f49848a033d4661  tests/tests/design/AdminPageHeaderTest.php
 6ff0ec39508251b32aa19593c39780e4  tests/tests/design/AdminPreferencesTest.php
