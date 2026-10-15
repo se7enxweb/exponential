@@ -61,8 +61,15 @@ class AdminLeftMenuGroupsTest extends PHPUnit\Framework\TestCase
                 $seen[] = $key;
             }
         }
-        // every active link of the setup menu sits in a group; extensions' links go to "More" by themselves
-        foreach ( $links as $key )
+        // the lead links (the overview) come before the groups and sit in none
+        $lead = $setup['LeadLinks'] ?? array();
+        foreach ( $lead as $key )
+        {
+            $this->assertContains( $key, $links, "LeadLinks[] names $key, which is no Links[] key of Leftmenu_setup" );
+            $this->assertNotContains( $key, $seen, "lead link $key is in a group as well" );
+        }
+        // every other active link of the setup menu sits in a group; extensions' links go to "More" by themselves
+        foreach ( array_diff( $links, $lead ) as $key )
             $this->assertContains( $key, $seen, "Links[{$key}] of Leftmenu_setup is in no group" );
     }
 
