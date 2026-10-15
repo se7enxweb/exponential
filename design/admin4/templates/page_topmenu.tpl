@@ -46,10 +46,23 @@
                stands in for (parts/a4_navigation_part.tpl) *}
             {def $a4_current_part = ''}
             {set-block variable=a4_current_part}{include uri='design:parts/a4_navigation_part.tpl'}{/set-block}
+            {* The tab with a mega menu (prototype, opt-in: menu.ini [TopAdminMenu] MegaMenuTabs[], empty by default;
+               only setup so far), for a user who may open its fragment (setup/megamenu), not on edit pages. Only the
+               button and an empty panel are drawn here; a4_mega_menu.js loads the links when the panel is first
+               opened. The header's cache block is keyed by the user's roles ($user_hash), as the tabs are.
+               page_topmenuitem.tpl reads $a4_mega_part; admin4l's tab block sets none and draws no mega menu. *}
+            {def $a4_mega_part = ''}
+            {if and( $ui_context_edit|not, ezini_hasvariable( 'TopAdminMenu', 'MegaMenuTabs', 'menu.ini' ) )}
+                {if and( ezini( 'TopAdminMenu', 'MegaMenuTabs', 'menu.ini' )|contains( 'setup' ),
+                         fetch( 'user', 'can_open', hash( 'uri', 'setup/megamenu' ) ) )}
+                    {set $a4_mega_part = ezini( 'Topmenu_setup', 'NavigationPartIdentifier', 'menu.ini' )}
+                {/if}
+            {/if}
             {foreach topmenu($ui_context, true() ) as $menu}
                 {include uri='design:page_topmenuitem.tpl' menu_item=$menu navigationpart_identifier=$a4_current_part|trim}
             {/foreach}
             {undef $a4_current_part}
+            {undef $a4_mega_part}
             {* The overflow of the one-line menu (576px and up): ezadmin_menubar.js moves the tabs that do not fit into
                this list and shows the item; without the script it stays hidden and the row scrolls sideways. A
                disclosure button (aria-expanded, aria-controls), not a menu: the list holds plain links. *}

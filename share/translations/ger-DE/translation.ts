@@ -16051,6 +16051,22 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Heller Modus</translation>
     </message>
     <message>
+        <source>Open the Setup menu</source>
+        <translation>Setup-Menü öffnen</translation>
+    </message>
+    <message>
+        <source>Loading the Setup menu</source>
+        <translation>Setup-Menü wird geladen</translation>
+    </message>
+    <message>
+        <source>The Setup menu could not be loaded.</source>
+        <translation>Das Setup-Menü konnte nicht geladen werden.</translation>
+    </message>
+    <message>
+        <source>All Setup functions</source>
+        <translation>Alle Setup-Funktionen</translation>
+    </message>
+    <message>
         <source>Open the site</source>
         <translation>Website öffnen</translation>
     </message>
