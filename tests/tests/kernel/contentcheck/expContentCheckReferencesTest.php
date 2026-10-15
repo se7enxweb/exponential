@@ -125,6 +125,27 @@ class expContentCheckReferencesTest extends PHPUnit\Framework\TestCase
         $this->assertNull( expContentCheckReferences::collectionQueryReferences( 'not json' )['query'] );
     }
 
+    /** CR-05 a collection of the current location lists below the nodes its layout's rules target */
+    public function testCurrentLocationPlacements()
+    {
+        $rules = array( array( 'targets' => array( array( 'node', '192' ) ), 'classes' => array() ),
+                        array( 'targets' => array( array( 'subtree', '89' ), array( 'module_view', 'content/view' ) ), 'classes' => array() ),
+                        array( 'targets' => array( array( 'module', 'user' ) ), 'classes' => array() ),
+                        array( 'targets' => array(), 'classes' => array( 'ng_gallery' ) ) );
+        $this->assertSame( array( array( 'nodes' => array( 192 ), 'depth' => 'list', 'parent_classes' => array() ),
+                                  array( 'nodes' => array( 89 ), 'depth' => 'tree', 'parent_classes' => array() ),
+                                  array( 'nodes' => array( 0 ), 'depth' => 'list', 'parent_classes' => array( 'ng_gallery' ) ) ),
+                           expContentCheckReferences::currentLocationPlacements( $rules, 'list', false ),
+                           'a node target lists its children, a subtree target everything below it, a class condition anywhere below that class; module targets are administration layouts' );
+        $this->assertSame( array( array( 'nodes' => array( 0 ), 'depth' => 'list', 'parent_classes' => array() ) ),
+                           expContentCheckReferences::currentLocationPlacements( $rules, 'list', true ), 'a shared layout can show up anywhere' );
+        $this->assertSame( array( array( 'nodes' => array( 0 ), 'depth' => 'tree', 'parent_classes' => array() ) ),
+                           expContentCheckReferences::currentLocationPlacements( array(), 'tree', false ), 'a layout without rules: anywhere' );
+        $gallery = array( 'nodes' => array( 0 ), 'depth' => 'list', 'include' => array( 'image' ), 'exclude' => array(), 'parent_classes' => array( 'ng_gallery' ) );
+        $this->assertTrue( expContentCheckReferences::queryReaches( $gallery, 'image', 7, array( 1, 7 ), 'ng_gallery' ) );
+        $this->assertFalse( expContentCheckReferences::queryReaches( $gallery, 'image', 7, array( 1, 7 ), 'folder' ) );
+    }
+
     /** CR-06 */
     public function testLayoutRuleTargets()
     {

@@ -14,8 +14,8 @@
  *               and internal paths of links;
  *   urls        the ezurl table (links of rich text and URL fields), custom URL aliases and URL wildcards;
  *   layouts     explayouts collection items (value_id of ez_location is a NODE id), dynamic collection queries
- *               (their parent node, list or tree, class filter; a query on the current location applies anywhere),
- *               block parameters, rule targets, in every status;
+ *               (their parent node, list or tree, class filter; a query on the current location: below the nodes
+ *               its layout's rules target), block parameters, rule targets, in every status;
  *   ini         every settings file: values of settings whose block or name speaks of nodes, objects or roots, and
  *               content/view paths anywhere;
  *   templates   literal node and object ids in the templates of every design (a hint: an id a template computes
@@ -501,6 +501,48 @@ class expContentCheckReferences
     }
 
     /**
+     * Where a dynamic collection of the current location lists content: the children (or the subtree) of the nodes
+     * its layout is used on. A rule's node target is such a node; below a subtree target every node is; a rule
+     * without node or subtree targets (a path, a condition only) can apply anywhere, to a current location of the
+     * classes of its class conditions; a rule with only module targets is an administration layout. A shared
+     * layout, or one without rules, can show up anywhere.
+     *
+     * @param array $rules list of array( 'targets' => list of array( type, value ), 'classes' => string[] )
+     * @param string $depth list|tree, the query's own
+     * @param bool $anywhere a shared layout (or a block without layout)
+     * @return array list of array( 'nodes' => int[], 'depth' => list|tree, 'parent_classes' => string[] )
+     */
+    public static function currentLocationPlacements( array $rules, $depth, $anywhere )
+    {
+        if ( $anywhere || !$rules )
+            return array( array( 'nodes' => array( 0 ), 'depth' => $depth, 'parent_classes' => array() ) );
+        $placements = array();
+        foreach ( $rules as $rule )
+        {
+            $nodes = array();
+            $subtrees = array();
+            $other = false;
+            foreach ( (array)$rule['targets'] as $target )
+            {
+                list( $type, $value ) = $target;
+                if ( ( $type === 'node' || $type === 'location' ) && preg_match( '/^[0-9]{1,10}$/', trim( (string)$value ) ) )
+                    $nodes[] = (int)$value;
+                else if ( $type === 'subtree' && preg_match( '/^[0-9]{1,10}$/', trim( (string)$value ) ) )
+                    $subtrees[] = (int)$value;
+                else if ( $type !== 'module' && $type !== 'module_view' )
+                    $other = true;
+            }
+            if ( $nodes )
+                $placements[] = array( 'nodes' => $nodes, 'depth' => $depth, 'parent_classes' => array() );
+            if ( $subtrees )
+                $placements[] = array( 'nodes' => $subtrees, 'depth' => 'tree', 'parent_classes' => array() );
+            if ( $other || !$rule['targets'] )
+                $placements[] = array( 'nodes' => array( 0 ), 'depth' => $depth, 'parent_classes' => array_values( array_unique( (array)$rule['classes'] ) ) );
+        }
+        return $placements;
+    }
+
+    /**
      * The references of a layout's rule target.
      *
      * @param string $type
@@ -772,7 +814,7 @@ class expContentCheckReferences
 
     /**
      * The layouts: collection items, dynamic collections, block parameters and rule targets, in every status. A
-     * dynamic collection on the current location applies wherever its layout is used, so anywhere.
+     * dynamic collection on the current location applies wherever its layout is used (currentLocationPlacements()).
      */
     protected function fromLayouts()
     {
@@ -804,6 +846,45 @@ class expContentCheckReferences
                 }
             }
         }
+        // where each layout is used: its rules' targets and class conditions, and whether it is shared
+        $blockLayouts = array();
+        foreach ( (array)$db->arrayQuery( 'SELECT id, layout_id FROM explayouts_block' ) as $row )
+            $blockLayouts[(int)$row['id']] = (int)$row['layout_id'];
+        $sharedLayouts = array();
+        if ( self::tableExists( 'explayouts_layout' ) )
+        {
+            foreach ( (array)$db->arrayQuery( 'SELECT id, shared FROM explayouts_layout' ) as $row )
+            {
+                if ( (int)$row['shared'] === 1 )
+                    $sharedLayouts[(int)$row['id']] = true;
+            }
+        }
+        $layoutRules = array();
+        if ( self::tableExists( 'explayouts_rule' ) )
+        {
+            $rules = array();
+            foreach ( (array)$db->arrayQuery( 'SELECT id, layout_id FROM explayouts_rule' ) as $row )
+                $rules[(int)$row['id']] = array( 'layout' => (int)$row['layout_id'], 'targets' => array(), 'classes' => array() );
+            if ( self::tableExists( 'explayouts_rule_target' ) )
+            {
+                foreach ( (array)$db->arrayQuery( 'SELECT rule_id, target_type, target_value FROM explayouts_rule_target' ) as $row )
+                {
+                    if ( isset( $rules[(int)$row['rule_id']] ) )
+                        $rules[(int)$row['rule_id']]['targets'][] = array( (string)$row['target_type'], (string)$row['target_value'] );
+                }
+            }
+            if ( self::tableExists( 'explayouts_rule_condition' ) )
+            {
+                foreach ( (array)$db->arrayQuery( "SELECT rule_id, condition_value FROM explayouts_rule_condition WHERE condition_type = 'class'" ) as $row )
+                {
+                    $classes = json_decode( (string)$row['condition_value'], true );
+                    if ( isset( $rules[(int)$row['rule_id']] ) && is_array( $classes ) )
+                        $rules[(int)$row['rule_id']]['classes'] = array_merge( $rules[(int)$row['rule_id']]['classes'], array_map( 'strval', $classes ) );
+                }
+            }
+            foreach ( $rules as $rule )
+                $layoutRules[$rule['layout']][] = $rule;
+        }
         if ( self::tableExists( 'explayouts_collection_query' ) )
         {
             foreach ( (array)$db->arrayQuery( 'SELECT q.id AS id, q.parameters AS parameters, c.block_id AS block_id' .
@@ -813,7 +894,19 @@ class expContentCheckReferences
                 $found = self::collectionQueryReferences( (string)$row['parameters'] );
                 $this->addAll( $found['references'], 0, $label );
                 if ( $found['query'] )
-                    $this->addQuery( $found['query'], $label );
+                {
+                    // a collection of the current location lists the children of wherever its layout is used
+                    if ( $found['query']['nodes'] === array( 0 ) )
+                    {
+                        $layoutID = isset( $blockLayouts[(int)$row['block_id']] ) ? $blockLayouts[(int)$row['block_id']] : 0;
+                        $placements = self::currentLocationPlacements( isset( $layoutRules[$layoutID] ) ? $layoutRules[$layoutID] : array(),
+                                                                       $found['query']['depth'], isset( $sharedLayouts[$layoutID] ) || $layoutID === 0 );
+                        foreach ( $placements as $placement )
+                            $this->addQuery( array_merge( $found['query'], $placement ), $label . ' (current location)' );
+                    }
+                    else
+                        $this->addQuery( $found['query'], $label );
+                }
             }
         }
         if ( self::tableExists( 'explayouts_block_parameter' ) )
@@ -1020,7 +1113,7 @@ class expContentCheckReferences
             array_pop( $ancestors );
             foreach ( (array)$index['queries'] as $query )
             {
-                if ( !self::queryReaches( $query, (string)$object['class_identifier'], (int)$location['parent_node_id'], $ancestors ) )
+                if ( !self::queryReaches( $query, (string)$object['class_identifier'], (int)$location['parent_node_id'], $ancestors, (string)$location['parent_class'] ) )
                     continue;
                 return (string)$query['label'];
             }
@@ -1031,17 +1124,21 @@ class expContentCheckReferences
     /**
      * Whether a dynamic collection lists an object of a class at a location.
      *
-     * @param array $query array( 'nodes', 'depth', 'include', 'exclude' )
+     * @param array $query array( 'nodes', 'depth', 'include', 'exclude', 'parent_classes' (a collection of the
+     *              current location applied by a rule's class condition: only below a parent of these classes) )
      * @param string $class
      * @param int $parentNodeID
      * @param int[] $ancestors the node ids above the location
+     * @param string $parentClass the class of the location's parent
      * @return bool
      */
-    public static function queryReaches( array $query, $class, $parentNodeID, array $ancestors )
+    public static function queryReaches( array $query, $class, $parentNodeID, array $ancestors, $parentClass = '' )
     {
         if ( !empty( $query['include'] ) && !in_array( $class, $query['include'], true ) )
             return false;
         if ( !empty( $query['exclude'] ) && in_array( $class, $query['exclude'], true ) )
+            return false;
+        if ( !empty( $query['parent_classes'] ) && !in_array( (string)$parentClass, $query['parent_classes'], true ) )
             return false;
         foreach ( (array)$query['nodes'] as $node )
         {
