@@ -210,6 +210,8 @@ class AdminTreeMenuEscapingTest extends PHPUnit\Framework\TestCase
         $this->assertNotFalse( $check, 'content/hide acts on a GET' );
         $this->assertLessThan( strpos( $view, "operationIsAvailable( 'content_hide' )" ), $check, 'The POST check comes before the change' );
         $this->assertStringContainsString( "design:content/job_confirm.tpl", substr( $view, $check ) );
+        // the confirmation is not stored as the page to return to, or OK would lead back to it
+        $this->assertMatchesRegularExpression( "/\\\$ViewList\\['hide'\\] = array\\([^;]*'ui_context' => 'administration'/s", self::file( 'kernel/content/module.php' ) );
         foreach ( self::copies( 'templates/popupmenu/popup_sub_advance_menu.tpl' ) as $path => $tpl )
         {
             $this->assertStringNotContainsString( "'url': {\"/content/hide/", $tpl, $path );
