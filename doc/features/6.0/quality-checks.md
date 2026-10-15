@@ -231,3 +231,4 @@ Tests that scan the whole tree name no file, so the map lists them by pattern: e
 `expIniRoundTripTest`, and `composer.json` runs both and `AdminStylingRulesTest`, because a repinned package brings
 its own PHP, INI files and admin templates. Each of these once reached `main` through a change whose own tests
 passed (October 2026).
+
