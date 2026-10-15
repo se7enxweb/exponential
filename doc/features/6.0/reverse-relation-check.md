@@ -71,14 +71,19 @@ reference and, for a relation field, the name of the field, and which object it 
 selected one, else the name of the object below it).
 
 Only what the current user may read is described. A reference from an object the user may not read (by section,
-state, subtree or class; read access is checked once for all objects of the list) is not listed: each item says
-how many such references it has, without names, classes, fields or links. A target the user may not read is
-named "An object you may not read", and further locations the user may not read are only counted. The totals
-count everything, so `block` refuses a removal even when the user sees none of the references, and a hide asks
-first even when every reference comes from an object the user may not read. Nothing about these objects is
-written to a log or an audit record, and the check has no JSON or AJAX output.
+state, subtree or class; read access is checked once for all objects of the list) is not listed, and neither
+is its number: the item says only, in a fixed sentence, "There are further references that you may not see". The
+same goes for further locations the user may not read. A target the user may not read is named "An object you may
+not read". No name, class, ID or count of such objects reaches the page, a log or an audit record; the check has
+no JSON or AJAX output.
 
-At most 100 references are read per page; the total is counted in full and the page says how many more there are.
+The fixed sentence itself cannot be avoided. The checks count every reference, so `block` refuses a removal
+even when the user sees none of them, and a hide asks first even when every reference comes from an object the
+user may not read; without the sentence the page could not explain why. It therefore tells the user that such
+objects exist, but only when the removal is refused or warned about because of them, and never how many.
+
+At most 100 references are read per page; the total is counted in full, and when more exist than are read the
+page says so in a fixed sentence, without a number.
 
 Not covered: links to a location (`eznode://`) in rich text are stored as a relation to the location's object and
 count only when that object goes. Removals outside content/removeobject are not checked: removing a location on

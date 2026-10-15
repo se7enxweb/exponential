@@ -68860,24 +68860,16 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Die Verweise konnten nicht geprüft werden.</translation>
     </message>
     <message>
-        <source>%count more references are not listed.</source>
-        <translation>%count weitere Verweise sind nicht aufgeführt.</translation>
+        <source>Further references are not listed.</source>
+        <translation>Weitere Verweise sind nicht aufgeführt.</translation>
     </message>
     <message>
-        <source>1 further reference from an object you may not read.</source>
-        <translation>1 weiterer Verweis von einem Objekt, das Sie nicht lesen dürfen.</translation>
+        <source>There are further references that you may not see.</source>
+        <translation>Es gibt weitere Verweise, die Sie nicht sehen dürfen.</translation>
     </message>
     <message>
-        <source>%count further references from objects you may not read.</source>
-        <translation>%count weitere Verweise von Objekten, die Sie nicht lesen dürfen.</translation>
-    </message>
-    <message>
-        <source>1 further location you may not read.</source>
-        <translation>1 weiterer Ort, den Sie nicht lesen dürfen.</translation>
-    </message>
-    <message>
-        <source>%count further locations you may not read.</source>
-        <translation>%count weitere Orte, die Sie nicht lesen dürfen.</translation>
+        <source>There are further locations that you may not see.</source>
+        <translation>Es gibt weitere Orte, die Sie nicht sehen dürfen.</translation>
     </message>
     <message>
         <source>Used by</source>

@@ -2264,7 +2264,7 @@ d580752f8a0bb8328a1f896380e45acf  design/standard/templates/content/queued.tpl
 d3ab0235fdd24f13f48476732fad88cf  design/standard/templates/content/removeeditversion.tpl
 3567dcb5cf0b6509f9ecd4c5411bc1ab  design/standard/templates/content/removetranslation.tpl
 b167ca8304cb47b3ef1c0fe6179d4385  design/standard/templates/content/restore.tpl
-23c08ba0fca33c1a2c7862e7298c92ef  design/standard/templates/content/reverse_relation_check.tpl
+f29e0b18a4813fefa917aa1e95a77824  design/standard/templates/content/reverse_relation_check.tpl
 ff9860cbd5ec70de8e65b221a929a5cd  design/standard/templates/content/reverserelatedlist.tpl
 0e258722304579f33dba5a66f92bab8d  design/standard/templates/content/search.tpl
 826691ae4dcd6659142f496590ee7959  design/standard/templates/content/searchresult.tpl
@@ -2990,7 +2990,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-67605ab375f3cbd373c709075238ef6c  doc/changelogs/6.0/6.0.15.md
+dea8fbf2f34c761dedfd7267ae2730c0  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3439,7 +3439,7 @@ b44b9ac50952ac2e8f16cbb8f32b9b1b  doc/features/6.0/rad-tools.md
 f9c24ee19f2caf2e1326cf5158b46bfc  doc/features/6.0/repair-from-the-browser.md
 d19ac2813afb3d92cc981015c8ecdfc1  doc/features/6.0/request-rules.md
 24e8ccadcc06ff46a640a76473fd2d4a  doc/features/6.0/reset-user-password.md
-cbf964dad8f25c72afd9634cb03b7696  doc/features/6.0/reverse-relation-check.md
+174b39a00ef70e820ca9a10fdc3d01b2  doc/features/6.0/reverse-relation-check.md
 cb4ba958c01d20e816fc121fd17f2d6d  doc/features/6.0/robots-txt.md
 5546e1fd2154341af36b7d47c0e72dac  doc/features/6.0/role-and-policy-template-operators.md
 0954ae9de88cdf88556032c14ff33a9c  doc/features/6.0/role-assignment-paging.md
@@ -5572,7 +5572,7 @@ a565ef695304c6f4cad4562f91d4f042  kernel/private/classes/runnable/cronjobpart.ph
 67c95fd999450f68b249acad9c435c53  kernel/private/classes/services/contentjobdetails.php
 48f2077a5d9daafd0a27335bdbcd01cc  kernel/private/classes/services/draftscleanup.php
 d0693dcf25d6d8639c3579bd618844d9  kernel/private/classes/services/mailpreferencespage.php
-da1ebce9e690ec1caef6b184de25b815  kernel/private/classes/services/reverserelationcheck.php
+9d0098653b54ad55de4241c5319d85b0  kernel/private/classes/services/reverserelationcheck.php
 691b2b62e924bdef2a7010ea9b8e0960  kernel/private/classes/services/sessiongarbagecollector.php
 d3411a771db07379843c263813850cf0  kernel/private/classes/services/trash.php
 c8342101c1e8df5c14c7223835a7f549  kernel/private/classes/services/trashlist.php
@@ -7036,14 +7036,14 @@ dd5f5f3cf2348a6cc17bd0ee76983225  share/translations/dut-NL/translation.ts
 284321a9de29bf9268c27abb13f56f2c  share/translations/ell-GR/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-AU/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-NZ/translation.ts
-1bdd58c4bcad253d7b67819ac81739ce  share/translations/eng-US/translation.ts
+aea36e280e3c0ced334e76e321973851  share/translations/eng-US/translation.ts
 5f0920d5b4e8bbaff2a4a6d5b3995c90  share/translations/esl-ES/translation.ts
 27846e3f6408cd74f58cef8adcbab573  share/translations/esl-MX/translation.ts
 4b104d4d337601b4bc6ae0482e6478ea  share/translations/fin-FI/translation.ts
 edfd3efb7eca1e2bd6d6d7d08bd78a77  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-d4f0b37dd5eaef556114bbcccf4d96ea  share/translations/ger-DE/translation.ts
+076acd03b2dd0e829f490a29a0f09962  share/translations/ger-DE/translation.ts
 75d657fed5de11db9e059cdcff2046a8  share/translations/ita-IT/translation.ts
 a45e2d26b1c24ac4cb6ae1d7197e5b0e  share/translations/jpn-JP/translation.ts
 d1dc34034ddce2d64c4f8df7fcc41c85  share/translations/nno-NO/translation.ts
@@ -7056,7 +7056,7 @@ e33e059c205f7c0a49e112ce9ba6147d  share/translations/ser-SR/translation.ts
 e9e308757570f0321486d498fc993d17  share/translations/srp-RS/translation.ts
 718ecc8ecbbe8ebec7a88fb2697f401f  share/translations/swe-SE/translation.ts
 0b1b76b5ad6b2f923afd6fd9a9937a8b  share/translations/untranslated/readme.txt
-5505861d0efdae8cdf32a0f96224941e  share/translations/untranslated/translation.ts
+b3a857a4b99db84263652583d2a83f90  share/translations/untranslated/translation.ts
 bae9ff85781e52af001213bdb213a013  shippable.yml
 414f4d1129273ab3dea38b878d554eae  soap.php
 3b6d156f31df70e093aa1a6d8a525cd3  support/ezlupdate-qt4.5/README.txt
@@ -7149,7 +7149,7 @@ a33e9d573eb8e846797e949212bf192e  tests/tests/design/AdminNoticesTest.php
 fe3ae8677e701b3a8e7d50707d46a9ae  tests/tests/design/AdminPreviewDevicesTest.php
 09c565e1f86414d7548458461faf80dd  tests/tests/design/AdminResponsiveTest.php
 4b3af4d4ae744b360aa04bc3a27578b4  tests/tests/design/AdminRetiredClassesTest.php
-7e9aaaebd0d8e31170649ac6f748d776  tests/tests/design/AdminReverseRelationCheckTest.php
+c469a9b58daf7ecd9a007a09aae243e1  tests/tests/design/AdminReverseRelationCheckTest.php
 9f30c0d44bbf2de9c154495d15e158c8  tests/tests/design/AdminScriptsTest.php
 fba3ae0ecf105bfaa378adaaf45cb2f7  tests/tests/design/AdminSearchTest.php
 2267a66a813a4949572649ef13219314  tests/tests/design/AdminSelfContainedTest.php
@@ -7508,7 +7508,7 @@ b96df7eebf3dbbb88f9463398353a91a  tests/tests/kernel/classes/expLoveStackMigrate
 05a73385f01378bb23461a9bfdfdfbc9  tests/tests/kernel/classes/expPDFExportTest.php
 3bdd28bd003091155ce34cc6c77145e9  tests/tests/kernel/classes/expPolicyOmitListTest.php
 b167704de63034a7da8cd5daba25a132  tests/tests/kernel/classes/expRemoveSubtreeMultiLocationTest.php
-196126e7e14d0ad8eb5ad02d92bf8d98  tests/tests/kernel/classes/expReverseRelationCheckTest.php
+b4d73fc04a46f25dfb9d9142d9231280  tests/tests/kernel/classes/expReverseRelationCheckTest.php
 a1c1e7b69c803d8c1e3d120f932a664c  tests/tests/kernel/classes/expRoleGrantCheckTest.php
 e50cb342005e0cdae8e05cb08cea964d  tests/tests/kernel/classes/expRolePagesTest.php
 dab5e24e6554bac242991831743994d3  tests/tests/kernel/classes/expSecretRuleTest.php

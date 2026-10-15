@@ -61437,24 +61437,16 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>The references could not be checked.</translation>
     </message>
     <message>
-        <source>%count more references are not listed.</source>
-        <translation>%count more references are not listed.</translation>
+        <source>Further references are not listed.</source>
+        <translation>Further references are not listed.</translation>
     </message>
     <message>
-        <source>1 further reference from an object you may not read.</source>
-        <translation>1 further reference from an object you may not read.</translation>
+        <source>There are further references that you may not see.</source>
+        <translation>There are further references that you may not see.</translation>
     </message>
     <message>
-        <source>%count further references from objects you may not read.</source>
-        <translation>%count further references from objects you may not read.</translation>
-    </message>
-    <message>
-        <source>1 further location you may not read.</source>
-        <translation>1 further location you may not read.</translation>
-    </message>
-    <message>
-        <source>%count further locations you may not read.</source>
-        <translation>%count further locations you may not read.</translation>
+        <source>There are further locations that you may not see.</source>
+        <translation>There are further locations that you may not see.</translation>
     </message>
     <message>
         <source>Used by</source>

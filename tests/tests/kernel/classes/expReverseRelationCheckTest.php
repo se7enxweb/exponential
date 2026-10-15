@@ -132,7 +132,17 @@ class expReverseRelationCheckTest extends PHPUnit\Framework\TestCase
         $this->assertNull( ReverseRelationCheck::templateData( 'warn', self::check( 0 ) ) );
         $this->assertNull( ReverseRelationCheck::templateData( 'block', null ) );
         $warn = ReverseRelationCheck::templateData( 'warn', self::check( 2 ) );
-        $this->assertSame( array( 'warn', false, false, 2 ), array( $warn['mode'], $warn['blocked'], $warn['refused'], $warn['total'] ) );
+        $this->assertSame( array( 'warn', false, false, true, false ), array( $warn['mode'], $warn['blocked'], $warn['refused'], $warn['has_references'], $warn['more'] ) );
+        // no count reaches the page
+        $this->assertSame( array( 'items', 'has_references', 'more', 'failed', 'mode', 'blocked', 'refused' ), array_keys( $warn ) );
+        $raw = self::check( 150 );
+        $raw['listed'] = 90;
+        $raw['unreadable'] = 37;
+        $raw['items'] = array( array( 'node_id' => 10, 'name' => 'Folder', 'relations' => array(), 'unreadable' => 37, 'locations' => array(), 'unreadable_locations' => 23 ) );
+        $data = ReverseRelationCheck::templateData( 'warn', $raw );
+        $this->assertSame( array( true, true, true ), array( $data['more'], $data['items'][0]['unreadable'], $data['items'][0]['unreadable_locations'] ) );
+        foreach ( array( '37', '23', '150', '90' ) as $count )
+            $this->assertStringNotContainsString( $count, json_encode( $data ) );
         $block = ReverseRelationCheck::templateData( 'block', self::check( 2 ), true );
         $this->assertSame( array( 'block', true, true ), array( $block['mode'], $block['blocked'], $block['refused'] ) );
     }

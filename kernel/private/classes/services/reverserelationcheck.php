@@ -128,20 +128,36 @@ class ReverseRelationCheck
     }
 
     /**
-     * What the template gets: the check, the mode, and whether the action is blocked or was just refused.
+     * What the template gets: the items with what the user may read, the mode, and whether the action is blocked
+     * or was just refused. No count leaves this method: that there are references or locations the user may not
+     * read is a yes or no per item (the page has to explain a block or a warning), and that more references exist
+     * than are listed is a yes or no as well, so the page cannot be used to count hidden content.
      *
      * @param string $mode
-     * @param array|null $check
+     * @param array|null $check of forNodes()
      * @param bool $refused a confirmation was refused in mode block
-     * @return array|null null when there is nothing to show
+     * @return array|null array( 'items', 'has_references', 'more', 'failed', 'mode', 'blocked', 'refused' ), null when
+     *         there is nothing to show
      */
     public static function templateData( $mode, $check, $refused = false )
     {
         if ( $mode === self::DISABLED || !is_array( $check ) || !self::hasFindings( $check ) )
             return null;
-        return array_merge( $check, array( 'mode' => $mode,
-                                           'blocked' => self::refusesRemoval( $mode, $check ),
-                                           'refused' => (bool) $refused ) );
+        $items = array();
+        foreach ( $check['items'] as $item )
+        {
+            $item['unreadable'] = !empty( $item['unreadable'] );
+            $item['unreadable_locations'] = !empty( $item['unreadable_locations'] );
+            $items[] = $item;
+        }
+        $unreadable = isset( $check['unreadable'] ) ? (int) $check['unreadable'] : 0;
+        return array( 'items' => $items,
+                      'has_references' => $check['total'] > 0,
+                      'more' => $check['total'] > $check['listed'] + $unreadable,
+                      'failed' => (bool) $check['failed'],
+                      'mode' => $mode,
+                      'blocked' => self::refusesRemoval( $mode, $check ),
+                      'refused' => (bool) $refused );
     }
 
     /**

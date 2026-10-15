@@ -1,7 +1,8 @@
 {* The objects that point at what a removal or a hide takes away (Exponential\Service\ReverseRelationCheck,
    doc/features/6.0/reverse-relation-check.md), one list per selected item. Variables: $check (the view's
-   reverse_relation_check: items, total, listed, unreadable, location_count, failed, mode, blocked, refused) and
-   $operation (remove or hide). Objects and locations the user may not read are only counted, never named. *}
+   reverse_relation_check: items, has_references, more, failed, mode, blocked, refused) and $operation (remove or
+   hide). Objects and locations the user may not read are never named, nor counted: a fixed sentence says that
+   there are some. *}
 <div class="{if $check.blocked}message-error{else}message-warning{/if} reverse-relation-check" id="reverse-relation-check" role="{if $check.blocked}alert{else}status{/if}">
 {if $check.blocked}
     <h2>{'The removal is blocked: other objects use the items'|i18n( 'design/admin/content/reverserelations' )}</h2>
@@ -9,7 +10,7 @@
     <p>{'This site refuses to remove content while other objects point at it. Change or remove the references listed here first, then remove the items.'|i18n( 'design/admin/content/reverserelations' )}</p>
 {elseif eq( $operation, 'hide' )}
     <h2>{'Check before hiding'|i18n( 'design/admin/content/reverserelations' )}</h2>
-    {if $check.total|gt( 0 )}<p>{'Other objects point at what you are about to hide. After hiding, their links, embedded items and relation fields lead to content the site no longer shows.'|i18n( 'design/admin/content/reverserelations' )}</p>{/if}
+    {if $check.has_references}<p>{'Other objects point at what you are about to hide. After hiding, their links, embedded items and relation fields lead to content the site no longer shows.'|i18n( 'design/admin/content/reverserelations' )}</p>{/if}
 {else}
     <h2>{'Other objects use the items'|i18n( 'design/admin/content/reverserelations' )}</h2>
     <p>{'After the removal, their links, embedded items and relation fields point at content that is gone.'|i18n( 'design/admin/content/reverserelations' )}</p>
@@ -17,8 +18,8 @@
 {if $check.failed}
     <p>{'The references could not be checked.'|i18n( 'design/admin/content/reverserelations' )}</p>
 {/if}
-{if $check.total|gt( sum( $check.listed, $check.unreadable ) )}
-    <p>{'%count more references are not listed.'|i18n( 'design/admin/content/reverserelations',, hash( '%count', sub( $check.total, sum( $check.listed, $check.unreadable ) ) ) )}</p>
+{if $check.more}
+    <p>{'Further references are not listed.'|i18n( 'design/admin/content/reverserelations' )}</p>
 {/if}
 {foreach $check.items as $item}
     <h3 id="reverse-relation-item-{$item.node_id}">{$item.name|wash}</h3>
@@ -41,7 +42,7 @@
     </table>
     {/if}
     {if $item.unreadable}
-    <p class="reverse-relation-unreadable">{if $item.unreadable|eq( 1 )}{'1 further reference from an object you may not read.'|i18n( 'design/admin/content/reverserelations' )}{else}{'%count further references from objects you may not read.'|i18n( 'design/admin/content/reverserelations',, hash( '%count', $item.unreadable ) )}{/if}</p>
+    <p class="reverse-relation-unreadable">{'There are further references that you may not see.'|i18n( 'design/admin/content/reverserelations' )}</p>
     {/if}
     {if or( $item.locations, $item.unreadable_locations )}
     <p>{'The object has further locations. Hiding this one leaves them as they are:'|i18n( 'design/admin/content/reverserelations' )}</p>
@@ -52,7 +53,7 @@
     {/foreach}
     </ul>
     {/if}
-    {if $item.unreadable_locations}<p class="reverse-relation-unreadable">{if $item.unreadable_locations|eq( 1 )}{'1 further location you may not read.'|i18n( 'design/admin/content/reverserelations' )}{else}{'%count further locations you may not read.'|i18n( 'design/admin/content/reverserelations',, hash( '%count', $item.unreadable_locations ) )}{/if}</p>{/if}
+    {if $item.unreadable_locations}<p class="reverse-relation-unreadable">{'There are further locations that you may not see.'|i18n( 'design/admin/content/reverserelations' )}</p>{/if}
     {/if}
 {/foreach}
 </div>
