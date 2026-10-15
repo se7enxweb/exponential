@@ -225,7 +225,9 @@ class eZOEInputParser extends eZXMLInputParser
         {
             // Convert attribute names
             $qualifiedName = $key;
-            if ( isset( $thisOutputTag['attributes'] ) )
+            // 'attributes' => false (<br>) maps no attribute: a name stays as it is, as in eZXMLInputParser.
+            // The editor HTML of an empty table cell is <p><br data-mce-bogus="1"/></p>, posted back unchanged
+            if ( isset( $thisOutputTag['attributes'] ) && is_array( $thisOutputTag['attributes'] ) )
             {
                 foreach ( $thisOutputTag['attributes'] as $outputKey => $outputAttr )
                 {
