@@ -154,8 +154,8 @@ class Search extends \Exponential\Runnable\ModuleView
         // Without a text there is nothing to search for, unless site.ini [SearchSettings] AllowEmptySearch is
         // enabled: an empty search would list every object
         $searchRequested = trim( $searchText ) !== '' || $ini->variable( 'SearchSettings', 'AllowEmptySearch' ) == 'enabled';
-        if ( !$searchRequested )
-            $searchResult = self::emptySearchResult();
+        // null until a search ran (or none is requested); the browse mode below searches when it is still null
+        $searchResult = $searchRequested ? null : self::emptySearchResult();
 
         if ( $useSearchCode && $searchRequested )
         {
@@ -193,7 +193,7 @@ class Search extends \Exponential\Runnable\ModuleView
 
         if ( $http->hasVariable( 'Mode' ) && $http->variable( 'Mode' ) == 'browse' )
         {
-            if( !isset( $searchResult ) )
+            if ( $searchResult === null )
                 $searchResult = \eZSearch::search( $searchText, array( "SearchType" => $searchType,
                                                                       "SearchSectionID" => $searchSectionID,
                                                                       "SearchSubTreeArray" => $subTreeArray,
@@ -224,6 +224,9 @@ class Search extends \Exponential\Runnable\ModuleView
         // --- Compatibility code start ---
         if ( $useSearchCode )
         {
+            // with the search code on, a search ran when one was requested: $searchResult is set
+            if ( $searchResult === null )
+                $searchResult = self::emptySearchResult();
             $tpl->setVariable( "offset", $Offset );
             $tpl->setVariable( "page_limit", $pageLimit );
             $tpl->setVariable( "search_text_enc", urlencode( $searchText ) );
