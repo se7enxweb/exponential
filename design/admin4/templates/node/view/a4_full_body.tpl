@@ -26,7 +26,8 @@
      $object = $node.object
      $section = fetch( 'section', 'object', hash( 'section_id', $object.section_id ) )
      $locations = $object.assigned_nodes|count
-     $a4_translations = $object.languages
+     $a4_translations = fetch( 'content', 'language_states', hash( 'object', $node.object ) )
+     $a4_main_language_name = $node.object.initial_language.name
      $site_url = concat( siteaccess_url()|trim( '/' ), '/', $node.url_alias )}
 {if $has_content_class}
     {if eq( 0, count( $object.content_class.can_create_languages ) )}
@@ -98,6 +99,8 @@
         <input class="button-disabled" type="submit" name="EditButton" value="{'Edit'|i18n( 'design/admin/node/view/full' )}" title="{'You do not have permission to edit this item.'|i18n( 'design/admin/node/view/full' )}" disabled="disabled" />
     {/if}
     {undef $can_create_languages}
+    {* Upload: ezmultiupload's upload page for this node, only where the user can upload (node/view/upload_button.tpl) *}
+    {include uri='design:node/view/upload_button.tpl' node=$node}
     {if $node.can_move}
         <input class="button" type="submit" name="MoveNodeButton" value="{'Move'|i18n( 'design/admin/node/view/full' )}" title="{'Move this item to another location.'|i18n( 'design/admin/node/view/full' )}" />
     {else}
@@ -136,9 +139,14 @@
     <button type="button" class="a4-copy" data-a4-copied="{'Copied to the clipboard'|i18n( 'design/admin/node/view/full' )|wash}" data-a4-copy-failed="{'Could not copy'|i18n( 'design/admin/node/view/full' )|wash}" data-a4-copy="{$object.id}" title="{'Click to copy'|i18n( 'design/admin/node/view/full' )|wash}">{'Object'|i18n( 'design/admin/node/view/full' )} {$object.id}</button>
     <button type="button" class="a4-copy" data-a4-copied="{'Copied to the clipboard'|i18n( 'design/admin/node/view/full' )|wash}" data-a4-copy-failed="{'Could not copy'|i18n( 'design/admin/node/view/full' )|wash}" data-a4-copy="{$object.remote_id|wash}" title="{'Click to copy the remote ID'|i18n( 'design/admin/node/view/full' )|wash}">{'Remote ID'|i18n( 'design/admin/node/view/full' )}</button>
     {if gt( $locations, 1 )}<span>{$locations} {'locations'|i18n( 'design/admin/node/view/full' )}</span>{/if}
+    {* every language of the site with its state for this object: main (filled), present (outlined, a mark when
+       older than the main language), missing (dashed; Translate into ... for who may); click a present one to
+       switch to it (parts/language_state_badge.tpl, expContentLanguageStates) *}
     <span class="a4-node-langs">
     {foreach $a4_translations as $language}
-        <a class="a4-lang a4-node-lang{if eq( $language.locale, $object.current_language )} is-current{/if}" href={concat( 'content/view/full/', $node.node_id, '/(language)/', $language.locale )|ezurl} title="{$language.name|wash}"{if eq( $language.locale, $object.current_language )} aria-current="true"{/if} translate="no">{include uri='design:parts/language_badge.tpl' locale=$language.locale badge_plain=true()}<span class="a4-sr-only"> {$language.name|wash}</span></a>
+        {include uri='design:parts/language_state_badge.tpl' state_entry=$language state_main_name=$a4_main_language_name
+                 state_object_id=$object.id state_current=eq( $language.locale, $object.current_language )
+                 state_href=concat( 'content/view/full/', $node.node_id, '/(language)/', $language.locale )|ezurl( 'no' )}
     {/foreach}
     </span>
 </p>
@@ -151,7 +159,7 @@
 </div>
 
 {undef $js_class_languages $disable_another_language $disabled_sub_menu $has_content_class $object $section
-       $locations $a4_translations $site_url}
+       $locations $a4_translations $a4_main_language_name $site_url}
 </div>
 
 {* ---- Children ---- *}

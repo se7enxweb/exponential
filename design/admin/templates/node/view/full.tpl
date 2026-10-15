@@ -115,6 +115,9 @@
 {/if}
 {undef $can_create_languages}
 
+{* Upload button: ezmultiupload's upload page for this node, only where the user can upload (node/view/upload_button.tpl) *}
+{include uri='design:node/view/upload_button.tpl' node=$node}
+
 {* Move button. *}
 {if $node.can_move}
     <input class="button" type="submit" name="MoveNodeButton" value="{'Move'|i18n( 'design/admin/node/view/full' )}" title="{'Move this item to another location.'|i18n( 'design/admin/node/view/full' )}" />

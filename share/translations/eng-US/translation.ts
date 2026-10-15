@@ -5270,8 +5270,8 @@
         <translation>Adds a language content can be translated into. It does not translate anything and changes no siteaccess: afterwards, translate content into it in the editor and add it to the SiteLanguageList of the siteaccesses that should show it.</translation>
     </message>
     <message>
-        <source>%used of at most %max languages are in use.</source>
-        <translation>%used of at most %max languages are in use.</translation>
+        <source>%used of at most %max content languages are in use. Only the languages added here count, not the locales in the list below; removing a language no content uses frees a place.</source>
+        <translation>%used of at most %max content languages are in use. Only the languages added here count, not the locales in the list below; removing a language no content uses frees a place.</translation>
     </message>
     <message>
         <source>Language and country</source>
@@ -5417,8 +5417,8 @@
         <translation>Overview</translation>
     </message>
     <message>
-        <source>More can be added (at most %max)</source>
-        <translation>More can be added (at most %max)</translation>
+        <source>More can be added (at most %max content languages)</source>
+        <translation>More can be added (at most %max content languages)</translation>
     </message>
     <message>
         <source>Need a look</source>
@@ -5657,8 +5657,8 @@
         <translation>%name (%locale) was added. Content can now be translated into it; add %locale to the SiteLanguageList of each siteaccess that should show it.</translation>
     </message>
     <message>
-        <source>No language was added: this installation already has the most languages it can hold (%max).</source>
-        <translation>No language was added: this installation already has the most languages it can hold (%max).</translation>
+        <source>No language was added: this installation already has the most content languages it can hold (%max). Remove a language that no object or class uses to free a place.</source>
+        <translation>No language was added: this installation already has the most content languages it can hold (%max). Remove a language that no object or class uses to free a place.</translation>
     </message>
     <message>
         <source>There is no locale %locale in share/locale. Choose one from the list, or add its .ini file to share/locale first.</source>
@@ -8608,6 +8608,14 @@
 <context>
     <name>design/admin/node/view/full</name>
     <message>
+        <source>Upload</source>
+        <translation>Upload</translation>
+    </message>
+    <message>
+        <source>Upload files to this location.</source>
+        <translation>Upload files to this location.</translation>
+    </message>
+    <message>
         <source>Default size</source>
         <translation>Default size</translation>
     </message>
@@ -9522,6 +9530,82 @@
     <message>
         <source>Not copied</source>
         <translation>Not copied</translation>
+    </message>
+    <message>
+        <source>Order</source>
+        <translation>Order</translation>
+    </message>
+    <message>
+        <source>Move %name</source>
+        <translation>Move %name</translation>
+    </message>
+    <message>
+        <source>Drag to change the order</source>
+        <translation>Drag to change the order</translation>
+    </message>
+    <message>
+        <source>Drag the grip to change the order. With the keyboard: Space picks the row up, the arrow keys move it, Space drops it, Escape cancels. Alt+Up and Alt+Down move it by one place at once.</source>
+        <translation>Drag the grip to change the order. With the keyboard: Space picks the row up, the arrow keys move it, Space drops it, Escape cancels. Alt+Up and Alt+Down move it by one place at once.</translation>
+    </message>
+    <message>
+        <source>Picked up %name. Position %position of %count.</source>
+        <translation>Picked up %name. Position %position of %count.</translation>
+    </message>
+    <message>
+        <source>Position %position of %count</source>
+        <translation>Position %position of %count</translation>
+    </message>
+    <message>
+        <source>Moved to position %position of %count</source>
+        <translation>Moved to position %position of %count</translation>
+    </message>
+    <message>
+        <source>Dropped. The order is unchanged.</source>
+        <translation>Dropped. The order is unchanged.</translation>
+    </message>
+    <message>
+        <source>Move cancelled. %name is back at position %position of %count.</source>
+        <translation>Move cancelled. %name is back at position %position of %count.</translation>
+    </message>
+    <message>
+        <source>Order saved</source>
+        <translation>Order saved</translation>
+    </message>
+    <message>
+        <source>Undo</source>
+        <translation>Undo</translation>
+    </message>
+    <message>
+        <source>Previous order restored</source>
+        <translation>Previous order restored</translation>
+    </message>
+    <message>
+        <source>The order was not saved: %error</source>
+        <translation>The order was not saved: %error</translation>
+    </message>
+    <message>
+        <source>The previous order was not restored: %error</source>
+        <translation>The previous order was not restored: %error</translation>
+    </message>
+    <message>
+        <source>unknown error</source>
+        <translation>unknown error</translation>
+    </message>
+    <message>
+        <source>Someone else changed the order in the meantime. Nothing was saved; the list shows the current order now.</source>
+        <translation>Someone else changed the order in the meantime. Nothing was saved; the list shows the current order now.</translation>
+    </message>
+    <message>
+        <source>Save the priority you are editing (Enter) or cancel it (Escape) before you move a row.</source>
+        <translation>Save the priority you are editing (Enter) or cancel it (Escape) before you move a row.</translation>
+    </message>
+    <message>
+        <source>Please wait until the order is saved.</source>
+        <translation>Please wait until the order is saved.</translation>
+    </message>
+    <message>
+        <source>Please wait until the priority is saved.</source>
+        <translation>Please wait until the priority is saved.</translation>
     </message>
     <message>
         <source>Object</source>
@@ -10698,6 +10782,26 @@
     <message>
         <source>Locked after too many failed logins.</source>
         <translation>Locked after too many failed logins.</translation>
+    </message>
+    <message>
+        <source>%language – main language</source>
+        <translation>%language – main language</translation>
+    </message>
+    <message>
+        <source>%language – translation exists</source>
+        <translation>%language – translation exists</translation>
+    </message>
+    <message>
+        <source>%language – missing</source>
+        <translation>%language – missing</translation>
+    </message>
+    <message>
+        <source>%language – outdated, older than %main</source>
+        <translation>%language – outdated, older than %main</translation>
+    </message>
+    <message>
+        <source>Translate into %language</source>
+        <translation>Translate into %language</translation>
     </message>
 </context>
 <context>
@@ -13774,6 +13878,22 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Light mode</translation>
     </message>
     <message>
+        <source>%tab menu</source>
+        <translation>%tab menu</translation>
+    </message>
+    <message>
+        <source>Loading the %tab menu</source>
+        <translation>Loading the %tab menu</translation>
+    </message>
+    <message>
+        <source>The %tab menu could not be loaded.</source>
+        <translation>The %tab menu could not be loaded.</translation>
+    </message>
+    <message>
+        <source>Go to %tab</source>
+        <translation>Go to %tab</translation>
+    </message>
+    <message>
         <source>Open the site</source>
         <translation>Open the site</translation>
     </message>
@@ -14148,6 +14268,22 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>My e-mail preferences</source>
         <translation>My e-mail preferences</translation>
+    </message>
+    <message>
+        <source>The content you follow and how you are told.</source>
+        <translation>The content you follow and how you are told.</translation>
+    </message>
+    <message>
+        <source>Which optional e-mail you get; your consents.</source>
+        <translation>Which optional e-mail you get; your consents.</translation>
+    </message>
+    <message>
+        <source>Set a new password for your account.</source>
+        <translation>Set a new password for your account.</translation>
+    </message>
+    <message>
+        <source>Your name, e-mail address and other details.</source>
+        <translation>Your name, e-mail address and other details.</translation>
     </message>
 </context>
 <context>
@@ -14646,6 +14782,34 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>Access control</source>
         <translation>Access control</translation>
+    </message>
+    <message>
+        <source>Users and user groups</source>
+        <translation>Users and user groups</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Users</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>My account</translation>
+    </message>
+    <message>
+        <source>Users and user groups; create and edit accounts.</source>
+        <translation>Users and user groups; create and edit accounts.</translation>
+    </message>
+    <message>
+        <source>Who is signed in; end sessions.</source>
+        <translation>Who is signed in; end sessions.</translation>
+    </message>
+    <message>
+        <source>Who may do what, and where.</source>
+        <translation>Who may do what, and where.</translation>
+    </message>
+    <message>
+        <source>Accounts not yet activated; activate or remove them.</source>
+        <translation>Accounts not yet activated; activate or remove them.</translation>
     </message>
 </context>
 <context>

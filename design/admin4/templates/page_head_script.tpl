@@ -15,3 +15,12 @@
    through ezscript_load so its URL carries the file's time: the plain file was served with a one-year cache
    lifetime and browsers kept an old copy after an update. *}
 {ezscript_load( array( 'admin4.js' ) )}
+{* admin4 (prototype): the mega menu's script, only while a tab has one (menu.ini [TopAdminMenu] MegaMenuTabs[], empty
+   by default): without it the page loads nothing more. parts/a4_mega_menu_check.tpl names ignored settings in the
+   debug report. *}
+{if ezini_hasvariable( 'TopAdminMenu', 'MegaMenuTabs', 'menu.ini' )}
+{if ezini( 'TopAdminMenu', 'MegaMenuTabs', 'menu.ini' )|count}
+{ezscript_load( array( 'a4_mega_menu.js' ) )}
+{include uri='design:parts/a4_mega_menu_check.tpl'}
+{/if}
+{/if}

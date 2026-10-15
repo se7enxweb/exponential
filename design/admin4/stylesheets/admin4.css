@@ -617,6 +617,197 @@ body,
 @media (prefers-reduced-motion: reduce) {
   .a4-nav-more-toggle .a4-icon { transition: none; }
 }
+
+/* The mega menu (prototype, opt-in: menu.ini [TopAdminMenu] MegaMenuTabs[]; page_topmenuitem.tpl, a4_mega_menu.js):
+   a small disclosure button beside its tab and a card under the header with a choice of the links of the tab's left
+   menu in their groups: up to three groups side by side, each 17rem wide, so a short choice makes a narrower card,
+   centred under the header. From 576px, where the main menu is one line (the second header row up to 1279px, so also
+   at 960px with 200% zoom): below that (the phone menu), and in the "More" list, the button is not drawn and the tab
+   is a plain link. */
+.a4-mega-toggle,
+.a4-mega-panel { display: none; }
+@media screen and (min-width: 576px) {
+  .navbar-bar > li.a4-mega-item {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+  .a4-mega-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 999px;
+    background-color: transparent;
+    color: var(--a4-header-ink);
+    cursor: pointer;
+  }
+  .a4-mega-toggle:hover,
+  .a4-mega-toggle[aria-expanded="true"] { background-color: var(--a4-header-hover); }
+  .a4-mega-toggle:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
+  .a4-mega-toggle .a4-icon { width: 12px; height: 12px; transition: transform .15s ease; }
+  .a4-mega-toggle[aria-expanded="true"] .a4-icon { transform: rotate(180deg); }
+  .a4-nav-more-list .a4-mega-toggle,
+  .a4-nav-more-list .a4-mega-panel { display: none; }
+
+  .a4-mega-panel {
+    display: block;
+    position: fixed;
+    top: calc(var(--header-height) + var(--a4-space-2));
+    left: var(--a4-space-5);
+    right: var(--a4-space-5);
+    z-index: var(--a4-z-menu);   /* over the sidebar tabs on the window's edges, as a context menu */
+    box-sizing: border-box;
+    width: fit-content;   /* as wide as its groups need; centred by the auto margins */
+    max-width: min(var(--a4-content-max), calc(100vw - 2 * var(--a4-space-5)));
+    max-height: calc(100vh - var(--header-height) - var(--a4-space-6));
+    margin-inline: auto;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: var(--a4-space-5);
+    background-color: var(--a4-card);
+    border: 1px solid var(--a4-line);
+    border-radius: var(--a4-radius-s);
+    box-shadow: var(--a4-shadow-m);
+    color: var(--a4-ink);
+    text-align: left;
+    white-space: normal;
+  }
+  .a4-mega-panel[hidden] { display: none; }
+  /* the hover bridge: the gap between the header and the card belongs to the panel, so the mouse crossing it does
+     not leave the menu (the script's 400 ms close delay covers the rest of the way from the tab) */
+  .a4-mega-panel::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 100%;
+    height: calc(var(--a4-space-2) + 1px);
+  }
+  /* up to three groups side by side: three columns of 17rem and their gaps, then the next row */
+  .a4-mega-groups {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: var(--a4-space-5) var(--a4-space-6);
+    max-width: calc(3 * 17rem + 2 * var(--a4-space-6));
+  }
+  .a4-mega-group {
+    flex: 0 0 17rem;
+    margin: 0;
+  }
+  .a4-mega-group-title {
+    margin: 0 0 var(--a4-space-1);
+    padding: 0 var(--a4-space-2);
+    color: var(--a4-muted);
+    font-size: var(--a4-text-xs);
+    font-weight: 700;
+    letter-spacing: .04em;
+    line-height: var(--a4-leading-tight);
+    text-transform: uppercase;
+  }
+  .a4-mega-links {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  /* the icon beside the name, the description under it, whole (two lines and more if need be); the name is the link,
+     stretched over the entry */
+  .navbar-bar .a4-mega-links > li.a4-mega-link {
+    position: relative;
+    display: grid;
+    grid-template-columns: 16px minmax(0, 1fr);
+    column-gap: var(--a4-space-2);
+    align-items: start;
+    min-height: 28px;
+    margin: 0;
+    padding: var(--a4-space-1) var(--a4-space-2);
+    border-radius: var(--a4-radius-s);
+    font-size: var(--a4-text-s);
+    line-height: var(--a4-leading-tight);
+  }
+  .navbar-bar .a4-mega-links > li.a4-mega-link:hover { background-color: var(--a4-soft); }
+  .a4-mega-link > .a4-icon {
+    grid-row: 1 / span 2;
+    margin-top: 1px;
+    width: 16px;
+    height: 16px;
+    color: var(--a4-accent-text);
+  }
+  .navbar-menu .a4-mega-link a,
+  .navbar-menu .a4-mega-link a:hover,
+  .a4-mega-name {
+    display: block;
+    grid-column: 2;
+    min-height: 0;
+    padding: 0;
+    border-radius: 0;
+    background-color: transparent;
+    color: var(--a4-ink);
+    font-size: inherit;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: normal;
+    justify-content: flex-start;
+  }
+  .navbar-menu .a4-mega-link a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+  }
+  /* the focus ring is drawn around the line */
+  .navbar-menu .a4-mega-link a:focus-visible { outline: 2px solid transparent; }
+  .navbar-menu .a4-mega-link a:focus-visible::after { outline: 3px solid var(--a4-ring); outline-offset: -3px; }
+  .navbar-menu .a4-mega-link a[aria-current="page"] { color: var(--a4-accent-text); }
+  .a4-mega-link.is-disabled .a4-mega-name,
+  .a4-mega-link.is-disabled > .a4-icon { color: var(--a4-disabled); }
+  .a4-mega-text {
+    grid-column: 2;
+    margin-top: 2px;
+    color: var(--a4-muted);
+    font-size: var(--a4-text-xs);
+    line-height: var(--a4-leading);
+  }
+  .a4-mega-status {
+    margin: 0 0 var(--a4-space-4);
+    color: var(--a4-muted);
+    font-size: var(--a4-text-s);
+  }
+  .a4-mega-all {
+    margin: 0;
+    padding-top: var(--a4-space-3);
+    border-top: 1px solid var(--a4-line);
+  }
+  .navbar-menu .a4-mega-all a,
+  .navbar-menu .a4-mega-all a:hover {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--a4-space-1);
+    min-height: 28px;
+    padding: var(--a4-space-1) var(--a4-space-2);
+    color: var(--a4-accent-text);
+    font-size: var(--a4-text-s);
+    font-weight: 600;
+  }
+  .navbar-menu .a4-mega-all a:hover { background-color: var(--a4-soft); }
+  .navbar-menu .a4-mega-all a:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: -3px; }
+  .a4-mega-all .a4-icon { width: 12px; height: 12px; }
+}
+@media screen and (min-width: 576px) and (forced-colors: active) {
+  .a4-mega-panel { border-color: CanvasText; }
+  .a4-mega-toggle[aria-expanded="true"] { outline: 2px solid Highlight; }
+  .navbar-menu .a4-mega-link a[aria-current="page"] { text-decoration: underline; }
+  .a4-mega-link > .a4-icon { color: CanvasText; }
+  .navbar-menu .a4-mega-link a:focus-visible::after { outline-color: Highlight; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .a4-mega-toggle .a4-icon { transition: none; }
+}
 #header .searchblock input.searchtext {
   box-sizing: border-box;
   height: 36px;   /* the light/dark switch next to it is 36px high */
@@ -1417,9 +1608,9 @@ div.context-information.a4-node-meta {
 .a4-node-meta button.a4-copied { color: var(--a4-ok); border-bottom-color: var(--a4-ok); }
 .a4-node-meta button.a4-copied::after { content: " \2713"; }
 .a4-node-langs { display: inline-flex; flex-wrap: wrap; gap: var(--a4-space-1); }
-/* each language badge of the node is a link: at least 24px high (WCAG 2.5.8), so a wrapped row of them keeps its
-   targets apart at every width (axe target-size at 1024px) */
-.a4-node-langs a.a4-node-lang { display: inline-flex; align-items: center; min-height: var(--a4-space-5); }
+/* each language badge of the node (a link, or the state of a missing one) is at least 24px high (WCAG 2.5.8), so a
+   wrapped row of them keeps its targets apart at every width (axe target-size at 1024px) */
+.a4-node-langs .a4-lang { display: inline-flex; align-items: center; min-height: var(--a4-space-5); }
 
 /* the tabs as a quiet segmented row, the open panel as a soft card under it */
 .a4-node-tabs ul.tabs { display: flex; flex-wrap: wrap; gap: 2px; margin: 0 0 var(--a4-space-2); padding: var(--a4-space-1); border-radius: var(--a4-radius-s); background-color: var(--a4-soft); box-shadow: inset 0 0 0 1px var(--a4-line); }
@@ -1572,6 +1763,7 @@ html:has(body.a4-login-page) { background: var(--a4-surface); }
 .a4-field-label { display: block; margin: 0 0 var(--a4-space-2); font-size: var(--a4-text-m); font-weight: 600; color: var(--a4-ink); }
 .a4-field-head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--a4-space-3); margin-top: var(--a4-space-4); }
 .a4-field-head .a4-field-label { margin-bottom: var(--a4-space-2); }
+.a4-login-forgot-row { margin: var(--a4-space-3) 0 0; text-align: center; }
 .a4-login-forgot { font-size: var(--a4-text-s); color: var(--a4-accent-text); text-decoration: none; }
 .a4-login-forgot:hover { text-decoration: underline; }
 .a4-login-form #logintext, .a4-login-form #passwordtext {   /* by id, so the rule wins over the global field rules */
@@ -1853,7 +2045,8 @@ html {
   }
   .controlbar.a4-node-actions .block input.button,
   .controlbar.a4-node-actions .block input.defaultbutton,
-  .controlbar.a4-node-actions .block input.button-disabled {
+  .controlbar.a4-node-actions .block input.button-disabled,
+  .controlbar.a4-node-actions .block .a4-node-upload {
     flex: 1 1 auto;
     min-width: 0;
     padding: 0 var(--a4-space-2);
@@ -1871,7 +2064,8 @@ html {
   .controlbar.a4-node-actions .a4-node-links .versions { display: contents; }
   .controlbar.a4-node-actions .block input.button,
   .controlbar.a4-node-actions .block input.defaultbutton,
-  .controlbar.a4-node-actions .block input.button-disabled { flex: 0 0 auto; }
+  .controlbar.a4-node-actions .block input.button-disabled,
+  .controlbar.a4-node-actions .block .a4-node-upload { flex: 0 0 auto; }
   .controlbar.a4-node-actions .block select { flex: 1 1 120px; }
 }
 @media (max-width: 767px) {

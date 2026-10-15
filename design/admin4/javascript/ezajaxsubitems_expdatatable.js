@@ -9,7 +9,8 @@
  * It does: the ezjscnode::subtree request (GET, same arguments), the
  * cache of 20 pages, sorting, the pagers in #bpg and #tpg, rows per page saved as admin_list_limit (and a custom
  * number that is not saved), the shown columns in the eZSubitemColumns cookie (one sub-value per navigation part),
- * inline priority editing through ezjscnode::updatepriority, the Select, Create new, Create multiple new, More
+ * inline priority editing through ezjscnode::updatepriority (in admin4 also reordering by drag and drop,
+ * subitems_priority_drag.js), the Select, Create new, Create multiple new, More
  * actions and Table options controls (same ids, same form fields posted) and the context menu of each row.
  *
  * With the subitems column registry (confObj.subitemsServer, settings/subitemscolumns.ini) the columns come from
@@ -168,20 +169,35 @@ var eZAjaxSubitemsExpDataTable = (function () {
         // One language badge per translation (DE, EN), a link to edit it where the user may; the name is the
         // badge's title and accessible name (a link: the code, then the name as hidden text, so its name starts with
         // what it shows). Everything from the row or the settings is escaped.
+        // The badge shows the language's state by its shape (components.css .a4-lang): the main language
+        // (row.initial_language) filled, a translation outlined and, on a site with few languages
+        // (confObj.showMissingLanguages), the ones the object lacks dashed, as text only (whether the user may create
+        // that translation is checked on the node, not per row). The state is in the title and the accessible name
+        // (confObj.languageStates). An outdated translation is marked on the node only (expContentLanguageStates).
         var attr = function (v) {
             return String(v).replace(/&/g, '&#38;').replace(/</g, '&#60;').replace(/>/g, '&#62;').replace(/"/g, '&#34;').replace(/'/g, '&#39;');
         };
+        var languageState = function (state, langName) {
+            var texts = confObj.languageStates || {};
+            return texts[state] ? String(texts[state]).replace('%language', function () { return langName; }) : langName;
+        };
         var translationView = function (row) {
-            var html = '';
-            $.each(row.translations || [], function (i, e) {
-                var badge = attr((confObj.languageBadges && confObj.languageBadges[e]) || e),
-                    name = attr((confObj.languages && confObj.languages[e]) || e);
-                if (row.can_edit === true) {
-                    var langName = (confObj.languages && confObj.languages[e]) || e,
-                        label = confObj.editInLanguage ? attr(String(confObj.editInLanguage).replace('%language_name', function () { return langName; })) : name;
-                    html += '<a class="a4-lang" href="' + attr(confObj.editPrefixURL + '/' + row.contentobject_id + '/f/' + e) + '" title="' + label + '" translate="no">' + badge + '<span class="a4-sr-only"> ' + label + '</span></a>';
+            var html = '', own = row.translations || [], main = row.initial_language || '', locales = own.slice();
+            if (confObj.showMissingLanguages && confObj.languages) {
+                locales = Object.keys(confObj.languages);
+                own.forEach(function (e) { if (locales.indexOf(e) === -1) { locales.push(e); } });
+            }
+            $.each(locales, function (i, e) {
+                var state = e === main ? 'main' : (own.indexOf(e) !== -1 ? 'present' : 'missing'),
+                    langName = (confObj.languages && confObj.languages[e]) || e,
+                    badge = attr((confObj.languageBadges && confObj.languageBadges[e]) || e),
+                    name = attr(languageState(state, langName)),
+                    cls = 'a4-lang is-' + state;
+                if (state !== 'missing' && row.can_edit === true) {
+                    var label = confObj.editInLanguage ? name + '. ' + attr(String(confObj.editInLanguage).replace('%language_name', function () { return langName; })) : name;
+                    html += '<a class="' + cls + '" href="' + attr(confObj.editPrefixURL + '/' + row.contentobject_id + '/f/' + e) + '" title="' + label + '" translate="no">' + badge + '<span class="a4-sr-only"> ' + label + '</span></a>';
                 } else {
-                    html += '<span class="a4-lang" title="' + name + '" role="img" aria-label="' + name + '" translate="no">' + badge + '</span>';
+                    html += '<span class="' + cls + '" title="' + name + '" role="img" aria-label="' + name + '" translate="no">' + badge + '</span>';
                 }
             });
             return html ? '<span class="a4-langs">' + html + '</span>' : '';
@@ -432,6 +448,14 @@ var eZAjaxSubitemsExpDataTable = (function () {
             };
         }
 
+        // admin4 (subitems_priority_drag.js): a column of grips after the row menu to reorder the rows by drag and
+        // drop, when the parent sorts by priority and the user may change it (confObj.priorityDrag)
+        var drag = confObj.priorityDrag && window.a4SubitemsPriorityDrag ? window.a4SubitemsPriorityDrag.create(confObj, labelsObj.DRAG) : null;
+        if (drag) {
+            var crankAt = columns.map(function (c) { return c.key; }).indexOf('crank');
+            columns.splice(crankAt + 1, 0, drag.column);
+        }
+
         $list.expDataTable({
             columns: columns,
             rowKey: 'node_id',
@@ -467,7 +491,8 @@ var eZAjaxSubitemsExpDataTable = (function () {
                 }
             },
             inlineEdit: {
-                canEdit: function (row) { return row.can_edit === true; },
+                // not while a new order of the rows is being moved or saved
+                canEdit: function (row) { return row.can_edit === true && !(drag && drag.busy()); },
                 fn: 'ezjscnode::updatepriority',
                 data: function (row, key, value) {
                     return { ContentNodeID: row.parent_node_id, ContentObjectID: row.contentobject_id,
@@ -554,6 +579,7 @@ var eZAjaxSubitemsExpDataTable = (function () {
                 if (d && d.limit && Number(d.limit) !== rowsPerPage) { rowsPerPage = Number(d.limit); server.limitSaved(rowsPerPage); }
             });
         }
+        if (drag) { drag.attach($list.data('expDataTable')); }
         return $list.data('expDataTable');
     }
 

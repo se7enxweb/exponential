@@ -747,14 +747,23 @@ html[data-a4-theme="dark"] {
 
 /* A content language as a short code (DE, EN-GB) where the admin showed a flag: design:parts/language_badge.tpl.
    The name is the title and, where it is not written next to it, the accessible name. .a4-langs holds several;
-   a link (edit or view a translation) gets the hover and focus of a link, .is-current marks the one shown. */
+   a link (edit or view a translation) gets the hover and focus of a link, .is-current marks the one shown.
+   A plain badge is outlined: a language that exists.
+
+   The state of a language for one object (design:parts/language_state_badge.tpl, the Translations column of the
+   sub-items) is a shape, never a color per language and none of the status colors (green, amber and red are the
+   visibility's and the states'): .is-main filled in the ink, .is-present outlined, .is-missing dashed with muted
+   text, .is-outdated a small dot at the top right. The code is always the text; the state is in the title and the
+   accessible name. Text and edges keep their contrast (AdminTokenContrastTest: ink on card for the fill, muted
+   text, --a4-field-line edges 3:1); under forced colors the fill and the dot keep their shape in system colors. */
 .a4-langs { display: inline-flex; flex-wrap: wrap; gap: var(--a4-space-1); vertical-align: middle; }
 .a4-lang {
+  position: relative;
   display: inline-block;
   padding: 0 var(--a4-space-1);
-  border: 1px solid var(--a4-line-strong);
+  border: 1px solid var(--a4-field-line);
   border-radius: var(--a4-radius-s);
-  background-color: var(--a4-soft);
+  background-color: transparent;
   color: var(--a4-ink);
   font-size: var(--a4-text-xs);
   font-weight: 650;
@@ -766,7 +775,32 @@ html[data-a4-theme="dark"] {
 }
 a.a4-lang:hover { border-color: var(--a4-accent); color: var(--a4-accent-text); }
 a.a4-lang:focus-visible { outline: 2px solid var(--a4-accent-strong); outline-offset: 1px; }
-.a4-lang.is-current { border-color: var(--a4-accent); background-color: var(--a4-accent-soft); color: var(--a4-accent-text); font-weight: 800; text-decoration: underline; text-underline-offset: 2px; }
+.a4-lang.is-current { border-color: var(--a4-accent); color: var(--a4-accent-text); font-weight: 800; text-decoration: underline; text-underline-offset: 2px; }
+.a4-lang.is-current:not(.is-main) { background-color: var(--a4-accent-soft); }
+.a4-lang.is-main { border-color: var(--a4-ink); background-color: var(--a4-ink); color: var(--a4-card); }
+a.a4-lang.is-main:hover, .a4-lang.is-main.is-current { border-color: var(--a4-accent); background-color: var(--a4-ink); color: var(--a4-card); }
+.a4-lang.is-missing { border-style: dashed; color: var(--a4-muted); font-weight: 500; }
+a.a4-lang.is-missing:hover { border-style: solid; }
+/* a badge in front of the language's name in a table cell (the Translations tab) keeps a gap to the name */
+td > .a4-lang { margin-right: var(--a4-space-1); }
+.a4-lang.is-outdated::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  width: 7px;
+  height: 7px;
+  border: 1px solid var(--a4-card);
+  border-radius: 50%;
+  background-color: var(--a4-ink);
+}
+@media (forced-colors: active) {
+  .a4-lang { border-color: CanvasText; }
+  .a4-lang.is-main { forced-color-adjust: none; border-color: CanvasText; background-color: CanvasText; color: Canvas; }
+  .a4-lang.is-outdated::after { forced-color-adjust: none; border-color: Canvas; background-color: CanvasText; }
+  a.a4-lang { border-color: LinkText; }
+  a.a4-lang.is-main { background-color: LinkText; border-color: LinkText; color: Canvas; }
+}
 
 /* A status with a dot: .a4-status > .a4-dot + text; .is-running pulses */
 .a4-status { display: inline-flex; align-items: center; gap: var(--a4-space-2); font-weight: 700; }
@@ -1370,6 +1404,22 @@ body.exp-debug-bar .a4-toasts { bottom: calc(var(--exp-debug-bar-h, 38px) + var(
   cursor: pointer;
 }
 .a4-toast .a4-toast-close:hover { background-color: var(--a4-soft); color: var(--a4-ink); }
+/* an action in a toast (Undo): a small text button before the close button */
+.a4-toast .a4-toast-action {
+  flex: none;
+  min-height: var(--a4-space-5);
+  margin: 0;
+  padding: 0 var(--a4-space-2);
+  border: 1px solid var(--a4-line-strong);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+  color: var(--a4-accent-text);
+  font: inherit;
+  font-weight: 650;
+  cursor: pointer;
+}
+.a4-toast .a4-toast-action:hover { border-color: var(--a4-accent); }
+.a4-toast :is(.a4-toast-action, .a4-toast-close):focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
 @keyframes a4-toast-in { from { opacity: 0; transform: translateY(var(--a4-space-2)); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) {
   .a4-toast { animation: none; }
@@ -1377,6 +1427,7 @@ body.exp-debug-bar .a4-toasts { bottom: calc(var(--exp-debug-bar-h, 38px) + var(
 @media (forced-colors: active) {
   .a4-notice:is(.is-ok, .is-bad, .is-warn, .is-info):not(.no-icon)::before { forced-color-adjust: none; background-color: CanvasText; }
   .a4-toast { border: 1px solid CanvasText; border-left-width: 4px; }
+  .a4-toast .a4-toast-action { border-color: ButtonText; color: ButtonText; }
 }
 
 /* ---- Folding: <details class="a4-fold">, and the in-place confirmation <details class="a4-confirm"> ------------ */
@@ -1781,6 +1832,7 @@ a.a4-icon-btn, a.a4-icon-btn:visited { color: var(--a4-muted); }
 .a4-bi-person-check { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/person-check.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/person-check.svg); }
 .a4-bi-person-circle { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/person-circle.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/person-circle.svg); }
 .a4-bi-person-lock { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/person-lock.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/person-lock.svg); }
+.a4-bi-person-slash { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/person-slash.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/person-slash.svg); }
 .a4-bi-phone { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/phone.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/phone.svg); }
 .a4-bi-phone-flip { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/phone-flip.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/phone-flip.svg); }
 .a4-bi-piggy-bank { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/piggy-bank.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/piggy-bank.svg); }
@@ -1792,6 +1844,7 @@ a.a4-icon-btn, a.a4-icon-btn:visited { color: var(--a4-muted); }
 .a4-bi-rss { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/rss.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/rss.svg); }
 .a4-bi-search { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/search.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/search.svg); }
 .a4-bi-shield-fill-check { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/shield-fill-check.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/shield-fill-check.svg); }
+.a4-bi-shield-lock { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/shield-lock.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/shield-lock.svg); }
 .a4-bi-signpost-split { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/signpost-split.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/signpost-split.svg); }
 .a4-bi-sliders { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/sliders.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/sliders.svg); }
 .a4-bi-speedometer { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/speedometer.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/speedometer.svg); }
@@ -1805,6 +1858,7 @@ a.a4-icon-btn, a.a4-icon-btn:visited { color: var(--a4-muted); }
 .a4-bi-tools { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/tools.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/tools.svg); }
 .a4-bi-translate { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/translate.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/translate.svg); }
 .a4-bi-trash { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/trash.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/trash.svg); }
+.a4-bi-upload { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/upload.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/upload.svg); }
 .a4-bi-wrench-adjustable { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/wrench-adjustable.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/wrench-adjustable.svg); }
 .a4-bi-x-circle-fill { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/x-circle-fill.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/x-circle-fill.svg); }
 

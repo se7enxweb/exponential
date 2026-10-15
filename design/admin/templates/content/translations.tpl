@@ -29,7 +29,7 @@
 <h2 class="a4-sr-only" id="language-overview-title">{'Overview'|i18n( 'design/admin/content/translations' )}</h2>
 <ul class="a4-figures">
     <li class="a4-figure"><strong>{$language_summary.languages}</strong><span>{'Content languages'|i18n( 'design/admin/content/translations' )}</span></li>
-    <li class="a4-figure"><strong>{$language_summary.free}</strong><span>{'More can be added (at most %max)'|i18n( 'design/admin/content/translations',, hash( '%max', $language_summary.max ) )}</span></li>
+    <li class="a4-figure"><strong>{$language_summary.free}</strong><span>{'More can be added (at most %max content languages)'|i18n( 'design/admin/content/translations',, hash( '%max', $language_summary.max ) )}</span></li>
     <li class="a4-figure{if $language_summary.attention|gt(0)} is-attention{/if}"><strong>{$language_summary.attention}</strong><span>{'Need a look'|i18n( 'design/admin/content/translations' )}</span></li>
     <li class="a4-figure"><strong>{$language_summary.removable}</strong><span>{'Unused, can be removed'|i18n( 'design/admin/content/translations' )}</span></li>
     <li class="a4-figure is-wide">

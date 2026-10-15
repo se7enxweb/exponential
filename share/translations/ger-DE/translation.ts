@@ -6270,8 +6270,8 @@
         <translation>Fügt eine Sprache hinzu, in die Inhalte übersetzt werden können. Sie übersetzt nichts und ändert keinen Siteaccess: übersetzen Sie danach Inhalte im Editor und tragen Sie die Sprache in die SiteLanguageList der Siteaccesses ein, die sie zeigen sollen.</translation>
     </message>
     <message>
-        <source>%used of at most %max languages are in use.</source>
-        <translation>%used von höchstens %max Sprachen sind in Gebrauch.</translation>
+        <source>%used of at most %max content languages are in use. Only the languages added here count, not the locales in the list below; removing a language no content uses frees a place.</source>
+        <translation>%used von höchstens %max Inhaltssprachen sind in Gebrauch. Es zählen nur die hier hinzugefügten Sprachen, nicht die Locales in der Liste unten; das Entfernen einer Sprache, die kein Inhalt nutzt, gibt einen Platz frei.</translation>
     </message>
     <message>
         <source>Language and country</source>
@@ -6437,8 +6437,8 @@
         <translation>Übersicht</translation>
     </message>
     <message>
-        <source>More can be added (at most %max)</source>
-        <translation>Können noch hinzugefügt werden (höchstens %max)</translation>
+        <source>More can be added (at most %max content languages)</source>
+        <translation>Können noch hinzugefügt werden (höchstens %max Inhaltssprachen)</translation>
     </message>
     <message>
         <source>Need a look</source>
@@ -6677,8 +6677,8 @@
         <translation>%name (%locale) wurde hinzugefügt. Inhalte können jetzt in diese Sprache übersetzt werden; tragen Sie %locale in die SiteLanguageList jedes Siteaccess ein, der sie zeigen soll.</translation>
     </message>
     <message>
-        <source>No language was added: this installation already has the most languages it can hold (%max).</source>
-        <translation>Es wurde keine Sprache hinzugefügt: diese Installation hat bereits die größtmögliche Zahl an Sprachen (%max).</translation>
+        <source>No language was added: this installation already has the most content languages it can hold (%max). Remove a language that no object or class uses to free a place.</source>
+        <translation>Es wurde keine Sprache hinzugefügt: Diese Installation hat bereits die höchste Zahl an Inhaltssprachen (%max). Entfernen Sie eine Sprache, die kein Objekt und keine Klasse nutzt, um einen Platz freizugeben.</translation>
     </message>
     <message>
         <source>There is no locale %locale in share/locale. Choose one from the list, or add its .ini file to share/locale first.</source>
@@ -10454,6 +10454,14 @@
 <context>
     <name>design/admin/node/view/full</name>
     <message>
+        <source>Upload</source>
+        <translation>Hochladen</translation>
+    </message>
+    <message>
+        <source>Upload files to this location.</source>
+        <translation>Dateien an diesen Ort hochladen.</translation>
+    </message>
+    <message>
         <source>Default size</source>
         <translation>Standardgröße</translation>
     </message>
@@ -11734,6 +11742,82 @@
         <translation>Nicht kopiert</translation>
     </message>
     <message>
+        <source>Order</source>
+        <translation>Reihenfolge</translation>
+    </message>
+    <message>
+        <source>Move %name</source>
+        <translation>%name verschieben</translation>
+    </message>
+    <message>
+        <source>Drag to change the order</source>
+        <translation>Ziehen, um die Reihenfolge zu ändern</translation>
+    </message>
+    <message>
+        <source>Drag the grip to change the order. With the keyboard: Space picks the row up, the arrow keys move it, Space drops it, Escape cancels. Alt+Up and Alt+Down move it by one place at once.</source>
+        <translation>Zum Ändern der Reihenfolge den Griff ziehen. Mit der Tastatur: Leertaste nimmt die Zeile auf, die Pfeiltasten verschieben sie, Leertaste legt sie ab, Escape bricht ab. Alt+Pfeil hoch und Alt+Pfeil runter verschieben sie sofort um eine Stelle.</translation>
+    </message>
+    <message>
+        <source>Picked up %name. Position %position of %count.</source>
+        <translation>%name aufgenommen. Position %position von %count.</translation>
+    </message>
+    <message>
+        <source>Position %position of %count</source>
+        <translation>Position %position von %count</translation>
+    </message>
+    <message>
+        <source>Moved to position %position of %count</source>
+        <translation>Verschoben auf Position %position von %count</translation>
+    </message>
+    <message>
+        <source>Dropped. The order is unchanged.</source>
+        <translation>Abgelegt. Die Reihenfolge ist unverändert.</translation>
+    </message>
+    <message>
+        <source>Move cancelled. %name is back at position %position of %count.</source>
+        <translation>Verschieben abgebrochen. %name ist wieder auf Position %position von %count.</translation>
+    </message>
+    <message>
+        <source>Order saved</source>
+        <translation>Reihenfolge gespeichert</translation>
+    </message>
+    <message>
+        <source>Undo</source>
+        <translation>Rückgängig</translation>
+    </message>
+    <message>
+        <source>Previous order restored</source>
+        <translation>Vorherige Reihenfolge wiederhergestellt</translation>
+    </message>
+    <message>
+        <source>The order was not saved: %error</source>
+        <translation>Die Reihenfolge wurde nicht gespeichert: %error</translation>
+    </message>
+    <message>
+        <source>The previous order was not restored: %error</source>
+        <translation>Die vorherige Reihenfolge wurde nicht wiederhergestellt: %error</translation>
+    </message>
+    <message>
+        <source>unknown error</source>
+        <translation>unbekannter Fehler</translation>
+    </message>
+    <message>
+        <source>Someone else changed the order in the meantime. Nothing was saved; the list shows the current order now.</source>
+        <translation>Die Reihenfolge wurde inzwischen von jemand anderem geändert. Es wurde nichts gespeichert; die Liste zeigt jetzt die aktuelle Reihenfolge.</translation>
+    </message>
+    <message>
+        <source>Save the priority you are editing (Enter) or cancel it (Escape) before you move a row.</source>
+        <translation>Speichern Sie die bearbeitete Priorität (Enter) oder verwerfen Sie sie (Escape), bevor Sie eine Zeile verschieben.</translation>
+    </message>
+    <message>
+        <source>Please wait until the order is saved.</source>
+        <translation>Bitte warten, bis die Reihenfolge gespeichert ist.</translation>
+    </message>
+    <message>
+        <source>Please wait until the priority is saved.</source>
+        <translation>Bitte warten, bis die Priorität gespeichert ist.</translation>
+    </message>
+    <message>
         <source>Object</source>
         <translation>Objekt</translation>
     </message>
@@ -12888,6 +12972,26 @@
     <message>
         <source>Locked after too many failed logins.</source>
         <translation>Nach zu vielen fehlgeschlagenen Anmeldungen gesperrt.</translation>
+    </message>
+    <message>
+        <source>%language – main language</source>
+        <translation>%language – Hauptsprache</translation>
+    </message>
+    <message>
+        <source>%language – translation exists</source>
+        <translation>%language – Übersetzung vorhanden</translation>
+    </message>
+    <message>
+        <source>%language – missing</source>
+        <translation>%language – fehlt</translation>
+    </message>
+    <message>
+        <source>%language – outdated, older than %main</source>
+        <translation>%language – veraltet, älter als %main</translation>
+    </message>
+    <message>
+        <source>Translate into %language</source>
+        <translation>In %language übersetzen</translation>
     </message>
 </context>
 <context>
@@ -16163,6 +16267,22 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Heller Modus</translation>
     </message>
     <message>
+        <source>%tab menu</source>
+        <translation>Menü „%tab“</translation>
+    </message>
+    <message>
+        <source>Loading the %tab menu</source>
+        <translation>Menü „%tab“ wird geladen</translation>
+    </message>
+    <message>
+        <source>The %tab menu could not be loaded.</source>
+        <translation>Das Menü „%tab“ konnte nicht geladen werden.</translation>
+    </message>
+    <message>
+        <source>Go to %tab</source>
+        <translation>Weiter zu „%tab“</translation>
+    </message>
+    <message>
         <source>Open the site</source>
         <translation>Website öffnen</translation>
     </message>
@@ -16432,7 +16552,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <name>design/admin/parts/my/menu</name>
     <message>
         <source>My notification settings</source>
-        <translation>Meine Benachrichtigungs- Einstellungen</translation>
+        <translation>Meine Benachrichtigungseinstellungen</translation>
     </message>
     <message>
         <source>My bookmarks</source>
@@ -16557,6 +16677,22 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>My e-mail preferences</source>
         <translation>Meine E-Mail-Einstellungen</translation>
+    </message>
+    <message>
+        <source>The content you follow and how you are told.</source>
+        <translation>Inhalte, denen Sie folgen, und wie Sie benachrichtigt werden.</translation>
+    </message>
+    <message>
+        <source>Which optional e-mail you get; your consents.</source>
+        <translation>Welche optionalen E-Mails Sie erhalten; Ihre Einwilligungen.</translation>
+    </message>
+    <message>
+        <source>Set a new password for your account.</source>
+        <translation>Ein neues Passwort für Ihr Konto setzen.</translation>
+    </message>
+    <message>
+        <source>Your name, e-mail address and other details.</source>
+        <translation>Ihr Name, Ihre E-Mail-Adresse und weitere Angaben.</translation>
     </message>
 </context>
 <context>
@@ -17063,6 +17199,34 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Access control</source>
         <translation>Zugangskontrolle</translation>
+    </message>
+    <message>
+        <source>Users and user groups</source>
+        <translation>Benutzer und Gruppen</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Benutzer</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>Mein Konto</translation>
+    </message>
+    <message>
+        <source>Users and user groups; create and edit accounts.</source>
+        <translation>Benutzer und Benutzergruppen; Konten anlegen und bearbeiten.</translation>
+    </message>
+    <message>
+        <source>Who is signed in; end sessions.</source>
+        <translation>Wer angemeldet ist; Sitzungen beenden.</translation>
+    </message>
+    <message>
+        <source>Who may do what, and where.</source>
+        <translation>Wer was wo darf.</translation>
+    </message>
+    <message>
+        <source>Accounts not yet activated; activate or remove them.</source>
+        <translation>Noch nicht aktivierte Konten; aktivieren oder entfernen.</translation>
     </message>
 </context>
 <context>

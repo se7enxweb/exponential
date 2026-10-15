@@ -176,7 +176,7 @@ toasts, and on a `var(--a4-z-…)` that `components.css` does not define (a typo
 | Tables | `.a4-table-wrap` > `table.a4-table` (`.is-compact`), `tr.is-selected` |
 | Under a list | `.a4-listfoot`, `.a4-sizes`, `.a4-pager`; `.a4-tabs` (links, buttons, `span.current`, `a.current`, `.is-current`; `.is-segmented`: one pill at `--a4-control-h` around every choice, the current one tinted in the accent with an accent edge; a pressed button is `aria-pressed="true"`, a current link `span.current`, `a.current` or `.is-current` (with `aria-current`); Left/Right and Home/End move between the choices (`admin4.js`), each keeps its Tab stop; `.is-icons`: round icon buttons, each named by `.a4-sr-only` text and its `title`), `.a4-count` |
 | Empty state, notices | `.a4-empty`; `.a4-notice` (`.is-ok`, `.is-warn`, `.is-bad`, `.is-info`: each with its icon left of the text, `.no-icon` leaves it out; `.a4-notice-title` for a bold first line) |
-| Toasts | `.a4-toasts` (the two live regions of the frame, `#a4-toasts` polite and `#a4-toasts-alert` assertive) and `.a4-toast` (`.is-ok`, `.is-warn`, `.is-bad`); added only by `window.a4Toast( message, kind )` from `admin4.js` |
+| Toasts | `.a4-toasts` (the two live regions of the frame, `#a4-toasts` polite and `#a4-toasts-alert` assertive) and `.a4-toast` (`.is-ok`, `.is-warn`, `.is-bad`); added only by `window.a4Toast( message, kind, opener, delay )` from `admin4.js`; an action in a toast (Undo) is a `.a4-toast-action` button before the close button, and its toast stays `delay` ms |
 | Folding | `details.a4-fold` > `summary` + `.a4-fold-body` (`.is-bad`, `.is-warn`); `details.a4-confirm` (a confirmation that opens in place) |
 | Steps | `ol.a4-steps` > `li.is-done` / `li.is-current` |
 | Timeline | `ol.a4-timeline` > `li` (`.is-ok`, `.is-warn`, `.is-bad`, `.is-info`) > `time.a4-timeline-time` (with `datetime`) + `.a4-timeline-body` (`.a4-timeline-meta`, a state badge); for short chronological lists without actions per row, newest first; the dot repeats the state a badge says in words. Audit events: `parts/audit_timeline.tpl` (`events`, `show_reason`) |
@@ -301,6 +301,28 @@ after the preference's label (`.a4-pref-label`); the list keeps its list role. I
 side, at least 24px high, and under forced colors an outline in `Highlight` marks the current one (for every
 `ul.tabs`). A new on/off preference in the right column is one more entry of the template's list
 (`AdminLegacyControlsTest`).
+
+## The node view's Upload button
+
+The node view's actions have an Upload button between Edit and Move (since 2026-10-15). It is a link,
+`<a class="a4-btn a4-node-upload">` with the Bootstrap Icon `.a4-bi-upload` and the text "Upload" (ger-DE
+"Hochladen"), to ezmultiupload's upload page for the node, `ezmultiupload/upload/<node id>`. One template draws it,
+`node/view/upload_button.tpl`, in identical copies in `design/admin` and `design/admin4` (admin4 is self-contained;
+`admin4l` falls back to admin4), included by `node/view/full.tpl` and `node/view/a4_full_body.tpl`; the icon is on
+`design.ini [AdminDesignSettings] IconList[]`. exp_adminui puts the same link first in its "..."
+menu (`window_preview_toolbar.tpl`).
+
+It shows only when uploading is possible there for the current user: the module `ezmultiupload/upload` is enabled and
+reachable in the siteaccess (`ezmodule()`), and `fetch( 'ezmultiupload', 'can_upload', hash( 'node_id', $node.node_id ) )`
+is true. That fetch asks `expMultiuploadService::canUploadAt()`, the one check for links to the upload page: the
+`ezmultiupload/upload` policy, read and `content/create` access at the node, and a container (or a class or node of
+`ezmultiupload.ini [MultiUploadSettings] AvailableClasses[]` / `AvailableSubtreeNode[]`). Per-class create rights for
+each file are checked by the upload page itself. A draft or archived object never shows the button, and nor do the
+edit pages, which do not include the node view. The node view is view-cached per role set, like Edit and Move.
+
+admin4 sizes the link like the other actions (`--a4-control-h`) and takes it into the narrow-width rules of
+`.a4-node-actions` (`admin4.css`); the classic bar of `design/admin` keeps it as high as its legacy buttons
+(`modules/content.css`). Tests: `tests/tests/design/AdminNodeUploadButtonTest.php`.
 
 ## Version preview
 

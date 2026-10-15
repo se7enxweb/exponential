@@ -50,6 +50,10 @@ $FunctionList["greet"] = array( "call_method" => $class + array( "method" => "gr
 $FunctionList["join"] = array( "call_method" => $class + array( "method" => "join" ),
     "parameters" => array( array( "name" => "items", "type" => "array", "required" => true ),
                            array( "name" => "glue", "type" => "string", "required" => false, "default" => "," ) ) );
+$FunctionList["no_class"] = array( "call_method" => array( "class" => "eZTemplateFetchOperatorTestNoSuchClass", "method" => "greet" ),
+    "parameters" => array() );
+$FunctionList["no_method"] = array( "call_method" => $class + array( "method" => "noSuchMethod" ),
+    "parameters" => array() );
 ' );
     }
 
@@ -173,11 +177,35 @@ $FunctionList["join"] = array( "call_method" => $class + array( "method" => "joi
             '[{fetch("x3fetch","greet",hash())}]',
             '[{fetch("x3fetch","no_such_function",hash())}]',
             '[{fetch("no_such_module_x3","greet",hash())}]',
+            // a defined function whose class or method cannot be loaded when the template is compiled
+            '[{fetch("x3fetch","no_class",hash())}]',
+            '[{fetch("x3fetch","no_method",hash())}]',
         ) as $source )
         {
             list( $output ) = @$this->render( $source . '{* ' . $mode . ' *}', array(), $compiled );
             $this->assertSame( '[]', $output, $source );
         }
+    }
+
+    /**
+     * A compiled template can run in another process than the one that compiled it: a running PHP-FPM or Velocity
+     * worker whose autoload does not know a new kernel class yet. The compiled call checks the class and the method
+     * first, so such a worker renders no result instead of a fatal "Class not found" on the page.
+     */
+    public function testCompiledFetchChecksTheClassAndMethodBeforeTheCall()
+    {
+        list( $output ) = $this->render( '{fetch("x3fetch","greet",hash("name","Gus"))}{* guard *}', array(), true );
+        $this->assertSame( 'Hello, Gus', $output );
+        $code = '';
+        foreach ( new RecursiveIteratorIterator( new RecursiveDirectoryIterator( self::$dir . '/compiled', FilesystemIterator::SKIP_DOTS ) ) as $file )
+        {
+            $source = file_get_contents( (string)$file );
+            if ( strpos( $source, "'greet'" ) !== false && strpos( $source, 'Gus' ) !== false )
+                $code = $source;
+        }
+        $this->assertNotSame( '', $code, 'the compiled template' );
+        $this->assertStringContainsString( "if ( class_exists( 'eZTemplateFetchOperatorTestFunctions' ) && method_exists( 'eZTemplateFetchOperatorTestFunctions', 'greet' ) )", $code );
+        $this->assertMatchesRegularExpression( '/else\s*\{\s*eZDebug::writeError\(/', $code );
     }
 
     #[\PHPUnit\Framework\Attributes\DataProvider('modeProvider')]
