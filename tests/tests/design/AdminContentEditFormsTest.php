@@ -126,9 +126,11 @@ class AdminContentEditFormsTest extends PHPUnit\Framework\TestCase
         $group = $rules['.a4-content-attr .ezoe-engine-switch'] ?? null;
         $this->assertNotNull( $group, 'the switch is drawn in admin4' );
         $this->assertSame( 'flex', $group['display'] );
-        $this->assertSame( 'wrap', $group['flex-wrap'], 'on a phone the engines wrap under the label' );
+        $this->assertSame( 'wrap', $group['flex-wrap'], 'on a narrow phone the engines go under the label' );
         $this->assertSame( 'center', $group['align-items'], 'label and engines on one line' );
         $this->assertSame( 'var(--a4-space-2) 0 0', $group['margin'], 'apart from the status bar above' );
+        // the segments stay joined: only the group wraps (a wrapped segment would keep a square corner and the -1px)
+        $this->assertSame( 'nowrap', $rules['.a4-content-attr .ezoe-engine-switch .ezoe-engine-switch-options']['flex-wrap'] ?? null );
         $option = $rules['.a4-content-attr .ezoe-engine-switch .ezoe-engine-switch-option'] ?? null;
         $this->assertNotNull( $option );
         $this->assertSame( 'var(--a4-control-h)', $option['min-height'] );

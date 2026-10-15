@@ -318,8 +318,8 @@ engine as a `button.button.ezoe-engine-switch-option` that posts `CustomActionBu
 `modules/content.css` draws it as one segmented control like `.a4-tabs.is-segmented`: the segments joined at
 `--a4-control-h`, the engine in use filled in `--a4-accent-strong` (an outline in `Highlight` under forced colors),
 the label muted beside them on the same centre line. It stands left-aligned under the field, like the field's other
-controls and its label, `--a4-space-2` below the editor's status bar; on a narrow screen the segments wrap under the
-label (`AdminContentEditFormsTest`).
+controls and its label, `--a4-space-2` below the editor's status bar; on a narrow screen the joined segments move under the
+label as one piece (`AdminContentEditFormsTest`).
 
 The rich text editors (TinyMCE 3 and 8) draw a field's text in an iframe with ezoe's light content stylesheet. The
 edit form names `components.css` and `editor_content.css` in `data-a4-editor-css`; `admin4.js` adds both to each

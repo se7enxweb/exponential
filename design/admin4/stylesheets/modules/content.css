@@ -486,7 +486,7 @@ div.block.a4-content-attr { margin: 0 0 var(--a4-space-5); padding-bottom: 0; } 
    the label "Editor" and the engines as one segmented control, drawn like .a4-tabs.is-segmented (components.css) at
    the one control height. The engine in use (span.current, aria-current) is filled; the others are the outlined
    buttons that switch. Left-aligned under the field like its other controls, 8px below the editor's status bar; on a
-   narrow screen the engines wrap under the label. The selectors carry the group class, so they beat the button look
+   narrow screen the joined engines move under the label as one piece. The selectors carry the group class, so they beat the button look
    above (:is(.a4-content-attr, ...) button.button). */
 .a4-content-attr .ezoe-engine-switch {
   display: flex;
@@ -496,7 +496,7 @@ div.block.a4-content-attr { margin: 0 0 var(--a4-space-5); padding-bottom: 0; } 
   margin: var(--a4-space-2) 0 0;
 }
 .a4-content-attr .ezoe-engine-switch .ezoe-engine-switch-label { color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 650; }
-.a4-content-attr .ezoe-engine-switch .ezoe-engine-switch-options { display: inline-flex; flex-wrap: wrap; row-gap: var(--a4-space-1); min-width: 0; }
+.a4-content-attr .ezoe-engine-switch .ezoe-engine-switch-options { display: inline-flex; flex-wrap: nowrap; }
 .a4-content-attr .ezoe-engine-switch .ezoe-engine-switch-option {
   box-sizing: border-box;
   display: inline-flex;
