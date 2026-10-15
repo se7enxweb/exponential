@@ -7,11 +7,11 @@
  *   gives no badge;
  * - four levels with their default names and codes, "auto" from EXP_ENV, Name/ShortName/Release/ShowVersion,
  *   ShowInTitle, and a key that changes with every one of them;
- * - the header (admin4 and admin4l's logo block) and the sign-in page include the badge; it is text, not only colour,
+ * - the header (admin4 and admin4l's logo block) and the sign-in page include the badge; it is text, not only color,
  *   with the level as a class; the release only for signed-in users;
  * - the page title starts with "[NAME] " (page_head.tpl's title_prefix), and every cache-block that holds the title
  *   or the header is keyed by the badge;
- * - the header keeps its heights (56, 88, 56px): the badge is 24px in the 36px row, a 14px dot on phones, and the
+ * - the header keeps its heights (56, 88, 56px): the badge is 24px in the 36px row, the short code up to 767px, and the
  *   search field gives it room only from 576 to 1279px (the rules that make it so; the rendered heights were
  *   measured in a browser at 390, 576, 768, 1280 and 1440px, which this file alone cannot do);
  * - each level's text 4.5:1 on its fill and its edge 3:1 on the header, in both modes; forced colors keep the text;
@@ -156,7 +156,7 @@ class AdminEnvironmentBadgeTest extends PHPUnit\Framework\TestCase
             $this->assertSame( 1, substr_count( $tpl, $include ), $path );
             $this->assertMatchesRegularExpression( '#<div id="header-logo" class="header-logo">.*' . preg_quote( $include, '#' ) . '\s*</div>#s', $tpl, $path . ': inside the logo box' );
         }
-        $this->assertMatchesRegularExpression( '#<header class="a4-login-top">\s*<a class="a4-login-logo"[^>]*></a>\s*' . preg_quote( $include, '#' ) . '\s*</header>#', self::file( 'design/admin4/templates/loginpagelayout.tpl' ) );
+        $this->assertMatchesRegularExpression( '#<header class="a4-login-top">\s*<a class="a4-login-logo"[^>]*>\{include uri=\'design:parts/a4_logo.tpl\'\}</a>\s*' . preg_quote( $include, '#' ) . '\s*</header>#', self::file( 'design/admin4/templates/loginpagelayout.tpl' ) );
 
         $partial = self::file( self::PARTIAL );
         $this->assertStringContainsString( '{def $a4_env_badge = exp_environment_badge()}', $partial );
@@ -238,17 +238,19 @@ class AdminEnvironmentBadgeTest extends PHPUnit\Framework\TestCase
         $this->assertSame( '88px', $media( 'screen and (min-width: 576px)' )[':root']['--header-height'] );
         $this->assertSame( '56px', $media( 'screen and (min-width: 1280px)' )[':root']['--header-height'] );
 
-        $phone = $media( 'screen and (max-width: 575.98px)' );
-        $this->assertSame( '14px', $phone['#header .a4-env']['width'], 'a dot on phones' );
-        $this->assertSame( '14px', $phone['#header .a4-env']['height'] );
-
-        $compact = $media( 'screen and (min-width: 576px) and (max-width: 767.98px)' );
+        // up to 767px, phones included, the short code in words: never the color alone
+        $compact = $media( 'screen and (max-width: 767.98px)' );
+        $this->assertSame( 'none', $compact['#header .a4-env-dot']['display'] );
+        // 576 to 767px with a badge the logo is the mark alone, as on phones, so the field keeps its room
+        $mark = $media( 'screen and (min-width: 576px) and (max-width: 767.98px)' );
+        $this->assertSame( 'none', $mark['#header:has(.a4-env) #header-logo .a4-logo-full']['display'] );
+        $this->assertSame( 'block', $mark['#header:has(.a4-env) #header-logo .a4-logo-mark']['display'] );
         $this->assertSame( 'block', $compact['#header .a4-env-short']['display'] );
         $this->assertSame( '4rem', $compact['#header .a4-env']['max-width'] );
-        $this->assertSame( 'calc(4rem + var(--a4-space-2))', $compact['#header:has(.a4-env)']['--a4-env-room'] );
+        $this->assertSame( 'calc(4rem + var(--a4-space-2) - 122px)', $compact['#header:has(.a4-env)']['--a4-env-room'] );
         $this->assertSame( 'calc(13rem + var(--a4-space-2))', $media( 'screen and (min-width: 768px) and (max-width: 1279.98px)' )['#header:has(.a4-env)']['--a4-env-room'] );
         $room = $media( 'screen and (min-width: 576px) and (max-width: 1279.98px)' );
-        $this->assertSame( 'clamp(5.5rem, calc(100vw - 410px - var(--a4-env-room)), 230px)', $room['#header:has(.a4-env) .searchblock input.searchtext']['width'],
+        $this->assertSame( 'clamp(5.5rem, calc(100vw - 454px - var(--a4-env-room)), 230px)', $room['#header:has(.a4-env) .searchblock input.searchtext']['width'],
                            'the field gives the badge its room up to 1279px; from 1280px the main menu does' );
         // what is not shown stays for screen readers: clipped, not display: none
         $this->assertDoesNotMatchRegularExpression( '/\.a4-env-name[^{]*\{[^}]*display:\s*none/', $css );

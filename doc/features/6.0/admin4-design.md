@@ -127,16 +127,17 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
   in the browser; the preference wins over the browser's copy. Without JavaScript the box keeps the browser's own
   resize grip. The top node's view has the same control. `tests/tests/design/AdminNodeTabsHeightTest.php` checks it.
 - **Environment badge.** Off by default. With `site.ini [AdminEnvironment] Level` set, the header shows the
-  environment's name beside the logo, in the level's colour: development green, test amber, staging violet,
+  environment's name beside the logo, in the level's color: development green, test amber, staging violet,
   production red, each with a darker or lighter edge for the dark mode (`--a4-env-<level>`, `-ink`, `-line` in
   `admin4.css`; text 4.5:1 on the fill, the edge 3:1 on the header). The page title starts with the name in capitals,
   "[PRODUCTION] Dashboard - Site", so windows and tabs can be told apart; the sign-in page shows the badge and the
-  prefix too. The badge is text, not only colour: from 768 px the name (and, for signed-in users, `Release` and with
-  `ShowVersion=enabled` the Exponential version), from 576 to 767 px the short code (`ShortName`, default DEV, TEST,
-  STAGE, PROD), on phones a 14 px dot whose name is read out by screen readers; the title attribute holds the whole
-  text. It is 24 px high in the 36 px row of the header tools, so the header keeps 56, 88 and 56 px; up to 1279 px the
-  search field gives it its room, from 1280 px the main menu does (its last tabs go into "More"). In forced colors it
-  is drawn in the system colours with its text. The same in admin4l (the logo block). See [Settings](#settings).
+  prefix too. The badge is text, not only color: from 768 px the name (and, for signed-in users, `Release` and with
+  `ShowVersion=enabled` the Exponential version), up to 767 px, phones included, the short code (`ShortName`, default DEV,
+  TEST, STAGE, PROD; the full logo gives way to the mark alone from 576 to 767 px too), the name always read out by
+  screen readers; the title attribute holds the whole text. It is 24 px high in the 36 px row of the header tools,
+  so the header keeps 56, 88 and 56 px; up to 1279 px the search field gives it its room,
+  from 1280 px the main menu does (its last tabs go into "More"). In forced colors it is drawn in the system colors
+  with its text. The same in admin4l (the logo block). See [Settings](#settings).
   `tests/tests/design/AdminEnvironmentBadgeTest.php` checks it.
 - **Edit form.** The button bars (Send for publishing, Store draft, Store draft and exit, Discard draft) stay in view
   while the form scrolls (CSS `position: sticky`, replacing the YUI script that stopped working). They are slim

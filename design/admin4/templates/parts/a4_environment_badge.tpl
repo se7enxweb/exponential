@@ -1,6 +1,6 @@
 {* The environment badge: the name of this installation's environment (site.ini [AdminEnvironment], read by
    exp_environment_badge()), beside the logo in the header and on the sign-in page. Nothing without a level, the
-   default. Text, not only colour: the dot is decoration, the name is read out at every width (phones show only the
+   default. Text, not only color: the dot is decoration, the name is read out at every width (phones show only the
    dot, 576 to 767px the short code; the name stays for screen readers). The release only for signed-in users.
    The pagelayouts key their header cache-blocks by the badge's key. *}
 {def $a4_env_badge = exp_environment_badge()}
