@@ -146,7 +146,8 @@
       "tests/tests/design/AdminBaseStylesheetsTest.php",
       "tests/tests/design/AdminScriptsTest.php",
       "tests/tests/design/AdminSetupOverviewTest.php",
-      "tests/tests/design/AdminLeftMenuGroupsTest.php"
+      "tests/tests/design/AdminLeftMenuGroupsTest.php",
+      "tests/tests/design/AdminMegaMenuTest.php"
     ],
     "design/admin4/javascript/ezadmin_menubar.js": [
       "tests/tests/design/AdminStylingRulesTest.php",
@@ -452,21 +453,42 @@
       "tests/tests/design/AdminMegaMenuTest.php",
       "tests/tests/design/AdminStylingRulesTest.php"
     ],
-    "kernel/setup/megamenu.php": [
-      "tests/tests/design/AdminMegaMenuTest.php",
-      "tests/tests/kernel/classes/runnable/MovedEntryPointsTest.php"
-    ],
-    "kernel/private/classes/views/setup/megamenu.php": [
-      "tests/tests/design/AdminMegaMenuTest.php",
-      "tests/tests/kernel/classes/runnable/MovedEntryPointsTest.php"
-    ],
     "kernel/setup/module.php": [
       "tests/tests/design/AdminMegaMenuTest.php"
     ],
-    "design/standard/templates/setup/megamenu.tpl": [
+    "tests/tests/design/js/mega_menu.js": [
       "tests/tests/design/AdminMegaMenuTest.php"
     ],
-    "tests/tests/design/js/mega_menu.js": [
+    "kernel/user/megamenu.php": [
+      "tests/tests/design/AdminMegaMenuTest.php",
+      "tests/tests/kernel/classes/runnable/MovedEntryPointsTest.php"
+    ],
+    "kernel/private/classes/views/user/megamenu.php": [
+      "tests/tests/design/AdminMegaMenuTest.php",
+      "tests/tests/kernel/classes/runnable/MovedEntryPointsTest.php"
+    ],
+    "kernel/user/module.php": [
+      "tests/tests/design/AdminMegaMenuTest.php"
+    ],
+    "design/standard/templates/user/megamenu.tpl": [
+      "tests/tests/design/AdminMegaMenuTest.php"
+    ],
+    "design/admin4/templates/user/megamenu.tpl": [
+      "tests/tests/design/AdminMegaMenuTest.php"
+    ],
+    "design/admin4/templates/parts/user/mega_menu.tpl": [
+      "tests/tests/design/AdminMegaMenuTest.php"
+    ],
+    "design/admin4/templates/parts/setup/mega_menu.tpl": [
+      "tests/tests/design/AdminMegaMenuTest.php"
+    ],
+    "share/icons/bootstrap-icons/svg/shield-lock.svg": [
+      "tests/tests/design/AdminMegaMenuTest.php"
+    ],
+    "share/icons/bootstrap-icons/svg/person-slash.svg": [
+      "tests/tests/design/AdminMegaMenuTest.php"
+    ],
+    "kernel/common/eztopmenuoperator.php": [
       "tests/tests/design/AdminMegaMenuTest.php"
     ]
   },
