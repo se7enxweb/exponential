@@ -195,7 +195,7 @@ class AdminLogoTest extends PHPUnit\Framework\TestCase
         $this->assertSame( self::drawing( $mark ), self::drawing( $inline[1] ) );
         $this->assertSame( $full->getAttribute( 'viewBox' ), $inline[0]->getAttribute( 'viewBox' ) );
         $this->assertSame( $mark->getAttribute( 'viewBox' ), $inline[1]->getAttribute( 'viewBox' ) );
-        $this->assertSame( '6 6 388 59', $full->getAttribute( 'viewBox' ), 'cut to the drawing, no white margin' );
+        $this->assertSame( '6 6 380 60', $full->getAttribute( 'viewBox' ), 'cut to the drawing, no white margin' );
         // the mark is the end of the full logo's drawing: the word, then the mark
         $this->assertSame( self::drawing( $mark ), array_slice( self::drawing( $full ), -4 ) );
         $this->assertCount( 11 + 4, self::drawing( $full ), 'eleven letters, two squares with their outlines' );
@@ -241,9 +241,9 @@ class AdminLogoTest extends PHPUnit\Framework\TestCase
         $rules = AdminBaseStylesheetsTest::rules( preg_replace( '/@media[^{]*\{((?:[^{}]*\{[^{}]*\})*)[^{}]*\}/s', '', $css ) );
         $this->assertSame( '32px', $rules['#header-logo .brand']['height'], 'the box of the old logo image' );
         $this->assertSame( '24px', $rules['.a4-logo-full']['height'] );
-        $this->assertSame( 'calc(24px * 388 / 59)', $rules['.a4-logo-full']['width'], 'the viewBox\'s ratio' );
+        $this->assertSame( 'calc(24px * 380 / 60)', $rules['.a4-logo-full']['width'], 'the viewBox\'s ratio' );
         $this->assertSame( 'none', $rules['.a4-logo-mark']['display'] );
-        $this->assertSame( 'calc(28px * 388 / 59)', $rules['.a4-login-logo .a4-logo-full']['width'] );
+        $this->assertSame( 'calc(28px * 380 / 60)', $rules['.a4-login-logo .a4-logo-full']['width'] );
 
         $phone = AdminBaseStylesheetsTest::rules( self::media( $css, 'screen and (max-width: 575.98px)' ) );
         $this->assertSame( 'none', $phone['#header-logo .a4-logo-full']['display'] );
