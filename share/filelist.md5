@@ -1171,7 +1171,7 @@ e7cbcc8548bbdec86d4686f2b042bb78  design/admin4/templates/parts/a4_topmenu_items
 54851d580ce5e5052a843ac97c96163b  design/admin4/templates/parts/audit/menu.tpl
 e6fe56c836e1e8315b4d7aa9e9fb4b74  design/admin4/templates/parts/audit_timeline.tpl
 6a10200587ee6c7b9979159497aa6167  design/admin4/templates/parts/content/menu.tpl
-d9494d4e3a8933de14fedd06056186bd  design/admin4/templates/parts/ini_menu.tpl
+0b90bce474d4e3a24d172d5021e103c9  design/admin4/templates/parts/ini_menu.tpl
 3dff8ecf3c880bf2261cc89a9b39d8bd  design/admin4/templates/parts/ini_menu_items.tpl
 e36329025b09f023b15222452941ff02  design/admin4/templates/parts/ini_menu_tiles.tpl
 377177c4ae5a5b55ebaad3add2df9f24  design/admin4/templates/parts/language_badge.tpl
@@ -1321,7 +1321,7 @@ a28d02058dcaceb3f0bd665a92aff6b9  design/admin4/templates/tabs/audit/node_header
 a74a39cdede49a54190cdf8a411117a6  design/admin4/templates/toolbar/full/admin_current_user.tpl
 b60915914f7647785deb969657ed9089  design/admin4/templates/toolbar/full/admin_preferences.tpl
 674ecdd3f82ec5a3c12d163d15631845  design/admin4/templates/toolbar/full/admin_quick_settings.tpl
-1b577bee8ce703f9d533b66aac56292c  design/admin4/templates/translations.tpl
+c5068324d1b8e445d6704cd6f124756f  design/admin4/templates/translations.tpl
 1a1b45cfbbbdc5566746d17c2f308bde  design/admin4/templates/trigger/exp_list_script.tpl
 7493791b5d5fa207224044f195b59645  design/admin4/templates/trigger/list.tpl
 949b323fe30b4c2498fb2e1f6882e09d  design/admin4/templates/url/edit.tpl
@@ -3033,7 +3033,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-77c0480a12f54566ecb6d3dc302e85fc  doc/changelogs/6.0/6.0.15.md
+a650cb1f116fa2216de3286929c90b33  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -7310,10 +7310,10 @@ d1c4de508ec508b1743858c1c2b4c347  tests/tests/design/AdminLandmarksTest.php
 8c3a2027917dce05051de3adfbf82c29  tests/tests/design/AdminLanguageBadgeTest.php
 553ec211f2d35a9f993c49a49c6b14c0  tests/tests/design/AdminLanguageStatesTest.php
 31a396539d06fe77f5eeea659fbabc9e  tests/tests/design/AdminLeftColumnFontTest.php
-4b27c6fcd0b5289d066460987007d7e1  tests/tests/design/AdminLeftMenuGroupsTest.php
+9201d7d3d4939c5d06059a3bdd84d227  tests/tests/design/AdminLeftMenuGroupsTest.php
 48cd696b239173c498671c040aa3bfbe  tests/tests/design/AdminLegacyControlsTest.php
 584ea937f2fab0b4680470244e488283  tests/tests/design/AdminLogoTest.php
-f80b5e2c788a197794d84747e99d102a  tests/tests/design/AdminMegaMenuTest.php
+ff58b887ea06f03f993b5a4203913bb9  tests/tests/design/AdminMegaMenuTest.php
 581b1a9e22de7c70a61a13e56d219070  tests/tests/design/AdminMenuPolicyListTest.php
 f2f45d0be8a363de1fa024e40ff34fd2  tests/tests/design/AdminNewsletterPreviewTest.php
 0f2fb014b249d02439af133df0006286  tests/tests/design/AdminNodeTabsHeightTest.php
@@ -7329,7 +7329,7 @@ e91ed492603f40096d777282b9797f83  tests/tests/design/AdminReverseRelationCheckTe
 4390fd64629a97f6cac6bf7cd0e4bf9c  tests/tests/design/AdminScriptsTest.php
 fba3ae0ecf105bfaa378adaaf45cb2f7  tests/tests/design/AdminSearchTest.php
 2267a66a813a4949572649ef13219314  tests/tests/design/AdminSelfContainedTest.php
-8892c665f96685e851dd5483047ce234  tests/tests/design/AdminSetupOverviewTest.php
+bc826721fb93d393b3e6b639debe0fa4  tests/tests/design/AdminSetupOverviewTest.php
 889cffb91a4dc4f7c3807a7652b1d768  tests/tests/design/AdminSetupTabsLeftMenuTest.php
 b0234df6346ce8c89c9b8267dcfa47f4  tests/tests/design/AdminSidebarDrawerTest.php
 e8a3daceffc693a72f9d04fd90d0d4eb  tests/tests/design/AdminSiteAccessMenuTest.php

@@ -158,7 +158,7 @@ class AdminSetupOverviewTest extends PHPUnit\Framework\TestCase
         $this->assertNotFalse( $branch, 'ini_menu.tpl has no tiles branch' );
         $this->assertLessThan( $branch, strpos( $menu, '$grouped_keys|contains( $item.key )|not' ), 'the groups are built before the layout is chosen' );
         $this->assertLessThan( $branch, strpos( $menu, "'more', 'name', 'More'" ) );
-        $this->assertStringContainsString( "{include uri='design:parts/ini_menu_tiles.tpl' groups=\$groups", $menu );
+        $this->assertStringContainsString( "{include uri='design:parts/ini_menu_tiles.tpl' groups=\$ini_menu_groups", $menu );
         $tiles = self::read( self::TILES );
         $this->assertSame( 1, substr_count( $tiles, '{foreach $groups as $group}' ) );
         $this->assertSame( 1, substr_count( $tiles, '{foreach $group.items as $item}' ) );
@@ -187,7 +187,7 @@ class AdminSetupOverviewTest extends PHPUnit\Framework\TestCase
         // the tiles' settings come from the section each link comes from, read before the tiles are drawn
         foreach ( array( 'LinkIcons', 'LinkDescriptions', 'LinkFigureTemplates' ) as $key )
         {
-            $at = strpos( $menu, "ezini( \$section, '$key', 'menu.ini' )" );
+            $at = strpos( $menu, "ezini( \$ini_menu_section, '$key', 'menu.ini' )" );
             $this->assertNotFalse( $at, "ini_menu.tpl does not read $key of the link's section" );
             $this->assertLessThan( $branch, $at );
         }
@@ -459,8 +459,8 @@ class AdminSetupOverviewTest extends PHPUnit\Framework\TestCase
         $menu = self::read( self::MENU );
         $this->assertStringContainsString( '{if and( $group_tab, $top_tabs|contains( $group_tab ), $hidden_tabs|contains( $group_tab )|not )}', $menu );
         $this->assertStringContainsString( '{if $tab_links|contains( $link_key )}{continue}{/if}', $menu );
-        $this->assertStringContainsString( "{foreach ezini( \$section, 'PolicyList', 'menu.ini' ) as \$policy}", $menu );
-        $this->assertStringContainsString( "ezini_hasvariable( \$section, concat( 'PolicyList_', \$link_key ), 'menu.ini' )", $menu );
+        $this->assertStringContainsString( "{foreach ezini( \$ini_menu_section, 'PolicyList', 'menu.ini' ) as \$policy}", $menu );
+        $this->assertStringContainsString( "ezini_hasvariable( \$ini_menu_section, concat( 'PolicyList_', \$link_key ), 'menu.ini' )", $menu );
         $this->assertStringContainsString( 'eq( $item.group, $group )', $menu, 'an added link is in its group' );
         $this->assertStringContainsString( '$added_urls|contains( $item.url|trim( \'/\' ) )|not', $menu, 'a Setup link the added menu has too shows once' );
         $this->assertMatchesRegularExpression( '/\{elseif \$section_hidden\|contains\( \$link_key \)\}\s*\{\* [^*]+\*\}\s*\{set \$added_urls = \$added_urls\|append\( \$link_url\|trim\( \'\/\' \) \)\}/', $menu, 'a link hidden in the added menu keeps the Setup link to its address out' );

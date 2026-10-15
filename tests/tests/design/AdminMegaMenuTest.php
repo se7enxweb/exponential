@@ -236,7 +236,7 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
         }
         $menu = self::read( 'design/admin4/templates/parts/ini_menu.tpl' );
         $this->assertStringContainsString( "{if eq( \$tiles_layout, 'mega' )}", $menu );
-        $this->assertStringContainsString( "{include uri='design:parts/a4_mega_menu.tpl' groups=\$groups", $menu );
+        $this->assertStringContainsString( "{include uri='design:parts/a4_mega_menu.tpl' groups=\$ini_menu_groups", $menu );
         // the access checks run before either is drawn
         $this->assertLessThan( strpos( $menu, "{if eq( \$tiles_layout, 'mega' )}" ), strpos( $menu, "fetch( 'user', 'can_open', hash( 'uri', \$link_url ) )" ) );
         // no figures, no counts in the menu

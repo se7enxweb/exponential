@@ -111,11 +111,11 @@ class AdminLeftMenuGroupsTest extends PHPUnit\Framework\TestCase
 
         // "More" is built after every group of Groups[]: it stays last, and only links in no group go there
         $tpl = self::read( 'design/admin4/templates/parts/ini_menu.tpl' );
-        $loop = strpos( $tpl, '{foreach $group_list as $group}' );
+        $loop = strpos( $tpl, '{foreach $ini_menu_group_list as $group}' );
         $this->assertNotFalse( $loop );
         $this->assertGreaterThan( $loop, strpos( $tpl, "'more', 'name', 'More'" ) );
         // a group is added only when it holds a link the user may see: an empty group (no extension) is not drawn
-        $this->assertMatchesRegularExpression( '/\{if \$group_items\|count\}\s*\{set \$groups = \$groups\|append\( hash\( \'id\', \$group,/', $tpl );
+        $this->assertMatchesRegularExpression( '/\{if \$group_items\|count\}\s*\{set \$ini_menu_groups = \$ini_menu_groups\|append\( hash\( \'id\', \$group,/', $tpl );
     }
 
     /**
@@ -333,7 +333,7 @@ class AdminLeftMenuGroupsTest extends PHPUnit\Framework\TestCase
     {
         $tpl = self::read( 'design/admin4/templates/parts/ini_menu.tpl' );
         // an empty Groups[] (reset in an override) gives the plain list: the branch counts, it does not ask hasVariable
-        $this->assertStringContainsString( '{if $group_list|count}', $tpl );
+        $this->assertStringContainsString( '{if $ini_menu_group_list|count}', $tpl );
         // a link named in two groups shows in the first only
         $this->assertStringContainsString( '$grouped_keys|contains( $item.key )|not', $tpl );
         $this->assertStringContainsString( "{\$group.name|d18n( \$i18n_section )|wash}", $tpl );

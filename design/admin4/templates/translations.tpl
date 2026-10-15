@@ -3,7 +3,7 @@
      $a4_language_states = fetch( 'content', 'language_states', hash( 'object', $node.object ) )
      $a4_state_by_locale = hash()
      $a4_missing_languages = array()
-     $a4_main_language_name = $node.object.initial_language.name}
+     $a4_tr_main_language_name = $node.object.initial_language.name}
 {* each language's state (main, present, outdated, missing) for the badges: one read for the object *}
 {foreach $a4_language_states as $a4_state}
     {set $a4_state_by_locale = $a4_state_by_locale|merge( hash( $a4_state.locale, $a4_state ) )}
@@ -42,7 +42,7 @@
 
 {* Language name. *}
 <td>
-{if is_set( $a4_state_by_locale[$Translations.item.locale] )}{include uri='design:parts/language_state_badge.tpl' state_entry=$a4_state_by_locale[$Translations.item.locale] state_main_name=$a4_main_language_name}{else}{include uri='design:parts/language_badge.tpl' locale=$Translations.item.locale badge_named=true()}{/if}
+{if is_set( $a4_state_by_locale[$Translations.item.locale] )}{include uri='design:parts/language_state_badge.tpl' state_entry=$a4_state_by_locale[$Translations.item.locale] state_main_name=$a4_tr_main_language_name}{else}{include uri='design:parts/language_badge.tpl' locale=$Translations.item.locale badge_named=true()}{/if}
 {if eq( $Translations.item.locale, $node.object.current_language )}
 <b><a href={concat( $node.url, '/(language)/', $Translations.item.locale )|ezurl} title="{'View translation.'|i18n( 'design/admin/node/view/full' )}">{$Translations.item.name|wash}</a></b>
 {else}
@@ -83,7 +83,7 @@
 
 {* the site's languages this object does not have yet: a link to translate it into each the user may create *}
 {if $a4_missing_languages|count}
-<p class="a4-translations-missing">{'Missing translations'|i18n( 'design/admin/node/view/full' )}: <span class="a4-langs">{foreach $a4_missing_languages as $a4_state}{include uri='design:parts/language_state_badge.tpl' state_entry=$a4_state state_main_name=$a4_main_language_name state_object_id=$node.object.id}{delimiter} {/delimiter}{/foreach}</span></p>
+<p class="a4-translations-missing">{'Missing translations'|i18n( 'design/admin/node/view/full' )}: <span class="a4-langs">{foreach $a4_missing_languages as $a4_state}{include uri='design:parts/language_state_badge.tpl' state_entry=$a4_state state_main_name=$a4_tr_main_language_name state_object_id=$node.object.id}{delimiter} {/delimiter}{/foreach}</span></p>
 {/if}
 
 <div class="block">
@@ -160,5 +160,5 @@
 
 </form>
 
-{undef $object_can_edit $a4_language_states $a4_state_by_locale $a4_missing_languages $a4_main_language_name}
+{undef $object_can_edit $a4_language_states $a4_state_by_locale $a4_missing_languages $a4_tr_main_language_name}
 {/if}
