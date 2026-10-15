@@ -25,22 +25,12 @@
                path when the siteaccess is matched by URI (/admin/...), without when by host. *}
             <a class="brand" href={$a4_brand_url|ezurl} title="{$a4_brand_name|wash}" aria-label="{$a4_brand_name|wash}">
             </a>
-            {* The front page of the default siteaccess: scheme, host, port and siteaccess
-               path as the settings and this request call for (ezpSiteAccessURL). *}
-            <a class="site-preview" href="{siteaccess_url()|wash}" title="{'Open the site'|i18n( 'design/admin/pagelayout' )|wash}" aria-label="{'Open the site'|i18n( 'design/admin/pagelayout' )|wash}">
-                <span class="a4-icon a4-bi-box-arrow-up-right" aria-hidden="true"></span>
-            </a>
         {else}
             {* <a href="{ezini('SiteSettings', 'DefaultPage', 'site.ini')|ezurl( 'no' )}" title="Exponential {fetch( 'setup', 'version' )}">
             </a> *}
             {* The content root of content.ini (the dashboard without its tab), through ezurl: with the siteaccess
                path when the siteaccess is matched by URI (/admin/...), without when by host. *}
             <a class="brand" href={$a4_brand_url|ezurl} title="{$a4_brand_name|wash}" aria-label="{$a4_brand_name|wash}">
-            </a>
-            {* The front page of the default siteaccess: scheme, host, port and siteaccess
-               path as the settings and this request call for (ezpSiteAccessURL). *}
-            <a class="site-preview" href="{siteaccess_url()|wash}" title="{'Open the site'|i18n( 'design/admin/pagelayout' )|wash}" aria-label="{'Open the site'|i18n( 'design/admin/pagelayout' )|wash}">
-                <span class="a4-icon a4-bi-box-arrow-up-right" aria-hidden="true"></span>
             </a>
         {/if}
     </div>
