@@ -98,9 +98,14 @@
 </section>
 
 {* The controls. The site applies to every run button on the page; the search, the state and the part narrow
-   the list; the part also decides what the Run beside it runs. *}
-<section aria-labelledby="cronjob-controls-title">
-<h2 class="a4-sr-only" id="cronjob-controls-title">{'Run and filter'|i18n( 'design/admin/setup/cronjobs' )}</h2>
+   the list; the part also decides what the Run beside it runs. Folded by default, so the page opens on the
+   overview and the list; the summary still names the site the run buttons use. *}
+<details class="a4-fold" id="cronjob-controls">
+<summary>
+    <h2 class="a4-h2" id="cronjob-controls-title">{'Run and filter'|i18n( 'design/admin/setup/cronjobs' )}</h2>
+    <span class="a4-meta">{'Site %siteaccess · find a part or script · run every part'|i18n( 'design/admin/setup/cronjobs',, hash( '%siteaccess', $cronjob_default_siteaccess|wash ) )}</span>
+</summary>
+<div class="a4-fold-body">
 <div class="a4-filterbar">
     <div class="a4-field">
         <label for="cronjob-siteaccess">{'Run for site'|i18n( 'design/admin/setup/cronjobs' )}</label>
@@ -114,7 +119,7 @@
     </div>
     <div class="a4-field a4-setup-js-only" hidden>
         <label for="cronjob-search">{'Find a part or script'|i18n( 'design/admin/setup/cronjobs' )}</label>
-        <input type="search" id="cronjob-search" autocomplete="off" spellcheck="false" aria-controls="cronjob-list" aria-describedby="cronjob-filter-count" />
+        <input type="search" id="cronjob-search" autocomplete="off" spellcheck="false" aria-controls="{if ezpreference( 'admin_cronjobs_view' )|eq( 'cards' )}cronjob-list{else}cronjob-table{/if}" aria-describedby="cronjob-filter-count" />
     </div>
     <fieldset class="a4-field a4-field-wide a4-setup-js-only" hidden>
         <legend>{'Show'|i18n( 'design/admin/setup/cronjobs' )}</legend>
@@ -142,7 +147,8 @@
     </div>
     <p class="a4-filter-count a4-setup-js-only" id="cronjob-filter-count" aria-live="polite" hidden></p>
 </div>
-</section>
+</div>
+</details>
 
 {* The output: what the running job, or the last one, wrote. Open while a job runs; the console opens it when it
    starts one. *}
@@ -157,18 +163,95 @@
     </div>
 </details>
 
-{* One card per cronjob part. A part is run whole from its card, one script from its row, the whole list in turn
-   from the Run above. *}
+{* One card per cronjob part, or in the compact view one table row. A part is run whole from its card or row, one
+   script from its row on the card, the whole list in turn from the Run above. The view is a preference of the user
+   (admin_cronjobs_view: compact, the default, or cards), so it holds across visits and needs no javascript. *}
+{def $cronjob_view = cond( ezpreference( 'admin_cronjobs_view' )|eq( 'cards' ), 'cards', 'compact' )}
 <section class="a4-section" aria-labelledby="cronjob-parts-title">
 <div class="a4-section-head">
     <h2 class="a4-h2" id="cronjob-parts-title">{'Cronjob parts'|i18n( 'design/admin/setup/cronjobs' )}</h2>
-    {if $cronjob_parts_count|gt( $limit )}
+    <span class="a4-meta a4-setup-view" role="group" aria-label="{'View'|i18n( 'design/admin/setup/cronjobs' )|wash}">
+        {if $cronjob_view|eq('compact')}<strong aria-current="true">{'Compact'|i18n( 'design/admin/setup/cronjobs' )}</strong>{else}<a href={'/user/preferences/set/admin_cronjobs_view/compact/setup/cronjobs'|ezurl}>{'Compact'|i18n( 'design/admin/setup/cronjobs' )}</a>{/if}
+        &middot;
+        {if $cronjob_view|eq('cards')}<strong aria-current="true">{'Detailed'|i18n( 'design/admin/setup/cronjobs' )}</strong>{else}<a href={'/user/preferences/set/admin_cronjobs_view/cards/setup/cronjobs'|ezurl}>{'Detailed'|i18n( 'design/admin/setup/cronjobs' )}</a>{/if}
+    </span>
+    {if and( $cronjob_view|eq('cards'), $cronjob_parts_count|gt( $limit ) )}
     <span class="a4-meta">{'%from to %to of %count'|i18n( 'design/admin/setup/cronjobs',, hash( '%from', sum( $view_parameters.offset, 1 ), '%to', min( sum( $view_parameters.offset, $limit ), $cronjob_parts_count ), '%count', $cronjob_parts_count ) )}</span>
     {/if}
 </div>
 
-{if $cronjob_parts_page|count|eq(0)}
+{if $cronjob_parts|count|eq(0)}
 <p class="a4-empty">{'No cronjob parts are defined. Parts are the [CronjobSettings] and [CronjobPart-...] groups of cronjob.ini.'|i18n( 'design/admin/setup/cronjobs' )}</p>
+{elseif $cronjob_view|eq('compact')}
+{* The compact view: one row per part, every part on one page. The same row attributes as the cards, so the search,
+   the filter and the console treat a row like a card. *}
+<div class="a4-table-wrap a4-setup-compact" role="region" aria-labelledby="cronjob-parts-title" tabindex="0">
+<table class="a4-table" id="cronjob-table">
+<thead>
+<tr>
+    <th scope="col">{'Part'|i18n( 'design/admin/setup/cronjobs' )}</th>
+    <th scope="col">{'Status'|i18n( 'design/admin/setup/cronjobs' )}</th>
+    <th scope="col">{'Schedule'|i18n( 'design/admin/setup/cronjobs' )}</th>
+    <th scope="col">{'Last run'|i18n( 'design/admin/setup/cronjobs' )}</th>
+    <th scope="col"><span class="a4-sr-only">{'Actions'|i18n( 'design/admin/setup/cronjobs' )}</span></th>
+</tr>
+</thead>
+<tbody>
+{foreach $cronjob_parts as $cronjob_part}
+    {def $cronjob_paused = and( $cronjob_pause_enabled, or( $cronjob_part.pause.paused, $cronjob_pause_all.paused ) )
+         $cronjob_blocked = or( $cronjob_part.forbidden,
+                                $cronjob_part.missing|ge( $cronjob_part.scripts|count ),
+                                $cronjob_php_binary|eq(''),
+                                $cronjob_paused )
+         $cronjob_runnable = and( $cronjob_blocked|not, $cronjob_status.running|not )}
+<tr class="a4-setup-part-row{if and( $cronjob_status.running, eq( $cronjob_status.part, $cronjob_part.name ) )} is-current{/if}{if $cronjob_part.attention} is-attention{/if}{if $cronjob_paused} is-paused{/if}"
+    id="cronjob-part-{$cronjob_part.name|wash}" data-part="{$cronjob_part.name|wash}"
+    data-state="{if $cronjob_part.scheduled}scheduled{else}unscheduled{/if}" data-attention="{if $cronjob_part.attention}1{else}0{/if}"
+    data-search="{$cronjob_part.search|wash}">
+    {* The part, the key as its title, and its scripts folded below it. Without javascript the list opens in this cell;
+       with it, in the row below the part across the whole table, so several parts can be open at once. *}
+    <th scope="row" title="{$cronjob_part.name|wash}"><span class="a4-setup-compact-part">{$cronjob_part.label|wash}</span>
+        <details class="a4-setup-compact-scripts"><summary>{if $cronjob_part.scripts|count|eq(1)}{'1 script'|i18n( 'design/admin/setup/cronjobs' )}{else}{'%count scripts'|i18n( 'design/admin/setup/cronjobs',, hash( '%count', $cronjob_part.scripts|count ) )}{/if}</summary>
+            <ul class="a4-setup-compact-inline">{foreach $cronjob_part.scripts as $cronjob_script}
+                <li><span class="a4-setup-compact-origin">{if $cronjob_script.origin|eq('kernel')}<span class="a4-badge is-info">{'Kernel'|i18n( 'design/admin/setup/cronjobs' )}</span>{elseif $cronjob_script.origin|ne('')}<span class="a4-badge">{$cronjob_script.origin|wash}</span>{/if}</span><span class="a4-setup-compact-file">{if $cronjob_script.path|ne(false())}<span class="a4-setup-compact-path">{$cronjob_script.directory|wash}/</span>{/if}<code>{$cronjob_script.name|wash}</code>{if $cronjob_script.path|eq(false())} <span class="a4-badge is-bad">{'missing'|i18n( 'design/admin/setup/cronjobs' )}</span>{/if}</span><span class="a4-setup-compact-desc">{$cronjob_script.description|wash}</span></li>
+            {/foreach}</ul></details></th>
+    <td><ul class="a4-badges">
+        {if $cronjob_part.scheduled}<li class="a4-badge is-ok">{'Scheduled'|i18n( 'design/admin/setup/cronjobs' )}</li>{else}<li class="a4-badge is-warn">{'Not scheduled'|i18n( 'design/admin/setup/cronjobs' )}</li>{/if}
+        {if $cronjob_part.forbidden}<li class="a4-badge">{'Blocked'|i18n( 'design/admin/setup/cronjobs' )}</li>{elseif $cronjob_part.missing|gt(0)}<li class="a4-badge is-bad">{'%count missing'|i18n( 'design/admin/setup/cronjobs',, hash( '%count', $cronjob_part.missing ) )}</li>{/if}
+        {if and( $cronjob_pause_enabled, $cronjob_part.pause.paused )}<li class="a4-badge is-bad" title="{if $cronjob_part.pause.by}{'Since %since by %user'|i18n( 'design/admin/setup/cronjobs',, hash( '%since', $cronjob_part.pause.since|l10n( shortdatetime ), '%user', $cronjob_part.pause.by.login|wash ) )}{else}{'Since %since'|i18n( 'design/admin/setup/cronjobs',, hash( '%since', $cronjob_part.pause.since|l10n( shortdatetime ) ) )}{/if}">{'Paused'|i18n( 'design/admin/setup/cronjobs' )}</li>{/if}
+    </ul></td>
+    {* The schedule and, below it, the next run: one column, so the table fits beside the menus. *}
+    <td>{if $cronjob_part.schedule_active|ne('')}<span title="{if $cronjob_part.scheduled|not}{'Suggested schedule'|i18n( 'design/admin/setup/cronjobs' )|wash}: {/if}{$cronjob_part.schedule_active|wash}">{$cronjob_part.schedule_text|wash}</span>{else}&mdash;{/if}
+        <span class="a4-setup-compact-sub">{if $cronjob_part.next_run|gt(0)}{'Next run: %time'|i18n( 'design/admin/setup/cronjobs',, hash( '%time', $cronjob_part.next_run|l10n( shortdatetime ) ) )}{else}{'Only when run by hand'|i18n( 'design/admin/setup/cronjobs' )}{/if}</span></td>
+    <td>{if $cronjob_part.last_run}{$cronjob_part.last_run.started|l10n( shortdatetime )}
+        {if $cronjob_part.last_run.running}<span class="a4-badge is-info">{'running'|i18n( 'design/admin/setup/cronjobs' )}</span>{elseif $cronjob_part.last_run.errors|gt(0)}<span class="a4-badge is-bad">{'%count issues'|i18n( 'design/admin/setup/cronjobs',, hash( '%count', $cronjob_part.last_run.errors ) )}</span>{else}<span class="a4-badge is-ok">{'OK'|i18n( 'design/admin/setup/cronjobs' )}</span>{/if}{else}&mdash;{/if}</td>
+    <td class="a4-nowrap">
+        {if $cronjob_pause_enabled}
+        {if $cronjob_part.pause.paused}
+        <button type="submit" class="a4-btn a4-btn-small" name="ResumeCronjobButton" value="{$cronjob_part.name|wash}"
+                title="{'Resume the %part part'|i18n( 'design/admin/setup/cronjobs',, hash( '%part', $cronjob_part.label ) )|wash}">{'Resume'|i18n( 'design/admin/setup/cronjobs' )}</button>
+        {else}
+        <button type="submit" class="a4-btn a4-btn-small" name="PauseCronjobButton" value="{$cronjob_part.name|wash}"
+                title="{'Leave the %part part out until resumed, whoever starts it'|i18n( 'design/admin/setup/cronjobs',, hash( '%part', $cronjob_part.label ) )|wash}">{'Pause'|i18n( 'design/admin/setup/cronjobs' )}</button>
+        {/if}
+        {/if}
+        <button type="submit" class="a4-btn a4-btn-small a4-setup-run" name="LaunchCronjobButton"
+                data-blocked="{if $cronjob_blocked}1{else}0{/if}"
+                value="{$cronjob_part.name|wash}"{if $cronjob_runnable|not} disabled="disabled"{/if}
+                title="{'Run the whole %part part now'|i18n( 'design/admin/setup/cronjobs',, hash( '%part', $cronjob_part.label ) )|wash}">{'Run'|i18n( 'design/admin/setup/cronjobs' )}</button>
+    </td>
+</tr>
+<tr class="a4-setup-compact-detail" data-part="{$cronjob_part.name|wash}" hidden>
+    <td colspan="5"><ul role="list">{foreach $cronjob_part.scripts as $cronjob_script}
+                <li role="listitem"><span class="a4-setup-compact-origin">{if $cronjob_script.origin|eq('kernel')}<span class="a4-badge is-info">{'Kernel'|i18n( 'design/admin/setup/cronjobs' )}</span>{elseif $cronjob_script.origin|ne('')}<span class="a4-badge">{$cronjob_script.origin|wash}</span>{/if}</span><span class="a4-setup-compact-file">{if $cronjob_script.path|ne(false())}<span class="a4-setup-compact-path">{$cronjob_script.directory|wash}/</span>{/if}<code>{$cronjob_script.name|wash}</code>{if $cronjob_script.path|eq(false())} <span class="a4-badge is-bad">{'missing'|i18n( 'design/admin/setup/cronjobs' )}</span>{/if}</span><span class="a4-setup-compact-desc">{$cronjob_script.description|wash}</span></li>
+            {/foreach}</ul></td>
+</tr>
+    {undef $cronjob_paused $cronjob_blocked $cronjob_runnable}
+{/foreach}
+</tbody>
+</table>
+</div>
+<p class="a4-empty" id="cronjob-no-match" hidden>{'No cronjob part matches.'|i18n( 'design/admin/setup/cronjobs' )}</p>
 {else}
 <ul class="a4-cards" id="cronjob-list">
 {foreach $cronjob_parts_page as $cronjob_part}
@@ -306,8 +389,8 @@
 <p class="a4-empty" id="cronjob-no-match" hidden>{'No cronjob part on this page matches.'|i18n( 'design/admin/setup/cronjobs' )}</p>
 {/if}
 
-{* Paged; the size is admininterface.ini [PaginationSettings]. *}
-{if $cronjob_parts_count|gt( $limit )}
+{* Paged; the size is admininterface.ini [PaginationSettings]. The compact view shows every part. *}
+{if and( $cronjob_view|eq('cards'), $cronjob_parts_count|gt( $limit ) )}
 <div class="context-toolbar a4-pager">
 {include name=CronjobNavigator
          uri='design:navigator/google.tpl'
@@ -318,6 +401,7 @@
 </div>
 {/if}
 </section>
+{undef $cronjob_view}
 
 </form>
 
@@ -543,7 +627,7 @@ var expCronjobText = {ldelim}
         var state = chosenState();
         var part = filterEl ? filterEl.value : '';
         var shown = 0, total = 0;
-        each( '#cronjob-list > .a4-card', function ( card ) {
+        each( '#cronjob-list > .a4-card, #cronjob-table .a4-setup-part-row', function ( card ) {
             total++;
             var haystack = card.getAttribute( 'data-search' ) || '';
             var ok = ( part === '' || card.getAttribute( 'data-part' ) === part );
@@ -552,9 +636,15 @@ var expCronjobText = {ldelim}
             for ( var i = 0; ok && i < words.length; i++ ) ok = haystack.indexOf( words[i] ) !== -1;
             card.hidden = !ok;
             if ( ok ) shown++;
+            // The scripts row of a compact row goes with it.
+            var detail = card.nextElementSibling;
+            if ( detail && detail.classList.contains( 'a4-setup-compact-detail' ) ) {
+                var folded = card.querySelector( '.a4-setup-compact-scripts' );
+                detail.hidden = !ok || !( folded && folded.open );
+            }
             // A search may match a script rather than the part, so the scripts of a match are opened while it
             // lasts; the ones opened that way close again when the search is cleared.
-            var scripts = card.querySelector( '.a4-setup-scripts' );
+            var scripts = card.querySelector( '.a4-setup-scripts, .a4-setup-compact-scripts' );
             if ( scripts ) {
                 if ( ok && words.length ) {
                     if ( !scripts.open ) { scripts.open = true; scripts.setAttribute( 'data-auto-open', '1' ); }
@@ -904,6 +994,19 @@ var expCronjobText = {ldelim}
     }
 
     consoleEl.scrollTop = consoleEl.scrollHeight;
+    // The compact view opens a part's scripts in the row below it, across the table, so several can be open.
+    var compactTable = document.getElementById( 'cronjob-table' );
+    if ( compactTable ) {
+        compactTable.classList.add( 'is-scripted' );
+        each( '#cronjob-table .a4-setup-compact-scripts', function ( folded ) {
+            folded.addEventListener( 'toggle', function () {
+                var row = folded.closest( 'tr' );
+                var detail = row ? row.nextElementSibling : null;
+                if ( detail && detail.classList.contains( 'a4-setup-compact-detail' ) ) detail.hidden = !folded.open || row.hidden;
+            } );
+        } );
+    }
+
     if ( outputEl ) outputEl.addEventListener( 'toggle', function () {
         if ( outputEl.open ) consoleEl.scrollTop = consoleEl.scrollHeight;
     } );

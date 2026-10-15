@@ -29,12 +29,25 @@ From top to bottom:
 - **Overview**: how many cronjob parts and scripts there are, how many parts the crontab runs, how many it does not,
   how many **need attention** (blocked, a script missing, or issues in their last run), and the last run started
   from this page with its result.
-- **Run and filter**: **Run for site** (the siteaccess every run button on the page uses), **Find a part or script**
+- **Run and filter** (folded; its summary names the site the run buttons use): **Run for site** (the siteaccess every run button on the page uses), **Find a part or script**
   (matches part names, script names and what the scripts say they do), **Show** (*All*, *Scheduled*, *Not scheduled*,
   *Need attention*), and **Cronjob part** with **Run**: with *All parts* it runs every part that may be run, one after
   another, on every page of the list; with one part chosen it runs that part and shows only its card.
 - **Output** (folds): the output of the current or last run. It opens by itself when a job starts.
-- **Cronjob parts**: one card per part, in the order of `cronjob.ini`. Each card shows
+- **Cronjob parts**, in two views chosen next to the heading and kept per user (the preference
+  `admin_cronjobs_view`):
+  - **Compact** (the default): one table row per part, every part on one page - the part (the key as its title) with
+    *n scripts* below it, which opens the scripts one per line, in columns - *Kernel* or the extension it comes from,
+    its path with the file name, what it does - in a row below the part, across
+    the table, so several parts can be open at once (without javascript, one below the other in the cell; a missing
+    script shows *missing* instead of its path); the badges
+    (*Scheduled* or *Not scheduled*, *Blocked*, *n missing*, *Paused*); the schedule in words (the cron expression, or
+    the suggested one, as its title) with the next run below it; the last run from here with its result; and
+    **Pause** or **Resume** and **Run**. The columns wrap, so the table fits beside the menus. A row is marked at the
+    left edge like a card. The search and **Show** filter the rows as they filter the cards.
+  - **Detailed**: one card per part, as below, paged.
+
+  In the detailed view, one card per part, in the order of `cronjob.ini`. Each card shows
   - the part's name, its key, *Scheduled* or *Not scheduled* (read from the crontab), and *Activated*, *Blocked*
     (`ForbiddenParts[]`) or *n missing* (scripts not found); *Paused* with **Paused**: since when and by whom, and
     **Pause** or **Resume** next to **Run part** ([pausing cronjob parts](cronjob-pause.md));

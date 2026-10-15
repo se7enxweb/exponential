@@ -22948,6 +22948,70 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
 <context>
     <name>design/admin/setup/cronjobs</name>
     <message>
+        <source>Kernel</source>
+        <translation>Kern</translation>
+    </message>
+    <message>
+        <source>1 script</source>
+        <translation>1 Skript</translation>
+    </message>
+    <message>
+        <source>Next run: %time</source>
+        <translation>Nächster Lauf: %time</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>fehlt</translation>
+    </message>
+    <message>
+        <source>No cronjob part matches.</source>
+        <translation>Kein Cronjob-Teil passt.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Letzter Lauf</translation>
+    </message>
+    <message>
+        <source>Site %siteaccess · find a part or script · run every part</source>
+        <translation>Site %siteaccess · Teil oder Skript suchen · alle Teile ausführen</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Teil</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Scripts</source>
+        <translation>Skripte</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Aktionen</translation>
+    </message>
+    <message>
+        <source>suggested</source>
+        <translation>vorgeschlagen</translation>
+    </message>
+    <message>
+        <source>by hand</source>
+        <translation>von Hand</translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation>Ansicht</translation>
+    </message>
+    <message>
+        <source>Compact</source>
+        <translation>Kompakt</translation>
+    </message>
+    <message>
+        <source>Detailed</source>
+        <translation>Ausführlich</translation>
+    </message>
+    <message>
         <source>Global</source>
         <translation>Global</translation>
     </message>

@@ -262,6 +262,10 @@ the page afterwards only reads the page again; it can never start a job a second
 
 ## 8. The part cards
 
+The list of parts has two views, switched next to its heading: **Compact**, the default, is one table row per part
+with its badges, schedule, next and last run and the **Pause**/**Resume** and **Run** buttons, every part on one page;
+**Detailed** shows the cards this section describes, paged. The choice is kept for your user.
+
 ![A part card with its scripts opened: badges, schedule, next run, last run, shell command and three scripts with their descriptions](images/cronjobs/part-card-scripts-open.png)
 
 Each card shows, from the top:

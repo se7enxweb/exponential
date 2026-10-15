@@ -262,6 +262,11 @@ class Cronjobs extends \Exponential\Runnable\ModuleView
             {
                 $parts[$index]['scripts'][$scriptIndex]['directory'] =
                     $script['path'] === false ? '' : dirname( $script['path'] );
+                // Where a script comes from, for the compact list: the kernel's cronjobs directory, or the extension
+                // whose cronjobs directory it is in.
+                $parts[$index]['scripts'][$scriptIndex]['origin'] =
+                    preg_match( '#(^|/)extension/([^/]+)/#', (string)$script['path'], $originMatch ) ? $originMatch[2]
+                    : ( $script['path'] === false ? '' : 'kernel' );
                 $parts[$index]['scripts'][$scriptIndex]['log'] =
                     \expCronjobRunner::targetLogFile( $part['name'], $script['name'] );
                 $parts[$index]['scripts'][$scriptIndex]['description'] =
