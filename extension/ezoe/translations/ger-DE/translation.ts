@@ -1861,7 +1861,7 @@ Benötigen Sie hierzu weitere Informationen?</translation>
     <name>kernel/content</name>
     <message>
         <source>Top Level Nodes</source>
-        <translation>Knoten der obersten Ebene</translation>
+        <translation>Inhalte</translation>
     </message>
 </context>
 </TS>

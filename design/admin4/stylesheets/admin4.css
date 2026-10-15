@@ -240,8 +240,11 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
     flex: 0 0 auto;
   }
   .navbar-bar a:focus-visible { outline-offset: -3px; }   /* a scrolling row clips: the ring is drawn inside the tab */
-  /* the field gives way first, so the tools keep one row down to 576px */
-  #header .searchblock input.searchtext { width: clamp(6rem, calc(100vw - 470px), 230px); }
+  /* the field gives way first, so the tools keep one row down to 576px. The rest of the row takes 395px (the
+     paddings 48, the logo with the site link 154, the gaps, the search button 41, light/dark 36, the user menu and
+     logout 80); 410px leaves room for one more tool, so the field is 166px wide at 576px (106px until 2026-10,
+     with 470px) and its full 230px from 640px. */
+  #header .searchblock input.searchtext { width: clamp(6rem, calc(100vw - 410px), 230px); }
   /* With the script the row never overflows (ezadmin_menubar.js moves what does not fit into "More"), so it need not
      clip, and the "More" list can open below it. */
   .navbar-menu.a4-nav-fits .navbar-bar { overflow: visible; }
@@ -295,6 +298,13 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
     line-height: 1;
   }
   .navbar-menu.show { padding-top: var(--header-height); }
+  /* the open menu ends under the search: admin3's 7rem under the list left about 80px of empty panel there */
+  .navbar-bar { padding-block: var(--a4-space-2) var(--a4-space-5); }
+  /* the search field takes the panel's width (with the menu's gutter) instead of its own 128px */
+  .navbar-bar > .header-search-mobile {
+    align-self: stretch;
+    padding-inline: var(--a4-space-4);
+  }
 }
 
 /* "More": the tabs the one-line menu has no room for, in a list under the button (a disclosure: aria-expanded,

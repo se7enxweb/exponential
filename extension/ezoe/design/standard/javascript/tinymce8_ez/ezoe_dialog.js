@@ -17,7 +17,7 @@ window.eZOe8Dialog = (function () {
     tinymce.addI18n( 'de', {
         'Previous': 'Zurück',
         'Up': 'Nach oben',
-        'Top level nodes': 'Oberste Ebene',
+        'Content': 'Inhalte',
         'Next': 'Weiter',
         'No results': 'Keine Treffer',
         'Name': 'Name',
@@ -389,7 +389,7 @@ window.eZOe8Dialog = (function () {
             }
             if ( options.browse && nodeId !== 1 && list.node.path !== false )
             {
-                path.unshift( { node_id: 1, name: t( 'Top level nodes' ) } );
+                path.unshift( { node_id: 1, name: t( 'Content' ) } );
                 parentId = path[ path.length - 1 ].node_id;
             }
             html += '<div class="ezoe-list-path">';

@@ -186,20 +186,48 @@
     // Navbar menu toggling feature
     function navbarToggle() {
         // The icon is a div with role="button" (page_topmenu.tpl): it reports its state in aria-expanded and answers
-        // Enter and Space like a button.
-        function toggle( icon ) {
-            $(".navbar-menu").toggleClass("show");
-            $("body").toggleClass('navbar-open');
-            icon.setAttribute( 'aria-expanded', $(".navbar-menu").hasClass("show") ? 'true' : 'false' );
+        // Enter and Space like a button. Escape closes the open menu and gives the focus back to the icon.
+        function setOpen( icon, open ) {
+            $(".navbar-menu").toggleClass("show", open);
+            $("body").toggleClass('navbar-open', open);
+            icon.setAttribute( 'aria-expanded', open ? 'true' : 'false' );
         }
         $(".navbar-icon").on('click', function () {
-            toggle( this );
+            setOpen( this, !$(".navbar-menu").hasClass("show") );
         }).on('keydown', function ( e ) {
             if ( e.key === 'Enter' || e.key === ' ' ) {
                 e.preventDefault();
-                toggle( this );
+                setOpen( this, !$(".navbar-menu").hasClass("show") );
             }
         });
+
+        // Escape, while the menu is open and the focus is in it, on its button or nowhere in particular. Listened to
+        // in the capture phase, so it is seen before the search's own Escape: an open search scope popup in the menu
+        // is closed by that one and keeps the menu open, whatever order the scripts load in. A context menu that is
+        // shown keeps its Escape as well.
+        document.addEventListener("keydown", (e) => {
+            const icon = document.querySelector(".navbar-icon");
+            const menu = document.querySelector(".navbar-menu");
+            if (e.key !== "Escape" || e.defaultPrevented || !icon || !menu || !menu.classList.contains("show")) {
+                return;
+            }
+            const active = document.activeElement;
+            if (active && active !== document.body && active !== icon && !menu.contains(active)) {
+                return;
+            }
+            if (menu.querySelector(".searchscope-pane:not([hidden])") || (active && active.closest && active.closest('[role="menu"]'))) {
+                return;
+            }
+            const menus = document.querySelectorAll("div.popupmenu");
+            for (let i = 0; i < menus.length; i++) {
+                const style = window.getComputedStyle(menus[i]);
+                if (style.display !== "none" && style.visibility !== "hidden") {
+                    return;
+                }
+            }
+            setOpen(icon, false);
+            icon.focus();
+        }, true);
     }
 
     /**
