@@ -173,7 +173,7 @@ bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
 b974dde24700fd18ba9d30714509893a  composer.dev.json
 7e531407fc8efd6cf497d4260dd8897c  composer.dev.lock
-86b5b8a013ea8bdbef60c47bc21455a7  composer.json
+3a645538f3c3df9d704c130999d906c0  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 2d91308b2fa30038d9cc37afd0e2d44a  config.env.php.example
 e7da3e13ed7cc993f3d31886d4a42ddc  config.php-RECOMMENDED
@@ -2966,7 +2966,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-1cbeef2b983e4df0379222d9c90eefac  doc/changelogs/6.0/6.0.15.md
+ff20f32799ff265a9f19bd5e0a8655f5  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -4600,7 +4600,7 @@ f3bffc88e81741de46f06135aac557bf  extension/ezoe/design/standard/templates/ezoe/
 432508f8b8c2b01e6ced699e524f4abe  extension/ezoe/doc/oe5_intro.pdf
 70322a77a52a65c55b7f33427a6c6eb4  extension/ezoe/doc/path_concept.gif
 b9fd60ca35c9e3786ffd14bb18c1ed1f  extension/ezoe/extension.xml
-f5c17f55eeae32d58133cc7eac8f2e3f  extension/ezoe/ezxmltext/handlers/input/ezoeinputparser.php
+5e39b4dbf6908a0056f6c019102502d7  extension/ezoe/ezxmltext/handlers/input/ezoeinputparser.php
 dae856cd7b3f91a83678140f224c8a11  extension/ezoe/ezxmltext/handlers/input/ezoexmlinput.php
 ec9d0894a9b5155ca5bfa598488a5854  extension/ezoe/modules/ezoe/atd_rpc.php
 84be03f87c6a63ead6d791281c09bda5  extension/ezoe/modules/ezoe/classes/EnchantSpell.php
@@ -7194,7 +7194,7 @@ c986f5766a23f4b954a6b74c5c4f8931  tests/tests/extension/ezoe/expOEEditorViewAcce
 fc96db66db0ea2664cf805a08fca8284  tests/tests/extension/ezoe/expOEEngineViewTest.php
 6834ab097cfc296675fecaebdf5dfcb3  tests/tests/extension/ezoe/expOEInputTableCellTextTest.php
 dbd0bda355096c5da0a52429cb51a1a9  tests/tests/extension/ezoe/expOEInputValidFlagTest.php
-fcb352b0f6daad61874e09b9013c7767  tests/tests/extension/ezoe/expOELinkAddressCheckTest.php
+1644f61aee2f30f2bc9088bbfc752fd6  tests/tests/extension/ezoe/expOELinkAddressCheckTest.php
 27e63da049b02963fa347d079a52ebd4  tests/tests/extension/ezoe/expOEMarkupEscapeTest.php
 3cf802a4bee66800dd7d3366cbc9ec69  tests/tests/extension/ezoe/expOEPastedStyleRulesTest.php
 9a7f16efa0e2944384ae92ca524a9ede  tests/tests/extension/ezoe/expOEPastedStylesTest.php
