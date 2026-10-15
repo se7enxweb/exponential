@@ -67,6 +67,8 @@ class AdminTreeMenuEscapingTest extends PHPUnit\Framework\TestCase
             require_once dirname( __DIR__, 3 ) . '/lib/eztemplate/classes/eztemplatestringoperator.php';
         $this->assertSame( 'a\\\\b\\042\\047\\x3C/script\\x3E\\n\\r\\u2028\\u2029',
                            eZTemplateStringOperator::javascriptString( "a\\b\"'</script>\n\r\u{2028}\u{2029}" ) );
+        // & as well: in an HTML attribute a character reference (&#39;) would be decoded to a quote first
+        $this->assertSame( '\\x26#39;', eZTemplateStringOperator::javascriptString( '&#39;' ) );
         // the interpreted and the compiled path both use it
         $this->assertStringContainsString( '$operatorValue = self::javascriptString( $operatorValue );', $operator );
         $this->assertStringContainsString( "eZTemplateStringOperator::javascriptString( %1% )", $operator );
@@ -216,6 +218,35 @@ class AdminTreeMenuEscapingTest extends PHPUnit\Framework\TestCase
         }
         foreach ( self::copies( 'javascript/popupmenu/ezpopupmenu.js' ) as $path => $js )
             $this->assertStringContainsString( "formElement.setAttribute( 'action', _fillString( action, encoded, false ) );", $js, $path );
+        // no template of a kernel design links to content/hide: Hide and Reveal on the Locations tab post a form
+        $root = dirname( __DIR__, 3 );
+        foreach ( array( 'admin', 'admin2', 'admin3', 'admin4', 'admin4l', 'standard' ) as $design )
+        {
+            if ( !is_dir( "$root/design/$design/templates" ) )
+                continue;
+            $it = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( "$root/design/$design/templates", FilesystemIterator::SKIP_DOTS ) );
+            foreach ( $it as $file )
+            {
+                if ( substr( $file->getFilename(), -4 ) !== '.tpl' )
+                    continue;
+                $this->assertDoesNotMatchRegularExpression( "#href=\\{[^}]*'/?content/hide/#", (string)file_get_contents( $file->getPathname() ),
+                                                            substr( $file->getPathname(), strlen( $root ) + 1 ) . ' links to content/hide' );
+            }
+        }
+        foreach ( self::copies( 'templates/locations.tpl' ) as $path => $tpl )
+        {
+            $this->assertSame( 3, substr_count( $tpl, 'form="locations-hide-form" formaction={concat( \'/content/hide/\', $assignment_node.node_id )|ezurl}' ), $path );
+            $this->assertStringContainsString( '<form id="locations-hide-form" method="post" action={\'content/hide\'|ezurl}></form>', $tpl, $path );
+        }
+    }
+
+    /** The tree icon's title is escaped once: by the script, for the attribute; the template only escapes it for the script */
+    public function testTheTreeIconTitleIsEscapedOnce()
+    {
+        foreach ( self::copies( 'templates/contentstructuremenu/content_structure_menu_dynamic.tpl' ) as $path => $tpl )
+            $this->assertStringContainsString( "\"expand\":\"{'Click on the icon to display a context-sensitive menu.'|i18n('design/admin/contentstructuremenu')|wash(javascript)}\"", $tpl, $path );
+        foreach ( self::copies( 'javascript/contentstructuremenu_dynamic.js' ) as $path => $js )
+            $this->assertStringContainsString( "_attr( i18n.expand )", $js, $path );
     }
 
     /** Text values that the templates printed raw */
