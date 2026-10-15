@@ -252,4 +252,22 @@ class AdminFormLabelsTest extends PHPUnit\Framework\TestCase
             "<textarea placeholder=\"Text\"></textarea>\n<label for=\"other\">X</label><input type=\"checkbox\" id=\"mine\" />"
         ) );
     }
+
+    /**
+     * The attribute's visible label is the label of its field: a field of one input (text line, text block, number,
+     * e-mail, ...) has the id ezcoa-<class attribute id>_<identifier> (design/standard's datatype templates), and the
+     * label of an attribute that is no grouped input points at it, in the edit and the translation branch alike
+     */
+    public function testTheAttributeLabelIsTheLabelOfItsField()
+    {
+        $id = 'ezcoa-{if ne( $attribute_base, \'ContentObjectAttribute\' )}{$attribute_base}-{/if}{$attribute.contentclassattribute_id}_{$attribute.contentclass_attribute_identifier}';
+        $tpl = (string)file_get_contents( self::root() . '/design/admin4/templates/content/edit_attribute.tpl' );
+        $this->assertSame( 2, substr_count( $tpl, ' for="' . $id . '"' ) );
+        $this->assertStringContainsString( '{if $attribute.display_info.edit.grouped_input|not} for="' . $id . '"{/if}', $tpl, 'the translation branch: only for a single input' );
+        foreach ( array( 'ezstring', 'eztext', 'ezinteger', 'ezemail' ) as $datatype )
+        {
+            $edit = (string)file_get_contents( self::root() . "/design/standard/templates/content/datatype/edit/$datatype.tpl" );
+            $this->assertStringContainsString( 'id="' . $id . '"', $edit, $datatype );
+        }
+    }
 }

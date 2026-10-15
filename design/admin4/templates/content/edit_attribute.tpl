@@ -37,7 +37,7 @@
     {/if}
 {else}
     {if $is_translating_content}
-        <label class="a4-content-attr-label{if $attribute.has_validation_error} message-error{/if}"><span id="ezcca-name-{$attribute.id}">{first_set( $contentclass_attribute.nameList[$content_language], $contentclass_attribute.name )|wash}</span>
+        <label class="a4-content-attr-label{if $attribute.has_validation_error} message-error{/if}"{if $attribute.display_info.edit.grouped_input|not} for="ezcoa-{if ne( $attribute_base, 'ContentObjectAttribute' )}{$attribute_base}-{/if}{$attribute.contentclassattribute_id}_{$attribute.contentclass_attribute_identifier}"{/if}><span id="ezcca-name-{$attribute.id}">{first_set( $contentclass_attribute.nameList[$content_language], $contentclass_attribute.name )|wash}</span>
             {if $attribute.is_required} <span class="a4-required-mark" aria-hidden="true">*</span><span class="a4-sr-only">({'required'|i18n( 'design/admin/content/edit_attribute' )})</span>{/if}
             {if $attribute.is_information_collector} <span class="collector">({'information collector'|i18n( 'design/admin/content/edit_attribute' )})</span>{/if}
             {if $contentclass_attribute.description} <span class="classattribute-description">{first_set( $contentclass_attribute.descriptionList[$content_language], $contentclass_attribute.description)|wash}</span>{/if}
@@ -71,7 +71,7 @@
             <input type="hidden" name="ContentObjectAttribute_id[]" value="{$attribute.id}" />
             </fieldset>
         {else}
-            <label class="a4-content-attr-label{if $attribute.has_validation_error} message-error{/if}"><span id="ezcca-name-{$attribute.id}">{first_set( $contentclass_attribute.nameList[$content_language], $contentclass_attribute.name )|wash}</span>
+            <label class="a4-content-attr-label{if $attribute.has_validation_error} message-error{/if}" for="ezcoa-{if ne( $attribute_base, 'ContentObjectAttribute' )}{$attribute_base}-{/if}{$attribute.contentclassattribute_id}_{$attribute.contentclass_attribute_identifier}"><span id="ezcca-name-{$attribute.id}">{first_set( $contentclass_attribute.nameList[$content_language], $contentclass_attribute.name )|wash}</span>
                 {if $attribute.is_required} <span class="a4-required-mark" aria-hidden="true">*</span><span class="a4-sr-only">({'required'|i18n( 'design/admin/content/edit_attribute' )})</span>{/if}
                 {if $attribute.is_information_collector} <span class="collector">({'information collector'|i18n( 'design/admin/content/edit_attribute' )})</span>{/if}
                 {if $contentclass_attribute.description} <span class="classattribute-description">{first_set( $contentclass_attribute.descriptionList[$content_language], $contentclass_attribute.description)|wash}</span>{/if}
