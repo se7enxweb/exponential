@@ -51,7 +51,8 @@ class Hide extends \Exponential\Runnable\ModuleView
                                                               array( '%name' => $curNode->attribute( 'name' ) ) ),
                                                 \ezpI18n::tr( 'design/admin/content/job', $reveal
                                                               ? 'The node and everything below it become visible again, unless hidden on their own.'
-                                                              : 'The node and everything below it are hidden from the site.' ) );
+                                                              : 'The node and everything below it are hidden from the site.' ),
+                                                array( 'RedirectURI' => self::confirmationReturnURI( $Module, (int) $NodeID ) ) );
                 if ( $jobResult )
                     return $jobResult;
             }
@@ -74,7 +75,7 @@ class Hide extends \Exponential\Runnable\ModuleView
                                                     : 'The node and everything below it are hidden from the site.' ) );
             $tpl->setVariable( 'action_url', '/content/hide/' . (int) $NodeID );
             $tpl->setVariable( 'back_url', '/content/view/full/' . (int) $NodeID );
-            $tpl->setVariable( 'hidden', array() );
+            $tpl->setVariable( 'hidden', array( 'RedirectURI' => self::confirmationReturnURI( $Module, (int) $NodeID ) ) );
             $tpl->setVariable( 'operation', 'hide' );
             $tpl->setVariable( 'job_mode', false );
             $tpl->setVariable( 'job_summary', null );
@@ -96,6 +97,12 @@ class Hide extends \Exponential\Runnable\ModuleView
         }
 
 
+        // From the confirmation form: back to the page it was opened from, as the form names it. The page last
+        // viewed in the session may be one of another tab by now.
+        $postedReturn = self::postedReturnURI( (int) $NodeID );
+        if ( $postedReturn !== false )
+            return $this->viewResult( isset( $Result ) ? $Result : null, $Module->redirectTo( $postedReturn ) );
+
         $hasRedirect = \eZRedirectManager::redirectTo( $Module, false );
         if ( !$hasRedirect )
         {
@@ -108,6 +115,43 @@ class Hide extends \Exponential\Runnable\ModuleView
         }
 
         return $this->viewResult( isset( $Result ) ? $Result : null, null );
+    }
+
+    /** The views a return address must not lead to: the usual ones and content/hide itself */
+    protected static function disallowedReturnViews()
+    {
+        return array_merge( \eZRedirectManager::disallowedReturnViews(), array( 'content/hide' ) );
+    }
+
+    /**
+     * The page the confirmation form returns to after OK, fixed when the form is shown: the page the user came
+     * from (the last viewed one, which is this tab's while the form is being opened), else the node's view.
+     *
+     * @param \eZModule|null $module
+     * @param int $nodeID
+     * @return string
+     */
+    public static function confirmationReturnURI( $module, $nodeID )
+    {
+        return (string) \eZRedirectManager::returnURI( $module, '/content/view/full/' . (int) $nodeID, false,
+                                                       array( 'disallowed_views' => self::disallowedReturnViews() ) );
+    }
+
+    /**
+     * Where a POST from the confirmation form goes: its RedirectURI when that is a local address of a page to
+     * return to (eZRedirectManager::returnURI(), without the session), else the node's view. False when the POST
+     * names no RedirectURI (the popup menu and the Locations tab post directly).
+     *
+     * @param int $nodeID
+     * @return string|false
+     */
+    public static function postedReturnURI( $nodeID )
+    {
+        if ( !\eZHTTPTool::instance()->hasPostVariable( 'RedirectURI' ) )
+            return false;
+        return (string) \eZRedirectManager::returnURI( null, '/content/view/full/' . (int) $nodeID,
+                                                       \eZRedirectManager::formReturnURIs( array( 'RedirectURI' ) ),
+                                                       array( 'session' => false, 'disallowed_views' => self::disallowedReturnViews() ) );
     }
 }
 
