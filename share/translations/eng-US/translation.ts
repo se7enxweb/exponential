@@ -13769,6 +13769,10 @@ Note: The packages will not be uninstalled.</translation>
         <source>User menu (%name)</source>
         <translation>User menu (%name)</translation>
     </message>
+    <message>
+        <source>Open your user object</source>
+        <translation>Open your user object</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>

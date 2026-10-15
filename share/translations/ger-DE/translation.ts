@@ -16134,6 +16134,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>User menu (%name)</source>
         <translation>Benutzermenü (%name)</translation>
     </message>
+    <message>
+        <source>Open your user object</source>
+        <translation>Eigenes Benutzerobjekt öffnen</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>

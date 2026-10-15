@@ -155,6 +155,9 @@
       "tests/tests/design/AdminStylingRulesTest.php",
       "tests/tests/design/AdminHeaderTest.php"
     ],
+    "design/admin4/templates/parts/a4_header_user.tpl": [
+      "tests/tests/design/AdminHeaderTest.php"
+    ],
     "kernel/private/classes/views/error/view.php": [
       "tests/tests/kernel/error/ErrorHeaderListTest.php"
     ],
