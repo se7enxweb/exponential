@@ -558,8 +558,18 @@ languages. admin4 therefore shows a content language as a short code badge and i
 list languages:
 
 - **The code** is the language part of the locale's language tag (`ger-DE` has `de-DE`, so `DE`; `eng-GB` gives
-  `EN`). When the installation has two content languages of the same language (`eng-GB` and `eng-US`), both show the
-  region as well (`EN-GB`, `EN-US`). A locale without a language tag shows its locale code.
+  `EN`), always: when the installation has two content languages of the same language (`eng-GB` and `eng-US`), both
+  show `EN`. The badge names the language, not the region; the two differ by their name (English (United Kingdom),
+  English (American)), which is the badge's title and accessible name or is written next to it. A locale without a
+  language tag shows its locale code. Every locale follows the rule, also one added later (`esl-AR`, `es-AR`: `ES`);
+  `AdminLanguageBadgeTest` checks each locale file shipped in `share/locale/`.
+- **Two regions of one language on one object** (an object in `eng-GB` and `eng-US`): decided to keep `EN` on both
+  badges. A sighted user tells them apart by the name: written next to the badge in the Translations tab, in the
+  language choice of the edit page and the "Edit in" menu, and as the tooltip (`title`) of each badge in the node
+  view's meta line and the sub-items table; a screen reader hears the full name with the state ("English (United
+  Kingdom) – outdated, older than English (American)"), because the state badge's name is the content language's
+  name, not the code. The order is the site's language order, so the two badges keep their places. The region is not
+  added back to the code: a row would again mix `DE` with `EN-GB`, which is what #231 removed.
 - **The name** (the locale's international name, e.g. German) is written next to the badge wherever there is room:
   the Translations tab, the translation lists of versions, drafts, URL aliases, states and classes, and the language
   choice of the edit page. Where there is no room, in the node view's meta line and the sub-items table's

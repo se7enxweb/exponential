@@ -1,7 +1,8 @@
 {* A content language as a short code badge (DE, EN, FR) where admin4 showed a flag: a flag stands for a country,
-   not a language. The code is the language part of the locale's language tag (ger-DE: de-DE, so DE); when the
-   installation has two content languages of the same language (eng-GB and eng-US), both show the region as well
-   (EN-GB, EN-US). A locale without a language tag shows its locale code.
+   not a language. The code is always the language part of the locale's language tag (ger-DE: de-DE, so DE; eng-GB
+   and eng-US: EN, also when the installation has both): the badge names the language, not the region. Two content
+   languages of the same language differ by their name (English (United Kingdom), English (American)), which is the
+   badge's title and accessible name, or is written next to it. A locale without a language tag shows its locale code.
 
    Parameters:
      locale        the locale code, e.g. ger-DE (required)
@@ -22,14 +23,9 @@
                                     $a4_lang_label = $a4_lang_object.intl_language_name}{/if}{*
 *}{if and( is_set( $badge_name ), $badge_name|ne( '' ) )}{set $a4_lang_label = $badge_name}{/if}{*
 *}{if $a4_lang_tag|ne( '' )}{*
-    *}{def $a4_lang_primary = $a4_lang_tag|downcase|explode( '-' )
-           $a4_lang_same = 0}{*
-    *}{set $a4_lang_primary = $a4_lang_primary[0]}{*
-    *}{foreach fetch( 'content', 'translation_list' ) as $a4_lang_other}{*
-        *}{if and( $a4_lang_other.is_valid, $a4_lang_other.content_language_code|downcase|begins_with( concat( $a4_lang_primary, '-' ) ) )}{set $a4_lang_same = $a4_lang_same|inc}{/if}{*
-    *}{/foreach}{*
-    *}{if $a4_lang_same|gt( 1 )}{set $a4_lang_badge = $a4_lang_tag|upcase}{else}{set $a4_lang_badge = $a4_lang_primary|upcase}{/if}{*
-    *}{undef $a4_lang_primary $a4_lang_same}{*
+    *}{def $a4_lang_primary = $a4_lang_tag|explode( '-' )}{*
+    *}{set $a4_lang_badge = $a4_lang_primary[0]|upcase}{*
+    *}{undef $a4_lang_primary}{*
 *}{/if}{*
 *}{if and( is_set( $badge_plain ), $badge_plain )}{$a4_lang_badge|wash}{else}<span class="a4-lang{if is_set( $badge_class )} {$badge_class|wash}{/if}" title="{$a4_lang_label|wash}" translate="no"{if and( is_set( $badge_named ), $badge_named )} aria-hidden="true"{else} role="img" aria-label="{$a4_lang_label|wash}"{/if}>{$a4_lang_badge|wash}</span>{/if}{*
 *}{undef $a4_lang_object $a4_lang_tag $a4_lang_badge $a4_lang_label}
