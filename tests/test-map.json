@@ -112,7 +112,8 @@
       "tests/tests/design/AdminCardsTest.php",
       "tests/tests/design/AdminLeftMenuGroupsTest.php",
       "tests/tests/design/AdminRetiredClassesTest.php",
-      "tests/tests/design/AdminSelfContainedTest.php"
+      "tests/tests/design/AdminSelfContainedTest.php",
+      "tests/tests/design/AdminMegaMenuTest.php"
     ],
     "design/admin*/stylesheets/*": [
       "tests/tests/design/AdminStylingRulesTest.php",
@@ -128,7 +129,8 @@
       "tests/tests/design/AdminDensityTest.php",
       "tests/tests/design/AdminCardsTest.php",
       "tests/tests/design/AdminBaseStylesheetsTest.php",
-      "tests/tests/design/AdminRetiredClassesTest.php"
+      "tests/tests/design/AdminRetiredClassesTest.php",
+      "tests/tests/design/AdminMegaMenuTest.php"
     ],
     "design/admin*/javascript/ezajaxsubitems_expdatatable.js": [
       "tests/tests/design/AdminLanguageBadgeTest.php"
@@ -154,7 +156,8 @@
     ],
     "design/admin4/templates/page_topmenu.tpl": [
       "tests/tests/design/AdminStylingRulesTest.php",
-      "tests/tests/design/AdminHeaderTest.php"
+      "tests/tests/design/AdminHeaderTest.php",
+      "tests/tests/design/AdminMegaMenuTest.php"
     ],
     "kernel/private/classes/views/error/view.php": [
       "tests/tests/kernel/error/ErrorHeaderListTest.php"
@@ -312,7 +315,8 @@
     ],
     "settings/menu.ini": [
       "tests/tests/design/AdminMenuPolicyListTest.php",
-      "tests/tests/design/AdminSetupOverviewTest.php"
+      "tests/tests/design/AdminSetupOverviewTest.php",
+      "tests/tests/design/AdminMegaMenuTest.php"
     ],
     "kernel/*/module.php": [
       "tests/tests/design/AdminMenuPolicyListTest.php"
@@ -454,6 +458,27 @@
     ],
     "design/admin4/templates/node/top_node_full.tpl": [
       "tests/tests/design/AdminNodeTabsHeightTest.php"
+    ],
+    "design/admin4/javascript/a4_mega_menu.js": [
+      "tests/tests/design/AdminMegaMenuTest.php",
+      "tests/tests/design/AdminStylingRulesTest.php"
+    ],
+    "kernel/setup/megamenu.php": [
+      "tests/tests/design/AdminMegaMenuTest.php",
+      "tests/tests/kernel/classes/runnable/MovedEntryPointsTest.php"
+    ],
+    "kernel/private/classes/views/setup/megamenu.php": [
+      "tests/tests/design/AdminMegaMenuTest.php",
+      "tests/tests/kernel/classes/runnable/MovedEntryPointsTest.php"
+    ],
+    "kernel/setup/module.php": [
+      "tests/tests/design/AdminMegaMenuTest.php"
+    ],
+    "design/standard/templates/setup/megamenu.tpl": [
+      "tests/tests/design/AdminMegaMenuTest.php"
+    ],
+    "tests/tests/design/js/mega_menu.js": [
+      "tests/tests/design/AdminMegaMenuTest.php"
     ]
   },
   "generated": {

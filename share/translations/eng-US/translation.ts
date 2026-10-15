@@ -13674,6 +13674,22 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Light mode</translation>
     </message>
     <message>
+        <source>Open the Setup menu</source>
+        <translation>Open the Setup menu</translation>
+    </message>
+    <message>
+        <source>Loading the Setup menu</source>
+        <translation>Loading the Setup menu</translation>
+    </message>
+    <message>
+        <source>The Setup menu could not be loaded.</source>
+        <translation>The Setup menu could not be loaded.</translation>
+    </message>
+    <message>
+        <source>All Setup functions</source>
+        <translation>All Setup functions</translation>
+    </message>
+    <message>
         <source>Open the site</source>
         <translation>Open the site</translation>
     </message>
