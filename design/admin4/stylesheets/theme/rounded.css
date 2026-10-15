@@ -471,12 +471,6 @@ table.list th, table.special th
 }
 
 
-/* The calendar icon of the date and date/time fields (the calendar itself is Exponential UI's exp::datepicker) */
-#page .datepicker-icon
-{
-    margin-bottom: -2px;
-    padding-top: 9px;
-}
 
 /* asynchronous publishing queued page */
 .ezap-placeholder h1 {

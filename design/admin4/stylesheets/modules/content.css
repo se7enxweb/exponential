@@ -297,7 +297,6 @@
 /* ---- edit ---- the date and date-and-time fields: the calendar icon and the picker's place (shown by its script) */
 
 .a4-content-datepicker-icon { cursor: pointer; }
-button.a4-content-datepicker-icon { padding: 0; border: 0; background: none; line-height: 0; vertical-align: middle; }
 .a4-content-datepicker { display: none; position: absolute; }
 
 /* ---- edit ---- an attribute is a named group (role="group", id ezcca-attr-<id>, the summary's link target); one
@@ -307,9 +306,221 @@ button.a4-content-datepicker-icon { padding: 0; border: 0; background: none; lin
 .a4-content-attr, #a4-error-summary { scroll-margin-top: calc(var(--header-height, 6.25rem) + var(--a4-space-3)); }
 .a4-content-attr.is-invalid { border-left: 3px solid var(--a4-bad); padding-left: var(--a4-space-3); }
 .a4-content-attr-error { display: flex; gap: var(--a4-space-1); align-items: baseline; margin: var(--a4-space-1) 0 var(--a4-space-2); }
+/* the controls' invalid edge: see "the attribute forms" below, after the field look it overrides */
+
+/* ---- edit ---- the attribute forms (content/edit, translate, multiedit, register): the datatype templates of
+   design/standard still write input.box, input.button, input.button-disabled, bare checkboxes, labels and fieldsets
+   of the classic admin. Inside an attribute (.a4-content-attr) and the edit form (.a4-content-edit: the left column,
+   the relations) they are drawn as the components: a field as .a4-input, a button as .a4-btn, a checkbox or radio as
+   in .a4-check, a part's label as .a4-label. The classes stay, because scripts look for them (the AJAX uploader and
+   the relation list swap button and button-disabled). Selectors are element plus scope class, so they win over
+   core.css (input.box, label, fieldset) by loading later, and an attribute's invalid state, a bar of the frame
+   (#controlbar-top) or an extension's own class still wins. doc/bc/6.0/admin4-styling.md, "Edit forms". */
+
+/* the attribute's name: label or legend, the group's heading; its parts take .a4-label */
+.a4-content-attr-label {
+  display: block;
+  margin: 0 0 var(--a4-space-1);
+  padding: 0;
+  background: none;
+  color: var(--a4-ink);
+  font-size: var(--a4-text-s);
+  font-weight: 650;
+  white-space: normal;
+}
+.a4-content-attr-label .classattribute-description,
+.a4-content-attr-label .nontranslatable,
+.a4-content-attr-label .collector {
+  margin-left: var(--a4-space-1);
+  color: var(--a4-muted);
+  font-size: var(--a4-text-xs);
+  font-weight: 400;
+}
+div.block.a4-content-attr { margin: 0 0 var(--a4-space-5); padding-bottom: 0; }   /* .box-content div.block adds 1em */
+
+/* a grouped input (author, matrix, date and time, image ...) is a fieldset whose legend is the name: no box of its
+   own, the parts stand on the card like the other fields (#page: the phone rule #maincontent fieldset pads it) */
+#page fieldset.a4-content-attr-group {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  box-shadow: none;
+}
+#page fieldset.a4-content-attr-group > legend { float: left; width: 100%; }
+#page fieldset.a4-content-attr-group > legend + * { clear: both; }
+
+/* the parts of an attribute: a label above its control, several parts in a row (date, time, user account) */
+.a4-content-attr label:not(.a4-content-attr-label, .a4-check, .a4-inline-label):not(:has(> input:is([type=checkbox], [type=radio]))),
+.a4-content-attr .a4-label {
+  display: block;
+  margin: 0 0 var(--a4-space-1);
+  padding: 0;
+  color: var(--a4-ink);
+  font-size: var(--a4-text-xs);
+  font-weight: 650;
+  white-space: normal;
+}
+.a4-content-attr div.block { margin: 0; padding: 0; }
+.a4-content-attr div.block + div.block { margin-top: var(--a4-space-3); }
+.a4-content-parts { display: flex; flex-wrap: wrap; align-items: flex-end; gap: var(--a4-space-2) var(--a4-space-3); }
+.a4-content-parts > div { display: flex; flex-direction: column; min-width: 0; }
+.a4-content-datetime { display: flex; flex-wrap: wrap; align-items: flex-end; gap: var(--a4-space-2) var(--a4-space-5); }
+/* a datatype template that still floats its parts (div.block div.element) */
+.a4-content-attr div.block div.element { float: none; display: inline-flex; flex-direction: column; margin: 0 var(--a4-space-3) var(--a4-space-2) 0; padding: 0; vertical-align: bottom; }
+.a4-content-attr div.block div.break { display: none; }
+
+/* fields: the .a4-input look; one with a size attribute (a year, an hour) keeps its width */
+.a4-content-attr :is(input, select, textarea):where(:not([type]), [type=text], [type=password], [type=email], [type=number],
+    [type=url], [type=tel], [type=search], [type=date], [type=time], [type=datetime-local], select, textarea) {
+  box-sizing: border-box;
+  max-width: 100%;
+  min-height: var(--a4-control-h);
+  margin: 0;
+  padding: var(--a4-space-1) var(--a4-space-3);
+  border: 1px solid var(--a4-field-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-field);
+  color: var(--a4-ink);
+  font-family: var(--a4-font);
+  font-size: var(--a4-text-m);
+  line-height: var(--a4-leading-tight);
+  box-shadow: none;
+  vertical-align: middle;
+}
+.a4-content-attr :is(input, textarea).box { width: 100%; }   /* .halfbox keeps core.css's half width */
+.a4-content-attr textarea { min-height: 96px; line-height: var(--a4-leading); }
+.a4-content-attr :is(input, select, textarea):where(:not([type]), [type=text], [type=password], [type=email], [type=number],
+    [type=url], [type=tel], [type=search], [type=date], [type=time], [type=datetime-local], select, textarea):focus {
+  border-color: var(--a4-accent);
+  outline: 3px solid var(--a4-ring);
+  outline-offset: 0;
+  box-shadow: none;
+}
+.a4-content-attr :is(input, select, textarea):disabled { background-color: var(--a4-soft); color: var(--a4-disabled); cursor: not-allowed; }
+.a4-content-attr :is(input, textarea)[readonly] { background-color: var(--a4-soft); }
+.a4-content-attr :is(input, textarea)::placeholder { color: var(--a4-muted); }
+/* a one-line select: the field's edge and the chevron of admin4.css's legacy selects */
+.a4-content-attr select:where(:not([multiple]):not([size]), [size="1"]) {
+  -webkit-appearance: none;
+  appearance: none;
+  padding-right: var(--a4-space-6);
+  background-image: linear-gradient(45deg, transparent 50%, var(--a4-muted) 50%),
+                    linear-gradient(135deg, var(--a4-muted) 50%, transparent 50%);
+  background-position: calc(100% - var(--a4-space-4) - 1px) 55%, calc(100% - var(--a4-space-3)) 55%;
+  background-size: calc(var(--a4-space-1) + 1px) calc(var(--a4-space-1) + 1px);
+  background-repeat: no-repeat;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+.a4-content-attr select:is([multiple], [size]:not([size="1"])) { min-height: 150px; padding: var(--a4-space-1); }
+/* an invalid control keeps its bad edge over the field look above */
 .a4-content-attr input[aria-invalid="true"],
 .a4-content-attr select[aria-invalid="true"],
 .a4-content-attr textarea[aria-invalid="true"] { border-color: var(--a4-bad); box-shadow: inset 0 0 0 1px var(--a4-bad); }
+
+/* checkboxes and radios: as in .a4-check, 18px in the accent; a label around one and its text is an .a4-check row */
+.a4-content-attr input:is([type=checkbox], [type=radio]) {
+  width: 18px;
+  height: 18px;
+  margin: 0 var(--a4-space-2) 0 0;
+  accent-color: var(--a4-accent-strong);
+  vertical-align: middle;
+}
+.a4-content-attr td > input:is([type=checkbox], [type=radio]) { margin: 0; }
+.a4-content-attr label:has(> input:is([type=checkbox], [type=radio])) {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--a4-space-2);
+  margin: 0 0 var(--a4-space-1);
+  padding: 0;
+  font-size: var(--a4-text-s);
+  font-weight: 400;
+  white-space: normal;
+}
+.a4-content-attr label:has(> input:is([type=checkbox], [type=radio])) > input { flex: 0 0 auto; margin: 2px 0 0; }
+
+/* buttons: the .a4-btn look (outlined, the main action filled, disabled faded), at the one control height */
+:is(.a4-content-attr, .a4-content-edit) :is(input.button, input.button-disabled, button.button, input.defaultbutton) {
+  box-sizing: border-box;
+  min-height: var(--a4-control-h);
+  margin: 0 var(--a4-space-2) var(--a4-space-2) 0;
+  padding: var(--a4-space-1) var(--a4-space-3);
+  border: 1px solid var(--a4-line-strong);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  background-image: none;
+  color: var(--a4-ink);
+  font-family: var(--a4-font);
+  font-size: var(--a4-text-s);
+  font-weight: 600;
+  line-height: 1.2;
+  text-shadow: none;
+  vertical-align: middle;
+  cursor: pointer;
+}
+:is(.a4-content-attr, .a4-content-edit) :is(input.button, button.button):hover:not(:disabled) {
+  border-color: var(--a4-accent);
+  background-color: var(--a4-card);
+  color: var(--a4-accent-text);
+}
+:is(.a4-content-attr, .a4-content-edit) input.defaultbutton {
+  border-color: var(--a4-accent-strong);
+  background-color: var(--a4-accent-strong);
+  color: var(--a4-on-accent);
+}
+:is(.a4-content-attr, .a4-content-edit) input.defaultbutton:hover:not(:disabled) {
+  border-color: var(--a4-accent-press);
+  background-color: var(--a4-accent-press);
+  color: var(--a4-on-accent-hover);
+}
+:is(.a4-content-attr, .a4-content-edit) :is(input.button-disabled, input.button, button.button, input.defaultbutton):disabled {
+  background-color: var(--a4-card);
+  background-image: none;
+  color: var(--a4-ink);
+  opacity: .55;
+  cursor: not-allowed;
+}
+/* the file field: its button is an .a4-btn, its text the field's */
+.a4-content-attr input[type=file] {
+  max-width: 100%;
+  min-height: var(--a4-control-h);
+  color: var(--a4-muted);
+  font-family: var(--a4-font);
+  font-size: var(--a4-text-s);
+}
+.a4-content-attr input[type=file]::file-selector-button {
+  min-height: var(--a4-control-h);
+  margin: 0 var(--a4-space-3) 0 0;
+  padding: var(--a4-space-1) var(--a4-space-3);
+  border: 1px solid var(--a4-line-strong);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  color: var(--a4-ink);
+  font-family: var(--a4-font);
+  font-size: var(--a4-text-s);
+  font-weight: 600;
+  cursor: pointer;
+}
+.a4-content-attr input[type=file]:hover::file-selector-button { border-color: var(--a4-accent); color: var(--a4-accent-text); }
+.a4-content-attr input[type=file]:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
+
+/* the lists of a datatype (authors, matrix rows, options, relations): cells hold full-width fields */
+.a4-content-attr table.list { width: 100%; margin: 0 0 var(--a4-space-2); }
+.a4-content-attr table.list td :is(input, select):where(:not([type]), [type=text], [type=email], [type=number], select) { width: 100%; }
+.a4-content-attr table.list td :is(input, select)[size]:where(:not(.box, .halfbox)) { width: auto; }
+:where(.a4-content-attr) h4 { margin: var(--a4-space-3) 0 var(--a4-space-2); font-size: var(--a4-text-s); font-weight: 650; }
+:where(.a4-content-attr) p { margin: 0 0 var(--a4-space-2); }
+
+/* the calendar of a date field: an icon button beside the day */
+.a4-content-datepicker-icon.a4-btn { align-self: flex-end; }
+
+/* touch screens: fields at 16px, so a phone does not zoom in on focus (as .a4-input) */
+@media (pointer: coarse) {
+  .a4-content-attr :is(input, select, textarea):where(:not([type]), [type=text], [type=password], [type=email], [type=number],
+      [type=url], [type=tel], [type=search], [type=date], [type=time], [type=datetime-local], select, textarea) { font-size: var(--a4-text-l); }
+}
 
 /* Forced colors (Windows high contrast) drop backgrounds and box-shadows and repaint borders in one colour: a state
    that differs only by them (current, selected, moved, pressed, changed) gets a Highlight outline. */
@@ -317,4 +528,9 @@ button.a4-content-datepicker-icon { padding: 0; border: 0; background: none; lin
   .a4-content-bookmark .a4-content-bookmark-nav li.is-moved > a,
   .a4-content-bookmark .a4-content-bookmark-nav li.is-moved > span.current,
   .a4-content-bookmark .a4-card.is-moved { outline: 2px solid Highlight; outline-offset: -2px; }
+  /* the edit form: the native select comes back (the drawn chevron would vanish), the form's main action keeps a
+     thicker edge, a disabled button its GrayText */
+  .a4-content-attr select:where(:not([multiple]):not([size]), [size="1"]) { -webkit-appearance: auto; appearance: auto; padding-right: var(--a4-space-2); background-image: none; }
+  :is(.a4-content-attr, .a4-content-edit) input.defaultbutton { border-width: 2px; }
+  :is(.a4-content-attr, .a4-content-edit) :is(input.button-disabled, input.button, button.button, input.defaultbutton):disabled { border-color: GrayText; color: GrayText; opacity: 1; }
 }

@@ -435,3 +435,75 @@
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
     else init();
 })();
+
+/*
+ * The content of the rich text editors follows the page's mode. TinyMCE 3 and 8 (the online editor) draw a field's
+ * text in an iframe with ezoe's own light content stylesheet. The edit form names two stylesheets in
+ * data-a4-editor-css (components.css for the tokens, editor_content.css for the rules); each editor's document gets
+ * them once, and html[data-a4-theme] of the page is copied to it when the editor is ready and whenever the mode
+ * changes. Editors are found by their body class (mceContentBody in TinyMCE 3, mce-content-body in 8), through the
+ * editor API where it exists and on the page's load as a fallback. Plain JavaScript, no library.
+ */
+(function () {
+    'use strict';
+
+    function sheets() {
+        var form = document.querySelector('form[data-a4-editor-css]');
+        return form ? form.getAttribute('data-a4-editor-css').split(/\s+/).filter(Boolean) : [];
+    }
+
+    function dress(doc) {
+        if (!doc || !doc.body || !/\b(mceContentBody|mce-content-body)\b/.test(doc.body.className)) return;
+        doc.documentElement.setAttribute('data-a4-theme', document.documentElement.getAttribute('data-a4-theme') || 'light');
+        if (doc.getElementById('a4-editor-css-0')) return;
+        sheets().forEach(function (href, i) {
+            var link = doc.createElement('link');
+            link.id = 'a4-editor-css-' + i;
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = href;
+            (doc.head || doc.getElementsByTagName('head')[0] || doc.documentElement).appendChild(link);
+        });
+    }
+
+    function all() {
+        Array.prototype.forEach.call(document.querySelectorAll('iframe'), function (frame) {
+            try { dress(frame.contentDocument); } catch (e) { /* a frame of another origin is no editor */ }
+        });
+    }
+
+    function hook() {
+        var mce = window.tinymce;
+        if (!mce || !sheets().length) return;
+        var v3 = !!(mce.onAddEditor && mce.onAddEditor.add);
+        // PreInit: the editor's document exists but is not shown yet, so a dark page shows no light flash; init again
+        // for an editor that sets its body class only then
+        function watch(editor) {
+            if (editor.initialized) dress(editor.getDoc());
+            else if (v3) {
+                if (editor.onPreInit) editor.onPreInit.add(function (ed) { dress(ed.getDoc()); });
+                editor.onInit.add(function (ed) { dress(ed.getDoc()); });
+            } else {
+                editor.on('PreInit init', function () { dress(editor.getDoc()); });
+            }
+        }
+        // editors made before this script ran, then the ones that come
+        var existing = v3 ? (mce.editors || []) : (mce.get ? mce.get() : []);
+        Array.prototype.forEach.call(existing, watch);
+        if (v3) mce.onAddEditor.add(function (manager, editor) { watch(editor); });
+        else if (mce.on) mce.on('AddEditor', function (e) { watch(e.editor); });
+    }
+
+    function init() {
+        if (!sheets().length) return;
+        hook();
+        window.addEventListener('load', all);
+        all();
+        if (window.MutationObserver) {
+            new MutationObserver(all).observe(document.documentElement, { attributes: true, attributeFilter: ['data-a4-theme'] });
+        }
+    }
+
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+    else init();
+})();

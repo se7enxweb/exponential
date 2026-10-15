@@ -267,6 +267,57 @@ menu of admin4 ends with `design:parts/left_width_control.tpl` (three icon butto
 pressed) and a tree menu shows its trash link through `design:parts/left_trash.tpl`: include them, never copy their
 markup (`AdminLegacyControlsTest`).
 
+## Edit forms
+
+The datatype edit templates live in `design/standard` and still write the classic markup: `input.box`,
+`input.button`, `input.button-disabled`, bare checkboxes, `<label>` above a field, `<fieldset>` and `<legend>`. Scripts
+look for some of these classes (the AJAX uploader and the relation list swap `button` and `button-disabled`), so
+they stay. `modules/content.css` draws them as the components instead, inside two scopes:
+
+| Scope | Set by | Holds |
+|---|---|---|
+| `.a4-content-attr` | `content/edit_attribute.tpl`, on every attribute (content/edit, translate, multiedit, user/register, the template look editor) | the attribute's controls |
+| `.a4-content-edit` | the `<form id="editform">` of `content/edit.tpl` | the left column and the relations box of the edit page (buttons only) |
+
+| Markup | Drawn as |
+|---|---|
+| a text field, select or textarea (any class) | `.a4-input`: `--a4-control-h`, `--a4-text-m`, `--a4-field-line`, `--a4-radius-s`, the accent edge and ring on focus; a one-line select gets the chevron of the legacy selects; a field with a `size` keeps its width, `.box` is full width, `.halfbox` keeps its half width |
+| `input.button`, `input.button-disabled`, `button.button` | `.a4-btn`: outlined, the accent edge and text on hover, faded at `opacity: .55` when disabled (no hatch) |
+| `input.defaultbutton` | `.a4-btn-primary` |
+| a checkbox or radio | as in `.a4-check`: 18 px in `--a4-accent-strong`; a `<label>` around one and its text is a row, not a bold block |
+| `input[type=file]` | its button as `.a4-btn`, its text muted |
+| a `<label>` of a part (Year, URL, Username ...) | `.a4-label` (12 px, semibold, above its field) |
+
+The attribute's own name is a `label` or `legend` of the class `.a4-content-attr-label` (13 px, semibold, no trailing
+colon), and a grouped input's fieldset has the class `.a4-content-attr-group`: no edge, background or padding of its
+own. The selectors are the scope class plus the element (`.a4-content-attr :is(input, select, textarea)`), so they
+beat `core.css` (`input.box`, `label`, `fieldset`) by loading later, while the invalid edge
+(`.a4-content-attr input[aria-invalid="true"]`), the sticky button bars (`#controlbar-top ...`) and any rule with one
+more class still win. An extension's datatype template that wants its own look gives its control such a class.
+
+admin4 carries the edit templates of `ezdate`, `ezdatetime`, `eztime`, `ezurl`, `ezprice`, `ezimage`,
+`ezbinaryfile`, `ezoption`, `ezuser`, `ezmedia`, `ezmultioption`, `ezrangeoption`, `ezmultiprice`, `ezinisetting`,
+`ezpackage` and `ezobjectrelationlist` (in `templates/content/datatype/edit/`): the parts of an attribute stand in a
+row (`.a4-content-parts`, the date and the time of `ezdatetime` in `.a4-content-datetime`), each with its label above
+the field and without a colon; a heading without a control of its own is a `p.a4-label`; the calendar is a
+`button.a4-btn.a4-btn-icon` with `.a4-icon.a4-bi-calendar3`; no `div.element` floats, `div.break` or `&nbsp;` spacing.
+Their lists name their fields by their column headers (`th scope="col"` with an id, `aria-labelledby`), a remove
+checkbox by its row's object or by the action, a single control without a label of its own by the attribute's name
+(`aria-labelledby="ezcca-name-<id>"` from `edit_attribute.tpl`); radio and checkbox lists of the relation list are
+`.a4-check` rows, its invert-selection control is an `.a4-icon-btn`, and empty lists are `.a4-empty`. Each copy posts
+the same field names and ids and keeps the template blocks and table structure of design/standard's
+(`AdminContentEditFormsTest`), so a fix there has to be carried over by hand. The other datatypes take the look
+through the stylesheet alone. admin4's `theme/rounded.css` no longer styles `.datepicker-icon` (the calendar is an
+`.a4-btn` now); the class stays in `design/admin`, whose calendar is still the image.
+`tests/tests/design/AdminContentEditFormsTest.php` checks the rules and the templates.
+
+The rich text editors (TinyMCE 3 and 8) draw a field's text in an iframe with ezoe's light content stylesheet. The
+edit form names `components.css` and `editor_content.css` in `data-a4-editor-css`; `admin4.js` adds both to each
+editor's document and copies `html[data-a4-theme]` there when the editor is ready and when the mode changes, so the
+text, links, literal blocks, custom tags and embeds take the tokens in both modes. Every rule of
+`editor_content.css` is scoped to `html[data-a4-theme]` and does nothing without the script. The editor's toolbar
+(the TinyMCE skin) is not part of this.
+
 ## Dark mode
 
 admin4's mode is `html[data-a4-theme="light"|"dark"]`, set before the page is drawn by the script at the top of

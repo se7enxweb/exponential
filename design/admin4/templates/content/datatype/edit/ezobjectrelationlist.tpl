@@ -1,0 +1,435 @@
+{* admin4: as design/standard's, with the admin4 markup: a list of radios or checkboxes is a column of .a4-check rows,
+   a single or multiple select is named by the attribute's name (ezcca-name-<id> of content/edit_attribute.tpl), the
+   invert-selection control is an icon button instead of a GIF, header cells have a scope, the order and translation
+   fields are named by their column, a remove checkbox by its object's name (or the action, for an object the editor
+   may not read and for the empty row the relation script fills), the "create new object" name field has a label and
+   is shown through the hidden attribute, an empty list is an .a4-empty, and the inline edit's names carry no colon *}
+{let class_content=$attribute.class_content
+     class_list=fetch( class, list, hash( class_filter, $class_content.class_constraint_list ) )
+     can_create=true()
+     new_object_initial_node_placement=false()
+     browse_object_start_node=false()}
+
+{if $class_content.selection_type|ne( 0 )} {* If current selection mode is not 'browse'. *}
+        {default attribute_base=ContentObjectAttribute}
+        {let parent_node=cond( and( is_set( $class_content.default_placement.node_id ),
+                               $class_content.default_placement.node_id|eq( 0 )|not ),
+                               $class_content.default_placement.node_id, 1 )
+         nodesList=cond( and( is_set( $class_content.class_constraint_list ), $class_content.class_constraint_list|count|ne( 0 ) ),
+                         fetch( content, tree,
+                                hash( parent_node_id, $parent_node,
+                                      class_filter_type,'include',
+                                      class_filter_array, $class_content.class_constraint_list,
+                                      sort_by, array( 'name',true() ),
+                                      main_node_only, true() ) ),
+                         fetch( content, list,
+                                hash( parent_node_id, $parent_node,
+                                      sort_by, array( 'name', true() )
+                                     ) )
+                        )
+        }
+        {switch match=$class_content.selection_type}
+
+        {case match=1} {* Dropdown list *}
+        <div class="buttonblock">
+            <input type="hidden" name="single_select_{$attribute.id}" value="1" />
+            {if ne( count( $nodesList ), 0)}
+            <select aria-labelledby="ezcca-name-{$attribute.id}" name="{$attribute_base}_data_object_relation_list_{$attribute.id}[]">
+                {if $attribute.contentclass_attribute.is_required|not}
+                    <option value="no_relation" {if eq( $attribute.content.relation_list|count, 0 )} selected="selected"{/if}>{'No relation'|i18n( 'design/standard/content/datatype' )}</option>
+                {/if}
+                {section var=node loop=$nodesList}
+                    <option value="{$node.contentobject_id}"
+                    {if ne( count( $attribute.content.relation_list ), 0)}
+                    {foreach $attribute.content.relation_list as $item}
+                         {if eq( $item.contentobject_id, $node.contentobject_id )}
+                            selected="selected"
+                            {break}
+                         {/if}
+                    {/foreach}
+                    {/if}
+                    >
+                    {$node.name|wash}</option>
+                {/section}
+            </select>
+            {/if}
+            </div>
+        {/case}
+
+        {case match=2} {* radio buttons list *}
+            <input type="hidden" name="single_select_{$attribute.id}" value="1" />
+            {if $attribute.contentclass_attribute.is_required|not}
+                <label class="a4-check"><input type="radio" name="{$attribute_base}_data_object_relation_list_{$attribute.id}[]" value="no_relation"
+                {if eq( $attribute.content.relation_list|count, 0 )} checked="checked"{/if}><span>{'No relation'|i18n( 'design/standard/content/datatype' )}</span></label>{/if}
+            {section var=node loop=$nodesList}
+                <label class="a4-check"><input type="radio" name="{$attribute_base}_data_object_relation_list_{$attribute.id}[]" value="{$node.contentobject_id}"
+                {if ne( count( $attribute.content.relation_list ), 0)}
+                {foreach $attribute.content.relation_list as $item}
+                     {if eq( $item.contentobject_id, $node.contentobject_id )}
+                            checked="checked"
+                            {break}
+                     {/if}
+                {/foreach}
+                {/if}
+                >
+                <span>{$node.name|wash}</span></label>
+            {/section}
+        {/case}
+
+        {case match=3} {* check boxes list *}
+            {section var=node loop=$nodesList}
+                <label class="a4-check"><input type="checkbox" name="{$attribute_base}_data_object_relation_list_{$attribute.id}[{$node.node_id}]" value="{$node.contentobject_id}"
+                {if ne( count( $attribute.content.relation_list ), 0)}
+                {foreach $attribute.content.relation_list as $item}
+                     {if eq( $item.contentobject_id, $node.contentobject_id )}
+                            checked="checked"
+                            {break}
+                     {/if}
+                {/foreach}
+                {/if}
+                />
+                <span>{$node.name|wash}</span></label>
+            {/section}
+        {/case}
+
+        {case match=4} {* Multiple List *}
+            <div class="buttonblock">
+            {if ne( count( $nodesList ), 0)}
+            <select aria-labelledby="ezcca-name-{$attribute.id}" name="{$attribute_base}_data_object_relation_list_{$attribute.id}[]" size="10" multiple>
+                {section var=node loop=$nodesList}
+                    <option value="{$node.contentobject_id}"
+                    {if ne( count( $attribute.content.relation_list ), 0)}
+                    {foreach $attribute.content.relation_list as $item}
+                         {if eq( $item.contentobject_id, $node.contentobject_id )}
+                            selected="selected"
+                            {break}
+                         {/if}
+                    {/foreach}
+                    {/if}
+                    >
+                    {$node.name|wash}</option>
+                {/section}
+            </select>
+            {/if}
+            </div>
+        {/case}
+
+        {case match=5} {* Template based, multi *}
+            <div class="buttonblock">
+            <div class="templatebasedeor">
+                <ul>
+                {section var=node loop=$nodesList}
+                   <li>
+                        <label class="a4-check"><input type="checkbox" name="{$attribute_base}_data_object_relation_list_{$attribute.id}[{$node.node_id}]" value="{$node.contentobject_id}"
+                        {if ne( count( $attribute.content.relation_list ), 0)}
+                        {foreach $attribute.content.relation_list as $item}
+                           {if eq( $item.contentobject_id, $node.contentobject_id )}
+                               checked="checked"
+                               {break}
+                           {/if}
+                        {/foreach}
+                        {/if}
+                        >
+                        <span>{node_view_gui content_node=$node view=objectrelationlist}</span></label>
+                   </li>
+                {/section}
+                </ul>
+            </div>
+            </div>
+        {/case}
+
+        {case match=6} {* Template based, single *}
+            <div class="buttonblock">
+            <div class="templatebasedeor">
+            <ul>
+                {if $attribute.contentclass_attribute.is_required|not}
+            <li>
+                         <label class="a4-check"><input value="no_relation" type="radio" name="{$attribute_base}_data_object_relation_list_{$attribute.id}[]" {if eq( $attribute.content.relation_list|count, 0 )} checked="checked"{/if}><span>{'No relation'|i18n( 'design/standard/content/datatype' )}</span></label>
+                    </li>
+                {/if}
+                {section var=node loop=$nodesList}
+                    <li>
+                        <label class="a4-check"><input type="radio" name="{$attribute_base}_data_object_relation_list_{$attribute.id}[]" value="{$node.contentobject_id}"
+                        {if ne( count( $attribute.content.relation_list ), 0)}
+                        {foreach $attribute.content.relation_list as $item}
+                           {if eq( $item.contentobject_id, $node.contentobject_id )}
+                               checked="checked"
+                               {break}
+                           {/if}
+                        {/foreach}
+                        {/if}
+                        >
+                        <span>{node_view_gui content_node=$node view=objectrelationlist}</span></label>
+                    </li>
+                {/section}
+           </ul>
+           </div>
+           </div>
+        {/case}
+        {/switch}
+
+        {if eq( count( $nodesList ), 0 )}
+            {def $parentnode = fetch( 'content', 'node', hash( 'node_id', $parent_node ) )}
+            {if is_set( $parentnode )}
+                <p>{'Parent node'|i18n( 'design/standard/content/datatype' )}: {node_view_gui content_node=$parentnode view=objectrelationlist} </p>
+            {/if}
+            <p>{'Allowed classes'|i18n( 'design/standard/content/datatype' )}:</p>
+            {if ne( count( $class_content.class_constraint_list ), 0 )}
+                 <ul>
+                 {foreach $class_content.class_constraint_list as $class}
+                       <li>{$class|wash}</li>
+                 {/foreach}
+                 </ul>
+            {else}
+                 <ul>
+                       <li>{'Any'|i18n( 'design/standard/content/datatype' )}</li>
+                 </ul>
+            {/if}
+            <p class="a4-empty">{'There are no objects of allowed classes'|i18n( 'design/standard/content/datatype' )}.</p>
+        {/if}
+
+        {* Create object *}
+        {section show = and( is_set( $class_content.default_placement.node_id ), ne( 0, $class_content.default_placement.node_id ), ne( '', $class_content.object_class ) )}
+            {def $defaultNode = fetch( content, node, hash( node_id, $class_content.default_placement.node_id ))}
+            {if and( is_set( $defaultNode ), $defaultNode.can_create )}
+                <div id='create_new_object_{$attribute.id}' hidden>
+                     <label for="attribute_{$attribute.id}_new_object_name">{'Create new object with name'|i18n( 'design/standard/content/datatype' )}</label>
+                     <input type="text" name="attribute_{$attribute.id}_new_object_name" id="attribute_{$attribute.id}_new_object_name" />
+                </div>
+                <input class="button" type="button" value="{'Create New'|i18n( 'design/standard/content/datatype' )}" name="CustomActionButton[{$attribute.id}_new_object]"
+                       onclick="var divfield=document.getElementById('create_new_object_{$attribute.id}');divfield.hidden=false;
+                                var editfield=document.getElementById('attribute_{$attribute.id}_new_object_name');editfield.focus();this.style.display='none';return false;" />
+           {/if}
+        {/section}
+
+        {/let}
+        {/default}
+{else}    {* Standard mode is browsing *}
+    <div class="block" id="ezobjectrelationlist_browse_{$attribute.id}">
+    {if is_set( $attribute.class_content.default_placement.node_id )}
+         {set browse_object_start_node = $attribute.class_content.default_placement.node_id}
+    {/if}
+
+    {* Optional controls. *}
+    {include uri='design:content/datatype/edit/ezobjectrelationlist_controls.tpl'}
+
+    {* Advanced interface. *}
+    {if eq( ezini( 'BackwardCompatibilitySettings', 'AdvancedObjectRelationList' ), 'enabled' )}
+
+            {if $attribute.content.relation_list}
+                <table class="list" cellspacing="0">
+                <tr class="bglight">
+                    <th scope="col" class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/standard/content/datatype' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/standard/content/datatype' )|wash}" onclick="ezjs_toggleCheckboxes( document.editform, '{$attribute_base}_selection[{$attribute.id}][]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
+                    <th scope="col">{'Name'|i18n( 'design/standard/content/datatype' )}</th>
+                    <th scope="col">{'Type'|i18n( 'design/standard/content/datatype' )}</th>
+                    <th scope="col">{'Section'|i18n( 'design/standard/content/datatype' )}</th>
+                    <th scope="col" id="ezcoa-{$attribute.id}_translation_head"><span title="{'The related objects will be edited in the same language as this object. If such translations do not exist they will be created, based on the source language of your choice.'|i18n( 'design/standard/content/datatype' )}">{'Translation base'|i18n( 'design/standard/content/datatype' )}</span></th>
+                    <th scope="col" class="tight" id="ezcoa-{$attribute.id}_order_head">{'Order'|i18n( 'design/standard/content/datatype' )}</th>
+                </tr>
+                {section name=Relation loop=$attribute.content.relation_list sequence=array( bglight, bgdark )}
+                    <tr class="{$:sequence}">
+                    {if $:item.is_modified}
+                        {* Remove. *}
+                        <td>
+                          <input id="ezcoa-{if ne( $attribute_base, 'ContentObjectAttribute' )}{$attribute_base}-{/if}{$attribute.contentclassattribute_id}_{$attribute.contentclass_attribute_identifier}_remove_{$Relation:index}" class="ezcc-{$attribute.object.content_class.identifier} ezcca-{$attribute.object.content_class.identifier}_{$attribute.contentclass_attribute_identifier}" type="checkbox" name="{$attribute_base}_selection[{$attribute.id}][]" value="{$:item.contentobject_id|wash}" aria-label="{cond( or( $Relation:object.can_read, $Relation:object.can_view_embed ), $Relation:object.name, 'Remove selected'|i18n( 'design/standard/content/datatype' ) )|wash}" />
+                          <input type="hidden" name="{$attribute_base}_data_object_relation_list_{$attribute.id}[]" value="{$:item.contentobject_id|wash}" />
+                        </td>
+                        <td colspan="4">
+
+                        {let object=fetch( content, object, hash( object_id, $:item.contentobject_id, object_version, $:item.contentobject_version ) )
+                             version=fetch( content, version, hash( object_id, $:item.contentobject_id, version_id, $:item.contentobject_version ) )}
+                        <fieldset>
+                        <legend>{'Edit <%object_name> [%object_class]'|i18n( 'design/standard/content/datatype',, hash( '%object_name', $Relation:object.name, '%object_class', $Relation:object.class_name ) )|wash}</legend>
+
+                        {section name=Attribute loop=$:version.contentobject_attributes}
+                            <div class="block">
+                            {if $:item.display_info.edit.grouped_input}
+                                <fieldset>
+                                <legend>{$:item.contentclass_attribute.name|wash}</legend>
+                                {attribute_edit_gui attribute_base=concat( $attribute_base, '_ezorl_edit_object_', $Relation:item.contentobject_id ) html_class='half' attribute=$:item}
+                                </fieldset>
+                            {else}
+                                <p class="a4-label">{$:item.contentclass_attribute.name|wash}</p>
+                                {attribute_edit_gui attribute_base=concat( $attribute_base, '_ezorl_edit_object_', $Relation:item.contentobject_id ) html_class='half' attribute=$:item}
+                            {/if}
+                            </div>
+                        {/section}
+                        {/let}
+                        </fieldset>
+                        </td>
+
+                        {* Order. *}
+                        <td><input id="ezcoa-{if ne( $attribute_base, 'ContentObjectAttribute' )}{$attribute_base}-{/if}{$attribute.contentclassattribute_id}_{$attribute.contentclass_attribute_identifier}_order" class="ezcc-{$attribute.object.content_class.identifier} ezcca-{$attribute.object.content_class.identifier}_{$attribute.contentclass_attribute_identifier}" size="2" type="text" aria-labelledby="ezcoa-{$attribute.id}_order_head" name="{$attribute_base}_priority[{$attribute.id}][]" value="{$:item.priority|wash}" /></td>
+                    {else}
+                        {let object=fetch( content, object, hash( object_id, $:item.contentobject_id, object_version, $:item.contentobject_version ) )}
+                        {* Remove. *}
+                        <td>
+                          <input id="ezcoa-{if ne( $attribute_base, 'ContentObjectAttribute' )}{$attribute_base}-{/if}{$attribute.contentclassattribute_id}_{$attribute.contentclass_attribute_identifier}_remove_{$Relation:index}" class="ezcc-{$attribute.object.content_class.identifier} ezcca-{$attribute.object.content_class.identifier}_{$attribute.contentclass_attribute_identifier}" type="checkbox" name="{$attribute_base}_selection[{$attribute.id}][]" value="{$:item.contentobject_id|wash}" aria-label="{cond( or( $Relation:object.can_read, $Relation:object.can_view_embed ), $Relation:object.name, 'Remove selected'|i18n( 'design/standard/content/datatype' ) )|wash}" />
+                          <input type="hidden" name="{$attribute_base}_data_object_relation_list_{$attribute.id}[]" value="{$:item.contentobject_id|wash}" />
+                        </td>
+
+                        {* Name, type and section, of an object the editor may read *}
+                        {if or( $Relation:object.can_read, $Relation:object.can_view_embed )}
+                        <td>{$Relation:object.name|wash()}</td>
+                        <td>{$Relation:object.class_name|wash()}</td>
+                        <td>{fetch( section, object, hash( section_id, $Relation:object.section_id ) ).name|wash()}</td>
+                        {else}
+                        <td colspan="3"><em>{'You are not allowed to view the related object'|i18n( 'design/standard/content/datatype' )}</em></td>
+                        {/if}
+
+                        {* Translation base *}
+                        <td>
+                            {if $Relation:object.language_codes|contains( $attribute.language_code )}
+                                <span title="{'This object is already translated, the existing translation will be used.'|i18n( 'design/standard/content/datatype' )}">
+                                    {$attribute.object.current_language_object.name|wash()}
+                                </span>
+                            {else}
+                                {def $languages=$Relation:object.languages}
+                                <select aria-labelledby="ezcoa-{$attribute.id}_translation_head" name="{$attribute_base}_translation_source_{$attribute.id}_{$Relation:object.id}" title="{'This object is not translated, please select the language the new translation will be based on.'|i18n( 'design/standard/content/datatype' )}">
+                                    {foreach $languages as $language}
+                                        <option value="{$language.locale|wash}" {if $language.locale|eq( $Relation:object.initial_language_code )}selected="selected"{/if}>{$language.name|wash}</option>
+                                    {/foreach}
+                                    <option value="">{'None'|i18n( 'design/standard/content/datatype' )}</option>
+                                </select>
+                                {undef $languages}
+                            {/if}
+                        </td>
+
+                        {* Order. *}
+                        <td><input size="2" type="text" aria-labelledby="ezcoa-{$attribute.id}_order_head" name="{$attribute_base}_priority[{$attribute.id}][]" value="{$:item.priority|wash}" /></td>
+                        {/let}
+                    {/if}
+                    </tr>
+                {/section}
+                </table>
+            {else}
+                <p class="a4-empty">{'There are no related objects.'|i18n( 'design/standard/content/datatype' )}</p>
+            {/if}
+
+            {if $attribute.content.relation_list}
+                <input class="button" type="submit" name="CustomActionButton[{$attribute.id}_remove_objects]" value="{'Remove selected'|i18n( 'design/standard/content/datatype' )}" />&nbsp;
+                <input class="button" type="submit" name="CustomActionButton[{$attribute.id}_edit_objects]" value="{'Edit selected'|i18n( 'design/standard/content/datatype' )}" />
+            {else}
+                <input class="button-disabled" type="submit" name="CustomActionButton[{$attribute.id}_remove_objects]" value="{'Remove selected'|i18n( 'design/standard/content/datatype' )}" disabled="disabled" />&nbsp;
+                <input class="button-disabled" type="submit" name="CustomActionButton[{$attribute.id}_edit_objects]" value="{'Edit selected'|i18n( 'design/standard/content/datatype' )}" disabled="disabled" />
+            {/if}
+
+            {if array( 0, 2 )|contains( $class_content.type )}
+                <input class="button" type="submit" name="CustomActionButton[{$attribute.id}_browse_objects]" value="{'Add objects'|i18n( 'design/standard/content/datatype' )}" />
+                {if $browse_object_start_node}
+                <input type="hidden" name="{$attribute_base}_browse_for_object_start_node[{$attribute.id}]" value="{$browse_object_start_node|wash}" />
+                {/if}
+            {else}
+               <input class="button-disabled" type="submit" name="CustomActionButton[{$attribute.id}_browse_objects]" value="{'Add objects'|i18n( 'design/standard/content/datatype' )}" disabled="disabled" />
+            {/if}
+
+            {section show=and( $can_create, array( 0, 1 )|contains( $class_content.type ) )}
+                <div class="block">
+                <select id="ezcoa-{if ne( $attribute_base, 'ContentObjectAttribute' )}{$attribute_base}-{/if}{$attribute.contentclassattribute_id}_{$attribute.contentclass_attribute_identifier}" class="ezcc-{$attribute.object.content_class.identifier} ezcca-{$attribute.object.content_class.identifier}_{$attribute.contentclass_attribute_identifier}" class="combobox" name="{$attribute_base}_new_class[{$attribute.id}]" aria-label="{'Create new object'|i18n( 'design/standard/content/datatype' )|wash}">
+                {section name=Class loop=$class_list}
+                   <option value="{$:item.id}">{$:item.name|wash}</option>
+                {/section}
+                </select>
+                {if $new_object_initial_node_placement}
+                    <input type="hidden" name="{$attribute_base}_object_initial_node_placement[{$attribute.id}]" value="{$new_object_initial_node_placement|wash}" />
+                {/if} 
+                <input class="button" type="submit" name="CustomActionButton[{$attribute.id}_new_class]" value="{'Create new object'|i18n( 'design/standard/content/datatype' )}" />
+                </div>
+            {/section}
+
+    {* Simple interface. *}
+    {else}
+
+        <h4>{'Objects in the relation'|i18n( 'design/standard/content/datatype' )}</h4>
+        <table class="list{if $attribute.content.relation_list|not} hide{/if}" cellspacing="0">
+        <thead>
+        <tr>
+            <th scope="col" class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/standard/content/datatype' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/standard/content/datatype' )|wash}" onclick="ezjs_toggleCheckboxes( document.editform, '{$attribute_base}_selection[{$attribute.id}][]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
+            <th scope="col">{'Name'|i18n( 'design/standard/content/datatype' )}</th>
+            <th scope="col">{'Type'|i18n( 'design/standard/content/datatype' )}</th>
+            <th scope="col">{'Section'|i18n( 'design/standard/content/datatype' )}</th>
+            <th scope="col">{'Published'|i18n( 'design/standard/content/datatype' )}</th>
+            <th scope="col" class="tight" id="ezcoa-{$attribute.id}_order_head">{'Order'|i18n( 'design/standard/content/datatype' )}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {if $attribute.content.relation_list}
+            {foreach $attribute.content.relation_list as $item sequence array( 'bglight', 'bgdark' ) as $style}
+              {def $object = fetch( content, object, hash( object_id, $item.contentobject_id ) )}
+              <tr class="{$style}">
+                {* Remove. *}
+                <td><input type="checkbox" name="{$attribute_base}_selection[{$attribute.id}][]" value="{$item.contentobject_id|wash}" aria-label="{cond( or( $object.can_read, $object.can_view_embed ), $object.name, 'Remove selected'|i18n( 'design/standard/content/datatype' ) )|wash}" />
+                <input type="hidden" name="{$attribute_base}_data_object_relation_list_{$attribute.id}[]" value="{$item.contentobject_id|wash}" /></td>
+
+                {* Name, type and section, of an object the editor may read *}
+                {if or( $object.can_read, $object.can_view_embed )}
+                <td>{$object.name|wash()}</td>
+                <td>{$object.class_name|wash()}</td>
+                <td>{fetch( section, object, hash( section_id, $object.section_id ) ).name|wash()}</td>
+                {else}
+                <td colspan="3"><em>{'You are not allowed to view the related object'|i18n( 'design/standard/content/datatype' )}</em></td>
+                {/if}
+
+                {* Published. *}
+                <td>{if $item.in_trash}
+                        {'No'|i18n( 'design/standard/content/datatype' )}
+                    {else}
+                        {'Yes'|i18n( 'design/standard/content/datatype' )}
+                    {/if}
+                </td>
+
+                {* Order. *}
+                <td><input size="2" type="text" aria-labelledby="ezcoa-{$attribute.id}_order_head" name="{$attribute_base}_priority[{$attribute.id}][]" value="{$item.priority|wash}" /></td>
+
+              </tr>
+              {undef $object}
+            {/foreach}
+        {else}
+          <tr class="bgdark">
+            <td><input type="checkbox" name="{$attribute_base}_selection[{$attribute.id}][]" value="--id--" aria-label="{'Remove selected'|i18n( 'design/standard/content/datatype' )|wash}" />
+            <input type="hidden" name="{$attribute_base}_data_object_relation_list_{$attribute.id}[]" value="no_relation" /></td>
+            <td>--name--</td>
+            <td>--class-name--</td>
+            <td>--section-name--</td>
+            <td>--published--</td>
+            <td><input size="2" type="text" aria-labelledby="ezcoa-{$attribute.id}_order_head" name="{$attribute_base}_priority[{$attribute.id}][]" value="0" /></td>
+          </tr>
+        {/if}
+        </tbody>
+        </table>
+        {if $attribute.content.relation_list|not}
+            <p class="a4-empty ezobject-relation-no-relation">{'There are no related objects.'|i18n( 'design/standard/content/datatype' )}</p>
+        {/if}
+
+        <div class="block inline-block">
+	        {if $attribute.content.relation_list}
+	            <input class="button ezobject-relation-remove-button" type="submit" name="CustomActionButton[{$attribute.id}_remove_objects]" value="{'Remove selected'|i18n( 'design/standard/content/datatype' )}" title="{'Remove selected elements from the relation'|i18n( 'design/standard/content/datatype' )}" />
+	        {else}
+	            <input class="button-disabled ezobject-relation-remove-button" type="submit" name="CustomActionButton[{$attribute.id}_remove_objects]" value="{'Remove selected'|i18n( 'design/standard/content/datatype' )}" disabled="disabled" />
+	        {/if}
+        </div>
+        <h4>{'Add objects in the relation'|i18n( 'design/standard/content/datatype' )}</h4>
+        <div class="left">
+	        {if $browse_object_start_node}
+	            <input type="hidden" name="{$attribute_base}_browse_for_object_start_node[{$attribute.id}]" value="{$browse_object_start_node|wash}" />
+	        {/if}
+
+            {if is_set( $attribute.class_content.class_constraint_list[0] )}
+                <input type="hidden" name="{$attribute_base}_browse_for_object_class_constraint_list[{$attribute.id}]" value="{$attribute.class_content.class_constraint_list|implode(',')|wash}" />
+            {/if}
+
+	        <input class="button" type="submit" name="CustomActionButton[{$attribute.id}_browse_objects]" value="{'Add existing objects'|i18n( 'design/standard/content/datatype' )}" title="{'Browse to add existing objects in this relation'|i18n( 'design/standard/content/datatype' )}" />
+            {include uri='design:content/datatype/edit/ezobjectrelationlist_ajaxuploader.tpl'}
+
+        </div>
+        <div class="right">
+            <input type="text" class="halfbox hide ezobject-relation-search-text" aria-label="{'Find objects'|i18n( 'design/standard/content/datatype' )|wash}" />
+            <input type="submit" class="button hide ezobject-relation-search-btn" name="CustomActionButton[{$attribute.id}_browse_objects]" value="{'Find objects'|i18n( 'design/standard/content/datatype' )}" />
+        </div>
+        <div class="block inline-block ezobject-relation-search-browse hide"></div>
+
+        {include uri='design:content/datatype/edit/ezobjectrelation_ajax_search.tpl'}
+	{/if}
+    </div><!-- /div class="block" id="ezobjectrelationlist_browse_{$attribute.id}" -->
+{/if}
+{/let}

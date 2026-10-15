@@ -1640,6 +1640,7 @@ a.a4-icon-btn, a.a4-icon-btn:visited { color: var(--a4-muted); }
 .a4-bi-box-arrow-right { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/box-arrow-right.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/box-arrow-right.svg); }
 .a4-bi-box-arrow-up-right { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/box-arrow-up-right.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/box-arrow-up-right.svg); }
 .a4-bi-box-seam { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/box-seam.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/box-seam.svg); }
+.a4-bi-calendar3 { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/calendar3.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/calendar3.svg); }
 .a4-bi-caret-down-fill { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/caret-down-fill.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/caret-down-fill.svg); }
 .a4-bi-caret-up-fill { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/caret-up-fill.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/caret-up-fill.svg); }
 .a4-bi-check-circle-fill { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/check-circle-fill.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/check-circle-fill.svg); }
