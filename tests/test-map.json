@@ -635,6 +635,9 @@
     "kernel/classes/ezcontentfunctions.php": [
       "tests/tests/kernel/content/eZPublishWithoutNotificationTest.php"
     ],
+    "kernel/classes/ezcontentobjecttreenodeoperations.php": [
+      "tests/tests/kernel/content/eZPublishRegisterSearchObjectTest.php"
+    ],
     "kernel/classes/ezcontentupload.php": [
       "tests/tests/kernel/classes/eZPhp8CallableMethodsTest.php"
     ],
@@ -671,6 +674,9 @@
     "kernel/common/ezobjectforwarder.php": [
       "tests/tests/lib/eztemplate/eZTemplatePHP8RegressionTest.php"
     ],
+    "kernel/content/ezcontentoperationcollection.php": [
+      "tests/tests/kernel/content/eZPublishRegisterSearchObjectTest.php"
+    ],
     "kernel/content/function_definition.php": [
       "tests/tests/kernel/content/eZContentFunctionCollectionSiteDataTest.php"
     ],
@@ -684,6 +690,7 @@
       "tests/tests/kernel/classes/permissions/expPermissionHooksTest.php"
     ],
     "kernel/content/operation_definition.php": [
+      "tests/tests/kernel/content/eZPublishRegisterSearchObjectTest.php",
       "tests/tests/kernel/content/eZPublishWithoutNotificationTest.php"
     ],
     "kernel/content/subitemsexport.php": [
