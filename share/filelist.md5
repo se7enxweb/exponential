@@ -4906,7 +4906,7 @@ e7456184eb299387e3eed677ae8ea469  kernel/classes/expcollaborationsampledata.php
 adcf0106cb325d58b6535e3119c86124  kernel/classes/expcontentdraftlist.php
 817ffe4f29fcb2fc58741e44fdd18603  kernel/classes/expcontenthistorylist.php
 060a5c445d16458886b00db1d94da18c  kernel/classes/expcontentpendinglist.php
-25c157285634dd4eb29576183462a194  kernel/classes/expcronjobpause.php
+6c2ca0ea0dd35266d12412be0ce3304c  kernel/classes/expcronjobpause.php
 06c3fd9f915b90205f43300f8a58fe55  kernel/classes/experrorheaderlist.php
 4f8b979e7bac49349e8bab2c65a8e142  kernel/classes/expextensioncatalogue.php
 e0b74fce97e793dcf8a5c7ccd1ad86c0  kernel/classes/expextensionchangeplan.php
