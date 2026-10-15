@@ -260,35 +260,6 @@ function leftMenuResize() {
     handle.addEventListener('pointerup', () => announce(leftMenu.getBoundingClientRect().width));
 }
 
-/**
- * Left sidebar width preset controls (Small/Medium/Large)
- * Handles clicks on preset size links and saves preference via AJAX
- */
-function leftMenuWidthControls() {
-    const links = document.querySelectorAll('#widthcontrol-links a');
-
-    if (!links.length) {
-        return;
-    }
-
-    const tokenNode = document.getElementById('ezxform_token_js');
-    const token = tokenNode ? tokenNode.getAttribute('title') : '';
-
-    if (!token || !window.jQuery || !window.$ || !$.ez) {
-        return;
-    }
-
-    links.forEach((link) => {
-        link.addEventListener('click', (event) => {
-            event.preventDefault();
-
-            $.post(link.href, { ezxform_token: token }).done(() => {
-                window.location.reload();
-            });
-        });
-    });
-}
-
 // Wrap table inside responsive wrapper
 function wrapTable() {
     setTimeout(() => {
@@ -314,7 +285,6 @@ function adjustHeaderHeight() {
         sidebarToggle();
         navbarToggle();
         leftMenuResize();
-        leftMenuWidthControls();
         adjustHeaderHeight();
         // wrapTable();
     });

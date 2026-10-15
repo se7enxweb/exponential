@@ -200,6 +200,9 @@ class AdminLegacyControlsTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( '<span class="a4-sr-only">{$a4_size.name|wash}</span>', $switch, 'each button is named' );
         $this->assertStringContainsString( 'title="{$a4_size.name|wash}"', $switch, 'and shows its name as tooltip' );
         $this->assertStringContainsString( '<button type="submit" name="Value" value="{$a4_size.value}"', $switch );
+        $this->assertStringContainsString( 'name="RedirectURIAfterSet"', $switch, 'back to this page also without a Referer' );
+        $menubar = (string)file_get_contents( self::root() . '/design/admin4/javascript/ezadmin_menubar.js' );
+        $this->assertStringNotContainsString( '#widthcontrol-links a', $menubar, 'the switch has no links to catch any more' );
         $components = self::css( 'components.css' );
         foreach ( array( 'small' => 'arrows-collapse-vertical', 'medium' => 'layout-sidebar-inset', 'large' => 'arrows-expand-vertical' ) as $value => $icon )
         {
@@ -246,9 +249,15 @@ class AdminLegacyControlsTest extends PHPUnit\Framework\TestCase
     public function testTheRightColumnStacksAFieldAndItsButton()
     {
         $rules = AdminBaseStylesheetsTest::rules( self::css( 'admin4.css' ) );
-        $this->assertSame( '100%', $rules['#rightmenu-design .box-content :is(select, input[type=text])']['width'] );
-        $this->assertSame( 'grid', $rules['#rightmenu-design .box-content form']['display'] );
-        $this->assertSame( 'flex-end', $rules['#rightmenu-design .block:has(> :is(input.button, input.defaultbutton, input.button-disabled))']['justify-content'] );
+        // only the core tool boxes: an extension's form in the right column keeps its own layout
+        $tools = ':is(#clearcache-tool, #quicksettings-tool, #bookmarks)';
+        $this->assertSame( '100%', $rules[$tools . ' .box-content :is(select, input[type=text])']['width'] );
+        $this->assertSame( 'grid', $rules[$tools . ' .box-content form']['display'] );
+        $this->assertSame( 'flex-end', $rules[$tools . ' .block:has(> :is(input.button, input.defaultbutton, input.button-disabled))']['justify-content'] );
+        foreach ( array_keys( $rules ) as $selector )
+        {
+            $this->assertStringNotContainsString( '#rightmenu-design .box-content form', $selector, 'every right column form' );
+        }
     }
 
     public function testTheNodeTabBoxFillsItsHeightAndClearsTheGrip()
@@ -283,5 +292,8 @@ class AdminLegacyControlsTest extends PHPUnit\Framework\TestCase
         // <name>navigationpart without the ez prefix => parts/<name>/menu.tpl, not a name two letters short
         $leftmenu = self::template( 'page_leftmenu.tpl' );
         $this->assertStringContainsString( "{elseif \$navigation_part_name|begins_with( 'ez' )|not}{set \$part_name = \$navigation_part_name|explode( 'navigationpart' )[0]}{/if}", $leftmenu );
+        // the exp prefix is cut only from the kernel's own parts, named in a list
+        $this->assertStringContainsString( "hash( 'expauditnavigationpart', 'audit' )", $leftmenu );
+        $this->assertStringNotContainsString( "begins_with( 'exp' )", $leftmenu );
     }
 }
