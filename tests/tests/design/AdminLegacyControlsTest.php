@@ -277,4 +277,11 @@ class AdminLegacyControlsTest extends PHPUnit\Framework\TestCase
         $this->assertNotNull( self::rule( $rules, ':is(select, input):where(#page *) + :is(input.button, input.defaultbutton, input.button-disabled, button.button, select):where(#page *)' ),
             'two selects and their button stand a small step apart' );
     }
+
+    public function testAnExtensionsNavigationPartFindsItsMenu()
+    {
+        // <name>navigationpart without the ez prefix => parts/<name>/menu.tpl, not a name two letters short
+        $leftmenu = self::template( 'page_leftmenu.tpl' );
+        $this->assertStringContainsString( "{elseif \$navigation_part_name|begins_with( 'ez' )|not}{set \$part_name = \$navigation_part_name|explode( 'navigationpart' )[0]}{/if}", $leftmenu );
+    }
 }
