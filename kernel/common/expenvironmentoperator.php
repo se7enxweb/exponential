@@ -22,7 +22,7 @@
 
   exp_environment_badge() returns the environment badge of the administration
   (site.ini [AdminEnvironment], see badge()) as a hash: level, name, short,
-  release, title and key. Without a level, level is an empty string and the
+  release, display, title and key. Without a level, level is an empty string and the
   administration shows no badge.
 */
 
@@ -76,7 +76,7 @@ class expEnvironmentOperator
     {
         $ini = eZINI::instance();
         $settings = array();
-        foreach ( array( 'Level', 'Name', 'ShortName', 'Release', 'ShowVersion', 'ShowInTitle' ) as $name )
+        foreach ( array( 'Level', 'Name', 'ShortName', 'Release', 'ShowVersion', 'ShowInTitle', 'BadgeDisplay' ) as $name )
         {
             if ( $ini->hasVariable( 'AdminEnvironment', $name ) )
                 $settings[$name] = $ini->variable( 'AdminEnvironment', $name );
@@ -98,9 +98,11 @@ class expEnvironmentOperator
      *   empty takes the level's code (DEV, TEST, STAGE, PROD).
      * - Release: free text after the name; ShowVersion=enabled adds the Exponential version ($version).
      * - ShowInTitle: anything but "disabled" puts the name before the page title.
+     * - BadgeDisplay: "always" shows the badge beside the logo at all times; anything else (the default, "hover")
+     *   shows it only while a mouse or trackpad pointer rests on the logo or the logo has the keyboard focus.
      *
-     * The result: level (an empty string for no badge), name, short, release, title (bool) and key, one string of
-     * all of them for the keys of the cache-blocks that draw the badge.
+     * The result: level (an empty string for no badge), name, short, release, display ("hover" or "always"), title
+     * (bool) and key, one string of all of them for the keys of the cache-blocks that draw the badge.
      *
      * @param array $settings the settings, name => value
      * @param string|false $environment the environment name, see eZINI::environment()
@@ -110,7 +112,7 @@ class expEnvironmentOperator
      */
     static function badge( array $settings, $environment, $version = '', $translate = null )
     {
-        $badge = array( 'level' => '', 'name' => '', 'short' => '', 'release' => '', 'title' => false, 'key' => '' );
+        $badge = array( 'level' => '', 'name' => '', 'short' => '', 'release' => '', 'display' => '', 'title' => false, 'key' => '' );
         $level = isset( $settings['Level'] ) && is_scalar( $settings['Level'] ) ? strtolower( trim( (string)$settings['Level'] ) ) : '';
         if ( $level === 'auto' )
         {
@@ -136,8 +138,9 @@ class expEnvironmentOperator
         $badge['name'] = $name;
         $badge['short'] = $short;
         $badge['release'] = $release;
+        $badge['display'] = isset( $settings['BadgeDisplay'] ) && $settings['BadgeDisplay'] === 'always' ? 'always' : 'hover';
         $badge['title'] = !isset( $settings['ShowInTitle'] ) || $settings['ShowInTitle'] !== 'disabled';
-        $badge['key'] = implode( '|', array( $level, $name, $short, $release, $badge['title'] ? 1 : 0 ) );
+        $badge['key'] = implode( '|', array( $level, $name, $short, $release, $badge['display'], $badge['title'] ? 1 : 0 ) );
         return $badge;
     }
 

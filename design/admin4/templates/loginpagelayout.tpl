@@ -23,7 +23,7 @@
 <main class="a4-login">
     <section class="a4-login-side">
         <header class="a4-login-top">
-            <a class="a4-login-logo" href={'/'|ezurl} aria-label="Exponential">{include uri='design:parts/a4_logo.tpl'}</a>
+            <a class="a4-login-logo" href={'/'|ezurl} aria-label="Exponential"{if $env_badge.level|ne( '' )} aria-describedby="a4-env-badge"{/if}>{include uri='design:parts/a4_logo.tpl'}</a>
             {include uri='design:parts/a4_environment_badge.tpl'}
         </header>
 

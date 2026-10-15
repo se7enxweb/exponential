@@ -1,6 +1,8 @@
 {* The logo's name carries the version for signed-in users only: an anonymous page of the admin (the 401 page,
    user/register, user/forgotpassword) draws this frame too and should not tell anyone the release. *}
 {def $a4_brand_name = $current_user.is_logged_in|choose( 'Exponential', concat( 'Exponential ', fetch( 'setup', 'version' ) ) )}
+{* the environment badge (parts/a4_environment_badge.tpl) is the logo link's description, read out with it *}
+{def $a4_brand_env = exp_environment_badge().level|ne( '' )}
 {* Without the Dashboard tab (left out of menu.ini [TopAdminMenu] Tabs[], in HiddenTabs[], or in SetupTabs[] for a user
    who may open setup/menu) the logo leads to the dashboard, for a user who may open it, instead of the content root:
    the account's pages stay one click away. *}
@@ -21,13 +23,13 @@
             </a> *}
             {* The content root of content.ini (the dashboard without its tab), through ezurl: with the siteaccess
                path when the siteaccess is matched by URI (/admin/...), without when by host. *}
-            <a class="brand" href={$a4_brand_url|ezurl} title="{$a4_brand_name|wash}" aria-label="{$a4_brand_name|wash}">{include uri='design:parts/a4_logo.tpl'}</a>
+            <a class="brand" href={$a4_brand_url|ezurl} title="{$a4_brand_name|wash}" aria-label="{$a4_brand_name|wash}"{if $a4_brand_env} aria-describedby="a4-env-badge"{/if}>{include uri='design:parts/a4_logo.tpl'}</a>
         {else}
             {* <a href="{ezini('SiteSettings', 'DefaultPage', 'site.ini')|ezurl( 'no' )}" title="Exponential {fetch( 'setup', 'version' )}">
             </a> *}
             {* The content root of content.ini (the dashboard without its tab), through ezurl: with the siteaccess
                path when the siteaccess is matched by URI (/admin/...), without when by host. *}
-            <a class="brand" href={$a4_brand_url|ezurl} title="{$a4_brand_name|wash}" aria-label="{$a4_brand_name|wash}">{include uri='design:parts/a4_logo.tpl'}</a>
+            <a class="brand" href={$a4_brand_url|ezurl} title="{$a4_brand_name|wash}" aria-label="{$a4_brand_name|wash}"{if $a4_brand_env} aria-describedby="a4-env-badge"{/if}>{include uri='design:parts/a4_logo.tpl'}</a>
         {/if}
         {include uri='design:parts/a4_environment_badge.tpl'}
     </div>
@@ -105,4 +107,4 @@
     <!-- end::Sidebar Controls -->
 </div>
  
-{undef $a4_brand_name $a4_brand_url}
+{undef $a4_brand_name $a4_brand_url $a4_brand_env}
