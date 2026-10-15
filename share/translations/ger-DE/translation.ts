@@ -15078,6 +15078,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Show or hide the right sidebar</source>
         <translation>Rechte Seitenleiste ein- oder ausblenden</translation>
     </message>
+    <message>
+        <source>Logout (%login)</source>
+        <translation>Abmelden (%login)</translation>
+    </message>
+    <message>
+        <source>User menu (%name)</source>
+        <translation>Benutzermenü (%name)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>

@@ -190,24 +190,39 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
   opacity: .45;
 }
 
-/* The top menu from 576px up: every item always visible, the row wrapping onto as many lines as it needs.
-   admin3 switched to the phone menu (a hamburger and a sliding column) below 1024px, and its desktop row hid
-   what did not fit (overflow: hidden). admin4: phones (below 576px) keep the hamburger menu; at every width
-   above it the menu stays in the header and wraps. The header search stays in the header too. The header grows
-   with the lines; admin4.js keeps --header-height (the space the page leaves for the fixed header) in step. */
+/* ---- The header's rows ------------------------------------------------------------------------------------------
+   From 1280px one row of 56px: logo | main menu | search | light/dark | user menu | logout. From 576px two rows,
+   48px for the logo and the tools, 40px for the main menu. Below 576px one row of 56px with the phone menu. The main
+   menu stays on one line at every width from 576px: ezadmin_menubar.js moves the tabs that do not fit into its "More"
+   list; without the script the row scrolls sideways. --header-height (the space the page leaves for the fixed
+   header) defaults to these heights and admin4.js sets the measured one. Until 2026-10 the menu wrapped and the
+   logout link took a third row: the header was 145px tall at 1320px. */
+:root { --header-height: 56px; }
 @media screen and (min-width: 576px) {
+  :root { --header-height: 88px; }
   .navbar-main {
     flex-wrap: wrap;
+    align-items: center;
+    gap: var(--a4-space-2) var(--a4-space-3);   /* 4 + 36 + 8px for the tools, 38px for the menu, two 1px lines: 88px */
+    padding: var(--a4-space-1) var(--a4-space-5) 0;
   }
   .navbar-icon,
   .header-search-mobile {
     display: none;
   }
+  .header-logo { order: 1; align-items: center; }
   .header-search {
     display: block;
+    order: 2;
+    margin-left: auto;
   }
+  .header-theme { order: 3; }
+  .header-user { order: 4; }
   .navbar-menu {
+    order: 5;
     flex: 0 0 100%;
+    min-width: 0;   /* else the panel grows to the row's full length and the row has nothing to measure or scroll */
+    height: 38px;
     max-height: none;
     position: static;
     inset: auto;
@@ -217,16 +232,213 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
     background-color: transparent;
   }
   .navbar-bar {
+    height: 100%;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
-    gap: 0.25rem 0.35rem;
-    padding: 0.15rem 0 0.35rem;
-    overflow: visible;
+    gap: var(--a4-space-1);
+    padding: 0 var(--a4-space-1);   /* room for the focus ring at the row's ends */
+    overflow-x: auto;   /* without the script: the row scrolls sideways */
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    scrollbar-width: thin;
   }
   .navbar-bar > li {
     flex: 0 0 auto;
   }
+  .navbar-bar a:focus-visible { outline-offset: -3px; }   /* a scrolling row clips: the ring is drawn inside the tab */
+  /* the field gives way first, so the tools keep one row down to 576px */
+  #header .searchblock input.searchtext { width: clamp(6rem, calc(100vw - 470px), 230px); }
+  /* With the script the row never overflows (ezadmin_menubar.js moves what does not fit into "More"), so it need not
+     clip, and the "More" list can open below it. */
+  .navbar-menu.a4-nav-fits .navbar-bar { overflow: visible; }
+  .navbar-menu.a4-nav-fits .navbar-bar a:focus-visible { outline-offset: 2px; }
+  .navbar-menu li a,
+  .navbar-menu li a.selected,
+  .navbar-menu li a.selected:hover {
+    padding: var(--a4-space-1) var(--a4-space-3);
+    min-height: 28px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  :root { --header-height: 56px; }
+  .navbar-main {
+    flex-wrap: nowrap;
+    min-height: 54px;   /* and the header's two 1px lines: 56px */
+    padding: 0 var(--a4-space-5);
+  }
+  .navbar-menu {
+    order: 2;
+    flex: 1 1 0;   /* the room between the logo and the tools, whatever the tabs need: measuring cannot change it */
+    height: 36px;
+  }
+  .header-search { order: 3; }
+  #header .searchblock input.searchtext { width: clamp(9rem, 13vw, 15rem); }
+}
+/* the search button as high as the field (admin3's 43px made the first row 59px) */
+#header .searchblock .searchbuttonfield {
+  width: 36px;
+  height: 36px;
+  border-width: 1px;
+  border-radius: 999px;
+}
+
+/* Phones: one row of 56px, logo | light/dark | user menu | logout | menu button; the menu opens under the header */
+@media screen and (max-width: 575.98px) {
+  .navbar-main {
+    flex-wrap: nowrap;
+    min-height: 54px;   /* and the header's two 1px lines: 56px */
+    gap: var(--a4-space-2);
+    padding: 0 var(--a4-space-4);
+  }
+  .header-theme { margin-left: auto; }
+  #header .navbar-icon {
+    order: 10;
+    width: 36px;
+    height: 36px;
+    margin: 0;
+    padding: 0;
+    font-size: 1.75rem;
+    line-height: 1;
+  }
+  .navbar-menu.show { padding-top: var(--header-height); }
+}
+
+/* "More": the tabs the one-line menu has no room for, in a list under the button (a disclosure: aria-expanded,
+   aria-controls; Escape closes it and gives the focus back). The button looks like a tab, and like the selected tab
+   when the current page's tab is in its list. */
+.a4-nav-more { position: relative; }
+.a4-nav-more[hidden],
+.a4-nav-more-list[hidden] { display: none; }
+.a4-nav-more-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--a4-space-1);
+  min-height: 28px;
+  margin: 0;
+  padding: var(--a4-space-1) var(--a4-space-3);
+  border: 0;
+  border-radius: 999px;
+  background-color: transparent;
+  color: var(--a4-header-ink);
+  font: inherit;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.a4-nav-more-toggle:hover,
+.a4-nav-more-toggle[aria-expanded="true"] { background-color: var(--a4-header-hover); }
+.a4-nav-more-toggle:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
+.a4-nav-more-toggle .a4-icon { width: 12px; height: 12px; transition: transform .15s ease; }
+.a4-nav-more-toggle[aria-expanded="true"] .a4-icon { transform: rotate(180deg); }
+.a4-nav-more-toggle:disabled { opacity: .45; cursor: default; background-color: transparent; }
+.a4-nav-more-toggle.has-current {
+  background-color: var(--a4-accent-strong);
+  color: var(--a4-on-accent);
+}
+.a4-nav-more-list,
+.a4-user-menu {
+  position: absolute;
+  top: calc(100% + var(--a4-space-2));
+  right: 0;
+  z-index: var(--a4-z-popover);
+  min-width: 13rem;
+  max-height: calc(100vh - var(--header-height) - var(--a4-space-5));
+  overflow-y: auto;
+  margin: 0;
+  padding: var(--a4-space-1);
+  list-style: none;
+  background-color: var(--a4-card);
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  box-shadow: var(--a4-shadow-m);
+  color: var(--a4-ink);
+  text-align: left;
+}
+.a4-nav-more-list > li { margin: 0; }
+.navbar-menu .a4-nav-more-list li a,
+.navbar-menu .a4-nav-more-list li a.selected,
+.navbar-menu .a4-nav-more-list li a.selected:hover {
+  display: flex;
+  justify-content: flex-start;
+  min-height: 32px;
+  padding: var(--a4-space-1) var(--a4-space-3);
+  border-radius: var(--a4-radius-s);
+  color: var(--a4-ink);
+  box-shadow: none;
+}
+.navbar-menu .a4-nav-more-list li a:hover { background-color: var(--a4-soft); }
+.navbar-menu .a4-nav-more-list li a.selected,
+.navbar-menu .a4-nav-more-list li a.selected:hover {
+  background-color: var(--a4-accent-strong);
+  color: var(--a4-on-accent);
+}
+.navbar-menu .a4-nav-more-list li a:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: -3px; }
+
+/* The user menu and the logout button: round icon buttons as high as light/dark and the search field (36px, more
+   than the 32px a header control is meant to have at least), in the header's colours */
+.header-user {
+  display: flex;
+  align-items: center;
+  gap: var(--a4-space-2);
+}
+.a4-user-menu-wrap { position: relative; }
+.a4-header-btn {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--a4-header-field-line);
+  border-radius: 999px;
+  background-color: var(--a4-header-field);
+  color: var(--a4-header-ink);
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.a4-header-btn:hover { border-color: var(--a4-orange); color: var(--a4-header-ink); }
+.a4-header-btn:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
+.a4-header-btn[aria-expanded="true"] { border-color: var(--a4-accent); background-color: var(--a4-accent-soft); }
+.a4-header-btn .a4-icon { width: 18px; height: 18px; }
+.a4-header-btn.disabled { opacity: .45; cursor: default; pointer-events: none; }
+.a4-user-menu[hidden] { display: none; }
+.a4-user-menu-name {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 var(--a4-space-1);
+  padding: var(--a4-space-2) var(--a4-space-3);
+  border-bottom: 1px solid var(--a4-line);
+}
+.a4-user-menu-display { font-weight: 600; overflow-wrap: anywhere; }
+.a4-user-menu-login { color: var(--a4-muted); font-size: var(--a4-text-xs); }
+.a4-user-menu-links { margin: 0; padding: 0; list-style: none; }
+.a4-user-menu-links li { margin: 0; }
+.a4-user-menu-links :is(a, span) {
+  display: flex;
+  align-items: center;
+  min-height: 32px;
+  padding: var(--a4-space-1) var(--a4-space-3);
+  border-radius: var(--a4-radius-s);
+  color: var(--a4-ink);
+  text-decoration: none;
+}
+.a4-user-menu-links a:hover { background-color: var(--a4-soft); color: var(--a4-ink); }
+.a4-user-menu-links a:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: -3px; }
+.a4-user-menu-links span.disabled { color: var(--a4-disabled); }
+@media (forced-colors: active) {
+  .a4-header-btn,
+  .a4-nav-more-list,
+  .a4-user-menu { border-color: ButtonText; }
+  .a4-header-btn[aria-expanded="true"],
+  .a4-nav-more-toggle[aria-expanded="true"],
+  .a4-nav-more-toggle.has-current { outline: 2px solid Highlight; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .a4-nav-more-toggle .a4-icon { transition: none; }
 }
 #header .searchblock input.searchtext {
   box-sizing: border-box;
@@ -251,7 +463,7 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
 .header-theme {
   display: flex;
   align-items: center;
-  padding: 0 var(--a4-space-4) 0 var(--a4-space-4);
+  padding: 0;   /* the header row's gap spaces it */
 }
 .a4-theme-toggle {
   box-sizing: border-box;
@@ -297,9 +509,6 @@ html[data-a4-theme-choice="system"] .a4-theme-toggle .a4-icon-system { display: 
   clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0;
 }
 .header-theme { gap: var(--a4-space-2); }
-@media (max-width: 1023.98px) {
-  .header-theme { padding: 0 var(--a4-space-2); }
-}
 
 /* ---- The three columns as cards: soft, edged by light and shadow rather than boxes -------------------------- */
 
@@ -2109,20 +2318,6 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
   }
   body.navbar-open .sidebar-controls,
   body:has(.navbar-menu.show) .sidebar-controls { visibility: hidden; }
-}
-
-/* Tablet and small desktop: the top menu on one line that scrolls sideways instead of two or three lines that made
-   the header a fifth of the window's height. */
-@media screen and (min-width: 576px) and (max-width: 1279.98px) {
-  .navbar-bar {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    overscroll-behavior-x: contain;
-    scrollbar-width: thin;
-    padding-block: var(--a4-space-2);   /* a scrolling row clips vertically too: room for the 3px ring and its 2px offset */
-  }
-  .navbar-bar a:focus-visible { outline-offset: -3px; }   /* and at the row's ends the ring is drawn inside the item */
-  .navbar-menu { min-width: 0; }   /* else the panel grows to the row's full length and the row has nothing to scroll */
 }
 
 /* Below 1280px only the left column takes room beside the content; the right one opens over it as a drawer (with

@@ -4,7 +4,7 @@
  * alone (no database):
  *
  * - the phone menu is an opaque panel that scrolls on its own, and the side columns' tabs hide while it is open;
- * - from 576px to 1279px the top menu stays on one line and scrolls sideways;
+ * - from 576px the top menu stays on one line (it scrolls sideways without the script);
  * - below 1280px only the left column takes room beside the content, the right one opens over it;
  * - the content column stops growing at --a4-content-max;
  * - the node's tabs on a phone: the tab row on its own, scrolling, the tabs switch under it; a wide table in a tab
@@ -73,12 +73,12 @@ class AdminResponsiveTest extends PHPUnit\Framework\TestCase
 
     public function testTheTopMenuStaysOnOneLineOnTabletsAndSmallDesktops()
     {
-        $tablet = AdminBaseStylesheetsTest::rules( self::media( self::css( 'admin4.css' ), 'screen and (min-width: 576px) and (max-width: 1279.98px)' ) );
+        // from 576px: one line, which scrolls sideways without the script (ezadmin_menubar.js would move what does
+        // not fit into "More"); AdminHeaderTest holds the rows and the overflow menu
+        $tablet = AdminBaseStylesheetsTest::rules( self::media( self::css( 'admin4.css' ), 'screen and (min-width: 576px)' ) );
         $this->assertSame( 'nowrap', $tablet['.navbar-bar']['flex-wrap'] );
         $this->assertSame( 'auto', $tablet['.navbar-bar']['overflow-x'] );
-        // a scroll container clips vertically too: room for the 3px ring with its 2px offset, inset at the row's ends
-        $this->assertSame( 'var(--a4-space-2)', $tablet['.navbar-bar']['padding-block'] );
-        $this->assertSame( '-3px', $tablet['.navbar-bar a:focus-visible']['outline-offset'] );
+        $this->assertSame( '-3px', $tablet['.navbar-bar a:focus-visible']['outline-offset'], 'a scrolling row clips: the ring is drawn inside the tab' );
         $this->assertSame( '0', $tablet['.navbar-menu']['min-width'], 'the panel stays as wide as the window, so the row scrolls' );
     }
 

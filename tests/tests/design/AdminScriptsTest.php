@@ -93,7 +93,7 @@ class AdminScriptsTest extends PHPUnit\Framework\TestCase
         // the header height is admin4.js's, the table wrapper was never called
         $this->assertStringNotContainsString( 'adjustHeaderHeight', $js );
         $this->assertStringNotContainsString( 'wrapTable', $js );
-        $this->assertStringContainsString( "flex.style.setProperty('--header-height', px + 'px');", self::read( 'design/admin4/javascript/admin4.js' ) );
+        $this->assertStringContainsString( "root.style.setProperty('--header-height', px + 'px');", self::read( 'design/admin4/javascript/admin4.js' ) );
     }
 
     public function testAdminFourShipsNoClassicColumnGrip()

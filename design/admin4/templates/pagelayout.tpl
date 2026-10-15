@@ -42,7 +42,7 @@
  Need navigation part for cases like content/browse where node id is taken from caller params *}
     {* siteaccess_url() here too: this block holds the header block below, whose
        site link depends on the scheme, host and port of the request. *}
-    {cache-block keys=array( $uri_cache_key, $user_hash, $admin_theme, $admin_left_size, $access_type, first_set( $module_result.navigation_part, $navigation_part.identifier ), $search_hash, siteaccess_url(), $main_wrapped ) ignore_content_expiry}
+    {cache-block keys=array( $uri_cache_key, $user_hash, $current_user.contentobject_id, $admin_theme, $admin_left_size, $access_type, first_set( $module_result.navigation_part, $navigation_part.identifier ), $search_hash, siteaccess_url(), $main_wrapped ) ignore_content_expiry}
 
     {include uri='design:page_head.tpl'}
 
@@ -63,8 +63,9 @@
             <div id="header-design" class="float-break">
                 {* Pr tab header cache *}
                 {* siteaccess_url(): the header links to the site with the scheme, host and port
-                   of the request, and Apache and Velocity share this cache. *}
-                {cache-block keys=array( $ui_context, $ui_component, $user_hash, $access_type, first_set( $module_result.navigation_part, $navigation_part.identifier ), siteaccess_url() ) ignore_content_expiry}
+                   of the request, and Apache and Velocity share this cache. The user's object id: the header's
+                   user menu and logout button name the signed-in user (parts/a4_header_user.tpl). *}
+                {cache-block keys=array( $ui_context, $ui_component, $user_hash, $current_user.contentobject_id, $access_type, first_set( $module_result.navigation_part, $navigation_part.identifier ), siteaccess_url() ) ignore_content_expiry}
 
                 {* HEADER ( SEARCH, LOGO AND USERMENU ) *}
                 {include uri='design:page_header.tpl'}

@@ -7,16 +7,15 @@
             {foreach topmenu($ui_context, true() ) as $menu}
                 {include uri='design:page_topmenuitem.tpl' menu_item=$menu navigationpart_identifier=$navigation_part.identifier}
             {/foreach}
-            <li>
-                {if $ui_context_edit}
-                    <a href='#' title="{'Logout from the system.'|i18n( 'design/admin/pagelayout' )}" id="header-usermenu-logout" class="disabled">{'Logout: '|i18n( 'design/admin/pagelayout' )}{fetch('user', 'current_user').login}</a>
-                {else}
-                    <a href={'/user/logout'|ezurl} title="{'Logout from the system.'|i18n( 'design/admin/pagelayout' )}" id="header-usermenu-logout">{'Logout: '|i18n( 'design/admin/pagelayout' )}{fetch('user', 'current_user').login}</a>
-                {/if}
+            {* The overflow of the one-line menu (576px and up): ezadmin_menubar.js moves the tabs that do not fit into
+               this list and shows the item; without the script it stays hidden and the row scrolls sideways. A
+               disclosure button (aria-expanded, aria-controls), not a menu: the list holds plain links. *}
+            <li class="a4-nav-more" hidden>
+                <button type="button" class="a4-nav-more-toggle" aria-expanded="false" aria-controls="a4-nav-more-list">{'More'|i18n( 'design/admin/pagelayout' )|wash}<span class="a4-icon a4-bi-chevron-down" aria-hidden="true"></span></button>
+                <ul id="a4-nav-more-list" class="a4-nav-more-list" hidden></ul>
             </li>
             <li class="header-search-mobile">
                 {include uri='design:page_search.tpl' search_box='-mobile'}
-                {if is_set( $search_sections )}{undef $search_sections}{/if}
             </li>
         </ul>
     </div>
