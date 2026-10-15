@@ -1170,7 +1170,8 @@ span.classattribute-description {
   background: var(--a4-soft); box-shadow: inset 0 0 0 1px var(--a4-line);
 }
 .a4-badge-class { color: var(--a4-accent-text); background-color: var(--a4-accent-soft); box-shadow: none; }
-.a4-badge-warn { color: var(--a4-warn); background-color: var(--a4-warn-bg); box-shadow: none; }
+/* a state badge (the visibility and account status beside the title) has its tint and no line */
+.a4-badge.is-ok, .a4-badge.is-warn, .a4-badge.is-bad { box-shadow: none; }
 
 /* the actions, on the title's row (wrapping under it on narrow windows) */
 .controlbar.a4-node-actions {
@@ -2412,15 +2413,22 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
   #window-controls.a4-node-tabs > .tabs-content { grid-row: 3; }
 }
 
-/* A sub-item's class icon and name stay together; the name wraps on its own */
+/* A sub-item's status mark, class icon and name stay together; the name wraps on its own. The mark (components.css
+   .a4-status) and a user account's badge sit on the line's middle. */
 .a4-subitem-name {
   display: inline-flex;
   align-items: baseline;
   gap: var(--a4-space-1);
   max-width: 100%;
 }
-.a4-subitem-name > a:first-child { flex: none; }
-.a4-subitem-name > a:last-child { min-width: 0; overflow-wrap: break-word; }
+.a4-subitem-name > a:first-of-type { flex: none; }
+.a4-subitem-name > a:last-of-type { min-width: 0; overflow-wrap: break-word; }
+.a4-subitem-name > .a4-status,
+.a4-subitem-name > .a4-badge { align-self: center; }
+/* the Visibility column: the mark beside the text */
+.a4-subitem-status { display: inline-flex; align-items: center; gap: var(--a4-space-1); }
+/* The content tree marks only what differs (a hidden node, a disabled account), after the name */
+div#contentstructure a.image-text .a4-status { margin-left: var(--a4-space-1); }
 
 /* The sub-items toolbar wraps with an even gap instead of each button's left margin */
 html #action-controls {

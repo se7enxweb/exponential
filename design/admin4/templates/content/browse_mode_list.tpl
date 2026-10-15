@@ -90,6 +90,8 @@
     {/let}
     </td>
     <td>
+    {* a hidden node, or one hidden by a node above it, gets its status mark before the icon; visible ones none *}
+    {include uri='design:parts/visibility_status.tpl' status_node=$Nodes.item status_badge=false() status_quiet=true()}
 
     {* Replaces node_view_gui... *}
     {* Note: The tpl code for $ignore_nodes_merge with the eq, unique and count

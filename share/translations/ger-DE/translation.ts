@@ -8965,6 +8965,10 @@
         <source>Content tree</source>
         <translation>Inhaltsbaum</translation>
     </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Konto deaktiviert</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/all_latest_content</name>
@@ -11647,7 +11651,7 @@
     </message>
     <message>
         <source>Hidden by a parent</source>
-        <translation>Durch übergeordneten Knoten verborgen</translation>
+        <translation>Versteckt durch übergeordneten Eintrag</translation>
     </message>
     <message>
         <source>Language to edit</source>
@@ -12812,6 +12816,30 @@
     <message>
         <source>Attributes: %1</source>
         <translation>Attribute: %1</translation>
+    </message>
+    <message>
+        <source>Visible: visitors of the site can see it.</source>
+        <translation>Sichtbar: Besucher der Website sehen diesen Eintrag.</translation>
+    </message>
+    <message>
+        <source>Hidden: visitors of the site do not see it.</source>
+        <translation>Versteckt: Besucher der Website sehen diesen Eintrag nicht.</translation>
+    </message>
+    <message>
+        <source>An item above it is hidden, so visitors of the site do not see it.</source>
+        <translation>Ein übergeordneter Eintrag ist versteckt, daher sehen Besucher der Website diesen Eintrag nicht.</translation>
+    </message>
+    <message>
+        <source>Disabled</source>
+        <translation>Deaktiviert</translation>
+    </message>
+    <message>
+        <source>Account disabled: this user cannot log in.</source>
+        <translation>Konto deaktiviert: Dieser Benutzer kann sich nicht anmelden.</translation>
+    </message>
+    <message>
+        <source>Locked after too many failed logins.</source>
+        <translation>Nach zu vielen fehlgeschlagenen Anmeldungen gesperrt.</translation>
     </message>
 </context>
 <context>

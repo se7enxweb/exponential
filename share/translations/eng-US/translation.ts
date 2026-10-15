@@ -7422,6 +7422,10 @@
         <source>Content tree</source>
         <translation>Content tree</translation>
     </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Account disabled</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/all_latest_content</name>
@@ -10622,6 +10626,30 @@
     <message>
         <source>Attributes: %1</source>
         <translation>Attributes: %1</translation>
+    </message>
+    <message>
+        <source>Visible: visitors of the site can see it.</source>
+        <translation>Visible: visitors of the site can see it.</translation>
+    </message>
+    <message>
+        <source>Hidden: visitors of the site do not see it.</source>
+        <translation>Hidden: visitors of the site do not see it.</translation>
+    </message>
+    <message>
+        <source>An item above it is hidden, so visitors of the site do not see it.</source>
+        <translation>An item above it is hidden, so visitors of the site do not see it.</translation>
+    </message>
+    <message>
+        <source>Disabled</source>
+        <translation>Disabled</translation>
+    </message>
+    <message>
+        <source>Account disabled: this user cannot log in.</source>
+        <translation>Account disabled: this user cannot log in.</translation>
+    </message>
+    <message>
+        <source>Locked after too many failed logins.</source>
+        <translation>Locked after too many failed logins.</translation>
     </message>
 </context>
 <context>
