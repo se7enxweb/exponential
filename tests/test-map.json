@@ -214,6 +214,15 @@
     "design/admin4/javascript/admin4.js": [
       "tests/tests/design/AdminNoticesTest.php",
       "tests/tests/design/AdminLeftMenuGroupsTest.php"
+    ],
+    "extension/ezjscore/design/standard/javascript/*": [
+      "tests/tests/extension/ezjscore/ezjscoreVendoredLibrariesTest.php"
+    ],
+    "extension/ezjscore/settings/ezjscore.ini": [
+      "tests/tests/extension/ezjscore/ezjscoreVendoredLibrariesTest.php"
+    ],
+    "extension/ezjscore/extension.xml": [
+      "tests/tests/extension/ezjscore/ezjscoreVendoredLibrariesTest.php"
     ]
   },
   "generated": {
