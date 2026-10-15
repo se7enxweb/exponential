@@ -212,7 +212,7 @@ class AdminSetupOverviewTest extends PHPUnit\Framework\TestCase
         preg_match_all( "/\{case match='([a-z_]+)'\}/", $figures, $m );
         $this->assertEqualsCanonicalizing( array_keys( $named ), $m[1], 'the core figure template and LinkFigureTemplates[] name different keys' );
         preg_match_all( "/fetch\( '(\w+)', '(\w+)'/", $figures, $fetches, PREG_SET_ORDER );
-        $allowed = array( 'class/list', 'section/list', 'content/translation_list', 'user/logged_in_count' );
+        $allowed = array( 'class/list', 'section/list', 'content/translation_list', 'user/logged_in_count', 'setup/cronjob_pauses' );
         foreach ( $fetches as $fetch )
             $this->assertContains( "{$fetch[1]}/{$fetch[2]}", $allowed, 'a figure must come from one cheap fetch' );
         // the active extensions that exist, not the names in the settings
@@ -225,6 +225,10 @@ class AdminSetupOverviewTest extends PHPUnit\Framework\TestCase
             $this->assertStringContainsString( "'%count $many'|i18n", $figures );
         }
         $this->assertStringContainsString( "'1 user signed in'|i18n", $figures );
+        // paused cronjob parts: drawn only while one is paused, every part paused said as such
+        $this->assertStringContainsString( "'1 part paused'|i18n", $figures );
+        $this->assertStringContainsString( "'%count parts paused'|i18n", $figures );
+        $this->assertStringContainsString( "'All parts paused'|i18n", $figures );
 
         // the figure only in the branch of a tile the user may open: its fetch asks no rights of its own
         $tiles = self::read( self::TILES );

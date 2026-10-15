@@ -42,6 +42,17 @@ $ViewList['preferences'] = array(
     'script' => 'preferences.php',
     'params' => array( 'Function', 'Key', 'Value' ) );
 
+// admin4's mega menu (menu.ini [TopAdminMenu] MegaMenuTabs[]): the groups and links of a top tab's menu as an HTML
+// fragment without the page layout, asked for once by design/admin4/javascript/a4_mega_menu.js when the panel is first
+// opened (user/megamenu/<tab>). The policy of any user of the siteaccess, as user/preferences, since the tabs belong to
+// different modules: the view itself answers only for a tab in the user's top menu, and checks each link as the left
+// menu does. ajax, so the address is not kept as the last page seen.
+$ViewList['megamenu'] = array(
+    'functions' => array( 'login' ),
+    'script' => 'megamenu.php',
+    'ui_context' => 'ajax',
+    'params' => array( 'Tab' ) );
+
 $ViewList['password'] = array(
     'functions' => array( 'password' ),
     'script' => 'password.php',

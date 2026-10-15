@@ -16,7 +16,8 @@
  * anything else for running, "all" for every part and an empty part name for the scripts of [CronjobSettings] - the
  * layout such extensions already use, so an installation that paused parts that way keeps them, and such a page
  * and Setup > Cronjobs show the same state. Every pause and resume made here is written to a history file with the
- * user who did it; the console shows who paused a part and since when.
+ * user who did it and an optional note; the console shows who paused a part, since when and why, and the notice
+ * runcronjobs.php prints says the same.
  *
  * @copyright Copyright (C) 1998 - 2026 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
@@ -32,6 +33,9 @@ class expCronjobPause
     const HISTORY_BYTES = 262144;
     const HISTORY_READ = 500;
 
+    /** The longest note kept with a pause or resume, in characters. */
+    const NOTE_LENGTH = 200;
+
     /** @var string|null A directory set by a test instead of the one from the settings. */
     protected static $directory = null;
 
@@ -40,6 +44,15 @@ class expCronjobPause
 
     /** @var array[]|null The history read in this request, newest first; dropped when this request writes. */
     protected static $historyCache = null;
+
+    /** @var callable|null Set by a test: a user id to a login, instead of eZUser::fetch(). */
+    protected static $userResolver = null;
+
+    /** @var array<int, string|null> The logins looked up in this request, by user id. */
+    protected static $logins = array();
+
+    /** @var string|null The request the caches above belong to (REQUEST_TIME_FLOAT). */
+    protected static $request = null;
 
     /**
      * The notice runcronjobs.php prints when it leaves a run out because of a pause, or false when the run may go
@@ -61,9 +74,29 @@ class expCronjobPause
         $reason = self::pausedBy( (string)$part, $scripts, (bool)$single );
         if ( $reason === false )
             return false;
-        return $reason === self::ALL
-             ? 'Notice: All cronjob parts are paused (Setup > Cronjobs).'
-             : "Notice: The cronjob part '" . self::label( $reason ) . "' is paused (Setup > Cronjobs).";
+        $notice = $reason === self::ALL
+                ? 'Notice: All cronjob parts are paused (Setup > Cronjobs).'
+                : "Notice: The cronjob part '" . self::label( $reason ) . "' is paused (Setup > Cronjobs).";
+        return $notice . self::describe( self::state( $reason ) );
+    }
+
+    /**
+     * Since when, by whom and why a part is paused, for the command line and the log: " Paused since <time> by
+     * <login>: <note>.", only the parts that are known, or '' when the state says nothing.
+     *
+     * @param array $state As state() returns it.
+     * @return string
+     */
+    public static function describe( array $state )
+    {
+        if ( empty( $state['paused'] ) || empty( $state['since'] ) )
+            return '';
+        $text = ' Paused since ' . date( 'Y-m-d H:i T', (int)$state['since'] );
+        if ( !empty( $state['by'] ) && $state['by']['login'] !== '' )
+            $text .= ' by ' . $state['by']['login'];
+        if ( !empty( $state['by'] ) && $state['by']['note'] !== '' )
+            $text .= ': ' . $state['by']['note'];
+        return $text . '.';
     }
 
     /**
@@ -131,11 +164,11 @@ class expCronjobPause
     }
 
     /**
-     * The state of a part for the console: paused, since when (the time of the state file) and by whom (from the
-     * history, false when the change was not made here).
+     * The state of a part for the console: paused, since when (the time of the state file) and by whom and why (from
+     * the history, false when the change was not made here).
      *
      * @param string $part
-     * @return array paused, since, by (array user_id, login, time, or false)
+     * @return array paused, since, by (array time, part, action, user_id, login, note, or false)
      */
     public static function state( $part )
     {
@@ -164,11 +197,13 @@ class expCronjobPause
      *
      * @param string $part
      * @param eZUser|null $user Who pauses it, for the history; the current user when null.
+     * @param string $note Why, for the history, the console and the notice of runcronjobs.php; one line of at most
+     *                     NOTE_LENGTH characters is kept (see cleanNote()).
      * @return bool false for an invalid part name or a file that could not be written.
      */
-    public static function pause( $part, $user = null )
+    public static function pause( $part, $user = null, $note = '' )
     {
-        return self::write( $part, true, $user );
+        return self::write( $part, true, $user, $note );
     }
 
     /**
@@ -176,21 +211,42 @@ class expCronjobPause
      *
      * @param string $part
      * @param eZUser|null $user
+     * @param string $note Why, for the history (see pause()).
      * @return bool
      */
-    public static function resume( $part, $user = null )
+    public static function resume( $part, $user = null, $note = '' )
     {
-        return self::write( $part, false, $user );
+        return self::write( $part, false, $user, $note );
+    }
+
+    /**
+     * A note as it is kept: one line (line breaks, C0 and C1 control characters and the bidirectional overrides and
+     * isolates, which could reorder the line on the page or the terminal, become spaces), trimmed, at most
+     * NOTE_LENGTH characters, valid UTF-8; '' for anything that is not a string.
+     *
+     * @param mixed $note
+     * @return string
+     */
+    public static function cleanNote( $note )
+    {
+        if ( !is_scalar( $note ) )
+            return '';
+        $note = (string)$note;
+        if ( !preg_match( '//u', $note ) )
+            $note = mb_convert_encoding( $note, 'UTF-8', 'UTF-8' );
+        $note = trim( (string)preg_replace( '/[\x00-\x1F\x7F\x{80}-\x{9F}\x{2028}\x{2029}\x{202A}-\x{202E}\x{2066}-\x{2069}]+/u', ' ', $note ) );
+        return mb_substr( $note, 0, self::NOTE_LENGTH, 'UTF-8' );
     }
 
     /**
      * The newest pauses and resumes first.
      *
      * @param int $limit
-     * @return array[] time, part, action (pause|resume), user_id, login
+     * @return array[] time, part, action (pause|resume), user_id, login, note ('' when none was given)
      */
     public static function history( $limit = 20 )
     {
+        self::forThisRequest();
         if ( self::$historyCache === null )
             self::$historyCache = self::readHistory();
         return array_slice( self::$historyCache, 0, max( 0, (int)$limit ) );
@@ -231,7 +287,12 @@ class expCronjobPause
                                 'part'    => $entry['part'],
                                 'action'  => $entry['action'] === 'pause' ? 'pause' : 'resume',
                                 'user_id' => isset( $entry['user_id'] ) && is_scalar( $entry['user_id'] ) ? (int)$entry['user_id'] : 0,
-                                'login'   => isset( $entry['login'] ) && is_string( $entry['login'] ) ? $entry['login'] : '' );
+                                // The user's current login, looked up by the id; the login an older line carries is
+                                // used only when the user cannot be found.
+                                'login'   => self::currentLogin( isset( $entry['user_id'] ) && is_scalar( $entry['user_id'] ) ? (int)$entry['user_id'] : 0,
+                                                                 isset( $entry['login'] ) && is_string( $entry['login'] ) ? $entry['login'] : '' ),
+                                // Lines written before notes existed have none.
+                                'note'    => isset( $entry['note'] ) ? self::cleanNote( $entry['note'] ) : '' );
             if ( count( $entries ) >= self::HISTORY_READ )
                 break;
         }
@@ -278,6 +339,75 @@ class expCronjobPause
         self::$directory = $directory;
         self::$historyFile = $historyFile;
         self::$historyCache = null;
+        self::$logins = array();
+    }
+
+    /**
+     * Drops what an earlier request read: a persistent worker (Exponential Velocity) keeps this class's statics from
+     * one request to the next, and a pause made meanwhile by another process must show. Keyed on the request's
+     * REQUEST_TIME_FLOAT, which Velocity sets per request.
+     */
+    private static function forThisRequest()
+    {
+        $request = isset( $_SERVER['REQUEST_TIME_FLOAT'] ) ? (string)$_SERVER['REQUEST_TIME_FLOAT'] : '';
+        if ( self::$request !== $request )
+        {
+            self::$request = $request;
+            self::$historyCache = null;
+            self::$logins = array();
+        }
+    }
+
+    /**
+     * For tests: how a user id becomes a login (a callable taking the id and giving a login or null), instead of
+     * eZUser::fetch(); null goes back to eZUser.
+     *
+     * @param callable|null $resolver
+     */
+    public static function setUserResolver( $resolver )
+    {
+        self::$userResolver = $resolver;
+        self::$historyCache = null;
+        self::$logins = array();
+    }
+
+    /**
+     * The current login of the user with this id, so a renamed user shows under the new name; $stored (the login an
+     * older history line carries) when the user cannot be found, and "#<id>" when there is neither. The history keeps
+     * only the id. Looked up once per id and request; never with paths set by a test, unless a resolver is set.
+     *
+     * @param int $userId
+     * @param string $stored
+     * @return string
+     */
+    private static function currentLogin( $userId, $stored )
+    {
+        $userId = (int)$userId;
+        if ( $userId <= 0 )
+            return (string)$stored;
+        self::forThisRequest();
+        if ( !array_key_exists( $userId, self::$logins ) )
+        {
+            $login = null;
+            try
+            {
+                if ( self::$userResolver !== null )
+                    $login = call_user_func( self::$userResolver, $userId );
+                elseif ( self::$directory === null && class_exists( 'eZUser' ) )
+                {
+                    $user = eZUser::fetch( $userId );
+                    $login = $user instanceof eZUser ? (string)$user->attribute( 'login' ) : null;
+                }
+            }
+            catch ( Throwable $e )
+            {
+                $login = null;
+            }
+            self::$logins[$userId] = is_string( $login ) && $login !== '' ? $login : null;
+        }
+        if ( self::$logins[$userId] !== null )
+            return self::$logins[$userId];
+        return (string)$stored !== '' ? (string)$stored : '#' . $userId;
     }
 
     /**
@@ -351,9 +481,10 @@ class expCronjobPause
      * @param string $part
      * @param bool $pause
      * @param eZUser|null $user
+     * @param string $note
      * @return bool
      */
-    private static function write( $part, $pause, $user )
+    private static function write( $part, $pause, $user, $note = '' )
     {
         $part = (string)$part;
         if ( !self::isValidPart( $part ) )
@@ -372,11 +503,12 @@ class expCronjobPause
 
         if ( $user === null && class_exists( 'eZUser' ) )
             $user = eZUser::currentUser();
+        $note = self::cleanNote( $note );
         $line = json_encode( array( 'time'    => time(),
                                     'part'    => $part,
                                     'action'  => $pause ? 'pause' : 'resume',
                                     'user_id' => $user ? (int)$user->attribute( 'contentobject_id' ) : 0,
-                                    'login'   => $user ? (string)$user->attribute( 'login' ) : '' ) );
+                                    'note'    => $note ) );
         $history = self::historyFile();
         if ( !is_dir( dirname( $history ) ) )
             eZDir::mkdir( dirname( $history ), false, true );
@@ -386,7 +518,7 @@ class expCronjobPause
             eZDebug::writeWarning( "The pause of '" . self::label( $part ) . "' was not written to $history", __METHOD__ );
         else
             self::shareFile( $history );
-        self::audit( $part, $pause, $user );
+        self::audit( $part, $pause, $note );
         return true;
     }
 
@@ -419,9 +551,10 @@ class expCronjobPause
     {
         if ( !is_file( $file ) || !function_exists( 'posix_geteuid' ) || @fileowner( $file ) !== posix_geteuid() || !class_exists( 'eZINI' ) )
             return;
-        $mode = eZFile::fileMode( octdec( (string)eZINI::instance()->variable( 'FileSettings', 'StorageFilePermissions' ) ) );
-        if ( $mode > 0 && ( @fileperms( $file ) & 0777 ) !== $mode )
-            @chmod( $file, $mode );
+        $setting = octdec( (string)eZINI::instance()->variable( 'FileSettings', 'StorageFilePermissions' ) );
+        // The mode goes through eZFile::fileMode() in the call itself, so the installation's file mode limits apply.
+        if ( eZFile::fileMode( $setting ) > 0 && ( @fileperms( $file ) & 0777 ) !== eZFile::fileMode( $setting ) )
+            @chmod( $file, eZFile::fileMode( $setting ) );
     }
 
     /**
@@ -429,9 +562,9 @@ class expCronjobPause
      *
      * @param string $part
      * @param bool $pause
-     * @param eZUser|null $user
+     * @param string $note Kept in "after" when one was given.
      */
-    private static function audit( $part, $pause, $user )
+    private static function audit( $part, $pause, $note )
     {
         // Paths set by a test (setPaths()) are not the installation's pauses, so they are not the audit trail's either.
         if ( !class_exists( 'expAuditHook' ) || self::$directory !== null )
@@ -439,6 +572,6 @@ class expCronjobPause
         expAuditHook::emit( $pause ? 'system.cronjob.pause' : 'system.cronjob.resume',
             array( 'object' => array( 'type' => 'cronjob_part', 'id' => self::label( $part ) ),
                    'verb' => $pause ? 'pause' : 'resume',
-                   'after' => array( 'paused' => $pause ) ) );
+                   'after' => $note !== '' ? array( 'paused' => $pause, 'note' => $note ) : array( 'paused' => $pause ) ) );
     }
 }

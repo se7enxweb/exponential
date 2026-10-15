@@ -1121,33 +1121,62 @@ fieldset.a4-field > legend + * { clear: both; }
   font-weight: 650;
 }
 .a4-tabs .a4-count { font-variant-numeric: tabular-nums; opacity: .9; }
-/* A segmented switch (on | off, small | medium | large): the same tabs joined into one compact control, for narrow
-   places such as the side columns, as high as the other controls (--a4-control-h). A switch of buttons marks the
-   current choice with aria-pressed="true"; .is-icons makes each button a square around one .a4-icon (its name in
-   .a4-sr-only inside it, and in its title). */
-.a4-tabs.is-segmented { display: inline-flex; flex-wrap: nowrap; gap: 0; }
-.a4-tabs.is-segmented > :is(a, button, span.current, .is-current) {
+/* A segmented switch (on | off, small | medium | large): one pill as high as the other controls (--a4-control-h), for
+   narrow places such as the side columns. The track is drawn once around every choice (a 1px edge, 2px inset); each
+   choice is a pill inside it, and the current one is tinted in the accent (over the card) with an edge in the
+   accent text colour, its text in that colour too (4.8:1 light, 6.1:1 dark). A switch of buttons marks the current
+   choice with aria-pressed="true", a switch of links with span.current, a.current or .is-current (with aria-current).
+   .is-icons makes each button a round target around one .a4-icon (its name in .a4-sr-only inside it, and in its
+   title). */
+.a4-tabs.is-segmented {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  gap: 2px;
+  box-sizing: border-box;
   min-height: var(--a4-control-h);
-  padding: 0 var(--a4-space-2);
-  border-radius: 0;
+  padding: 2px;
+  border: 1px solid var(--a4-line-strong);
+  border-radius: 999px;   /* a pill, as every pill of admin4 */
+  background-color: var(--a4-soft);
+  vertical-align: middle;
+}
+.a4-tabs.is-segmented > :is(a, button, span.current, .is-current) {
+  box-sizing: border-box;
+  justify-content: center;
+  min-height: calc(var(--a4-control-h) - 6px);   /* the track's edge and inset above and below */
+  margin: 0;
+  padding: 0 var(--a4-space-3);
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background-color: transparent;
+  color: var(--a4-ink);
   font-size: var(--a4-text-xs);
+  font-weight: 400;
   white-space: nowrap;
 }
-.a4-tabs.is-segmented > :not(:first-child) { margin-left: -1px; }
-.a4-tabs.is-segmented > :first-child { border-radius: var(--a4-radius-s) 0 0 var(--a4-radius-s); }
-.a4-tabs.is-segmented > :last-child { border-radius: 0 var(--a4-radius-s) var(--a4-radius-s) 0; }
-.a4-tabs.is-segmented > :only-child { border-radius: var(--a4-radius-s); }
-.a4-tabs.is-segmented > :is(a, button):hover { position: relative; z-index: 1; }
-.a4-tabs.is-segmented > button[aria-pressed="true"],
-.a4-tabs.is-segmented > button[aria-pressed="true"]:hover {
-  border-color: var(--a4-accent-strong);
-  background-color: var(--a4-accent-strong);
-  color: var(--a4-on-accent);
+.a4-tabs.is-segmented > :is(a, button):hover {
+  border-color: var(--a4-line-strong);
+  background-color: var(--a4-card);
+  color: var(--a4-accent-text);
+}
+.a4-tabs.is-segmented > :is(span.current, a.current, .is-current, [aria-pressed="true"], [aria-current="true"], [aria-current="page"]),
+.a4-tabs.is-segmented > :is(a.current, .is-current, [aria-pressed="true"], [aria-current="true"], [aria-current="page"]):hover {
+  border-color: var(--a4-accent-text);   /* the edge keeps 3:1 on the track in light and dark mode */
+  background-color: var(--a4-card);   /* the tint over the card, not over the track: the text keeps 4.5:1 */
+  background-image: linear-gradient(var(--a4-accent-soft), var(--a4-accent-soft));
+  color: var(--a4-accent-text);
+  font-weight: 650;
+}
+.a4-tabs.is-segmented > :is(a, button):focus-visible {
+  position: relative;
+  z-index: 1;
+  outline: 3px solid var(--a4-ring);
+  outline-offset: 1px;
 }
 .a4-tabs.is-segmented.is-icons > button {
-  justify-content: center;
-  min-width: var(--a4-control-h);
-  padding: 0;
+  min-width: calc(var(--a4-control-h) + 2px);
+  padding: 0 var(--a4-space-2);
   font-size: var(--a4-text-l);
 }
 
@@ -1662,6 +1691,7 @@ a.a4-icon-btn, a.a4-icon-btn:visited { color: var(--a4-muted); }
 .a4-bi-database { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/database.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/database.svg); }
 .a4-bi-diagram-2 { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/diagram-2.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/diagram-2.svg); }
 .a4-bi-diagram-3 { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/diagram-3.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/diagram-3.svg); }
+.a4-bi-display { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/display.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/display.svg); }
 .a4-bi-download { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/download.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/download.svg); }
 .a4-bi-envelope { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/envelope.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/envelope.svg); }
 .a4-bi-envelope-paper { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/envelope-paper.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/envelope-paper.svg); }
@@ -1675,6 +1705,7 @@ a.a4-icon-btn, a.a4-icon-btn:visited { color: var(--a4-muted); }
 .a4-bi-gear { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/gear.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/gear.svg); }
 .a4-bi-git { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/git.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/git.svg); }
 .a4-bi-globe { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/globe.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/globe.svg); }
+.a4-bi-globe2 { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/globe2.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/globe2.svg); }
 .a4-bi-graph-up-arrow { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/graph-up-arrow.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/graph-up-arrow.svg); }
 .a4-bi-grip-vertical { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/grip-vertical.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/grip-vertical.svg); }
 .a4-bi-hourglass-split { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/hourglass-split.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/hourglass-split.svg); }
@@ -1683,6 +1714,7 @@ a.a4-icon-btn, a.a4-icon-btn:visited { color: var(--a4-muted); }
 .a4-bi-info-circle { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/info-circle.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/info-circle.svg); }
 .a4-bi-journal-check { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/journal-check.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/journal-check.svg); }
 .a4-bi-key { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/key.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/key.svg); }
+.a4-bi-laptop { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/laptop.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/laptop.svg); }
 .a4-bi-layout-sidebar-inset { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/layout-sidebar-inset.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/layout-sidebar-inset.svg); }
 .a4-bi-lightning { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/lightning.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/lightning.svg); }
 .a4-bi-link-45deg { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/link-45deg.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/link-45deg.svg); }
@@ -1701,7 +1733,9 @@ a.a4-icon-btn, a.a4-icon-btn:visited { color: var(--a4-muted); }
 .a4-bi-person-check { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/person-check.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/person-check.svg); }
 .a4-bi-person-circle { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/person-circle.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/person-circle.svg); }
 .a4-bi-person-lock { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/person-lock.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/person-lock.svg); }
+.a4-bi-person-slash { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/person-slash.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/person-slash.svg); }
 .a4-bi-phone { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/phone.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/phone.svg); }
+.a4-bi-phone-flip { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/phone-flip.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/phone-flip.svg); }
 .a4-bi-piggy-bank { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/piggy-bank.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/piggy-bank.svg); }
 .a4-bi-play-fill { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/play-fill.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/play-fill.svg); }
 .a4-bi-plug { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/plug.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/plug.svg); }
@@ -1711,6 +1745,7 @@ a.a4-icon-btn, a.a4-icon-btn:visited { color: var(--a4-muted); }
 .a4-bi-rss { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/rss.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/rss.svg); }
 .a4-bi-search { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/search.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/search.svg); }
 .a4-bi-shield-fill-check { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/shield-fill-check.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/shield-fill-check.svg); }
+.a4-bi-shield-lock { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/shield-lock.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/shield-lock.svg); }
 .a4-bi-signpost-split { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/signpost-split.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/signpost-split.svg); }
 .a4-bi-sliders { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/sliders.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/sliders.svg); }
 .a4-bi-speedometer { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/speedometer.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/speedometer.svg); }
@@ -1718,6 +1753,7 @@ a.a4-icon-btn, a.a4-icon-btn:visited { color: var(--a4-muted); }
 .a4-bi-stars { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/stars.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/stars.svg); }
 .a4-bi-sun { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/sun.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/sun.svg); }
 .a4-bi-table { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/table.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/table.svg); }
+.a4-bi-tablet { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/tablet.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/tablet.svg); }
 .a4-bi-terminal { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/terminal.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/terminal.svg); }
 .a4-bi-toggles { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/toggles.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/toggles.svg); }
 .a4-bi-tools { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/tools.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/tools.svg); }
@@ -1783,6 +1819,11 @@ a.a4-current-user-name { color: var(--a4-ink); font-weight: 400; text-decoration
 @media (forced-colors: active) {
   .a4-btn, .a4-input, .a4-card, .a4-badge, .a4-chip span { border: 1px solid CanvasText; }
   .a4-tabs .is-current, .a4-tabs button[aria-pressed="true"], .a4-table tr.is-selected td, .a4-card.is-selected, .a4-figure.is-current { outline: 2px solid Highlight; outline-offset: -2px; }
+  /* the segmented pill: its track in the text colour, the current choice inside it in Highlight */
+  .a4-tabs.is-segmented { border-color: CanvasText; }
+  .a4-tabs.is-segmented > :is(span.current, a.current, .is-current, [aria-pressed="true"], [aria-current="true"], [aria-current="page"]) { border-color: Highlight; background-image: none; outline: 2px solid Highlight; outline-offset: -2px; }
+  /* the focus ring stays a ring outside the choice, also on the current one (the outline above would replace it) */
+  .a4-tabs.is-segmented > :is(a, button):focus-visible { outline: 3px solid CanvasText; outline-offset: 1px; }
   .a4-chip input:checked + span { background-color: Highlight; color: HighlightText; }
   .a4-steps li.is-current::before { background-color: Highlight; color: HighlightText; }
   .a4-steps li.is-done::before { border: 1px solid CanvasText; }

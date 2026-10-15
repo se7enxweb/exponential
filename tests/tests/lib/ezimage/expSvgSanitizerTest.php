@@ -12,6 +12,10 @@
  *  SV-07 - isSVGFile() / isSVGMarkup() recognise SVG by its root element
  *  SV-08 - <image> keeps an embedded raster image only; <a> keeps http(s) and mailto links
  *  SV-09 - sanitizeFile() writes plain SVG and leaves a refused file unchanged; serving headers
+ *  SV-10 - CSS outside the innermost rule blocks (nested rules, an open last block, text before a rule) and
+ *          image functions that take a plain string are checked like any declaration
+ *  SV-11 - isSVGFile() recognises SVG behind a DOCTYPE or processing instruction with ">" and a prolog longer than 64 kB
+ *  SV-12 - labels and titles (aria-*, title, xlink:title) keep ordinary text; only a script or data URL in them goes
  *
  * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -115,6 +119,29 @@ class expSvgSanitizerTest extends PHPUnit\Framework\TestCase
             'a target with script name' => "$o<a href=\"https://example.org/\" target=\"javascript:alert(1)\">$r</a></svg>",
             'font-face src' => "$o<style>@font-face{font-family:x;src:url(https://evil.example/f.woff)} text{font-family:x}</style>$r</svg>",
             'xml:base external' => "<svg xmlns=\"http://www.w3.org/2000/svg\" xml:base=\"https://evil.example/\" viewBox=\"0 0 10 10\"><use href=\"sprite.svg#x\"/>$r</svg>",
+            'style element nested rule url' => "$o<style>rect{fill:url(https://evil.example/x.svg#p);g{fill:red}}</style>$r</svg>",
+            'style element nested rule behavior' => "$o<style>rect{behavior:url(#b);-moz-binding:url(#x);g{fill:red}}</style>$r</svg>",
+            'style element open last block' => "$o<style>g{fill:red} rect{mask:url(https://evil.example/m.svg#m)</style>$r</svg>",
+            'style element declaration before rules' => "$o<style>fill:url(https://evil.example/x.svg#p)</style>$r</svg>",
+            'style element import with block' => "$o<style>@import url(https://evil.example/x.css) screen{} rect{fill:red}</style>$r</svg>",
+            'style element image-set' => "$o<style>rect{cursor:-webkit-image-set(\"https://evil.example/c.png\" 1x),auto}</style>$r</svg>",
+            'style attribute image-set' => "$o<rect width=\"10\" height=\"10\" style=\"mask-image:image-set('https://evil.example/m.png' 1x)\"/></svg>",
+            'style attribute cross-fade' => "$o<rect width=\"10\" height=\"10\" style=\"mask-image:cross-fade('https://evil.example/m.png', '#a', 50%)\"/></svg>",
+            'presentation attribute image-set' => "$o<rect width=\"10\" height=\"10\" mask=\"image-set('https://evil.example/m.png' 1x)\"/></svg>",
+            'set mask to image-set' => "$o$r<set attributeName=\"mask\" to=\"image-set('https://evil.example/m.png' 1x)\"/></svg>",
+            'style element attr' => "$o<style>rect{mask-image:attr(id type(*))}</style><rect id=\"https://evil.example/m.png\" width=\"10\" height=\"10\"/></svg>",
+            'style element nested media image-set' => "$o<style>@media screen{@supports (fill:red){rect{fill:red;mask-image:image-set(\"https://evil.example/m.png\" 1x)}}}</style>$r</svg>",
+            'style element escaped image-set' => "$o<style>rect{mask-image:\\69mage-set('https://evil.example/m.png' 1x)}</style>$r</svg>",
+            'style element upper case image-set' => "$o<style>rect{mask-image:IMAGE-SET('https://evil.example/m.png' 1x)}</style>$r</svg>",
+            'style element webkit cross-fade' => "$o<style>rect{mask-image:-webkit-cross-fade(url(#a),url(https://evil.example/m.png),50%)}</style>$r</svg>",
+            'style element declaration after nested rule' => "$o<style>rect{g{fill:red} fill:url(https://evil.example/x.svg#p)}</style>$r</svg>",
+            'style element open block after nested rule' => "$o<style>@media screen{rect{fill:red} g{mask:url(//evil.example/m)</style>$r</svg>",
+            'style element character reference url' => "$o<style>rect{fill:url(&amp;#35;p/../../x)}</style>$r</svg>",
+            'style attribute character reference url' => "$o<rect width=\"10\" height=\"10\" style=\"fill:url(&amp;#x23;p/../x)\"/></svg>",
+            'animate values image-set' => "$o<rect width=\"10\" height=\"10\"><animate attributeName=\"mask\" values=\"none;image-set('https://evil.example/m.png' 1x)\"/></rect></svg>",
+            'a href character reference scheme' => "$o<a xlink:href=\"&amp;#x6A;avascript:alert(1)\">$r</a></svg>",
+            'title attribute javascript' => "$o<rect width=\"10\" height=\"10\" title=\"javascript:alert(1)\" aria-label=\"java&#9;script:alert(1)\"/></svg>",
+            'url with a character reference for #' =>"$o<rect width=\"10\" height=\"10\" fill=\"url(&amp;#35;p/../../x)\"/></svg>",
         );
         $out = array();
         foreach ( $c as $name => $markup )
@@ -328,6 +355,79 @@ class expSvgSanitizerTest extends PHPUnit\Framework\TestCase
                                   'X-Content-Type-Options' => 'nosniff' ), expSvgSanitizer::servingHeaders() );
     }
 
+    /** SV-10 */
+    public function testStyleSheetKeepsSafeRulesAroundWhatIsRemoved()
+    {
+        $clean = expSvgSanitizer::sanitize( self::OPEN . '<style>rect{fill:url(https://evil.example/x#p);stroke:#000;' .
+                                            'g{fill:url(#grad)}} circle{fill:red</style>' . self::RECT . '</svg>' );
+        $this->assertIsString( $clean );
+        $this->assertHarmless( $clean );
+        $this->assertStringContainsString( 'stroke:#000', $clean );
+        $this->assertStringContainsString( 'g{fill:url(#grad)}', $clean );
+        $this->assertStringContainsString( 'circle{fill:red', $clean );
+        $this->assertStringNotContainsString( 'evil.example', $clean );
+
+        // a selector's "data:" text loads nothing: the rule stays
+        $clean = expSvgSanitizer::sanitize( self::OPEN . '<style>.has-data:hover{fill:red} .userdata:first-child{fill:blue}</style>' . self::RECT . '</svg>' );
+        $this->assertStringContainsString( '.has-data:hover{fill:red}', $clean );
+        $this->assertStringContainsString( '.userdata:first-child{fill:blue}', $clean );
+        // but a prelude that loads something goes
+        $clean = expSvgSanitizer::sanitize( self::OPEN . '<style>@media url(https://evil.example/x){rect{fill:red}}</style>' . self::RECT . '</svg>' );
+        $this->assertHarmless( $clean );
+    }
+
+    /** SV-10 */
+    public function testLinkMustStartWithItsSchemeAsWritten()
+    {
+        // decoded, "&#104;ttps://" would read as https:, but a browser takes the value as written
+        $clean = expSvgSanitizer::sanitize( self::OPEN . '<a href="&amp;#104;ttps://example.org/">' . self::RECT . '</a></svg>' );
+        $this->assertIsString( $clean );
+        $this->assertStringNotContainsString( 'href=', $clean );
+    }
+
+    /** SV-12 */
+    public function testLabelsAndTitlesKeepOrdinaryText()
+    {
+        $markup = self::OPEN . '<g role="img" aria-label="Image (2) of 3: metadata: data sheet, url(cover)" title="Element (b) by attr(s)">' .
+                  '<title>Logo</title>' . self::RECT . '</g><rect width="1" height="1" aria-describedby="d" xlink:title="Source(s): image-set(x)"/></svg>';
+        $clean = expSvgSanitizer::sanitize( $markup );
+        $this->assertIsString( $clean );
+        $this->assertHarmless( $clean );
+        $this->assertStringContainsString( 'aria-label="Image (2) of 3: metadata: data sheet, url(cover)"', $clean );
+        $this->assertStringContainsString( 'title="Element (b) by attr(s)"', $clean );
+        $this->assertStringContainsString( 'aria-describedby="d"', $clean );
+        $this->assertStringContainsString( 'xlink:title="Source(s): image-set(x)"', $clean );
+        // a script or data URL in such a text still goes
+        foreach ( array( 'javascript:alert(1)', 'Data: text/html', 'x j a v a s c r i p t:1', '&#106;avascript:1' ) as $text )
+        {
+            $clean = expSvgSanitizer::sanitize( self::OPEN . '<rect width="1" height="1" aria-label="' . $text . '"/></svg>' );
+            $this->assertStringNotContainsString( 'aria-label', $clean, $text );
+        }
+    }
+
+    /** SV-11 */
+    public function testRecognisesSvgBehindAnyProlog()
+    {
+        $svg = self::OPEN . '<script>alert(1)</script>' . self::RECT . '</svg>';
+        $doctype = '<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" \'http://127.0.0.1:9/x>y.dtd\'>';
+        $pi = '<?xml version="1.0"?><?x-tool a>b ?>';
+        foreach ( array( $doctype . $svg, $pi . $svg, '<!--' . str_repeat( 'x', 70000 ) . '-->' . $svg ) as $i => $markup )
+        {
+            $this->assertTrue( expSvgSanitizer::isSVGMarkup( $markup ), "markup $i" );
+            $this->assertTrue( expSvgSanitizer::isSVGFile( $this->file( "p$i.svg", $markup ) ), "file $i" );
+            $this->assertTrue( expSvgSanitizer::isSVGFile( $this->file( "p$i.svgz", gzencode( $markup ) ) ), "gzip file $i" );
+            $clean = expSvgSanitizer::sanitize( $markup );
+            $this->assertIsString( $clean );
+            $this->assertHarmless( $clean );
+        }
+        // a long prolog does not make an HTML page an SVG
+        $this->assertFalse( expSvgSanitizer::isSVGFile( $this->file( 'long.html', '<!--' . str_repeat( 'x', 70000 ) . '--><html/>' ) ) );
+        // nor does a prolog that cannot be matched take long
+        $start = microtime( true );
+        $this->assertFalse( expSvgSanitizer::isSVGMarkup( str_repeat( '<!-- a --> <?p b?> ', 3000 ) . '<html/>' ) );
+        $this->assertLessThan( 2.0, microtime( true ) - $start );
+    }
+
     /**
      * Asserts that $clean has nothing that runs or loads anything.
      *
@@ -358,6 +458,13 @@ class expSvgSanitizerTest extends PHPUnit\Framework\TestCase
                           preg_match( '#^data:image/(?:png|jpeg|gif|webp);base64,#', $value ) && $element->localName === 'image';
                     $this->assertTrue( (bool)$ok, "href $value on {$element->localName}" );
                 }
+                else if ( strncmp( $name, 'aria-', 5 ) === 0 || $name === 'title' || $name === 'lang' || $name === 'space' )
+                {
+                    // text for people, never loaded: no script or data URL at the start of a word
+                    $text = strtolower( preg_replace( '/[\s\x00-\x1f]+/', ' ', $attribute->value ) );
+                    $this->assertDoesNotMatchRegularExpression( '/(?<![a-z0-9+.\-])(?:javascript|vbscript|livescript|data) ?:/', $text );
+                    continue;
+                }
                 else
                 {
                     $this->assertStringNotContainsString( 'data:', $value );
@@ -365,6 +472,7 @@ class expSvgSanitizerTest extends PHPUnit\Framework\TestCase
                 if ( $name === 'attributename' )
                     $this->assertNotContains( preg_replace( '/^.*:/', '', $value ), array( 'href', 'style' ) );
                 $this->assertNoExternalUrl( $value );
+                $this->assertNoImageFunction( $value );
             }
             if ( $element->localName === 'style' )
             {
@@ -374,17 +482,26 @@ class expSvgSanitizerTest extends PHPUnit\Framework\TestCase
                 $this->assertStringNotContainsString( 'javascript:', $css );
                 $this->assertStringNotContainsString( '<', $css );
                 $this->assertNoExternalUrl( $css );
+                $this->assertNoImageFunction( $css );
+                foreach ( array( 'behavior:', '-moz-binding:' ) as $property )
+                    $this->assertStringNotContainsString( $property, $css );
             }
         }
     }
 
     private function assertNoExternalUrl( $value )
     {
-        if ( preg_match_all( '/url\(([^)]*)\)/', $value, $m ) )
+        if ( preg_match_all( '/url\(([^)]*)\)?/', $value, $m ) )
         {
             foreach ( $m[1] as $target )
                 $this->assertStringStartsWith( '#', trim( $target, '\'"' ), "url($target)" );
         }
+    }
+
+    /** No CSS function that loads an image from a plain string */
+    private function assertNoImageFunction( $value )
+    {
+        $this->assertDoesNotMatchRegularExpression( '/(?:image-set|image|cross-fade|element|src|attr)\(/', $value );
     }
 
     /**
