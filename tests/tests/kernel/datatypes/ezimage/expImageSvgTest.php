@@ -10,6 +10,7 @@
  *  IS-06 - every alias of an SVG is the original file, with its width and height; nothing is converted
  *  IS-07 - the image manager never converts an SVG
  *  IS-08 - SVG names pass the name check only while SVG is accepted
+ *  IS-09 - a file that would be stored as SVG (by its name or type) without being recognised as one is not stored
  *
  * The store itself (a content object, its version and the ezimagefile rows) needs the database; it is
  * checked on a running installation through the kernel API.
@@ -218,5 +219,23 @@ class expImageSvgTest extends PHPUnit\Framework\TestCase
         $this->setting( 'SanitizeSVG', 'disabled' );
         $this->assertFalse( $check->invoke( null, 'logo.svg' ) );
         $this->assertTrue( $check->invoke( null, 'photo.jpg' ) );
+    }
+
+    /** IS-09 */
+    public function testAFileStoredAsSvgIsAlwaysTheSanitizersOutput()
+    {
+        $svgMime = eZMimeType::findByURL( 'logo.svg' );
+        $this->assertTrue( eZImageAliasHandler::isUnsanitizedSVG( $svgMime, false ) );
+        $this->assertTrue( eZImageAliasHandler::isUnsanitizedSVG( array( 'name' => 'image/svg+xml', 'suffix' => '' ), false ) );
+        $this->assertTrue( eZImageAliasHandler::isUnsanitizedSVG( array( 'name' => 'application/octet-stream', 'suffix' => 'SVGZ' ), false ) );
+        $this->assertFalse( eZImageAliasHandler::isUnsanitizedSVG( $svgMime, true ) );
+        $this->assertFalse( eZImageAliasHandler::isUnsanitizedSVG( eZMimeType::findByURL( 'photo.png' ), false ) );
+
+        // an SVG the content check does not recognise (UTF-16 here) is neither sanitized nor stored by
+        // the package import's path
+        $utf16 = $this->file( 'imported.svg', "\xFF\xFE" . mb_convert_encoding( self::HARMFUL, 'UTF-16LE', 'UTF-8' ) );
+        $this->assertFalse( expSvgSanitizer::isSVGFile( $utf16 ) );
+        $handler = new expImageSvgTestHandler( array() );
+        $this->assertFalse( $handler->initializeFromFile( $utf16, '', 'imported.svg' ) );
     }
 }
