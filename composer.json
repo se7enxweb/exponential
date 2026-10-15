@@ -87,7 +87,7 @@
         "se7enxweb/expai": "~0.0.1.3",
         "se7enxweb/expqueue": "~0.1.0",
         "se7enxweb/ngclasslist": "~1.1.3",
-        "se7enxweb/explayouts": "~1.4.28",
+        "se7enxweb/explayouts": "~1.4.29",
         "se7enxweb/explayouts-api": "~1.0.3",
         "se7enxweb/explayouts-content-browser": "~1.0.4",
         "se7enxweb/explayouts-content-browser-core": "~1.0.3",
