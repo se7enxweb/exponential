@@ -1112,7 +1112,7 @@ cb128a4645e891cd796919aad3ed36d1  design/admin4/templates/page_header.tpl
 8f4dff577f0aaa25723c579d16ddc084  design/admin4/templates/page_leftmenu.tpl
 169f988a44a2a3bfa2f9dfc53663645c  design/admin4/templates/page_login_copyright.tpl
 1a7132e097c854ce731d22d75ca6db9a  design/admin4/templates/page_mainarea.tpl
-e252b8c69a3e162ea4e6522c8ea2bbb3  design/admin4/templates/page_search.tpl
+06e40a79ce24ebbef11488cd0a000be5  design/admin4/templates/page_search.tpl
 66e06f796154b0dadcad37e545d084e5  design/admin4/templates/page_topmenu.tpl
 8aac725b06b7358a617c2fd0ff29ae91  design/admin4/templates/page_topmenuitem.tpl
 f0b52f21d5e9f1e7999667614bf82400  design/admin4/templates/page_toppath.tpl
@@ -7086,7 +7086,7 @@ a15f60da55163c3055ee1c45bfd5a806  tests/tests/design/AdminCardsTest.php
 7a6d21774343c1bfa611fd993416166c  tests/tests/design/AdminEditBarTest.php
 bb36765e9511c520d7355c5a8e4df2a2  tests/tests/design/AdminFormErrorsTest.php
 c4dbc84de70b3ac212233446d50a8b64  tests/tests/design/AdminFormLabelsTest.php
-dad24a816c626796f18c94c38158a282  tests/tests/design/AdminHeaderTest.php
+af4ee083e29821c5729a00f10818511c  tests/tests/design/AdminHeaderTest.php
 04f6c21d6c646ab0806a9f3eebe0e13c  tests/tests/design/AdminIconsTest.php
 6d1b6edb0965bdac475abd8af045e416  tests/tests/design/AdminJobTranslationsTest.php
 9395b4199e877b376e1880a1fb48e7c5  tests/tests/design/AdminKeyboardTest.php
