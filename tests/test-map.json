@@ -145,7 +145,8 @@
     ],
     "extension/ezjscore/classes/ezjscserverfunctionsajaxuploader.php": [
       "tests/tests/extension/ezjscore/ezjscServerFunctionsAjaxUploaderImageTest.php",
-      "tests/tests/extension/ezjscore/ezjscServerFunctionsAjaxUploaderAltTextTest.php"
+      "tests/tests/extension/ezjscore/ezjscServerFunctionsAjaxUploaderAltTextTest.php",
+      "tests/tests/extension/ezjscore/ezjscServerFunctionsAjaxUploaderHandlerArgumentsTest.php"
     ],
     "design/admin/templates/user/login.tpl": [
       "tests/tests/kernel/content/eZLoginTemplatesRegisterLinkTest.php"
@@ -239,7 +240,8 @@
     "design/admin4/javascript/admin4.js": [
       "tests/tests/design/AdminNoticesTest.php",
       "tests/tests/design/AdminLeftMenuGroupsTest.php",
-      "tests/tests/design/AdminPreferencesTest.php"
+      "tests/tests/design/AdminPreferencesTest.php",
+      "tests/tests/design/AdminEditBarTest.php"
     ],
     "extension/ezjscore/design/standard/javascript/*": [
       "tests/tests/extension/ezjscore/ezjscoreVendoredLibrariesTest.php"
@@ -273,6 +275,48 @@
     ],
     "extension/ezjscore/settings/site.ini.append.php": [
       "tests/tests/extension/ezjscore/ezjscoreAnonymousAccessTest.php"
+    ],
+    "design/admin/javascript/popupmenu/ezpopupmenu.js": [
+      "tests/tests/design/AdminContextMenuTest.php"
+    ],
+    "design/admin4/javascript/popupmenu/ezpopupmenu.js": [
+      "tests/tests/design/AdminContextMenuTest.php"
+    ],
+    "design/admin3/templates/content/browse_current_node.tpl": [
+      "tests/tests/design/AdminBrowseCurrentNodeTest.php"
+    ],
+    "design/admin4/templates/content/browse_current_node.tpl": [
+      "tests/tests/design/AdminBrowseCurrentNodeTest.php"
+    ],
+    "design/admin/templates/children_detailed.tpl": [
+      "tests/tests/design/AdminJobTranslationsTest.php"
+    ],
+    "design/admin4/templates/children_detailed.tpl": [
+      "tests/tests/design/AdminJobTranslationsTest.php"
+    ],
+    "design/admin/templates/contentstructuremenu/content_structure_menu_dynamic.tpl": [
+      "tests/tests/design/AdminJobTranslationsTest.php"
+    ],
+    "design/admin4/templates/contentstructuremenu/content_structure_menu_dynamic.tpl": [
+      "tests/tests/design/AdminJobTranslationsTest.php"
+    ],
+    "design/admin4/templates/content/job*.tpl": [
+      "tests/tests/design/AdminJobTranslationsTest.php"
+    ],
+    "kernel/private/classes/views/content/job.php": [
+      "tests/tests/design/AdminJobTranslationsTest.php"
+    ],
+    "design/admin4/stylesheets/admin4.css": [
+      "tests/tests/design/AdminEditBarTest.php"
+    ],
+    "extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe_tinymce8.tpl": [
+      "tests/tests/design/AdminEditBarTest.php"
+    ],
+    "extension/ezjscore/classes/ezjscpacker.php": [
+      "tests/tests/extension/ezjscore/ezjscPackerCacheBustingTest.php"
+    ],
+    "kernel/private/classes/views/content/hide.php": [
+      "tests/tests/kernel/classes/expContentHideReturnTest.php"
     ]
   },
   "generated": {
