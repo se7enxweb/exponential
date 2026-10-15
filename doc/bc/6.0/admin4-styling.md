@@ -222,8 +222,13 @@ Example, a list page:
 ## Window widths
 
 admin4 is checked at 390, 820, 1180, 1440, 1920 and 2560 px (`AdminResponsiveTest`). Below 576px the top menu is a
-hamburger panel in `--a4-card` that scrolls on its own, with the side columns' tabs hidden while it is open, and the
-header is one row of 56px. From 576px the header has two rows (48px for the logo and the tools, 40px for the menu),
+hamburger panel in `--a4-card` under the header's row, at most `100dvh` less the header (`100vh` as the fallback),
+the only scroller (`overscroll-behavior: contain`) while the page behind it is locked; the side columns' tabs are
+hidden while it is open, and the header is one row of 56px. Inside: the search first, the tabs as a grid of tiles
+(at least 44px each), the user's row, a Close button. Tab stays in the header while it is open; Escape, Close, a tap
+outside and a window widened past 575px close it (`AdminPhoneMenuTest`). The site menu's panel (`.a4-site-menu`)
+opens under the globe on `--a4-z-popover`; on a phone it is fixed under the header on `--a4-z-menu`, the window's
+width less the gutters. From 576px the header has two rows (48px for the logo and the tools, 40px for the menu),
 from 1280px one row of 56px (logo, menu, search, light/dark, user menu, logout); at every width from 576px the menu
 stays on one line, and the tabs that do not fit go into its "More" disclosure (`admin4.js`; without the script the row
 scrolls sideways). Logout is an icon button beside the user menu (`parts/a4_header_user.tpl`), and "/" puts the focus

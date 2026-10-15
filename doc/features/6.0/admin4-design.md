@@ -80,7 +80,7 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
   inside): the search first, the tabs as a grid of 44 px tiles (three to a row at 390 px, two at 320 px), the user's
   actions (name, Change information, Change password, My e-mail preferences, Logout) as a row of their own, and a
   Close button at the end; Tab stays in the header while it is open, Escape, Close and a tap outside close it
-  (`AdminPhoneMenuTest`). "Open the
+  (`AdminPhoneMenuTest`). admin4l's tab menu block ends with the same Close button. "Open the
   site" is the first of the tools, a round icon button like the others; logout is an icon button ("Logout
   (admin)"); the user menu holds the user's name and links, and the name leads to the user's own object when the
   user may read it (not on edit and browse pages). The Tab key reaches the tools in the order they are
@@ -155,8 +155,9 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
   with its text. The same in admin4l (the logo block). See [Settings](#settings).
   `tests/tests/design/AdminEnvironmentBadgeTest.php` checks it.
 - **Site menu.** On by default. The globe in the header, which opens the site, is a button for signed-in users:
-  its list opens the site first, highlighted, then the installation's other siteaccesses, grouped into Sites and
-  Administration, each with its name (`SiteName`, else the identifier), identifier, locale and address; the
+  its list opens the site first, highlighted, then the installation's other sites the signed-in user may log in to
+  (`user/login` with its SiteAccess limitation; the administrations as a group of their own only with
+  `ListAdministrations=enabled`), each with its name (`SiteName`, else the identifier), identifier, locale and address; the
   siteaccess in use is marked (`aria-current`). The addresses are worked out as the globe's own
   (`ezpSiteAccessURL::root()`: MatchOrder, URIMatchType, HostMatchMapItems, SiteURL, the scheme, host and port of
   the request) and open in the same window. A disclosure as the user menu: ArrowDown opens it and goes to the first
@@ -901,11 +902,14 @@ Community". A template can also set `$show_community_links`.
   listed; an installation that serves several sites with separate databases sets `RelatedSiteAccessList[]` for each
   administration, so that it lists its own site only. `HiddenSiteAccessList[]` leaves siteaccesses out (the site the
   globe opens stays the first entry). `AdminSiteAccessList[]` names the administrations; empty,
-  a siteaccess whose `SiteDesign` begins with `admin` or that sets `FrontSiteAccess` is one. The header's cache-blocks
-  are keyed by `siteaccess_menu_key()` (the list and the request), so a changed list shows on the next request; a
+  a siteaccess whose `SiteDesign` begins with `admin` or that sets `FrontSiteAccess` is one. `ListAdministrations`
+  (`disabled` by default) lists them as a group of their own when `enabled`. Besides the site the globe opens, only
+  the siteaccesses the signed-in user may log in to are listed (`eZUser::canLoginToSiteAccess()`, as the login
+  checks it). The header's cache-blocks are keyed by `siteaccess_menu_key()` (the list, `ListAdministrations` and
+  the request) and the user's role hash, so a changed list shows on the next request; a
   changed `SiteName`, `Locale` or `SiteDesign` of a listed siteaccess shows once the template caches of the
   administration siteaccess are cleared.
-  The template operators are `siteaccess_menu()` and `siteaccess_menu_key()`.
+  The template operators are `siteaccess_menu( $current_user )` and `siteaccess_menu_key()`.
 - `[AdminEnvironment]`: the environment badge (see "Environment badge" above). `Level` is `development`, `test`,
   `staging` or `production`, or `auto` for the level of `EXP_ENV` (`dev`, `development`; `test`; `stage`, `staging`;
   `prod`, `production`, `live`; another name or none: no badge). An empty `Name` takes the level's translated name.

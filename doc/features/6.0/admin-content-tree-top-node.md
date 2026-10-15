@@ -69,6 +69,8 @@ Cronjobs, Seiten vorladen, oAuth-Verwaltung).
   `https://` plus the host with `edit.` cut out, so it named neither the siteaccess nor the port (an installation
   served on 443 and 8080 always led to 443). The template operator is `siteaccess_url()`. The two admin3 header cache
   blocks carry the address in their keys, so a header rendered on one port is never served on the other.
+  In admin4 and admin4l the globe also lists the other sites the user may log in to (`site.ini [AdminSiteAccessMenu]`,
+  administrations only with `ListAdministrations=enabled`; see [admin4](admin4-design.md#settings)).
 - **Logo.** The logo links to the content root, `content.ini [NodeSettings] RootNode`, through `ezurl`. On an admin
   matched by URI it stays in the admin (`/admin/content/view/full/2`); on a host-matched admin it is
   `/content/view/full/2`.
