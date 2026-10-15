@@ -11,7 +11,7 @@
    does not exist, and its button posts to the outer action instead. So the
    button builds a form of its own and submits that, carrying the ticked node
    ids and the request token. *}
-<table class="list" cellspacing="0">
+<table class="list a4-search-results" cellspacing="0">
 <tr>
     <th scope="col" class="tight"><input aria-label="{'Select every result on this page.'|i18n( 'design/admin/content/search' )|wash}" type="checkbox" id="ezsearch-select-all" title="{'Select every result on this page.'|i18n( 'design/admin/content/search' )|wash}" /></th>
     <th scope="col">{'Name'|i18n( 'design/admin/content/search' )}</th>

@@ -1032,6 +1032,7 @@ div.context-information.a4-node-meta {
   grid-template-columns: minmax(0, 1fr) auto auto;
   grid-template-rows: auto minmax(0, 1fr);
 }
+#window-controls.a4-node-tabs > * { min-width: 0; }   /* a wide table in a tab scrolls inside it, never widens the box */
 #window-controls.a4-node-tabs > ul.tabs { grid-column: 1; grid-row: 1; }
 #window-controls.a4-node-tabs > .button-left { grid-column: 2; grid-row: 1; align-self: start; }
 #window-controls.a4-node-tabs > .a4-tabs-switch-label { grid-column: 3; grid-row: 1; align-self: start; }
@@ -2015,4 +2016,108 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
   .dashboard-flex { padding-top: 0; }
   .content-wrapper { min-width: 0 !important; padding: 0; border-image-source: none; }
   *, *::before, *::after { box-shadow: none !important; text-shadow: none !important; }
+}
+
+/* ---- Viewports: phone (390px), tablet (820px), small desktop (1180px), wide (2560px) ------------------------------- */
+
+/* The phone menu: an opaque panel (the header's translucent colour let the page shine through), scrolling on its own,
+   and the side columns' tabs out of the way while it is open (they stood over the menu). */
+@media screen and (max-width: 575.98px) {
+  .navbar-menu.show {
+    background-color: var(--a4-card);
+    overflow-y: auto;
+    box-shadow: var(--a4-shadow-m);
+  }
+  body.navbar-open .sidebar-controls,
+  body:has(.navbar-menu.show) .sidebar-controls { visibility: hidden; }
+}
+
+/* Tablet and small desktop: the top menu on one line that scrolls sideways instead of two or three lines that made
+   the header a fifth of the window's height. */
+@media screen and (min-width: 576px) and (max-width: 1279.98px) {
+  .navbar-bar {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: thin;
+  }
+}
+
+/* Below 1280px only the left column takes room beside the content; the right one opens over it as a drawer (with
+   both inline, 1180px left the content 652px and the sub-items table scrolled). */
+@media screen and (min-width: 1024px) and (max-width: 1279.98px) {
+  html body:has(.sidebar.right.show) { margin-right: 0; }
+  .sidebar.right.show #rightmenu-design { box-shadow: 0 0 0 1px var(--a4-card-edge), var(--a4-shadow-m); }
+}
+
+/* An open left drawer (below 1024px) keeps its tab at its right edge instead of over the tree */
+@media screen and (max-width: 1023.98px) {
+  body:has(#leftmenu.sidebar.show) .sidebar-control.left {
+    translate: min(var(--left-sidebar-width, 16rem), calc(100vw - var(--a4-space-7))) 0;
+  }
+}
+
+/* A very wide window: the content column stops growing, so a page's actions stay near what they act on */
+#maincolumn > #maincontent {
+  max-width: var(--a4-content-max);
+  margin-inline: auto;
+}
+
+/* The node's tabs on a phone: the tabs on their own row, scrolling sideways, the tabs switch under them; a wide
+   table in a tab scrolls sideways inside it instead of being cut off */
+#window-controls.a4-node-tabs > .tabs-content > .tab-content { overflow-x: auto; }
+@media screen and (max-width: 575.98px) {
+  #window-controls.a4-node-tabs { grid-template-rows: auto auto minmax(0, 1fr); }
+  #window-controls.a4-node-tabs > ul.tabs {
+    grid-column: 1 / -1;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+  #window-controls.a4-node-tabs > ul.tabs li { flex: 0 0 auto; }
+  #window-controls.a4-node-tabs > :is(.button-left, .a4-tabs-switch-label) {
+    grid-row: 2;
+    align-self: center;
+    height: auto;
+    margin: 0 0 var(--a4-space-2) var(--a4-space-2);
+  }
+  #window-controls.a4-node-tabs > .tabs-content { grid-row: 3; }
+}
+
+/* A sub-item's class icon and name stay together; the name wraps on its own */
+.a4-subitem-name {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--a4-space-1);
+  max-width: 100%;
+}
+.a4-subitem-name > a:first-child { flex: none; }
+.a4-subitem-name > a:last-child { min-width: 0; overflow-wrap: break-word; }
+
+/* The sub-items toolbar wraps with an even gap instead of each button's left margin */
+html #action-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--a4-space-2);
+}
+html #action-controls .exp-dt-action,
+html #action-controls .exp-dt-action-group:first-child .exp-dt-action { margin-left: 0; }
+
+/* On a phone a long search result name breaks rather than widening the result table past the screen */
+@media screen and (max-width: 575.98px) {
+  table.a4-search-results td a { overflow-wrap: anywhere; }
+}
+
+/* The header search in dark mode: no square frame around the round field and button */
+#header .searchtextwrapper { border: 0; border-radius: 999px; background-color: transparent; }
+#header .searchblock .searchbuttonfield { border-radius: 999px; }
+
+/* Touch screens: the small controls get a 24px target (WCAG 2.5.8) */
+@media (pointer: coarse) {
+  div#contentstructure ul#content_tree_menu a.nodeicon { display: inline-flex; min-width: var(--a4-space-5); min-height: var(--a4-space-5); align-items: center; justify-content: center; }
+  #header .searchblock .searchscope,
+  #searchscope-mobile { width: var(--a4-space-5); height: var(--a4-space-5); margin-top: calc(-0.5 * var(--a4-space-5)); }
+  .a4-node-meta button.a4-copy { min-height: var(--a4-space-5); }
+  :is(#leftmenu, #rightmenu) input:is([type=checkbox], [type=radio]) { width: calc(var(--a4-space-4) + var(--a4-space-1)); height: calc(var(--a4-space-4) + var(--a4-space-1)); }
 }

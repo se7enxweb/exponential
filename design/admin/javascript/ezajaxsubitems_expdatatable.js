@@ -122,8 +122,10 @@ var eZAjaxSubitemsExpDataTable = (function () {
 
         // ---- cell formatters ----------------------------------------------------
         var formatName = function (row) {
-            return '<a href="' + row.url + '" title="' + row.name + '">' + row.class_icon + '</a>' + '&nbsp;' +
-                   '<a href="' + row.url + '" title="' + row.name + '">' + row.name + '</a>';
+            // one box for icon and name (admin4.css .a4-subitem-name): a narrow column wraps the name, never
+            // between the icon and the name
+            return '<span class="a4-subitem-name"><a href="' + row.url + '" title="' + row.name + '">' + row.class_icon + '</a>' +
+                   '<a href="' + row.url + '" title="' + row.name + '">' + row.name + '</a></span>';
         };
         var customMenu = function (row) {
             var createhereMenu = (confObj.classesString != '') ? -1 : "'child-menu-create-here'";

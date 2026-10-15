@@ -107,6 +107,8 @@
   --a4-leading-tight: 1.25;
   /* one height for the buttons, selects and pager buttons that stand in a row (node actions, sub-items toolbar) */
   --a4-control-h: 32px;
+  /* the widest the content column grows on a very wide window, so its actions stay near what they act on */
+  --a4-content-max: 1680px;
   /* Stacking layers (z-index). One scale for the whole administration, lowest first; use the token, never a number
      (0, 1 and -1 for order inside one component excepted). Inside a positioned parent with its own stacking context
      (the header, a card) a token only orders against that parent's other children.
@@ -664,6 +666,7 @@ html[data-a4-theme="dark"] {
   text-transform: uppercase;
 }
 .a4-facts dd { margin: 2px 0 0; overflow-wrap: anywhere; }
+.a4-facts dd > .a4-meta { display: block; }   /* a note under the value, not glued to it ("15:13Class ...") */
 .a4-facts.is-rows { grid-template-columns: minmax(120px, max-content) minmax(0, 1fr); gap: var(--a4-space-2) var(--a4-space-4); }
 .a4-facts.is-rows dd { margin: 0; }
 

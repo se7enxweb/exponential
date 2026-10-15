@@ -254,9 +254,8 @@ class AdminLegacyControlsTest extends PHPUnit\Framework\TestCase
     public function testTheNodeTabBoxFillsItsHeightAndClearsTheGrip()
     {
         $rules = AdminBaseStylesheetsTest::rules( self::css( 'admin4.css' ) );
-        $box = $rules['#window-controls.a4-node-tabs'];
-        $this->assertSame( 'grid', $box['display'] );
-        $this->assertSame( 'auto minmax(0, 1fr)', $box['grid-template-rows'], 'the tab row, then the panel in what is left' );
+        $this->assertStringContainsString( "#window-controls.a4-node-tabs {\n  display: grid;\n  grid-template-columns: minmax(0, 1fr) auto auto;\n  grid-template-rows: auto minmax(0, 1fr);\n}",
+            self::css( 'admin4.css' ), 'the tab row, then the panel in what is left' );
         $panel = $rules['#window-controls.a4-node-tabs > .tabs-content'];
         $this->assertSame( 'auto', $panel['height'], 'not the base\'s 100% - 2.5em' );
         $this->assertSame( '0', $panel['min-height'] );

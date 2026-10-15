@@ -91,6 +91,7 @@ All `var(--a4-...)`, defined in `components.css`.
 | Radius | `--a4-radius-s` (9 px): the one component radius. `--a4-radius` (18 px) is the frame's three columns only |
 | Spacing | `--a4-space-1` to `--a4-space-7` (4, 8, 12, 16, 24, 32, 48 px); a length between two steps takes the nearer one (3 and 5 → 4, 6 to 9 → 8, 10 to 14 → 12, 15 to 20 → 16, 22 to 28 → 24) |
 | Controls | `--a4-control-h` (32 px): one height for the buttons, selects and pager buttons that stand in a row (the node's actions, the sub-items toolbar and pagers) |
+| Layout | `--a4-content-max` (1680 px): the widest the content column grows on a very wide window, so a page's actions stay near what they act on |
 | Density | `--a4-list-pad` (`.4em`, the cells of `table.list`), `--a4-cell-pad-y`/`-x` (8/12 px, `.a4-table`), `--a4-card-pad-y`/`-x` (12/16 px, `.a4-card`). `html[data-a4-density="compact"]` (the header's density switch) sets only these and `--a4-control-h` anew: `.25em`, 4/8 px, 8/12 px, 28 px. Compact therefore tightens `table.list` cells, `.a4-table`, `.a4-card` and the controls in a row; it does not touch `table.special`, the header row height of content.css or the content tree. A component that should follow the density reads these tokens; nothing else may change with it, and every target keeps 24 px (`AdminDensityTest`). The content tree keeps its row pitch. |
 | Type | `--a4-font`, `--a4-mono`, `--a4-text-xs`, `-s`, `-m`, `-l`, `-xl`, `-2xl`, `-3xl` (12, 13, 14, 16, 22, 26, 32 px; nothing below 12), `--a4-leading` (1.5, every block that can wrap), `--a4-leading-tight` (1.25, headings only) |
 
@@ -217,6 +218,16 @@ Example, a list page:
   <p class="a4-empty">No roles match.</p>
 </div>
 ```
+
+## Window widths
+
+admin4 is checked at 390, 820, 1180, 1440, 1920 and 2560 px (`AdminResponsiveTest`). Below 576px the top menu is a
+hamburger panel in `--a4-card` that scrolls on its own, with the side columns' tabs hidden while it is open; from
+576px to 1279px it stays on one line and scrolls sideways. From 1024px the left column takes room beside the
+content, the right one only from 1280px (below that it opens over the content as a drawer). The content column stops
+at `--a4-content-max`. On a phone the node's tabs take their own row and scroll, the tabs switch stands under them,
+and a wide table in a tab scrolls inside it. On touch screens (`pointer: coarse`) the small controls of the frame
+(the tree's node icons, the search scope, the copy buttons, the side columns' checkboxes) get a 24px target.
 
 ## Legacy controls and the side columns
 
