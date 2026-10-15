@@ -1307,6 +1307,18 @@ class eZOEInputParser extends eZXMLInputParser
             }
             else
             {
+                // A link that runs a script when it is followed, checked on the whole address as a browser reads it
+                // (before the # split: "&#106;avascript:" holds a #)
+                if ( self::isScriptURL( $href ) )
+                {
+                    $this->IsInputValid = false;
+                    $this->Messages[] = ezpI18n::tr( 'design/standard/ezoe/handler',
+                                                     "Using scripts in links is not allowed, '%1' has been removed",
+                                                     false, array( $href ) );
+                    $element->removeAttribute( 'href' );
+                    return $ret;
+                }
+
                 $temp = explode( '#', $href );
                 $url = $temp[0];
                 if ( isset( $temp[1] ) )
@@ -1316,31 +1328,17 @@ class eZOEInputParser extends eZXMLInputParser
 
                 if ( $url )
                 {
-                    // Protection from XSS attack
-                    if ( preg_match( "/^(java|vb)script:.*/i" , $url ) )
+                    // Every address of a mailto: link must be valid (RFC 5322 and 5321, internationalized domains too)
+                    $invalidAddress = self::invalidMailtoAddress( $url );
+                    if ( $invalidAddress !== null )
                     {
                         $this->IsInputValid = false;
-                        $this->Messages[] = ezpI18n::tr( 'design/standard/ezoe/handler',
-                                                         "Using scripts in links is not allowed, '%1' has been removed",
-                                                         false, array( $url ) );
+                        $this->Messages[] = ezpI18n::tr( 'kernel/classes/datatypes/ezxmltext',
+                                                         "Invalid e-mail address: '%1'",
+                                                         false,
+                                                         array( $invalidAddress ) );
                         $element->removeAttribute( 'href' );
                         return $ret;
-                    }
-
-                    // Check mail address validity following RFC 5322 and RFC 5321
-                    if ( preg_match( "/^mailto:([^.][a-z0-9!#\$%&'*+-\/=?`{|}~^]+@([a-z0-9.-]+))/i" , $url, $mailAddr ) )
-                    {
-                        if ( !eZMail::validate( $mailAddr[1] ) )
-                        {
-                            $this->IsInputValid = false;
-                            $this->Messages[] = ezpI18n::tr( 'kernel/classes/datatypes/ezxmltext',
-                                                             "Invalid e-mail address: '%1'",
-                                                             false,
-                                                             array( $mailAddr[1] ) );
-                            $element->removeAttribute( 'href' );
-                            return $ret;
-                        }
-
                     }
                     // Store urlID instead of href
                     $url   = str_replace(array('&amp;', '%28', '%29'), array('&', '(', ')'), $url );
@@ -1552,6 +1550,116 @@ class eZOEInputParser extends eZXMLInputParser
                 }
             }
         }
+    }
+
+    /**
+     * Whether a link address runs a script, or shows a page of its own making, when it is followed: javascript:,
+     * vbscript:, livescript:, and data: with anything but a plain image type (data:text/html, data:image/svg+xml ...).
+     * The address is read as a browser reads it: character references decoded (numeric ones with or without the
+     * closing semicolon, HTML5 names such as &colon; and &Tab;, also when nested), tab, line feed and carriage return
+     * dropped wherever they are, and control characters and spaces dropped at the start, the scheme compared in any
+     * case. A scheme only counts at the start: https://example.com/javascript:x, /javascript-guide and javascript.html
+     * are ordinary links.
+     *
+     * @param string $url
+     * @return bool
+     */
+    public static function isScriptURL( $url )
+    {
+        $value = (string)$url;
+        for ( $round = 0; $round < 5; ++$round )
+        {
+            $decoded = preg_replace_callback( '/&#(?:[xX]([0-9a-fA-F]+)|([0-9]+));?/', function ( $m )
+            {
+                $code = $m[1] !== '' ? hexdec( $m[1] ) : (int)$m[2];
+                return ( $code > 0 && $code < 0x110000 ) ? (string)mb_chr( (int)$code, 'UTF-8' ) : '';
+            }, $value );
+            $decoded = html_entity_decode( (string)$decoded, ENT_QUOTES | ENT_HTML5, 'UTF-8' );
+            if ( $decoded === $value )
+            {
+                break;
+            }
+            $value = $decoded;
+        }
+        $value = str_replace( array( "\t", "\n", "\r" ), '', $value );
+        $value = strtolower( ltrim( $value, "\x00..\x20" ) );
+        if ( !preg_match( '/^([a-z][a-z0-9+.\-]*):/', $value, $scheme ) )
+        {
+            return false;
+        }
+        if ( in_array( $scheme[1], array( 'javascript', 'vbscript', 'livescript' ), true ) )
+        {
+            return true;
+        }
+        return $scheme[1] === 'data' && !preg_match( '#^data:image/(png|gif|jpe?g|webp|avif|bmp)[;,]#', $value );
+    }
+
+    /**
+     * The first invalid address of a mailto: link, or null when it is no mailto: link or every address in it is valid.
+     * The addresses are the part before "?", percent-decoded, separated by commas (RFC 6068); a link without an
+     * address (mailto:?to=...) has none to check.
+     *
+     * @param string $url
+     * @return string|null
+     */
+    public static function invalidMailtoAddress( $url )
+    {
+        if ( !preg_match( '/^mailto:([^?]*)/i', (string)$url, $match ) )
+        {
+            return null;
+        }
+        foreach ( explode( ',', rawurldecode( $match[1] ) ) as $address )
+        {
+            $address = trim( $address );
+            if ( $address !== '' && !self::isValidMailAddress( $address ) )
+            {
+                return $address;
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Whether $address is a valid e-mail address: eZMail::validate(), with an internationalized domain (bücher.de,
+     * пример.рф) taken as its ASCII form (IDNA 2008, UTS #46), whose top level domain may be an xn-- label.
+     *
+     * @param string $address
+     * @return bool
+     */
+    public static function isValidMailAddress( $address )
+    {
+        $address = (string)$address;
+        if ( eZMail::validate( $address ) )
+        {
+            return true;
+        }
+        $at = strrpos( $address, '@' );
+        if ( $at === false || $at === 0 )
+        {
+            return false;
+        }
+        $local = substr( $address, 0, $at );
+        $domain = substr( $address, $at + 1 );
+        if ( preg_match( '/[^\x00-\x7F]/', $domain ) )
+        {
+            if ( !function_exists( 'idn_to_ascii' ) )
+            {
+                return false;
+            }
+            $domain = idn_to_ascii( $domain, IDNA_NONTRANSITIONAL_TO_ASCII, INTL_IDNA_VARIANT_UTS46 );
+            if ( !is_string( $domain ) || $domain === '' )
+            {
+                return false;
+            }
+        }
+        if ( eZMail::validate( $local . '@' . $domain ) )
+        {
+            return true;
+        }
+        // eZMail wants a top level domain of letters; an internationalized one is an xn-- label
+        $atext = "[A-Za-z0-9!#\$%&'*+\\/=?^_`{|}~-]+";
+        return preg_match( '/^' . $atext . '(\.' . $atext . ')*$/D', $local )
+            && preg_match( '/^([a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?\.)+xn--[a-z0-9-]{1,59}$/Di', $domain );
     }
 
     /**
