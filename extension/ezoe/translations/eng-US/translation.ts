@@ -1411,6 +1411,10 @@ Do you want more information about this issue?</translation>
         <source>Restoring the target from the trash does not repair the link, because the restored object gets a new location: set the link again afterwards, or link to the object instead of its location.</source>
         <translation>Restoring the target from the trash does not repair the link, because the restored object gets a new location: set the link again afterwards, or link to the object instead of its location.</translation>
     </message>
+    <message>
+        <source>Using scripts in links is not allowed, '%1' has been removed</source>
+        <translation>Using scripts in links is not allowed, '%1' has been removed</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/ezoe/help</name>

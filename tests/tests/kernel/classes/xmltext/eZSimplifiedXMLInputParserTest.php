@@ -81,26 +81,26 @@ class eZSimplifiedXMLInputParserTest extends eZXMLTextTestCase
     public static function errorProvider()
     {
         return array(
-            'unknown tag' => array( '<unknown>x</unknown>', '<paragraph>x</paragraph>', 'Unknown tag: &lt;unknown&gt;.' ),
-            'h7' => array( '<h7>bad</h7>', '<paragraph>bad</paragraph>', 'Unknown tag: &lt;h7&gt;.' ),
-            'stray closing tag' => array( 'text</b>', '<paragraph>text</paragraph>', 'Wrong closing tag : &lt;/b&gt;.' ),
+            'unknown tag' => array( '<unknown>x</unknown>', '<paragraph>x</paragraph>', 'Unknown tag: <unknown>.' ),
+            'h7' => array( '<h7>bad</h7>', '<paragraph>bad</paragraph>', 'Unknown tag: <h7>.' ),
+            'stray closing tag' => array( 'text</b>', '<paragraph>text</paragraph>', 'Wrong closing tag : </b>.' ),
             'unfinished closing tag' => array( 'a</b', '<paragraph>a/b</paragraph>', 'Wrong closing tag' ),
             'unfinished opening tag' => array( 'a<b', '<paragraph>ab</paragraph>', 'Wrong opening tag' ),
-            'class not allowed' => array( '<p class="nonexistent">x</p>', '<paragraph>x</paragraph>', "Class 'nonexistent' is not allowed for element &lt;paragraph&gt; (check content.ini)." ),
-            'attribute not allowed' => array( '<p title="x">x</p>', '<paragraph>x</paragraph>', "Attribute 'title' is not allowed in &lt;paragraph&gt; element." ),
-            'namespaced attribute not allowed' => array( '<p xhtml:foo="1">x</p>', '<paragraph>x</paragraph>', "Attribute 'xhtml:foo' is not allowed in &lt;paragraph&gt; element." ),
-            'empty paragraph' => array( '<p></p>', '', "&lt;paragraph&gt; tag can't be empty." ),
-            'empty bold' => array( '<b></b>', '', "&lt;strong&gt; tag can't be empty." ),
-            'empty table' => array( '<table></table>', '', "&lt;table&gt; tag can't be empty." ),
-            'cell outside a table' => array( '<td>bare cell</td>', '<paragraph>bare cell</paragraph>', '&lt;td&gt; is not allowed to be a child of &lt;section&gt;.' ),
-            'list item outside a list' => array( '<li>bare li</li>', '<paragraph>bare li</paragraph>', '&lt;li&gt; is not allowed to be a child of &lt;section&gt;.' ),
+            'class not allowed' => array( '<p class="nonexistent">x</p>', '<paragraph>x</paragraph>', "Class 'nonexistent' is not allowed for element <paragraph> (check content.ini)." ),
+            'attribute not allowed' => array( '<p title="x">x</p>', '<paragraph>x</paragraph>', "Attribute 'title' is not allowed in <paragraph> element." ),
+            'namespaced attribute not allowed' => array( '<p xhtml:foo="1">x</p>', '<paragraph>x</paragraph>', "Attribute 'xhtml:foo' is not allowed in <paragraph> element." ),
+            'empty paragraph' => array( '<p></p>', '', "<paragraph> tag can't be empty." ),
+            'empty bold' => array( '<b></b>', '', "<strong> tag can't be empty." ),
+            'empty table' => array( '<table></table>', '', "<table> tag can't be empty." ),
+            'cell outside a table' => array( '<td>bare cell</td>', '<paragraph>bare cell</paragraph>', '<td> is not allowed to be a child of <section>.' ),
+            'list item outside a list' => array( '<li>bare li</li>', '<paragraph>bare li</paragraph>', '<li> is not allowed to be a child of <section>.' ),
             'unknown custom tag' => array( '<custom name="nosuchtag">x</custom>', '', "Custom tag 'nosuchtag' is not allowed." ),
             'custom tag without a name' => array( '<custom>noname</custom>', '', "Custom tag '' is not allowed." ),
             'script link' => array( '<a href="javascript:alert(1)">x</a>', '<paragraph><link>x</link></paragraph>', "Using scripts in links is not allowed, link 'javascript:alert(1)' has been removed" ),
             'script link with spaces and capitals' => array( '<a href="  JavaScript:alert(1)">x</a>', '<paragraph><link>x</link></paragraph>', "Using scripts in links is not allowed, link 'JavaScript:alert(1)' has been removed" ),
             'data link' => array( '<a href="data:text/html;base64,PHNjcmlwdD4=">x</a>', '<paragraph><link>x</link></paragraph>', "Using scripts in links is not allowed, link 'data:text/html;base64,PHNjcmlwdD4=' has been removed" ),
             'self embed' => array( '<embed href="ezobject://5" />', '<paragraph><embed/></paragraph>', 'Object 5 can not be embeded to itself.' ),
-            'literal class not allowed' => array( '<literal class="php">x</literal>', '<paragraph><literal>x</literal></paragraph>', "Class 'php' is not allowed for element &lt;literal&gt; (check content.ini)." ),
+            'literal class not allowed' => array( '<literal class="php">x</literal>', '<paragraph><literal>x</literal></paragraph>', "Class 'php' is not allowed for element <literal> (check content.ini)." ),
         );
     }
 
@@ -137,7 +137,7 @@ class eZSimplifiedXMLInputParserTest extends eZXMLTextTestCase
     {
         list( $xml, $messages, $valid ) = $this->parse( '<custom name="strike" color="red">s</custom>' );
         $this->assertSame( '<paragraph><custom name="strike">s</custom></paragraph>', $xml );
-        $this->assertSame( array( "Attribute 'custom:color' is not allowed in &lt;custom&gt; element." ), $messages );
+        $this->assertSame( array( "Attribute 'custom:color' is not allowed in <custom> element." ), $messages );
         $this->assertFalse( $valid );
     }
 
@@ -205,7 +205,7 @@ class eZSimplifiedXMLInputParserTest extends eZXMLTextTestCase
     {
         list( $xml, $messages, $valid ) = $this->parse( '<a title="t">l</a><embed size="small" />' );
         $this->assertSame( '<paragraph><link xhtml:title="t">l</link><embed size="small"/></paragraph>', $xml );
-        $this->assertSame( array( "Required attribute 'href' is not presented in tag &lt;link&gt;.", "Required attribute 'href' is not presented in tag &lt;embed&gt;." ), $messages );
+        $this->assertSame( array( "Required attribute 'href' is not presented in tag <link>.", "Required attribute 'href' is not presented in tag <embed>." ), $messages );
         $this->assertFalse( $valid );
     }
 
@@ -231,7 +231,7 @@ class eZSimplifiedXMLInputParserTest extends eZXMLTextTestCase
     {
         list( $xml, $messages ) = $this->parse( '<embed href="ezobject://7" foo="bar" />' );
         $this->assertSame( '<paragraph><embed object_id="7"/></paragraph>', $xml );
-        $this->assertSame( array( "Attribute 'custom:foo' is not allowed in &lt;embed&gt; element." ), $messages );
+        $this->assertSame( array( "Attribute 'custom:foo' is not allowed in <embed> element." ), $messages );
     }
 
     public function testEmbedWithAnUnsupportedReferenceIsAnError()
@@ -241,7 +241,7 @@ class eZSimplifiedXMLInputParserTest extends eZXMLTextTestCase
             $parser = $this->parser();
             list( $xml, $messages, $valid ) = $this->parse( '<embed href="' . $href . '" />', $parser );
             $this->assertSame( '<paragraph><embed/></paragraph>', $xml, $href );
-            $this->assertSame( array( "Invalid reference in &lt;embed&gt; tag. Note that <embed> tag supports only 'eznode' and 'ezobject' protocols." ), $messages );
+            $this->assertSame( array( "Invalid reference in <embed> tag. Note that <embed> tag supports only 'eznode' and 'ezobject' protocols." ), $messages );
             $this->assertFalse( $valid, "$href is reported as invalid input" );
             $this->assertSame( array(), $parser->getRelatedObjectIDArray() );
         }

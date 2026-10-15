@@ -1320,7 +1320,9 @@ class eZOEInputParser extends eZXMLInputParser
                     if ( preg_match( "/^(java|vb)script:.*/i" , $url ) )
                     {
                         $this->IsInputValid = false;
-                        $this->Messages[] = "Using scripts in links is not allowed, '" . self::messageText( $url ) . "' has been removed";
+                        $this->Messages[] = ezpI18n::tr( 'design/standard/ezoe/handler',
+                                                         "Using scripts in links is not allowed, '%1' has been removed",
+                                                         false, array( $url ) );
                         $element->removeAttribute( 'href' );
                         return $ret;
                     }
@@ -1604,19 +1606,6 @@ class eZOEInputParser extends eZXMLInputParser
     }
 
     /**
-     * A value from the editor for a message of the validation log. The log is printed as it is by design/admin and
-     * design/standard, and design/admin4 turns &lt; and &gt; back before it washes the message, so < and > are escaped
-     * and nothing else: safe in all three, readable in admin4.
-     *
-     * @param string $value
-     * @return string
-     */
-    public static function messageText( $value )
-    {
-        return str_replace( array( '<', '>' ), array( '&lt;', '&gt;' ), (string)$value );
-    }
-
-    /**
      * The message for a link whose target is gone: what the target was, where it was, since when it is in the trash
      * and how to repair the link, instead of "Target node does not exist".
      *
@@ -1630,8 +1619,9 @@ class eZOEInputParser extends eZXMLInputParser
      */
     public static function deadLinkMessage( $label, $href, $trashed, $byLocationID = false )
     {
-        $label = self::messageText( $label );
-        $href = self::messageText( $href );
+        // plain text: every design prints a validation message escaped once (|wash)
+        $label = (string)$label;
+        $href = (string)$href;
         if ( $trashed === null )
         {
             return ezpI18n::tr( 'design/standard/ezoe/handler',
@@ -1646,8 +1636,8 @@ class eZOEInputParser extends eZXMLInputParser
         }
         else
         {
-            $arguments = array( $label, self::messageText( $trashed['name'] ), self::messageText( $trashed['class'] ),
-                                self::messageText( $trashed['path'] ), $href );
+            $arguments = array( $label, (string)$trashed['name'], (string)$trashed['class'],
+                                (string)$trashed['path'], $href );
             if ( $trashed['trashed'] > 0 )
             {
                 $arguments[] = eZLocale::instance()->formatShortDateTime( $trashed['trashed'] );

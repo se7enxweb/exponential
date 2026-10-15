@@ -61,7 +61,7 @@ class AdminFormErrorsTest extends PHPUnit\Framework\TestCase
         $tpl = self::read( 'design/admin4/templates/content/edit_attribute.tpl' );
         // one per editable branch: translation, grouped input (legend), single input (label)
         $this->assertSame( 3, substr_count( $tpl, '<p class="a4-field-error a4-content-attr-error" id="ezcca-error-{$attribute.id}">' ) );
-        $this->assertSame( 3, substr_count( $tpl, '{$attribute.validation_error|explode( \'&lt;\' )|implode( \'<\' )|explode( \'&gt;\' )|implode( \'>\' )|wash}' ) );
+        $this->assertSame( 3, substr_count( $tpl, '{$attribute.validation_error|wash}' ) );
     }
 
     public function testTheScriptMarksTheControlsOfEveryDatatype()
@@ -99,21 +99,21 @@ class AdminFormErrorsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * Validation messages are escaped once: some arrive with &lt; and &gt; already in them (the XML text parser's
-     * tag names), and some carry what the editor typed (a link, an e-mail address). Each is decoded from those two
-     * entities and then washed, in the summary and at the field alike; none is printed raw.
+     * Validation messages are plain text (the XML text parsers store their tag names as characters, not entities)
+     * and are escaped exactly once: washed, never turned back from &lt; and &gt; first, in the summary and at the
+     * field alike; none is printed raw (expOEValidationMessagesEscapedOnceTest renders them).
      */
     public function testValidationMessagesAreEscapedOnce()
     {
-        $chain = "|explode( '&lt;' )|implode( '<' )|explode( '&gt;' )|implode( '>' )|wash}";
         $summary = self::read( 'design/admin4/templates/content/edit_validation.tpl' );
         foreach ( array( '{$UnvalidatedAttributes.item.description', '{$UnvalidatedPlacements.item.text', '{$UnvalidatedCustomRules.item.text', '{$LogMessages.item' ) as $value )
         {
-            $this->assertStringContainsString( $value . $chain, $summary );
+            $this->assertStringContainsString( $value . '|wash}', $summary );
             $this->assertStringNotContainsString( $value . '}', $summary, "$value is printed raw" );
         }
+        $this->assertStringNotContainsString( "explode( '&lt;' )", $summary );
         $field = self::read( 'design/admin4/templates/content/edit_attribute.tpl' );
-        $this->assertSame( 3, substr_count( $field, '{$attribute.validation_error' . $chain ) );
+        $this->assertSame( 3, substr_count( $field, '{$attribute.validation_error|wash}' ) );
         $this->assertSame( 3, substr_count( $field, '{$attribute.validation_error' ) );
     }
 }

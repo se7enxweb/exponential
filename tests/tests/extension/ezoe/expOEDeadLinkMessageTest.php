@@ -1,16 +1,16 @@
 <?php
 /**
  * A link whose target is gone gets a message that says what the target was and how to repair the link, and the link
- * messages of the online editor are escaped for the validation log, without the database:
- * eZOEInputParser::deadLinkMessage(), linkLabel(), messageText() and eZOEInputParser::process().
+ * messages of the online editor are plain text for the validation log, without the database:
+ * eZOEInputParser::deadLinkMessage(), linkLabel() and eZOEInputParser::process().
  *
  *  DL-01 - A target that is not in the trash either: the message says so and names the link
  *  DL-02 - A target in the trash: name, class, old place and date; without a date in the trash row no 1970
  *  DL-03 - A target in the trash that the user may not read: no name, class or place
  *  DL-04 - Only a link by location id says that restoring the target does not repair it
- *  DL-05 - < and > of the link text, the name, the place and the address are escaped once, nothing else is
+ *  DL-05 - The link text, the name, the place and the address are plain text (the designs escape them once)
  *  DL-06 - The link text is shortened to 70 characters; a link without text is named by its address
- *  DL-07 - A script address in a link is escaped in its message
+ *  DL-07 - A script address in a link is named as typed in its message
  *  DL-08 - Every message of deadLinkMessage() has a German translation
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
@@ -69,17 +69,17 @@ class expOEDeadLinkMessageTest extends PHPUnit\Framework\TestCase
             eZOEInputParser::deadLinkMessage( 'Report', 'eznode://news/annual_report', self::TRASHED, false ) );
     }
 
-    public function testValuesFromEditorsAreEscapedOnce()
+    public function testValuesFromEditorsArePlainText()
     {
+        // plain text: every design prints a validation message escaped exactly once (|wash), see
+        // expOEValidationMessagesEscapedOnceTest, so the parser escapes nothing
         $evil = '<img src=x onerror=alert(1)> & "q"';
         $message = eZOEInputParser::deadLinkMessage( $evil, 'eznode://<b>', array( 'name' => $evil, 'class' => '<i>',
                                                      'trashed' => 0, 'path' => '/<s>' ), true );
-        $this->assertStringNotContainsString( '<', $message );
-        $this->assertStringNotContainsString( '>', $message );
-        $this->assertStringContainsString( '&lt;img src=x onerror=alert(1)&gt; & "q"', $message );
-        $this->assertStringNotContainsString( '&amp;', $message, 'design/admin4 washes the message: & stays as it is' );
-        $this->assertStringContainsString( 'eznode://&lt;b&gt;', $message );
-        $this->assertStringContainsString( '/&lt;s&gt;', $message );
+        $this->assertStringContainsString( '"' . $evil . '"', $message );
+        $this->assertStringContainsString( 'eznode://<b>', $message );
+        $this->assertStringContainsString( '/<s>', $message );
+        $this->assertDoesNotMatchRegularExpression( '/&(lt|gt|amp|quot);/', $message );
     }
 
     public function testTheLinkTextNamesTheLink()
@@ -104,12 +104,10 @@ class expOEDeadLinkMessageTest extends PHPUnit\Framework\TestCase
         return $parser->getMessages();
     }
 
-    public function testAScriptAddressIsEscapedInItsMessage()
+    public function testAScriptAddressIsNamedAsTypedInItsMessage()
     {
         $script = implode( "\n", $this->messages( '<a href="javascript:x(&lt;img src=x onerror=alert(1)&gt;)">s</a>' ) );
-        $this->assertStringContainsString( 'Using scripts in links is not allowed', $script );
-        $this->assertStringContainsString( '&lt;img src=x onerror=alert(1)&gt;', $script );
-        $this->assertStringNotContainsString( '<img', $script );
+        $this->assertStringContainsString( "Using scripts in links is not allowed, 'javascript:x(<img src=x onerror=alert(1)>)' has been removed", $script );
     }
 
     public function testEveryMessageHasAGermanTranslation()

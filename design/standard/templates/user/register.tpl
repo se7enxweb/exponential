@@ -17,7 +17,7 @@
         <div class="warning">
         <h2>{"Input did not validate"|i18n("design/standard/user")}</h2>
         <ul>
-        <li>{$UnvalidatedAttributes:item.name}: {$UnvalidatedAttributes:item.description|explode( '&lt;' )|implode( '<' )|explode( '&gt;' )|implode( '>' )|wash}</li>
+        <li>{$UnvalidatedAttributes:item.name|wash}: {$UnvalidatedAttributes:item.description|wash}</li>
         </ul>
         </div>
     {section-else}

@@ -7,7 +7,7 @@
                 <p>{'Required data is either missing or is invalid'|i18n( 'design/admin/content/edit' )}:</p>
                 <ul>
                     {section var=UnvalidatedAttributes loop=$validation.attributes}
-                        <li>{$UnvalidatedAttributes.item.name|wash}: {$UnvalidatedAttributes.item.description|explode( '&lt;' )|implode( '<' )|explode( '&gt;' )|implode( '>' )|wash}</li>
+                        <li>{$UnvalidatedAttributes.item.name|wash}: {$UnvalidatedAttributes.item.description|wash}</li>
                     {/section}
                 </ul>
             {/section}
@@ -16,7 +16,7 @@
                 <p>{'The following locations are invalid'|i18n( 'design/admin/content/edit' )}:</p>
                 <ul>
                     {section var=UnvalidatedPlacements loop=$validation.placement}
-                        <li>{$UnvalidatedPlacements.item.text}</li>
+                        <li>{$UnvalidatedPlacements.item.text|wash}</li>
                     {/section}
                 </ul>
             {/section}
@@ -25,7 +25,7 @@
                 <p>{'The following data is invalid according to the custom validation rules'|i18n( 'design/admin/content/edit' )}:</p>
                 <ul>
                     {section var=UnvalidatedCustomRules loop=$validation.custom_rules}
-                        <li>{$UnvalidatedCustomRules.item.text}</li>
+                        <li>{$UnvalidatedCustomRules.item.text|wash}</li>
                     {/section}
                 </ul>
             {/section}
@@ -40,7 +40,7 @@
                     <p>{$ValidationLogs.item.name|wash}:</p>
                     <ul>
                         {section var=LogMessages loop=$ValidationLogs.item.description}
-                            <li>{$LogMessages.item}</li>
+                            <li>{$LogMessages.item|wash}</li>
                         {/section}
                     </ul>
                 {/section}

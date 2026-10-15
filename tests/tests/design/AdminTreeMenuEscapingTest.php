@@ -265,8 +265,8 @@ class AdminTreeMenuEscapingTest extends PHPUnit\Framework\TestCase
             'templates/shop/editcurrency.tpl' => "value=\"{\$currency_data['symbol']|wash}\"",
             'templates/setup/moduleextension.tpl' => 'value="{$wizard_settings.db_sample|wash}"',
             'templates/parts/ini_menu.tpl' => '{set $item_name = $name_list[$link_key]|d18n($i18n_section)|wash}',
-            'templates/infocollection_validation.tpl' => "item.description|explode( '&lt;' )|implode( '<' )|explode( '&gt;' )|implode( '>' )|wash}",
-            'templates/user/register.tpl' => "item.description|explode( '&lt;' )|implode( '<' )|explode( '&gt;' )|implode( '>' )|wash}",
+            'templates/infocollection_validation.tpl' => 'item.description|wash}',
+            'templates/user/register.tpl' => 'item.description|wash}',
         );
         foreach ( $washed as $file => $needle )
             foreach ( self::copies( $file ) as $path => $tpl )

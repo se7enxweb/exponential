@@ -14,13 +14,13 @@
           {/if}
           <ul>
           {section name=UnvalidatedPlacements loop=$validation.placement show=$validation.placement}
-            <li>{$:item.text}</li>
+            <li>{$:item.text|wash}</li>
           {/section}
           {section name=UnvalidatedAttributes loop=$validation.attributes show=$validation.attributes}
-            <li>{$:item.name|wash}: {$:item.description}</li>
+            <li>{$:item.name|wash}: {$:item.description|wash}</li>
           {/section}
           {section name=UnvalidatedCustomRules loop=$validation.custom_rules show=$validation.custom_rules}
-            <li>{$:item.text}</li>
+            <li>{$:item.text|wash}</li>
           {/section}
           </ul>
           </div>
@@ -33,7 +33,7 @@
                   <h4>{$:item.name|wash}:</h4>
 	          <ul>
 	          {section name=LogMessage loop=$:item.description}
-	              <li>{$:item}</li>
+	              <li>{$:item|wash}</li>
 	          {/section}
                   </ul>
               {/section}

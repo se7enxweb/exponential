@@ -1447,6 +1447,10 @@ Benötigen Sie hierzu weitere Informationen?</translation>
         <source>Restoring the target from the trash does not repair the link, because the restored object gets a new location: set the link again afterwards, or link to the object instead of its location.</source>
         <translation>Wiederherstellen aus dem Papierkorb repariert den Link nicht, weil das wiederhergestellte Objekt einen neuen Ort bekommt: Setzen Sie den Link danach neu oder verlinken Sie auf das Objekt statt auf seinen Ort.</translation>
     </message>
+    <message>
+        <source>Using scripts in links is not allowed, '%1' has been removed</source>
+        <translation>Skripte in Links sind nicht erlaubt, „%1“ wurde entfernt</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/ezoe/help</name>

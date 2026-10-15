@@ -7,7 +7,7 @@
             <h2>{"Missing or invalid input"|i18n("design/standard/node/view")}</h2>
           <ul>
           {section name=UnvalidatedAttributes loop=$validation.attributes show=$validation.attributes}
-            <li>{$:item.name|wash}: {$:item.description}</li>
+            <li>{$:item.name|wash}: {$:item.description|wash}</li>
           {/section}
           </ul>
           </div>

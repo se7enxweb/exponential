@@ -5,7 +5,7 @@
             <p>{'Required data is either missing or is invalid'|i18n( 'design/admin/pdf/edit' )}:</p>
                 <ul>
                     {section var=UnvalidatedPlacements loop=$validation.placement}
-                        <li>{$UnvalidatedPlacements.item.text}</li>
+                        <li>{$UnvalidatedPlacements.item.text|wash}</li>
                     {/section}
                 </ul>
         </div>

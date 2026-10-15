@@ -1348,7 +1348,7 @@ class eZXMLInputParser
             $this->IsInputValid = false;
             if ( $message )
             {
-                $this->Messages[] = $message;
+                $this->Messages[] = self::plainText( $message );
             }
         }
 
@@ -1357,6 +1357,20 @@ class eZXMLInputParser
             $this->IsInputValid = false;
             $this->QuitProcess = true;
         }
+    }
+
+    /**
+     * A message of the validation log as plain text. The messages and their translations were written for a log
+     * printed without escaping, so several spell the markup characters as entities ("Unknown tag: &lt;%1&gt;.").
+     * Every design now prints a validation message escaped exactly once (|wash), so the log carries the characters
+     * themselves: &lt; &gt; &quot; &#039; and &amp; are turned back into < > " ' and &, once.
+     *
+     * @param string $message
+     * @return string
+     */
+    public static function plainText( $message )
+    {
+        return htmlspecialchars_decode( (string)$message, ENT_QUOTES | ENT_HTML401 );
     }
 
     public $DOMDocumentClass = 'DOMDocument';
