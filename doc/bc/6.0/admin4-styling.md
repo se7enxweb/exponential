@@ -267,6 +267,20 @@ menu of admin4 ends with `design:parts/left_width_control.tpl` (three icon butto
 pressed) and a tree menu shows its trash link through `design:parts/left_trash.tpl`: include them, never copy their
 markup (`AdminLegacyControlsTest`).
 
+## Version preview
+
+`content/view/versionview.tpl` draws the device switch of the preview with the components (`.a4-tabs.is-segmented`,
+`aria-pressed` buttons, `.a4-icon`) and `modules/content.css` adds what they cannot do:
+
+| Class | Holds |
+|---|---|
+| `.a4-content-preview-bar` | the device pill, the landscape switch and `.a4-content-preview-size` (the size and scale); a container: below 640 px the names (`.a4-content-preview-device-name`) are visually hidden and the buttons are round icons |
+| `.a4-content-preview-stage` | the `.mainobject-window` around the iframe; `.is-device` (set by the script) centres the frame on `--a4-soft` |
+| `.a4-content-preview-device` | the frame: the script sets its size (the device's size times the scale, `box-sizing: content-box`), the iframe inside has the device's size and `transform: scale()` |
+
+A site design that overrides `versionview.tpl` keeps its own preview; to take the switch, copy the bar, the stage and
+the script from admin4's template.
+
 ## Edit forms
 
 The datatype edit templates live in `design/standard` and still write the classic markup: `input.box`,

@@ -534,3 +534,78 @@ div.block.a4-content-attr { margin: 0 0 var(--a4-space-5); padding-bottom: 0; } 
   :is(.a4-content-attr, .a4-content-edit) input.defaultbutton { border-width: 2px; }
   :is(.a4-content-attr, .a4-content-edit) :is(input.button-disabled, input.button, button.button, input.defaultbutton):disabled { border-color: GrayText; color: GrayText; opacity: 1; }
 }
+
+/* ---- preview ---- content/versionview: the version in the width of a device ------------------------------------ */
+
+/* The bar above the preview: the device switch (iPhone | iPad | Desktop | Large Desktop, a segmented pill), the
+   landscape switch and the size it is drawn at. In a narrow column the switches show their icons only; their names
+   stay for screen readers and in their titles. */
+.a4-content-preview-bar {
+  container-type: inline-size;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--a4-space-2) var(--a4-space-3);
+  margin: 0 0 var(--a4-space-3);
+}
+.a4-content-preview-bar[hidden] { display: none; }
+.a4-content-preview-bar .a4-content-preview-size {
+  margin: 0;
+  color: var(--a4-muted);
+  font-size: var(--a4-text-s);
+  font-variant-numeric: tabular-nums;
+}
+/* landscape is for phone and tablet: disabled for the desktops, in the disabled colour, no hover */
+.a4-content-preview-bar .a4-tabs.is-segmented > button:disabled,
+.a4-content-preview-bar .a4-tabs.is-segmented > button:disabled:hover {
+  border-color: transparent;
+  background-color: transparent;
+  color: var(--a4-disabled);
+  cursor: not-allowed;
+}
+@container (max-width: 640px) {
+  .a4-content-preview-bar .a4-content-preview-device-name {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  .a4-content-preview-bar .a4-tabs.is-segmented > button {
+    min-width: calc(var(--a4-control-h) + 2px);
+    padding: 0 var(--a4-space-2);
+    font-size: var(--a4-text-l);
+  }
+}
+/* The stage: the device's frame centred on the soft surface; the script sets the frame's size and the iframe's
+   scale. Without the script the iframe fills the column as before. */
+.a4-content-preview-stage.is-device {
+  display: flex;
+  justify-content: center;
+  padding: var(--a4-space-3);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+  overflow: hidden;
+}
+.a4-content-preview-stage.is-device .a4-content-preview-device {
+  box-sizing: content-box;   /* the script sets the size of the scaled page; the edge comes on top */
+  flex: 0 0 auto;
+  overflow: hidden;
+  border: 1px solid var(--a4-line-strong);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  box-shadow: var(--a4-shadow-s);
+}
+.a4-content-preview-stage.is-device .a4-content-preview-device iframe {
+  display: block;
+  max-width: none;
+  border: 0;
+  transform-origin: 0 0;
+}
+@media (forced-colors: active) {
+  .a4-content-preview-stage.is-device .a4-content-preview-device { border-color: CanvasText; }
+}
