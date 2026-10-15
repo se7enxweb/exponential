@@ -160,6 +160,17 @@ class AdminResponsiveTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( 'min-height: var(--a4-space-5)', $coarse );
     }
 
+    /**
+     * The node view's copy buttons (Node, Object, Remote ID) share a line with the language badges, which are 24px
+     * high and wrap beside them on a phone: the buttons are 24px targets at every pointer, not only on touch screens.
+     */
+    public function testTheNodeMetaCopyButtonsAreTwentyFourPixelTargets()
+    {
+        $rules = AdminBaseStylesheetsTest::rules( self::css( 'admin4.css' ) );
+        $this->assertSame( 'var(--a4-space-5)', $rules['.a4-node-meta button.a4-copy']['min-height'] );
+        $this->assertSame( 'var(--a4-space-5)', $rules['.a4-node-langs .a4-lang']['min-height'] );
+    }
+
     public function testTheLeftDrawerKeepsItsTabAtItsEdge()
     {
         $drawer = AdminBaseStylesheetsTest::rules( self::media( self::css( 'admin4.css' ), 'screen and (max-width: 1023.98px)' ) );

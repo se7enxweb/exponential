@@ -1603,6 +1603,9 @@ div.context-information.a4-node-meta {
 .a4-node-meta button.a4-copy {
   margin: 0; padding: 0; border: 0; background: none; font: inherit; color: inherit; cursor: copy;
   border-bottom: 1px dashed var(--a4-line-strong);
+  /* a 24px target at every pointer (WCAG 2.5.8): the language badges of the same line are 24px high and wrap beside
+     it on a phone, where a shorter button failed axe target-size; the line is 24px high anyway */
+  display: inline-flex; align-items: center; min-height: var(--a4-space-5);
 }
 .a4-node-meta button.a4-copy:hover { color: var(--a4-ink); border-bottom-color: var(--a4-accent); }
 .a4-node-meta button.a4-copied { color: var(--a4-ok); border-bottom-color: var(--a4-ok); }
