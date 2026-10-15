@@ -224,7 +224,7 @@ Example, a list page:
 admin4 is checked at 390, 820, 1180, 1440, 1920 and 2560 px (`AdminResponsiveTest`). Below 576px the top menu is a
 hamburger panel in `--a4-card` that scrolls on its own, with the side columns' tabs hidden while it is open; from
 576px to 1279px it stays on one line and scrolls sideways. From 1024px the left column takes room beside the
-content, the right one only from 1280px (below that it opens over the content as a drawer). The content column stops
+content, the right one only from 1280px (below that it opens over the content as a drawer). `ezadmin_menubar.js` uses the same breakpoints: a column below its breakpoint starts closed, opens alone (a column beside the content steps aside meanwhile), closes on Escape with the focus back on its tab, and is never saved as the wide-window choice (`AdminSidebarDrawerTest`, which runs the script in node). The content column stops
 at `--a4-content-max`. On a phone the node's tabs take their own row and scroll, the tabs switch stands under them,
 and a wide table in a tab scrolls inside it. On touch screens (`pointer: coarse`) the small controls of the frame
 (the tree's node icons and open/close arrows, the search scope, the copy buttons, the side columns' checkboxes) get a 24px target. Search results show each result's path under its name, and on a phone the type stacks under them too. On very wide windows the body text grows from 13 to 14px (`--a4-text-body`); the control and label sizes keep their tokens.

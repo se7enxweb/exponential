@@ -2040,7 +2040,9 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
     overflow-x: auto;
     overscroll-behavior-x: contain;
     scrollbar-width: thin;
+    padding-block: var(--a4-space-2);   /* a scrolling row clips vertically too: room for the 3px ring and its 2px offset */
   }
+  .navbar-bar a:focus-visible { outline-offset: -3px; }   /* and at the row's ends the ring is drawn inside the item */
 }
 
 /* Below 1280px only the left column takes room beside the content; the right one opens over it as a drawer (with
@@ -2109,7 +2111,8 @@ html #action-controls .exp-dt-action-group:first-child .exp-dt-action { margin-l
   table.a4-search-results td a { overflow-wrap: anywhere; }
 }
 
-/* The header search in dark mode: no square frame around the round field and button */
+/* The header search: no square frame around the round field and button (it showed as a light square in dark mode,
+   in both modes the wrapper's transparent 4px border). The field keeps its own edge, also in forced colors. */
 #header .searchtextwrapper { border: 0; border-radius: 999px; background-color: transparent; }
 #header .searchblock .searchbuttonfield { border-radius: 999px; }
 
@@ -2118,7 +2121,8 @@ html #action-controls .exp-dt-action-group:first-child .exp-dt-action { margin-l
 body { font-size: var(--a4-text-body); }
 
 /* Search results: the path of each result under its name; on a phone the type stands under them too, so no column
-   is pushed out of the screen */
+   is pushed out of the screen. A row drawn as a grid can lose its table role in some browsers: the template states
+   the roles (table, row, columnheader, cell) explicitly. */
 .a4-search-path { display: block; color: var(--a4-muted); font-size: var(--a4-text-xs); overflow-wrap: anywhere; }
 @media screen and (max-width: 575.98px) {
   table.a4-search-results tr {

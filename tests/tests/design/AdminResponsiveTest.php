@@ -76,6 +76,9 @@ class AdminResponsiveTest extends PHPUnit\Framework\TestCase
         $tablet = AdminBaseStylesheetsTest::rules( self::media( self::css( 'admin4.css' ), 'screen and (min-width: 576px) and (max-width: 1279.98px)' ) );
         $this->assertSame( 'nowrap', $tablet['.navbar-bar']['flex-wrap'] );
         $this->assertSame( 'auto', $tablet['.navbar-bar']['overflow-x'] );
+        // a scroll container clips vertically too: room for the 3px ring with its 2px offset, inset at the row's ends
+        $this->assertSame( 'var(--a4-space-2)', $tablet['.navbar-bar']['padding-block'] );
+        $this->assertSame( '-3px', $tablet['.navbar-bar a:focus-visible']['outline-offset'] );
     }
 
     public function testBelow1280OnlyTheLeftColumnTakesRoom()
@@ -165,6 +168,11 @@ class AdminResponsiveTest extends PHPUnit\Framework\TestCase
     {
         $template = self::file( 'design/admin4/templates/content/searchresult.tpl' );
         $this->assertStringContainsString( '<span class="a4-search-path">/{$SearchResult.item.url_alias|wash}</span>', $template, 'the path under the name' );
+        // drawn as a grid on a phone: the roles keep it a table for assistive technology
+        $this->assertStringContainsString( 'role="table"', $template );
+        $this->assertSame( 2, substr_count( $template, 'role="row"' ) );
+        $this->assertSame( 3, substr_count( $template, 'role="columnheader"' ) );
+        $this->assertSame( 3, substr_count( $template, 'role="cell"' ) );
         $phone = AdminBaseStylesheetsTest::rules( self::media( self::css( 'admin4.css' ), 'screen and (max-width: 575.98px)' ) );
         $this->assertSame( 'grid', $phone['table.a4-search-results tr']['display'], 'the type stacks under the name instead of leaving the screen' );
         $this->assertSame( '2', $phone['table.a4-search-results tr > :nth-child(3)']['grid-column'] );
