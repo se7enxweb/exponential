@@ -3,10 +3,8 @@
  * ezjscore/call is not open to anonymous users of a siteaccess that requires a login.
  *
  * [SiteAccessSettings] AnonymousAccessList only matters where RequireUserLogin=true, normally the admin
- * siteaccess. With ezjscore/call on that list the admin skipped its login for the view, and
- * [RoleSettings] PolicyOmitList[]=ezjscore/call skipped the policy check after it, so ezjscnode::load,
- * ezjscnode::subtree and ezjsc::search answered anonymous requests with node data and search results.
- * An extension's settings rank above a siteaccess's, so a siteaccess could not take the entry back. The
+ * siteaccess, where ezjscore/call needs a signed-in user. An extension's settings rank above a
+ * siteaccess's, so a siteaccess could not take the entry back if an extension listed it. The
  * shipped settings of ezjscore and of every other extension of the tree leave it out.
  *
  * Run: php vendor/bin/phpunit tests/tests/extension/ezjscore/ezjscoreAnonymousAccessTest.php
