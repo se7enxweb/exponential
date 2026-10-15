@@ -67,6 +67,9 @@ The 6.0.15 line also brings, among much else (the full list is in the
 - **Packages end to end** on Setup > Packages: every upload validated, installs in the background or as drafts, a
   JSON package format next to the classic one ([packages guide](doc/guides/packages.md),
   [JSON format](doc/bc/6.0/package-json-format.md)).
+- **138 locales**, 89 of them new: content in Bengali, Urdu, Persian, Vietnamese, Swahili, Romanian and the other
+  major languages of the world, with their dates, numbers and currencies; the administration in English and German
+  complete and partly in 24 more ([languages](doc/languages.md)).
 - **MariaDB, MySQL, PostgreSQL, SQLite, Oracle and MongoDB** on one kernel, PHP 8.0 to 8.5, and the bundled
   application server Exponential Velocity (suggested version 0.0.4.50, which answers HEAD over HTTP/2 with its
   headers only and drains its connections when it stops).

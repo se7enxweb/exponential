@@ -6270,8 +6270,8 @@
         <translation>Fügt eine Sprache hinzu, in die Inhalte übersetzt werden können. Sie übersetzt nichts und ändert keinen Siteaccess: übersetzen Sie danach Inhalte im Editor und tragen Sie die Sprache in die SiteLanguageList der Siteaccesses ein, die sie zeigen sollen.</translation>
     </message>
     <message>
-        <source>%used of at most %max languages are in use.</source>
-        <translation>%used von höchstens %max Sprachen sind in Gebrauch.</translation>
+        <source>%used of at most %max content languages are in use. Only the languages added here count, not the locales in the list below; removing a language no content uses frees a place.</source>
+        <translation>%used von höchstens %max Inhaltssprachen sind in Gebrauch. Es zählen nur die hier hinzugefügten Sprachen, nicht die Locales in der Liste unten; das Entfernen einer Sprache, die kein Inhalt nutzt, gibt einen Platz frei.</translation>
     </message>
     <message>
         <source>Language and country</source>
@@ -6437,8 +6437,8 @@
         <translation>Übersicht</translation>
     </message>
     <message>
-        <source>More can be added (at most %max)</source>
-        <translation>Können noch hinzugefügt werden (höchstens %max)</translation>
+        <source>More can be added (at most %max content languages)</source>
+        <translation>Können noch hinzugefügt werden (höchstens %max Inhaltssprachen)</translation>
     </message>
     <message>
         <source>Need a look</source>
@@ -6677,8 +6677,8 @@
         <translation>%name (%locale) wurde hinzugefügt. Inhalte können jetzt in diese Sprache übersetzt werden; tragen Sie %locale in die SiteLanguageList jedes Siteaccess ein, der sie zeigen soll.</translation>
     </message>
     <message>
-        <source>No language was added: this installation already has the most languages it can hold (%max).</source>
-        <translation>Es wurde keine Sprache hinzugefügt: diese Installation hat bereits die größtmögliche Zahl an Sprachen (%max).</translation>
+        <source>No language was added: this installation already has the most content languages it can hold (%max). Remove a language that no object or class uses to free a place.</source>
+        <translation>Es wurde keine Sprache hinzugefügt: Diese Installation hat bereits die höchste Zahl an Inhaltssprachen (%max). Entfernen Sie eine Sprache, die kein Objekt und keine Klasse nutzt, um einen Platz freizugeben.</translation>
     </message>
     <message>
         <source>There is no locale %locale in share/locale. Choose one from the list, or add its .ini file to share/locale first.</source>
