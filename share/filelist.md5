@@ -883,7 +883,7 @@ f91a366a6abfa6b8a706b154b7aec12c  design/admin4/override/templates/template_look
 03505c55345b654eeb275f3b614a92bf  design/admin4/override/templates/thumbnail/image.tpl
 6971adb19c3c39b21f245c72b7f73305  design/admin4/override/templates/thumbnail/image_browse.tpl
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
-97bcf84b79b1656b49e0f565c16dd43e  design/admin4/stylesheets/admin4.css
+5fcd74d1b94490f3510a9e5e5da6a7bc  design/admin4/stylesheets/admin4.css
 b4a4df94dba3955efc1ea398fb2dfce2  design/admin4/stylesheets/components.css
 e907d0bf7b66f4bd6da6699efc5b84a7  design/admin4/stylesheets/content.css
 0368a507892a9eb10f58c7a00b0365bf  design/admin4/stylesheets/core.css
@@ -1298,7 +1298,7 @@ b60915914f7647785deb969657ed9089  design/admin4/templates/toolbar/full/admin_pre
 fb0873e26a274c1e365ec85f5bbe30b7  design/admin4/templates/url/view.tpl
 a07da19bad529539a8ac821a99668b25  design/admin4/templates/user/activate.tpl
 15e2d331d9e37cf2403d735ebe8adc4f  design/admin4/templates/user/edit.tpl
-fbda34f023cb33b9629c6355f0c12ee6  design/admin4/templates/user/login.tpl
+ecc1bcc7678d7e08d759f9c15ce70c9b  design/admin4/templates/user/login.tpl
 5b85a373be1ea581be79898950a0a854  design/admin4/templates/user/megamenu.tpl
 2ac87dd60efda09dc6e86c148cbb1a86  design/admin4/templates/user/password.tpl
 334a71e0270b253897c94e074acd0559  design/admin4/templates/user/preferences_confirm.tpl

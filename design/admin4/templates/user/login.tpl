@@ -29,23 +29,24 @@
 </div>
 {/if}
 
+{* The username field gets the focus on a fresh page; the password field only when the username is already filled in (a failed sign-in) *}
+{def $a4_login_name = cond( is_set( $User:login ), $User:login|trim, '' )}
 <form name="loginform" class="a4-login-form" method="post" action={'/user/login/'|ezurl} novalidate="novalidate">
 
     <label class="a4-field-label" for="logintext">{'Username'|i18n( 'design/admin/user/login' )}</label>
     <input class="a4-field" type="text" name="Login" id="logintext" value="{if is_set( $User:login )}{$User:login|wash}{/if}"
            autocomplete="username" autocapitalize="none" autocorrect="off" spellcheck="false" enterkeyhint="next"
-           required="required" {if is_set( $User:login )|not}autofocus="autofocus"{/if}
+           required="required" {if $a4_login_name|eq( '' )}autofocus="autofocus"{/if}
            title="{'Enter a valid username in this field.'|i18n( 'design/admin/user/login' )}" />
 
     <div class="a4-field-head">
         <label class="a4-field-label" for="passwordtext">{'Password'|i18n( 'design/admin/user/login' )}</label>
-        {if $forgot}<a class="a4-login-forgot" href={'/user/forgotpassword'|ezurl}>{'Forgot your password?'|i18n( 'design/admin/user/login' )}</a>{/if}
     </div>
     <div class="a4-field-wrap">
         <input class="a4-field" type="password" name="Password" id="passwordtext"
-               autocomplete="current-password" enterkeyhint="go" required="required" {if is_set( $User:login )}autofocus="autofocus"{/if}
+               autocomplete="current-password" enterkeyhint="go" required="required" {if $a4_login_name|ne( '' )}autofocus="autofocus"{/if}
                title="{'Enter a valid password in this field.'|i18n( 'design/admin/user/login' )}" />
-        <button type="button" class="a4-reveal" aria-controls="passwordtext" aria-pressed="false"
+        <button type="button" class="a4-reveal" tabindex="-1" aria-controls="passwordtext" aria-pressed="false"
                 data-label-show="{'Show password'|i18n( 'design/admin/user/login' )|wash}"
                 data-label-hide="{'Hide password'|i18n( 'design/admin/user/login' )|wash}"
                 title="{'Show password'|i18n( 'design/admin/user/login' )|wash}" aria-label="{'Show password'|i18n( 'design/admin/user/login' )|wash}">
@@ -66,12 +67,16 @@
             data-label-busy="{'Signing in…'|i18n( 'design/admin/user/login' )|wash}"
             title="{'Click here to log in using the username/password combination entered in the fields above.'|i18n( 'design/admin/user/login' )}">{'Sign in'|i18n( 'design/admin/user/login' )}</button>
 
+    {* After the sign-in button, so Tab goes username, password, sign in, then this link *}
+    {if $forgot}<p class="a4-login-forgot-row"><a class="a4-login-forgot" href={'/user/forgotpassword'|ezurl}>{'Forgot your password?'|i18n( 'design/admin/user/login' )}</a></p>{/if}
+
     {if $register}
     <p class="a4-login-alt">{'No account yet?'|i18n( 'design/admin/user/login' )} <a href={'/user/register'|ezurl()}>{'Register new account'|i18n( 'design/admin/user/login' )}</a></p>
     {/if}
 
     <input type="hidden" name="RedirectURI" value="{$User:redirect_uri|wash}" />
 </form>
+{undef $a4_login_name}
 {* The social login buttons of sevenx_authentication_2fa, where that extension is active and enables a provider *}
 {if ezmodule( 'user2fa/oauth' )}
     {include uri='design:user2fa/exp_style.tpl'}

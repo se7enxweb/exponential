@@ -1594,6 +1594,7 @@ html[data-a4-theme="dark"] .a4-login-logo { background-image: url('../images/3/l
 .a4-field-label { display: block; margin: 0 0 var(--a4-space-2); font-size: var(--a4-text-m); font-weight: 600; color: var(--a4-ink); }
 .a4-field-head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--a4-space-3); margin-top: var(--a4-space-4); }
 .a4-field-head .a4-field-label { margin-bottom: var(--a4-space-2); }
+.a4-login-forgot-row { margin: var(--a4-space-3) 0 0; text-align: center; }
 .a4-login-forgot { font-size: var(--a4-text-s); color: var(--a4-accent-text); text-decoration: none; }
 .a4-login-forgot:hover { text-decoration: underline; }
 .a4-login-form #logintext, .a4-login-form #passwordtext {   /* by id, so the rule wins over the global field rules */
