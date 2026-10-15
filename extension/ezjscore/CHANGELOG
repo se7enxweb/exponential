@@ -10,7 +10,9 @@
 - Updated: the ajax uploader keeps the stored file on the server between its steps. The location
   form carries a one-time token, bound to the user and the upload target and valid for an hour,
   instead of a path; the file is taken only from the storage directory; every step checks the
-  handler's canUpload(). A location form override replaces the UploadFile field with UploadToken.
+  handler's canUpload(). A location form override replaces the UploadFile field with UploadToken;
+  the admin designs of Exponential 6.0.15 carry the new form, so on an older kernel override
+  ajaxuploader/location.tpl the same way.
   [ezjscServer_ezajaxuploader] RequirePolicy (disabled) can also ask for ezjscore/call with the
   function list ezajaxuploader.
 - Updated: ezjsc::search passes only positive integer ids to the search engine (subtrees, sections,
