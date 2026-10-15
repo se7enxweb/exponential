@@ -15,7 +15,7 @@
         "ext-pcntl": "If you plan to take advantage of Exponential Async publishing feature, then pcntl extension is required",
         "se7enxweb/ezsi": "ezsi would allow you to use Edge/Server Side Includes of blocks in templates",
         "se7enxweb/ezscriptmonitor": "ezscriptmonitor makes it possible to better deal with long running bulk operations within Exponential",
-        "se7enxweb/ezfind": "ezfind is a Solr based advance search engine for Exponential with a lot more features then the built in search",
+        "se7enxweb/ezfind": "ezfind is a Solr based advanced search engine for Exponential with a lot more features than the built in search. Install it with: composer require se7enxweb/ezfind:~3.0.3",
         "se7enxweb/ezoracle": "ezoracle is a full database solution for Exponential replacing the simpler builtin mysql database support",
         "se7enxweb/ezauthorize": "ezauthorize is a feature complete transparent (no redirect away to paypal.com website distractions) payment solution for Exponential replacing the simpler builtin ezpaypal redirection based web shop payment support",
         "se7enxweb/bcurlaliaswithdash": "bcurlaliaswithdash is a feature complete lower case url seo enhancing solution that provides dashes to replace spaces in urls providing simply amazing results in terms of easy to type website urls. Works well with existing content in a website. Try it today and you won't be disappointed.",
