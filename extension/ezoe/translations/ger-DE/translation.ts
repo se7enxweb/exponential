@@ -1427,6 +1427,26 @@ Benötigen Sie hierzu weitere Informationen?</translation>
         <source>Invalid link: &quot;%1&quot;. Target node does not exist.</source>
         <translation>Ungültiger Link: „%1“. Der Zielknoten existiert nicht.</translation>
     </message>
+    <message>
+        <source>The link &quot;%1&quot; cannot be saved: its target (%2) no longer exists, not even in the trash. Remove the link or choose a new target.</source>
+        <translation>Der Link „%1“ kann nicht gespeichert werden: Sein Ziel (%2) existiert nicht mehr, auch nicht im Papierkorb. Entfernen Sie den Link oder wählen Sie ein neues Ziel.</translation>
+    </message>
+    <message>
+        <source>The link &quot;%1&quot; cannot be saved: its target (%2) is in the trash. Remove the link or choose a new target.</source>
+        <translation>Der Link „%1“ kann nicht gespeichert werden: Sein Ziel (%2) liegt im Papierkorb. Entfernen Sie den Link oder wählen Sie ein neues Ziel.</translation>
+    </message>
+    <message>
+        <source>The link &quot;%1&quot; cannot be saved: its target &quot;%2&quot; (%3), located at %4, was moved to the trash on %6. Remove the link or choose a new target. (Link: %5)</source>
+        <translation>Der Link „%1“ kann nicht gespeichert werden: Sein Ziel „%2“ (%3) unter %4 wurde am %6 in den Papierkorb gelegt. Entfernen Sie den Link oder wählen Sie ein neues Ziel. (Link: %5)</translation>
+    </message>
+    <message>
+        <source>The link &quot;%1&quot; cannot be saved: its target &quot;%2&quot; (%3), located at %4, was moved to the trash. Remove the link or choose a new target. (Link: %5)</source>
+        <translation>Der Link „%1“ kann nicht gespeichert werden: Sein Ziel „%2“ (%3) unter %4 wurde in den Papierkorb gelegt. Entfernen Sie den Link oder wählen Sie ein neues Ziel. (Link: %5)</translation>
+    </message>
+    <message>
+        <source>Restoring the target from the trash does not repair the link, because the restored object gets a new location: set the link again afterwards, or link to the object instead of its location.</source>
+        <translation>Wiederherstellen aus dem Papierkorb repariert den Link nicht, weil das wiederhergestellte Objekt einen neuen Ort bekommt: Setzen Sie den Link danach neu oder verlinken Sie auf das Objekt statt auf seinen Ort.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/ezoe/help</name>
