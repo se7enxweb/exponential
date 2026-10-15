@@ -257,7 +257,8 @@
       "tests/tests/design/AdminEditBarTest.php",
       "tests/tests/design/AdminContentEditFormsTest.php",
       "tests/tests/design/AdminEditorSkinTest.php",
-      "tests/tests/design/AdminLegacyControlsTest.php"
+      "tests/tests/design/AdminLegacyControlsTest.php",
+      "tests/tests/design/AdminPreviewDevicesTest.php"
     ],
     "extension/ezjscore/design/standard/javascript/*": [
       "tests/tests/extension/ezjscore/ezjscoreVendoredLibrariesTest.php"

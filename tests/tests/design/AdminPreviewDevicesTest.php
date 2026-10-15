@@ -6,8 +6,10 @@
  *   1920 x 1080), each a named button with aria-pressed, and a landscape switch for phone and tablet;
  * - the iframe still asks content/versionview for the chosen siteaccess, so it shows the site's own rendering, and
  *   fills the column without JavaScript; the bar stays hidden until the script shows it;
- * - the script keeps the choice in localStorage only inside try/catch, presses one device, disables landscape for
- *   the desktops and scales the iframe down when the column is narrower than the device;
+ * - the script is admin4.js's (none in the template); run in node (tests/tests/design/js/segmented_switch.js) it
+ *   keeps the choice as the eZPreferences admin_preview_device and admin_preview_landscape through window.a4Pref
+ *   (the browser on an anonymous page), presses one device, disables landscape for the desktops and scales the
+ *   iframe down when the column is narrower than the device, never up;
  * - the stage and the frame take the tokens, in both copies of modules/content.css, and the icons are unchanged
  *   Bootstrap icons with their mask rules and IconList[] entries;
  * - the new texts have their German translation.
@@ -45,15 +47,6 @@ class AdminPreviewDevicesTest extends PHPUnit\Framework\TestCase
         return (string)file_get_contents( self::root() . '/' . $path );
     }
 
-    /** The script of the version view (between {literal} and {/literal}) */
-    private static function script()
-    {
-        $template = self::read( self::TEMPLATE );
-        $start = strpos( $template, '{literal}' );
-        $end = strpos( $template, '{/literal}' );
-        return substr( $template, $start, $end - $start );
-    }
-
     public function testTheDevicesAreASegmentedPillOfNamedButtons()
     {
         $template = self::read( self::TEMPLATE );
@@ -81,22 +74,53 @@ class AdminPreviewDevicesTest extends PHPUnit\Framework\TestCase
                                                'the site\'s own rendering, for the chosen siteaccess; the column\'s width without the script' );
     }
 
-    public function testTheScriptKeepsTheChoiceAndScalesTheFrame()
+    /** The scenarios of tests/tests/design/js/segmented_switch.js (admin4.js's preview part in node), or null */
+    private static function harness()
     {
-        $script = self::script();
-        $this->assertStringContainsString( "KEY = 'exp-admin4-preview-device', TURN_KEY = 'exp-admin4-preview-landscape'", $script );
-        $this->assertStringContainsString( 'function load( key ) { try { return window.localStorage.getItem( key ); } catch ( e ) { return null; } }', $script );
-        $this->assertStringContainsString( 'function save( key, value ) { try { window.localStorage.setItem( key, value ); } catch ( e ) {} }', $script );
-        $this->assertSame( 1, substr_count( $script, 'localStorage.getItem' ) );
-        $this->assertSame( 1, substr_count( $script, 'localStorage.setItem' ), 'every storage access is inside load() or save()' );
-        $this->assertStringContainsString( "initial = bar.querySelector( 'button[data-a4-device=\"desktop\"]' )", $script, 'Desktop without a stored choice' );
-        $this->assertStringContainsString( "if ( !current || !width || ( force !== true && width === lastWidth ) ) return;", $script, 'no redraw loop, no drawing into a hidden stage' );
-        $this->assertStringContainsString( "setAttribute( 'aria-pressed', buttons[j] === button ? 'true' : 'false' )", $script, 'one device pressed' );
-        $this->assertStringContainsString( 'turn.disabled = !turnable();', $script, 'landscape for phone and tablet only' );
-        $this->assertStringContainsString( 'scale = Math.min( 1, Math.max( room, 1 ) / w )', $script, 'scaled down, never up' );
-        $this->assertStringContainsString( "frame.style.transform = scale < 1 ? 'scale(' + scale + ')' : '';", $script );
-        $this->assertStringContainsString( 'bar.hidden = false;', $script );
-        $this->assertStringContainsString( 'new ResizeObserver( draw ).observe( stage )', $script, 'follows the column\'s width' );
+        $node = trim( (string)shell_exec( 'command -v node 2>/dev/null' ) );
+        if ( $node === '' )
+            return null;
+        $out = shell_exec( escapeshellarg( $node ) . ' ' . escapeshellarg( __DIR__ . '/js/segmented_switch.js' ) . ' '
+                           . escapeshellarg( self::root() . '/design/admin4/javascript/admin4.js' ) );
+        return json_decode( (string)$out, true );
+    }
+
+    public function testTheScriptIsAdmin4sAndKeepsTheChoiceAsAPreference()
+    {
+        $template = self::read( self::TEMPLATE );
+        $this->assertStringNotContainsString( '<script', substr( $template, strpos( $template, 'a4-content-preview-bar' ) ), 'no script of its own in the template' );
+        $admin4 = self::read( 'design/admin4/javascript/admin4.js' );
+        $this->assertStringContainsString( "var DEVICE = 'admin_preview_device', TURN = 'admin_preview_landscape';", $admin4 );
+        $this->assertStringContainsString( "pref(DEVICE, 'exp-admin4-preview-device')", $admin4, 'an older choice of this browser is taken along once' );
+        $this->assertStringContainsString( "if (!current || !width || (force !== true && width === lastWidth)) return;", $admin4, 'no redraw loop, no drawing into a hidden stage' );
+        $this->assertStringContainsString( 'new ResizeObserver(draw).observe(stage)', $admin4, 'follows the column\'s width' );
+        $prefs = self::read( 'design/admin4/templates/parts/a4_preference_attributes.tpl' );
+        $this->assertStringContainsString( "'admin_preview_device', 'admin_preview_landscape' ) as \$a4_pref", $prefs, 'written on <html> for a4Pref' );
+
+        $s = self::harness();
+        if ( $s === null )
+            $this->markTestSkipped( 'node is not installed' );
+        $this->assertIsArray( $s );
+        // a signed-in user without a choice: Desktop, scaled into the 944px column (12px padding a side, 2px edges)
+        $d = $s['previewDefault'];
+        $this->assertSame( array( 'pressed' => 'desktop', 'landscape' => 'false', 'turnDisabled' => true, 'barHidden' => false,
+                                  'frame' => '1280pxx800px', 'transform' => 'scale(0.7171875)', 'box' => '918pxx573px',
+                                  'size' => '1280 × 800 px, shown at 72 %' ), $d['start'] );
+        $this->assertSame( '390pxx844px', $d['step1:phone']['frame'] );
+        $this->assertSame( '', $d['step1:phone']['transform'], 'never scaled up' );
+        $this->assertFalse( $d['step1:phone']['turnDisabled'] );
+        $this->assertSame( array( '844pxx390px', 'true' ), array( $d['step2:turn']['frame'], $d['step2:turn']['landscape'] ), 'turned on its side' );
+        $this->assertSame( array( '1920pxx1080px', 'false', true ), array( $d['step3:large']['frame'], $d['step3:large']['landscape'], $d['step3:large']['turnDisabled'] ),
+                           'a desktop is never turned' );
+        $this->assertSame( $d['step3:large'], $d['step4:turn'], 'the disabled landscape switch does nothing' );
+        $this->assertSame( array( 'admin_preview_device=phone', 'admin_preview_landscape=1', 'admin_preview_device=large' ), $d['saved'],
+                           'saved as eZPreferences through a4Pref' );
+        // the stored preferences come back on the next page, nothing is written for them
+        $this->assertSame( array( 'tablet', 'true', '1180pxx820px' ), array( $s['previewStored']['start']['pressed'], $s['previewStored']['start']['landscape'], $s['previewStored']['start']['frame'] ) );
+        $this->assertSame( array(), $s['previewStored']['saved'] );
+        // an anonymous page: the browser's key, through a4Pref as well
+        $this->assertSame( 'phone', $s['previewAnonymous']['start']['pressed'] );
+        $this->assertSame( array( 'exp-admin4-preview-device=desktop' ), $s['previewAnonymous']['saved'] );
     }
 
     public function testTheStageTakesTheTokensInBothCopies()

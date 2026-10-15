@@ -65,7 +65,8 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
   view of October 2026 and its header switch are gone; a stored choice does nothing.
 - **Remembered choices.** The color mode, the side columns on a wide window and the closed groups of
   the left menus are the signed-in user's eZPreferences (`admin_color_mode`,
-  `admin_left_sidebar`, `admin_right_sidebar`, `admin_navgroups`), like the column width. One helper,
+  `admin_left_sidebar`, `admin_right_sidebar`, `admin_navgroups`; the version preview's device:
+  `admin_preview_device`, `admin_preview_landscape`), like the column width. One helper,
   `window.a4Pref` (the first script of `page_head_style.tpl`), reads them from `<html>`
   (`design:parts/a4_preference_attributes.tpl`, `data-a4-pref-*`) and saves them through
   `user/preferences/set_and_exit`. An anonymous page keeps them in the browser (`localStorage`) only; a browser
@@ -104,9 +105,10 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
   pill iPhone (390 × 844 px) | iPad (820 × 1180) | Desktop (1280 × 800) | Large Desktop (1920 × 1080), and a
   landscape switch for phone and tablet. The page is drawn at the device's size and scaled down when the column is
   narrower; the line beside the switches says the size and the scale ("390 × 844 px, shown at 100 %"). The choice
-  stays in this browser (localStorage `exp-admin4-preview-device` and `exp-admin4-preview-landscape`); without a
+  is the signed-in user's, as the eZPreferences `admin_preview_device` and `admin_preview_landscape` (through
+  `window.a4Pref`, so it follows the user to another browser; the browser on an anonymous page); without a
   stored choice it is Desktop. In a narrow column the switches show their icons only. Without JavaScript the
-  switches stay hidden and the preview fills the column as before.
+  switches stay hidden and the preview fills the column as before. The arrow keys move between the devices.
 - **Edit form.** The button bars (Send for publishing, Store draft, Store draft and exit, Discard draft) stay in view
   while the form scrolls (CSS `position: sticky`, replacing the YUI script that stopped working). They are slim
   (42 px on a desktop) and fit a phone screen. Edit pages show one left column, not two. Required fields carry a red

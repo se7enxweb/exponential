@@ -290,8 +290,11 @@ side, at least 24px high, and under forced colors an outline in `Highlight` mark
 | `.a4-content-preview-stage` | the `.mainobject-window` around the iframe; `.is-device` (set by the script) centres the frame on `--a4-soft` |
 | `.a4-content-preview-device` | the frame: the script sets its size (the device's size times the scale, `box-sizing: content-box`), the iframe inside has the device's size and `transform: scale()` |
 
-A site design that overrides `versionview.tpl` keeps its own preview; to take the switch, copy the bar, the stage and
-the script from admin4's template.
+The behaviour is a part of `admin4.js` (it starts when the page has `#a4-content-preview-bar` and
+`#a4-content-preview-stage`); the device and the orientation are the eZPreferences `admin_preview_device` and
+`admin_preview_landscape`, kept through `window.a4Pref` (`AdminPreviewDevicesTest`, `AdminPreferencesTest`).
+A site design that overrides `versionview.tpl` keeps its own preview; to take the switch, copy the bar and the stage
+from admin4's template.
 
 ## Edit forms
 
