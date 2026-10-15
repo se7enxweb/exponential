@@ -1,7 +1,7 @@
 {* The confirmation of an operation that had none before (hide, reveal, section ...), shown only when it is large
    or the user chose the background last time: what it touches and the now-or-background choice. Variables:
    $title, $text, $action_url, $back_url, $hidden (hash name => value, or name[] => list of values), $job_summary,
-   $job_mode, $operation. *}
+   $job_mode, $operation, and $reverse_relation_check (the objects that point at what a hide takes away, optional). *}
 <form method="post" action={$action_url|ezurl}>
 <div class="context-block" id="exp-contentjob-confirm">
 
@@ -12,6 +12,7 @@
 
 {* DESIGN: Content START *}<div class="box-ml"><div class="box-mr"><div class="box-content">
 <div class="block"><p>{$text|wash}</p></div>
+{if and( is_set( $reverse_relation_check ), $reverse_relation_check )}{include uri='design:content/reverse_relation_check.tpl' check=$reverse_relation_check operation=$operation}{/if}
 {if $job_summary}{include uri='design:content/job_summary.tpl' job_summary=$job_summary operation=$operation}{/if}
 {foreach $hidden as $name => $value}{if is_array( $value )}{foreach $value as $item}<input type="hidden" name="{$name|wash}" value="{$item|wash}" />{/foreach}{else}<input type="hidden" name="{$name|wash}" value="{$value|wash}" />{/if}{/foreach}
 {if $job_mode}{include uri='design:content/job_mode_choice.tpl' job_mode=$job_mode}{/if}

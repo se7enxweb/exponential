@@ -377,7 +377,8 @@
       "tests/tests/extension/ezjscore/ezjscPackerNoVersionQueryTest.php"
     ],
     "kernel/private/classes/views/content/hide.php": [
-      "tests/tests/kernel/classes/expContentHideReturnTest.php"
+      "tests/tests/kernel/classes/expContentHideReturnTest.php",
+      "tests/tests/kernel/classes/expReverseRelationCheckTest.php"
     ],
     "design/admin4/templates/content/edit.tpl": [
       "tests/tests/design/AdminContentEditFormsTest.php"
@@ -432,7 +433,8 @@
       "tests/tests/design/AdminSubitemsTranslationsTest.php"
     ],
     "kernel/private/classes/views/content/action.php": [
-      "tests/tests/design/AdminCreateLanguagesTitleTest.php"
+      "tests/tests/design/AdminCreateLanguagesTitleTest.php",
+      "tests/tests/kernel/classes/expReverseRelationCheckTest.php"
     ],
     "kernel/classes/subitems/expsubitemscolumn.php": [
       "tests/tests/design/AdminSubitemsTranslationsTest.php"
@@ -585,6 +587,19 @@
     ],
     "extension/ezjscore/classes/ezjscserverfunctionsnode.php": [
       "tests/tests/extension/ezjscore/ezjscServerFunctionsNodePriorityTest.php"
+    ],
+    "kernel/private/classes/views/content/removeobject.php": [
+      "tests/tests/kernel/classes/expReverseRelationCheckTest.php"
+    ],
+    "design/*/templates/node/removeobject.tpl": [
+      "tests/tests/design/AdminReverseRelationCheckTest.php"
+    ],
+    "design/*/templates/content/job_confirm.tpl": [
+      "tests/tests/design/AdminReverseRelationCheckTest.php",
+      "tests/tests/kernel/classes/expContentHideReturnTest.php"
+    ],
+    "design/standard/templates/content/reverse_relation_check.tpl": [
+      "tests/tests/design/AdminReverseRelationCheckTest.php"
     ]
   },
   "generated": {

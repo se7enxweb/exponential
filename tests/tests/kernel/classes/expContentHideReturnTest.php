@@ -86,7 +86,9 @@ class expContentHideReturnTest extends PHPUnit\Framework\TestCase
     public function testTheViewUsesTheFormsAddress()
     {
         $code = (string)file_get_contents( dirname( __DIR__, 4 ) . '/kernel/private/classes/views/content/hide.php' );
-        $this->assertSame( 2, substr_count( $code, "'RedirectURI' => self::confirmationReturnURI( \$Module, (int) \$NodeID )" ), 'both confirmation pages' );
+        // both confirmation pages: the content job's and the view's own (confirmationPage())
+        $this->assertSame( 1, substr_count( $code, "'RedirectURI' => self::confirmationReturnURI( \$Module, (int) \$NodeID )" ), 'the content job page' );
+        $this->assertSame( 1, substr_count( $code, "'RedirectURI' => self::confirmationReturnURI( \$module, \$nodeID )" ), 'the view\'s own page' );
         $posted = strpos( $code, '$postedReturn = self::postedReturnURI(' );
         $this->assertNotFalse( $posted );
         $this->assertLessThan( strpos( $code, '\eZRedirectManager::redirectTo( $Module, false )' ), $posted );

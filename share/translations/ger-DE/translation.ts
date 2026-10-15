@@ -68986,6 +68986,117 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
 </context>
 <context>
+    <name>design/admin/content/reverserelations</name>
+    <message>
+        <source>The removal is blocked: other objects use the items</source>
+        <translation>Das Entfernen ist gesperrt: Andere Objekte verwenden die Elemente</translation>
+    </message>
+    <message>
+        <source>Nothing was removed.</source>
+        <translation>Es wurde nichts entfernt.</translation>
+    </message>
+    <message>
+        <source>This site refuses to remove content while other objects point at it. Change or remove the references listed here first, then remove the items.</source>
+        <translation>Diese Website entfernt keine Inhalte, auf die andere Objekte verweisen. Ändern oder entfernen Sie zuerst die hier aufgeführten Verweise, dann entfernen Sie die Elemente.</translation>
+    </message>
+    <message>
+        <source>Check before hiding</source>
+        <translation>Vor dem Verbergen prüfen</translation>
+    </message>
+    <message>
+        <source>Other objects point at what you are about to hide. After hiding, their links, embedded items and relation fields lead to content the site no longer shows.</source>
+        <translation>Andere Objekte verweisen auf das, was Sie verbergen wollen. Danach führen ihre Links, eingebetteten Elemente und Beziehungsfelder zu Inhalten, die die Website nicht mehr zeigt.</translation>
+    </message>
+    <message>
+        <source>Other objects use the items</source>
+        <translation>Andere Objekte verwenden die Elemente</translation>
+    </message>
+    <message>
+        <source>After the removal, their links, embedded items and relation fields point at content that is gone.</source>
+        <translation>Nach dem Entfernen verweisen ihre Links, eingebetteten Elemente und Beziehungsfelder auf Inhalte, die es nicht mehr gibt.</translation>
+    </message>
+    <message>
+        <source>The references could not be checked.</source>
+        <translation>Die Verweise konnten nicht geprüft werden.</translation>
+    </message>
+    <message>
+        <source>Further references are not listed.</source>
+        <translation>Weitere Verweise sind nicht aufgeführt.</translation>
+    </message>
+    <message>
+        <source>There are further references that you may not see.</source>
+        <translation>Es gibt weitere Verweise, die Sie nicht sehen dürfen.</translation>
+    </message>
+    <message>
+        <source>There are further locations that you may not see.</source>
+        <translation>Es gibt weitere Orte, die Sie nicht sehen dürfen.</translation>
+    </message>
+    <message>
+        <source>Used by</source>
+        <translation>Verwendet von</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Typ</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Art</translation>
+    </message>
+    <message>
+        <source>Points at</source>
+        <translation>Verweist auf</translation>
+    </message>
+    <message>
+        <source>An object you may not read</source>
+        <translation>Ein Objekt, das Sie nicht lesen dürfen</translation>
+    </message>
+    <message>
+        <source>Embedded in rich text</source>
+        <translation>Im Fließtext eingebettet</translation>
+    </message>
+    <message>
+        <source>Linked in rich text</source>
+        <translation>Im Fließtext verlinkt</translation>
+    </message>
+    <message>
+        <source>Relation field</source>
+        <translation>Beziehungsfeld</translation>
+    </message>
+    <message>
+        <source>Object relation</source>
+        <translation>Objektbeziehung</translation>
+    </message>
+    <message>
+        <source>This item</source>
+        <translation>Dieses Element</translation>
+    </message>
+    <message>
+        <source>The object has further locations. Hiding this one leaves them as they are:</source>
+        <translation>Das Objekt hat weitere Orte. Wird dieser verborgen, bleiben sie, wie sie sind:</translation>
+    </message>
+    <message>
+        <source>hidden</source>
+        <translation>verborgen</translation>
+    </message>
+    <message>
+        <source>hidden by a parent</source>
+        <translation>durch ein übergeordnetes Element verborgen</translation>
+    </message>
+    <message>
+        <source>You cannot continue while other objects use the items (see the list above).</source>
+        <translation>Sie können nicht fortfahren, solange andere Objekte die Elemente verwenden (siehe Liste oben).</translation>
+    </message>
+    <message>
+        <source>Hide the selected items</source>
+        <translation>Ausgewählte Elemente verbergen</translation>
+    </message>
+    <message>
+        <source>The selected items and everything below them are hidden from the site.</source>
+        <translation>Die ausgewählten Elemente und alles darunter werden auf der Website verborgen.</translation>
+    </message>
+</context>
+<context>
     <name>design/standard/audit</name>
     <message>
         <source>Not recorded, so refused</source>
