@@ -185,7 +185,7 @@ class AdminResponsiveTest extends PHPUnit\Framework\TestCase
     {
         $coarse = AdminBaseStylesheetsTest::rules( self::media( self::css( 'admin4.css' ), '(pointer: coarse)' ) );
         $this->assertSame( '-4px 0 -4px -8px', $coarse['div#contentstructure ul#content_tree_menu ul a.openclose-open::after, div#contentstructure ul#content_tree_menu ul a.openclose-close::after']['inset'], '16px arrow + 8px = 24px' );
-        // the node's language choice is as high as the buttons beside it at every width (32px, 28px compact)
+        // the node's language choice is as high as the buttons beside it at every width (32px)
         $rules = AdminBaseStylesheetsTest::rules( self::css( 'admin4.css' ) );
         $this->assertSame( 'var(--a4-control-h)', $rules['.controlbar.a4-node-actions form .button-left .block select']['height'] );
     }
@@ -203,7 +203,6 @@ class AdminResponsiveTest extends PHPUnit\Framework\TestCase
     {
         $components = self::css( 'components.css' );
         $this->assertStringContainsString( '--a4-gutter: var(--a4-space-5);', $components, '24px, the gap of a 24px layout grid' );
-        $this->assertStringContainsString( "--a4-card-pad-x: var(--a4-space-3);\n  --a4-gutter: var(--a4-space-4);", $components, '16px in compact density' );
         $css = self::css( 'admin4.css' );
         $rules = AdminBaseStylesheetsTest::rules( $css );
         // the cards: the gutter towards the content, under the header and below; 24px at the window's edge for the tab
@@ -215,7 +214,8 @@ class AdminResponsiveTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'var(--left-sidebar-width, 15rem)', $wide['html body:has(.sidebar.left.show)']['margin-left'] );
         $this->assertSame( '0', $wide['body:has(.sidebar.left.show) .content-wrapper']['padding-left'] );
         $wider = AdminBaseStylesheetsTest::rules( self::media( $css, 'screen and (min-width: 1280px)' ) );
-        $this->assertSame( '15rem', $wider['html body:has(.sidebar.right.show)']['margin-right'] );
+        $this->assertSame( 'var(--a4-right-width)', $wider['html body:has(.sidebar.right.show)']['margin-right'] );
+        $this->assertSame( 'var(--a4-right-width)', $rules['.sidebar.right']['width'], 'the column and the room it takes are one length' );
         $this->assertSame( '0', $wider['body:has(.sidebar.right.show) .content-wrapper']['padding-right'] );
         // the width grip stands in the gutter, not over the content
         $this->assertSame( 'calc((var(--a4-gutter) - var(--a4-space-3)) / 2)', $rules['.leftmenu-resize-handle']['right'] );

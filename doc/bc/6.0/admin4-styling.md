@@ -90,9 +90,9 @@ All `var(--a4-...)`, defined in `components.css`.
 | Depth | `--a4-shadow-s`, `--a4-shadow-m`, `--a4-shadow-up` |
 | Radius | `--a4-radius-s` (9 px): the one component radius. `--a4-radius` (18 px) is the frame's three columns only |
 | Spacing | `--a4-space-1` to `--a4-space-7` (4, 8, 12, 16, 24, 32, 48 px); a length between two steps takes the nearer one (3 and 5 → 4, 6 to 9 → 8, 10 to 14 → 12, 15 to 20 → 16, 22 to 28 → 24) |
-| Controls | `--a4-control-h` (32 px): one height for the buttons, selects and pager buttons that stand in a row (the node's actions, the sub-items toolbar and pagers) |
-| Layout | `--a4-content-max` (1680 px): the widest the content column grows on a very wide window, so a page's actions stay near what they act on; `--a4-gutter` (24 px, compact 16 px): the one gap between the frame's cards (side columns and content, under the header, at the bottom); the window's edges keep 24 px for the side columns' tabs |
-| Density | `--a4-list-pad` (`.4em`, the cells of `table.list`), `--a4-cell-pad-y`/`-x` (8/12 px, `.a4-table`), `--a4-card-pad-y`/`-x` (12/16 px, `.a4-card`). `html[data-a4-density="compact"]` (the header's density switch) sets only these, `--a4-control-h` and `--a4-gutter` anew: `.25em`, 4/8 px, 8/12 px, 28 px. Compact therefore tightens `table.list` cells, `.a4-table`, `.a4-card` and the controls in a row; it does not touch `table.special`, the header row height of content.css or the content tree. A component that should follow the density reads these tokens; nothing else may change with it, and every target keeps 24 px (`AdminDensityTest`). The content tree keeps its row pitch. |
+| Controls | `--a4-control-h` (32 px): one height for every control: `.a4-btn` (`.a4-btn-large` 44 px, `.a4-btn-small` 30 px aside), `.a4-input` and the fields of `.a4-field`, `.a4-tabs`, `.a4-chip`, the pager sizes, the legacy buttons and fields, the node's actions and the sub-items toolbar. Field text is `--a4-text-m` (14 px), button text `--a4-text-s` (13 px) |
+| Layout | `--a4-content-max` (1680 px): the widest the content column grows on a very wide window, so a page's actions stay near what they act on; `--a4-gutter` (24 px): the one gap between the frame's cards (side columns and content, under the header, at the bottom); the window's edges keep 24 px for the side columns' tabs |
+| Spacing of lists and cards | `--a4-list-pad` (the cells of `table.list`: 8 px above and below like `.a4-table`, 6 px a side so a list of ten columns still fits a 944 px content column; core.css had `.4em`), `--a4-cell-pad-y`/`-x` (8/12 px, `.a4-table`), `--a4-card-pad-y`/`-x` (12/16 px, `.a4-card`). admin4 has one density: the compact view and its header switch were removed in October 2026 (`AdminDensityTest` keeps them out) |
 | Type | `--a4-font`, `--a4-mono`, `--a4-text-xs`, `-s`, `-m`, `-l`, `-xl`, `-2xl`, `-3xl` (12, 13, 14, 16, 22, 26, 32 px; nothing below 12); `--a4-text-body` (the body text: `--a4-text-s` up to a 1920px window, growing to `--a4-text-m` at 2560px, a clamp between two steps of the scale, so the em sizes of the base stylesheets never fall below 12px), `--a4-leading` (1.5, every block that can wrap), `--a4-leading-tight` (1.25, headings only) |
 
 Every colour, chart and depth token has a dark value; the radius, spacing, control and type tokens are the same in both
@@ -187,8 +187,8 @@ toasts, and on a `var(--a4-z-…)` that `components.css` does not define (a typo
 | Other | `.a4-grip` (drag handle), `.is-dragging` |
 
 A card opens with `.a4-card-head` (not `.a4-section-head`), puts the rest in `.a4-card-body` and its buttons in
-`.a4-card-foot`. The foot and the flush head read the card's padding from `--a4-card-pad-x`/`--a4-card-pad-y` when a
-density setting defines them, else from the spacing scale (`--a4-space-4`/`--a4-space-3`). `.is-flush` lets a table
+`.a4-card-foot`. The foot and the flush head read the card's padding from `--a4-card-pad-x`/`--a4-card-pad-y` (with
+the spacing scale, `--a4-space-4`/`--a4-space-3`, as their fallback). `.is-flush` lets a table
 run to the card's edges (head and foot keep their padding, the table's corner cells take the card's radius).
 `.is-link` makes the whole card follow the link in its `.a4-card-title`: links, buttons and fields in the body, foot
 and head actions stay clickable, but plain text under the link layer cannot be selected, so a link card holds no text
@@ -248,15 +248,16 @@ it in localStorage. The left column's drawer (below 1024px) is not remembered.
 
 The kernel's module templates still write `input.button`, `input.defaultbutton`, `input.button-disabled`,
 `button.button`, and selects and text fields without a class. Inside `#page`, `admin4.css` gives them the size of the
-`.a4-btn` components and of the node's action row: `min-height: var(--a4-control-h)` (28px in compact density), the
+`.a4-btn` components and of the node's action row: `min-height: var(--a4-control-h)` (32px), the
 type scale's small step and the space tokens; a select gets the field's edge and a chevron drawn in `--a4-muted`, and
 forced colors get the native select back. The selectors keep the base rules' weight (element plus class, the scope
 inside `:where()`), so a rule with one more class (the node's action row, the edit bars, `.a4-input`, an extension's
 own control) always wins; a select or field with a class of its own is not touched. New markup still uses `.a4-btn`
 and `.a4-field`.
 
-Side columns: the rule between blocks is drawn only above a heading that follows a block, whatever the menu template
-nests; block titles have one size (1.25em of the column's font, hyphenated); link lists have no bullets. Every left
+Side columns: blocks are separated by space, not by a line: a heading that follows a block stands `--a4-gutter` (24
+px) below it, whatever the menu template nests (no admin4 stylesheet draws a line above a `.box-header`); the right
+column is `--a4-right-width` (16rem) wide, so its card keeps 208px beside the 24px edge and the gutter; block titles have one size (1.25em of the column's font, hyphenated); link lists have no bullets. Every left
 menu of admin4 ends with `design:parts/left_width_control.tpl` (three icon buttons in a POST form, the current width
 pressed) and a tree menu shows its trash link through `design:parts/left_trash.tpl`: include them, never copy their
 markup (`AdminLegacyControlsTest`).
@@ -265,7 +266,7 @@ markup (`AdminLegacyControlsTest`).
 
 admin4's mode is `html[data-a4-theme="light"|"dark"]`, set before the page is drawn by the script at the top of
 `page_head_style.tpl` from the user's choice (`window.a4Pref`: the eZPreference `admin_color_mode`, the browser on an
-anonymous page); the header's toggle switches it. Every remembered choice of the frame (mode, density, side
+anonymous page); the header's toggle switches it. Every remembered choice of the frame (mode, side
 columns, menu groups) goes through `window.a4Pref`; never write `localStorage` from a feature script
 (`AdminPreferencesTest`).
 Since 2026-10-14 the frame's columns are dark in dark mode too (`--a4-card-bg` follows `--a4-surface`), so anything

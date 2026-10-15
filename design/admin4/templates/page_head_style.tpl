@@ -10,10 +10,9 @@
    Storage that is blocked (private windows, policies) only means the choice is not remembered.
    This script is the one piece of the page's look that cannot wait for the stylesheets (a page drawn light and then
    switched would flash). It also sets the left column's hand-dragged width (data-a4-left-width on <html>, from the
-   admin_left_menu_size preference) as --left-sidebar-width; the preset sizes are in pagelayout.css. The second
-   script does the same for the density (html[data-a4-density], #a4-density-toggle). No <style>. *}
+   admin_left_menu_size preference) as --left-sidebar-width; the preset sizes are in pagelayout.css. No <style>. *}
 {literal}<script>
-/* window.a4Pref: the one place for the frame's remembered choices (color mode, density, side columns, left menu
+/* window.a4Pref: the one place for the frame's remembered choices (color mode, side columns, left menu
    groups). For a signed-in user each is an eZPreference: parts/a4_preference_attributes.tpl writes it on <html>
    (data-a4-pref-<name>) and set() saves it through user/preferences/set_and_exit (data-a4-pref-url), so it
    follows the user from browser to browser. An anonymous page has no data-a4-pref-url and keeps the choice in this
@@ -110,32 +109,9 @@
     window.addEventListener('beforeprint', function () { root.setAttribute('data-a4-theme', 'light'); });
     window.addEventListener('afterprint', function () { apply(root.getAttribute('data-a4-theme-choice')); });
 })();
-/* Normal or compact density: html[data-a4-density] from window.a4Pref (the eZPreference admin_density; localStorage
-   "exp-admin4-density" on an anonymous page),
-   normal by default; #a4-density-toggle switches it (pressed = compact). Same pattern as the mode above. */
-(function () {
-    var KEY = 'exp-admin4-density', root = document.documentElement;
-    // the eZPreference admin_density (window.a4Pref); localStorage for an anonymous page
-    function stored() { return window.a4Pref.get('admin_density', KEY); }
-    function apply(density) {
-        var compact = density === 'compact';
-        root.setAttribute('data-a4-density', compact ? 'compact' : 'normal');
-        var b = document.getElementById('a4-density-toggle');
-        if (b) b.setAttribute('aria-pressed', compact ? 'true' : 'false');
-    }
-    apply(stored());
-    document.addEventListener('DOMContentLoaded', function () {
-        apply(root.getAttribute('data-a4-density'));
-        var b = document.getElementById('a4-density-toggle');
-        if (!b) return;
-        b.addEventListener('click', function () {
-            var next = root.getAttribute('data-a4-density') === 'compact' ? 'normal' : 'compact';
-            window.a4Pref.set('admin_density', next, KEY);
-            apply(next);
-        });
-    });
-    window.addEventListener('storage', function (e) { if (e.key === KEY) apply(e.newValue); });
-})();
+/* admin4 has one density: the compact view and its switch are gone. A value an earlier version kept in this browser
+   is dropped; a signed-in user's eZPreference admin_density is no longer read and does nothing. */
+try { window.localStorage.removeItem('exp-admin4-density'); } catch (e) { /* blocked storage: nothing was kept */ }
 </script>{/literal}
 
 {if is_unset( $load_css_file_list )}

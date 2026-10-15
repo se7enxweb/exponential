@@ -296,16 +296,7 @@ html[data-a4-theme-choice="system"] .a4-theme-toggle .a4-icon-system { display: 
   position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden;
   clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0;
 }
-/* The density switch beside it: the same round button; pressed (compact) it carries the accent tint */
 .header-theme { gap: var(--a4-space-2); }
-.a4-density-toggle[aria-pressed="true"] {
-  border-color: var(--a4-accent);
-  background-color: var(--a4-accent-soft);
-}
-.a4-density-toggle[aria-pressed="true"]:hover { border-color: var(--a4-accent-strong); }
-@media (forced-colors: active) {
-  .a4-density-toggle[aria-pressed="true"] { border-color: Highlight; }
-}
 @media (max-width: 1023.98px) {
   .header-theme { padding: 0 var(--a4-space-2); }
 }
@@ -327,10 +318,10 @@ html[data-a4-theme-choice="system"] .a4-theme-toggle .a4-icon-system { display: 
 }
 #leftmenu-design,
 #rightmenu-design {
-  padding: var(--a4-space-2) var(--a4-space-2) var(--a4-space-3);   /* the right column is 240px wide: more would push its buttons past the card */
+  padding: var(--a4-space-2) var(--a4-space-2) var(--a4-space-3);   /* the right column's card is 208px wide (16rem less the 24px edge and the gutter): more would push its buttons past the card */
 }
 
-/* One gutter between the cards: --a4-gutter (24px, compact 16px) between a side column's card and the content, under
+/* One gutter between the cards: --a4-gutter (24px) between a side column's card and the content, under
    the header and at the cards' bottom, the gap of a common 24px layout grid. The window's edges keep at least 24px
    (--a4-space-5): the side columns' tabs are 24px wide and stand there. Until 2026-10 a card's 16px margin, the
    body's 8px and the content's 24px padding added up to 48px between the columns. */
@@ -341,6 +332,10 @@ html[data-a4-theme-choice="system"] .a4-theme-toggle .a4-icon-system { display: 
 .sidebar.right > div {
   margin: var(--a4-gutter) var(--a4-space-5) var(--a4-gutter) var(--a4-gutter);
 }
+/* The right column: its card keeps the 208px it had before the gutter (16rem minus the 24px edge and the gutter), so
+   a tool's name and its switch still share a row */
+:root { --a4-right-width: 16rem; }
+.sidebar.right { width: var(--a4-right-width); }
 .content-wrapper {
   padding: var(--a4-gutter) var(--a4-space-5);   /* 24px a side where a tab stands at the window's edge */
 }
@@ -350,7 +345,7 @@ html[data-a4-theme-choice="system"] .a4-theme-toggle .a4-icon-system { display: 
   body:has(.sidebar.left.show) .content-wrapper { padding-left: 0; }
 }
 @media screen and (min-width: 1280px) {
-  html body:has(.sidebar.right.show) { margin-right: 15rem; }
+  html body:has(.sidebar.right.show) { margin-right: var(--a4-right-width); }
   body:has(.sidebar.right.show) .content-wrapper { padding-right: 0; }
 }
 @media screen and (max-width: 1023.98px) {
@@ -416,9 +411,10 @@ html[data-a4-theme-choice="system"] .a4-theme-toggle .a4-icon-system { display: 
 :where(#path, #path-design) {
   color: var(--a4-muted);
 }
-/* the dashed rules between blocks: one quiet hairline, less of a box (the base rule's own selector) */
+/* No rule between blocks (the base drew a dashed line above every .box-header): spacing separates them. The base
+   rule's own selector, so an extension's own header rule still wins. */
 .box-header {
-  border-top: 1px solid var(--a4-line);
+  border-top: 0;
 }
 :focus-visible {
   outline: 3px solid var(--a4-ring);
@@ -496,8 +492,8 @@ input.defaultbutton:active {
   color: var(--a4-on-accent);
 }
 /* The legacy controls of the module pages (input.button, input.defaultbutton, input.button-disabled, button.button)
-   take the size of the .a4-btn components and of the node's action row: --a4-control-h high (28px in compact
-   density), the type scale's small step, the space tokens. Selectors keep the base rules' weight, element plus class
+   take the size of the .a4-btn components and of the node's action row: --a4-control-h high (32px), the type
+   scale's small step, the space tokens. Selectors keep the base rules' weight, element plus class
    (:where(#page *) adds none and keeps the login page and the editor's dialogs, which have no #page, out of it), so
    they win over core.css, pagelayout.css and theme/rounded.css by loading later, and every rule with one more class
    (the node's action row, the edit bars, an extension's own button) still wins. A minimum height, never a fixed one:
@@ -539,7 +535,7 @@ input:where(#page *):where(:not([type]), [type=text], [type=password], [type=ema
   min-height: var(--a4-control-h);
   margin-block: var(--a4-space-1);
   padding: 0 var(--a4-space-2);
-  font-size: var(--a4-text-s);
+  font-size: var(--a4-text-m);   /* field text as .a4-input's */
   line-height: 1.2;
   vertical-align: middle;
 }
@@ -603,7 +599,7 @@ select:where(#page *):where(:not([class])):disabled { color: var(--a4-disabled);
 }
 
 /* List tables (table.list, the kernel's and most extensions'): a light header in place of the black bar.
-   Their cell spacing is core.css's .4em, as the density token --a4-list-pad (compact: .25em). */
+   Their cells take --a4-list-pad: the same 8/12px as .a4-table (core.css had .4em). */
 table.list th, table.list td { padding: var(--a4-list-pad); }
 table.list th, table.special th {
   background-color: var(--a4-soft);
@@ -1068,7 +1064,6 @@ div.context-information.a4-node-meta {
    tabs, a line under the closed tab panel, and a dashed line above the sub items) */
 .a4-node-tabs.tab-block { border-top: 0; padding-top: 0; }
 .a4-node-tabs .tabs-content.disabled { border-top: 0; }
-.a4-node-children .box-header { border-top: 0; }
 /* explayouts_ui's stylesheet also loads on node views (for the Layouts tab) and paints the left column white
    on sections 1 and 7 (".ezcontentnavigationpart.section_id_1 .dashboard-flex #leftmenu.sidebar.left.show"), the
    admin3 look; in admin4 the column around the card stays clear, as everywhere else. */
@@ -1633,19 +1628,22 @@ div#contentstructure ul#content_tree_menu ul a.openclose-close::after {
 
 /* ---- The side columns: their first heading at the card's top, a compact tree, a visible width grip ------------- */
 
-/* The card's own edge is its top: the rule between blocks (.box-header's top border) is drawn only between two
-   blocks, never above the first heading, however deep the menu template nests it (the setup menu's header is the
-   column's first child, the content tree's sits in #content-tree, a module's menu may wrap it twice). A header gets
-   the rule when an earlier sibling of it, or of one of its wrappers, holds a block's content (.box-bc). */
-:is(#leftmenu-design, #rightmenu-design) .box-header { border-top: 0; }
+/* Blocks in a side column are separated by space, not by a line: a heading that follows a block (an earlier sibling
+   of it, or of one of its wrappers, holds a block's content, .box-bc) stands --a4-gutter (24px) below that block,
+   however deep the menu template nests it. The space is the header's padding, not a margin: without the old border
+   the header's and its heading's margins collapsed into one 12px. The first heading sits at the card's top. */
 :is(#leftmenu-design, #rightmenu-design) :is(.box-bc, :has(.box-bc)) ~ .box-header,
 :is(#leftmenu-design, #rightmenu-design) :is(.box-bc, :has(.box-bc)) ~ * .box-header {
-  margin-top: var(--a4-space-3);
-  border-top: 1px solid var(--a4-line);
+  margin-top: 0;
+  padding-top: var(--a4-gutter);
 }
+:is(#leftmenu-design, #rightmenu-design) :is(.box-bc, :has(.box-bc)) ~ .box-header h4,
+:is(#leftmenu-design, #rightmenu-design) :is(.box-bc, :has(.box-bc)) ~ * .box-header h4 { margin-top: 0; }
+/* a block ends at its content: the last element's bottom margin (a .block's .5em) would add to the gutter */
+:is(#leftmenu-design, #rightmenu-design) .box-content > :last-child { margin-bottom: 0; }
 /* The block titles of both side columns: one size, weight and spacing in every module (the content tree's title as
    the ini menus' and the tools'), sized from the column's font so the column sizes scale it; a long word breaks
-   with a hyphen instead of running past the 240px column. */
+   with a hyphen instead of running past the right column's 208px card. */
 :is(#leftmenu-design, #rightmenu-design) .box-header { font-size: inherit; }
 :is(#leftmenu-design, #rightmenu-design) .box-header h4 {
   margin: var(--a4-space-3) 0 var(--a4-space-2);
@@ -1675,7 +1673,7 @@ div#contentstructure ul#content_tree_menu ul a.openclose-close::after {
   min-height: var(--a4-space-5);
 }
 
-/* The core tools of the right column (240px; cache, quick settings, bookmarks — an extension's box keeps its own
+/* The core tools of the right column (a 208px card; cache, quick settings, bookmarks — an extension's box keeps its own
    layout): fields on the column's width, the buttons at its end, right under the field they belong to (the cache tool's choice and "Clear", the siteaccess and "Set"). A long cache name keeps
    its whole width instead of sharing a row with the button. */
 :is(#clearcache-tool, #quicksettings-tool, #bookmarks) .box-content :is(select, input[type=text]) { width: 100%; }
@@ -1977,9 +1975,7 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
   text-decoration: none;
 }
 #leftmenu #widthcontrol-links {
-  margin: var(--a4-space-3) 0 0;
-  padding-top: var(--a4-space-3);
-  border-top: 1px solid var(--a4-line);
+  margin: var(--a4-gutter) 0 0;   /* separated from the menu above by space, as the blocks are */
 }
 
 /* The bar on the left is an inset shadow: its corners stay square, or the rounding bends it into a "(". */

@@ -158,33 +158,19 @@
   --a4-z-drag: 9000;
   --a4-z-skip-link: 10000;   /* the skip link, shown while focused, over everything */
   --a4-z-drag-mask: 9500;
-  /* Density: the spacing of list cells and cards. html[data-a4-density="compact"] (below) sets them anew; nothing
-     else changes with the density, and every target keeps its 24px (WCAG 2.5.8). */
-  --a4-list-pad: .4em;
+  /* The spacing of list cells and cards: one density (the compact view was removed in October 2026) */
+  --a4-list-pad: var(--a4-cell-pad-y) calc(var(--a4-space-1) + 2px);   /* table.list: 8px rows, 6px a side (was .4em, 5px): a list of ten columns still fits a 944px content column */
   --a4-cell-pad-y: var(--a4-space-2);
   --a4-cell-pad-x: var(--a4-space-3);
   --a4-card-pad-y: var(--a4-space-3);
   --a4-card-pad-x: var(--a4-space-4);
-  /* the gap between the frame's cards: side columns, content, header (admin4.css); 24px, compact 16px */
+  /* the gap between the frame's cards: side columns and content, under the header, at the bottom (admin4.css) */
   --a4-gutter: var(--a4-space-5);
 
   /* the browser's own parts (scrollbars, select popups, date pickers, autofill) follow the mode */
   color-scheme: light;
 }
 
-/* ---- Density: compact ------------------------------------------------------------------------------------------
-   The header's density switch (page_head_style.tpl) sets html[data-a4-density="compact"]: smaller cell and card
-   spacing and 28px controls. Only the density tokens are set here; the content tree keeps its 24px row pitch and
-   every target its 24px (WCAG 2.5.8). */
-html[data-a4-density="compact"] {
-  --a4-control-h: calc(var(--a4-space-5) + var(--a4-space-1));
-  --a4-list-pad: .3em;   /* with a 13px body and a normal line height a row stays above 24px (WCAG 2.5.8) */
-  --a4-cell-pad-y: var(--a4-space-1);
-  --a4-cell-pad-x: var(--a4-space-2);
-  --a4-card-pad-y: var(--a4-space-2);
-  --a4-card-pad-x: var(--a4-space-3);
-  --a4-gutter: var(--a4-space-4);
-}
 
 /* ---- Tokens: dark (admin4) --------------------------------------------------------------------------------- */
 
@@ -529,8 +515,8 @@ html[data-a4-theme="dark"] {
 /* Card parts. .a4-card-head: the title (h2/h3) and, at its end, .a4-card-actions; a <p> in it is the card's
    subtitle. .a4-card-body: the content, spaced from the head. .a4-card-foot: the actions that act on the card's
    content, on a strip at the card's bottom edge (it reaches the edges through the card's padding). The foot and the
-   flush variant read the card's padding from --a4-card-pad-x/-y when a density setting defines them, else from the
-   spacing scale the card's padding uses. */
+   flush variant read the card's padding from --a4-card-pad-x/-y (the spacing scale as their fallback, for a page
+   that does not load the tokens). */
 .a4-card-head > :is(h2, h3, .a4-h2, .a4-h3) { margin: 0; }
 .a4-card-head > p { flex: 1 1 100%; max-width: 78ch; margin: 0; color: var(--a4-muted); }
 .a4-card-head:has(> p) { row-gap: var(--a4-space-1); }
@@ -765,9 +751,9 @@ a.a4-lang:focus-visible { outline: 2px solid var(--a4-accent-strong); outline-of
   justify-content: center;
   gap: var(--a4-space-2);
   max-width: 100%;
-  min-height: 36px;
+  min-height: var(--a4-control-h);   /* one control height: buttons, fields, tabs and the legacy controls */
   margin: 0;
-  padding: var(--a4-space-2) var(--a4-space-3);
+  padding: var(--a4-space-1) var(--a4-space-3);
   border: 1px solid var(--a4-line-strong);
   border-radius: var(--a4-radius-s);
   background-color: var(--a4-card);
@@ -915,9 +901,9 @@ fieldset.a4-field > legend + * { clear: both; }
 .a4-field input[type="time"],
 .a4-field input[type="datetime-local"] {
   width: 100%;
-  min-height: 38px;
+  min-height: var(--a4-control-h);
   margin: 0;
-  padding: var(--a4-space-2) var(--a4-space-3);
+  padding: var(--a4-space-1) var(--a4-space-3);
   border: 1px solid var(--a4-field-line);
   border-radius: var(--a4-radius-s);
   background-color: var(--a4-field);
@@ -1004,7 +990,7 @@ fieldset.a4-field > legend + * { clear: both; }
 .a4-chip span {
   display: inline-flex;
   align-items: center;
-  min-height: 32px;
+  min-height: var(--a4-control-h);
   padding: var(--a4-space-1) var(--a4-space-3);
   border: 1px solid var(--a4-line-strong);
   border-radius: var(--a4-radius-s);
@@ -1080,8 +1066,8 @@ fieldset.a4-field > legend + * { clear: both; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 34px;
-  min-height: 30px;
+  min-width: var(--a4-control-h);
+  min-height: var(--a4-control-h);
   padding: 2px var(--a4-space-2);
   border: 1px solid var(--a4-line-strong);
   border-radius: var(--a4-radius-s);
@@ -1109,7 +1095,7 @@ fieldset.a4-field > legend + * { clear: both; }
   display: inline-flex;
   align-items: center;
   gap: var(--a4-space-2);
-  min-height: 32px;
+  min-height: var(--a4-control-h);
   margin: 0;
   padding: var(--a4-space-1) var(--a4-space-3);
   border: 1px solid var(--a4-line-strong);
@@ -1348,7 +1334,7 @@ body.exp-debug-bar .a4-toasts { bottom: calc(var(--exp-debug-bar-h, 38px) + var(
 .a4-fold > summary:hover { color: var(--a4-accent-text); }
 .a4-fold-body { padding: 0 var(--a4-space-3) var(--a4-space-3); }
 .a4-confirm { flex: 1 1 100%; }
-.a4-confirm > summary { display: inline-flex; min-height: 36px; padding: var(--a4-space-2) var(--a4-space-3); color: var(--a4-bad); }
+.a4-confirm > summary { display: inline-flex; align-items: center; min-height: var(--a4-control-h); padding: var(--a4-space-1) var(--a4-space-3); color: var(--a4-bad); }
 .a4-confirm > div {
   display: flex;
   flex-wrap: wrap;
@@ -1686,7 +1672,6 @@ a.a4-icon-btn, a.a4-icon-btn:visited { color: var(--a4-muted); }
 .a4-bi-shield-fill-check { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/shield-fill-check.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/shield-fill-check.svg); }
 .a4-bi-sun { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/sun.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/sun.svg); }
 .a4-bi-trash { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/trash.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/trash.svg); }
-.a4-bi-view-stacked { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/view-stacked.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/view-stacked.svg); }
 .a4-bi-x-circle-fill { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/x-circle-fill.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/x-circle-fill.svg); }
 
 /* ---- The frame's own hidden-until-used parts (were style="display:none" in the pagelayouts) ------------------ */

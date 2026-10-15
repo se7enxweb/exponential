@@ -56,7 +56,6 @@ class AdminThemeSwitchTest extends PHPUnit\Framework\TestCase
             $this->assertStringNotContainsString( '<svg', $tpl, $path );
             $this->assertStringContainsString( '<span id="a4-theme-status" class="a4-sr-only" role="status"></span>', $tpl, $path );
             // three states: aria-pressed (two states) would announce the wrong thing
-            // (the density switch beside it is a two-state toggle and keeps its aria-pressed)
             $this->assertMatchesRegularExpression( '/<button type="button" id="a4-theme-toggle"[^>]*>/', $tpl, $path );
             preg_match( '/<button type="button" id="a4-theme-toggle"[^>]*>/', $tpl, $button );
             $this->assertStringNotContainsString( 'aria-pressed', $button[0] ?? '', $path );
