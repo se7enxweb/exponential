@@ -229,6 +229,21 @@ at `--a4-content-max`. On a phone the node's tabs take their own row and scroll,
 and a wide table in a tab scrolls inside it. On touch screens (`pointer: coarse`) the small controls of the frame
 (the tree's node icons and open/close arrows, the search scope, the copy buttons, the side columns' checkboxes) get a 24px target. Search results show each result's path under its name, and on a phone the type stacks under them too. On very wide windows the body text grows from 13 to 14px (`--a4-text-body`); the control and label sizes keep their tokens.
 
+The right column's drawer:
+
+| | Phone (below 576px) | Tablet-sized window (576 to 1279px, also 960px at 200% zoom) | Wide window (1280px and up) |
+| --- | --- | --- | --- |
+| Shown as | drawer over the page | drawer over the page | column beside the content |
+| On a new page | closed | as the user left it: eZPreference `admin_right_drawer` (1 open, 0 or empty closed) | eZPreference `admin_right_sidebar` |
+| Saved by | nothing | a click on its tab, Escape, or a click on the left tab that closes it | a click on its tab |
+
+Keyboard: opening a drawer with its tab moves the focus to the drawer's first control; while it is open, Tab and
+Shift+Tab cycle through the drawer's controls and its tab (focus trap); Escape closes it and puts the focus back on
+the tab; the tab reports the state in `aria-expanded`. A page that opens with the drawer restored does not move the
+focus. For a signed-in user every one of these choices is an eZPreference written through `window.a4Pref` (and on
+`<html>` by `parts/a4_preference_attributes.tpl`, so it follows the user to another browser); an anonymous page keeps
+it in localStorage. The left column's drawer (below 1024px) is not remembered.
+
 ## Legacy controls and the side columns
 
 The kernel's module templates still write `input.button`, `input.defaultbutton`, `input.button-disabled`,

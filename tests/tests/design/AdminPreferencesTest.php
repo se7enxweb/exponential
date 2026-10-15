@@ -15,7 +15,7 @@
 
 class AdminPreferencesTest extends PHPUnit\Framework\TestCase
 {
-    const NAMES = array( 'admin_color_mode', 'admin_density', 'admin_left_sidebar', 'admin_right_sidebar', 'admin_navgroups' );
+    const NAMES = array( 'admin_color_mode', 'admin_density', 'admin_left_sidebar', 'admin_right_sidebar', 'admin_right_drawer', 'admin_navgroups' );
 
     private static function read( $path )
     {

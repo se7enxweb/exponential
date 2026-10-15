@@ -8,16 +8,25 @@
     // admin_left_sidebar and admin_right_sidebar (1 open, the default, 0 closed), like the column width; an anonymous
     // page keeps it in the browser. Below its breakpoint a column is a drawer over the page: it starts closed, at most
     // one column is open while a drawer is (an inline column steps aside meanwhile), Escape closes it and gives the
-    // focus back to its tab, and nothing is saved: a narrow window, or a column opened over the page there, must not
-    // change what a wide window shows later. Only a click on a column beside the content saves a choice. The browser
-    // storage keys used before (ezpAdminSidebarLeft/Right, ezpAdminLeftSidebar/RightSidebar) are dropped.
+    // focus back to its tab, Tab and Shift+Tab stay inside the open drawer and its tab (focus trap), and opening it
+    // with its tab moves the focus into it. A narrow window, or a column opened over the page there, never changes
+    // what a wide window shows later: only a click on a column beside the content saves admin_left_sidebar or
+    // admin_right_sidebar. Whether the right drawer is open is a choice of its own, admin_right_drawer (1 open, 0 or
+    // empty closed), saved by a click or Escape on a tablet-sized window (576 to 1279px, also 960px at 200% zoom) and
+    // opened again on the next page there; on a phone the drawer would cover the whole page, so it starts closed and
+    // saves nothing. The browser storage keys used before (ezpAdminSidebarLeft/Right, ezpAdminLeftSidebar/RightSidebar)
+    // are dropped.
     function sidebarToggle() {
         const narrow = window.matchMedia("(max-width: 1023.98px)");
         const drawerQuery = { left: narrow, right: window.matchMedia("(max-width: 1279.98px)") };
+        const phone = window.matchMedia("(max-width: 575.98px)");
         const prefs = { left: "admin_left_sidebar", right: "admin_right_sidebar" };
+        const drawerPref = "admin_right_drawer";
         const pref = window.a4Pref || { get: () => null, set: () => {} };
         const choice = { left: pref.get(prefs.left) !== "0", right: pref.get(prefs.right) !== "0" };
-        let drawerOpen = null; // the column open over the page as a drawer: "left", "right" or null
+        let rightDrawer = pref.get(drawerPref) === "1"; // the saved state of the right drawer
+        // the column open over the page as a drawer: "left", "right" or null
+        let drawerOpen = rightDrawer && drawerQuery.right.matches && !phone.matches ? "right" : null;
 
         function stored(side) {
             return choice[side];
@@ -26,6 +35,32 @@
         function store(side, open) {
             choice[side] = open;
             pref.set(prefs[side], open ? "1" : "0");
+        }
+
+        // after a click on a tab or Escape: the right drawer's state, saved on a tablet-sized window only
+        function storeDrawer() {
+            const open = drawerOpen === "right";
+            if (phone.matches || !drawerQuery.right.matches || open === rightDrawer) {
+                return;
+            }
+            rightDrawer = open;
+            pref.set(drawerPref, open ? "1" : "0");
+        }
+
+        // what Tab can reach in an open drawer: its tab first, then the drawer's own visible controls
+        function trapItems(side) {
+            const control = document.querySelector(".sidebar-control." + side);
+            const column = document.querySelector(".sidebar." + side);
+            const items = control ? [control] : [];
+            if (column && typeof column.querySelectorAll === "function") {
+                column.querySelectorAll('a[href], button:not([disabled]), input:not([disabled]):not([type="hidden"]), ' +
+                    'select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])').forEach((el) => {
+                    if (el.getClientRects().length) {
+                        items.push(el);
+                    }
+                });
+            }
+            return items;
         }
 
         function isDrawer(side) {
@@ -67,13 +102,21 @@
         function toggle(side) {
             if (isDrawer(side)) {
                 drawerOpen = drawerOpen === side ? null : side;
-            } else {
-                // beside the content: a column that stepped aside for a drawer comes back without a new choice
-                const visible = shown(side);
-                drawerOpen = null;
-                if (visible || !stored(side)) {
-                    store(side, !visible);
+                storeDrawer();
+                apply();
+                // opened with its tab: the focus moves into the drawer (the tab is the first stop of its trap)
+                const items = drawerOpen === side ? trapItems(side) : [];
+                if (items.length > 1) {
+                    items[1].focus();
                 }
+                return;
+            }
+            // beside the content: a column that stepped aside for a drawer comes back without a new choice
+            const visible = shown(side);
+            drawerOpen = null;
+            storeDrawer();
+            if (visible || !stored(side)) {
+                store(side, !visible);
             }
             apply();
         }
@@ -84,6 +127,22 @@
         // Escape closes a column open over the page as a drawer and gives the focus back to its tab, when the focus is
         // in that column or on its tab. While a context menu (ezpopupmenu.js) is shown, Escape belongs to the menu: this
         // does not rely on the order the scripts load in or on the menu stopping the event.
+        // Tab and Shift+Tab: the focus stays inside the open drawer and its tab, cycling from the last control back to
+        // the tab and from the tab into the drawer (the tab sits in the header, so its natural next stop is the page
+        // under the drawer). Focus outside the drawer, after a click on the page, is left alone.
+        document.addEventListener("keydown", (e) => {
+            if (e.key !== "Tab" || e.defaultPrevented || e.altKey || e.ctrlKey || e.metaKey || drawerOpen === null || !isDrawer(drawerOpen)) {
+                return;
+            }
+            const items = trapItems(drawerOpen);
+            const at = items.indexOf(document.activeElement);
+            if (at === -1 || items.length < 2) {
+                return;
+            }
+            e.preventDefault();
+            items[(at + (e.shiftKey ? -1 : 1) + items.length) % items.length].focus();
+        });
+
         document.addEventListener("keydown", (e) => {
             if (e.key !== "Escape" || e.defaultPrevented || drawerOpen === null || !isDrawer(drawerOpen)) {
                 return;
@@ -106,6 +165,7 @@
                 }
             }
             drawerOpen = null;
+            storeDrawer();
             apply();
             if (control) {
                 control.focus();

@@ -1,5 +1,6 @@
 // Runs sidebarToggle() of design/admin4/javascript/ezadmin_menubar.js against a small stand-in for the browser
-// (matchMedia, jQuery's few calls, the keydown listener) and prints one JSON line per scenario.
+// (matchMedia, jQuery's few calls, the keydown listeners, two focusable links in each column) and prints one JSON
+// line per scenario.
 // Usage: node sidebar_drawer.js <path to ezadmin_menubar.js>
 'use strict';
 const fs = require('fs');
@@ -13,9 +14,27 @@ function run(width, prefsIn, steps) {
     const state = { left: { show: false, expanded: null }, right: { show: false, expanded: null } };
     const handlers = { left: null, right: null };
     const saved = [];
-    let keydown = null;
+    const keydowns = [];
+    const focusLog = [];
     let focused = null;
-    const controls = { left: { side: 'left', focus() { focused = 'left'; } }, right: { side: 'right', focus() { focused = 'right'; } } };
+    let sandbox = null;
+    function element(name) {
+        return {
+            name,
+            focus() { focused = name; focusLog.push(name); sandbox.document.activeElement = this; },
+            getClientRects() { return [1]; },
+        };
+    }
+    const controls = { left: element('left'), right: element('right') };
+    const links = { left: [element('left1'), element('left2')], right: [element('right1'), element('right2')] };
+    const columns = {};
+    ['left', 'right'].forEach((s) => {
+        columns[s] = {
+            contains: (el) => links[s].indexOf(el) >= 0,
+            // a closed column is hidden: nothing in it can take the focus
+            querySelectorAll: () => (state[s].show ? links[s] : []),
+        };
+    });
     function side(sel) { return sel.indexOf('left') >= 0 ? 'left' : 'right'; }
     function $(sel) {
         const s = side(sel);
@@ -27,7 +46,7 @@ function run(width, prefsIn, steps) {
         };
         return api;
     }
-    const sandbox = {
+    sandbox = {
         $,
         window: {
             matchMedia(q) {
@@ -42,9 +61,9 @@ function run(width, prefsIn, steps) {
         },
         document: {
             getElementById: () => ({}),
-            querySelector: (sel) => (sel.indexOf('.sidebar-control.') === 0 ? controls[side(sel)] : { contains: () => false }),
+            querySelector: (sel) => (sel.indexOf('.sidebar-control.') === 0 ? controls[side(sel)] : columns[side(sel)]),
             querySelectorAll: () => [],
-            addEventListener: (t, f) => { if (t === 'keydown') keydown = f; },
+            addEventListener: (t, f) => { if (t === 'keydown') keydowns.push(f); },
             activeElement: null,
         },
     };
@@ -52,12 +71,31 @@ function run(width, prefsIn, steps) {
     vm.runInContext(source.slice(start, end) + '\nsidebarToggle();', sandbox);
     const out = [];
     const snap = (label) => out.push(label + ':' + (state.left.show ? 'L' : '-') + (state.right.show ? 'R' : '-'));
+    const key = (event) => {
+        event.defaultPrevented = false;
+        event.preventDefault = () => { event.defaultPrevented = true; };
+        keydowns.forEach((f) => f(event));
+        return event;
+    };
     snap('start');
     for (const step of steps) {
         if (step === 'escape') {
-            sandbox.document.activeElement = state.left.show && queries[0].matches ? controls.left : controls.right;
-            keydown({ key: 'Escape', defaultPrevented: false });
+            const active = sandbox.document.activeElement;
+            const inOpen = active && ((state.left.show && (active === controls.left || columns.left.contains(active)))
+                || (state.right.show && (active === controls.right || columns.right.contains(active))));
+            if (!inOpen) {
+                sandbox.document.activeElement = state.left.show && queries[0].matches ? controls.left : controls.right;
+            }
+            key({ key: 'Escape' });
             snap('escape');
+        } else if (step === 'tab' || step === 'shift-tab') {
+            const e = key({ key: 'Tab', shiftKey: step === 'shift-tab' });
+            snap(step + '>' + (e.defaultPrevented ? focused : 'page'));
+        } else if (step.indexOf('focus:') === 0) {
+            const name = step.slice(6);
+            const all = [controls.left, controls.right].concat(links.left, links.right);
+            all.filter((el) => el.name === name)[0].focus();
+            snap(step);
         } else if (step.indexOf('resize:') === 0) {
             width = parseInt(step.slice(7), 10);
             queries.forEach((q) => { q.matches = width <= q.max; q.listeners.forEach((f) => f()); });
@@ -67,7 +105,7 @@ function run(width, prefsIn, steps) {
             snap('click-' + step);
         }
     }
-    return { width, states: out, saved, focused, breakpoints: queries.map((q) => q.max) };
+    return { width, states: out, saved, focused, focusLog, breakpoints: queries.map((q) => q.max) };
 }
 
 const scenarios = {
@@ -76,5 +114,15 @@ const scenarios = {
     narrow800: run(800, {}, ['left', 'right', 'escape']),
     midStoredClosed: run(1180, { admin_left_sidebar: '0' }, ['left']),
     resize: run(1440, {}, ['resize:1180', 'right', 'resize:1440']),
+    // the right drawer saved open: open again on a tablet-sized window (and at 960px, the 200% zoom), not on a phone
+    // and not on a wide window
+    drawerSaved1180: run(1180, { admin_right_drawer: '1' }, []),
+    drawerSaved960: run(960, { admin_right_drawer: '1' }, ['right']),
+    drawerSavedPhone: run(390, { admin_right_drawer: '1' }, ['right', 'right']),
+    drawerSaved1440: run(1440, { admin_right_drawer: '1' }, []),
+    // the focus trap: opening moves the focus into the drawer, Tab cycles drawer -> tab -> drawer, Shift+Tab back
+    trap: run(960, {}, ['right', 'tab', 'tab', 'shift-tab', 'shift-tab', 'escape']),
+    // focus outside the drawer (a click on the page) is left alone
+    trapOutside: run(960, {}, ['right', 'focus:left', 'tab']),
 };
 process.stdout.write(JSON.stringify(scenarios));

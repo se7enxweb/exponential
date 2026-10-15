@@ -545,9 +545,11 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
         $this->assertNotFalse( $end );
         $sidebar = substr( $js, $start, $end - $start );
         $this->assertSame( 0, substr_count( $sidebar, 'setItem(' ), 'no browser storage: the choice is an eZPreference' );
-        // saved only inside store(), through the shared window.a4Pref (AdminPreferencesTest)
-        $this->assertSame( 1, substr_count( $sidebar, 'pref.set(' ), 'saved only inside store()' );
+        // saved only inside store() (beside the content) and storeDrawer() (the right drawer's own preference), through
+        // the shared window.a4Pref (AdminPreferencesTest)
+        $this->assertSame( 2, substr_count( $sidebar, 'pref.set(' ), 'saved only inside store() and storeDrawer()' );
         $this->assertMatchesRegularExpression( '/function store\(side, open\) \{\s*choice\[side\] = open;\s*pref\.set\(prefs\[side\], open \? "1" : "0"\);/', $sidebar );
+        $this->assertMatchesRegularExpression( '/function storeDrawer\(\) \{[^}]*\}\s*rightDrawer = open;\s*pref\.set\(drawerPref, open \? "1" : "0"\);/', $sidebar );
         $this->assertStringContainsString( 'const pref = window.a4Pref', $sidebar );
         $this->assertStringContainsString( 'window.matchMedia("(max-width: 1023.98px)")', $sidebar );
         $this->assertStringNotContainsString( '$(window).width()', $sidebar );
