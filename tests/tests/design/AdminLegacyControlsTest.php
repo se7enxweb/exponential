@@ -11,7 +11,7 @@
  *   their block titles have one size; their link lists have no bullets;
  * - every left menu of admin4 ends with the same width switch (three icon buttons in a POST form, the pressed one
  *   marked), and the tree menus share one trash link;
- * - the user preferences show each setting as its name and an on/off switch;
+ * - the user preferences show each setting as its name and its on/off choice as the design's tabs (ul.tabs);
  * - the node's tab box fills its height with the open tab and keeps room for the resize grip under its last row.
  *
  * doc/bc/6.0/admin4-styling.md
@@ -260,13 +260,60 @@ class AdminLegacyControlsTest extends PHPUnit\Framework\TestCase
     public function testThePreferencesAreANameAndAnOnOffSwitch()
     {
         $preferences = self::template( 'toolbar/full/admin_preferences.tpl' );
-        $this->assertSame( 2, substr_count( $preferences, '<span class="a4-tabs is-segmented" role="group" aria-labelledby="a4-pref-' ) );
         $this->assertSame( 2, substr_count( $preferences, '<span class="a4-pref-label" id="a4-pref-' ) );
         $this->assertStringNotContainsString( '&nbsp;|&nbsp;', $preferences, 'no text separator between on and off' );
         $rules = AdminBaseStylesheetsTest::rules( self::css( 'admin4.css' ) );
         $row = $rules['#currentuserpreferences .settings > ul > li'];
         $this->assertSame( 'flex', $row['display'] );
         $this->assertSame( 'space-between', $row['justify-content'] );
+    }
+
+    /**
+     * The on/off choice of a preference is drawn as the design's tabs (ul.tabs, the current one in li.selected), not
+     * as a segmented button switch: a group named by the preference's label around the list, the current state a
+     * span.current with aria-current="true", the other state the link (GET user/preferences/set/...) that sets it.
+     */
+    public function testThePreferenceSwitchesAreTabs()
+    {
+        $preferences = self::template( 'toolbar/full/admin_preferences.tpl' );
+        $this->assertStringNotContainsString( 'is-segmented', $preferences, 'tabs, not the segmented button switch' );
+        $this->assertSame( 2, preg_match_all( '#<div class="a4-pref-tabs" role="group" aria-labelledby="(a4-pref-[a-z-]+)"><ul class="tabs">#', $preferences, $groups ) );
+        foreach ( $groups[1] as $id )
+        {
+            $this->assertStringContainsString( '<span class="a4-pref-label" id="' . $id . '">', $preferences, "the group $id is named by a visible label" );
+        }
+        $this->assertStringNotContainsString( '<ul class="tabs" role=', $preferences, 'the list keeps its list role; the group is the div around it' );
+        // each preference has both states, one per branch: four current tabs, four links
+        $this->assertSame( 4, substr_count( $preferences, '<li class="selected"><span class="current" aria-current="true">' ) );
+        $markup = preg_replace( '/\{\*.*?\*\}/s', '', $preferences );
+        $this->assertSame( 4, substr_count( $markup, 'aria-current=' ), 'only the current state is marked' );
+        $this->assertSame( 4, preg_match_all( "#<li><a href=\{'/user/preferences/set/admin_edit_show_(locations|re_edit)/[01]'\|ezurl\} title=#", $preferences ) );
+
+        $css = self::css( 'admin4.css' );
+        $rules = AdminBaseStylesheetsTest::rules( $css );
+        $selected = self::rule( $rules, 'ul.tabs li.selected span.current' );
+        $this->assertNotNull( $selected, 'the current state takes the selected tab\'s look' );
+        $this->assertSame( 'var(--a4-accent-soft)', $selected['background-color'] );
+        $this->assertSame( 'var(--a4-accent-text)', $selected['color'] );
+        $this->assertSame( 'inset 0 -2px 0 var(--a4-accent)', $selected['box-shadow'] );
+        $this->assertSame( 'var(--a4-muted)', self::rule( $rules, 'ul.tabs li span.current' )['color'] );
+        $tab = $rules['#currentuserpreferences .a4-pref-tabs ul.tabs li :is(a, span.current)'];
+        $this->assertSame( 'var(--a4-space-5)', $tab['min-height'], 'a 24px target (WCAG 2.5.8)' );
+        $this->assertSame( 'none', $rules['#currentuserpreferences .a4-pref-tabs ul.tabs li']['float'] );
+        foreach ( $rules as $selector => $declarations )
+        {
+            if ( strpos( $selector, '.a4-pref-tabs' ) === false )
+            {
+                continue;
+            }
+            foreach ( $declarations as $property => $value )
+            {
+                $this->assertDoesNotMatchRegularExpression( '/#[0-9a-f]{3,8}\b|\brgba?\(|\bhsla?\(/i', $value, "$selector { $property }: tokens, no literal colours" );
+            }
+        }
+        $forced = AdminBaseStylesheetsTest::rules( $css, true );
+        $this->assertSame( '2px solid Highlight', $forced['ul.tabs li.selected :is(a, span.disabled, span.current)']['outline'] ?? null,
+            'forced colors drop the tint and the bar: an outline marks the current tab' );
     }
 
     public function testTheRightColumnStacksAFieldAndItsButton()

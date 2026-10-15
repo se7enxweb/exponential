@@ -267,6 +267,15 @@ menu of admin4 ends with `design:parts/left_width_control.tpl` (three icon butto
 pressed) and a tree menu shows its trash link through `design:parts/left_trash.tpl`: include them, never copy their
 markup (`AdminLegacyControlsTest`).
 
+The User preferences block of the right column (`toolbar/full/admin_preferences.tpl`) shows each on/off preference as
+its name and the design's tabs (`ul.tabs`), not as a segmented button switch: the current state is
+`<li class="selected"><span class="current" aria-current="true">`, drawn like the node view's current tab (the accent
+tint with the bar under it), the other state is the plain link (`user/preferences/set/...`) that changes it. A
+`<div class="a4-pref-tabs" role="group" aria-labelledby="...">` around the list names it after the preference's
+label (`.a4-pref-label`); the list keeps its list role. In the column the tabs sit side by side, at least 24px high,
+and under forced colors an outline in `Highlight` marks the current one (for every `ul.tabs`). A new on/off
+preference in the right column uses the same markup (`AdminLegacyControlsTest`).
+
 ## Edit forms
 
 The datatype edit templates live in `design/standard` and still write the classic markup: `input.box`,

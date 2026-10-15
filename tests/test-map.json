@@ -309,7 +309,8 @@
       "tests/tests/design/AdminJobTranslationsTest.php"
     ],
     "design/admin4/stylesheets/admin4.css": [
-      "tests/tests/design/AdminEditBarTest.php"
+      "tests/tests/design/AdminEditBarTest.php",
+      "tests/tests/design/AdminLegacyControlsTest.php"
     ],
     "extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe_tinymce8.tpl": [
       "tests/tests/design/AdminEditBarTest.php"
@@ -337,6 +338,9 @@
     ],
     "design/admin4/stylesheets/editor_content.css": [
       "tests/tests/design/AdminContentEditFormsTest.php"
+    ],
+    "design/admin4/templates/toolbar/full/admin_preferences.tpl": [
+      "tests/tests/design/AdminLegacyControlsTest.php"
     ]
   },
   "generated": {

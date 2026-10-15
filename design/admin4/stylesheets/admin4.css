@@ -632,7 +632,8 @@ html[data-a4-theme-choice="system"] .a4-theme-toggle .a4-icon-system { display: 
 
 /* Tabs (the node view's View/Details/..., and every ul.tabs): a quiet row, the current one marked in orange */
 ul.tabs li a,
-ul.tabs li span.disabled {
+ul.tabs li span.disabled,
+ul.tabs li span.current {
   border-radius: var(--a4-radius-s);
   color: var(--a4-muted);
   text-decoration: none;
@@ -643,10 +644,15 @@ ul.tabs li a:hover {
   color: var(--a4-ink);
 }
 ul.tabs li.selected a,
-ul.tabs li.selected span.disabled {
+ul.tabs li.selected span.disabled,
+ul.tabs li.selected span.current {
   background-color: var(--a4-accent-soft);
   color: var(--a4-accent-text);
   box-shadow: inset 0 -2px 0 var(--a4-accent);
+}
+/* forced colors drop the tint and the bar: an outline marks the current tab */
+@media (forced-colors: active) {
+  ul.tabs li.selected :is(a, span.disabled, span.current) { outline: 2px solid Highlight; outline-offset: -2px; }
 }
 .tab-content {
   border-color: var(--a4-line);
@@ -1956,8 +1962,10 @@ div#contentstructure ul#content_tree_menu ul a.openclose-close::after {
 :is(#clearcache-tool, #quicksettings-tool, #bookmarks) .box-content form > .block { margin: 0; padding: 0; }
 :is(#clearcache-tool, #quicksettings-tool, #bookmarks) .box-content div.block { padding-bottom: 0; }
 :is(#clearcache-tool, #quicksettings-tool, #bookmarks) .box-content form > :is(input.button, input.defaultbutton, input.button-disabled) { justify-self: end; }
-/* The user preferences: the setting's name and its on/off switch (.a4-tabs.is-segmented) on one row; only a
-   name too long for the column puts the switch under it. */
+/* The user preferences: the setting's name and its on/off choice on one row, the choice drawn as the design's tabs
+   (ul.tabs: muted, the current one, a span.current with aria-current, in the accent tint with the bar under it);
+   only a name too long for the column puts the tabs under it. In the narrow column the tabs sit side by side,
+   unfloated, each at least 24px high (WCAG 2.5.8). */
 #currentuserpreferences .settings > ul > li {
   display: flex;
   flex-wrap: wrap;
@@ -1967,6 +1975,20 @@ div#contentstructure ul#content_tree_menu ul a.openclose-close::after {
   padding-block: var(--a4-space-1);
 }
 #currentuserpreferences .a4-pref-label { min-width: 0; overflow-wrap: break-word; }
+#currentuserpreferences .a4-pref-tabs ul.tabs { display: flex; flex-wrap: nowrap; gap: 2px; width: auto; margin: 0; padding: 0; }
+#currentuserpreferences .a4-pref-tabs ul.tabs li { float: none; margin: 0; padding: 0; }
+#currentuserpreferences .a4-pref-tabs ul.tabs li :is(a, span.current) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--a4-space-6);
+  min-height: var(--a4-space-5);
+  margin: 0;
+  padding: 0 var(--a4-space-2);
+  font-size: var(--a4-text-s);
+  font-weight: 700;
+  white-space: nowrap;
+}
 
 /* The content tree: rows 24px apart at the small and medium column sizes (a 20px line and the item's 4px below it),
    the smallest spacing WCAG 2.5.8 allows for its links and the 20px open/close areas; a larger font (the "Large"
