@@ -8,7 +8,8 @@
    * item.icon (LinkIcons[]): an icon name of known_icons (design.ini [AdminDesignSettings] IconList[]), else the
      plug icon
    * item.text (LinkDescriptions[]): one line on what the function does, translated in item.context
-   mega_links (the section's MegaMenuLinks[]) chooses the links shown: by link key, in that order, at most 12, only
+   mega_links (the section's MegaMenuLinks[]) chooses the links shown: by link key (a link of a section a group adds,
+   GroupSections[], as <group>-<key>, e.g. audit-console), in that order, at most 12, only
    links the user may open (a link of an inactive extension is not in the groups at all); each keeps its group, the
    groups follow the order of their first chosen link, and a group with none is left out. With no mega_links every
    link is shown, in the menu's groups, and a link the user may not open shows its name without link
@@ -20,21 +21,34 @@
      $mega_groups = $groups
      $mega_picked = array()
      $mega_keys = array()
+     $mega_item_keys = array()
+     $mega_url = ''
      $mega_order = array()
      $mega_items = array()}
 {if and( is_set( $mega_links ), $mega_links|count )}
     {foreach $mega_links as $mega_key}
         {if $mega_picked|count|ge( $mega_max )}{break}{/if}
         {if $mega_keys|contains( $mega_key )}{continue}{/if}
-        {foreach $groups as $group}
-            {foreach $group.items as $item}
-                {if and( eq( $item.key, $mega_key ), eq( $item.state, 'link' ), $mega_keys|contains( $mega_key )|not )}
-                    {set $mega_picked = $mega_picked|append( hash( 'group', $group.id, 'item', $item ) )
-                         $mega_keys = $mega_keys|append( $mega_key )}
-                    {if $mega_order|contains( $group.id )|not}
-                        {set $mega_order = $mega_order|append( $group.id )}
+        {* a key of this menu whose link is not drawn because a group's added section (GroupSections[], a tab moved
+           into Setup) has the same address, as the Setup link audit (audit/settings) and the audit group's Settings:
+           that link stands for it. mega_urls is this menu's Links[]. *}
+        {set $mega_url = ''}
+        {if is_set( $mega_urls )}{if is_set( $mega_urls[ $mega_key ] )}{set $mega_url = $mega_urls[ $mega_key ]|trim( '/' )}{/if}{/if}
+        {* by its key first, then, when that drew nothing, by the address *}
+        {foreach array( 'key', 'url' ) as $mega_pass}
+            {if or( $mega_keys|contains( $mega_key ), and( eq( $mega_pass, 'url' ), $mega_url|not ) )}{continue}{/if}
+            {foreach $groups as $group}
+                {foreach $group.items as $item}
+                    {if and( eq( $item.state, 'link' ), $mega_keys|contains( $mega_key )|not, $mega_item_keys|contains( $item.key )|not,
+                             cond( eq( $mega_pass, 'key' ), eq( $item.key, $mega_key ), and( $item.group, eq( $item.url|trim( '/' ), $mega_url ) ) ) )}
+                        {set $mega_picked = $mega_picked|append( hash( 'group', $group.id, 'item', $item ) )
+                             $mega_keys = $mega_keys|append( $mega_key )
+                             $mega_item_keys = $mega_item_keys|append( $item.key )}
+                        {if $mega_order|contains( $group.id )|not}
+                            {set $mega_order = $mega_order|append( $group.id )}
+                        {/if}
                     {/if}
-                {/if}
+                {/foreach}
             {/foreach}
         {/foreach}
     {/foreach}
@@ -83,4 +97,4 @@
     </ul>
 </section>
 {/foreach}
-{undef $mega_icon $mega_text $mega_max $mega_groups $mega_picked $mega_keys $mega_order $mega_items}
+{undef $mega_icon $mega_text $mega_max $mega_groups $mega_picked $mega_keys $mega_item_keys $mega_url $mega_order $mega_items}

@@ -404,6 +404,12 @@ draws no button and the page loads no script.
   MegaMenuLinks[]=cache
   ```
 
+  A tab moved into Setup ([Moving a tab into Setup](#moving-a-tab-into-setup)) brings its own menu into its group,
+  and its links are chosen as `<group>-<key>`, e.g. `MegaMenuLinks[]=audit-console` (the names the i18n hash of
+  `parts/setup/menu.tpl` uses too). A Setup link that is then not drawn because the group has a link to the same
+  address takes that link: with the Audit tab moved, `audit` (`audit/settings`) shows as the Audit group's Settings,
+  so the default works with and without moved tabs. A key whose link is drawn is always taken by its key first.
+
   A list reset to no values shows every link of the menu, as the overview does (not recommended: about 35 links).
   The default is in `settings/menu.ini` rather than in the template so that it can be read and changed where the
   links are defined.
@@ -440,7 +446,7 @@ draws no button and the page loads no script.
 
 `tests/tests/design/AdminMegaMenuTest.php` holds the default, the markup, the source and the view, the widths and
 the strings, renders the panel's template with fake groups (the choice, its order, access, groups left out, the
-limit of 12, no choice), and runs the script in node (`tests/tests/design/js/mega_menu.js`: click, ArrowDown, Escape, Tab, a
+limit of 12, no choice, a key of a moved tab that falls back to the group's link of the same address), and runs the script in node (`tests/tests/design/js/mega_menu.js`: click, ArrowDown, Escape, Tab, a
 click outside, the delays, touch, the focus coming into a preview, the width, the "More" list, one load and a
 failed one).
 

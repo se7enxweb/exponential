@@ -17,6 +17,8 @@
  *  MM-07 - curated: menu.ini [Leftmenu_setup] MegaMenuLinks[] names at most 12 existing links; the panel's template
  *          shows only those, in that order, the user may open, each in its group, groups without one left out, at most
  *          12; with no MegaMenuLinks[] every link (parts/a4_mega_menu.tpl rendered with eZTemplate, no database)
+ *  MM-08 - with a tab moved into Setup (GroupSections[]) a chosen key whose link is not drawn takes the group's link
+ *          of the same address (audit: the audit group's Settings); audit-<key> chooses a group link directly
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminMegaMenuTest.php
  *
@@ -236,11 +238,12 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
     }
 
     /** Renders parts/a4_mega_menu.tpl with groups of fake links; returns [ group id => [ link names ] ] */
-    private static function renderGroups( array $megaLinks, array $groups )
+    private static function renderGroups( array $megaLinks, array $groups, array $megaUrls = array() )
     {
         $tpl = eZTemplate::factory();
         $tpl->setVariable( 'groups', $groups );
         $tpl->setVariable( 'mega_links', $megaLinks );
+        $tpl->setVariable( 'mega_urls', $megaUrls );
         $tpl->setVariable( 'mega_id_prefix', 'mm' );
         $tpl->setVariable( 'i18n_section', 'design/admin/parts/setup/menu' );
         $tpl->setVariable( 'known_icons', array( 'gear' ) );
@@ -318,6 +321,51 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
         $shown = self::renderGroups( $keys, $groups );
         $this->assertSame( 12, count( call_user_func_array( 'array_merge', array_values( $shown ) ) ) );
         $this->assertSame( array( 'L3_1', 'L3_2' ), $shown['g3'], 'the first twelve chosen' );
+    }
+
+    /**
+     * MM-08: a tab moved into Setup (SetupTabs[]/HiddenTabs[] with GroupTabs[audit], GroupSections[audit]=
+     * Leftmenu_audit): its group brings the links of [Leftmenu_audit] as audit-<key>, and the Setup link audit
+     * (audit/settings) is not drawn, as its address is the group's audit-settings. The chosen key audit then takes
+     * that link; audit-<key> chooses one of the group's links directly.
+     */
+    public function testAChosenLinkOfAMovedTabFallsBackToTheGroupsLinkWithItsAddress()
+    {
+        // the settings that make it happen are those of core menu.ini
+        $ini = self::read( 'settings/menu.ini' );
+        $setup = substr( $ini, strpos( $ini, "\n[Leftmenu_setup]" ) );
+        $setup = substr( $setup, 0, strpos( $setup, "\n[", 2 ) );
+        $this->assertStringContainsString( "\nGroupSections[audit]=Leftmenu_audit\n", $setup );
+        $this->assertStringContainsString( "\nLinks[audit]=audit/settings\n", $setup );
+        $this->assertMatchesRegularExpression( '/^MegaMenuLinks\[\]=audit$/m', $setup );
+        $audit = substr( $ini, strpos( $ini, "\n[Leftmenu_audit]" ) );
+        $audit = substr( $audit, 0, strpos( $audit, "\n[", 2 ) );
+        $this->assertStringContainsString( "\nLinks[settings]=audit/settings\n", $audit, 'the audit group has a link with the address of the Setup link audit' );
+        $this->assertStringContainsString( "mega_urls=ezini( \$ini_section, 'Links', 'menu.ini' )", self::read( 'design/admin4/templates/parts/ini_menu.tpl' ) );
+
+        // the groups as ini_menu.tpl hands them over with the audit tab moved into Setup
+        $item = function ( $key, $url, $name, $group = '' ) {
+            return array( 'key' => $key, 'url' => $url, 'name' => $name, 'state' => 'link', 'group' => $group,
+                          'icon' => 'gear', 'text' => '', 'context' => 'design/admin/parts/setup/menu', 'figure' => '' );
+        };
+        $groups = array(
+            array( 'id' => 'content_model', 'name' => 'Content model', 'items' => array( $item( 'classes', 'class/grouplist', 'Classes' ) ) ),
+            array( 'id' => 'audit', 'name' => 'Audit', 'items' => array( $item( 'audit-dashboard', 'audit/dashboard', 'Dashboard', 'audit' ),
+                                                                         $item( 'audit-console', 'audit/console', 'Console', 'audit' ),
+                                                                         $item( 'audit-settings', '/audit/settings', 'Settings', 'audit' ) ) ),
+        );
+        $urls = array( 'classes' => 'class/grouplist', 'audit' => 'audit/settings' );
+
+        $this->assertSame( array( 'content_model' => array( 'Classes' ), 'audit' => array( 'Settings' ) ),
+                           self::renderGroups( array( 'classes', 'audit' ), $groups, $urls ), 'audit takes the group link of the same address' );
+        $this->assertSame( array( 'audit' => array( 'Console', 'Settings' ) ),
+                           self::renderGroups( array( 'audit-console', 'audit', 'audit-settings' ), $groups, $urls ), 'a link chosen twice shows once' );
+        // only a link a group adds stands in: a key of this menu that is drawn is taken by its key
+        $groups[0]['items'][] = $item( 'other', 'audit/settings', 'Other' );
+        $this->assertSame( array( 'audit' => array( 'Settings' ) ), self::renderGroups( array( 'audit' ), $groups, $urls ) );
+        // with the tab in the top menu the Setup link audit is drawn itself and is taken by its key
+        $groups[1]['items'][] = $item( 'audit', 'audit/settings', 'Audit' );
+        $this->assertSame( array( 'audit' => array( 'Audit' ) ), self::renderGroups( array( 'audit' ), $groups, $urls ) );
     }
 
     /** MM-07 */

@@ -393,6 +393,7 @@
             {include uri='design:parts/a4_mega_menu.tpl' groups=$groups
                      known_icons=cond( ezini_hasvariable( 'AdminDesignSettings', 'IconList', 'design.ini' ), ezini( 'AdminDesignSettings', 'IconList', 'design.ini' ), array() )
                      mega_links=cond( ezini_hasvariable( $ini_section, 'MegaMenuLinks', 'menu.ini' ), ezini( $ini_section, 'MegaMenuLinks', 'menu.ini' ), array() )
+                     mega_urls=ezini( $ini_section, 'Links', 'menu.ini' )
                      mega_id_prefix=concat( 'a4-mega-', $ini_section|explode( '_' )|implode( '-' ) ) i18n_section=$i18n_section}
             {else}
             {include uri='design:parts/ini_menu_tiles.tpl' groups=$groups
