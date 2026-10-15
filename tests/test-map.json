@@ -203,12 +203,17 @@
     "design/admin4/templates/page_topmenu.tpl": [
       "tests/tests/design/AdminStylingRulesTest.php",
       "tests/tests/design/AdminHeaderTest.php",
-      "tests/tests/design/AdminLogoTest.php"
+      "tests/tests/design/AdminLogoTest.php",
+      "tests/tests/design/AdminPhoneMenuTest.php"
     ],
     "design/admin4/templates/parts/a4_header_user.tpl": [
       "tests/tests/design/AdminHeaderTest.php",
       "tests/tests/design/AdminMegaMenuTest.php",
-      "tests/tests/design/AdminIconsTest.php"
+      "tests/tests/design/AdminIconsTest.php",
+      "tests/tests/design/AdminPhoneMenuTest.php"
+    ],
+    "design/admin4/templates/parts/a4_phone_user.tpl": [
+      "tests/tests/design/AdminPhoneMenuTest.php"
     ],
     "kernel/private/classes/views/error/view.php": [
       "tests/tests/kernel/error/ErrorHeaderListTest.php"
@@ -342,7 +347,9 @@
       "tests/tests/design/AdminLegacyControlsTest.php",
       "tests/tests/design/AdminPreviewDevicesTest.php",
       "tests/tests/design/AdminNodeTabsHeightTest.php",
-      "tests/tests/design/AdminSubitemsPriorityDragTest.php"
+      "tests/tests/design/AdminSubitemsPriorityDragTest.php",
+      "tests/tests/design/AdminPhoneMenuTest.php",
+      "tests/tests/design/AdminHeaderTest.php"
     ],
     "extension/ezjscore/design/standard/javascript/*": [
       "tests/tests/extension/ezjscore/ezjscoreVendoredLibrariesTest.php"
@@ -665,7 +672,9 @@
     ],
     "design/admin4l/templates/explayouts/block/admin_tab_menu.tpl": [
       "tests/tests/design/AdminMegaMenuTest.php",
-      "tests/tests/design/AdminIconsTest.php"
+      "tests/tests/design/AdminIconsTest.php",
+      "tests/tests/design/AdminHeaderTest.php",
+      "tests/tests/design/AdminPhoneMenuTest.php"
     ],
     "design/admin/templates/setup/cronjobs.tpl": [
       "tests/tests/kernel/classes/expCronjobPauseTest.php"

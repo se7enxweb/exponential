@@ -41,6 +41,11 @@
     <!-- start::Navbar Menu -->
     <div id="a4-navbar-menu" class="navbar-menu {if $ui_context_edit}disabled{/if}" role="navigation" aria-label="{'Main menu'|i18n( 'design/admin/pagelayout' )|wash}">
         <ul class="navbar-bar">
+            {* The phone menu's search, first in the panel (below 576px; from 576px the header's own search stands in
+               the row) *}
+            <li class="header-search-mobile">
+                {include uri='design:page_search.tpl' search_box='-mobile'}
+            </li>
             {* The tab marked as current: the page's navigation part, or Setup's for a page of a tab the Setup menu
                stands in for (parts/a4_navigation_part.tpl) *}
             {def $a4_current_part = ''}
@@ -56,8 +61,12 @@
                 <button type="button" class="a4-nav-more-toggle" aria-expanded="false" aria-controls="a4-nav-more-list">{'More'|i18n( 'design/admin/pagelayout' )|wash}<span class="a4-icon a4-bi-chevron-down" aria-hidden="true"></span></button>
                 <ul id="a4-nav-more-list" class="a4-nav-more-list" hidden></ul>
             </li>
-            <li class="header-search-mobile">
-                {include uri='design:page_search.tpl' search_box='-mobile'}
+            {* The phone menu's last rows (below 576px; admin4.css draws them there only, admin4.js leaves them out
+               of the one-line menu): the user's actions, which stand for the header's user menu and logout there,
+               and a close button within a thumb's reach at the panel's end. ezadmin_menubar.js wires the button. *}
+            {include uri='design:parts/a4_phone_user.tpl'}
+            <li class="a4-phone-only a4-phone-close">
+                <button type="button" class="a4-phone-close-button" aria-controls="a4-navbar-menu"><span class="a4-phone-close-cross" aria-hidden="true">&#215;</span>{'Close'|i18n( 'design/admin/pagelayout' )|wash}</button>
             </li>
         </ul>
     </div>

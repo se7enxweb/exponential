@@ -74,7 +74,9 @@ class AdminHeaderTest extends PHPUnit\Framework\TestCase
         $this->assertSame( '1 1 0', $wide['.navbar-menu']['flex'], 'its width does not depend on the tabs, so fitting them cannot loop' );
         $phone = AdminBaseStylesheetsTest::rules( self::media( $css, 'screen and (max-width: 575.98px)' ) );
         $this->assertSame( 'nowrap', $phone['.navbar-main']['flex-wrap'] );
-        $this->assertSame( 'var(--header-height)', $phone['.navbar-menu.show']['padding-top'] );
+        // the open phone menu starts under the row (until 2026-10 behind it, with the header's height as padding-top)
+        $this->assertSame( '100% 0 auto', $phone['.navbar-menu']['inset'] );
+        $this->assertSame( '0', $phone['.navbar-menu.show']['padding'] );
 
         // one value for everything that keeps clear of the header: on the root, not on .dashboard-flex
         $this->assertDoesNotMatchRegularExpression( '/\.dashboard-flex\s*\{[^}]*--header-height\s*:/', self::css( 'pagelayout.css' ) );
@@ -92,7 +94,9 @@ class AdminHeaderTest extends PHPUnit\Framework\TestCase
             $this->assertStringContainsString( '<li class="a4-nav-more" hidden>', $tpl, $path );
             $this->assertStringContainsString( '<button type="button" class="a4-nav-more-toggle" aria-expanded="false" aria-controls="a4-nav-more-list">{\'More\'|i18n( \'design/admin/pagelayout\' )|wash}', $tpl, $path );
             $this->assertStringContainsString( '<ul id="a4-nav-more-list" class="a4-nav-more-list" hidden></ul>', $tpl, $path );
-            $this->assertLessThan( strpos( $tpl, '<li class="header-search-mobile">' ), strpos( $tpl, '<li class="a4-nav-more" hidden>' ), "$path: More is the row's last tab" );
+            $this->assertLessThan( strpos( $tpl, '<li class="a4-nav-more" hidden>' ), strpos( $tpl, "{include uri='design:parts/a4_topmenu_items.tpl'" ), "$path: More is the row's last tab" );
+            // the phone menu's search comes first in the panel (drawn below 576px only)
+            $this->assertLessThan( strpos( $tpl, "{include uri='design:parts/a4_topmenu_items.tpl'" ), strpos( $tpl, '<li class="header-search-mobile">' ), "$path: the phone menu's search is its first item" );
             $this->assertStringNotContainsString( 'Logout: ', $tpl, "$path: logout left the menu row" );
         }
         $js = self::file( 'design/admin4/javascript/admin4.js' );
