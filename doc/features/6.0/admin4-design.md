@@ -368,6 +368,59 @@ designs keep their tabs.
 `AdminSetupOverviewTest` fails when a moved tab's group, section, page, icon, description or translation is missing,
 when a tab is hidden by default, and draws `parts/a4_navigation_part.tpl` with the tabs shown and hidden.
 
+### Mega menu (prototype, opt-in)
+
+A small button beside the Setup tab opens a panel under the header with the groups and links of the Setup menu:
+each link on one line with its icon, its name and its description, in up to four columns, and "All Setup functions"
+(the overview) at the end. Off by default; to switch it on, in a siteaccess or override `menu.ini.append.php`:
+
+```ini
+<?php /* #?ini charset="utf-8"?
+
+[TopAdminMenu]
+MegaMenuTabs[]=setup
+*/ ?>
+```
+
+Then clear the caches (the INI cache and the template caches: the header reads the setting when its template is
+compiled). Only `setup` is supported so far; any other name does nothing. With `MegaMenuTabs[]` empty the header
+draws no button and the page loads no script.
+
+- **The tab stays a link.** The button beside it is a disclosure (the WAI-ARIA disclosure navigation pattern, not a
+  menu): `aria-expanded`, `aria-controls`, named "Open the Setup menu". Click, Enter or Space opens and closes the
+  panel; ArrowDown opens it and goes to its first link; Tab goes through its links in order and on past the panel,
+  which closes it, as does a click outside; Escape closes it and gives the focus back to the button. Each group is a
+  section with a heading (`h2`, drawn small); the links are plain links, the description is the link's description
+  (`aria-describedby`); the link to the page shown (the overview link too) is marked `aria-current="page"`.
+- **Hover is a preview only.** A mouse resting on the tab or the button for 300 ms opens the panel, leaving the tab,
+  the button and the panel for 400 ms closes it (the gap between the header and the panel belongs to the panel, so
+  the way across it does not count as leaving). A click on the button, or the focus moving into the panel, keeps
+  the preview open. Only a pointer of type
+  mouse on a device that reports `(hover: hover) and (pointer: fine)`; never on touch, and not while the header's
+  "More" list or user menu is open.
+- **From 1280px only**, where the header is one row. Below, on the two-row header and on phones, the button is not
+  drawn and the tab is a plain link; the phone menu is unchanged. A tab moved into the "More" list loses its button
+  there.
+- **One source, loaded when needed.** The links are those of the left menu and the overview: `setup/megamenu`, a
+  view without page layout (`ui_context` ajax, `Cache-Control: private, no-store`, the functions of `setup/menu`),
+  draws `[Leftmenu_setup]` through `parts/setup/menu.tpl` and `parts/ini_menu.tpl`, as the overview's tiles
+  (`menu_layout='tiles'`), with `tiles_layout='mega'` (`parts/a4_mega_menu.tpl`): the same names, groups, icons
+  (`LinkIcons[]`), descriptions (`LinkDescriptions[]`) and access checks (`PolicyList_<link>[]`, `CheckViewAccess`,
+  `NoAccessLinks`), without figures. `a4_mega_menu.js` asks for it once, when the panel is first opened; the page
+  itself carries only the button, a status line and the overview link (about 1 KB), cached with the header per role
+  set (`$user_hash`), as the tabs are. A load that fails says so in the panel and is tried again on the next
+  opening; the overview link stays. The request is a view of the setup module, so the audit trail records it as
+  `access.view.sensitive` once per page on which the panel is opened.
+- **Look:** an admin4 card (`--a4-card`, `--a4-line`, `--a4-radius-s`, `--a4-shadow-m`) as wide as the header up to
+  `--a4-content-max`, light and dark, a CanvasText border and Highlight states under forced colors, no transition
+  with reduced motion. Styles in `admin4.css`.
+- **Not in admin4l:** its tab menu block draws no button.
+
+`tests/tests/design/AdminMegaMenuTest.php` holds the default, the markup, the source and the view, the widths and
+the strings, and runs the script in node (`tests/tests/design/js/mega_menu.js`: click, ArrowDown, Escape, Tab, a
+click outside, the delays, touch, the focus coming into a preview, the width, the "More" list, one load and a
+failed one).
+
 ## Languages
 
 A flag stands for a country, not for a language: English is spoken under several flags, and one country has several
@@ -495,6 +548,7 @@ tree's roles, states, Tab stop and keys.
 | `settings/menu.ini` | `MenuAccessSettings` | `NoAccessLinks` | `hidden` | siteaccess |
 | `settings/menu.ini` | `TopAdminMenu` | `HiddenTabs[]` | empty | siteaccess |
 | `settings/menu.ini` | `TopAdminMenu` | `SetupTabs[]` | empty (see [Moving a tab into Setup](#moving-a-tab-into-setup)) | siteaccess |
+| `settings/menu.ini` | `TopAdminMenu` | `MegaMenuTabs[]` | empty; `setup` is the one tab supported (see [Mega menu](#mega-menu-prototype-opt-in)) | siteaccess |
 | `settings/menu.ini` | `Topmenu_<tab>` | `Name`, `Tooltip`, `TranslationContext` | the default tab names, context `design/admin/pagelayout` | siteaccess |
 | `settings/menu.ini` | `Leftmenu_<menu>` | `Groups[]`, `GroupNames[<group>]`, `GroupLinks_<group>[]` | the nine groups of `Leftmenu_setup` (Design and Audit for moved tabs, AI and Updates for extensions' links) | siteaccess |
 | `settings/menu.ini` | `Leftmenu_<menu>` | `LeadLinks[]` | `overview` in `Leftmenu_setup` | siteaccess |
