@@ -92,7 +92,9 @@ class AdminHeaderTest extends PHPUnit\Framework\TestCase
             $this->assertStringNotContainsString( 'Logout: ', $tpl, "$path: logout left the menu row" );
         }
         $js = self::file( 'design/admin4/javascript/admin4.js' );
-        foreach ( array( "new ResizeObserver(fit).observe(nav);", "list.insertBefore(tabs[i], list.firstChild);", "bar.insertBefore(li, more);",
+        foreach ( array( "new ResizeObserver(fit).observe(nav);", "list.insertBefore(tabs[i], list.firstChild);",
+                         "if (li.parentNode !== bar || li.nextSibling !== next)", "if (!wide.matches && !list.firstChild) return;",
+                         "var more = document.querySelector('#header .a4-nav-more');",
                          "toggle.classList.toggle('has-current', !!list.querySelector('[aria-current]'));",
                          "button.setAttribute('aria-expanded', state ? 'true' : 'false');", "e.key === 'Escape'", "e.key === 'ArrowDown'",
                          "nav.classList.toggle('a4-nav-fits', wide.matches);", "window.matchMedia('(min-width: 576px)')" ) as $needle )
@@ -141,8 +143,9 @@ class AdminHeaderTest extends PHPUnit\Framework\TestCase
     {
         $this->assertStringContainsString( '{if $box|eq( \'\' )} aria-keyshortcuts="/"{/if}', self::file( 'design/admin4/templates/page_search.tpl' ) );
         $js = self::file( 'design/admin4/javascript/admin4.js' );
-        $this->assertStringContainsString( "if (e.key !== '/' || e.ctrlKey || e.metaKey || e.altKey || e.defaultPrevented) return;", $js );
+        $this->assertStringContainsString( "if (e.key !== '/' || e.ctrlKey || e.metaKey || e.altKey || e.isComposing || e.defaultPrevented) return;", $js );
         $this->assertStringContainsString( "/^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName)", $js, 'typing a slash in a field stays a slash' );
+        $this->assertStringContainsString( "t.closest('[role=\"textbox\"], [role=\"combobox\"], [role=\"dialog\"], [aria-modal=\"true\"], dialog')", $js, 'nor in a text widget or a dialog' );
     }
 
     /** The header's new rules take every colour from a token (or a system colour in forced colors) */

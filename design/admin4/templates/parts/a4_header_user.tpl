@@ -1,7 +1,7 @@
 {* The header's user controls (page_topmenu.tpl): the user menu and the logout button, for signed-in users only.
    The user menu is a disclosure (a button with aria-expanded and aria-controls, a list of links), opened by
    ezadmin_menubar.js; it shows the user's name and login and the links of the right column's "Current user" box,
-   which keeps them for a browser without scripts. Logout is its own icon button beside it, one click away, named
+   which keeps them for a browser without scripts; as there, they lead nowhere on edit and browse pages. Logout is its own icon button beside it, one click away, named
    with the login ("Logout (admin)") in aria-label and title. On edit pages both stay in place but lead nowhere, as
    the menu tabs do there: leaving the edit form goes through its own buttons. The header's cache blocks are keyed by
    the user's object id (pagelayout.tpl): the name and the links are the user's own. *}
@@ -23,7 +23,7 @@
                 <span class="a4-user-menu-login" translate="no">{$a4_user_login|wash}</span>
             </p>
             <ul class="a4-user-menu-links">
-            {if $ui_context_edit}
+            {if or( $ui_context_edit, eq( $ui_context, 'browse' ) )}
                 <li><span class="disabled" aria-disabled="true">{'Change user info'|i18n( 'design/admin/pagelayout' )|wash}</span></li>
                 <li><span class="disabled" aria-disabled="true">{'Change password'|i18n( 'design/admin/pagelayout' )|wash}</span></li>
             {else}

@@ -30,7 +30,9 @@
             </a>
         {/if}
     </div>
-    {* Before the menu it opens, so the Tab key goes from it into the open menu; admin4.css draws it at the row's end. *}
+    {* The menu button stands before the menu it opens, so the Tab key goes from it into the open menu; admin4.css draws
+       it at the row's end. The menu comes right after the logo, as it is drawn from 1280px; from 576 to 1279px it is
+       drawn as the second row, and the Tab key still reaches it before the search and the tools. *}
     {* The phone-width menu button; ezadmin_menubar.js toggles the menu, aria-expanded and the keys. *}
     <div class="navbar-icon" role="button" tabindex="0" aria-expanded="false" aria-controls="a4-navbar-menu" aria-label="{'Menu'|i18n( 'design/admin/pagelayout' )|wash}"><span aria-hidden="true">&#9776;</span></div>
         {* the sections of the search popup, fetched once for both copies of the search (page_search.tpl reads them) *}

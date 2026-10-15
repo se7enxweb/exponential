@@ -133,16 +133,18 @@
 
     document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape' && open && !e.defaultPrevented) {
+            // also after a mouse click, which leaves the focus on the page in Safari and Firefox on macOS; the focus
+            // goes back to the button only when it was in the disclosure
             var active = document.activeElement;
-            if (active === open.button || open.panel.contains(active)) {
-                e.preventDefault();
-                setOpen(open.button, open.panel, false, true);
-            }
+            e.preventDefault();
+            setOpen(open.button, open.panel, false, active === open.button || open.panel.contains(active));
             return;
         }
-        if (e.key !== '/' || e.ctrlKey || e.metaKey || e.altKey || e.defaultPrevented) return;
+        if (e.key !== '/' || e.ctrlKey || e.metaKey || e.altKey || e.isComposing || e.defaultPrevented) return;
         var t = e.target;
         if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
+        // not out of a widget that takes text or out of a dialog
+        if (t && t.closest && t.closest('[role="textbox"], [role="combobox"], [role="dialog"], [aria-modal="true"], dialog')) return;
         var field = document.getElementById('searchtext');
         if (!field || field.disabled || field.offsetParent === null) return;
         e.preventDefault();
@@ -154,10 +156,11 @@
     });
 
     function overflowMenu() {
-        var nav = document.getElementById('a4-navbar-menu');
-        var bar = nav && nav.querySelector('.navbar-bar');
-        var more = bar && bar.querySelector(':scope > .a4-nav-more');
-        if (!more) return;
+        // found from the "More" item: admin4l's tab menu block draws its row inside the layout's own menu panel
+        var more = document.querySelector('#header .a4-nav-more');
+        var bar = more && more.parentNode;
+        var nav = bar && bar.closest ? bar.closest('.navbar-menu') : null;
+        if (!nav) return;
         var toggle = more.querySelector('.a4-nav-more-toggle');
         var list = more.querySelector('.a4-nav-more-list');
         if (!toggle || !list) return;
@@ -176,10 +179,17 @@
         }
 
         function fit() {
-            // all tabs back in the row, in their order, before "More"
-            tabs.forEach(function (li) { bar.insertBefore(li, more); });
-            more.hidden = true;
             nav.classList.toggle('a4-nav-fits', wide.matches);
+            // the phone menu's column holds every tab: nothing to do while none is in the list
+            if (!wide.matches && !list.firstChild) return;
+            // all tabs back in the row, in their order, before "More". Only the ones that are elsewhere move: a moved
+            // element loses the focus, and this runs on every resize. The focus is given back if it was in a tab.
+            var active = document.activeElement;
+            tabs.forEach(function (li, i) {
+                var next = i + 1 < tabs.length ? tabs[i + 1] : more;
+                if (li.parentNode !== bar || li.nextSibling !== next) bar.insertBefore(li, next.parentNode === bar ? next : more);
+            });
+            more.hidden = true;
             if (wide.matches && !fits()) {
                 more.hidden = false;
                 for (var i = tabs.length - 1; i >= 0 && !fits(); i--) {
@@ -188,6 +198,7 @@
             }
             if (more.hidden && toggle.getAttribute('aria-expanded') === 'true') setOpen(toggle, list, false, false);
             toggle.classList.toggle('has-current', !!list.querySelector('[aria-current]'));
+            if (active && active !== document.activeElement && document.contains(active) && active.offsetParent !== null) active.focus();
         }
 
         // on edit pages the tabs lead nowhere (page_topmenu.tpl: .navbar-menu.disabled), and neither does "More"
