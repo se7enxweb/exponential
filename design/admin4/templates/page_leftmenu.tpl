@@ -9,10 +9,10 @@
                     Get navigationpart identifier variable depends if the call is an contenobject
                     or a custom module 
                 *}
-            {def $navigation_part_name = $navigation_part.identifier}
-            {if $navigation_part_name|eq('')}
-                {set $navigation_part_name = $module_result.navigation_part}
-            {/if}
+            {* the page's navigation part, or Setup's for a page of a tab the Setup menu stands in for *}
+            {def $navigation_part_name = ''}
+            {set-block variable=navigation_part_name}{include uri='design:parts/a4_navigation_part.tpl'}{/set-block}
+            {set $navigation_part_name = $navigation_part_name|trim}
             {* 
                     Include automatically the menu template for the $navigation_part_name
                     ez $part_name navigationpart =>  parts/$part_name/menu.tpl
