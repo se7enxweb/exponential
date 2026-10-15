@@ -40,6 +40,15 @@ class eZUserFunctionCollection
         return array( 'result' => $isLoggedIn );
     }
 
+    /**
+     * The account status of a user object (expUserAccountStatus::forObjectID()): 'enabled', 'disabled',
+     * 'locked', or false.
+     */
+    function fetchAccountStatus( $userID )
+    {
+        return array( 'result' => expUserAccountStatus::forObjectID( $userID ) );
+    }
+
     function fetchLoggedInCount()
     {
         $count = eZUser::fetchLoggedInCount();

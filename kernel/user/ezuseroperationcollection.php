@@ -38,7 +38,8 @@ class eZUserOperationCollection
             $userSetting->setAttribute( 'max_login', $maxLogin );
             $isUserEnabled = $isEnabled != 0;
 
-            if ( $userSetting->attribute( 'is_enabled' ) != $isUserEnabled )
+            $enabledChanged = $userSetting->attribute( 'is_enabled' ) != $isUserEnabled;
+            if ( $enabledChanged )
             {
                 eZContentCacheManager::clearContentCacheIfNeeded( $userID );
                 eZContentCacheManager::generateObjectViewCache( $userID );
@@ -46,6 +47,9 @@ class eZUserOperationCollection
 
             $userSetting->setAttribute( "is_enabled", $isUserEnabled );
             $userSetting->store();
+            // the content tree marks disabled accounts and is cached by modified_subnode: renew it
+            if ( $enabledChanged )
+                expUserAccountStatus::touchTree( $userID );
 
             if ( !$isUserEnabled )
             {
@@ -307,6 +311,8 @@ class eZUserOperationCollection
                     eZUser::removeSessionData( $userID );
                 }
                 eZContentCacheManager::clearContentCacheIfNeeded( $userID );
+                // the content tree marks disabled accounts and is cached by modified_subnode: renew it
+                expUserAccountStatus::touchTree( $userID );
             }
             // Audit (doc/bc/6.0/audit.md, access.user.activate): never the activation hash
             if ( $enableUser && $userChange && class_exists( 'expAuditHook' ) )

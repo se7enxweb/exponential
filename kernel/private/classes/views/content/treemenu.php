@@ -197,6 +197,18 @@ class Treemenu extends \Exponential\Runnable\ModuleView
 
             $httpCharset = \eZTextCodec::httpCharset();
 
+            // Disabled user accounts among the children, read at once (expUserAccountStatus). Only "disabled":
+            // enabling or disabling marks the user's locations as modified, which renews this cached answer; a
+            // lock after failed logins does not, so the tree leaves it to the sub items table and the node view.
+            $accountStatus = array();
+            if ( $children && \expUserAccountStatus::canView() )
+            {
+                $childObjectIDs = array();
+                foreach ( $children as $child )
+                    $childObjectIDs[] = (int)$child->ContentObjectID;
+                $accountStatus = \expUserAccountStatus::forObjectIDs( $childObjectIDs );
+            }
+
             foreach ( $children as $child )
             {
                 $childObject = $child->object();
@@ -216,6 +228,8 @@ class Treemenu extends \Exponential\Runnable\ModuleView
                 $childResponse['languages'] = $childObject->availableLanguages();
                 $childResponse['is_hidden'] = (bool)$child->IsHidden;
                 $childResponse['is_invisible'] = (bool)$child->IsInvisible;
+                if ( isset( $accountStatus[$childResponse['object_id']] ) && $accountStatus[$childResponse['object_id']] === \expUserAccountStatus::DISABLED )
+                    $childResponse['user_status'] = \expUserAccountStatus::DISABLED;
                 if ( $createHereMenu == 'full' )
                 {
                     $childResponse['class_list'] = array();

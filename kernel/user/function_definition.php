@@ -114,4 +114,17 @@ $FunctionList['can_open'] = array( 'name' => 'can_open',
                                                                  'type' => 'string',
                                                                  'required' => true ) ) );
 
+// The account status of a user object for the administration's marks: 'enabled', 'disabled' or 'locked'; false
+// for an object that is no user account, or when the current user may not see it (role/read, like the subitems
+// columns "Account enabled" and "Locked out"). fetch( 'user', 'account_status', hash( 'user_id', 14 ) ).
+// See expUserAccountStatus.
+$FunctionList['account_status'] = array( 'name' => 'account_status',
+                                         'operation_types' => array( 'read' ),
+                                         'call_method' => array( 'class' => 'eZUserFunctionCollection',
+                                                                 'method' => 'fetchAccountStatus' ),
+                                         'parameter_type' => 'standard',
+                                         'parameters' => array( array( 'name' => 'user_id',
+                                                                       'type' => 'integer',
+                                                                       'required' => true ) ) );
+
 ?>

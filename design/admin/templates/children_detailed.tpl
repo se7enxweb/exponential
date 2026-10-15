@@ -104,6 +104,21 @@ var labelsObj = {ldelim}
                         objectstate: "{'Object state'|i18n( 'design/admin/node/view/full' )|wash('javascript')}"
                     {rdelim},
 
+    {* The status marks before each name: a node's visibility, a user account's state (components.css .a4-status) *}
+    STATUS: {ldelim}
+
+                        visible: "{'Visible'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        hidden: "{'Hidden'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        hidden_by_parent: "{'Hidden by a parent'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        visible_title: "{'Visible: visitors of the site can see it.'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        hidden_title: "{'Hidden: visitors of the site do not see it.'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        hidden_by_parent_title: "{'An item above it is hidden, so visitors of the site do not see it.'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        disabled: "{'Disabled'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        disabled_title: "{'Account disabled: this user cannot log in.'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        locked: "{'Locked'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        locked_title: "{'Locked after too many failed logins.'|i18n( 'design/admin/node/view/full' )|wash('javascript')}"
+                    {rdelim},
+
     TABLE_OPTIONS: {ldelim}
 
                         header: "{'Table options'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",

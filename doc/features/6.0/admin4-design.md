@@ -414,6 +414,48 @@ variables of the template that includes it: a parameter called `class` would rea
 other designs. `tests/tests/design/AdminLanguageBadgeTest.php` fails for a flag in an admin4 template or script, or in
 either design's sub-items table.
 
+## Visibility and account status
+
+Whether visitors of the site see an item, and whether a user can log in, shows at a glance as a small status mark
+(`.a4-status` in both copies of `components.css`, 10 px). The shape tells the state as well as the colour, so it
+reads in grey scale, for colour-blind users and in forced colours (where the marks take the system text colour):
+
+| Mark | Shape | Colour token | Meaning |
+|---|---|---|---|
+| `is-visible` | filled disc | `--a4-ok` | visible |
+| `is-hidden` | ring | `--a4-bad` | hidden (`is_hidden`) |
+| `is-hidden-by-parent` | ring with a bar | `--a4-bad` | hidden because an item above it is hidden (`is_invisible` without `is_hidden`) |
+| `is-disabled` | crossed ring | `--a4-muted` | user account disabled (Setup > Users, `ezuser_setting.is_enabled`) |
+| `is-locked` | filled square | `--a4-warn` | user account locked after more failed logins than `site.ini [UserSettings] MaxNumberOfFailedLogin` (`eZUser::isLocked()`) |
+
+Each colour reaches 3:1 against the card, the zebra and hovered rows and its own badge tint, in light and dark mode.
+Where the mark stands alone it is `role="img"` with an `aria-label` and a `title` that explains it; next to its own
+text it is `aria-hidden`. A visible item's mark is only seen: a screen reader hears the exceptions.
+
+Where it shows:
+
+- **Node view header:** a badge beside the class (Visible, Hidden, or Hidden by a parent, each with its mark and the
+  explanation as title); for a user object also "Disabled" or "Locked". The badge comes from
+  `design:parts/visibility_status.tpl` (parameters `status_node`, `status_badge`, `status_quiet`).
+- **Sub-items table:** the mark before every name (all three states, so a hidden item stands out among green ones),
+  and a "Disabled" or "Locked" badge after the name of a user account. The Visibility column, when chosen in the
+  table options, shows the mark beside its text. The rows of `ezjscnode::subtree` and `expsubitems::rows` carry
+  `is_hidden` and `is_invisible` (`ezjscAjaxContent`) and, for user accounts, `user_status`.
+- **Content tree:** only what differs, so the tree stays quiet: a ring or a ring with a bar after the name of a
+  hidden node (decorative: the "(Hidden)" text after it, which admin4 used to remove with `display: none`, is now
+  kept for screen readers), and a crossed ring after a disabled user account. A lock after failed logins is not shown there: the
+  tree is cached by the nodes' `modified_subnode`, which enabling and disabling an account now renews
+  (`eZUserOperationCollection::setSettings()` and `activation()`), but a failed login does not.
+- **Browse dialog** (list view): the mark before a hidden node.
+
+The account status comes from `expUserAccountStatus` (`kernel/classes/user/`), which reads it for a whole page with at
+most two queries (`ezuser_setting`, then `ezuservisit` for the enabled users among them), never one per row; templates
+ask `fetch( 'user', 'account_status', hash( 'user_id', ... ) )` (`enabled`, `disabled`, `locked` or false). It is shown
+to users with `role/read`, the same who may see the sub-items columns "Account enabled" and "Locked out". Tests:
+`AdminVisibilityStatusTest` (shapes, contrast, templates, the scripts through a node harness, the texts in German and
+American English) and `expUserAccountStatusTest` (the bundled reads, the order disabled before locked, the access
+check).
+
 ## Context menus
 
 The menus of the content tree, the sub-items table, the class icon and the bookmarks (`ezpopupmenu.js` with the

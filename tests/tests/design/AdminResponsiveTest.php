@@ -116,12 +116,13 @@ class AdminResponsiveTest extends PHPUnit\Framework\TestCase
         foreach ( array( 'admin', 'admin4' ) as $design )
         {
             $script = self::file( "design/$design/javascript/ezajaxsubitems_expdatatable.js" );
-            $this->assertStringContainsString( '<span class="a4-subitem-name"><a href="', $script, $design );
+            // the status mark (an empty string where the server sends no flags), then the icon link and the name
+            $this->assertStringContainsString( '<span class="a4-subitem-name">\' + visibilityMark(row) + \'<a href="', $script, $design );
             $this->assertStringNotContainsString( "'</a>' + '&nbsp;' +", $script, "$design: a space between icon and name let the name wrap away from it" );
         }
         $rules = AdminBaseStylesheetsTest::rules( self::css( 'admin4.css' ) );
         $this->assertSame( 'inline-flex', $rules['.a4-subitem-name']['display'] );
-        $this->assertSame( 'none', $rules['.a4-subitem-name > a:first-child']['flex'] );
+        $this->assertSame( 'none', $rules['.a4-subitem-name > a:first-of-type']['flex'] );
         $this->assertSame( 'var(--a4-space-2)', $rules['html #action-controls']['gap'], 'the toolbar wraps with a gap, not with margins' );
     }
 

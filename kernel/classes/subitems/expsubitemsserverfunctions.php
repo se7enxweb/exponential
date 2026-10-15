@@ -186,6 +186,8 @@ class expSubitemsServerFunctions extends ezjscServerFunctions
                                                                       'fetchCreator' => true,
                                                                       'fetchClassIcon' => true ), 'raw' )
                        : array();
+        // the account status of the users among them (disabled, locked), as ezjscnode::subtree adds it
+        $list = expUserAccountStatus::addToList( $list );
 
         $values = self::columnValues( $nodes, $columns );
         foreach ( $list as $i => $item )
