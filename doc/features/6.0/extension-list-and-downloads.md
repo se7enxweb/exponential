@@ -10,18 +10,23 @@ when did it change, and can I take a copy of it?
 > longer paged and orders by loading order or by name; the other `(sort)` values of the table below fall back to the
 > loading order. The download links are under **Details** on each card, at the same addresses.
 
+> **Action required:** exporting extensions is now off by default — list the extension in package.ini
+> [ExtensionExportSettings] AllowedExtensions[] (or `*` for every extension) and grant the policy
+> package/export_extension to the role. Without both, Setup > Extensions shows no download buttons and the package
+> wizard does not let you choose the extension; the command line (`ezpm.php add`) needs the list entry.
+
 ## Take a copy of an extension before an upgrade
 
 1. Open **Setup > Extensions**.
 2. Click **Details** (or the name) on the extension's row. An info card opens under the row.
-3. Click one of the four download links: `tar.gz`, `.zip`, `tar.bz2` or `.ezpkg`.
+3. Click one of the four download buttons: `tar.gz`, `.zip`, `tar.bz2` or `.ezpkg`.
 
-A download is one URL, so you can also fetch it directly:
-
-```
-/setup/extensions/<extension name>/<format>
-/setup/extensions/ezflow/zip
-```
+Since 14 October 2026 a download is a button of the page's form (POST, with the form token); the former address
+`/setup/extensions/<extension name>/<format>` no longer packs anything. The buttons are only there when the
+extension may be exported: package.ini `[ExtensionExportSettings] AllowedExtensions[]` lists it (or `*`) and your role
+has the policy `package/export_extension` (unless `RequirePolicy=disabled`); otherwise the card shows the reason and
+the page a notice. An extension that holds secret values or key material is never packed
+(`eZExtensionPackageHandler::packRefusal()`, see the [6.0.15 changelog](../../changelogs/6.0/6.0.15.md)).
 
 `<format>` is one of `tar.gz`, `tar.bz2`, `zip`, `ezpkg`. The server builds a package of the extension with the
 `ezextension` package handler, streams it as an attachment named `<name>.<format>`, and removes the temporary file
@@ -55,7 +60,8 @@ The activation check boxes and the **Activate** button work as before.
 ## The package wizard list
 
 **Setup > Packages > Create package > Extension** (`package/create`, creator `ezextension`) shows the same A to Z
-list as a table with Version, Modified and a Details card, without the download links (`3d125848e8`).
+list as a table with Version, Modified and a Details card, without the download links (`3d125848e8`). An extension
+that may not be exported (see the note above) cannot be chosen there, and the step says why.
 
 ## For developers
 
@@ -68,8 +74,8 @@ The design proposal that led to it, with the open questions, is kept in [EXT_SOR
 ## Limits
 
 - Large extensions take a moment to scan for the newest file; the list is not cached.
-- A download packs the extension as it is on disk, including files you may not want to hand on (configuration, keys).
-  Look inside before you share it.
+- A download packs the extension as it is on disk. Extensions with secret values or key material are refused, but
+  the check cannot know every secret: look inside before you share it.
 
 ## Related pages
 
