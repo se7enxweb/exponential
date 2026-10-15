@@ -39,6 +39,7 @@
 {if and( $cronjob_pause_enabled, $cronjob_pause_all.paused )}
 <div class="a4-notice is-bad" role="alert" id="cronjob-paused-all">
     {if $cronjob_pause_all.by}{'All cronjob parts are paused since %since by %user. Nothing runs, from here or from the crontab, until they are resumed.'|i18n( 'design/admin/setup/cronjobs',, hash( '%since', $cronjob_pause_all.since|l10n( shortdatetime ), '%user', $cronjob_pause_all.by.login|wash ) )}{else}{'All cronjob parts are paused since %since. Nothing runs, from here or from the crontab, until they are resumed.'|i18n( 'design/admin/setup/cronjobs',, hash( '%since', $cronjob_pause_all.since|l10n( shortdatetime ) ) )}{/if}
+    {if and( $cronjob_pause_all.by, $cronjob_pause_all.by.note|ne('') )}{'Note: %note'|i18n( 'design/admin/setup/cronjobs',, hash( '%note', $cronjob_pause_all.by.note|wash ) )}{/if}
 </div>
 {/if}
 
@@ -70,6 +71,15 @@
         {/if}
         {/if}
     </div>
+    {* One note for whichever Pause or Resume button is pressed: every button of the page submits this one form.
+       A textarea, so Enter does not submit the form with its first button. *}
+    {if $cronjob_pause_enabled}
+    <div class="a4-field a4-setup-pause-note">
+        <label for="cronjob-pause-note">{'Note for a pause or resume (optional)'|i18n( 'design/admin/setup/cronjobs' )}</label>
+        <textarea id="cronjob-pause-note" name="CronjobPauseNote" rows="1" maxlength="{$cronjob_pause_note_length}" aria-describedby="cronjob-pause-note-hint"></textarea>
+        <span class="a4-meta" id="cronjob-pause-note-hint">{'Kept with the next Pause or Resume pressed on this page; shown under Pauses, on the paused part and in the output of runcronjobs.php.'|i18n( 'design/admin/setup/cronjobs' )}</span>
+    </div>
+    {/if}
 </section>
 <p class="a4-setup-paths">
     <span>{'Log'|i18n( 'design/admin/setup/cronjobs' )}: <code>{$cronjob_log_file|wash}</code></span>
@@ -84,6 +94,7 @@
     <li class="a4-figure"><strong>{$cronjob_summary.scheduled}</strong><span>{'Scheduled in the crontab'|i18n( 'design/admin/setup/cronjobs' )}</span></li>
     <li class="a4-figure"><strong>{$cronjob_summary.unscheduled}</strong><span>{'Not scheduled'|i18n( 'design/admin/setup/cronjobs' )}</span></li>
     <li class="a4-figure{if $cronjob_summary.attention|gt(0)} is-attention{/if}"><strong>{$cronjob_summary.attention}</strong><span>{'Need attention'|i18n( 'design/admin/setup/cronjobs' )}</span></li>
+    {if $cronjob_pause_enabled}<li class="a4-figure{if $cronjob_summary.paused|gt(0)} is-attention{/if}" id="cronjob-figure-paused"><strong>{$cronjob_summary.paused}</strong><span>{'Paused'|i18n( 'design/admin/setup/cronjobs' )}</span></li>{/if}
     <li class="a4-figure is-last">
         {if $cronjob_last_run}
         <strong>{$cronjob_last_run.label|wash}</strong>
@@ -224,7 +235,7 @@
     <td><ul class="a4-badges">
         {if $cronjob_part.scheduled}<li class="a4-badge is-ok">{'Scheduled'|i18n( 'design/admin/setup/cronjobs' )}</li>{else}<li class="a4-badge is-warn">{'Not scheduled'|i18n( 'design/admin/setup/cronjobs' )}</li>{/if}
         {if $cronjob_part.forbidden}<li class="a4-badge">{'Blocked'|i18n( 'design/admin/setup/cronjobs' )}</li>{elseif $cronjob_part.missing|gt(0)}<li class="a4-badge is-bad">{'%count missing'|i18n( 'design/admin/setup/cronjobs',, hash( '%count', $cronjob_part.missing ) )}</li>{/if}
-        {if and( $cronjob_pause_enabled, $cronjob_part.pause.paused )}<li class="a4-badge is-bad" title="{if $cronjob_part.pause.by}{'Since %since by %user'|i18n( 'design/admin/setup/cronjobs',, hash( '%since', $cronjob_part.pause.since|l10n( shortdatetime ), '%user', $cronjob_part.pause.by.login|wash ) )}{else}{'Since %since'|i18n( 'design/admin/setup/cronjobs',, hash( '%since', $cronjob_part.pause.since|l10n( shortdatetime ) ) )}{/if}">{'Paused'|i18n( 'design/admin/setup/cronjobs' )}</li>{/if}
+        {if and( $cronjob_pause_enabled, $cronjob_part.pause.paused )}<li class="a4-badge is-bad" title="{if $cronjob_part.pause.by}{'Since %since by %user'|i18n( 'design/admin/setup/cronjobs',, hash( '%since', $cronjob_part.pause.since|l10n( shortdatetime ), '%user', $cronjob_part.pause.by.login|wash ) )}{else}{'Since %since'|i18n( 'design/admin/setup/cronjobs',, hash( '%since', $cronjob_part.pause.since|l10n( shortdatetime ) ) )}{/if}{if and( $cronjob_part.pause.by, $cronjob_part.pause.by.note|ne('') )} &middot; {$cronjob_part.pause.by.note|wash}{/if}">{'Paused'|i18n( 'design/admin/setup/cronjobs' )}</li>{/if}
     </ul></td>
     {* The schedule and, below it, the next run: one column, so the table fits beside the menus. *}
     <td>{if $cronjob_part.schedule_active|ne('')}<span title="{if $cronjob_part.scheduled|not}{'Suggested schedule'|i18n( 'design/admin/setup/cronjobs' )|wash}: {/if}{$cronjob_part.schedule_active|wash}">{$cronjob_part.schedule_text|wash}</span>{else}&mdash;{/if}
@@ -321,7 +332,7 @@
         {if and( $cronjob_pause_enabled, $cronjob_part.pause.paused )}
         <div>
             <dt>{'Paused'|i18n( 'design/admin/setup/cronjobs' )}</dt>
-            <dd>{if $cronjob_part.pause.by}{'Since %since by %user'|i18n( 'design/admin/setup/cronjobs',, hash( '%since', $cronjob_part.pause.since|l10n( shortdatetime ), '%user', $cronjob_part.pause.by.login|wash ) )}{else}{'Since %since'|i18n( 'design/admin/setup/cronjobs',, hash( '%since', $cronjob_part.pause.since|l10n( shortdatetime ) ) )}{/if}</dd>
+            <dd>{if $cronjob_part.pause.by}{'Since %since by %user'|i18n( 'design/admin/setup/cronjobs',, hash( '%since', $cronjob_part.pause.since|l10n( shortdatetime ), '%user', $cronjob_part.pause.by.login|wash ) )}{else}{'Since %since'|i18n( 'design/admin/setup/cronjobs',, hash( '%since', $cronjob_part.pause.since|l10n( shortdatetime ) ) )}{/if}{if and( $cronjob_part.pause.by, $cronjob_part.pause.by.note|ne('') )}<br />{'Note: %note'|i18n( 'design/admin/setup/cronjobs',, hash( '%note', $cronjob_part.pause.by.note|wash ) )}{/if}</dd>
         </div>
         {/if}
         <div>
@@ -495,6 +506,7 @@
         <th scope="col">{'Cronjob'|i18n( 'design/admin/setup/cronjobs' )}</th>
         <th scope="col">{'Action'|i18n( 'design/admin/setup/cronjobs' )}</th>
         <th scope="col">{'User'|i18n( 'design/admin/setup/cronjobs' )}</th>
+        <th scope="col">{'Note'|i18n( 'design/admin/setup/cronjobs' )}</th>
     </tr>
     </thead>
     <tbody>
@@ -504,6 +516,7 @@
         <td>{if $cronjob_pause.part|eq('')}{'Global'|i18n( 'design/admin/setup/cronjobs' )}{elseif $cronjob_pause.part|eq('all')}{'All parts'|i18n( 'design/admin/setup/cronjobs' )}{else}{$cronjob_pause.part|wash}{/if}</td>
         <td>{if $cronjob_pause.action|eq('pause')}<span class="a4-badge is-bad">{'Paused'|i18n( 'design/admin/setup/cronjobs' )}</span>{else}<span class="a4-badge is-ok">{'Resumed'|i18n( 'design/admin/setup/cronjobs' )}</span>{/if}</td>
         <td>{$cronjob_pause.login|wash}</td>
+        <td>{if $cronjob_pause.note|ne('')}{$cronjob_pause.note|wash}{else}&ndash;{/if}</td>
     </tr>
     {/foreach}
     </tbody>

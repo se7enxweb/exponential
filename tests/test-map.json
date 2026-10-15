@@ -542,6 +542,28 @@
     "design/admin4l/templates/explayouts/block/admin_tab_menu.tpl": [
       "tests/tests/design/AdminMegaMenuTest.php",
       "tests/tests/design/AdminIconsTest.php"
+    ],
+    "design/admin/templates/setup/cronjobs.tpl": [
+      "tests/tests/kernel/classes/expCronjobPauseTest.php"
+    ],
+    "design/admin4/templates/setup/cronjobs.tpl": [
+      "tests/tests/kernel/classes/expCronjobPauseTest.php"
+    ],
+    "kernel/private/classes/views/setup/cronjobs.php": [
+      "tests/tests/kernel/classes/expCronjobPauseTest.php"
+    ],
+    "kernel/setup/ezsetupfunctioncollection.php": [
+      "tests/tests/kernel/classes/expCronjobPauseTest.php"
+    ],
+    "kernel/setup/function_definition.php": [
+      "tests/tests/kernel/classes/expCronjobPauseTest.php"
+    ],
+    "design/admin4/templates/setup/setupmenu_figure.tpl": [
+      "tests/tests/design/AdminSetupOverviewTest.php"
+    ],
+    "extension/ezmultiupload/*": [
+      "tests/tests/extension/ezmultiupload/expMultiuploadServiceTest.php",
+      "tests/tests/extension/ezmultiupload/expMultiuploadZipTest.php"
     ]
   },
   "generated": {
