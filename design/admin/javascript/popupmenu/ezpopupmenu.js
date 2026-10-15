@@ -257,6 +257,20 @@ function _showSubLevel( event, menuID, overItem )
         SubMenuOpeners[menuID] = opener;
         opener.setAttribute( 'aria-expanded', 'true' );
     }
+
+    // A submenu whose items are filled in when it opens (menuArray[menuID]['onshow'], e.g. the classes below the
+    // node of the Export menu): it gets the menu, the values of the item (%nodeID% ...) and a function to call
+    // once its items changed, which gives the new items their roles and places the menu again for its new size.
+    var onShow = menuArray[menuID]['onshow'];
+    if ( typeof onShow === 'function' )
+    {
+        onShow( document.getElementById( menuID ), CurrentSubstituteValues, function()
+        {
+            if ( VisibleMenus[menuArray[menuID]['depth']] !== menuID ) return;
+            _decorate( menuID );
+            _moveSubLevelOnScreen( menuID, overItem );
+        } );
+    }
 }
 
 /*!
@@ -573,28 +587,58 @@ function _moveSubLevelOnScreen( menuID, alignItem )
 
     if ( alignElement && parentElement )
     {
-        // Next to the parent menu: its width, not the submenu's (they differ now that menus size to their items).
-        newX = parseInt( parentElement.style.left ) + parentElement.offsetWidth - EZPOPMENU_SUBOFFSET;
-        newY = parseInt( parentElement.style.top ) + alignElement.offsetTop + EZPOPMENU_SUBTOPOFFSET;
+        // Next to the parent menu: its width, not the submenu's (they differ now that menus size to their items),
+        // at the item that opened it (less the parent's own scrolling)
+        var parentLeft = parseInt( parentElement.style.left );
+        newX = _horizontalSubPlace( screenData.ScrollX, screenData.ScrollX + screenData.Width, parentLeft,
+                                    parentLeft + parentElement.offsetWidth, menuElement.offsetWidth, EZPOPMENU_SUBOFFSET );
+        newY = parseInt( parentElement.style.top ) + alignElement.offsetTop - parentElement.scrollTop + EZPOPMENU_SUBTOPOFFSET;
     }
-    // compensate if we are below the screen
-    if ( ( screenData.ScrollY + screenData.Height ) < ( newY + menuElement.offsetHeight ) )
-        newY = screenData.ScrollY + screenData.Height - menuElement.offsetHeight;
-    // compensate if above the screen (its visible part, under a fixed header)
-    if ( newY < areaTop )
-        newY = areaTop;
-
-    // compensate if we are to the right of the screen
-    // (without its parent menu the submenu stays where it is: there is no side to move it to)
-    if ( parentElement && ( screenData.ScrollX + screenData.Width ) < ( newX + menuElement.offsetWidth ) )
+    else
     {
-        newX = parseInt( parentElement.style.left ) + EZPOPMENU_SUBOFFSET - menuElement.offsetWidth;
+        // (without its parent menu the submenu stays where it is: there is no side to move it to)
+        newX = parseInt( menuElement.style.left ) || 0;
     }
-    // to the left is impossible
+    // up from the window's bottom edge, never above the visible part (under a fixed header); taller than that
+    // part, it gets its height and scrolls
+    var place = _subVerticalPlace( areaTop, screenData.ScrollY + screenData.Height, newY, menuElement.offsetHeight );
+    newY = place.top;
+    if ( place.maxHeight !== null ) menuElement.style.maxHeight = place.maxHeight + 'px';
 
     // reposition menu
     menuElement.style.left = newX + "px";
     menuElement.style.top = newY + "px";
+}
+
+/*!
+  Where a submenu of the given width goes beside its parent menu (page coordinates, parentLeft..parentRight) in the
+  visible area areaLeft..areaRight, overlapping the parent by overlap: on the right when it fits, else on the left
+  when it fits, else on the side with more room, moved inside the area (a narrow window, a phone); at the area's left
+  edge when it is wider than the area.
+*/
+function _horizontalSubPlace( areaLeft, areaRight, parentLeft, parentRight, width, overlap )
+{
+    var right = parentRight - overlap, left = parentLeft + overlap - width;
+    if ( right + width <= areaRight )
+        return right;
+    if ( left >= areaLeft )
+        return left;
+    var x = ( areaRight - parentRight >= parentLeft - areaLeft ) ? right : left;
+    return Math.max( areaLeft, Math.min( x, areaRight - width ) );
+}
+
+/*!
+  Where a submenu that would start at top goes in the visible area areaTop..areaBottom: { top, maxHeight }, moved up
+  when it reaches past the bottom, never above areaTop; maxHeight (it scrolls) only when it is taller than the area.
+*/
+function _subVerticalPlace( areaTop, areaBottom, top, height )
+{
+    var visible = Math.max( areaBottom - areaTop, 0 );
+    if ( height > visible )
+        return { 'top': areaTop, 'maxHeight': visible };
+    if ( top + height > areaBottom )
+        top = areaBottom - height;
+    return { 'top': Math.max( areaTop, top ), 'maxHeight': null };
 }
 
 /*!

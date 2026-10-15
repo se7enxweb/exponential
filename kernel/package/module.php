@@ -46,7 +46,16 @@ $ViewList['create'] = array(
                                                                'CreatorStepID' => 'CreatorStepID',
                                                                'PreviousStep' => 'PreviousStepButton',
                                                                'NextStep' => 'NextStepButton' ) ),
-    'params' => array() );
+    'params' => array(),
+    // The entry of the content tree's Advanced > Export menu: the content object wizard opened with a node (or its
+    // subtree) selected and some choices preset, package/create/(creator)/ezcontentobject/(node)/<node id>
+    // [/(subtree)/1][/(classes)/0|1][/(versions)/current|all]. It only fills in the wizard: the package is made
+    // when the user confirms its steps. Guide: doc/bc/6.0/content-export-menu.md
+    'unordered_params' => array( 'creator' => 'Creator',
+                                 'node' => 'NodeID',
+                                 'subtree' => 'Subtree',
+                                 'classes' => 'IncludeClasses',
+                                 'versions' => 'Versions' ) );
 
 $ViewList['export'] = array(
     'functions' => array( 'export' ),
