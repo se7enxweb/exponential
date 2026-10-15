@@ -19,6 +19,166 @@
  */
 class ezjscServerFunctionsAjaxUploader extends ezjscServerFunctions
 {
+    /** The session variable that holds the files stored by upload() until preview() takes them */
+    const PENDING_SESSION_KEY = 'ezjscAjaxUploaderPending';
+
+    /** At most this many stored files wait for their location per session; the oldest is forgotten first */
+    const PENDING_MAX = 20;
+
+    /**
+     * What a stored file is bound to: the user, the upload handler and its data (the attribute and version).
+     *
+     * @param array $args the arguments of the ezjscore ajax function
+     * @param int $userID
+     * @return string
+     */
+    public static function pendingBinding( array $args, $userID )
+    {
+        $http = eZHTTPTool::instance();
+        $handlerData = $http->hasPostVariable( 'AjaxUploadHandlerData' ) ? $http->postVariable( 'AjaxUploadHandlerData' ) : array();
+        if ( !is_array( $handlerData ) )
+            $handlerData = array();
+        ksort( $handlerData );
+        return hash( 'sha256', json_encode( array( (int)$userID, isset( $args[0] ) ? (string)$args[0] : '', array_map( 'strval', array_filter( $handlerData, 'is_scalar' ) ) ) ) );
+    }
+
+    /** A stored file waits this many seconds for its location; then its token is refused and forgotten */
+    const PENDING_LIFETIME = 3600;
+
+    /**
+     * $store with the stored $file under a new random token, without the expired entries and at most PENDING_MAX
+     * entries (the oldest forgotten first). The files of the entries it drops are returned, for the caller to
+     * delete: nobody can take them any more.
+     *
+     * @param array $store token => entry
+     * @param string $file the path upload() stored the file at
+     * @param string $originalFilename
+     * @param string $binding pendingBinding()
+     * @param int|null $now the time (tests); null for time()
+     * @return array array( new store, token, files of the dropped entries )
+     */
+    public static function rememberPending( array $store, $file, $originalFilename, $binding, $now = null )
+    {
+        $now = $now === null ? time() : (int)$now;
+        $dropped = array();
+        foreach ( $store as $key => $entry )
+        {
+            if ( !self::isLive( $entry, $now ) )
+            {
+                if ( is_array( $entry ) && isset( $entry['file'] ) )
+                    $dropped[] = (string)$entry['file'];
+                unset( $store[$key] );
+            }
+        }
+        $token = bin2hex( random_bytes( 16 ) );
+        $store[$token] = array( 'file' => (string)$file, 'original_filename' => (string)$originalFilename,
+                                'binding' => (string)$binding, 'time' => $now );
+        while ( count( $store ) > self::PENDING_MAX )
+        {
+            $evicted = array_shift( $store );
+            if ( is_array( $evicted ) && isset( $evicted['file'] ) )
+                $dropped[] = (string)$evicted['file'];
+        }
+        return array( $store, $token, $dropped );
+    }
+
+    /**
+     * The entry of $token in $store when it was made for $binding and has not expired (PENDING_LIFETIME), else null.
+     *
+     * @param array $store
+     * @param mixed $token
+     * @param string $binding
+     * @param int|null $now the time (tests); null for time()
+     * @return array|null
+     */
+    public static function pendingEntry( array $store, $token, $binding, $now = null )
+    {
+        if ( !is_string( $token ) || !preg_match( '/^[0-9a-f]{32}$/', $token ) || !isset( $store[$token] ) )
+            return null;
+        $entry = $store[$token];
+        if ( !is_array( $entry ) || !isset( $entry['binding'], $entry['file'] ) || !hash_equals( (string)$entry['binding'], (string)$binding ) )
+            return null;
+        if ( !self::isLive( $entry, $now === null ? time() : (int)$now ) )
+            return null;
+        return $entry;
+    }
+
+    /** Whether a stored entry is well formed and younger than PENDING_LIFETIME at $now */
+    private static function isLive( $entry, $now )
+    {
+        return is_array( $entry ) && isset( $entry['time'] ) && is_int( $entry['time'] )
+            && $entry['time'] <= $now && $now - $entry['time'] < self::PENDING_LIFETIME;
+    }
+
+    /** Deletes the stored files of dropped entries, on the cluster and locally, when they are upload paths */
+    private static function deleteDropped( array $files )
+    {
+        if ( count( $files ) === 0 )
+            return;
+        $fileHandler = eZClusterFileHandler::instance();
+        $storageDir = eZSys::storageDirectory();
+        foreach ( $files as $file )
+        {
+            if ( !self::isStoredUploadPath( $file, $storageDir ) )
+                continue;
+            $fileHandler->fileDelete( $file );
+            $fileHandler->fileDeleteLocal( $file );
+        }
+    }
+
+    /**
+     * Whether $file is a path upload() can have stored: a file below $storageDir, without "." or ".." parts.
+     * With $mustExist, the real path is checked too (after the file was fetched from the cluster).
+     *
+     * @param string $file
+     * @param string $storageDir eZSys::storageDirectory()
+     * @param bool $mustExist
+     * @return bool
+     */
+    public static function isStoredUploadPath( $file, $storageDir, $mustExist = false )
+    {
+        $file = (string)$file;
+        $storageDir = rtrim( (string)$storageDir, '/' );
+        if ( $file === '' || $storageDir === '' || strpos( $file, "\0" ) !== false || strpos( $file, '\\' ) !== false )
+            return false;
+        if ( strpos( $file, $storageDir . '/' ) !== 0 )
+            return false;
+        foreach ( explode( '/', substr( $file, strlen( $storageDir ) + 1 ) ) as $part )
+        {
+            if ( $part === '' || $part === '.' || $part === '..' )
+                return false;
+        }
+        if ( !$mustExist )
+            return true;
+        $realFile = realpath( $file );
+        $realDir = realpath( $storageDir );
+        return $realFile !== false && $realDir !== false && is_file( $realFile ) && strpos( $realFile, rtrim( $realDir, '/' ) . '/' ) === 0;
+    }
+
+    /** @return int the user a stored file is bound to */
+    protected static function currentUserID()
+    {
+        return (int)eZUser::currentUserID();
+    }
+
+    /** @return array the stored files of this session waiting for their location */
+    private static function pendingStore()
+    {
+        $http = eZHTTPTool::instance();
+        $store = $http->hasSessionVariable( self::PENDING_SESSION_KEY ) ? $http->sessionVariable( self::PENDING_SESSION_KEY ) : array();
+        return is_array( $store ) ? $store : array();
+    }
+
+    /** A file name for the temporary copy: no directory, never empty, "." or ".." */
+    private static function safeFilename( $name )
+    {
+        $name = str_replace( array( '/', '\\', "\0" ), '_', (string)$name );
+        $name = trim( $name );
+        if ( $name === '' || $name === '.' || $name === '..' )
+            $name = 'upload';
+        return $name;
+    }
+
 
     /**
      * Returns an ajaxuploader handler instance from the ezjscore function
@@ -129,6 +289,15 @@ class ezjscServerFunctionsAjaxUploader extends ezjscServerFunctions
         try
         {
             $handler = self::getHandler( $args );
+            if ( !$handler->canUpload() )
+            {
+                throw new RuntimeException(
+                    ezpI18n::tr(
+                        'extension/ezjscore/ajaxuploader',
+                        'You are not allowed to upload a file.'
+                    )
+                );
+            }
             $fileInfo = $handler->getFileinfo();
             $mimeData = $fileInfo['mime'];
             $file = $fileInfo['file'];
@@ -185,8 +354,18 @@ class ezjscServerFunctionsAjaxUploader extends ezjscServerFunctions
         $browseItems = self::getBrowseItems( $defaultParentNode->attribute( 'parent' ), $class );
 
         $http = eZHTTPTool::instance();
+        // the stored file's path stays on the server: the location form carries a token for it, bound to this
+        // user and this upload target, taken once by preview()
+        list( $store, $uploadToken, $dropped ) = self::rememberPending( self::pendingStore(), $file->attribute( 'filename' ),
+                                                                        $file->attribute( 'original_filename' ),
+                                                                        self::pendingBinding( $args, static::currentUserID() ) );
+        $http->setSessionVariable( self::PENDING_SESSION_KEY, $store );
+        // the files of expired or evicted entries can no longer be taken: they leave the storage
+        self::deleteDropped( $dropped );
+
         $tpl = eZTemplate::factory();
         $tpl->setVariable( 'file', $file );
+        $tpl->setVariable( 'upload_token', $uploadToken );
         $tpl->setVariable( 'name', $http->postVariable( 'UploadName', $file->attribute( 'original_filename' ) ) );
         $tpl->setVariable( 'mime_data', $mimeData );
         $tpl->setVariable( 'class', $class );
@@ -438,39 +617,74 @@ class ezjscServerFunctionsAjaxUploader extends ezjscServerFunctions
             );
         }
 
-        $file = $http->postVariable( 'UploadFile', false );
+        $binding = self::pendingBinding( $args, static::currentUserID() );
+        $store = self::pendingStore();
+        $token = $http->hasPostVariable( 'UploadToken' ) ? $http->postVariable( 'UploadToken' ) : '';
+        $entry = self::pendingEntry( $store, $token, $binding );
+        $storageDir = eZSys::storageDirectory();
+        $file = $entry !== null ? $entry['file'] : false;
         $fileHandler = eZClusterFileHandler::instance();
         if ( $file === false
+                || !self::isStoredUploadPath( $file, $storageDir )
                 || !$fileHandler->fileExists( $file )
-                || !$fileHandler->fileFetch( $file ) )
+                || !$fileHandler->fileFetch( $file )
+                || !self::isStoredUploadPath( $file, $storageDir, true ) )
         {
             throw new RuntimeException(
                 ezpI18n::tr(
-                    'extension/ezjscore/ajaxuploader', 'Unable to retrieve the uploaded file: '.$file
+                    'extension/ezjscore/ajaxuploader', 'Unable to retrieve the uploaded file.'
                 )
             );
         }
-        else
+
+        // refused for a missing alternative text: the token stays, so the form can be sent again with the text
+        self::checkAlternativeText( $handler, $file, $altText );
+
+        // The object is made from a copy in a directory of this token's own, named after the original file (the
+        // object takes its file name from it), so two uploads of "image.jpg" never share a path. The stored file
+        // and the token stay until the object exists: a refused location can be chosen again.
+        $tmpDir = eZSys::cacheDirectory() . '/' . eZINI::instance()->variable( 'FileSettings', 'TemporaryDir' ) . '/ajaxuploader-' . $token;
+        $tmpFile = $tmpDir . '/' . self::safeFilename( $entry['original_filename'] );
+        try
         {
-            self::checkAlternativeText( $handler, $file, $altText );
-            $tmpFile = eZSys::cacheDirectory() . '/' .
-                        eZINI::instance()->variable( 'FileSettings', 'TemporaryDir' ) . '/' .
-                        str_replace(
-                            array( '/', '\\' ), '_',
-                            $http->postVariable( 'UploadOriginalFilename' )
-                        );
-            eZFile::rename( $file, $tmpFile, true );
+            if ( !eZDir::mkdir( $tmpDir, false, true ) || !copy( $file, $tmpFile ) )
+            {
+                throw new RuntimeException(
+                    ezpI18n::tr(
+                        'extension/ezjscore/ajaxuploader', 'Unable to retrieve the uploaded file.'
+                    )
+                );
+            }
+            $contentObject = $handler->createObject(
+                $tmpFile,
+                $http->postVariable( 'UploadLocation', false ),
+                $http->postVariable( 'UploadName', '' )
+            );
+            if ( !$contentObject instanceof eZContentObject )
+            {
+                throw new RuntimeException(
+                    ezpI18n::tr(
+                        'extension/ezjscore/ajaxuploader', 'Unable to retrieve the uploaded file.'
+                    )
+                );
+            }
+
+            // the token is used once: the object exists, the stored file leaves the storage
+            $store = self::pendingStore();
+            unset( $store[$token] );
+            $http->setSessionVariable( self::PENDING_SESSION_KEY, $store );
             $fileHandler->fileDelete( $file );
             $fileHandler->fileDeleteLocal( $file );
-        }
 
-        $contentObject = $handler->createObject(
-            $tmpFile,
-            $http->postVariable( 'UploadLocation', false ),
-            $http->postVariable( 'UploadName', '' )
-        );
-        self::storeAlternativeText( $contentObject, $altText );
-        unlink( $tmpFile );
+            self::storeAlternativeText( $contentObject, $altText );
+        }
+        finally
+        {
+            if ( is_file( $tmpFile ) )
+                @unlink( $tmpFile );
+            if ( is_dir( $tmpDir ) )
+                @rmdir( $tmpDir );
+        }
 
         $tpl = eZTemplate::factory();
         $tpl->setVariable( 'object', $contentObject );

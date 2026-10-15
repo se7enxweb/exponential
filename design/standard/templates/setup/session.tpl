@@ -14,7 +14,7 @@ function checkAll()
         {
             for (var i=0; i < elements.length; i++)
             {
-                if (elements[i].type == 'checkbox' && ( elements[i].name == 'SessionKeyArray[]' || elements[i].name == 'UserIDArray[]' ) )
+                if (elements[i].type == 'checkbox' && ( elements[i].name == 'SessionRefArray[]' || elements[i].name == 'UserIDArray[]' ) )
                      elements[i].checked = true;
             }
         }
@@ -27,7 +27,7 @@ function checkAll()
         {
             for (var i=0; i < elements.length; i++)
             {
-                if (elements[i].type == 'checkbox' && ( elements[i].name == 'SessionKeyArray[]' || elements[i].name == 'UserIDArray[]' ) )
+                if (elements[i].type == 'checkbox' && ( elements[i].name == 'SessionRefArray[]' || elements[i].name == 'UserIDArray[]' ) )
                      elements[i].checked = false;
             }
         }
@@ -133,7 +133,7 @@ function checkAll()
     {let session_user=fetch( content,object, hash( 'object_id', $session.user_id ) )}
     <td width="1%">
     {if $user_id}
-        <input type="checkbox" name="SessionKeyArray[]" value="{$session.session_key|wash}" />
+        <input type="checkbox" name="SessionRefArray[]" value="{$session.ref|wash}" />
     {else}
         <input type="checkbox" name="UserIDArray[]" value="{$session.user_id}" />
     {/if}

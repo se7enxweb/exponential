@@ -1,8 +1,9 @@
 <?php
 /**
- * The audit/recent view: the latest 100 audit events of every channel (or of one, /(channel)/access) with name,
- * time, actor, object, result and request id, and a chain status line per channel (the verifier's result over
- * the live files). Read-only; needs the audit/read policy. Opening it is recorded (system.audit.read).
+ * The audit/recent view: the latest 100 audit events of every channel the user may read (or of one,
+ * /(channel)/access) with name, time, actor, object, result and request id, and a chain status line per channel
+ * (the verifier's result over the live files). Needs the audit/read policy, whose Channel limitation narrows the
+ * channels; "Verify now" needs audit/manage. Opening it is recorded (system.audit.read).
  * Guide: doc/bc/6.0/audit.md ("Stage 2 — built")
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
@@ -32,8 +33,13 @@ class Recent extends \Exponential\Runnable\ModuleView
         $config = \expAuditConfig::get();
         $channel = isset( $Params['Channel'] ) && preg_match( '/^[a-z][a-z0-9_]{0,31}$/', (string)$Params['Channel'] ) ? (string)$Params['Channel'] : null;
 
+        // the Channel limitation of audit/read narrows the channels, as on the console
+        $allowed = class_exists( 'expAuditConsole' ) ? \expAuditConsole::allowedChannels() : null;
+        if ( $channel !== null && !self::channelAllowed( $channel, $allowed ) )
+            return $Params['Module']->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' );
+
         $reader = new \expAuditReader( $config['logDir'] );
-        $channels = $reader->channels();
+        $channels = self::allowedChannelInfo( $reader->channels(), $allowed );
         $bytes = 0;
         foreach ( $channels as $info )
             $bytes += $info['bytes'];
@@ -44,6 +50,9 @@ class Recent extends \Exponential\Runnable\ModuleView
         $options = array();
         if ( $verifyNow )
         {
+            // verifying is audit/manage, as on the console
+            if ( !class_exists( 'expAuditConsole' ) || !\expAuditConsole::canManage() )
+                return $Params['Module']->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' );
             // as on the dashboard and the console: the password again (ReauthForManage) and, under
             // OnWriteFailure=refuse, a writable audit
             if ( class_exists( 'expAuditReauth' ) )
@@ -75,7 +84,7 @@ class Recent extends \Exponential\Runnable\ModuleView
         }
 
         $events = array();
-        foreach ( $reader->latest( self::LIMIT, $channel ) as $r )
+        foreach ( self::latestAllowed( $reader, self::LIMIT, $channel, $allowed ) as $r )
         {
             $ts = isset( $r['time'] ) ? strtotime( $r['time'] ) : false;
             $events[] = array(
@@ -107,13 +116,72 @@ class Recent extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'log_dir', \expAudit::relativePath( $config['logDir'] ) );
         $tpl->setVariable( 'verified_today_only', isset( $options['date'] ) );
         $tpl->setVariable( 'limit', self::LIMIT );
+        // the Verify now button only for those who may press it (audit/manage)
+        $tpl->setVariable( 'can_manage', class_exists( 'expAuditConsole' ) && \expAuditConsole::canManage() );
         $tpl->setVariable( 'request_id', \expAudit::requestId() );
         // the links of the extensions' sources (audit.ini [AuditSourceSettings] Sources[]); none without one
-        $tpl->setVariable( 'audit_sources', class_exists( 'expAuditConsole' ) ? \expAuditConsole::sourceLinks( 'audit/recent', $channel === null ? array() : array( 'channel' => $channel ), \expAuditConsole::allowedChannels() ) : array() );
+        $tpl->setVariable( 'audit_sources', class_exists( 'expAuditConsole' ) ? \expAuditConsole::sourceLinks( 'audit/recent', $channel === null ? array() : array( 'channel' => $channel ), $allowed ) : array() );
 
         return array( 'content' => $tpl->fetch( 'design:audit/recent.tpl' ),
                       'path' => array( array( 'text' => \ezpI18n::tr( 'design/admin/audit', 'Audit' ), 'url' => false ),
                                        array( 'text' => \ezpI18n::tr( 'design/admin/audit', 'Recent events' ), 'url' => false ) ) );
+    }
+
+    /**
+     * Whether $channel may be read with the channels $allowed (null: every channel).
+     *
+     * @param string $channel
+     * @param string[]|null $allowed expAuditConsole::allowedChannels()
+     * @return bool
+     */
+    public static function channelAllowed( $channel, $allowed )
+    {
+        return $allowed === null || in_array( (string)$channel, (array)$allowed, true );
+    }
+
+    /**
+     * The channels of expAuditReader::channels() the user may read.
+     *
+     * @param array $channels channel => info
+     * @param string[]|null $allowed
+     * @return array
+     */
+    public static function allowedChannelInfo( array $channels, $allowed )
+    {
+        if ( $allowed === null )
+            return $channels;
+        $result = array();
+        foreach ( $channels as $c => $info )
+            if ( self::channelAllowed( $c, $allowed ) )
+                $result[$c] = $info;
+        return $result;
+    }
+
+    /**
+     * The latest $limit records of $channel (null: of every channel) that the channels $allowed let the user read,
+     * newest first. A limited user gets the latest of the readable channels, not fewer.
+     *
+     * @param \expAuditReader $reader
+     * @param int $limit
+     * @param string|null $channel
+     * @param string[]|null $allowed
+     * @return array
+     */
+    public static function latestAllowed( $reader, $limit, $channel, $allowed )
+    {
+        if ( $allowed === null )
+            return $reader->latest( $limit, $channel );
+        if ( $channel !== null )
+            return self::channelAllowed( $channel, $allowed ) ? $reader->latest( $limit, $channel ) : array();
+        $all = array();
+        foreach ( array_keys( self::allowedChannelInfo( $reader->channels(), $allowed ) ) as $c )
+            foreach ( $reader->latest( $limit, $c ) as $r )
+                $all[] = $r;
+        usort( $all, function ( $a, $b ) {
+            $t = strcmp( isset( $b['time'] ) ? $b['time'] : '', isset( $a['time'] ) ? $a['time'] : '' );
+            return $t !== 0 ? $t : strcmp( isset( $b['id'] ) ? $b['id'] : '', isset( $a['id'] ) ? $a['id'] : '' );
+        } );
+        return array_slice( $all, 0, max( 1, (int)$limit ) );
     }
 }
 

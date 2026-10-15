@@ -125,7 +125,7 @@ class Dashboard extends \Exponential\Runnable\ModuleView
 
             $priority = 0;
             if ( $ini->hasVariable( $blockGroupName, 'Priority' ) )
-                $priority = $ini->variable( $blockGroupName, 'Priority' );
+                $priority = (int)$ini->variable( $blockGroupName, 'Priority' );
 
             $numberOfItems = null;
             if ( $ini->hasVariable( $blockGroupName, 'NumberOfItems' ) )

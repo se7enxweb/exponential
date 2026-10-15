@@ -148,7 +148,7 @@
 </div>
 </div>
 
-<input type="hidden" name="Offset" value="{$view_parameters.offset}" />
+<input type="hidden" name="Offset" value="{$view_parameters.offset|int}" />
 
 </form>
 

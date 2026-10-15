@@ -124,8 +124,8 @@ millisecond.
 
 ## For developers
 
-- View: `kernel/private/classes/views/setup/extensions.php` (thin); templates `design/admin{,4}/templates/setup/extensions.tpl`
-  and `extensions_exp_style.tpl`.
+- View: `kernel/private/classes/views/setup/extensions.php` (thin); template `design/admin{,4}/templates/setup/extensions.tpl`,
+  styled in `stylesheets/modules/setup.css`.
 - `expExtensionCatalogue` (`kernel/classes/expextensioncatalogue.php`) collects the facts; `expExtensionChangePlan`
   (`kernel/classes/expextensionchangeplan.php`) moves, activates, deactivates, diffs and finds problems and risks; both
   are pure where it matters and tested without a database in `tests/tests/kernel/classes/setup/ExtensionChangePlanTest.php`.

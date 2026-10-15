@@ -462,7 +462,7 @@ class Session extends \Exponential\Runnable\ModuleView
 
     /**
      * One page of sessions: per user (count, latest expiry) or, for one user, per session.
-     * Each row: user_id, count (per user), expiration_time, session_key (kept for overrides; one key of the user),
+     * Each row: user_id, count (per user), expiration_time,
      * ref, key_hint, idle_time, idle (hour, minute, second), idle_seconds, idle_text, last_activity, login, email, name.
      *
      * @param array $params limit, offset, sortby, order, filter_type, expiration_filter, user_id, search
@@ -534,7 +534,6 @@ ORDER BY $orderBy";
         if ( $perUser )
             $session['count'] = (int)$row['count'];
         $session['expiration_time'] = (int)$row['expiration_time'];
-        $session['session_key'] = (string)$row['session_key'];
         $session['ref'] = self::sessionRef( (string)$row['session_key'] );
         $session['key_hint'] = self::keyHint( (string)$row['session_key'] );
         $session['idle_time'] = (int)$row['expiration_time'] - (int)$sessionTimeout;

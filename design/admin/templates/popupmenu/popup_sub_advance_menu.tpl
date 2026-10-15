@@ -2,7 +2,6 @@
 <script type="text/javascript">
 menuArray['Advanced'] = {ldelim} 'depth': 1 {rdelim};
 menuArray['Advanced']['elements'] = {ldelim}{rdelim};
-menuArray['Advanced']['elements']['menu-hide'] = {ldelim} 'url': {"/content/hide/%nodeID%"|ezurl} {rdelim};
 menuArray['Advanced']['elements']['menu-list'] = {ldelim} 'url': {"content/view/sitemap/%nodeID%"|ezurl} {rdelim};
 menuArray['Advanced']['elements']['reverse-related'] = {ldelim} 'url': {"content/reverserelatedlist/%nodeID%"|ezurl} {rdelim};
 menuArray['Advanced']['elements']['menu-history'] = {ldelim} 'url': {"content/history/%objectID%"|ezurl} {rdelim};
@@ -11,7 +10,7 @@ menuArray['Advanced']['elements']['menu-url-alias'] = {ldelim} 'url': {"content/
 
 <div class="popupmenu" id="Advanced">
     <a id="menu-swap" href="#" onmouseover="ezpopmenu_mouseOver( 'Advanced' )" onclick="ezpopmenu_submitForm( 'menu-form-swap' ); return false;">{'Swap with another node'|i18n( 'design/admin/popupmenu' )}</a>
-    <a id="menu-hide" href="#" onmouseover="ezpopmenu_mouseOver( 'Advanced' )">{'Hide / unhide'|i18n( 'design/admin/popupmenu' )}</a>
+    <a id="menu-hide" href="#" onmouseover="ezpopmenu_mouseOver( 'Advanced' )" onclick="ezpopmenu_submitForm( 'menu-form-hide' ); return false;">{'Hide / unhide'|i18n( 'design/admin/popupmenu' )}</a>
     <hr />
     <a id="menu-list" href="#" onmouseover="ezpopmenu_mouseOver( 'Advanced' )">{'Sitemap for subtree'|i18n( 'design/admin/popupmenu' )}</a>
     <a id="reverse-related" href="#" onmouseover="ezpopmenu_mouseOver( 'Advanced' )">{'Reverse related for subtree'|i18n( 'design/admin/popupmenu' )}</a>
@@ -24,6 +23,10 @@ menuArray['Advanced']['elements']['menu-url-alias'] = {ldelim} 'url': {"content/
         {include uri=concat('design:', $template )}
     {/foreach}
 </div>
+
+{* Hide / unhide: a POST, as it changes the site *}
+<form id="menu-form-hide" method="post" action={"/content/hide/%nodeID%"|ezurl}>
+</form>
 
 {* Swap node *}
 <form id="menu-form-swap" method="post" action={"/content/action"|ezurl}>

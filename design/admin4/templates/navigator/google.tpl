@@ -38,6 +38,7 @@
 
 {section show=$:page_count|gt(1)}
 
+<nav aria-label="{'Pages'|i18n( 'design/admin/navigator' )|wash}">
 <div class="pagenavigator">
 <p>
 
@@ -73,7 +74,7 @@
         {/let}
     {/section}
 
-        <span class="current">{$:current_page|inc}</span>
+        <span class="current" aria-current="page">{$:current_page|inc}</span>
 
     {section loop=$:right_length}
         {let page_offset=sum($ViewParameter:current_page,1,$:index)}
@@ -93,6 +94,7 @@
 </p>
 <div class="break"></div>
 </div>
+</nav>
 
 {/section}
 

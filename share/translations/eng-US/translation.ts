@@ -119,6 +119,10 @@
 <context>
     <name>design/admin/class/classlist</name>
     <message>
+        <source>Only this page is searched: %from to %to of %count.</source>
+        <translation>Only this page is searched: %from to %to of %count.</translation>
+    </message>
+    <message>
         <source>%group_name [Class group]</source>
         <translation>%group_name [Class group]</translation>
     </message>
@@ -758,6 +762,10 @@
 </context>
 <context>
     <name>design/admin/class/grouplist</name>
+    <message>
+        <source>Only this page is searched: %from to %to of %count.</source>
+        <translation>Only this page is searched: %from to %to of %count.</translation>
+    </message>
     <message>
         <source>Invert selection.</source>
         <translation>Invert selection.</translation>
@@ -4576,6 +4584,10 @@
         <source>version %version</source>
         <translation>version %version</translation>
     </message>
+    <message>
+        <source>Item</source>
+        <translation>Item</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/pendinglist</name>
@@ -5029,6 +5041,26 @@
 </context>
 <context>
     <name>design/admin/content/search</name>
+    <message>
+        <source>Search for</source>
+        <translation>Search for</translation>
+    </message>
+    <message>
+        <source>The search text was too long and was shortened.</source>
+        <translation>The search text was too long and was shortened.</translation>
+    </message>
+    <message>
+        <source>Type the words to search for.</source>
+        <translation>Type the words to search for.</translation>
+    </message>
+    <message>
+        <source>The search could not be run. Try fewer or simpler words, or search again later.</source>
+        <translation>The search could not be run. Try fewer or simpler words, or search again later.</translation>
+    </message>
+    <message>
+        <source>%count matches</source>
+        <translation>%count matches</translation>
+    </message>
     <message>
         <source>Update attributes</source>
         <translation>Update attributes</translation>
@@ -6146,6 +6178,30 @@
         <source>to</source>
         <translation>to</translation>
     </message>
+    <message>
+        <source>%count below it</source>
+        <translation>%count below it</translation>
+    </message>
+    <message>
+        <source>%items items in the trash: %top removed directly, %below below them. Oldest: %oldest.</source>
+        <translation>%items items in the trash: %top removed directly, %below below them. Oldest: %oldest.</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Who trashed an item is recorded from this version on: known for %recorded.</source>
+        <translation>Who trashed an item is recorded from this version on: known for %recorded.</translation>
+    </message>
+    <message>
+        <source>by %name</source>
+        <translation>by %name</translation>
+    </message>
+    <message>
+        <source>last modified by %name</source>
+        <translation>last modified by %name</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/upload</name>
@@ -7093,6 +7149,22 @@
         <source>%count selected.</source>
         <translation>%count selected.</translation>
     </message>
+    <message>
+        <source>A URL wildcard sends a whole group of addresses somewhere else with one rule: news/* to articles/{1\} turns news/2026/october into articles/2026/october. Each * of the pattern matches any text, and {1\}, {2\} ... in the destination put that text back. Wildcards are tried in the order they were created, the first that matches is used, and they are only consulted when no URL alias matches the address.</source>
+        <translation>A URL wildcard sends a whole group of addresses somewhere else with one rule: news/* to articles/{1\} turns news/2026/october into articles/2026/october. Each * of the pattern matches any text, and {1\}, {2\} ... in the destination put that text back. Wildcards are tried in the order they were created, the first that matches is used, and they are only consulted when no URL alias matches the address.</translation>
+    </message>
+    <message>
+        <source>Create one with the form above, for example old-blog/* to blog/{1\}.</source>
+        <translation>Create one with the form above, for example old-blog/* to blog/{1\}.</translation>
+    </message>
+    <message>
+        <source>Each * of the pattern is one placeholder, numbered from {1\}. Add a * to the pattern or remove the placeholder; otherwise visitors would be sent to an address with a part missing.</source>
+        <translation>Each * of the pattern is one placeholder, numbered from {1\}. Add a * to the pattern or remove the placeholder; otherwise visitors would be sent to an address with a part missing.</translation>
+    </message>
+    <message>
+        <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
+        <translation>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -7115,6 +7187,18 @@
     <message>
         <source>Untouched draft</source>
         <translation>Untouched draft</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Queued</translation>
+    </message>
+    <message>
+        <source>Rejected</source>
+        <translation>Rejected</translation>
+    </message>
+    <message>
+        <source>Repeat</source>
+        <translation>Repeat</translation>
     </message>
 </context>
 <context>
@@ -7250,6 +7334,22 @@
     <message>
         <source>Preview of the version</source>
         <translation>Preview of the version</translation>
+    </message>
+    <message>
+        <source>Open the preview in a new window</source>
+        <translation>Open the preview in a new window</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Queued</translation>
+    </message>
+    <message>
+        <source>Repeat</source>
+        <translation>Repeat</translation>
+    </message>
+    <message>
+        <source>Untouched draft</source>
+        <translation>Untouched draft</translation>
     </message>
 </context>
 <context>
@@ -7725,6 +7825,14 @@
         <source>What you can do</source>
         <translation>What you can do</translation>
     </message>
+    <message>
+        <source>The &quot;%module&quot; part of the system has no page called &quot;%view&quot;.</source>
+        <translation>The &quot;%module&quot; part of the system has no page called &quot;%view&quot;.</translation>
+    </message>
+    <message>
+        <source>There is no page at &quot;%page&quot;.</source>
+        <translation>There is no page at &quot;%page&quot;.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/error/shop</name>
@@ -7990,6 +8098,10 @@
         <source>Information collected by &lt;%object_name&gt; (%collection_count)</source>
         <translation>Information collected by &lt;%object_name&gt; (%collection_count)</translation>
     </message>
+    <message>
+        <source>Select collection %id for removal</source>
+        <translation>Select collection %id for removal</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/infocollector/confirmremoval</name>
@@ -8246,6 +8358,10 @@
 </context>
 <context>
     <name>design/admin/navigator</name>
+    <message>
+        <source>Pages</source>
+        <translation>Pages</translation>
+    </message>
     <message>
         <source>Previous</source>
         <translation>Previous</translation>
@@ -9442,6 +9558,18 @@
     <message>
         <source>Show tabs</source>
         <translation>Show tabs</translation>
+    </message>
+    <message>
+        <source>Details of the top node: its node ID, depth and path, the number of sub items and the time of the latest change below it.</source>
+        <translation>Details of the top node: its node ID, depth and path, the number of sub items and the time of the latest change below it.</translation>
+    </message>
+    <message>
+        <source>This is the top node of the content structure. It is not a content object: it has no class, attributes, translations, versions or other locations, and it cannot be edited, moved or removed. The top-level nodes it holds are listed under Sub items.</source>
+        <translation>This is the top node of the content structure. It is not a content object: it has no class, attributes, translations, versions or other locations, and it cannot be edited, moved or removed. The top-level nodes it holds are listed under Sub items.</translation>
+    </message>
+    <message>
+        <source>Top node</source>
+        <translation>Top node</translation>
     </message>
 </context>
 <context>
@@ -12573,6 +12701,14 @@ Note: The packages will not be uninstalled.</translation>
         <source>Right column</source>
         <translation>Right column</translation>
     </message>
+    <message>
+        <source>Show or hide the left sidebar</source>
+        <translation>Show or hide the left sidebar</translation>
+    </message>
+    <message>
+        <source>Show or hide the right sidebar</source>
+        <translation>Show or hide the right sidebar</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -14084,6 +14220,10 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>People who bought this also bought</source>
         <translation>People who bought this also bought</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Category</translation>
     </message>
 </context>
 <context>
@@ -17681,6 +17821,10 @@ Note: The packages will not be uninstalled.</translation>
 <context>
     <name>design/admin/section/list</name>
     <message>
+        <source>Only this page is searched: %from to %to of %count.</source>
+        <translation>Only this page is searched: %from to %to of %count.</translation>
+    </message>
+    <message>
         <source>Name</source>
         <translation>Name</translation>
     </message>
@@ -20397,6 +20541,18 @@ Note: The packages will not be uninstalled.</translation>
 </context>
 <context>
     <name>design/admin/setup/extensions</name>
+    <message>
+        <source>The extension or the archive format is not known.</source>
+        <translation>The extension or the archive format is not known.</translation>
+    </message>
+    <message>
+        <source>The extension %name could not be packed.</source>
+        <translation>The extension %name could not be packed.</translation>
+    </message>
+    <message>
+        <source>Download %name as %format</source>
+        <translation>Download %name as %format</translation>
+    </message>
     <message>
         <source>Name</source>
         <translation>Name</translation>
@@ -23771,6 +23927,10 @@ Note: The packages will not be uninstalled.</translation>
 <context>
     <name>design/admin/setup/rad</name>
     <message>
+        <source>%shown of %count</source>
+        <translation>%shown of %count</translation>
+    </message>
+    <message>
         <source>Find</source>
         <translation>Find</translation>
     </message>
@@ -25093,6 +25253,18 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>A listener of a filter event in site.ini [Event] Listeners[]. The kernel passes a value and goes on with what the listener returns, so a listener that forgets to return it destroys the value.</source>
         <translation>A listener of a filter event in site.ini [Event] Listeners[]. The kernel passes a value and goes on with what the listener returns, so a listener that forgets to return it destroys the value.</translation>
+    </message>
+    <message>
+        <source>%counted of them counted as settings</source>
+        <translation>%counted of them counted as settings</translation>
+    </message>
+    <message>
+        <source>%runnables commands, cronjob parts and views are classes a subclass named in site.ini can replace.</source>
+        <translation>%runnables commands, cronjob parts and views are classes a subclass named in site.ini can replace.</translation>
+    </message>
+    <message>
+        <source>exp:ini has %actions actions and %providers scope providers; an extension adds its own in ini.ini.</source>
+        <translation>exp:ini has %actions actions and %providers scope providers; an extension adds its own in ini.ini.</translation>
     </message>
 </context>
 <context>
@@ -29428,6 +29600,14 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>Each limitation of a policy function is listed too, with the class and method that give its values; one whose class is not there offers nothing to choose in the role editor and is shown as broken.</source>
         <translation>Each limitation of a policy function is listed too, with the class and method that give its values; one whose class is not there offers nothing to choose in the role editor and is shown as broken.</translation>
+    </message>
+    <message>
+        <source>exp:ini actions, and %providers scope providers</source>
+        <translation>exp:ini actions, and %providers scope providers</translation>
+    </message>
+    <message>
+        <source>registry entries: %columns subitems columns, %jobs content job types</source>
+        <translation>registry entries: %columns subitems columns, %jobs content job types</translation>
     </message>
 </context>
 <context>
@@ -34577,6 +34757,18 @@ Note: The packages will not be uninstalled.</translation>
         <source>Objects using URL #%url_id (%url_count)</source>
         <translation>Objects using URL #%url_id (%url_count)</translation>
     </message>
+    <message>
+        <source>Queued</source>
+        <translation>Queued</translation>
+    </message>
+    <message>
+        <source>Repeat</source>
+        <translation>Repeat</translation>
+    </message>
+    <message>
+        <source>Untouched draft</source>
+        <translation>Untouched draft</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user</name>
@@ -35089,6 +35281,10 @@ your account.</translation>
     <message>
         <source>Signing in…</source>
         <translation>Signing in…</translation>
+    </message>
+    <message>
+        <source>Content, sites and layouts, managed in one place.</source>
+        <translation>Content, sites and layouts, managed in one place.</translation>
     </message>
 </context>
 <context>
@@ -36636,6 +36832,22 @@ your account.</translation>
         <source>siteaccess</source>
         <translation>siteaccess</translation>
     </message>
+    <message>
+        <source>Defined in settings/siteaccess/%siteaccess/override.ini.append.php</source>
+        <translation>Defined in settings/siteaccess/%siteaccess/override.ini.append.php</translation>
+    </message>
+    <message>
+        <source>The overrides are tried from the top, and the first whose conditions all match is used. Drag an override by its handle to a new place, or use its arrows; every change is saved at once as the Priority of these overrides in settings/siteaccess/%siteaccess/override.ini.append.php.</source>
+        <translation>The overrides are tried from the top, and the first whose conditions all match is used. Drag an override by its handle to a new place, or use its arrows; every change is saved at once as the Priority of these overrides in settings/siteaccess/%siteaccess/override.ini.append.php.</translation>
+    </message>
+    <message>
+        <source>Try %name earlier</source>
+        <translation>Try %name earlier</translation>
+    </message>
+    <message>
+        <source>Try %name later</source>
+        <translation>Try %name later</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/visual/toolbar</name>
@@ -36959,6 +37171,10 @@ your account.</translation>
 </context>
 <context>
     <name>design/admin/workflow/grouplist</name>
+    <message>
+        <source>Only this page is searched: %from to %to of %count.</source>
+        <translation>Only this page is searched: %from to %to of %count.</translation>
+    </message>
     <message>
         <source>Name</source>
         <translation>Name</translation>
@@ -44008,6 +44224,14 @@ You can also remove the package without uninstalling it from the package list.</
     <message>
         <source>No licenses are configured for packages. Add them to package.ini [LicenseSettings] LicenseList.</source>
         <translation>No licenses are configured for packages. Add them to package.ini [LicenseSettings] LicenseList.</translation>
+    </message>
+    <message>
+        <source>Back to the package</source>
+        <translation>Back to the package</translation>
+    </message>
+    <message>
+        <source>Package list</source>
+        <translation>Package list</translation>
     </message>
 </context>
 <context>
@@ -53480,6 +53704,22 @@ You will need to change the class of the node by using the swap functionality.</
 <context>
     <name>kernel/package</name>
     <message>
+        <source>The extension %name may not be exported: it is not in package.ini [ExtensionExportSettings] AllowedExtensions[].</source>
+        <translation>The extension %name may not be exported: it is not in package.ini [ExtensionExportSettings] AllowedExtensions[].</translation>
+    </message>
+    <message>
+        <source>Exporting an extension needs the policy package/export_extension.</source>
+        <translation>Exporting an extension needs the policy package/export_extension.</translation>
+    </message>
+    <message>
+        <source>The extension %name is not known.</source>
+        <translation>The extension %name is not known.</translation>
+    </message>
+    <message>
+        <source>The extension %name was not packed: it holds secret values or key material (%files). Copy it from the server instead.</source>
+        <translation>The extension %name was not packed: it holds secret values or key material (%files). Copy it from the server instead.</translation>
+    </message>
+    <message>
         <source>Lead</source>
         <translation>Lead</translation>
     </message>
@@ -58948,6 +59188,22 @@ You will need to change the class of the node by using the swap functionality.</
 <context>
     <name>design/admin/content/job</name>
     <message>
+        <source>Reveal %name</source>
+        <translation>Reveal %name</translation>
+    </message>
+    <message>
+        <source>Hide %name</source>
+        <translation>Hide %name</translation>
+    </message>
+    <message>
+        <source>The node and everything below it become visible again, unless hidden on their own.</source>
+        <translation>The node and everything below it become visible again, unless hidden on their own.</translation>
+    </message>
+    <message>
+        <source>The node and everything below it are hidden from the site.</source>
+        <translation>The node and everything below it are hidden from the site.</translation>
+    </message>
+    <message>
         <source>Audit trail</source>
         <translation>Audit trail</translation>
     </message>
@@ -59302,6 +59558,206 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the result</source>
         <translation>Open the result</translation>
+    </message>
+    <message>
+        <source>%done of %total</source>
+        <translation>%done of %total</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from to %to of %count</translation>
+    </message>
+    <message>
+        <source>%title, %percent% done.</source>
+        <translation>%title, %percent% done.</translation>
+    </message>
+    <message>
+        <source>A remove or copy of a large subtree appears here when it runs in the background.</source>
+        <translation>A remove or copy of a large subtree appears here when it runs in the background.</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Actions</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>All</translation>
+    </message>
+    <message>
+        <source>All users</source>
+        <translation>All users</translation>
+    </message>
+    <message>
+        <source>An operation that overlaps them is refused until they are done.</source>
+        <translation>An operation that overlaps them is refused until they are done.</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Back</translation>
+    </message>
+    <message>
+        <source>Background jobs are working on this part of the tree</source>
+        <translation>Background jobs are working on this part of the tree</translation>
+    </message>
+    <message>
+        <source>Below %limit items running now is preselected, from %limit on the background job (content.ini SynchronousLimit). Your last choice is remembered.</source>
+        <translation>Below %limit items running now is preselected, from %limit on the background job (content.ini SynchronousLimit). Your last choice is remembered.</translation>
+    </message>
+    <message>
+        <source>Choose the node to add a location under using the radio buttons then click &quot;Select&quot;. Every selected item keeps its locations and gets one more under that node.</source>
+        <translation>Choose the node to add a location under using the radio buttons then click &quot;Select&quot;. Every selected item keeps its locations and gets one more under that node.</translation>
+    </message>
+    <message>
+        <source>Choose where to add a location for &lt;%object_name&gt;</source>
+        <translation>Choose where to add a location for &lt;%object_name&gt;</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Classes</translation>
+    </message>
+    <message>
+        <source>Clear the filters</source>
+        <translation>Clear the filters</translation>
+    </message>
+    <message>
+        <source>Content jobs (%count)</source>
+        <translation>Content jobs (%count)</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filter</translation>
+    </message>
+    <message>
+        <source>How to run it</source>
+        <translation>How to run it</translation>
+    </message>
+    <message>
+        <source>Jobs per state</source>
+        <translation>Jobs per state</translation>
+    </message>
+    <message>
+        <source>Large subtree removes and copies run in the background, in batches. A job keeps going when you leave its page.</source>
+        <translation>Large subtree removes and copies run in the background, in batches. A job keeps going when you leave its page.</translation>
+    </message>
+    <message>
+        <source>Last modified</source>
+        <translation>Last modified</translation>
+    </message>
+    <message>
+        <source>Locations</source>
+        <translation>Locations</translation>
+    </message>
+    <message>
+        <source>Moved to the trash, the items can be restored from the trash later. Without it they are deleted for good. Items you may not remove are marked in red above; then nothing is removed.</source>
+        <translation>Moved to the trash, the items can be restored from the trash later. Without it they are deleted for good. Items you may not remove are marked in red above; then nothing is removed.</translation>
+    </message>
+    <message>
+        <source>My jobs</source>
+        <translation>My jobs</translation>
+    </message>
+    <message>
+        <source>Newer</source>
+        <translation>Newer</translation>
+    </message>
+    <message>
+        <source>No job matches these filters.</source>
+        <translation>No job matches these filters.</translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation>OK</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Objects</translation>
+    </message>
+    <message>
+        <source>Objects with other locations</source>
+        <translation>Objects with other locations</translation>
+    </message>
+    <message>
+        <source>Older</source>
+        <translation>Older</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Open</translation>
+    </message>
+    <message>
+        <source>Progress and items</source>
+        <translation>Progress and items</translation>
+    </message>
+    <message>
+        <source>Run in the background (%count items: you can leave the page)</source>
+        <translation>Run in the background (%count items: you can leave the page)</translation>
+    </message>
+    <message>
+        <source>Run in the background (recommended for %count items: you can leave the page)</source>
+        <translation>Run in the background (recommended for %count items: you can leave the page)</translation>
+    </message>
+    <message>
+        <source>Run now (this page waits until it is done)</source>
+        <translation>Run now (this page waits until it is done)</translation>
+    </message>
+    <message>
+        <source>Selected locations</source>
+        <translation>Selected locations</translation>
+    </message>
+    <message>
+        <source>Server</source>
+        <translation>Server</translation>
+    </message>
+    <message>
+        <source>Show the job</source>
+        <translation>Show the job</translation>
+    </message>
+    <message>
+        <source>Source and target</source>
+        <translation>Source and target</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>State</translation>
+    </message>
+    <message>
+        <source>The copy gets the current version of each object unless all versions are chosen, and you as its creator unless the creator is kept (content.ini [CopySettings]).</source>
+        <translation>The copy gets the current version of each object unless all versions are chosen, and you as its creator unless the creator is kept (content.ini [CopySettings]).</translation>
+    </message>
+    <message>
+        <source>The operation was not started</source>
+        <translation>The operation was not started</translation>
+    </message>
+    <message>
+        <source>The part copied so far is kept under %target.</source>
+        <translation>The part copied so far is kept under %target.</translation>
+    </message>
+    <message>
+        <source>There are no content jobs.</source>
+        <translation>There are no content jobs.</translation>
+    </message>
+    <message>
+        <source>This is a large removal. It runs in the background, in batches: you see its progress and can leave the page while it works.</source>
+        <translation>This is a large removal. It runs in the background, in batches: you see its progress and can leave the page while it works.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>User</translation>
+    </message>
+    <message>
+        <source>What this touches</source>
+        <translation>What this touches</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>and %count more</translation>
+    </message>
+    <message>
+        <source>duration</source>
+        <translation>duration</translation>
+    </message>
+    <message>
+        <source>only these locations go; the objects keep existing at their other locations</source>
+        <translation>only these locations go; the objects keep existing at their other locations</translation>
     </message>
 </context>
 <context>
@@ -62947,6 +63403,462 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>Setup</translation>
+    </message>
+    <message>
+        <source>%count nodes are below it; at most %limit can be removed here.</source>
+        <translation>%count nodes are below it; at most %limit can be removed here.</translation>
+    </message>
+    <message>
+        <source>%count nodes below it</source>
+        <translation>%count nodes below it</translation>
+    </message>
+    <message>
+        <source>%count other objects relate to what is removed.</source>
+        <translation>%count other objects relate to what is removed.</translation>
+    </message>
+    <message>
+        <source>(an old address, kept as history)</source>
+        <translation>(an old address, kept as history)</translation>
+    </message>
+    <message>
+        <source>An action can only be sent from a form of the finder.</source>
+        <translation>An action can only be sent from a form of the finder.</translation>
+    </message>
+    <message>
+        <source>Archived</source>
+        <translation>Archived</translation>
+    </message>
+    <message>
+        <source>Attribute %id (%identifier, %datatype), version %version, %language</source>
+        <translation>Attribute %id (%identifier, %datatype), version %version, %language</translation>
+    </message>
+    <message>
+        <source>Attribute id</source>
+        <translation>Attribute id</translation>
+    </message>
+    <message>
+        <source>Back to the finder</source>
+        <translation>Back to the finder</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Class</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Created</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Creator</translation>
+    </message>
+    <message>
+        <source>Current version</source>
+        <translation>Current version</translation>
+    </message>
+    <message>
+        <source>Delete permanently</source>
+        <translation>Delete permanently</translation>
+    </message>
+    <message>
+        <source>Deleted permanently</source>
+        <translation>Deleted permanently</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Draft</translation>
+    </message>
+    <message>
+        <source>Enter an object, node, attribute or version id, a remote id, a URL alias, a page URL, or the path or URL of a file below var/ (for example the path of an image). A path that ends with / or * finds every file below it. A number is tried as every kind of id.</source>
+        <translation>Enter an object, node, attribute or version id, a remote id, a URL alias, a page URL, or the path or URL of a file below var/ (for example the path of an image). A path that ends with / or * finds every file below it. A number is tried as every kind of id.</translation>
+    </message>
+    <message>
+        <source>Enter at least %count characters to search by part of an alias.</source>
+        <translation>Enter at least %count characters to search by part of an alias.</translation>
+    </message>
+    <message>
+        <source>File path</source>
+        <translation>File path</translation>
+    </message>
+    <message>
+        <source>Find</source>
+        <translation>Find</translation>
+    </message>
+    <message>
+        <source>Find content by an object, node, attribute or version id, a remote id, a URL alias or the path of a file.</source>
+        <translation>Find content by an object, node, attribute or version id, a remote id, a URL alias or the path of a file.</translation>
+    </message>
+    <message>
+        <source>Found by</source>
+        <translation>Found by</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Hidden</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Hidden by its parent</translation>
+    </message>
+    <message>
+        <source>I understand that this cannot be undone.</source>
+        <translation>I understand that this cannot be undone.</translation>
+    </message>
+    <message>
+        <source>Id, path or URL</source>
+        <translation>Id, path or URL</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>In the trash</translation>
+    </message>
+    <message>
+        <source>Internal draft</source>
+        <translation>Internal draft</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Language</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Languages</translation>
+    </message>
+    <message>
+        <source>Locations</source>
+        <translation>Locations</translation>
+    </message>
+    <message>
+        <source>Locations: %locations. Nodes below them: %children. Versions of the object: %versions.</source>
+        <translation>Locations: %locations. Nodes below them: %children. Versions of the object: %versions.</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Main</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Modified</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Move to trash</translation>
+    </message>
+    <message>
+        <source>Moved to the trash</source>
+        <translation>Moved to the trash</translation>
+    </message>
+    <message>
+        <source>No location you may read.</source>
+        <translation>No location you may read.</translation>
+    </message>
+    <message>
+        <source>No version you may read (content/versionread).</source>
+        <translation>No version you may read (content/versionread).</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Node %id</translation>
+    </message>
+    <message>
+        <source>Node %id, trashed from</source>
+        <translation>Node %id, trashed from</translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation>Node id</translation>
+    </message>
+    <message>
+        <source>None: the object is in the trash.</source>
+        <translation>None: the object is in the trash.</translation>
+    </message>
+    <message>
+        <source>Nothing found, or you have no access to what was found.</source>
+        <translation>Nothing found, or you have no access to what was found.</translation>
+    </message>
+    <message>
+        <source>Object %id, %class.</source>
+        <translation>Object %id, %class.</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>Object id</translation>
+    </message>
+    <message>
+        <source>Objects found: %count.</source>
+        <translation>Objects found: %count.</translation>
+    </message>
+    <message>
+        <source>Only the first %count are shown; enter a more exact text.</source>
+        <translation>Only the first %count are shown; enter a more exact text.</translation>
+    </message>
+    <message>
+        <source>Original path</source>
+        <translation>Original path</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Owner</translation>
+    </message>
+    <message>
+        <source>Path</source>
+        <translation>Path</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Pending</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Published</translation>
+    </message>
+    <message>
+        <source>Purge from the trash</source>
+        <translation>Purge from the trash</translation>
+    </message>
+    <message>
+        <source>Purged from the trash</source>
+        <translation>Purged from the trash</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>Queued</translation>
+    </message>
+    <message>
+        <source>Recognise automatically</source>
+        <translation>Recognise automatically</translation>
+    </message>
+    <message>
+        <source>Rejected</source>
+        <translation>Rejected</translation>
+    </message>
+    <message>
+        <source>Remote id</source>
+        <translation>Remote id</translation>
+    </message>
+    <message>
+        <source>Remove version</source>
+        <translation>Remove version</translation>
+    </message>
+    <message>
+        <source>Repeat</source>
+        <translation>Repeat</translation>
+    </message>
+    <message>
+        <source>Restore</source>
+        <translation>Restore</translation>
+    </message>
+    <message>
+        <source>Search for</source>
+        <translation>Search for</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Section</translation>
+    </message>
+    <message>
+        <source>Something below it is waiting for approval; remove it once that is decided.</source>
+        <translation>Something below it is waiting for approval; remove it once that is decided.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>State</translation>
+    </message>
+    <message>
+        <source>States</source>
+        <translation>States</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>The action failed. The error log has the details.</source>
+        <translation>The action failed. The error log has the details.</translation>
+    </message>
+    <message>
+        <source>The action was not done.</source>
+        <translation>The action was not done.</translation>
+    </message>
+    <message>
+        <source>The action was refused.</source>
+        <translation>The action was refused.</translation>
+    </message>
+    <message>
+        <source>The form has expired or did not come from this site. Open the finder again.</source>
+        <translation>The form has expired or did not come from this site. Open the finder again.</translation>
+    </message>
+    <message>
+        <source>The object changed after the confirmation page was shown. Check it again.</source>
+        <translation>The object changed after the confirmation page was shown. Check it again.</translation>
+    </message>
+    <message>
+        <source>The object goes to the trash from every location listed here, with everything below them. It can be restored from the trash.</source>
+        <translation>The object goes to the trash from every location listed here, with everything below them. It can be restored from the trash.</translation>
+    </message>
+    <message>
+        <source>The object is deleted from every location listed here, with everything below them. This cannot be undone: nothing goes to the trash.</source>
+        <translation>The object is deleted from every location listed here, with everything below them. This cannot be undone: nothing goes to the trash.</translation>
+    </message>
+    <message>
+        <source>The object is not in the trash.</source>
+        <translation>The object is not in the trash.</translation>
+    </message>
+    <message>
+        <source>The object is purged from the trash with all its %versions versions. This cannot be undone.</source>
+        <translation>The object is purged from the trash with all its %versions versions. This cannot be undone.</translation>
+    </message>
+    <message>
+        <source>The text is too long.</source>
+        <translation>The text is too long.</translation>
+    </message>
+    <message>
+        <source>There are too many nodes below it for one removal here; remove it from the content structure, where a large removal runs in the background.</source>
+        <translation>There are too many nodes below it for one removal here; remove it from the content structure, where a large removal runs in the background.</translation>
+    </message>
+    <message>
+        <source>This action is not possible.</source>
+        <translation>This action is not possible.</translation>
+    </message>
+    <message>
+        <source>This is not an action of the finder.</source>
+        <translation>This is not an action of the finder.</translation>
+    </message>
+    <message>
+        <source>This is not an id, path or URL the finder can look for.</source>
+        <translation>This is not an id, path or URL the finder can look for.</translation>
+    </message>
+    <message>
+        <source>This object cannot go to the trash (it is a user or has users below it); it can only be deleted permanently.</source>
+        <translation>This object cannot go to the trash (it is a user or has users below it); it can only be deleted permanently.</translation>
+    </message>
+    <message>
+        <source>This part of the content tree is being changed by a background job. Try again when the job is done.</source>
+        <translation>This part of the content tree is being changed by a background job. Try again when the job is done.</translation>
+    </message>
+    <message>
+        <source>This version cannot be removed: it is the published one, a workflow still holds it, or you may not remove it.</source>
+        <translation>This version cannot be removed: it is the published one, a workflow still holds it, or you may not remove it.</translation>
+    </message>
+    <message>
+        <source>Tick the box to confirm that this cannot be undone.</source>
+        <translation>Tick the box to confirm that this cannot be undone.</translation>
+    </message>
+    <message>
+        <source>Trashed</source>
+        <translation>Trashed</translation>
+    </message>
+    <message>
+        <source>Trashed by</source>
+        <translation>Trashed by</translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation>URL alias</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
+        <source>Version %version (%status, %language) is removed. This cannot be undone. The object keeps its other %count versions.</source>
+        <translation>Version %version (%status, %language) is removed. This cannot be undone. The object keeps its other %count versions.</translation>
+    </message>
+    <message>
+        <source>Version id</source>
+        <translation>Version id</translation>
+    </message>
+    <message>
+        <source>Version removed</source>
+        <translation>Version removed</translation>
+    </message>
+    <message>
+        <source>Versions</source>
+        <translation>Versions</translation>
+    </message>
+    <message>
+        <source>You do not have the policies this action needs.</source>
+        <translation>You do not have the policies this action needs.</translation>
+    </message>
+    <message>
+        <source>You may not remove every location of this object and everything below it.</source>
+        <translation>You may not remove every location of this object and everything below it.</translation>
+    </message>
+    <message>
+        <source>an alias containing “%part” (%alias, node %id)</source>
+        <translation>an alias containing “%part” (%alias, node %id)</translation>
+    </message>
+    <message>
+        <source>as a page of siteaccess %siteaccess</source>
+        <translation>as a page of siteaccess %siteaccess</translation>
+    </message>
+    <message>
+        <source>attribute id %id</source>
+        <translation>attribute id %id</translation>
+    </message>
+    <message>
+        <source>initial: %language</source>
+        <translation>initial: %language</translation>
+    </message>
+    <message>
+        <source>node %id, which is in the trash</source>
+        <translation>node %id, which is in the trash</translation>
+    </message>
+    <message>
+        <source>node id %id</source>
+        <translation>node id %id</translation>
+    </message>
+    <message>
+        <source>nothing below it</source>
+        <translation>nothing below it</translation>
+    </message>
+    <message>
+        <source>object %id</source>
+        <translation>object %id</translation>
+    </message>
+    <message>
+        <source>object id %id</source>
+        <translation>object id %id</translation>
+    </message>
+    <message>
+        <source>parent %id</source>
+        <translation>parent %id</translation>
+    </message>
+    <message>
+        <source>the URL alias %alias (node %id)</source>
+        <translation>the URL alias %alias (node %id)</translation>
+    </message>
+    <message>
+        <source>the file path %path</source>
+        <translation>the file path %path</translation>
+    </message>
+    <message>
+        <source>the last part of the URL alias %alias (node %id)</source>
+        <translation>the last part of the URL alias %alias (node %id)</translation>
+    </message>
+    <message>
+        <source>the remote id of node %id</source>
+        <translation>the remote id of node %id</translation>
+    </message>
+    <message>
+        <source>the remote id of the object</source>
+        <translation>the remote id of the object</translation>
+    </message>
+    <message>
+        <source>version %v</source>
+        <translation>version %v</translation>
+    </message>
+    <message>
+        <source>version id %id (version %version)</source>
+        <translation>version id %id (version %version)</translation>
+    </message>
+    <message>
+        <source>with the path prefix %prefix of siteaccess %siteaccess</source>
+        <translation>with the path prefix %prefix of siteaccess %siteaccess</translation>
     </message>
 </context>
 <context>

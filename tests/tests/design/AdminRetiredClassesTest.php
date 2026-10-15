@@ -17,7 +17,7 @@ class AdminRetiredClassesTest extends PHPUnit\Framework\TestCase
     /** Classes no stylesheet of the admin designs defines any more, => what replaces them */
     const RETIRED = array( 'exp-note' => 'a4-help, or a4-notice is-warn|is-bad|is-ok|is-info', 'exp-inline' => 'a4-setup-inline' );
 
-    const DESIGNS = array( 'admin4', 'admin4l', 'admin3', 'admin2', 'admin' );
+    const DESIGNS = array( 'admin4', 'admin4l', 'admin3', 'admin' );
 
     public function testNoStylesheetDefinesTheRetiredClasses()
     {

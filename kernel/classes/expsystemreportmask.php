@@ -51,6 +51,22 @@ class expSystemReportMask
     }
 
     /**
+     * Whether a setting of this name holds a secret, for what leaves the server as a whole (phpinfo(), extension
+     * packages): isSecretName(), and names ending in pw, pass, passwd, auth, bearer or authorization as a word of
+     * their own (db_pass, mysqli.default_pw, ProxyAuth, Bearer); "Bypass" or "Compass" are not.
+     *
+     * @param string $name
+     * @return bool
+     */
+    public static function isSecretSettingName( $name )
+    {
+        $name = (string)$name;
+        return self::isSecretName( $name )
+            || preg_match( '/(^|[._\-\s])(pw|pass|passwd|auth|bearer|authorization)$/i', $name ) === 1
+            || preg_match( '/[a-z0-9](Pw|PW|Pass|PASS|Passwd|Auth|AUTH|Bearer|Authorization)$/', $name ) === 1;
+    }
+
+    /**
      * A secret value as it may be shown: whether it is set, never what it is.
      *
      * @param mixed $value

@@ -135,7 +135,7 @@
     {if $wizard_fields.db_sample.show}
     <div class="a4-field">
         <label for="mewSample">{$wizard_fields.db_sample.label|i18n( 'design/admin/setup/rad/moduleextension' )}</label>
-        <input type="text" id="mewSample" name="db_sample" value="{$wizard_settings.db_sample}" />
+        <input type="text" id="mewSample" name="db_sample" value="{$wizard_settings.db_sample|wash}" />
         <span class="a4-help">{$wizard_fields.db_sample.hint|i18n( 'design/admin/setup/rad/moduleextension' )}</span>
     </div>
     {/if}

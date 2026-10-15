@@ -372,6 +372,9 @@ The height is saved once at the end of a drag, or 0.6 s after the last key press
   every access in `try`/`catch` (blocked storage means the default height), read back and held between 120 and
   4000 px by the report's inline script before the panel opens; anything but a whole number of pixels is ignored.
   It stays in that browser only; another browser or a private window starts at the default.
+  On a siteaccess that requires a sign-in (the admin), `ezjscore/call` needs a signed-in user since 6.0.15, so on
+  an anonymous admin page (the sign-in page) the panels that ask the server (cache, log, summary) show "Could not
+  load"; the panel height works as before, since it sends no request.
 
 A logged-in user's preference is authoritative: localStorage is not looked at for a logged-in user. The panel says
 which applies in `data-exp-debug-panel-store` (`preference` or `browser`).

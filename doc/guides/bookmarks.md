@@ -160,8 +160,8 @@ Open a folder in the folder list. Its panel offers:
   ([safe redirects](../features/6.0/safe-redirects.md)).
 - The template variables `view_parameters` and `bookmark_notice` are kept; the new `bookmark_page` holds everything
   else. The tree of the Bookmarks box and the browse dialog (`content/bookmark_tree.tpl`) is unchanged.
-- The look is page-local in `content/bookmark_exp_style.tpl` (design/admin and design/admin4), in the visual
-  language of the section, link list and session pages.
+- The look is in the bookmark section of `stylesheets/modules/content.css` (design/admin and design/admin4), in the
+  visual language of the section, link list and session pages.
 
 Tests, no database: `php vendor/bin/phpunit tests/tests/kernel/classes/bookmarks/expBookmarkPageTest.php`.
 With an installation: `php vendor/bin/phpunit tests/tests/kernel/classes/bookmarks/BookmarkFoldersTest.php --filter 'testShift|testSetOrderAndMoveToPosition'`.
@@ -170,7 +170,7 @@ With an installation: `php vendor/bin/phpunit tests/tests/kernel/classes/bookmar
 
 - `kernel/private/classes/views/content/bookmark.php`, `kernel/classes/expbookmarkpage.php`,
   `kernel/classes/ezcontentbrowsebookmarkfolder.php`, `kernel/classes/ezcontentbrowsebookmark.php`
-- `design/admin4/templates/content/bookmark.tpl`, `design/admin4/templates/content/bookmark_exp_style.tpl` (the
-  same in `design/admin`)
+- `design/admin4/templates/content/bookmark.tpl`, `design/admin4/stylesheets/modules/content.css` (the same in
+  `design/admin`)
 - `tests/tests/kernel/classes/bookmarks/expBookmarkPageTest.php`, `tests/tests/kernel/classes/bookmarks/BookmarkFoldersTest.php`
 - [Changelog 6.0.15](../changelogs/6.0/6.0.15.md)

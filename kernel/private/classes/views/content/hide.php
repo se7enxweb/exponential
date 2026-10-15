@@ -61,6 +61,28 @@ class Hide extends \Exponential\Runnable\ModuleView
             }
         }
 
+        // Hiding and revealing change the site, so they take a POST (with the form token where ezformtoken is
+        // active); a link (GET) shows the confirmation form instead of acting.
+        if ( \eZSys::serverVariable( 'REQUEST_METHOD', true ) !== 'POST' )
+        {
+            $reveal = (bool) $curNode->attribute( 'is_hidden' );
+            $tpl = \eZTemplate::factory();
+            $tpl->setVariable( 'title', \ezpI18n::tr( 'design/admin/content/job', $reveal ? 'Reveal %name' : 'Hide %name', null,
+                                                     array( '%name' => $curNode->attribute( 'name' ) ) ) );
+            $tpl->setVariable( 'text', \ezpI18n::tr( 'design/admin/content/job', $reveal
+                                                    ? 'The node and everything below it become visible again, unless hidden on their own.'
+                                                    : 'The node and everything below it are hidden from the site.' ) );
+            $tpl->setVariable( 'action_url', '/content/hide/' . (int) $NodeID );
+            $tpl->setVariable( 'back_url', '/content/view/full/' . (int) $NodeID );
+            $tpl->setVariable( 'hidden', array() );
+            $tpl->setVariable( 'operation', 'hide' );
+            $tpl->setVariable( 'job_mode', false );
+            $tpl->setVariable( 'job_summary', null );
+            $Result = array( 'content' => $tpl->fetch( 'design:content/job_confirm.tpl' ),
+                             'path' => array( array( 'text' => $tpl->variable( 'title' ), 'url' => false ) ) );
+            return $this->viewResult( $Result, null );
+        }
+
         if ( \eZOperationHandler::operationIsAvailable( 'content_hide' ) )
         {
             $operationResult = \eZOperationHandler::execute( 'content',

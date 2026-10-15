@@ -54,7 +54,8 @@
 <div class="a4-filterbar">
     <div class="a4-field exp-js-only" hidden>
         <label for="classlist-search">{'Find a class'|i18n( 'design/admin/class/classlist' )}</label>
-        <input type="search" id="classlist-search" autocomplete="off" spellcheck="false" aria-controls="classlist-table" aria-describedby="classlist-filter-count" />
+        <input type="search" id="classlist-search" autocomplete="off" spellcheck="false" aria-controls="classlist-table" aria-describedby="classlist-filter-count{if $class_count|gt( $limit )} classlist-search-page{/if}" />
+        {if $class_count|gt( $limit )}<span class="a4-help" id="classlist-search-page">{'Only this page is searched: %from to %to of %count.'|i18n( 'design/admin/class/classlist',, hash( '%from', sum( $view_parameters.offset, 1 ), '%to', min( sum( $view_parameters.offset, $limit ), $class_count ), '%count', $class_count ) )}</span>{/if}
     </div>
     <div class="a4-field">
         {if gt( $languages|count, 1 )}

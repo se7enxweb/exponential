@@ -455,6 +455,8 @@ $ViewList['new'] = array(
 $ViewList['hide'] = array(
     'functions' => array( 'hide' ),
     'default_navigation_part' => 'ezcontentnavigationpart',
+    // its confirmation page is no page to return to: after the POST the view returns to the page before it
+    'ui_context' => 'administration',
     'script' => 'hide.php',
     'params' => array( 'NodeID' ) );
 

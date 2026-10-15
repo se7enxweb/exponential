@@ -213,5 +213,5 @@ the page reads: a run's progress and status, the list of runs, and start, stop a
 - `kernel/setup/exppreloadrunner.php` (`expPreloadRunner`): the crawler, also used by the static cache generator.
 - `kernel/private/classes/views/setup/preload.php`, `preloadjob.php`, `preloadstream.php`: the views.
 - `kernel/private/classes/commands/preload.php`, `preloadjob.php`: `bin/php/preload.php` and the background run.
-- `design/admin/templates/setup/preload.tpl`, `preload_exp_style.tpl` (and the same in `design/admin4`).
+- `design/admin/templates/setup/preload.tpl` and `stylesheets/modules/setup.css` (and the same in `design/admin4`).
 - Tests: `tests/tests/kernel/classes/preload/` (no database), `expPreloadRunnerLinksTest`, `ExpPreloadStartUrlsTest`.

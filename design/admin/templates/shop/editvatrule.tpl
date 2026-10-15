@@ -1,6 +1,6 @@
 {if $errors}
     <div class="message-error">
-        <h2>{$error_header}</h2>
+        <h2>{$error_header|wash}</h2>
         <ul>
         {foreach $errors as $error}
             <li>{$error|wash}</li>

@@ -143,7 +143,7 @@
 {section var=Events loop=$event_list sequence=array( bglight, bgdark )}
 <tr class="{$Events.sequence}">
     <td>{$Events.item.placement}</td>
-    <td>{$Events.item.description}</td>
+    <td>{$Events.item.description|wash}</td>
     <td>{if $Events.item.workflow_type|is_null|not}{$Events.item.workflow_type.group_name|wash}/{$Events.item.workflow_type.name|wash}{/if}</td>
     <td>
     {if $Events.item.workflow_type|is_null}

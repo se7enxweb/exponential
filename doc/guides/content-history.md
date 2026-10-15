@@ -92,6 +92,6 @@ published](../bc/6.0/draft-edit-access.md#the-versions-of-such-an-object-content
 - View: `kernel/private/classes/views/content/history.php` (`History::canOpen()`, `canSeeVersionContent()`,
   `originURI()`); list, filters and actions: `kernel/classes/expcontenthistorylist.php`
 - Templates: `design/admin4/templates/content/history.tpl` (the same in `design/admin` and `design/admin3`),
-  `content/history_exp_style.tpl`, `content/history_access_messages.tpl`
+  `content/history_access_messages.tpl`; the look is in `stylesheets/modules/content.css`
 - Tests: `tests/tests/kernel/classes/expContentHistoryListTest.php`, `eZContentHistoryAccessTest.php` (no database),
   `eZContentHistoryAccessLiveTest.php`

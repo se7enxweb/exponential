@@ -41,9 +41,24 @@ class eZExtensionPackageCreator extends eZPackageCreationHandler
         $extensionHandler = eZPackage::packageHandler( 'ezextension' );
 
         $extensionList = $persistentData['extensionlist'];
-        foreach ( $extensionList as $extensionName )
+        try
         {
-            $extensionHandler->addExtension( $package, $extensionName );
+            foreach ( $extensionList as $extensionName )
+            {
+                // the policy as well: the extension step may lie behind the visitor
+                $refusal = eZExtensionPackageHandler::exportRefusal( (string)$extensionName, true );
+                if ( $refusal !== '' )
+                    throw new RuntimeException( $refusal );
+                $extensionHandler->addExtension( $package, $extensionName );
+            }
+        }
+        catch ( RuntimeException $e )
+        {
+            // an extension refused while the package was made (changed since the extension step): nothing of the
+            // package stays, and the wizard shows the reason (kernel/package/create)
+            if ( $package instanceof eZPackage )
+                eZPackage::removeFiles( $package->path() );
+            throw $e;
         }
 
         $package->setAttribute( 'is_active', true );
@@ -115,7 +130,20 @@ class eZExtensionPackageCreator extends eZPackageCreationHandler
                                   'description' => ezpI18n::tr( 'kernel/package', 'You must select at least one extension' ) );
             return false;
         }
-        return true;
+        // an extension that is not one, or holds secrets, is refused here, before the package is made
+        $valid = true;
+        foreach ( (array)$http->postVariable( 'PackageExtensionNames' ) as $extensionName )
+        {
+            $refusal = is_string( $extensionName ) ? eZExtensionPackageHandler::exportRefusal( $extensionName, true ) : ezpI18n::tr( 'kernel/package', 'You must select at least one extension' );
+            if ( $refusal === '' )
+                $refusal = eZExtensionPackageHandler::packRefusal( $extensionName );
+            if ( $refusal !== '' )
+            {
+                $errorList[] = array( 'field' => ezpI18n::tr( 'kernel/package', 'Extension list' ), 'description' => $refusal );
+                $valid = false;
+            }
+        }
+        return $valid;
     }
 
     function commitExtensionName( $package, $http, $step, &$persistentData, $tpl )

@@ -2007,6 +2007,8 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
    columns, control bars, notices that come and go) and without shadows. Paper is light: the head script switches
    html[data-a4-theme] to light before printing and back afterwards (page_head_style.tpl), so no print colours. */
 @media print {
+  /* wide tables print whole: no horizontal scroller on paper */
+  div:has(> table) { overflow: visible !important; max-width: none !important; }
   #header,
   .navbar-menu,
   .header-search-mobile,

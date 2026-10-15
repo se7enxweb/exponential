@@ -1,5 +1,6 @@
 {let search=false()}
-{section show=$use_template_search}
+{default search_requested=true() search_text_shortened=false()}
+{section show=and( $use_template_search, $search_requested )}
     {set page_limit=10}
     {switch match=$search_page_limit}
     {case match=1}{set page_limit=5}{/case}
@@ -24,7 +25,7 @@
     {set search_data=$search}
 {/section}
 
-<form action={'/content/advancedsearch/'|ezurl} method="get">
+<form action={'/content/advancedsearch/'|ezurl} method="get" role="search">
 <div class="context-block content-advancesearch">
 {* DESIGN: Header START *}<div class="box-header"><div class="box-ml">
 
@@ -140,7 +141,17 @@ selected="selected"
 
 <div class="break"></div>
 </div>
-{if or($search_text,eq(ezini('SearchSettings','AllowEmptySearch','site.ini'),'enabled') )}
+{if $search_text_shortened}
+<p class="a4-notice is-info" role="status">{'The search text was too long and was shortened.'|i18n( 'design/admin/content/search' )}</p>
+{/if}
+{* the search engine's report: from the view, or from the fetch above when the template searches *}
+{def $search_failed = false()
+     $search_info = false()}
+{if is_set( $search_extras )}{set $search_info = $search_extras}{elseif $search}{if is_set( $search.SearchExtras )}{set $search_info = $search.SearchExtras}{/if}{/if}
+{if is_object( $search_info )}{if $search_info.error}{set $search_failed = true()}{/if}{/if}
+{if $search_failed}
+<div class="a4-notice is-bad" role="alert"><p>{'The search could not be run. Try fewer or simpler words, or search again later.'|i18n( 'design/admin/content/search' )}</p></div>
+{elseif and( $search_requested, or( $search_text, eq( ezini( 'SearchSettings', 'AllowEmptySearch', 'site.ini' ), 'enabled' ) ) )}
 <br/>
 {switch name=Sw match=$search_count}
   {case match=0}
@@ -152,6 +163,7 @@ selected="selected"
   {/case}
 {/switch}
 {/if}
+{undef $search_failed $search_info}
 </div>
 {* DESIGN: Content END *}</div></div></div>
 
@@ -184,7 +196,7 @@ selected="selected"
 {include name=navigator
          uri='design:navigator/google.tpl'
          page_uri='/content/advancedsearch'
-         page_uri_suffix=concat('?SearchText=',$search_text|urlencode,'&PhraseSearchText=',$phrase_search_text|urlencode,'&SearchContentClassID=',$search_contentclass_id,'&SearchContentClassAttributeID=',$search_contentclass_attribute_id,'&SearchSectionID=',$search_section_id,$search_timestamp|gt(0)|choose('',concat('&SearchTimestamp=',$search_timestamp)),$search_sub_tree|gt(0)|choose( '', concat( '&', 'SubTreeArray[]'|urlencode, '=', $search_sub_tree|implode( concat( '&', 'SubTreeArray[]'|urlencode, '=' ) ) ) ),'&SearchDate=',$search_date,'&SearchPageLimit=',$search_page_limit)
+         page_uri_suffix=concat('?SearchText=',$full_search_text|urlencode,'&PhraseSearchText=',$phrase_search_text|urlencode,'&SearchContentClassID=',$search_contentclass_id,'&SearchContentClassAttributeID=',$search_contentclass_attribute_id,'&SearchSectionID=',$search_section_id,$search_timestamp|gt(0)|choose('',concat('&SearchTimestamp=',$search_timestamp)),$search_sub_tree|gt(0)|choose( '', concat( '&', 'SubTreeArray[]'|urlencode, '=', $search_sub_tree|implode( concat( '&', 'SubTreeArray[]'|urlencode, '=' ) ) ) ),'&SearchDate=',$search_date,'&SearchPageLimit=',$search_page_limit)
          item_count=$search_count
          view_parameters=$view_parameters
          item_limit=$page_limit}
@@ -195,4 +207,5 @@ selected="selected"
 </div>
 {/section}
 </form>
+{/default}
 {/let}

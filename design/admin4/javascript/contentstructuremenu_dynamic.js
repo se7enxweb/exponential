@@ -13,6 +13,37 @@ function ContentStructureMenu( params, i18n )
     this.maxDepth = parseInt( params.maxDepth, 10 ) || 0;
     this.levels = {};
 
+    // The data of each node's menu by node ID (generateEntry); its menu button carries only data-node-id.
+    this.nodes = {};
+    var thisMenu = this;
+
+    // One listener opens the menu of every node: a click, Enter or Space on the menu button, and Shift+F10 or the
+    // context menu key on a tree item (they click the button).
+    document.addEventListener( 'click', function( e )
+    {
+        var opener = e.target && e.target.closest ? e.target.closest( 'a.nodeicon[data-node-id]' ) : null;
+        var node = opener ? thisMenu.nodes[opener.getAttribute( 'data-node-id' )] : null;
+        if ( !node )
+        {
+            return;
+        }
+        e.preventDefault();
+        if ( !window.ezpopmenu_showTopLevel )
+        {
+            return;
+        }
+        // The menu reads the opener and how it was opened from the event; this listener sits on the document.
+        var event = { type: e.type, detail: e.detail, pageX: e.pageX, pageY: e.pageY, clientX: e.clientX, clientY: e.clientY,
+                      target: opener, currentTarget: opener };
+        var nodeID = parseInt( opener.getAttribute( 'data-node-id' ), 10 );
+        ezpopmenu_showTopLevel( event, 'ContextMenu', {
+            '%nodeID%': nodeID,
+            '%objectID%': node.objectID,
+            '%languages%': node.languages,
+            '%classList%': node.classes
+        }, node.name, nodeID, node.disableMenuID );
+    } );
+
     // hashes in ez template doesn't handle numeric keys correctly
     // an underscore has been prepended in keys and is removed here
     var arrayTemp = [];
@@ -67,7 +98,7 @@ function ContentStructureMenu( params, i18n )
             if ( !params.useCookie )
                 return;
             this.cookie = this.open.join('/');
-            expireDate  = new Date();
+            var expireDate = new Date();
             expireDate.setTime( expireDate.getTime() + this.cookieValidity * 86400000 );
             _setCookie( this.parameterName, this.cookie, expireDate );
         };
@@ -102,8 +133,11 @@ function ContentStructureMenu( params, i18n )
     this.generateEntry = function( item, lastli, rootNode, level )
     {
         var liclass = '';
+        // Node IDs and the subtree stamp are numbers; the name arrives HTML-encoded (treemenu.php: htmlentities,
+        // the root node from the template: wash) and is decoded once here, then always handled as text.
+        var nodeID = parseInt( item.node_id, 10 ) || 0, name = _text( item.name );
         level = level || 0;
-        this.levels[item.node_id] = level;
+        this.levels[nodeID] = level;
         var canOpen = item.has_children && ( this.maxDepth === 0 || level < this.maxDepth );
         if ( lastli )
         {
@@ -113,7 +147,7 @@ function ContentStructureMenu( params, i18n )
         {
             liclass += ' currentnode';
         }
-        var html = '<li id="n'+item.node_id+'"'
+        var html = '<li id="n'+nodeID+'"'
             + ( ( liclass )? ' class="' + liclass + '"':
                              '' )
             + '>';
@@ -122,41 +156,30 @@ function ContentStructureMenu( params, i18n )
             // A button for keyboards and screen readers: its name says whose sub items it shows, aria-expanded
             // whether they are shown (_toggleState), and Space presses it like Enter. It keeps the focus after a
             // press (no blur), so a keyboard can press it again; the ring shows on :focus-visible only.
-            // item.name arrives HTML-encoded (treemenu.php: htmlentities, ENT_COMPAT), so it goes in as it is.
             html += '<a class="openclose-open" id="a'
-                + item.node_id
+                + nodeID
                 + '" href="#" role="button" aria-expanded="false" aria-label="'
-                + _attr( i18n.subitems || '%name' ).split( '%name' ).join( item.name )
+                + _attr( ( i18n.subitems || '%name' ).split( '%name' ).join( name ) )
                 + '" onkeydown="if ( event.key === \' \' ) { event.preventDefault(); this.click(); }"'
                 + ' onclick="return treeMenu.load( this, '
-                + item.node_id
+                + nodeID
                 + ', '
-                + item.modified_subnode
+                + ( parseInt( item.modified_subnode, 10 ) || 0 )
                 +' )"><\/a>';
         }
 
-        var languages = "[";
-        var firstLanguage = true;
+        // What the node's menu needs is kept here, by node ID, and read by the click listener below: names are
+        // data and never become part of an inline script.
+        var languages = [];
         for ( var j = 0; j < item.languages.length; j++ )
         {
             if ( params.languages[item.languages[j]] )
             {
-                if ( !firstLanguage )
-                {
-                    languages += ",";
-                }
-                firstLanguage = false;
-                languages += "{locale:'"
-                    + item.languages[j].replace(/'/g,"\\'")
-                    + "',name:'"
-                    + params.languages[item.languages[j]].replace(/'/g,"\\'")
-                    + "'}";
+                languages.push( { locale: String( item.languages[j] ), name: String( params.languages[item.languages[j]] ) } );
             }
         }
-        languages += "]";
 
-        var canCreateClasses = false;
-        var classes = "[";
+        var classes = [];
         if ( params.createHereMenu != 'disabled' )
         {
             if ( params.createHereMenu == 'full' )
@@ -167,16 +190,7 @@ function ContentStructureMenu( params, i18n )
                 {
                     if ( params.classes[classList[j]] )
                     {
-                        if ( canCreateClasses )
-                        {
-                            classes += ",";
-                        }
-                        canCreateClasses = true;
-                        classes += "{classID:'"
-                            + classList[j]
-                            + "',name:'"
-                            + String(params.classes[classList[j]].name).replace(/'/g,"\\'").replace(/>/g,'&gt;').replace(/"/g,'&quot;')
-                            + "'}";
+                        classes.push( { classID: String( classList[j] ), name: String( params.classes[classList[j]].name ) } );
                     }
                 }
             }
@@ -184,59 +198,46 @@ function ContentStructureMenu( params, i18n )
             {
                 for ( j in params.classes )
                 {
-                    if ( canCreateClasses )
-                    {
-                        classes += ",";
-                    }
-                    canCreateClasses = true;
-                    classes += "{classID:'"
-                        + j
-                        + "',name:'"
-                        + String(params.classes[j].name).replace(/'/g,"\\'").replace(/>/g,'&gt;').replace(/"/g,'&quot;')
-                        + "'}";
+                    classes.push( { classID: String( j ), name: String( params.classes[j].name ) } );
                 }
             }
         }
-        classes += "]";
+        var canCreateClasses = classes.length > 0;
 
-        var classIdentifier = params.classes[item.class_id].identifier;
+        // A class created after the tree's parameters were cached is not in params.classes: the node is drawn with
+        // the default icon and no class name instead of throwing, which left its parent busy for good.
+        var itemClass = params.classes[item.class_id] || { identifier: '', name: '' };
+        var classIdentifier = itemClass.identifier;
         var icon = ( params.iconsList[classIdentifier] )? params.iconsList[classIdentifier]: params.iconsList['__default__'];
         if ( params.context != 'browse' && item.node_id > 1 )
         {
+            this.nodes[nodeID] = {
+                objectID: parseInt( item.object_id, 10 ) || 0,
+                name: name,
+                languages: languages,
+                classes: classes,
+                disableMenuID: canCreateClasses ? -1 : 'menu-create-here'
+            };
             // A menu button named after the node (the image inside is decorative), opened with Enter, Space or
-            // Shift+F10 too (ezpopupmenu.js).
-            // item.name arrives HTML-encoded (treemenu.php), so it goes into the attribute as it is.
+            // Shift+F10 too (ezpopupmenu.js); the click listener of the tree opens its menu.
             html += '<a class="nodeicon" href="#" role="button" aria-haspopup="menu" aria-expanded="false" aria-label="'
-                + _attr( i18n.actions || '%name' ).split( '%name' ).join( item.name )
-                + '" onclick="ezpopmenu_showTopLevel( event, \'ContextMenu\', {\'%nodeID%\':'
-                + item.node_id
-                + ', \'%objectID%\':'
-                + item.object_id
-                + ', \'%languages%\':'
-                + languages
-                + ', \'%classList%\':'
-                + classes
-                + ' }, \''
-                + String(item.name).replace(/'/g,"\\'").replace(/>/g,'&gt;').replace(/"/g,'&quot;')
-                + '\', '
-                + item.node_id
-                + ', '
-                + ( ( canCreateClasses )? '-1':
-                                          '\'menu-create-here\'' )
-                + ' ); return false"><img src="'
-                + icon
+                + _attr( ( i18n.actions || '%name' ).split( '%name' ).join( name ) )
+                + '" data-node-id="'
+                + nodeID
+                + '"><img src="'
+                + _attr( icon )
                 + '" alt="" title="['
-                + params.classes[item.class_id].name.replace(/>/g,'&gt;').replace(/"/g, '&quot;')
-                + '] ' + i18n.expand + '" width="16" height="16" /><\/a>';
+                + _attr( itemClass.name )
+                + '] ' + _attr( i18n.expand ) + '" width="16" height="16" /><\/a>';
         }
         else
         {
             html += '<img src="'
-                + icon
+                + _attr( icon )
                 + '" alt="" width="16" height="16" />';
         }
         html += '&nbsp;<a class="image-text" href="'
-            + ( ( params.action )? params.action + '/' + item.node_id : item.url )
+            + _attr( ( params.action )? params.action + '/' + nodeID : item.url )
             + '"';
 
         if ( params.showTips )
@@ -253,7 +254,7 @@ function ContentStructureMenu( params, i18n )
         html += '>';
         var span = document.createElement( 'span' );
         span.setAttribute( 'class', 'node-name-' + ( ( item.is_hidden ) ? 'hidden': ( item.is_invisible ) ? 'hiddenbyparent' : 'normal' ) );
-        span.innerHTML =  item.name ;
+        span.textContent = name;
         var div = document.createElement( 'div' );
         div.appendChild( span );
         html += div.innerHTML;
@@ -269,7 +270,7 @@ function ContentStructureMenu( params, i18n )
 
         html += '<\/a>';
         html += '<div id="c'
-             + item.node_id
+             + nodeID
              + '"><\/div>';
         html += '<\/li>';
 
@@ -314,6 +315,18 @@ function ContentStructureMenu( params, i18n )
         if ( divElement.className == 'busy' )
         {
             return false;
+        }
+
+        // After a failed load a press tries again: the failure may have been passing (a timeout, a restart)
+        if ( divElement.className == 'error' )
+        {
+            divElement.className = '';
+            divElement.innerHTML = '';
+            if ( aElement )
+            {
+                aElement.removeAttribute( 'title' );
+                _undescribe( aElement.parentNode );
+            }
         }
 
         var url = params.contentTreeUrl + nodeID
@@ -389,10 +402,6 @@ function ContentStructureMenu( params, i18n )
                       setErrorText( i18n.internal_error );
                     }
                 }
-                if (aElement) aElement.onclick = function()
-                {
-                    return false;
-                };
             }
         });
 
@@ -748,7 +757,7 @@ function ContentStructureMenu( params, i18n )
     function _pressToggle( li )
     {
         var toggle = _toggleOf( li );
-        if ( toggle && toggle.className !== 'openclose-busy' && toggle.className !== 'openclose-error' && toggle.onclick )
+        if ( toggle && toggle.className !== 'openclose-busy' && toggle.onclick )
         {
             toggle.onclick();
             return true;
@@ -843,6 +852,24 @@ function ContentStructureMenu( params, i18n )
         }
         span.textContent = text;
         item.setAttribute( 'aria-describedby', id );
+    }
+
+    // Takes back what _describe said about the node li
+    function _undescribe( li )
+    {
+        var item = _ownItem( li );
+        if ( !item || !li.id ) return;
+        var span = document.getElementById( 'e' + li.id.substr( 1 ) );
+        if ( span ) span.parentNode.removeChild( span );
+        item.removeAttribute( 'aria-describedby' );
+    }
+
+    // The text of an HTML-encoded value ("Tom &amp; Jerry" is "Tom & Jerry"); a textarea parses no markup
+    function _text( html )
+    {
+        var textarea = document.createElement( 'textarea' );
+        textarea.innerHTML = html === undefined || html === null ? '' : String( html );
+        return textarea.value;
     }
 
     // A value for a double-quoted attribute of the generated markup

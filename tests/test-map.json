@@ -14,8 +14,27 @@
     "tests/test-map.json"
   ],
   "map": {
+    "extension/cjw_newsletter/design/*preview*.tpl": [
+      "tests/tests/design/AdminNewsletterPreviewTest.php"
+    ],
+    "extension/cjw_newsletter/design/admin2/templates/cjw_newsletter_edition_window_controls.tpl": [
+      "tests/tests/design/AdminNewsletterPreviewTest.php"
+    ],
+    "extension/cjw_newsletter/design/standard/stylesheets/cjw_newsletter.css": [
+      "tests/tests/design/AdminNewsletterPreviewTest.php"
+    ],
+    "extension/cjw_newsletter/settings/cjw_newsletter.ini": [
+      "tests/tests/design/AdminNewsletterPreviewTest.php"
+    ],
+    "extension/cjw_newsletter/classes/cjwnewsletteredition.php": [
+      "tests/tests/design/AdminNewsletterPreviewTest.php"
+    ],
+    "extension/cjw_newsletter/classes/cjwnewsletterlist.php": [
+      "tests/tests/design/AdminNewsletterPreviewTest.php"
+    ],
     "design/admin4/templates/page_head_style.tpl": [
-      "tests/tests/design/AdminBaseStylesheetsTest.php"
+      "tests/tests/design/AdminBaseStylesheetsTest.php",
+      "tests/tests/design/AdminPreferencesTest.php"
     ],
     "design/admin3/templates/page_head_style.tpl": [
       "tests/tests/design/AdminBaseStylesheetsTest.php"
@@ -65,7 +84,9 @@
       "tests/tests/design/AdminDensityTest.php",
       "tests/tests/design/AdminDashboardTest.php",
       "tests/tests/design/AdminCardsTest.php",
-      "tests/tests/design/AdminLeftMenuGroupsTest.php"
+      "tests/tests/design/AdminLeftMenuGroupsTest.php",
+      "tests/tests/design/AdminRetiredClassesTest.php",
+      "tests/tests/design/AdminSelfContainedTest.php"
     ],
     "design/admin*/stylesheets/*": [
       "tests/tests/design/AdminStylingRulesTest.php",
@@ -80,7 +101,8 @@
       "tests/tests/design/AdminThemeSwitchTest.php",
       "tests/tests/design/AdminDensityTest.php",
       "tests/tests/design/AdminCardsTest.php",
-      "tests/tests/design/AdminBaseStylesheetsTest.php"
+      "tests/tests/design/AdminBaseStylesheetsTest.php",
+      "tests/tests/design/AdminRetiredClassesTest.php"
     ],
     "design/admin*/javascript/ezajaxsubitems_expdatatable.js": [
       "tests/tests/design/AdminLanguageBadgeTest.php"
@@ -93,10 +115,12 @@
     ],
     "settings/design.ini": [
       "tests/tests/design/AdminStylingRulesTest.php",
-      "tests/tests/design/AdminBaseStylesheetsTest.php"
+      "tests/tests/design/AdminBaseStylesheetsTest.php",
+      "tests/tests/design/AdminScriptsTest.php"
     ],
     "design/admin4/javascript/ezadmin_menubar.js": [
-      "tests/tests/design/AdminStylingRulesTest.php"
+      "tests/tests/design/AdminStylingRulesTest.php",
+      "tests/tests/design/AdminPreferencesTest.php"
     ],
     "design/admin4/templates/page_topmenu.tpl": [
       "tests/tests/design/AdminStylingRulesTest.php"
@@ -202,7 +226,8 @@
       "tests/tests/kernel/common/eZTemplateRawURLEncodeOperatorTest.php"
     ],
     "design/admin*/javascript/*": [
-      "tests/tests/design/AdminContextMenuTest.php"
+      "tests/tests/design/AdminContextMenuTest.php",
+      "tests/tests/design/AdminScriptsTest.php"
     ],
     "design/admin4/javascript/*": [
       "tests/tests/design/AdminKeyboardTest.php",
@@ -213,7 +238,41 @@
     ],
     "design/admin4/javascript/admin4.js": [
       "tests/tests/design/AdminNoticesTest.php",
-      "tests/tests/design/AdminLeftMenuGroupsTest.php"
+      "tests/tests/design/AdminLeftMenuGroupsTest.php",
+      "tests/tests/design/AdminPreferencesTest.php"
+    ],
+    "extension/ezjscore/design/standard/javascript/*": [
+      "tests/tests/extension/ezjscore/ezjscoreVendoredLibrariesTest.php"
+    ],
+    "extension/ezjscore/settings/ezjscore.ini": [
+      "tests/tests/extension/ezjscore/ezjscoreVendoredLibrariesTest.php"
+    ],
+    "extension/ezjscore/extension.xml": [
+      "tests/tests/extension/ezjscore/ezjscoreVendoredLibrariesTest.php"
+    ],
+    "design/admin4/templates/parts/a4_preference_attributes.tpl": [
+      "tests/tests/design/AdminPreferencesTest.php"
+    ],
+    "design/admin*/templates/pagelayout.tpl": [
+      "tests/tests/design/AdminPreferencesTest.php"
+    ],
+    "kernel/private/classes/views/*": [
+      "tests/tests/design/AdminSelfContainedTest.php"
+    ],
+    "kernel/classes/audit/*": [
+      "tests/tests/design/AdminSelfContainedTest.php"
+    ],
+    "share/icons/crystal*": [
+      "tests/tests/design/AdminIconsTest.php"
+    ],
+    "settings/menu.ini": [
+      "tests/tests/design/AdminMenuPolicyListTest.php"
+    ],
+    "kernel/*/module.php": [
+      "tests/tests/design/AdminMenuPolicyListTest.php"
+    ],
+    "extension/ezjscore/settings/site.ini.append.php": [
+      "tests/tests/extension/ezjscore/ezjscoreAnonymousAccessTest.php"
     ]
   },
   "generated": {

@@ -16,6 +16,7 @@
             </li>
             <li class="header-search-mobile">
                 {include uri='design:page_search.tpl' search_box='-mobile'}
+                {if is_set( $search_sections )}{undef $search_sections}{/if}
             </li>
         </ul>
     </div>

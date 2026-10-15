@@ -13,13 +13,17 @@
 
     {* URL/Link. *}
     {if $node.data_map.location.has_content}
+        {* A link only to http(s), mailto or an address without a scheme; anything else is shown as text *}
+        {def $link_url = $node.data_map.location.content|trim
+             $link_scheme = $link_url|downcase}
         <div class="attribute-link">
-            {if $node.data_map.location.data_text}
-            <p><a href="{$node.data_map.location.content}">{$node.data_map.location.data_text}</a></p>
+            {if or( $link_scheme|begins_with( 'http://' ), $link_scheme|begins_with( 'https://' ), $link_scheme|begins_with( 'mailto:' ), $link_scheme|contains( ':' )|not )}
+            <p><a href="{$link_url|wash}">{if $node.data_map.location.data_text}{$node.data_map.location.data_text|wash}{else}{$link_url|wash}{/if}</a></p>
             {else}
-            <p><a href="{$node.data_map.location.content}">{$node.data_map.location.content}</a></p>
+            <p>{if $node.data_map.location.data_text}{$node.data_map.location.data_text|wash} ({$link_url|wash}){else}{$link_url|wash}{/if}</p>
             {/if}
         </div>
+        {undef $link_url $link_scheme}
     {/if}
 
     </div>

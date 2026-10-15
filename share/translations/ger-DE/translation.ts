@@ -123,6 +123,10 @@
 <context>
     <name>design/admin/class/classlist</name>
     <message>
+        <source>Only this page is searched: %from to %to of %count.</source>
+        <translation>Durchsucht wird nur diese Seite: %from bis %to von %count.</translation>
+    </message>
+    <message>
         <source>%group_name [Class group]</source>
         <translation>%group_name [Klassengruppe]</translation>
     </message>
@@ -847,6 +851,10 @@
 </context>
 <context>
     <name>design/admin/class/grouplist</name>
+    <message>
+        <source>Only this page is searched: %from to %to of %count.</source>
+        <translation>Durchsucht wird nur diese Seite: %from bis %to von %count.</translation>
+    </message>
     <message>
         <source>Class groups [%group_count]</source>
         <translation type="obsolete">Klassengruppen [%group_count]</translation>
@@ -5318,6 +5326,10 @@
         <source>Throw away the drafts this form opened and go back.</source>
         <translation>Die von diesem Formular geöffneten Entwürfe verwerfen und zurückgehen.</translation>
     </message>
+    <message>
+        <source>Item</source>
+        <translation>Element</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/pendinglist</name>
@@ -5795,6 +5807,26 @@
 </context>
 <context>
     <name>design/admin/content/search</name>
+    <message>
+        <source>Search for</source>
+        <translation>Suchen nach</translation>
+    </message>
+    <message>
+        <source>The search text was too long and was shortened.</source>
+        <translation>Der Suchtext war zu lang und wurde gekürzt.</translation>
+    </message>
+    <message>
+        <source>Type the words to search for.</source>
+        <translation>Geben Sie die Wörter ein, nach denen gesucht werden soll.</translation>
+    </message>
+    <message>
+        <source>The search could not be run. Try fewer or simpler words, or search again later.</source>
+        <translation>Die Suche konnte nicht ausgeführt werden. Versuchen Sie es mit weniger oder einfacheren Wörtern oder später noch einmal.</translation>
+    </message>
+    <message>
+        <source>%count matches</source>
+        <translation>%count Treffer</translation>
+    </message>
     <message>
         <source>Update attributes</source>
         <translation>Attribute aktualisieren</translation>
@@ -7194,6 +7226,30 @@
         <source>to</source>
         <translation>bis</translation>
     </message>
+    <message>
+        <source>%count below it</source>
+        <translation>%count darunter</translation>
+    </message>
+    <message>
+        <source>%items items in the trash: %top removed directly, %below below them. Oldest: %oldest.</source>
+        <translation>%items Elemente im Papierkorb: %top direkt entfernt, %below darunter. Ältestes: %oldest.</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Who trashed an item is recorded from this version on: known for %recorded.</source>
+        <translation>Wer ein Element in den Papierkorb gelegt hat, wird ab dieser Version erfasst: bekannt für %recorded.</translation>
+    </message>
+    <message>
+        <source>by %name</source>
+        <translation>von %name</translation>
+    </message>
+    <message>
+        <source>last modified by %name</source>
+        <translation>zuletzt geändert von %name</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/upload</name>
@@ -8241,6 +8297,22 @@
         <source>%count selected.</source>
         <translation>%count ausgewählt.</translation>
     </message>
+    <message>
+        <source>A URL wildcard sends a whole group of addresses somewhere else with one rule: news/* to articles/{1\} turns news/2026/october into articles/2026/october. Each * of the pattern matches any text, and {1\}, {2\} ... in the destination put that text back. Wildcards are tried in the order they were created, the first that matches is used, and they are only consulted when no URL alias matches the address.</source>
+        <translation>Ein URL-Platzhalter leitet mit einer Regel eine ganze Gruppe von Adressen um: news/* nach articles/{1\} macht aus news/2026/october die Adresse articles/2026/october. Jedes * des Musters passt auf beliebigen Text, und {1\}, {2\} ... im Ziel setzen diesen Text wieder ein. Platzhalter werden in der Reihenfolge ihrer Anlage geprüft, der erste passende wird verwendet, und sie werden nur befragt, wenn kein URL-Alias zur Adresse passt.</translation>
+    </message>
+    <message>
+        <source>Create one with the form above, for example old-blog/* to blog/{1\}.</source>
+        <translation>Legen Sie einen mit dem Formular oben an, zum Beispiel old-blog/* nach blog/{1\}.</translation>
+    </message>
+    <message>
+        <source>Each * of the pattern is one placeholder, numbered from {1\}. Add a * to the pattern or remove the placeholder; otherwise visitors would be sent to an address with a part missing.</source>
+        <translation>Jedes * des Musters ist ein Platzhalter, nummeriert ab {1\}. Ergänzen Sie ein * im Muster oder entfernen Sie den Platzhalter; sonst würden Besucher an eine Adresse geleitet, der ein Teil fehlt.</translation>
+    </message>
+    <message>
+        <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
+        <translation>Wohin die Adressen führen: ein Pfad dieser Site oder beim Umleiten eine vollständige Adresse. {1\} ist der Text, auf den das erste * gepasst hat. Beispiel: dev/{1\}</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/urltranslator</name>
@@ -8615,6 +8687,14 @@
         <source>Versions for &lt;%object_name&gt; (%version_count)</source>
         <translation type="obsolete">Versionen für &lt;%object_name&gt; (%version_count)</translation>
     </message>
+    <message>
+        <source>Queued</source>
+        <translation>In der Warteschlange</translation>
+    </message>
+    <message>
+        <source>Repeat</source>
+        <translation>Wiederholt</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/view/versionview</name>
@@ -8785,6 +8865,22 @@
     <message>
         <source>Preview of the version</source>
         <translation>Vorschau der Version</translation>
+    </message>
+    <message>
+        <source>Open the preview in a new window</source>
+        <translation>Vorschau in einem neuen Fenster öffnen</translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation>In der Warteschlange</translation>
+    </message>
+    <message>
+        <source>Repeat</source>
+        <translation>Wiederholt</translation>
+    </message>
+    <message>
+        <source>Untouched draft</source>
+        <translation>Unberührter Entwurf</translation>
     </message>
 </context>
 <context>
@@ -9404,6 +9500,14 @@
         <source>What you can do</source>
         <translation>Was Sie tun können</translation>
     </message>
+    <message>
+        <source>The &quot;%module&quot; part of the system has no page called &quot;%view&quot;.</source>
+        <translation>Der Teil „%module“ des Systems hat keine Seite namens „%view“.</translation>
+    </message>
+    <message>
+        <source>There is no page at &quot;%page&quot;.</source>
+        <translation>Unter „%page“ gibt es keine Seite.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/error/shop</name>
@@ -9684,6 +9788,10 @@
     <message>
         <source>Information collected by &lt;%object_name&gt; (%collection_count)</source>
         <translation>Informationen gesammelt von &lt;%object_name&gt; (%collection_count)</translation>
+    </message>
+    <message>
+        <source>Select collection %id for removal</source>
+        <translation>Sammlung %id zum Entfernen auswählen</translation>
     </message>
 </context>
 <context>
@@ -9984,6 +10092,10 @@
 </context>
 <context>
     <name>design/admin/navigator</name>
+    <message>
+        <source>Pages</source>
+        <translation>Seiten</translation>
+    </message>
     <message>
         <source>Previous</source>
         <translation>Zurück</translation>
@@ -14958,6 +15070,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Right column</source>
         <translation>Rechte Spalte</translation>
     </message>
+    <message>
+        <source>Show or hide the left sidebar</source>
+        <translation>Linke Seitenleiste ein- oder ausblenden</translation>
+    </message>
+    <message>
+        <source>Show or hide the right sidebar</source>
+        <translation>Rechte Seitenleiste ein- oder ausblenden</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -16568,6 +16688,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>People who bought this also bought</source>
         <translation>Kunden, die dies gekauft haben, haben auch das gekauft</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation>Kategorie</translation>
     </message>
 </context>
 <context>
@@ -20429,6 +20553,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
 <context>
     <name>design/admin/section/list</name>
     <message>
+        <source>Only this page is searched: %from to %to of %count.</source>
+        <translation>Durchsucht wird nur diese Seite: %from bis %to von %count.</translation>
+    </message>
+    <message>
         <source>Sections [%section_count]</source>
         <translation type="obsolete">Sektionen [%section_count]</translation>
     </message>
@@ -23229,6 +23357,18 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
 </context>
 <context>
     <name>design/admin/setup/extensions</name>
+    <message>
+        <source>The extension or the archive format is not known.</source>
+        <translation>Die Extension oder das Archivformat ist nicht bekannt.</translation>
+    </message>
+    <message>
+        <source>The extension %name could not be packed.</source>
+        <translation>Die Extension %name konnte nicht gepackt werden.</translation>
+    </message>
+    <message>
+        <source>Download %name as %format</source>
+        <translation>%name als %format herunterladen</translation>
+    </message>
     <message>
         <source>Available extensions [%extension_count]</source>
         <translation type="obsolete">Verfügbare Extensions [%extension_count]</translation>
@@ -26532,6 +26672,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
 <context>
     <name>design/admin/setup/rad</name>
     <message>
+        <source>%shown of %count</source>
+        <translation>%shown von %count</translation>
+    </message>
+    <message>
         <source>Find</source>
         <translation>Suchen</translation>
     </message>
@@ -27866,6 +28010,18 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>A listener of a filter event in site.ini [Event] Listeners[]. The kernel passes a value and goes on with what the listener returns, so a listener that forgets to return it destroys the value.</source>
         <translation>Ein Listener eines Filter-Ereignisses in site.ini [Event] Listeners[]. Der Kernel übergibt einen Wert und arbeitet mit dem weiter, was der Listener zurückgibt; ein Listener, der ihn nicht zurückgibt, zerstört den Wert.</translation>
+    </message>
+    <message>
+        <source>%counted of them counted as settings</source>
+        <translation>%counted davon als Einstellungen gezählt</translation>
+    </message>
+    <message>
+        <source>%runnables commands, cronjob parts and views are classes a subclass named in site.ini can replace.</source>
+        <translation>%runnables Befehle, Cronjob-Teile und Ansichten sind Klassen, die eine in site.ini genannte Unterklasse ersetzen kann.</translation>
+    </message>
+    <message>
+        <source>exp:ini has %actions actions and %providers scope providers; an extension adds its own in ini.ini.</source>
+        <translation>exp:ini hat %actions Aktionen und %providers Geltungsbereich-Anbieter; eine Extension ergänzt eigene in ini.ini.</translation>
     </message>
 </context>
 <context>
@@ -31622,6 +31778,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Each limitation of a policy function is listed too, with the class and method that give its values; one whose class is not there offers nothing to choose in the role editor and is shown as broken.</source>
         <translation>Jede Einschränkung einer Richtlinien-Funktion wird ebenfalls aufgelistet, mit der Klasse und Methode, die ihre Werte liefern; eine, deren Klasse fehlt, bietet im Rollen-Editor nichts zur Auswahl und wird als defekt gezeigt.</translation>
+    </message>
+    <message>
+        <source>exp:ini actions, and %providers scope providers</source>
+        <translation>exp:ini-Aktionen und %providers Geltungsbereich-Anbieter</translation>
+    </message>
+    <message>
+        <source>registry entries: %columns subitems columns, %jobs content job types</source>
+        <translation>Registereinträge: %columns Unterelement-Spalten, %jobs Inhalts-Job-Typen</translation>
     </message>
 </context>
 <context>
@@ -37524,6 +37688,18 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Objects using URL #%url_id (%url_count)</source>
         <translation>Objekte, die die URL #%url_id benutzen (%url_count)</translation>
     </message>
+    <message>
+        <source>Queued</source>
+        <translation>In der Warteschlange</translation>
+    </message>
+    <message>
+        <source>Repeat</source>
+        <translation>Wiederholt</translation>
+    </message>
+    <message>
+        <source>Untouched draft</source>
+        <translation>Unberührter Entwurf</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user</name>
@@ -38109,6 +38285,10 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     <message>
         <source>Signing in…</source>
         <translation>Anmeldung läuft…</translation>
+    </message>
+    <message>
+        <source>Content, sites and layouts, managed in one place.</source>
+        <translation>Inhalte, Sites und Layouts, an einem Ort verwaltet.</translation>
     </message>
 </context>
 <context>
@@ -39711,6 +39891,22 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
         <source>siteaccess</source>
         <translation>Siteaccess</translation>
     </message>
+    <message>
+        <source>Defined in settings/siteaccess/%siteaccess/override.ini.append.php</source>
+        <translation>Definiert in settings/siteaccess/%siteaccess/override.ini.append.php</translation>
+    </message>
+    <message>
+        <source>The overrides are tried from the top, and the first whose conditions all match is used. Drag an override by its handle to a new place, or use its arrows; every change is saved at once as the Priority of these overrides in settings/siteaccess/%siteaccess/override.ini.append.php.</source>
+        <translation>Die Overrides werden von oben geprüft, und der erste, dessen Bedingungen alle zutreffen, wird verwendet. Ziehen Sie einen Override an seinem Griff an eine neue Stelle oder benutzen Sie seine Pfeile; jede Änderung wird sofort als Priority dieser Overrides in settings/siteaccess/%siteaccess/override.ini.append.php gespeichert.</translation>
+    </message>
+    <message>
+        <source>Try %name earlier</source>
+        <translation>%name früher prüfen</translation>
+    </message>
+    <message>
+        <source>Try %name later</source>
+        <translation>%name später prüfen</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/visual/toolbar</name>
@@ -40074,6 +40270,10 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
 </context>
 <context>
     <name>design/admin/workflow/grouplist</name>
+    <message>
+        <source>Only this page is searched: %from to %to of %count.</source>
+        <translation>Durchsucht wird nur diese Seite: %from bis %to von %count.</translation>
+    </message>
     <message>
         <source>Workflow groups [%groups_count]</source>
         <translation type="obsolete">Workflow Gruppen [%groups_count]</translation>
@@ -49027,6 +49227,14 @@ Sie können das Paket auch entfernen ohne es von der Paketliste zu entfernen.</t
     <message>
         <source>No licenses are configured for packages. Add them to package.ini [LicenseSettings] LicenseList.</source>
         <translation>Für Pakete sind keine Lizenzen eingerichtet. Tragen Sie sie in package.ini [LicenseSettings] LicenseList ein.</translation>
+    </message>
+    <message>
+        <source>Back to the package</source>
+        <translation>Zurück zum Paket</translation>
+    </message>
+    <message>
+        <source>Package list</source>
+        <translation>Paketliste</translation>
     </message>
 </context>
 <context>
@@ -60767,6 +60975,22 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
 <context>
     <name>kernel/package</name>
     <message>
+        <source>The extension %name may not be exported: it is not in package.ini [ExtensionExportSettings] AllowedExtensions[].</source>
+        <translation>Die Extension %name darf nicht exportiert werden: sie steht nicht in package.ini [ExtensionExportSettings] AllowedExtensions[].</translation>
+    </message>
+    <message>
+        <source>Exporting an extension needs the policy package/export_extension.</source>
+        <translation>Für den Export einer Extension ist die Policy package/export_extension nötig.</translation>
+    </message>
+    <message>
+        <source>The extension %name is not known.</source>
+        <translation>Die Extension %name ist nicht bekannt.</translation>
+    </message>
+    <message>
+        <source>The extension %name was not packed: it holds secret values or key material (%files). Copy it from the server instead.</source>
+        <translation>Die Extension %name wurde nicht gepackt: sie enthält geheime Werte oder Schlüsselmaterial (%files). Kopieren Sie sie stattdessen vom Server.</translation>
+    </message>
+    <message>
         <source>Packages</source>
         <translation>Pakete</translation>
     </message>
@@ -66390,6 +66614,22 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
 <context>
     <name>design/admin/content/job</name>
     <message>
+        <source>Reveal %name</source>
+        <translation>Einblenden: %name</translation>
+    </message>
+    <message>
+        <source>Hide %name</source>
+        <translation>Verbergen: %name</translation>
+    </message>
+    <message>
+        <source>The node and everything below it become visible again, unless hidden on their own.</source>
+        <translation>Der Knoten und alles darunter werden wieder sichtbar, sofern sie nicht selbst verborgen sind.</translation>
+    </message>
+    <message>
+        <source>The node and everything below it are hidden from the site.</source>
+        <translation>Der Knoten und alles darunter werden auf der Website verborgen.</translation>
+    </message>
+    <message>
         <source>Audit trail</source>
         <translation>Audit-Protokoll</translation>
     </message>
@@ -66744,6 +66984,206 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Open the result</source>
         <translation>Das Ergebnis öffnen</translation>
+    </message>
+    <message>
+        <source>%done of %total</source>
+        <translation>%done von %total</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from bis %to von %count</translation>
+    </message>
+    <message>
+        <source>%title, %percent% done.</source>
+        <translation>%title, zu %percent% erledigt.</translation>
+    </message>
+    <message>
+        <source>A remove or copy of a large subtree appears here when it runs in the background.</source>
+        <translation>Das Entfernen oder Kopieren eines großen Teilbaums erscheint hier, wenn es im Hintergrund läuft.</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Aktionen</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>All users</source>
+        <translation>Alle Benutzer</translation>
+    </message>
+    <message>
+        <source>An operation that overlaps them is refused until they are done.</source>
+        <translation>Eine Operation, die sich mit ihnen überschneidet, wird abgelehnt, bis sie abgeschlossen sind.</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Zurück</translation>
+    </message>
+    <message>
+        <source>Background jobs are working on this part of the tree</source>
+        <translation>An diesem Teil des Baums arbeiten Hintergrund-Jobs</translation>
+    </message>
+    <message>
+        <source>Below %limit items running now is preselected, from %limit on the background job (content.ini SynchronousLimit). Your last choice is remembered.</source>
+        <translation>Unter %limit Elementen ist „Jetzt ausführen“ vorgewählt, ab %limit der Hintergrund-Job (content.ini SynchronousLimit). Ihre letzte Wahl wird gespeichert.</translation>
+    </message>
+    <message>
+        <source>Choose the node to add a location under using the radio buttons then click &quot;Select&quot;. Every selected item keeps its locations and gets one more under that node.</source>
+        <translation>Wählen Sie mit den Optionsfeldern den Knoten, unter dem eine Position hinzugefügt wird, und klicken Sie dann auf „Auswählen“. Jedes ausgewählte Element behält seine Positionen und erhält eine weitere unter diesem Knoten.</translation>
+    </message>
+    <message>
+        <source>Choose where to add a location for &lt;%object_name&gt;</source>
+        <translation>Wählen Sie, wo eine Position für &lt;%object_name&gt; hinzugefügt wird</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Klassen</translation>
+    </message>
+    <message>
+        <source>Clear the filters</source>
+        <translation>Filter zurücksetzen</translation>
+    </message>
+    <message>
+        <source>Content jobs (%count)</source>
+        <translation>Inhalts-Jobs (%count)</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtern</translation>
+    </message>
+    <message>
+        <source>How to run it</source>
+        <translation>Wie es ausgeführt wird</translation>
+    </message>
+    <message>
+        <source>Jobs per state</source>
+        <translation>Jobs nach Status</translation>
+    </message>
+    <message>
+        <source>Large subtree removes and copies run in the background, in batches. A job keeps going when you leave its page.</source>
+        <translation>Das Entfernen und Kopieren großer Teilbäume läuft im Hintergrund, in Stapeln. Ein Job läuft weiter, wenn Sie seine Seite verlassen.</translation>
+    </message>
+    <message>
+        <source>Last modified</source>
+        <translation>Zuletzt geändert</translation>
+    </message>
+    <message>
+        <source>Locations</source>
+        <translation>Positionen</translation>
+    </message>
+    <message>
+        <source>Moved to the trash, the items can be restored from the trash later. Without it they are deleted for good. Items you may not remove are marked in red above; then nothing is removed.</source>
+        <translation>In den Papierkorb verschoben, lassen sich die Elemente später daraus wiederherstellen. Ohne ihn werden sie endgültig gelöscht. Elemente, die Sie nicht entfernen dürfen, sind oben rot markiert; dann wird nichts entfernt.</translation>
+    </message>
+    <message>
+        <source>My jobs</source>
+        <translation>Meine Jobs</translation>
+    </message>
+    <message>
+        <source>Newer</source>
+        <translation>Neuere</translation>
+    </message>
+    <message>
+        <source>No job matches these filters.</source>
+        <translation>Kein Job passt zu diesen Filtern.</translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation>OK</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Objekte</translation>
+    </message>
+    <message>
+        <source>Objects with other locations</source>
+        <translation>Objekte mit weiteren Positionen</translation>
+    </message>
+    <message>
+        <source>Older</source>
+        <translation>Ältere</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Öffnen</translation>
+    </message>
+    <message>
+        <source>Progress and items</source>
+        <translation>Fortschritt und Elemente</translation>
+    </message>
+    <message>
+        <source>Run in the background (%count items: you can leave the page)</source>
+        <translation>Im Hintergrund ausführen (%count Elemente: Sie können die Seite verlassen)</translation>
+    </message>
+    <message>
+        <source>Run in the background (recommended for %count items: you can leave the page)</source>
+        <translation>Im Hintergrund ausführen (empfohlen bei %count Elementen: Sie können die Seite verlassen)</translation>
+    </message>
+    <message>
+        <source>Run now (this page waits until it is done)</source>
+        <translation>Jetzt ausführen (diese Seite wartet, bis es erledigt ist)</translation>
+    </message>
+    <message>
+        <source>Selected locations</source>
+        <translation>Ausgewählte Positionen</translation>
+    </message>
+    <message>
+        <source>Server</source>
+        <translation>Server</translation>
+    </message>
+    <message>
+        <source>Show the job</source>
+        <translation>Job anzeigen</translation>
+    </message>
+    <message>
+        <source>Source and target</source>
+        <translation>Quelle und Ziel</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>The copy gets the current version of each object unless all versions are chosen, and you as its creator unless the creator is kept (content.ini [CopySettings]).</source>
+        <translation>Die Kopie erhält die aktuelle Version jedes Objekts, sofern nicht alle Versionen gewählt sind, und Sie als Ersteller, sofern der Ersteller nicht beibehalten wird (content.ini [CopySettings]).</translation>
+    </message>
+    <message>
+        <source>The operation was not started</source>
+        <translation>Die Operation wurde nicht gestartet</translation>
+    </message>
+    <message>
+        <source>The part copied so far is kept under %target.</source>
+        <translation>Der bisher kopierte Teil bleibt unter %target erhalten.</translation>
+    </message>
+    <message>
+        <source>There are no content jobs.</source>
+        <translation>Es gibt keine Inhalts-Jobs.</translation>
+    </message>
+    <message>
+        <source>This is a large removal. It runs in the background, in batches: you see its progress and can leave the page while it works.</source>
+        <translation>Dies ist eine große Entfernung. Sie läuft im Hintergrund, in Stapeln: Sie sehen den Fortschritt und können die Seite verlassen, während sie läuft.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Benutzer</translation>
+    </message>
+    <message>
+        <source>What this touches</source>
+        <translation>Was davon betroffen ist</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>und %count weitere</translation>
+    </message>
+    <message>
+        <source>duration</source>
+        <translation>Dauer</translation>
+    </message>
+    <message>
+        <source>only these locations go; the objects keep existing at their other locations</source>
+        <translation>nur diese Positionen werden entfernt; die Objekte bleiben an ihren anderen Positionen bestehen</translation>
     </message>
 </context>
 <context>

@@ -1,8 +1,8 @@
 <div id="header-logo">
 {if $ui_context_edit}
-    <span title="Exponential {fetch( 'setup', 'version' )}">&nbsp;</span>
+    <span title="Exponential{if fetch( 'user', 'current_user' ).is_logged_in} {fetch( 'setup', 'version' )}{/if}">&nbsp;</span>
 {else}
-    <a href="{ezini('SiteSettings', 'DefaultPage', 'site.ini')|ezurl( 'no' )}" title="Exponential {fetch( 'setup', 'version' )}">
+    <a href="{ezini('SiteSettings', 'DefaultPage', 'site.ini')|ezurl( 'no' )}" title="Exponential{if fetch( 'user', 'current_user' ).is_logged_in} {fetch( 'setup', 'version' )}{/if}">
     </a>
 {/if}
 </div>

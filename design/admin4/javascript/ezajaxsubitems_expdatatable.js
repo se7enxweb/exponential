@@ -127,11 +127,21 @@ var eZAjaxSubitemsExpDataTable = (function () {
             return '<span class="a4-subitem-name"><a href="' + row.url + '" title="' + row.name + '">' + row.class_icon + '</a>' +
                    '<a href="' + row.url + '" title="' + row.name + '">' + row.name + '</a></span>';
         };
+        // The text of an HTML-encoded value: the server sends names encoded for markup, an attribute set from
+        // script and the menu's header take text ("Tom & Jerry", not "Tom &amp; Jerry").
+        var htmlText = function (html) {
+            var textarea = document.createElement('textarea');
+            textarea.innerHTML = html === undefined || html === null ? '' : String(html);
+            return textarea.value;
+        };
         var customMenu = function (row) {
-            var createhereMenu = (confObj.classesString != '') ? -1 : "'child-menu-create-here'";
+            // the id of the item ezpopupmenu.js disables when no class may be created here (no quotes in the value:
+            // with them it matched no element and Create here stayed enabled)
+            var createhereMenu = (confObj.classesString != '') ? -1 : 'child-menu-create-here';
             var translationArray = [];
+            var name = htmlText(row.name);
             $.each(row.translations || [], function (i, e) { translationArray.push({ 'locale': e, 'name': confObj.languages[e] }); });
-            var a = $('<a></a>').attr({ href: '#', role: 'button', 'aria-label': row.name, 'aria-haspopup': 'menu' })
+            var a = $('<a></a>').attr({ href: '#', role: 'button', 'aria-label': name, 'aria-haspopup': 'menu' })
                 .append('<div class="crankfield"></div>');
             a.on('click', function (e) {
                 e.preventDefault();
@@ -141,7 +151,7 @@ var eZAjaxSubitemsExpDataTable = (function () {
                 window.ezpopmenu_showTopLevel(ev, 'SubitemsContextMenu', {
                     '%nodeID%': row.node_id, '%objectID%': row.contentobject_id, '%version%': row.version,
                     '%languages%': translationArray, '%classList%': confObj.classesString
-                }, row.name, row.node_id, createhereMenu);
+                }, name, row.node_id, createhereMenu);
             });
             return a;
         };
@@ -151,7 +161,7 @@ var eZAjaxSubitemsExpDataTable = (function () {
                 var thBack = 'background: url(\'' + url.replace(/'/g, "\\'") + '\') no-repeat;';
                 var thWidth = ' width: ' + row.thumbnail_width + 'px;';
                 var thHeight = ' height: ' + row.thumbnail_height + 'px;';
-                return '<div class="thumbview"><div id="thumbfield" class="thumbfield"></div><span><div style="' + thBack + thWidth + thHeight + '"></div></span></div>';
+                return '<div class="thumbview"><div class="thumbfield"></div><span><div style="' + thBack + thWidth + thHeight + '"></div></span></div>';
             }
             return '';
         };
@@ -387,7 +397,7 @@ var eZAjaxSubitemsExpDataTable = (function () {
                 // GET <ezjscore/call/ezjscnode::subtree::node>::limit::offset::sort::order::filter?ContentType=json
                 url: function (s) {
                     return confObj.dataSourceURL + '::' + s.limit + '::' + s.offset + '::' + s.sort.key + '::' +
-                           (s.sort.dir === 'asc' ? '1' : '0') + '::' + confObj.nameFilter + '?ContentType=json';
+                           (s.sort.dir === 'asc' ? '1' : '0') + '::' + encodeURIComponent(confObj.nameFilter) + '?ContentType=json';
                 },
                 parse: function (json) {
                     var c = (json && json.content) || {};

@@ -116,6 +116,41 @@ class Create extends \Exponential\Runnable\ModuleView
                 }
             }
 
+            if ( !$currentStepID )
+            {
+                // The last step: the package is made. A refusal while it is made (an extension packRefusal() names a
+                // reason for) leaves no package behind and shows the first step again with the reason.
+                $finalizeError = '';
+                try
+                {
+                    $creator->finalize( $package, $http, $persistentData );
+                }
+                catch ( \RuntimeException $e )
+                {
+                    $finalizeError = $e->getMessage();
+                }
+                if ( $finalizeError === '' )
+                {
+                    // kept in the JSON format when the wizard's package information step chose it
+                    if ( $package && isset( $persistentData['format'] ) && $persistentData['format'] === \eZPackage::FORMAT_JSON )
+                    {
+                        $converted = \expPackageJson::convertInPlace( $package->path(), \eZPackage::FORMAT_JSON );
+                        if ( !$converted['ok'] )
+                            \eZDebug::writeError( 'The package ' . $package->attribute( 'name' ) . ' stays in the XML format: ' . implode( '; ', $converted['errors'] ), __METHOD__ );
+                    }
+                    $package->setAttribute( 'is_active', true );
+                    $http->removeSessionVariable( 'eZPackageCreatorData' . $creatorID );
+                    if ( $package )
+                        return $this->viewResult( isset( $Result ) ? $Result : null,  $module->redirectToView( 'view', array( 'full', $package->attribute( 'name' ) ) ) );
+                    else
+                        return $this->viewResult( isset( $Result ) ? $Result : null,  $module->redirectToView( 'list' ) );
+                }
+                $errorList[] = array( 'field' => \ezpI18n::tr( 'kernel/package', 'Package' ), 'description' => $finalizeError );
+                $currentStepID = $steps['first']['id'];
+                $initializeStep = false;
+                $package = false;
+                unset( $persistentData['package_name'] );
+            }
             if ( $currentStepID )
             {
                 $currentStep =& $steps['map'][$currentStepID];
@@ -145,23 +180,6 @@ class Create extends \Exponential\Runnable\ModuleView
                 $tpl->setVariable( 'package', $package );
 
                 $templateName = "design:package/$stepTemplateDir/$stepTemplateName";
-            }
-            else
-            {
-                $creator->finalize( $package, $http, $persistentData );
-                // kept in the JSON format when the wizard's package information step chose it
-                if ( $package && isset( $persistentData['format'] ) && $persistentData['format'] === \eZPackage::FORMAT_JSON )
-                {
-                    $converted = \expPackageJson::convertInPlace( $package->path(), \eZPackage::FORMAT_JSON );
-                    if ( !$converted['ok'] )
-                        \eZDebug::writeError( 'The package ' . $package->attribute( 'name' ) . ' stays in the XML format: ' . implode( '; ', $converted['errors'] ), __METHOD__ );
-                }
-                $package->setAttribute( 'is_active', true );
-                $http->removeSessionVariable( 'eZPackageCreatorData' . $creatorID );
-                if ( $package )
-                    return $this->viewResult( isset( $Result ) ? $Result : null,  $module->redirectToView( 'view', array( 'full', $package->attribute( 'name' ) ) ) );
-                else
-                    return $this->viewResult( isset( $Result ) ? $Result : null,  $module->redirectToView( 'list' ) );
             }
         }
         else

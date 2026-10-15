@@ -25,7 +25,10 @@
 </td>
 <td role="cell">
 {node_view_gui view=line content_node=$SearchResult.item}
-<span class="a4-search-path">/{$SearchResult.item.url_alias|wash}</span>
+{* Where it is: objects of the same name are told apart by their location *}
+{if $SearchResult.item.depth|gt( 2 )}
+<div class="a4-meta a4-search-path">{foreach $SearchResult.item.path as $path_node}{$path_node.name|wash}{delimiter} / {/delimiter}{/foreach}</div>
+{/if}
 </td>
 <td role="cell">
 {$SearchResult.item.class_name|wash}

@@ -235,9 +235,108 @@ class Info extends \Exponential\Runnable\ModuleView
                 header( 'Content-Type: text/plain; charset=utf-8' );
             header( 'X-Robots-Tag: noindex' );
             header( 'Cache-Control: no-store' );
+            ob_start();
             phpinfo( INFO_GENERAL | INFO_CONFIGURATION | INFO_MODULES | INFO_LICENSE );
+            echo self::maskPhpInfo( (string)ob_get_clean(), PHP_SAPI !== 'cli' );
             \eZExecution::cleanExit();
         }
+    }
+
+    /** The sections of phpinfo() that show the request or the environment: left out */
+    const PHPINFO_DROPPED_SECTIONS = array( 'apache environment', 'http headers information', 'environment', 'php variables' );
+
+    /**
+     * Whether a directive of phpinfo() holds a secret: expSystemReportMask::isSecretSettingName(), the rule extension
+     * packages use too (mysqli.default_pw).
+     *
+     * @param string $name
+     * @return bool
+     */
+    public static function isPhpInfoSecretName( $name )
+    {
+        return \expSystemReportMask::isSecretSettingName( $name );
+    }
+
+    /**
+     * Whether a value of phpinfo() says nothing secret even under a secret name: empty, "no value", a number or a
+     * switch ("Tokenizer Support => enabled").
+     *
+     * @param string $value
+     * @return bool
+     */
+    public static function isPhpInfoPlainValue( $value )
+    {
+        return preg_match( '/^\s*(|no value|-?\d+|enabled|disabled|on|off|yes|no|true|false)\s*$/i', (string)$value ) === 1;
+    }
+
+    /**
+     * phpinfo()'s output as setup/info/php shows it: without the sections of the request and the environment
+     * (PHPINFO_DROPPED_SECTIONS; the web server module adds the request headers with the cookies and the
+     * authorization), the values of directives whose name is a secret hidden, and secrets inside the other values
+     * masked (expSystemReportMask::text(): a password in an address, a session id, a key). Pure.
+     *
+     * @param string $output
+     * @param bool $html the HTML of a web server, else the text of the command line
+     * @return string
+     */
+    public static function maskPhpInfo( $output, $html = true )
+    {
+        $output = (string)$output;
+        if ( $html )
+        {
+            // each section starts at an <h2>; a dropped one ends where the next starts, or after its last table
+            $parts = preg_split( '#(?=<h2[\s>])#i', $output );
+            $kept = '';
+            foreach ( $parts as $part )
+            {
+                if ( preg_match( '#^<h2[^>]*>(.*?)</h2>#is', $part, $m )
+                     && in_array( strtolower( trim( html_entity_decode( strip_tags( $m[1] ) ) ) ), self::PHPINFO_DROPPED_SECTIONS, true ) )
+                {
+                    $end = strripos( $part, '</table>' );
+                    $kept .= $end === false ? '' : substr( $part, $end + strlen( '</table>' ) );
+                    continue;
+                }
+                $kept .= $part;
+            }
+            // a row whose name is a secret: its values hidden
+            $kept = preg_replace_callback( '#(<tr[^>]*>\s*<td class="e">)(.*?)(</td>)(.*?)(</tr>)#is', function ( $m ) {
+                if ( !self::isPhpInfoSecretName( trim( html_entity_decode( strip_tags( $m[2] ) ) ) ) )
+                    return $m[0];
+                $values = preg_replace_callback( '#(<td class="v">)(.*?)(</td>)#is', function ( $v ) {
+                    return Info::isPhpInfoPlainValue( html_entity_decode( strip_tags( $v[2] ) ) ) ? $v[0] : $v[1] . \expSystemReportMask::HIDDEN . $v[3];
+                }, $m[4] );
+                return $m[1] . $m[2] . $m[3] . $values . $m[5];
+            }, $kept );
+            // the text between the tags, outside <style> and <img>
+            return preg_replace_callback( '#(<style\b.*?</style>|<[^>]*>)|([^<]+)#is', function ( $m ) {
+                if ( isset( $m[2] ) && $m[2] !== '' )
+                    return htmlspecialchars( \expSystemReportMask::text( html_entity_decode( $m[2], ENT_QUOTES | ENT_HTML5, 'UTF-8' ) ), ENT_NOQUOTES | ENT_SUBSTITUTE, 'UTF-8' );
+                return $m[0];
+            }, $kept );
+        }
+
+        // text: a section starts with a line without "=>" after an empty line; a dropped one runs to the next
+        $lines = explode( "\n", $output );
+        $out = array();
+        $dropping = false;
+        foreach ( $lines as $i => $line )
+        {
+            $isTitle = trim( $line ) !== '' && strpos( $line, '=>' ) === false && ( $i === 0 || trim( $lines[$i - 1] ) === '' );
+            if ( $isTitle )
+                $dropping = in_array( strtolower( trim( $line ) ), self::PHPINFO_DROPPED_SECTIONS, true );
+            if ( $dropping )
+                continue;
+            $parts = explode( ' => ', $line );
+            $secret = count( $parts ) > 1 && self::isPhpInfoSecretName( trim( $parts[0] ) );
+            foreach ( $parts as $n => $part )
+            {
+                if ( $n === 0 && count( $parts ) > 1 )
+                    continue;
+                $parts[$n] = $secret && !self::isPhpInfoPlainValue( $part ) ? \expSystemReportMask::HIDDEN : \expSystemReportMask::text( $part );
+            }
+            $out[] = implode( ' => ', $parts );
+        }
+        return implode( "\n", $out );
     }
 
     /**
@@ -561,12 +660,16 @@ class Info extends \Exponential\Runnable\ModuleView
                 $requestHostPort .= ':' . $requestPort;
         }
         $requestURIPart = isset( $currentSiteAccess['uri_part'] ) ? implode( '/', (array)$currentSiteAccess['uri_part'] ) : '';
+        $frontSiteAccess = \eZINI::instance()->hasVariable( 'SiteSettings', 'FrontSiteAccess' ) ? trim( (string)\eZINI::instance()->variable( 'SiteSettings', 'FrontSiteAccess' ) ) : '';
+        if ( $frontSiteAccess === '' || \ezpSiteAccessURL::root( $frontSiteAccess ) === false )
+            $frontSiteAccess = (string)\eZINI::instance()->variable( 'SiteSettings', 'DefaultAccess' );
         $siteInfo = array(
             'siteaccess' => $currentSiteAccessName,
             'url' => ( \eZSys::isSSLNow() ? 'https://' : 'http://' ) . $requestHostPort . rtrim( \eZSys::wwwDir(), '/' ) . '/'
                      . ( $requestURIPart !== '' ? $requestURIPart . '/' : '' ),
-            'public_siteaccess' => (string)\eZINI::instance()->variable( 'SiteSettings', 'DefaultAccess' ),
-            'public_url' => \ezpSiteAccessURL::root(),
+            // the site this admin belongs to, as ezpSiteAccessURL::front() finds it
+            'public_siteaccess' => $frontSiteAccess,
+            'public_url' => \ezpSiteAccessURL::front(),
             'configured' => $configuredSiteURL,
             'configured_placeholder' => $configuredHost === '' || in_array( $configuredHost, array( 'localhost', '127.0.0.1', '[::1]', '::1' ), true ),
         );

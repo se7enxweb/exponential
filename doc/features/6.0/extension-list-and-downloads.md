@@ -14,14 +14,12 @@ when did it change, and can I take a copy of it?
 
 1. Open **Setup > Extensions**.
 2. Click **Details** (or the name) on the extension's row. An info card opens under the row.
-3. Click one of the four download links: `tar.gz`, `.zip`, `tar.bz2` or `.ezpkg`.
+3. Press one of the four download buttons: `tar.gz`, `.zip`, `tar.bz2` or `.ezpkg`.
 
-A download is one URL, so you can also fetch it directly:
-
-```
-/setup/extensions/<extension name>/<format>
-/setup/extensions/ezflow/zip
-```
+A download is a button of the page's form: it posts `ExtensionDownload=<extension name>/<format>` with the form
+token. Since 14 October 2026 the address `/setup/extensions/<extension name>/<format>` no longer downloads; it shows
+the list. An extension that holds a secret value or key material is not packed, and the page says which files and
+settings stopped it ([the secret check](../../bc/6.0/extension-package-secret-check.md)).
 
 `<format>` is one of `tar.gz`, `tar.bz2`, `zip`, `ezpkg`. The server builds a package of the extension with the
 `ezextension` package handler, streams it as an attachment named `<name>.<format>`, and removes the temporary file

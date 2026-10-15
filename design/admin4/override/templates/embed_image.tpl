@@ -18,7 +18,7 @@
 <img src={$image_variation.full_path|ezroot} alt="{$object.data_map.image.content.alternative_text|wash(xhtml)}" />
 {if is_set($link_parameters.href)}</a>{/if}
 
-<div style="width: {$image_variation.width}px;">
+<div class="a4-embed-caption">
 {$object.data_map.caption.content.output.output_text}
 </div>
 </div>

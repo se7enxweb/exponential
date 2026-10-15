@@ -31,7 +31,7 @@
         {def $product_category_attribute=ezini( 'VATSettings', 'ProductCategoryAttribute', 'shop.ini' )}
         {if and( $product_category_attribute, is_set( $node.data_map.$product_category_attribute ) )}
         <div class="attribute-long">
-          <p>Category:&nbsp;{attribute_view_gui attribute=$node.data_map.$product_category_attribute}</p>
+          <p>{'Category'|i18n( 'design/admin/preview/product' )}:&nbsp;{attribute_view_gui attribute=$node.data_map.$product_category_attribute}</p>
         </div>
         {/if}
         {undef $product_category_attribute}

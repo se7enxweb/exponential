@@ -168,7 +168,7 @@ class AdminResponsiveTest extends PHPUnit\Framework\TestCase
     public function testSearchResultsShowTypeAndPathOnAPhone()
     {
         $template = self::file( 'design/admin4/templates/content/searchresult.tpl' );
-        $this->assertStringContainsString( '<span class="a4-search-path">/{$SearchResult.item.url_alias|wash}</span>', $template, 'the path under the name' );
+        $this->assertStringContainsString( '<div class="a4-meta a4-search-path">{foreach $SearchResult.item.path as $path_node}', $template, 'the path under the name' );
         // drawn as a grid on a phone: the roles keep it a table for assistive technology
         $this->assertStringContainsString( 'role="table"', $template );
         $this->assertSame( 2, substr_count( $template, 'role="row"' ) );
