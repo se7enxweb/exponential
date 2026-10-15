@@ -2062,9 +2062,6 @@ class eZOEXMLInput extends eZXMLInputHandler
         return null;
     }
 
-    /*
-     * Get server url in relative or absolute format depending on ezoe settings.
-     */
     /**
      * The url, width and height of an image alias for the embed preview of the editor, or null when the alias has no
      * url (it could not be created, for instance because its original is missing from the storage). A missing width
@@ -2084,6 +2081,9 @@ class eZOEXMLInput extends eZXMLInputHandler
                       'height' => isset( $imageAlias['height'] ) ? $imageAlias['height'] : $defaultHeight );
     }
 
+    /*
+     * Get server url in relative or absolute format depending on ezoe settings.
+     */
     public static function getServerURL()
     {
         if ( self::$serverURL === null  )
