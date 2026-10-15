@@ -307,7 +307,7 @@ d1f3e1ef98e8cee2e52a5446280eadc3  design/admin/override/templates/embed-inline_i
 e0c996a801b1373df9824852298b20d9  design/admin/override/templates/tiny_image.tpl
 a2c561e93ef63c93201e81acd4f32741  design/admin/override/templates/window_controls_user.tpl
 f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin/override/templates/windows_user.tpl
-9493200852bdafe9ca50b75ad7ceb93f  design/admin/stylesheets/components.css
+91c8033701a7b4da1aeeecbcd460fd69  design/admin/stylesheets/components.css
 ce90ff045aa9ad5f6b74ebb4adb49d1f  design/admin/stylesheets/content.css
 9176b99cf9d39d3d3f7c8c50d1554eb5  design/admin/stylesheets/core.css
 3467a1c4602619c56bfc506613bebb91  design/admin/stylesheets/ezinfo.css
@@ -920,8 +920,8 @@ d1f3e1ef98e8cee2e52a5446280eadc3  design/admin4/override/templates/embed-inline_
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
 a2c561e93ef63c93201e81acd4f32741  design/admin4/override/templates/window_controls_user.tpl
 f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin4/override/templates/windows_user.tpl
-80b2783bddefb31a61bf17d174fdde88  design/admin4/stylesheets/admin4.css
-9493200852bdafe9ca50b75ad7ceb93f  design/admin4/stylesheets/components.css
+60491e4f16a6fed86c6549ca2ee49207  design/admin4/stylesheets/admin4.css
+91c8033701a7b4da1aeeecbcd460fd69  design/admin4/stylesheets/components.css
 9e90db5915f1915b7c9175b18868a205  design/admin4/stylesheets/content.css
 0368a507892a9eb10f58c7a00b0365bf  design/admin4/stylesheets/core.css
 024901334b90c0e08bf8b8fe9197604e  design/admin4/stylesheets/ezinfo.css
@@ -2762,7 +2762,7 @@ cdbe0fdc9c9011438bf808f4842b0982  doc/bc/5.90/relation_indexing.md
 94f95a803fffdb657972e1a81769e82f  doc/bc/6.0/LAYOUTS.md
 d386923e32f7abc18de9e5392795bb5f  doc/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md
 d95203ddf57747c5dcb15b6923bd0356  doc/bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXPANSION_HIDE_UNHIDE.md
-8b130fa36459fd927b1f656f83c0232d  doc/bc/6.0/admin4-styling.md
+6ef14c07fe978ecf774c48420c0dac85  doc/bc/6.0/admin4-styling.md
 b8b0564ea1db716863a85739a1f4c06d  doc/bc/6.0/admin4l.md
 f0b57cd68a5b41cc14ca22727186740c  doc/bc/6.0/api-keys.md
 c9f20a03afc08795fea37b7b66458194  doc/bc/6.0/audit.md
@@ -7076,7 +7076,7 @@ a170729e7e161686001ae10895d34d53  tests/tests/design/AdminBaseStylesheetsTest.ph
 29cef3e64abdd6f9f23f9463f69e25d5  tests/tests/design/AdminCardsTest.php
 c074a5a5c27a2455e9bf5e8d4b39d19d  tests/tests/design/AdminContextMenuTest.php
 9de098ad350169c753d7ecdaa5244310  tests/tests/design/AdminDashboardTest.php
-d733a0e95c95e388ea2d3580231f5fa4  tests/tests/design/AdminDensityTest.php
+e781dfd2f6531929c0807e09b90909b6  tests/tests/design/AdminDensityTest.php
 c805f3b778d5e27530594a38b05712ba  tests/tests/design/AdminFormErrorsTest.php
 c4dbc84de70b3ac212233446d50a8b64  tests/tests/design/AdminFormLabelsTest.php
 4cb69e09484ef10d1f56d5b1d4610ca9  tests/tests/design/AdminIconsTest.php
@@ -7088,10 +7088,10 @@ e2eab2213a32db585ca4653f802becb9  tests/tests/design/AdminLegacyControlsTest.php
 a33e9d573eb8e846797e949212bf192e  tests/tests/design/AdminNoticesTest.php
 0c55571a81de40303f49848a033d4661  tests/tests/design/AdminPageHeaderTest.php
 6ff0ec39508251b32aa19593c39780e4  tests/tests/design/AdminPreferencesTest.php
-8f0403fc955ca134dd04e7f8b47bce4e  tests/tests/design/AdminResponsiveTest.php
+202c6fbac14956816f9f52f200a25522  tests/tests/design/AdminResponsiveTest.php
 7e8957a9c15916135defa02bc8301d00  tests/tests/design/AdminRetiredClassesTest.php
 003493399ea7fe614dcc6b56a253c7b0  tests/tests/design/AdminSidebarDrawerTest.php
-7f101fc469af0cac1fa69ab9a5503e48  tests/tests/design/AdminStylingRulesTest.php
+73257fbb998fc1ba25e5d8b673ff49af  tests/tests/design/AdminStylingRulesTest.php
 850f08505510556f8649d66b26af8a93  tests/tests/design/AdminThemeSwitchTest.php
 d3aa163841a3b7ef9a8ce4048f7b1980  tests/tests/design/AdminTimelineTest.php
 51d06e5c80feb0f4b1ca88d5fd19a64c  tests/tests/design/AdminTokenContrastTest.php
