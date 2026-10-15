@@ -21282,6 +21282,22 @@ Note: The packages will not be uninstalled.</translation>
 <context>
     <name>design/admin/setup/cronjobs</name>
     <message>
+        <source>Note: %note</source>
+        <translation>Note: %note</translation>
+    </message>
+    <message>
+        <source>Note</source>
+        <translation>Note</translation>
+    </message>
+    <message>
+        <source>Note for a pause or resume (optional)</source>
+        <translation>Note for a pause or resume (optional)</translation>
+    </message>
+    <message>
+        <source>Kept with the next Pause or Resume pressed on this page; shown under Pauses, on the paused part and in the output of runcronjobs.php.</source>
+        <translation>Kept with the next Pause or Resume pressed on this page; shown under Pauses, on the paused part and in the output of runcronjobs.php.</translation>
+    </message>
+    <message>
         <source>Docs</source>
         <translation>Docs</translation>
     </message>
@@ -65500,6 +65516,18 @@ You will need to change the class of the node by using the swap functionality.</
 </context>
 <context>
     <name>design/admin/setup/setupmenu</name>
+    <message>
+        <source>All parts paused</source>
+        <translation>All parts paused</translation>
+    </message>
+    <message>
+        <source>1 part paused</source>
+        <translation>1 part paused</translation>
+    </message>
+    <message>
+        <source>%count parts paused</source>
+        <translation>%count parts paused</translation>
+    </message>
     <message>
         <source>Setup</source>
         <translation>Setup</translation>

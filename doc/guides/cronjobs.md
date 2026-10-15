@@ -278,7 +278,9 @@ Each card shows, from the top:
 - **Run part** (section 7.1), and **Pause** or **Resume**: a paused part shows *Paused* and since when and by whom,
   and is left out by every run - the crontab's too - until it is resumed (a part paused while it runs finishes
   the script that runs and leaves out the rest); **Pause all parts** in the status bar does
-  the same for every part. See [Pausing cronjob parts](../features/6.0/cronjob-pause.md).
+  the same for every part. A note typed into *Note for a pause or resume* goes with the button pressed next and
+  shows on the part, under **Pauses** and in the notice of `runcronjobs.php`. See
+  [Pausing cronjob parts](../features/6.0/cronjob-pause.md).
 - **Schedule**, or **Suggested schedule** for a part nothing runs: the schedule in words for the common shapes and the
   cron expression beside it. *Every minute*, *Every 5 minutes*, *Every hour at minute 17*, *Every 6 hours at minute
   0* and *Every day at 03:30* are said in words; anything else (`0 8 * * 1-5`) is shown as the expression, which is
