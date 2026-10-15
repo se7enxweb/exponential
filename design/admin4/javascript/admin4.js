@@ -65,7 +65,7 @@
  * the "More" item at the row's end (page_topmenu.tpl: li.a4-nav-more, hidden until needed); they move back when there
  * is room again. A ResizeObserver on the menu's panel refits the row (the panel's width does not depend on the tabs:
  * flex-basis 0 from 1280px, the full width below); without one, the window's resize event does. Below 576px every tab
- * stays in the phone menu's column. "More" is marked like the selected tab while the current page's tab is in it.
+ * stays in the phone menu's grid. "More" is marked like the selected tab while the current page's tab is in it.
  * The panel gets .a4-nav-fits once the script runs: the row no longer clips or scrolls (the CSS fallback without the
  * script), so the list can open below it.
  *
@@ -165,9 +165,10 @@
         var list = more.querySelector('.a4-nav-more-list');
         if (!toggle || !list) return;
         var wide = window.matchMedia('(min-width: 576px)');
-        // the tabs, in their order: every item of the row but "More" and the phone menu's search
+        // the tabs, in their order: every item of the row but "More" and the phone menu's own items (its search, the
+        // user's actions and the close button, page_topmenu.tpl)
         var tabs = Array.prototype.filter.call(bar.children, function (li) {
-            return li !== more && !li.classList.contains('header-search-mobile');
+            return li !== more && !li.classList.contains('header-search-mobile') && !li.classList.contains('a4-phone-only');
         });
 
         function fits() {
@@ -180,7 +181,7 @@
 
         function fit() {
             nav.classList.toggle('a4-nav-fits', wide.matches);
-            // the phone menu's column holds every tab: nothing to do while none is in the list
+            // the phone menu's grid holds every tab: nothing to do while none is in the list
             if (!wide.matches && !list.firstChild) return;
             // all tabs back in the row, in their order, before "More". Only the ones that are elsewhere move: a moved
             // element loses the focus, and this runs on every resize. The focus is given back if it was in a tab.

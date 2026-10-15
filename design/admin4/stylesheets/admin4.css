@@ -164,14 +164,19 @@ body,
   background-image: none;
 }
 /* Closed, the phone menu takes no room: max-height 0 does not remove admin3's padding-top (6rem), so the closed
-   panel was still 96px tall, 32px more than the header, and laid the header's veil over the top of the page. */
+   panel was still 96px tall, 32px more than the header, and laid the header's veil over the top of the page. It is
+   also out of the Tab order and of the accessibility tree (visibility), after its closing slide. */
 @media screen and (max-width: 575.98px) {
   .navbar-menu:not(.show) {
     padding-top: 0;
     background-color: transparent;
     pointer-events: none;
+    visibility: hidden;
+    transition: max-height 300ms ease, visibility 0s linear 300ms;
   }
 }
+/* the phone menu's own items (page_topmenu.tpl: its user actions and close button) are drawn below 576px only */
+.a4-phone-only { display: none; }
 /* The logo (parts/a4_logo.tpl): an inline drawing in the link's color, so the letters are dark on the light header and
    light on the dark one; the box stays 32px high, as the old image's was, so the rows keep their heights. 24px high,
    the full logo is 158px wide (388 x 59). */
@@ -341,14 +346,210 @@ body,
     font-size: 1.75rem;
     line-height: 1;
   }
-  .navbar-menu.show { padding-top: var(--header-height); }
-  /* the open menu ends under the search: admin3's 7rem under the list left about 80px of empty panel there */
-  .navbar-bar { padding-block: var(--a4-space-2) var(--a4-space-5); }
-  /* the search field takes the panel's width (with the menu's gutter) instead of its own 128px */
-  .navbar-bar > .header-search-mobile {
-    align-self: stretch;
-    padding-inline: var(--a4-space-4);
+}
+
+/* ---- The phone menu (below 576px) --------------------------------------------------------------------------------
+   A panel under the header's row, over the page: the search first, the tabs as a grid of tiles (two or three to a
+   row, each at least 44px high, Apple's minimum for a touch target), the user's actions as a row of their own, a close
+   button at the end, within a thumb's reach. Until 2026-10 it was admin3's column of small centred links, one per row,
+   in a panel as high as 100vh that started at the window's top (padding-top: the header's height): on iOS 100vh is
+   the height with the browser's toolbars hidden, so with the toolbars shown the panel's end, and the last tabs and the
+   search, lay under the bottom toolbar and could not be scrolled to. Now the panel starts under the header and is at
+   most the visible height (100dvh, which follows the toolbars; 100vh before it for browsers without dynamic viewport
+   units) less the header; it scrolls inside, and its scrolling does not chain to the page, whose own scrolling is
+   locked while it is open. The safe area insets keep the ends clear of the rounded corners and the home indicator
+   where the page covers them (viewport-fit=cover); without that they are 0. */
+@media screen and (max-width: 575.98px) {
+  .navbar-menu {
+    inset: 100% 0 auto;   /* under the header's row instead of behind it */
+    padding: 0;
   }
+  .navbar-menu.show {
+    max-height: calc(100vh - var(--header-height));
+    max-height: calc(100dvh - var(--header-height));
+    padding: 0;
+    background-color: var(--a4-card);
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    border-bottom: 1px solid var(--a4-line);
+    border-radius: 0 0 var(--a4-radius) var(--a4-radius);
+    box-shadow: var(--a4-shadow-m);
+    visibility: visible;
+    transition: max-height 300ms ease, visibility 0s;
+  }
+  body.navbar-open {
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+  /* one scroller, the panel: admin3 let the list scroll as well */
+  .navbar-bar {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 6.5rem), 1fr));
+    align-items: stretch;
+    gap: var(--a4-space-2);
+    overflow: visible;
+    padding: var(--a4-space-4) max(var(--a4-space-5), env(safe-area-inset-right))
+             calc(var(--a4-space-5) + env(safe-area-inset-bottom)) max(var(--a4-space-5), env(safe-area-inset-left));
+  }
+  .navbar-bar > li {
+    display: flex;
+    min-width: 0;
+  }
+  /* the search, the user's actions and the close button take a whole row */
+  .navbar-bar > :is(.header-search-mobile, .a4-phone-only) {
+    display: block;
+    grid-column: 1 / -1;
+  }
+  .navbar-bar > .header-search-mobile { padding-bottom: var(--a4-space-2); }
+  .header-search-mobile .searchblock input.searchtext {
+    min-height: 44px;
+    padding-left: calc(var(--a4-space-7) - var(--a4-space-1));   /* 44px: room for the scope button */
+  }
+  #header #searchscope-mobile {   /* the scope button: 40 x 40px inside the 44px field */
+    left: 2px;
+    width: 40px;
+    height: 40px;
+    margin-top: calc(var(--a4-space-1) - var(--a4-space-5));   /* -20px: centred on the field */
+    border-radius: 999px;
+  }
+  #header .header-search-mobile .searchblock .searchbuttonfield {
+    width: 44px;
+    height: 44px;
+  }
+  /* a tab is a tile: the whole cell is the target, its name may wrap */
+  .navbar-menu .navbar-bar > li > a,
+  .navbar-menu .navbar-bar > li > a.selected,
+  .navbar-menu .navbar-bar > li > a.selected:hover {
+    box-sizing: border-box;
+    flex: 1 1 auto;
+    min-width: 0;
+    min-height: 44px;
+    padding: var(--a4-space-2) var(--a4-space-3);
+    border: 1px solid var(--a4-line);
+    border-radius: var(--a4-radius-s);
+    font-size: var(--a4-text-m);
+    line-height: 1.25;
+    text-align: center;
+    white-space: normal;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+  .navbar-menu .navbar-bar > li > a:not(.selected) { background-color: var(--a4-soft); }
+  .navbar-menu .navbar-bar > li > a:not(.selected):hover {
+    border-color: var(--a4-line-strong);
+    background-color: var(--a4-header-hover);
+  }
+  .navbar-menu .navbar-bar > li > a.selected { border-color: var(--a4-accent-strong); font-weight: 600; }
+  .navbar-menu .navbar-bar a:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
+
+  /* the user's actions: the name, then their buttons side by side, two to a row (one at 200% text) */
+  .a4-phone-user {
+    margin-top: var(--a4-space-2);
+    padding-top: var(--a4-space-4);
+    border-top: 1px solid var(--a4-line);
+  }
+  .a4-phone-user-name {
+    display: flex;
+    margin: 0 0 var(--a4-space-2);
+    font-size: var(--a4-text-m);
+    font-weight: 600;
+    color: var(--a4-ink);
+  }
+  .a4-phone-user-name > a,
+  .a4-phone-user-name { align-items: center; gap: var(--a4-space-2); }
+  .navbar-menu .a4-phone-user-name > a {
+    display: inline-flex;
+    min-height: 44px;
+    padding: 0 var(--a4-space-2);
+    margin-left: calc(-1 * var(--a4-space-2));
+    border-radius: var(--a4-radius-s);
+    color: var(--a4-ink);
+    white-space: normal;
+  }
+  .a4-phone-user-login { color: var(--a4-muted); font-weight: 400; }
+  .a4-phone-user-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 8rem), 1fr));
+    gap: var(--a4-space-2);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .a4-phone-user-links > li { display: flex; flex: 1 1 auto; }
+  .navbar-menu .a4-phone-user-links a,
+  .a4-phone-user-links .disabled,
+  .a4-phone-close-button {
+    box-sizing: border-box;
+    display: inline-flex;
+    flex: 1 1 auto;
+    align-items: center;
+    justify-content: center;
+    gap: var(--a4-space-2);
+    min-height: 44px;
+    margin: 0;
+    padding: var(--a4-space-2) var(--a4-space-4);
+    border: 1px solid var(--a4-line-strong);
+    border-radius: var(--a4-radius-s);
+    background-color: var(--a4-card);
+    color: var(--a4-ink);
+    font: inherit;
+    font-size: var(--a4-text-m);
+    line-height: 1.25;
+    text-align: center;
+    white-space: normal;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    cursor: pointer;
+  }
+  /* a user action's icon above its name: the names are long ("My e-mail preferences") and the tiles narrow */
+  .navbar-menu .a4-phone-user-links a,
+  .a4-phone-user-links .disabled {
+    flex-direction: column;
+    gap: var(--a4-space-1);
+    padding: var(--a4-space-2);
+  }
+  .a4-phone-close-cross { font-size: var(--a4-text-xl); line-height: 1; }
+  .navbar-menu .a4-phone-user-links a:hover,
+  .a4-phone-close-button:hover {
+    border-color: var(--a4-accent);
+    background-color: var(--a4-card);
+    color: var(--a4-ink);
+  }
+  .a4-phone-user-links .disabled { opacity: .45; cursor: default; }
+  .a4-phone-user-links .a4-icon,
+  .a4-phone-user-name .a4-icon,
+  .a4-phone-close-button .a4-icon { width: 18px; height: 18px; flex: none; }
+  .a4-phone-close { padding-top: var(--a4-space-2); }
+  .a4-phone-close-button { width: 100%; background-color: var(--a4-soft); }
+  .a4-phone-close-button:focus-visible,
+  .navbar-menu .a4-phone-user-links a:focus-visible,
+  .navbar-menu .a4-phone-user-name > a:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
+
+  /* the header's user menu and logout button give way to the menu's row of user actions (admin4l's header, which has
+     no such row, keeps them) */
+  .navbar-main:has(.a4-phone-user) > .header-user { display: none; }
+  /* the open menu's button shows a cross */
+  #header .navbar-icon[aria-expanded="true"] > span { display: none; }
+  #header .navbar-icon[aria-expanded="true"]::before { content: "\00D7"; font-size: 2rem; }
+  #header .navbar-icon:focus-visible {
+    outline: 3px solid var(--a4-ring);
+    outline-offset: 2px;
+    border-radius: var(--a4-radius-s);
+  }
+}
+@media screen and (max-width: 575.98px) and (prefers-reduced-motion: reduce) {
+  .navbar-menu,
+  .navbar-menu:not(.show),
+  .navbar-menu.show { transition: none; }   /* no slide, and closed means hidden at once */
+}
+@media screen and (max-width: 575.98px) and (forced-colors: active) {
+  .navbar-menu.show { border: 1px solid CanvasText; }
+  .navbar-menu .navbar-bar > li > a,
+  .navbar-menu .a4-phone-user-links a,
+  .a4-phone-close-button { border-color: ButtonText; }
+  /* the current tab: a heavier edge and underline, not only its fill */
+  .navbar-menu .navbar-bar > li > a.selected { border: 3px solid Highlight; text-decoration: underline; }
 }
 
 /* ---- The environment badge ----------------------------------------------------------------------------------
@@ -2794,14 +2995,9 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
 
 /* ---- Viewports: phone (390px), tablet (820px), small desktop (1180px), wide (2560px) ------------------------------- */
 
-/* The phone menu: an opaque panel (the header's translucent colour let the page shine through), scrolling on its own,
-   and the side columns' tabs out of the way while it is open (they stood over the menu). */
+/* The phone menu (its panel: "The phone menu" above): the side columns' tabs out of the way while it is open (they
+   stood over the menu). */
 @media screen and (max-width: 575.98px) {
-  .navbar-menu.show {
-    background-color: var(--a4-card);
-    overflow-y: auto;
-    box-shadow: var(--a4-shadow-m);
-  }
   body.navbar-open .sidebar-controls,
   body:has(.navbar-menu.show) .sidebar-controls { visibility: hidden; }
 }

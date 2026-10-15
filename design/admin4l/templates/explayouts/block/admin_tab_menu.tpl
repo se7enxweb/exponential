@@ -4,6 +4,11 @@
     <!-- start::Navbar Menu -->
     <div class="navbar-menu {if $ui_context_edit}disabled{/if}">
         <ul class="navbar-bar">
+            {* The phone menu's search, first in the panel (below 576px; from 576px the header's own search stands in
+               the row) *}
+            <li class="header-search-mobile">
+                {include uri='design:page_search.tpl' search_box='-mobile'}
+            </li>
             {* The tab marked as current: the page's navigation part, or Setup's for a page of a tab the Setup menu
                stands in for (parts/a4_navigation_part.tpl) *}
             {def $a4_current_part = ''}
@@ -18,9 +23,6 @@
             <li class="a4-nav-more" hidden>
                 <button type="button" class="a4-nav-more-toggle" aria-expanded="false" aria-controls="a4-nav-more-list">{'More'|i18n( 'design/admin/pagelayout' )|wash}<span class="a4-icon a4-bi-chevron-down" aria-hidden="true"></span></button>
                 <ul id="a4-nav-more-list" class="a4-nav-more-list" hidden></ul>
-            </li>
-            <li class="header-search-mobile">
-                {include uri='design:page_search.tpl' search_box='-mobile'}
             </li>
         </ul>
     </div>

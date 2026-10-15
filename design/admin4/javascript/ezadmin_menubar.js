@@ -186,18 +186,49 @@
     // Navbar menu toggling feature
     function navbarToggle() {
         // The icon is a div with role="button" (page_topmenu.tpl): it reports its state in aria-expanded and answers
-        // Enter and Space like a button. Escape closes the open menu and gives the focus back to the icon.
+        // Enter and Space like a button. Escape, the close button at the panel's end and a tap outside the header
+        // close the open menu; Escape and the close button give the focus back to the icon. Below 576px the open
+        // menu is a panel over the page: Tab and Shift+Tab stay in the header (its row, the icon and the panel),
+        // going round from its last control to its first (focus trap). From 576px the menu is the header's row: a
+        // phone menu left open when the window grows (a phone turned to landscape) is closed, so the page's
+        // scrolling, locked while it is open, comes back.
+        const phone = window.matchMedia ? window.matchMedia("(max-width: 575.98px)") : { matches: true };
+        function isOpen() {
+            return $(".navbar-menu").hasClass("show");
+        }
         function setOpen( icon, open ) {
             $(".navbar-menu").toggleClass("show", open);
             $("body").toggleClass('navbar-open', open);
             icon.setAttribute( 'aria-expanded', open ? 'true' : 'false' );
         }
+        // what Tab can reach while the phone menu is open: the header's visible controls in their order (the logo,
+        // the menu button, the panel, the tools of the header's row), so nothing a finger can reach is out of the
+        // keyboard's reach
+        function trapItems( header ) {
+            const items = [];
+            if (header && typeof header.querySelectorAll === "function") {
+                header.querySelectorAll('a[href], button:not([disabled]), input:not([disabled]):not([type="hidden"]), ' +
+                    'select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])').forEach((el) => {
+                    if (el.getClientRects().length) {
+                        items.push(el);
+                    }
+                });
+            }
+            return items;
+        }
         $(".navbar-icon").on('click', function () {
-            setOpen( this, !$(".navbar-menu").hasClass("show") );
+            setOpen( this, !isOpen() );
         }).on('keydown', function ( e ) {
             if ( e.key === 'Enter' || e.key === ' ' ) {
                 e.preventDefault();
-                setOpen( this, !$(".navbar-menu").hasClass("show") );
+                setOpen( this, !isOpen() );
+            }
+        });
+        $(".a4-phone-close-button").on('click', function () {
+            const icon = document.querySelector(".navbar-icon");
+            if (icon) {
+                setOpen(icon, false);
+                icon.focus();
             }
         });
 
@@ -228,6 +259,53 @@
             setOpen(icon, false);
             icon.focus();
         }, true);
+
+        // Tab and Shift+Tab while the phone menu is open: from the header's last control back to its first, and the
+        // other way round. In between the browser's own order holds. Focus outside the header (after a tap on the
+        // page) is left alone.
+        document.addEventListener("keydown", (e) => {
+            if (e.key !== "Tab" || e.defaultPrevented || e.altKey || e.ctrlKey || e.metaKey || !phone.matches) {
+                return;
+            }
+            const menu = document.querySelector(".navbar-menu");
+            if (!menu || !menu.classList.contains("show")) {
+                return;
+            }
+            const items = trapItems(document.getElementById("header"));
+            const at = items.indexOf(document.activeElement);
+            if (at === -1 || items.length < 2) {
+                return;
+            }
+            const last = items.length - 1;
+            if ((e.shiftKey && at === 0) || (!e.shiftKey && at === last)) {
+                e.preventDefault();
+                items[e.shiftKey ? last : 0].focus();
+            }
+        });
+
+        // A tap or click outside the header closes the open phone menu (the panel lies over the page); the focus
+        // stays where the tap put it. pointerdown, not click: iOS sends no click to the document for a tap on an
+        // element that is not clickable itself (the page's background, a paragraph).
+        document.addEventListener("pointerdown", (e) => {
+            const icon = document.querySelector(".navbar-icon");
+            const header = document.getElementById("header");
+            if (!icon || !phone.matches || !isOpen() || !header || header.contains(e.target)) {
+                return;
+            }
+            setOpen(icon, false);
+        });
+
+        const closeWhenWide = () => {
+            const icon = document.querySelector(".navbar-icon");
+            if (!phone.matches && icon && isOpen()) {
+                setOpen(icon, false);
+            }
+        };
+        if (phone.addEventListener) {
+            phone.addEventListener("change", closeWhenWide);
+        } else if (phone.addListener) {
+            phone.addListener(closeWhenWide);
+        }
     }
 
     /**

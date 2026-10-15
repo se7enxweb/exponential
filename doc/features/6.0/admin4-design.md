@@ -75,7 +75,12 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
   `set( name, '' )` forgets a choice (the preference set empty, the browser's copy removed). `tests/tests/design/AdminPreferencesTest.php` checks it.
 - **Header and top menu.** One row of 56 px from 1280 px (logo, menu, search, site, light/dark, user menu, logout),
   two rows of 48 + 40 px from 576 px, one row of 56 px on a phone with the hamburger menu (logo, site, light/dark,
-  user menu, logout, menu button). The menu stays on one line; tabs that do not fit go into a "More" list. "Open the
+  menu button). The menu stays on one line; tabs that do not fit go into a "More" list. On a phone the menu opens
+  as a panel under the header that always fits the visible screen (at most `100dvh` less the header, scrolling
+  inside): the search first, the tabs as a grid of 44 px tiles (three to a row at 390 px, two at 320 px), the user's
+  actions (name, Change information, Change password, My e-mail preferences, Logout) as a row of their own, and a
+  Close button at the end; Tab stays in the header while it is open, Escape, Close and a tap outside close it
+  (`AdminPhoneMenuTest`). "Open the
   site" is the first of the tools, a round icon button like the others; logout is an icon button ("Logout
   (admin)"); the user menu holds the user's name and links, and the name leads to the user's own object when the
   user may read it (not on edit and browse pages). The Tab key reaches the tools in the order they are
