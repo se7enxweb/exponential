@@ -689,7 +689,7 @@ e80df129f54dd091607755b00518d11e  design/admin/templates/url/edit.tpl
 544c98b0e3f60c4a1240b1c1347d40f6  design/admin/templates/url/view.tpl
 a07da19bad529539a8ac821a99668b25  design/admin/templates/user/activate.tpl
 daa13a8644e365d8210cac9cf446c50a  design/admin/templates/user/edit.tpl
-832ee402743c71b0279efd8ff2b010dc  design/admin/templates/user/hygiene.tpl
+db1525ab6ff69753cb94761c0bb6e956  design/admin/templates/user/hygiene.tpl
 9870ce94bbfb59f85f96fce2f536b4a5  design/admin/templates/user/login.tpl
 2b296ece6775f3ab1d99dba5abd034b9  design/admin/templates/user/password.tpl
 334a71e0270b253897c94e074acd0559  design/admin/templates/user/preferences_confirm.tpl
@@ -1302,7 +1302,7 @@ b60915914f7647785deb969657ed9089  design/admin4/templates/toolbar/full/admin_pre
 fb0873e26a274c1e365ec85f5bbe30b7  design/admin4/templates/url/view.tpl
 a07da19bad529539a8ac821a99668b25  design/admin4/templates/user/activate.tpl
 15e2d331d9e37cf2403d735ebe8adc4f  design/admin4/templates/user/edit.tpl
-832ee402743c71b0279efd8ff2b010dc  design/admin4/templates/user/hygiene.tpl
+db1525ab6ff69753cb94761c0bb6e956  design/admin4/templates/user/hygiene.tpl
 ecc1bcc7678d7e08d759f9c15ce70c9b  design/admin4/templates/user/login.tpl
 5b85a373be1ea581be79898950a0a854  design/admin4/templates/user/megamenu.tpl
 2ac87dd60efda09dc6e86c148cbb1a86  design/admin4/templates/user/password.tpl
@@ -3003,7 +3003,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-20a1143203afece16d06f189c0cb680c  doc/changelogs/6.0/6.0.15.md
+f64f07951eee36a529c2881cdcbece57  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3472,7 +3472,7 @@ a6b2159c09f6336f87bd6e48cf3e8240  doc/features/6.0/template-override-ordering.md
 a41622d93efd6c2f53a94f2baa3eed35  doc/features/6.0/template-path-comments.md
 9c468759f50c3e00207d31ceb9ab0cd4  doc/features/6.0/translations-and-languages.md
 617186ceb009791f653e4cbf277d7005  doc/features/6.0/trash-who-and-where.md
-847358b17c56a5d7f5bafb09a0cee603  doc/features/6.0/user-hygiene.md
+7dbe9d639855ee3c3b5cff8fb36e6a2e  doc/features/6.0/user-hygiene.md
 9af0ca11b275e34e8a215ca6983c1589  doc/features/6.0/valkey-cache-hooks.md
 6a1799eb3cafeb0ea30fec24517bea84  doc/features/6.0/velocity-control-panel.md
 cc8bb968e1c59a87aeb1832017543308  doc/features/6.0/velocity-discovery-federation-and-deploy.md
@@ -5216,7 +5216,7 @@ c4b4bff7b28cecd22c0cc52d9add2ca4  kernel/classes/subitems/expsubitemstemplatecol
 26ae88d9a6daa4f7c0b3ceac9c9b10b1  kernel/classes/user/expunactivatedusers.php
 1ecb253917d292bef2be612baaec6156  kernel/classes/user/expuseraccountoverview.php
 a00b5126b750134db4ac1328040c7571  kernel/classes/user/expuseractivation.php
-462523bc294a905f9c92d3f2cd57fcd0  kernel/classes/user/expuserhygiene.php
+2080ecbc4322ad39b36d9d0c7c016373  kernel/classes/user/expuserhygiene.php
 6063228c4bd6801070ca311387227290  kernel/classes/vathandlers/ezdefaultvathandler.php
 d083e9c0146d1fd5f8c0620718d2aec1  kernel/classes/workflowtypes/event/ezapprove/ezapprovetype.php
 349f6fbfecba427d0224cfccad47fdf0  kernel/classes/workflowtypes/event/ezfinishuserregister/ezfinishuserregistertype.php
@@ -5794,7 +5794,7 @@ aa89fd43a6579c8bfaf060210e8e0493  kernel/private/classes/views/url/edit.php
 675b6dec132dda2f5ecaa1ddbfda7b9e  kernel/private/classes/views/user/activate.php
 a86c32c292a6686cc1a40f0d8dac6df8  kernel/private/classes/views/user/edit.php
 1c860c0fb53dfd7611744af7d6b340d2  kernel/private/classes/views/user/forgotpassword.php
-d25e29698eff053d70b38eb81c3424e0  kernel/private/classes/views/user/hygiene.php
+3dec4ca77f9bcfe183c7c17d981c7fb5  kernel/private/classes/views/user/hygiene.php
 8f26834de574e7fc29e03ffb5df66d2d  kernel/private/classes/views/user/login.php
 1d5df15c797dddeb7a51a35cc350538b  kernel/private/classes/views/user/logout.php
 b2b3220d7fc35dbeab4b3cec4e5cda74  kernel/private/classes/views/user/megamenu.php
@@ -7056,14 +7056,14 @@ dd5f5f3cf2348a6cc17bd0ee76983225  share/translations/dut-NL/translation.ts
 284321a9de29bf9268c27abb13f56f2c  share/translations/ell-GR/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-AU/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-NZ/translation.ts
-66d620a3bcd594ac2468bd713e11c3ca  share/translations/eng-US/translation.ts
+2fbcad1292c4d5ce3ed162aecf028572  share/translations/eng-US/translation.ts
 5f0920d5b4e8bbaff2a4a6d5b3995c90  share/translations/esl-ES/translation.ts
 27846e3f6408cd74f58cef8adcbab573  share/translations/esl-MX/translation.ts
 4b104d4d337601b4bc6ae0482e6478ea  share/translations/fin-FI/translation.ts
 edfd3efb7eca1e2bd6d6d7d08bd78a77  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-c764af771d28f2932cd0783bb0905be3  share/translations/ger-DE/translation.ts
+4c116bc66efd19f9d8cf22b00dd25381  share/translations/ger-DE/translation.ts
 75d657fed5de11db9e059cdcff2046a8  share/translations/ita-IT/translation.ts
 a45e2d26b1c24ac4cb6ae1d7197e5b0e  share/translations/jpn-JP/translation.ts
 d1dc34034ddce2d64c4f8df7fcc41c85  share/translations/nno-NO/translation.ts
@@ -7800,7 +7800,7 @@ b960f0cb6775954a66e51c42bd80c882  tests/tests/kernel/classes/urlaliasml_test.php
 b6f45ce384a24cccf17ed74d9da7c988  tests/tests/kernel/classes/user/expPasswordPolicyTest.php
 972ceff89325d374430b9f9d976d4f69  tests/tests/kernel/classes/user/expPasswordSessionStampTest.php
 0cf0917e21fbd4ebf5783aff05d50b0a  tests/tests/kernel/classes/user/expUserAccountOverviewTest.php
-564aa411191ec5c02efb55289d18e4b4  tests/tests/kernel/classes/user/expUserHygieneTest.php
+f4e036f11013b412fc18665c3c224bca  tests/tests/kernel/classes/user/expUserHygieneTest.php
 ead0c972fc0471e6313c129e7a4fb4ee  tests/tests/kernel/classes/velocitylayout/expVelocityConfigLayoutTest.php
 84ad8f4e328c5f376b3003c95eeb8b12  tests/tests/kernel/classes/velocitylayout/expVelocityConfigTest.php
 0ac61d5e64e5552a1cf34e2f052523b3  tests/tests/kernel/classes/workflowevents/eZWorkflowEventTypesTest.php
