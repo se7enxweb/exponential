@@ -2254,8 +2254,10 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
 #leftmenu details.a4-navgroup > .leftmenu-items { margin: 0; padding: 0; list-style: none; }
 /* the lead links (LeadLinks[], the Setup overview) stand before the groups, as plain rows of the same look */
 #leftmenu .a4-navlead > .leftmenu-items { margin: 0 0 var(--a4-space-2); padding: 0; list-style: none; }
-#leftmenu :is(details.a4-navgroup, .a4-navlead) > .leftmenu-items li { margin: 0; }
-#leftmenu :is(details.a4-navgroup, .a4-navlead) > .leftmenu-items li > div > :is(a, span) {
+/* the trail links (TrailLinks[]) stand after the groups, as the lead links before them */
+#leftmenu .a4-navtrail > .leftmenu-items { margin: var(--a4-space-2) 0 0; padding: 0; list-style: none; }
+#leftmenu :is(details.a4-navgroup, .a4-navlead, .a4-navtrail) > .leftmenu-items li { margin: 0; }
+#leftmenu :is(details.a4-navgroup, .a4-navlead, .a4-navtrail) > .leftmenu-items li > div > :is(a, span) {
   display: block;
   min-height: 24px;
   padding: var(--a4-space-1) var(--a4-space-2);

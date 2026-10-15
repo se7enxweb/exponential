@@ -21,6 +21,12 @@
    no group (an extension's, say) follow in a last group "More"; a link named in two groups shows in the first. Without
    Groups[], or with Groups[] reset to no values, the menu is one list, as before. Access and the order of links inside a group are those of Links[].
    LeadLinks[] (optional, menu.ini) names links shown before the groups, in no group (the Setup menu's overview).
+   TrailLinks[] (optional, menu.ini) names links drawn after all other links and groups, in the order TrailLinks[]
+   names them, also after the links extensions append (the Dashboard menu's Change password and Edit profile). It
+   works with and without Groups[]: in a grouped menu they stand after the groups and "More", in no group; in one list
+   they are its last items. Only the menu's own Links[] keys count, a link of a GroupSections[] section never; a key
+   in LeadLinks[] and TrailLinks[] is a trail link. Access is checked as for every link. In the tiles they are the
+   last tiles, a group without title after the others in a grouped menu.
    GroupTabs[<group>]=<tab> (optional): the group stands for a top tab and is drawn only while that tab is not in the
    top menu (left out of [TopAdminMenu] Tabs[], named in HiddenTabs[], or named in SetupTabs[] for a user who may
    open setup/menu); while the tab is shown, the group and the
@@ -272,6 +278,32 @@
         {undef $kept_items}
     {/if}
 
+    {* TrailLinks[]: the menu's own links named there move to the end, in that order; the rest keep theirs *}
+    {def $trail_links = array()
+         $trail_items = array()
+         $trail_keys = array()}
+    {if ezini_hasvariable( $ini_section, 'TrailLinks', 'menu.ini' )}
+        {set $trail_links = ezini( $ini_section, 'TrailLinks', 'menu.ini' )}
+    {/if}
+    {if and( $trail_links|count, $items|count )}
+        {def $kept_items = array()}
+        {foreach $trail_links as $trail_key}
+            {foreach $items as $item}
+                {if and( $item.group|not, eq( $item.key, $trail_key ), $trail_keys|contains( $item.key )|not )}
+                    {set $trail_items = $trail_items|append( $item )
+                         $trail_keys = $trail_keys|append( $item.key )}
+                {/if}
+            {/foreach}
+        {/foreach}
+        {foreach $items as $item}
+            {if or( $item.group, $trail_keys|contains( $item.key )|not )}
+                {set $kept_items = $kept_items|append( $item )}
+            {/if}
+        {/foreach}
+        {set $items = $kept_items|merge( $trail_items )}
+        {undef $kept_items}
+    {/if}
+
     {if $items|count}
         {def $menu_title_id = concat( 'leftmenu-title-', $ini_section|explode( '_' )|implode( '-' ) )
              $groups = array()
@@ -280,20 +312,27 @@
              $group_open = false()
              $group_id = ''
              $group_links = array()
-             $lead_links = cond( ezini_hasvariable( $ini_section, 'LeadLinks', 'menu.ini' ), ezini( $ini_section, 'LeadLinks', 'menu.ini' ), array() )
+             $lead_links = array()
              $lead_items = array()}
+        {* not cond( ..., array() ): an empty array literal there gives no value, and a menu without LeadLinks[]
+           (its tiles) then matched every link as a lead link *}
+        {if ezini_hasvariable( $ini_section, 'LeadLinks', 'menu.ini' )}
+            {set $lead_links = ezini( $ini_section, 'LeadLinks', 'menu.ini' )}
+        {/if}
 
         {* An empty Groups[] (reset in an override) means one plain list, as no Groups[] does *}
         {if $group_list|count}
             {def $group_names = cond( ezini_hasvariable( $ini_section, 'GroupNames', 'menu.ini' ), ezini( $ini_section, 'GroupNames', 'menu.ini' ), hash() )}
             {* The lead links (LeadLinks[], the menu's overview) come before the groups and belong to none *}
             {foreach $items as $item}
-                {if $lead_links|contains( $item.key )}
+                {if and( $lead_links|contains( $item.key ), $trail_keys|contains( $item.key )|not )}
                     {set $lead_items = $lead_items|append( $item )
                          $grouped_keys = $grouped_keys|append( $item.key )}
                 {/if}
             {/foreach}
             {* The groups in their order, each with the links it names; then "More" for the rest *}
+            {* The trail links (TrailLinks[]) come after the groups and "More" and belong to none *}
+            {set $grouped_keys = $grouped_keys|merge( $trail_keys )}
             {foreach $group_list as $group}
                 {set $group_items = array()
                      $group_links = cond( ezini_hasvariable( $ini_section, concat( 'GroupLinks_', $group ), 'menu.ini' ), ezini( $ini_section, concat( 'GroupLinks_', $group ), 'menu.ini' ), array() )}
@@ -335,6 +374,9 @@
                 {if $group_items|count}
                     {set $groups = array( hash( 'id', 'all', 'name', '', 'translated', true(), 'items', $group_items ) )}
                 {/if}
+            {elseif $trail_items|count}
+                {* grouped: the trail links are the last tiles, a group without title *}
+                {set $groups = $groups|append( hash( 'id', 'trail', 'name', '', 'translated', true(), 'items', $trail_items ) )}
             {/if}
             {* each item carries the icon, description (with the context it is translated in) and figure of its
                section's LinkIcons[], LinkDescriptions[] and LinkFigureTemplates[], read above *}
@@ -363,6 +405,9 @@
                     {include uri='design:parts/ini_menu_items.tpl' items=$group.items current_uri_string=$current_uri_string}
                 </details>
             {/foreach}
+            {if $trail_items|count}
+                <div class="a4-navtrail">{include uri='design:parts/ini_menu_items.tpl' items=$trail_items current_uri_string=$current_uri_string}</div>
+            {/if}
         {else}
             {include uri='design:parts/ini_menu_items.tpl' items=$items current_uri_string=$current_uri_string labelledby=cond( $menu_name, $menu_title_id, '' )}
         {/if}
@@ -371,6 +416,7 @@
         {/if}
         {undef $menu_title_id $groups $grouped_keys $group_items $group_open $group_id $group_links $lead_links $lead_items}
     {/if}
+    {undef $trail_links $trail_items $trail_keys}
     {undef $ini_menu_url_list $name_list $menu_name $check $has_access $item_name $disabled $enabled_hash $enabled_defaults $items $check_view $hide_no_access
            $group_list $menu_sections $tab_links $added_urls $section $section_group $section_context $section_hidden
            $section_icons $section_texts $section_figures $item_key}

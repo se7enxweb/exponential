@@ -515,7 +515,8 @@
       "tests/tests/kernel/content/eZAdminFullViewCopyButtonTest.php"
     ],
     "design/admin/templates/parts/ini_menu.tpl": [
-      "tests/tests/kernel/private/expAdminViewsDebugCleanTest.php"
+      "tests/tests/kernel/private/expAdminViewsDebugCleanTest.php",
+      "tests/tests/design/AdminLeftMenuGroupsTest.php"
     ],
     "design/admin/templates/setup/sitedata.tpl": [
       "tests/tests/kernel/content/eZContentFunctionCollectionSiteDataTest.php"

@@ -197,7 +197,10 @@ in no group).
   dark, forced colors.
 - **Left menu.** "Overview" is the first entry of the Setup menu, before the groups: menu.ini `LeadLinks[]` names
   links that stand before the groups and in none of them (`.a4-navlead`). It is marked as the current page on the
-  overview, which leaves it out of its tiles.
+  overview, which leaves it out of its tiles. `TrailLinks[]` is its counterpart at the end: the links it names are
+  drawn after all other links, in its order, also after the links extensions append; in a grouped menu after the
+  groups and "More", in none of them (`.a4-navtrail`), in a plain list as its last items, in the tiles as the last
+  tiles. The Dashboard menu ends with Change password and Edit profile this way.
 - **Access.** The view `setup/menu` opens with any one of the setup module's functions (`setup`, `administrate`,
   `managecache`, `managecronjobs`, `preload`, `system_info`), so a role that reached the tab's former page
   (`setup/cache`) keeps the tab.
@@ -495,6 +498,7 @@ tree's roles, states, Tab stop and keys.
 | `settings/menu.ini` | `Topmenu_<tab>` | `Name`, `Tooltip`, `TranslationContext` | the default tab names, context `design/admin/pagelayout` | siteaccess |
 | `settings/menu.ini` | `Leftmenu_<menu>` | `Groups[]`, `GroupNames[<group>]`, `GroupLinks_<group>[]` | the nine groups of `Leftmenu_setup` (Design and Audit for moved tabs, AI and Updates for extensions' links) | siteaccess |
 | `settings/menu.ini` | `Leftmenu_<menu>` | `LeadLinks[]` | `overview` in `Leftmenu_setup` | siteaccess |
+| `settings/menu.ini` | `Leftmenu_<menu>` | `TrailLinks[]` | `change_password`, `edit_profile` in `Leftmenu_my` | siteaccess |
 | `settings/menu.ini` | `Leftmenu_setup` | `GroupTabs[<group>]`, `GroupSections[<group>]` | `design` and `audit` (see [Moving a tab into Setup](#moving-a-tab-into-setup)) | siteaccess |
 | `settings/menu.ini` | `Leftmenu_<menu>` | `LinkIcons[<link>]`, `LinkDescriptions[<link>]`, `LinkFigureTemplates[<link>]` | the core Setup links | siteaccess |
 | `settings/design.ini` | `AdminDesignSettings` | `IconList[]` | every `.a4-bi-*` icon of `components.css` | siteaccess |
@@ -516,7 +520,8 @@ Community". A template can also set `$show_community_links`.
   translation context they are looked up in.
 - `Groups[]`, `GroupNames[<group>]` and `GroupLinks_<group>[]` group a long left menu (see "Left menu" above).
 - `LeadLinks[]` names links of a grouped left menu that stand before the groups and in none of them (the Setup
-  overview); `URL[default]` of `[Topmenu_setup]` is the page the Setup tab opens (see [Setup overview](#setup-overview)).
+  overview); `TrailLinks[]` names links drawn after all others, also after the links extensions append and after the
+  groups (the Dashboard menu's Change password and Edit profile), in every design; `URL[default]` of `[Topmenu_setup]` is the page the Setup tab opens (see [Setup overview](#setup-overview)).
 - `PolicyList_<link>[]` names a node id that must be readable, a policy function, or `<module>/*` for the modules that
   have no policy functions (visual, class, role, workflow, trigger, url, search, settings, collaboration);
   `tests/tests/design/AdminMenuPolicyListTest.php` fails for a function a module does not have. The Design tab opens
