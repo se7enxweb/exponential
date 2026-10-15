@@ -284,6 +284,18 @@ class Action extends \Exponential\Runnable\ModuleView
 
                     $Result = array();
                     $Result['content'] = $tpl->fetch( 'design:content/create_languages.tpl' );
+                    // a path, so the page has a title ("Language selection"), and the tab of the place it is created in
+                    $Result['path'] = array( array( 'text' => \ezpI18n::tr( 'kernel/content', 'Content' ),
+                                                    'url' => false ),
+                                             array( 'text' => \ezpI18n::tr( 'design/admin/content/create_languages', 'Language selection' ),
+                                                    'url' => false ) );
+                    $parentNode = \eZContentObjectTreeNode::fetch( (int)$http->postVariable( 'NodeID' ) );
+                    $section = $parentNode instanceof \eZContentObjectTreeNode ? \eZSection::fetch( $parentNode->attribute( 'object' )->attribute( 'section_id' ) ) : null;
+                    if ( $section )
+                    {
+                        $Result['navigation_part'] = $section->attribute( 'navigation_part_identifier' );
+                        $Result['section_id'] = $section->attribute( 'id' );
+                    }
                     return $this->viewResult( isset( $Result ) ? $Result : null,  $Result );
                 }
             }

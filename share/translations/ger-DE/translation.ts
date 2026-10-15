@@ -3175,7 +3175,7 @@
     <name>design/admin/content/create_languages</name>
     <message>
         <source>Language selection</source>
-        <translation>Sprachen Auswahl</translation>
+        <translation>Sprachauswahl</translation>
     </message>
     <message>
         <source>You do not have permissions to create an object of the requested class in any language.</source>
