@@ -278,9 +278,15 @@ the INI and template caches (`php bin/php/ezcache.php --clear-tag=ini` and `--cl
 are compiled into the templates. Restating `Tabs[]` (a line `Tabs[]` without value, then the tabs to keep) works as
 well for the core tabs; an extension's tab is left out only with `HiddenTabs[]`. Every tab stays by default.
 
+- **Per role:** `[TopAdminMenu] SetupTabs[]` names tabs that leave the top menu only for a user who may open the
+  Setup overview (`setup/menu`, checked as the request is). That user finds the tab's group under Setup; a user who
+  may not open the overview, such as a role that holds only the tab's own policy, keeps the tab with its own left
+  menu, and its pages keep marking it. The top menu operator, the Setup menu, `parts/a4_navigation_part.tpl` and the
+  logo ask the same question. The header is cached per set of roles (`$user_hash`), which decides the answer; after
+  a change of a role's policies clear the template cache.
 - **Design and Audit** have a group of the Setup menu and the overview, named by `[Leftmenu_setup] GroupTabs[]`
   (`GroupTabs[design]=design`, `GroupTabs[audit]=audit`). Such a group is drawn only while its tab is not in the top
-  menu (left out of `Tabs[]` or named in `HiddenTabs[]`); while the tab is there, the group and the links it names are
+  menu (left out of `Tabs[]`, named in `HiddenTabs[]`, or in `SetupTabs[]` for a user who may open `setup/menu`); while the tab is there, the group and the links it names are
   not drawn at all, so nothing shows twice.
 - **One source.** `GroupSections[design]=Leftmenu_design` and `GroupSections[audit]=Leftmenu_audit` add the links of
   the tab's own left menu to the group, after the group's own `GroupLinks_<group>[]`: the same links, names
@@ -451,6 +457,7 @@ tree's roles, states, Tab stop and keys.
 | `settings/menu.ini` | `MenuAccessSettings` | `CheckViewAccess` | `enabled` | siteaccess |
 | `settings/menu.ini` | `MenuAccessSettings` | `NoAccessLinks` | `hidden` | siteaccess |
 | `settings/menu.ini` | `TopAdminMenu` | `HiddenTabs[]` | empty | siteaccess |
+| `settings/menu.ini` | `TopAdminMenu` | `SetupTabs[]` | empty (see [Moving a tab into Setup](#moving-a-tab-into-setup)) | siteaccess |
 | `settings/menu.ini` | `Topmenu_<tab>` | `Name`, `Tooltip`, `TranslationContext` | the default tab names, context `design/admin/pagelayout` | siteaccess |
 | `settings/menu.ini` | `Leftmenu_<menu>` | `Groups[]`, `GroupNames[<group>]`, `GroupLinks_<group>[]` | the five groups of `Leftmenu_setup` | siteaccess |
 | `settings/menu.ini` | `Leftmenu_<menu>` | `LeadLinks[]` | `overview` in `Leftmenu_setup` | siteaccess |

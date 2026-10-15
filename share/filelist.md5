@@ -1113,16 +1113,16 @@ cb128a4645e891cd796919aad3ed36d1  design/admin4/templates/page_header.tpl
 169f988a44a2a3bfa2f9dfc53663645c  design/admin4/templates/page_login_copyright.tpl
 1a7132e097c854ce731d22d75ca6db9a  design/admin4/templates/page_mainarea.tpl
 d4344507a798bfbb1af376ed22458d6f  design/admin4/templates/page_search.tpl
-28da7227bfdd25bb296e31124042dd75  design/admin4/templates/page_topmenu.tpl
+ac98ad50796ac08bf43285d5ad25c08c  design/admin4/templates/page_topmenu.tpl
 8aac725b06b7358a617c2fd0ff29ae91  design/admin4/templates/page_topmenuitem.tpl
 f0b52f21d5e9f1e7999667614bf82400  design/admin4/templates/page_toppath.tpl
 b4ee9e3d76d109ea99e37d999b681712  design/admin4/templates/pagelayout.tpl
-7d263c7a3931d12b8e368cdc0493c871  design/admin4/templates/parts/a4_navigation_part.tpl
+f3e3cfde385fe96ecd6534c0437066a9  design/admin4/templates/parts/a4_navigation_part.tpl
 5dd0aff6d6addc7a321aa5e7a3e92b04  design/admin4/templates/parts/a4_preference_attributes.tpl
 2891f454853f3b2f2cac2a94173e257a  design/admin4/templates/parts/audit/menu.tpl
 e6fe56c836e1e8315b4d7aa9e9fb4b74  design/admin4/templates/parts/audit_timeline.tpl
 b6f84f3260ba7ce48bcf3d4aa5231b95  design/admin4/templates/parts/content/menu.tpl
-d27ab3987b02b91da5cae15926318cec  design/admin4/templates/parts/ini_menu.tpl
+696254beb5b391f2e18c580f070ecdfe  design/admin4/templates/parts/ini_menu.tpl
 3dff8ecf3c880bf2261cc89a9b39d8bd  design/admin4/templates/parts/ini_menu_items.tpl
 e36329025b09f023b15222452941ff02  design/admin4/templates/parts/ini_menu_tiles.tpl
 5e0f6d3ec0e18268701f66051d24f387  design/admin4/templates/parts/language_badge.tpl
@@ -1314,7 +1314,7 @@ efbb48a4def955752faa19f849cd8845  design/admin4l/templates/explayouts/block/admi
 d32ea5c9ac61787a910308fd75511a3c  design/admin4l/templates/explayouts/block/admin_debug_area.tpl
 3d33a22a1727180cf850b86c2f191213  design/admin4l/templates/explayouts/block/admin_footer.tpl
 27235f9e274391187a83859e5d0cfc22  design/admin4l/templates/explayouts/block/admin_left_menu.tpl
-8b90415d652fc4d520a6b01e42b31981  design/admin4l/templates/explayouts/block/admin_logo.tpl
+4d19fd31dc157a166c627d6617766a97  design/admin4l/templates/explayouts/block/admin_logo.tpl
 47ee73eb89e8ba1214a3c8ac084583d8  design/admin4l/templates/explayouts/block/admin_module_result.tpl
 2943be82befe4f6e0009ac2de26fe0b3  design/admin4l/templates/explayouts/block/admin_overlay.tpl
 912e96167becee8137644e1974ebf2d8  design/admin4l/templates/explayouts/block/admin_popup_menu.tpl
@@ -2969,7 +2969,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-64ccb82a1b28be113913202129bc3dc1  doc/changelogs/6.0/6.0.15.md
+eef42a65413e16a6b04345408d21f180  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3297,7 +3297,7 @@ c4809a3b611073bdcad4b38e9ea7dd6d  doc/features/6.0/additional-extension-director
 8ee6875c6693489d567c309177b49b81  doc/features/6.0/admin-list-paging.md
 41099ca247392d7ed963caa4b857e51c  doc/features/6.0/admin3-responsive-admin.md
 98b1eb658a2475fc31af9b9cbfaba709  doc/features/6.0/admin3-sidebar-width-and-font-size.md
-021c814c6c5209f3aeea4b784183297f  doc/features/6.0/admin4-design.md
+a9e165fb90e879c53e2fa365ed05a01a  doc/features/6.0/admin4-design.md
 7d8b3d248d27baa55bbf5f7f22040693  doc/features/6.0/admin4l.md
 cb077d1f37f8e8811c377ede4bc99357  doc/features/6.0/adminneo-database-manager.md
 ae7d698fad5f10287ad37ade2f97d8aa  doc/features/6.0/audit-trail.md
@@ -5215,7 +5215,7 @@ da918f13b83149e6feee8a05e8c5b4be  kernel/common/eztemplateautoload.php
 062acfd4a6ef3e30b0378e9e24d97d77  kernel/common/eztemplatedesignresource.php
 9a8a326aaf46c622ad345e92a192ab41  kernel/common/eztemplatesstatisticsreporter.php
 b13aefe62a3e0030247f06a02f133148  kernel/common/eztocoperator.php
-64682ac067bb26a667eb12e75ea84919  kernel/common/eztopmenuoperator.php
+4e1f25ed5d8a1e1f9aa54625a88a8593  kernel/common/eztopmenuoperator.php
 84fe1fae52b9b8b9f029ff975ce1e09b  kernel/common/eztreemenuoperator.php
 c308876db97436c2d2343e099c62932c  kernel/common/ezurloperator.php
 33112e10449d1ace7abd21ca64f35d8e  kernel/common/ezwordtoimageoperator.php
@@ -6405,7 +6405,7 @@ ba31587f56f91488816b2dcd90470594  settings/layout.ini
 ba0c39f06c1735dda504b831ab1f89ef  settings/ldap.ini
 4a2de424bb5015cf1e0c6ba66ba53ab6  settings/logfile.ini
 f38064dccc9974bbc272bd49a25b4a96  settings/mailpreferences.ini
-d32d836abcb5dafe01b98e19f3955d09  settings/menu.ini
+de1f0ba1dbbe61b014b4318d6c9c3743  settings/menu.ini
 4f061cecd40623be1294a7695c5cd454  settings/mime.ini
 79f9e8a2d7e832b4a243fcc9348ef492  settings/module.ini
 1b0c7c323c1ab385b32320c172cb4032  settings/notification.ini
@@ -7097,7 +7097,7 @@ a33e9d573eb8e846797e949212bf192e  tests/tests/design/AdminNoticesTest.php
 3ae246adfa4802ce5ad29a65861f2827  tests/tests/design/AdminScriptsTest.php
 fba3ae0ecf105bfaa378adaaf45cb2f7  tests/tests/design/AdminSearchTest.php
 2267a66a813a4949572649ef13219314  tests/tests/design/AdminSelfContainedTest.php
-7233cfc511e50ab47f9d5ea8a34b1eb0  tests/tests/design/AdminSetupOverviewTest.php
+422a35d49a1edca2fad5bcd4dfe456fa  tests/tests/design/AdminSetupOverviewTest.php
 93c3fcaecb5ead1aa5a10e5a8fe24d27  tests/tests/design/AdminStylingRulesTest.php
 850f08505510556f8649d66b26af8a93  tests/tests/design/AdminThemeSwitchTest.php
 d3aa163841a3b7ef9a8ce4048f7b1980  tests/tests/design/AdminTimelineTest.php
@@ -7712,6 +7712,7 @@ b2e46951bdb7165f0a97de3990a4e4e4  tests/tests/kernel/common/eZKernelCommonOperat
 f6e5fa7a7395cc92c0e2811f60b85a5b  tests/tests/kernel/common/eZTemplateRawURLEncodeOperatorTest.php
 ff9dd9731aff62a1a715b28782332091  tests/tests/kernel/common/eZTemplatesStatisticsReporterEditUrlTest.php
 d44f7d91cfcfce7f540940d68cc67a08  tests/tests/kernel/common/eZTopMenuOperatorMissingTabGroupTest.php
+8b30e928ef30214515342d68df84a9ee  tests/tests/kernel/common/eZTopMenuOperatorSetupTabsTest.php
 2750fff669b9a51f2ad1a9cf046ccd88  tests/tests/kernel/common/ezautolinkoperator_test.php
 0272b9db6554e00826c7f5085696ac37  tests/tests/kernel/common/ezurloperator_test.php
 3d6dcc36e9e26204ace452a523e46979  tests/tests/kernel/content/eZAdminFullViewCopyButtonTest.php

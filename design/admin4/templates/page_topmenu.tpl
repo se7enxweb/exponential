@@ -1,11 +1,14 @@
 {* The logo's name carries the version for signed-in users only: an anonymous page of the admin (the 401 page,
    user/register, user/forgotpassword) draws this frame too and should not tell anyone the release. *}
 {def $a4_brand_name = $current_user.is_logged_in|choose( 'Exponential', concat( 'Exponential ', fetch( 'setup', 'version' ) ) )}
-{* Without the Dashboard tab (left out of menu.ini [TopAdminMenu] Tabs[] or named in HiddenTabs[]) the logo leads to
-   the dashboard, for a user who may open it, instead of the content root: the account's pages stay one click away. *}
+{* Without the Dashboard tab (left out of menu.ini [TopAdminMenu] Tabs[], in HiddenTabs[], or in SetupTabs[] for a user
+   who may open setup/menu) the logo leads to the dashboard, for a user who may open it, instead of the content root:
+   the account's pages stay one click away. *}
 {def $a4_brand_url = concat( 'content/view/full/', ezini( 'NodeSettings', 'RootNode', 'content.ini' ) )}
 {if and( or( ezini( 'TopAdminMenu', 'Tabs', 'menu.ini' )|contains( 'dashboard' )|not,
-             and( ezini_hasvariable( 'TopAdminMenu', 'HiddenTabs', 'menu.ini' ), ezini( 'TopAdminMenu', 'HiddenTabs', 'menu.ini' )|contains( 'dashboard' ) ) ),
+             and( ezini_hasvariable( 'TopAdminMenu', 'HiddenTabs', 'menu.ini' ), ezini( 'TopAdminMenu', 'HiddenTabs', 'menu.ini' )|contains( 'dashboard' ) ),
+             and( ezini_hasvariable( 'TopAdminMenu', 'SetupTabs', 'menu.ini' ), ezini( 'TopAdminMenu', 'SetupTabs', 'menu.ini' )|contains( 'dashboard' ),
+                  fetch( 'user', 'can_open', hash( 'uri', 'setup/menu' ) ) ) ),
          ezini_hasvariable( 'Topmenu_dashboard', 'URL', 'menu.ini' ),
          fetch( 'user', 'has_access_to', hash( 'module', 'content', 'function', 'dashboard' ) ) )}
     {set $a4_brand_url = first_set( ezini( 'Topmenu_dashboard', 'URL', 'menu.ini' )['default'], $a4_brand_url )}

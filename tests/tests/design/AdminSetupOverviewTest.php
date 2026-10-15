@@ -389,6 +389,7 @@ class AdminSetupOverviewTest extends PHPUnit\Framework\TestCase
         $setup = self::iniSection( 'Leftmenu_setup' );
         $top = self::iniSection( 'TopAdminMenu' );
         $this->assertSame( array(), $top['HiddenTabs'] ?? array(), 'every tab stays in the top menu by default' );
+        $this->assertSame( array(), $top['SetupTabs'] ?? array(), 'no tab moves into Setup by default' );
         $this->assertSame( array( 'design' => 'design', 'audit' => 'audit' ), $setup['GroupTabs'] ?? null );
         $this->assertSame( array( 'design' => 'Leftmenu_design', 'audit' => 'Leftmenu_audit' ), $setup['GroupSections'] ?? null );
         $setupMenu = self::read( self::SETUP_MENU );

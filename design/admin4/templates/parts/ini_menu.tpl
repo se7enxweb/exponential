@@ -22,7 +22,8 @@
    Groups[], or with Groups[] reset to no values, the menu is one list, as before. Access and the order of links inside a group are those of Links[].
    LeadLinks[] (optional, menu.ini) names links shown before the groups, in no group (the Setup menu's overview).
    GroupTabs[<group>]=<tab> (optional): the group stands for a top tab and is drawn only while that tab is not in the
-   top menu (left out of [TopAdminMenu] Tabs[] or named in HiddenTabs[]); while the tab is shown, the group and the
+   top menu (left out of [TopAdminMenu] Tabs[], named in HiddenTabs[], or named in SetupTabs[] for a user who may
+   open setup/menu); while the tab is shown, the group and the
    links of its GroupLinks_<group>[] are not drawn at all. GroupSections[<group>]=<section> (optional) adds the links
    of another menu.ini section to the group, after its own: that section's Links[], LinkNames[] (translated in its
    context, design/admin/parts/<name>/menu), PolicyList[], PolicyList_<key>[], Enabled_<key>[] and tile settings; the
@@ -128,8 +129,13 @@
              $group_sections = cond( ezini_hasvariable( $ini_section, 'GroupSections', 'menu.ini' ), ezini( $ini_section, 'GroupSections', 'menu.ini' ), hash() )
              $top_tabs = cond( ezini_hasvariable( 'TopAdminMenu', 'Tabs', 'menu.ini' ), ezini( 'TopAdminMenu', 'Tabs', 'menu.ini' ), array() )
              $hidden_tabs = cond( ezini_hasvariable( 'TopAdminMenu', 'HiddenTabs', 'menu.ini' ), ezini( 'TopAdminMenu', 'HiddenTabs', 'menu.ini' ), array() )
+             $setup_tabs = cond( ezini_hasvariable( 'TopAdminMenu', 'SetupTabs', 'menu.ini' ), ezini( 'TopAdminMenu', 'SetupTabs', 'menu.ini' ), array() )
              $group_tab = ''
              $group_section = ''}
+        {* SetupTabs[] leave the top menu for a user who may open the Setup overview, as the topmenu operator does *}
+        {if and( $setup_tabs|count, fetch( 'user', 'can_open', hash( 'uri', 'setup/menu' ) ) )}
+            {set $hidden_tabs = $hidden_tabs|merge( $setup_tabs )}
+        {/if}
         {foreach ezini( $ini_section, 'Groups', 'menu.ini' ) as $group}
             {set $group_tab = first_set( $group_tabs[ $group ], '' )
                  $group_section = first_set( $group_sections[ $group ], '' )}
@@ -145,7 +151,7 @@
                 {set $menu_sections = $menu_sections|append( hash( 'section', $group_section, 'group', $group ) )}
             {/if}
         {/foreach}
-        {undef $group_tabs $group_sections $top_tabs $hidden_tabs $group_tab $group_section}
+        {undef $group_tabs $group_sections $top_tabs $hidden_tabs $setup_tabs $group_tab $group_section}
     {/if}
 
     {if $has_access}

@@ -101,6 +101,11 @@ class eZTopMenuOperator
         // settings, read after the siteaccess's, append again.
         if ( $ini->hasVariable( 'TopAdminMenu', 'HiddenTabs' ) )
             $tabIDs = array_values( array_diff( $tabIDs, (array)$ini->variable( 'TopAdminMenu', 'HiddenTabs' ) ) );
+        // SetupTabs[]: tabs whose functions a user who may open the Setup overview finds there (a group of
+        // [Leftmenu_setup] GroupTabs[]); such a user has no tab for them, every other user keeps it
+        if ( $ini->hasVariable( 'TopAdminMenu', 'SetupTabs' ) && array_intersect( $tabIDs, (array)$ini->variable( 'TopAdminMenu', 'SetupTabs' ) )
+             && $this->canOpenSetupOverview() )
+            $tabIDs = array_values( array_diff( $tabIDs, (array)$ini->variable( 'TopAdminMenu', 'SetupTabs' ) ) );
         foreach ( $tabIDs as $tabID )
         {
             // A tab listed without its [Topmenu_<tab>] group (a siteaccess naming the tab of an extension that is
@@ -223,10 +228,25 @@ class eZTopMenuOperator
             $menu[] = $menuItem;
 
         }
-        $menu[0]['position'] = 'first';
-        $menu[count($menu) - 1]['position'] = 'last';
+        // a user without a tab (every tab hidden or moved into Setup) gets an empty menu, not a phantom entry
+        if ( count( $menu ) )
+        {
+            $menu[0]['position'] = 'first';
+            $menu[count($menu) - 1]['position'] = 'last';
+        }
 
         $operatorValue = $menu;
+    }
+
+    /**
+     * Whether the current user may open the Setup overview (setup/menu), checked as the kernel checks the request.
+     * menu.ini [TopAdminMenu] SetupTabs[] are left out for such a user only.
+     *
+     * @return bool
+     */
+    protected function canOpenSetupOverview()
+    {
+        return class_exists( 'expViewAccess' ) && expViewAccess::canOpen( 'setup/menu' );
     }
 
     /**
