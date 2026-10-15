@@ -71,7 +71,7 @@ What it is made of:
 - **Channels and files.** Five channels: `content`, `access`, `system`, `commerce` (with `data`), and `read` for
   sampled reads, which is off by default. Each channel writes one file per UTC day,
   `var/<site>/log/audit/<channel>-<YYYY-MM-DD>.jsonl`, and starts a new part past `MaxFileSize`.
-- **143 event names** in a taxonomy (`domain.subject.action[.detail]`), switchable at any rank (`content.*`,
+- **145 event names** in a taxonomy (`domain.subject.action[.detail]`), switchable at any rank (`content.*`,
   `content.node.remove.*`). Extensions add their own branches. See the [event reference](#8-event-reference).
 - **A hash chain per channel**, daily signed checkpoints and signed archive manifests (HMAC-SHA-256 with a key that is
   generated on first use and never leaves `settings/override`).
@@ -2107,7 +2107,7 @@ generator. Columns: Sev. = severity; Default = shipped (`always` cannot be switc
 only with `Reads=enabled`).
 
 <!-- event-reference:start (generated from expAuditTaxonomy::registry() and the settings in effect on 2026-10-03; do not edit by hand) -->
-143 names (44 content, 37 access, 41 system, 12 commerce, 9 data); shipped default: 94 on, 23 off, 23 always, 3 sampled.
+145 names (44 content, 37 access, 43 system, 12 commerce, 9 data); shipped default: 96 on, 23 off, 23 always, 3 sampled.
 
 | Event | Fires when | Records (before → after; never) | Raised in | Verb | Sev. | Default | On here | Ch. | Written |
 |---|---|---|---|---|---|---|---|---|---|
@@ -2198,6 +2198,8 @@ only with `Reads=enabled`).
 | `system.cache.clear` | caches are cleared on request | – → ids, ms | `ezcache.php:auditCleared` (also for `bin/php/ezcache.php`, one record per run, through `eZCacheHelper::auditCleared()`) | clear | info | on | yes | system | buffered |
 | `system.cronjob.run` | a cronjob part runs (parent: the runcronjobs invocation) | – → ms, result | `ezruncronjobs.php:auditPart` | run | info | on | yes | system | buffered |
 | `system.cronjob.fail` | a part throws or exits non-zero | – → error | `ezruncronjobs.php:auditPart` | run | warning | on | yes | system | buffered |
+| `system.cronjob.pause` | a cronjob part, or every part ("all"), is paused at Setup > Cronjobs | – → paused | `expcronjobpause.php:audit` | pause | notice | on | yes | system | buffered |
+| `system.cronjob.resume` | a paused part, or every part, is resumed | – → paused | `expcronjobpause.php:audit` | resume | notice | on | yes | system | buffered |
 | `system.command.run` | a command runs | – → exit code, ms | `ezscript.php:shutdown` | run | info | on | yes | system | buffered |
 | `system.package.install` | a package is installed | – → name, version, items | `ezpackage.php:install` | install | notice | on | yes | system | buffered |
 | `system.package.uninstall` | a package is uninstalled | name, version → – | `ezpackage.php:uninstall` | uninstall | notice | on | yes | system | buffered |

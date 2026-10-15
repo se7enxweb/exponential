@@ -21318,6 +21318,194 @@ Note: The packages will not be uninstalled.</translation>
 <context>
     <name>design/admin/setup/cronjobs</name>
     <message>
+        <source>Docs</source>
+        <translation>Docs</translation>
+    </message>
+    <message>
+        <source>Documentation of %script (opens in a new window)</source>
+        <translation>Documentation of %script (opens in a new window)</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Kernel</translation>
+    </message>
+    <message>
+        <source>1 script</source>
+        <translation>1 script</translation>
+    </message>
+    <message>
+        <source>Next run: %time</source>
+        <translation>Next run: %time</translation>
+    </message>
+    <message>
+        <source>No cronjob part matches.</source>
+        <translation>No cronjob part matches.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Last run</translation>
+    </message>
+    <message>
+        <source>Site %siteaccess · find a part or script · run every part</source>
+        <translation>Site %siteaccess · find a part or script · run every part</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Part</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Scripts</source>
+        <translation>Scripts</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Actions</translation>
+    </message>
+    <message>
+        <source>suggested</source>
+        <translation>suggested</translation>
+    </message>
+    <message>
+        <source>by hand</source>
+        <translation>by hand</translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation>View</translation>
+    </message>
+    <message>
+        <source>Compact</source>
+        <translation>Compact</translation>
+    </message>
+    <message>
+        <source>Detailed</source>
+        <translation>Detailed</translation>
+    </message>
+    <message>
+        <source>Global</source>
+        <translation>Global</translation>
+    </message>
+    <message>
+        <source>Pausing cronjob parts is switched off (cronjob.ini [PauseSettings] Pause=disabled).</source>
+        <translation>Pausing cronjob parts is switched off (cronjob.ini [PauseSettings] Pause=disabled).</translation>
+    </message>
+    <message>
+        <source>All cronjob parts are paused. Resume them to run one.</source>
+        <translation>All cronjob parts are paused. Resume them to run one.</translation>
+    </message>
+    <message>
+        <source>The &quot;%part&quot; part is paused. Resume it to run it.</source>
+        <translation>The &quot;%part&quot; part is paused. Resume it to run it.</translation>
+    </message>
+    <message>
+        <source>No cronjob part named &quot;%part&quot; can be paused.</source>
+        <translation>No cronjob part named &quot;%part&quot; can be paused.</translation>
+    </message>
+    <message>
+        <source>The pause of &quot;%part&quot; could not be written to %directory.</source>
+        <translation>The pause of &quot;%part&quot; could not be written to %directory.</translation>
+    </message>
+    <message>
+        <source>All cronjob parts are paused. A script that runs now goes on to its end; the scripts after it are left out.</source>
+        <translation>All cronjob parts are paused. A script that runs now goes on to its end; the scripts after it are left out.</translation>
+    </message>
+    <message>
+        <source>All cronjob parts are resumed.</source>
+        <translation>All cronjob parts are resumed.</translation>
+    </message>
+    <message>
+        <source>The &quot;%part&quot; part is paused. A script that runs now goes on to its end; the scripts after it are left out.</source>
+        <translation>The &quot;%part&quot; part is paused. A script that runs now goes on to its end; the scripts after it are left out.</translation>
+    </message>
+    <message>
+        <source>The &quot;%part&quot; part is resumed.</source>
+        <translation>The &quot;%part&quot; part is resumed.</translation>
+    </message>
+    <message>
+        <source>All cronjob parts are paused since %since by %user. Nothing runs, from here or from the crontab, until they are resumed.</source>
+        <translation>All cronjob parts are paused since %since by %user. Nothing runs, from here or from the crontab, until they are resumed.</translation>
+    </message>
+    <message>
+        <source>All cronjob parts are paused since %since. Nothing runs, from here or from the crontab, until they are resumed.</source>
+        <translation>All cronjob parts are paused since %since. Nothing runs, from here or from the crontab, until they are resumed.</translation>
+    </message>
+    <message>
+        <source>Resume all parts</source>
+        <translation>Resume all parts</translation>
+    </message>
+    <message>
+        <source>Pause all parts</source>
+        <translation>Pause all parts</translation>
+    </message>
+    <message>
+        <source>Leave every cronjob part out until resumed, whoever starts it</source>
+        <translation>Leave every cronjob part out until resumed, whoever starts it</translation>
+    </message>
+    <message>
+        <source>Left out by runcronjobs.php until resumed</source>
+        <translation>Left out by runcronjobs.php until resumed</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Paused</translation>
+    </message>
+    <message>
+        <source>Resume the %part part</source>
+        <translation>Resume the %part part</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Resume</translation>
+    </message>
+    <message>
+        <source>Leave the %part part out until resumed, whoever starts it</source>
+        <translation>Leave the %part part out until resumed, whoever starts it</translation>
+    </message>
+    <message>
+        <source>Pause</source>
+        <translation>Pause</translation>
+    </message>
+    <message>
+        <source>Since %since by %user</source>
+        <translation>Since %since by %user</translation>
+    </message>
+    <message>
+        <source>Since %since</source>
+        <translation>Since %since</translation>
+    </message>
+    <message>
+        <source>Pauses</source>
+        <translation>Pauses</translation>
+    </message>
+    <message>
+        <source>Paused and resumed from this page, newest first</source>
+        <translation>Paused and resumed from this page, newest first</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>When</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Action</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>User</translation>
+    </message>
+    <message>
+        <source>Resumed</source>
+        <translation>Resumed</translation>
+    </message>
+    <message>
+        <source>Nothing has been paused from here yet.</source>
+        <translation>Nothing has been paused from here yet.</translation>
+    </message>
+    <message>
         <source>Cronjobs</source>
         <translation>Cronjobs</translation>
     </message>

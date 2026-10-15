@@ -600,6 +600,56 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
 /* One card per cronjob part; the one running now is marked */
 .a4-setup-part-row.is-current { border-color: var(--a4-ok); box-shadow: inset 4px 0 0 var(--a4-ok), var(--a4-shadow-s); }
 .a4-setup-cron .a4-facts dd code { color: var(--a4-muted); }
+
+/* The compact view of the cronjob parts: one table row per part. The row head is the part, not a column heading:
+   it takes the body's type and wraps, against .a4-table th (small, uppercase, bold, no wrap). The row of a part that
+   needs attention is marked at the left edge like its card, a paused one in red, the running one in green. */
+.a4-setup-cron .a4-setup-view { margin-left: auto; display: inline-flex; align-items: center; }
+.a4-setup-cron .a4-setup-compact .a4-badges { margin: 0; }
+.a4-setup-cron .a4-setup-compact .a4-table > tbody > tr > th[scope="row"] {
+  width: 1%; min-width: 8em; max-width: 14em;
+  color: var(--a4-ink); font-size: var(--a4-text-s); font-weight: 500;
+  letter-spacing: normal; text-transform: none; white-space: normal;
+}
+.a4-setup-cron .a4-setup-compact-part { display: block; }
+.a4-setup-cron .a4-setup-compact-sub { display: block; font-size: var(--a4-text-xs); color: var(--a4-muted); }
+.a4-setup-cron .a4-setup-compact .a4-table td, .a4-setup-cron .a4-setup-compact .a4-table th { padding-left: var(--a4-space-2); padding-right: var(--a4-space-2); }
+.a4-setup-cron .a4-setup-compact-scripts { margin-top: 2px; font-size: var(--a4-text-xs); color: var(--a4-muted); }
+.a4-setup-cron .a4-setup-compact-scripts > summary { cursor: pointer; }
+/* The scripts of a part: in the row below it across the table (with javascript), or in its cell (without). The
+   compact table has no zebra stripes, so an opened scripts row does not shift them; rows are separated by lines. */
+.a4-setup-cron .a4-setup-compact .a4-table > tbody > tr > :is(td, th) { background-color: transparent; }
+.a4-setup-cron .a4-setup-compact .a4-table > tbody > tr.a4-setup-part-row:hover > :is(td, th) { background-color: var(--a4-info-bg); }
+.a4-setup-cron .a4-setup-compact .a4-table > tbody > tr.a4-setup-compact-detail > td {
+  background-color: var(--a4-soft); padding-top: var(--a4-space-1); padding-bottom: var(--a4-space-2); font-size: var(--a4-text-xs);
+}
+.a4-setup-cron .a4-setup-compact #cronjob-table.is-scripted .a4-setup-compact-inline { display: none; }
+/* A part's scripts as a small table: where it comes from, its path with the file name, what it does. The list is
+   the grid and each item gives its three cells to it, so the columns line up across the scripts of a part. */
+.a4-setup-cron .a4-setup-compact-detail ul {
+  display: grid; grid-template-columns: max-content fit-content(45%) minmax(0, 1fr); column-gap: var(--a4-space-4); row-gap: var(--a4-space-1);
+  margin: 2px 0 0; padding: 0; list-style: none;
+}
+.a4-setup-cron .a4-setup-compact-detail li { display: contents; }
+.a4-setup-cron .a4-setup-compact-file { overflow-wrap: anywhere; }
+.a4-setup-cron .a4-setup-compact-path { color: var(--a4-muted); font-family: var(--a4-mono); font-size: var(--a4-text-xs); }
+.a4-setup-cron .a4-setup-compact-file code { color: var(--a4-ink); font-size: var(--a4-text-xs); white-space: nowrap; }
+.a4-setup-cron .a4-setup-compact-desc { color: var(--a4-muted); }
+.a4-setup-cron :is(.a4-setup-compact-detail, .a4-setup-compact-inline) li .a4-badge { font-size: var(--a4-text-xs); padding: 0 var(--a4-space-1); }
+/* Without javascript, in the narrow cell: one script below the other. */
+.a4-setup-cron .a4-setup-compact-inline { margin: 2px 0 0; padding: 0; list-style: none; }
+.a4-setup-cron .a4-setup-compact-inline li { margin: var(--a4-space-1) 0; }
+.a4-setup-cron .a4-setup-compact-inline li > span { display: block; }
+.a4-setup-cron .a4-setup-compact-detail li code { color: var(--a4-ink); }
+.a4-setup-cron .a4-setup-compact thead th { white-space: normal; }
+.a4-setup-cron .a4-setup-compact td { white-space: normal; }
+.a4-setup-cron .a4-setup-compact tr.a4-setup-part-row > td:last-child { white-space: nowrap; width: 1%; }
+.a4-setup-cron .a4-setup-compact tr.a4-setup-part-row { border: 0; box-shadow: none; }
+.a4-setup-cron .a4-setup-compact tr.is-attention > th { box-shadow: inset 4px 0 0 var(--a4-warn); }
+.a4-setup-cron .a4-setup-compact tr.is-paused > th { box-shadow: inset 4px 0 0 var(--a4-bad); }
+.a4-setup-cron .a4-setup-compact tr.is-current > th { box-shadow: inset 4px 0 0 var(--a4-ok); }
+.a4-setup-cron .a4-setup-compact td .a4-btn + .a4-btn { margin-left: var(--a4-space-1); }
+.a4-setup-cron .a4-setup-compact td .a4-btn-small { padding: 2px var(--a4-space-2); }
 .a4-setup-cron .a4-setup-cmd-row { margin: var(--a4-space-3) 0 0; }
 .a4-setup-cron .a4-setup-cmd-label { flex: 0 0 auto; }
 .a4-setup-scripts { margin: var(--a4-space-3) 0 0; border-top: 1px solid var(--a4-line); }
@@ -618,6 +668,9 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
 .a4-setup-script-main { flex: 1 1 260px; min-width: 0; }
 .a4-setup-script-name { color: var(--a4-ink); font-weight: 650; overflow-wrap: anywhere; }
 .a4-setup-script-desc { margin: 2px 0 0; }
+/* The link to what a script's documentation says (cronjob.ini [ScriptDocumentation], or @link in its header). */
+.a4-setup-script-doc { margin: 2px 0 0; font-size: var(--a4-text-xs); }
+.a4-setup-cron .a4-setup-doc-link { white-space: nowrap; font-size: var(--a4-text-xs); }
 .a4-setup-script-where { margin: 2px 0 0; color: var(--a4-muted); font-size: var(--a4-text-xs); overflow-wrap: anywhere; }
 .a4-setup-script-where.is-missing { color: var(--a4-bad); font-weight: 650; }
 .a4-setup-script-actions { display: flex; flex-wrap: wrap; gap: var(--a4-space-1); }
@@ -946,6 +999,8 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
   .a4-setup-lines .is-moved,
   .a4-setup-preset[aria-pressed="true"],
   .a4-setup-part-row.is-current,
+  .a4-setup-cron .a4-setup-compact tr.is-current > th,
+  .a4-setup-cron .a4-setup-compact tr.is-paused > th,
   .a4-setup-wz-match.is-current,
   .a4-setup-wz-tables tr.is-selected,
   .a4-page a.a4-setup-survey-tab.is-current,

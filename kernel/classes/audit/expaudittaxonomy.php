@@ -134,6 +134,8 @@ class expAuditTaxonomy
         'system.cache.clear' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'system' ),
         'system.cronjob.run' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'system' ),
         'system.cronjob.fail' => array( 'severity' => 'warning', 'default' => 'on', 'channel' => 'system' ),
+        'system.cronjob.pause' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
+        'system.cronjob.resume' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
         'system.command.run' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'system' ),
         'system.package.install' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
         'system.package.uninstall' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),

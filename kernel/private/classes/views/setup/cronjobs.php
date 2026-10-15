@@ -95,6 +95,17 @@ class Cronjobs extends \Exponential\Runnable\ModuleView
             $actionTaken = true;
         }
 
+        // Pausing is a state, not a job: nothing starts or stops now, the next run of the part is left out.
+        foreach ( array( 'PauseCronjob' => true, 'ResumeCronjob' => false ) as $pauseAction => $pause )
+        {
+            if ( !$module->isCurrentAction( $pauseAction ) )
+                continue;
+            $part = $module->hasActionParameter( 'CronjobPart' ) ? (string)$module->actionParameter( 'CronjobPart' ) : '';
+            $result = self::pausePart( $part, $pause );
+            $feedback[] = array( 'ok' => $result['ok'], 'message' => $result['message'] );
+            $actionTaken = true;
+        }
+
         if ( $module->isCurrentAction( 'ClearCronjobLog' ) )
         {
             $result = \expCronjobRunner::attempt( 'clearLogs' );
@@ -242,6 +253,7 @@ class Cronjobs extends \Exponential\Runnable\ModuleView
                                        ? (int)\expCronjobRunner::nextRun( $schedule, $now ) : 0;
             $parts[$index]['last_run'] = isset( $cronjobLastRuns[$part['name']] ) ? $cronjobLastRuns[$part['name']] : false;
             $parts[$index]['command'] = $splitCommand( \expCronjobRunner::commandLine( $part['name'], $siteAccessMark ) );
+            $parts[$index]['pause'] = \expCronjobPause::state( $part['name'] === \expCronjobRunner::GLOBAL_PART ? '' : $part['name'] );
             $parts[$index]['attention'] = $part['forbidden'] || $part['missing'] > 0
                                         || ( $parts[$index]['last_run'] !== false && $parts[$index]['last_run']['errors'] > 0 );
 
@@ -250,10 +262,17 @@ class Cronjobs extends \Exponential\Runnable\ModuleView
             {
                 $parts[$index]['scripts'][$scriptIndex]['directory'] =
                     $script['path'] === false ? '' : dirname( $script['path'] );
+                // Where a script comes from, for the compact list: the kernel's cronjobs directory, or the extension
+                // whose cronjobs directory it is in.
+                $parts[$index]['scripts'][$scriptIndex]['origin'] =
+                    preg_match( '#(^|/)extension/([^/]+)/#', (string)$script['path'], $originMatch ) ? $originMatch[2]
+                    : ( $script['path'] === false ? '' : 'kernel' );
                 $parts[$index]['scripts'][$scriptIndex]['log'] =
                     \expCronjobRunner::targetLogFile( $part['name'], $script['name'] );
                 $parts[$index]['scripts'][$scriptIndex]['description'] =
                     \expCronjobRunner::scriptDescription( $script['path'] );
+                $parts[$index]['scripts'][$scriptIndex]['documentation'] =
+                    \expCronjobRunner::scriptDocumentation( $script['name'], $script['path'] );
                 $parts[$index]['scripts'][$scriptIndex]['command'] =
                     $splitCommand( \expCronjobRunner::commandLine( $part['name'], $siteAccessMark, $script['name'] ) );
                 $searchText[] = $script['name'];
@@ -289,13 +308,21 @@ class Cronjobs extends \Exponential\Runnable\ModuleView
         // On disk, named by no part, so never run by anything.
         $availableScripts = \expCronjobRunner::availableScripts();
         foreach ( $availableScripts as $spareIndex => $spare )
+        {
             $availableScripts[$spareIndex]['description'] = \expCronjobRunner::scriptDescription( $spare['path'] );
+            $availableScripts[$spareIndex]['documentation'] =
+                \expCronjobRunner::scriptDocumentation( $spare['name'], $spare['path'] );
+        }
         $tpl->setVariable( 'cronjob_available_scripts', $availableScripts );
         // What ran, when, and whether it complained.
         $cronjobHistory = \expCronjobRunner::history( 20 );
         $tpl->setVariable( 'cronjob_history', $cronjobHistory );
         $tpl->setVariable( 'cronjob_last_run', $cronjobHistory ? $cronjobHistory[0] : false );
         $tpl->setVariable( 'cronjob_summary', $summary );
+        // Paused parts, the pause of every part, and who paused and resumed what, newest first.
+        $tpl->setVariable( 'cronjob_pause_enabled', \expCronjobPause::enabled() );
+        $tpl->setVariable( 'cronjob_pause_all', \expCronjobPause::state( \expCronjobPause::ALL ) );
+        $tpl->setVariable( 'cronjob_pause_history', \expCronjobPause::history( 20 ) );
         // Joined here, not in the template. A newline written between two template
         // tags is whitespace between tags, and the engine drops it - which turned the
         // crontab block into one unreadable run-on line.
@@ -370,6 +397,48 @@ class Cronjobs extends \Exponential\Runnable\ModuleView
             array( 'url' => false, 'text' => \ezpI18n::tr( 'kernel/setup', 'Cronjobs' ) ) );
 
         return $this->viewResult( isset( $Result ) ? $Result : null, null );
+    }
+
+    /**
+     * Pauses or resumes a part from the console. Only parts this installation defines, "global" for the scripts of
+     * [CronjobSettings] and "all" are accepted, so nothing else can become a file name.
+     *
+     * @param string $part
+     * @param bool $pause
+     * @return array ok, message
+     */
+    private static function pausePart( $part, $pause )
+    {
+        if ( !\expCronjobPause::enabled() )
+            return array( 'ok' => false, 'message' => \ezpI18n::tr( 'design/admin/setup/cronjobs', 'Pausing cronjob parts is switched off (cronjob.ini [PauseSettings] Pause=disabled).' ) );
+
+        $known = array( \expCronjobPause::ALL );
+        foreach ( \expCronjobRunner::parts() as $candidate )
+            $known[] = $candidate['name'];
+        if ( !in_array( $part, $known, true ) )
+            return array( 'ok' => false, 'message' => \ezpI18n::tr( 'design/admin/setup/cronjobs', 'No cronjob part named "%part" can be paused.', null, array( '%part' => $part ) ) );
+
+        $file = $part === \expCronjobRunner::GLOBAL_PART ? '' : $part;
+        try
+        {
+            $done = $pause ? \expCronjobPause::pause( $file ) : \expCronjobPause::resume( $file );
+        }
+        catch ( \Exception $e )
+        {
+            // An answer rather than an error page, as for the other actions of the console.
+            \eZDebug::writeError( $e->getMessage(), __METHOD__ );
+            $done = false;
+        }
+        if ( !$done )
+            return array( 'ok' => false, 'message' => \ezpI18n::tr( 'design/admin/setup/cronjobs', 'The pause of "%part" could not be written to %directory.', null, array( '%part' => $part, '%directory' => \expCronjobPause::directory() ) ) );
+
+        if ( $part === \expCronjobPause::ALL )
+            $message = $pause ? \ezpI18n::tr( 'design/admin/setup/cronjobs', 'All cronjob parts are paused. A script that runs now goes on to its end; the scripts after it are left out.' )
+                              : \ezpI18n::tr( 'design/admin/setup/cronjobs', 'All cronjob parts are resumed.' );
+        else
+            $message = $pause ? \ezpI18n::tr( 'design/admin/setup/cronjobs', 'The "%part" part is paused. A script that runs now goes on to its end; the scripts after it are left out.', null, array( '%part' => $part ) )
+                              : \ezpI18n::tr( 'design/admin/setup/cronjobs', 'The "%part" part is resumed.', null, array( '%part' => $part ) );
+        return array( 'ok' => true, 'message' => $message );
     }
 }
 

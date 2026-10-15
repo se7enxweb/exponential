@@ -97,6 +97,9 @@ Every kernel command, cronjob part and module view is now a class
 | Removing a subtree that holds every location of an object removes the object. | Nothing. |
 | Removing, copying or moving more than 50 nodes offers a [content job](../../features/6.0/content-jobs.md) first. | Tune `content.ini [ContentJobSettings] SynchronousLimit` (default `50`). |
 | The static cache refresh on publish fetches each page once, in parallel. | See the [static cache generator](../../features/6.0/static-cache-generator.md); tune `staticcache.ini [CacheSettings] FetchConcurrency` (default `8`, not listed in the shipped file). |
+| `runcronjobs.php` leaves out a part paused at **Setup > Cronjobs**, including one that an extension left paused (`<cache>/cronjob_control/cronpart_deactivated_<part>.txt` holding `1`). Added 15 October 2026. | After the update, look at **Setup > Cronjobs** and resume what should run; or set `cronjob.ini [PauseSettings] Pause=disabled`. See [pausing cronjob parts](../../features/6.0/cronjob-pause.md). |
+| A part paused while it runs finishes the script that runs and `runcronjobs.php` leaves out the scripts after it; every run a pause leaves out is written to `<log directory>/cronjob_skipped.log`; pauses and resumes are audited (`system.cronjob.pause`, `system.cronjob.resume`). Added 15 October 2026. | Read `cronjob_skipped.log` after a release to see what a pause held back. On several servers, set `[PauseSettings] Directory` to a shared directory, see [pausing cronjob parts](../../features/6.0/cronjob-pause.md). |
+| **Setup > Cronjobs** lists the parts in a compact table by default; **Detailed** shows the cards. The switch writes the user preference `admin_cronjobs_view` by a POST. Added 15 October 2026. | Choose **Detailed** once to keep the cards. |
 | SQLite transactions queue for the write lock. | See [SQLite transactions](sqlite-transactions.md). |
 
 ## Missing libraries

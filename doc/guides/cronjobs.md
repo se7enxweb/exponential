@@ -262,6 +262,10 @@ the page afterwards only reads the page again; it can never start a job a second
 
 ## 8. The part cards
 
+The list of parts has two views, switched next to its heading: **Compact**, the default, is one table row per part
+with its badges, schedule, next and last run and the **Pause**/**Resume** and **Run** buttons, every part on one page;
+**Detailed** shows the cards this section describes, paged. The choice is kept for your user.
+
 ![A part card with its scripts opened: badges, schedule, next run, last run, shell command and three scripts with their descriptions](images/cronjobs/part-card-scripts-open.png)
 
 Each card shows, from the top:
@@ -271,7 +275,10 @@ Each card shows, from the top:
   otherwise. Then *Activated* (green), *Blocked* (grey, in `ForbiddenParts[]`) or *n missing* (red, scripts not found
   in any cronjob directory).
 - **The edge.** Red on the left for a part that needs attention, green around the part that is running now.
-- **Run part** (section 7.1).
+- **Run part** (section 7.1), and **Pause** or **Resume**: a paused part shows *Paused* and since when and by whom,
+  and is left out by every run - the crontab's too - until it is resumed (a part paused while it runs finishes
+  the script that runs and leaves out the rest); **Pause all parts** in the status bar does
+  the same for every part. See [Pausing cronjob parts](../features/6.0/cronjob-pause.md).
 - **Schedule**, or **Suggested schedule** for a part nothing runs: the schedule in words for the common shapes and the
   cron expression beside it. *Every minute*, *Every 5 minutes*, *Every hour at minute 17*, *Every 6 hours at minute
   0* and *Every day at 03:30* are said in words; anything else (`0 8 * * 1-5`) is shown as the expression, which is
@@ -289,8 +296,9 @@ Each card shows, from the top:
   **Copy** puts it on the clipboard (*The command is on the clipboard.*). Unlike a crontab line it does not send the
   output to `/dev/null`, so whoever pastes it sees what the job says.
 - **Scripts (n)**, folded to one line of names. Opened, each script with what it does (the `@description` tag of its
-  header, or of the class file its entry point names), the directory it was found in (*not found in any cronjob
-  directory* in red when missing), **Copy command** (the `--script=` command for that script alone) and **Run**.
+  header, or of the class file its entry point names) and **Docs** when the script names its documentation (below),
+  the directory it was found in (*not found in any cronjob directory* in red when missing), **Copy command** (the
+  `--script=` command for that script alone) and **Run**.
 
 ## 9. Output: following a job while it runs
 
@@ -376,7 +384,27 @@ A script of your own goes in `cronjobs/` of your extension, with the extension n
 <?php
 /**
  * @description Remove expired entries from the example table
+ * @link https://intranet.example.com/operations/example-cleanup
  */
+```
+
+`@link` (the phpDoc tag for a URL) puts a **Docs** link beside the script on the page; it opens in a new window. A
+path such as `doc/guides/sessions.md` is put after `[ScriptDocumentation] DocumentationBase` (empty: the
+documentation of Exponential on GitHub), so the kernel's scripts name their guide that way. Only `http` and `https`
+links are shown; a value that is none of these gives no link. With the default base a path is linked only when the
+installation ships that file, so no link is dead, and the relative path of an extension's script is never put after
+Exponential's base (it names a file of the extension): such a script, like one that names nothing, shows no **Docs**
+until `Link[]` gives one. An installation gives or replaces the link of any
+script, its own documentation for an extension's script for instance, in `settings/override/cronjob.ini.append.php`,
+by the file name as `Scripts[]` has it:
+
+```ini
+[ScriptDocumentation]
+Link[sitemap.php]=https://intranet.example.com/operations/sitemaps
+# no link, also when the header names one
+Link[session_gc.php]=none
+# where paths are looked up
+DocumentationBase=https://intranet.example.com/operations/
 ```
 
 ## 12. Scheduling with the crontab
@@ -644,6 +672,8 @@ they exist. The page's texts are translated in `ger-DE`.
 | `cronjob.ini` | `AdminSettings` | `ErrorFile` | `cronjobs/error.log` | The error log of runs from the page |
 | `cronjob.ini` | `AdminSettings` | `HistoryLength` | `100` (not in the shipped file) | Runs kept in `cronjobs/history.json`; values below 1 mean 100 |
 | `cronjob.ini` | `AdminSettings` | `CrontabSchedule_<part>` | `*/5 * * * *` frequent, `*/15 * * * *` global, `17 * * * *` infrequent, `0 * * * *` others (not in the shipped file) | The schedule of the suggested crontab line for a part |
+| `cronjob.ini` | `ScriptDocumentation` | `Link[<script>]` | empty | The **Docs** link of a script by its file name: a URL, a path below `DocumentationBase`, or `none`; goes before the script's `@link` (section 11) |
+| `cronjob.ini` | `ScriptDocumentation` | `DocumentationBase` | empty: Exponential's documentation on GitHub | Where a path in `Link[]` or `@link` is looked up; only `http` and `https` links are shown |
 | `site.ini` | `SiteAccessSettings` | `RelatedSiteAccessList[]`, else `AvailableSiteAccessList[]` | | The sites under **Run for site** |
 | `admininterface.ini` | `PaginationSettings` | `ItemsPerPage[setup/cronjobs]` | `25` | Part cards per page |
 | `menu.ini` | `Leftmenu_setup` | `Links[cronjobs]`, `LinkNames[cronjobs]`, `PolicyList_cronjobs[]` | `setup/cronjobs`, `Cronjobs`, `setup/managecronjobs` | The menu entry and who sees it |
