@@ -23,8 +23,9 @@ server. The command names the site chosen under **Run for site**.
 From top to bottom:
 
 - **Status bar**: *Idle*, or *Running: part* with the site, the process id and the time it has run so far. Its
-  buttons are **Stop running job** and **Clear logs** (empties the log files). Below it: the log file the output
-  comes from and the PHP binary jobs run with.
+  buttons are **Stop running job**, **Clear logs** (empties the log files) and **Pause all parts** (or **Resume all
+  parts**); while every part is paused a notice above the bar says since when and by whom. Below it: the log file the
+  output comes from and the PHP binary jobs run with.
 - **Overview**: how many cronjob parts and scripts there are, how many parts the crontab runs, how many it does not,
   how many **need attention** (blocked, a script missing, or issues in their last run), and the last run started
   from this page with its result.
@@ -35,7 +36,8 @@ From top to bottom:
 - **Output** (folds): the output of the current or last run. It opens by itself when a job starts.
 - **Cronjob parts**: one card per part, in the order of `cronjob.ini`. Each card shows
   - the part's name, its key, *Scheduled* or *Not scheduled* (read from the crontab), and *Activated*, *Blocked*
-    (`ForbiddenParts[]`) or *n missing* (scripts not found);
+    (`ForbiddenParts[]`) or *n missing* (scripts not found); *Paused* with **Paused**: since when and by whom, and
+    **Pause** or **Resume** next to **Run part** ([pausing cronjob parts](cronjob-pause.md));
   - **Schedule**: the schedule of the crontab line that runs it, in words (*Every 5 minutes*, *Every day at
     03:30*) and as the cron expression; for a part nothing runs, the **Suggested schedule** instead;
   - **Next run**: when that crontab line runs it next, in this server's time; *Only when run by hand* for a part the
@@ -47,6 +49,7 @@ From top to bottom:
   
   A card with a problem has a red edge; the card of the running part a green one. The list is paged (see Settings).
 - **Available but not activated** (folds): scripts in a cronjob directory that no part names, so they never run.
+- **Pauses** (folds): who paused and resumed which part, and when.
 - **Recent runs** (folds): cronjob, site, start time, duration and result. *n issues* counts the lines of the run's
   log that mention an error, a failure or a warning.
 - **Crontab** (folds): what is installed in the crontab now, and the suggested entries for the parts nothing runs,
@@ -89,11 +92,14 @@ Name it in `[CronjobSettings] Scripts[]` or in a `[CronjobPart-<name>]` block of
 | `settings/cronjob.ini` | `AdminSettings` | `ErrorFile` | `cronjobs/error.log` | siteaccess | Where its errors go |
 | `settings/cronjob.ini` | `AdminSettings` | `CrontabSchedule_<part>` | `*/5 * * * *` (frequent), `*/15 * * * *` (global), `17 * * * *` (infrequent), `0 * * * *` (others) | global | The schedule the page suggests for a part the crontab does not run |
 | `settings/cronjob.ini` | `AdminSettings` | `HistoryLength` | `100` | global | How many runs the history keeps |
+| `settings/cronjob.ini` | `PauseSettings` | `Pause`, `Directory` | `enabled`, empty | global | Pausing parts, see [Pausing cronjob parts](cronjob-pause.md) |
 | `settings/admininterface.ini` | `PaginationSettings` | `ItemsPerPage[setup/cronjobs]` | see [page sizes](../../bc/6.0/pagination-settings.md) | global | How many part cards one page shows |
 
 ## Related pages
 
 - The user guide: [Cronjobs: running, scheduling and following them](../../guides/cronjobs.md)
+- [Pausing cronjob parts](cronjob-pause.md),
+  [leaving out a part from an extension (the filter)](cronjob-part-filter.md)
 - The workflow cronjob (`workflow.php`) and the processes it resumes: [Workflows: approvals, triggers and the processes that wait](../../guides/workflows.md)
 - [Runnable commands, cronjobs and views (specification)](../../specifications/6.0/runnable-commands-cronjobs-views.md), [commands, cronjob parts and module views as classes](../../bc/6.0/cli_cronjob_view_abstractions.md)
 - [Content jobs](content-jobs.md), [Velocity scheduler](velocity-scheduler.md), [Notifications (the cronjob part `notification`)](notifications.md)

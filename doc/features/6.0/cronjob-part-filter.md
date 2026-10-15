@@ -11,6 +11,8 @@ migration or a search index rebuild), or if you build an extension that decides 
 - Register the listener in `site.ini [RunnableSettings] Listeners[]`. That list is attached to the command line;
   `[Event] Listeners[]` is attached to web requests only.
 - Without listeners every part runs, as before.
+- A part paused at **Setup > Cronjobs** is left out before the filter is asked; see
+  [Pausing cronjob parts](cronjob-pause.md). For a stop switch, use that rather than a listener of your own.
 
 ## The filter
 

@@ -35,6 +35,13 @@
 </div>
 {/if}
 
+{* A pause of every part is shown above everything else: nothing the page offers runs while it holds. *}
+{if and( $cronjob_pause_enabled, $cronjob_pause_all.paused )}
+<div class="a4-notice is-bad" role="alert" id="cronjob-paused-all">
+    {if $cronjob_pause_all.by}{'All cronjob parts are paused since %since by %user. Nothing runs, from here or from the crontab, until they are resumed.'|i18n( 'design/admin/setup/cronjobs',, hash( '%since', $cronjob_pause_all.since|l10n( shortdatetime ), '%user', $cronjob_pause_all.by.login|wash ) )}{else}{'All cronjob parts are paused since %since. Nothing runs, from here or from the crontab, until they are resumed.'|i18n( 'design/admin/setup/cronjobs',, hash( '%since', $cronjob_pause_all.since|l10n( shortdatetime ) ) )}{/if}
+</div>
+{/if}
+
 <form method="post" action={'setup/cronjobs'|ezurl}>
 
 {* Everything that changes when a job starts or ends is addressable, so the console can bring the page up to
@@ -55,6 +62,13 @@
     <div class="a4-actions">
         <button type="submit" class="a4-btn" id="cronjob-stop" name="StopCronjobButton" value="1"{if $cronjob_status.running|not} disabled="disabled"{/if}>{'Stop running job'|i18n( 'design/admin/setup/cronjobs' )}</button>
         <button type="submit" class="a4-btn" id="cronjob-clear" name="ClearCronjobLogButton" value="1">{'Clear logs'|i18n( 'design/admin/setup/cronjobs' )}</button>
+        {if $cronjob_pause_enabled}
+        {if $cronjob_pause_all.paused}
+        <button type="submit" class="a4-btn" id="cronjob-resume-all" name="ResumeCronjobButton" value="all">{'Resume all parts'|i18n( 'design/admin/setup/cronjobs' )}</button>
+        {else}
+        <button type="submit" class="a4-btn" id="cronjob-pause-all" name="PauseCronjobButton" value="all" title="{'Leave every cronjob part out until resumed, whoever starts it'|i18n( 'design/admin/setup/cronjobs' )|wash}">{'Pause all parts'|i18n( 'design/admin/setup/cronjobs' )}</button>
+        {/if}
+        {/if}
     </div>
 </section>
 <p class="a4-setup-paths">
@@ -119,11 +133,11 @@
             <select id="cronjob-part-filter" aria-describedby="cronjob-run-hint">
                 <option value="">{'All parts'|i18n( 'design/admin/setup/cronjobs' )}</option>
             {foreach $cronjob_parts as $cronjob_option}
-                <option value="{$cronjob_option.name|wash}" data-blocked="{if or( $cronjob_option.forbidden, $cronjob_option.missing|ge( $cronjob_option.scripts|count ), $cronjob_php_binary|eq('') )}1{else}0{/if}">{$cronjob_option.label|wash}</option>
+                <option value="{$cronjob_option.name|wash}" data-blocked="{if or( $cronjob_option.forbidden, $cronjob_option.missing|ge( $cronjob_option.scripts|count ), $cronjob_php_binary|eq(''), and( $cronjob_pause_enabled, or( $cronjob_option.pause.paused, $cronjob_pause_all.paused ) ) )}1{else}0{/if}">{$cronjob_option.label|wash}</option>
             {/foreach}
             </select>
         </div>
-        <button type="button" class="a4-btn a4-btn-primary" id="cronjob-run-selected"{if $cronjob_status.running} disabled="disabled"{/if}><span class="a4-icon a4-bi-play-fill" aria-hidden="true"></span>{'Run'|i18n( 'design/admin/setup/cronjobs' )}</button>
+        <button type="button" class="a4-btn a4-btn-primary" id="cronjob-run-selected" data-blocked="{if and( $cronjob_pause_enabled, $cronjob_pause_all.paused )}1{else}0{/if}"{if or( $cronjob_status.running, and( $cronjob_pause_enabled, $cronjob_pause_all.paused ) )} disabled="disabled"{/if}><span class="a4-icon a4-bi-play-fill" aria-hidden="true"></span>{'Run'|i18n( 'design/admin/setup/cronjobs' )}</button>
         <span class="a4-meta" id="cronjob-run-hint">{'Runs every part, one after another.'|i18n( 'design/admin/setup/cronjobs' )}</span>
     </div>
     <p class="a4-filter-count a4-setup-js-only" id="cronjob-filter-count" aria-live="polite" hidden></p>
@@ -161,9 +175,11 @@
     {* Blocked for good - forbidden, scripts missing, no php - is not the same as blocked because something else
        is running, which stops being true the moment the console sees the job finish. Each button records which
        it is so the console knows what it may re-enable. *}
-    {def $cronjob_blocked = or( $cronjob_part.forbidden,
+    {def $cronjob_paused = and( $cronjob_pause_enabled, or( $cronjob_part.pause.paused, $cronjob_pause_all.paused ) )
+         $cronjob_blocked = or( $cronjob_part.forbidden,
                                 $cronjob_part.missing|ge( $cronjob_part.scripts|count ),
-                                $cronjob_php_binary|eq('') )
+                                $cronjob_php_binary|eq(''),
+                                $cronjob_paused )
          $cronjob_runnable = and( $cronjob_blocked|not, $cronjob_status.running|not )
          $cronjob_part_id = concat( 'cronjob-part-', $cronjob_part.name )}
 <li class="a4-card a4-setup-part-row{if and( $cronjob_status.running, eq( $cronjob_status.part, $cronjob_part.name ) )} is-current{/if}{if $cronjob_part.attention} is-attention{/if}"
@@ -188,8 +204,21 @@
                 {else}
                 <li class="a4-badge is-ok">{'Activated'|i18n( 'design/admin/setup/cronjobs' )}</li>
                 {/if}
+                {if and( $cronjob_pause_enabled, $cronjob_part.pause.paused )}
+                <li class="a4-badge is-bad" title="{'Left out by runcronjobs.php until resumed'|i18n( 'design/admin/setup/cronjobs' )|wash}">{'Paused'|i18n( 'design/admin/setup/cronjobs' )}</li>
+                {/if}
             </ul>
         </div>
+        {* Pause and resume carry the part name as their value, like the run button. *}
+        {if $cronjob_pause_enabled}
+        {if $cronjob_part.pause.paused}
+        <button type="submit" class="a4-btn" name="ResumeCronjobButton" value="{$cronjob_part.name|wash}"
+                title="{'Resume the %part part'|i18n( 'design/admin/setup/cronjobs',, hash( '%part', $cronjob_part.label ) )|wash}">{'Resume'|i18n( 'design/admin/setup/cronjobs' )}</button>
+        {else}
+        <button type="submit" class="a4-btn" name="PauseCronjobButton" value="{$cronjob_part.name|wash}"
+                title="{'Leave the %part part out until resumed, whoever starts it'|i18n( 'design/admin/setup/cronjobs',, hash( '%part', $cronjob_part.label ) )|wash}">{'Pause'|i18n( 'design/admin/setup/cronjobs' )}</button>
+        {/if}
+        {/if}
         {* The button carries the part name as its own value, so one form serves every part and launching needs no
            javascript. *}
         <button type="submit" class="a4-btn a4-btn a4-setup-run" name="LaunchCronjobButton"
@@ -200,6 +229,12 @@
     </div>
 
     <dl class="a4-facts">
+        {if and( $cronjob_pause_enabled, $cronjob_part.pause.paused )}
+        <div>
+            <dt>{'Paused'|i18n( 'design/admin/setup/cronjobs' )}</dt>
+            <dd>{if $cronjob_part.pause.by}{'Since %since by %user'|i18n( 'design/admin/setup/cronjobs',, hash( '%since', $cronjob_part.pause.since|l10n( shortdatetime ), '%user', $cronjob_part.pause.by.login|wash ) )}{else}{'Since %since'|i18n( 'design/admin/setup/cronjobs',, hash( '%since', $cronjob_part.pause.since|l10n( shortdatetime ) ) )}{/if}</dd>
+        </div>
+        {/if}
         <div>
             <dt>{if $cronjob_part.scheduled}{'Schedule'|i18n( 'design/admin/setup/cronjobs' )}{else}{'Suggested schedule'|i18n( 'design/admin/setup/cronjobs' )}{/if}</dt>
             <dd>{if $cronjob_part.schedule_active|ne('')}{$cronjob_part.schedule_text|wash}{if $cronjob_part.schedule_text|ne( $cronjob_part.schedule_active )} <code>{$cronjob_part.schedule_active|wash}</code>{/if}{else}{'Not read from the crontab line'|i18n( 'design/admin/setup/cronjobs' )}{/if}</dd>
@@ -252,8 +287,8 @@
                     {/if}
                     {if and( $cronjob_script.path|ne(false()), $cronjob_part.forbidden|not )}
                     <button type="submit" class="a4-btn a4-btn-small a4-setup-run" name="LaunchCronjobScriptButton"
-                            data-blocked="{if $cronjob_php_binary|eq('')}1{else}0{/if}"
-                            value="{$cronjob_part.name|wash}|{$cronjob_script.name|wash}"{if or( $cronjob_status.running, $cronjob_php_binary|eq('') )} disabled="disabled"{/if}
+                            data-blocked="{if or( $cronjob_php_binary|eq(''), $cronjob_paused )}1{else}0{/if}"
+                            value="{$cronjob_part.name|wash}|{$cronjob_script.name|wash}"{if or( $cronjob_status.running, $cronjob_php_binary|eq(''), $cronjob_paused )} disabled="disabled"{/if}
                             aria-label="{'Run %script on its own'|i18n( 'design/admin/setup/cronjobs',, hash( '%script', $cronjob_script.name ) )|wash}"
                             title="{'Run %script on its own'|i18n( 'design/admin/setup/cronjobs',, hash( '%script', $cronjob_script.name ) )|wash}">{'Run'|i18n( 'design/admin/setup/cronjobs' )}</button>
                     {else}
@@ -265,7 +300,7 @@
         </ul>
     </details>
 </li>
-    {undef $cronjob_runnable $cronjob_blocked $cronjob_part_id}
+    {undef $cronjob_runnable $cronjob_blocked $cronjob_paused $cronjob_part_id}
 {/foreach}
 </ul>
 <p class="a4-empty" id="cronjob-no-match" hidden>{'No cronjob part on this page matches.'|i18n( 'design/admin/setup/cronjobs' )}</p>
@@ -349,6 +384,45 @@
     {/if}
     </div>
 </details>
+
+{* Who paused and resumed what, newest first. Changes made to the pause files by other means (a shell, the
+   cjw_admincockpit page) have no entry here; the card still shows since when a part is paused. *}
+{if $cronjob_pause_enabled}
+<details class="a4-fold" id="cronjob-pauses"{if $cronjob_pause_history|count|gt(0)} open="open"{/if}>
+    <summary>
+        <h2 class="a4-h2" id="cronjob-pauses-title">{'Pauses'|i18n( 'design/admin/setup/cronjobs' )}</h2>
+        <span class="a4-meta">{'Paused and resumed from this page, newest first'|i18n( 'design/admin/setup/cronjobs' )}</span>
+    </summary>
+    <div class="a4-fold-body">
+    {if $cronjob_pause_history|count|gt(0)}
+    <div class="a4-table-wrap" role="region" aria-labelledby="cronjob-pauses-title" tabindex="0">
+    <table class="a4-table">
+    <thead>
+    <tr>
+        <th scope="col">{'When'|i18n( 'design/admin/setup/cronjobs' )}</th>
+        <th scope="col">{'Cronjob'|i18n( 'design/admin/setup/cronjobs' )}</th>
+        <th scope="col">{'Action'|i18n( 'design/admin/setup/cronjobs' )}</th>
+        <th scope="col">{'User'|i18n( 'design/admin/setup/cronjobs' )}</th>
+    </tr>
+    </thead>
+    <tbody>
+    {foreach $cronjob_pause_history as $cronjob_pause}
+    <tr>
+        <td class="a4-nowrap">{$cronjob_pause.time|l10n( shortdatetime )}</td>
+        <td>{if $cronjob_pause.part|eq('')}{'Global'|i18n( 'design/admin/setup/cronjobs' )}{elseif $cronjob_pause.part|eq('all')}{'All parts'|i18n( 'design/admin/setup/cronjobs' )}{else}{$cronjob_pause.part|wash}{/if}</td>
+        <td>{if $cronjob_pause.action|eq('pause')}<span class="a4-badge is-bad">{'Paused'|i18n( 'design/admin/setup/cronjobs' )}</span>{else}<span class="a4-badge is-ok">{'Resumed'|i18n( 'design/admin/setup/cronjobs' )}</span>{/if}</td>
+        <td>{$cronjob_pause.login|wash}</td>
+    </tr>
+    {/foreach}
+    </tbody>
+    </table>
+    </div>
+    {else}
+    <p class="a4-empty">{'Nothing has been paused from here yet.'|i18n( 'design/admin/setup/cronjobs' )}</p>
+    {/if}
+    </div>
+</details>
+{/if}
 
 {* Last on the page and folded away: useful when setting the schedule up, noise every other time. *}
 <details class="a4-fold" id="cronjob-crontab-block">
@@ -587,7 +661,7 @@ var expCronjobText = {ldelim}
         each( '.a4-setup-running-meta', function ( el ) { el.parentNode.removeChild( el ); } );
         each( '.a4-setup-part-row.is-current', function ( el ) { el.classList.remove( 'is-current' ); } );
         if ( stopBtn ) stopBtn.disabled = true;
-        if ( runSelectedEl ) runSelectedEl.disabled = false;
+        if ( runSelectedEl && runSelectedEl.getAttribute( 'data-blocked' ) !== '1' ) runSelectedEl.disabled = false;
         // Only the ones that were waiting on this job. A part that is forbidden, missing its scripts, or has no php
         // to run with stays disabled.
         each( '.a4-setup-run', function ( el ) {

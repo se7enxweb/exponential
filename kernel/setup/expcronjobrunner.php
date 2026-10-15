@@ -442,6 +442,17 @@ class expCronjobRunner
         if ( !in_array( $siteaccess, self::siteAccessList(), true ) )
             return $refuse( ezpI18n::tr( 'design/admin/setup/cronjobs', 'No siteaccess named "%siteaccess" is served by this installation.', null, array( '%siteaccess' => $siteaccess ) ) );
 
+        // runcronjobs.php would leave a paused part out; saying so here is clearer than an empty run.
+        if ( class_exists( 'expCronjobPause' ) && expCronjobPause::enabled() )
+        {
+            $pausePart = $part === self::GLOBAL_PART ? '' : $part;
+            $pausedBy = expCronjobPause::pausedBy( $pausePart, $script !== false ? array( $script ) : array(), $script !== false );
+            if ( $pausedBy === expCronjobPause::ALL )
+                return $refuse( ezpI18n::tr( 'design/admin/setup/cronjobs', 'All cronjob parts are paused. Resume them to run one.' ) );
+            if ( $pausedBy !== false )
+                return $refuse( ezpI18n::tr( 'design/admin/setup/cronjobs', 'The "%part" part is paused. Resume it to run it.', null, array( '%part' => expCronjobPause::label( $pausedBy ) ) ) );
+        }
+
         $status = self::status();
         if ( $status['running'] )
             return $refuse( ezpI18n::tr( 'design/admin/setup/cronjobs', 'The "%part" part is still running as process %pid. Wait for it, or stop it first.', null, array( '%part' => $status['part'], '%pid' => $status['pid'] ) ) );

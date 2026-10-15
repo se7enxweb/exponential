@@ -430,6 +430,17 @@ class Runcronjobs extends \Exponential\Runnable\Command
         $currentAccess = \eZSiteAccess::current();
         $single = $cronScript !== false && $cronScript !== '';
         $partName = !$single && $cronPart !== false ? (string)$cronPart : '';
+
+        // A part paused at Setup > Cronjobs is left out before any listener is asked; that is not an error either.
+        if ( class_exists( '\expCronjobPause' ) )
+        {
+            $pauseNotice = \expCronjobPause::notice( $partName, $scripts, $single );
+            if ( $pauseNotice !== false )
+            {
+                $cli->notice( $pauseNotice );
+                $script->shutdown( 0 );
+            }
+        }
         if ( !static::partMayRun( $partName, $currentAccess !== null ? $currentAccess['name'] : (string)$siteaccess, $scripts, $single ) )
         {
             if ( $single )
