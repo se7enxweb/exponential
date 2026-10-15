@@ -315,7 +315,7 @@ dcc161f33fcc8ac17e6c769683a2b80b  design/admin/stylesheets/modules/content.css
 b7b4bcd7be755643e4eb5982c06ef632  design/admin/stylesheets/modules/people.css
 21fc4e093a32d9541703fd669057fee5  design/admin/stylesheets/modules/setup.css
 b0231b396cffa044c9683baca515f64a  design/admin/stylesheets/modules/structure.css
-1919ff83fded5966077eecba9ea9a53e  design/admin/stylesheets/modules/workflow.css
+34ba523d9ad9d1eca2730c3f8443432c  design/admin/stylesheets/modules/workflow.css
 6c50ca081feaacea35d0ba88f81f92a0  design/admin/stylesheets/packagecompare.css
 c88a47e792d2074b8f41a4b176ac9812  design/admin/stylesheets/pagelayout.css
 81cb750821a5d00e8658e709b21113b5  design/admin/stylesheets/theme/admin_datatable.css
@@ -890,7 +890,7 @@ dcc161f33fcc8ac17e6c769683a2b80b  design/admin4/stylesheets/modules/content.css
 b7b4bcd7be755643e4eb5982c06ef632  design/admin4/stylesheets/modules/people.css
 21fc4e093a32d9541703fd669057fee5  design/admin4/stylesheets/modules/setup.css
 b0231b396cffa044c9683baca515f64a  design/admin4/stylesheets/modules/structure.css
-1919ff83fded5966077eecba9ea9a53e  design/admin4/stylesheets/modules/workflow.css
+34ba523d9ad9d1eca2730c3f8443432c  design/admin4/stylesheets/modules/workflow.css
 bfe8caaefaad23ec10bbd8b39d575729  design/admin4/stylesheets/packagecompare.css
 cbd222e879b5be405bb709dd9fc1315b  design/admin4/stylesheets/pagelayout.css
 52c626e1469b1fc7cf22945d4db04694  design/admin4/stylesheets/theme/admin_datatable.css
@@ -2970,7 +2970,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-ebc8f1675339970bba98d27fbecd78c1  doc/changelogs/6.0/6.0.15.md
+484b9bd328507ccd3a42b4d72560018f  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -4082,7 +4082,7 @@ e9d30140fbd42f2815532e7daf033609  extension/ezformtoken/README.rst
 53322d752c21521e6736059158a8dd4b  extension/ezformtoken/extension.xml
 d026b4b6493a2fbdafad45ce440bcce2  extension/ezformtoken/settings/debug.ini.append.php
 904cefcac39deefdc471b89751b82a85  extension/ezformtoken/settings/site.ini.append.php
-eb0e00ef3c847744d5a5f422c8826db8  extension/ezjscore/CHANGELOG
+9b1ab82952b7ff7e074aabd9118904b8  extension/ezjscore/CHANGELOG
 0636e73ff0215e8d672dc4c32c317bb3  extension/ezjscore/LICENSE
 d41d8cd98f00b204e9800998ecf8427e  extension/ezjscore/README
 8901b1cdb8d2fd269beef27e7322be09  extension/ezjscore/autoloads/ezjscaccesstemplatefunctions.php
@@ -4119,8 +4119,8 @@ a7bf61ace40268bc56e89998941eec49  extension/ezjscore/design/standard/templates/e
 a2a8b366e1eca7ce170c33b9eeed6135  extension/ezjscore/design/standard/templates/ezjsctemplate/test.tpl
 4f71f4fd05bd14ecadea3d748f370a5c  extension/ezjscore/doc/FAQ
 693f3589fef421f20391f7f19ee241fb  extension/ezjscore/doc/INSTALL
-70e7bd05f50e9f7c941d91e299e1e58b  extension/ezjscore/extension.xml
-2ee12ae0a7f493c751c93bee4eff8c5d  extension/ezjscore/ezinfo.php
+d94bec52cfdac59242ad014058bf4f42  extension/ezjscore/extension.xml
+82acd975cb1cb6b502691984d462f86d  extension/ezjscore/ezinfo.php
 1ce5d9f4713290f0b03a3128aa0898ae  extension/ezjscore/modules/ezjscore/call.php
 dd9ea2c4abeb36e89c5120deddce6dd0  extension/ezjscore/modules/ezjscore/hello.php
 b89ef61ec84f55e7c56dc26e74b2a3cd  extension/ezjscore/modules/ezjscore/module.php
@@ -6391,7 +6391,7 @@ ea68c5ba8eb753c5292a1c4dd3a5b2bc  settings/datetime.ini
 9197ab21aa5e2f4e44eb3950d1753461  settings/dbschema.ini
 0c09e0bf093c0f1f18f97705355d487c  settings/debug.ini
 7eaa0be7d34049407c78bb9e0ec11e04  settings/debugbar.ini
-632ef231740353e4da8d9648d20c689d  settings/design.ini
+55020b6290bc76c7e7add59ca3d966f1  settings/design.ini
 32345e49a48d1f9bf1251ad9dde479b7  settings/error.ini
 4209ce0fc8d74237bef6f2415d450959  settings/extendedattributefilter.ini
 179e641f13c2340ba00500111ea04bb2  settings/ezxml.ini
@@ -7206,6 +7206,7 @@ b977ef5a409ff4c1d2e4c734c839d6e3  tests/tests/extension/expservices/users/expUse
 1d8e114d714c6cc4edbaaf7d046993bc  tests/tests/extension/expservices/users/expUsersDeclarationsTest.php
 c2d1d9f4d1d3bfd48c427cac7ccaace7  tests/tests/extension/expservices/users/expUsersTestCase.php
 45bb9e234c2970143e5828bcf7914677  tests/tests/extension/ezjscore/ezjscPackerCacheBustingTest.php
+c0ee7867b48607d01fa1d35d2f9df765  tests/tests/extension/ezjscore/ezjscPackerNoVersionQueryTest.php
 815c9c214d99424bb693376c627ac29b  tests/tests/extension/ezjscore/ezjscServerFunctionsAjaxUploaderAltTextTest.php
 71fc0cf2666b1e6e8f8fdd9894f25476  tests/tests/extension/ezjscore/ezjscServerFunctionsAjaxUploaderHandlerArgumentsTest.php
 df797f976ce5f225fe73f393ff910b74  tests/tests/extension/ezjscore/ezjscServerFunctionsAjaxUploaderImageTest.php
