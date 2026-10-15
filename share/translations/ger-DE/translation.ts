@@ -11795,7 +11795,7 @@
     </message>
     <message>
         <source>Dates</source>
-        <translation>Daten</translation>
+        <translation>Zeitangaben</translation>
     </message>
     <message>
         <source>When the current version was published.</source>
@@ -11855,7 +11855,7 @@
     </message>
     <message>
         <source>Path string</source>
-        <translation>Pfad</translation>
+        <translation>Pfad aus Knoten-IDs</translation>
     </message>
     <message>
         <source>The node IDs from the top of the tree down to the item: /1/2/89/120/.</source>
