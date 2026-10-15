@@ -25,7 +25,7 @@ EngineSwitch=enabled
 ```
 
 `EngineSwitch=enabled` shows the engine switch below the editor: one group named "Editor" with every available engine
-in the order of `Engines[]` (for example "TinyMCE 3 | TinyMCE 8"), the engine in use marked and not clickable, each
+in the order of `Engines[]` (for example "TinyMCE 3 | TinyMCE 8") as toggle buttons, the engine in use pressed (`aria-pressed`), each
 other one a button. A click stores the draft with the text typed so far and switches; the choice is stored as the user
 preference `ezoe_engine`. admin4 draws the group as a segmented control at the control height; other designs show the
 label, the name of the engine in use and the buttons. The template is

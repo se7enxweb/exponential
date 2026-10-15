@@ -325,8 +325,8 @@ through the stylesheet alone. admin4's `theme/rounded.css` no longer styles `.da
 
 ezoe's engine switch below a rich text field (`ezxmltext_ezoe_engine_switch.tpl`, `EngineSwitch=enabled`) writes
 neutral markup: `div.ezoe-engine-switch` (`role="group"`, named by its label `span.ezoe-engine-switch-label`
-"Editor"), the engine in use as `span.ezoe-engine-switch-option.current` with `aria-current="true"`, every other
-engine as a `button.button.ezoe-engine-switch-option` that posts `CustomActionButton[<attribute id>_switch_engine_<id>]`.
+"Editor"), the engine in use as the pressed toggle `button.ezoe-engine-switch-option.current` (`type="button"`, `aria-pressed="true"`), every other
+engine as a `button.button.ezoe-engine-switch-option` (`aria-pressed="false"`) that posts `CustomActionButton[<attribute id>_switch_engine_<id>]`.
 `modules/content.css` draws it as one segmented control like `.a4-tabs.is-segmented`: the segments joined at
 `--a4-control-h`, the engine in use filled in `--a4-accent-strong` (an outline in `Highlight` under forced colors),
 the label muted beside them on the same centre line. It stands left-aligned under the field, like the field's other

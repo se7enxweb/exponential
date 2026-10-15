@@ -207,14 +207,17 @@ class expOEEngineConfigTest extends expOETestCase
         // one group named by its visible label "Editor"
         $this->assertMatchesRegularExpression( '/<div class="ezoe-engine-switch" role="group" aria-labelledby="ezoe-engine-switch-label-\{\$attribute\.id\}">/', $code );
         $this->assertMatchesRegularExpression( '/<span class="ezoe-engine-switch-label" id="ezoe-engine-switch-label-\{\$attribute\.id\}">\{\'Editor\'\|i18n\( \'design\/standard\/ezoe\' \)\|wash\}<\/span>/', $code );
-        // the engine in use is marked and is no button
-        $this->assertMatchesRegularExpression( '/<span class="ezoe-engine-switch-option current" aria-current="true">\{\$ezoe_engine_option\.label\|wash\}<\/span>/', $code );
-        // each other engine posts the same custom action as before, a submit button of the edit form
-        $this->assertMatchesRegularExpression( '/<button class="button ezoe-engine-switch-option" type="submit" name="CustomActionButton\[\{\$attribute\.id\}_switch_engine_\{\$ezoe_engine_option\.identifier\|wash\}\]"/', $code );
-        $this->assertStringContainsString( "aria-label=\"{'Switch to the editor %engine'|i18n( 'design/standard/ezoe',, hash( '%engine', \$ezoe_engine_option.label ) )|wash}\"", $code );
-        $this->assertStringContainsString( "title=\"{'The text is kept, the choice is saved for your user.'|i18n( 'design/standard/ezoe' )|wash}\"", $code );
+        // one segmented control of toggle buttons: the engine in use is the pressed one (type="button", it posts
+        // nothing), so it stays in the Tab order and a screen reader names the engine and its state
+        $this->assertMatchesRegularExpression( '/<button class="button ezoe-engine-switch-option current" type="button" aria-pressed="true">\{\$ezoe_engine_option\.label\|wash\}<\/button>/', $code );
+        $this->assertStringNotContainsString( 'aria-current', $code, 'the state of a toggle is aria-pressed' );
+        // each other engine posts the same custom action as before, a submit button of the edit form, not pressed
+        $this->assertMatchesRegularExpression( '/<button class="button ezoe-engine-switch-option" type="submit" name="CustomActionButton\[\{\$attribute\.id\}_switch_engine_\{\$ezoe_engine_option\.identifier\|wash\}\]" value="\{\$ezoe_engine_option\.identifier\|wash\}" aria-pressed="false"/', $code );
+        // its name is the visible engine name (no aria-label that differs from it); the title says what pressing does
+        $this->assertStringNotContainsString( 'aria-label=', $code );
+        $this->assertStringContainsString( "title=\"{'Switch to the editor %engine'|i18n( 'design/standard/ezoe',, hash( '%engine', \$ezoe_engine_option.label ) )|wash}: {'The text is kept, the choice is saved for your user.'|i18n( 'design/standard/ezoe' )|wash}\"", $code );
         $this->assertStringNotContainsString( '<input', $code );
-        $this->assertSame( 1, substr_count( $code, '<button' ) );
+        $this->assertSame( 2, substr_count( $code, '<button' ) );
     }
 
     public function testEveryEditTemplateIncludesTheEngineSwitch()

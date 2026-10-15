@@ -143,7 +143,7 @@ class AdminContentEditFormsTest extends PHPUnit\Framework\TestCase
         $this->assertNotNull( $current, 'the engine in use is marked' );
         $this->assertSame( 'var(--a4-accent-strong)', $current['background-color'] );
         $this->assertSame( 'var(--a4-on-accent)', $current['color'] );
-        $this->assertSame( 'default', $current['cursor'], 'the engine in use is no button' );
+        $this->assertSame( 'default', $current['cursor'], 'pressing the engine in use changes nothing' );
         $forced = AdminBaseStylesheetsTest::rules( self::css(), true );
         $this->assertSame( '2px solid Highlight', $forced['.a4-content-attr .ezoe-engine-switch .ezoe-engine-switch-option.current']['outline'] ?? null,
             'forced colors: an outline marks the engine in use' );

@@ -484,7 +484,7 @@ div.block.a4-content-attr { margin: 0 0 var(--a4-space-5); padding-bottom: 0; } 
 }
 /* the editor engine switch below a rich text field (ezoe's ezxmltext_ezoe_engine_switch.tpl, EngineSwitch=enabled):
    the label "Editor" and the engines as one segmented control, drawn like .a4-tabs.is-segmented (components.css) at
-   the one control height. The engine in use (span.current, aria-current) is filled; the others are the outlined
+   the one control height. The engine in use (the pressed toggle, aria-pressed="true") is filled; the others are the outlined
    buttons that switch. Left-aligned under the field like its other controls, 8px below the editor's status bar; on a
    narrow screen the joined engines move under the label as one piece. The selectors carry the group class, so they beat the button look
    above (:is(.a4-content-attr, ...) button.button). */
@@ -517,9 +517,9 @@ div.block.a4-content-attr { margin: 0 0 var(--a4-space-5); padding-bottom: 0; } 
 .a4-content-attr .ezoe-engine-switch .ezoe-engine-switch-option:not(:first-child) { margin-left: -1px; }
 .a4-content-attr .ezoe-engine-switch .ezoe-engine-switch-option:first-child { border-radius: var(--a4-radius-s) 0 0 var(--a4-radius-s); }
 .a4-content-attr .ezoe-engine-switch .ezoe-engine-switch-option:last-child { border-radius: 0 var(--a4-radius-s) var(--a4-radius-s) 0; }
-.a4-content-attr .ezoe-engine-switch button.ezoe-engine-switch-option:hover:not(:disabled),
+.a4-content-attr .ezoe-engine-switch button.ezoe-engine-switch-option:hover:not(:disabled, .current),
 .a4-content-attr .ezoe-engine-switch button.ezoe-engine-switch-option:focus-visible { position: relative; z-index: 1; }
-.a4-content-attr .ezoe-engine-switch button.ezoe-engine-switch-option:hover:not(:disabled) { border-color: var(--a4-accent); color: var(--a4-accent-text); }
+.a4-content-attr .ezoe-engine-switch button.ezoe-engine-switch-option:hover:not(:disabled, .current) { border-color: var(--a4-accent); color: var(--a4-accent-text); }
 .a4-content-attr .ezoe-engine-switch .ezoe-engine-switch-option.current {
   position: relative;
   border-color: var(--a4-accent-strong);

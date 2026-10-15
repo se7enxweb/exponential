@@ -33,7 +33,7 @@ any INI file.
 | Key | Default | Meaning |
 |---|---|---|
 | `EditorEngine` | `tinymce3` | The engine of every user without a preference. |
-| `EngineSwitch` | `disabled` | `enabled` shows the engine switch below the editor: a group named "Editor" with every available engine, the one in use marked (`aria-current`), each other one a button that switches to it. |
+| `EngineSwitch` | `disabled` | `enabled` shows the engine switch below the editor: a group named "Editor" with every available engine, toggle buttons, the one in use pressed (`aria-pressed="true"`), each other one a submit button that switches to it. |
 | `Engines[<id>]` | `tinymce3`, `tinymce8` | The registry: identifier = class implementing `expOEEditorEngine`. |
 | `UploadFileExtensions[]` | images, pdf, office, text, zip, audio, video | File types of the embed dialog's upload tab. |
 | `UploadExtensionCheck` | `engine` | Server-side check of those types: `engine` (only when the user's engine is not tinymce3), `always`, `disabled`. |
