@@ -296,10 +296,16 @@
         var mce = window.tinymce;
         if (!mce || !sheets().length) return;
         var v3 = !!(mce.onAddEditor && mce.onAddEditor.add);
+        // PreInit: the editor's document exists but is not shown yet, so a dark page shows no light flash; init again
+        // for an editor that sets its body class only then
         function watch(editor) {
             if (editor.initialized) dress(editor.getDoc());
-            else if (v3) editor.onInit.add(function (ed) { dress(ed.getDoc()); });
-            else editor.on('init', function () { dress(editor.getDoc()); });
+            else if (v3) {
+                if (editor.onPreInit) editor.onPreInit.add(function (ed) { dress(ed.getDoc()); });
+                editor.onInit.add(function (ed) { dress(ed.getDoc()); });
+            } else {
+                editor.on('PreInit init', function () { dress(editor.getDoc()); });
+            }
         }
         // editors made before this script ran, then the ones that come
         var existing = v3 ? (mce.editors || []) : (mce.get ? mce.get() : []);
