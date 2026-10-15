@@ -66,7 +66,8 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
 - **Remembered choices.** The color mode, the side columns on a wide window and the closed groups of
   the left menus and the height of the node view's tab box are the signed-in user's eZPreferences
   (`admin_color_mode`, `admin_left_sidebar`, `admin_right_sidebar`, `admin_navgroups`,
-  `admin_node_preview_height`), like the column width. One helper,
+  `admin_node_preview_height`; the version preview's device: `admin_preview_device`, `admin_preview_landscape`),
+  like the column width. One helper,
   `window.a4Pref` (the first script of `page_head_style.tpl`), reads them from `<html>`
   (`design:parts/a4_preference_attributes.tpl`, `data-a4-pref-*`) and saves them through
   `user/preferences/set_and_exit`. An anonymous page keeps them in the browser (`localStorage`) only; a browser
@@ -101,6 +102,15 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
   published, version, section, node, object and remote ids (click to copy) and the translations (click to switch).
   The tabs form a segmented row. Tabs and sub-items start about 300 px below the card's top instead of 500. On phones
   the actions wrap onto two short lines inside the card.
+- **Version preview.** The preview of a version (content/versionview: "Preview" from the edit form, the node view and
+  the version history) shows the site's own rendering for the chosen siteaccess in the width of a device: a segmented
+  pill iPhone (390 × 844 px) | iPad (820 × 1180) | Desktop (1280 × 800) | Large Desktop (1920 × 1080), and a
+  landscape switch for phone and tablet. The page is drawn at the device's size and scaled down when the column is
+  narrower; the line beside the switches says the size and the scale ("390 × 844 px, shown at 100 %"). The choice
+  is the signed-in user's, as the eZPreferences `admin_preview_device` and `admin_preview_landscape` (through
+  `window.a4Pref`, so it follows the user to another browser; the browser on an anonymous page); without a
+  stored choice it is Desktop. In a narrow column the switches show their icons only. Without JavaScript the
+  switches stay hidden and the preview fills the column as before. The arrow keys move between the devices.
 - **Height of the node view's tab box.** The box of the tabs (View, Details, ...) keeps the height the user gives
   it, one height for every node: the grip at its bottom right edge is dragged with the mouse, a finger or a pen, or
   moved with the keyboard (it is a focusable separator: Arrow Up and Down 16 px, Shift+Arrow, Page Up and Page Down
@@ -140,6 +150,8 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
   opens). The current page's link carries `aria-current="page"` and is marked with the accent tint and a bar. A menu
   is grouped through menu.ini (`Groups[]`, `GroupNames[<group>]`, `GroupLinks_<group>[]`); without `Groups[]`, or with
   `Groups[]` reset to no values, it is one list, named by its heading. Access is checked per link as before.
+  Under every left menu, the width of the column (narrow, medium, wide) is one pill of three round icon buttons
+  (`.a4-tabs.is-segmented.is-icons`); the current width is tinted in the accent and pressed (`aria-pressed="true"`).
 - **Setup overview.** The Setup tab opens an overview of every Setup function as a tile, in the groups of the left
   menu (see [Setup overview](#setup-overview)).
 - **Tables.** A list table's sorted column is readable (soft orange header).
@@ -207,7 +219,8 @@ in no group).
   menu shows its name without link.
 - **Figures**, only where one cheap fetch gives them and only on a tile the user may open
   (`setup/setupmenu_figure.tpl`, named by `LinkFigureTemplates[]`): classes, sections, content languages, active
-  extensions that exist (`expinfo( 'active' )`), signed-in users; one and many are two strings.
+  extensions that exist (`expinfo( 'active' )`), signed-in users, paused cronjob parts (only while one is paused,
+  `fetch( 'setup', 'cronjob_pauses' )`); one and many are two strings.
 - **Grid.** One column on a phone, then two, three and four as the content column grows (container queries on
   `.a4-setup-overview`, so a wide left column counts). Styles in `stylesheets/modules/setup.css`, tokens only, light and
   dark, forced colors.
@@ -385,6 +398,160 @@ designs keep their tabs.
 `AdminSetupOverviewTest` fails when a moved tab's group, section, page, icon, description or translation is missing,
 when a tab is hidden by default, and draws `parts/a4_navigation_part.tpl` with the tabs shown and hidden.
 
+### Mega menu (prototype, opt-in)
+
+A small button beside a top tab opens a panel under the header with the most used functions of the tab in their
+groups: each with its icon, its name and its description under it, up to three groups side by side, and "Go to
+<tab>" (the tab's own page, for Setup the overview) at the end for the rest. Setup and Users have one. Off by
+default; to switch them on, in a siteaccess or override `menu.ini.append.php`:
+
+```ini
+<?php /* #?ini charset="utf-8"?
+
+[TopAdminMenu]
+MegaMenuTabs[]=setup
+MegaMenuTabs[]=users
+*/ ?>
+```
+
+Then clear the caches (the INI cache and the template caches: the header reads the setting when its template is
+compiled). With `MegaMenuTabs[]` empty the header draws no button and the page loads no script. One panel is open
+at a time: opening one, by a click, a key or the hover preview, closes the other. A panel opened by a click or a key is not
+replaced by the hover preview of another tab.
+
+#### Which tabs take part, and how to add one
+
+A tab takes part when it is named in `MegaMenuTabs[]` **and** its `[Topmenu_<tab>]` names a `MegaMenuTemplate`; a
+name without one is ignored. The template draws the tab's menu as the panel's groups, always through
+`parts/ini_menu.tpl` with `menu_layout='tiles'` and `tiles_layout='mega'`, so that the links keep the names, groups,
+icons, descriptions and access checks of a menu.ini section:
+
+| Tab | `MegaMenuTemplate` | Section | Default choice (`MegaMenuLinks[]`) |
+|---|---|---|---|
+| `setup` | `design:parts/setup/mega_menu.tpl` (the Setup menu's own `parts/setup/menu.tpl`) | `Leftmenu_setup` | twelve, see below |
+| `users` | `design:parts/user/mega_menu.tpl` | `Leftmenu_user_mega` | eight, see below |
+
+To give another tab one (an extension's, say): write a template in admin4 that includes `parts/ini_menu.tpl` with
+the tab's section, `menu_layout='tiles'`, `tiles_layout='mega'` and the `i18n_hash` of its link names; name it in
+`[Topmenu_<tab>] MegaMenuTemplate=design:...` (a `design:` template, nothing else is accepted) and its section in
+`MegaMenuSection=<section>` (read only by the check of the settings, below); give the section's
+links `LinkIcons[]` (names of `design.ini [AdminDesignSettings] IconList[]`) and `LinkDescriptions[]`, and a
+`MegaMenuLinks[]`; then add the tab to `MegaMenuTabs[]`. A tab whose left menu is no menu.ini list (a tree, a
+template of its own) gets a section that only gathers its functions, as the Users tab does.
+
+#### The Users tab
+
+The Users tab's left menu is the user tree and `[Leftmenu_user]` (Roles and policies, Unactivated users), drawn by
+`parts/user/menu.tpl`; a tree is no list of links, and the left menu stays as it is. Its mega menu therefore has a
+section of its own, `[Leftmenu_user_mega]`, which defines no link a menu already defines: `GroupSections[]` adds
+`[Leftmenu_user]` to its group "Access control" and `[Leftmenu_my]` (the user's own settings, the Dashboard tab's
+menu) to "My account", with their addresses, policies, icons and descriptions (`LinkIcons[]`/`LinkDescriptions[]`
+are set in those sections; they are read only where a menu is drawn as tiles or as a mega menu). Its own links are
+the two the tab has no menu entry for: the user tree (`content/view/full/5`, the tab's own page and policy, as
+`[Topmenu_users]` has it; a site with another `content.ini [NodeSettings] UserRootNode` changes both) and the
+sessions (`setup/session`, the Setup menu's policy). It is named `Leftmenu_user_*` so that it shares the translation
+context of the tab's menu, `design/admin/parts/user/menu`. The default choice, by group:
+
+| Group | Links (`MegaMenuLinks[]`) |
+|---|---|
+| Users | `accounts` (Users and user groups), `sessions` (Sessions) |
+| Access control | `access-roles_and_policies` (Roles and policies), `access-unactivated` (Unactivated users) |
+| My account | `account-edit_profile`, `account-change_password`, `account-my_notifications`, `account-my_mail` |
+
+There is no link to create a user: content is created by a POST from the tree (`content/action`), and no address
+opens the user form directly. A permission check for one user has no view in the kernel either.
+
+- **A short choice, not the whole menu.** The section's `MegaMenuLinks[]` (for Setup `[Leftmenu_setup]`) names the links shown, by link key,
+  in their order; at most 12 are shown (6 to 12 read best). It is a choice from the menu's links, not a second
+  menu: each link keeps its name, icon, description, group (`GroupNames[]`) and access checks. A link the user may
+  not open, or whose extension is not active, is left out, and so is a group with no link left; the groups follow
+  the order of their first chosen link. The default in `settings/menu.ini` is twelve, here by group: Classes, Sections
+  (Content model) | Link management (Site and URLs) | Audit (Users and messages) | Cache management, Cronjobs,
+  Extensions, System information, Ini settings (System) | `expai_summary` (AI) | `ezupdate`, `git_manager` (Updates). Without `expai`, `ezupdate` and `git_manager` the AI and Updates
+  groups are not there, here as on the overview, and nine links remain. To choose others, restate the list:
+
+  ```ini
+  [Leftmenu_setup]
+  MegaMenuLinks[]
+  MegaMenuLinks[]=classes
+  MegaMenuLinks[]=languages
+  MegaMenuLinks[]=cache
+  ```
+
+  A tab moved into Setup ([Moving a tab into Setup](#moving-a-tab-into-setup)) brings its own menu into its group,
+  and its links are chosen as `<group>-<key>`, e.g. `MegaMenuLinks[]=audit-console` (the names the i18n hash of
+  `parts/setup/menu.tpl` uses too). A Setup link that is then not drawn because the group has a link to the same
+  address takes that link: with the Audit tab moved, `audit` (`audit/settings`) shows as the Audit group's Settings,
+  so the default works with and without moved tabs. A key whose link is drawn is always taken by its key first.
+
+  A list reset to no values shows every link of the menu, as the overview does (not recommended: about 35 links).
+  The default is in `settings/menu.ini` rather than in the template so that it can be read and changed where the
+  links are defined.
+- **The tab stays a link.** The button beside it is a disclosure (the WAI-ARIA disclosure navigation pattern, not a
+  menu): `aria-expanded`, `aria-controls`, named "<tab> menu" (a screen reader adds "collapsed" or "expanded"
+  from `aria-expanded`, so the name does not say "open"). Click, Enter or Space opens and closes the
+  panel; ArrowDown opens it and goes to its first link; Tab goes through its links in order and on past the panel,
+  which closes it, as does a click outside; Escape closes it and gives the focus back to the button. Each group is a
+  section with a heading (`h2`, drawn small); the links are plain links, the description is the link's description
+  (`aria-describedby`); the link to the page shown (the tab's link too) is marked `aria-current="page"`.
+- **Hover is a preview only.** A mouse resting on the tab or the button for 300 ms opens the panel, leaving the tab,
+  the button and the panel for 400 ms closes it (the gap between the header and the panel belongs to the panel, so
+  the way across it does not count as leaving). A click on the button, or the focus moving into the panel, keeps
+  the preview open. Only a pointer of type
+  mouse on a device that reports `(hover: hover) and (pointer: fine)`; never on touch, and not while the header's
+  "More" list or user menu is open.
+- **From 576px**, wherever the main menu is one line: the one-row header from 1280px and the two-row header from 576
+  to 1279px, which is also what a browser at 200% zoom shows on a 1920px screen (960px). The panel is placed under
+  the header's measured height (`--header-height`) and its groups wrap to two or one column on a narrower window,
+  scrolling inside the panel when they are taller than the window. Below 576px, in the phone menu, the button and the
+  panel are not drawn and the tab is a plain link. A tab moved into the "More" list loses its button there.
+- **Unknown settings are named in the debug report.** `parts/a4_mega_menu_check.tpl` (included with the script, so
+  only while `MegaMenuTabs[]` names a tab) writes a debug message for a `MegaMenuTabs[]` value without
+  `MegaMenuTemplate` and `NavigationPartIdentifier`, for a key of the section's `MegaMenuLinks[]`
+  (`[Topmenu_<tab>] MegaMenuSection`) that is no link of the section and no `<group>-<key>` of a section its
+  `GroupSections[]` adds (an unknown key, or the link of an extension that is not active on this siteaccess), and
+  for more than 12 keys. The header and the panel simply leave out what they cannot use. The message is written when
+  the page's cache block is built, so clear the template-block cache to see it again.
+- **One source, loaded when needed.** The links are those of the tab's menu: `user/megamenu/<tab>`, one view for
+  every tab, without page layout (`ui_context` ajax, `Cache-Control: private, no-store`), draws the tab's
+  `MegaMenuTemplate` (`user/megamenu.tpl`), which goes through `parts/ini_menu.tpl` with `tiles_layout='mega'`
+  (`parts/a4_mega_menu.tpl`): the same names, groups, icons (`LinkIcons[]`), descriptions (`LinkDescriptions[]`)
+  and access checks (`PolicyList_<link>[]`, `CheckViewAccess`, `NoAccessLinks`), without figures. `a4_mega_menu.js`
+  asks for it once, when the panel is first opened; the page itself carries only the button, a status line and the
+  tab's link (about 1 KB), cached with the header per role set (`$user_hash`), as the tabs are. A load that fails
+  says so in the panel and is tried again on the next opening; the tab's link stays.
+- **The rights.** The view's policy is `user/login` (any user of the siteaccess, as `user/preferences`), since the
+  tabs belong to different modules and a policy of one of them would keep the others' users out. The rights are
+  the tab's and the links': the view answers only for a tab named in `MegaMenuTabs[]` with a `MegaMenuTemplate`
+  (any other: not available), and only while the tab is in the user's top menu, enabled and open to the user
+  (denied otherwise), never for the anonymous user. That verdict is the topmenu operator's, the one the header draws
+  the tabs with: `Tabs[]`, `HiddenTabs[]`, `SetupTabs[]`, the tab's `PolicyList[]` and, with `CheckViewAccess`, its
+  address; `Shown[]` and `Enabled[]` are read for the `navigation` context, the one of the admin's pages (a tab
+  that differs there from the page's context gets a button whose panel is refused). Each link is then checked as in
+  the left menu. The header draws a button only on a tab it shows enabled and open. A tab name is lower case
+  letters, digits and `_` (as `[Topmenu_<tab>]`); give a tab with a mega menu a `PolicyList[]`, as the shipped
+  ones have. The request is a
+  view of the user module, so the audit trail records it as `access.view.sensitive` once per page on which a panel
+  is opened.
+- **Look:** an admin4 card (`--a4-card`, `--a4-line`, `--a4-radius-s`, `--a4-shadow-m`), centred under the header
+  and as wide as its groups need: up to three groups of 17rem side by side, so a short choice makes a narrow card;
+  descriptions wrap instead of being cut. Light and dark, a CanvasText border and Highlight states under forced colors, no transition
+  with reduced motion. Styles in `admin4.css`.
+- **admin4 and admin4l alike:** the tabs are drawn by one template, `parts/a4_topmenu_items.tpl`, which decides
+  which tabs get a mega menu; admin4's `page_topmenu.tpl` and admin4l's tab menu block
+  (`design/admin4l/templates/explayouts/block/admin_tab_menu.tpl`) both include it.
+- **Layers:** the panel is `z-index: var(--a4-z-menu)` inside the fixed header (`--a4-z-header`): over the side
+  columns' edge tabs, under a dialog's mask and the dialog (`--a4-z-overlay`, `--a4-z-modal`) and under toasts
+  (`--a4-z-toast`); the debug report's bar stays above everything.
+
+`tests/tests/design/AdminMegaMenuTest.php` holds the defaults of both tabs, the markup, the source and the view
+(which tabs it serves, and only while the user has them: hidden, disabled, not shown, not listed), the widths and
+the strings, the Users section (its added menus, existing links, icons, names and descriptions in both languages), renders the panel's template with fake groups (the choice, its order, access, groups left out, the
+limit of 12, no choice, a key of a moved tab that falls back to the group's link of the same address), and runs the script in node (`tests/tests/design/js/mega_menu.js`: click, ArrowDown, Escape, Tab, a
+click outside, the delays, touch, the focus coming into a preview, the width, the "More" list, one load and a
+failed one, two tabs with one panel open at a time), checks that admin4 and admin4l draw the tabs with the one
+template, and renders the settings check with unknown tabs and keys and reads the debug messages it writes.
+
 ## Languages
 
 A flag stands for a country, not for a language: English is spoken under several flags, and one country has several
@@ -502,6 +669,50 @@ and its overrides.
 files are the same in both designs, and that no admin4 template has a clickable image. `tests/tests/design/AdminTreeViewTest.php` holds the
 tree's roles, states, Tab stop and keys.
 
+## Reordering sub items by drag and drop
+
+Where a node sorts its children by priority and the user may change the priorities (`$node.can_edit`: the same
+condition as the classic priority fields), the sub items table has a column of grips before the names. It shows while
+the table is sorted as the node sorts (by priority, in the node's direction), with no name filter and more than one
+row; sorted by another column the column is hidden. `design/admin4/javascript/subitems_priority_drag.js` brings it;
+the table script (`ezajaxsubitems_expdatatable.js`, the same file in `design/admin`) adds the column only when the
+template sets `confObj.priorityDrag`, so the other admin designs are unchanged.
+
+- **Pointer** (mouse, touch, pen; pointer events, no HTML5 drag and drop, no library): drag the grip; the row is
+  its own placeholder (dashed, tinted), a ghost with the name follows the pointer, the window scrolls when the pointer
+  nears its top or bottom edge. Escape or a cancelled touch puts the row back.
+- **Keyboard**: the grip is a button named "Move <name>" with the instructions as its description. Space or Enter
+  picks the row up (`aria-pressed`), the arrow keys move it, Home and End to the first and last place, Space or Enter
+  drops it, Escape or Tab cancels. Alt+Up and Alt+Down move it by one place at once. Each step is announced
+  through the table's status region.
+- **Saving** happens right after the drop, through `ezjscnode::updatepriority`. Only the current page is reordered:
+  its own priorities are given out again to its rows in the new order, so nothing moves to another page. When the page
+  has equal priorities, or shares one with the last row of the page before or the first of the page after, the rows
+  get distinct values strictly between those two neighbours (steps of 10 where there is room, smaller steps where
+  not; the first page may go below 0, the last page above the page before). When the neighbours leave no room (equal
+  priorities across a page border), the server numbers all children again in steps of 10, the page's rows at their
+  place. The priorities the table showed and the neighbours' are sent along; when one changed in the meantime nothing
+  is written, the table loads again and a toast says so. "Order saved" offers Undo for 10 seconds; it posts the old
+  priorities, checked the same way. A failed save puts the rows back and shows the error.
+- **The server side** (`ezjscnode::updatepriority`): the lists go as one text each (`PriorityList`,
+  `ExpectedPriorityList`, "node_id:priority,..."), so a page of 500 rows stays far below `max_input_vars`; the check
+  and the write run in one transaction (rows locked on MySQL, PostgreSQL and Oracle). Every node to be written must
+  come with the priority the table showed, and the lists are refused for a node that does not sort by priority or that
+  the user may not edit (the classic form's rule); the write goes through the kernel's `content/updatepriority`
+  operation, so its workflows, cache clearing and search index updates run. Lists sorted by priority order equal
+  priorities by node id, the order the renumbering takes. While a new order is being saved, the pagers, the sorting
+  and the filter wait (`inert`); a save that ends after the table loaded other rows does not draw over them.
+- **Limits**: a row moves within its page only (to move it to another page, change the rows per page or type its
+  priority); a page of one row has no grip; a key that moves a row while the previous move is still being saved is
+  refused with "Please wait until the order is saved."
+- **The priority cells stay** and can still be edited by hand; they show the new values after a move. A move does
+  not start while a priority is being edited with a changed value (a toast asks to save or cancel it first) or while
+  it is being saved, and no cell can be edited while a new order is being saved.
+- Light and dark, forced colours (the placeholder's outline and the pressed grip in Highlight), reduced motion (no
+  tilt of the ghost, no fade), print (no grips). Styles: `modules/content.css` (`.a4-content-drag-*`) and
+  `.a4-toast-action` in `components.css`. Tests: `AdminSubitemsPriorityDragTest`,
+  `ezjscServerFunctionsNodePriorityTest`.
+
 ## Settings
 
 | File | Block | Key | Default | Scope |
@@ -512,6 +723,10 @@ tree's roles, states, Tab stop and keys.
 | `settings/menu.ini` | `MenuAccessSettings` | `NoAccessLinks` | `hidden` | siteaccess |
 | `settings/menu.ini` | `TopAdminMenu` | `HiddenTabs[]` | empty | siteaccess |
 | `settings/menu.ini` | `TopAdminMenu` | `SetupTabs[]` | empty (see [Moving a tab into Setup](#moving-a-tab-into-setup)) | siteaccess |
+| `settings/menu.ini` | `TopAdminMenu` | `MegaMenuTabs[]` | empty; `setup` and `users` have a template (see [Mega menu](#mega-menu-prototype-opt-in)) | siteaccess |
+| `settings/menu.ini` | `Topmenu_<tab>` | `MegaMenuTemplate` | `design:parts/setup/mega_menu.tpl` (setup), `design:parts/user/mega_menu.tpl` (users) | siteaccess |
+| `settings/menu.ini` | `Leftmenu_user_mega` | `MegaMenuLinks[]` | eight links of the Users tab (see [Mega menu](#mega-menu-prototype-opt-in)) | siteaccess |
+| `settings/menu.ini` | `Leftmenu_setup` | `MegaMenuLinks[]` | twelve frequent links, at most 12 shown (see [Mega menu](#mega-menu-prototype-opt-in)) | siteaccess |
 | `settings/menu.ini` | `Topmenu_<tab>` | `Name`, `Tooltip`, `TranslationContext` | the default tab names, context `design/admin/pagelayout` | siteaccess |
 | `settings/menu.ini` | `Leftmenu_<menu>` | `Groups[]`, `GroupNames[<group>]`, `GroupLinks_<group>[]` | the nine groups of `Leftmenu_setup` (Design and Audit for moved tabs, AI and Updates for extensions' links) | siteaccess |
 | `settings/menu.ini` | `Leftmenu_<menu>` | `LeadLinks[]` | `overview` in `Leftmenu_setup` | siteaccess |
@@ -544,6 +759,8 @@ Community". A template can also set `$show_community_links`.
   `tests/tests/design/AdminMenuPolicyListTest.php` fails for a function a module does not have. The Design tab opens
   the design top node by its id (`content/view/full/58`, `content.ini [NodeSettings] DesignRootNode`).
 - `FrontSiteAccess` is the site an admin siteaccess belongs to: its "Open the site" and "View on site" links go there.
+  Both show the globe (Bootstrap Icons `globe2`, `.a4-bi-globe2`), so a link to the site does not look like a link
+  that leaves the administration for something else (`box-arrow-up-right`).
 - The logo's name in the header carries the release only for signed-in users; the anonymous pages of the admin
   (the 401 page, `user/register`, `user/forgotpassword`) say "Exponential".
 

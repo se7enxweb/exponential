@@ -12,7 +12,9 @@ Every path that stores an image: the edit form, `content/upload` and the upload 
 rich text editor's upload dialog, the AJAX uploader of the object relation list, WebDAV, the package import and
 `fromString()` imports. They all store through `eZImageAliasHandler::initializeFromHTTPFile()` or
 `initializeFromFile()`, which sanitize every file that is an SVG by its content (its root element is `<svg>`,
-whatever its name or the type the browser sent). The checks before storing (`eZImageType::imageFileError()`, used by
+whatever its name or the type the browser sent). A file those would store as SVG by its name or type, but whose
+content is not recognised as SVG (UTF-16, for example), is not stored: a file served as `image/svg+xml` is always
+the sanitizer's output. The checks before storing (`eZImageType::imageFileError()`, used by
 the edit form, `eZContentUpload` and the AJAX uploader) refuse an SVG the sanitizer would refuse, with a message.
 
 The package wizard's thumbnails and style images stay raster images: an SVG is refused there.
@@ -53,7 +55,9 @@ reference):
   `mailto:` links, and `<image>` keeps an embedded `data:image/png`, `jpeg`, `gif` or `webp` in base64 that really
   is such an image.
 - **CSS**, in `style` attributes and `<style>` elements, after CSS escapes and comments are resolved: declarations
-  without a script or `data:` URL and with `url()` only to an internal `#fragment`.
+  without a script or `data:` URL and with `url()` only to an internal `#fragment`. In a `<style>` element every
+  piece a browser could read as a declaration is checked, also next to a nested rule, in a last block left open
+  and before the first rule.
 
 ## What it removes
 
@@ -65,7 +69,9 @@ reference):
   `<image>`, `<use>`, `<feImage>` or `<mpath>` without a safe reference is removed altogether).
 - `url(...)` to anything but an internal fragment, in style and presentation attributes (`fill`, `mask`, `filter`,
   `clip-path`, `marker-*` ...).
-- `@import`, `expression()`, `behavior` and `-moz-binding` in CSS.
+- `@import`, `expression()`, `behavior` and `-moz-binding` in CSS, and the image functions that load from a plain
+  string or an attribute: `image-set()` (also `-webkit-image-set()`), `image()`, `cross-fade()`, `element()`, `src()`,
+  `attr()`.
 - An animation (`animate`, `set` ...) of `href`, `xlink:href`, `style` or an event attribute, or with a value that
   would be removed.
 - Comments, processing instructions (`<?xml-stylesheet?>`), CDATA wrappers and the DOCTYPE.
@@ -122,7 +128,7 @@ An installation served from a virtual host configuration instead of `.htaccess` 
 **Apache** (inside the site's `<VirtualHost>` or `<Directory>`, with `mod_headers`):
 
 ```apache
-<FilesMatch "\.svgz?$">
+<FilesMatch "(?i)\.svgz?$">
     Header always set Content-Security-Policy "sandbox; default-src 'none'; style-src 'unsafe-inline'"
     Header always set X-Content-Type-Options "nosniff"
 </FilesMatch>
@@ -152,9 +158,9 @@ block sets for every response.
 
 ## Tests
 
-- `tests/tests/lib/ezimage/expSvgSanitizerTest.php`: 63 harmful SVGs (script, event attributes on every kind of
+- `tests/tests/lib/ezimage/expSvgSanitizerTest.php`: 75 harmful SVGs (script, event attributes on every kind of
   element, foreignObject and iframe, script and data links, entity tricks, XXE, billion laughs, CSS `url()`,
-  `@import` and `expression()`, animation of `href`, mixed case, namespaces, CDATA, comments, base64, nested
+  `@import`, `expression()`, `image-set()` and `attr()`, CSS outside the innermost rule blocks, animation of `href`, mixed case, namespaces, CDATA, comments, base64, nested
   `<svg>`) all come out without anything that runs or loads; 12 Bootstrap Icons and 3 drawings keep every element
   and attribute (and render pixel for pixel the same in Chromium).
 - `tests/tests/kernel/datatypes/ezimage/expImageSvgTest.php`: the datatype's acceptance and refusals, the setting,

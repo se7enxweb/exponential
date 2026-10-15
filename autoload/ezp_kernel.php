@@ -345,6 +345,7 @@ return array(
       'Exponential\\View\\Kernel\\User\\Forgotpassword'              => 'kernel/private/classes/views/user/forgotpassword.php',
       'Exponential\\View\\Kernel\\User\\Login'                       => 'kernel/private/classes/views/user/login.php',
       'Exponential\\View\\Kernel\\User\\Logout'                      => 'kernel/private/classes/views/user/logout.php',
+      'Exponential\\View\\Kernel\\User\\Megamenu'                    => 'kernel/private/classes/views/user/megamenu.php',
       'Exponential\\View\\Kernel\\User\\Password'                    => 'kernel/private/classes/views/user/password.php',
       'Exponential\\View\\Kernel\\User\\Preferences'                 => 'kernel/private/classes/views/user/preferences.php',
       'Exponential\\View\\Kernel\\User\\Register'                    => 'kernel/private/classes/views/user/register.php',

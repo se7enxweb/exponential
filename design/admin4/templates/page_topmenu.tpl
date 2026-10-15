@@ -46,9 +46,9 @@
                stands in for (parts/a4_navigation_part.tpl) *}
             {def $a4_current_part = ''}
             {set-block variable=a4_current_part}{include uri='design:parts/a4_navigation_part.tpl'}{/set-block}
-            {foreach topmenu($ui_context, true() ) as $menu}
-                {include uri='design:page_topmenuitem.tpl' menu_item=$menu navigationpart_identifier=$a4_current_part|trim}
-            {/foreach}
+            {* The tabs, with the mega menus of menu.ini [TopAdminMenu] MegaMenuTabs[] (parts/a4_topmenu_items.tpl, shared
+               with admin4l's tab menu block) *}
+            {include uri='design:parts/a4_topmenu_items.tpl' navigationpart_identifier=$a4_current_part|trim}
             {undef $a4_current_part}
             {* The overflow of the one-line menu (576px and up): ezadmin_menubar.js moves the tabs that do not fit into
                this list and shows the item; without the script it stays hidden and the row scrolls sideways. A
@@ -72,7 +72,7 @@
        logout, and a round icon button as they are; it opens in the same window and stays a link on edit pages. *}
     <div id="header-site" class="header-site">
         <a class="site-preview a4-header-btn" href="{siteaccess_url()|wash}" title="{'Open the site'|i18n( 'design/admin/pagelayout' )|wash}" aria-label="{'Open the site'|i18n( 'design/admin/pagelayout' )|wash}">
-            <span class="a4-icon a4-bi-box-arrow-up-right" aria-hidden="true"></span>
+            <span class="a4-icon a4-bi-globe2" aria-hidden="true"></span>
         </a>
     </div>
     {* admin4: light, dark or system mode; the button names the mode in use and steps to the next; a status region announces a press. The choice is the user's eZPreference admin_color_mode (this browser's localStorage "exp-admin4-theme" when anonymous); the

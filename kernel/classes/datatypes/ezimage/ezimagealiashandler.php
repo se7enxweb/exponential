@@ -1312,6 +1312,11 @@ class eZImageAliasHandler
             }
         }
         $mimeData = self::svgMimeData( $mimeData, $isSVG, $httpFile->attribute( 'original_filename' ) );
+        if ( self::isUnsanitizedSVG( $mimeData, $isSVG ) )
+        {
+            eZDebug::writeError( 'The file ' . $httpFile->attribute( 'original_filename' ) . ' would be stored as SVG without being recognised as one, it is not stored', __METHOD__ );
+            return false;
+        }
         $this->removeAliases();
         $this->setOriginalAttributeDataValues( $this->ContentObjectAttributeData['id'],
                                                $this->ContentObjectAttributeData['version'],
@@ -1376,6 +1381,11 @@ class eZImageAliasHandler
             $mimeData = eZMimeType::findByFileContents( $originalFilename );
         }
         $mimeData = self::svgMimeData( $mimeData, $isSVG, $originalFilename );
+        if ( self::isUnsanitizedSVG( $mimeData, $isSVG ) )
+        {
+            eZDebug::writeError( "The file '$filename' would be stored as SVG without being recognised as one, it is not stored", __METHOD__ );
+            return false;
+        }
 
         $this->removeAliases();
         $this->setOriginalAttributeDataValues( $this->ContentObjectAttributeData['id'],
@@ -1426,6 +1436,24 @@ class eZImageAliasHandler
         $svgMimeData['name'] = 'image/svg+xml';
         $svgMimeData['suffix'] = 'svg';
         return $svgMimeData;
+    }
+
+    /**
+     * Whether $mimeData would store a file as SVG (by its name or the type the browser sent) that
+     * expSvgSanitizer::isSVGFile() did not recognise, and so would not sanitize. Such a file is not
+     * stored: a file served as image/svg+xml is always the sanitizer's output.
+     *
+     * @param array $mimeData
+     * @param bool $isSVG
+     * @return bool
+     */
+    public static function isUnsanitizedSVG( $mimeData, $isSVG )
+    {
+        if ( $isSVG )
+            return false;
+        if ( isset( $mimeData['name'] ) && strtolower( (string)$mimeData['name'] ) === 'image/svg+xml' )
+            return true;
+        return isset( $mimeData['suffix'] ) && in_array( strtolower( (string)$mimeData['suffix'] ), array( 'svg', 'svgz' ), true );
     }
 
     /**

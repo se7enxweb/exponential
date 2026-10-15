@@ -221,9 +221,10 @@
 })();
 
 /*
- * admin4 toasts: window.a4Toast( message, kind, opener ) shows a short feedback of an action done in the page in
+ * admin4 toasts: window.a4Toast( message, kind, opener, delay ) shows a short feedback of an action done in the page in
  * the regions #a4-toasts (polite) or, for kind 'bad', #a4-toasts-alert (assertive) of the frame. kind is 'ok',
- * 'bad', 'warn' or 'info'; opener is the element the action came from (optional). The toast does not take the
+ * 'bad', 'warn' or 'info'; opener is the element the action came from (optional); delay the time in ms it stays
+ * (optional, for a toast with an action such as Undo). The toast does not take the
  * focus, closes after 5 s (an error stays until it is dismissed; Escape closes a focused toast), waits while the pointer or the focus is on it, and has a close button named by the
  * region's data-close-label. Closed with that button, it gives the focus to the opener when it is still in the page;
  * without one the focus goes to the page, as with any removed element. A toast with the same text replaces the one
@@ -232,7 +233,7 @@
 (function () {
     'use strict';
     var DELAY = 5000, MAX = 3;
-    window.a4Toast = function (message, kind, opener) {
+    window.a4Toast = function (message, kind, opener, delay) {
         var region = document.getElementById(kind === 'bad' ? 'a4-toasts-alert' : 'a4-toasts');
         if (!region || !message) return null;
         // the same text again replaces the toast shown; more than MAX: the oldest goes
@@ -257,7 +258,7 @@
         var timer = null, held = false;
         function remove() { if (timer) clearTimeout(timer); if (toast.parentNode) toast.parentNode.removeChild(toast); }
         // an error stays until it is dismissed (WCAG 2.2.1): the user may have to act on it
-        function arm() { if (timer) clearTimeout(timer); if (!held && kind !== 'bad') timer = setTimeout(remove, DELAY); }
+        function arm() { if (timer) clearTimeout(timer); if (!held && kind !== 'bad') timer = setTimeout(remove, delay > 0 ? delay : DELAY); }
         function hold(on) { held = on; if (on) { if (timer) clearTimeout(timer); timer = null; } else arm(); }
         close.addEventListener('click', function () {
             remove();
@@ -724,6 +725,129 @@
         if (window.MutationObserver) {
             new MutationObserver(all).observe(document.documentElement, { attributes: true, attributeFilter: ['data-a4-theme'] });
         }
+    }
+
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+    else init();
+})();
+
+/*
+ * The segmented switches answer the arrow keys like a toolbar of toggle buttons (the left menu's width switch, the
+ * version preview's devices, ezoe's engine switch: .a4-tabs.is-segmented). Left and Right
+ * move the focus to the previous and next choice (round), Home and End to the first and last; disabled choices are
+ * skipped. Every choice keeps its Tab stop and is pressed with Enter or Space as before, and Up and Down keep
+ * scrolling the page. One listener on the document, so a switch drawn later answers too.
+ */
+(function () {
+    'use strict';
+
+    var GROUP = '.a4-tabs.is-segmented';
+
+    function choices(group) {
+        return Array.prototype.filter.call(group.children, function (el) {
+            return (el.tagName === 'BUTTON' || (el.tagName === 'A' && el.hasAttribute('href'))) && !el.disabled;
+        });
+    }
+
+    document.addEventListener('keydown', function (event) {
+        var key = event.key, target = event.target;
+        if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+        if (key !== 'ArrowLeft' && key !== 'ArrowRight' && key !== 'Home' && key !== 'End') return;
+        var group = target && target.parentNode;
+        if (!group || !group.matches || !group.matches(GROUP)) return;
+        var list = choices(group), at = list.indexOf(target), next;
+        if (at < 0 || list.length < 2) return;
+        if (key === 'Home') next = list[0];
+        else if (key === 'End') next = list[list.length - 1];
+        else next = list[(at + (key === 'ArrowRight' ? 1 : -1) + list.length) % list.length];
+        event.preventDefault();
+        next.focus();
+    });
+})();
+
+/*
+ * The version preview in the width of a device (content/view/versionview.tpl, #a4-content-preview-bar and
+ * #a4-content-preview-stage; styles in modules/content.css .a4-content-preview-*). The device switch (iPhone |
+ * iPad | Desktop | Large Desktop) and the landscape switch are aria-pressed buttons; the iframe is given the
+ * device's size in CSS pixels (data-width, data-height of the button) and scaled down when the column is narrower,
+ * the line beside them says the size and the scale. The choice is kept through window.a4Pref: for a signed-in user
+ * the eZPreferences admin_preview_device (phone | tablet | desktop | large; empty: desktop) and
+ * admin_preview_landscape (1 | 0), for an anonymous page the browser. Without the script the bar stays hidden and
+ * the iframe fills the column as before. The stage is redrawn only when its width changes or a device is chosen, so
+ * a scrollbar that comes and goes with the new height cannot start a loop, and a hidden stage is left alone.
+ */
+(function () {
+    'use strict';
+
+    var DEVICE = 'admin_preview_device', TURN = 'admin_preview_landscape';
+
+    function pref(name, legacyKey) { return window.a4Pref ? window.a4Pref.get(name, legacyKey) : null; }
+    function keep(name, value, legacyKey) { if (window.a4Pref) window.a4Pref.set(name, value, legacyKey); }
+
+    function init() {
+        var bar = document.getElementById('a4-content-preview-bar'),
+            stage = document.getElementById('a4-content-preview-stage');
+        if (!bar || !stage) return;
+        var device = stage.querySelector('.a4-content-preview-device'),
+            frame = stage.querySelector('iframe'),
+            buttons = Array.prototype.slice.call(bar.querySelectorAll('button[data-a4-device]')),
+            turn = bar.querySelector('button[data-a4-landscape]'),
+            size = bar.querySelector('.a4-content-preview-size'),
+            sizeText = bar.getAttribute('data-a4-size') || '',
+            current = null, landscape = false, lastWidth = -1;
+        if (!device || !frame || !buttons.length || !turn || !size) return;
+
+        function turnable() {
+            var id = current && current.getAttribute('data-a4-device');
+            return id === 'phone' || id === 'tablet';
+        }
+        // force: a new device or orientation; otherwise only a changed column width redraws
+        function draw(force) {
+            var width = stage.clientWidth;
+            if (!current || !width || (force !== true && width === lastWidth)) return;
+            lastWidth = width;
+            var w = parseInt(current.getAttribute('data-width'), 10), h = parseInt(current.getAttribute('data-height'), 10), t;
+            if (landscape && turnable()) { t = w; w = h; h = t; }
+            var style = window.getComputedStyle(stage),
+                room = width - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight) - 2,   // the frame's edges
+                scale = Math.min(1, Math.max(room, 1) / w);
+            frame.style.width = w + 'px';
+            frame.style.height = h + 'px';
+            frame.style.transform = scale < 1 ? 'scale(' + scale + ')' : '';
+            device.style.width = Math.floor(w * scale) + 'px';
+            device.style.height = Math.floor(h * scale) + 'px';
+            size.textContent = sizeText.replace('%width', w).replace('%height', h).replace('%scale', Math.round(scale * 100));
+        }
+        function choose(button) {
+            current = button;
+            buttons.forEach(function (b) { b.setAttribute('aria-pressed', b === button ? 'true' : 'false'); });
+            turn.disabled = !turnable();
+            turn.setAttribute('aria-pressed', landscape && turnable() ? 'true' : 'false');
+            draw(true);
+        }
+
+        var stored = pref(DEVICE, 'exp-admin4-preview-device'), initial = null;
+        buttons.forEach(function (b) {
+            if (b.getAttribute('data-a4-device') === stored) initial = b;
+            b.addEventListener('click', function () {
+                if (current === b) return;
+                keep(DEVICE, b.getAttribute('data-a4-device'), 'exp-admin4-preview-device');
+                choose(b);
+            });
+        });
+        if (!initial) initial = bar.querySelector('button[data-a4-device="desktop"]') || buttons[0];
+        landscape = pref(TURN, 'exp-admin4-preview-landscape') === '1';
+        turn.addEventListener('click', function () {
+            if (turn.disabled) return;
+            landscape = !landscape;
+            keep(TURN, landscape ? '1' : '0', 'exp-admin4-preview-landscape');
+            choose(current);
+        });
+        bar.hidden = false;
+        stage.classList.add('is-device');
+        choose(initial);
+        if (window.ResizeObserver) new ResizeObserver(draw).observe(stage);
+        else window.addEventListener('resize', draw);
     }
 
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);

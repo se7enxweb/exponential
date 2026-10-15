@@ -7340,6 +7340,42 @@
         <translation>Open the preview in a new window</translation>
     </message>
     <message>
+        <source>iPhone</source>
+        <translation>iPhone</translation>
+    </message>
+    <message>
+        <source>iPad</source>
+        <translation>iPad</translation>
+    </message>
+    <message>
+        <source>Desktop</source>
+        <translation>Desktop</translation>
+    </message>
+    <message>
+        <source>Large Desktop</source>
+        <translation>Large Desktop</translation>
+    </message>
+    <message>
+        <source>Preview size</source>
+        <translation>Preview size</translation>
+    </message>
+    <message>
+        <source>%device, %width × %height px</source>
+        <translation>%device, %width × %height px</translation>
+    </message>
+    <message>
+        <source>%width × %height px, shown at %scale %</source>
+        <translation>%width × %height px, shown at %scale %</translation>
+    </message>
+    <message>
+        <source>Landscape</source>
+        <translation>Landscape</translation>
+    </message>
+    <message>
+        <source>Landscape: phone and tablet turned on their side</source>
+        <translation>Landscape: phone and tablet turned on their side</translation>
+    </message>
+    <message>
         <source>Queued</source>
         <translation>Queued</translation>
     </message>
@@ -9482,6 +9518,82 @@
     <message>
         <source>Not copied</source>
         <translation>Not copied</translation>
+    </message>
+    <message>
+        <source>Order</source>
+        <translation>Order</translation>
+    </message>
+    <message>
+        <source>Move %name</source>
+        <translation>Move %name</translation>
+    </message>
+    <message>
+        <source>Drag to change the order</source>
+        <translation>Drag to change the order</translation>
+    </message>
+    <message>
+        <source>Drag the grip to change the order. With the keyboard: Space picks the row up, the arrow keys move it, Space drops it, Escape cancels. Alt+Up and Alt+Down move it by one place at once.</source>
+        <translation>Drag the grip to change the order. With the keyboard: Space picks the row up, the arrow keys move it, Space drops it, Escape cancels. Alt+Up and Alt+Down move it by one place at once.</translation>
+    </message>
+    <message>
+        <source>Picked up %name. Position %position of %count.</source>
+        <translation>Picked up %name. Position %position of %count.</translation>
+    </message>
+    <message>
+        <source>Position %position of %count</source>
+        <translation>Position %position of %count</translation>
+    </message>
+    <message>
+        <source>Moved to position %position of %count</source>
+        <translation>Moved to position %position of %count</translation>
+    </message>
+    <message>
+        <source>Dropped. The order is unchanged.</source>
+        <translation>Dropped. The order is unchanged.</translation>
+    </message>
+    <message>
+        <source>Move cancelled. %name is back at position %position of %count.</source>
+        <translation>Move cancelled. %name is back at position %position of %count.</translation>
+    </message>
+    <message>
+        <source>Order saved</source>
+        <translation>Order saved</translation>
+    </message>
+    <message>
+        <source>Undo</source>
+        <translation>Undo</translation>
+    </message>
+    <message>
+        <source>Previous order restored</source>
+        <translation>Previous order restored</translation>
+    </message>
+    <message>
+        <source>The order was not saved: %error</source>
+        <translation>The order was not saved: %error</translation>
+    </message>
+    <message>
+        <source>The previous order was not restored: %error</source>
+        <translation>The previous order was not restored: %error</translation>
+    </message>
+    <message>
+        <source>unknown error</source>
+        <translation>unknown error</translation>
+    </message>
+    <message>
+        <source>Someone else changed the order in the meantime. Nothing was saved; the list shows the current order now.</source>
+        <translation>Someone else changed the order in the meantime. Nothing was saved; the list shows the current order now.</translation>
+    </message>
+    <message>
+        <source>Save the priority you are editing (Enter) or cancel it (Escape) before you move a row.</source>
+        <translation>Save the priority you are editing (Enter) or cancel it (Escape) before you move a row.</translation>
+    </message>
+    <message>
+        <source>Please wait until the order is saved.</source>
+        <translation>Please wait until the order is saved.</translation>
+    </message>
+    <message>
+        <source>Please wait until the priority is saved.</source>
+        <translation>Please wait until the priority is saved.</translation>
     </message>
     <message>
         <source>Object</source>
@@ -13674,6 +13786,22 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Light mode</translation>
     </message>
     <message>
+        <source>%tab menu</source>
+        <translation>%tab menu</translation>
+    </message>
+    <message>
+        <source>Loading the %tab menu</source>
+        <translation>Loading the %tab menu</translation>
+    </message>
+    <message>
+        <source>The %tab menu could not be loaded.</source>
+        <translation>The %tab menu could not be loaded.</translation>
+    </message>
+    <message>
+        <source>Go to %tab</source>
+        <translation>Go to %tab</translation>
+    </message>
+    <message>
         <source>Open the site</source>
         <translation>Open the site</translation>
     </message>
@@ -14044,6 +14172,22 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>My e-mail preferences</source>
         <translation>My e-mail preferences</translation>
+    </message>
+    <message>
+        <source>The content you follow and how you are told.</source>
+        <translation>The content you follow and how you are told.</translation>
+    </message>
+    <message>
+        <source>Which optional e-mail you get; your consents.</source>
+        <translation>Which optional e-mail you get; your consents.</translation>
+    </message>
+    <message>
+        <source>Set a new password for your account.</source>
+        <translation>Set a new password for your account.</translation>
+    </message>
+    <message>
+        <source>Your name, e-mail address and other details.</source>
+        <translation>Your name, e-mail address and other details.</translation>
     </message>
 </context>
 <context>
@@ -14558,6 +14702,34 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>Access control</source>
         <translation>Access control</translation>
+    </message>
+    <message>
+        <source>Users and user groups</source>
+        <translation>Users and user groups</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Users</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>My account</translation>
+    </message>
+    <message>
+        <source>Users and user groups; create and edit accounts.</source>
+        <translation>Users and user groups; create and edit accounts.</translation>
+    </message>
+    <message>
+        <source>Who is signed in; end sessions.</source>
+        <translation>Who is signed in; end sessions.</translation>
+    </message>
+    <message>
+        <source>Who may do what, and where.</source>
+        <translation>Who may do what, and where.</translation>
+    </message>
+    <message>
+        <source>Accounts not yet activated; activate or remove them.</source>
+        <translation>Accounts not yet activated; activate or remove them.</translation>
     </message>
 </context>
 <context>
@@ -21305,6 +21477,22 @@ Note: The packages will not be uninstalled.</translation>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
+    <message>
+        <source>Note: %note</source>
+        <translation>Note: %note</translation>
+    </message>
+    <message>
+        <source>Note</source>
+        <translation>Note</translation>
+    </message>
+    <message>
+        <source>Note for a pause or resume (optional)</source>
+        <translation>Note for a pause or resume (optional)</translation>
+    </message>
+    <message>
+        <source>Kept with the next Pause or Resume pressed on this page; shown under Pauses, on the paused part and in the output of runcronjobs.php.</source>
+        <translation>Kept with the next Pause or Resume pressed on this page; shown under Pauses, on the paused part and in the output of runcronjobs.php.</translation>
+    </message>
     <message>
         <source>Docs</source>
         <translation>Docs</translation>
@@ -65911,6 +66099,18 @@ You will need to change the class of the node by using the swap functionality.</
 </context>
 <context>
     <name>design/admin/setup/setupmenu</name>
+    <message>
+        <source>All parts paused</source>
+        <translation>All parts paused</translation>
+    </message>
+    <message>
+        <source>1 part paused</source>
+        <translation>1 part paused</translation>
+    </message>
+    <message>
+        <source>%count parts paused</source>
+        <translation>%count parts paused</translation>
+    </message>
     <message>
         <source>Setup</source>
         <translation>Setup</translation>

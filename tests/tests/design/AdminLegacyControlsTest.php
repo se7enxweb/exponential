@@ -10,7 +10,7 @@
  * - the side columns draw the rule between two blocks only, never above the first heading however deep it is nested;
  *   their block titles have one size; their link lists have no bullets;
  * - every left menu of admin4 ends with the same width switch (three icon buttons in a POST form, the pressed one
- *   marked), and the tree menus share one trash link;
+ *   marked), drawn as one pill (.a4-tabs.is-segmented), and the tree menus share one trash link;
  * - the user preferences show each setting as its name and its on/off choice as the design's tabs (ul.tabs);
  * - the node's tab box fills its height with the open tab and keeps room for the resize grip under its last row.
  *
@@ -239,12 +239,90 @@ class AdminLegacyControlsTest extends PHPUnit\Framework\TestCase
     public function testTheSegmentedSwitchMarksItsPressedButton()
     {
         $rules = AdminBaseStylesheetsTest::rules( self::css( 'components.css' ) );
-        $this->assertSame( 'var(--a4-control-h)', $rules['.a4-tabs.is-segmented > :is(a, button, span.current, .is-current)']['min-height'] );
-        $pressed = self::rule( $rules, '.a4-tabs.is-segmented > button[aria-pressed="true"]' );
-        $this->assertSame( 'var(--a4-accent-strong)', $pressed['background-color'] );
-        $this->assertSame( 'var(--a4-on-accent)', $pressed['color'] );
+        $this->assertSame( 'calc(var(--a4-control-h) - 6px)', $rules['.a4-tabs.is-segmented > :is(a, button, span.current, .is-current)']['min-height'] );
+        $pressed = self::rule( $rules, '.a4-tabs.is-segmented > :is(span.current, a.current, .is-current, [aria-pressed="true"], [aria-current="true"], [aria-current="page"])' );
+        $this->assertNotNull( $pressed, 'one rule marks the current choice of buttons and of links' );
+        $this->assertSame( 'var(--a4-card)', $pressed['background-color'], 'tinted over the card, not filled' );
+        $this->assertSame( 'linear-gradient(var(--a4-accent-soft), var(--a4-accent-soft))', $pressed['background-image'], 'the tint over the card keeps the text at 4.5:1' );
+        $this->assertSame( 'var(--a4-accent-text)', $pressed['color'] );
+        $this->assertSame( 'var(--a4-accent-text)', $pressed['border-color'], 'an edge of 3:1 on the track in both modes' );
         $forced = AdminBaseStylesheetsTest::rules( self::css( 'components.css' ), true );
         $this->assertNotNull( self::rule( $forced, '.a4-tabs button[aria-pressed="true"]' ), 'forced colors drop the fill: an outline marks it' );
+    }
+
+    /** The segmented switch is one pill: a track around every choice, each choice round inside it, no joined boxes */
+    public function testTheSegmentedSwitchIsOnePill()
+    {
+        $components = self::css( 'components.css' );
+        $rules = AdminBaseStylesheetsTest::rules( $components );
+        $track = $rules['.a4-tabs.is-segmented'];
+        $this->assertSame( '999px', $track['border-radius'] );
+        $this->assertSame( '1px solid var(--a4-line-strong)', $track['border'] );
+        $this->assertSame( 'var(--a4-soft)', $track['background-color'] );
+        $this->assertSame( 'var(--a4-control-h)', $track['min-height'], 'as high as the other controls' );
+        $this->assertSame( '2px', $track['padding'] );
+        $this->assertSame( 'nowrap', $track['flex-wrap'] );
+        $choice = $rules['.a4-tabs.is-segmented > :is(a, button, span.current, .is-current)'];
+        $this->assertSame( '999px', $choice['border-radius'] );
+        $this->assertSame( '1px solid transparent', $choice['border'], 'no lines between the choices' );
+        $this->assertSame( 'transparent', $choice['background-color'] );
+        // 1px edge + 2px inset above and below: the choice fills the track exactly
+        $this->assertSame( 'calc(var(--a4-control-h) - 6px)', $choice['min-height'] );
+        foreach ( array_keys( $rules ) as $selector )
+        {
+            $this->assertStringNotContainsString( '.a4-tabs.is-segmented > :first-child', $selector, 'no joined corners any more' );
+            $this->assertStringNotContainsString( '.a4-tabs.is-segmented > :last-child', $selector );
+            $this->assertStringNotContainsString( '.a4-tabs.is-segmented > :not(:first-child)', $selector, 'no -1px overlap' );
+        }
+        $focus = $rules['.a4-tabs.is-segmented > :is(a, button):focus-visible'];
+        $this->assertSame( '3px solid var(--a4-ring)', $focus['outline'] );
+        $this->assertSame( '1', $focus['z-index'], 'the ring is drawn over the neighbours' );
+        $this->assertSame( 'var(--a4-accent-text)', $rules['.a4-tabs.is-segmented > :is(a, button):hover']['color'] );
+        $icons = $rules['.a4-tabs.is-segmented.is-icons > button'];
+        $this->assertSame( 'calc(var(--a4-control-h) + 2px)', $icons['min-width'] );
+        $forced = AdminBaseStylesheetsTest::rules( $components, true );
+        $this->assertSame( 'CanvasText', $forced['.a4-tabs.is-segmented']['border-color'] );
+        $current = self::rule( $forced, '.a4-tabs.is-segmented > :is(span.current, a.current, .is-current, [aria-pressed="true"], [aria-current="true"], [aria-current="page"])' );
+        $this->assertSame( 'Highlight', $current['border-color'] );
+        $this->assertSame( '2px solid Highlight', $current['outline'] );
+        $this->assertSame( 'none', $current['background-image'], 'no tint left over the system colours' );
+        $focus = $forced['.a4-tabs.is-segmented > :is(a, button):focus-visible'];
+        $this->assertSame( '3px solid CanvasText', $focus['outline'], 'the focus ring is not replaced by the current outline' );
+        $this->assertSame( '1px', $focus['outline-offset'] );
+        $order = array_keys( $forced );
+        $this->assertGreaterThan( array_search( '.a4-tabs.is-segmented > :is(span.current, a.current, .is-current, [aria-pressed="true"], [aria-current="true"], [aria-current="page"])', $order, true ),
+                                  array_search( '.a4-tabs.is-segmented > :is(a, button):focus-visible', $order, true ), 'the focus rule comes after the current rule' );
+        $this->assertFileEquals( self::root() . '/design/admin4/stylesheets/components.css', self::root() . '/design/admin/stylesheets/components.css', 'design/admin keeps a copy' );
+    }
+
+    /**
+     * Every segmented switch answers the arrow keys (admin4.js, run in node by tests/tests/design/js/segmented_switch.js):
+     * Left/Right to the previous/next choice (round, a disabled one skipped), Home/End to the first/last; Up/Down,
+     * a key with Shift and a button outside a switch are left alone. ezoe's engine switch is the same pill.
+     */
+    public function testTheSegmentedSwitchesAnswerTheArrowKeys()
+    {
+        $engine = (string)file_get_contents( self::root() . '/extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe_engine_switch.tpl' );
+        $this->assertStringContainsString( '<span class="ezoe-engine-switch-options a4-tabs is-segmented">', $engine, 'the engine switch is the shared pill' );
+        $this->assertStringContainsString( 'role="group"', self::template( 'parts/left_width_control.tpl' ) );
+        $node = trim( (string)shell_exec( 'command -v node 2>/dev/null' ) );
+        if ( $node === '' )
+        {
+            $this->markTestSkipped( 'node is not installed' );
+        }
+        $out = shell_exec( escapeshellarg( $node ) . ' ' . escapeshellarg( __DIR__ . '/js/segmented_switch.js' ) . ' '
+                           . escapeshellarg( self::root() . '/design/admin4/javascript/admin4.js' ) );
+        $s = json_decode( (string)$out, true );
+        $this->assertIsArray( $s, 'the harness ran: ' . $out );
+        $k = $s['keys'];
+        $this->assertSame( array( 'to' => 'medium', 'prevented' => true ), $k['right'] );
+        $this->assertSame( array( 'to' => 'small', 'prevented' => true ), $k['rightFromLastSkipsDisabled'], 'round, the disabled choice skipped' );
+        $this->assertSame( array( 'to' => 'large', 'prevented' => true ), $k['left'] );
+        $this->assertSame( 'small', $k['home']['to'] );
+        $this->assertSame( 'large', $k['end']['to'] );
+        $this->assertSame( array( 'to' => 'small', 'prevented' => false ), $k['down'], 'Up and Down keep scrolling the page' );
+        $this->assertFalse( $k['shift']['prevented'] );
+        $this->assertFalse( $k['outside']['prevented'], 'only the choices of a switch' );
     }
 
     public function testTheTreeMenusShareOneTrashLink()

@@ -131,7 +131,8 @@
       "tests/tests/design/AdminCardsTest.php",
       "tests/tests/design/AdminLeftMenuGroupsTest.php",
       "tests/tests/design/AdminRetiredClassesTest.php",
-      "tests/tests/design/AdminSelfContainedTest.php"
+      "tests/tests/design/AdminSelfContainedTest.php",
+      "tests/tests/design/AdminMegaMenuTest.php"
     ],
     "design/admin*/stylesheets/*": [
       "tests/tests/design/AdminStylingRulesTest.php",
@@ -147,7 +148,8 @@
       "tests/tests/design/AdminDensityTest.php",
       "tests/tests/design/AdminCardsTest.php",
       "tests/tests/design/AdminBaseStylesheetsTest.php",
-      "tests/tests/design/AdminRetiredClassesTest.php"
+      "tests/tests/design/AdminRetiredClassesTest.php",
+      "tests/tests/design/AdminMegaMenuTest.php"
     ],
     "design/admin*/javascript/ezajaxsubitems_expdatatable.js": [
       "tests/tests/design/AdminLanguageBadgeTest.php"
@@ -164,7 +166,10 @@
       "tests/tests/design/AdminBaseStylesheetsTest.php",
       "tests/tests/design/AdminScriptsTest.php",
       "tests/tests/design/AdminSetupOverviewTest.php",
-      "tests/tests/design/AdminLeftMenuGroupsTest.php"
+      "tests/tests/design/AdminLeftMenuGroupsTest.php",
+      "tests/tests/design/AdminMegaMenuTest.php",
+      "tests/tests/design/AdminPreviewDevicesTest.php",
+      "tests/tests/design/AdminIconsTest.php"
     ],
     "design/admin4/javascript/ezadmin_menubar.js": [
       "tests/tests/design/AdminStylingRulesTest.php",
@@ -173,7 +178,9 @@
     ],
     "design/admin4/templates/page_topmenu.tpl": [
       "tests/tests/design/AdminStylingRulesTest.php",
-      "tests/tests/design/AdminHeaderTest.php"
+      "tests/tests/design/AdminHeaderTest.php",
+      "tests/tests/design/AdminMegaMenuTest.php",
+      "tests/tests/design/AdminIconsTest.php"
     ],
     "kernel/private/classes/views/error/view.php": [
       "tests/tests/kernel/error/ErrorHeaderListTest.php"
@@ -228,6 +235,7 @@
     ],
     "design/admin4/templates/node/view/a4_full_body.tpl": [
       "tests/tests/kernel/content/eZAdminFullViewCopyButtonTest.php",
+      "tests/tests/design/AdminIconsTest.php",
       "tests/tests/design/AdminNodeTabsHeightTest.php"
     ],
     "design/standard/templates/content/datatype/view/ezselection.tpl": [
@@ -302,7 +310,10 @@
       "tests/tests/design/AdminEditBarTest.php",
       "tests/tests/design/AdminContentEditFormsTest.php",
       "tests/tests/design/AdminEditorSkinTest.php",
-      "tests/tests/design/AdminNodeTabsHeightTest.php"
+      "tests/tests/design/AdminLegacyControlsTest.php",
+      "tests/tests/design/AdminPreviewDevicesTest.php",
+      "tests/tests/design/AdminNodeTabsHeightTest.php",
+      "tests/tests/design/AdminSubitemsPriorityDragTest.php"
     ],
     "extension/ezjscore/design/standard/javascript/*": [
       "tests/tests/extension/ezjscore/ezjscoreVendoredLibrariesTest.php"
@@ -331,7 +342,8 @@
     ],
     "settings/menu.ini": [
       "tests/tests/design/AdminMenuPolicyListTest.php",
-      "tests/tests/design/AdminSetupOverviewTest.php"
+      "tests/tests/design/AdminSetupOverviewTest.php",
+      "tests/tests/design/AdminMegaMenuTest.php"
     ],
     "kernel/*/module.php": [
       "tests/tests/design/AdminMenuPolicyListTest.php"
@@ -355,7 +367,8 @@
       "tests/tests/design/AdminJobTranslationsTest.php"
     ],
     "design/admin4/templates/children_detailed.tpl": [
-      "tests/tests/design/AdminJobTranslationsTest.php"
+      "tests/tests/design/AdminJobTranslationsTest.php",
+      "tests/tests/design/AdminSubitemsPriorityDragTest.php"
     ],
     "design/admin/templates/contentstructuremenu/content_structure_menu_dynamic.tpl": [
       "tests/tests/design/AdminJobTranslationsTest.php"
@@ -427,7 +440,9 @@
       "tests/tests/design/AdminHeaderTest.php"
     ],
     "extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe_engine_switch.tpl": [
-      "tests/tests/extension/ezoe/expOEEngineConfigTest.php"
+      "tests/tests/extension/ezoe/expOEEngineConfigTest.php",
+      "tests/tests/design/AdminContentEditFormsTest.php",
+      "tests/tests/design/AdminLegacyControlsTest.php"
     ],
     "extension/ezoe/design/standard/javascript/tinymce8_ez/ezoe_dialog.js": [
       "tests/tests/design/AdminTopNodeNameTest.php"
@@ -468,11 +483,127 @@
     "kernel/classes/ezsearch.php": [
       "tests/tests/kernel/content/eZPendingIndexActionsTest.php"
     ],
+    "design/admin4/stylesheets/components.css": [
+      "tests/tests/design/AdminLegacyControlsTest.php",
+      "tests/tests/design/AdminPreviewDevicesTest.php",
+      "tests/tests/design/AdminIconsTest.php",
+      "tests/tests/design/AdminSubitemsPriorityDragTest.php"
+    ],
+    "design/admin/stylesheets/components.css": [
+      "tests/tests/design/AdminLegacyControlsTest.php",
+      "tests/tests/design/AdminPreviewDevicesTest.php",
+      "tests/tests/design/AdminIconsTest.php",
+      "tests/tests/design/AdminSubitemsPriorityDragTest.php"
+    ],
+    "design/admin4/templates/parts/left_width_control.tpl": [
+      "tests/tests/design/AdminLegacyControlsTest.php"
+    ],
+    "design/admin4/templates/content/view/versionview.tpl": [
+      "tests/tests/design/AdminPreviewDevicesTest.php"
+    ],
+    "design/admin4/stylesheets/modules/content.css": [
+      "tests/tests/design/AdminPreviewDevicesTest.php",
+      "tests/tests/design/AdminSubitemsPriorityDragTest.php"
+    ],
+    "design/admin/stylesheets/modules/content.css": [
+      "tests/tests/design/AdminPreviewDevicesTest.php",
+      "tests/tests/design/AdminSubitemsPriorityDragTest.php"
+    ],
     "design/admin4/templates/parts/a4_tabs_height.tpl": [
       "tests/tests/design/AdminNodeTabsHeightTest.php"
     ],
     "design/admin4/templates/node/top_node_full.tpl": [
       "tests/tests/design/AdminNodeTabsHeightTest.php"
+    ],
+    "design/admin4/javascript/a4_mega_menu.js": [
+      "tests/tests/design/AdminMegaMenuTest.php",
+      "tests/tests/design/AdminStylingRulesTest.php"
+    ],
+    "kernel/setup/module.php": [
+      "tests/tests/design/AdminMegaMenuTest.php"
+    ],
+    "tests/tests/design/js/mega_menu.js": [
+      "tests/tests/design/AdminMegaMenuTest.php"
+    ],
+    "kernel/user/megamenu.php": [
+      "tests/tests/design/AdminMegaMenuTest.php",
+      "tests/tests/kernel/classes/runnable/MovedEntryPointsTest.php"
+    ],
+    "kernel/private/classes/views/user/megamenu.php": [
+      "tests/tests/design/AdminMegaMenuTest.php",
+      "tests/tests/kernel/classes/runnable/MovedEntryPointsTest.php"
+    ],
+    "kernel/user/module.php": [
+      "tests/tests/design/AdminMegaMenuTest.php"
+    ],
+    "design/standard/templates/user/megamenu.tpl": [
+      "tests/tests/design/AdminMegaMenuTest.php"
+    ],
+    "design/admin4/templates/user/megamenu.tpl": [
+      "tests/tests/design/AdminMegaMenuTest.php"
+    ],
+    "design/admin4/templates/parts/user/mega_menu.tpl": [
+      "tests/tests/design/AdminMegaMenuTest.php"
+    ],
+    "design/admin4/templates/parts/setup/mega_menu.tpl": [
+      "tests/tests/design/AdminMegaMenuTest.php"
+    ],
+    "share/icons/bootstrap-icons/svg/shield-lock.svg": [
+      "tests/tests/design/AdminMegaMenuTest.php"
+    ],
+    "share/icons/bootstrap-icons/svg/person-slash.svg": [
+      "tests/tests/design/AdminMegaMenuTest.php"
+    ],
+    "kernel/common/eztopmenuoperator.php": [
+      "tests/tests/design/AdminMegaMenuTest.php"
+    ],
+    "design/admin4/templates/parts/a4_topmenu_items.tpl": [
+      "tests/tests/design/AdminMegaMenuTest.php",
+      "tests/tests/design/AdminIconsTest.php"
+    ],
+    "design/admin4/templates/parts/a4_mega_menu_check.tpl": [
+      "tests/tests/design/AdminMegaMenuTest.php"
+    ],
+    "design/admin4l/templates/explayouts/block/admin_tab_menu.tpl": [
+      "tests/tests/design/AdminMegaMenuTest.php",
+      "tests/tests/design/AdminIconsTest.php"
+    ],
+    "design/admin/templates/setup/cronjobs.tpl": [
+      "tests/tests/kernel/classes/expCronjobPauseTest.php"
+    ],
+    "design/admin4/templates/setup/cronjobs.tpl": [
+      "tests/tests/kernel/classes/expCronjobPauseTest.php"
+    ],
+    "kernel/private/classes/views/setup/cronjobs.php": [
+      "tests/tests/kernel/classes/expCronjobPauseTest.php"
+    ],
+    "kernel/setup/ezsetupfunctioncollection.php": [
+      "tests/tests/kernel/classes/expCronjobPauseTest.php"
+    ],
+    "kernel/setup/function_definition.php": [
+      "tests/tests/kernel/classes/expCronjobPauseTest.php"
+    ],
+    "design/admin4/templates/setup/setupmenu_figure.tpl": [
+      "tests/tests/design/AdminSetupOverviewTest.php"
+    ],
+    "extension/ezmultiupload/*": [
+      "tests/tests/extension/ezmultiupload/expMultiuploadServiceTest.php",
+      "tests/tests/extension/ezmultiupload/expMultiuploadZipTest.php"
+    ],
+    "design/admin4/javascript/subitems_priority_drag.js": [
+      "tests/tests/design/AdminSubitemsPriorityDragTest.php"
+    ],
+    "design/admin4/javascript/ezajaxsubitems_expdatatable.js": [
+      "tests/tests/design/AdminSubitemsPriorityDragTest.php"
+    ],
+    "design/admin/javascript/ezajaxsubitems_expdatatable.js": [
+      "tests/tests/design/AdminSubitemsPriorityDragTest.php"
+    ],
+    "design/admin4/templates/children.tpl": [
+      "tests/tests/design/AdminSubitemsPriorityDragTest.php"
+    ],
+    "extension/ezjscore/classes/ezjscserverfunctionsnode.php": [
+      "tests/tests/extension/ezjscore/ezjscServerFunctionsNodePriorityTest.php"
     ]
   },
   "generated": {

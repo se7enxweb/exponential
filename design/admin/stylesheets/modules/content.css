@@ -483,11 +483,13 @@ div.block.a4-content-attr { margin: 0 0 var(--a4-space-5); padding-bottom: 0; } 
   cursor: not-allowed;
 }
 /* the editor engine switch below a rich text field (ezoe's ezxmltext_ezoe_engine_switch.tpl, EngineSwitch=enabled):
-   the label "Editor" and the engines as one segmented control, drawn like .a4-tabs.is-segmented (components.css) at
-   the one control height. The engine in use (the pressed toggle, aria-pressed="true") is filled; the others are the outlined
-   buttons that switch. Left-aligned under the field like its other controls, 8px below the editor's status bar; on a
-   narrow screen the joined engines move under the label as one piece. The selectors carry the group class, so they beat the button look
-   above (:is(.a4-content-attr, ...) button.button). */
+   the label "Editor" and the engines. The engines are the shared segmented pill (their span carries
+   .a4-tabs.is-segmented, components.css draws it: the track, each engine round inside it, the engine in use, the
+   pressed toggle aria-pressed="true", tinted in the accent with an accent edge, the focus ring, forced colors), so
+   the switch looks like the left menu's width switch. Left-aligned under the field like its other controls, 8px
+   below the editor's status bar; on a narrow screen the pill moves under the label as one piece. What is left here
+   is what the legacy button look of this file (:is(.a4-content-attr, ...) button.button:hover) would otherwise
+   paint over the pill on hover. */
 .a4-content-attr .ezoe-engine-switch {
   display: flex;
   flex-wrap: wrap;
@@ -496,36 +498,14 @@ div.block.a4-content-attr { margin: 0 0 var(--a4-space-5); padding-bottom: 0; } 
   margin: var(--a4-space-2) 0 0;
 }
 .a4-content-attr .ezoe-engine-switch .ezoe-engine-switch-label { color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 650; }
-.a4-content-attr .ezoe-engine-switch .ezoe-engine-switch-options { display: inline-flex; flex-wrap: nowrap; }
-.a4-content-attr .ezoe-engine-switch .ezoe-engine-switch-option {
-  box-sizing: border-box;
-  display: inline-flex;
-  align-items: center;
-  min-height: var(--a4-control-h);
-  margin: 0;
-  padding: 0 var(--a4-space-3);
-  border: 1px solid var(--a4-line-strong);
-  border-radius: 0;
+.a4-content-attr .ezoe-engine-switch .a4-tabs.is-segmented > button.ezoe-engine-switch-option:hover:not(:disabled) {
+  border-color: var(--a4-line-strong);
   background-color: var(--a4-card);
-  color: var(--a4-ink);
-  font-family: var(--a4-font);
-  font-size: var(--a4-text-s);
-  font-weight: 600;
-  line-height: 1.2;
-  white-space: nowrap;
+  color: var(--a4-accent-text);
 }
-.a4-content-attr .ezoe-engine-switch .ezoe-engine-switch-option:not(:first-child) { margin-left: -1px; }
-.a4-content-attr .ezoe-engine-switch .ezoe-engine-switch-option:first-child { border-radius: var(--a4-radius-s) 0 0 var(--a4-radius-s); }
-.a4-content-attr .ezoe-engine-switch .ezoe-engine-switch-option:last-child { border-radius: 0 var(--a4-radius-s) var(--a4-radius-s) 0; }
-.a4-content-attr .ezoe-engine-switch button.ezoe-engine-switch-option:hover:not(:disabled, .current),
-.a4-content-attr .ezoe-engine-switch button.ezoe-engine-switch-option:focus-visible { position: relative; z-index: 1; }
-.a4-content-attr .ezoe-engine-switch button.ezoe-engine-switch-option:hover:not(:disabled, .current) { border-color: var(--a4-accent); color: var(--a4-accent-text); }
-.a4-content-attr .ezoe-engine-switch .ezoe-engine-switch-option.current {
-  position: relative;
-  border-color: var(--a4-accent-strong);
-  background-color: var(--a4-accent-strong);
-  color: var(--a4-on-accent);
-  font-weight: 650;
+.a4-content-attr .ezoe-engine-switch .a4-tabs.is-segmented > button.ezoe-engine-switch-option.current,
+.a4-content-attr .ezoe-engine-switch .a4-tabs.is-segmented > button.ezoe-engine-switch-option.current:hover:not(:disabled) {
+  border-color: var(--a4-accent-text);
   cursor: default;
 }
 
@@ -569,6 +549,62 @@ div.block.a4-content-attr { margin: 0 0 var(--a4-space-5); padding-bottom: 0; } 
       [type=url], [type=tel], [type=search], [type=date], [type=time], [type=datetime-local], select, textarea) { font-size: var(--a4-text-l); }
 }
 
+/* ---- sub items: reordering the rows by drag and drop (javascript/subitems_priority_drag.js) -----------------
+   The column of grips (.a4-content-drag, hidden by the script while the table is not sorted as the parent sorts),
+   the moved row as its own placeholder, the ghost with the name that follows the pointer (fixed, placed through
+   --a4-content-drag-x/-y/-w set by the script), and the table while the order is being saved. */
+
+.a4-content-drag-on td.a4-content-drag { width: 1%; padding-right: 0; white-space: nowrap; }
+.a4-content-drag-on .a4-content-drag-grip { width: var(--a4-space-6); min-height: var(--a4-space-6); font-size: var(--a4-text-m); }
+.a4-content-drag-grip:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
+.a4-content-drag-grip[aria-pressed="true"] { border-style: solid; border-color: var(--a4-accent); background-color: var(--a4-accent-soft); color: var(--a4-accent-text); cursor: grabbing; }
+.a4-content-drag-moving, .a4-content-drag-moving * { cursor: grabbing; user-select: none; -webkit-user-select: none; }
+.a4-content-drag-on tr.a4-content-drag-placeholder > td { background-color: var(--a4-accent-soft); }
+.a4-content-drag-on tr.a4-content-drag-placeholder > td:not(.a4-content-drag) { opacity: .6; }
+.a4-content-drag-on tr.a4-content-drag-placeholder > td:first-child { box-shadow: inset 3px 0 0 var(--a4-accent); }
+.a4-content-drag-on tr.a4-content-drag-placeholder { outline: 2px dashed var(--a4-accent); outline-offset: -2px; }
+.a4-content-drag-saving .exp-dt-body { opacity: .7; transition: opacity .15s ease-out; }
+.a4-content-drag-ghost {
+  position: fixed;
+  top: var(--a4-content-drag-y, 0);
+  left: var(--a4-content-drag-x, 0);
+  z-index: var(--a4-z-drag);
+  display: flex;
+  align-items: center;
+  gap: var(--a4-space-2);
+  box-sizing: border-box;
+  width: var(--a4-content-drag-w, auto);
+  max-width: calc(100vw - 2 * var(--a4-space-4));
+  padding: var(--a4-space-2) var(--a4-space-3);
+  border: 1px solid var(--a4-accent);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  box-shadow: var(--a4-shadow-m);
+  color: var(--a4-ink);
+  font-size: var(--a4-text-m);
+  pointer-events: none;
+  transform: rotate(-.6deg);
+}
+.a4-content-drag-ghost .a4-icon { color: var(--a4-accent-text); }
+.a4-content-drag-ghost-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 650; }
+@media (pointer: coarse) {
+  .a4-content-drag-on .a4-content-drag-grip { width: var(--a4-space-7); min-height: var(--a4-space-7); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .a4-content-drag-ghost { transform: none; }
+  .a4-content-drag-saving .exp-dt-body { transition: none; }
+}
+@media (forced-colors: active) {
+  .a4-content-drag-on tr.a4-content-drag-placeholder { outline-color: Highlight; }
+  .a4-content-drag-on tr.a4-content-drag-placeholder > td:not(.a4-content-drag) { opacity: 1; }
+  .a4-content-drag-grip[aria-pressed="true"] { border-color: Highlight; outline: 2px solid Highlight; }
+  .a4-content-drag-ghost { border: 2px solid CanvasText; }
+  .a4-content-drag-ghost .a4-icon { forced-color-adjust: none; background-color: CanvasText; }
+}
+@media print {
+  .a4-content-drag-on .a4-content-drag { display: none; }
+}
+
 /* Forced colors (Windows high contrast) drop backgrounds and box-shadows and repaint borders in one colour: a state
    that differs only by them (current, selected, moved, pressed, changed) gets a Highlight outline. */
 @media (forced-colors: active) {
@@ -580,6 +616,79 @@ div.block.a4-content-attr { margin: 0 0 var(--a4-space-5); padding-bottom: 0; } 
   .a4-content-attr select:where(:not([multiple]):not([size]), [size="1"]) { -webkit-appearance: auto; appearance: auto; padding-right: var(--a4-space-2); background-image: none; }
   :is(.a4-content-attr, .a4-content-edit) input.defaultbutton { border-width: 2px; }
   :is(.a4-content-attr, .a4-content-edit) :is(input.button-disabled, input.button, button.button, input.defaultbutton):disabled { border-color: GrayText; color: GrayText; opacity: 1; }
-  /* the engine in use of the editor switch loses its fill: an outline marks it */
-  .a4-content-attr .ezoe-engine-switch .ezoe-engine-switch-option.current { outline: 2px solid Highlight; outline-offset: -2px; }
+}
+
+/* ---- preview ---- content/versionview: the version in the width of a device ------------------------------------ */
+
+/* The bar above the preview: the device switch (iPhone | iPad | Desktop | Large Desktop, a segmented pill), the
+   landscape switch and the size it is drawn at. In a narrow column the switches show their icons only; their names
+   stay for screen readers and in their titles. */
+.a4-content-preview-bar {
+  container-type: inline-size;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--a4-space-2) var(--a4-space-3);
+  margin: 0 0 var(--a4-space-3);
+}
+.a4-content-preview-bar[hidden] { display: none; }
+.a4-content-preview-bar .a4-content-preview-size {
+  margin: 0;
+  color: var(--a4-muted);
+  font-size: var(--a4-text-s);
+  font-variant-numeric: tabular-nums;
+}
+/* landscape is for phone and tablet: disabled for the desktops, in the disabled colour, no hover */
+.a4-content-preview-bar .a4-tabs.is-segmented > button:disabled,
+.a4-content-preview-bar .a4-tabs.is-segmented > button:disabled:hover {
+  border-color: transparent;
+  background-color: transparent;
+  color: var(--a4-disabled);
+  cursor: not-allowed;
+}
+@container (max-width: 640px) {
+  .a4-content-preview-bar .a4-content-preview-device-name {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  .a4-content-preview-bar .a4-tabs.is-segmented > button {
+    min-width: calc(var(--a4-control-h) + 2px);
+    padding: 0 var(--a4-space-2);
+    font-size: var(--a4-text-l);
+  }
+}
+/* The stage: the device's frame centred on the soft surface; the script sets the frame's size and the iframe's
+   scale. Without the script the iframe fills the column as before. */
+.a4-content-preview-stage.is-device {
+  display: flex;
+  justify-content: center;
+  padding: var(--a4-space-3);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+  overflow: hidden;
+}
+.a4-content-preview-stage.is-device .a4-content-preview-device {
+  box-sizing: content-box;   /* the script sets the size of the scaled page; the edge comes on top */
+  flex: 0 0 auto;
+  overflow: hidden;
+  border: 1px solid var(--a4-line-strong);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  box-shadow: var(--a4-shadow-s);
+}
+.a4-content-preview-stage.is-device .a4-content-preview-device iframe {
+  display: block;
+  max-width: none;
+  border: 0;
+  transform-origin: 0 0;
+}
+@media (forced-colors: active) {
+  .a4-content-preview-stage.is-device .a4-content-preview-device { border-color: CanvasText; }
 }

@@ -8871,6 +8871,42 @@
         <translation>Vorschau in einem neuen Fenster öffnen</translation>
     </message>
     <message>
+        <source>iPhone</source>
+        <translation>iPhone</translation>
+    </message>
+    <message>
+        <source>iPad</source>
+        <translation>iPad</translation>
+    </message>
+    <message>
+        <source>Desktop</source>
+        <translation>Desktop</translation>
+    </message>
+    <message>
+        <source>Large Desktop</source>
+        <translation>Großer Desktop</translation>
+    </message>
+    <message>
+        <source>Preview size</source>
+        <translation>Vorschaugröße</translation>
+    </message>
+    <message>
+        <source>%device, %width × %height px</source>
+        <translation>%device, %width × %height px</translation>
+    </message>
+    <message>
+        <source>%width × %height px, shown at %scale %</source>
+        <translation>%width × %height px, angezeigt mit %scale %</translation>
+    </message>
+    <message>
+        <source>Landscape</source>
+        <translation>Querformat</translation>
+    </message>
+    <message>
+        <source>Landscape: phone and tablet turned on their side</source>
+        <translation>Querformat: Smartphone und Tablet quer gedreht</translation>
+    </message>
+    <message>
         <source>Queued</source>
         <translation>In der Warteschlange</translation>
     </message>
@@ -11692,6 +11728,82 @@
     <message>
         <source>Not copied</source>
         <translation>Nicht kopiert</translation>
+    </message>
+    <message>
+        <source>Order</source>
+        <translation>Reihenfolge</translation>
+    </message>
+    <message>
+        <source>Move %name</source>
+        <translation>%name verschieben</translation>
+    </message>
+    <message>
+        <source>Drag to change the order</source>
+        <translation>Ziehen, um die Reihenfolge zu ändern</translation>
+    </message>
+    <message>
+        <source>Drag the grip to change the order. With the keyboard: Space picks the row up, the arrow keys move it, Space drops it, Escape cancels. Alt+Up and Alt+Down move it by one place at once.</source>
+        <translation>Zum Ändern der Reihenfolge den Griff ziehen. Mit der Tastatur: Leertaste nimmt die Zeile auf, die Pfeiltasten verschieben sie, Leertaste legt sie ab, Escape bricht ab. Alt+Pfeil hoch und Alt+Pfeil runter verschieben sie sofort um eine Stelle.</translation>
+    </message>
+    <message>
+        <source>Picked up %name. Position %position of %count.</source>
+        <translation>%name aufgenommen. Position %position von %count.</translation>
+    </message>
+    <message>
+        <source>Position %position of %count</source>
+        <translation>Position %position von %count</translation>
+    </message>
+    <message>
+        <source>Moved to position %position of %count</source>
+        <translation>Verschoben auf Position %position von %count</translation>
+    </message>
+    <message>
+        <source>Dropped. The order is unchanged.</source>
+        <translation>Abgelegt. Die Reihenfolge ist unverändert.</translation>
+    </message>
+    <message>
+        <source>Move cancelled. %name is back at position %position of %count.</source>
+        <translation>Verschieben abgebrochen. %name ist wieder auf Position %position von %count.</translation>
+    </message>
+    <message>
+        <source>Order saved</source>
+        <translation>Reihenfolge gespeichert</translation>
+    </message>
+    <message>
+        <source>Undo</source>
+        <translation>Rückgängig</translation>
+    </message>
+    <message>
+        <source>Previous order restored</source>
+        <translation>Vorherige Reihenfolge wiederhergestellt</translation>
+    </message>
+    <message>
+        <source>The order was not saved: %error</source>
+        <translation>Die Reihenfolge wurde nicht gespeichert: %error</translation>
+    </message>
+    <message>
+        <source>The previous order was not restored: %error</source>
+        <translation>Die vorherige Reihenfolge wurde nicht wiederhergestellt: %error</translation>
+    </message>
+    <message>
+        <source>unknown error</source>
+        <translation>unbekannter Fehler</translation>
+    </message>
+    <message>
+        <source>Someone else changed the order in the meantime. Nothing was saved; the list shows the current order now.</source>
+        <translation>Die Reihenfolge wurde inzwischen von jemand anderem geändert. Es wurde nichts gespeichert; die Liste zeigt jetzt die aktuelle Reihenfolge.</translation>
+    </message>
+    <message>
+        <source>Save the priority you are editing (Enter) or cancel it (Escape) before you move a row.</source>
+        <translation>Speichern Sie die bearbeitete Priorität (Enter) oder verwerfen Sie sie (Escape), bevor Sie eine Zeile verschieben.</translation>
+    </message>
+    <message>
+        <source>Please wait until the order is saved.</source>
+        <translation>Bitte warten, bis die Reihenfolge gespeichert ist.</translation>
+    </message>
+    <message>
+        <source>Please wait until the priority is saved.</source>
+        <translation>Bitte warten, bis die Priorität gespeichert ist.</translation>
     </message>
     <message>
         <source>Object</source>
@@ -16063,6 +16175,22 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Heller Modus</translation>
     </message>
     <message>
+        <source>%tab menu</source>
+        <translation>Menü „%tab“</translation>
+    </message>
+    <message>
+        <source>Loading the %tab menu</source>
+        <translation>Menü „%tab“ wird geladen</translation>
+    </message>
+    <message>
+        <source>The %tab menu could not be loaded.</source>
+        <translation>Das Menü „%tab“ konnte nicht geladen werden.</translation>
+    </message>
+    <message>
+        <source>Go to %tab</source>
+        <translation>Weiter zu „%tab“</translation>
+    </message>
+    <message>
         <source>Open the site</source>
         <translation>Website öffnen</translation>
     </message>
@@ -16328,7 +16456,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <name>design/admin/parts/my/menu</name>
     <message>
         <source>My notification settings</source>
-        <translation>Meine Benachrichtigungs- Einstellungen</translation>
+        <translation>Meine Benachrichtigungseinstellungen</translation>
     </message>
     <message>
         <source>My bookmarks</source>
@@ -16453,6 +16581,22 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>My e-mail preferences</source>
         <translation>Meine E-Mail-Einstellungen</translation>
+    </message>
+    <message>
+        <source>The content you follow and how you are told.</source>
+        <translation>Inhalte, denen Sie folgen, und wie Sie benachrichtigt werden.</translation>
+    </message>
+    <message>
+        <source>Which optional e-mail you get; your consents.</source>
+        <translation>Welche optionalen E-Mails Sie erhalten; Ihre Einwilligungen.</translation>
+    </message>
+    <message>
+        <source>Set a new password for your account.</source>
+        <translation>Ein neues Passwort für Ihr Konto setzen.</translation>
+    </message>
+    <message>
+        <source>Your name, e-mail address and other details.</source>
+        <translation>Ihr Name, Ihre E-Mail-Adresse und weitere Angaben.</translation>
     </message>
 </context>
 <context>
@@ -16975,6 +17119,34 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Access control</source>
         <translation>Zugangskontrolle</translation>
+    </message>
+    <message>
+        <source>Users and user groups</source>
+        <translation>Benutzer und Gruppen</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Benutzer</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>Mein Konto</translation>
+    </message>
+    <message>
+        <source>Users and user groups; create and edit accounts.</source>
+        <translation>Benutzer und Benutzergruppen; Konten anlegen und bearbeiten.</translation>
+    </message>
+    <message>
+        <source>Who is signed in; end sessions.</source>
+        <translation>Wer angemeldet ist; Sitzungen beenden.</translation>
+    </message>
+    <message>
+        <source>Who may do what, and where.</source>
+        <translation>Wer was wo darf.</translation>
+    </message>
+    <message>
+        <source>Accounts not yet activated; activate or remove them.</source>
+        <translation>Noch nicht aktivierte Konten; aktivieren oder entfernen.</translation>
     </message>
 </context>
 <context>
@@ -24134,6 +24306,22 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
+    <message>
+        <source>Note: %note</source>
+        <translation>Notiz: %note</translation>
+    </message>
+    <message>
+        <source>Note</source>
+        <translation>Notiz</translation>
+    </message>
+    <message>
+        <source>Note for a pause or resume (optional)</source>
+        <translation>Notiz zum Anhalten oder Fortsetzen (optional)</translation>
+    </message>
+    <message>
+        <source>Kept with the next Pause or Resume pressed on this page; shown under Pauses, on the paused part and in the output of runcronjobs.php.</source>
+        <translation>Wird mit dem nächsten Anhalten oder Fortsetzen auf dieser Seite gespeichert; erscheint unter Pausen, beim angehaltenen Teil und in der Ausgabe von runcronjobs.php.</translation>
+    </message>
     <message>
         <source>Docs</source>
         <translation>Doku</translation>
@@ -72867,6 +73055,18 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
 </context>
 <context>
     <name>design/admin/setup/setupmenu</name>
+    <message>
+        <source>All parts paused</source>
+        <translation>Alle Teile angehalten</translation>
+    </message>
+    <message>
+        <source>1 part paused</source>
+        <translation>1 Teil angehalten</translation>
+    </message>
+    <message>
+        <source>%count parts paused</source>
+        <translation>%count Teile angehalten</translation>
+    </message>
     <message>
         <source>Setup</source>
         <translation>Setup</translation>
