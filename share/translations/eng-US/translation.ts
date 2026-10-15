@@ -67462,4 +67462,151 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>There is no site data.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/user/success</name>
+    <message>
+        <source>Check your e-mail</source>
+        <translation>Check your e-mail</translation>
+    </message>
+    <message>
+        <source>Your account has been created. One step is left: confirm your e-mail address.</source>
+        <translation>Your account has been created. One step is left: confirm your e-mail address.</translation>
+    </message>
+    <message>
+        <source>We sent a message to %email. Open the link in it to activate your account; then you can sign in.</source>
+        <translation>We sent a message to %email. Open the link in it to activate your account; then you can sign in.</translation>
+    </message>
+    <message>
+        <source>We sent a message to the e-mail address you entered. Open the link in it to activate your account; then you can sign in.</source>
+        <translation>We sent a message to the e-mail address you entered. Open the link in it to activate your account; then you can sign in.</translation>
+    </message>
+    <message>
+        <source>No message after a few minutes? Look in your spam folder.</source>
+        <translation>No message after a few minutes? Look in your spam folder.</translation>
+    </message>
+    <message>
+        <source>Your account is waiting for approval</source>
+        <translation>Your account is waiting for approval</translation>
+    </message>
+    <message>
+        <source>Your account has been created. An administrator checks new accounts before they can be used.</source>
+        <translation>Your account has been created. An administrator checks new accounts before they can be used.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail as soon as your account is approved; then you can sign in.</source>
+        <translation>You will get an e-mail as soon as your account is approved; then you can sign in.</translation>
+    </message>
+    <message>
+        <source>Welcome, %name</source>
+        <translation>Welcome, %name</translation>
+    </message>
+    <message>
+        <source>Welcome</source>
+        <translation>Welcome</translation>
+    </message>
+    <message>
+        <source>Your account is ready and you are signed in.</source>
+        <translation>Your account is ready and you are signed in.</translation>
+    </message>
+    <message>
+        <source>Your e-mail address is confirmed</source>
+        <translation>Your e-mail address is confirmed</translation>
+    </message>
+    <message>
+        <source>Your account is active and you are signed in.</source>
+        <translation>Your account is active and you are signed in.</translation>
+    </message>
+    <message>
+        <source>Your account is active. You can sign in now.</source>
+        <translation>Your account is active. You can sign in now.</translation>
+    </message>
+    <message>
+        <source>An administrator checks new accounts before they can be used.</source>
+        <translation>An administrator checks new accounts before they can be used.</translation>
+    </message>
+    <message>
+        <source>Your account is already active</source>
+        <translation>Your account is already active</translation>
+    </message>
+    <message>
+        <source>You are signed in.</source>
+        <translation>You are signed in.</translation>
+    </message>
+    <message>
+        <source>The account was activated before. You can sign in.</source>
+        <translation>The account was activated before. You can sign in.</translation>
+    </message>
+    <message>
+        <source>This activation link does not work</source>
+        <translation>This activation link does not work</translation>
+    </message>
+    <message>
+        <source>The link is not valid, or it has been used already. Your account was not activated.</source>
+        <translation>The link is not valid, or it has been used already. Your account was not activated.</translation>
+    </message>
+    <message>
+        <source>Copy the whole link from the e-mail into the address bar of your browser. If you activated the account before, sign in.</source>
+        <translation>Copy the whole link from the e-mail into the address bar of your browser. If you activated the account before, sign in.</translation>
+    </message>
+    <message>
+        <source>We could not find your account</source>
+        <translation>We could not find your account</translation>
+    </message>
+    <message>
+        <source>The account of this registration does not exist (any more).</source>
+        <translation>The account of this registration does not exist (any more).</translation>
+    </message>
+    <message>
+        <source>Please register again, or contact us if the problem stays.</source>
+        <translation>Please register again, or contact us if the problem stays.</translation>
+    </message>
+    <message>
+        <source>Your account is ready</source>
+        <translation>Your account is ready</translation>
+    </message>
+    <message>
+        <source>Your account has been created and you are signed in.</source>
+        <translation>Your account has been created and you are signed in.</translation>
+    </message>
+    <message>
+        <source>Your account has been created. You can sign in now.</source>
+        <translation>Your account has been created. You can sign in now.</translation>
+    </message>
+    <message>
+        <source>Next steps</source>
+        <translation>Next steps</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Sign in</translation>
+    </message>
+    <message>
+        <source>My profile</source>
+        <translation>My profile</translation>
+    </message>
+    <message>
+        <source>Edit profile</source>
+        <translation>Edit profile</translation>
+    </message>
+    <message>
+        <source>Register</source>
+        <translation>Register</translation>
+    </message>
+    <message>
+        <source>Home</source>
+        <translation>Home</translation>
+    </message>
+    <message>
+        <source>Sitemap</source>
+        <translation>Sitemap</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Tag cloud</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Administration</translation>
+    </message>
+</context>
 </TS>

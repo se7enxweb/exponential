@@ -74049,4 +74049,151 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Es gibt keine Site-Daten.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/user/success</name>
+    <message>
+        <source>Check your e-mail</source>
+        <translation>Bitte prüfen Sie Ihre E-Mails</translation>
+    </message>
+    <message>
+        <source>Your account has been created. One step is left: confirm your e-mail address.</source>
+        <translation>Ihr Konto wurde angelegt. Ein Schritt fehlt noch: Bestätigen Sie Ihre E-Mail-Adresse.</translation>
+    </message>
+    <message>
+        <source>We sent a message to %email. Open the link in it to activate your account; then you can sign in.</source>
+        <translation>Wir haben eine Nachricht an %email gesendet. Öffnen Sie den Link darin, um Ihr Konto zu aktivieren; danach können Sie sich anmelden.</translation>
+    </message>
+    <message>
+        <source>We sent a message to the e-mail address you entered. Open the link in it to activate your account; then you can sign in.</source>
+        <translation>Wir haben eine Nachricht an die angegebene E-Mail-Adresse gesendet. Öffnen Sie den Link darin, um Ihr Konto zu aktivieren; danach können Sie sich anmelden.</translation>
+    </message>
+    <message>
+        <source>No message after a few minutes? Look in your spam folder.</source>
+        <translation>Nach einigen Minuten noch keine Nachricht? Sehen Sie in Ihrem Spam-Ordner nach.</translation>
+    </message>
+    <message>
+        <source>Your account is waiting for approval</source>
+        <translation>Ihr Konto wartet auf Freigabe</translation>
+    </message>
+    <message>
+        <source>Your account has been created. An administrator checks new accounts before they can be used.</source>
+        <translation>Ihr Konto wurde angelegt. Ein Administrator prüft neue Konten, bevor sie genutzt werden können.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail as soon as your account is approved; then you can sign in.</source>
+        <translation>Sie erhalten eine E-Mail, sobald Ihr Konto freigegeben ist; danach können Sie sich anmelden.</translation>
+    </message>
+    <message>
+        <source>Welcome, %name</source>
+        <translation>Willkommen, %name</translation>
+    </message>
+    <message>
+        <source>Welcome</source>
+        <translation>Willkommen</translation>
+    </message>
+    <message>
+        <source>Your account is ready and you are signed in.</source>
+        <translation>Ihr Konto ist bereit und Sie sind angemeldet.</translation>
+    </message>
+    <message>
+        <source>Your e-mail address is confirmed</source>
+        <translation>Ihre E-Mail-Adresse ist bestätigt</translation>
+    </message>
+    <message>
+        <source>Your account is active and you are signed in.</source>
+        <translation>Ihr Konto ist aktiv und Sie sind angemeldet.</translation>
+    </message>
+    <message>
+        <source>Your account is active. You can sign in now.</source>
+        <translation>Ihr Konto ist aktiv. Sie können sich jetzt anmelden.</translation>
+    </message>
+    <message>
+        <source>An administrator checks new accounts before they can be used.</source>
+        <translation>Ein Administrator prüft neue Konten, bevor sie genutzt werden können.</translation>
+    </message>
+    <message>
+        <source>Your account is already active</source>
+        <translation>Ihr Konto ist bereits aktiv</translation>
+    </message>
+    <message>
+        <source>You are signed in.</source>
+        <translation>Sie sind angemeldet.</translation>
+    </message>
+    <message>
+        <source>The account was activated before. You can sign in.</source>
+        <translation>Das Konto wurde bereits aktiviert. Sie können sich anmelden.</translation>
+    </message>
+    <message>
+        <source>This activation link does not work</source>
+        <translation>Dieser Aktivierungslink funktioniert nicht</translation>
+    </message>
+    <message>
+        <source>The link is not valid, or it has been used already. Your account was not activated.</source>
+        <translation>Der Link ist ungültig oder wurde bereits verwendet. Ihr Konto wurde nicht aktiviert.</translation>
+    </message>
+    <message>
+        <source>Copy the whole link from the e-mail into the address bar of your browser. If you activated the account before, sign in.</source>
+        <translation>Kopieren Sie den vollständigen Link aus der E-Mail in die Adresszeile Ihres Browsers. Wenn Sie das Konto bereits aktiviert haben, melden Sie sich an.</translation>
+    </message>
+    <message>
+        <source>We could not find your account</source>
+        <translation>Wir konnten Ihr Konto nicht finden</translation>
+    </message>
+    <message>
+        <source>The account of this registration does not exist (any more).</source>
+        <translation>Das Konto dieser Registrierung existiert nicht (mehr).</translation>
+    </message>
+    <message>
+        <source>Please register again, or contact us if the problem stays.</source>
+        <translation>Bitte registrieren Sie sich erneut, oder kontaktieren Sie uns, wenn das Problem bleibt.</translation>
+    </message>
+    <message>
+        <source>Your account is ready</source>
+        <translation>Ihr Konto ist bereit</translation>
+    </message>
+    <message>
+        <source>Your account has been created and you are signed in.</source>
+        <translation>Ihr Konto wurde angelegt und Sie sind angemeldet.</translation>
+    </message>
+    <message>
+        <source>Your account has been created. You can sign in now.</source>
+        <translation>Ihr Konto wurde angelegt. Sie können sich jetzt anmelden.</translation>
+    </message>
+    <message>
+        <source>Next steps</source>
+        <translation>Nächste Schritte</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Anmelden</translation>
+    </message>
+    <message>
+        <source>My profile</source>
+        <translation>Mein Profil</translation>
+    </message>
+    <message>
+        <source>Edit profile</source>
+        <translation>Profil bearbeiten</translation>
+    </message>
+    <message>
+        <source>Register</source>
+        <translation>Registrieren</translation>
+    </message>
+    <message>
+        <source>Home</source>
+        <translation>Startseite</translation>
+    </message>
+    <message>
+        <source>Sitemap</source>
+        <translation>Sitemap</translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation>Schlagwortwolke</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Administration</translation>
+    </message>
+</context>
 </TS>

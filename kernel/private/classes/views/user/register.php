@@ -132,6 +132,9 @@ if ( !function_exists( 'checkContentActions' ) )
             if( $operationResult['status'] === eZModuleOperationInfo::STATUS_CONTINUE ||
                     $operationResult['status'] === eZModuleOperationInfo::STATUS_HALTED )
             {
+                // user/success tells from this which state the new account is in (e-mail to confirm, waiting for an
+                // administrator, active, signed in); it reads the id for an hour, in this session only
+                $http->setSessionVariable( 'RegisteredUserID', array( 'id' => (int)$userID, 'time' => time() ) );
                 if ( $http->hasSessionVariable( 'RedirectAfterUserRegister' ) )
                 {
                     $module->redirectTo( $http->sessionVariable( 'RedirectAfterUserRegister' ) );
