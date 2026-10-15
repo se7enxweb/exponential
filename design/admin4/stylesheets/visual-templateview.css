@@ -46,7 +46,7 @@
     font-weight: bold;
     text-align: center;
 }
-.override-name { font-weight: bold; color: var(--a4-ink); font-family: monospace; font-size: 1em; }
+.override-name { font-weight: bold; color: var(--a4-ink); font-family: var(--a4-mono); font-size: 1em; }
 .override-badge { padding: 0.05em 0.5em; border-radius: 999px; font-size: var(--a4-text-xs); }
 .override-badge-own { background-color: var(--a4-soft); color: var(--a4-ink); }
 .override-badge-extension { background-color: var(--a4-info-bg); color: var(--a4-info); }
@@ -73,7 +73,7 @@
 .override-file { margin: 0.35em 0 0.4em 2.9em; color: var(--a4-muted); font-size: var(--a4-text-xs); word-break: break-all; }
 .override-conditions { margin-left: 2.9em; }
 .override-condition { display: flex; align-items: center; gap: 0.5em; flex-wrap: wrap; margin: 0.2em 0; }
-.override-condition-key { display: inline-block; min-width: 10em; font-weight: bold; font-family: monospace; }
+.override-condition-key { display: inline-block; min-width: 10em; font-weight: bold; font-family: var(--a4-mono); }
 .override-condition-remove { font-size: var(--a4-text-xs); color: var(--a4-muted); }
 .override-condition-new select { min-width: 10.5em; }
 .override-no-conditions { margin: 0.2em 0; color: var(--a4-muted); font-style: italic; }

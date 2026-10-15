@@ -22,7 +22,7 @@
 .package-compare a.pcmp-chip-active { box-shadow: inset 0 0 0 2px currentColor; font-weight: bold; }
 .package-compare a.pcmp-chip-all.pcmp-chip-active { background: var(--a4-accent-strong); border-color: var(--a4-accent-strong); color: var(--a4-on-accent); }
 
-.package-compare .pcmp-glyph { display: inline-block; min-width: 1.1em; text-align: center; font-weight: bold; font-family: Verdana, Arial, sans-serif; }
+.package-compare .pcmp-glyph { display: inline-block; min-width: 1.1em; text-align: center; font-weight: bold; font-family: var(--a4-font); }
 .package-compare .pcmp-status { display: inline-flex; align-items: center; gap: 0.2em; padding: 0 0.5em; border: 1px solid; border-radius: 3px; font-size: var(--a4-text-xs); line-height: 1.6; white-space: nowrap; }
 
 .package-compare .pcmp-status-new { background: var(--a4-ok-bg); border-color: var(--a4-ok-line); color: var(--a4-ok); }
