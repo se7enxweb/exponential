@@ -140,8 +140,8 @@ class ExtensionDownloadTest extends PHPUnit\Framework\TestCase
     /** ED-01, every file below settings/, and the names of passwords and authorizations */
     public function testEveryFileBelowSettingsAndMoreNamesAreRead()
     {
-        $this->put( 'settings/logins.txt', "db_pass=hunter2\nProxyAuth=user:pw\nBearer=abc\nmysqli.default_pw=pw\nBypass=cache\nSmtpAuth=none\nAuth=login\nMaxTokens=10\n" );
-        $this->assertSame( array( 'settings/logins.txt: Auth', 'settings/logins.txt: Bearer', 'settings/logins.txt: ProxyAuth', 'settings/logins.txt: SmtpAuth',
+        $this->put( 'settings/logins.txt', "db_pass=hunter2\nProxyAuth=user:pw\nBearer=abc\nmysqli.default_pw=pw\nBypass=cache\nSmtpAuth=none\nSmtpPassword=login\nAuth=login\nMaxTokens=10\n" );
+        $this->assertSame( array( 'settings/logins.txt: Auth', 'settings/logins.txt: Bearer', 'settings/logins.txt: ProxyAuth', 'settings/logins.txt: SmtpPassword',
                                   'settings/logins.txt: db_pass', 'settings/logins.txt: mysqli.default_pw' ), $this->secrets() );
     }
 
@@ -164,7 +164,10 @@ class ExtensionDownloadTest extends PHPUnit\Framework\TestCase
             $this->put( $file );
         foreach ( array( '.env.example', 'docker/.env.sample', 'doc/keyboard.md', 'classes/keys.php', 'design/monkey.png' ) as $file )
             $this->put( $file );
-        $this->assertSame( array( '.env: key material', 'certs/server.key: key material', 'certs/server.pem: key material',
+        // a certificate is judged by what it holds: a public one (certs/server.pem, a CA bundle) passes, a private
+        // key in a .pem, .crt or .asc file is refused
+        $this->put( 'certs/tls.crt', "-----BEGIN CERTIFICATE-----\nMIIB\n-----END CERTIFICATE-----\n-----BEGIN RSA PRIVATE KEY-----\nMIIE\n-----END RSA PRIVATE KEY-----\n" );
+        $this->assertSame( array( '.env: key material', 'certs/server.key: key material', 'certs/tls.crt: (private key)',
                                   'docker/.env.local: key material', 'lib/.ssh/config: key material', 'ssh/id_ed25519.pub: key material',
                                   'ssh/id_rsa: key material', 'store/client.p12: key material', 'store/client.pfx: key material',
                                   'var/jwt/public.txt: key material' ), $this->secrets() );
@@ -177,7 +180,7 @@ class ExtensionDownloadTest extends PHPUnit\Framework\TestCase
         $this->put( 'settings/b.ini', "[Db]\nPassword[]=hunter2\nToken[main]=abc\n" );
         $this->put( 'settings/c.ini', "[Db]\n  Password   =   \"hunter2\"  \n" );
         $this->put( 'settings/d.ini', "\xEF\xBB\xBFSecret=one\r\nUser=x\r\nDbPass=two\rTitle=three\r\n" );
-        $this->put( 'settings/siteaccess/site/e', "Server=mysql://u:hunter2@db/x\n; Url=https://u:pw@host/\n" );
+        $this->put( 'settings/siteaccess/site/e', "Server=mysql://u:hunter2@db/x\n; Url=https://u:hunter2@host/\n" );
         $this->put( 'settings/f.ini', "# ApiKey=...\n# Password=<...>\n# Password=xxxx\n# a token: in prose\nPassword=\nTimeout=30\nMaxTokens=4096\nRequireToken=enabled\nContextTokens=1000000\n" );
         $this->put( 'doc/example.ini.append.php', "Password=hunter2\n" );
         $this->assertSame( array( 'doc/example.ini.append.php: Password', 'settings/a.ini.append.php: Password', 'settings/b.ini: Password',
@@ -189,20 +192,31 @@ class ExtensionDownloadTest extends PHPUnit\Framework\TestCase
     /** ED-06, under a secret name only an empty value or a whole placeholder passes: no number, switch or look-alike */
     public function testOnlyEmptyValuesAndWholePlaceholdersPass()
     {
+        // an active setting is taken at its word: "secret" and "changeme" may be the password in use
         $refused = array( 'realsecret...', 'realsecret\u{2026}', 'secret', 'changeme', 'your_real_pw', '<abc123>', '12345678', '1234567890123456',
-                          'true', 'yes', 'none', 'null', '"none"', 'enabled' );
+                          'yes', 'login', '%real' );
         foreach ( $refused as $value )
         {
             $this->assertTrue( eZExtensionPackageHandler::isSecretPair( 'Password', $value ), "Password=$value" );
             $this->assertTrue( eZExtensionPackageHandler::isSecretPair( 'ApiKey', $value ), "ApiKey=$value" );
         }
-        foreach ( array( '', '""', '...', "\u{2026}", 'xxx', 'XXXXXXXX', '***', '<...>', "<\u{2026}>" ) as $value )
+        // nothing, a placeholder, a switch or a template placeholder: no password is one of these
+        foreach ( array( '', '""', '...', "\u{2026}", 'xxx', 'XXXXXXXX', '***', '<...>', "<\u{2026}>", '<your key>',
+                         'true', 'false', 'none', 'null', '"none"', 'enabled', 'disabled', '0',
+                         '%password%', '{password}', '${DB_PASSWORD}', '{{ secret }}', '%env(DB_PASS)%', 'Enter your private key here' ) as $value )
+        {
             $this->assertFalse( eZExtensionPackageHandler::isSecretPair( 'Password', $value ), "Password=$value" );
+            $this->assertFalse( eZExtensionPackageHandler::isSecretPair( 'ApiKey', $value ), "ApiKey=$value" );
+        }
+        // in a comment, a documentation word stands for the value: "# Password=changeme"
+        foreach ( array( 'secret', 'changeme', 'dbpassword', 'your_password', 'tiger' ) as $value )
+            $this->assertFalse( eZExtensionPackageHandler::isSecretPair( 'Password', $value, true ), "#Password=$value" );
+        $this->assertTrue( eZExtensionPackageHandler::isSecretPair( 'Password', 'hunter2', true ), '#Password=hunter2' );
         foreach ( array( array( 'MaxTokens', '4096' ), array( 'ContextTokens', '1000000' ), array( 'CharsPerToken', '3.5' ),
                          array( 'PasswordLifeTime', '90' ), array( 'RequireToken', 'enabled' ), array( 'AllowSessionAuth', 'disabled' ),
                          array( 'Timeout', '30' ), array( 'Title', 'none' ) ) as $pair )
             $this->assertFalse( eZExtensionPackageHandler::isSecretPair( $pair[0], $pair[1] ), implode( '=', $pair ) );
-        $this->put( 'settings/g.ini', "Password=realsecret...\nApiKey=1234567890123456\nToken=true\n" );
+        $this->put( 'settings/g.ini', "Password=realsecret...\nApiKey=1234567890123456\nToken=yes\n" );
         $this->assertSame( array( 'settings/g.ini: ApiKey', 'settings/g.ini: Password', 'settings/g.ini: Token' ), $this->secrets() );
     }
 
@@ -248,11 +262,11 @@ class ExtensionDownloadTest extends PHPUnit\Framework\TestCase
     /** ED-07, more names of key material, files and directories */
     public function testMoreKeyFileNames()
     {
-        foreach ( array( 'credentials.json', 'gcp/my-service-account.json', 'old/private.pem.old', 'old/server.key.txt', 'certs.pem/cert', 'tls.KEY/a' ) as $file )
+        foreach ( array( 'credentials.json', 'gcp/my-service-account.json', 'old/private.p12.old', 'old/server.key.txt', 'certs.pem/cert', 'tls.KEY/a' ) as $file )
             $this->put( $file );
         $this->put( 'doc/keyboard.txt' );
         $this->assertSame( array( 'certs.pem/cert: key material', 'credentials.json: key material', 'gcp/my-service-account.json: key material',
-                                  'old/private.pem.old: key material', 'old/server.key.txt: key material', 'tls.KEY/a: key material' ), $this->secrets() );
+                                  'old/private.p12.old: key material', 'old/server.key.txt: key material', 'tls.KEY/a: key material' ), $this->secrets() );
     }
 
     /** ED-08, a refusal while the wizard makes the package leaves nothing of it behind and is shown */
@@ -321,9 +335,6 @@ class ExtensionDownloadTest extends PHPUnit\Framework\TestCase
             '<value>'                      => array( 'settings/a.ini', "Password=<abc123>\n" ),
             'numeric secret'               => array( 'settings/a.ini', "Password=12345678\n" ),
             'numeric key'                  => array( 'settings/a.ini', "ApiKey=1234567890123456\n" ),
-            'switch true'                  => array( 'settings/a.ini', "Password=true\n" ),
-            'switch none'                  => array( 'settings/a.ini', "Password=none\n" ),
-            'switch null'                  => array( 'settings/a.ini', "Token=null\n" ),
             'settings without extension'   => array( 'settings/siteaccess/site/creds', "Password=hunter2\n" ),
             'ini outside settings'         => array( 'doc/example.ini', "Password=hunter2\n" ),
             'NUL in settings'              => array( 'settings/a.ini', "Title=x\0\nPassword=hunter2\n" ),
@@ -349,7 +360,7 @@ class ExtensionDownloadTest extends PHPUnit\Framework\TestCase
             '.conf pair'                   => array( 'config/a.conf', "auth_pass = s3cret\n" ),
             '.env file'                    => array( '.env', "X=1\n" ),
             'credentials file'             => array( 'credentials.json', "{}" ),
-            'key file upper case'          => array( 'certs/A.PEM', "x" ),
+            'key file upper case'          => array( 'certs/A.KEY', "x" ),
             'key file with suffix'         => array( 'old/server.key.txt', "x" ),
         );
     }
@@ -422,7 +433,7 @@ class ExtensionDownloadTest extends PHPUnit\Framework\TestCase
         unlink( $this->dir() . '/settings/b.ini' );
 
         $this->put( '0', "sk-proj-abcdefghijklmnopqrstuvwxyz012345\n" );
-        $this->put( 'settings/0', "Password=0\n" );
+        $this->put( 'settings/0', "Password=hunter2\n" );
         $this->put( 'settings/long.ini', 'Title=' . str_repeat( 'a', eZExtensionPackageHandler::MAX_VALUE_BYTES + 1 ) . "\n" );
         $this->assertSame( array( '0: (API key)', 'settings/0: Password', 'settings/long.ini: Title' ), $this->secrets() );
         unlink( $this->dir() . '/settings/long.ini' );
@@ -449,7 +460,7 @@ class ExtensionDownloadTest extends PHPUnit\Framework\TestCase
     public function testNamesThatAreNotUtf8()
     {
         // bytes that are not UTF-8: names by the byte patterns, values refused (no pattern reads them as nothing)
-        $this->assertTrue( eZExtensionPackageHandler::pregMatch( eZExtensionPackageHandler::KEY_FILE_PATTERN, "\xFF.pem" ) );
+        $this->assertTrue( eZExtensionPackageHandler::pregMatch( eZExtensionPackageHandler::KEY_FILE_PATTERN, "\xFF.key" ) );
         $this->put( 'settings/bytes.ini', "Password=\xFF\xFE\xFD\nTitle=\xC3\x28\n" );
         $this->assertSame( array( 'settings/bytes.ini: Password' ), $this->secrets() );
         unlink( $this->dir() . '/settings/bytes.ini' );
@@ -457,10 +468,10 @@ class ExtensionDownloadTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'settings/bytes.ini: Password' ), $this->secrets() );
         unlink( $this->dir() . '/settings/bytes.ini' );
 
-        if ( @file_put_contents( $this->dir() . "/\xFF.pem", 'x' ) === false || @file_put_contents( $this->dir() . "/settings/\xFE", "Password=hunter2\n" ) === false )
+        if ( @file_put_contents( $this->dir() . "/\xFF.key", 'x' ) === false || @file_put_contents( $this->dir() . "/settings/\xFE", "Password=hunter2\n" ) === false )
             $this->markTestSkipped( 'the file system takes UTF-8 names only' );
         // sorted byte by byte: "s" (0x73) before 0xFF
-        $this->assertSame( array( "settings/\xFE: Password", "\xFF.pem: key material" ), $this->secrets() );
+        $this->assertSame( array( "settings/\xFE: Password", "\xFF.key: key material" ), $this->secrets() );
     }
 
     /** ED-11, the decision is made on the copy in the package: a source check that missed something does not pack it */
@@ -521,7 +532,7 @@ class ExtensionDownloadTest extends PHPUnit\Framework\TestCase
     /** ED-05, names in any case, hidden files, links and files the check cannot read */
     public function testCaseHiddenFilesLinksAndUnreadableFiles()
     {
-        $this->put( 'certs/SERVER.PEM' );
+        $this->put( 'certs/SERVER.KEY' );
         $this->put( 'docker/.Env' );
         $this->put( 'config/site.INI.BAK', "Title=x\n" );
         $this->put( '.hidden/settings.ini', "Password=hunter2\n" );
@@ -532,7 +543,7 @@ class ExtensionDownloadTest extends PHPUnit\Framework\TestCase
         $this->put( 'settings/huge.ini', str_repeat( 'x', eZExtensionPackageHandler::MAX_SCAN_BYTES + 1 ) );
         try
         {
-            $this->assertSame( array( '.hidden/settings.ini: Password', 'certs/SERVER.PEM: key material',
+            $this->assertSame( array( '.hidden/settings.ini: Password', 'certs/SERVER.KEY: key material',
                                       'config/site.INI.BAK: copy of a settings file', 'docker/.Env: key material',
                                       'settings/huge.ini: text too large to check', 'settings/linked.ini: link outside the extension' ),
                                $this->secrets() );
@@ -631,6 +642,88 @@ class ExtensionDownloadTest extends PHPUnit\Framework\TestCase
         $error = $this->download( $this->name . '/zip', array( $this->name ) );
         $this->assertStringContainsString( 'site.ini.append.php: Password', $error );
         $this->assertStringNotContainsString( 'hunter2', $error );
+    }
+
+    /**
+     * ED-12, the other half of the regression table: each input alone in an extension must pack. These are the
+     * switches, measures, addresses, placeholders and examples that ordinary extensions hold (each row from an
+     * extension the check refused although it held no secret).
+     */
+    public static function packedInputs()
+    {
+        return array(
+            'a switch named after a token'  => array( 'settings/debug.ini.append.php', "<?php /* #?ini charset=\"utf-8\"?\n[DebugSettings]\nezformtoken=disabled\n*/ ?>\n" ),
+            'a browser version'             => array( 'settings/autosave.ini.append.php', "<?php /*\n[AutosaveSettings]\nIEDisableWithPassword[]\nIEDisableWithPassword[]=11\n*/ ?>\n" ),
+            'Auth=none'                     => array( 'settings/a.ini', "Auth=none\n" ),
+            'a header name'                 => array( 'settings/a.ini', "ApiKeyHeader=none\nApiKeyHeader[openai]=Authorization\n" ),
+            'a switch under a secret name'  => array( 'settings/a.ini', "TransactionKey=false\nPassword=disabled\nToken=null\n" ),
+            'a token address'               => array( 'settings/a.ini', "TokenURL=https://login.example.com/oauth2/token\n" ),
+            'a public key'                  => array( 'settings/a.ini', "PublicKey=6LeAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n" ),
+            'a fill-in text'                => array( 'settings/a.ini', "PrivateKey=Enter your private key here\n" ),
+            'template placeholders'         => array( 'settings/a.ini', "MySQLDumpCommand=mysqldump --user={user} --password={password} --host={host} {database}\nPassword=%db_password%\nApiKey=\${API_KEY}\n" ),
+            'a computed YAML value'         => array( 'vendor/x/.github/workflows/tests.yml', "steps:\n  - uses: actions/cache@v4\n    with:\n      key: composer-\${{ matrix.php }}-\${{ hashFiles('composer.lock') }}\n" ),
+            'a comment that explains'       => array( 'settings/a.ini', "#   ClientSecret = the secret of the client\nClientSecret=\n" ),
+            'a commented example'           => array( 'settings/a.ini', "#DBPassword=tiger\n# Password=changeme\n" ),
+            'a public certificate bundle'   => array( 'cacert.pem', "##  Bundle of CA Root Certificates\n-----BEGIN CERTIFICATE-----\nMIIB\n-----END CERTIFICATE-----\n" ),
+            'a documented constant'         => array( 'INSTALL.md', "define( 'CLUSTER_STORAGE_PASS', 'dbpassword' );\n" ),
+            'example addresses'             => array( 'doc/a.md', "new URL('http://abc:xyz@example.com');\nhttps://user:pass@host/ https://u:p@host/ https://a:b@host/\n" ),
+            'test tokens'                   => array( 'tests/a_test.php', "<?php \$h = 'Authorization: Bearer test-key-123456';\n\$k = 'sk-test-SECRET-abcdefghijklmnopqrstuvwxyz';\n" ),
+        );
+    }
+
+    /**
+     * @dataProvider packedInputs
+     */
+    #[PHPUnit\Framework\Attributes\DataProvider( 'packedInputs' )]
+    public function testTheseArePacked( $file, $contents )
+    {
+        $this->put( $file, $contents );
+        $this->assertSame( array(), $this->secrets(), $file );
+    }
+
+    /** ED-13, the extension's package_check.ini narrows the findings it names, and nothing else */
+    public function testTheAllowFileNarrowsOnlyWhatItNames()
+    {
+        $this->put( 'settings/recaptcha.ini', "#   PrivateKey=6LcAbCdEfGhIjKlMnOpQrStUvWxYz0123456789\nApiKey=s3cretvalue\n" );
+        $this->put( 'certs/tls.crt', "-----BEGIN PRIVATE KEY-----\nMIIE\n-----END PRIVATE KEY-----\n" );
+        $this->put( 'settings/site.ini~', "Title=x\n" );
+        $this->assertSame( array( 'certs/tls.crt: (private key)', 'settings/recaptcha.ini: ApiKey', 'settings/recaptcha.ini: PrivateKey',
+                                  'settings/site.ini~: copy of a settings file' ), $this->secrets() );
+
+        $this->put( eZExtensionPackageHandler::ALLOW_FILE,
+                    "[PackageCheck]\n# the example key of the documentation comment\nAllowedFindings[]=settings/recaptcha.ini:PrivateKey\n"
+                    . "AllowedFindings[]=certs/tls.crt:(private key)\nAllowedFindings[]=settings/site.ini~:copy of a settings file\n"
+                    . "AllowedFindings[]=../other/settings/recaptcha.ini:ApiKey\nAllowedFindings[]=settings/*:ApiKey\n" );
+        // the named example passes; a private key, a copy, a path outside and a wildcard never do
+        $this->assertSame( array( 'certs/tls.crt: (private key)', 'settings/recaptcha.ini: ApiKey',
+                                  'settings/site.ini~: copy of a settings file' ), $this->secrets() );
+
+        // a directory entry ends in "/"
+        $this->put( eZExtensionPackageHandler::ALLOW_FILE, "AllowedFindings[]=settings/:ApiKey\nAllowedFindings[]=settings/:PrivateKey\n" );
+        unlink( $this->dir() . '/certs/tls.crt' );
+        unlink( $this->dir() . '/settings/site.ini~' );
+        $this->assertSame( array(), $this->secrets() );
+
+        // a link as the allow file allows nothing
+        unlink( $this->dir() . '/' . eZExtensionPackageHandler::ALLOW_FILE );
+        file_put_contents( $this->dir() . '/settings/allow.txt', "AllowedFindings[]=settings/:ApiKey\nAllowedFindings[]=settings/:PrivateKey\n" );
+        symlink( $this->dir() . '/settings/allow.txt', $this->dir() . '/' . eZExtensionPackageHandler::ALLOW_FILE );
+        $this->assertContains( 'settings/recaptcha.ini: ApiKey', $this->secrets() );
+    }
+
+    /** ED-14, the extensions that ship with the kernel (share/filelist.md5) can be packed */
+    public function testTheBundledExtensionsPass()
+    {
+        $root = dirname( __DIR__, 5 );
+        preg_match_all( '#^[0-9a-f]{32}\s+extension/([^/\s]+)/#m', (string)file_get_contents( $root . '/share/filelist.md5' ), $m );
+        $names = array_unique( $m[1] );
+        $this->assertNotEmpty( $names );
+        foreach ( $names as $name )
+        {
+            if ( !is_dir( $root . '/extension/' . $name ) )
+                continue;
+            $this->assertSame( array(), eZExtensionPackageHandler::secretFiles( $root . '/extension/' . $name ), $name );
+        }
     }
 
     /** ED-03 */

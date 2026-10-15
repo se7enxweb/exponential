@@ -187,8 +187,12 @@ class eZExtensionPackageHandler extends eZPackageHandler
         }
     }
 
-    /** Files that hold key material, anywhere in an extension: by name, any case */
-    const KEY_FILE_PATTERN = '/(\.(pem|key|p12|pfx|jks|keystore|kdbx|crt|der|p8|ppk|gpg|asc)$|\.(pem|key|p12|pfx)\.|^\.env(\.(?!(example|sample|template)$).*)?$|^id_(rsa|dsa|ecdsa|ed25519)|^\.htpasswd$|^\.netrc$|^\.pgpass$|^credentials|service[-_]?account)/i';
+    /**
+     * Files that hold key material, anywhere in an extension: by name, any case. Certificates and signatures
+     * (*.pem, *.crt, *.der, *.asc, such as a public CA bundle) are not refused by name: their content is read like
+     * every file's, and a private key block in them refuses the extension (SECRET_SHAPE_PATTERNS).
+     */
+    const KEY_FILE_PATTERN = '/(\.(key|p12|pfx|jks|keystore|kdbx|p8|ppk|gpg)$|\.(key|p12|pfx)\.|^\.env(\.(?!(example|sample|template)$).*)?$|^id_(rsa|dsa|ecdsa|ed25519)|^\.htpasswd$|^\.netrc$|^\.pgpass$|^credentials|service[-_]?account)/i';
 
     /** Directories whose files are key material, anywhere in an extension, any case */
     const KEY_DIRECTORY_PATTERN = '/(^(jwt|\.ssh|\.gnupg)$|\.(pem|key)$)/i';
@@ -376,9 +380,34 @@ class eZExtensionPackageHandler extends eZPackageHandler
         'private key' => '/-----BEGIN [A-Z0-9 ]*PRIVATE KEY( BLOCK)?-----/',
         'bearer token' => '/\bAuthorization\s*[:=]\s*["\']?Bearer\s+[A-Za-z0-9\-._~+\/]{8,}/i',
         'API key' => '/\b(sk-(proj-|live-|test-)?[A-Za-z0-9_\-]{20,}|AKIA[0-9A-Z]{16}|ASIA[0-9A-Z]{16}|AIza[0-9A-Za-z_\-]{35}|gh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{30,}|xox[abprs]-[A-Za-z0-9\-]{10,}|glpat-[A-Za-z0-9_\-]{20,}|sk_live_[A-Za-z0-9]{20,}|rk_live_[A-Za-z0-9]{20,})/',
-        'constant' => '/\bdefine\s*\(\s*["\'][A-Za-z0-9_]*(KEY|SECRET|TOKEN|PASS|PASSWORD|PWD|CREDENTIAL)[A-Za-z0-9_]*["\']\s*,\s*["\'][^"\']+["\']/i',
-        'address with a password' => '#[a-z][a-z0-9+.\-]*://[^/\s:@"\']+:[^@\s/"\']+@#i',
+        'constant' => '/\bdefine\s*\(\s*["\'][A-Za-z0-9_]*(KEY|SECRET|TOKEN|PASS|PASSWORD|PWD|CREDENTIAL)[A-Za-z0-9_]*["\']\s*,\s*["\']([^"\']+)["\']/i',
+        'address with a password' => '#[a-z][a-z0-9+.\-]*://([^/\s:@"\']+):([^@\s/"\']+)@#i',
     );
+
+    /**
+     * Words a value is made of when it only stands for a secret: documentation and test values such as
+     * "password", "dbpassword", "your_secret", "changeme" or the well-known demo account "scott"/"tiger". Matched
+     * against the whole value (an optional prefix of these words, then one of them, maybe digits), any case.
+     */
+    const PLACEHOLDER_WORDS_PATTERN = '/^((my|your|the|some|db|database|example|sample|test|dummy|demo|fake|new|old|default|user|admin|api|client|app)[_\- ]?)*(password|passwd|pass|pwd|pw|secret|key|token|changeme|change_?me|example|sample|test|testing|dummy|fake|placeholder|redacted|foo|bar|baz|xyz|scott|tiger|none|null|empty|value|here)\d*$/i';
+
+    /** The start of a value that only tells the reader what to fill in: "Enter your key here", "Your secret" */
+    const FILL_IN_PATTERN = '/^(enter|your|insert|put|replace|set|add|paste|fill)\s+\S/i';
+
+    /** The body of a test or documentation token: test-..., dummy..., SECRET..., example..., xxxx... */
+    const FIXTURE_TOKEN_PATTERN = '/^(test|dummy|fake|example|sample|placeholder|secret|redacted|changeme|your|my|x{4,}|\*{3,}|\.\.\.)/i';
+
+    /** User names of the example credentials in addresses (https://user:pass@...) */
+    const EXAMPLE_USER_PATTERN = '/^(u|a|x|me|user|abc|username|name|login|admin|test|foo|demo|example|someone|john|jane|alice|bob|%[A-Za-z_]+%|\$\{[^}]*\}|\{[A-Za-z_]+\}|<[^>]*>)$/i';
+
+    /**
+     * The extension's own list of findings that are known not to be secrets: a plain file at the root of the
+     * extension, read only by the package check. See doc/bc/6.0/extension-package-secret-check.md.
+     */
+    const ALLOW_FILE = 'package_check.ini';
+
+    /** Findings the allow file can never let through: key material, private keys, copies, links, unreadable files */
+    const NEVER_ALLOWED_PATTERN = '/^(key material|\(private key\)|copy of a settings file|link outside the extension|not a regular file|unreadable|could not be checked|text too large to check|binary settings file|binary configuration file|\(text in UTF-16 or UTF-32\))$/';
 
     /** Text files whose lines are read as "name = value" or "name: value" pairs, besides settings files */
     const CONFIG_FILE_PATTERN = '/(\.(ya?ml|conf|cfg|cnf|properties|toml|env|neon)$|^\.env)/i';
@@ -390,9 +419,85 @@ class eZExtensionPackageHandler extends eZPackageHandler
      * @param string $value
      * @return bool
      */
-    static function isPlaceholder( $value )
+    static function isPlaceholder( $value, $words = false )
     {
-        return self::pregMatch( '/^(\.\.\.|\xE2\x80\xA6|[xX]{3,}|\*{3,}|<\.\.\.>|<\xE2\x80\xA6>)$/', trim( (string)$value ) );
+        $value = trim( (string)$value, " \t\"'" );
+        if ( $value === '' )
+            return true;
+        if ( strlen( $value ) > self::MAX_NAME_BYTES )
+            return false;
+        // in example text (a comment, a constant or an address in a document or a test) a value made of
+        // PLACEHOLDER_WORDS_PATTERN stands for a secret; an active setting "Password=secret" is taken at its word
+        if ( $words && self::pregMatch( self::PLACEHOLDER_WORDS_PATTERN, $value ) )
+            return true;
+        return self::pregMatch( '/^(\.\.\.|\xE2\x80\xA6|[xX]{3,}|\*{3,}|<\.\.\.>|<\xE2\x80\xA6>|<[A-Za-z_][A-Za-z_ \-]*>)$/', $value )
+            // a switch or nothing: no password is one of these words, and refusing Password=disabled protects nothing
+            || self::pregMatch( '/^(enabled|disabled|true|false|none|null|0)$/i', $value )
+            // a template placeholder as a whole: %name%, {name}, ${NAME}, {{ name }}, %env(NAME)%
+            || self::pregMatch( '/^(%[A-Za-z_][A-Za-z0-9_.\-]*%|\{[A-Za-z_][A-Za-z0-9_.\-]*\}|\$\{[^{}]+\}|\{\{[^{}]+\}\}|%env\([^()]*\)%)$/', $value )
+            // a value put together when it is used: it holds an expression, not a literal secret
+            || self::pregMatch( '/(\$\{\{[^{}]+\}\}|\$\{[A-Za-z_][A-Za-z0-9_.:\-]*\}|%env\([^()]*\)%)/', $value )
+            || self::pregMatch( self::FILL_IN_PATTERN, $value );
+    }
+
+    /**
+     * Whether a secret found inside a value (expSecretRule::inlineSecretParts()) or by its shape stands only for
+     * one: a placeholder (isPlaceholder()), or the credentials of an example address, such as user:pass@ or a:b@
+     * (a user name of EXAMPLE_USER_PATTERN with a placeholder password, or both at most two characters). Pure.
+     *
+     * @param string $secret
+     * @param string|null $user the user name of an address, null elsewhere
+     * @return bool
+     */
+    static function isExampleSecret( $secret, $user = null )
+    {
+        $secret = trim( (string)$secret, " \t\"'" );
+        if ( $user === null )
+            return self::isPlaceholder( $secret, true );
+        $user = (string)$user;
+        if ( strlen( $user ) <= 2 && strlen( $secret ) <= 2 )
+            return true;
+        return ( $user === '' || self::pregMatch( self::EXAMPLE_USER_PATTERN, $user ) )
+            && ( self::isPlaceholder( $secret, true ) || strlen( $secret ) <= 2 );
+    }
+
+    /**
+     * expSecretRule's inline secrets in $value that are not examples (isExampleSecret()), failing closed: a value
+     * over MAX_VALUE_BYTES, or a PCRE error, counts as a secret.
+     *
+     * @param string $value
+     * @return bool
+     */
+    static function hasRealInlineSecret( $value )
+    {
+        $value = (string)$value;
+        if ( strlen( $value ) > self::MAX_VALUE_BYTES )
+            return true;
+        if ( !self::hasInlineSecret( $value ) )
+            return false;
+        $parts = expSecretRule::inlineSecretParts( $value );
+        if ( preg_last_error() !== PREG_NO_ERROR || count( $parts ) === 0 )
+            return true;
+        foreach ( $parts as $part )
+        {
+            if ( !self::isExampleSecret( $part['secret'], $part['user'] ) )
+                return true;
+        }
+        return false;
+    }
+
+    /**
+     * Whether $name only looks like a secret's name: an address, a header's name, a type, mode or method
+     * (TokenURL, ApiKeyHeader, AuthType), or a public key (PublicKey, public_key: a captcha site key is published
+     * in every page). Its value is still read for secrets inside it. Pure.
+     *
+     * @param string $name
+     * @return bool
+     */
+    static function isNotSecretName( $name )
+    {
+        return self::pregMatch( '/(url|uri|endpoint|header|type|mode|method)(\[\])?$/i', (string)$name )
+            || self::pregMatch( '/public[_\-]?key/i', (string)$name );
     }
 
     /**
@@ -411,7 +516,9 @@ class eZExtensionPackageHandler extends eZPackageHandler
         $name = (string)$name;
         $value = trim( (string)$value );
         if ( self::pregMatch( '/^\d{1,9}(\.\d+)?(\s|$)/', $value ) )
-            return self::pregMatch( '/(tokens|length|lifetime|budget|count|size|limit|timeout|ttl|^max|^min|^estimate|per_?token)/i', $name );
+            // a measure, a version (TokenVersion) or a browser version (IEDisableWithPassword[]=11)
+            return self::pregMatch( '/^IE[A-Z]/', $name )
+                || self::pregMatch( '/(tokens|length|lifetime|budget|count|size|limit|timeout|ttl|version|^max|^min|^estimate|per_?token)/i', $name );
         if ( self::pregMatch( '/^(enabled|disabled|true|false)$/i', $value ) )
             return self::pregMatch( '/(^(allow|use|require|enable|disable|is|has|show|check)|(enabled|required|disable)|with)/i', $name )
                 && self::pregMatch( '/^(allow|use|require|enable|disable|is|has|show|check|ie)/i', $name );
@@ -419,30 +526,29 @@ class eZExtensionPackageHandler extends eZPackageHandler
     }
 
     /**
-     * Whether the pair $name = $value holds a secret: under a secret name (expSystemReportMask::isSecretSettingName())
-     * every value but an empty one, a placeholder (isPlaceholder()) or a measure or switch its name announces
-     * (isMeasureOrSwitch()); other numbers and switches count as secrets; under another
-     * name a value that carries a secret inline (expSecretRule::hasInlineSecret()) or has the shape of one. Pure.
+     * Whether the pair $name = $value holds a secret: under a secret name (expSystemReportMask::isSecretSettingName(),
+     * but not isNotSecretName()) every value but an empty one, a placeholder or a switch (isPlaceholder(); in a
+     * comment also PLACEHOLDER_WORDS_PATTERN) or a measure its name announces (isMeasureOrSwitch()); other numbers
+     * count as secrets; under another name a value that carries a real secret inline (hasRealInlineSecret()) or has
+     * the shape of one (shapesIn()). Pure.
      *
      * @param string $name
      * @param string $value
+     * @param bool $inComment the pair stands on a commented line
      * @return bool
      */
-    static function isSecretPair( $name, $value )
+    static function isSecretPair( $name, $value, $inComment = false )
     {
         $value = trim( self::pregReplace( '#\s*\*/\s*(\?>)?\s*$#', '', (string)$value ) );
         $value = trim( rtrim( $value, ',;' ) );
         $value = trim( $value, " \t\"'" );
         if ( $value === '' )
             return false;
-        if ( self::isSecretName( $name ) )
-            return !self::isPlaceholder( $value ) && !self::isMeasureOrSwitch( $name, $value );
-        if ( self::hasInlineSecret( $value ) )
+        if ( self::isSecretName( $name ) && !self::isNotSecretName( $name ) )
+            return !self::isPlaceholder( $value, $inComment ) && !self::isMeasureOrSwitch( $name, $value );
+        if ( self::hasRealInlineSecret( $value ) )
             return true;
-        foreach ( self::SECRET_SHAPE_PATTERNS as $pattern )
-            if ( self::pregMatch( $pattern, $value ) )
-                return true;
-        return false;
+        return count( self::shapesIn( $value ) ) > 0;
     }
 
     /**
@@ -490,14 +596,49 @@ class eZExtensionPackageHandler extends eZPackageHandler
         {
             foreach ( $views as $view )
             {
-                if ( self::pregMatch( $pattern, $view ) )
+                if ( !self::pregMatchAll( $pattern, $view, $matches, PREG_SET_ORDER ) )
+                    continue;
+                foreach ( $matches as $m )
                 {
-                    $found['(' . $kind . ')'] = true;
-                    break;
+                    if ( !self::isExampleShape( $kind, $m ) )
+                    {
+                        $found['(' . $kind . ')'] = true;
+                        break 2;
+                    }
                 }
             }
         }
         return array_keys( $found );
+    }
+
+    /**
+     * Whether a match $m of the SECRET_SHAPE_PATTERNS kind $kind is a test or documentation value: a bearer or
+     * service token whose body starts like a fixture (FIXTURE_TOKEN_PATTERN: "Bearer test-...", "sk-test-SECRET"),
+     * a constant whose value is a placeholder (define( 'DB_PASS', 'dbpassword' )), an address with example
+     * credentials (isExampleSecret()). A private key is never an example. Pure.
+     *
+     * @param string $kind
+     * @param array $m the match, with its groups
+     * @return bool
+     */
+    static function isExampleShape( $kind, array $m )
+    {
+        switch ( $kind )
+        {
+            case 'bearer token':
+                return self::pregMatch( '/Bearer\s+(.*)$/is', $m[0], $body ) && self::pregMatch( self::FIXTURE_TOKEN_PATTERN, $body[1] );
+            case 'API key':
+                // the body after the vendor's prefix (sk-, sk-test-, ghp_, xoxb- ...)
+                $body = self::pregReplace( '/^(sk-(proj-|live-|test-)?|AKIA|ASIA|AIza|gh[pousr]_|github_pat_|xox[abprs]-|glpat-|sk_live_|rk_live_)/', '', $m[0] );
+                return self::pregMatch( self::FIXTURE_TOKEN_PATTERN, $body );
+            case 'constant':
+                return isset( $m[2] ) && self::isPlaceholder( $m[2], true );
+            case 'address with a password':
+                // example credentials only (user:pass@, abc:xyz@): a real password pasted into a document is real,
+                // whatever host it stands with
+                return isset( $m[1], $m[2] ) && self::isExampleSecret( $m[2], $m[1] );
+        }
+        return false;
     }
 
     /**
@@ -506,8 +647,12 @@ class eZExtensionPackageHandler extends eZPackageHandler
      * eZINI skips or reads differently is missed (commented lines and the PHP comment wrapper, Key[]= and Key[name]=,
      * blanks around "=", quotes, a byte order mark, CRLF or CR, duplicates), judged by isSecretPair(), and outside
      * comments a line carrying a secret inline ("password: ..."). 'config' (CONFIG_FILE_PATTERN): also
-     * "name: value", quoted names, and a secret name in YAML whose value stands on a following, deeper line. A pair starts at every name that does not continue another one, so
-     * a pair inside the value of another ("Title=x Password=y") is read as well; lines end at CR, LF, FF or VT. Pure.
+     * "name: value", quoted names, and a secret name in YAML whose value stands on a following, deeper line. A line
+     * holds one pair, the one it starts with; the rest of the line is that pair's value, read for secrets inside it
+     * (hasRealInlineSecret()): "Title=x Password=y" is refused for the secret in Title's value, and
+     * "MySQLDumpCommand=mysqldump --password={password}" passes. A commented pair is read too, where a documentation
+     * word stands for the value ("# Password=changeme") and words that explain the setting are no value. Lines end
+     * at CR, LF, FF or VT. Pure.
      *
      * @param string $text
      * @param string $pairs 'ini' or 'config'
@@ -515,9 +660,13 @@ class eZExtensionPackageHandler extends eZPackageHandler
      */
     static function pairSecretsIn( $text, $pairs )
     {
+        // the pair a line starts with (after a comment mark, blanks, a YAML list dash or a PHP comment opener); the
+        // rest of the line is its value, which is read for secrets inside it (hasRealInlineSecret()), not split into
+        // more pairs: "MySQLDumpCommand=mysqldump --user={user} --password={password}" is one setting
+        $lead = '^(?:\xEF\xBB\xBF)?[ \t]*(?:<\?php[ \t]*)?(?:\/\*+[ \t]*)?(?:(?:#|;|\/\/|\*)+[ \t]*)?(?:-[ \t]+)?';
         $pairPattern = $pairs === 'config'
-            ? '/(?<![A-Za-z0-9_.\-])(?=["\']?([A-Za-z0-9_.\-]+)["\']?[ \t]*(?:\[[^\]\r\n]*\])?[ \t]*(?:=(?![=>])|:(?![:\/]))([^\r\n\f\v]*))/'
-            : '/(?<![A-Za-z0-9_.\-])(?=([A-Za-z0-9_.\-]+)[ \t]*(?:\[[^\]\r\n]*\])?[ \t]*=(?![=>])([^\r\n\f\v]*))/';
+            ? '/' . $lead . '["\']?([A-Za-z0-9_.\-]+)["\']?[ \t]*(?:\[[^\]\r\n]*\])?[ \t]*(?:=(?![=>])|:(?![:\/]))([^\r\n\f\v]*)/'
+            : '/' . $lead . '([A-Za-z0-9_.\-]+)[ \t]*(?:\[[^\]\r\n]*\])?[ \t]*=(?![=>])([^\r\n\f\v]*)/';
         $found = array();
         $lines = self::pregSplit( '/\r\n|[\r\n\f\v]/', (string)$text );
         foreach ( $lines as $i => $line )
@@ -527,7 +676,11 @@ class eZExtensionPackageHandler extends eZPackageHandler
             {
                 foreach ( $matches as $m )
                 {
-                    if ( self::isSecretPair( $m[1], $m[2] ) )
+                    // a comment that explains a setting in words ("# ClientSecret = the client's secret key"):
+                    // three or more words of letters only, no value
+                    if ( $isComment && self::pregMatch( '/^\s*[A-Za-z\']+([ \t]+[A-Za-z\'(),.]+){2,}\s*$/', $m[2] ) )
+                        continue;
+                    if ( self::isSecretPair( $m[1], $m[2], $isComment ) )
                         $found[$m[1]] = true;
                     // YAML: a secret name whose value stands on the next non-empty, deeper line ("password:",
                     // "password: |"), a nested mapping included
@@ -547,7 +700,7 @@ class eZExtensionPackageHandler extends eZPackageHandler
                     }
                 }
             }
-            if ( !$isComment && self::hasInlineSecret( $line ) && !self::pregMatchAll( $pairPattern, $line ) )
+            if ( !$isComment && !self::pregMatchAll( $pairPattern, $line ) && self::hasRealInlineSecret( $line ) )
                 $found['(inline)'] = true;
         }
         return array_keys( $found );
@@ -592,9 +745,10 @@ class eZExtensionPackageHandler extends eZPackageHandler
     /**
      * What in the extension directory $dir must not leave the server in a package, one line each, without a value.
      * Every entry of packEntries() is checked, the packed ones and the others (hidden files, links) alike:
-     *  - key material anywhere, by name in any case: KEY_FILE_PATTERN (*.pem, *.key, *.p12, *.pfx, also *.pem.* and
-     *    *.key.* such as private.pem.old, credentials*, *service-account*, .env but not .env.example, .sample or
-     *    .template, id_rsa, ...) and every file in a KEY_DIRECTORY_PATTERN directory (jwt/, .ssh/, *.pem/, *.key/);
+     *  - key material anywhere, by name in any case: KEY_FILE_PATTERN (*.key, *.p12, *.pfx, *.jks, *.ppk, also *.key.*
+     *    such as server.key.old, credentials*, *service-account*, .env but not .env.example, .sample or .template,
+     *    id_rsa, ...) and every file in a KEY_DIRECTORY_PATTERN directory (jwt/, .ssh/, *.pem/, *.key/); a
+     *    certificate (*.pem, *.crt, *.der, *.asc) is refused only for a private key block in it (shapesInFile());
      *  - a symbolic link that leads outside the extension or nowhere, and anything that is neither file, directory
      *    nor link;
      *  - a copy or backup of a settings file (BACKUP_FILE_PATTERN: *.bak, *.orig, *.dist, *~, ...) below settings/
@@ -604,7 +758,9 @@ class eZExtensionPackageHandler extends eZPackageHandler
      *  - settings files (below settings/, any case, any depth, or named *.ini*) as INI pairs and the files of
      *    CONFIG_FILE_PATTERN as pairs of names and values (pairSecretsIn()), from their whole text, unchanged; such a
      *    file with a NUL byte, bigger than MAX_SCAN_BYTES or not readable to its end is refused.
-     * A directory that cannot be read refuses the whole extension. Reads the files only.
+     * A directory that cannot be read refuses the whole extension. Reads the files only. Last, the findings the
+     * extension's ALLOW_FILE names are left out (allowedFindings(); never key material, a private key, a copy, a
+     * link or a file that could not be read).
      *
      * @param string $dir
      * @return string[] "<path below $dir>: <setting>" or "<path below $dir>: <reason>", sorted
@@ -639,8 +795,75 @@ class eZExtensionPackageHandler extends eZPackageHandler
             }
         }
         $found = array_keys( $found );
+        $allowed = self::allowedFindings( $dir );
+        if ( count( $allowed ) > 0 )
+            $found = array_values( array_filter( $found, function ( $finding ) use ( $allowed )
+            {
+                return !self::isAllowedFinding( $finding, $allowed );
+            } ) );
         sort( $found, SORT_STRING );
         return $found;
+    }
+
+    /**
+     * The findings the extension in $dir lists as known not to be secrets, from its ALLOW_FILE:
+     * "AllowedFindings[]=<path below the extension>:<setting name or (kind)>", the path a file, or a directory
+     * when it ends in "/". A link, an unreadable or a too big file allows nothing.
+     *
+     * @param string $dir
+     * @return array[] array( path, finding )
+     */
+    static function allowedFindings( $dir )
+    {
+        $file = rtrim( (string)$dir, '/' ) . '/' . self::ALLOW_FILE;
+        if ( is_link( $file ) || !is_file( $file ) )
+            return array();
+        $size = @filesize( $file );
+        if ( $size === false || $size > 65536 )
+            return array();
+        $text = @file_get_contents( $file );
+        if ( !is_string( $text ) )
+            return array();
+        $allowed = array();
+        foreach ( self::pregSplit( '/\r\n|[\r\n]/', $text ) as $line )
+        {
+            if ( !self::pregMatch( '/^\s*AllowedFindings\[\]\s*=\s*([^:\s][^:]*):\s*(\S.*?)\s*$/', $line, $m ) )
+                continue;
+            $path = trim( $m[1] );
+            // a plain path below the extension: no "..", no leading "/", no wildcard
+            if ( $path[0] === '/' || self::pregMatch( '#(^|/)\.\.(/|$)|[*?\[]#', $path ) )
+                continue;
+            $allowed[] = array( $path, $m[2] );
+        }
+        return $allowed;
+    }
+
+    /**
+     * Whether $finding ("<path>: <setting or reason>", from secretFiles()) is one of $allowed (allowedFindings()).
+     * Key material, private keys, copies of settings files, links and files that could not be read are never
+     * allowed (NEVER_ALLOWED_PATTERN).
+     *
+     * @param string $finding
+     * @param array[] $allowed
+     * @return bool
+     */
+    static function isAllowedFinding( $finding, array $allowed )
+    {
+        $at = strrpos( (string)$finding, ': ' );
+        if ( $at === false )
+            return false;
+        $path = substr( $finding, 0, $at );
+        $what = substr( $finding, $at + 2 );
+        if ( self::pregMatch( self::NEVER_ALLOWED_PATTERN, $what ) )
+            return false;
+        foreach ( $allowed as $entry )
+        {
+            list( $allowedPath, $allowedWhat ) = $entry;
+            $pathMatches = substr( $allowedPath, -1 ) === '/' ? strpos( $path, $allowedPath ) === 0 : $path === $allowedPath;
+            if ( $pathMatches && $what === $allowedWhat )
+                return true;
+        }
+        return false;
     }
 
     /**
