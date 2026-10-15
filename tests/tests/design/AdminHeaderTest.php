@@ -141,7 +141,11 @@ class AdminHeaderTest extends PHPUnit\Framework\TestCase
 
     public function testTheSlashKeyFocusesTheHeaderSearch()
     {
-        $this->assertStringContainsString( '{if $box|eq( \'\' )} aria-keyshortcuts="/"{/if}', self::file( 'design/admin4/templates/page_search.tpl' ) );
+        $search = self::file( 'design/admin4/templates/page_search.tpl' );
+        $this->assertStringContainsString( '{if $box|eq( \'\' )} aria-keyshortcuts="/" data-short-placeholder="1"{/if}', $search );
+        // the narrow header field: a short placeholder; the scope ("Search in all content") stays its name and title
+        $this->assertStringContainsString( 'placeholder="{if $box|eq( \'\' )}{\'Search...\'|i18n( \'design/admin/pagelayout\' )|wash}{else}{$search_title|wash}{/if}" aria-label="{$search_title|wash}"', $search );
+        $this->assertStringContainsString( "if ( !field.hasAttribute( 'data-short-placeholder' ) ) field.placeholder = label;", $search );
         $js = self::file( 'design/admin4/javascript/admin4.js' );
         $this->assertStringContainsString( "if (e.key !== '/' || e.ctrlKey || e.metaKey || e.altKey || e.isComposing || e.defaultPrevented) return;", $js );
         $this->assertStringContainsString( "/^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName)", $js, 'typing a slash in a field stays a slash' );

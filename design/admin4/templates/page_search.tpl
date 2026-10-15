@@ -2,7 +2,8 @@
    Included twice by page_topmenu.tpl, in the header and in the narrow screen menu: $search_box ('' or '-mobile')
    keeps the ids of the two copies apart, and the script works on the copy it belongs to, never on an id.
    $search_sections: the sections of the popup, fetched once by page_topmenu.tpl before both copies; a page that
-   includes this template without it gets them fetched here. The header's field answers the "/" key (admin4.js). *}
+   includes this template without it gets them fetched here. The header's field answers the "/" key (admin4.js) and
+   has the short placeholder "Search..." (it is narrow from 1280px); where it searches is in its title and name. *}
 {def $search_node_id = first_set( $search_subtree_array[0], $module_result.path[0].node_id, 1 )
      $search_title = "Search in all content"|i18n( 'design/admin/pagelayout' )
      $section_id = -1
@@ -59,7 +60,7 @@
         {/if}
         <div class="searchtextwrapper">
             <button type="button" class="searchscope" id="searchscope{$box}" aria-haspopup="true" aria-expanded="false" aria-controls="searchscope-pane{$box}" title="{'Search scope'|i18n( 'design/admin/pagelayout' )}"><span class="hide">{'Search scope'|i18n( 'design/admin/pagelayout' )}</span></button>
-            <input id="searchtext{$box}" class="form-control searchtext" name="SearchText" type="search" size="20" value="{if is_set( $search_text )}{$search_text|wash}{/if}" title="{$search_title|wash}" placeholder="{$search_title|wash}" aria-label="{$search_title|wash}"{if $box|eq( '' )} aria-keyshortcuts="/"{/if} />
+            <input id="searchtext{$box}" class="form-control searchtext" name="SearchText" type="search" size="20" value="{if is_set( $search_text )}{$search_text|wash}{/if}" title="{$search_title|wash}" placeholder="{if $box|eq( '' )}{'Search...'|i18n( 'design/admin/pagelayout' )|wash}{else}{$search_title|wash}{/if}" aria-label="{$search_title|wash}"{if $box|eq( '' )} aria-keyshortcuts="/" data-short-placeholder="1"{/if} />
         </div>
         <button id="searchbutton{$box}" class="searchbuttonfield" name="SearchButton" type="submit" value="{'Search'|i18n( 'design/admin/pagelayout' )}" title="{'Search'|i18n( 'design/admin/pagelayout' )}"><span class="hide">{'Search'|i18n( 'design/admin/pagelayout' )}</span></button>
         {if eq( $ui_context, 'browse' )}
@@ -156,7 +157,7 @@
     document.addEventListener( 'change', function( e ) {
         if ( !e.target.matches || !e.target.matches( '[data-searchblock] input[name=SubTreeArray]' ) ) return;
         var field = blockOf( e.target ).querySelector( 'input.searchtext' ), label = e.target.getAttribute( 'data-label' );
-        if ( field && label ) { field.placeholder = label; field.title = label; field.setAttribute( 'aria-label', label ); }
+        if ( field && label ) { if ( !field.hasAttribute( 'data-short-placeholder' ) ) field.placeholder = label; field.title = label; field.setAttribute( 'aria-label', label ); }
     } );
 })();
 {/literal}
