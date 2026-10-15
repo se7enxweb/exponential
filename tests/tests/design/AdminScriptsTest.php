@@ -47,8 +47,9 @@ class AdminScriptsTest extends PHPUnit\Framework\TestCase
             $this->assertStringContainsString( 'var alignElement = document.getElementById( alignItem );', $js, $path );
             $this->assertStringContainsString( 'var parentElement = document.getElementById(', $js, $path );
             $this->assertDoesNotMatchRegularExpression( '/^\s*(alignElement|parentElement)\s*=/m', $js, $path );
-            // the right-edge correction needs the parent menu
-            $this->assertStringContainsString( 'if ( parentElement && ( screenData.ScrollX + screenData.Width ) < ( newX + menuElement.offsetWidth ) )', $js, $path );
+            // the side a submenu opens on needs the parent menu (#481: _horizontalSubPlace(), both edges of the window)
+            $this->assertStringContainsString( 'if ( alignElement && parentElement )', $js, $path );
+            $this->assertStringContainsString( 'newX = _horizontalSubPlace( screenData.ScrollX, screenData.ScrollX + screenData.Width, parentLeft,', $js, $path );
             // a press outside the menus is heard beside the page's own handlers, not instead of them
             $this->assertDoesNotMatchRegularExpression( '/document\.onmouse(down|over)\s*=/', $js, $path );
             $this->assertStringContainsString( "document.addEventListener( 'mousedown',", $js, $path );

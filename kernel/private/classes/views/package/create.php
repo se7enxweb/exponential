@@ -34,7 +34,31 @@ class Create extends \Exponential\Runnable\ModuleView
 
         $creator = false;
         $initializeStep = false;
-        if ( $module->isCurrentAction( 'CreatePackage' ) )
+        // The entry of the content tree's Export menu (package/create/(creator)/ezcontentobject/(node)/<id> ...):
+        // the content object wizard starts again with that node or subtree selected. Only a node the user can
+        // read, and only for a user who may use that wizard; nothing is made before the user confirms the steps.
+        $viewParams = isset( $scope['Params'] ) && is_array( $scope['Params'] ) ? $scope['Params'] : array();
+        if ( !$module->isCurrentAction( 'CreatePackage' ) && !$module->isCurrentAction( 'PackageStep' ) &&
+             \eZContentObjectPackageCreator::isEntry( $viewParams ) )
+        {
+            $entry = \eZContentObjectPackageCreator::entryParameters( $viewParams );
+            if ( $entry['errors'] )
+                return $this->viewResult( null, $module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
+            $entryNode = \eZContentObjectTreeNode::fetch( $entry['node_id'] );
+            if ( !$entryNode instanceof \eZContentObjectTreeNode )
+                return $this->viewResult( null, $module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
+            if ( !$entryNode->canRead() || !\eZContentObjectPackageCreator::currentUserCanExportContent() )
+                return $this->viewResult( null, $module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' ) );
+            $creatorID = 'ezcontentobject';
+            $creator = \eZPackageCreationHandler::instance( $creatorID );
+            $persistentData = array( 'entry' => array( 'node_list' => $entry['node_list'],
+                                                       'object_options' => $entry['object_options'] ) );
+            $http->setSessionVariable( 'eZPackageCreatorData' . $creatorID, $persistentData );
+            $initializeStep = true;
+            $package = false;
+            $creator->generateStepMap( $package, $persistentData );
+        }
+        else if ( $module->isCurrentAction( 'CreatePackage' ) )
         {
             $creatorID = $module->actionParameter( 'CreatorItemID' );
             if ( $creatorID )

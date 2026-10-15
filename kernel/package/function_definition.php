@@ -82,6 +82,14 @@ $FunctionList['can_export'] = array( 'name' => 'can_export',
                                      'parameter_type' => 'standard',
                                      'parameters' => array() );
 
+// Whether the current user may export content as a package: the content object wizard and the package download
+// (package/create with CreatorType ezcontentobject, package/export), for the content tree's Export menu
+$FunctionList['content_export_access'] = array( 'name' => 'content_export_access',
+                                                'call_method' => array( 'class' => 'eZPackageFunctionCollection',
+                                                                        'method' => 'contentExportAccess' ),
+                                                'parameter_type' => 'standard',
+                                                'parameters' => array() );
+
 $FunctionList['can_read'] = array( 'name' => 'can_read',
                                    'call_method' => array( 'class' => 'eZPackageFunctionCollection',
                                                            'method' => 'canRead' ),
