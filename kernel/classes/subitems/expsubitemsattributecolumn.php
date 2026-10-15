@@ -62,6 +62,7 @@ class expSubitemsAttributeColumn extends expSubitemsColumn
         $settings = array(
             'Name' => $classAttribute->attribute( 'name' ),
             'Group' => 'Attributes: ' . $class->attribute( 'name' ),
+            'ClassName' => $class->attribute( 'name' ),
             'Type' => 'text',
             'SortField' => $sortable ? 'attribute:' . $classIdentifier . '/' . $attributeIdentifier : '',
             'Description' => $classIdentifier . '/' . $attributeIdentifier
@@ -82,6 +83,18 @@ class expSubitemsAttributeColumn extends expSubitemsColumn
     public function name()
     {
         return (string)$this->setting( 'Name', $this->key );
+    }
+
+    /** "Attributes: <class name>", the class name being the class's own (already translated) name. */
+    public function group()
+    {
+        return self::tr( 'Attributes: %1', array( (string)$this->setting( 'ClassName', '' ) ) );
+    }
+
+    /** The class and attribute identifiers and the datatype: identifiers, not an i18n string. */
+    public function description()
+    {
+        return (string)$this->setting( 'Description', '' );
     }
 
     public function value( eZContentObjectTreeNode $node )
