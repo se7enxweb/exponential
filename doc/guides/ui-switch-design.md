@@ -42,17 +42,23 @@ AllowedValues[]
 AllowedValues[]=admin4l
 AllowedValues[]=admin4
 AllowedValues[]=adminui
+AllowedValues[]=admin3
 AllowedValues[]=admin
+AllowedValues[]=admin_classic
 DesignChain[]
 DesignChain[admin4l]=admin4;admin3;admin2;admin
 DesignChain[admin4]=admin3;admin2;admin
 DesignChain[adminui]=admin4l;admin4;admin3;admin2;admin
+DesignChain[admin3]=admin2;admin
 DesignChain[admin]=
+DesignChain[admin_classic]=admin
 DesignLabel[]
 DesignLabel[admin4l]=Admin 4 (layouts)
 DesignLabel[admin4]=Admin 4
 DesignLabel[adminui]=AdminUI
+DesignLabel[admin3]=Admin 3
 DesignLabel[admin]=Classic
+DesignLabel[admin_classic]=Classic (server-rendered)
 RememberPreference=disabled
 ```
 
@@ -81,18 +87,32 @@ Nothing a user sends is used as a path: a value is accepted only when it is exac
 ## 2. Adding an installed design
 
 Take the classic server-rendered design `admin_classic` of the extension `sevenx_themes_admin_classic` (0.2.5 or
-later) as the example. The extension ships the entry itself, in
-`extension/sevenx_themes_admin_classic/settings/uiswitch.ini.append.php`:
+later) as the example. Its entry is already in the kernel defaults above (`AllowedValues[]=admin_classic`,
+`DesignChain[admin_classic]=admin`, `DesignLabel[admin_classic]=Classic (server-rendered)`), so the design is offered
+as soon as its directory exists: the extension registers it in `settings/design.ini.append.php`
+(`DesignExtensions[]=sevenx_themes_admin_classic`). Activating the extension is all that is needed. The extension's
+own `settings/uiswitch.ini.append.php` repeats the same three values; that is harmless, a design listed twice is
+offered once.
+
+### Offering AdminUI on other siteaccesses
+
+`adminui` is offered on a siteaccess only when the `exp_adminui` extension is active there, because its design
+directory is registered by that extension. On a stock installation that is only the `adminui` siteaccess
+(`ActiveAccessExtensions[]=exp_adminui`), where AdminUI is the default design and the other designs are offered.
+
+To offer AdminUI on the `admin` and `editor` siteaccesses too, activate the extension in the
+`settings/siteaccess/<siteaccess>/site.ini.append.php` of each:
 
 ```ini
-[UISwitch_design]
-AllowedValues[]=admin_classic
-DesignChain[admin_classic]=admin
-DesignLabel[admin_classic]=Classic (server-rendered)
+[ExtensionSettings]
+ActiveAccessExtensions[]=exp_adminui
 ```
 
-and registers its design directory in `settings/design.ini.append.php`
-(`DesignExtensions[]=sevenx_themes_admin_classic`). Activating the extension is all that is needed.
+This also brings the extension's global settings to that siteaccess: `design.ini [ExtensionSettings]
+DesignExtensions[]=exp_adminui`, `exp_adminui.ini`, and the class icons of its `settings/override/icon.ini.append.php`
+(other extensions' own icon maps still outrank them). Its settings for the `adminui` siteaccess
+(`settings/siteaccess/adminui/`: translations, menus and the rest) do not apply. Clear the INI cache and deploy
+afterwards (section 6).
 
 For a design of your own:
 
@@ -116,11 +136,14 @@ out. The tool is the toolbar tool `admin_ui_switch`, template `toolbar/full/admi
 |---|---|
 | `admin4`, `admin4l` | `design/admin4/templates/toolbar/full/admin_ui_switch.tpl` (right sidebar) |
 | `adminui` | through its chain (`admin4l`, `admin4`) |
-| `admin`, and `admin2`, `admin3` through their chains | `design/admin/templates/toolbar/full/admin_ui_switch.tpl` with `design/admin/templates/uiswitch/choices.tpl`: one form per choice, works without JavaScript |
+| `admin`, and `admin2`, `admin3`, `admin_classic` through their chains | `design/admin/templates/toolbar/full/admin_ui_switch.tpl` with `design/admin/templates/uiswitch/choices.tpl`: one form per choice, works without JavaScript |
 | an extension design | through its chain; every shipped chain ends in `admin` |
 
 The design's page layout must also render the right toolbar (`{tool_bar name='admin_right' view='full'}`; the classic
-page layout does so while the right menu is shown), and the siteaccess's `toolbar.ini` must place the tool there:
+page layout does so while the right menu is shown). For a user who switched to a design through the UI switch, the
+classic page layout (`design/admin/templates/pagelayout.tpl`) opens the right menu even when it would be collapsed,
+unless that user closed it (`admin_right_menu_show=0`), so the switch stays in reach. The siteaccess's `toolbar.ini`
+must place the tool there:
 
 ```ini
 [Tool]
@@ -198,9 +221,9 @@ without the feature. A stored choice is ignored; with `[UISwitch_design] Enabled
 
 | Problem | Cause and fix |
 |---|---|
-| A design is not offered | It has no `DesignChain[<design>]` entry, its directory is missing (`design/<design>` or `design/<design>` of an extension in `DesignExtensions[]`), the extension is not active, or the name has upper case letters or characters other than `[a-z0-9_]`. Check the resolved settings on **Setup > Ini settings** (`uiswitch.ini`, `design.ini`). |
+| A design is not offered | It has no `DesignChain[<design>]` entry, its directory is missing (`design/<design>` or `design/<design>` of an extension in `DesignExtensions[]`), the extension is not active on that siteaccess (`adminui` needs `exp_adminui`, see section 2), or the name has upper case letters or characters other than `[a-z0-9_]`. Check the resolved settings on **Setup > Ini settings** (`uiswitch.ini`, `design.ini`). |
 | The **Administration design** choice is missing entirely | The user lacks `uiswitch/design`; fewer than two designs are offered; `design` is not in `ProviderList[]`; `Enabled=false`; the siteaccess is not a switch siteaccess; or the class is missing from the autoloads (debug warning `UI switch provider 'design': class 'expUISwitchDesignProvider' not found`). |
-| The **Interface** tool is missing | `admin_ui_switch` is not in `[Toolbar_admin_right] Tool[]` of the siteaccess, or the right menu is collapsed in the classic design, or you are editing or browsing. |
+| The **Interface** tool is missing | `admin_ui_switch` is not in `[Toolbar_admin_right] Tool[]` of the siteaccess, or the right menu was closed in the classic design (`admin_right_menu_show=0`; open it with the show/hide control), or you are editing or browsing. |
 | A user cannot switch back | The chosen design has no `toolbar/full/admin_ui_switch.tpl` in its chain. Add `admin` to the end of its `DesignChain[]`. To rescue the user: log out (the choice ends with the session), or remove the design from `AllowedValues[]` (the stored choice is dropped at the next request). With `RememberPreference=enabled`, choose the default design after signing in. |
 | A page looks half old, half new after a settings change | Stale INI cache or a PHP process that kept the old settings: deploy as in section 6. A global cache clear is not needed. |
 | Switching returns 400 | The design is not offered (see the first row). 403: the user lacks the policy, the form token is missing, or the request came from another site. 404: the siteaccess has no switch. |

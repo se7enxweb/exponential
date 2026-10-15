@@ -127,9 +127,19 @@ Up to 0.2.4, `sevenx_themes_admin_classic` replaced two kernel files through `cl
 - `kernel/private/classes/global_functions.php`: an old copy without design logic, shipped only because the copied
   `ezpKernelWeb` included it from its own directory.
 
-Version 0.2.5 removes both, the module `switchadmindesign`, its toolbar tool and its toolbar resets, and registers
-`admin_classic` with the kernel switch instead (`settings/uiswitch.ini.append.php`). On an installation that used the
-overrides:
+Version 0.2.5 removes both, the module `switchadmindesign`, its toolbar tool and its toolbar resets, and relies on the
+kernel switch instead. `admin_classic` (label "Classic (server-rendered)", chain `admin`) is in the kernel defaults of
+`settings/uiswitch.ini [UISwitch_design]`, next to `admin4l`, `admin4`, `adminui`, `admin3` (chain `admin2;admin`) and
+`admin`; it is offered wherever the extension is active, because the extension registers the design directory. The
+extension's own `settings/uiswitch.ini.append.php` repeats the same values, which is harmless (each design is offered
+once). Likewise `adminui` is offered only on a siteaccess with `ActiveAccessExtensions[]=exp_adminui`, on a stock
+installation the `adminui` siteaccess alone ([guide](../../guides/ui-switch-design.md#offering-adminui-on-other-siteaccesses)).
+
+The classic `admin` page layout (`design/admin/templates/pagelayout.tpl`) opens its right menu for a user who
+switched to a design through the UI switch, unless that user closed it (`admin_right_menu_show=0`), so the switch
+tool stays in reach.
+
+On an installation that used the overrides:
 
 1. Update the extension to 0.2.5 or later. Make sure `extension/sevenx_themes_admin_classic/classes/kerneloverride/`
    is gone.
@@ -152,7 +162,7 @@ overrides:
 | Only one siteaccess (`SharedAdminSiteaccessName`) | Every switch siteaccess (`uiswitch.ini [UISwitchSettings] SiteAccessList[]`, empty: every siteaccess with an administration design) |
 | `SiteDesign=admin3` hard-coded | `SiteDesign` = the chosen design |
 | `AdditionalSiteDesignList` taken from the session as an array | The session holds only the design name; the chain always comes from `DesignChain[]` |
-| Allow-list hard-coded in the view (`admin_classic`, `admin3`) | `AllowedValues[]`, filtered by installed designs with a chain |
+| Allow-list hard-coded in the view (`admin_classic`, `admin3`) | `AllowedValues[]` (kernel defaults include both), filtered by installed designs with a chain |
 | No permission check when applying | `uiswitch/design` checked on every request; a choice that lost its policy or left the list is dropped |
 | `DesignLocationCache=disabled` for the siteaccess | Cache kept; file name includes the variant key when a choice is applied |
 | `eZCache::clearByTag( 'template' )` and `( 'template-block' )` on every switch | No cache cleared; caches keyed per design |

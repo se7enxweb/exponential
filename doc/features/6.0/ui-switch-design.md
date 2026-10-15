@@ -2,7 +2,8 @@
 
 This page is for editors and administrators who work in the administration interface. A signed-in user who holds the
 policy `uiswitch/design` can choose which administration design they work in, for example **Admin 4 (layouts)**
-(`admin4l`), **Admin 4** (`admin4`), **AdminUI** (`adminui`) or the **Classic** design (`admin`), from the right toolbar.
+(`admin4l`), **Admin 4** (`admin4`), **AdminUI** (`adminui`), **Admin 3** (`admin3`), the **Classic** design (`admin`)
+or **Classic (server-rendered)** (`admin_classic`), from the right toolbar.
 The choice changes the interface for that user only, and only for the siteaccess where it was made. Since 15 October
 2026.
 
@@ -35,7 +36,9 @@ settings are explained in [the guide](../../guides/ui-switch-design.md), the cod
 
 Every design that can be offered renders the same tool in its right toolbar, so you can always switch again: admin4
 and admin4l show it in the right sidebar, the classic `admin` design (and admin2 and admin3, which fall back to it)
-shows it as a classic box that works without JavaScript.
+shows it as a classic box that works without JavaScript. The classic design shows it in its right menu; for a user
+who came to it through the switch, that menu opens even if it is collapsed by default, unless the user closed it
+(`admin_right_menu_show=0`), so the way back stays in reach.
 
 The tool appears only when there is something to choose: at least two designs, and a role with `uiswitch/design`.
 
@@ -49,9 +52,13 @@ which always comes first. A design is offered only when:
 - the design is installed: `design/<design>` exists, or `design/<design>` of an active design extension
   (`design.ini [ExtensionSettings] DesignExtensions[]`).
 
-So AdminUI is offered only where the `exp_adminui` extension is active, and an extension design such as
-`admin_classic` only where its extension is. A design that is uninstalled later disappears from the list, and a user
-who had chosen it is back in the siteaccess's own design at the next request.
+So AdminUI is offered on a siteaccess only when the `exp_adminui` extension is active there
+(`ActiveAccessExtensions[]=exp_adminui`). On a stock installation that is only the `adminui` siteaccess, where AdminUI
+is the default design and the other designs are offered. An administrator who wants AdminUI offered on the `admin`
+and `editor` siteaccesses activates the extension there (see
+[the guide](../../guides/ui-switch-design.md#offering-adminui-on-other-siteaccesses)). Likewise `admin_classic` is
+offered only where `sevenx_themes_admin_classic` is active. A design that is uninstalled later disappears from the
+list, and a user who had chosen it is back in the siteaccess's own design at the next request.
 
 The shipped list, with the labels shown in the toolbar:
 
@@ -60,7 +67,9 @@ The shipped list, with the labels shown in the toolbar:
 | `admin4l` | Admin 4 (layouts) | admin4, admin3, admin2, admin |
 | `admin4` | Admin 4 | admin3, admin2, admin |
 | `adminui` | AdminUI | admin4l, admin4, admin3, admin2, admin |
+| `admin3` | Admin 3 | admin2, admin |
 | `admin` | Classic | none (the classic design and the standard design) |
+| `admin_classic` | Classic (server-rendered) | admin (needs `sevenx_themes_admin_classic`) |
 
 The labels are translated in the context `kernel/uiswitch`. A design without a `DesignLabel[]` shows its name.
 
