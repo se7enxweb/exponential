@@ -5270,8 +5270,8 @@
         <translation>Adds a language content can be translated into. It does not translate anything and changes no siteaccess: afterwards, translate content into it in the editor and add it to the SiteLanguageList of the siteaccesses that should show it.</translation>
     </message>
     <message>
-        <source>%used of at most %max languages are in use.</source>
-        <translation>%used of at most %max languages are in use.</translation>
+        <source>%used of at most %max content languages are in use. Only the languages added here count, not the locales in the list below; removing a language no content uses frees a place.</source>
+        <translation>%used of at most %max content languages are in use. Only the languages added here count, not the locales in the list below; removing a language no content uses frees a place.</translation>
     </message>
     <message>
         <source>Language and country</source>
@@ -5417,8 +5417,8 @@
         <translation>Overview</translation>
     </message>
     <message>
-        <source>More can be added (at most %max)</source>
-        <translation>More can be added (at most %max)</translation>
+        <source>More can be added (at most %max content languages)</source>
+        <translation>More can be added (at most %max content languages)</translation>
     </message>
     <message>
         <source>Need a look</source>
@@ -5657,8 +5657,8 @@
         <translation>%name (%locale) was added. Content can now be translated into it; add %locale to the SiteLanguageList of each siteaccess that should show it.</translation>
     </message>
     <message>
-        <source>No language was added: this installation already has the most languages it can hold (%max).</source>
-        <translation>No language was added: this installation already has the most languages it can hold (%max).</translation>
+        <source>No language was added: this installation already has the most content languages it can hold (%max). Remove a language that no object or class uses to free a place.</source>
+        <translation>No language was added: this installation already has the most content languages it can hold (%max). Remove a language that no object or class uses to free a place.</translation>
     </message>
     <message>
         <source>There is no locale %locale in share/locale. Choose one from the list, or add its .ini file to share/locale first.</source>
