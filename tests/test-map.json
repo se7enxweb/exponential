@@ -207,6 +207,12 @@
       "tests/tests/extension/ezoe/expOECustomTagListTest.php",
       "tests/tests/kernel/classes/expShippedFeatureDefaultsTest.php"
     ],
+    "extension/ezoe/ezxmltext/handlers/input/ezoeinputparser.php": [
+      "tests/tests/extension/ezoe/expOEInputBreakAttributesTest.php"
+    ],
+    "extension/ezoe/ezxmltext/handlers/input/ezoexmlinput.php": [
+      "tests/tests/extension/ezoe/expOEInputBreakAttributesTest.php"
+    ],
     "kernel/classes/packagecreators/ezstyle/ezstylepackagecreator.php": [
       "tests/tests/kernel/classes/packages/eZStylePackageCreatorTest.php"
     ],
