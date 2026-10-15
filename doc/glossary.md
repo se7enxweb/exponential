@@ -39,6 +39,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 
 - **cache**: stored results that make pages faster; Exponential has many (content view, template, INI, HTTP, static, SQL query, response). [Cache control](bc/6.0/cache-console.md), [Operating a site](guides/operating-a-site.md).
 - **cache block**: a template tag that caches the markup inside it; the Valkey variant is `{valkey-block}`. [Redis and Valkey caches](features/6.0/extensions/sevenx_valkey_cache.md).
+- **cache variant key (UI switch)**: the short key (`language-ger-DE`) that keeps caches built with a user's **UI switch** choice apart: `{cache-block}`, the content view cache and compiled templates; empty when nothing is chosen, so no cache name changes. [UI switch provider API](bc/6.0/ui-switch.md#the-cache-variant-key).
 - **changelog**: the release notes of a version, in Added, Updated, Removed and Renamed lines. [6.0.15](changelogs/6.0/6.0.15.md), [extensions](changelogs/extensions/README.md).
 - **chronicle**: the month by month story of the history. [History](history/README.md).
 - **CI (continuous integration)**: the GitHub Actions workflows: `phpunit.yml` runs the PHPUnit suites on PHP 8.1 to 8.5, `quality.yml` checks syntax (also on PHP 8.0), the file manifest, commit messages, code style and PHPStan for every change. [Quality checks](features/6.0/quality-checks.md), [Continuous integration](specifications/6.0/continuous-integration.md).
@@ -137,6 +138,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **install type**: a named installer of **Exponential Platform** (`exponential-oss`, `ibexa-oss`, `exponential-media`, `exponential-cjw`) run by `exponential:install <type>`. [Platform SQLite installer](specifications/6.0/platform-sqlite-installer.md).
 - **installation name**: the name shown on non-production pages so staging is never taken for production. [Installation name](features/6.0/installation-name-in-pages.md).
 - **installer / install**: `./console exp:install` installs a whole site in one command. [Install in one command](features/6.0/install-in-one-command.md).
+- **interface language**: the language the administration itself is shown in, chosen per user in the right toolbar (policy `uiswitch/language`); it sets the locale for that user's requests and never changes the content languages. [Interface language](features/6.0/ui-switch.md), [settings](guides/ui-switch-settings.md).
 
 ## J
 
@@ -247,6 +249,8 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 
 ## U
 
+- **UI switch**: the framework behind the *Interface* box of the administration's right toolbar: a signed-in user's choices for the interface itself (the **interface language** first), kept in the session per siteaccess and applied early in every request. [Interface language](features/6.0/ui-switch.md), [settings](guides/ui-switch-settings.md).
+- **UI switch provider**: a class that offers one choice of the **UI switch** (`expUISwitchProviderInterface`, usually extending `expUISwitchProvider`), named in `uiswitch.ini [UISwitchSettings] ProviderList[]` and guarded by the policy `uiswitch/<identifier>`. [UI switch provider API](bc/6.0/ui-switch.md).
 - **URL alias**: a readable address mapped to a node; `exp:updateniceurls` rebuilds them. [Content model](guides/content-model-and-editing.md).
 - **uwebserver**: a small C web server shipped with Velocity, used for static files and benchmarks. [uwebserver](features/6.0/velocity-uwebserver.md).
 
