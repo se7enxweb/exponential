@@ -161,12 +161,15 @@ left menu (Content model, Site and URLs, Workflows, Users and messages, System, 
   `CheckViewAccess`, `NoAccessLinks`) are the menu's: a function the user may not open has no tile, and an
   extension's link appears under "More" by adding it to `[Leftmenu_setup] Links[]`, as for the menu. The order inside
   a group is that of `Links[]`.
-- **A tile** is a card (`.a4-card`, so its padding follows the density) with a Bootstrap icon in an accent square, the
+- **A tile** is a card (`.a4-card`) with a Bootstrap icon in an accent square, the
   function's name as its link, stretched over the card with one focus ring around it, and one line on what the
-  function does as the link's description. The page only adds the icon and the description of each known link (the
-  hash in `setup/setupmenu.tpl`); a link it does not know takes the plug icon and no description.
-- **Figures**, only where one cheap fetch gives them and only on a shown tile (`setup/setupmenu_figure.tpl`): classes
-  and sections defined, content languages in use, active extensions, signed-in users.
+  function does as the link's description. Icon, description and figure come from the menu's own section in
+  `menu.ini`, per link key (see "Extending it" below); a link without them takes the plug icon and no description.
+  With `NoAccessLinks=disabled` a function the user may not open is a tile without link and without figure, as the
+  menu shows its name without link.
+- **Figures**, only where one cheap fetch gives them and only on a tile the user may open
+  (`setup/setupmenu_figure.tpl`, named by `LinkFigureTemplates[]`): classes, sections, content languages, active
+  extensions that exist (`expinfo( 'active' )`), signed-in users; one and many are two strings.
 - **Grid.** One column on a phone, then two, three and four as the content column grows (container queries on
   `.a4-setup-overview`, so a wide left column counts). Styles in `stylesheets/modules/setup.css`, tokens only, light and
   dark, forced colors.
@@ -201,10 +204,53 @@ left menu (Content model, Site and URLs, Workflows, Users and messages, System, 
 | look_and_feel | `palette` | global_setting | `globe` |
 | (an extension's link) | `plug` | | |
 
-To give an extension's Setup link an icon and a description, override `setup/setupmenu.tpl` or add the key to its
-hash; the icon class must exist in `components.css` (see [Icons](#icons)). `tests/tests/design/AdminSetupOverviewTest.php`
-fails for a Setup link without a tile, an icon class or file that does not exist, an icon used twice, a missing access
-check, a figure from another fetch, an image in the page, or a missing translation.
+### Extending it
+
+Any left menu drawn as tiles (`parts/ini_menu.tpl` with `menu_layout='tiles'`) reads three optional settings of its
+section, per link key; the core Setup links carry theirs in `settings/menu.ini [Leftmenu_setup]`:
+
+| Key | Value | Without it |
+|---|---|---|
+| `LinkIcons[<key>]` | an icon name of `design.ini [AdminDesignSettings] IconList[]`, e.g. `bar-chart` | the plug icon; a name not in the list draws the plug icon too |
+| `LinkDescriptions[<key>]` | one line in English, translated in the menu's context (`design/admin/parts/setup/menu` for Setup), like `LinkNames[]` | no description |
+| `LinkFigureTemplates[<key>]` | `design:<path>.tpl`, included with `figure_key=<key>` on a tile the user may open | no figure; a value that does not start with `design:` is ignored |
+
+An extension that adds a Setup function gives it a tile in its own `settings/menu.ini.append.php`:
+
+```ini
+<?php /* #?ini charset="utf-8"?
+
+[Leftmenu_setup]
+Links[myreports]=myreports/list
+LinkNames[myreports]=Reports
+PolicyList_myreports[]=myreports/read
+LinkIcons[myreports]=bar-chart
+LinkDescriptions[myreports]=Monthly reports of the shop.
+LinkFigureTemplates[myreports]=design:myreports/setup_figure.tpl
+
+*/ ?>
+```
+
+The link shows under "More" in the menu and on the overview (or in a group, with `GroupLinks_<group>[]=myreports`).
+The figure template draws one short `<span class="a4-setup-tile-figure">`, asks only what its tile's function may
+show, and stays cheap: it runs on every view of the overview. The description is translated when the extension's
+translation file has the string in the menu's context.
+
+**Icons.** A tile draws only icons listed in `IconList[]`, each a mask rule `.a4-bi-<name>` over a Bootstrap Icons
+SVG; no inline style, no image, and a setting cannot put markup or an unknown class on the page. Every Bootstrap icon
+admin4 ships is listed (see [Icons](#icons)). An extension that needs another one ships it itself:
+
+1. the SVG, unchanged from Bootstrap Icons 1.13.1 (MIT), in the extension, e.g.
+   `extension/myreports/design/admin4/images/icons/bar-chart.svg`;
+2. a mask rule in a stylesheet of the extension registered in `design.ini [StylesheetSettings] BackendCSSFileList[]`,
+   with the path relative to that stylesheet:
+   `.a4-bi-bar-chart { -webkit-mask-image: url(../images/icons/bar-chart.svg); mask-image: url(../images/icons/bar-chart.svg); }`;
+3. `IconList[]=bar-chart` under `[AdminDesignSettings]` in the extension's `design.ini.append.php`.
+
+`tests/tests/design/AdminSetupOverviewTest.php` fails for a Setup link without icon or description, an icon that is
+not listed, has no rule or no file, an icon used twice, a missing access check, a figure outside the link branch or
+from another fetch, an image in the page, or a missing translation; it draws the tiles of a fixture menu with an
+extension's link (icon, description, figure) and one with an unknown icon.
 
 ## Languages
 
@@ -335,6 +381,8 @@ tree's roles, states, Tab stop and keys.
 | `settings/menu.ini` | `Topmenu_<tab>` | `Name`, `Tooltip`, `TranslationContext` | the default tab names, context `design/admin/pagelayout` | siteaccess |
 | `settings/menu.ini` | `Leftmenu_<menu>` | `Groups[]`, `GroupNames[<group>]`, `GroupLinks_<group>[]` | the five groups of `Leftmenu_setup` | siteaccess |
 | `settings/menu.ini` | `Leftmenu_<menu>` | `LeadLinks[]` | `overview` in `Leftmenu_setup` | siteaccess |
+| `settings/menu.ini` | `Leftmenu_<menu>` | `LinkIcons[<link>]`, `LinkDescriptions[<link>]`, `LinkFigureTemplates[<link>]` | the core Setup links | siteaccess |
+| `settings/design.ini` | `AdminDesignSettings` | `IconList[]` | every `.a4-bi-*` icon of `components.css` | siteaccess |
 | `settings/menu.ini` | `Topmenu_setup` | `URL[default]` | `setup/menu` (the Setup overview) | siteaccess |
 | `settings/menu.ini` | `Leftmenu_<menu>` | `PolicyList_<link>[]` | a node id, `<module>/<function>`, or `<module>/*` for a module without policy functions | siteaccess |
 | `settings/site.ini` | `SiteAccessSettings` | `FrontSiteAccess` | empty (`DefaultAccess`) | siteaccess |
