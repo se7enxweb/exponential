@@ -109,14 +109,14 @@
     {if $assignment_node.is_invisible}
         {if $assignment_node.is_hidden}
             {'Hidden'|i18n( 'design/admin/node/view/full' )}
-            [ <a href={concat( '/content/hide/', $assignment_node.node_id )|ezurl} title="{'Make location and all sub items visible.'|i18n( 'design/admin/node/view/full' )}">{'Reveal'|i18n( 'design/admin/node/view/full' )}</a> ]
+            [ <button type="submit" class="a4-link-button" form="locations-hide-form" formaction={concat( '/content/hide/', $assignment_node.node_id )|ezurl} title="{'Make location and all sub items visible.'|i18n( 'design/admin/node/view/full' )}">{'Reveal'|i18n( 'design/admin/node/view/full' )}</button> ]
         {else}
             {'Hidden by superior'|i18n( 'design/admin/node/view/full' )}
-            [ <a href={concat( '/content/hide/', $assignment_node.node_id )|ezurl} title="{'Hide location and all sub items.'|i18n( 'design/admin/node/view/full' )}">{'Hide'|i18n( 'design/admin/node/view/full' )}</a> ]
+            [ <button type="submit" class="a4-link-button" form="locations-hide-form" formaction={concat( '/content/hide/', $assignment_node.node_id )|ezurl} title="{'Hide location and all sub items.'|i18n( 'design/admin/node/view/full' )}">{'Hide'|i18n( 'design/admin/node/view/full' )}</button> ]
         {/if}
     {else}
         {'Visible'|i18n( 'design/admin/node/view/full' )}
-        [ <a href={concat( '/content/hide/', $assignment_node.node_id )|ezurl} title="{'Hide location and all sub items.'|i18n( 'design/admin/node/view/full' )}" >{'Hide'|i18n( 'design/admin/node/view/full' )}</a> ]
+        [ <button type="submit" class="a4-link-button" form="locations-hide-form" formaction={concat( '/content/hide/', $assignment_node.node_id )|ezurl} title="{'Hide location and all sub items.'|i18n( 'design/admin/node/view/full' )}">{'Hide'|i18n( 'design/admin/node/view/full' )}</button> ]
     {/if}
     </td>
 
@@ -219,4 +219,6 @@
 </div>
 
 </form>
+{* Hide and Reveal above post this form (content/hide acts only on a POST), so they are never the default button of the locations form *}
+<form id="locations-hide-form" method="post" action={'content/hide'|ezurl}></form>
 {/let}

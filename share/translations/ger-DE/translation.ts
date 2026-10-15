@@ -66614,6 +66614,22 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
 <context>
     <name>design/admin/content/job</name>
     <message>
+        <source>Reveal %name</source>
+        <translation>Einblenden: %name</translation>
+    </message>
+    <message>
+        <source>Hide %name</source>
+        <translation>Verbergen: %name</translation>
+    </message>
+    <message>
+        <source>The node and everything below it become visible again, unless hidden on their own.</source>
+        <translation>Der Knoten und alles darunter werden wieder sichtbar, sofern sie nicht selbst verborgen sind.</translation>
+    </message>
+    <message>
+        <source>The node and everything below it are hidden from the site.</source>
+        <translation>Der Knoten und alles darunter werden auf der Website verborgen.</translation>
+    </message>
+    <message>
         <source>Audit trail</source>
         <translation>Audit-Protokoll</translation>
     </message>

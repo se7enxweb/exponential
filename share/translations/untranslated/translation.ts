@@ -56081,6 +56081,22 @@ You will need to change the class of the node by using the swap functionality.</
 <context>
     <name>design/admin/content/job</name>
     <message>
+        <source>Reveal %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The node and everything below it become visible again, unless hidden on their own.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The node and everything below it are hidden from the site.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Open the result</source>
         <translation type="unfinished"></translation>
     </message>
