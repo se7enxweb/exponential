@@ -155,4 +155,26 @@ class AdminContextMenuTest extends PHPUnit\Framework\TestCase
                 "design/admin/$file and design/admin4/$file differ: change both copies together" );
         }
     }
+
+    /**
+     * A menu opened from the keyboard is placed at its trigger: below it, or above it when there is no room below,
+     * and never under the fixed page header. Before, a menu that fitted neither below nor above the row was moved to
+     * the window's top edge, under the header and away from the row (Shift+F10 on a sub-items row).
+     */
+    public function testAKeyboardMenuStaysAtItsTriggerAndOutOfTheHeader()
+    {
+        $js = (string)file_get_contents( self::root() . '/design/admin4/javascript/popupmenu/ezpopupmenu.js' );
+        $this->assertStringContainsString( "anchor = { 'top': rect.top + screenData.ScrollY, 'bottom': rect.bottom + screenData.ScrollY };", $js );
+        $this->assertStringContainsString( '_moveTopLevelOnScreen( menuID, mousePos, anchor );', $js );
+        $start = strpos( $js, 'function _moveTopLevelOnScreen( menuID, mousePos, anchor )' );
+        $this->assertNotFalse( $start );
+        $body = substr( $js, $start, strpos( $js, 'function _fixedHeaderHeight()' ) - $start );
+        $this->assertStringContainsString( 'var areaTop = screenData.ScrollY + _fixedHeaderHeight()', $body );
+        $this->assertStringContainsString( 'var below = anchor ? anchor.bottom : mousePos.y + EZPOPMENU_OFFSET;', $body );
+        $this->assertStringContainsString( 'var above = anchor ? anchor.top : mousePos.y - EZPOPMENU_OFFSET;', $body );
+        // no branch moves the menu to the window's top edge any more
+        $this->assertStringNotContainsString( 'newY = screenData.ScrollY', $body );
+        $this->assertStringContainsString( "menuElement.style.maxHeight = '';", $body, 'a squeezed height is reset on the next opening' );
+        $this->assertMatchesRegularExpression( "/position !== 'fixed' && position !== 'sticky'/", $js );
+    }
 }
