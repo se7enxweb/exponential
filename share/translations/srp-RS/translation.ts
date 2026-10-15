@@ -7598,10 +7598,6 @@
         <translation>Одржаваоци</translation>
     </message>
     <message>
-        <source>Regarding Exponential package &apos;%packagename&apos;</source>
-        <translation type="obsolete">У вези с Exponential пакетом &apos;%packagename&apos;</translation>
-    </message>
-    <message>
         <source>Send e-mail to the maintainer</source>
         <translation type="obsolete">Пошаљите e-mail поруку одржаваоцу</translation>
     </message>
@@ -10881,10 +10877,6 @@ Note: The packages will not be uninstalled.</source>
         <translation type="obsolete">Пре унапређивања Exponentialа на нову верзију проверите је ли тренутна инсталација спремна за унапређивање.</translation>
     </message>
     <message>
-        <source>Remember to make a backup of the Exponential directory and the database before you upgrade.</source>
-        <translation type="obsolete">Запамтите на да је добро направити сигурносне копије датотека и базе пре унапређивања.</translation>
-    </message>
-    <message>
         <source>File consistency check</source>
         <translation>Провера конзистентности датотека</translation>
     </message>
@@ -10915,10 +10907,6 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Warning: it is not safe to upgrade without checking the modifications done to the following files</source>
         <translation>УПОЗОРЕЊЕ! Није безбедно надограђивати без провере измена урађених на следећим документима</translation>
-    </message>
-    <message>
-        <source>Before upgrading Exponential to a newer version, it is important to check that the current installation is ready for upgrading.</source>
-        <translation>Пре надоградње еZ Publish-а на новију верзију, битно је проверити да ли је тренутна инсталација спремна за надоградњу.</translation>
     </message>
     <message>
         <source>Remember to make a backup of the Exponential directory and the database before you upgrade.</source>
@@ -11182,21 +11170,6 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Version</source>
-        <comment>Exponential version</comment>
-        <translation type="obsolete">Верзија</translation>
-    </message>
-    <message>
-        <source>SVN revision</source>
-        <comment>Exponential version</comment>
-        <translation type="obsolete">SVN ревизија </translation>
-    </message>
-    <message>
-        <source>Extensions</source>
-        <comment>Exponential extensions</comment>
-        <translation type="obsolete">Екстензије</translation>
-    </message>
-    <message>
-        <source>Version</source>
         <comment>PHP version</comment>
         <translation>Верзија</translation>
     </message>
@@ -11355,10 +11328,6 @@ Note: The packages will not be uninstalled.</source>
         <translation>Не користи се помоћна база података.</translation>
     </message>
     <message>
-        <source>Exponential</source>
-        <translation type="obsolete">Exponential</translation>
-    </message>
-    <message>
         <source>PHP</source>
         <translation>PHP</translation>
     </message>
@@ -11504,10 +11473,6 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Rapid Application Development Tools</source>
         <translation>Rapid Application Development алати</translation>
-    </message>
-    <message>
-        <source>The rapid application development (RAD) tools make the creation of new/extended functionality for Exponential easier. Currently there are two RAD tools available: the template operator wizard and the datatype wizard. The template operator wizard basically generates a valid framework (PHP code) for a new template operator. The datatype wizard generates a valid framework (PHP code) for a new datatype.</source>
-        <translation type="obsolete">RAD алат омогућује креирање нових/проширених функција у систем.</translation>
     </message>
     <message>
         <source>Available RAD tools</source>
@@ -15749,10 +15714,6 @@ your account.</source>
         <translation>Прегледај коментаре</translation>
     </message>
     <message>
-        <source>Powered by %linkStartTag Exponential&amp;reg;&amp;trade; open source content management system %linkEndTag and development framework.</source>
-        <translation type="obsolete">Израђено помоћу %linkStartTag Exponential %linkEndTag отвореног кода.</translation>
-    </message>
-    <message>
         <source>Top menu</source>
         <translation>Главни мени</translation>
     </message>
@@ -15767,10 +15728,6 @@ your account.</source>
     <message>
         <source>Left sub menu</source>
         <translation>Леви подмени</translation>
-    </message>
-    <message>
-        <source>Powered by %linkStartTag Exponential&amp;reg; open source content management system %linkEndTag and development framework.</source>
-        <translation type="obsolete">Израђено помоћу %linkStartTag Exponential %linkEndTag отвореног кода.</translation>
     </message>
     <message>
         <source>Details...</source>
@@ -19272,10 +19229,6 @@ If you want to send comments to the approver or view the status use the URL belo
 <context>
     <name>design/standard/content/pdf</name>
     <message>
-        <source>Exponential PDF export</source>
-        <translation type="obsolete">Exponential PDF извоз</translation>
-    </message>
-    <message>
         <source>#page of #total</source>
         <translation>#page од #total</translation>
     </message>
@@ -20690,10 +20643,6 @@ If you want to send comments to the approver or view the status use the URL belo
 <context>
     <name>design/standard/layout</name>
     <message>
-        <source>Welcome to Exponential administration</source>
-        <translation type="obsolete">Добродошли у администрацију ХНБ интранета</translation>
-    </message>
-    <message>
         <source>To log in enter a valid login and password.</source>
         <translation>Да би се пријавили унесите исправан логин и лозинку.</translation>
     </message>
@@ -20756,10 +20705,6 @@ If you want to send comments to the approver or view the status use the URL belo
     <message>
         <source>Search %sitetitle</source>
         <translation>Тражи %sitetitle</translation>
-    </message>
-    <message>
-        <source>Exponential redirection - %url</source>
-        <translation type="obsolete">Exponential преусмерава - %URL</translation>
     </message>
     <message>
         <source>Redirecting to %url</source>
@@ -21503,10 +21448,6 @@ The item can viewed by using the URL below.</source>
         <translation>Одржаваоци</translation>
     </message>
     <message>
-        <source>Regarding Exponential package &apos;%packagename&apos;</source>
-        <translation type="obsolete">У вези с Exponential пакетом &apos;%packagename&apos;</translation>
-    </message>
-    <message>
         <source>Send E-Mail to the maintainer</source>
         <translation type="obsolete">Пошаљи e-mail поруку одржаваоцу</translation>
     </message>
@@ -22016,10 +21957,6 @@ You can also remove the package without uninstalling it from the package list.</
     <message>
         <source>The Reference Documentation for Exponential consists of multiple sections whicheach have a different view on the documentation. The sections can be accessed atmenu on the top.</source>
         <translation type="obsolete">Референтна документација за Exponential састоји се од неколико сегмената од којих сваки даје различит приказ документације. Те сегменте је могуће отворити путем менија на врху странице. </translation>
-    </message>
-    <message>
-        <source>The documentation will give an overview of the API of Exponential.</source>
-        <translation type="obsolete">Документација ће дати преглед API-а за Exponential.</translation>
     </message>
     <message>
         <source>All reference documentation has been made with %doxygenurl</source>
@@ -22967,21 +22904,6 @@ menu on the top.</source>
     </message>
     <message>
         <source>Version</source>
-        <comment>Exponential version</comment>
-        <translation type="obsolete">Верзија</translation>
-    </message>
-    <message>
-        <source>SVN revision</source>
-        <comment>Exponential version</comment>
-        <translation type="obsolete">SVN ревизија </translation>
-    </message>
-    <message>
-        <source>Extensions</source>
-        <comment>Exponential extensions</comment>
-        <translation type="obsolete">Екстензије</translation>
-    </message>
-    <message>
-        <source>Version</source>
         <comment>PHP version</comment>
         <translation>Верзије</translation>
     </message>
@@ -23051,10 +22973,6 @@ menu on the top.</source>
     <message>
         <source>Rapid Application Development Tools</source>
         <translation>Rapid Application Development алати</translation>
-    </message>
-    <message>
-        <source>The rapid application development (RAD) tools allow you to easily get started with creating new functionality for Exponential.</source>
-        <translation type="obsolete">Rapid application development (RAD) алати вам омогућују да лагано креирате нову функцију Exponential-а.</translation>
     </message>
     <message>
         <source>Tools</source>
@@ -23995,18 +23913,6 @@ The default code was made from the basic parameters you chose.</source>
         <translation>Лозинка</translation>
     </message>
     <message>
-        <source>Congratulations, Exponential should now run on your system.</source>
-        <translation type="obsolete">Честитамо, Exponential би сад требао радити у Вашем систему. </translation>
-    </message>
-    <message>
-        <source>Exponential website</source>
-        <translation type="obsolete">интернет страница Exponential</translation>
-    </message>
-    <message>
-        <source>Exponential bug reports</source>
-        <translation type="obsolete">обавештења Exponential-а о вирусима</translation>
-    </message>
-    <message>
         <source>Done</source>
         <translation>Направљено</translation>
     </message>
@@ -24303,10 +24209,6 @@ The default code was made from the basic parameters you chose.</source>
         <translation>Провера система</translation>
     </message>
     <message>
-        <source>Welcome to Exponential</source>
-        <translation type="obsolete">Добродошли у Exponential</translation>
-    </message>
-    <message>
         <source>Choose database system</source>
         <translation>Изабери систем базе података</translation>
     </message>
@@ -24314,14 +24216,6 @@ The default code was made from the basic parameters you chose.</source>
         <source>Next</source>
         <comment>next button in installation</comment>
         <translation>Следећи</translation>
-    </message>
-    <message>
-        <source>PostgreSQL or MySQL &gt;= 4.1 are required for unicode support in Exponential.</source>
-        <translation type="obsolete">Потребна је PostgreSQL ор MySQL &gt;= 4.1 за уницоде подршку у Exponential. </translation>
-    </message>
-    <message>
-        <source>More information about Exponential and unicode support can be found %1.</source>
-        <translation type="obsolete">Детаљније информације о Exponential и уницоде подршци можете пронаћи %1.</translation>
     </message>
     <message>
         <source>here</source>
@@ -24382,10 +24276,6 @@ The default code was made from the basic parameters you chose.</source>
         <translation type="obsolete">Примаран/Додатни</translation>
     </message>
     <message>
-        <source>Exponential supports multiple languages.</source>
-        <translation type="obsolete">Exponential подржава неколико језика. </translation>
-    </message>
-    <message>
         <source>These and other additional languages can also be installed later.</source>
         <translation>Ови и други додатни језици могу бити инсталирани касније.</translation>
     </message>
@@ -24397,10 +24287,6 @@ The default code was made from the basic parameters you chose.</source>
     <message>
         <source>Site registration</source>
         <translation type="obsolete">Регистрација странице</translation>
-    </message>
-    <message>
-        <source>By sending registration the following data will be sent to 7x</source>
-        <translation type="obsolete">Слањем регистрације следећи подаци биће послани eZ систему</translation>
     </message>
     <message>
         <source>Site access configuration</source>
@@ -24489,10 +24375,6 @@ The default code was made from the basic parameters you chose.</source>
         <translation>Занемарите овај тест</translation>
     </message>
     <message>
-        <source>Welcome to Exponential %1</source>
-        <translation type="obsolete">Добродошли на Exponential %1</translation>
-    </message>
-    <message>
         <source>which will relay the emails. If unsure what to use, ask your webhost. Some webhosts do not support</source>
         <translation>који ће преносити E-mailове. Ако нисте сигурни шта користити, упитајте свог webhost. Неки webhostс не подржавају</translation>
     </message>
@@ -24519,10 +24401,6 @@ The default code was made from the basic parameters you chose.</source>
         <translation>Ниже наведени сажетак ће садржати податке о конфигурисаним подешавањима. </translation>
     </message>
     <message>
-        <source>Information about how to set up Exponential manually is available %1.</source>
-        <translation type="obsolete">Подаци о томе како ручно прилагодити Exponential доступни су на %1. </translation>
-    </message>
-    <message>
         <source>here</source>
         <comment>manual installation link</comment>
         <translation>овде</translation>
@@ -24532,16 +24410,8 @@ The default code was made from the basic parameters you chose.</source>
         <translation>У Вашем систему пронађена је и MySQL и PostgreSQL подршка. Молимо изаберите базу података коју желите користити. </translation>
     </message>
     <message>
-        <source>Exponential supports both MySQL and PostgreSQL.</source>
-        <translation type="obsolete">Exponential подржава и MySQL и PostgreSQL.</translation>
-    </message>
-    <message>
         <source>Please input database access information in the form below.</source>
         <translation>Молимо да унесете податке о приступу бази података у ниже наведени образац. </translation>
-    </message>
-    <message>
-        <source>If you don&apos;t have access to a database, you should obtain access now. Exponential is capable of running multiple sites, each site needs its own database. This means that you need to create several databases if you plan to run multiple sites. Please refer to the database system user manual if you&apos;re unsure about how to create a database.</source>
-        <translation type="obsolete">Ако немате приступ бази података, требали бисте сад добити приступ. Exponential може управљати с више страница, свакој страници треба властита база података. То значи да морате креирати неколико база података ако желите управљати неколицином страница. Молимо да се проверите у корисничком приручнику базе података ако нисте сигурни како креирати базу података. </translation>
     </message>
     <message>
         <source>Outgoing E-mail</source>
@@ -24653,16 +24523,8 @@ The default code was made from the basic parameters you chose.</source>
         <translation type="obsolete">Изабрани језик</translation>
     </message>
     <message>
-        <source>This data will help to improve future releases of Exponential.</source>
-        <translation type="obsolete">Ови подаци помоћи ће при побољшању будућих верзија Exponential.-а.</translation>
-    </message>
-    <message>
         <source>Site security</source>
         <translation>Сигурност странице</translation>
-    </message>
-    <message>
-        <source>Your site is not running in a virtual host mode, this is insecure. It is recommended to run Exponential in virtual host mode. If you do not have the possibility to use virtual host mode, you should follow the instructions below about how to install an .htaccess file. The .htaccess file tells the web server to restrict the access to certain files.</source>
-        <translation type="obsolete">Ваш web није подешен као виртуелни хост. Препоручује се конфигурација виртуелног хоста.</translation>
     </message>
     <message>
         <source>If you have shell access, you can run the following commmands.</source>
@@ -24757,16 +24619,8 @@ The default code was made from the basic parameters you chose.</source>
         <translation>Приказана је страница провере система. То значи да постоје неки проблеми/питања. </translation>
     </message>
     <message>
-        <source>These issues have to be resolved/fixed, or else, Exponential will not function properly.</source>
-        <translation type="obsolete">Ова је питања потребно решити јер иначе Exponential неће добро радити. </translation>
-    </message>
-    <message>
         <source>The problems are usually file-system related and can be easily fixed by copy / paste / run-ing the suggested commands in a system shell.</source>
         <translation type="obsolete">Проблеми су обично повезани с датотеком-системом те их је могуће лагано решити копирањем/лепљењем/ обављањем сугерисаних наредби у љусци система.</translation>
-    </message>
-    <message>
-        <source>Welcome to the Exponential content management system and development framework. This wizard will help you set up Exponential.&lt;br&gt;Click &lt;i&gt;Next&lt;/i&gt; to continue.</source>
-        <translation type="obsolete">Добродошли у Exponential CMS. чаробњак ће Вам помоћи поставити Exponential.&lt;бр&gt;притисни &lt;и&gt;следећи&lt;/и&gt; за наставак.</translation>
     </message>
     <message>
         <source>No data will be stored in the database until the final step of the setup.</source>
@@ -24824,14 +24678,6 @@ The default code was made from the basic parameters you chose.</source>
     <message>
         <source>The system finetune page is being displayed. This means that there are some issues which can be solved to improve the performance or features.</source>
         <translation>Приказана је страница за фино подешавање. То значи да постоје неки проблеми које је могуће решити како би се побољшао учинак или карактеристике система. </translation>
-    </message>
-    <message>
-        <source>These issues do not need to be resolved/fixed. Exponential will function properly without them.</source>
-        <translation type="obsolete">Ова питања није потребно решити/поправити јер ће Exponential и без њих добро радити. </translation>
-    </message>
-    <message>
-        <source>Welcome to the Exponential content management system and development framework. This wizard will help you set up Exponential.&lt;br&gt;Your system is not optimal, if you wish you can click the &lt;i&gt;Finetune&lt;/i&gt; button. This will present hints on how to fix these issues.&lt;br/&gt; Click &lt;i&gt;Next&lt;/i&gt; to continue without finetuning.</source>
-        <translation type="obsolete">Добродошли у Exponential систем управљања садржајима и развојни оквир. Чаробњак ће Вам помоћи поставити Exponential.&lt;бр&gt; Ваш систем није оптималан, ако желите можете притиснути дугме &lt;и&gt;Finetune&lt;/и&gt;. Појавиће се сугестије како поправити те проблеме. &lt;бр/&gt; Притисните &lt;и&gt;Следећи&lt;/и&gt; за наставак без детаљног прилагођавања.</translation>
     </message>
     <message>
         <source>Site administrator</source>
@@ -24934,14 +24780,6 @@ The default code was made from the basic parameters you chose.</source>
         <translation type="obsolete">Врста страница повезана је с основним подешавањима алатне траке, менија, боја и функција.Могуће је накнадно изменити те подешавања. </translation>
     </message>
     <message>
-        <source>The first time the user or admin site is accessed it will take some time (30 to 60 seconds). This is because Exponential prepares the site for your machine.</source>
-        <translation type="obsolete">При првом уласку на корисничку или администрациону страницу биће потребно одређено време (30 до 60 секунди). Разлог томе јест то што Exponential припрема страницу за Ваш рачунар. </translation>
-    </message>
-    <message>
-        <source>If you want you can let the setup add some demo data to your database, this demo data will give a good demonstration of the capabilities of Exponential</source>
-        <translation type="obsolete">Ако желите можете пустити setup и неке демо податке у базу. Демо подаци ће вам демонстрирати могућности EZ-а.</translation>
-    </message>
-    <message>
         <source>First time users are advised to install the demo data.</source>
         <translation>Корисници који користе први пут EZ се саветују да инсталирају демо податке.</translation>
     </message>
@@ -24992,10 +24830,6 @@ The default code was made from the basic parameters you chose.</source>
     <message>
         <source>Please make sure that the username and the password is correct. Verify that your PostgreSQL database is configured correctly.&lt;br&gt;See the PHP documentation for more information about this.&lt;br&gt;Remember to start postmaster with the -i option.&lt;br&gt;Note that PostgreSQL 7.2 is not supported.</source>
         <translation type="unfinished">Молимо проверите да ли су корисничко име и лозинка исправни. Проверите да ли је ваша PostgreSQL база података исправно конфигурисана.&lt;бр&gt;Погледајте PHP документацију за више информација о овоме.&lt;бр&gt;Запамтите да покренете постмастер са -и опцијом.&lt;бр&gt;Знајте да PostgreSQL 7.2 није подржан.</translation>
-    </message>
-    <message>
-        <source>The &apos;digest&apos; procedure is not available in your database, you cannot run Exponential without this. Visit the FAQ for more information.</source>
-        <translation type="obsolete">Процедура &apos;дигест&apos; није доступна на вашој бази података, не можете користити Exponential без овога. Погледајте FAQ за више информација.</translation>
     </message>
     <message>
         <source>Your database version %version does not fit the minimum requirement which is %req_version.</source>
@@ -25756,10 +25590,6 @@ How do you access it?&lt;/p&gt;
         <translation>Недостају управљачи базе</translation>
     </message>
     <message>
-        <source>Your PHP does not have support for all databases that Exponential support.</source>
-        <translation type="obsolete">Ваш PHP нема подршку за све базе података које подржава Exponential. </translation>
-    </message>
-    <message>
         <source>Also some databases has more advanced features, such as charset, than others.</source>
         <translation>Такође неке базе података имају напредније карактеристике, као што су нпр. сетови знакова, него остале. </translation>
     </message>
@@ -25772,20 +25602,12 @@ How do you access it?&lt;/p&gt;
         <translation>Недостаје управљач базе</translation>
     </message>
     <message>
-        <source>No supported database handlers were found. Exponential requires a database to store it&apos;s data, without one the system will fail.</source>
-        <translation type="obsolete">Није пронађена подршка за базе података. Потребна је база података за Exponential.</translation>
-    </message>
-    <message>
         <source>To obtain database support you need to recompile PHP, the exact recompile options are specified below.</source>
         <translation>За коришћење базе морате прекомпајлирати PHP.</translation>
     </message>
     <message>
         <source>Insufficient directory permissions</source>
         <translation>Недовољна овлашћења</translation>
-    </message>
-    <message>
-        <source>Exponential cannot write to some important directories, without this the setup cannot finish and parts of Exponential will fail.</source>
-        <translation type="obsolete">Exponential не може писати појединим важним директоријима, без тога setup не може завршити те неки делови Exponential-а неће радити. </translation>
     </message>
     <message>
         <source>It&apos;s recommended that you fix this by running the commands below.</source>
@@ -25798,10 +25620,6 @@ How do you access it?&lt;/p&gt;
     <message>
         <source>File uploading is disabled</source>
         <translation>Учитавање датотеке је онемогућено</translation>
-    </message>
-    <message>
-        <source>File uploading is not enabled which means that it&apos;s impossible for Exponential to handle file uploading. All other parts of Exponential will still work fine but it&apos;s recommended to enable file uploads.</source>
-        <translation type="obsolete">Учитавање датотеке није омогућено што значи да је Exponentialу немогуће обавити учитавање датотеке. Сви остали делови Exponentialа ће и даље добро радити, но препоручујемо да омогућите учитавање датотека.</translation>
     </message>
     <message>
         <source>Configuration</source>
@@ -25820,10 +25638,6 @@ How do you access it?&lt;/p&gt;
         <translation>Недостаје подршка за претварање слика</translation>
     </message>
     <message>
-        <source>No image conversion capabilities was detected, this means that Exponential cannot scale any images or detect their type. This is vital functionality in Exponential and must be supported.</source>
-        <translation type="obsolete">Нису откривене могућности претварања слика, то значи да Exponential не може мењати величину слика или открити њихову врсту.То је витална функција у Exponential програму те је он мора подржавати.</translation>
-    </message>
-    <message>
         <source>template operator will not be available.</source>
         <translation>оператор шаблона неће бити доступан. </translation>
     </message>
@@ -25832,16 +25646,8 @@ How do you access it?&lt;/p&gt;
         <translation>Пази:</translation>
     </message>
     <message>
-        <source>Future releases of Exponential will have more advanced image support by using the imagegd extension.</source>
-        <translation type="obsolete">Следеће верзије Exponential-а имаће напреднију графичку подршку коришћењем графичке екстензије. </translation>
-    </message>
-    <message>
         <source>Missing ImageMagick program</source>
         <translation>Недостаје програм Image Magic </translation>
-    </message>
-    <message>
-        <source>The ImageMagick program is not available to Exponential. Without it Exponential will not be able to do image conversion unless the imagegd extension is available.</source>
-        <translation type="obsolete">Програм ImageMagic није доступан Exponentialу. Без њега Exponential неће моћи мењати величину слика осим ако није доступна екстензија imagegd.</translation>
     </message>
     <message>
         <source>If you known where the program is installed (the executable is called</source>
@@ -25876,14 +25682,6 @@ How do you access it?&lt;/p&gt;
         <translation>Недостаје MBString екстензија</translation>
     </message>
     <message>
-        <source>Exponential comes with a good list of supported charsets by default, however they can be a bit slow due to being made in pure PHP code. Luckily Exponential supports the mbstring extension for handling some of the charsets.</source>
-        <translation type="obsolete">Exponential се испоручује с великом листом знакова које подржава у склопу основног подешавања, међутим они могу бити нешто спорији јер су израђени у чистом PHP коду. Насрећу, Exponential подржава екстензију mbstring за управљање неким знаковима. </translation>
-    </message>
-    <message>
-        <source>By enabling the mbstring extension Exponential will have access to more charsets and also be able to process some of them faster, such as Unicode and iso-8859-*. This is recommended for multilingual sites and sites with more exotic charsets.</source>
-        <translation type="obsolete">Активирањем mbstring екстензије Exponential ће имати приступ већем броју знакова те ће бити у могућности брже их обрађивати, као нпр. Unicode и iso-8859-*. Препоручено код вишејезичних страница и страница с егзотичним знаковима. </translation>
-    </message>
-    <message>
         <source>Installation of the mbstring extension is done by compiling PHP with the</source>
         <translation>Инсталација mbstring екстензије обавља се компилирањем PHP-а с </translation>
     </message>
@@ -25896,20 +25694,12 @@ How do you access it?&lt;/p&gt;
         <translation>Више о активирању екстенције можете пронаћи у </translation>
     </message>
     <message>
-        <source>Do not enable mbstring function overloading, Exponential will only use the extension whenever it&apos;s needed.</source>
-        <translation type="obsolete">Немојте омогућавати заобилажење mbstring функције, Exponential ће користити само ову екстензију кад год је могуће.</translation>
-    </message>
-    <message>
         <source>PHP option</source>
         <translation>PHP опција</translation>
     </message>
     <message>
         <source>is enabled</source>
         <translation>је омогућена</translation>
-    </message>
-    <message>
-        <source>Exponential will work with this option on however it will lead to some minor performance issues since all input variables need to be be converted back to</source>
-        <translation type="obsolete">Exponential ће радити уз ову опцију међутим то ће довести до неких проблема с перформансом пошто ће све варијабле уноса морати бити претворене назад у </translation>
     </message>
     <message>
         <source>normal</source>
@@ -25936,20 +25726,12 @@ How do you access it?&lt;/p&gt;
         <translation>Морате унапредити свој програм на најмање верзију</translation>
     </message>
     <message>
-        <source>Exponential cannot write to the</source>
-        <translation type="obsolete">eZ издаваштво не може писати </translation>
-    </message>
-    <message>
         <source>directory, without this the setup cannot disable itself.</source>
         <translation>директоријум, без тога setup се не може деактивирати. </translation>
     </message>
     <message>
         <source>Missing zlib extension</source>
         <translation>Недостаје злиб екстензија</translation>
-    </message>
-    <message>
-        <source>The zlib extension is not available to Exponential. Without it Exponential will not be able to install the demo data, however if you do not wish the demo data you can safely ignore this.</source>
-        <translation type="obsolete">Exponentialу није доступна злиб екстензија. Без њега Exponential неће моћи инсталирати демонстрациони приказ, међутим, ако не желите демонстрациони приступ можете занемарити ову поруку.</translation>
     </message>
     <message>
         <source>To enable zlib you need to recompile PHP with support for it. You will need to configure PHP with</source>
@@ -25968,24 +25750,12 @@ How do you access it?&lt;/p&gt;
         <translation>PHP опција %1 је активирана</translation>
     </message>
     <message>
-        <source>Exponential will work with this option on however it will lead to some minor performance issues since all input variables will be made global on each script execution.</source>
-        <translation type="obsolete">Exponential ће радити ако је укључена ова опција, међутим, то ће довести до неких проблема с извршењем пошто ће варијабле уноса бити објављене глобално код сваког извршења плана.</translation>
-    </message>
-    <message>
         <source>It&apos;s recommended that the option is turned off. To turn it off edit your %1 configuration and set %2 to %3.</source>
         <translation>Препоручујемо да искључите ту опцију. Да би је искључили измените своју %1 конфигурацију и поставите %2 на %3. </translation>
     </message>
     <message>
         <source>PHP safe mode is enabled</source>
         <translation>Активирана је PHP сигурносна функција</translation>
-    </message>
-    <message>
-        <source>Insufficient execution time allowed to install Exponential</source>
-        <translation type="obsolete">Недовољно време дозвољено за инсталирање Exponential програма</translation>
-    </message>
-    <message>
-        <source>Exponential will not work correctly with a execution time limit of %1.</source>
-        <translation type="obsolete">Exponential неће добро радити с временским ограничењем  извршења од %1.</translation>
     </message>
     <message>
         <source>It&apos;s highly recommended that you fix this.</source>
@@ -26004,28 +25774,12 @@ How do you access it?&lt;/p&gt;
         <translation>Следећи</translation>
     </message>
     <message>
-        <source>If you are running Exponential in a shared host environment, contant your ISP to perform the changes</source>
-        <translation type="obsolete">Ако користите Exponential у дељеном хост окружењу, контактирајте ваш ИСП та извршите промене</translation>
-    </message>
-    <message>
-        <source>Insufficient memory allocated to install Exponential</source>
-        <translation type="obsolete">Недовољна меморија за инсталацију Exponential-а</translation>
-    </message>
-    <message>
-        <source>Exponential will not work correctly with a memory limit of %1.</source>
-        <translation type="obsolete">eZ неће правилно радити с меморијским ограничењем од %1.</translation>
-    </message>
-    <message>
         <source>Open the php.ini file and change the memory_limit value to at least %1, and press %2</source>
         <translation>Отворите php.ini датотеку и промените вредност memory_limit на најмање %1, те притисните %2</translation>
     </message>
     <message>
         <source>It&apos;s recommended that the option is turned off. To turn it off edit your %phpini configuration and set %magic_quotes_gpc and %magic_quotes_runtime to %offtext.</source>
         <translation type="obsolete">Препоручујемо да искључите ту опцију. Да би је искључили измените своју %phpini конфигурацију и поставите %magic_quotes_gpc анд %magic_quotes_runtime то %offtext.</translation>
-    </message>
-    <message>
-        <source>Exponential will not work properly with this option on.</source>
-        <translation type="obsolete">Exponential неће правилно радити уз ову опцију.</translation>
     </message>
     <message>
         <source>To turn it off edit your %phpini configuration and set %magic_quotes_runtime to %offtext.</source>
@@ -26060,10 +25814,6 @@ How do you access it?&lt;/p&gt;
         <translation>Недостаје imagegd2 екстензија</translation>
     </message>
     <message>
-        <source>The imagegd2 extension is not available to Exponential. Without it Exponential will only be able to do conversion using ImageMagick and the</source>
-        <translation type="obsolete">Exponential-у није доступна imagegd2 екстензија. Без ње Exponential ће моћи обављати промене само уз помоћ Image Magick-а и </translation>
-    </message>
-    <message>
         <source>To enable imagegd2 you need to recompile PHP with support for it, more information on that subject is available at</source>
         <translation></translation>
     </message>
@@ -26084,10 +25834,6 @@ How do you access it?&lt;/p&gt;
         <translation>Недостаје екстензија за сесије</translation>
     </message>
     <message>
-        <source>Your PHP module does not have session support, without this Exponential will not work properly.</source>
-        <translation type="obsolete">Ваш PHP модул не подржава сесије. Без сесија Exponential неће исправно радити.</translation>
-    </message>
-    <message>
         <source>To enable session support you will have recompile your PHP module without the %session_disable switch.</source>
         <translation>За активирање сесија мора се прекомпајлирати PHP.</translation>
     </message>
@@ -26098,10 +25844,6 @@ How do you access it?&lt;/p&gt;
     <message>
         <source>, but the latest released PHP 4.3.x version is highly recommended.</source>
         <translation type="obsolete">, али последња издата PHP верзија PHP 4.3.x је препоручљива.</translation>
-    </message>
-    <message>
-        <source>Although Exponential will work without it, it might be that you want to have support for this database.</source>
-        <translation type="obsolete">Мада Exponential може радити без ње, могуће је да ћете хтети подршку за ту базу података.</translation>
     </message>
     <message>
         <source>The affected directories are: %dir_list</source>
@@ -26140,10 +25882,6 @@ How do you access it?&lt;/p&gt;
         <translation>Уплоад фајла није могућ</translation>
     </message>
     <message>
-        <source>The PHP upload directory %upload_dir does not exists or is not accessible, without this you will not be able to upload files or images to Exponential.</source>
-        <translation type="obsolete">PHP upload директоријум %upload_dir не постоји или не може да му се приступи, без овога нећете моћи да uploadујете слике или фајлове на Exponential.</translation>
-    </message>
-    <message>
         <source>Create the directory %upload_dir on your system. If you do not have the possibility to create this yourself ask the administrator to create it for you.</source>
         <translation>Креирајте директоријум %upload_dir на вашем систему. Ако немате могућности да га сами креирате, тражите од администратора да га креира за вас.</translation>
     </message>
@@ -26154,10 +25892,6 @@ How do you access it?&lt;/p&gt;
     <message>
         <source>This shell command will create the upload directory.</source>
         <translation>Ова команда ће вам креирати upload директоријум.</translation>
-    </message>
-    <message>
-        <source>The PHP upload directory %upload_dir is not writeable. This means that it will be impossible to upload files or images to Exponential.</source>
-        <translation type="obsolete">У PHP upload директоријум %upload_dir не може да се пише. То значи да се неће моћи вршити upload слика и фајлова на Exponential.</translation>
     </message>
     <message>
         <source>You must change the permission on the directory %upload_dir. If you do not have the possibility to create this yourself ask the administrator to do this for you.</source>
@@ -26192,24 +25926,12 @@ How do you access it?&lt;/p&gt;
         <translation>пример php.ini</translation>
     </message>
     <message>
-        <source>Alternatively you may create a file called %1 in your Exponential root folder and add the following</source>
-        <translation type="obsolete">Као алтернативу можете креирати фајл назван %1 у вашем Exponential root директоријуму и додати следеће</translation>
-    </message>
-    <message>
         <source>.htaccess example</source>
         <translation>.хтаццесс пример</translation>
     </message>
     <message>
-        <source>Exponential may work with safe mode on, however there might be several features that will be unavailable. Some of the things that might occur are</source>
-        <translation type="obsolete">Exponential може радити са safe mode, али може се десити да неке опције неће бити доступне. Неке од ствари које се могу десити су</translation>
-    </message>
-    <message>
         <source>You need to enable AcceptPathInfo in your Apache config file, if you&apos;re using apache 2.x.</source>
         <translation type="obsolete">Морате да омогућите AcceptPathInfo у вашем Apache config фајлу, ако користите apache 2.x.</translation>
-    </message>
-    <message>
-        <source>If you&apos;re running apache 1.3, Exponential will not run in CGI mode.</source>
-        <translation type="obsolete">Ако користите apache 1.3, Exponential неће радити у CGI моду.</translation>
     </message>
     <message>
         <source>allow_url_fopen ini setting is disabled</source>

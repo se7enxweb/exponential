@@ -9,8 +9,8 @@
  *     removeKey() with their return values, the "default" context
  *   - initialize() registering the translator with eZTranslatorManager, fetchList()
  *   - every translation shipped in share/translations validates against schemas/translation/ts.rng and loads
- *   - the catalogues kept up to date here (eng-US, ger-DE, untranslated) hold each message once: no second message
- *     with the same context, source and comment (the translator keeps only the last one)
+ *   - every catalogue shipped in share/translations (each locale and untranslated) holds each message once: no
+ *     second message with the same context, source and comment (the translator keeps only the last one)
  *
  * The repository is switched with eZINI::setVariable() for the test and restored in tearDown(); files go to a
  * private directory under var/tmp. No translation cache is read or written.
@@ -252,8 +252,8 @@ class eZTSTranslatorTest extends PHPUnit\Framework\TestCase
     {
         $root = dirname( __DIR__, 4 ) . '/share/translations';
         $rows = array();
-        foreach ( array( 'eng-US', 'ger-DE', 'untranslated' ) as $locale )
-            $rows[$locale] = array( "$root/$locale/translation.ts" );
+        foreach ( glob( $root . '/*/translation.ts' ) as $file )
+            $rows[basename( dirname( $file ) )] = array( $file );
         return $rows;
     }
 

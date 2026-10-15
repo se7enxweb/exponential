@@ -3035,7 +3035,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-7a16d181428982c4ca16dcf17bec8f3e  doc/changelogs/6.0/6.0.15.md
+2af2847f5830c81e1c05b0b9fbc43216  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -7196,9 +7196,9 @@ bb55605f0c73bddb522d4d64444dc239  share/transformations/basic.tr
 06361e73b7836778b599fa55f3300ebf  share/transformations/latin.tr
 9c0a310f00eb6c3334a8c41198ec3161  share/transformations/search.tr
 460da6761ad0f2e5f4e9482a3688df97  share/translations/cat-ES/translation.ts
-4336226320a6c2b1c981367f55987767  share/translations/chi-CN/translation.ts
-dfd4936089d50e1e82835872ef7e98c7  share/translations/chi-HK/translation.ts
-dfd4936089d50e1e82835872ef7e98c7  share/translations/chi-TW/translation.ts
+4dcdb5420060fd1ad57bac9a985509af  share/translations/chi-CN/translation.ts
+dee1439bfaf68fc5f026df35f4f0397f  share/translations/chi-HK/translation.ts
+dee1439bfaf68fc5f026df35f4f0397f  share/translations/chi-TW/translation.ts
 bcc2558c488c065edf4754f8ea637d2c  share/translations/cro-HR/translation.ts
 a6b9a5e18993b0e8f8f8ff35f99bded0  share/translations/cze-CZ/translation.ts
 6c36d67c01c6a6eb46eb05fd627001ed  share/translations/dan-DK/translation.ts
@@ -7208,7 +7208,7 @@ a2b163b1fd63c8bdb24c907d8473ad74  share/translations/ell-GR/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-NZ/translation.ts
 7d7aabe2842524156dd5941db4f3dc77  share/translations/eng-US/translation.ts
 92a2f18fc0ed15cad49dd40e4e496df3  share/translations/esl-ES/translation.ts
-055019b981ec540383dd37b74c91ce88  share/translations/esl-MX/translation.ts
+3a1cd7eb19c1ba120877d76a63f9a732  share/translations/esl-MX/translation.ts
 a1ff9edf6db2ff3ff0b2d442410db154  share/translations/fin-FI/translation.ts
 53d8d7f9258c04ed02c4c84a7721e691  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
@@ -7223,7 +7223,7 @@ c55b244fe21805a71690ca10e8f33623  share/translations/jpn-JP/translation.ts
 5ad1c363698f66124aed106e043148af  share/translations/por-BR/translation.ts
 d5ee9f6f41a1629151b2c95729988fd1  share/translations/rus-RU/translation.ts
 8d3885ecf29b1a456cefc940ade7f02c  share/translations/ser-SR/translation.ts
-5bdf098e928fa99c94d4e8efa37d8477  share/translations/srp-RS/translation.ts
+c0bb0e5ef4ff758c9e505585337f7d2a  share/translations/srp-RS/translation.ts
 175a32374b310580e95bd659a017a77c  share/translations/swe-SE/translation.ts
 0b1b76b5ad6b2f923afd6fd9a9937a8b  share/translations/untranslated/readme.txt
 2abcca57de74e5795d2b95592a0d68cf  share/translations/untranslated/translation.ts
@@ -7286,7 +7286,7 @@ a4e7a187670959adc083b3b4ab09caca  tests/runtests.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 9ff58a769386f12831d56db2598e292e  tests/suite.php
-96fdc9b660c31c075f658155836aabd8  tests/test-map.json
+9c1172fdb998730c38a9b380e05488dd  tests/test-map.json
 8b29711fe10a56c5c5b90916f35d0a00  tests/tests/bin/phpcs/NoTypeDeclarationsSniffTest.php
 4e3eeb18c2ea423afb62388e5e3dcafc  tests/tests/bin/phpcs/fixtures/typedeclarations.inc
 a170729e7e161686001ae10895d34d53  tests/tests/design/AdminBaseStylesheetsTest.php
@@ -8354,7 +8354,7 @@ cb0fed15dd1df5bc335d598439aec099  tests/tests/lib/ezfile/eZDirDeletionGuardTest.
 2973292804803c561abb24ae9e84f3aa  tests/tests/lib/ezi18n/eZCharTransformTrailingCleanupTest.php
 29832724eee763626bfe2263dd86eaa7  tests/tests/lib/ezi18n/eZCharsetAndTransformTest.php
 9b2f42f8460d203df243995ce82a1dc6  tests/tests/lib/ezi18n/eZCodePageTablesTest.php
-8237f0634b2c2d95e040e3f5e4b2f2ae  tests/tests/lib/ezi18n/eZTSTranslatorTest.php
+c1f6adac19ccaf910436eda6d13af929  tests/tests/lib/ezi18n/eZTSTranslatorTest.php
 86f580b3e8cfbaaf79c8cf442dbd2418  tests/tests/lib/ezi18n/eZTranslatorHandlersTest.php
 99d562ea5691945a73f1649c6b7cc76b  tests/tests/lib/ezimage/data/andernach.jpg
 e20e34d1b6a2efc798e50ebbabee680d  tests/tests/lib/ezimage/data/svg/badge.svg

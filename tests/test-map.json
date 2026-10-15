@@ -14,6 +14,9 @@
     "tests/test-map.json"
   ],
   "map": {
+    "share/translations/*/translation.ts": [
+      "tests/tests/lib/ezi18n/eZTSTranslatorTest.php"
+    ],
     "*.php": [
       "tests/tests/kernel/classes/security/expFileModeLimitsTest.php"
     ],

@@ -10895,16 +10895,6 @@ Note: The packages will not be uninstalled.</source>
         <translation>站点</translation>
     </message>
     <message>
-        <source>SVN revision</source>
-        <comment>Exponential version</comment>
-        <translation type="obsolete">SVN 修订版</translation>
-    </message>
-    <message>
-        <source>Extensions</source>
-        <comment>Exponential extensions</comment>
-        <translation type="obsolete">扩充</translation>
-    </message>
-    <message>
         <source>Version</source>
         <comment>PHP version</comment>
         <translation>版本</translation>
@@ -20793,10 +20783,6 @@ If you want to send comments to the approver or view the status use the URL belo
         <translation type="obsolete">重启动</translation>
     </message>
     <message>
-        <source>Welcome to Exponential administration</source>
-        <translation type="obsolete">欢迎到eZ管理部门</translation>
-    </message>
-    <message>
         <source>To log in enter a valid login and password.</source>
         <translation>输入有效登录名及密码登录。</translation>
     </message>
@@ -20875,10 +20861,6 @@ If you want to send comments to the approver or view the status use the URL belo
     <message>
         <source>Search %sitetitle</source>
         <translation>搜索%sitetitle</translation>
-    </message>
-    <message>
-        <source>Exponential redirection - %url</source>
-        <translation type="obsolete">Exponential 重执行 - %url</translation>
     </message>
     <message>
         <source>Redirecting to %url</source>
@@ -22111,16 +22093,6 @@ You can also remove the package without uninstalling it from the package list.</
         <translation>介绍</translation>
     </message>
     <message>
-        <source>The Reference Documentation for Exponential consists of multiple sections which
-each have a different view on the documentation. The sections can be accessed at
-menu on the top.</source>
-        <translation type="obsolete">Exponential 参考资料文档由多重不同部分构成。这些部分可以通过顶部的菜单被找到。</translation>
-    </message>
-    <message>
-        <source>The documentation will give an overview of the API of Exponential.</source>
-        <translation type="obsolete">这个文档是关于Exponential API 的概述。</translation>
-    </message>
-    <message>
         <source>All reference documentation has been made with %doxygenurl</source>
         <translation>所有参考文档已通过%doxygenurl生成</translation>
     </message>
@@ -23218,21 +23190,6 @@ By using %datatypename you can ...</source>
     </message>
     <message>
         <source>Version</source>
-        <comment>Exponential version</comment>
-        <translation type="obsolete">版本</translation>
-    </message>
-    <message>
-        <source>SVN revision</source>
-        <comment>Exponential version</comment>
-        <translation type="obsolete">SVN 修订版</translation>
-    </message>
-    <message>
-        <source>Extensions</source>
-        <comment>Exponential extensions</comment>
-        <translation type="obsolete">扩充</translation>
-    </message>
-    <message>
-        <source>Version</source>
         <comment>PHP version</comment>
         <translation>版本</translation>
     </message>
@@ -23323,10 +23280,6 @@ By using %datatypename you can ...</source>
     <message>
         <source>Rapid Application Development Tools</source>
         <translation>快速应用程序开发工具</translation>
-    </message>
-    <message>
-        <source>The rapid application development (RAD) tools allow you to easily get started with creating new functionality for Exponential.</source>
-        <translation type="obsolete">快捷程序开发工具使创建新 Exponential 功能更容易。</translation>
     </message>
     <message>
         <source>Tools</source>
@@ -24404,24 +24357,12 @@ The default code was made from the basic parameters you chose.</source>
         <translation type="obsolete">邮件正在用失败的发送注册</translation>
     </message>
     <message>
-        <source>Congratulations, Exponential should now run on your system.</source>
-        <translation type="obsolete">配置,eZ现在应该在你的系统运行.</translation>
-    </message>
-    <message>
         <source>If you need help with Exponential, you can go to the</source>
         <translation type="obsolete">如果你需要关于eZ的帮助,你能去</translation>
     </message>
     <message>
-        <source>Exponential website</source>
-        <translation type="obsolete">eZ网站</translation>
-    </message>
-    <message>
         <source>If you find a bug (error), please go to</source>
         <translation type="obsolete">如果你找到误,请去</translation>
-    </message>
-    <message>
-        <source>Exponential bug reports</source>
-        <translation type="obsolete">eZ错误报告</translation>
     </message>
     <message>
         <source>and report it.</source>
@@ -24716,10 +24657,6 @@ The default code was made from the basic parameters you chose.</source>
         <translation type="obsolete">如果你保留了数据,安装程序将不从旧的eZ版本(象2.2.7)升级. 这是指那些有数据但双不想放弃它们的人. 如果你有3.0 eZ版本的数据(象来自RC的数据),你应该跳过数据库的初始化,然而你需要升级手册.</translation>
     </message>
     <message>
-        <source>The setup will not do an upgrade from older Exponential versions (such as 2.2.7) if you leave the data as it is. This is only meant for people who have existing data that they don&apos;t want to lose. If you have existing Exponential 3.0 data (such as from an RC release) you should skip DB initialization, however you will then need to do a manual upgrade.</source>
-        <translation type="obsolete">如果你保留了数据,安装程序将不从旧的eZ版本(象2.2.7)升级. 这是指那些有数据但双不想放弃它们的人. 如果你有3.0 eZ版本的数据(象来自RC的数据),你应该跳过数据库的初始化,然而你需要升级手册.</translation>
-    </message>
-    <message>
         <source>which must be available on the server or</source>
         <translation>在服务器上必须有效或</translation>
     </message>
@@ -24788,10 +24725,6 @@ The default code was made from the basic parameters you chose.</source>
         <translation>系统检查</translation>
     </message>
     <message>
-        <source>Welcome to Exponential</source>
-        <translation type="obsolete">欢迎到eZ</translation>
-    </message>
-    <message>
         <source>The database is ready for initialization, click the %1 button when ready.</source>
         <translation>数据库已经准备好初始化。准备就绪时，点击按钮%1。</translation>
     </message>
@@ -24822,14 +24755,6 @@ The default code was made from the basic parameters you chose.</source>
     <message>
         <source>Exponential support both MySQL and PostgreSQL.</source>
         <translation type="obsolete">eZ支持MySQL和PostgreSQL。</translation>
-    </message>
-    <message>
-        <source>PostgreSQL or MySQL &gt;= 4.1 are required for unicode support in Exponential.</source>
-        <translation type="obsolete">在eZ系统中要求MySQL和PostgreSQL &gt;= 4.1支持统一码。</translation>
-    </message>
-    <message>
-        <source>More information about Exponential and unicode support can be found %1.</source>
-        <translation type="obsolete">关于eZ和对统一码支持的信息能在%1中找到。</translation>
     </message>
     <message>
         <source>here</source>
@@ -24938,17 +24863,6 @@ The default code was made from the basic parameters you chose.</source>
         <translation type="obsolete">论坛</translation>
     </message>
     <message>
-        <source>Exponential</source>
-        <comment>Exponential 3 link</comment>
-        <translation type="obsolete">eZ</translation>
-    </message>
-    <message>
-        <source>If you need help with Exponential, you can go to %ezlink and get help in the forums.
-  If you find a bug (error), please go to %buglink and report it.
-  With your help we can fix the errors Exponential might have and implement new features.</source>
-        <translation type="obsolete">如果你需要eZ的帮助，你能去%ezlink并且得到论坛的帮助。 </translation>
-    </message>
-    <message>
         <source>ez.no</source>
         <translation>ez.no</translation>
     </message>
@@ -24999,10 +24913,6 @@ To fix this problem you must do one of the following:</source>
         <translation type="obsolete">原先/附加</translation>
     </message>
     <message>
-        <source>Exponential supports multiple languages.</source>
-        <translation type="obsolete">eZ支持多种语言。</translation>
-    </message>
-    <message>
         <source>The selected languages are used to determine character sets, date format, number format, etc.</source>
         <translation type="obsolete">用选择绵语言来决定字符集、数据格式，数字格式，等等。</translation>
     </message>
@@ -25049,10 +24959,6 @@ To fix this problem you must do one of the following:</source>
     <message>
         <source>Sending out the email and generating your site might take a couple of seconds so please wait until the next page loads. Clicking the button again will only send out duplicate emails, and may corrupt your installation.</source>
         <translation type="obsolete">送出的电子邮件和产生你的网站可能花一两秒钟。请等待到下一页加载。</translation>
-    </message>
-    <message>
-        <source>By sending registration the following data will be sent to 7x</source>
-        <translation type="obsolete">靠发送注册信息，下列信息将送到eZ系统</translation>
     </message>
     <message>
         <source>This data will help to improve Exponential for future releases.</source>
@@ -25269,10 +25175,6 @@ If you do not have the possibility to use virtualhost mode you should follow the
         <translation type="obsolete">如果这不正确，eZ将可能安装不正确和工作不适当。</translation>
     </message>
     <message>
-        <source>Welcome to Exponential %1</source>
-        <translation type="obsolete">欢迎到eZ %1</translation>
-    </message>
-    <message>
         <source>Welcome to the Exponential content management system and development framework. This wizard will help you set up Exponential. Press &lt;i&gt;Next &amp;gt;&lt;/i&gt; to continue.</source>
         <translation type="obsolete">欢迎到eZ内容管理系统和开发框架工具. 此专家工具将帮助你安装eZ. 为了继续,请按&lt;i&gt;Next &amp;gt;&lt;/i&gt;.</translation>
     </message>
@@ -25287,10 +25189,6 @@ If you do not have the possibility to use virtualhost mode you should follow the
     <message>
         <source>No data will be stored in the database until the final step of the installation.</source>
         <translation type="obsolete">安装到最后一步之前,数据库中无数据</translation>
-    </message>
-    <message>
-        <source>Information about how to set up Exponential manually is available %1.</source>
-        <translation type="obsolete">关于如何手动安装eZ的资料是有效的%1.</translation>
     </message>
     <message>
         <source>here</source>
@@ -26353,10 +26251,6 @@ How do you access it?&lt;/p&gt;
         <translation>缺少数据库处理程序</translation>
     </message>
     <message>
-        <source>Your PHP does not have support for all databases that Exponential support.</source>
-        <translation type="obsolete">你的PHP不支持eZ所支持的数据库.</translation>
-    </message>
-    <message>
         <source>Allthough Exponential will work without it, it might be that you want to have support for this database.</source>
         <translation type="obsolete">虽然eZ没它将可工作,但是你想它可能支持数据库.</translation>
     </message>
@@ -26373,20 +26267,12 @@ How do you access it?&lt;/p&gt;
         <translation>缺少数据库处理程序</translation>
     </message>
     <message>
-        <source>No supported database handlers were found. Exponential requires a database to store it&apos;s data, without one the system will fail.</source>
-        <translation type="obsolete">发现不支持的数据库处理序. eZ要求一数据库来保存它的数据.</translation>
-    </message>
-    <message>
         <source>To obtain database support you need to recompile PHP, the exact recompile options are specified below.</source>
         <translation>要支持更多的数据库，您需要重新编译PHP，以下是确切的编译选项。</translation>
     </message>
     <message>
         <source>Insufficient directory permissions</source>
         <translation>目录权限不足</translation>
-    </message>
-    <message>
-        <source>Exponential cannot write to some important directories, without this the setup cannot finish and parts of Exponential will fail.</source>
-        <translation type="obsolete">eZ不能写某些重要的目录. 没有这,安装不能完成和eZ部分将失败.</translation>
     </message>
     <message>
         <source>It&apos;s recommended that you fix this by running the commands below.</source>
@@ -26399,10 +26285,6 @@ How do you access it?&lt;/p&gt;
     <message>
         <source>Missing image conversion support</source>
         <translation>不支持图像转换程序</translation>
-    </message>
-    <message>
-        <source>No image conversion capabilities was detected, this means that Exponential cannot scale any images or detect their type. This is vital functionality in Exponential and must be supported.</source>
-        <translation type="obsolete">发现没图象变换能力, 这意思是eZ 不能标定任何图象或不能发现图象的格式.这是eZ中至关重要的功能,并且必须支持.</translation>
     </message>
     <message>
         <source>Missing imagegd extension</source>
@@ -26421,20 +26303,12 @@ How do you access it?&lt;/p&gt;
         <translation>注意:</translation>
     </message>
     <message>
-        <source>Future releases of Exponential will have more advanced image support by using the imagegd extension.</source>
-        <translation type="obsolete">eZ的进一步版本将有更先进的图象的扩充功能.</translation>
-    </message>
-    <message>
         <source>To enable imagegd you need to recompile PHP with support for it, more information on that subject is available at</source>
         <translation type="obsolete">为了使重新编译PHP能支持图象化,此主题的更多信息在</translation>
     </message>
     <message>
         <source>Missing ImageMagick program</source>
         <translation>缺少ImageMagick程序</translation>
-    </message>
-    <message>
-        <source>The ImageMagick program is not available to Exponential. Without it Exponential will not be able to do image conversion unless the imagegd extension is available.</source>
-        <translation type="obsolete">ImageMagick程序对eZ无效. 没有它, ez将不能做图象变换,除非图象扩充功能有效.</translation>
     </message>
     <message>
         <source>If you known where the program is installed (the executable is called</source>
@@ -26469,14 +26343,6 @@ How do you access it?&lt;/p&gt;
         <translation>缺少MBString扩展</translation>
     </message>
     <message>
-        <source>Exponential comes with a good list of supported charsets by default, however they can be a bit slow due to being made in pure PHP code. Luckily Exponential supports the mbstring extension for handling some of the charsets.</source>
-        <translation type="obsolete">eZ有一组缺省的字符集列表. 然而纯的PHP代码的生成时它们可能是有点慢. 幸运的是eZ支持mbstring的处理某些字符集扩充功能.</translation>
-    </message>
-    <message>
-        <source>By enabling the mbstring extension Exponential will have access to more charsets and also be able to process some of them faster, such as Unicode and iso-8859-*. This is recommended for multilingual sites and sites with more exotic charsets.</source>
-        <translation type="obsolete">靠mbstring的扩充功能, eZ将有更多字符集的入口,并且也能更快地处理它们,象统一码. 建议对多语言或具有更多外来字符集的网站.</translation>
-    </message>
-    <message>
         <source>The complete list of charsets mbstring supports are:</source>
         <translation type="obsolete">mbstring支持的完整的字符集列表是:</translation>
     </message>
@@ -26493,20 +26359,12 @@ How do you access it?&lt;/p&gt;
         <translation>更多关于启用此扩展的信息在</translation>
     </message>
     <message>
-        <source>Do not enable mbstring function overloading, Exponential will only use the extension whenever it&apos;s needed.</source>
-        <translation type="obsolete">不使mbstring有超载的扩充功能, eZ将仅用于它需要扩充功能时.</translation>
-    </message>
-    <message>
         <source>PHP option</source>
         <translation>PHP选项</translation>
     </message>
     <message>
         <source>is enabled</source>
         <translation>已启用</translation>
-    </message>
-    <message>
-        <source>Exponential will work with this option on however it will lead to some minor performance issues since all input variables need to be be converted back to</source>
-        <translation type="obsolete">eZ将与此功能同时工作. 它将导致某些不重要的性能发布, 由于全部输入变量需要变换回到</translation>
     </message>
     <message>
         <source>normal</source>
@@ -26561,20 +26419,12 @@ How do you access it?&lt;/p&gt;
         <translation type="obsolete">,但即使是更新的版本,象4.2.3, 建议高版本.</translation>
     </message>
     <message>
-        <source>Exponential cannot write to the</source>
-        <translation type="obsolete">eZ不能写到</translation>
-    </message>
-    <message>
         <source>directory, without this the setup cannot disable itself.</source>
         <translation>目录，没有它，安装程序不能自行终止。</translation>
     </message>
     <message>
         <source>Missing zlib extension</source>
         <translation>缺少zlib扩展</translation>
-    </message>
-    <message>
-        <source>The zlib extension is not available to Exponential. Without it Exponential will not be able to install the demo data, however if you do not wish the demo data you can safely ignore this.</source>
-        <translation type="obsolete">zlib的扩充对eZ无效. 没有它, eZ将没有能力来安装演示数据.然而, 如果你不希望装演示数据, 你能安全地忽略这.</translation>
     </message>
     <message>
         <source>To enable zlib you need to recompile PHP with support for it. You will need to configure PHP with</source>
@@ -26587,10 +26437,6 @@ How do you access it?&lt;/p&gt;
     <message>
         <source>File uploading is disabled</source>
         <translation>禁用文件上传</translation>
-    </message>
-    <message>
-        <source>File uploading is not enabled which means that it&apos;s impossible for Exponential to handle file uploading. All other parts of Exponential will still work fine but it&apos;s recommended to enable file uploads.</source>
-        <translation type="obsolete">不能上传文件的意思是eZ不能处理上传文件. eZ的其它部分仍能工作,但是建议它能上传文件.</translation>
     </message>
     <message>
         <source>Configuration</source>
@@ -26627,10 +26473,6 @@ How do you access it?&lt;/p&gt;
     <message>
         <source>PHP option %1 is enabled</source>
         <translation>PHP选项%1已启用</translation>
-    </message>
-    <message>
-        <source>Exponential will work with this option on however it will lead to some minor performance issues since all input variables will be made global on each script execution.</source>
-        <translation type="obsolete">eZ将和此选项一起工作。 由于全部输入变量将被设定成全局的，它将引起某些较小的性能问题。</translation>
     </message>
     <message>
         <source>It&apos;s recommended that the option is turned off. To turn it off edit your %1 configuration and set %2 to %3.</source>
