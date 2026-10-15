@@ -75,7 +75,7 @@ EngineSwitch=enabled
 */ ?>
 ```
 
-`EngineSwitch=enabled` shows a button below the editor to switch. Then clear the INI cache:
+`EngineSwitch=enabled` shows the engine switch below the editor ("Editor" with every engine, the one in use marked). Then clear the INI cache:
 `php bin/php/ezcache.php --clear-tag=ini --allow-root-user`. Check the setting is read:
 `grep -n 'EditorEngine\|EngineSwitch' extension/ezoe/settings/ezoe.ini`.
 
