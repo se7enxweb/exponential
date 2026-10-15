@@ -52,19 +52,12 @@ class AdminSetupOverviewTest extends PHPUnit\Framework\TestCase
         return $values;
     }
 
-    /** @return array<string, string> link key => icon class name (without a4-bi-) of the page's tiles hash */
-    private static function tileIcons()
+    /** @return string[] design.ini [AdminDesignSettings] IconList[] */
+    private static function iconList()
     {
-        preg_match_all( "/^\s*'([a-z_]+)',\s*hash\( 'icon', 'a4-bi-([a-z0-9-]+)',\s*'text', '([^']+)'\|i18n\( '" . preg_quote( self::CONTEXT, '/' ) . "' \) \)/m",
-                        self::read( self::PAGE ), $m, PREG_SET_ORDER );
-        $icons = array();
-        foreach ( $m as $tile )
-        {
-            if ( isset( $icons[$tile[1]] ) )
-                $icons[$tile[1] . ' (twice)'] = $tile[2];
-            $icons[$tile[1]] = $tile[2];
-        }
-        return $icons;
+        $ini = self::read( 'settings/design.ini' );
+        preg_match_all( '/^IconList\[\]=(\S+)$/m', $ini, $m );
+        return $m[1];
     }
 
     /** @return string[] the class names .a4-bi-<name> that components.css defines */
@@ -82,6 +75,7 @@ class AdminSetupOverviewTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'setup/menu', $setup['Links']['overview'] );
         $this->assertSame( array( 'overview' ), $setup['LeadLinks'] ?? null, 'the overview comes before the groups' );
         $this->assertStringContainsString( "'overview',           'Overview'|i18n( 'design/admin/parts/setup/menu' )", self::read( self::SETUP_MENU ) );
+        $this->assertArrayNotHasKey( 'overview', $setup['LinkIcons'] ?? array(), 'the overview is the page itself and has no tile' );
         // in the left menu the overview stands before the groups, a plain row in their look, marked when current
         $this->assertStringContainsString( "<div class=\"a4-navlead\">{include uri='design:parts/ini_menu_items.tpl' items=\$lead_items", self::read( self::MENU ) );
         $this->assertStringContainsString( '#leftmenu .a4-navlead > .leftmenu-items { margin: 0 0 var(--a4-space-2); padding: 0; list-style: none; }', self::read( 'design/admin4/stylesheets/admin4.css' ) );
@@ -98,39 +92,46 @@ class AdminSetupOverviewTest extends PHPUnit\Framework\TestCase
         $this->assertNotContains( 'install', $functions );
     }
 
-    public function testEveryLinkOfTheSetupMenuHasATileWithABootstrapIcon()
+    public function testEveryLinkOfTheSetupMenuHasAnIconAndADescriptionInMenuIni()
     {
         $setup = self::iniSection( 'Leftmenu_setup' );
-        $icons = self::tileIcons();
-        $this->assertSame( array(), array_values( array_filter( array_keys( $icons ), function ( $key ) { return strpos( $key, '(twice)' ) !== false; } ) ),
-                           'a link has two tiles' );
-        $lead = $setup['LeadLinks'] ?? array();
-        foreach ( array_keys( $setup['Links'] ) as $key )
+        $icons = $setup['LinkIcons'] ?? array();
+        $texts = $setup['LinkDescriptions'] ?? array();
+        foreach ( array_diff( array_keys( $setup['Links'] ), $setup['LeadLinks'] ?? array() ) as $key )
         {
-            if ( in_array( $key, $lead, true ) )
-            {
-                $this->assertArrayNotHasKey( $key, $icons, "the lead link $key is the overview itself and has no tile" );
-                continue;
-            }
-            $this->assertArrayHasKey( $key, $icons, "Links[$key] of Leftmenu_setup has no icon and description on the overview" );
+            $this->assertArrayHasKey( $key, $icons, "Links[$key] of Leftmenu_setup has no LinkIcons[$key]" );
+            $this->assertNotSame( '', trim( $texts[$key] ?? '' ), "Links[$key] of Leftmenu_setup has no LinkDescriptions[$key]" );
         }
         // the links that menu.ini keeps commented out and parts/setup/menu.tpl still names get a tile when enabled
         foreach ( array( 'roles_and_policies', 'templates', 'toolbar_management', 'global_setting', 'look_and_feel' ) as $key )
+        {
             $this->assertArrayHasKey( $key, $icons );
+            $this->assertArrayHasKey( $key, $texts );
+        }
+        $this->assertSame( array(), array_values( array_diff( array_keys( $texts ), array_keys( $icons ) ) ), 'a description without an icon' );
 
-        $defined = self::definedIcons();
+        $listed = self::iconList();
         $root = dirname( __DIR__, 3 );
         foreach ( $icons as $key => $icon )
         {
-            $this->assertContains( $icon, $defined, "tile $key: .a4-bi-$icon is not in components.css" );
+            $this->assertMatchesRegularExpression( '/^[a-z0-9]+(?:-[a-z0-9]+)*$/', $icon, "LinkIcons[$key]" );
+            $this->assertContains( $icon, $listed, "LinkIcons[$key]=$icon is not in design.ini IconList[], so the tile would draw the plug icon" );
             $svg = (string)file_get_contents( "$root/share/icons/bootstrap-icons/svg/$icon.svg" );
-            $this->assertStringStartsWith( '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-' . $icon . '"', $svg, "tile $key: $icon.svg is no Bootstrap icon" );
+            $this->assertStringStartsWith( '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-' . $icon . '"', $svg, "LinkIcons[$key]: $icon.svg is no Bootstrap icon" );
         }
         $this->assertSame( count( $icons ), count( array_unique( $icons ) ), 'two functions share one icon' );
-        // a link the page does not know (an extension's) takes a Bootstrap icon as well
-        $this->assertStringContainsString( '{else}a4-bi-plug{/if}', self::read( self::TILES ) );
-        $this->assertContains( 'plug', $defined );
-        $this->assertNotContains( 'plug', $icons, 'the extension icon is for unknown links only' );
+        $this->assertNotContains( 'plug', $icons, 'the plug icon is for links without an icon of their own' );
+        $this->assertStringContainsString( "{set \$tile_icon = 'plug'", self::read( self::TILES ) );
+        $this->assertStringContainsString( '$known_icons|contains( $tile_icons[ $item.key ] )', self::read( self::TILES ), 'only a listed icon is drawn' );
+    }
+
+    public function testTheIconListIsEveryMaskRuleOfComponents()
+    {
+        preg_match_all( '/^\.a4-bi-([a-z0-9-]+) \{/m', self::read( 'design/admin4/stylesheets/components.css' ), $m );
+        $listed = self::iconList();
+        $this->assertSame( array_values( array_unique( $listed ) ), $listed, 'IconList[] names an icon twice' );
+        $this->assertEqualsCanonicalizing( $m[1], $listed, 'design.ini IconList[] and the .a4-bi-* rules of components.css differ' );
+        $this->assertContains( 'plug', $listed );
     }
 
     public function testEveryGroupedLinkShowsOnceInItsGroup()
@@ -174,27 +175,54 @@ class AdminSetupOverviewTest extends PHPUnit\Framework\TestCase
         $this->assertStringNotContainsString( '|ezurl', $page );
         $tiles = self::read( self::TILES );
         $this->assertStringNotContainsString( 'ezini(', $tiles );
+        // the tiles' settings come from the menu's own section
+        foreach ( array( 'LinkIcons', 'LinkDescriptions', 'LinkFigureTemplates' ) as $key )
+            $this->assertStringContainsString( "ezini( \$ini_section, '$key', 'menu.ini' )", $menu );
         $this->assertSame( 1, substr_count( $tiles, '|ezurl' ), 'a tile links only where the menu item does' );
         $this->assertStringContainsString( "{if eq( \$item.state, 'link' )}", $tiles, 'a tile without access (NoAccessLinks=disabled) is no link' );
         // the overview's own left menu stays the menu: the page's variables do not leak into the page layout
-        $this->assertStringContainsString( '{undef $setup_menu_layout $setup_menu_figures $setup_menu_tiles}', $page );
+        $this->assertStringContainsString( '{undef $setup_menu_layout}', $page );
         $this->assertStringContainsString( "{if \$setup_menu_layout|ne( 'tiles' )}", self::read( self::SETUP_MENU ), 'the width control is the left menu\'s only' );
     }
 
-    public function testFiguresAreCheapAndOnlyForKnownLinks()
+    public function testFiguresAreCheapAndOnlyOnTilesTheUserMayOpen()
     {
         $setup = self::iniSection( 'Leftmenu_setup' );
+        $named = $setup['LinkFigureTemplates'] ?? array();
+        $this->assertNotEmpty( $named );
+        foreach ( $named as $key => $template )
+        {
+            $this->assertArrayHasKey( $key, $setup['Links'], "LinkFigureTemplates[$key] for no link of the Setup menu" );
+            $this->assertSame( 'design:setup/setupmenu_figure.tpl', $template );
+        }
         $figures = self::read( self::FIGURES );
         preg_match_all( "/\{case match='([a-z_]+)'\}/", $figures, $m );
-        $this->assertNotEmpty( $m[1] );
-        foreach ( $m[1] as $key )
-            $this->assertArrayHasKey( $key, $setup['Links'], "a figure for $key, which is no link of the Setup menu" );
+        $this->assertEqualsCanonicalizing( array_keys( $named ), $m[1], 'the core figure template and LinkFigureTemplates[] name different keys' );
         preg_match_all( "/fetch\( '(\w+)', '(\w+)'/", $figures, $fetches, PREG_SET_ORDER );
         $allowed = array( 'class/list', 'section/list', 'content/translation_list', 'user/logged_in_count' );
         foreach ( $fetches as $fetch )
             $this->assertContains( "{$fetch[1]}/{$fetch[2]}", $allowed, 'a figure must come from one cheap fetch' );
-        // included only for a tile that is drawn, so only for a function the user may open
-        $this->assertStringContainsString( '{include uri=$tile_figures figure_key=$item.key}', self::read( self::TILES ) );
+        // the active extensions that exist, not the names in the settings
+        $this->assertStringContainsString( "expinfo( 'active' )|count", $figures );
+        $this->assertStringNotContainsString( 'ActiveExtensions', preg_replace( '/\{\*.*?\*\}/s', '', $figures ) );
+        // one and many: two strings each
+        foreach ( array( 'class' => 'classes', 'section' => 'sections', 'language' => 'languages' ) as $one => $many )
+        {
+            $this->assertStringContainsString( "'1 $one'|i18n", $figures );
+            $this->assertStringContainsString( "'%count $many'|i18n", $figures );
+        }
+        $this->assertStringContainsString( "'1 user signed in'|i18n", $figures );
+
+        // the figure only in the branch of a tile the user may open: its fetch asks no rights of its own
+        $tiles = self::read( self::TILES );
+        $link = strpos( $tiles, "{if eq( \$item.state, 'link' )}" );
+        $else = strpos( $tiles, '{else}', $link );
+        $include = strpos( $tiles, '{include uri=$tile_figure figure_key=$item.key}' );
+        $this->assertNotFalse( $include );
+        $this->assertSame( 1, substr_count( $tiles, '{include uri=$tile_figure' ) );
+        $this->assertGreaterThan( $link, $include, 'the figure is included before the link branch' );
+        $this->assertLessThan( $else, $include, 'the figure is included outside the link branch' );
+        $this->assertStringContainsString( "\$tile_figures[ \$item.key ]|begins_with( 'design:' )", $tiles );
     }
 
     public function testThePageDrawsNoImageButBootstrapIcons()
@@ -225,7 +253,7 @@ class AdminSetupOverviewTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( 'grid-template-columns: minmax(0, 1fr);', $css, 'one column on a phone' );
         $this->assertStringContainsString( 'a.a4-setup-tile-link:focus-visible::after { outline: 3px solid var(--a4-ring);', $css );
         $this->assertMatchesRegularExpression( '/@media \(forced-colors: active\) \{\s*\.a4-setup-tile-icon/', $css );
-        // the tile is a card, so its padding follows the density
+        // the tile is a card of the shared components
         $this->assertStringContainsString( '<li class="a4-card a4-setup-tile', self::read( self::TILES ) );
     }
 
@@ -238,7 +266,10 @@ class AdminSetupOverviewTest extends PHPUnit\Framework\TestCase
             $sources = array_merge( $sources, $m[1] );
         }
         $sources = array_unique( $sources );
-        $this->assertGreaterThan( 40, count( $sources ) );
+        $this->assertGreaterThan( 12, count( $sources ) );
+        // the descriptions of menu.ini are translated in the menu's context, as LinkNames[] are
+        $descriptions = array_values( self::iniSection( 'Leftmenu_setup' )['LinkDescriptions'] ?? array() );
+        $this->assertGreaterThan( 30, count( $descriptions ) );
         foreach ( array( 'ger-DE', 'eng-US' ) as $locale )
         {
             $ts = self::read( "share/translations/$locale/translation.ts" );
@@ -248,8 +279,133 @@ class AdminSetupOverviewTest extends PHPUnit\Framework\TestCase
             foreach ( $sources as $source )
                 $this->assertStringContainsString( '<source>' . htmlspecialchars( $source, ENT_NOQUOTES ) . '</source>', $context, "$locale: $source" );
             $menu = strpos( $ts, '<name>design/admin/parts/setup/menu</name>' );
-            $this->assertStringContainsString( '<source>Overview</source>', substr( $ts, $menu, strpos( $ts, '</context>', $menu ) - $menu ), "$locale: Overview" );
+            $menuContext = substr( $ts, $menu, strpos( $ts, '</context>', $menu ) - $menu );
+            $this->assertStringContainsString( '<source>Overview</source>', $menuContext, "$locale: Overview" );
+            foreach ( $descriptions as $source )
+                $this->assertStringContainsString( '<source>' . htmlspecialchars( $source, ENT_NOQUOTES ) . '</source>', $menuContext, "$locale: $source" );
         }
         $this->assertStringContainsString( "<source>Overview</source>\n        <translation>Übersicht</translation>", self::read( 'share/translations/ger-DE/translation.ts' ) );
+    }
+
+    /**
+     * Draws the tiles of a fixture menu as an extension would set it up: a link with icon, description and figure,
+     * one with an unlisted icon and a figure template outside design:, one the user may not open
+     * (NoAccessLinks=disabled). The real template engine, no database.
+     */
+    public function testTheTilesOfAnExtensionsLinkRenderFromItsSettings()
+    {
+        $root = dirname( __DIR__, 3 );
+        $dir = "$root/design/standard/templates/tests_setupoverview_" . getmypid();
+        $saved = array_key_exists( 'eZCurrentAccess', $GLOBALS ) ? array( $GLOBALS['eZCurrentAccess'] ) : null;
+        $handler = set_exception_handler( null );
+        restore_exception_handler();
+        // the fixture template is new: no override cache file, no override list from an earlier fetch
+        $savedGlobals = array();
+        foreach ( array( 'eZSiteBasics', 'eZOverrideTemplateCacheMap' ) as $name )
+            $savedGlobals[$name] = array_key_exists( $name, $GLOBALS ) ? array( $GLOBALS[$name] ) : null;
+        $GLOBALS['eZSiteBasics']['no-cache-adviced'] = true;
+        unset( $GLOBALS['eZOverrideTemplateCacheMap'] );
+        $overrides = new ReflectionProperty( 'eZTemplateDesignResource', 'overrideArrayCache' );
+        $overrides->setValue( null, null );
+        mkdir( $dir );
+        try
+        {
+            file_put_contents( "$dir/figure.tpl", '<span class="a4-setup-tile-figure">figure of {$figure_key|wash}</span>' );
+            $GLOBALS['eZCurrentAccess'] = array( 'name' => 'tiles_test', 'type' => 1 );
+            $tpl = eZTemplate::factory();
+            $figure = 'design:' . basename( $dir ) . '/figure.tpl';
+            $tpl->setVariable( 'groups', array( array( 'id' => 'more', 'name' => 'More', 'translated' => true, 'items' => array(
+                array( 'key' => 'myreports', 'url' => 'myreports/list', 'name' => 'Reports', 'state' => 'link' ),
+                array( 'key' => 'odd', 'url' => 'odd/list', 'name' => 'Odd', 'state' => 'link' ),
+                array( 'key' => 'locked', 'url' => 'locked/list', 'name' => 'Locked', 'state' => 'no-access' ) ) ) ) );
+            $tpl->setVariable( 'tile_icons', array( 'myreports' => 'bar-chart-line', 'odd' => 'x"><b>', 'locked' => 'bell' ) );
+            $tpl->setVariable( 'tile_texts', array( 'myreports' => 'Monthly reports of the shop.', 'locked' => 'Locked away.' ) );
+            $tpl->setVariable( 'tile_figures', array( 'myreports' => $figure, 'odd' => 'file:/etc/hosts', 'locked' => $figure ) );
+            $tpl->setVariable( 'known_icons', array( 'bar-chart-line', 'bell', 'plug' ) );
+            $tpl->setVariable( 'tile_id_prefix', 'fx' );
+            $tpl->setVariable( 'i18n_section', 'design/admin/parts/setup/menu' );
+            $html = $tpl->fetch( "$root/" . self::TILES );
+            $this->assertSame( array(), $tpl->errorLog() );
+        }
+        finally
+        {
+            array_map( 'unlink', glob( "$dir/*" ) );
+            rmdir( $dir );
+            $overrides->setValue( null, null );
+            foreach ( $savedGlobals as $name => $value )
+            {
+                if ( $value === null )
+                    unset( $GLOBALS[$name] );
+                else
+                    $GLOBALS[$name] = $value[0];
+            }
+            // the kernel's bootstrap installs its exception handler; the test leaves the one it found
+            for ( $i = 0; $i < 5; $i++ )
+            {
+                $current = set_exception_handler( null );
+                restore_exception_handler();
+                if ( $current === $handler )
+                    break;
+                restore_exception_handler();
+            }
+            if ( $saved === null )
+                unset( $GLOBALS['eZCurrentAccess'] );
+            else
+                $GLOBALS['eZCurrentAccess'] = $saved[0];
+        }
+        $tiles = preg_split( '/<li class="a4-card a4-setup-tile/', $html );
+        $this->assertCount( 4, $tiles, 'three tiles' );
+        // the extension's link: its icon, its description and its figure, both as the link's description
+        $this->assertStringContainsString( '<span class="a4-icon a4-bi-bar-chart-line"></span>', $tiles[1] );
+        $this->assertMatchesRegularExpression( '#<a class="a4-setup-tile-link" href="[^"]*myreports/list" aria-describedby="fx-myreports-text">Reports</a>#', $tiles[1] );
+        $this->assertStringContainsString( '<span>Monthly reports of the shop.</span>', $tiles[1] );
+        $this->assertStringContainsString( 'figure of myreports', $tiles[1] );
+        // an icon that is not listed draws the plug, and nothing of the setting reaches the page
+        $this->assertStringContainsString( '<span class="a4-icon a4-bi-plug"></span>', $tiles[2] );
+        $this->assertStringNotContainsString( '<b>', $html );
+        $this->assertStringNotContainsString( 'aria-describedby', $tiles[2], 'no description, no figure: nothing describes the link' );
+        $this->assertStringNotContainsString( 'hosts', $html );
+        // a function the user may not open: no link and no figure
+        $this->assertStringContainsString( 'is-disabled', $tiles[3] );
+        $this->assertStringNotContainsString( '<a ', $tiles[3] );
+        $this->assertStringContainsString( 'Locked away.', $tiles[3] );
+        $this->assertStringNotContainsString( 'figure of locked', $tiles[3] );
+    }
+
+    /**
+     * The access expression of the view setup/menu, evaluated by eZUser::hasAccessToView() for users whose policies
+     * are given here instead of read from the database.
+     *
+     * @dataProvider accessProvider
+     */
+    #[PHPUnit\Framework\Attributes\DataProvider( 'accessProvider' )]
+    public function testWhoOpensTheOverview( array $functions, $expected )
+    {
+        $user = new class( $functions ) extends eZUser
+        {
+            private $granted;
+            public function __construct( array $granted ) { $this->granted = $granted; }
+            public function hasAccessTo( $module, $function = false )
+            {
+                return array( 'accessWord' => in_array( "$module/$function", $this->granted, true ) ? 'yes' : 'no',
+                              'accessList' => array( 'FunctionRequired' => array( 'Module' => $module, 'Function' => $function ) ) );
+            }
+        };
+        $root = dirname( __DIR__, 3 );
+        $module = new eZModule( "$root/kernel/setup", "$root/kernel/setup/module.php", 'setup' );
+        $params = array();
+        $this->assertSame( $expected, $user->hasAccessToView( $module, 'menu', $params ) );
+    }
+
+    public static function accessProvider()
+    {
+        return array(
+            'cache management only (the tab\'s former page)' => array( array( 'setup/managecache' ), true ),
+            'setup'                                         => array( array( 'setup/setup' ), true ),
+            'system information only'                       => array( array( 'setup/system_info' ), true ),
+            'nothing'                                       => array( array(), false ),
+            'install only'                                  => array( array( 'setup/install' ), false ),
+            'another module'                                => array( array( 'class/edit' ), false ),
+        );
     }
 }
