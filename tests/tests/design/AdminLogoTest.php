@@ -15,6 +15,10 @@
  *          square in the surface color; under forced colors CanvasText and Canvas
  *  LG-06 - the header keeps its heights (56px, 88px from 576px, 56px from 1280px) and the logo box its 32px; the logo is
  *          24px high, and below 576px the mark stands alone in a 36px link, as large a target as the tools
+ *  LG-07 - the word stands as high as the mark: the E shares the back square's top and the front square's baseline
+ *  LG-08 - the raster logos are rendered from this drawing at twice the size they are drawn at (a device pixel ratio of
+ *          2): logo-light.png and setup's Exponential-logo-title.png 400 x 100 (the same file), the standard login
+ *          page's Exponential-logo.gif 420 x 120; small files
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminLogoTest.php
  *
@@ -253,5 +257,59 @@ class AdminLogoTest extends PHPUnit\Framework\TestCase
         $tablet = AdminBaseStylesheetsTest::rules( self::media( $css, 'screen and (min-width: 576px)' ) );
         $this->assertSame( 'clamp(6rem, calc(100vw - 454px), 230px)', $tablet['#header .searchblock input.searchtext']['width'],
             'the field gives the wider logo its 44px, so the tools keep one row at 576px' );
+    }
+
+    /** The smallest and largest y of a path's absolute coordinates (the letters and squares use M, V, H, L, Q, Z) */
+    private static function verticalExtent( $d )
+    {
+        $ys = array();
+        preg_match_all( '/([MLQVHZmlqvhz])([^MLQVHZmlqvhz]*)/', $d, $m, PREG_SET_ORDER );
+        foreach ( $m as $command )
+        {
+            $numbers = array_map( 'floatval', preg_split( '/[\s,]+/', trim( $command[2] ), -1, PREG_SPLIT_NO_EMPTY ) );
+            if ( $command[1] === 'V' )
+                $ys = array_merge( $ys, $numbers );
+            elseif ( in_array( $command[1], array( 'M', 'L', 'Q' ), true ) )
+            {
+                for ( $i = 1; $i < count( $numbers ); $i += 2 )
+                    $ys[] = $numbers[$i];
+            }
+        }
+        return array( min( $ys ), max( $ys ) );
+    }
+
+    /** LG-07 */
+    public function testTheWordIsAsHighAsTheMark()
+    {
+        $full = self::svgs( self::file( 'design/admin4/images/admin4/exponential-logo.svg' ) )[0];
+        $paths = $full->getElementsByTagName( 'path' );
+        $e = self::verticalExtent( $paths->item( 0 )->getAttribute( 'd' ) );
+        $l = self::verticalExtent( $paths->item( 10 )->getAttribute( 'd' ) );
+        $rects = $full->getElementsByTagName( 'rect' );
+        $back = (float)$rects->item( 0 )->getAttribute( 'y' ) - 2;   // the outline is 2 units outside the paper
+        $front = (float)$rects->item( 1 )->getAttribute( 'y' ) + (float)$rects->item( 1 )->getAttribute( 'height' ) + 2;
+        $this->assertEqualsWithDelta( $back, $e[0], 0.01, 'the E starts at the top of the back square' );
+        $this->assertEqualsWithDelta( $front, $e[1], 0.01, 'the E stands on the baseline of the front square' );
+        $this->assertEqualsWithDelta( $e[0], $l[0], 0.01, 'the l as high as the E' );
+        $this->assertEqualsWithDelta( $e[1], $l[1], 0.01 );
+    }
+
+    /** LG-08 */
+    public function testTheRasterLogosAreRenderedForTwoDevicePixels()
+    {
+        $light = 'design/admin4/images/admin4/logo-light.png';
+        $this->assertSame( array( 400, 100 ), array_slice( getimagesize( self::root() . '/' . $light ), 0, 2 ) );
+        $this->assertSame( md5( self::file( $light ) ), md5( self::file( 'design/standard/images/setup/2/Exponential-logo-title.png' ) ),
+            'the setup wizard shows the same file' );
+        // drawn at half its size where it is used
+        $this->assertStringContainsString( 'logo-light.png" alt="Exponential" width="200" height="50"', self::file( 'lib/ezutils/classes/ezexecution.php' ) );
+        $this->assertMatchesRegularExpression( '#logo-light\.png[^;]*;\s*background-size: auto 50px;#', self::file( 'design/admin/stylesheets/pagelayout.css' ) );
+
+        $gif = 'design/standard/images/Exponential-logo.gif';
+        $this->assertSame( array( 420, 120 ), array_slice( getimagesize( self::root() . '/' . $gif ), 0, 2 ) );
+        $this->assertStringContainsString( '{"Exponential-logo.gif"|ezimage} width="210" height="60"', self::file( 'design/standard/templates/loginpagelayout.tpl' ) );
+
+        foreach ( array( $light, $gif ) as $path )
+            $this->assertLessThan( 10 * 1024, strlen( self::file( $path ) ), "$path: compressed" );
     }
 }

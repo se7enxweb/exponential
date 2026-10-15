@@ -328,7 +328,7 @@ body,
     padding: 0 var(--a4-space-4);
   }
   .header-site { margin-left: auto; }   /* the tools stand together at the row's end */
-  /* the mark alone: the full logo (158px) left the row's tools 8px apart at 390px and squeezed the menu button */
+  /* the mark alone: the full logo (152px) left the row's tools 8px apart at 390px and squeezed the menu button */
   #header-logo .a4-logo-full { display: none; }
   #header-logo .a4-logo-mark { display: block; }
   #header-logo .brand { justify-content: center; min-width: 36px; height: 36px; }   /* a target as large as the tools */
