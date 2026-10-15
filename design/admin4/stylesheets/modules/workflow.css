@@ -662,6 +662,7 @@ ul.a4-shop-checklist li.info .a4-shop-level { color: var(--a4-info); }
 .a4-url .a4-url-usage { margin: 0; padding: 0; list-style: none; }
 .a4-url .a4-url-usage li { display: inline; }
 .a4-url .a4-url-usage li + li::before { content: ", "; color: var(--a4-muted); }
+.a4-url .a4-url-usage li > a { display: inline-flex; align-items: center; min-height: var(--a4-space-5); }   /* 24px targets: on a phone the list wraps onto lines right under each other */
 /* the wildcard tester's answer */
 .a4-url .a4-url-result { margin: var(--a4-space-3) 0 0; }
 .a4-url .a4-url-result dl { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: var(--a4-space-1) var(--a4-space-3); margin: var(--a4-space-2) 0 0; }
