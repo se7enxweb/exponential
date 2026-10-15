@@ -13759,10 +13759,6 @@ Falls Sie das Paket im Moment nicht installieren möchten, können Sie das auch 
         <translation>Zuständige</translation>
     </message>
     <message>
-        <source>Regarding Exponential package &apos;%packagename&apos;</source>
-        <translation type="obsolete">Betreffendes Exponential Paket &apos;%packagename&apos;</translation>
-    </message>
-    <message>
         <source>Send e-mail to the maintainer</source>
         <translation type="obsolete">Dem Maintainer eine E-Mail schicken</translation>
     </message>
@@ -15941,10 +15937,6 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>PROD</source>
         <translation>PROD</translation>
-    </message>
-    <message>
-        <source>Breadcrumb</source>
-        <translation>Brotkrumennavigation</translation>
     </message>
     <message>
         <source>Dismiss</source>
@@ -20456,10 +20448,6 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Fall der RSS Export aktiv ist, wird eine gültige Zugriff-URL benötigt.</translation>
     </message>
     <message>
-        <source>Use this field to enter the base URL of your site. It is used to produce the URLs in the export, composed by the Site URL (e.g. &quot;http://www.example.com/index.php&quot;) and the path to the object (e.g. &quot;/articles/my_article&quot;). The Site URL depends on your Webserver and Exponential configuration.</source>
-        <translation type="obsolete">Benutzen Sie dieses Feld um die Basis-URL Ihrer Seite anzugeben. Sie wird benutzt um die URL für den Export zu generieren. Diese wird sich aus der URL der Seite (z.B. &quot;http://www.example.com/index.php&quot;) un dem Pfad zum Objekt (z.B. &quot;/articles/my_article&quot;)) zusammensetzen. Die URL der Seite hängt von Ihrem Webserver und der Exponential Konfiguration ab.</translation>
-    </message>
-    <message>
         <source>Number of objects</source>
         <translation>Anzahl der Objekte</translation>
     </message>
@@ -23625,14 +23613,6 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Systemupgrade Überprüfung</translation>
     </message>
     <message>
-        <source>Before upgrading Exponential to a newer version, it is important to check that the current installation is ready for upgrading.</source>
-        <translation type="obsolete">Bevor Sie Exponential auf eine neue Version upgraden, ist es wichtig zu überprüfen, ob die aktuelle Installation bereit für ein Upgrade ist.</translation>
-    </message>
-    <message>
-        <source>Remember to make a backup of the Exponential directory and the database before you upgrade.</source>
-        <translation type="obsolete">Vergessen Sie nicht eine Sicherung des Exponential Verzeichnis und der Datenbank zu machen, bevor Sie ein Upgrade machen.</translation>
-    </message>
-    <message>
         <source>File consistency check</source>
         <translation>Dateikonsistenz Überprüfung</translation>
     </message>
@@ -25856,16 +25836,6 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Seite</translation>
     </message>
     <message>
-        <source>Version</source>
-        <comment>Exponential version</comment>
-        <translation type="obsolete">Version</translation>
-    </message>
-    <message>
-        <source>SVN revision</source>
-        <comment>Exponential version</comment>
-        <translation type="obsolete">SVN Revision</translation>
-    </message>
-    <message>
         <source>Extensions</source>
         <comment>Exponential extensions</comment>
         <translation type="obsolete">Erweiterungen</translation>
@@ -25942,10 +25912,6 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Modules</source>
         <comment>Webserver modules</comment>
         <translation type="obsolete">Module</translation>
-    </message>
-    <message>
-        <source>Exponential was unable to extract information from the webserver.</source>
-        <translation type="obsolete">Exponential war nicht ind er Lage Informationen vom Webserver zu extrahieren.</translation>
     </message>
     <message>
         <source>Name</source>
@@ -26034,10 +26000,6 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Es ist keine Slave-Datenbank in Verwendung.</translation>
     </message>
     <message>
-        <source>Exponential</source>
-        <translation type="obsolete">Exponential</translation>
-    </message>
-    <message>
         <source>PHP</source>
         <translation>PHP</translation>
     </message>
@@ -26090,11 +26052,6 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>SVN revision</source>
         <comment>Exponential version</comment>
         <translation type="obsolete">SVN Revision</translation>
-    </message>
-    <message>
-        <source>Extensions</source>
-        <comment>Exponential extensions</comment>
-        <translation>Extensions</translation>
     </message>
     <message>
         <source>Script memory limit is unlimited.</source>
@@ -28619,10 +28576,6 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Werkzeuge zur schnellen Anwendungs-Entwicklung</translation>
     </message>
     <message>
-        <source>The rapid application development (RAD) tools make the creation of new/extended functionality for Exponential easier. Currently there are two RAD tools available: the template operator wizard and the datatype wizard. The template operator wizard basically generates a valid framework (PHP code) for a new template operator. The datatype wizard generates a valid framework (PHP code) for a new datatype.</source>
-        <translation type="obsolete">Das Werkzeuge zur schnellen Anwendungs-Entwicklung (rapid application development, RAD) vereinfacht die Entwicklung von neuen oder erweiterten Funktionen von Exponential. Im Moment gibt es zwei RAD Werkzeuge: Der Assistent für Template Operatoren und der Assistent für Datentypen. Der Assistent für Template Operatoren erstellt hauptsächlich eine gültige Umgebung (PHP Code) für neue Template Operatoren. Der Assistent für Datentypen erstellt eine gültige Umgebung (PHP Code) für einen neuen Datentypen.</translation>
-    </message>
-    <message>
         <source>Available RAD tools</source>
         <translation>Verfügbare RAD Werkzeuge</translation>
     </message>
@@ -28637,10 +28590,6 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Template operator wizard (step 1 of 3)</source>
         <translation>Assistent für Template Operatoren (Schritt 1 von 3)</translation>
-    </message>
-    <message>
-        <source>Welcome to the template operator wizard. Template operators are usually used for manipulating template variables. However, they can also be used to generate or fetch data. This wizard will take you through a couple of steps with some basic choices. When finished, Exponential will generate a PHP framework for the a new operator (which will be available for download).</source>
-        <translation type="obsolete">Willkommen zum Assistent für Template Operatoren. Template Operatoren werden normalerweise benutzt um Templatevariablen zu manipulieren. Sie können aber auch dazu genutzt werden um Daten zu erzeugen oder auszulesen. Dieser Assistent wird Sie durch einige Schritte mit grundsätzlichen Auswahlmöglichkeiten führen. Wenn er beendet ist, wird Exponential eine Umgebung in PHP für einen neuen Operatoren erzeugen (der dann zum Download bereitsteht).</translation>
     </message>
     <message>
         <source>Restart</source>
@@ -40092,10 +40041,6 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
         <translation>Bitte kontaktieren Sie den Administrator.</translation>
     </message>
     <message>
-        <source>Log in to the administration interface of Exponential</source>
-        <translation type="obsolete">Anmelden am Administration Interface</translation>
-    </message>
-    <message>
         <source>Please enter a valid username/password combination and click &quot;Log in&quot;.</source>
         <translation type="obsolete">Bitte eine korrekte Kombination aus Benutzername/Password eingeben und &quot;Anmelden&quot; klicken.</translation>
     </message>
@@ -44243,10 +44188,6 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
         <translation>Kommentare ansehen</translation>
     </message>
     <message>
-        <source>Powered by %linkStartTag Exponential&amp;reg;&amp;trade; open source content management system %linkEndTag and development framework.</source>
-        <translation type="obsolete">Powered by %linkStartTag Exponential&amp;reg;&amp;trade; open source content management system %linkEndTag and development framework.</translation>
-    </message>
-    <message>
         <source>Top menu</source>
         <translation>Top Menu</translation>
     </message>
@@ -44261,10 +44202,6 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     <message>
         <source>Left sub menu</source>
         <translation>Linkes Untermenü</translation>
-    </message>
-    <message>
-        <source>Powered by %linkStartTag Exponential&amp;reg; open source content management system %linkEndTag and development framework.</source>
-        <translation type="obsolete">Powered by %linkStartTag Exponential&amp;reg; open source content management system %linkEndTag and development framework.</translation>
     </message>
     <message>
         <source>Store quantities</source>
@@ -48601,10 +48538,6 @@ Sie sollten entweder den Benutzer kontaktieren oder einen neuen Entwurf erstelle
 <context>
     <name>design/standard/content/pdf</name>
     <message>
-        <source>Exponential PDF export</source>
-        <translation type="obsolete">Exponential PDF Export</translation>
-    </message>
-    <message>
         <source>#page of #total</source>
         <translation>#page von #total</translation>
     </message>
@@ -50313,14 +50246,6 @@ Wenn Sie noch mehr Objekte hinzufügen wollen, klicken Sie die %emphasize_startL
 <context>
     <name>design/standard/ezinfo/about</name>
     <message>
-        <source>Exponential information: %version</source>
-        <translation type="obsolete">Exponential Informationen: %version</translation>
-    </message>
-    <message>
-        <source>What is Exponential?</source>
-        <translation type="obsolete">Was ist Exponential?</translation>
-    </message>
-    <message>
         <source>Licence</source>
         <translation type="obsolete">Lizenz</translation>
     </message>
@@ -50406,10 +50331,6 @@ Wenn Sie noch mehr Objekte hinzufügen wollen, klicken Sie die %emphasize_startL
         <translation>Sitemap</translation>
     </message>
     <message>
-        <source>Welcome to Exponential administration</source>
-        <translation type="obsolete">Willkommen in der Exponential-Verwaltung</translation>
-    </message>
-    <message>
         <source>To log in enter a valid login and password.</source>
         <translation>Um Sich einzuloggen bitte Loginnamen und Passwort angeben.</translation>
     </message>
@@ -50468,10 +50389,6 @@ Wenn Sie noch mehr Objekte hinzufügen wollen, klicken Sie die %emphasize_startL
     <message>
         <source>Search %sitetitle</source>
         <translation>Suche %sitetitle</translation>
-    </message>
-    <message>
-        <source>Exponential redirection - %url</source>
-        <translation type="obsolete">Exponential Umleitung - %url</translation>
     </message>
     <message>
         <source>Redirecting to %url</source>
@@ -51396,10 +51313,6 @@ Sie können das Paket auch entfernen ohne es von der Paketliste zu entfernen.</t
         <translation>Zuständige</translation>
     </message>
     <message>
-        <source>Regarding Exponential package &apos;%packagename&apos;</source>
-        <translation type="obsolete">In Bezug auf Exponential Paket &apos;%packagename&apos;</translation>
-    </message>
-    <message>
         <source>Send E-Mail to the maintainer</source>
         <translation type="obsolete">Dem Maintainer eine E-Mail schicken</translation>
     </message>
@@ -52012,16 +51925,6 @@ Sie können das Paket auch entfernen ohne es von der Paketliste zu entfernen.</t
         <translation>Einführung</translation>
     </message>
     <message>
-        <source>The Reference Documentation for Exponential consists of multiple sections which
-each have a different view on the documentation. The sections can be accessed at
-menu on the top.</source>
-        <translation type="obsolete">Die Referenz Dokumentation für Exponential besteht aus verschiedenen Sektionen die jede für sich eine andere Sicht auf die Dokumentation haben. Die Sektionen können Sie über das Menü oben erreichen.</translation>
-    </message>
-    <message>
-        <source>The documentation will give an overview of the API of Exponential.</source>
-        <translation type="obsolete">Die Dokumentation gibt einen Überblick über die API von Exponential.</translation>
-    </message>
-    <message>
         <source>All reference documentation has been made with %doxygenurl</source>
         <translation>Die Referenz Dokumentation wurde mit %doxygenurl gemacht</translation>
     </message>
@@ -52571,10 +52474,6 @@ Wenn Sie auf den Namen klicken, können Sie navigieren. Sie können zur Auswahl 
         <translation>Export</translation>
     </message>
     <message>
-        <source>Use this field to enter the base URL of your site. It is used to produce the URLs in the export, composed by the Site URL (e.g. &quot;http://www.example.com/index.php&quot;) and the path to the object (e.g. &quot;/articles/my_article&quot;). The Site URL depends on your Webserver and Exponential configuration.</source>
-        <translation type="obsolete">Benutzen Sie dieses Feld um die Basis-URL Ihrer Seite anzugeben. Sie wird benutzt um die URL für den Export zu generieren. Diese wird sich aus der URL der Seite (z.B. &quot;http://www.example.com/index.php&quot;) un dem Pfad zum Objekt (z.B. &quot;/articles/my_article&quot;)) zusammensetzen. Die URL der Seite hängt von Ihrem Webserver und der Exponential Konfiguration ab.</translation>
-    </message>
-    <message>
         <source>Number of objects</source>
         <translation>Anzahl der Objekte</translation>
     </message>
@@ -52835,10 +52734,6 @@ Wenn Sie auf den Namen klicken, können Sie navigieren. Sie können zur Auswahl 
         <translation type="obsolete">Über Navigationsteile</translation>
     </message>
     <message>
-        <source>The Exponential admin interface is divided into navigation parts. This is a way to group different areas of the site administration. Select the navigation part that should be active when this section is browsed.</source>
-        <translation type="obsolete">Die Exponential Administrations Oberfläche ist in Navigationsteile unterteilt. Auf diese Weise kann man verschiedene Bereiche der Website-Administration gruppieren. Wählen Sie den Navigationsteil, der aktiv sein sollte, wenn diese Sektion aufgerufen wird.</translation>
-    </message>
-    <message>
         <source>ID</source>
         <translation>ID</translation>
     </message>
@@ -53060,10 +52955,6 @@ Wenn Sie auf den Namen klicken, können Sie navigieren. Sie können zur Auswahl 
     <message>
         <source>Rapid Application Development Tools</source>
         <translation>Werkzeuge zur schnellen Anwendungs-Entwicklung</translation>
-    </message>
-    <message>
-        <source>The rapid application development (RAD) tools allow you to easily get started with creating new functionality for Exponential.</source>
-        <translation type="obsolete">Die RAD Werkzeuge erlauben Ihnen, einfach neue Funktionalität für Exponential zu erstellen.</translation>
     </message>
     <message>
         <source>Tools</source>
@@ -53361,16 +53252,6 @@ By using %datatypename you can ...</translation>
         <source>Download</source>
         <comment>Datatype download</comment>
         <translation>Download</translation>
-    </message>
-    <message>
-        <source>Version</source>
-        <comment>Exponential version</comment>
-        <translation type="obsolete">Version</translation>
-    </message>
-    <message>
-        <source>SVN revision</source>
-        <comment>Exponential version</comment>
-        <translation type="obsolete">SVN Revision</translation>
     </message>
     <message>
         <source>Extensions</source>
@@ -53822,11 +53703,6 @@ Der Vorgabecode wurde aus den grundlegenen Parametern, die Sie ausgewählt haben
         <source>SVN revision</source>
         <comment>Exponential version</comment>
         <translation type="obsolete">SVN Revision</translation>
-    </message>
-    <message>
-        <source>Extensions</source>
-        <comment>Exponential extensions</comment>
-        <translation>Extensions</translation>
     </message>
     <message>
         <source>Web server</source>
@@ -54674,18 +54550,6 @@ Der Vorgabecode wurde aus den grundlegenen Parametern erstellt, die Sie ausgewä
         <translation>Passwort</translation>
     </message>
     <message>
-        <source>Congratulations, Exponential should now run on your system.</source>
-        <translation type="obsolete">Congratulations, Exponential should now run on your system.</translation>
-    </message>
-    <message>
-        <source>Exponential website</source>
-        <translation type="obsolete">Exponential website</translation>
-    </message>
-    <message>
-        <source>Exponential bug reports</source>
-        <translation type="obsolete">Exponential bug reports</translation>
-    </message>
-    <message>
         <source>Done</source>
         <translation>Fertig</translation>
     </message>
@@ -54898,10 +54762,6 @@ Der Vorgabecode wurde aus den grundlegenen Parametern erstellt, die Sie ausgewä
         <translation>Der Standard Benutzername für den Administrator ist %1 und das Standard Passwort ist %2.</translation>
     </message>
     <message>
-        <source>The setup will not do an upgrade from older Exponential versions (such as 2.2.7) if you leave the data as it is. This is only meant for people who have existing data that they don&apos;t want to lose. If you have existing Exponential 3.0 data (such as from an RC release) you should skip DB initialization, however you will then need to do a manual upgrade.</source>
-        <translation type="obsolete">Dieses Setup wird nicht von älteren Exponential Versionen (wie 2.2.7) aufrüsten, falls Sie die Daten belassen, wie sie sind. Dies ist nur für Personen gedacht, die bestehende Daten haben und diese nicht verlieren wollen. Falls Sie bestehende Exponential 3.0 Daten haben (wie aus einem RC-Release), sollten Sie die Initialisierung der Datenbank überspringen und in diesem Fall manuell aufrüsten.</translation>
-    </message>
-    <message>
         <source>which must be available on the server or</source>
         <translation>die auf dem Server verfügbar sein müssen oder</translation>
     </message>
@@ -54970,20 +54830,8 @@ Der Vorgabecode wurde aus den grundlegenen Parametern erstellt, die Sie ausgewä
         <translation>Systemtest</translation>
     </message>
     <message>
-        <source>Welcome to Exponential</source>
-        <translation type="obsolete">Willkommen zu Exponential</translation>
-    </message>
-    <message>
         <source>Choose database system</source>
         <translation>Datenbanksystem auswählen</translation>
-    </message>
-    <message>
-        <source>PostgreSQL or MySQL &gt;= 4.1 are required for unicode support in Exponential.</source>
-        <translation type="obsolete">PostgreSQL or MySQL &gt;= 4.1 sind für die Unterstützung von Unicode in Exponential notwendig.</translation>
-    </message>
-    <message>
-        <source>More information about Exponential and unicode support can be found %1.</source>
-        <translation type="obsolete">Mehr Informationen zu Exponential und Unicode-Unterstützung können unter %1 gefunden werden .</translation>
     </message>
     <message>
         <source>If you are using MySQL and do not know what to enter in the socket field, leave it blank</source>
@@ -55032,20 +54880,12 @@ Um das Problem zu lösen, müssen Sie eins der folgenden Dinge tun:</translation
         <translation type="obsolete">Primär/Zusätzlich</translation>
     </message>
     <message>
-        <source>Exponential supports multiple languages.</source>
-        <translation type="obsolete">Exponential unterstützt mehrere Sprachen gleichzeitig</translation>
-    </message>
-    <message>
         <source>These and other additional languages can also be installed later.</source>
         <translation>Diese und weitere zusätzliche Sprachen können auch später noch installiert werden.</translation>
     </message>
     <message>
         <source>Site registration</source>
         <translation type="obsolete">Site Registrierung</translation>
-    </message>
-    <message>
-        <source>By sending registration the following data will be sent to 7x</source>
-        <translation type="obsolete">Bei einer Registrierung werden folgende Daten an eZ system übermittelt</translation>
     </message>
     <message>
         <source>Site access configuration</source>
@@ -55124,10 +54964,6 @@ Um das Problem zu lösen, müssen Sie eins der folgenden Dinge tun:</translation
         <translation>Diesen Test ignorieren</translation>
     </message>
     <message>
-        <source>Welcome to Exponential %1</source>
-        <translation type="obsolete">Willkommen in Exponential %1</translation>
-    </message>
-    <message>
         <source>which will relay the emails. If unsure what to use, ask your webhost. Some webhosts do not support</source>
         <translation>was die E-Mails weiterleiten wird. Falls Sie unsicher sind, fragen Sie Ihren Webhoster. Einige Webhoster unterstützen nicht</translation>
     </message>
@@ -55142,10 +54978,6 @@ Um das Problem zu lösen, müssen Sie eins der folgenden Dinge tun:</translation
     <message>
         <source>The summary section below will contain information about configured settings.</source>
         <translation>Der Zusammenfassungsteil unten wird Informationen über konfigurierte Einstellungen enthalten.</translation>
-    </message>
-    <message>
-        <source>Information about how to set up Exponential manually is available %1.</source>
-        <translation type="obsolete">Informationen, wie Exponential manuell aufgesetzt werden kann sind %1 zu finden.</translation>
     </message>
     <message>
         <source>Outgoing E-mail</source>
@@ -55268,16 +55100,8 @@ Um das Problem zu lösen, müssen Sie eins der folgenden Dinge tun:</translation
         <translation>Die Anzeige des Systemtests wurde aufgerufen. Das bedeutet, dass es einige Probleme gibt.</translation>
     </message>
     <message>
-        <source>These issues have to be resolved/fixed, or else, Exponential will not function properly.</source>
-        <translation type="obsolete">Diese Probleme müssen gelöst werden, wenn Exponential ordnungsgemäß funktionieren soll.</translation>
-    </message>
-    <message>
         <source>The problems are usually file-system related and can be easily fixed by copy / paste / run-ing the suggested commands in a system shell.</source>
         <translation type="obsolete">Diese Probleme hängen für gewöhnlich mit dem Dateisystem zusammen und können durch einfaches Kopieren, Einfügen und Ausführen der vorgeschlagenen Befehle in einer System-Shell gelöst werden.</translation>
-    </message>
-    <message>
-        <source>Welcome to the Exponential content management system and development framework. This wizard will help you set up Exponential.&lt;br&gt;Click &lt;i&gt;Next&lt;/i&gt; to continue.</source>
-        <translation type="obsolete">Willkommen im Exponential content management system and development framework. Dieser Assistent wird Ihnen dabei helfen eine erste Installation von Exponential vorzunehmen. Klicken Sie einfach auf &lt;i&gt;Weiter&lt;/i&gt; um mit der Einrichtung zu beginnen.</translation>
     </message>
     <message>
         <source>No data will be stored in the database until the final step of the setup.</source>
@@ -55286,10 +55110,6 @@ Um das Problem zu lösen, müssen Sie eins der folgenden Dinge tun:</translation
     <message>
         <source>Both MySQL and PostgreSQL support was detected on your system. Please choose the database system you would like to use.</source>
         <translation>Unterstützung für MySQL und PostgreSQL wurde auf Ihrem System erkannt. Bitte wählen Sie aus, welches dieser beiden Systeme Sie verwenden wollen.</translation>
-    </message>
-    <message>
-        <source>Exponential supports both MySQL and PostgreSQL.</source>
-        <translation type="obsolete">Exponential unterstützt beides, MySQL und PostgreSQL.</translation>
     </message>
     <message>
         <source>here</source>
@@ -55301,26 +55121,9 @@ Um das Problem zu lösen, müssen Sie eins der folgenden Dinge tun:</translation
         <translation>Bitte geben Sie die Zugriffsdaten für die Datenbank in die Felder unten ein.</translation>
     </message>
     <message>
-        <source>If you don&apos;t have access to a database, you should obtain access now. Exponential is capable of running multiple sites, each site needs its own database. This means that you need to create several databases if you plan to run multiple sites. Please refer to the database system user manual if you&apos;re unsure about how to create a database.</source>
-        <translation type="obsolete">Falls Sie keinen Zugriff auf eine Datenbank haben, sollten Sie sich zunächst für einen Zugang sorgen. Exponential ist in der Lage mehrere Seiten gleichzeitig zu bedienen. Jeder dieser Seiten braucht ihre eigen Datenbank. Das bedeutet, dass Sie unterschiedliche erstellen müssen, wenn Sie vorhaben mehrere Seiten gleichzeitig zu betreiben. Bitte sehen Sie im Handbuch Ihres Datenbanksystems nach, wenn Sie nicht genau wissen, wie Sie eine Datenbank erstellen.</translation>
-    </message>
-    <message>
         <source>forums</source>
         <comment>forum link</comment>
         <translation>Foren</translation>
-    </message>
-    <message>
-        <source>Exponential</source>
-        <comment>Exponential 3 link</comment>
-        <translation type="obsolete">Exponential</translation>
-    </message>
-    <message>
-        <source>If you need help with Exponential, you can go to %ezlink and get help in the forums.
-  If you find a bug (error), please go to %buglink and report it.
-  With your help we can fix the errors Exponential might have and implement new features.</source>
-        <translation type="obsolete">Hilfe zu Exponential erhalten Sie auf in den Foren auf %ezlink.
-  Falls Sie einen Bug (Fehler) finden, können Sie diesen auf %buglink melden.
-  Mit Ihrer Hilfe können wir Fehler, die eventuell in Exponential auftreten könnten, beheben und neue Fähigkeiten einbauen.</translation>
     </message>
     <message>
         <source>Click on the URL to access your new %ezlink or click the %donebutton button. Enjoy one of the most successful web content management systems!</source>
@@ -55393,14 +55196,6 @@ Um das Problem zu lösen, müssen Sie eins der folgenden Dinge tun:</translation
     <message>
         <source>Languages chosen</source>
         <translation type="obsolete">Die gewählte(n) Sprache(n)</translation>
-    </message>
-    <message>
-        <source>This data will help to improve future releases of Exponential.</source>
-        <translation type="obsolete">Diese Daten werden helfen, zukünftige Ausgaben von Exponential zu verbessern.</translation>
-    </message>
-    <message>
-        <source>Your site is not running in a virtual host mode, this is insecure. It is recommended to run Exponential in virtual host mode. If you do not have the possibility to use virtual host mode, you should follow the instructions below about how to install an .htaccess file. The .htaccess file tells the web server to restrict the access to certain files.</source>
-        <translation type="obsolete">Ihre Seite wird nicht im Virtual-Host Modus betrieben, was unsicher ist. Es wird empfohlen Exponential im Virtual-Host Modus laufen zu lassen. Falls Sie diese Möglichkeit nicht haben, sollten Sie den ANweisungen unten folgen, wie Sie eine .htaccess-Datei verwenden. Diese Datei informiert den Webserver darüber, dass der Zugang zu bestimmten Dateien eingeschränkt wird.</translation>
     </message>
     <message>
         <source>If you have shell access, you can run the following commmands.</source>
@@ -55623,22 +55418,6 @@ Es wird möglich sein, diese später zu ändern.</translation>
         <translation>Die Feineinstellungen werden angezeigt. Das bedeutet, dass es einige Dinge gibt, die die Leistung erhöhen oder für mehr Funktionalität sorgen könnten.</translation>
     </message>
     <message>
-        <source>These issues do not need to be resolved/fixed. Exponential will function properly without them.</source>
-        <translation type="obsolete">Diese Dinge müssen nicht behoben werden. Exponential wird auch so ordnungsgemäß funktionieren.</translation>
-    </message>
-    <message>
-        <source>Welcome to the Exponential content management system and development framework. This wizard will help you set up Exponential.&lt;br&gt;Your system is not optimal, if you wish you can click the &lt;i&gt;Finetune&lt;/i&gt; button. This will present hints on how to fix these issues.&lt;br/&gt; Click &lt;i&gt;Next&lt;/i&gt; to continue without finetuning.</source>
-        <translation type="obsolete">Willkommen im Exponential content management system and development framework. Dieser Assistent wird Ihnen helfen Exponential zu installieren.&lt;br&gt;Ihr System ist nicht optimal vorbereitet. Sie können auf &lt;i&gt;Feineinstellungen&lt;/i&gt; klicken, um Hinweise zu erhalten, wie Sie Ihre Umgebung optimieren können.&lt;br/&gt; Sie können auch einfach auf &lt;i&gt;Weiter&lt;/i&gt; klicken, um dies auszulassen.</translation>
-    </message>
-    <message>
-        <source>The first time the user or admin site is accessed it will take some time (30 to 60 seconds). This is because Exponential prepares the site for your machine.</source>
-        <translation type="obsolete">Das erste Laden der Benutzer- oder Admininstrationsoberfläche wird einige Zeit in Anspruch nehmen (30 bis 60 Sekunden). Das liegt daran, dass Exponential die Seite für Ihre Maschine vorbereiten muss.</translation>
-    </message>
-    <message>
-        <source>If you want you can let the setup add some demo data to your database, this demo data will give a good demonstration of the capabilities of Exponential</source>
-        <translation type="obsolete">Falls Sie es wünschen kann Exponential einige Demodaten in Ihre Datenbank einpflegen. Diese Daten werden eine brauchbare Demonstration der Fähigkeiten von Exponential ermöglichen</translation>
-    </message>
-    <message>
         <source>First time users are advised to install the demo data.</source>
         <translation>Neue Benutzer sollten Demodaten installieren.</translation>
     </message>
@@ -55715,10 +55494,6 @@ Es wird möglich sein, diese später zu ändern.</translation>
         <translation>Bitte stellen Sie sicher, dass Benutzername und Passwort richtig sind. Stellen Sie auch sicher, dass Ihre PostgreSQL Datenbank korrekt konfiguriert ist.&lt;br&gt;Sehen Sie in der Dokumentation von PHP nach, um mehr Informationen hierüber zu erhalten.&lt;br&gt;Vergessen Sie nicht postmaster mit der Option -i zu starten.&lt;br&gt;Beachten Sie, dass PostgreSQL 7.2 nicht unterstützt wird.</translation>
     </message>
     <message>
-        <source>The &apos;digest&apos; procedure is not available in your database, you cannot run Exponential without this. Visit the FAQ for more information.</source>
-        <translation type="obsolete">Die &apos;digest&apos; Methode steht in Ihrer Datenbank nicht zur Verfügung. Sie können die Exponential so nicht betreiben. Besuchen Sie die FAQ für mehr Informationen.</translation>
-    </message>
-    <message>
         <source>Your database version %version does not fit the minimum requirement which is %req_version.</source>
         <translation>Die Version %version Ihrer Datenbank passt nicht zur Mindestanforderung. Benötigt wird mindestens Version %req_version.</translation>
     </message>
@@ -55782,10 +55557,6 @@ Es wird möglich sein, diese später zu ändern.</translation>
     <message>
         <source>Failed fetching upload package file</source>
         <translation>Die hochgelade Paketdatei konnte nicht verarbeitet werden</translation>
-    </message>
-    <message>
-        <source>Uploaded file is not an Exponential package</source>
-        <translation type="obsolete">Die upgeloadete Datei ist kein Exponential Paket</translation>
     </message>
     <message>
         <source>No site package choosen.</source>
@@ -55872,16 +55643,8 @@ Es wird möglich sein, diese später zu ändern.</translation>
         <translation>Postausgang</translation>
     </message>
     <message>
-        <source>This section is used to configure how Exponential delivers its outgoing Email.</source>
-        <translation type="obsolete">Dieser Bereich wird für die Konfiguration des Email Versand genutzt.</translation>
-    </message>
-    <message>
         <source>Email delivery</source>
         <translation>E-Mail Versand</translation>
-    </message>
-    <message>
-        <source>The Exponential system uses email to send out important notices such as user registration and content approval. On Linux/UNIX: try to use sendmail. On Windows: use an SMTP server.</source>
-        <translation type="obsolete">Exponential nutzt Email um wichtige Nachrichten an registrierte Nutzer zu senden. Auf Linux/UNIX: Versuchen Sie sendmail. Auf Windows: Nutzen Sie einen SMTP Server.</translation>
     </message>
     <message>
         <source>&lt;b&gt;SMTP:&lt;/b&gt;&lt;br&gt;Mail is delivered through an SMTP server. At the minimum, the hostname of the SMTP server must be specified. Hint: check the SMTP settings in your email application.</source>
@@ -55890,10 +55653,6 @@ Es wird möglich sein, diese später zu ändern.</translation>
     <message>
         <source>&lt;b&gt;SMTP&lt;/b&gt;: If you&apos;re unsure what to enter, take a look at the settings in your email application.</source>
         <translation type="obsolete">&lt;b&gt;SMTP:&lt;/b&gt;Falls Sie unsicher sein sollten, was Sie eingeben müssen, überprüfen Sie die Einstellungen Ihrer Mail Anwendung.</translation>
-    </message>
-    <message>
-        <source>Exponential has been installed with your select site setup. You will find the username mentioned in the details below.</source>
-        <translation type="obsolete">Exponential wurden mit dem ausgewählten Seitentyp installiert. Sie finden den Benutzernamen in den unten aufgeführten Details.</translation>
     </message>
     <message>
         <source>Sending email failed</source>
@@ -56114,7 +55873,7 @@ Mit Ihrer Hilfe können wir Fehler, die eventuell in Exponential auftreten könn
     </message>
     <message>
         <source>By sending registration the following data will be sent to 7x</source>
-        <translation type="obsolete">Wenn Sie die Registrierung senden, werden folgende Daten an eZ System übermittelt</translation>
+        <translation type="obsolete">Wenn Sie die Registrierung senden, werden folgende Daten an 7x übermittelt</translation>
     </message>
     <message>
         <source>Your site is not running in a virtual host mode, this is insecure. It is recommended to run Exponential in virtual host mode. If you do not have the possibility to use virtual host mode, you should follow the instructions below about how to install an .htaccess file. The .htaccess file tells the web server to restrict the access to certain files.</source>
@@ -56737,10 +56496,6 @@ Weitere Informationen finden Sie auf der Seite mit den Anforderungen.</translati
         <translation>Missing database handlers</translation>
     </message>
     <message>
-        <source>Your PHP does not have support for all databases that Exponential support.</source>
-        <translation type="obsolete">Your PHP does not have support for all databases that Exponential support.</translation>
-    </message>
-    <message>
         <source>Also some databases has more advanced features, such as charset, than others.</source>
         <translation>Also some databases has more advanced features, such as charset, than others.</translation>
     </message>
@@ -56753,20 +56508,12 @@ Weitere Informationen finden Sie auf der Seite mit den Anforderungen.</translati
         <translation>Missing database handlers</translation>
     </message>
     <message>
-        <source>No supported database handlers were found. Exponential requires a database to store it&apos;s data, without one the system will fail.</source>
-        <translation type="obsolete">No supported database handlers were found. Exponential requires a database to store it&apos;s data, without one the system will fail.</translation>
-    </message>
-    <message>
         <source>To obtain database support you need to recompile PHP, the exact recompile options are specified below.</source>
         <translation>To obtain database support you need to recompile PHP, the exact recompile options are specified below.</translation>
     </message>
     <message>
         <source>Insufficient directory permissions</source>
         <translation>Insufficient directory permissions</translation>
-    </message>
-    <message>
-        <source>Exponential cannot write to some important directories, without this the setup cannot finish and parts of Exponential will fail.</source>
-        <translation type="obsolete">Exponential cannot write to some important directories, without this the setup cannot finish and parts of Exponential will fail.</translation>
     </message>
     <message>
         <source>It&apos;s recommended that you fix this by running the commands below.</source>
@@ -56781,10 +56528,6 @@ Weitere Informationen finden Sie auf der Seite mit den Anforderungen.</translati
         <translation>Missing image conversion support</translation>
     </message>
     <message>
-        <source>No image conversion capabilities was detected, this means that Exponential cannot scale any images or detect their type. This is vital functionality in Exponential and must be supported.</source>
-        <translation type="obsolete">No image conversion capabilities was detected, this means that Exponential cannot scale any images or detect their type. This is vital functionality in Exponential and must be supported.</translation>
-    </message>
-    <message>
         <source>template operator will not be available.</source>
         <translation>template operator will not be available.</translation>
     </message>
@@ -56793,16 +56536,8 @@ Weitere Informationen finden Sie auf der Seite mit den Anforderungen.</translati
         <translation>Note:</translation>
     </message>
     <message>
-        <source>Future releases of Exponential will have more advanced image support by using the imagegd extension.</source>
-        <translation type="obsolete">Future releases of Exponential will have more advanced image support by using the imagegd extension.</translation>
-    </message>
-    <message>
         <source>Missing ImageMagick program</source>
         <translation>Missing ImageMagick program</translation>
-    </message>
-    <message>
-        <source>The ImageMagick program is not available to Exponential. Without it Exponential will not be able to do image conversion unless the imagegd extension is available.</source>
-        <translation type="obsolete">The ImageMagick program is not available to Exponential. Without it Exponential will not be able to do image conversion unless the imagegd extension is available.</translation>
     </message>
     <message>
         <source>If you known where the program is installed (the executable is called</source>
@@ -56837,14 +56572,6 @@ Weitere Informationen finden Sie auf der Seite mit den Anforderungen.</translati
         <translation>Die MBString Extension fehlt</translation>
     </message>
     <message>
-        <source>Exponential comes with a good list of supported charsets by default, however they can be a bit slow due to being made in pure PHP code. Luckily Exponential supports the mbstring extension for handling some of the charsets.</source>
-        <translation type="obsolete">Exponential comes with a good list of supported charsets by default, however they can be a bit slow due to being made in pure PHP code. Luckily Exponential supports the mbstring extension for handling some of the charsets.</translation>
-    </message>
-    <message>
-        <source>By enabling the mbstring extension Exponential will have access to more charsets and also be able to process some of them faster, such as Unicode and iso-8859-*. This is recommended for multilingual sites and sites with more exotic charsets.</source>
-        <translation type="obsolete">By enabling the mbstring extension Exponential will have access to more charsets and also be able to process some of them faster, such as Unicode and iso-8859-*. This is recommended for multilingual sites and sites with more exotic charsets.</translation>
-    </message>
-    <message>
         <source>Installation of the mbstring extension is done by compiling PHP with the</source>
         <translation>Die Installation der mbstring Extension wird durchgeführt, indem PHP kompiliert wird mit</translation>
     </message>
@@ -56857,20 +56584,12 @@ Weitere Informationen finden Sie auf der Seite mit den Anforderungen.</translati
         <translation>Weitere Informationen, wie man die Extension installiert, können hier gefunden werden</translation>
     </message>
     <message>
-        <source>Do not enable mbstring function overloading, Exponential will only use the extension whenever it&apos;s needed.</source>
-        <translation type="obsolete">Do not enable mbstring function overloading, Exponential will only use the extension whenever it&apos;s needed.</translation>
-    </message>
-    <message>
         <source>PHP option</source>
         <translation>PHP Option</translation>
     </message>
     <message>
         <source>is enabled</source>
         <translation>ist aktiviert</translation>
-    </message>
-    <message>
-        <source>Exponential will work with this option on however it will lead to some minor performance issues since all input variables need to be be converted back to</source>
-        <translation type="obsolete">Exponential will work with this option on however it will lead to some minor performance issues since all input variables need to be be converted back to</translation>
     </message>
     <message>
         <source>normal</source>
@@ -56897,20 +56616,12 @@ Weitere Informationen finden Sie auf der Seite mit den Anforderungen.</translati
         <translation>Sie müssen mindestens auf diese Version upgraden</translation>
     </message>
     <message>
-        <source>Exponential cannot write to the</source>
-        <translation type="obsolete">Exponential cannot write to the</translation>
-    </message>
-    <message>
         <source>directory, without this the setup cannot disable itself.</source>
         <translation>Verzeichnis. Wenn das nicht durchgeführt wird, kann sich das Setup nicht deaktivieren.</translation>
     </message>
     <message>
         <source>Missing zlib extension</source>
         <translation>Fehlende zlib Extension</translation>
-    </message>
-    <message>
-        <source>The zlib extension is not available to Exponential. Without it Exponential will not be able to install the demo data, however if you do not wish the demo data you can safely ignore this.</source>
-        <translation type="obsolete">The zlib extension is not available to Exponential. Without it Exponential will not be able to install the demo data, however if you do not wish the demo data you can safely ignore this.</translation>
     </message>
     <message>
         <source>To enable zlib you need to recompile PHP with support for it. You will need to configure PHP with</source>
@@ -56923,10 +56634,6 @@ Weitere Informationen finden Sie auf der Seite mit den Anforderungen.</translati
     <message>
         <source>File uploading is disabled</source>
         <translation>Datei Upload ist deaktiviert</translation>
-    </message>
-    <message>
-        <source>File uploading is not enabled which means that it&apos;s impossible for Exponential to handle file uploading. All other parts of Exponential will still work fine but it&apos;s recommended to enable file uploads.</source>
-        <translation type="obsolete">File upload ist nicht aktiviert, das heißt, dass es unmöglich ist für ezZ publish file uploads durchzuführen. Alle anderen Teile von Exponential werden weiterhin richtig arbeiten, aber es wird empfohlen Datei uploads zu aktivieren.</translation>
     </message>
     <message>
         <source>Configuration</source>
@@ -56965,10 +56672,6 @@ Weitere Informationen finden Sie auf der Seite mit den Anforderungen.</translati
         <translation>PHP Option %1 ist aktiviert</translation>
     </message>
     <message>
-        <source>Exponential will work with this option on however it will lead to some minor performance issues since all input variables will be made global on each script execution.</source>
-        <translation type="obsolete">Exponential wird mit dieser Option funktionieren. Allerdings wird dies zu einem kleinen Leistungsverlust führen, da alle Eingabevariablen global verfügbar gemacht werden.</translation>
-    </message>
-    <message>
         <source>It&apos;s recommended that the option is turned off. To turn it off edit your %1 configuration and set %2 to %3.</source>
         <translation>Es wird empfohlen diese Option auszuschalten. Um sie auszuschalten, bearbeiten Sie Ihre %1 Konfiguration und setzen Sie %2 auf %3. </translation>
     </message>
@@ -56979,14 +56682,6 @@ Weitere Informationen finden Sie auf der Seite mit den Anforderungen.</translati
     <message>
         <source>Exponential may work with safe mode on, however there might be several features that will be unavailable. Some of the things that might occur are:</source>
         <translation type="obsolete">Exponential könnte evtl. mit Safe mode &quot;on&quot; arbeiten, allerdings stehen dann einige Funktionalitäten nicht zur Verfügung. Folgendes könnte z.B. geschehen:</translation>
-    </message>
-    <message>
-        <source>Insufficient execution time allowed to install Exponential</source>
-        <translation type="obsolete">Die erlaubte Ausführungszeit (Execution Time) ist zu kurz, um Exponential zu installieren</translation>
-    </message>
-    <message>
-        <source>Exponential will not work correctly with a execution time limit of %1.</source>
-        <translation type="obsolete">Exponential wird mir einer Ausführungszeit von %1 nicht korrekt abreiten.</translation>
     </message>
     <message>
         <source>It&apos;s highly recommended that you fix this.</source>
@@ -57005,28 +56700,12 @@ Weitere Informationen finden Sie auf der Seite mit den Anforderungen.</translati
         <translation>Weiter</translation>
     </message>
     <message>
-        <source>If you are running Exponential in a shared host environment, contant your ISP to perform the changes</source>
-        <translation type="obsolete">Falls Exponential in einer SharedHost-Umgebung betreiben, wenden Sie sich an Ihren ISP, damit er die Änderungen vornimmt</translation>
-    </message>
-    <message>
-        <source>Insufficient memory allocated to install Exponential</source>
-        <translation type="obsolete">Nicht genügend freigegebener Speicher, um Exponential zu installieren</translation>
-    </message>
-    <message>
-        <source>Exponential will not work correctly with a memory limit of %1.</source>
-        <translation type="obsolete">Exponential wird mit einem Speicherlimit von %1 nicht korrekt arbeiten.</translation>
-    </message>
-    <message>
         <source>Open the php.ini file and change the memory_limit value to at least %1, and press %2</source>
         <translation>Öffnen Sie die Datei php.ini und ändern Sie den Wert memeory_limit auf mindestens %1 und drücken dann %2</translation>
     </message>
     <message>
         <source>It&apos;s recommended that the option is turned off. To turn it off edit your %phpini configuration and set %magic_quotes_gpc and %magic_quotes_runtime to %offtext.</source>
         <translation type="obsolete">Es wird empfohlen, dass Die Optiona deaktiviert wird. Um sie zu deaktivieren, bearbeiten Sie Ihre %phpini Konfiguration und setzen %magic_quotes_gpc und %magic_quotes_runtime auf %offtext.</translation>
-    </message>
-    <message>
-        <source>Exponential will not work properly with this option on.</source>
-        <translation type="obsolete">Exponential wird mit dieser Option nicht richtig funktionieren.</translation>
     </message>
     <message>
         <source>To turn it off edit your %phpini configuration and set %magic_quotes_runtime to %offtext.</source>
@@ -57047,10 +56726,6 @@ Weitere Informationen finden Sie auf der Seite mit den Anforderungen.</translati
     <message>
         <source>Missing imagegd2 extension</source>
         <translation>Die imagegd2-Extension fehlt</translation>
-    </message>
-    <message>
-        <source>The imagegd2 extension is not available to Exponential. Without it Exponential will only be able to do conversion using ImageMagick and the</source>
-        <translation type="obsolete">Die imagegd2-Erweiterung ist nicht verfügbar. Ohne diese wird Exponential nur dann Bilder konvertieren können, wenn ImageMagick installiert ist und</translation>
     </message>
     <message>
         <source>To enable imagegd2 you need to recompile PHP with support for it, more information on that subject is available at</source>
@@ -57085,10 +56760,6 @@ Weitere Informationen finden Sie auf der Seite mit den Anforderungen.</translati
         <translation>Session-Extension fehlt</translation>
     </message>
     <message>
-        <source>Your PHP module does not have session support, without this Exponential will not work properly.</source>
-        <translation type="obsolete">Ihr PHP-Modul hat keine Unterstützung für Sitzungen. Exponential wird nicht richtig funktionieren.</translation>
-    </message>
-    <message>
         <source>To enable session support you will have recompile your PHP module without the %session_disable switch.</source>
         <translation>Um Session Support zu aktivieren, müssen Sie Ihr PHP-Modul ohne den Schalter %session_disable kompilieren.</translation>
     </message>
@@ -57099,10 +56770,6 @@ Weitere Informationen finden Sie auf der Seite mit den Anforderungen.</translati
     <message>
         <source>, but the latest released PHP 4.3.x version is highly recommended.</source>
         <translation type="obsolete">, aber die aktuellste PHP 4.3.x Version wird dringend empfohlen.</translation>
-    </message>
-    <message>
-        <source>Although Exponential will work without it, it might be that you want to have support for this database.</source>
-        <translation type="obsolete">Auch wenn Exponential one Unterstützung dafür läuft, wollen Sie eventuell Unterstützung für diese Datenbank haben.</translation>
     </message>
     <message>
         <source>The affected directories are: %dir_list</source>
@@ -57145,10 +56812,6 @@ Um das zu tun,müssen Sie die %chown Kommandos unter den alternativen Shell-Komm
         <translation>Das Hochladen von Dateien ist nicht möglich</translation>
     </message>
     <message>
-        <source>The PHP upload directory %upload_dir does not exists or is not accessible, without this you will not be able to upload files or images to Exponential.</source>
-        <translation type="obsolete">Das Upload-Verzeichnis %upload_dir gibt es nicht oder der Zugriff war nicht erfolgreich. Sie werden nicht in der Lage sein Dateien in Exponential hochzuladen.</translation>
-    </message>
-    <message>
         <source>Create the directory %upload_dir on your system. If you do not have the possibility to create this yourself ask the administrator to create it for you.</source>
         <translation>Erstellen Sie das Verzeichnis %upload_dir in Ihrem System. Falls Sie keine Möglichkeit dazu haben, fragen Sie den Administrator, ob er das für Sie erledigen kann.</translation>
     </message>
@@ -57161,10 +56824,6 @@ This is a security problem and should be changed to another global temporary dir
     <message>
         <source>This shell command will create the upload directory.</source>
         <translation>Diese Shell-Befehle werden ein Upload-Verzeichnis erstellen.</translation>
-    </message>
-    <message>
-        <source>The PHP upload directory %upload_dir is not writeable. This means that it will be impossible to upload files or images to Exponential.</source>
-        <translation type="obsolete">Das PHP Upload-Verzeichnis %upload_dir ist nicht schreibbar. Das beduetet, dass das Hocladen von Dateien und Bilder in Exponential nicht möglich sein wird.</translation>
     </message>
     <message>
         <source>You must change the permission on the directory %upload_dir. If you do not have the possibility to create this yourself ask the administrator to do this for you.</source>
@@ -57203,24 +56862,12 @@ Um das zu tun, müssen Sie die %chown Kommandos unter den alternativen Shell-Bef
         <translation>php.ini Beispiel</translation>
     </message>
     <message>
-        <source>Alternatively you may create a file called %1 in your Exponential root folder and add the following</source>
-        <translation type="obsolete">Alternativ können SIe auch eine Datei %1 in Ihrem Exponential Hauptverzeichnis erstellen und das folgende hineinschreiben</translation>
-    </message>
-    <message>
         <source>.htaccess example</source>
         <translation>.htaccess Beispiel</translation>
     </message>
     <message>
-        <source>Exponential may work with safe mode on, however there might be several features that will be unavailable. Some of the things that might occur are</source>
-        <translation type="obsolete">Exponential funktioniert eventuell mit aktivierter Safe-Mode. Allerdings werden einige Funktionen dann nicht verfügbar sein. Dinge die auftreten könnten sind</translation>
-    </message>
-    <message>
         <source>You need to enable AcceptPathInfo in your Apache config file, if you&apos;re using apache 2.x.</source>
         <translation type="obsolete">Sie müssen AcceptPathInfo in Ihrer Apache-Konfiguration aktivieren, wenn Sie apache 2.x verwenden.</translation>
-    </message>
-    <message>
-        <source>If you&apos;re running apache 1.3, Exponential will not run in CGI mode.</source>
-        <translation type="obsolete">Falls Sie apache 1.3 verwenden, wird Exponential nicht im CGI-Modus laufen.</translation>
     </message>
     <message>
         <source>allow_url_fopen ini setting is disabled</source>
@@ -57243,10 +56890,6 @@ Um das zu tun, müssen Sie die %chown Kommandos unter den alternativen Shell-Bef
         <translation>Einige Verzeichnisse fehlen</translation>
     </message>
     <message>
-        <source>Exponential cannot create some important directories, without this the setup cannot finish and parts of Exponential will fail.</source>
-        <translation type="obsolete">Exponential kann einige wichtige Verzeichnisse nicht anlegen. Ohne diese Einstellung kann die Installation nicht abgeschlossen werden.</translation>
-    </message>
-    <message>
         <source>The nonexistent directories are: %dir_list</source>
         <translation>Die nicht vorhandenen Verzeichnisse sind: %dir_list</translation>
     </message>
@@ -57257,14 +56900,6 @@ Um das zu tun, müssen Sie die %chown Kommandos unter den alternativen Shell-Bef
     <message>
         <source>Files instead necessary directories</source>
         <translation>Dateien anstelle notwendiger Verzeichnisse</translation>
-    </message>
-    <message>
-        <source>Exponential cannot create some important directories, because there are an files instead of these directories in the same places with the same names.
-You should replace these files with appropriate directories and give necessary permissions to them.
-Without this the setup cannot finish and parts of Exponential will fail.</source>
-        <translation type="obsolete">Exponential kann einge wichtige Verzeichnisse erstellen, da deren Stelle gleichnamige Dateien anstelle von Verzeichnissen sind.
-Sie sollten diese Dateien ersetzen und die notwendigen Berechtigungen vergeben.
-Ohne diese Einstellungen kann Exponential nicht installiert werden.</translation>
     </message>
     <message>
         <source>The affected directories (files) are: %dir_list</source>
@@ -60939,10 +60574,6 @@ Bitte folgen Sie den Hinweisen in der Email, um Ihr Konto zu aktivieren.</transl
     <message>
         <source>Press &quot;Cancel&quot; to safely exit this operation.</source>
         <translation>Mit &quot;Abbrechen&quot; können Sie diesen Vorgang sicher beenden.</translation>
-    </message>
-    <message>
-        <source>Please contact your Exponential administrator to solve this problem.</source>
-        <translation type="obsolete">Um dieses Problem zu beheben, nehmen Sie bitte Kontakt mit Ihrem System Administrator auf.</translation>
     </message>
     <message>
         <source>duplicate attribute placement</source>

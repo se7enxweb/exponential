@@ -8,6 +8,8 @@
  *     removeKey() with their return values, the "default" context
  *   - initialize() registering the translator with eZTranslatorManager, fetchList()
  *   - every translation shipped in share/translations validates against schemas/translation/ts.rng and loads
+ *   - the catalogues kept up to date here (eng-US, ger-DE, untranslated) hold each message once: no second message
+ *     with the same context, source and comment (the translator keeps only the last one)
  *
  * The repository is switched with eZINI::setVariable() for the test and restored in tearDown(); files go to a
  * private directory under var/tmp. No translation cache is read or written.
@@ -215,5 +217,43 @@ class eZTSTranslatorTest extends PHPUnit\Framework\TestCase
         $doc = new DOMDocument( '1.0', 'utf-8' );
         $this->assertTrue( @$doc->load( $file ), "$file is XML" );
         $this->assertTrue( @eZTSTranslator::validateDOMTree( $doc ), "$file validates against ts.rng" );
+    }
+
+    public static function maintainedProvider()
+    {
+        $root = dirname( __DIR__, 4 ) . '/share/translations';
+        $rows = array();
+        foreach ( array( 'eng-US', 'ger-DE', 'untranslated' ) as $locale )
+            $rows[$locale] = array( "$root/$locale/translation.ts" );
+        return $rows;
+    }
+
+    /**
+     * Two merges that add the same string leave two messages with one key; the translator silently keeps the last,
+     * so a better translation in the first copy is lost and the file grows. The contexts are matched by name, also
+     * across two context elements of the same name.
+     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('maintainedProvider')]
+    public function testMaintainedTranslationHasNoDuplicateMessage( $file )
+    {
+        $doc = new DOMDocument( '1.0', 'utf-8' );
+        $this->assertTrue( @$doc->load( $file ), "$file is XML" );
+        $seen = array();
+        $duplicates = array();
+        foreach ( $doc->getElementsByTagName( 'context' ) as $context )
+        {
+            $name = $context->getElementsByTagName( 'name' )->item( 0 );
+            $name = $name ? $name->textContent : '';
+            foreach ( $context->getElementsByTagName( 'message' ) as $message )
+            {
+                $source = $message->getElementsByTagName( 'source' )->item( 0 );
+                $comment = $message->getElementsByTagName( 'comment' )->item( 0 );
+                $key = $name . "\0" . ( $source ? $source->textContent : '' ) . "\0" . ( $comment ? $comment->textContent : '' );
+                if ( isset( $seen[$key] ) )
+                    $duplicates[] = $name . ' | ' . ( $source ? $source->textContent : '' );
+                $seen[$key] = true;
+            }
+        }
+        $this->assertSame( array(), $duplicates, "$file: messages that appear more than once" );
     }
 }

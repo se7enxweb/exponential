@@ -13646,10 +13646,6 @@ Note: The packages will not be uninstalled.</translation>
         <translation>PROD</translation>
     </message>
     <message>
-        <source>Breadcrumb</source>
-        <translation>Breadcrumb</translation>
-    </message>
-    <message>
         <source>Dismiss</source>
         <translation>Dismiss</translation>
     </message>
