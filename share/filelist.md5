@@ -271,7 +271,7 @@ bb57d7d50de510183570d8844efbd49f  design/admin/images/up-16x16-grey.png
 bc1f590f32f5d71f9bfdf7781f2135fc  design/admin/images/url_translator.png
 ac084a07607e6d6c5a845da15423854f  design/admin/images/view-fullscreen.png
 b05092d370a223ac22e7c4b388174054  design/admin/javascript/contentstructuremenu_dynamic.js
-2208f27da9ddaa11d336d07c190cbc4b  design/admin/javascript/expajaxuploader.js
+2fcd5f96b6fedc7ffa2f595f1262ee18  design/admin/javascript/expajaxuploader.js
 2b984f2f31802646942901f436bf277b  design/admin/javascript/ezajaxrelations_jquery.js
 def856500eb25e4c354688eaf1c1f790  design/admin/javascript/ezajaxsubitems_expdatatable.js
 2c35ad74f3ae96723bd750231c27cbe4  design/admin/javascript/leftmenu_widthcontrol.js
@@ -323,8 +323,8 @@ d5a3589152af07aa3d6cb3f0b025bec6  design/admin/stylesheets/setup-extensions.css
 80e40d820b12263064128a75be2de07b  design/admin/stylesheets/theme/modalwindow.css
 0db1844ab2952f8bf22c404c41866264  design/admin/stylesheets/theme/rounded.css
 4c5d17d9e5889a0f8907ad075f34c3d9  design/admin/stylesheets/visual-templateview.css
-b2cbae36bac438158f9f947a2e58e18c  design/admin/templates/ajaxuploader/browse.tpl
-00d13efcf10eeffbc37846913dbd0d8a  design/admin/templates/ajaxuploader/location.tpl
+889ddd71812316abb93a823e90d6c454  design/admin/templates/ajaxuploader/browse.tpl
+66e556ddbb2a268470dd9b7c34d65393  design/admin/templates/ajaxuploader/location.tpl
 f5c677b2579053f3f5a23f2a3dd3b87d  design/admin/templates/ajaxuploader/preview.tpl
 e002d70967d5f151cca6861170e9584f  design/admin/templates/ajaxuploader/upload.tpl
 e3d02557044b7bc71d9324c6527a42f0  design/admin/templates/audit/alerts.tpl
@@ -883,7 +883,7 @@ bc1f590f32f5d71f9bfdf7781f2135fc  design/admin4/images/url_translator.png
 ac084a07607e6d6c5a845da15423854f  design/admin4/images/view-fullscreen.png
 d7d11d12cef327ec0d54a0f346cdfc5b  design/admin4/javascript/admin4.js
 b05092d370a223ac22e7c4b388174054  design/admin4/javascript/contentstructuremenu_dynamic.js
-2208f27da9ddaa11d336d07c190cbc4b  design/admin4/javascript/expajaxuploader.js
+2fcd5f96b6fedc7ffa2f595f1262ee18  design/admin4/javascript/expajaxuploader.js
 5b924bb6c38c2aa71ee82f2185b8cac6  design/admin4/javascript/ezadmin_menubar.js
 2b984f2f31802646942901f436bf277b  design/admin4/javascript/ezajaxrelations_jquery.js
 def856500eb25e4c354688eaf1c1f790  design/admin4/javascript/ezajaxsubitems_expdatatable.js
@@ -939,8 +939,8 @@ cf525e1369265621db513e084052aa94  design/admin4/stylesheets/setup-extensions.css
 884b8cc51a5e8cba719fada5db7789c3  design/admin4/stylesheets/theme/modalwindow.css
 8f36e08ea6dc338a397c6a92d274f641  design/admin4/stylesheets/theme/rounded.css
 5dd996271ae1077ba68072e6f520b74d  design/admin4/stylesheets/visual-templateview.css
-e92ed971bdc20f0f00266930acf8e0ea  design/admin4/templates/ajaxuploader/browse.tpl
-00d13efcf10eeffbc37846913dbd0d8a  design/admin4/templates/ajaxuploader/location.tpl
+022eb4fed292327e7a10f4812af68540  design/admin4/templates/ajaxuploader/browse.tpl
+66e556ddbb2a268470dd9b7c34d65393  design/admin4/templates/ajaxuploader/location.tpl
 f5c677b2579053f3f5a23f2a3dd3b87d  design/admin4/templates/ajaxuploader/preview.tpl
 e002d70967d5f151cca6861170e9584f  design/admin4/templates/ajaxuploader/upload.tpl
 6188650683c597bd34d08ffe3483936e  design/admin4/templates/audit/recent.tpl
@@ -2991,7 +2991,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-c4da96a3be7e6497dd880b7be750f480  doc/changelogs/6.0/6.0.15.md
+7220473df467d816fae26dce123ebbff  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -4119,7 +4119,7 @@ e182699a31b59c20ea1ba8a0801f3460  extension/ezjscore/classes/ezjsccachemanager.p
 ac3dd65ba7ed3f9a5b14ff27ebdd4746  extension/ezjscore/classes/ezjscjavascriptoptimizer.php
 27ca4fdc9b658e488cf5b50324088d11  extension/ezjscore/classes/ezjscpacker.php
 1f9804412c3ba9cc36ec68bb52c2e242  extension/ezjscore/classes/ezjscserverfunctions.php
-4afd9abd7b7b304968b06c9b081c2d95  extension/ezjscore/classes/ezjscserverfunctionsajaxuploader.php
+25209de9cce9122f52e4665dda6bd102  extension/ezjscore/classes/ezjscserverfunctionsajaxuploader.php
 626b84c2efdd7f12aa324672b6346a61  extension/ezjscore/classes/ezjscserverfunctionsjs.php
 6f13a2277478c637ee2eac9ed933e320  extension/ezjscore/classes/ezjscserverfunctionsnode.php
 dbea24715af6c5d5d6b1d551aa97dbca  extension/ezjscore/classes/ezjscserverfunctionspublishingqueue.php
@@ -7187,7 +7187,7 @@ b977ef5a409ff4c1d2e4c734c839d6e3  tests/tests/extension/expservices/users/expUse
 c2d1d9f4d1d3bfd48c427cac7ccaace7  tests/tests/extension/expservices/users/expUsersTestCase.php
 815c9c214d99424bb693376c627ac29b  tests/tests/extension/ezjscore/ezjscServerFunctionsAjaxUploaderAltTextTest.php
 df797f976ce5f225fe73f393ff910b74  tests/tests/extension/ezjscore/ezjscServerFunctionsAjaxUploaderImageTest.php
-81ac430a0fbe1b7213c77877c89eea58  tests/tests/extension/ezjscore/ezjscServerFunctionsAjaxUploaderTokenTest.php
+570e60c85d88bb97a953a59f40776dcc  tests/tests/extension/ezjscore/ezjscServerFunctionsAjaxUploaderTokenTest.php
 3ef20c0512a951483e7cb7761a9f87f7  tests/tests/extension/ezjscore/ezjscServerFunctionsJsSearchSortByTest.php
 1045d4d1d9f875ee35726dfa45431264  tests/tests/extension/ezjscore/ezjscServerRouterPolicyTest.php
 d5ef0a34d06298d2da7f951273c12e1d  tests/tests/extension/ezjscore/ezjscoreCallThrowableTest.php
