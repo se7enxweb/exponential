@@ -8,11 +8,17 @@
   The Setup overview (setup/setupmenu.tpl) includes this template with setup_menu_layout='tiles': the same links,
   names and access checks, drawn as tiles with the icons, descriptions and figures of menu.ini [Leftmenu_setup]
   (LinkIcons[], LinkDescriptions[], LinkFigureTemplates[]), without the width control.
+
+  The groups Design and Audit stand for their top tabs (menu.ini [Leftmenu_setup] GroupTabs[], GroupSections[]):
+  shown only while the tab is not in the top menu, with the links of [Leftmenu_design] and [Leftmenu_audit], named
+  here as <group>-<key> with the strings of their own menus. The audit menu's links into channels the user may not
+  read are left out as there (fetch( 'audit', 'hidden_menu_links' )).
 *}
 {if is_unset( $setup_menu_layout )}{def $setup_menu_layout = 'menu'}{/if}
 
 {include uri='design:parts/ini_menu.tpl' ini_section='Leftmenu_setup'
     menu_layout=$setup_menu_layout
+    section_hidden_links=hash( 'Leftmenu_audit', fetch( 'audit', 'hidden_menu_links', hash( 'section', 'Leftmenu_audit' ) ) )
     i18n_hash=hash(
     'setup',              'Setup'|i18n( 'design/admin/parts/setup/menu' ),
     'overview',           'Overview'|i18n( 'design/admin/parts/setup/menu' ),
@@ -54,6 +60,19 @@
     'menu_management',    'Menus (classic)'|i18n( 'design/admin/parts/visual/menu' ),
     'toolbar_management', 'Toolbar management'|i18n( 'design/admin/parts/visual/menu' ),
     'templates',    'Templates'|i18n( 'design/admin/parts/visual/menu' ),
+    'design-look_and_feel',      'Look and feel'|i18n( 'design/admin/parts/visual/menu' ),
+    'design-template_editor',    'Template Editor'|i18n( 'design/admin/parts/visual/menu' ),
+    'design-toolbar_management', 'Toolbar management'|i18n( 'design/admin/parts/visual/menu' ),
+    'design-menu_management',    'Menus (classic)'|i18n( 'design/admin/parts/visual/menu' ),
+    'design-templates',          'Templates'|i18n( 'design/admin/parts/visual/menu' ),
+    'audit-dashboard', 'Dashboard'|i18n( 'design/admin/audit' ),
+    'audit-console',   'Console'|i18n( 'design/admin/audit' ),
+    'audit-recent',    'Recent events'|i18n( 'design/admin/audit' ),
+    'audit-charts',    'Charts'|i18n( 'design/admin/audit' ),
+    'audit-alerts',    'Alerts'|i18n( 'design/admin/audit' ),
+    'audit-export',    'Export'|i18n( 'design/admin/audit' ),
+    'audit-archives',  'Archives'|i18n( 'design/admin/audit' ),
+    'audit-settings',  'Settings'|i18n( 'design/admin/audit' ),
 )}
 
 {* Left menu width control (not on the overview page, which draws the menu as tiles). *}

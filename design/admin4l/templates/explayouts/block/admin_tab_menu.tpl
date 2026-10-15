@@ -4,9 +4,14 @@
     <!-- start::Navbar Menu -->
     <div class="navbar-menu {if $ui_context_edit}disabled{/if}">
         <ul class="navbar-bar">
+            {* The tab marked as current: the page's navigation part, or Setup's for a page of a tab the Setup menu
+               stands in for (parts/a4_navigation_part.tpl) *}
+            {def $a4_current_part = ''}
+            {set-block variable=a4_current_part}{include uri='design:parts/a4_navigation_part.tpl'}{/set-block}
             {foreach topmenu($ui_context, true() ) as $menu}
-                {include uri='design:page_topmenuitem.tpl' menu_item=$menu navigationpart_identifier=$navigation_part.identifier}
+                {include uri='design:page_topmenuitem.tpl' menu_item=$menu navigationpart_identifier=$a4_current_part|trim}
             {/foreach}
+            {undef $a4_current_part}
             <li>
                 {if $ui_context_edit}
                     <a href='#' title="{'Logout from the system.'|i18n( 'design/admin/pagelayout' )}" id="header-usermenu-logout" class="disabled">{'Logout: '|i18n( 'design/admin/pagelayout' )}{fetch('user', 'current_user').login}</a>

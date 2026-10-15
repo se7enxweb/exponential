@@ -122,7 +122,7 @@ class AdminSetupOverviewTest extends PHPUnit\Framework\TestCase
         $this->assertSame( count( $icons ), count( array_unique( $icons ) ), 'two functions share one icon' );
         $this->assertNotContains( 'plug', $icons, 'the plug icon is for links without an icon of their own' );
         $this->assertStringContainsString( "{set \$tile_icon = 'plug'", self::read( self::TILES ) );
-        $this->assertStringContainsString( '$known_icons|contains( $tile_icons[ $item.key ] )', self::read( self::TILES ), 'only a listed icon is drawn' );
+        $this->assertStringContainsString( '$known_icons|contains( $item.icon )', self::read( self::TILES ), 'only a listed icon is drawn' );
     }
 
     public function testTheIconListIsEveryMaskRuleOfComponents()
@@ -139,7 +139,7 @@ class AdminSetupOverviewTest extends PHPUnit\Framework\TestCase
         $setup = self::iniSection( 'Leftmenu_setup' );
         $placed = array();
         foreach ( $setup['Groups'] as $group )
-            foreach ( $setup["GroupLinks_$group"] as $key )
+            foreach ( $setup["GroupLinks_$group"] ?? array() as $key )
                 $placed[] = $key;
         $this->assertSame( array_values( array_unique( $placed ) ), $placed, 'a link is in two groups' );
 
@@ -175,9 +175,13 @@ class AdminSetupOverviewTest extends PHPUnit\Framework\TestCase
         $this->assertStringNotContainsString( '|ezurl', $page );
         $tiles = self::read( self::TILES );
         $this->assertStringNotContainsString( 'ezini(', $tiles );
-        // the tiles' settings come from the menu's own section
+        // the tiles' settings come from the section each link comes from, read before the tiles are drawn
         foreach ( array( 'LinkIcons', 'LinkDescriptions', 'LinkFigureTemplates' ) as $key )
-            $this->assertStringContainsString( "ezini( \$ini_section, '$key', 'menu.ini' )", $menu );
+        {
+            $at = strpos( $menu, "ezini( \$section, '$key', 'menu.ini' )" );
+            $this->assertNotFalse( $at, "ini_menu.tpl does not read $key of the link's section" );
+            $this->assertLessThan( $branch, $at );
+        }
         $this->assertSame( 1, substr_count( $tiles, '|ezurl' ), 'a tile links only where the menu item does' );
         $this->assertStringContainsString( "{if eq( \$item.state, 'link' )}", $tiles, 'a tile without access (NoAccessLinks=disabled) is no link' );
         // the overview's own left menu stays the menu: the page's variables do not leak into the page layout
@@ -222,7 +226,7 @@ class AdminSetupOverviewTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 1, substr_count( $tiles, '{include uri=$tile_figure' ) );
         $this->assertGreaterThan( $link, $include, 'the figure is included before the link branch' );
         $this->assertLessThan( $else, $include, 'the figure is included outside the link branch' );
-        $this->assertStringContainsString( "\$tile_figures[ \$item.key ]|begins_with( 'design:' )", $tiles );
+        $this->assertStringContainsString( "\$item.figure|begins_with( 'design:' )", $tiles );
     }
 
     public function testThePageDrawsNoImageButBootstrapIcons()
@@ -314,13 +318,15 @@ class AdminSetupOverviewTest extends PHPUnit\Framework\TestCase
             $GLOBALS['eZCurrentAccess'] = array( 'name' => 'tiles_test', 'type' => 1 );
             $tpl = eZTemplate::factory();
             $figure = 'design:' . basename( $dir ) . '/figure.tpl';
+            // the items as ini_menu.tpl builds them: icon, description, its context and figure of the link's section
+            $context = 'design/admin/parts/setup/menu';
             $tpl->setVariable( 'groups', array( array( 'id' => 'more', 'name' => 'More', 'translated' => true, 'items' => array(
-                array( 'key' => 'myreports', 'url' => 'myreports/list', 'name' => 'Reports', 'state' => 'link' ),
-                array( 'key' => 'odd', 'url' => 'odd/list', 'name' => 'Odd', 'state' => 'link' ),
-                array( 'key' => 'locked', 'url' => 'locked/list', 'name' => 'Locked', 'state' => 'no-access' ) ) ) ) );
-            $tpl->setVariable( 'tile_icons', array( 'myreports' => 'bar-chart-line', 'odd' => 'x"><b>', 'locked' => 'bell' ) );
-            $tpl->setVariable( 'tile_texts', array( 'myreports' => 'Monthly reports of the shop.', 'locked' => 'Locked away.' ) );
-            $tpl->setVariable( 'tile_figures', array( 'myreports' => $figure, 'odd' => 'file:/etc/hosts', 'locked' => $figure ) );
+                array( 'key' => 'myreports', 'url' => 'myreports/list', 'name' => 'Reports', 'state' => 'link', 'group' => '',
+                       'icon' => 'bar-chart-line', 'text' => 'Monthly reports of the shop.', 'context' => $context, 'figure' => $figure ),
+                array( 'key' => 'odd', 'url' => 'odd/list', 'name' => 'Odd', 'state' => 'link', 'group' => '',
+                       'icon' => 'x"><b>', 'text' => '', 'context' => $context, 'figure' => 'file:/etc/hosts' ),
+                array( 'key' => 'locked', 'url' => 'locked/list', 'name' => 'Locked', 'state' => 'no-access', 'group' => '',
+                       'icon' => 'bell', 'text' => 'Locked away.', 'context' => $context, 'figure' => $figure ) ) ) ) );
             $tpl->setVariable( 'known_icons', array( 'bar-chart-line', 'bell', 'plug' ) );
             $tpl->setVariable( 'tile_id_prefix', 'fx' );
             $tpl->setVariable( 'i18n_section', 'design/admin/parts/setup/menu' );
@@ -370,6 +376,140 @@ class AdminSetupOverviewTest extends PHPUnit\Framework\TestCase
         $this->assertStringNotContainsString( '<a ', $tiles[3] );
         $this->assertStringContainsString( 'Locked away.', $tiles[3] );
         $this->assertStringNotContainsString( 'figure of locked', $tiles[3] );
+    }
+
+    /**
+     * The Design and Audit tabs can leave the top menu without losing a page: each has a group of the Setup menu
+     * (GroupTabs[]) that lists its own menu (GroupSections[]) and its tab's page, shown only while the tab is not in
+     * the top menu; by default every tab stays (HiddenTabs[] is empty). doc/features/6.0/admin4-design.md,
+     * "Moving a tab into Setup".
+     */
+    public function testTheDesignAndAuditTabsHaveAGroupOfTheSetupMenu()
+    {
+        $setup = self::iniSection( 'Leftmenu_setup' );
+        $top = self::iniSection( 'TopAdminMenu' );
+        $this->assertSame( array(), $top['HiddenTabs'] ?? array(), 'every tab stays in the top menu by default' );
+        $this->assertSame( array( 'design' => 'design', 'audit' => 'audit' ), $setup['GroupTabs'] ?? null );
+        $this->assertSame( array( 'design' => 'Leftmenu_design', 'audit' => 'Leftmenu_audit' ), $setup['GroupSections'] ?? null );
+        $setupMenu = self::read( self::SETUP_MENU );
+        $listed = self::iconList();
+        $root = dirname( __DIR__, 3 );
+        foreach ( $setup['GroupTabs'] as $group => $tab )
+        {
+            $this->assertContains( $group, $setup['Groups'] );
+            $this->assertArrayHasKey( $group, $setup['GroupNames'] );
+            $this->assertContains( $tab, $top['Tabs'], "GroupTabs[$group] names no tab of Tabs[]" );
+            $tabSection = self::iniSection( "Topmenu_$tab" );
+            $section = self::iniSection( $setup['GroupSections'][$group] );
+            $this->assertNotEmpty( $section['Links'] ?? array() );
+            // the tab's own page is in the group: a link of its menu, or a link of the Setup menu in the group
+            $urls = array_values( $section['Links'] );
+            foreach ( $setup["GroupLinks_$group"] ?? array() as $key )
+            {
+                $urls[] = $setup['Links'][$key];
+                // the Setup link to the tab's page asks what the tab asks
+                if ( $setup['Links'][$key] === $tabSection['URL']['default'] )
+                    $this->assertSame( $tabSection['PolicyList'], $setup["PolicyList_$key"] ?? null, "PolicyList_{$key}[]" );
+            }
+            $this->assertContains( $tabSection['URL']['default'], $urls, "the page of the tab $tab is not in the group $group" );
+            // every link of the added menu has its tile: an icon of IconList[] with its file, a description, a name
+            foreach ( array_keys( $section['Links'] ) as $key )
+            {
+                $icon = $section['LinkIcons'][$key] ?? '';
+                $this->assertContains( $icon, $listed, "{$setup['GroupSections'][$group]} LinkIcons[$key]" );
+                $this->assertFileExists( "$root/share/icons/bootstrap-icons/svg/$icon.svg" );
+                $this->assertNotSame( '', trim( $section['LinkDescriptions'][$key] ?? '' ), "{$setup['GroupSections'][$group]} LinkDescriptions[$key]" );
+                if ( !isset( $section['LinkNames'][$key] ) )
+                    $this->assertStringContainsString( "'$group-$key',", $setupMenu, "parts/setup/menu.tpl names no $group-$key" );
+            }
+            $this->assertSame( count( $section['LinkIcons'] ), count( array_unique( $section['LinkIcons'] ) ), "two links of $group share one icon" );
+            // the descriptions are translated in the added menu's context
+            $context = 'design/admin/parts/' . explode( '_', $setup['GroupSections'][$group] )[1] . '/menu';
+            foreach ( array( 'ger-DE', 'eng-US' ) as $locale )
+            {
+                $ts = self::read( "share/translations/$locale/translation.ts" );
+                $start = strpos( $ts, "<name>$context</name>" );
+                $this->assertNotFalse( $start, "$locale has no context $context" );
+                $block = substr( $ts, $start, strpos( $ts, '</context>', $start ) - $start );
+                foreach ( $section['LinkDescriptions'] as $text )
+                    $this->assertStringContainsString( '<source>' . htmlspecialchars( $text, ENT_NOQUOTES ) . '</source>', $block, "$locale: $text" );
+            }
+        }
+        // the audit menu's links into channels the user may not read stay out of the Setup menu too
+        $this->assertStringContainsString( "section_hidden_links=hash( 'Leftmenu_audit', fetch( 'audit', 'hidden_menu_links', hash( 'section', 'Leftmenu_audit' ) ) )", $setupMenu );
+
+        // ini_menu.tpl: a group of a shown tab is not drawn and its links go nowhere else; an added section is
+        // checked like the menu's own links (its PolicyList[], per link PolicyList_<key>[] and the address)
+        $menu = self::read( self::MENU );
+        $this->assertStringContainsString( '{if and( $group_tab, $top_tabs|contains( $group_tab ), $hidden_tabs|contains( $group_tab )|not )}', $menu );
+        $this->assertStringContainsString( '{if $tab_links|contains( $link_key )}{continue}{/if}', $menu );
+        $this->assertStringContainsString( "{foreach ezini( \$section, 'PolicyList', 'menu.ini' ) as \$policy}", $menu );
+        $this->assertStringContainsString( "ezini_hasvariable( \$section, concat( 'PolicyList_', \$link_key ), 'menu.ini' )", $menu );
+        $this->assertStringContainsString( 'eq( $item.group, $group )', $menu, 'an added link is in its group' );
+        $this->assertStringContainsString( '$added_urls|contains( $item.url|trim( \'/\' ) )|not', $menu, 'a Setup link the added menu has too shows once' );
+    }
+
+    /**
+     * A page of a tab the Setup menu stands in for marks the Setup tab and draws the Setup menu while the tab is not
+     * in the top menu, and keeps its own tab and menu otherwise. Drawn with the real template engine and menu.ini.
+     */
+    public function testAPageOfAMovedTabMarksTheSetupTab()
+    {
+        $root = dirname( __DIR__, 3 );
+        $ini = eZINI::instance( 'menu.ini' );
+        $hidden = $ini->hasVariable( 'TopAdminMenu', 'HiddenTabs' ) ? $ini->variable( 'TopAdminMenu', 'HiddenTabs' ) : null;
+        // not compiled: a compiled template holds the menu.ini values it was compiled with
+        $basics = array_key_exists( 'eZSiteBasics', $GLOBALS ) ? array( $GLOBALS['eZSiteBasics'] ) : null;
+        $GLOBALS['eZSiteBasics']['no-cache-adviced'] = true;
+        $part = function ( $identifier ) use ( $root )
+        {
+            $tpl = eZTemplate::factory();
+            $tpl->setVariable( 'navigation_part', array( 'identifier' => $identifier ) );
+            $tpl->setVariable( 'module_result', array( 'navigation_part' => $identifier ) );
+            $out = trim( $tpl->fetch( "$root/design/admin4/templates/parts/a4_navigation_part.tpl" ) );
+            $this->assertSame( array(), $tpl->errorLog() );
+            return $out;
+        };
+        try
+        {
+            $ini->setVariable( 'TopAdminMenu', 'HiddenTabs', array() );
+            $this->assertSame( 'expauditnavigationpart', $part( 'expauditnavigationpart' ), 'the audit tab is shown: its pages are its own' );
+            $ini->setVariable( 'TopAdminMenu', 'HiddenTabs', array( 'audit', 'design' ) );
+            $this->assertSame( 'ezsetupnavigationpart', $part( 'expauditnavigationpart' ) );
+            $this->assertSame( 'ezsetupnavigationpart', $part( 'ezvisualnavigationpart' ) );
+            $this->assertSame( 'ezcontentnavigationpart', $part( 'ezcontentnavigationpart' ), 'a tab that stays keeps its pages' );
+            $ini->setVariable( 'TopAdminMenu', 'HiddenTabs', array( 'dashboard' ) );
+            $this->assertSame( 'ezmynavigationpart', $part( 'ezmynavigationpart' ), 'no Setup group stands in for the dashboard' );
+        }
+        finally
+        {
+            if ( $hidden === null )
+                $ini->removeSetting( 'TopAdminMenu', 'HiddenTabs' );
+            else
+                $ini->setVariable( 'TopAdminMenu', 'HiddenTabs', $hidden );
+            if ( $basics === null )
+                unset( $GLOBALS['eZSiteBasics'] );
+            else
+                $GLOBALS['eZSiteBasics'] = $basics[0];
+        }
+        // the top menu and the left menu of admin4 and admin4l both ask it
+        foreach ( array( 'design/admin4/templates/page_topmenu.tpl', 'design/admin4/templates/page_leftmenu.tpl',
+                         'design/admin4l/templates/explayouts/block/admin_tab_menu.tpl', 'design/admin4l/templates/explayouts/block/admin_left_menu.tpl' ) as $path )
+            $this->assertStringContainsString( "{include uri='design:parts/a4_navigation_part.tpl'}{/set-block}", self::read( $path ), $path );
+        $this->assertStringContainsString( 'navigationpart_identifier=$a4_current_part|trim', self::read( 'design/admin4/templates/page_topmenu.tpl' ) );
+    }
+
+    public function testWithoutTheDashboardTabTheLogoLeadsToTheDashboard()
+    {
+        foreach ( array( 'design/admin4/templates/page_topmenu.tpl', 'design/admin4l/templates/explayouts/block/admin_logo.tpl' ) as $path )
+        {
+            $tpl = self::read( $path );
+            $this->assertSame( 2, substr_count( $tpl, '<a class="brand" href={$a4_brand_url|ezurl}' ), $path );
+            $this->assertStringContainsString( "ezini( 'TopAdminMenu', 'HiddenTabs', 'menu.ini' )|contains( 'dashboard' )", $tpl, $path );
+            $this->assertStringContainsString( "fetch( 'user', 'has_access_to', hash( 'module', 'content', 'function', 'dashboard' ) )", $tpl, $path );
+            $this->assertStringContainsString( "ezini( 'Topmenu_dashboard', 'URL', 'menu.ini' )['default']", $tpl, $path );
+        }
+        $this->assertSame( 'content/dashboard', self::iniSection( 'Topmenu_dashboard' )['URL']['default'] );
     }
 
     /**

@@ -5,10 +5,10 @@
 {elseif is_set( $module_result.left_menu )}
     {include uri=$module_result.left_menu}
 {else}
-    {def $navigation_part_name = $navigation_part.identifier}
-    {if $navigation_part_name|eq('')}
-        {set $navigation_part_name = $module_result.navigation_part}
-    {/if}
+    {* the page's navigation part, or Setup's for a page of a tab the Setup menu stands in for *}
+    {def $navigation_part_name = ''}
+    {set-block variable=navigation_part_name}{include uri='design:parts/a4_navigation_part.tpl'}{/set-block}
+    {set $navigation_part_name = $navigation_part_name|trim}
     {def $extract_length = sub( count_chars( $navigation_part_name ), '14' )
          $part_name = $navigation_part_name|extract( '2', $extract_length )}
     {* a kernel navigation part with the exp prefix: exp<name>navigationpart => parts/<name>/menu.tpl *}
