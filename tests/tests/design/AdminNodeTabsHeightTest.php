@@ -233,6 +233,8 @@ class AdminNodeTabsHeightTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'none', $rules['.a4-tabs-height[hidden], .a4-tabs-height-reset[hidden], #window-controls:has(.tabs-content.disabled) > .a4-tabs-height']['display'] );
         $this->assertSame( 'none', $rules['.a4-tabs-height-grip']['touch-action'] );
         $this->assertSame( 'ns-resize', $rules['.a4-tabs-height-grip']['cursor'] );
+        // the reset button is opaque over the panel's text: one class more than the background-less .a4-icon-btn
+        $this->assertSame( 'var(--a4-card)', $rules['.a4-tabs-height > .a4-tabs-height-reset']['background-color'] );
         $this->assertMatchesRegularExpression( '/@media screen and \(max-width: 575\.98px\) \{\s*\.a4-tabs-height \{ display: none; \}/', $css );
         $forced = AdminBaseStylesheetsTest::rules( $css, true );
         $this->assertSame( 'CanvasText', $forced['.a4-tabs-height-grip::before']['color'] );

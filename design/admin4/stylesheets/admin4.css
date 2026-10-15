@@ -1311,7 +1311,8 @@ div.context-information.a4-node-meta {
 .a4-tabs-height[hidden],
 .a4-tabs-height-reset[hidden],
 #window-controls:has(.tabs-content.disabled) > .a4-tabs-height { display: none; }
-.a4-tabs-height-reset { background-color: var(--a4-card); box-shadow: 0 0 0 1px var(--a4-line); }
+/* opaque over the panel's text: one class more than .a4-icon-btn (components.css, loaded later, sets no background) */
+.a4-tabs-height > .a4-tabs-height-reset { background-color: var(--a4-card); box-shadow: 0 0 0 1px var(--a4-line); }
 /* the grip: a small card with two rows of dots, the resize cursor and the focus ring */
 .a4-tabs-height-grip {
   position: relative;
