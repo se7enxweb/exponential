@@ -316,7 +316,7 @@ Community". A template can also set `$show_community_links`.
   `theme/admin_datatable.css`, `theme/modalwindow.css`) take every colour from the tokens as well (since 2026-10-14,
   `AdminStylingRulesTest::testBaseStylesheetsUseOnlyColourTokens`): links are `--a4-accent-text`, the diff marks
   `--a4-ok`/`--a4-bad` on the warn tint. admin4 has no `responsive.css` any more (its one live rule is in
-  `pagelayout.css`) and no `setup-extensions.css` (nothing loaded it).
+  `pagelayout.css`) and no `setup-extensions.css` (no kernel template loaded it; exp_adminui carries its own copy).
 - admin4 keeps its own copy of `ezajaxsubitems_expdatatable.js`: it must work with no other admin design present, and
   a single copy in `design/standard` would be shadowed by any design that has its own. Change both copies together.
 - The CSS packer used to remove the space before a colon in selectors (`a :hover` became `a:hover`). Fixed.

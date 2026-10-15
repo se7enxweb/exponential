@@ -279,14 +279,26 @@ fieldset.ezcca-collapsible.ezcca-collapsed legend
 
 fieldset.ezcca-collapsible legend a
 {
-    /* minus in a box: the group is open */
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' shape-rendering='crispEdges'%3E%3Crect x='1' y='1' width='12' height='12' fill='%23fff'/%3E%3Cpath d='M1 0h12v1H1zM1 13h12v1H1zM0 1h1v12H0zM13 1h1v12h-1z' fill='%23c1c1c1'/%3E%3Crect x='3' y='6' width='8' height='2' fill='%236d6d6d'/%3E%3C/svg%3E") no-repeat 0 0;
+    /* minus in a box: the group is open. Drawn from the tokens (bar, box, edge from top to bottom), so it follows
+       the dark mode */
+    background:
+        linear-gradient(var(--a4-muted), var(--a4-muted)) no-repeat 3px 6px / 8px 2px,
+        linear-gradient(var(--a4-card), var(--a4-card)) no-repeat 1px 1px / 12px 12px,
+        linear-gradient(var(--a4-line-strong), var(--a4-line-strong)) no-repeat 0 0 / 14px 14px;
 }
 
 fieldset.ezcca-collapsible.ezcca-collapsed legend a
 {
     /* plus in a box: the group is collapsed */
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' shape-rendering='crispEdges'%3E%3Crect x='1' y='1' width='12' height='12' fill='%23fff'/%3E%3Cpath d='M1 0h12v1H1zM1 13h12v1H1zM0 1h1v12H0zM13 1h1v12h-1z' fill='%23c1c1c1'/%3E%3Crect x='3' y='6' width='8' height='2' fill='%236d6d6d'/%3E%3Crect x='6' y='3' width='2' height='8' fill='%236d6d6d'/%3E%3C/svg%3E") no-repeat 0 0;
+    background:
+        linear-gradient(var(--a4-muted), var(--a4-muted)) no-repeat 6px 3px / 2px 8px,
+        linear-gradient(var(--a4-muted), var(--a4-muted)) no-repeat 3px 6px / 8px 2px,
+        linear-gradient(var(--a4-card), var(--a4-card)) no-repeat 1px 1px / 12px 12px,
+        linear-gradient(var(--a4-line-strong), var(--a4-line-strong)) no-repeat 0 0 / 14px 14px;
+}
+
+@media (forced-colors: active) {
+    fieldset.ezcca-collapsible legend a { forced-color-adjust: none; }
 }
 
 /* OBJECTRELATIONLIST */
