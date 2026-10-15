@@ -117,6 +117,7 @@ A **target** is reported when it is
 | Hidden | every location of the object is hidden or below a hidden node; or the linked node is |
 | Never published | the object is a draft that was never published |
 | Without location | the object is published but has no location in the tree |
+| Not available to you | with a limited `content/read`: the target has no location you may read, whatever its state |
 
 A target that is fine is not listed, and neither is a source's relation to itself. A relation of the rich text and
 the link in its text are one finding; the field is the one whose text holds the link.
@@ -124,7 +125,8 @@ the link in its text are one finding; the field is the one whose text holds the 
 Each finding shows the **source** (a link to its node, its class and object id), the **field** (the field's name,
 the language for a link in rich text, and the way: link, embed, inline embed, object relation, relation field), the
 **target** (object or node id; the name only of a target that is never published or without location and that you
-may read: a deleted, trashed or hidden target is shown by its id and state only) and its **state**, and an **Edit** button when
+may read: a deleted, trashed or hidden target is shown by its id and state only; a target you may not read as "not
+available", see [What you may not read](#what-you-may-not-read)) and its **state**, and an **Edit** button when
 you may edit the source. The filters:
 
 - **Below node**: the subtree to check (1 checks the whole tree).
@@ -150,10 +152,25 @@ whole tree, which is what the pages avoid. **From the start** begins again.
 | `contentcheck/brokenrelations` | the list of broken relations |
 
 The policies have no limitations; what each list shows is limited by `content/read` (as a subtree fetch is, in its
-SQL), and what may be moved by `content/remove`. What you may not read is never shown, only counted: the list of
-unreferenced objects says how many more there are below the node, and a page of broken relations how many sources in
-the range it checked were left out (to the end of the tree on its last page). Neither names, classes nor paths of
-those objects are read for the page, written to a log or recorded. A start node you may not read answers as not found. A new
+SQL), and what may be moved by `content/remove`.
+
+### What you may not read
+
+What you may not read is left out completely, with the permission condition in the SQL of every query, not only in
+what is drawn: from the lists, the counts, the pages and **Next page**, the number of objects checked, the locations
+and sub-items a row shows, and the excluded subtrees (a node id you may not read is ignored like an unknown one).
+Nothing of it is counted, named or logged. Adding or removing content you may not read changes nothing you see.
+
+- **Broken relations**: a source you may not read is not checked. A target you may not read is shown as **Target
+  not available** with the state **Not available to you**, without its id and without telling whether it is
+  deleted, in the trash, hidden or fine: all look the same, so the list says nothing about content you may not see.
+  With an unlimited `content/read` every target shows its real state and id.
+- **Unreferenced objects**: whether an object you may read is unreferenced is decided against **every** reference,
+  also from objects you may not read, and an object with sub-items you may not read is not offered for the trash;
+  otherwise content in use would go to the trash. That an object you may read is missing from the list is
+  therefore a weak hint that something refers to it (or lies below it). This cannot be avoided without offering
+  referenced content for the trash; nothing about that something (number, name, id, class) is shown anywhere, and
+  there is no view that says why an object is not listed. A start node you may not read answers as not found. A new
 installation gives them to Administrator only (which holds every policy). Give them to a role for the people who
 tidy up the content, not to every editor: the lists show the content of the whole subtree at once.
 
