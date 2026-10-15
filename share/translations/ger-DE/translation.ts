@@ -50446,7 +50446,7 @@ Wenn Sie auf den Namen klicken, können Sie navigieren. Sie können zur Auswahl 
     </message>
     <message>
         <source>Cache admin</source>
-        <translation>Cache Admin</translation>
+        <translation>Cache-Verwaltung</translation>
     </message>
     <message>
         <source>Content view cache was cleared.</source>
@@ -61742,7 +61742,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <name>kernel/setup</name>
     <message>
         <source>Cache admin</source>
-        <translation>Cache Administration</translation>
+        <translation>Cache-Verwaltung</translation>
     </message>
     <message>
         <source>System information</source>
@@ -67188,6 +67188,86 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>only these locations go; the objects keep existing at their other locations</source>
         <translation>nur diese Positionen werden entfernt; die Objekte bleiben an ihren anderen Positionen bestehen</translation>
+    </message>
+    <message>
+        <source>Remove %count locations of %name</source>
+        <translation>%count Orte von %name entfernen</translation>
+    </message>
+    <message>
+        <source>Only the selected locations are removed; the object keeps its other locations.</source>
+        <translation>Nur die ausgewählten Orte werden entfernt; das Objekt behält seine anderen Orte.</translation>
+    </message>
+    <message>
+        <source>Large copies normally run as a background job, but background jobs are not available on this server right now. Try again later, or use the command exp:expcontentjob copy.</source>
+        <translation>Große Kopien laufen normalerweise als Job im Hintergrund, aber Hintergrund-Jobs sind auf diesem Server gerade nicht verfügbar. Versuchen Sie es später erneut, oder verwenden Sie den Befehl exp:expcontentjob copy.</translation>
+    </message>
+    <message>
+        <source>This job cannot be cancelled any more.</source>
+        <translation>Dieser Job kann nicht mehr abgebrochen werden.</translation>
+    </message>
+    <message>
+        <source>This job cannot be resumed.</source>
+        <translation>Dieser Job kann nicht fortgesetzt werden.</translation>
+    </message>
+    <message>
+        <source>There is no partial copy to remove.</source>
+        <translation>Es gibt keine Teilkopie, die entfernt werden könnte.</translation>
+    </message>
+    <message>
+        <source>Not for more than %limit items: the request would take too long (content.ini NowLimit).</source>
+        <translation>Nicht für mehr als %limit Elemente: die Anfrage würde zu lange dauern (content.ini NowLimit).</translation>
+    </message>
+    <message>
+        <source>Not for more than %limit items here (content.ini %setting).</source>
+        <translation>Hier nicht für mehr als %limit Elemente (content.ini %setting).</translation>
+    </message>
+    <message>
+        <source>This part of the content tree is being changed by a background job. Try again when the job is done.</source>
+        <translation>Dieser Teil des Inhaltsbaums wird gerade von einem Hintergrund-Job geändert. Versuchen Sie es erneut, wenn der Job fertig ist.</translation>
+    </message>
+    <message>
+        <source>Not started</source>
+        <translation>Nicht gestartet</translation>
+    </message>
+    <message>
+        <source>%name and %count more</source>
+        <translation>%name und %count weitere</translation>
+    </message>
+    <message>
+        <source>Copying %name</source>
+        <translation>%name wird kopiert</translation>
+    </message>
+    <message>
+        <source>Copy subtree</source>
+        <translation>Teilbaum kopieren</translation>
+    </message>
+    <message>
+        <source>The subtree has been copied.</source>
+        <translation>Der Teilbaum wurde kopiert.</translation>
+    </message>
+    <message>
+        <source>Open the copy</source>
+        <translation>Die Kopie öffnen</translation>
+    </message>
+    <message>
+        <source>Remove subtree, move to trash</source>
+        <translation>Teilbaum entfernen, in den Papierkorb</translation>
+    </message>
+    <message>
+        <source>Remove, to trash</source>
+        <translation>Entfernen, in den Papierkorb</translation>
+    </message>
+    <message>
+        <source>The job is done.</source>
+        <translation>Der Job ist fertig.</translation>
+    </message>
+    <message>
+        <source>Open the node</source>
+        <translation>Den Knoten öffnen</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Knoten %id</translation>
     </message>
 </context>
 <context>

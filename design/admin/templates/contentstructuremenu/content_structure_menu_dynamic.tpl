@@ -77,9 +77,10 @@ var treeMenu;
             *}"contentTreeUrl":"{"content/treemenu"|ezurl(no)}/",{*
             *}"wwwDirPrefix":"{ezsys('wwwdir')}/{$iconInfo.theme_path}/{$iconInfo.size_path_list[$classIconsSize]}/"{rdelim};
 
+        {* the content languages' names for "Edit in", as the other menus and pages show them *}
         params.languages = {ldelim}{*
-            *}{foreach fetch('content','translation_list') as $language}{*
-                *}"{$language.locale_code|wash(javascript)}":"{$language.intl_language_name|wash(javascript)}"{*
+            *}{foreach fetch( 'content', 'prioritized_languages' ) as $language}{*
+                *}"{$language.locale|wash(javascript)}":"{$language.name|wash(javascript)}"{*
                 *}{delimiter},{/delimiter}{*
             *}{/foreach}{*
         *}{rdelim};

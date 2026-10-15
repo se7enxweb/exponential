@@ -148,6 +148,8 @@ var CurrentSubstituteValues = -1;
 {
 //POPUPMENU CONSTANTS
 var EZPOPMENU_OFFSET = 8, EZPOPMENU_SUBOFFSET = 4, EZPOPMENU_SUBTOPOFFSET = 4;
+// The least height of a menu squeezed between the page header and the window's bottom edge (it scrolls)
+var EZPOPMENU_MIN_HEIGHT = 96;
 
 // POPUPMENU VARS
 var CurrentDisableIDList = [];
@@ -196,6 +198,7 @@ function _showTopLevel( event, menuID, substituteValues, menuHeader, disableIDLi
     if ( !document.getElementById( menuID ) ) return;
     var mousePos = _mouseHandler( event ); // register new mouse position
     var byKeyboard = _isKeyboardEvent( event );
+    var anchor = null;
 
     if ( substituteValues != -1 ) // new topmenu
     {
@@ -207,6 +210,8 @@ function _showTopLevel( event, menuID, substituteValues, menuHeader, disableIDLi
         {
             var rect = MenuOpener.getBoundingClientRect(), screenData = _getScreenProperties();
             mousePos = { 'x': rect.left + screenData.ScrollX - EZPOPMENU_OFFSET, 'y': rect.bottom + screenData.ScrollY - EZPOPMENU_OFFSET };
+            // below the trigger, or above it when there is no room below
+            anchor = { 'top': rect.top + screenData.ScrollY, 'bottom': rect.bottom + screenData.ScrollY };
         }
     }
 
@@ -221,7 +226,7 @@ function _showTopLevel( event, menuID, substituteValues, menuHeader, disableIDLi
 
     // make menu visible
     _makeVisible( menuID );
-    _moveTopLevelOnScreen( menuID, mousePos );
+    _moveTopLevelOnScreen( menuID, mousePos, anchor );
     if ( byKeyboard ) _focusItem( menuID, 0 );
 }
 
@@ -467,22 +472,22 @@ function _substituteString( replaceString, substituteValues )
   The menu is repositioned like most OS's do if it doesn't fit at the normal position: is moved
   to the opposite side of the mouse pointer/menu.
 */
-function _moveTopLevelOnScreen( menuID, mousePos )
+function _moveTopLevelOnScreen( menuID, mousePos, anchor )
 {
     var menuElement = document.getElementById( menuID ), screenData = _getScreenProperties();
     var newX = 0; var newY = 0;
 
-    // compensate if we are below the screen
-    if ( (screenData.ScrollY + screenData.Height) < ( mousePos.y + EZPOPMENU_OFFSET + menuElement.offsetHeight ) )
-        newY = mousePos.y - EZPOPMENU_OFFSET - menuElement.offsetHeight;
-    // compensate if we are above the top of the screen
-    else if ( screenData.ScrollY > EZPOPMENU_OFFSET + mousePos.y )
-        newY = screenData.ScrollY;
-    else
-        newY = mousePos.y + EZPOPMENU_OFFSET;
-    // A menu opened upwards stays inside the window; the stylesheet caps its height to the window.
-    if ( newY < screenData.ScrollY )
-        newY = screenData.ScrollY;
+    // The menu opens below the pointer (or below the trigger it was opened from with the keyboard, anchor), or
+    // above it when it does not fit below. The visible area starts under a fixed page header: a menu moved to the
+    // window's top edge was drawn under the header, away from the row it belongs to. When it fits on neither side,
+    // it opens on the side with more room, as tall as that room (it scrolls).
+    menuElement.style.maxHeight = '';
+    var areaTop = screenData.ScrollY + _fixedHeaderHeight(), areaBottom = screenData.ScrollY + screenData.Height;
+    var below = anchor ? anchor.bottom : mousePos.y + EZPOPMENU_OFFSET;
+    var above = anchor ? anchor.top : mousePos.y - EZPOPMENU_OFFSET;
+    var place = _verticalPlace( areaTop, areaBottom, above, below, menuElement.offsetHeight, EZPOPMENU_MIN_HEIGHT );
+    newY = place.top;
+    if ( place.maxHeight !== null ) menuElement.style.maxHeight = place.maxHeight + 'px';
 
     // compensate if we are to the right of the screen
     if ( (screenData.ScrollX + screenData.Width) < ( mousePos.x + EZPOPMENU_OFFSET + menuElement.offsetWidth ) )
@@ -495,6 +500,44 @@ function _moveTopLevelOnScreen( menuID, mousePos )
     // reposition menu
     menuElement.style.left = newX + "px";
     menuElement.style.top = newY + "px";
+}
+
+/*!
+  Where a menu of the given height goes in the visible area areaTop..areaBottom (page coordinates), opened from a
+  point or trigger whose free edges are above (its top) and below (its bottom): { top, maxHeight }, maxHeight null
+  when the menu keeps its own height. Below when it fits, else above, else on the side with more room, as tall as
+  that room but at least minHeight; a menu that needs more than the room on that side stays inside the visible area
+  (it then covers the trigger) instead of reaching under the header or past the window's bottom edge.
+*/
+function _verticalPlace( areaTop, areaBottom, above, below, height, minHeight )
+{
+    var visible = Math.max( areaBottom - areaTop, 0 );
+    if ( below + height <= areaBottom )
+        return { 'top': below, 'maxHeight': null };
+    if ( above - height >= areaTop )
+        return { 'top': above - height, 'maxHeight': null };
+    var maxHeight;
+    if ( areaBottom - below >= above - areaTop )
+    {
+        maxHeight = Math.min( Math.max( areaBottom - below, minHeight ), visible );
+        return { 'top': Math.max( areaTop, Math.min( below, areaBottom - maxHeight ) ), 'maxHeight': maxHeight };
+    }
+    maxHeight = Math.min( Math.max( above - areaTop, minHeight ), visible );
+    return { 'top': Math.max( areaTop, above - maxHeight ), 'maxHeight': maxHeight };
+}
+
+/*!
+  The height of a page header that stays at the top of the window (#header with position fixed or sticky), 0
+  without one.
+*/
+function _fixedHeaderHeight()
+{
+    var header = document.getElementById( 'header' );
+    if ( !header || !window.getComputedStyle || !header.getBoundingClientRect ) return 0;
+    var position = window.getComputedStyle( header ).position;
+    if ( position !== 'fixed' && position !== 'sticky' ) return 0;
+    var bottom = header.getBoundingClientRect().bottom;
+    return bottom > 0 ? bottom : 0;
 }
 
 function _mouseHandler( e )
@@ -521,6 +564,9 @@ function _moveSubLevelOnScreen( menuID, alignItem )
 {
     var menuElement = document.getElementById( menuID ), screenData = _getScreenProperties();
     var newX = 0; var newY = 0;
+    // a submenu gets no height limit; one left from an earlier opening would cut it off
+    menuElement.style.maxHeight = '';
+    var areaTop = screenData.ScrollY + _fixedHeaderHeight();
 
     var alignElement = document.getElementById( alignItem );
     var parentElement = document.getElementById( VisibleMenus[menuArray[menuID]['depth'] - 1] );
@@ -534,9 +580,9 @@ function _moveSubLevelOnScreen( menuID, alignItem )
     // compensate if we are below the screen
     if ( ( screenData.ScrollY + screenData.Height ) < ( newY + menuElement.offsetHeight ) )
         newY = screenData.ScrollY + screenData.Height - menuElement.offsetHeight;
-    // compensate if above the screen
-    else if ( screenData.ScrollY > newY )
-        newY = screenData.ScrollY;
+    // compensate if above the screen (its visible part, under a fixed header)
+    if ( newY < areaTop )
+        newY = areaTop;
 
     // compensate if we are to the right of the screen
     // (without its parent menu the submenu stays where it is: there is no side to move it to)

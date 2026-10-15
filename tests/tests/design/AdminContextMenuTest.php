@@ -155,4 +155,71 @@ class AdminContextMenuTest extends PHPUnit\Framework\TestCase
                 "design/admin/$file and design/admin4/$file differ: change both copies together" );
         }
     }
+
+    /**
+     * A menu opened from the keyboard is placed at its trigger: below it, or above it when there is no room below,
+     * and never under the fixed page header. Before, a menu that fitted neither below nor above the row was moved to
+     * the window's top edge, under the header and away from the row (Shift+F10 on a sub-items row).
+     */
+    public function testAKeyboardMenuStaysAtItsTriggerAndOutOfTheHeader()
+    {
+        $js = (string)file_get_contents( self::root() . '/design/admin4/javascript/popupmenu/ezpopupmenu.js' );
+        $this->assertStringContainsString( "anchor = { 'top': rect.top + screenData.ScrollY, 'bottom': rect.bottom + screenData.ScrollY };", $js );
+        $this->assertStringContainsString( '_moveTopLevelOnScreen( menuID, mousePos, anchor );', $js );
+        $start = strpos( $js, 'function _moveTopLevelOnScreen( menuID, mousePos, anchor )' );
+        $this->assertNotFalse( $start );
+        $body = substr( $js, $start, strpos( $js, 'function _fixedHeaderHeight()' ) - $start );
+        $this->assertStringContainsString( 'var areaTop = screenData.ScrollY + _fixedHeaderHeight()', $body );
+        $this->assertStringContainsString( 'var below = anchor ? anchor.bottom : mousePos.y + EZPOPMENU_OFFSET;', $body );
+        $this->assertStringContainsString( 'var above = anchor ? anchor.top : mousePos.y - EZPOPMENU_OFFSET;', $body );
+        // no branch moves the menu to the window's top edge any more
+        $this->assertStringNotContainsString( 'newY = screenData.ScrollY', $body );
+        $this->assertStringContainsString( "menuElement.style.maxHeight = '';", $body, 'a squeezed height is reset on the next opening' );
+        $this->assertMatchesRegularExpression( "/position !== 'fixed' && position !== 'sticky'/", $js );
+    }
+
+    /**
+     * The vertical placement of a top-level menu (_verticalPlace() of ezpopupmenu.js, run in node): below, above, or
+     * on the side with more room with a height limit, and never above the visible area's top (under the fixed
+     * header) or below its bottom, also when the room is smaller than the least menu height.
+     */
+    public function testTheMenuPlacementStaysInTheVisibleArea()
+    {
+        $node = trim( (string)shell_exec( 'command -v node 2>/dev/null' ) );
+        if ( $node === '' )
+            $this->markTestSkipped( 'node is not installed' );
+        $js = (string)file_get_contents( self::root() . '/design/admin4/javascript/popupmenu/ezpopupmenu.js' );
+        $this->assertSame( 1, preg_match( '/function _verticalPlace\(.*?\n\}\n/s', $js, $m ) );
+        // areaTop, areaBottom, above, below, height, minHeight => top, maxHeight
+        $cases = array(
+            'fits below'                    => array( array( 100, 800, 400, 420, 200, 96 ), array( 420, null ) ),
+            'fits above'                    => array( array( 100, 800, 680, 700, 200, 96 ), array( 480, null ) ),
+            'more room below'               => array( array( 100, 500, 200, 220, 450, 96 ), array( 220, 280 ) ),
+            'more room above'               => array( array( 100, 500, 450, 470, 450, 96 ), array( 100, 350 ) ),
+            'less room above than the least' => array( array( 100, 400, 150, 390, 300, 96 ), array( 100, 96 ) ),
+            'less room below than the least' => array( array( 100, 400, 110, 350, 300, 96 ), array( 304, 96 ) ),
+            'a visible area under the least' => array( array( 100, 180, 120, 140, 300, 96 ), array( 100, 80 ) ),
+        );
+        $script = $m[0] . 'const cases = ' . json_encode( $cases ) . ';'
+                . 'const out = {}; for (const k in cases) { const r = _verticalPlace(...cases[k][0]); out[k] = [r.top, r.maxHeight]; }'
+                . 'process.stdout.write(JSON.stringify(out));';
+        $file = tempnam( sys_get_temp_dir(), 'ezpop' ) . '.js';
+        file_put_contents( $file, $script );
+        $result = json_decode( (string)shell_exec( escapeshellarg( $node ) . ' ' . escapeshellarg( $file ) ), true );
+        unlink( $file );
+        $this->assertIsArray( $result );
+        foreach ( $cases as $name => $case )
+        {
+            $this->assertSame( $case[1], $result[$name], $name );
+            list( $areaTop, $areaBottom ) = $case[0];
+            $this->assertGreaterThanOrEqual( $areaTop, $result[$name][0], "$name: not above the visible area" );
+            if ( $result[$name][1] !== null )
+                $this->assertLessThanOrEqual( $areaBottom, $result[$name][0] + $result[$name][1], "$name: not past its bottom" );
+        }
+        // a submenu drops a height limit left from an earlier opening and stays under the fixed header too
+        $start = strpos( $js, 'function _moveSubLevelOnScreen(' );
+        $body = substr( $js, $start, strpos( $js, 'function _submitForm(' ) - $start );
+        $this->assertStringContainsString( "menuElement.style.maxHeight = '';", $body );
+        $this->assertStringContainsString( 'var areaTop = screenData.ScrollY + _fixedHeaderHeight();', $body );
+    }
 }

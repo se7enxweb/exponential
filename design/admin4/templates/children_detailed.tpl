@@ -7,9 +7,11 @@
 (function() {
 {/literal}
 
+{* The names of the "Edit in" menu: the content languages' names, as the row menus, the history and the drafts
+   show them, not the locale's international name *}
 var availableLanguages = {ldelim}{*
-    *}{foreach $locales as $language}{*
-        *}'{$language.locale_code|wash(javascript)}': '{$language.intl_language_name|wash(javascript)}'{*
+    *}{foreach fetch( 'content', 'prioritized_languages' ) as $language}{*
+        *}'{$language.locale|wash(javascript)}': '{$language.name|wash(javascript)}'{*
         *}{delimiter},{/delimiter}{*
     *}{/foreach}{*
 *}{rdelim};

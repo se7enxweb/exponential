@@ -9,7 +9,7 @@
  *  HL-04 - The figures: versions by status in a fixed order, translations, the user's own drafts
  *  HL-05 - The choices of the filters: creators and translations by name
  *  HL-06 - The actions: view, edit, copy (and its languages), compare and remove, and why one is not offered
- *  HL-07 - The version a version's Compare button compares it with
+ *  HL-07 - The version a version's Compare button compares it with, the older of the two as the old side
  *  HL-08 - run() stays short, its steps are methods, and every POST name of the page is still read
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
@@ -155,6 +155,14 @@ class expContentHistoryListTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 3, History::comparedWith( 2, 2, array( 1, 2, 3 ) ), 'the current one itself: the newest other' );
         $this->assertSame( 3, History::comparedWith( 1, 4, array( 1, 2, 3 ) ), 'a current version not seen: the newest other' );
         $this->assertSame( 1, History::comparedWith( 1, 1, array( 1 ) ), 'no other' );
+
+        // the older version is the old side, whichever row's button was pressed
+        $this->assertSame( array( 1, 2 ), History::comparedPair( 1, 2, array( 1, 2, 3 ) ), 'an older version against the current one' );
+        $this->assertSame( array( 2, 5 ), History::comparedPair( 5, 2, array( 1, 2, 5 ) ), 'a draft newer than the current version' );
+        $this->assertSame( array( 2, 3 ), History::comparedPair( 2, 2, array( 1, 2, 3 ) ), 'the current one itself against the newest other' );
+        $this->assertSame( array( 1, 1 ), History::comparedPair( 1, 1, array( 1 ) ), 'no other' );
+        $code = file_get_contents( dirname( __DIR__, 4 ) . '/kernel/private/classes/views/content/history.php' );
+        $this->assertStringContainsString( 'list( $oldVersion, $newVersion ) = self::comparedPair(', $code, 'compare() uses the ordered pair' );
     }
 
     /** HL-08 */
