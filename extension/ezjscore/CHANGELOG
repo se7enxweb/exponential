@@ -1,3 +1,17 @@
+# 1.8.0
+- Updated: the ajax uploader's browse step asks the upload handler's canUpload() like the other
+  steps, before it reads the node, so it answers no one without upload rights. The call names the
+  handler: ezajaxuploader::browse::<handler>::<node>::<class>[::<offset>], and the script posts the
+  upload target with it. An override of ajaxuploader/browse.tpl puts {$handler_id|wash()} in its
+  links; the admin designs of Exponential 6.0.15 carry the new links.
+- Updated: a missing or incomplete AjaxUploadHandlerData is refused with "Arguments error." instead
+  of an ArgumentCountError from the handler's constructor.
+- Updated: with packing off (DevelopmentMode, Packer=disabled) script and stylesheet URLs are the
+  files' own addresses, without any version query; ezjscPacker::isFileURL() tells a file URL from
+  inline content. Packed files keep the newest file time in their name.
+- Updated: Version 1.8.0 in ezinfo.php and extension.xml.
+
+
 # 1.7.0
 - Removed: the older jQuery copies nothing loaded: jquery-3.7.1.js, jquery-3.7.1.min.js,
   jquery-migrate-3.4.1.min.js and jquery-ui-1.10.3.custom.min.js (jQuery UI 1.10.3 has known
