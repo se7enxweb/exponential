@@ -397,6 +397,27 @@
     ],
     "kernel/classes/subitems/expsubitemscolumnregistry.php": [
       "tests/tests/design/AdminSubitemsTranslationsTest.php"
+    ],
+    "kernel/content/ezcontentoperationcollection.php": [
+      "tests/tests/kernel/content/eZPendingIndexActionsTest.php"
+    ],
+    "kernel/content/operation_definition.php": [
+      "tests/tests/kernel/content/eZPendingIndexActionsTest.php"
+    ],
+    "kernel/shop/operation_definition.php": [
+      "tests/tests/kernel/content/eZPendingIndexActionsTest.php"
+    ],
+    "kernel/user/operation_definition.php": [
+      "tests/tests/kernel/content/eZPendingIndexActionsTest.php"
+    ],
+    "kernel/private/classes/cronjobs/indexcontent.php": [
+      "tests/tests/kernel/content/eZPendingIndexActionsTest.php"
+    ],
+    "kernel/classes/ezpendingactions.php": [
+      "tests/tests/kernel/content/eZPendingIndexActionsTest.php"
+    ],
+    "kernel/classes/ezsearch.php": [
+      "tests/tests/kernel/content/eZPendingIndexActionsTest.php"
     ]
   },
   "generated": {

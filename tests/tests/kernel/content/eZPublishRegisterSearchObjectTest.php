@@ -7,7 +7,7 @@
  *  RS-02 - Through the operation's parameter mapping, registerSearchObject() gets $isMoved false for a publication
  *          with notify true, false or missing
  *  RS-03 - With DelayedIndexing=enabled the publish step queues index_object (not index_moved_node), whatever notify
- *          is; registerSearchObject() with $isMoved true queues index_moved_node
+ *          is; registerSearchObject() with $isMoved true queues index_moved_node; the row carries its time
  *  RS-04 - No method step of publish without parameters of its own takes more than object_id and version, so a new
  *          operation parameter cannot land in an optional parameter of a step again
  *  RS-05 - Moving a node tells the search engine it is a move: eZContentObjectTreeNodeOperations::move() calls
@@ -225,15 +225,28 @@ class eZPublishRegisterSearchObjectTest extends PHPUnit\Framework\TestCase
             eZDB::setInstance( $db );
             $info->executeClassMethod( 'kernel/content/ezcontentoperationcollection.php', 'eZContentOperationCollection',
                                        'registerSearchObject', $this->parametersOf( $step ), $parameters );
-            $this->assertSame( array( "INSERT INTO ezpending_actions( action, param ) VALUES ( 'index_object', '990401' )" ),
-                               $db->Statements, $case );
+            $this->assertSame( array( 'index_object', '990401' ), $this->queuedRow( $db->Statements ), $case );
         }
 
         $db = new eZPublishRegisterSearchObjectTestDB();
         eZDB::setInstance( $db );
         eZContentOperationCollection::registerSearchObject( 990402, null, true );
-        $this->assertSame( array( "INSERT INTO ezpending_actions( action, param ) VALUES ( 'index_moved_node', '990402' )" ),
-                           $db->Statements, 'a move still queues the subtree reindex' );
+        $this->assertSame( array( 'index_moved_node', '990402' ), $this->queuedRow( $db->Statements ),
+                           'a move still queues the subtree reindex' );
+    }
+
+    /**
+     * The action and param of the one row queued, which carries the time it was queued (created).
+     */
+    private function queuedRow( array $statements )
+    {
+        $this->assertCount( 1, $statements );
+        $this->assertMatchesRegularExpression(
+            "/^INSERT INTO ezpending_actions\\( action, created, param \\) VALUES \\( '([a-z_]+)', ([0-9]+), '([0-9]+)' \\)$/",
+            $statements[0] );
+        preg_match( "/VALUES \\( '([a-z_]+)', ([0-9]+), '([0-9]+)' \\)/", $statements[0], $m );
+        $this->assertLessThanOrEqual( 5, abs( time() - (int)$m[2] ), 'created is the time the row was queued' );
+        return array( $m[1], $m[3] );
     }
 
     /** RS-04 */
