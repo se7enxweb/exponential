@@ -49,6 +49,11 @@ var confObj = {ldelim}
 
     dataSourceURL: "{concat('ezjscore/call/ezjscnode::subtree::', $node.node_id)|ezurl('no')}",
     nodeID: {$node.node_id|int()},
+    {* Reordering the rows by drag and drop (subitems_priority_drag.js): only where the children are sorted by
+       priority and the user may change the priorities - the condition of the classic priority fields
+       (children.tpl $priority). parentObjectID: the object whose cache is cleared, as content/action does. *}
+    priorityDrag: {if and( eq( $node.sort_array[0][0], 'priority' ), $node.can_edit )}true{else}false{/if},
+    parentObjectID: {$node.contentobject_id|int()},
     {* The subitems column registry: expsubitems::columns / ::rows / ::savepreference, and the CSV export.
        Without the server functions the table stays the classic one. *}
     subitemsServer: {if ezini_hasvariable( 'ezjscServer_expsubitems', 'Class', 'ezjscore.ini' )}true{else}false{/if},
@@ -132,6 +137,31 @@ var labelsObj = {ldelim}
                         copy_title: "{'Click to copy'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
                         copied: "{'Copied'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
                         copy_failed: "{'Not copied'|i18n( 'design/admin/node/view/full' )|wash('javascript')}"
+                   {rdelim},
+
+    {* Reordering the rows by drag and drop (subitems_priority_drag.js); %name, %position, %count and %error are
+       filled in by the script *}
+    DRAG: {ldelim}
+
+                        column: "{'Order'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        grip: "{'Move %name'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        grip_title: "{'Drag to change the order'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        hint: "{'Drag the grip to change the order. With the keyboard: Space picks the row up, the arrow keys move it, Space drops it, Escape cancels. Alt+Up and Alt+Down move it by one place at once.'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        picked: "{'Picked up %name. Position %position of %count.'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        position: "{'Position %position of %count'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        moved: "{'Moved to position %position of %count'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        dropped_same: "{'Dropped. The order is unchanged.'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        cancelled: "{'Move cancelled. %name is back at position %position of %count.'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        saved: "{'Order saved'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        undo: "{'Undo'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        restored: "{'Previous order restored'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        error: "{'The order was not saved: %error'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        undo_error: "{'The previous order was not restored: %error'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        error_unknown: "{'unknown error'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        conflict: "{'Someone else changed the order in the meantime. Nothing was saved; the list shows the current order now.'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        unsaved_edit: "{'Save the priority you are editing (Enter) or cancel it (Escape) before you move a row.'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        busy: "{'Please wait until the order is saved.'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        wait_edit: "{'Please wait until the priority is saved.'|i18n( 'design/admin/node/view/full' )|wash('javascript')}"
                    {rdelim},
 
     ACTION_BUTTONS: {ldelim}

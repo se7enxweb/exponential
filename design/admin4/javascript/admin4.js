@@ -221,9 +221,10 @@
 })();
 
 /*
- * admin4 toasts: window.a4Toast( message, kind, opener ) shows a short feedback of an action done in the page in
+ * admin4 toasts: window.a4Toast( message, kind, opener, delay ) shows a short feedback of an action done in the page in
  * the regions #a4-toasts (polite) or, for kind 'bad', #a4-toasts-alert (assertive) of the frame. kind is 'ok',
- * 'bad', 'warn' or 'info'; opener is the element the action came from (optional). The toast does not take the
+ * 'bad', 'warn' or 'info'; opener is the element the action came from (optional); delay the time in ms it stays
+ * (optional, for a toast with an action such as Undo). The toast does not take the
  * focus, closes after 5 s (an error stays until it is dismissed; Escape closes a focused toast), waits while the pointer or the focus is on it, and has a close button named by the
  * region's data-close-label. Closed with that button, it gives the focus to the opener when it is still in the page;
  * without one the focus goes to the page, as with any removed element. A toast with the same text replaces the one
@@ -232,7 +233,7 @@
 (function () {
     'use strict';
     var DELAY = 5000, MAX = 3;
-    window.a4Toast = function (message, kind, opener) {
+    window.a4Toast = function (message, kind, opener, delay) {
         var region = document.getElementById(kind === 'bad' ? 'a4-toasts-alert' : 'a4-toasts');
         if (!region || !message) return null;
         // the same text again replaces the toast shown; more than MAX: the oldest goes
@@ -257,7 +258,7 @@
         var timer = null, held = false;
         function remove() { if (timer) clearTimeout(timer); if (toast.parentNode) toast.parentNode.removeChild(toast); }
         // an error stays until it is dismissed (WCAG 2.2.1): the user may have to act on it
-        function arm() { if (timer) clearTimeout(timer); if (!held && kind !== 'bad') timer = setTimeout(remove, DELAY); }
+        function arm() { if (timer) clearTimeout(timer); if (!held && kind !== 'bad') timer = setTimeout(remove, delay > 0 ? delay : DELAY); }
         function hold(on) { held = on; if (on) { if (timer) clearTimeout(timer); timer = null; } else arm(); }
         close.addEventListener('click', function () {
             remove();

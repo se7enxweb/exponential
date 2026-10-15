@@ -549,6 +549,62 @@ div.block.a4-content-attr { margin: 0 0 var(--a4-space-5); padding-bottom: 0; } 
       [type=url], [type=tel], [type=search], [type=date], [type=time], [type=datetime-local], select, textarea) { font-size: var(--a4-text-l); }
 }
 
+/* ---- sub items: reordering the rows by drag and drop (javascript/subitems_priority_drag.js) -----------------
+   The column of grips (.a4-content-drag, hidden by the script while the table is not sorted as the parent sorts),
+   the moved row as its own placeholder, the ghost with the name that follows the pointer (fixed, placed through
+   --a4-content-drag-x/-y/-w set by the script), and the table while the order is being saved. */
+
+.a4-content-drag-on td.a4-content-drag { width: 1%; padding-right: 0; white-space: nowrap; }
+.a4-content-drag-on .a4-content-drag-grip { width: var(--a4-space-6); min-height: var(--a4-space-6); font-size: var(--a4-text-m); }
+.a4-content-drag-grip:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
+.a4-content-drag-grip[aria-pressed="true"] { border-style: solid; border-color: var(--a4-accent); background-color: var(--a4-accent-soft); color: var(--a4-accent-text); cursor: grabbing; }
+.a4-content-drag-moving, .a4-content-drag-moving * { cursor: grabbing; user-select: none; -webkit-user-select: none; }
+.a4-content-drag-on tr.a4-content-drag-placeholder > td { background-color: var(--a4-accent-soft); }
+.a4-content-drag-on tr.a4-content-drag-placeholder > td:not(.a4-content-drag) { opacity: .6; }
+.a4-content-drag-on tr.a4-content-drag-placeholder > td:first-child { box-shadow: inset 3px 0 0 var(--a4-accent); }
+.a4-content-drag-on tr.a4-content-drag-placeholder { outline: 2px dashed var(--a4-accent); outline-offset: -2px; }
+.a4-content-drag-saving .exp-dt-body { opacity: .7; transition: opacity .15s ease-out; }
+.a4-content-drag-ghost {
+  position: fixed;
+  top: var(--a4-content-drag-y, 0);
+  left: var(--a4-content-drag-x, 0);
+  z-index: var(--a4-z-drag);
+  display: flex;
+  align-items: center;
+  gap: var(--a4-space-2);
+  box-sizing: border-box;
+  width: var(--a4-content-drag-w, auto);
+  max-width: calc(100vw - 2 * var(--a4-space-4));
+  padding: var(--a4-space-2) var(--a4-space-3);
+  border: 1px solid var(--a4-accent);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  box-shadow: var(--a4-shadow-m);
+  color: var(--a4-ink);
+  font-size: var(--a4-text-m);
+  pointer-events: none;
+  transform: rotate(-.6deg);
+}
+.a4-content-drag-ghost .a4-icon { color: var(--a4-accent-text); }
+.a4-content-drag-ghost-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 650; }
+@media (pointer: coarse) {
+  .a4-content-drag-on .a4-content-drag-grip { width: var(--a4-space-7); min-height: var(--a4-space-7); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .a4-content-drag-ghost { transform: none; }
+  .a4-content-drag-saving .exp-dt-body { transition: none; }
+}
+@media (forced-colors: active) {
+  .a4-content-drag-on tr.a4-content-drag-placeholder { outline-color: Highlight; }
+  .a4-content-drag-on tr.a4-content-drag-placeholder > td:not(.a4-content-drag) { opacity: 1; }
+  .a4-content-drag-grip[aria-pressed="true"] { border-color: Highlight; outline: 2px solid Highlight; }
+  .a4-content-drag-ghost { border: 2px solid CanvasText; }
+  .a4-content-drag-ghost .a4-icon { forced-color-adjust: none; background-color: CanvasText; }
+}
+@media print {
+  .a4-content-drag-on .a4-content-drag { display: none; }
+}
+
 /* Forced colors (Windows high contrast) drop backgrounds and box-shadows and repaint borders in one colour: a state
    that differs only by them (current, selected, moved, pressed, changed) gets a Highlight outline. */
 @media (forced-colors: active) {

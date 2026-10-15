@@ -9520,6 +9520,82 @@
         <translation>Not copied</translation>
     </message>
     <message>
+        <source>Order</source>
+        <translation>Order</translation>
+    </message>
+    <message>
+        <source>Move %name</source>
+        <translation>Move %name</translation>
+    </message>
+    <message>
+        <source>Drag to change the order</source>
+        <translation>Drag to change the order</translation>
+    </message>
+    <message>
+        <source>Drag the grip to change the order. With the keyboard: Space picks the row up, the arrow keys move it, Space drops it, Escape cancels. Alt+Up and Alt+Down move it by one place at once.</source>
+        <translation>Drag the grip to change the order. With the keyboard: Space picks the row up, the arrow keys move it, Space drops it, Escape cancels. Alt+Up and Alt+Down move it by one place at once.</translation>
+    </message>
+    <message>
+        <source>Picked up %name. Position %position of %count.</source>
+        <translation>Picked up %name. Position %position of %count.</translation>
+    </message>
+    <message>
+        <source>Position %position of %count</source>
+        <translation>Position %position of %count</translation>
+    </message>
+    <message>
+        <source>Moved to position %position of %count</source>
+        <translation>Moved to position %position of %count</translation>
+    </message>
+    <message>
+        <source>Dropped. The order is unchanged.</source>
+        <translation>Dropped. The order is unchanged.</translation>
+    </message>
+    <message>
+        <source>Move cancelled. %name is back at position %position of %count.</source>
+        <translation>Move cancelled. %name is back at position %position of %count.</translation>
+    </message>
+    <message>
+        <source>Order saved</source>
+        <translation>Order saved</translation>
+    </message>
+    <message>
+        <source>Undo</source>
+        <translation>Undo</translation>
+    </message>
+    <message>
+        <source>Previous order restored</source>
+        <translation>Previous order restored</translation>
+    </message>
+    <message>
+        <source>The order was not saved: %error</source>
+        <translation>The order was not saved: %error</translation>
+    </message>
+    <message>
+        <source>The previous order was not restored: %error</source>
+        <translation>The previous order was not restored: %error</translation>
+    </message>
+    <message>
+        <source>unknown error</source>
+        <translation>unknown error</translation>
+    </message>
+    <message>
+        <source>Someone else changed the order in the meantime. Nothing was saved; the list shows the current order now.</source>
+        <translation>Someone else changed the order in the meantime. Nothing was saved; the list shows the current order now.</translation>
+    </message>
+    <message>
+        <source>Save the priority you are editing (Enter) or cancel it (Escape) before you move a row.</source>
+        <translation>Save the priority you are editing (Enter) or cancel it (Escape) before you move a row.</translation>
+    </message>
+    <message>
+        <source>Please wait until the order is saved.</source>
+        <translation>Please wait until the order is saved.</translation>
+    </message>
+    <message>
+        <source>Please wait until the priority is saved.</source>
+        <translation>Please wait until the priority is saved.</translation>
+    </message>
+    <message>
         <source>Object</source>
         <translation>Object</translation>
     </message>
