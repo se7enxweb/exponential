@@ -155,4 +155,34 @@ class ezjscoreVendoredLibrariesTest extends TestCase
                 'extension.xml declares ' . self::LIBRARIES[$library] . ' ' . $shipped );
         }
     }
+
+    /**
+     * An ezjscore.ini of another extension, a siteaccess or the override settings that names a jQuery file must name
+     * one that exists in some design: an old override with the files ezjscore no longer ships loads nothing. Only
+     * the settings files present are read, so a checkout without extensions passes.
+     */
+    public function testNoOtherSettingsNameAJqueryFileThatIsGone(): void
+    {
+        $base = dirname( __DIR__, 4 );
+        $files = array_merge( glob( "$base/settings/{siteaccess/*,override}/ezjscore.ini*", GLOB_BRACE ) ?: array(),
+                              glob( "$base/extension/*/settings/ezjscore.ini*" ) ?: array(),
+                              glob( "$base/extension/*/settings/siteaccess/*/ezjscore.ini*" ) ?: array() );
+        $missing = array();
+        foreach ( $files as $file )
+        {
+            if ( strpos( $file, "$base/extension/ezjscore/" ) === 0 )
+                continue;
+            preg_match_all( '/^[ \t]*LocalScripts\[(jquery|jqueryMigrate|jqueryUI)\][ \t]*=[ \t]*(\S+)/m', (string)file_get_contents( $file ), $m, PREG_SET_ORDER );
+            foreach ( $m as $match )
+            {
+                $name = $match[2];
+                if ( self::parse( basename( $name ) ) === null )
+                    continue;
+                $sub = $name[0] === '/' ? $name : '/javascript/' . $name;
+                if ( !glob( "$base/design/*$sub" ) && !glob( "$base/extension/*/design/*$sub" ) )
+                    $missing[] = substr( $file, strlen( $base ) + 1 ) . ": LocalScripts[{$match[1]}]=$name";
+            }
+        }
+        $this->assertSame( array(), $missing, 'jQuery files named in settings that no design holds' );
+    }
 }
