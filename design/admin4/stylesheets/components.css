@@ -165,6 +165,8 @@
   --a4-cell-pad-x: var(--a4-space-3);
   --a4-card-pad-y: var(--a4-space-3);
   --a4-card-pad-x: var(--a4-space-4);
+  /* the gap between the frame's cards: side columns, content, header (admin4.css); 24px, compact 16px */
+  --a4-gutter: var(--a4-space-5);
 
   /* the browser's own parts (scrollbars, select popups, date pickers, autofill) follow the mode */
   color-scheme: light;
@@ -181,6 +183,7 @@ html[data-a4-density="compact"] {
   --a4-cell-pad-x: var(--a4-space-2);
   --a4-card-pad-y: var(--a4-space-2);
   --a4-card-pad-x: var(--a4-space-3);
+  --a4-gutter: var(--a4-space-4);
 }
 
 /* ---- Tokens: dark (admin4) --------------------------------------------------------------------------------- */

@@ -330,14 +330,28 @@ html[data-a4-theme-choice="system"] .a4-theme-toggle .a4-icon-system { display: 
   padding: var(--a4-space-2) var(--a4-space-2) var(--a4-space-3);   /* the right column is 240px wide: more would push its buttons past the card */
 }
 
-/* Tight edges: the side columns' outer margin (admin3: 2rem), the main column's padding (2rem) and the space under the
-   header were each 32px; halved, so the gap between a side column and the main body is 16px + 16px, not 32 + 32. */
+/* One gutter between the cards: --a4-gutter (24px, compact 16px) between a side column's card and the content, under
+   the header and at the cards' bottom, the gap of a common 24px layout grid. The window's edges keep at least 24px
+   (--a4-space-5): the side columns' tabs are 24px wide and stand there. Until 2026-10 a card's 16px margin, the
+   body's 8px and the content's 24px padding added up to 48px between the columns. */
 .sidebar > div,
 .sidebar.left > div {
-  margin: 1rem;
+  margin: var(--a4-gutter) var(--a4-gutter) var(--a4-gutter) var(--a4-space-5);
+}
+.sidebar.right > div {
+  margin: var(--a4-gutter) var(--a4-space-5) var(--a4-gutter) var(--a4-gutter);
 }
 .content-wrapper {
-  padding: 1rem var(--a4-space-5);   /* 24px a side: the sidebar tabs on the window's edges are 24px wide */
+  padding: var(--a4-gutter) var(--a4-space-5);   /* 24px a side where a tab stands at the window's edge */
+}
+/* a column beside the content: the column ends where the content begins, its card's margin is the whole gap */
+@media screen and (min-width: 1024px) {
+  html body:has(.sidebar.left.show) { margin-left: var(--left-sidebar-width, 15rem); }
+  body:has(.sidebar.left.show) .content-wrapper { padding-left: 0; }
+}
+@media screen and (min-width: 1280px) {
+  html body:has(.sidebar.right.show) { margin-right: 15rem; }
+  body:has(.sidebar.right.show) .content-wrapper { padding-right: 0; }
 }
 @media screen and (max-width: 1023.98px) {
   .content-wrapper {
@@ -1718,9 +1732,9 @@ div#contentstructure ul#content_tree_menu ul a.openclose-error { top: 2px; }
    two rows of dots, the resize cursor, the focus ring; the arrow keys change the width too. */
 .leftmenu-resize-handle {
   box-sizing: border-box;
-  width: var(--a4-space-4);
+  width: var(--a4-space-3);
   height: var(--a4-space-7);
-  right: calc(-1 * var(--a4-space-2));
+  right: calc((var(--a4-gutter) - var(--a4-space-3)) / 2);   /* in the gutter between the card and the content */
   border-radius: var(--a4-radius-s);
   background: var(--a4-card);
   box-shadow: 0 0 0 1px var(--a4-line-strong), var(--a4-shadow-s);
