@@ -80,8 +80,33 @@ jobs:
           done
           exit $status
 
+      # Blocking for pull requests too: a stale line merged into main shows up in every site's
+      # upgrade check as a modified file. On a failure the job prints the lines to change and the
+      # command that changes them, so the author can fix the branch with one commit.
       - name: File manifest (share/filelist.md5)
-        run: php bin/php/checkmanifest.php --all
+        run: |
+          if php bin/php/checkmanifest.php --all; then
+            exit 0
+          fi
+          php bin/php/checkmanifest.php --fix > /dev/null || true
+          patch_file="$RUNNER_TEMP/filelist.md5.diff"
+          git diff -- share/filelist.md5 > "$patch_file"
+          git checkout -- share/filelist.md5
+          echo "::error file=share/filelist.md5::share/filelist.md5 does not match the files of this change. Run 'make manifest-fix' (php bin/php/checkmanifest.php --fix) in the branch and commit share/filelist.md5 (or 'make hooks' once, so the pre-commit hook checks it). The lines to change follow; see doc/features/6.0/quality-checks.md"
+          echo "--- The change to share/filelist.md5 that makes it match (or save it and git apply it) ---"
+          cat "$patch_file"
+          {
+            echo "### share/filelist.md5 does not match the files of this change"
+            echo
+            echo "Run \`make manifest-fix\` (\`php bin/php/checkmanifest.php --fix\`) in your branch and commit \`share/filelist.md5\`"
+            echo "with a message such as \`Updated: The file manifest carries the checksums of ...\`."
+            echo "Or apply this change. Run \`make hooks\` once, so the pre-commit hook checks it for every commit."
+            echo
+            echo '```diff'
+            cat "$patch_file"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+          exit 1
 
       - name: Commit messages
         run: |

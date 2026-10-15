@@ -128,10 +128,36 @@ The job `php80` is the check for the oldest supported version, PHP 8.0 (the stoc
 
 The pre-commit hook and `make lint80` run the same syntax check on changed files when a PHP 8.0 binary is available.
 
-The dependency installs of the workflows run on the `main` branch, where the root package is `dev-main`. Its branch
-alias `"dev-main": "6.0.x-dev"` in `composer.json` (from 2026-10-12) lets a required package that names
-`se7enxweb/exponential` with a version constraint, such as expqueue's `^6.0.14`, resolve against it; without it the
-install stops with "could not be resolved".
+The dependency installs of the workflows resolve the root package as `dev-main`. Its branch alias
+`"dev-main": "6.0.x-dev"` in `composer.json` (from 2026-10-12) lets a required package that names
+`se7enxweb/exponential` with a version constraint, such as expqueue's and expai's `^6.0.14`, resolve against it;
+without it the install stops with "could not be resolved". A push to `main` gets `dev-main` from the checked-out
+branch. A pull request is checked out as a detached merge commit, where Composer finds no branch and calls the root
+package `dev-<sha>` or `1.0.0`, so the three workflows set `COMPOSER_ROOT_VERSION=dev-main` (from 2026-10-15). Until
+then every pull request failed its installs and with them PHPStan, PHPUnit, the PHP 8.0 job and the sniff tests,
+and the benchmark ran nothing.
+
+### Pull requests
+
+A pull request gets the same blocking checks as a push to `main`, on the merge of the branch into `main`. Two of
+them depend on the branch, not on the code:
+
+- **The file manifest.** Every commit that adds, changes or removes a file updates its line in
+  `share/filelist.md5`; `make hooks` makes the pre-commit hook refuse a commit that forgets it. When CI finds a stale
+  line, the job prints the change to `share/filelist.md5` that makes it match, as an annotation, in the log and in
+  the job summary. Run `make manifest-fix` (`php bin/php/checkmanifest.php --fix`) in the branch and commit the
+  result, e.g. `Updated: The file manifest carries the checksums of ...`. The check stays blocking for pull
+  requests: a branch merged with a stale line puts that line on `main`, where every site's upgrade check lists the
+  file as modified.
+- **The commit messages.** Every commit of the branch starts with `Added: `, `Updated: `, `Fixed: `, `Removed: `
+  or `Renamed: `. A merge commit is not checked. Reword a commit with `git rebase -i` before the merge.
+
+When `main` changed `share/filelist.md5` since the branch started, merge `main` into the branch and run
+`make manifest-fix` again rather than resolving the conflict by hand.
+
+The `Database tests` jobs run every suite of `phpunit.xml` with `tests/runtests.php --dsn ... --db-per-test` and fail
+on a failure or error (before 2026-10-15 the runner always exited with 0, and the job passed whatever the tests
+reported; it also named the `tests` directory, which ran files that `phpunit.xml` excludes).
 
 ### Before you push
 
@@ -199,3 +225,9 @@ that is outside the suites of `phpunit.xml` is not part of the full run either; 
 files use (`eZINI`, `eZUser`) finds a large part of the suite; keep the files named after the class and the ones of
 the changed file's own directory. When a new test covers code that its file does not name, add an entry to `map` in
 `tests/test-map.json` in the same commit.
+
+Tests that scan the whole tree name no file, so the map lists them by pattern: every PHP file and every script in
+`bin/` runs `expFileModeLimitsTest` (no `chmod()`, `mkdir()` or `umask()` past the mode limits), every INI file runs
+`expIniRoundTripTest`, and `composer.json` runs both and `AdminStylingRulesTest`, because a repinned package brings
+its own PHP, INI files and admin templates. Each of these once reached `main` through a change whose own tests
+passed (October 2026).

@@ -6,12 +6,12 @@ e399d1ae8564340ae3012f346d90bfa0  .githooks/pre-push
 a65c763ef0340e232cfe8c274f56fca0  .github/FUNDING.yml
 a5e5334f58df49e18097ed70241e9ba0  .github/workflows/performance.yml
 957c53e2fb7596b9f1c0e964c15c3d3e  .github/workflows/phpunit.yml
-cdcb6cd45f926a7f3e35a796384c81d4  .github/workflows/quality.yml
+7920da519197fbdec3f8fdd707f18ebc  .github/workflows/quality.yml
 1378291033e16daa1ef6e265447a2201  .gitignore
 9ae9da440bdbe3c882b160ce651bbbca  .htaccess_root
 cae6b5db9c9f45f8e87552cdc09e083a  .htaccess_root_static
 6f1b96d8c290abdef88145a2d5c34a83  .travis.yml
-59725baee0ff8baf5309f8f59722b3b7  CONTRIBUTING.md
+9bc39cbbd508f29dffd23bfc2628dc59  CONTRIBUTING.md
 eab760120a50cdf35a0fd50618301b24  COPYRIGHT.md
 d34848eec00c077171187386a805c85b  LICENSE
 bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
@@ -3476,7 +3476,7 @@ afec5a2b80e838f67a095f7657bed36d  doc/features/6.0/platform-nexus-starter.md
 77b6dcb702be5b7cb2f3197dd5c1aef1  doc/features/6.0/platform-sqlite-install.md
 bd00eb2e724c0f4f3612917275e79456  doc/features/6.0/preload-sites-view.md
 7fa66cfaa817deccf7e3293c09e6cb73  doc/features/6.0/publish-without-notification.md
-d51fbe1538e7b94889ca54c7f03e2d96  doc/features/6.0/quality-checks.md
+c8b45dbcdc4ce2930ae9d5bf6cbcf7f4  doc/features/6.0/quality-checks.md
 b44b9ac50952ac2e8f16cbb8f32b9b1b  doc/features/6.0/rad-tools.md
 08e9e00824933e2b7737283320b6e967  doc/features/6.0/rebranding-to-exponential.md
 12527c047b3b9350ebd0481dcb338531  doc/features/6.0/remote-services-expservices.md

@@ -55,13 +55,18 @@ git checkout -b feature/your-feature
 
 2. Update the documentation if necessary.
 
-3. Push your changes to your fork.
+3. Keep the file manifest current: every commit that adds, changes or removes a file updates its line in
+   `share/filelist.md5` (`make manifest-fix`). Run `make hooks` once in your clone, and the pre-commit hook checks
+   it, the PHP syntax and the code style for every commit. When CI still finds a stale line, its summary shows the
+   lines to change; see [Pull requests](doc/features/6.0/quality-checks.md#pull-requests).
+
+4. Push your changes to your fork.
 
 ```bash
 git push origin feature/your-feature
 ```
 
-4. Submit a pull request to the main repository.
+5. Submit a pull request to the main repository.
 
 ## Code Reviews
 
