@@ -1,5 +1,5 @@
 {* The audit/recent view: the latest audit events (newest first) and the state of each channel's hash chain.
-   Read-only (policy audit/read). Variables: events, chains, channel, channel_names, audit_enabled, log_dir,
+   Read-only (policy audit/read). Variables: events, chains, channel, channel_names, audit_enabled, can_manage, log_dir,
    verified_today_only, limit, request_id, audit_sources (audit/sources.tpl). *}
 
 <div class="context-block a4-audit-view a4-page" id="exp-audit-recent">
@@ -24,9 +24,9 @@
 {/foreach}
 {if $chains|count|not}<li class="a4-audit-note">{'No audit files yet.'|i18n( 'design/admin/audit' )}</li>{/if}
 </ul>
-<form method="post" action={concat( 'audit/recent', $channel|ne( '' )|choose( '', concat( '/', $channel ) ) )|ezurl} class="a4-audit-verify">
+<form method="post" action={concat( 'audit/recent', $channel|ne( '' )|choose( '', concat( '/(channel)/', $channel ) ) )|ezurl} class="a4-audit-verify">
     <p class="a4-audit-note">{'The chain status is the result of the last verification (daily maintenance, exp:audit verify or this button).'|i18n( 'design/admin/audit' )}
-    <input type="submit" class="button" name="AuditVerifyNowButton" value="{'Verify now'|i18n( 'design/admin/audit' )}" /></p>
+    {if $can_manage}<input type="submit" class="button" name="AuditVerifyNowButton" value="{'Verify now'|i18n( 'design/admin/audit' )}" />{/if}</p>
 </form>
 
 {if $channel_names|count}

@@ -1,3 +1,27 @@
+# 1.7.0
+- Removed: the older jQuery copies nothing loaded: jquery-3.7.1.js, jquery-3.7.1.min.js,
+  jquery-migrate-3.4.1.min.js and jquery-ui-1.10.3.custom.min.js (jQuery UI 1.10.3 has known
+  vulnerabilities). design/standard/javascript/ holds one release of each library: jQuery 4.0.0,
+  jQuery Migrate 4.0.2 and jQuery UI 1.14.2. A template or an ezjscore.ini of a site that names one
+  of the removed files loads nothing for it: name ezjsc::jquery / ezjsc::jqueryUI or the shipped file.
+- Updated: on a siteaccess that requires a sign-in (RequireUserLogin=true, normally the admin),
+  ezjscore/call needs a signed-in user: site.ini.append.php no longer lists it in
+  [SiteAccessSettings] AnonymousAccessList. Front ends are not affected.
+- Updated: the ajax uploader keeps the stored file on the server between its steps. The location
+  form carries a one-time token, bound to the user and the upload target and valid for an hour,
+  instead of a path; the file is taken only from the storage directory; every step checks the
+  handler's canUpload(). A location form override replaces the UploadFile field with UploadToken;
+  the admin designs of Exponential 6.0.15 carry the new form, so on an older kernel override
+  ajaxuploader/location.tpl the same way.
+  [ezjscServer_ezajaxuploader] RequirePolicy (disabled) can also ask for ezjscore/call with the
+  function list ezajaxuploader.
+- Updated: ezjsc::search passes only positive integer ids to the search engine (subtrees, sections,
+  class attributes, the time limit) and looks up a class named by its identifier to its id; the
+  offset and the limit are at least 0 and 1.
+- Updated: German translation of the uploader's new message.
+- Updated: Version 1.7.0 in ezinfo.php and extension.xml.
+
+
 # 1.6.0
 - Added: [ezjscServer_<group>] RequirePolicy (ezjscore.ini). Not set: Functions[] is checked as
   before. disabled: not checked. enabled: checked, and a request whose calls are all refused is

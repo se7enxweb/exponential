@@ -31,8 +31,11 @@ Now (commits `74bc4ccbd8`, `104a4b487a`, `3d125848e8`):
 - **Version** comes from `extension.xml`, `ezinfo.php` or `composer.json`
   ([extension metadata](../../specifications/6.0/extension-metadata.md)); a dash means none is stated.
 - **Modified** is the time of the newest file inside the extension, not of its folder.
-- **Download** as `tar.gz`, `zip`, `tar.bz2` or `ezpkg`: `/setup/extensions/<extension name>/<format>`. The server
-  builds the package with the `ezextension` package handler, streams it and removes the temporary file.
+- **Download** as `tar.gz`, `zip`, `tar.bz2` or `ezpkg`: a button of the page's form, which posts
+  `ExtensionDownload=<extension name>/<format>` with the form token. The server builds the package with the
+  `ezextension` package handler, streams it and removes the temporary file. Since 14 October 2026 the address
+  `/setup/extensions/<extension name>/<format>` no longer downloads (it shows the list), and an extension that holds
+  a secret value or key material is not packed ([the secret check](extension-package-secret-check.md)).
 - **Package wizard.** Setup > Packages > Create package > Extension shows the same sorted table with Version,
   Modified and a Details card, without download links.
 - **Developer API.** `eZExtension::extensionInfo( $name )` in `lib/ezutils/classes/ezextension.php` returns `name`,
@@ -43,7 +46,7 @@ Now (commits `74bc4ccbd8`, `104a4b487a`, `3d125848e8`):
 
 1. Open `/setup/extensions` in the admin. The column headers Order, Name, Version and Modified are links, and
    **Details** opens a card with four download links.
-2. Open `/setup/extensions/ezflow/zip`. The browser downloads `ezflow.zip`.
+2. Open **Details** on the ezflow row and press **.zip**. The browser downloads `ezflow.zip`.
 3. Open Setup > Packages > Create package > Extension. The list is a sorted table with Version and Modified.
 
 ## How to fix an override

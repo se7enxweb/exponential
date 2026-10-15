@@ -216,6 +216,8 @@ $ViewList["extensions"] = array(
     "default_navigation_part" => 'ezsetupnavigationpart',
     'single_post_actions' => array( 'ActivateExtensionsButton' => 'ActivateExtensions',
                                     'GenerateAutoloadArraysButton' => 'GenerateAutoloadArrays' ),
+    // read by nothing since downloads are a posted button (ExtensionDownload): kept so an old download address
+    // /setup/extensions/<name>/<format> still opens the list
     "params" => array( 'ExtensionName', 'ExtensionFormat' ) );
 
 // The Setup overview (the Setup tab's first page) shows only the functions the user may open, so it opens for

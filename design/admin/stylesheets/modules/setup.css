@@ -995,3 +995,17 @@ a.a4-setup-tile-link:focus-visible::after { outline: 3px solid var(--a4-ring); o
   .a4-setup-tile:hover { border-color: Highlight; }
   a.a4-setup-tile-link:focus-visible::after { outline-color: Highlight; }
 }
+
+/* Forced colors (Windows high contrast) drop backgrounds and box-shadows and repaint borders in one colour: a state
+   that differs only by them (current, selected, moved, pressed, changed) gets a Highlight outline. */
+@media (forced-colors: active) {
+  .a4-setup-bar.is-dirty,
+  .a4-setup-ext .a4-grip[aria-pressed="true"],
+  .a4-setup-lines .is-moved,
+  .a4-setup-preset[aria-pressed="true"],
+  .a4-setup-part-row.is-current,
+  .a4-setup-wz-match.is-current,
+  .a4-setup-wz-tables tr.is-selected,
+  .a4-page a.a4-setup-survey-tab.is-current,
+  .a4-page a.a4-setup-survey-kind.is-current { outline: 2px solid Highlight; outline-offset: -2px; }
+}

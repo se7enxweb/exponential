@@ -63,8 +63,8 @@ class Search extends \Exponential\Runnable\ModuleView
         $Module = $Params['Module'];
         $Offset = $Params['Offset'];
 
-        if ( !is_numeric( $Offset ) )
-            $Offset = 0;
+        // a negative offset makes the search engine fail
+        $Offset = is_numeric( $Offset ) ? max( 0, (int)$Offset ) : 0;
 
         $searchPageLimit = 2;
         $tpl = \eZTemplate::factory();
@@ -75,6 +75,8 @@ class Search extends \Exponential\Runnable\ModuleView
         if ( $http->hasVariable( 'BrowsePageLimit' ) )
         {
             $pageLimit = (int)$http->variable( 'BrowsePageLimit' );
+            if ( $pageLimit < 1 )
+                $pageLimit = pageLimit( $searchPageLimit );
         }
         else
         {
@@ -96,11 +98,25 @@ class Search extends \Exponential\Runnable\ModuleView
             // A form or link can pass the text as an array; treat that as no text
             if ( !is_string( $searchText ) ) $searchText = "";
         }
+        // A very long text makes the search engine fail: it is cut to site.ini [SearchSettings]
+        // MaximumSearchTextWords words and MaximumSearchTextLength characters
+        list( $maximumWords, $maximumLength ) = self::searchTextLimits( $ini );
+        $requestedSearchText = $searchText;
+        $searchText = self::limitSearchText( $searchText, $maximumWords, $maximumLength );
+        $searchTextShortened = $searchText !== $requestedSearchText;
 
+        // A section that does not exist is no section: the search is not limited to it
         $searchSectionID = -1;
+        $section = null;
         if ( $http->hasVariable( "SectionID" ) )
         {
-            $searchSectionID = (int)$http->variable( "SectionID" );
+            $searchSectionID = self::sectionID( $http->variable( "SectionID" ) );
+            if ( $searchSectionID != -1 )
+            {
+                $section = \eZSection::fetch( $searchSectionID );
+                if ( !$section instanceof \eZSection )
+                    $searchSectionID = -1;
+            }
         }
 
         $searchTimestamp = false;
@@ -125,8 +141,8 @@ class Search extends \Exponential\Runnable\ModuleView
                 $subTreeList = array( $http->variable( "SubTreeArray" ) );
             foreach ( $subTreeList as $subTreeItem )
             {
-                if ( is_numeric( $subTreeItem ) && $subTreeItem > 0 )
-                    $subTreeArray[] = $subTreeItem;
+                if ( is_numeric( $subTreeItem ) && (int)$subTreeItem > 0 )
+                    $subTreeArray[] = (int)$subTreeItem;
             }
         }
         // no subtree asked for: the siteaccess's own tree when it has a PathPrefix
@@ -135,7 +151,13 @@ class Search extends \Exponential\Runnable\ModuleView
 
         $Module->setTitle( "Search for: " . htmlspecialchars( $searchText, ENT_QUOTES, 'UTF-8' ) );
 
-        if ( $useSearchCode )
+        // Without a text there is nothing to search for, unless site.ini [SearchSettings] AllowEmptySearch is
+        // enabled: an empty search would list every object
+        $searchRequested = trim( $searchText ) !== '' || $ini->variable( 'SearchSettings', 'AllowEmptySearch' ) == 'enabled';
+        // null until a search ran (or none is requested); the browse mode below searches when it is still null
+        $searchResult = $searchRequested ? null : self::emptySearchResult();
+
+        if ( $useSearchCode && $searchRequested )
         {
             $sortArray = array( array( 'attribute', true, 153 ), array( 'priority', true ) );
             $searchResult = \eZSearch::search( $searchText, array( "SearchType" => $searchType,
@@ -149,7 +171,6 @@ class Search extends \Exponential\Runnable\ModuleView
         if ( $searchSectionID != -1 )
         {
             $res = \eZTemplateDesignResource::instance();
-            $section = \eZSection::fetch( $searchSectionID );
             $keyArray = array( array( 'section', $searchSectionID ),
                                array( 'section_identifier', $section->attribute( 'identifier' ) ) );
             $res->setKeys( $keyArray );
@@ -163,6 +184,8 @@ class Search extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( "search_subtree_array", $subTreeArray );
         $tpl->setVariable( 'search_timestamp', $searchTimestamp );
         $tpl->setVariable( "search_text", $searchText );
+        $tpl->setVariable( 'search_text_shortened', $searchTextShortened );
+        $tpl->setVariable( 'search_requested', $searchRequested );
         $tpl->setVariable( 'search_page_limit', $searchPageLimit );
 
         $tpl->setVariable( "view_parameters", $viewParameters );
@@ -170,7 +193,7 @@ class Search extends \Exponential\Runnable\ModuleView
 
         if ( $http->hasVariable( 'Mode' ) && $http->variable( 'Mode' ) == 'browse' )
         {
-            if( !isset( $searchResult ) )
+            if ( $searchResult === null )
                 $searchResult = \eZSearch::search( $searchText, array( "SearchType" => $searchType,
                                                                       "SearchSectionID" => $searchSectionID,
                                                                       "SearchSubTreeArray" => $subTreeArray,
@@ -182,14 +205,14 @@ class Search extends \Exponential\Runnable\ModuleView
         //    $searchResult['RequestedURISuffix'] = $sys->serverVariable( "QUERY_STRING" );
 
 
-            $searchResult['RequestedURISuffix'] = 'SearchText=' . urlencode ( $searchText ) . ( isset( $subTreeArray[0] ) ? '&SubTreeArray=' . $subTreeArray[0] : '' ) . ( ( $searchTimestamp > 0 ) ?  '&SearchTimestamp=' . $searchTimestamp : '' ) . '&BrowsePageLimit=' . $pageLimit . '&Mode=browse';
+            $searchResult['RequestedURISuffix'] = self::pageURISuffix( $searchText, $subTreeArray, $searchSectionID, $searchTimestamp ) . '&BrowsePageLimit=' . $pageLimit . '&Mode=browse';
             return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->run( 'browse',array(),array( "NodeList" => $searchResult,
                                                          "Offset" => $Offset,
                                                          "NodeID" => isset( $subTreeArray[0] ) && $subTreeArray[0] != 1 ? $subTreeArray[0] : null  ) ) );
         }
 
         // Audit (doc/bc/6.0/audit.md, content.search.query): a sampled read
-        if ( isset( $searchResult ) && is_array( $searchResult ) && class_exists( 'expAuditHook' ) )
+        if ( $searchRequested && isset( $searchResult ) && is_array( $searchResult ) && class_exists( 'expAuditHook' ) )
             \expAuditHook::read( 'content.search.query', null, function () use ( $searchText, $searchResult ) {
                 $phrase = (string)$searchText;
                 if ( function_exists( 'mb_substr' ) && mb_strlen( $phrase ) > 64 )
@@ -201,6 +224,9 @@ class Search extends \Exponential\Runnable\ModuleView
         // --- Compatibility code start ---
         if ( $useSearchCode )
         {
+            // with the search code on, a search ran when one was requested: $searchResult is set
+            if ( $searchResult === null )
+                $searchResult = self::emptySearchResult();
             $tpl->setVariable( "offset", $Offset );
             $tpl->setVariable( "page_limit", $pageLimit );
             $tpl->setVariable( "search_text_enc", urlencode( $searchText ) );
@@ -251,6 +277,88 @@ class Search extends \Exponential\Runnable\ModuleView
         }
 
         return $this->viewResult( isset( $Result ) ? $Result : null, null );
+    }
+
+    /**
+     * What the pages of a search pass on: the text, every subtree (SubTreeArray[] once per node), the section and
+     * the time limit. Without the section and with the subtrees joined by commas, the second page of a search
+     * searched elsewhere than the first.
+     *
+     * @param string $searchText
+     * @param int[] $subTreeArray
+     * @param int $sectionID -1 for none
+     * @param int|false $searchTimestamp
+     * @return string the query string, without the leading ? or &
+     */
+    public static function pageURISuffix( $searchText, array $subTreeArray, $sectionID, $searchTimestamp )
+    {
+        $suffix = 'SearchText=' . urlencode( (string)$searchText );
+        foreach ( $subTreeArray as $subTreeID )
+            $suffix .= '&' . urlencode( 'SubTreeArray[]' ) . '=' . (int)$subTreeID;
+        if ( (int)$sectionID > 0 )
+            $suffix .= '&SectionID=' . (int)$sectionID;
+        if ( (int)$searchTimestamp > 0 )
+            $suffix .= '&SearchTimestamp=' . (int)$searchTimestamp;
+        return $suffix;
+    }
+
+    /**
+     * A section id of the request: a positive integer, or -1 for none.
+     *
+     * @param mixed $value
+     * @return int
+     */
+    public static function sectionID( $value )
+    {
+        $sectionID = is_scalar( $value ) ? (int)$value : 0;
+        return $sectionID > 0 ? $sectionID : -1;
+    }
+
+    /**
+     * site.ini [SearchSettings] MaximumSearchTextWords and MaximumSearchTextLength: how many words and characters
+     * of a search text are searched for. A missing or invalid setting gives 16 words and 1024 characters.
+     *
+     * @param \eZINI $ini site.ini
+     * @return int[] array( <words>, <characters> )
+     */
+    public static function searchTextLimits( $ini )
+    {
+        $words = $ini->hasVariable( 'SearchSettings', 'MaximumSearchTextWords' ) ? (int)$ini->variable( 'SearchSettings', 'MaximumSearchTextWords' ) : 0;
+        $length = $ini->hasVariable( 'SearchSettings', 'MaximumSearchTextLength' ) ? (int)$ini->variable( 'SearchSettings', 'MaximumSearchTextLength' ) : 0;
+        return array( $words > 0 ? $words : 16, $length > 0 ? $length : 1024 );
+    }
+
+    /**
+     * A search text cut to at most $maximumWords words and $maximumLength characters. Every word is a clause of
+     * the search engine's query (one per field searched), and with too many of them the search fails (eZ Find:
+     * "too many clauses") instead of giving results. A text within both limits is returned as it is.
+     *
+     * @param string $searchText
+     * @param int $maximumWords 0 or less gives an empty text
+     * @param int $maximumLength 0 or less gives an empty text
+     * @return string
+     */
+    public static function limitSearchText( $searchText, $maximumWords, $maximumLength )
+    {
+        $searchText = (string)$searchText;
+        if ( $maximumWords <= 0 || $maximumLength <= 0 )
+            return '';
+        if ( mb_strlen( $searchText, 'UTF-8' ) > $maximumLength )
+            $searchText = mb_substr( $searchText, 0, $maximumLength, 'UTF-8' );
+        $words = preg_split( '/\s+/u', trim( $searchText ), -1, PREG_SPLIT_NO_EMPTY );
+        if ( $words !== false && count( $words ) > $maximumWords )
+            $searchText = implode( ' ', array_slice( $words, 0, $maximumWords ) );
+        return $searchText;
+    }
+
+    /**
+     * The result of a search that was not run.
+     *
+     * @return array
+     */
+    public static function emptySearchResult()
+    {
+        return array( 'SearchResult' => array(), 'SearchCount' => 0, 'StopWordArray' => array() );
     }
 
     /**

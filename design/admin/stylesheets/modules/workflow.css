@@ -945,3 +945,11 @@ textarea.a4-visual-editor {
 .a4-contentfinder-box label { display: block; margin: 0 0 var(--a4-space-1); font-weight: 700; }
 .a4-contentfinder-box .a4-contentfinder-box-row { display: flex; gap: var(--a4-space-1); }
 .a4-contentfinder-box input[type="search"] { flex: 1 1 auto; min-width: 0; box-sizing: border-box; }
+
+/* Forced colors (Windows high contrast) drop backgrounds and box-shadows and repaint borders in one colour: a state
+   that differs only by them (current, selected, moved, pressed, changed) gets a Highlight outline. */
+@media (forced-colors: active) {
+  .a4-visual .a4-visual-sa.is-selected,
+  .a4-visual .a4-visual-choice:has(input:checked),
+  .a4-visual .a4-visual-choice:has(input:checked) .a4-visual-choice-pick { outline: 2px solid Highlight; outline-offset: -2px; }
+}

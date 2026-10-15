@@ -54,7 +54,12 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
   it is applied before the page is drawn, and without a choice the admin is light, as before.
   `html[data-a4-theme]` stays light or dark for the stylesheets, `html[data-a4-theme-choice]` carries the chosen
   mode. A copy of the switch without `data-label-system` (an extension's own header) keeps stepping between light
-  and dark.
+  and dark. The mode needs the head script: without JavaScript the admin is light, its documented default (a dark
+  fallback for `prefers-color-scheme` would repeat the whole dark token block, and the admin does not work without
+  JavaScript anyway).
+- **Printing.** A printed page is the content alone on the full width (no header, menus, side columns, control bars,
+  toasts or footer, no shadows), and always in the light colours: the head script switches to light before printing
+  and back afterwards.
 - **Normal or compact density.** A second header button (pressed = compact) tightens the cells of `table.list` and
   `.a4-table`, cards and the height of the controls in a row (32 to 28 px), not `table.special`; the eZPreference
   `admin_density`, applied before the page is drawn. Every target stays at least 24 px, the content tree
@@ -417,6 +422,11 @@ Community". A template can also set `$show_community_links`.
 - `design/admin4/stylesheets/admin4.css` is loaded after the base stylesheets and before the extensions' own. It uses
   the base rules' own selectors, so what beat a base rule before still beats it. Shared defaults carry no weight at all
   (`:where`), so extensions' rules win. There are no cascade layers.
+- The base stylesheets admin4 took over from admin3 (`core.css`, `content.css`, `pagelayout.css`, `theme/rounded.css`,
+  `theme/admin_datatable.css`, `theme/modalwindow.css`) take every colour from the tokens as well (since 2026-10-14,
+  `AdminStylingRulesTest::testBaseStylesheetsUseOnlyColourTokens`): links are `--a4-accent-text`, the diff marks
+  `--a4-ok`/`--a4-bad` on the warn tint. admin4 has no `responsive.css` any more (its one live rule is in
+  `pagelayout.css`) and no `setup-extensions.css` (no kernel template loaded it; exp_adminui carries its own copy).
 - admin4 keeps its own copy of `ezajaxsubitems_expdatatable.js`: it must work with no other admin design present, and
   a single copy in `design/standard` would be shadowed by any design that has its own. Change both copies together.
 - The CSS packer used to remove the space before a colon in selectors (`a :hover` became `a:hover`). Fixed.

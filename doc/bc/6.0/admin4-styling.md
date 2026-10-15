@@ -254,8 +254,12 @@ The left column's preset sizes (small, medium, large) are `html[data-a4-left-siz
   `50%`, a spacing length that is not a token (`0`, `1px`, `2px`, `auto` and `calc()` of tokens are allowed), a font
   family or pixel font size of its own, a custom property of its own, or a selector without an `.a4-` class;
 - a colour token in `components.css` has no dark value, or the admin and admin4 copies differ;
-- `admin4.css` or one of admin4's page stylesheets (`ezinfo.css`, `packagecompare.css`, `setup-extensions.css`,
-  `visual-templateview.css`) has a colour literal outside a token definition;
+- `admin4.css` or one of admin4's page stylesheets (`ezinfo.css`, `packagecompare.css`, `visual-templateview.css`)
+  has a colour literal outside a token definition;
+- one of admin4's base stylesheets (`core.css`, `content.css`, `pagelayout.css`, `theme/rounded.css`,
+  `theme/admin_datatable.css`, `theme/modalwindow.css`) has a colour literal outside a token definition. A legacy
+  literal kept on purpose would go into `BASE_COLOUR_ALLOWLIST`, which only shrinks; it is empty. A rule admin4.css
+  overrides today still takes a token, so the next selector that slips past the override cannot show an old colour;
 - a `:focus` or `:focus-visible` rule of an admin4 stylesheet removes the outline (`none`, `hidden` or a width of
   `0`, in any order of the shorthand; `:focus:not(:focus-visible)` and `:focus-within` aside). The global ring
   (`outline: 3px solid var(--a4-ring)`, offset 2px) is the focus indicator. A frame field that draws its ring as a
@@ -263,6 +267,13 @@ The left column's preset sizes (small, medium, large) are `html[data-a4-left-siz
   paints where it drops the shadow; inside `.a4-page` the components' own ring applies anyway. The check reads only rules whose selector names the focus: a plain rule that outranks the global ring (an id such as `#logintext { outline: none }`) is not seen, so give such a rule a `:focus` rule that restores the outline;
 - `components.css` loses the `color-scheme` of a theme, its forced-colors or touch block, `admin4.css` its
   `prefers-reduced-motion` rule, or an admin4 stylesheet transitions `all` (name the properties instead);
+- a state of a module stylesheet (`.is-current`, `.is-selected`, `.is-moved`, `.is-dirty`, `[aria-pressed="true"]`,
+  `:checked`) that differs only by border, background or box-shadow has no `outline: 2px solid Highlight` in the
+  file's `@media (forced-colors: active)` block: forced colors drop all three
+  (`AdminBaseStylesheetsTest::testModuleStatesKeepAnOutlineInForcedColors`);
+- a base stylesheet has a rule for `html[data-a4-theme]` (the tokens switch; a focus ring is `var(--a4-ring)` in both
+  modes) or a vendor-prefixed or IE-only leftover (`-moz-`/`-ms-`/`-o-` transitions, shadows and gradients,
+  `filter: alpha()`, `zoom: 1`, `linear-gradient(top, …)`) (`AdminBaseStylesheetsTest`);
 - `components.css` or `admin4.css` sets a pixel font size, or a spacing length that is not a `--a4-space-*` token
   (`1px` and `2px` aside; a layout length is a token of its own);
 - a file named in `AdminComponentCSSFileList` is missing.
@@ -291,7 +302,12 @@ fields use `--a4-text-l` (16px) so a phone does not zoom in on focus.
 
 `tests/tests/design/AdminTokenContrastTest.php` computes the WCAG contrast of the token pairs in both modes: text
 tokens on card, surface and soft 4.5:1, each state's text on its own tint 4.5:1, the text of filled buttons (also
-hovered) 4.5:1, the ring and the field edge 3:1 on every surface and the page, the chart colours 3:1 on a card.
+hovered) 4.5:1, the ring and the field edge 3:1 on every surface and the page, the chart colours 3:1 on a card, a
+meter's fill on its track 3:1 (`.a4-meter` fills with `--a4-accent-text`: `--a4-accent` was 2.9:1 on the light track,
+`--a4-accent-strong` 2.8:1 on the dark one).
+
+Printing: `admin4.css` has an `@media print` block (the content on the full width, no frame, no shadows), and the
+head script switches `html[data-a4-theme]` to light before printing, so a print style needs no colours of its own.
 
 Never weaken the test or add an allowlist entry to make a change pass; move the CSS.
 
@@ -331,6 +347,8 @@ For every template or stylesheet change in an administration design or an extens
       spacing literal, and no local custom properties.
 - [ ] A new token is in `components.css` with a light and a dark value, and documented on this page.
 - [ ] A z-index is a `--a4-z-*` token (or 0/1/-1 inside one component).
+- [ ] A state shown only by border, background or shadow (current, selected, pressed) has an
+      `outline: 2px solid Highlight` in the file's `@media (forced-colors: active)` block.
 - [ ] A required field shows `.a4-required-mark` (`aria-hidden`) with the word in `.a4-sr-only`, and its control is
       `aria-required`; an invalid field shows its message (`.a4-field-error` with an id) and its control is
       `aria-invalid` with that id in `aria-describedby` (`tests/tests/design/AdminFormErrorsTest.php`).

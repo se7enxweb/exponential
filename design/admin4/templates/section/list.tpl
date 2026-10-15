@@ -57,8 +57,9 @@
 <div class="a4-filterbar">
     <div class="a4-field exp-js-only" hidden>
         <label for="section-search">{'Find a section'|i18n( 'design/admin/section/list' )}</label>
-        <input type="search" id="section-search" autocomplete="off" spellcheck="false" aria-controls="section-list" aria-describedby="section-filter-count section-search-help" />
+        <input type="search" id="section-search" autocomplete="off" spellcheck="false" aria-controls="section-list" aria-describedby="section-filter-count section-search-help{if $section_count|gt( $limit )} section-search-page{/if}" />
         <span class="a4-help" id="section-search-help">{'Name, identifier, ID, navigation part or role.'|i18n( 'design/admin/section/list' )}</span>
+        {if $section_count|gt( $limit )}<span class="a4-help" id="section-search-page">{'Only this page is searched: %from to %to of %count.'|i18n( 'design/admin/section/list',, hash( '%from', sum( $view_parameters.offset, 1 ), '%to', min( sum( $view_parameters.offset, $limit ), $section_count ), '%count', $section_count ) )}</span>{/if}
     </div>
     {if $can_edit}
     <div class="a4-field">

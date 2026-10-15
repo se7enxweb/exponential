@@ -40,6 +40,10 @@
         <translation>Sie dürfen keine Datei hochladen.</translation>
     </message>
     <message>
+        <source>Unable to retrieve the uploaded file.</source>
+        <translation>Die hochgeladene Datei konnte nicht abgerufen werden.</translation>
+    </message>
+    <message>
         <source>Unable to store the uploaded file.</source>
         <translation>Die hochgeladene Datei konnte nicht gespeichert werden.</translation>
     </message>

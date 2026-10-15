@@ -68,4 +68,16 @@ class expSecretRuleTest extends PHPUnit\Framework\TestCase
         $this->assertTrue( expSecretRule::hasInlineSecret( 'pgsql://u:p@h/d' ) );
         $this->assertSame( 'pgsql://u:$1@h/d', expSecretRule::maskInline( 'pgsql://u:p@h/d', '$1' ) );
     }
+
+    /** SE-06, inlineSecretParts() names what maskInline() replaces, with the user of an address */
+    public function testInlineSecretParts()
+    {
+        $this->assertSame( array( array( 'secret' => 'pw', 'user' => 'reader' ), array( 'secret' => '"a b"', 'user' => null ) ),
+                           expSecretRule::inlineSecretParts( 'https://reader:pw@feeds.example.invalid/ DbPassword="a b"' ) );
+        $this->assertSame( array( array( 'secret' => 'hunter2', 'user' => 'deploy' ) ), expSecretRule::inlineSecretParts( 'deploy:hunter2@git.example.org' ) );
+        $this->assertSame( array( array( 'secret' => '{password}', 'user' => null ) ),
+                           expSecretRule::inlineSecretParts( 'mysqldump --user={user} --password={password}' ) );
+        $this->assertSame( array(), expSecretRule::inlineSecretParts( 'https://example.com/path' ) );
+        $this->assertSame( array(), expSecretRule::inlineSecretParts( '' ) );
+    }
 }

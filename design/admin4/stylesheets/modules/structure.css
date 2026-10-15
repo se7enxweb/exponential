@@ -527,3 +527,10 @@ a.a4-class-top {
 .a4-package-steps { max-width: 78ch; margin: 0; padding-left: var(--a4-space-5); }
 .a4-package-steps li + li { margin-top: var(--a4-space-1); }
 .a4-package-licence-info { margin: var(--a4-space-2) 0 0; overflow-wrap: anywhere; }
+
+/* Forced colors (Windows high contrast) drop backgrounds and box-shadows and repaint borders in one colour: a state
+   that differs only by them (current, selected, moved, pressed, changed) gets a Highlight outline. */
+@media (forced-colors: active) {
+  .a4-pdf-choice:has(input:checked),
+  .a4-package-repo.is-current > a { outline: 2px solid Highlight; outline-offset: -2px; }
+}

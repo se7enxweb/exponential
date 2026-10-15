@@ -123,6 +123,10 @@
 <context>
     <name>design/admin/class/classlist</name>
     <message>
+        <source>Only this page is searched: %from to %to of %count.</source>
+        <translation>Durchsucht wird nur diese Seite: %from bis %to von %count.</translation>
+    </message>
+    <message>
         <source>%group_name [Class group]</source>
         <translation>%group_name [Klassengruppe]</translation>
     </message>
@@ -847,6 +851,10 @@
 </context>
 <context>
     <name>design/admin/class/grouplist</name>
+    <message>
+        <source>Only this page is searched: %from to %to of %count.</source>
+        <translation>Durchsucht wird nur diese Seite: %from bis %to von %count.</translation>
+    </message>
     <message>
         <source>Class groups [%group_count]</source>
         <translation type="obsolete">Klassengruppen [%group_count]</translation>
@@ -5800,6 +5808,26 @@
 <context>
     <name>design/admin/content/search</name>
     <message>
+        <source>Search for</source>
+        <translation>Suchen nach</translation>
+    </message>
+    <message>
+        <source>The search text was too long and was shortened.</source>
+        <translation>Der Suchtext war zu lang und wurde gekürzt.</translation>
+    </message>
+    <message>
+        <source>Type the words to search for.</source>
+        <translation>Geben Sie die Wörter ein, nach denen gesucht werden soll.</translation>
+    </message>
+    <message>
+        <source>The search could not be run. Try fewer or simpler words, or search again later.</source>
+        <translation>Die Suche konnte nicht ausgeführt werden. Versuchen Sie es mit weniger oder einfacheren Wörtern oder später noch einmal.</translation>
+    </message>
+    <message>
+        <source>%count matches</source>
+        <translation>%count Treffer</translation>
+    </message>
+    <message>
         <source>Update attributes</source>
         <translation>Attribute aktualisieren</translation>
     </message>
@@ -10064,6 +10092,10 @@
 </context>
 <context>
     <name>design/admin/navigator</name>
+    <message>
+        <source>Pages</source>
+        <translation>Seiten</translation>
+    </message>
     <message>
         <source>Previous</source>
         <translation>Zurück</translation>
@@ -20677,6 +20709,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
 <context>
     <name>design/admin/section/list</name>
     <message>
+        <source>Only this page is searched: %from to %to of %count.</source>
+        <translation>Durchsucht wird nur diese Seite: %from bis %to von %count.</translation>
+    </message>
+    <message>
         <source>Sections [%section_count]</source>
         <translation type="obsolete">Sektionen [%section_count]</translation>
     </message>
@@ -23477,6 +23513,18 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
 </context>
 <context>
     <name>design/admin/setup/extensions</name>
+    <message>
+        <source>The extension or the archive format is not known.</source>
+        <translation>Die Extension oder das Archivformat ist nicht bekannt.</translation>
+    </message>
+    <message>
+        <source>The extension %name could not be packed.</source>
+        <translation>Die Extension %name konnte nicht gepackt werden.</translation>
+    </message>
+    <message>
+        <source>Download %name as %format</source>
+        <translation>%name als %format herunterladen</translation>
+    </message>
     <message>
         <source>Available extensions [%extension_count]</source>
         <translation type="obsolete">Verfügbare Extensions [%extension_count]</translation>
@@ -26779,6 +26827,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
 </context>
 <context>
     <name>design/admin/setup/rad</name>
+    <message>
+        <source>%shown of %count</source>
+        <translation>%shown von %count</translation>
+    </message>
     <message>
         <source>Find</source>
         <translation>Suchen</translation>
@@ -40374,6 +40426,10 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
 </context>
 <context>
     <name>design/admin/workflow/grouplist</name>
+    <message>
+        <source>Only this page is searched: %from to %to of %count.</source>
+        <translation>Durchsucht wird nur diese Seite: %from bis %to von %count.</translation>
+    </message>
     <message>
         <source>Workflow groups [%groups_count]</source>
         <translation type="obsolete">Workflow Gruppen [%groups_count]</translation>
@@ -61075,6 +61131,22 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
 <context>
     <name>kernel/package</name>
     <message>
+        <source>The extension %name may not be exported: it is not in package.ini [ExtensionExportSettings] AllowedExtensions[].</source>
+        <translation>Die Extension %name darf nicht exportiert werden: sie steht nicht in package.ini [ExtensionExportSettings] AllowedExtensions[].</translation>
+    </message>
+    <message>
+        <source>Exporting an extension needs the policy package/export_extension.</source>
+        <translation>Für den Export einer Extension ist die Policy package/export_extension nötig.</translation>
+    </message>
+    <message>
+        <source>The extension %name is not known.</source>
+        <translation>Die Extension %name ist nicht bekannt.</translation>
+    </message>
+    <message>
+        <source>The extension %name was not packed: it holds secret values or key material (%files). Copy it from the server instead.</source>
+        <translation>Die Extension %name wurde nicht gepackt: sie enthält geheime Werte oder Schlüsselmaterial (%files). Kopieren Sie sie stattdessen vom Server.</translation>
+    </message>
+    <message>
         <source>Packages</source>
         <translation>Pakete</translation>
     </message>
@@ -66697,6 +66769,22 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
 </context>
 <context>
     <name>design/admin/content/job</name>
+    <message>
+        <source>Reveal %name</source>
+        <translation>Einblenden: %name</translation>
+    </message>
+    <message>
+        <source>Hide %name</source>
+        <translation>Verbergen: %name</translation>
+    </message>
+    <message>
+        <source>The node and everything below it become visible again, unless hidden on their own.</source>
+        <translation>Der Knoten und alles darunter werden wieder sichtbar, sofern sie nicht selbst verborgen sind.</translation>
+    </message>
+    <message>
+        <source>The node and everything below it are hidden from the site.</source>
+        <translation>Der Knoten und alles darunter werden auf der Website verborgen.</translation>
+    </message>
     <message>
         <source>Audit trail</source>
         <translation>Audit-Protokoll</translation>

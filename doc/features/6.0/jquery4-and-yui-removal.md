@@ -27,8 +27,9 @@ If a site or extension of yours still uses YUI, follow the upgrade steps in [YUI
 - **jQuery 4.0.0 with jQuery Migrate 4.0.2 and jQuery UI 1.14.2** from `ezjsc::jquery` and `ezjsc::jqueryUI`
   (ezjscore 1.4.0). Migrate is the quiet build by default, so older code keeps working without filling the console;
   the reporting build is one setting away. The CDN entries name the same releases as the local files (they used to
-  name jQuery 1.10.2 and jQuery UI 1.10.3). The jQuery 3.7.1, Migrate 3.4.1 and jQuery UI 1.10.3 files are still
-  shipped for templates that name them directly.
+  name jQuery 1.10.2 and jQuery UI 1.10.3). The older jQuery 3.7.1, Migrate 3.4.1 and jQuery UI 1.10.3 files are
+  removed (14 October 2026): nothing in the distribution loaded them, and jQuery UI 1.10.3 has known
+  vulnerabilities.
 - **The admin's own code is jQuery 4 clean.** Event shorthands (`.click(fn)`, `.change(fn)`), `.bind()`, `.unbind()`,
   boolean `.attr()` and `jQuery.trim()` were replaced by `.on()`, `.off()`, `.trigger()`, `.prop()` and
   `String.prototype.trim()` in the node tabs, class and role editors, translations, locations, the extension list,
@@ -66,8 +67,9 @@ To load jQuery 4 alone, leave `LocalScripts[jqueryMigrate]` empty.
 
 On 16 August 2026 (`f7c57376aa`) ezjscore replaced the vendored jQuery 1.10.2 with **jQuery 3.7.1** and
 **jQuery Migrate 3.4.1**, and `ezjsc::jquery` loaded Migrate for every caller so that older scripts kept working. The
-October change went on to jQuery 4. The 3.7.1 and Migrate 3.4.1 files are still in
-`extension/ezjscore/design/standard/javascript/` (`ls` that folder to check).
+October change went on to jQuery 4. The 3.7.1 and Migrate 3.4.1 files stayed in
+`extension/ezjscore/design/standard/javascript/` until 14 October 2026; since then the folder holds one release of
+each library (`ezjscoreVendoredLibrariesTest`).
 
 ## Related pages
 

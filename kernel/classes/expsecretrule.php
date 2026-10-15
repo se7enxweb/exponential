@@ -77,15 +77,54 @@ class expSecretRule
     {
         if ( !is_string( $value ) || $value === '' )
             return $value;
-        $m = str_replace( array( '\\', '$' ), array( '\\\\', '\\$' ), (string)$mask );
+        $mask = (string)$mask;
+        return self::walkInline( $value, function () use ( $mask ) { return $mask; } );
+    }
+
+    /**
+     * The secrets inside a value, as maskInline() finds them: one entry per secret, with the secret as it stands
+     * ('secret', quotes included for a quoted value) and the user name of an address ('user', null elsewhere). A
+     * caller can then tell a real secret from an example such as user:pass@ (eZExtensionPackageHandler).
+     *
+     * @param string $value
+     * @return array[] array( 'secret' => string, 'user' => string|null ), in the order found
+     */
+    public static function inlineSecretParts( $value )
+    {
+        $parts = array();
+        if ( !is_string( $value ) || $value === '' )
+            return $parts;
+        self::walkInline( $value, function ( $secret, $user ) use ( &$parts )
+        {
+            $parts[] = array( 'secret' => $secret, 'user' => $user );
+            return $secret;
+        } );
+        return $parts;
+    }
+
+    /**
+     * $value with every inline secret replaced by $replace( secret, user ): the one place the inline patterns live.
+     *
+     * @param string $value
+     * @param callable $replace
+     * @return string|null null when a pattern failed (a PCRE error): the callers read that as a secret
+     */
+    private static function walkInline( $value, $replace )
+    {
         // scheme://user:password@host, also without a user (scheme://:password@host)
-        $value = preg_replace( '#(\b[a-z][a-z0-9+.\-]*://[^\s:/@"\'<>]*:)[^\s@/"\'<>]+@#i', '${1}' . $m . '@', $value );
+        $value = preg_replace_callback( '#(\b[a-z][a-z0-9+.\-]*://([^\s:/@"\'<>]*):)([^\s@/"\'<>]+)@#i',
+            function ( $m ) use ( $replace ) { return $m[1] . $replace( $m[3], $m[2] ) . '@'; }, $value );
+        if ( $value === null )
+            return null;
         // user:password@host without a scheme, when that is the whole value
-        $value = preg_replace( '#^([\w.%+\-]+:)(?!//)[^\s@/]+(@[\w.\-]+(:\d+)?(/\S*)?)$#', '${1}' . $m . '${2}', $value );
+        $value = preg_replace_callback( '#^(([\w.%+\-]+):)(?!//)([^\s@/]+)(@[\w.\-]+(:\d+)?(/\S*)?)$#',
+            function ( $m ) use ( $replace ) { return $m[1] . $replace( $m[3], $m[2] ) . $m[4]; }, $value );
+        if ( $value === null )
+            return null;
         // password=..., db_password: ..., 'secret' => '...', ?token=...: the value up to ; & , or white space
-        $value = preg_replace(
+        $value = preg_replace_callback(
             '/(\b(?:[A-Za-z0-9]*[_.\-]?(?:password|passwd|passphrase|secret|token|apikey|api_key|api-key)[A-Za-z0-9_.\-]*|(?:pwd|pass|salt)(?![A-Za-z0-9]))[\'"]?\s*(?:=>|=|:(?=\s)))(\s*)("[^"]*"|\'[^\']*\'|[^\s&;,]+)/i',
-            '${1}${2}' . $m, $value );
+            function ( $m ) use ( $replace ) { return $m[1] . $m[2] . $replace( $m[3], null ); }, $value );
         return $value;
     }
 

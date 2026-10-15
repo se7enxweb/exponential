@@ -14,6 +14,31 @@
     "tests/test-map.json"
   ],
   "map": {
+    "extension/cjw_newsletter/design/*preview*.tpl": [
+      "tests/tests/design/AdminNewsletterPreviewTest.php"
+    ],
+    "extension/cjw_newsletter/design/admin2/templates/cjw_newsletter_edition_window_controls.tpl": [
+      "tests/tests/design/AdminNewsletterPreviewTest.php"
+    ],
+    "extension/cjw_newsletter/design/standard/stylesheets/cjw_newsletter.css": [
+      "tests/tests/design/AdminNewsletterPreviewTest.php"
+    ],
+    "extension/cjw_newsletter/settings/cjw_newsletter.ini": [
+      "tests/tests/design/AdminNewsletterPreviewTest.php"
+    ],
+    "extension/cjw_newsletter/classes/cjwnewsletteredition.php": [
+      "tests/tests/design/AdminNewsletterPreviewTest.php"
+    ],
+    "extension/cjw_newsletter/classes/cjwnewsletterlist.php": [
+      "tests/tests/design/AdminNewsletterPreviewTest.php"
+    ],
+    "design/admin4/templates/page_head_style.tpl": [
+      "tests/tests/design/AdminBaseStylesheetsTest.php",
+      "tests/tests/design/AdminPreferencesTest.php"
+    ],
+    "design/admin3/templates/page_head_style.tpl": [
+      "tests/tests/design/AdminBaseStylesheetsTest.php"
+    ],
     "design/admin4/templates/parts/audit_timeline.tpl": [
       "tests/tests/design/AdminTimelineTest.php"
     ],
@@ -76,6 +101,7 @@
       "tests/tests/design/AdminThemeSwitchTest.php",
       "tests/tests/design/AdminDensityTest.php",
       "tests/tests/design/AdminCardsTest.php",
+      "tests/tests/design/AdminBaseStylesheetsTest.php",
       "tests/tests/design/AdminRetiredClassesTest.php"
     ],
     "design/admin*/javascript/ezajaxsubitems_expdatatable.js": [
@@ -89,6 +115,7 @@
     ],
     "settings/design.ini": [
       "tests/tests/design/AdminStylingRulesTest.php",
+      "tests/tests/design/AdminBaseStylesheetsTest.php",
       "tests/tests/design/AdminScriptsTest.php"
     ],
     "design/admin4/javascript/ezadmin_menubar.js": [
@@ -214,8 +241,14 @@
       "tests/tests/design/AdminLeftMenuGroupsTest.php",
       "tests/tests/design/AdminPreferencesTest.php"
     ],
-    "design/admin4/templates/page_head_style.tpl": [
-      "tests/tests/design/AdminPreferencesTest.php"
+    "extension/ezjscore/design/standard/javascript/*": [
+      "tests/tests/extension/ezjscore/ezjscoreVendoredLibrariesTest.php"
+    ],
+    "extension/ezjscore/settings/ezjscore.ini": [
+      "tests/tests/extension/ezjscore/ezjscoreVendoredLibrariesTest.php"
+    ],
+    "extension/ezjscore/extension.xml": [
+      "tests/tests/extension/ezjscore/ezjscoreVendoredLibrariesTest.php"
     ],
     "design/admin4/templates/parts/a4_preference_attributes.tpl": [
       "tests/tests/design/AdminPreferencesTest.php"

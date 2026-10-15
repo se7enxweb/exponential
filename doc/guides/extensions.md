@@ -400,8 +400,9 @@ so check before you push, not after.
    different packages under one version number.
 
 To hand an extension to someone without a repository, download it as a package from **Setup > Extensions**: open
-**Details** on the row and choose `.ezpkg`, `.zip`, `.tar.gz` or `.tar.bz2`, or open
-`/setup/extensions/myhello/zip` directly. The receiver installs it as in section 3.
+**Details** on the row and press `.ezpkg`, `.zip`, `.tar.gz` or `.tar.bz2`. The receiver installs it as in section 3.
+An extension that holds a secret value or key material is not packed; the page names the files and settings, and
+[the secret check](../bc/6.0/extension-package-secret-check.md) says how a maintainer marks a known example.
 
 ## 8. When it does not work
 

@@ -500,6 +500,26 @@ class eZSearchEngine implements ezpSearchEngine
         return $this->CreatedTempTablesNames;
     }
 
+    /**
+     * The subtrees of a search as node ids for its SQL: each value cast to an integer, those above 0, no doubles.
+     *
+     * @param mixed $subTreeArray
+     * @return int[]
+     */
+    public static function subTreeNodeIDList( $subTreeArray )
+    {
+        $nodeIDList = array();
+        foreach ( is_array( $subTreeArray ) ? $subTreeArray : array( $subTreeArray ) as $nodeID )
+        {
+            if ( !is_numeric( $nodeID ) )
+                continue;
+            $nodeID = (int)$nodeID;
+            if ( $nodeID > 0 )
+                $nodeIDList[$nodeID] = $nodeID;
+        }
+        return array_values( $nodeIDList );
+    }
+
     /*!
      Runs a query to the search engine.
     */
@@ -871,7 +891,7 @@ class eZSearchEngine implements ezpSearchEngine
             $classAttributeQuery = "";
             if ( is_numeric( $searchContentClassAttributeID ) and  $searchContentClassAttributeID > 0 )
             {
-                $classAttributeQuery = "ezsearch_object_word_link.contentclass_attribute_id = '$searchContentClassAttributeID' AND ";
+                $classAttributeQuery = "ezsearch_object_word_link.contentclass_attribute_id = '" . (int)$searchContentClassAttributeID . "' AND ";
             }
             else if ( is_array( $searchContentClassAttributeID ) )
             {
@@ -933,26 +953,14 @@ class eZSearchEngine implements ezpSearchEngine
             // Search only in specific sub trees
             $subTreeSQL = "";
             $subTreeTable = "";
-            if ( count( $subTreeArray ) > 0 )
+            if ( !empty( $subTreeArray ) )
             {
-                // Fetch path_string value to use when searching subtrees
-                $i = 0;
-                $doSubTreeSearch = false;
-                $subTreeNodeSQL = '';
-                foreach ( $subTreeArray as $nodeID )
-                {
-                    if ( is_numeric( $nodeID ) and ( $nodeID > 0 ) )
-                    {
-                        $subTreeNodeSQL .= " $nodeID";
-
-                        if ( isset( $subTreeArray[$i + 1] ) and
-                             is_numeric( $subTreeArray[$i + 1] ) )
-                            $subTreeNodeSQL .= ", ";
-
-                        $doSubTreeSearch = true;
-                    }
-                    $i++;
-                }
+                // Fetch path_string value to use when searching subtrees; the node ids go into the SQL as
+                // integers ("1e3" or " 5" passed is_numeric() and went in as they were, and a following id that
+                // was numeric but not above 0 left a trailing comma)
+                $subTreeNodeIDList = self::subTreeNodeIDList( $subTreeArray );
+                $doSubTreeSearch = count( $subTreeNodeIDList ) > 0;
+                $subTreeNodeSQL = ' ' . implode( ', ', $subTreeNodeIDList );
 
                 if ( $doSubTreeSearch == true )
                 {
