@@ -302,6 +302,28 @@ side, at least 24px high, and under forced colors an outline in `Highlight` mark
 `ul.tabs`). A new on/off preference in the right column is one more entry of the template's list
 (`AdminLegacyControlsTest`).
 
+## The node view's Upload button
+
+The node view's actions have an Upload button between Edit and Move (since 2026-10-15). It is a link,
+`<a class="a4-btn a4-node-upload">` with the Bootstrap Icon `.a4-bi-upload` and the text "Upload" (ger-DE
+"Hochladen"), to ezmultiupload's upload page for the node, `ezmultiupload/upload/<node id>`. One template draws it,
+`node/view/upload_button.tpl`, in identical copies in `design/admin` and `design/admin4` (admin4 is self-contained;
+`admin4l` falls back to admin4), included by `node/view/full.tpl` and `node/view/a4_full_body.tpl`; the icon is on
+`design.ini [AdminDesignSettings] IconList[]`. exp_adminui puts the same link first in its "..."
+menu (`window_preview_toolbar.tpl`).
+
+It shows only when uploading is possible there for the current user: the module `ezmultiupload/upload` is enabled and
+reachable in the siteaccess (`ezmodule()`), and `fetch( 'ezmultiupload', 'can_upload', hash( 'node_id', $node.node_id ) )`
+is true. That fetch asks `expMultiuploadService::canUploadAt()`, the one check for links to the upload page: the
+`ezmultiupload/upload` policy, read and `content/create` access at the node, and a container (or a class or node of
+`ezmultiupload.ini [MultiUploadSettings] AvailableClasses[]` / `AvailableSubtreeNode[]`). Per-class create rights for
+each file are checked by the upload page itself. A draft or archived object never shows the button, and nor do the
+edit pages, which do not include the node view. The node view is view-cached per role set, like Edit and Move.
+
+admin4 sizes the link like the other actions (`--a4-control-h`) and takes it into the narrow-width rules of
+`.a4-node-actions` (`admin4.css`); the classic bar of `design/admin` keeps it as high as its legacy buttons
+(`modules/content.css`). Tests: `tests/tests/design/AdminNodeUploadButtonTest.php`.
+
 ## Version preview
 
 `content/view/versionview.tpl` draws the device switch of the preview with the components (`.a4-tabs.is-segmented`,

@@ -1876,7 +1876,8 @@ html {
   }
   .controlbar.a4-node-actions .block input.button,
   .controlbar.a4-node-actions .block input.defaultbutton,
-  .controlbar.a4-node-actions .block input.button-disabled {
+  .controlbar.a4-node-actions .block input.button-disabled,
+  .controlbar.a4-node-actions .block .a4-node-upload {
     flex: 1 1 auto;
     min-width: 0;
     padding: 0 var(--a4-space-2);
@@ -1894,7 +1895,8 @@ html {
   .controlbar.a4-node-actions .a4-node-links .versions { display: contents; }
   .controlbar.a4-node-actions .block input.button,
   .controlbar.a4-node-actions .block input.defaultbutton,
-  .controlbar.a4-node-actions .block input.button-disabled { flex: 0 0 auto; }
+  .controlbar.a4-node-actions .block input.button-disabled,
+  .controlbar.a4-node-actions .block .a4-node-upload { flex: 0 0 auto; }
   .controlbar.a4-node-actions .block select { flex: 1 1 120px; }
 }
 @media (max-width: 767px) {

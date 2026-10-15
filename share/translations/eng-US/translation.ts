@@ -8604,6 +8604,14 @@
 <context>
     <name>design/admin/node/view/full</name>
     <message>
+        <source>Upload</source>
+        <translation>Upload</translation>
+    </message>
+    <message>
+        <source>Upload files to this location.</source>
+        <translation>Upload files to this location.</translation>
+    </message>
+    <message>
         <source>Default size</source>
         <translation>Default size</translation>
     </message>
