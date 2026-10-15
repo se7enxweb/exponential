@@ -13,7 +13,8 @@ shown is real: it was read on the demonstration server on 5 October 2026. Nothin
 was tried out by adding or removing a language on that server, because removing a language is not something to
 practise on content people use; section 9 shows how to try it safely.
 
-[Guides](README.md) · Feature reference: [Translations and languages](../features/6.0/translations-and-languages.md)
+[Guides](README.md) · Every language at a glance: [Languages](../languages.md) · Feature reference:
+[Translations and languages](../features/6.0/translations-and-languages.md)
 · In the installation book: [10.14 Multi-language sites](../install/10-after-installing.md#1014-multi-language-sites)
 
 ## In short
@@ -187,8 +188,11 @@ of section 9 were cleaned, the card read *Unused*, and the language was removed.
 2. Under **Language and country**, type part of the name, the code or the country into **Find a language**
    (`german`, `ger`, `austria`, `deutsch` all work); the list narrows as you type, and Enter picks the first match.
    Without JavaScript the list is a plain list box, sorted by name. The list holds the locales of `share/locale`
-   without their variations (43 on a standard installation); languages already added are shown but cannot be
-   chosen.
+   without their variations (132 on a standard installation since 6.0.15; the full list with native names, regions
+   and support levels is in [Languages](../languages.md)); languages already added are shown but cannot be
+   chosen. Each entry reads English name · native name · country · code, for example
+   `Persian · فارسی · Iran · fas-IR`; the country is left out where the name already gives it
+   (`German (Austria) · Deutsch (Österreich) · ger-AT`), and the search still finds it.
 3. Press **Add language**.
 
 The page returns to the overview with the message *German (ger-DE) was added*. The language gets the next free bit,
@@ -488,6 +492,8 @@ loaded: run `./console exp:velocity cache clear`, and after an update of the ker
 
 ## References
 
+- [Languages](../languages.md): every locale and administration translation, support levels, adding a locale or a
+  translation, right-to-left status.
 - [Translations and languages](../features/6.0/translations-and-languages.md): interface translations, HTML language
   tags, languages in a new installation.
 - [10.14 Multi-language sites](../install/10-after-installing.md#1014-multi-language-sites) and
