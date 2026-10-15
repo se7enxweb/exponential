@@ -883,7 +883,7 @@ f91a366a6abfa6b8a706b154b7aec12c  design/admin4/override/templates/template_look
 03505c55345b654eeb275f3b614a92bf  design/admin4/override/templates/thumbnail/image.tpl
 6971adb19c3c39b21f245c72b7f73305  design/admin4/override/templates/thumbnail/image_browse.tpl
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
-9d384e9edb0da845192cdbd8a5c5377d  design/admin4/stylesheets/admin4.css
+7a637560d6939c6f5c20fba1002a9869  design/admin4/stylesheets/admin4.css
 2e8f603a68ef0a164ba131ecbe8fe4da  design/admin4/stylesheets/components.css
 e907d0bf7b66f4bd6da6699efc5b84a7  design/admin4/stylesheets/content.css
 0368a507892a9eb10f58c7a00b0365bf  design/admin4/stylesheets/core.css
@@ -2991,7 +2991,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-602827c566adff022ea72e54e10fde46  doc/changelogs/6.0/6.0.15.md
+2cc15defcc56e3f6755513ee540f83b4  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3319,7 +3319,7 @@ c4809a3b611073bdcad4b38e9ea7dd6d  doc/features/6.0/additional-extension-director
 8ee6875c6693489d567c309177b49b81  doc/features/6.0/admin-list-paging.md
 41099ca247392d7ed963caa4b857e51c  doc/features/6.0/admin3-responsive-admin.md
 98b1eb658a2475fc31af9b9cbfaba709  doc/features/6.0/admin3-sidebar-width-and-font-size.md
-10c153eb65dd53299c04973239daee5f  doc/features/6.0/admin4-design.md
+8a4650f73068c4aaa9afccc0f4209eb8  doc/features/6.0/admin4-design.md
 7d8b3d248d27baa55bbf5f7f22040693  doc/features/6.0/admin4l.md
 cb077d1f37f8e8811c377ede4bc99357  doc/features/6.0/adminneo-database-manager.md
 ae7d698fad5f10287ad37ade2f97d8aa  doc/features/6.0/audit-trail.md
@@ -7131,7 +7131,7 @@ c6ba9bc58f2ca2ab064b5fd06eaca6a6  tests/tests/design/AdminHeaderTest.php
 859c93ecb4d2d3c59b4fcc748587fcd6  tests/tests/design/AdminLanguageBadgeTest.php
 4b27c6fcd0b5289d066460987007d7e1  tests/tests/design/AdminLeftMenuGroupsTest.php
 d509a6b8ea815666ddf165c7f4e7f8bf  tests/tests/design/AdminLegacyControlsTest.php
-2bddbb1a94a614220e51ca6355053d22  tests/tests/design/AdminLogoTest.php
+09e935e2807c55214366c2a362b20609  tests/tests/design/AdminLogoTest.php
 581b1a9e22de7c70a61a13e56d219070  tests/tests/design/AdminMenuPolicyListTest.php
 f2f45d0be8a363de1fa024e40ff34fd2  tests/tests/design/AdminNewsletterPreviewTest.php
 a33e9d573eb8e846797e949212bf192e  tests/tests/design/AdminNoticesTest.php
