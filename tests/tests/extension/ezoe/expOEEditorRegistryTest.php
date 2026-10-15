@@ -70,6 +70,29 @@ class expOEEditorRegistryTest extends expOETestCase
         $this->assertNotContains( 'tinymce3', $ids );
     }
 
+    public function testSwitchOptionsAreEveryEngineWithTheOneInUseMarked()
+    {
+        $this->ini( 'Engines', $this->savedEngines + array( 'third' => 'expOETestThirdEngine' ) );
+        $options = expOEEditor::switchOptions( 'tinymce8' );
+        // every available engine in registry order, the switch below the editor shows them all as one control
+        $this->assertSame( array_keys( expOEEditor::engines() ), array_column( $options, 'identifier' ) );
+        $this->assertSame( array_values( expOEEditor::labels() ), array_column( $options, 'label' ) );
+        $current = array_values( array_filter( $options, function ( $o ) { return $o['current']; } ) );
+        $this->assertCount( 1, $current );
+        $this->assertSame( 'tinymce8', $current[0]['identifier'] );
+        // the others are exactly the switch choices
+        $this->assertSame( expOEEditor::switchChoices( 'tinymce8' ),
+            array_values( array_map( function ( $o ) { return array( 'identifier' => $o['identifier'], 'label' => $o['label'] ); },
+                array_filter( $options, function ( $o ) { return !$o['current']; } ) ) ) );
+    }
+
+    public function testSwitchOptionsMarkTheDefaultForAnUnknownEngine()
+    {
+        $options = expOEEditor::switchOptions( 'nonexistent' );
+        $current = array_column( array_filter( $options, function ( $o ) { return $o['current']; } ), 'identifier' );
+        $this->assertSame( array( expOEEditor::DEFAULT_ENGINE ), $current );
+    }
+
     public function testUserPreferenceWinsOverTheSite()
     {
         $this->ini( 'EditorEngine', 'tinymce8' );

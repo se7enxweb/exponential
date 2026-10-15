@@ -311,6 +311,16 @@ through the stylesheet alone. admin4's `theme/rounded.css` no longer styles `.da
 `.a4-btn` now); the class stays in `design/admin`, whose calendar is still the image.
 `tests/tests/design/AdminContentEditFormsTest.php` checks the rules and the templates.
 
+ezoe's engine switch below a rich text field (`ezxmltext_ezoe_engine_switch.tpl`, `EngineSwitch=enabled`) writes
+neutral markup: `div.ezoe-engine-switch` (`role="group"`, named by its label `span.ezoe-engine-switch-label`
+"Editor"), the engine in use as `span.ezoe-engine-switch-option.current` with `aria-current="true"`, every other
+engine as a `button.button.ezoe-engine-switch-option` that posts `CustomActionButton[<attribute id>_switch_engine_<id>]`.
+`modules/content.css` draws it as one segmented control like `.a4-tabs.is-segmented`: the segments joined at
+`--a4-control-h`, the engine in use filled in `--a4-accent-strong` (an outline in `Highlight` under forced colors),
+the label muted beside them on the same centre line. It stands left-aligned under the field, like the field's other
+controls and its label, `--a4-space-2` below the editor's status bar; on a narrow screen the segments wrap under the
+label (`AdminContentEditFormsTest`).
+
 The rich text editors (TinyMCE 3 and 8) draw a field's text in an iframe with ezoe's light content stylesheet. The
 edit form names `components.css` and `editor_content.css` in `data-a4-editor-css`; `admin4.js` adds both to each
 editor's document and copies `html[data-a4-theme]` there when the editor is ready and when the mode changes, so the

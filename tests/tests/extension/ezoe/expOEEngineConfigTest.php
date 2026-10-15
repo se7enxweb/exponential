@@ -197,16 +197,39 @@ class expOEEngineConfigTest extends expOETestCase
         $this->assertSame( 3, $checked );
     }
 
-    public function testEngineSwitchTemplateExistsAndLoopsOverTheRegistry()
+    public function testEngineSwitchTemplateIsOneGroupOverTheRegistry()
     {
         $tpl = file_get_contents( $this->root() . '/design/standard/templates/content/datatype/edit/ezxmltext_ezoe_engine_switch.tpl' );
-        $this->assertStringContainsString( 'engine_switch_choices', $tpl );
+        $code = preg_replace( '/\{\*.*?\*\}/s', '', $tpl );
+        $this->assertStringContainsString( '{if $input_handler.engine_switch_enabled}', $code, 'shown only with EngineSwitch=enabled' );
+        $this->assertStringContainsString( '$input_handler.engine_switch_options', $code, 'every engine of the registry, the one in use included' );
+        $this->assertStringContainsString( 'gt( $ezoe_engine_options|count, 1 )', $code, 'nothing to show with one engine' );
+        // one group named by its visible label "Editor"
+        $this->assertMatchesRegularExpression( '/<div class="ezoe-engine-switch" role="group" aria-labelledby="ezoe-engine-switch-label-\{\$attribute\.id\}">/', $code );
+        $this->assertMatchesRegularExpression( '/<span class="ezoe-engine-switch-label" id="ezoe-engine-switch-label-\{\$attribute\.id\}">\{\'Editor\'\|i18n\( \'design\/standard\/ezoe\' \)\|wash\}<\/span>/', $code );
+        // the engine in use is marked and is no button
+        $this->assertMatchesRegularExpression( '/<span class="ezoe-engine-switch-option current" aria-current="true">\{\$ezoe_engine_option\.label\|wash\}<\/span>/', $code );
+        // each other engine posts the same custom action as before, a submit button of the edit form
+        $this->assertMatchesRegularExpression( '/<button class="button ezoe-engine-switch-option" type="submit" name="CustomActionButton\[\{\$attribute\.id\}_switch_engine_\{\$ezoe_engine_option\.identifier\|wash\}\]"/', $code );
+        $this->assertStringContainsString( "aria-label=\"{'Switch to the editor %engine'|i18n( 'design/standard/ezoe',, hash( '%engine', \$ezoe_engine_option.label ) )|wash}\"", $code );
+        $this->assertStringContainsString( "title=\"{'The text is kept, the choice is saved for your user.'|i18n( 'design/standard/ezoe' )|wash}\"", $code );
+        $this->assertStringNotContainsString( '<input', $code );
+        $this->assertSame( 1, substr_count( $code, '<button' ) );
+    }
+
+    public function testEveryEditTemplateIncludesTheEngineSwitch()
+    {
+        foreach ( array( 'ezxmltext_ezoe.tpl', 'ezxmltext_ezoe_tinymce8.tpl' ) as $name )
+        {
+            $tpl = file_get_contents( $this->root() . '/design/standard/templates/content/datatype/edit/' . $name );
+            $this->assertStringContainsString( "{include uri='design:content/datatype/edit/ezxmltext_ezoe_engine_switch.tpl' attribute=\$attribute input_handler=\$input_handler}", $tpl, $name );
+        }
     }
 
     public function testTheHandlerExposesTheEngineAttributes()
     {
         $handler = ( new ReflectionClass( 'eZOEXMLInput' ) )->newInstanceWithoutConstructor();
-        foreach ( array( 'engine', 'engine_switch_choices', 'engine_switch_enabled', 'tinymce8_cache_key' ) as $name )
+        foreach ( array( 'engine', 'engine_switch_choices', 'engine_switch_options', 'engine_switch_enabled', 'tinymce8_cache_key' ) as $name )
             $this->assertTrue( $handler->hasAttribute( $name ), $name );
     }
 
@@ -218,5 +241,7 @@ class expOEEngineConfigTest extends expOETestCase
         $this->preference( 'tinymce3' );
         $this->assertSame( 'tinymce3', $handler->attribute( 'engine' )['identifier'] );
         $this->assertSame( array( 'tinymce8' ), array_column( $handler->attribute( 'engine_switch_choices' ), 'identifier' ) );
+        $options = $handler->attribute( 'engine_switch_options' );
+        $this->assertSame( array( 'tinymce3' ), array_column( array_filter( $options, function ( $o ) { return $o['current']; } ), 'identifier' ) );
     }
 }

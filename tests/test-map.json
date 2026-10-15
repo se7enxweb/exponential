@@ -337,6 +337,12 @@
     ],
     "design/admin4/stylesheets/editor_content.css": [
       "tests/tests/design/AdminContentEditFormsTest.php"
+    ],
+    "extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe_engine_switch.tpl": [
+      "tests/tests/extension/ezoe/expOEEngineConfigTest.php"
+    ],
+    "extension/ezoe/ezxmltext/handlers/input/ezoexmlinput.php": [
+      "tests/tests/extension/ezoe/expOEEngineConfigTest.php"
     ]
   },
   "generated": {

@@ -100,6 +100,7 @@ class eZOEXMLInput extends eZXMLInputHandler
                       'engine_switch_enabled',
                       'engine',
                       'engine_switch_choices',
+                      'engine_switch_options',
                       'tinymce8_cache_key',
                       'literal_definition',
                       'embed_definitions',
@@ -144,6 +145,8 @@ class eZOEXMLInput extends eZXMLInputHandler
             $attr = expOEEditor::info( expOEEditor::resolve() );
         else if ( $name === 'engine_switch_choices' )
             $attr = expOEEditor::switchChoices( expOEEditor::resolve() );
+        else if ( $name === 'engine_switch_options' )
+            $attr = expOEEditor::switchOptions( expOEEditor::resolve() );
         else if ( $name === 'tinymce8_cache_key' )
             $attr = self::getTinyMCE8CacheKey();
         else if ( $name === 'literal_definition' )

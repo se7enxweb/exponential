@@ -227,6 +227,24 @@ class expOEEditor
     }
 
     /**
+     * Every available engine in the order of the registry, for the engine switch below the editor, the engine in use
+     * marked as current. An unknown $current marks the default engine, the one info() falls back to.
+     *
+     * @param string $current the identifier of the engine in use (resolve())
+     * @return array list of array( identifier, label, current )
+     */
+    public static function switchOptions( $current )
+    {
+        $labels = self::labels();
+        if ( !isset( $labels[$current] ) )
+            $current = self::DEFAULT_ENGINE;
+        $options = array();
+        foreach ( $labels as $id => $label )
+            $options[] = array( 'identifier' => (string) $id, 'label' => $label, 'current' => (string) $id === $current );
+        return $options;
+    }
+
+    /**
      * Stores the engine of the current user (preference ezoe_engine) and records the audit event.
      *
      * @param string $id an identifier of engines(), or '' to go back to the siteaccess default

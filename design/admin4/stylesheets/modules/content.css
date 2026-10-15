@@ -482,6 +482,53 @@ div.block.a4-content-attr { margin: 0 0 var(--a4-space-5); padding-bottom: 0; } 
   opacity: .55;
   cursor: not-allowed;
 }
+/* the editor engine switch below a rich text field (ezoe's ezxmltext_ezoe_engine_switch.tpl, EngineSwitch=enabled):
+   the label "Editor" and the engines as one segmented control, drawn like .a4-tabs.is-segmented (components.css) at
+   the one control height. The engine in use (span.current, aria-current) is filled; the others are the outlined
+   buttons that switch. Left-aligned under the field like its other controls, 8px below the editor's status bar; on a
+   narrow screen the engines wrap under the label. The selectors carry the group class, so they beat the button look
+   above (:is(.a4-content-attr, ...) button.button). */
+.a4-content-attr .ezoe-engine-switch {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--a4-space-1) var(--a4-space-2);
+  margin: var(--a4-space-2) 0 0;
+}
+.a4-content-attr .ezoe-engine-switch .ezoe-engine-switch-label { color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 650; }
+.a4-content-attr .ezoe-engine-switch .ezoe-engine-switch-options { display: inline-flex; flex-wrap: wrap; row-gap: var(--a4-space-1); min-width: 0; }
+.a4-content-attr .ezoe-engine-switch .ezoe-engine-switch-option {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--a4-control-h);
+  margin: 0;
+  padding: 0 var(--a4-space-3);
+  border: 1px solid var(--a4-line-strong);
+  border-radius: 0;
+  background-color: var(--a4-card);
+  color: var(--a4-ink);
+  font-family: var(--a4-font);
+  font-size: var(--a4-text-s);
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.a4-content-attr .ezoe-engine-switch .ezoe-engine-switch-option:not(:first-child) { margin-left: -1px; }
+.a4-content-attr .ezoe-engine-switch .ezoe-engine-switch-option:first-child { border-radius: var(--a4-radius-s) 0 0 var(--a4-radius-s); }
+.a4-content-attr .ezoe-engine-switch .ezoe-engine-switch-option:last-child { border-radius: 0 var(--a4-radius-s) var(--a4-radius-s) 0; }
+.a4-content-attr .ezoe-engine-switch button.ezoe-engine-switch-option:hover:not(:disabled),
+.a4-content-attr .ezoe-engine-switch button.ezoe-engine-switch-option:focus-visible { position: relative; z-index: 1; }
+.a4-content-attr .ezoe-engine-switch button.ezoe-engine-switch-option:hover:not(:disabled) { border-color: var(--a4-accent); color: var(--a4-accent-text); }
+.a4-content-attr .ezoe-engine-switch .ezoe-engine-switch-option.current {
+  position: relative;
+  border-color: var(--a4-accent-strong);
+  background-color: var(--a4-accent-strong);
+  color: var(--a4-on-accent);
+  font-weight: 650;
+  cursor: default;
+}
+
 /* the file field: its button is an .a4-btn, its text the field's */
 .a4-content-attr input[type=file] {
   max-width: 100%;
@@ -533,4 +580,6 @@ div.block.a4-content-attr { margin: 0 0 var(--a4-space-5); padding-bottom: 0; } 
   .a4-content-attr select:where(:not([multiple]):not([size]), [size="1"]) { -webkit-appearance: auto; appearance: auto; padding-right: var(--a4-space-2); background-image: none; }
   :is(.a4-content-attr, .a4-content-edit) input.defaultbutton { border-width: 2px; }
   :is(.a4-content-attr, .a4-content-edit) :is(input.button-disabled, input.button, button.button, input.defaultbutton):disabled { border-color: GrayText; color: GrayText; opacity: 1; }
+  /* the engine in use of the editor switch loses its fill: an outline marks it */
+  .a4-content-attr .ezoe-engine-switch .ezoe-engine-switch-option.current { outline: 2px solid Highlight; outline-offset: -2px; }
 }
