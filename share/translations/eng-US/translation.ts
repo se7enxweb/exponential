@@ -59759,6 +59759,86 @@ You will need to change the class of the node by using the swap functionality.</
         <source>only these locations go; the objects keep existing at their other locations</source>
         <translation>only these locations go; the objects keep existing at their other locations</translation>
     </message>
+    <message>
+        <source>Remove %count locations of %name</source>
+        <translation>Remove %count locations of %name</translation>
+    </message>
+    <message>
+        <source>Only the selected locations are removed; the object keeps its other locations.</source>
+        <translation>Only the selected locations are removed; the object keeps its other locations.</translation>
+    </message>
+    <message>
+        <source>Large copies normally run as a background job, but background jobs are not available on this server right now. Try again later, or use the command exp:expcontentjob copy.</source>
+        <translation>Large copies normally run as a background job, but background jobs are not available on this server right now. Try again later, or use the command exp:expcontentjob copy.</translation>
+    </message>
+    <message>
+        <source>This job cannot be cancelled any more.</source>
+        <translation>This job cannot be cancelled any more.</translation>
+    </message>
+    <message>
+        <source>This job cannot be resumed.</source>
+        <translation>This job cannot be resumed.</translation>
+    </message>
+    <message>
+        <source>There is no partial copy to remove.</source>
+        <translation>There is no partial copy to remove.</translation>
+    </message>
+    <message>
+        <source>Not for more than %limit items: the request would take too long (content.ini NowLimit).</source>
+        <translation>Not for more than %limit items: the request would take too long (content.ini NowLimit).</translation>
+    </message>
+    <message>
+        <source>Not for more than %limit items here (content.ini %setting).</source>
+        <translation>Not for more than %limit items here (content.ini %setting).</translation>
+    </message>
+    <message>
+        <source>This part of the content tree is being changed by a background job. Try again when the job is done.</source>
+        <translation>This part of the content tree is being changed by a background job. Try again when the job is done.</translation>
+    </message>
+    <message>
+        <source>Not started</source>
+        <translation>Not started</translation>
+    </message>
+    <message>
+        <source>%name and %count more</source>
+        <translation>%name and %count more</translation>
+    </message>
+    <message>
+        <source>Copying %name</source>
+        <translation>Copying %name</translation>
+    </message>
+    <message>
+        <source>Copy subtree</source>
+        <translation>Copy subtree</translation>
+    </message>
+    <message>
+        <source>The subtree has been copied.</source>
+        <translation>The subtree has been copied.</translation>
+    </message>
+    <message>
+        <source>Open the copy</source>
+        <translation>Open the copy</translation>
+    </message>
+    <message>
+        <source>Remove subtree, move to trash</source>
+        <translation>Remove subtree, move to trash</translation>
+    </message>
+    <message>
+        <source>Remove, to trash</source>
+        <translation>Remove, to trash</translation>
+    </message>
+    <message>
+        <source>The job is done.</source>
+        <translation>The job is done.</translation>
+    </message>
+    <message>
+        <source>Open the node</source>
+        <translation>Open the node</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Node %id</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/audit</name>
