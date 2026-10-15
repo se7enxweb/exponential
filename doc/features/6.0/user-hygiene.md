@@ -8,7 +8,7 @@ overview in the group *Users and messages*. Added 2026-10-15.
 ## In short
 
 - One list of every user account, or of those below a user group, with a filter: **All accounts**, **Never signed
-  in**, **Not seen for N days** (180 by default), **Disabled**, **Locked**, **Orphaned** and **Shared e-mail
+  in**, **Not seen for N days** (180 by default), **Disabled**, **Locked**, **Orphaned**, **Shared login** and **Shared e-mail
   address** (only with the right to see addresses). Each filter shows how many accounts it holds; a search (name, login and, with the right to see them,
   e-mail address) and the page size (25, 50, 100) narrow it further. The columns name, login, e-mail address and
   last visit, and the number of sign-ins, order the list either way.
@@ -27,16 +27,24 @@ overview in the group *Users and messages*. Added 2026-10-15.
 | Filter | Accounts |
 |---|---|
 | All accounts | every account whose object is not in the trash |
-| Never signed in | no sign-in counted (`ezuservisit.login_count` 0, or no row) |
+| Never signed in | no sign-in counted (`ezuservisit.login_count` 0, or no row); not the anonymous user (`[UserSettings] AnonymousUserID`), which cannot sign in |
 | Not seen for N days | signed in at least once, and the last visit is more than N days ago (1 to 36500) |
 | Disabled | `ezuser_setting.is_enabled` 0; a disabled account with an activation key is marked *Not activated* |
 | Locked | more failed sign-ins than `site.ini [UserSettings] MaxNumberOfFailedLogin`, as `eZUser::isLocked()` decides; none while the setting is 0 |
-| Orphaned | no user object, an object that was never published, or a published object without a location |
+| Orphaned | an account (a row of `ezuser`) whose user object is missing, was never published (no published version), or is published but has no location anywhere in the tree (no row in `ezcontentobject_tree`). A location outside the Users subtree is a location: members may be placed elsewhere on purpose |
+| Shared login | a login (any case, as `eZUser::fetchByName()` compares) that another listed account has as well; ordered by login. Logins shared this way are what [LoveStack L04](../../bc/6.0/lovestack.md#l04--one-account-per-login) reports with `./console exp:user-login-check`: resolve them here, then `--fix-index` can add the unique index |
 | Shared e-mail address | an address (any case) that another listed account has as well; ordered by address, so the accounts of one address are side by side. Only with `role/assign` |
 
 The **last visit** is `ezuservisit.current_visit_timestamp`, the time of the last sign-in or of the first request
 after a longer pause (`site.ini [Session] ActivityTimeout`); a sign-out stores it negated, which the page reads as
 the same time. It is not `eZUser::lastVisit()`, which gives the visit before that.
+
+The other side of *orphaned*, a published user object without an account row (an object of a class with a
+`ezuser` attribute and no row in `ezuser`), cannot be listed: the list is read from `ezuser`, and no action applies
+to an object without an account. The page counts them and says how many there are above the list; open them in the
+content tree.
+
+Under the tabs the page says in one line what the current filter holds.
 
 The **states** of a row, the most pressing first: *Disabled* or *Not activated*, *Locked*, *No user object*,
 *Never published* or *No location*, *Never signed in*; *Active* when none applies.
@@ -91,9 +99,9 @@ most 100,000 accounts; they are read 500 at a time by id.
 ## Many accounts
 
 The list and its count are one query each over `ezuser` and its one-row companions (`ezuser_setting`,
-`ezuservisit`, `ezcontentobject`); the groups, roles, activation keys and shared addresses of a page are five
-queries for the whole page, whatever its size; a view of the page adds one count per filter for the tabs (13
-queries in all). Measured with 50,000 fixture accounts in SQLite on a laptop (PHP 8.5): a page of 100 with its count
+`ezuservisit`, `ezcontentobject`); the groups, roles, activation keys, shared addresses and shared logins of a page
+are six queries for the whole page, whatever its size; a view of the page adds one count per filter for the tabs and
+one for the user objects without an account (16 queries in all). Measured with 50,000 fixture accounts in SQLite on a laptop (PHP 8.5): a page of 100 with its count
 in 26 to 146 ms depending on the filter (shared addresses the slowest), a whole view of the page with the counts of
 every filter in 216 ms, a page at offset 49,000 in 108 ms, the CSV of all 50,000 accounts in 1.6 s with 12 MB of
 memory. An action reads each ticked account on its own (its object, setting, key and access), at most 100.

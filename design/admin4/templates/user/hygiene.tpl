@@ -1,5 +1,5 @@
 {* Check user accounts (user/hygiene): every user account, or those below a user group, by one filter (tabs with their
-   counts: all, never signed in, not seen for N days, disabled, locked, orphaned, shared e-mail address), a search and
+   counts: all, never signed in, not seen for N days, disabled, locked, orphaned, shared login, shared e-mail address), a search and
    the page size (a GET form), ordered by the column headers and paged. One row per account: name (its node), login,
    e-mail (only with role/assign), state, last visit, sign-ins, groups and roles.
 
@@ -108,11 +108,26 @@
                'disabled', 'Disabled'|i18n( 'design/admin/user/hygiene' ),
                'locked', 'Locked'|i18n( 'design/admin/user/hygiene' ),
                'orphaned', 'Orphaned'|i18n( 'design/admin/user/hygiene' ),
+               'duplicate_login', 'Shared login'|i18n( 'design/admin/user/hygiene' ),
                'duplicate_email', 'Shared e-mail address'|i18n( 'design/admin/user/hygiene' ) ) as $key => $text}
     {if is_set( $hygiene_filter_queries[$key] )}<li><a href={concat( $uri, $hygiene_filter_queries[$key] )|ezurl}{if eq( $key, $hygiene_filters.filter )} class="current" aria-current="page"{/if}>{$text|wash} <span class="a4-badge">{first_set( $hygiene_filter_counts[$key], 0 )}</span></a></li>{/if}
 {/foreach}
 </ul>
 </nav>
+{* What the current filter holds, exactly *}
+<p class="a4-help" id="hygiene-filter-help">{switch match=$hygiene_filters.filter}
+    {case match='never'}{'Accounts without a counted sign-in. The anonymous user is not one of them: it cannot sign in.'|i18n( 'design/admin/user/hygiene' )}{/case}
+    {case match='inactive'}{'Accounts that signed in at least once and whose last visit is longer ago than the number of days.'|i18n( 'design/admin/user/hygiene' )}{/case}
+    {case match='disabled'}{'Accounts that cannot sign in because they are disabled, including those never activated.'|i18n( 'design/admin/user/hygiene' )}{/case}
+    {case match='locked'}{'Accounts with more failed sign-ins than the limit (%max); none while the limit is 0.'|i18n( 'design/admin/user/hygiene',, hash( '%max', $hygiene_max_failed_logins ) )}{/case}
+    {case match='orphaned'}{'Accounts whose user object is missing, was never published, or has no location in the tree.'|i18n( 'design/admin/user/hygiene' )}{/case}
+    {case match='duplicate_login'}{'Logins that more than one account has, in any case. Resolve them, then the unique index on logins can be added (exp:user-login-check --fix-index).'|i18n( 'design/admin/user/hygiene' )}{/case}
+    {case match='duplicate_email'}{'E-mail addresses that more than one account has, in any case.'|i18n( 'design/admin/user/hygiene' )}{/case}
+    {case}{'Every account whose user object is not in the trash.'|i18n( 'design/admin/user/hygiene' )}{/case}
+{/switch}</p>
+{if $hygiene_accountless_objects|gt( 0 )}
+<div class="a4-notice is-info" role="status">{'%count published user objects have no account. They cannot sign in, are not listed here and no action applies to them; open them in the content tree.'|i18n( 'design/admin/user/hygiene',, hash( '%count', $hygiene_accountless_objects ) )}</div>
+{/if}
 
 <section aria-labelledby="hygiene-find-title">
 <h2 class="a4-sr-only" id="hygiene-find-title">{'Narrow the list'|i18n( 'design/admin/user/hygiene' )}</h2>
@@ -188,7 +203,7 @@
 <tr>
     <td>{if $is_protected}<input type="checkbox" disabled="disabled" id="hygiene-{$account.id}" title="{'Never changed here: the anonymous user, the administrator account or you.'|i18n( 'design/admin/user/hygiene' )}" />{else}<input type="checkbox" name="UserIDArray[]" id="hygiene-{$account.id}" value="{$account.id}" />{/if}</td>
     <td><label for="hygiene-{$account.id}">{if $account.node_id|gt( 0 )}<a href={concat( 'content/view/full/', $account.node_id )|ezurl}>{if $account.name|ne( '' )}{$account.name|wash}{else}{'(no name)'|i18n( 'design/admin/user/hygiene' )}{/if}</a>{elseif $account.name|ne( '' )}{$account.name|wash}{else}<span class="a4-muted">{'(no name)'|i18n( 'design/admin/user/hygiene' )}</span>{/if}</label></td>
-    <td class="a4-nowrap"><code>{$account.login|wash}</code></td>
+    <td class="a4-nowrap"><code>{$account.login|wash}</code>{if $account.shared_login|gt( 1 )} <span class="a4-badge is-warn" title="{'%count accounts use this login.'|i18n( 'design/admin/user/hygiene',, hash( '%count', $account.shared_login ) )}">{'×%count'|i18n( 'design/admin/user/hygiene',, hash( '%count', $account.shared_login ) )}</span>{/if}</td>
     {if $hygiene_can_see_email}<td>{$account.email|wash}{if $account.shared_email|gt( 1 )} <span class="a4-badge is-warn" title="{'%count accounts use this address.'|i18n( 'design/admin/user/hygiene',, hash( '%count', $account.shared_email ) )}">{'×%count'|i18n( 'design/admin/user/hygiene',, hash( '%count', $account.shared_email ) )}</span>{/if}</td>{/if}
     <td><span class="a4-badges">{foreach $account.states as $state}<span class="a4-badge {$state_levels[$state]}"{if eq( $state, 'locked' )} title="{'%count failed sign-ins; the limit is %max.'|i18n( 'design/admin/user/hygiene',, hash( '%count', $account.failed_attempts, '%max', $hygiene_max_failed_logins ) )}"{/if}>{if array( 'disabled', 'locked' )|contains( $state )}<span class="a4-status is-{$state}" aria-hidden="true"></span>{/if}{$state_names[$state]|wash}</span>{/foreach}</span></td>
     <td class="a4-nowrap">{if $account.last_visit}{$account.last_visit|l10n( 'shortdate' )}<br /><span class="a4-muted">{'%count days ago'|i18n( 'design/admin/user/hygiene',, hash( '%count', $account.idle_days ) )}</span>{else}<span class="a4-muted">{'Never'|i18n( 'design/admin/user/hygiene' )}</span>{/if}</td>

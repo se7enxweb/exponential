@@ -9,7 +9,7 @@
 
 /**
  * The accounts the page user/hygiene ("Check user accounts") lists: every user account, or those below a user group,
- * narrowed by one filter (never signed in, not seen for N days, disabled, locked after failed sign-ins, orphaned,
+ * narrowed by one filter (never signed in, not seen for N days, disabled, locked after failed sign-ins, orphaned, sharing a login,
  * sharing an e-mail address with another account) and a search, ordered and paged, with their state, last visit,
  * number of sign-ins, groups and roles; the bulk actions disable, enable and unlock; and the CSV of the list.
  *
@@ -31,7 +31,7 @@
 class expUserHygiene
 {
     /** The filters of the page, the first is the default */
-    const FILTERS = array( 'all', 'never', 'inactive', 'disabled', 'locked', 'orphaned', 'duplicate_email' );
+    const FILTERS = array( 'all', 'never', 'inactive', 'disabled', 'locked', 'orphaned', 'duplicate_login', 'duplicate_email' );
 
     /** The orders the page offers: the name the address carries => the column */
     const SORTS = array(
@@ -75,18 +75,23 @@ class expUserHygiene
     /** @var int [UserSettings] MaxNumberOfFailedLogin, 0 = no locking */
     protected $maxFailed;
 
+    /** @var int [UserSettings] AnonymousUserID, 0 = none: never counted as "never signed in" (it cannot sign in) */
+    protected $anonymousID;
+
     /**
      * @param callable $query ( string $sql, int $offset, int $limit ) => array rows; $limit 0 means all
      * @param callable $escape ( string $text ) => string, escaped for a quoted SQL string
      * @param int|null $now the time the days are counted to
      * @param int $maxFailed [UserSettings] MaxNumberOfFailedLogin
+     * @param int $anonymousID [UserSettings] AnonymousUserID
      */
-    public function __construct( $query, $escape, $now = null, $maxFailed = 0 )
+    public function __construct( $query, $escape, $now = null, $maxFailed = 0, $anonymousID = 0 )
     {
         $this->query = $query;
         $this->escape = $escape;
         $this->now = $now === null ? time() : (int)$now;
         $this->maxFailed = max( 0, (int)$maxFailed );
+        $this->anonymousID = max( 0, (int)$anonymousID );
     }
 
     /**
@@ -111,7 +116,8 @@ class expUserHygiene
                 return $db->escapeString( (string)$text );
             },
             null,
-            (int)eZUser::maxNumberOfFailedLogin()
+            (int)eZUser::maxNumberOfFailedLogin(),
+            (int)eZINI::instance()->variable( 'UserSettings', 'AnonymousUserID' )
         );
     }
 
@@ -201,6 +207,8 @@ class expUserHygiene
             // the accounts of one address side by side
             if ( $filter === 'duplicate_email' )
                 $change += array( 'sort' => 'email', 'order' => 'asc' );
+            elseif ( $filter === 'duplicate_login' )
+                $change += array( 'sort' => 'login', 'order' => 'asc' );
             $links['filters'][$filter] = self::queryString( $filters, $change );
         }
         foreach ( array( 'name', 'login', 'email', 'last_visit', 'login_count' ) as $column )
@@ -248,7 +256,9 @@ class expUserHygiene
         switch ( $filters['filter'] )
         {
             case 'never':
-                $sql .= ' AND ( v.user_id IS NULL OR v.login_count = 0 )';
+                // the anonymous user cannot sign in: it is not an account nobody uses
+                $sql .= ' AND ( v.user_id IS NULL OR v.login_count = 0 )'
+                      . ( $this->anonymousID > 0 ? ' AND u.contentobject_id <> ' . $this->anonymousID : '' );
                 break;
             case 'inactive':
                 $cutoff = $this->now - (int)$filters['days'] * 86400;
@@ -265,6 +275,12 @@ class expUserHygiene
                 // no object, an object that was never published, or one without a location in the tree
                 $sql .= ' AND ( o.id IS NULL OR o.status <> ' . (int)eZContentObject::STATUS_PUBLISHED
                       . ' OR NOT EXISTS ( SELECT 1 FROM ezcontentobject_tree t WHERE t.contentobject_id = u.contentobject_id ) )';
+                break;
+            case 'duplicate_login':
+                // LoveStack L04: a login (any case, as eZUser::fetchByName() compares) that another listed account
+                // has as well; resolve them, then ./console exp:user-login-check --fix-index adds the unique index
+                $sql .= ' AND LENGTH( u.login ) > 0 AND LOWER( u.login ) IN ( SELECT LOWER( d.login ) FROM ezuser d'
+                      . ' WHERE LENGTH( d.login ) > 0 AND ' . self::LISTED_D . ' GROUP BY LOWER( d.login ) HAVING COUNT( * ) > 1 )';
                 break;
             case 'duplicate_email':
                 // LENGTH() rather than <> '': Oracle stores an empty string as NULL
@@ -344,15 +360,15 @@ class expUserHygiene
     const LISTED_D = 'NOT EXISTS ( SELECT 1 FROM ezcontentobject x WHERE x.id = d.contentobject_id AND x.status = 2 )';
 
     /** The columns of a listed account */
-    const SELECT = 'SELECT u.contentobject_id, u.login, u.email, LOWER( u.email ) AS email_key, o.name, o.status AS object_status, s.is_enabled,'
+    const SELECT = 'SELECT u.contentobject_id, u.login, LOWER( u.login ) AS login_key, u.email, LOWER( u.email ) AS email_key, o.name, o.status AS object_status, s.is_enabled,'
                  . ' v.login_count, v.current_visit_timestamp, v.failed_login_attempts';
 
     /**
      * The rows of a page made into accounts: id, login, email, name, enabled, unactivated (disabled with an account
      * key), locked, failed_attempts, login_count, last_visit (false when never), idle_days (whole days since the last
      * visit, false when never), object (published, draft, none), node_id (the main node, 0 without one), groups
-     * (node_id, name), roles (names), shared_email (how many accounts have the same address, 1 when none), orphaned,
-     * and states (see states()). Five queries for the whole page, whatever its size.
+     * (node_id, name), roles (names), shared_email (how many accounts have the same address, 1 when none), shared_login (the same for the login, any case), orphaned,
+     * and states (see states()). Six queries for the whole page, whatever its size.
      *
      * @param array $rows
      * @return array[]
@@ -418,6 +434,14 @@ class expUserHygiene
                                   . ' GROUP BY LOWER( d.email )', 0, 0 ) as $row )
             $shared[(string)$row['email_key']] = (int)$row['c'];
 
+        // 5. how many listed accounts share the login of each account of the page (any case, LoveStack L04)
+        $sharedLogins = array();
+        foreach ( call_user_func( $this->query, 'SELECT LOWER( d.login ) AS login_key, COUNT( * ) AS c FROM ezuser d'
+                                  . ' WHERE LOWER( d.login ) IN ( SELECT LOWER( u.login ) FROM ezuser u'
+                                  . " WHERE u.contentobject_id IN ( $in ) AND LENGTH( u.login ) > 0 ) AND " . self::LISTED_D
+                                  . ' GROUP BY LOWER( d.login )', 0, 0 ) as $row )
+            $sharedLogins[(string)$row['login_key']] = (int)$row['c'];
+
         $accounts = array();
         foreach ( $rows as $row )
         {
@@ -456,6 +480,7 @@ class expUserHygiene
                 'groups' => $groups,
                 'roles' => array_values( $roles ),
                 'shared_email' => isset( $shared[(string)$row['email_key']] ) ? max( 1, $shared[(string)$row['email_key']] ) : 1,
+                'shared_login' => isset( $sharedLogins[(string)$row['login_key']] ) ? max( 1, $sharedLogins[(string)$row['login_key']] ) : 1,
             );
             $account['idle_days'] = $account['last_visit'] === false ? false : (int)max( 0, floor( ( $this->now - $account['last_visit'] ) / 86400 ) );
             $account['unactivated'] = !$account['enabled'] && $account['has_key'];
@@ -748,6 +773,22 @@ class expUserHygiene
                 break;
         }
         return $written;
+    }
+
+    /**
+     * The other side of "orphaned": how many published objects of a class with a user account attribute (datatype
+     * ezuser) have no account row in ezuser. They cannot sign in and no action of the page applies to them, so the
+     * list (which is read from ezuser) never holds them; the page reports their number only. One query.
+     *
+     * @return int
+     */
+    public function accountlessObjectCount()
+    {
+        $rows = call_user_func( $this->query, 'SELECT COUNT( * ) AS c FROM ezcontentobject o'
+                                . ' WHERE o.status = ' . (int)eZContentObject::STATUS_PUBLISHED
+                                . " AND o.contentclass_id IN ( SELECT a.contentclass_id FROM ezcontentclass_attribute a WHERE a.data_type_string = 'ezuser' AND a.version = 0 )"
+                                . ' AND NOT EXISTS ( SELECT 1 FROM ezuser u WHERE u.contentobject_id = o.id )', 0, 0 );
+        return isset( $rows[0]['c'] ) ? (int)$rows[0]['c'] : 0;
     }
 
     /**

@@ -37292,6 +37292,50 @@ your account.</translation>
 <context>
     <name>design/admin/user/hygiene</name>
     <message>
+        <source>Shared login</source>
+        <translation>Shared login</translation>
+    </message>
+    <message>
+        <source>%count accounts use this login.</source>
+        <translation>%count accounts use this login.</translation>
+    </message>
+    <message>
+        <source>Accounts without a counted sign-in. The anonymous user is not one of them: it cannot sign in.</source>
+        <translation>Accounts without a counted sign-in. The anonymous user is not one of them: it cannot sign in.</translation>
+    </message>
+    <message>
+        <source>Accounts that signed in at least once and whose last visit is longer ago than the number of days.</source>
+        <translation>Accounts that signed in at least once and whose last visit is longer ago than the number of days.</translation>
+    </message>
+    <message>
+        <source>Accounts that cannot sign in because they are disabled, including those never activated.</source>
+        <translation>Accounts that cannot sign in because they are disabled, including those never activated.</translation>
+    </message>
+    <message>
+        <source>Accounts with more failed sign-ins than the limit (%max); none while the limit is 0.</source>
+        <translation>Accounts with more failed sign-ins than the limit (%max); none while the limit is 0.</translation>
+    </message>
+    <message>
+        <source>Accounts whose user object is missing, was never published, or has no location in the tree.</source>
+        <translation>Accounts whose user object is missing, was never published, or has no location in the tree.</translation>
+    </message>
+    <message>
+        <source>Logins that more than one account has, in any case. Resolve them, then the unique index on logins can be added (exp:user-login-check --fix-index).</source>
+        <translation>Logins that more than one account has, in any case. Resolve them, then the unique index on logins can be added (exp:user-login-check --fix-index).</translation>
+    </message>
+    <message>
+        <source>E-mail addresses that more than one account has, in any case.</source>
+        <translation>E-mail addresses that more than one account has, in any case.</translation>
+    </message>
+    <message>
+        <source>Every account whose user object is not in the trash.</source>
+        <translation>Every account whose user object is not in the trash.</translation>
+    </message>
+    <message>
+        <source>%count published user objects have no account. They cannot sign in, are not listed here and no action applies to them; open them in the content tree.</source>
+        <translation>%count published user objects have no account. They cannot sign in, are not listed here and no action applies to them; open them in the content tree.</translation>
+    </message>
+    <message>
         <source>Active</source>
         <translation>Active</translation>
     </message>

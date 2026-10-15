@@ -114,6 +114,7 @@ class Hygiene extends \Exponential\Runnable\ModuleView
         $accounts = array();
         $filterCounts = array();
         $groups = array();
+        $accountless = 0;
         if ( $hygiene !== null )
         {
             $count = $hygiene->count( $filters, $canSeeEmail, $groupPath );
@@ -123,6 +124,7 @@ class Hygiene extends \Exponential\Runnable\ModuleView
             foreach ( \expUserHygiene::filters( $canSeeEmail ) as $filter )
                 $filterCounts[$filter] = $filter === $filters['filter'] ? $count : $hygiene->count( array( 'filter' => $filter ) + $filters, $canSeeEmail, $groupPath );
             $groups = $hygiene->groups( (int)\eZINI::instance()->variable( 'UserSettings', 'UserGroupClassID' ) );
+            $accountless = $hygiene->accountlessObjectCount();
         }
 
         $protected = \expUserHygiene::protectedIDs( $currentUser->attribute( 'contentobject_id' ) );
@@ -130,6 +132,7 @@ class Hygiene extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'hygiene_account_count', $count );
         $tpl->setVariable( 'hygiene_filter_counts', $filterCounts );
         $tpl->setVariable( 'hygiene_groups', $groups );
+        $tpl->setVariable( 'hygiene_accountless_objects', $accountless );
         $tpl->setVariable( 'hygiene_protected_ids', $protected );
         $tpl->setVariable( 'hygiene_max_failed_logins', (int)\eZUser::maxNumberOfFailedLogin() );
         $tpl->setVariable( 'view_parameters', array( 'offset' => $offset ) );

@@ -40320,6 +40320,50 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
 <context>
     <name>design/admin/user/hygiene</name>
     <message>
+        <source>Shared login</source>
+        <translation>Doppelter Benutzername</translation>
+    </message>
+    <message>
+        <source>%count accounts use this login.</source>
+        <translation>%count Konten verwenden diesen Benutzernamen.</translation>
+    </message>
+    <message>
+        <source>Accounts without a counted sign-in. The anonymous user is not one of them: it cannot sign in.</source>
+        <translation>Konten ohne gezählte Anmeldung. Der anonyme Benutzer gehört nicht dazu: er kann sich nicht anmelden.</translation>
+    </message>
+    <message>
+        <source>Accounts that signed in at least once and whose last visit is longer ago than the number of days.</source>
+        <translation>Konten, die sich mindestens einmal angemeldet haben und deren letzter Besuch länger zurückliegt als die Anzahl Tage.</translation>
+    </message>
+    <message>
+        <source>Accounts that cannot sign in because they are disabled, including those never activated.</source>
+        <translation>Konten, die sich nicht anmelden können, weil sie deaktiviert sind, auch die nie aktivierten.</translation>
+    </message>
+    <message>
+        <source>Accounts with more failed sign-ins than the limit (%max); none while the limit is 0.</source>
+        <translation>Konten mit mehr fehlgeschlagenen Anmeldungen als die Grenze (%max); keine, solange die Grenze 0 ist.</translation>
+    </message>
+    <message>
+        <source>Accounts whose user object is missing, was never published, or has no location in the tree.</source>
+        <translation>Konten, deren Benutzerobjekt fehlt, nie veröffentlicht wurde oder keinen Ort im Baum hat.</translation>
+    </message>
+    <message>
+        <source>Logins that more than one account has, in any case. Resolve them, then the unique index on logins can be added (exp:user-login-check --fix-index).</source>
+        <translation>Benutzernamen, die mehr als ein Konto hat, in beliebiger Schreibweise. Lösen Sie sie auf, dann lässt sich der eindeutige Index auf Benutzernamen anlegen (exp:user-login-check --fix-index).</translation>
+    </message>
+    <message>
+        <source>E-mail addresses that more than one account has, in any case.</source>
+        <translation>E-Mail-Adressen, die mehr als ein Konto hat, in beliebiger Schreibweise.</translation>
+    </message>
+    <message>
+        <source>Every account whose user object is not in the trash.</source>
+        <translation>Jedes Konto, dessen Benutzerobjekt nicht im Papierkorb liegt.</translation>
+    </message>
+    <message>
+        <source>%count published user objects have no account. They cannot sign in, are not listed here and no action applies to them; open them in the content tree.</source>
+        <translation>%count veröffentlichte Benutzerobjekte haben kein Konto. Sie können sich nicht anmelden, stehen nicht in dieser Liste und keine Aktion gilt für sie; öffnen Sie sie im Inhaltsbaum.</translation>
+    </message>
+    <message>
         <source>Active</source>
         <translation>Aktiv</translation>
     </message>

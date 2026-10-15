@@ -18,6 +18,8 @@
  *  UH-08 - The page: the view needs user/hygiene, changes and the CSV are POSTs with confirmation, e-mail only with
  *          role/assign, the same template in admin and admin4, the links of both menus and the Setup overview, the
  *          texts translated
+ *  UH-09 - Shared logins (LoveStack L04, any case, not counting the trash), the anonymous user is not "never signed
+ *          in", and the published user objects without an account are counted but never listed
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -128,7 +130,7 @@ class expUserHygieneTest extends PHPUnit\Framework\TestCase
         $this->account( 115, array( 'email' => '', 'setting' => false, 'nodes' => array( 60 => '/1/5/12/60/', 13 => '/1/5/13/' ) ) ); // two groups
     }
 
-    private function hygiene( $maxFailed = self::MAX_FAILED )
+    private function hygiene( $maxFailed = self::MAX_FAILED, $anonymousID = 0 )
     {
         $db = $this->db;
         $log = &$this->queries;
@@ -148,7 +150,8 @@ class expUserHygieneTest extends PHPUnit\Framework\TestCase
             },
             function ( $text ) { return SQLite3::escapeString( $text ); },
             self::NOW,
-            $maxFailed
+            $maxFailed,
+            $anonymousID
         );
     }
 
@@ -254,7 +257,7 @@ class expUserHygieneTest extends PHPUnit\Framework\TestCase
         $this->assertCount( 2, $accounts );
         $this->assertCount( 62, $many );
         $this->assertSame( $few, count( $this->queries ), 'the same queries for 2 and for 62 accounts' );
-        $this->assertLessThanOrEqual( 6, count( $this->queries ), 'the list and five for the whole page' );
+        $this->assertLessThanOrEqual( 7, count( $this->queries ), 'the list and six for the whole page' );
 
         $byID = array();
         foreach ( $hygiene->page( $this->filters(), true ) as $account )
@@ -314,7 +317,7 @@ class expUserHygieneTest extends PHPUnit\Framework\TestCase
         $this->assertSame( '?sort=login', $links['clear'] );
         $this->assertArrayNotHasKey( 'email', expUserHygiene::links( $defaults, false )['sorts'] );
         $this->assertArrayNotHasKey( 'duplicate_email', expUserHygiene::links( $defaults, false )['filters'], 'no shared addresses without the right' );
-        $this->assertSame( array( 'all', 'never', 'inactive', 'disabled', 'locked', 'orphaned' ), expUserHygiene::filters( false ) );
+        $this->assertSame( array( 'all', 'never', 'inactive', 'disabled', 'locked', 'orphaned', 'duplicate_login' ), expUserHygiene::filters( false ), 'shared logins without the right to see addresses as well' );
         $this->assertSame( expUserHygiene::FILTERS, expUserHygiene::filters( true ) );
         $this->assertSame( 'all', expUserHygiene::normaliseFilters( array( 'filter' => 'duplicate_email' ), false )['filter'] );
 
@@ -408,10 +411,52 @@ class expUserHygieneTest extends PHPUnit\Framework\TestCase
         $second = $hygiene->batch( $this->filters(), true, null, 105, 5 );
         $this->assertSame( array( 101, 102, 103, 104, 105 ), $this->ids( $first ) );
         $this->assertSame( array( 106, 107, 108, 109, 110 ), $this->ids( $second ) );
-        $this->assertStringContainsString( 'u.contentobject_id > 105', $this->queries[count( $this->queries ) - 6] );
+        $this->assertStringContainsString( 'u.contentobject_id > 105', $this->queries[count( $this->queries ) - 7] );
 
         $this->assertSame( array( 'User ID', 'Name', 'Login', 'Status', 'Last visit', 'Sign-ins', 'Groups', 'Roles' ), expUserHygiene::csvHeader( false ) );
         $this->assertSame( 'Never signed in', expUserHygiene::stateName( 'never' ) );
+    }
+
+    public function testUH09SharedLoginsTheAnonymousUserAndAccountlessObjects()
+    {
+        $this->fixture();
+        // LoveStack L04: logins in any case; an account in the trash does not count; an empty login is shared with nobody
+        $this->account( 116, array( 'login' => 'USER101' ) );
+        $this->account( 117, array( 'login' => 'user103', 'object' => 'archived' ) );
+        $this->account( 118, array( 'login' => '' ) );
+        $this->account( 119, array( 'login' => '' ) );
+        $this->assertSame( array( 101, 116 ), $this->find( array( 'filter' => 'duplicate_login' ) ) );
+        $this->assertSame( array( 101, 116 ), $this->find( array( 'filter' => 'duplicate_login' ), false ), 'logins are no secret: also without the right to see addresses' );
+        $this->assertSame( array( 101 ), $this->find( array( 'filter' => 'duplicate_login', 'q' => 'Sample User 101' ) ) );
+        $byID = array();
+        foreach ( $this->hygiene()->page( $this->filters(), true ) as $account )
+            $byID[$account['id']] = $account;
+        $this->assertSame( 2, $byID[101]['shared_login'] );
+        $this->assertSame( 2, $byID[116]['shared_login'] );
+        $this->assertSame( 1, $byID[103]['shared_login'], 'the twin in the trash does not count' );
+        $this->assertSame( 1, $byID[118]['shared_login'], 'an empty login is shared with nobody' );
+        $links = expUserHygiene::links( expUserHygiene::normaliseFilters( array(), false ), false );
+        $this->assertSame( '?filter=duplicate_login&sort=login', $links['filters']['duplicate_login'], 'the accounts of one login side by side' );
+
+        // the anonymous user cannot sign in: not "never signed in", but still in the list of every account
+        $never = function ( $anonymousID )
+        {
+            return $this->ids( $this->hygiene( self::MAX_FAILED, $anonymousID )->page( $this->filters( array( 'filter' => 'never' ) ), true ) );
+        };
+        $this->assertContains( 102, $never( 0 ) );
+        $this->assertNotContains( 102, $never( 102 ) );
+        $this->assertSame( count( $never( 0 ) ) - 1, count( $never( 102 ) ) );
+        $this->assertContains( 102, $this->ids( $this->hygiene( self::MAX_FAILED, 102 )->page( $this->filters(), true ) ) );
+
+        // published objects of a class with an ezuser attribute and no account row: counted, never listed
+        $this->db->exec( 'CREATE TABLE ezcontentclass_attribute ( id INTEGER PRIMARY KEY, contentclass_id INTEGER, version INTEGER, data_type_string TEXT )' );
+        $this->db->exec( "INSERT INTO ezcontentclass_attribute ( contentclass_id, version, data_type_string ) VALUES ( 4, 0, 'ezuser' ), ( 4, 1, 'ezuser' ), ( 3, 0, 'ezstring' ), ( 9, 1, 'ezuser' )" );
+        $this->assertSame( 0, $this->hygiene()->accountlessObjectCount(), 'every user object has its account' );
+        $this->db->exec( "INSERT INTO ezcontentobject ( id, contentclass_id, name, status ) VALUES ( 301, 4, 'No account', 1 ), ( 302, 4, 'Draft', 0 ),"
+                         . " ( 303, 3, 'A group', 1 ), ( 304, 9, 'Class draft only', 1 ), ( 305, 4, 'Trashed', 2 )" );
+        $this->assertSame( 1, $this->hygiene()->accountlessObjectCount(), 'published, of a class with an ezuser attribute (not a class draft), without an ezuser row' );
+        $this->assertNotContains( 301, $this->find( array() ) );
+        $this->assertNotContains( 301, $this->find( array( 'filter' => 'orphaned' ) ) );
     }
 
     private static function read( $path )
