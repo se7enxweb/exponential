@@ -119,7 +119,8 @@
       "tests/tests/design/AdminBaseStylesheetsTest.php",
       "tests/tests/design/AdminScriptsTest.php",
       "tests/tests/design/AdminSetupOverviewTest.php",
-      "tests/tests/design/AdminLeftMenuGroupsTest.php"
+      "tests/tests/design/AdminLeftMenuGroupsTest.php",
+      "tests/tests/design/AdminPreviewDevicesTest.php"
     ],
     "design/admin4/javascript/ezadmin_menubar.js": [
       "tests/tests/design/AdminStylingRulesTest.php",
@@ -423,13 +424,24 @@
       "tests/tests/kernel/content/eZPendingIndexActionsTest.php"
     ],
     "design/admin4/stylesheets/components.css": [
-      "tests/tests/design/AdminLegacyControlsTest.php"
+      "tests/tests/design/AdminLegacyControlsTest.php",
+      "tests/tests/design/AdminPreviewDevicesTest.php"
     ],
     "design/admin/stylesheets/components.css": [
-      "tests/tests/design/AdminLegacyControlsTest.php"
+      "tests/tests/design/AdminLegacyControlsTest.php",
+      "tests/tests/design/AdminPreviewDevicesTest.php"
     ],
     "design/admin4/templates/parts/left_width_control.tpl": [
       "tests/tests/design/AdminLegacyControlsTest.php"
+    ],
+    "design/admin4/templates/content/view/versionview.tpl": [
+      "tests/tests/design/AdminPreviewDevicesTest.php"
+    ],
+    "design/admin4/stylesheets/modules/content.css": [
+      "tests/tests/design/AdminPreviewDevicesTest.php"
+    ],
+    "design/admin/stylesheets/modules/content.css": [
+      "tests/tests/design/AdminPreviewDevicesTest.php"
     ]
   },
   "generated": {

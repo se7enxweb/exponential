@@ -229,16 +229,103 @@
                                 <div class="break"></div>
                             </div>
 
-                            {* Content preview in content window. *}
-                            <div class="mainobject-window">
-
+                            {* Content preview in content window: the site's own rendering of the version (the iframe asks
+                               content/versionview with the chosen siteaccess), in the width of a device. The device switch
+                               (a segmented pill, components.css .a4-tabs.is-segmented) and the landscape switch are buttons
+                               with aria-pressed; the iframe is drawn at the device's size and scaled down when the column
+                               is narrower, the line beside them says the size and the scale. The choice is kept in this
+                               browser (localStorage "exp-admin4-preview-device" and "exp-admin4-preview-landscape").
+                               Without JavaScript the switch stays hidden and the iframe fills the column, as before.
+                               Sizes in CSS pixels: iPhone 390 x 844, iPad 820 x 1180, Desktop 1280 x 800, Large Desktop
+                               1920 x 1080. Styles: stylesheets/modules/content.css (.a4-content-preview-*). *}
+                            {def $a4_preview_devices = array( hash( 'id', 'phone',   'icon', 'phone',   'width', 390,  'height', 844,  'name', 'iPhone'|i18n( 'design/admin/content/view/versionview' ) ),
+                                                              hash( 'id', 'tablet',  'icon', 'tablet',  'width', 820,  'height', 1180, 'name', 'iPad'|i18n( 'design/admin/content/view/versionview' ) ),
+                                                              hash( 'id', 'desktop', 'icon', 'laptop',  'width', 1280, 'height', 800,  'name', 'Desktop'|i18n( 'design/admin/content/view/versionview' ) ),
+                                                              hash( 'id', 'large',   'icon', 'display', 'width', 1920, 'height', 1080, 'name', 'Large Desktop'|i18n( 'design/admin/content/view/versionview' ) ) )}
+                            <div class="a4-content-preview-bar" id="a4-content-preview-bar" hidden
+                                data-a4-size="{'%width × %height px, shown at %scale %'|i18n( 'design/admin/content/view/versionview' )|wash}">
+                                <div class="a4-tabs is-segmented a4-content-preview-devices" role="group" aria-label="{'Preview size'|i18n( 'design/admin/content/view/versionview' )|wash}">
+                                {foreach $a4_preview_devices as $a4_device}
+                                    <button type="button" data-a4-device="{$a4_device.id}" data-width="{$a4_device.width}" data-height="{$a4_device.height}" aria-pressed="false" title="{'%device, %width × %height px'|i18n( 'design/admin/content/view/versionview',, hash( '%device', $a4_device.name, '%width', $a4_device.width, '%height', $a4_device.height ) )|wash}"><span class="a4-icon a4-bi-{$a4_device.icon}" aria-hidden="true"></span><span class="a4-content-preview-device-name">{$a4_device.name|wash}</span></button>
+                                {/foreach}
+                                </div>
+                                <div class="a4-tabs is-segmented a4-content-preview-turn">
+                                    <button type="button" data-a4-landscape aria-pressed="false" title="{'Landscape: phone and tablet turned on their side'|i18n( 'design/admin/content/view/versionview' )|wash}"><span class="a4-icon a4-bi-phone-flip" aria-hidden="true"></span><span class="a4-content-preview-device-name">{'Landscape'|i18n( 'design/admin/content/view/versionview' )|wash}</span></button>
+                                </div>
+                                <p class="a4-content-preview-size"></p>
+                            </div>
+                            {undef $a4_preview_devices}
+                            <div class="mainobject-window a4-content-preview-stage" id="a4-content-preview-stage">
+                                <div class="a4-content-preview-device">
                                 <iframe
                                     src={concat("content/versionview/",$object.id,"/",$view_version.version,"/",$language, "/site_access/", $siteaccess, $view_mode_uri )|ezurl}
                                     width="100%" height="800" title="{'Preview of the version'|i18n( 'design/admin/content/view/versionview' )|wash}">
                                     {'Your browser does not support iframes. Please see this <a href=%url>link</a> instead.'|i18n( 'design/admin/content/view/versionview',, hash( '%url', concat("content/versionview/",$object.id,"/",$view_version.version,"/",$language, "/site_access/", $siteaccess, $view_mode_uri)|ezurl ) )}
                                 </iframe>
-
+                                </div>
                             </div>
+<script type="text/javascript">
+{literal}
+(function () {
+    // the device switch of the preview (see the comment above the bar)
+    var bar = document.getElementById( 'a4-content-preview-bar' ),
+        stage = document.getElementById( 'a4-content-preview-stage' );
+    if ( !bar || !stage ) return;
+    var device = stage.querySelector( '.a4-content-preview-device' ),
+        frame = stage.querySelector( 'iframe' ),
+        buttons = bar.querySelectorAll( 'button[data-a4-device]' ),
+        turn = bar.querySelector( 'button[data-a4-landscape]' ),
+        size = bar.querySelector( '.a4-content-preview-size' ),
+        sizeText = bar.getAttribute( 'data-a4-size' ),
+        KEY = 'exp-admin4-preview-device', TURN_KEY = 'exp-admin4-preview-landscape',
+        current = null, landscape = false, lastWidth = -1, i;
+    function load( key ) { try { return window.localStorage.getItem( key ); } catch ( e ) { return null; } }
+    function save( key, value ) { try { window.localStorage.setItem( key, value ); } catch ( e ) {} }
+    function turnable() { return current && ( current.getAttribute( 'data-a4-device' ) === 'phone' || current.getAttribute( 'data-a4-device' ) === 'tablet' ); }
+    // force: a new device or orientation; otherwise only a changed column width redraws, so a scrollbar that the
+    // new height brings or takes away cannot start a loop, and a hidden stage (width 0) is left as it is
+    function draw( force ) {
+        var width = stage.clientWidth;
+        if ( !current || !width || ( force !== true && width === lastWidth ) ) return;
+        lastWidth = width;
+        var w = parseInt( current.getAttribute( 'data-width' ), 10 ), h = parseInt( current.getAttribute( 'data-height' ), 10 ), t;
+        if ( landscape && turnable() ) { t = w; w = h; h = t; }
+        var style = window.getComputedStyle( stage ),
+            room = width - parseFloat( style.paddingLeft ) - parseFloat( style.paddingRight ) - 2,   // the frame's edges
+            scale = Math.min( 1, Math.max( room, 1 ) / w );
+        frame.style.width = w + 'px';
+        frame.style.height = h + 'px';
+        frame.style.transform = scale < 1 ? 'scale(' + scale + ')' : '';
+        device.style.width = Math.floor( w * scale ) + 'px';
+        device.style.height = Math.floor( h * scale ) + 'px';
+        size.textContent = sizeText.replace( '%width', w ).replace( '%height', h ).replace( '%scale', Math.round( scale * 100 ) );
+    }
+    function choose( button ) {
+        current = button;
+        for ( var j = 0; j < buttons.length; j++ ) buttons[j].setAttribute( 'aria-pressed', buttons[j] === button ? 'true' : 'false' );
+        turn.disabled = !turnable();
+        turn.setAttribute( 'aria-pressed', landscape && turnable() ? 'true' : 'false' );
+        draw( true );
+    }
+    var stored = load( KEY ), initial = bar.querySelector( 'button[data-a4-device="desktop"]' );
+    for ( i = 0; i < buttons.length; i++ ) {
+        if ( buttons[i].getAttribute( 'data-a4-device' ) === stored ) initial = buttons[i];
+        buttons[i].addEventListener( 'click', function () { save( KEY, this.getAttribute( 'data-a4-device' ) ); choose( this ); } );
+    }
+    landscape = load( TURN_KEY ) === '1';
+    turn.addEventListener( 'click', function () {
+        landscape = !landscape;
+        save( TURN_KEY, landscape ? '1' : '0' );
+        choose( current );
+    } );
+    bar.hidden = false;
+    stage.classList.add( 'is-device' );
+    choose( initial );
+    if ( window.ResizeObserver ) new ResizeObserver( draw ).observe( stage );
+    else window.addEventListener( 'resize', draw );
+})();
+{/literal}
+</script>
 
 
                             {* DESIGN: Content END *}

@@ -1690,6 +1690,7 @@ a.a4-icon-btn, a.a4-icon-btn:visited { color: var(--a4-muted); }
 .a4-bi-database { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/database.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/database.svg); }
 .a4-bi-diagram-2 { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/diagram-2.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/diagram-2.svg); }
 .a4-bi-diagram-3 { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/diagram-3.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/diagram-3.svg); }
+.a4-bi-display { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/display.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/display.svg); }
 .a4-bi-download { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/download.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/download.svg); }
 .a4-bi-envelope { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/envelope.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/envelope.svg); }
 .a4-bi-envelope-paper { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/envelope-paper.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/envelope-paper.svg); }
@@ -1711,6 +1712,7 @@ a.a4-icon-btn, a.a4-icon-btn:visited { color: var(--a4-muted); }
 .a4-bi-info-circle { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/info-circle.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/info-circle.svg); }
 .a4-bi-journal-check { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/journal-check.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/journal-check.svg); }
 .a4-bi-key { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/key.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/key.svg); }
+.a4-bi-laptop { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/laptop.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/laptop.svg); }
 .a4-bi-layout-sidebar-inset { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/layout-sidebar-inset.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/layout-sidebar-inset.svg); }
 .a4-bi-lightning { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/lightning.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/lightning.svg); }
 .a4-bi-link-45deg { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/link-45deg.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/link-45deg.svg); }
@@ -1730,6 +1732,7 @@ a.a4-icon-btn, a.a4-icon-btn:visited { color: var(--a4-muted); }
 .a4-bi-person-circle { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/person-circle.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/person-circle.svg); }
 .a4-bi-person-lock { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/person-lock.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/person-lock.svg); }
 .a4-bi-phone { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/phone.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/phone.svg); }
+.a4-bi-phone-flip { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/phone-flip.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/phone-flip.svg); }
 .a4-bi-piggy-bank { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/piggy-bank.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/piggy-bank.svg); }
 .a4-bi-play-fill { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/play-fill.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/play-fill.svg); }
 .a4-bi-plug { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/plug.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/plug.svg); }
@@ -1746,6 +1749,7 @@ a.a4-icon-btn, a.a4-icon-btn:visited { color: var(--a4-muted); }
 .a4-bi-stars { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/stars.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/stars.svg); }
 .a4-bi-sun { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/sun.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/sun.svg); }
 .a4-bi-table { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/table.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/table.svg); }
+.a4-bi-tablet { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/tablet.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/tablet.svg); }
 .a4-bi-terminal { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/terminal.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/terminal.svg); }
 .a4-bi-toggles { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/toggles.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/toggles.svg); }
 .a4-bi-tools { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/tools.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/tools.svg); }

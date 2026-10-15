@@ -1031,7 +1031,7 @@ a2b172b8944ff150c68ffddee1372eba  design/admin4/templates/content/upload.tpl
 2338ac2189ebf523ac83e7c511b00398  design/admin4/templates/content/urlalias.tpl
 2e0a54ad3eee1d359c882503ce48255a  design/admin4/templates/content/urlalias_global.tpl
 f08426363c068f8b87de5f75e85dd385  design/admin4/templates/content/urlalias_wildcard.tpl
-7fcf8647cb0fb35d93ab8b97ed0a4326  design/admin4/templates/content/view/versionview.tpl
+5df283057728d73abe0e1d91f66ff1df  design/admin4/templates/content/view/versionview.tpl
 12317930ded26151688ae03c70d89efd  design/admin4/templates/contentfinder/box.tpl
 3e2095eacb5bbd954b68d784ad0b9c15  design/admin4/templates/contentfinder/confirm.tpl
 d15376799ac95a2f3c136d58a8e19ad6  design/admin4/templates/contentfinder/reason.tpl
@@ -6566,6 +6566,7 @@ dcc31f91aa6ac688965e0b40c9ae0e9e  share/icons/bootstrap-icons/svg/clock-history.
 364fcbc2c4c84f531f8ab132fb88ad41  share/icons/bootstrap-icons/svg/database.svg
 ced385e6774a8b6c7efbbee27661b620  share/icons/bootstrap-icons/svg/diagram-2.svg
 dbc2f0ee5731813a2a830e7a54f1a345  share/icons/bootstrap-icons/svg/diagram-3.svg
+d2c8c64aff217a41f15dd3755f4db495  share/icons/bootstrap-icons/svg/display.svg
 3ebb1986eaa5472d7a40de81dc30dedf  share/icons/bootstrap-icons/svg/download.svg
 50f12cc18f0cbdfb0734be4c0b82033d  share/icons/bootstrap-icons/svg/envelope-paper.svg
 b7e48ee8e390faeb537ae38c029f878b  share/icons/bootstrap-icons/svg/envelope.svg
@@ -6612,6 +6613,7 @@ ba8018cd811b5b73e6b9b41b3bc2ca54  share/icons/bootstrap-icons/svg/info-square.sv
 715ff8aa7d6f39ba47b806fb41c40a21  share/icons/bootstrap-icons/svg/journal-richtext.svg
 29c3dae22644ff04030f1d65336a42b4  share/icons/bootstrap-icons/svg/journal-text.svg
 ca8e3500856eb6ae68fe911668836532  share/icons/bootstrap-icons/svg/key.svg
+5f0768d2729271c2da7542af86940714  share/icons/bootstrap-icons/svg/laptop.svg
 aade852e50fb166c60101167e364faf0  share/icons/bootstrap-icons/svg/layout-sidebar-inset.svg
 bd6c9b80d852f46fee9bdf5ccbdcd11a  share/icons/bootstrap-icons/svg/lightning.svg
 05e5053f4723a2bf81e75b76d3b653a7  share/icons/bootstrap-icons/svg/link-45deg.svg
@@ -6631,6 +6633,7 @@ f2183ae2aea93c966a346ba6cd654d4e  share/icons/bootstrap-icons/svg/person-check.s
 02884a0d7850880af21a0919125479a6  share/icons/bootstrap-icons/svg/person-circle.svg
 19ec1702bfb1f012d1b70473371c3b24  share/icons/bootstrap-icons/svg/person-lock.svg
 1bcf58690e56663c2429bcdffc2d8471  share/icons/bootstrap-icons/svg/person.svg
+ead9f144bf1fb438b887d197f73f35a7  share/icons/bootstrap-icons/svg/phone-flip.svg
 ce2cb08c51e291a8d6faaf4aa3f088ac  share/icons/bootstrap-icons/svg/phone.svg
 40f3998cf10968da54082aded8456e8d  share/icons/bootstrap-icons/svg/piggy-bank.svg
 a3ec7a37e5d65995f78252a635409c9a  share/icons/bootstrap-icons/svg/play-fill.svg
@@ -7132,6 +7135,7 @@ a33e9d573eb8e846797e949212bf192e  tests/tests/design/AdminNoticesTest.php
 917f288f4825456962ee3eabc46c89c2  tests/tests/design/AdminPageHeaderTest.php
 0b0c125119b97997ed733c022a93f1b4  tests/tests/design/AdminPhoneMenuTest.php
 78b30039bd63be57ad93a86b8d456a1f  tests/tests/design/AdminPreferencesTest.php
+701c8adc97dbf0fbf93df4a3867b08e9  tests/tests/design/AdminPreviewDevicesTest.php
 09c565e1f86414d7548458461faf80dd  tests/tests/design/AdminResponsiveTest.php
 4b3af4d4ae744b360aa04bc3a27578b4  tests/tests/design/AdminRetiredClassesTest.php
 9f30c0d44bbf2de9c154495d15e158c8  tests/tests/design/AdminScriptsTest.php
