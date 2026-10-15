@@ -804,10 +804,92 @@ body,
 .a4-user-menu-links a:hover { background-color: var(--a4-soft); color: var(--a4-ink); }
 .a4-user-menu-links a:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: -3px; }
 .a4-user-menu-links span.disabled { color: var(--a4-disabled); }
+/* The site menu (parts/a4_header_site.tpl): the globe as a disclosure, in the place of the site link; a panel as the
+   user menu's, a little wider for the addresses. Each entry: the name, then identifier, locale and the address. */
+.a4-site-menu-wrap { position: relative; }
+.a4-site-menu-wrap[hidden],
+.a4-header-btn[hidden],
+.a4-site-menu[hidden] { display: none; }
+.a4-site-menu {
+  position: absolute;
+  top: calc(100% + var(--a4-space-2));
+  right: 0;
+  z-index: var(--a4-z-popover);
+  box-sizing: border-box;
+  width: max-content;
+  min-width: 16rem;
+  max-width: min(26rem, calc(100vw - 2 * var(--a4-space-4)));
+  max-height: calc(100vh - var(--header-height) - var(--a4-space-5));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: var(--a4-space-1);
+  background-color: var(--a4-card);
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  box-shadow: var(--a4-shadow-m);
+  color: var(--a4-ink);
+  text-align: left;
+}
+.a4-site-menu a {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-height: 32px;
+  padding: var(--a4-space-1) var(--a4-space-3);
+  border-radius: var(--a4-radius-s);
+  color: var(--a4-ink);
+  text-decoration: none;
+}
+.a4-site-menu a:hover { background-color: var(--a4-soft); color: var(--a4-ink); }
+.a4-site-menu a:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: -3px; }
+/* the first entry opens the site, as the globe did: set apart from the list */
+.a4-site-menu .a4-site-menu-front {
+  margin-bottom: var(--a4-space-1);
+  background-color: var(--a4-accent-soft);
+}
+.a4-site-menu .a4-site-menu-front .a4-site-menu-name { font-weight: 600; }
+.a4-site-menu a[aria-current="true"] { box-shadow: inset 3px 0 0 var(--a4-accent); }
+.a4-site-menu-name { overflow-wrap: anywhere; }
+.a4-site-menu-meta,
+.a4-site-menu-url {
+  color: var(--a4-muted);
+  font-size: var(--a4-text-xs);
+  overflow-wrap: anywhere;
+}
+.a4-site-menu-here { font-weight: 600; color: var(--a4-ink); }
+.a4-site-menu-heading {
+  margin: var(--a4-space-2) 0 0;
+  padding: var(--a4-space-2) var(--a4-space-3) var(--a4-space-1);
+  border-top: 1px solid var(--a4-line);
+  color: var(--a4-muted);
+  font-size: var(--a4-text-xs);
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.a4-site-menu-list { margin: 0; padding: 0; list-style: none; }
+.a4-site-menu-list li { margin: 0; }
+/* Phones: the globe stands mid-row, so the panel is placed under the header, the window's width less the gutters */
+@media screen and (max-width: 575.98px) {
+  .a4-site-menu {
+    position: fixed;
+    top: calc(var(--header-height) + var(--a4-space-2));
+    left: var(--a4-space-4);
+    right: var(--a4-space-4);
+    z-index: var(--a4-z-menu);   /* over the sidebar tabs on the window's edges, as the mega menu */
+    width: auto;
+    min-width: 0;
+    max-width: none;
+  }
+}
 @media (forced-colors: active) {
   .a4-header-btn,
   .a4-nav-more-list,
   .a4-user-menu { border-color: ButtonText; }
+  .a4-site-menu { border-color: ButtonText; }
+  .a4-site-menu .a4-site-menu-front { border: 1px solid ButtonText; }
+  .a4-site-menu a[aria-current="true"] { outline: 2px solid Highlight; outline-offset: -2px; }
+  .a4-site-menu a:hover { text-decoration: underline; }
   .a4-header-btn[aria-expanded="true"],
   .a4-nav-more-toggle[aria-expanded="true"],
   .a4-nav-more-toggle.has-current { outline: 2px solid Highlight; }

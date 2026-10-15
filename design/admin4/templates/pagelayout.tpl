@@ -43,7 +43,7 @@
  Need navigation part for cases like content/browse where node id is taken from caller params *}
     {* siteaccess_url() here too: this block holds the header block below, whose
        site link depends on the scheme, host and port of the request. *}
-    {cache-block keys=array( $uri_cache_key, $user_hash, $current_user.contentobject_id, $admin_theme, $admin_left_size, $access_type, first_set( $module_result.navigation_part, $navigation_part.identifier ), $search_hash, siteaccess_url(), $env_badge.key, $main_wrapped ) ignore_content_expiry}
+    {cache-block keys=array( $uri_cache_key, $user_hash, $current_user.contentobject_id, $admin_theme, $admin_left_size, $access_type, first_set( $module_result.navigation_part, $navigation_part.identifier ), $search_hash, siteaccess_url(), siteaccess_menu_key(), $env_badge.key, $main_wrapped ) ignore_content_expiry}
 
     {* The environment's name before the title (site.ini [AdminEnvironment] ShowInTitle), as in the header's badge *}
     {include uri='design:page_head.tpl' title_prefix=cond( $env_badge.title, concat( '[', $env_badge.name|upcase, '] ' ), '' )}
@@ -66,8 +66,9 @@
                 {* Pr tab header cache *}
                 {* siteaccess_url(): the header links to the site with the scheme, host and port
                    of the request, and Apache and Velocity share this cache. The user's object id: the header's
-                   user menu and logout button name the signed-in user (parts/a4_header_user.tpl). *}
-                {cache-block keys=array( $ui_context, $ui_component, $user_hash, $current_user.contentobject_id, $access_type, first_set( $module_result.navigation_part, $navigation_part.identifier ), siteaccess_url(), $env_badge.key ) ignore_content_expiry}
+                   user menu and logout button name the signed-in user (parts/a4_header_user.tpl). siteaccess_menu_key(): the
+       site menu lists the siteaccesses of the settings at the addresses of the request (parts/a4_header_site.tpl). *}
+                {cache-block keys=array( $ui_context, $ui_component, $user_hash, $current_user.contentobject_id, $access_type, first_set( $module_result.navigation_part, $navigation_part.identifier ), siteaccess_url(), siteaccess_menu_key(), $env_badge.key ) ignore_content_expiry}
 
                 {* HEADER ( SEARCH, LOGO AND USERMENU ) *}
                 {include uri='design:page_header.tpl'}

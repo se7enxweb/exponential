@@ -133,7 +133,8 @@ class AdminLandmarksTest extends PHPUnit\Framework\TestCase
         $menu = self::template( 'page_topmenu.tpl' );
         $this->assertMatchesRegularExpression( '#<div class="navbar-icon" role="button" tabindex="0" aria-expanded="false" aria-controls="a4-navbar-menu" aria-label="#', $menu );
         $this->assertSame( 2, preg_match_all( '#<a class="brand" [^>]*aria-label="#', $menu ) );
-        $this->assertSame( 1, preg_match_all( '#<a class="site-preview a4-header-btn" [^>]*aria-label="#', $menu ) );
+        $this->assertStringContainsString( "{include uri='design:parts/a4_header_site.tpl'}", $menu );
+        $this->assertSame( 1, preg_match_all( '#<a class="site-preview a4-header-btn" [^>]*aria-label="#', self::template( 'parts/a4_header_site.tpl' ) ) );
     }
 
     /** A header cell says what it heads (admin4's tables have header rows only: scope="col") */

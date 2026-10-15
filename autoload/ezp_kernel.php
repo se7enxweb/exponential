@@ -1422,6 +1422,8 @@ return array(
       'ezpSessionHandlerDB'                                          => 'lib/ezsession/classes/ezpsessionhandlerdb.php',
       'ezpSessionHandlerPHP'                                         => 'lib/ezsession/classes/ezpsessionhandlerphp.php',
       'ezpSessionHandlerSymfony'                                     => 'lib/ezsession/classes/ezpsessionhandlersymfony.php',
+      'ezpSiteAccessMenu'                                            => 'kernel/private/classes/ezpsiteaccessmenu.php',
+      'ezpSiteAccessMenuOperator'                                    => 'kernel/common/ezpsiteaccessmenuoperator.php',
       'ezpSiteAccessURL'                                             => 'kernel/private/classes/ezpsiteaccessurl.php',
       'ezpSiteAccessURLOperator'                                     => 'kernel/common/ezpsiteaccessurloperator.php',
       'ezpStaticCache'                                               => 'kernel/private/interfaces/ezpstaticcache.php',

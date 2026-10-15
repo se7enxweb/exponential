@@ -13922,6 +13922,22 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Open the site</translation>
     </message>
     <message>
+        <source>Open the site or another siteaccess</source>
+        <translation>Open the site or another siteaccess</translation>
+    </message>
+    <message>
+        <source>Sites</source>
+        <translation>Sites</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Administration</translation>
+    </message>
+    <message>
+        <source>in use</source>
+        <translation>in use</translation>
+    </message>
+    <message>
         <source>Switch between light and dark mode</source>
         <translation>Switch between light and dark mode</translation>
     </message>
