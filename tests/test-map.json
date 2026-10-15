@@ -591,6 +591,9 @@
     ],
     "tests/tests/design/js/language_states.js": [
       "tests/tests/design/AdminLanguageStatesTest.php"
+    ],
+    "lib/eztemplate/classes/eztemplateexecuteoperator.php": [
+      "tests/tests/lib/eztemplate/eZTemplateFetchOperatorTest.php"
     ]
   },
   "generated": {
