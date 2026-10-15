@@ -240,8 +240,9 @@ inside `:where()`), so a rule with one more class (the node's action row, the ed
 own control) always wins; a select or field with a class of its own is not touched. New markup still uses `.a4-btn`
 and `.a4-field`.
 
-Side columns: the rule between blocks is drawn only above a heading that follows a block, whatever the menu template
-nests; block titles have one size (1.25em of the column's font, hyphenated); link lists have no bullets. Every left
+Side columns: blocks are separated by space, not by a line: a heading that follows a block stands `--a4-gutter` (24
+px) below it, whatever the menu template nests (no admin4 stylesheet draws a line above a `.box-header`); the right
+column is `--a4-right-width` (16rem) wide, so its card keeps 208px beside the 24px edge and the gutter; block titles have one size (1.25em of the column's font, hyphenated); link lists have no bullets. Every left
 menu of admin4 ends with `design:parts/left_width_control.tpl` (three icon buttons in a POST form, the current width
 pressed) and a tree menu shows its trash link through `design:parts/left_trash.tpl`: include them, never copy their
 markup (`AdminLegacyControlsTest`).

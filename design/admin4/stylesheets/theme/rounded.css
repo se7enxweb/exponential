@@ -164,7 +164,6 @@ a.show-hide-tabs:hover
 
 .box-header
 {
-    border-top: 1px dashed var(--a4-line);
     font-size:1.5em;
 }
 .box-header select, .box-header input.button

@@ -332,6 +332,10 @@ html[data-a4-theme-choice="system"] .a4-theme-toggle .a4-icon-system { display: 
 .sidebar.right > div {
   margin: var(--a4-gutter) var(--a4-space-5) var(--a4-gutter) var(--a4-gutter);
 }
+/* The right column: its card keeps the 208px it had before the gutter (16rem minus the 24px edge and the gutter), so
+   a tool's name and its switch still share a row */
+:root { --a4-right-width: 16rem; }
+.sidebar.right { width: var(--a4-right-width); }
 .content-wrapper {
   padding: var(--a4-gutter) var(--a4-space-5);   /* 24px a side where a tab stands at the window's edge */
 }
@@ -341,7 +345,7 @@ html[data-a4-theme-choice="system"] .a4-theme-toggle .a4-icon-system { display: 
   body:has(.sidebar.left.show) .content-wrapper { padding-left: 0; }
 }
 @media screen and (min-width: 1280px) {
-  html body:has(.sidebar.right.show) { margin-right: 15rem; }
+  html body:has(.sidebar.right.show) { margin-right: var(--a4-right-width); }
   body:has(.sidebar.right.show) .content-wrapper { padding-right: 0; }
 }
 @media screen and (max-width: 1023.98px) {
@@ -407,9 +411,10 @@ html[data-a4-theme-choice="system"] .a4-theme-toggle .a4-icon-system { display: 
 :where(#path, #path-design) {
   color: var(--a4-muted);
 }
-/* the dashed rules between blocks: one quiet hairline, less of a box (the base rule's own selector) */
+/* No rule between blocks (the base drew a dashed line above every .box-header): spacing separates them. The base
+   rule's own selector, so an extension's own header rule still wins. */
 .box-header {
-  border-top: 1px solid var(--a4-line);
+  border-top: 0;
 }
 :focus-visible {
   outline: 3px solid var(--a4-ring);
@@ -1059,7 +1064,6 @@ div.context-information.a4-node-meta {
    tabs, a line under the closed tab panel, and a dashed line above the sub items) */
 .a4-node-tabs.tab-block { border-top: 0; padding-top: 0; }
 .a4-node-tabs .tabs-content.disabled { border-top: 0; }
-.a4-node-children .box-header { border-top: 0; }
 /* explayouts_ui's stylesheet also loads on node views (for the Layouts tab) and paints the left column white
    on sections 1 and 7 (".ezcontentnavigationpart.section_id_1 .dashboard-flex #leftmenu.sidebar.left.show"), the
    admin3 look; in admin4 the column around the card stays clear, as everywhere else. */
@@ -1624,15 +1628,13 @@ div#contentstructure ul#content_tree_menu ul a.openclose-close::after {
 
 /* ---- The side columns: their first heading at the card's top, a compact tree, a visible width grip ------------- */
 
-/* The card's own edge is its top: the rule between blocks (.box-header's top border) is drawn only between two
-   blocks, never above the first heading, however deep the menu template nests it (the setup menu's header is the
-   column's first child, the content tree's sits in #content-tree, a module's menu may wrap it twice). A header gets
-   the rule when an earlier sibling of it, or of one of its wrappers, holds a block's content (.box-bc). */
-:is(#leftmenu-design, #rightmenu-design) .box-header { border-top: 0; }
+/* Blocks in a side column are separated by space, not by a line: a heading that follows a block (an earlier sibling
+   of it, or of one of its wrappers, holds a block's content, .box-bc) stands --a4-gutter (24px) below that block,
+   its own top margin (12px) included, however deep the menu template nests it. The first heading sits at the
+   card's top. */
 :is(#leftmenu-design, #rightmenu-design) :is(.box-bc, :has(.box-bc)) ~ .box-header,
 :is(#leftmenu-design, #rightmenu-design) :is(.box-bc, :has(.box-bc)) ~ * .box-header {
-  margin-top: var(--a4-space-3);
-  border-top: 1px solid var(--a4-line);
+  margin-top: calc(var(--a4-gutter) - var(--a4-space-3));
 }
 /* The block titles of both side columns: one size, weight and spacing in every module (the content tree's title as
    the ini menus' and the tools'), sized from the column's font so the column sizes scale it; a long word breaks
@@ -1961,9 +1963,7 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
   text-decoration: none;
 }
 #leftmenu #widthcontrol-links {
-  margin: var(--a4-space-3) 0 0;
-  padding-top: var(--a4-space-3);
-  border-top: 1px solid var(--a4-line);
+  margin: var(--a4-gutter) 0 0;   /* separated from the menu above by space, as the blocks are */
 }
 
 /* The bar on the left is an inset shadow: its corners stay square, or the rounding bends it into a "(". */

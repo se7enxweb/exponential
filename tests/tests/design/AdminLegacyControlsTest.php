@@ -148,17 +148,33 @@ class AdminLegacyControlsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( '2px', $forced['input.defaultbutton:where(#page *)']['border-width'] );
     }
 
-    public function testTheSideColumnsDrawTheRuleOnlyBetweenBlocks()
+    public function testBlocksAreSeparatedBySpaceNotByALine()
     {
+        // no admin4 stylesheet draws a line above a .box-header: blocks are separated by space
+        $root = self::root();
+        foreach ( glob( "$root/design/admin4/stylesheets/{,*/}*.css", GLOB_BRACE ) ?: array() as $file )
+        {
+            foreach ( AdminBaseStylesheetsTest::rules( preg_replace( '#/\*.*?\*/#s', '', (string)file_get_contents( $file ) ) ) as $selector => $declarations )
+            {
+                if ( strpos( $selector, 'box-header' ) === false )
+                    continue;
+                foreach ( array( 'border-top', 'border' ) as $property )
+                {
+                    if ( isset( $declarations[$property] ) )
+                        $this->assertMatchesRegularExpression( '/^(0|none|0 none)$/', $declarations[$property], basename( $file ) . ": $selector draws a line ($property: {$declarations[$property]})" );
+                }
+            }
+        }
         $rules = AdminBaseStylesheetsTest::rules( self::css( 'admin4.css' ) );
-        $this->assertSame( '0', $rules[':is(#leftmenu-design, #rightmenu-design) .box-header']['border-top'] );
+        $this->assertSame( '0', $rules['.box-header']['border-top'], 'admin4.css takes the base\'s dashed line away' );
+        // a heading after a block in a side column: 24px (the gutter) above it, its own 12px margin included,
+        // however deep the menu template nests it
         $between = self::rule( $rules, ':is(#leftmenu-design, #rightmenu-design) :is(.box-bc, :has(.box-bc)) ~ .box-header' );
-        $this->assertNotNull( $between, 'a header after a block draws the rule' );
-        $this->assertSame( '1px solid var(--a4-line)', $between['border-top'] );
+        $this->assertNotNull( $between );
+        $this->assertSame( 'calc(var(--a4-gutter) - var(--a4-space-3))', $between['margin-top'] );
         $this->assertNotNull( self::rule( $rules, ':is(#leftmenu-design, #rightmenu-design) :is(.box-bc, :has(.box-bc)) ~ * .box-header' ),
             'also a header inside a wrapper (#content-tree) after a block' );
-        // the old rule only knew a header one level deep; the setup menu's header is the column's first child
-        $this->assertArrayNotHasKey( '#leftmenu-design > :first-child > .box-header:first-child, #rightmenu-design > :first-child > .box-header:first-child', $rules );
+        $this->assertSame( 'var(--a4-space-3) 0 var(--a4-space-2)', $rules[':is(#leftmenu-design, #rightmenu-design) .box-header h4']['margin'] );
     }
 
     public function testTheSideColumnsShareOneTitleAndListStyle()
