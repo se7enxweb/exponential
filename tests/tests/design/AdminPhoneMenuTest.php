@@ -263,7 +263,19 @@ class AdminPhoneMenuTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( '<ul class="a4-phone-user-links" aria-labelledby="a4-phone-user-name">', $user );
         // it stands for the header's user menu and logout on a phone; admin4l's header, without it, keeps them
         $this->assertSame( 'none', self::phone()['.navbar-main:has(.a4-phone-user) > .header-user']['display'] );
-        $this->assertStringNotContainsString( 'a4_phone_user', self::template( 'admin4l/templates/explayouts/block/admin_tab_menu.tpl' ) );
+        $tabMenu = self::template( 'admin4l/templates/explayouts/block/admin_tab_menu.tpl' );
+        $this->assertStringNotContainsString( 'a4_phone_user', $tabMenu );
+        // admin4l's tab menu block has the same order and the same close button at the panel's end
+        $at = -1;
+        foreach ( array( '<li class="header-search-mobile">', "{include uri='design:parts/a4_topmenu_items.tpl'", '<li class="a4-nav-more" hidden>',
+                         '<li class="a4-phone-only a4-phone-close">', '<!-- end::Navbar Menu -->' ) as $needle )
+        {
+            $next = strpos( $tabMenu, $needle );
+            $this->assertNotFalse( $next, 'admin4l: ' . $needle );
+            $this->assertGreaterThan( $at, $next, 'admin4l: ' . $needle . ' in its place' );
+            $at = $next;
+        }
+        $this->assertStringContainsString( '<button type="button" class="a4-phone-close-button" aria-controls="a4-navbar-menu">', $tabMenu );
     }
 
     /** PM-07 */

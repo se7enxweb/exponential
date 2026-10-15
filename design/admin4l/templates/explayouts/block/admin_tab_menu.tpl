@@ -24,6 +24,9 @@
                 <button type="button" class="a4-nav-more-toggle" aria-expanded="false" aria-controls="a4-nav-more-list">{'More'|i18n( 'design/admin/pagelayout' )|wash}<span class="a4-icon a4-bi-chevron-down" aria-hidden="true"></span></button>
                 <ul id="a4-nav-more-list" class="a4-nav-more-list" hidden></ul>
             </li>
+            <li class="a4-phone-only a4-phone-close">
+                <button type="button" class="a4-phone-close-button" aria-controls="a4-navbar-menu"><span class="a4-phone-close-cross" aria-hidden="true">&#215;</span>{'Close'|i18n( 'design/admin/pagelayout' )|wash}</button>
+            </li>
         </ul>
     </div>
     <!-- end::Navbar Menu -->
