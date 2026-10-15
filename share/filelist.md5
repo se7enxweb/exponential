@@ -5,7 +5,7 @@ d3c3da531de3f903a6857f522f3ba0db  .gitattributes
 e399d1ae8564340ae3012f346d90bfa0  .githooks/pre-push
 a65c763ef0340e232cfe8c274f56fca0  .github/FUNDING.yml
 a5e5334f58df49e18097ed70241e9ba0  .github/workflows/performance.yml
-957c53e2fb7596b9f1c0e964c15c3d3e  .github/workflows/phpunit.yml
+c1d4c31af09019c5abff8b962aa2a348  .github/workflows/phpunit.yml
 7920da519197fbdec3f8fdd707f18ebc  .github/workflows/quality.yml
 1378291033e16daa1ef6e265447a2201  .gitignore
 9ae9da440bdbe3c882b160ce651bbbca  .htaccess_root
@@ -7277,9 +7277,9 @@ f8e49cec6be93c26e7623ddc0a87ef79  tests/bin/ezptestrunner.php
 d01b9528e554acb15438d8db3918cd3a  tests/bin/lint_manifest.txt
 1066ba94c6d2a1daaadb51527778b2cf  tests/bin/test_report_2026-02-21.txt
 5f0e6422e18bece875206a606cfe8003  tests/bin/tests/functional_tests.php
-c704021f8ff30e8fd2c514e723d2d26d  tests/bootstrap.php
+f6fafb7be7aacccc80cd557f75d26bb9  tests/bootstrap.php
 29513a3dd65d617fb046ffdd009e895f  tests/compat/PHPUnit/TextUI/Configuration/Registry.php
-d56115c8242b3081672f63607aa69361  tests/runtests.php
+a4e7a187670959adc083b3b4ab09caca  tests/runtests.php
 59b4689fb7226fd9c820b76ab68d979b  tests/settings/site.ini
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini

@@ -34,12 +34,13 @@ if ( version_compare( $version, '3.7.0' ) == -1 && $version !== '@package_versio
 try
 {
     $runner = ezpTestRunner::instance();
-    $runner->run($_SERVER['argv']);
+    exit( $runner->run( $_SERVER['argv'] ) );
 }
 catch ( Exception $e )
 {
     echo $e->getMessage() . ' in ' . $e->getFile() . ' on line ' . $e->getLine() . "\n";
     echo $e->getTraceAsString();
+    exit( 2 );
 }
 
 ?>

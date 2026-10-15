@@ -226,7 +226,9 @@ jobs:
           # Keep DB suite timezone deterministic for CI stability.
           TEST_TIMEZONE=America/Los_Angeles
           echo "$TEST_TIMEZONE"
-          php -d date.timezone="$TEST_TIMEZONE" tests/runtests.php --dsn "${{ matrix.dsn }}" --db-per-test tests extension/ezoe
+          # Every suite of phpunit.xml, with its excludes (a directory named here would run the files
+          # phpunit.xml leaves out). runtests.php exits with PHPUnit's code, so a failure fails the job.
+          php -d date.timezone="$TEST_TIMEZONE" tests/runtests.php --dsn "${{ matrix.dsn }}" --db-per-test
 
       - name: Clean CI Composer overlay
         if: always()

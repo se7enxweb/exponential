@@ -208,9 +208,15 @@ if ( !class_exists( 'PHPUnit_TextUI_Command', false ) )
                 $index++;
             }
 
+            // The exit code of the run (failures, errors) is the caller's result: runtests.php
+            // exits with it, so a failing database test fails the job that runs it
             $app = new PHPUnit\TextUI\Application();
-            $app->run( $filtered );
-            return 0;
+            $exitCode = $app->run( $filtered );
+            if ( $exit )
+            {
+                exit( $exitCode );
+            }
+            return $exitCode;
         }
     }
 }
