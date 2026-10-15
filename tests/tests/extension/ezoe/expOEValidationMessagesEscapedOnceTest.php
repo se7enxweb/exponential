@@ -206,9 +206,17 @@ class expOEValidationMessagesEscapedOnceTest extends PHPUnit\Framework\TestCase
                 libxml_use_internal_errors( true );
                 $doc->loadHTML( '<?xml encoding="utf-8"?><div>' . $html . '</div>' );
                 libxml_clear_errors();
-                foreach ( array( 'b', 'i', 's', 'img', 'blink' ) as $tag )
+                foreach ( array( 's', 'img', 'blink' ) as $tag )
                 {
                     $this->assertSame( 0, $doc->getElementsByTagName( $tag )->length, "$label: no <$tag> element" );
+                }
+                // a design may use <b> and <i> itself (the media theme's log heading): none of them holds the message's
+                foreach ( array( 'b' => 'x', 'i' => '2026' ) as $tag => $text )
+                {
+                    foreach ( $doc->getElementsByTagName( $tag ) as $element )
+                    {
+                        $this->assertNotSame( $text, $element->textContent, "$label: no <$tag>$text</$tag> element" );
+                    }
                 }
                 if ( $case === 'errors' )
                 {
