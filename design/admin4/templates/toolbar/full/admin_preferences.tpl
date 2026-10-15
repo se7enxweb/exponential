@@ -9,21 +9,27 @@
 
 {* DESIGN: Content START *}<div class="box-bc"><div class="box-ml"><div class="box-content">
 
+{* Each preference: its name and an on/off switch (.a4-tabs.is-segmented) on one row; the current state is the
+   filled part (aria-current), the other one the link that changes it. *}
 <div class="settings">
 <ul>
-    <li class="nobullet">{'Locations'|i18n( 'design/admin/parts/my/menu')}:
+    <li class="nobullet"><span class="a4-pref-label" id="a4-pref-locations">{'Locations'|i18n( 'design/admin/parts/my/menu')}</span>
+    <span class="a4-tabs is-segmented" role="group" aria-labelledby="a4-pref-locations">
     {if ezpreference( 'admin_edit_show_locations' )}
-        <span class="current">{'on'|i18n( 'design/admin/parts/my/menu' )}</span>&nbsp;|&nbsp;<a href={'/user/preferences/set/admin_edit_show_locations/0'|ezurl} title="{'Disable location window when editing content.'|i18n( 'design/admin/parts/my/menu' )}">{'off'|i18n( 'design/admin/parts/my/menu' )}</a>
+        <span class="current" aria-current="true">{'on'|i18n( 'design/admin/parts/my/menu' )}</span><a href={'/user/preferences/set/admin_edit_show_locations/0'|ezurl} title="{'Disable location window when editing content.'|i18n( 'design/admin/parts/my/menu' )}">{'off'|i18n( 'design/admin/parts/my/menu' )}</a>
     {else}
-        <a href={'/user/preferences/set/admin_edit_show_locations/1'|ezurl} title="{'Enable location window when editing content.'|i18n( 'design/admin/parts/my/menu' )}">{'on'|i18n( 'design/admin/parts/my/menu' )}</a>&nbsp;|&nbsp;<span class="current">{'off'|i18n( 'design/admin/parts/my/menu' )}</span>
+        <a href={'/user/preferences/set/admin_edit_show_locations/1'|ezurl} title="{'Enable location window when editing content.'|i18n( 'design/admin/parts/my/menu' )}">{'on'|i18n( 'design/admin/parts/my/menu' )}</a><span class="current" aria-current="true">{'off'|i18n( 'design/admin/parts/my/menu' )}</span>
     {/if}
+    </span>
     </li>
-    <li class="nobullet">{'Re-edit'|i18n( 'design/admin/parts/my/menu')}:
+    <li class="nobullet"><span class="a4-pref-label" id="a4-pref-re-edit">{'Re-edit'|i18n( 'design/admin/parts/my/menu')}</span>
+    <span class="a4-tabs is-segmented" role="group" aria-labelledby="a4-pref-re-edit">
     {if ezpreference( 'admin_edit_show_re_edit' )}
-        <span class="current">{'on'|i18n( 'design/admin/parts/my/menu' )}</span>&nbsp;|&nbsp;<a href={'/user/preferences/set/admin_edit_show_re_edit/0'|ezurl} title="{'Disable &quot;Back to edit&quot; checkbox when editing content.'|i18n( 'design/admin/parts/my/menu' )}">{'off'|i18n( 'design/admin/parts/my/menu' )}</a>
+        <span class="current" aria-current="true">{'on'|i18n( 'design/admin/parts/my/menu' )}</span><a href={'/user/preferences/set/admin_edit_show_re_edit/0'|ezurl} title="{'Disable &quot;Back to edit&quot; checkbox when editing content.'|i18n( 'design/admin/parts/my/menu' )}">{'off'|i18n( 'design/admin/parts/my/menu' )}</a>
     {else}
-        <a href={'/user/preferences/set/admin_edit_show_re_edit/1'|ezurl} title="{'Enable &quot;Back to edit&quot; checkbox when editing content.'|i18n( 'design/admin/parts/my/menu' )}">{'on'|i18n( 'design/admin/parts/my/menu' )}</a>&nbsp;|&nbsp;<span class="current">{'off'|i18n( 'design/admin/parts/my/menu' )}</span>
+        <a href={'/user/preferences/set/admin_edit_show_re_edit/1'|ezurl} title="{'Enable &quot;Back to edit&quot; checkbox when editing content.'|i18n( 'design/admin/parts/my/menu' )}">{'on'|i18n( 'design/admin/parts/my/menu' )}</a><span class="current" aria-current="true">{'off'|i18n( 'design/admin/parts/my/menu' )}</span>
     {/if}
+    </span>
     </li>
 </ul>
 </div>

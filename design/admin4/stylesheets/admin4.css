@@ -481,6 +481,85 @@ input.defaultbutton:active {
   background-color: var(--a4-accent-strong);
   color: var(--a4-on-accent);
 }
+/* The legacy controls of the module pages (input.button, input.defaultbutton, input.button-disabled, button.button)
+   take the size of the .a4-btn components and of the node's action row: --a4-control-h high (28px in compact
+   density), the type scale's small step, the space tokens. Selectors keep the base rules' weight, element plus class
+   (:where(#page *) adds none and keeps the login page and the editor's dialogs, which have no #page, out of it), so
+   they win over core.css, pagelayout.css and theme/rounded.css by loading later, and every rule with one more class
+   (the node's action row, the edit bars, an extension's own button) still wins. A minimum height, never a fixed one:
+   a long label may still wrap. */
+:is(input.button, input.defaultbutton, input.button-disabled, button.button):where(#page *) {
+  box-sizing: border-box;
+  min-height: var(--a4-control-h);
+  margin: var(--a4-space-1) var(--a4-space-1) var(--a4-space-1) 0;
+  padding: 0 var(--a4-space-3);
+  font-size: var(--a4-text-s);
+  line-height: 1.2;
+  vertical-align: middle;
+}
+button.button:where(#page *) {
+  border: 1px solid var(--a4-line-strong);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  color: var(--a4-ink);
+  font-family: var(--a4-font);
+  font-weight: 600;
+  cursor: pointer;
+}
+button.button:where(#page *):is(:hover, :focus):not(:disabled) { background-color: var(--a4-soft); border-color: var(--a4-field-line); }
+:is(input.button, input.button-disabled, button.button)[disabled]:where(#page *) { cursor: not-allowed; }
+/* a control right after a field (a select and its "Set", two selects of one setting) stands a small step away */
+:is(select, input):where(#page *) + :is(input.button, input.defaultbutton, input.button-disabled, button.button, select):where(#page *) {
+  margin-left: var(--a4-space-1);
+}
+
+/* Fields with no class of their own (and the base's input.box/input.halfbox) at the same height, so a field and the
+   button beside it stand on one line; a select gets the field's edge and a chevron drawn in the tokens (a native
+   select ignores padding). Zero weight beyond the element: any class or id rule (.a4-input, .a4-field select, the
+   data tables', the editor's) wins, and fields with another class are not touched at all. A list box (multiple, or a
+   size above 1) keeps its own height. */
+select:where(#page *):where(:not([class])):where(:not([multiple]):not([size]), [size="1"]),
+input:where(#page *):where(:not([type]), [type=text], [type=password], [type=email], [type=number], [type=url], [type=tel],
+                           [type=date], [type=time], [type=datetime-local], [type=search]):where(:not([class]), .box, .halfbox) {
+  box-sizing: border-box;
+  min-height: var(--a4-control-h);
+  margin-block: var(--a4-space-1);
+  padding: 0 var(--a4-space-2);
+  font-size: var(--a4-text-s);
+  line-height: 1.2;
+  vertical-align: middle;
+}
+select:where(#page *):where(:not([class])):where(:not([multiple]):not([size]), [size="1"]) {
+  -webkit-appearance: none;
+  appearance: none;
+  max-width: 100%;
+  padding-right: var(--a4-space-6);
+  background-image: linear-gradient(45deg, transparent 50%, var(--a4-muted) 50%),
+                    linear-gradient(135deg, var(--a4-muted) 50%, transparent 50%);
+  background-position: calc(100% - var(--a4-space-4) - 1px) 55%, calc(100% - var(--a4-space-3)) 55%;
+  background-size: calc(var(--a4-space-1) + 1px) calc(var(--a4-space-1) + 1px);   /* the chevron: two 5px halves */
+  background-repeat: no-repeat;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+select:where(#page *):where(:not([class])):where(:not([multiple]):not([size]), [size="1"]):hover:not(:disabled) {
+  border-color: var(--a4-accent);
+}
+select:where(#page *):where(:not([class])):disabled { color: var(--a4-disabled); background-color: var(--a4-soft); cursor: not-allowed; }
+/* forced colors: the native select comes back (the drawn chevron would vanish), the default button keeps a thicker
+   edge so the form's main action still stands out */
+@media (forced-colors: active) {
+  select:where(#page *):where(:not([class])):where(:not([multiple]):not([size]), [size="1"]) {
+    -webkit-appearance: auto;
+    appearance: auto;
+    padding-right: var(--a4-space-2);
+    background-image: none;
+  }
+  :is(input.button, input.defaultbutton, input.button-disabled, button.button):where(#page *) { border: 1px solid ButtonText; }
+  input.defaultbutton:where(#page *) { border-width: 2px; }
+  :is(input.button, input.button-disabled, button.button)[disabled]:where(#page *) { border-color: GrayText; color: GrayText; }
+}
+
 /* buttons and fields with no class of their own: the field and card tokens (no weight, so any class wins) */
 :where(#page button, #page input[type=button], #page input[type=submit], #page input[type=reset]) {
   background-color: var(--a4-card);
@@ -943,6 +1022,33 @@ div.context-information.a4-node-meta {
 .a4-node-tabs ul.tabs li.selected span.disabled { background-color: var(--a4-card); box-shadow: var(--a4-shadow-s), inset 0 0 0 1px var(--a4-line); color: var(--a4-accent-text); }
 .a4-node-tabs .tabs-content { border-radius: var(--a4-radius-s); }
 .a4-node-children { margin-top: var(--a4-space-1); }
+/* The tab box is a grid: the tab row (with the tabs switch and its label at its end) on top, the open tab under it
+   filling exactly what is left of the box's height, also after the box is resized by its grip or the tab row wraps
+   onto two lines. The base sized the panel as 100% - 2.5em, which cut off the bottom of the panel (17 to 36px) under
+   the taller admin4 tab row, and with it the last button of a tab scrolled to the end. The panel keeps room below its
+   last row so the resize grip does not cover it. */
+#window-controls.a4-node-tabs {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  grid-template-rows: auto minmax(0, 1fr);
+}
+#window-controls.a4-node-tabs > ul.tabs { grid-column: 1; grid-row: 1; }
+#window-controls.a4-node-tabs > .button-left { grid-column: 2; grid-row: 1; align-self: start; }
+#window-controls.a4-node-tabs > .a4-tabs-switch-label { grid-column: 3; grid-row: 1; align-self: start; }
+#window-controls.a4-node-tabs > .tabs-content {
+  display: flex;
+  flex-direction: column;
+  grid-column: 1 / -1;
+  grid-row: 2;
+  height: auto;
+  min-height: 0;
+}
+#window-controls.a4-node-tabs > .tabs-content > .tab-content {
+  flex: 1 1 auto;
+  height: auto;
+  min-height: 0;
+  padding-bottom: var(--a4-space-5);
+}
 /* the node view needs no rules between its parts: spacing separates them (the base drew a dashed line above the
    tabs, a line under the closed tab panel, and a dashed line above the sub items) */
 .a4-node-tabs.tab-block { border-top: 0; padding-top: 0; }
@@ -1512,12 +1618,68 @@ div#contentstructure ul#content_tree_menu ul a.openclose-close::after {
 
 /* ---- The side columns: their first heading at the card's top, a compact tree, a visible width grip ------------- */
 
-/* The card's own edge is its top: the rule between blocks (.box-header's top border) is not drawn above the first
-   heading, and that heading has no extra space above it. */
-#leftmenu-design > :first-child > .box-header:first-child,
-#rightmenu-design > :first-child > .box-header:first-child { border-top: 0; }
-#leftmenu-design > :first-child > .box-header:first-child h4,
-#rightmenu-design > :first-child > .box-header:first-child h4 { margin-top: 0; padding-top: 0; }
+/* The card's own edge is its top: the rule between blocks (.box-header's top border) is drawn only between two
+   blocks, never above the first heading, however deep the menu template nests it (the setup menu's header is the
+   column's first child, the content tree's sits in #content-tree, a module's menu may wrap it twice). A header gets
+   the rule when an earlier sibling of it, or of one of its wrappers, holds a block's content (.box-bc). */
+:is(#leftmenu-design, #rightmenu-design) .box-header { border-top: 0; }
+:is(#leftmenu-design, #rightmenu-design) :is(.box-bc, :has(.box-bc)) ~ .box-header,
+:is(#leftmenu-design, #rightmenu-design) :is(.box-bc, :has(.box-bc)) ~ * .box-header {
+  margin-top: var(--a4-space-3);
+  border-top: 1px solid var(--a4-line);
+}
+/* The block titles of both side columns: one size, weight and spacing in every module (the content tree's title as
+   the ini menus' and the tools'), sized from the column's font so the column sizes scale it; a long word breaks
+   with a hyphen instead of running past the 240px column. */
+:is(#leftmenu-design, #rightmenu-design) .box-header { font-size: inherit; }
+:is(#leftmenu-design, #rightmenu-design) .box-header h4 {
+  margin: var(--a4-space-3) 0 var(--a4-space-2);
+  padding: 0;
+  font-size: 1.25em;
+  line-height: var(--a4-leading-tight);
+  overflow-wrap: break-word;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+:is(#leftmenu-design, #rightmenu-design) > :first-child .box-header:first-child h4,
+:is(#leftmenu-design, #rightmenu-design) > .box-header:first-child h4 { margin-top: 0; }
+
+/* The plain link lists of both side columns (an ini menu without groups, the inbox shortcuts, the current user's
+   links): no bullets and no indent, as the grouped setup menu. The content tree draws its own lines. */
+:is(#leftmenu, #rightmenu) :is(ul.leftmenu-items, .box-content > ul, .settings > ul) {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+:is(#leftmenu, #rightmenu) :is(ul.leftmenu-items, .box-content > ul, .settings > ul) > li { margin: 0; list-style: none; }
+
+/* The tools of the right column (240px): fields on the column's width, the buttons at its end, right under the
+   field they belong to (the cache tool's choice and "Clear", the siteaccess and "Set"). A long cache name keeps
+   its whole width instead of sharing a row with the button. */
+#rightmenu-design .box-content :is(select, input[type=text]) { width: 100%; }
+#rightmenu-design .block:has(> :is(input.button, input.defaultbutton, input.button-disabled)) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--a4-space-2);
+}
+#rightmenu-design .box-content :is(input.button, input.defaultbutton, input.button-disabled) { margin: 0; }
+#rightmenu-design .box-content :is(select, input[type=text]) { display: block; margin: 0; }
+#rightmenu-design .box-content form { display: grid; gap: var(--a4-space-2); }
+#rightmenu-design .box-content form > .block { margin: 0; padding: 0; }
+#rightmenu-design .box-content div.block { padding-bottom: 0; }
+#rightmenu-design .box-content form > :is(input.button, input.defaultbutton, input.button-disabled) { justify-self: end; }
+/* The user preferences: the setting's name and its on/off switch (.a4-tabs.is-segmented) on one row; only a
+   name too long for the column puts the switch under it. */
+#currentuserpreferences .settings > ul > li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--a4-space-1) var(--a4-space-2);
+  padding-block: var(--a4-space-1);
+}
+#currentuserpreferences .a4-pref-label { min-width: 0; overflow-wrap: break-word; }
 
 /* The content tree: rows 24px apart at the small and medium column sizes (a 20px line and the item's 4px below it),
    the smallest spacing WCAG 2.5.8 allows for its links and the 20px open/close areas; a larger font (the "Large"
@@ -1777,6 +1939,27 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
   padding-block: var(--a4-space-1);
   box-sizing: border-box;
 }
+/* every ini menu's links (grouped or not) take the grouped setup menu's inset and rounding */
+#leftmenu ul.leftmenu-items li > div > :is(a, span) {
+  padding-inline: var(--a4-space-2);
+  border-radius: var(--a4-radius-s);
+}
+/* The trash link and the column size switch under the menus: the same inset and 24px targets as the links above */
+#leftmenu #trash { margin: var(--a4-space-2) 0 0; }
+#leftmenu #trash > a {
+  display: flex;
+  align-items: center;
+  gap: var(--a4-space-1);
+  min-height: var(--a4-space-5);
+  padding-inline: var(--a4-space-2);
+  text-decoration: none;
+}
+#leftmenu #widthcontrol-links {
+  margin: var(--a4-space-3) 0 0;
+  padding-top: var(--a4-space-3);
+  border-top: 1px solid var(--a4-line);
+}
+
 /* The bar on the left is an inset shadow: its corners stay square, or the rounding bends it into a "(". */
 #leftmenu ul.leftmenu-items li > div > a[aria-current] {
   display: block;
