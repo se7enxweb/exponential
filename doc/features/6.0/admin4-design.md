@@ -99,9 +99,9 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
   the actions wrap onto two short lines inside the card.
 - **Version preview.** The preview of a version (content/versionview: "Preview" from the edit form, the node view and
   the version history) shows the site's own rendering for the chosen siteaccess in the width of a device: a segmented
-  pill iPhone (390 x 844 px) | iPad (820 x 1180) | Desktop (1280 x 800) | Large Desktop (1920 x 1080), and a
+  pill iPhone (390 × 844 px) | iPad (820 × 1180) | Desktop (1280 × 800) | Large Desktop (1920 × 1080), and a
   landscape switch for phone and tablet. The page is drawn at the device's size and scaled down when the column is
-  narrower; the line beside the switches says the size and the scale ("390 x 844 px, shown at 100 %"). The choice
+  narrower; the line beside the switches says the size and the scale ("390 × 844 px, shown at 100 %"). The choice
   stays in this browser (localStorage `exp-admin4-preview-device` and `exp-admin4-preview-landscape`); without a
   stored choice it is Desktop. In a narrow column the switches show their icons only. Without JavaScript the
   switches stay hidden and the preview fills the column as before.

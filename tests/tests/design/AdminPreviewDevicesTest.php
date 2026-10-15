@@ -89,7 +89,8 @@ class AdminPreviewDevicesTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( 'function save( key, value ) { try { window.localStorage.setItem( key, value ); } catch ( e ) {} }', $script );
         $this->assertSame( 1, substr_count( $script, 'localStorage.getItem' ) );
         $this->assertSame( 1, substr_count( $script, 'localStorage.setItem' ), 'every storage access is inside load() or save()' );
-        $this->assertStringContainsString( "initial = buttons[2]", $script, 'Desktop without a stored choice' );
+        $this->assertStringContainsString( "initial = bar.querySelector( 'button[data-a4-device=\"desktop\"]' )", $script, 'Desktop without a stored choice' );
+        $this->assertStringContainsString( "if ( !current || !width || ( force !== true && width === lastWidth ) ) return;", $script, 'no redraw loop, no drawing into a hidden stage' );
         $this->assertStringContainsString( "setAttribute( 'aria-pressed', buttons[j] === button ? 'true' : 'false' )", $script, 'one device pressed' );
         $this->assertStringContainsString( 'turn.disabled = !turnable();', $script, 'landscape for phone and tablet only' );
         $this->assertStringContainsString( 'scale = Math.min( 1, Math.max( room, 1 ) / w )', $script, 'scaled down, never up' );

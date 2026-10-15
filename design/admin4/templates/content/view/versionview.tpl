@@ -278,16 +278,20 @@
         size = bar.querySelector( '.a4-content-preview-size' ),
         sizeText = bar.getAttribute( 'data-a4-size' ),
         KEY = 'exp-admin4-preview-device', TURN_KEY = 'exp-admin4-preview-landscape',
-        current = null, landscape = false, i;
+        current = null, landscape = false, lastWidth = -1, i;
     function load( key ) { try { return window.localStorage.getItem( key ); } catch ( e ) { return null; } }
     function save( key, value ) { try { window.localStorage.setItem( key, value ); } catch ( e ) {} }
     function turnable() { return current && ( current.getAttribute( 'data-a4-device' ) === 'phone' || current.getAttribute( 'data-a4-device' ) === 'tablet' ); }
-    function draw() {
-        if ( !current ) return;
+    // force: a new device or orientation; otherwise only a changed column width redraws, so a scrollbar that the
+    // new height brings or takes away cannot start a loop, and a hidden stage (width 0) is left as it is
+    function draw( force ) {
+        var width = stage.clientWidth;
+        if ( !current || !width || ( force !== true && width === lastWidth ) ) return;
+        lastWidth = width;
         var w = parseInt( current.getAttribute( 'data-width' ), 10 ), h = parseInt( current.getAttribute( 'data-height' ), 10 ), t;
         if ( landscape && turnable() ) { t = w; w = h; h = t; }
         var style = window.getComputedStyle( stage ),
-            room = stage.clientWidth - parseFloat( style.paddingLeft ) - parseFloat( style.paddingRight ) - 2,   // the frame's edges
+            room = width - parseFloat( style.paddingLeft ) - parseFloat( style.paddingRight ) - 2,   // the frame's edges
             scale = Math.min( 1, Math.max( room, 1 ) / w );
         frame.style.width = w + 'px';
         frame.style.height = h + 'px';
@@ -301,9 +305,9 @@
         for ( var j = 0; j < buttons.length; j++ ) buttons[j].setAttribute( 'aria-pressed', buttons[j] === button ? 'true' : 'false' );
         turn.disabled = !turnable();
         turn.setAttribute( 'aria-pressed', landscape && turnable() ? 'true' : 'false' );
-        draw();
+        draw( true );
     }
-    var stored = load( KEY ), initial = buttons[2];
+    var stored = load( KEY ), initial = bar.querySelector( 'button[data-a4-device="desktop"]' );
     for ( i = 0; i < buttons.length; i++ ) {
         if ( buttons[i].getAttribute( 'data-a4-device' ) === stored ) initial = buttons[i];
         buttons[i].addEventListener( 'click', function () { save( KEY, this.getAttribute( 'data-a4-device' ) ); choose( this ); } );
