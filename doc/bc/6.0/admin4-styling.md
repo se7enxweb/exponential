@@ -222,8 +222,13 @@ Example, a list page:
 ## Window widths
 
 admin4 is checked at 390, 820, 1180, 1440, 1920 and 2560 px (`AdminResponsiveTest`). Below 576px the top menu is a
-hamburger panel in `--a4-card` that scrolls on its own, with the side columns' tabs hidden while it is open; from
-576px to 1279px it stays on one line and scrolls sideways. From 1024px the left column takes room beside the
+hamburger panel in `--a4-card` that scrolls on its own, with the side columns' tabs hidden while it is open, and the
+header is one row of 56px. From 576px the header has two rows (48px for the logo and the tools, 40px for the menu),
+from 1280px one row of 56px (logo, menu, search, light/dark, user menu, logout); at every width from 576px the menu
+stays on one line, and the tabs that do not fit go into its "More" disclosure (`admin4.js`; without the script the row
+scrolls sideways). Logout is an icon button beside the user menu (`parts/a4_header_user.tpl`), and "/" puts the focus
+in the header search. `--header-height` is set on the root: the drawn heights as defaults, the measured one by
+`admin4.js` (`AdminHeaderTest`). From 1024px the left column takes room beside the
 content, the right one only from 1280px (below that it opens over the content as a drawer). `ezadmin_menubar.js` uses the same breakpoints: a column below its breakpoint starts closed, opens alone (a column beside the content steps aside meanwhile), closes on Escape with the focus back on its tab, and is never saved as the wide-window choice (`AdminSidebarDrawerTest`, which runs the script in node). The content column stops
 at `--a4-content-max`. On a phone the node's tabs take their own row and scroll, the tabs switch stands under them,
 and a wide table in a tab scrolls inside it. On touch screens (`pointer: coarse`) the small controls of the frame

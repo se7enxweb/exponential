@@ -1,12 +1,12 @@
 /*
- * admin4: keeps the space the page leaves for the fixed header (--header-height on .dashboard-flex) equal to the
+ * admin4: keeps the space the page leaves for the fixed header (--header-height on the root element) equal to the
  * header's real height, at all times.
  *
- * From 576px up the top menu wraps onto as many lines as it needs (admin4.css), so the header is as tall as its
- * lines and changes height when the window is resized, when the fonts arrive, when the light/dark toggle changes
- * its label. ezadmin_menubar.js measured the header once, at load: after a resize that added a line the header
- * covered the top of the page. A ResizeObserver on the header follows every change; where there is none, resize
- * and load events do. Plain JavaScript, no library.
+ * admin4.css gives the header one row of 56px from 1280px, two rows (48 + 40px) from 576px and one row of 56px on a
+ * phone, and sets these heights as the default of --header-height. The header still changes height with the user's
+ * text size, when the fonts arrive or when a long name wraps: a ResizeObserver on the header follows every change;
+ * where there is none, resize and load events do. The value is set on <html>, so the side columns, the sticky edit bar
+ * and the scroll margins (modules/content.css) all read the same. Plain JavaScript, no library.
  *
  * It also keeps --a4-sticky-edge on <html>: the header's height, and on edit pages the bottom of the sticky button
  * bar (#controlbar-top), so a field scrolled into view and the rich text editor's toolbar stay below both.
@@ -16,13 +16,13 @@
 
     function sync() {
         var header = document.getElementById('header');
-        var flex = document.querySelector('.dashboard-flex');
-        if (!header || !flex) return;
+        var root = document.documentElement;
+        if (!header) return;
         // Pixels, not rem: a rem is the browser's root font size (user text size, mobile minimum size), which is not
         // always 16px, and a value divided by 16 then left less room than the header really takes.
         var px = header.getBoundingClientRect().height;
-        if (flex.style.getPropertyValue('--header-height') !== px + 'px') {
-            flex.style.setProperty('--header-height', px + 'px');
+        if (root.style.getPropertyValue('--header-height') !== px + 'px') {
+            root.style.setProperty('--header-height', px + 'px');
         }
         // --a4-sticky-edge on <html>: where the visible page starts under the header and, on edit pages, the sticky
         // button bar (#controlbar-top, stuck at its CSS top). The scroll padding and the editor toolbars use it.
@@ -52,6 +52,168 @@
         }
         window.addEventListener('load', sync);
         if (document.fonts && document.fonts.ready) document.fonts.ready.then(sync);
+    }
+
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+    else init();
+})();
+
+/*
+ * admin4 header menus: the main menu's "More" list, the user menu and the "/" key.
+ *
+ * From 576px the main menu is one line (admin4.css). The tabs that do not fit move, in their order, into the list of
+ * the "More" item at the row's end (page_topmenu.tpl: li.a4-nav-more, hidden until needed); they move back when there
+ * is room again. A ResizeObserver on the menu's panel refits the row (the panel's width does not depend on the tabs:
+ * flex-basis 0 from 1280px, the full width below); without one, the window's resize event does. Below 576px every tab
+ * stays in the phone menu's column. "More" is marked like the selected tab while the current page's tab is in it.
+ * The panel gets .a4-nav-fits once the script runs: the row no longer clips or scrolls (the CSS fallback without the
+ * script), so the list can open below it.
+ *
+ * "More" and the user menu (parts/a4_header_user.tpl) are disclosures: a button with aria-expanded and aria-controls
+ * and a list of plain links. A click or Enter/Space on the button opens and closes it, ArrowDown opens it and goes to
+ * its first link, ArrowDown/ArrowUp/Home/End move between the links, Escape closes it and gives the focus back to the
+ * button; a click outside or the focus leaving it closes it. At most one is open.
+ *
+ * "/" (outside a field, without modifier keys) puts the focus in the header search when it is shown (the input
+ * carries aria-keyshortcuts="/").
+ */
+(function () {
+    'use strict';
+
+    var open = null; // the open disclosure: { button, panel }
+
+    function setOpen(button, panel, state, focusButton) {
+        button.setAttribute('aria-expanded', state ? 'true' : 'false');
+        panel.hidden = !state;
+        if (state) {
+            if (open && open.button !== button) setOpen(open.button, open.panel, false, false);
+            open = { button: button, panel: panel };
+        } else {
+            if (open && open.button === button) open = null;
+            if (focusButton) button.focus();
+        }
+    }
+
+    function links(panel) {
+        return Array.prototype.filter.call(panel.querySelectorAll('a[href]'), function (a) {
+            return a.offsetParent !== null;
+        });
+    }
+
+    function disclosure(button, panel) {
+        if (!button || !panel) return;
+        button.addEventListener('click', function () {
+            setOpen(button, panel, button.getAttribute('aria-expanded') !== 'true', false);
+        });
+        button.addEventListener('keydown', function (e) {
+            if (e.key !== 'ArrowDown') return;
+            e.preventDefault();
+            setOpen(button, panel, true, false);
+            var first = links(panel)[0];
+            if (first) first.focus();
+        });
+        panel.addEventListener('keydown', function (e) {
+            var list = links(panel), i = list.indexOf(document.activeElement), next = null;
+            if (e.key === 'ArrowDown') next = list[Math.min(list.length - 1, i + 1)];
+            else if (e.key === 'ArrowUp') next = i <= 0 ? null : list[i - 1];
+            else if (e.key === 'Home') next = list[0];
+            else if (e.key === 'End') next = list[list.length - 1];
+            else return;
+            e.preventDefault();
+            if (next) next.focus(); else if (e.key === 'ArrowUp') button.focus();
+        });
+        // the focus leaving the button and its list closes it (Tab past the last link, a click elsewhere)
+        var wrap = button.parentNode;
+        wrap.addEventListener('focusout', function (e) {
+            if (button.getAttribute('aria-expanded') === 'true' && e.relatedTarget && !wrap.contains(e.relatedTarget)) {
+                setOpen(button, panel, false, false);
+            }
+        });
+    }
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && open && !e.defaultPrevented) {
+            // also after a mouse click, which leaves the focus on the page in Safari and Firefox on macOS; the focus
+            // goes back to the button only when it was in the disclosure
+            var active = document.activeElement;
+            e.preventDefault();
+            setOpen(open.button, open.panel, false, active === open.button || open.panel.contains(active));
+            return;
+        }
+        if (e.key !== '/' || e.ctrlKey || e.metaKey || e.altKey || e.isComposing || e.defaultPrevented) return;
+        var t = e.target;
+        if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
+        // not out of a widget that takes text or out of a dialog
+        if (t && t.closest && t.closest('[role="textbox"], [role="combobox"], [role="dialog"], [aria-modal="true"], dialog')) return;
+        var field = document.getElementById('searchtext');
+        if (!field || field.disabled || field.offsetParent === null) return;
+        e.preventDefault();
+        field.focus();
+        if (field.select) field.select();
+    });
+    document.addEventListener('click', function (e) {
+        if (open && !open.button.parentNode.contains(e.target)) setOpen(open.button, open.panel, false, false);
+    });
+
+    function overflowMenu() {
+        // found from the "More" item: admin4l's tab menu block draws its row inside the layout's own menu panel
+        var more = document.querySelector('#header .a4-nav-more');
+        var bar = more && more.parentNode;
+        var nav = bar && bar.closest ? bar.closest('.navbar-menu') : null;
+        if (!nav) return;
+        var toggle = more.querySelector('.a4-nav-more-toggle');
+        var list = more.querySelector('.a4-nav-more-list');
+        if (!toggle || !list) return;
+        var wide = window.matchMedia('(min-width: 576px)');
+        // the tabs, in their order: every item of the row but "More" and the phone menu's search
+        var tabs = Array.prototype.filter.call(bar.children, function (li) {
+            return li !== more && !li.classList.contains('header-search-mobile');
+        });
+
+        function fits() {
+            var last = more.hidden ? tabs.filter(function (li) { return li.parentNode === bar; }).pop() : more;
+            if (!last) return true;
+            var style = window.getComputedStyle(bar);
+            var end = bar.getBoundingClientRect().right - parseFloat(style.paddingRight || '0');
+            return last.getBoundingClientRect().right <= end + 0.5;
+        }
+
+        function fit() {
+            nav.classList.toggle('a4-nav-fits', wide.matches);
+            // the phone menu's column holds every tab: nothing to do while none is in the list
+            if (!wide.matches && !list.firstChild) return;
+            // all tabs back in the row, in their order, before "More". Only the ones that are elsewhere move: a moved
+            // element loses the focus, and this runs on every resize. The focus is given back if it was in a tab.
+            var active = document.activeElement;
+            tabs.forEach(function (li, i) {
+                var next = i + 1 < tabs.length ? tabs[i + 1] : more;
+                if (li.parentNode !== bar || li.nextSibling !== next) bar.insertBefore(li, next.parentNode === bar ? next : more);
+            });
+            more.hidden = true;
+            if (wide.matches && !fits()) {
+                more.hidden = false;
+                for (var i = tabs.length - 1; i >= 0 && !fits(); i--) {
+                    list.insertBefore(tabs[i], list.firstChild);
+                }
+            }
+            if (more.hidden && toggle.getAttribute('aria-expanded') === 'true') setOpen(toggle, list, false, false);
+            toggle.classList.toggle('has-current', !!list.querySelector('[aria-current]'));
+            if (active && active !== document.activeElement && document.contains(active) && active.offsetParent !== null) active.focus();
+        }
+
+        // on edit pages the tabs lead nowhere (page_topmenu.tpl: .navbar-menu.disabled), and neither does "More"
+        if (nav.classList.contains('disabled')) toggle.disabled = true;
+        disclosure(toggle, list);
+        fit();
+        if (window.ResizeObserver) new ResizeObserver(fit).observe(nav);
+        else window.addEventListener('resize', fit);
+        if (wide.addEventListener) wide.addEventListener('change', fit);
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+    }
+
+    function init() {
+        overflowMenu();
+        disclosure(document.getElementById('a4-user-toggle'), document.getElementById('a4-user-menu'));
     }
 
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);

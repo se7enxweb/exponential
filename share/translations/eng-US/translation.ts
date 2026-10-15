@@ -12709,6 +12709,14 @@ Note: The packages will not be uninstalled.</translation>
         <source>Show or hide the right sidebar</source>
         <translation>Show or hide the right sidebar</translation>
     </message>
+    <message>
+        <source>Logout (%login)</source>
+        <translation>Logout (%login)</translation>
+    </message>
+    <message>
+        <source>User menu (%name)</source>
+        <translation>User menu (%name)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>

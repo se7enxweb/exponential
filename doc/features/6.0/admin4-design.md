@@ -70,8 +70,10 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
   (`design:parts/a4_preference_attributes.tpl`, `data-a4-pref-*`) and saves them through
   `user/preferences/set_and_exit`. An anonymous page keeps them in the browser (`localStorage`) only; a browser
   choice made before is taken along once. `tests/tests/design/AdminPreferencesTest.php` checks it.
-- **Top menu.** Every item shows at every width from 576 px, wrapping onto more lines; phones keep the hamburger menu.
-  The page always starts below the header, even after a resize adds a line.
+- **Header and top menu.** One row of 56 px from 1280 px (logo, menu, search, light/dark, user menu, logout), two rows
+  of 48 + 40 px from 576 px, one row of 56 px on a phone with the hamburger menu. The menu stays on one line; tabs that
+  do not fit go into a "More" list. Logout is an icon button ("Logout (admin)"); the user menu holds the user's name
+  and links. "/" jumps to the search. The page always starts below the header (`AdminHeaderTest`).
 - **Sign-in page.** One calm form, fast on phones: labels above 46-48 px fields, 16 px text so mobile Safari does not
   zoom, autofill hints, Enter moves from the username to the password and signs in, a show/hide button, one full-width
   button that cannot be sent twice, and forgot-password and register links when those modules exist. The kernel reads

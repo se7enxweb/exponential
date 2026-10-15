@@ -17,3 +17,4 @@
         </button>
         <span id="a4-theme-status" class="a4-sr-only" role="status"></span>
     </div>
+    {include uri='design:parts/a4_header_user.tpl'}

@@ -1121,9 +1121,10 @@ input::placeholder {
     box-sizing: border-box;
 }
 
+/* --header-height: the space the page leaves for the fixed header, on the root so everything that keeps clear of the
+   header reads the same value (the side columns, the sticky edit bar, scroll-margin-top in modules/content.css).
+   admin4.css sets the header's drawn height per width as the default; admin4.js sets the measured height. */
 .dashboard-flex {
-    --header-height: 6.25rem;
-
     padding-top: var(--header-height);
 }
 
