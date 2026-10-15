@@ -82,4 +82,11 @@ $FunctionList['extension_counts'] = array( 'name' => 'extension_counts',
                                                                          'type' => 'bool',
                                                                          'required' => false,
                                                                          'default' => false ) ) );
+// The cronjob parts paused at Setup > Cronjobs, for the figure of its tile on the Setup overview.
+$FunctionList['cronjob_pauses'] = array( 'name' => 'cronjob_pauses',
+                                         'operation_types' => array( 'read' ),
+                                         'call_method' => array( 'class' => 'eZSetupFunctionCollection',
+                                                                 'method' => 'fetchCronjobPauses' ),
+                                         'parameter_type' => 'standard',
+                                         'parameters' => array( ) );
 ?>

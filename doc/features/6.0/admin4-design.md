@@ -207,7 +207,8 @@ in no group).
   menu shows its name without link.
 - **Figures**, only where one cheap fetch gives them and only on a tile the user may open
   (`setup/setupmenu_figure.tpl`, named by `LinkFigureTemplates[]`): classes, sections, content languages, active
-  extensions that exist (`expinfo( 'active' )`), signed-in users; one and many are two strings.
+  extensions that exist (`expinfo( 'active' )`), signed-in users, paused cronjob parts (only while one is paused,
+  `fetch( 'setup', 'cronjob_pauses' )`); one and many are two strings.
 - **Grid.** One column on a phone, then two, three and four as the content column grows (container queries on
   `.a4-setup-overview`, so a wide left column counts). Styles in `stylesheets/modules/setup.css`, tokens only, light and
   dark, forced colors.

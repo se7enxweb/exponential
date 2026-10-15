@@ -560,6 +560,9 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
 
 .a4-setup-cron .a4-section { margin-bottom: var(--a4-space-5); }
 .a4-setup-cron .a4-toolbar { margin-bottom: var(--a4-space-3); }
+/* the one note for a pause or resume: a line of its own below the buttons */
+.a4-setup-cron .a4-setup-pause-note { flex: 1 1 100%; }
+.a4-setup-cron .a4-setup-pause-note textarea { min-height: 2.5em; resize: vertical; }
 .a4-setup-paths { display: flex; flex-wrap: wrap; gap: var(--a4-space-1) var(--a4-space-4); margin: calc(-1 * var(--a4-space-1)) 0 var(--a4-space-4); color: var(--a4-muted); font-size: var(--a4-text-xs); }
 .a4-setup-paths code { color: var(--a4-ink); overflow-wrap: anywhere; }
 .a4-setup-cron .a4-figures { margin-bottom: var(--a4-space-5); }
@@ -1057,6 +1060,8 @@ a.a4-setup-tile-link:focus-visible { outline: 2px solid transparent; }
 a.a4-setup-tile-link:focus-visible::after { outline: 3px solid var(--a4-ring); outline-offset: 1px; }
 .a4-setup-tile-text { display: grid; gap: 2px; color: var(--a4-muted); font-size: var(--a4-text-s); }
 .a4-setup-tile-figure { color: var(--a4-ink); font-size: var(--a4-text-xs); font-variant-numeric: tabular-nums; font-weight: 600; }
+/* a figure that asks for a look, such as paused cronjob parts */
+.a4-setup-tile-figure.is-attention { color: var(--a4-bad); }
 .a4-setup-tile.is-disabled { box-shadow: none; background-color: var(--a4-soft); }
 .a4-setup-tile.is-disabled .a4-setup-tile-link { color: var(--a4-disabled); }
 @media (forced-colors: active) {

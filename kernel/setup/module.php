@@ -283,9 +283,12 @@ $ViewList['cronjobs'] = array(
                                        'LaunchCronjobScript' => array( 'CronjobTarget' => 'LaunchCronjobScriptButton',
                                                                        'CronjobSiteAccess' => 'CronjobSiteAccess' ),
                                        // Pause and resume carry the part as the button's value too ("all" for every
-                                       // part, "global" for the scripts of [CronjobSettings]).
-                                       'PauseCronjob' => array( 'CronjobPart' => 'PauseCronjobButton' ),
-                                       'ResumeCronjob' => array( 'CronjobPart' => 'ResumeCronjobButton' ) ),
+                                       // part, "global" for the scripts of [CronjobSettings]), and the optional note
+                                       // of the page's one note field.
+                                       'PauseCronjob' => array( 'CronjobPart' => 'PauseCronjobButton',
+                                                                'CronjobPauseNote' => 'CronjobPauseNote' ),
+                                       'ResumeCronjob' => array( 'CronjobPart' => 'ResumeCronjobButton',
+                                                                 'CronjobPauseNote' => 'CronjobPauseNote' ) ),
     'params' => array() );
 
 $ViewList['cronjobsstream'] = array(

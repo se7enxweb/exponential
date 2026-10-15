@@ -78,6 +78,23 @@ class eZSetupFunctionCollection
     {
         return array( 'result' => eZExtension::extensionCounts( null, $allSiteAccesses ? null : false ) );
     }
+
+    /**
+     * The cronjob pauses for the Setup overview (expCronjobPause): enabled (cronjob.ini [PauseSettings] Pause), all
+     * (every part is paused) and count (the parts paused one by one, the scripts of [CronjobSettings] included). One
+     * look into the directory of the state files; no rights of its own, so it is drawn only where the user may open
+     * Setup > Cronjobs.
+     */
+    function fetchCronjobPauses()
+    {
+        if ( !expCronjobPause::enabled() )
+            return array( 'result' => array( 'enabled' => false, 'all' => false, 'count' => 0 ) );
+        $paused = expCronjobPause::pausedParts();
+        $all = in_array( expCronjobPause::ALL, $paused, true );
+        return array( 'result' => array( 'enabled' => true,
+                                         'all' => $all,
+                                         'count' => count( $paused ) - ( $all ? 1 : 0 ) ) );
+    }
 }
 }
 
