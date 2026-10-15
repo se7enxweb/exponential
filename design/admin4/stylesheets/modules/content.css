@@ -692,3 +692,14 @@ div.block.a4-content-attr { margin: 0 0 var(--a4-space-5); padding-bottom: 0; } 
 @media (forced-colors: active) {
   .a4-content-preview-stage.is-device .a4-content-preview-device { border-color: CanvasText; }
 }
+
+/* ---- node view ---- the Upload link (node/view/upload_button.tpl, an .a4-btn) in the classic action bar of
+   design/admin: as high as the legacy buttons beside it, on their line (admin4's .a4-node-actions sizes it in
+   admin4.css) ------------------------------------------------------------------------------------------------ */
+
+.controlbar:not(.a4-node-actions) .block .a4-node-upload {
+  min-height: 0;
+  padding: 0 var(--a4-space-2);
+  font-weight: normal;
+  vertical-align: middle;
+}

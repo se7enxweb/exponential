@@ -10450,6 +10450,14 @@
 <context>
     <name>design/admin/node/view/full</name>
     <message>
+        <source>Upload</source>
+        <translation>Hochladen</translation>
+    </message>
+    <message>
+        <source>Upload files to this location.</source>
+        <translation>Dateien an diesen Ort hochladen.</translation>
+    </message>
+    <message>
         <source>Default size</source>
         <translation>Standardgröße</translation>
     </message>
