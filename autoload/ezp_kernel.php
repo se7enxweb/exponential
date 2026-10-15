@@ -1172,6 +1172,7 @@ return array(
       'expSubitemsUserColumn'                                        => 'kernel/classes/subitems/columns/expsubitemsusercolumn.php',
       'expSubitemsUserVisitRow'                                      => 'kernel/classes/subitems/columns/expsubitemscolumntables.php',
       'expSubitemsVersionColumn'                                     => 'kernel/classes/subitems/columns/expsubitemsversioncolumn.php',
+      'expSvgSanitizer'                                              => 'lib/ezimage/classes/expsvgsanitizer.php',
       'expSystemReport'                                              => 'kernel/classes/expsystemreport.php',
       'expSystemReportMask'                                          => 'kernel/classes/expsystemreportmask.php',
       'expTemplateExtensionWizard'                                   => 'kernel/setup/exptemplateextensionwizard.php',

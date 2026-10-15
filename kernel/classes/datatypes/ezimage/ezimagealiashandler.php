@@ -433,6 +433,16 @@ class eZImageAliasHandler
         }
 
         $aliasList = $this->aliasList();
+        // An SVG is never scaled: every alias is the original file, with its size. Not stored
+        // as an alias in the XML (that would name one file twice, for removal and moves).
+        if ( $aliasName !== 'original' && isset( $aliasList['original'] ) && self::isSVGAlias( $aliasList['original'] ) )
+        {
+            $alias = $aliasList['original'];
+            $alias['name'] = $aliasName;
+            $alias['is_new'] = false;
+            $alias['alias_key'] = $imageManager->createImageAliasKey( $imageManager->alias( $aliasName ) );
+            return $alias;
+        }
         if ( array_key_exists( $aliasName, $aliasList ) )
         {
             return $aliasList[$aliasName];
@@ -1281,6 +1291,15 @@ class eZImageAliasHandler
      */
     function initializeFromHTTPFile( $httpFile, $imageAltText = false )
     {
+        // An SVG is stored only sanitized, and always as plain .svg: the
+        // upload's temporary file is replaced by the sanitizer's output
+        $isSVG = expSvgSanitizer::isSVGFile( $httpFile->attribute( 'filename' ) );
+        if ( $isSVG && !eZImageType::sanitizeSVGFile( $httpFile->attribute( 'filename' ) ) )
+        {
+            eZDebug::writeError( 'The SVG image ' . $httpFile->attribute( 'original_filename' ) . ' was refused, it is not stored', __METHOD__ );
+            return false;
+        }
+
         $this->increaseImageSerialNumber();
 
         $mimeData = eZMimeType::findByFileContents( $httpFile->attribute( 'filename' ) );
@@ -1292,6 +1311,7 @@ class eZImageAliasHandler
                 $mimeData = eZMimeType::findByURL( $httpFile->attribute( 'original_filename' ) );
             }
         }
+        $mimeData = self::svgMimeData( $mimeData, $isSVG, $httpFile->attribute( 'original_filename' ) );
         $this->removeAliases();
         $this->setOriginalAttributeDataValues( $this->ContentObjectAttributeData['id'],
                                                $this->ContentObjectAttributeData['version'],
@@ -1337,6 +1357,14 @@ class eZImageAliasHandler
             return false;
         }
 
+        // An SVG is written to the storage only as the sanitizer's output
+        $isSVG = expSvgSanitizer::isSVGFile( $filename );
+        if ( $isSVG && !eZImageType::svgAccepted() )
+        {
+            eZDebug::writeError( "The SVG image '$filename' was refused (SVG is not accepted), it is not stored", __METHOD__ );
+            return false;
+        }
+
         $this->increaseImageSerialNumber();
 
         if ( !$originalFilename )
@@ -1347,6 +1375,7 @@ class eZImageAliasHandler
         {
             $mimeData = eZMimeType::findByFileContents( $originalFilename );
         }
+        $mimeData = self::svgMimeData( $mimeData, $isSVG, $originalFilename );
 
         $this->removeAliases();
         $this->setOriginalAttributeDataValues( $this->ContentObjectAttributeData['id'],
@@ -1364,9 +1393,50 @@ class eZImageAliasHandler
             eZDir::mkdir( $mimeData['dirpath'], false, true );
         }
 
-        eZFileHandler::copy( $filename, $mimeData['url'] );
+        if ( $isSVG )
+        {
+            if ( !eZImageType::sanitizeSVGFile( $filename, $mimeData['url'] ) )
+            {
+                eZDebug::writeError( "The SVG image '$filename' was refused, it is not stored", __METHOD__ );
+                return false;
+            }
+        }
+        else
+        {
+            eZFileHandler::copy( $filename, $mimeData['url'] );
+        }
 
         return $this->initialize( $mimeData, $originalFilename, $imageAltText );
+    }
+
+    /**
+     * $mimeData for the file to store: an SVG (by content) is image/svg+xml with the suffix svg
+     * (a sanitized .svgz is plain SVG, whatever the upload was named).
+     *
+     * @param array $mimeData
+     * @param bool $isSVG
+     * @param string $originalFilename
+     * @return array
+     */
+    protected static function svgMimeData( $mimeData, $isSVG, $originalFilename )
+    {
+        if ( !$isSVG )
+            return $mimeData;
+        $svgMimeData = eZMimeType::findByURL( 'image.svg' );
+        $svgMimeData['name'] = 'image/svg+xml';
+        $svgMimeData['suffix'] = 'svg';
+        return $svgMimeData;
+    }
+
+    /**
+     * Whether the alias $alias (the original, as aliasList() gives it) is an SVG image.
+     *
+     * @param array|null $alias
+     * @return bool
+     */
+    public static function isSVGAlias( $alias )
+    {
+        return is_array( $alias ) && isset( $alias['mime_type'] ) && $alias['mime_type'] === 'image/svg+xml';
     }
 
     /*!
@@ -1393,7 +1463,9 @@ class eZImageAliasHandler
         $filePath = $mimeData['url'];
         $fileHandler->fileStore( $filePath, 'image', false, $mimeData['name'] );
 
-        if ( $imageManager->createImageAlias( 'original', $aliasList, array( 'basename' => $mimeData['basename'] ) ) )
+        // An SVG is never converted: its original is the sanitized file as stored
+        $isSVG = isset( $mimeData['name'] ) && $mimeData['name'] === 'image/svg+xml';
+        if ( !$isSVG && $imageManager->createImageAlias( 'original', $aliasList, array( 'basename' => $mimeData['basename'] ) ) )
         {
             $mimeData = $aliasList['original'];
             $mimeData['name'] = $mimeData['mime_type'];
@@ -1418,11 +1490,18 @@ class eZImageAliasHandler
 
         $width = false;
         $height = false;
-        $info = getimagesize( $mimeData['url'] );
+        // An SVG's size comes from its width and height attributes or its viewBox
+        $info = $isSVG ? expSvgSanitizer::dimensions( $mimeData['url'] ) : @getimagesize( $mimeData['url'] );
         if ( $info )
         {
             $width = $info[0];
             $height = $info[1];
+        }
+        if ( $isSVG )
+        {
+            $aliasList['original']['mime_type'] = 'image/svg+xml';
+            $aliasList['original']['width'] = $width;
+            $aliasList['original']['height'] = $height;
         }
 
         $originalNode = $doc->createElement( "original" );

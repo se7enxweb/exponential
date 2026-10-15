@@ -176,6 +176,12 @@ abstract class ezpClusterGateway
         $datatype = $metaData['datatype'];
 
         header( "Content-Type: {$datatype}" );
+        // An SVG image opened directly runs nothing and loads nothing
+        if ( $datatype === 'image/svg+xml' || substr( $filename, -4 ) === '.svg' || substr( $filename, -5 ) === '.svgz' )
+        {
+            header( "Content-Security-Policy: sandbox; default-src 'none'; style-src 'unsafe-inline'" );
+            header( 'X-Content-Type-Options: nosniff' );
+        }
         header( "Connection: close" );
         header( 'Served-by: ' . $_SERVER["SERVER_NAME"] );
 

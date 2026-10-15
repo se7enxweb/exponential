@@ -8,7 +8,7 @@
  *
  *  SD-L01 - ezjscnode node data calls: RequirePolicy=disabled, the function listed for the policy's limitation
  *  SD-L02 - registration: PolicyOmitListExclude[] empty, user/register still in PolicyOmitList[]
- *  SD-L05 - uploaded images checked by content (on for everyone): ValidateMIMEType=enabled; SVG not in the list
+ *  SD-L05 - uploaded images checked by content (on for everyone): ValidateMIMEType=enabled; SVG listed, with SanitizeSVG=enabled
  *  SD-L07 - deprecations to deprecated.log (on by default): DeprecatedLog=enabled
  *  SD-L08 - log size 2 MB, three rotated files; config.php-RECOMMENDED documents the constants that win over them
  *  SD-L10 - the used templates' edit link: UsedTemplateEditUrl empty (the usual link)
@@ -101,7 +101,9 @@ class expShippedFeatureDefaultsTest extends PHPUnit\Framework\TestCase
         $types = self::listValue( 'settings/image.ini', 'ImageUploadSettings', 'AllowedMIMETypes' );
         foreach ( array( 'image/jpeg', 'image/png', 'image/gif', 'image/webp' ) as $type )
             $this->assertContains( $type, $types );
-        $this->assertNotContains( 'image/svg+xml', $types, 'SVG is refused unless a site lists it' );
+        // SVG is accepted because it is sanitized on upload
+        $this->assertContains( 'image/svg+xml', $types );
+        $this->assertSame( 'enabled', self::value( 'settings/image.ini', 'ImageUploadSettings', 'SanitizeSVG' ) );
     }
 
     /** SD-L07, SD-L08, SD-L10 */

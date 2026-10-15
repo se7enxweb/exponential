@@ -352,6 +352,16 @@ class ezjscServerFunctionsAjaxUploader extends ezjscServerFunctions
             {
                 throw new RuntimeException( $imageError );
             }
+            // An SVG waits for its location already sanitized, as plain .svg
+            if ( eZImageType::svgAccepted() && expSvgSanitizer::isSVGFile( $file->attribute( 'filename' ) ) )
+            {
+                if ( !eZImageType::sanitizeSVGFile( $file->attribute( 'filename' ) ) )
+                {
+                    throw new RuntimeException( ezpI18n::tr( 'kernel/classes/datatypes',
+                        'The SVG image could not be read, or nothing in it can be shown safely.' ) );
+                }
+                $mimeData['suffix'] = 'svg';
+            }
 
             if ( $file->store( false, $mimeData['suffix'] ) === false )
             {

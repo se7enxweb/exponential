@@ -1242,7 +1242,10 @@ div.context-information.a4-node-meta {
 .a4-node-meta button.a4-copy:hover { color: var(--a4-ink); border-bottom-color: var(--a4-accent); }
 .a4-node-meta button.a4-copied { color: var(--a4-ok); border-bottom-color: var(--a4-ok); }
 .a4-node-meta button.a4-copied::after { content: " \2713"; }
-.a4-node-langs { display: inline-flex; gap: var(--a4-space-1); }
+.a4-node-langs { display: inline-flex; flex-wrap: wrap; gap: var(--a4-space-1); }
+/* each language badge of the node is a link: at least 24px high (WCAG 2.5.8), so a wrapped row of them keeps its
+   targets apart at every width (axe target-size at 1024px) */
+.a4-node-langs a.a4-node-lang { display: inline-flex; align-items: center; min-height: var(--a4-space-5); }
 
 /* the tabs as a quiet segmented row, the open panel as a soft card under it */
 .a4-node-tabs ul.tabs { display: flex; flex-wrap: wrap; gap: 2px; margin: 0 0 var(--a4-space-2); padding: var(--a4-space-1); border-radius: var(--a4-radius-s); background-color: var(--a4-soft); box-shadow: inset 0 0 0 1px var(--a4-line); }
@@ -2254,8 +2257,10 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
 #leftmenu details.a4-navgroup > .leftmenu-items { margin: 0; padding: 0; list-style: none; }
 /* the lead links (LeadLinks[], the Setup overview) stand before the groups, as plain rows of the same look */
 #leftmenu .a4-navlead > .leftmenu-items { margin: 0 0 var(--a4-space-2); padding: 0; list-style: none; }
-#leftmenu :is(details.a4-navgroup, .a4-navlead) > .leftmenu-items li { margin: 0; }
-#leftmenu :is(details.a4-navgroup, .a4-navlead) > .leftmenu-items li > div > :is(a, span) {
+/* the trail links (TrailLinks[]) stand after the groups, as the lead links before them */
+#leftmenu .a4-navtrail > .leftmenu-items { margin: var(--a4-space-2) 0 0; padding: 0; list-style: none; }
+#leftmenu :is(details.a4-navgroup, .a4-navlead, .a4-navtrail) > .leftmenu-items li { margin: 0; }
+#leftmenu :is(details.a4-navgroup, .a4-navlead, .a4-navtrail) > .leftmenu-items li > div > :is(a, span) {
   display: block;
   min-height: 24px;
   padding: var(--a4-space-1) var(--a4-space-2);

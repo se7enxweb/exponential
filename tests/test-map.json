@@ -14,6 +14,31 @@
     "tests/test-map.json"
   ],
   "map": {
+    "lib/ezimage/classes/expsvgsanitizer.php": [
+      "tests/tests/lib/ezimage/expSvgSanitizerTest.php",
+      "tests/tests/kernel/datatypes/ezimage/expImageSvgTest.php"
+    ],
+    "tests/tests/lib/ezimage/data/svg/*": [
+      "tests/tests/lib/ezimage/expSvgSanitizerTest.php"
+    ],
+    "kernel/classes/datatypes/ezimage/ezimagetype.php": [
+      "tests/tests/kernel/datatypes/ezimage/expImageSvgTest.php",
+      "tests/tests/kernel/classes/expImageUploadValidatorTest.php"
+    ],
+    "kernel/classes/datatypes/ezimage/ezimagealiashandler.php": [
+      "tests/tests/kernel/datatypes/ezimage/expImageSvgTest.php",
+      "tests/tests/kernel/datatypes/ezimage/eZImageAliasHandlerGuardsTest.php"
+    ],
+    "lib/ezimage/classes/ezimagemanager.php": [
+      "tests/tests/kernel/datatypes/ezimage/expImageSvgTest.php"
+    ],
+    "kernel/classes/expimageuploadvalidator.php": [
+      "tests/tests/kernel/classes/expImageUploadValidatorTest.php",
+      "tests/tests/kernel/datatypes/ezimage/expImageSvgTest.php"
+    ],
+    "kernel/classes/ezpackagecreationhandler.php": [
+      "tests/tests/kernel/datatypes/ezimage/expImageSvgTest.php"
+    ],
     "extension/cjw_newsletter/design/*preview*.tpl": [
       "tests/tests/design/AdminNewsletterPreviewTest.php"
     ],
@@ -490,7 +515,8 @@
       "tests/tests/kernel/content/eZAdminFullViewCopyButtonTest.php"
     ],
     "design/admin/templates/parts/ini_menu.tpl": [
-      "tests/tests/kernel/private/expAdminViewsDebugCleanTest.php"
+      "tests/tests/kernel/private/expAdminViewsDebugCleanTest.php",
+      "tests/tests/design/AdminLeftMenuGroupsTest.php"
     ],
     "design/admin/templates/setup/sitedata.tpl": [
       "tests/tests/kernel/content/eZContentFunctionCollectionSiteDataTest.php"
