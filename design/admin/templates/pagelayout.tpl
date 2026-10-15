@@ -23,6 +23,16 @@
 {if $hide_right_menu}
 {set $collapse_right_menu = false()}
 {/if}
+{* A user who came to this design through the UI switch (doc/features/6.0/ui-switch-design.md) and never closed the
+   right menu here sees it open, so the interface choices that lead back stay in reach. Closed on purpose
+   (admin_right_menu_show=0) stays closed; without a switched design nothing changes. *}
+{if and( $collapse_right_menu, ne( concat( ezpreference( 'admin_right_menu_show' ), '' ), '0' ) )}
+{foreach fetch( 'uiswitch', 'toolbar' ) as $exp_ui_choice}
+{if and( eq( $exp_ui_choice.identifier, 'design' ), ne( $exp_ui_choice.current, $exp_ui_choice.default ) )}
+{set $collapse_right_menu = false()}
+{/if}
+{/foreach}
+{/if}
 
 {* The one inline CSS kept in this design, on purpose (doc/bc/6.0/admin4-styling.md, "Exceptions"): the column
    widths of this editor's preferences, in em from menu.ini [LeftMenuSettings] MenuWidth or a width dragged by hand,
