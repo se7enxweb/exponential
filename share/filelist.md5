@@ -897,7 +897,7 @@ f91a366a6abfa6b8a706b154b7aec12c  design/admin4/override/templates/template_look
 03505c55345b654eeb275f3b614a92bf  design/admin4/override/templates/thumbnail/image.tpl
 6971adb19c3c39b21f245c72b7f73305  design/admin4/override/templates/thumbnail/image_browse.tpl
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
-5963c2f5a0de14e11218dcf642012c75  design/admin4/stylesheets/admin4.css
+cedcf4705116164314862ff668b0f419  design/admin4/stylesheets/admin4.css
 30a645c1835fdad5b8f8a3801999d92e  design/admin4/stylesheets/components.css
 e907d0bf7b66f4bd6da6699efc5b84a7  design/admin4/stylesheets/content.css
 0368a507892a9eb10f58c7a00b0365bf  design/admin4/stylesheets/core.css
@@ -3028,7 +3028,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-155d6fcb1ef60b01e36f57e62636e87a  doc/changelogs/6.0/6.0.15.md
+9af339606386b8afdcbc529ff7573f81  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -7311,7 +7311,7 @@ f2f45d0be8a363de1fa024e40ff34fd2  tests/tests/design/AdminNewsletterPreviewTest.
 ae18fab68df1cb7bb7fe0e1a35b0738f  tests/tests/design/AdminPhoneMenuTest.php
 77e0c30ffdd7d184e4f30730cbb24816  tests/tests/design/AdminPreferencesTest.php
 fe3ae8677e701b3a8e7d50707d46a9ae  tests/tests/design/AdminPreviewDevicesTest.php
-4627de4296c3a56aef983c6685362bcc  tests/tests/design/AdminResponsiveTest.php
+cac53599c9c6b1874c2c8f7c1bf97945  tests/tests/design/AdminResponsiveTest.php
 4b3af4d4ae744b360aa04bc3a27578b4  tests/tests/design/AdminRetiredClassesTest.php
 e91ed492603f40096d777282b9797f83  tests/tests/design/AdminReverseRelationCheckTest.php
 4390fd64629a97f6cac6bf7cd0e4bf9c  tests/tests/design/AdminScriptsTest.php
