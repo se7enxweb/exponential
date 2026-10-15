@@ -302,8 +302,6 @@
     {/if}
 </div>
 
-</div>
-
 <div class="float-break"></div>
 {* DESIGN: Control bar END *}</div></div>
 </div>

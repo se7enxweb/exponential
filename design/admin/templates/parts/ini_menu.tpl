@@ -17,7 +17,18 @@
    TrailLinks[] (optional, menu.ini) names links of the section drawn after all its other links, in the order
    TrailLinks[] names them, also after the links extensions append (the Dashboard menu's Change password and Edit
    profile). Access is checked as for every link; a key the user may not open is left out as always.
+   * menu_layout : (optional) 'tiles' draws the same links and access checks as an overview page of tiles
+     (parts/ini_menu_tiles.tpl, the shared component tiles of admin4; the Setup overview, setup/setupmenu.tpl)
+     instead of the menu. The links of LeadLinks[] (the overview itself) are left out; the tiles are grouped by
+     Groups[], GroupNames[] and GroupLinks_<group>[], links in no group follow under "More", and a menu without
+     Groups[] is one group without title. A tile takes LinkIcons[<key>] (a name of design.ini [AdminDesignSettings]
+     IconList[], else the plug icon), LinkDescriptions[<key>] and LinkFigureTemplates[<key>] of the section.
+     The menu itself stays one list in this design.
 *}
+
+{if is_unset( $menu_layout )}
+    {def $menu_layout = 'menu'}
+{/if}
 
 {if is_unset( $ini_section )}
     {def $ini_section  = 'Leftmenu_'
@@ -55,7 +66,17 @@
          $enabled_defaults = hash( 'default', 'true', 'edit', 'false', 'browse', 'false' )
          $check_view = ezini( 'MenuAccessSettings', 'CheckViewAccess', 'menu.ini' )|ne( 'disabled' )
          $hide_no_access = ezini( 'MenuAccessSettings', 'NoAccessLinks', 'menu.ini' )|ne( 'disabled' )
-         $items = array()}
+         $items = array()
+         $ini_menu_tile_icons = hash()
+         $ini_menu_tile_texts = hash()
+         $ini_menu_tile_figures = hash()}
+
+    {* the tiles' settings of the section: icon, description and figure per link key *}
+    {if eq( $menu_layout, 'tiles' )}
+        {if ezini_hasvariable( $ini_section, 'LinkIcons', 'menu.ini' )}{set $ini_menu_tile_icons = ezini( $ini_section, 'LinkIcons', 'menu.ini' )}{/if}
+        {if ezini_hasvariable( $ini_section, 'LinkDescriptions', 'menu.ini' )}{set $ini_menu_tile_texts = ezini( $ini_section, 'LinkDescriptions', 'menu.ini' )}{/if}
+        {if ezini_hasvariable( $ini_section, 'LinkFigureTemplates', 'menu.ini' )}{set $ini_menu_tile_figures = ezini( $ini_section, 'LinkFigureTemplates', 'menu.ini' )}{/if}
+    {/if}
 
     {if ezini_hasvariable( $ini_section, 'Name', 'menu.ini' )}
         {set $menu_name = ezini( $ini_section, 'Name', 'menu.ini' )}
@@ -126,9 +147,14 @@
             {/if}
 
             {if $has_access}
-                {set $items = $items|append( hash( 'key', $link_key, 'url', $link_url, 'name', $item_name, 'state', cond( $disabled, 'disabled', 'link' ) ) )}
+                {set $items = $items|append( hash( 'key', $link_key, 'url', $link_url, 'name', $item_name, 'state', cond( $disabled, 'disabled', 'link' ),
+                                                   'icon', first_set( $ini_menu_tile_icons[ $link_key ], '' ),
+                                                   'text', first_set( $ini_menu_tile_texts[ $link_key ], '' ),
+                                                   'figure', first_set( $ini_menu_tile_figures[ $link_key ], '' ) ) )}
             {elseif $hide_no_access|not}
-                {set $items = $items|append( hash( 'key', $link_key, 'url', $link_url, 'name', $item_name, 'state', 'no-access' ) )}
+                {set $items = $items|append( hash( 'key', $link_key, 'url', $link_url, 'name', $item_name, 'state', 'no-access',
+                                                   'icon', first_set( $ini_menu_tile_icons[ $link_key ], '' ),
+                                                   'text', first_set( $ini_menu_tile_texts[ $link_key ], '' ) ) )}
             {/if}
         {/foreach}
     {/if}
@@ -155,7 +181,56 @@
         {undef $trail_items $trail_keys $kept_items}
     {/if}
 
-    {if $items|count}
+    {if eq( $menu_layout, 'tiles' )}
+        {* The overview page (setup/menu): the same links and access as the menu, as tiles in the menu's groups. The
+           lead links are the overview itself and are left out. *}
+        {def $ini_menu_lead = array()
+             $ini_menu_groups = array()
+             $ini_menu_used = array()
+             $ini_menu_group_keys = array()
+             $ini_menu_group_items = array()
+             $ini_menu_group_names = hash()
+             $ini_menu_grouped = false()}
+        {if ezini_hasvariable( $ini_section, 'LeadLinks', 'menu.ini' )}
+            {set $ini_menu_lead = ezini( $ini_section, 'LeadLinks', 'menu.ini' )}
+        {/if}
+        {if ezini_hasvariable( $ini_section, 'Groups', 'menu.ini' )}
+            {if ezini_hasvariable( $ini_section, 'GroupNames', 'menu.ini' )}
+                {set $ini_menu_group_names = ezini( $ini_section, 'GroupNames', 'menu.ini' )}
+            {/if}
+            {foreach ezini( $ini_section, 'Groups', 'menu.ini' ) as $ini_menu_group}
+                {set $ini_menu_grouped = true()
+                     $ini_menu_group_keys = array()
+                     $ini_menu_group_items = array()}
+                {if ezini_hasvariable( $ini_section, concat( 'GroupLinks_', $ini_menu_group ), 'menu.ini' )}
+                    {set $ini_menu_group_keys = ezini( $ini_section, concat( 'GroupLinks_', $ini_menu_group ), 'menu.ini' )}
+                {/if}
+                {foreach $items as $item}
+                    {if and( $ini_menu_group_keys|contains( $item.key ), $ini_menu_used|contains( $item.key )|not, $ini_menu_lead|contains( $item.key )|not )}
+                        {set $ini_menu_group_items = $ini_menu_group_items|append( $item )
+                             $ini_menu_used = $ini_menu_used|append( $item.key )}
+                    {/if}
+                {/foreach}
+                {if $ini_menu_group_items|count}
+                    {set $ini_menu_groups = $ini_menu_groups|append( hash( 'id', $ini_menu_group, 'name', first_set( $ini_menu_group_names[ $ini_menu_group ], $ini_menu_group ), 'items', $ini_menu_group_items ) )}
+                {/if}
+            {/foreach}
+        {/if}
+        {* the links in no group: "More" after the groups, or the one group of a menu without groups *}
+        {set $ini_menu_group_items = array()}
+        {foreach $items as $item}
+            {if and( $ini_menu_used|contains( $item.key )|not, $ini_menu_lead|contains( $item.key )|not )}
+                {set $ini_menu_group_items = $ini_menu_group_items|append( $item )}
+            {/if}
+        {/foreach}
+        {if $ini_menu_group_items|count}
+            {set $ini_menu_groups = $ini_menu_groups|append( hash( 'id', cond( $ini_menu_grouped, 'more', 'all' ), 'name', cond( $ini_menu_grouped, 'More'|i18n( 'design/admin/pagelayout' ), '' ), 'translated', true(), 'items', $ini_menu_group_items ) )}
+        {/if}
+        {include uri='design:parts/ini_menu_tiles.tpl' groups=$ini_menu_groups
+                 known_icons=cond( ezini_hasvariable( 'AdminDesignSettings', 'IconList', 'design.ini' ), ezini( 'AdminDesignSettings', 'IconList', 'design.ini' ), array() )
+                 tile_id_prefix=concat( 'a4-tiles-', $ini_section|explode( '_' )|implode( '-' ) ) i18n_section=$i18n_section}
+        {undef $ini_menu_lead $ini_menu_groups $ini_menu_used $ini_menu_group_keys $ini_menu_group_items $ini_menu_group_names $ini_menu_grouped}
+    {elseif $items|count}
         {* DESIGN: Header START *}<div class="box-header"><div class="box-ml">
         {if $menu_name}<h4>{if is_set( $i18n_hash[ $menu_name ] )}{$i18n_hash[ $menu_name ]|wash}{else}{$menu_name|d18n($i18n_section)|wash}{/if}</h4>{/if}
         {* DESIGN: Header END *}</div></div>
@@ -176,5 +251,5 @@
 
         {* DESIGN: Content END *}</div></div></div>
     {/if}
-    {undef $ini_menu_url_list $menu_name $check $has_access $items $check_view $hide_no_access}
+    {undef $ini_menu_url_list $menu_name $check $has_access $items $check_view $hide_no_access $ini_menu_tile_icons $ini_menu_tile_texts $ini_menu_tile_figures}
 {/if}

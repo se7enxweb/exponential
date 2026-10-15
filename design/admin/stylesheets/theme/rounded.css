@@ -348,7 +348,7 @@ input.button:hover, input.button:focus {
 input.defaultbutton
 {
     background-color: #567975;
-    color: #f5f3dd;
+    color: #fff;   /* 4.8:1 on the green; #f5f3dd was 4.3:1 */
     font-weight: normal;
 }
 
@@ -486,7 +486,7 @@ div.pagenavigator span.next
 
 div.pagenavigator span.disabled
 {
-    color: #d0d0d0;
+    color: var(--a4-muted);   /* 5.9:1 on white; #d0d0d0 was 1.5:1 */
 }
 
 div.pagenavigator span.pages span.other, div.pagenavigator span.pages span.current

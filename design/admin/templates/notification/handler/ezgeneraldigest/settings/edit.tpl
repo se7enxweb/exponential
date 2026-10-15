@@ -11,13 +11,13 @@
 <table cellspacing="4">
 <tr>
 <td>
-<input type="radio" name="DigestType_{$handler.id_string}" value="3" {eq($settings.digest_type,3)|choose('', 'checked="checked"' )} />
+<input type="radio" id="digest-{$handler.id_string}-3" name="DigestType_{$handler.id_string}" value="3" {eq($settings.digest_type,3)|choose('', 'checked="checked"' )} />
 </td>
 <td>
-{'Daily, at'|i18n( 'design/admin/notification/handler/ezgeneraldigest/settings/edit' )}
+<label class="a4-inline-label" for="digest-{$handler.id_string}-3">{'Daily, at'|i18n( 'design/admin/notification/handler/ezgeneraldigest/settings/edit' )}</label>
 </td>
 <td>
-<select name="Time_{$handler.id_string}">
+<select name="Time_{$handler.id_string}" aria-label="{'Hour'|i18n( 'design/admin/notification/settings' )|wash}">
 {section name=Time loop=$handler.available_hours}
 <option value="{$Time:item}" {if eq( $Time:item,$settings.time )}selected="selected"{/if}>{$Time:item}</option>
 {/section}
@@ -26,13 +26,13 @@
 </tr>
 <tr>
 <td>
-<input type="radio" name="DigestType_{$handler.id_string}" value="1" {eq( $settings.digest_type, 1 )|choose( '', 'checked="checked"' )} />
+<input type="radio" id="digest-{$handler.id_string}-1" name="DigestType_{$handler.id_string}" value="1" {eq( $settings.digest_type, 1 )|choose( '', 'checked="checked"' )} />
 </td>
 <td>
-{'Once per week, on '|i18n( 'design/admin/notification/handler/ezgeneraldigest/settings/edit' )}
+<label class="a4-inline-label" for="digest-{$handler.id_string}-1">{'Once per week, on '|i18n( 'design/admin/notification/handler/ezgeneraldigest/settings/edit' )}</label>
 </td>
 <td>
-<select name="Weekday_{$handler.id_string}">
+<select name="Weekday_{$handler.id_string}" aria-label="{'Weekday'|i18n( 'design/admin/notification/settings' )|wash}">
 {section name=WeekDays loop=$handler.all_week_days}
 <option value="{$WeekDays:item}" {if eq( $WeekDays:item, $settings.day )}selected="selected"{/if}>{$WeekDays:item}</option>
 {/section}
@@ -41,13 +41,13 @@
 </tr>
 <tr>
 <td>
-<input type="radio" name="DigestType_{$handler.id_string}" value="2" {eq( $settings.digest_type, 2)|choose( '', 'checked="checked"' )} />
+<input type="radio" id="digest-{$handler.id_string}-2" name="DigestType_{$handler.id_string}" value="2" {eq( $settings.digest_type, 2)|choose( '', 'checked="checked"' )} />
 </td>
 <td>
-{'Once per month, on day number'|i18n( 'design/admin/notification/handler/ezgeneraldigest/settings/edit' )}
+<label class="a4-inline-label" for="digest-{$handler.id_string}-2">{'Once per month, on day number'|i18n( 'design/admin/notification/handler/ezgeneraldigest/settings/edit' )}</label>
 </td>
 <td>
-<select name="Monthday_{$handler.id_string}">
+<select name="Monthday_{$handler.id_string}" aria-label="{'Day of the month'|i18n( 'design/admin/notification/settings' )|wash}">
 {section name=MonthDays loop=$handler.all_month_days}
 <option value="{$MonthDays:item}" {if eq( $MonthDays:item, $settings.day )}selected="selected"{/if}>{$MonthDays:item}</option>
 {/section}

@@ -135,7 +135,7 @@ th.admin-dt-hidden, tr.admin-dt-odd .admin-dt-hidden, tr.admin-dt-even .admin-dt
     text-decoration: none;
     text-align: left;
     vertical-align: bottom;
-    color:#eee;
+    color: #fff;   /* white on the grey header row: 5.0:1 (#eee was 4.4:1), as table.list th */
 }
 
 .admin-dt th {

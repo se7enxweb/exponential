@@ -479,7 +479,7 @@ ul.leftmenu-items li a:hover
 
 ul.leftmenu-items li.current a
 {
-    color: #E24602;
+    color: var(--a4-accent-text);   /* 5.4:1 on white; #E24602 was 4.1:1 */
     font-weight: bold;
 }
 
@@ -591,7 +591,7 @@ div#contentstructure li span.node-name-normal
 
 div#contentstructure li.currentnode > a.image-text span.node-name-normal, div#contentstructure li.currentnode > a.image-text span.node-name-hidden, div#contentstructure li.currentnode > a.image-text span.node-name-hiddenbyparent /* Highlighting of current node */
 {
-    color: #E24602;
+    color: var(--a4-accent-text);   /* 5.4:1 on white; #E24602 was 4.1:1 */
     padding: 0 0.25em 0 0.2em;
 }
 
@@ -1305,11 +1305,16 @@ color:#fff;
     font-size: 0.7em;
 }
 
-#mainteinance-text #ez-version,
-#mainteinance-text .edition-info,
 #footer-design .edition-info {
     font-weight: bold;
     color: #ff8300;
+}
+
+/* the dashboard's version block is on the white card: the accent as text (5.4:1; #ff8300 was 2.5:1) */
+#mainteinance-text #ez-version,
+#mainteinance-text .edition-info {
+    font-weight: bold;
+    color: var(--a4-accent-text);
 }
 
 
@@ -1445,3 +1450,17 @@ html #page.ezexplayoutsuinavigationpart .ng-layouts-app table tbody tr:nth-child
 /* The edit view with its edit menu collapsed (content/edit.tpl sets the class; was a style attribute there) */
 #leftmenu.a4-content-edit-collapsed { margin-left: -13.5em; }
 #maincontent.a4-content-edit-collapsed { margin-left: 20px; }
+
+/* Exponential UI (expui) in this design's tokens: its components take their colors from --exp-* (exp/core.css, on
+   :root, loaded after this file, so html in front gives one more element of weight). The accent is the strong one,
+   which carries white text (5.2:1; the plain accent was 3.1:1 under the upload page's Select files), and the muted
+   text is the components' (5.9:1 on white, 5.6:1 on the soft surface). admin4 maps them in admin4.css. */
+html:root {
+    --exp-muted: var(--a4-muted);
+    --exp-accent: var(--a4-accent-strong);
+    --exp-accent-dark: var(--a4-accent-press);
+}
+/* the header row of expui's tables, as table.list th: white on the grey (5.0:1; its #eee was 4.4:1) */
+html .exp-dt, html .exp-dt-actions, html .exp-dt-pager, html .exp-dt-dialog {
+    --exp-dt-head-ink: #fff;
+}

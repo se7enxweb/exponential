@@ -97,7 +97,7 @@
     {if and(eq( $languages|count, 1 ), is_set( $languages[0] ) )}
             <input name="ContentObjectLanguageCode" value="{$languages[0].locale}" type="hidden" />
     {else}
-            <select name="ContentObjectLanguageCode">
+            <select name="ContentObjectLanguageCode" aria-label="{'Language to edit'|i18n( 'design/admin/node/view/full' )|wash}">
             {foreach $node.object.can_edit_languages as $language}
                        <option value="{$language.locale|wash}"{if $language.locale|eq($node.object.current_language)} selected="selected"{/if}>{$language.name|wash}</option>
             {/foreach}
@@ -108,7 +108,7 @@
     {/if}
     <input class="button" type="submit" name="EditButton" value="{'Edit'|i18n( 'design/admin/node/view/full' )}" title="{'Edit the contents of this item.'|i18n( 'design/admin/node/view/full' )}" />
 {else}
-    <select name="ContentObjectLanguageCode" disabled="disabled">
+    <select name="ContentObjectLanguageCode" disabled="disabled" aria-label="{'Language to edit'|i18n( 'design/admin/node/view/full' )|wash}">
         <option value="">{'Not available'|i18n( 'design/admin/node/view/full')}</option>
     </select>
     <input class="button-disabled" type="submit" name="EditButton" value="{'Edit'|i18n( 'design/admin/node/view/full' )}" title="{'You do not have permission to edit this item.'|i18n( 'design/admin/node/view/full' )}" disabled="disabled" />

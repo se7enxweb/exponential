@@ -242,6 +242,35 @@ class AdminLeftMenuGroupsTest extends PHPUnit\Framework\TestCase
      * Fetches design/admin4/templates/parts/ini_menu.tpl for [Leftmenu_setup] with the given Links[] and LinkNames[]
      * in place of the menu's own, the site design admin4 and CheckViewAccess=disabled; restores every setting after.
      */
+    /**
+     * The classic design (design/admin, the classic siteaccess) draws the Setup tab's first page (setup/menu) as the
+     * tiles of admin4, in the groups of the Setup menu, from its own copy of the menu template; its left menu stays one
+     * list. Before, the page drew the setup toolbar of toolbar.ini, images the design does not have.
+     */
+    public function testTheClassicDesignDrawsTheSetupOverviewAsTiles()
+    {
+        $links = array( 'overview' => 'setup/menu', 'expqueue' => 'expqueue/dashboard', 'myext_report' => 'myext/report' );
+        $tiles = self::renderMenu( self::MENU_TEMPLATES['admin'], 'Leftmenu_setup', array( 'Links' => $links, 'LinkNames' => array() ), 'tiles', 'setup/menu' );
+        preg_match_all( '/<h2 class="a4-h2 a4-setup-tilegroup-title" id="a4-tiles-Leftmenu-setup-([a-z_]+)">/', $tiles, $m );
+        $this->assertSame( array( 'system', 'more' ), $m[1], 'the groups of the Setup menu, the link in none under More' );
+        $this->assertStringContainsString( '<span class="a4-icon a4-bi-list-task"></span>', $tiles, 'the icon of LinkIcons[expqueue]' );
+        $this->assertSame( array( 'expqueue/dashboard', 'myext/report' ), self::hrefs( $tiles ), 'the overview itself is no tile' );
+        $this->assertStringNotContainsString( 'leftmenu-items', $tiles );
+
+        $menu = self::renderMenu( self::MENU_TEMPLATES['admin'], 'Leftmenu_setup', array( 'Links' => $links, 'LinkNames' => array() ), 'menu', 'setup/menu' );
+        $this->assertSame( 1, substr_count( $menu, '<ul class="leftmenu-items">' ), 'the left menu stays one list' );
+        $this->assertSame( array( 'setup/menu', 'expqueue/dashboard', 'myext/report' ), self::hrefs( $menu ) );
+
+        $root = dirname( __DIR__, 3 );
+        foreach ( array( 'templates/parts/ini_menu_tiles.tpl', 'templates/setup/setupmenu_figure.tpl' ) as $file )
+            $this->assertFileEquals( "$root/design/admin4/$file", "$root/design/admin/$file", "both copies of $file are the same file" );
+        $page = (string)file_get_contents( "$root/design/admin/templates/setup/setupmenu.tpl" );
+        $this->assertStringContainsString( "{def \$setup_menu_layout = 'tiles'}", $page );
+        $this->assertStringNotContainsString( 'tool_bar', $page, 'no toolbar of images the design does not have' );
+        $this->assertStringContainsString( "'overview',           'Overview'|i18n( 'design/admin/parts/setup/menu' )",
+                                           (string)file_get_contents( "$root/design/admin/templates/parts/setup/menu.tpl" ), 'the left menu names its first link' );
+    }
+
     private static function renderSetupMenu( array $links, array $names, $layout )
     {
         return self::renderMenu( self::MENU_TEMPLATES['admin4'], 'Leftmenu_setup', array( 'Links' => $links, 'LinkNames' => $names ), $layout, 'update/dashboard' );

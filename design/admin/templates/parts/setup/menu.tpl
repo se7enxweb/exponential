@@ -4,9 +4,17 @@
   If the ini name is not defined here (key), then LinkNames ini value is used.
   For extensions that need to extend this, you either have to override this
   template or let translations use LinkNames as described in menu.ini.
-*}
 
-{include uri='design:parts/ini_menu.tpl' ini_section='Leftmenu_setup' i18n_hash=hash(
+  The Setup overview (setup/setupmenu.tpl) includes this template with setup_menu_layout='tiles': the same links,
+  names and access checks, drawn as tiles with the icons, descriptions and figures of menu.ini [Leftmenu_setup]
+  (LinkIcons[], LinkDescriptions[], LinkFigureTemplates[]), without the width control.
+*}
+{if is_unset( $setup_menu_layout )}{def $setup_menu_layout = 'menu'}{/if}
+
+{include uri='design:parts/ini_menu.tpl' ini_section='Leftmenu_setup'
+    menu_layout=$setup_menu_layout
+    i18n_hash=hash(
+    'overview',           'Overview'|i18n( 'design/admin/parts/setup/menu' ),
     'setup',              'Setup'|i18n( 'design/admin/parts/setup/menu' ),
     'audit',              'Audit'|i18n( 'design/admin/parts/setup/menu' ),
     'cache',              'Cache management'|i18n( 'design/admin/parts/setup/menu' ),
@@ -49,7 +57,8 @@
     'templates',    'Templates'|i18n( 'design/admin/parts/visual/menu' ),
 )}
 
-{* Left menu width control. *}
+{* Left menu width control (not on the overview page, which draws the menu as tiles). *}
+{if $setup_menu_layout|ne( 'tiles' )}
 <div id="widthcontrol-links" class="widthcontrol">
 <p>
 {switch match=ezpreference( 'admin_left_menu_size' )}
@@ -79,3 +88,4 @@
 {/switch}
 </p>
 </div>
+{/if}

@@ -1035,6 +1035,9 @@ fieldset.a4-field > legend + * { clear: both; }
 .a4-check > span { flex: 1 1 auto; min-width: 0; }
 .a4-check strong { font-weight: 650; }
 .a4-check .a4-help { display: block; }
+/* a check as the child of a field is not the field's label: .a4-field > label (one element heavier) would make its text
+   and help bold and small */
+.a4-field > .a4-check { font-size: inherit; font-weight: 400; }
 
 /* A label around text that was plain before: an inline radio or checkbox with its text, or the words in front of a
    control in a table cell. It names the control and widens its click area, and looks like the text around it
