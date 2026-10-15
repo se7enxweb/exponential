@@ -107,6 +107,7 @@ class expOELinkAddressCheckTest extends PHPUnit\Framework\TestCase
             'idn tld ascii form'       => array( 'mailto:info@xn--e1afmkfd.xn--p1ai' ),
             'percent-encoded idn'      => array( 'mailto:kontakt@b%C3%BCcher.de' ),
             'percent-encoded plus'     => array( 'mailto:first%2Btag@example.com' ),
+            'idn by reference'         => array( eZOEInputParser::decodeCharacterReferences( 'mailto:kontakt@b&#252;cher.de' ) ),
             'several addresses'        => array( 'mailto:a@example.com,b@example.org' ),
             'with a query'             => array( 'mailto:info@example.com?subject=Hello%20there&body=x' ),
             'no address, only a query' => array( 'mailto:?to=info@example.com&subject=x' ),
@@ -163,6 +164,12 @@ class expOELinkAddressCheckTest extends PHPUnit\Framework\TestCase
             $this->assertStringNotContainsString( 'url_id', $xml, "$href: the link keeps no address" );
             $this->assertStringNotContainsString( 'anchor_name', $xml, "$href: nor an anchor cut from it" );
         }
+
+        // a reference in a mailto: address is decoded before the address is cut at "#": the whole address is named
+        list( $parser, $messages ) = $this->parse( '<a href="mailto:x&amp;#252;@b&amp;#252;">m</a>' );
+        $this->assertFalse( $parser->isValid() );
+        $this->assertStringContainsString( "Invalid e-mail address: 'xü@bü'", $messages );
+        $this->assertSame( 'mailto:x', eZOEInputParser::decodeCharacterReferences( 'mailto:&#120;' ) );
 
         list( $parser, $messages ) = $this->parse( '<a href="mailto:abc@x">m</a>' );
         $this->assertFalse( $parser->isValid() );

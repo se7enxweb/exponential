@@ -1319,17 +1319,13 @@ class eZOEInputParser extends eZXMLInputParser
                     return $ret;
                 }
 
-                $temp = explode( '#', $href );
-                $url = $temp[0];
-                if ( isset( $temp[1] ) )
+                // A mailto: link is read with its character references decoded (an editor may send b&#252;cher.de;
+                // its # must not end the address), and every address in it must be valid (RFC 5322 and 5321,
+                // internationalized domains too)
+                if ( preg_match( '/^\s*mailto:/i', $href ) )
                 {
-                    $anchorName = $temp[1];
-                }
-
-                if ( $url )
-                {
-                    // Every address of a mailto: link must be valid (RFC 5322 and 5321, internationalized domains too)
-                    $invalidAddress = self::invalidMailtoAddress( $url );
+                    $href = trim( self::decodeCharacterReferences( $href ) );
+                    $invalidAddress = self::invalidMailtoAddress( $href );
                     if ( $invalidAddress !== null )
                     {
                         $this->IsInputValid = false;
@@ -1340,6 +1336,17 @@ class eZOEInputParser extends eZXMLInputParser
                         $element->removeAttribute( 'href' );
                         return $ret;
                     }
+                }
+
+                $temp = explode( '#', $href );
+                $url = $temp[0];
+                if ( isset( $temp[1] ) )
+                {
+                    $anchorName = $temp[1];
+                }
+
+                if ( $url )
+                {
                     // Store urlID instead of href
                     $url   = str_replace(array('&amp;', '%28', '%29'), array('&', '(', ')'), $url );
                     $urlID = eZURL::registerURL( $url );
@@ -1566,7 +1573,30 @@ class eZOEInputParser extends eZXMLInputParser
      */
     public static function isScriptURL( $url )
     {
-        $value = (string)$url;
+        $value = self::decodeCharacterReferences( $url );
+        $value = str_replace( array( "\t", "\n", "\r" ), '', $value );
+        $value = strtolower( ltrim( $value, "\x00..\x20" ) );
+        if ( !preg_match( '/^([a-z][a-z0-9+.\-]*):/', $value, $scheme ) )
+        {
+            return false;
+        }
+        if ( in_array( $scheme[1], array( 'javascript', 'vbscript', 'livescript' ), true ) )
+        {
+            return true;
+        }
+        return $scheme[1] === 'data' && !preg_match( '#^data:image/(png|gif|jpe?g|webp|avif|bmp)[;,]#', $value );
+    }
+
+    /**
+     * $value with its character references decoded as a browser decodes them in an attribute: numeric ones with or
+     * without the closing semicolon, HTML5 names, also nested ones (&amp;#106;), at most five rounds.
+     *
+     * @param string $value
+     * @return string
+     */
+    public static function decodeCharacterReferences( $value )
+    {
+        $value = (string)$value;
         for ( $round = 0; $round < 5; ++$round )
         {
             $decoded = preg_replace_callback( '/&#(?:[xX]([0-9a-fA-F]+)|([0-9]+));?/', function ( $m )
@@ -1581,17 +1611,7 @@ class eZOEInputParser extends eZXMLInputParser
             }
             $value = $decoded;
         }
-        $value = str_replace( array( "\t", "\n", "\r" ), '', $value );
-        $value = strtolower( ltrim( $value, "\x00..\x20" ) );
-        if ( !preg_match( '/^([a-z][a-z0-9+.\-]*):/', $value, $scheme ) )
-        {
-            return false;
-        }
-        if ( in_array( $scheme[1], array( 'javascript', 'vbscript', 'livescript' ), true ) )
-        {
-            return true;
-        }
-        return $scheme[1] === 'data' && !preg_match( '#^data:image/(png|gif|jpe?g|webp|avif|bmp)[;,]#', $value );
+        return $value;
     }
 
     /**
