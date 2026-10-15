@@ -7340,6 +7340,42 @@
         <translation>Open the preview in a new window</translation>
     </message>
     <message>
+        <source>iPhone</source>
+        <translation>iPhone</translation>
+    </message>
+    <message>
+        <source>iPad</source>
+        <translation>iPad</translation>
+    </message>
+    <message>
+        <source>Desktop</source>
+        <translation>Desktop</translation>
+    </message>
+    <message>
+        <source>Large Desktop</source>
+        <translation>Large Desktop</translation>
+    </message>
+    <message>
+        <source>Preview size</source>
+        <translation>Preview size</translation>
+    </message>
+    <message>
+        <source>%device, %width × %height px</source>
+        <translation>%device, %width × %height px</translation>
+    </message>
+    <message>
+        <source>%width × %height px, shown at %scale %</source>
+        <translation>%width × %height px, shown at %scale %</translation>
+    </message>
+    <message>
+        <source>Landscape</source>
+        <translation>Landscape</translation>
+    </message>
+    <message>
+        <source>Landscape: phone and tablet turned on their side</source>
+        <translation>Landscape: phone and tablet turned on their side</translation>
+    </message>
+    <message>
         <source>Queued</source>
         <translation>Queued</translation>
     </message>

@@ -15,7 +15,7 @@
 
 class AdminPreferencesTest extends PHPUnit\Framework\TestCase
 {
-    const NAMES = array( 'admin_color_mode', 'admin_left_sidebar', 'admin_right_sidebar', 'admin_right_drawer', 'admin_navgroups' );
+    const NAMES = array( 'admin_color_mode', 'admin_left_sidebar', 'admin_right_sidebar', 'admin_right_drawer', 'admin_navgroups', 'admin_preview_device', 'admin_preview_landscape' );
 
     private static function read( $path )
     {
@@ -67,5 +67,11 @@ class AdminPreferencesTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( "var NAME = 'admin_navgroups';", $admin4 );
         $this->assertStringContainsString( 'window.a4Pref.set(NAME, list.join(\',\'))', $admin4 );
         $this->assertStringNotContainsString( 'localStorage', $admin4 );
+        // the version preview's device and orientation (#214): eZPreferences too, the template holds no script
+        $this->assertStringContainsString( "var DEVICE = 'admin_preview_device', TURN = 'admin_preview_landscape';", $admin4 );
+        $this->assertStringContainsString( 'function keep(name, value, legacyKey) { if (window.a4Pref) window.a4Pref.set(name, value, legacyKey); }', $admin4 );
+        $versionview = self::read( 'design/admin4/templates/content/view/versionview.tpl' );
+        $this->assertStringNotContainsString( 'localStorage', $versionview );
+        $this->assertStringNotContainsString( 'a4-content-preview-bar\' )', $versionview, 'the script is admin4.js\'s' );
     }
 }

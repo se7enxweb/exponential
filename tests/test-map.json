@@ -145,7 +145,9 @@
       "tests/tests/design/AdminBaseStylesheetsTest.php",
       "tests/tests/design/AdminScriptsTest.php",
       "tests/tests/design/AdminSetupOverviewTest.php",
-      "tests/tests/design/AdminLeftMenuGroupsTest.php"
+      "tests/tests/design/AdminLeftMenuGroupsTest.php",
+      "tests/tests/design/AdminPreviewDevicesTest.php",
+      "tests/tests/design/AdminIconsTest.php"
     ],
     "design/admin4/javascript/ezadmin_menubar.js": [
       "tests/tests/design/AdminStylingRulesTest.php",
@@ -154,7 +156,8 @@
     ],
     "design/admin4/templates/page_topmenu.tpl": [
       "tests/tests/design/AdminStylingRulesTest.php",
-      "tests/tests/design/AdminHeaderTest.php"
+      "tests/tests/design/AdminHeaderTest.php",
+      "tests/tests/design/AdminIconsTest.php"
     ],
     "kernel/private/classes/views/error/view.php": [
       "tests/tests/kernel/error/ErrorHeaderListTest.php"
@@ -209,6 +212,7 @@
     ],
     "design/admin4/templates/node/view/a4_full_body.tpl": [
       "tests/tests/kernel/content/eZAdminFullViewCopyButtonTest.php",
+      "tests/tests/design/AdminIconsTest.php",
       "tests/tests/design/AdminNodeTabsHeightTest.php"
     ],
     "design/standard/templates/content/datatype/view/ezselection.tpl": [
@@ -283,6 +287,8 @@
       "tests/tests/design/AdminEditBarTest.php",
       "tests/tests/design/AdminContentEditFormsTest.php",
       "tests/tests/design/AdminEditorSkinTest.php",
+      "tests/tests/design/AdminLegacyControlsTest.php",
+      "tests/tests/design/AdminPreviewDevicesTest.php",
       "tests/tests/design/AdminNodeTabsHeightTest.php",
       "tests/tests/design/AdminSubitemsPriorityDragTest.php"
     ],
@@ -410,7 +416,9 @@
       "tests/tests/design/AdminHeaderTest.php"
     ],
     "extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe_engine_switch.tpl": [
-      "tests/tests/extension/ezoe/expOEEngineConfigTest.php"
+      "tests/tests/extension/ezoe/expOEEngineConfigTest.php",
+      "tests/tests/design/AdminContentEditFormsTest.php",
+      "tests/tests/design/AdminLegacyControlsTest.php"
     ],
     "extension/ezoe/design/standard/javascript/tinymce8_ez/ezoe_dialog.js": [
       "tests/tests/design/AdminTopNodeNameTest.php"
@@ -450,6 +458,28 @@
     ],
     "kernel/classes/ezsearch.php": [
       "tests/tests/kernel/content/eZPendingIndexActionsTest.php"
+    ],
+    "design/admin4/stylesheets/components.css": [
+      "tests/tests/design/AdminLegacyControlsTest.php",
+      "tests/tests/design/AdminPreviewDevicesTest.php",
+      "tests/tests/design/AdminIconsTest.php"
+    ],
+    "design/admin/stylesheets/components.css": [
+      "tests/tests/design/AdminLegacyControlsTest.php",
+      "tests/tests/design/AdminPreviewDevicesTest.php",
+      "tests/tests/design/AdminIconsTest.php"
+    ],
+    "design/admin4/templates/parts/left_width_control.tpl": [
+      "tests/tests/design/AdminLegacyControlsTest.php"
+    ],
+    "design/admin4/templates/content/view/versionview.tpl": [
+      "tests/tests/design/AdminPreviewDevicesTest.php"
+    ],
+    "design/admin4/stylesheets/modules/content.css": [
+      "tests/tests/design/AdminPreviewDevicesTest.php"
+    ],
+    "design/admin/stylesheets/modules/content.css": [
+      "tests/tests/design/AdminPreviewDevicesTest.php"
     ],
     "design/admin4/templates/parts/a4_tabs_height.tpl": [
       "tests/tests/design/AdminNodeTabsHeightTest.php"

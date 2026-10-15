@@ -19,7 +19,7 @@ RewriteRule ^var/([^/]+/)?storage/images(-versioned)?/.* - [L]
 # SVG images are sanitized on upload; served from the storage they also run
 # nothing and load nothing when opened directly (needs mod_headers).
 <IfModule mod_headers.c>
-    <FilesMatch "\.svgz?$">
+    <FilesMatch "(?i)\.svgz?$">
         Header always set Content-Security-Policy "sandbox; default-src 'none'; style-src 'unsafe-inline'"
         Header always set X-Content-Type-Options "nosniff"
     </FilesMatch>
