@@ -551,9 +551,10 @@ class expCronjobPause
     {
         if ( !is_file( $file ) || !function_exists( 'posix_geteuid' ) || @fileowner( $file ) !== posix_geteuid() || !class_exists( 'eZINI' ) )
             return;
-        $mode = eZFile::fileMode( octdec( (string)eZINI::instance()->variable( 'FileSettings', 'StorageFilePermissions' ) ) );
-        if ( $mode > 0 && ( @fileperms( $file ) & 0777 ) !== $mode )
-            @chmod( $file, $mode );
+        $setting = octdec( (string)eZINI::instance()->variable( 'FileSettings', 'StorageFilePermissions' ) );
+        // The mode goes through eZFile::fileMode() in the call itself, so the installation's file mode limits apply.
+        if ( eZFile::fileMode( $setting ) > 0 && ( @fileperms( $file ) & 0777 ) !== eZFile::fileMode( $setting ) )
+            @chmod( $file, eZFile::fileMode( $setting ) );
     }
 
     /**
