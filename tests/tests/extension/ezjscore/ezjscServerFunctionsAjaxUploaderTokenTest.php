@@ -78,15 +78,21 @@ class ezjscAjaxUploaderTokenTestHandler implements ezpAjaxUploaderHandlerInterfa
         return 2;
     }
 
+    /** true: createObject() fails, as for a location the user may not create in */
+    public static $createFails = false;
+
     public function createObject( $file, $location, $name = '' )
     {
         self::$created = array( 'file' => $file, 'contents' => is_file( $file ) ? file_get_contents( $file ) : null );
-        throw new ezjscAjaxUploaderTokenTestCreated( 'created' );
+        if ( self::$createFails )
+            throw new RuntimeException( 'create failed' );
+        return new eZContentObject( array() );
     }
 
+    /** Called by preview() once the object exists, before the preview template: the test ends here */
     public function serializeObject( eZContentObject $object )
     {
-        return array();
+        throw new ezjscAjaxUploaderTokenTestCreated( 'created' );
     }
 }
 
@@ -144,6 +150,7 @@ class ezjscServerFunctionsAjaxUploaderTokenTest extends PHPUnit\Framework\TestCa
         ezjscAjaxUploaderTokenTestHandler::$canUpload = true;
         ezjscAjaxUploaderTokenTestHandler::$fileInfoAsked = false;
         ezjscAjaxUploaderTokenTestHandler::$created = null;
+        ezjscAjaxUploaderTokenTestHandler::$createFails = false;
     }
 
     protected function tearDown(): void
@@ -239,12 +246,54 @@ class ezjscServerFunctionsAjaxUploaderTokenTest extends PHPUnit\Framework\TestCa
         $created = ezjscAjaxUploaderTokenTestHandler::$created;
         $this->assertSame( 'the uploaded file', $created['contents'] );
         $this->assertSame( 'report.txt', basename( $created['file'] ), 'the name is the stored one, not the posted one' );
+        $this->assertSame( 'ajaxuploader-' . $token, basename( dirname( $created['file'] ) ), 'a directory of the token\'s own' );
+        $this->assertFileDoesNotExist( $created['file'], 'the temporary copy is removed' );
+        $this->assertDirectoryDoesNotExist( dirname( $created['file'] ) );
         $this->assertFileDoesNotExist( $this->stored );
 
         ezjscAjaxUploaderTokenTestHandler::$created = null;
-        unlink( $created['file'] );
         file_put_contents( $this->stored, 'the uploaded file' );
         $this->assertSame( 'Unable to retrieve the uploaded file.', $this->preview( array( 'UploadToken' => $token ) ), 'used once' );
+    }
+
+    /** AT-09, a failed object leaves the stored file and the token, and no temporary copy */
+    public function testAFailedObjectKeepsTheTokenAndTheFile()
+    {
+        $token = $this->remember( $this->stored, 14 );
+        ezjscAjaxUploaderTokenTestHandler::$createFails = true;
+        $this->assertSame( 'create failed', $this->preview( array( 'UploadToken' => $token ) ) );
+        $created = ezjscAjaxUploaderTokenTestHandler::$created;
+        $this->assertSame( 'the uploaded file', $created['contents'] );
+        $this->assertFileDoesNotExist( $created['file'] );
+        $this->assertDirectoryDoesNotExist( dirname( $created['file'] ) );
+        $this->assertFileExists( $this->stored );
+
+        // another location: the same token takes the file
+        ezjscAjaxUploaderTokenTestHandler::$createFails = false;
+        $this->assertSame( 'created', $this->preview( array( 'UploadToken' => $token ) ) );
+        $this->assertFileDoesNotExist( $this->stored );
+    }
+
+    /** AT-10, a token lives PENDING_LIFETIME seconds; expired and evicted entries give their files up for deletion */
+    public function testTokensExpireAndDroppedFilesAreReturned()
+    {
+        $now = 1760000000;
+        list( $store, $token, $dropped ) = ezjscServerFunctionsAjaxUploader::rememberPending( array(), 'old', 'n', 'b', $now );
+        $this->assertSame( array(), $dropped );
+        $this->assertSame( 'old', ezjscServerFunctionsAjaxUploader::pendingEntry( $store, $token, 'b', $now + ezjscServerFunctionsAjaxUploader::PENDING_LIFETIME - 1 )['file'] );
+        $this->assertNull( ezjscServerFunctionsAjaxUploader::pendingEntry( $store, $token, 'b', $now + ezjscServerFunctionsAjaxUploader::PENDING_LIFETIME ), 'expired' );
+        $this->assertNull( ezjscServerFunctionsAjaxUploader::pendingEntry( $store, $token, 'b', $now - 1 ), 'made in the future' );
+        $this->assertNull( ezjscServerFunctionsAjaxUploader::pendingEntry( array( $token => array( 'file' => 'x', 'binding' => 'b' ) ), $token, 'b', $now ), 'no time' );
+
+        list( $store, , $dropped ) = ezjscServerFunctionsAjaxUploader::rememberPending( $store, 'new', 'n', 'b', $now + ezjscServerFunctionsAjaxUploader::PENDING_LIFETIME );
+        $this->assertSame( array( 'old' ), $dropped, 'the expired entry is dropped and its file given up' );
+        $this->assertCount( 1, $store );
+
+        $store = array();
+        for ( $i = 0; $i < ezjscServerFunctionsAjaxUploader::PENDING_MAX; $i++ )
+            list( $store ) = ezjscServerFunctionsAjaxUploader::rememberPending( $store, "f$i", 'n', 'b', $now );
+        list( $store, , $dropped ) = ezjscServerFunctionsAjaxUploader::rememberPending( $store, 'one more', 'n', 'b', $now );
+        $this->assertSame( array( 'f0' ), $dropped, 'the evicted entry gives its file up' );
     }
 
     /** AT-05 */
