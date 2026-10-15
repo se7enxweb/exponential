@@ -10,8 +10,9 @@
  * - the header (admin4 and admin4l's logo block) and the sign-in page include the badge; it is text, not only color,
  *   with the level as a class; the release only for signed-in users;
  * - BadgeDisplay=hover, the default: the badge takes no room and shows nothing until a fine pointer that can hover
- *   rests on the logo link (or the link has the keyboard focus), never on touch screens; screen readers keep it
- *   (clipped, not removed, and the logo link's aria-describedby); no fade for reduced motion; BadgeDisplay=always
+ *   rests on the logo link (or the link has the keyboard focus); Escape dismisses it (admin4.js); on touch screens it
+ *   stands in the row with the room of always; screen readers keep it (clipped, not removed, and the logo link's
+ *   aria-describedby); no fade for reduced motion; BadgeDisplay=always
  *   keeps it in the row;
  * - the page title starts with "[NAME] " (page_head.tpl's title_prefix), and every cache-block that holds the title
  *   or the header is keyed by the badge;
@@ -294,9 +295,28 @@ class AdminEnvironmentBadgeTest extends PHPUnit\Framework\TestCase
         $room = $media( 'screen and (min-width: 576px) and (max-width: 1279.98px)' );
         $this->assertSame( 'clamp(5.5rem, calc(100vw - 454px - var(--a4-env-room)), 230px)', $room['#header:has(.a4-env-always) .searchblock input.searchtext']['width'],
                            'the field gives the badge its room up to 1279px; from 1280px the main menu does' );
-        // a hover badge changes nothing in the header's layout: every rule that makes room asks for .a4-env-always
+        // with a mouse or a trackpad a hover badge changes nothing in the header's layout: every rule that makes room
+        // asks for .a4-env-always, or for .a4-env-hover only where the pointer cannot hover finely (a touch screen)
         $this->assertDoesNotMatchRegularExpression( '/:has\(\s*(?:>\s*)?\.a4-env\s*\)/', $css );
         $this->assertDoesNotMatchRegularExpression( '/#header \.a4-env[\s{,:]/', $css );
+        $touch = ' and (not ((hover: hover) and (pointer: fine)))';
+        foreach ( array( 'screen and (max-width: 767.98px)', 'screen and (min-width: 576px) and (max-width: 767.98px)',
+                         'screen and (min-width: 768px) and (max-width: 1279.98px)', 'screen and (min-width: 1280px)',
+                         'screen and (min-width: 576px) and (max-width: 1279.98px)' ) as $query )
+        {
+            $always = array();
+            foreach ( $media( $query ) as $selector => $declarations )
+            {
+                if ( strpos( $selector, '.a4-env-always' ) !== false )
+                    $always[str_replace( '.a4-env-always', '.a4-env-hover', $selector )] = $declarations;
+            }
+            $this->assertNotEmpty( $always, $query );
+            $this->assertEquals( $always, $media( $query . $touch ), "$query: on a touch screen the hover badge gets the room of always" );
+        }
+        $this->assertSame( 'var(--a4-space-2)', $media( '(not ((hover: hover) and (pointer: fine)))' )['.header-logo:has(> .a4-env-hover)']['gap'] );
+        // outside the media queries of the two kinds of pointer nothing names the hover badge
+        $rest = preg_replace( '/@media [^{]*\(hover: hover\) and \(pointer: fine\)[^{]*\{((?:[^{}]*\{[^{}]*\})*)[^{}]*\}/s', '', $css );
+        $this->assertStringNotContainsString( '.a4-env-hover', preg_replace( '#/\*.*?\*/#s', '', $rest ) );
         // what is not shown stays for screen readers: clipped, not display: none
         $this->assertDoesNotMatchRegularExpression( '/\.a4-env-name[^{]*\{[^}]*display:\s*none/', $css );
     }
@@ -304,35 +324,34 @@ class AdminEnvironmentBadgeTest extends PHPUnit\Framework\TestCase
     public function testTheHoverBadgeShowsOnlyForAFinePointerOnTheLogo()
     {
         $css = self::css();
-        $rules = AdminBaseStylesheetsTest::rules( preg_replace( '/@(media|keyframes)[^{]*\{((?:[^{}]*\{[^{}]*\})*)[^{}]*\}/s', '', $css ) );
+        $fine = AdminBaseStylesheetsTest::rules( self::media( $css, '(hover: hover) and (pointer: fine)' ) );
 
-        // at rest: out of the flow (no room in the header), clipped to nothing, not a target, but in the accessibility
-        // tree (clipped, never display: none or visibility: hidden, so screen readers read it)
-        $rest = $rules['.a4-env-hover'];
+        // at rest, with a mouse or a trackpad: out of the flow (no room in the header), clipped to nothing, not a
+        // target, but in the accessibility tree (clipped, never display: none or visibility: hidden)
+        $rest = $fine['.a4-env-hover'];
         $this->assertSame( 'absolute', $rest['position'] );
         $this->assertSame( 'inset(50%)', $rest['clip-path'] );
         $this->assertSame( '0', $rest['opacity'] );
         $this->assertSame( 'none', $rest['pointer-events'] );
-        $this->assertSame( '0 -50%', $rest['translate'], 'centred on the logo' );
+        $this->assertSame( '0 -50%', $rest['translate'], 'centered on the logo' );
         $this->assertSame( 'var(--a4-z-popover)', $rest['z-index'] );
         $this->assertArrayNotHasKey( 'display', $rest );
-        $this->assertDoesNotMatchRegularExpression( '/\.a4-env-hover[^{]*\{[^}]*(display:\s*none|visibility:\s*hidden)/', $css );
-        $this->assertSame( 'relative', $rules['.header-logo:has(> .a4-env-hover), .a4-login-top:has(> .a4-env-hover)']['position'] );
-        $this->assertSame( '""', $rules['.a4-env-hover::before']['content'], 'the gap to the logo is part of the pill: the pointer can move onto it' );
+        $this->assertDoesNotMatchRegularExpression( '/\.a4-env-(hover|dismissed)[^{\s]*\s*\{[^}]*(display:\s*none|visibility:\s*hidden)/', $css );
+        $this->assertSame( 'relative', $fine['.header-logo:has(> .a4-env-hover), .a4-login-top:has(> .a4-env-hover)']['position'] );
+        $this->assertSame( '""', $fine['.a4-env-hover::before']['content'], 'the gap to the logo is part of the pill: the pointer can move onto it (hoverable)' );
 
         // under the logo where the main menu follows it (from 1280px) or the row is full (phones); beside it otherwise
-        $under = AdminBaseStylesheetsTest::rules( self::media( $css, 'screen and (max-width: 575.98px), screen and (min-width: 1280px)' ) );
+        $under = AdminBaseStylesheetsTest::rules( self::media( $css, 'screen and (hover: hover) and (pointer: fine) and (max-width: 575.98px), screen and (hover: hover) and (pointer: fine) and (min-width: 1280px)' ) );
         $this->assertSame( 'calc(100% + var(--a4-space-2))', $under['#header .a4-env-hover']['top'] );
         $this->assertSame( 'none', $under['#header .a4-env-hover']['translate'] );
         $this->assertSame( '100%', $under['#header .a4-env-hover::before']['bottom'], 'the bridge to the logo above it' );
         $this->assertSame( 'calc(100% + var(--a4-space-2))', $rest['left'] );
 
-        // shown only where the primary pointer can hover and is fine: on the logo link, its keyboard focus, or the
-        // pill itself; nothing on touch screens, not even on a tap (no :active, no :focus without -visible)
-        $show = AdminBaseStylesheetsTest::rules( self::media( $css, '(hover: hover) and (pointer: fine)' ) );
+        // shown while the pointer rests on the logo link or the pill, or the link has the keyboard focus, until
+        // Escape dismisses it (.a4-env-dismissed); no :active, no :focus without -visible
         $selectors = array( '.brand:hover + .a4-env-hover', '.brand:focus-visible + .a4-env-hover', '.a4-login-logo:hover + .a4-env-hover',
-                            '.a4-login-logo:focus-visible + .a4-env-hover', '.a4-env-hover:hover' );
-        $shown = $show[implode( ', ', $selectors )];
+                            '.a4-login-logo:focus-visible + .a4-env-hover' );
+        $shown = $fine[implode( ':not(.a4-env-dismissed), ', $selectors ) . ':not(.a4-env-dismissed), .a4-env-hover:not(.a4-env-dismissed):hover'];
         $this->assertSame( 'none', $shown['clip-path'] );
         $this->assertSame( '1', $shown['opacity'] );
         $this->assertSame( 'auto', $shown['pointer-events'] );
@@ -343,9 +362,18 @@ class AdminEnvironmentBadgeTest extends PHPUnit\Framework\TestCase
         $outside = preg_replace( '/@media \(hover: hover\) and \(pointer: fine\)[^{]*\{((?:[^{}]*\{[^{}]*\})*)[^{}]*\}/s', '', $css );
         $this->assertStringNotContainsString( '+ .a4-env-hover', $outside, 'no show rule for touch screens or coarse pointers' );
         $this->assertStringNotContainsString( '.a4-env-hover:hover', $outside );
+        $this->assertDoesNotMatchRegularExpression( '/\.a4-env[^{]*\{[^}]*clip-path:\s*inset\(50%\)/', preg_replace( '#/\*.*?\*/#s', '', $outside ), 'hidden only where a pointer can show it' );
+
+        // dismissible: Escape (admin4.js) hides it until the pointer or the focus comes back
+        $js = self::file( 'design/admin4/javascript/admin4.js' );
+        $this->assertMatchesRegularExpression( "/getElementById\('a4-env-badge'\)/", $js );
+        $this->assertMatchesRegularExpression( "/e\.key !== 'Escape'[^\n]*defaultPrevented/", $js, 'an open menu\'s Escape comes first' );
+        $this->assertStringContainsString( "badge.classList.add('a4-env-dismissed')", $js );
+        $this->assertStringContainsString( "logo.addEventListener('pointerenter', again)", $js );
+        $this->assertStringContainsString( "logo.addEventListener('focus', again)", $js );
 
         $fade = AdminBaseStylesheetsTest::rules( self::media( $css, '(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)' ) );
-        $this->assertSame( 'a4-env-in .12s ease-out', $fade[implode( ', ', array_slice( $selectors, 0, 4 ) )]['animation'] );
+        $this->assertSame( 'a4-env-in .12s ease-out', $fade[implode( ', ', $selectors )]['animation'] );
         $this->assertMatchesRegularExpression( '/@keyframes a4-env-in\s*\{\s*from\s*\{\s*opacity:\s*0;\s*\}\s*to\s*\{\s*opacity:\s*1;\s*\}\s*\}/', $css, 'opacity only' );
     }
 

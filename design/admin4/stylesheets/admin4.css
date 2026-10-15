@@ -356,8 +356,10 @@ body,
    Level set. A filled pill in the level's color with the name in capitals (and, for signed-in users, the release).
    BadgeDisplay=hover (.a4-env-hover, the default): out of the flow and clipped to nothing, so the header looks and
    measures as without a badge; it shows beside the logo only while a fine pointer that can hover rests on the logo
-   link (or on the pill itself, so the pointer can move onto it) or the link has the keyboard focus. Touch screens
-   never show it. Clipped, not display: none, so screen readers read it (the link names it in aria-describedby).
+   link (or on the pill itself, so the pointer can move onto it) or the link has the keyboard focus, and Escape
+   hides it again (WCAG 1.4.13: hoverable, persistent, dismissible). That is for a mouse or a trackpad only: on a
+   touch screen, which cannot hover, the badge stands in the row as with always (the short code up to 767px).
+   Clipped, not display: none, so screen readers read it (the link names it in aria-describedby).
    BadgeDisplay=always (.a4-env-always): in the row, 24px in the header's 36px row. Up to 767px the short code (DEV,
    TEST, STAGE, PROD; the logo is the mark alone then), from 768px the name. What is not shown stays for screen
    readers (the name) or in the title (the release). The search field gives the badge its room up to 1279px
@@ -416,34 +418,50 @@ body,
   letter-spacing: 0;
 }
 .header-logo:has(> .a4-env-always) { gap: var(--a4-space-2); }
-/* hover: positioned beside the logo (the logo box and the sign-in page's row are its reference), taking no room */
-.header-logo:has(> .a4-env-hover),
-.a4-login-top:has(> .a4-env-hover) { position: relative; }
-.a4-login-top:has(> .a4-env-hover) { align-self: flex-start; }   /* the row as wide as the logo: the pill starts after it */
-.a4-env-hover {
-  position: absolute;
-  z-index: var(--a4-z-popover);
-  top: 50%;
-  left: calc(100% + var(--a4-space-2));
-  max-width: 18rem;
-  translate: 0 -50%;   /* centred on the logo */
-  box-shadow: var(--a4-shadow-m);
-  clip-path: inset(50%);
-  opacity: 0;
-  pointer-events: none;
-}
-/* the gap between the logo and the pill belongs to the pill, so the pointer can cross it without losing it */
-.a4-env-hover::before {
-  content: "";
-  position: absolute;
-  top: -1px;
-  right: 100%;
-  bottom: -1px;
-  width: calc(var(--a4-space-2) + 1px);
+/* hover, with a fine pointer that can hover (a mouse, a trackpad): positioned beside the logo (the logo box and the
+   sign-in page's row are its reference), taking no room. Every other pointer (touch screens, a stylus, none) gets the
+   badge in the row, as with always (the rules below the hover ones): a tap cannot hover, and the information must
+   not depend on it (WCAG 1.4.13). */
+@media (hover: hover) and (pointer: fine) {
+  .header-logo:has(> .a4-env-hover),
+  .a4-login-top:has(> .a4-env-hover) { position: relative; }
+  .a4-login-top:has(> .a4-env-hover) { align-self: flex-start; }   /* the row as wide as the logo: the pill starts after it */
+  .a4-env-hover {
+    position: absolute;
+    z-index: var(--a4-z-popover);
+    top: 50%;
+    left: calc(100% + var(--a4-space-2));
+    max-width: 18rem;
+    translate: 0 -50%;   /* centered on the logo */
+    box-shadow: var(--a4-shadow-m);
+    clip-path: inset(50%);
+    opacity: 0;
+    pointer-events: none;
+  }
+  /* the gap between the logo and the pill belongs to the pill, so the pointer can cross it without losing it */
+  .a4-env-hover::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    right: 100%;
+    bottom: -1px;
+    width: calc(var(--a4-space-2) + 1px);
+  }
+  /* shown while the pointer rests on the logo or on the pill, or the logo has the keyboard focus; Escape hides it
+     until the pointer or the focus comes back (.a4-env-dismissed, admin4.js) */
+  .brand:hover + .a4-env-hover:not(.a4-env-dismissed),
+  .brand:focus-visible + .a4-env-hover:not(.a4-env-dismissed),
+  .a4-login-logo:hover + .a4-env-hover:not(.a4-env-dismissed),
+  .a4-login-logo:focus-visible + .a4-env-hover:not(.a4-env-dismissed),
+  .a4-env-hover:not(.a4-env-dismissed):hover {
+    clip-path: none;
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
 /* Where the main menu follows the logo in its row (from 1280px) or the row is full (phones), the pill hangs under
    the logo instead, so it covers no tab; from 576 to 1279px, and on the sign-in page, the room beside the logo is free */
-@media screen and (max-width: 575.98px), screen and (min-width: 1280px) {
+@media screen and (hover: hover) and (pointer: fine) and (max-width: 575.98px), screen and (hover: hover) and (pointer: fine) and (min-width: 1280px) {
   #header .a4-env-hover {
     top: calc(100% + var(--a4-space-2));
     left: 0;
@@ -458,22 +476,16 @@ body,
     height: calc(var(--a4-space-2) + 1px);
   }
 }
-@media (hover: hover) and (pointer: fine) {
-  .brand:hover + .a4-env-hover,
-  .brand:focus-visible + .a4-env-hover,
-  .a4-login-logo:hover + .a4-env-hover,
-  .a4-login-logo:focus-visible + .a4-env-hover,
-  .a4-env-hover:hover {
-    clip-path: none;
-    opacity: 1;
-    pointer-events: auto;
-  }
-}
 @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
   .brand:hover + .a4-env-hover,
   .brand:focus-visible + .a4-env-hover,
   .a4-login-logo:hover + .a4-env-hover,
   .a4-login-logo:focus-visible + .a4-env-hover { animation: a4-env-in .12s ease-out; }
+}
+/* hover on a touch screen (or any pointer that cannot hover finely): in the row, as always; the rules that give it
+   its room follow those of always below, with the same widths */
+@media (not ((hover: hover) and (pointer: fine))) {
+  .header-logo:has(> .a4-env-hover) { gap: var(--a4-space-2); }
 }
 @keyframes a4-env-in {
   from { opacity: 0; }
@@ -498,7 +510,7 @@ body,
   }
   #header:has(.a4-env-always) { --a4-env-room: calc(4rem + var(--a4-space-2) - 122px); }   /* the code, less the 122px the logo gives up below */
 }
-/* 576 to 767px with a badge: the logo is the mark alone, as on phones (36px instead of 158px), so the search field
+/* 576 to 767px with a badge: the logo is the mark alone, as on phones (36px instead of 152px), so the search field
    keeps its width beside the short code */
 @media screen and (min-width: 576px) and (max-width: 767.98px) {
   #header:has(.a4-env-always) #header-logo .a4-logo-full { display: none; }
@@ -513,6 +525,38 @@ body,
 }
 @media screen and (min-width: 576px) and (max-width: 1279.98px) {
   #header:has(.a4-env-always) .searchblock input.searchtext { width: clamp(5.5rem, calc(100vw - 454px - var(--a4-env-room)), 230px); }
+}
+/* the same for hover where the pointer cannot hover finely (touch screens): the badge is in the row there */
+@media screen and (max-width: 767.98px) and (not ((hover: hover) and (pointer: fine))) {
+  #header .a4-env-hover { max-width: 4rem; padding: 0 var(--a4-space-2); }
+  #header .a4-env-hover .a4-env-dot { display: none; }
+  #header .a4-env-hover .a4-env-short { display: block; overflow: hidden; text-overflow: ellipsis; }
+  #header .a4-env-hover .a4-env-name,
+  #header .a4-env-hover .a4-env-release {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    border: 0;
+  }
+  #header:has(.a4-env-hover) { --a4-env-room: calc(4rem + var(--a4-space-2) - 122px); }
+}
+@media screen and (min-width: 576px) and (max-width: 767.98px) and (not ((hover: hover) and (pointer: fine))) {
+  #header:has(.a4-env-hover) #header-logo .a4-logo-full { display: none; }
+  #header:has(.a4-env-hover) #header-logo .a4-logo-mark { display: block; }
+  #header:has(.a4-env-hover) #header-logo .brand { justify-content: center; min-width: 36px; height: 36px; }
+}
+@media screen and (min-width: 768px) and (max-width: 1279.98px) and (not ((hover: hover) and (pointer: fine))) {
+  #header:has(.a4-env-hover) { --a4-env-room: calc(13rem + var(--a4-space-2)); }
+}
+@media screen and (min-width: 1280px) and (not ((hover: hover) and (pointer: fine))) {
+  #header .a4-env-hover { max-width: 18rem; }
+}
+@media screen and (min-width: 576px) and (max-width: 1279.98px) and (not ((hover: hover) and (pointer: fine))) {
+  #header:has(.a4-env-hover) .searchblock input.searchtext { width: clamp(5.5rem, calc(100vw - 454px - var(--a4-env-room)), 230px); }
 }
 /* the sign-in page: the name beside the logo at every width (it has the room), no release (nobody is signed in);
    with hover, as in the header */

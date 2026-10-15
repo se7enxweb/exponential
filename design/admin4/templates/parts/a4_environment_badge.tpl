@@ -2,7 +2,8 @@
    exp_environment_badge()), beside the logo in the header and on the sign-in page. Nothing without a level, the
    default. Text, not only color: the dot is decoration, the name is read out at every width.
    BadgeDisplay=hover (the default): a label that shows only while a mouse or trackpad pointer rests on the logo or
-   the logo has the keyboard focus, nothing on touch screens; the logo link names it as its description
+   the logo has the keyboard focus (Escape hides it, admin4.js); on touch screens, which cannot hover, it stands
+   beside the logo as with always. The logo link names it as its description
    (aria-describedby="a4-env-badge"), so screen readers keep it. BadgeDisplay=always: beside the logo at all times
    (up to 767px the short code; the name stays for screen readers). The release only for signed-in users.
    The pagelayouts key their header cache-blocks by the badge's key. *}

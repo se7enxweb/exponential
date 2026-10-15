@@ -155,9 +155,11 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
   pointer rests on the logo, or the logo has the keyboard focus: then the name (and, for signed-in users, the release)
   appears as a small label beside the logo (576 to 1279 px and on the sign-in page) or under it (from 1280 px, where
   the main menu follows the logo, and below 576 px), out of the flow, so nothing moves. Only for a fine pointer that
-  can hover (`@media (hover: hover) and (pointer: fine)`): touch screens show nothing, not even on a tap. The pointer
-  can move onto the label without losing it (there is no Escape key to dismiss it: it goes as soon as the pointer or the
-  focus leaves the logo); it fades in over 120 ms, at once with reduced motion. Screen readers
+  can hover (`@media (hover: hover) and (pointer: fine)`). A touch screen cannot hover, and a tap on the logo
+  follows the link, so there the badge stands beside the logo as with `always` (the short code up to 767 px). The
+  pointer can move onto the label without losing it, the label stays until the pointer or the focus leaves, and
+  Escape hides it until the pointer or the focus comes back (WCAG 1.4.13: hoverable, persistent, dismissible;
+  `admin4.js`); it fades in over 120 ms, at once with reduced motion. Screen readers
   keep it: the label is clipped, not removed, and the logo link names it in `aria-describedby` ("Environment:
   Production"). With `BadgeDisplay=always` the badge stays beside the logo. The badge is text, not only color: from 768 px the name (and, for signed-in users, `Release` and with
   `ShowVersion=enabled` the Exponential version), up to 767 px, phones included, the short code (`ShortName`, default DEV,
