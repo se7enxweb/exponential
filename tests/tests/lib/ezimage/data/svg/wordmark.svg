@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="240" height="64" viewBox="0 0 240 64" role="img" aria-label="Exponential">
+  <title>Exponential</title>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1d4ed8"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+    <clipPath id="c"><rect x="4" y="4" width="56" height="56" rx="12"/></clipPath>
+  </defs>
+  <rect x="4" y="4" width="56" height="56" rx="12" fill="url(#g)"/>
+  <g clip-path="url(#c)" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round">
+    <path d="M16 46 C26 46 30 18 48 18"/>
+    <path d="M16 32 H40"/>
+  </g>
+  <text x="72" y="42" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="bold" fill="#111827">Expo<tspan fill="#7c3aed">nential</tspan></text>
+</svg>
