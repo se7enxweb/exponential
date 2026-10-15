@@ -112,7 +112,8 @@
       "tests/tests/design/AdminCardsTest.php",
       "tests/tests/design/AdminLeftMenuGroupsTest.php",
       "tests/tests/design/AdminRetiredClassesTest.php",
-      "tests/tests/design/AdminSelfContainedTest.php"
+      "tests/tests/design/AdminSelfContainedTest.php",
+      "tests/tests/design/AdminLanguageStatesTest.php"
     ],
     "design/admin*/stylesheets/*": [
       "tests/tests/design/AdminStylingRulesTest.php",
@@ -128,10 +129,12 @@
       "tests/tests/design/AdminDensityTest.php",
       "tests/tests/design/AdminCardsTest.php",
       "tests/tests/design/AdminBaseStylesheetsTest.php",
-      "tests/tests/design/AdminRetiredClassesTest.php"
+      "tests/tests/design/AdminRetiredClassesTest.php",
+      "tests/tests/design/AdminLanguageStatesTest.php"
     ],
     "design/admin*/javascript/ezajaxsubitems_expdatatable.js": [
-      "tests/tests/design/AdminLanguageBadgeTest.php"
+      "tests/tests/design/AdminLanguageBadgeTest.php",
+      "tests/tests/design/AdminLanguageStatesTest.php"
     ],
     "lib/ezlocale/classes/ezlocale.php": [
       "tests/tests/design/AdminLanguageBadgeTest.php"
@@ -454,6 +457,9 @@
     ],
     "design/admin4/templates/node/top_node_full.tpl": [
       "tests/tests/design/AdminNodeTabsHeightTest.php"
+    ],
+    "tests/tests/design/js/language_states.js": [
+      "tests/tests/design/AdminLanguageStatesTest.php"
     ]
   },
   "generated": {
@@ -512,6 +518,12 @@
       "tests/tests/kernel/classes/runnable/MovedEntryPointsTest.php",
       "tests/tests/kernel/content/eZPublishWithoutNotificationLiveTest.php"
     ],
+    "design/admin/stylesheets/components.css": [
+      "tests/tests/design/AdminLanguageStatesTest.php"
+    ],
+    "design/admin/templates/children_detailed.tpl": [
+      "tests/tests/design/AdminLanguageStatesTest.php"
+    ],
     "design/admin/templates/content/edit.tpl": [
       "tests/tests/kernel/content/eZPublishWithoutNotificationTest.php"
     ],
@@ -551,6 +563,15 @@
       "tests/tests/kernel/content/eZPublishWithoutNotificationTest.php",
       "tests/tests/kernel/private/expAdminViewsDebugCleanTest.php"
     ],
+    "design/admin4/javascript/ezajaxsubitems_expdatatable.js": [
+      "tests/tests/design/AdminLanguageStatesTest.php"
+    ],
+    "design/admin4/stylesheets/components.css": [
+      "tests/tests/design/AdminLanguageStatesTest.php"
+    ],
+    "design/admin4/templates/children_detailed.tpl": [
+      "tests/tests/design/AdminLanguageStatesTest.php"
+    ],
     "design/admin4/templates/content/edit.tpl": [
       "tests/tests/kernel/content/eZPublishWithoutNotificationTest.php"
     ],
@@ -562,7 +583,11 @@
       "tests/tests/kernel/private/expAdminViewsDebugCleanTest.php"
     ],
     "design/admin4/templates/node/view/a4_full_body.tpl": [
-      "tests/tests/kernel/content/eZAdminFullViewCopyButtonTest.php"
+      "tests/tests/kernel/content/eZAdminFullViewCopyButtonTest.php",
+      "tests/tests/design/AdminLanguageStatesTest.php"
+    ],
+    "design/admin4/templates/parts/language_state_badge.tpl": [
+      "tests/tests/design/AdminLanguageStatesTest.php"
     ],
     "design/admin4/templates/setup/sitedata.tpl": [
       "tests/tests/kernel/content/eZContentFunctionCollectionSiteDataTest.php"
@@ -578,6 +603,9 @@
     ],
     "design/admin4/templates/shop/orderlist.tpl": [
       "tests/tests/kernel/classes/eZShopCustomerOrderViewEmailTest.php"
+    ],
+    "design/admin4/templates/translations.tpl": [
+      "tests/tests/design/AdminLanguageStatesTest.php"
     ],
     "design/admin4l/templates/explayouts/admin_zone.tpl": [
       "tests/tests/extension/explayouts_admin/expLayoutsAdminLayoutsTest.php"
@@ -634,6 +662,9 @@
     ],
     "extension/expservices/classes/users/expuserservices.php": [
       "tests/tests/kernel/classes/mailpreferences/MailPreferencesIntegrationTest.php"
+    ],
+    "extension/ezjscore/classes/ezjscajaxcontent.php": [
+      "tests/tests/design/AdminLanguageStatesTest.php"
     ],
     "extension/ezoe/classes/ezoeserverfunctions.php": [
       "tests/tests/extension/ezoe/expOECustomTagListTest.php"
@@ -796,7 +827,8 @@
       "tests/tests/kernel/content/eZPublishRegisterSearchObjectTest.php"
     ],
     "kernel/content/function_definition.php": [
-      "tests/tests/kernel/content/eZContentFunctionCollectionSiteDataTest.php"
+      "tests/tests/kernel/content/eZContentFunctionCollectionSiteDataTest.php",
+      "tests/tests/design/AdminLanguageStatesTest.php"
     ],
     "kernel/content/module.php": [
       "tests/tests/kernel/classes/eZContentHistoryAccessTest.php",

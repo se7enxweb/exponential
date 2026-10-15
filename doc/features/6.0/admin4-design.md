@@ -413,6 +413,40 @@ variables of the template that includes it: a parameter called `class` would rea
 other designs. `tests/tests/design/AdminLanguageBadgeTest.php` fails for a flag in an admin4 template or script, or in
 either design's sub-items table.
 
+### The state of a language
+
+For one object a badge also shows the state of its language, by its shape and never by a colour per language (green,
+amber and red belong to visibility and states):
+
+| State | Shape | Title and accessible name |
+|---|---|---|
+| main language (the object's initial language) | filled in the ink (`.is-main`) | "German – main language" |
+| translation exists | outlined (`.is-present`, the plain badge) | "English – translation exists" |
+| outdated translation | outlined with a small dot at the top right (`.is-outdated`) | "Spanish – outdated, older than German" |
+| missing (a language of the site the object lacks) | dashed edge, muted text (`.is-missing`) | "French – missing", or a link "Translate into French" |
+
+Where: the node view's meta line shows every language of the site (`prioritized_languages`) plus any other language
+the object has; a present one links to the view in it, a missing one is a link to `content/edit/<object>/f/<locale>`
+(the GET way the Edit in menu takes, which checks the right again) when the user may create that translation
+(`can_create_languages`), plain text otherwise. The Translations tab shows the state on each translation and lists
+the missing ones under the table. The sub-items table's Translations column shows main and present and, on a site
+with up to six languages (`expContentLanguageStates::LIST_MISSING_LIMIT`), the missing ones as text: with more, the
+badges of a row would wrap and bury the ones it has, and the Missing translations column of the table options lists
+them anyway. Whether the user may create a translation is not worked out per row, so the list has no translate link.
+
+Outdated: the newest published or archived version edited in a language (`ezcontentobject_version.initial_language_id`,
+as content/edit records it) is older than the newest edited in the main language. Both must exist: an object whose
+languages were all written in one version (an import, a copy) or whose older versions the history limit removed is
+never marked. `expContentLanguageStates::lastEdited()` reads any number of objects with one grouped query (SQL; one
+`find` on MongoDB); the mark is shown for the one object of the node view and its Translations tab only, the list
+rows get main, present and missing from the row they already have (`initial_language` in the node JSON), no query
+per row.
+
+The fetch function `fetch( 'content', 'language_states', hash( 'object', $object ) )` returns a list of `locale`,
+`name`, `state`, `outdated` and `can_translate`; `design:parts/language_state_badge.tpl` draws one (`state_entry`,
+`state_main_name`, optional `state_object_id`, `state_href`, `state_current`). Under forced colours the fill and the
+dot are drawn in system colours. `tests/tests/design/AdminLanguageStatesTest.php`.
+
 ## Context menus
 
 The menus of the content tree, the sub-items table, the class icon and the bookmarks (`ezpopupmenu.js` with the

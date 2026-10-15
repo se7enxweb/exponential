@@ -10635,6 +10635,26 @@
         <source>Attributes: %1</source>
         <translation>Attributes: %1</translation>
     </message>
+    <message>
+        <source>%language – main language</source>
+        <translation>%language – main language</translation>
+    </message>
+    <message>
+        <source>%language – translation exists</source>
+        <translation>%language – translation exists</translation>
+    </message>
+    <message>
+        <source>%language – missing</source>
+        <translation>%language – missing</translation>
+    </message>
+    <message>
+        <source>%language – outdated, older than %main</source>
+        <translation>%language – outdated, older than %main</translation>
+    </message>
+    <message>
+        <source>Translate into %language</source>
+        <translation>Translate into %language</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/node/view/line</name>

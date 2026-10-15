@@ -699,14 +699,23 @@ html[data-a4-theme="dark"] {
 
 /* A content language as a short code (DE, EN-GB) where the admin showed a flag: design:parts/language_badge.tpl.
    The name is the title and, where it is not written next to it, the accessible name. .a4-langs holds several;
-   a link (edit or view a translation) gets the hover and focus of a link, .is-current marks the one shown. */
+   a link (edit or view a translation) gets the hover and focus of a link, .is-current marks the one shown.
+   A plain badge is outlined: a language that exists.
+
+   The state of a language for one object (design:parts/language_state_badge.tpl, the Translations column of the
+   sub-items) is a shape, never a colour per language and none of the status colours (green, amber and red are the
+   visibility's and the states'): .is-main filled in the ink, .is-present outlined, .is-missing dashed with muted
+   text, .is-outdated a small dot at the top right. The code is always the text; the state is in the title and the
+   accessible name. Text and edges keep their contrast (AdminTokenContrastTest: ink on card for the fill, muted
+   text, --a4-field-line edges 3:1); under forced colours the fill and the dot keep their shape in system colours. */
 .a4-langs { display: inline-flex; flex-wrap: wrap; gap: var(--a4-space-1); vertical-align: middle; }
 .a4-lang {
+  position: relative;
   display: inline-block;
   padding: 0 var(--a4-space-1);
-  border: 1px solid var(--a4-line-strong);
+  border: 1px solid var(--a4-field-line);
   border-radius: var(--a4-radius-s);
-  background-color: var(--a4-soft);
+  background-color: transparent;
   color: var(--a4-ink);
   font-size: var(--a4-text-xs);
   font-weight: 650;
@@ -718,7 +727,30 @@ html[data-a4-theme="dark"] {
 }
 a.a4-lang:hover { border-color: var(--a4-accent); color: var(--a4-accent-text); }
 a.a4-lang:focus-visible { outline: 2px solid var(--a4-accent-strong); outline-offset: 1px; }
-.a4-lang.is-current { border-color: var(--a4-accent); background-color: var(--a4-accent-soft); color: var(--a4-accent-text); font-weight: 800; text-decoration: underline; text-underline-offset: 2px; }
+.a4-lang.is-current { border-color: var(--a4-accent); color: var(--a4-accent-text); font-weight: 800; text-decoration: underline; text-underline-offset: 2px; }
+.a4-lang.is-current:not(.is-main) { background-color: var(--a4-accent-soft); }
+.a4-lang.is-main { border-color: var(--a4-ink); background-color: var(--a4-ink); color: var(--a4-card); }
+a.a4-lang.is-main:hover, .a4-lang.is-main.is-current { border-color: var(--a4-accent); background-color: var(--a4-ink); color: var(--a4-card); }
+.a4-lang.is-missing { border-style: dashed; color: var(--a4-muted); font-weight: 500; }
+a.a4-lang.is-missing:hover { border-style: solid; }
+.a4-lang.is-outdated::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  width: 7px;
+  height: 7px;
+  border: 1px solid var(--a4-card);
+  border-radius: 50%;
+  background-color: var(--a4-ink);
+}
+@media (forced-colors: active) {
+  .a4-lang { border-color: CanvasText; }
+  .a4-lang.is-main { forced-color-adjust: none; border-color: CanvasText; background-color: CanvasText; color: Canvas; }
+  .a4-lang.is-outdated::after { forced-color-adjust: none; border-color: Canvas; background-color: CanvasText; }
+  a.a4-lang { border-color: LinkText; }
+  a.a4-lang.is-main { background-color: LinkText; border-color: LinkText; color: Canvas; }
+}
 
 /* A status with a dot: .a4-status > .a4-dot + text; .is-running pulses */
 .a4-status { display: inline-flex; align-items: center; gap: var(--a4-space-2); font-weight: 700; }

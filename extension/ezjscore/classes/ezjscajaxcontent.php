@@ -245,6 +245,8 @@ class ezjscAjaxContent
         $ret['class_name']              	= $contentObject->attribute( 'class_name' );
         $ret['path_identification_string'] 	= $node ? $node->attribute( 'path_identification_string' ) : '';
         $ret['translations']            	= eZContentLanguage::decodeLanguageMask($contentObject->attribute( 'language_mask' ), true);
+        // the main language, for the language badges' state (the language list is cached: no query per row)
+        $ret['initial_language']        	= (string) $contentObject->attribute( 'initial_language_code' );
         $ret['can_edit']                	= $contentObject->attribute( 'can_edit' );
 
         if ( isset( $params['formatDate'] ) )

@@ -92,6 +92,15 @@ $FunctionList['translation_list'] = array( 'name' => 'translation_list',
                                                                    'method' => 'fetchTranslationList' ),
                                            'parameter_type' => 'standard',
                                            'parameters' => array( ) );
+// The state of each language of an object (main, present, missing, outdated) for the language badges of admin4
+$FunctionList['language_states'] = array( 'name' => 'language_states',
+                                          'operation_types' => array( 'read' ),
+                                          'call_method' => array( 'class' => 'expContentLanguageStates',
+                                                                  'method' => 'fetchForObject' ),
+                                          'parameter_type' => 'standard',
+                                          'parameters' => array( array( 'name' => 'object',
+                                                                        'type' => 'object',
+                                                                        'required' => true ) ) );
 $FunctionList['non_translation_list'] = array( 'name' => 'object',
                                                'operation_types' => array( 'read' ),
                                                'call_method' => array( 'class' => 'eZContentFunctionCollection',

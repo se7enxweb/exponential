@@ -65,7 +65,16 @@ var confObj = {ldelim}
     languages: availableLanguages,
     classesString: {$node.classes_js_array},
     languageBadges: languageBadges,
-    editInLanguage: "{'Edit in <%language_name>.'|i18n( 'design/admin/node/view/full',, hash( '%language_name', '%language_name' ) )|wash('javascript')}"
+    editInLanguage: "{'Edit in <%language_name>.'|i18n( 'design/admin/node/view/full',, hash( '%language_name', '%language_name' ) )|wash('javascript')}",
+    {* The state of each badge in the Translations column (main, present, missing) as its title and accessible name.
+       The missing languages only on a site with up to 6 languages (expContentLanguageStates::LIST_MISSING_LIMIT):
+       with more, a row's badges would wrap and bury the ones it has; the Missing translations column lists them. *}
+    languageStates: {ldelim}
+        main: "{'%language – main language'|i18n( 'design/admin/node/view/full',, hash( '%language', '%language' ) )|wash('javascript')}",
+        present: "{'%language – translation exists'|i18n( 'design/admin/node/view/full',, hash( '%language', '%language' ) )|wash('javascript')}",
+        missing: "{'%language – missing'|i18n( 'design/admin/node/view/full',, hash( '%language', '%language' ) )|wash('javascript')}"
+    {rdelim},
+    showMissingLanguages: {if le( fetch( 'content', 'prioritized_languages' )|count, 6 )}true{else}false{/if}
 
 {rdelim}
 

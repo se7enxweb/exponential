@@ -127,6 +127,8 @@ class AdminTokenContrastTest extends PHPUnit\Framework\TestCase
             $pairs[] = array( '--a4-muted', "--a4-$state-bg", 4.5 );
         }
         $pairs[] = array( '--a4-on-accent', '--a4-accent-strong', 4.5 );
+        // the main language's badge: the card colour on an ink fill (components.css .a4-lang.is-main)
+        $pairs[] = array( '--a4-card', '--a4-ink', 4.5 );
         // the bar that marks a current or just-moved row on the accent tint
         $pairs[] = array( '--a4-accent-text', '--a4-accent-soft', 3.0 );
         // white on the pressed fill in light mode; in dark mode that fill is a light orange and carries

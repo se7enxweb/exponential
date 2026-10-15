@@ -118,11 +118,16 @@ class AdminLanguageBadgeTest extends PHPUnit\Framework\TestCase
     {
         $script = (string)file_get_contents( self::root() . '/design/admin4/javascript/ezajaxsubitems_expdatatable.js' );
         $this->assertStringContainsString( 'confObj.languageBadges', $script );
-        $this->assertMatchesRegularExpression( '/class="a4-lang"[^;]*aria-label=/', $script );
+        // the class carries the state (a4-lang is-main|is-present|is-missing, AdminLanguageStatesTest)
+        $this->assertStringContainsString( "cls = 'a4-lang is-' + state", $script );
+        $this->assertMatchesRegularExpression( '/class="\' \+ cls \+ \'"[^;]*aria-label=/', $script );
         // A badge link's name starts with the code it shows (WCAG 2.5.3 label in name): the name follows as hidden text
         $this->assertStringContainsString( "+ badge + '<span class=\"a4-sr-only\"> ' + label + '</span></a>'", $script );
         $body = (string)file_get_contents( self::root() . '/design/admin4/templates/node/view/a4_full_body.tpl' );
-        $this->assertStringContainsString( 'badge_plain=true()}<span class="a4-sr-only"> {$language.name|wash}</span></a>', $body );
+        // the node's badges show each language's state (parts/language_state_badge.tpl): the code, then the state as hidden text
+        $this->assertStringContainsString( "design:parts/language_state_badge.tpl' state_entry=\$language", $body );
+        $state = (string)file_get_contents( self::root() . '/design/admin4/templates/parts/language_state_badge.tpl' );
+        $this->assertStringContainsString( '{$a4_ls_code|wash}<span class="a4-sr-only"> {$a4_ls_label|wash}</span></a>', $state );
         $template = (string)file_get_contents( self::root() . '/design/admin4/templates/children_detailed.tpl' );
         $this->assertStringContainsString( 'languageBadges: languageBadges', $template );
         $this->assertStringContainsString( "design:parts/language_badge.tpl' locale=\$locale.locale_code badge_plain=true()", $template );
