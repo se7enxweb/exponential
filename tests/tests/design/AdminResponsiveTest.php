@@ -79,6 +79,7 @@ class AdminResponsiveTest extends PHPUnit\Framework\TestCase
         // a scroll container clips vertically too: room for the 3px ring with its 2px offset, inset at the row's ends
         $this->assertSame( 'var(--a4-space-2)', $tablet['.navbar-bar']['padding-block'] );
         $this->assertSame( '-3px', $tablet['.navbar-bar a:focus-visible']['outline-offset'] );
+        $this->assertSame( '0', $tablet['.navbar-menu']['min-width'], 'the panel stays as wide as the window, so the row scrolls' );
     }
 
     public function testBelow1280OnlyTheLeftColumnTakesRoom()

@@ -2043,6 +2043,7 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
     padding-block: var(--a4-space-2);   /* a scrolling row clips vertically too: room for the 3px ring and its 2px offset */
   }
   .navbar-bar a:focus-visible { outline-offset: -3px; }   /* and at the row's ends the ring is drawn inside the item */
+  .navbar-menu { min-width: 0; }   /* else the panel grows to the row's full length and the row has nothing to scroll */
 }
 
 /* Below 1280px only the left column takes room beside the content; the right one opens over it as a drawer (with
