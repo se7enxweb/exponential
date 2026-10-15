@@ -110,6 +110,8 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
   opens). The current page's link carries `aria-current="page"` and is marked with the accent tint and a bar. A menu
   is grouped through menu.ini (`Groups[]`, `GroupNames[<group>]`, `GroupLinks_<group>[]`); without `Groups[]`, or with
   `Groups[]` reset to no values, it is one list, named by its heading. Access is checked per link as before.
+- **Setup overview.** The Setup tab opens an overview of every Setup function as a tile, in the groups of the left
+  menu (see [Setup overview](#setup-overview)).
 - **Tables.** A list table's sorted column is readable (soft orange header).
 - **Icons.** Bootstrap Icons in the text colour, so they follow links, buttons, hover and the dark mode (see below).
 - **Languages.** A short code instead of a flag (see [Languages](#languages)).
@@ -147,6 +149,62 @@ To add an icon: copy the SVG from the Bootstrap Icons 1.13.1 package unchanged i
 `share/icons/bootstrap-icons/svg/`, add `.a4-bi-<name>` to both copies of `components.css` (or name the file in the
 theme's `icon.ini`), and use it. `tests/tests/design/AdminIconsTest.php` fails for a file nothing names, a name with
 no file, a changed file, and a GIF icon, inline SVG or image button in an admin4 template.
+
+## Setup overview
+
+The Setup tab opens `setup/menu`: a page header and every function of the Setup menu as a tile, in the groups of the
+left menu (Content model, Site and URLs, Workflows, Users and messages, System, and "More" for links an extension adds).
+
+- **One source.** The tiles are the left menu, drawn another way: `setup/setupmenu.tpl` includes
+  `parts/setup/menu.tpl`, which hands `[Leftmenu_setup]` of `menu.ini` to `parts/ini_menu.tpl` with
+  `menu_layout='tiles'`. The links, their names, their groups and the access checks (`PolicyList_<link>[]`,
+  `CheckViewAccess`, `NoAccessLinks`) are the menu's: a function the user may not open has no tile, and an
+  extension's link appears under "More" by adding it to `[Leftmenu_setup] Links[]`, as for the menu. The order inside
+  a group is that of `Links[]`.
+- **A tile** is a card (`.a4-card`, so its padding follows the density) with a Bootstrap icon in an accent square, the
+  function's name as its link, stretched over the card with one focus ring around it, and one line on what the
+  function does as the link's description. The page only adds the icon and the description of each known link (the
+  hash in `setup/setupmenu.tpl`); a link it does not know takes the plug icon and no description.
+- **Figures**, only where one cheap fetch gives them and only on a shown tile (`setup/setupmenu_figure.tpl`): classes
+  and sections defined, content languages in use, active extensions, signed-in users.
+- **Grid.** One column on a phone, then two, three and four as the content column grows (container queries on
+  `.a4-setup-overview`, so a wide left column counts). Styles in `stylesheets/modules/setup.css`, tokens only, light and
+  dark, forced colors.
+- **Left menu.** "Overview" is the first entry of the Setup menu, before the groups: menu.ini `LeadLinks[]` names
+  links that stand before the groups and in none of them (`.a4-navlead`). It is marked as the current page on the
+  overview, which leaves it out of its tiles.
+- **Access.** The view `setup/menu` opens with any one of the setup module's functions (`setup`, `administrate`,
+  `managecache`, `managecronjobs`, `preload`, `system_info`), so a role that reached the tab's former page
+  (`setup/cache`) keeps the tab.
+- **Classic designs** show a short page with a pointer to the Setup menu and the `setup` toolbar of toolbar.ini.
+
+| Link key | Icon | Link key | Icon |
+|---|---|---|---|
+| classes | `diagram-3` | cache | `arrow-clockwise` |
+| sections | `collection` | system_information | `info-circle` |
+| states | `toggles` | upgrade_check | `arrow-up-circle` |
+| languages | `translate` | maintenance | `wrench-adjustable` |
+| contentfinder | `search` | cronjobs | `clock` |
+| collected | `inbox` | extensions | `puzzle` |
+| url_management | `link-45deg` | ini | `sliders` |
+| url_translator | `signpost-split` | sitedata | `table` |
+| url_wildcards | `asterisk` | sessions | `people` |
+| menu_management | `menu-button-wide` | notification | `bell` |
+| rss | `rss` | mailpreferences | `envelope-paper` |
+| pdf_export | `file-earmark-pdf` | oauth_list | `key` |
+| packages | `box-seam` | audit | `journal-check` |
+| rad | `magic` | workflows | `diagram-2` |
+| preload | `speedometer2` | workflow_processes | `hourglass-split` |
+| search_statistics | `bar-chart-line` | triggers | `lightning` |
+| roles_and_policies | `person-lock` | templates | `file-earmark-code` |
+| template_editor | `code-square` | toolbar_management | `tools` |
+| look_and_feel | `palette` | global_setting | `globe` |
+| (an extension's link) | `plug` | | |
+
+To give an extension's Setup link an icon and a description, override `setup/setupmenu.tpl` or add the key to its
+hash; the icon class must exist in `components.css` (see [Icons](#icons)). `tests/tests/design/AdminSetupOverviewTest.php`
+fails for a Setup link without a tile, an icon class or file that does not exist, an icon used twice, a missing access
+check, a figure from another fetch, an image in the page, or a missing translation.
 
 ## Languages
 
@@ -276,6 +334,8 @@ tree's roles, states, Tab stop and keys.
 | `settings/menu.ini` | `TopAdminMenu` | `HiddenTabs[]` | empty | siteaccess |
 | `settings/menu.ini` | `Topmenu_<tab>` | `Name`, `Tooltip`, `TranslationContext` | the default tab names, context `design/admin/pagelayout` | siteaccess |
 | `settings/menu.ini` | `Leftmenu_<menu>` | `Groups[]`, `GroupNames[<group>]`, `GroupLinks_<group>[]` | the five groups of `Leftmenu_setup` | siteaccess |
+| `settings/menu.ini` | `Leftmenu_<menu>` | `LeadLinks[]` | `overview` in `Leftmenu_setup` | siteaccess |
+| `settings/menu.ini` | `Topmenu_setup` | `URL[default]` | `setup/menu` (the Setup overview) | siteaccess |
 | `settings/menu.ini` | `Leftmenu_<menu>` | `PolicyList_<link>[]` | a node id, `<module>/<function>`, or `<module>/*` for a module without policy functions | siteaccess |
 | `settings/site.ini` | `SiteAccessSettings` | `FrontSiteAccess` | empty (`DefaultAccess`) | siteaccess |
 
@@ -290,6 +350,8 @@ Community". A template can also set `$show_community_links`.
 - `Name`, `Tooltip` and `TranslationContext` of a `[Topmenu_<tab>]` give the tab's label and tooltip in English and the
   translation context they are looked up in.
 - `Groups[]`, `GroupNames[<group>]` and `GroupLinks_<group>[]` group a long left menu (see "Left menu" above).
+- `LeadLinks[]` names links of a grouped left menu that stand before the groups and in none of them (the Setup
+  overview); `URL[default]` of `[Topmenu_setup]` is the page the Setup tab opens (see [Setup overview](#setup-overview)).
 - `PolicyList_<link>[]` names a node id that must be readable, a policy function, or `<module>/*` for the modules that
   have no policy functions (visual, class, role, workflow, trigger, url, search, settings, collaboration);
   `tests/tests/design/AdminMenuPolicyListTest.php` fails for a function a module does not have. The Design tab opens
