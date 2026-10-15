@@ -446,8 +446,9 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
 }
 
 /* The mega menu (prototype, opt-in: menu.ini [TopAdminMenu] MegaMenuTabs[]; page_topmenuitem.tpl, a4_mega_menu.js):
-   a small disclosure button beside its tab and a card under the header with the groups and links of the tab's left
-   menu, in up to four columns, as wide as the header up to the content's widest (--a4-content-max). From 1280px only,
+   a small disclosure button beside its tab and a card under the header with a choice of the links of the tab's left
+   menu in their groups: up to three groups side by side, each 17rem wide, so a short choice makes a narrower card,
+   centred under the header. From 1280px only,
    where the header is one row: below that, and in the "More" list, the button is not drawn and the tab is a plain
    link (the phone menu is unchanged). */
 .a4-mega-toggle,
@@ -488,12 +489,13 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
     right: var(--a4-space-5);
     z-index: var(--a4-z-menu);   /* over the sidebar tabs on the window's edges, as a context menu */
     box-sizing: border-box;
-    max-width: var(--a4-content-max);
+    width: fit-content;   /* as wide as its groups need; centred by the auto margins */
+    max-width: min(var(--a4-content-max), calc(100vw - 2 * var(--a4-space-5)));
     max-height: calc(100vh - var(--header-height) - var(--a4-space-6));
     margin-inline: auto;
     overflow-y: auto;
     overscroll-behavior: contain;
-    padding: var(--a4-space-4) var(--a4-space-5);
+    padding: var(--a4-space-5);
     background-color: var(--a4-card);
     border: 1px solid var(--a4-line);
     border-radius: var(--a4-radius-s);
@@ -513,13 +515,17 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
     bottom: 100%;
     height: calc(var(--a4-space-2) + 1px);
   }
+  /* up to three groups side by side: three columns of 17rem and their gaps, then the next row */
   .a4-mega-groups {
-    columns: 4 14rem;
-    column-gap: var(--a4-space-5);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: var(--a4-space-5) var(--a4-space-6);
+    max-width: calc(3 * 17rem + 2 * var(--a4-space-6));
   }
   .a4-mega-group {
-    break-inside: avoid;
-    margin: 0 0 var(--a4-space-4);
+    flex: 0 0 17rem;
+    margin: 0;
   }
   .a4-mega-group-title {
     margin: 0 0 var(--a4-space-1);
@@ -536,12 +542,14 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
     padding: 0;
     list-style: none;
   }
-  /* one line: icon, name, description; the name is the link, stretched over the line */
+  /* the icon beside the name, the description under it, whole (two lines and more if need be); the name is the link,
+     stretched over the entry */
   .navbar-bar .a4-mega-links > li.a4-mega-link {
     position: relative;
-    display: flex;
-    align-items: baseline;
-    gap: var(--a4-space-2);
+    display: grid;
+    grid-template-columns: 16px minmax(0, 1fr);
+    column-gap: var(--a4-space-2);
+    align-items: start;
     min-height: 28px;
     margin: 0;
     padding: var(--a4-space-1) var(--a4-space-2);
@@ -551,17 +559,17 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
   }
   .navbar-bar .a4-mega-links > li.a4-mega-link:hover { background-color: var(--a4-soft); }
   .a4-mega-link > .a4-icon {
-    flex: 0 0 auto;
-    align-self: center;
-    width: 14px;
-    height: 14px;
+    grid-row: 1 / span 2;
+    margin-top: 1px;
+    width: 16px;
+    height: 16px;
     color: var(--a4-accent-text);
   }
   .navbar-menu .a4-mega-link a,
   .navbar-menu .a4-mega-link a:hover,
   .a4-mega-name {
-    display: inline;
-    flex: 0 0 auto;
+    display: block;
+    grid-column: 2;
     min-height: 0;
     padding: 0;
     border-radius: 0;
@@ -570,7 +578,8 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
     font-size: inherit;
     font-weight: 600;
     text-decoration: none;
-    white-space: nowrap;
+    white-space: normal;
+    justify-content: flex-start;
   }
   .navbar-menu .a4-mega-link a::after {
     content: "";
@@ -585,12 +594,11 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
   .a4-mega-link.is-disabled .a4-mega-name,
   .a4-mega-link.is-disabled > .a4-icon { color: var(--a4-disabled); }
   .a4-mega-text {
-    min-width: 0;
-    overflow: hidden;
+    grid-column: 2;
+    margin-top: 2px;
     color: var(--a4-muted);
     font-size: var(--a4-text-xs);
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    line-height: var(--a4-leading);
   }
   .a4-mega-status {
     margin: 0 0 var(--a4-space-4);
