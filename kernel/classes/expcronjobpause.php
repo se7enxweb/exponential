@@ -362,9 +362,13 @@ class expCronjobPause
         $dir = self::directory();
         if ( !is_dir( $dir ) && !eZDir::mkdir( $dir, false, true ) )
             return false;
-        // eZFile::create() writes through a temporary file and applies the installation's file mode limits.
-        if ( !eZFile::create( basename( self::file( $part ) ), $dir, $pause ? '1' : '0' ) )
+        // Written to a temporary file and renamed over the old one, so a reader never sees a half-written file, and a
+        // file another user wrote (Velocity's workers and the command line may run as root, the web server as the site
+        // user) is replaced rather than opened, which its mode could refuse.
+        $file = self::file( $part );
+        if ( !eZFile::create( basename( $file ), $dir, $pause ? '1' : '0', true ) || self::isPaused( $part ) !== $pause )
             return false;
+        self::shareFile( $file );
 
         if ( $user === null && class_exists( 'eZUser' ) )
             $user = eZUser::currentUser();
@@ -380,6 +384,61 @@ class expCronjobPause
         // The pause holds without its history line; say so in the debug log rather than undo it.
         if ( @file_put_contents( $history, $line . "\n", FILE_APPEND | LOCK_EX ) === false && class_exists( 'eZDebug' ) )
             eZDebug::writeWarning( "The pause of '" . self::label( $part ) . "' was not written to $history", __METHOD__ );
+        else
+            self::shareFile( $history );
+        self::audit( $part, $pause, $user );
         return true;
+    }
+
+    /**
+     * Records a run that runcronjobs.php left out because of a pause, in <LogDir>/cronjob_skipped.log, so it can be
+     * told afterwards which runs a pause held back; the notice itself goes to the run's own output too.
+     *
+     * @param string $notice
+     * @param string $part '' for [CronjobSettings]
+     * @param string $script the script a single run named, or the first one left out of a part
+     */
+    public static function logSkip( $notice, $part, $script = '' )
+    {
+        if ( !class_exists( 'eZLog' ) )
+            return;
+        $siteaccess = class_exists( 'eZSiteAccess' ) && is_array( eZSiteAccess::current() ) ? eZSiteAccess::current()['name'] : '';
+        eZLog::write( $notice . ' [part ' . self::label( (string)$part ) . ( $script !== '' ? ', script ' . basename( (string)$script ) : '' )
+                      . ( $siteaccess !== '' ? ', siteaccess ' . $siteaccess : '' ) . ']', 'cronjob_skipped.log' );
+    }
+
+    /**
+     * Gives a file this process owns the installation's file mode (site.ini [FileSettings] StorageFilePermissions,
+     * within its limits), so the other user that runs the installation - root for Velocity and the command line, the
+     * site user for the web server - can replace the state file and append to the history. A file another user owns
+     * is left alone: only its owner may change its mode.
+     *
+     * @param string $file
+     */
+    private static function shareFile( $file )
+    {
+        if ( !is_file( $file ) || !function_exists( 'posix_geteuid' ) || @fileowner( $file ) !== posix_geteuid() || !class_exists( 'eZINI' ) )
+            return;
+        $mode = eZFile::fileMode( octdec( (string)eZINI::instance()->variable( 'FileSettings', 'StorageFilePermissions' ) ) );
+        if ( $mode > 0 && ( @fileperms( $file ) & 0777 ) !== $mode )
+            @chmod( $file, $mode );
+    }
+
+    /**
+     * Audit (doc/bc/6.0/audit.md, system.cronjob.pause and system.cronjob.resume): who paused or resumed which part.
+     *
+     * @param string $part
+     * @param bool $pause
+     * @param eZUser|null $user
+     */
+    private static function audit( $part, $pause, $user )
+    {
+        // Paths set by a test (setPaths()) are not the installation's pauses, so they are not the audit trail's either.
+        if ( !class_exists( 'expAuditHook' ) || self::$directory !== null )
+            return;
+        expAuditHook::emit( $pause ? 'system.cronjob.pause' : 'system.cronjob.resume',
+            array( 'object' => array( 'type' => 'cronjob_part', 'id' => self::label( $part ) ),
+                   'verb' => $pause ? 'pause' : 'resume',
+                   'after' => array( 'paused' => $pause ) ) );
     }
 }

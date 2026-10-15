@@ -23036,16 +23036,16 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Die Pause von „%part“ konnte nicht nach %directory geschrieben werden.</translation>
     </message>
     <message>
-        <source>All cronjob parts are paused. A job that runs now goes on to its end.</source>
-        <translation>Alle Cronjob-Teile sind angehalten. Ein Job, der gerade läuft, läuft zu Ende.</translation>
+        <source>All cronjob parts are paused. A script that runs now goes on to its end; the scripts after it are left out.</source>
+        <translation>Alle Cronjob-Teile sind angehalten. Ein Skript, das gerade läuft, läuft zu Ende; die Skripte danach werden ausgelassen.</translation>
     </message>
     <message>
         <source>All cronjob parts are resumed.</source>
         <translation>Alle Cronjob-Teile laufen wieder.</translation>
     </message>
     <message>
-        <source>The &quot;%part&quot; part is paused. A run that has started goes on to its end.</source>
-        <translation>Der Teil „%part“ ist angehalten. Ein Lauf, der schon begonnen hat, läuft zu Ende.</translation>
+        <source>The &quot;%part&quot; part is paused. A script that runs now goes on to its end; the scripts after it are left out.</source>
+        <translation>Der Teil „%part“ ist angehalten. Ein Skript, das gerade läuft, läuft zu Ende; die Skripte danach werden ausgelassen.</translation>
     </message>
     <message>
         <source>The &quot;%part&quot; part is resumed.</source>

@@ -186,4 +186,61 @@ class expCronjobPauseTest extends PHPUnit\Framework\TestCase
         $this->assertNotFalse( $filter );
         $this->assertLessThan( $filter, $pause );
     }
+
+    /**
+     * A part paused while it runs: runcronjobs.php asks again before each further script, leaves the rest out and
+     * says so in the run's output and in cronjob_skipped.log.
+     */
+    public function testRuncronjobsAsksThePauseAgainBeforeEachFurtherScript()
+    {
+        $source = file_get_contents( __DIR__ . '/../../../../kernel/private/classes/commands/runcronjobs.php' );
+        $loop = strpos( $source, 'foreach ( $scripts as $cronScript )' );
+        $this->assertNotFalse( $loop );
+        $body = substr( $source, $loop );
+        $again = strpos( $body, 'expCronjobPause::notice( $partName )' );
+        $run = strpos( $body, 'eZRunCronjobs::runScript(' );
+        $this->assertNotFalse( $again, 'the loop asks the pause again' );
+        $this->assertLessThan( $run, $again, 'before the next script runs' );
+        $this->assertStringContainsString( 'break;', substr( $body, $again, $run - $again ) );
+        $this->assertSame( 2, substr_count( $source, 'expCronjobPause::logSkip(' ), 'both skips are logged' );
+    }
+
+    /**
+     * The state file is replaced, not opened: a file the writer may not open (another user's, as Velocity's root
+     * workers and the site user's web server write the same directory) does not stop a pause or a resume.
+     */
+    public function testAStateFileThatCannotBeOpenedIsReplaced()
+    {
+        $this->assertTrue( expCronjobPause::pause( 'frequent', $this->user ) );
+        $file = $this->dir . '/control/cronpart_deactivated_frequent.txt';
+        chmod( $file, 0444 );
+        $this->assertTrue( expCronjobPause::resume( 'frequent', $this->user ) );
+        $this->assertFalse( expCronjobPause::isPaused( 'frequent' ) );
+        chmod( $file, 0444 );
+        $this->assertTrue( expCronjobPause::pause( 'frequent', $this->user ) );
+        $this->assertTrue( expCronjobPause::isPaused( 'frequent' ) );
+        $this->assertSame( array(), glob( $this->dir . '/control/ezfile-tmp.*' ), 'no temporary file is left behind' );
+    }
+
+    /**
+     * The state file and the history get the installation's file mode, so the other user can replace and append.
+     */
+    public function testTheStateFileAndTheHistoryGetTheStorageFileMode()
+    {
+        if ( !function_exists( 'posix_geteuid' ) )
+            $this->markTestSkipped( 'posix is not available' );
+        $mode = eZFile::fileMode( octdec( (string)eZINI::instance()->variable( 'FileSettings', 'StorageFilePermissions' ) ) );
+        $old = umask( 0077 );
+        try
+        {
+            $this->assertTrue( expCronjobPause::pause( 'frequent', $this->user ) );
+        }
+        finally
+        {
+            umask( $old );
+        }
+        clearstatcache();
+        $this->assertSame( sprintf( '%o', $mode ), sprintf( '%o', fileperms( $this->dir . '/control/cronpart_deactivated_frequent.txt' ) & 0777 ) );
+        $this->assertSame( sprintf( '%o', $mode ), sprintf( '%o', fileperms( $this->dir . '/pause.log' ) & 0777 ) );
+    }
 }

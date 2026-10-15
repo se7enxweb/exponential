@@ -20196,16 +20196,16 @@ Note: The packages will not be uninstalled.</translation>
         <translation>The pause of &quot;%part&quot; could not be written to %directory.</translation>
     </message>
     <message>
-        <source>All cronjob parts are paused. A job that runs now goes on to its end.</source>
-        <translation>All cronjob parts are paused. A job that runs now goes on to its end.</translation>
+        <source>All cronjob parts are paused. A script that runs now goes on to its end; the scripts after it are left out.</source>
+        <translation>All cronjob parts are paused. A script that runs now goes on to its end; the scripts after it are left out.</translation>
     </message>
     <message>
         <source>All cronjob parts are resumed.</source>
         <translation>All cronjob parts are resumed.</translation>
     </message>
     <message>
-        <source>The &quot;%part&quot; part is paused. A run that has started goes on to its end.</source>
-        <translation>The &quot;%part&quot; part is paused. A run that has started goes on to its end.</translation>
+        <source>The &quot;%part&quot; part is paused. A script that runs now goes on to its end; the scripts after it are left out.</source>
+        <translation>The &quot;%part&quot; part is paused. A script that runs now goes on to its end; the scripts after it are left out.</translation>
     </message>
     <message>
         <source>The &quot;%part&quot; part is resumed.</source>

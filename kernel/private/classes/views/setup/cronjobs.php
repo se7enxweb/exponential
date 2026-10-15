@@ -427,10 +427,10 @@ class Cronjobs extends \Exponential\Runnable\ModuleView
             return array( 'ok' => false, 'message' => \ezpI18n::tr( 'design/admin/setup/cronjobs', 'The pause of "%part" could not be written to %directory.', null, array( '%part' => $part, '%directory' => \expCronjobPause::directory() ) ) );
 
         if ( $part === \expCronjobPause::ALL )
-            $message = $pause ? \ezpI18n::tr( 'design/admin/setup/cronjobs', 'All cronjob parts are paused. A job that runs now goes on to its end.' )
+            $message = $pause ? \ezpI18n::tr( 'design/admin/setup/cronjobs', 'All cronjob parts are paused. A script that runs now goes on to its end; the scripts after it are left out.' )
                               : \ezpI18n::tr( 'design/admin/setup/cronjobs', 'All cronjob parts are resumed.' );
         else
-            $message = $pause ? \ezpI18n::tr( 'design/admin/setup/cronjobs', 'The "%part" part is paused. A run that has started goes on to its end.', null, array( '%part' => $part ) )
+            $message = $pause ? \ezpI18n::tr( 'design/admin/setup/cronjobs', 'The "%part" part is paused. A script that runs now goes on to its end; the scripts after it are left out.', null, array( '%part' => $part ) )
                               : \ezpI18n::tr( 'design/admin/setup/cronjobs', 'The "%part" part is resumed.', null, array( '%part' => $part ) );
         return array( 'ok' => true, 'message' => $message );
     }

@@ -2198,6 +2198,8 @@ only with `Reads=enabled`).
 | `system.cache.clear` | caches are cleared on request | – → ids, ms | `ezcache.php:auditCleared` (also for `bin/php/ezcache.php`, one record per run, through `eZCacheHelper::auditCleared()`) | clear | info | on | yes | system | buffered |
 | `system.cronjob.run` | a cronjob part runs (parent: the runcronjobs invocation) | – → ms, result | `ezruncronjobs.php:auditPart` | run | info | on | yes | system | buffered |
 | `system.cronjob.fail` | a part throws or exits non-zero | – → error | `ezruncronjobs.php:auditPart` | run | warning | on | yes | system | buffered |
+| `system.cronjob.pause` | a cronjob part, or every part ("all"), is paused at Setup > Cronjobs | – → paused | `expcronjobpause.php:audit` | pause | notice | on | yes | system | buffered |
+| `system.cronjob.resume` | a paused part, or every part, is resumed | – → paused | `expcronjobpause.php:audit` | resume | notice | on | yes | system | buffered |
 | `system.command.run` | a command runs | – → exit code, ms | `ezscript.php:shutdown` | run | info | on | yes | system | buffered |
 | `system.package.install` | a package is installed | – → name, version, items | `ezpackage.php:install` | install | notice | on | yes | system | buffered |
 | `system.package.uninstall` | a package is uninstalled | name, version → – | `ezpackage.php:uninstall` | uninstall | notice | on | yes | system | buffered |

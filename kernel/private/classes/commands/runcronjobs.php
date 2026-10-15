@@ -438,6 +438,7 @@ class Runcronjobs extends \Exponential\Runnable\Command
             if ( $pauseNotice !== false )
             {
                 $cli->notice( $pauseNotice );
+                \expCronjobPause::logSkip( $pauseNotice, $partName, $single ? $scripts[0] : '' );
                 $script->shutdown( 0 );
             }
         }
@@ -464,6 +465,18 @@ class Runcronjobs extends \Exponential\Runnable\Command
             {
                 if ( $index > 0 )
                 {
+                    // A part paused while it runs: the script that ran goes to its end, the ones after it are left out.
+                    if ( !$single && class_exists( '\expCronjobPause' ) )
+                    {
+                        $pauseNotice = \expCronjobPause::notice( $partName );
+                        if ( $pauseNotice !== false )
+                        {
+                            $pauseNotice .= " Left out: '$cronScript' and the scripts after it.";
+                            $cli->notice( $pauseNotice );
+                            \expCronjobPause::logSkip( $pauseNotice, $partName, $cronScript );
+                            break;
+                        }
+                    }
                     $cli->output();
                 }
                 if ( !$isQuiet )
