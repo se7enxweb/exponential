@@ -1,8 +1,9 @@
-{* Quick select of the current node: offers the node whose children are shown for selection,
-   pre-selected, so that one click on "Select" picks it. It follows the same rules as the items
-   of the list: permission, ignored nodes and subtrees, class constraints, containers only for
-   move, copy and add location, swap compatibility. The value is the node or object ID, as the
-   browse returns. Not shown for search results and the top level.
+{* Quick select of the current node: offers the node whose children are shown for selection. Where only one item
+   can be chosen (radio buttons) it is pre-selected, so that one click on "Select" picks it; where several can (check
+   boxes, as for Add locations) it is not, or it would be sent along with the items the user checked. It follows the
+   same rules as the items of the list: permission, ignored nodes and subtrees, class constraints, containers only
+   for move, copy and add location, swap compatibility. The value is the node or object ID, as the browse returns.
+   Not shown for search results and the top level.
    Parameter: $mode 'list' (a table row) or 'thumbnail' (a thumbnail cell). *}
 {if and( is_set( $main_node ), is_unset( $node_list ), $main_node.node_id|gt( 1 ) )}
 {def $current_node_ignore = merge( $browse.ignore_nodes_select_subtree, $main_node.path_array )
@@ -48,7 +49,7 @@
     {node_view_gui view=browse_thumbnail content_node=$main_node show_link=false()}
     <div class="controls">
     {if $current_node_selectable}
-        <input type="{$select_type}" name="{$select_name}[]" value="{$main_node[$select_attribute]}" id="browse-current-node" checked="checked" />
+        <input type="{$select_type}" name="{$select_name}[]" value="{$main_node[$select_attribute]}" id="browse-current-node"{if eq( $select_type, 'radio' )} checked="checked"{/if} />
     {else}
         <input type="{$select_type}" name="_Disabled" value="" id="browse-current-node" disabled="disabled" />
     {/if}
@@ -60,7 +61,7 @@
   <tr class="bgdark browse-current-node">
     <td>
     {if $current_node_selectable}
-        <input type="{$select_type}" name="{$select_name}[]" value="{$main_node[$select_attribute]}" id="browse-current-node" checked="checked" />
+        <input type="{$select_type}" name="{$select_name}[]" value="{$main_node[$select_attribute]}" id="browse-current-node"{if eq( $select_type, 'radio' )} checked="checked"{/if} />
     {else}
         <input type="{$select_type}" name="_Disabled" value="" id="browse-current-node" disabled="disabled" />
     {/if}
