@@ -111,10 +111,10 @@ class AdminLogoTest extends PHPUnit\Framework\TestCase
             $this->assertSame( $count, substr_count( self::file( $path ), self::INCLUDE ), $path );
         // the include sits inside the logo links
         $this->assertSame( 2, substr_count( self::file( 'design/admin4/templates/page_topmenu.tpl' ),
-            'aria-label="{$a4_brand_name|wash}">' . self::INCLUDE . '</a>' ) );
+            'aria-label="{$a4_brand_name|wash}"{if $a4_brand_env} aria-describedby="a4-env-badge"{/if}>' . self::INCLUDE . '</a>' ) );
         $this->assertSame( 2, substr_count( self::file( 'design/admin4l/templates/explayouts/block/admin_logo.tpl' ),
-            'aria-label="{$a4_brand_name|wash}">' . self::INCLUDE . '</a>' ) );
-        $this->assertStringContainsString( '<a class="a4-login-logo" href={\'/\'|ezurl} aria-label="Exponential">' . self::INCLUDE . '</a>',
+            'aria-label="{$a4_brand_name|wash}"{if $a4_brand_env} aria-describedby="a4-env-badge"{/if}>' . self::INCLUDE . '</a>' ) );
+        $this->assertStringContainsString( '<a class="a4-login-logo" href={\'/\'|ezurl} aria-label="Exponential"{if $env_badge.level|ne( \'\' )} aria-describedby="a4-env-badge"{/if}>' . self::INCLUDE . '</a>',
             self::file( 'design/admin4/templates/loginpagelayout.tpl' ) );
 
         // no other template of admin4 or admin4l draws it

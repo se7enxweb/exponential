@@ -354,10 +354,14 @@ body,
 /* ---- The environment badge ----------------------------------------------------------------------------------
    parts/a4_environment_badge.tpl, beside the logo and on the sign-in page; only with site.ini [AdminEnvironment]
    Level set. A filled pill in the level's color with the name in capitals (and, for signed-in users, the release).
-   It takes no height: 24px in the header's 36px row. Up to 767px the short code (DEV, TEST, STAGE, PROD; the logo is
-   the mark alone then), from 768px the name. What is not shown stays for screen readers (the name) or in the title
-   (the release). The search field gives the badge its room up to 1279px (--a4-env-room); from 1280px the main menu does,
-   its tabs going into "More". */
+   BadgeDisplay=hover (.a4-env-hover, the default): out of the flow and clipped to nothing, so the header looks and
+   measures as without a badge; it shows beside the logo only while a fine pointer that can hover rests on the logo
+   link (or on the pill itself, so the pointer can move onto it) or the link has the keyboard focus. Touch screens
+   never show it. Clipped, not display: none, so screen readers read it (the link names it in aria-describedby).
+   BadgeDisplay=always (.a4-env-always): in the row, 24px in the header's 36px row. Up to 767px the short code (DEV,
+   TEST, STAGE, PROD; the logo is the mark alone then), from 768px the name. What is not shown stays for screen
+   readers (the name) or in the title (the release). The search field gives the badge its room up to 1279px
+   (--a4-env-room); from 1280px the main menu does, its tabs going into "More". */
 .a4-env {
   --a4-env-bg: var(--a4-env-production);
   --a4-env-fg: var(--a4-env-production-ink);
@@ -411,15 +415,78 @@ body,
   font-weight: 500;
   letter-spacing: 0;
 }
-.header-logo:has(> .a4-env) { gap: var(--a4-space-2); }
+.header-logo:has(> .a4-env-always) { gap: var(--a4-space-2); }
+/* hover: positioned beside the logo (the logo box and the sign-in page's row are its reference), taking no room */
+.header-logo:has(> .a4-env-hover),
+.a4-login-top:has(> .a4-env-hover) { position: relative; }
+.a4-login-top:has(> .a4-env-hover) { align-self: flex-start; }   /* the row as wide as the logo: the pill starts after it */
+.a4-env-hover {
+  position: absolute;
+  z-index: var(--a4-z-popover);
+  top: 50%;
+  left: calc(100% + var(--a4-space-2));
+  max-width: 18rem;
+  translate: 0 -50%;   /* centred on the logo */
+  box-shadow: var(--a4-shadow-m);
+  clip-path: inset(50%);
+  opacity: 0;
+  pointer-events: none;
+}
+/* the gap between the logo and the pill belongs to the pill, so the pointer can cross it without losing it */
+.a4-env-hover::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  right: 100%;
+  bottom: -1px;
+  width: calc(var(--a4-space-2) + 1px);
+}
+/* Where the main menu follows the logo in its row (from 1280px) or the row is full (phones), the pill hangs under
+   the logo instead, so it covers no tab; from 576 to 1279px, and on the sign-in page, the room beside the logo is free */
+@media screen and (max-width: 575.98px), screen and (min-width: 1280px) {
+  #header .a4-env-hover {
+    top: calc(100% + var(--a4-space-2));
+    left: 0;
+    translate: none;
+  }
+  #header .a4-env-hover::before {
+    top: auto;
+    right: 0;
+    bottom: 100%;
+    left: 0;
+    width: auto;
+    height: calc(var(--a4-space-2) + 1px);
+  }
+}
+@media (hover: hover) and (pointer: fine) {
+  .brand:hover + .a4-env-hover,
+  .brand:focus-visible + .a4-env-hover,
+  .a4-login-logo:hover + .a4-env-hover,
+  .a4-login-logo:focus-visible + .a4-env-hover,
+  .a4-env-hover:hover {
+    clip-path: none;
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .brand:hover + .a4-env-hover,
+  .brand:focus-visible + .a4-env-hover,
+  .a4-login-logo:hover + .a4-env-hover,
+  .a4-login-logo:focus-visible + .a4-env-hover { animation: a4-env-in .12s ease-out; }
+}
+@keyframes a4-env-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 /* Up to 767px: the short code in words, no dot, so the environment is never told by its color alone (phones too:
    the logo is the mark alone there, which leaves the room) */
 @media screen and (max-width: 767.98px) {
-  #header .a4-env { max-width: 4rem; padding: 0 var(--a4-space-2); }
-  #header .a4-env-dot { display: none; }
-  #header .a4-env-short { display: block; overflow: hidden; text-overflow: ellipsis; }
-  #header .a4-env-name,
-  #header .a4-env-release {
+  #header .a4-env-always { max-width: 4rem; padding: 0 var(--a4-space-2); }
+  #header .a4-env-always .a4-env-dot { display: none; }
+  #header .a4-env-always .a4-env-short { display: block; overflow: hidden; text-overflow: ellipsis; }
+  #header .a4-env-always .a4-env-name,
+  #header .a4-env-always .a4-env-release {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -429,25 +496,26 @@ body,
     clip: rect(0 0 0 0);
     border: 0;
   }
-  #header:has(.a4-env) { --a4-env-room: calc(4rem + var(--a4-space-2) - 122px); }   /* the code, less the 122px the logo gives up below */
+  #header:has(.a4-env-always) { --a4-env-room: calc(4rem + var(--a4-space-2) - 122px); }   /* the code, less the 122px the logo gives up below */
 }
 /* 576 to 767px with a badge: the logo is the mark alone, as on phones (36px instead of 158px), so the search field
    keeps its width beside the short code */
 @media screen and (min-width: 576px) and (max-width: 767.98px) {
-  #header:has(.a4-env) #header-logo .a4-logo-full { display: none; }
-  #header:has(.a4-env) #header-logo .a4-logo-mark { display: block; }
-  #header:has(.a4-env) #header-logo .brand { justify-content: center; min-width: 36px; height: 36px; }
+  #header:has(.a4-env-always) #header-logo .a4-logo-full { display: none; }
+  #header:has(.a4-env-always) #header-logo .a4-logo-mark { display: block; }
+  #header:has(.a4-env-always) #header-logo .brand { justify-content: center; min-width: 36px; height: 36px; }
 }
 @media screen and (min-width: 768px) and (max-width: 1279.98px) {
-  #header:has(.a4-env) { --a4-env-room: calc(13rem + var(--a4-space-2)); }
+  #header:has(.a4-env-always) { --a4-env-room: calc(13rem + var(--a4-space-2)); }
 }
 @media screen and (min-width: 1280px) {
-  #header .a4-env { max-width: 18rem; }   /* the main menu gives the room, its last tabs going into "More" */
+  #header .a4-env-always { max-width: 18rem; }   /* the main menu gives the room, its last tabs going into "More" */
 }
 @media screen and (min-width: 576px) and (max-width: 1279.98px) {
-  #header:has(.a4-env) .searchblock input.searchtext { width: clamp(5.5rem, calc(100vw - 454px - var(--a4-env-room)), 230px); }
+  #header:has(.a4-env-always) .searchblock input.searchtext { width: clamp(5.5rem, calc(100vw - 454px - var(--a4-env-room)), 230px); }
 }
-/* the sign-in page: the name beside the logo at every width (it has the room), no release (nobody is signed in) */
+/* the sign-in page: the name beside the logo at every width (it has the room), no release (nobody is signed in);
+   with hover, as in the header */
 .a4-login-top {
   display: flex;
   flex-wrap: wrap;

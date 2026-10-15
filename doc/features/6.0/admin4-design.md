@@ -136,16 +136,24 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
   preference that cannot be saved (a network error, an error status, the login page of an expired session), keep it
   in the browser; the preference wins over the browser's copy. Without JavaScript the box keeps the browser's own
   resize grip. The top node's view has the same control. `tests/tests/design/AdminNodeTabsHeightTest.php` checks it.
-- **Environment badge.** Off by default. With `site.ini [AdminEnvironment] Level` set, the header shows the
-  environment's name beside the logo, in the level's color: development green, test amber, staging violet,
+- **Environment badge.** Off by default. With `site.ini [AdminEnvironment] Level` set, the header names the
+  environment at the logo, in the level's color: development green, test amber, staging violet,
   production red, each with a darker or lighter edge for the dark mode (`--a4-env-<level>`, `-ink`, `-line` in
   `admin4.css`; text 4.5:1 on the fill, the edge 3:1 on the header). The page title starts with the name in capitals,
   "[PRODUCTION] Dashboard - Site", so windows and tabs can be told apart; the sign-in page shows the badge and the
-  prefix too. The badge is text, not only color: from 768 px the name (and, for signed-in users, `Release` and with
+  prefix too. By default (`BadgeDisplay=hover`) the badge takes no room and shows nothing until a mouse or trackpad
+  pointer rests on the logo, or the logo has the keyboard focus: then the name (and, for signed-in users, the release)
+  appears as a small label beside the logo (576 to 1279 px and on the sign-in page) or under it (from 1280 px, where
+  the main menu follows the logo, and below 576 px), out of the flow, so nothing moves. Only for a fine pointer that
+  can hover (`@media (hover: hover) and (pointer: fine)`): touch screens show nothing, not even on a tap. The pointer
+  can move onto the label without losing it (there is no Escape key to dismiss it: it goes as soon as the pointer or the
+  focus leaves the logo); it fades in over 120 ms, at once with reduced motion. Screen readers
+  keep it: the label is clipped, not removed, and the logo link names it in `aria-describedby` ("Environment:
+  Production"). With `BadgeDisplay=always` the badge stays beside the logo. The badge is text, not only color: from 768 px the name (and, for signed-in users, `Release` and with
   `ShowVersion=enabled` the Exponential version), up to 767 px, phones included, the short code (`ShortName`, default DEV,
   TEST, STAGE, PROD; the full logo gives way to the mark alone from 576 to 767 px too), the name always read out by
   screen readers; the title attribute holds the whole text. It is 24 px high in the 36 px row of the header tools,
-  so the header keeps 56, 88 and 56 px; up to 1279 px the search field gives it its room,
+  so the header keeps 56, 88 and 56 px; with `always` up to 1279 px the search field gives it its room,
   from 1280 px the main menu does (its last tabs go into "More"). In forced colors it is drawn in the system colors
   with its text. The same in admin4l (the logo block). See [Settings](#settings).
   `tests/tests/design/AdminEnvironmentBadgeTest.php` checks it.
@@ -881,6 +889,8 @@ Community". A template can also set `$show_community_links`.
 - `[AdminEnvironment]`: the environment badge (see "Environment badge" above). `Level` is `development`, `test`,
   `staging` or `production`, or `auto` for the level of `EXP_ENV` (`dev`, `development`; `test`; `stage`, `staging`;
   `prod`, `production`, `live`; another name or none: no badge). An empty `Name` takes the level's translated name.
+  `BadgeDisplay` is `hover` (the default: shown only while a fine pointer rests on the logo or the logo has the
+  keyboard focus) or `always`; the title prefix (`ShowInTitle`) does not depend on it.
   Set it per environment, for example in `settings/override/site.ini.prod.append.php`
   ([Settings per environment](environment-settings.md)); the setting is read on every request. The header's and the
   sign-in page's cache-blocks are keyed by the badge, so a changed setting shows on the next request without clearing
