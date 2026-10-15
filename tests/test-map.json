@@ -111,12 +111,15 @@
       "tests/tests/design/AdminLanguageBadgeTest.php"
     ],
     "share/icons/bootstrap-icons/*": [
-      "tests/tests/design/AdminIconsTest.php"
+      "tests/tests/design/AdminIconsTest.php",
+      "tests/tests/design/AdminSetupOverviewTest.php"
     ],
     "settings/design.ini": [
       "tests/tests/design/AdminStylingRulesTest.php",
       "tests/tests/design/AdminBaseStylesheetsTest.php",
-      "tests/tests/design/AdminScriptsTest.php"
+      "tests/tests/design/AdminScriptsTest.php",
+      "tests/tests/design/AdminSetupOverviewTest.php",
+      "tests/tests/design/AdminLeftMenuGroupsTest.php"
     ],
     "design/admin4/javascript/ezadmin_menubar.js": [
       "tests/tests/design/AdminStylingRulesTest.php",
@@ -270,7 +273,8 @@
       "tests/tests/design/AdminIconsTest.php"
     ],
     "settings/menu.ini": [
-      "tests/tests/design/AdminMenuPolicyListTest.php"
+      "tests/tests/design/AdminMenuPolicyListTest.php",
+      "tests/tests/design/AdminSetupOverviewTest.php"
     ],
     "kernel/*/module.php": [
       "tests/tests/design/AdminMenuPolicyListTest.php"
@@ -337,6 +341,13 @@
     ],
     "design/admin4/stylesheets/editor_content.css": [
       "tests/tests/design/AdminContentEditFormsTest.php"
+    ],
+    "design/admin4/templates/parts/ini_menu*.tpl": [
+      "tests/tests/design/AdminLeftMenuGroupsTest.php",
+      "tests/tests/design/AdminSetupOverviewTest.php"
+    ],
+    "design/admin*/stylesheets/components.css": [
+      "tests/tests/design/AdminSetupOverviewTest.php"
     ]
   },
   "generated": {

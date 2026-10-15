@@ -114,7 +114,7 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
   window height; they are named after their column ("Left column", "Right column"), say with `aria-expanded` whether
   it shows, and on a narrow window Escape closes a column open over the page and returns the focus to its tab. Long names in the side columns wrap instead of being cut off.
 - **Left menu.** The left column is the "Side menu" navigation. A long menu shows in groups: Setup in Content model,
-  Site and URLs, Workflows, Users and messages, System, and "More" for links an extension adds. Each group has a small
+  Site and URLs, Workflows, Users and messages, System, AI, Updates, and "More" last for links in no group. Each group has a small
   capital title with a caret and opens and closes (the eZPreference `admin_navgroups` keeps the choice; the group of the current page always
   opens). The current page's link carries `aria-current="page"` and is marked with the accent tint and a bar. A menu
   is grouped through menu.ini (`Groups[]`, `GroupNames[<group>]`, `GroupLinks_<group>[]`); without `Groups[]`, or with
@@ -162,14 +162,22 @@ no file, a changed file, and a GIF icon, inline SVG or image button in an admin4
 ## Setup overview
 
 The Setup tab opens `setup/menu`: a page header and every function of the Setup menu as a tile, in the groups of the
-left menu (Content model, Site and URLs, Workflows, Users and messages, System, and "More" for links an extension adds).
+left menu (Content model, Site and URLs, Workflows, Users and messages, System, AI, Updates, and "More" last for links
+in no group).
 
 - **One source.** The tiles are the left menu, drawn another way: `setup/setupmenu.tpl` includes
   `parts/setup/menu.tpl`, which hands `[Leftmenu_setup]` of `menu.ini` to `parts/ini_menu.tpl` with
   `menu_layout='tiles'`. The links, their names, their groups and the access checks (`PolicyList_<link>[]`,
   `CheckViewAccess`, `NoAccessLinks`) are the menu's: a function the user may not open has no tile, and an
-  extension's link appears under "More" by adding it to `[Leftmenu_setup] Links[]`, as for the menu. The order inside
-  a group is that of `Links[]`.
+  extension's link appears by adding it to `[Leftmenu_setup] Links[]`, as for the menu: in the group that names it in
+  `GroupLinks_<group>[]`, else under "More". The order inside a group is that of `Links[]`.
+- **Groups for extensions.** "AI" and "Updates" hold the Setup links of the se7enx extensions, already named in core
+  `menu.ini`, so they do not land under "More" where an unsorted entry looks out of place: `expai` (`expai_summary`,
+  `expai_models`, `expai_budgets`) under AI; `ezupdate` (`ezupdate`) and `git_manager` (`git_manager`,
+  `git_manager_backup`) under Updates. The job queue (`expqueue`, also shipped with `expai`) and the database editor of
+  `sevenx_dse` (`dse`) are System tools and sit under System. A key whose extension is not active has no link and shows
+  nothing; a group with no link the user may open is not drawn, so without these extensions the page looks as before.
+  "More" stays the last group, for links that name no group yet.
 - **A tile** is a card (`.a4-card`) with a Bootstrap icon in an accent square, the
   function's name as its link, stretched over the card with one focus ring around it, and one line on what the
   function does as the link's description. Icon, description and figure come from the menu's own section in
@@ -211,6 +219,10 @@ left menu (Content model, Site and URLs, Workflows, Users and messages, System, 
 | roles_and_policies | `person-lock` | templates | `file-earmark-code` |
 | template_editor | `code-square` | toolbar_management | `tools` |
 | look_and_feel | `palette` | global_setting | `globe` |
+| expai_summary | `stars` | ezupdate | `cloud-arrow-down` |
+| expai_models | `cpu` | git_manager | `git` |
+| expai_budgets | `piggy-bank` | git_manager_backup | `archive` |
+| expqueue | `list-task` | dse | `database` |
 | (an extension's link) | `plug` | | |
 
 ### Extending it
@@ -240,7 +252,19 @@ LinkFigureTemplates[myreports]=design:myreports/setup_figure.tpl
 */ ?>
 ```
 
-The link shows under "More" in the menu and on the overview (or in a group, with `GroupLinks_<group>[]=myreports`).
+The link shows under "More" in the menu and on the overview until it names a group. An extension sorts its link into
+a group of the menu with one more line in the same section, so that "More" is only the catch-all for links without a
+category:
+
+```ini
+# one of: ai (assistants, models, their costs), updates (packages, updates, backups) or any other group of Groups[]
+GroupLinks_ai[]=myreports
+```
+
+A group lists the keys of several extensions; each one adds its own line, and a key whose extension is missing shows
+nothing. A link named in two groups shows in the first only. A new group goes into `Groups[]` with a name in
+`GroupNames[<group>]` (translated in the menu's context); it is drawn after the groups before it, and only when it
+holds a link the user may open.
 The figure template draws one short `<span class="a4-setup-tile-figure">`, asks only what its tile's function may
 show, and stays cheap: it runs on every view of the overview. The description is translated when the extension's
 translation file has the string in the menu's context.
@@ -388,7 +412,7 @@ tree's roles, states, Tab stop and keys.
 | `settings/menu.ini` | `MenuAccessSettings` | `NoAccessLinks` | `hidden` | siteaccess |
 | `settings/menu.ini` | `TopAdminMenu` | `HiddenTabs[]` | empty | siteaccess |
 | `settings/menu.ini` | `Topmenu_<tab>` | `Name`, `Tooltip`, `TranslationContext` | the default tab names, context `design/admin/pagelayout` | siteaccess |
-| `settings/menu.ini` | `Leftmenu_<menu>` | `Groups[]`, `GroupNames[<group>]`, `GroupLinks_<group>[]` | the five groups of `Leftmenu_setup` | siteaccess |
+| `settings/menu.ini` | `Leftmenu_<menu>` | `Groups[]`, `GroupNames[<group>]`, `GroupLinks_<group>[]` | the seven groups of `Leftmenu_setup` (AI and Updates for extensions' links) | siteaccess |
 | `settings/menu.ini` | `Leftmenu_<menu>` | `LeadLinks[]` | `overview` in `Leftmenu_setup` | siteaccess |
 | `settings/menu.ini` | `Leftmenu_<menu>` | `LinkIcons[<link>]`, `LinkDescriptions[<link>]`, `LinkFigureTemplates[<link>]` | the core Setup links | siteaccess |
 | `settings/design.ini` | `AdminDesignSettings` | `IconList[]` | every `.a4-bi-*` icon of `components.css` | siteaccess |

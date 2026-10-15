@@ -13241,8 +13241,48 @@ Note: The packages will not be uninstalled.</translation>
         <translation>System</translation>
     </message>
     <message>
+        <source>AI</source>
+        <translation>AI</translation>
+    </message>
+    <message>
+        <source>Updates</source>
+        <translation>Updates</translation>
+    </message>
+    <message>
         <source>More</source>
         <translation>More</translation>
+    </message>
+    <message>
+        <source>What the AI features send where, on one printable page.</source>
+        <translation>What the AI features send where, on one printable page.</translation>
+    </message>
+    <message>
+        <source>The AI providers and models, and their tests.</source>
+        <translation>The AI providers and models, and their tests.</translation>
+    </message>
+    <message>
+        <source>AI budgets, queued requests and what they cost.</source>
+        <translation>AI budgets, queued requests and what they cost.</translation>
+    </message>
+    <message>
+        <source>Background jobs: waiting, running and failed.</source>
+        <translation>Background jobs: waiting, running and failed.</translation>
+    </message>
+    <message>
+        <source>Browse and query the database directly.</source>
+        <translation>Browse and query the database directly.</translation>
+    </message>
+    <message>
+        <source>Packages with a newer release, and their updates.</source>
+        <translation>Packages with a newer release, and their updates.</translation>
+    </message>
+    <message>
+        <source>The Git checkout of the installation and its updates.</source>
+        <translation>The Git checkout of the installation and its updates.</translation>
+    </message>
+    <message>
+        <source>Make, download and remove backups.</source>
+        <translation>Make, download and remove backups.</translation>
     </message>
 </context>
 <context>
