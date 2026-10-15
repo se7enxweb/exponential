@@ -16,14 +16,17 @@
   "map": {
     "kernel/contentcheck/*": [
       "tests/tests/kernel/contentcheck/expContentCheckQueryTest.php",
-      "tests/tests/kernel/contentcheck/expContentCheckSandboxTest.php"
+      "tests/tests/kernel/contentcheck/expContentCheckSandboxTest.php",
+      "tests/tests/kernel/contentcheck/expContentCheckReferencesTest.php"
     ],
     "kernel/private/classes/views/contentcheck/*": [
       "tests/tests/kernel/contentcheck/expContentCheckQueryTest.php",
-      "tests/tests/kernel/contentcheck/expContentCheckSandboxTest.php"
+      "tests/tests/kernel/contentcheck/expContentCheckSandboxTest.php",
+      "tests/tests/kernel/contentcheck/expContentCheckReferencesTest.php"
     ],
     "settings/contentcheck.ini": [
-      "tests/tests/kernel/contentcheck/expContentCheckSandboxTest.php"
+      "tests/tests/kernel/contentcheck/expContentCheckSandboxTest.php",
+      "tests/tests/kernel/contentcheck/expContentCheckReferencesTest.php"
     ],
     "design/admin*/templates/contentcheck/*": [
       "tests/tests/design/AdminSelfContainedTest.php",
@@ -613,6 +616,23 @@
     ],
     "lib/eztemplate/classes/eztemplateexecuteoperator.php": [
       "tests/tests/lib/eztemplate/eZTemplateFetchOperatorTest.php"
+    ],
+    "kernel/classes/contentcheck/*": [
+      "tests/tests/kernel/contentcheck/expContentCheckQueryTest.php",
+      "tests/tests/kernel/contentcheck/expContentCheckReferencesTest.php",
+      "tests/tests/kernel/contentcheck/expContentCheckSandboxTest.php"
+    ],
+    "kernel/private/classes/commands/contentcheck.php": [
+      "tests/tests/kernel/contentcheck/expContentCheckReferencesTest.php"
+    ],
+    "kernel/private/classes/cronjobs/contentcheck.php": [
+      "tests/tests/kernel/contentcheck/expContentCheckReferencesTest.php"
+    ],
+    "bin/php/contentcheck.php": [
+      "tests/tests/kernel/contentcheck/expContentCheckReferencesTest.php"
+    ],
+    "cronjobs/contentcheck.php": [
+      "tests/tests/kernel/contentcheck/expContentCheckReferencesTest.php"
     ]
   },
   "generated": {

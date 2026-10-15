@@ -19,6 +19,16 @@
                         'embed-inline', 'Inline embed'|i18n( 'kernel/contentcheck' ),
                         'relation', 'Object relation'|i18n( 'kernel/contentcheck' ),
                         'attribute', 'Relation field'|i18n( 'kernel/contentcheck' ) )
+     $hint_names = hash( 'remove', 'Remove the reference from the field, or choose another target.'|i18n( 'kernel/contentcheck' ),
+                         'restore', 'Restore the target from the trash, or remove the reference.'|i18n( 'kernel/contentcheck' ),
+                         'reveal', 'Reveal the target, or remove the reference.'|i18n( 'kernel/contentcheck' ),
+                         'publish', 'Publish the target, or remove the reference.'|i18n( 'kernel/contentcheck' ),
+                         'locate', 'Give the target a location, or remove the reference.'|i18n( 'kernel/contentcheck' ),
+                         'ask', 'Ask someone who may read the target to check it.'|i18n( 'kernel/contentcheck' ) )
+     $where_names = hash( 'item', 'Collection item'|i18n( 'kernel/contentcheck' ),
+                          'query', 'Dynamic collection'|i18n( 'kernel/contentcheck' ),
+                          'parameter', 'Block parameter'|i18n( 'kernel/contentcheck' ),
+                          'rule', 'Rule target'|i18n( 'kernel/contentcheck' ) )
      $node = $result.node
      $findings = $result.findings
      $separator = cond( $filter_suffix|eq( '?' ), '', '&' )}
@@ -31,7 +41,7 @@
 
 <div class="box-bc"><div class="box-ml"><div class="box-content">
 
-<p class="a4-intro">{'Visible, published content that refers to something a visitor cannot reach: an object or node that was deleted, is in the trash, is hidden or was never published. Checked are the object relations and relation fields of the published version and the links and embeds in its rich text. Nothing is changed here; open a source to edit it.'|i18n( 'kernel/contentcheck' )}</p>
+<p class="a4-intro">{'Visible, published content that refers to something a visitor cannot reach: an object or node that was deleted, is in the trash, is hidden or was never published. Checked are the object relations and relation fields of the published version (also their data, where no relation was recorded) and the links and embeds in its rich text, and on the first page the blocks, collections and rules of the layouts. Each finding says what to do. Nothing is changed here; open a source to edit it.'|i18n( 'kernel/contentcheck' )}</p>
 
 {if eq( $result.error, 'database' )}
 <div class="a4-notice is-warn" role="alert">{'This check is not available on this database.'|i18n( 'kernel/contentcheck' )}</div>
@@ -101,7 +111,8 @@
         <div class="a4-meta">{$via_names[$finding.via]|wash}</div></td>
     <td>{if eq( $finding.kind, 'unavailable' )}{'Target not available'|i18n( 'kernel/contentcheck' )}{elseif eq( $finding.target_type, 'node' )}{'Node %id'|i18n( 'kernel/contentcheck',, hash( '%id', $finding.target_id ) )}{else}{'Object %id'|i18n( 'kernel/contentcheck',, hash( '%id', $finding.target_id ) )}{/if}
         {if $finding.target_name|ne( '' )}<div class="a4-meta">{$finding.target_name|wash}</div>{/if}</td>
-    <td><span class="a4-tag {$kind_classes[$finding.kind]}">{$kind_names[$finding.kind]|wash}</span></td>
+    <td><span class="a4-tag {$kind_classes[$finding.kind]}">{$kind_names[$finding.kind]|wash}</span>
+        <div class="a4-meta">{$hint_names[$finding.hint]|wash}</div></td>
     <td>{if $finding.can_edit}<a class="a4-btn a4-btn-small" href={concat( '/content/edit/', $finding.source_id )|ezurl}>{'Edit'|i18n( 'kernel/contentcheck' )}</a>{/if}</td>
 </tr>
 {/foreach}
@@ -128,6 +139,40 @@
 </div>
 </section>
 
+{if $result.layouts|count|gt( 0 )}
+<section class="a4-section" aria-labelledby="cc-layouts-title">
+<div class="a4-section-head">
+    <h2 class="a4-h2" id="cc-layouts-title">{'Layouts (%count)'|i18n( 'kernel/contentcheck',, hash( '%count', $result.layouts|count ) )}</h2>
+    <span class="a4-meta">{'Blocks, collections and rules of every layout that name content a visitor cannot reach. Fix them in the layout editor.'|i18n( 'kernel/contentcheck' )}</span>
+</div>
+<div class="a4-table-wrap">
+<table class="a4-table">
+<thead>
+<tr>
+    <th scope="col">{'Layout'|i18n( 'kernel/contentcheck' )}</th>
+    <th scope="col">{'Where'|i18n( 'kernel/contentcheck' )}</th>
+    <th scope="col">{'Target'|i18n( 'kernel/contentcheck' )}</th>
+    <th scope="col">{'State'|i18n( 'kernel/contentcheck' )}</th>
+</tr>
+</thead>
+<tbody>
+{foreach $result.layouts as $finding}
+<tr>
+    <td>{if $finding.layout_name|ne( '' )}{$finding.layout_name|wash}{else}&ndash;{/if}
+        <div class="a4-meta">{'Layout %id'|i18n( 'kernel/contentcheck',, hash( '%id', $finding.layout_id ) )}</div></td>
+    <td>{$where_names[$finding.where]|wash}
+        <div class="a4-meta">{if $finding.block_id|gt( 0 )}{'Block %id'|i18n( 'kernel/contentcheck',, hash( '%id', $finding.block_id ) )}{else}{'Rule %id'|i18n( 'kernel/contentcheck',, hash( '%id', $finding.rule_id ) )}{/if} &middot; {$finding.detail|wash}</div></td>
+    <td>{if eq( $finding.target_type, 'object' )}{'Object %id'|i18n( 'kernel/contentcheck',, hash( '%id', $finding.target_id ) )}{elseif eq( $finding.target_type, 'remote' )}{'Remote id %id'|i18n( 'kernel/contentcheck',, hash( '%id', $finding.target_id ) )|wash}{else}{'Node %id'|i18n( 'kernel/contentcheck',, hash( '%id', $finding.target_id ) )}{/if}</td>
+    <td><span class="a4-tag {$kind_classes[$finding.kind]}">{$kind_names[$finding.kind]|wash}</span>
+        <div class="a4-meta">{if eq( $finding.where, 'rule' )}{'Change or remove the rule target.'|i18n( 'kernel/contentcheck' )}{else}{$hint_names[$finding.hint]|wash}{/if}</div></td>
+</tr>
+{/foreach}
+</tbody>
+</table>
+</div>
+</section>
+{/if}
+
 </div></div></div>
 </div>
-{undef $kind_names $kind_classes $relation_names $via_names $node $findings $separator}
+{undef $kind_names $kind_classes $relation_names $via_names $hint_names $where_names $node $findings $separator}

@@ -24,7 +24,7 @@
 
 <div class="box-bc"><div class="box-ml"><div class="box-content">
 
-<p class="a4-intro">{'Published objects below “%node” that no other object refers to: no object relation, no relation field and no link or embed in rich text, from a published version or a current draft. References from objects in the trash and from old versions do not count. An object is listed where its main location is.'|i18n( 'kernel/contentcheck',, hash( '%node', $node.name ) )|wash}</p>
+<p class="a4-intro">{'Images, files and media below “%node” that nothing uses. An asset counts as used when another object relates to it, links to it or embeds it (by id or by path), when a layout block, collection or rule, a setting, a template, a role, a bookmark, a notification, the shop or the newsletter names it, when a dynamic collection lists it, or when it is stored below content that shows it (a gallery, an article). Only assets in plain folders can be listed. Pages, folders, users and other content are reached through the tree and are never listed. Templates that compute an id cannot be checked: see the documentation.'|i18n( 'kernel/contentcheck',, hash( '%node', $node.name ) )|wash}</p>
 
 {if $feedback}
     {if $feedback.done}
@@ -38,6 +38,18 @@
 
 {if eq( $result.error, 'database' )}
 <div class="a4-notice is-warn" role="alert">{'This check is not available on this database.'|i18n( 'kernel/contentcheck' )}</div>
+{elseif eq( $result.error, 'no_index' )}
+<div class="a4-notice is-warn" role="alert">{'The reference index has not been built yet. Run bin/php/contentcheck.php --build-index or the cronjob part contentcheck.'|i18n( 'kernel/contentcheck' )}</div>
+{elseif eq( $result.error, 'incomplete' )}
+<div class="a4-notice is-warn" role="alert">{'Some places that can use content could not be read, so nothing is listed. The debug output names them.'|i18n( 'kernel/contentcheck' )}</div>
+{elseif eq( $result.error, 'too_many' )}
+<div class="a4-notice is-warn" role="alert">{'There are too many assets below this node to check at once. Choose a smaller subtree or fewer classes.'|i18n( 'kernel/contentcheck' )}</div>
+{/if}
+{if is_set( $result.index.stale )}{if $result.index.stale}
+<div class="a4-notice is-warn" role="status">{'The reference index is from %time and may be out of date. Nothing can be moved to the trash until it is built again.'|i18n( 'kernel/contentcheck',, hash( '%time', $result.index.built|l10n( 'shortdatetime' ) ) )}</div>
+{/if}{/if}
+{if $result.without_location|gt( 0 )}
+<p class="a4-meta">{'%count published objects have no location at all. They are not listed here; nothing can reach them.'|i18n( 'kernel/contentcheck',, hash( '%count', $result.without_location ) )}</p>
 {/if}
 
 <section aria-labelledby="cc-filter-title">
@@ -50,7 +62,7 @@
             <option value="{$option.id}"{if $params.class_ids|contains( $option.id )} selected="selected"{/if}>{$option.name|wash}</option>
         {/foreach}
         </select>
-        <span class="a4-help" id="cc-class-help">{'None chosen: every class. Hold Ctrl or Cmd to choose several, for example Image and File.'|i18n( 'kernel/contentcheck' )}</span>
+        <span class="a4-help" id="cc-class-help">{'None chosen: every asset class. Hold Ctrl or Cmd to choose several, for example Image and File.'|i18n( 'kernel/contentcheck' )}</span>
     </div>
     <div class="a4-field">
         <label for="cc-sort">{'Order by'|i18n( 'kernel/contentcheck' )}</label>
@@ -89,7 +101,7 @@
 </div>
 
 {if $rows|count|eq( 0 )}
-<p class="a4-empty">{'No unreferenced object below this node matches the filter.'|i18n( 'kernel/contentcheck' )}</p>
+<p class="a4-empty">{'No unused asset below this node matches the filter.'|i18n( 'kernel/contentcheck' )}</p>
 {else}
 <div class="a4-table-wrap">
 <table class="a4-table">

@@ -65295,10 +65295,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Broken relations</translation>
     </message>
     <message>
-        <source>Visible, published content that refers to something a visitor cannot reach: an object or node that was deleted, is in the trash, is hidden or was never published. Checked are the object relations and relation fields of the published version and the links and embeds in its rich text. Nothing is changed here; open a source to edit it.</source>
-        <translation>Visible, published content that refers to something a visitor cannot reach: an object or node that was deleted, is in the trash, is hidden or was never published. Checked are the object relations and relation fields of the published version and the links and embeds in its rich text. Nothing is changed here; open a source to edit it.</translation>
-    </message>
-    <message>
         <source>This check is not available on this database.</source>
         <translation>This check is not available on this database.</translation>
     </message>
@@ -65475,10 +65471,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>It is not published.</translation>
     </message>
     <message>
-        <source>Another object refers to it now.</source>
-        <translation>Another object refers to it now.</translation>
-    </message>
-    <message>
         <source>You may not remove it, or one of its locations.</source>
         <translation>You may not remove it, or one of its locations.</translation>
     </message>
@@ -65527,10 +65519,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Unreferenced objects (%count)</translation>
     </message>
     <message>
-        <source>Published objects below “%node” that no other object refers to: no object relation, no relation field and no link or embed in rich text, from a published version or a current draft. References from objects in the trash and from old versions do not count. An object is listed where its main location is.</source>
-        <translation>Published objects below “%node” that no other object refers to: no object relation, no relation field and no link or embed in rich text, from a published version or a current draft. References from objects in the trash and from old versions do not count. An object is listed where its main location is.</translation>
-    </message>
-    <message>
         <source>%count objects were moved to the trash. They can be restored from the trash.</source>
         <translation>%count objects were moved to the trash. They can be restored from the trash.</translation>
     </message>
@@ -65549,10 +65537,6 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Classes</source>
         <translation>Classes</translation>
-    </message>
-    <message>
-        <source>None chosen: every class. Hold Ctrl or Cmd to choose several, for example Image and File.</source>
-        <translation>None chosen: every class. Hold Ctrl or Cmd to choose several, for example Image and File.</translation>
     </message>
     <message>
         <source>Order by</source>
@@ -65585,10 +65569,6 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>%from to %to of %count</source>
         <translation>%from to %to of %count</translation>
-    </message>
-    <message>
-        <source>No unreferenced object below this node matches the filter.</source>
-        <translation>No unreferenced object below this node matches the filter.</translation>
     </message>
     <message>
         <source>Select</source>
@@ -65633,6 +65613,122 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Target not available</source>
         <translation>Target not available</translation>
+    </message>
+    <message>
+        <source>Images, files and media below “%node” that nothing uses. An asset counts as used when another object relates to it, links to it or embeds it (by id or by path), when a layout block, collection or rule, a setting, a template, a role, a bookmark, a notification, the shop or the newsletter names it, when a dynamic collection lists it, or when it is stored below content that shows it (a gallery, an article). Only assets in plain folders can be listed. Pages, folders, users and other content are reached through the tree and are never listed. Templates that compute an id cannot be checked: see the documentation.</source>
+        <translation>Images, files and media below “%node” that nothing uses. An asset counts as used when another object relates to it, links to it or embeds it (by id or by path), when a layout block, collection or rule, a setting, a template, a role, a bookmark, a notification, the shop or the newsletter names it, when a dynamic collection lists it, or when it is stored below content that shows it (a gallery, an article). Only assets in plain folders can be listed. Pages, folders, users and other content are reached through the tree and are never listed. Templates that compute an id cannot be checked: see the documentation.</translation>
+    </message>
+    <message>
+        <source>Visible, published content that refers to something a visitor cannot reach: an object or node that was deleted, is in the trash, is hidden or was never published. Checked are the object relations and relation fields of the published version (also their data, where no relation was recorded) and the links and embeds in its rich text, and on the first page the blocks, collections and rules of the layouts. Each finding says what to do. Nothing is changed here; open a source to edit it.</source>
+        <translation>Visible, published content that refers to something a visitor cannot reach: an object or node that was deleted, is in the trash, is hidden or was never published. Checked are the object relations and relation fields of the published version (also their data, where no relation was recorded) and the links and embeds in its rich text, and on the first page the blocks, collections and rules of the layouts. Each finding says what to do. Nothing is changed here; open a source to edit it.</translation>
+    </message>
+    <message>
+        <source>Something uses it now.</source>
+        <translation>Something uses it now.</translation>
+    </message>
+    <message>
+        <source>None chosen: every asset class. Hold Ctrl or Cmd to choose several, for example Image and File.</source>
+        <translation>None chosen: every asset class. Hold Ctrl or Cmd to choose several, for example Image and File.</translation>
+    </message>
+    <message>
+        <source>No unused asset below this node matches the filter.</source>
+        <translation>No unused asset below this node matches the filter.</translation>
+    </message>
+    <message>
+        <source>The reference index has not been built yet. Run bin/php/contentcheck.php --build-index or the cronjob part contentcheck.</source>
+        <translation>The reference index has not been built yet. Run bin/php/contentcheck.php --build-index or the cronjob part contentcheck.</translation>
+    </message>
+    <message>
+        <source>Some places that can use content could not be read, so nothing is listed. The debug output names them.</source>
+        <translation>Some places that can use content could not be read, so nothing is listed. The debug output names them.</translation>
+    </message>
+    <message>
+        <source>There are too many assets below this node to check at once. Choose a smaller subtree or fewer classes.</source>
+        <translation>There are too many assets below this node to check at once. Choose a smaller subtree or fewer classes.</translation>
+    </message>
+    <message>
+        <source>The reference index is from %time and may be out of date. Nothing can be moved to the trash until it is built again.</source>
+        <translation>The reference index is from %time and may be out of date. Nothing can be moved to the trash until it is built again.</translation>
+    </message>
+    <message>
+        <source>%count published objects have no location at all. They are not listed here; nothing can reach them.</source>
+        <translation>%count published objects have no location at all. They are not listed here; nothing can reach them.</translation>
+    </message>
+    <message>
+        <source>Remove the reference from the field, or choose another target.</source>
+        <translation>Remove the reference from the field, or choose another target.</translation>
+    </message>
+    <message>
+        <source>Restore the target from the trash, or remove the reference.</source>
+        <translation>Restore the target from the trash, or remove the reference.</translation>
+    </message>
+    <message>
+        <source>Reveal the target, or remove the reference.</source>
+        <translation>Reveal the target, or remove the reference.</translation>
+    </message>
+    <message>
+        <source>Publish the target, or remove the reference.</source>
+        <translation>Publish the target, or remove the reference.</translation>
+    </message>
+    <message>
+        <source>Give the target a location, or remove the reference.</source>
+        <translation>Give the target a location, or remove the reference.</translation>
+    </message>
+    <message>
+        <source>Ask someone who may read the target to check it.</source>
+        <translation>Ask someone who may read the target to check it.</translation>
+    </message>
+    <message>
+        <source>Collection item</source>
+        <translation>Collection item</translation>
+    </message>
+    <message>
+        <source>Dynamic collection</source>
+        <translation>Dynamic collection</translation>
+    </message>
+    <message>
+        <source>Block parameter</source>
+        <translation>Block parameter</translation>
+    </message>
+    <message>
+        <source>Rule target</source>
+        <translation>Rule target</translation>
+    </message>
+    <message>
+        <source>Layouts (%count)</source>
+        <translation>Layouts (%count)</translation>
+    </message>
+    <message>
+        <source>Blocks, collections and rules of every layout that name content a visitor cannot reach. Fix them in the layout editor.</source>
+        <translation>Blocks, collections and rules of every layout that name content a visitor cannot reach. Fix them in the layout editor.</translation>
+    </message>
+    <message>
+        <source>Layout</source>
+        <translation>Layout</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Where</translation>
+    </message>
+    <message>
+        <source>Layout %id</source>
+        <translation>Layout %id</translation>
+    </message>
+    <message>
+        <source>Block %id</source>
+        <translation>Block %id</translation>
+    </message>
+    <message>
+        <source>Rule %id</source>
+        <translation>Rule %id</translation>
+    </message>
+    <message>
+        <source>Remote id %id</source>
+        <translation>Remote id %id</translation>
+    </message>
+    <message>
+        <source>Change or remove the rule target.</source>
+        <translation>Change or remove the rule target.</translation>
     </message>
 </context>
 <context>

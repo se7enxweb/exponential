@@ -9,7 +9,8 @@
  * the objects can be restored from the trash.
  *
  * An object is moved only when, at the time of the confirmation and again when it is done:
- *   - it is published and nothing refers to it (expContentCheckUnreferenced::unreferencedAmong());
+ *   - it is a published asset and nothing uses it, judged against a reference index built at that moment
+ *     (expContentCheckUnreferenced::unreferencedAmong(), expContentCheckReferences);
  *   - the user may read it and remove every one of its locations (content/read, content/remove);
  *   - none of its locations has sub-items (the action is for single objects; a container is removed the usual way);
  *   - the class allows the trash, it has no pending version and no content job holds it.
@@ -190,6 +191,9 @@ class expContentCheckTrash
                 $outcome['failed'][] = $item['object_id'];
         }
         $outcome['done'] = count( $outcome['moved'] ) > 0;
+        // what refers to what changed: the next list builds the reference index again
+        if ( $outcome['moved'] )
+            expContentCheckReferences::clearCache();
         return $outcome;
     }
 

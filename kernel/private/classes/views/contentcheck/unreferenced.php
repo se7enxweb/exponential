@@ -54,7 +54,14 @@ class Unreferenced extends \Exponential\Runnable\ModuleView
         if ( $result['error'] === 'not_found' )
             return $module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' );
 
-        $classNames = \expContentCheckUnreferenced::classNames();
+        // only the asset classes can be listed, so only they are offered as a filter
+        $classNames = array();
+        foreach ( \expContentCheckUnreferenced::assetClasses() as $identifier )
+        {
+            $class = \eZContentClass::fetchByIdentifier( $identifier );
+            if ( $class instanceof \eZContentClass )
+                $classNames[(int)$class->attribute( 'id' )] = (string)$class->attribute( 'name' );
+        }
         asort( $classNames, SORT_NATURAL | SORT_FLAG_CASE );
         $classOptions = array();
         foreach ( $classNames as $id => $name )

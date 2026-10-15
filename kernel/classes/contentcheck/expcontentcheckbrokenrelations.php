@@ -13,6 +13,12 @@
  *   - the links and embeds in its XML fields (XmlDatatypes[], ezxmltext by default): object_id="..." and
  *     node_id="..." of <link>, <embed> and <embed-inline>. These still name an object or node after it has been
  *     deleted, when its relation rows are gone with it.
+ *   - the data of its relation fields (ezobjectrelation, ezobjectrelationlist, ngenhancedlink), which name a target
+ *     also where no relation row was written (an import; an enhanced link never writes one).
+ * With the first page, for a user who may read all content: the layouts (layoutFindings()), whose manual
+ * collection items, dynamic collection parents, block links and rule targets name a node or object.
+ * Each finding carries a hint (hint()): remove the reference, restore, reveal or publish the target, or give it a
+ * location.
  * A target is reported as deleted (no object or node with the id), in the trash, hidden (every location hidden or
  * invisible), unpublished (a draft that was never published) or without location. For a user whose content/read is
  * limited, every target the user may not read (no readable location) is reported as unavailable, whatever its state,
@@ -191,7 +197,7 @@ class expContentCheckBrokenRelations
      */
     public static function scan( array $params )
     {
-        $result = array( 'node' => null, 'excluded' => array(), 'findings' => array(), 'checked' => 0,
+        $result = array( 'node' => null, 'excluded' => array(), 'findings' => array(), 'layouts' => array(), 'checked' => 0,
                          'last' => (int)$params['after'], 'done' => true, 'error' => '' );
         if ( !expContentCheck::isSupportedDatabase() )
             return array_merge( $result, array( 'error' => 'database' ) );
@@ -268,6 +274,9 @@ class expContentCheckBrokenRelations
             expContentCheck::dropPermission( $read );
         }
         $result['findings'] = self::describeSources( $result['findings'] );
+        // the layouts are global and not content: with the first page, for a user who may read all content
+        if ( (int)$params['after'] === 0 && empty( $read['limited'] ) )
+            $result['layouts'] = self::layoutFindings( $params['kinds'] );
         return $result;
     }
 
@@ -339,8 +348,41 @@ class expContentCheckBrokenRelations
                                            'target_type' => $reference['type'], 'target_id' => $reference['id'], 'from_table' => false );
             }
         }
+        if ( in_array( 'object', $params['relations'], true ) )
+        {
+            // relation fields by their data: a relation list or an enhanced link names its target there, also when
+            // no relation row was written (an import, an enhanced link never writes one)
+            $attributes = $db->arrayQuery( 'SELECT ezcontentobject_attribute.contentobject_id AS source_id,' .
+                                           ' ezcontentobject_attribute.contentclassattribute_id AS attribute_id,' .
+                                           ' ezcontentobject_attribute.language_code AS language, ezcontentobject_attribute.data_type_string AS datatype,' .
+                                           ' ezcontentobject_attribute.data_int AS data_int, ezcontentobject_attribute.data_text AS data_text' .
+                                           ' FROM ezcontentobject_attribute, ezcontentobject' .
+                                           ' WHERE ezcontentobject_attribute.contentobject_id IN ( ' . $in . ' )' .
+                                           ' AND ezcontentobject.id = ezcontentobject_attribute.contentobject_id' .
+                                           ' AND ezcontentobject_attribute.version = ezcontentobject.current_version' .
+                                           " AND ezcontentobject_attribute.data_type_string IN ( 'ezobjectrelation', 'ezobjectrelationlist', 'ngenhancedlink' )" );
+            foreach ( is_array( $attributes ) ? $attributes : array() as $attribute )
+            {
+                foreach ( self::attributeTargets( (string)$attribute['datatype'], (int)$attribute['data_int'], (string)$attribute['data_text'] ) as $target )
+                    $references[] = array( 'source_id' => (int)$attribute['source_id'], 'attribute_id' => (int)$attribute['attribute_id'],
+                                           'language' => (string)$attribute['language'], 'relation' => 'object', 'via' => 'attribute',
+                                           'target_type' => $target['type'], 'target_id' => $target['id'], 'from_table' => false );
+            }
+        }
         if ( !$references )
             return array();
+
+        // an enhanced link's id may name an object or a node: it is judged as whichever exists
+        foreach ( $references as $i => $reference )
+        {
+            if ( $reference['target_type'] !== 'either' )
+                continue;
+            $exists = $db->arrayQuery( 'SELECT id FROM ezcontentobject WHERE id = ' . (int)$reference['target_id'] );
+            if ( !$exists && $db->arrayQuery( 'SELECT node_id FROM ezcontentobject_tree WHERE node_id = ' . (int)$reference['target_id'] ) )
+                $references[$i]['target_type'] = 'node';
+            else
+                $references[$i]['target_type'] = 'object';
+        }
 
         // the state of every target, in three queries
         $objectIDs = array();
@@ -501,9 +543,187 @@ class expContentCheckBrokenRelations
                 $finding['target_name'] = '';
             }
             $finding['can_edit'] = !empty( $canEdit[$finding['source_id']] );
+            $finding['hint'] = self::hint( $finding['kind'] );
             $described[] = $finding;
         }
         return $described;
+    }
+
+    /**
+     * The targets a relation field names by its data (no database access).
+     *
+     * @param string $datatype ezobjectrelation, ezobjectrelationlist or ngenhancedlink
+     * @param int $dataInt
+     * @param string $dataText
+     * @return array list of array( 'type' => object|either, 'id' => int ); either: an id that may be an object or a node
+     */
+    public static function attributeTargets( $datatype, $dataInt, $dataText )
+    {
+        $targets = array();
+        if ( $datatype === 'ezobjectrelation' && (int)$dataInt > 0 )
+            $targets[] = array( 'type' => 'object', 'id' => (int)$dataInt );
+        else if ( $datatype === 'ezobjectrelationlist' && preg_match_all( '/\bcontentobject-id="([0-9]{1,10})"/', (string)$dataText, $m ) )
+        {
+            foreach ( array_unique( $m[1] ) as $id )
+                $targets[] = array( 'type' => 'object', 'id' => (int)$id );
+        }
+        else if ( $datatype === 'ngenhancedlink' )
+        {
+            $data = json_decode( (string)$dataText, true );
+            if ( is_array( $data ) && ( !isset( $data['type'] ) || $data['type'] === 'internal' ) && isset( $data['id'] ) && (int)$data['id'] > 0 )
+                $targets[] = array( 'type' => 'either', 'id' => (int)$data['id'] );
+        }
+        return $targets;
+    }
+
+    /**
+     * What to do about a finding: a key the page turns into a sentence.
+     *
+     * @param string $kind
+     * @return string remove | restore | reveal | publish | locate | ask
+     */
+    public static function hint( $kind )
+    {
+        $hints = array( 'deleted' => 'remove', 'trash' => 'restore', 'hidden' => 'reveal', 'unpublished' => 'publish',
+                        'no_location' => 'locate', 'unavailable' => 'ask' );
+        return isset( $hints[$kind] ) ? $hints[$kind] : 'remove';
+    }
+
+    /**
+     * The layouts that point at a node or object a visitor cannot reach: manual collection items (value_id of a
+     * location item is a node id), the parent node of a dynamic collection, links in block parameters
+     * (exp-remote-location://, ezlocation://) and rule targets by node or subtree. Only for a user who may read
+     * all content (layouts are not content and have no read condition); the page shows them with the first page.
+     *
+     * @param string[] $kinds the kinds asked for
+     * @return array list of array( 'layout_id', 'layout_name', 'where' => item|query|parameter|rule, 'where_id', 'detail',
+     *               'target_type' => object|node|remote, 'target_id' (int or remote id), 'kind', 'hint' )
+     */
+    public static function layoutFindings( array $kinds )
+    {
+        if ( !expContentCheckReferences::tableExists( 'explayouts_block' ) || !expContentCheckReferences::tableExists( 'explayouts_layout' ) )
+            return array();
+        $db = eZDB::instance();
+        $layouts = array();
+        foreach ( (array)$db->arrayQuery( 'SELECT id, name, status FROM explayouts_layout' ) as $row )
+            $layouts[(int)$row['id']] = (string)$row['name'];
+        $blockLayout = array();
+        foreach ( (array)$db->arrayQuery( 'SELECT id, layout_id FROM explayouts_block' ) as $row )
+            $blockLayout[(int)$row['id']] = (int)$row['layout_id'];
+
+        // what the layouts refer to: array( layout, where, where id, detail, type, id )
+        $refs = array();
+        if ( expContentCheckReferences::tableExists( 'explayouts_collection_item' ) )
+        {
+            foreach ( (array)$db->arrayQuery( 'SELECT i.id AS id, i.value_id AS value_id, i.value_type AS value_type, c.block_id AS block_id' .
+                                              ' FROM explayouts_collection_item i, explayouts_collection c WHERE c.id = i.collection_id' ) as $row )
+            {
+                $type = strpos( strtolower( (string)$row['value_type'] ), 'content' ) !== false ? 'object' : 'node';
+                if ( preg_match( '/^[0-9]{1,10}$/', trim( (string)$row['value_id'] ) ) )
+                    $refs[] = array( (int)$row['block_id'], 'item', (int)$row['id'], (string)$row['value_type'], $type, (int)$row['value_id'] );
+            }
+        }
+        if ( expContentCheckReferences::tableExists( 'explayouts_collection_query' ) )
+        {
+            foreach ( (array)$db->arrayQuery( 'SELECT q.id AS id, q.parameters AS parameters, c.block_id AS block_id' .
+                                              ' FROM explayouts_collection_query q, explayouts_collection c WHERE c.id = q.collection_id' ) as $row )
+            {
+                $params = json_decode( (string)$row['parameters'], true );
+                if ( !is_array( $params ) || !empty( $params['use_current_location'] ) || empty( $params['parent_location_id'] ) )
+                    continue;
+                $raw = (int)$params['parent_location_id'];
+                $mapped = expContentCheckReferences::remapNode( $raw );
+                $refs[] = array( (int)$row['block_id'], 'query', (int)$row['id'], 'parent_location_id', 'node', $mapped ? $mapped : $raw );
+            }
+        }
+        if ( expContentCheckReferences::tableExists( 'explayouts_block_parameter' ) )
+        {
+            foreach ( (array)$db->arrayQuery( "SELECT id, block_id, name, value FROM explayouts_block_parameter WHERE value LIKE '%://%'" ) as $row )
+            {
+                $value = (string)$row['value'];
+                $decoded = json_decode( $value, true );
+                $links = array();
+                if ( is_array( $decoded ) )
+                    array_walk_recursive( $decoded, function ( $item ) use ( &$links ) { if ( is_string( $item ) ) $links[] = $item; } );
+                else
+                    $links[] = $value;
+                foreach ( $links as $link )
+                {
+                    $link = trim( $link );
+                    if ( preg_match( '#^exp-remote-location://(\S+)$#i', $link, $m ) )
+                        $refs[] = array( (int)$row['block_id'], 'parameter', (int)$row['id'], (string)$row['name'], 'remote', $m[1] );
+                    else if ( preg_match( '#^ezlocation://([0-9]{1,10})$#i', $link, $m ) )
+                        $refs[] = array( (int)$row['block_id'], 'parameter', (int)$row['id'], (string)$row['name'], 'node', (int)$m[1] );
+                    else if ( preg_match( '#^ibexa-?location://([0-9]{1,10})$#i', $link, $m ) )
+                        $refs[] = array( (int)$row['block_id'], 'parameter', (int)$row['id'], (string)$row['name'], 'node', expContentCheckReferences::remapNode( (int)$m[1] ) ?: (int)$m[1] );
+                    else if ( preg_match( '#^(?:ezcontent|ezobject)://([0-9]{1,10})$#i', $link, $m ) )
+                        $refs[] = array( (int)$row['block_id'], 'parameter', (int)$row['id'], (string)$row['name'], 'object', (int)$m[1] );
+                }
+            }
+        }
+        $ruleLayout = array();
+        if ( expContentCheckReferences::tableExists( 'explayouts_rule_target' ) && expContentCheckReferences::tableExists( 'explayouts_rule' ) )
+        {
+            foreach ( (array)$db->arrayQuery( 'SELECT id, layout_id FROM explayouts_rule' ) as $row )
+                $ruleLayout[(int)$row['id']] = (int)$row['layout_id'];
+            foreach ( (array)$db->arrayQuery( "SELECT id, rule_id, target_type, target_value FROM explayouts_rule_target WHERE target_type IN ( 'node', 'subtree', 'location' )" ) as $row )
+            {
+                if ( preg_match( '/^[0-9]{1,10}$/', trim( (string)$row['target_value'] ) ) )
+                    $refs[] = array( -(int)$row['rule_id'], 'rule', (int)$row['id'], (string)$row['target_type'], 'node', (int)$row['target_value'] );
+            }
+        }
+
+        $findings = array();
+        foreach ( $refs as $ref )
+        {
+            list( $owner, $where, $whereID, $detail, $type, $id ) = $ref;
+            $kind = self::layoutTargetState( $type, $id );
+            if ( $kind === null || !in_array( $kind, $kinds, true ) )
+                continue;
+            $layoutID = $owner < 0 ? ( isset( $ruleLayout[-$owner] ) ? $ruleLayout[-$owner] : 0 ) : ( isset( $blockLayout[$owner] ) ? $blockLayout[$owner] : 0 );
+            $key = $layoutID . '|' . $where . '|' . $whereID . '|' . $type . '|' . $id;
+            $findings[$key] = array( 'layout_id' => $layoutID, 'layout_name' => isset( $layouts[$layoutID] ) ? $layouts[$layoutID] : '',
+                                     'where' => $where, 'where_id' => $whereID, 'block_id' => $owner > 0 ? $owner : 0,
+                                     'rule_id' => $owner < 0 ? -$owner : 0, 'detail' => $detail,
+                                     'target_type' => $type, 'target_id' => $id, 'kind' => $kind, 'hint' => self::hint( $kind ) );
+        }
+        usort( $findings, function ( $a, $b ) {
+            return array( $a['layout_id'], $a['where'], $a['where_id'] ) <=> array( $b['layout_id'], $b['where'], $b['where_id'] );
+        } );
+        return array_values( $findings );
+    }
+
+    /**
+     * The state of a node, object or remote id a layout names.
+     *
+     * @param string $type node|object|remote
+     * @param int|string $id
+     * @return string|null a kind, or null when it is fine
+     */
+    protected static function layoutTargetState( $type, $id )
+    {
+        $db = eZDB::instance();
+        if ( $type === 'remote' )
+        {
+            $rows = $db->arrayQuery( "SELECT node_id FROM ezcontentobject_tree WHERE remote_id = '" . $db->escapeString( (string)$id ) . "'" );
+            if ( !$rows )
+                return 'deleted';
+            $type = 'node';
+            $id = (int)$rows[0]['node_id'];
+        }
+        if ( $type === 'object' )
+        {
+            $object = $db->arrayQuery( 'SELECT status FROM ezcontentobject WHERE id = ' . (int)$id );
+            $visibility = $db->arrayQuery( 'SELECT COUNT(*) AS locations, SUM( CASE WHEN is_hidden = 0 AND is_invisible = 0 THEN 1 ELSE 0 END ) AS visible' .
+                                           ' FROM ezcontentobject_tree WHERE contentobject_id = ' . (int)$id );
+            return self::objectState( $object ? array( 'status' => (int)$object[0]['status'] ) : null,
+                                      $visibility && (int)$visibility[0]['locations'] > 0 ? $visibility[0] : null );
+        }
+        if ( (int)$id <= 0 )
+            return 'deleted';
+        $node = $db->arrayQuery( 'SELECT is_hidden, is_invisible FROM ezcontentobject_tree WHERE node_id = ' . (int)$id );
+        $trash = $node ? array() : $db->arrayQuery( 'SELECT node_id FROM ezcontentobject_trash WHERE node_id = ' . (int)$id );
+        return self::nodeState( $node ? $node[0] : null, (bool)$trash );
     }
 
     /**

@@ -89,6 +89,13 @@ class expContentCheckSandboxTest extends PHPUnit\Framework\TestCase
         if ( self::$skip !== null )
             $this->markTestSkipped( self::$skip );
         expContentCheck::setTestSecret( 'cc-test-secret' );
+        // the fixtures are articles and folders below folders: they are the assets here, and the reference index
+        // is built for every list, since the tests add and remove references between lists
+        $ini = eZINI::instance( expContentCheck::INI_FILE );
+        $ini->setVariable( 'UnreferencedSettings', 'AssetClassList', array( 'article', 'folder', 'image', 'file' ) );
+        $ini->setVariable( 'UnreferencedSettings', 'StorageParentClassList', array( 'folder' ) );
+        $ini->setVariable( 'UnreferencedSettings', 'IndexTTL', '0' );
+        $ini->setVariable( 'UnreferencedSettings', 'BuildOnRequest', 'true' );
         self::signIn( 'admin' );
     }
 

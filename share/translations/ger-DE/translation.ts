@@ -62057,10 +62057,6 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Ungültige Relationen</translation>
     </message>
     <message>
-        <source>Visible, published content that refers to something a visitor cannot reach: an object or node that was deleted, is in the trash, is hidden or was never published. Checked are the object relations and relation fields of the published version and the links and embeds in its rich text. Nothing is changed here; open a source to edit it.</source>
-        <translation>Sichtbare, veröffentlichte Inhalte, die auf etwas verweisen, das Besucher nicht erreichen: ein Objekt oder Knoten, der gelöscht wurde, im Papierkorb liegt, versteckt ist oder nie veröffentlicht wurde. Geprüft werden die Objektbeziehungen und Beziehungsfelder der veröffentlichten Version und die Links und Einbettungen in ihrem Rich Text. Hier wird nichts geändert; öffnen Sie eine Quelle, um sie zu bearbeiten.</translation>
-    </message>
-    <message>
         <source>This check is not available on this database.</source>
         <translation>Diese Prüfung ist auf dieser Datenbank nicht verfügbar.</translation>
     </message>
@@ -62237,10 +62233,6 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Es ist nicht veröffentlicht.</translation>
     </message>
     <message>
-        <source>Another object refers to it now.</source>
-        <translation>Inzwischen verweist ein anderes Objekt darauf.</translation>
-    </message>
-    <message>
         <source>You may not remove it, or one of its locations.</source>
         <translation>Sie dürfen es oder einen seiner Orte nicht entfernen.</translation>
     </message>
@@ -62289,10 +62281,6 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Nicht verknüpfte Objekte (%count)</translation>
     </message>
     <message>
-        <source>Published objects below “%node” that no other object refers to: no object relation, no relation field and no link or embed in rich text, from a published version or a current draft. References from objects in the trash and from old versions do not count. An object is listed where its main location is.</source>
-        <translation>Veröffentlichte Objekte unterhalb von „%node“, auf die kein anderes Objekt verweist: keine Objektbeziehung, kein Beziehungsfeld und kein Link und keine Einbettung im Rich Text, aus einer veröffentlichten Version oder einem aktuellen Entwurf. Verweise aus Objekten im Papierkorb und aus alten Versionen zählen nicht. Ein Objekt steht dort, wo sein Hauptort ist.</translation>
-    </message>
-    <message>
         <source>%count objects were moved to the trash. They can be restored from the trash.</source>
         <translation>%count Objekte wurden in den Papierkorb verschoben. Sie lassen sich aus dem Papierkorb wiederherstellen.</translation>
     </message>
@@ -62311,10 +62299,6 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Classes</source>
         <translation>Klassen</translation>
-    </message>
-    <message>
-        <source>None chosen: every class. Hold Ctrl or Cmd to choose several, for example Image and File.</source>
-        <translation>Keine gewählt: alle Klassen. Mit gedrückter Strg- oder Cmd-Taste mehrere wählen, etwa Bild und Datei.</translation>
     </message>
     <message>
         <source>Order by</source>
@@ -62347,10 +62331,6 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>%from to %to of %count</source>
         <translation>%from bis %to von %count</translation>
-    </message>
-    <message>
-        <source>No unreferenced object below this node matches the filter.</source>
-        <translation>Unterhalb dieses Knotens passt kein nicht verknüpftes Objekt zum Filter.</translation>
     </message>
     <message>
         <source>Select</source>
@@ -62395,6 +62375,122 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Target not available</source>
         <translation>Ziel nicht verfügbar</translation>
+    </message>
+    <message>
+        <source>Images, files and media below “%node” that nothing uses. An asset counts as used when another object relates to it, links to it or embeds it (by id or by path), when a layout block, collection or rule, a setting, a template, a role, a bookmark, a notification, the shop or the newsletter names it, when a dynamic collection lists it, or when it is stored below content that shows it (a gallery, an article). Only assets in plain folders can be listed. Pages, folders, users and other content are reached through the tree and are never listed. Templates that compute an id cannot be checked: see the documentation.</source>
+        <translation>Bilder, Dateien und Medien unterhalb von „%node“, die nichts verwendet. Ein Asset gilt als verwendet, wenn ein anderes Objekt eine Beziehung zu ihm hat, darauf verlinkt oder es einbettet (über die ID oder den Pfad), wenn ein Layout-Block, eine Sammlung oder eine Regel, eine Einstellung, ein Template, eine Rolle, ein Lesezeichen, eine Benachrichtigung, der Shop oder der Newsletter es nennt, wenn eine dynamische Sammlung es auflistet oder wenn es unterhalb von Inhalt liegt, der es anzeigt (eine Galerie, ein Artikel). Nur Assets in einfachen Ordnern können aufgelistet werden. Seiten, Ordner, Benutzer und andere Inhalte werden über den Baum erreicht und nie aufgelistet. Templates, die eine ID berechnen, können nicht geprüft werden: siehe die Dokumentation.</translation>
+    </message>
+    <message>
+        <source>Visible, published content that refers to something a visitor cannot reach: an object or node that was deleted, is in the trash, is hidden or was never published. Checked are the object relations and relation fields of the published version (also their data, where no relation was recorded) and the links and embeds in its rich text, and on the first page the blocks, collections and rules of the layouts. Each finding says what to do. Nothing is changed here; open a source to edit it.</source>
+        <translation>Sichtbare, veröffentlichte Inhalte, die auf etwas verweisen, das ein Besucher nicht erreichen kann: ein Objekt oder Knoten, der gelöscht wurde, im Papierkorb liegt, versteckt ist oder nie veröffentlicht wurde. Geprüft werden die Objektbeziehungen und Beziehungsfelder der veröffentlichten Version (auch deren Daten, wo keine Beziehung erfasst wurde) und die Links und Einbettungen im Rich Text, auf der ersten Seite außerdem die Blöcke, Sammlungen und Regeln der Layouts. Zu jedem Fund steht, was zu tun ist. Hier wird nichts geändert; öffnen Sie eine Quelle, um sie zu bearbeiten.</translation>
+    </message>
+    <message>
+        <source>Something uses it now.</source>
+        <translation>Es wird inzwischen verwendet.</translation>
+    </message>
+    <message>
+        <source>None chosen: every asset class. Hold Ctrl or Cmd to choose several, for example Image and File.</source>
+        <translation>Keine gewählt: jede Asset-Klasse. Halten Sie Strg oder Cmd gedrückt, um mehrere zu wählen, zum Beispiel Bild und Datei.</translation>
+    </message>
+    <message>
+        <source>No unused asset below this node matches the filter.</source>
+        <translation>Kein unbenutztes Asset unterhalb dieses Knotens entspricht dem Filter.</translation>
+    </message>
+    <message>
+        <source>The reference index has not been built yet. Run bin/php/contentcheck.php --build-index or the cronjob part contentcheck.</source>
+        <translation>Der Verweisindex wurde noch nicht erstellt. Führen Sie bin/php/contentcheck.php --build-index oder den Cronjob-Teil contentcheck aus.</translation>
+    </message>
+    <message>
+        <source>Some places that can use content could not be read, so nothing is listed. The debug output names them.</source>
+        <translation>Einige Stellen, die Inhalte verwenden können, konnten nicht gelesen werden, daher wird nichts aufgelistet. Die Debug-Ausgabe nennt sie.</translation>
+    </message>
+    <message>
+        <source>There are too many assets below this node to check at once. Choose a smaller subtree or fewer classes.</source>
+        <translation>Unterhalb dieses Knotens liegen zu viele Assets, um sie auf einmal zu prüfen. Wählen Sie einen kleineren Teilbaum oder weniger Klassen.</translation>
+    </message>
+    <message>
+        <source>The reference index is from %time and may be out of date. Nothing can be moved to the trash until it is built again.</source>
+        <translation>Der Verweisindex stammt vom %time und ist möglicherweise veraltet. Bis er neu erstellt ist, kann nichts in den Papierkorb verschoben werden.</translation>
+    </message>
+    <message>
+        <source>%count published objects have no location at all. They are not listed here; nothing can reach them.</source>
+        <translation>%count veröffentlichte Objekte haben überhaupt keinen Ort. Sie werden hier nicht aufgelistet; nichts kann sie erreichen.</translation>
+    </message>
+    <message>
+        <source>Remove the reference from the field, or choose another target.</source>
+        <translation>Entfernen Sie den Verweis aus dem Feld oder wählen Sie ein anderes Ziel.</translation>
+    </message>
+    <message>
+        <source>Restore the target from the trash, or remove the reference.</source>
+        <translation>Stellen Sie das Ziel aus dem Papierkorb wieder her oder entfernen Sie den Verweis.</translation>
+    </message>
+    <message>
+        <source>Reveal the target, or remove the reference.</source>
+        <translation>Machen Sie das Ziel sichtbar oder entfernen Sie den Verweis.</translation>
+    </message>
+    <message>
+        <source>Publish the target, or remove the reference.</source>
+        <translation>Veröffentlichen Sie das Ziel oder entfernen Sie den Verweis.</translation>
+    </message>
+    <message>
+        <source>Give the target a location, or remove the reference.</source>
+        <translation>Geben Sie dem Ziel einen Ort oder entfernen Sie den Verweis.</translation>
+    </message>
+    <message>
+        <source>Ask someone who may read the target to check it.</source>
+        <translation>Bitten Sie jemanden, der das Ziel lesen darf, es zu prüfen.</translation>
+    </message>
+    <message>
+        <source>Collection item</source>
+        <translation>Sammlungseintrag</translation>
+    </message>
+    <message>
+        <source>Dynamic collection</source>
+        <translation>Dynamische Sammlung</translation>
+    </message>
+    <message>
+        <source>Block parameter</source>
+        <translation>Block-Parameter</translation>
+    </message>
+    <message>
+        <source>Rule target</source>
+        <translation>Regelziel</translation>
+    </message>
+    <message>
+        <source>Layouts (%count)</source>
+        <translation>Layouts (%count)</translation>
+    </message>
+    <message>
+        <source>Blocks, collections and rules of every layout that name content a visitor cannot reach. Fix them in the layout editor.</source>
+        <translation>Blöcke, Sammlungen und Regeln aller Layouts, die Inhalte nennen, die ein Besucher nicht erreichen kann. Beheben Sie sie im Layout-Editor.</translation>
+    </message>
+    <message>
+        <source>Layout</source>
+        <translation>Layout</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Wo</translation>
+    </message>
+    <message>
+        <source>Layout %id</source>
+        <translation>Layout %id</translation>
+    </message>
+    <message>
+        <source>Block %id</source>
+        <translation>Block %id</translation>
+    </message>
+    <message>
+        <source>Rule %id</source>
+        <translation>Regel %id</translation>
+    </message>
+    <message>
+        <source>Remote id %id</source>
+        <translation>Remote-ID %id</translation>
+    </message>
+    <message>
+        <source>Change or remove the rule target.</source>
+        <translation>Ändern oder entfernen Sie das Regelziel.</translation>
     </message>
 </context>
 <context>
