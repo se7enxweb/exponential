@@ -1626,6 +1626,7 @@ a.a4-icon-btn, a.a4-icon-btn:visited { color: var(--a4-muted); }
 .a4-bi-arrow-bar-down { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-bar-down.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-bar-down.svg); }
 .a4-bi-arrow-bar-up { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-bar-up.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-bar-up.svg); }
 .a4-bi-arrow-clockwise { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-clockwise.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-clockwise.svg); }
+.a4-bi-arrow-counterclockwise { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-counterclockwise.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-counterclockwise.svg); }
 .a4-bi-arrow-down { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-down.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-down.svg); }
 .a4-bi-arrow-down-right { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-down-right.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-down-right.svg); }
 .a4-bi-arrow-up { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-up.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-up.svg); }

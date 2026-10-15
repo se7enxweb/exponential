@@ -59,7 +59,8 @@
     ],
     "design/admin4/templates/page_head_style.tpl": [
       "tests/tests/design/AdminBaseStylesheetsTest.php",
-      "tests/tests/design/AdminPreferencesTest.php"
+      "tests/tests/design/AdminPreferencesTest.php",
+      "tests/tests/design/AdminNodeTabsHeightTest.php"
     ],
     "design/admin3/templates/page_head_style.tpl": [
       "tests/tests/design/AdminBaseStylesheetsTest.php"
@@ -207,7 +208,8 @@
       "tests/tests/kernel/content/eZAdminFullViewCopyButtonTest.php"
     ],
     "design/admin4/templates/node/view/a4_full_body.tpl": [
-      "tests/tests/kernel/content/eZAdminFullViewCopyButtonTest.php"
+      "tests/tests/kernel/content/eZAdminFullViewCopyButtonTest.php",
+      "tests/tests/design/AdminNodeTabsHeightTest.php"
     ],
     "design/standard/templates/content/datatype/view/ezselection.tpl": [
       "tests/tests/kernel/datatypes/eZSelectionMatrixViewTemplateTest.php"
@@ -280,7 +282,8 @@
       "tests/tests/design/AdminPreferencesTest.php",
       "tests/tests/design/AdminEditBarTest.php",
       "tests/tests/design/AdminContentEditFormsTest.php",
-      "tests/tests/design/AdminEditorSkinTest.php"
+      "tests/tests/design/AdminEditorSkinTest.php",
+      "tests/tests/design/AdminNodeTabsHeightTest.php"
     ],
     "extension/ezjscore/design/standard/javascript/*": [
       "tests/tests/extension/ezjscore/ezjscoreVendoredLibrariesTest.php"
@@ -292,7 +295,8 @@
       "tests/tests/extension/ezjscore/ezjscoreVendoredLibrariesTest.php"
     ],
     "design/admin4/templates/parts/a4_preference_attributes.tpl": [
-      "tests/tests/design/AdminPreferencesTest.php"
+      "tests/tests/design/AdminPreferencesTest.php",
+      "tests/tests/design/AdminNodeTabsHeightTest.php"
     ],
     "design/admin*/templates/pagelayout.tpl": [
       "tests/tests/design/AdminPreferencesTest.php"
@@ -350,7 +354,8 @@
       "tests/tests/design/AdminEditBarTest.php",
       "tests/tests/design/AdminLegacyControlsTest.php",
       "tests/tests/design/AdminHeaderTest.php",
-      "tests/tests/design/AdminPhoneMenuTest.php"
+      "tests/tests/design/AdminPhoneMenuTest.php",
+      "tests/tests/design/AdminNodeTabsHeightTest.php"
     ],
     "extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe_tinymce8.tpl": [
       "tests/tests/design/AdminEditBarTest.php"
@@ -443,6 +448,12 @@
     ],
     "kernel/classes/ezsearch.php": [
       "tests/tests/kernel/content/eZPendingIndexActionsTest.php"
+    ],
+    "design/admin4/templates/parts/a4_tabs_height.tpl": [
+      "tests/tests/design/AdminNodeTabsHeightTest.php"
+    ],
+    "design/admin4/templates/node/top_node_full.tpl": [
+      "tests/tests/design/AdminNodeTabsHeightTest.php"
     ]
   },
   "generated": {

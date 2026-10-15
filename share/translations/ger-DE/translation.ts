@@ -10414,6 +10414,18 @@
 <context>
     <name>design/admin/node/view/full</name>
     <message>
+        <source>Default size</source>
+        <translation>Standardgröße</translation>
+    </message>
+    <message>
+        <source>Height of the tab panel</source>
+        <translation>Höhe des Reiterbereichs</translation>
+    </message>
+    <message>
+        <source>Drag, or use the arrow keys, to change the height; double-click for the default size</source>
+        <translation>Ziehen oder mit den Pfeiltasten die Höhe ändern; Doppelklick für die Standardgröße</translation>
+    </message>
+    <message>
         <source>Could not copy</source>
         <translation>Kopieren nicht möglich</translation>
     </message>

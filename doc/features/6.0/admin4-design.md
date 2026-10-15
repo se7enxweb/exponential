@@ -64,12 +64,14 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
   height (32 px), list cells as `.a4-table` cells (8/12 px), a 24 px gutter between the frame's cards. The compact
   view of October 2026 and its header switch are gone; a stored choice does nothing.
 - **Remembered choices.** The color mode, the side columns on a wide window and the closed groups of
-  the left menus are the signed-in user's eZPreferences (`admin_color_mode`,
-  `admin_left_sidebar`, `admin_right_sidebar`, `admin_navgroups`), like the column width. One helper,
+  the left menus and the height of the node view's tab box are the signed-in user's eZPreferences
+  (`admin_color_mode`, `admin_left_sidebar`, `admin_right_sidebar`, `admin_navgroups`,
+  `admin_node_preview_height`), like the column width. One helper,
   `window.a4Pref` (the first script of `page_head_style.tpl`), reads them from `<html>`
   (`design:parts/a4_preference_attributes.tpl`, `data-a4-pref-*`) and saves them through
   `user/preferences/set_and_exit`. An anonymous page keeps them in the browser (`localStorage`) only; a browser
-  choice made before is taken along once. `tests/tests/design/AdminPreferencesTest.php` checks it.
+  choice made before is taken along once. A preference that cannot be saved is kept in the browser instead, and
+  `set( name, '' )` forgets a choice (the preference set empty, the browser's copy removed). `tests/tests/design/AdminPreferencesTest.php` checks it.
 - **Header and top menu.** One row of 56 px from 1280 px (logo, menu, search, site, light/dark, user menu, logout),
   two rows of 48 + 40 px from 576 px, one row of 56 px on a phone with the hamburger menu (logo, site, light/dark,
   user menu, logout, menu button). The menu stays on one line; tabs that do not fit go into a "More" list. "Open the
@@ -99,6 +101,20 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
   published, version, section, node, object and remote ids (click to copy) and the translations (click to switch).
   The tabs form a segmented row. Tabs and sub-items start about 300 px below the card's top instead of 500. On phones
   the actions wrap onto two short lines inside the card.
+- **Height of the node view's tab box.** The box of the tabs (View, Details, ...) keeps the height the user gives
+  it, one height for every node: the grip at its bottom right edge is dragged with the mouse, a finger or a pen, or
+  moved with the keyboard (it is a focusable separator: Arrow Up and Down 16 px, Shift+Arrow, Page Up and Page Down
+  64 px, Home and End the smallest and largest height, the steps of the left column's and the debug panel's grips). The height is held between 10em and 60em (half and three
+  times the default 20em) and at most 85% of the window, so a height saved on a large screen fits a small one; a
+  phone (below 576 px) always shows the default, and the box with the tabs switched off keeps its own size. A button
+  beside the grip, "Default size", shows only while the height is not the default; it, and a double-click on the
+  grip as on the other grips, go back to the default and forget the height instead of storing the default, so a later change of the default reaches the user. The height
+  is the eZPreference `admin_node_preview_height` (pixels), saved once at the end of a drag or 400 ms after the last
+  key and only when it changed; it is written on `<html>` outside every cache-block (the node view itself is view
+  cached and carries no value of the user's) and applied before the page is drawn. An anonymous page, and a
+  preference that cannot be saved (a network error, an error status, the login page of an expired session), keep it
+  in the browser; the preference wins over the browser's copy. Without JavaScript the box keeps the browser's own
+  resize grip. The top node's view has the same control. `tests/tests/design/AdminNodeTabsHeightTest.php` checks it.
 - **Edit form.** The button bars (Send for publishing, Store draft, Store draft and exit, Discard draft) stay in view
   while the form scrolls (CSS `position: sticky`, replacing the YUI script that stopped working). They are slim
   (42 px on a desktop) and fit a phone screen. Edit pages show one left column, not two. Required fields carry a red
