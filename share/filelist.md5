@@ -313,7 +313,7 @@ ce90ff045aa9ad5f6b74ebb4adb49d1f  design/admin/stylesheets/content.css
 3467a1c4602619c56bfc506613bebb91  design/admin/stylesheets/ezinfo.css
 57deccdcaebe5a1272e553415532dfb9  design/admin/stylesheets/modules/content.css
 b7b4bcd7be755643e4eb5982c06ef632  design/admin/stylesheets/modules/people.css
-21fc4e093a32d9541703fd669057fee5  design/admin/stylesheets/modules/setup.css
+aaf0dcd4b4afe2b47964aa6da0cc32e0  design/admin/stylesheets/modules/setup.css
 b0231b396cffa044c9683baca515f64a  design/admin/stylesheets/modules/structure.css
 34ba523d9ad9d1eca2730c3f8443432c  design/admin/stylesheets/modules/workflow.css
 6c50ca081feaacea35d0ba88f81f92a0  design/admin/stylesheets/packagecompare.css
@@ -604,7 +604,7 @@ dcdfd28ff236916b7773ca84b5d3172e  design/admin/templates/settings/exp_origin.tpl
 19c62afa174fad3a41db2b69698eec2d  design/admin/templates/settings/view.tpl
 017371a2ce85ecc09681cca0c55ed63c  design/admin/templates/setup/cache.tpl
 fe18732ea4fb6a55915d651691c697e6  design/admin/templates/setup/contentextension.tpl
-228faf0c413f768317ea65c892920a52  design/admin/templates/setup/cronjobs.tpl
+e07a7a57a357fd4489cb3cef43000242  design/admin/templates/setup/cronjobs.tpl
 ed52e10a5f47b691c8e15ae490adb105  design/admin/templates/setup/datatype.tpl
 161a4466280769f50dfb372278524759  design/admin/templates/setup/datatype_basic.tpl
 dcb722bfda3d71da901504f9da33f0f5  design/admin/templates/setup/datatype_code.tpl
@@ -889,7 +889,7 @@ ca3e3029b338c785a7e5ecb16da43d2f  design/admin4/stylesheets/editor_content.css
 024901334b90c0e08bf8b8fe9197604e  design/admin4/stylesheets/ezinfo.css
 57deccdcaebe5a1272e553415532dfb9  design/admin4/stylesheets/modules/content.css
 b7b4bcd7be755643e4eb5982c06ef632  design/admin4/stylesheets/modules/people.css
-21fc4e093a32d9541703fd669057fee5  design/admin4/stylesheets/modules/setup.css
+aaf0dcd4b4afe2b47964aa6da0cc32e0  design/admin4/stylesheets/modules/setup.css
 b0231b396cffa044c9683baca515f64a  design/admin4/stylesheets/modules/structure.css
 34ba523d9ad9d1eca2730c3f8443432c  design/admin4/stylesheets/modules/workflow.css
 bfe8caaefaad23ec10bbd8b39d575729  design/admin4/stylesheets/packagecompare.css
@@ -1204,7 +1204,7 @@ dcdfd28ff236916b7773ca84b5d3172e  design/admin4/templates/settings/exp_origin.tp
 19c62afa174fad3a41db2b69698eec2d  design/admin4/templates/settings/view.tpl
 017371a2ce85ecc09681cca0c55ed63c  design/admin4/templates/setup/cache.tpl
 38e990a2b8e388bbb0475607e7912f97  design/admin4/templates/setup/contentextension.tpl
-1483cd0ff14d526820f74b53961d9827  design/admin4/templates/setup/cronjobs.tpl
+16fb4ba530015cff55fab64a528d9c51  design/admin4/templates/setup/cronjobs.tpl
 7d1dcd401320ffcb01fcd00a45947745  design/admin4/templates/setup/datatype.tpl
 903e5e3317285c154668c2676fe88c22  design/admin4/templates/setup/datatype_basic.tpl
 dcb722bfda3d71da901504f9da33f0f5  design/admin4/templates/setup/datatype_code.tpl
@@ -2986,7 +2986,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-92be462965cd467df1f85783cc353dca  doc/changelogs/6.0/6.0.15.md
+5342bbf7031cb53740925a61fea95772  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3328,7 +3328,7 @@ f1c1fb56a9242d2efa91dd58ead7449e  doc/features/6.0/content-jobs.md
 0e0369149f51247d6b31d8fcfe8fb949  doc/features/6.0/content-limitation-handlers.md
 75c167003b97bad4b0226315b2182509  doc/features/6.0/cronjob-part-filter.md
 d08c773e34c35ff850790b6fe0e586a0  doc/features/6.0/cronjob-pause.md
-ce637f381c74883c3ab6b55b59ce3761  doc/features/6.0/cronjobs-console.md
+14c20b666a607b9b6ba751762a786ba8  doc/features/6.0/cronjobs-console.md
 e6f3c790828c4532db21659841921631  doc/features/6.0/custom-items-per-page.md
 f2bff77e9a094481e27aa23236fdc3e5  doc/features/6.0/debug-output-improvements.md
 de63e86aaa339fad12115c7961c9094d  doc/features/6.0/default-extension-distribution.md
@@ -3483,7 +3483,7 @@ e6788c036282afd665d79ed6bb9c4d6d  doc/guides/benchmarking.md
 42311d8c175d353c9ffebeb9431bc599  doc/guides/content-history.md
 ca8f236019aaf4b164a601a6703b2d91  doc/guides/content-languages.md
 c8ab87aa91d7a0e71e2a5e05e24e11ce  doc/guides/content-model-and-editing.md
-f1c74019d1ab9863d5587612e3281fe0  doc/guides/cronjobs.md
+5c51be408dd427279726eef138f675c1  doc/guides/cronjobs.md
 9ea97a05fa2a16e68fe3ddeaf00535b2  doc/guides/deploying.md
 b790dd482cd361bdb034bae2f8ee60a5  doc/guides/drafts-and-pending.md
 8ef6b37beb573032a80a3c90b67dbd20  doc/guides/extensions-page.md
@@ -5692,7 +5692,7 @@ d6b7ee459c385cc78ca426a0b6f8b362  kernel/private/classes/views/section/assign.ph
 22849693faf9d703c551c63c715f375e  kernel/private/classes/views/setup/cache.php
 8950f5ab79eb2110460527a6ab876fc8  kernel/private/classes/views/setup/cachetoolbar.php
 546ddb3d9d522a274d7a11c78c3a2762  kernel/private/classes/views/setup/contentextension.php
-4ca5f37bdb717615d222aac6dc6cd87c  kernel/private/classes/views/setup/cronjobs.php
+cb74223c76485fcffba11971cb7d130e  kernel/private/classes/views/setup/cronjobs.php
 7d08d5aac41889ecbc986434986c09e6  kernel/private/classes/views/setup/cronjobsstream.php
 c82e5ac21ed1b61b72a5e91d6550bf9c  kernel/private/classes/views/setup/datatype.php
 5f37b9085a959384971d12d73b481856  kernel/private/classes/views/setup/designextension.php
@@ -7011,14 +7011,14 @@ dd5f5f3cf2348a6cc17bd0ee76983225  share/translations/dut-NL/translation.ts
 284321a9de29bf9268c27abb13f56f2c  share/translations/ell-GR/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-AU/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-NZ/translation.ts
-9f0ccdb4eabb2d6f58a371ba036b16df  share/translations/eng-US/translation.ts
+4d6d1de0a599a0b2bdd22cd14e81b968  share/translations/eng-US/translation.ts
 5f0920d5b4e8bbaff2a4a6d5b3995c90  share/translations/esl-ES/translation.ts
 27846e3f6408cd74f58cef8adcbab573  share/translations/esl-MX/translation.ts
 4b104d4d337601b4bc6ae0482e6478ea  share/translations/fin-FI/translation.ts
 edfd3efb7eca1e2bd6d6d7d08bd78a77  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-6fb6dda0e8702ca054aecd50ea486b4a  share/translations/ger-DE/translation.ts
+b64355b98617ab255b3715ceafcbfd59  share/translations/ger-DE/translation.ts
 75d657fed5de11db9e059cdcff2046a8  share/translations/ita-IT/translation.ts
 a45e2d26b1c24ac4cb6ae1d7197e5b0e  share/translations/jpn-JP/translation.ts
 d1dc34034ddce2d64c4f8df7fcc41c85  share/translations/nno-NO/translation.ts
@@ -7459,6 +7459,7 @@ c982ecbf9fc8545773311219e66b95fa  tests/tests/kernel/classes/expContentHideRetur
 8a09334d1220ca0936f37a308b5be245  tests/tests/kernel/classes/expContentLanguagesOverviewTest.php
 883fab6a7574056b432a2ffb7e91d0b9  tests/tests/kernel/classes/expCronjobPauseTest.php
 e1d9c99f5f0c0a4a5f1dc95cdeae4a5d  tests/tests/kernel/classes/expCronjobRunnerScheduleTest.php
+75ef0253a277531eb1c833e9b6d37594  tests/tests/kernel/classes/expCronjobsCompactViewTest.php
 c3c626e3450b8775e3ca74608825e7db  tests/tests/kernel/classes/expImageUploadValidatorTest.php
 629ef4db40bb3ea9ff3f8b56bcae400a  tests/tests/kernel/classes/expLinkCheckTest.php
 005e68dac380fb8240e13d69320e6dce  tests/tests/kernel/classes/expLoveStackCheckTest.php

@@ -20112,6 +20112,66 @@ Note: The packages will not be uninstalled.</translation>
 <context>
     <name>design/admin/setup/cronjobs</name>
     <message>
+        <source>Kernel</source>
+        <translation>Kernel</translation>
+    </message>
+    <message>
+        <source>1 script</source>
+        <translation>1 script</translation>
+    </message>
+    <message>
+        <source>Next run: %time</source>
+        <translation>Next run: %time</translation>
+    </message>
+    <message>
+        <source>No cronjob part matches.</source>
+        <translation>No cronjob part matches.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Last run</translation>
+    </message>
+    <message>
+        <source>Site %siteaccess · find a part or script · run every part</source>
+        <translation>Site %siteaccess · find a part or script · run every part</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Part</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Scripts</source>
+        <translation>Scripts</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Actions</translation>
+    </message>
+    <message>
+        <source>suggested</source>
+        <translation>suggested</translation>
+    </message>
+    <message>
+        <source>by hand</source>
+        <translation>by hand</translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation>View</translation>
+    </message>
+    <message>
+        <source>Compact</source>
+        <translation>Compact</translation>
+    </message>
+    <message>
+        <source>Detailed</source>
+        <translation>Detailed</translation>
+    </message>
+    <message>
         <source>Global</source>
         <translation>Global</translation>
     </message>
