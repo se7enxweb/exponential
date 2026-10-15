@@ -12,8 +12,11 @@
  *  MM-04 - from 1280px only, hidden in the "More" list, with forced-colors and reduced-motion rules
  *  MM-05 - the strings in ger-DE and eng-US
  *  MM-06 - the script: click, ArrowDown, Escape, Tab, a click outside, the delayed hover preview (300 ms in, 400 ms
- *          out, mouse only; the focus coming in keeps it), the width, the "More" list, one load and a failed one (a4_mega_menu.js run in node,
- *          tests/tests/design/js/mega_menu.js; skipped without node)
+ *          out, mouse only; the focus coming in keeps it), the width, the "More" list, one load and a failed one
+ *          (a4_mega_menu.js run in node, tests/tests/design/js/mega_menu.js; skipped without node)
+ *  MM-07 - curated: menu.ini [Leftmenu_setup] MegaMenuLinks[] names at most 12 existing links; the panel's template
+ *          shows only those, in that order, the user may open, each in its group, groups without one left out, at most
+ *          12; with no MegaMenuLinks[] every link (parts/a4_mega_menu.tpl rendered with eZTemplate, no database)
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminMegaMenuTest.php
  *
@@ -193,8 +196,11 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( '.a4-mega-toggle {', $wide );
         $this->assertMatchesRegularExpression( '/\.a4-nav-more-list \.a4-mega-toggle,\s*\.a4-nav-more-list \.a4-mega-panel \{ display: none; \}/', $wide );
         $this->assertStringContainsString( '.a4-mega-panel[hidden] { display: none; }', $wide );
-        $this->assertStringContainsString( 'max-width: var(--a4-content-max);', $wide );
-        $this->assertStringContainsString( 'columns: 4 14rem;', $wide, 'at most four columns' );
+        // as wide as its groups need, up to three of 17rem side by side; descriptions are not cut
+        $this->assertStringContainsString( 'width: fit-content;', $wide );
+        $this->assertStringContainsString( 'max-width: calc(3 * 17rem + 2 * var(--a4-space-6));', $wide, 'at most three groups side by side' );
+        $this->assertStringContainsString( 'flex: 0 0 17rem;', $wide );
+        $this->assertDoesNotMatchRegularExpression( '/\.a4-mega-text \{[^}]*(ellipsis|nowrap)/', $wide );
         $this->assertStringContainsString( '.a4-mega-panel::before {', $wide, 'the hover bridge' );
         $this->assertStringContainsString( '.a4-mega-toggle:focus-visible { outline: 3px solid var(--a4-ring);', $wide );
         $forced = self::media( $css, 'screen and (min-width: 1280px) and (forced-colors: active)' );
@@ -227,6 +233,101 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
     private static function xpathString( $s )
     {
         return strpos( $s, "'" ) === false ? "'$s'" : '"' . $s . '"';
+    }
+
+    /** Renders parts/a4_mega_menu.tpl with groups of fake links; returns [ group id => [ link names ] ] */
+    private static function renderGroups( array $megaLinks, array $groups )
+    {
+        $tpl = eZTemplate::factory();
+        $tpl->setVariable( 'groups', $groups );
+        $tpl->setVariable( 'mega_links', $megaLinks );
+        $tpl->setVariable( 'mega_id_prefix', 'mm' );
+        $tpl->setVariable( 'i18n_section', 'design/admin/parts/setup/menu' );
+        $tpl->setVariable( 'known_icons', array( 'gear' ) );
+        $html = $tpl->fetch( 'file:design/admin4/templates/parts/a4_mega_menu.tpl' );
+        $out = array();
+        preg_match_all( '#<section class="a4-mega-group" aria-labelledby="mm-([a-z0-9_]+)">(.*?)</section>#s', $html, $sections, PREG_SET_ORDER );
+        foreach ( $sections as $section )
+        {
+            preg_match_all( '#<(?:a href="[^"]*"[^>]*|span class="a4-mega-name")>([^<]+)<#', $section[2], $names );
+            $out[$section[1]] = $names[1];
+        }
+        return $out;
+    }
+
+    private static function fakeGroups( $perGroup = 3, $count = 3 )
+    {
+        $groups = array();
+        for ( $g = 1; $g <= $count; $g++ )
+        {
+            $items = array();
+            for ( $i = 1; $i <= $perGroup; $i++ )
+                $items[] = array( 'key' => "l{$g}_{$i}", 'url' => "x/l{$g}_{$i}", 'name' => "L{$g}_{$i}", 'state' => 'link', 'group' => '',
+                                  'icon' => 'gear', 'text' => '', 'context' => 'design/admin/parts/setup/menu', 'figure' => '' );
+            $groups[] = array( 'id' => "g$g", 'name' => "Group $g", 'items' => $items );
+        }
+        return $groups;
+    }
+
+    /** MM-07 */
+    public function testTheDefaultChoiceIsShortAndNamesExistingLinks()
+    {
+        $ini = self::read( 'settings/menu.ini' );
+        $section = substr( $ini, strpos( $ini, "\n[Leftmenu_setup]" ) );
+        $section = substr( $section, 0, strpos( $section, "\n[", 2 ) );
+        preg_match_all( '/^MegaMenuLinks\[\]=(\S+)$/m', $section, $m );
+        $choice = $m[1];
+        $this->assertMatchesRegularExpression( '/^MegaMenuLinks\[\]$/m', $section, 'the list is reset before it is set' );
+        $this->assertGreaterThanOrEqual( 6, count( $choice ) );
+        $this->assertLessThanOrEqual( 12, count( $choice ), 'at most 12 links' );
+        $this->assertSame( array_values( array_unique( $choice ) ), $choice );
+        // every key is a link of the menu or of one of its groups (the extensions' links are named in GroupLinks_*)
+        preg_match_all( '/^(?:Links\[([a-z0-9_]+)\]=|GroupLinks_[a-z_]+\[\]=([a-z0-9_]+)$)/m', $section, $known );
+        $known = array_filter( array_merge( $known[1], $known[2] ) );
+        foreach ( $choice as $key )
+            $this->assertContains( $key, $known, "MegaMenuLinks[]=$key is no link of [Leftmenu_setup]" );
+        // the AI and Updates groups are in the choice, shown when their extensions are active
+        foreach ( array( 'expai_summary', 'ezupdate', 'git_manager' ) as $key )
+            $this->assertContains( $key, $choice );
+        // the template reads the choice from the menu's own section, nowhere else
+        $this->assertStringContainsString( "mega_links=cond( ezini_hasvariable( \$ini_section, 'MegaMenuLinks', 'menu.ini' ), ezini( \$ini_section, 'MegaMenuLinks', 'menu.ini' ), array() )",
+                                           self::read( 'design/admin4/templates/parts/ini_menu.tpl' ) );
+    }
+
+    /** MM-07 */
+    public function testOnlyTheChosenLinksShowInTheirGroupsAndOrder()
+    {
+        $groups = self::fakeGroups();
+        $groups[0]['items'][2]['state'] = 'no-access';   // l1_3: the user may not open it
+        $groups[1]['items'][0]['state'] = 'disabled';    // l2_1: disabled in this context
+
+        $shown = self::renderGroups( array( 'l3_2', 'l1_2', 'l1_3', 'nothing', 'l2_1', 'l1_1', 'l1_2' ), $groups );
+        // groups in the order of their first chosen link, links in the chosen order; no link the user may not open,
+        // no disabled one, no unknown key, none twice; group 2 has no chosen link left and is left out
+        $this->assertSame( array( 'g3' => array( 'L3_2' ), 'g1' => array( 'L1_2', 'L1_1' ) ), $shown );
+    }
+
+    /** MM-07 */
+    public function testAtMostTwelveLinksShow()
+    {
+        $groups = self::fakeGroups( 5, 3 );
+        $keys = array();
+        foreach ( $groups as $group )
+            foreach ( $group['items'] as $item )
+                $keys[] = $item['key'];
+        $shown = self::renderGroups( $keys, $groups );
+        $this->assertSame( 12, count( call_user_func_array( 'array_merge', array_values( $shown ) ) ) );
+        $this->assertSame( array( 'L3_1', 'L3_2' ), $shown['g3'], 'the first twelve chosen' );
+    }
+
+    /** MM-07 */
+    public function testWithoutAChoiceEveryLinkShows()
+    {
+        $groups = self::fakeGroups( 5, 3 );
+        $groups[0]['items'][4]['state'] = 'no-access';
+        $shown = self::renderGroups( array(), $groups );
+        $this->assertCount( 3, $shown );
+        $this->assertSame( 15, count( call_user_func_array( 'array_merge', array_values( $shown ) ) ), 'no limit, and a link without access shows its name, as in the menu' );
     }
 
     /** MM-06 */
