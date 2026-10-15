@@ -990,7 +990,7 @@ ee173977953a7194a21267d46673100a  design/admin4/templates/content/datatype/edit/
 9da33d1967da5abff9e5e93122d26540  design/admin4/templates/content/datatype/view/ezxmltags/literal.tpl
 a6dacae68627ab7660566fae8a3704dc  design/admin4/templates/content/draft.tpl
 cbdf35b17a28ce8e91f1ce7bb31e65aa  design/admin4/templates/content/edit.tpl
-261a4a8a7312229cfb24c1424562eeb1  design/admin4/templates/content/edit_attribute.tpl
+22ebb0d1cc0838838069fba4e44ee463  design/admin4/templates/content/edit_attribute.tpl
 7c71af76a9760ef2ddf9d8a388e736d4  design/admin4/templates/content/edit_conflict.tpl
 64a0fa570c04b37f7ffb8effd9ba64f2  design/admin4/templates/content/edit_draft.tpl
 341e08c3d2a7243c5f2b7a1b3bff4700  design/admin4/templates/content/edit_languages.tpl
@@ -7101,7 +7101,7 @@ b5456249f7126f662d72004bd24b9a29  tests/tests/design/AdminContentEditFormsTest.p
 2e80f649572a60434b7e5f10f7a7078b  tests/tests/design/AdminDensityTest.php
 7a6d21774343c1bfa611fd993416166c  tests/tests/design/AdminEditBarTest.php
 e0969685ae94ce6950d89ebe71ea65d1  tests/tests/design/AdminFormErrorsTest.php
-c4dbc84de70b3ac212233446d50a8b64  tests/tests/design/AdminFormLabelsTest.php
+c76f86863ef135a2c51d2083890f9380  tests/tests/design/AdminFormLabelsTest.php
 af4ee083e29821c5729a00f10818511c  tests/tests/design/AdminHeaderTest.php
 04f6c21d6c646ab0806a9f3eebe0e13c  tests/tests/design/AdminIconsTest.php
 6d1b6edb0965bdac475abd8af045e416  tests/tests/design/AdminJobTranslationsTest.php
