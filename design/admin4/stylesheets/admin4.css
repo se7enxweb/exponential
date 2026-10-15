@@ -932,6 +932,7 @@ body,
   min-width: 16rem;
   max-width: min(26rem, calc(100vw - 2 * var(--a4-space-4)));
   max-height: calc(100vh - var(--header-height) - var(--a4-space-5));
+  max-height: calc(100dvh - var(--header-height) - var(--a4-space-5));   /* iOS: 100vh is the height with the bars collapsed */
   overflow-y: auto;
   overscroll-behavior: contain;
   padding: var(--a4-space-1);
