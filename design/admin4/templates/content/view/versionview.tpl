@@ -229,15 +229,41 @@
                                 <div class="break"></div>
                             </div>
 
-                            {* Content preview in content window. *}
-                            <div class="mainobject-window">
-
+                            {* Content preview in content window: the site's own rendering of the version (the iframe asks
+                               content/versionview with the chosen siteaccess), in the width of a device. The device switch
+                               (a segmented pill, components.css .a4-tabs.is-segmented) and the landscape switch are buttons
+                               with aria-pressed, and the arrow keys move between the devices; the iframe is drawn at the
+                               device's size and scaled down when the column is narrower, the line beside them says the size and
+                               the scale. The script is admin4.js's; the choice is kept through window.a4Pref, as the eZPreferences
+                               admin_preview_device and admin_preview_landscape of the user (the browser on an anonymous page).
+                               Without JavaScript the switch stays hidden and the iframe fills the column, as before.
+                               Sizes in CSS pixels: iPhone 390 x 844, iPad 820 x 1180, Desktop 1280 x 800, Large Desktop
+                               1920 x 1080. Styles: stylesheets/modules/content.css (.a4-content-preview-*). *}
+                            {def $a4_preview_devices = array( hash( 'id', 'phone',   'icon', 'phone',   'width', 390,  'height', 844,  'name', 'iPhone'|i18n( 'design/admin/content/view/versionview' ) ),
+                                                              hash( 'id', 'tablet',  'icon', 'tablet',  'width', 820,  'height', 1180, 'name', 'iPad'|i18n( 'design/admin/content/view/versionview' ) ),
+                                                              hash( 'id', 'desktop', 'icon', 'laptop',  'width', 1280, 'height', 800,  'name', 'Desktop'|i18n( 'design/admin/content/view/versionview' ) ),
+                                                              hash( 'id', 'large',   'icon', 'display', 'width', 1920, 'height', 1080, 'name', 'Large Desktop'|i18n( 'design/admin/content/view/versionview' ) ) )}
+                            <div class="a4-content-preview-bar" id="a4-content-preview-bar" hidden
+                                data-a4-size="{'%width × %height px, shown at %scale %'|i18n( 'design/admin/content/view/versionview' )|wash}">
+                                <div class="a4-tabs is-segmented a4-content-preview-devices" role="group" aria-label="{'Preview size'|i18n( 'design/admin/content/view/versionview' )|wash}">
+                                {foreach $a4_preview_devices as $a4_device}
+                                    <button type="button" data-a4-device="{$a4_device.id}" data-width="{$a4_device.width}" data-height="{$a4_device.height}" aria-pressed="false" title="{'%device, %width × %height px'|i18n( 'design/admin/content/view/versionview',, hash( '%device', $a4_device.name, '%width', $a4_device.width, '%height', $a4_device.height ) )|wash}"><span class="a4-icon a4-bi-{$a4_device.icon}" aria-hidden="true"></span><span class="a4-content-preview-device-name">{$a4_device.name|wash}</span></button>
+                                {/foreach}
+                                </div>
+                                <div class="a4-tabs is-segmented a4-content-preview-turn">
+                                    <button type="button" data-a4-landscape aria-pressed="false" title="{'Landscape: phone and tablet turned on their side'|i18n( 'design/admin/content/view/versionview' )|wash}"><span class="a4-icon a4-bi-phone-flip" aria-hidden="true"></span><span class="a4-content-preview-device-name">{'Landscape'|i18n( 'design/admin/content/view/versionview' )|wash}</span></button>
+                                </div>
+                                <p class="a4-content-preview-size"></p>
+                            </div>
+                            {undef $a4_preview_devices}
+                            <div class="mainobject-window a4-content-preview-stage" id="a4-content-preview-stage">
+                                <div class="a4-content-preview-device">
                                 <iframe
                                     src={concat("content/versionview/",$object.id,"/",$view_version.version,"/",$language, "/site_access/", $siteaccess, $view_mode_uri )|ezurl}
                                     width="100%" height="800" title="{'Preview of the version'|i18n( 'design/admin/content/view/versionview' )|wash}">
                                     {'Your browser does not support iframes. Please see this <a href=%url>link</a> instead.'|i18n( 'design/admin/content/view/versionview',, hash( '%url', concat("content/versionview/",$object.id,"/",$view_version.version,"/",$language, "/site_access/", $siteaccess, $view_mode_uri)|ezurl ) )}
                                 </iframe>
-
+                                </div>
                             </div>
 
 

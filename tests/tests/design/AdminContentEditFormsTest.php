@@ -120,33 +120,45 @@ class AdminContentEditFormsTest extends PHPUnit\Framework\TestCase
 
     public function testTheEditorSwitchIsOneSegmentedControl()
     {
-        // ezoe's engine switch (ezxmltext_ezoe_engine_switch.tpl): the label and the engines in one row, joined like
-        // .a4-tabs.is-segmented, at the one control height; the engine in use filled, the others outlined buttons
+        // ezoe's engine switch (ezxmltext_ezoe_engine_switch.tpl): the label and the engines in one row; the engines
+        // are the shared segmented pill (.a4-tabs.is-segmented, components.css), not a look of this file's own
+        $template = self::read( 'extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe_engine_switch.tpl' );
+        $this->assertStringContainsString( '<span class="ezoe-engine-switch-options a4-tabs is-segmented">', $template );
         $rules = AdminBaseStylesheetsTest::rules( self::css() );
         $group = $rules['.a4-content-attr .ezoe-engine-switch'] ?? null;
-        $this->assertNotNull( $group, 'the switch is drawn in admin4' );
+        $this->assertNotNull( $group, 'the switch is placed in admin4' );
         $this->assertSame( 'flex', $group['display'] );
-        $this->assertSame( 'wrap', $group['flex-wrap'], 'on a narrow phone the engines go under the label' );
+        $this->assertSame( 'wrap', $group['flex-wrap'], 'on a narrow phone the pill goes under the label' );
         $this->assertSame( 'center', $group['align-items'], 'label and engines on one line' );
         $this->assertSame( 'var(--a4-space-2) 0 0', $group['margin'], 'apart from the status bar above' );
-        // the segments stay joined: only the group wraps (a wrapped segment would keep a square corner and the -1px)
-        $this->assertSame( 'nowrap', $rules['.a4-content-attr .ezoe-engine-switch .ezoe-engine-switch-options']['flex-wrap'] ?? null );
-        $option = $rules['.a4-content-attr .ezoe-engine-switch .ezoe-engine-switch-option'] ?? null;
-        $this->assertNotNull( $option );
-        $this->assertSame( 'var(--a4-control-h)', $option['min-height'] );
-        $this->assertSame( '0', $option['margin'], "not the legacy button's margin" );
-        $this->assertSame( '0', $option['border-radius'], 'joined segments' );
-        $this->assertSame( '-1px', $rules['.a4-content-attr .ezoe-engine-switch .ezoe-engine-switch-option:not(:first-child)']['margin-left'] ?? null );
-        $this->assertSame( 'var(--a4-radius-s) 0 0 var(--a4-radius-s)', $rules['.a4-content-attr .ezoe-engine-switch .ezoe-engine-switch-option:first-child']['border-radius'] ?? null );
-        $this->assertSame( '0 var(--a4-radius-s) var(--a4-radius-s) 0', $rules['.a4-content-attr .ezoe-engine-switch .ezoe-engine-switch-option:last-child']['border-radius'] ?? null );
-        $current = $rules['.a4-content-attr .ezoe-engine-switch .ezoe-engine-switch-option.current'] ?? null;
-        $this->assertNotNull( $current, 'the engine in use is marked' );
-        $this->assertSame( 'var(--a4-accent-strong)', $current['background-color'] );
-        $this->assertSame( 'var(--a4-on-accent)', $current['color'] );
-        $this->assertSame( 'default', $current['cursor'], 'pressing the engine in use changes nothing' );
-        $forced = AdminBaseStylesheetsTest::rules( self::css(), true );
-        $this->assertSame( '2px solid Highlight', $forced['.a4-content-attr .ezoe-engine-switch .ezoe-engine-switch-option.current']['outline'] ?? null,
-            'forced colors: an outline marks the engine in use' );
+        foreach ( $rules as $selector => $props )
+        {
+            if ( strpos( $selector, 'ezoe-engine-switch-option' ) === false )
+                continue;
+            foreach ( array( 'border-radius', 'background-image', 'min-height', 'padding', 'margin-left' ) as $drawn )
+                $this->assertArrayNotHasKey( $drawn, $props, "$selector: the pill is components.css's, not drawn again here" );
+        }
+        // the legacy button look of this file has a stronger hover: the pill's own hover and current edge are kept
+        $hover = $rules['.a4-content-attr .ezoe-engine-switch .a4-tabs.is-segmented > button.ezoe-engine-switch-option:hover:not(:disabled)'] ?? null;
+        $this->assertNotNull( $hover );
+        $this->assertSame( 'var(--a4-line-strong)', $hover['border-color'] );
+        $this->assertSame( 'var(--a4-accent-text)', $hover['color'] );
+        $current = self::selectorRule( $rules, '.a4-content-attr .ezoe-engine-switch .a4-tabs.is-segmented > button.ezoe-engine-switch-option.current' );
+        $this->assertSame( 'var(--a4-accent-text)', $current['border-color'] ?? null );
+        $this->assertSame( 'default', $current['cursor'] ?? null, 'pressing the engine in use changes nothing' );
+        // the current engine is pressed, so components.css tints it ([aria-pressed="true"]) and outlines it under forced colors
+        $this->assertStringContainsString( 'aria-pressed="true"', $template );
+    }
+
+    /** The declarations of the rule whose selector list holds $selector */
+    private static function selectorRule( array $rules, $selector )
+    {
+        foreach ( $rules as $list => $props )
+        {
+            if ( in_array( $selector, array_map( 'trim', explode( ",\n", str_replace( ', .', ",\n.", $list ) ) ), true ) )
+                return $props;
+        }
+        return null;
     }
 
     public function testChecksTakeTheCheckComponentsLook()

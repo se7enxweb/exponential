@@ -8871,6 +8871,42 @@
         <translation>Vorschau in einem neuen Fenster öffnen</translation>
     </message>
     <message>
+        <source>iPhone</source>
+        <translation>iPhone</translation>
+    </message>
+    <message>
+        <source>iPad</source>
+        <translation>iPad</translation>
+    </message>
+    <message>
+        <source>Desktop</source>
+        <translation>Desktop</translation>
+    </message>
+    <message>
+        <source>Large Desktop</source>
+        <translation>Großer Desktop</translation>
+    </message>
+    <message>
+        <source>Preview size</source>
+        <translation>Vorschaugröße</translation>
+    </message>
+    <message>
+        <source>%device, %width × %height px</source>
+        <translation>%device, %width × %height px</translation>
+    </message>
+    <message>
+        <source>%width × %height px, shown at %scale %</source>
+        <translation>%width × %height px, angezeigt mit %scale %</translation>
+    </message>
+    <message>
+        <source>Landscape</source>
+        <translation>Querformat</translation>
+    </message>
+    <message>
+        <source>Landscape: phone and tablet turned on their side</source>
+        <translation>Querformat: Smartphone und Tablet quer gedreht</translation>
+    </message>
+    <message>
         <source>Queued</source>
         <translation>In der Warteschlange</translation>
     </message>

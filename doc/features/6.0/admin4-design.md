@@ -66,7 +66,8 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
 - **Remembered choices.** The color mode, the side columns on a wide window and the closed groups of
   the left menus and the height of the node view's tab box are the signed-in user's eZPreferences
   (`admin_color_mode`, `admin_left_sidebar`, `admin_right_sidebar`, `admin_navgroups`,
-  `admin_node_preview_height`), like the column width. One helper,
+  `admin_node_preview_height`; the version preview's device: `admin_preview_device`, `admin_preview_landscape`),
+  like the column width. One helper,
   `window.a4Pref` (the first script of `page_head_style.tpl`), reads them from `<html>`
   (`design:parts/a4_preference_attributes.tpl`, `data-a4-pref-*`) and saves them through
   `user/preferences/set_and_exit`. An anonymous page keeps them in the browser (`localStorage`) only; a browser
@@ -101,6 +102,15 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
   published, version, section, node, object and remote ids (click to copy) and the translations (click to switch).
   The tabs form a segmented row. Tabs and sub-items start about 300 px below the card's top instead of 500. On phones
   the actions wrap onto two short lines inside the card.
+- **Version preview.** The preview of a version (content/versionview: "Preview" from the edit form, the node view and
+  the version history) shows the site's own rendering for the chosen siteaccess in the width of a device: a segmented
+  pill iPhone (390 × 844 px) | iPad (820 × 1180) | Desktop (1280 × 800) | Large Desktop (1920 × 1080), and a
+  landscape switch for phone and tablet. The page is drawn at the device's size and scaled down when the column is
+  narrower; the line beside the switches says the size and the scale ("390 × 844 px, shown at 100 %"). The choice
+  is the signed-in user's, as the eZPreferences `admin_preview_device` and `admin_preview_landscape` (through
+  `window.a4Pref`, so it follows the user to another browser; the browser on an anonymous page); without a
+  stored choice it is Desktop. In a narrow column the switches show their icons only. Without JavaScript the
+  switches stay hidden and the preview fills the column as before. The arrow keys move between the devices.
 - **Height of the node view's tab box.** The box of the tabs (View, Details, ...) keeps the height the user gives
   it, one height for every node: the grip at its bottom right edge is dragged with the mouse, a finger or a pen, or
   moved with the keyboard (it is a focusable separator: Arrow Up and Down 16 px, Shift+Arrow, Page Up and Page Down
@@ -140,6 +150,8 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
   opens). The current page's link carries `aria-current="page"` and is marked with the accent tint and a bar. A menu
   is grouped through menu.ini (`Groups[]`, `GroupNames[<group>]`, `GroupLinks_<group>[]`); without `Groups[]`, or with
   `Groups[]` reset to no values, it is one list, named by its heading. Access is checked per link as before.
+  Under every left menu, the width of the column (narrow, medium, wide) is one pill of three round icon buttons
+  (`.a4-tabs.is-segmented.is-icons`); the current width is tinted in the accent and pressed (`aria-pressed="true"`).
 - **Setup overview.** The Setup tab opens an overview of every Setup function as a tile, in the groups of the left
   menu (see [Setup overview](#setup-overview)).
 - **Tables.** A list table's sorted column is readable (soft orange header).
@@ -701,6 +713,8 @@ Community". A template can also set `$show_community_links`.
   `tests/tests/design/AdminMenuPolicyListTest.php` fails for a function a module does not have. The Design tab opens
   the design top node by its id (`content/view/full/58`, `content.ini [NodeSettings] DesignRootNode`).
 - `FrontSiteAccess` is the site an admin siteaccess belongs to: its "Open the site" and "View on site" links go there.
+  Both show the globe (Bootstrap Icons `globe2`, `.a4-bi-globe2`), so a link to the site does not look like a link
+  that leaves the administration for something else (`box-arrow-up-right`).
 - The logo's name in the header carries the release only for signed-in users; the anonymous pages of the admin
   (the 401 page, `user/register`, `user/forgotpassword`) say "Exponential".
 
