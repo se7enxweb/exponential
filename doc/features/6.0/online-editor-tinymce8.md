@@ -65,6 +65,23 @@ grep -n 'EditorEngine\|EngineSwitch\|Engines\[' extension/ezoe/settings/ezoe.ini
 The registry classes are `extension/ezoe/classes/expoeeditorengine.php`, `expoetinymce3engine.php` and
 `expoetinymce8engine.php`; the engine page is the view `engine` of the `ezoe` module.
 
+## Link checks when the text is saved
+
+Both engines send HTML that `eZOEInputParser` turns into the stored XML. Each link is checked there, and what it
+finds goes to the validation log shown above the edit form ("The draft was only partially stored"):
+
+| Link | What happens | Message |
+| --- | --- | --- |
+| `eznode://<id>` or `eznode://<path>` to a node that is gone | the link is kept, the message says how to repair it | names the link by its text (70 characters at most, else its address); when the target is in the trash: its name, class, old place and since when, shown only to a user who may read it (otherwise only "is in the trash"); for a link by id: restoring does not repair it, because the restored object gets a new location |
+| `ezobject://<id>` to an object that no longer exists | as above | "no longer exists, not even in the trash" |
+| a script link: `javascript:`, `vbscript:`, `livescript:`, `data:` other than a plain image, in any spelling a browser follows (character references, `&colon;`, tabs or line breaks in the scheme, leading spaces, any case) | the address is removed, the input is marked invalid (`isValid()` false) | "Using scripts in links is not allowed, '...' has been removed" |
+| `mailto:` with an invalid address (each of several, before `?`, percent-decoded; internationalized domains accepted) | the address is removed, the input is marked invalid | "Invalid e-mail address: '...'" |
+
+The trash is looked up only for a link whose target is gone, so a link to a live target costs no query. The messages
+are plain text; every design prints them with `|wash`, once (`expOEValidationMessagesEscapedOnceTest`). A design of
+your own that overrides `content/edit_validation.tpl` does the same. Tests: `expOEDeadLinkMessageTest`,
+`expOEInputValidFlagTest`, `expOELinkAddressCheckTest`.
+
 ## Security
 
 `ezoe/upload` refuses a file whose last extension is not in `UploadFileExtensions[]`, and any name with an executable
