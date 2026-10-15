@@ -5600,7 +5600,7 @@ f9c430c252eb94b8b5efdea21168d97e  kernel/private/classes/views/content/removenod
 84f0fd52974fc2981cd69ccbb70fbe60  kernel/private/classes/views/content/removeobject.php
 0532c6bf42a37a33462247c62b31155d  kernel/private/classes/views/content/restore.php
 c75e831d1d57e3a1709fb41a3c094441  kernel/private/classes/views/content/reverserelatedlist.php
-f46d1ba4ea8bf971c6021f371ae47f75  kernel/private/classes/views/content/search.php
+1168bb8dbe4d9ed224c874325e4de635  kernel/private/classes/views/content/search.php
 ea6d82cea689a55292679f82eaff72a7  kernel/private/classes/views/content/subitemsexport.php
 e7f6b7b2a1cb6cc5b80c5da35be68003  kernel/private/classes/views/content/tipafriend.php
 8633e40b09f4a5a11c208e5424129bad  kernel/private/classes/views/content/translation.php
