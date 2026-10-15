@@ -157,8 +157,8 @@ class History extends \Exponential\Runnable\ModuleView
         $lang = $http->hasPostVariable( 'Language' ) ? $http->postVariable( 'Language' ) : false;
         if ( $compareWith )
         {
-            $oldVersion = $compareWith[0];
-            $newVersion = self::comparedWith( (int)$oldVersion, (int)$object->attribute( 'current_version' ), $this->contentVersions );
+            list( $oldVersion, $newVersion ) = self::comparedPair( (int)$compareWith[0], (int)$object->attribute( 'current_version' ),
+                                                                   $this->contentVersions );
             $lang = false;
         }
         else
@@ -543,6 +543,21 @@ class History extends \Exponential\Runnable\ModuleView
                 return $other;
         }
         return $version;
+    }
+
+    /**
+     * The two versions a version's own Compare button compares, the older one first: a draft newer than the current
+     * version is the new side, so what it adds is shown as added, not as removed.
+     *
+     * @param int $version the version whose Compare button was pressed
+     * @param int $current the object's current version
+     * @param int[] $seen the versions whose content the user may see
+     * @return int[] the old and the new version
+     */
+    public static function comparedPair( $version, $current, array $seen )
+    {
+        $other = self::comparedWith( $version, $current, $seen );
+        return array( min( $version, $other ), max( $version, $other ) );
     }
 
     /** The name of a language by its locale, remembered in $names for the request */
