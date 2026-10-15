@@ -230,6 +230,16 @@ $ViewList['menu'] = array(
     'default_navigation_part' => 'ezsetupnavigationpart',
     'params' => array( ) );
 
+// admin4's mega menu (menu.ini [TopAdminMenu] MegaMenuTabs[]): the groups and links of the Setup menu as an HTML
+// fragment without the page layout, asked for once by design/admin4/javascript/a4_mega_menu.js when the panel is first
+// opened. The same functions as the overview it stands for; ajax, so the address is not kept as the last page seen.
+$ViewList['megamenu'] = array(
+    'functions' => array( 'setup or administrate or managecache or managecronjobs or preload or system_info' ),
+    'script' => 'megamenu.php',
+    'ui_context' => 'ajax',
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'params' => array( ) );
+
 // The preloader's console, and the stream that drives it. The stream is a view
 // rather than a standalone entry point so it goes through the same siteaccess
 // and policy checks as the page that opens it.

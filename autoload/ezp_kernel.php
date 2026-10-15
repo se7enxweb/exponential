@@ -268,6 +268,7 @@ return array(
       'Exponential\\View\\Kernel\\Setup\\Info'                       => 'kernel/private/classes/views/setup/info.php',
       'Exponential\\View\\Kernel\\Setup\\Kerneloverride'             => 'kernel/private/classes/views/setup/kerneloverride.php',
       'Exponential\\View\\Kernel\\Setup\\Maintenance'                => 'kernel/private/classes/views/setup/maintenance.php',
+      'Exponential\\View\\Kernel\\Setup\\Megamenu'                   => 'kernel/private/classes/views/setup/megamenu.php',
       'Exponential\\View\\Kernel\\Setup\\Menuconfig'                 => 'kernel/private/classes/views/setup/menuconfig.php',
       'Exponential\\View\\Kernel\\Setup\\Moduleextension'            => 'kernel/private/classes/views/setup/moduleextension.php',
       'Exponential\\View\\Kernel\\Setup\\Modulewizard'               => 'kernel/private/classes/views/setup/modulewizard.php',
