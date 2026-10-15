@@ -20,6 +20,13 @@
    the user closed it (admin4.js keeps that per browser) and always open when it holds the current page; links in
    no group (an extension's, say) follow in a last group "More"; a link named in two groups shows in the first. Without
    Groups[], or with Groups[] reset to no values, the menu is one list, as before. Access and the order of links inside a group are those of Links[].
+   LeadLinks[] (optional, menu.ini) names links shown before the groups, in no group (the Setup menu's overview).
+
+   * menu_layout : (optional) 'tiles' draws the same links, groups and access checks as an overview page of tiles
+     (parts/ini_menu_tiles.tpl; the Setup overview, setup/setupmenu.tpl) instead of the menu; the lead links are
+     left out there. With it:
+   * tiles : (optional) hash link key => hash( 'icon', 'a4-bi-<name>', 'text', a one-line description )
+   * tile_figures : (optional) a template that draws a tile's figure, included with figure_key = the link key
 *}
 
 {if is_unset( $ini_section )}
@@ -37,6 +44,16 @@
 
 {if is_unset( $hidden_links )}
     {def $hidden_links = array()}
+{/if}
+
+{if is_unset( $menu_layout )}
+    {def $menu_layout = 'menu'}
+{/if}
+{if is_unset( $tiles )}
+    {def $tiles = hash()}
+{/if}
+{if is_unset( $tile_figures )}
+    {def $tile_figures = ''}
 {/if}
 
 {if $uri_string}
@@ -144,16 +161,20 @@
              $group_open = false()
              $group_id = ''
              $group_links = array()
-             $group_list = cond( ezini_hasvariable( $ini_section, 'Groups', 'menu.ini' ), ezini( $ini_section, 'Groups', 'menu.ini' ), array() )}
-        {* DESIGN: Header START *}<div class="box-header"><div class="box-ml">
-        {if $menu_name}<h4 id="{$menu_title_id|wash}">{if is_set( $i18n_hash[ $menu_name ] )}{$i18n_hash[ $menu_name ]|wash}{else}{$menu_name|d18n($i18n_section)|wash}{/if}</h4>{/if}
-        {* DESIGN: Header END *}</div></div>
-
-        {* DESIGN: Content START *}<div class="box-bc"><div class="box-ml"><div class="box-content">
+             $group_list = cond( ezini_hasvariable( $ini_section, 'Groups', 'menu.ini' ), ezini( $ini_section, 'Groups', 'menu.ini' ), array() )
+             $lead_links = cond( ezini_hasvariable( $ini_section, 'LeadLinks', 'menu.ini' ), ezini( $ini_section, 'LeadLinks', 'menu.ini' ), array() )
+             $lead_items = array()}
 
         {* An empty Groups[] (reset in an override) means one plain list, as no Groups[] does *}
         {if $group_list|count}
             {def $group_names = cond( ezini_hasvariable( $ini_section, 'GroupNames', 'menu.ini' ), ezini( $ini_section, 'GroupNames', 'menu.ini' ), hash() )}
+            {* The lead links (LeadLinks[], the menu's overview) come before the groups and belong to none *}
+            {foreach $items as $item}
+                {if $lead_links|contains( $item.key )}
+                    {set $lead_items = $lead_items|append( $item )
+                         $grouped_keys = $grouped_keys|append( $item.key )}
+                {/if}
+            {/foreach}
             {* The groups in their order, each with the links it names; then "More" for the rest *}
             {foreach $group_list as $group}
                 {set $group_items = array()
@@ -180,7 +201,35 @@
             {if $group_items|count}
                 {set $groups = $groups|append( hash( 'id', 'more', 'name', 'More'|i18n( 'design/admin/pagelayout' ), 'translated', true(), 'items', $group_items ) )}
             {/if}
+            {undef $group_names}
+        {/if}
 
+        {if eq( $menu_layout, 'tiles' )}
+            {* The overview page (setup/menu): the same links, groups and access as the menu, as tiles. The lead
+               links are the overview itself and are left out; a menu without groups is one group without title. *}
+            {if $group_list|count|not}
+                {foreach $items as $item}
+                    {if $lead_links|contains( $item.key )|not}
+                        {set $group_items = $group_items|append( $item )}
+                    {/if}
+                {/foreach}
+                {if $group_items|count}
+                    {set $groups = array( hash( 'id', 'all', 'name', '', 'translated', true(), 'items', $group_items ) )}
+                {/if}
+            {/if}
+            {include uri='design:parts/ini_menu_tiles.tpl' groups=$groups tiles=$tiles tile_figures=$tile_figures
+                     tile_id_prefix=concat( 'a4-tiles-', $ini_section|explode( '_' )|implode( '-' ) ) i18n_section=$i18n_section}
+        {else}
+        {* DESIGN: Header START *}<div class="box-header"><div class="box-ml">
+        {if $menu_name}<h4 id="{$menu_title_id|wash}">{if is_set( $i18n_hash[ $menu_name ] )}{$i18n_hash[ $menu_name ]|wash}{else}{$menu_name|d18n($i18n_section)|wash}{/if}</h4>{/if}
+        {* DESIGN: Header END *}</div></div>
+
+        {* DESIGN: Content START *}<div class="box-bc"><div class="box-ml"><div class="box-content">
+
+        {if $group_list|count}
+            {if $lead_items|count}
+                <div class="a4-navlead">{include uri='design:parts/ini_menu_items.tpl' items=$lead_items current_uri_string=$current_uri_string}</div>
+            {/if}
             {foreach $groups as $group}
                 {set $group_open = false()
                      $group_id = concat( $menu_title_id, '-', $group.id )}
@@ -192,13 +241,13 @@
                     {include uri='design:parts/ini_menu_items.tpl' items=$group.items current_uri_string=$current_uri_string}
                 </details>
             {/foreach}
-            {undef $group_names}
         {else}
             {include uri='design:parts/ini_menu_items.tpl' items=$items current_uri_string=$current_uri_string labelledby=cond( $menu_name, $menu_title_id, '' )}
         {/if}
 
         {* DESIGN: Content END *}</div></div></div>
-        {undef $menu_title_id $groups $grouped_keys $group_items $group_open $group_id $group_links $group_list}
+        {/if}
+        {undef $menu_title_id $groups $grouped_keys $group_items $group_open $group_id $group_links $group_list $lead_links $lead_items}
     {/if}
     {undef $ini_menu_url_list $menu_name $check $has_access $items $check_view $hide_no_access}
 {/if}

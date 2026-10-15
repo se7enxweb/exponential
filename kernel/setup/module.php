@@ -218,8 +218,11 @@ $ViewList["extensions"] = array(
                                     'GenerateAutoloadArraysButton' => 'GenerateAutoloadArrays' ),
     "params" => array( 'ExtensionName', 'ExtensionFormat' ) );
 
+// The Setup overview (the Setup tab's first page) shows only the functions the user may open, so it opens for
+// anyone with one of the setup module's functions (install aside): the tab used to open setup/cache, and a role
+// with managecache alone must keep it.
 $ViewList['menu'] = array(
-    'functions' => array( 'setup' ),
+    'functions' => array( 'setup or administrate or managecache or managecronjobs or preload or system_info' ),
     'script' => 'setupmenu.php',
     'default_navigation_part' => 'ezsetupnavigationpart',
     'params' => array( ) );

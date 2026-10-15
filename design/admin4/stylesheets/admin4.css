@@ -1752,8 +1752,10 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
 #leftmenu details.a4-navgroup[open] > summary.a4-nav-title::before { transform: rotate(90deg); }
 #leftmenu details.a4-navgroup > summary.a4-nav-title:hover { color: var(--a4-ink); }
 #leftmenu details.a4-navgroup > .leftmenu-items { margin: 0; padding: 0; list-style: none; }
-#leftmenu details.a4-navgroup > .leftmenu-items li { margin: 0; }
-#leftmenu details.a4-navgroup > .leftmenu-items li > div > :is(a, span) {
+/* the lead links (LeadLinks[], the Setup overview) stand before the groups, as plain rows of the same look */
+#leftmenu .a4-navlead > .leftmenu-items { margin: 0 0 var(--a4-space-2); padding: 0; list-style: none; }
+#leftmenu :is(details.a4-navgroup, .a4-navlead) > .leftmenu-items li { margin: 0; }
+#leftmenu :is(details.a4-navgroup, .a4-navlead) > .leftmenu-items li > div > :is(a, span) {
   display: block;
   min-height: 24px;
   padding: var(--a4-space-1) var(--a4-space-2);

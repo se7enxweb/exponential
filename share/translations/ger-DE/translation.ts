@@ -15307,6 +15307,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
 <context>
     <name>design/admin/parts/setup/menu</name>
     <message>
+        <source>Overview</source>
+        <translation>Übersicht</translation>
+    </message>
+    <message>
         <source>Cache management</source>
         <translation>Cache-Verwaltung</translation>
     </message>
@@ -70761,6 +70765,193 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/setupmenu</name>
+    <message>
+        <source>Setup</source>
+        <translation>Setup</translation>
+    </message>
+    <message>
+        <source>Configure the installation: content model, site and URLs, workflows, users and the system.</source>
+        <translation>Die Installation einrichten: Inhaltsmodell, Site und URLs, Workflows, Benutzer und das System.</translation>
+    </message>
+    <message>
+        <source>Choose a function in the Setup menu.</source>
+        <translation>Wählen Sie eine Funktion im Setup-Menü.</translation>
+    </message>
+    <message>
+        <source>Functions</source>
+        <translation>Funktionen</translation>
+    </message>
+    <message>
+        <source>%count defined</source>
+        <translation>%count angelegt</translation>
+    </message>
+    <message>
+        <source>%count in use</source>
+        <translation>%count in Gebrauch</translation>
+    </message>
+    <message>
+        <source>%count active</source>
+        <translation>%count aktiv</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>%count angemeldet</translation>
+    </message>
+    <message>
+        <source>Who changed what: the audit settings and archives.</source>
+        <translation>Wer was geändert hat: Einstellungen und Archive des Audits.</translation>
+    </message>
+    <message>
+        <source>Clear or regenerate the caches.</source>
+        <translation>Caches leeren oder neu aufbauen.</translation>
+    </message>
+    <message>
+        <source>The content classes and their attributes.</source>
+        <translation>Die Inhaltsklassen und ihre Attribute.</translation>
+    </message>
+    <message>
+        <source>What visitors sent through forms.</source>
+        <translation>Was Besucher über Formulare gesendet haben.</translation>
+    </message>
+    <message>
+        <source>Find content by its id, remote id or path.</source>
+        <translation>Inhalte über ID, Remote-ID oder Pfad finden.</translation>
+    </message>
+    <message>
+        <source>The cronjob parts, their scripts and last runs.</source>
+        <translation>Die Cronjob-Teile, ihre Skripte und letzten Läufe.</translation>
+    </message>
+    <message>
+        <source>Activate and deactivate extensions.</source>
+        <translation>Erweiterungen aktivieren und deaktivieren.</translation>
+    </message>
+    <message>
+        <source>The settings of the whole site.</source>
+        <translation>Die Einstellungen der ganzen Site.</translation>
+    </message>
+    <message>
+        <source>Read and edit the INI settings.</source>
+        <translation>INI-Einstellungen lesen und bearbeiten.</translation>
+    </message>
+    <message>
+        <source>The languages content is written in.</source>
+        <translation>Die Sprachen, in denen Inhalte verfasst werden.</translation>
+    </message>
+    <message>
+        <source>The look of the site.</source>
+        <translation>Das Aussehen der Site.</translation>
+    </message>
+    <message>
+        <source>E-mail categories, suppressions and consents.</source>
+        <translation>E-Mail-Kategorien, Sperrliste und Einwilligungen.</translation>
+    </message>
+    <message>
+        <source>Run the maintenance tasks of the installation.</source>
+        <translation>Die Wartungsaufgaben der Installation ausführen.</translation>
+    </message>
+    <message>
+        <source>The menus of the classic site designs.</source>
+        <translation>Die Menüs der klassischen Site-Designs.</translation>
+    </message>
+    <message>
+        <source>Pending notifications and the last runs.</source>
+        <translation>Ausstehende Benachrichtigungen und die letzten Läufe.</translation>
+    </message>
+    <message>
+        <source>The OAuth clients and their access.</source>
+        <translation>Die OAuth-Clients und ihr Zugriff.</translation>
+    </message>
+    <message>
+        <source>Import, export and install packages.</source>
+        <translation>Pakete importieren, exportieren und installieren.</translation>
+    </message>
+    <message>
+        <source>Export parts of the content tree as PDF.</source>
+        <translation>Teile des Inhaltsbaums als PDF exportieren.</translation>
+    </message>
+    <message>
+        <source>Warm the caches of the sites.</source>
+        <translation>Die Caches der Sites vorwärmen.</translation>
+    </message>
+    <message>
+        <source>Wizards for template operators and datatypes.</source>
+        <translation>Assistenten für Template-Operatoren und Datentypen.</translation>
+    </message>
+    <message>
+        <source>Who may do what, and where.</source>
+        <translation>Wer was wo darf.</translation>
+    </message>
+    <message>
+        <source>RSS imports and exports.</source>
+        <translation>RSS-Importe und -Exporte.</translation>
+    </message>
+    <message>
+        <source>What visitors searched for.</source>
+        <translation>Wonach Besucher gesucht haben.</translation>
+    </message>
+    <message>
+        <source>Sections group content for access and design.</source>
+        <translation>Sektionen gruppieren Inhalte für Rechte und Design.</translation>
+    </message>
+    <message>
+        <source>Who is signed in; end sessions.</source>
+        <translation>Wer angemeldet ist; Sitzungen beenden.</translation>
+    </message>
+    <message>
+        <source>The site data rows, read only.</source>
+        <translation>Die Zeilen der Site-Daten, nur lesend.</translation>
+    </message>
+    <message>
+        <source>Object state groups and their states.</source>
+        <translation>Objektzustandsgruppen und ihre Zustände.</translation>
+    </message>
+    <message>
+        <source>PHP, database and server, with health checks.</source>
+        <translation>PHP, Datenbank und Server, mit Zustandsprüfungen.</translation>
+    </message>
+    <message>
+        <source>The templates of the designs and their overrides.</source>
+        <translation>Die Templates der Designs und ihre Overrides.</translation>
+    </message>
+    <message>
+        <source>List and edit templates.</source>
+        <translation>Templates auflisten und bearbeiten.</translation>
+    </message>
+    <message>
+        <source>The toolbars and their tools.</source>
+        <translation>Die Werkzeugleisten und ihre Werkzeuge.</translation>
+    </message>
+    <message>
+        <source>Which workflow runs on which event.</source>
+        <translation>Welcher Workflow bei welchem Ereignis läuft.</translation>
+    </message>
+    <message>
+        <source>Compare files and database with this release.</source>
+        <translation>Dateien und Datenbank mit diesem Release vergleichen.</translation>
+    </message>
+    <message>
+        <source>Check the links in the content.</source>
+        <translation>Die Links in den Inhalten prüfen.</translation>
+    </message>
+    <message>
+        <source>Custom URL aliases and forwards.</source>
+        <translation>Eigene URL-Aliase und Weiterleitungen.</translation>
+    </message>
+    <message>
+        <source>URL patterns that redirect or forward.</source>
+        <translation>URL-Muster, die umleiten oder weiterleiten.</translation>
+    </message>
+    <message>
+        <source>Workflows that are running or waiting.</source>
+        <translation>Workflows, die laufen oder warten.</translation>
+    </message>
+    <message>
+        <source>Workflow groups, workflows and their events.</source>
+        <translation>Workflow-Gruppen, Workflows und ihre Ereignisse.</translation>
     </message>
 </context>
 <context>
