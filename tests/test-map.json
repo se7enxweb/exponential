@@ -135,6 +135,9 @@
     "design/admin*/javascript/ezajaxsubitems_expdatatable.js": [
       "tests/tests/design/AdminLanguageBadgeTest.php"
     ],
+    "design/admin*/templates/parts/language_badge.tpl": [
+      "tests/tests/design/AdminLanguageBadgeTest.php"
+    ],
     "lib/ezlocale/classes/ezlocale.php": [
       "tests/tests/design/AdminLanguageBadgeTest.php"
     ],

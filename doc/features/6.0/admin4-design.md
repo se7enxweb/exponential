@@ -558,8 +558,10 @@ languages. admin4 therefore shows a content language as a short code badge and i
 list languages:
 
 - **The code** is the language part of the locale's language tag (`ger-DE` has `de-DE`, so `DE`; `eng-GB` gives
-  `EN`). When the installation has two content languages of the same language (`eng-GB` and `eng-US`), both show the
-  region as well (`EN-GB`, `EN-US`). A locale without a language tag shows its locale code.
+  `EN`), always: when the installation has two content languages of the same language (`eng-GB` and `eng-US`), both
+  show `EN`. The badge names the language, not the region; the two differ by their name (English (United Kingdom),
+  English (American)), which is the badge's title and accessible name or is written next to it. A locale without a
+  language tag shows its locale code.
 - **The name** (the locale's international name, e.g. German) is written next to the badge wherever there is room:
   the Translations tab, the translation lists of versions, drafts, URL aliases, states and classes, and the language
   choice of the edit page. Where there is no room, in the node view's meta line and the sub-items table's
