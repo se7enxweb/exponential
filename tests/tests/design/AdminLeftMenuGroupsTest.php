@@ -65,8 +65,10 @@ class AdminLeftMenuGroupsTest extends PHPUnit\Framework\TestCase
         foreach ( $setup['Groups'] as $group )
         {
             $this->assertArrayHasKey( $group, $setup['GroupNames'] ?? array(), "group {$group} has no GroupNames[{$group}]" );
-            $this->assertNotEmpty( $setup["GroupLinks_$group"] ?? array(), "group {$group} has no GroupLinks_{$group}[]" );
-            foreach ( $setup["GroupLinks_$group"] as $key )
+            // a group that adds another menu's links (GroupSections[]) needs no link of its own
+            if ( !isset( $setup['GroupSections'][$group] ) )
+                $this->assertNotEmpty( $setup["GroupLinks_$group"] ?? array(), "group {$group} has no GroupLinks_{$group}[]" );
+            foreach ( $setup["GroupLinks_$group"] ?? array() as $key )
             {
                 $this->assertNotContains( $key, $seen, "link $key is in two groups" );
                 $this->assertContains( $key, array_merge( $links, $extensionLinks ), "GroupLinks_{$group}[] names $key, which is no Links[] key of Leftmenu_setup nor a known extension's" );

@@ -12748,6 +12748,41 @@ Note: The packages will not be uninstalled.</translation>
     </message>
 </context>
 <context>
+    <name>design/admin/parts/audit/menu</name>
+    <message>
+        <source>Health, activity, security and alerts at a glance.</source>
+        <translation>Health, activity, security and alerts at a glance.</translation>
+    </message>
+    <message>
+        <source>The timeline of events, with filters and search.</source>
+        <translation>The timeline of events, with filters and search.</translation>
+    </message>
+    <message>
+        <source>The latest 100 events of all channels.</source>
+        <translation>The latest 100 events of all channels.</translation>
+    </message>
+    <message>
+        <source>Events, refusals and logins per day.</source>
+        <translation>Events, refusals and logins per day.</translation>
+    </message>
+    <message>
+        <source>The alerts that fired and the rules in use.</source>
+        <translation>The alerts that fired and the rules in use.</translation>
+    </message>
+    <message>
+        <source>The console's filter as CSV or JSON.</source>
+        <translation>The console's filter as CSV or JSON.</translation>
+    </message>
+    <message>
+        <source>Live files, archives and their verification.</source>
+        <translation>Live files, archives and their verification.</translation>
+    </message>
+    <message>
+        <source>The effective audit settings, sinks and index.</source>
+        <translation>The effective audit settings, sinks and index.</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/parts/content/menu</name>
     <message>
         <source>Content structure</source>
@@ -12788,6 +12823,25 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>Site structure</source>
         <translation>Site structure</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/parts/design/menu</name>
+    <message>
+        <source>The look of the site.</source>
+        <translation>The look of the site.</translation>
+    </message>
+    <message>
+        <source>The toolbars and their tools.</source>
+        <translation>The toolbars and their tools.</translation>
+    </message>
+    <message>
+        <source>List and edit templates.</source>
+        <translation>List and edit templates.</translation>
+    </message>
+    <message>
+        <source>The templates of the designs and their overrides.</source>
+        <translation>The templates of the designs and their overrides.</translation>
     </message>
 </context>
 <context>
@@ -13283,6 +13337,18 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>Make, download and remove backups.</source>
         <translation>Make, download and remove backups.</translation>
+    </message>
+    <message>
+        <source>Design</source>
+        <translation>Design</translation>
+    </message>
+    <message>
+        <source>Design content</source>
+        <translation>Design content</translation>
+    </message>
+    <message>
+        <source>The design's top node and the objects below it.</source>
+        <translation>The design's top node and the objects below it.</translation>
     </message>
 </context>
 <context>

@@ -15117,6 +15117,41 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
 </context>
 <context>
+    <name>design/admin/parts/audit/menu</name>
+    <message>
+        <source>Health, activity, security and alerts at a glance.</source>
+        <translation>Zustand, Aktivität, Sicherheit und Alarme auf einen Blick.</translation>
+    </message>
+    <message>
+        <source>The timeline of events, with filters and search.</source>
+        <translation>Die Zeitleiste der Ereignisse, mit Filtern und Suche.</translation>
+    </message>
+    <message>
+        <source>The latest 100 events of all channels.</source>
+        <translation>Die letzten 100 Ereignisse aller Kanäle.</translation>
+    </message>
+    <message>
+        <source>Events, refusals and logins per day.</source>
+        <translation>Ereignisse, Ablehnungen und Anmeldungen pro Tag.</translation>
+    </message>
+    <message>
+        <source>The alerts that fired and the rules in use.</source>
+        <translation>Ausgelöste Alarme und die geltenden Regeln.</translation>
+    </message>
+    <message>
+        <source>The console's filter as CSV or JSON.</source>
+        <translation>Der Filter der Konsole als CSV oder JSON.</translation>
+    </message>
+    <message>
+        <source>Live files, archives and their verification.</source>
+        <translation>Laufende Dateien, Archive und ihre Prüfung.</translation>
+    </message>
+    <message>
+        <source>The effective audit settings, sinks and index.</source>
+        <translation>Die wirksamen Audit-Einstellungen, Senken und der Index.</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/parts/content/menu</name>
     <message>
         <source>Content structure</source>
@@ -15172,6 +15207,22 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Templates</source>
         <translation type="obsolete">Templates</translation>
+    </message>
+    <message>
+        <source>The look of the site.</source>
+        <translation>Das Aussehen der Site.</translation>
+    </message>
+    <message>
+        <source>The toolbars and their tools.</source>
+        <translation>Die Werkzeugleisten und ihre Werkzeuge.</translation>
+    </message>
+    <message>
+        <source>List and edit templates.</source>
+        <translation>Templates auflisten und bearbeiten.</translation>
+    </message>
+    <message>
+        <source>The templates of the designs and their overrides.</source>
+        <translation>Die Templates der Designs und ihre Overrides.</translation>
     </message>
 </context>
 <context>
@@ -15699,6 +15750,18 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Make, download and remove backups.</source>
         <translation>Sicherungen anlegen, herunterladen und entfernen.</translation>
+    </message>
+    <message>
+        <source>Design</source>
+        <translation>Design</translation>
+    </message>
+    <message>
+        <source>Design content</source>
+        <translation>Design-Inhalte</translation>
+    </message>
+    <message>
+        <source>The design's top node and the objects below it.</source>
+        <translation>Der oberste Knoten des Designs und die Objekte darunter.</translation>
     </message>
 </context>
 <context>
