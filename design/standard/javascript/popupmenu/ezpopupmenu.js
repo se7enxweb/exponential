@@ -185,7 +185,7 @@ function ezpopupmenu_setSubstituteValue( key, value )
    'event' This parameter is for the mouse event.
    'menuID' is the identification of the menu to use.
    'substituteValues' is an associative array. The string value of each item in the menu will have they keys, substituted by the value in this array.
-   'menuHeader' If the menu has a header it is replaced with this value.
+   'menuHeader' If the menu has a header it is replaced with this text (plain text, not markup).
    'disableID' If this id is found in the list of known disabled for this menu the item is disabled.
  */
 function ezpopmenu_showTopLevel( event, menuID, substituteValues, menuHeader, disableIDList, disableMenuID )
@@ -281,30 +281,7 @@ function ezpopmenu_doItemSubstitution( menuID, menuHeader )
 
         if ( loopingVariable )
         {
-            var content = '';
-
-            for ( var localVariableIndex in CurrentSubstituteValues[loopingVariable] )
-            {
-                var localVariable = CurrentSubstituteValues[loopingVariable][localVariableIndex];
-                if ( typeof localVariable != 'object' )
-                    continue;
-
-                var partialContent = menuArray[menuID]['elements'][i]['content'];
-                for ( var substItem in CurrentSubstituteValues )
-                {
-                    if ( typeof CurrentSubstituteValues[substItem] != 'object' && typeof CurrentSubstituteValues[substItem] != 'function' )
-                    {
-                        partialContent = partialContent.replace( substItem, CurrentSubstituteValues[substItem] );
-                    }
-                }
-                for ( var localItem in localVariable )
-                {
-                    partialContent = partialContent.replace( '%' + localItem + '%', localVariable[localItem] );
-                }
-                content += partialContent;
-            }
-
-            hrefElement.innerHTML = content;
+            ezpopmenu_fillItems( hrefElement, menuArray[menuID]['elements'][i]['content'], CurrentSubstituteValues[loopingVariable] );
         }
 
         var disabledForElement = false;
@@ -348,8 +325,80 @@ function ezpopmenu_doItemSubstitution( menuID, menuHeader )
     if ( menuHeader && typeof( menuArray[menuID]['headerID'] ) != 'undefined' )
     {
         var header = document.getElementById( menuArray[menuID]['headerID'] );
-        if ( header ) header.innerHTML = menuHeader;
+        if ( header ) header.textContent = String( menuHeader );
     }
+}
+
+/*!
+  Fills element with one copy of the item markup 'content' (the menu template's own markup) per entry of the
+  looping variable. The values are data: they are put into the parsed copy as text and as attribute values,
+  escaped for a script in an event handler attribute, so a name never becomes markup.
+ */
+function ezpopmenu_fillItems( element, content, entries )
+{
+    while ( element.firstChild ) element.removeChild( element.firstChild );
+    if ( !content ) return;
+    for ( var index in entries )
+    {
+        var entry = entries[index];
+        if ( typeof entry != 'object' || entry === null )
+            continue;
+
+        var values = {};
+        for ( var localItem in entry )
+        {
+            values['%' + localItem + '%'] = entry[localItem];
+        }
+        for ( var substItem in CurrentSubstituteValues )
+        {
+            if ( typeof CurrentSubstituteValues[substItem] != 'object' && typeof CurrentSubstituteValues[substItem] != 'function' )
+            {
+                values[substItem] = CurrentSubstituteValues[substItem];
+            }
+        }
+
+        var holder = document.createElement( 'div' );
+        holder.innerHTML = content;
+        ezpopmenu_fillNodes( holder, values );
+        while ( holder.firstChild ) element.appendChild( holder.firstChild );
+    }
+}
+
+function ezpopmenu_fillNodes( parent, values )
+{
+    for ( var node = parent.firstChild; node; node = node.nextSibling )
+    {
+        if ( node.nodeType === 3 )
+        {
+            node.nodeValue = ezpopmenu_fillString( node.nodeValue, values, false );
+        }
+        else if ( node.nodeType === 1 )
+        {
+            for ( var a = 0; a < node.attributes.length; a++ )
+            {
+                var name = node.attributes[a].name, value = node.attributes[a].value;
+                var filled = ezpopmenu_fillString( value, values, /^on/i.test( name ) );
+                if ( filled !== value ) node.setAttribute( name, filled );
+            }
+            ezpopmenu_fillNodes( node, values );
+        }
+    }
+}
+
+function ezpopmenu_fillString( text, values, inScript )
+{
+    var keys = [];
+    for ( var key in values )
+    {
+        if ( text.indexOf( key ) !== -1 ) keys.push( key.replace( /[.*+?^${}()|[\]\\]/g, '\\$&' ) );
+    }
+    if ( !keys.length ) return text;
+    keys.sort( function( x, y ) { return y.length - x.length; } );
+    return text.replace( new RegExp( keys.join( '|' ), 'g' ), function( key )
+    {
+        var value = String( values[key] );
+        return inScript ? JSON.stringify( value ).slice( 1, -1 ).replace( /'/g, "\\'" ) : value;
+    } );
 }
 
 function ezpopup_substituteString( replaceString, substituteValues )

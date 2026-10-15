@@ -239,7 +239,7 @@
 <div class="a4-toolbar is-bottom">
 {if $wildcard_list|count|gt( 0 )}
     <div class="a4-actions">
-        <button type="submit" class="a4-btn a4-btn-outline-danger" name="RemoveWildcardButton" value="{'Remove selected'|i18n( 'design/admin/content/urlalias_wildcard' )}" title="{'Remove selected aliases from the list above.'|i18n( 'design/admin/content/urlalias_wildcard' )}" onclick="return confirm( '{'Are you sure you want to remove the selected wildcards?'|i18n( 'design/admin/content/urlalias_wildcard' )|wash( javascript )}' );">{'Remove selected'|i18n( 'design/admin/content/urlalias_wildcard' )}</button>
+        <button type="submit" class="a4-btn a4-btn-outline-danger" name="RemoveWildcardButton" value="{'Remove selected'|i18n( 'design/admin/content/urlalias_wildcard' )}" title="{'Remove selected aliases from the list above.'|i18n( 'design/admin/content/urlalias_wildcard' )}" onclick="return confirm( '{'Are you sure you want to remove the selected wildcards?'|i18n( 'design/admin/content/urlalias_wildcard' )|wash( javascript )|wash}' );">{'Remove selected'|i18n( 'design/admin/content/urlalias_wildcard' )}</button>
     </div>
     <p class="a4-meta">{'A removed wildcard stops working at once: its addresses are then answered by URL aliases and modules alone.'|i18n( 'design/admin/content/urlalias_wildcard' )} <span id="wildcard-selected-count" aria-live="polite"></span></p>
     <details class="a4-confirm">

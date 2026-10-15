@@ -40,7 +40,7 @@
 
         <input type="hidden" name="Login" value="" />
         <input type="hidden" name="Password" value="" />
-        <input type="hidden" name="RedirectURI" value="{$redirect_uri}" />
+        <input type="hidden" name="RedirectURI" value="{$redirect_uri|wash}" />
         </form>
 
     {/if}

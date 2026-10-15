@@ -246,6 +246,9 @@ class eZTemplateOperatorMatrixTest extends PHPUnit\Framework\TestCase
             // strings
             'wash xhtml mode'           => array( '{"<a>"|wash("xhtml")}', '{$s|wash($m)}', array( 's' => '<a>', 'm' => 'xhtml' ), '&lt;a&gt;' ),
             'wash javascript mode'      => array( "{\"it's\"|wash(\"javascript\")}", '{$s|wash($m)}', array( 's' => "it's", 'm' => 'javascript' ), 'it\\047s' ),
+            // a value in a script element: < and > escaped (no </script>), line breaks escaped (no unterminated string)
+            'wash javascript in script' => array( '{"a</script>\\b"|wash("javascript")}', '{$s|wash("javascript")}', array( 's' => "a</script>\\b" ), 'a\\x3C/script\\x3E\\\\b' ),
+            'wash javascript line break' => array( "{\"a\nb\u{2028}\"|wash(\"javascript\")}", '{$s|wash("javascript")}', array( 's' => "a\nb\u{2028}" ), 'a\\nb\\u2028' ),
             'wash pdf mode'             => array( '{"a b&amp;c"|wash("pdf")}', '{$s|wash($m)}', array( 's' => 'a b&amp;c', 'm' => 'pdf' ), 'a<C:callSpace>b&c' ),
             'wash email mode'           => array( '{"x@y.z"|wash("email")}', '{$s|wash($m)}', array( 's' => 'x@y.z', 'm' => 'email' ), null ),
             'wash plain text'           => array( '{"plain"|wash}', '{$s|wash}', array( 's' => 'plain' ), 'plain' ),

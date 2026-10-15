@@ -5,7 +5,7 @@
             <p>{'Required data is either missing or is invalid'|i18n( 'design/admin/node/view/full' )}:</p>
             <ul>
                 {section var=UnvalidatedAttributes loop=$validation.attributes}
-                    <li>{$UnvalidatedAttributes.item.name|wash}: {$UnvalidatedAttributes.item.description}</li>
+                    <li>{$UnvalidatedAttributes.item.name|wash}: {$UnvalidatedAttributes.item.description|explode( '&lt;' )|implode( '<' )|explode( '&gt;' )|implode( '>' )|wash}</li>
                 {/section}
             </ul>
         {/section}
