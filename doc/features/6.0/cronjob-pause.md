@@ -11,8 +11,11 @@ rebuild - without editing the crontab on every server, or if an extension paused
   `./console cron:<part>`, Velocity's `cron:` commands or the console. A part paused while it runs finishes the
   script that runs and leaves out the scripts after it.
 - A script run alone (`--script`, or **Run** next to a script) is left out while a part that lists it is paused.
-- The console shows **Paused** on the card, since when and by whom, a notice while every part is paused, and a
-  **Pauses** section with who paused and resumed what. A paused part cannot be run from the console.
+- The console shows **Paused** on the card, since when, by whom and the note given with the pause, a notice while
+  every part is paused, a **Paused** figure in the overview, and a **Pauses** section with who paused and resumed
+  what and why. A paused part cannot be run from the console.
+- The tile of **Cronjobs** on the Setup overview (admin4) says how many parts are paused, while any is.
+- The notice of `runcronjobs.php` says since when, by whom and why a part is paused.
 - The state is a file per part, in the layout such extensions already use, so a site that paused parts that way
   keeps them, and such a page shows the same state. `cronjob.ini [PauseSettings] Pause=disabled` switches the check
   off.
@@ -25,8 +28,11 @@ code 0, like a part a listener leaves out:
 
 ```
 Running cronjob part 'frequent'
-Notice: The cronjob part 'frequent' is paused (Setup > Cronjobs).
+Notice: The cronjob part 'frequent' is paused (Setup > Cronjobs). Paused since 2026-10-15 13:05 CEST by admin: Index rebuild until noon.
 ```
+
+The time is the time of the state file, in the server's time zone; *by* and the note come from the history and are
+left out for a pause made another way (see below), and the note when none was given.
 
 Paused means the file `cronpart_deactivated_<part>.txt` holds `1`; any other content, or no file, means the part
 runs. `all` pauses every part; the scripts of `[CronjobSettings]` (the part *global* in the console) have the empty
@@ -73,10 +79,25 @@ is replaced, not opened), and the file and the history get the installation's fi
 StorageFilePermissions`, within its limits), so the other user can replace and append to them in turn.
 
 **Audit.** Each pause and resume is recorded as `system.cronjob.pause` or `system.cronjob.resume` (object: the part,
-`all` or `global`), see [the audit trail](../../bc/6.0/audit.md).
+`all` or `global`; `after.note` with the note when one was given), see [the audit trail](../../bc/6.0/audit.md). Both
+are on by default, in the `system` channel.
+
+**A note.** The console has one field, *Note for a pause or resume (optional)*, below the buttons of the toolbar. The
+next **Pause** or **Resume** pressed on the page (a part's, or *Pause all parts*) keeps it with its history line:
+why a part is held back, and until when. It is one line of at most 200 characters (`expCronjobPause::NOTE_LENGTH`;
+line breaks become spaces) and shows on the paused part, in the notice of a pause of every part, under **Pauses**,
+in the notice of `runcronjobs.php` and so in `cronjob_skipped.log`. From code: `expCronjobPause::pause( $part, $user,
+$note )`, `resume( $part, $user, $note )`.
+
+**The Setup overview.** The tile of **Cronjobs** shows *1 part paused*, *n parts paused* or *All parts paused* while a
+pause holds, and nothing otherwise (`menu.ini [Leftmenu_setup] LinkFigureTemplates[cronjobs]`, the fetch
+`fetch( 'setup', 'cronjob_pauses' )`: one look into the directory of the state files). Like every figure there, it
+is drawn only on a tile the user may open (`setup/managecronjobs`).
 
 Pausing from the console writes the file through `eZFile::create()` (the installation's file mode limits apply) and
-adds a line to `var/<vardir>/log/cronjob_pause.log`: time, part, pause or resume, the user's object id and login. A
+adds a line to `var/<vardir>/log/cronjob_pause.log`: time, part, pause or resume, the user's object id (no copy of the name: the page and the notice
+show the user's current login, looked up by the id, so a renamed user shows under the new name; an older line's login only when the user is gone), and
+the note (empty when none was given; lines written before notes existed have none). A
 change made another way - a shell, an extension - has no line there; the card still shows since when
 the part is paused (the time of the file), and no name when the file is newer than the last pause recorded here.
 The console reads only the end of the log (256 KB), so it may grow without slowing the page; rotate it with the
@@ -108,7 +129,10 @@ who did it; `all`; a script run alone while its part is paused, also with a dire
 forgotten when the file changed since; state files written by others; part names that would leave the directory;
 broken history lines; `Pause=disabled`; `runcronjobs.php` asks the pause before the filter and again before each
 further script, and logs both skips (read from its source); a state file that cannot be opened is replaced; the
-state file and the history get `StorageFilePermissions`.
+state file and the history get `StorageFilePermissions`; a note is kept with a pause and a resume, cut to one short
+line, and the notice says since when, by whom and why; history lines without a note; the Setup overview's count;
+the console's note field and where the note shows, in both designs. `AdminSetupOverviewTest` covers the tile's
+figure and its translations.
 
 ## Related pages
 

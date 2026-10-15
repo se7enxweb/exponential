@@ -14,6 +14,24 @@
     "tests/test-map.json"
   ],
   "map": {
+    "design/admin/templates/setup/cronjobs.tpl": [
+      "tests/tests/kernel/classes/expCronjobPauseTest.php"
+    ],
+    "design/admin4/templates/setup/cronjobs.tpl": [
+      "tests/tests/kernel/classes/expCronjobPauseTest.php"
+    ],
+    "kernel/private/classes/views/setup/cronjobs.php": [
+      "tests/tests/kernel/classes/expCronjobPauseTest.php"
+    ],
+    "kernel/setup/ezsetupfunctioncollection.php": [
+      "tests/tests/kernel/classes/expCronjobPauseTest.php"
+    ],
+    "kernel/setup/function_definition.php": [
+      "tests/tests/kernel/classes/expCronjobPauseTest.php"
+    ],
+    "design/admin4/templates/setup/setupmenu_figure.tpl": [
+      "tests/tests/design/AdminSetupOverviewTest.php"
+    ],
     "lib/ezimage/classes/expsvgsanitizer.php": [
       "tests/tests/lib/ezimage/expSvgSanitizerTest.php",
       "tests/tests/kernel/datatypes/ezimage/expImageSvgTest.php"
@@ -147,7 +165,9 @@
       "tests/tests/design/AdminBaseStylesheetsTest.php",
       "tests/tests/design/AdminScriptsTest.php",
       "tests/tests/design/AdminSetupOverviewTest.php",
-      "tests/tests/design/AdminLeftMenuGroupsTest.php"
+      "tests/tests/design/AdminLeftMenuGroupsTest.php",
+      "tests/tests/design/AdminPreviewDevicesTest.php",
+      "tests/tests/design/AdminIconsTest.php"
     ],
     "design/admin4/javascript/ezadmin_menubar.js": [
       "tests/tests/design/AdminStylingRulesTest.php",
@@ -160,7 +180,8 @@
       "tests/tests/design/AdminLogoTest.php"
     ],
     "design/admin4/templates/parts/a4_header_user.tpl": [
-      "tests/tests/design/AdminHeaderTest.php"
+      "tests/tests/design/AdminHeaderTest.php",
+      "tests/tests/design/AdminIconsTest.php"
     ],
     "kernel/private/classes/views/error/view.php": [
       "tests/tests/kernel/error/ErrorHeaderListTest.php"
@@ -216,7 +237,8 @@
     "design/admin4/templates/node/view/a4_full_body.tpl": [
       "tests/tests/kernel/content/eZAdminFullViewCopyButtonTest.php",
       "tests/tests/design/AdminNodeTabsHeightTest.php",
-      "tests/tests/design/AdminVisibilityStatusTest.php"
+      "tests/tests/design/AdminVisibilityStatusTest.php",
+      "tests/tests/design/AdminIconsTest.php"
     ],
     "design/standard/templates/content/datatype/view/ezselection.tpl": [
       "tests/tests/kernel/datatypes/eZSelectionMatrixViewTemplateTest.php"
@@ -290,6 +312,8 @@
       "tests/tests/design/AdminEditBarTest.php",
       "tests/tests/design/AdminContentEditFormsTest.php",
       "tests/tests/design/AdminEditorSkinTest.php",
+      "tests/tests/design/AdminLegacyControlsTest.php",
+      "tests/tests/design/AdminPreviewDevicesTest.php",
       "tests/tests/design/AdminNodeTabsHeightTest.php"
     ],
     "extension/ezjscore/design/standard/javascript/*": [
@@ -420,7 +444,9 @@
       "tests/tests/design/AdminVisibilityStatusTest.php"
     ],
     "extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe_engine_switch.tpl": [
-      "tests/tests/extension/ezoe/expOEEngineConfigTest.php"
+      "tests/tests/extension/ezoe/expOEEngineConfigTest.php",
+      "tests/tests/design/AdminContentEditFormsTest.php",
+      "tests/tests/design/AdminLegacyControlsTest.php"
     ],
     "extension/ezoe/design/standard/javascript/tinymce8_ez/ezoe_dialog.js": [
       "tests/tests/design/AdminTopNodeNameTest.php"
@@ -460,6 +486,28 @@
     ],
     "kernel/classes/ezsearch.php": [
       "tests/tests/kernel/content/eZPendingIndexActionsTest.php"
+    ],
+    "design/admin4/stylesheets/components.css": [
+      "tests/tests/design/AdminLegacyControlsTest.php",
+      "tests/tests/design/AdminPreviewDevicesTest.php",
+      "tests/tests/design/AdminIconsTest.php"
+    ],
+    "design/admin/stylesheets/components.css": [
+      "tests/tests/design/AdminLegacyControlsTest.php",
+      "tests/tests/design/AdminPreviewDevicesTest.php",
+      "tests/tests/design/AdminIconsTest.php"
+    ],
+    "design/admin4/templates/parts/left_width_control.tpl": [
+      "tests/tests/design/AdminLegacyControlsTest.php"
+    ],
+    "design/admin4/templates/content/view/versionview.tpl": [
+      "tests/tests/design/AdminPreviewDevicesTest.php"
+    ],
+    "design/admin4/stylesheets/modules/content.css": [
+      "tests/tests/design/AdminPreviewDevicesTest.php"
+    ],
+    "design/admin/stylesheets/modules/content.css": [
+      "tests/tests/design/AdminPreviewDevicesTest.php"
     ],
     "design/admin4/templates/parts/a4_tabs_height.tpl": [
       "tests/tests/design/AdminNodeTabsHeightTest.php"
@@ -524,6 +572,10 @@
     "kernel/common/expenvironmentoperator.php": [
       "tests/tests/design/AdminEnvironmentBadgeTest.php",
       "tests/tests/kernel/classes/templateside/eZKernelTemplateOperatorsTest.php"
+    ],
+    "extension/ezmultiupload/*": [
+      "tests/tests/extension/ezmultiupload/expMultiuploadServiceTest.php",
+      "tests/tests/extension/ezmultiupload/expMultiuploadZipTest.php"
     ]
   },
   "generated": {

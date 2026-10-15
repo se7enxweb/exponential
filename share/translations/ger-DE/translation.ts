@@ -8871,6 +8871,42 @@
         <translation>Vorschau in einem neuen Fenster öffnen</translation>
     </message>
     <message>
+        <source>iPhone</source>
+        <translation>iPhone</translation>
+    </message>
+    <message>
+        <source>iPad</source>
+        <translation>iPad</translation>
+    </message>
+    <message>
+        <source>Desktop</source>
+        <translation>Desktop</translation>
+    </message>
+    <message>
+        <source>Large Desktop</source>
+        <translation>Großer Desktop</translation>
+    </message>
+    <message>
+        <source>Preview size</source>
+        <translation>Vorschaugröße</translation>
+    </message>
+    <message>
+        <source>%device, %width × %height px</source>
+        <translation>%device, %width × %height px</translation>
+    </message>
+    <message>
+        <source>%width × %height px, shown at %scale %</source>
+        <translation>%width × %height px, angezeigt mit %scale %</translation>
+    </message>
+    <message>
+        <source>Landscape</source>
+        <translation>Querformat</translation>
+    </message>
+    <message>
+        <source>Landscape: phone and tablet turned on their side</source>
+        <translation>Querformat: Smartphone und Tablet quer gedreht</translation>
+    </message>
+    <message>
         <source>Queued</source>
         <translation>In der Warteschlange</translation>
     </message>
@@ -24178,6 +24214,22 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
 </context>
 <context>
     <name>design/admin/setup/cronjobs</name>
+    <message>
+        <source>Note: %note</source>
+        <translation>Notiz: %note</translation>
+    </message>
+    <message>
+        <source>Note</source>
+        <translation>Notiz</translation>
+    </message>
+    <message>
+        <source>Note for a pause or resume (optional)</source>
+        <translation>Notiz zum Anhalten oder Fortsetzen (optional)</translation>
+    </message>
+    <message>
+        <source>Kept with the next Pause or Resume pressed on this page; shown under Pauses, on the paused part and in the output of runcronjobs.php.</source>
+        <translation>Wird mit dem nächsten Anhalten oder Fortsetzen auf dieser Seite gespeichert; erscheint unter Pausen, beim angehaltenen Teil und in der Ausgabe von runcronjobs.php.</translation>
+    </message>
     <message>
         <source>Docs</source>
         <translation>Doku</translation>
@@ -72524,6 +72576,18 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
 </context>
 <context>
     <name>design/admin/setup/setupmenu</name>
+    <message>
+        <source>All parts paused</source>
+        <translation>Alle Teile angehalten</translation>
+    </message>
+    <message>
+        <source>1 part paused</source>
+        <translation>1 Teil angehalten</translation>
+    </message>
+    <message>
+        <source>%count parts paused</source>
+        <translation>%count Teile angehalten</translation>
+    </message>
     <message>
         <source>Setup</source>
         <translation>Setup</translation>

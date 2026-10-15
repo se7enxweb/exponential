@@ -174,7 +174,7 @@ toasts, and on a `var(--a4-z-…)` that `components.css` does not define (a typo
 | Forms | `.a4-field`, `.a4-field-wide`, `.a4-label`, `.a4-input` (`.is-auto`), `.a4-field-error`, `.a4-form` (`.is-wide`), `.a4-formrow` (label beside control), `.a4-searchrow`, `.a4-check`, `.a4-radios`, `.a4-chips` > `.a4-chip`, `.a4-inline-label` (a label around text that was plain before: an inline radio or checkbox with its text, or the words in front of a control in a table cell; drawn like the text around it) |
 | Forms | `.a4-field`, `.a4-field-wide`, `.a4-label`, `.a4-input` (`.is-auto`), `.a4-field-error`, `.a4-required-mark` + `.a4-required-hint` (required fields), `.a4-error-summary` (the summary of a failed store), `.a4-form` (`.is-wide`), `.a4-formrow` (label beside control), `.a4-searchrow`, `.a4-check`, `.a4-radios`, `.a4-chips` > `.a4-chip` |
 | Tables | `.a4-table-wrap` > `table.a4-table` (`.is-compact`), `tr.is-selected` |
-| Under a list | `.a4-listfoot`, `.a4-sizes`, `.a4-pager`; `.a4-tabs` (links, buttons, `span.current`, `a.current`, `.is-current`; `.is-segmented`: joined into one compact switch, a pressed button is `aria-pressed="true"`; `.is-icons`: square icon buttons, each named by `.a4-sr-only` text and its `title`), `.a4-count` |
+| Under a list | `.a4-listfoot`, `.a4-sizes`, `.a4-pager`; `.a4-tabs` (links, buttons, `span.current`, `a.current`, `.is-current`; `.is-segmented`: one pill at `--a4-control-h` around every choice, the current one tinted in the accent with an accent edge; a pressed button is `aria-pressed="true"`, a current link `span.current`, `a.current` or `.is-current` (with `aria-current`); Left/Right and Home/End move between the choices (`admin4.js`), each keeps its Tab stop; `.is-icons`: round icon buttons, each named by `.a4-sr-only` text and its `title`), `.a4-count` |
 | Empty state, notices | `.a4-empty`; `.a4-notice` (`.is-ok`, `.is-warn`, `.is-bad`, `.is-info`: each with its icon left of the text, `.no-icon` leaves it out; `.a4-notice-title` for a bold first line) |
 | Toasts | `.a4-toasts` (the two live regions of the frame, `#a4-toasts` polite and `#a4-toasts-alert` assertive) and `.a4-toast` (`.is-ok`, `.is-warn`, `.is-bad`); added only by `window.a4Toast( message, kind )` from `admin4.js` |
 | Folding | `details.a4-fold` > `summary` + `.a4-fold-body` (`.is-bad`, `.is-warn`); `details.a4-confirm` (a confirmation that opens in place) |
@@ -302,6 +302,23 @@ side, at least 24px high, and under forced colors an outline in `Highlight` mark
 `ul.tabs`). A new on/off preference in the right column is one more entry of the template's list
 (`AdminLegacyControlsTest`).
 
+## Version preview
+
+`content/view/versionview.tpl` draws the device switch of the preview with the components (`.a4-tabs.is-segmented`,
+`aria-pressed` buttons, `.a4-icon`) and `modules/content.css` adds what they cannot do:
+
+| Class | Holds |
+|---|---|
+| `.a4-content-preview-bar` | the device pill, the landscape switch and `.a4-content-preview-size` (the size and scale); a container: below 640 px the names (`.a4-content-preview-device-name`) are visually hidden and the buttons are round icons |
+| `.a4-content-preview-stage` | the `.mainobject-window` around the iframe; `.is-device` (set by the script) centres the frame on `--a4-soft` |
+| `.a4-content-preview-device` | the frame: the script sets its size (the device's size times the scale, `box-sizing: content-box`), the iframe inside has the device's size and `transform: scale()` |
+
+The behaviour is a part of `admin4.js` (it starts when the page has `#a4-content-preview-bar` and
+`#a4-content-preview-stage`); the device and the orientation are the eZPreferences `admin_preview_device` and
+`admin_preview_landscape`, kept through `window.a4Pref` (`AdminPreviewDevicesTest`, `AdminPreferencesTest`).
+A site design that overrides `versionview.tpl` keeps its own preview; to take the switch, copy the bar and the stage
+from admin4's template.
+
 ## Edit forms
 
 The datatype edit templates live in `design/standard` and still write the classic markup: `input.box`,
@@ -350,11 +367,13 @@ ezoe's engine switch below a rich text field (`ezxmltext_ezoe_engine_switch.tpl`
 neutral markup: `div.ezoe-engine-switch` (`role="group"`, named by its label `span.ezoe-engine-switch-label`
 "Editor"), the engine in use as the pressed toggle `button.ezoe-engine-switch-option.current` (`type="button"`, `aria-pressed="true"`), every other
 engine as a `button.button.ezoe-engine-switch-option` (`aria-pressed="false"`) that posts `CustomActionButton[<attribute id>_switch_engine_<id>]`.
-`modules/content.css` draws it as one segmented control like `.a4-tabs.is-segmented`: the segments joined at
-`--a4-control-h`, the engine in use filled in `--a4-accent-strong` (an outline in `Highlight` under forced colors),
-the label muted beside them on the same centre line. It stands left-aligned under the field, like the field's other
-controls and its label, `--a4-space-2` below the editor's status bar; on a narrow screen the joined segments move under the
-label as one piece (`AdminContentEditFormsTest`).
+The engines' `span.ezoe-engine-switch-options` also carries `a4-tabs is-segmented`, so every administration design
+draws it as the one segmented pill of `components.css`, as the left menu's width switch: the track, the engine in use
+tinted in the accent with an accent edge, the focus ring, forced colors, and the arrow keys of `admin4.js`.
+`modules/content.css` only places it (the label muted beside the pill on the same centre line, left-aligned under the
+field like its other controls and its label, `--a4-space-2` below the editor's status bar; on a narrow screen the
+pill moves under the label as one piece) and keeps the pill's hover over the stronger legacy button hover of that
+file (`AdminContentEditFormsTest`).
 
 The rich text editors (TinyMCE 3 and 8) draw a field's text in an iframe with ezoe's light content stylesheet. The
 edit form names `components.css` and `editor_content.css` in `data-a4-editor-css`; `admin4.js` adds both to each

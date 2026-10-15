@@ -8,6 +8,8 @@
      admin_right_sidebar  1 | 0, the right column on a wide window (empty: open)
      admin_right_drawer   1 | 0, the right column as a drawer on a tablet-sized window, 576 to 1279px (empty: closed)
      admin_navgroups      the closed groups of the left menus, comma separated ids (empty or "-": none)
+     admin_preview_device phone | tablet | desktop | large, the device of the version preview (empty: desktop)
+     admin_preview_landscape  1 | 0, the version preview's phone or tablet turned on its side (empty: upright)
      admin_node_preview_height  the height of the node view's tab box in pixels (empty or "-": the default; admin4.js)
    Used by the page layouts of admin4 and admin4l. No output for anonymous pages; no line breaks (it sits in a tag). *}
-{if fetch( 'user', 'current_user' ).is_logged_in} data-a4-pref-url="{'/user/preferences/set_and_exit'|ezurl( 'no' )|wash}"{foreach array( 'admin_color_mode', 'admin_left_sidebar', 'admin_right_sidebar', 'admin_right_drawer', 'admin_navgroups', 'admin_node_preview_height' ) as $a4_pref} data-a4-pref-{$a4_pref|explode( '_' )|implode( '-' )}="{ezpreference( $a4_pref )|wash}"{/foreach}{/if}
+{if fetch( 'user', 'current_user' ).is_logged_in} data-a4-pref-url="{'/user/preferences/set_and_exit'|ezurl( 'no' )|wash}"{foreach array( 'admin_color_mode', 'admin_left_sidebar', 'admin_right_sidebar', 'admin_right_drawer', 'admin_preview_device', 'admin_preview_landscape', 'admin_navgroups', 'admin_node_preview_height' ) as $a4_pref} data-a4-pref-{$a4_pref|explode( '_' )|implode( '-' )}="{ezpreference( $a4_pref )|wash}"{/foreach}{/if}

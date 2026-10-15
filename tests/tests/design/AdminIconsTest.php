@@ -4,7 +4,9 @@
  * class_icon, mimetype_icon, classgroup_icon and icon), the .a4-icon component (components.css) and the sprite
  * replacements in admin4's stylesheets all point at the same SVG files. A name in icon.ini, a class or a url() that
  * has no file shows as a broken image or an empty square; a file nothing names is dead weight; a changed file is no
- * longer the one its licence covers. Templates of admin4 draw no GIF icon, no inline SVG and no image button.
+ * longer the one its licence covers. Templates of admin4 draw no GIF icon, no inline SVG and no image button. Every
+ * link that opens the site (the header's "Open the site", the node view's "View on site") shows the globe (globe2),
+ * not the generic "open elsewhere" arrow.
  * doc/features/6.0/admin4-design.md, doc/bc/6.0/admin4-styling.md.
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminIconsTest.php
@@ -224,5 +226,35 @@ class AdminIconsTest extends PHPUnit\Framework\TestCase
                 $this->assertStringContainsString( $line, $top, "design/admin4l/templates/explayouts/block/$block.tpl is not in step with page_topmenu.tpl" );
             }
         }
+    }
+
+    /** The site links of admin4 and admin4l, by template, with the markup of their icon */
+    const SITE_LINKS = array(
+        'design/admin4/templates/page_topmenu.tpl' => '<span class="a4-icon a4-bi-globe2" aria-hidden="true"></span>',
+        'design/admin4l/templates/explayouts/block/admin_theme_switch.tpl' => '<span class="a4-icon a4-bi-globe2" aria-hidden="true"></span>',
+        'design/admin4/templates/node/view/a4_full_body.tpl' => '<span class="a4-icon a4-bi-globe2 is-medium" aria-hidden="true"></span>',
+    );
+
+    /**
+     * A link that opens the site shows the globe (Bootstrap Icons globe2), wherever it stands: the header's "Open
+     * the site" (admin4 and admin4l) and the node view's "View on site". The arrow out of a box (box-arrow-up-right)
+     * stays for links that leave the administration for something else, so the two no longer look alike.
+     */
+    public function testEveryLinkToTheSiteShowsTheGlobe()
+    {
+        $root = self::root();
+        foreach ( self::SITE_LINKS as $file => $icon )
+        {
+            $text = (string)file_get_contents( "$root/$file" );
+            $this->assertSame( 1, substr_count( $text, $icon ), "$file: the site link shows the globe" );
+            $this->assertStringNotContainsString( 'a4-bi-box-arrow-up-right', $text, "$file: no arrow on the site link" );
+        }
+        $this->assertMatchesRegularExpression( '/<a class="site-preview a4-header-btn" href="\{siteaccess_url\(\)\|wash\}"[^>]*>\s*' . preg_quote( self::SITE_LINKS['design/admin4/templates/page_topmenu.tpl'], '/' ) . '/', (string)file_get_contents( "$root/design/admin4/templates/page_topmenu.tpl" ) );
+        $this->assertMatchesRegularExpression( '/<a class="a4-icon-button" href="\{\$site_url\|wash\}"[^>]*>' . preg_quote( self::SITE_LINKS['design/admin4/templates/node/view/a4_full_body.tpl'], '/' ) . '<\/a>/', (string)file_get_contents( "$root/design/admin4/templates/node/view/a4_full_body.tpl" ) );
+        $rule = '.a4-bi-globe2 { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/globe2.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/globe2.svg); }';
+        foreach ( array( 'admin4', 'admin' ) as $design )
+            $this->assertStringContainsString( $rule, (string)file_get_contents( "$root/design/$design/stylesheets/components.css" ), "design/$design: the mask rule" );
+        $this->assertMatchesRegularExpression( '/^IconList\[\]=globe2$/m', (string)file_get_contents( "$root/settings/design.ini" ) );
+        $this->assertStringStartsWith( '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-globe2" viewBox="0 0 16 16">', (string)file_get_contents( "$root/" . self::THEME . '/svg/globe2.svg' ) );
     }
 }

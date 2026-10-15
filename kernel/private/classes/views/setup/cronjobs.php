@@ -101,7 +101,8 @@ class Cronjobs extends \Exponential\Runnable\ModuleView
             if ( !$module->isCurrentAction( $pauseAction ) )
                 continue;
             $part = $module->hasActionParameter( 'CronjobPart' ) ? (string)$module->actionParameter( 'CronjobPart' ) : '';
-            $result = self::pausePart( $part, $pause );
+            $note = $module->hasActionParameter( 'CronjobPauseNote' ) ? \expCronjobPause::cleanNote( $module->actionParameter( 'CronjobPauseNote' ) ) : '';
+            $result = self::pausePart( $part, $pause, $note );
             $feedback[] = array( 'ok' => $result['ok'], 'message' => $result['message'] );
             $actionTaken = true;
         }
@@ -232,7 +233,7 @@ class Cronjobs extends \Exponential\Runnable\ModuleView
         };
 
         $summary = array( 'parts' => count( $parts ), 'scheduled' => 0, 'unscheduled' => 0,
-                          'attention' => 0, 'scripts' => 0 );
+                          'attention' => 0, 'scripts' => 0, 'paused' => 0 );
         $now = time();
 
         foreach ( $parts as $index => $part )
@@ -290,6 +291,8 @@ class Cronjobs extends \Exponential\Runnable\ModuleView
             $summary[$parts[$index]['scheduled'] ? 'scheduled' : 'unscheduled']++;
             if ( $parts[$index]['attention'] )
                 $summary['attention']++;
+            if ( $parts[$index]['pause']['paused'] )
+                $summary['paused']++;
         }
 
         // The parts and their scripts are the long list on this page - it grows with
@@ -318,10 +321,15 @@ class Cronjobs extends \Exponential\Runnable\ModuleView
         $cronjobHistory = \expCronjobRunner::history( 20 );
         $tpl->setVariable( 'cronjob_history', $cronjobHistory );
         $tpl->setVariable( 'cronjob_last_run', $cronjobHistory ? $cronjobHistory[0] : false );
-        $tpl->setVariable( 'cronjob_summary', $summary );
         // Paused parts, the pause of every part, and who paused and resumed what, newest first.
         $tpl->setVariable( 'cronjob_pause_enabled', \expCronjobPause::enabled() );
-        $tpl->setVariable( 'cronjob_pause_all', \expCronjobPause::state( \expCronjobPause::ALL ) );
+        $cronjobPauseAll = \expCronjobPause::state( \expCronjobPause::ALL );
+        $tpl->setVariable( 'cronjob_pause_all', $cronjobPauseAll );
+        // While every part is paused, every part counts as paused in the overview.
+        if ( $cronjobPauseAll['paused'] )
+            $summary['paused'] = $summary['parts'];
+        $tpl->setVariable( 'cronjob_summary', $summary );
+        $tpl->setVariable( 'cronjob_pause_note_length', \expCronjobPause::NOTE_LENGTH );
         $tpl->setVariable( 'cronjob_pause_history', \expCronjobPause::history( 20 ) );
         // Joined here, not in the template. A newline written between two template
         // tags is whitespace between tags, and the engine drops it - which turned the
@@ -405,9 +413,10 @@ class Cronjobs extends \Exponential\Runnable\ModuleView
      *
      * @param string $part
      * @param bool $pause
+     * @param string $note An optional note, already cleaned (expCronjobPause::cleanNote()).
      * @return array ok, message
      */
-    private static function pausePart( $part, $pause )
+    private static function pausePart( $part, $pause, $note = '' )
     {
         if ( !\expCronjobPause::enabled() )
             return array( 'ok' => false, 'message' => \ezpI18n::tr( 'design/admin/setup/cronjobs', 'Pausing cronjob parts is switched off (cronjob.ini [PauseSettings] Pause=disabled).' ) );
@@ -421,7 +430,7 @@ class Cronjobs extends \Exponential\Runnable\ModuleView
         $file = $part === \expCronjobRunner::GLOBAL_PART ? '' : $part;
         try
         {
-            $done = $pause ? \expCronjobPause::pause( $file ) : \expCronjobPause::resume( $file );
+            $done = $pause ? \expCronjobPause::pause( $file, null, $note ) : \expCronjobPause::resume( $file, null, $note );
         }
         catch ( \Exception $e )
         {

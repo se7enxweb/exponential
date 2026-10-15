@@ -116,6 +116,15 @@
         </testsuite>
 
         <!--
+          ezmultiupload: the server side of the upload page (input checks, form token, permission pre-check,
+          duplicate check) and its ZIP import, with nodes and classes held in memory. No database or siteaccess.
+          Run: php vendor/bin/phpunit - -testsuite ezmultiupload
+        -->
+        <testsuite name="ezmultiupload">
+            <directory suffix="Test.php">tests/tests/extension/ezmultiupload</directory>
+        </testsuite>
+
+        <!--
           expservices: the service layer called like the ezjscore router does (content, users, commerce, community,
           media, misc, core). Live database of the admin siteaccess, throwaway rows the tests remove again, never a
           test database. Without an installed site (CI) every class is skipped by ezpLiveInstallation::requireOrSkip().
