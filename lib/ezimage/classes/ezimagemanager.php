@@ -880,6 +880,15 @@ class eZImageManager
 
         $sourceMimeData = eZMimeType::findByFileContents( $aliasFilePath );
 
+        // An SVG is never handed to GD or ImageMagick: its aliases are the
+        // original file (eZImageAliasHandler::imageAlias())
+        if ( ( isset( $sourceMimeData['name'] ) && $sourceMimeData['name'] === 'image/svg+xml' ) ||
+             ( isset( $aliasInfo['mime_type'] ) && $aliasInfo['mime_type'] === 'image/svg+xml' ) )
+        {
+            eZDebug::writeNotice( "The image $aliasFilePath is an SVG image, alias '$aliasName' is not generated", __METHOD__ );
+            return false;
+        }
+
         /**
          * at first, destinationMimeData (mimedata for the alias we're
          * generating) is the same as sourceMimeData. It will evolve as
@@ -1074,6 +1083,13 @@ class eZImageManager
 
         if ( is_string( $sourceMimeData ) )
             $sourceMimeData = eZMimeType::findByFileContents( $sourceMimeData );
+
+        // SVG is not converted by the image handlers (it would be rasterized, or run by a delegate)
+        if ( is_array( $sourceMimeData ) && isset( $sourceMimeData['name'] ) && $sourceMimeData['name'] === 'image/svg+xml' )
+        {
+            eZDebug::writeNotice( 'SVG images are not converted', __METHOD__ );
+            return false;
+        }
 
         $this->analyzeImage( $sourceMimeData );
         $currentMimeData = $sourceMimeData;

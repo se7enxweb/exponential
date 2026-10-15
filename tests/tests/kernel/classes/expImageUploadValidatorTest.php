@@ -5,7 +5,7 @@
  *
  *  IV-01 - JPEG, PNG, GIF, WebP and AVIF are accepted, with the type read from the content
  *  IV-02 - A PHP file named .jpg is refused, by the validator and by the image datatype
- *  IV-03 - SVG is refused by default; the validator accepts it only when it is listed, the datatype never
+ *  IV-03 - SVG is on the shipped list and recognised by content; unlisted it is refused; the datatype takes it sanitized
  *  IV-04 - Without fileinfo the older check gives the type, still against the list, and one warning is logged
  *  IV-05 - ValidateMIMEType=disabled: any image by the older check; an unlisted type is refused when enabled
  *  IV-06 - Type names are normalized (case, parameters, aliases); the shipped settings are the defaults
@@ -149,21 +149,27 @@ class expImageUploadValidatorTest extends PHPUnit\Framework\TestCase
     }
 
     /** IV-03 */
-    public function testSvgRefusedUnlessListed()
+    public function testSvgListedAndRecognisedByContent()
     {
         $svg = $this->file( 'drawing.svg', '<?xml version="1.0"?><svg xmlns="http://www.w3.org/2000/svg" width="4" height="3"><script>alert(1)</script><rect width="4" height="3"/></svg>' );
 
         $default = expImageUploadValidator::validateAgainst( $svg, expImageUploadValidator::DEFAULT_ALLOWED_MIME_TYPES );
-        $this->assertFalse( $default['valid'] );
+        $this->assertTrue( $default['valid'] );
         $this->assertSame( 'image/svg+xml', $default['mime'] );
-        $this->assertFalse( expImageUploadValidator::validate( $svg )['valid'] );
-        $this->assertNotContains( 'image/svg+xml', expImageUploadValidator::allowedMIMETypes() );
+        $this->assertContains( 'image/svg+xml', expImageUploadValidator::allowedMIMETypes() );
 
-        $listed = expImageUploadValidator::validateAgainst( $svg, array( 'image/png', 'image/svg+xml' ) );
-        $this->assertTrue( $listed['valid'] );
+        $unlisted = expImageUploadValidator::validateAgainst( $svg, array( 'image/png' ) );
+        $this->assertSame( array( 'valid' => false, 'mime' => 'image/svg+xml' ), $unlisted );
 
-        // the image datatype stores raster images only, whatever the list says
-        $this->assertIsString( eZImageType::imageFileError( $svg, 'drawing.svg' ) );
+        // by its root element, whatever libmagic calls it: no XML declaration, a comment first, gzip
+        $bare = $this->file( 'bare.jpg', '<!-- x --><svg xmlns="http://www.w3.org/2000/svg"><rect width="4" height="3"/></svg>' );
+        $this->assertSame( 'image/svg+xml', expImageUploadValidator::validateAgainst( $bare, array() )['mime'] );
+        $gz = $this->file( 'drawing.svgz', gzencode( file_get_contents( $svg ) ) );
+        $this->assertSame( array( 'valid' => true, 'mime' => 'image/svg+xml' ),
+                           expImageUploadValidator::validateAgainst( $gz, array( 'image/svg+xml' ) ) );
+
+        // the image datatype takes it, as it will store it: sanitized (see expImageSvgTest)
+        $this->assertFalse( eZImageType::imageFileError( $svg, 'drawing.svg' ) );
     }
 
     /** IV-04 */

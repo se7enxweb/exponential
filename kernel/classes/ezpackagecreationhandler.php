@@ -1034,7 +1034,7 @@ class eZPackageCreationHandler
         }
 
         // The name says image; the content must say so as well
-        $imageError = eZImageType::imageFileError( $imagefile, $_FILES[$httpFileName]['name'] );
+        $imageError = eZImageType::imageFileError( $imagefile, $_FILES[$httpFileName]['name'], false );
         if ( $imageError !== false )
         {
             $errorList[] = array( 'field' => $httpFileName,

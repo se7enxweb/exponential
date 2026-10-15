@@ -443,9 +443,72 @@ class eZImageType extends eZDataType
         $nameMimeType = isset( $mimeType['name'] ) ? (string)$mimeType['name'] : '';
         $nameMimeTypes = explode('/', $nameMimeType);
 
-        // SVG is an image by name, but a document a browser runs script from,
-        // served from the storage directory under the site's own origin
-        return $nameMimeTypes[0] === 'image' && $nameMimeType !== 'image/svg+xml';
+        // SVG is an image by name, but a document a browser can run script
+        // from: taken only when it is sanitized on upload (see svgAccepted())
+        return $nameMimeTypes[0] === 'image' && ( $nameMimeType !== 'image/svg+xml' || self::svgAccepted() );
+    }
+
+    /**
+     * Whether SVG images are accepted: image/svg+xml is on image.ini [ImageUploadSettings]
+     * AllowedMIMETypes[] and SanitizeSVG is not disabled. An SVG is then stored only as the
+     * output of expSvgSanitizer; with SanitizeSVG=disabled it is refused, so an SVG is never
+     * stored unsanitized.
+     *
+     * @return bool
+     */
+    public static function svgAccepted()
+    {
+        $ini = eZINI::instance( 'image.ini' );
+        if ( $ini->hasVariable( 'ImageUploadSettings', 'SanitizeSVG' ) &&
+             $ini->variable( 'ImageUploadSettings', 'SanitizeSVG' ) === 'disabled' )
+        {
+            return false;
+        }
+        return in_array( 'image/svg+xml', expImageUploadValidator::allowedMIMETypes(), true );
+    }
+
+    /**
+     * Sanitizes the SVG file at $path into $targetPath ($path itself when null), when SVG images
+     * are accepted (svgAccepted()).
+     *
+     * @param string $path
+     * @param string|null $targetPath
+     * @return bool false when SVG is not accepted or the file is refused by the sanitizer
+     */
+    public static function sanitizeSVGFile( $path, $targetPath = null )
+    {
+        if ( !self::svgAccepted() )
+            return false;
+        if ( !expSvgSanitizer::sanitizeFile( $path, $targetPath ) )
+        {
+            eZDebug::writeNotice( 'SVG image refused: ' . expSvgSanitizer::lastError(), __METHOD__ );
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * Why the SVG file at $filePath is not stored, as a translated validation message, or false
+     * when it is accepted: SVG must be accepted (svgAccepted()) and the sanitizer must leave a
+     * well-formed SVG with something to show.
+     *
+     * @param string $filePath
+     * @return string|false
+     */
+    static function svgFileError( $filePath )
+    {
+        if ( !self::svgAccepted() )
+        {
+            return ezpI18n::tr( 'kernel/classes/datatypes', 'Images of the type %1 are not accepted.', null,
+                                array( '%1' => 'image/svg+xml' ) );
+        }
+        $markup = expSvgSanitizer::readFile( $filePath );
+        if ( $markup === false || expSvgSanitizer::sanitize( $markup ) === false )
+        {
+            return ezpI18n::tr( 'kernel/classes/datatypes',
+                'The SVG image could not be read, or nothing in it can be shown safely.' );
+        }
+        return false;
     }
 
     /**
@@ -455,20 +518,36 @@ class eZImageType extends eZDataType
      * The content decides, not the name: its type read by content (finfo) must
      * be on image.ini [ImageUploadSettings] AllowedMIMETypes[] (see
      * expImageUploadValidator), it must be a raster image PHP can read
-     * the size of (so no SVG, HTML, script or archive named .jpg), must not
+     * the size of (so no HTML, script or archive named .jpg), must not
      * start with markup a browser could sniff as HTML, and must not have more
      * pixels than [ImageSettings] MaxImagePixels in image.ini (default 100
      * million), which the image converters would need all at once in memory.
      *
+     * An SVG (by content, .svgz included) is checked by svgFileError()
+     * instead: accepted when SVG is on the list and SanitizeSVG is enabled,
+     * and stored sanitized (eZImageAliasHandler). $allowSVG false refuses it
+     * (the package thumbnails stay raster images).
+     *
      * @param string $filePath
      * @param string|null $originalName the uploaded file's name, used only when PHP can read the type neither by content nor by getimagesize()
+     * @param bool $allowSVG
      * @return string|false
      */
-    static function imageFileError( $filePath, $originalName = null )
+    static function imageFileError( $filePath, $originalName = null, $allowSVG = true )
     {
         $invalid = ezpI18n::tr( 'kernel/classes/datatypes', 'A valid image file is required.' );
         if ( !is_string( $filePath ) || $filePath === '' || strpos( $filePath, "\0" ) !== false || !is_file( $filePath ) || !filesize( $filePath ) )
             return $invalid;
+
+        if ( expSvgSanitizer::isSVGFile( $filePath ) )
+        {
+            if ( !$allowSVG )
+            {
+                return ezpI18n::tr( 'kernel/classes/datatypes', 'Images of the type %1 are not accepted.', null,
+                                    array( '%1' => 'image/svg+xml' ) );
+            }
+            return self::svgFileError( $filePath );
+        }
 
         $check = expImageUploadValidator::validate( $filePath, $originalName );
         if ( !$check['valid'] )
