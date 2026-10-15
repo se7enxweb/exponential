@@ -613,7 +613,7 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
 }
 .a4-setup-cron .a4-setup-compact-part { display: block; }
 .a4-setup-cron .a4-setup-compact-sub { display: block; font-size: var(--a4-text-xs); color: var(--a4-muted); }
-.a4-setup-cron .a4-setup-compact .a4-table td, .a4-setup-cron .a4-setup-compact .a4-table th { padding-left: .5em; padding-right: .5em; }
+.a4-setup-cron .a4-setup-compact .a4-table td, .a4-setup-cron .a4-setup-compact .a4-table th { padding-left: var(--a4-space-2); padding-right: var(--a4-space-2); }
 .a4-setup-cron .a4-setup-compact-scripts { margin-top: 2px; font-size: var(--a4-text-xs); color: var(--a4-muted); }
 .a4-setup-cron .a4-setup-compact-scripts > summary { cursor: pointer; }
 /* The scripts of a part: in the row below it across the table (with javascript), or in its cell (without). The
@@ -621,13 +621,13 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
 .a4-setup-cron .a4-setup-compact .a4-table > tbody > tr > :is(td, th) { background-color: transparent; }
 .a4-setup-cron .a4-setup-compact .a4-table > tbody > tr.a4-setup-part-row:hover > :is(td, th) { background-color: var(--a4-info-bg); }
 .a4-setup-cron .a4-setup-compact .a4-table > tbody > tr.a4-setup-compact-detail > td {
-  background-color: var(--a4-soft); padding-top: .25em; padding-bottom: .5em; font-size: var(--a4-text-xs);
+  background-color: var(--a4-soft); padding-top: var(--a4-space-1); padding-bottom: var(--a4-space-2); font-size: var(--a4-text-xs);
 }
 .a4-setup-cron .a4-setup-compact #cronjob-table.is-scripted .a4-setup-compact-inline { display: none; }
 /* A part's scripts as a small table: where it comes from, its path with the file name, what it does. The list is
    the grid and each item gives its three cells to it, so the columns line up across the scripts of a part. */
 .a4-setup-cron .a4-setup-compact-detail ul {
-  display: grid; grid-template-columns: max-content fit-content(45%) minmax(0, 1fr); column-gap: 1em; row-gap: 3px;
+  display: grid; grid-template-columns: max-content fit-content(45%) minmax(0, 1fr); column-gap: var(--a4-space-4); row-gap: var(--a4-space-1);
   margin: 2px 0 0; padding: 0; list-style: none;
 }
 .a4-setup-cron .a4-setup-compact-detail li { display: contents; }
@@ -635,10 +635,10 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
 .a4-setup-cron .a4-setup-compact-path { color: var(--a4-muted); font-family: var(--a4-mono); font-size: var(--a4-text-xs); }
 .a4-setup-cron .a4-setup-compact-file code { color: var(--a4-ink); font-size: var(--a4-text-xs); white-space: nowrap; }
 .a4-setup-cron .a4-setup-compact-desc { color: var(--a4-muted); }
-.a4-setup-cron :is(.a4-setup-compact-detail, .a4-setup-compact-inline) li .a4-badge { font-size: var(--a4-text-xs); padding: 0 .4em; }
+.a4-setup-cron :is(.a4-setup-compact-detail, .a4-setup-compact-inline) li .a4-badge { font-size: var(--a4-text-xs); padding: 0 var(--a4-space-1); }
 /* Without javascript, in the narrow cell: one script below the other. */
 .a4-setup-cron .a4-setup-compact-inline { margin: 2px 0 0; padding: 0; list-style: none; }
-.a4-setup-cron .a4-setup-compact-inline li { margin: 3px 0; }
+.a4-setup-cron .a4-setup-compact-inline li { margin: var(--a4-space-1) 0; }
 .a4-setup-cron .a4-setup-compact-inline li > span { display: block; }
 .a4-setup-cron .a4-setup-compact-detail li code { color: var(--a4-ink); }
 .a4-setup-cron .a4-setup-compact thead th { white-space: normal; }
@@ -648,8 +648,8 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
 .a4-setup-cron .a4-setup-compact tr.is-attention > th { box-shadow: inset 4px 0 0 var(--a4-warn); }
 .a4-setup-cron .a4-setup-compact tr.is-paused > th { box-shadow: inset 4px 0 0 var(--a4-bad); }
 .a4-setup-cron .a4-setup-compact tr.is-current > th { box-shadow: inset 4px 0 0 var(--a4-ok); }
-.a4-setup-cron .a4-setup-compact td .a4-btn + .a4-btn { margin-left: var(--a4-space-1, 4px); }
-.a4-setup-cron .a4-setup-compact td .a4-btn-small { padding: 2px 8px; }
+.a4-setup-cron .a4-setup-compact td .a4-btn + .a4-btn { margin-left: var(--a4-space-1); }
+.a4-setup-cron .a4-setup-compact td .a4-btn-small { padding: 2px var(--a4-space-2); }
 .a4-setup-cron .a4-setup-cmd-row { margin: var(--a4-space-3) 0 0; }
 .a4-setup-cron .a4-setup-cmd-label { flex: 0 0 auto; }
 .a4-setup-scripts { margin: var(--a4-space-3) 0 0; border-top: 1px solid var(--a4-line); }
@@ -999,6 +999,8 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
   .a4-setup-lines .is-moved,
   .a4-setup-preset[aria-pressed="true"],
   .a4-setup-part-row.is-current,
+  .a4-setup-cron .a4-setup-compact tr.is-current > th,
+  .a4-setup-cron .a4-setup-compact tr.is-paused > th,
   .a4-setup-wz-match.is-current,
   .a4-setup-wz-tables tr.is-selected,
   .a4-page a.a4-setup-survey-tab.is-current,
