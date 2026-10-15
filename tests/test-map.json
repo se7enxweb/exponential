@@ -502,6 +502,10 @@
     ],
     "design/admin4/templates/node/top_node_full.tpl": [
       "tests/tests/design/AdminNodeTabsHeightTest.php"
+    ],
+    "extension/ezmultiupload/*": [
+      "tests/tests/extension/ezmultiupload/expMultiuploadServiceTest.php",
+      "tests/tests/extension/ezmultiupload/expMultiuploadZipTest.php"
     ]
   },
   "generated": {
