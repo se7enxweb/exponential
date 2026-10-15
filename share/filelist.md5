@@ -19,7 +19,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 cacf43062404983599d53f26e5add805  README.md
 fd07fac4ce74813bf1e9bda18fbcf1b0  SECURITY.md
 7a103568d7c533e99e2d7a5e9f1b5ffb  autoload.php
-bc75deb7f3b33abe2e8befc544e2de74  autoload/ezp_kernel.php
+63c0078d6404908b8525e5efd15d3608  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -307,7 +307,7 @@ ff4131909f10bebbceb2afa3d873ae3c  design/admin/override/templates/template_look_
 e0c996a801b1373df9824852298b20d9  design/admin/override/templates/tiny_image.tpl
 a2c561e93ef63c93201e81acd4f32741  design/admin/override/templates/window_controls_user.tpl
 f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin/override/templates/windows_user.tpl
-e2f43919752f62f32b8d624a38973e38  design/admin/stylesheets/components.css
+9d8faa7aa5c6b403c28595e3e15b9242  design/admin/stylesheets/components.css
 ce90ff045aa9ad5f6b74ebb4adb49d1f  design/admin/stylesheets/content.css
 9176b99cf9d39d3d3f7c8c50d1554eb5  design/admin/stylesheets/core.css
 3467a1c4602619c56bfc506613bebb91  design/admin/stylesheets/ezinfo.css
@@ -844,6 +844,7 @@ a54e5021b1c597539a60da86ef766f0c  design/admin4/images/trash-icon-16x16.gif
 bb57d7d50de510183570d8844efbd49f  design/admin4/images/up-16x16-grey.png
 bc1f590f32f5d71f9bfdf7781f2135fc  design/admin4/images/url_translator.png
 ac084a07607e6d6c5a845da15423854f  design/admin4/images/view-fullscreen.png
+01cf58c2c539202da65ad0791b9d9e1b  design/admin4/javascript/a4_mega_menu.js
 310ae6142b976774bbf2e1bcc5d102b8  design/admin4/javascript/admin4.js
 9f30c46fcd1a3ca27329392a80624514  design/admin4/javascript/contentstructuremenu_dynamic.js
 a5e25bc5b912c88678afe25d798ade81  design/admin4/javascript/expajaxuploader.js
@@ -881,8 +882,8 @@ f91a366a6abfa6b8a706b154b7aec12c  design/admin4/override/templates/template_look
 03505c55345b654eeb275f3b614a92bf  design/admin4/override/templates/thumbnail/image.tpl
 6971adb19c3c39b21f245c72b7f73305  design/admin4/override/templates/thumbnail/image_browse.tpl
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
-d4503966ea787c6813e8b8baf54d4db8  design/admin4/stylesheets/admin4.css
-e2f43919752f62f32b8d624a38973e38  design/admin4/stylesheets/components.css
+97bcf84b79b1656b49e0f565c16dd43e  design/admin4/stylesheets/admin4.css
+9d8faa7aa5c6b403c28595e3e15b9242  design/admin4/stylesheets/components.css
 e907d0bf7b66f4bd6da6699efc5b84a7  design/admin4/stylesheets/content.css
 0368a507892a9eb10f58c7a00b0365bf  design/admin4/stylesheets/core.css
 ca3e3029b338c785a7e5ecb16da43d2f  design/admin4/stylesheets/editor_content.css
@@ -1120,7 +1121,7 @@ c7ee49112f79016f358f3f3372fc095b  design/admin4/templates/package/uninstall_erro
 af46a950a91555aad32cb5f618995f19  design/admin4/templates/package/view/files.tpl
 8c2ef58fa1d9db4fff93722395854d13  design/admin4/templates/package/view/full.tpl
 6bd3b7a154fdbe668d3a592880b62333  design/admin4/templates/page_copyright.tpl
-9385d7d3cbfac44f1bd302e6945d610d  design/admin4/templates/page_head_script.tpl
+d8d8da67e80543c1680a48cee91f5fc0  design/admin4/templates/page_head_script.tpl
 d6db309debd0c218f175254cb5ea0a2f  design/admin4/templates/page_head_style.tpl
 dbcd6a019f44c7b1bcf92f13c30f641f  design/admin4/templates/page_head_style_inline.tpl
 cb128a4645e891cd796919aad3ed36d1  design/admin4/templates/page_header.tpl
@@ -1128,18 +1129,21 @@ cb128a4645e891cd796919aad3ed36d1  design/admin4/templates/page_header.tpl
 169f988a44a2a3bfa2f9dfc53663645c  design/admin4/templates/page_login_copyright.tpl
 1a7132e097c854ce731d22d75ca6db9a  design/admin4/templates/page_mainarea.tpl
 06e40a79ce24ebbef11488cd0a000be5  design/admin4/templates/page_search.tpl
-0ca768496de8360e68ddc5b7780bdfb5  design/admin4/templates/page_topmenu.tpl
-8aac725b06b7358a617c2fd0ff29ae91  design/admin4/templates/page_topmenuitem.tpl
+313b34eb492c6b3de9c29aeccdbdbd92  design/admin4/templates/page_topmenu.tpl
+d710bb0e7285e93ad1ee0e56d756b9bd  design/admin4/templates/page_topmenuitem.tpl
 f0b52f21d5e9f1e7999667614bf82400  design/admin4/templates/page_toppath.tpl
 749a5e755101133780110c273e83ff0a  design/admin4/templates/pagelayout.tpl
 f4f875388cc3eefc987704d5a148e34e  design/admin4/templates/parts/a4_header_user.tpl
+c6e590ba7d99e6da8a62d5406e296489  design/admin4/templates/parts/a4_mega_menu.tpl
+cfdf95f46e6d8fc305784481a4055683  design/admin4/templates/parts/a4_mega_menu_check.tpl
 f3e3cfde385fe96ecd6534c0437066a9  design/admin4/templates/parts/a4_navigation_part.tpl
 d4696f13eec2ef1d087413002e35c015  design/admin4/templates/parts/a4_preference_attributes.tpl
 f23c9e1796dd3ab29e1af6ef0039b859  design/admin4/templates/parts/a4_tabs_height.tpl
+e7cbcc8548bbdec86d4686f2b042bb78  design/admin4/templates/parts/a4_topmenu_items.tpl
 54851d580ce5e5052a843ac97c96163b  design/admin4/templates/parts/audit/menu.tpl
 e6fe56c836e1e8315b4d7aa9e9fb4b74  design/admin4/templates/parts/audit_timeline.tpl
 6a10200587ee6c7b9979159497aa6167  design/admin4/templates/parts/content/menu.tpl
-29ca23b0eae34f092feba24146a0eaa6  design/admin4/templates/parts/ini_menu.tpl
+d9494d4e3a8933de14fedd06056186bd  design/admin4/templates/parts/ini_menu.tpl
 3dff8ecf3c880bf2261cc89a9b39d8bd  design/admin4/templates/parts/ini_menu_items.tpl
 e36329025b09f023b15222452941ff02  design/admin4/templates/parts/ini_menu_tiles.tpl
 5e0f6d3ec0e18268701f66051d24f387  design/admin4/templates/parts/language_badge.tpl
@@ -1147,8 +1151,10 @@ fa8f8c371e071bca043dc0ab05acd3dd  design/admin4/templates/parts/left_trash.tpl
 6d80823e605192a5da410871071737be  design/admin4/templates/parts/left_width_control.tpl
 3e68bfa74f1b07404548df2be1068041  design/admin4/templates/parts/media/menu.tpl
 51fc36d364bb546ff37261917ffebdf1  design/admin4/templates/parts/my/menu.tpl
-14b3f88f71acd654b2e1bb37aa57bb51  design/admin4/templates/parts/setup/menu.tpl
+cb5a028b13368bef7b3a094ad29e1ff7  design/admin4/templates/parts/setup/mega_menu.tpl
+390d2647bd0eceb41c2773be2c9a54df  design/admin4/templates/parts/setup/menu.tpl
 6b9cc8299e00a57f5695f7b9488b9e91  design/admin4/templates/parts/shop/menu.tpl
+2af7291dd8d96adf53d7b840859a9bb9  design/admin4/templates/parts/user/mega_menu.tpl
 1d8923f9b5c24ce45d04c8d30e4b2130  design/admin4/templates/parts/user/menu.tpl
 c21d185b898e17117cea60a33acaff35  design/admin4/templates/parts/visual/menu.tpl
 35419e667bc3e392e8ebe19e1acb9386  design/admin4/templates/pdf/confirmremove.tpl
@@ -1292,6 +1298,7 @@ fb0873e26a274c1e365ec85f5bbe30b7  design/admin4/templates/url/view.tpl
 a07da19bad529539a8ac821a99668b25  design/admin4/templates/user/activate.tpl
 15e2d331d9e37cf2403d735ebe8adc4f  design/admin4/templates/user/edit.tpl
 fbda34f023cb33b9629c6355f0c12ee6  design/admin4/templates/user/login.tpl
+5b85a373be1ea581be79898950a0a854  design/admin4/templates/user/megamenu.tpl
 2ac87dd60efda09dc6e86c148cbb1a86  design/admin4/templates/user/password.tpl
 334a71e0270b253897c94e074acd0559  design/admin4/templates/user/preferences_confirm.tpl
 f1330c22370b2c5a1d1d13ffa2683854  design/admin4/templates/user/register.tpl
@@ -1341,7 +1348,7 @@ ac4dfb0cbd2287b877b32cebca7b62e7  design/admin4l/templates/explayouts/block/admi
 862cd1fb08e0588fe1d40dcbb29368bf  design/admin4l/templates/explayouts/block/admin_quick_settings.tpl
 6ddad743849a6a201401fa9ea03fb487  design/admin4l/templates/explayouts/block/admin_search.tpl
 7d5f163c78692f8927e44bf8e7a445fe  design/admin4l/templates/explayouts/block/admin_sidebar_toggles.tpl
-4ce1f49aa87e3c097ad2c4f7b7697c06  design/admin4l/templates/explayouts/block/admin_tab_menu.tpl
+012f6d3dcd920aa42491c55129484589  design/admin4l/templates/explayouts/block/admin_tab_menu.tpl
 7c72058be2e505306499003931e19524  design/admin4l/templates/explayouts/block/admin_theme_switch.tpl
 14658982de1e1e60fb4e5e6cc060c8b5  design/admin4l/templates/pagelayout.tpl
 e07ee98bdbd9a6b7b1224004fff07513  design/base/images/bin.gif
@@ -2695,6 +2702,7 @@ e709916cf34c9f054a2c09a23f614ed5  design/standard/templates/url/view/valid.tpl
 05c54fc072951df5123bdf0acc95c4d3  design/standard/templates/user/forgotpassword.tpl
 0593c48408782b956ece5a87bb080492  design/standard/templates/user/forgotpasswordmail.tpl
 971ebbbcaf4b518149832ec6385cbf83  design/standard/templates/user/login.tpl
+b953774646d1e004003c2e463f765fff  design/standard/templates/user/megamenu.tpl
 012058cf37cb560202e58cd45c3e6d46  design/standard/templates/user/password.tpl
 eca5d5ed39fdf3334394887dad070c6e  design/standard/templates/user/password_changed_mail.tpl
 0df6c6679df5971b6ce443d1bd0fe421  design/standard/templates/user/preferences_confirm.tpl
@@ -2989,7 +2997,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-f7951cd8c75a07d0244dcaaa93ef7d74  doc/changelogs/6.0/6.0.15.md
+d347c75b1b6056011b0fcb440d3d7aa7  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3317,7 +3325,7 @@ c4809a3b611073bdcad4b38e9ea7dd6d  doc/features/6.0/additional-extension-director
 8ee6875c6693489d567c309177b49b81  doc/features/6.0/admin-list-paging.md
 41099ca247392d7ed963caa4b857e51c  doc/features/6.0/admin3-responsive-admin.md
 98b1eb658a2475fc31af9b9cbfaba709  doc/features/6.0/admin3-sidebar-width-and-font-size.md
-d1f33cfa72c5b9230697d0bab68187a0  doc/features/6.0/admin4-design.md
+a11b19eb04ea7364bbd64e1adfe71b3e  doc/features/6.0/admin4-design.md
 7d8b3d248d27baa55bbf5f7f22040693  doc/features/6.0/admin4l.md
 cb077d1f37f8e8811c377ede4bc99357  doc/features/6.0/adminneo-database-manager.md
 ae7d698fad5f10287ad37ade2f97d8aa  doc/features/6.0/audit-trail.md
@@ -5779,6 +5787,7 @@ a86c32c292a6686cc1a40f0d8dac6df8  kernel/private/classes/views/user/edit.php
 1c860c0fb53dfd7611744af7d6b340d2  kernel/private/classes/views/user/forgotpassword.php
 8f26834de574e7fc29e03ffb5df66d2d  kernel/private/classes/views/user/login.php
 1d5df15c797dddeb7a51a35cc350538b  kernel/private/classes/views/user/logout.php
+b2b3220d7fc35dbeab4b3cec4e5cda74  kernel/private/classes/views/user/megamenu.php
 d407061c56d24d97e47bb1d720fe70b7  kernel/private/classes/views/user/password.php
 9e2edab7f4675a218b2763142a1f27d1  kernel/private/classes/views/user/preferences.php
 6658ff0515f348cadfd0da2df9f4d6b8  kernel/private/classes/views/user/register.php
@@ -6133,7 +6142,8 @@ a24698b44fc828b90cf66f0d6956d157  kernel/user/forgotpassword.php
 a0b394a9763e202c7574a9a3bb1df26d  kernel/user/function_definition.php
 2249454854f2ed4915becd82dc8cbf6d  kernel/user/login.php
 1848c9a2e02a79de9ca904cfa426b32f  kernel/user/logout.php
-8798a234a9bb75f4060134f0bc08926c  kernel/user/module.php
+beec050ee4bb350cdb97504de1919203  kernel/user/megamenu.php
+37bd4b4dcaefc95e1b9851410803c733  kernel/user/module.php
 7a70842b2d61c6951ef8d08a9cb90086  kernel/user/operation_definition.php
 08227c2f02883658c551f14f1b8add01  kernel/user/password.php
 1a121734ffb7f44f48cbcf088a7b37b8  kernel/user/preferences.php
@@ -6413,7 +6423,7 @@ ea68c5ba8eb753c5292a1c4dd3a5b2bc  settings/datetime.ini
 9197ab21aa5e2f4e44eb3950d1753461  settings/dbschema.ini
 0c09e0bf093c0f1f18f97705355d487c  settings/debug.ini
 7eaa0be7d34049407c78bb9e0ec11e04  settings/debugbar.ini
-8a0ae0498fa03fddc18e70a185a1af7c  settings/design.ini
+f880c25fe02fdade51e72ac29b6bc22d  settings/design.ini
 32345e49a48d1f9bf1251ad9dde479b7  settings/error.ini
 4209ce0fc8d74237bef6f2415d450959  settings/extendedattributefilter.ini
 179e641f13c2340ba00500111ea04bb2  settings/ezxml.ini
@@ -6428,7 +6438,7 @@ ba31587f56f91488816b2dcd90470594  settings/layout.ini
 ba0c39f06c1735dda504b831ab1f89ef  settings/ldap.ini
 4a2de424bb5015cf1e0c6ba66ba53ab6  settings/logfile.ini
 f38064dccc9974bbc272bd49a25b4a96  settings/mailpreferences.ini
-68be50666289b1b7ee5922dc37dec299  settings/menu.ini
+fdfaa531d4a867153a9e31135f70f1bc  settings/menu.ini
 4f061cecd40623be1294a7695c5cd454  settings/mime.ini
 79f9e8a2d7e832b4a243fcc9348ef492  settings/module.ini
 1b0c7c323c1ab385b32320c172cb4032  settings/notification.ini
@@ -6638,6 +6648,7 @@ f3cba1b852a8b3db6751bf9773566f3e  share/icons/bootstrap-icons/svg/people.svg
 f2183ae2aea93c966a346ba6cd654d4e  share/icons/bootstrap-icons/svg/person-check.svg
 02884a0d7850880af21a0919125479a6  share/icons/bootstrap-icons/svg/person-circle.svg
 19ec1702bfb1f012d1b70473371c3b24  share/icons/bootstrap-icons/svg/person-lock.svg
+130cdf96620cc8bbf63ae40e9cc9c2bc  share/icons/bootstrap-icons/svg/person-slash.svg
 1bcf58690e56663c2429bcdffc2d8471  share/icons/bootstrap-icons/svg/person.svg
 ead9f144bf1fb438b887d197f73f35a7  share/icons/bootstrap-icons/svg/phone-flip.svg
 ce2cb08c51e291a8d6faaf4aa3f088ac  share/icons/bootstrap-icons/svg/phone.svg
@@ -6651,6 +6662,7 @@ c9f6c6578933bb56b731a8cc06a99d28  share/icons/bootstrap-icons/svg/power.svg
 74dacfefd760bfb1d1ab98e1e569c495  share/icons/bootstrap-icons/svg/search.svg
 daf4a0dd50bf98957123ad0c21bd9909  share/icons/bootstrap-icons/svg/segmented-nav.svg
 3242da7582ff2f52b4e4d2e2a661317f  share/icons/bootstrap-icons/svg/shield-fill-check.svg
+62223aa04bb0e5d310ea70b2b90cfba4  share/icons/bootstrap-icons/svg/shield-lock.svg
 b17832266633f0694426b0935c17b862  share/icons/bootstrap-icons/svg/signpost-split.svg
 86fe4e1facbaa1e859da1291654f407d  share/icons/bootstrap-icons/svg/sliders.svg
 cbd649562d0aa290b8e2892cc05ed428  share/icons/bootstrap-icons/svg/speedometer.svg
@@ -7033,14 +7045,14 @@ dd5f5f3cf2348a6cc17bd0ee76983225  share/translations/dut-NL/translation.ts
 284321a9de29bf9268c27abb13f56f2c  share/translations/ell-GR/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-AU/translation.ts
 069ad730b576a83d2e4cf3bc70ca9522  share/translations/eng-NZ/translation.ts
-ea58837fdcadf2475f0e62446ded1a53  share/translations/eng-US/translation.ts
+5e10e80cb868251f777253795de82407  share/translations/eng-US/translation.ts
 5f0920d5b4e8bbaff2a4a6d5b3995c90  share/translations/esl-ES/translation.ts
 27846e3f6408cd74f58cef8adcbab573  share/translations/esl-MX/translation.ts
 4b104d4d337601b4bc6ae0482e6478ea  share/translations/fin-FI/translation.ts
 edfd3efb7eca1e2bd6d6d7d08bd78a77  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-9baecee62579e8edfa4a66f1a6b26aca  share/translations/ger-DE/translation.ts
+422fed352e948b6f512d462eb1963633  share/translations/ger-DE/translation.ts
 75d657fed5de11db9e059cdcff2046a8  share/translations/ita-IT/translation.ts
 a45e2d26b1c24ac4cb6ae1d7197e5b0e  share/translations/jpn-JP/translation.ts
 d1dc34034ddce2d64c4f8df7fcc41c85  share/translations/nno-NO/translation.ts
@@ -7113,7 +7125,7 @@ d56115c8242b3081672f63607aa69361  tests/runtests.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 9ff58a769386f12831d56db2598e292e  tests/suite.php
-09799e14e37c71ca8a98777ebc0cb762  tests/test-map.json
+4a7175e94c586f66dffd1a70d9c6d0d8  tests/test-map.json
 8b29711fe10a56c5c5b90916f35d0a00  tests/tests/bin/phpcs/NoTypeDeclarationsSniffTest.php
 4e3eeb18c2ea423afb62388e5e3dcafc  tests/tests/bin/phpcs/fixtures/typedeclarations.inc
 a170729e7e161686001ae10895d34d53  tests/tests/design/AdminBaseStylesheetsTest.php
@@ -7136,6 +7148,7 @@ c6ba9bc58f2ca2ab064b5fd06eaca6a6  tests/tests/design/AdminHeaderTest.php
 859c93ecb4d2d3c59b4fcc748587fcd6  tests/tests/design/AdminLanguageBadgeTest.php
 4b27c6fcd0b5289d066460987007d7e1  tests/tests/design/AdminLeftMenuGroupsTest.php
 48cd696b239173c498671c040aa3bfbe  tests/tests/design/AdminLegacyControlsTest.php
+c20dcbecb9dbbbae8af8a382f487a7bf  tests/tests/design/AdminMegaMenuTest.php
 581b1a9e22de7c70a61a13e56d219070  tests/tests/design/AdminMenuPolicyListTest.php
 f2f45d0be8a363de1fa024e40ff34fd2  tests/tests/design/AdminNewsletterPreviewTest.php
 0f2fb014b249d02439af133df0006286  tests/tests/design/AdminNodeTabsHeightTest.php
@@ -7161,6 +7174,7 @@ a998bae7f6c7a83dd1eb0f05afc6a6ef  tests/tests/design/AdminTopNodeNameTest.php
 15e49ddad018f337900b8c06c5486efb  tests/tests/design/AdminTreeMenuEscapingTest.php
 3e871accb7d56ac483c1150496cb8d3c  tests/tests/design/AdminTreeViewTest.php
 ea2584f9208c35d5087694b08ebd88aa  tests/tests/design/js/editor_skin.js
+a134e1113ff97edab51d735f9fc9fb26  tests/tests/design/js/mega_menu.js
 63ea2b0621c3e9cdf0b21f8336a82853  tests/tests/design/js/phone_menu.js
 d2faa77782cb14493e2d79691451b89d  tests/tests/design/js/segmented_switch.js
 930596724f30405be9cbdd8bff9ffc4f  tests/tests/design/js/sidebar_drawer.js

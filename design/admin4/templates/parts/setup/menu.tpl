@@ -9,15 +9,20 @@
   names and access checks, drawn as tiles with the icons, descriptions and figures of menu.ini [Leftmenu_setup]
   (LinkIcons[], LinkDescriptions[], LinkFigureTemplates[]), without the width control.
 
+  admin4's mega menu (parts/setup/mega_menu.tpl) sets setup_menu_layout='tiles' and setup_tiles_layout='mega': the same
+  links, names, groups, icons and descriptions, drawn as the groups of the panel under the header, without figures.
+
   The groups Design and Audit stand for their top tabs (menu.ini [Leftmenu_setup] GroupTabs[], GroupSections[]):
   shown only while the tab is not in the top menu, with the links of [Leftmenu_design] and [Leftmenu_audit], named
   here as <group>-<key> with the strings of their own menus. The audit menu's links into channels the user may not
   read are left out as there (fetch( 'audit', 'hidden_menu_links' )).
 *}
 {if is_unset( $setup_menu_layout )}{def $setup_menu_layout = 'menu'}{/if}
+{if is_unset( $setup_tiles_layout )}{def $setup_tiles_layout = ''}{/if}
 
 {include uri='design:parts/ini_menu.tpl' ini_section='Leftmenu_setup'
     menu_layout=$setup_menu_layout
+    tiles_layout=$setup_tiles_layout
     section_hidden_links=hash( 'Leftmenu_audit', fetch( 'audit', 'hidden_menu_links', hash( 'section', 'Leftmenu_audit' ) ) )
     i18n_hash=hash(
     'setup',              'Setup'|i18n( 'design/admin/parts/setup/menu' ),
@@ -75,7 +80,7 @@
     'audit-settings',  'Settings'|i18n( 'design/admin/audit' ),
 )}
 
-{* Left menu width control (not on the overview page, which draws the menu as tiles). *}
+{* Left menu width control (not on the overview page, which draws the menu as tiles, nor in the mega menu). *}
 {if $setup_menu_layout|ne( 'tiles' )}
 {include uri='design:parts/left_width_control.tpl'}
 {/if}

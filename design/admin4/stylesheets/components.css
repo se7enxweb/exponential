@@ -1733,6 +1733,7 @@ a.a4-icon-btn, a.a4-icon-btn:visited { color: var(--a4-muted); }
 .a4-bi-person-check { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/person-check.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/person-check.svg); }
 .a4-bi-person-circle { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/person-circle.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/person-circle.svg); }
 .a4-bi-person-lock { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/person-lock.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/person-lock.svg); }
+.a4-bi-person-slash { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/person-slash.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/person-slash.svg); }
 .a4-bi-phone { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/phone.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/phone.svg); }
 .a4-bi-phone-flip { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/phone-flip.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/phone-flip.svg); }
 .a4-bi-piggy-bank { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/piggy-bank.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/piggy-bank.svg); }
@@ -1744,6 +1745,7 @@ a.a4-icon-btn, a.a4-icon-btn:visited { color: var(--a4-muted); }
 .a4-bi-rss { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/rss.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/rss.svg); }
 .a4-bi-search { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/search.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/search.svg); }
 .a4-bi-shield-fill-check { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/shield-fill-check.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/shield-fill-check.svg); }
+.a4-bi-shield-lock { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/shield-lock.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/shield-lock.svg); }
 .a4-bi-signpost-split { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/signpost-split.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/signpost-split.svg); }
 .a4-bi-sliders { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/sliders.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/sliders.svg); }
 .a4-bi-speedometer { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/speedometer.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/speedometer.svg); }

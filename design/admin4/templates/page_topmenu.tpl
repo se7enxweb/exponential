@@ -46,9 +46,9 @@
                stands in for (parts/a4_navigation_part.tpl) *}
             {def $a4_current_part = ''}
             {set-block variable=a4_current_part}{include uri='design:parts/a4_navigation_part.tpl'}{/set-block}
-            {foreach topmenu($ui_context, true() ) as $menu}
-                {include uri='design:page_topmenuitem.tpl' menu_item=$menu navigationpart_identifier=$a4_current_part|trim}
-            {/foreach}
+            {* The tabs, with the mega menus of menu.ini [TopAdminMenu] MegaMenuTabs[] (parts/a4_topmenu_items.tpl, shared
+               with admin4l's tab menu block) *}
+            {include uri='design:parts/a4_topmenu_items.tpl' navigationpart_identifier=$a4_current_part|trim}
             {undef $a4_current_part}
             {* The overflow of the one-line menu (576px and up): ezadmin_menubar.js moves the tabs that do not fit into
                this list and shows the item; without the script it stays hidden and the row scrolls sideways. A
