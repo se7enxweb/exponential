@@ -138,6 +138,10 @@ class AdminPhoneMenuTest extends PHPUnit\Framework\TestCase
         $this->assertFalse( $s['a wider window closes the menu']['open'] );
         $this->assertFalse( $s['a wider window closes the menu']['bodyOpen'] );
         $this->assertSame( 'false', $s['a wider window closes the menu']['expanded'] );
+        // the window's resize as well, for a browser that reports no change of the query (WebKit emulating a phone)
+        $this->assertFalse( $s['a resize to a wider window without the query event closes the menu']['open'] );
+        $this->assertFalse( $s['a resize to a wider window without the query event closes the menu']['bodyOpen'] );
+        $this->assertTrue( $s['a resize on a phone keeps the menu']['open'] );
     }
 
     private static function phone()
