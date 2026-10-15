@@ -8576,8 +8576,8 @@
         <translation>Height of the tab panel</translation>
     </message>
     <message>
-        <source>Drag, or use the arrow keys, to change the height</source>
-        <translation>Drag, or use the arrow keys, to change the height</translation>
+        <source>Drag, or use the arrow keys, to change the height; double-click for the default size</source>
+        <translation>Drag, or use the arrow keys, to change the height; double-click for the default size</translation>
     </message>
     <message>
         <source>Could not copy</source>

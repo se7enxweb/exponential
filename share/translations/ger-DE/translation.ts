@@ -10422,8 +10422,8 @@
         <translation>Höhe des Reiterbereichs</translation>
     </message>
     <message>
-        <source>Drag, or use the arrow keys, to change the height</source>
-        <translation>Ziehen oder mit den Pfeiltasten die Höhe ändern</translation>
+        <source>Drag, or use the arrow keys, to change the height; double-click for the default size</source>
+        <translation>Ziehen oder mit den Pfeiltasten die Höhe ändern; Doppelklick für die Standardgröße</translation>
     </message>
     <message>
         <source>Could not copy</source>

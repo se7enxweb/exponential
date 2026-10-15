@@ -439,10 +439,11 @@
 /*
  * admin4: the height of the node view's tab box (#window-controls: View, Details, ...), one height of the user's own
  * for every node. The grip (.a4-tabs-height-grip, parts/a4_tabs_height.tpl) is a focusable separator: it is dragged
- * with the mouse, a finger or a pen, or moved with the arrow keys (16px; Shift, Page Up and Page Down 80px; Home and
- * End the smallest and the largest height). The button beside it (shown only while the height is not the default)
- * goes back to the default and forgets the stored height instead of storing the default, so a later change of the
- * default reaches the user.
+ * with the mouse, a finger or a pen, or moved with the arrow keys (16px; Shift, Page Up and Page Down 64px; Home and
+ * End the smallest and the largest height), the same steps as the grips of the left column and the debug panel. The
+ * button beside it (shown only while the height is not the default) and a double-click on the grip go back to the
+ * default and forget the stored height instead of storing the default, so a later change of the default reaches the
+ * user.
  * Stored as a number of pixels: for a signed-in user the eZPreference admin_node_preview_height through window.a4Pref
  * (written on <html> outside every cache-block, parts/a4_preference_attributes.tpl); window.a4Pref keeps it in this
  * browser on an anonymous page and when the preference could not be saved. On load the preference wins over the
@@ -454,7 +455,7 @@
 (function () {
     'use strict';
 
-    var NAME = 'admin_node_preview_height', KEY = 'exp-a4-node-preview-height', DELAY = 400, STEP = 16, BIG = 80;
+    var NAME = 'admin_node_preview_height', KEY = 'exp-a4-node-preview-height', DELAY = 400, STEP = 16, BIG = 64;
     var root = document.documentElement;
 
     function parse(value) {
@@ -584,10 +585,16 @@
             later();
         });
 
-        reset.addEventListener('click', function () {
+        function toDefault() {
             grip.focus();   // the button hides itself: the focus stays on the control
             apply(null);
             flush();
+        }
+        reset.addEventListener('click', toDefault);
+        // as on the grips of the debug panel and of the details panel: a double-click gives the default back
+        grip.addEventListener('dblclick', function (event) {
+            if (event && event.preventDefault) event.preventDefault();
+            toDefault();
         });
 
         // a change still waiting when the page is left is saved

@@ -5,5 +5,5 @@
    admin_node_preview_height) reaches the page on <html>, outside every cache-block (parts/a4_preference_attributes.tpl). *}
 <div class="a4-tabs-height" hidden>
     <button type="button" class="a4-icon-btn a4-tabs-height-reset" hidden title="{'Default size'|i18n( 'design/admin/node/view/full' )|wash}" aria-label="{'Default size'|i18n( 'design/admin/node/view/full' )|wash}"><span class="a4-icon a4-bi-arrow-counterclockwise" aria-hidden="true"></span></button>
-    <div class="a4-tabs-height-grip" role="separator" aria-orientation="horizontal" aria-controls="window-controls" tabindex="0" aria-label="{'Height of the tab panel'|i18n( 'design/admin/node/view/full' )|wash}" title="{'Drag, or use the arrow keys, to change the height'|i18n( 'design/admin/node/view/full' )|wash}"></div>
+    <div class="a4-tabs-height-grip" role="separator" aria-orientation="horizontal" aria-controls="window-controls" tabindex="0" aria-label="{'Height of the tab panel'|i18n( 'design/admin/node/view/full' )|wash}" title="{'Drag, or use the arrow keys, to change the height; double-click for the default size'|i18n( 'design/admin/node/view/full' )|wash}"></div>
 </div>

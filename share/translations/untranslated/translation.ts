@@ -8012,7 +8012,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Drag, or use the arrow keys, to change the height</source>
+        <source>Drag, or use the arrow keys, to change the height; double-click for the default size</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

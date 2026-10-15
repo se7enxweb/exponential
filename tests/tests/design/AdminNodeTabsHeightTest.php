@@ -69,7 +69,7 @@ class AdminNodeTabsHeightTest extends PHPUnit\Framework\TestCase
             $this->assertIsArray( $row, 'the harness ran: ' . $out );
             $s[$row['name']] = $row;
         }
-        $this->assertCount( 27, $s );
+        $this->assertCount( 28, $s );
 
         // precedence: the preference, the browser's copy, the default
         $this->assertSame( '500', $s['preference wins']['applied'] );
@@ -101,16 +101,16 @@ class AdminNodeTabsHeightTest extends PHPUnit\Framework\TestCase
         $k = $s['keys save once after a rest'];
         $this->assertSame( array( 0, 0 ), array( $k['early'], $k['before'] ), 'nothing saved while the keys go on and 399ms after' );
         $this->assertSame( array( '400' ), $k['saved'], '5 x 16px' );
-        $this->assertSame( array( '464' ), $s['page and shift steps']['saved'], 'Page Down 80px, Shift+Arrow Down 80px, Arrow Up 16px' );
+        $this->assertSame( array( '432' ), $s['page and shift steps']['saved'], 'Page Down 64px, Shift+Arrow Down 64px, Arrow Up 16px, as the other grips' );
         $this->assertSame( 765, $s['home and end']['end'], 'End: 85% of a 900px window' );
         $this->assertSame( array( '765', '160' ), $s['home and end']['saved'] );
         $this->assertSame( array( '336' ), $s['an unchanged height is not saved again']['saved'] );
         $this->assertSame( array(), $s['other keys do nothing']['saved'] );
         $this->assertSame( array( '336' ), $s['a waiting change is saved when the page is left']['saved'] );
 
-        // the layouts tab draws 22em: announced as drawn, the keys step from there (352 + 80 + 16 + 16)
+        // the layouts tab draws 22em: announced as drawn, the keys step from there (352 + 64 + 16 + 16)
         $this->assertSame( '352', $s['layouts tab']['layoutsNow'] );
-        $this->assertSame( array( '464' ), $s['layouts tab']['saved'] );
+        $this->assertSame( array( '448' ), $s['layouts tab']['saved'] );
         $this->assertSame( array( '370' ), $s['a lost drag saves where it ended, another pointer is ignored']['saved'] );
 
         // back to the default: the preference is set empty, not to the default
@@ -125,6 +125,13 @@ class AdminNodeTabsHeightTest extends PHPUnit\Framework\TestCase
         $this->assertTrue( $r['resetHidden'] );
         $this->assertSame( 'grip', $r['focus'], 'the hidden button hands the focus to the grip' );
         $this->assertNull( $s['reset on an anonymous page']['local'] );
+        $d = $s['double-click on the grip forgets the height'];
+        $this->assertSame( array( '-' ), $d['saved'], 'one save: the two clicks of the double-click move nothing' );
+        $this->assertSame( '-', $d['pref'] );
+        $this->assertNull( $d['local'] );
+        $this->assertNull( $d['applied'] );
+        $this->assertTrue( $d['resetHidden'] );
+        $this->assertSame( 'grip', $d['focus'] );
 
         // a preference that could not be saved stays in this browser
         foreach ( array( 'error', 'reject', 'redirect' ) as $how )
@@ -138,7 +145,7 @@ class AdminNodeTabsHeightTest extends PHPUnit\Framework\TestCase
     public function testTheScriptUsesThePreferenceHelper()
     {
         $js = self::read( 'design/admin4/javascript/admin4.js' );
-        $this->assertStringContainsString( "var NAME = 'admin_node_preview_height', KEY = 'exp-a4-node-preview-height', DELAY = 400, STEP = 16, BIG = 80;", $js );
+        $this->assertStringContainsString( "var NAME = 'admin_node_preview_height', KEY = 'exp-a4-node-preview-height', DELAY = 400, STEP = 16, BIG = 64;", $js );
         $this->assertStringContainsString( "window.a4Pref.set(NAME, height === null ? '' : String(height), KEY);", $js );
         $this->assertStringNotContainsString( 'localStorage', $js );
         // the limits are admin4.css's: 10em, 60em, 85% of the window; the default is pagelayout.css's 20em (22em)
@@ -195,9 +202,9 @@ class AdminNodeTabsHeightTest extends PHPUnit\Framework\TestCase
 
         $translations = array(
             'ger-DE' => array( 'Default size' => 'Standardgröße', 'Height of the tab panel' => 'Höhe des Reiterbereichs',
-                               'Drag, or use the arrow keys, to change the height' => 'Ziehen oder mit den Pfeiltasten die Höhe ändern' ),
+                               'Drag, or use the arrow keys, to change the height; double-click for the default size' => 'Ziehen oder mit den Pfeiltasten die Höhe ändern; Doppelklick für die Standardgröße' ),
             'eng-US' => array( 'Default size' => 'Default size', 'Height of the tab panel' => 'Height of the tab panel',
-                               'Drag, or use the arrow keys, to change the height' => 'Drag, or use the arrow keys, to change the height' ),
+                               'Drag, or use the arrow keys, to change the height; double-click for the default size' => 'Drag, or use the arrow keys, to change the height; double-click for the default size' ),
         );
         foreach ( $translations as $locale => $messages )
         {

@@ -218,6 +218,11 @@ const tick = () => new Promise((r) => setImmediate(r));
     out.push(state('reset forgets the height', b, { resetWasHidden: before2.resetHidden, focus: b.focused(), pref: b.attrs[ATTR] }));
     b = setup({ local: { [KEY]: '500' } });
     b.reset.fire('click', {}); await tick(); out.push(state('reset on an anonymous page', b));
+    // a double-click on the grip does the same as the button (as on the other grips); its two clicks move nothing
+    b = setup({ attrs: signed('500'), local: { [KEY]: '500' } });
+    b.drag(100, 100, 0); b.drag(100, 100, 0);
+    b.grip.fire('dblclick', { preventDefault() {} }); await tick();
+    out.push(state('double-click on the grip forgets the height', b, { focus: b.focused(), pref: b.attrs[ATTR] }));
 
     // fallback: a preference that is not saved stays in this browser
     for (const how of ['error', 'reject', 'redirect']) {
