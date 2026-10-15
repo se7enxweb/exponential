@@ -864,7 +864,7 @@ ac084a07607e6d6c5a845da15423854f  design/admin4/images/view-fullscreen.png
 9a46dca535add15f4acd93d171087ab4  design/admin4/javascript/admin4.js
 611b86193bc31bf56218fc25131e04b8  design/admin4/javascript/contentstructuremenu_dynamic.js
 a5e25bc5b912c88678afe25d798ade81  design/admin4/javascript/expajaxuploader.js
-18f19ab1b5816d4be01e47f0ce9e8d32  design/admin4/javascript/ezadmin_menubar.js
+eb39f8826c0f78621684676794b323e8  design/admin4/javascript/ezadmin_menubar.js
 59795cfe15e8bc99974d7d9099794478  design/admin4/javascript/ezajaxrelations_jquery.js
 a28728171fd43a28e1ffc80bc858e768  design/admin4/javascript/ezajaxsubitems_expdatatable.js
 031d335156c09ec9dc3db2f2d3730087  design/admin4/javascript/node_tabs.js
@@ -7320,7 +7320,7 @@ f2f45d0be8a363de1fa024e40ff34fd2  tests/tests/design/AdminNewsletterPreviewTest.
 473533c0e50576ba042de2b36bd74dc7  tests/tests/design/AdminNodeUploadButtonTest.php
 3e58daec4ebebe4c5c7f8929dcab5727  tests/tests/design/AdminNoticesTest.php
 917f288f4825456962ee3eabc46c89c2  tests/tests/design/AdminPageHeaderTest.php
-6223ca89e0d1460feca414292a1260b1  tests/tests/design/AdminPhoneMenuTest.php
+78c4c703a51e4fd14e56241250df7813  tests/tests/design/AdminPhoneMenuTest.php
 77e0c30ffdd7d184e4f30730cbb24816  tests/tests/design/AdminPreferencesTest.php
 fe3ae8677e701b3a8e7d50707d46a9ae  tests/tests/design/AdminPreviewDevicesTest.php
 cac53599c9c6b1874c2c8f7c1bf97945  tests/tests/design/AdminResponsiveTest.php
@@ -7346,7 +7346,7 @@ b1c86fb42e09b8aa8c9834d62706a3b4  tests/tests/design/AdminVisibilityStatusTest.p
 ea2584f9208c35d5087694b08ebd88aa  tests/tests/design/js/editor_skin.js
 b7cffb5712803f903d80c45a0cd3f90d  tests/tests/design/js/language_states.js
 a134e1113ff97edab51d735f9fc9fb26  tests/tests/design/js/mega_menu.js
-1033cab01919fe018fa1ad7d1f25de66  tests/tests/design/js/phone_menu.js
+df6de9229003fd2bd6fb76432cbb94e8  tests/tests/design/js/phone_menu.js
 31267149d8f443736a92676d6f7b1afa  tests/tests/design/js/priority_drag.js
 d2faa77782cb14493e2d79691451b89d  tests/tests/design/js/segmented_switch.js
 930596724f30405be9cbdd8bff9ffc4f  tests/tests/design/js/sidebar_drawer.js
