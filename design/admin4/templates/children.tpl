@@ -34,7 +34,7 @@
 
 {* DESIGN: Header START *}<div class="box-header">
 
-    <h2 class="context-title"><a href={$node.depth|gt(1)|choose('/'|ezurl,$node.parent.url_alias|ezurl )} title="{'Up one level.'|i18n(  'design/admin/node/view/full'  )|wash}"><span class="a4-icon a4-bi-arrow-90deg-up is-medium" role="img" aria-label="{'Up one level.'|i18n( 'design/admin/node/view/full' )|wash}" title="{'Up one level.'|i18n( 'design/admin/node/view/full' )|wash}"></span></a>&nbsp;{'Sub items (%children_count)'|i18n( 'design/admin/node/view/full',, hash( '%children_count', $children_count ) )}</h2>
+    <h2 class="context-title"><a href={$node.depth|gt(1)|choose( concat( 'content/view/full/', $node.parent_node_id )|ezurl, $node.parent.url_alias|ezurl )} title="{'Up one level.'|i18n(  'design/admin/node/view/full'  )|wash}"><span class="a4-icon a4-bi-arrow-90deg-up is-medium" role="img" aria-label="{'Up one level.'|i18n( 'design/admin/node/view/full' )|wash}" title="{'Up one level.'|i18n( 'design/admin/node/view/full' )|wash}"></span></a>&nbsp;{'Sub items (%children_count)'|i18n( 'design/admin/node/view/full',, hash( '%children_count', $children_count ) )}</h2>
 
 {* DESIGN: Header END *}</div>
 
