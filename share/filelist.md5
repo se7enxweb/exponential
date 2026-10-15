@@ -4599,7 +4599,7 @@ f3bffc88e81741de46f06135aac557bf  extension/ezoe/design/standard/templates/ezoe/
 70322a77a52a65c55b7f33427a6c6eb4  extension/ezoe/doc/path_concept.gif
 b9fd60ca35c9e3786ffd14bb18c1ed1f  extension/ezoe/extension.xml
 fa78c13489b745a7ac8d722d12634244  extension/ezoe/ezxmltext/handlers/input/ezoeinputparser.php
-44c1768bcfbd9fda0a8f60fd94cd75c1  extension/ezoe/ezxmltext/handlers/input/ezoexmlinput.php
+d5d49784be3ff92fa563ced3bbc9cc07  extension/ezoe/ezxmltext/handlers/input/ezoexmlinput.php
 ec9d0894a9b5155ca5bfa598488a5854  extension/ezoe/modules/ezoe/atd_rpc.php
 84be03f87c6a63ead6d791281c09bda5  extension/ezoe/modules/ezoe/classes/EnchantSpell.php
 18f870446f4fbe17ed7e04874d42d544  extension/ezoe/modules/ezoe/classes/GoogleSpell.php
@@ -7181,7 +7181,7 @@ a4f08d5ac6c237ea03f696e86a6b5fc6  tests/tests/extension/ezoe/expOEEditorRegistry
 ec537531a37d13e0a1a90a8f3a112d4d  tests/tests/extension/ezoe/expOEEditorServicesTest.php
 c986f5766a23f4b954a6b74c5c4f8931  tests/tests/extension/ezoe/expOEEditorViewAccessTest.php
 c41c31f51231d61133a36baf5a601830  tests/tests/extension/ezoe/expOEEmbedImageAliasTest.php
-f933d8268e34504483898e508897d51d  tests/tests/extension/ezoe/expOEEngineConfigTest.php
+808844d0b0af49a28d3156d2db5139b3  tests/tests/extension/ezoe/expOEEngineConfigTest.php
 fc96db66db0ea2664cf805a08fca8284  tests/tests/extension/ezoe/expOEEngineViewTest.php
 6834ab097cfc296675fecaebdf5dfcb3  tests/tests/extension/ezoe/expOEInputTableCellTextTest.php
 27e63da049b02963fa347d079a52ebd4  tests/tests/extension/ezoe/expOEMarkupEscapeTest.php
@@ -7189,7 +7189,7 @@ fc96db66db0ea2664cf805a08fca8284  tests/tests/extension/ezoe/expOEEngineViewTest
 9a7f16efa0e2944384ae92ca524a9ede  tests/tests/extension/ezoe/expOEPastedStylesTest.php
 56d13995de752f9df356105bb88a23d9  tests/tests/extension/ezoe/expOERelationsEmbedIdTest.php
 12e337e5d6b9e90a74cd6889c0936ef8  tests/tests/extension/ezoe/expOERoundTripTest.php
-d2b2bf8e16f7d42be4c9d7dc00bda438  tests/tests/extension/ezoe/expOETestCase.php
+d758f405cb0625ce7c0abbba6c8f283e  tests/tests/extension/ezoe/expOETestCase.php
 1ed3c1be8e04c209b35c7ecc5c8bfe83  tests/tests/extension/ezoe/expOEUploadPostStringTest.php
 1236b3c9d5976285c3e0a842868d1392  tests/tests/extension/ezoe/expOEUploadRulesTest.php
 4d69e74b0fc9c3fa8fb53eaf079a9fde  tests/tests/extension/ezoe/expOEUrlFetcherTest.php
