@@ -391,7 +391,10 @@ A script of your own goes in `cronjobs/` of your extension, with the extension n
 `@link` (the phpDoc tag for a URL) puts a **Docs** link beside the script on the page; it opens in a new window. A
 path such as `doc/guides/sessions.md` is put after `[ScriptDocumentation] DocumentationBase` (empty: the
 documentation of Exponential on GitHub), so the kernel's scripts name their guide that way. Only `http` and `https`
-links are shown; a value that is none of these gives no link. An installation gives or replaces the link of any
+links are shown; a value that is none of these gives no link. With the default base a path is linked only when the
+installation ships that file, so no link is dead, and the relative path of an extension's script is never put after
+Exponential's base (it names a file of the extension): such a script, like one that names nothing, shows no **Docs**
+until `Link[]` gives one. An installation gives or replaces the link of any
 script, its own documentation for an extension's script for instance, in `settings/override/cronjob.ini.append.php`,
 by the file name as `Scripts[]` has it:
 
