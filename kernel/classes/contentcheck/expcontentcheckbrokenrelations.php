@@ -366,7 +366,8 @@ class expContentCheckBrokenRelations
                 foreach ( self::attributeTargets( (string)$attribute['datatype'], (int)$attribute['data_int'], (string)$attribute['data_text'] ) as $target )
                     $references[] = array( 'source_id' => (int)$attribute['source_id'], 'attribute_id' => (int)$attribute['attribute_id'],
                                            'language' => (string)$attribute['language'], 'relation' => 'object', 'via' => 'attribute',
-                                           'target_type' => $target['type'], 'target_id' => $target['id'], 'from_table' => false );
+                                           'target_type' => $target['type'], 'target_id' => $target['id'], 'from_table' => false,
+                                           'target_remote' => isset( $target['remote'] ) ? $target['remote'] : '' );
             }
         }
         if ( !$references )
@@ -377,11 +378,9 @@ class expContentCheckBrokenRelations
         {
             if ( $reference['target_type'] !== 'either' )
                 continue;
-            $exists = $db->arrayQuery( 'SELECT id FROM ezcontentobject WHERE id = ' . (int)$reference['target_id'] );
-            if ( !$exists && $db->arrayQuery( 'SELECT node_id FROM ezcontentobject_tree WHERE node_id = ' . (int)$reference['target_id'] ) )
-                $references[$i]['target_type'] = 'node';
-            else
-                $references[$i]['target_type'] = 'object';
+            $resolved = self::resolveImportedId( (int)$reference['target_id'], isset( $reference['target_remote'] ) ? $reference['target_remote'] : '' );
+            $references[$i]['target_type'] = $resolved[0];
+            $references[$i]['target_id'] = $resolved[1];
         }
 
         // the state of every target, in three queries
@@ -468,7 +467,7 @@ class expContentCheckBrokenRelations
         foreach ( $findings as $finding )
         {
             $source = $sourceByID[$finding['source_id']];
-            unset( $finding['from_table'] );
+            unset( $finding['from_table'], $finding['target_remote'] );
             $list[] = array_merge( $finding, array( 'source_name' => (string)$source['object_name'],
                                                     'source_node_id' => (int)$source['node_id'],
                                                     'source_path' => (string)$source['node_path'],
@@ -571,9 +570,42 @@ class expContentCheckBrokenRelations
         {
             $data = json_decode( (string)$dataText, true );
             if ( is_array( $data ) && ( !isset( $data['type'] ) || $data['type'] === 'internal' ) && isset( $data['id'] ) && (int)$data['id'] > 0 )
-                $targets[] = array( 'type' => 'either', 'id' => (int)$data['id'] );
+                $targets[] = array( 'type' => 'either', 'id' => (int)$data['id'],
+                                    'remote' => isset( $data['remote_id'] ) && is_string( $data['remote_id'] ) ? $data['remote_id'] : '' );
         }
         return $targets;
+    }
+
+    /**
+     * The object or node an id of imported content stands for, resolved as the site does it: its own remote id,
+     * then the patterns of [ReferenceSettings] (expContentCheckReferences::importedIdReferences()), then the id as
+     * an object, then as a node. An id nothing resolves is judged as the object with that id (deleted).
+     *
+     * @param int $id
+     * @param string $remote the remote id stored next to the id, if any
+     * @return array array( object|node, id )
+     */
+    public static function resolveImportedId( $id, $remote = '' )
+    {
+        $db = eZDB::instance();
+        $candidates = array();
+        if ( (string)$remote !== '' )
+            $candidates[] = array( 'type' => 'remote', 'value' => (string)$remote );
+        $candidates = array_merge( $candidates, expContentCheckReferences::importedIdReferences( (int)$id ) );
+        foreach ( $candidates as $candidate )
+        {
+            if ( $candidate['type'] === 'remote' )
+                $rows = $db->arrayQuery( "SELECT id FROM ezcontentobject WHERE remote_id = '" . $db->escapeString( (string)$candidate['value'] ) . "'" );
+            else
+                $rows = $db->arrayQuery( 'SELECT id FROM ezcontentobject WHERE id = ' . (int)$candidate['value'] );
+            if ( $rows )
+                return array( 'object', (int)$rows[0]['id'] );
+        }
+        if ( $db->arrayQuery( 'SELECT id FROM ezcontentobject WHERE id = ' . (int)$id ) )
+            return array( 'object', (int)$id );
+        if ( $db->arrayQuery( 'SELECT node_id FROM ezcontentobject_tree WHERE node_id = ' . (int)$id ) )
+            return array( 'node', (int)$id );
+        return array( 'object', (int)$id );
     }
 
     /**

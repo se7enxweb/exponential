@@ -89,6 +89,22 @@ class expContentCheckReferencesTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'node:12', 'path:/content/view/full/12' ), self::keys( expContentCheckReferences::attributeReferences( 'ezurl', 0, '/content/view/full/12' ) ) );
     }
 
+    /** CR-03 ids of imported content: remote id and offset patterns, in the order given */
+    public function testImportedIdPatterns()
+    {
+        $this->assertSame( array( array( 'type' => 'remote', 'value' => 'media-o-1014' ), array( 'type' => 'remote', 'value' => 'media-o-238' ),
+                                  array( 'type' => 'object', 'value' => 1014 ) ),
+                           expContentCheckReferences::importedIdReferences( 238, array( 'media-o-%id+776', 'media-o-%id' ), array( '%id+776' ) ) );
+        $this->assertSame( array( array( 'type' => 'object', 'value' => 200 ) ),
+                           expContentCheckReferences::importedIdReferences( 210, array( 'no placeholder' ), array( '%id-10', '%id-300' ) ),
+                           'a pattern without %id, or one that leaves no positive id, gives nothing' );
+        $this->assertSame( array(), expContentCheckReferences::importedIdReferences( 0, array( 'media-o-%id' ), array() ) );
+        $this->assertSame( array( 'remote:imported-77' ),
+                           self::keys( array_filter( expContentCheckReferences::attributeReferences( 'ngenhancedlink', 0, '{"type":"internal","id":0,"remote_id":"imported-77"}' ),
+                                                     function ( $r ) { return $r['type'] === 'remote'; } ) ),
+                           'an enhanced link that keeps its target\'s remote id names it by that' );
+    }
+
     /** CR-04 */
     public function testLayoutBlockParameters()
     {
@@ -255,7 +271,7 @@ class expContentCheckReferencesTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( array( 'type' => 'object', 'id' => 185 ), array( 'type' => 'object', 'id' => 190 ) ),
                            expContentCheckBrokenRelations::attributeTargets( 'ezobjectrelationlist', 0,
                                '<relation-item contentobject-id="185" node-id="187"/><relation-item contentobject-id="190" parent-node-id="1"/>' ) );
-        $this->assertSame( array( array( 'type' => 'either', 'id' => 738 ) ),
+        $this->assertSame( array( array( 'type' => 'either', 'id' => 738, 'remote' => '' ) ),
                            expContentCheckBrokenRelations::attributeTargets( 'ngenhancedlink', 738, '{"type":"internal","id":738,"target":"modal"}' ) );
         $this->assertSame( array(), expContentCheckBrokenRelations::attributeTargets( 'ngenhancedlink', 0, '{"type":"external","url":"https://x"}' ) );
         $this->assertSame( 'restore', expContentCheckBrokenRelations::hint( 'trash' ) );

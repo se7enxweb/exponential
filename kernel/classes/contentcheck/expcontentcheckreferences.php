@@ -384,6 +384,46 @@ class expContentCheckReferences
     }
 
     /**
+     * What an id of imported content can stand for, by the patterns of contentcheck.ini [ReferenceSettings]: a
+     * site that keeps the ids of the installation its content came from (an enhanced link's internal id, a layout
+     * component's content parameter) resolves them as remote ids or with an offset, and the checks must resolve
+     * them the same way. A pattern is a text with %id (the stored id) or %id+N / %id-N (the id moved by N).
+     *
+     * @param int $id
+     * @param string[]|null $remotePatterns null: ImportedIdRemotePatterns[]
+     * @param string[]|null $objectPatterns null: ImportedIdObjectPatterns[]
+     * @return array list of array( 'type' => remote|object, 'value' ), in the order the patterns are listed
+     */
+    public static function importedIdReferences( $id, $remotePatterns = null, $objectPatterns = null )
+    {
+        $id = (int)$id;
+        if ( $id <= 0 )
+            return array();
+        if ( $remotePatterns === null )
+            $remotePatterns = (array)expContentCheck::setting( 'ReferenceSettings', 'ImportedIdRemotePatterns', array() );
+        if ( $objectPatterns === null )
+            $objectPatterns = (array)expContentCheck::setting( 'ReferenceSettings', 'ImportedIdObjectPatterns', array() );
+        $expand = function ( $pattern ) use ( $id ) {
+            return preg_replace_callback( '/%id(?:([+-])([0-9]{1,9}))?/', function ( $m ) use ( $id ) {
+                return (string)( isset( $m[1] ) && $m[1] !== '' ? ( $m[1] === '+' ? $id + (int)$m[2] : $id - (int)$m[2] ) : $id );
+            }, (string)$pattern );
+        };
+        $references = array();
+        foreach ( $remotePatterns as $pattern )
+        {
+            if ( is_string( $pattern ) && strpos( $pattern, '%id' ) !== false )
+                $references[] = array( 'type' => 'remote', 'value' => $expand( $pattern ) );
+        }
+        foreach ( $objectPatterns as $pattern )
+        {
+            $value = is_string( $pattern ) && strpos( $pattern, '%id' ) !== false ? $expand( $pattern ) : '';
+            if ( preg_match( '/^[0-9]{1,10}$/', $value ) && (int)$value > 0 )
+                $references[] = array( 'type' => 'object', 'value' => (int)$value );
+        }
+        return $references;
+    }
+
+    /**
      * The references of a field, by its datatype.
      *
      * @param string $datatype
@@ -407,7 +447,10 @@ class expContentCheckReferences
             {
                 $references[] = array( 'type' => 'object', 'value' => $id );
                 $references[] = array( 'type' => 'node', 'value' => $id );
+                $references = array_merge( $references, self::importedIdReferences( $id ) );
             }
+            if ( is_array( $data ) && !empty( $data['remote_id'] ) && is_string( $data['remote_id'] ) )
+                $references[] = array( 'type' => 'remote', 'value' => $data['remote_id'] );
             if ( is_array( $data ) && isset( $data['url'] ) && is_string( $data['url'] ) )
                 $references = array_merge( $references, self::textReferences( 'href="' . $data['url'] . '"' ) );
             return $references;
@@ -446,6 +489,9 @@ class expContentCheckReferences
             $mapped = preg_match( '/(node|location)/i', (string)$name ) ? self::remapNode( (int)$value ) : 0;
             if ( $mapped && $mapped !== (int)$value )
                 $references[] = array( 'type' => 'node', 'value' => $mapped );
+            // a component's content parameter may hold an id of the installation the layout came from
+            if ( preg_match( '/(content|object)/i', (string)$name ) )
+                $references = array_merge( $references, self::importedIdReferences( (int)$value ) );
         }
         if ( preg_match( '#^(exp-remote-[a-z]+|ezlocation|ezcontent|ezobject|eznode|ibexa-?[a-z]+)://#i', trim( $value ) ) )
             return array_merge( $references, self::textReferences( trim( $value ) ) );
