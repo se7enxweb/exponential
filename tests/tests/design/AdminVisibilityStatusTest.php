@@ -3,9 +3,9 @@
  * The status marks of the administration: a node's visibility (visible, hidden, hidden by a parent) and the state
  * of a user account (disabled, locked) as one component, components.css .a4-mark.
  *
- *  VS-01 - The shape tells the state, not only the colour: a filled disc, a ring, a ring with a bar, a crossed
- *          ring, a filled square; in forced colours the shapes and fills stay (system colour)
- *  VS-02 - Each mark's colour reaches 3:1 (WCAG 1.4.11) on the card, the zebra row, the hovered row and its badge
+ *  VS-01 - The shape tells the state, not only the color: a filled disc, a ring, a ring with a bar, a crossed
+ *          ring, a filled square; in forced colors the shapes and fills stay (system color)
+ *  VS-02 - Each mark's color reaches 3:1 (WCAG 1.4.11) on the card, the zebra row, the hovered row and its badge
  *          tint, in light and dark mode
  *  VS-03 - The include parts/visibility_status.tpl: three states, the badge for the node view's header, the
  *          quiet form for lists, named for screen readers unless visible; the header, the browse list and both

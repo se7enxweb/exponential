@@ -55,6 +55,7 @@
   --a4-footer-ink: #5d6573;   /* 5.1:1 on the page colour (#6b7280 was 4.3:1) */
   --a4-footer-link: #4b5563;
   --a4-footer-link-hover: #1f2430;
+  --a4-brand: #f15a28;        /* the logo's orange square (parts/a4_logo.tpl), the artwork's brand color */
 }
 
 /* ---- Tokens: dark (slate page, slate columns; the shared tokens switch in components.css) --------------------- */
@@ -79,6 +80,7 @@ html[data-a4-theme="dark"] {
   --a4-footer-ink: #8d95a3;
   --a4-footer-link: #c8cdd6;
   --a4-footer-link-hover: #fff;
+  --a4-brand: #f15a28;        /* the same artwork on dark pages */
 }
 
 /* ---- The page -------------------------------------------------------------------------------------------- */
@@ -144,7 +146,7 @@ body,
     pointer-events: none;
   }
 }
-/* The logo (parts/a4_logo.tpl): an inline drawing in the link's colour, so the letters are dark on the light header and
+/* The logo (parts/a4_logo.tpl): an inline drawing in the link's color, so the letters are dark on the light header and
    light on the dark one; the box stays 32px high, as the old image's was, so the rows keep their heights. 24px high,
    the full logo is 158px wide (388 x 59). */
 #header-logo .brand {
@@ -158,10 +160,11 @@ body,
 .a4-logo { display: block; flex: none; }
 .a4-logo-full { width: calc(24px * 388 / 59); height: 24px; }
 .a4-logo-mark { display: none; width: 28px; height: 28px; }
-/* the inner square of the back mark: white on light pages, as in the artwork; on dark pages the surface colour, so the
+/* the inner square of the back mark: white on light pages, as in the artwork; on dark pages the surface color, so the
    mark keeps its drawing (a light outline around a dark square, the orange square in front) instead of a white
    block brighter than everything else on the page */
 .a4-logo-paper { fill: var(--a4-surface); }
+.a4-logo-brand { fill: var(--a4-brand); }   /* the orange square, the brand color from its token */
 @media (forced-colors: active) {
   #header-logo .brand,
   .a4-login-logo { color: CanvasText; }

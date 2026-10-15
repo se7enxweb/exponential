@@ -195,7 +195,7 @@ class AdminIconsTest extends PHPUnit\Framework\TestCase
             $short = substr( $file, strlen( self::root() ) + 1 );
             if ( preg_match( "/'(?:$images)'\|ezimage/", $text ) )
                 $found[] = "$short: a GIF or PNG icon (use .a4-icon)";
-            // the logo is no icon: drawn inline so it takes the theme's colours (AdminLogoTest)
+            // the logo is no icon: drawn inline so it takes the theme's colors (AdminLogoTest)
             if ( stripos( $text, '<svg' ) !== false && $short !== 'design/admin4/templates/parts/a4_logo.tpl' )
                 $found[] = "$short: an inline SVG (use .a4-icon)";
             if ( preg_match( '/type="image"/', $text ) )

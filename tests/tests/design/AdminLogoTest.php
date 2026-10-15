@@ -11,8 +11,8 @@
  *          reference outside the file
  *  LG-04 - the inline drawings and the image files (images/admin4/exponential-logo.svg, exponential-mark.svg) are the
  *          same drawing, path for path
- *  LG-05 - the colours: letters and outlines in currentColor, the orange square in the brand colour #f15a28, the inner
- *          square in the surface colour; under forced colors CanvasText and Canvas
+ *  LG-05 - the colors: letters and outlines in currentColor, the orange square in the brand color #f15a28, the inner
+ *          square in the surface color; under forced colors CanvasText and Canvas
  *  LG-06 - the header keeps its heights (56px, 88px from 576px, 56px from 1280px) and the logo box its 32px; the logo is
  *          24px high, and below 576px the mark stands alone in a 36px link, as large a target as the tools
  *
@@ -204,21 +204,25 @@ class AdminLogoTest extends PHPUnit\Framework\TestCase
     }
 
     /** LG-05 */
-    public function testTheColoursFollowTheTheme()
+    public function testTheColorsFollowTheTheme()
     {
         $inline = self::svgs( self::partial() );
         $fills = array_map( function ( $shape ) { return explode( ' ', $shape )[1]; }, self::drawing( $inline[0] ) );
         $this->assertSame( array_merge( array_fill( 0, 11, 'fill=currentColor' ),
             array( 'fill=#fff', 'fill=currentColor', 'fill=#f15a28', 'fill=currentColor' ) ), $fills );
-        // the inner square: the surface colour on the page, white as a fallback and in the image files
+        // the inner square: the surface color on the page, white as a fallback and in the image files
         $this->assertSame( 2, substr_count( self::partial(), '<rect class="a4-logo-paper" fill="#fff"' ) );
         foreach ( array( 'exponential-logo.svg', 'exponential-mark.svg' ) as $name )
-            $this->assertStringContainsString( 'color="#231f20"', self::file( 'design/admin4/images/admin4/' . $name ), "$name: the artwork's ink where nothing sets a colour" );
-        $this->assertStringNotContainsString( 'color="', preg_replace( '/\s(fill)="[^"]*"/', '', self::partial() ), 'inline, the link sets the colour' );
+            $this->assertStringContainsString( 'color="#231f20"', self::file( 'design/admin4/images/admin4/' . $name ), "$name: the artwork's ink where nothing sets a color" );
+        $this->assertStringNotContainsString( 'color="', preg_replace( '/\s(fill)="[^"]*"/', '', self::partial() ), 'inline, the link sets the color' );
 
         $css = self::css( 'admin4.css' );
         $rules = AdminBaseStylesheetsTest::rules( $css );
         $this->assertSame( 'var(--a4-surface)', $rules['.a4-logo-paper']['fill'] );
+        // the orange square takes the brand color from its token (the attribute is the fallback), light and dark
+        $this->assertSame( 2, substr_count( self::partial(), '<rect class="a4-logo-brand" fill="#f15a28"' ) );
+        $this->assertSame( 'var(--a4-brand)', $rules['.a4-logo-brand']['fill'] );
+        $this->assertSame( 2, preg_match_all( '/^\s*--a4-brand: #f15a28;/m', $css ), 'a light and a dark value' );
         $this->assertSame( 'var(--a4-ink)', $rules['#header-logo .brand']['color'] );
         $this->assertSame( 'var(--a4-ink)', $rules['.a4-login-logo']['color'] );
         $forced = AdminBaseStylesheetsTest::rules( $css, true );

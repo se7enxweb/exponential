@@ -700,14 +700,14 @@ html[data-a4-theme="dark"] {
 /* ---- Status mark ------------------------------------------------------------------------------------------------
    A 10px mark for the state of an item, shown before its name in lists and in a badge beside a title: a node's
    visibility (design:parts/visibility_status.tpl, the sub-items table, the content tree, the browse list) and the
-   state of a user account. The shape tells the state as well as the colour, so it reads in grey scale and in
-   forced colours:
+   state of a user account. The shape tells the state as well as the color, so it reads in gray scale and in
+   forced colors:
      .is-visible           a filled disc   (--a4-ok)      visible
      .is-hidden            a ring          (--a4-bad)     hidden
      .is-hidden-by-parent  a ring with a bar (--a4-bad)   hidden because an item above it is hidden
      .is-disabled          a crossed ring  (--a4-muted)   user account disabled
      .is-locked            a filled square (--a4-warn)    user account locked after failed logins
-   Alone it is role="img" with aria-label and title; beside its own text it is aria-hidden. Each colour reaches 3:1
+   Alone it is role="img" with aria-label and title; beside its own text it is aria-hidden. Each color reaches 3:1
    on the card, the zebra row and its badge tint in both modes (AdminVisibilityStatusTest). */
 .a4-mark {
   position: relative;
@@ -740,7 +740,7 @@ html[data-a4-theme="dark"] {
 /* in a badge the mark sits on the text's middle; .a4-badge keeps its gap */
 .a4-badge > .a4-mark { align-self: center; }
 @media (forced-colors: active) {
-  /* the system colours replace the state colours; the shapes stay, the fills are kept on purpose */
+  /* the system colors replace the state colors; the shapes stay, the fills are kept on purpose */
   .a4-mark { forced-color-adjust: none; color: CanvasText; }
   .a4-mark.is-visible, .a4-mark.is-locked { background-color: CanvasText; }
 }

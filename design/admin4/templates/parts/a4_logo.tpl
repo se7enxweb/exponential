@@ -1,7 +1,7 @@
 {* The Exponential logo, the one source of it in admin4 and admin4l: the header's logo link (page_topmenu.tpl and
    admin4l's admin_logo block) and the sign-in page (loginpagelayout.tpl). Inline, so the letters and outlines take
-   the link's colour (currentColor: dark ink on the light header, light ink on the dark one, CanvasText under forced
-   colors) and the inner square of the back mark the surface colour; the orange square is the brand colour #f15a28
+   the link's color (currentColor: dark ink on the light header, light ink on the dark one, CanvasText under forced
+   colors) and the inner square of the back mark the surface color; the orange square is the brand color #f15a28
    in both modes. Two drawings: the full logo (word and mark) and the mark alone, which admin4.css shows on phones,
    where the word leaves the tools no room. Both are decoration: the link around them carries the name
    (aria-label), so they are hidden from assistive technology.
@@ -22,12 +22,12 @@
     </g>
     <rect class="a4-logo-paper" fill="#fff" x="8.28" y="8.66" width="31.85" height="32.89"/>
     <path fill="currentColor" d="M38.13,10.66v28.89H10.28V10.66h27.85M42.13,6.66H6.28v36.89h35.85V6.66h0Z"/>
-    <rect fill="#f15a28" x="21.93" y="21.78" width="28.54" height="28.54"/>
+    <rect class="a4-logo-brand" fill="#f15a28" x="21.93" y="21.78" width="28.54" height="28.54"/>
     <path fill="currentColor" d="M48.47,23.78v24.54h-24.54v-24.54h24.54M52.47,19.78H19.93v32.54h32.54V19.78h0Z"/>
 </svg>
 <svg class="a4-logo a4-logo-mark" xmlns="http://www.w3.org/2000/svg" viewBox="5.9 6 47 47" aria-hidden="true" focusable="false">
     <rect class="a4-logo-paper" fill="#fff" x="8.28" y="8.66" width="31.85" height="32.89"/>
     <path fill="currentColor" d="M38.13,10.66v28.89H10.28V10.66h27.85M42.13,6.66H6.28v36.89h35.85V6.66h0Z"/>
-    <rect fill="#f15a28" x="21.93" y="21.78" width="28.54" height="28.54"/>
+    <rect class="a4-logo-brand" fill="#f15a28" x="21.93" y="21.78" width="28.54" height="28.54"/>
     <path fill="currentColor" d="M48.47,23.78v24.54h-24.54v-24.54h24.54M52.47,19.78H19.93v32.54h32.54V19.78h0Z"/>
 </svg>

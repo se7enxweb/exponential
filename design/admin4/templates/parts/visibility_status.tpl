@@ -1,6 +1,6 @@
 {* A node's visibility as a status mark (components.css .a4-mark): a filled disc for visible, a ring for hidden,
    a ring with a bar for hidden because a node above it is hidden (is_invisible without is_hidden). The shape tells
-   the state as well as the colour; the title explains it.
+   the state as well as the color; the title explains it.
 
    Parameters (prefixed status_: an include sees the variables of the template that includes it):
      status_node    the node (required)

@@ -81,9 +81,9 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
   drawn. "/" jumps to the search. The page always starts below the header (`AdminHeaderTest`).
 - **Logo.** One template draws it, `parts/a4_logo.tpl`, included in the header (`page_topmenu.tpl`, admin4l's
   `admin_logo` block) and on the sign-in page. It is inline SVG: letters and outlines in `currentColor` (the link's
-  `--a4-ink`, so dark on light pages and light on dark ones), the orange square in the brand colour `#f15a28`, the
+  `--a4-ink`, so dark on light pages and light on dark ones), the orange square in the brand color `#f15a28`, the
   inner square of the back mark in `--a4-surface` (white on light pages as in the artwork; on dark pages the page's
-  colour instead of a white block). Under forced colors CanvasText and Canvas. 24 px high in the header (158 px wide,
+  color instead of a white block). Under forced colors CanvasText and Canvas. 24 px high in the header (158 px wide,
   in the 32 px box of the old image, so the header keeps 56/88 px), 28 px on the sign-in page; below 576 px the
   header shows the mark alone (in a 36 px link, like the tools). The drawings are `aria-hidden`; the links around them carry the name. The same
   drawing as files: `images/admin4/exponential-logo.svg` (word and mark, viewBox cut to the drawing) and
@@ -427,10 +427,10 @@ either design's sub-items table.
 ## Visibility and account status
 
 Whether visitors of the site see an item, and whether a user can log in, shows at a glance as a small status mark
-(`.a4-mark` in both copies of `components.css`, 10 px). The shape tells the state as well as the colour, so it
-reads in grey scale, for colour-blind users and in forced colours (where the marks take the system text colour):
+(`.a4-mark` in both copies of `components.css`, 10 px). The shape tells the state as well as the color, so it
+reads in gray scale, for color-blind users and in forced colors (where the marks take the system text color):
 
-| Mark | Shape | Colour token | Meaning |
+| Mark | Shape | Color token | Meaning |
 |---|---|---|---|
 | `is-visible` | filled disc | `--a4-ok` | visible |
 | `is-hidden` | ring | `--a4-bad` | hidden (`is_hidden`) |
@@ -438,7 +438,7 @@ reads in grey scale, for colour-blind users and in forced colours (where the mar
 | `is-disabled` | crossed ring | `--a4-muted` | user account disabled (Setup > Users, `ezuser_setting.is_enabled`) |
 | `is-locked` | filled square | `--a4-warn` | user account locked after more failed logins than `site.ini [UserSettings] MaxNumberOfFailedLogin` (`eZUser::isLocked()`) |
 
-Each colour reaches 3:1 against the card, the zebra and hovered rows and its own badge tint, in light and dark mode.
+Each color reaches 3:1 against the card, the zebra and hovered rows and its own badge tint, in light and dark mode.
 Where the mark stands alone it is `role="img"` with an `aria-label` and a `title` that explains it; next to its own
 text it is `aria-hidden`. A visible item's mark is only seen: a screen reader hears the exceptions.
 
