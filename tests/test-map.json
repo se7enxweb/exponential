@@ -240,7 +240,8 @@
     "design/admin4/javascript/admin4.js": [
       "tests/tests/design/AdminNoticesTest.php",
       "tests/tests/design/AdminLeftMenuGroupsTest.php",
-      "tests/tests/design/AdminPreferencesTest.php"
+      "tests/tests/design/AdminPreferencesTest.php",
+      "tests/tests/design/AdminContentEditFormsTest.php"
     ],
     "extension/ezjscore/design/standard/javascript/*": [
       "tests/tests/extension/ezjscore/ezjscoreVendoredLibrariesTest.php"
@@ -289,6 +290,9 @@
     "design/admin*/stylesheets/modules/content.css": [
       "tests/tests/design/AdminContentEditFormsTest.php",
       "tests/tests/design/AdminFormErrorsTest.php"
+    ],
+    "design/admin4/stylesheets/editor_content.css": [
+      "tests/tests/design/AdminContentEditFormsTest.php"
     ]
   },
   "generated": {

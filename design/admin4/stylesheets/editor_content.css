@@ -1,0 +1,38 @@
+/* admin4: the content of the rich text editors (TinyMCE 3 and 8 of the online editor draw it in an iframe, styled by
+   ezoe's skins/<skin>/content.css and ezoe_customtags.css in light colours of their own). admin4.js puts this file and
+   components.css (the tokens) into each editor's document and copies the page's html[data-a4-theme] there, so the
+   text, links, literal blocks, custom tags and embeds follow the light and the dark mode. Every rule is scoped to
+   html[data-a4-theme]: without admin4's script nothing here applies. Colours come from the --a4-* tokens only.
+   doc/bc/6.0/admin4-styling.md, "Edit forms". */
+
+html[data-a4-theme] { color-scheme: light; }
+html[data-a4-theme="dark"] { color-scheme: dark; }
+
+html[data-a4-theme] body:is(.mceContentBody, .mce-content-body) {
+  background-color: var(--a4-field);
+  color: var(--a4-ink);
+}
+html[data-a4-theme] body:is(.mceContentBody, .mce-content-body) td { color: inherit; }
+html[data-a4-theme] body:is(.mceContentBody, .mce-content-body) a { color: var(--a4-accent-text); }
+
+/* literal text */
+html[data-a4-theme] body:is(.mceContentBody, .mce-content-body) pre {
+  background-color: var(--a4-code-bg);
+  color: var(--a4-code-ink);
+}
+
+/* custom tags and embedded objects: a tint with the line token as their edge */
+html[data-a4-theme] body:is(.mceContentBody, .mce-content-body) :is(div, span).ezoeItemCustomTag {
+  border-color: var(--a4-info-line);
+  background-color: var(--a4-info-bg);
+  color: var(--a4-ink);
+}
+html[data-a4-theme] body:is(.mceContentBody, .mce-content-body) :is(div, span).ezoeItemNonEditable {
+  border-color: var(--a4-line-strong);
+  background-color: var(--a4-soft);
+  color: var(--a4-ink);
+}
+html[data-a4-theme] body:is(.mceContentBody, .mce-content-body) span.ezoeItemNonEditable a { color: var(--a4-ink) !important; }
+html[data-a4-theme] body:is(.mceContentBody, .mce-content-body) span.mceItemNbsp { background-color: var(--a4-soft); }
+html[data-a4-theme] body:is(.mceContentBody, .mce-content-body) :is(td, th).mceSelected { background-color: var(--a4-accent-soft) !important; }
+html[data-a4-theme] body:is(.mceContentBody, .mce-content-body) table:is(.mceItemTable, [border="0"]) :is(td, th) { border-color: var(--a4-line-strong); }

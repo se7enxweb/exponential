@@ -31,7 +31,8 @@ class AdminContentEditFormsTest extends PHPUnit\Framework\TestCase
     const SELECT = '.a4-content-attr select:where(:not([multiple]):not([size]), [size="1"])';
 
     /** The datatype edit templates admin4 carries, each drawn from design/standard's with the admin4 markup */
-    const DATATYPES = array( 'ezbinaryfile', 'ezdate', 'ezdatetime', 'ezimage', 'ezoption', 'ezprice', 'eztime', 'ezurl', 'ezuser' );
+    const DATATYPES = array( 'ezbinaryfile', 'ezdate', 'ezdatetime', 'ezimage', 'ezinisetting', 'ezmedia', 'ezmultioption', 'ezmultiprice',
+        'ezobjectrelationlist', 'ezoption', 'ezpackage', 'ezprice', 'ezrangeoption', 'eztime', 'ezurl', 'ezuser' );
 
     private static function root()
     {
@@ -170,24 +171,28 @@ class AdminContentEditFormsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( '0', $rules['#page fieldset.a4-content-attr-group']['border'], 'no box of its own around a grouped input' );
     }
 
-    /** The form fields a template posts: the names and the ids of its controls, the targets of its labels */
+    /** The form fields a template posts: the names and the ids of its controls, and its template blocks */
     private static function formFields( $source )
     {
         $source = preg_replace( '/\{\*.*?\*\}/s', '', $source );
         preg_match_all( '/<(?:input|select|textarea)\b[^>]*?\sname="([^"]*)"/', $source, $names );
         preg_match_all( '/<(?:input|select|textarea)\b[^>]*?\sid="([^"]*)"/', $source, $ids );
-        preg_match_all( '/<label\b[^>]*?\sfor="([^"]*)"/', $source, $for );
+        // the id prefix of a nested edit ({if ne( $attribute_base, ... )}...{/if}) is a value, not a block
+        $code = preg_replace( '/\{if ne\( \$attribute_base, \'ContentObjectAttribute\' \)\}\{\$attribute_base\}-\{\/if\}/', '', $source );
         $blocks = array();
         foreach ( array( 'section', 'if', 'def', 'default', 'foreach', 'let' ) as $block )
-            $blocks[$block] = preg_match_all( '/\{' . $block . '\b/', $source ) . '/' . preg_match_all( '/\{\/' . $block . '\}/', $source );
+            $blocks[$block] = preg_match_all( '/\{' . $block . '\b/', $code ) . '/' . preg_match_all( '/\{\/' . $block . '\}/', $code );
+        // the table structure: a pattern that adds an attribute to <th must not turn <thead> into something else
+        foreach ( array( 'table', 'thead', 'tbody', 'tr' ) as $tag )
+            $blocks[$tag] = preg_match_all( '/<' . $tag . '[\s>]/', $code ) . '/' . preg_match_all( '/<\/' . $tag . '>/', $code );
         $sorted = function ( array $list ) { sort( $list ); return $list; };
-        return array( 'names' => $sorted( $names[1] ), 'ids' => $sorted( $ids[1] ), 'for' => $sorted( $for[1] ), 'blocks' => $blocks );
+        return array( 'names' => $sorted( $names[1] ), 'ids' => $sorted( $ids[1] ), 'blocks' => $blocks );
     }
 
     /**
-     * The copies of design/standard's templates post the same fields with the same ids and label targets and keep the
-     * template blocks balanced as the original: only the markup around them changed (ezdate and ezdatetime were
-     * admin4 templates before and inline their ids)
+     * The copies of design/standard's templates post the same fields with the same ids and keep the template blocks of
+     * the original: only the markup around them changed (ezdate and ezdatetime were admin4 templates before and inline
+     * their ids). A label's target may change: ezmultioption's pointed at an id that does not exist
      */
     public function testTheCopiesPostWhatTheOriginalsPost()
     {
@@ -198,6 +203,29 @@ class AdminContentEditFormsTest extends PHPUnit\Framework\TestCase
             $this->assertNotEmpty( $copy['names'], $datatype );
             $this->assertSame( $original, $copy, "$datatype.tpl posts other fields than design/standard's" );
         }
+    }
+
+    /** The rich text editors' content follows the mode: the form names the sheets, admin4.js puts them in, tokens only */
+    public function testTheEditorContentFollowsTheMode()
+    {
+        $this->assertStringContainsString( 'data-a4-editor-css="{\'stylesheets/components.css\'|ezdesign( \'no\' )} {\'stylesheets/editor_content.css\'|ezdesign( \'no\' )}"',
+            self::read( 'design/admin4/templates/content/edit.tpl' ) );
+        $js = self::read( 'design/admin4/javascript/admin4.js' );
+        foreach ( array( "form[data-a4-editor-css]", "mceContentBody|mce-content-body", "doc.documentElement.setAttribute('data-a4-theme'",
+                         "attributeFilter: ['data-a4-theme']", 'mce.onAddEditor.add', "mce.on('AddEditor'" ) as $needle )
+            $this->assertStringContainsString( $needle, $js );
+        $css = preg_replace( '#/\*.*?\*/#s', '', self::read( 'design/admin4/stylesheets/editor_content.css' ) );
+        $rules = AdminBaseStylesheetsTest::rules( $css );
+        $this->assertNotEmpty( $rules );
+        foreach ( $rules as $selector => $declarations )
+        {
+            $this->assertStringStartsWith( 'html[data-a4-theme', $selector, 'nothing applies without the script' );
+            foreach ( $declarations as $property => $value )
+                $this->assertDoesNotMatchRegularExpression( '/#[0-9a-f]{3,8}\b|\b(rgba?|hsla?)\(/i', $value, "$selector { $property }" );
+        }
+        $body = 'html[data-a4-theme] body:is(.mceContentBody, .mce-content-body)';
+        $this->assertSame( 'var(--a4-field)', $rules[$body]['background-color'] );
+        $this->assertSame( 'var(--a4-ink)', $rules[$body]['color'] );
     }
 
     public function testTheLanguagesToTranslateFromAreCheckRows()
