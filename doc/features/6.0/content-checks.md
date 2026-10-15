@@ -86,6 +86,11 @@ register relations, and everything outside the fields. The checks read them into
   and anything outside this installation (another site, a newsletter already sent, a bookmark in a browser). Check
   an asset before you remove it when such code exists; the trash keeps it restorable.
 - Settings are read by the names of their settings: a node id in a setting named otherwise is not seen.
+- Ids of **imported content**: a site built from content of another installation may keep that installation's ids
+  (the media site demo keeps them in enhanced links and layout component parameters) and resolve them in its
+  templates by remote id or with an offset. Unless `[ReferenceSettings] ImportedIdRemotePatterns[]` and
+  `ImportedIdObjectPatterns[]` name the same patterns, such a link shows as broken and its target may be listed
+  as unused.
 - An index older than `IndexTTL` (see [Settings](#settings)) may miss what was added since; the move to the trash
   always builds it again.
 
@@ -272,6 +277,12 @@ NodeColumns[]=ezsubtree_notification_rule.node_id
 NodeColumns[]=ezcontentbrowsebookmark.node_id
 NodeColumns[]=eznode_assignment.parent_node
 NodeListColumns[]
+
+[ReferenceSettings]
+# Ids of imported content, resolved as the site resolves them (%id, %id+N); the media site demo:
+#ImportedIdRemotePatterns[]=media-o-%id+776
+#ImportedIdRemotePatterns[]=media-o-%id
+#ImportedIdObjectPatterns[]=%id+776
 
 [BrokenRelationsSettings]
 # The datatypes whose text is read for links and embeds
