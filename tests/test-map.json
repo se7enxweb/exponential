@@ -138,6 +138,9 @@
       "tests/tests/design/AdminLanguageBadgeTest.php",
       "tests/tests/design/AdminLanguageStatesTest.php"
     ],
+    "design/admin*/templates/parts/language_badge.tpl": [
+      "tests/tests/design/AdminLanguageBadgeTest.php"
+    ],
     "lib/ezlocale/classes/ezlocale.php": [
       "tests/tests/design/AdminLanguageBadgeTest.php"
     ],
