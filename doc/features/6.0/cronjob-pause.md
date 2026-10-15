@@ -95,7 +95,8 @@ pause holds, and nothing otherwise (`menu.ini [Leftmenu_setup] LinkFigureTemplat
 is drawn only on a tile the user may open (`setup/managecronjobs`).
 
 Pausing from the console writes the file through `eZFile::create()` (the installation's file mode limits apply) and
-adds a line to `var/<vardir>/log/cronjob_pause.log`: time, part, pause or resume, the user's object id and login, and
+adds a line to `var/<vardir>/log/cronjob_pause.log`: time, part, pause or resume, the user's object id (no copy of the name: the page and the notice
+show the user's current login, looked up by the id, so a renamed user shows under the new name; an older line's login only when the user is gone), and
 the note (empty when none was given; lines written before notes existed have none). A
 change made another way - a shell, an extension - has no line there; the card still shows since when
 the part is paused (the time of the file), and no name when the file is newer than the last pause recorded here.
