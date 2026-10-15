@@ -74210,6 +74210,34 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Interface language</source>
         <translation>Sprache der Oberfläche</translation>
     </message>
+    <message>
+        <source>Administration design</source>
+        <translation>Administrationsdesign</translation>
+    </message>
+    <message>
+        <source>Admin 4 (layouts)</source>
+        <translation>Admin 4 (Layouts)</translation>
+    </message>
+    <message>
+        <source>Admin 4</source>
+        <translation>Admin 4</translation>
+    </message>
+    <message>
+        <source>AdminUI</source>
+        <translation>AdminUI</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation>Klassisch</translation>
+    </message>
+    <message>
+        <source>Admin 3</source>
+        <translation>Admin 3</translation>
+    </message>
+    <message>
+        <source>Classic (server-rendered)</source>
+        <translation>Klassisch (serverseitig)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/toolbar/uiswitch</name>

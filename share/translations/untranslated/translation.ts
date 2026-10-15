@@ -57159,6 +57159,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Interface language</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Administration design</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Admin 4 (layouts)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Admin 4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>AdminUI</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Admin 3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Classic (server-rendered)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/toolbar/uiswitch</name>

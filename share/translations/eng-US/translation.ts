@@ -67623,6 +67623,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Interface language</source>
         <translation>Interface language</translation>
     </message>
+    <message>
+        <source>Administration design</source>
+        <translation>Administration design</translation>
+    </message>
+    <message>
+        <source>Admin 4 (layouts)</source>
+        <translation>Admin 4 (layouts)</translation>
+    </message>
+    <message>
+        <source>Admin 4</source>
+        <translation>Admin 4</translation>
+    </message>
+    <message>
+        <source>AdminUI</source>
+        <translation>AdminUI</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation>Classic</translation>
+    </message>
+    <message>
+        <source>Admin 3</source>
+        <translation>Admin 3</translation>
+    </message>
+    <message>
+        <source>Classic (server-rendered)</source>
+        <translation>Classic (server-rendered)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/toolbar/uiswitch</name>
