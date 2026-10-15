@@ -28,6 +28,9 @@
 <p class="a4-intro">{'Every extension this installation can see, in one list. The active ones come first, in the order of ActiveExtensions in %file: an extension higher in the list has the higher priority for settings, templates and designs. Move, activate and deactivate them here, then review and apply the changes in one step.'|i18n( 'design/admin/setup/extensions',, hash( '%file', $settings_file ) )|wash}</p>
 
 {* What happened *}
+{if and( is_set( $download_error ), $download_error )}
+<div class="a4-notice is-bad" role="alert"><p>{$download_error|wash}</p></div>
+{/if}
 {if and( is_set( $save_error ), $save_error )}
 <div class="a4-notice is-bad" role="alert"><p><strong>{'The extensions were not changed.'|i18n( 'design/admin/setup/extensions' )}</strong></p><p>{$save_error|wash}</p></div>
 {elseif and( is_set( $save_message ), $save_message )}
@@ -221,10 +224,7 @@
                 {if $row.copyright}<div><dt>{'Copyright'|i18n( 'design/admin/setup/extensions' )}</dt><dd>{$row.copyright|wash}</dd></div>{/if}
                 {if $row.mtime}<div><dt>{'Modified'|i18n( 'design/admin/setup/extensions' )}</dt><dd>{$row.mtime|wash}</dd></div>{/if}
                 <div><dt>{'Download'|i18n( 'design/admin/setup/extensions' )}</dt><dd>
-                    <a href={concat( '/setup/extensions/', $row.name, '/tar.gz' )|ezurl}>tar.gz</a>,
-                    <a href={concat( '/setup/extensions/', $row.name, '/zip' )|ezurl}>zip</a>,
-                    <a href={concat( '/setup/extensions/', $row.name, '/tar.bz2' )|ezurl}>tar.bz2</a>,
-                    <a href={concat( '/setup/extensions/', $row.name, '/ezpkg' )|ezurl}>ezpkg</a></dd></div>
+                    {foreach array( 'tar.gz', 'zip', 'tar.bz2', 'ezpkg' ) as $format}<button type="submit" class="a4-btn" name="ExtensionDownload" value="{concat( $row.name, '/', $format )|wash}" aria-label="{'Download %name as %format'|i18n( 'design/admin/setup/extensions',, hash( '%name', $row.name, '%format', $format ) )|wash}">{$format|wash}</button>{delimiter} {/delimiter}{/foreach}</dd></div>
             </dl>
             {if $row.problems}
             <ul class="a4-setup-problems">

@@ -24,7 +24,7 @@
 {/foreach}
 {if $chains|count|not}<li class="a4-audit-note">{'No audit files yet.'|i18n( 'design/admin/audit' )}</li>{/if}
 </ul>
-<form method="post" action={concat( 'audit/recent', $channel|ne( '' )|choose( '', concat( '/', $channel ) ) )|ezurl} class="a4-audit-verify">
+<form method="post" action={concat( 'audit/recent', $channel|ne( '' )|choose( '', concat( '/(channel)/', $channel ) ) )|ezurl} class="a4-audit-verify">
     <p class="a4-audit-note">{'The chain status is the result of the last verification (daily maintenance, exp:audit verify or this button).'|i18n( 'design/admin/audit' )}
     <input type="submit" class="button" name="AuditVerifyNowButton" value="{'Verify now'|i18n( 'design/admin/audit' )}" /></p>
 </form>

@@ -23266,6 +23266,18 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
 <context>
     <name>design/admin/setup/extensions</name>
     <message>
+        <source>The extension or the archive format is not known.</source>
+        <translation>Die Extension oder das Archivformat ist nicht bekannt.</translation>
+    </message>
+    <message>
+        <source>The extension %name could not be packed.</source>
+        <translation>Die Extension %name konnte nicht gepackt werden.</translation>
+    </message>
+    <message>
+        <source>Download %name as %format</source>
+        <translation>%name als %format herunterladen</translation>
+    </message>
+    <message>
         <source>Available extensions [%extension_count]</source>
         <translation type="obsolete">Verfügbare Extensions [%extension_count]</translation>
     </message>
@@ -60810,6 +60822,22 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
 </context>
 <context>
     <name>kernel/package</name>
+    <message>
+        <source>The extension %name may not be exported: it is not in package.ini [ExtensionExportSettings] AllowedExtensions[].</source>
+        <translation>Die Extension %name darf nicht exportiert werden: sie steht nicht in package.ini [ExtensionExportSettings] AllowedExtensions[].</translation>
+    </message>
+    <message>
+        <source>Exporting an extension needs the policy package/export_extension.</source>
+        <translation>Für den Export einer Extension ist die Policy package/export_extension nötig.</translation>
+    </message>
+    <message>
+        <source>The extension %name is not known.</source>
+        <translation>Die Extension %name ist nicht bekannt.</translation>
+    </message>
+    <message>
+        <source>The extension %name was not packed: it holds secret values or key material (%files). Copy it from the server instead.</source>
+        <translation>Die Extension %name wurde nicht gepackt: sie enthält geheime Werte oder Schlüsselmaterial (%files). Kopieren Sie sie stattdessen vom Server.</translation>
+    </message>
     <message>
         <source>Packages</source>
         <translation>Pakete</translation>

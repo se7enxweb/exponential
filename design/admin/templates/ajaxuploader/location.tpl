@@ -15,9 +15,8 @@
         </div>
 
         <p class="ajaxuploader-button-bar">
-            <input type="hidden" name="UploadOriginalFilename" value="{$file.original_filename|wash()}" />
             <input type="hidden" name="UploadName" value="{$name|wash()}" />
-            <input type="hidden" name="UploadFile" value="{$file.filename|wash()}" />
+            <input type="hidden" name="UploadToken" value="{$upload_token|wash()}" />
             <input type="submit" class="defaultbutton" value="{'Choose this location'|i18n( 'design/admin/ajaxuploader' )}" />
             <a href="#" class="window-cancel">{'Close'|i18n( 'design/admin/ajaxuploader' )}</a>
             <span class="ajaxuploader-error"></span>

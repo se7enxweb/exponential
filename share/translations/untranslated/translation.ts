@@ -19420,6 +19420,18 @@ Note: The packages will not be uninstalled.</source>
 <context>
     <name>design/admin/setup/extensions</name>
     <message>
+        <source>The extension or the archive format is not known.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The extension %name could not be packed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download %name as %format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Name</source>
         <translation type="unfinished"></translation>
     </message>
@@ -51410,6 +51422,22 @@ You will need to change the class of the node by using the swap functionality.</
 </context>
 <context>
     <name>kernel/package</name>
+    <message>
+        <source>The extension %name may not be exported: it is not in package.ini [ExtensionExportSettings] AllowedExtensions[].</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exporting an extension needs the policy package/export_extension.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The extension %name is not known.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The extension %name was not packed: it holds secret values or key material (%files). Copy it from the server instead.</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message>
         <source>Lead</source>
         <translation type="unfinished"></translation>
