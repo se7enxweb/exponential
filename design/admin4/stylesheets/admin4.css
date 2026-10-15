@@ -151,18 +151,10 @@ body,
   background-image: var(--a4-logo);
 }
 /* the light logo (400x100) drawn 28px tall is 112px wide: it fits the 114px box the dark logo has, so the
-   header items after it (site preview, sidebar control) stand in the same place in both modes */
+   header items after it stand in the same place in both modes */
 html:not([data-a4-theme="dark"]) #header-logo .brand {
   background-position: 0 50%;
   background-size: auto 28px;
-}
-/* the header row (.header-logo) aligns its items to the bottom; the site-preview icon (24px) is shorter than the
-   logo box (32px), so it is centred on the logo's line instead, level with the logo and the search box */
-#header .site-preview {
-  align-self: center;
-}
-#header .site-preview .a4-icon {
-  color: var(--a4-header-ink);
 }
 #header .navbar-icon {
   color: var(--a4-header-ink);
@@ -191,7 +183,7 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
 }
 
 /* ---- The header's rows ------------------------------------------------------------------------------------------
-   From 1280px one row of 56px: logo | main menu | search | light/dark | user menu | logout. From 576px two rows,
+   From 1280px one row of 56px: logo | main menu | search | site | light/dark | user menu | logout. From 576px two rows,
    48px for the logo and the tools, 40px for the main menu. Below 576px one row of 56px with the phone menu. The main
    menu stays on one line at every width from 576px: ezadmin_menubar.js moves the tabs that do not fit into its "More"
    list; without the script the row scrolls sideways. --header-height (the space the page leaves for the fixed
@@ -216,7 +208,8 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
     order: 2;
     margin-left: auto;
   }
-  .header-theme { order: 3; }
+  .header-site,
+  .header-theme { order: 3; }   /* the site link first: same order, so the markup's order decides */
   .header-user { order: 4; }
   .navbar-menu {
     order: 5;
@@ -283,7 +276,7 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
   border-radius: 999px;
 }
 
-/* Phones: one row of 56px, logo | light/dark | user menu | logout | menu button; the menu opens under the header */
+/* Phones: one row of 56px, logo | site | light/dark | user menu | logout | menu button; the menu opens under the header */
 @media screen and (max-width: 575.98px) {
   .navbar-main {
     flex-wrap: nowrap;
@@ -291,7 +284,7 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
     gap: var(--a4-space-2);
     padding: 0 var(--a4-space-4);
   }
-  .header-theme { margin-left: auto; }
+  .header-site { margin-left: auto; }   /* the tools stand together at the row's end */
   #header .navbar-icon {
     order: 10;
     width: 36px;
@@ -375,8 +368,9 @@ html:not([data-a4-theme="dark"]) #header-logo .brand {
 }
 .navbar-menu .a4-nav-more-list li a:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: -3px; }
 
-/* The user menu and the logout button: round icon buttons as high as light/dark and the search field (36px, more
+/* The site link, the user menu and the logout button: round icon buttons as high as light/dark and the search field (36px, more
    than the 32px a header control is meant to have at least), in the header's colours */
+.header-site,
 .header-user {
   display: flex;
   align-items: center;

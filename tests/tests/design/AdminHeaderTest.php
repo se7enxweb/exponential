@@ -2,13 +2,15 @@
 /**
  * admin4's header, checked on the files alone (no database):
  *
- * - one row of 56px from 1280px (logo, main menu, search, light/dark, user menu, logout), two rows of 48 + 40px from
+ * - one row of 56px from 1280px (logo, main menu, search, site, light/dark, user menu, logout), two rows of 48 + 40px from
  *   576px, one row of 56px on a phone; --header-height defaults to these heights on the root and admin4.js sets the
  *   measured one there, so everything that keeps clear of the header reads the same value;
  * - the main menu stays on one line: the tabs that do not fit go into a "More" disclosure (aria-expanded,
  *   aria-controls), hidden until the script needs it; without the script the row scrolls;
  * - logout is an icon button of its own beside the user menu, named "Logout (<login>)", one click away; the user
  *   menu is a disclosure with the user's name and links; the header's cache blocks are keyed by the user;
+ * - "Open the site" is the first of the header's tools, a round icon button before light/dark, the user menu and
+ *   logout, in the markup in the order they are drawn; the logo stands alone;
  * - "/" puts the focus in the header search; the new rules take their colours from the tokens.
  *
  * doc/bc/6.0/admin4-styling.md
@@ -137,6 +139,56 @@ class AdminHeaderTest extends PHPUnit\Framework\TestCase
         $this->assertSame( '3px solid var(--a4-ring)', $rules['.a4-header-btn:focus-visible']['outline'] );
         foreach ( array( 'ger-DE' => 'Abmelden (%login)', 'eng-US' => 'Logout (%login)' ) as $language => $translation )
             $this->assertStringContainsString( "<source>Logout (%login)</source>\n        <translation>$translation</translation>", self::file( "share/translations/$language/translation.ts" ) );
+    }
+
+    /**
+     * "Open the site" left the logo for the tools: the first of them, before light/dark, the user menu and logout, and
+     * a round 36px icon button as they are. The tools stand in the markup in the order they are drawn, so the Tab
+     * key goes search, site, light/dark, user menu, logout (the main menu and the phone menu button stay before them
+     * in the markup, as before); the CSS gives the site link the order of the light/dark switch, so the markup
+     * decides, and on a phone it is the one that pushes the tools to the row's end.
+     */
+    public function testTheSiteLinkIsTheFirstOfTheTools()
+    {
+        $link = '<a class="site-preview a4-header-btn" href="{siteaccess_url()|wash}" title="{\'Open the site\'|i18n( \'design/admin/pagelayout\' )|wash}" aria-label="{\'Open the site\'|i18n( \'design/admin/pagelayout\' )|wash}">';
+        $top = self::file( 'design/admin4/templates/page_topmenu.tpl' );
+        $this->assertSame( 1, substr_count( $top, $link ), 'one link, on edit pages as on the others' );
+        $site = substr( $top, strpos( $top, '<div id="header-site"' ), strpos( $top, '<div id="header-theme"' ) - strpos( $top, '<div id="header-site"' ) );
+        $this->assertStringNotContainsString( 'target=', $site, 'it opens in the same window: no "new window" hint needed' );
+        $order = array( '<div id="header-logo"', '<div id="a4-navbar-menu"', '<div id="header-search"', '<div id="header-site"', $link,
+                        '<div id="header-theme"', "{include uri='design:parts/a4_header_user.tpl'}", '<div class="sidebar-controls">' );
+        $last = -1;
+        foreach ( $order as $needle )
+        {
+            $at = strpos( $top, $needle );
+            $this->assertNotFalse( $at, $needle );
+            $this->assertGreaterThan( $last, $at, "page_topmenu.tpl: $needle is out of order" );
+            $last = $at;
+        }
+        $logo = substr( $top, strpos( $top, '<div id="header-logo"' ), strpos( $top, '<div class="navbar-icon"' ) - strpos( $top, '<div id="header-logo"' ) );
+        $this->assertStringNotContainsString( 'siteaccess_url()', $logo, 'the logo stands alone' );
+
+        // admin4l: the tools block carries it, before light/dark; the logo block no longer does
+        $tools = self::file( 'design/admin4l/templates/explayouts/block/admin_theme_switch.tpl' );
+        $this->assertSame( 1, substr_count( $tools, $link ) );
+        $this->assertLessThan( strpos( $tools, '<div id="header-theme"' ), strpos( $tools, '<div id="header-site"' ) );
+        $this->assertStringNotContainsString( 'siteaccess_url()', self::file( 'design/admin4l/templates/explayouts/block/admin_logo.tpl' ) );
+
+        // the header's cache blocks keep siteaccess_url() in their keys, and no more keys than before
+        foreach ( array( 'design/admin4/templates/pagelayout.tpl', 'design/admin4l/templates/pagelayout.tpl' ) as $path )
+            $this->assertSame( 2, preg_match_all( '/\{cache-block keys=array\( [^\n}]*siteaccess_url\(\)/', self::file( $path ) ), $path );
+
+        $css = self::css( 'admin4.css' );
+        $tablet = AdminBaseStylesheetsTest::rules( self::media( $css, 'screen and (min-width: 576px)' ) );
+        $this->assertSame( '3', $tablet['.header-site, .header-theme']['order'], 'same order as light/dark: the markup puts it first' );
+        $this->assertSame( '4', $tablet['.header-user']['order'] );
+        $phone = AdminBaseStylesheetsTest::rules( self::media( $css, 'screen and (max-width: 575.98px)' ) );
+        $this->assertSame( 'auto', $phone['.header-site']['margin-left'], 'the tools stand together at the row\'s end' );
+        $this->assertArrayNotHasKey( '.header-theme', $phone, 'light/dark no longer pushes away from the site link' );
+        $rules = AdminBaseStylesheetsTest::rules( $css );
+        $this->assertSame( 'flex', $rules['.header-site, .header-user']['display'] );
+        $this->assertDoesNotMatchRegularExpression( '/\.site-preview\s*\{/', $css, 'the link takes .a4-header-btn as it is' );
+        $this->assertDoesNotMatchRegularExpression( '/\.site-preview\b/', self::css( 'pagelayout.css' ), 'no rules for the old place beside the logo' );
     }
 
     public function testTheSlashKeyFocusesTheHeaderSearch()

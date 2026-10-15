@@ -1514,18 +1514,6 @@ div:has(> table) {
     gap: 1rem;
 }
 
-.header-logo .site-preview {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--a4-header-ink);
-}
-
-.header-logo .site-preview .a4-icon {
-    width: 1.5rem;
-    height: 1.5rem;
-}
-
 .draft-list {
     margin-block: 1.5rem;
     font-weight: 500;

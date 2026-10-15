@@ -123,7 +123,15 @@
       "tests/tests/design/AdminPreferencesTest.php"
     ],
     "design/admin4/templates/page_topmenu.tpl": [
-      "tests/tests/design/AdminStylingRulesTest.php"
+      "tests/tests/design/AdminStylingRulesTest.php",
+      "tests/tests/design/AdminHeaderTest.php"
+    ],
+    "design/admin4l/templates/explayouts/block/admin_*.tpl": [
+      "tests/tests/design/AdminHeaderTest.php",
+      "tests/tests/design/AdminIconsTest.php"
+    ],
+    "design/admin4/stylesheets/pagelayout.css": [
+      "tests/tests/design/AdminHeaderTest.php"
     ],
     "kernel/private/classes/views/error/view.php": [
       "tests/tests/kernel/error/ErrorHeaderListTest.php"
@@ -309,7 +317,8 @@
       "tests/tests/design/AdminJobTranslationsTest.php"
     ],
     "design/admin4/stylesheets/admin4.css": [
-      "tests/tests/design/AdminEditBarTest.php"
+      "tests/tests/design/AdminEditBarTest.php",
+      "tests/tests/design/AdminHeaderTest.php"
     ],
     "extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe_tinymce8.tpl": [
       "tests/tests/design/AdminEditBarTest.php"
