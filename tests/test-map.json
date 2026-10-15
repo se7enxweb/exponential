@@ -482,7 +482,8 @@
     ],
     "design/admin4/stylesheets/pagelayout.css": [
       "tests/tests/design/AdminHeaderTest.php",
-      "tests/tests/design/AdminVisibilityStatusTest.php"
+      "tests/tests/design/AdminVisibilityStatusTest.php",
+      "tests/tests/design/AdminLeftColumnFontTest.php"
     ],
     "extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe_engine_switch.tpl": [
       "tests/tests/extension/ezoe/expOEEngineConfigTest.php",
@@ -768,6 +769,63 @@
     ],
     "design/admin/templates/role/exp_grant_refused.tpl": [
       "tests/tests/kernel/classes/user/expUserDeactivationTest.php"
+    ],
+    "kernel/contentcheck/*": [
+      "tests/tests/kernel/contentcheck/expContentCheckQueryTest.php",
+      "tests/tests/kernel/contentcheck/expContentCheckSandboxTest.php",
+      "tests/tests/kernel/contentcheck/expContentCheckReferencesTest.php"
+    ],
+    "kernel/private/classes/views/contentcheck/*": [
+      "tests/tests/kernel/contentcheck/expContentCheckQueryTest.php",
+      "tests/tests/kernel/contentcheck/expContentCheckSandboxTest.php",
+      "tests/tests/kernel/contentcheck/expContentCheckReferencesTest.php"
+    ],
+    "settings/contentcheck.ini": [
+      "tests/tests/kernel/contentcheck/expContentCheckSandboxTest.php",
+      "tests/tests/kernel/contentcheck/expContentCheckReferencesTest.php"
+    ],
+    "design/admin*/templates/contentcheck/*": [
+      "tests/tests/design/AdminSelfContainedTest.php",
+      "tests/tests/design/AdminFormLabelsTest.php",
+      "tests/tests/design/AdminStylingRulesTest.php"
+    ],
+    "design/admin*/templates/popupmenu/popup_sub_advance_menu.tpl": [
+      "tests/tests/design/AdminContextMenuTest.php"
+    ],
+    "kernel/classes/contentcheck/*": [
+      "tests/tests/kernel/contentcheck/expContentCheckQueryTest.php",
+      "tests/tests/kernel/contentcheck/expContentCheckReferencesTest.php",
+      "tests/tests/kernel/contentcheck/expContentCheckSandboxTest.php"
+    ],
+    "kernel/private/classes/commands/contentcheck.php": [
+      "tests/tests/kernel/contentcheck/expContentCheckReferencesTest.php"
+    ],
+    "kernel/private/classes/cronjobs/contentcheck.php": [
+      "tests/tests/kernel/contentcheck/expContentCheckReferencesTest.php"
+    ],
+    "bin/php/contentcheck.php": [
+      "tests/tests/kernel/contentcheck/expContentCheckReferencesTest.php"
+    ],
+    "cronjobs/contentcheck.php": [
+      "tests/tests/kernel/contentcheck/expContentCheckReferencesTest.php"
+    ],
+    "design/admin4/templates/popupmenu/popup_export_items.tpl": [
+      "tests/tests/design/AdminContextMenuNestedSubmenuTest.php"
+    ],
+    "design/admin/templates/popupmenu/popup_export_items.tpl": [
+      "tests/tests/design/AdminContextMenuNestedSubmenuTest.php"
+    ],
+    "design/admin4/templates/popupmenu/popup_import_export_menu.tpl": [
+      "tests/tests/design/AdminContextMenuNestedSubmenuTest.php"
+    ],
+    "design/admin/templates/popupmenu/popup_import_export_menu.tpl": [
+      "tests/tests/design/AdminContextMenuNestedSubmenuTest.php"
+    ],
+    "design/admin4/templates/node/view/import_export_button.tpl": [
+      "tests/tests/design/AdminContextMenuNestedSubmenuTest.php"
+    ],
+    "design/admin/templates/node/view/import_export_button.tpl": [
+      "tests/tests/design/AdminContextMenuNestedSubmenuTest.php"
     ]
   },
   "generated": {

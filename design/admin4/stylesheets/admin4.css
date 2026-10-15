@@ -2348,7 +2348,7 @@ div#contentstructure ul#content_tree_menu ul a.openclose-close::after {
 /* a block ends at its content: the last element's bottom margin (a .block's .5em) would add to the gutter */
 :is(#leftmenu-design, #rightmenu-design) .box-content > :last-child { margin-bottom: 0; }
 /* The block titles of both side columns: one size, weight and spacing in every module (the content tree's title as
-   the ini menus' and the tools'), sized from the column's font so the column sizes scale it; a long word breaks
+   the ini menus' and the tools'), sized from the column's font (the body's, at every column size); a long word breaks
    with a hyphen instead of running past the right column's 208px card. */
 :is(#leftmenu-design, #rightmenu-design) .box-header { font-size: inherit; }
 :is(#leftmenu-design, #rightmenu-design) .box-header h4 {

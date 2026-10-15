@@ -1756,6 +1756,7 @@ a.a4-icon-btn, a.a4-icon-btn:visited { color: var(--a4-muted); }
 .a4-bi-arrow-clockwise { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-clockwise.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-clockwise.svg); }
 .a4-bi-arrow-counterclockwise { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-counterclockwise.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-counterclockwise.svg); }
 .a4-bi-arrow-down { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-down.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-down.svg); }
+.a4-bi-arrow-down-up { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-down-up.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-down-up.svg); }
 .a4-bi-arrow-down-right { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-down-right.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-down-right.svg); }
 .a4-bi-arrow-up { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-up.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-up.svg); }
 .a4-bi-arrow-up-circle { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-up-circle.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/arrow-up-circle.svg); }
@@ -1794,9 +1795,11 @@ a.a4-icon-btn, a.a4-icon-btn:visited { color: var(--a4-muted); }
 .a4-bi-download { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/download.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/download.svg); }
 .a4-bi-envelope { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/envelope.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/envelope.svg); }
 .a4-bi-envelope-paper { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/envelope-paper.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/envelope-paper.svg); }
+.a4-bi-exclamation-diamond { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/exclamation-diamond.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/exclamation-diamond.svg); }
 .a4-bi-exclamation-triangle { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/exclamation-triangle.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/exclamation-triangle.svg); }
 .a4-bi-eye { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/eye.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/eye.svg); }
 .a4-bi-eye-slash { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/eye-slash.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/eye-slash.svg); }
+.a4-bi-file-earmark-break { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/file-earmark-break.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/file-earmark-break.svg); }
 .a4-bi-file-earmark-code { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/file-earmark-code.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/file-earmark-code.svg); }
 .a4-bi-file-earmark-pdf { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/file-earmark-pdf.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/file-earmark-pdf.svg); }
 .a4-bi-files { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/files.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/files.svg); }

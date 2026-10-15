@@ -10819,6 +10819,14 @@
         <source>Enable this account and move it back to the locations it had.</source>
         <translation>Enable this account and move it back to the locations it had.</translation>
     </message>
+    <message>
+        <source>Import/Export</source>
+        <translation>Import/Export</translation>
+    </message>
+    <message>
+        <source>Export this item or import into it.</source>
+        <translation>Export this item or import into it.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/node/view/line</name>
@@ -14671,6 +14679,22 @@ Note: The packages will not be uninstalled.</translation>
         <translation>The design's top node and the objects below it.</translation>
     </message>
     <message>
+        <source>Unreferenced objects</source>
+        <translation>Unreferenced objects</translation>
+    </message>
+    <message>
+        <source>Broken relations</source>
+        <translation>Broken relations</translation>
+    </message>
+    <message>
+        <source>Visible content that links to deleted, hidden or trashed content.</source>
+        <translation>Visible content that links to deleted, hidden or trashed content.</translation>
+    </message>
+    <message>
+        <source>Images and files nothing uses, to tidy up or move to the trash.</source>
+        <translation>Images and files nothing uses, to tidy up or move to the trash.</translation>
+    </message>
+    <message>
         <source>Check user accounts</source>
         <translation>Check user accounts</translation>
     </message>
@@ -15748,6 +15772,14 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Upload multiple files</translation>
     </message>
     <message>
+        <source>Unreferenced objects in subtree</source>
+        <translation>Unreferenced objects in subtree</translation>
+    </message>
+    <message>
+        <source>Broken relations in subtree</source>
+        <translation>Broken relations in subtree</translation>
+    </message>
+    <message>
         <source>Export</source>
         <translation>Export</translation>
     </message>
@@ -15778,6 +15810,10 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>Reactivate and move back (user accounts)</source>
         <translation>Reactivate and move back (user accounts)</translation>
+    </message>
+    <message>
+        <source>Import/Export</source>
+        <translation>Import/Export</translation>
     </message>
 </context>
 <context>
@@ -66059,6 +66095,497 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The key "%name" is revoked. Requests with it are refused from now on.</source>
         <translation>The key "%name" is revoked. Requests with it are refused from now on.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentcheck</name>
+    <message>
+        <source>Deleted</source>
+        <translation>Deleted</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>In the trash</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Hidden</translation>
+    </message>
+    <message>
+        <source>Never published</source>
+        <translation>Never published</translation>
+    </message>
+    <message>
+        <source>Without location</source>
+        <translation>Without location</translation>
+    </message>
+    <message>
+        <source>Links and embeds in rich text</source>
+        <translation>Links and embeds in rich text</translation>
+    </message>
+    <message>
+        <source>Object relations and relation fields</source>
+        <translation>Object relations and relation fields</translation>
+    </message>
+    <message>
+        <source>Link</source>
+        <translation>Link</translation>
+    </message>
+    <message>
+        <source>Embed</source>
+        <translation>Embed</translation>
+    </message>
+    <message>
+        <source>Inline embed</source>
+        <translation>Inline embed</translation>
+    </message>
+    <message>
+        <source>Object relation</source>
+        <translation>Object relation</translation>
+    </message>
+    <message>
+        <source>Relation field</source>
+        <translation>Relation field</translation>
+    </message>
+    <message>
+        <source>Broken relations</source>
+        <translation>Broken relations</translation>
+    </message>
+    <message>
+        <source>This check is not available on this database.</source>
+        <translation>This check is not available on this database.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filter</translation>
+    </message>
+    <message>
+        <source>Below node</source>
+        <translation>Below node</translation>
+    </message>
+    <message>
+        <source>Now: %name. 1 checks the whole tree.</source>
+        <translation>Now: %name. 1 checks the whole tree.</translation>
+    </message>
+    <message>
+        <source>Whole tree</source>
+        <translation>Whole tree</translation>
+    </message>
+    <message>
+        <source>Leave out the nodes below</source>
+        <translation>Leave out the nodes below</translation>
+    </message>
+    <message>
+        <source>Node ids, separated by commas.</source>
+        <translation>Node ids, separated by commas.</translation>
+    </message>
+    <message>
+        <source>Left out: %count subtrees.</source>
+        <translation>Left out: %count subtrees.</translation>
+    </message>
+    <message>
+        <source>Targets</source>
+        <translation>Targets</translation>
+    </message>
+    <message>
+        <source>References</source>
+        <translation>References</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Check</translation>
+    </message>
+    <message>
+        <source>Findings</source>
+        <translation>Findings</translation>
+    </message>
+    <message>
+        <source>%count objects checked after object %after.</source>
+        <translation>%count objects checked after object %after.</translation>
+    </message>
+    <message>
+        <source>%count objects checked.</source>
+        <translation>%count objects checked.</translation>
+    </message>
+    <message>
+        <source>No broken relation found.</source>
+        <translation>No broken relation found.</translation>
+    </message>
+    <message>
+        <source>No broken relation found among these objects. Go on with the next page.</source>
+        <translation>No broken relation found among these objects. Go on with the next page.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Source</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Field</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Target</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>State</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Actions</translation>
+    </message>
+    <message>
+        <source>Object %id</source>
+        <translation>Object %id</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Node %id</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Edit</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Per page</translation>
+    </message>
+    <message>
+        <source>Show %count findings per page.</source>
+        <translation>Show %count findings per page.</translation>
+    </message>
+    <message>
+        <source>From the start</source>
+        <translation>From the start</translation>
+    </message>
+    <message>
+        <source>Next page</source>
+        <translation>Next page</translation>
+    </message>
+    <message>
+        <source>Move to the trash</source>
+        <translation>Move to the trash</translation>
+    </message>
+    <message>
+        <source>No object was ticked. Tick the objects to move first.</source>
+        <translation>No object was ticked. Tick the objects to move first.</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Back to the list</translation>
+    </message>
+    <message>
+        <source>Only the first %count ticked objects are taken; move the others afterwards.</source>
+        <translation>Only the first %count ticked objects are taken; move the others afterwards.</translation>
+    </message>
+    <message>
+        <source>%count objects will be moved to the trash with every location they have. Nothing is deleted permanently: they can be restored from the trash until it is emptied.</source>
+        <translation>%count objects will be moved to the trash with every location they have. Nothing is deleted permanently: they can be restored from the trash until it is emptied.</translation>
+    </message>
+    <message>
+        <source>None of the ticked objects can be moved to the trash.</source>
+        <translation>None of the ticked objects can be moved to the trash.</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Name</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Class</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Location</translation>
+    </message>
+    <message>
+        <source>What happens</source>
+        <translation>What happens</translation>
+    </message>
+    <message>
+        <source>Moved to the trash</source>
+        <translation>Moved to the trash</translation>
+    </message>
+    <message>
+        <source>Not moved</source>
+        <translation>Not moved</translation>
+    </message>
+    <message>
+        <source>Move %count objects to the trash</source>
+        <translation>Move %count objects to the trash</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
+    </message>
+    <message>
+        <source>Not found, or you have no access to it.</source>
+        <translation>Not found, or you have no access to it.</translation>
+    </message>
+    <message>
+        <source>It is not published.</source>
+        <translation>It is not published.</translation>
+    </message>
+    <message>
+        <source>You may not remove it, or one of its locations.</source>
+        <translation>You may not remove it, or one of its locations.</translation>
+    </message>
+    <message>
+        <source>It has sub-items. Remove it from the content tree if that is meant.</source>
+        <translation>It has sub-items. Remove it from the content tree if that is meant.</translation>
+    </message>
+    <message>
+        <source>Its class does not allow the trash.</source>
+        <translation>Its class does not allow the trash.</translation>
+    </message>
+    <message>
+        <source>It has a version waiting to be published.</source>
+        <translation>It has a version waiting to be published.</translation>
+    </message>
+    <message>
+        <source>A content job is working on it.</source>
+        <translation>A content job is working on it.</translation>
+    </message>
+    <message>
+        <source>It cannot be moved.</source>
+        <translation>It cannot be moved.</translation>
+    </message>
+    <message>
+        <source>This page only takes the form of the list of unreferenced objects.</source>
+        <translation>This page only takes the form of the list of unreferenced objects.</translation>
+    </message>
+    <message>
+        <source>The form has expired. Open the list again and tick the objects once more.</source>
+        <translation>The form has expired. Open the list again and tick the objects once more.</translation>
+    </message>
+    <message>
+        <source>Last modified</source>
+        <translation>Last modified</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Published</translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation>Object id</translation>
+    </message>
+    <message>
+        <source>Unreferenced objects (%count)</source>
+        <translation>Unreferenced objects (%count)</translation>
+    </message>
+    <message>
+        <source>%count objects were moved to the trash. They can be restored from the trash.</source>
+        <translation>%count objects were moved to the trash. They can be restored from the trash.</translation>
+    </message>
+    <message>
+        <source>%count could not be moved.</source>
+        <translation>%count could not be moved.</translation>
+    </message>
+    <message>
+        <source>Nothing was moved: the objects or your access changed after the confirmation. Tick them again.</source>
+        <translation>Nothing was moved: the objects or your access changed after the confirmation. Tick them again.</translation>
+    </message>
+    <message>
+        <source>Nothing was moved to the trash.</source>
+        <translation>Nothing was moved to the trash.</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Classes</translation>
+    </message>
+    <message>
+        <source>Order by</source>
+        <translation>Order by</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Direction</translation>
+    </message>
+    <message>
+        <source>Ascending</source>
+        <translation>Ascending</translation>
+    </message>
+    <message>
+        <source>Descending</source>
+        <translation>Descending</translation>
+    </message>
+    <message>
+        <source>Also objects with sub-items</source>
+        <translation>Also objects with sub-items</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Show</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Objects</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from to %to of %count</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Select</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Size</translation>
+    </message>
+    <message>
+        <source>%count sub-items</source>
+        <translation>%count sub-items</translation>
+    </message>
+    <message>
+        <source>(%count locations)</source>
+        <translation>(%count locations)</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Show %count items per page.</translation>
+    </message>
+    <message>
+        <source>Move ticked objects to the trash</source>
+        <translation>Move ticked objects to the trash</translation>
+    </message>
+    <message>
+        <source>The next page shows what will happen and asks you to confirm. At most %count objects at a time; they can be restored from the trash.</source>
+        <translation>The next page shows what will happen and asks you to confirm. At most %count objects at a time; they can be restored from the trash.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Setup</translation>
+    </message>
+    <message>
+        <source>Unreferenced objects</source>
+        <translation>Unreferenced objects</translation>
+    </message>
+    <message>
+        <source>Not available to you</source>
+        <translation>Not available to you</translation>
+    </message>
+    <message>
+        <source>Target not available</source>
+        <translation>Target not available</translation>
+    </message>
+    <message>
+        <source>Images, files and media below “%node” that nothing uses. An asset counts as used when another object relates to it, links to it or embeds it (by id or by path), when a layout block, collection or rule, a setting, a template, a role, a bookmark, a notification, the shop or the newsletter names it, when a dynamic collection lists it, or when it is stored below content that shows it (a gallery, an article). Only assets in plain folders can be listed. Pages, folders, users and other content are reached through the tree and are never listed. Templates that compute an id cannot be checked: see the documentation.</source>
+        <translation>Images, files and media below “%node” that nothing uses. An asset counts as used when another object relates to it, links to it or embeds it (by id or by path), when a layout block, collection or rule, a setting, a template, a role, a bookmark, a notification, the shop or the newsletter names it, when a dynamic collection lists it, or when it is stored below content that shows it (a gallery, an article). Only assets in plain folders can be listed. Pages, folders, users and other content are reached through the tree and are never listed. Templates that compute an id cannot be checked: see the documentation.</translation>
+    </message>
+    <message>
+        <source>Visible, published content that refers to something a visitor cannot reach: an object or node that was deleted, is in the trash, is hidden or was never published. Checked are the object relations and relation fields of the published version (also their data, where no relation was recorded) and the links and embeds in its rich text, and on the first page the blocks, collections and rules of the layouts. Each finding says what to do. Nothing is changed here; open a source to edit it.</source>
+        <translation>Visible, published content that refers to something a visitor cannot reach: an object or node that was deleted, is in the trash, is hidden or was never published. Checked are the object relations and relation fields of the published version (also their data, where no relation was recorded) and the links and embeds in its rich text, and on the first page the blocks, collections and rules of the layouts. Each finding says what to do. Nothing is changed here; open a source to edit it.</translation>
+    </message>
+    <message>
+        <source>Something uses it now.</source>
+        <translation>Something uses it now.</translation>
+    </message>
+    <message>
+        <source>None chosen: every asset class. Hold Ctrl or Cmd to choose several, for example Image and File.</source>
+        <translation>None chosen: every asset class. Hold Ctrl or Cmd to choose several, for example Image and File.</translation>
+    </message>
+    <message>
+        <source>No unused asset below this node matches the filter.</source>
+        <translation>No unused asset below this node matches the filter.</translation>
+    </message>
+    <message>
+        <source>The reference index has not been built yet. Run bin/php/contentcheck.php --build-index or the cronjob part contentcheck.</source>
+        <translation>The reference index has not been built yet. Run bin/php/contentcheck.php --build-index or the cronjob part contentcheck.</translation>
+    </message>
+    <message>
+        <source>Some places that can use content could not be read, so nothing is listed. The debug output names them.</source>
+        <translation>Some places that can use content could not be read, so nothing is listed. The debug output names them.</translation>
+    </message>
+    <message>
+        <source>There are too many assets below this node to check at once. Choose a smaller subtree or fewer classes.</source>
+        <translation>There are too many assets below this node to check at once. Choose a smaller subtree or fewer classes.</translation>
+    </message>
+    <message>
+        <source>The reference index is from %time and may be out of date. Nothing can be moved to the trash until it is built again.</source>
+        <translation>The reference index is from %time and may be out of date. Nothing can be moved to the trash until it is built again.</translation>
+    </message>
+    <message>
+        <source>%count published objects have no location at all. They are not listed here; nothing can reach them.</source>
+        <translation>%count published objects have no location at all. They are not listed here; nothing can reach them.</translation>
+    </message>
+    <message>
+        <source>Remove the reference from the field, or choose another target.</source>
+        <translation>Remove the reference from the field, or choose another target.</translation>
+    </message>
+    <message>
+        <source>Restore the target from the trash, or remove the reference.</source>
+        <translation>Restore the target from the trash, or remove the reference.</translation>
+    </message>
+    <message>
+        <source>Reveal the target, or remove the reference.</source>
+        <translation>Reveal the target, or remove the reference.</translation>
+    </message>
+    <message>
+        <source>Publish the target, or remove the reference.</source>
+        <translation>Publish the target, or remove the reference.</translation>
+    </message>
+    <message>
+        <source>Give the target a location, or remove the reference.</source>
+        <translation>Give the target a location, or remove the reference.</translation>
+    </message>
+    <message>
+        <source>Ask someone who may read the target to check it.</source>
+        <translation>Ask someone who may read the target to check it.</translation>
+    </message>
+    <message>
+        <source>Collection item</source>
+        <translation>Collection item</translation>
+    </message>
+    <message>
+        <source>Dynamic collection</source>
+        <translation>Dynamic collection</translation>
+    </message>
+    <message>
+        <source>Block parameter</source>
+        <translation>Block parameter</translation>
+    </message>
+    <message>
+        <source>Rule target</source>
+        <translation>Rule target</translation>
+    </message>
+    <message>
+        <source>Layouts (%count)</source>
+        <translation>Layouts (%count)</translation>
+    </message>
+    <message>
+        <source>Blocks, collections and rules of every layout that name content a visitor cannot reach. Fix them in the layout editor.</source>
+        <translation>Blocks, collections and rules of every layout that name content a visitor cannot reach. Fix them in the layout editor.</translation>
+    </message>
+    <message>
+        <source>Layout</source>
+        <translation>Layout</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Where</translation>
+    </message>
+    <message>
+        <source>Layout %id</source>
+        <translation>Layout %id</translation>
+    </message>
+    <message>
+        <source>Block %id</source>
+        <translation>Block %id</translation>
+    </message>
+    <message>
+        <source>Rule %id</source>
+        <translation>Rule %id</translation>
+    </message>
+    <message>
+        <source>Remote id %id</source>
+        <translation>Remote id %id</translation>
+    </message>
+    <message>
+        <source>Change or remove the rule target.</source>
+        <translation>Change or remove the rule target.</translation>
     </message>
 </context>
 <context>

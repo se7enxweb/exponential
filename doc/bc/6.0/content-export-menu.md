@@ -1,7 +1,8 @@
 # The Export menu of the content tree
 
 Exponential 6.0.15 adds an **Export** submenu to the **Advanced** submenu of the administration's context menus:
-the content tree's menu and the "…" menu of each row in the sub-items list. Both use the same `Advanced` menu
+the content tree's menu and the "…" menu of each row in the sub-items list, and the same entries are in the menu of
+the node view's **Import/Export** button. Both use the same `Advanced` menu
 (`popupmenu/popup_sub_advance_menu.tpl`), so the entries are the same in both places. The menu exists in
 design/admin4 (and admin4l, which falls back to it), design/admin (an identical copy), and the adminui design of
 exp_adminui (which uses admin4's templates).
@@ -77,15 +78,57 @@ xrowextract/csv/(node)/<node id>[/(scope)/list|tree][/(class)/<class id>][/(colu
 admininterface.ini `[AdditionalMenuSettings]`:
 
 ```
-ExportMenuTemplateArray[]=popupmenu/myextension_export_menu.tpl      # items inside the Export menu
-ExportSubMenuTemplateArray[]=popupmenu/myextension_export_submenus.tpl # their submenus (depth 3), after Export
+ExportMenuTemplateArray[]=popupmenu/myextension_export_menu.tpl        # export items (both menus)
+ExportSubMenuTemplateArray[]=popupmenu/myextension_export_submenus.tpl   # their submenus, after each menu
+ImportExportMenuTemplateArray[]=popupmenu/myextension_import_menu.tpl    # import and job items (Import/Export only)
 ```
 
 An item template checks its own policy and outputs nothing for a user without it, adds its URLs to
-`menuArray['ExportMenu']['elements']` (with `%nodeID%`), and opens a form, never an export. A submenu whose items are
+`menuArray[$menu_id]['elements']` (with `%nodeID%`), names its items `$item_prefix`-…, gives a submenu the depth
+`$sub_menu_depth`, and opens a form, never an export or an import. A submenu whose items are
 known only when it opens sets `menuArray[id]['onshow'] = function( menu, values, refresh )`: ezpopupmenu.js calls it
 when the submenu opens; the function fills the menu (as text, never markup from data) and calls `refresh()`, which
 gives the new items their roles and places the menu again. xrowextract's `xrowextract-exportmenu.js` is the example.
+
+## The Import/Export button of the node view
+
+The node view's actions have an **Import/Export** button after Upload and before Move (design/admin4, admin4l
+through it, design/admin; in exp_adminui an entry of the toolbar's "…" menu, after Upload). It opens a menu with:
+
+- the export entries of Advanced > Export (the same definition, `popupmenu/popup_export_items.tpl`, see below);
+- **Import into this item…** (xrowextract 2.5.12, policy xrowextract/import): xrowextract/import with the item as
+  the target, only on a container below which the user may create content (the view checks it again);
+- **Export and import jobs**, **Export history** and **Schedules** (policies xrowextract/jobs, /history,
+  /schedule): xrowextract's pages, which list the user's jobs, runs and schedules (every user's with
+  xrowextract/all_jobs), not only this item's.
+
+The button (`node/view/import_export_button.tpl`, identical in design/admin and design/admin4) is shown only for a
+published object (never on a draft or the edit pages) and only when the shared definition has an entry for the user:
+an Editor sees nothing, a user with xrowextract/csv only sees the CSV entries. It is an `.a4-btn` menu button
+(`aria-haspopup="menu"`, `aria-expanded`) with the Bootstrap icon arrow-down-up: Enter or Space open the menu with
+the focus on its first entry, Escape closes it and returns to the button. The menu is
+`popupmenu/popup_import_export_menu.tpl` (a top-level menu of the page's popup menus); the button gives it
+`%nodeID%` and `%canImport%`, and the Import entry is shown only when `%canImport%` is 1 (ezpopupmenu.js element
+option `shown_if`).
+
+### xrowextract/import (xrowextract 2.5.12)
+
+```
+xrowextract/import/(parent)/<node id>
+```
+
+The import form starts with that node as its target (kept for the session until another is chosen) and the view
+redirects to the form; nothing is imported before the user uploads a file, checks the preview and applies it. A node
+that does not exist answers "not available"; one the user cannot read, that is not a container or below which the
+user may not create content answers "access denied" (`XrowExtractEntry::importRefusal()`).
+
+### One definition for both menus
+
+`popupmenu/popup_export_items.tpl` holds the entries; the context menus' Export submenu and the Import/Export menu
+include it with `menu_id`, `item_prefix`, `sub_menu_depth` and `with_import`, and the button includes it to tell
+whether it has an entry. Extension templates of `ExportMenuTemplateArray[]`, `ExportSubMenuTemplateArray[]` and
+`ImportExportMenuTemplateArray[]` (import and job entries, the Import/Export menu only) receive the same parameters
+and register their URLs in `menuArray[$menu_id]`; a submenu of an entry is `<menu id>Classes`-style, one per menu.
 
 ## Keyboard and placement
 

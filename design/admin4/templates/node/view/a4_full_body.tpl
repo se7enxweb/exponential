@@ -101,6 +101,8 @@
     {undef $can_create_languages}
     {* Upload: ezmultiupload's upload page for this node, only where the user can upload (node/view/upload_button.tpl) *}
     {include uri='design:node/view/upload_button.tpl' node=$node}
+    {* Import/Export: the export and import menu of this node (node/view/import_export_button.tpl), only with an entry for the user *}
+    {include uri='design:node/view/import_export_button.tpl' node=$node}
     {if $node.can_move}
         <input class="button" type="submit" name="MoveNodeButton" value="{'Move'|i18n( 'design/admin/node/view/full' )}" title="{'Move this item to another location.'|i18n( 'design/admin/node/view/full' )}" />
     {else}
