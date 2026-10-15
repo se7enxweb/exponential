@@ -143,9 +143,21 @@ class AdminHeaderTest extends PHPUnit\Framework\TestCase
             $this->assertStringContainsString( "<source>Logout (%login)</source>\n        <translation>$translation</translation>", self::file( "share/translations/$language/translation.ts" ) );
     }
 
-    /** Renders parts/a4_header_user.tpl with the real template engine for a user given as nested arrays (no database) */
+    /**
+     * Renders parts/a4_header_user.tpl with the real template engine for a user given as nested arrays, no database:
+     * a copy of the template in var/tmp answers its one access check, fetch( 'user', 'can_open' ) for user/password
+     * (expViewAccess reads the current user from the database), with true(); everything else is the template as is.
+     */
     private function renderUserMenu( array $user, $uiContext = 'navigation' )
     {
+        $root = dirname( __DIR__, 3 );
+        $check = "fetch( 'user', 'can_open', hash( 'uri', 'user/password' ) )";
+        $source = (string)file_get_contents( $root . '/design/admin4/templates/parts/a4_header_user.tpl' );
+        $this->assertSame( 1, substr_count( $source, $check ), 'the one database access of the template' );
+        $dir = $root . '/var/tmp/phpunit-header-user-' . getmypid() . '-' . substr( md5( uniqid( '', true ) ), 0, 8 );
+        mkdir( $dir, 0777, true );
+        $copy = $dir . '/a4_header_user.tpl';
+        file_put_contents( $copy, str_replace( $check, 'true()', $source ) );
         $basics = array_key_exists( 'eZSiteBasics', $GLOBALS ) ? array( $GLOBALS['eZSiteBasics'] ) : null;
         // not compiled: each case renders the same template with other variables
         $GLOBALS['eZSiteBasics']['no-cache-adviced'] = true;
@@ -155,7 +167,7 @@ class AdminHeaderTest extends PHPUnit\Framework\TestCase
             $tpl->setVariable( 'current_user', $user );
             $tpl->setVariable( 'ui_context', $uiContext );
             $tpl->setVariable( 'ui_context_edit', $uiContext === 'edit' );
-            $html = $tpl->fetch( dirname( __DIR__, 3 ) . '/design/admin4/templates/parts/a4_header_user.tpl' );
+            $html = $tpl->fetch( $copy );
             $this->assertSame( array(), $tpl->errorLog() );
             return $html;
         }
@@ -166,9 +178,10 @@ class AdminHeaderTest extends PHPUnit\Framework\TestCase
                 unset( $GLOBALS['eZSiteBasics'] );
             else
                 $GLOBALS['eZSiteBasics'] = $basics[0];
+            unlink( $copy );
+            rmdir( $dir );
         }
     }
-
     private static function user( $objectId, $login, $name, $mainNode )
     {
         return array( 'is_logged_in' => true, 'login' => $login, 'contentobject_id' => $objectId,
