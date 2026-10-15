@@ -337,6 +337,15 @@
     ],
     "design/admin4/stylesheets/editor_content.css": [
       "tests/tests/design/AdminContentEditFormsTest.php"
+    ],
+    "design/admin4/stylesheets/components.css": [
+      "tests/tests/design/AdminLegacyControlsTest.php"
+    ],
+    "design/admin/stylesheets/components.css": [
+      "tests/tests/design/AdminLegacyControlsTest.php"
+    ],
+    "design/admin4/templates/parts/left_width_control.tpl": [
+      "tests/tests/design/AdminLegacyControlsTest.php"
     ]
   },
   "generated": {
