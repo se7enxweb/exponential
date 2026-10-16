@@ -25,6 +25,8 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminNodeBinary.php';
+
 class AdminLanguageStatesTest extends PHPUnit\Framework\TestCase
 {
     const CONTEXT = 'design/admin/node/view/full';
@@ -286,9 +288,7 @@ class AdminLanguageStatesTest extends PHPUnit\Framework\TestCase
     /** LS-08 */
     public function testTheSubItemsFormatterDrawsTheStates()
     {
-        $node = trim( (string)shell_exec( 'command -v node 2>/dev/null' ) );
-        if ( $node === '' )
-            $this->markTestSkipped( 'node is not installed' );
+        $node = AdminNodeBinary::require();
         $out = (string)shell_exec( escapeshellarg( $node ) . ' ' . escapeshellarg( __DIR__ . '/js/language_states.js' ) . ' '
                                    . escapeshellarg( self::root() . '/design/admin4/javascript/ezajaxsubitems_expdatatable.js' ) . ' 2>&1' );
         $runs = array();

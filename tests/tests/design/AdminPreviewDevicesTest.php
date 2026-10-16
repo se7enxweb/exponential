@@ -25,6 +25,8 @@
 
 require_once __DIR__ . '/AdminBaseStylesheetsTest.php';
 
+require_once __DIR__ . '/AdminNodeBinary.php';
+
 class AdminPreviewDevicesTest extends PHPUnit\Framework\TestCase
 {
     const TEMPLATE = 'design/admin4/templates/content/view/versionview.tpl';
@@ -77,9 +79,7 @@ class AdminPreviewDevicesTest extends PHPUnit\Framework\TestCase
     /** The scenarios of tests/tests/design/js/segmented_switch.js (admin4.js's preview part in node), or null */
     private static function harness()
     {
-        $node = trim( (string)shell_exec( 'command -v node 2>/dev/null' ) );
-        if ( $node === '' )
-            return null;
+        $node = AdminNodeBinary::require();
         $out = shell_exec( escapeshellarg( $node ) . ' ' . escapeshellarg( __DIR__ . '/js/segmented_switch.js' ) . ' '
                            . escapeshellarg( self::root() . '/design/admin4/javascript/admin4.js' ) );
         return json_decode( (string)$out, true );
@@ -98,8 +98,6 @@ class AdminPreviewDevicesTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( "'admin_preview_device', 'admin_preview_landscape', ", $prefs, 'written on <html> for a4Pref' );
 
         $s = self::harness();
-        if ( $s === null )
-            $this->markTestSkipped( 'node is not installed' );
         $this->assertIsArray( $s );
         // a signed-in user without a choice: Desktop, scaled into the 944px column (12px padding a side, 2px edges)
         $d = $s['previewDefault'];

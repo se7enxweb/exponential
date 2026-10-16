@@ -13,6 +13,8 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminNodeBinary.php';
+
 class AdminEditorSkinTest extends PHPUnit\Framework\TestCase
 {
     private static function root()
@@ -23,9 +25,7 @@ class AdminEditorSkinTest extends PHPUnit\Framework\TestCase
     /** @return array name => scenario */
     private function scenarios()
     {
-        $node = trim( (string)shell_exec( 'command -v node 2>/dev/null' ) );
-        if ( $node === '' )
-            $this->markTestSkipped( 'node is not installed' );
+        $node = AdminNodeBinary::require();
         $out = (string)shell_exec( escapeshellarg( $node ) . ' ' . escapeshellarg( __DIR__ . '/js/editor_skin.js' ) . ' '
                                    . escapeshellarg( self::root() . '/design/admin4/javascript/admin4.js' ) );
         $s = array();

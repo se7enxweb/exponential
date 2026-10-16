@@ -12,6 +12,8 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminNodeBinary.php';
+
 class AdminContextMenuNestedSubmenuTest extends PHPUnit\Framework\TestCase
 {
     private static function root()
@@ -27,9 +29,7 @@ class AdminContextMenuNestedSubmenuTest extends PHPUnit\Framework\TestCase
     /** Runs the named functions of ezpopupmenu.js in node over the cases: name => [arguments, expected] */
     private function runInNode( array $functions, $call, array $cases )
     {
-        $node = trim( (string)shell_exec( 'command -v node 2>/dev/null' ) );
-        if ( $node === '' )
-            $this->markTestSkipped( 'node is not installed' );
+        $node = AdminNodeBinary::require();
         $source = '';
         foreach ( $functions as $function )
         {

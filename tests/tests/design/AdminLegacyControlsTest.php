@@ -25,6 +25,8 @@
 
 require_once __DIR__ . '/AdminBaseStylesheetsTest.php';
 
+require_once __DIR__ . '/AdminNodeBinary.php';
+
 class AdminLegacyControlsTest extends PHPUnit\Framework\TestCase
 {
     const BUTTONS = ':is(input.button, input.defaultbutton, input.button-disabled, button.button):where(#page *)';
@@ -305,11 +307,7 @@ class AdminLegacyControlsTest extends PHPUnit\Framework\TestCase
         $engine = (string)file_get_contents( self::root() . '/extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe_engine_switch.tpl' );
         $this->assertStringContainsString( '<span class="ezoe-engine-switch-options a4-tabs is-segmented">', $engine, 'the engine switch is the shared pill' );
         $this->assertStringContainsString( 'role="group"', self::template( 'parts/left_width_control.tpl' ) );
-        $node = trim( (string)shell_exec( 'command -v node 2>/dev/null' ) );
-        if ( $node === '' )
-        {
-            $this->markTestSkipped( 'node is not installed' );
-        }
+        $node = AdminNodeBinary::require();
         $out = shell_exec( escapeshellarg( $node ) . ' ' . escapeshellarg( __DIR__ . '/js/segmented_switch.js' ) . ' '
                            . escapeshellarg( self::root() . '/design/admin4/javascript/admin4.js' ) );
         $s = json_decode( (string)$out, true );

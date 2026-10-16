@@ -37,6 +37,8 @@
 
 require_once __DIR__ . '/AdminBaseStylesheetsTest.php';
 
+require_once __DIR__ . '/AdminNodeBinary.php';
+
 class AdminPhoneMenuTest extends PHPUnit\Framework\TestCase
 {
     private static function root()
@@ -74,9 +76,7 @@ class AdminPhoneMenuTest extends PHPUnit\Framework\TestCase
     /** PM-01 */
     public function testEscapeClosesThePhoneMenu()
     {
-        $node = trim( (string)shell_exec( 'command -v node 2>/dev/null' ) );
-        if ( $node === '' )
-            $this->markTestSkipped( 'node is not installed' );
+        $node = AdminNodeBinary::require();
         $out = (string)shell_exec( escapeshellarg( $node ) . ' ' . escapeshellarg( __DIR__ . '/js/phone_menu.js' ) . ' '
                                    . escapeshellarg( self::root() . '/design/admin4/javascript/ezadmin_menubar.js' ) );
         $s = array();

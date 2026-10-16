@@ -25,6 +25,8 @@
 require_once __DIR__ . '/AdminBaseStylesheetsTest.php';
 require_once __DIR__ . '/AdminTokenContrastTest.php';
 
+require_once __DIR__ . '/AdminNodeBinary.php';
+
 class AdminVisibilityStatusTest extends PHPUnit\Framework\TestCase
 {
     const CONTEXT = 'design/admin/node/view/full';
@@ -194,9 +196,7 @@ class AdminVisibilityStatusTest extends PHPUnit\Framework\TestCase
     /** VS-04 */
     public function testTheScriptsDrawTheMarks()
     {
-        $node = trim( (string)shell_exec( 'command -v node 2>/dev/null' ) );
-        if ( $node === '' )
-            $this->markTestSkipped( 'node is not installed' );
+        $node = AdminNodeBinary::require();
         foreach ( array( 'admin', 'admin4' ) as $design )
         {
             $out = (string)shell_exec( escapeshellarg( $node ) . ' ' . escapeshellarg( __DIR__ . '/js/visibility_status.js' ) . ' '

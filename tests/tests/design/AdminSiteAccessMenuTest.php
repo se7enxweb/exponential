@@ -26,6 +26,8 @@
 
 require_once __DIR__ . '/AdminBaseStylesheetsTest.php';
 
+require_once __DIR__ . '/AdminNodeBinary.php';
+
 class AdminSiteAccessMenuTest extends PHPUnit\Framework\TestCase
 {
     private $server;
@@ -489,9 +491,7 @@ class AdminSiteAccessMenuTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( "siteMenu();", $js );
         $this->assertStringContainsString( "#a4-site-toggle[aria-expanded=\"true\"]", self::file( 'design/admin4/javascript/a4_mega_menu.js' ), 'a mega menu does not open over it on hover' );
 
-        $node = trim( (string)shell_exec( 'command -v node 2>/dev/null' ) );
-        if ( $node === '' )
-            $this->markTestSkipped( 'node is not installed' );
+        $node = AdminNodeBinary::require();
         $out = (string)shell_exec( escapeshellarg( $node ) . ' ' . escapeshellarg( __DIR__ . '/js/site_menu.js' ) . ' '
                                    . escapeshellarg( dirname( __DIR__, 3 ) . '/design/admin4/javascript/admin4.js' ) . ' 2>&1' );
         $runs = array();

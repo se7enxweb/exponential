@@ -15,6 +15,8 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminNodeBinary.php';
+
 class AdminContextMenuTest extends PHPUnit\Framework\TestCase
 {
     /** The designs whose copies of the menu script and its openers are kept identical */
@@ -185,9 +187,7 @@ class AdminContextMenuTest extends PHPUnit\Framework\TestCase
      */
     public function testTheMenuPlacementStaysInTheVisibleArea()
     {
-        $node = trim( (string)shell_exec( 'command -v node 2>/dev/null' ) );
-        if ( $node === '' )
-            $this->markTestSkipped( 'node is not installed' );
+        $node = AdminNodeBinary::require();
         $js = (string)file_get_contents( self::root() . '/design/admin4/javascript/popupmenu/ezpopupmenu.js' );
         $this->assertSame( 1, preg_match( '/function _verticalPlace\(.*?\n\}\n/s', $js, $m ) );
         // areaTop, areaBottom, above, below, height, minHeight => top, maxHeight

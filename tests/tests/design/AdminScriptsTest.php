@@ -14,6 +14,8 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminNodeBinary.php';
+
 class AdminScriptsTest extends PHPUnit\Framework\TestCase
 {
     /** Designs whose copy of a script is kept identical to admin4's (AdminContextMenuTest holds the menu ones) */
@@ -142,9 +144,7 @@ class AdminScriptsTest extends PHPUnit\Framework\TestCase
     /** Every script of the admin designs parses: node --check, where node is installed */
     public function testEveryAdminScriptParses()
     {
-        $node = trim( (string)shell_exec( 'command -v node 2>/dev/null' ) );
-        if ( $node === '' )
-            $this->markTestSkipped( 'node is not installed' );
+        $node = AdminNodeBinary::require();
         $failed = array();
         $count = 0;
         foreach ( array( 'admin4', 'admin4l', 'admin3', 'admin' ) as $design )

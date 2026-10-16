@@ -31,6 +31,8 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminNodeBinary.php';
+
 class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
 {
     private static function root()
@@ -441,9 +443,7 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
     /** MM-06 */
     public function testTheScriptOpensAndClosesTheMenu()
     {
-        $node = trim( (string)shell_exec( 'command -v node 2>/dev/null' ) );
-        if ( $node === '' )
-            $this->markTestSkipped( 'node is not installed' );
+        $node = AdminNodeBinary::require();
         $out = (string)shell_exec( escapeshellarg( $node ) . ' ' . escapeshellarg( __DIR__ . '/js/mega_menu.js' ) . ' '
                                    . escapeshellarg( self::root() . '/design/admin4/javascript/a4_mega_menu.js' ) . ' 2>&1' );
         $s = array();
