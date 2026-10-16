@@ -1002,6 +1002,24 @@
     ],
     "design/standard/templates/*": [
       "tests/tests/design/AdminContentSecurityPolicyTest.php"
+    ],
+    "design/admin4/templates/content/copy.tpl": [
+      "tests/tests/design/AdminCopyQueuedLockedTemplatesTest.php"
+    ],
+    "design/admin4/templates/content/copy_subtree.tpl": [
+      "tests/tests/design/AdminCopyQueuedLockedTemplatesTest.php"
+    ],
+    "design/admin4/templates/content/queued.tpl": [
+      "tests/tests/design/AdminCopyQueuedLockedTemplatesTest.php"
+    ],
+    "design/admin4/templates/class/edit_locked.tpl": [
+      "tests/tests/design/AdminCopyQueuedLockedTemplatesTest.php"
+    ],
+    "design/admin4/templates/content/datatype/edit/ezimage.tpl": [
+      "tests/tests/design/AdminCopyQueuedLockedTemplatesTest.php"
+    ],
+    "design/admin4/templates/content/datatype/edit/ezimage_editor.tpl": [
+      "tests/tests/design/AdminCopyQueuedLockedTemplatesTest.php"
     ]
   },
   "generated": {
@@ -1195,6 +1213,9 @@
       "tests/tests/extension/explayouts_admin/expLayoutsAdminLayoutsTest.php",
       "tests/tests/design/AdminSiteAccessMenuTest.php"
     ],
+    "design/standard/javascript/content_queued.js": [
+      "tests/tests/design/AdminCopyQueuedLockedTemplatesTest.php"
+    ],
     "design/standard/javascript/contentstructuremenu/contentstructuremenu.js": [
       "tests/tests/design/AdminContentSecurityPolicyTest.php"
     ],
@@ -1202,11 +1223,17 @@
       "tests/tests/kernel/classes/debugbar/expDebugBarSettingsTest.php",
       "tests/tests/lib/ezutils/expDebugBarReportCopyMessagesTest.php"
     ],
+    "design/standard/javascript/ezasynchronouspublishing.js": [
+      "tests/tests/design/AdminCopyQueuedLockedTemplatesTest.php"
+    ],
     "design/standard/javascript/lib/ezjslibimagepreloader.js": [
       "tests/tests/design/AdminContentSecurityPolicyTest.php"
     ],
     "design/standard/javascript/tools/ezjsselection.js": [
       "tests/tests/design/AdminContentSecurityPolicyTest.php"
+    ],
+    "design/standard/stylesheets/content_queued.css": [
+      "tests/tests/design/AdminCopyQueuedLockedTemplatesTest.php"
     ],
     "design/standard/stylesheets/core.css": [
       "tests/tests/kernel/classes/expVelocityEnginesTest.php"
@@ -1429,6 +1456,7 @@
       "tests/tests/design/AdminLanguageStatesTest.php"
     ],
     "kernel/content/module.php": [
+      "tests/tests/design/AdminCopyQueuedLockedTemplatesTest.php",
       "tests/tests/kernel/classes/eZContentHistoryAccessTest.php",
       "tests/tests/kernel/classes/eZContentVersionviewViewModeTest.php",
       "tests/tests/kernel/classes/subitems/expSubitemsCSVExportTest.php",
@@ -1539,12 +1567,24 @@
     "kernel/private/classes/services/trashrecord.php": [
       "tests/tests/kernel/classes/trash/TrashedByColumnsTest.php"
     ],
+    "kernel/private/classes/views/class/edit.php": [
+      "tests/tests/design/AdminCopyQueuedLockedTemplatesTest.php"
+    ],
+    "kernel/private/classes/views/content/copy.php": [
+      "tests/tests/design/AdminCopyQueuedLockedTemplatesTest.php"
+    ],
+    "kernel/private/classes/views/content/copysubtree.php": [
+      "tests/tests/design/AdminCopyQueuedLockedTemplatesTest.php"
+    ],
     "kernel/private/classes/views/content/edit.php": [
       "tests/tests/kernel/classes/permissions/expPermissionHooksTest.php",
       "tests/tests/kernel/content/eZPublishWithoutNotificationTest.php"
     ],
     "kernel/private/classes/views/content/history.php": [
       "tests/tests/kernel/classes/expContentHistoryListTest.php"
+    ],
+    "kernel/private/classes/views/content/queued.php": [
+      "tests/tests/design/AdminCopyQueuedLockedTemplatesTest.php"
     ],
     "kernel/private/classes/views/content/search.php": [
       "tests/tests/kernel/private/classes/ContentSearchPathPrefixSubTreeTest.php"
