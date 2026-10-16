@@ -97,27 +97,58 @@ class expOEEmbedViewTest extends PHPUnit\Framework\TestCase
     }
 
     /** EV-04 */
-    public function testTheViewIsAnAvailableViewMode()
+    public function testTheViewIsAnAvailableViewModeOfTheTag()
     {
         $ini = new expOEEmbedViewTestIni( array(
-            'embed' => array( 'AvailableViewModes' => array( 'embed', 'embed-inline', 'full', 'line' ) ),
-            'embed-inline' => array( 'AvailableViewModes' => array( 'embed-inline' ) ),
-            'embed_image' => array( 'AvailableViewModes' => array( 'embed', 'gallery' ) ),
+            'embed' => array( 'AvailableViewModes' => array( 'embed', 'full', 'line' ) ),
+            'embed-inline' => array( 'AvailableViewModes' => array( 'embed-inline', 'inline-small' ) ),
+            'embed_image' => array( 'AvailableViewModes' => array( 'gallery' ) ),
         ) );
-        $modes = EmbedView::availableViewModes( $ini, false );
-        $this->assertSame( array( 'embed', 'embed-inline', 'full', 'line' ), $modes );
+        $modes = EmbedView::availableViewModes( $ini, 'embed', false );
+        $this->assertSame( array( 'embed', 'full', 'line' ), $modes );
         $this->assertSame( 'line', EmbedView::allowedView( 'line', $modes ) );
-        $this->assertSame( 'embed-inline', EmbedView::allowedView( 'embed-inline', $modes ) );
         foreach ( array( '../../../../settings/site.ini', 'gallery', 'Line', '', array( 'line' ), null ) as $view )
             $this->assertSame( 'embed', EmbedView::allowedView( $view, $modes ), var_export( $view, true ) );
 
-        // the sections of the embedded object's class add their modes
-        $this->assertSame( 'gallery', EmbedView::allowedView( 'gallery', EmbedView::availableViewModes( $ini, 'image' ) ) );
-        $this->assertSame( 'embed', EmbedView::allowedView( 'gallery', EmbedView::availableViewModes( $ini, 'article' ) ) );
+        // the sections of the embedded object's class add their modes, for their tag only
+        $this->assertSame( 'gallery', EmbedView::allowedView( 'gallery', EmbedView::availableViewModes( $ini, 'embed', 'image' ) ) );
+        $this->assertSame( 'embed', EmbedView::allowedView( 'gallery', EmbedView::availableViewModes( $ini, 'embed', 'article' ) ) );
+        $this->assertSame( 'embed-inline', EmbedView::allowedView( 'gallery', EmbedView::availableViewModes( $ini, 'embed-inline', 'image' ) ) );
+    }
 
+    /** EV-04: content.ini of the distribution, empty AvailableViewModes[] for both tags */
+    public function testAnInlineEmbedKeepsItsViewWithEmptyLists()
+    {
+        $ini = new expOEEmbedViewTestIni( array( 'embed' => array( 'AvailableViewModes' => array() ),
+                                                 'embed-inline' => array( 'AvailableViewModes' => array() ) ) );
+        $inline = EmbedView::availableViewModes( $ini, 'embed-inline', false );
+        $this->assertSame( array( 'embed-inline' ), $inline );
+        $this->assertSame( 'embed-inline', EmbedView::allowedView( 'embed-inline', $inline ), 'what the TinyMCE 8 plugin sends' );
+        $this->assertSame( 'embed-inline', EmbedView::allowedView( null, $inline ), 'no view: the tag\'s own' );
+        $this->assertSame( 'embed', EmbedView::allowedView( 'embed', EmbedView::availableViewModes( $ini, 'embed', false ) ) );
+        $this->assertSame( 'embed-inline', EmbedView::allowedView( 'embed', $inline ), 'an inline embed cannot ask for the block view' );
+    }
+
+    /** EV-04: a block embed cannot ask for a view of the inline lists */
+    public function testABlockEmbedCannotRequestAnInlineOnlyView()
+    {
+        $ini = new expOEEmbedViewTestIni( array( 'embed' => array( 'AvailableViewModes' => array( 'embed', 'line' ) ),
+                                                 'embed-inline' => array( 'AvailableViewModes' => array( 'embed-inline', 'inline-small' ) ),
+                                                 'embed-inline_image' => array( 'AvailableViewModes' => array( 'icon' ) ) ) );
+        $block = EmbedView::availableViewModes( $ini, 'embed', 'image' );
+        $this->assertSame( 'embed', EmbedView::allowedView( 'embed-inline', $block ) );
+        $this->assertSame( 'embed', EmbedView::allowedView( 'inline-small', $block ) );
+        $this->assertSame( 'embed', EmbedView::allowedView( 'icon', $block ) );
+        $this->assertSame( 'icon', EmbedView::allowedView( 'icon', EmbedView::availableViewModes( $ini, 'embed-inline', 'image' ) ) );
+    }
+
+    /** EV-04: the view passes the tag, after the inline flag is read and before the template gets the view */
+    public function testTheViewPassesTheTagName()
+    {
         $source = $this->source();
-        $allowed = strpos( $source, "\$view = self::allowedView( \$view, self::availableViewModes( \\eZINI::instance( 'content.ini' ), \$classIdentifier ) );" );
+        $allowed = strpos( $source, "\$view = self::allowedView( \$view, self::availableViewModes( \\eZINI::instance( 'content.ini' ), \$tagName, \$classIdentifier ) );" );
         $this->assertNotFalse( $allowed );
+        $this->assertLessThan( $allowed, strpos( $source, "\$tagName = 'embed-inline';" ) );
         $this->assertLessThan( strpos( $source, "\$tpl->setVariable( 'view', \$view );" ), $allowed );
     }
 }

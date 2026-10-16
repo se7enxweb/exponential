@@ -27,23 +27,24 @@ class EmbedView extends \Exponential\Runnable\ModuleView
     }
 
     /**
-     * The view modes an embed may be shown in: content.ini AvailableViewModes[] of [embed] and [embed-inline],
-     * and of [embed_<class>] / [embed-inline_<class>] where the class of the embedded object has one (the lists
-     * ezoe/relations offers in the dialog).
+     * The view modes an embed may be shown in: the tag's own view ('embed' for a block embed, 'embed-inline' for an
+     * inline one) and content.ini AvailableViewModes[] of that tag's sections only, [embed] / [embed_<class>] or
+     * [embed-inline] / [embed-inline_<class>] where the class of the embedded object has one (the lists
+     * ezoe/relations offers in the dialog). A block embed cannot ask for a view of the inline lists, and the other
+     * way round.
      *
      * @param \eZINI $contentIni
+     * @param string $tagName 'embed' or 'embed-inline'
      * @param string|false $classIdentifier
-     * @return string[]
+     * @return string[] the tag's own view first
      */
-    public static function availableViewModes( $contentIni, $classIdentifier )
+    public static function availableViewModes( $contentIni, $tagName, $classIdentifier )
     {
-        $sections = array( 'embed', 'embed-inline' );
+        $tagName = $tagName === 'embed-inline' ? 'embed-inline' : 'embed';
+        $sections = array( $tagName );
         if ( is_string( $classIdentifier ) && $classIdentifier !== '' )
-        {
-            $sections[] = 'embed_' . $classIdentifier;
-            $sections[] = 'embed-inline_' . $classIdentifier;
-        }
-        $modes = array();
+            $sections[] = $tagName . '_' . $classIdentifier;
+        $modes = array( $tagName );
         foreach ( $sections as $section )
         {
             if ( $contentIni->hasVariable( $section, 'AvailableViewModes' ) )
@@ -53,7 +54,8 @@ class EmbedView extends \Exponential\Runnable\ModuleView
     }
 
     /**
-     * The view the embed is shown in: the requested one when it is an available view mode, else 'embed'.
+     * The view the embed is shown in: the requested one when it is an available view mode, else the first of the
+     * list (the tag's own view, see availableViewModes()).
      *
      * @param mixed $view the requested view
      * @param string[] $available
@@ -61,7 +63,9 @@ class EmbedView extends \Exponential\Runnable\ModuleView
      */
     public static function allowedView( $view, array $available )
     {
-        return is_string( $view ) && in_array( $view, $available, true ) ? $view : 'embed';
+        if ( is_string( $view ) && in_array( $view, $available, true ) )
+            return $view;
+        return $available ? (string) reset( $available ) : 'embed';
     }
 
     public function run( array $scope )
@@ -184,7 +188,7 @@ class EmbedView extends \Exponential\Runnable\ModuleView
         }
 
         // the view names a template (content/view/<view>.tpl): only an available view mode
-        $view = self::allowedView( $view, self::availableViewModes( \eZINI::instance( 'content.ini' ), $classIdentifier ) );
+        $view = self::allowedView( $view, self::availableViewModes( \eZINI::instance( 'content.ini' ), $tagName, $classIdentifier ) );
 
         //if ( $align === 'left' || $align === 'right' )
         //    $style .= ' float: ' . $align . ';';
