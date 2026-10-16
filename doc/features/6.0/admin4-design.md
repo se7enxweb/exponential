@@ -298,7 +298,8 @@ in no group).
   tiles. The Dashboard menu ends with Change password and Edit profile this way.
 - **Access.** The view `setup/menu` opens with any one of the setup module's functions (`setup`, `administrate`,
   `managecache`, `managecronjobs`, `preload`, `system_info`), so a role that reached the tab's former page
-  (`setup/cache`) keeps the tab.
+  (`setup/cache`) keeps the tab. The tab asks for nothing more (`[Topmenu_setup]` has no `PolicyList[]`): a role
+  with `system_info` only has the tab, and with it the tabs of `[TopAdminMenu] SetupTabs[]`.
 - **Classic designs** show a short page with a pointer to the Setup menu and the `setup` toolbar of toolbar.ini.
 
 | Link key | Icon | Link key | Icon |
