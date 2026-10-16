@@ -367,9 +367,11 @@ class eZSQLite3DB extends eZDBInterface
                 return true;
             }
 
+            // The accumulator counts every statement, as the MySQL and PostgreSQL drivers do: the debug output's
+            // number of queries and their time; SQLOutput only decides whether each statement is listed.
+            eZDebug::accumulatorStart( 'sqlite3_query', 'sqlite3_total', 'sqlite3_queries' );
             if ( $this->OutputSQL )
             {
-                eZDebug::accumulatorStart( 'sqlite3_query', 'sqlite3_total', 'sqlite3_queries' );
                 $this->startTimer();
             }
 
@@ -378,13 +380,13 @@ class eZSQLite3DB extends eZDBInterface
             // A failure is reported below with its reason and the statement; the
             // warning PHP adds for it said the same a second time
             $result = @$this->DBConnection->exec( $sql );
+            eZDebug::accumulatorStop( 'sqlite3_query' );
             if ( $this->OutputSQL )
             {
                 $this->endTimer();
 
                 if ( $this->timeTaken() > $this->SlowSQLTimeout )
                 {
-                    eZDebug::accumulatorStop( 'sqlite3_query' );
                     $this->reportQuery( 'SQLite3DB', $sql, false, $this->timeTaken() );
                 }
             }
@@ -475,21 +477,23 @@ class eZSQLite3DB extends eZDBInterface
                 $sql .= "\nLIMIT $offset, 18446744073709551615"; // 2^64-1
             }
 
+            // The accumulator counts every statement, as the MySQL and PostgreSQL drivers do: the debug output's
+            // number of queries and their time; SQLOutput only decides whether each statement is listed.
+            eZDebug::accumulatorStart( 'sqlite3_query', 'sqlite3_total', 'sqlite3_queries' );
             if ( $this->OutputSQL )
             {
-                eZDebug::accumulatorStart( 'sqlite3_query', 'sqlite3_total', 'sqlite3_queries' );
                 $this->startTimer();
             }
 
             $results = @$this->DBConnection->query( $sql );   // reported below when it fails
 
+            eZDebug::accumulatorStop( 'sqlite3_query' );
             if ( $this->OutputSQL )
             {
                 $this->endTimer();
 
                 if ( $this->timeTaken() > $this->SlowSQLTimeout )
                 {
-                    eZDebug::accumulatorStop( 'sqlite3_query' );
                     $this->reportQuery( 'SQLite3DB', $sql, false, $this->timeTaken() );
                 }
             }
