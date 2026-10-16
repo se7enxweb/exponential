@@ -5029,7 +5029,7 @@ c558703233869e8b7789a6a6179b31c9  kernel/classes/exppasswordpolicy.php
 cadc65b1b3cc8e2459058bcc7eeb2840  kernel/classes/expphar.php
 757793bfb95c663bf2f51744c3184b70  kernel/classes/exppolicyomitlist.php
 b607c67490219f43e8a2cf31d600700e  kernel/classes/exppreloadaddress.php
-bc3a9ffed07c0eb20d4b6237ee51f3b3  kernel/classes/exppreloadhistory.php
+37416fe9deaea6518c1addddcd86c2ae  kernel/classes/exppreloadhistory.php
 52b8efefdc8c0619d5d22782e8d8721f  kernel/classes/exppreloadjob.php
 d8bfba7e3e116906a27e21641d61ef7b  kernel/classes/exppreloadlock.php
 1eda4d2740e2f5e9ff0ccaef297fb1aa  kernel/classes/expprocesstools.php
@@ -8005,7 +8005,7 @@ a18d90b5610abb3def710ebc7c9f49ba  tests/tests/kernel/classes/permissions/eZPolic
 b56a3b9639c786b875f98c6f42c8a035  tests/tests/kernel/classes/permissions/fixtures/ezcontentpermissionsqltestdb.php
 192883639379d5fd3bab7183741db6df  tests/tests/kernel/classes/permissions/fixtures/modules/k1perm/module.php
 534c96ced87d14e313f2df5e381e4aa6  tests/tests/kernel/classes/preload/expPreloadAddressTest.php
-7a1dd4b5e958ddddbb0e09a5e8c3ce50  tests/tests/kernel/classes/preload/expPreloadLockAndHistoryTest.php
+934dce8ad0e9d51e94b0718f9c9637a1  tests/tests/kernel/classes/preload/expPreloadLockAndHistoryTest.php
 e9b9542174ecd2cca586e407edaba656  tests/tests/kernel/classes/processtools/ExpPreloadStartUrlsTest.php
 57076f462adaed80c14c9883a0779e27  tests/tests/kernel/classes/processtools/ExpProcessToolsTest.php
 8f7aaecdccb5cb38c3f738034ac781fe  tests/tests/kernel/classes/radwizards/expContentExtensionWizardTest.php
