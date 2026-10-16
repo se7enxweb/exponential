@@ -52,8 +52,8 @@
 {section show=eq( $select_siteaccess, true )}
     {let siteaccesslist=ezini( 'SiteAccessSettings', 'RelatedSiteAccessList' )}
     <div class="block">
-    <label>{'Siteaccess:'|i18n( 'design/standard/pagelayout' )}</label>
-    <select name="siteaccesslist"{eq( $ui_context, 'edit' )|choose( '', ' disabled="disabled"' )} onchange='location.href=this.value'>
+    <label for="quicksettings-siteaccesslist">{'Siteaccess:'|i18n( 'design/standard/pagelayout' )}</label>
+    <select id="quicksettings-siteaccesslist" name="siteaccesslist"{eq( $ui_context, 'edit' )|choose( '', ' disabled="disabled"' )} onchange='location.href=this.value'>
             <option value={'/user/preferences/set/admin_quicksettings_siteaccess/global_override'|ezurl}{if eq( $siteaccess, 'global_override')} selected="selected"{/if}>{'Global (override)'|i18n( 'design/standard/pagelayout' )}</option>
     {section loop=$siteaccesslist}
             <option value={concat( '/user/preferences/set/admin_quicksettings_siteaccess/', $:item )|ezurl}{if eq( $siteaccess, $:item )} selected="selected"{/if}>{$:item|wash}</option>

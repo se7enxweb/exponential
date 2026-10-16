@@ -543,7 +543,7 @@ ee59e11711f04b511967f5335e53cdb9  design/admin/templates/page_header.tpl
 1bf2256ccd6061ee7f354a26834937c1  design/admin/templates/page_menuheadenabled.tpl
 9f4f8bdbbdfbfd8c6d873c03eded7ef6  design/admin/templates/page_menuheadgray.tpl
 4306b7f17fbb890306fdc57c9be45664  design/admin/templates/page_menuheadselected.tpl
-80c4789faa914ce52d8066789bc4d9a4  design/admin/templates/page_search.tpl
+4374c91bec94059d38165298dde75856  design/admin/templates/page_search.tpl
 3ceb59d3584d417fdb51fe11e73f2729  design/admin/templates/page_topmenu.tpl
 7595633233e131b1b54c3d3e493c4568  design/admin/templates/page_topmenuitem.tpl
 904563d0775993b51872b7af411dd5b3  design/admin/templates/page_toppath.tpl
@@ -631,7 +631,7 @@ af31fc447e00b08df2231c45cc83aff5  design/admin/templates/setup/kerneloverride.tp
 535ac0d2a806ac34792491f69fe0d777  design/admin/templates/setup/moduleextension.tpl
 ae6201aa28f288a04b6de0cf20848e04  design/admin/templates/setup/modulewizard.tpl
 63d444f8ff389d947674e43d39c4c8be  design/admin/templates/setup/preload.tpl
-acba5347f613d48faca4e88a62fd02ae  design/admin/templates/setup/quick_settings.tpl
+8aee3c33a3f6c18bfc7be76a22eaf9d4  design/admin/templates/setup/quick_settings.tpl
 0942a31eb2b762a8233c1fba0368ff08  design/admin/templates/setup/rad.tpl
 eb714f7b1282b93e98977398e0dd30ec  design/admin/templates/setup/rad_licence_select.tpl
 c88a198803d60da7eda1e6c2c97d51c1  design/admin/templates/setup/radsurvey.tpl
@@ -691,7 +691,7 @@ a28d02058dcaceb3f0bd665a92aff6b9  design/admin/templates/tabs/audit/node_header.
 237a0259b99105209be9ec58938d7b04  design/admin/templates/tabs/user/roles_header.tpl
 08b7af3fc1601f6fff034ead9b14ca49  design/admin/templates/toolbar/full/admin_bookmarks.tpl
 787142d1ca642f0e53c702c289446842  design/admin/templates/toolbar/full/admin_clear_cache.tpl
-4f98e2bd077f40a03634af577a297e04  design/admin/templates/toolbar/full/admin_current_user.tpl
+97933e235b4970cb907ad59b1da8a3ab  design/admin/templates/toolbar/full/admin_current_user.tpl
 78474c135f927b8753f96696b4f0dea0  design/admin/templates/toolbar/full/admin_preferences.tpl
 674ecdd3f82ec5a3c12d163d15631845  design/admin/templates/toolbar/full/admin_quick_settings.tpl
 0d034d557c4c0bd669c5b35e516a9b84  design/admin/templates/toolbar/full/admin_ui_switch.tpl
@@ -824,7 +824,7 @@ efff1fd10ce90d6168b249169c1cf066  design/admin3/templates/loginpagelayout.tpl
 b2eb690cdc87ce43c243e5d764bddd39  design/admin3/templates/page_head_style.tpl
 cb128a4645e891cd796919aad3ed36d1  design/admin3/templates/page_header.tpl
 0cc20dc6c8574f20b41e26a7833d57bf  design/admin3/templates/page_leftmenu.tpl
-9b87407782ffa8c32c29e90f2de2367b  design/admin3/templates/page_search.tpl
+68ef800e886d8f0bbe4c2216f50e0c18  design/admin3/templates/page_search.tpl
 edd2767be9e8f729f14b809fb8369c16  design/admin3/templates/page_topmenu.tpl
 cf8663798cf45b3045efbc98b8d831c5  design/admin3/templates/page_topmenuitem.tpl
 9d5f475181bf955ec0f7267af8289f78  design/admin3/templates/pagelayout.tpl
@@ -2610,7 +2610,7 @@ eeadb90710a1bd3e1d646a197849e64c  design/standard/templates/setup/modulewizard.t
 4a05787f4821332c61b939f9c625f6f6  design/standard/templates/setup/page_copyright.tpl
 bd6e09375a4ba8fb7f56980818d622be  design/standard/templates/setup/persistence.tpl
 0612b56c79eebd0c2c1bd5331ef02dd9  design/standard/templates/setup/progress_bar.tpl
-e4a2519ba74195287ee2aacc895d4ba2  design/standard/templates/setup/quick_settings.tpl
+e402d98463691377b257bbaf2072360a  design/standard/templates/setup/quick_settings.tpl
 efeb4ba3b956e844fee092f5b6397480  design/standard/templates/setup/rad.tpl
 56d56defaf8b44c4baa4e0f323eb70fa  design/standard/templates/setup/radsurvey.tpl
 118be36b33fea3d47c3a984a3bb7fa7d  design/standard/templates/setup/registration_email.tpl
@@ -3048,7 +3048,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-59a2ead5a5d88cae6e69105f3e8d887e  doc/changelogs/6.0/6.0.15.md
+4ace2cab0e249d059a7601bbbda4aeca  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md

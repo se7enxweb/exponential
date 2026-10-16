@@ -12,7 +12,7 @@
     {def $user_node = $current_user.contentobject.main_node
          $current_user_link = $user_node.url_alias|ezurl}
     {if $user_node.can_read}
-        <p><a href={$current_user_link}><img src={'current-user.gif'|ezimage} height="22" width="22" alt="" class="a4-middle" /></a>&nbsp;<a class="a4-current-user-name" href={$current_user_link}>{$current_user.contentobject.name|wash}</a></p>
+        <p><img src={'current-user.gif'|ezimage} height="22" width="22" alt="" class="a4-middle" />&nbsp;<a class="a4-current-user-name" href={$current_user_link}>{$current_user.contentobject.name|wash}</a></p>
     {else}
         <p><img src={'current-user-disabled.gif'|ezimage} height="22" width="22" alt="" class="a4-middle" /> {$current_user.contentobject.name|wash}</p>
     {/if}
