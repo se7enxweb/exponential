@@ -994,6 +994,18 @@
     "kernel/setup/steps/ezstep_create_sites.php": [
       "tests/tests/kernel/classes/setup/AdminUISiteaccessTest.php",
       "tests/tests/kernel/classes/setup/EditorSiteaccessTabsTest.php"
+    ],
+    "kernel/classes/user/exp*": [
+      "tests/tests/kernel/classes/user/expUserAccountStatusTest.php",
+      "tests/tests/kernel/classes/user/expUserDeactivationTest.php",
+      "tests/tests/kernel/classes/user/expUserHygieneTest.php"
+    ],
+    "kernel/classes/user/expuserhygiene.php": [
+      "tests/tests/kernel/classes/user/expUserHygieneTest.php",
+      "tests/tests/kernel/classes/user/expUserDeactivationTest.php"
+    ],
+    "kernel/private/classes/views/contentcheck/brokenrelations.php": [
+      "tests/tests/kernel/contentcheck/expContentCheckQueryTest.php"
     ]
   },
   "generated": {
