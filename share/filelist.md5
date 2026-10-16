@@ -4248,6 +4248,7 @@ a13eb1cb59361c9f259aa92f7a3b995b  extension/ezjscore/settings/module.ini.append.
 b67e983627ca245b51be9f0bcf9e5a80  extension/ezjscore/settings/site.ini.append.php
 3c3e354bd4825cf29dc62b588fd1687f  extension/ezjscore/translations/eng-US/translation.ts
 602fe86f8bc6b6b17fb37921babe33df  extension/ezjscore/translations/esl-ES/translation.ts
+df9d1c4ca01c940a0ecd49319dc183d8  extension/ezjscore/translations/esl-MX/translation.ts
 1e56e57978e47563231de051310f8b98  extension/ezjscore/translations/ger-DE/translation.ts
 1934ef4b765d46e6c3a8eae97229373e  extension/ezjscore/translations/untranslated/translation.ts
 7bdcec3991d143379ebea0e485a3616f  extension/ezoe/FAQ
@@ -4758,6 +4759,7 @@ f8a85b1a0304fa337737229280fcb45c  extension/ezoe/tests/suite.php
 78a42e2ad90b2c482030782011ab6e00  extension/ezoe/translations/dut-NL/translation.ts
 364dd40b1988b87911e0a0a37fd87917  extension/ezoe/translations/eng-US/translation.ts
 349f99fbce16aa3b55e00c72b58b513b  extension/ezoe/translations/esl-ES/translation.ts
+fe5460910d4704853a0b220cc49acf34  extension/ezoe/translations/esl-MX/translation.ts
 bb5bd9726ef6de446fc6c037ac7cd59a  extension/ezoe/translations/fin-FI/translation.ts
 fa1dcd341369fc539d0a397f66e9aec7  extension/ezoe/translations/fre-FR/translation.ts
 04810c0983e1f15704592180c4857cf1  extension/ezoe/translations/ger-DE/translation.ts
@@ -7357,7 +7359,7 @@ a2b163b1fd63c8bdb24c907d8473ad74  share/translations/ell-GR/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-NZ/translation.ts
 022475aa85202e7d0224b230f992f667  share/translations/eng-US/translation.ts
 b23f9be3b92c6d7e2e00376952b8a73c  share/translations/esl-ES/translation.ts
-3a1cd7eb19c1ba120877d76a63f9a732  share/translations/esl-MX/translation.ts
+96835e62ad0e81bc2f760d68914f161f  share/translations/esl-MX/translation.ts
 a1ff9edf6db2ff3ff0b2d442410db154  share/translations/fin-FI/translation.ts
 53d8d7f9258c04ed02c4c84a7721e691  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
@@ -8521,6 +8523,8 @@ cb0fed15dd1df5bc335d598439aec099  tests/tests/lib/ezfile/eZDirDeletionGuardTest.
 9b2f42f8460d203df243995ce82a1dc6  tests/tests/lib/ezi18n/eZCodePageTablesTest.php
 c1f6adac19ccaf910436eda6d13af929  tests/tests/lib/ezi18n/eZTSTranslatorTest.php
 86f580b3e8cfbaaf79c8cf442dbd2418  tests/tests/lib/ezi18n/eZTranslatorHandlersTest.php
+0e5565929a5d06a4545e88bc57da4934  tests/tests/lib/ezi18n/expTranslationQualityTest.php
+c006ede26d3f824f5c90edb6fcf5c22e  tests/tests/lib/ezi18n/translation-identical-allowlist.json
 99d562ea5691945a73f1649c6b7cc76b  tests/tests/lib/ezimage/data/andernach.jpg
 e20e34d1b6a2efc798e50ebbabee680d  tests/tests/lib/ezimage/data/svg/badge.svg
 b8c98ff2af8dc8e9def7bfe094faeb8b  tests/tests/lib/ezimage/data/svg/chart.svg
