@@ -228,6 +228,9 @@ class expUISwitch
         self::$providers = null;
         self::$applied = array();
         $GLOBALS[self::GLOBAL_KEY] = '';
+        // locales and translations added while a persistent worker runs are seen from this request on
+        if ( class_exists( 'expUISwitchLanguageCatalogue' ) && method_exists( 'expUISwitchLanguageCatalogue', 'beginRequest' ) )
+            expUISwitchLanguageCatalogue::beginRequest();
     }
 
     /**

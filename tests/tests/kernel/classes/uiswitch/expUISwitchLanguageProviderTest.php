@@ -166,6 +166,47 @@ class expUISwitchLanguageProviderTest extends PHPUnit\Framework\TestCase
         $this->assertNull( $this->catalogue( $cache )->entry( '../x' ) );
     }
 
+    public function testALocaleAddedBetweenTwoRequestsIsSeenWithoutARestart()
+    {
+        // One persistent worker (Velocity): the catalogue and the provider live on from one request to the next.
+        $cache = $this->fixture . '/cache';
+        $catalogue = $this->catalogue( $cache );
+        $settings = $this->grouped();
+        expUISwitchLanguageCatalogue::beginRequest();
+        $this->assertNull( $catalogue->entry( 'tlh-QO' ), 'request 1: no Klingon yet' );
+        $this->assertFalse( ( new expUISwitchLanguageProvider( 'language', $settings, 'eng-GB', $this->fixture, $catalogue ) )->isValid( 'tlh-QO' ) );
+        $before = $catalogue->signature();
+
+        // between the requests a locale and its translation are added (the directories get a new time)
+        $this->locale( 'tlh-QO', 'tlhIngan Hol', 'Klingon', 'tlh' );
+        $this->messages( 'tlh-QO', array( 'a' => 'A' ) );
+        foreach ( array( '/share/locale', '/share/translations', '/share/translations/tlh-QO' ) as $dir )
+            touch( $this->fixture . $dir, time() + 5 );
+        $this->assertSame( $before, $catalogue->signature(), 'within request 1 the signature is not computed again' );
+
+        expUISwitchLanguageCatalogue::beginRequest();
+        $this->assertNotSame( $before, $catalogue->signature(), 'request 2: the new files change the signature' );
+        $entry = $catalogue->entry( 'tlh-QO' );
+        $this->assertNotNull( $entry, 'request 2: Klingon is in the catalogue' );
+        $this->assertSame( 'tlhIngan Hol', $entry['native'] );
+        $this->assertSame( 25, $entry['coverage'] );
+        $provider = new expUISwitchLanguageProvider( 'language', $settings, 'eng-GB', $this->fixture, $catalogue );
+        $this->assertTrue( $provider->isValid( 'tlh-QO' ), 'request 2: Klingon can be chosen' );
+        $this->assertContains( 'tlh-QO', $provider->allowedValues() );
+    }
+
+    public function testAnUnchangedRequestDoesNotReadTheFilesAgain()
+    {
+        $catalogue = $this->catalogue();
+        expUISwitchLanguageCatalogue::beginRequest();
+        $signature = $catalogue->signature();
+        // a file changed in place (its directory keeps its time) is not looked for at every request: only a
+        // new catalogue (each request builds its providers anew) or a directory change reads the files again
+        expUISwitchLanguageCatalogue::beginRequest();
+        $this->assertSame( $signature, $catalogue->signature() );
+        $this->assertSame( $signature, $this->catalogue()->signature(), 'a new catalogue of the same files' );
+    }
+
     // ------------------------------------------------------------------ allow-list
 
     public function testAllowListIsGroupsAllowedValuesAndEveryLocale()

@@ -31,14 +31,23 @@ class expUISwitchLanguageCatalogue
     /** @var array signature => reader language => code => name */
     private static $readerMemory = array();
 
+    /** @var int the request of the process (expUISwitch::beginRequest() counts it up): see signature() */
+    private static $generation = 0;
+
     /** @var string the installation root the share/ paths are relative to; '' is the working directory */
     protected $root;
 
     /** @var string|null where the cache file goes; null: the kernel's cache directory, '' : no cache file */
     protected $cacheDirectory;
 
-    /** @var string|null the signature, computed once per instance (one request: files changed later are seen at the next) */
+    /** @var string|null the signature of the files, see signature() */
     protected $signature = null;
+
+    /** @var string|null the times of the directories the signature was computed with */
+    protected $directoryStamp = null;
+
+    /** @var int|null the request generation the directory times were last looked at in */
+    protected $checkedGeneration = null;
 
     /**
      * @param string $root
@@ -57,6 +66,16 @@ class expUISwitchLanguageCatalogue
     {
         self::$memory = array();
         self::$readerMemory = array();
+    }
+
+    /**
+     * Start of a request (expUISwitch::beginRequest()): every catalogue of the process looks at the times of its
+     * directories again at its next use, so a locale or translation added or replaced while a persistent worker runs
+     * (Velocity) is seen at the next request, without a restart.
+     */
+    public static function beginRequest()
+    {
+        self::$generation++;
     }
 
     protected function path( $relative )
@@ -95,8 +114,17 @@ class expUISwitchLanguageCatalogue
      */
     public function signature()
     {
-        if ( $this->signature !== null )
+        // Once per request: the modification times of share/locale, share/translations and each translation
+        // directory (a file added, removed or replaced by a rename changes its directory's time). Only when they
+        // changed are the names, sizes and times of every file read again.
+        if ( $this->signature !== null && $this->checkedGeneration === self::$generation )
             return $this->signature;
+        $this->checkedGeneration = self::$generation;
+        $stamp = $this->directoryStamp();
+        if ( $this->signature !== null && $stamp === $this->directoryStamp )
+            return $this->signature;
+        $this->directoryStamp = $stamp;
+        clearstatcache();
         $parts = array( self::FORMAT );
         $files = array_merge( (array)glob( $this->path( 'share/locale/*.ini' ) ),
                               (array)glob( $this->path( 'share/translations/*/translation.ts' ) ) );
@@ -108,6 +136,25 @@ class expUISwitchLanguageCatalogue
                 $parts[] = $file . ':' . $stat['size'] . ':' . $stat['mtime'];
         }
         return $this->signature = md5( implode( "\n", $parts ) );
+    }
+
+    /**
+     * The modification times of the directories the catalogue reads, fresh from the file system (not PHP's stat
+     * cache, which a persistent worker keeps between requests).
+     *
+     * @return string
+     */
+    protected function directoryStamp()
+    {
+        $dirs = array_merge( array( $this->path( 'share/locale' ), $this->path( 'share/translations' ) ),
+                             (array)glob( $this->path( 'share/translations/*' ), GLOB_ONLYDIR ) );
+        $parts = array();
+        foreach ( $dirs as $dir )
+        {
+            clearstatcache( true, $dir );
+            $parts[] = $dir . ':' . (int)@filemtime( $dir );
+        }
+        return implode( "\n", $parts );
     }
 
     /**
