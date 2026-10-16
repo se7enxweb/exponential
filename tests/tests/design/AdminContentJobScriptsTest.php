@@ -1,12 +1,15 @@
 <?php
 /**
- * The script of the content job progress page in admin4. Checked on the files and,
+ * The scripts of the content job pages in admin4. Checked on the files and,
  * in node, against a small stand-in for the DOM (js/mini_dom.js); no database.
  *
  * - CJS-01: the progress page (page/content_job.js) stops polling with a message of its own when the job is gone or
  *   not the user's (404, 403) and when the session has ended (a redirected request, an HTML page in place of the
  *   JSON); after a network error it waits longer each time, up to a minute; a hidden tab makes no request
  *   (js/content_job.js). The template carries the two messages.
+ * - CJS-02: the "run now or in the background" choice (page/content_job_mode_choice.js) saves the preference through
+ *   window.a4Pref, which POSTs to user/preferences/set_and_exit with the form token, and sends no request of its own
+ *   (js/content_job_mode_choice.js).
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminContentJobScriptsTest.php
  *
@@ -82,5 +85,20 @@ class AdminContentJobScriptsTest extends PHPUnit\Framework\TestCase
             $this->assertMatchesRegularExpression( '/data-text-' . $key . '="\{\'[^\']+\'\|i18n\( \'design\/admin\/content\/job\' \)\|wash\}"/', $tpl, $key );
     }
 
+    /** CJS-02 */
+    public function testTheModeChoiceIsSavedThroughA4Pref()
+    {
+        $c = $this->harness( 'content_job_mode_choice.js', 'design/admin4/javascript/page/content_job_mode_choice.js' );
+        $this->assertSame( array( array( 'admin_content_job_mode_remove', 'now' ) ), $c['change']['prefs'] );
+        $this->assertSame( 0, $c['change']['fetches'], 'no request of its own' );
+        $this->assertSame( 0, $c['no a4Pref']['fetches'] );
+
+        $script = self::read( 'design/admin4/javascript/page/content_job_mode_choice.js' );
+        $this->assertStringNotContainsString( 'fetch(', $script );
+        $this->assertStringNotContainsString( 'data-prefs', self::read( 'design/admin4/templates/content/job_mode_choice.tpl' ) );
+        $head = self::read( 'design/admin4/javascript/a4_head.js' );
+        $this->assertStringContainsString( "method: 'POST'", $head );
+        $this->assertStringContainsString( "'ezxform_token=' + encodeURIComponent(token)", $head );
+    }
 
 }
