@@ -805,7 +805,7 @@ html[data-a4-theme="dark"] {
   vertical-align: middle;
 }
 a.a4-lang:hover { border-color: var(--a4-accent); color: var(--a4-accent-text); }
-a.a4-lang:focus-visible { outline: 2px solid var(--a4-accent-strong); outline-offset: 1px; }
+a.a4-lang:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 1px; }
 .a4-lang.is-current { border-color: var(--a4-accent); color: var(--a4-accent-text); font-weight: 800; text-decoration: underline; text-underline-offset: 2px; }
 .a4-lang.is-current:not(.is-main) { background-color: var(--a4-accent-soft); }
 .a4-lang.is-main { border-color: var(--a4-ink); background-color: var(--a4-ink); color: var(--a4-card); }
@@ -1478,8 +1478,7 @@ body.exp-debug-bar .a4-toasts { bottom: calc(var(--exp-debug-bar-h, 38px) + var(
   background-color: var(--a4-card);
 }
 .a4-fold + .a4-fold { margin-top: var(--a4-space-2); }
-.a4-fold > summary,
-.a4-confirm > summary {
+.a4-fold > summary {
   display: flex;
   align-items: center;
   gap: var(--a4-space-2);
@@ -1499,7 +1498,7 @@ body.exp-debug-bar .a4-toasts { bottom: calc(var(--exp-debug-bar-h, 38px) + var(
 .a4-fold > summary:hover { color: var(--a4-accent-text); }
 .a4-fold-body { padding: 0 var(--a4-space-3) var(--a4-space-3); }
 .a4-confirm { flex: 1 1 100%; }
-.a4-confirm > summary { display: inline-flex; align-items: center; min-height: var(--a4-control-h); padding: var(--a4-space-1) var(--a4-space-3); color: var(--a4-bad); }
+.a4-confirm > summary { display: inline-flex; align-items: center; gap: var(--a4-space-2); min-height: var(--a4-control-h); padding: var(--a4-space-1) var(--a4-space-3); color: var(--a4-bad); font-weight: 650; list-style: none; cursor: pointer; }
 .a4-confirm > div {
   display: flex;
   flex-wrap: wrap;
