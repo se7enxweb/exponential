@@ -680,6 +680,24 @@ class eZStepCreateSites extends eZStepInstaller
     }
 
     /**
+     * The extension that serves the REST API of a new installation: ezprestapi, which answers the content reads at
+     * /api/ezp/v1/... and /api/ezp/v2/... and the writes at v2 from one route table, or, on a tree that does not
+     * have it, the deprecated v1 provider ezprestapiprovider. Never both: one extension, one activation.
+     *
+     * @param string $extensionRoot the extension directory of the installation
+     * @return string|null null when neither is on disk
+     */
+    static function restApiExtension( $extensionRoot = 'extension' )
+    {
+        foreach ( array( 'ezprestapi', 'ezprestapiprovider' ) as $extension )
+        {
+            if ( is_dir( rtrim( (string)$extensionRoot, '/' ) . '/' . $extension ) )
+                return $extension;
+        }
+        return null;
+    }
+
+    /**
      * The ActiveAccessExtensions[] of the admin and editor siteaccesses with exp_adminui added once, at the end, when
      * the installation has the extension. Why: the UI switch's design provider offers a design only when its
      * directory is in an active design extension, so AdminUI is a choice of the design menu on the admin and the
@@ -1724,12 +1742,12 @@ language_locale='eng-GB'";
         $extensionsPrepended = array( 'ezjscore', /*@EZP_BUILD_EXTENSION_ACTIVATE@*/ 'ezoe', 'ezformtoken' );
         foreach (
             array(
-                'ezie', 'ezodf', 'ezprestapiprovider', 'ezmultiupload', 'eztags',
+                'ezie', 'ezodf', self::restApiExtension(), 'ezmultiupload', 'eztags',
                 'ezautosave', 'ez_network', 'ez_network_demo'
             ) as $extension
         )
         {
-            if ( file_exists( "extension/$extension" ) )
+            if ( $extension !== null && file_exists( "extension/$extension" ) )
             {
                 $extensionsToEnable[] = $extension;
             }
