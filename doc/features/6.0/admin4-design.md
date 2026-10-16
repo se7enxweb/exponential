@@ -80,6 +80,10 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
   `user/preferences/set_and_exit`. An anonymous page keeps them in the browser (`localStorage`) only; a browser
   choice made before is taken along once. A preference that cannot be saved is kept in the browser instead, and
   `set( name, '' )` forgets a choice (the preference set empty, the browser's copy removed). `tests/tests/design/AdminPreferencesTest.php` checks it.
+  The side columns are drawn with these preferences on the first paint: until `ezadmin_menubar.js` has applied
+  their state, `html.a4-preload` (both page layouts) shows a column beside the content unless it is saved closed,
+  with the room an open column takes, and runs no transitions; the script removes the class two frames later
+  (`tests/tests/design/AdminFirstPaintColumnsTest.php`).
 - **Header and top menu.** One row of 56 px from 1280 px (logo, menu, search, site, light/dark, user menu, logout),
   two rows of 48 + 40 px from 576 px, one row of 56 px on a phone with the hamburger menu (logo, site, light/dark,
   menu button). The menu stays on one line; tabs that do not fit go into a "More" list. On a phone the menu opens
