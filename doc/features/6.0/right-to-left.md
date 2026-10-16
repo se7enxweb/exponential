@@ -47,7 +47,8 @@ The rules for the stylesheets of every administration design (they add to the
    `inset-inline-start` / `-end`, the logical corner radii (`border-start-start-radius` ...) and
    `text-align: start` / `end` instead of their left and right forms. Left to right they are the same thing, so the
    page does not change; right to left they swap by themselves. Converted: `components.css` (admin4 and its required
-   identical copy in design/admin), `admin4.css`, `pagelayout.css` and `core.css` of admin4 and design/admin.
+   identical copy in design/admin), `admin4.css`, `pagelayout.css` and `core.css` of admin4 and design/admin, and the
+   module stylesheets `stylesheets/modules/{content,people,setup,structure,workflow}.css` (both identical copies).
 2. **A mirror rule where a logical property cannot say it.** Four-value shorthands with different left and right
    values, `float` / `clear`, `background-position`, horizontal `box-shadow` offsets and asymmetric radii get a
    rule right after the rule they mirror:
@@ -62,7 +63,7 @@ The rules for the stylesheets of every administration design (they add to the
 3. **Icons that point along the line are mirrored**, nothing else: `components.css` mirrors the `.a4-bi-*` chevrons,
    arrows, carets, reply/forward and sign-out icons with `scale: -1 1` (which composes with a component's own
    `rotate()`); the icons the stylesheets draw themselves (the content tree's caret, the popup submenu caret, the
-   dashboard figures' arrow, the side menu groups' caret) have their own mirror rule. A shape drawn with turned
+   dashboard figures' arrow, the side menu groups' caret, the data table pagers' IcoMoon arrows in `core.css`) have their own mirror rule. A shape drawn with turned
    borders that points *down* keeps its physical borders (the interface switch's chevron, marked "the same in both
    directions").
 4. **Content alignment chosen by an editor is not mirrored.** `text-left`, `object-left`, `align-right` and the like
@@ -72,10 +73,17 @@ The rules for the stylesheets of every administration design (they add to the
    width control (`leftmenu_widthcontrol.js`) and its show/hide animations (`page_leftmenu.tpl`, `pagelayout.tpl`)
    use logical properties (`marginInlineStart`, `insetInlineEnd`) or check
    `getComputedStyle( document.documentElement ).direction`.
-6. **AdminUI** keeps the reference's `style.css` unchanged; `stylesheets/adminui-rtl.css` mirrors the frame (header,
-   side bar, content tree, search field) and is linked only for a right-to-left language, after the other
-   stylesheets (`page_head_style.tpl`, `loginpagelayout.tpl`), so a left-to-right AdminUI page loads exactly what it
-   loaded before.
+6. **AdminUI** keeps the reference's `style.css` unchanged. For a right-to-left language `page_head_style.tpl` and
+   `loginpagelayout.tpl` link `stylesheets/style-rtl.css` in its place: a copy of `style.css` built by a script, with
+   its left/right declarations written as logical properties and a `:where([dir="rtl"])` mirror rule after every rule
+   a logical property cannot express (rules 1 and 2; content alignment keeps its side, rule 4). Rebuild it whenever
+   `style.css` changes, never edit it by hand. AdminUI's own stylesheets (`pagelayout.css`, `core.css`,
+   `content.css`, `adminui*.css`, `setup-extensions.css`, `theme/*.css`) use logical properties, so the frame and
+   the pages inside it (tables, forms, paging, dashboard blocks) mirror themselves. `stylesheets/adminui-rtl.css`,
+   linked last and only right to left, turns the Font Awesome and IcoMoon icons that point along the line (arrows,
+   chevrons, carets, sign-in/out, indent/dedent, the pagers and the edit page's side column toggle) and places the
+   content tree column's resize handle; `ngadminui/app.js` gives that column jQuery UI's west handle right to left
+   (dragging to the left widens it). A left-to-right AdminUI page loads exactly what it loaded before.
 
 New CSS in an administration design must follow 1 to 4; the design tests (`tests/tests/design`) read the logical
 property names.
@@ -145,10 +153,12 @@ rendering noise of the live site).
 
 ## Follow-ups
 
-- **AdminUI inside the frame**: the module pages, the sub items table's paging, Font Awesome arrows and the content
-  tree column's drag handle (jQuery UI `resizable`, east handle) are not mirrored yet.
-- **Extension and module stylesheets** (`stylesheets/modules/*.css`, extensions' `BackendCSSFileList`) still use
-  physical left/right in places; convert them to logical properties when they are next changed.
+- **Extension stylesheets** (extensions' `BackendCSSFileList`) still use physical left/right in places: expai
+  (`expai.css`), expui (`exp/datatable.css`: the pager groups float left/right, mirrored for AdminUI in
+  `adminui-rtl.css`; `dialog.css`, `datepicker.css`, `core.css`), eztags (`jstree/eztags/style.css`,
+  `tagssuggest.css`, `contentstructure-tree.css`, `jqmodal.css`), ezautosave (`preview.css`, `autosave.css`),
+  expqueue, ezfind (`ezajax_autocomplete.css`), sevenx_alpha_settings (`a4-showcase.css`). Convert them to logical
+  properties with their next release.
 - **The classic design's side columns** clip their content at the inner edge, as they do left to right; nothing new,
   but more visible with long Hebrew or Arabic labels.
 - **Login page in a right-to-left language**: the interface language is a choice of a signed-in user, so the login
