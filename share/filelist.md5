@@ -19,7 +19,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 6317a4c9d5332abdff2cdede49edebb7  README.md
 fd07fac4ce74813bf1e9bda18fbcf1b0  SECURITY.md
 7a103568d7c533e99e2d7a5e9f1b5ffb  autoload.php
-119b97309e828a274cd8bf5ee4f22516  autoload/ezp_kernel.php
+cb2447e6cb92f42d7cba42e47cb7b19d  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -2851,7 +2851,7 @@ f1ac6c4bdfb768a543907f1e85408ed8  doc/bc/6.0/console-exp-ini.md
 f504dbb0bd1d30709cde9b7def0b1c52  doc/bc/6.0/content-export-menu.md
 d3d1f22911e860a16506696d3fee2cbb  doc/bc/6.0/content-jobs.md
 ec94f35b9c29418f1c35fe46d54a157f  doc/bc/6.0/content-object-fallback-locale.md
-03b5617288ab7a6fca617984c91c2af9  doc/bc/6.0/debug-bar.md
+0b6409086cfa6b52a24da7401687e224  doc/bc/6.0/debug-bar.md
 68ca2915c347f13a647afb19d14748d0  doc/bc/6.0/draft-edit-access.md
 b0fbba2abe4abadee42e57cebb5388fd  doc/bc/6.0/eZINI_PRESERVES_COMMENTS.md
 cf9e3712f778ce6bfbb6aaca39d7f82b  doc/bc/6.0/expinfo-operator.md
@@ -2898,7 +2898,7 @@ ea7c02ab8c7a9b67149e612bca1f10ab  doc/bc/6.0/phpunitv13.md
 85b860e5a60e498f119c2ea570eb6b9e  doc/bc/6.0/phpunitv13forPHP841.md
 111bb729184306f633c537fe44ee078c  doc/bc/6.0/platform-package-forks-and-command-renames.md
 6ecbedb530c5c3804b8be217a7b1ad12  doc/bc/6.0/preload.md
-998c241668929913ca76c4904d270043  doc/bc/6.0/rad-extension-points.md
+83f4649e6ff2ff551f1f22b0a2e0b30c  doc/bc/6.0/rad-extension-points.md
 6abc113175c230ad36289ce8b16eed15  doc/bc/6.0/rad-extension-surface.md
 9512bd3007f2fa5c5ede9f050f49297e  doc/bc/6.0/rad-security.md
 4a8181eadee679b8558fe125d10df9c1  doc/bc/6.0/redirect-query-and-image-alias-guards.md
@@ -3068,7 +3068,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-1b76c2e09aa10c25bd0442d8e7a81d58  doc/changelogs/6.0/6.0.15.md
+e1b45315bf176cacbc4c205e0de91987  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -4990,7 +4990,8 @@ dc082dd96e41677e348d1721ead53183  kernel/classes/datatypes/ezxmltext/ezxmlinputh
 780b1fb0c79d14967b60b12b8b7dc9e3  kernel/classes/datatypes/ezxmltext/handlers/output/ezxhtmlxmloutput.php
 666c69c2b4d8f820ef56fee531b78ee9  kernel/classes/debugbar/expdebugbariplist.php
 b1e2b2eda4d2bbe754381b546a983f28  kernel/classes/debugbar/expdebugbarlog.php
-6dd9e1ed7d41968d2cf6e40053836913  kernel/classes/debugbar/expdebugbarregistry.php
+a705b7b9949ecc7715ea6659cee28f45  kernel/classes/debugbar/expdebugbarpanelinterface.php
+beb37980ae16c730c675be377ddb24a8  kernel/classes/debugbar/expdebugbarregistry.php
 97cd8ffd5cf12239d7c5dc01ebf2599e  kernel/classes/debugbar/expdebugbarserverfunctions.php
 a5a49ed6cf0490a3dd6bb00d8c1a1d45  kernel/classes/debugbar/expdebugbarsettings.php
 b1e60e81fdb21e7d85d9a6874999cb63  kernel/classes/debugbar/expdebugbarsummary.php
@@ -6121,7 +6122,7 @@ f2c50c5f8c0e207075044631515494e3  kernel/setup/exphandlerwizard.php
 fd65c2cce9e61492592c18344e029370  kernel/setup/expmoduleextensionwizard.php
 b9392be853cb2039808b3bae645020b3  kernel/setup/expmodulewizard.php
 13e4e1c42da6fa4cd090425a4afb2e25  kernel/setup/exppreloadrunner.php
-30e20c321a3d281d0decabb7e8a821ff  kernel/setup/expradcatalogue.php
+d3ea20d766c7626faa10b17d67e67f90  kernel/setup/expradcatalogue.php
 f0085160fe76a946a6b16270ea5e6262  kernel/setup/expradhealth.php
 63966bfa64081ffffca7171f20c95e3f  kernel/setup/expradsurvey.php
 dd66c27efaf05f70d9ac86a5db71289f  kernel/setup/expsettingsextensionwizard.php
@@ -6484,7 +6485,7 @@ d27d72fa632723c912c0e30955660dfb  lib/eztemplate/classes/eztemplatetreecache.php
 83db4deedb094ab56e41666aa89d1d45  lib/eztemplate/classes/eztemplateunitoperator.php
 c86873ded14533e5c2c8d74477b5b0c9  lib/eztemplate/classes/eztemplatevariableelement.php
 290175b9eca3990307842ecc8353ae59  lib/eztemplate/classes/eztemplatewhilefunction.php
-bd2a8873a9dd7a0069f7074c769d1b98  lib/ezutils/classes/expdebugbarreport.php
+4a71492cc046d8965409496aa9902ee7  lib/ezutils/classes/expdebugbarreport.php
 b55898a868b558383b32af3334bd55d6  lib/ezutils/classes/expinfo.php
 11982ee3f90617fbf7ddbb55b4806286  lib/ezutils/classes/ezcachehelper.php
 65418d73b97109fe1dc0fc642c93139e  lib/ezutils/classes/ezcli.php
@@ -6559,7 +6560,7 @@ d5020c505e699f2d0f7606e505c9a8d2  settings/datatype.ini
 ea68c5ba8eb753c5292a1c4dd3a5b2bc  settings/datetime.ini
 9197ab21aa5e2f4e44eb3950d1753461  settings/dbschema.ini
 0c09e0bf093c0f1f18f97705355d487c  settings/debug.ini
-7eaa0be7d34049407c78bb9e0ec11e04  settings/debugbar.ini
+72fd934555ea3516d76e99cb61361b41  settings/debugbar.ini
 3632eb3857e5abeb8ff86e0a21f9b57c  settings/design.ini
 32345e49a48d1f9bf1251ad9dde479b7  settings/error.ini
 4209ce0fc8d74237bef6f2415d450959  settings/extendedattributefilter.ini
@@ -7758,6 +7759,7 @@ cc71014b46954ff2444ae1742ce6663f  tests/tests/kernel/classes/datatypes/eZUserDat
 de8e0e6d470a5d3b5ab49812c8dd4a52  tests/tests/kernel/classes/datatypes/expCountryGroupsTest.php
 3dc0333408fb6ae63ad09e93427f72d5  tests/tests/kernel/classes/debugbar/RadSurveyDebugBarTest.php
 e957ce257ff45aa0025d9ba25e8e9a5c  tests/tests/kernel/classes/debugbar/expDebugBarIPListTest.php
+71451cc17604fc01607da6319a403e84  tests/tests/kernel/classes/debugbar/expDebugBarPanelsTest.php
 3afd50615887db52cfda0599f741eed7  tests/tests/kernel/classes/debugbar/expDebugBarQueryCacheTest.php
 d3f4c6a7061e2f6b8d54c27e22d3e5c7  tests/tests/kernel/classes/debugbar/expDebugBarSettingsTest.php
 d0f1077b7412d5471c3025b0e6e47260  tests/tests/kernel/classes/eZCollaborationItemTest.php
