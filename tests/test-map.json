@@ -1000,6 +1000,9 @@
     ],
     "extension/ezjscore/classes/ezjscserverfunctionspublishingqueue.php": [
       "tests/tests/extension/ezjscore/ezjscServerFunctionsPublishingQueueStatusTest.php"
+    ],
+    "design/standard/javascript/ezasynchronouspublishing.js": [
+      "tests/tests/design/AsynchronousPublishingLinkTest.php"
     ]
   },
   "generated": {
