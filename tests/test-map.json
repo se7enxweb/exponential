@@ -467,17 +467,21 @@
       "tests/tests/design/AdminBrowseCurrentNodeTest.php"
     ],
     "design/admin/templates/children_detailed.tpl": [
-      "tests/tests/design/AdminJobTranslationsTest.php"
+      "tests/tests/design/AdminJobTranslationsTest.php",
+      "tests/tests/design/AdminStoredValueEscapingTest.php"
     ],
     "design/admin4/templates/children_detailed.tpl": [
       "tests/tests/design/AdminJobTranslationsTest.php",
-      "tests/tests/design/AdminSubitemsPriorityDragTest.php"
+      "tests/tests/design/AdminSubitemsPriorityDragTest.php",
+      "tests/tests/design/AdminStoredValueEscapingTest.php"
     ],
     "design/admin/templates/contentstructuremenu/content_structure_menu_dynamic.tpl": [
-      "tests/tests/design/AdminJobTranslationsTest.php"
+      "tests/tests/design/AdminJobTranslationsTest.php",
+      "tests/tests/design/AdminStoredValueEscapingTest.php"
     ],
     "design/admin4/templates/contentstructuremenu/content_structure_menu_dynamic.tpl": [
-      "tests/tests/design/AdminJobTranslationsTest.php"
+      "tests/tests/design/AdminJobTranslationsTest.php",
+      "tests/tests/design/AdminStoredValueEscapingTest.php"
     ],
     "design/admin4/templates/content/job*.tpl": [
       "tests/tests/design/AdminJobTranslationsTest.php"
@@ -994,6 +998,75 @@
     "kernel/setup/steps/ezstep_create_sites.php": [
       "tests/tests/kernel/classes/setup/AdminUISiteaccessTest.php",
       "tests/tests/kernel/classes/setup/EditorSiteaccessTabsTest.php"
+    ],
+    "kernel/classes/ezpackage.php": [
+      "tests/tests/kernel/classes/packages/eZPackageDefinitionTest.php"
+    ],
+    "design/admin/templates/package/*": [
+      "tests/tests/design/AdminStoredValueEscapingTest.php"
+    ],
+    "design/admin4/templates/package/*": [
+      "tests/tests/design/AdminStoredValueEscapingTest.php"
+    ],
+    "design/admin/templates/content/browse.tpl": [
+      "tests/tests/design/AdminStoredValueEscapingTest.php"
+    ],
+    "design/admin4/templates/content/browse.tpl": [
+      "tests/tests/design/AdminStoredValueEscapingTest.php"
+    ],
+    "design/admin/templates/pagelayout.tpl": [
+      "tests/tests/design/AdminStoredValueEscapingTest.php"
+    ],
+    "design/admin4/templates/pagelayout.tpl": [
+      "tests/tests/design/AdminStoredValueEscapingTest.php"
+    ],
+    "design/admin/templates/visual/templatecreate.tpl": [
+      "tests/tests/design/AdminStoredValueEscapingTest.php"
+    ],
+    "design/admin4/templates/visual/templatecreate.tpl": [
+      "tests/tests/design/AdminStoredValueEscapingTest.php"
+    ],
+    "design/admin/templates/visual/toolbar.tpl": [
+      "tests/tests/design/AdminStoredValueEscapingTest.php"
+    ],
+    "design/admin4/templates/visual/toolbar.tpl": [
+      "tests/tests/design/AdminStoredValueEscapingTest.php"
+    ],
+    "design/admin/templates/workflow/workflowlist.tpl": [
+      "tests/tests/design/AdminStoredValueEscapingTest.php"
+    ],
+    "design/admin4/templates/workflow/workflowlist.tpl": [
+      "tests/tests/design/AdminStoredValueEscapingTest.php"
+    ],
+    "design/admin/templates/workflow/eventtype/edit/event_ezwaituntildate.tpl": [
+      "tests/tests/design/AdminStoredValueEscapingTest.php"
+    ],
+    "design/admin4/templates/workflow/eventtype/edit/event_ezwaituntildate.tpl": [
+      "tests/tests/design/AdminStoredValueEscapingTest.php"
+    ],
+    "design/admin/templates/shop/orderview.tpl": [
+      "tests/tests/design/AdminStoredValueEscapingTest.php"
+    ],
+    "design/admin4/templates/shop/orderview.tpl": [
+      "tests/tests/design/AdminStoredValueEscapingTest.php"
+    ],
+    "design/admin/templates/shop/currencylist.tpl": [
+      "tests/tests/design/AdminStoredValueEscapingTest.php"
+    ],
+    "design/admin4/templates/shop/currencylist.tpl": [
+      "tests/tests/design/AdminStoredValueEscapingTest.php"
+    ],
+    "design/admin/templates/error/shop/3.tpl": [
+      "tests/tests/design/AdminStoredValueEscapingTest.php"
+    ],
+    "design/admin4/templates/error/shop/3.tpl": [
+      "tests/tests/design/AdminStoredValueEscapingTest.php"
+    ],
+    "design/admin/templates/error/shop/4.tpl": [
+      "tests/tests/design/AdminStoredValueEscapingTest.php"
+    ],
+    "design/admin4/templates/error/shop/4.tpl": [
+      "tests/tests/design/AdminStoredValueEscapingTest.php"
     ]
   },
   "generated": {
