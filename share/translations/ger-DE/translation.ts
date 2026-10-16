@@ -68968,6 +68968,70 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Templates compiled in this request</source>
         <translation>In dieser Anfrage kompilierte Templates</translation>
     </message>
+    <message>
+        <source>CB %hits/%count</source>
+        <translation>CB %hits/%count</translation>
+    </message>
+    <message>
+        <source>Cache blocks: %hits of %count read from the cache, %generated ms to generate the others (outermost blocks)</source>
+        <translation>Cache-Blöcke: %hits von %count aus dem Cache gelesen, %generated ms für das Erzeugen der übrigen (äußerste Blöcke)</translation>
+    </message>
+    <message>
+        <source>Cache blocks</source>
+        <translation>Cache-Blöcke</translation>
+    </message>
+    <message>
+        <source>No cache-block ran on this page.</source>
+        <translation>Auf dieser Seite lief kein cache-block.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache; %lookup ms to look them up, %generated ms to generate the others (outermost blocks; a row's time holds the blocks inside it).</source>
+        <translation>%hits von %count aus dem Cache gelesen; %lookup ms zum Nachschlagen, %generated ms für das Erzeugen der übrigen (äußerste Blöcke; die Zeit einer Zeile enthält die Blöcke darin).</translation>
+    </message>
+    <message>
+        <source>The first %shown are listed.</source>
+        <translation>Die ersten %shown sind aufgeführt.</translation>
+    </message>
+    <message>
+        <source>hit</source>
+        <translation>Treffer</translation>
+    </message>
+    <message>
+        <source>generated</source>
+        <translation>erzeugt</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>nicht gefunden</translation>
+    </message>
+    <message>
+        <source>Lookup</source>
+        <translation>Nachschlagen</translation>
+    </message>
+    <message>
+        <source>Generation</source>
+        <translation>Erzeugung</translation>
+    </message>
+    <message>
+        <source>Expiry</source>
+        <translation>Ablauf</translation>
+    </message>
+    <message>
+        <source>Keys</source>
+        <translation>Schlüssel</translation>
+    </message>
+    <message>
+        <source>keys</source>
+        <translation>Schlüssel</translation>
+    </message>
+    <message>
+        <source>unknown (custom code, or a template compiled before)</source>
+        <translation>unbekannt (eigener Code oder ein früher kompiliertes Template)</translation>
+    </message>
+    <message>
+        <source>subtree %node</source>
+        <translation>Teilbaum %node</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/audit</name>

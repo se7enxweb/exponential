@@ -21,6 +21,9 @@ class expRenderStats
     /** Views noted at most: an error page or a forward runs a few, a loop must not grow the list without end */
     const MAX_VIEWS = 20;
 
+    /** Cache blocks noted at most; a block in a loop of a long list runs once per item */
+    const MAX_CACHE_BLOCKS = 200;
+
     /** @var array list of array( 'module', 'view', 'script', 'class' ) in the order they ran */
     protected static $views = array();
 
@@ -30,12 +33,28 @@ class expRenderStats
     /** @var array 'compiled' => templates compiled now, 'executed' => templates run from the compiled cache */
     protected static $templates = array( 'compiled' => array(), 'executed' => 0 );
 
+    /** @var array list of cache blocks, see cacheBlocks() */
+    protected static $cacheBlocks = array();
+
+    /** @var array 'count', 'hits', 'lookup_ms', 'generate_ms' over every block, also those past MAX_CACHE_BLOCKS */
+    protected static $cacheBlockTotals = array( 'count' => 0, 'hits' => 0, 'lookup_ms' => 0.0, 'generate_ms' => 0.0 );
+
+    /** @var array handler id => index in $cacheBlocks of a block that is being generated */
+    protected static $pendingBlocks = array();
+
+    /** @var int blocks of the uncompiled path being generated; with $pendingBlocks they tell an outermost block */
+    protected static $generating = 0;
+
     /** A new request: nothing noted yet. */
     public static function resetRequest()
     {
         self::$views = array();
         self::$viewCache = null;
         self::$templates = array( 'compiled' => array(), 'executed' => 0 );
+        self::$cacheBlocks = array();
+        self::$cacheBlockTotals = array( 'count' => 0, 'hits' => 0, 'lookup_ms' => 0.0, 'generate_ms' => 0.0 );
+        self::$pendingBlocks = array();
+        self::$generating = 0;
     }
 
     protected static function enabled()
@@ -179,6 +198,128 @@ class expRenderStats
         if ( !self::enabled() )
             return;
         self::$templates['executed']++;
+    }
+
+    /**
+     * A cache-block was looked up (eZTemplateCacheBlock::handle()).
+     *
+     * @param int $handlerId spl_object_id() of the cache handler, which store() gets again after a miss
+     * @param string $path the cache file
+     * @param string|false $placement eZTemplateCacheBlock::placementString(): lines, columns and template; false from
+     *                                a template compiled before the debug bar named the blocks
+     * @param mixed $keys the block's keys, null without
+     * @param int|false $nodeID the subtree_expiry node
+     * @param int|null $ttl seconds, -1 or null without
+     * @param bool $hit
+     * @param float $lookupMs
+     * @param float|null $generateMs when the block was generated already (the uncompiled path)
+     * @param int|null $size bytes of the content read or generated
+     */
+    public static function noteCacheBlock( $handlerId, $path, $placement, $keys, $nodeID, $ttl, $hit, $lookupMs, $generateMs = null, $size = null )
+    {
+        if ( !self::enabled() )
+            return;
+        // a handler id is reused once its object is gone: an entry left by a block whose store never ran is stale
+        unset( self::$pendingBlocks[(int)$handlerId] );
+        self::$cacheBlockTotals['count']++;
+        self::$cacheBlockTotals['lookup_ms'] += (float)$lookupMs;
+        if ( $hit )
+            self::$cacheBlockTotals['hits']++;
+        // the total counts the outermost blocks only: an outer block's time holds those inside it
+        if ( $generateMs !== null && self::$generating === 0 && !self::$pendingBlocks )
+            self::$cacheBlockTotals['generate_ms'] += (float)$generateMs;
+        if ( count( self::$cacheBlocks ) >= self::MAX_CACHE_BLOCKS )
+            return;
+        $template = null;
+        $line = null;
+        if ( is_string( $placement ) && $placement !== '' )
+        {
+            // start line _ start column _ end line _ end column _ template (which may itself hold underscores)
+            $parts = explode( '_', $placement, 5 );
+            if ( count( $parts ) === 5 )
+            {
+                $line = (int)$parts[0];
+                $template = $parts[4];
+            }
+        }
+        self::$cacheBlocks[] = array( 'template' => $template, 'line' => $line, 'path' => (string)$path, 'keys' => self::keysText( $keys ),
+                                      'node_id' => $nodeID === false || $nodeID === null ? null : (int)$nodeID,
+                                      'ttl' => $ttl === null || (int)$ttl <= 0 ? null : (int)$ttl,
+                                      'state' => $hit ? 'hit' : ( $generateMs !== null ? 'generated' : 'pending' ),
+                                      'lookup_ms' => (float)$lookupMs, 'generate_ms' => $generateMs === null ? null : (float)$generateMs,
+                                      'size' => $size === null ? null : (int)$size, 'started' => microtime( true ) );
+        if ( !$hit && $generateMs === null )
+            self::$pendingBlocks[(int)$handlerId] = count( self::$cacheBlocks ) - 1;
+    }
+
+    /**
+     * A cache-block that was not found was generated and stored (eZTemplateCacheBlock::store()).
+     *
+     * @param int $handlerId
+     * @param int $bytes
+     */
+    public static function noteCacheBlockStored( $handlerId, $bytes )
+    {
+        if ( !self::enabled() || !isset( self::$pendingBlocks[(int)$handlerId] ) )
+            return;
+        $i = self::$pendingBlocks[(int)$handlerId];
+        unset( self::$pendingBlocks[(int)$handlerId] );
+        $ms = ( microtime( true ) - self::$cacheBlocks[$i]['started'] ) * 1000;
+        self::$cacheBlocks[$i]['state'] = 'generated';
+        self::$cacheBlocks[$i]['generate_ms'] = $ms;
+        self::$cacheBlocks[$i]['size'] = (int)$bytes;
+        if ( self::$generating === 0 && !self::$pendingBlocks )
+            self::$cacheBlockTotals['generate_ms'] += $ms;
+    }
+
+    /** The uncompiled path starts generating a block (eZTemplateCacheFunction::generateProcessedContent()). */
+    public static function cacheBlockGenerationStarted()
+    {
+        if ( self::enabled() )
+            self::$generating++;
+    }
+
+    /** ... and has generated it. */
+    public static function cacheBlockGenerationEnded()
+    {
+        if ( self::enabled() && self::$generating > 0 )
+            self::$generating--;
+    }
+
+    /** The keys of a block as text: scalars as they are, arrays as JSON; objects by their class only */
+    protected static function keysText( $keys )
+    {
+        if ( $keys === null )
+            return null;
+        if ( is_scalar( $keys ) )
+            return (string)$keys;
+        $plain = function ( $value ) use ( &$plain )
+        {
+            if ( is_array( $value ) )
+                return array_map( $plain, $value );
+            return is_object( $value ) ? '(' . get_class( $value ) . ')' : $value;
+        };
+        $text = json_encode( $plain( $keys ), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PARTIAL_OUTPUT_ON_ERROR );
+        return $text === false ? '' : $text;
+    }
+
+    /**
+     * @return array list of template, line, path, keys (text or null), node_id, ttl, state (hit, generated, pending:
+     *               not found and not stored, as an old compiled template does not report it), lookup_ms,
+     *               generate_ms (inclusive of nested blocks), size
+     */
+    public static function cacheBlocks()
+    {
+        $blocks = self::$cacheBlocks;
+        foreach ( $blocks as &$block )
+            unset( $block['started'] );
+        return $blocks;
+    }
+
+    /** @return array count, hits, lookup_ms, generate_ms (of the outermost blocks) over every block of the request */
+    public static function cacheBlockTotals()
+    {
+        return self::$cacheBlockTotals;
     }
 
     /** @return array list of array( 'module', 'view', 'script', 'class' ) */

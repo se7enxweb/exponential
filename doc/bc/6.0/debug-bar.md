@@ -468,7 +468,7 @@ it was last cleared, and all caches. Each clear says what it did.
 ### Rendering: controller, content view cache and compiled templates
 
 The tab answers "why is this page slow or not cached" without reading the code. Only a user with `setup/setup` sees
-it and its chips, as the cache key carries the role and limitation ids of the user. It has three parts:
+it and its chips, as the cache key carries the role and limitation ids of the user. It has four parts:
 
 - **Controller**: every module view that ran, in order (an error page or a forward adds one), with the view class
   that ran it (`Exponential\View\Kernel\...`, see [cli_cronjob_view_abstractions.md](cli_cronjob_view_abstractions.md))
@@ -485,16 +485,26 @@ it and its chips, as the cache key carries the role and limitation ids of the us
 | Generated without storing it in the cache | View: new | the cache file said `no_cache` (a view that sets `no_cache` leaves only that note in its file), or the result is not kept |
 | Not used | View: off | `ViewCaching` disabled, the caller turned it off (`$Params['ViewCache']`), the view mode is not in `CachedViewModes`, or `ViewCacheTweaks[<node>]` contains `disabled` |
 
+- **Cache blocks**: every `{cache-block}` in the order it was looked up, with the template and line, the state (hit,
+  generated, not found), the time to look it up and to generate it (an outer block's time holds the blocks inside
+  it), the size, the expiry (`expiry`, `subtree_expiry`) and, folded, the keys and the cache file. At most 200 rows;
+  the line above the table counts every block. The chip **CB hits/count** is raised while a block was not read from
+  the cache. A template compiled before this version names no template and no generation time: clear the template
+  cache once (`php bin/php/ezcache.php --clear-tag=template`). Code that calls `eZTemplateCacheBlock::retrieve()`
+  itself (`content/treemenu`) shows its keys without a template.
 - **Templates**: `ViewCaching`, `TemplateCompile`, `CompileExecution`, `TemplateCache` and `DevelopmentMode` in
   effect, how often a compiled template ran and how many were compiled in this request, with their files. The chip
   **Compiled N** is raised while N is not 0: right after a template cache clear every template is compiled once.
 
 Values longer than 200 characters are cut; the whole value is the tooltip. The collector is `expRenderStats`
 (`kernel/classes/debugbar/exprenderstats.php`). The kernel notes into it where it decides (`eZModule::run()`,
-`ModuleView::main()`, the content/view view, `eZNodeviewfunctions`, `eZTemplateCompiler`); every note returns at once
-without debug output, and `ezpKernelWeb` starts each request empty, also in a persistent worker.
+`ModuleView::main()`, the content/view view, `eZNodeviewfunctions`, `eZTemplateCompiler`, `eZTemplateCacheBlock`);
+every note returns at once without debug output, and `ezpKernelWeb` starts each request empty, also in a persistent
+worker. The compiled code of a cache-block passes its placement to `eZTemplateCacheBlock::handle()` (new optional
+parameters `$placement` and `$keys`) and stores through `eZTemplateCacheBlock::store()`, which notes the generation
+time; custom code that calls `handle()` or `storeCache()` as before keeps working.
 
-Test: `expRenderStatsTest` (no database).
+Tests: `expRenderStatsTest` and `expRenderStatsCacheBlockTest` (no database).
 
 ### Velocity: where the request entered and what rendered it
 

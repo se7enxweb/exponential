@@ -65994,6 +65994,70 @@ Tendrás que cambiar la clase del nudo mediante la función de intercambio.</tra
         <source>Templates compiled in this request</source>
         <translation>Plantillas compiladas en esta petición</translation>
     </message>
+    <message>
+        <source>CB %hits/%count</source>
+        <translation>CB %hits/%count</translation>
+    </message>
+    <message>
+        <source>Cache blocks: %hits of %count read from the cache, %generated ms to generate the others (outermost blocks)</source>
+        <translation>Bloques de caché: %hits de %count leídos de la caché, %generated ms para generar los demás (bloques exteriores)</translation>
+    </message>
+    <message>
+        <source>Cache blocks</source>
+        <translation>Bloques de caché</translation>
+    </message>
+    <message>
+        <source>No cache-block ran on this page.</source>
+        <translation>En esta página no se ejecutó ningún cache-block.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache; %lookup ms to look them up, %generated ms to generate the others (outermost blocks; a row's time holds the blocks inside it).</source>
+        <translation>%hits de %count leídos de la caché; %lookup ms para buscarlos, %generated ms para generar los demás (bloques exteriores; el tiempo de una fila incluye los bloques que contiene).</translation>
+    </message>
+    <message>
+        <source>The first %shown are listed.</source>
+        <translation>Se muestran los primeros %shown.</translation>
+    </message>
+    <message>
+        <source>hit</source>
+        <translation>acierto</translation>
+    </message>
+    <message>
+        <source>generated</source>
+        <translation>generado</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>no encontrado</translation>
+    </message>
+    <message>
+        <source>Lookup</source>
+        <translation>Búsqueda</translation>
+    </message>
+    <message>
+        <source>Generation</source>
+        <translation>Generación</translation>
+    </message>
+    <message>
+        <source>Expiry</source>
+        <translation>Caducidad</translation>
+    </message>
+    <message>
+        <source>Keys</source>
+        <translation>Claves</translation>
+    </message>
+    <message>
+        <source>keys</source>
+        <translation>claves</translation>
+    </message>
+    <message>
+        <source>unknown (custom code, or a template compiled before)</source>
+        <translation>desconocido (código propio o una plantilla compilada antes)</translation>
+    </message>
+    <message>
+        <source>subtree %node</source>
+        <translation>subárbol %node</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
