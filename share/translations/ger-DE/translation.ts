@@ -11778,7 +11778,7 @@
         <translation>Abgelegt. Die Reihenfolge ist unverändert.</translation>
     </message>
     <message>
-        <source>Move cancelled. %name is back at position %position of %count.</source>
+        <source>Move canceled. %name is back at position %position of %count.</source>
         <translation>Verschieben abgebrochen. %name ist wieder auf Position %position von %count.</translation>
     </message>
     <message>
