@@ -79,7 +79,12 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
   (`design:parts/a4_preference_attributes.tpl`, `data-a4-pref-*`) and saves them through
   `user/preferences/set_and_exit`. An anonymous page keeps them in the browser (`localStorage`) only; a browser
   choice made before is taken along once. A preference that cannot be saved is kept in the browser instead, and
-  `set( name, '' )` forgets a choice (the preference set empty, the browser's copy removed). `tests/tests/design/AdminPreferencesTest.php` checks it.
+  `set( name, '' )` forgets a choice (the preference set empty, the browser's copy removed). `set()` sends nothing
+  when the value is already the one on `<html>`, so a page view writes no preference back. `set( name, value,
+  legacyKey, share )`: with `share` a saved value is also written to `localStorage`, so other open tabs follow (the
+  color mode does this). The left column's width (`admin_left_menu_size`) and the node view's tab switch
+  (`admin_navigation_content`) are saved through `window.a4Pref` too; a width that could not be saved is drawn from
+  the browser (`exp-a4-admin_left_menu_size`) while no preference and no preset size is set. `tests/tests/design/AdminPreferencesTest.php` checks it.
 - **Header and top menu.** One row of 56 px from 1280 px (logo, menu, search, site, light/dark, user menu, logout),
   two rows of 48 + 40 px from 576 px, one row of 56 px on a phone with the hamburger menu (logo, site, light/dark,
   menu button). The menu stays on one line; tabs that do not fit go into a "More" list. On a phone the menu opens
@@ -966,6 +971,8 @@ Community". A template can also set `$show_community_links`.
 - admin4 keeps its own copy of `ezajaxsubitems_expdatatable.js`: it must work with no other admin design present, and
   a single copy in `design/standard` would be shadowed by any design that has its own. Change both copies together.
 - The CSS packer used to remove the space before a colon in selectors (`a :hover` became `a:hover`). Fixed.
+- admin4 loads `theme/rounded.css` by name; the `admin_theme` preference of older designs is not read, so an old
+  stored value cannot swap the theme stylesheet.
 
 ## Changes to the other designs on the same day
 
