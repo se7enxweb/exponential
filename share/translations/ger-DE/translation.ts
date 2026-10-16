@@ -69040,6 +69040,42 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>node %node</source>
         <translation>Knoten %node</translation>
     </message>
+    <message>
+        <source>Templates rendered</source>
+        <translation>Gerenderte Templates</translation>
+    </message>
+    <message>
+        <source>%count templates</source>
+        <translation>%count Templates</translation>
+    </message>
+    <message>
+        <source>not compiled</source>
+        <translation>nicht kompiliert</translation>
+    </message>
+    <message>
+        <source>Template tree</source>
+        <translation>Template-Baum</translation>
+    </message>
+    <message>
+        <source>The module views that ran for this request, in order (an error page or a redirect adds one), with the class that ran each view and its script; below them the siteaccess, the navigation part and the design bases in the order templates are looked up.</source>
+        <translation>Die Modulansichten, die für diese Anfrage liefen, in ihrer Reihenfolge (eine Fehlerseite oder eine Weiterleitung fügt eine hinzu), mit der Klasse, die die Ansicht ausführte, und ihrem Skript; darunter der Siteaccess, der Navigationsbereich und die Design-Basen in der Reihenfolge, in der Templates gesucht werden.</translation>
+    </message>
+    <message>
+        <source>Every template this request rendered, in the order it started, nested under the template that included it. An arrow names the file an override chose; otherwise point at a name to see its file. A time holds everything the template included, not the parsing or compiling of the template itself. Templates of a view read from the view cache are not rendered and not listed.</source>
+        <translation>Jedes Template, das diese Anfrage gerendert hat, in der Reihenfolge seines Starts, eingerückt unter dem Template, das es eingebunden hat. Ein Pfeil nennt die Datei, die ein Override gewählt hat; sonst zeigt der Mauszeiger über einem Namen die Datei. Eine Zeit enthält alles, was das Template eingebunden hat, nicht das Parsen oder Kompilieren des Templates selbst. Templates einer Ansicht aus dem View-Cache werden nicht gerendert und nicht aufgeführt.</translation>
+    </message>
+    <message>
+        <source>Whether the content view (content/view) was read from its cache file or generated, and why. The key decides the file: two requests with the same parts share it. Lookup is the time to find and read the file, generation the time to render the view.</source>
+        <translation>Ob die Inhaltsansicht (content/view) aus ihrer Cache-Datei gelesen oder erzeugt wurde, und warum. Der Schlüssel bestimmt die Datei: zwei Anfragen mit denselben Teilen teilen sie. Nachschlagen ist die Zeit zum Finden und Lesen der Datei, Erzeugung die Zeit zum Rendern der Ansicht.</translation>
+    </message>
+    <message>
+        <source>Every {cache-block} in the order it was looked up. A hit costs only the lookup; a generated block renders its content and stores it for the next request. A block inside a generated block only runs then, so the counts differ between a first and a second request.</source>
+        <translation>Jeder {cache-block} in der Reihenfolge, in der er nachgeschlagen wurde. Ein Treffer kostet nur das Nachschlagen; ein erzeugter Block rendert seinen Inhalt und speichert ihn für die nächste Anfrage. Ein Block in einem erzeugten Block läuft nur dann, daher unterscheiden sich die Zahlen zwischen einer ersten und einer zweiten Anfrage.</translation>
+    </message>
+    <message>
+        <source>The settings that decide caching and compiling, and how many templates ran from the compiled cache or were compiled now. Right after a template cache clear every template is compiled once.</source>
+        <translation>Die Einstellungen, die über Cache und Kompilierung entscheiden, und wie viele Templates aus dem kompilierten Cache liefen oder jetzt kompiliert wurden. Direkt nach dem Leeren des Template-Caches wird jedes Template einmal kompiliert.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/audit</name>

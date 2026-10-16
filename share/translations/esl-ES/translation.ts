@@ -66066,6 +66066,42 @@ Tendrás que cambiar la clase del nudo mediante la función de intercambio.</tra
         <source>node %node</source>
         <translation>nodo %node</translation>
     </message>
+    <message>
+        <source>Templates rendered</source>
+        <translation>Plantillas renderizadas</translation>
+    </message>
+    <message>
+        <source>%count templates</source>
+        <translation>%count plantillas</translation>
+    </message>
+    <message>
+        <source>not compiled</source>
+        <translation>sin compilar</translation>
+    </message>
+    <message>
+        <source>Template tree</source>
+        <translation>Árbol de plantillas</translation>
+    </message>
+    <message>
+        <source>The module views that ran for this request, in order (an error page or a redirect adds one), with the class that ran each view and its script; below them the siteaccess, the navigation part and the design bases in the order templates are looked up.</source>
+        <translation>Las vistas de módulo que se ejecutaron para esta petición, en orden (una página de error o una redirección añade una), con la clase que ejecutó cada vista y su script; debajo, el siteaccess, la parte de navegación y las bases de diseño en el orden en que se buscan las plantillas.</translation>
+    </message>
+    <message>
+        <source>Every template this request rendered, in the order it started, nested under the template that included it. An arrow names the file an override chose; otherwise point at a name to see its file. A time holds everything the template included, not the parsing or compiling of the template itself. Templates of a view read from the view cache are not rendered and not listed.</source>
+        <translation>Cada plantilla que renderizó esta petición, en el orden en que empezó, anidada bajo la plantilla que la incluyó. Una flecha indica el archivo que eligió un override; si no, pase el puntero sobre un nombre para ver su archivo. Un tiempo incluye todo lo que la plantilla incluyó, no el análisis ni la compilación de la propia plantilla. Las plantillas de una vista leída de la caché de vistas no se renderizan ni se listan.</translation>
+    </message>
+    <message>
+        <source>Whether the content view (content/view) was read from its cache file or generated, and why. The key decides the file: two requests with the same parts share it. Lookup is the time to find and read the file, generation the time to render the view.</source>
+        <translation>Si la vista de contenido (content/view) se leyó de su archivo de caché o se generó, y por qué. La clave decide el archivo: dos peticiones con las mismas partes lo comparten. La búsqueda es el tiempo para encontrar y leer el archivo; la generación, el tiempo para renderizar la vista.</translation>
+    </message>
+    <message>
+        <source>Every {cache-block} in the order it was looked up. A hit costs only the lookup; a generated block renders its content and stores it for the next request. A block inside a generated block only runs then, so the counts differ between a first and a second request.</source>
+        <translation>Cada {cache-block} en el orden en que se buscó. Un acierto solo cuesta la búsqueda; un bloque generado renderiza su contenido y lo guarda para la siguiente petición. Un bloque dentro de un bloque generado solo se ejecuta entonces, por eso los recuentos difieren entre una primera y una segunda petición.</translation>
+    </message>
+    <message>
+        <source>The settings that decide caching and compiling, and how many templates ran from the compiled cache or were compiled now. Right after a template cache clear every template is compiled once.</source>
+        <translation>Los ajustes que deciden la caché y la compilación, y cuántas plantillas se ejecutaron desde la caché compilada o se compilaron ahora. Justo después de vaciar la caché de plantillas, cada plantilla se compila una vez.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

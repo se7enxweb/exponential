@@ -519,6 +519,12 @@ class eZTemplate
 
         $text = "";
 
+        // the debug bar's template tree; lib/ does not need the kernel
+        $treeIndex = false;
+        if ( !empty( $GLOBALS['eZDebugEnabled'] ) && $resourceData && class_exists( 'expRenderStats' ) )
+            $treeIndex = expRenderStats::templateEnter( $template, $resourceData['template-filename'] ?? null, $resourceData['template-name'] ?? null,
+                                                        !empty( $resourceData['compiled-template'] ) );
+
         if ( $root !== null or
              !empty( $resourceData['compiled-template'] ) )
         {
@@ -554,6 +560,8 @@ class eZTemplate
         }
 
         eZDebug::accumulatorStop( 'template_total' );
+        if ( $treeIndex !== false )
+            expRenderStats::templateLeave( $treeIndex );
 
         if ( !empty( $resourceData['locales'] ) )
         {
@@ -835,6 +843,12 @@ class eZTemplate
 
         $templateCompilationUsed = false;
 
+        // the debug bar's template tree; lib/ does not need the kernel
+        $treeIndex = false;
+        if ( !empty( $GLOBALS['eZDebugEnabled'] ) && class_exists( 'expRenderStats' ) )
+            $treeIndex = expRenderStats::templateEnter( $uri, $resourceData['template-filename'] ?? null, $resourceData['template-name'] ?? null,
+                                                        !empty( $resourceData['compiled-template'] ) );
+
         if ( $resourceData['locales'] && !empty( $resourceData['locales'] ) )
         {
             $savedLocale = setlocale( LC_CTYPE, null );
@@ -893,6 +907,8 @@ class eZTemplate
         {
             setlocale( LC_CTYPE, $savedLocale );
         }
+        if ( $treeIndex !== false )
+            expRenderStats::templateLeave( $treeIndex );
         $this->Level--;
 
     }

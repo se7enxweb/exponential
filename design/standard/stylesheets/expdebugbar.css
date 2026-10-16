@@ -332,3 +332,14 @@ textarea.exp-debug-copy-area { position: fixed; top: 0; left: -9999px; width: 1p
 #debug table.exp-debug-querycache-table .exp-debug-num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
 #debug table.exp-debug-querycache-table th:last-child, #debug table.exp-debug-querycache-table td:last-child { padding-right: 0; }
 #debug .exp-debug-panel fieldset h4 { font-size: 13px; font-weight: 600; margin: 10px 0 2px; }
+/* the Rendering tab: a hint under each heading, and the template tree with one line per template and a guide line per level */
+#debug .exp-debug-panel .exp-debug-render-explain { color: var(--xd-fg-soft); font-size: 12px; margin: 0 0 6px; max-width: 72em; }
+#debug .exp-debug-render-tree > summary { font-weight: 600; cursor: pointer; margin: 4px 0; }
+#debug ul.exp-debug-tree, #debug ul.exp-debug-tree ul { list-style: none; margin: 0; padding: 0; }
+#debug ul.exp-debug-tree { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; line-height: 1.6;
+  background: var(--xd-bg-soft); border: 1px solid var(--xd-line); padding: 6px 10px; overflow-x: auto; }
+#debug ul.exp-debug-tree ul { margin-left: 6px; padding-left: 12px; border-left: 1px solid var(--xd-line-strong); }
+#debug ul.exp-debug-tree li { white-space: nowrap; overflow-wrap: normal; }
+#debug ul.exp-debug-tree code { font-family: inherit; color: var(--xd-fg); background: transparent; }
+#debug .exp-debug-render-override { color: var(--xd-accent); font-weight: 600; }
+#debug .exp-debug-render-ms { color: var(--xd-fg-soft); }

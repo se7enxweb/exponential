@@ -468,12 +468,21 @@ it was last cleared, and all caches. Each clear says what it did.
 ### Rendering: controller, content view cache and compiled templates
 
 The tab answers "why is this page slow or not cached" without reading the code. Only a user with `setup/setup` sees
-it and its chips, as the cache key carries the role and limitation ids of the user. It has four parts:
+it and its chips, as the cache key carries the role and limitation ids of the user. Each part opens with a short
+explanation of what it shows. It has five parts:
 
 - **Controller**: every module view that ran, in order (an error page or a forward adds one), with the view class
   that ran it (`Exponential\View\Kernel\...`, see [cli_cronjob_view_abstractions.md](cli_cronjob_view_abstractions.md))
   and the script; the siteaccess, the navigation part and, folded, the design order (the first base that has a
   template wins).
+- **Template tree**, right after the controller and open: every template in the order it started
+  (`eZTemplate::fetch()` for the outermost, `processURI()` for each `{include}`, `node_view_gui` and the like), nested
+  under the template that included it with a guide line per level, and the time it took including what it included
+  (not the parsing or compiling of the template itself). Where the overrides chose another file than the template's
+  own place in a design (`node/view/full.tpl` → `.../override/templates/full/folder.tpl`) the file follows the name
+  in the accent colour; otherwise the file is the tooltip. A template run without the compiler is marked *not
+  compiled*. Templates of a view read from the view cache are not rendered and so not listed. At most 2000 entries,
+  every template counted; `debugbar.ini [DebugBarSettings] RenderTree=disabled` leaves the tree out.
 - **Content view cache**, when a content view ran: one row laid out like the cache blocks below, with the node and
   view mode, the state and its reason, the time to look the file up and to generate the view, the size, the file's
   age, and folded the key part by part as it was hashed, with the hash and the cache file. A part a
@@ -494,18 +503,19 @@ it and its chips, as the cache key carries the role and limitation ids of the us
   cache once (`php bin/php/ezcache.php --clear-tag=template`). Code that calls `eZTemplateCacheBlock::retrieve()`
   itself (`content/treemenu`) shows its keys without a template.
 - **Templates**: `ViewCaching`, `TemplateCompile`, `CompileExecution`, `TemplateCache` and `DevelopmentMode` in
-  effect, how often a compiled template ran and how many were compiled in this request, with their files. The chip
-  **Compiled N** is raised while N is not 0: right after a template cache clear every template is compiled once.
+  effect, how many templates were rendered, how often a compiled template ran and how many were compiled in this
+  request, with their files. The chip **Compiled N** is raised while N is not 0: right after a template cache clear
+  every template is compiled once.
 
 Values longer than 200 characters are cut; the whole value is the tooltip. The collector is `expRenderStats`
 (`kernel/classes/debugbar/exprenderstats.php`). The kernel notes into it where it decides (`eZModule::run()`,
-`ModuleView::main()`, the content/view view, `eZNodeviewfunctions`, `eZTemplateCompiler`, `eZTemplateCacheBlock`);
+`ModuleView::main()`, the content/view view, `eZNodeviewfunctions`, `eZTemplateCompiler`, `eZTemplateCacheBlock`, `eZTemplate`);
 every note returns at once without debug output, and `ezpKernelWeb` starts each request empty, also in a persistent
 worker. The compiled code of a cache-block passes its placement to `eZTemplateCacheBlock::handle()` (new optional
 parameters `$placement` and `$keys`) and stores through `eZTemplateCacheBlock::store()`, which notes the generation
 time; custom code that calls `handle()` or `storeCache()` as before keeps working.
 
-Tests: `expRenderStatsTest` and `expRenderStatsCacheBlockTest` (no database).
+Tests: `expRenderStatsTest`, `expRenderStatsCacheBlockTest` and `expRenderStatsTreeTest` (no database).
 
 ### Velocity: where the request entered and what rendered it
 

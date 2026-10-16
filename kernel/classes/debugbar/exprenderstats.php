@@ -24,6 +24,9 @@ class expRenderStats
     /** Cache blocks noted at most; a block in a loop of a long list runs once per item */
     const MAX_CACHE_BLOCKS = 200;
 
+    /** Templates of the tree noted at most; a line view in a long list runs once per item */
+    const MAX_TREE = 2000;
+
     /** @var array list of array( 'module', 'view', 'script', 'class' ) in the order they ran */
     protected static $views = array();
 
@@ -45,6 +48,18 @@ class expRenderStats
     /** @var int blocks of the uncompiled path being generated; with $pendingBlocks they tell an outermost block */
     protected static $generating = 0;
 
+    /** @var array list of templates in the order they started, see tree() */
+    protected static $tree = array();
+
+    /** @var array indexes in $tree of the templates being rendered, innermost last */
+    protected static $treeStack = array();
+
+    /** @var int templates rendered, also those past MAX_TREE */
+    protected static $treeCount = 0;
+
+    /** @var bool|null debugbar.ini [DebugBarSettings] RenderTree, read once per request */
+    protected static $treeEnabled = null;
+
     /** A new request: nothing noted yet. */
     public static function resetRequest()
     {
@@ -55,6 +70,10 @@ class expRenderStats
         self::$cacheBlockTotals = array( 'count' => 0, 'hits' => 0, 'lookup_ms' => 0.0, 'generate_ms' => 0.0 );
         self::$pendingBlocks = array();
         self::$generating = 0;
+        self::$tree = array();
+        self::$treeStack = array();
+        self::$treeCount = 0;
+        self::$treeEnabled = null;
     }
 
     protected static function enabled()
@@ -341,6 +360,7 @@ class expRenderStats
         $blocks = self::$cacheBlocks;
         foreach ( $blocks as &$block )
             unset( $block['started'] );
+        unset( $block );
         return $blocks;
     }
 
@@ -348,6 +368,97 @@ class expRenderStats
     public static function cacheBlockTotals()
     {
         return self::$cacheBlockTotals;
+    }
+
+    /** Whether the template tree is recorded: debug output on and debugbar.ini [DebugBarSettings] RenderTree enabled */
+    protected static function treeEnabled()
+    {
+        if ( !self::enabled() )
+            return false;
+        if ( self::$treeEnabled === null )
+        {
+            self::$treeEnabled = false;
+            if ( class_exists( 'eZINI' ) )
+            {
+                $ini = eZINI::instance( 'debugbar.ini' );
+                self::$treeEnabled = !$ini->hasVariable( 'DebugBarSettings', 'RenderTree' )
+                                     || $ini->variable( 'DebugBarSettings', 'RenderTree' ) !== 'disabled';
+            }
+        }
+        return self::$treeEnabled;
+    }
+
+    /**
+     * A template starts rendering (eZTemplate::fetch() for the outermost one, processURI() for an {include}, a
+     * node_view_gui, ...).
+     *
+     * @param string $uri what was asked for (design:node/view/full.tpl)
+     * @param string|null $file the file that was used, after the overrides
+     * @param string|null $name the template name the design resource matched
+     * @param bool $compiled whether it runs from the compiled cache
+     * @return int|false what templateLeave() gets back (-1 for a template past MAX_TREE, which is counted, not
+     *                   listed); false when the tree is not recorded
+     */
+    public static function templateEnter( $uri, $file, $name, $compiled )
+    {
+        if ( !self::treeEnabled() )
+            return false;
+        self::$treeCount++;
+        if ( count( self::$tree ) >= self::MAX_TREE )
+        {
+            // still tracked for the depth of what follows, never listed
+            self::$treeStack[] = -1;
+            return -1;
+        }
+        $parent = self::$treeStack ? end( self::$treeStack ) : -1;
+        self::$tree[] = array( 'uri' => (string)$uri, 'file' => $file === null ? null : (string)$file,
+                               'name' => $name === null ? null : (string)$name, 'compiled' => (bool)$compiled,
+                               'depth' => count( self::$treeStack ), 'parent' => $parent, 'ms' => null,
+                               'started' => microtime( true ) );
+        $index = count( self::$tree ) - 1;
+        self::$treeStack[] = $index;
+        return $index;
+    }
+
+    /**
+     * The template templateEnter() returned $index for has rendered.
+     *
+     * @param int $index
+     */
+    public static function templateLeave( $index )
+    {
+        // false: not recorded; an index no longer on the stack (left twice) must not empty it
+        if ( $index === false || !self::treeEnabled() || !in_array( $index, self::$treeStack, true ) )
+            return;
+        // the stack holds this template last; one that left without saying so (an exception) is dropped with it
+        while ( self::$treeStack )
+        {
+            $top = array_pop( self::$treeStack );
+            // a template past MAX_TREE is -1: the innermost -1 is its own
+            if ( $top === $index )
+                break;
+        }
+        if ( $index >= 0 && isset( self::$tree[$index] ) )
+            self::$tree[$index]['ms'] = ( microtime( true ) - self::$tree[$index]['started'] ) * 1000;
+    }
+
+    /**
+     * @return array list of uri, file, name, compiled, depth, parent (index or -1), ms (inclusive of what it
+     *               included; null when it did not end)
+     */
+    public static function tree()
+    {
+        $tree = self::$tree;
+        foreach ( $tree as &$entry )
+            unset( $entry['started'] );
+        unset( $entry );
+        return $tree;
+    }
+
+    /** @return int templates rendered in this request, also those past MAX_TREE */
+    public static function treeCount()
+    {
+        return self::$treeCount;
     }
 
     /** @return array list of array( 'module', 'view', 'script', 'class' ) */
