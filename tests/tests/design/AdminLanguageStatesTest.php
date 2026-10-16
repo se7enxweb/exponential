@@ -95,8 +95,10 @@ class AdminLanguageStatesTest extends PHPUnit\Framework\TestCase
         foreach ( array( 'admin4', 'admin' ) as $design )
         {
             $template = self::file( "design/$design/templates/children_detailed.tpl" );
-            $this->assertStringContainsString( "showMissingLanguages: {if le( fetch( 'content', 'prioritized_languages' )|count, "
-                                               . expContentLanguageStates::LIST_MISSING_LIMIT . ' )}true{else}false{/if}', $template, $design );
+            // admin4: a value of the JSON in data-conf (no inline script); the classic design: in its inline script
+            $condition = "le( fetch( 'content', 'prioritized_languages' )|count, " . expContentLanguageStates::LIST_MISSING_LIMIT . ' )';
+            $this->assertStringContainsString( $design === 'admin4' ? "'showMissingLanguages', $condition" : "showMissingLanguages: {if $condition}true{else}false{/if}",
+                                               $template, $design );
         }
     }
 

@@ -19,7 +19,7 @@
         <span class="option">{$Options.item.value|wash()} <span class="votes">({$:item_count})</span></span> <span class="value">{concat( div( mul( $:item_count, 100 ), $total_count ), '' )|extract_left( 5 )}%</span>
 
         <div class="resultblock"><div class="resultedge-start"><div class="resultedge-end"><div class="resultbox">
-            <div class="resultbar" style="width: {concat( div( mul( $:item_count, 100 ), $total_count ), '' )|extract_left( 5 )}%;">
+            <div class="resultbar" data-result-width="{concat( div( mul( $:item_count, 100 ), $total_count ), '' )|extract_left( 5 )|wash}">
             <div class="result-divider">
             </div>
             </div>
@@ -31,5 +31,8 @@
 
 </ul>
 </div>
+{* The bars get their width (data-result-width, in percent) from javascript/poll_result_bars.js: a file of its own,
+   for a Content Security Policy without 'unsafe-inline' *}
+<script type="text/javascript" src={'javascript/poll_result_bars.js'|ezdesign}></script>
 
 {/let}

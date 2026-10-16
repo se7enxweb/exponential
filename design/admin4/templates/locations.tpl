@@ -61,7 +61,7 @@
 
 <table id="tab-locations-list" class="list" cellspacing="0" summary="{'Locations (aka Nodes) for current object.'|i18n( 'design/admin/node/view/full' )}">
 <tr>
-    <th scope="col" class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/node/view/full' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/node/view/full' )|wash}" onclick="ezjs_toggleCheckboxes( document.locationsform, 'LocationIDSelection[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
+    <th scope="col" class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/node/view/full' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/node/view/full' )|wash}" data-a4-toggle-checkboxes="LocationIDSelection[]" data-a4-form="locationsform"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
 {* The headings sort the whole list, not the page on screen: with one page of
    a possible fifty thousand locations in hand there is nothing useful to sort
    here, so the column travels on the address and the database does it. The
@@ -192,20 +192,7 @@
 
 {if $assignment_count|gt( 1 )}
     <input id="tab-locations-list-set-main" class="button" type="submit" name="UpdateMainAssignmentButton" value="{'Set main'|i18n( 'design/admin/node/view/full' )}" title="{'Select the desired main location using the radio buttons above then click this button to store the setting.'|i18n( 'design/admin/node/view/full' )}" />
-    <script type="text/javascript">
-    {literal}
-    (function( $ )
-    {
-        $('#tab-locations-list input.main-locations-radio').on('change', function()
-        {
-            if ( this.className === 'main-locations-radio' )
-                $('#tab-locations-list-set-main').removeClass('button').addClass('defaultbutton');
-            else
-                $('#tab-locations-list-set-main').removeClass('defaultbutton').addClass('button');
-        });
-    })( jQuery );
-    {/literal}
-    </script>
+    {ezscript( array( 'page/node_locations.js' ) )}
 {else}
     <input class="button-disabled" type="submit" name="UpdateMainAssignmentButton" value="{'Set main'|i18n( 'design/admin/node/view/full' )}" disabled="disabled" title="{'You cannot set the main location because there is only one location present.'|i18n( 'design/admin/node/view/full' )}" />
 {/if}

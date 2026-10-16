@@ -159,10 +159,16 @@ var eZAjaxSubitemsExpDataTable = (function () {
         var thumbView = function (row) {
             var url = encodeURI(row.thumbnail_url);
             if (url) {
-                var thBack = 'background: url(\'' + url.replace(/'/g, "\\'") + '\') no-repeat;';
-                var thWidth = ' width: ' + row.thumbnail_width + 'px;';
-                var thHeight = ' height: ' + row.thumbnail_height + 'px;';
-                return '<div class="thumbview"><div class="thumbfield"></div><span><div style="' + thBack + thWidth + thHeight + '"></div></span></div>';
+                // the image as the box's background, set through the element's style: a style attribute in the
+                // markup is blocked under a Content Security Policy without 'unsafe-inline'
+                var thumb = $('<div></div>').css({
+                    background: 'url(\'' + url.replace(/'/g, "\\'") + '\') no-repeat',
+                    width: row.thumbnail_width + 'px',
+                    height: row.thumbnail_height + 'px'
+                });
+                var view = $('<div class="thumbview"><div class="thumbfield"></div><span></span></div>');
+                view.children('span').append(thumb);
+                return view;
             }
             return '';
         };

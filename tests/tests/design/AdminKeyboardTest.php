@@ -65,7 +65,7 @@ class AdminKeyboardTest extends PHPUnit\Framework\TestCase
         // every change of the symbol goes through _toggleState, which keeps aria-expanded in step
         $this->assertSame( 0, preg_match_all( '/\.className\s*=\s*[\'"]openclose-/', $js ) );
         $this->assertGreaterThanOrEqual( 6, substr_count( $js, '_toggleState( aElement,' ) );
-        $this->assertStringContainsString( '"subitems":', self::file( 'design/admin4/templates/contentstructuremenu/content_structure_menu_dynamic.tpl' ) );
+        $this->assertStringContainsString( "'subitems', 'Items below %name'", self::file( 'design/admin4/templates/contentstructuremenu/content_structure_menu_dynamic.tpl' ) );
     }
 
     /** The content tree is the same script and settings in the admin and admin4 designs */

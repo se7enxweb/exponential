@@ -1,6 +1,7 @@
 {* Subitems list column "Status" (Column_statusbadge): one badge saying what visitors see of
    the item. Variables: $node (the row), $column (the column's settings), $key (its key).
-   The output is the cell; its text ("Hidden", "Locked" ...) is the value and the CSV text.
+   The output is the cell; its text ("Hidden", "Locked" ...) is the value and the CSV text. The badges are the
+   administration's .a4-badge (components.css): red, yellow, grey and green tints from the tokens.
    Guide: doc/bc/6.0/subitems-table-options.md *}
 {def $exp_badge = 'visible'}
 {if $node.is_hidden}
@@ -11,9 +12,9 @@
     {set $exp_badge = 'locked'}
 {/if}
 {switch match=$exp_badge}
-{case match='hidden'}<span class="exp-subitems-badge exp-subitems-badge-hidden" style="padding:0 .4em;border-radius:3px;background:#fde2e1;color:#8a1f11">{'Hidden'|i18n( 'design/admin/node/view/full' )}</span>{/case}
-{case match='invisible'}<span class="exp-subitems-badge exp-subitems-badge-invisible" style="padding:0 .4em;border-radius:3px;background:#fff1cc;color:#6b4e00">{'Hidden by a parent'|i18n( 'design/admin/node/view/full' )}</span>{/case}
-{case match='locked'}<span class="exp-subitems-badge exp-subitems-badge-locked" style="padding:0 .4em;border-radius:3px;background:#e4e7eb;color:#333">{'Locked'|i18n( 'design/admin/node/view/full' )}</span>{/case}
-{case}<span class="exp-subitems-badge exp-subitems-badge-visible" style="padding:0 .4em;border-radius:3px;background:#dff3e3;color:#1d5c2b">{'Visible'|i18n( 'design/admin/node/view/full' )}</span>{/case}
+{case match='hidden'}<span class="a4-badge is-bad exp-subitems-badge exp-subitems-badge-hidden">{'Hidden'|i18n( 'design/admin/node/view/full' )}</span>{/case}
+{case match='invisible'}<span class="a4-badge is-warn exp-subitems-badge exp-subitems-badge-invisible">{'Hidden by a parent'|i18n( 'design/admin/node/view/full' )}</span>{/case}
+{case match='locked'}<span class="a4-badge exp-subitems-badge exp-subitems-badge-locked">{'Locked'|i18n( 'design/admin/node/view/full' )}</span>{/case}
+{case}<span class="a4-badge is-ok exp-subitems-badge exp-subitems-badge-visible">{'Visible'|i18n( 'design/admin/node/view/full' )}</span>{/case}
 {/switch}
 {undef $exp_badge}

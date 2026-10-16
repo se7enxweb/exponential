@@ -24,7 +24,7 @@
 {section show=$vattype_array}
 <table class="list" cellspacing="0">
 <tr>
-    <th scope="col" class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/shop/vattype' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/shop/vattype' )|wash}" onclick="ezjs_toggleCheckboxes( document.VatType, 'vatTypeIDList[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
+    <th scope="col" class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/shop/vattype' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/shop/vattype' )|wash}" data-a4-toggle-checkboxes="vatTypeIDList[]" data-a4-form="VatType"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
     <th scope="col">{'Name'|i18n( 'design/admin/shop/vattype' )}</th>
     <th scope="col" class="tight">{'Percentage'|i18n( 'design/admin/shop/vattype' )}</th>
 </tr>
@@ -32,7 +32,7 @@
 {def $id_string=''}
 {section var=Vattypes loop=$vattype_array sequence=array( bglight, bgdark )}
 {if and( is_set( $last_added_id ), eq( $last_added_id, $Vattypes.item.id) )}
-    {set $id_string='id="LastAdded"'}
+    {set $id_string='id="LastAdded" data-a4-focus'}
 {/if}
 <tr class="{$Vattypes.sequence}">
     <td><input aria-label="{'Select VAT type for removal.'|i18n( 'design/admin/shop/vattype' )|wash}" type="checkbox" name="vatTypeIDList[]" value="{$Vattypes.item.id}" title="{'Select VAT type for removal.'|i18n( 'design/admin/shop/vattype' )}" /></td>
@@ -89,18 +89,4 @@
 
 </form>
 
-{literal}
-<script type="text/javascript">
-jQuery(function( $ )//called on document.ready
-{
-    var lastAddedItem = document.getElementById('LastAdded');
-
-    if ( lastAddedItem != null )
-    {
-        lastAddedItem.select();
-        lastAddedItem.focus();
-    }
-});
-</script>
-{/literal}
 

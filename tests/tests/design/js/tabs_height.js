@@ -1,9 +1,9 @@
 // Runs the height control of the node view's tab box (design/admin4/javascript/admin4.js) together with window.a4Pref
-// (design/admin4/templates/page_head_style.tpl) against a small stand-in for the browser: <html> with its attributes
+// (design/admin4/javascript/a4_head.js) against a small stand-in for the browser: <html> with its attributes
 // and style, the box whose drawn height follows admin4.css (the default 20em of 16px, held between 10em and 60em and at
 // most 85% of the window), the grip and the reset button, localStorage, fetch, a clock for the timers. Prints one JSON
 // line per scenario.
-// Usage: node tabs_height.js <path to admin4.js> <path to page_head_style.tpl>
+// Usage: node tabs_height.js <path to admin4.js> <path to a4_head.js>
 'use strict';
 const fs = require('fs');
 const vm = require('vm');

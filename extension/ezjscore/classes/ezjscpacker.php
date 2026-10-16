@@ -97,9 +97,16 @@ class ezjscPacker
                 }
                 $ret .= "<script src=\"$packedFile\"></script>\r\n";
             }
-            else
+            else if ( $packedFile )
             {
-                $ret .=  $packedFile ? "<script>\r\n$packedFile\r\n</script>\r\n" : '';
+                // Generated content (a server function with packing off, or one that is never cached) as a file of its
+                // own: a page under a Content Security Policy without 'unsafe-inline' runs no inline script
+                $url = self::generatedContentURL( $packedFile, '.js' );
+                if ( $url !== false && $useFullUrl )
+                {
+                    $url = $http->createRedirectUrl( $url, array( 'pre_url' => false ) );
+                }
+                $ret .= $url !== false ? "<script src=\"$url\"></script>\r\n" : "<script>\r\n$packedFile\r\n</script>\r\n";
             }
         }
         return $ret;
@@ -134,12 +141,46 @@ class ezjscPacker
                 }
                 $ret .= "<link rel=\"$rel\" href=\"$packedFile\"$media>\r\n";
             }
-            else
+            else if ( $packedFile )
             {
-                $ret .= $packedFile ? "<style$media>\r\n$packedFile\r\n</style>\r\n" : '';
+                // Generated content as a file of its own, as for scripts: no <style> element under style-src 'self'
+                $url = self::generatedContentURL( $packedFile, '.css' );
+                if ( $url !== false && $useFullUrl )
+                {
+                    $url = $http->createRedirectUrl( $url, array( 'pre_url' => false ) );
+                }
+                $ret .= $url !== false ? "<link rel=\"$rel\" href=\"$url\"$media>\r\n" : "<style$media>\r\n$packedFile\r\n</style>\r\n";
             }
         }
         return $ret;
+    }
+
+    /**
+     * The URL of a file that holds generated content (the output of a server function such as ezjsc::jqueryio, which
+     * was written inline into the page before), so that a page under a Content Security Policy without
+     * 'unsafe-inline' (script-src 'self', style-src 'self') can use it. The file is named after the content's hash, in
+     * the packer's cache directory beside the packed files, and written once; the same content gives the same URL.
+     *
+     * @param string $content
+     * @param string $extension '.js' or '.css'
+     * @return string|false the URL (HTML-escaped, as the packed files' URLs), false when the file cannot be stored
+     */
+    static function generatedContentURL( $content, $extension )
+    {
+        if ( !is_string( $content ) || $content === '' )
+            return false;
+        $isCSS = $extension === '.css';
+        $path = self::getCacheDir() . ( $isCSS ? 'stylesheets/' : 'javascript/' ) . 'generated_' . md5( $content ) . ( $isCSS ? '.css' : '.js' );
+        $handler = eZClusterFileHandler::instance( $path );
+        if ( !$handler->fileExists( $path ) )
+        {
+            $handler->fileStoreContents( $path, $content, 'ezjscore', $isCSS ? 'text/css' : 'text/javascript' );
+            if ( !$handler->fileExists( $path ) )
+                return false;
+        }
+        $customHosts = eZINI::instance( 'ezjscore.ini' )->variable( 'Packer', 'CustomHosts' );
+        $host = is_array( $customHosts ) && isset( $customHosts[$isCSS ? '.css' : '.js'] ) ? $customHosts[$isCSS ? '.css' : '.js'] : '';
+        return $host . htmlspecialchars( self::getWwwDir(), ENT_COMPAT, 'UTF-8' ) . $path;
     }
 
     /**

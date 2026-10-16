@@ -25,14 +25,14 @@
 {if $categories}
 <table class="list" cellspacing="0">
 <tr>
-    <th scope="col" class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/shop/productcategories' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/shop/productcategories' )|wash}" onclick="ezjs_toggleCheckboxes( document.ProductCategories, 'CategoryIDList[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
+    <th scope="col" class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/shop/productcategories' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/shop/productcategories' )|wash}" data-a4-toggle-checkboxes="CategoryIDList[]" data-a4-form="ProductCategories"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
     <th scope="col">{'Name'|i18n( 'design/admin/shop/productcategories' )}</th>
 </tr>
 
 {def $id_string=''}
 {foreach $categories as $cat sequence array( bglight, bgdark ) as $seq_color}
 {if and( is_set( $last_added_id ), eq( $last_added_id, $cat.id) )}
-    {set $id_string='id="LastAdded"'}
+    {set $id_string='id="LastAdded" data-a4-focus'}
 {/if}
 <tr class="{$seq_color}">
     <td><input aria-label="{'Select product category for removal.'|i18n( 'design/admin/shop/productcategories' )|wash}" type="checkbox" name="CategoryIDList[]" value="{$cat.id}" title="{'Select product category for removal.'|i18n( 'design/admin/shop/productcategories' )}" /></td>
@@ -88,18 +88,4 @@
 
 </form>
 
-{literal}
-<script type="text/javascript">
-jQuery(function( $ )//called on document.ready
-{
-    var lastAddedItem = document.getElementById('LastAdded');
-
-    if ( lastAddedItem != null )
-    {
-        lastAddedItem.select();
-        lastAddedItem.focus();
-    }
-});
-</script>
-{/literal}
 

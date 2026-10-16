@@ -276,9 +276,9 @@
 <div class="a4-toolbar is-bottom">
 {if $aliasList|count|gt( 0 )}
     <div class="a4-actions">
-        <button type="submit" class="a4-btn a4-btn-outline-danger" name="RemoveAliasButton" value="{'Remove selected'|i18n( 'design/admin/content/urlalias_global' )}" title="{'Remove selected aliases from the list above.'|i18n( 'design/admin/content/urlalias_global' )}" onclick="return confirm( '{'Are you sure you want to remove the selected aliases?'|i18n( 'design/admin/content/urlalias_global' )|wash( javascript )|wash}' );">{'Remove selected'|i18n( 'design/admin/content/urlalias_global' )}</button>
+        <button type="submit" class="a4-btn a4-btn-outline-danger" name="RemoveAliasButton" value="{'Remove selected'|i18n( 'design/admin/content/urlalias_global' )}" title="{'Remove selected aliases from the list above.'|i18n( 'design/admin/content/urlalias_global' )}" data-a4-confirm="{'Are you sure you want to remove the selected aliases?'|i18n( 'design/admin/content/urlalias_global' )|wash}">{'Remove selected'|i18n( 'design/admin/content/urlalias_global' )}</button>
     </div>
-    <p class="a4-meta">{'A removed alias stops working at once; links to it then lead to an error page. The destination itself is not changed.'|i18n( 'design/admin/content/urlalias_global' )} <span id="alias-selected-count" aria-live="polite"></span></p>
+    <p class="a4-meta">{'A removed alias stops working at once; links to it then lead to an error page. The destination itself is not changed.'|i18n( 'design/admin/content/urlalias_global' )} <span id="alias-selected-count" aria-live="polite" data-text-selected="{'%count selected.'|i18n( 'design/admin/content/urlalias_global' )|wash}"></span></p>
     <details class="a4-confirm">
         <summary>{'Remove all'|i18n( 'design/admin/content/urlalias_global' )}</summary>
         <div>
@@ -299,41 +299,4 @@
 </div></div></div>
 </div>
 
-<script type="text/javascript">
-var expAliasText = {ldelim}
-    selected: '{'%count selected.'|i18n( 'design/admin/content/urlalias_global' )|wash( javascript )}'
-{rdelim};
-{literal}
-(function () {
-    var nodes = document.querySelectorAll( '.a4-url .a4-url-js-only' ), i;
-    for ( i = 0; i < nodes.length; i++ ) nodes[i].hidden = false;
-    var list = document.getElementById( 'alias-list' );
-    var source = document.getElementById( 'ezcontent_urlalias_global_source' );
-    // the field with the error, else the alias field when the page is about creating one
-    var invalid = document.querySelector( '.a4-url [aria-invalid="true"]' );
-    if ( invalid ) invalid.focus();
-    else if ( source ) source.focus();
-    if ( !list ) return;
-    var selectAll = document.getElementById( 'alias-select-all' );
-    var countEl = document.getElementById( 'alias-selected-count' );
-    function boxes() { return list.querySelectorAll( 'input[name="ElementList[]"]' ); }
-    function update() {
-        var all = boxes(), n = 0, j;
-        for ( j = 0; j < all.length; j++ ) {
-            var card = all[j].closest( '.a4-card' );
-            if ( card ) card.classList.toggle( 'is-selected', all[j].checked );
-            if ( all[j].checked ) n++;
-        }
-        if ( countEl ) countEl.textContent = n ? expAliasText.selected.split( '%count' ).join( n ) : '';
-        if ( selectAll ) { selectAll.checked = n > 0 && n === all.length; selectAll.indeterminate = n > 0 && n < all.length; }
-    }
-    list.addEventListener( 'change', update );
-    if ( selectAll ) selectAll.addEventListener( 'change', function () {
-        var all = boxes(), j;
-        for ( j = 0; j < all.length; j++ ) all[j].checked = selectAll.checked;
-        update();
-    } );
-    update();
-})();
-{/literal}
-</script>
+{ezscript( array( 'page/content_urlalias_global.js' ) )}

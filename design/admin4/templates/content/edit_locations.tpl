@@ -37,7 +37,7 @@
 <table class="list" cellspacing="0" >
 <tr>
 {* JB TODO: The alt/title fields should get different text descriptions when they are disabled *}
-    <th scope="col" class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/content/edit' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/content/edit' )|wash}" onclick="ezjs_toggleCheckboxes( document.editform, 'AssignmentIDSelection[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
+    <th scope="col" class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/content/edit' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/content/edit' )|wash}" data-a4-toggle-checkboxes="AssignmentIDSelection[]" data-a4-form="editform"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
     <th scope="col">{'Location'|i18n( 'design/admin/content/edit' )}</th>
     <th scope="col">{'Sub items'|i18n( 'design/admin/content/edit' )}</th>
     <th scope="col">{'Sorting of sub items'|i18n( 'design/admin/content/edit' )}</th>

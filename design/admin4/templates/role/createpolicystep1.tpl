@@ -5,8 +5,8 @@
    AddFunction (full access to that function) and Limitation (step three) can be pressed from this step. "Every
    module" with every function is a policy that gives access to everything: the page says so before it is added.
    Cancel goes back to the editor; nothing has been added to the draft yet. Every name is the one the view has always
-   read (CurrentModule, ModuleFunction, AddModule, CustomFunction, AddFunction, Limitation). The same file is in
-   design/admin and design/admin4. Guide: doc/guides/roles-and-policies.md *}
+   read (CurrentModule, ModuleFunction, AddModule, CustomFunction, AddFunction, Limitation). design/admin has the same
+   page with the script inline; here it is page/role_createpolicystep1.js. Guide: doc/guides/roles-and-policies.md *}
 
 <form id="createpolicyform" action={concat( $module.functions.edit.uri, '/', $role.id, '/' )|ezurl} method="post" class="a4-page a4-standalone">
 <div class="context-block">
@@ -73,36 +73,13 @@
 </div>
 </form>
 
-<script type="text/javascript">
-var expPolicyModules = {ldelim}{rdelim}, expPolicyEveryFunction = '{'Every function'|i18n( 'design/admin/role/createpolicystep1' )|wash( javascript )}';
+{def $policy_functions = hash()
+     $policy_module_functions = array()}
 {foreach $module_list as $listed_module}{if $listed_module}
-expPolicyModules['{$listed_module.name|wash( javascript )}'] = [{foreach $listed_module.available_functions as $fn => $lim}'{$fn|wash( javascript )}'{delimiter}, {/delimiter}{/foreach}];
+{set $policy_module_functions = array()}
+{foreach $listed_module.available_functions as $fn => $lim}{set $policy_module_functions = $policy_module_functions|append( $fn )}{/foreach}
+{set $policy_functions = $policy_functions|merge( hash( $listed_module.name, $policy_module_functions ) )}
 {/if}{/foreach}
-{literal}
-(function () {
-    var form = document.getElementById( 'createpolicyform' );
-    var moduleSel = document.getElementById( 'ezrole-createpolizy-module' );
-    var fnSel = document.getElementById( 'ezrole-createpolizy-function' );
-    var warn = document.getElementById( 'ezrole-createpolizy-everything' );
-    if ( !form || !moduleSel || !fnSel ) return;
-    var nodes = form.querySelectorAll( '.exp-js-only' ), i;
-    for ( i = 0; i < nodes.length; i++ ) nodes[i].hidden = false;
-    function setOptions( list, disable ) {
-        while ( fnSel.firstChild ) fnSel.removeChild( fnSel.firstChild );
-        list.forEach( function ( item ) { var o = document.createElement( 'option' ); o.value = item; o.textContent = item; fnSel.appendChild( o ); } );
-        fnSel.disabled = !!disable;
-        if ( disable ) { fnSel.innerHTML = ''; var o = document.createElement( 'option' ); o.value = '*'; o.textContent = expPolicyEveryFunction; fnSel.appendChild( o ); }
-    }
-    function update() {
-        var list = expPolicyModules[ moduleSel.value ];
-        var has = !!( list && list.length );
-        setOptions( has ? list : [], !has );
-        form.querySelectorAll( '.button-function' ).forEach( function ( b ) { b.disabled = !has; } );
-        form.querySelector( '.button-module' ).disabled = has;
-        if ( warn ) warn.hidden = moduleSel.value !== '*';
-    }
-    moduleSel.addEventListener( 'change', update );
-    update();
-})();
-{/literal}
-</script>
+<div id="createpolicy-modules" hidden data-modules="{json_encode( $policy_functions )|wash}" data-text-every-function="{'Every function'|i18n( 'design/admin/role/createpolicystep1' )|wash}"></div>
+{undef $policy_functions $policy_module_functions}
+{ezscript( array( 'page/role_createpolicystep1.js' ) )}

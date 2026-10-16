@@ -114,26 +114,4 @@
 
 </form>
 </div>
-<script type="text/javascript">
-{literal}
-(function( $ )
-{
-    $('#tab-details-states-list select, #tab-details-states-subtree').on('change', function()
-    {
-        var btn = $('#tab-details-set-states');
-        if ( !btn.attr('disabled') )
-        {
-            btn.removeClass('button').addClass('defaultbutton');
-        }
-    });
-    $('#selected-section-id').on('change', function()
-    {
-        var btn = $('#tab-details-set-section');
-        if ( !btn.attr('disabled') )
-        {
-            btn.removeClass('button').addClass('defaultbutton');
-        }
-    });
-})( jQuery );
-{/literal}
-</script>
+{ezscript( array( 'page/node_details.js' ) )}

@@ -215,23 +215,5 @@
 
 {undef $groups $orphans $summary $feedback}
 {include uri='design:trigger/exp_list_script.tpl' text_shown='%shown of %count triggers shown'|i18n( 'design/admin/trigger/list' ) text_all='Triggers: %count'|i18n( 'design/admin/trigger/list' ) text_selected='%count selected.'|i18n( 'design/admin/trigger/list' )}
-<script type="text/javascript">
-var expTriggerChanged = '{'%count unsaved changes.'|i18n( 'design/admin/trigger/list' )|wash( javascript )}';
-{literal}
-(function () {
-    var out = document.getElementById( 'trigger-changed-count' );
-    var selects = document.querySelectorAll( '.a4-trigger-lists select[data-initial]' );
-    function update() {
-        var n = 0, i;
-        for ( i = 0; i < selects.length; i++ ) {
-            var changed = selects[i].value !== selects[i].getAttribute( 'data-initial' );
-            var row = selects[i].closest( 'tr' );
-            if ( row ) row.classList.toggle( 'is-changed', changed );
-            if ( changed ) n++;
-        }
-        if ( out ) out.textContent = n ? expTriggerChanged.split( '%count' ).join( n ) : '';
-    }
-    for ( var i = 0; i < selects.length; i++ ) selects[i].addEventListener( 'change', update );
-})();
-{/literal}
-</script>
+<div id="trigger-list-data" hidden data-trigger-changed="{'%count unsaved changes.'|i18n( 'design/admin/trigger/list' )|wash}"></div>
+{ezscript( array( 'page/trigger_list.js' ) )}

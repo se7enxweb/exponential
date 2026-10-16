@@ -224,43 +224,8 @@
 {if and( $locked|not, $confirm_remove|not, $info.states|count|gt(1) )}
 {* Move up and Move down: they move the state on the page and renumber every position, which Save order then
    stores. Nothing is saved until then. *}
-<script type="text/javascript">
-var expStateOrderText = {ldelim}
-    moved: '{'%state is now at position %position. Save the order to keep it.'|i18n( 'design/admin/state/group' )|wash( javascript )}'
-{rdelim};
-{literal}
-(function () {
-    var list = document.getElementById( 'state-list' );
-    if ( !list ) return;
-    var status = document.getElementById( 'state-order-status' );
-    Array.prototype.forEach.call( document.querySelectorAll( '.a4-page .exp-js-only' ), function ( el ) { el.hidden = false; } );
-    function renumber() {
-        var items = list.querySelectorAll( '.a4-state-item' );
-        Array.prototype.forEach.call( items, function ( item, i ) {
-            item.querySelector( '.a4-state-order-input' ).value = i + 1;
-            item.querySelector( '.a4-state-pos' ).textContent = i + 1;
-            item.querySelector( '.exp-move-up' ).disabled = i === 0;
-            item.querySelector( '.exp-move-down' ).disabled = i === items.length - 1;
-        } );
-    }
-    list.addEventListener( 'click', function ( event ) {
-        var button = event.target.closest( '.exp-move-up, .exp-move-down' );
-        if ( !button ) return;
-        var item = button.closest( '.a4-state-item' );
-        var up = button.classList.contains( 'exp-move-up' );
-        var other = up ? item.previousElementSibling : item.nextElementSibling;
-        if ( !other ) return;
-        list.insertBefore( item, up ? other : other.nextElementSibling );
-        renumber();
-        var target = item.querySelector( up ? '.exp-move-up' : '.exp-move-down' );
-        ( target.disabled ? item.querySelector( up ? '.exp-move-down' : '.exp-move-up' ) : target ).focus();
-        var position = Array.prototype.indexOf.call( list.children, item ) + 1;
-        status.textContent = expStateOrderText.moved.replace( '%state', item.getAttribute( 'data-state-name' ) ).replace( '%position', position );
-    } );
-    renumber();
-})();
-{/literal}
-</script>
+<div id="state-order-data" hidden data-state-order-text-moved="{'%state is now at position %position. Save the order to keep it.'|i18n( 'design/admin/state/group' )|wash}"></div>
+{ezscript( array( 'page/state_group.js' ) )}
 {/if}
 
 {undef $info $locked $base_url}

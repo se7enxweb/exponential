@@ -75,3 +75,73 @@ Mode=enforce
 
 A page that needs more (a map service, a font host, an analytics script) adds the host to the directive in its
 siteaccess, for example `Directives[script-src]='self' https://maps.example.com`.
+
+## The administration without inline code
+
+admin4 and admin4l, and the templates of admin3, admin and standard that they render, carry no inline `<script>`, no
+`on...=` attribute, no `javascript:` link, no `style=""` attribute and no `<style>` element, so the administration
+runs under the shipped policy. `tests/tests/design/AdminContentSecurityPolicyTest.php` holds this for every template of
+the two design chains and for the scripts of admin4; the few exceptions it lists are below.
+
+How the pieces work, for templates of your own and for extensions:
+
+- **Page scripts** are files: `design/admin4/javascript/page/<module>_<view>.js`, printed with `{ezscript( array(
+  'page/<file>.js' ) )}` where the inline script stood, so the code runs at the same point of the page. Use `ezscript`,
+  not `ezscript_load`, in a template of the page's content: `ezscript_load` there would print every file that
+  `ezscript_require` collected so far at that place and end their loading in the head (a file required later, such as
+  the sub-items table's script, would then come after the page script that needs it). The values a script needs from
+  the template are `data-*` attributes on the element it works on, washed for HTML
+  (`data-text-selected="{'%count selected.'|i18n( ... )|wash}"`); structured values are JSON:
+  `data-conf="{json_encode( hash( ... ) )|wash}"`. A template that can appear more than once on a page (a datatype's
+  edit template) gets its file each time: the file sets itself up once.
+- **The head script** of every page (color mode, `window.a4Pref`) is `design/admin4/javascript/a4_head.js`, loaded by
+  `page_head_style.tpl` (with `ezscript`) before the stylesheets, as a normal (blocking) script in `<head>`: it still runs before the
+  body is parsed, so the first paint has the saved color mode, column widths and `data-a4-pref-*` values.
+- **Small actions** are `data-a4-*` attributes, handled by one listener per event in
+  `design/admin4/javascript/a4_actions.js` (loaded on every admin4 page): `data-a4-confirm="Question?"` (a link,
+  button or form), `data-a4-discard-confirm`, `data-a4-toggle-checkboxes="Name[]"` (with `data-a4-form` for another
+  form), `data-a4-check-all="#selector"`, `data-a4-dismiss`, `data-a4-submit-on-change`,
+  `data-a4-navigate-on-change`, `data-a4-reset-field`, `data-a4-print`, `data-a4-disable-on-submit` and
+  `data-a4-focus`. The header comment of the file describes each.
+- **Context menus** (`popupmenu/*.tpl`, `ezpopupmenu.js`) are declared in `data-menu-*` attributes: on the menu
+  `data-menu-depth` and `data-menu-header`; on an item `data-menu-url`, `data-menu-shown-if`,
+  `data-menu-disabled-class`, `data-menu-disabled-for`, `data-menu-variable` with `data-menu-template` (the id of a
+  `<template>` with the markup of one entry); what an item does: `data-menu-submenu` (with `data-menu-hide`),
+  `data-menu-form` (with `data-menu-form-values`) or `data-menu-redirect`. An element that opens a menu has
+  `data-menu-open`, `data-menu-values` (JSON), `data-menu-languages`, `data-menu-classes`, `data-menu-title`,
+  `data-menu-disable` and `data-menu-disable-item`. The header comment of `ezpopupmenu.js` lists them.
+  **Extensions keep working:** a menu item with its own `onmouseover`/`onclick` attribute is left to it, and a script
+  that adds an item to a core menu (`menuArray['ContextMenu']['elements']['my-item'] = { ... }`) finds the menu
+  created from its attributes. Such an extension item is inline code, though, and reported by the policy until the
+  extension declares it the new way.
+- **The content tree** (`contentstructuremenu/content_structure_menu_dynamic.tpl`) is a `div.content-tree-menu` with
+  its data in `data-tree-root`, `data-tree-params` and `data-tree-request` (JSON);
+  `contentstructuremenu_dynamic.js` draws it when the page is parsed (`window.treeMenu` is set as before), and its
+  open/close buttons work through one listener instead of generated `onclick` attributes.
+- **Generated script and style content** of ezjscore (server functions such as `ezjsc::jqueryio` with packing off, as
+  under `DevelopmentMode`) is written to a file in the packer's cache directory, named after its content, and linked
+  (`ezjscPacker::generatedContentURL()`); it was printed inline before.
+
+The same applies to the `design/admin` copies of the context menu and tree scripts and templates, which are kept
+identical to admin4's; the other templates of the classic admin design are unchanged.
+
+### What still needs more than 'self'
+
+- **Content output**: the width of a rich text table (`ezxmltags/table.tpl`), the alignment of its cells (`td.tpl`)
+  and the border of an image (`content/datatype/view/ezimage.tpl`) are `style=""` values that come from the content.
+  Under an enforced `style-src 'self'` the browser drops them (the admin preview shows the table at its natural width).
+  Add `'unsafe-inline'` to `style-src` if that matters for your content.
+- **The receipt** (`shop/orderreceipt_style.tpl`) keeps its `<style>` element: it is shared with the receipt as a file
+  to keep (`orderreceipt_document.tpl`), which must carry its own styles.
+- **Rich text editors.** TinyMCE 3 (ezoe) is not converted: its dialogs (`extension/ezoe/design/standard/templates/
+  ezoe/*.tpl`) have about 40 inline scripts and 50 `javascript:` links, and the editor itself writes event handler
+  attributes. A siteaccess that edits with ezoe's TinyMCE 3 needs `Directives[script-src]='self' 'unsafe-inline'` and
+  `Directives[style-src]='self' 'unsafe-inline'` before it enforces the policy. TinyMCE 8 and Tiptap load from files;
+  their editors set styles of their own (TinyMCE's documentation asks for `style-src 'unsafe-inline'`; Tiptap's
+  extension adds one `<style>` element), so enforce with `'unsafe-inline'` in `style-src` where they are used, or keep
+  the administration in `report-only` until they are checked.
+- **Extensions** that write inline scripts or handlers into admin pages (their own menu items, page scripts) are
+  reported until they move to files and `data-*` attributes as described above.
+
+A nonce for inline scripts is not offered on purpose: the admin pagelayout, its menus and the tree sit in cache-blocks,
+and a cached nonce would no longer match the header of the next request.

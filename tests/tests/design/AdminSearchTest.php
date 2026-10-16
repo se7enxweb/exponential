@@ -101,8 +101,11 @@ class AdminSearchTest extends PHPUnit\Framework\TestCase
     public function testTheSettingsFilterReactsToEveryInput()
     {
         $tpl = self::read( 'design/admin4/templates/setup/rad.tpl' );
-        $this->assertStringContainsString( "input.addEventListener( 'input', run );", $tpl );
+        $js = self::read( 'design/admin4/javascript/page/setup_rad.js' );
+        $this->assertStringContainsString( "{ezscript( array( 'page/setup_rad.js' ) )}", $tpl );
+        $this->assertStringContainsString( "input.addEventListener( 'input', run );", $js );
         $this->assertStringNotContainsString( 'onkeyup', $tpl );
+        $this->assertStringNotContainsString( 'onkeyup', $js );
         $this->assertStringContainsString( 'id="radFindCount" aria-live="polite" data-text="{\'%shown of %count\'|i18n( \'design/admin/setup/rad\' )|wash}"', $tpl );
         $this->assertStringNotContainsString( "' of '", $tpl );
     }

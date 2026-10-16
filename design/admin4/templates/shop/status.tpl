@@ -22,7 +22,7 @@
 {section show=$orderstatus_array}
 <table class="list" cellspacing="0">
 <tr>
-    <th scope="col" class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/shop/status' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/shop/status' )|wash}" onclick="ezjs_toggleCheckboxes( document.OrderStatus, 'orderStatusIDList[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
+    <th scope="col" class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/shop/status' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/shop/status' )|wash}" data-a4-toggle-checkboxes="orderStatusIDList[]" data-a4-form="OrderStatus"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
     <th scope="col" class="tight">{'Status ID'|i18n( 'design/admin/shop/status' )}</th>
     <th scope="col">{'Name'|i18n( 'design/admin/shop/status' )}</th>
     <th scope="col" class="tight">{'Active'|i18n( 'design/admin/shop/status' )}</th>

@@ -263,42 +263,8 @@
 </div></div></div>
 </div>
 
-<script type="text/javascript">
-var expDraftText = {ldelim}
-    selected: '{'%count selected.'|i18n( 'design/admin/content/draft' )|wash( javascript )}',
-    removeList: '{'These drafts are removed for good: %list. A draft of a new object takes the new object with it.'|i18n( 'design/admin/content/draft' )|wash( javascript )}',
-    removeNone: '{'Tick the drafts to remove in the list first.'|i18n( 'design/admin/content/draft' )|wash( javascript )}'
-{rdelim};
-{literal}
-(function () {
-    var nodes = document.querySelectorAll( '.a4-content-drafts .a4-content-history-js-only' ), i;
-    for ( i = 0; i < nodes.length; i++ ) nodes[i].hidden = false;
-    var list = document.getElementById( 'draft-list' );
-    if ( !list ) return;
-    var selectAll = document.getElementById( 'draft-select-all' );
-    var countEl = document.getElementById( 'draft-selected-count' );
-    var removeList = document.getElementById( 'draft-remove-list' );
-    var removeButton = document.getElementById( 'draft-remove-button' );
-    function boxes() { return list.querySelectorAll( 'input[name="DeleteIDArray[]"]' ); }
-    function update() {
-        var all = boxes(), ticked = [], j;
-        for ( j = 0; j < all.length; j++ ) {
-            var card = all[j].closest( '.a4-card' );
-            if ( card ) card.classList.toggle( 'is-selected', all[j].checked );
-            if ( all[j].checked ) ticked.push( all[j].getAttribute( 'data-name' ) );
-        }
-        if ( countEl ) countEl.textContent = ticked.length ? expDraftText.selected.split( '%count' ).join( ticked.length ) : '';
-        if ( removeList ) removeList.textContent = ticked.length ? expDraftText.removeList.split( '%list' ).join( ticked.join( ', ' ) ) : expDraftText.removeNone;
-        if ( removeButton ) removeButton.disabled = !ticked.length;
-        if ( selectAll ) { selectAll.checked = ticked.length > 0 && ticked.length === all.length; selectAll.indeterminate = ticked.length > 0 && ticked.length < all.length; }
-    }
-    list.addEventListener( 'change', update );
-    if ( selectAll ) selectAll.addEventListener( 'change', function () {
-        var all = boxes(), j;
-        for ( j = 0; j < all.length; j++ ) all[j].checked = selectAll.checked;
-        update();
-    } );
-    update();
-})();
-{/literal}
-</script>
+<div id="draft-texts" hidden
+     data-text-selected="{'%count selected.'|i18n( 'design/admin/content/draft' )|wash}"
+     data-text-remove-list="{'These drafts are removed for good: %list. A draft of a new object takes the new object with it.'|i18n( 'design/admin/content/draft' )|wash}"
+     data-text-remove-none="{'Tick the drafts to remove in the list first.'|i18n( 'design/admin/content/draft' )|wash}"></div>
+{ezscript( array( 'page/content_draft.js' ) )}

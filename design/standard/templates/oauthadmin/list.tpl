@@ -112,16 +112,4 @@
 
 </form>
 
-{literal}
-<script>
-(function () {
-    var all = document.getElementById('oauth-select-all');
-    if (!all) { return; }
-    all.parentNode.hidden = false;
-    all.addEventListener('change', function () {
-        var boxes = document.querySelectorAll('.exp-oauth input[name="DeleteIDArray[]"]');
-        for (var i = 0; i < boxes.length; i++) { boxes[i].checked = all.checked; }
-    });
-}());
-</script>
-{/literal}
+{ezscript( array( 'oauthadmin_list.js' ) )}
