@@ -387,6 +387,10 @@ To see the add and remove forms work, use a language no content has and remove i
 Compare the list of languages before and after; nothing else changes. Never practise on a language your content
 uses.
 
+To try translations themselves, use the test language **Lorem Ipsum** (`qlo-ZZ`): it is shipped for this, installed
+nowhere, and `exp:loremipsum` fills a translation in it with lorem ipsum text. See
+[The test language Lorem Ipsum](test-language-lorem-ipsum.md).
+
 ## 10. Commands for the shell
 
 Languages are added and removed from the page; no shipped console command adds or removes a content language or
@@ -403,6 +407,7 @@ installation root; add `--allow-root-user` when you run as root.
 | `php bin/php/ezchecktranslation.php ger-DE` | How complete the **interface** translation of a locale is (not content) |
 | `php bin/php/ezgeneratetranslationcache.php` | Build the cache of the interface translation files; `--ts-list` limits it to some locales |
 | `php bin/php/ezcache.php --clear-tag=i18n` | After changing a `.ts` interface translation file |
+| `./console exp:loremipsum <object id> --dry-run` | Fill the translation of objects in the test language Lorem Ipsum with lorem ipsum text, once it is added; [guide](test-language-lorem-ipsum.md) |
 
 Velocity (the application server on port 8080) keeps its own response cache: after any of these, also run
 `./console exp:velocity cache clear`.

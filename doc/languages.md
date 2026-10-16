@@ -20,6 +20,7 @@ locale is plain INI: nothing here needs a PHP extension at run time.
 9. [Right-to-left languages](#9-right-to-left-languages)
 10. [No PHP extension at run time](#10-no-php-extension-at-run-time)
 11. [The limit of 62 content languages](#11-the-limit-of-62-content-languages)
+12. [Test languages: Lorem Ipsum](#12-test-languages-lorem-ipsum)
 
 ## 1. Locales, translations, content languages and siteaccesses
 
@@ -467,3 +468,32 @@ every query that tests a mask rewritten to match. Both change the database schem
 extensions and reports run against `language_mask` and `language_id` today, a break of backward compatibility for
 every installation, to serve a case no known site has reached. So it is not done; a site that needs more than 62
 languages would be a project of its own.
+
+## 12. Test languages: Lorem Ipsum
+
+`share/locale/qlo-ZZ.ini` is **Lorem Ipsum**, a language for testing content translations and nothing else. It is
+not counted among the languages above, and no installation adds it: not the clean data, the installer's seeds, the
+packages or the kickstart. Setup > Languages > Add a language offers it like any other locale, under its plain name
+*Lorem Ipsum*; add it for a test and remove it afterwards. How: [The test language Lorem
+Ipsum](guides/test-language-lorem-ipsum.md).
+
+**The code.** `qlo` is in the ISO 639-2 range `qaa`-`qtz`, which ISO reserves for local use, so it can never collide
+with a real language; `ZZ` is the ISO 3166 / CLDR code for an unknown region, and the HTTP tag `qlo-ZZ` is a valid
+private-use BCP 47 tag. The code has the usual form (three letters, a dash, two letters), so `eZLocale`, the add
+form and `ezcontent_language.locale` accept it unchanged.
+
+**The file.** English number and date formats (`1,234.50`, ISO short dates, Monday first), lorem-style month and day
+names (*Ipsumdies 14 Temporember 2023*), currency `¤` with the ISO 4217 code `XXX` (no currency), no country names,
+UTF-8. It is written by hand.
+
+**The marker.** `[LanguageSettings] TestLanguage=true` makes a locale a test language
+(`expTestLanguage::isTestLocale()`). It changes two things:
+
+- the interface language choice (`uiswitch.ini [UISwitch_language]`) never puts a test language in a ranked group
+  or in the A-Z list of `AllLanguages=enabled`; only naming it in `AllowedValues[]` offers it, and then A-Z;
+- `exp:loremipsum` (`bin/php/exploremipsumfill.php`) fills only test languages with lorem ipsum text.
+
+A locale of your own in the range `qaa`-`qtz` must carry the marker, and only those do;
+`tests/tests/kernel/classes/expTestLanguageTest.php` checks both, the file itself, that no default installation names
+`qlo-ZZ`, and the text `exp:loremipsum` writes per datatype. `expUISwitchTestLanguageTest` checks the interface
+language choice.
