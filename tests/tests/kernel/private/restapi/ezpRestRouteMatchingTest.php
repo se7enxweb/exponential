@@ -11,6 +11,8 @@
  *  RM-07 the authentication and error routes answer every method (a refused POST gets its 401/403, not 405)
  *  RM-08 the ezp provider of ezprestapi: reads at v1 and v2, create/update/delete at v2 with POST (delete with DELETE too)
  *  RM-09 a first path element that names no API provider (/api/v1/config): 404, not an uncaught exception
+ *  RM-10 the deprecated provider class of ezprestapiprovider (6.0.4) answers with the same route table as ezprestapi's
+ *  RM-11 the XHTML output of a node read has a template for the content controller of ezprestapi too
  *
  * No database: the routes are built in memory and the prefix filter's static state is set by the test and put back.
  *
@@ -244,6 +246,44 @@ class ezpRestRouteMatchingTest extends PHPUnit\Framework\TestCase
         {
             $this->version( $row[0] );
             $this->assertSame( $row[3], self::pick( $routes, $row[1], $row[2] ), "v{$row[0]} {$row[1]} {$row[2]}" );
+        }
+    }
+
+    /** RM-10 */
+    public function testDeprecatedProviderClassServesTheSameRoutes()
+    {
+        if ( !class_exists( 'ezp7xRestApiProvider' ) || !class_exists( 'ezpRestApiProvider' ) )
+            $this->markTestSkipped( 'ezprestapi and ezprestapiprovider are not both installed' );
+        if ( !is_subclass_of( 'ezpRestApiProvider', 'ezp7xRestApiProvider' ) )
+            $this->markTestSkipped( 'ezprestapiprovider before 6.0.4 (its own v1 routes)' );
+        $old = ( new ezpRestApiProvider() )->getRoutes();
+        $new = ( new ezp7xRestApiProvider() )->getRoutes();
+        $this->assertSame( array_keys( $new ), array_keys( $old ) );
+        $c = 'ezp7xRestContentController::';
+        $table = array(
+            array( 1, 'GET', '/content/node/863/list/offset/0/limit/20', $c . 'list' ),
+            array( 2, 'GET', '/content/node/2', $c . 'viewContent' ),
+            array( 1, 'GET', '/content/object/1/fields', $c . 'viewFields' ),
+            array( 2, 'POST', '/content/node/create', $c . 'CreateContentNode' ),
+            array( 2, 'DELETE', '/content/node/delete/5', $c . 'DeleteContentNode' ),
+        );
+        foreach ( $table as $row )
+        {
+            $this->version( $row[0] );
+            $this->assertSame( $row[3], self::pick( $old, $row[1], $row[2] ), "v{$row[0]} {$row[1]} {$row[2]}" );
+            $this->assertSame( self::pick( $new, $row[1], $row[2] ), self::pick( $old, $row[1], $row[2] ) );
+        }
+    }
+
+    /** RM-11 */
+    public function testXhtmlOutputTemplateForTheContentControllerOfEzprestapi()
+    {
+        $ini = eZINI::instance( 'rest.ini' );
+        foreach ( array( 'ezpRestContentController', 'ezp7xRestContentController' ) as $controller )
+        {
+            $section = $controller . '_viewContent_OutputSettings';
+            $this->assertTrue( $ini->hasVariable( $section, 'Template' ), $section );
+            $this->assertSame( 'rest_pagelayout.tpl', $ini->variable( $section, 'Template' ), $section );
         }
     }
 }
