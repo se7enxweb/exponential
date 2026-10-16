@@ -972,6 +972,10 @@
     ],
     "design/standard/templates/class/datatype/edit/ezcountry.tpl": [
       "tests/tests/kernel/classes/datatypes/expCountryGroupsTest.php"
+    ],
+    "kernel/setup/steps/ezstep_create_sites.php": [
+      "tests/tests/kernel/classes/setup/AdminUISiteaccessTest.php",
+      "tests/tests/kernel/classes/setup/EditorSiteaccessTabsTest.php"
     ]
   },
   "generated": {

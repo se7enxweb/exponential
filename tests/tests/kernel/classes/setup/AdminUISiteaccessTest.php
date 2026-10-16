@@ -175,4 +175,84 @@ class AdminUISiteaccessTest extends PHPUnit\Framework\TestCase
         $noURL = eZStepCreateSites::adminUISiteINIChanges( '', 'admin' );
         $this->assertArrayNotHasKey( 'SiteURL', $noURL['SiteSettings'] );
     }
+
+    private function adminINI()
+    {
+        return new eZINI( 'site.ini.append.php', $this->root . '/settings/siteaccess/admin', null, false, null, true, false );
+    }
+
+    private function writeAdminAccessExtensions( array $extensions )
+    {
+        $file = $this->root . '/settings/siteaccess/admin/site.ini.append.php';
+        $text = str_replace( "*/ ?>\n", "\n[ExtensionSettings]\n"
+            . implode( '', array_map( function ( $e ) { return "ActiveAccessExtensions[]=$e\n"; }, $extensions ) ) . "*/ ?>\n",
+            file_get_contents( $file ) );
+        file_put_contents( $file, $text );
+    }
+
+    public function testWithoutTheExtensionTheAdminGetsNoExpAdminUI()
+    {
+        $this->assertSame( array( 'expai' ), eZStepCreateSites::withAdminUIAccessExtension( array( 'expai', '', 'expai' ), $this->root . '/extension' ) );
+        $this->assertSame( array(), eZStepCreateSites::withAdminUIAccessExtension( array(), $this->root . '/extension' ) );
+        $file = $this->root . '/settings/siteaccess/admin/site.ini.append.php';
+        $before = file_get_contents( $file );
+        $this->assertNull( eZStepCreateSites::activateAdminUIAccessExtension( $this->root . '/settings/siteaccess/admin', $this->root . '/extension' ) );
+        $this->assertSame( $before, file_get_contents( $file ) );
+        $this->assertFalse( $this->adminINI()->hasVariable( 'ExtensionSettings', 'ActiveAccessExtensions' ) );
+    }
+
+    public function testWithTheExtensionTheAdminGetsExpAdminUIOnceAfterItsOwn()
+    {
+        $this->withExtension();
+        $extensionRoot = $this->root . '/extension';
+        $this->assertSame( array( 'exp_adminui' ), eZStepCreateSites::withAdminUIAccessExtension( array(), $extensionRoot ) );
+        $this->assertSame( array( 'expai', 'exp_adminui' ), eZStepCreateSites::withAdminUIAccessExtension( array( 'expai' ), $extensionRoot ) );
+        $this->assertSame( array( 'expai', 'exp_adminui' ), eZStepCreateSites::withAdminUIAccessExtension( array( 'expai', 'exp_adminui', 'expai', '' ), $extensionRoot ) );
+
+        $this->writeAdminAccessExtensions( array( 'expai' ) );
+        $adminDir = $this->root . '/settings/siteaccess/admin';
+        $this->assertTrue( eZStepCreateSites::activateAdminUIAccessExtension( $adminDir, $extensionRoot ) );
+        $this->assertSame( array( 'expai', 'exp_adminui' ), $this->adminINI()->variable( 'ExtensionSettings', 'ActiveAccessExtensions' ) );
+        // an access extension only, and the admin keeps its own design
+        $this->assertFalse( $this->adminINI()->hasVariable( 'ExtensionSettings', 'ActiveExtensions' ) );
+        $this->assertSame( 'admin4l', $this->adminINI()->variable( 'DesignSettings', 'SiteDesign' ) );
+        // a second run changes nothing
+        $once = file_get_contents( $adminDir . '/site.ini.append.php' );
+        $this->assertTrue( eZStepCreateSites::activateAdminUIAccessExtension( $adminDir, $extensionRoot ) );
+        $this->assertSame( $once, file_get_contents( $adminDir . '/site.ini.append.php' ) );
+        // the adminui siteaccess made from it has it once as well
+        $this->assertTrue( $this->make() );
+        $this->assertSame( array( 'expai', 'exp_adminui' ), $this->ini( 'site.ini.append.php' )->variable( 'ExtensionSettings', 'ActiveAccessExtensions' ) );
+    }
+
+    public function testAnAdminWithoutSettingsCannotBeGivenExpAdminUI()
+    {
+        $this->withExtension();
+        $this->assertFalse( eZStepCreateSites::activateAdminUIAccessExtension( $this->root . '/settings/siteaccess/nosuchadmin', $this->root . '/extension' ) );
+    }
+
+    public function testTheEditorGetsExpAdminUIOnceOnlyWhenTheInstallationHasIt()
+    {
+        $this->writeAdminAccessExtensions( array( 'expai' ) );
+        $step = new class extends eZStepCreateSites
+        {
+            function __construct()
+            {
+            }
+
+            function siteaccessURLs()
+            {
+                return array( 'url' => 'example.com', 'admin_url' => 'example.com/admin', 'editor_url' => 'example.com/editor' );
+            }
+        };
+        // createEditorSiteAccess() works below settings/siteaccess of the installation
+        $relative = '../../' . $this->root . '/settings/siteaccess/';
+        $this->assertTrue( $step->createEditorSiteAccess( $relative . 'admin', $relative . 'editor' ) );
+        $editor = new eZINI( 'site.ini.append.php', $this->root . '/settings/siteaccess/editor', null, false, null, true, false );
+        // the editor's extensions are the installation's (eZExtension::baseDirectory())
+        $expected = eZStepCreateSites::adminUIAvailable( eZExtension::baseDirectory() ) ? array( 'expai', 'exp_adminui' ) : array( 'expai' );
+        $this->assertSame( $expected, $editor->variable( 'ExtensionSettings', 'ActiveAccessExtensions' ) );
+        $this->assertSame( 'editor', $editor->variable( 'DesignSettings', 'SiteDesign' ) );
+        $this->assertFalse( $editor->hasVariable( 'ExtensionSettings', 'ActiveExtensions' ) );
+    }
 }

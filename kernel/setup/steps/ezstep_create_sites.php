@@ -630,6 +630,14 @@ class eZStepCreateSites extends eZStepInstaller
         $site->setVariable( 'DesignSettings', 'AdditionalSiteDesignList', array( 'admin4l', 'admin4', 'admin3', 'admin2', 'admin' ) );
         $site->setVariable( 'SiteAccessSettings', 'ExtensionSettingsSiteAccess', $adminSiteaccessName );
         $site->setVariable( 'SiteSettings', 'SiteName', 'Editor' );
+        // exp_adminui once, as the admin has it (activateAdminUIAccessExtension()), so AdminUI is a design choice of
+        // the editor's UI switch as well
+        $editorAccessExtensions = self::withAdminUIAccessExtension(
+            $site->hasVariable( 'ExtensionSettings', 'ActiveAccessExtensions' )
+                ? (array)$site->variable( 'ExtensionSettings', 'ActiveAccessExtensions' ) : array(),
+            eZExtension::baseDirectory() );
+        if ( $editorAccessExtensions )
+            $site->setVariable( 'ExtensionSettings', 'ActiveAccessExtensions', $editorAccessExtensions );
         // its own address, not the admin's (SiteURL is written without the scheme)
         $urls = $this->siteaccessURLs();
         $editorURL = preg_replace( '#^[a-zA-Z0-9]+://#', '', rtrim( (string)$urls['editor_url'], '/' ) );
@@ -669,6 +677,58 @@ class eZStepCreateSites extends eZStepInstaller
     static function adminUIAvailable( $extensionRoot = 'extension' )
     {
         return is_dir( rtrim( (string)$extensionRoot, '/' ) . '/' . self::ADMINUI_EXTENSION );
+    }
+
+    /**
+     * The ActiveAccessExtensions[] of the admin and editor siteaccesses with exp_adminui added once, at the end, when
+     * the installation has the extension. Why: the UI switch's design provider offers a design only when its
+     * directory is in an active design extension, so AdminUI is a choice of the design menu on the admin and the
+     * editor only with exp_adminui switched on there; its global settings (design.ini DesignExtensions[]) come
+     * along. It stays an access extension, never in ActiveExtensions[], and the siteaccesses keep their own
+     * SiteDesign. Without the extension the list is returned as it was (empty and repeated names left out).
+     *
+     * @param array $accessExtensions ActiveAccessExtensions[] of the siteaccess
+     * @param string $extensionRoot the extension directory of the installation
+     * @return array
+     */
+    static function withAdminUIAccessExtension( array $accessExtensions, $extensionRoot = 'extension' )
+    {
+        $list = array();
+        foreach ( $accessExtensions as $extension )
+        {
+            $extension = trim( (string)$extension );
+            if ( $extension !== '' && !in_array( $extension, $list, true ) )
+                $list[] = $extension;
+        }
+        if ( self::adminUIAvailable( $extensionRoot ) && !in_array( self::ADMINUI_EXTENSION, $list, true ) )
+            $list[] = self::ADMINUI_EXTENSION;
+        return $list;
+    }
+
+    /**
+     * Adds exp_adminui to ActiveAccessExtensions[] of a siteaccess's site.ini.append.php (withAdminUIAccessExtension()),
+     * once, when the installation has the extension. The file is written only when the list changes.
+     *
+     * @param string $siteaccessDir settings/siteaccess/<name>
+     * @param string $extensionRoot the extension directory of the installation
+     * @return bool|null true done (or nothing to do), null skipped (no exp_adminui), false failed
+     */
+    static function activateAdminUIAccessExtension( $siteaccessDir, $extensionRoot = 'extension' )
+    {
+        if ( !self::adminUIAvailable( $extensionRoot ) )
+            return null;
+        $siteaccessDir = rtrim( (string)$siteaccessDir, '/' );
+        if ( !file_exists( $siteaccessDir . '/site.ini.append.php' ) )
+            return false;
+        $site = new eZINI( 'site.ini.append.php', $siteaccessDir, null, null, null, true, true );
+        $site->setReadOnlySettingsCheck( false );
+        $current = $site->hasVariable( 'ExtensionSettings', 'ActiveAccessExtensions' )
+                 ? array_values( (array)$site->variable( 'ExtensionSettings', 'ActiveAccessExtensions' ) ) : array();
+        $list = self::withAdminUIAccessExtension( $current, $extensionRoot );
+        if ( $list === $current )
+            return true;
+        $site->setVariable( 'ExtensionSettings', 'ActiveAccessExtensions', $list );
+        return (bool)$site->save( false, false, false, false, true, true );
     }
 
     /**
@@ -2123,6 +2183,11 @@ language_locale='eng-GB'";
         }
 
 
+        // exp_adminui in the admin siteaccess when the installation has it (activateAdminUIAccessExtension()): AdminUI
+        // is then a choice of the UI switch's design menu. After the post-install, so a site package's settings
+        // cannot drop it; the editor and adminui siteaccesses below are made from these files.
+        if ( self::activateAdminUIAccessExtension( "settings/siteaccess/$adminSiteaccessName", eZExtension::baseDirectory() ) === false )
+            eZLog::write( "eZStepCreateSites: " . self::ADMINUI_EXTENSION . " could not be added to settings/siteaccess/$adminSiteaccessName", 'setup.log' );
         if ( !$this->createEditorSiteAccess( $adminSiteaccessName, $editorSiteaccessName ) )
         {
             $resultArray['errors'][] = array( 'code' => 'EZSW-081',
