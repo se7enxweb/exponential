@@ -26299,6 +26299,46 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Verwendeter Zeichensatz</translation>
     </message>
     <message>
+        <source>%rate % (%hits hits, %misses misses)</source>
+        <translation>%rate % (%hits Treffer, %misses Fehlzugriffe)</translation>
+    </message>
+    <message>
+        <source>pages stored</source>
+        <translation>gespeicherte Seiten</translation>
+    </message>
+    <message>
+        <source>counting since</source>
+        <translation>gezählt seit</translation>
+    </message>
+    <message>
+        <source>servers counting</source>
+        <translation>zählende Server</translation>
+    </message>
+    <message>
+        <source>entries</source>
+        <translation>Einträge</translation>
+    </message>
+    <message>
+        <source>on disk</source>
+        <translation>auf der Festplatte</translation>
+    </message>
+    <message>
+        <source>user contexts</source>
+        <translation>Benutzerkontexte</translation>
+    </message>
+    <message>
+        <source>generation</source>
+        <translation>Generation</translation>
+    </message>
+    <message>
+        <source>purged tags</source>
+        <translation>gelöschte Tags</translation>
+    </message>
+    <message>
+        <source>last purge</source>
+        <translation>letzte Leerung</translation>
+    </message>
+    <message>
         <source>Internal</source>
         <translation>Intern</translation>
     </message>
