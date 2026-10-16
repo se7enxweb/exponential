@@ -418,7 +418,7 @@
 
         </div>
         <div class="right">
-            <input type="text" class="halfbox hide ezobject-relation-search-text" />
+            <input type="text" class="halfbox hide ezobject-relation-search-text" aria-label="{'Find objects'|i18n( 'design/standard/content/datatype' )|wash}" />
             <input type="submit" class="button hide ezobject-relation-search-btn" name="CustomActionButton[{$attribute.id}_browse_objects]" value="{'Find objects'|i18n( 'design/standard/content/datatype' )}" />
         </div>
         <div class="break"></div>

@@ -242,7 +242,7 @@
     {* lang and dir="rtl" of a text in a right-to-left content language, nothing for a left-to-right one *}
     {set-block variable=exp_text_attrs}{include uri='design:parts/exp_content_direction.tpl' exp_locale_code=$attribute.language_code}{/set-block}
     <div class="oe-window">
-        <textarea class="box" id="{$attribute_base}_data_text_{$attribute.id}" name="{$attribute_base}_data_text_{$attribute.id}" cols="88" rows="{$editorRow}"{$exp_text_attrs}>{$input_handler.input_xml}</textarea>
+        <textarea class="box" id="{$attribute_base}_data_text_{$attribute.id}" name="{$attribute_base}_data_text_{$attribute.id}" cols="88" rows="{$editorRow}" aria-label="{$attribute.contentclass_attribute.name|wash}"{$exp_text_attrs}>{$input_handler.input_xml}</textarea>
     </div>
 
     <div class="block">

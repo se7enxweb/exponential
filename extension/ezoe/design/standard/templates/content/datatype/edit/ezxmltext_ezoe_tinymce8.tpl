@@ -270,8 +270,22 @@ function eZOe8Init( id, attributeId, buttons, pathLocation, rows )
             });
         }
     });
-    // a text in a right-to-left content language: the textarea says dir="rtl" and its language tag (lang)
     var source = document.getElementById( id );
+    // the editing area is named after the attribute (the textarea's aria-label); TinyMCE gives the iframe a title
+    // only in Firefox, so the iframe gets it here for every browser
+    if ( source && source.getAttribute( 'aria-label' ) )
+    {
+        var areaName = source.getAttribute( 'aria-label' ), setupNamed = settings.setup;
+        settings.iframe_aria_text = areaName;
+        settings.setup = function( editor ) {
+            setupNamed( editor );
+            editor.on( 'PostRender init', function() {
+                if ( editor.iframeElement && !editor.iframeElement.getAttribute( 'title' ) )
+                    editor.iframeElement.setAttribute( 'title', areaName );
+            });
+        };
+    }
+    // a text in a right-to-left content language: the textarea says dir="rtl" and its language tag (lang)
     if ( source && source.getAttribute( 'dir' ) === 'rtl' )
         settings.directionality = 'rtl';
     if ( source && source.getAttribute( 'lang' ) )
@@ -292,7 +306,7 @@ function eZOe8Init( id, attributeId, buttons, pathLocation, rows )
 
 {* lang and dir="rtl" of a text in a right-to-left content language, nothing for a left-to-right one; eZOe8Init reads them *}
 <div class="oe-window">
-    <textarea class="box" id="{$attribute_base}_data_text_{$attribute.id}" name="{$attribute_base}_data_text_{$attribute.id}" cols="88" rows="{$editorRow}"{include uri='design:parts/exp_content_direction.tpl' exp_locale_code=$attribute.language_code}>{$input_handler.input_xml}</textarea>
+    <textarea class="box" id="{$attribute_base}_data_text_{$attribute.id}" name="{$attribute_base}_data_text_{$attribute.id}" cols="88" rows="{$editorRow}" aria-label="{$attribute.contentclass_attribute.name|wash}"{include uri='design:parts/exp_content_direction.tpl' exp_locale_code=$attribute.language_code}>{$input_handler.input_xml}</textarea>
 </div>
 
 <div class="block">

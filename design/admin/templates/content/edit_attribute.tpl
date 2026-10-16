@@ -9,11 +9,13 @@
     <div class="ezcca-collapsible-fieldset-content">
 {/if}
 {foreach $content_attributes_grouped as $attribute_identifier => $attribute}
-{def $contentclass_attribute = $attribute.contentclass_attribute}
-<div class="block ezcca-edit-datatype-{$attribute.data_type_string} ezcca-edit-{$attribute_identifier}">
+{def $contentclass_attribute = $attribute.contentclass_attribute
+     $exp_own_fieldset = and( or( ne( $attribute.can_translate, 0 ), eq( $object.initial_language_code, $attribute.language_code ) ), $is_translating_content|not, $attribute.display_info.edit.grouped_input )}
+{* A named group; a grouped input names itself with its fieldset and legend *}
+<div class="block ezcca-edit-datatype-{$attribute.data_type_string} ezcca-edit-{$attribute_identifier}"{if $exp_own_fieldset|not} role="group" aria-labelledby="ezcca-name-{$attribute.id}"{/if}>
 {* Show view GUI if we can't edit, otherwise: show edit GUI. *}
 {if and( eq( $attribute.can_translate, 0 ), ne( $object.initial_language_code, $attribute.language_code ) )}
-    <label>{first_set( $contentclass_attribute.nameList[$content_language], $contentclass_attribute.name )|wash}
+    <label><span id="ezcca-name-{$attribute.id}">{first_set( $contentclass_attribute.nameList[$content_language], $contentclass_attribute.name )|wash}</span>
         {if $attribute.can_translate|not} <span class="nontranslatable">({'not translatable'|i18n( 'design/admin/content/edit_attribute' )})</span>{/if}:
         {if $contentclass_attribute.description} <span class="classattribute-description">{first_set( $contentclass_attribute.descriptionList[$content_language], $contentclass_attribute.description)|wash}</span>{/if}
     </label>
@@ -28,7 +30,7 @@
     {/if}
 {else}
     {if $is_translating_content}
-        <label{if $attribute.has_validation_error} class="message-error"{/if}>{first_set( $contentclass_attribute.nameList[$content_language], $contentclass_attribute.name )|wash}
+        <label{if $attribute.has_validation_error} class="message-error"{/if}{if $attribute.display_info.edit.grouped_input|not} for="ezcoa-{if ne( $attribute_base, 'ContentObjectAttribute' )}{$attribute_base}-{/if}{$attribute.contentclassattribute_id}_{$attribute.contentclass_attribute_identifier}"{/if}><span id="ezcca-name-{$attribute.id}">{first_set( $contentclass_attribute.nameList[$content_language], $contentclass_attribute.name )|wash}</span>
             {if $attribute.is_required} <span class="required">({'required'|i18n( 'design/admin/content/edit_attribute' )})</span>{/if}
             {if $attribute.is_information_collector} <span class="collector">({'information collector'|i18n( 'design/admin/content/edit_attribute' )})</span>{/if}:
             {if $contentclass_attribute.description} <span class="classattribute-description">{first_set( $contentclass_attribute.descriptionList[$content_language], $contentclass_attribute.description)|wash}</span>{/if}
@@ -50,7 +52,7 @@
     {else}
         {if $attribute.display_info.edit.grouped_input}
             <fieldset>
-            <legend{if $attribute.has_validation_error} class="message-error"{/if}><span class="long-legend-wrap">{first_set( $contentclass_attribute.nameList[$content_language], $contentclass_attribute.name )|wash}
+            <legend{if $attribute.has_validation_error} class="message-error"{/if}><span class="long-legend-wrap"><span id="ezcca-name-{$attribute.id}">{first_set( $contentclass_attribute.nameList[$content_language], $contentclass_attribute.name )|wash}</span>
                 {if $attribute.is_required} <span class="required">({'required'|i18n( 'design/admin/content/edit_attribute' )})</span>{/if}
                 {if $attribute.is_information_collector} <span class="collector">({'information collector'|i18n( 'design/admin/content/edit_attribute' )})</span>{/if}
                 {if $contentclass_attribute.description} <span class="classattribute-description">{first_set( $contentclass_attribute.descriptionList[$content_language], $contentclass_attribute.description)|wash}</span>{/if}
@@ -62,7 +64,7 @@
             <input type="hidden" name="ContentObjectAttribute_id[]" value="{$attribute.id}" />
             </fieldset>
         {else}
-            <label{if $attribute.has_validation_error} class="message-error"{/if}>{first_set( $contentclass_attribute.nameList[$content_language], $contentclass_attribute.name )|wash}
+            <label{if $attribute.has_validation_error} class="message-error"{/if} for="ezcoa-{if ne( $attribute_base, 'ContentObjectAttribute' )}{$attribute_base}-{/if}{$attribute.contentclassattribute_id}_{$attribute.contentclass_attribute_identifier}"><span id="ezcca-name-{$attribute.id}">{first_set( $contentclass_attribute.nameList[$content_language], $contentclass_attribute.name )|wash}</span>
                 {if $attribute.is_required} <span class="required">({'required'|i18n( 'design/admin/content/edit_attribute' )})</span>{/if}
                 {if $attribute.is_information_collector} <span class="collector">({'information collector'|i18n( 'design/admin/content/edit_attribute' )})</span>{/if}:
                 {if $contentclass_attribute.description} <span class="classattribute-description">{first_set( $contentclass_attribute.descriptionList[$content_language], $contentclass_attribute.description)|wash}</span>{/if}
@@ -75,7 +77,7 @@
     {/if}
 {/if}
 </div>
-{undef $contentclass_attribute}
+{undef $contentclass_attribute $exp_own_fieldset}
 {/foreach}
 {if $attribute_group|ne( $attribute_default_category )}
     </div>
