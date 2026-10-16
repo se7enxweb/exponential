@@ -382,7 +382,7 @@
                 pw.focus();
             });
         }
-        var sent = false, button = form.querySelector('.a4-login-submit');
+        var sent = false, button = form.querySelector('.a4-login-submit'), label = button ? button.textContent : '';
         form.addEventListener('submit', function (e) {
             if (sent) { e.preventDefault(); return; }
             sent = true;
@@ -393,9 +393,14 @@
                 if (button.getAttribute('data-label-busy')) button.textContent = button.getAttribute('data-label-busy');
             }
         });
-        // back/forward cache: a page shown again is ready to send again
+        // back/forward cache: a page shown again is ready to send again, with the button's own label
         window.addEventListener('pageshow', function (e) {
-            if (e.persisted && button) { sent = false; button.classList.remove('a4-busy'); button.removeAttribute('aria-busy'); }
+            if (e.persisted && button) {
+                sent = false;
+                button.classList.remove('a4-busy');
+                button.removeAttribute('aria-busy');
+                button.textContent = label;
+            }
         });
     }
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
@@ -449,7 +454,8 @@
  * admin4: the groups of a long left menu (details.a4-navgroup, parts/ini_menu.tpl) keep their open or closed state
  * through window.a4Pref: for a signed-in user the eZPreference admin_navgroups (the closed groups' ids, comma
  * separated), for an anonymous page the browser. A group that holds the current page (data-a4-current) opens
- * whatever was stored.
+ * whatever was stored. Only a change saves: the toggle event of a group closed on load to put the stored state back
+ * (it comes later, as a task) finds that state already stored and writes nothing.
  */
 (function () {
     'use strict';
@@ -472,7 +478,9 @@
             var key = group.getAttribute('data-a4-navgroup');
             if (!group.hasAttribute('data-a4-current') && list.indexOf(key) !== -1) group.open = false;
             group.addEventListener('toggle', function () {
-                var now = closed().filter(function (id) { return id !== key; });
+                var stored = closed();
+                if ((stored.indexOf(key) !== -1) === !group.open) return;
+                var now = stored.filter(function (id) { return id !== key; });
                 if (!group.open) now.push(key);
                 save(now);
             });

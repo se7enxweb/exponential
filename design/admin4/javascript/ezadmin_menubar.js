@@ -330,27 +330,22 @@
         let startWidth = 0;
         let activePointerId = null;
 
-        const getToken = () => {
-            const tokenNode = document.getElementById('ezxform_token_js');
-            return tokenNode ? tokenNode.getAttribute('title') : '';
-        };
-
         const applyWidth = (width) => {
             const clamped = Math.min(maxWidthNow(), Math.max(minWidth, Math.round(width)));
             document.documentElement.style.setProperty('--left-sidebar-width', `${clamped}px`);
             return clamped;
         };
 
+        // The width as the preference admin_left_menu_size through window.a4Pref, like every other remembered choice
+        // (a width the server does not take is kept in this browser), and only when it changed: a click on the grip
+        // that does not move it saves nothing.
+        let savedWidth = Math.round(leftMenu.getBoundingClientRect().width);
         const saveWidth = (width) => {
-            const token = getToken();
-            if (!window.jQuery || !window.$ || !$.ez || !token) {
+            if (width === savedWidth || !window.a4Pref) {
                 return;
             }
-
-            $.post(
-                $.ez.url.replace('ezjscore/', 'user/preferences/') + 'set_and_exit/admin_left_menu_size/' + width + 'px',
-                { ezxform_token: token }
-            );
+            savedWidth = width;
+            window.a4Pref.set('admin_left_menu_size', `${width}px`);
         };
 
         const onMove = (event) => {

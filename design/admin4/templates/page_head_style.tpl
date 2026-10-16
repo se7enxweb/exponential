@@ -6,11 +6,13 @@
    changes while the page is open. The header's #a4-theme-toggle steps light -> dark -> system -> light and stores
    the step; its name says the mode in use ("Color mode: …", data-label-*), its title the next step
    (data-title-*), and #a4-theme-status announces a press. A switch without data-label-system (an older copy of
-   the markup) keeps stepping between light and dark. Other open admin tabs follow through the storage event.
+   the markup) keeps stepping between light and dark. Other open admin tabs follow through the storage event: a
+   signed-in user's choice is written to localStorage too once it is saved (window.a4Pref.set's share).
    Storage that is blocked (private windows, policies) only means the choice is not remembered.
    This script is the one piece of the page's look that cannot wait for the stylesheets (a page drawn light and then
    switched would flash). It also sets the left column's hand-dragged width (data-a4-left-width on <html>, from the
-   admin_left_menu_size preference) as --left-sidebar-width; the preset sizes are in pagelayout.css. No <style>. *}
+   admin_left_menu_size preference; without a preference and without a preset size, the browser's copy of a width
+   that could not be saved) as --left-sidebar-width; the preset sizes are in pagelayout.css. No <style>. *}
 {literal}<script>
 /* window.a4Pref: the one place for the frame's remembered choices (color mode, side columns, left menu
    groups). For a signed-in user each is an eZPreference: parts/a4_preference_attributes.tpl writes it on <html>
@@ -21,7 +23,9 @@
    an error status, or a redirect such as the login page of an expired session) is kept in localStorage instead,
    which get() reads while the preference is empty (that copy belongs to the browser, not to the user: the next user
    without the preference takes it along). set( name, '' ) forgets a choice: the preference is set empty ("-") and
-   the browser's copy removed. */
+   the browser's copy removed. A value equal to the one already on <html> is not sent again (a page that only
+   restores a stored state writes nothing). set( name, value, legacyKey, share ): with share, a saved value is also
+   written to the browser's copy, so other open tabs hear it through the storage event. */
 (function () {
     var root = document.documentElement, url = root.getAttribute('data-a4-pref-url');
     function attr(name) { return 'data-a4-pref-' + name.replace(/_/g, '-'); }
@@ -33,7 +37,7 @@
         } catch (e) { /* blocked storage: the choice lasts for this page */ }
         return null;
     }
-    function send(name, value, failed) {
+    function send(name, value, failed, saved) {
         var fail = function () { if (failed) failed(); };
         var go = function () {
             var t = document.getElementById('ezxform_token_js'), token = t ? t.getAttribute('title') : '';
@@ -42,7 +46,7 @@
                 method: 'POST', credentials: 'same-origin', keepalive: true,
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: 'ezxform_token=' + encodeURIComponent(token)
-            }).then(function (r) { if (!r.ok || r.redirected) fail(); }, fail);
+            }).then(function (r) { if (!r.ok || r.redirected) fail(); else if (saved) saved(); }, fail);
         };
         if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', go); else go();
     }
@@ -56,14 +60,19 @@
             if (old) window.a4Pref.set(name, old, legacyKey);
             return old;
         },
-        set: function (name, value, legacyKey) {
+        set: function (name, value, legacyKey, share) {
             value = String(value);
-            if (!url) { local(legacyKey || 'exp-a4-' + name, value); return; }
-            var key = legacyKey || 'exp-a4-' + name, shown = value === '' ? '-' : value;
+            var key = legacyKey || 'exp-a4-' + name;
+            if (!url) { if (local(key) !== value) local(key, value); return; }
+            var shown = value === '' ? '-' : value;
+            // unchanged: nothing to save (a stored state put back on load is not a choice)
+            if (root.getAttribute(attr(name)) === shown) return;
             root.setAttribute(attr(name), shown);
             if (value === '') local(key, '');
-            // not saved: this browser keeps it, unless a later choice has replaced it meanwhile
-            send(name, value, function () { if (root.getAttribute(attr(name)) === shown) local(key, value); });
+            // not saved: this browser keeps it, unless a later choice has replaced it meanwhile; saved and shared:
+            // the browser's copy follows, which tells the other open tabs
+            send(name, value, function () { if (root.getAttribute(attr(name)) === shown) local(key, value); },
+                 share ? function () { if (root.getAttribute(attr(name)) === shown) local(key, value); } : null);
         }
     };
 })();
@@ -71,10 +80,14 @@
     var KEY = 'exp-admin4-theme', root = document.documentElement;
     var mq = window.matchMedia ? window.matchMedia( '(prefers-color-scheme: dark)' ) : null;
     var w = root.getAttribute('data-a4-left-width');
+    // a width the server did not get (window.a4Pref kept it in this browser), unless a preset size is chosen
+    if (!w && !root.hasAttribute('data-a4-left-size') && window.a4Pref.signedIn) {
+        try { w = window.localStorage.getItem('exp-a4-admin_left_menu_size'); } catch (e) { w = null; }
+    }
     if (w && /^\d{2,4}(\.\d+)?px$/.test(w)) root.style.setProperty('--left-sidebar-width', w);
     // the eZPreference admin_color_mode (window.a4Pref); localStorage for an anonymous page
     function stored() { return window.a4Pref.get('admin_color_mode', KEY); }
-    function save(next) { window.a4Pref.set('admin_color_mode', next, KEY); }
+    function save(next) { window.a4Pref.set('admin_color_mode', next, KEY, true); }
     function choiceOf(value) { return value === 'dark' || value === 'system' ? value : 'light'; }
     function apply(value) {
         var choice = choiceOf(value);
@@ -131,15 +144,9 @@ try { window.localStorage.removeItem('exp-admin4-density'); } catch (e) { /* blo
   {def $load_main_css = true()}
 {/if}
 
-{if is_unset( $admin_theme )}
-  {def $admin_theme = ''}
-{/if}
-
-{if $admin_theme}
-  {def $admin_theme_css = concat( 'theme/', $admin_theme, '.css' )}
-{else}
-  {def $admin_theme_css = 'theme/rounded.css'}
-{/if}
+{* admin4 ships one theme stylesheet: an admin_theme preference left from an older admin design names a file admin4
+   does not have, which the packer skipped (only an eZDebug warning) and the frame lost rounded.css; so the name is
+   fixed here *}
 
 {if $load_main_css}
   {* load main css files and required css files *}
@@ -148,7 +155,7 @@ try { window.localStorage.removeItem('exp-admin4-density'); } catch (e) { /* blo
                         'debug.css',
                         'pagelayout.css',
                         'content.css',
-                        $admin_theme_css,
+                        'theme/rounded.css',
                         'theme/admin_datatable.css',
                         'theme/modalwindow.css',
                         'admin4.css',
@@ -159,7 +166,7 @@ try { window.localStorage.removeItem('exp-admin4-density'); } catch (e) { /* blo
                         'debug.css',
                         'pagelayout.css',
                         'content.css',
-                        $admin_theme_css,
+                        'theme/rounded.css',
                         'theme/admin_datatable.css',
                         'admin4.css',
                         ezini( 'StylesheetSettings', 'AdminComponentCSSFileList', 'design.ini' ) ) )}

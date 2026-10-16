@@ -51,14 +51,14 @@ class AdminPreferencesTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( "'ezxform_token=' + encodeURIComponent(token)", $head );
         // localStorage only for an anonymous page (no data-a4-pref-url) and once, to take an old choice along
         $this->assertStringContainsString( "if (!url) return local(legacyKey || 'exp-a4-' + name);", $head );
-        $this->assertStringContainsString( "if (!url) { local(legacyKey || 'exp-a4-' + name, value); return; }", $head );
+        $this->assertStringContainsString( "if (!url) { if (local(key) !== value) local(key, value); return; }", $head );
         $this->assertSame( 1, substr_count( $head, 'window.localStorage.setItem(' ), 'only the helper writes to localStorage' );
     }
 
     public function testEveryFeatureUsesTheHelper()
     {
         $head = self::read( 'design/admin4/templates/page_head_style.tpl' );
-        $this->assertStringContainsString( "window.a4Pref.set('admin_color_mode', next, KEY)", $head );
+        $this->assertStringContainsString( "window.a4Pref.set('admin_color_mode', next, KEY, true)", $head );
         $menubar = self::read( 'design/admin4/javascript/ezadmin_menubar.js' );
         $this->assertStringContainsString( 'const prefs = { left: "admin_left_sidebar", right: "admin_right_sidebar" };', $menubar );
         $this->assertStringContainsString( 'pref.set(prefs[side], open ? "1" : "0");', $menubar );
