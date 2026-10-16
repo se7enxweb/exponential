@@ -176,7 +176,7 @@ bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
 b974dde24700fd18ba9d30714509893a  composer.dev.json
 7e531407fc8efd6cf497d4260dd8897c  composer.dev.lock
-9e22bb3c90ff535618bf5ac9503493bd  composer.json
+5ba2a469b2c3ed5c8fb0ed67e96393ae  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 2d91308b2fa30038d9cc37afd0e2d44a  config.env.php.example
 e7da3e13ed7cc993f3d31886d4a42ddc  config.php-RECOMMENDED
@@ -4197,7 +4197,7 @@ e9d30140fbd42f2815532e7daf033609  extension/ezformtoken/README.rst
 53322d752c21521e6736059158a8dd4b  extension/ezformtoken/extension.xml
 d026b4b6493a2fbdafad45ce440bcce2  extension/ezformtoken/settings/debug.ini.append.php
 904cefcac39deefdc471b89751b82a85  extension/ezformtoken/settings/site.ini.append.php
-9b1ab82952b7ff7e074aabd9118904b8  extension/ezjscore/CHANGELOG
+fd5a9bfacba23eb9a75004baecdbce58  extension/ezjscore/CHANGELOG
 0636e73ff0215e8d672dc4c32c317bb3  extension/ezjscore/LICENSE
 d41d8cd98f00b204e9800998ecf8427e  extension/ezjscore/README
 8901b1cdb8d2fd269beef27e7322be09  extension/ezjscore/autoloads/ezjscaccesstemplatefunctions.php
@@ -4234,8 +4234,8 @@ a7bf61ace40268bc56e89998941eec49  extension/ezjscore/design/standard/templates/e
 a2a8b366e1eca7ce170c33b9eeed6135  extension/ezjscore/design/standard/templates/ezjsctemplate/test.tpl
 4f71f4fd05bd14ecadea3d748f370a5c  extension/ezjscore/doc/FAQ
 693f3589fef421f20391f7f19ee241fb  extension/ezjscore/doc/INSTALL
-d94bec52cfdac59242ad014058bf4f42  extension/ezjscore/extension.xml
-82acd975cb1cb6b502691984d462f86d  extension/ezjscore/ezinfo.php
+2bcd31787f1f2f98ffa21e491ea50134  extension/ezjscore/extension.xml
+c7787798b8e8571d7677cb1e96a27fcc  extension/ezjscore/ezinfo.php
 1ce5d9f4713290f0b03a3128aa0898ae  extension/ezjscore/modules/ezjscore/call.php
 dd9ea2c4abeb36e89c5120deddce6dd0  extension/ezjscore/modules/ezjscore/hello.php
 b89ef61ec84f55e7c56dc26e74b2a3cd  extension/ezjscore/modules/ezjscore/module.php
