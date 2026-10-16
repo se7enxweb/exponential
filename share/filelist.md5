@@ -723,7 +723,7 @@ d511917c192b5bf0d69955b34d1e584c  design/admin/templates/user/hygiene.tpl
 693d1d198fd16f0c6b455e10582be512  design/admin/templates/user/setting.tpl
 201d4d8ba785302b4e8abb1d2dc5275c  design/admin/templates/user/success.tpl
 17515bd5097ece16983c29cae9193909  design/admin/templates/user/unactivated.tpl
-d70ea4e4ca6888faa925a5b7530e9a6c  design/admin/templates/visual/menuconfig.tpl
+b19e1b0e18caf2a3e8cc2cc653a22450  design/admin/templates/visual/menuconfig.tpl
 ecca0e500ca59994386c7e2ad4ddc06c  design/admin/templates/visual/menuconfig_siteaccess.tpl
 2a40a3ec20d6d8f06ec03530d7459af5  design/admin/templates/visual/templatecreate.tpl
 f2efc18207209c78e85372a1096eb598  design/admin/templates/visual/templateedit.tpl
@@ -1364,7 +1364,7 @@ f1330c22370b2c5a1d1d13ffa2683854  design/admin4/templates/user/register.tpl
 226c8c080fb5974da9a000e3f5cc7e06  design/admin4/templates/user/setting.tpl
 201d4d8ba785302b4e8abb1d2dc5275c  design/admin4/templates/user/success.tpl
 17515bd5097ece16983c29cae9193909  design/admin4/templates/user/unactivated.tpl
-25a758515ff3cdf429c362e7f228d1ac  design/admin4/templates/visual/menuconfig.tpl
+f7937adeb6ee254fd027fab0e2d97586  design/admin4/templates/visual/menuconfig.tpl
 ecca0e500ca59994386c7e2ad4ddc06c  design/admin4/templates/visual/menuconfig_siteaccess.tpl
 1e103923cfe39f450d8e4b398f4a677a  design/admin4/templates/visual/templatecreate.tpl
 c09665cc932a46809818d4c7b9afea98  design/admin4/templates/visual/templateedit.tpl
@@ -2831,7 +2831,7 @@ cdbe0fdc9c9011438bf808f4842b0982  doc/bc/5.90/relation_indexing.md
 80fe50b87915a03608f4e2717961df7b  doc/bc/6.0/AdditionalExtensionDirectories.md
 1e03a68c3131eb9d1c8b4570c969d237  doc/bc/6.0/EXT_SORT_ORDERS.md
 7bd7841ebda1338b74f5d29c8e3d4df0  doc/bc/6.0/ICONS.md
-94f95a803fffdb657972e1a81769e82f  doc/bc/6.0/LAYOUTS.md
+2c56f7a3506917910383af311b62a3cb  doc/bc/6.0/LAYOUTS.md
 d386923e32f7abc18de9e5392795bb5f  doc/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md
 d95203ddf57747c5dcb15b6923bd0356  doc/bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXPANSION_HIDE_UNHIDE.md
 6519fe5610143430f5f05b01222ba0a4  doc/bc/6.0/admin4-styling.md
@@ -3068,7 +3068,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-68f1a615b46404668ff63859760767e3  doc/changelogs/6.0/6.0.15.md
+1b76c2e09aa10c25bd0442d8e7a81d58  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3396,7 +3396,7 @@ d054ec0eb0da44b4658d442f6b051953  doc/features/6.0/admin-content-tree-top-node.m
 8ee6875c6693489d567c309177b49b81  doc/features/6.0/admin-list-paging.md
 41099ca247392d7ed963caa4b857e51c  doc/features/6.0/admin3-responsive-admin.md
 98b1eb658a2475fc31af9b9cbfaba709  doc/features/6.0/admin3-sidebar-width-and-font-size.md
-7eef7a3c912f7f55424a2ebe563fbc77  doc/features/6.0/admin4-design.md
+554669e97cb6afb59f343b418756439f  doc/features/6.0/admin4-design.md
 7d8b3d248d27baa55bbf5f7f22040693  doc/features/6.0/admin4l.md
 cb077d1f37f8e8811c377ede4bc99357  doc/features/6.0/adminneo-database-manager.md
 ae7d698fad5f10287ad37ade2f97d8aa  doc/features/6.0/audit-trail.md
@@ -3564,13 +3564,13 @@ a72372bfbed72cfa54a1c57099f1a532  doc/features/6.0/velocity-q-shell.md
 f9c3f344c473869cfb55845caedce10f  doc/features/6.0/version-preview-view-modes.md
 ea95054293c7fc405fdf3061a7551b64  doc/features/6.0/web-server-and-solr-commands.md
 318f07ca75bbc5533f12b0dfafc40a50  doc/glossary.md
-e0a1dcbdb3268cd91f3c2e9b4450c016  doc/guides/README.md
+3f03bbcee72ed3d7dd8956dadc470cfc  doc/guides/README.md
 30d5d3e9179c8b6ab0053e5c3c11f93f  doc/guides/api-keys.md
 e6788c036282afd665d79ed6bb9c4d6d  doc/guides/benchmarking.md
 1557f305015ba4d3dd8d9af1df819885  doc/guides/bookmarks.md
 059d1bc7f70385064dd174f108ea7a25  doc/guides/caches.md
 904a22a8bea4bbe000de375d7e9c4fde  doc/guides/class-groups.md
-833921c92fe7cc4360fb5640748abb88  doc/guides/classic-menu-settings.md
+229cada95d0782bb85ae39de8cc966be  doc/guides/classic-menu-settings.md
 8f01bc44a84c119de29cd508fe41e05b  doc/guides/collected-information.md
 42311d8c175d353c9ffebeb9431bc599  doc/guides/content-history.md
 168f1e657cae2f6cf19d09ba7dec59b8  doc/guides/content-languages.md
@@ -4864,7 +4864,7 @@ b6faf2d3e94d112d264407f513b30bf5  kernel/classes/audit/sinks/expauditsinkregistr
 a2da229d7c87947ca857fde6aa7453c7  kernel/classes/audit/sinks/expauditwebhooksink.php
 347e0b5b322c11051576975b30661f0c  kernel/classes/basketinfohandlers/ezdefaultbasketinfohandler.php
 d9227137dd50a1a7c10f055f3d1e3a47  kernel/classes/binaryhandlers/ezfilepassthrough/ezfilepassthroughhandler.php
-dd29e9f7a95a0976352a76f81c13ab88  kernel/classes/classicmenu/examples/design_extension.txt
+11186f7ff3f33766aea2b302f535e1dd  kernel/classes/classicmenu/examples/design_extension.txt
 f8cf4921de860cc17aa6677d6a4b6cc5  kernel/classes/classicmenu/examples/menu_my_section_left.tpl
 b5d0553aec2e5951a9bc51419c102aa2  kernel/classes/classicmenu/examples/menu_my_top.tpl
 1529299573525bf0a52540ae3b3deac3  kernel/classes/classicmenu/examples/pagelayout_menus.tpl
@@ -5918,7 +5918,7 @@ d427b343b4930630764393115fe79e9e  kernel/private/classes/views/user/register.php
 15ff684909ba08e97c297c40efe2787f  kernel/private/classes/views/user/setting.php
 393719bcd2072ce08507c375dddfdc9d  kernel/private/classes/views/user/success.php
 1fc32fef56eadc6da767ced651e2cca4  kernel/private/classes/views/user/unactivated.php
-655548787cc392b5391adc60d6f633de  kernel/private/classes/views/visual/menuconfig.php
+46083561e7999b84af6f3239cf0d2d15  kernel/private/classes/views/visual/menuconfig.php
 f82c58db20b33dbf52c18abce76f988c  kernel/private/classes/views/visual/templatecreate.php
 4b717bf565f0452973d71d5df32f11d7  kernel/private/classes/views/visual/templateedit.php
 b8c0974f0c2373ab4498fc1c002a17a7  kernel/private/classes/views/visual/templatelist.php
@@ -6283,7 +6283,7 @@ d190d8208ec44bba3c732d5246f24e37  kernel/user/registration.php
 8c1df2af6cd2bf196b75cc3570437251  kernel/user/success.php
 0c355f7c358b98ae4141229922b82919  kernel/user/unactivated.php
 e5dced0aa99e1287b66c38e69e1ed9fe  kernel/visual/menuconfig.php
-36f9cd227f1ab050d7abc03a90fad467  kernel/visual/module.php
+8aeadc2b1151320cbc7534452a9a1721  kernel/visual/module.php
 8da6dbe0714873e9b5a9e9c4dc8399fb  kernel/visual/templatecreate.php
 9afb6c4c11f5396eea2919d61be771c9  kernel/visual/templateedit.php
 60ff07e90aea0b645545635015fe8a2a  kernel/visual/templatelist.php
@@ -6571,7 +6571,7 @@ ba31587f56f91488816b2dcd90470594  settings/layout.ini
 ba0c39f06c1735dda504b831ab1f89ef  settings/ldap.ini
 4a2de424bb5015cf1e0c6ba66ba53ab6  settings/logfile.ini
 f38064dccc9974bbc272bd49a25b4a96  settings/mailpreferences.ini
-4c628ec701bca235223cc5ecfc5b9eb5  settings/menu.ini
+9cfe3f95e7b2b68027af695d4e874496  settings/menu.ini
 4f061cecd40623be1294a7695c5cd454  settings/mime.ini
 395b3a612d87df0e4d088873ec2fcc91  settings/module.ini
 1b0c7c323c1ab385b32320c172cb4032  settings/notification.ini
@@ -7353,14 +7353,14 @@ a6b9a5e18993b0e8f8f8ff35f99bded0  share/translations/cze-CZ/translation.ts
 a2b163b1fd63c8bdb24c907d8473ad74  share/translations/ell-GR/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-AU/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-NZ/translation.ts
-30bd9a615958945fdf5718db53da2408  share/translations/eng-US/translation.ts
+a39cb968e3303b397a3eeb1355c59497  share/translations/eng-US/translation.ts
 7579459206fde1781c0ac38cefaa61a0  share/translations/esl-ES/translation.ts
 3a1cd7eb19c1ba120877d76a63f9a732  share/translations/esl-MX/translation.ts
 a1ff9edf6db2ff3ff0b2d442410db154  share/translations/fin-FI/translation.ts
 53d8d7f9258c04ed02c4c84a7721e691  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-c2953601085d8d088761638124c84200  share/translations/ger-DE/translation.ts
+78c1528a932d8d2e5aa0841214ce239c  share/translations/ger-DE/translation.ts
 4d8ac50cdf1d15955918b56358fa7458  share/translations/heb-IL/translation.ts
 e97831dd958115eac1866c1c6edbac10  share/translations/ita-IT/translation.ts
 c55b244fe21805a71690ca10e8f33623  share/translations/jpn-JP/translation.ts
@@ -7462,7 +7462,7 @@ d1c4de508ec508b1743858c1c2b4c347  tests/tests/design/AdminLandmarksTest.php
 8c3a2027917dce05051de3adfbf82c29  tests/tests/design/AdminLanguageBadgeTest.php
 553ec211f2d35a9f993c49a49c6b14c0  tests/tests/design/AdminLanguageStatesTest.php
 31a396539d06fe77f5eeea659fbabc9e  tests/tests/design/AdminLeftColumnFontTest.php
-eb7e435399d64a47a054fbb09d6515a8  tests/tests/design/AdminLeftMenuGroupsTest.php
+1c30c098d4f7094ae84b4ce1b68c0e14  tests/tests/design/AdminLeftMenuGroupsTest.php
 48cd696b239173c498671c040aa3bfbe  tests/tests/design/AdminLegacyControlsTest.php
 584ea937f2fab0b4680470244e488283  tests/tests/design/AdminLogoTest.php
 ff58b887ea06f03f993b5a4203913bb9  tests/tests/design/AdminMegaMenuTest.php
