@@ -8565,7 +8565,7 @@
     </message>
     <message>
         <source>Rejected</source>
-        <translation type="obsolete">Abgelehnt</translation>
+        <translation>Abgelehnt</translation>
     </message>
     <message>
         <source>Copy and edit</source>
@@ -15662,7 +15662,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Repository</source>
-        <translation type="obsolete">Ablage</translation>
+        <translation>Ablage</translation>
     </message>
     <message>
         <source>All</source>
@@ -25590,7 +25590,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Active</source>
-        <translation type="obsolete">Aktiv</translation>
+        <translation>Aktiv</translation>
     </message>
     <message>
         <source>Name</source>
@@ -25598,7 +25598,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Apply changes</source>
-        <translation type="obsolete">Änderungen anwenden</translation>
+        <translation>Änderungen anwenden</translation>
     </message>
     <message>
         <source>Activate or deactivate extension. Use the &quot;Apply changes&quot; button to apply the changes.</source>
@@ -25634,7 +25634,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Activate</source>
-        <translation type="obsolete">Aktivieren</translation>
+        <translation>Aktivieren</translation>
     </message>
     <message>
         <source>Activate or deactivate extension. Use the &quot;Update&quot; button to apply the changes.</source>
@@ -35424,7 +35424,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Sessions</source>
-        <translation type="obsolete">Sitzungen</translation>
+        <translation>Sitzungen</translation>
     </message>
     <message>
         <source>Total number of sessions</source>
