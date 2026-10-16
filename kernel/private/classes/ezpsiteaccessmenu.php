@@ -18,8 +18,8 @@
  * - Show: enabled (the default) or disabled; disabled leaves the globe a plain
  *   link to the site.
  * - List: related (the default) lists [SiteAccessSettings] RelatedSiteAccessList[]
- *   of the current siteaccess, the siteaccesses sharing its database, or
- *   AvailableSiteAccessList[] where that is empty; available lists
+ *   of the current siteaccess, the siteaccesses sharing its database, or the
+ *   current siteaccess alone where that is empty; available lists
  *   AvailableSiteAccessList[]. Either way only siteaccesses of
  *   AvailableSiteAccessList[] are listed: the others cannot be reached. An
  *   installation serving several sites with separate databases sets
@@ -199,7 +199,7 @@ class ezpSiteAccessMenu
 
     /**
      * The siteaccesses the menu lists, in the order of their list: RelatedSiteAccessList[] of the current siteaccess
-     * (List=related; AvailableSiteAccessList[] where it is empty) or AvailableSiteAccessList[], only those of
+     * (List=related; the current siteaccess alone where it is empty) or AvailableSiteAccessList[], only those of
      * AvailableSiteAccessList[] (read without siteaccess overrides, as eZSiteAccess::match() and
      * ezpSiteAccessURL::root() read it), without HiddenSiteAccessList[].
      *
@@ -217,8 +217,15 @@ class ezpSiteAccessMenu
             $related = $ini->hasVariable( 'SiteAccessSettings', 'RelatedSiteAccessList' )
                      ? array_map( 'strval', (array)$ini->variable( 'SiteAccessSettings', 'RelatedSiteAccessList' ) ) : array();
             $related = array_filter( array_map( 'trim', $related ), 'strlen' );
-            if ( $related )
-                $names = array_intersect( $related, $available );
+            // admin4 review 15.10.2026: without RelatedSiteAccessList[] the menu listed all of
+            // AvailableSiteAccessList[], on an installation serving several sites the other sites' siteaccesses. It now
+            // fails closed: the current siteaccess only (the site the globe opens is added by build() anyway).
+            if ( !$related )
+            {
+                $current = eZSiteAccess::current();
+                $related = $current ? array( (string)$current['name'] ) : array();
+            }
+            $names = array_intersect( $related, $available );
         }
         return array_values( array_unique( array_diff( array_filter( array_map( 'trim', $names ), 'strlen' ), $settings['hidden'] ) ) );
     }

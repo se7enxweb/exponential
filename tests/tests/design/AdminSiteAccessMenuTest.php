@@ -185,7 +185,9 @@ class AdminSiteAccessMenuTest extends PHPUnit\Framework\TestCase
         $settings['site.ini']['DesignSettings']['SiteDesign'] = 'standard';
         $settings['site.ini']['SiteAccessSettings'] = $siteAccessSettings + array(
             'AvailableSiteAccessList' => array( 'site', 'en', 'de', 'site_admin' ),
-            'RelatedSiteAccessList' => array(),
+            // the related list every administration on a tree with several sites sets (without it the menu lists
+            // the current siteaccess alone)
+            'RelatedSiteAccessList' => array( 'site', 'en', 'de', 'site_admin' ),
             'MatchOrder' => 'uri',
             'URIMatchType' => 'element',
             'URIMatchElement' => '1',
@@ -200,12 +202,20 @@ class AdminSiteAccessMenuTest extends PHPUnit\Framework\TestCase
 
     public function testTheListComesFromTheSettings()
     {
-        $this->inject( array( 'AdminSiteAccessList' => array( 'site_admin' ) ) );
+        $this->inject( array( 'AdminSiteAccessList' => array( 'site_admin' ) ), array( 'RelatedSiteAccessList' => array() ) );
         $settings = ezpSiteAccessMenu::settings();
         $this->assertSame( array( 'show' => true, 'list' => 'related', 'hidden' => array(), 'admin' => array( 'site_admin' ),
                                   'administrations' => true ), $settings );
-        // List=related without RelatedSiteAccessList: the available ones
-        $this->assertSame( array( 'site', 'en', 'de', 'site_admin' ), ezpSiteAccessMenu::names( $settings ) );
+        // List=related without RelatedSiteAccessList: the current siteaccess alone, not every available one (on an
+        // installation serving several sites those are the other sites' siteaccesses)
+        $this->assertSame( array( 'site_admin' ), ezpSiteAccessMenu::names( $settings ) );
+        $menu = ezpSiteAccessMenu::current();
+        $this->assertSame( 'site', $menu['front']['identifier'] );
+        $this->assertSame( array( 'admin' => array( 'site_admin' ) ), self::identifiers( $menu ) );
+        // ... and nothing at all when the current siteaccess is not an available one
+        $this->inject( array(), array( 'RelatedSiteAccessList' => array() ), 'elsewhere' );
+        $this->assertSame( array(), ezpSiteAccessMenu::names( ezpSiteAccessMenu::settings() ) );
+        $this->assertFalse( ezpSiteAccessMenu::current()['enabled'] );
 
         // the related ones, in their order, only those that are available; the hidden ones left out
         $this->inject( array( 'HiddenSiteAccessList' => array( 'de', '' ) ), array( 'RelatedSiteAccessList' => array( 'de', 'site_admin', 'site', 'elsewhere' ) ) );
