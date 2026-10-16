@@ -878,7 +878,7 @@ ac084a07607e6d6c5a845da15423854f  design/admin4/images/view-fullscreen.png
 9257c4d949d4225fb464a98ceac29696  design/admin4/javascript/admin4.js
 611b86193bc31bf56218fc25131e04b8  design/admin4/javascript/contentstructuremenu_dynamic.js
 a5e25bc5b912c88678afe25d798ade81  design/admin4/javascript/expajaxuploader.js
-056209e455e8b671aa6916e7e91dfd3e  design/admin4/javascript/ezadmin_menubar.js
+d2831992a6a754e322ae8aae77156be2  design/admin4/javascript/ezadmin_menubar.js
 59795cfe15e8bc99974d7d9099794478  design/admin4/javascript/ezajaxrelations_jquery.js
 a28728171fd43a28e1ffc80bc858e768  design/admin4/javascript/ezajaxsubitems_expdatatable.js
 031d335156c09ec9dc3db2f2d3730087  design/admin4/javascript/node_tabs.js
@@ -913,7 +913,7 @@ f91a366a6abfa6b8a706b154b7aec12c  design/admin4/override/templates/template_look
 03505c55345b654eeb275f3b614a92bf  design/admin4/override/templates/thumbnail/image.tpl
 6971adb19c3c39b21f245c72b7f73305  design/admin4/override/templates/thumbnail/image_browse.tpl
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
-3d72e9340e0c54b7a0adb7effc185c67  design/admin4/stylesheets/admin4.css
+ed485ef3e9c23861d37d13623297e8c4  design/admin4/stylesheets/admin4.css
 06f92a7dbc2632aa18db66eac647a5b3  design/admin4/stylesheets/components.css
 29dbb2aaee5436f235093d29c633111b  design/admin4/stylesheets/content.css
 2de9fc688889d1bbdbffcec633e34f39  design/admin4/stylesheets/core.css
@@ -1179,7 +1179,7 @@ cb128a4645e891cd796919aad3ed36d1  design/admin4/templates/page_header.tpl
 3fdb2b3a20673506924b5885ec564cc4  design/admin4/templates/page_topmenu.tpl
 d710bb0e7285e93ad1ee0e56d756b9bd  design/admin4/templates/page_topmenuitem.tpl
 f0b52f21d5e9f1e7999667614bf82400  design/admin4/templates/page_toppath.tpl
-aae9c1a43653127dd4fbfa0ab3baa8e6  design/admin4/templates/pagelayout.tpl
+c3c82ec867cc1dd5bd3a36a839f7e51a  design/admin4/templates/pagelayout.tpl
 435db8e2b723396436597f44d430a983  design/admin4/templates/parts/a4_environment_badge.tpl
 41b309bce99292420eca74f538bedc24  design/admin4/templates/parts/a4_header_site.tpl
 4c291d409f8f98263403597d29a50f61  design/admin4/templates/parts/a4_header_user.tpl
@@ -1410,7 +1410,7 @@ d32ea5c9ac61787a910308fd75511a3c  design/admin4l/templates/explayouts/block/admi
 e3d8d2a6433a550d677fc47fe525cd34  design/admin4l/templates/explayouts/block/admin_tab_menu.tpl
 ec30f68bbb3a6278b971111371505fdc  design/admin4l/templates/explayouts/block/admin_theme_switch.tpl
 006a94cb403062f61b9ed5592ea9f6ae  design/admin4l/templates/explayouts/block/admin_ui_switch.tpl
-d61b5b9439f9cf2a9cecf8c227f9960d  design/admin4l/templates/pagelayout.tpl
+5b58581b24718c0c4a45dd142042bd85  design/admin4l/templates/pagelayout.tpl
 e07ee98bdbd9a6b7b1224004fff07513  design/base/images/bin.gif
 86fff651cfbbcf360ef78737c6523d64  design/base/images/button.gif
 7ae68b7e4d3ceed5ac652b11f20face6  design/base/images/quote-down.gif
@@ -3068,7 +3068,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-1b76c2e09aa10c25bd0442d8e7a81d58  doc/changelogs/6.0/6.0.15.md
+9f80f22c88f377c4a817e0a1a8dedad4  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3396,7 +3396,7 @@ d054ec0eb0da44b4658d442f6b051953  doc/features/6.0/admin-content-tree-top-node.m
 8ee6875c6693489d567c309177b49b81  doc/features/6.0/admin-list-paging.md
 41099ca247392d7ed963caa4b857e51c  doc/features/6.0/admin3-responsive-admin.md
 98b1eb658a2475fc31af9b9cbfaba709  doc/features/6.0/admin3-sidebar-width-and-font-size.md
-554669e97cb6afb59f343b418756439f  doc/features/6.0/admin4-design.md
+38357e391a3e1b749fa96feb57cee445  doc/features/6.0/admin4-design.md
 7d8b3d248d27baa55bbf5f7f22040693  doc/features/6.0/admin4l.md
 cb077d1f37f8e8811c377ede4bc99357  doc/features/6.0/adminneo-database-manager.md
 ae7d698fad5f10287ad37ade2f97d8aa  doc/features/6.0/audit-trail.md
@@ -7440,7 +7440,7 @@ a4e7a187670959adc083b3b4ab09caca  tests/runtests.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 9ff58a769386f12831d56db2598e292e  tests/suite.php
-7d2e168ec9816d36dd6963e5fc447512  tests/test-map.json
+44077199c22d116ea781767af32b31b9  tests/test-map.json
 8b29711fe10a56c5c5b90916f35d0a00  tests/tests/bin/phpcs/NoTypeDeclarationsSniffTest.php
 4e3eeb18c2ea423afb62388e5e3dcafc  tests/tests/bin/phpcs/fixtures/typedeclarations.inc
 a170729e7e161686001ae10895d34d53  tests/tests/design/AdminBaseStylesheetsTest.php
@@ -7455,6 +7455,7 @@ a15f60da55163c3055ee1c45bfd5a806  tests/tests/design/AdminCardsTest.php
 7a6d21774343c1bfa611fd993416166c  tests/tests/design/AdminEditBarTest.php
 99d5c1ba62dc2dd021f478d557ea40dd  tests/tests/design/AdminEditorSkinTest.php
 438babfea7d674b5ae84c50a71940ab6  tests/tests/design/AdminEnvironmentBadgeTest.php
+2cbf98d0d087a48bdb8002bf38397a65  tests/tests/design/AdminFirstPaintColumnsTest.php
 d3eb59f229be42df66f1b0b8cfaf5519  tests/tests/design/AdminFontStackTest.php
 e0969685ae94ce6950d89ebe71ea65d1  tests/tests/design/AdminFormErrorsTest.php
 c76f86863ef135a2c51d2083890f9380  tests/tests/design/AdminFormLabelsTest.php
@@ -7503,6 +7504,7 @@ a998bae7f6c7a83dd1eb0f05afc6a6ef  tests/tests/design/AdminTopNodeNameTest.php
 b1c86fb42e09b8aa8c9834d62706a3b4  tests/tests/design/AdminVisibilityStatusTest.php
 a160ae3b2d682c5f063abf5546023024  tests/tests/design/FormSubmitButtonDisableTest.php
 ea2584f9208c35d5087694b08ebd88aa  tests/tests/design/js/editor_skin.js
+d26a12327326fb58236058ff32d5505c  tests/tests/design/js/first_paint.js
 b7cffb5712803f903d80c45a0cd3f90d  tests/tests/design/js/language_states.js
 a134e1113ff97edab51d735f9fc9fb26  tests/tests/design/js/mega_menu.js
 1033cab01919fe018fa1ad7d1f25de66  tests/tests/design/js/phone_menu.js
