@@ -9,6 +9,61 @@ namespace Exponential\View\Extension\Ezoe\Ezoe
 
 class EmbedView extends \Exponential\Runnable\ModuleView
 {
+    /**
+     * A request value as a string: an array (class[]=x) or anything else that is not a string or a number gives
+     * the default, so the template keys and object_parameters always get a string.
+     *
+     * @param mixed $value
+     * @param string $default
+     * @return string
+     */
+    public static function stringParameter( $value, $default )
+    {
+        if ( is_string( $value ) )
+            return $value;
+        if ( is_int( $value ) || is_float( $value ) )
+            return (string) $value;
+        return $default;
+    }
+
+    /**
+     * The view modes an embed may be shown in: content.ini AvailableViewModes[] of [embed] and [embed-inline],
+     * and of [embed_<class>] / [embed-inline_<class>] where the class of the embedded object has one (the lists
+     * ezoe/relations offers in the dialog).
+     *
+     * @param \eZINI $contentIni
+     * @param string|false $classIdentifier
+     * @return string[]
+     */
+    public static function availableViewModes( $contentIni, $classIdentifier )
+    {
+        $sections = array( 'embed', 'embed-inline' );
+        if ( is_string( $classIdentifier ) && $classIdentifier !== '' )
+        {
+            $sections[] = 'embed_' . $classIdentifier;
+            $sections[] = 'embed-inline_' . $classIdentifier;
+        }
+        $modes = array();
+        foreach ( $sections as $section )
+        {
+            if ( $contentIni->hasVariable( $section, 'AvailableViewModes' ) )
+                $modes = array_merge( $modes, (array) $contentIni->variable( $section, 'AvailableViewModes' ) );
+        }
+        return array_values( array_unique( array_filter( array_map( 'strval', $modes ), 'strlen' ) ) );
+    }
+
+    /**
+     * The view the embed is shown in: the requested one when it is an available view mode, else 'embed'.
+     *
+     * @param mixed $view the requested view
+     * @param string[] $available
+     * @return string
+     */
+    public static function allowedView( $view, array $available )
+    {
+        return is_string( $view ) && in_array( $view, $available, true ) ? $view : 'embed';
+    }
+
     public function run( array $scope )
     {
         // the including function's variables ($Params, $Module, $cli, ...)
@@ -24,26 +79,35 @@ class EmbedView extends \Exponential\Runnable\ModuleView
         $tagName         = 'embed';
         $embedObject     = false;
 
-        if ( isset( $Params['EmbedID'] )  && $Params['EmbedID'])
+        // A missing or malformed EmbedID, a node or an object that no longer exists: the unknown embed, not a fatal
+        // error (the editors call this view for every embed of a draft, also one whose target was removed)
+        $embedParsed = Relations::parseEmbedId( isset( $Params['EmbedID'] ) ? $Params['EmbedID'] : null );
+        if ( $embedParsed !== false )
         {
-            $embedType = 'ezobject';
-            if (  is_numeric( $Params['EmbedID'] ) )
-                $embedId = $Params['EmbedID'];
-            else
-                list($embedType, $embedId) = explode('_', $Params['EmbedID']);
-
-            if ( strcasecmp( $embedType  , 'eznode'  ) === 0 )
+            list( $embedType, $embedId ) = $embedParsed;
+            if ( $embedType === 'eZNode' )
             {
-                $embedNode   = \eZContentObjectTreeNode::fetch( $embedId );
-                $embedObject = $embedNode->object();
-                $tplSuffix   = '_node';
-                $idString    = 'eZNode_' . $embedId;
+                $embedNode = \eZContentObjectTreeNode::fetch( $embedId );
+                if ( $embedNode instanceof \eZContentObjectTreeNode )
+                {
+                    $embedObject = $embedNode->object();
+                    $tplSuffix   = '_node';
+                }
+                $idString = 'eZNode_' . $embedId;
             }
             else
             {
                 $embedObject = \eZContentObject::fetch( $embedId );
                 $idString    = 'eZObject_' . $embedId;
             }
+        }
+
+        // a node without its object, or no node or object at all: the unknown embed of embed.tpl
+        if ( !$embedObject instanceof \eZContentObject )
+        {
+            $embedObject = false;
+            $tplSuffix   = '';
+            unset( $embedNode );
         }
 
         if ( $embedObject instanceof \eZContentObject )
@@ -81,41 +145,46 @@ class EmbedView extends \Exponential\Runnable\ModuleView
 
         if ( isset( $_GET['class'] ) )
         {
-            $className = $_GET['class'];
+            $className = self::stringParameter( $_GET['class'], '' );
         }
         else if ( $http->hasPostVariable('class') )
         {
-            $className = $http->postVariable('class');
+            $className = self::stringParameter( $http->postVariable('class'), '' );
         }
 
         if ( isset( $_GET['size'] ) )
         {
-            $size = $_GET['size'];
+            $size = self::stringParameter( $_GET['size'], 'medium' );
         }
         else if ( $http->hasPostVariable('size') )
         {
-            $size = $http->postVariable('size');
+            $size = self::stringParameter( $http->postVariable('size'), 'medium' );
         }
 
         if ( isset( $_GET['view'] ) )
         {
-            $view = $_GET['view'];
+            $view = self::stringParameter( $_GET['view'], 'embed' );
         }
         else if ( $http->hasPostVariable('view') )
         {
-            $view = $http->postVariable('view');
+            $view = self::stringParameter( $http->postVariable('view'), 'embed' );
         }
 
         if ( isset( $_GET['align'] ) )
         {
-            $align = $_GET['align'] === 'middle' ? 'center' : $_GET['align'];
-        }
-        else if ( $http->hasPostVariable('align') )
-        {
-            $align = $http->postVariable('align');
+            $align = self::stringParameter( $_GET['align'], 'none' );
             if ( $align === 'middle' )
                 $align = 'center';
         }
+        else if ( $http->hasPostVariable('align') )
+        {
+            $align = self::stringParameter( $http->postVariable('align'), 'none' );
+            if ( $align === 'middle' )
+                $align = 'center';
+        }
+
+        // the view names a template (content/view/<view>.tpl): only an available view mode
+        $view = self::allowedView( $view, self::availableViewModes( \eZINI::instance( 'content.ini' ), $classIdentifier ) );
 
         //if ( $align === 'left' || $align === 'right' )
         //    $style .= ' float: ' . $align . ';';
