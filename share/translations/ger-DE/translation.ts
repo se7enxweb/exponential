@@ -1658,7 +1658,7 @@
     </message>
     <message>
         <source>Confirm removal</source>
-        <translation type="unfinished">Löschen bestätigen</translation>
+        <translation>Löschen bestätigen</translation>
     </message>
     <message>
         <source>%namelist [%object_count objects]</source>
@@ -40013,7 +40013,7 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     </message>
     <message>
         <source>Toggle selection</source>
-        <translation type="unfinished">Auswahl umkehren</translation>
+        <translation>Auswahl umkehren</translation>
     </message>
     <message>
         <source>Registration date</source>
@@ -40504,7 +40504,7 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     </message>
     <message>
         <source>or</source>
-        <translation type="unfinished">or</translation>
+        <translation>oder</translation>
     </message>
     <message>
         <source>Register new account</source>
@@ -52233,7 +52233,7 @@ Sie können das Paket auch entfernen ohne es von der Paketliste zu entfernen.</t
     </message>
     <message>
         <source>Global (override)</source>
-        <translation type="unfinished">Global (override)</translation>
+        <translation>Global (Override)</translation>
     </message>
     <message>
         <source>Set</source>
@@ -56478,7 +56478,7 @@ This functionality is also available at a later time from the Administration Int
     </message>
     <message>
         <source>Country</source>
-        <translation type="unfinished">Land</translation>
+        <translation>Land</translation>
     </message>
     <message>
         <source>Required data is either missing or is invalid</source>
@@ -60832,7 +60832,7 @@ Bitte folgen Sie den Hinweisen in der Email, um Ihr Konto zu aktivieren.</transl
     </message>
     <message>
         <source>Last modified</source>
-        <translation type="unfinished">Zuletzt geändert</translation>
+        <translation>Zuletzt geändert</translation>
     </message>
     <message>
         <source>Name</source>
@@ -60920,7 +60920,7 @@ Bitte folgen Sie den Hinweisen in der Email, um Ihr Konto zu aktivieren.</transl
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation type="unfinished">Auswahl umkehren.</translation>
+        <translation>Auswahl umkehren.</translation>
     </message>
     <message>
         <source>Modifier</source>
@@ -71453,6 +71453,10 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Publishing, last 14 days</source>
         <translation>Veröffentlichungen, letzte 14 Tage</translation>
+    </message>
+    <message>
+        <source>Nothing was published in the last 14 days.</source>
+        <translation>In den letzten 14 Tagen wurde nichts veröffentlicht.</translation>
     </message>
     <message>
         <source>Quick actions</source>

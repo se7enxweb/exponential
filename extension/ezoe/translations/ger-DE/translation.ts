@@ -12,7 +12,7 @@
     <name>design/admin/content/edit</name>
     <message>
         <source>Name</source>
-        <translation type="unfinished">Name</translation>
+        <translation>Name</translation>
     </message>
     <message>
         <source>File type</source>
@@ -20,11 +20,11 @@
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished">Größe</translation>
+        <translation>Größe</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished">Art</translation>
+        <translation>Art</translation>
     </message>
 </context>
 <context>
