@@ -32,7 +32,8 @@
 <div class="a4-notice is-info" role="status">
     <p><strong>{'Class storing deferred'|i18n( 'design/admin/class/view' )}</strong></p>
     <p>{'The storing of the class has been deferred because existing objects need to be updated. The process has been scheduled to run in the background and will be started automatically. Please do not edit the class again until the process has finished. You can monitor the progress of the background process here:'|i18n( 'design/admin/class/view' )}
-       <a href={concat( 'scriptmonitor/view/', $scheduled_script_id )|ezurl}>{'Background process monitor'|i18n( 'design/admin/class/view' )}</a></p>
+       {* the monitor belongs to the ezscriptmonitor extension: no link where its module is missing *}
+       {if ezmodule( 'scriptmonitor/view' )}<a href={concat( 'scriptmonitor/view/', $scheduled_script_id )|ezurl}>{'Background process monitor'|i18n( 'design/admin/class/view' )}</a>{/if}</p>
 </div>
 {/if}
 

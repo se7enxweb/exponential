@@ -236,7 +236,7 @@
                         </td>
                         <td colspan="4">
 
-                        {let object=fetch( content, object, hash( object_id, $:item.contentobject_id, object_version, $:item.contentobject_version ) )
+                        {let object=fetch( content, object, hash( object_id, $:item.contentobject_id ) )
                              version=fetch( content, version, hash( object_id, $:item.contentobject_id, version_id, $:item.contentobject_version ) )}
                         <fieldset>
                         <legend>{'Edit <%object_name> [%object_class]'|i18n( 'design/standard/content/datatype',, hash( '%object_name', $Relation:object.name, '%object_class', $Relation:object.class_name ) )|wash}</legend>
@@ -261,7 +261,7 @@
                         {* Order. *}
                         <td><input id="ezcoa-{if ne( $attribute_base, 'ContentObjectAttribute' )}{$attribute_base}-{/if}{$attribute.contentclassattribute_id}_{$attribute.contentclass_attribute_identifier}_order" class="ezcc-{$attribute.object.content_class.identifier} ezcca-{$attribute.object.content_class.identifier}_{$attribute.contentclass_attribute_identifier}" size="2" type="text" aria-labelledby="ezcoa-{$attribute.id}_order_head" name="{$attribute_base}_priority[{$attribute.id}][]" value="{$:item.priority|wash}" /></td>
                     {else}
-                        {let object=fetch( content, object, hash( object_id, $:item.contentobject_id, object_version, $:item.contentobject_version ) )}
+                        {let object=fetch( content, object, hash( object_id, $:item.contentobject_id ) )}
                         {* Remove. *}
                         <td>
                           <input id="ezcoa-{if ne( $attribute_base, 'ContentObjectAttribute' )}{$attribute_base}-{/if}{$attribute.contentclassattribute_id}_{$attribute.contentclass_attribute_identifier}_remove_{$Relation:index}" class="ezcc-{$attribute.object.content_class.identifier} ezcca-{$attribute.object.content_class.identifier}_{$attribute.contentclass_attribute_identifier}" type="checkbox" name="{$attribute_base}_selection[{$attribute.id}][]" value="{$:item.contentobject_id|wash}" aria-label="{cond( or( $Relation:object.can_read, $Relation:object.can_view_embed ), $Relation:object.name, 'Remove selected'|i18n( 'design/standard/content/datatype' ) )|wash}" />

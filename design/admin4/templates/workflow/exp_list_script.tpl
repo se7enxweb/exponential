@@ -99,3 +99,4 @@ var expListText = {ldelim}
 })();
 {/literal}
 </script>
+{/default}

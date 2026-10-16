@@ -44,3 +44,4 @@ var expPdfListText = {ldelim} selected: '{$text_selected|wash( javascript )}' {r
 })();
 {/literal}
 </script>
+{/default}
