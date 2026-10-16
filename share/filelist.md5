@@ -176,7 +176,7 @@ bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
 b974dde24700fd18ba9d30714509893a  composer.dev.json
 7e531407fc8efd6cf497d4260dd8897c  composer.dev.lock
-810de39e1b3ac5c15c4006b44e7cc331  composer.json
+9900880aa7b6631b729e123431ebe361  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 2d91308b2fa30038d9cc37afd0e2d44a  config.env.php.example
 e7da3e13ed7cc993f3d31886d4a42ddc  config.php-RECOMMENDED
@@ -2856,7 +2856,7 @@ b0fbba2abe4abadee42e57cebb5388fd  doc/bc/6.0/eZINI_PRESERVES_COMMENTS.md
 cf9e3712f778ce6bfbb6aaca39d7f82b  doc/bc/6.0/expinfo-operator.md
 14c4b5bce1de1987b27c6063156cb566  doc/bc/6.0/exponentialsdk-and-exponential-cron.md
 e03549b98a5316616e86c5e6aea94193  doc/bc/6.0/extension-package-secret-check.md
-e10cce7277e955eeea8f44d4e980b757  doc/bc/6.0/extensions-behaviour-changes.md
+752aea91430d400eddc733c9ca34c007  doc/bc/6.0/extensions-behaviour-changes.md
 e77db7f5d239cecbc118152a1b49b684  doc/bc/6.0/ezoe-tinymce8.md
 02f9c4098af6775e9b9fc4a0553bf473  doc/bc/6.0/ezpsessionhandlerdb-php8-bugfix-and-tests.md
 4182afe4de0ebf523b622ca208b721fe  doc/bc/6.0/file-modes.md
@@ -2898,7 +2898,7 @@ ea7c02ab8c7a9b67149e612bca1f10ab  doc/bc/6.0/phpunitv13.md
 111bb729184306f633c537fe44ee078c  doc/bc/6.0/platform-package-forks-and-command-renames.md
 6ecbedb530c5c3804b8be217a7b1ad12  doc/bc/6.0/preload.md
 998c241668929913ca76c4904d270043  doc/bc/6.0/rad-extension-points.md
-f9842f1b722a9803b938f6001eaca1fb  doc/bc/6.0/rad-extension-surface.md
+6abc113175c230ad36289ce8b16eed15  doc/bc/6.0/rad-extension-surface.md
 9512bd3007f2fa5c5ede9f050f49297e  doc/bc/6.0/rad-security.md
 4a8181eadee679b8558fe125d10df9c1  doc/bc/6.0/redirect-query-and-image-alias-guards.md
 ec58de54f835ce1e62ff06f43ccbdc23  doc/bc/6.0/repair.md
@@ -3128,8 +3128,8 @@ a030b187be2788aaac08fafb86df5ed4  doc/changelogs/extensions/ezplatform-standard-
 ce83e8e2c90d4c7bec91e0e22a39aa0a  doc/changelogs/extensions/ezplatform-user.md
 e22d438d82698de558096ae59397852e  doc/changelogs/extensions/ezplatform-xmltext-fieldtype.md
 18d6f0a5dcb7bebf2698ade2a34018d8  doc/changelogs/extensions/ezpm.md
-e8dad4eb20050060ab6d32a012956ba5  doc/changelogs/extensions/ezprestapi.md
-664963c0b0347025e4aee5e4458f12e6  doc/changelogs/extensions/ezprestapiprovider.md
+1193819dc0de6670a6c5505b7b84edb3  doc/changelogs/extensions/ezprestapi.md
+f88e53d26da868b23a5cb47eb7b665ac  doc/changelogs/extensions/ezprestapiprovider.md
 af5e4c21a392554a80b98b15423481ef  doc/changelogs/extensions/ezpublish-kernel.md
 ecb2e66aeb166671398b74e060a99e52  doc/changelogs/extensions/ezstarrating.md
 c16c83cf08f5e24a6a6f6d1f82539ea4  doc/changelogs/extensions/eztags.md
@@ -3414,7 +3414,7 @@ d2aeb94cafe09e6bda98c15168826937  doc/features/6.0/country-groups.md
 8642b1389ec7138669d56125d9a2b4cb  doc/features/6.0/cronjobs-console.md
 e6f3c790828c4532db21659841921631  doc/features/6.0/custom-items-per-page.md
 f2bff77e9a094481e27aa23236fdc3e5  doc/features/6.0/debug-output-improvements.md
-de63e86aaa339fad12115c7961c9094d  doc/features/6.0/default-extension-distribution.md
+99cdf034c60bece6a9d1cc14f8d3d6be  doc/features/6.0/default-extension-distribution.md
 71cb0b19b5948ed3f867cebac5f91408  doc/features/6.0/environment-settings.md
 d26f78ed5cf8ef8757d508dde440e55d  doc/features/6.0/exp-adminui.md
 33624440c66ad7b66edbd95e0ba6e61a  doc/features/6.0/exp-debug-bar.md
@@ -3423,7 +3423,7 @@ d26f78ed5cf8ef8757d508dde440e55d  doc/features/6.0/exp-adminui.md
 244d74a450d733edbbb098d118101a62  doc/features/6.0/extension-loading-order.md
 8f1fcebd72db9526f18bbcbb0cdef769  doc/features/6.0/extension-module-override.md
 2d0a604152c0b63239f761b1fae94615  doc/features/6.0/extensions/AdminAid.md
-c1cfe0c2efd71218ff78d037182875d0  doc/features/6.0/extensions/README.md
+a3ae10a1cfd75eb97796e15ea7f45346  doc/features/6.0/extensions/README.md
 5cb57cb79ef6a0d44699eaa2eba4bc6e  doc/features/6.0/extensions/bccie.md
 7e3650518d9eba1d24fe8982d5f5d32c  doc/features/6.0/extensions/bcgooglesitemaps.md
 f2e139157b0bffcb30c2b73818dbe0d3  doc/features/6.0/extensions/bcwebsitestatistics.md
@@ -3450,12 +3450,12 @@ d75618879646cabf05b8f01755b2c624  doc/features/6.0/extensions/ezie.md
 1458a7aae764f949d20a82f10de6382c  doc/features/6.0/extensions/ezoe.md
 93257863022a2ae320367e716fd56a29  doc/features/6.0/extensions/ezpaypal.md
 d401faa952476917589d0af7b2106553  doc/features/6.0/extensions/ezpm.md
-bbd7cb34a4a77971428b104ebe0f330f  doc/features/6.0/extensions/ezprestapi.md
-9ea2ac47578eb3e773202b4d1a561994  doc/features/6.0/extensions/ezprestapiprovider.md
+04bfe0ddd18984552a1197b37e1b2be1  doc/features/6.0/extensions/ezprestapi.md
+bde8f7e0badc4699db8e03f813311a2f  doc/features/6.0/extensions/ezprestapiprovider.md
 b10ae52b6a2699ce71e0f94e29c5b0fa  doc/features/6.0/extensions/ezstarrating.md
 4490230de3492ec840d6b6f4df37bed4  doc/features/6.0/extensions/eztags.md
 584d754ded1ae5bf19f539e335e2462c  doc/features/6.0/extensions/ezupdate.md
-7bbeb5edf559efc1b948275387435237  doc/features/6.0/extensions/ezwebin-ezpackage.md
+afb65a528e587e269ff3123de4abd520  doc/features/6.0/extensions/ezwebin-ezpackage.md
 10fde869a2d11cb168e6bb0070c7fac7  doc/features/6.0/extensions/ezwebin.md
 3194262a46f7c76bbcec0ca92c548f88  doc/features/6.0/extensions/ezwt.md
 79944ab5e1c8ef47ad872ac858394d02  doc/features/6.0/extensions/ezxmlexport.md
@@ -3463,7 +3463,7 @@ de41f6f86fc2b7e6f6334c08502cac09  doc/features/6.0/extensions/git_manager.md
 117ee2868e6b5a8ca70e3402d1f638c8  doc/features/6.0/extensions/hcaptcha.md
 cd72c2fef0ddc05328ed94bc569b11f5  doc/features/6.0/extensions/ngclasslist.md
 106ab750a737a39d6938b1d820a870dd  doc/features/6.0/extensions/ngsymfonytools.md
-28dca0d56c68fe313ee84fb44b4b811a  doc/features/6.0/extensions/nxc_powercontent.md
+c5396f53e2e3a9ee4e161417d6fb32ee  doc/features/6.0/extensions/nxc_powercontent.md
 a3207f27672edb4ca4d7b35fbd4c2135  doc/features/6.0/extensions/owsimpleoperator.md
 90214db2afdc348618bf88a278373ee5  doc/features/6.0/extensions/recaptcha.md
 59a57655103de04aa02d2f8b593b03b5  doc/features/6.0/extensions/sevenx-recipes.md
@@ -3561,9 +3561,9 @@ a72372bfbed72cfa54a1c57099f1a532  doc/features/6.0/velocity-q-shell.md
 747dd5c4a400e33d13f0fd8bad249a9c  doc/features/6.0/velocity-websockets-and-events.md
 f9c3f344c473869cfb55845caedce10f  doc/features/6.0/version-preview-view-modes.md
 ea95054293c7fc405fdf3061a7551b64  doc/features/6.0/web-server-and-solr-commands.md
-b5fa365a8dca747e0cbbc21b6d6d696c  doc/glossary.md
-1b756c3f3720da39c80fd0f515f18942  doc/guides/README.md
-f96c069cb6d6db0a60d32c62c1e99c99  doc/guides/api-keys.md
+318f07ca75bbc5533f12b0dfafc40a50  doc/glossary.md
+e0a1dcbdb3268cd91f3c2e9b4450c016  doc/guides/README.md
+30d5d3e9179c8b6ab0053e5c3c11f93f  doc/guides/api-keys.md
 e6788c036282afd665d79ed6bb9c4d6d  doc/guides/benchmarking.md
 1557f305015ba4d3dd8d9af1df819885  doc/guides/bookmarks.md
 059d1bc7f70385064dd174f108ea7a25  doc/guides/caches.md
@@ -3615,6 +3615,7 @@ af6721096590e8660704dfe911f7b4e7  doc/guides/packages.md
 f5c7d03721608109d841867836f390c9  doc/guides/pdf-exports.md
 c777f0fd24777ff82ffc1f07226a62db  doc/guides/preloading-caches.md
 b00b8038efaabe8cee8a586264699283  doc/guides/remote-services-and-apps.md
+6dc5870af0d6b5faf77180ad2ef15391  doc/guides/rest-api-v1-and-v2.md
 8e185ff8a062c9ad1d108e1c90df3e1a  doc/guides/roles-and-policies.md
 bb8d6835bd7b4751fd30540ba5bdf4c8  doc/guides/rss-feeds.md
 144c47d5a32d4cc3d1014f1b72188bcd  doc/guides/sections.md
@@ -6147,7 +6148,7 @@ dbb6944605f9a85624cdea87d250e3a7  kernel/setup/settingstoolbar.php
 d0f0035e31be1c14f09689697e83c198  kernel/setup/setupmenu.php
 609997eec8eb7fb4199bdad2c7b61145  kernel/setup/sitedata.php
 43596548856cbf1657013d4ae36e1873  kernel/setup/staticcachestream.php
-db0438ef2c95832e9139f0e226bb3654  kernel/setup/steps/ezstep_create_sites.php
+7db6807969bc3dd7e1563648a1ae53f4  kernel/setup/steps/ezstep_create_sites.php
 3174823463cf9d0f9a18162ee233dc04  kernel/setup/steps/ezstep_data.php
 b9fd62b91d08d970060f9290870a9d53  kernel/setup/steps/ezstep_database_choice.php
 159e6d92aa4c98ea6d19e6c8f2299379  kernel/setup/steps/ezstep_database_init.php
@@ -6579,7 +6580,7 @@ ebc1c25ced143cfaaa5d343350676ecc  settings/override.ini
 660b0d81b874343b1ffa494dc1fd6dbf  settings/querycache.ini
 688db30689fc7f6ca972f71be1616c51  settings/rad.ini
 744f63beb0a42c8ec1f29c355e81fd5c  settings/requestrules.ini
-02c2067bd8f1edecd60e16ea8a39e240  settings/rest.ini
+db6b4d0a5dcd033f25aaa70eccb33d47  settings/rest.ini
 122b02cc3dab8b41bbbce96df60e2642  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
@@ -8286,7 +8287,7 @@ e92b23a8b19a5157df8e6413cc5e874f  tests/tests/kernel/private/restapi/ezpRestAnsw
 fa7de453db2f950cf99c949a777e46fd  tests/tests/kernel/private/restapi/ezpRestDebugPHPFormatterTest.php
 0dacd48beadb95bd6c1a7801c6430215  tests/tests/kernel/private/restapi/ezpRestMvcControllerBehaviourTest.php
 d731695df12bfdbe203a7b1451dbb498  tests/tests/kernel/private/restapi/ezpRestRequestTest.php
-fd187ef4813fd3abf41eb49dcdead49e  tests/tests/kernel/private/restapi/ezpRestRouteMatchingTest.php
+90d881efea967a205b46a452a1244429  tests/tests/kernel/private/restapi/ezpRestRouteMatchingTest.php
 50e5af23a7738f7eb224505c4c59a540  tests/tests/kernel/private/restapi/ezpRestRouteSecurityTest.php
 3cebf066838a2b8fc6f89f49f5ac2dfd  tests/tests/kernel/private/restapi/ezpRestStatusAndErrorTest.php
 e9080d1886071fced9c71d05268dffde  tests/tests/kernel/private/views/StateViewDatabaseTest.php
