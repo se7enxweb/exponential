@@ -4758,7 +4758,7 @@
     </message>
     <message>
         <source>You are running &lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt;, it might not be up to date with the latest hot fixes and service packs. Contact &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; for more information.</source>
-        <translation>Está ejecutando &lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt;, puede que no está actualizado con las últimas resoluciones de incidencias y service packs</translation>
+        <translation>Está ejecutando &lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt;, puede que no esté actualizado con las últimas correcciones y service packs. Contacte con &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; para más información.</translation>
     </message>
     <message>
         <source>You are using %edition, the &lt;span id=&quot;Exponential-community-project-is-innovative-and-cutting-edge&quot;&gt;innovative and cutting-edge&lt;/span&gt; version of Exponential, built by &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; and the &lt;a href=&quot;%ez_community_link&quot;&gt;Exponential Community&lt;/a&gt;.&lt;/p&gt;
