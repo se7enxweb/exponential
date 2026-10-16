@@ -1097,6 +1097,10 @@ fieldset.a4-field > legend + * { clear: both; }
   border-radius: var(--a4-radius-s);
   background-color: var(--a4-card);
   cursor: pointer;
+  /* core.css draws every label on one line: a choice with a description (the package wizard's creators) or a long
+     word wraps inside its card instead of running out of the grid cell */
+  white-space: normal;
+  overflow-wrap: break-word;
 }
 .a4-radios input { width: 18px; height: 18px; margin: 0; }
 .a4-radios input:checked + span { font-weight: 650; }

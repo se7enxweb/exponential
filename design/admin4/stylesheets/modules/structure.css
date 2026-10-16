@@ -605,6 +605,8 @@ a.a4-class-top {
 .a4-package-creator-list label { align-items: flex-start; height: 100%; }
 .a4-package-creator-list input { margin-top: 2px; }
 .a4-package-creator-list label > span { display: flex; flex-direction: column; gap: var(--a4-space-1); min-width: 0; }
+/* core.css draws every label bold and the checked choice is bolder: what a wizard exports reads as normal text */
+.a4-package-creator-list label .a4-help { font-weight: normal; }
 .a4-package-creator-list label:has(input:checked) { border-color: var(--a4-accent); box-shadow: inset 0 0 0 1px var(--a4-accent); }
 
 /* a narrow window: the steps wrap as numbers and only the current one keeps its name */
