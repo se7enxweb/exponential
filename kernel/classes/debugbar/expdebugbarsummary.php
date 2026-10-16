@@ -139,7 +139,9 @@ class expDebugBarSummary
             'querycache' => self::queryCache( $thresholds['querycache_hit_rate'] ),
             'engine' => self::engine(),
             'siteaccess' => isset( $GLOBALS['eZCurrentAccess']['name'] ) ? $GLOBALS['eZCurrentAccess']['name'] : null,
-            'php' => PHP_VERSION,
+            // the version of PHP tells what the server is open to: for those who may read its lists only, as the bar's
+            // own versions chip; the report's JSON reaches anonymous visitors too when DebugByIP matches
+            'php' => self::mayReadLists() ? PHP_VERSION : null,
             'thresholds' => $thresholds,
         );
     }

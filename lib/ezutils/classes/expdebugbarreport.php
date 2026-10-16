@@ -1051,7 +1051,8 @@ class expDebugBarReport
         $rows[self::t( 'Entered' )] = $entered;
         $rows[self::t( 'Received by' )] = $facts['received_by'];
         $rows[self::t( 'Rendered by' )] = self::t( $facts['rendered_by'] );
-        $rows['PHP'] = PHP_VERSION . ' (' . PHP_SAPI . ')';
+        // the version only for the privileged: the tab shows to anonymous visitors too when DebugByIP matches
+        $rows['PHP'] = $privileged ? PHP_VERSION . ' (' . PHP_SAPI . ')' : PHP_SAPI;
         if ( $privileged )
         {
             $rows[self::t( 'Process' )] = (string)$facts['pid'];
