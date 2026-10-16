@@ -994,6 +994,57 @@
     "kernel/setup/steps/ezstep_create_sites.php": [
       "tests/tests/kernel/classes/setup/AdminUISiteaccessTest.php",
       "tests/tests/kernel/classes/setup/EditorSiteaccessTabsTest.php"
+    ],
+    "design/admin4/templates/visual/toolbar.tpl": [
+      "tests/tests/design/AdminReviewTemplateWarningsTest.php"
+    ],
+    "kernel/classes/ezcontentbrowse.php": [
+      "tests/tests/kernel/classes/eZContentBrowseEditReturnTargetTest.php"
+    ],
+    "kernel/private/classes/views/content/browse.php": [
+      "tests/tests/kernel/classes/eZContentBrowseEditReturnTargetTest.php"
+    ],
+    "design/admin4/templates/parts/ini_menu.tpl": [
+      "tests/tests/design/AdminReviewTemplateWarningsTest.php"
+    ],
+    "design/admin4/templates/relations.tpl": [
+      "tests/tests/design/AdminReviewTemplateWarningsTest.php"
+    ],
+    "design/admin4/templates/content/dashboard.tpl": [
+      "tests/tests/design/AdminReviewTemplateWarningsTest.php"
+    ],
+    "design/admin4/templates/content/datatype/edit/ezobjectrelationlist.tpl": [
+      "tests/tests/design/AdminReviewTemplateWarningsTest.php"
+    ],
+    "design/admin4/templates/class/exp_list_script.tpl": [
+      "tests/tests/design/AdminReviewTemplateWarningsTest.php"
+    ],
+    "design/admin4/templates/pdf/exp_list_script.tpl": [
+      "tests/tests/design/AdminReviewTemplateWarningsTest.php"
+    ],
+    "design/admin4/templates/rss/exp_list_script.tpl": [
+      "tests/tests/design/AdminReviewTemplateWarningsTest.php"
+    ],
+    "design/admin4/templates/trigger/exp_list_script.tpl": [
+      "tests/tests/design/AdminReviewTemplateWarningsTest.php"
+    ],
+    "design/admin4/templates/workflow/exp_list_script.tpl": [
+      "tests/tests/design/AdminReviewTemplateWarningsTest.php"
+    ],
+    "design/admin4/templates/role/exp_limitations.tpl": [
+      "tests/tests/design/AdminReviewTemplateWarningsTest.php"
+    ],
+    "settings/admininterface.ini": [
+      "tests/tests/design/AdminReviewTemplateWarningsTest.php"
+    ],
+    "design/admin/templates/class/view.tpl": [
+      "tests/tests/design/AdminReviewTemplateWarningsTest.php"
+    ],
+    "design/admin4/templates/class/view.tpl": [
+      "tests/tests/design/AdminReviewTemplateWarningsTest.php"
+    ],
+    "extension/ezoe/translations/ger-DE/translation.ts": [
+      "tests/tests/design/AdminReviewTemplateWarningsTest.php"
     ]
   },
   "generated": {
