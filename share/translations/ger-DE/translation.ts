@@ -13540,7 +13540,7 @@
     </message>
     <message>
         <source>Create package</source>
-        <translation>Erstelle Paket</translation>
+        <translation>Paket erstellen</translation>
     </message>
     <message>
         <source>Available wizards</source>
@@ -15332,6 +15332,286 @@ Falls Sie die Deinstallation im Moment nicht durchführen wollen, können Sie da
     <message>
         <source>This file is not text, so it is not shown here; Download gives it.</source>
         <translation>Diese Datei ist kein Text und wird hier daher nicht gezeigt; Herunterladen liefert sie.</translation>
+    </message>
+    <message>
+        <source>%count added</source>
+        <translation>%count hinzugefügt</translation>
+    </message>
+    <message>
+        <source>%count chosen</source>
+        <translation>%count ausgewählt</translation>
+    </message>
+    <message>
+        <source>%count of %total selected</source>
+        <translation>%count von %total ausgewählt</translation>
+    </message>
+    <message>
+        <source>A package can be downloaded in either format later.</source>
+        <translation>Ein Paket kann später in beiden Formaten heruntergeladen werden.</translation>
+    </message>
+    <message>
+        <source>A site style is two stylesheets: one for the site and one for the content classes. Both are required.</source>
+        <translation>Ein Site-Stil besteht aus zwei Stylesheets: einem für die Site und einem für die Inhaltsklassen. Beide sind erforderlich.</translation>
+    </message>
+    <message>
+        <source>A site style: two stylesheets, their images and a thumbnail.</source>
+        <translation>Ein Site-Stil: zwei Stylesheets, ihre Bilder und ein Vorschaubild.</translation>
+    </message>
+    <message>
+        <source>About the package</source>
+        <translation>Über das Paket</translation>
+    </message>
+    <message>
+        <source>Add a node or a subtree to start.</source>
+        <translation>Fügen Sie zuerst einen Knoten oder einen Teilbaum hinzu.</translation>
+    </message>
+    <message>
+        <source>Add image</source>
+        <translation>Bild hinzufügen</translation>
+    </message>
+    <message>
+        <source>Add the images the stylesheets use, one at a time. Continue without a file when all are added.</source>
+        <translation>Fügen Sie die Bilder, die die Stylesheets verwenden, einzeln hinzu. Wenn alle hinzugefügt sind, fahren Sie ohne Datei fort.</translation>
+    </message>
+    <message>
+        <source>An image file, for example PNG or JPEG.</source>
+        <translation>Eine Bilddatei, zum Beispiel PNG oder JPEG.</translation>
+    </message>
+    <message>
+        <source>An image that shows what the package looks like. It is optional: continue without a file to go on without one.</source>
+        <translation>Ein Bild, das zeigt, wie das Paket aussieht. Es ist optional: Fahren Sie ohne Datei fort, um keines zu verwenden.</translation>
+    </message>
+    <message>
+        <source>Changelog entry</source>
+        <translation>Changelog-Eintrag</translation>
+    </message>
+    <message>
+        <source>Choose the content classes to export. The package carries their definitions, not their objects.</source>
+        <translation>Wählen Sie die zu exportierenden Inhaltsklassen. Das Paket enthält ihre Definitionen, nicht ihre Objekte.</translation>
+    </message>
+    <message>
+        <source>Choose the content to export: a single node, or a node with everything below it (a subtree). The next step sets what comes with it.</source>
+        <translation>Wählen Sie die zu exportierenden Inhalte: einen einzelnen Knoten oder einen Knoten mit allem darunter (einen Teilbaum). Im nächsten Schritt legen Sie fest, was mitkommt.</translation>
+    </message>
+    <message>
+        <source>Chosen: %file</source>
+        <translation>Gewählt: %file</translation>
+    </message>
+    <message>
+        <source>Class definitions</source>
+        <translation>Klassendefinitionen</translation>
+    </message>
+    <message>
+        <source>Classes CSS file</source>
+        <translation>CSS-Datei der Klassen</translation>
+    </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Inhalte (%count)</translation>
+    </message>
+    <message>
+        <source>Content classes (%count)</source>
+        <translation>Inhaltsklassen (%count)</translation>
+    </message>
+    <message>
+        <source>Contents</source>
+        <translation>Inhalt</translation>
+    </message>
+    <message>
+        <source>Create package writes this package to the local repository. Use Back to change a step; nothing is written until then.</source>
+        <translation>„Paket erstellen“ schreibt dieses Paket in das lokale Repository. Mit „Zurück“ ändern Sie einen Schritt; bis dahin wird nichts geschrieben.</translation>
+    </message>
+    <message>
+        <source>Extensions (%count)</source>
+        <translation>Erweiterungen (%count)</translation>
+    </message>
+    <message>
+        <source>Filter by name</source>
+        <translation>Nach Name filtern</translation>
+    </message>
+    <message>
+        <source>Filter by name or identifier</source>
+        <translation>Nach Name oder Bezeichner filtern</translation>
+    </message>
+    <message>
+        <source>Format and license</source>
+        <translation>Format und Lizenz</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation>Gruppen</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Bezeichner</translation>
+    </message>
+    <message>
+        <source>Image file (optional)</source>
+        <translation>Bilddatei (optional)</translation>
+    </message>
+    <message>
+        <source>Image files</source>
+        <translation>Bilddateien</translation>
+    </message>
+    <message>
+        <source>Include</source>
+        <translation>Aufnehmen</translation>
+    </message>
+    <message>
+        <source>Included</source>
+        <translation>Enthalten</translation>
+    </message>
+    <message>
+        <source>Lowercase letters a-z, digits and underscores, for example my_site_classes.</source>
+        <translation>Kleinbuchstaben a-z, Ziffern und Unterstriche, zum Beispiel my_site_classes.</translation>
+    </message>
+    <message>
+        <source>Maintainer</source>
+        <translation>Betreuer</translation>
+    </message>
+    <message>
+        <source>Name the package and say what it holds. The name becomes its folder in the local repository and cannot be changed later.</source>
+        <translation>Benennen Sie das Paket und beschreiben Sie seinen Inhalt. Der Name wird zu seinem Ordner im lokalen Repository und kann später nicht geändert werden.</translation>
+    </message>
+    <message>
+        <source>Needed when the site the package goes to does not have these classes yet.</source>
+        <translation>Nötig, wenn die Site, auf die das Paket kommt, diese Klassen noch nicht hat.</translation>
+    </message>
+    <message>
+        <source>No class matches the filter.</source>
+        <translation>Keine Klasse passt zum Filter.</translation>
+    </message>
+    <message>
+        <source>No extension matches the filter.</source>
+        <translation>Keine Erweiterung passt zum Filter.</translation>
+    </message>
+    <message>
+        <source>No image added yet.</source>
+        <translation>Noch kein Bild hinzugefügt.</translation>
+    </message>
+    <message>
+        <source>Nodes or whole subtrees with their content, optionally with their class definitions and templates.</source>
+        <translation>Knoten oder ganze Teilbäume mit ihren Inhalten, auf Wunsch mit ihren Klassendefinitionen und Templates.</translation>
+    </message>
+    <message>
+        <source>Not included</source>
+        <translation>Nicht enthalten</translation>
+    </message>
+    <message>
+        <source>Nothing chosen yet.</source>
+        <translation>Noch nichts ausgewählt.</translation>
+    </message>
+    <message>
+        <source>One line, shown in the package list.</source>
+        <translation>Eine Zeile, die in der Paketliste angezeigt wird.</translation>
+    </message>
+    <message>
+        <source>Only the roles you may give are listed.</source>
+        <translation>Es werden nur die Rollen aufgeführt, die Sie vergeben dürfen.</translation>
+    </message>
+    <message>
+        <source>Optional. What the package is for and what it needs.</source>
+        <translation>Optional. Wofür das Paket gedacht ist und was es benötigt.</translation>
+    </message>
+    <message>
+        <source>Origin: package host and packager</source>
+        <translation>Herkunft: Paket-Host und Paketersteller</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Pakete</translation>
+    </message>
+    <message>
+        <source>Please correct the following before you continue:</source>
+        <translation>Bitte korrigieren Sie Folgendes, bevor Sie fortfahren:</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Überprüfen</translation>
+    </message>
+    <message>
+        <source>Select for removal</source>
+        <translation>Zum Entfernen auswählen</translation>
+    </message>
+    <message>
+        <source>Semantic versioning: MAJOR.MINOR.PATCH, for example 1.0.0 or 1.2.0-beta.1.</source>
+        <translation>Semantische Versionierung: MAJOR.MINOR.PATCH, zum Beispiel 1.0.0 oder 1.2.0-beta.1.</translation>
+    </message>
+    <message>
+        <source>Site CSS file</source>
+        <translation>CSS-Datei der Site</translation>
+    </message>
+    <message>
+        <source>Start the wizard</source>
+        <translation>Assistent starten</translation>
+    </message>
+    <message>
+        <source>Step %number of %total</source>
+        <translation>Schritt %number von %total</translation>
+    </message>
+    <message>
+        <source>Steps of the wizard</source>
+        <translation>Schritte des Assistenten</translation>
+    </message>
+    <message>
+        <source>Stylesheets</source>
+        <translation>Stylesheets</translation>
+    </message>
+    <message>
+        <source>Subtree</source>
+        <translation>Teilbaum</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Templates</translation>
+    </message>
+    <message>
+        <source>The definitions of content classes, to create the same classes on another site. No content is included.</source>
+        <translation>Die Definitionen von Inhaltsklassen, um dieselben Klassen auf einer anderen Site anzulegen. Inhalte sind nicht enthalten.</translation>
+    </message>
+    <message>
+        <source>The files of extensions, as they are on this site. Exporting extensions has to be switched on first.</source>
+        <translation>Die Dateien von Erweiterungen, so wie sie auf dieser Site sind. Der Export von Erweiterungen muss zuerst eingeschaltet werden.</translation>
+    </message>
+    <message>
+        <source>The first entry in the package changelog. Then check the review below and create the package.</source>
+        <translation>Der erste Eintrag im Changelog des Pakets. Prüfen Sie danach die Übersicht unten und erstellen Sie das Paket.</translation>
+    </message>
+    <message>
+        <source>The site the package is made on.</source>
+        <translation>Die Site, auf der das Paket erstellt wird.</translation>
+    </message>
+    <message>
+        <source>There are no content classes.</source>
+        <translation>Es gibt keine Inhaltsklassen.</translation>
+    </message>
+    <message>
+        <source>Thumbnail</source>
+        <translation>Vorschaubild</translation>
+    </message>
+    <message>
+        <source>Versions and languages</source>
+        <translation>Versionen und Sprachen</translation>
+    </message>
+    <message>
+        <source>What comes with the content</source>
+        <translation>Was mit den Inhalten mitkommt</translation>
+    </message>
+    <message>
+        <source>Who looks after the package. It is filled in with your own name and email address.</source>
+        <translation>Wer das Paket betreut. Ihr eigener Name und Ihre E-Mail-Adresse sind vorausgefüllt.</translation>
+    </message>
+    <message>
+        <source>Who makes the package.</source>
+        <translation>Wer das Paket erstellt.</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>erledigt</translation>
+    </message>
+    <message>
+        <source>Show the %count extensions of this site</source>
+        <translation>Die %count Erweiterungen dieser Site anzeigen</translation>
     </message>
 </context>
 <context>
@@ -63941,7 +64221,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>Package changelog</source>
-        <translation>Packet Logbuch</translation>
+        <translation>Paket-Changelog</translation>
     </message>
     <message>
         <source>Package thumbnail</source>
@@ -64009,11 +64289,11 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>Content classes to include</source>
-        <translation>Content Klassen zur Aufnahme </translation>
+        <translation>Aufzunehmende Inhaltsklassen</translation>
     </message>
     <message>
         <source>Content class export</source>
-        <translation>Content Klassen Export</translation>
+        <translation>Export von Inhaltsklassen</translation>
     </message>
     <message>
         <source>Class list</source>

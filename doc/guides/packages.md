@@ -228,7 +228,9 @@ Both need `package/install` for the package's type (they asked for the policy fo
 **Create new package** opens `/package/create`: one tile per wizard your role may use (content object export,
 content class export, extension export, site style). The wizard asks for the parts, then name, summary, version,
 license and maintainer, and the format the package is kept in (Classic XML or JSON), and writes the package into
-`local`. Nothing on the site changes.
+`local`. Nothing on the site changes. Each step shows where you are in the wizard, marks errors at their fields, and the
+last step reviews the whole package before **Create package** writes it: see [The package
+wizard](../features/6.0/package-wizard.md).
 
 ## 9. Removing packages
 

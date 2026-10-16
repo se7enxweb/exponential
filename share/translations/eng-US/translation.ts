@@ -13048,6 +13048,286 @@ You can also remove the package without uninstalling it from the package list.</
         <source>This file is not text, so it is not shown here; Download gives it.</source>
         <translation>This file is not text, so it is not shown here; Download gives it.</translation>
     </message>
+    <message>
+        <source>%count added</source>
+        <translation>%count added</translation>
+    </message>
+    <message>
+        <source>%count chosen</source>
+        <translation>%count chosen</translation>
+    </message>
+    <message>
+        <source>%count of %total selected</source>
+        <translation>%count of %total selected</translation>
+    </message>
+    <message>
+        <source>A package can be downloaded in either format later.</source>
+        <translation>A package can be downloaded in either format later.</translation>
+    </message>
+    <message>
+        <source>A site style is two stylesheets: one for the site and one for the content classes. Both are required.</source>
+        <translation>A site style is two stylesheets: one for the site and one for the content classes. Both are required.</translation>
+    </message>
+    <message>
+        <source>A site style: two stylesheets, their images and a thumbnail.</source>
+        <translation>A site style: two stylesheets, their images and a thumbnail.</translation>
+    </message>
+    <message>
+        <source>About the package</source>
+        <translation>About the package</translation>
+    </message>
+    <message>
+        <source>Add a node or a subtree to start.</source>
+        <translation>Add a node or a subtree to start.</translation>
+    </message>
+    <message>
+        <source>Add image</source>
+        <translation>Add image</translation>
+    </message>
+    <message>
+        <source>Add the images the stylesheets use, one at a time. Continue without a file when all are added.</source>
+        <translation>Add the images the stylesheets use, one at a time. Continue without a file when all are added.</translation>
+    </message>
+    <message>
+        <source>An image file, for example PNG or JPEG.</source>
+        <translation>An image file, for example PNG or JPEG.</translation>
+    </message>
+    <message>
+        <source>An image that shows what the package looks like. It is optional: continue without a file to go on without one.</source>
+        <translation>An image that shows what the package looks like. It is optional: continue without a file to go on without one.</translation>
+    </message>
+    <message>
+        <source>Changelog entry</source>
+        <translation>Changelog entry</translation>
+    </message>
+    <message>
+        <source>Choose the content classes to export. The package carries their definitions, not their objects.</source>
+        <translation>Choose the content classes to export. The package carries their definitions, not their objects.</translation>
+    </message>
+    <message>
+        <source>Choose the content to export: a single node, or a node with everything below it (a subtree). The next step sets what comes with it.</source>
+        <translation>Choose the content to export: a single node, or a node with everything below it (a subtree). The next step sets what comes with it.</translation>
+    </message>
+    <message>
+        <source>Chosen: %file</source>
+        <translation>Chosen: %file</translation>
+    </message>
+    <message>
+        <source>Class definitions</source>
+        <translation>Class definitions</translation>
+    </message>
+    <message>
+        <source>Classes CSS file</source>
+        <translation>Classes CSS file</translation>
+    </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Content (%count)</translation>
+    </message>
+    <message>
+        <source>Content classes (%count)</source>
+        <translation>Content classes (%count)</translation>
+    </message>
+    <message>
+        <source>Contents</source>
+        <translation>Contents</translation>
+    </message>
+    <message>
+        <source>Create package writes this package to the local repository. Use Back to change a step; nothing is written until then.</source>
+        <translation>Create package writes this package to the local repository. Use Back to change a step; nothing is written until then.</translation>
+    </message>
+    <message>
+        <source>Extensions (%count)</source>
+        <translation>Extensions (%count)</translation>
+    </message>
+    <message>
+        <source>Filter by name</source>
+        <translation>Filter by name</translation>
+    </message>
+    <message>
+        <source>Filter by name or identifier</source>
+        <translation>Filter by name or identifier</translation>
+    </message>
+    <message>
+        <source>Format and license</source>
+        <translation>Format and license</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation>Groups</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Identifier</translation>
+    </message>
+    <message>
+        <source>Image file (optional)</source>
+        <translation>Image file (optional)</translation>
+    </message>
+    <message>
+        <source>Image files</source>
+        <translation>Image files</translation>
+    </message>
+    <message>
+        <source>Include</source>
+        <translation>Include</translation>
+    </message>
+    <message>
+        <source>Included</source>
+        <translation>Included</translation>
+    </message>
+    <message>
+        <source>Lowercase letters a-z, digits and underscores, for example my_site_classes.</source>
+        <translation>Lowercase letters a-z, digits and underscores, for example my_site_classes.</translation>
+    </message>
+    <message>
+        <source>Maintainer</source>
+        <translation>Maintainer</translation>
+    </message>
+    <message>
+        <source>Name the package and say what it holds. The name becomes its folder in the local repository and cannot be changed later.</source>
+        <translation>Name the package and say what it holds. The name becomes its folder in the local repository and cannot be changed later.</translation>
+    </message>
+    <message>
+        <source>Needed when the site the package goes to does not have these classes yet.</source>
+        <translation>Needed when the site the package goes to does not have these classes yet.</translation>
+    </message>
+    <message>
+        <source>No class matches the filter.</source>
+        <translation>No class matches the filter.</translation>
+    </message>
+    <message>
+        <source>No extension matches the filter.</source>
+        <translation>No extension matches the filter.</translation>
+    </message>
+    <message>
+        <source>No image added yet.</source>
+        <translation>No image added yet.</translation>
+    </message>
+    <message>
+        <source>Nodes or whole subtrees with their content, optionally with their class definitions and templates.</source>
+        <translation>Nodes or whole subtrees with their content, optionally with their class definitions and templates.</translation>
+    </message>
+    <message>
+        <source>Not included</source>
+        <translation>Not included</translation>
+    </message>
+    <message>
+        <source>Nothing chosen yet.</source>
+        <translation>Nothing chosen yet.</translation>
+    </message>
+    <message>
+        <source>One line, shown in the package list.</source>
+        <translation>One line, shown in the package list.</translation>
+    </message>
+    <message>
+        <source>Only the roles you may give are listed.</source>
+        <translation>Only the roles you may give are listed.</translation>
+    </message>
+    <message>
+        <source>Optional. What the package is for and what it needs.</source>
+        <translation>Optional. What the package is for and what it needs.</translation>
+    </message>
+    <message>
+        <source>Origin: package host and packager</source>
+        <translation>Origin: package host and packager</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Packages</translation>
+    </message>
+    <message>
+        <source>Please correct the following before you continue:</source>
+        <translation>Please correct the following before you continue:</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Review</translation>
+    </message>
+    <message>
+        <source>Select for removal</source>
+        <translation>Select for removal</translation>
+    </message>
+    <message>
+        <source>Semantic versioning: MAJOR.MINOR.PATCH, for example 1.0.0 or 1.2.0-beta.1.</source>
+        <translation>Semantic versioning: MAJOR.MINOR.PATCH, for example 1.0.0 or 1.2.0-beta.1.</translation>
+    </message>
+    <message>
+        <source>Site CSS file</source>
+        <translation>Site CSS file</translation>
+    </message>
+    <message>
+        <source>Start the wizard</source>
+        <translation>Start the wizard</translation>
+    </message>
+    <message>
+        <source>Step %number of %total</source>
+        <translation>Step %number of %total</translation>
+    </message>
+    <message>
+        <source>Steps of the wizard</source>
+        <translation>Steps of the wizard</translation>
+    </message>
+    <message>
+        <source>Stylesheets</source>
+        <translation>Stylesheets</translation>
+    </message>
+    <message>
+        <source>Subtree</source>
+        <translation>Subtree</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Templates</translation>
+    </message>
+    <message>
+        <source>The definitions of content classes, to create the same classes on another site. No content is included.</source>
+        <translation>The definitions of content classes, to create the same classes on another site. No content is included.</translation>
+    </message>
+    <message>
+        <source>The files of extensions, as they are on this site. Exporting extensions has to be switched on first.</source>
+        <translation>The files of extensions, as they are on this site. Exporting extensions has to be switched on first.</translation>
+    </message>
+    <message>
+        <source>The first entry in the package changelog. Then check the review below and create the package.</source>
+        <translation>The first entry in the package changelog. Then check the review below and create the package.</translation>
+    </message>
+    <message>
+        <source>The site the package is made on.</source>
+        <translation>The site the package is made on.</translation>
+    </message>
+    <message>
+        <source>There are no content classes.</source>
+        <translation>There are no content classes.</translation>
+    </message>
+    <message>
+        <source>Thumbnail</source>
+        <translation>Thumbnail</translation>
+    </message>
+    <message>
+        <source>Versions and languages</source>
+        <translation>Versions and languages</translation>
+    </message>
+    <message>
+        <source>What comes with the content</source>
+        <translation>What comes with the content</translation>
+    </message>
+    <message>
+        <source>Who looks after the package. It is filled in with your own name and email address.</source>
+        <translation>Who looks after the package. It is filled in with your own name and email address.</translation>
+    </message>
+    <message>
+        <source>Who makes the package.</source>
+        <translation>Who makes the package.</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>done</translation>
+    </message>
+    <message>
+        <source>Show the %count extensions of this site</source>
+        <translation>Show the %count extensions of this site</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/package/list</name>

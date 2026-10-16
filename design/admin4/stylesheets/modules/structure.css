@@ -528,9 +528,103 @@ a.a4-class-top {
 .a4-package-steps li + li { margin-top: var(--a4-space-1); }
 .a4-package-licence-info { margin: var(--a4-space-2) 0 0; overflow-wrap: anywhere; }
 
+/* ---- package: the creation wizard (package/create/wizard_*.tpl, the creators' steps) ---------------------------
+   The steps (.a4-steps), the cards, fields, tables and the action bar are the shared components; this only lays them
+   out: the step list wraps as numbers on a narrow window and shows the current step's name only, the fields of a
+   card stand two by two from 640px, the review puts its two groups side by side, Cancel goes to the bar's end. */
+.a4-package-wizard-nav { margin: 0 0 var(--a4-space-4); }
+.a4-package-wizard-steps { margin: 0; }
+.a4-package-wizard-step { margin: 0 0 var(--a4-space-3); }
+.a4-package-wizard-step > .a4-meta { flex: 1 1 100%; margin: 0; }
+.a4-package-wizard-step > .a4-h2 { margin: 0; }
+.a4-package-wizard-step > .a4-intro { margin: var(--a4-space-1) 0 0; }
+.a4-package-wizard .a4-package-wizard-step { display: block; }
+.a4-package-pick .a4-card-head { align-items: center; }
+.a4-package-pick .a4-card-head > p { flex: 1 1 auto; max-width: none; }
+.a4-package-review > .a4-card-head { display: block; }
+.a4-package-review > .a4-card-head > p { margin-top: var(--a4-space-1); }
+.a4-package-ext-all { margin: 0; border-width: 1px 0 0; border-radius: 0; }
+.a4-package-wizard .a4-card-head + * { margin-top: var(--a4-space-3); }
+.a4-package-wizard .a4-card > .a4-field + .a4-field,
+.a4-package-wizard .a4-card > .a4-stack + .a4-field { margin-top: var(--a4-space-4); }
+.a4-package-wizard .a4-error-summary ul { margin: var(--a4-space-1) 0 0; padding-left: var(--a4-space-5); }
+.a4-package-form { grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); max-width: 960px; }
+.a4-package-wizard-actions .a4-package-wizard-cancel { margin-inline-start: auto; }
+.a4-package-origin { margin-top: var(--a4-space-3); }
+.a4-package-origin .a4-package-form { padding-top: var(--a4-space-2); }
+
+/* the pickers: classes, extensions, nodes; a table of checkboxes in a flush card */
+.a4-package-pick .a4-card-head { padding: var(--a4-card-pad-y) var(--a4-card-pad-x); }
+.a4-package-pick.is-flush .a4-card-head + * { margin-top: 0; }
+.a4-package-pick:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
+.a4-package-pick-count { font-variant-numeric: tabular-nums; }
+.a4-package-pick-error { margin: 0; padding: 0 var(--a4-card-pad-x) var(--a4-space-3); }
+.a4-package-pick-filter { margin: 0; border-width: 1px 0 0; border-radius: 0; }
+.a4-package-pick .a4-table-wrap { border-width: 1px 0 0; border-radius: 0; }
+.a4-package-pick .a4-empty { margin: var(--a4-space-3) var(--a4-card-pad-x); }
+.a4-package-pick-table td,
+.a4-package-pick-table th { vertical-align: top; }
+.a4-package-pick-check { width: var(--a4-space-6); text-align: center; }
+.a4-package-pick-check input { width: 18px; height: 18px; margin: 2px 0 0; }
+.a4-package-pick-table label { cursor: pointer; }
+.a4-package-pick-table tr.is-disabled label { cursor: default; color: var(--a4-muted); }
+.a4-package-node-path,
+.a4-package-refusal { display: block; overflow-wrap: anywhere; }
+.a4-package-refusal { color: var(--a4-warn); font-weight: 650; }
+.a4-package-ext-details { margin-top: var(--a4-space-1); }
+.a4-package-ext-details > summary { color: var(--a4-accent-text); font-size: var(--a4-text-s); cursor: pointer; }
+.a4-package-ext-details > p { margin: var(--a4-space-1) 0 0; max-width: 78ch; }
+.a4-package-ext-details .a4-facts { margin-top: var(--a4-space-1); }
+@media (max-width: 600px) {
+  .a4-package-pick-groups { display: none; }
+}
+
+/* the options of the content export and the choices as chips */
+.a4-package-choices > .a4-chips { margin-top: var(--a4-space-1); }
+
+/* the image step: the file field with its Add button beside it */
+.a4-package-add-file { display: flex; flex-wrap: wrap; align-items: flex-end; gap: var(--a4-space-3); max-width: none; margin-top: var(--a4-space-3); }
+.a4-package-add-file > .a4-field { flex: 1 1 280px; }
+
+/* the review on the last step */
+.a4-package-review { margin-top: var(--a4-space-3); }
+.a4-package-review-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: var(--a4-space-4) var(--a4-space-6); }
+.a4-package-review-group > .a4-h3 { margin: 0 0 var(--a4-space-2); }
+.a4-package-review-group .a4-facts { margin-top: var(--a4-space-2); }
+.a4-package-review-text { overflow-wrap: anywhere; }
+.a4-package-review-list { margin: var(--a4-space-1) 0 0; padding-left: var(--a4-space-5); overflow-wrap: anywhere; }
+.a4-package-review-list li + li { margin-top: var(--a4-space-1); }
+.a4-package-review-list code { color: var(--a4-muted); }
+
+/* the choice of wizard: a card per wizard with what it exports */
+.a4-package-creators > legend { float: left; width: 100%; margin: 0 0 var(--a4-space-1); padding: 0; }
+.a4-package-creators > legend + * { clear: both; }
+.a4-package-creator-list { margin-top: var(--a4-space-3); grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
+.a4-package-creator-list label { align-items: flex-start; height: 100%; }
+.a4-package-creator-list input { margin-top: 2px; }
+.a4-package-creator-list label > span { display: flex; flex-direction: column; gap: var(--a4-space-1); min-width: 0; }
+.a4-package-creator-list label:has(input:checked) { border-color: var(--a4-accent); box-shadow: inset 0 0 0 1px var(--a4-accent); }
+
+/* a narrow window: the steps wrap as numbers and only the current one keeps its name */
+@media (max-width: 600px) {
+  .a4-package-wizard-steps { gap: var(--a4-space-1); }
+  .a4-package-wizard-steps li { flex: 0 0 auto; }
+  .a4-package-wizard-steps li:not(.is-current) { padding-right: var(--a4-space-2); }
+  .a4-package-wizard-steps li:not(.is-current) .a4-package-step-name {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+  .a4-package-wizard-actions .a4-package-wizard-cancel { margin-inline-start: 0; flex: 1 1 100%; }
+}
+
 /* Forced colors (Windows high contrast) drop backgrounds and box-shadows and repaint borders in one colour: a state
    that differs only by them (current, selected, moved, pressed, changed) gets a Highlight outline. */
 @media (forced-colors: active) {
   .a4-pdf-choice:has(input:checked),
-  .a4-package-repo.is-current > a { outline: 2px solid Highlight; outline-offset: -2px; }
+  .a4-package-repo.is-current > a,
+  .a4-package-creator-list label:has(input:checked) { outline: 2px solid Highlight; outline-offset: -2px; }
 }

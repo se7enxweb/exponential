@@ -10788,6 +10788,286 @@ You can also remove the package without uninstalling it from the package list.</
         <source>This file is not text, so it is not shown here; Download gives it.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>%count added</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count chosen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count of %total selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A package can be downloaded in either format later.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A site style is two stylesheets: one for the site and one for the content classes. Both are required.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A site style: two stylesheets, their images and a thumbnail.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>About the package</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add a node or a subtree to start.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add the images the stylesheets use, one at a time. Continue without a file when all are added.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An image file, for example PNG or JPEG.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An image that shows what the package looks like. It is optional: continue without a file to go on without one.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Changelog entry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose the content classes to export. The package carries their definitions, not their objects.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose the content to export: a single node, or a node with everything below it (a subtree). The next step sets what comes with it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chosen: %file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Class definitions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Classes CSS file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content classes (%count)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contents</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create package writes this package to the local repository. Use Back to change a step; nothing is written until then.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extensions (%count)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filter by name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filter by name or identifier</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Format and license</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image file (optional)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Include</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Included</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lowercase letters a-z, digits and underscores, for example my_site_classes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Maintainer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name the package and say what it holds. The name becomes its folder in the local repository and cannot be changed later.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Needed when the site the package goes to does not have these classes yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No class matches the filter.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No extension matches the filter.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No image added yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nodes or whole subtrees with their content, optionally with their class definitions and templates.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not included</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing chosen yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>One line, shown in the package list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only the roles you may give are listed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Optional. What the package is for and what it needs.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Origin: package host and packager</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please correct the following before you continue:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select for removal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Semantic versioning: MAJOR.MINOR.PATCH, for example 1.0.0 or 1.2.0-beta.1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Site CSS file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start the wizard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Step %number of %total</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Steps of the wizard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stylesheets</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Subtree</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The definitions of content classes, to create the same classes on another site. No content is included.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The files of extensions, as they are on this site. Exporting extensions has to be switched on first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The first entry in the package changelog. Then check the review below and create the package.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The site the package is made on.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There are no content classes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Thumbnail</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Versions and languages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What comes with the content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Who looks after the package. It is filled in with your own name and email address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Who makes the package.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show the %count extensions of this site</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/package/list</name>
