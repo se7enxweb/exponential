@@ -166,12 +166,12 @@
 
 
 {section var=PersistentData show=$browse.persistent_data loop=$browse.persistent_data}
-<input type="hidden" name="{if is_string($PersistentData.key)}{$PersistentData.key|wash}{/if}" value="{$PersistentData.item}" />
+<input type="hidden" name="{if is_string($PersistentData.key)}{$PersistentData.key|wash}{/if}" value="{$PersistentData.item|wash}" />
 {/section}
 
-<input type="hidden" name="BrowseActionName" value="{$browse.action_name}" />
+<input type="hidden" name="BrowseActionName" value="{$browse.action_name|wash}" />
 {if $browse.browse_custom_action}
-    <input type="hidden" name="{$browse.browse_custom_action.name}" value="{$browse.browse_custom_action.value}" />
+    <input type="hidden" name="{$browse.browse_custom_action.name|wash}" value="{$browse.browse_custom_action.value|wash}" />
 {/if}
 
 {if $cancel_action}

@@ -47,7 +47,11 @@
 var treeMenu;
 (function(){ldelim}
 
-{cache-block keys=array( $root_node_id, $access_type ) expiry=0}
+{* The class list below is the one the current user may create here: the roles and limitations are part of the key,
+   or every user got the list of whoever rendered the block first. *}
+{def $csm_user     = fetch( 'user', 'current_user' )
+     $csm_perm_key = concat( $csm_user.role_id_list|implode( ',' ), '|', $csm_user.limited_assignment_value_list|implode( ',' ) )|md5}
+{cache-block keys=array( $root_node_id, $access_type, $csm_perm_key ) expiry=0}
     {def $root_node_url = $root_node.url $class_list = array()}
     {* The top node (1) has no URL alias of its own: it opens its full view, which lists the top-level nodes. *}
     {if $root_node_url|eq('')}
