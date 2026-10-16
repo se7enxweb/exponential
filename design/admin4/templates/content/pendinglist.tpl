@@ -135,7 +135,7 @@
         </div>
         <div>
             <dt>{'Sent by'|i18n( 'design/admin/content/pendinglist' )}</dt>
-            <dd>{$row.creator_name|wash}</dd>
+            <dd><bdi>{$row.creator_name|wash}</bdi></dd>
         </div>
         <div>
             <dt>{'Sent'|i18n( 'design/admin/content/pendinglist' )}</dt>

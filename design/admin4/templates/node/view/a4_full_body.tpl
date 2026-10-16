@@ -57,9 +57,9 @@
     <a class="a4-node-icon" aria-haspopup="menu" aria-expanded="false" href={concat( '/class/view/', $object.contentclass_id )|ezurl} title="{'Class menu'|i18n( 'design/admin/node/view/full' )|wash}" onclick="ezpopmenu_showTopLevel( event, 'ClassMenu', ez_createAArray( new Array( '%classID%', {$object.contentclass_id}, '%objectID%', {$node.contentobject_id}, '%nodeID%', {$node.node_id}, '%currentURL%', '{$node.url|wash( javascript )|wash}', '%languages%', {$js_class_languages|wash} ) ), '{$node.class_name|wash(javascript)|wash}', {$disabled_sub_menu}, {$disable_another_language} ); return false;">{$node.class_identifier|class_icon( small, $node.class_name )}</a>
     <div class="a4-node-heading a4-pagehead-main">
         {* the language the name is shown in: its current language when the object has it, else unknown (nothing marked) *}{def $exp_title_language = cond( $node.object.available_languages|contains( $node.object.current_language ), $node.object.current_language, '' )}
-        <h1 class="context-title a4-pagehead-title"{include uri='design:parts/exp_content_direction.tpl' exp_locale_code=$exp_title_language}>{$node.name|wash}</h1>{undef $exp_title_language}
+        <h1 class="context-title a4-pagehead-title"{include uri='design:parts/exp_content_direction.tpl' exp_locale_code=$exp_title_language}><bdi>{$node.name|wash}</bdi></h1>{undef $exp_title_language}
         <span class="a4-node-badges">
-            <span class="a4-badge a4-badge-class">{$node.class_name|wash}</span>
+            <span class="a4-badge a4-badge-class" dir="auto">{$node.class_name|wash}</span>
             {* visible, hidden or hidden by a parent: a badge with its status mark (parts/visibility_status.tpl) *}
             {include uri='design:parts/visibility_status.tpl' status_node=$node status_badge=true() status_quiet=false()}
             {* a user account that is disabled or locked, for those who may see it (expUserAccountStatus) *}
@@ -147,10 +147,10 @@
 {* ---- One quiet meta line ---- *}
 <div class="box-content">
 <p class="context-information a4-node-meta">
-    <span title="{$object.modified|l10n( 'datetime' )}">{'Modified'|i18n( 'design/admin/node/view/full' )} {$object.modified|l10n( 'shortdatetime' )}{if $object.current.creator} {'by'|i18n( 'design/admin/node/view/full' )} <a href={$object.current.creator.main_node.url_alias|ezurl}>{$object.current.creator.name|wash}</a>{/if}</span>
+    <span title="{$object.modified|l10n( 'datetime' )}">{'Modified'|i18n( 'design/admin/node/view/full' )} {$object.modified|l10n( 'shortdatetime' )}{if $object.current.creator} {'by'|i18n( 'design/admin/node/view/full' )} <a href={$object.current.creator.main_node.url_alias|ezurl} dir="auto">{$object.current.creator.name|wash}</a>{/if}</span>
     {if $object.published}<span title="{$object.published|l10n( 'datetime' )}">{'Published'|i18n( 'design/admin/node/view/full' )} {$object.published|l10n( 'shortdate' )}</span>{/if}
     <span class="exp-object-version" data-object-id="{$object.id}">{'Version'|i18n( 'design/admin/node/view/full' )} <span class="exp-object-version-number">{$object.current_version}</span></span>
-    {if $section}<span>{$section.name|wash}</span>{/if}
+    {if $section}<span dir="auto">{$section.name|wash}</span>{/if}
     <button type="button" class="a4-copy" data-a4-copied="{'Copied to the clipboard'|i18n( 'design/admin/node/view/full' )|wash}" data-a4-copy-failed="{'Could not copy'|i18n( 'design/admin/node/view/full' )|wash}" data-a4-copy="{$node.node_id}" title="{'Click to copy'|i18n( 'design/admin/node/view/full' )|wash}"><span class="a4-copy-label">{'Node'|i18n( 'design/admin/node/view/full' )} {$node.node_id}</span></button>
     <button type="button" class="a4-copy" data-a4-copied="{'Copied to the clipboard'|i18n( 'design/admin/node/view/full' )|wash}" data-a4-copy-failed="{'Could not copy'|i18n( 'design/admin/node/view/full' )|wash}" data-a4-copy="{$object.id}" title="{'Click to copy'|i18n( 'design/admin/node/view/full' )|wash}"><span class="a4-copy-label">{'Object'|i18n( 'design/admin/node/view/full' )} {$object.id}</span></button>
     <button type="button" class="a4-copy" data-a4-copied="{'Copied to the clipboard'|i18n( 'design/admin/node/view/full' )|wash}" data-a4-copy-failed="{'Could not copy'|i18n( 'design/admin/node/view/full' )|wash}" data-a4-copy="{$object.remote_id|wash}" title="{'Click to copy the remote ID'|i18n( 'design/admin/node/view/full' )|wash}"><span class="a4-copy-label">{'Remote ID'|i18n( 'design/admin/node/view/full' )}</span></button>

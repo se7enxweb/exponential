@@ -26,7 +26,7 @@
     <li class="exp-bm-row exp-bm-folder" role="treeitem" aria-expanded="true" aria-level="{$row.depth|inc}" data-depth="{$row.depth}"
         data-type="folder" data-id="{$row.id}" data-parent="{$row.parent_id}" data-name="{$row.name|wash}"{if eq( $mode, 'page' )} draggable="true"{/if}>
       <button type="button" class="exp-bm-toggle" aria-label="{'Open or close the folder'|i18n( 'design/admin/content/bookmark' )}" title="{'Open or close the folder'|i18n( 'design/admin/content/bookmark' )}"><span aria-hidden="true"></span></button>
-      <span class="exp-bm-folder-name">{$row.name|wash}</span>
+      <span class="exp-bm-folder-name"><bdi>{$row.name|wash}</bdi></span>
       <span class="exp-bm-count" title="{'%count bookmarks'|i18n( 'design/admin/content/bookmark',, hash( '%count', $row.count ) )}">{$row.count}</span>
     {if eq( $mode, 'page' )}
       <span class="exp-bm-actions exp-bm-js">
@@ -47,7 +47,7 @@
       <span class="exp-bm-indent" aria-hidden="true"></span>
       {if eq( $mode, 'page' )}
         <input type="checkbox" name="DeleteIDArray[]" value="{$row.id}" title="{'Select bookmark for removal.'|i18n( 'design/admin/content/bookmark' )}" />
-        {$node.class_identifier|class_icon( small, $node.class_name )}&nbsp;<a class="exp-bm-link" href={concat( '/content/view/full/', $row.bookmark.node_id, '/' )|ezurl}>{$node.name|wash}</a>
+        {$node.class_identifier|class_icon( small, $node.class_name )}&nbsp;<a class="exp-bm-link" href={concat( '/content/view/full/', $row.bookmark.node_id, '/' )|ezurl}><bdi>{$node.name|wash}</bdi></a>
         <span class="exp-bm-meta">{$node.class_name|wash}{let section_object=fetch( section, object, hash( section_id, $node.object.section_id ) )}{if $section_object} &middot; {$section_object.name|wash}{/if}{/let}</span>
         <span class="exp-bm-actions">
           <span class="exp-bm-js">
@@ -71,19 +71,19 @@
         {/if}
         {$node.class_identifier|class_icon( small, $node.class_name )}&nbsp;
         {if and( $browse.ignore_nodes_click|contains( $row.bookmark.node_id )|not, $node.is_container )}
-          <a class="exp-bm-link" href={concat( '/content/browse/', $row.bookmark.node_id )|ezurl}>{$node.name|wash}</a>
+          <a class="exp-bm-link" href={concat( '/content/browse/', $row.bookmark.node_id )|ezurl}><bdi>{$node.name|wash}</bdi></a>
         {else}
-          <span class="exp-bm-link">{$node.name|wash}</span>
+          <span class="exp-bm-link"><bdi>{$node.name|wash}</bdi></span>
         {/if}
       {else}
         {if ne( $ui_context, 'edit' )}
           {if ne( $ui_context, 'browse' )}
-            <a href="#" class="exp-bm-menu" onclick="ezpopmenu_showTopLevel( event, 'BookmarkMenu', ez_createAArray( new Array( '%nodeID%', '{$row.bookmark.node_id}', '%objectID%', '{$node.contentobject_id}', '%bookmarkID%', '{$row.id}', '%languages%', {$node.object.language_js_array|wash} ) ) , '{$node.name|shorten(18)|wash(javascript)|wash}'); return false;">{$node.class_identifier|class_icon( small, '[%classname] Click on the icon to display a context-sensitive menu.'|i18n( 'design/admin/pagelayout',, hash( '%classname', $node.class_name ) ) )}</a>&nbsp;<a class="exp-bm-link" href={if $node.url|eq('')}{concat('/content/view/full/', $row.bookmark.node_id)|ezurl}{else}{$node.url_alias|ezurl}{/if}>{$node.name|wash}</a>
+            <a href="#" class="exp-bm-menu" onclick="ezpopmenu_showTopLevel( event, 'BookmarkMenu', ez_createAArray( new Array( '%nodeID%', '{$row.bookmark.node_id}', '%objectID%', '{$node.contentobject_id}', '%bookmarkID%', '{$row.id}', '%languages%', {$node.object.language_js_array|wash} ) ) , '{$node.name|shorten(18)|wash(javascript)|wash}'); return false;">{$node.class_identifier|class_icon( small, '[%classname] Click on the icon to display a context-sensitive menu.'|i18n( 'design/admin/pagelayout',, hash( '%classname', $node.class_name ) ) )}</a>&nbsp;<a class="exp-bm-link" href={if $node.url|eq('')}{concat('/content/view/full/', $row.bookmark.node_id)|ezurl}{else}{$node.url_alias|ezurl}{/if}><bdi>{$node.name|wash}</bdi></a>
           {else}
-            {$node.class_identifier|class_icon( small, $node.class_name )}&nbsp;{if $node.is_container}<a class="exp-bm-link" href={concat( '/content/browse/', $node.node_id )|ezurl}>{$node.name|wash}</a>{else}<span class="exp-bm-link">{$node.name|wash}</span>{/if}
+            {$node.class_identifier|class_icon( small, $node.class_name )}&nbsp;{if $node.is_container}<a class="exp-bm-link" href={concat( '/content/browse/', $node.node_id )|ezurl}><bdi>{$node.name|wash}</bdi></a>{else}<span class="exp-bm-link"><bdi>{$node.name|wash}</bdi></span>{/if}
           {/if}
         {else}
-          {$node.class_identifier|class_icon( ghost, $node.class_name )}&nbsp;<span class="disabled exp-bm-link">{$node.name|wash}</span>
+          {$node.class_identifier|class_icon( ghost, $node.class_name )}&nbsp;<span class="disabled exp-bm-link"><bdi>{$node.name|wash}</bdi></span>
         {/if}
       {/if}
     </li>

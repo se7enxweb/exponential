@@ -65,7 +65,7 @@
     <section class="a4-dash-hero">
         <div class="a4-dash-hero-text">
             <p class="a4-dash-date">{currentdate()|l10n( 'date' )}</p>
-            <h1>{$greeting}, {$user.contentobject.name|wash}</h1>
+            <h1>{$greeting}, <bdi>{$user.contentobject.name|wash}</bdi></h1>
             <p class="a4-dash-sub">{'Here is what is happening on %site.'|i18n( 'design/admin/dashboard', , hash( '%site', ezini( 'SiteSettings', 'SiteName' )|wash ) )}</p>
         </div>
         <nav class="a4-dash-actions" aria-label="{'Quick actions'|i18n( 'design/admin/dashboard' )|wash}">

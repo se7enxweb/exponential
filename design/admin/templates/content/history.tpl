@@ -62,7 +62,7 @@
 <div class="context-block a4-page a4-content-history">
 
 <div class="box-header"><div class="box-ml">
-<h1 class="context-title">{'Versions of “%name” (%count)'|i18n( 'design/admin/content/history',, hash( '%name', $object.name, '%count', first_set( $overview.total, $versions|count ) ) )|wash}</h1>
+<h1 class="context-title">{'Versions of “%name” (%count)'|i18n( 'design/admin/content/history',, hash( '%name', concat( '<bdi>', $object.name|wash, '</bdi>' ), '%count', first_set( $overview.total, $versions|count )|wash ) )}</h1>
 </div></div>
 
 <div class="box-bc"><div class="box-ml"><div class="box-content">
@@ -172,7 +172,7 @@
         <ul class="a4-tabs" aria-labelledby="history-creator-label">
             <li>{if eq( $filters.creator, 0 )}<span class="current" aria-current="true">{'Anyone'|i18n( 'design/admin/content/history' )}</span>{else}<a href={concat( $base, $links.creator.all )|ezurl}>{'Anyone'|i18n( 'design/admin/content/history' )}</a>{/if}</li>
         {foreach $choices.creators as $creator_id => $creator_name}
-            <li>{if eq( $filters.creator, $creator_id )}<span class="current" aria-current="true">{$creator_name|wash}</span>{else}<a href={concat( $base, $links.creator[$creator_id] )|ezurl}>{$creator_name|wash}</a>{/if}</li>
+            <li>{if eq( $filters.creator, $creator_id )}<span class="current" aria-current="true"><bdi>{$creator_name|wash}</bdi></span>{else}<a href={concat( $base, $links.creator[$creator_id] )|ezurl}><bdi>{$creator_name|wash}</bdi></a>{/if}</li>
         {/foreach}
         </ul>
     </div>
@@ -262,7 +262,7 @@
         </div>
         <div>
             <dt>{'Creator'|i18n( 'design/admin/content/history' )}</dt>
-            <dd>{$row.creator_name|wash}</dd>
+            <dd><bdi>{$row.creator_name|wash}</bdi></dd>
         </div>
         <div>
             <dt>{'Created'|i18n( 'design/admin/content/history' )}</dt>

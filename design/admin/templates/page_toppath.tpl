@@ -5,13 +5,13 @@
 {section loop=$module_result.path}
     {if $:item.url}
         {if ne($ui_context,'edit')}
-        <a class="path" href={cond( and( $:use_urlalias, is_set( $:item.url_alias ) ), $:item.url_alias,
+        <a class="path" dir="auto" href={cond( and( $:use_urlalias, is_set( $:item.url_alias ) ), $:item.url_alias,
                                     $:item.url )|ezurl}>{$:item.text|shorten( 18 )|wash}</a>
         {else}
-        <span class="disabled">{$:item.text|shorten( 18 )|wash}</span>
+        <span class="disabled" dir="auto">{$:item.text|shorten( 18 )|wash}</span>
         {/if}
     {else}
-        <span class="path">{$:item.text|wash}</span>
+        <span class="path" dir="auto">{$:item.text|wash}</span>
     {/if}
 
     {delimiter}

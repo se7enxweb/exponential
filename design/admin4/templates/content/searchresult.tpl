@@ -27,7 +27,7 @@
 {node_view_gui view=line content_node=$SearchResult.item}
 {* Where it is: objects of the same name are told apart by their location (.a4-search-path: under the name, breaking anywhere on a phone) *}
 {if $SearchResult.item.depth|gt( 2 )}
-<div class="a4-meta a4-search-path">{foreach $SearchResult.item.path as $path_node}{$path_node.name|wash}{delimiter} / {/delimiter}{/foreach}</div>
+<div class="a4-meta a4-search-path">{foreach $SearchResult.item.path as $path_node}<bdi>{$path_node.name|wash}</bdi>{delimiter} / {/delimiter}{/foreach}</div>
 {/if}
 </td>
 <td role="cell">

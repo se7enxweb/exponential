@@ -25,7 +25,7 @@
     {foreach $all_latest_content as $latest_node sequence array( 'bglight', 'bgdark' ) as $style}
         <tr class="{$style}">
             <td>
-                <a href="{$latest_node.url_alias|ezurl('no')}" title="{$latest_node.name|wash()}">{$latest_node.name|shorten('30')|wash()}</a>
+                <a href="{$latest_node.url_alias|ezurl('no')}" title="{$latest_node.name|wash()}" dir="auto">{$latest_node.name|shorten('30')|wash()}</a>
             </td>
             <td>
                 {$latest_node.class_name|wash()}
@@ -36,11 +36,11 @@
             <td>
                 {* the author's user node is linked only for a user who may read it *}
                 {if fetch( 'user', 'can_open', hash( 'uri', concat( 'content/view/full/', $latest_node.object.owner.main_node_id ) ) )}
-                <a href="{$latest_node.object.owner.main_node.url_alias|ezurl('no')}" title="{$latest_node.object.owner.name|wash()}">
+                <a href="{$latest_node.object.owner.main_node.url_alias|ezurl('no')}" title="{$latest_node.object.owner.name|wash()}" dir="auto">
                     {$latest_node.object.owner.name|shorten('13')|wash()}
                 </a>
                 {else}
-                <span title="{$latest_node.object.owner.name|wash()}">{$latest_node.object.owner.name|shorten('13')|wash()}</span>
+                <span title="{$latest_node.object.owner.name|wash()}" dir="auto">{$latest_node.object.owner.name|shorten('13')|wash()}</span>
                 {/if}
             </td>
             <td>

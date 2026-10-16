@@ -53,9 +53,9 @@
 
 {* the language the name is shown in: its current language when the object has it, else unknown (nothing marked) *}{def $exp_title_language = cond( $node.object.available_languages|contains( $node.object.current_language ), $node.object.current_language, '' )}
 {if ne( $node.contentobject_id, 0 )}
-<h1 class="context-title"><a href={concat( '/class/view/', $node.object.contentclass_id )|ezurl} onclick="ezpopmenu_showTopLevel( event, 'ClassMenu', ez_createAArray( new Array( '%classID%', {$node.object.contentclass_id}, '%objectID%', {$node.contentobject_id}, '%nodeID%', {$node.node_id}, '%currentURL%', '{$node.url|wash( javascript )|wash}', '%languages%', {$js_class_languages|wash} ) ), '{$node.class_name|wash(javascript)|wash}', {$disabled_sub_menu}, {$disable_another_language} ); return false;">{$node.class_identifier|class_icon( normal, $node.class_name )}</a>&nbsp;{set-block variable=exp_name_attrs}{include uri='design:parts/exp_content_direction.tpl' exp_locale_code=$exp_title_language}{/set-block}{if $exp_name_attrs|ne( '' )}<bdi{$exp_name_attrs}>{$node.name|wash}</bdi>{else}{$node.name|wash}{/if}{undef $exp_name_attrs}&nbsp;[{$node.class_name|wash}]&nbsp;{$hide_status}</h1>
+<h1 class="context-title"><a href={concat( '/class/view/', $node.object.contentclass_id )|ezurl} onclick="ezpopmenu_showTopLevel( event, 'ClassMenu', ez_createAArray( new Array( '%classID%', {$node.object.contentclass_id}, '%objectID%', {$node.contentobject_id}, '%nodeID%', {$node.node_id}, '%currentURL%', '{$node.url|wash( javascript )|wash}', '%languages%', {$js_class_languages|wash} ) ), '{$node.class_name|wash(javascript)|wash}', {$disabled_sub_menu}, {$disable_another_language} ); return false;">{$node.class_identifier|class_icon( normal, $node.class_name )}</a>&nbsp;{set-block variable=exp_name_attrs}{include uri='design:parts/exp_content_direction.tpl' exp_locale_code=$exp_title_language}{/set-block}{if $exp_name_attrs|ne( '' )}<bdi{$exp_name_attrs}>{$node.name|wash}</bdi>{else}<bdi>{$node.name|wash}</bdi>{/if}{undef $exp_name_attrs}&nbsp;[<bdi>{$node.class_name|wash}</bdi>]&nbsp;{$hide_status}</h1>
 {else}
-<h1 class="context-title"{include uri='design:parts/exp_content_direction.tpl' exp_locale_code=$exp_title_language}>{$node.name|wash}</h1>
+<h1 class="context-title"{include uri='design:parts/exp_content_direction.tpl' exp_locale_code=$exp_title_language}><bdi>{$node.name|wash}</bdi></h1>
 {/if}{undef $exp_title_language}
 
 {undef $js_class_languages $disable_another_language $disabled_sub_menu $hide_status}
@@ -68,7 +68,7 @@
 {* DESIGN: Content START *}<div class="box-content">
 
 <div class="context-information">
-<p class="left modified">{'Last modified'|i18n( 'design/admin/node/view/full' )}: {$node.object.modified|l10n(shortdatetime)}, <a href={$node.object.current.creator.main_node.url_alias|ezurl}>{$node.object.current.creator.name|wash}</a> ({'Node ID'|i18n( 'design/admin/node/view/full' )}: {$node.node_id}, {'Object ID'|i18n( 'design/admin/node/view/full' )}: {$node.object.id})</p>
+<p class="left modified">{'Last modified'|i18n( 'design/admin/node/view/full' )}: {$node.object.modified|l10n(shortdatetime)}, <a href={$node.object.current.creator.main_node.url_alias|ezurl} dir="auto">{$node.object.current.creator.name|wash}</a> ({'Node ID'|i18n( 'design/admin/node/view/full' )}: {$node.node_id}, {'Object ID'|i18n( 'design/admin/node/view/full' )}: {$node.object.id})</p>
 <p class="right translation">{$node.object.current_language_object.locale_object.intl_language_name}&nbsp;<img src="{$node.object.current_language|flag_icon}" width="18" height="12" alt="{$language_code|wash}" class="a4-flag" /></p>
 <div class="break"></div>
 </div>

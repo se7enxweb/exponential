@@ -18,7 +18,7 @@
                                                'limit', $block.number_of_items ) ) as $wish_list_item sequence array( 'bglight', 'bgdark' ) as $style}
         <tr class="{$style}">
             <td>
-                <a href="{$wish_list_item.item_object.contentobject.main_node.url_alias|ezurl('no')}" title="{$wish_list_item.object_name|wash()}">
+                <a href="{$wish_list_item.item_object.contentobject.main_node.url_alias|ezurl('no')}" title="{$wish_list_item.object_name|wash()}" dir="auto">
                     {$wish_list_item.object_name|wash()}
                 </a>
             </td>

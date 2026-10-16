@@ -254,6 +254,9 @@ function ContentStructureMenu( params, i18n )
         html += '>';
         var span = document.createElement( 'span' );
         span.setAttribute( 'class', 'node-name-' + ( ( item.is_hidden ) ? 'hidden': ( item.is_invisible ) ? 'hiddenbyparent' : 'normal' ) );
+        // its own direction run: an English name in a right-to-left page keeps its end punctuation at its end; only
+        // there, as an isolated name is not hyphenated (the tree's li has hyphens: auto) and left to right stays as it was
+        if ( document.documentElement && document.documentElement.getAttribute( 'dir' ) === 'rtl' ) span.setAttribute( 'dir', 'auto' );
         span.textContent = name;
         var div = document.createElement( 'div' );
         div.appendChild( span );

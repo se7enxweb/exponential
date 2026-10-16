@@ -224,7 +224,7 @@ div#maincolumn {ldelim} padding-inline-end: 20px; padding-inline-start: 50px; {r
 {/cache-block}
 
 <script type="text/javascript">
-document.getElementById('header-usermenu-logout').innerHTML += '<span class="header-usermenu-name">{$current_user.login|wash}<\/span>';
+document.getElementById('header-usermenu-logout').innerHTML += '<span class="header-usermenu-name"><bdi>{$current_user.login|wash}<\/bdi><\/span>';
 
 document.getElementById('right-panels-separator').style.insetInlineEnd = (parseInt(document.getElementById('rightmenu').offsetWidth,10) - 20) + 'px';
 

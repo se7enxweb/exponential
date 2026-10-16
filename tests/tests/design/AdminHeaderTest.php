@@ -204,7 +204,7 @@ class AdminHeaderTest extends PHPUnit\Framework\TestCase
     {
         $hint = ezpI18n::tr( 'design/admin/pagelayout', 'Open your user object' );
         $html = $this->renderUserMenu( self::user( 14, 'admin', 'Administrator User', array( 'node_id' => 2042, 'url_alias' => 'Users/Administrator-users/Administrator-User', 'can_read' => true ) ) );
-        $this->assertSame( 1, preg_match( '#<a id="a4-user-menu-self" class="a4-user-menu-self" href="([^"]*)" title="([^"]*)" aria-describedby="a4-user-menu-self-hint">\s*<span class="a4-user-menu-display">Administrator User</span>\s*<span class="a4-user-menu-login" translate="no">admin</span>\s*</a>#', $html, $link ), $html );
+        $this->assertSame( 1, preg_match( '#<a id="a4-user-menu-self" class="a4-user-menu-self" href="([^"]*)" title="([^"]*)" aria-describedby="a4-user-menu-self-hint">\s*<span class="a4-user-menu-display"><bdi>Administrator User</bdi></span>\s*<span class="a4-user-menu-login" translate="no"><bdi>admin</bdi></span>\s*</a>#', $html, $link ), $html );
         $this->assertMatchesRegularExpression( '#/Users/Administrator-users/Administrator-User$#', $link[1], 'the URL alias of the main node' );
         // tooltip and description: the same translated hint, whatever the language the test runs in
         $this->assertSame( 1, preg_match( '#<span id="a4-user-menu-self-hint" hidden>([^<]+)</span>#', $html, $described ) );
@@ -216,7 +216,7 @@ class AdminHeaderTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( "return Array.prototype.filter.call(panel.querySelectorAll('a[href]'), function (a) {", self::file( 'design/admin4/javascript/admin4.js' ) );
 
         // no read access, no main node, an edit or browse page: the name as text, as before
-        $text = '#<p class="a4-user-menu-name">\s*<span class="a4-user-menu-display">Administrator User</span>\s*<span class="a4-user-menu-login" translate="no">admin</span>\s*</p>#';
+        $text = '#<p class="a4-user-menu-name">\s*<span class="a4-user-menu-display"><bdi>Administrator User</bdi></span>\s*<span class="a4-user-menu-login" translate="no"><bdi>admin</bdi></span>\s*</p>#';
         $cases = array(
             'no read access' => array( self::user( 14, 'admin', 'Administrator User', array( 'node_id' => 2042, 'can_read' => false ) ), 'navigation' ),
             'no main node' => array( self::user( 14, 'admin', 'Administrator User', false ), 'navigation' ),

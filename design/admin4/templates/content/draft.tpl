@@ -148,7 +148,7 @@
             <label class="a4-pick" title="{'Select draft for removal.'|i18n( 'design/admin/content/draft' )}">
                 <input type="checkbox" name="DeleteIDArray[]" value="{$row.id}" data-name="{$row.name|wash}" aria-label="{'Select %name for removal'|i18n( 'design/admin/content/draft',, hash( '%name', $row.name ) )|wash}" />
             </label>
-            <h3 id="{$card_id}-title">{$row.class_identifier|class_icon( small, $row.class_name|wash )} <a href={concat( '/content/edit/', $row.object_id, '/', $row.version, '/', $row.language, '/' )|ezurl}>{$row.name|wash}</a></h3>
+            <h3 id="{$card_id}-title">{$row.class_identifier|class_icon( small, $row.class_name|wash )} <a href={concat( '/content/edit/', $row.object_id, '/', $row.version, '/', $row.language, '/' )|ezurl} dir="auto">{$row.name|wash}</a></h3>
             <ul class="a4-badges">
                 {if $row.is_new}<li class="a4-badge is-info">{'New object'|i18n( 'design/admin/content/draft' )}</li>{/if}
                 {if $row.age_days|ge( $overview.old_days )}<li class="a4-badge is-warn">{'%days days old'|i18n( 'design/admin/content/draft',, hash( '%days', $row.age_days ) )}</li>{/if}
@@ -175,7 +175,7 @@
         </div>
         <div>
             <dt>{'Location'|i18n( 'design/admin/content/draft' )}</dt>
-            <dd>{if $row.is_new}{if $row.location|ne( '' )}{'New, to be published below %location'|i18n( 'design/admin/content/draft',, hash( '%location', $row.location ) )|wash}{else}{'New object'|i18n( 'design/admin/content/draft' )}{/if}{elseif $row.node_id|gt( 0 )}<a href={concat( '/content/view/full/', $row.node_id )|ezurl}>{if $row.location|ne( '' )}{'Below %location'|i18n( 'design/admin/content/draft',, hash( '%location', $row.location ) )|wash}{else}{'Its page'|i18n( 'design/admin/content/draft' )}{/if}</a>{else}{'Unknown'|i18n( 'design/admin/content/draft' )}{/if}</dd>
+            <dd>{if $row.is_new}{if $row.location|ne( '' )}{'New, to be published below %location'|i18n( 'design/admin/content/draft',, hash( '%location', concat( '<bdi>', $row.location|wash, '</bdi>' ) ) )}{else}{'New object'|i18n( 'design/admin/content/draft' )}{/if}{elseif $row.node_id|gt( 0 )}<a href={concat( '/content/view/full/', $row.node_id )|ezurl}>{if $row.location|ne( '' )}{'Below %location'|i18n( 'design/admin/content/draft',, hash( '%location', concat( '<bdi>', $row.location|wash, '</bdi>' ) ) )}{else}{'Its page'|i18n( 'design/admin/content/draft' )}{/if}</a>{else}{'Unknown'|i18n( 'design/admin/content/draft' )}{/if}</dd>
         </div>
         <div>
             <dt>{'Language'|i18n( 'design/admin/content/draft' )}</dt>

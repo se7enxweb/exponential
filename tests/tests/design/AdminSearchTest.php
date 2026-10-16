@@ -170,7 +170,7 @@ class AdminSearchTest extends PHPUnit\Framework\TestCase
     public function testASearchResultShowsWhereItIs()
     {
         $tpl = self::read( 'design/admin4/templates/content/searchresult.tpl' );
-        $this->assertStringContainsString( '{foreach $SearchResult.item.path as $path_node}{$path_node.name|wash}{delimiter} / {/delimiter}{/foreach}', $tpl );
+        $this->assertStringContainsString( '{foreach $SearchResult.item.path as $path_node}<bdi>{$path_node.name|wash}</bdi>{delimiter} / {/delimiter}{/foreach}', $tpl );
     }
 
     private static function xpathString( $text )

@@ -195,19 +195,19 @@
         <input type="checkbox" name="DeleteIDArray[]" value="{$item.object_id}" title="{'Use these checkboxes to mark items for removal. Click the "Remove selected" button to remove the selected items.'|i18n( 'design/admin/content/trash' )|wash()}" />
         </td>
         <td class="a4-content-trash-name">
-        {$trash_node.class_identifier|class_icon( small, $trash_node.class_name|wash )}&nbsp;<a href={concat( '/content/versionview/', $item.object_id, '/', $cur_c_object.current_version, '/' )|ezurl}>{$trash_node.name|wash}</a>
+        {$trash_node.class_identifier|class_icon( small, $trash_node.class_name|wash )}&nbsp;<a href={concat( '/content/versionview/', $item.object_id, '/', $cur_c_object.current_version, '/' )|ezurl} dir="auto">{$trash_node.name|wash}</a>
         {if $details}
         <div class="a4-content-trash-meta">{'ID %id'|i18n( 'design/admin/content/trash',, hash( '%id', $item.object_id ) )}{if $item.subtree_count} &middot; {'%count below it'|i18n( 'design/admin/content/trash',, hash( '%count', $item.subtree_count ) )}{/if}{if $item.languages} &middot; {foreach $item.languages as $language}<span title="{$language.name|wash}">{$language.locale|wash}</span>{delimiter}, {/delimiter}{/foreach}{/if}</div>
         {if $item.other_locations}
-        <div class="a4-content-trash-state a4-ok-text">{'Still in the tree at'|i18n( 'design/admin/content/trash' )}: {foreach $item.other_locations as $location}<a href={$location.url|ezurl}>{$location.name|wash}</a>{delimiter}, {/delimiter}{/foreach}</div>
+        <div class="a4-content-trash-state a4-ok-text">{'Still in the tree at'|i18n( 'design/admin/content/trash' )}: {foreach $item.other_locations as $location}<a href={$location.url|ezurl} dir="auto">{$location.name|wash}</a>{delimiter}, {/delimiter}{/foreach}</div>
         {/if}
         <details class="a4-content-trash-details">
             <summary>{'Details'|i18n( 'design/admin/content/trash' )}</summary>
             <dl>
                 <dt>{'Owner'|i18n( 'design/admin/content/trash' )}</dt>
-                <dd>{if $item.owner_name}<a href={concat( '/content/view/full/', fetch( 'content', 'object', hash( 'object_id', $item.owner_id ) ).main_node_id )|ezurl}>{$item.owner_name|wash}</a>{else}{'Unknown'|i18n( 'design/admin/content/trash' )}{/if}</dd>
+                <dd>{if $item.owner_name}<a href={concat( '/content/view/full/', fetch( 'content', 'object', hash( 'object_id', $item.owner_id ) ).main_node_id )|ezurl} dir="auto">{$item.owner_name|wash}</a>{else}{'Unknown'|i18n( 'design/admin/content/trash' )}{/if}</dd>
                 <dt>{'Last modified by'|i18n( 'design/admin/content/trash' )}</dt>
-                <dd>{if $item.modifier_name}{$item.modifier_name|wash}{else}{'Unknown'|i18n( 'design/admin/content/trash' )}{/if}</dd>
+                <dd>{if $item.modifier_name}<bdi>{$item.modifier_name|wash}</bdi>{else}{'Unknown'|i18n( 'design/admin/content/trash' )}{/if}</dd>
                 <dt>{'Published'|i18n( 'design/admin/content/trash' )}</dt>
                 <dd>{if $item.published}{$item.published|l10n( 'shortdatetime' )}{else}{'Never'|i18n( 'design/admin/content/trash' )}{/if}</dd>
                 <dt>{'Modified'|i18n( 'design/admin/content/trash' )}</dt>
@@ -232,7 +232,7 @@
         </td>
         <td class="a4-content-trash-narrow">
         {if $details}
-            {if $item.path}{foreach $item.path as $step}{if $step.url}<a href={$step.url|ezurl}>{$step.name|wash}</a>{else}<span class="a4-content-trash-path-{$step.state}">{$step.name|wash}</span>{/if}{delimiter} / {/delimiter}{/foreach}{else}/{/if}
+            {if $item.path}{foreach $item.path as $step}{if $step.url}<a href={$step.url|ezurl} dir="auto">{$step.name|wash}</a>{else}<span class="a4-content-trash-path-{$step.state}" dir="auto">{$step.name|wash}</span>{/if}{delimiter} / {/delimiter}{/foreach}{else}/{/if}
             {switch match=$item.parent_state}
             {case match='exists'}<div class="a4-content-trash-state a4-ok-text">{'Parent exists: restores to its original place.'|i18n( 'design/admin/content/trash' )}</div>{/case}
             {case match='trash'}<div class="a4-content-trash-state a4-warn-text">{'Parent is in the trash too: restore it first.'|i18n( 'design/admin/content/trash' )}</div>{/case}
@@ -249,9 +249,9 @@
         {$trash_node.trashed|l10n( 'shortdatetime' )}
         {if $details}
             {if $item.trashed_by}
-            <div class="a4-content-trash-meta">{'by %name'|i18n( 'design/admin/content/trash',, hash( '%name', $item.trashed_by.name|wash ) )}{if $item.trashed_by.via} <span title="{'Where the removal came from'|i18n( 'design/admin/content/trash' )}">({$item.trashed_by.via|wash})</span>{/if}</div>
+            <div class="a4-content-trash-meta">{'by %name'|i18n( 'design/admin/content/trash',, hash( '%name', concat( '<bdi>', $item.trashed_by.name|wash, '</bdi>' ) ) )}{if $item.trashed_by.via} <span title="{'Where the removal came from'|i18n( 'design/admin/content/trash' )}">({$item.trashed_by.via|wash})</span>{/if}</div>
             {else}
-            <div class="a4-content-trash-meta">{'by unknown'|i18n( 'design/admin/content/trash' )}{if $item.modifier_name}<br />{'last modified by %name'|i18n( 'design/admin/content/trash',, hash( '%name', $item.modifier_name|wash ) )}{/if}</div>
+            <div class="a4-content-trash-meta">{'by unknown'|i18n( 'design/admin/content/trash' )}{if $item.modifier_name}<br />{'last modified by %name'|i18n( 'design/admin/content/trash',, hash( '%name', concat( '<bdi>', $item.modifier_name|wash, '</bdi>' ) ) )}{/if}</div>
             {/if}
         {/if}
         </td>

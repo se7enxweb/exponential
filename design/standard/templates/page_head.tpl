@@ -4,7 +4,8 @@
 
 {let name=Path
      path=$module_result.path
-     reverse_path=array()}
+     reverse_path=array()
+     bidi=eq( first_set( $site.text_direction, 'ltr' ), 'rtl' )}
   {if is_set($module_result.title_path)}
     {set path=$module_result.title_path}
   {/if}
@@ -12,8 +13,11 @@
     {set reverse_path=$:reverse_path|array_prepend($:item)}
   {/section}
 
+{* Right to left, each step is isolated (U+2068 first strong isolate ... U+2069 pop directional isolate, written as
+   character references): a title cannot hold <bdi>, and an English name would show its end punctuation on the wrong
+   side. Left to right the title is unchanged. *}
 {set-block scope=root variable=site_title}
-{section loop=$Path:reverse_path}{$:item.text|wash}{delimiter} / {/delimiter}{/section} - {$site.title|wash}
+{section loop=$Path:reverse_path}{if $Path:bidi}&#x2068;{/if}{$:item.text|wash}{if $Path:bidi}&#x2069;{/if}{delimiter} / {/delimiter}{/section} - {if $Path:bidi}&#x2068;{/if}{$site.title|wash}{if $Path:bidi}&#x2069;{/if}
 {/set-block}
 
 {/let}

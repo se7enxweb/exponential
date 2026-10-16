@@ -12,7 +12,7 @@
     <th class="tight">{'Object ID'|i18n( 'design/admin/node/view/full' )}</th>
 </tr>
 <tr class="bglight">
-    <td><a href={$node.object.owner.main_node.url_alias|ezurl}>{$node.object.owner.name|wash}</a></td>
+    <td><a href={$node.object.owner.main_node.url_alias|ezurl} dir="auto">{$node.object.owner.name|wash}</a></td>
     <td>{$node.object.published|l10n( shortdatetime )}</td>
     <td>
     <form name="changesection" id="changesection" method="post" action={concat( 'content/edit/', $node.object.id )|ezurl}>

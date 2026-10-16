@@ -229,7 +229,7 @@
                 {if $row.designs}<div><dt>{'Designs in use'|i18n( 'design/admin/setup/extensions' )}</dt><dd>{foreach $row.designs as $d}{$d.design|wash} ({$d.siteaccesses|implode( ', ' )|wash}){delimiter}; {/delimiter}{/foreach}</dd></div>{/if}
                 {if $row.author}<div><dt>{'Author'|i18n( 'design/admin/setup/extensions' )}</dt><dd>{$row.author|wash}</dd></div>{/if}
                 {if $row.copyright}<div><dt>{'Copyright'|i18n( 'design/admin/setup/extensions' )}</dt><dd>{$row.copyright|wash}</dd></div>{/if}
-                {if $row.mtime}<div><dt>{'Modified'|i18n( 'design/admin/setup/extensions' )}</dt><dd>{$row.mtime|wash}</dd></div>{/if}
+                {if $row.mtime}<div><dt>{'Modified'|i18n( 'design/admin/setup/extensions' )}</dt><dd><bdi dir="ltr">{$row.mtime|wash}</bdi></dd></div>{/if}
                 <div><dt>{'Download'|i18n( 'design/admin/setup/extensions' )}</dt><dd>
                     {if $row.export_refusal}<strong class="a4-setup-export-off">{$row.export_refusal|wash}</strong>{else}{foreach array( 'tar.gz', 'zip', 'tar.bz2', 'ezpkg' ) as $format}<button type="submit" class="a4-btn" name="ExtensionDownload" value="{concat( $row.name, '/', $format )|wash}" aria-label="{'Download %name as %format'|i18n( 'design/admin/setup/extensions',, hash( '%name', $row.name, '%format', $format ) )|wash}">{$format|wash}</button>{delimiter} {/delimiter}{/foreach}{/if}</dd></div>
             </dl>

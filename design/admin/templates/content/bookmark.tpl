@@ -63,7 +63,7 @@
         <li data-folder="0">{if eq( $bp.scope_key, 'top' )}<span class="current" aria-current="page">{else}<a href={concat( 'content/bookmark/(folder)/top', cond( $bp.sort|ne( 'own' ), concat( '/(sort)/', $bp.sort ), '' ), $bp.search_suffix )|ezurl}>{/if}<span class="a4-content-bookmark-navname">{'Not in a folder'|i18n( 'design/admin/content/bookmark' )}</span> <span class="a4-count">{$summary.unfiled}</span>{if eq( $bp.scope_key, 'top' )}</span>{else}</a>{/if}</li>
         {if $bp.folders}<li class="is-sep" role="presentation"></li>{/if}
         {foreach $bp.folders as $folder}
-        <li class="d{min( $folder.depth, 4 )}" data-folder="{$folder.id}" data-parent="{$folder.parent_id}"><span class="a4-grip a4-content-bookmark-fgrip" hidden draggable="true" data-folder="{$folder.id}" aria-label="{'Arrange folder %name: drag it, or press the up and down arrow keys'|i18n( 'design/admin/content/bookmark',, hash( '%name', $folder.name ) )|wash}" title="{'Drag to arrange, or use the up and down arrow keys'|i18n( 'design/admin/content/bookmark' )}" role="button" tabindex="0"><span aria-hidden="true">&#10303;</span></span>{if and( $current, eq( $current.id, $folder.id ) )}<span class="current" aria-current="page">{else}<a href={concat( 'content/bookmark/(folder)/', $folder.id, cond( $bp.sort|ne( 'own' ), concat( '/(sort)/', $bp.sort ), '' ), $bp.search_suffix )|ezurl}>{/if}{$folder_icon}<span class="a4-content-bookmark-navname">{$folder.name|wash}</span> <span class="a4-count" title="{'%count bookmarks, with the folders inside'|i18n( 'design/admin/content/bookmark',, hash( '%count', $folder.count ) )}">{$folder.count}</span>{if and( $current, eq( $current.id, $folder.id ) )}</span>{else}</a>{/if}</li>
+        <li class="d{min( $folder.depth, 4 )}" data-folder="{$folder.id}" data-parent="{$folder.parent_id}"><span class="a4-grip a4-content-bookmark-fgrip" hidden draggable="true" data-folder="{$folder.id}" aria-label="{'Arrange folder %name: drag it, or press the up and down arrow keys'|i18n( 'design/admin/content/bookmark',, hash( '%name', $folder.name ) )|wash}" title="{'Drag to arrange, or use the up and down arrow keys'|i18n( 'design/admin/content/bookmark' )}" role="button" tabindex="0"><span aria-hidden="true">&#10303;</span></span>{if and( $current, eq( $current.id, $folder.id ) )}<span class="current" aria-current="page">{else}<a href={concat( 'content/bookmark/(folder)/', $folder.id, cond( $bp.sort|ne( 'own' ), concat( '/(sort)/', $bp.sort ), '' ), $bp.search_suffix )|ezurl}>{/if}{$folder_icon}<span class="a4-content-bookmark-navname"><bdi>{$folder.name|wash}</bdi></span> <span class="a4-count" title="{'%count bookmarks, with the folders inside'|i18n( 'design/admin/content/bookmark',, hash( '%count', $folder.count ) )}">{$folder.count}</span>{if and( $current, eq( $current.id, $folder.id ) )}</span>{else}</a>{/if}</li>
         {/foreach}
     </ul>
     {if $bp.folders|not}<p class="a4-help a4-card-body">{'No folders yet. Create one below, then move bookmarks into it.'|i18n( 'design/admin/content/bookmark' )}</p>{/if}
@@ -103,7 +103,7 @@
         <li><a href={'content/bookmark'|ezurl}>{'All bookmarks'|i18n( 'design/admin/content/bookmark' )}</a></li>
         {foreach $current.path as $crumb}<li>{$crumb|wash}</li>{/foreach}
     </ol>
-    <h2 class="a4-h2" id="bm-folder-title">{$current.name|wash}</h2>
+    <h2 class="a4-h2" id="bm-folder-title"><bdi>{$current.name|wash}</bdi></h2>
     <dl class="a4-facts a4-content-bookmark-folderfacts">
         <div><dt>{'Bookmarks in it'|i18n( 'design/admin/content/bookmark' )}</dt><dd>{$current.direct}</dd></div>
         <div><dt>{'Including subfolders'|i18n( 'design/admin/content/bookmark' )}</dt><dd>{$current.count}</dd></div>
@@ -256,7 +256,7 @@
 <section class="a4-content-bookmark-group" aria-labelledby="bm-group-{$item.group}">
     <div class="a4-content-bookmark-grouphead">
         {if $group_info}{$folder_icon}{/if}
-        <h3 class="a4-h3" id="bm-group-{$item.group}">{if $group_info}{$group_info.name|wash}{else}{'Not in a folder'|i18n( 'design/admin/content/bookmark' )}{/if}</h3>
+        <h3 class="a4-h3" id="bm-group-{$item.group}">{if $group_info}<bdi>{$group_info.name|wash}</bdi>{else}{'Not in a folder'|i18n( 'design/admin/content/bookmark' )}{/if}</h3>
         <span class="a4-badge">{if $item.group_count|eq( 1 )}{'1 bookmark'|i18n( 'design/admin/content/bookmark' )}{else}{'%count bookmarks'|i18n( 'design/admin/content/bookmark',, hash( '%count', $item.group_count ) )}{/if}</span>
         {if $item.group_continued}<span class="a4-meta">{'continued from the previous page'|i18n( 'design/admin/content/bookmark' )}</span>{/if}
         {if and( $group_info, $group_info.path )}<p class="a4-content-bookmark-grouppath">{'in %path'|i18n( 'design/admin/content/bookmark',, hash( '%path', $group_info.path|implode( ' / ' ) ) )|wash}</p>{/if}
@@ -272,7 +272,7 @@
                     <input type="checkbox" name="DeleteIDArray[]" value="{$item.id}" aria-label="{'Select %name'|i18n( 'design/admin/content/bookmark',, hash( '%name', $item.name ) )|wash}" />
                 </label>
                 {if $item.class_identifier}{$item.class_identifier|class_icon( small, $item.class_name )}{/if}
-                <h4 id="{$card_id}-title">{if or( eq( $item.state, 'gone' ), eq( $item.state, 'denied' ) )}{$item.name|wash}{else}<a href={concat( 'content/view/full/', $item.node_id )|ezurl}>{$item.name|wash}</a>{/if}</h4>
+                <h4 id="{$card_id}-title">{if or( eq( $item.state, 'gone' ), eq( $item.state, 'denied' ) )}<bdi>{$item.name|wash}</bdi>{else}<a href={concat( 'content/view/full/', $item.node_id )|ezurl} dir="auto">{$item.name|wash}</a>{/if}</h4>
                 <ul class="a4-badges">
                     {if $item.class_name}<li class="a4-badge">{$item.class_name|wash}</li>{/if}
                     {switch match=$item.state}
@@ -304,7 +304,7 @@
         <dl class="a4-facts">
             <div>
                 <dt>{'Location'|i18n( 'design/admin/content/bookmark' )}</dt>
-                <dd>{if $item.path}{$item.path|implode( ' / ' )|wash}{else}{'Top of the tree'|i18n( 'design/admin/content/bookmark' )}{/if}</dd>
+                <dd>{if $item.path}{foreach $item.path as $bm_step}<bdi>{$bm_step|wash}</bdi>{delimiter} / {/delimiter}{/foreach}{else}{'Top of the tree'|i18n( 'design/admin/content/bookmark' )}{/if}</dd>
             </div>
             <div>
                 <dt>{'Modified'|i18n( 'design/admin/content/bookmark' )}</dt>

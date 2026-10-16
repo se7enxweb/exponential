@@ -19,7 +19,7 @@
 <label>{'Created'|i18n( 'design/admin/content/history' )}:</label>
 {if $object.published}
 {$object.published|l10n( shortdatetime )}<br />
-{$object.owner.name|wash}
+<bdi>{$object.owner.name|wash}</bdi>
 {else}
 {'Not yet published'|i18n( 'design/admin/content/history' )}
 {/if}
@@ -32,7 +32,7 @@
 {$object.modified|l10n( shortdatetime )}<br />
 {foreach $object.versions as $tmp_version}
 {if eq($tmp_version.version, $object.published_version)}
-{$tmp_version.creator.name|wash}
+<bdi>{$tmp_version.creator.name|wash}</bdi>
 {break}
 {/if}
 {/foreach}

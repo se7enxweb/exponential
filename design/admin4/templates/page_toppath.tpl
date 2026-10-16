@@ -13,13 +13,13 @@
     <li class="a4-crumb{if and( gt( $:number, 1 ), lt( $:number, $:crumb_count ) )} is-middle{/if}">
     {if $:item.url}
         {if ne($ui_context,'edit')}
-        <a class="path" href={cond( and( $:use_urlalias, is_set( $:item.url_alias ) ), $:item.url_alias,
+        <a class="path" dir="auto" href={cond( and( $:use_urlalias, is_set( $:item.url_alias ) ), $:item.url_alias,
                                     $:item.url )|ezurl}{if gt( $:item.text|count_chars, 20 )} title="{$:item.text|wash}"{/if}{if eq( $:number, $:crumb_count )} aria-current="page"{/if}>{$:item.text|wash}</a>
         {else}
-        <span class="disabled"{if gt( $:item.text|count_chars, 20 )} title="{$:item.text|wash}"{/if}{if eq( $:number, $:crumb_count )} aria-current="page"{/if}>{$:item.text|wash}</span>
+        <span class="disabled" dir="auto"{if gt( $:item.text|count_chars, 20 )} title="{$:item.text|wash}"{/if}{if eq( $:number, $:crumb_count )} aria-current="page"{/if}>{$:item.text|wash}</span>
         {/if}
     {else}
-        <span class="path"{if gt( $:item.text|count_chars, 20 )} title="{$:item.text|wash}"{/if}{if eq( $:number, $:crumb_count )} aria-current="page"{/if}>{$:item.text|wash}</span>
+        <span class="path" dir="auto"{if gt( $:item.text|count_chars, 20 )} title="{$:item.text|wash}"{/if}{if eq( $:number, $:crumb_count )} aria-current="page"{/if}>{$:item.text|wash}</span>
     {/if}
     </li>
     {if and( eq( $:number, 1 ), gt( $:crumb_count, 2 ) )}

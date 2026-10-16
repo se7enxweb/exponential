@@ -126,7 +126,7 @@ var eZAjaxSubitemsExpDataTable = (function () {
             // one box for the status mark, icon and name (admin4.css .a4-subitem-name): a narrow column wraps the
             // name, never between the icon and the name; a disabled or locked user account gets a badge after it
             return '<span class="a4-subitem-name">' + visibilityMark(row) + '<a href="' + row.url + '" title="' + row.name + '">' + row.class_icon + '</a>' +
-                   '<a href="' + row.url + '" title="' + row.name + '">' + row.name + '</a>' + accountBadge(row) + '</span>';
+                   '<a href="' + row.url + '" title="' + row.name + '" dir="auto">' + row.name + '</a>' + accountBadge(row) + '</span>';
         };
         // The text of an HTML-encoded value: the server sends names encoded for markup, an attribute set from
         // script and the menu's header take text ("Tom & Jerry", not "Tom &amp; Jerry").
@@ -205,6 +205,12 @@ var eZAjaxSubitemsExpDataTable = (function () {
         var text = function (key) {
             return function (row) { var v = row[key]; return v === null || v === undefined ? '' : String(v).replace(/&/g, '&#38;').replace(/</g, '&#60;').replace(/>/g, '&#62;'); };
         };
+        // A name (class, modifier, section) in its own direction run: an English name in a right-to-left page keeps
+        // its end punctuation at its end (the name link in formatName has dir="auto" for the same reason)
+        var isolated = function (key) {
+            var plain = text(key);
+            return function (row) { var v = plain(row); return v ? '<bdi>' + v + '</bdi>' : ''; };
+        };
 
         // ---- the status marks (components.css .a4-mark) -------------------------
         // labelsObj.STATUS holds the names and the explanations (children_detailed.tpl); without it (an older
@@ -255,12 +261,12 @@ var eZAjaxSubitemsExpDataTable = (function () {
             { key: 'thumbnail', label: L.thumbnail, labelHidden: true, render: thumbView },
             { key: 'name', label: L.name, sortable: true, render: formatName },
             { key: 'hidden_status_string', label: L.visibility, sortable: true, render: visibilityView },
-            { key: 'class_name', label: L.type, sortable: true, render: text('class_name') },
-            { key: 'creator', label: L.modifier, render: text('creator') },
+            { key: 'class_name', label: L.type, sortable: true, render: isolated('class_name') },
+            { key: 'creator', label: L.modifier, render: isolated('creator') },
             { key: 'modified_date', label: L.modified, sortable: true, render: text('modified_date') },
             { key: 'published_date', label: L.published, sortable: true, render: text('published_date') },
             { key: 'translations', label: L.translations, render: translationView },
-            { key: 'section', label: L.section, sortable: true, render: text('section') },
+            { key: 'section', label: L.section, sortable: true, render: isolated('section') },
             { key: 'node_id', label: L.nodeid, sortable: true, render: text('node_id') },
             { key: 'node_remote_id', label: L.noderemoteid, render: text('node_remote_id') },
             { key: 'contentobject_id', label: L.objectid, sortable: true, render: text('contentobject_id') },

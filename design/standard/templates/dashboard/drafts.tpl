@@ -13,7 +13,7 @@
     {foreach fetch( 'content', 'draft_version_list', hash( 'limit', $block.number_of_items ) ) as $draft sequence array( 'bglight', 'bgdark' ) as $style}
         <tr class="{$style}">
             <td>
-                <a href="{concat( '/content/versionview/', $draft.contentobject.id, '/', $draft.version, '/', $draft.initial_language.locale, '/' )|ezurl('no')}" title="{$draft.name|wash()}">
+                <a href="{concat( '/content/versionview/', $draft.contentobject.id, '/', $draft.version, '/', $draft.initial_language.locale, '/' )|ezurl('no')}" title="{$draft.name|wash()}" dir="auto">
                     {$draft.name|wash()}
                 </a>
             </td>

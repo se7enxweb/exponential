@@ -15,9 +15,9 @@
 <li class="a4-phone-only a4-phone-user">
     <p class="a4-phone-user-name" id="a4-phone-user-name">
     {if $a4_phone_href}
-        <a href={$a4_phone_href|ezurl} title="{'Open your user object'|i18n( 'design/admin/pagelayout' )|wash}"><span class="a4-icon a4-bi-person-circle" aria-hidden="true"></span><span class="a4-phone-user-display">{$current_user.contentobject.name|wash}</span> <span class="a4-phone-user-login" translate="no">{$current_user.login|wash}</span></a>
+        <a href={$a4_phone_href|ezurl} title="{'Open your user object'|i18n( 'design/admin/pagelayout' )|wash}"><span class="a4-icon a4-bi-person-circle" aria-hidden="true"></span><span class="a4-phone-user-display"><bdi>{$current_user.contentobject.name|wash}</bdi></span> <span class="a4-phone-user-login" translate="no"><bdi>{$current_user.login|wash}</bdi></span></a>
     {else}
-        <span class="a4-icon a4-bi-person-circle" aria-hidden="true"></span><span class="a4-phone-user-display">{$current_user.contentobject.name|wash}</span> <span class="a4-phone-user-login" translate="no">{$current_user.login|wash}</span>
+        <span class="a4-icon a4-bi-person-circle" aria-hidden="true"></span><span class="a4-phone-user-display"><bdi>{$current_user.contentobject.name|wash}</bdi></span> <span class="a4-phone-user-login" translate="no"><bdi>{$current_user.login|wash}</bdi></span>
     {/if}
     </p>
     <ul class="a4-phone-user-links" aria-labelledby="a4-phone-user-name">

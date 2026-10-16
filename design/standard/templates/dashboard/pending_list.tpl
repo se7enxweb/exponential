@@ -11,7 +11,7 @@
     {foreach fetch( 'content', 'pending_list', hash( 'limit', $block.number_of_items ) ) as $pending_item sequence array( 'bglight', 'bgdark' ) as $style}
         <tr class="{$style}">
             <td>
-                <a href="{concat( '/content/versionview/', $pending_item.contentobject.id, '/', $pending_item.version, '/' )|ezurl('no')}">
+                <a href="{concat( '/content/versionview/', $pending_item.contentobject.id, '/', $pending_item.version, '/' )|ezurl('no')}" dir="auto">
                     {$pending_item.version_name|wash()}
                 </a>
             </td>

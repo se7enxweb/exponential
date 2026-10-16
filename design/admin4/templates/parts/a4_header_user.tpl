@@ -31,13 +31,13 @@
             <p class="a4-user-menu-name">
             {if $a4_user_self}
                 <a id="a4-user-menu-self" class="a4-user-menu-self" href={$a4_user_href|ezurl} title="{'Open your user object'|i18n( 'design/admin/pagelayout' )|wash}" aria-describedby="a4-user-menu-self-hint">
-                    <span class="a4-user-menu-display">{$a4_user_name|wash}</span>
-                    <span class="a4-user-menu-login" translate="no">{$a4_user_login|wash}</span>
+                    <span class="a4-user-menu-display"><bdi>{$a4_user_name|wash}</bdi></span>
+                    <span class="a4-user-menu-login" translate="no"><bdi>{$a4_user_login|wash}</bdi></span>
                 </a>
                 <span id="a4-user-menu-self-hint" hidden>{'Open your user object'|i18n( 'design/admin/pagelayout' )|wash}</span>
             {else}
-                <span class="a4-user-menu-display">{$a4_user_name|wash}</span>
-                <span class="a4-user-menu-login" translate="no">{$a4_user_login|wash}</span>
+                <span class="a4-user-menu-display"><bdi>{$a4_user_name|wash}</bdi></span>
+                <span class="a4-user-menu-login" translate="no"><bdi>{$a4_user_login|wash}</bdi></span>
             {/if}
             </p>
             <ul class="a4-user-menu-links">

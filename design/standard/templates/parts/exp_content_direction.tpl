@@ -7,6 +7,10 @@
    Parameters:
      exp_locale_code   the locale code of the content, e.g. heb-IL (required; empty prints nothing)
      exp_lang_always   true: also the lang attribute of a left-to-right language (optional)
+     exp_dir_ltr       true: in a right-to-left page (the interface locale, site.ini [RegionalSettings] Locale, is
+                       written right to left; $site is not set for a module's templates) also
+                       ' lang="en-US" dir="ltr"' for a left-to-right language, so English content keeps its order
+                       there; a left-to-right page is unchanged (optional; for blocks of content, not headings)
 
    Used by the edit forms (content/edit_attribute.tpl, content/edit.tpl) and the admin full view
    (node/view/admin_preview.tpl) of every design; a template that needs a wrapper only for right-to-left content
@@ -16,6 +20,8 @@
     *}{if $exp_dir_locale.is_valid}{*
         *}{if $exp_dir_locale.is_right_to_left}{*
             *}{if $exp_dir_locale.content_language_code|ne( '' )} lang="{$exp_dir_locale.content_language_code|wash}"{/if} dir="rtl"{*
+        *}{elseif and( is_set( $exp_dir_ltr ), $exp_dir_ltr, ezini( 'RegionalSettings', 'Locale' )|locale().is_right_to_left )}{*
+            *}{if $exp_dir_locale.content_language_code|ne( '' )} lang="{$exp_dir_locale.content_language_code|wash}"{/if} dir="ltr"{*
         *}{elseif and( is_set( $exp_lang_always ), $exp_lang_always, $exp_dir_locale.content_language_code|ne( '' ) )} lang="{$exp_dir_locale.content_language_code|wash}"{/if}{*
     *}{/if}{*
     *}{undef $exp_dir_locale}{*
