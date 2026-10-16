@@ -883,7 +883,7 @@ a5e25bc5b912c88678afe25d798ade81  design/admin4/javascript/expajaxuploader.js
 a28728171fd43a28e1ffc80bc858e768  design/admin4/javascript/ezajaxsubitems_expdatatable.js
 031d335156c09ec9dc3db2f2d3730087  design/admin4/javascript/node_tabs.js
 b947add2bd87d74ad1fbe2a531210691  design/admin4/javascript/popupmenu/ezpopupmenu.js
-3b8fd624182425aa9d9ab40d713522ca  design/admin4/javascript/subitems_priority_drag.js
+b7f849d6bf02ccfe396b3e8dc5919e53  design/admin4/javascript/subitems_priority_drag.js
 54cb1a1df10aa18ea280c08a9d97a328  design/admin4/override/templates/admin_preview/article.tpl
 fa42107d7f6c82b26eed48050374e9a5  design/admin4/override/templates/admin_preview/comment.tpl
 0c4cec334b8bff8d319219e52813802e  design/admin4/override/templates/admin_preview/company.tpl
@@ -947,7 +947,7 @@ c7eb697cccc88a7038703f8fcc862659  design/admin4/templates/audit/reauth.tpl
 eb264deee765003628f666064dea68f3  design/admin4/templates/audit/settings.tpl
 6ad3a8724d541edaf79af7df5927ab5a  design/admin4/templates/audit/sources.tpl
 3064ea19ba4df8b3b2d4887a53c0bc27  design/admin4/templates/children.tpl
-27048e2a19133973446df7863215515a  design/admin4/templates/children_detailed.tpl
+f539597a22b3b37359ff4f281f1718c6  design/admin4/templates/children_detailed.tpl
 f60e0f377f64ba0eb70026b66a183a75  design/admin4/templates/class/classlist.tpl
 51fd6b1a1612e389ee44ce3d6cbe83d1  design/admin4/templates/class/copy_confirm.tpl
 2f32def3d98933143182da37d73213f4  design/admin4/templates/class/datatype/browse_objectrelation_placement.tpl
@@ -7353,7 +7353,7 @@ a6b9a5e18993b0e8f8f8ff35f99bded0  share/translations/cze-CZ/translation.ts
 a2b163b1fd63c8bdb24c907d8473ad74  share/translations/ell-GR/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-AU/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-NZ/translation.ts
-a39cb968e3303b397a3eeb1355c59497  share/translations/eng-US/translation.ts
+022475aa85202e7d0224b230f992f667  share/translations/eng-US/translation.ts
 7579459206fde1781c0ac38cefaa61a0  share/translations/esl-ES/translation.ts
 3a1cd7eb19c1ba120877d76a63f9a732  share/translations/esl-MX/translation.ts
 a1ff9edf6db2ff3ff0b2d442410db154  share/translations/fin-FI/translation.ts
@@ -7376,7 +7376,7 @@ c0bb0e5ef4ff758c9e505585337f7d2a  share/translations/srp-RS/translation.ts
 175a32374b310580e95bd659a017a77c  share/translations/swe-SE/translation.ts
 70bdc5a32436bae47a97cd8d7076ddd9  share/translations/tlh-QO/translation.ts
 0b1b76b5ad6b2f923afd6fd9a9937a8b  share/translations/untranslated/readme.txt
-9d837cbcbc70ba6eeebcb1f0ee8e79ee  share/translations/untranslated/translation.ts
+d0249173af6f009bfb5c70b37d8f928d  share/translations/untranslated/translation.ts
 bae9ff85781e52af001213bdb213a013  shippable.yml
 414f4d1129273ab3dea38b878d554eae  soap.php
 3b6d156f31df70e093aa1a6d8a525cd3  support/ezlupdate-qt4.5/README.txt
