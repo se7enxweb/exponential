@@ -1,6 +1,6 @@
 // Runs design/admin4/javascript/page/content_job.js (the progress page of a content job) against mini_dom.js with a
 // stub fetch: each case answers the status requests in its own way (a running job, 404, 403, the login page after a
-// redirect, an HTML page, a network error, a hidden tab) and records the requests, the timers the script set and the
+// redirect, an HTML page, a network error, a script error while showing the answer, a hidden tab) and records the requests, the timers the script set and the
 // message it shows. Prints one JSON line per case.
 // Usage: node content_job.js <path to content_job.js>
 'use strict';
@@ -11,7 +11,7 @@ const { createDocument } = require('./mini_dom.js');
 const source = fs.readFileSync(process.argv[2], 'utf8');
 const BOX = '<div id="exp-contentjob" data-status-url="/content/job/abc?json=1" data-state="running"'
     + ' data-text-counts="%done of %total" data-text-elapsed="%seconds s" data-text-opening="Opening in %seconds s"'
-    + ' data-text-stopping="Stopping" data-text-waiting="Waiting" data-text-gone="Gone" data-text-signed-out="Signed out"'
+    + ' data-text-stopping="Stopping" data-text-waiting="Waiting" data-text-gone="Gone" data-text-signed-out="Signed out" data-text-error="Error"'
     + ' data-states="Waiting|Running|Done|Failed|Cancelled">'
     + '<span class="a4-badge a4-content-job-state running">Running</span><span class="a4-content-job-counts"></span>'
     + '<span class="a4-content-job-elapsed"></span><div class="a4-meter a4-content-job-bar running"><span class="a4-pct-0"></span></div>'
@@ -28,12 +28,12 @@ function response(status, body, opts) {
     };
 }
 
-function run(answers) {
-    const document = createDocument(BOX);
+function run(answers, html) {
+    const document = createDocument(html || BOX);
     document.hidden = false;
     const log = { requests: 0, timers: [], reloads: 0 };
     const sandbox = {
-        document, console,
+        document, console: { error: () => {} },
         fetch: () => {
             const a = answers[Math.min(log.requests, answers.length - 1)];
             log.requests++;
@@ -99,6 +99,13 @@ function out(name, value) { console.log(JSON.stringify(Object.assign({ name }, v
         const first = t.delays();
         await t.next();
         out('server error', { requests: t.log.requests, first, after: t.delays() });
+    }
+    // the answer cannot be shown (a part of the page is missing, so show() throws): a message, and no further request
+    {
+        const t = run([response(200, RUNNING)], BOX.replace('<span class="a4-content-job-counts"></span>', ''));
+        await t.settle();
+        await t.next();
+        out('script error', { requests: t.log.requests, delays: t.delays(), message: t.message(), stopped: t.document.getElementById('exp-contentjob').getAttribute('data-polling') });
     }
     // a hidden tab: no request while hidden, one as soon as it is shown again
     {

@@ -4,7 +4,8 @@
  * changes. The texts are data-text-* attributes of #exp-contentjob.
  * The polling ends with a message when it cannot go on: the job is gone or not the user's (404, 403: data-text-gone),
  * or the session has ended (the request was redirected, to the login page, or the answer is not JSON:
- * data-text-signed-out); #exp-contentjob then carries data-polling="stopped". A network error or a server error is
+ * data-text-signed-out), or the answer cannot be shown (a script error: data-text-error); #exp-contentjob then carries
+ * data-polling="stopped". A network error or a server error is
  * passing: the next request waits longer each time (4, 8, 16 ... up to 60 seconds) and is back at two seconds after
  * an answer. While the tab is hidden no request is made; the next one goes out when it is shown again.
  * A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
@@ -28,7 +29,7 @@
   }
   var msg = function (text) { q('.a4-content-job-message').textContent = text; };
   var failures = 0, waiting = false, stopped = false;
-  function stop(k) { stopped = true; msg(t(k, {})); box.setAttribute('data-polling', 'stopped'); }
+  function stop(k) { stopped = true; box.setAttribute('data-polling', 'stopped'); msg(t(k, {})); }
   // the next request in ms, or once the tab is shown again
   function later(ms) { if (!stopped) setTimeout(function () { if (document.hidden) waiting = true; else poll(); }, ms); }
   function retry(text) { msg(text || t('waiting', {})); failures++; later(Math.min(60000, 2000 * Math.pow(2, failures))); }
@@ -57,7 +58,11 @@
         if (!s || !s.ok) { retry(s && s.error); return; }
         answer(s);
       }, function () { stop('signed-out'); });
-    }, function () { retry(); });
+    }, function () { retry(); }).catch(function (e) {
+      // a script error while showing the answer: stop with a message instead of freezing without one
+      if (!stopped) stop('error');
+      if (window.console && console.error) console.error(e);
+    });
   }
   poll();
 })();

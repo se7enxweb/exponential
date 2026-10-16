@@ -63013,6 +63013,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>You are no longer signed in. Sign in again and reload this page to follow the job.</source>
         <translation>You are no longer signed in. Sign in again and reload this page to follow the job.</translation>
     </message>
+    <message>
+        <source>The status could not be shown. Reload the page to follow the job.</source>
+        <translation>The status could not be shown. Reload the page to follow the job.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/reverserelations</name>

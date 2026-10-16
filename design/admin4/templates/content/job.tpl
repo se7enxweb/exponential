@@ -19,6 +19,7 @@
      data-text-waiting="{'Waiting for the status...'|i18n( 'design/admin/content/job' )|wash}"
      data-text-gone="{'This job no longer exists or you may not see it. The status is not updated any more.'|i18n( 'design/admin/content/job' )|wash}"
      data-text-signed-out="{'You are no longer signed in. Sign in again and reload this page to follow the job.'|i18n( 'design/admin/content/job' )|wash}"
+     data-text-error="{'The status could not be shown. Reload the page to follow the job.'|i18n( 'design/admin/content/job' )|wash}"
      data-states="{concat( $state_names.queued, '|', $state_names.running, '|', $state_names.done, '|', $state_names.failed, '|', $state_names.cancelled )|wash}">
 
 {* DESIGN: Header START *}<div class="box-header"><div class="box-ml">

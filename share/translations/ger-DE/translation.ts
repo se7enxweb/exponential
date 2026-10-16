@@ -70566,6 +70566,10 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>You are no longer signed in. Sign in again and reload this page to follow the job.</source>
         <translation>Sie sind nicht mehr angemeldet. Melden Sie sich erneut an und laden Sie diese Seite neu, um den Job weiter zu verfolgen.</translation>
     </message>
+    <message>
+        <source>The status could not be shown. Reload the page to follow the job.</source>
+        <translation>Der Status konnte nicht angezeigt werden. Laden Sie die Seite neu, um den Job weiter zu verfolgen.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/reverserelations</name>

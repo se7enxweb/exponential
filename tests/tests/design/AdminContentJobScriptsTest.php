@@ -5,8 +5,8 @@
  *
  * - CJS-01: the progress page (page/content_job.js) stops polling with a message of its own when the job is gone or
  *   not the user's (404, 403) and when the session has ended (a redirected request, an HTML page in place of the
- *   JSON); after a network error it waits longer each time, up to a minute; a hidden tab makes no request
- *   (js/content_job.js). The template carries the two messages.
+ *   JSON) and when the answer cannot be shown (a script error); after a network error it waits longer each time,
+ *   up to a minute; a hidden tab makes no request (js/content_job.js). The template carries the three messages.
  * - CJS-02: the "run now or in the background" choice (page/content_job_mode_choice.js) saves the preference through
  *   window.a4Pref, which POSTs to user/preferences/set_and_exit with the form token, and sends no request of its own
  *   (js/content_job_mode_choice.js).
@@ -57,7 +57,7 @@ class AdminContentJobScriptsTest extends PHPUnit\Framework\TestCase
     public function testTheProgressPageStopsWhenItCannotGoOn()
     {
         $c = $this->harness( 'content_job.js', 'design/admin4/javascript/page/content_job.js' );
-        $this->assertCount( 8, $c );
+        $this->assertCount( 9, $c );
         $this->assertSame( array( 2000 ), $c['running']['delays'], 'a running job is asked again in two seconds' );
         $this->assertSame( 'Working', $c['running']['message'] );
         foreach ( array( 'status 404', 'status 403' ) as $case )
@@ -79,12 +79,15 @@ class AdminContentJobScriptsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'Working', $c['network']['message'] );
         $this->assertSame( array( 4000 ), $c['server error']['first'], 'a server error is passing' );
         $this->assertSame( 2, $c['server error']['requests'] );
+        $this->assertSame( array( 1, array(), 'Error', 'stopped' ),
+                           array( $c['script error']['requests'], $c['script error']['delays'], $c['script error']['message'], $c['script error']['stopped'] ),
+                           'a script error while showing the answer stops with a message' );
         $this->assertSame( 1, $c['hidden']['hidden'], 'no request while the tab is hidden' );
         $this->assertSame( 2, $c['hidden']['shown'], 'one when it is shown again' );
         $this->assertSame( 2, $c['hidden']['again'], 'and only one' );
 
         $tpl = self::read( 'design/admin4/templates/content/job.tpl' );
-        foreach ( array( 'gone', 'signed-out' ) as $key )
+        foreach ( array( 'gone', 'signed-out', 'error' ) as $key )
             $this->assertMatchesRegularExpression( '/data-text-' . $key . '="\{\'[^\']+\'\|i18n\( \'design\/admin\/content\/job\' \)\|wash\}"/', $tpl, $key );
     }
 
