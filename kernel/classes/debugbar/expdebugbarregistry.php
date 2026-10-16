@@ -336,7 +336,8 @@ class expDebugBarRegistry
     {
         $defaults = array( 'time_ms' => array( 500, 1500 ), 'sql_count' => array( 100, 300 ), 'sql_ms' => array( 200, 800 ),
                            'memory_mb' => array( 64, 192 ), 'templates' => array( 150, 400 ),
-                           'querycache_hit_rate' => array( 50, 10 ) );
+                           'querycache_hit_rate' => array( 50, 10 ), 'opcache_memory' => array( 80, 95 ),
+                           'apcu_memory' => array( 75, 90 ) );
         foreach ( (array)$this->option( 'Thresholds', array() ) as $name => $value )
         {
             $parts = array_map( 'trim', explode( ';', (string)$value ) );

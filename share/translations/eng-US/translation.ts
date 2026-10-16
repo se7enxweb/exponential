@@ -61283,6 +61283,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>(%factor times as long)</source>
         <translation>(%factor times as long)</translation>
     </message>
+    <message>
+        <source>Versions: PHP %php (%sapi), Exponential %exponential</source>
+        <translation>Versions: PHP %php (%sapi), Exponential %exponential</translation>
+    </message>
+    <message>
+        <source>OPc %pct %</source>
+        <translation>OPc %pct %</translation>
+    </message>
+    <message>
+        <source>OPcache memory: %used of %size MB in use, hit rate %rate %, %scripts scripts, %restarts restarts</source>
+        <translation>OPcache memory: %used of %size MB in use, hit rate %rate %, %scripts scripts, %restarts restarts</translation>
+    </message>
+    <message>
+        <source>APCu %pct %</source>
+        <translation>APCu %pct %</translation>
+    </message>
+    <message>
+        <source>APCu memory, shared by every site of the PHP pool: %used of %size MB in use, %entries entries, hit rate %rate %, %expunges expunges</source>
+        <translation>APCu memory, shared by every site of the PHP pool: %used of %size MB in use, %entries entries, hit rate %rate %, %expunges expunges</translation>
+    </message>
+    <message>
+        <source>Not available: APCu is not loaded or not enabled for this PHP.</source>
+        <translation>Not available: APCu is not loaded or not enabled for this PHP.</translation>
+    </message>
+    <message>
+        <source>Expunges</source>
+        <translation>Expunges</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/audit</name>
