@@ -57548,4 +57548,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
 </context>
+<context>
+    <name>kernel/country</name>
+    <message>
+        <source>Most used countries</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All countries</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose a country</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
 </TS>

@@ -946,6 +946,30 @@
     ],
     "design/admin/templates/uiswitch/*": [
       "tests/tests/kernel/classes/uiswitch/expUISwitchDesignProviderTest.php"
+    ],
+    "kernel/classes/datatypes/ezcountry/expcountrygroups.php": [
+      "tests/tests/kernel/classes/datatypes/expCountryGroupsTest.php"
+    ],
+    "settings/countrygroups.ini": [
+      "tests/tests/kernel/classes/datatypes/expCountryGroupsTest.php"
+    ],
+    "settings/country.ini": [
+      "tests/tests/kernel/classes/datatypes/expCountryGroupsTest.php"
+    ],
+    "design/standard/templates/country/options.tpl": [
+      "tests/tests/kernel/classes/datatypes/expCountryGroupsTest.php"
+    ],
+    "design/standard/templates/shop/country/edit.tpl": [
+      "tests/tests/kernel/classes/datatypes/expCountryGroupsTest.php"
+    ],
+    "design/standard/templates/content/datatype/edit/ezcountry.tpl": [
+      "tests/tests/kernel/classes/datatypes/expCountryGroupsTest.php"
+    ],
+    "design/standard/templates/content/datatype/collect/ezcountry.tpl": [
+      "tests/tests/kernel/classes/datatypes/expCountryGroupsTest.php"
+    ],
+    "design/standard/templates/class/datatype/edit/ezcountry.tpl": [
+      "tests/tests/kernel/classes/datatypes/expCountryGroupsTest.php"
     ]
   },
   "generated": {

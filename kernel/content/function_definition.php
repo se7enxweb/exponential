@@ -1270,6 +1270,18 @@ $FunctionList['country_list'] = array( 'name' => 'country',
                                                                      'type' => 'string',
                                                                      'required' => false ) ) );
 
+// The country list in groups: the ranked groups of countrygroups.ini, then "All countries" A-Z (expCountryGroups).
+// repeat: whether "All countries" repeats the ranked ones (true for a single select); omitted: the setting
+$FunctionList['country_groups'] = array( 'name' => 'country_groups',
+                                         'operation_types' => array( 'read' ),
+                                         'call_method' => array( 'class' => 'eZContentFunctionCollection',
+                                                                 'method' => 'fetchCountryGroups' ),
+                                         'parameter_type' => 'standard',
+                                         'parameters' => array( array( 'name' => 'repeat',
+                                                                       'type' => 'mixed',
+                                                                       'required' => false,
+                                                                       'default' => null ) ) );
+
 $FunctionList['related_objects_ids'] = array( 'name' => 'object',
                                  'operation_types' => array( 'read' ),
                                  'call_method' => array( 'class' => 'eZContentFunctionCollection',

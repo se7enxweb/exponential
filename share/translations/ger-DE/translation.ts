@@ -74599,4 +74599,19 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Neue Registrierung</translation>
     </message>
 </context>
+<context>
+    <name>kernel/country</name>
+    <message>
+        <source>Most used countries</source>
+        <translation>Häufig gewählte Länder</translation>
+    </message>
+    <message>
+        <source>All countries</source>
+        <translation>Alle Länder</translation>
+    </message>
+    <message>
+        <source>Choose a country</source>
+        <translation>Land wählen</translation>
+    </message>
+</context>
 </TS>

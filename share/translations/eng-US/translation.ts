@@ -68012,4 +68012,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>New registration</translation>
     </message>
 </context>
+<context>
+    <name>kernel/country</name>
+    <message>
+        <source>Most used countries</source>
+        <translation>Most used countries</translation>
+    </message>
+    <message>
+        <source>All countries</source>
+        <translation>All countries</translation>
+    </message>
+    <message>
+        <source>Choose a country</source>
+        <translation>Choose a country</translation>
+    </message>
+</context>
 </TS>

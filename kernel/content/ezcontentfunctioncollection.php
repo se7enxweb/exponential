@@ -1599,6 +1599,19 @@ class eZContentFunctionCollection
         return array( 'result' => $country );
     }
 
+    /**
+     * The country list in groups, see expCountryGroups::build().
+     *
+     * @param mixed $repeat true/false, or null for the setting [CountrySettings] RepeatInAllCountries
+     * @return array
+     */
+    static public function fetchCountryGroups( $repeat = null )
+    {
+        if ( $repeat !== null && !is_bool( $repeat ) )
+            $repeat = !in_array( strtolower( (string)$repeat ), array( '', '0', 'false', 'disabled', 'no' ), true );
+        return array( 'result' => expCountryGroups::fetch( $repeat ) );
+    }
+
     static public function fetchContentTreeMenuExpiry()
     {
         $expiryHandler = eZExpiryHandler::instance();
