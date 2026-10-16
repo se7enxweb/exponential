@@ -31,7 +31,7 @@
   --a4-accent-hover: #d9561a;
   --a4-accent-strong: #c2410c;
   --a4-accent-press: #9a3412;
-  --a4-accent-text: #bc3f0b;   /* 4.7:1 on the hovered row (--a4-info-bg), 5.4:1 on white */
+  --a4-accent-text: #ad3809;   /* 6.3:1 on white, 5.4:1 on the hovered row (--a4-info-bg), 4.8:1 for an is-accent badge (--a4-accent-soft) on a hovered row; #bc3f0b was 4.2:1 there */
   --a4-accent-soft: rgba(242, 106, 33, 0.12);
   --a4-on-accent: #fff;
   --a4-on-accent-hover: #fff;

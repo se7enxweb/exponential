@@ -119,7 +119,7 @@ use them; new code uses the `--a4-accent*` names.
 
 **The accent** is the brand orange `#f26a21`, as on admin4's header (the selected menu pill) and its default button.
 White text on it is only 3:1, so filled controls with white text use its darker shade `--a4-accent-strong`
-(`#c2410c`, 5.2:1) and accent-coloured text uses `--a4-accent-text` (`#bc3f0b` light, 4.7:1 also on a hovered table row; `#ff9a5c` dark).
+(`#c2410c`, 5.2:1) and accent-coloured text uses `--a4-accent-text` (`#ad3809` light, 5.4:1 also on a hovered table row and 4.8:1 for an `is-accent` badge on one; `#ff9a5c` dark).
 
 ### Stacking layers
 
