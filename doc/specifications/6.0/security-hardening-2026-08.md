@@ -23,12 +23,12 @@ manifest `d889a8abc6`; jQuery `f7c57376aa`.
 |---|---|---|---|---|
 | F-01 | Predictable REST/OAuth tokens | 330, 338 | `kernel/private/rest/classes/models/ezprest_token.php` | `ezpRestToken::generateToken()` returns `bin2hex( random_bytes( 20 ) )`: 40 hex characters from the system's secure random source. Before, it was an 8-character token from a seeded `mt_rand()`. The `$vary` parameter stays for compatibility and is no longer used |
 | F-02 | Guessable account activation link | 330 | `kernel/user/ezuseroperationcollection.php` | The activation hash is `bin2hex( random_bytes( 16 ) )` instead of `md5( mt_rand() . time() . $userID )` |
-| F-03 | HTTP header injection (CRLF) | 93 | `extension/ezoe/classes/runnable/views/ezoe/atd_rpc.php` | `\r` and `\n` are removed from the `url` parameter before it becomes part of the hand-built request to the After the Deadline server. The post text is initialised, so a GET no longer reads an undefined variable |
+| F-03 | HTTP header injection (CRLF) | 93 | `extension/ezoe/classes/runnable/views/ezoe/atd_rpc.php` | `\r` and `\n` are removed from the `url` parameter before it becomes part of the hand-built request to the After the Deadline server. The post text is initialised, so a GET no longer reads an undefined variable. Removed in 6.0.15 (16 October 2026): the view, its class and the AtD plugin are gone, see the [6.0.15 changelog](../../changelogs/6.0/6.0.15.md#16-october-2026-online-editor-hardening) |
 | F-05 | OS command injection | 78 | `kernel/classes/datatypes/ezbinaryfile/plugins/ezpdfparser.php`, `ezwordparser.php` | The extraction tool goes through `escapeshellcmd()`; file names, including the temporary output file, go through `escapeshellarg()`. A file name with shell characters can no longer add a command |
 | F-06 | Fail open on login | 636, 697 | `kernel/classes/datatypes/ezuser/ezuser.php`, `eZUser::_loginUser()` | At sign-in an account without an `ezuser_setting` row counts as disabled; it counted as enabled. `eZUser::isEnabled()` itself still returns true for such an account; it is the login that fails closed. Disabling a user keeps the row with `is_enabled = 0`, so only accounts without a row are affected |
 | H-06 | Scripts over plain HTTP | 829, 319 | `extension/ezjscore/settings/ezjscore.ini` | `ExternalScripts[...]` URLs use `https://`. Prefer `LoadFromCDN=disabled` (local scripts) or subresource integrity. The Yahoo CDN of YUI is end of life and may not answer |
 
-F-03 note: the view `extension/ezoe/modules/ezoe/atd_rpc.php` is now an entry point that calls the class above.
+F-03 note: the view `extension/ezoe/modules/ezoe/atd_rpc.php` is now an entry point that calls the class above. Both files were removed in 6.0.15 with the After the Deadline spell checker.
 F-04 (the jQuery 1.10.2 library) was handled by the [jQuery replacement](#jquery-371-and-jquery-migrate-341).
 
 ## F-06: find accounts that cannot sign in

@@ -1567,7 +1567,7 @@
                    if ( DOM.getAttrib( n, 'class').indexOf('mceItemHidden') !== -1 )
                        return;
 
-                   // eZ: Ignore hidden spellcheker nodes (both spellcheck and AtD plugin)
+                   // eZ: Ignore hidden spellchecker nodes (the spellchecker plugin; the grammar classes were set by the removed AtD plugin)
                    if ( DOM.hasClass(n, 'mceItemHiddenSpellWord') || DOM.hasClass(n, 'hiddenGrammarError') || DOM.hasClass(n, 'hiddenSpellError') || DOM.hasClass(n, 'hiddenSuggestion') )
                        return;
 
