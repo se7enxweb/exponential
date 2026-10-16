@@ -9,7 +9,7 @@
 /* ---- workflow (workflow/grouplist, workflow/confirmremovegroup, workflow/processlist) ---------------------- */
 
 /* What removing or cancelling does, as a list under the heading of the confirmation */
-.a4-workflow-consequences { margin: var(--a4-space-2) 0 var(--a4-space-4); padding-left: var(--a4-space-5); }
+.a4-workflow-consequences { margin: var(--a4-space-2) 0 var(--a4-space-4); padding-inline-start: var(--a4-space-5); }
 .a4-workflow-consequences li + li { margin-top: var(--a4-space-1); }
 
 /* The processes a cancel would touch, one row each */
@@ -102,7 +102,9 @@
 
 /* A row's state at its left edge: set, needs attention, changed and not saved yet */
 .a4-trigger-table tr.is-set td:first-child { box-shadow: inset 4px 0 0 var(--a4-ok); }
+:where([dir="rtl"]) .a4-trigger-table tr.is-set td:first-child { box-shadow: inset -4px 0 0 var(--a4-ok); }
 .a4-trigger-table tr.is-attention td:first-child { box-shadow: inset 4px 0 0 var(--a4-warn); }
+:where([dir="rtl"]) .a4-trigger-table tr.is-attention td:first-child { box-shadow: inset -4px 0 0 var(--a4-warn); }
 .a4-trigger-table tr.is-changed td { background-color: var(--a4-info-bg); }
 .a4-trigger-table td .a4-meta { display: block; margin-top: 2px; }
 .a4-trigger-table select { max-width: 100%; }
@@ -198,7 +200,9 @@
 }
 .a4-settings-set:last-child { border-bottom: 0; }
 .a4-settings-set:target { box-shadow: inset 4px 0 0 var(--a4-accent); background-color: var(--a4-accent-soft); }
+:where([dir="rtl"]) .a4-settings-set:target { box-shadow: inset -4px 0 0 var(--a4-accent); }
 .a4-settings-set.is-pending { box-shadow: inset 4px 0 0 var(--a4-warn); }
+:where([dir="rtl"]) .a4-settings-set.is-pending { box-shadow: inset -4px 0 0 var(--a4-warn); }
 .a4-settings-set-select { padding-top: 2px; }
 .a4-settings-set-select input { width: 18px; height: 18px; margin: 0; accent-color: var(--a4-accent-strong); }
 .a4-settings-set-main { min-width: 0; }
@@ -211,14 +215,14 @@
   align-items: flex-end;
   gap: var(--a4-space-1);
   max-width: 260px;
-  text-align: right;
+  text-align: end;
 }
 .a4-settings-set-from { font-size: var(--a4-text-xs); }
 .a4-settings-set-note { margin: var(--a4-space-1) 0 0; color: var(--a4-muted); font-size: var(--a4-text-s); }
 .a4-settings-set-note.is-warn { color: var(--a4-warn); }
 @container setlist (max-width: 720px) {
   .a4-settings-set { grid-template-columns: 28px minmax(0, 1fr); }
-  .a4-settings-set-side { grid-column: 2; flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: flex-start; max-width: none; text-align: left; }
+  .a4-settings-set-side { grid-column: 2; flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: flex-start; max-width: none; text-align: start; }
 }
 @media (max-width: 600px) {
   .a4-settings-set { gap: var(--a4-space-1) var(--a4-space-2); padding: var(--a4-space-2); }
@@ -258,13 +262,14 @@ td.a4-settings-name code { word-break: normal; }
   font-size: var(--a4-text-s);
   cursor: pointer;
 }
-.a4-settings-steps { margin: var(--a4-space-2) 0 0; padding: 0; list-style: none; border-left: 2px solid var(--a4-line); }
+.a4-settings-steps { margin: var(--a4-space-2) 0 0; padding: 0; list-style: none; border-inline-start: 2px solid var(--a4-line); }
 .a4-settings-steps > li { position: relative; margin: 0 0 var(--a4-space-2); padding: 0 0 0 var(--a4-space-3); }
+:where([dir="rtl"]) .a4-settings-steps > li { padding: 0 var(--a4-space-3) 0 0; }
 .a4-settings-steps > li::before {
   content: "";
   position: absolute;
   top: 6px;
-  left: -6px;
+  inset-inline-start: -6px;
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -292,7 +297,7 @@ td.a4-settings-name code { word-break: normal; }
 .a4-audit-view table.list td a { color: var(--a4-ink); }
 .a4-audit-view td.a4-audit-name code,
 .a4-audit-view code { font-size: var(--a4-text-xs); }
-.a4-audit-view tr.a4-audit-child td.a4-audit-name { padding-left: var(--a4-space-4); }
+.a4-audit-view tr.a4-audit-child td.a4-audit-name { padding-inline-start: var(--a4-space-4); }
 .a4-audit-table { width: 100%; overflow-x: auto; }
 .a4-audit-empty { padding: var(--a4-space-4); color: var(--a4-muted); text-align: center; }
 .a4-audit-h { margin: var(--a4-space-4) 0 var(--a4-space-2); font-size: var(--a4-text-l); }
@@ -395,7 +400,7 @@ ul.a4-audit-list li {
 ul.a4-audit-list li:last-child { border-bottom: 0; }
 ul.a4-audit-list li > :first-child { min-width: min-content; overflow-wrap: break-word; }
 ul.a4-audit-list .a4-audit-n { font-variant-numeric: tabular-nums; white-space: nowrap; }
-ul.a4-audit-list .a4-audit-n.a4-audit-wrap { white-space: normal; text-align: right; }
+ul.a4-audit-list .a4-audit-n.a4-audit-wrap { white-space: normal; text-align: end; }
 .a4-audit-warnbox,
 .a4-audit-hintbox { margin: 0 0 var(--a4-space-2); padding: var(--a4-space-2) var(--a4-space-2); border-radius: var(--a4-radius-s); }
 .a4-audit-warnbox { background-color: var(--a4-bad-bg); color: var(--a4-bad); }
@@ -435,17 +440,20 @@ ul.a4-audit-list .a4-audit-n.a4-audit-wrap { white-space: normal; text-align: ri
    Categorical slots a4-audit-s1 ... s8 in a fixed order, the two status colours for refusals and failures. */
 .a4-audit-chart { margin: 0 0 var(--a4-space-3); }
 .a4-audit-legend { display: flex; flex-wrap: wrap; gap: var(--a4-space-1) var(--a4-space-3); margin: 0 0 var(--a4-space-2); padding: 0; list-style: none; color: var(--a4-muted); font-size: var(--a4-text-xs); }
-.a4-audit-key { display: inline-block; width: .8em; height: .8em; margin-right: var(--a4-space-1); border-radius: 50%; vertical-align: -1px; }
+.a4-audit-key { display: inline-block; width: .8em; height: .8em; margin-inline-end: var(--a4-space-1); border-radius: 50%; vertical-align: -1px; }
 .a4-audit-rows { display: grid; grid-template-columns: max-content 1fr max-content; align-items: center; gap: var(--a4-space-1) var(--a4-space-2); }
 .a4-audit-rows .a4-audit-lab { color: var(--a4-muted); font-size: var(--a4-text-xs); white-space: nowrap; }
-.a4-audit-rows .a4-audit-val { color: var(--a4-ink); font-size: var(--a4-text-xs); text-align: right; font-variant-numeric: tabular-nums; }
+.a4-audit-rows .a4-audit-val { color: var(--a4-ink); font-size: var(--a4-text-xs); text-align: end; font-variant-numeric: tabular-nums; }
 .a4-audit-track { display: flex; gap: 2px; min-width: 0; height: 14px; }
 .a4-audit-seg { width: calc(var(--a4-pct, 0) * 1%); height: 100%; min-width: 0; }
 .a4-audit-seg:last-child { border-radius: 0 var(--a4-radius-s) var(--a4-radius-s) 0; }
+:where([dir="rtl"]) .a4-audit-seg:last-child { border-radius: var(--a4-radius-s) 0 0 var(--a4-radius-s); }
 .a4-audit-track.a4-audit-multi { flex-direction: column; gap: 2px; height: auto; }
 .a4-audit-track.a4-audit-multi .a4-audit-seg { height: 6px; border-radius: 0 var(--a4-radius-s) var(--a4-radius-s) 0; }
+:where([dir="rtl"]) .a4-audit-track.a4-audit-multi .a4-audit-seg { border-radius: var(--a4-radius-s) 0 0 var(--a4-radius-s); }
 .a4-audit-track.a4-audit-pair { flex-direction: column; gap: 2px; height: 18px; }
 .a4-audit-track.a4-audit-pair .a4-audit-seg { height: 8px; border-radius: 0 var(--a4-radius-s) var(--a4-radius-s) 0; }
+:where([dir="rtl"]) .a4-audit-track.a4-audit-pair .a4-audit-seg { border-radius: var(--a4-radius-s) 0 0 var(--a4-radius-s); }
 .a4-audit-seg:hover,
 .a4-audit-seg:focus { outline: 2px solid var(--a4-ink); outline-offset: 1px; }
 .a4-audit-s1 { background-color: var(--a4-chart-1); }
@@ -551,12 +559,12 @@ details.a4-audit-data summary { color: var(--a4-muted); font-size: var(--a4-text
 .a4-shop-bar:hover span { opacity: 1; }
 .a4-shop-bar em { display: block; color: var(--a4-muted); font-size: var(--a4-text-xs); font-style: normal; line-height: 1.3; text-align: center; }
 .a4-shop-axis { display: flex; gap: 2px; color: var(--a4-muted); font-size: var(--a4-text-xs); }
-.a4-shop-axis span { flex: 1 1 0; min-width: 0; overflow: visible; text-align: left; white-space: nowrap; }
+.a4-shop-axis span { flex: 1 1 0; min-width: 0; overflow: visible; text-align: start; white-space: nowrap; }
 
 /* The open orders by status: one stacked bar, a segment per status as wide as its a4-pct-N class */
 .a4-shop-stack { display: flex; height: 1.1em; margin: var(--a4-space-1) 0 var(--a4-space-2); overflow: hidden; border-radius: var(--a4-radius-s); background-color: var(--a4-soft); }
 .a4-shop-stack span { display: block; width: calc(var(--a4-pct, 0) * 1%); height: 100%; }
-.a4-shop-dot { display: inline-block; width: .75em; height: .75em; margin-right: var(--a4-space-1); border-radius: 50%; vertical-align: middle; }
+.a4-shop-dot { display: inline-block; width: .75em; height: .75em; margin-inline-end: var(--a4-space-1); border-radius: 50%; vertical-align: middle; }
 .a4-shop-g-new { background-color: var(--a4-accent); }
 .a4-shop-g-customer { background-color: var(--a4-chart-4); }
 .a4-shop-g-work { background-color: var(--a4-info); }
@@ -572,16 +580,17 @@ ol.a4-shop-flow > li {
   margin: 0 0 var(--a4-space-2);
   padding: var(--a4-space-2) var(--a4-space-3) var(--a4-space-2) var(--a4-space-6);
   border: 1px solid var(--a4-line);
-  border-left: 3px solid var(--a4-accent);
+  border-inline-start: 3px solid var(--a4-accent);
   border-radius: var(--a4-radius-s);
   background-color: var(--a4-card);
 }
+:where([dir="rtl"]) ol.a4-shop-flow > li { padding: var(--a4-space-2) var(--a4-space-6) var(--a4-space-2) var(--a4-space-3); }
 ol.a4-shop-flow > li::before {
   content: counter(a4shopstep);
   counter-increment: a4shopstep;
   position: absolute;
   top: .55em;
-  left: .7em;
+  inset-inline-start: .7em;
   width: 1.6em;
   height: 1.6em;
   border-radius: 50%;
@@ -591,7 +600,7 @@ ol.a4-shop-flow > li::before {
   line-height: 1.6em;
   text-align: center;
 }
-ol.a4-shop-flow > li.missing { border-left-color: var(--a4-bad); }
+ol.a4-shop-flow > li.missing { border-inline-start-color: var(--a4-bad); }
 ol.a4-shop-flow > li.missing::before { background-color: var(--a4-bad); color: var(--a4-card); }
 .a4-shop-step { display: block; }
 .a4-shop-where { margin-top: var(--a4-space-1); color: var(--a4-muted); font-size: var(--a4-text-s); }
@@ -609,10 +618,11 @@ ul.a4-shop-checklist li {
   border-radius: var(--a4-radius-s);
   background-color: var(--a4-card);
 }
+:where([dir="rtl"]) ul.a4-shop-checklist li { padding: var(--a4-space-2) var(--a4-space-6) var(--a4-space-2) var(--a4-space-3); }
 ul.a4-shop-checklist li::before {
   position: absolute;
   top: .45em;
-  left: .7em;
+  inset-inline-start: .7em;
   width: 1.3em;
   height: 1.3em;
   border-radius: 50%;
@@ -621,15 +631,15 @@ ul.a4-shop-checklist li::before {
   line-height: 1.3em;
   text-align: center;
 }
-ul.a4-shop-checklist li.critical { border-left: 4px solid var(--a4-bad); }
+ul.a4-shop-checklist li.critical { border-inline-start: 4px solid var(--a4-bad); }
 ul.a4-shop-checklist li.critical::before { content: "!"; background-color: var(--a4-bad); }
-ul.a4-shop-checklist li.warning { border-left: 4px solid var(--a4-warn); }
+ul.a4-shop-checklist li.warning { border-inline-start: 4px solid var(--a4-warn); }
 ul.a4-shop-checklist li.warning::before { content: "!"; background-color: var(--a4-warn); }
-ul.a4-shop-checklist li.info { border-left: 4px solid var(--a4-info); }
+ul.a4-shop-checklist li.info { border-inline-start: 4px solid var(--a4-info); }
 ul.a4-shop-checklist li.info::before { content: "i"; background-color: var(--a4-info); }
-ul.a4-shop-checklist li.ok { border-left: 4px solid var(--a4-ok); }
+ul.a4-shop-checklist li.ok { border-inline-start: 4px solid var(--a4-ok); }
 ul.a4-shop-checklist li.ok::before { content: "\2713"; background-color: var(--a4-ok); }
-.a4-shop-level { margin-right: var(--a4-space-1); font-size: var(--a4-text-xs); font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+.a4-shop-level { margin-inline-end: var(--a4-space-1); font-size: var(--a4-text-xs); font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
 ul.a4-shop-checklist li.critical .a4-shop-level { color: var(--a4-bad); }
 ul.a4-shop-checklist li.warning .a4-shop-level { color: var(--a4-warn); }
 ul.a4-shop-checklist li.info .a4-shop-level { color: var(--a4-info); }
@@ -714,7 +724,7 @@ ul.a4-shop-checklist li.info .a4-shop-level { color: var(--a4-info); }
 .a4-visual .a4-visual-sa p { color: var(--a4-muted); font-size: var(--a4-text-s); }
 .a4-visual .a4-visual-sa p code { color: var(--a4-ink); }
 .a4-visual .a4-visual-sa .a4-actions { margin-top: auto; padding-top: var(--a4-space-1); }
-.a4-visual .a4-visual-steps { margin: var(--a4-space-1) 0 0; padding-left: var(--a4-space-4); }
+.a4-visual .a4-visual-steps { margin: var(--a4-space-1) 0 0; padding-inline-start: var(--a4-space-4); }
 .a4-visual .a4-visual-steps li + li { margin-top: var(--a4-space-1); }
 .a4-visual .a4-visual-switch { display: flex; flex-wrap: wrap; align-items: end; gap: var(--a4-space-2) var(--a4-space-3); margin: 0 0 var(--a4-space-3); }
 
@@ -766,7 +776,7 @@ ul.a4-shop-checklist li.info .a4-shop-level { color: var(--a4-info); }
 .a4-visual .a4-visual-choice-pick input {
   position: absolute;
   top: 14px;
-  right: 14px;
+  inset-inline-end: 14px;
   width: 18px;
   height: 18px;
   margin: 0;
@@ -778,7 +788,7 @@ ul.a4-shop-checklist li.info .a4-shop-level { color: var(--a4-info); }
   flex-wrap: wrap;
   align-items: center;
   gap: var(--a4-space-1) var(--a4-space-2);
-  padding-right: var(--a4-space-5);
+  padding-inline-end: var(--a4-space-5);
   color: var(--a4-ink);
   font-size: var(--a4-text-m);
   font-weight: 650;
@@ -828,7 +838,7 @@ ul.a4-shop-checklist li.info .a4-shop-level { color: var(--a4-info); }
 .a4-visual .a4-visual-mini-body { display: grid; grid-template-columns: minmax(0, 1fr); flex: 1 1 auto; gap: var(--a4-space-1); min-height: 0; }
 .a4-visual .a4-visual-mini-body.has-left { grid-template-columns: minmax(0, 38%) minmax(0, 1fr); }
 .a4-visual .a4-visual-mini-left { display: flex; flex-direction: column; gap: 2px; min-width: 0; padding: var(--a4-space-1) var(--a4-space-1); }
-.a4-visual .a4-visual-mini-left b.is-sub { padding-left: var(--a4-space-2); font-weight: 400; }
+.a4-visual .a4-visual-mini-left b.is-sub { padding-inline-start: var(--a4-space-2); font-weight: 400; }
 .a4-visual .a4-visual-mini-main { display: flex; flex-direction: column; gap: var(--a4-space-1); min-width: 0; padding: var(--a4-space-1) 2px; }
 .a4-visual .a4-visual-mini-main i { display: block; height: 5px; border-radius: var(--a4-radius-s); background-color: var(--a4-line-strong); }
 .a4-visual .a4-visual-mini-main i:first-child { height: auto; background: none; color: var(--a4-ink); font-style: normal; font-weight: 600; overflow-wrap: anywhere; }

@@ -20,8 +20,8 @@
 }
 .a4-content-history .a4-content-history-copy-language { font-size: var(--a4-text-s); }
 .a4-content-history .a4-content-history-why { margin: var(--a4-space-2) 0 0; padding: 0; list-style: none; color: var(--a4-muted); font-size: var(--a4-text-s); }
-.a4-content-history .a4-content-history-why li { position: relative; padding-left: var(--a4-space-4); }
-.a4-content-history .a4-content-history-why li::before { content: "\2013"; position: absolute; left: 2px; }
+.a4-content-history .a4-content-history-why li { position: relative; padding-inline-start: var(--a4-space-4); }
+.a4-content-history .a4-content-history-why li::before { content: "\2013"; position: absolute; inset-inline-start: 2px; }
 .a4-content-history .a4-content-history-why-page { flex: 1 1 100%; margin: 2px 0 0; }
 .a4-content-history .a4-content-history-compare {
   display: grid;
@@ -39,9 +39,9 @@
 .a4-content-history #diffview ins { border-bottom: 1px solid var(--a4-ok); color: var(--a4-ok); text-decoration: none; }
 .a4-content-history #diffview del { color: var(--a4-bad); text-decoration: line-through; }
 .a4-content-history #diffview.blockchanges ins,
-.a4-content-history #diffview.blockchanges del { display: block; padding-left: var(--a4-space-2); border-bottom: 0; color: var(--a4-ink); text-decoration: none; }
-.a4-content-history #diffview.blockchanges ins { border-left: .5em solid var(--a4-ok); background-color: var(--a4-ok-bg); }
-.a4-content-history #diffview.blockchanges del { border-left: .5em solid var(--a4-bad); background-color: var(--a4-bad-bg); }
+.a4-content-history #diffview.blockchanges del { display: block; padding-inline-start: var(--a4-space-2); border-bottom: 0; color: var(--a4-ink); text-decoration: none; }
+.a4-content-history #diffview.blockchanges ins { border-inline-start: .5em solid var(--a4-ok); background-color: var(--a4-ok-bg); }
+.a4-content-history #diffview.blockchanges del { border-inline-start: .5em solid var(--a4-bad); background-color: var(--a4-bad-bg); }
 .a4-content-history #diffview.previous ins,
 .a4-content-history #diffview.latest del { display: none; }
 .a4-content-history #diffview.previous del,
@@ -93,6 +93,7 @@
 }
 .a4-content-bookmark .a4-content-bookmark-nav a:hover { background-color: var(--a4-soft); color: var(--a4-accent-text); }
 .a4-content-bookmark .a4-content-bookmark-nav span.current { background-color: var(--a4-accent-soft); box-shadow: inset 3px 0 0 var(--a4-accent-text); font-weight: 650; }
+:where([dir="rtl"]) .a4-content-bookmark .a4-content-bookmark-nav span.current { box-shadow: inset -3px 0 0 var(--a4-accent-text); }
 .a4-content-bookmark .a4-content-bookmark-navname { flex: 1 1 auto; min-width: 0; }
 .a4-content-bookmark .a4-content-bookmark-nav .a4-count {
   flex: 0 0 auto;
@@ -109,17 +110,17 @@
 .a4-content-bookmark .a4-content-bookmark-nav span.current .a4-count { background-color: var(--a4-card); color: var(--a4-ink); }
 .a4-content-bookmark .a4-content-bookmark-nav .a4-icon { flex: 0 0 auto; color: var(--a4-muted); }
 .a4-content-bookmark .a4-content-bookmark-nav .is-sep { height: 1px; margin: var(--a4-space-1) var(--a4-space-1); background-color: var(--a4-line); }
-.a4-content-bookmark .a4-content-bookmark-nav li.d1 { padding-left: var(--a4-space-3); }
-.a4-content-bookmark .a4-content-bookmark-nav li.d2 { padding-left: var(--a4-space-5); }
-.a4-content-bookmark .a4-content-bookmark-nav li.d3 { padding-left: calc(var(--a4-space-6) + var(--a4-space-2)); }
-.a4-content-bookmark .a4-content-bookmark-nav li.d4 { padding-left: calc(var(--a4-space-6) + var(--a4-space-5)); }
+.a4-content-bookmark .a4-content-bookmark-nav li.d1 { padding-inline-start: var(--a4-space-3); }
+.a4-content-bookmark .a4-content-bookmark-nav li.d2 { padding-inline-start: var(--a4-space-5); }
+.a4-content-bookmark .a4-content-bookmark-nav li.d3 { padding-inline-start: calc(var(--a4-space-6) + var(--a4-space-2)); }
+.a4-content-bookmark .a4-content-bookmark-nav li.d4 { padding-inline-start: calc(var(--a4-space-6) + var(--a4-space-5)); }
 .a4-content-bookmark .a4-content-bookmark-nav li.is-drop > a,
 .a4-content-bookmark .a4-content-bookmark-nav li.is-drop > span.current { outline: 2px dashed var(--a4-accent); outline-offset: -2px; background-color: var(--a4-accent-soft); }
 .a4-content-bookmark .a4-content-bookmark-nav li.is-drop::after {
   content: attr(data-drop-label);
   position: absolute;
   top: -10px;
-  right: 6px;
+  inset-inline-end: 6px;
   z-index: var(--a4-z-raised);
   padding: 1px var(--a4-space-2);
   border-radius: var(--a4-radius-s);
@@ -135,15 +136,16 @@
 .a4-content-bookmark .a4-card.is-dragged { opacity: .5; }
 .a4-content-bookmark .a4-content-bookmark-nav li.is-moved > a,
 .a4-content-bookmark .a4-content-bookmark-nav li.is-moved > span.current { background-color: var(--a4-accent-soft); box-shadow: inset 3px 0 0 var(--a4-accent-text); }
+:where([dir="rtl"]) .a4-content-bookmark .a4-content-bookmark-nav li.is-moved > a, :where([dir="rtl"]) .a4-content-bookmark .a4-content-bookmark-nav li.is-moved > span.current { box-shadow: inset -3px 0 0 var(--a4-accent-text); }
 .a4-content-bookmark .a4-content-bookmark-nav .a4-grip { width: 22px; min-height: 26px; font-size: var(--a4-text-s); }
 
 /* arranging the list */
 .a4-content-bookmark .a4-cards.is-arranging { border-radius: var(--a4-radius-s); outline: 2px dashed var(--a4-line-strong); outline-offset: var(--a4-space-1); }
 .a4-content-bookmark .a4-card.is-moved { border-color: var(--a4-accent); background-color: var(--a4-accent-soft); }
 .a4-content-bookmark .a4-content-bookmark-arrange { margin: 0 0 var(--a4-space-3); }
-.a4-content-bookmark .a4-content-bookmark-cardfoot { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: var(--a4-space-2) var(--a4-space-4); margin: var(--a4-space-2) 0 0; padding-left: var(--a4-space-6); }
+.a4-content-bookmark .a4-content-bookmark-cardfoot { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: var(--a4-space-2) var(--a4-space-4); margin: var(--a4-space-2) 0 0; padding-inline-start: var(--a4-space-6); }
 .a4-content-bookmark .a4-content-bookmark-cardfoot > .a4-facts,
-.a4-content-bookmark .a4-content-bookmark-cardfoot > .a4-content-bookmark-note { flex: 1 1 320px; margin: 0; padding-left: 0; }
+.a4-content-bookmark .a4-content-bookmark-cardfoot > .a4-content-bookmark-note { flex: 1 1 320px; margin: 0; padding-inline-start: 0; }
 .a4-content-bookmark .a4-content-bookmark-position { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-1) var(--a4-space-2); margin: 0; font-size: var(--a4-text-s); }
 .a4-content-bookmark .a4-content-bookmark-position label { color: var(--a4-ink); font-weight: 650; }
 .a4-content-bookmark .a4-content-bookmark-position .a4-input { width: 4.6em; min-height: 30px; padding: 2px var(--a4-space-1); }
@@ -151,26 +153,26 @@
 /* a folder's head, its actions and the move form */
 .a4-content-bookmark .a4-content-bookmark-folderhead { margin: 0 0 var(--a4-space-4); }
 .a4-content-bookmark .a4-content-bookmark-crumbs { display: flex; flex-wrap: wrap; gap: 2px var(--a4-space-1); margin: 0 0 var(--a4-space-1); padding: 0; list-style: none; color: var(--a4-muted); font-size: var(--a4-text-s); }
-.a4-content-bookmark .a4-content-bookmark-crumbs li + li::before { content: "/"; margin-right: var(--a4-space-1); color: var(--a4-muted); }
+.a4-content-bookmark .a4-content-bookmark-crumbs li + li::before { content: "/"; margin-inline-end: var(--a4-space-1); color: var(--a4-muted); }
 .a4-content-bookmark .a4-content-bookmark-folderacts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); align-items: start; gap: var(--a4-space-2); margin-top: var(--a4-space-3); }
 .a4-content-bookmark .a4-content-bookmark-folderacts > form { margin: 0; }
 .a4-content-bookmark .a4-content-bookmark-folderacts > details[open] { grid-column: 1 / -1; }
-.a4-content-bookmark .a4-content-bookmark-folderfacts { grid-template-columns: repeat(auto-fit, minmax(min(100%, 130px), 1fr)); padding-left: 0; }
+.a4-content-bookmark .a4-content-bookmark-folderfacts { grid-template-columns: repeat(auto-fit, minmax(min(100%, 130px), 1fr)); padding-inline-start: 0; }
 .a4-content-bookmark .a4-content-bookmark-choice { display: grid; gap: var(--a4-space-2); min-width: 0; margin: 0; padding: 0; border: 0; }
 .a4-content-bookmark .a4-content-bookmark-choice legend { margin: 0 0 var(--a4-space-1); padding: 0; font-weight: 650; }
-.a4-content-bookmark .a4-section-head .a4-content-bookmark-selectall { display: inline-flex; align-items: center; gap: var(--a4-space-1); margin-left: auto; }
+.a4-content-bookmark .a4-section-head .a4-content-bookmark-selectall { display: inline-flex; align-items: center; gap: var(--a4-space-1); margin-inline-start: auto; }
 .a4-content-bookmark .a4-section-head .a4-content-bookmark-selectall input { width: 18px; height: 18px; margin: 0; }
-.a4-content-bookmark .a4-section-head .a4-content-bookmark-addtop { margin-left: var(--a4-space-1); }
+.a4-content-bookmark .a4-section-head .a4-content-bookmark-addtop { margin-inline-start: var(--a4-space-1); }
 .a4-content-bookmark .a4-content-bookmark-group { margin: 0 0 var(--a4-space-4); }
 .a4-content-bookmark .a4-content-bookmark-grouphead { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-1) var(--a4-space-2); margin: 0 0 var(--a4-space-2); padding: 0 2px; }
 .a4-content-bookmark .a4-content-bookmark-grouphead .a4-icon { flex: 0 0 auto; color: var(--a4-muted); }
-.a4-content-bookmark .a4-content-bookmark-grouppath { flex: 1 1 100%; margin: 0; padding-left: var(--a4-space-5); color: var(--a4-muted); font-size: var(--a4-text-s); overflow-wrap: anywhere; }
-.a4-content-bookmark .a4-content-bookmark-note { margin: var(--a4-space-2) 0 0; padding-left: var(--a4-space-6); color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-content-bookmark .a4-content-bookmark-grouppath { flex: 1 1 100%; margin: 0; padding-inline-start: var(--a4-space-5); color: var(--a4-muted); font-size: var(--a4-text-s); overflow-wrap: anywhere; }
+.a4-content-bookmark .a4-content-bookmark-note { margin: var(--a4-space-2) 0 0; padding-inline-start: var(--a4-space-6); color: var(--a4-muted); font-size: var(--a4-text-s); }
 .a4-content-bookmark .a4-content-bookmark-movegroup { display: flex; flex: 1 1 340px; flex-wrap: wrap; align-items: flex-end; gap: var(--a4-space-2); min-width: 0; }
 .a4-content-bookmark .a4-content-bookmark-movegroup .a4-field { flex: 1 1 200px; }
 @media (max-width: 600px) {
   .a4-content-bookmark .a4-content-bookmark-note,
-  .a4-content-bookmark .a4-content-bookmark-cardfoot { padding-left: 0; }
+  .a4-content-bookmark .a4-content-bookmark-cardfoot { padding-inline-start: 0; }
 }
 
 /* ---- languages ---- content/translations, its language page and the add form ------------------------------ */
@@ -190,7 +192,7 @@
 .a4-content-languages .a4-content-languages-why { margin: var(--a4-space-2) 0 0; color: var(--a4-muted); font-size: var(--a4-text-s); }
 .a4-content-languages .a4-content-languages-state { margin: 0 0 var(--a4-space-3); }
 .a4-content-languages .a4-content-languages-legend { margin-top: var(--a4-space-1); }
-.a4-content-languages .a4-content-languages-steps { margin: var(--a4-space-1) 0 0; padding-left: var(--a4-space-4); }
+.a4-content-languages .a4-content-languages-steps { margin: var(--a4-space-1) 0 0; padding-inline-start: var(--a4-space-4); }
 .a4-content-languages .a4-content-languages-steps li { margin: 0 0 var(--a4-space-1); }
 .a4-content-languages .a4-content-languages-locale-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: var(--a4-space-2) var(--a4-space-5); margin: 0; }
 .a4-content-languages .a4-content-languages-locale-grid > div { min-width: 0; padding: var(--a4-space-1) 0; border-bottom: 1px dashed var(--a4-line); }
@@ -228,9 +230,9 @@
 .a4-content-job .a4-content-job-message { margin: var(--a4-space-1) 0 var(--a4-space-3); overflow-wrap: anywhere; }
 .a4-content-job .a4-content-job-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(22em, 1fr)); gap: 0 var(--a4-space-5); }
 .a4-content-job .a4-content-job-group h2 { margin: var(--a4-space-2) 0 var(--a4-space-1); font-size: var(--a4-text-l); }
-.a4-content-job .a4-content-job-download { margin-left: var(--a4-space-3); font-size: var(--a4-text-xs); font-weight: 400; }
+.a4-content-job .a4-content-job-download { margin-inline-start: var(--a4-space-3); font-size: var(--a4-text-xs); font-weight: 400; }
 .a4-content-job table.a4-content-job-details { width: 100%; margin-bottom: var(--a4-space-3); }
-.a4-content-job table.a4-content-job-details th { padding-right: var(--a4-space-5); background-color: transparent; color: var(--a4-muted); font-weight: 400; text-align: left; white-space: nowrap; }
+.a4-content-job table.a4-content-job-details th { padding-inline-end: var(--a4-space-5); background-color: transparent; color: var(--a4-muted); font-weight: 400; text-align: start; white-space: nowrap; }
 .a4-content-job table.a4-content-job-details td { overflow-wrap: anywhere; }
 .a4-content-job .a4-content-job-log { max-height: 18em; margin: var(--a4-space-1) 0 0; }
 .a4-content-job .a4-content-job-error pre { margin: var(--a4-space-1) 0 0; white-space: pre-wrap; overflow-wrap: anywhere; }
@@ -239,13 +241,13 @@
 .a4-content-job-mode legend { padding: 0 var(--a4-space-1); font-weight: 700; }
 .a4-content-job-mode label { display: block; margin: var(--a4-space-1) 0; }
 .a4-content-job-mode label.disabled { color: var(--a4-disabled); }
-.a4-content-job-mode .a4-content-job-why { display: block; margin-left: var(--a4-space-5); }
+.a4-content-job-mode .a4-content-job-why { display: block; margin-inline-start: var(--a4-space-5); }
 /* what an operation on a subtree touches */
 .a4-content-job-summary { margin: var(--a4-space-2) 0 var(--a4-space-3); }
 .a4-content-job-summary dl { display: grid; grid-template-columns: max-content 1fr; gap: var(--a4-space-1) var(--a4-space-4); margin: var(--a4-space-1) 0; }
 .a4-content-job-summary dt { color: var(--a4-muted); }
 .a4-content-job-summary dd { margin: 0; overflow-wrap: anywhere; }
-.a4-content-job-summary ul { margin: var(--a4-space-1) 0; padding-left: var(--a4-space-4); }
+.a4-content-job-summary ul { margin: var(--a4-space-1) 0; padding-inline-start: var(--a4-space-4); }
 
 /* ---- trash ---- content/trash: filters, where an item was and what restoring it does ------------------------- */
 
@@ -304,7 +306,7 @@
 
 /* a summary link scrolls its field below the fixed header, not behind it (WCAG 2.4.11) */
 .a4-content-attr, #a4-error-summary { scroll-margin-top: calc(var(--header-height, 6.25rem) + var(--a4-space-3)); }
-.a4-content-attr.is-invalid { border-left: 3px solid var(--a4-bad); padding-left: var(--a4-space-3); }
+.a4-content-attr.is-invalid { border-inline-start: 3px solid var(--a4-bad); padding-inline-start: var(--a4-space-3); }
 .a4-content-attr-error { display: flex; gap: var(--a4-space-1); align-items: baseline; margin: var(--a4-space-1) 0 var(--a4-space-2); }
 /* the controls' invalid edge: see "the attribute forms" below, after the field look it overrides */
 
@@ -331,7 +333,7 @@
 .a4-content-attr-label .classattribute-description,
 .a4-content-attr-label .nontranslatable,
 .a4-content-attr-label .collector {
-  margin-left: var(--a4-space-1);
+  margin-inline-start: var(--a4-space-1);
   color: var(--a4-muted);
   font-size: var(--a4-text-xs);
   font-weight: 400;
@@ -349,6 +351,7 @@ div.block.a4-content-attr { margin: 0 0 var(--a4-space-5); padding-bottom: 0; } 
   box-shadow: none;
 }
 #page fieldset.a4-content-attr-group > legend { float: left; width: 100%; }
+:where([dir="rtl"]) #page fieldset.a4-content-attr-group > legend { float: right; }
 #page fieldset.a4-content-attr-group > legend + * { clear: both; }
 
 /* the parts of an attribute: a label above its control, several parts in a row (date, time, user account) */
@@ -369,6 +372,7 @@ div.block.a4-content-attr { margin: 0 0 var(--a4-space-5); padding-bottom: 0; } 
 .a4-content-datetime { display: flex; flex-wrap: wrap; align-items: flex-end; gap: var(--a4-space-2) var(--a4-space-5); }
 /* a datatype template that still floats its parts (div.block div.element) */
 .a4-content-attr div.block div.element { float: none; display: inline-flex; flex-direction: column; margin: 0 var(--a4-space-3) var(--a4-space-2) 0; padding: 0; vertical-align: bottom; }
+:where([dir="rtl"]) .a4-content-attr div.block div.element { margin: 0 0 var(--a4-space-2) var(--a4-space-3); }
 .a4-content-attr div.block div.break { display: none; }
 
 /* fields: the .a4-input look; one with a size attribute (a year, an hour) keeps its width */
@@ -405,7 +409,7 @@ div.block.a4-content-attr { margin: 0 0 var(--a4-space-5); padding-bottom: 0; } 
 .a4-content-attr select:where(:not([multiple]):not([size]), [size="1"]) {
   -webkit-appearance: none;
   appearance: none;
-  padding-right: var(--a4-space-6);
+  padding-inline-end: var(--a4-space-6);
   background-image: linear-gradient(45deg, transparent 50%, var(--a4-muted) 50%),
                     linear-gradient(135deg, var(--a4-muted) 50%, transparent 50%);
   background-position: calc(100% - var(--a4-space-4) - 1px) 55%, calc(100% - var(--a4-space-3)) 55%;
@@ -414,6 +418,7 @@ div.block.a4-content-attr { margin: 0 0 var(--a4-space-5); padding-bottom: 0; } 
   text-overflow: ellipsis;
   cursor: pointer;
 }
+:where([dir="rtl"]) .a4-content-attr select:where(:not([multiple]):not([size]), [size="1"]) { background-position: var(--a4-space-3) 55%, calc(var(--a4-space-4) + 1px) 55%; }
 .a4-content-attr select:is([multiple], [size]:not([size="1"])) { min-height: 150px; padding: var(--a4-space-1); }
 /* an invalid control keeps its bad edge over the field look above */
 .a4-content-attr input[aria-invalid="true"],
@@ -428,6 +433,7 @@ div.block.a4-content-attr { margin: 0 0 var(--a4-space-5); padding-bottom: 0; } 
   accent-color: var(--a4-accent-strong);
   vertical-align: middle;
 }
+:where([dir="rtl"]) .a4-content-attr input:is([type=checkbox], [type=radio]) { margin: 0 0 0 var(--a4-space-2); }
 .a4-content-attr td > input:is([type=checkbox], [type=radio]) { margin: 0; }
 .a4-content-attr label:has(> input:is([type=checkbox], [type=radio])) {
   display: flex;
@@ -460,6 +466,7 @@ div.block.a4-content-attr { margin: 0 0 var(--a4-space-5); padding-bottom: 0; } 
   vertical-align: middle;
   cursor: pointer;
 }
+:where([dir="rtl"]) :is(.a4-content-attr, .a4-content-edit) :is(input.button, input.button-disabled, button.button, input.defaultbutton) { margin: 0 0 var(--a4-space-2) var(--a4-space-2); }
 :is(.a4-content-attr, .a4-content-edit) :is(input.button, button.button):hover:not(:disabled) {
   border-color: var(--a4-accent);
   background-color: var(--a4-card);
@@ -530,6 +537,7 @@ div.block.a4-content-attr { margin: 0 0 var(--a4-space-5); padding-bottom: 0; } 
   font-weight: 600;
   cursor: pointer;
 }
+:where([dir="rtl"]) .a4-content-attr input[type=file]::file-selector-button { margin: 0 0 0 var(--a4-space-3); }
 .a4-content-attr input[type=file]:hover::file-selector-button { border-color: var(--a4-accent); color: var(--a4-accent-text); }
 .a4-content-attr input[type=file]:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
 
@@ -554,7 +562,7 @@ div.block.a4-content-attr { margin: 0 0 var(--a4-space-5); padding-bottom: 0; } 
    the moved row as its own placeholder, the ghost with the name that follows the pointer (fixed, placed through
    --a4-content-drag-x/-y/-w set by the script), and the table while the order is being saved. */
 
-.a4-content-drag-on td.a4-content-drag { width: 1%; padding-right: 0; white-space: nowrap; }
+.a4-content-drag-on td.a4-content-drag { width: 1%; padding-inline-end: 0; white-space: nowrap; }
 .a4-content-drag-on .a4-content-drag-grip { width: var(--a4-space-6); min-height: var(--a4-space-6); font-size: var(--a4-text-m); }
 .a4-content-drag-grip:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
 .a4-content-drag-grip[aria-pressed="true"] { border-style: solid; border-color: var(--a4-accent); background-color: var(--a4-accent-soft); color: var(--a4-accent-text); cursor: grabbing; }
@@ -562,12 +570,13 @@ div.block.a4-content-attr { margin: 0 0 var(--a4-space-5); padding-bottom: 0; } 
 .a4-content-drag-on tr.a4-content-drag-placeholder > td { background-color: var(--a4-accent-soft); }
 .a4-content-drag-on tr.a4-content-drag-placeholder > td:not(.a4-content-drag) { opacity: .6; }
 .a4-content-drag-on tr.a4-content-drag-placeholder > td:first-child { box-shadow: inset 3px 0 0 var(--a4-accent); }
+:where([dir="rtl"]) .a4-content-drag-on tr.a4-content-drag-placeholder > td:first-child { box-shadow: inset -3px 0 0 var(--a4-accent); }
 .a4-content-drag-on tr.a4-content-drag-placeholder { outline: 2px dashed var(--a4-accent); outline-offset: -2px; }
 .a4-content-drag-saving .exp-dt-body { opacity: .7; transition: opacity .15s ease-out; }
 .a4-content-drag-ghost {
   position: fixed;
   top: var(--a4-content-drag-y, 0);
-  left: var(--a4-content-drag-x, 0);
+  inset-inline-start: var(--a4-content-drag-x, 0);
   z-index: var(--a4-z-drag);
   display: flex;
   align-items: center;
@@ -613,7 +622,7 @@ div.block.a4-content-attr { margin: 0 0 var(--a4-space-5); padding-bottom: 0; } 
   .a4-content-bookmark .a4-card.is-moved { outline: 2px solid Highlight; outline-offset: -2px; }
   /* the edit form: the native select comes back (the drawn chevron would vanish), the form's main action keeps a
      thicker edge, a disabled button its GrayText */
-  .a4-content-attr select:where(:not([multiple]):not([size]), [size="1"]) { -webkit-appearance: auto; appearance: auto; padding-right: var(--a4-space-2); background-image: none; }
+  .a4-content-attr select:where(:not([multiple]):not([size]), [size="1"]) { -webkit-appearance: auto; appearance: auto; padding-inline-end: var(--a4-space-2); background-image: none; }
   :is(.a4-content-attr, .a4-content-edit) input.defaultbutton { border-width: 2px; }
   :is(.a4-content-attr, .a4-content-edit) :is(input.button-disabled, input.button, button.button, input.defaultbutton):disabled { border-color: GrayText; color: GrayText; opacity: 1; }
 }

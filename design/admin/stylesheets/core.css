@@ -125,6 +125,13 @@ pre.wordwrap span.line /* Style for tag wrapping around each line of text */
     content: attr(data-icon);
     speak: none;
 }
+/* right to left the data table pagers' arrows point the other way, so "previous" points to the right */
+:where([dir="rtl"]) .exp-dt-first [data-icon]:before, :where([dir="rtl"]) .exp-dt-prev [data-icon]:before,
+:where([dir="rtl"]) .exp-dt-next [data-icon]:before, :where([dir="rtl"]) .exp-dt-last [data-icon]:before
+{
+    display: inline-block;
+    scale: -1 1;
+}
 
 
 /* TABLES */

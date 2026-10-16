@@ -146,7 +146,10 @@ class AdminBaseStylesheetsTest extends PHPUnit\Framework\TestCase
                     }
                     foreach ( self::selectors( $list ) as $selector )
                     {
-                        if ( !in_array( $selector, $outlined, true ) )
+                        // a right-to-left mirror rule (:where([dir="rtl"]) <selector>) is outlined by its original's
+                        // forced-colors rule, which names no direction
+                        $mirrored = preg_replace( '/^:where\(\[dir="rtl"\]\)\s+/', '', $selector );
+                        if ( !in_array( $selector, $outlined, true ) && !in_array( $mirrored, $outlined, true ) )
                         {
                             $missing[] = "design/$design/stylesheets/modules/" . basename( $path ) . ": $selector";
                         }

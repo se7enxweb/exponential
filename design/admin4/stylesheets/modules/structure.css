@@ -10,7 +10,7 @@
 
 .a4-class-consequences,
 .a4-pdf-consequences,
-.a4-rss-consequences { margin: 0; padding-left: var(--a4-space-5); }
+.a4-rss-consequences { margin: 0; padding-inline-start: var(--a4-space-5); }
 .a4-class-consequences li + li,
 .a4-pdf-consequences li + li,
 .a4-rss-consequences li + li { margin-top: var(--a4-space-1); }
@@ -26,15 +26,15 @@
   margin: 0 0 var(--a4-space-4);
   padding: var(--a4-space-3);
   border: 1px solid var(--a4-line);
-  border-left-width: var(--a4-space-1);
+  border-inline-start-width: var(--a4-space-1);
   border-radius: var(--a4-radius-s);
   background-color: var(--a4-card);
   color: var(--a4-ink);
 }
-.a4-pdf-statusbar.is-ok, .a4-rss-statusbar.is-ok { border-left-color: var(--a4-ok); }
-.a4-pdf-statusbar.is-warn, .a4-rss-statusbar.is-warn { border-left-color: var(--a4-warn); }
-.a4-pdf-statusbar.is-bad, .a4-rss-statusbar.is-bad { border-left-color: var(--a4-bad); }
-.a4-pdf-statusbar.is-info, .a4-rss-statusbar.is-info { border-left-color: var(--a4-info); }
+.a4-pdf-statusbar.is-ok, .a4-rss-statusbar.is-ok { border-inline-start-color: var(--a4-ok); }
+.a4-pdf-statusbar.is-warn, .a4-rss-statusbar.is-warn { border-inline-start-color: var(--a4-warn); }
+.a4-pdf-statusbar.is-bad, .a4-rss-statusbar.is-bad { border-inline-start-color: var(--a4-bad); }
+.a4-pdf-statusbar.is-info, .a4-rss-statusbar.is-info { border-inline-start-color: var(--a4-info); }
 .a4-pdf-statusbar p, .a4-rss-statusbar p { flex: 1 1 320px; }
 
 /* An address (a feed, a public PDF) as code with its link */
@@ -74,7 +74,7 @@
   text-transform: uppercase;
 }
 .a4-class-datatype label input[type="checkbox"],
-.a4-class-datatype label input[type="radio"] { margin-right: var(--a4-space-2); }
+.a4-class-datatype label input[type="radio"] { margin-inline-end: var(--a4-space-2); }
 .a4-class-datatype input[type="text"],
 .a4-class-datatype select,
 .a4-class-datatype textarea {
@@ -89,6 +89,7 @@
   font-size: var(--a4-text-s);
 }
 .a4-class-datatype .element { display: inline-block; margin: 0 var(--a4-space-4) var(--a4-space-3) 0; vertical-align: top; }
+:where([dir="rtl"]) .a4-class-datatype .element { margin: 0 0 var(--a4-space-3) var(--a4-space-4); }
 .a4-class-datatype p { margin: 0 0 var(--a4-space-2); }
 
 /* The editor: the fixed bar on top, the attribute list as cards, the flags, the order controls */
@@ -129,7 +130,7 @@
   font-size: var(--a4-text-m);
   font-weight: 650;
   letter-spacing: 0;
-  text-align: left;
+  text-align: start;
   text-transform: none;
   vertical-align: middle;
 }
@@ -147,7 +148,7 @@
   color: var(--a4-ink);
   font-family: inherit;
   font-size: var(--a4-text-s);
-  text-align: right;
+  text-align: end;
 }
 .a4-class-flags { display: flex; flex-wrap: wrap; gap: var(--a4-space-2) var(--a4-space-4); margin: var(--a4-space-3) 0 0; }
 .a4-class-flags .a4-check { font-size: var(--a4-text-s); font-weight: 600; }
@@ -347,7 +348,7 @@ a.a4-class-top {
   font-size: var(--a4-text-xs);
   font-weight: 650;
   letter-spacing: .04em;
-  text-align: left;
+  text-align: start;
   text-transform: uppercase;
 }
 .a4-rss-opml table.list td {
@@ -511,7 +512,7 @@ a.a4-class-top {
 .a4-package-head-facts { flex: 1 1 520px; }
 .a4-package-changelog { margin: 0; padding: 0; list-style: none; }
 .a4-package-changelog li + li { margin-top: var(--a4-space-2); }
-.a4-package-changelog ul { margin: var(--a4-space-1) 0 0; padding-left: var(--a4-space-5); }
+.a4-package-changelog ul { margin: var(--a4-space-1) 0 0; padding-inline-start: var(--a4-space-5); }
 .a4-package-file {
   display: block;
   width: 100%;
@@ -524,7 +525,7 @@ a.a4-class-top {
   font: inherit;
 }
 .a4-package-file:focus { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
-.a4-package-steps { max-width: 78ch; margin: 0; padding-left: var(--a4-space-5); }
+.a4-package-steps { max-width: 78ch; margin: 0; padding-inline-start: var(--a4-space-5); }
 .a4-package-steps li + li { margin-top: var(--a4-space-1); }
 .a4-package-licence-info { margin: var(--a4-space-2) 0 0; overflow-wrap: anywhere; }
 
@@ -547,7 +548,7 @@ a.a4-class-top {
 .a4-package-wizard .a4-card-head + * { margin-top: var(--a4-space-3); }
 .a4-package-wizard .a4-card > .a4-field + .a4-field,
 .a4-package-wizard .a4-card > .a4-stack + .a4-field { margin-top: var(--a4-space-4); }
-.a4-package-wizard .a4-error-summary ul { margin: var(--a4-space-1) 0 0; padding-left: var(--a4-space-5); }
+.a4-package-wizard .a4-error-summary ul { margin: var(--a4-space-1) 0 0; padding-inline-start: var(--a4-space-5); }
 .a4-package-form { grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); max-width: 960px; }
 .a4-package-wizard-actions .a4-package-wizard-cancel { margin-inline-start: auto; }
 .a4-package-origin { margin-top: var(--a4-space-3); }
@@ -592,12 +593,13 @@ a.a4-class-top {
 .a4-package-review-group > .a4-h3 { margin: 0 0 var(--a4-space-2); }
 .a4-package-review-group .a4-facts { margin-top: var(--a4-space-2); }
 .a4-package-review-text { overflow-wrap: anywhere; }
-.a4-package-review-list { margin: var(--a4-space-1) 0 0; padding-left: var(--a4-space-5); overflow-wrap: anywhere; }
+.a4-package-review-list { margin: var(--a4-space-1) 0 0; padding-inline-start: var(--a4-space-5); overflow-wrap: anywhere; }
 .a4-package-review-list li + li { margin-top: var(--a4-space-1); }
 .a4-package-review-list code { color: var(--a4-muted); }
 
 /* the choice of wizard: a card per wizard with what it exports */
 .a4-package-creators > legend { float: left; width: 100%; margin: 0 0 var(--a4-space-1); padding: 0; }
+:where([dir="rtl"]) .a4-package-creators > legend { float: right; }
 .a4-package-creators > legend + * { clear: both; }
 .a4-package-creator-list { margin-top: var(--a4-space-3); grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
 .a4-package-creator-list label { align-items: flex-start; height: 100%; }
@@ -609,7 +611,7 @@ a.a4-class-top {
 @media (max-width: 600px) {
   .a4-package-wizard-steps { gap: var(--a4-space-1); }
   .a4-package-wizard-steps li { flex: 0 0 auto; }
-  .a4-package-wizard-steps li:not(.is-current) { padding-right: var(--a4-space-2); }
+  .a4-package-wizard-steps li:not(.is-current) { padding-inline-end: var(--a4-space-2); }
   .a4-package-wizard-steps li:not(.is-current) .a4-package-step-name {
     position: absolute;
     width: 1px;

@@ -45,12 +45,12 @@
   margin: 0 0 var(--a4-space-3);
   padding: var(--a4-space-3) var(--a4-space-4);
   border: 1px solid var(--a4-info-line);
-  border-left: 5px solid var(--a4-info);
+  border-inline-start: 5px solid var(--a4-info);
   border-radius: var(--a4-radius-s);
   background-color: var(--a4-info-bg);
   color: var(--a4-ink);
 }
-.a4-setup-served.is-velocity { border-color: var(--a4-line); border-left-color: var(--a4-accent); background-color: var(--a4-accent-soft); }
+.a4-setup-served.is-velocity { border-color: var(--a4-line); border-inline-start-color: var(--a4-accent); background-color: var(--a4-accent-soft); }
 .a4-setup-served-main { flex: 1 1 320px; min-width: 0; }
 .a4-setup-served-main strong { font-size: var(--a4-text-l); }
 .a4-setup-served-main p { overflow-wrap: anywhere; }
@@ -140,6 +140,7 @@ textarea.a4-setup-report {
 .a4-setup-caches .a4-setup-cleared-by { display: block; margin-top: 2px; color: var(--a4-muted); font-size: var(--a4-text-xs); overflow-wrap: anywhere; }
 .a4-setup-caches .a4-setup-cleared-when { display: block; }
 .a4-setup-caches .a4-badge { margin: var(--a4-space-1) var(--a4-space-1) 0 0; }
+:where([dir="rtl"]) .a4-setup-caches .a4-badge { margin: var(--a4-space-1) 0 0 var(--a4-space-1); }
 .a4-setup-caches tr.is-disabled td,
 .a4-setup-caches code { color: var(--a4-muted); }
 .a4-setup-caches th:nth-child(3), .a4-setup-caches td:nth-child(3) { width: 7.5em; }
@@ -148,11 +149,12 @@ textarea.a4-setup-report {
   .a4-setup-caches thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
   .a4-setup-caches, .a4-setup-caches tbody, .a4-setup-caches tr, .a4-setup-caches td { display: block; width: 100%; }
   .a4-setup-caches tr { position: relative; padding: var(--a4-space-2) 0 var(--a4-space-2) var(--a4-space-6); border-bottom: 1px solid var(--a4-line); }
+  :where([dir="rtl"]) .a4-setup-caches tr { padding: var(--a4-space-2) var(--a4-space-6) var(--a4-space-2) 0; }
   .a4-setup-caches tr:last-child { border-bottom: 0; }
   .a4-setup-caches td,
   .a4-setup-caches th:nth-child(n), .a4-setup-caches td:nth-child(n) { width: 100%; padding: 2px 0; border: 0; }
-  .a4-setup-caches td.a4-setup-check-cell { position: absolute; top: 10px; left: var(--a4-space-1); width: auto; }
-  .a4-setup-caches td.a4-num { text-align: left; }
+  .a4-setup-caches td.a4-setup-check-cell { position: absolute; top: 10px; inset-inline-start: var(--a4-space-1); width: auto; }
+  .a4-setup-caches td.a4-num { text-align: start; }
   .a4-setup-caches td[data-label]::before { content: attr(data-label) ": "; color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 650; }
 }
 
@@ -166,14 +168,14 @@ details.a4-setup-confirm[open] > summary { border-color: var(--a4-accent); }
   margin-top: var(--a4-space-2);
   padding: var(--a4-space-3) var(--a4-space-3);
   border: 1px solid var(--a4-warn-line);
-  border-left: 4px solid var(--a4-warn);
+  border-inline-start: 4px solid var(--a4-warn);
   border-radius: var(--a4-radius-s);
   background-color: var(--a4-warn-bg);
   color: var(--a4-ink);
 }
 .a4-setup-confirm-body p { margin: 0 0 var(--a4-space-1); }
 .a4-setup-confirm-body ul,
-.a4-setup-cache .a4-notice ul { margin: 0 0 var(--a4-space-2); padding-left: var(--a4-space-4); font-size: var(--a4-text-s); columns: 2 16em; column-gap: var(--a4-space-5); }
+.a4-setup-cache .a4-notice ul { margin: 0 0 var(--a4-space-2); padding-inline-start: var(--a4-space-4); font-size: var(--a4-text-s); columns: 2 16em; column-gap: var(--a4-space-5); }
 .a4-setup-cache .a4-notice code { color: inherit; }
 
 /* The maintenance rows of the servers' own caches */
@@ -232,11 +234,11 @@ details.a4-setup-confirm[open] > summary { border-color: var(--a4-accent); }
 
 .a4-setup-sortbar { align-items: center; margin: 0 0 var(--a4-space-3); color: var(--a4-muted); font-size: var(--a4-text-s); }
 .a4-setup-session .a4-facts dd code { color: var(--a4-muted); }
-.a4-setup-confirm-list { margin: var(--a4-space-2) 0 0; padding-left: var(--a4-space-4); }
+.a4-setup-confirm-list { margin: var(--a4-space-2) 0 0; padding-inline-start: var(--a4-space-4); }
 .a4-setup-confirm-list li + li { margin-top: var(--a4-space-1); }
 
 /* Numbered steps of an explanation (not the steps of a wizard) */
-ol.a4-setup-numbered { margin: var(--a4-space-1) 0 0; padding-left: var(--a4-space-6); }
+ol.a4-setup-numbered { margin: var(--a4-space-1) 0 0; padding-inline-start: var(--a4-space-6); }
 ol.a4-setup-numbered li + li { margin-top: var(--a4-space-1); }
 ol.a4-setup-numbered .a4-pre { margin: var(--a4-space-2) 0 0; }
 
@@ -262,7 +264,7 @@ ol.a4-setup-numbered .a4-pre { margin: var(--a4-space-2) 0 0; }
 .a4-setup-upgrade .a4-table td.a4-setup-path { min-width: 220px; overflow-wrap: anywhere; font-family: var(--a4-mono); font-size: var(--a4-text-xs); }
 .a4-setup-upgrade .a4-table td.a4-setup-sums { color: var(--a4-muted); font-family: var(--a4-mono); font-size: var(--a4-text-xs); overflow-wrap: anywhere; }
 .a4-setup-upgrade .a4-table td.a4-setup-sums span[title] { color: var(--a4-ink); white-space: nowrap; }
-.a4-setup-sum { display: inline-block; margin-right: var(--a4-space-2); white-space: nowrap; }
+.a4-setup-sum { display: inline-block; margin-inline-end: var(--a4-space-2); white-space: nowrap; }
 .a4-setup-sum-label { font-family: var(--a4-font); font-size: var(--a4-text-xs); font-weight: 650; letter-spacing: .03em; text-transform: uppercase; }
 
 /* Names in a row of small tags */
@@ -301,7 +303,7 @@ ol.a4-setup-numbered .a4-pre { margin: var(--a4-space-2) 0 0; }
 .a4-setup-urls { margin: 0; padding: 0; list-style: none; }
 .a4-setup-urls li { padding: var(--a4-space-1) 0; border-top: 1px solid var(--a4-line); font-family: var(--a4-mono); font-size: var(--a4-text-xs); overflow-wrap: anywhere; }
 .a4-setup-urls li:first-child { border-top: 0; }
-ul.a4-setup-points { margin: 0; padding-left: var(--a4-space-4); }
+ul.a4-setup-points { margin: 0; padding-inline-start: var(--a4-space-4); }
 ul.a4-setup-points li + li { margin-top: var(--a4-space-1); }
 
 /* The runs */
@@ -317,6 +319,7 @@ details.a4-setup-warnings > summary { cursor: pointer; }
 
 /* The bar that says what is not saved yet; it stays in view while the list scrolls */
 .a4-setup-bar.is-dirty { border-color: var(--a4-accent); background-color: var(--a4-accent-soft); box-shadow: inset 4px 0 0 var(--a4-accent); }
+:where([dir="rtl"]) .a4-setup-bar.is-dirty { box-shadow: inset -4px 0 0 var(--a4-accent); }
 .a4-setup-bar.is-dirty .a4-meta { color: var(--a4-ink); }
 .a4-setup-pending { position: sticky; top: var(--a4-space-2); z-index: var(--a4-z-sticky); }
 
@@ -364,8 +367,8 @@ details.a4-setup-warnings > summary { cursor: pointer; }
 
 /* What an extension lacks or warns about, one dot per line */
 .a4-setup-problems { margin: var(--a4-space-2) 0 0; padding: 0; list-style: none; font-size: var(--a4-text-s); }
-.a4-setup-problems li { position: relative; margin: 2px 0 0; padding-left: var(--a4-space-3); overflow-wrap: anywhere; }
-.a4-setup-problems li::before { content: ""; position: absolute; top: .55em; left: 0; width: 7px; height: 7px; border-radius: 50%; background-color: var(--a4-muted); }
+.a4-setup-problems li { position: relative; margin: 2px 0 0; padding-inline-start: var(--a4-space-3); overflow-wrap: anywhere; }
+.a4-setup-problems li::before { content: ""; position: absolute; top: .55em; inset-inline-start: 0; width: 7px; height: 7px; border-radius: 50%; background-color: var(--a4-muted); }
 .a4-setup-problems li.is-bad { color: var(--a4-bad); }
 .a4-setup-problems li.is-bad::before { background-color: var(--a4-bad); }
 .a4-setup-problems li.is-warn { color: var(--a4-warn); }
@@ -397,7 +400,7 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
   line-height: 1.55;
 }
 .a4-setup-line { display: block; width: max-content; min-width: 100%; white-space: pre; }
-.a4-setup-line em { margin-left: var(--a4-space-2); font-style: normal; }
+.a4-setup-line em { margin-inline-start: var(--a4-space-2); font-style: normal; }
 .a4-setup-lines .is-added { background-color: var(--a4-ok-bg); color: var(--a4-ok); }
 .a4-setup-lines .is-moved { background-color: var(--a4-accent-soft); color: var(--a4-accent-text); }
 .a4-setup-ack { display: flex; align-items: flex-start; gap: var(--a4-space-2); margin: var(--a4-space-3) 0 0; color: var(--a4-bad); font-weight: 600; white-space: normal; }
@@ -426,7 +429,9 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
   background-color: var(--a4-ok-bg);
   box-shadow: inset 5px 0 0 var(--a4-ok);
 }
+:where([dir="rtl"]) .a4-setup-state { box-shadow: inset -5px 0 0 var(--a4-ok); }
 .a4-setup-state.is-on { border-color: var(--a4-warn-line); background-color: var(--a4-warn-bg); box-shadow: inset 5px 0 0 var(--a4-warn); }
+:where([dir="rtl"]) .a4-setup-state.is-on { box-shadow: inset -5px 0 0 var(--a4-warn); }
 .a4-setup-state-head { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-1) var(--a4-space-3); }
 .a4-setup-state-title { flex: 1 1 14ch; min-width: 0; margin: 0; padding: 0; border: 0; background: none; color: var(--a4-ok); font-size: var(--a4-text-xl); font-weight: 700; line-height: 1.25; }
 .a4-setup-state.is-on .a4-setup-state-title { color: var(--a4-warn); }
@@ -440,7 +445,7 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
 .a4-setup-state .a4-facts dd .a4-badge { white-space: normal; }
 .a4-setup-state .a4-badge { background-color: var(--a4-card); }
 .a4-setup-state-action { display: flex; flex-direction: column; align-items: flex-end; gap: var(--a4-space-1); }
-.a4-setup-state-action .a4-meta { max-width: 30ch; color: var(--a4-ink); text-align: right; }
+.a4-setup-state-action .a4-meta { max-width: 30ch; color: var(--a4-ink); text-align: end; }
 
 /* The form for the next window beside the preview of the visitors' page */
 .a4-setup-plan { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .9fr); align-items: start; gap: var(--a4-space-4); margin: 0 0 var(--a4-space-5); }
@@ -502,12 +507,12 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
 .a4-setup-frame-wrap { overflow: hidden; border: 1px solid var(--a4-line); border-radius: var(--a4-radius-s); background-color: var(--a4-soft); }
 .a4-setup-frame-bar { display: flex; align-items: center; gap: var(--a4-space-1); padding: var(--a4-space-2) var(--a4-space-2); border-bottom: 1px solid var(--a4-line); color: var(--a4-muted); font-size: var(--a4-text-xs); }
 .a4-setup-frame-bar span[aria-hidden] { width: 9px; height: 9px; border-radius: 50%; background-color: var(--a4-line-strong); }
-.a4-setup-frame-bar code { min-width: 0; margin-left: var(--a4-space-1); overflow: hidden; color: var(--a4-muted); text-overflow: ellipsis; white-space: nowrap; }
+.a4-setup-frame-bar code { min-width: 0; margin-inline-start: var(--a4-space-1); overflow: hidden; color: var(--a4-muted); text-overflow: ellipsis; white-space: nowrap; }
 /* the frame shows the visitors' page, which has its own (light) colours */
 .a4-setup-frame { display: block; width: 100%; height: 440px; margin: 0; border: 0; background-color: var(--a4-surface); }
 
 .a4-setup-maint .a4-fold { margin: 0 0 var(--a4-space-3); }
-.a4-setup-maint .a4-fold-body ul.a4-plain { padding-left: var(--a4-space-4); }
+.a4-setup-maint .a4-fold-body ul.a4-plain { padding-inline-start: var(--a4-space-4); }
 
 /* Commands with a copy button (Maintenance, Cronjobs) */
 .a4-setup-cmds { display: flex; flex-direction: column; gap: var(--a4-space-2); margin: 0; padding: 0; list-style: none; }
@@ -546,7 +551,7 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
 @container a4-setup-maint (max-width: 560px) {
   .a4-setup-state { grid-template-columns: minmax(0, 1fr); padding: var(--a4-space-3); }
   .a4-setup-state-action { align-items: stretch; }
-  .a4-setup-state-action .a4-meta { max-width: none; text-align: left; }
+  .a4-setup-state-action .a4-meta { max-width: none; text-align: start; }
   .a4-setup-state-action .a4-btn,
   .a4-setup-confirm-row .a4-btn { width: 100%; white-space: normal; }
   .a4-setup-maint .a4-card { padding: var(--a4-space-3) var(--a4-space-3); }
@@ -602,12 +607,13 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
 
 /* One card per cronjob part; the one running now is marked */
 .a4-setup-part-row.is-current { border-color: var(--a4-ok); box-shadow: inset 4px 0 0 var(--a4-ok), var(--a4-shadow-s); }
+:where([dir="rtl"]) .a4-setup-part-row.is-current { box-shadow: inset -4px 0 0 var(--a4-ok), var(--a4-shadow-s); }
 .a4-setup-cron .a4-facts dd code { color: var(--a4-muted); }
 
 /* The compact view of the cronjob parts: one table row per part. The row head is the part, not a column heading:
    it takes the body's type and wraps, against .a4-table th (small, uppercase, bold, no wrap). The row of a part that
    needs attention is marked at the left edge like its card, a paused one in red, the running one in green. */
-.a4-setup-cron .a4-setup-view { margin-left: auto; display: inline-flex; align-items: center; }
+.a4-setup-cron .a4-setup-view { margin-inline-start: auto; display: inline-flex; align-items: center; }
 .a4-setup-cron .a4-setup-compact .a4-badges { margin: 0; }
 .a4-setup-cron .a4-setup-compact .a4-table > tbody > tr > th[scope="row"] {
   width: 1%; min-width: 8em; max-width: 14em;
@@ -616,7 +622,7 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
 }
 .a4-setup-cron .a4-setup-compact-part { display: block; }
 .a4-setup-cron .a4-setup-compact-sub { display: block; font-size: var(--a4-text-xs); color: var(--a4-muted); }
-.a4-setup-cron .a4-setup-compact .a4-table td, .a4-setup-cron .a4-setup-compact .a4-table th { padding-left: var(--a4-space-2); padding-right: var(--a4-space-2); }
+.a4-setup-cron .a4-setup-compact .a4-table td, .a4-setup-cron .a4-setup-compact .a4-table th { padding-inline-start: var(--a4-space-2); padding-inline-end: var(--a4-space-2); }
 .a4-setup-cron .a4-setup-compact-scripts { margin-top: 2px; font-size: var(--a4-text-xs); color: var(--a4-muted); }
 .a4-setup-cron .a4-setup-compact-scripts > summary { cursor: pointer; }
 /* The scripts of a part: in the row below it across the table (with javascript), or in its cell (without). The
@@ -649,9 +655,12 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
 .a4-setup-cron .a4-setup-compact tr.a4-setup-part-row > td:last-child { white-space: nowrap; width: 1%; }
 .a4-setup-cron .a4-setup-compact tr.a4-setup-part-row { border: 0; box-shadow: none; }
 .a4-setup-cron .a4-setup-compact tr.is-attention > th { box-shadow: inset 4px 0 0 var(--a4-warn); }
+:where([dir="rtl"]) .a4-setup-cron .a4-setup-compact tr.is-attention > th { box-shadow: inset -4px 0 0 var(--a4-warn); }
 .a4-setup-cron .a4-setup-compact tr.is-paused > th { box-shadow: inset 4px 0 0 var(--a4-bad); }
+:where([dir="rtl"]) .a4-setup-cron .a4-setup-compact tr.is-paused > th { box-shadow: inset -4px 0 0 var(--a4-bad); }
 .a4-setup-cron .a4-setup-compact tr.is-current > th { box-shadow: inset 4px 0 0 var(--a4-ok); }
-.a4-setup-cron .a4-setup-compact td .a4-btn + .a4-btn { margin-left: var(--a4-space-1); }
+:where([dir="rtl"]) .a4-setup-cron .a4-setup-compact tr.is-current > th { box-shadow: inset -4px 0 0 var(--a4-ok); }
+.a4-setup-cron .a4-setup-compact td .a4-btn + .a4-btn { margin-inline-start: var(--a4-space-1); }
 .a4-setup-cron .a4-setup-compact td .a4-btn-small { padding: 2px var(--a4-space-2); }
 .a4-setup-cron .a4-setup-cmd-row { margin: var(--a4-space-3) 0 0; }
 .a4-setup-cron .a4-setup-cmd-label { flex: 0 0 auto; }
@@ -801,16 +810,16 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
 .a4-setup-wz-dir,
 .a4-setup-wz-size { color: var(--a4-muted); }
 .a4-setup-wz-size { font-size: var(--a4-text-xs); }
-.a4-setup-wz-tree li.a4-setup-wz-depth-1 { padding-left: calc(1 * var(--a4-space-4)); }
-.a4-setup-wz-tree li.a4-setup-wz-depth-2 { padding-left: calc(2 * var(--a4-space-4)); }
-.a4-setup-wz-tree li.a4-setup-wz-depth-3 { padding-left: calc(3 * var(--a4-space-4)); }
-.a4-setup-wz-tree li.a4-setup-wz-depth-4 { padding-left: calc(4 * var(--a4-space-4)); }
-.a4-setup-wz-tree li.a4-setup-wz-depth-5 { padding-left: calc(5 * var(--a4-space-4)); }
-.a4-setup-wz-tree li.a4-setup-wz-depth-6 { padding-left: calc(6 * var(--a4-space-4)); }
-.a4-setup-wz-tree li.a4-setup-wz-depth-7 { padding-left: calc(7 * var(--a4-space-4)); }
-.a4-setup-wz-tree li.a4-setup-wz-depth-8 { padding-left: calc(8 * var(--a4-space-4)); }
-.a4-setup-wz-tree li.a4-setup-wz-depth-9 { padding-left: calc(9 * var(--a4-space-4)); }
-.a4-setup-wz-tree li.a4-setup-wz-depth-10 { padding-left: calc(10 * var(--a4-space-4)); }
+.a4-setup-wz-tree li.a4-setup-wz-depth-1 { padding-inline-start: calc(1 * var(--a4-space-4)); }
+.a4-setup-wz-tree li.a4-setup-wz-depth-2 { padding-inline-start: calc(2 * var(--a4-space-4)); }
+.a4-setup-wz-tree li.a4-setup-wz-depth-3 { padding-inline-start: calc(3 * var(--a4-space-4)); }
+.a4-setup-wz-tree li.a4-setup-wz-depth-4 { padding-inline-start: calc(4 * var(--a4-space-4)); }
+.a4-setup-wz-tree li.a4-setup-wz-depth-5 { padding-inline-start: calc(5 * var(--a4-space-4)); }
+.a4-setup-wz-tree li.a4-setup-wz-depth-6 { padding-inline-start: calc(6 * var(--a4-space-4)); }
+.a4-setup-wz-tree li.a4-setup-wz-depth-7 { padding-inline-start: calc(7 * var(--a4-space-4)); }
+.a4-setup-wz-tree li.a4-setup-wz-depth-8 { padding-inline-start: calc(8 * var(--a4-space-4)); }
+.a4-setup-wz-tree li.a4-setup-wz-depth-9 { padding-inline-start: calc(9 * var(--a4-space-4)); }
+.a4-setup-wz-tree li.a4-setup-wz-depth-10 { padding-inline-start: calc(10 * var(--a4-space-4)); }
 .a4-setup-wz-parts { display: flex; flex-direction: column; gap: 2px; }
 
 /* The module wizard: the table picker, the column chips, the mapping, the external source */
@@ -821,7 +830,7 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
 .a4-setup-wz-tables th,
 .a4-setup-wz-tables td,
 .a4-setup-wz-map th,
-.a4-setup-wz-map td { padding: var(--a4-space-1) var(--a4-space-2); border-bottom: 1px solid var(--a4-line); color: var(--a4-ink); text-align: left; }
+.a4-setup-wz-map td { padding: var(--a4-space-1) var(--a4-space-2); border-bottom: 1px solid var(--a4-line); color: var(--a4-ink); text-align: start; }
 .a4-setup-wz-tables th { position: sticky; top: 0; z-index: 1; background-color: var(--a4-soft); }
 .a4-setup-wz-tables tr.is-selected { background-color: var(--a4-accent-soft); }
 .a4-setup-wz-nokey { color: var(--a4-bad); }
@@ -834,7 +843,7 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
 .a4-setup-wz-chip.is-key,
 .a4-setup-wz-chip.is-accent { border-color: var(--a4-accent); background-color: transparent; color: var(--a4-accent-text); }
 .a4-setup-wz-chip.is-accent { white-space: nowrap; }
-.a4-setup-wz-external { padding-left: var(--a4-space-3); border-left: 3px solid var(--a4-line); }
+.a4-setup-wz-external { padding-inline-start: var(--a4-space-3); border-inline-start: 3px solid var(--a4-line); }
 
 /* The workflow event wizard: the trigger matrix, the statuses, the settings rows */
 .a4-setup-wz-module { padding-bottom: var(--a4-space-4); }
@@ -844,7 +853,7 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
 .a4-setup-wz-matrix th,
 .a4-setup-wz-matrix td,
 .a4-setup-wz-attrs th,
-.a4-setup-wz-attrs td { padding: var(--a4-space-1) var(--a4-space-2); border-bottom: 1px solid var(--a4-line); color: var(--a4-ink); text-align: left; vertical-align: top; }
+.a4-setup-wz-attrs td { padding: var(--a4-space-1) var(--a4-space-2); border-bottom: 1px solid var(--a4-line); color: var(--a4-ink); text-align: start; vertical-align: top; }
 .a4-setup-wz-matrix th,
 .a4-setup-wz-attrs th { color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 600; text-transform: uppercase; }
 .a4-setup-wz-matrix td.a4-setup-wz-tick { width: 5.5rem; text-align: center; }
@@ -895,14 +904,14 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
   gap: var(--a4-space-3);
   padding: var(--a4-space-3) var(--a4-space-4);
   border: 1px solid var(--a4-line);
-  border-left: 4px solid var(--a4-accent);
+  border-inline-start: 4px solid var(--a4-accent);
   border-radius: var(--a4-radius-s);
   background-color: var(--a4-soft);
   color: inherit;
   text-decoration: none;
 }
 .a4-page a.a4-setup-rad-survey-link { color: var(--a4-ink); }
-.a4-setup-rad-survey-link:hover { border-color: var(--a4-line-strong); border-left-color: var(--a4-accent); }
+.a4-setup-rad-survey-link:hover { border-color: var(--a4-line-strong); border-inline-start-color: var(--a4-accent); }
 .a4-setup-rad-survey-link > span { min-width: 0; }
 .a4-setup-rad-survey-link b { display: block; }
 .a4-setup-rad-survey-link .a4-meta { display: block; white-space: normal; }
@@ -966,7 +975,7 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
   gap: var(--a4-space-1);
   padding: var(--a4-space-1) var(--a4-space-2);
   border: 1px solid var(--a4-line);
-  border-left-width: 4px;
+  border-inline-start-width: 4px;
   border-radius: var(--a4-radius-s);
   background-color: var(--a4-card);
   color: var(--a4-ink);
@@ -974,16 +983,16 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
   text-decoration: none;
 }
 .a4-page a.a4-setup-survey-kind:hover { border-color: var(--a4-line-strong); }
-.a4-setup-survey-kind.is-broken { border-left-color: var(--a4-bad); }
-.a4-setup-survey-kind.is-odd { border-left-color: var(--a4-ok); }
-.a4-setup-survey-kind.is-note { border-left-color: var(--a4-line-strong); }
+.a4-setup-survey-kind.is-broken { border-inline-start-color: var(--a4-bad); }
+.a4-setup-survey-kind.is-odd { border-inline-start-color: var(--a4-ok); }
+.a4-setup-survey-kind.is-note { border-inline-start-color: var(--a4-line-strong); }
 .a4-page a.a4-setup-survey-kind.is-current { border-color: var(--a4-accent); background-color: var(--a4-accent-soft); }
 .a4-setup-survey-kind b { font-weight: 700; }
 
 /* How to fix a finding, inside its row */
 .a4-setup-survey-fix { margin: var(--a4-space-1) 0 2px; padding: var(--a4-space-2) var(--a4-space-2); border: 1px solid var(--a4-line); border-radius: var(--a4-radius-s); background-color: var(--a4-soft); }
 .a4-setup-survey-fix-head { display: block; padding-bottom: var(--a4-space-1); color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
-.a4-setup-survey-fix ol { margin: 0; padding-left: var(--a4-space-4); }
+.a4-setup-survey-fix ol { margin: 0; padding-inline-start: var(--a4-space-4); }
 .a4-setup-survey-fix li { padding: 2px 0; white-space: normal; }
 .a4-setup-survey .a4-table .a4-setup-survey-value { font-weight: 600; }
 .a4-setup-survey .a4-table .a4-setup-survey-where { color: var(--a4-muted); font-size: var(--a4-text-s); }

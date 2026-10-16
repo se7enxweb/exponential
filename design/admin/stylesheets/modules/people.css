@@ -313,7 +313,7 @@
 }
 .a4-collaboration-filters { display: flex; flex-wrap: wrap; gap: var(--a4-space-2) var(--a4-space-5); margin: 0 0 var(--a4-space-3); }
 .a4-collaboration-filter { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-1); }
-.a4-collaboration-filter > b { margin-right: var(--a4-space-1); color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 600; }
+.a4-collaboration-filter > b { margin-inline-end: var(--a4-space-1); color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 600; }
 .a4-notification-chip,
 .a4-collaboration-chip {
   display: inline-block;
@@ -409,15 +409,15 @@
 .a4-page a.a4-collaboration-row-main {
   display: block;
   padding: var(--a4-space-3);
-  border-left: var(--a4-space-1) solid transparent;
+  border-inline-start: var(--a4-space-1) solid transparent;
   color: inherit;
   text-decoration: none;
 }
 .a4-page a.a4-collaboration-row-main:hover,
 .a4-page a.a4-collaboration-row-main:focus-visible { background-color: var(--a4-soft); color: inherit; }
-.a4-collaboration-state-waiting > .a4-collaboration-row-main { border-left-color: var(--a4-accent); }
-.a4-collaboration-state-approved > .a4-collaboration-row-main { border-left-color: var(--a4-ok); }
-.a4-collaboration-state-denied > .a4-collaboration-row-main { border-left-color: var(--a4-bad); }
+.a4-collaboration-state-waiting > .a4-collaboration-row-main { border-inline-start-color: var(--a4-accent); }
+.a4-collaboration-state-approved > .a4-collaboration-row-main { border-inline-start-color: var(--a4-ok); }
+.a4-collaboration-state-denied > .a4-collaboration-row-main { border-inline-start-color: var(--a4-bad); }
 .a4-collaboration-unread .a4-collaboration-title { font-weight: 750; }
 .a4-collaboration-excerpt { display: block; margin: var(--a4-space-1) 0 0; color: var(--a4-muted); font-size: var(--a4-text-s); overflow-wrap: anywhere; }
 .a4-collaboration-excerpt b { color: var(--a4-ink); font-weight: 600; }
@@ -437,12 +437,12 @@
 .a4-collaboration-tree a:hover { background-color: var(--a4-soft); }
 .a4-collaboration-tree a.current { background-color: var(--a4-accent-soft); font-weight: 650; }
 .a4-collaboration-tree .count { color: var(--a4-muted); font-size: var(--a4-text-s); }
-.a4-collaboration-depth-1 { padding-left: var(--a4-space-3); }
-.a4-collaboration-depth-2 { padding-left: var(--a4-space-5); }
-.a4-collaboration-depth-3 { padding-left: var(--a4-space-6); }
-.a4-collaboration-depth-4 { margin-left: var(--a4-space-3); padding-left: var(--a4-space-6); }
-.a4-collaboration-depth-5 { margin-left: var(--a4-space-5); padding-left: var(--a4-space-6); }
-.a4-collaboration-depth-6 { margin-left: var(--a4-space-6); padding-left: var(--a4-space-6); }
+.a4-collaboration-depth-1 { padding-inline-start: var(--a4-space-3); }
+.a4-collaboration-depth-2 { padding-inline-start: var(--a4-space-5); }
+.a4-collaboration-depth-3 { padding-inline-start: var(--a4-space-6); }
+.a4-collaboration-depth-4 { margin-inline-start: var(--a4-space-3); padding-inline-start: var(--a4-space-6); }
+.a4-collaboration-depth-5 { margin-inline-start: var(--a4-space-5); padding-inline-start: var(--a4-space-6); }
+.a4-collaboration-depth-6 { margin-inline-start: var(--a4-space-6); padding-inline-start: var(--a4-space-6); }
 
 /* An item: the people, the message thread, the compose box, the content preview */
 .a4-collaboration-people { display: flex; flex-wrap: wrap; gap: var(--a4-space-1); margin: 0; padding: 0; list-style: none; }
@@ -507,7 +507,7 @@
 .a4-user-pw-invalid .a4-user-pw-input input { border: 2px solid var(--a4-bad); }
 .a4-user-pw-toggle {
   flex: 0 0 auto;
-  margin-left: var(--a4-space-1);
+  margin-inline-start: var(--a4-space-1);
   padding: 0 var(--a4-space-2);
   border: 1px solid transparent;
   background-color: var(--a4-soft);
@@ -521,7 +521,8 @@
 .a4-user-pw-rules-title { margin: var(--a4-space-2) 0 var(--a4-space-1); color: var(--a4-muted); }
 .a4-user-pw-rules { margin: 0; padding: 0; list-style: none; }
 .a4-user-pw-rules li { position: relative; margin: 2px 0; padding: 0 0 0 var(--a4-space-5); background: none; overflow-wrap: anywhere; }
-.a4-user-pw-rules li::before { content: "\25CB"; position: absolute; left: .2em; color: var(--a4-muted); }
+:where([dir="rtl"]) .a4-user-pw-rules li { padding: 0 var(--a4-space-5) 0 0; }
+.a4-user-pw-rules li::before { content: "\25CB"; position: absolute; inset-inline-start: .2em; color: var(--a4-muted); }
 .a4-user-pw-rules li[data-state="met"] { color: var(--a4-ok); }
 .a4-user-pw-rules li[data-state="met"]::before { content: "\2713"; color: var(--a4-ok); font-weight: 700; }
 .a4-user-pw-invalid .a4-user-pw-rules li[data-state="unmet"],
@@ -556,6 +557,7 @@
 }
 .a4-user-pw-summary h2 { margin: 0 0 var(--a4-space-1); color: var(--a4-bad); font-size: var(--a4-text-l); }
 .a4-user-pw-summary ul { margin: 0 0 0 var(--a4-space-5); padding: 0; }
+:where([dir="rtl"]) .a4-user-pw-summary ul { margin: 0 var(--a4-space-5) 0 0; }
 .a4-user-pw-summary a { color: var(--a4-bad); font-weight: 700; text-decoration: underline; }
 .a4-user-pw-username {
   position: absolute;
