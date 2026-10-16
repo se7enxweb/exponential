@@ -61283,6 +61283,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>(%factor times as long)</source>
         <translation>(%factor times as long)</translation>
     </message>
+    <message>
+        <source>Server</source>
+        <translation>Server</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/audit</name>

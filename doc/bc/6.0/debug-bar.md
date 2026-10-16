@@ -422,7 +422,7 @@ the report's own defaults.
 | Templates | the templates used (`ShowUsedTemplates`) and the CSS/JS packer report, or how to turn them on |
 | Included files | the included PHP files (`DisplayIncludedFiles`), or their number and how to list them |
 | Memory | the classic "Main resources" table, memory now, peak, limit and share, and the five steps that took the most |
-| Velocity | where the request entered and which process rendered the report, in one sentence (see [below](#velocity-where-the-request-entered-and-what-rendered-it)), the facts behind it, OPcache status, and Velocity's response cache |
+| Server | where the request entered and which process rendered the report (Exponential Velocity, PHP-FPM, mod_php, the command line ...), in one sentence (see [below](#server-where-the-request-entered-and-what-rendered-it)), the facts behind it, OPcache status, and Velocity's response cache; called Velocity until 16 October 2026, its section id is still `exp-debug-panel-velocity` |
 | Other | reports appended by extensions with `eZDebug::appendBottomReport()` that belong to no tab (only when there are any) |
 
 Every section keeps its id, so scripts and stylesheets written for the classic report still find it.
@@ -464,7 +464,7 @@ Drawn from `expdebugbar::cache`: "This page only" (the view cache of the node th
 response cache, OPcache of the serving process, every cache tag and every cache ID with its description and when
 it was last cleared, and all caches. Each clear says what it did.
 
-### Velocity: where the request entered and what rendered it
+### Server: where the request entered and what rendered it
 
 The tab opens with one sentence that says where the request entered and which process rendered the report, then
 the facts behind it (`expDebugBarReport::engineFacts()`, from the server variables and `engineProbe()`):

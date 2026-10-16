@@ -755,7 +755,7 @@
   const velocityBox = root.querySelector('.exp-debug-velocity-cache');
 
   /* A page that came from a cache (or was replayed by the browser) carries the report of the request that rendered
-     it: on another port, or long before this page was loaded. Said in the Velocity tab, with when and by whom. */
+     it: on another port, or long before this page was loaded. Said in the Server tab, with when and by whom. */
   const engineBox = root.querySelector('.exp-debug-engine');
   if (engineBox) {
     const port = location.port ? Number(location.port) : (location.protocol === 'https:' ? 443 : 80);

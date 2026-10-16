@@ -11,7 +11,7 @@
 /**
  * The HTML debug report as the "Exp Debug" bar: a bar pinned to the bottom of the window with a live
  * summary of the request, and a tabbed panel above it (Messages, Settings, Cache, Timing, SQL, Templates,
- * Included files, Memory, Velocity, and Other for reports nobody claimed).
+ * Included files, Memory, Server (id velocity), and Other for reports nobody claimed).
  *
  * Every section the classic report printed is still printed, with the same ids and the same rows, only
  * placed in a tab: scripts and stylesheets that look for #main-debug-table, #timingpoints,
@@ -153,7 +153,7 @@ class expDebugBarReport
     public static function scriptStrings()
     {
         return array(
-            'Messages', 'Settings', 'Cache', 'Timing', 'SQL', 'Templates', 'Included files', 'Memory', 'Velocity', 'Other',
+            'Messages', 'Settings', 'Cache', 'Timing', 'SQL', 'Templates', 'Included files', 'Memory', 'Server', 'Other',
             'Debug report sections', 'Filter', 'Filter settings and report rows', 'No rows match the filter.',
             '%count rows match', 'Clear filter',
             'All', 'Errors', 'Warnings', 'Notices', 'Debug', 'Timing points', 'Strict',
@@ -188,7 +188,7 @@ class expDebugBarReport
             'By tag', 'By ID', 'All caches',
             'You may not clear caches (setup/managecache).',
             'Response cache', 'Engine',
-            // the Velocity tab: a page that came from a cache carries the report of the request that rendered it
+            // the Server tab: a page that came from a cache carries the report of the request that rendered it
             'This report was rendered at %time by %renderer for a request on port %entry, %age before this page was loaded on port %port: the page came from a cache, not from this request.',
             '%count s', '%count min',
             'Close', 'Open the debug report',
@@ -327,7 +327,8 @@ class expDebugBarReport
             'templates' => self::t( 'Templates' ),
             'includes'  => self::t( 'Included files' ),
             'memory'    => self::t( 'Memory' ),
-            'velocity'  => self::t( 'Velocity' ),
+            // id velocity, as the tab was named first: scripts and stylesheets find the section by it
+            'velocity'  => self::t( 'Server' ),
         );
         if ( $otherReports !== '' )
             $tabs['other'] = self::t( 'Other' );
@@ -431,7 +432,7 @@ class expDebugBarReport
         echo self::memoryHtml( $debug, $totalElapsed, $peakMemory, $memoryLimit, $sqlCount, $queryKey );
         self::panelEnd();
 
-        // --- Velocity
+        // --- Server (id velocity)
         self::panelStart( 'velocity', $tabs );
         echo self::velocityHtml( $userInfo['can_setup'] || $userInfo['can_cache'] );
         self::panelEnd();

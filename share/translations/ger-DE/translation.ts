@@ -68836,6 +68836,10 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>(%factor times as long)</source>
         <translation>(%factor-mal so lange)</translation>
     </message>
+    <message>
+        <source>Server</source>
+        <translation>Server</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/audit</name>
