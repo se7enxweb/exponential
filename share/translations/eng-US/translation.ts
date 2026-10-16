@@ -9568,8 +9568,8 @@
         <translation>Dropped. The order is unchanged.</translation>
     </message>
     <message>
-        <source>Move cancelled. %name is back at position %position of %count.</source>
-        <translation>Move cancelled. %name is back at position %position of %count.</translation>
+        <source>Move canceled. %name is back at position %position of %count.</source>
+        <translation>Move canceled. %name is back at position %position of %count.</translation>
     </message>
     <message>
         <source>Order saved</source>

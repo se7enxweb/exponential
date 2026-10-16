@@ -175,7 +175,7 @@ var labelsObj = {ldelim}
                         position: "{'Position %position of %count'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
                         moved: "{'Moved to position %position of %count'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
                         dropped_same: "{'Dropped. The order is unchanged.'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        cancelled: "{'Move cancelled. %name is back at position %position of %count.'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        cancelled: "{'Move canceled. %name is back at position %position of %count.'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
                         saved: "{'Order saved'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
                         undo: "{'Undo'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
                         restored: "{'Previous order restored'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",

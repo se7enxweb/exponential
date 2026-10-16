@@ -8847,6 +8847,10 @@
         <source>You do not have permission to copy this item.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Move canceled. %name is back at position %position of %count.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/node/view/line</name>

@@ -400,7 +400,7 @@
             } else if (action === 'cancel') {
                 endGrab(true);
                 grip.focus();
-                say(L('cancelled', 'Move cancelled. %name is back at position %position of %count.', { '%name': nameOf(tr), '%position': position(tr), '%count': count }));
+                say(L('cancelled', 'Move canceled. %name is back at position %position of %count.', { '%name': nameOf(tr), '%position': position(tr), '%count': count }));
             } else {
                 var j = { up: i - 1, down: i + 1, first: 0, last: rows.length - 1 }[action];
                 if (moveTo(tr, j)) { grip.focus(); }
@@ -414,7 +414,7 @@
             if (to === this) { return; }
             var tr = grab.tr;
             endGrab(true);
-            say(L('cancelled', 'Move cancelled. %name is back at position %position of %count.', { '%name': nameOf(tr), '%position': position(tr), '%count': table.total }));
+            say(L('cancelled', 'Move canceled. %name is back at position %position of %count.', { '%name': nameOf(tr), '%position': position(tr), '%count': table.total }));
         };
 
         // ---- pointer ------------------------------------------------------------------------------------
@@ -512,7 +512,7 @@
         var onCancel = function (e) {
             if (!drag || e.pointerId !== drag.pointerId) { return; }
             var d = stopDrag(true);
-            if (d.started) { say(L('cancelled', 'Move cancelled. %name is back at position %position of %count.', { '%name': nameOf(d.tr), '%position': position(d.tr), '%count': table.total })); }
+            if (d.started) { say(L('cancelled', 'Move canceled. %name is back at position %position of %count.', { '%name': nameOf(d.tr), '%position': position(d.tr), '%count': table.total })); }
         };
         var onEscape = function (e) {
             if (e.key !== 'Escape' || !drag) { return; }
@@ -520,7 +520,7 @@
             e.stopPropagation();
             var d = stopDrag(true);
             d.grip.focus();
-            say(L('cancelled', 'Move cancelled. %name is back at position %position of %count.', { '%name': nameOf(d.tr), '%position': position(d.tr), '%count': table.total }));
+            say(L('cancelled', 'Move canceled. %name is back at position %position of %count.', { '%name': nameOf(d.tr), '%position': position(d.tr), '%count': table.total }));
         };
         var onPointerDown = function (e) {
             var ev = e.originalEvent || e, grip = this;
