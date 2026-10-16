@@ -661,6 +661,39 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
         $this->assertFalse( $view::tabIsOpen( 'mmt', $ini ), 'a tab not in Tabs[]' );
     }
 
+    /**
+     * MM-03: run() itself refuses the anonymous user for a tab that is switched on (user/login is a policy the anonymous
+     * user may hold), and answers "not available" for a tab that is not, before it looks at the user
+     */
+    public function testTheViewRefusesTheAnonymousUser()
+    {
+        $this->menuIni( array( 'TopAdminMenu' => array( 'MegaMenuTabs' => array( 'setup' ) ) ) );
+        $module = new class {
+            public $errors = array();
+            public function handleError( $code, $type ) { $this->errors[] = array( $code, $type ); return array( 'error' => $code ); }
+        };
+        $key = 'eZUserGlobalInstance_';
+        $saved = array_key_exists( $key, $GLOBALS ) ? array( $GLOBALS[$key] ) : null;
+        $GLOBALS[$key] = new eZUser( array( 'contentobject_id' => eZUser::anonymousId(), 'login' => 'anonymous', 'email' => '' ) );
+        try
+        {
+            $this->assertFalse( eZUser::currentUser()->isRegistered(), 'the stand-in is the anonymous user' );
+            $view = new \Exponential\View\Kernel\User\Megamenu();
+            $this->assertSame( array( 'error' => eZError::KERNEL_ACCESS_DENIED ),
+                               $view->run( array( 'Params' => array( 'Module' => $module, 'Tab' => 'setup' ) ) ) );
+            $this->assertSame( array( array( eZError::KERNEL_ACCESS_DENIED, 'kernel' ) ), $module->errors );
+            $this->assertSame( array( 'error' => eZError::KERNEL_NOT_AVAILABLE ),
+                               $view->run( array( 'Params' => array( 'Module' => $module, 'Tab' => 'content' ) ) ) );
+        }
+        finally
+        {
+            if ( $saved === null )
+                unset( $GLOBALS[$key] );
+            else
+                $GLOBALS[$key] = $saved[0];
+        }
+    }
+
     /** MM-08 */
     public function testTheUsersTabReusesTheMenusThatDefineItsLinks()
     {
