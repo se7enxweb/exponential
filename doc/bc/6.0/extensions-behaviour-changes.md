@@ -205,7 +205,29 @@ drafts, and publish. See the [API specification](../../specifications/6.0/explay
 - The copyright notices in the extensions name "1998 - 2026 7x & Exponential Foundation" first, above the original
   eZ Systems notices, which stay as the GPL requires.
 
+## 11. REST API v1 and v2 come from one extension; ezprestapiprovider is deprecated
+
+**What changed (15 October 2026).** `ezprestapi` 1.2.6 serves REST API v1 and v2 alone: one provider class,
+`ezp7xRestApiProvider`, for the prefixes `ezp` and `ezpl`, one route table, one OAuth2 setup. `ezprestapiprovider`
+6.0.4 is its final release and a compatibility shim: `ezpRestApiProvider` and `ezpRestContentController` extend the
+classes of `ezprestapi`, its `rest.ini` maps `ezp` and `ezpl` to `ezp7xRestApiProvider`, and the five classes it
+duplicated are gone. Before, when `ezprestapiprovider` was listed earlier in `ActiveExtensions` or active alone (as
+the setup wizard used to activate it), every `/api/ezp/v2/...` route answered 404 and the v1 reads ran without the
+permission checks. Now every combination routes every URL to `ezp7xRestContentController`. `OutputFormat=xhtml`
+fills `renderedOutput` again; every other v1 and v2 answer is unchanged.
+
+**How to check.** `grep -rn "ezprestapiprovider\|ezpRestApiProvider\|ezpRestContentController" settings/override extension/*/settings extension/*/classes`
+finds the activation, a `rest.ini` override that names the old provider, and code that extends the old controller.
+
+**How to fix.** Keep or add `ActiveExtensions[]=ezprestapi` and remove `ActiveExtensions[]=ezprestapiprovider`;
+change `ProviderClass[ezp]=ezpRestApiProvider` to `ezp7xRestApiProvider`; then
+`php bin/php/ezcache.php --clear-tag=ini --allow-root-user`, `php bin/php/ezpgenerateautoloads.php -e`, reload
+PHP-FPM and restart Velocity. Nothing changes for OAuth clients, tokens, personal API keys or v1 URLs. The steps and
+the before and since table are in [REST API v1 and v2: one extension](../../guides/rest-api-v1-and-v2.md).
+
 ## Related pages
+
+- [REST API v1 and v2: one extension](../../guides/rest-api-v1-and-v2.md)
 
 - [YUI removed from Exponential](yui-removal.md)
 - [Commands, cronjob parts and module views as classes](cli_cronjob_view_abstractions.md)

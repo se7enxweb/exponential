@@ -64,7 +64,7 @@ the checkouts.
 | 31 Aug - 5 Sep 2024 | 6.0.4 | `sevenx_valkey` (Valkey/Redis support) added, then moved to `suggest` in the same release so installs without a Redis server do not fail |
 | 1 and 18 Oct 2024 | 6.0.5, 6.0.6 | `ezownerchange` and `git_manager` suggested |
 | 2 Nov 2024 | 6.0.6 | `ezupdate` added |
-| 13 May 2025 | 6.0.9 | `ezprestapi` 1.2 added: create, read, update and delete content through a REST API |
+| 13 May 2025 | 6.0.9 | `ezprestapi` 1.2 added: create, read, update and delete content through a REST API (since 1.2.6 the one extension for REST API v1 and v2; the root `composer.json` of 6.0.15 requires `ezprestapi ~1.2.6` and no longer `ezprestapiprovider`, see [REST API v1 and v2](../../guides/rest-api-v1-and-v2.md)) |
 | 13 Aug 2025 | 6.0.10 | `sevenx_themes_simple` added so the default theme is always distributed |
 
 Some entries moved between `suggest` and `require` later: today `ezoracle` and `git_manager` are in `require`, while

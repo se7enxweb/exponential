@@ -104,7 +104,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **ezpaypal**: the PayPal payment gateway. [ezpaypal](features/6.0/extensions/ezpaypal.md).
 - **ezpkg**: the package archive format (`.ezpkg`) holding content, classes, templates and files. [ezpm](features/6.0/ezpm-package-manager-cli.md), [Package compare and import](features/6.0/package-compare-and-import.md).
 - **ezpm** (command): the package manager on the command line (`ezpm.php`). [ezpm](features/6.0/ezpm-package-manager-cli.md). Not to be confused with the **ezpm extension**, which provides private messages: [ezpm extension](features/6.0/extensions/ezpm.md).
-- **ezprestapi**: the REST API provider for remote content updates. [ezprestapi](features/6.0/extensions/ezprestapi.md).
+- **ezprestapi**: the REST API extension that serves REST API v1 and v2 (reads at both, writes at v2) for remote content updates; it replaces the deprecated **ezprestapiprovider**. [ezprestapi](features/6.0/extensions/ezprestapi.md), [REST API v1 and v2](guides/rest-api-v1-and-v2.md).
 - **ezstarrating**: a star rating datatype. [ezstarrating](features/6.0/extensions/ezstarrating.md).
 - **eztags**: a tag datatype with a managed tag tree. [eztags](features/6.0/extensions/eztags.md).
 - **ezupdate**: the package and update checker of an installation. [ezupdate](features/6.0/extensions/ezupdate.md).

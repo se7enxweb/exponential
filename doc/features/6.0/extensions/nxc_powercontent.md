@@ -10,7 +10,8 @@ Powercontent", originally by NXC) extends how code creates, updates and removes 
 - **no new version is created** when an object is updated.
 
 In the Exponential 6 period it was extended for the REST extension [ezprestapi](ezprestapi.md), where it provides the
-create, update and delete calls (1.1.0, October 2024).
+create and delete calls of REST API v2 (1.1.0, October 2024; update is checked, then answers 501). Since `ezprestapi`
+1.2.6 that one extension serves REST API v1 and v2; see [REST API v1 and v2](../../../guides/rest-api-v1-and-v2.md).
 
 ## List content classes in a template: `class_list`
 
@@ -60,7 +61,7 @@ See [Subitems "More actions" menu](../../../bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_ME
 
 ## Related pages
 
-- [ezprestapi](ezprestapi.md)
+- [ezprestapi](ezprestapi.md) and [REST API v1 and v2](../../../guides/rest-api-v1-and-v2.md)
 - [Copy selected sub-items](../subitems-copy-selected.md)
 - [Velocity engines](../../../bc/6.0/velocity-engines.md)
 - [Chronicle](../../../history/extensions/nxc_powercontent.md) and [release notes](../../../changelogs/extensions/nxc_powercontent.md)

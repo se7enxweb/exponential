@@ -16,6 +16,7 @@ addresses and host names are shortened or replaced by documentation values (`exa
 
 [Guides](README.md) · Related: [Remote services and apps](remote-services-and-apps.md) (the `expservices` tokens) ·
 [ezprestapi](../features/6.0/extensions/ezprestapi.md) (the REST content routes) ·
+[REST API v1 and v2](rest-api-v1-and-v2.md) ·
 [Security and audit](security-and-audit.md) · Change note: [doc/bc/6.0/api-keys.md](../bc/6.0/api-keys.md)
 
 ## In short
@@ -124,9 +125,10 @@ scopes, when it was made, when and from which address it was last used, and when
 ## 3. Using a key with curl
 
 Send the key in the `Authorization` header with the `Bearer` scheme. The examples read node 2 through the
-`ezp` content provider. With the `ezprestapi` extension (1.2.5 or later) the reads answer at version 1 and version 2
-(`/api/ezp/v1/...` and `/api/ezp/v2/...`) and the writes at version 2; with `ezprestapiprovider` alone everything is
-version 1 and read only. The API access page shows the path of your installation in its example.
+`ezp` content provider. The `ezprestapi` extension serves both versions: the reads answer at version 1 and version 2
+(`/api/ezp/v1/...` and `/api/ezp/v2/...`) and the writes at version 2. The deprecated `ezprestapiprovider` 6.0.4 is a
+shim that maps to the same provider ([REST API v1 and v2](rest-api-v1-and-v2.md)). The API access page shows the path
+of your installation in its example.
 
 ```bash
 export EXP_API_KEY='expk_...'
@@ -178,13 +180,14 @@ with urllib.request.urlopen(request) as answer:
 
 The `ezprestapi` extension serves the `ezp` provider. Reads answer at `v1` and `v2`; `v1` is the API that existing
 clients call (a mobile app reads `/api/ezp/v1/content/node/<id>/list/offset/0/limit/20?ResponseGroups=Fields`), and
-the links in its answers stay in `v1`. Writes answer at `v2` only.
+the links in its answers stay in `v1`. Writes answer at `v2` only. The full route table, OAuth2 and the configuration
+are in [REST API v1 and v2: one extension](rest-api-v1-and-v2.md).
 
 | Method | Path below `/api/ezp/v1` and `/api/ezp/v2` | What it does |
 |---|---|---|
 | `GET` | `/content/node/<id>` and `/content/object/<id>` | one node or object (`ResponseGroups=Metadata,Locations,Fields`) |
 | `GET` | `/content/node/<id>/list(/offset/<n>)(/limit/<n>)(/sort/<key>(/asc\|desc))` | the children |
-| `GET` | `/content/node/<id>/childrenCount`, `.../fields`, `.../field/<identifier>`, `.../listAtom` | counts, fields, Atom |
+| `GET` | `/content/node/<id>/childrenCount`, `.../fields`, `.../field/<identifier>`, `.../listAtom` | counts, fields, Atom (`listAtom` answers 500, a [known issue](rest-api-v1-and-v2.md#8-known-issue-listatom)) |
 | `POST` | `/content/node/create` (v2) | create and publish below `parentNodeID` |
 | `DELETE` or `POST` | `/content/node/delete/<id>` (v2) | remove the node's object with all its locations and what is below them |
 | `POST` | `/content/node/<id>` (v2) | update: checks content/edit, then answers 501, updating is not implemented yet |

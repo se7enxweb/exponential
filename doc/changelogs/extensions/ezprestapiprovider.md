@@ -4,6 +4,22 @@ Read this page before you install or update `ezprestapiprovider`, or to find out
 
 What each release of `ezprestapiprovider` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../features/6.0/extensions/ezprestapiprovider.md); the story is in the [chronicle](../../history/extensions/ezprestapiprovider.md).
 
+## v6.0.4 (2026-10-15)
+
+Final release: the extension is deprecated and becomes a compatibility shim on top of ezprestapi 1.2.6. See [REST API v1 and v2: one extension](../../guides/rest-api-v1-and-v2.md#6-migrating-from-ezprestapiprovider).
+
+**Updated**
+
+- The provider and content controller extend those of ezprestapi, which serves REST API v1 and v2 ([`7b6c416`](https://github.com/se7enxweb/ezprestapiprovider/commit/7b6c416))
+- The extension is marked deprecated in its name and README, with the migration to ezprestapi ([`0ec53e1`](https://github.com/se7enxweb/ezprestapiprovider/commit/0ec53e1))
+
+**Removed**
+
+- The atom controller, views, content model and view controller, which ezprestapi ships under the same names ([`8a04d46`](https://github.com/se7enxweb/ezprestapiprovider/commit/8a04d46))
+- The model tests, which moved to ezprestapi with the content model ([`10c4f91`](https://github.com/se7enxweb/ezprestapiprovider/commit/10c4f91))
+
+1 version, merge or metadata commit not listed ([`0f19d6e`](https://github.com/se7enxweb/ezprestapiprovider/commit/0f19d6e)).
+
 ## v6.0.3 (2026-10-02)
 
 **Updated**

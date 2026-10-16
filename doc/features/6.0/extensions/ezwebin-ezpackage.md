@@ -54,6 +54,8 @@ folder at all, so the extension-schema step is not used for it.
 - The list of extensions the installer activates grew: `ezautosave`, `ezodf`, `ezie`, `ezprestapiprovider`, the theme
   extension, `ezpaypal`, `owsimpleoperator`, `swark`, `bcgooglesitemaps`, `bcwebsitestatistics`, `bccie`,
   `xrowextract`, `bcwebshop`, `ezwebin`, `ezmultiupload`.
+- From the 6.0.15 packages of 15 October 2026 on, the installer activates `ezprestapi` instead of `ezprestapiprovider`
+  (deprecated; `ezprestapi` serves REST API v1 and v2 alone, see [REST API v1 and v2](../../../guides/rest-api-v1-and-v2.md)).
 - The theme extension is `sevenx-themes-simple` (`solutionExtensionName()`).
 - The language based siteaccesses are no longer created (the siteaccess list is the user and admin one).
 - The var directory is `var/site`.

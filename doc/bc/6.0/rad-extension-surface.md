@@ -484,7 +484,7 @@ so a lower case value that names no class is an *alias* doing its job. A row mar
 | --- | --- | --- | --- |
 | `ApiProvider` | `ProviderClass[auth]` | `ezpRestAuthProvider` | `kernel/private/rest/classes/auth/auth_provider.php` |
 | `ApiProvider` | `ProviderClass[ezp]` | `ezp7xRestApiProvider` | `extension/ezprestapi/classes/rest_provider.php` |
-| `ApiProvider` | `ProviderClass[ezp]` | `ezpRestApiProvider` | `extension/ezprestapiprovider/classes/rest_provider.php` |
+| `ApiProvider` | `ProviderClass[ezp]`, `ProviderClass[ezpl]` (set again by the deprecated `ezprestapiprovider` 6.0.4 shim) | `ezp7xRestApiProvider` | `extension/ezprestapi/classes/rest_provider.php` |
 | `ApiProvider` | `ProviderClass[ezpl]` | `ezp7xRestApiProvider` | `extension/ezprestapi/classes/rest_provider.php` |
 | `Authentication` | `AuthenticationStyle` | `ezpRestOauthAuthenticationStyle` | `kernel/private/rest/classes/auth/styles/oauth.php` |
 | `OutputSettings` | `RendererClass[xhtml]` | `ezpContentXHTMLRenderer` | `kernel/private/rest/classes/renderers/xhtml_content_renderer.php` |

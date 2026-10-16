@@ -4,6 +4,19 @@ Read this page before you install or update `ezprestapi`, or to find out which r
 
 What each release of `ezprestapi` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../features/6.0/extensions/ezprestapi.md); the story is in the [chronicle](../../history/extensions/ezprestapi.md).
 
+## v1.2.6 (2026-10-15)
+
+**Added**
+
+- The model tests of the REST content services, moved from ezprestapiprovider ([`400290b`](https://github.com/se7enxweb/ezprestapi/commit/400290b))
+
+**Updated**
+
+- The XHTML output of a node read finds its template again ([`6ecf9b7`](https://github.com/se7enxweb/ezprestapi/commit/6ecf9b7))
+- The name, description and README say the extension serves REST API v1 and v2 and replaces ezprestapiprovider ([`c71b44c`](https://github.com/se7enxweb/ezprestapi/commit/c71b44c))
+
+1 version, merge or metadata commit not listed ([`8ec7883`](https://github.com/se7enxweb/ezprestapi/commit/8ec7883)). See [REST API v1 and v2: one extension](../../guides/rest-api-v1-and-v2.md).
+
 ## v1.2.5 (2026-10-06)
 
 **Updated**

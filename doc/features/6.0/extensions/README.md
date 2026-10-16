@@ -65,8 +65,8 @@ step (tables, policies, keys).
 
 | Extension | What it is |
 |---|---|
-| [ezprestapi](ezprestapi.md) | REST content provider |
-| [ezprestapiprovider](ezprestapiprovider.md) | REST provider classes |
+| [ezprestapi](ezprestapi.md) | REST API v1 and v2 |
+| [ezprestapiprovider](ezprestapiprovider.md) | deprecated shim, use ezprestapi |
 | [ezxmlexport](ezxmlexport.md) | XML export |
 | [nxc_powercontent](nxc_powercontent.md) | content from code and REST |
 | [syndication](syndication.md) | content syndication |

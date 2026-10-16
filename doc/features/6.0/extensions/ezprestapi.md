@@ -4,6 +4,11 @@ This page is for developers who publish content into Exponential from scripts an
 REST API provider (versions 1 and 2 of the `ezp` API) for **updating content remotely**: other systems list, read, create and
 delete nodes over HTTP with an OAuth token. It is a registered provider of the kernel's REST framework.
 
+Since 1.2.6 it serves REST API v1 and v2 as **one** extension: one activation (`ActiveExtensions[]=ezprestapi`), one
+provider class for the prefixes `ezp` and `ezpl`, one route table, one OAuth2 setup. It replaces the deprecated
+[ezprestapiprovider](ezprestapiprovider.md). The guide [REST API v1 and v2: one extension](../../../guides/rest-api-v1-and-v2.md)
+has the routes, authentication, configuration and the migration.
+
 ## How it is wired
 
 The provider classes are named in `rest.ini`:
@@ -22,10 +27,19 @@ writes at `v2` only. With the prefixes `ezp` and `ezpl` they answer, for example
 `v1`. Before 1.2.5 that took `v1` away (every `/api/ezp/v1/...` answered 404) although existing clients, a mobile app
 among them, read through it; since 1.2.5 this provider serves the `v1` reads itself. That needs the kernel of
 Exponential 6.0.15, whose versioned routes take a list of versions; on an older kernel the routes are `v2` only, as
-before.
+before. Since 1.2.6 `ezprestapiprovider` (6.0.4) sets the same provider class, so every combination of the two
+extensions routes every content URL to `ezp7xRestContentController`.
 
-The create, update and delete calls are backed by [nxc_powercontent](nxc_powercontent.md). Authentication is the REST
-framework's OAuth2: obtain a token (for example with a password grant) and send it as the `oauth_token` parameter.
+The template of `OutputFormat=xhtml` is set for this extension's controller (1.2.6):
+
+```ini
+[ezp7xRestContentController_viewContent_OutputSettings]
+Template=rest_pagelayout.tpl
+```
+
+The create and delete calls are backed by [nxc_powercontent](nxc_powercontent.md) (an update is checked, then answers 501). Authentication is the REST
+framework's OAuth2: obtain a token at `POST /api/auth/v1/oauth/token` (grants `authorization_code` and
+`refresh_token`) and send it as the `oauth_token` parameter or the `Authorization: OAuth` header.
 A user can also make a [personal API key](../../../guides/api-keys.md) on the site and send it as
 `Authorization: Bearer expk_...`; the create, update and delete routes then need the key's `publish`, `edit` or
 `remove` scope as well (`rest.ini [ApiKeySettings] RouteScopes[]`, `RouteGuards[]`).
@@ -63,7 +77,7 @@ Registered by `ezp7xRestApiProvider` (`classes/rest_provider.php`); all but the 
 | `GET /content/node/:nodeId/list...` (a regular expression route) | v1, v2 | List children (offset, limit, sort) |
 | `GET /content/node/:nodeId/fields`, `.../field/:fieldIdentifier`, `.../childrenCount` | v1, v2 | Fields and counts |
 | `GET /content/object/:objectId`, `.../fields`, `.../field/:fieldIdentifier` | v1, v2 | The same by object id |
-| `GET /content/node/:nodeId/listAtom` (`ezpRestAtomController`) | v1, v2 | Atom feed |
+| `GET /content/node/:nodeId/listAtom` (`ezpRestAtomController`) | v1, v2 | Atom feed (answers 500: [known issue](../../../guides/rest-api-v1-and-v2.md#8-known-issue-listatom)) |
 | `POST /content/node/create` | v2 | Create and publish content |
 | `DELETE` or `POST /content/node/delete/:nodeId` | v2 | Remove the node's object |
 | `POST /content/node/:nodeId` | v2 | Update (checked, then 501: not implemented yet) |
@@ -105,12 +119,16 @@ credentials or tokens in a script, or in shell history on shared machines.
 | 1.2.0 | 29 October 2024 | Initial import of the solution's dependencies, funding information and the example client. |
 | 1.2.1 to 1.2.4 | 27 September to 2 October 2026 | Version, license and website; description; 7x and Exponential Foundation headers on the entry point files; commands and cronjob parts are classes the files call and start through the shared helpers. |
 | 1.2.5 | 6 October 2026 | Every read and write checks the current user's policies for every kind of authentication; reads answer at v1 again; delete takes `DELETE`; create and delete answer 201 and 200 with the ids. Needs Exponential 6.0.15 for the checks and v1. |
+| 1.2.6 | 15 October 2026 | `OutputFormat=xhtml` renders again (`[ezp7xRestContentController_viewContent_OutputSettings] Template=rest_pagelayout.tpl`; it answered an empty `renderedOutput`); name, description and README say the extension serves REST API v1 and v2 and replaces ezprestapiprovider; the model tests moved in from ezprestapiprovider. |
 
-[ezprestapiprovider](ezprestapiprovider.md) is the sibling package with the provider classes alone.
+[ezprestapiprovider](ezprestapiprovider.md) is deprecated; its final release, 6.0.4, is a compatibility shim that
+extends this extension's provider and controller. See the
+[migration](../../../guides/rest-api-v1-and-v2.md#6-migrating-from-ezprestapiprovider).
 
 ## Related pages
 
-- [nxc_powercontent](nxc_powercontent.md), [ezprestapiprovider](ezprestapiprovider.md)
+- [REST API v1 and v2: one extension](../../../guides/rest-api-v1-and-v2.md)
+- [nxc_powercontent](nxc_powercontent.md), [ezprestapiprovider](ezprestapiprovider.md) (deprecated)
 - [Remote services (expservices)](../remote-services-expservices.md)
 - [Personal API keys](../../../guides/api-keys.md): REST requests with a key of the user
 - [CLI, cronjob and view abstractions](../../../bc/6.0/cli_cronjob_view_abstractions.md)
