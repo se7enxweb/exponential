@@ -97,7 +97,13 @@ class eZURL extends eZPersistentObject
     static function registerURL( $url )
     {
         $urlID = null;
-        $urlObject = self::fetchByUrl( $url );
+        // Exact match only. fetchByUrl() compares with the collation of the column (utf8mb4_general_ci:
+        // case and accents are ignored, ß equals s), and the branch below then overwrote the row it found with the new
+        // spelling, re-pointing every other link stored with that url_id. Measured on a real site: the
+        // ezoe round trip saved lessons linking .../wiki/Present_perfect, and the link .../wiki/Present_Perfect
+        // (another wiki page) of 26 lessons pointed there afterwards. A different spelling now gets its own row,
+        // so the branch below that updates a mismatch no longer runs.
+        $urlObject = self::fetchExactByUrl( $url );
 
         if ( !$urlObject instanceof eZURL )
         {
@@ -108,7 +114,8 @@ class eZURL extends eZPersistentObject
         }
         else
         {
-            // Mismatch => most likely case sensitivity difference, so update the url
+            // fetchExactByUrl() returns only a byte-identical row, so this no longer runs; kept so a
+            // merge with upstream stays small (upstream updated a row found with another spelling here)
             if ( $urlObject->attribute( 'url' ) !== $url )
             {
                 $urlObject->setAttribute( 'url', $url );
@@ -230,6 +237,44 @@ class eZURL extends eZPersistentObject
     static function fetchList( $parameters = array() )
     {
         return eZURL::handleList( $parameters, false );
+    }
+
+    /**
+     * The row whose url is exactly $url (byte for byte, whatever the collation of the column), or null.
+     *
+     * Looked up through the indexed url column, which compares with its collation (utf8mb4_general_ci: case and
+     * accents are ignored, ß equals s), so it returns every spelling the collation holds equal; pickExact() keeps
+     * the byte-identical one. original_url_md5 is not used: it has no index, and it goes stale when an address is
+     * edited in the URL admin or comes from a package.
+     *
+     * @param string $url
+     * @return eZURL|null
+     */
+    public static function fetchExactByUrl( $url )
+    {
+        $rows = parent::fetchObjectList( self::definition(), null, array( 'url' => $url ), array( 'id' => 'asc' ), null, true );
+        $row = self::pickExact( is_array( $rows ) ? $rows : array(), $url );
+        return $row instanceof eZURL ? $row : null;
+    }
+
+    /**
+     * The first of $rows whose url is byte-identical to $url. $rows are eZURL objects or rows as arrays
+     * with an 'url' key, in the order they should be preferred (lowest id first). No database: the guard of
+     * fetchExactByUrl() and registerURL() without a test database (eZURLExactPickTest).
+     *
+     * @param array $rows
+     * @param string $url
+     * @return eZURL|array|null
+     */
+    public static function pickExact( array $rows, $url )
+    {
+        foreach ( $rows as $row )
+        {
+            $candidate = $row instanceof eZURL ? $row->attribute( 'url' ) : ( is_array( $row ) && isset( $row['url'] ) ? $row['url'] : null );
+            if ( $candidate !== null && (string)$candidate === (string)$url )
+                return $row;
+        }
+        return null;
     }
 
     /**
