@@ -284,7 +284,7 @@ d5da958d6db22f93e9b4cffa6342bef5  design/admin/javascript/node_tabs.js
 c71727095da21bb273294e7524c8934a  design/admin/javascript/page/package_wizard_pick.js
 2ac86d53b617cec7dbbda21cac420f95  design/admin/javascript/page/package_wizard_progress.js
 c67a87f546a7cccb50a8a8e490431b16  design/admin/javascript/page/user_hygiene.js
-9dd4d0ec8254807461fabeb8735d6df0  design/admin/javascript/popupmenu/ezpopupmenu.js
+78207ebe7b007376587e081e178299f0  design/admin/javascript/popupmenu/ezpopupmenu.js
 54cb1a1df10aa18ea280c08a9d97a328  design/admin/override/templates/admin_preview/article.tpl
 fa42107d7f6c82b26eed48050374e9a5  design/admin/override/templates/admin_preview/comment.tpl
 0c4cec334b8bff8d319219e52813802e  design/admin/override/templates/admin_preview/company.tpl
@@ -960,7 +960,7 @@ f54cbd1c331138f6d48cb29ff965f279  design/admin4/javascript/page/user_unactivated
 74380a13a68587eb55e14865bbf13a21  design/admin4/javascript/page/visual_templateview.js
 b3cd59ff00eb7647bd391d81a416208d  design/admin4/javascript/page/workflow_event_ezwaituntildate.js
 36237ad3744c1c1ab63454f6c7306164  design/admin4/javascript/page/workflow_processlist.js
-9dd4d0ec8254807461fabeb8735d6df0  design/admin4/javascript/popupmenu/ezpopupmenu.js
+78207ebe7b007376587e081e178299f0  design/admin4/javascript/popupmenu/ezpopupmenu.js
 b7f849d6bf02ccfe396b3e8dc5919e53  design/admin4/javascript/subitems_priority_drag.js
 54cb1a1df10aa18ea280c08a9d97a328  design/admin4/override/templates/admin_preview/article.tpl
 fa42107d7f6c82b26eed48050374e9a5  design/admin4/override/templates/admin_preview/comment.tpl
@@ -3163,7 +3163,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-4305ed3bca8ef9df259fae1d0da287e8  doc/changelogs/6.0/6.0.15.md
+deaa1b415986ff6f41f74852ea78070c  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3504,7 +3504,7 @@ b3bd05989174b0c7f3c8a05ca5ca4c77  doc/features/6.0/content-checks.md
 7c5f248706ac05dd54ed07abbcb7bb83  doc/features/6.0/content-finder.md
 f1c1fb56a9242d2efa91dd58ead7449e  doc/features/6.0/content-jobs.md
 0e0369149f51247d6b31d8fcfe8fb949  doc/features/6.0/content-limitation-handlers.md
-82ce2292191bb6642411c7f3355c8760  doc/features/6.0/content-security-policy.md
+0fbaabc80e554c195fe95351cb1dcd61  doc/features/6.0/content-security-policy.md
 d2aeb94cafe09e6bda98c15168826937  doc/features/6.0/country-groups.md
 75c167003b97bad4b0226315b2182509  doc/features/6.0/cronjob-part-filter.md
 35be9b689349870dbd25f7737b4c0cb6  doc/features/6.0/cronjob-pause.md
@@ -7545,7 +7545,7 @@ eda9b8b5d6f655b77038c6f2ff4ad65a  tests/tests/design/AdminBaseStylesheetsTest.ph
 913c142ba568d53a81be2b3a901ab0b2  tests/tests/design/AdminBrowseCurrentNodeTest.php
 a15f60da55163c3055ee1c45bfd5a806  tests/tests/design/AdminCardsTest.php
 4c1842f31412696db9bc99468ed2320e  tests/tests/design/AdminContentEditFormsTest.php
-4292fc0731db6b7371f3c7fa1c091a1c  tests/tests/design/AdminContentSecurityPolicyTest.php
+7e79431c819f4645d63548b3e4e5a9f6  tests/tests/design/AdminContentSecurityPolicyTest.php
 fe3dc1cb5fc7bb3c520b6f1257d0a420  tests/tests/design/AdminContextMenuNestedSubmenuTest.php
 9199e2e95fe9c5fca76132b8b74bc5c4  tests/tests/design/AdminContextMenuTest.php
 4d74467440667bcee486bbf13d6db653  tests/tests/design/AdminCreateLanguagesTitleTest.php

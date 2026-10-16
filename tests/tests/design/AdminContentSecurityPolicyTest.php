@@ -349,6 +349,18 @@ class AdminContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
         }
     }
 
+    /** CSP-05: the declared menus live in menuArray, which an example must not tell anyone to assign anew */
+    public function testTheMenuScriptDoesNotSuggestAssigningMenuArray()
+    {
+        foreach ( array( 'admin4', 'admin' ) as $design )
+        {
+            $js = (string)file_get_contents( self::root() . "/design/$design/javascript/popupmenu/ezpopupmenu.js" );
+            $this->assertDoesNotMatchRegularExpression( '/^\s*(var\s+)?menuArray\s*=\s*(new Array\(\)|\{\})\s*;/m', $js, $design );
+            $this->assertStringContainsString( 'never assign it anew', $js, $design );
+            $this->assertStringContainsString( 'window.menuArray = _declaringMenus(', $js, $design );
+        }
+    }
+
     /** CSP-06 */
     public function testTheTreeIsDrawnFromItsData()
     {

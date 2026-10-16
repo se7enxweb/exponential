@@ -151,5 +151,19 @@ identical to admin4's; the other templates of the classic admin design are uncha
 - **Extensions** that write inline scripts or handlers into admin pages (their own menu items, page scripts) are
   reported until they move to files and `data-*` attributes as described above.
 
+### Before enforcing on the administration
+
+- **Menu items of extensions.** An extension that adds context menu items with an inline script
+  (`menuArray['ContextMenu']['elements'][...] = ...`) and `onmouseover`/`onclick` attributes - for example the menus of
+  xrowextract, ezodf (the OpenOffice import/export entries) and ezmultiupload (the Multi Upload entry of the context menus) - works
+  under report-only. Under an enforced policy the browser runs neither the script nor the handlers: the entries are
+  still drawn but do nothing, without an error on the page. Convert them to `data-menu-*` (as the core menus are)
+  before you set `Mode=enforce`, or keep `'unsafe-inline'` in `script-src` for that siteaccess.
+- **`menuArray` assigned anew.** `ezpopupmenu.js` creates `menuArray`, and creates the entry of a menu declared with
+  `data-menu-*` the first time it is asked for. A script that assigns it anew (`var menuArray = new Array();`,
+  `menuArray = {};`) replaces that: the declared core menus (context menu, sub-items, class, bookmark menus and their
+  submenus) then no longer open. Add to `menuArray`, never assign it.
+- **Plugins and inline PDF**: see `object-src` above.
+
 A nonce for inline scripts is not offered on purpose: the admin pagelayout, its menus and the tree sit in cache-blocks,
 and a cached nonce would no longer match the header of the next request.

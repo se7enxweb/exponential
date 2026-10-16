@@ -99,11 +99,14 @@ An example example with a menu and a submenu.
     Each item can contain the following properties:
       + "url": The URL that this element should point at. Put the part that should be substituted within "%" symbols.
 
-The following example configures the menu created in step 1.
+The following example configures the menu created in step 1. menuArray exists once this file is loaded: add to it,
+never assign it anew (var menuArray = new Array() or menuArray = {} replaces it, and the menus declared with data-menu-*
+attributes, see below, are no longer created on first use). Without an inline script, the same menu is declared with
+data-menu-depth on the menu and data-menu-url on its items (preferred: a page under a Content Security Policy without
+'unsafe-inline' runs no inline script).
 --------------------------------------------------------------------------------
-<script language="JavaScript1.2" type="text/javascript">
+<script type="text/javascript">
 
- var menuArray = new Array();
  <!-- main menu -->
  menuArray['mainmenu'] = {};
  menuArray['mainmenu']['depth'] = 0;
