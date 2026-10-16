@@ -14444,6 +14444,10 @@ Note: The packages will not be uninstalled.</translation>
         <translation>The toolbars and their tools.</translation>
     </message>
     <message>
+        <source>The menus of the classic site designs.</source>
+        <translation>The menus of the classic site designs.</translation>
+    </message>
+    <message>
         <source>List and edit templates.</source>
         <translation>List and edit templates.</translation>
     </message>

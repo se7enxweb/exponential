@@ -9,7 +9,7 @@ DesignExtensions[]=mysite_menus
 #   ("mysite" is a design in your siteaccess's SiteDesign or AdditionalSiteDesignList)
 
 # settings/siteaccess/<siteaccess>/menu.ini.append.php
-# a fifth arrangement, offered on Setup > Menus (classic) from then on
+# a fifth arrangement, offered on Design > Menus (classic) from then on
 [MenuSettings]
 AvailableMenuArray[]=MyTopAndSection
 

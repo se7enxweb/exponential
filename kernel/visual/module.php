@@ -32,7 +32,7 @@ $ViewList["toolbar"] = array(
 
 $ViewList["menuconfig"] = array(
     "script" => "menuconfig.php",
-    'default_navigation_part' => 'ezsetupnavigationpart',
+    'default_navigation_part' => 'ezvisualnavigationpart',
     'single_post_actions' => array( 'StoreButton' => 'Store',
                                     'SelectCurrentSiteAccessButton' => 'SelectCurrentSiteAccess' ),
     "params" => array(),

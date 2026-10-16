@@ -89,6 +89,43 @@ class AdminLeftMenuGroupsTest extends PHPUnit\Framework\TestCase
             $this->assertContains( $key, $seen, "Links[{$key}] of Leftmenu_setup is in no group" );
     }
 
+    /**
+     * "Site and URLs" opens with Preload Sites, RSS and Packages and ends with RAD, in Links[] as well (the order a group and
+     * a menu without groups draw). The classic menus (visual/menuconfig) are a link of the Design menu, after the toolbars,
+     * not of Setup, and their page marks the Design tab.
+     */
+    public function testTheSiteGroupOpensWithPreloadRssPackagesAndTheClassicMenusAreInTheDesignMenu()
+    {
+        $setup = self::iniSection( 'Leftmenu_setup' );
+        $site = array( 'preload', 'rss', 'packages', 'pdf_export', 'search_statistics', 'url_management', 'url_translator', 'url_wildcards', 'rad' );
+        $this->assertSame( $site, $setup['GroupLinks_site'] );
+        // a group draws its links in the order of Links[] (parts/ini_menu.tpl), so Links[] holds them in the same order
+        $this->assertSame( $site, array_values( array_intersect( array_keys( $setup['Links'] ), $site ) ) );
+
+        foreach ( array( 'Links', 'LinkIcons', 'LinkDescriptions' ) as $setting )
+            $this->assertArrayNotHasKey( 'menu_management', $setup[$setting], "$setting [Leftmenu_setup]" );
+        $this->assertArrayNotHasKey( 'PolicyList_menu_management', $setup );
+        foreach ( $setup['Groups'] as $group )
+            $this->assertNotContains( 'menu_management', $setup["GroupLinks_$group"] ?? array(), "GroupLinks_{$group}[]" );
+
+        $design = self::iniSection( 'Leftmenu_design' );
+        $this->assertSame( array( 'look_and_feel', 'toolbar_management', 'menu_management', 'template_editor' ), array_keys( $design['Links'] ) );
+        $this->assertSame( 'visual/menuconfig', $design['Links']['menu_management'] );
+        $this->assertSame( array( 'visual/*' ), $design['PolicyList_menu_management'] ?? null );
+        $this->assertSame( 'menu-button-wide', $design['LinkIcons']['menu_management'] ?? null );
+        $this->assertSame( 'The menus of the classic site designs.', $design['LinkDescriptions']['menu_management'] ?? null );
+
+        // the page marks the Design tab, so the Design menu is drawn beside it
+        $this->assertMatchesRegularExpression( '/\$ViewList\["menuconfig"\] = array\(\s*"script" => "menuconfig\.php",\s*\'default_navigation_part\' => \'ezvisualnavigationpart\',/', self::read( 'kernel/visual/module.php' ) );
+        // every copy of the Design menu names the link the same way
+        foreach ( array( 'design/admin', 'design/admin4', 'extension/exp_adminui/design/adminui' ) as $design )
+        {
+            $path = "$design/templates/parts/visual/menu.tpl";
+            if ( is_file( dirname( __DIR__, 3 ) . '/' . $path ) )
+                $this->assertStringContainsString( "'menu_management',    'Menus (classic)'|i18n( 'design/admin/parts/visual/menu' )", self::read( $path ), $path );
+        }
+    }
+
     public function testAiAndUpdatesAreTheLastGroupsBeforeMore()
     {
         $setup = self::iniSection( 'Leftmenu_setup' );

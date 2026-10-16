@@ -16817,6 +16817,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Die Werkzeugleisten und ihre Werkzeuge.</translation>
     </message>
     <message>
+        <source>The menus of the classic site designs.</source>
+        <translation>Die Menüs der klassischen Site-Designs.</translation>
+    </message>
+    <message>
         <source>List and edit templates.</source>
         <translation>Templates auflisten und bearbeiten.</translation>
     </message>

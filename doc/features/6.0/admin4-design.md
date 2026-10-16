@@ -265,6 +265,11 @@ in no group).
   `CheckViewAccess`, `NoAccessLinks`) are the menu's: a function the user may not open has no tile, and an
   extension's link appears by adding it to `[Leftmenu_setup] Links[]`, as for the menu: in the group that names it in
   `GroupLinks_<group>[]`, else under "More". The order inside a group is that of `Links[]`.
+- **Site and URLs** opens with Preload Sites, RSS and Packages, then PDF export, the search statistics and the URL
+  functions, and ends with RAD (`GroupLinks_site[]`, and `Links[]` in the same order, since a group draws its links in
+  the order of `Links[]`). The classic menus (`menu_management`, `visual/menuconfig`) are not a Setup link: they are in the Design
+  tab's left menu (`[Leftmenu_design]`, after Toolbar management), and so in the Design group while that tab is left
+  out; their page marks the Design tab.
 - **Groups for extensions.** "AI" and "Updates" hold the Setup links of the se7enx extensions, already named in core
   `menu.ini`, so they do not land under "More" where an unsorted entry looks out of place: `expai` (`expai_summary`,
   `expai_models`, `expai_budgets`) under AI; `ezupdate` (`ezupdate`) and `git_manager` (`git_manager`,
@@ -307,7 +312,7 @@ in no group).
 | url_management | `link-45deg` | ini | `sliders` |
 | url_translator | `signpost-split` | sitedata | `table` |
 | url_wildcards | `asterisk` | sessions | `people` |
-| menu_management | `menu-button-wide` | notification | `bell` |
+| menu_management (Design menu) | `menu-button-wide` | notification | `bell` |
 | rss | `rss` | mailpreferences | `envelope-paper` |
 | pdf_export | `file-earmark-pdf` | oauth_list | `key` |
 | packages | `box-seam` | audit | `journal-check` |

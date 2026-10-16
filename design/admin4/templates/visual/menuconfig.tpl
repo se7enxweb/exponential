@@ -1,4 +1,4 @@
-{* Setup > Menus (classic): visual/menuconfig.
+{* Design > Menus (classic): visual/menuconfig.
 
    The menu.ini [SelectedMenu] settings of one siteaccess, which only the page layouts of the classic designs read
    (base, ezwebin, the demo and simple designs). The page says what they are, finds for every siteaccess whether its

@@ -1,6 +1,6 @@
-# Classic menus: Setup > Menus (classic), menu.ini and menu templates
+# Classic menus: Design > Menus (classic), menu.ini and menu templates
 
-This guide explains the classic menu settings of Exponential: what the page **Setup > Menus (classic)**
+This guide explains the classic menu settings of Exponential: what the page **Design > Menus (classic)**
 (`/visual/menuconfig`) does, which sites it matters for and which it does not, what each of its four arrangements
 shows a visitor, the recipes most sites need, and how to draw classic menus in templates of your own. It ends with a
 short history and the usual problems.
@@ -16,7 +16,7 @@ on 6 October 2026, and every template example was rendered against the content o
 
 - The classic designs (`design/base`, `ezwebin`, and the demo and simple designs built on them) draw a **top menu**
   and a **left menu** from three settings in `menu.ini [SelectedMenu]`: `CurrentMenu`, `TopMenu` and `LeftMenu`.
-  The page Setup > Menus (classic) picks one of four arrangements per siteaccess and writes those three lines.
+  The page Design > Menus (classic) picks one of four arrangements per siteaccess and writes those three lines.
 - **Sites built with Exponential Layouts do not read them.** Their menus are blocks in a layout, set in the layout
   editor (Layouts tab, `/explayouts_ui/dashboard`). The administration interface does not read them either.
 - The page finds out by itself which siteaccess uses them: it reads the page layout each siteaccess resolves to.
@@ -291,7 +291,7 @@ DesignExtensions[]=mysite_menus
 #   ("mysite" is a design in your siteaccess's SiteDesign or AdditionalSiteDesignList)
 
 # settings/siteaccess/<siteaccess>/menu.ini.append.php
-# a fifth arrangement, offered on Setup > Menus (classic) from then on
+# a fifth arrangement, offered on Design > Menus (classic) from then on
 [MenuSettings]
 AvailableMenuArray[]=MyTopAndSection
 
@@ -326,6 +326,10 @@ apply there. Classic and Layouts siteaccesses can live side by side in one insta
 
 Before 6.0.15 the page saved every `menu.ini` setting the siteaccess read into that file, which froze all the other
 menu settings (the administration tabs among them) for the siteaccess. It now writes the three lines only.
+
+The page is a link of the Design tab's left menu (`menu.ini [Leftmenu_design]`, key `menu_management`, after
+Toolbar management) and marks the Design tab. Until 6.0.15 it was a link of the Setup menu, in the group "Site and
+URLs"; its address is unchanged.
 
 The form keeps its old field names (`CurrentSiteAccess`, `SelectCurrentSiteAccessButton`, `MenuType`, `StoreButton`)
 and works without javascript. `/visual/menuconfig/(siteaccess)/<name>` opens the page for one siteaccess. The page

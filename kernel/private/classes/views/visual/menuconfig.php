@@ -19,7 +19,7 @@ namespace Exponential\View\Kernel\Visual
 {
 
 /**
- * Setup > Menus (classic): the menu.ini [SelectedMenu] settings of a siteaccess, which only the page layouts
+ * Design > Menus (classic): the menu.ini [SelectedMenu] settings of a siteaccess, which only the page layouts
  * of the classic designs read. Which siteaccesses read them is found by \expClassicMenuSiteAccessInspector, the
  * settings are read and written by \expClassicMenuSettings; this view joins the two and the request.
  *
