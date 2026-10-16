@@ -84,8 +84,10 @@ number of rows, the filter and whether e-mail addresses were in it, never the va
 | Changing an account | also `content/edit` on that account's user object |
 | E-mail addresses (column, search, order, the filter *Shared e-mail address*, CSV) | `role/assign`, the same right as the E-mail column of the sub-items table (`settings/subitemscolumns.ini [Column_useremail]`) |
 
-Every change and the CSV are POST requests with the form token of `ezformtoken`; a link cannot change an account
-or start a download. Everyone who may open the page sees the name, login, states, groups and roles of every account
+Every change and the CSV are POST requests with the form token of `ezformtoken`; Confirm also needs the token of
+the confirmation page (the field `HygieneToken`, kept in the session as `expUserHygieneToken`), as Deactivate and
+move does, so a request the page did not make changes nothing even without `ezformtoken`. A link cannot change an
+account or start a download. Everyone who may open the page sees the name, login, states, groups and roles of every account
 (there is no read check per account), so give `user/hygiene` only to the people who look after accounts.
 
 ## Deactivate and move
@@ -150,6 +152,8 @@ For each account, in one transaction (nothing stays when a step fails):
    enabled. An account that is in the group already and has gained locations since keeps its record, and the new
    locations are added to it, so nothing is removed without being remembered;
 2. it is disabled through the operation `user/setsettings` (as **Disable**; its sessions end; `access.user.disable`);
+   it counts as disabled only when the operation continued: a workflow that cancels or halts it leaves the account
+   enabled, and the step fails (the same holds for Disable and Enable of the actions above);
 3. the locations other than the main one are removed (operation `content/removelocation`);
 4. the main location is moved into the group (operation `content/move`); the node keeps its id.
 
