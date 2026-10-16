@@ -174,4 +174,17 @@ class expContentLanguagesOverviewTest extends ezpTestCase
         $this->assertStringContainsString( 'austria', $choices[0]['search'], 'the search still finds the country' );
         $this->assertStringContainsString( 'فارسی', $choices[1]['search'] );
     }
+
+    public function testLocaleChoicesMarkRightToLeftLanguages()
+    {
+        $choices = Translations::localeChoices( array(
+            array( 'code' => 'heb-IL', 'intl_name' => 'Hebrew', 'native_name' => 'עברית', 'country' => 'Israel', 'comment' => '', 'direction' => 'rtl' ),
+            array( 'code' => 'lat-VA', 'intl_name' => 'Latin', 'native_name' => 'Latina', 'country' => 'Vatican City', 'comment' => '', 'direction' => 'ltr' ),
+            array( 'code' => 'ger-DE', 'intl_name' => 'German', 'native_name' => 'Deutsch', 'country' => 'Germany', 'comment' => '' ),
+        ), array() );
+        $this->assertSame( array( 'ger-DE', 'heb-IL', 'lat-VA' ), array_column( $choices, 'code' ) );
+        $this->assertSame( array( false, true, false ), array_column( $choices, 'rtl' ), 'a locale without direction is left to right' );
+        $this->assertStringContainsString( ' rtl', $choices[1]['search'], 'typing rtl finds the right-to-left languages' );
+        $this->assertStringNotContainsString( 'rtl', $choices[2]['search'] );
+    }
 }

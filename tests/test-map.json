@@ -239,7 +239,9 @@
     ],
     "lib/ezlocale/classes/ezlocale.php": [
       "tests/tests/design/AdminLanguageBadgeTest.php",
-      "tests/tests/lib/ezlocale/expLocaleFilesTest.php"
+      "tests/tests/lib/ezlocale/expLocaleFilesTest.php",
+      "tests/tests/lib/ezlocale/expLocaleTextDirectionTest.php",
+      "tests/tests/lib/ezlocale/expLocaleListTest.php"
     ],
     "share/icons/bootstrap-icons/*": [
       "tests/tests/design/AdminIconsTest.php",
@@ -804,7 +806,9 @@
     ],
     "share/locale/*": [
       "tests/tests/lib/ezlocale/expLocaleFilesTest.php",
-      "tests/tests/lib/ezlocale/eZLocaleFormattingTest.php"
+      "tests/tests/lib/ezlocale/eZLocaleFormattingTest.php",
+      "tests/tests/lib/ezlocale/expLocaleTextDirectionTest.php",
+      "tests/tests/lib/ezlocale/expLocaleListTest.php"
     ],
     "tests/tests/design/js/language_states.js": [
       "tests/tests/design/AdminLanguageStatesTest.php"

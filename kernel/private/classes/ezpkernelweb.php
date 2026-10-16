@@ -1703,7 +1703,10 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
             'http_equiv' => array(
                 'Content-Type' => 'text/html; charset=' . $this->httpCharset,
                 'Content-language' => $this->languageCode
-            )
+            ),
+            // 'rtl' when the interface language is written right to left (the pagelayouts print dir="rtl"), else
+            // 'ltr'. method_exists: a Velocity worker started before eZLocale had it keeps working.
+            'text_direction' => method_exists( 'eZLocale', 'textDirection' ) ? eZLocale::instance()->textDirection() : 'ltr'
         );
 
         // Read role settings: PolicyOmitList[] without PolicyOmitListExclude[] (class_exists: a

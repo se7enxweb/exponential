@@ -450,8 +450,9 @@ class Translations extends \Exponential\Runnable\ModuleView
     /**
      * The locales the add form offers, sorted by name, each with the text its search looks through and whether it is
      * already a content language. 'country' is empty when the name already ends in it, as "German (Austria)" does.
+     * 'rtl' is true for a locale written right to left ('direction' => 'rtl'), so the list can say so.
      *
-     * @param array $locales array( array( 'code', 'intl_name', 'native_name', 'country', 'comment' ) )
+     * @param array $locales array( array( 'code', 'intl_name', 'native_name', 'country', 'comment', 'direction' ) )
      * @param array $existing locale codes already added
      */
     public static function localeChoices( array $locales, array $existing )
@@ -476,7 +477,9 @@ class Translations extends \Exponential\Runnable\ModuleView
                 'native_name' => (string) ( $locale['native_name'] ?? '' ),
                 'country' => ( $country !== '' && mb_stripos( $label, "($country)" ) !== false ) ? '' : $country,
                 'exists' => in_array( $code, $existing, true ),
-                'search' => mb_strtolower( implode( ' ', array( $label, $code, $locale['native_name'] ?? '', $locale['country'] ?? '' ) ) ),
+                'rtl' => ( $locale['direction'] ?? '' ) === 'rtl',
+                'search' => mb_strtolower( implode( ' ', array( $label, $code, $locale['native_name'] ?? '', $locale['country'] ?? '' ) ) )
+                            . ( ( $locale['direction'] ?? '' ) === 'rtl' ? ' rtl' : '' ),
             );
         }
         usort( $choices, function ( $a, $b ) {
@@ -643,7 +646,9 @@ class Translations extends \Exponential\Runnable\ModuleView
                                 'intl_name' => (string) $locale->attribute( 'intl_language_name' ),
                                 'native_name' => (string) $locale->attribute( 'language_name' ),
                                 'country' => (string) $locale->attribute( 'country_name' ),
-                                'comment' => $locale->attribute( 'country_variation' ) ? (string) $locale->attribute( 'language_comment' ) : '' );
+                                'comment' => $locale->attribute( 'country_variation' ) ? (string) $locale->attribute( 'language_comment' ) : '',
+                                // method_exists: a Velocity worker started before eZLocale had it keeps working.
+                                'direction' => method_exists( $locale, 'textDirection' ) ? $locale->textDirection() : 'ltr' );
         }
         return $locales;
     }

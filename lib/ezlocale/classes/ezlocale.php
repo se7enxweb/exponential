@@ -147,6 +147,7 @@ class eZLocale
         $this->DateTimeSlashOutputArray = preg_replace( '/.+/', '\\\\$0', $this->DateTimePHPArray );
 
         $this->HTTPLocaleCode = '';
+        $this->TextDirection = 'ltr';
         $this->functionMap = array(
             'time' => 'formatTime',
             'shorttime' => 'formatShortTime',
@@ -453,6 +454,10 @@ class eZLocale
 
         if ( $languageINI->hasVariable( 'HTTP', 'ContentLanguage' ) )
             $this->HTTPLocaleCode = $languageINI->variable( 'HTTP', 'ContentLanguage' );
+
+        // [LanguageSettings] TextDirection=rtl for a language written right to left; anything else is ltr.
+        if ( $languageINI->hasVariable( 'LanguageSettings', 'TextDirection' ) )
+            $this->TextDirection = self::normalizeTextDirection( $languageINI->variable( 'LanguageSettings', 'TextDirection' ) );
     }
 
     /*!
@@ -582,6 +587,8 @@ class eZLocale
                       'locale_full_code' => 'localeFullCode',
                       'http_locale_code' => 'httpLocaleCode',
                       'content_language_code' => 'contentLanguageCode',
+                      'text_direction' => 'textDirection',
+                      'is_right_to_left' => 'isRightToLeft',
                       'decimal_symbol' => 'decimalSymbol',
                       'thousands_separator' => 'thousandsSeparator',
                       'decimal_count' => 'decimalCount',
@@ -722,6 +729,55 @@ class eZLocale
     function contentLanguageCode()
     {
         return (string)$this->HTTPLocaleCode;
+    }
+
+    /**
+     * The direction the language of this locale is written in, from [LanguageSettings] TextDirection of its locale
+     * file: 'rtl' (Hebrew, Arabic, Persian, Urdu ...) or 'ltr' (every other, and a file without the key). Printed as
+     * the dir attribute of the page and of content in the language.
+     *
+     * @return string 'rtl' or 'ltr'
+     */
+    function textDirection()
+    {
+        return $this->TextDirection === 'rtl' ? 'rtl' : 'ltr';
+    }
+
+    /**
+     * Whether the language of this locale is written right to left.
+     *
+     * @return bool
+     */
+    function isRightToLeft()
+    {
+        return $this->textDirection() === 'rtl';
+    }
+
+    /**
+     * The text direction of the locale with the given code ('heb-IL'), 'ltr' when there is no such locale.
+     *
+     * @param string $localeCode
+     * @return string 'rtl' or 'ltr'
+     */
+    static function textDirectionOf( $localeCode )
+    {
+        $localeCode = trim( (string)$localeCode );
+        if ( $localeCode === '' )
+            return 'ltr';
+        $locale = eZLocale::instance( $localeCode );
+        return ( $locale instanceof eZLocale && $locale->isValid() ) ? $locale->textDirection() : 'ltr';
+    }
+
+    /**
+     * 'rtl' when the value says right to left (rtl, right-to-left, case and spaces ignored), else 'ltr'.
+     *
+     * @param mixed $value
+     * @return string
+     */
+    static function normalizeTextDirection( $value )
+    {
+        $value = strtolower( str_replace( array( ' ', '_' ), '-', trim( (string)$value ) ) );
+        return ( $value === 'rtl' || $value === 'right-to-left' ) ? 'rtl' : 'ltr';
     }
 
     /*!
@@ -1384,34 +1440,56 @@ class eZLocale
     */
     static function localeList( $asObject = false, $withVariations = true )
     {
-        $locales =& $GLOBALS['eZLocaleLocaleStringList'];
-        if ( !is_array( $locales ) )
+        // One list of codes for each kind (with or without variations), read again when share/locale changes. The
+        // cache used to hold whatever the first call of the request asked for, objects or codes, with or without
+        // variations, and answered every later call with it: after one call for codes, the Add language form was
+        // handed strings and offered no language at all. The modification time also lets a long-running process
+        // (a Velocity worker) see a locale file added after it started.
+        $cache =& $GLOBALS['expLocaleCodeLists'];
+        if ( !is_array( $cache ) )
+            $cache = array();
+        $key = $withVariations ? 'with_variations' : 'without_variations';
+        clearstatcache( true, 'share/locale' );
+        $stamp = @filemtime( 'share/locale' );
+        if ( !isset( $cache[$key] ) || $cache[$key]['stamp'] !== $stamp )
         {
-            $localeRegexp = eZLocale::localeRegexp( $withVariations, false );
-            $locales = array();
-            $dir = opendir( 'share/locale' );
-            while( ( $file = readdir( $dir ) ) !== false )
-            {
-                if ( preg_match( "/^($localeRegexp)\.ini$/", $file, $regs ) )
-                {
-                    $locales[] = $regs[1];
-                }
-            }
-            closedir( $dir );
-            $locales = array_unique( $locales );
-            sort( $locales );
-            if ( $asObject )
-            {
-                $localeObjects = array();
-                foreach ( $locales as $locale )
-                {
-                    $localeInstance = eZLocale::instance( $locale );
-                    if ( $localeInstance )
-                        $localeObjects[] = $localeInstance;
-                }
-                $locales = $localeObjects;
-            }
+            $files = is_dir( 'share/locale' ) ? (array) scandir( 'share/locale' ) : array();
+            $cache[$key] = array( 'stamp' => $stamp, 'codes' => self::localeCodesFromFileNames( $files, $withVariations ) );
         }
+        $locales = $cache[$key]['codes'];
+        if ( $asObject )
+        {
+            $localeObjects = array();
+            foreach ( $locales as $locale )
+            {
+                $localeInstance = eZLocale::instance( $locale );
+                if ( $localeInstance )
+                    $localeObjects[] = $localeInstance;
+            }
+            $locales = $localeObjects;
+        }
+        return $locales;
+    }
+
+    /**
+     * The locale codes among file names of share/locale: "heb-IL.ini" gives heb-IL, "nor-NO@intl.ini" gives
+     * nor-NO@intl when $withVariations is true and nothing otherwise. Unique and sorted; reads no file.
+     *
+     * @param string[] $fileNames
+     * @param bool $withVariations
+     * @return string[]
+     */
+    static function localeCodesFromFileNames( array $fileNames, $withVariations = true )
+    {
+        $localeRegexp = eZLocale::localeRegexp( $withVariations, false );
+        $locales = array();
+        foreach ( $fileNames as $file )
+        {
+            if ( preg_match( "/^($localeRegexp)\.ini$/", (string) $file, $regs ) )
+                $locales[] = $regs[1];
+        }
+        $locales = array_values( array_unique( $locales ) );
+        sort( $locales );
         return $locales;
     }
 
@@ -1710,6 +1788,8 @@ class eZLocale
     public $DateSlashOutputArray;
     public $DateTimeSlashOutputArray;
     public $HTTPLocaleCode;
+    /** 'rtl' or 'ltr', see textDirection() */
+    public $TextDirection = 'ltr';
     public $functionMap;
     public $LocaleCode;
     public $TranslationCode;
