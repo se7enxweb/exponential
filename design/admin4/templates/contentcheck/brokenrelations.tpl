@@ -31,7 +31,7 @@
                           'rule', 'Rule target'|i18n( 'kernel/contentcheck' ) )
      $node = $result.node
      $findings = $result.findings
-     $separator = cond( $filter_suffix|eq( '?' ), '', '&' )}
+     $separator = cond( $filter_suffix|eq( '' ), '?', '&' )}
 
 <div class="context-block a4-page a4-contentcheck">
 
