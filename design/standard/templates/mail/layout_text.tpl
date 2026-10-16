@@ -1,6 +1,8 @@
 {*
     The plain-text version of design:mail/layout.tpl, with the same inputs (see there). Values are written as they
-    are (a text part is not HTML); buttons and links become "Label: URL" lines.
+    are (a text part is not HTML); buttons and links become "Label: URL" lines. A row's value stays on its one line:
+    its line breaks become spaces, so a value the user typed (a name) cannot add lines that look like the mail's own
+    "Label: URL" links.
 
     Line breaks: the template parser drops one newline right after a tag and one right before a tag, so the blank
     lines below are deliberate (a text between two tags needs three newlines to print one).
@@ -25,7 +27,7 @@
 {/if}
 {if $mt_rows|count}
 {foreach $mt_rows as $mt_row}
-{$mt_row.label}: {$mt_row.value}
+{$mt_row.label}: {$mt_row.value|explode( "\r" )|implode( " " )|explode( "\n" )|implode( " " )}
 
 {/foreach}
 

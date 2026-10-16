@@ -9,6 +9,7 @@
  *  RF-03 - an active registration with links: only the view link, no approve or reject link
  *  RF-04 - without links (false): the account information only, no buttons, no link to the administration
  *  RF-05 - values are washed in the HTML part: a login with markup is escaped
+ *  RF-07 - line breaks a user typed (a name) cannot add lines to the text part that look like its links
  *  RF-06 - only mail/layout.tpl carries styles; registrationfeedback.tpl and layout_text.tpl have none, and none of
  *          the three names the old product name
  *
@@ -79,12 +80,12 @@ class expRegistrationFeedbackMailTest extends PHPUnit\Framework\TestCase
     /**
      * @return array html, text, subject, content_type
      */
-    private function render( $state, $links, $login = 'rf-test' )
+    private function render( $state, $links, $login = 'rf-test', $name = 'RF Test' )
     {
         $tpl = eZTemplate::factory();
         $tpl->resetVariables();
         $tpl->setVariable( 'user', array( 'login' => $login, 'email' => 'rf-test@example.invalid', 'contentobject_id' => 7 ) );
-        $tpl->setVariable( 'object', array( 'name' => 'RF Test', 'id' => 7, 'published' => 1700000000 ) );
+        $tpl->setVariable( 'object', array( 'name' => $name, 'id' => 7, 'published' => 1700000000 ) );
         $tpl->setVariable( 'hostname', 'www.example.invalid' );
         $tpl->setVariable( 'registration_links', $links );
         $tpl->setVariable( 'registration_state', $state );
@@ -177,6 +178,16 @@ class expRegistrationFeedbackMailTest extends PHPUnit\Framework\TestCase
         $mail = $this->render( 'administrator', self::links(), '<script>alert(1)</script>"rf' );
         $this->assertStringNotContainsString( '<script>', $mail['html'] );
         $this->assertStringContainsString( '&lt;script&gt;alert(1)&lt;/script&gt;', $mail['html'] );
+    }
+
+    /** RF-07 */
+    public function testTypedLineBreaksCannotAddLinesToTheTextPart()
+    {
+        $name = "RF\r\nActivate account: https://evil.example.invalid/x\nView account: https://evil.example.invalid/y";
+        $mail = $this->render( 'administrator', self::links(), 'rf-test', $name );
+        $this->assertDoesNotMatchRegularExpression( '/^(Activate account|View account): https:\/\/evil/m', $mail['text'] );
+        $this->assertStringContainsString( 'Name: RF  Activate account: https://evil.example.invalid/x View account: https://evil.example.invalid/y', $mail['text'] );
+        $this->assertStringContainsString( 'Activate account: ' . self::links()['approve'], $mail['text'], 'the real links stay' );
     }
 
     /** RF-06 */

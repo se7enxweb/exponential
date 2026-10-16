@@ -2406,7 +2406,7 @@ a35b8c33e69b1fb1baacd7e1de2df542  design/standard/templates/image/layer.tpl
 eb6fc8bbf32008cd068909e36242b68f  design/standard/templates/link.tpl
 4774287900b516aebb5e1ef8e83f3e43  design/standard/templates/loginpagelayout.tpl
 9df6daf6a2cdece6f59d7e34a337f6c2  design/standard/templates/mail/layout.tpl
-98bb9c65963cf6c3c6a8c6d909498d18  design/standard/templates/mail/layout_text.tpl
+be1a3f7ce47e583b3c01f321caf45e90  design/standard/templates/mail/layout_text.tpl
 361790d3f650b4c0738465f29ae386ed  design/standard/templates/mailpreferences/admin/categories.tpl
 b0efa92c284f320fde8c30ffc98748f5  design/standard/templates/mailpreferences/admin/consent.tpl
 63db8b6892901a077632b6216611b3f4  design/standard/templates/mailpreferences/admin/status.tpl
@@ -8119,7 +8119,7 @@ b960f0cb6775954a66e51c42bd80c882  tests/tests/kernel/classes/urlaliasml_test.php
 b6f45ce384a24cccf17ed74d9da7c988  tests/tests/kernel/classes/user/expPasswordPolicyTest.php
 972ceff89325d374430b9f9d976d4f69  tests/tests/kernel/classes/user/expPasswordSessionStampTest.php
 3a960168ccee3f916530935b5f3a650d  tests/tests/kernel/classes/user/expRegistrationAdminActionTest.php
-d749f2ae03123885bf96fc140057814f  tests/tests/kernel/classes/user/expRegistrationFeedbackMailTest.php
+af0292a87757d2e869f806286b1b78d8  tests/tests/kernel/classes/user/expRegistrationFeedbackMailTest.php
 fc63055bcb0f1d48ebb5c64f8a116fb7  tests/tests/kernel/classes/user/expRegistrationUserMailsTest.php
 0cf0917e21fbd4ebf5783aff05d50b0a  tests/tests/kernel/classes/user/expUserAccountOverviewTest.php
 64d742541700bf64eaf55cfe5dc25040  tests/tests/kernel/classes/user/expUserAccountStatusTest.php
