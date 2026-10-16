@@ -2910,6 +2910,9 @@ div#contentstructure ul#content_tree_menu ul a.openclose-close::after {
   color: var(--a4-accent-text);
   font-weight: 600;
 }
+/* A long grouped list (uiswitch/grouped.tpl, the interface languages) is a native select: as wide as the column,
+   never wider because of its longest entry, without the legacy select margin. */
+.a4-uiswitch-provider select.a4-input { min-width: 0; max-width: 100%; margin: 0; }
 @media (forced-colors: active) {
   .a4-uiswitch-toggle { border: 1px solid ButtonText; }
   .a4-uiswitch-option[aria-current="true"] { outline: 2px solid Highlight; outline-offset: -2px; }

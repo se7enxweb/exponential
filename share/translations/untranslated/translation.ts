@@ -57563,4 +57563,38 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
 </context>
+<context>
+    <name>kernel/uiswitch/language</name>
+    <message>
+        <source>English</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Major world languages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Regional variants</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All languages (A–Z)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>More languages (A–Z)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>no translation yet</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/toolbar/uiswitch/language</name>
+    <message>
+        <source>Apply</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
 </TS>

@@ -916,7 +916,8 @@
       "tests/tests/design/AdminFontStackTest.php"
     ],
     "kernel/classes/uiswitch/*": [
-      "tests/tests/kernel/classes/uiswitch/expUISwitchTest.php"
+      "tests/tests/kernel/classes/uiswitch/expUISwitchTest.php",
+      "tests/tests/kernel/classes/uiswitch/expUISwitchLanguageProviderTest.php"
     ],
     "kernel/uiswitch/*": [
       "tests/tests/kernel/classes/uiswitch/expUISwitchTest.php"
@@ -926,7 +927,8 @@
     ],
     "settings/uiswitch.ini": [
       "tests/tests/kernel/classes/uiswitch/expUISwitchTest.php",
-      "tests/tests/kernel/classes/uiswitch/expUISwitchDesignProviderTest.php"
+      "tests/tests/kernel/classes/uiswitch/expUISwitchDesignProviderTest.php",
+      "tests/tests/kernel/classes/uiswitch/expUISwitchLanguageProviderTest.php"
     ],
     "lib/eztemplate/classes/eztemplatecompiler.php": [
       "tests/tests/kernel/classes/uiswitch/expUISwitchTest.php"

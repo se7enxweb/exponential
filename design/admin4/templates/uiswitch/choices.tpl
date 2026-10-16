@@ -11,6 +11,9 @@
 {def $exp_ui_prefix = cond( is_set( $prefix ), $prefix, 'a4-uiswitch' )
      $exp_ui_back = cond( is_set( $requested_uri_string ), concat( '/', $requested_uri_string|trim( '/' ) ), '' )}
 {foreach $choices as $exp_ui_choice}
+{if and( is_set( $exp_ui_choice.groups ), $exp_ui_choice.groups|count )}
+{include uri='design:uiswitch/grouped.tpl' choice=$exp_ui_choice prefix=$exp_ui_prefix back=$exp_ui_back}
+{else}
 <div class="a4-uiswitch-provider" data-provider="{$exp_ui_choice.identifier|wash}">
 <span class="a4-uiswitch-label" id="{$exp_ui_prefix}-{$exp_ui_choice.identifier|wash}-label">{$exp_ui_choice.title|wash}</span>
 <button type="button" class="a4-uiswitch-toggle" id="{$exp_ui_prefix}-{$exp_ui_choice.identifier|wash}-toggle" data-a4-disclosure="" aria-expanded="false" aria-controls="{$exp_ui_prefix}-{$exp_ui_choice.identifier|wash}-menu" aria-describedby="{$exp_ui_prefix}-{$exp_ui_choice.identifier|wash}-label" hidden><span class="a4-uiswitch-current">{$exp_ui_choice.current_label|wash}</span></button>
@@ -24,5 +27,6 @@
 </ul>
 </form>
 </div>
+{/if}
 {/foreach}
 {undef $exp_ui_prefix $exp_ui_back}

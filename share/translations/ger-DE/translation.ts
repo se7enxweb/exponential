@@ -74614,4 +74614,38 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Land wählen</translation>
     </message>
 </context>
+<context>
+    <name>kernel/uiswitch/language</name>
+    <message>
+        <source>English</source>
+        <translation>Englisch</translation>
+    </message>
+    <message>
+        <source>Major world languages</source>
+        <translation>Wichtige Weltsprachen</translation>
+    </message>
+    <message>
+        <source>Regional variants</source>
+        <translation>Regionale Varianten</translation>
+    </message>
+    <message>
+        <source>All languages (A–Z)</source>
+        <translation>Alle Sprachen (A–Z)</translation>
+    </message>
+    <message>
+        <source>More languages (A–Z)</source>
+        <translation>Weitere Sprachen (A–Z)</translation>
+    </message>
+    <message>
+        <source>no translation yet</source>
+        <translation>noch keine Übersetzung</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/toolbar/uiswitch/language</name>
+    <message>
+        <source>Apply</source>
+        <translation>Übernehmen</translation>
+    </message>
+</context>
 </TS>

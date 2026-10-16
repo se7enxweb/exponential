@@ -598,9 +598,29 @@ class expUISwitch
                                        'default' => $value === $provider->defaultValue(),
                                        'lang' => $base ? $provider->labelLanguage( $value ) : '' );
                 }
+                // a provider with a long list groups it (expUISwitchLanguageProvider::groups()): the templates then show
+                // a list with headings instead of one button per value
+                $groups = array();
+                if ( method_exists( $provider, 'groups' ) && method_exists( $provider, 'displayLabel' ) )
+                {
+                    $marked = false;
+                    foreach ( $provider->groups() as $group )
+                    {
+                        $items = array();
+                        foreach ( $group['values'] as $value )
+                        {
+                            // the current value is marked once, where it first appears
+                            $isCurrent = !$marked && $value === $current;
+                            $marked = $marked || $isCurrent;
+                            $items[] = array( 'value' => $value, 'label' => $provider->displayLabel( $value ), 'current' => $isCurrent,
+                                              'lang' => $base ? $provider->labelLanguage( $value ) : '' );
+                        }
+                        $groups[] = array( 'identifier' => $group['identifier'], 'label' => $group['label'], 'values' => $items );
+                    }
+                }
                 $result[] = array( 'identifier' => $identifier, 'title' => $base ? $provider->title() : $identifier,
                                    'current' => $current, 'current_label' => $currentLabel,
-                                   'default' => $provider->defaultValue(), 'values' => $values );
+                                   'default' => $provider->defaultValue(), 'values' => $values, 'groups' => $groups );
             }
         }
         catch ( Throwable $e )
