@@ -338,7 +338,8 @@ function _doItemSubstitution( menuID, menuHeader )
         if ( replaceString )
         {
             replaceString = _substituteString( replaceString, CurrentSubstituteValues );
-            hrefElement.setAttribute( "href", replaceString );
+            // only an address of this site: a javascript:, data: or foreign URL in the menu is not linked
+            hrefElement.setAttribute( "href", _isSafeURL( replaceString ) ? replaceString : '#' );
         }
 
         // shown only when a value of the menu is set (shown_if: '%canImport%'): an item that does not apply to this
@@ -784,12 +785,45 @@ function _createAArray( flat )
  */
 function _SubstituteAndRedirect( href )
 {
-    // loop though substitute values and substitute for each of them
-    for ( var substItem in CurrentSubstituteValues )
+    // every placeholder, each value URL-encoded (as the action of _submitForm())
+    var encoded = {};
+    for ( var key in CurrentSubstituteValues )
     {
-        href = href.replace( substItem, CurrentSubstituteValues[substItem] );
+        if ( typeof CurrentSubstituteValues[key] != 'object' && typeof CurrentSubstituteValues[key] != 'function' )
+            encoded[key] = encodeURIComponent( String( CurrentSubstituteValues[key] ) );
     }
+    href = _fillString( String( href ), encoded, false );
+    // only an address of this site (http or https, same origin): a javascript:, data: or foreign URL does nothing
+    if ( !_isSafeURL( href ) )
+        return;
     location.href = href;
+}
+
+// True for an address of this site: resolved against the page, http or https and the page's origin. Anything else
+// (javascript:, data:, //other.host, an address that does not parse) is refused with an error in the console.
+function _isSafeURL( url )
+{
+    var safe = false;
+    try
+    {
+        if ( typeof URL === 'function' )
+        {
+            var page = new URL( window.location.href ), target = new URL( String( url ), page.href );
+            safe = ( target.protocol === 'http:' || target.protocol === 'https:' ) && target.origin === page.origin;
+        }
+        else
+        {
+            // no URL parser: only a path of this site
+            safe = /^\/(?![\/\\])/.test( String( url ) );
+        }
+    }
+    catch ( e )
+    {
+        safe = false;
+    }
+    if ( !safe && window.console )
+        window.console.error( 'ezpopupmenu: refused the address ' + url + ' (not of this site)' );
+    return safe;
 }
 
 function _getScreenProperties()

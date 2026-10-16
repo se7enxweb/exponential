@@ -16,7 +16,7 @@
  *   (a4_actions.js) are loaded on every page.
  * - CSP-04 to CSP-06 run the scripts in node against a small stand-in for the DOM (js/mini_dom.js): the data-a4-*
  *   actions (js/csp_actions.js), a popup menu declared in data-menu-* attributes and the ways extensions still add to
- *   menus (js/csp_popupmenu.js), and the content tree drawn from its data attributes with its open/close buttons
+ *   menus, which link and redirect only to addresses of the site (js/csp_popupmenu.js), and the content tree drawn from its data attributes with its open/close buttons
  *   (js/csp_tree.js).
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminContentSecurityPolicyTest.php
@@ -317,7 +317,7 @@ class AdminContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
         foreach ( array( 'admin4', 'admin' ) as $design )
         {
             $c = $this->harness( 'csp_popupmenu.js', "design/$design/javascript/popupmenu/ezpopupmenu.js" );
-            $this->assertCount( 10, $c, $design );
+            $this->assertCount( 11, $c, $design );
             // an extension's script adds to a declared menu: the menu is created from its attributes
             $this->assertSame( 0, $c['extension entry']['depth'] );
             $this->assertSame( 'M-head', $c['extension entry']['header'] );
@@ -346,6 +346,15 @@ class AdminContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
             $this->assertSame( array( 'ClassID=12"x', 'NodeID=9' ), $c['create here']['sent'][0]['values'] );
             $this->assertSame( '/visual/templatecreate/(nodeID)/9', $c['redirect']['location'] );
             $this->assertTrue( $c['redirect']['hidden'] );
+            // only addresses of this site: javascript:, //other.host, https://other.host and data: go nowhere, the
+            // value is URL-encoded, and a javascript: item address is not linked; each refusal is in the console
+            $unsafe = $c['unsafe redirect'];
+            $this->assertSame( array( 'r-js' => null, 'r-proto' => null, 'r-data' => null, 'r-abs' => null,
+                                      'r-own' => 'https://admin.example/search/a%20b%2Fc%3Fd' ), $unsafe['went'], $design );
+            $this->assertNull( $unsafe['ran'] );
+            $this->assertSame( '#', $unsafe['linkHref'] );
+            $this->assertSame( '/content/edit/4', $unsafe['editHref'], 'a path of the site is linked' );
+            $this->assertSame( 5, $unsafe['refused'] );
         }
     }
 

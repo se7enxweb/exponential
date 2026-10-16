@@ -24,6 +24,12 @@ const html = ''
     + '<a id="legacy" href="#" onmouseover="window.legacyHover = 1">Legacy</a>'
     + '<a id="ext" href="#">Extension</a>'
     + '<a id="redirect" data-menu-redirect="/visual/templatecreate/(nodeID)/%nodeID%">Override</a>'
+    + '<a id="r-js" data-menu-redirect="javascript:window.ran=1">JS</a>'
+    + '<a id="r-proto" data-menu-redirect="//evil.example/x">Other host</a>'
+    + '<a id="r-data" data-menu-redirect="data:text/html,x">Data</a>'
+    + '<a id="r-abs" data-menu-redirect="https://evil.example/%nodeID%">Absolute</a>'
+    + '<a id="r-own" data-menu-redirect="https://admin.example/search/%term%">Own</a>'
+    + '<a id="u-js" href="#" data-menu-url="javascript:window.ran=2">JS link</a>'
     + '</div>'
     + '<div class="popupmenu" id="S" data-menu-depth="1">'
     + '<template id="S-item"><a href="/content/edit/%objectID%/f/%locale%">%name%</a></template>'
@@ -36,10 +42,14 @@ const html = ''
     + '<form id="move-form" method="post" action="/content/action/%nodeID%"><input type="hidden" name="ContentNodeID" value="%nodeID%" /></form>'
     + '<form id="create-form" method="post" action="/content/action"><input type="hidden" name="ClassID" value="%classID%" /><input type="hidden" name="NodeID" value="%nodeID%" /></form>';
 
+// the page the script runs on; the addresses a menu goes to are resolved against it
+const PAGE = 'https://admin.example/index.php/admin/content/view/full/2';
+const refused = [];
 const document = createDocument(html);
 // the script's global object is the window, as in a browser
 const sandbox = { innerWidth: 1200, innerHeight: 800, pageXOffset: 0, pageYOffset: 0, scrollX: 0, scrollY: 0, document,
-                  getComputedStyle: () => ({ position: 'static' }), location: { href: '' }, navigator: { userAgent: 'node' }, console };
+                  getComputedStyle: () => ({ position: 'static' }), location: { href: PAGE }, navigator: { userAgent: 'node' },
+                  URL, console: { log: console.log, error: (m) => { refused.push(String(m)); } } };
 sandbox.window = sandbox;
 const window = sandbox;
 vm.createContext(sandbox);
@@ -97,3 +107,20 @@ out('create here', { shown: shown('C'), values: entry.getAttribute('data-menu-fo
 
 document.dispatch('click', $('redirect'));
 out('redirect', { location: window.location.href, hidden: !shown('M') });
+
+// only addresses of this site: javascript:, another host (//host, https://host) and data: do nothing; a value in a
+// redirect address is URL-encoded; a javascript: item address is not linked
+{
+    window.location.href = PAGE;
+    refused.length = 0;
+    vm.runInContext("ezpopmenu_showTopLevel( { type: 'click', detail: 1, clientX: 5, clientY: 5, pageX: 5, pageY: 5 }, 'M', "
+        + "{ '%nodeID%': 9, '%objectID%': 4, '%term%': 'a b/c?d' }, 'N', -1, -1 );", sandbox);
+    const went = {};
+    for (const id of ['r-js', 'r-proto', 'r-data', 'r-abs', 'r-own']) {
+        window.location.href = PAGE;
+        document.dispatch('click', $(id));
+        went[id] = window.location.href === PAGE ? null : window.location.href;
+    }
+    out('unsafe redirect', { went, refused: refused.length, ran: window.ran === undefined ? null : window.ran, linkHref: $('u-js').getAttribute('href'), editHref: $('edit').getAttribute('href') });
+    window.location.href = PAGE;
+}
