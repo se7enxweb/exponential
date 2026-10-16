@@ -343,7 +343,7 @@ d8edfe4bd7af7efd97f8819de5d247b8  design/admin/templates/audit/recent.tpl
 285f50ecd0189915430a72868d737398  design/admin/templates/audit/settings.tpl
 6ad3a8724d541edaf79af7df5927ab5a  design/admin/templates/audit/sources.tpl
 f7be1f801db4c00267f7b1e9bad939c8  design/admin/templates/children.tpl
-8d2dce705940b7442389a2d68e3366d7  design/admin/templates/children_detailed.tpl
+3841130ab829372b2adef00a0c1e7cde  design/admin/templates/children_detailed.tpl
 e43630d07c69d19c6b4301797c3a915e  design/admin/templates/class/classlist.tpl
 51fd6b1a1612e389ee44ce3d6cbe83d1  design/admin/templates/class/copy_confirm.tpl
 2f32def3d98933143182da37d73213f4  design/admin/templates/class/datatype/browse_objectrelation_placement.tpl
@@ -947,7 +947,7 @@ c7eb697cccc88a7038703f8fcc862659  design/admin4/templates/audit/reauth.tpl
 eb264deee765003628f666064dea68f3  design/admin4/templates/audit/settings.tpl
 6ad3a8724d541edaf79af7df5927ab5a  design/admin4/templates/audit/sources.tpl
 3064ea19ba4df8b3b2d4887a53c0bc27  design/admin4/templates/children.tpl
-f539597a22b3b37359ff4f281f1718c6  design/admin4/templates/children_detailed.tpl
+5c11afe3d1fa52a0ab2c2a7efc77fd29  design/admin4/templates/children_detailed.tpl
 f60e0f377f64ba0eb70026b66a183a75  design/admin4/templates/class/classlist.tpl
 51fd6b1a1612e389ee44ce3d6cbe83d1  design/admin4/templates/class/copy_confirm.tpl
 2f32def3d98933143182da37d73213f4  design/admin4/templates/class/datatype/browse_objectrelation_placement.tpl
@@ -3068,7 +3068,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-1b76c2e09aa10c25bd0442d8e7a81d58  doc/changelogs/6.0/6.0.15.md
+0984a7ace31ac6316449b23e43388703  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -7357,14 +7357,14 @@ a6b9a5e18993b0e8f8f8ff35f99bded0  share/translations/cze-CZ/translation.ts
 a2b163b1fd63c8bdb24c907d8473ad74  share/translations/ell-GR/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-AU/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-NZ/translation.ts
-022475aa85202e7d0224b230f992f667  share/translations/eng-US/translation.ts
+7bf1e8529cf2c2d6a7c47c7b79dd2464  share/translations/eng-US/translation.ts
 b23f9be3b92c6d7e2e00376952b8a73c  share/translations/esl-ES/translation.ts
 96835e62ad0e81bc2f760d68914f161f  share/translations/esl-MX/translation.ts
 a1ff9edf6db2ff3ff0b2d442410db154  share/translations/fin-FI/translation.ts
 53d8d7f9258c04ed02c4c84a7721e691  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-e4d89f7a801a45e1d0e46de070e94548  share/translations/ger-DE/translation.ts
+63400312b0141ba6ab48d3d6ea073235  share/translations/ger-DE/translation.ts
 4d8ac50cdf1d15955918b56358fa7458  share/translations/heb-IL/translation.ts
 e97831dd958115eac1866c1c6edbac10  share/translations/ita-IT/translation.ts
 c55b244fe21805a71690ca10e8f33623  share/translations/jpn-JP/translation.ts
@@ -7380,7 +7380,7 @@ c0bb0e5ef4ff758c9e505585337f7d2a  share/translations/srp-RS/translation.ts
 175a32374b310580e95bd659a017a77c  share/translations/swe-SE/translation.ts
 70bdc5a32436bae47a97cd8d7076ddd9  share/translations/tlh-QO/translation.ts
 0b1b76b5ad6b2f923afd6fd9a9937a8b  share/translations/untranslated/readme.txt
-5d32a9d661c4d98bacfb8e470fafa2d9  share/translations/untranslated/translation.ts
+11c3e8da0ab0dac4eb1b54c2f1cefda8  share/translations/untranslated/translation.ts
 bae9ff85781e52af001213bdb213a013  shippable.yml
 414f4d1129273ab3dea38b878d554eae  soap.php
 3b6d156f31df70e093aa1a6d8a525cd3  support/ezlupdate-qt4.5/README.txt
@@ -7493,6 +7493,7 @@ f27fc237ae821765c7ce51b2478f01c2  tests/tests/design/AdminSiteAccessMenuTest.php
 26cd1c78167aa9312aeffcbfe9b95bb1  tests/tests/design/AdminStylingRulesTest.php
 30d12ad7dc5a6ad97ac28b8f844f1ff3  tests/tests/design/AdminSubitemsPriorityDragTest.php
 0b4a969bd98da9c835eb609ba5cd0a8f  tests/tests/design/AdminSubitemsTranslationsTest.php
+dc767fb30523119570bea4dc263ee1e8  tests/tests/design/AdminSubitemsWithoutExpUITest.php
 7e25daf854e27ae8480a265adbfe41f4  tests/tests/design/AdminTemplateFramesTest.php
 fbee7cbdeef0e5c1be7b400d09748b59  tests/tests/design/AdminThemeSwitchTest.php
 57d67b5cb5a3903477d54ef4310f7ac0  tests/tests/design/AdminTimelineTest.php
