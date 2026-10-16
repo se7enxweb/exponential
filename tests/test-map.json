@@ -1502,6 +1502,15 @@
     "kernel/private/classes/views/content/versionview.php": [
       "tests/tests/kernel/private/expAdminViewsDebugCleanTest.php"
     ],
+    "kernel/private/classes/views/package/compare.php": [
+      "tests/tests/kernel/private/views/PackageViewRedirectTest.php"
+    ],
+    "kernel/private/classes/views/package/list.php": [
+      "tests/tests/kernel/private/views/PackageViewRedirectTest.php"
+    ],
+    "kernel/private/classes/views/package/view.php": [
+      "tests/tests/kernel/private/views/PackageViewRedirectTest.php"
+    ],
     "kernel/private/classes/views/setup/rad.php": [
       "tests/tests/kernel/classes/runnable/RadSurveyRegistriesTest.php"
     ],
