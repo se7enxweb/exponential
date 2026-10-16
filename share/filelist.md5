@@ -3068,7 +3068,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-beaad482b9992c0ec2a963e397079bf3  doc/changelogs/6.0/6.0.15.md
+c98a45a03c535fbff550bad4f29c6bc3  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -4048,7 +4048,7 @@ f1d74be89700229e2ef39c8efa184d28  doc/specifications/6.0/platform-package-map.md
 06855fc3c01aaf43d2538bfd85142908  doc/specifications/6.0/platform-sqlite-installer.md
 1c89fbe69a406e534ea34465b44617f0  doc/specifications/6.0/runnable-commands-cronjobs-views.md
 6d6907b81f3eb494082df69906331b74  doc/specifications/6.0/security-defaults-2026-09.md
-1c746671f27485e6c552f4ef5ce82d59  doc/specifications/6.0/security-hardening-2026-08.md
+db05a14d2198e377875b124529f70067  doc/specifications/6.0/security-hardening-2026-08.md
 a8dd331d21327e2a7b64f278e0cf116c  doc/specifications/6.0/security-hardening-6.0.13.md
 5f0bcbe2e5817fe190b6eadfaa88ec0d  doc/specifications/6.0/sqlite3-database-driver.md
 eb694919b825971014bfa963199ce255  doc/specifications/6.0/syndication.md
@@ -4269,7 +4269,7 @@ a816b6bff7b91f94b91681927dd330eb  extension/ezoe/classes/expoeurlexception.php
 e1d52c075995457287ece4462015a16e  extension/ezoe/classes/expoeurlfetcher.php
 b672085e6c59a8912a2e69f1c1931089  extension/ezoe/classes/ezoeserverfunctions.php
 d7f679dbab7f1b6752c3dae71175c8c1  extension/ezoe/classes/runnable/views/ezoe/dialog.php
-fbbfa0a2e8e1f56dbc2b2c81a22755b7  extension/ezoe/classes/runnable/views/ezoe/embed_view.php
+520cab4e35bc5b6310f1712e8ab04dbd  extension/ezoe/classes/runnable/views/ezoe/embed_view.php
 b656555c61cf975c56958dd42d4718dd  extension/ezoe/classes/runnable/views/ezoe/load.php
 68a782c84a70af752905f917629fd3de  extension/ezoe/classes/runnable/views/ezoe/relations.php
 bcf0ee6ce97fa5471bb0400ade8de944  extension/ezoe/classes/runnable/views/ezoe/spellcheck_rpc.php
@@ -4606,7 +4606,7 @@ b42c7d51247d02ddca437a1661e748e5  extension/ezoe/design/standard/javascript/them
 346e163ed604634fd3cd862cb7fafd76  extension/ezoe/design/standard/javascript/themes/ez/about.htm
 c383642acd5db19225cf08281b08eefe  extension/ezoe/design/standard/javascript/themes/ez/charmap.htm
 c27db916620c9ddd6271bc00e8bd4e96  extension/ezoe/design/standard/javascript/themes/ez/color_picker.htm
-4eb3b651b26baae7d4f90d59acb88f19  extension/ezoe/design/standard/javascript/themes/ez/editor_template.js
+293ccd55437fb080a7de8602aeeba60f  extension/ezoe/design/standard/javascript/themes/ez/editor_template.js
 9bcc36292defe94bca5a013a1736c7d7  extension/ezoe/design/standard/javascript/themes/ez/img/colorpicker.jpg
 33adee48d32bbbba3e6412cc54ecf335  extension/ezoe/design/standard/javascript/themes/ez/img/flash.gif
 8a02be09a5dcbaef4473e8c0ecd39f08  extension/ezoe/design/standard/javascript/themes/ez/img/icons.png
@@ -7624,7 +7624,7 @@ c9a65e087b9dc1417c0a133c5309beaf  tests/tests/extension/ezoe/expOEEditorRegistry
 ec537531a37d13e0a1a90a8f3a112d4d  tests/tests/extension/ezoe/expOEEditorServicesTest.php
 c986f5766a23f4b954a6b74c5c4f8931  tests/tests/extension/ezoe/expOEEditorViewAccessTest.php
 c41c31f51231d61133a36baf5a601830  tests/tests/extension/ezoe/expOEEmbedImageAliasTest.php
-62d8b5a430d9b5a4ad9e6efbcd3823d7  tests/tests/extension/ezoe/expOEEmbedViewTest.php
+9f7b44df6f05aa7d16b8fe1f90161cbd  tests/tests/extension/ezoe/expOEEmbedViewTest.php
 a36d828e09f40c780d8d6a812d9656f4  tests/tests/extension/ezoe/expOEEngineConfigTest.php
 fc96db66db0ea2664cf805a08fca8284  tests/tests/extension/ezoe/expOEEngineViewTest.php
 1103e78206d9b10b78585b071e7c48bc  tests/tests/extension/ezoe/expOEInputBreakAttributesTest.php
