@@ -994,6 +994,18 @@
     "kernel/setup/steps/ezstep_create_sites.php": [
       "tests/tests/kernel/classes/setup/AdminUISiteaccessTest.php",
       "tests/tests/kernel/classes/setup/EditorSiteaccessTabsTest.php"
+    ],
+    "design/admin4/templates/content/searchresult.tpl": [
+      "tests/tests/design/AdminSearchTest.php"
+    ],
+    "design/admin4/templates/content/search.tpl": [
+      "tests/tests/design/AdminSearchTest.php"
+    ],
+    "design/admin4/templates/content/advancedsearch.tpl": [
+      "tests/tests/design/AdminSearchTest.php"
+    ],
+    "design/admin4/templates/page_search.tpl": [
+      "tests/tests/design/AdminSearchTest.php"
     ]
   },
   "generated": {
