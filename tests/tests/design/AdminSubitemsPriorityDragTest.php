@@ -26,6 +26,8 @@
 
 require_once __DIR__ . '/AdminNodeBinary.php';
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminSubitemsPriorityDragTest extends PHPUnit\Framework\TestCase
 {
     private static function root()
@@ -35,7 +37,7 @@ class AdminSubitemsPriorityDragTest extends PHPUnit\Framework\TestCase
 
     private static function read( $path )
     {
-        return (string)file_get_contents( self::root() . '/' . $path );
+        return AdminFiles::read( self::root() . '/' . $path );
     }
 
     /** The DRAG labels of children_detailed.tpl: key => English text */

@@ -10,6 +10,8 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminLeftColumnFontTest extends PHPUnit\Framework\TestCase
 {
     private static function root()
@@ -22,7 +24,7 @@ class AdminLeftColumnFontTest extends PHPUnit\Framework\TestCase
      */
     private static function rules( $path )
     {
-        $css = (string)file_get_contents( self::root() . '/' . $path );
+        $css = AdminFiles::read( self::root() . '/' . $path );
         $css = preg_replace( '#/\*.*?\*/#s', '', $css );
         preg_match_all( '/([^{}]+)\{([^{}]*)\}/', $css, $m, PREG_SET_ORDER );
         $rules = array();
@@ -103,7 +105,7 @@ class AdminLeftColumnFontTest extends PHPUnit\Framework\TestCase
                 {
                     continue;
                 }
-                if ( strpos( (string)file_get_contents( $file->getPathname() ), '--left-sidebar-font-size' ) !== false )
+                if ( strpos( AdminFiles::read( $file->getPathname() ), '--left-sidebar-font-size' ) !== false )
                 {
                     $hits[] = substr( $file->getPathname(), strlen( self::root() ) + 1 );
                 }

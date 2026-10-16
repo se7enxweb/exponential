@@ -21,6 +21,8 @@
 
 use Exponential\Service\ReverseRelationCheck;
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminReverseRelationCheckTest extends PHPUnit\Framework\TestCase
 {
     const CONTEXT = 'design/admin/content/reverserelations';
@@ -32,7 +34,7 @@ class AdminReverseRelationCheckTest extends PHPUnit\Framework\TestCase
 
     private static function read( $path )
     {
-        return (string)file_get_contents( self::root() . '/' . $path );
+        return AdminFiles::read( self::root() . '/' . $path );
     }
 
     /**

@@ -14,6 +14,8 @@
 
 require_once __DIR__ . '/AdminNodeBinary.php';
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminContextMenuNestedSubmenuTest extends PHPUnit\Framework\TestCase
 {
     private static function root()
@@ -23,7 +25,7 @@ class AdminContextMenuNestedSubmenuTest extends PHPUnit\Framework\TestCase
 
     private static function js()
     {
-        return (string)file_get_contents( self::root() . '/design/admin4/javascript/popupmenu/ezpopupmenu.js' );
+        return AdminFiles::read( self::root() . '/design/admin4/javascript/popupmenu/ezpopupmenu.js' );
     }
 
     /** Runs the named functions of ezpopupmenu.js in node over the cases: name => [arguments, expected] */
@@ -102,7 +104,7 @@ class AdminContextMenuNestedSubmenuTest extends PHPUnit\Framework\TestCase
     {
         $this->assertFileEquals( self::root() . "/design/admin4/templates/$path", self::root() . "/design/admin/templates/$path",
             "design/admin and design/admin4 differ: $path" );
-        $tpl = (string)file_get_contents( self::root() . "/design/admin4/templates/$path" );
+        $tpl = AdminFiles::read( self::root() . "/design/admin4/templates/$path" );
         $this->assertDoesNotMatchRegularExpression( '/<style|style="/i', $tpl, "$path: no inline CSS" );
         return $tpl;
     }
@@ -143,7 +145,7 @@ class AdminContextMenuNestedSubmenuTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( 'a4-bi-arrow-down-up', $button );
         foreach ( array( 'admin4' => 'node/view/a4_full_body.tpl', 'admin' => 'node/view/full.tpl' ) as $design => $view )
         {
-            $text = (string)file_get_contents( self::root() . "/design/$design/templates/$view" );
+            $text = AdminFiles::read( self::root() . "/design/$design/templates/$view" );
             $upload = strpos( $text, "node/view/upload_button.tpl" );
             $here = strpos( $text, "node/view/import_export_button.tpl' node=\$node" );
             $move = strpos( $text, 'name="MoveNodeButton"' );

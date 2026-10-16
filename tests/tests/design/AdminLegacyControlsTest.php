@@ -26,6 +26,7 @@
 require_once __DIR__ . '/AdminBaseStylesheetsTest.php';
 
 require_once __DIR__ . '/AdminNodeBinary.php';
+require_once __DIR__ . '/AdminFiles.php';
 
 class AdminLegacyControlsTest extends PHPUnit\Framework\TestCase
 {
@@ -39,12 +40,12 @@ class AdminLegacyControlsTest extends PHPUnit\Framework\TestCase
 
     private static function css( $file )
     {
-        return preg_replace( '#/\*.*?\*/#s', '', (string)file_get_contents( self::root() . '/design/admin4/stylesheets/' . $file ) );
+        return preg_replace( '#/\*.*?\*/#s', '', AdminFiles::read( self::root() . '/design/admin4/stylesheets/' . $file ) );
     }
 
     private static function template( $file )
     {
-        return (string)file_get_contents( self::root() . '/design/admin4/templates/' . $file );
+        return AdminFiles::read( self::root() . '/design/admin4/templates/' . $file );
     }
 
     /** The rule whose selector list holds $selector (one entry of a list counts) */
@@ -154,9 +155,9 @@ class AdminLegacyControlsTest extends PHPUnit\Framework\TestCase
     {
         // no admin4 stylesheet draws a line above a .box-header: blocks are separated by space
         $root = self::root();
-        foreach ( glob( "$root/design/admin4/stylesheets/{,*/}*.css", GLOB_BRACE ) ?: array() as $file )
+        foreach ( AdminFiles::files( "$root/design/admin4/stylesheets/{,*/}*.css", GLOB_BRACE ) as $file )
         {
-            foreach ( AdminBaseStylesheetsTest::rules( preg_replace( '#/\*.*?\*/#s', '', (string)file_get_contents( $file ) ) ) as $selector => $declarations )
+            foreach ( AdminBaseStylesheetsTest::rules( preg_replace( '#/\*.*?\*/#s', '', AdminFiles::read( $file ) ) ) as $selector => $declarations )
             {
                 if ( strpos( $selector, 'box-header' ) === false )
                     continue;
@@ -202,11 +203,11 @@ class AdminLegacyControlsTest extends PHPUnit\Framework\TestCase
 
     public function testEveryLeftMenuEndsWithTheSameWidthSwitch()
     {
-        $menus = glob( self::root() . '/design/admin4/templates/parts/*/menu.tpl' );
+        $menus = AdminFiles::files( self::root() . '/design/admin4/templates/parts/*/menu.tpl' );
         $this->assertGreaterThanOrEqual( 8, count( $menus ) );
         foreach ( $menus as $menu )
         {
-            $source = (string)file_get_contents( $menu );
+            $source = AdminFiles::read( $menu );
             $name = basename( dirname( $menu ) );
             $this->assertStringNotContainsString( 'id="widthcontrol-links"', $source, "parts/$name/menu.tpl writes its own width links" );
             $this->assertStringNotContainsString( 'id="trash"', $source, "parts/$name/menu.tpl writes its own trash link" );
@@ -226,7 +227,7 @@ class AdminLegacyControlsTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( 'title="{$a4_size.name|wash}"', $switch, 'and shows its name as tooltip' );
         $this->assertStringContainsString( '<button type="submit" name="Value" value="{$a4_size.value}"', $switch );
         $this->assertStringContainsString( 'name="RedirectURIAfterSet"', $switch, 'back to this page also without a Referer' );
-        $menubar = (string)file_get_contents( self::root() . '/design/admin4/javascript/ezadmin_menubar.js' );
+        $menubar = AdminFiles::read( self::root() . '/design/admin4/javascript/ezadmin_menubar.js' );
         $this->assertStringNotContainsString( '#widthcontrol-links a', $menubar, 'the switch has no links to catch any more' );
         $components = self::css( 'components.css' );
         foreach ( array( 'small' => 'arrows-collapse-vertical', 'medium' => 'layout-sidebar-inset', 'large' => 'arrows-expand-vertical' ) as $value => $icon )
@@ -304,7 +305,7 @@ class AdminLegacyControlsTest extends PHPUnit\Framework\TestCase
      */
     public function testTheSegmentedSwitchesAnswerTheArrowKeys()
     {
-        $engine = (string)file_get_contents( self::root() . '/extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe_engine_switch.tpl' );
+        $engine = AdminFiles::read( self::root() . '/extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe_engine_switch.tpl' );
         $this->assertStringContainsString( '<span class="ezoe-engine-switch-options a4-tabs is-segmented">', $engine, 'the engine switch is the shared pill' );
         $this->assertStringContainsString( 'role="group"', self::template( 'parts/left_width_control.tpl' ) );
         $node = AdminNodeBinary::require();
@@ -440,7 +441,7 @@ class AdminLegacyControlsTest extends PHPUnit\Framework\TestCase
         // <name>navigationpart without the ez prefix => parts/<name>/menu.tpl, not a name two letters short; the same
         // rule in admin4l's left menu block (the admin siteaccess draws its left column through it)
         foreach ( array( 'admin4' => self::template( 'page_leftmenu.tpl' ),
-                         'admin4l' => (string)file_get_contents( self::root() . '/design/admin4l/templates/explayouts/block/admin_left_menu.tpl' ) )
+                         'admin4l' => AdminFiles::read( self::root() . '/design/admin4l/templates/explayouts/block/admin_left_menu.tpl' ) )
                   as $design => $leftmenu )
         {
             $this->assertStringContainsString( "{elseif \$navigation_part_name|begins_with( 'ez' )|not}{set \$part_name = \$navigation_part_name|explode( 'navigationpart' )[0]}{/if}", $leftmenu, $design );

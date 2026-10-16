@@ -28,6 +28,8 @@ require_once __DIR__ . '/AdminBaseStylesheetsTest.php';
 
 require_once __DIR__ . '/AdminNodeBinary.php';
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminSiteAccessMenuTest extends PHPUnit\Framework\TestCase
 {
     private $server;
@@ -70,7 +72,7 @@ class AdminSiteAccessMenuTest extends PHPUnit\Framework\TestCase
 
     private static function file( $path )
     {
-        return (string)file_get_contents( dirname( __DIR__, 3 ) . '/' . $path );
+        return AdminFiles::read( dirname( __DIR__, 3 ) . '/' . $path );
     }
 
     private static function css()

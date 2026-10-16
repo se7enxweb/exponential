@@ -27,6 +27,8 @@ require_once __DIR__ . '/AdminBaseStylesheetsTest.php';
 
 require_once __DIR__ . '/AdminNodeBinary.php';
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminPreviewDevicesTest extends PHPUnit\Framework\TestCase
 {
     const TEMPLATE = 'design/admin4/templates/content/view/versionview.tpl';
@@ -46,7 +48,7 @@ class AdminPreviewDevicesTest extends PHPUnit\Framework\TestCase
 
     private static function read( $path )
     {
-        return (string)file_get_contents( self::root() . '/' . $path );
+        return AdminFiles::read( self::root() . '/' . $path );
     }
 
     public function testTheDevicesAreASegmentedPillOfNamedButtons()

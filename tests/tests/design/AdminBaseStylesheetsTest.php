@@ -23,6 +23,8 @@
 
 require_once __DIR__ . '/AdminTokenContrastTest.php';
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminBaseStylesheetsTest extends PHPUnit\Framework\TestCase
 {
     const BASE = array( 'core.css', 'content.css', 'pagelayout.css', 'theme/rounded.css', 'theme/admin_datatable.css', 'theme/modalwindow.css' );
@@ -34,7 +36,7 @@ class AdminBaseStylesheetsTest extends PHPUnit\Framework\TestCase
 
     private static function css( $file )
     {
-        return preg_replace( '#/\*.*?\*/#s', '', (string)file_get_contents( self::root() . '/design/admin4/stylesheets/' . $file ) );
+        return preg_replace( '#/\*.*?\*/#s', '', AdminFiles::read( self::root() . '/design/admin4/stylesheets/' . $file ) );
     }
 
     /**
@@ -127,9 +129,9 @@ class AdminBaseStylesheetsTest extends PHPUnit\Framework\TestCase
         $missing = array();
         foreach ( array( 'admin4', 'admin' ) as $design )
         {
-            foreach ( glob( self::root() . "/design/$design/stylesheets/modules/*.css" ) as $path )
+            foreach ( AdminFiles::files( self::root() . "/design/$design/stylesheets/modules/*.css" ) as $path )
             {
-                $css = preg_replace( '#/\*.*?\*/#s', '', (string)file_get_contents( $path ) );
+                $css = preg_replace( '#/\*.*?\*/#s', '', AdminFiles::read( $path ) );
                 $outlined = array();
                 foreach ( self::rules( $css, true ) as $list => $declarations )
                 {
@@ -211,11 +213,11 @@ class AdminBaseStylesheetsTest extends PHPUnit\Framework\TestCase
         {
             $this->assertFileDoesNotExist( "$root/$file" );
         }
-        $this->assertDoesNotMatchRegularExpression( '/^BackendCSSFileList\[\]=responsive\.css/m', (string)file_get_contents( "$root/settings/design.ini" ) );
-        $this->assertStringNotContainsString( "'responsive.css'", (string)file_get_contents( "$root/design/admin4/templates/page_head_style.tpl" ) );
+        $this->assertDoesNotMatchRegularExpression( '/^BackendCSSFileList\[\]=responsive\.css/m', AdminFiles::read( "$root/settings/design.ini" ) );
+        $this->assertStringNotContainsString( "'responsive.css'", AdminFiles::read( "$root/design/admin4/templates/page_head_style.tpl" ) );
         // admin3 keeps its responsive layout: it names the file itself in both branches
         $this->assertFileExists( "$root/design/admin3/stylesheets/responsive.css" );
-        $this->assertSame( 2, substr_count( (string)file_get_contents( "$root/design/admin3/templates/page_head_style.tpl" ), "'responsive.css'" ) );
+        $this->assertSame( 2, substr_count( AdminFiles::read( "$root/design/admin3/templates/page_head_style.tpl" ), "'responsive.css'" ) );
         // the one live rule of admin4's responsive.css moved to pagelayout.css
         $rules = self::rules( self::css( 'pagelayout.css' ) );
         $this->assertSame( '0.5rem', $rules['.message-confirmation, .message-feedback, .message-warning, .message-error']['padding'] ?? null );
@@ -252,7 +254,7 @@ class AdminBaseStylesheetsTest extends PHPUnit\Framework\TestCase
             $this->assertContains( $part, $hidden, "$part is not printed" );
         }
         $this->assertSame( 'none !important', $rules['*, *::before, *::after']['box-shadow'] );
-        $head = (string)file_get_contents( self::root() . '/design/admin4/templates/page_head_style.tpl' );
+        $head = AdminFiles::read( self::root() . '/design/admin4/templates/page_head_style.tpl' );
         $this->assertStringContainsString( "window.addEventListener('beforeprint', function () { root.setAttribute('data-a4-theme', 'light'); });", $head );
         $this->assertStringContainsString( "window.addEventListener('afterprint', function () { apply(root.getAttribute('data-a4-theme-choice')); });", $head );
     }

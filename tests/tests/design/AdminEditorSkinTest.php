@@ -15,6 +15,8 @@
 
 require_once __DIR__ . '/AdminNodeBinary.php';
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminEditorSkinTest extends PHPUnit\Framework\TestCase
 {
     private static function root()
@@ -65,7 +67,7 @@ class AdminEditorSkinTest extends PHPUnit\Framework\TestCase
             $this->assertFileExists( $base . 'oxide/' . $file );
             $this->assertFileExists( $base . 'oxide-dark/' . $file );
         }
-        $js = (string)file_get_contents( self::root() . '/design/admin4/javascript/admin4.js' );
+        $js = AdminFiles::read( self::root() . '/design/admin4/javascript/admin4.js' );
         $this->assertStringContainsString( "if (!v3 && mce.on) {", $js, 'the skin is set for TinyMCE 8 editors only' );
     }
 }

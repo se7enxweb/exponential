@@ -28,6 +28,8 @@ if ( is_file( $expMultiuploadCollection ) )
 unset( $expMultiuploadCollection );
 
 /** A stand-in for expMultiuploadService: answers canUploadAt() from a list and records the calls */
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminNodeUploadButtonTestService
 {
     public static $allowed = array();
@@ -63,7 +65,7 @@ class AdminNodeUploadButtonTest extends PHPUnit\Framework\TestCase
 
     private static function read( $path )
     {
-        return (string)file_get_contents( self::root() . '/' . $path );
+        return AdminFiles::read( self::root() . '/' . $path );
     }
 
     public static function setUpBeforeClass(): void

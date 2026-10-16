@@ -27,6 +27,8 @@ require_once __DIR__ . '/AdminTokenContrastTest.php';
 
 require_once __DIR__ . '/AdminNodeBinary.php';
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminVisibilityStatusTest extends PHPUnit\Framework\TestCase
 {
     const CONTEXT = 'design/admin/node/view/full';
@@ -38,7 +40,7 @@ class AdminVisibilityStatusTest extends PHPUnit\Framework\TestCase
 
     private static function file( $path )
     {
-        return (string)file_get_contents( self::root() . '/' . $path );
+        return AdminFiles::read( self::root() . '/' . $path );
     }
 
     /** selector => property => value, each selector of a list on its own */
@@ -291,7 +293,7 @@ class AdminVisibilityStatusTest extends PHPUnit\Framework\TestCase
         }
         $this->assertSame( '(Versteckt durch übergeordneten Eintrag)',
             $xpath->query( "//context[name='design/admin/contentstructuremenu']/message[source='(Hidden by parent)']/translation" )->item( 0 )->textContent );
-        $this->assertStringNotContainsString( 'übergeordneten Element versteckt', file_get_contents( self::root() . '/share/translations/ger-DE/translation.ts' ) );
+        $this->assertStringNotContainsString( 'übergeordneten Element versteckt', AdminFiles::read( self::root() . '/share/translations/ger-DE/translation.ts' ) );
     }
 
     private static function xpathString( $s )

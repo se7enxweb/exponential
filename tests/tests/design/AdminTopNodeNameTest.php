@@ -12,6 +12,8 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminTopNodeNameTest extends PHPUnit\Framework\TestCase
 {
     const TOP_NODE_SENTENCE = 'This is the top node of the content structure. It is not a content object: it has no class, attributes, translations, versions or other locations, and it cannot be edited, moved or removed. The top-level nodes it holds are listed under Sub items.';
@@ -41,14 +43,14 @@ class AdminTopNodeNameTest extends PHPUnit\Framework\TestCase
         }
         // the users of the source text are unchanged
         $this->assertStringContainsString( "ezpI18n::tr( 'kernel/content', 'Top Level Nodes' )",
-            (string)file_get_contents( self::root() . '/kernel/classes/ezcontentobjecttreenode.php' ) );
+            AdminFiles::read( self::root() . '/kernel/classes/ezcontentobjecttreenode.php' ) );
         $this->assertStringContainsString( "ezpI18n::tr( 'kernel/content', 'Top Level Nodes')",
-            (string)file_get_contents( self::root() . '/extension/ezoe/classes/ezoeserverfunctions.php' ) );
+            AdminFiles::read( self::root() . '/extension/ezoe/classes/ezoeserverfunctions.php' ) );
     }
 
     public function testTheTinyMCE8DialogPathNamesItContent()
     {
-        $js = (string)file_get_contents( self::root() . '/extension/ezoe/design/standard/javascript/tinymce8_ez/ezoe_dialog.js' );
+        $js = AdminFiles::read( self::root() . '/extension/ezoe/design/standard/javascript/tinymce8_ez/ezoe_dialog.js' );
         $this->assertStringContainsString( "path.unshift( { node_id: 1, name: t( 'Content' ) } );", $js );
         $this->assertStringContainsString( "'Content': 'Inhalte',", $js );
         $this->assertStringNotContainsString( 'Top level nodes', $js );
@@ -58,7 +60,7 @@ class AdminTopNodeNameTest extends PHPUnit\Framework\TestCase
     {
         foreach ( array( 'design/admin', 'design/admin4' ) as $design )
             $this->assertStringContainsString( "{'" . self::TOP_NODE_SENTENCE . "'|i18n( 'design/admin/node/view/full' )}",
-                (string)file_get_contents( self::root() . "/$design/templates/node/top_node_full.tpl" ) );
+                AdminFiles::read( self::root() . "/$design/templates/node/top_node_full.tpl" ) );
         $this->assertStringEndsWith( 'Die Inhalte darunter sind unter Unterelemente aufgeführt.',
             self::translation( 'share/translations/ger-DE/translation.ts', 'design/admin/node/view/full', self::TOP_NODE_SENTENCE ) );
         $this->assertStringEndsWith( 'The content below it is listed under Sub items.',

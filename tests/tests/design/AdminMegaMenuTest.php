@@ -33,6 +33,8 @@
 
 require_once __DIR__ . '/AdminNodeBinary.php';
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
 {
     private static function root()
@@ -712,7 +714,7 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
             $this->assertNotNull( $icon, "[$section] LinkIcons[$link]" );
             $this->assertContains( $icon, $icons[1], "LinkIcons[$link]=$icon is not in design.ini IconList[]" );
             $this->assertStringStartsWith( '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-' . $icon . '"',
-                                           (string)file_get_contents( self::root() . "/share/icons/bootstrap-icons/svg/$icon.svg" ), "$icon.svg" );
+                                           AdminFiles::read( self::root() . "/share/icons/bootstrap-icons/svg/$icon.svg" ), "$icon.svg" );
             $text = $ini[$section]['LinkDescriptions'][$link] ?? null;
             $this->assertNotNull( $text, "[$section] LinkDescriptions[$link]" );
             // the description is translated in its section's context, the name comes from the template's i18n_hash
