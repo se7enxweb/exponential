@@ -1743,7 +1743,7 @@ language_locale='eng-GB'";
         foreach (
             array(
                 'ezie', 'ezodf', self::restApiExtension(), 'ezmultiupload', 'eztags',
-                'ezautosave', 'ez_network', 'ez_network_demo'
+                'ezautosave', 'ezownerchange', 'ez_network', 'ez_network_demo'
             ) as $extension
         )
         {
