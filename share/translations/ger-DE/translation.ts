@@ -11786,6 +11786,10 @@
         <translation>Reihenfolge gespeichert</translation>
     </message>
     <message>
+        <source>The sub items cannot be listed: the scripts of the list (Exponential UI) are not loaded.</source>
+        <translation>Die Unterelemente können nicht aufgelistet werden: Die Skripte der Liste (Exponential UI) sind nicht geladen.</translation>
+    </message>
+    <message>
         <source>Undo</source>
         <translation>Rückgängig</translation>
     </message>
@@ -13020,6 +13024,10 @@
     <message>
         <source>Export this item or import into it.</source>
         <translation>Dieses Element exportieren oder in es importieren.</translation>
+    </message>
+    <message>
+        <source>Not saved: %error</source>
+        <translation>Nicht gespeichert: %error</translation>
     </message>
 </context>
 <context>
@@ -49214,6 +49222,10 @@ Sie sollten entweder den Benutzer kontaktieren oder einen neuen Entwurf erstelle
     <message>
         <source>Fewer keywords result in more matches. Try reducing keywords until you get a result.</source>
         <translation>Weniger Suchwörter liefern mehr Ergebnisse. Versuchen Sie die Suchwörter zu reduzieren, bis Sie ein Ergebnis bekommen.</translation>
+    </message>
+    <message>
+        <source>The search failed. Try again.</source>
+        <translation>Die Suche ist fehlgeschlagen. Bitte erneut versuchen.</translation>
     </message>
 </context>
 <context>

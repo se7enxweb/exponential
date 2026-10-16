@@ -160,7 +160,8 @@ var labelsObj = {ldelim}
                         export_csv_title: "{'Download the items with the visible columns as a CSV file'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
                         copy_title: "{'Click to copy'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
                         copied: "{'Copied'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        copy_failed: "{'Not copied'|i18n( 'design/admin/node/view/full' )|wash('javascript')}"
+                        copy_failed: "{'Not copied'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        save_failed: "{'Not saved: %error'|i18n( 'design/admin/node/view/full' )|wash('javascript')}"
                    {rdelim},
 
     {* Reordering the rows by drag and drop (subitems_priority_drag.js); %name, %position, %count and %error are
@@ -272,6 +273,20 @@ if ( window.Exp && Exp.$ && Exp.$.fn.expDataTable && window.eZAjaxSubitemsExpDat
     Exp.ready( function() {
         eZAjaxSubitemsExpDataTable.init(confObj, labelsObj, createGroups, createOptions);
     } );
+} else {
+    // Without it (expui not active, or its script failed) the list stayed empty without a word: a notice says so
+    var unavailable = function() {
+        var list = document.getElementById( 'content-sub-items-list' );
+        if ( !list || list.firstChild ) return;
+        var notice = document.createElement( 'div' ), p = document.createElement( 'p' );
+        notice.className = 'a4-notice is-warn';
+        notice.setAttribute( 'role', 'status' );
+        p.textContent = {/literal}"{'The sub items cannot be listed: the scripts of the list (Exponential UI) are not loaded.'|i18n( 'design/admin/node/view/full' )|wash('javascript')}"{literal};
+        notice.appendChild( p );
+        list.appendChild( notice );
+    };
+    if ( document.readyState === 'loading' ) document.addEventListener( 'DOMContentLoaded', unavailable );
+    else unavailable();
 }
 
 })();
