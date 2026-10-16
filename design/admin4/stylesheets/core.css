@@ -113,17 +113,18 @@ pre.wordwrap span.line /* Style for tag wrapping around each line of text */
 @font-face
 {
     font-family: 'IcoMoon';
-    src: url('../fonts/IcoMoon.eot');
-    src: url('../fonts/IcoMoon.eot?#iefix') format('embedded-opentype'), url('../fonts/IcoMoon.svg#IcoMoon') format('svg'), url('../fonts/IcoMoon.woff') format('woff'), url('../fonts/IcoMoon.ttf') format('truetype');
+    /* woff only: every browser admin4 supports reads it (the eot, svg and ttf files are no longer referenced) */
+    src: url('../fonts/IcoMoon.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 [data-icon]:before
 {
     font-family: 'IcoMoon';
     content: attr(data-icon);
-    speak: none;
+    content: attr(data-icon) / "";   /* a glyph from the private-use area: no text for a screen reader */
 }
 
 
@@ -693,7 +694,7 @@ div.oe-window /* Needed by OE 5.0 when translating content */
 
 .small
 {
-    font-size: 85%;
+    font-size: var(--a4-text-xs);   /* 85% of 13px was 11px, below the 12px floor */
 }
 
 .hide /* Used on elements which should only be visible if CSS in disabled or unavailable */
