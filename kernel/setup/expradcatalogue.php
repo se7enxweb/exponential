@@ -853,6 +853,17 @@ class expRADCatalogue
             'source' => 'lib/ezutils/classes/ezini.php',
             'tool'  => 'setup/handlerextension/inicache' ),
 
+        'debugbarpanel' => array(
+            'group' => 'storage',
+            'title' => 'Debug bar panel',
+            'what'  => 'A tab of the Exp Debug bar from an extension, after Memory, with an optional chip in the summary and data in the page\'s JSON: what the extension knows about the page, such as the layout it was built from. The panel decides who may see it, since the bar also shows to anonymous visitors by IP.',
+            'where' => 'extension/<name>/classes/<name>debugbarpanel.php',
+            'register' => 'debugbar.ini [DebugBarSettings] Panels[]=<id> and [Panel_<id>] Class=<class>',
+            'contract' => ezpI18n::tr( 'design/admin/setup/rad', 'implements expDebugBarPanelInterface: visible(), title(), chip(), html() and data()' ),
+            'mechanism' => 'ini',
+            'source' => 'lib/ezutils/classes/expdebugbarreport.php',
+            'tool'  => false ),
+
         'inisave' => array(
             'group' => 'access',
             'title' => 'Writing settings from code',

@@ -1061,6 +1061,7 @@ return array(
       'expDatatypeWizard'                                            => 'kernel/setup/expdatatypewizard.php',
       'expDebugBarIPList'                                            => 'kernel/classes/debugbar/expdebugbariplist.php',
       'expDebugBarLog'                                               => 'kernel/classes/debugbar/expdebugbarlog.php',
+      'expDebugBarPanelInterface'                                    => 'kernel/classes/debugbar/expdebugbarpanelinterface.php',
       'expDebugBarRegistry'                                          => 'kernel/classes/debugbar/expdebugbarregistry.php',
       'expDebugBarReport'                                            => 'lib/ezutils/classes/expdebugbarreport.php',
       'expDebugBarServerFunctions'                                   => 'kernel/classes/debugbar/expdebugbarserverfunctions.php',

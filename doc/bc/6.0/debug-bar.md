@@ -422,6 +422,7 @@ the report's own defaults.
 | Templates | the templates used (`ShowUsedTemplates`) and the CSS/JS packer report, or how to turn them on |
 | Included files | the included PHP files (`DisplayIncludedFiles`), or their number and how to list them |
 | Memory | the classic "Main resources" table, memory now, peak, limit and share, and the five steps that took the most |
+| (extensions) | a tab per panel an extension registers, after Memory (see [Panels of extensions](#panels-of-extensions)) |
 | Velocity | where the request entered and which process rendered the report, in one sentence (see [below](#velocity-where-the-request-entered-and-what-rendered-it)), the facts behind it, OPcache status, and Velocity's response cache |
 | Other | reports appended by extensions with `eZDebug::appendBottomReport()` that belong to no tab (only when there are any) |
 
@@ -463,6 +464,48 @@ The user list (`DebugUserIDList[]`) takes one user ID per line, "Add me" adds th
 Drawn from `expdebugbar::cache`: "This page only" (the view cache of the node the page shows), Velocity's
 response cache, OPcache of the serving process, every cache tag and every cache ID with its description and when
 it was last cleared, and all caches. Each clear says what it did.
+
+### Panels of extensions
+
+An extension can add its own tab to the bar, with a chip in the summary and data in the page's JSON - for example
+the layout a page was built from. It names an id and a class in its `settings/debugbar.ini.append.php`:
+
+```ini
+[DebugBarSettings]
+Panels[]=mylayouts
+
+[Panel_mylayouts]
+Class=myLayoutsDebugBarPanel
+```
+
+The class implements `expDebugBarPanelInterface` (`kernel/classes/debugbar/expdebugbarpanelinterface.php`):
+
+```php
+class myLayoutsDebugBarPanel implements expDebugBarPanelInterface
+{
+    public function visible()
+    {
+        // the bar also shows to anonymous visitors when DebugByIP matches
+        $access = eZUser::currentUser()->hasAccessTo( 'mylayouts', 'edit' );
+        return $access['accessWord'] !== 'no';
+    }
+    public function title() { return ezpI18n::tr( 'extension/mylayouts', 'Layouts' ); }
+    public function chip() { return array( 'text' => 'Layout: Home', 'title' => 'Rule home', 'level' => 'ok' ); }
+    public function html() { return '<p>' . htmlspecialchars( 'Home', ENT_QUOTES ) . '</p>'; }
+    public function data() { return array( 'layout' => 'home' ); }
+}
+```
+
+- The tab's id is `x-<id>` in lower case (`data-tab="x-mylayouts"`, section `exp-debug-panel-x-mylayouts`), so it
+  never meets a built-in tab. An id is letters, digits and `_`; two ids that differ only in case are one id.
+- `visible()` comes first; a panel that says no draws nothing. `html()` is printed as it is: the panel escapes what
+  it puts in. The chip's text and title are escaped by the bar, a level other than `ok`, `warn` or `high` is `ok`,
+  and a click on the chip opens the tab. `data()` goes to `panels.<id>` of the JSON (`#exp-debug-data`).
+- An entry without a usable class (no `Class`, an unknown class, one without the interface) and a panel that throws
+  or gives no title are left out with a warning in the debug output; the rest of the bar is drawn.
+- The class is created without arguments for every report, before `visible()` and also for anonymous visitors: keep
+  the constructor trivial, without data access, and the rest cheap, since the bar renders on every page that shows it.
+  `html()` returns its markup and prints nothing itself.
 
 ### Velocity: where the request entered and what rendered it
 

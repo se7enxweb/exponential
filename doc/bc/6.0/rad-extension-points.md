@@ -628,6 +628,18 @@ Two places the kernel will hand its caches to Redis or Valkey if something answe
 | Mechanism | handler |
 | Kernel | `lib/ezutils/classes/ezini.php` |
 
+### Debug bar panel  
+
+A tab of the Exp Debug bar from an extension, after Memory, with an optional chip in the summary and data in the page's JSON: what the extension knows about the page, such as the layout it was built from. The panel decides who may see it, since the bar also shows to anonymous visitors by IP.
+
+| | |
+|---|---|
+| Code | `extension/<name>/classes/<name>debugbarpanel.php` |
+| Registered by | debugbar.ini [DebugBarSettings] Panels[]=<id> and [Panel_<id>] Class=<class> |
+| Contract | `implements expDebugBarPanelInterface: visible(), title(), chip(), html() and data()` |
+| Mechanism | ini |
+| Kernel | `lib/ezutils/classes/expdebugbarreport.php` |
+
 ## Packaging and shop
 
 Moving things between installations, and selling them.
