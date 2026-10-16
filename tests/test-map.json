@@ -1002,6 +1002,35 @@
     ],
     "design/standard/templates/*": [
       "tests/tests/design/AdminContentSecurityPolicyTest.php"
+    ],
+    "design/admin4/javascript/page/content_job.js": [
+      "tests/tests/design/AdminContentJobScriptsTest.php"
+    ],
+    "design/admin4/javascript/page/content_job_mode_choice.js": [
+      "tests/tests/design/AdminContentJobScriptsTest.php"
+    ],
+    "design/admin4/templates/content/job.tpl": [
+      "tests/tests/design/AdminContentJobScriptsTest.php",
+      "tests/tests/design/AdminJobTranslationsTest.php"
+    ],
+    "design/admin4/templates/content/job_mode_choice.tpl": [
+      "tests/tests/design/AdminContentJobScriptsTest.php",
+      "tests/tests/design/AdminJobTranslationsTest.php"
+    ],
+    "design/admin/javascript/ezajaxrelations_jquery.js": [
+      "tests/tests/design/AdminContentJobScriptsTest.php"
+    ],
+    "design/admin4/javascript/ezajaxrelations_jquery.js": [
+      "tests/tests/design/AdminContentJobScriptsTest.php"
+    ],
+    "tests/tests/design/js/content_job.js": [
+      "tests/tests/design/AdminContentJobScriptsTest.php"
+    ],
+    "tests/tests/design/js/content_job_mode_choice.js": [
+      "tests/tests/design/AdminContentJobScriptsTest.php"
+    ],
+    "tests/tests/design/js/csp_actions.js": [
+      "tests/tests/design/AdminContentSecurityPolicyTest.php"
     ]
   },
   "generated": {
