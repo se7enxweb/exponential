@@ -68,6 +68,7 @@
     {/if}
     {foreach $hygiene_confirm.ids as $id}<input type="hidden" name="UserIDArray[]" value="{$id|wash}" />{/foreach}
     <input type="hidden" name="HygieneAction" value="{$hygiene_confirm.action|wash}" />
+    <input type="hidden" name="HygieneToken" value="{$hygiene_confirm.token|wash}" />
     <div class="a4-actions">
         {if $hygiene_confirm.result.done}
         <button class="a4-btn {if eq( $hygiene_confirm.action, 'disable' )}a4-btn-danger{else}a4-btn-primary{/if}" type="submit" name="ConfirmButton" value="1">{$action_names[$hygiene_confirm.action]|wash} ({$hygiene_confirm.result.done|count})</button>

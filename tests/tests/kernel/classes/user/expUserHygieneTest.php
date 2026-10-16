@@ -20,6 +20,9 @@
  *          texts translated
  *  UH-09 - Shared logins (LoveStack L04, any case, not counting the trash), the anonymous user is not "never signed
  *          in", and the published user objects without an account are counted but never listed
+ *  UH-10 - Confirm needs the confirmation page's own token (HygieneToken, kept in the session), not only ezformtoken
+ *  UH-11 - Disable and enable count as done only when the setsettings operation continued: a workflow that cancels
+ *          or halts it leaves the account as it was
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -476,7 +479,7 @@ class expUserHygieneTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( "\$isPost = \\eZSys::serverVariable( 'REQUEST_METHOD', true ) === 'POST';", $view );
         $this->assertStringContainsString( "if ( \$hygiene !== null && \$isPost && \$http->hasPostVariable( 'ExportButton' ) )", $view, 'the CSV only by a POST' );
         $this->assertStringContainsString( 'if ( $isPost )', $view, 'an action only by a POST' );
-        $this->assertStringContainsString( '$confirmed = $action !== null;', $view );
+        $this->assertStringContainsString( '$confirmed = $action !== null && self::checkConfirmToken( $http );', $view );
         $this->assertStringContainsString( '!$confirmed );', $view, 'a button only asks; Confirm does it' );
         $this->assertStringContainsString( "\\expUserHygiene::protectedIDs( \$currentUser->attribute( 'contentobject_id' ) )", $view );
 
@@ -542,6 +545,77 @@ class expUserHygieneTest extends PHPUnit\Framework\TestCase
         }
         $this->assertStringContainsString( "<source>Check user accounts</source>\n        <translation>Benutzerkonten prüfen</translation>",
                                            self::read( 'share/translations/ger-DE/translation.ts' ) );
+    }
+
+    /** An eZHTTPTool stand-in: a session and the POST variables */
+    private static function http( array $post, array $session = array() )
+    {
+        return new class( $post, $session ) {
+            public $post;
+            public $session;
+            public function __construct( array $post, array $session ) { $this->post = $post; $this->session = $session; }
+            public function hasPostVariable( $name ) { return array_key_exists( $name, $this->post ); }
+            public function postVariable( $name ) { return $this->post[$name]; }
+            public function hasSessionVariable( $name ) { return array_key_exists( $name, $this->session ); }
+            public function sessionVariable( $name ) { return $this->session[$name]; }
+            public function setSessionVariable( $name, $value ) { $this->session[$name] = $value; }
+        };
+    }
+
+    private static function tokenMethod( $name )
+    {
+        return new ReflectionMethod( '\Exponential\View\Kernel\User\Hygiene', $name );
+    }
+
+    public function testUH10ConfirmNeedsThePagesOwnToken()
+    {
+        $confirmToken = self::tokenMethod( 'confirmToken' );
+        $check = self::tokenMethod( 'checkConfirmToken' );
+
+        // a POST that only names the action and confirms (what a cross-site form can send) is not confirmed
+        $this->assertFalse( $check->invoke( null, self::http( array( 'ConfirmButton' => '1', 'HygieneAction' => 'disable' ) ) ) );
+
+        // the confirmation page makes the token once per session and keeps it
+        $http = self::http( array() );
+        $token = $confirmToken->invoke( null, $http );
+        $this->assertMatchesRegularExpression( '/^[0-9a-f]{64}$/', $token );
+        $this->assertSame( $token, $confirmToken->invoke( null, $http ) );
+        $session = $http->session;
+        $this->assertSame( $token, $session[\Exponential\View\Kernel\User\Hygiene::TOKEN_SESSION] );
+
+        $post = array( 'ConfirmButton' => '1', 'HygieneAction' => 'disable' );
+        $this->assertTrue( $check->invoke( null, self::http( $post + array( 'HygieneToken' => $token ), $session ) ) );
+        $this->assertFalse( $check->invoke( null, self::http( $post, $session ) ), 'without the token' );
+        $this->assertFalse( $check->invoke( null, self::http( $post + array( 'HygieneToken' => str_repeat( '0', 64 ) ), $session ) ), 'another token' );
+        $this->assertFalse( $check->invoke( null, self::http( $post + array( 'HygieneToken' => array( $token ) ), $session ) ), 'not a string' );
+        $this->assertFalse( $check->invoke( null, self::http( $post + array( 'HygieneToken' => '' ), array() ) ), 'no session token' );
+        $this->assertFalse( $check->invoke( null, self::http( $post + array( 'HygieneToken' => 'short' ),
+                                                             array( \Exponential\View\Kernel\User\Hygiene::TOKEN_SESSION => 'short' ) ) ), 'a short session token' );
+        $this->assertNotSame( 'expUserDeactivateToken', \Exponential\View\Kernel\User\Hygiene::TOKEN_SESSION, 'its own token, not user/deactivate\'s' );
+
+        // the confirmation form carries it, in both designs
+        foreach ( array( 'design/admin4', 'design/admin' ) as $design )
+            $this->assertStringContainsString( '<input type="hidden" name="HygieneToken" value="{$hygiene_confirm.token|wash}" />',
+                                               self::read( "$design/templates/user/hygiene.tpl" ), $design );
+        $this->assertStringContainsString( "'token' => self::confirmToken( \$http )", self::read( 'kernel/private/classes/views/user/hygiene.php' ) );
+    }
+
+    public function testUH11DoneOnlyWhenTheOperationContinued()
+    {
+        // through the operation handler: its status numbers
+        $this->assertTrue( expUserHygiene::settingsDone( array( 'status' => eZModuleOperationInfo::STATUS_CONTINUE ), true ) );
+        foreach ( array( eZModuleOperationInfo::STATUS_CANCELLED, eZModuleOperationInfo::STATUS_HALTED,
+                         eZModuleOperationInfo::STATUS_REPEAT, eZModuleOperationInfo::STATUS_QUEUED ) as $status )
+            $this->assertFalse( expUserHygiene::settingsDone( array( 'status' => $status ), true ), "status $status" );
+        $this->assertFalse( expUserHygiene::settingsDone( null, true ), 'the handler failed' );
+        $this->assertFalse( expUserHygiene::settingsDone( array(), true ) );
+        $this->assertFalse( expUserHygiene::settingsDone( array( 'status' => false ), true ) );
+        // eZUserOperationCollection::setSettings(): true or false
+        $this->assertTrue( expUserHygiene::settingsDone( array( 'status' => true ), false ) );
+        $this->assertFalse( expUserHygiene::settingsDone( array( 'status' => false ), false ) );
+        $this->assertFalse( expUserHygiene::settingsDone( null, false ) );
+        // perform() decides by it
+        $this->assertStringContainsString( 'return self::settingsDone( $result, $viaHandler );', self::read( 'kernel/classes/user/expuserhygiene.php' ) );
     }
 }
 

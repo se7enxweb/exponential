@@ -19,10 +19,16 @@ namespace Exponential\View\Kernel\User
  * With site.ini [UserSettings] DeactivateAndMove=enabled and the function user/deactivate, two more buttons send the
  * ticked accounts to user/deactivate (Deactivate and move, Reactivate and move back), which confirms and does them.
  *
- * Every change and the CSV take a POST (with the form token where ezformtoken is active). The view opens with the
+ * Every change and the CSV take a POST (with the form token where ezformtoken is active); Confirm also needs the
+ * token of the confirmation page, kept in the session (HygieneToken), as user/deactivate does, so no bulk change is
+ * done by a request the page did not make, even without ezformtoken. The view opens with the
  * function user/hygiene; each action also needs the right to edit the account's object, and never touches the
  * anonymous user, the administrator account or the user who acts. E-mail addresses are shown, searched, sorted
  * and exported only for a user who may assign roles (role/assign), as the E-mail column of the sub-items table.
+ * The list is not narrowed by content/read, unlike the lists of contentcheck: whoever holds user/hygiene sees the
+ * login and name of every account, also of accounts whose object a content/read limitation hides and of those without
+ * an object or a location (which the tree's permission SQL cannot judge, and which the "orphaned" filter is for).
+ * Grant the function only to roles that may see all accounts.
  * Guide: doc/features/6.0/user-hygiene.md
  */
 class Hygiene extends \Exponential\Runnable\ModuleView
@@ -67,7 +73,10 @@ class Hygiene extends \Exponential\Runnable\ModuleView
             if ( $http->hasPostVariable( 'ConfirmButton' ) && $http->hasPostVariable( 'HygieneAction' ) )
             {
                 $action = \expUserHygiene::normaliseAction( $http->postVariable( 'HygieneAction' ) );
-                $confirmed = $action !== null;
+                // only from the confirmation page of this session: its token, besides the form token of ezformtoken
+                // (which an installation may not have active); without it the confirmation page is shown again
+                // (admin4 review 15.10.2026: Confirm plus HygieneAction alone did up to 100 accounts at once)
+                $confirmed = $action !== null && self::checkConfirmToken( $http );
             }
         }
         $ids = $http->hasPostVariable( 'UserIDArray' ) ? \expUnactivatedUsers::normaliseIDs( $http->postVariable( 'UserIDArray' ) ) : array();
@@ -107,7 +116,8 @@ class Hygiene extends \Exponential\Runnable\ModuleView
                 if ( !$confirmed )
                 {
                     $tpl->setVariable( 'hygiene_confirm', array( 'action' => $action, 'ids' => $ids, 'result' => $result,
-                                                         'names' => self::names( array_slice( $result['done'], 0, 20 ) ) ) );
+                                                         'names' => self::names( array_slice( $result['done'], 0, 20 ) ),
+                                                         'token' => self::confirmToken( $http ) ) );
                     $Result['content'] = $tpl->fetch( 'design:user/hygiene.tpl' );
                     return $this->viewResult( $Result, $Result );
                 }
@@ -147,6 +157,39 @@ class Hygiene extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'module', $Module );
         $Result['content'] = $tpl->fetch( 'design:user/hygiene.tpl' );
         return $this->viewResult( $Result, $Result );
+    }
+
+    /** The session variable of the confirmation token */
+    const TOKEN_SESSION = 'expUserHygieneToken';
+
+    /**
+     * The token of the confirmation form: random, kept in the session, the same for the session's confirmation pages.
+     *
+     * @param \eZHTTPTool $http
+     * @return string
+     */
+    protected static function confirmToken( $http )
+    {
+        $token = $http->hasSessionVariable( self::TOKEN_SESSION ) ? (string)$http->sessionVariable( self::TOKEN_SESSION ) : '';
+        if ( strlen( $token ) !== 64 )
+        {
+            $token = bin2hex( random_bytes( 32 ) );
+            $http->setSessionVariable( self::TOKEN_SESSION, $token );
+        }
+        return $token;
+    }
+
+    /**
+     * Whether the POST carries the session's confirmation token (HygieneToken).
+     *
+     * @param \eZHTTPTool $http
+     * @return bool
+     */
+    protected static function checkConfirmToken( $http )
+    {
+        $expected = $http->hasSessionVariable( self::TOKEN_SESSION ) ? (string)$http->sessionVariable( self::TOKEN_SESSION ) : '';
+        $given = $http->hasPostVariable( 'HygieneToken' ) ? $http->postVariable( 'HygieneToken' ) : '';
+        return strlen( $expected ) === 64 && is_string( $given ) && hash_equals( $expected, $given );
     }
 
     /**
