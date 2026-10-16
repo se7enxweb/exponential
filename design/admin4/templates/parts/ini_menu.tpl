@@ -93,7 +93,7 @@
     {def $ini_menu_url_list   = array()
          $name_list  = hash()
          $menu_name  = ''
-         $check      = array()
+         $access_check      = array()
          $has_access = true()
          $item_name = ''
          $disabled = true()
@@ -123,14 +123,14 @@
     {if ezini_hasvariable( $ini_section, 'PolicyList', 'menu.ini' )}
         {foreach ezini( $ini_section, 'PolicyList', 'menu.ini' ) as $policy}
             {if $policy|contains('/')}
-                {set $check = $policy|explode('/')}
-                {if fetch( 'user', 'has_access_to', hash( 'module', $check[0], 'function', $check[1] ) )|not}
+                {set $access_check = $policy|explode('/')}
+                {if fetch( 'user', 'has_access_to', hash( 'module', $access_check[0], 'function', $access_check[1] ) )|not}
                     {set $has_access = false()}
                     {break}
                 {/if}
             {else}
-                {set $check = fetch('content', 'node', hash( 'node_id', $policy ))}
-                {if and( $check, $check.can_read )|not}
+                {set $access_check = fetch('content', 'node', hash( 'node_id', $policy ))}
+                {if and( $access_check, $access_check.can_read )|not}
                     {set $has_access = false()}
                     {break}
                 {/if}
@@ -185,14 +185,14 @@
             {if ezini_hasvariable( $ini_menu_section, 'PolicyList', 'menu.ini' )}
                 {foreach ezini( $ini_menu_section, 'PolicyList', 'menu.ini' ) as $policy}
                     {if $policy|contains('/')}
-                        {set $check = $policy|explode('/')}
-                        {if fetch( 'user', 'has_access_to', hash( 'module', $check[0], 'function', $check[1] ) )|not}
+                        {set $access_check = $policy|explode('/')}
+                        {if fetch( 'user', 'has_access_to', hash( 'module', $access_check[0], 'function', $access_check[1] ) )|not}
                             {set $ini_menu_url_list = array()}
                             {break}
                         {/if}
                     {else}
-                        {set $check = fetch('content', 'node', hash( 'node_id', $policy ))}
-                        {if and( $check, $check.can_read )|not}
+                        {set $access_check = fetch('content', 'node', hash( 'node_id', $policy ))}
+                        {if and( $access_check, $access_check.can_read )|not}
                             {set $ini_menu_url_list = array()}
                             {break}
                         {/if}
@@ -243,14 +243,14 @@
             {if ezini_hasvariable( $ini_menu_section, concat( 'PolicyList_', $link_key ), 'menu.ini' )}
                 {foreach ezini( $ini_menu_section, concat( 'PolicyList_', $link_key ), 'menu.ini' ) as $policy}
                     {if $policy|contains('/')}
-                        {set $check = $policy|explode('/')}
-                        {if fetch( 'user', 'has_access_to', hash( 'module', $check[0], 'function', $check[1] ) )|not}
+                        {set $access_check = $policy|explode('/')}
+                        {if fetch( 'user', 'has_access_to', hash( 'module', $access_check[0], 'function', $access_check[1] ) )|not}
                             {set $has_access = false()}
                             {break}
                         {/if}
                     {else}
-                        {set $check = fetch('content', 'node', hash( 'node_id', $policy ))}
-                        {if and( $check, $check.can_read )|not}
+                        {set $access_check = fetch('content', 'node', hash( 'node_id', $policy ))}
+                        {if and( $access_check, $access_check.can_read )|not}
                             {set $has_access = false()}
                             {break}
                         {/if}
@@ -436,7 +436,7 @@
         {undef $menu_title_id $ini_menu_groups $grouped_keys $group_items $group_open $ini_menu_group_id $group_links $lead_links $lead_items}
     {/if}
     {undef $trail_links $trail_items $trail_keys}
-    {undef $ini_menu_url_list $name_list $menu_name $check $has_access $item_name $disabled $enabled_hash $enabled_defaults $items $check_view $hide_no_access
+    {undef $ini_menu_url_list $name_list $menu_name $access_check $has_access $item_name $disabled $enabled_hash $enabled_defaults $items $check_view $hide_no_access
            $ini_menu_group_list $menu_sections $tab_links $added_urls $ini_menu_section $section_group $section_context $section_hidden
            $section_icons $section_texts $section_figures $item_key}
 {/if}
