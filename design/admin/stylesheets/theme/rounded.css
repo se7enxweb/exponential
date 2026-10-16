@@ -159,6 +159,7 @@ width:19px;
 margin-top:50%;
 background: url(../../images/3/sprite.png) no-repeat -20px -461px;
 }
+:where([dir="rtl"]) #leftmenu a.show-hide-control { float: left; scale: -1 1; }
 #leftmenu a.show-hide-control:hover,
 #leftmenu a.show-hide-control:focus,
 #leftmenu a.show-hide-control:active

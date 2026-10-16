@@ -26,11 +26,13 @@ jQuery(function( $ )
             {
                 if ( leftMenuDrag.elements  )
                 {
-                    var els = leftMenuDrag.elements, offset = els[0].offset().left, pos = e.pageX, size = pos - offset;
+                    var els = leftMenuDrag.elements, offset = els[0].offset().left, pos = e.pageX,
+                        // right to left the menu stands at the right and grows to the left
+                        size = rtl ? offset + els[0].outerWidth() - pos : pos - offset;
                     if ( size < 20 ) size = 20;
                     els[0].css( 'width', ( size )  + 'px' );
-                    els[1].css( 'marginLeft', ( size + 10 ) + 'px' );
-                    $( '#left-panels-separator' ).css( 'left', (parseInt($('#leftmenu').css( 'width'),10) - 20) + 'px' );
+                    els[1].css( 'marginInlineStart', ( size + 10 ) + 'px' );
+                    $( '#left-panels-separator' ).css( 'insetInlineStart', (parseInt($('#leftmenu').css( 'width'),10) - 20) + 'px' );
                 }
             },
             save: function()
@@ -52,8 +54,10 @@ jQuery(function( $ )
     var $leftmenu = $('#leftmenu'),
         outerWidth = $leftmenu.outerWidth(),
         innerWidth = $leftmenu.innerWidth(),
-        margin = parseInt($leftmenu.css('marginLeft'), 10),
-        leftmenuDesignMargin = parseInt($('#leftmenu-design').css('marginRight'), 10);
+        margin = parseInt($leftmenu.css('marginInlineStart'), 10),
+        leftmenuDesignMargin = parseInt($('#leftmenu-design').css('marginInlineEnd'), 10),
+        // the side the menu starts from follows the page's direction (dir="rtl" on <html>): logical margins and insets
+        rtl = getComputedStyle( document.documentElement ).direction === 'rtl';
 
     if ( wl.length && wh.length )
     {
@@ -69,8 +73,8 @@ jQuery(function( $ )
     {
         if ( !margin )
             margin = 0;
-        $( '#maincontent' ).css( 'marginLeft', (outerWidth + margin + spaceBetweenColumns) + 'px' );
-        $( '#left-panels-separator' ).css( 'left', (innerWidth + margin - leftmenuDesignMargin) + 'px' );
+        $( '#maincontent' ).css( 'marginInlineStart', (outerWidth + margin + spaceBetweenColumns) + 'px' );
+        $( '#left-panels-separator' ).css( 'insetInlineStart', (innerWidth + margin - leftmenuDesignMargin) + 'px' );
     }
 
 });

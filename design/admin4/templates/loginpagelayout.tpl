@@ -3,7 +3,7 @@
    on the right; on phones and narrow windows only the form, full width, large fields, no brand panel.
    Its own markup (body.a4-login-page, no #page/#header/#columns), so none of the old admin login styles reach it.
    The form itself is the module result (user/login.tpl), shown through page_mainarea.tpl as before. *}
-<html lang="{$site.http_equiv.Content-language|wash}">
+<html lang="{$site.http_equiv.Content-language|wash}"{if eq( first_set( $site.text_direction, 'ltr' ), 'rtl' )} dir="rtl"{/if}>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">

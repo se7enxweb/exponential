@@ -48,18 +48,18 @@ if ( window.Exp && window.Exp.collapse ) {
             elements: [{
                 selector: '#leftmenu',
                 duration: 0.4,
-                fullStyle: { marginLeft: '0px' },
-                collapsedStyle: { marginLeft: function () { return ( strip - width() ) + 'px'; } }
+                fullStyle: { marginInlineStart: '0px' },
+                collapsedStyle: { marginInlineStart: function () { return ( strip - width() ) + 'px'; } }
             },{
                 selector: '#maincontent',
                 duration: 0.4,
-                fullStyle: { marginLeft: function () { return ( width() + 10 ) + 'px'; } },
-                collapsedStyle: { marginLeft: ( strip + 10 ) + 'px' }
+                fullStyle: { marginInlineStart: function () { return ( width() + 10 ) + 'px'; } },
+                collapsedStyle: { marginInlineStart: ( strip + 10 ) + 'px' }
             },{
                 selector: '#left-panels-separator',
                 duration: 0.4,
-                fullStyle: { left: function () { return ( $( '#leftmenu' ).innerWidth() - ( parseInt( $( '#leftmenu-design' ).css( 'marginRight' ), 10 ) || 0 ) ) + 'px'; } },
-                collapsedStyle: { left: '0px' }
+                fullStyle: { insetInlineStart: function () { return ( $( '#leftmenu' ).innerWidth() - ( parseInt( $( '#leftmenu-design' ).css( 'marginInlineEnd' ), 10 ) || 0 ) ) + 'px'; } },
+                collapsedStyle: { insetInlineStart: '0px' }
             }],
             callback: function () {
                 $( '#leftmenu' ).toggleClass( 'collapsed', !!this.conf.collapsed );

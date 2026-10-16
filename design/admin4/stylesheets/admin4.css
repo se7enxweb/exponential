@@ -251,7 +251,7 @@ body,
   .header-search {
     display: block;
     order: 2;
-    margin-left: auto;
+    margin-inline-start: auto;
   }
   .header-site,
   .header-theme { order: 3; }   /* the site link first: same order, so the markup's order decides */
@@ -332,7 +332,7 @@ body,
     gap: var(--a4-space-2);
     padding: 0 var(--a4-space-4);
   }
-  .header-site { margin-left: auto; }   /* the tools stand together at the row's end */
+  .header-site { margin-inline-start: auto; }   /* the tools stand together at the row's end */
   /* the mark alone: the full logo (152px) left the row's tools 8px apart at 390px and squeezed the menu button */
   #header-logo .a4-logo-full { display: none; }
   #header-logo .a4-logo-mark { display: block; }
@@ -392,6 +392,7 @@ body,
     padding: var(--a4-space-4) max(var(--a4-space-5), env(safe-area-inset-right))
              calc(var(--a4-space-5) + env(safe-area-inset-bottom)) max(var(--a4-space-5), env(safe-area-inset-left));
   }
+  :where([dir="rtl"]) .navbar-bar { padding: var(--a4-space-4) max(var(--a4-space-5), env(safe-area-inset-right)) calc(var(--a4-space-5) + env(safe-area-inset-bottom)) max(var(--a4-space-5), env(safe-area-inset-left)); }
   .navbar-bar > li {
     display: flex;
     min-width: 0;
@@ -404,10 +405,10 @@ body,
   .navbar-bar > .header-search-mobile { padding-bottom: var(--a4-space-2); }
   .header-search-mobile .searchblock input.searchtext {
     min-height: 44px;
-    padding-left: calc(var(--a4-space-7) - var(--a4-space-1));   /* 44px: room for the scope button */
+    padding-inline-start: calc(var(--a4-space-7) - var(--a4-space-1));   /* 44px: room for the scope button */
   }
   #header #searchscope-mobile {   /* the scope button: 40 x 40px inside the 44px field */
-    left: 2px;
+    inset-inline-start: 2px;
     width: 40px;
     height: 40px;
     margin-top: calc(var(--a4-space-1) - var(--a4-space-5));   /* -20px: centred on the field */
@@ -462,7 +463,7 @@ body,
     display: inline-flex;
     min-height: 44px;
     padding: 0 var(--a4-space-2);
-    margin-left: calc(-1 * var(--a4-space-2));
+    margin-inline-start: calc(-1 * var(--a4-space-2));
     border-radius: var(--a4-radius-s);
     color: var(--a4-ink);
     white-space: normal;
@@ -613,8 +614,8 @@ body,
 .a4-env-short { display: none; }
 .a4-env-release {
   flex: 0 1000 auto;
-  padding-left: var(--a4-space-1);
-  border-left: 1px solid currentColor;
+  padding-inline-start: var(--a4-space-1);
+  border-inline-start: 1px solid currentColor;
   font-weight: 500;
   letter-spacing: 0;
 }
@@ -631,7 +632,7 @@ body,
     position: absolute;
     z-index: var(--a4-z-popover);
     top: 50%;
-    left: calc(100% + var(--a4-space-2));
+    inset-inline-start: calc(100% + var(--a4-space-2));
     max-width: 18rem;
     translate: 0 -50%;   /* centered on the logo */
     box-shadow: var(--a4-shadow-m);
@@ -644,7 +645,7 @@ body,
     content: "";
     position: absolute;
     top: -1px;
-    right: 100%;
+    inset-inline-end: 100%;
     bottom: -1px;
     width: calc(var(--a4-space-2) + 1px);
   }
@@ -665,14 +666,14 @@ body,
 @media screen and (hover: hover) and (pointer: fine) and (max-width: 575.98px), screen and (hover: hover) and (pointer: fine) and (min-width: 1280px) {
   #header .a4-env-hover {
     top: calc(100% + var(--a4-space-2));
-    left: 0;
+    inset-inline-start: 0;
     translate: none;
   }
   #header .a4-env-hover::before {
     top: auto;
-    right: 0;
+    inset-inline-end: 0;
     bottom: 100%;
-    left: 0;
+    inset-inline-start: 0;
     width: auto;
     height: calc(var(--a4-space-2) + 1px);
   }
@@ -814,7 +815,7 @@ body,
 .a4-user-menu {
   position: absolute;
   top: calc(100% + var(--a4-space-2));
-  right: 0;
+  inset-inline-end: 0;
   z-index: var(--a4-z-popover);
   min-width: 13rem;
   max-height: calc(100vh - var(--header-height) - var(--a4-space-5));
@@ -827,7 +828,7 @@ body,
   border-radius: var(--a4-radius-s);
   box-shadow: var(--a4-shadow-m);
   color: var(--a4-ink);
-  text-align: left;
+  text-align: start;
 }
 .a4-nav-more-list > li { margin: 0; }
 .navbar-menu .a4-nav-more-list li a,
@@ -925,7 +926,7 @@ body,
 .a4-site-menu {
   position: absolute;
   top: calc(100% + var(--a4-space-2));
-  right: 0;
+  inset-inline-end: 0;
   z-index: var(--a4-z-popover);
   box-sizing: border-box;
   width: max-content;
@@ -941,7 +942,7 @@ body,
   border-radius: var(--a4-radius-s);
   box-shadow: var(--a4-shadow-m);
   color: var(--a4-ink);
-  text-align: left;
+  text-align: start;
 }
 .a4-site-menu a {
   display: flex;
@@ -962,6 +963,7 @@ body,
 }
 .a4-site-menu .a4-site-menu-front .a4-site-menu-name { font-weight: 600; }
 .a4-site-menu a[aria-current="true"] { box-shadow: inset 3px 0 0 var(--a4-accent); }
+:where([dir="rtl"]) .a4-site-menu a[aria-current="true"] { box-shadow: inset -3px 0 0 var(--a4-accent); }
 .a4-site-menu-name { overflow-wrap: anywhere; }
 .a4-site-menu-meta,
 .a4-site-menu-url {
@@ -987,8 +989,8 @@ body,
   .a4-site-menu {
     position: fixed;
     top: calc(var(--header-height) + var(--a4-space-2));
-    left: var(--a4-space-4);
-    right: var(--a4-space-4);
+    inset-inline-start: var(--a4-space-4);
+    inset-inline-end: var(--a4-space-4);
     z-index: var(--a4-z-menu);   /* over the sidebar tabs on the window's edges, as the mega menu */
     width: auto;
     min-width: 0;
@@ -1054,8 +1056,8 @@ body,
     display: block;
     position: fixed;
     top: calc(var(--header-height) + var(--a4-space-2));
-    left: var(--a4-space-5);
-    right: var(--a4-space-5);
+    inset-inline-start: var(--a4-space-5);
+    inset-inline-end: var(--a4-space-5);
     z-index: var(--a4-z-menu);   /* over the sidebar tabs on the window's edges, as a context menu */
     box-sizing: border-box;
     width: fit-content;   /* as wide as its groups need; centred by the auto margins */
@@ -1070,7 +1072,7 @@ body,
     border-radius: var(--a4-radius-s);
     box-shadow: var(--a4-shadow-m);
     color: var(--a4-ink);
-    text-align: left;
+    text-align: start;
     white-space: normal;
   }
   .a4-mega-panel[hidden] { display: none; }
@@ -1079,8 +1081,8 @@ body,
   .a4-mega-panel::before {
     content: "";
     position: absolute;
-    left: 0;
-    right: 0;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
     bottom: 100%;
     height: calc(var(--a4-space-2) + 1px);
   }
@@ -1302,9 +1304,11 @@ html[data-a4-theme-choice="system"] .a4-theme-toggle .a4-icon-system { display: 
 .sidebar.left > div {
   margin: var(--a4-gutter) var(--a4-gutter) var(--a4-gutter) var(--a4-space-5);
 }
+:where([dir="rtl"]) .sidebar > div, :where([dir="rtl"]) .sidebar.left > div { margin: var(--a4-gutter) var(--a4-space-5) var(--a4-gutter) var(--a4-gutter); }
 .sidebar.right > div {
   margin: var(--a4-gutter) var(--a4-space-5) var(--a4-gutter) var(--a4-gutter);
 }
+:where([dir="rtl"]) .sidebar.right > div { margin: var(--a4-gutter) var(--a4-gutter) var(--a4-gutter) var(--a4-space-5); }
 /* The right column: its card keeps the 208px it had before the gutter (16rem minus the 24px edge and the gutter), so
    a tool's name and its switch still share a row */
 :root { --a4-right-width: 16rem; }
@@ -1314,12 +1318,12 @@ html[data-a4-theme-choice="system"] .a4-theme-toggle .a4-icon-system { display: 
 }
 /* a column beside the content: the column ends where the content begins, its card's margin is the whole gap */
 @media screen and (min-width: 1024px) {
-  html body:has(.sidebar.left.show) { margin-left: var(--left-sidebar-width, 15rem); }
-  body:has(.sidebar.left.show) .content-wrapper { padding-left: 0; }
+  html body:has(.sidebar.left.show) { margin-inline-start: var(--left-sidebar-width, 15rem); }
+  body:has(.sidebar.left.show) .content-wrapper { padding-inline-start: 0; }
 }
 @media screen and (min-width: 1280px) {
-  html body:has(.sidebar.right.show) { margin-right: var(--a4-right-width); }
-  body:has(.sidebar.right.show) .content-wrapper { padding-right: 0; }
+  html body:has(.sidebar.right.show) { margin-inline-end: var(--a4-right-width); }
+  body:has(.sidebar.right.show) .content-wrapper { padding-inline-end: 0; }
 }
 @media screen and (max-width: 1023.98px) {
   .content-wrapper {
@@ -1332,8 +1336,8 @@ html[data-a4-theme-choice="system"] .a4-theme-toggle .a4-icon-system { display: 
 .sidebar-controls {
   position: fixed;
   top: 48%;
-  left: 0;
-  right: 0;
+  inset-inline-start: 0;
+  inset-inline-end: 0;
   transform: translateY(-50%);
   z-index: var(--a4-z-sidebar-toggle);
 }
@@ -1344,9 +1348,11 @@ html[data-a4-theme-choice="system"] .a4-theme-toggle .a4-icon-system { display: 
 .sidebar-control.left {
   border-radius: 0 0.75rem 0.75rem 0;
 }
+:where([dir="rtl"]) .sidebar-control.left { border-radius: 0.75rem 0 0 0.75rem; }
 .sidebar-control.right {
   border-radius: 0.75rem 0 0 0.75rem;
 }
+:where([dir="rtl"]) .sidebar-control.right { border-radius: 0 0.75rem 0.75rem 0; }
 .sidebar-control:focus-visible {
   outline: 3px solid var(--a4-ring);
   outline-offset: 2px;
@@ -1486,6 +1492,7 @@ input.defaultbutton:active {
   line-height: 1.2;
   vertical-align: middle;
 }
+:where([dir="rtl"]) :is(input.button, input.defaultbutton, input.button-disabled, button.button):where(#page *) { margin: var(--a4-space-1) 0 var(--a4-space-1) var(--a4-space-1); }
 button.button:where(#page *) {
   border: 1px solid var(--a4-line-strong);
   border-radius: var(--a4-radius-s);
@@ -1499,7 +1506,7 @@ button.button:where(#page *):is(:hover, :focus):not(:disabled) { background-colo
 :is(input.button, input.button-disabled, button.button)[disabled]:where(#page *) { cursor: not-allowed; }
 /* a control right after a field (a select and its "Set", two selects of one setting) stands a small step away */
 :is(select, input):where(#page *) + :is(input.button, input.defaultbutton, input.button-disabled, button.button, select):where(#page *) {
-  margin-left: var(--a4-space-1);
+  margin-inline-start: var(--a4-space-1);
 }
 
 /* Fields with no class of their own (and the base's input.box/input.halfbox) at the same height, so a field and the
@@ -1522,7 +1529,7 @@ select:where(#page *):where(:not([class])):where(:not([multiple]):not([size]), [
   -webkit-appearance: none;
   appearance: none;
   max-width: 100%;
-  padding-right: var(--a4-space-6);
+  padding-inline-end: var(--a4-space-6);
   background-image: linear-gradient(45deg, transparent 50%, var(--a4-muted) 50%),
                     linear-gradient(135deg, var(--a4-muted) 50%, transparent 50%);
   background-position: calc(100% - var(--a4-space-4) - 1px) 55%, calc(100% - var(--a4-space-3)) 55%;
@@ -1531,6 +1538,7 @@ select:where(#page *):where(:not([class])):where(:not([multiple]):not([size]), [
   text-overflow: ellipsis;
   cursor: pointer;
 }
+:where([dir="rtl"]) select:where(#page *):where(:not([class])):where(:not([multiple]):not([size]), [size="1"]) { background-position: var(--a4-space-3) 55%, calc(var(--a4-space-4) + 1px) 55%; }
 select:where(#page *):where(:not([class])):where(:not([multiple]):not([size]), [size="1"]):hover:not(:disabled) {
   border-color: var(--a4-accent);
 }
@@ -1541,7 +1549,7 @@ select:where(#page *):where(:not([class])):disabled { color: var(--a4-disabled);
   select:where(#page *):where(:not([class])):where(:not([multiple]):not([size]), [size="1"]) {
     -webkit-appearance: auto;
     appearance: auto;
-    padding-right: var(--a4-space-2);
+    padding-inline-end: var(--a4-space-2);
     background-image: none;
   }
   :is(input.button, input.defaultbutton, input.button-disabled, button.button):where(#page *) { border: 1px solid ButtonText; }
@@ -1626,15 +1634,15 @@ html .exp-dt tbody tr:has(> td > input[type="checkbox"]:checked) > td { backgrou
   margin: 0 0 var(--a4-space-3);
   padding: var(--a4-space-2) var(--a4-space-3);
   border: 1px solid var(--a4-line);
-  border-left-width: 4px;
+  border-inline-start-width: 4px;
   border-radius: var(--a4-radius-s);
   background-color: var(--a4-soft);
   color: var(--a4-ink);
 }
-#page div:is(.message-feedback, .message-confirmation) { border-color: var(--a4-ok-line); border-left-color: var(--a4-ok); background-color: var(--a4-ok-bg); }
-#page div.message-warning { border-color: var(--a4-warn-line); border-left-color: var(--a4-warn); background-color: var(--a4-warn-bg); }
-#page div.message-error { border-color: var(--a4-bad-line); border-left-color: var(--a4-bad); background-color: var(--a4-bad-bg); }
-#page div.message-information { border-color: var(--a4-info-line); border-left-color: var(--a4-info); background-color: var(--a4-info-bg); }
+#page div:is(.message-feedback, .message-confirmation) { border-color: var(--a4-ok-line); border-inline-start-color: var(--a4-ok); background-color: var(--a4-ok-bg); }
+#page div.message-warning { border-color: var(--a4-warn-line); border-inline-start-color: var(--a4-warn); background-color: var(--a4-warn-bg); }
+#page div.message-error { border-color: var(--a4-bad-line); border-inline-start-color: var(--a4-bad); background-color: var(--a4-bad-bg); }
+#page div.message-information { border-color: var(--a4-info-line); border-inline-start-color: var(--a4-info); background-color: var(--a4-info-bg); }
 #page div:is(.message-feedback, .message-confirmation) h2 { color: var(--a4-ok); }
 #page div.message-warning h2 { color: var(--a4-warn); }
 #page div.message-error h2 { color: var(--a4-bad); }
@@ -1643,19 +1651,20 @@ html .exp-dt tbody tr:has(> td > input[type="checkbox"]:checked) > td { backgrou
   padding: 0 0 0 calc(var(--a4-space-4) + var(--a4-space-1) + var(--a4-space-2));
   font-size: var(--a4-text-l);
 }
+:where([dir="rtl"]) #page div:is(.message-warning, .message-error, .message-feedback, .message-confirmation, .message-information) h2 { padding: 0 calc(var(--a4-space-4) + var(--a4-space-1) + var(--a4-space-2)) 0 0; }
 #page div:is(.message-warning, .message-error, .message-feedback, .message-confirmation, .message-information) h2::before {
-  left: 0;
+  inset-inline-start: 0;
   top: 0.1em;
 }
 /* A message without a heading (a paragraph or a list only) takes the icon on the block itself */
 #page div:is(.message-warning, .message-error, .message-feedback, .message-confirmation, .message-information):not(:has(> h2)) {
   position: relative;
-  padding-left: calc(var(--a4-space-3) + var(--a4-space-4) + var(--a4-space-1) + var(--a4-space-2));
+  padding-inline-start: calc(var(--a4-space-3) + var(--a4-space-4) + var(--a4-space-1) + var(--a4-space-2));
 }
 #page div:is(.message-warning, .message-error, .message-feedback, .message-confirmation, .message-information):not(:has(> h2))::before {
   content: "";
   position: absolute;
-  left: var(--a4-space-3);
+  inset-inline-start: var(--a4-space-3);
   top: calc(var(--a4-space-2) + 1px);
   width: calc(var(--a4-space-4) + var(--a4-space-1));
   height: calc(var(--a4-space-4) + var(--a4-space-1));
@@ -1756,11 +1765,12 @@ html #page.ezexplayoutsuinavigationpart #leftmenu.sidebar {
   margin-top: var(--a4-space-2); color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 600;
 }
 a.a4-dash-figure:has(> .a4-dash-figure-ico)::after {
-  content: ""; position: absolute; top: var(--a4-space-3); right: var(--a4-space-3); width: 14px; height: 14px;
+  content: ""; position: absolute; top: var(--a4-space-3); inset-inline-end: var(--a4-space-3); width: 14px; height: 14px;
   background-color: var(--a4-muted);
   -webkit-mask: url(../../../share/icons/bootstrap-icons/svg/chevron-right.svg) no-repeat center / contain;
   mask: url(../../../share/icons/bootstrap-icons/svg/chevron-right.svg) no-repeat center / contain;
 }
+:where([dir="rtl"]) a.a4-dash-figure:has(> .a4-dash-figure-ico)::after { scale: -1 1; }
 a.a4-dash-figure:hover::after, a.a4-dash-figure:focus-visible::after { background-color: var(--a4-accent-text); }
 /* A figure that is a link says so beyond its arrow: its label underlines on hover and focus; the focus ring is the
    global :focus-visible one, which follows the tile's radius. */
@@ -1974,10 +1984,11 @@ span.classattribute-description {
   color: var(--a4-ink);
   cursor: pointer;
 }
+:where([dir="rtl"]) .controlbar.a4-node-actions form .button-left .block select { padding: 0 var(--a4-space-3) 0 var(--a4-space-6); background-position: var(--a4-space-3) 55%, calc(var(--a4-space-4) + 1px) 55%; }
 .controlbar.a4-node-actions form .button-left .block select:hover:not(:disabled) { border-color: var(--a4-field-line); background-color: var(--a4-soft); }
 .controlbar.a4-node-actions form .button-left .block select:disabled { color: var(--a4-disabled); cursor: default; }
 @media (forced-colors: active) {
-  .controlbar.a4-node-actions form .button-left .block select { -webkit-appearance: auto; appearance: auto; padding-right: var(--a4-space-3); background-image: none; }
+  .controlbar.a4-node-actions form .button-left .block select { -webkit-appearance: auto; appearance: auto; padding-inline-end: var(--a4-space-3); background-image: none; }
 }
 input.button.a4-danger:hover { border-color: var(--a4-bad); color: var(--a4-bad); background-color: var(--a4-bad-bg); }
 .a4-node-links { display: flex; align-items: center; gap: var(--a4-space-1); }
@@ -2068,7 +2079,7 @@ div.context-information.a4-node-meta {
 #window-controls:not(.a4-node-tabs):has(> .a4-tabs-height) .tab-content { padding-bottom: var(--a4-space-5); }
 .a4-tabs-height {
   position: absolute;
-  right: var(--a4-space-4);   /* clear of the tab panel's scroll bar */
+  inset-inline-end: var(--a4-space-4);   /* clear of the tab panel's scroll bar */
   bottom: var(--a4-space-2);  /* room for the focus ring: the box clips what overflows it */
   z-index: 1;
   display: flex;
@@ -2176,9 +2187,9 @@ html:has(body.a4-login-page) { background: var(--a4-surface); }
 }
 .a4-login-form #logintext:focus, .a4-login-form #passwordtext:focus { outline: 2px solid transparent; border-color: var(--a4-accent); box-shadow: 0 0 0 3px var(--a4-ring); }
 .a4-field-wrap { position: relative; }
-.a4-field-wrap #passwordtext { padding-right: var(--a4-space-7); }
+.a4-field-wrap #passwordtext { padding-inline-end: var(--a4-space-7); }
 .a4-reveal {
-  position: absolute; top: 3px; right: 3px; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center;
+  position: absolute; top: 3px; inset-inline-end: 3px; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center;
   margin: 0; padding: 0; border: 0; border-radius: var(--a4-radius-s); background: transparent; color: var(--a4-muted); cursor: pointer;
 }
 .a4-reveal:hover { color: var(--a4-ink); background-color: var(--a4-soft); }
@@ -2358,7 +2369,7 @@ html {
     padding: var(--a4-space-3) var(--a4-space-3) var(--a4-space-4);
     border-radius: var(--a4-radius);
   }
-  #maincontent fieldset { padding: var(--a4-space-2) var(--a4-space-2) var(--a4-space-3); margin-left: 0; margin-right: 0; }
+  #maincontent fieldset { padding: var(--a4-space-2) var(--a4-space-2) var(--a4-space-3); margin-inline-start: 0; margin-inline-end: 0; }
   #controlbar-top .box-bc { padding: var(--a4-space-1) var(--a4-space-2); }
   #controlbar-top .button-left input.defaultbutton,
   #controlbar-top .button-left input.button,
@@ -2501,11 +2512,11 @@ html {
   border: 1px solid var(--a4-field-line); border-radius: var(--a4-radius-s); background-color: var(--a4-field); color: var(--a4-ink);
   font: var(--a4-text-l)/1.2 var(--a4-font); box-shadow: none;
 }
-.exp-pw-js .a4pw-input input { padding-right: var(--a4-pw-toggle-room); }   /* room for .a4pw-toggle (two 12px insets, 8px gap, icon and "Show") */
+.exp-pw-js .a4pw-input input { padding-inline-end: var(--a4-pw-toggle-room); }   /* room for .a4pw-toggle (two 12px insets, 8px gap, icon and "Show") */
 .a4pw-input input:focus { outline: 2px solid transparent; border-color: var(--a4-accent); box-shadow: 0 0 0 3px var(--a4-ring); }
-.a4pw-field.invalid .a4pw-input input { border-color: var(--a4-bad); border-width: 2px; padding-left: calc(var(--a4-space-3) - 1px); }   /* the 1px wider border: the text stays put */
+.a4pw-field.invalid .a4pw-input input { border-color: var(--a4-bad); border-width: 2px; padding-inline-start: calc(var(--a4-space-3) - 1px); }   /* the 1px wider border: the text stays put */
 .a4pw-toggle {
-  position: absolute; top: 4px; right: 4px; bottom: 4px; display: inline-flex; align-items: center; gap: var(--a4-space-2);
+  position: absolute; top: 4px; inset-inline-end: 4px; bottom: 4px; display: inline-flex; align-items: center; gap: var(--a4-space-2);
   margin: 0; padding: 0 var(--a4-space-3); border: 1px solid transparent; border-radius: var(--a4-radius-s); background: transparent;
   color: var(--a4-muted); font: 600 var(--a4-text-s)/1 var(--a4-font); cursor: pointer;
 }
@@ -2563,10 +2574,11 @@ html {
 .a4pw-btn.primary, .a4pw a.a4pw-btn.primary { background-color: var(--a4-accent-strong); border-color: var(--a4-accent-strong); color: var(--a4-on-accent); }
 .a4pw-btn.primary:hover, .a4pw a.a4pw-btn.primary:hover { background-color: var(--a4-accent-press); border-color: var(--a4-accent-press); color: var(--a4-on-accent-hover); }
 
-.a4pw-summary { margin: 0 0 var(--a4-space-4); padding: var(--a4-space-3) var(--a4-space-4); border: 1px solid var(--a4-bad-line); border-left: 4px solid var(--a4-bad); border-radius: var(--a4-radius-s); background-color: var(--a4-bad-bg); color: var(--a4-bad); }
+.a4pw-summary { margin: 0 0 var(--a4-space-4); padding: var(--a4-space-3) var(--a4-space-4); border: 1px solid var(--a4-bad-line); border-inline-start: 4px solid var(--a4-bad); border-radius: var(--a4-radius-s); background-color: var(--a4-bad-bg); color: var(--a4-bad); }
 .a4pw-summary:focus { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
 .a4pw-summary h2 { font-size: var(--a4-text-l); font-weight: 700; color: var(--a4-bad); }
 .a4pw-summary ul { margin: var(--a4-space-2) 0 0; padding: 0 0 0 var(--a4-space-4); }
+:where([dir="rtl"]) .a4pw-summary ul { padding: 0 var(--a4-space-4) 0 0; }
 .a4pw-summary li { margin: 2px 0; }
 .a4pw .a4pw-summary a { color: var(--a4-bad); text-decoration: underline; font-weight: 600; }
 
@@ -2578,10 +2590,10 @@ html {
 .a4pw-done-actions { padding-top: var(--a4-space-2); }
 
 @media (max-width: 767px) {
-  .a4pw-card { padding: var(--a4-space-3) var(--a4-space-3); border: 0; padding-left: 0; padding-right: 0; }
+  .a4pw-card { padding: var(--a4-space-3) var(--a4-space-3); border: 0; padding-inline-start: 0; padding-inline-end: 0; }
   .a4pw-head h1 { font-size: 1.3em; }
   .a4pw-btn { flex: 1 1 auto; }
-  .exp-pw-js .a4pw-input input { padding-right: calc(var(--a4-pw-toggle-room) - var(--a4-space-2)); }
+  .exp-pw-js .a4pw-input input { padding-inline-end: calc(var(--a4-pw-toggle-room) - var(--a4-space-2)); }
 }
 
 /* ---- Compatibility: Exponential UI (expui) in admin4's tokens ----------------------------------------------------
@@ -2628,13 +2640,13 @@ html #action-controls .exp-dt-action {
   display: inline-flex;
   box-sizing: border-box;
   height: var(--a4-control-h);
-  margin-left: var(--a4-space-2);
+  margin-inline-start: var(--a4-space-2);
   border: 1px solid var(--a4-line-strong);
   border-radius: var(--a4-radius-s);
   background-color: var(--a4-card);
   font-size: var(--a4-text-s);
 }
-html #action-controls .exp-dt-action-group:first-child .exp-dt-action { margin-left: 0; }
+html #action-controls .exp-dt-action-group:first-child .exp-dt-action { margin-inline-start: 0; }
 html #action-controls .exp-dt-action:hover { border-color: var(--a4-field-line); background-color: var(--a4-soft); }
 html #action-controls .exp-dt-action-disabled,
 html #action-controls .exp-dt-action-disabled:hover { border-color: var(--a4-line); background-color: var(--a4-soft); }
@@ -2655,12 +2667,12 @@ html #action-controls .exp-dt-button:focus-visible { outline: 3px solid var(--a4
 /* room for the icon in front (12px in, 14px wide) and the caret of "More actions" */
 html #action-controls #ezbtn-items-button,
 html #action-controls #ezbtn-new-button,
-html #action-controls #ezbtn-options-button { padding-left: var(--a4-space-6); }
+html #action-controls #ezbtn-options-button { padding-inline-start: var(--a4-space-6); }
 html #action-controls #ezbtn-items-button::before,
 html #action-controls #ezbtn-new-button::before,
-html #action-controls #ezbtn-options-button::before { left: var(--a4-space-3); }
-html #action-controls #ezbtn-more button { padding-right: var(--a4-space-6); }
-html #action-controls #ezbtn-more button::after { right: var(--a4-space-3); }
+html #action-controls #ezbtn-options-button::before { inset-inline-start: var(--a4-space-3); }
+html #action-controls #ezbtn-more button { padding-inline-end: var(--a4-space-6); }
+html #action-controls #ezbtn-more button::after { inset-inline-end: var(--a4-space-3); }
 html .exp-dt-first, html .exp-dt-prev, html .exp-dt-next, html .exp-dt-last, html .exp-dt-page {
   display: inline-flex;
   align-items: center;
@@ -2680,6 +2692,7 @@ html .exp-dt-first, html .exp-dt-prev, html .exp-dt-next, html .exp-dt-last, htm
   line-height: 1;
   vertical-align: middle;
 }
+html:where([dir="rtl"]) .exp-dt-first, html:where([dir="rtl"]) .exp-dt-prev, html:where([dir="rtl"]) .exp-dt-next, html:where([dir="rtl"]) .exp-dt-last, html:where([dir="rtl"]) .exp-dt-page { margin: 0 var(--a4-space-1) 0 0; }
 html .exp-dt-first:hover, html .exp-dt-prev:hover, html .exp-dt-next:hover, html .exp-dt-last:hover, html .exp-dt-page:hover {
   border-color: var(--a4-field-line); background-color: var(--a4-soft);
 }
@@ -2727,8 +2740,9 @@ div#contentstructure ul#content_tree_menu ul a.openclose-close::after {
   position: absolute;
   inset: -2px 0 -2px -4px;   /* 20 x 20px: wider would cover the row above or below or the node's own link */
 }
+:where([dir="rtl"]) div#contentstructure ul#content_tree_menu ul a.openclose-open::after, :where([dir="rtl"]) div#contentstructure ul#content_tree_menu ul a.openclose-close::after { inset: -2px -4px -2px 0; }
 #header .searchblock .searchscope {   /* the button itself is 24 x 24px (WCAG 2.5.8), at the field's left edge */
-  left: var(--a4-space-1);
+  inset-inline-start: var(--a4-space-1);
   width: var(--a4-space-5);
   height: var(--a4-space-5);
   margin-top: calc(-0.5 * var(--a4-space-5));
@@ -2879,7 +2893,7 @@ div#contentstructure ul#content_tree_menu ul a.openclose-close::after {
   flex: none;
   width: .45em;
   height: .45em;
-  border-right: 2px solid currentColor;
+  border-right: 2px solid currentColor; /* a drawn chevron, turned: the same in both directions */
   border-bottom: 2px solid currentColor;
   transform: translateY(-25%) rotate(45deg);
 }
@@ -2910,6 +2924,7 @@ div#contentstructure ul#content_tree_menu ul a.openclose-close::after {
   color: var(--a4-accent-text);
   font-weight: 600;
 }
+:where([dir="rtl"]) .a4-uiswitch-option[aria-current="true"] { box-shadow: inset -3px 0 0 var(--a4-accent); }
 /* A long grouped list (uiswitch/grouped.tpl, the interface languages) is a native select: as wide as the column,
    never wider because of its longest entry, without the legacy select margin. */
 .a4-uiswitch-provider select.a4-input { min-width: 0; max-width: 100%; margin: 0; }
@@ -2924,6 +2939,7 @@ div#contentstructure ul#content_tree_menu ul a.openclose-close::after {
    the 20px line's middle. */
 div#contentstructure ul#content_tree_menu li { line-height: max(calc(var(--a4-space-5) - var(--a4-space-1)), 1.25em); }
 div#contentstructure ul#content_tree_menu ul li { background-position: 8px 0, 8px 10px; }
+:where([dir="rtl"]) div#contentstructure ul#content_tree_menu ul li { background-position: calc(100% - 8px) 0, calc(100% - 8px) 10px; }
 div#contentstructure ul#content_tree_menu ul li.lastli { background-size: 1px 11px, 9px 1px; }
 /* The current node and the path to it: the current node's name in the accent tint with a bar on its left, the
    nodes above it in a stronger weight, so the tree shows where the page is. The bar is an inset shadow: its corners
@@ -2936,6 +2952,7 @@ div#contentstructure li.currentnode > a.image-text :is(span.node-name-normal, sp
   color: var(--a4-ink);
   font-weight: 600;
 }
+:where([dir="rtl"]) div#contentstructure li.currentnode > a.image-text :is(span.node-name-normal, span.node-name-hidden, span.node-name-hiddenbyparent) { padding: 0 var(--a4-space-2) 0 var(--a4-space-1); border-radius: var(--a4-radius-s) 0 0 var(--a4-radius-s); box-shadow: inset -3px 0 0 var(--a4-accent); }
 div#contentstructure li:has(li.currentnode) > a.image-text :is(span.node-name-normal, span.node-name-hidden, span.node-name-hiddenbyparent) {
   font-weight: 600;
 }
@@ -2956,7 +2973,7 @@ div#contentstructure ul#content_tree_menu ul a.openclose-error { top: 2px; }
   box-sizing: border-box;
   width: var(--a4-space-3);
   height: var(--a4-space-7);
-  right: calc((var(--a4-gutter) - var(--a4-space-3)) / 2);   /* in the gutter between the card and the content */
+  inset-inline-end: calc((var(--a4-gutter) - var(--a4-space-3)) / 2);   /* in the gutter between the card and the content */
   border-radius: var(--a4-radius-s);
   background: var(--a4-card);
   box-shadow: 0 0 0 1px var(--a4-line-strong), var(--a4-shadow-s);
@@ -3014,6 +3031,7 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
   height: 40px;   /* the tab row of the node view: 4px inset, 32px tabs, 4px inset */
   margin: 0 0 0 var(--a4-space-2);
 }
+:where([dir="rtl"]) .tab-block:has(> .button-left > .show-hide-tabs) > .button-left, :where([dir="rtl"]) .tab-block:has(> .button-left > .show-hide-tabs) > .a4-tabs-switch-label { float: left; margin: 0 var(--a4-space-2) 0 0; }
 .tab-block:not(.a4-node-tabs):has(> .button-left > .show-hide-tabs) > .button-left,
 .tab-block:not(.a4-node-tabs):has(> .button-left > .show-hide-tabs) > .a4-tabs-switch-label {
   height: 28px;   /* the classic tab row of the top node's view */
@@ -3052,7 +3070,7 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
   content: "";
   position: absolute;
   top: 2px;
-  left: 0;
+  inset-inline-start: 0;
   width: 36px;
   height: 20px;
   margin: 0;
@@ -3073,7 +3091,7 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
   content: "";
   position: absolute;
   top: 6px;
-  left: 4px;
+  inset-inline-start: 4px;
   width: 12px;
   height: 12px;
   border-radius: 50%;
@@ -3087,7 +3105,7 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
 }
 .tab-block .show-hide-tabs[aria-pressed="true"]::after,
 .tab-block #maincontent-hide.show-hide-tabs:not([aria-pressed="false"])::after {
-  left: 20px;
+  inset-inline-start: 20px;
   background-color: var(--a4-on-accent);
 }
 @media (forced-colors: active) {
@@ -3148,6 +3166,7 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
   mask: url(../../../share/icons/bootstrap-icons/svg/caret-right-fill.svg) no-repeat center / contain;
   transition: transform .15s ease;
 }
+:where([dir="rtl"]) #leftmenu details.a4-navgroup > summary.a4-nav-title::before { scale: -1 1; }
 #leftmenu details.a4-navgroup[open] > summary.a4-nav-title::before { transform: rotate(90deg); }
 #leftmenu details.a4-navgroup > summary.a4-nav-title:hover { color: var(--a4-ink); }
 #leftmenu details.a4-navgroup > .leftmenu-items { margin: 0; padding: 0; list-style: none; }
@@ -3210,6 +3229,7 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
   font-weight: 600;
   text-decoration: none;
 }
+:where([dir="rtl"]) #leftmenu ul.leftmenu-items li > div > a[aria-current] { border-radius: var(--a4-radius-s) 0 0 var(--a4-radius-s); box-shadow: inset -3px 0 0 var(--a4-accent-text); }
 @media (prefers-reduced-motion: reduce) {
   #leftmenu details.a4-navgroup > summary.a4-nav-title::before { transition: none; }
 }
@@ -3220,7 +3240,7 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
   #leftmenu details.a4-navgroup > summary.a4-nav-title::before { forced-color-adjust: none; background-color: CanvasText; }
   #leftmenu details.a4-navgroup > summary.a4-nav-title, #leftmenu h4[id^="leftmenu-title-"],
   #content-tree .box-header h4 { color: CanvasText; -webkit-text-fill-color: CanvasText; }
-  #leftmenu ul.leftmenu-items li > div > a[aria-current] { border-left: 3px solid Highlight; box-shadow: none; }
+  #leftmenu ul.leftmenu-items li > div > a[aria-current] { border-inline-start: 3px solid Highlight; box-shadow: none; }
 }
 
 /* No text below 12px (WCAG 1.4.4 in practice, the owner's floor): the browser draws <small> and <code> smaller than
@@ -3276,7 +3296,7 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
 /* Below 1280px only the left column takes room beside the content; the right one opens over it as a drawer (with
    both inline, 1180px left the content 652px and the sub-items table scrolled). */
 @media screen and (min-width: 1024px) and (max-width: 1279.98px) {
-  html body:has(.sidebar.right.show) { margin-right: 0; }
+  html body:has(.sidebar.right.show) { margin-inline-end: 0; }
   .sidebar.right.show #rightmenu-design { box-shadow: 0 0 0 1px var(--a4-card-edge), var(--a4-shadow-m); }
 }
 
@@ -3311,6 +3331,7 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
     height: auto;
     margin: 0 0 var(--a4-space-2) var(--a4-space-2);
   }
+  :where([dir="rtl"]) #window-controls.a4-node-tabs > :is(.button-left, .a4-tabs-switch-label) { margin: 0 var(--a4-space-2) var(--a4-space-2) 0; }
   #window-controls.a4-node-tabs > .tabs-content { grid-row: 3; }
 }
 
@@ -3329,7 +3350,7 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
 /* the Visibility column: the mark beside the text */
 .a4-subitem-status { display: inline-flex; align-items: center; gap: var(--a4-space-1); }
 /* The content tree marks only what differs (a hidden node, a disabled account), after the name */
-div#contentstructure a.image-text .a4-mark { margin-left: var(--a4-space-1); }
+div#contentstructure a.image-text .a4-mark { margin-inline-start: var(--a4-space-1); }
 
 /* The sub-items toolbar wraps with an even gap instead of each button's left margin */
 html #action-controls {
@@ -3339,7 +3360,7 @@ html #action-controls {
   gap: var(--a4-space-2);
 }
 html #action-controls .exp-dt-action,
-html #action-controls .exp-dt-action-group:first-child .exp-dt-action { margin-left: 0; }
+html #action-controls .exp-dt-action-group:first-child .exp-dt-action { margin-inline-start: 0; }
 
 /* On a phone a long search result name breaks rather than widening the result table past the screen */
 @media screen and (max-width: 575.98px) {
@@ -3373,6 +3394,7 @@ body { font-size: var(--a4-text-body); }
 @media (pointer: coarse) {
   div#contentstructure ul#content_tree_menu ul a.openclose-open::after,
   div#contentstructure ul#content_tree_menu ul a.openclose-close::after { inset: -4px 0 -4px -8px; }   /* 24 x 24px; rows are 24px apart */
+  :where([dir="rtl"]) div#contentstructure ul#content_tree_menu ul a.openclose-open::after, :where([dir="rtl"]) div#contentstructure ul#content_tree_menu ul a.openclose-close::after { inset: -4px -8px -4px 0; }
   div#contentstructure ul#content_tree_menu a.nodeicon { display: inline-flex; min-width: var(--a4-space-5); min-height: var(--a4-space-5); align-items: center; justify-content: center; }
   #header .searchblock .searchscope,
   #searchscope-mobile { width: var(--a4-space-5); height: var(--a4-space-5); margin-top: calc(-0.5 * var(--a4-space-5)); }

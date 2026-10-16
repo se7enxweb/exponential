@@ -5,9 +5,9 @@
 span.vertical-seperator {
     height: 100%;
     width: 4px;
-    border-right: 1px solid var(--a4-line-strong);
-    margin-left: 12px;
-    margin-right: 16px;
+    border-inline-end: 1px solid var(--a4-line-strong);
+    margin-inline-start: 12px;
+    margin-inline-end: 16px;
 }
 
 .inline {
@@ -15,13 +15,13 @@ span.vertical-seperator {
 }
 
 label.inline {
-    padding-right: 0.1em;
+    padding-inline-end: 0.1em;
 }
 
 div.widthcontrol-grippy {
     position: absolute;
     top: 320px;
-    left: -15px;
+    inset-inline-start: -15px;
     height: 33px;
     width: 15px;
     background: url('../images/3/sprite.png') no-repeat 0 -505px;
@@ -43,7 +43,7 @@ div.widthcontrol-grippy:active {
 }
 
 form#editform .sidebar.left a.show-hide-control {
-    right: -28px;
+    inset-inline-end: -28px;
     background: url('../images/3/sprite.png') no-repeat 0 -422px;
 }
 
@@ -121,6 +121,7 @@ ul.tabs li {
     list-style-type: none;
     margin: 0;
 }
+:where([dir="rtl"]) ul.tabs li { float: right; }
 
 ul.tabs li a,
 ul.tabs li span.disabled {
@@ -131,6 +132,7 @@ ul.tabs li span.disabled {
     margin: 2px 0 5px 1px;
     min-height: 16px;
 }
+:where([dir="rtl"]) ul.tabs li a, :where([dir="rtl"]) ul.tabs li span.disabled { margin: 2px 1px 5px 0; }
 
 ul.tabs li.selected a {
     margin-bottom: -1px;
@@ -143,7 +145,7 @@ ul.tabs.disabled li a {
 
 ul.tabs li.first a,
 ul.tabs li.first span.disabled {
-    margin-left: 0;
+    margin-inline-start: 0;
 }
 
 div.tab-content {
@@ -210,7 +212,7 @@ div.tabs-content.disabled div.tab-content {
 /* PATH */
 #path {
     padding: 0;
-    text-align: left;
+    text-align: start;
     min-height: 24px;
 }
 
@@ -243,7 +245,7 @@ div.tabs-content.disabled div.tab-content {
     width: 50px;
     background: url(../images/3/logo_separator_sprite.png) repeat-y 0 0;
     top: 0;
-    left: -30px;
+    inset-inline-start: -30px;
     bottom: 0;
     z-index: 1;
 }
@@ -289,7 +291,7 @@ ul.leftmenu-items li.current a {
 /* WIDTH CONTROL */
 #widthcontrol-handler {
     position: absolute;
-    right: -7px;
+    inset-inline-end: -7px;
     top: 0;
     bottom: 0;
     /* strech div to full width of relative box */
@@ -324,8 +326,8 @@ div#contentstructure {
 
 div#contentstructure ul#content_tree_menu {
     margin-top: 0;
-    margin-left: 0.25em;
-    padding-left: 0.5em;
+    margin-inline-start: 0.25em;
+    padding-inline-start: 0.5em;
 }
 
 div#contentstructure ul#content_tree_menu ul {
@@ -335,7 +337,7 @@ div#contentstructure ul#content_tree_menu ul {
 }
 
 div#contentstructure ul#content_tree_menu ul ul {
-    margin-left: 0;
+    margin-inline-start: 0;
 }
 
 div#contentstructure ul#content_tree_menu li {
@@ -347,7 +349,7 @@ div#contentstructure ul#content_tree_menu li {
 div#contentstructure ul#content_tree_menu ul li {
     margin: 0;
     padding-top: 0;
-    padding-left: 20px;
+    padding-inline-start: 20px;
     padding-bottom: 4px;
     /* the tree's lines, drawn in the line token (was an opaque white image with a grey line, a white strip on the
        dark page): the vertical line at 8px and the elbow at 7px */
@@ -357,6 +359,7 @@ div#contentstructure ul#content_tree_menu ul li {
     background-position: 8px 0, 8px 7px;
     background-repeat: no-repeat;
 }
+:where([dir="rtl"]) div#contentstructure ul#content_tree_menu ul li { background-position: calc(100% - 8px) 0, calc(100% - 8px) 7px; }
 
 div#contentstructure ul#content_tree_menu ul li.lastli {
     background-size: 1px 8px, 9px 1px;
@@ -368,8 +371,8 @@ div#contentstructure ul#content_tree_menu li img {
 }
 
 div#contentstructure a.nodeicon {
-    margin-left: 0;
-    padding-left: 0;
+    margin-inline-start: 0;
+    padding-inline-start: 0;
 }
 
 div#contentstructure li span.node-name-normal {
@@ -429,7 +432,7 @@ div#contentstructure ul#content_tree_menu ul a.openclose-close,
 div#contentstructure ul#content_tree_menu ul a.openclose-busy,
 div#contentstructure ul#content_tree_menu ul a.openclose-error {
     position: absolute;
-    left: 0;
+    inset-inline-start: 0;
     _left: -20px;
     /* to fix a bug in IE 6 */
     top: 0;
@@ -452,7 +455,7 @@ div#contentstructure ul#content_tree_menu ul a.openclose-busy::before,
 div#contentstructure ul#content_tree_menu ul a.openclose-error::before {
     content: "";
     position: absolute;
-    left: 2px;
+    inset-inline-start: 2px;
     top: 2px;
     width: 12px;
     height: 12px;
@@ -465,6 +468,8 @@ div#contentstructure ul#content_tree_menu ul a.openclose-open::before {
     -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/caret-right-fill.svg);
     mask-image: url(../../../share/icons/bootstrap-icons/svg/caret-right-fill.svg);
 }
+/* right to left the closed caret points along the line, to the left */
+:where([dir="rtl"]) div#contentstructure ul#content_tree_menu ul a.openclose-open::before { scale: -1 1; }
 
 div#contentstructure ul#content_tree_menu ul a.openclose-close::before {
     -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/caret-down-fill.svg);
@@ -504,7 +509,7 @@ div#contentstructure ul#content_tree_menu div.error>span {
     height: 9px;
     width: 9px;
     border-radius: 9px;
-    margin-right: 6px;
+    margin-inline-end: 6px;
     background-color: var(--a4-bad);
 }
 
@@ -565,6 +570,7 @@ div.popupmenu div.window-close {
     float: right;
     padding: var(--a4-space-1);
 }
+:where([dir="rtl"]) div.popupmenu div.window-close { float: left; }
 
 div.popupmenu div.window-close p {
     margin: 0;
@@ -594,13 +600,13 @@ div.popupmenu a {
 
 div.popupmenu a.more {
     position: relative;
-    padding-right: var(--a4-space-6);
+    padding-inline-end: var(--a4-space-6);
 }
 
 div.popupmenu a.more::after {
     content: "";
     position: absolute;
-    right: var(--a4-space-3);
+    inset-inline-end: var(--a4-space-3);
     top: 50%;
     width: 10px;
     height: 10px;
@@ -609,6 +615,7 @@ div.popupmenu a.more::after {
     -webkit-mask: url(../../../share/icons/bootstrap-icons/svg/caret-right-fill.svg) no-repeat center / contain;
     mask: url(../../../share/icons/bootstrap-icons/svg/caret-right-fill.svg) no-repeat center / contain;
 }
+:where([dir="rtl"]) div.popupmenu a.more::after { scale: -1 1; }
 
 div.popupmenu a:hover,
 div.popupmenu a:focus-visible,
@@ -708,13 +715,15 @@ div.context-information p.left {
     margin-top: 0;
     float: left;
 }
+:where([dir="rtl"]) div.context-information p.left { float: right; }
 
 div.context-information p.right {
     width: 48.5%;
     margin-top: 0;
     float: right;
-    text-align: right;
+    text-align: end;
 }
+:where([dir="rtl"]) div.context-information p.right { float: left; }
 
 div.context-information p.center {
     text-align: center;
@@ -731,7 +740,7 @@ div.content-navigation div.context-information p.left {
 div.content-navigation div.context-information p.right {
     position: absolute;
     width: 30%;
-    right: 0em;
+    inset-inline-end: 0em;
 }
 
 div.context-block h1.context-title img,
@@ -739,6 +748,7 @@ div.context-block h2.context-title img {
     vertical-align: middle;
     margin: -4px 8px 2px 0;
 }
+:where([dir="rtl"]) div.context-block h1.context-title img, :where([dir="rtl"]) div.context-block h2.context-title img { margin: -4px 0 2px 8px; }
 
 /* MENU-BLOCK */
 .menu-block {
@@ -758,17 +768,18 @@ div.context-block h2.context-title img {
     margin: 0;
 
 }
+:where([dir="rtl"]) .menu-block li { float: right; }
 
 .menu-block li a {
     padding: 0 0.5em;
-    margin-left: 4px;
+    margin-inline-start: 4px;
     text-decoration: none;
     display: block;
     border: 1px solid var(--a4-line-strong);
 }
 
 .menu-block li:first-child a {
-    margin-left: 0;
+    margin-inline-start: 0;
 }
 
 .menu-block li.disabled a {
@@ -808,6 +819,7 @@ input.button:hover {
     position: relative;
     float: left;
 }
+:where([dir="rtl"]) .searchblock { float: right; }
 
 .searchblock form {
     display: flex;
@@ -833,6 +845,7 @@ input.button:hover {
     -webkit-appearance: none;
     appearance: none;
 }
+:where([dir="rtl"]) .searchblock input.searchtext { padding: 0 30px 0 8px; }
 
 .searchblock input.searchtext::placeholder {
     color: var(--a4-muted);
@@ -878,7 +891,7 @@ input.button:hover {
 .searchblock .searchscope {
     position: absolute;
     top: 50%;
-    left: 6px;
+    inset-inline-start: 6px;
     width: 20px;
     height: 20px;
     margin-top: -10px;
@@ -912,10 +925,10 @@ input.button:hover {
 .searchscope-pane {
     position: absolute;
     top: calc(100% + 8px);
-    right: 0;
+    inset-inline-end: 0;
     width: min(300px, calc(100vw - 2 * var(--a4-space-4)));
     z-index: var(--a4-z-popover);
-    text-align: left;
+    text-align: start;
     color: var(--a4-ink);
     background: var(--a4-surface);
     border: 1px solid var(--a4-line);
@@ -939,6 +952,7 @@ input.button:hover {
     border-bottom: 1px solid var(--a4-line);
     border-radius: 6px 6px 0 0;
 }
+:where([dir="rtl"]) .searchscope-pane > .searchscope-title { padding: 9px 12px 8px 10px; }
 
 .searchscope-pane .close {
     width: 24px;
@@ -1070,18 +1084,18 @@ input::placeholder {
     position: fixed;
     width: 100%;
     top: -0.6em;
-    left: 0;
+    inset-inline-start: 0;
     border-radius: 0;
 }
 
 .scroll-to-top {
     position: fixed;
     bottom: 0;
-    right: 0;
+    inset-inline-end: 0;
     background-color: var(--a4-ink);
     opacity: 0;
     padding: 0.5em;
-    border-top-left-radius: 5px;
+    border-start-start-radius: 5px;
     color: var(--a4-card);
     text-decoration: none;
     display: none;
@@ -1173,7 +1187,7 @@ html[data-a4-left-size="large"] {
 }
 
 .sidebar.left {
-    left: 0;
+    inset-inline-start: 0;
     width: var(--left-sidebar-width, 15rem);
     font-size: inherit;
 }
@@ -1193,7 +1207,7 @@ html[data-a4-left-size="large"] {
 .leftmenu-resize-handle {
     position: absolute;
     top: 20%;
-    right: -0.5rem;
+    inset-inline-end: -0.5rem;
     width: 1rem;
     height: 4rem;
     z-index: var(--a4-z-sidebar-handle);
@@ -1208,7 +1222,7 @@ html[data-a4-left-size="large"] {
 }
 
 .sidebar.right {
-    right: 0;
+    inset-inline-end: 0;
     width: 15rem;
 }
 
@@ -1274,20 +1288,22 @@ html[data-a4-left-size="large"] {
     .sidebar-controls {
         position: fixed;
         top: 50%;
-        left: 0;
-        right: 0;
+        inset-inline-start: 0;
+        inset-inline-end: 0;
         transform: translateY(-50%);
     }
 
     .sidebar-control.left {
         border-radius: 0 0.75rem 0.75rem 0;
-        left: 0;
+        inset-inline-start: 0;
     }
+    :where([dir="rtl"]) .sidebar-control.left { border-radius: 0.75rem 0 0 0.75rem; }
 
     .sidebar-control.right {
         border-radius: 0.75rem 0 0 0.75rem;
-        right: 0;
+        inset-inline-end: 0;
     }
+    :where([dir="rtl"]) .sidebar-control.right { border-radius: 0 0.75rem 0.75rem 0; }
 }
 
 .content-wrapper {
@@ -1322,11 +1338,11 @@ html[data-a4-left-size="large"] {
 
 @media screen and (min-width: 1024px) {
     body:has(.sidebar.left.show) {
-        margin-left: calc(var(--left-sidebar-width, 15rem) + 0.5rem);
+        margin-inline-start: calc(var(--left-sidebar-width, 15rem) + 0.5rem);
     }
 
     body:has(.sidebar.right.show) {
-        margin-right: calc(15rem + 0.5rem);
+        margin-inline-end: calc(15rem + 0.5rem);
     }
 
     .content-dashboard .box-header {
@@ -1360,7 +1376,7 @@ html[data-a4-left-size="large"] {
 @media screen and (min-width: 768px) {
     .content-dashboard .block .left {
         flex: 0 0 30%;
-        padding-right: 1.5rem;
+        padding-inline-end: 1.5rem;
     }
 
     .content-dashboard .block .right {
@@ -1383,13 +1399,13 @@ html[data-a4-left-size="large"] {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin-left: auto;
+    margin-inline-start: auto;
     font-size: 2.5rem;
     cursor: pointer;
     color: var(--a4-header-ink);
     padding: 0 0.5rem;
     user-select: none;
-    margin-right: -0.875rem;
+    margin-inline-end: -0.875rem;
 }
 
 .header-search {
@@ -1541,12 +1557,12 @@ div:has(> table) {
     gap: 1rem;
     padding: 0.5rem 0.75rem;
     border-bottom: 1px solid var(--a4-line-strong);
-    border-right: 1px solid var(--a4-line-strong);
-    border-left: 1px solid var(--a4-line-strong);
+    border-inline-end: 1px solid var(--a4-line-strong);
+    border-inline-start: 1px solid var(--a4-line-strong);
 }
 
 .draft-list-cell-inner {
-    text-align: right;
+    text-align: end;
 }
 
 .draft-list-row.active {
@@ -1580,12 +1596,12 @@ div:has(> table) {
     .draft-list-cell {
         display: table-cell;
         vertical-align: middle;
-        border-left: none;
+        border-inline-start: none;
     }
 
     .draft-list-row .draft-list-cell:first-of-type {
         width: 1.5rem;
-        border-left: 1px solid var(--a4-line-strong);
+        border-inline-start: 1px solid var(--a4-line-strong);
     }
 
     .draft-list-body .draft-list-row:first-of-type .draft-list-cell:first-of-type {

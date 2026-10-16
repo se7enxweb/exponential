@@ -545,13 +545,13 @@ class AdminSiteAccessMenuTest extends PHPUnit\Framework\TestCase
         // [hidden] wins over the button's display (the link is hidden by the script)
         $this->assertSame( 'none', $rules['.a4-site-menu-wrap[hidden], .a4-header-btn[hidden], .a4-site-menu[hidden]']['display'] );
         $this->assertSame( $rules['.a4-user-menu-links a:focus-visible']['outline'], $rules['.a4-site-menu a:focus-visible']['outline'] );
-        $this->assertStringContainsString( '.a4-site-menu { position: absolute; top: calc(100% + var(--a4-space-2)); right: 0; z-index: var(--a4-z-popover);', preg_replace( '/\s+/', ' ', $css ), 'below the globe, as the user menu' );
+        $this->assertStringContainsString( '.a4-site-menu { position: absolute; top: calc(100% + var(--a4-space-2)); inset-inline-end: 0; z-index: var(--a4-z-popover);', preg_replace( '/\s+/', ' ', $css ), 'below the globe, as the user menu' );
         $forced = AdminBaseStylesheetsTest::rules( $css, true );
         $this->assertSame( 'ButtonText', $forced['.a4-site-menu']['border-color'] );
         $this->assertSame( '2px solid Highlight', $forced['.a4-site-menu a[aria-current="true"]']['outline'] );
         $flat = preg_replace( '/\s+/', ' ', $css );
         $this->assertStringContainsString( 'max-height: calc(100vh - var(--header-height) - var(--a4-space-5)); max-height: calc(100dvh - var(--header-height) - var(--a4-space-5));', $flat, 'the visible height on iOS, 100vh where dvh is unknown' );
-        $this->assertStringContainsString( '@media screen and (max-width: 575.98px) { .a4-site-menu { position: fixed; top: calc(var(--header-height) + var(--a4-space-2)); left: var(--a4-space-4); right: var(--a4-space-4); z-index: var(--a4-z-menu);', $flat, 'under the header on a phone, with the gutters' );
+        $this->assertStringContainsString( '@media screen and (max-width: 575.98px) { .a4-site-menu { position: fixed; top: calc(var(--header-height) + var(--a4-space-2)); inset-inline-start: var(--a4-space-4); inset-inline-end: var(--a4-space-4); z-index: var(--a4-z-menu);', $flat, 'under the header on a phone, with the gutters' );
     }
 
     public function testTheTextsAreTranslated()

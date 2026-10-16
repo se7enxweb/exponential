@@ -2,7 +2,7 @@
 {* The left column's width (the admin_left_menu_size preference): a preset name, drawn by the stylesheets, or a
    width dragged by hand, set as --left-sidebar-width by the pre-paint script in the head. No inline CSS. *}
 {def $page_left_size = ezpreference( 'admin_left_menu_size' )}
-<html lang="{$site.http_equiv.Content-language|wash}"{if $page_left_size|ne( '' )}{if or( eq( $page_left_size, 'small' ), eq( $page_left_size, 'medium' ), eq( $page_left_size, 'large' ) )} data-a4-left-size="{$page_left_size}"{else} data-a4-left-width="{$page_left_size|wash}"{/if}{/if}{include uri='design:parts/a4_preference_attributes.tpl'}>
+<html lang="{$site.http_equiv.Content-language|wash}"{if eq( first_set( $site.text_direction, 'ltr' ), 'rtl' )} dir="rtl"{/if}{if $page_left_size|ne( '' )}{if or( eq( $page_left_size, 'small' ), eq( $page_left_size, 'medium' ), eq( $page_left_size, 'large' ) )} data-a4-left-size="{$page_left_size}"{else} data-a4-left-width="{$page_left_size|wash}"{/if}{/if}{include uri='design:parts/a4_preference_attributes.tpl'}>
 {undef $page_left_size}
 
 <head>

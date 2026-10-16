@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{$site.http_equiv.Content-language|wash}">
+<html lang="{$site.http_equiv.Content-language|wash}"{if eq( first_set( $site.text_direction, 'ltr' ), 'rtl' )} dir="rtl"{/if}>
 <head>
 {def $admin_theme = ezpreference( 'admin_theme' )}
 

@@ -36,7 +36,7 @@ class AdminTimelineTest extends PHPUnit\Framework\TestCase
             foreach ( array( 'ok', 'warn', 'bad', 'info' ) as $state )
                 $this->assertStringContainsString( ".a4-timeline > li.is-$state::after { background-color: var(--a4-$state); }", $source, "$css: dot for is-$state" );
             // the line is an edge (a fill would vanish in forced colors), and the dots keep their colour there
-            $this->assertMatchesRegularExpression( '/\.a4-timeline > li::before \{[^}]*border-left: 2px solid var\(--a4-line-strong\)/', $source, $css );
+            $this->assertMatchesRegularExpression( '/\.a4-timeline > li::before \{[^}]*border-inline-start: 2px solid var\(--a4-line-strong\)/', $source, $css );
             // the forced-colors block that holds the timeline's rule, not just the last one
             $this->assertMatchesRegularExpression( '/@media \(forced-colors: active\) \{(?:[^{}]|\{[^{}]*\})*\.a4-timeline > li::after \{ forced-color-adjust: none;/', $source, $css );
         }

@@ -219,7 +219,7 @@ class AdminPhoneMenuTest extends PHPUnit\Framework\TestCase
         // the scope button inside the 44px field: 40px, with the field's text starting after it
         $this->assertSame( '40px', $phone['#header #searchscope-mobile']['width'] );
         $this->assertSame( '40px', $phone['#header #searchscope-mobile']['height'] );
-        $this->assertSame( 'calc(var(--a4-space-7) - var(--a4-space-1))', $phone['.header-search-mobile .searchblock input.searchtext']['padding-left'] );
+        $this->assertSame( 'calc(var(--a4-space-7) - var(--a4-space-1))', $phone['.header-search-mobile .searchblock input.searchtext']['padding-inline-start'] );
     }
 
     /** PM-06 */

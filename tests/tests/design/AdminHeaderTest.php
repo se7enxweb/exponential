@@ -316,7 +316,7 @@ class AdminHeaderTest extends PHPUnit\Framework\TestCase
         $this->assertSame( '3', $tablet['.header-site, .header-theme']['order'], 'same order as light/dark: the markup puts it first' );
         $this->assertSame( '4', $tablet['.header-user']['order'] );
         $phone = AdminBaseStylesheetsTest::rules( self::media( $css, 'screen and (max-width: 575.98px)' ) );
-        $this->assertSame( 'auto', $phone['.header-site']['margin-left'], 'the tools stand together at the row\'s end' );
+        $this->assertSame( 'auto', $phone['.header-site']['margin-inline-start'], 'the tools stand together at the row\'s end' );
         $this->assertArrayNotHasKey( '.header-theme', $phone, 'light/dark no longer pushes away from the site link' );
         $rules = AdminBaseStylesheetsTest::rules( $css );
         $this->assertSame( 'flex', $rules['.header-site, .header-user']['display'] );

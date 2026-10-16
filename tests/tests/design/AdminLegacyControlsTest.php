@@ -120,7 +120,7 @@ class AdminLegacyControlsTest extends PHPUnit\Framework\TestCase
         $select = $rules[self::SELECT];
         $this->assertSame( 'none', $select['appearance'] );
         $this->assertStringContainsString( 'var(--a4-muted)', $select['background-image'], 'the chevron in the tokens' );
-        $this->assertSame( 'var(--a4-space-6)', $select['padding-right'], 'room for the chevron' );
+        $this->assertSame( 'var(--a4-space-6)', $select['padding-inline-end'], 'room for the chevron' );
         foreach ( array_merge( $field, $select, $text ) as $property => $value )
         {
             $this->assertTrue( self::isTokenValue( $value ), "$property: $value is not built from tokens" );

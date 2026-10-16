@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{$site.http_equiv.Content-language|wash}">
+<html lang="{$site.http_equiv.Content-language|wash}"{if eq( first_set( $site.text_direction, 'ltr' ), 'rtl' )} dir="rtl"{/if}>
 <head>
 {* Do some uncacheable left + right menu stuff before cache-block's *}
 {def $ui_context_edit      = eq( $ui_context, 'edit' )
@@ -33,29 +33,29 @@
 <style type="text/css">
 {if $collapse_right_menu}
     div#page div#rightmenu  {ldelim} width: 18px; {rdelim}
-    div#page div#maincolumn {ldelim} margin-right: 27px; {rdelim}
+    div#page div#maincolumn {ldelim} margin-inline-end: 27px; {rdelim}
 {/if}
 {if $hide_left_menu}
-div#maincolumn {ldelim} padding-right: 20px; padding-left: 50px; {rdelim}
+div#maincolumn {ldelim} padding-inline-end: 20px; padding-inline-start: 50px; {rdelim}
 {else}
     {if $admin_left_size}
         {def $left_menu_widths = ezini( 'LeftMenuSettings', 'MenuWidth', 'menu.ini')}
         {if is_set( $left_menu_widths[$admin_left_size] )}
             {set $left_size_hash = $left_menu_widths[$admin_left_size]}
             div#leftmenu   {ldelim} width: {$left_size_hash|int}em; {rdelim}
-            div#maincontent {ldelim} margin-left: {$left_size_hash|int}em; {rdelim}
+            div#maincontent {ldelim} margin-inline-start: {$left_size_hash|int}em; {rdelim}
         {else}
             div#page div#leftmenu   {ldelim} width: {$admin_left_size|wash}; {rdelim}
-            div#page div#maincontent {ldelim} margin-left: {$admin_left_size|wash}; {rdelim}
+            div#page div#maincontent {ldelim} margin-inline-start: {$admin_left_size|wash}; {rdelim}
         {/if}
         {undef $left_menu_widths}
     {/if}
     {if $collapse_left_menu}
         {* Collapsed: 22px of the menu stay, its show/hide link (page_leftmenu.tpl) *}
         {def $left_width = cond( $left_size_hash, concat( $left_size_hash|int, 'em' ), $admin_left_size, $admin_left_size|wash, '15em' )}
-        div#page div#leftmenu.collapsed {ldelim} margin-left: calc(22px - {$left_width}); {rdelim}
-        div#page div#maincontent {ldelim} margin-left: 32px; {rdelim}
-        div#page div#left-panels-separator {ldelim} left: 0; {rdelim}
+        div#page div#leftmenu.collapsed {ldelim} margin-inline-start: calc(22px - {$left_width}); {rdelim}
+        div#page div#maincontent {ldelim} margin-inline-start: 32px; {rdelim}
+        div#page div#left-panels-separator {ldelim} inset-inline-start: 0; {rdelim}
         {undef $left_width}
     {/if}
 {/if}
@@ -142,13 +142,13 @@ div#maincolumn {ldelim} padding-right: 20px; padding-left: 50px; {rdelim}
                 },{
                     selector: '#maincolumn',
                     duration: 0.4,
-                    fullStyle: {marginRight: '210px'},
-                    collapsedStyle: {marginRight: '27px'}
+                    fullStyle: {marginInlineEnd: '210px'},
+                    collapsedStyle: {marginInlineEnd: '27px'}
                 },{
                     selector: '#right-panels-separator',
                     duration: 0.4,
-                    fullStyle: {right:'181px'},
-                    collapsedStyle: {right: '-2px'}
+                    fullStyle: {insetInlineEnd:'181px'},
+                    collapsedStyle: {insetInlineEnd: '-2px'}
                 }],
                 // the preference says whether the menu is shown: 1 when expanded, 0 when collapsed
                 pref: { name: 'admin_right_menu_show', values: [1, 0] }
@@ -226,7 +226,7 @@ div#maincolumn {ldelim} padding-right: 20px; padding-left: 50px; {rdelim}
 <script type="text/javascript">
 document.getElementById('header-usermenu-logout').innerHTML += '<span class="header-usermenu-name">{$current_user.login|wash}<\/span>';
 
-document.getElementById('right-panels-separator').style.right = (parseInt(document.getElementById('rightmenu').offsetWidth,10) - 20) + 'px';
+document.getElementById('right-panels-separator').style.insetInlineEnd = (parseInt(document.getElementById('rightmenu').offsetWidth,10) - 20) + 'px';
 
 {literal}
 (function( $ )

@@ -345,7 +345,7 @@ class AdminEnvironmentBadgeTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'calc(100% + var(--a4-space-2))', $under['#header .a4-env-hover']['top'] );
         $this->assertSame( 'none', $under['#header .a4-env-hover']['translate'] );
         $this->assertSame( '100%', $under['#header .a4-env-hover::before']['bottom'], 'the bridge to the logo above it' );
-        $this->assertSame( 'calc(100% + var(--a4-space-2))', $rest['left'] );
+        $this->assertSame( 'calc(100% + var(--a4-space-2))', $rest['inset-inline-start'] );
 
         // shown while the pointer rests on the logo link or the pill, or the link has the keyboard focus, until
         // Escape dismisses it (.a4-env-dismissed); no :active, no :focus without -visible

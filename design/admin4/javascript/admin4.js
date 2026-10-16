@@ -183,6 +183,11 @@
             var last = more.hidden ? tabs.filter(function (li) { return li.parentNode === bar; }).pop() : more;
             if (!last) return true;
             var style = window.getComputedStyle(bar);
+            // the row's end is its left edge right to left (dir="rtl" on <html>)
+            if (style.direction === 'rtl') {
+                var start = bar.getBoundingClientRect().left + parseFloat(style.paddingLeft || '0');
+                return last.getBoundingClientRect().left >= start - 0.5;
+            }
             var end = bar.getBoundingClientRect().right - parseFloat(style.paddingRight || '0');
             return last.getBoundingClientRect().right <= end + 0.5;
         }

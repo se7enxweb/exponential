@@ -94,7 +94,13 @@
   --a4-space-5: 24px;
   --a4-space-6: 32px;
   --a4-space-7: 48px;
-  --a4-font: "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* the font: the Latin families first (Latin text looks the same everywhere), then the system fonts of other
+     scripts, before the generic family: CJK (--a4-font-cjk; its order follows the interface language, see the
+     :lang() rules below), Thai, Devanagari, Arabic and Hebrew. A family that has no glyph for a letter is skipped
+     for that letter, so these come into play only for text in those scripts */
+  --a4-font-cjk: "PingFang SC", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Microsoft YaHei", "Microsoft JhengHei", "Yu Gothic", "Meiryo", "Malgun Gothic", "Apple SD Gothic Neo", "Noto Sans CJK SC", "Noto Sans CJK JP", "Noto Sans CJK TC", "Noto Sans CJK KR";
+  --a4-font-intl: var(--a4-font-cjk), "Leelawadee UI", "Thonburi", "Noto Sans Thai", "Nirmala UI", "Kohinoor Devanagari", "Noto Sans Devanagari", "Segoe UI", "Noto Sans Arabic", "Geeza Pro", "Noto Sans Hebrew", "Arial Hebrew";
+  --a4-font: "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, var(--a4-font-intl), sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --a4-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   --a4-text-xs: 12px;
   --a4-text-s: 13px;
@@ -170,6 +176,27 @@
   /* the browser's own parts (scrollbars, select popups, date pickers, autofill) follow the mode */
   color-scheme: light;
 }
+
+/* ---- Scripts other than Latin: the CJK font order and line breaking by interface language (<html lang>) ------ */
+
+/* Han characters look different in Japanese, Chinese and Korean fonts: the interface language's fonts come first */
+:root:lang(ja) {
+  --a4-font-cjk: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", "Noto Sans CJK JP", "PingFang SC", "Microsoft YaHei", "Malgun Gothic", "Apple SD Gothic Neo", "Noto Sans CJK SC", "Noto Sans CJK KR";
+}
+:root:lang(ko) {
+  --a4-font-cjk: "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans CJK KR", "PingFang SC", "Hiragino Sans", "Microsoft YaHei", "Yu Gothic", "Noto Sans CJK SC", "Noto Sans CJK JP";
+}
+:root:lang(zh-TW), :root:lang(zh-HK), :root:lang(zh-MO), :root:lang(zh-Hant) {
+  --a4-font-cjk: "PingFang TC", "Microsoft JhengHei", "Noto Sans CJK TC", "PingFang SC", "Hiragino Sans", "Microsoft YaHei", "Yu Gothic", "Malgun Gothic", "Apple SD Gothic Neo", "Noto Sans CJK SC", "Noto Sans CJK JP", "Noto Sans CJK KR";
+}
+/* Japanese: the strict line-breaking rules (no small kana or prolonged sound mark at the start of a line).
+   Korean puts spaces between words: break there, as Korean text is set, and inside a word only when it does not
+   fit. Thai, Lao, Khmer and Burmese have no spaces: the browser breaks them at words from its dictionary, and a run
+   it does not know breaks where it must instead of overflowing a narrow column. Set where a language starts (the
+   page or an element with lang), so a component's own wrapping rule still applies inside. */
+html:lang(ja), [lang]:lang(ja) { line-break: strict; }
+html:lang(ko), [lang]:lang(ko) { word-break: keep-all; overflow-wrap: break-word; }
+html:lang(th), [lang]:lang(th), html:lang(lo), [lang]:lang(lo), html:lang(km), [lang]:lang(km), html:lang(my), [lang]:lang(my) { overflow-wrap: break-word; }
 
 
 /* ---- Tokens: dark (admin4) --------------------------------------------------------------------------------- */
@@ -310,7 +337,7 @@ html[data-a4-theme="dark"] {
 .a4-skip-link {
   position: fixed;
   top: var(--a4-space-2);
-  left: var(--a4-space-2);
+  inset-inline-start: var(--a4-space-2);
   z-index: var(--a4-z-skip-link);
   padding: var(--a4-space-2) var(--a4-space-4);
   border-radius: var(--a4-radius-s);
@@ -346,7 +373,7 @@ html[data-a4-theme="dark"] {
 .a4-meta { color: var(--a4-muted); font-size: var(--a4-text-s); }
 .a4-help { color: var(--a4-muted); font-size: var(--a4-text-s); max-width: 72ch; }
 .a4-intro { margin: var(--a4-space-2) 0 var(--a4-space-4); max-width: 78ch; color: var(--a4-muted); }
-.a4-num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.a4-num { text-align: end; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .a4-nowrap { white-space: nowrap; }
 .a4-wrap { overflow-wrap: anywhere; word-break: break-word; }
 .a4-plain { margin: 0; padding: 0; list-style: none; }
@@ -479,9 +506,13 @@ html[data-a4-theme="dark"] {
 .a4-card.is-soft { background-color: var(--a4-soft); box-shadow: none; }
 .a4-card.is-selected { border-color: var(--a4-accent); }
 .a4-card.is-attention { box-shadow: inset 4px 0 0 var(--a4-warn), var(--a4-shadow-s); }
+:where([dir="rtl"]) .a4-card.is-attention { box-shadow: inset -4px 0 0 var(--a4-warn), var(--a4-shadow-s); }
 .a4-card.is-bad { box-shadow: inset 4px 0 0 var(--a4-bad), var(--a4-shadow-s); }
+:where([dir="rtl"]) .a4-card.is-bad { box-shadow: inset -4px 0 0 var(--a4-bad), var(--a4-shadow-s); }
 .a4-card.is-ok { box-shadow: inset 4px 0 0 var(--a4-ok), var(--a4-shadow-s); }
+:where([dir="rtl"]) .a4-card.is-ok { box-shadow: inset -4px 0 0 var(--a4-ok), var(--a4-shadow-s); }
 .a4-card.is-info { box-shadow: inset 4px 0 0 var(--a4-info), var(--a4-shadow-s); }
+:where([dir="rtl"]) .a4-card.is-info { box-shadow: inset -4px 0 0 var(--a4-info), var(--a4-shadow-s); }
 .a4-card + .a4-card { margin-top: var(--a4-space-3); }
 .a4-cards > .a4-card + .a4-card,
 .a4-grid > .a4-card + .a4-card { margin-top: 0; }
@@ -520,7 +551,7 @@ html[data-a4-theme="dark"] {
 .a4-card-head > :is(h2, h3, .a4-h2, .a4-h3) { margin: 0; }
 .a4-card-head > p { flex: 1 1 100%; max-width: 78ch; margin: 0; color: var(--a4-muted); }
 .a4-card-head:has(> p) { row-gap: var(--a4-space-1); }
-.a4-card-actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2); margin-left: auto; }
+.a4-card-actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2); margin-inline-start: auto; }
 .a4-card-foot {
   display: flex;
   flex-wrap: wrap;
@@ -542,13 +573,13 @@ html[data-a4-theme="dark"] {
 .a4-card.is-flush > table,
 .a4-card.is-flush > .a4-card-body > table { width: 100%; margin: 0; border-collapse: separate; border-spacing: 0; }
 .a4-card.is-flush > table :is(th, td):first-child,
-.a4-card.is-flush > .a4-card-body > table :is(th, td):first-child { padding-left: var(--a4-card-pad-x, var(--a4-space-4)); }
+.a4-card.is-flush > .a4-card-body > table :is(th, td):first-child { padding-inline-start: var(--a4-card-pad-x, var(--a4-space-4)); }
 .a4-card.is-flush > table :is(th, td):last-child,
-.a4-card.is-flush > .a4-card-body > table :is(th, td):last-child { padding-right: var(--a4-card-pad-x, var(--a4-space-4)); }
-.a4-card.is-flush > table:first-child tr:first-child > :first-child { border-top-left-radius: var(--a4-radius-s); }
-.a4-card.is-flush > table:first-child tr:first-child > :last-child { border-top-right-radius: var(--a4-radius-s); }
-.a4-card.is-flush > table:last-child tr:last-child > :first-child { border-bottom-left-radius: var(--a4-radius-s); }
-.a4-card.is-flush > table:last-child tr:last-child > :last-child { border-bottom-right-radius: var(--a4-radius-s); }
+.a4-card.is-flush > .a4-card-body > table :is(th, td):last-child { padding-inline-end: var(--a4-card-pad-x, var(--a4-space-4)); }
+.a4-card.is-flush > table:first-child tr:first-child > :first-child { border-start-start-radius: var(--a4-radius-s); }
+.a4-card.is-flush > table:first-child tr:first-child > :last-child { border-start-end-radius: var(--a4-radius-s); }
+.a4-card.is-flush > table:last-child tr:last-child > :first-child { border-end-start-radius: var(--a4-radius-s); }
+.a4-card.is-flush > table:last-child tr:last-child > :last-child { border-end-end-radius: var(--a4-radius-s); }
 
 /* .a4-card.is-link: the whole card follows the link in its title (the link's ::after covers the card). Other links,
    buttons and fields in the card body or foot are lifted above that layer and stay clickable; plain text under the
@@ -599,7 +630,7 @@ html[data-a4-theme="dark"] {
 }
 @keyframes a4-card-busy { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) {
-  .a4-card.is-busy[aria-busy="true"]::before { animation: none; border-right-color: var(--a4-accent); }
+  .a4-card.is-busy[aria-busy="true"]::before { animation: none; border-inline-end-color: var(--a4-accent); }
 }
 @media (forced-colors: active) {
   .a4-card.is-busy[aria-busy="true"]::before { border-color: CanvasText; border-top-color: Highlight; }
@@ -731,8 +762,8 @@ html[data-a4-theme="dark"] {
   content: "";
   position: absolute;
   top: calc(50% - 1px);
-  left: -1px;
-  right: -1px;
+  inset-inline-start: -1px;
+  inset-inline-end: -1px;
   height: 2px;
   background-color: currentColor;
 }
@@ -782,12 +813,12 @@ a.a4-lang.is-main:hover, .a4-lang.is-main.is-current { border-color: var(--a4-ac
 .a4-lang.is-missing { border-style: dashed; color: var(--a4-muted); font-weight: 500; }
 a.a4-lang.is-missing:hover { border-style: solid; }
 /* a badge in front of the language's name in a table cell (the Translations tab) keeps a gap to the name */
-td > .a4-lang { margin-right: var(--a4-space-1); }
+td > .a4-lang { margin-inline-end: var(--a4-space-1); }
 .a4-lang.is-outdated::after {
   content: "";
   position: absolute;
   top: -3px;
-  right: -3px;
+  inset-inline-end: -3px;
   width: 7px;
   height: 7px;
   border: 1px solid var(--a4-card);
@@ -947,6 +978,7 @@ a.a4-btn, a.a4-btn:visited { color: var(--a4-ink); }
 }
 fieldset.a4-field { background: none; box-shadow: none; border-radius: 0; }
 fieldset.a4-field > legend { float: left; width: 100%; margin: 0 0 var(--a4-space-1); padding: 0; background: none; }
+:where([dir="rtl"]) fieldset.a4-field > legend { float: right; }
 fieldset.a4-field > legend + * { clear: both; }
 .a4-field > label,
 .a4-field > legend,
@@ -961,9 +993,10 @@ fieldset.a4-field > legend + * { clear: both; }
 
 /* Required fields: a mark beside the label (the word itself is in .a4-sr-only for screen readers) and one hint
    above the form that says what the mark means. A field error may lead with an icon. */
-.a4-required-mark { margin-left: var(--a4-space-1); color: var(--a4-bad); font-weight: 700; }
+.a4-required-mark { margin-inline-start: var(--a4-space-1); color: var(--a4-bad); font-weight: 700; }
 .a4-required-hint { margin: 0 0 var(--a4-space-3); color: var(--a4-muted); font-size: var(--a4-text-s); }
 .a4-required-hint .a4-required-mark { margin: 0 var(--a4-space-1) 0 0; }
+:where([dir="rtl"]) .a4-required-hint .a4-required-mark { margin: 0 0 0 var(--a4-space-1); }
 .a4-field-error > .a4-icon { flex: none; }
 
 /* The summary of a failed store (role="alert", focused on load): its links lead to the fields */
@@ -1109,7 +1142,7 @@ fieldset.a4-field > legend + * { clear: both; }
   border-bottom: 1px solid var(--a4-line);
   background-color: transparent;
   color: var(--a4-ink);
-  text-align: left;
+  text-align: start;
   vertical-align: middle;
 }
 .a4-table th {
@@ -1124,7 +1157,7 @@ fieldset.a4-field > legend + * { clear: both; }
 .a4-table tr:last-child td { border-bottom: 0; }
 .a4-table > tbody > tr:where(:nth-child(even of :has(> td):not([hidden]))) > :is(td, th[scope="row"]) { background-color: var(--a4-zebra); }   /* zebra: see admin4-styling.md, Tables */
 .a4-table > tbody > tr:hover > :is(td, th[scope="row"]) { background-color: var(--a4-info-bg); }
-.a4-table .a4-num, .a4-table th.a4-num { text-align: right; }
+.a4-table .a4-num, .a4-table th.a4-num { text-align: end; }
 .a4-table img { vertical-align: -3px; }
 .a4-table.is-compact th, .a4-table.is-compact td { padding: var(--a4-space-2) var(--a4-space-3); }
 .a4-table > tbody > tr.is-selected > :is(td, th[scope="row"]) { background-color: var(--a4-accent-soft); }
@@ -1301,31 +1334,31 @@ fieldset.a4-field > legend + * { clear: both; }
   margin: 0 0 var(--a4-space-3);
   padding: var(--a4-space-3) var(--a4-space-3);
   border: 1px solid var(--a4-line);
-  border-left-width: 4px;
+  border-inline-start-width: 4px;
   border-radius: var(--a4-radius-s);
   background-color: var(--a4-soft);
   color: var(--a4-ink);
 }
-.a4-notice.is-ok { border-color: var(--a4-ok-line); border-left-color: var(--a4-ok); background-color: var(--a4-ok-bg); color: var(--a4-ok); }
-.a4-notice.is-bad { border-color: var(--a4-bad-line); border-left-color: var(--a4-bad); background-color: var(--a4-bad-bg); color: var(--a4-bad); }
-.a4-notice.is-warn { border-color: var(--a4-warn-line); border-left-color: var(--a4-warn); background-color: var(--a4-warn-bg); color: var(--a4-warn); }
-.a4-notice.is-info { border-color: var(--a4-info-line); border-left-color: var(--a4-info); background-color: var(--a4-info-bg); color: var(--a4-info); }
+.a4-notice.is-ok { border-color: var(--a4-ok-line); border-inline-start-color: var(--a4-ok); background-color: var(--a4-ok-bg); color: var(--a4-ok); }
+.a4-notice.is-bad { border-color: var(--a4-bad-line); border-inline-start-color: var(--a4-bad); background-color: var(--a4-bad-bg); color: var(--a4-bad); }
+.a4-notice.is-warn { border-color: var(--a4-warn-line); border-inline-start-color: var(--a4-warn); background-color: var(--a4-warn-bg); color: var(--a4-warn); }
+.a4-notice.is-info { border-color: var(--a4-info-line); border-inline-start-color: var(--a4-info); background-color: var(--a4-info-bg); color: var(--a4-info); }
 .a4-notice strong, .a4-notice .a4-h2, .a4-notice .a4-h3, .a4-notice a:not(.a4-btn) { color: inherit; }
 .a4-notice > .a4-h2, .a4-notice > .a4-h3 { margin-bottom: var(--a4-space-2); }
 .a4-notice > .a4-actions { margin-top: var(--a4-space-3); }
 .a4-notice p + p, .a4-notice p + ul, .a4-notice ul + p { margin-top: var(--a4-space-2); }
-.a4-notice ul { margin: var(--a4-space-2) 0 0; padding-left: var(--a4-space-4); }
+.a4-notice ul { margin: var(--a4-space-2) 0 0; padding-inline-start: var(--a4-space-4); }
 .a4-notice li + li { margin-top: var(--a4-space-1); }
 /* The state shows as an icon too, not by colour alone (WCAG 1.4.1): a Bootstrap icon in the state's colour left of
    the text. .a4-notice-title is the bold first line; .no-icon leaves the icon out (a notice that brings its own). */
 .a4-notice:is(.is-ok, .is-bad, .is-warn, .is-info):not(.no-icon) {
   position: relative;
-  padding-left: calc(var(--a4-space-3) + var(--a4-space-4) + var(--a4-space-1) + var(--a4-space-2));
+  padding-inline-start: calc(var(--a4-space-3) + var(--a4-space-4) + var(--a4-space-1) + var(--a4-space-2));
 }
 .a4-notice:is(.is-ok, .is-bad, .is-warn, .is-info):not(.no-icon)::before {
   content: "";
   position: absolute;
-  left: var(--a4-space-3);
+  inset-inline-start: var(--a4-space-3);
   top: calc(var(--a4-space-3) + 1px);
   width: calc(var(--a4-space-4) + var(--a4-space-1));
   height: calc(var(--a4-space-4) + var(--a4-space-1));
@@ -1351,7 +1384,7 @@ li.a4-notice { list-style: none; }   /* a notice as a list item: no marker next 
    is dismissed), waits while the pointer or the focus is on it, and has a close button. */
 .a4-toasts {
   position: fixed;
-  right: var(--a4-space-4);
+  inset-inline-end: var(--a4-space-4);
   bottom: var(--a4-space-4);
   z-index: var(--a4-z-toast);
   display: flex;
@@ -1375,7 +1408,7 @@ body.exp-debug-bar .a4-toasts { bottom: calc(var(--exp-debug-bar-h, 38px) + var(
   gap: var(--a4-space-2);
   padding: var(--a4-space-2) var(--a4-space-2) var(--a4-space-2) var(--a4-space-3);
   border: 1px solid var(--a4-line);
-  border-left: 4px solid var(--a4-info);
+  border-inline-start: 4px solid var(--a4-info);
   border-radius: var(--a4-radius-s);
   background-color: var(--a4-card);
   box-shadow: var(--a4-shadow-m);
@@ -1385,9 +1418,10 @@ body.exp-debug-bar .a4-toasts { bottom: calc(var(--exp-debug-bar-h, 38px) + var(
   pointer-events: auto;
   animation: a4-toast-in .18s ease-out;
 }
-.a4-toast.is-ok { border-left-color: var(--a4-ok); }
-.a4-toast.is-bad { border-left-color: var(--a4-bad); }
-.a4-toast.is-warn { border-left-color: var(--a4-warn); }
+:where([dir="rtl"]) .a4-toast { padding: var(--a4-space-2) var(--a4-space-3) var(--a4-space-2) var(--a4-space-2); }
+.a4-toast.is-ok { border-inline-start-color: var(--a4-ok); }
+.a4-toast.is-bad { border-inline-start-color: var(--a4-bad); }
+.a4-toast.is-warn { border-inline-start-color: var(--a4-warn); }
 .a4-toast .a4-toast-text { flex: 1 1 auto; padding-top: var(--a4-space-1); }
 .a4-toast .a4-toast-close {
   flex: none;
@@ -1429,7 +1463,7 @@ body.exp-debug-bar .a4-toasts { bottom: calc(var(--exp-debug-bar-h, 38px) + var(
 }
 @media (forced-colors: active) {
   .a4-notice:is(.is-ok, .is-bad, .is-warn, .is-info):not(.no-icon)::before { forced-color-adjust: none; background-color: CanvasText; }
-  .a4-toast { border: 1px solid CanvasText; border-left-width: 4px; }
+  .a4-toast { border: 1px solid CanvasText; border-inline-start-width: 4px; }
   .a4-toast .a4-toast-action { border-color: ButtonText; color: ButtonText; }
 }
 
@@ -1501,6 +1535,7 @@ body.exp-debug-bar .a4-toasts { bottom: calc(var(--exp-debug-bar-h, 38px) + var(
   font-size: var(--a4-text-s);
   counter-increment: a4step;
 }
+:where([dir="rtl"]) .a4-steps li { padding: var(--a4-space-1) var(--a4-space-2) var(--a4-space-1) var(--a4-space-3); }
 .a4-steps li::before {
   content: counter(a4step);
   display: inline-flex;
@@ -1542,15 +1577,16 @@ body.exp-debug-bar .a4-toasts { bottom: calc(var(--exp-debug-bar-h, 38px) + var(
   font-size: var(--a4-text-s);
   line-height: var(--a4-leading);
 }
+:where([dir="rtl"]) .a4-timeline > li { padding: var(--a4-space-2) var(--a4-space-5) var(--a4-space-2) 0; }
 /* the line: an edge, not a fill, so forced colors keep it */
 .a4-timeline > li::before {
   content: "";
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 7px;
+  inset-inline-start: 7px;
   width: 0;
-  border-left: 2px solid var(--a4-line-strong);
+  border-inline-start: 2px solid var(--a4-line-strong);
 }
 .a4-timeline > li:first-child::before { top: 18px; }
 .a4-timeline > li:last-child::before { bottom: auto; height: 18px; }
@@ -1560,7 +1596,7 @@ body.exp-debug-bar .a4-toasts { bottom: calc(var(--exp-debug-bar-h, 38px) + var(
   content: "";
   position: absolute;
   top: 12px;
-  left: 2px;
+  inset-inline-start: 2px;
   box-sizing: border-box;
   width: 12px;
   height: 12px;
@@ -1618,6 +1654,7 @@ body.exp-debug-bar .a4-toasts { bottom: calc(var(--exp-debug-bar-h, 38px) + var(
   font-size: var(--a4-text-xs);
   white-space: nowrap;
 }
+:where([dir="rtl"]) .a4-kbd { margin: 0 0 var(--a4-space-1) var(--a4-space-1); }
 
 /* ---- Drag handle -------------------------------------------------------------------------------------------- */
 
@@ -1882,6 +1919,7 @@ a.a4-icon-btn, a.a4-icon-btn:visited { color: var(--a4-muted); }
 .a4-figure.is-warn strong { color: var(--a4-warn); }
 .a4-figure.is-info strong { color: var(--a4-info); }
 .a4-card.is-warn { box-shadow: inset 4px 0 0 var(--a4-warn), var(--a4-shadow-s); }
+:where([dir="rtl"]) .a4-card.is-warn { box-shadow: inset -4px 0 0 var(--a4-warn), var(--a4-shadow-s); }
 
 /* request H2, H3, H4: the 32px hit area of the checkbox that selects a card or row (at the start of .a4-card-title),
    with or without a text beside it */
@@ -1898,6 +1936,7 @@ a.a4-icon-btn, a.a4-icon-btn:visited { color: var(--a4-muted); }
   font-size: var(--a4-text-s);
   cursor: pointer;
 }
+:where([dir="rtl"]) .a4-pick { margin: calc(-1 * var(--a4-space-1)) calc(-1.5 * var(--a4-space-1)) calc(-1 * var(--a4-space-1)) 0; }
 .a4-pick:hover { background-color: var(--a4-soft); }
 .a4-pick input { width: 18px; height: 18px; margin: 0; accent-color: var(--a4-accent-strong); cursor: pointer; }
 
@@ -1905,14 +1944,16 @@ a.a4-icon-btn, a.a4-icon-btn:visited { color: var(--a4-muted); }
 .a4-middle,
 .a4-flag { vertical-align: middle; }
 .a4-embed-caption { max-width: 100%; overflow-wrap: anywhere; }   /* embed_image.tpl: was style="width: …px" */
-.a4-end { text-align: right; }
+.a4-end { text-align: end; }
 .a4-inset { padding: var(--a4-space-2) var(--a4-space-3); }
 .a4-overflow-visible { overflow: visible; }
 a.a4-current-user-name { color: var(--a4-ink); font-weight: 400; text-decoration: none; }
 
 /* request H1: a folded group holding problems or notes; a summary with a heading, badges and a note wraps */
 .a4-fold.is-bad { box-shadow: inset 4px 0 0 var(--a4-bad); }
+:where([dir="rtl"]) .a4-fold.is-bad { box-shadow: inset -4px 0 0 var(--a4-bad); }
 .a4-fold.is-warn { box-shadow: inset 4px 0 0 var(--a4-warn); }
+:where([dir="rtl"]) .a4-fold.is-warn { box-shadow: inset -4px 0 0 var(--a4-warn); }
 .a4-fold > summary { flex-wrap: wrap; }
 .a4-fold > summary .a4-h2 { font-size: var(--a4-text-m); }
 
@@ -1949,3 +1990,9 @@ a.a4-current-user-name { color: var(--a4-ink); font-weight: 400; text-decoration
   .a4-field textarea,
   .a4-field input:not([type=checkbox]):not([type=radio]):not([type=file]):not([type=range]) { font-size: var(--a4-text-l); }
 }
+
+/* ---- Right to left (dir="rtl" on <html>, from the interface language: $site.text_direction) ------------------
+   Icons that point along the line of text (a chevron to the next thing, back and forward, signing out, a trend, up
+   one level) point the other way when the page reads right to left. The layout itself follows the direction through
+   logical properties (margin-inline-start ...) and the :where([dir="rtl"]) rules after the rules they mirror. */
+:where([dir="rtl"]) :is(.a4-bi-chevron-right, .a4-bi-chevron-left, .a4-bi-chevron-double-right, .a4-bi-chevron-double-left, .a4-bi-arrow-right, .a4-bi-arrow-left, .a4-bi-arrow-up-right, .a4-bi-arrow-down-right, .a4-bi-arrow-90deg-up, .a4-bi-box-arrow-right, .a4-bi-box-arrow-left, .a4-bi-box-arrow-up-right, .a4-bi-caret-right-fill, .a4-bi-caret-left-fill, .a4-bi-reply, .a4-bi-forward) { scale: -1 1; }

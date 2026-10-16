@@ -324,6 +324,8 @@
         const minWidth = 224;
         // the widest the column may get follows the window
         const maxWidthNow = () => Math.max(minWidth, Math.floor(window.innerWidth * 0.72));
+        // right to left (dir="rtl" on <html>) the column stands at the right edge and grows to the left
+        const inlineSign = () => (getComputedStyle(document.documentElement).direction === 'rtl' ? -1 : 1);
         let startX = 0;
         let startWidth = 0;
         let activePointerId = null;
@@ -361,7 +363,7 @@
                 return;
             }
 
-            applyWidth(startWidth + (clientX - startX));
+            applyWidth(startWidth + (clientX - startX) * inlineSign());
         };
 
         const stopResize = (event) => {
@@ -426,8 +428,11 @@
             const step = event.shiftKey ? 64 : 16;
             const width = leftMenu.getBoundingClientRect().width;
             let next = null;
-            if (event.key === 'ArrowLeft' || event.key === 'ArrowDown') { next = width - step; }
-            else if (event.key === 'ArrowRight' || event.key === 'ArrowUp') { next = width + step; }
+            // the arrow pointing away from the column's edge widens it: right in LTR, left in RTL
+            const wider = inlineSign() < 0 ? 'ArrowLeft' : 'ArrowRight';
+            const narrower = inlineSign() < 0 ? 'ArrowRight' : 'ArrowLeft';
+            if (event.key === narrower || event.key === 'ArrowDown') { next = width - step; }
+            else if (event.key === wider || event.key === 'ArrowUp') { next = width + step; }
             else if (event.key === 'Home') { next = minWidth; }
             else if (event.key === 'End') { next = maxWidthNow(); }
             if (next === null) {

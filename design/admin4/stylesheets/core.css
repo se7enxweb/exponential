@@ -164,7 +164,7 @@ table.list, table.special /* Standard class usable for most regular tables prese
 table.list th, table.list td, table.special th, table.special td
 {
     padding: 0.4em;
-    text-align: left;
+    text-align: start;
     vertical-align: middle;
 }
 
@@ -187,7 +187,7 @@ table.list tr:first-child td
 /* 'not available rate' */
 table.list td.na-rate, table.special td.na-rate
 {
-    text-align: right;
+    text-align: end;
     font-style: italic;
     color: var(--a4-disabled);
 }
@@ -224,7 +224,7 @@ td.nowrap
 
 td.number, table.list td.number, table.special td.number, table.list td.right
 {
-    text-align: right;
+    text-align: end;
 }
 
 
@@ -235,16 +235,19 @@ ul, ol
     margin: 0.75em 0 1em 2.5em;
     padding: 0;
 }
+:where([dir="rtl"]) ul, :where([dir="rtl"]) ol { margin: 0.75em 2.5em 1em 0; }
 
 ul ul, ol ul
 {
     margin: 0.3em 0 0.5em 1.3em;
 }
+:where([dir="rtl"]) ul ul, :where([dir="rtl"]) ol ul { margin: 0.3em 1.3em 0.5em 0; }
 
 ul ol, ol ol
 {
     margin: 0.3em 0 0.5em 1.9em;
 }
+:where([dir="rtl"]) ul ol, :where([dir="rtl"]) ol ol { margin: 0.3em 1.9em 0.5em 0; }
 
 ul, ul ul
 {
@@ -281,6 +284,7 @@ dd
 {
     margin: 0 1em 0.5em 2.5em;
 }
+:where([dir="rtl"]) dd { margin: 0 2.5em 0.5em 1em; }
 
 
 /* FORM ELEMENTS */
@@ -294,7 +298,7 @@ form
 label
 {
     font-weight: bold;
-    padding-right: 0.5em;
+    padding-inline-end: 0.5em;
     display: block;
     white-space: nowrap;
     font-size:1.1em;
@@ -331,15 +335,15 @@ input.button, button, input.defaultbutton, input.button-disabled
     cursor: pointer;
     font-size: var(--a4-text-xs);
     font-weight: normal;
-    padding-left: 0.25em;
-    padding-right: 0.25em;
+    padding-inline-start: 0.25em;
+    padding-inline-end: 0.25em;
 }
 
 input.defaultbutton
 {
     font-weight: bold;
-    padding-left: 0.45em;
-    padding-right: 0.45em;
+    padding-inline-start: 0.45em;
+    padding-inline-end: 0.45em;
     color: var(--a4-on-accent);
 }
 
@@ -451,16 +455,17 @@ div.box-content div.message-confirmation, div.box-content div.message-feedback, 
 div.message-feedback h2, div.message-warning h2, div.message-error h2
 {
     position: relative;
-    margin-left: 0.5em;
+    margin-inline-start: 0.5em;
     padding: 0.25em 0.5em 0.5em 2.5em;
 }
+:where([dir="rtl"]) div.message-feedback h2, :where([dir="rtl"]) div.message-warning h2, :where([dir="rtl"]) div.message-error h2 { padding: 0.25em 2.5em 0.5em 0.5em; }
 
 /* The icon left of the heading: a Bootstrap icon (share/icons/bootstrap-icons) in the colour of the state */
 div.message-feedback h2::before, div.message-warning h2::before, div.message-error h2::before
 {
     content: "";
     position: absolute;
-    left: 0.5em;
+    inset-inline-start: 0.5em;
     top: 0.25em;
     width: 1.25em;
     height: 1.25em;
@@ -513,6 +518,7 @@ div.message-feedback span.time, div.message-warning span.time, div.message-error
     display: block;
     float: right;
 }
+:where([dir="rtl"]) div.message-feedback span.time, :where([dir="rtl"]) div.message-warning span.time, :where([dir="rtl"]) div.message-error span.time { float: left; }
 
 label.message-error, legend.message-error
 {
@@ -533,9 +539,10 @@ div.block /* Used around groups of objects which are connected in some way, and 
 
 div.block div.element, div.block div.halfelement /* Used if several objects are to be stacked horizontally within the same block */
 {
-    padding-right: 1em;
+    padding-inline-end: 1em;
     float: left;
 }
+:where([dir="rtl"]) div.block div.element, :where([dir="rtl"]) div.block div.halfelement { float: right; }
 
 div.halfelement
 {
@@ -548,6 +555,7 @@ div.block div.left /* Floats elements to the left in a block */
     float: left;
     clear: left;
 }
+:where([dir="rtl"]) div.block div.left { float: right; clear: right; }
 
 div.block div.right /* Floats elements to the right in a block */
 {
@@ -555,17 +563,20 @@ div.block div.right /* Floats elements to the right in a block */
     float: right;
     clear: right;
 }
+:where([dir="rtl"]) div.block div.right { float: left; clear: left; }
 
 div.button-left
 {
     float: left;
 }
+:where([dir="rtl"]) div.button-left { float: right; }
 
 div.button-right
 {
     float: right;
-    margin-left: 1em;
+    margin-inline-start: 1em;
 }
+:where([dir="rtl"]) div.button-right { float: left; }
 
 div.button-header
 {
@@ -658,12 +669,14 @@ div.split div.three-left
     width: 31%;
     float: left;
 }
+:where([dir="rtl"]) div.split div.three-left { float: right; }
 
 div.split div.three-right
 {
     width: 31%;
     float: right;
 }
+:where([dir="rtl"]) div.split div.three-right { float: left; }
 
 div.split div.three-center
 {
@@ -700,7 +713,7 @@ table.multioption
 }
 table.multioption input.button
 {
-    margin-left:0;
+    margin-inline-start:0;
 }
 table.multioption, table.multioption table
 {
@@ -719,7 +732,7 @@ table.multioption th, table.multioption td
     padding:0.35em 0.7em;
     border: 1px solid var(--a4-line-strong);
     vertical-align: middle;
-    text-align: left;
+    text-align: start;
 }
 table.multioption table.options-list th, table.multioption table.options-list td
 {
@@ -770,6 +783,7 @@ div.attribute-multioption ul
     margin: 0 0 0 1em;
     padding: 0;
 }
+:where([dir="rtl"]) div.attribute-multioption ul { margin: 0 1em 0 0; }
 
 div.attribute-multioption li
 {

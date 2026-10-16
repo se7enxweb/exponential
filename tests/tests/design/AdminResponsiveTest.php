@@ -86,8 +86,8 @@ class AdminResponsiveTest extends PHPUnit\Framework\TestCase
     {
         $small = AdminBaseStylesheetsTest::rules( self::media( self::css( 'admin4.css' ), 'screen and (min-width: 1024px) and (max-width: 1279.98px)' ) );
         // html body:has(...) outweighs pagelayout.css's body:has(.sidebar.right.show) margin
-        $this->assertSame( '0', $small['html body:has(.sidebar.right.show)']['margin-right'] );
-        $this->assertStringContainsString( "body:has(.sidebar.right.show) {\n        margin-right: calc(15rem + 0.5rem);", self::css( 'pagelayout.css' ) );
+        $this->assertSame( '0', $small['html body:has(.sidebar.right.show)']['margin-inline-end'] );
+        $this->assertStringContainsString( "body:has(.sidebar.right.show) {\n        margin-inline-end: calc(15rem + 0.5rem);", self::css( 'pagelayout.css' ) );
     }
 
     public function testTheContentColumnStopsGrowing()
@@ -223,14 +223,14 @@ class AdminResponsiveTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( ".content-wrapper {\n  padding: var(--a4-gutter) var(--a4-space-5);", $css, 'the gutter under the header' );
         // a column beside the content ends where the content begins (no 8px of the body, no 24px of the content)
         $wide = AdminBaseStylesheetsTest::rules( self::media( $css, 'screen and (min-width: 1024px)' ) );
-        $this->assertSame( 'var(--left-sidebar-width, 15rem)', $wide['html body:has(.sidebar.left.show)']['margin-left'] );
-        $this->assertSame( '0', $wide['body:has(.sidebar.left.show) .content-wrapper']['padding-left'] );
+        $this->assertSame( 'var(--left-sidebar-width, 15rem)', $wide['html body:has(.sidebar.left.show)']['margin-inline-start'] );
+        $this->assertSame( '0', $wide['body:has(.sidebar.left.show) .content-wrapper']['padding-inline-start'] );
         $wider = AdminBaseStylesheetsTest::rules( self::media( $css, 'screen and (min-width: 1280px)' ) );
-        $this->assertSame( 'var(--a4-right-width)', $wider['html body:has(.sidebar.right.show)']['margin-right'] );
+        $this->assertSame( 'var(--a4-right-width)', $wider['html body:has(.sidebar.right.show)']['margin-inline-end'] );
         $this->assertSame( 'var(--a4-right-width)', $rules['.sidebar.right']['width'], 'the column and the room it takes are one length' );
-        $this->assertSame( '0', $wider['body:has(.sidebar.right.show) .content-wrapper']['padding-right'] );
+        $this->assertSame( '0', $wider['body:has(.sidebar.right.show) .content-wrapper']['padding-inline-end'] );
         // the width grip stands in the gutter, not over the content
-        $this->assertSame( 'calc((var(--a4-gutter) - var(--a4-space-3)) / 2)', $rules['.leftmenu-resize-handle']['right'] );
+        $this->assertSame( 'calc((var(--a4-gutter) - var(--a4-space-3)) / 2)', $rules['.leftmenu-resize-handle']['inset-inline-end'] );
         $this->assertSame( 'var(--a4-space-3)', $rules['.leftmenu-resize-handle']['width'] );
     }
 }
