@@ -68217,12 +68217,28 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Nothing was done: the account is not waiting for a decision any more.</translation>
     </message>
     <message>
+        <source>Nothing was done: this account cannot be removed here.</source>
+        <translation>Nothing was done: this account cannot be removed here.</translation>
+    </message>
+    <message>
         <source>There is nothing to do: the account no longer exists.</source>
         <translation>There is nothing to do: the account no longer exists.</translation>
     </message>
     <message>
         <source>There is nothing to do: the account is not waiting for a decision any more.</source>
         <translation>There is nothing to do: the account is not waiting for a decision any more.</translation>
+    </message>
+    <message>
+        <source>There is nothing to do: this account cannot be removed here.</source>
+        <translation>There is nothing to do: this account cannot be removed here.</translation>
+    </message>
+    <message>
+        <source>There is nothing to do: an administrator has deactivated this account; it is not a registration that waits.</source>
+        <translation>There is nothing to do: an administrator has deactivated this account; it is not a registration that waits.</translation>
+    </message>
+    <message>
+        <source>Deactivated by an administrator</source>
+        <translation>Deactivated by an administrator</translation>
     </message>
     <message>
         <source>Approving activates the account and completes the registration: the account is published and the user can sign in.</source>

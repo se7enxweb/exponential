@@ -74804,12 +74804,28 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Es wurde nichts getan: Das Konto wartet nicht mehr auf eine Entscheidung.</translation>
     </message>
     <message>
+        <source>Nothing was done: this account cannot be removed here.</source>
+        <translation>Es wurde nichts getan: Dieses Konto kann hier nicht entfernt werden.</translation>
+    </message>
+    <message>
         <source>There is nothing to do: the account no longer exists.</source>
         <translation>Nichts zu tun: Das Konto existiert nicht mehr.</translation>
     </message>
     <message>
         <source>There is nothing to do: the account is not waiting for a decision any more.</source>
         <translation>Nichts zu tun: Das Konto wartet nicht mehr auf eine Entscheidung.</translation>
+    </message>
+    <message>
+        <source>There is nothing to do: this account cannot be removed here.</source>
+        <translation>Es gibt nichts zu tun: Dieses Konto kann hier nicht entfernt werden.</translation>
+    </message>
+    <message>
+        <source>There is nothing to do: an administrator has deactivated this account; it is not a registration that waits.</source>
+        <translation>Es gibt nichts zu tun: Ein Administrator hat dieses Konto deaktiviert; es ist keine wartende Registrierung.</translation>
+    </message>
+    <message>
+        <source>Deactivated by an administrator</source>
+        <translation>Von einem Administrator deaktiviert</translation>
     </message>
     <message>
         <source>Approving activates the account and completes the registration: the account is published and the user can sign in.</source>

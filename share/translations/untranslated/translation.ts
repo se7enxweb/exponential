@@ -57753,11 +57753,27 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Nothing was done: this account cannot be removed here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>There is nothing to do: the account no longer exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>There is nothing to do: the account is not waiting for a decision any more.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There is nothing to do: this account cannot be removed here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There is nothing to do: an administrator has deactivated this account; it is not a registration that waits.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deactivated by an administrator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
