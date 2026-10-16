@@ -17,7 +17,8 @@
  * as eng-GB@euro only when named). A locale is offered only when it is a locale code (eng-GB, ger-DE, nor-NO@intl)
  * and share/locale/<code>.ini exists; with ListUntranslated=disabled (the default when the setting is missing) also
  * only when it is English or the interface has a translation in share/translations/<code>/translation.ts. The
- * siteaccess's own Locale is always offered.
+ * siteaccess's own Locale is always offered. A test language ([LanguageSettings] TestLanguage=true, as Lorem Ipsum,
+ * qlo-ZZ) is left out of the groups and of AllLanguages; AllowedValues[] can still name it, and it is then listed A-Z.
  *
  * With groups or AllLanguages the toolbar shows the choice grouped (groups()): the configured groups in their order,
  * then every offered locale A-Z by its name, each with how complete its translation is (expUISwitchLanguageCatalogue).
@@ -129,18 +130,27 @@ class expUISwitchLanguageProvider extends expUISwitchProvider
      */
     public function configuredValues()
     {
+        // A test language (Lorem Ipsum, qlo-ZZ) is never offered by a group or by AllLanguages, only when
+        // AllowedValues[] names it.
+        $catalogue = $this->catalogue();
         $list = array();
         foreach ( $this->configuredGroups() as $values )
         {
             foreach ( $values as $value )
-                $list[] = $value;
+            {
+                if ( !$catalogue->isTestLocale( $value ) )
+                    $list[] = $value;
+            }
         }
         foreach ( parent::configuredValues() as $value )
             $list[] = $value;
         if ( $this->listsAllLanguages() )
         {
-            foreach ( $this->catalogue()->localeCodes( false ) as $value )
-                $list[] = $value;
+            foreach ( $catalogue->localeCodes( false ) as $value )
+            {
+                if ( !$catalogue->isTestLocale( $value ) )
+                    $list[] = $value;
+            }
         }
         $unique = array();
         foreach ( $list as $value )
@@ -347,7 +357,13 @@ class expUISwitchLanguageProvider extends expUISwitchProvider
         $grouped = array();
         foreach ( $this->configuredGroups() as $group => $values )
         {
-            $offered = array_values( array_filter( $values, array( $this, 'isValid' ) ) );
+            $offered = array();
+            foreach ( $values as $value )
+            {
+                // a test language is never ranked, even when AllowedValues[] offers it
+                if ( $this->isValid( $value ) && !$this->catalogue()->isTestLocale( $value ) )
+                    $offered[] = $value;
+            }
             if ( !$offered )
                 continue;
             $label = isset( $labels[$group] ) && is_string( $labels[$group] ) && $labels[$group] !== '' ? self::tr( $labels[$group] ) : ucfirst( str_replace( '_', ' ', $group ) );

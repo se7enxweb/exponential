@@ -789,6 +789,19 @@
     "design/standard/templates/content/reverse_relation_check.tpl": [
       "tests/tests/design/AdminReverseRelationCheckTest.php"
     ],
+    "share/locale/qlo-ZZ.ini": [
+      "tests/tests/lib/ezlocale/expLocaleFilesTest.php",
+      "tests/tests/lib/ezlocale/eZLocaleFormattingTest.php",
+      "tests/tests/kernel/classes/expTestLanguageTest.php",
+      "tests/tests/kernel/classes/uiswitch/expUISwitchTestLanguageTest.php"
+    ],
+    "kernel/private/classes/commands/exploremipsumfill.php": [
+      "tests/tests/kernel/classes/expTestLanguageTest.php"
+    ],
+    "bin/php/exploremipsumfill.php": [
+      "tests/tests/kernel/classes/expTestLanguageTest.php",
+      "tests/tests/kernel/classes/runnable/MovedEntryPointsTest.php"
+    ],
     "share/locale/*": [
       "tests/tests/lib/ezlocale/expLocaleFilesTest.php",
       "tests/tests/lib/ezlocale/eZLocaleFormattingTest.php"
@@ -917,7 +930,8 @@
     ],
     "kernel/classes/uiswitch/*": [
       "tests/tests/kernel/classes/uiswitch/expUISwitchTest.php",
-      "tests/tests/kernel/classes/uiswitch/expUISwitchLanguageProviderTest.php"
+      "tests/tests/kernel/classes/uiswitch/expUISwitchLanguageProviderTest.php",
+      "tests/tests/kernel/classes/uiswitch/expUISwitchTestLanguageTest.php"
     ],
     "kernel/uiswitch/*": [
       "tests/tests/kernel/classes/uiswitch/expUISwitchTest.php"

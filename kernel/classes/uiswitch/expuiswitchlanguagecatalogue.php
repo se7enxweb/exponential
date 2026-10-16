@@ -23,7 +23,7 @@ class expUISwitchLanguageCatalogue
     const LOCALE_PATTERN = '/^[a-z]{3}-[A-Z]{2}(@[a-z0-9]{1,16})?$/';
 
     /** the format of the cache file; a new format number builds the catalogue again */
-    const FORMAT = 2;
+    const FORMAT = 3;
 
     /** @var array signature => catalogue, for the life of the process (Velocity workers) */
     private static $memory = array();
@@ -171,9 +171,23 @@ class expUISwitchLanguageCatalogue
             }
             $entries[$code] = array( 'native' => $names['LanguageName'], 'english' => $names['InternationalLanguageName'],
                                      'http' => $names['ContentLanguage'], 'coverage' => $coverage,
-                                     'intl_native' => strpos( $code, '@' ) === false ? self::intlDisplayName( $names['ContentLanguage'], $names['ContentLanguage'] ) : '' );
+                                     'intl_native' => strpos( $code, '@' ) === false ? self::intlDisplayName( $names['ContentLanguage'], $names['ContentLanguage'] ) : '',
+                                     'test' => strtolower( $names['TestLanguage'] ) === 'true' );
         }
         return $entries;
+    }
+
+    /**
+     * Whether a locale is a test language ([LanguageSettings] TestLanguage=true in its file, as Lorem Ipsum, qlo-ZZ):
+     * the choice leaves it out of the ranked groups and of "All languages"; only AllowedValues[] offers it.
+     *
+     * @param string $code
+     * @return bool
+     */
+    public function isTestLocale( $code )
+    {
+        $entry = $this->entry( $code );
+        return is_array( $entry ) && !empty( $entry['test'] );
     }
 
     /**
@@ -311,7 +325,7 @@ class expUISwitchLanguageCatalogue
     }
 
     /**
-     * LanguageName, InternationalLanguageName and ContentLanguage of a locale file, '' where missing. Read line by
+     * LanguageName, InternationalLanguageName, ContentLanguage and TestLanguage of a locale file, '' where missing. Read line by
      * line: eZINI would keep 140 instances in memory for three values each.
      *
      * @param string $file
@@ -319,11 +333,11 @@ class expUISwitchLanguageCatalogue
      */
     public function readLocaleNames( $file )
     {
-        $names = array( 'LanguageName' => '', 'InternationalLanguageName' => '', 'ContentLanguage' => '' );
+        $names = array( 'LanguageName' => '', 'InternationalLanguageName' => '', 'ContentLanguage' => '', 'TestLanguage' => '' );
         $lines = is_file( $file ) ? @file( $file, FILE_IGNORE_NEW_LINES ) : false;
         foreach ( (array)$lines as $line )
         {
-            if ( preg_match( '/^(LanguageName|InternationalLanguageName|ContentLanguage)=(.*)$/', trim( $line ), $match )
+            if ( preg_match( '/^(LanguageName|InternationalLanguageName|ContentLanguage|TestLanguage)=(.*)$/', trim( $line ), $match )
                  && $names[$match[1]] === '' )
                 $names[$match[1]] = trim( $match[2] );
         }
