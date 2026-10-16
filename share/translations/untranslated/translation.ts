@@ -64553,6 +64553,138 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%count err</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Rendering</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View: hit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View: new</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View: off</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View: ?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content view cache</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Compiled %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%compiled templates compiled in this request, %executed runs of compiled templates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Read from the cache</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generated and stored in the cache</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generated without storing it in the cache</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The cache file was not used</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The key was built, no outcome was noted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Controller</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No module view ran.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Module view</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View class</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Script</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Navigation part</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Design order (%count bases)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No content view ran on this page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hash</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cache file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cache key (%count parts)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Added or changed by a content/view/cachekeys listener</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>listener</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Compiled templates run</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Compiled in this request</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Templates compiled in this request</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
