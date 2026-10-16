@@ -311,7 +311,7 @@ ff4131909f10bebbceb2afa3d873ae3c  design/admin/override/templates/template_look_
 e0c996a801b1373df9824852298b20d9  design/admin/override/templates/tiny_image.tpl
 a2c561e93ef63c93201e81acd4f32741  design/admin/override/templates/window_controls_user.tpl
 f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin/override/templates/windows_user.tpl
-06f92a7dbc2632aa18db66eac647a5b3  design/admin/stylesheets/components.css
+ccb5068053ed1e403eee15131c1add45  design/admin/stylesheets/components.css
 ce90ff045aa9ad5f6b74ebb4adb49d1f  design/admin/stylesheets/content.css
 8b7e80c03784a5d778864ec683ed41f3  design/admin/stylesheets/core.css
 62734b59f14ab1cb473727176f810806  design/admin/stylesheets/ezinfo.css
@@ -914,7 +914,7 @@ f91a366a6abfa6b8a706b154b7aec12c  design/admin4/override/templates/template_look
 6971adb19c3c39b21f245c72b7f73305  design/admin4/override/templates/thumbnail/image_browse.tpl
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
 3d72e9340e0c54b7a0adb7effc185c67  design/admin4/stylesheets/admin4.css
-06f92a7dbc2632aa18db66eac647a5b3  design/admin4/stylesheets/components.css
+ccb5068053ed1e403eee15131c1add45  design/admin4/stylesheets/components.css
 29dbb2aaee5436f235093d29c633111b  design/admin4/stylesheets/content.css
 2de9fc688889d1bbdbffcec633e34f39  design/admin4/stylesheets/core.css
 d57109b58209ac401af2138ffd2ac93d  design/admin4/stylesheets/editor_content.css
@@ -2834,7 +2834,7 @@ cdbe0fdc9c9011438bf808f4842b0982  doc/bc/5.90/relation_indexing.md
 2c56f7a3506917910383af311b62a3cb  doc/bc/6.0/LAYOUTS.md
 d386923e32f7abc18de9e5392795bb5f  doc/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md
 d95203ddf57747c5dcb15b6923bd0356  doc/bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXPANSION_HIDE_UNHIDE.md
-6519fe5610143430f5f05b01222ba0a4  doc/bc/6.0/admin4-styling.md
+0ab260d13ecc850ddf64413ea7eb9240  doc/bc/6.0/admin4-styling.md
 b8b0564ea1db716863a85739a1f4c06d  doc/bc/6.0/admin4l.md
 f0b57cd68a5b41cc14ca22727186740c  doc/bc/6.0/api-keys.md
 5d820d5453df43d530999af1806bfd21  doc/bc/6.0/audit.md
