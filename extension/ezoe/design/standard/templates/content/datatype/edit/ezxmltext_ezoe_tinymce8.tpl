@@ -84,8 +84,10 @@
 {/if}
 {* The settings every editor on the page shares, as data: ezoe8_start.js reads them and starts the editors, so the
    page carries no inline script (Content Security Policy without 'unsafe-inline'). JSON only: every value from the
-   installation goes through json_encode, which also writes "</" as "<\/". *}
-<script type="application/json" id="ezoe8-settings">
+   installation goes through json_encode. The block is printed with < and > as \u003c and \u003e (in JSON they occur
+   only inside strings): json_encode leaves "<!--" as it is, and "<!--<script>" in a value would make the browser read
+   past this block's </script> and swallow the scripts after it. *}
+{set-block variable=$ezoe8_settings_json}
 {ldelim}
     "license_key": "gpl",
     {if $tiny_language}
@@ -181,9 +183,12 @@
         "attachment_icon": {json_encode( 'tango/mail-attachment32.png'|ezimage( 'no' ) )}
     {rdelim}
 {rdelim}
-</script>
+{/set-block}
+<script type="application/json" id="ezoe8-settings">{$ezoe8_settings_json|explode( '<' )|implode( '\u003c' )|explode( '>' )|implode( '\u003e' )}</script>
 {* ezoe.ini [EditorLayout] Buttons[] (TinyMCE 3 ez theme) to TinyMCE 8 toolbar items, read by eZOe8Toolbar() *}
-<script type="application/json" id="ezoe8-button-map">{json_encode( $input_handler.engine.toolbar_map|merge( hash( '|', '|' ) ) )}</script>
+{set-block variable=$ezoe8_button_map_json}{json_encode( $input_handler.engine.toolbar_map|merge( hash( '|', '|' ) ) )}{/set-block}
+<script type="application/json" id="ezoe8-button-map">{$ezoe8_button_map_json|explode( '<' )|implode( '\u003c' )|explode( '>' )|implode( '\u003e' )}</script>
+{undef $ezoe8_settings_json $ezoe8_button_map_json}
 {* deferred: runs once the page is parsed, when every editor's textarea is there *}
 <script src="{'javascript/tinymce8_ez/ezoe8_start.js'|ezdesign( 'no' )}" charset="utf-8" defer></script>
 {/run-once}

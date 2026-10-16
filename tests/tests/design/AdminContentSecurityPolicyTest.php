@@ -27,6 +27,8 @@
  *   actions (js/csp_actions.js), a popup menu declared in data-menu-* attributes and the ways extensions still add to
  *   menus (js/csp_popupmenu.js), and the content tree drawn from its data attributes with its open/close buttons
  *   (js/csp_tree.js).
+ * - CSP-09: every JSON data block (<script type="application/json">) of a rendered template prints one variable
+ *   through JSON_ESCAPE, and that chain, rendered by eZTemplate, leaves no < or > of a value in the block.
  * - CSP-07: the TinyMCE 8 editor (ezoe) starts from ezoe8_start.js: the edit template writes its settings as JSON
  *   data blocks and each textarea's toolbar in data-ezoe8-* attributes; run in node (js/csp_tinymce8.js).
  *
@@ -75,6 +77,9 @@ class AdminContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
         'design/standard/templates/shop/orderreceipt_style.tpl' => array( 'styleblock' => 1 ),
     );
 
+    /** The extensions the distribution carries: an allowlisted one missing from the checkout fails under CI=1 */
+    const SHIPPED_EXTENSIONS = array( 'expservices', 'ezformtoken', 'ezjscore', 'ezoe' );
+
     /**
      * Templates of extensions still carrying inline code: extension => array( 'why' => what is left and why, 'files'
      * => array( path below the extension directory => array( kind => count ) ) ). Like ALLOWLIST this only shrinks;
@@ -118,6 +123,13 @@ class AdminContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
             ),
         ),
     );
+
+    /**
+     * How a template prints a JSON data block: one variable (a set-block) with < and > written as \u003c and \u003e.
+     * json_encode leaves "<!--" and "<script" as they are, and "<!--<script>" in a value makes the browser read past
+     * the block's </script>, so the scripts after it never run.
+     */
+    const JSON_ESCAPE = "|explode( '<' )|implode( '\\u003c' )|explode( '>' )|implode( '\\u003e' )";
 
     /** The standard scripts admin4 loads (design.ini [JavaScriptSettings] BackendJavaScriptList[] and the trees) */
     const STANDARD_SCRIPTS = array(
@@ -391,15 +403,23 @@ class AdminContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
         $paths = self::renderedTemplates();
         $this->assertGreaterThan( 400, count( $paths ), 'the template chains were not read' );
         $allowlist = self::ALLOWLIST;
+        $missing = array();
         foreach ( self::EXTENSION_ALLOWLIST as $extension => $entry )
         {
             $this->assertNotEmpty( $entry['why'], $extension );
             $this->assertNotEmpty( $entry['files'], "$extension has nothing left: remove its EXTENSION_ALLOWLIST entry" );
             if ( !self::hasExtension( $extension ) )
+            {
+                // not in this checkout: not checked, but a shipped one must be there in CI
+                if ( getenv( 'CI' ) && in_array( $extension, self::SHIPPED_EXTENSIONS, true ) )
+                    $missing[] = $extension;
                 continue;
+            }
             foreach ( $entry['files'] as $file => $kinds )
                 $allowlist["extension/$extension/$file"] = $kinds;
         }
+
+        $this->assertSame( array(), $missing, 'extensions of the distribution listed in EXTENSION_ALLOWLIST are missing from the checkout' );
 
         $unexpected = array();
         $fewer = array();
@@ -682,6 +702,9 @@ class AdminContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
             return null;
         $start += strlen( $openTag );
         $json = substr( $code, $start, strpos( $code, '</script>', $start ) - $start );
+        // printed from a set-block variable through the escape chain: the JSON is the set-block's content
+        if ( preg_match( '/^\{\$(\w+)\|/', $json, $m ) && preg_match( '/\{set-block variable=\$' . $m[1] . '\}(.*?)\{\/set-block\}/s', $code, $block ) )
+            $json = $block[1];
         $json = (string)preg_replace( '#\{/?(if|else|elseif)\b[^{}]*\}#', '', $json );
         $json = (string)preg_replace( '/\{(?!ldelim\}|rdelim\})[^{}]*\}/', '0', $json );
         $decoded = json_decode( str_replace( array( '{ldelim}', '{rdelim}' ), array( '{', '}' ), $json ), true );
@@ -707,10 +730,11 @@ class AdminContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
         $this->assertIsArray( $settings, 'the settings block is JSON once the template values are in' );
         $this->assertSame( 'gpl', $settings['license_key'] );
         $this->assertArrayHasKey( 'form_token', $settings['ez_settings'] );
-        $this->assertStringContainsString( '<script type="application/json" id="ezoe8-button-map">{json_encode( $input_handler.engine.toolbar_map|merge( hash( \'|\', \'|\' ) ) )}</script>', $tpl );
+        $this->assertStringContainsString( '{set-block variable=$ezoe8_button_map_json}{json_encode( $input_handler.engine.toolbar_map|merge( hash( \'|\', \'|\' ) ) )}{/set-block}', $tpl );
 
         $c = $this->harness( 'csp_tinymce8.js', 'extension/ezoe/design/standard/javascript/tinymce8_ez/ezoe8_start.js' );
-        $this->assertCount( 4, $c );
+        $this->assertCount( 5, $c );
+        $this->assertSame( array( 0, 1 ), array( $c['no tinymce']['inits'], $c['no tinymce']['errors'] ), 'without TinyMCE the console says why' );
         $start = $c['start'];
         $this->assertSame( 2, $start['inits'], 'one editor per marked textarea' );
         $this->assertSame( 2, $start['again'], 'a second start starts no editor twice' );
@@ -729,5 +753,65 @@ class AdminContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'rtl', 'ar' ), array( $c['rtl']['directionality'], $c['rtl']['lang'] ) );
         $this->assertSame( array( 0, 1 ), array( $c['deferred']['before'], $c['deferred']['after'] ) );
         $this->assertSame( array( 0, 1 ), array( $c['broken']['inits'], $c['broken']['errors'] ), 'broken data starts nothing and says so' );
+    }
+
+    /** CSP-09 */
+    public function testTheJSONDataBlocksCarryNoAngleBrackets()
+    {
+        $blocks = 0;
+        $wrong = array();
+        foreach ( array_keys( self::renderedTemplates() ) as $path )
+        {
+            $code = (string)preg_replace( '/\{\*.*?\*\}/s', '', (string)file_get_contents( self::root() . '/' . $path ) );
+            if ( !preg_match_all( '#<script\b[^>]*\stype="application/json"[^>]*>(.*?)</script>#s', $code, $m ) )
+                continue;
+            foreach ( $m[1] as $content )
+            {
+                $blocks++;
+                if ( !preg_match( '/^\{\$\w+' . preg_quote( self::JSON_ESCAPE, '/' ) . '\}$/', $content ) )
+                    $wrong[] = "$path: " . substr( $content, 0, 80 );
+            }
+        }
+        $this->assertGreaterThan( 0, $blocks, 'the JSON blocks were found' );
+        $this->assertSame( array(), $wrong, 'a JSON block prints {$variable' . self::JSON_ESCAPE . '} (a set-block)' );
+
+        // the chain itself, interpreted and compiled
+        $dir = self::root() . '/var/tmp/csp_json_' . uniqid( '', true );
+        mkdir( $dir, 0700, true );
+        $file = "$dir/block.tpl";
+        file_put_contents( $file, '{set-block variable=$j}{json_encode( $v )}{/set-block}{$j' . self::JSON_ESCAPE . '}' );
+        $value = array( 'a' => '<!--<script>x</script>-->', 'b' => "</SCRIPT ><b>\u{00e4}" );
+        $saved = array_key_exists( 'eZTemplateCompilerSettings', $GLOBALS ) ? $GLOBALS['eZTemplateCompilerSettings'] : null;
+        try
+        {
+            foreach ( array( false, true ) as $compiled )
+            {
+                $GLOBALS['eZTemplateCompilerSettings']['compile'] = $compiled;
+                $GLOBALS['eZTemplateCompilerSettings']['compilation-directory'] = $dir;
+                eZTemplate::resetInstance();
+                $tpl = new eZTemplate();
+                $tpl->autoload();
+                $tpl->registerAutoloadOperators( array( 'script' => 'extension/ezjscore/autoloads/ezjscencodingtemplatefunctions.php',
+                                                        'class' => 'ezjscEncodingTemplateFunctions',
+                                                        'operator_names' => array( 'json_encode' ) ) );
+                $tpl->setVariable( 'v', $value );
+                $out = trim( (string)$tpl->fetch( $file ) );
+                $label = $compiled ? 'compiled' : 'interpreted';
+                $this->assertStringNotContainsString( '<', $out, $label );
+                $this->assertStringNotContainsString( '>', $out, $label );
+                $this->assertSame( $value, json_decode( $out, true ), "$label: the values come back" );
+            }
+        }
+        finally
+        {
+            if ( $saved === null )
+                unset( $GLOBALS['eZTemplateCompilerSettings'] );
+            else
+                $GLOBALS['eZTemplateCompilerSettings'] = $saved;
+            eZTemplate::resetInstance();
+            foreach ( new RecursiveIteratorIterator( new RecursiveDirectoryIterator( $dir, FilesystemIterator::SKIP_DOTS ), RecursiveIteratorIterator::CHILD_FIRST ) as $f )
+                $f->isDir() ? rmdir( $f->getPathname() ) : unlink( $f->getPathname() );
+            rmdir( $dir );
+        }
     }
 }

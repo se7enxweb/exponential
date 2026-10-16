@@ -20,13 +20,13 @@ function area(id, attribute, extra) {
         + '<input type="submit" name="CustomActionButton[' + attribute + '_disable_editor]" />';
 }
 
-function run(html, readyState) {
+function run(html, readyState, withoutTinymce) {
     const document = createDocument(html);
     document.readyState = readyState || 'complete';
     document.documentElement.getPropertyValue = () => '';
     const inits = [], errors = [];
     const window = {
-        tinymce: { init: (settings) => { inits.push(settings); } },
+        tinymce: withoutTinymce ? undefined : { init: (settings) => { inits.push(settings); } },
         getComputedStyle: () => ({ getPropertyValue: (name) => (name === '--a4-sticky-edge' ? '64px' : '') }),
         console: { error: (message) => { errors.push(message); } },
     };
@@ -99,4 +99,9 @@ function editor(document) {
 {
     const t = run('<script type="application/json" id="ezoe8-settings">{broken</script>' + MAP + area('a', '1'));
     out('broken', { inits: t.inits.length, errors: t.errors.length });
+}
+// TinyMCE itself is not loaded: no editor, the console says why
+{
+    const t = run(SETTINGS + MAP + area('a', '1'), 'complete', true);
+    out('no tinymce', { inits: t.inits.length, errors: t.errors.length });
 }

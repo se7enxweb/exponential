@@ -152,9 +152,16 @@
     // Starts an editor for every textarea the template marked and that has none yet
     function eZOe8Start()
     {
-        if ( !data() || !window.tinymce )
-            return;
         var areas = document.querySelectorAll( 'textarea[data-ezoe8-attribute]' );
+        if ( !areas.length || !data() )
+            return;
+        if ( !window.tinymce )
+        {
+            // the textareas stay usable as they are: they hold the editor HTML and are posted as it is
+            if ( window.console )
+                window.console.error( 'eZ Online Editor: TinyMCE 8 (tinymce.min.js) is not loaded, editing ' + areas.length + ' field(s) as plain text' );
+            return;
+        }
         for ( var i = 0; i < areas.length; i++ )
         {
             var area = areas[i], buttons = [];

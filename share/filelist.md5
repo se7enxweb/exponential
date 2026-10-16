@@ -3163,7 +3163,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-3e040975dc83df81ef286fbf43737d2c  doc/changelogs/6.0/6.0.15.md
+461bba482f5f97bd6cdd93f98c4f6de3  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3504,7 +3504,7 @@ b3bd05989174b0c7f3c8a05ca5ca4c77  doc/features/6.0/content-checks.md
 7c5f248706ac05dd54ed07abbcb7bb83  doc/features/6.0/content-finder.md
 f1c1fb56a9242d2efa91dd58ead7449e  doc/features/6.0/content-jobs.md
 0e0369149f51247d6b31d8fcfe8fb949  doc/features/6.0/content-limitation-handlers.md
-380b2a335fd6b6019afc9f062d7f14ec  doc/features/6.0/content-security-policy.md
+bb12fbb0e4f0a4a3bf9864e6c03e856e  doc/features/6.0/content-security-policy.md
 d2aeb94cafe09e6bda98c15168826937  doc/features/6.0/country-groups.md
 75c167003b97bad4b0226315b2182509  doc/features/6.0/cronjob-part-filter.md
 35be9b689349870dbd25f7737b4c0cb6  doc/features/6.0/cronjob-pause.md
@@ -4744,7 +4744,7 @@ e333c93200a8c06d662a1e3844f920d0  extension/ezoe/design/standard/javascript/tiny
 8cf439bdb4e837c0d7f7690a118090e7  extension/ezoe/design/standard/javascript/tiny_mce_prototype.js
 41bb304c59da236489a896e46a919c94  extension/ezoe/design/standard/javascript/tiny_mce_prototype_src.js
 cb81d4b0fe99e87177feab98928b03ba  extension/ezoe/design/standard/javascript/tiny_mce_src.js
-d2bd2b836e6248f169f2e558868270de  extension/ezoe/design/standard/javascript/tinymce8_ez/ezoe8_start.js
+39d4ff257ee82b2d6312f41e1b867207  extension/ezoe/design/standard/javascript/tinymce8_ez/ezoe8_start.js
 f6f99e0cc2da67ebcb7218dab14d19f3  extension/ezoe/design/standard/javascript/tinymce8_ez/ezoe_dialog.css
 5be331312d4b83b4670acfe65ebd33e4  extension/ezoe/design/standard/javascript/tinymce8_ez/ezoe_dialog.js
 c1ce84f43cca13e73818c60ecbd47f61  extension/ezoe/design/standard/javascript/tinymce8_ez/plugins/ezcustomtag/plugin.js
@@ -4775,7 +4775,7 @@ ce63529c93d6f4be3747d350bd9b0435  extension/ezoe/design/standard/stylesheets/ski
 f66b026fe40921b62c0b77798876760a  extension/ezoe/design/standard/stylesheets/skins/o2k7/ui_silver.css
 4f3e088a50e9d3c8165e2d9a451696d6  extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe.tpl
 a0d544b59dee824af80629d7ea3f8a70  extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe_engine_switch.tpl
-ce200d77a25515d8c853efaefb3439b4  extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe_tinymce8.tpl
+837681a2df2c65da579a54d7a3c3c77d  extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe_tinymce8.tpl
 045d0b39a14a481c5a1adba061e2522f  extension/ezoe/design/standard/templates/content/datatype/view/ezxmltags/underline.tpl
 9863bdadb7a1227726fb97d738e888ba  extension/ezoe/design/standard/templates/ezoe/box_bookmarks.tpl
 73baaf2adee2354e62db9f8a10976db6  extension/ezoe/design/standard/templates/ezoe/box_browse.tpl
@@ -7546,7 +7546,7 @@ eda9b8b5d6f655b77038c6f2ff4ad65a  tests/tests/design/AdminBaseStylesheetsTest.ph
 913c142ba568d53a81be2b3a901ab0b2  tests/tests/design/AdminBrowseCurrentNodeTest.php
 a15f60da55163c3055ee1c45bfd5a806  tests/tests/design/AdminCardsTest.php
 4c1842f31412696db9bc99468ed2320e  tests/tests/design/AdminContentEditFormsTest.php
-feb3a6aedc8374d8c8495c79ba27bd3b  tests/tests/design/AdminContentSecurityPolicyTest.php
+d575f2d58fe8f4a0276e7eeb82f6fe6d  tests/tests/design/AdminContentSecurityPolicyTest.php
 fe3dc1cb5fc7bb3c520b6f1257d0a420  tests/tests/design/AdminContextMenuNestedSubmenuTest.php
 9199e2e95fe9c5fca76132b8b74bc5c4  tests/tests/design/AdminContextMenuTest.php
 4d74467440667bcee486bbf13d6db653  tests/tests/design/AdminCreateLanguagesTitleTest.php
@@ -7604,7 +7604,7 @@ cc4f4cdb46fb053f9f6e5c8e7da1a931  tests/tests/design/AdminTreeViewTest.php
 a160ae3b2d682c5f063abf5546023024  tests/tests/design/FormSubmitButtonDisableTest.php
 97f0260b658044b5a65cd992f81c3ec8  tests/tests/design/js/csp_actions.js
 462bf45e9d6f27434e12cf9fbc3bbfa6  tests/tests/design/js/csp_popupmenu.js
-cf63340bbd50f5611c39bb93a25696e8  tests/tests/design/js/csp_tinymce8.js
+b24983c34e0ac1bf2b048fd6feb0a26a  tests/tests/design/js/csp_tinymce8.js
 e75cdee3134002eb94b3b2b9c3f68d1b  tests/tests/design/js/csp_tree.js
 ea2584f9208c35d5087694b08ebd88aa  tests/tests/design/js/editor_skin.js
 b7cffb5712803f903d80c45a0cd3f90d  tests/tests/design/js/language_states.js

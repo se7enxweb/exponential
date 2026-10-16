@@ -156,6 +156,9 @@ identical to admin4's; the other templates of the classic admin design are uncha
   settings every editor shares as `<script type="application/json" id="ezoe8-settings">` and the toolbar map as
   `id="ezoe8-button-map"`, each textarea carries its attribute id, buttons, path location and rows in `data-ezoe8-*`
   attributes, and `javascript/tinymce8_ez/ezoe8_start.js` (loaded with `defer`) reads them and calls `tinymce.init`.
+  A data block of your own is printed from a `set-block` with `|explode( '<' )|implode( '\u003c' )|explode( '>' )|
+  implode( '\u003e' )`: `json_encode` leaves `<!--` and `<script` in a value as they are, and `<!--<script>` makes the
+  browser read past the block's `</script>`, so the scripts after it do not run.
   TinyMCE 8 itself sets styles on its own elements (its documentation asks for `style-src 'unsafe-inline'`), so
   enforce with `'unsafe-inline'` in `style-src` where it is used.
   TinyMCE 3, the default engine (`ezoe.ini [EditorSettings] EditorEngine=tinymce3`), is not converted: its edit
