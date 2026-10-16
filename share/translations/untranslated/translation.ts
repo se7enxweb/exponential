@@ -64749,6 +64749,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>subtree %node</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>View</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>node %node</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

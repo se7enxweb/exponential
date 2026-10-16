@@ -69032,6 +69032,14 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>subtree %node</source>
         <translation>Teilbaum %node</translation>
     </message>
+    <message>
+        <source>View</source>
+        <translation>Ansicht</translation>
+    </message>
+    <message>
+        <source>node %node</source>
+        <translation>Knoten %node</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/audit</name>

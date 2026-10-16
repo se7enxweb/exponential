@@ -474,9 +474,10 @@ it and its chips, as the cache key carries the role and limitation ids of the us
   that ran it (`Exponential\View\Kernel\...`, see [cli_cronjob_view_abstractions.md](cli_cronjob_view_abstractions.md))
   and the script; the siteaccess, the navigation part and, folded, the design order (the first base that has a
   template wins).
-- **Content view cache**, when a content view ran: the state and its reason, the hash and the cache file, and folded
-  the key part by part as it was hashed. A part a `content/view/cachekeys` listener added or changed is marked
-  *listener*.
+- **Content view cache**, when a content view ran: one row laid out like the cache blocks below, with the node and
+  view mode, the state and its reason, the time to look the file up and to generate the view, the size, the file's
+  age, and folded the key part by part as it was hashed, with the hash and the cache file. A part a
+  `content/view/cachekeys` listener added or changed is marked *listener*.
 
 | State | Chip | Meaning |
 |---|---|---|

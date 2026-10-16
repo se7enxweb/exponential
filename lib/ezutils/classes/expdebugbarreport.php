@@ -1244,31 +1244,37 @@ class expDebugBarReport
             $html .= '<p class="exp-debug-hint">' . self::h( 'No content view ran on this page.' ) . '</p>';
         else
         {
-            $html .= '<table class="exp-debug-facts" data-state="' . self::a( $cache['state'] ) . '">';
-            $html .= '<tr><th>' . self::h( 'State' ) . '</th><td>' . self::renderingValue( self::renderingStateText( $cache ) ) . '</td></tr>';
-            if ( $cache['age'] !== null )
-                $html .= '<tr><th>' . self::h( 'Age' ) . '</th><td>' . self::h( '%seconds s', array( '%seconds' => (int)$cache['age'] ) ) . '</td></tr>';
-            if ( $cache['size'] !== null )
-                $html .= '<tr><th>' . self::h( 'Size' ) . '</th><td>' . number_format( $cache['size'] / 1024, 1 ) . ' KB</td></tr>';
-            if ( $cache['path'] !== null )
-            {
-                $html .= '<tr><th>' . self::h( 'Hash' ) . '</th><td><code>' . self::a( $cache['hash'] ) . '</code></td></tr>';
-                $html .= '<tr><th>' . self::h( 'Cache file' ) . '</th><td>' . self::renderingValue( self::relativePath( $cache['path'] ) ) . '</td></tr>';
-            }
-            $html .= '</table>';
+            // laid out like the cache blocks below: one row, the key folded in the last column
+            $cache += array( 'node_id' => null, 'view_mode' => null, 'lookup_ms' => null, 'generate_ms' => null );
+            $node = isset( $cache['parts']['node_id'] ) ? $cache['parts']['node_id'] : $cache['node_id'];
+            $mode = isset( $cache['parts']['viewmode'] ) ? $cache['parts']['viewmode'] : $cache['view_mode'];
+            $view = $node === null ? '-' : self::renderingValue( self::t( 'node %node', array( '%node' => (int)$node ) ) . ( $mode === null ? '' : ', ' . $mode ) );
+            $keys = '-';
             if ( $cache['parts'] )
             {
-                $html .= '<details class="exp-debug-render-keys"><summary>' . self::h( 'Cache key (%count parts)', array( '%count' => count( $cache['parts'] ) ) ) . '</summary>';
-                $html .= '<table class="exp-debug-facts">';
+                $keys = '<details class="exp-debug-render-keys"><summary>' . self::h( 'Cache key (%count parts)', array( '%count' => count( $cache['parts'] ) ) ) . '</summary>';
+                $keys .= '<table class="exp-debug-facts">';
                 foreach ( $cache['parts'] as $name => $value )
                 {
                     $mark = in_array( $name, $cache['from_listeners'], true )
                         ? ' <span class="exp-debug-badge" title="' . self::h( 'Added or changed by a content/view/cachekeys listener' ) . '">' . self::h( 'listener' ) . '</span>' : '';
                     $shown = $value === null ? '' : ( is_bool( $value ) ? ( $value ? '1' : '' ) : (string)$value );
-                    $html .= '<tr><th>' . self::a( $name ) . $mark . '</th><td>' . ( $shown === '' ? '<em>' . self::h( 'empty' ) . '</em>' : self::renderingValue( $shown ) ) . '</td></tr>';
+                    $keys .= '<tr><th>' . self::a( $name ) . $mark . '</th><td>' . ( $shown === '' ? '<em>' . self::h( 'empty' ) . '</em>' : self::renderingValue( $shown ) ) . '</td></tr>';
                 }
-                $html .= '</table></details>';
+                $keys .= '</table>';
+                if ( $cache['path'] !== null )
+                    $keys .= self::h( 'Hash' ) . ' <code>' . self::a( $cache['hash'] ) . '</code><br><code>' . self::renderingValue( self::relativePath( $cache['path'] ) ) . '</code>';
+                $keys .= '</details>';
             }
+            $ms = function ( $value ) { return $value === null ? '-' : number_format( $value, 1, '.', '' ) . ' ms'; };
+            $html .= '<table class="exp-debug-facts exp-debug-viewcache"><tr><th>' . self::h( 'View' ) . '</th><th>' . self::h( 'State' )
+                   . '</th><th>' . self::h( 'Lookup' ) . '</th><th>' . self::h( 'Generation' ) . '</th><th>' . self::h( 'Size' )
+                   . '</th><th>' . self::h( 'Age' ) . '</th><th>' . self::h( 'Keys' ) . '</th></tr>';
+            $html .= '<tr data-state="' . self::a( $cache['state'] ) . '"><td>' . $view . '</td><td>' . self::renderingValue( self::renderingStateText( $cache ) )
+                   . '</td><td>' . $ms( $cache['lookup_ms'] ) . '</td><td>' . $ms( $cache['generate_ms'] ) . '</td><td>'
+                   . ( $cache['size'] === null ? '-' : number_format( $cache['size'] / 1024, 1 ) . ' KB' ) . '</td><td>'
+                   . ( $cache['age'] === null ? '-' : self::h( '%seconds s', array( '%seconds' => (int)$cache['age'] ) ) ) . '</td><td>' . $keys . '</td></tr>';
+            $html .= '</table>';
         }
 
         $html .= self::cacheBlocksHtml( isset( $r['cache_blocks'] ) ? $r['cache_blocks'] : array(),

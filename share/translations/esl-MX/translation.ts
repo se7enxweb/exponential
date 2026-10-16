@@ -68642,6 +68642,14 @@ Tendrás que cambiar la clase del nudo con la función de intercambio.</translat
         <source>subtree %node</source>
         <translation>subárbol %node</translation>
     </message>
+    <message>
+        <source>View</source>
+        <translation>Vista</translation>
+    </message>
+    <message>
+        <source>node %node</source>
+        <translation>nodo %node</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

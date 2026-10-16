@@ -61479,6 +61479,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>subtree %node</source>
         <translation>subtree %node</translation>
     </message>
+    <message>
+        <source>View</source>
+        <translation>View</translation>
+    </message>
+    <message>
+        <source>node %node</source>
+        <translation>node %node</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/audit</name>

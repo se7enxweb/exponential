@@ -101,12 +101,30 @@ class expRenderStats
      * The content view cache is not used for this view, and why.
      *
      * @param string $reason
+     * @param int|null $nodeID
+     * @param string|null $viewMode
      */
-    public static function noteViewCacheOff( $reason )
+    public static function noteViewCacheOff( $reason, $nodeID = null, $viewMode = null )
     {
         if ( !self::enabled() )
             return;
-        self::$viewCache = array( 'state' => 'off', 'reason' => (string)$reason ) + self::viewCacheDefaults();
+        self::$viewCache = array( 'state' => 'off', 'reason' => (string)$reason,
+                                  'node_id' => $nodeID === null ? null : (int)$nodeID,
+                                  'view_mode' => $viewMode === null ? null : (string)$viewMode ) + self::viewCacheDefaults();
+    }
+
+    /**
+     * Lookup and generation of the content view together (the content/view view); the lookup is what the
+     * generation did not take.
+     *
+     * @param float $ms
+     */
+    public static function noteViewCacheTotal( $ms )
+    {
+        if ( !self::enabled() || !is_array( self::$viewCache ) )
+            return;
+        $generate = self::$viewCache['generate_ms'];
+        self::$viewCache['lookup_ms'] = max( 0.0, (float)$ms - ( $generate === null ? 0.0 : $generate ) );
     }
 
     /**
@@ -157,15 +175,25 @@ class expRenderStats
      * without it.
      *
      * @param string|false $file
+     * @param float|null $ms the time it took
+     * @param int|null $size bytes stored
      */
-    public static function noteViewGenerated( $file )
+    public static function noteViewGenerated( $file, $ms = null, $size = null )
     {
         if ( !self::enabled() )
             return;
+        // a second note without a time (the Valkey path stores after generating) keeps the first one's
+        $times = $ms === null ? array() : array( 'generate_ms' => (float)$ms );
         if ( is_array( self::$viewCache ) && self::$viewCache['state'] === 'off' )
+        {
+            self::viewCacheSet( $times );
             return;
+        }
         $reason = is_array( self::$viewCache ) && self::$viewCache['state'] === 'expired' ? self::$viewCache['reason'] : '';
-        self::viewCacheSet( array( 'state' => $file === false ? 'uncached' : 'generated', 'reason' => $reason ) );
+        $values = array( 'state' => $file === false ? 'uncached' : 'generated', 'reason' => $reason ) + $times;
+        if ( $file !== false && $size !== null )
+            $values['size'] = (int)$size;
+        self::viewCacheSet( $values );
     }
 
     protected static function viewCacheSet( array $values )
@@ -177,7 +205,7 @@ class expRenderStats
     protected static function viewCacheDefaults()
     {
         return array( 'state' => null, 'reason' => '', 'age' => null, 'size' => null, 'parts' => array(), 'from_listeners' => array(),
-                      'hash' => null, 'path' => null );
+                      'hash' => null, 'path' => null, 'node_id' => null, 'view_mode' => null, 'lookup_ms' => null, 'generate_ms' => null );
     }
 
     /**
@@ -330,7 +358,8 @@ class expRenderStats
 
     /**
      * @return array|null state (hit, generated, uncached, expired, off, pending), reason, age (s), size (bytes),
-     *                    parts, from_listeners, hash, path; null when no content view ran
+     *                    parts, from_listeners, hash, path, node_id and view_mode (with "off"), lookup_ms,
+     *                    generate_ms; null when no content view ran
      */
     public static function viewCache()
     {

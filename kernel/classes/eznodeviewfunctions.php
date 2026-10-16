@@ -631,9 +631,11 @@ class eZNodeviewfunctions
      */
     static public function contentViewGenerate( $file, $args )
     {
+        $start = microtime( true );
         $retval = self::contentViewGenerateResult( $file, $args );
         // Stored only with a file and 'store' (not when the cache file said no_cache), for the debug bar's Rendering tab
-        expRenderStats::noteViewGenerated( $file !== false && !empty( $retval['store'] ) ? $file : false );
+        expRenderStats::noteViewGenerated( $file !== false && !empty( $retval['store'] ) ? $file : false, ( microtime( true ) - $start ) * 1000,
+                                           isset( $retval['binarydata'] ) && is_string( $retval['binarydata'] ) ? strlen( $retval['binarydata'] ) : null );
         return $retval;
     }
 

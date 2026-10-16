@@ -109,7 +109,7 @@ class View extends \Exponential\Runnable\ModuleView
             }
         }
         if ( !$viewCacheEnabled )
-            \expRenderStats::noteViewCacheOff( $viewCacheOffReason );
+            \expRenderStats::noteViewCacheOff( $viewCacheOffReason, $NodeID, $ViewMode );
 
         $collectionAttributes = false;
         if ( isset( $Params['CollectionAttributes'] ) )
@@ -217,6 +217,8 @@ class View extends \Exponential\Runnable\ModuleView
                 );
                 \expRenderStats::noteViewCacheKey( $cacheFileArray['cache_keys'], $cacheFileArray['cache_keys_from_listeners'],
                                                    $cacheFileArray['cache_hash'], $cacheFileArray['cache_path'] );
+                // lookup and generation together; the generation's own time is noted by contentViewGenerate()
+                $viewCacheStart = microtime( true );
 
                 if ( class_exists( 'sevenxValkeyCacheBlock' ) )
                 {
@@ -258,6 +260,8 @@ class View extends \Exponential\Runnable\ModuleView
                             $args
                         );
                 }
+
+                \expRenderStats::noteViewCacheTotal( ( microtime( true ) - $viewCacheStart ) * 1000 );
 
                 // check if $result is an array (could also be eZClusterFileFailure) and contains responseHeaders
                 if ( is_array( $result ) && !empty( $result['responseHeaders'] ) )
