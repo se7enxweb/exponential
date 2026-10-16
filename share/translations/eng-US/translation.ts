@@ -14130,6 +14130,10 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Search scope</translation>
     </message>
     <message>
+        <source>Quick search</source>
+        <translation>Quick search</translation>
+    </message>
+    <message>
         <source>Section</source>
         <translation>Section</translation>
     </message>

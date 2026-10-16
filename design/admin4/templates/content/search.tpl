@@ -2,7 +2,19 @@
 {let search=false()}
 {default search_requested=true() search_text_shortened=false()}
 {section show=and( $use_template_search, $search_requested )}
+    {* the view's SearchPageLimit (1 to 5, as in the advanced search), never more than the search gives *}
     {set page_limit=10}
+    {switch match=first_set( $search_page_limit, 2 )}
+    {case match=1}{set page_limit=5}{/case}
+    {case match=3}{set page_limit=20}{/case}
+    {case match=4}{set page_limit=30}{/case}
+    {case match=5}{set page_limit=50}{/case}
+    {case/}
+    {/switch}
+    {set page_limit=min( $page_limit, ezini( 'SearchSettings', 'MaximumSearchLimit' ) )}
+    {* Without words there is nothing to look for: a search engine that allows an empty search (eZ Find's
+       AllowEmptySearch) would list the whole index. *}
+    {if $search_text|trim|ne( '' )}
     {set search=fetch(content,search,
                       hash(text,$search_text,
                            section_id,$search_section_id,
@@ -10,13 +22,16 @@
                            sort_by,array('modified',false()),
                            offset,$view_parameters.offset,
                            limit,$page_limit))}
+    {/if}
+    {if $search}
     {set search_result=$search['SearchResult']}
     {set search_count=$search['SearchCount']}
     {set stop_word_array=$search['StopWordArray']}
     {set search_data=$search}
+    {/if}
 {/section}
 
-<form action={'/content/search/'|ezurl} method="get" role="search">
+<form action={'/content/search/'|ezurl} method="get" role="search" aria-label="{'Search'|i18n( 'design/admin/content/search' )|wash}">
 
 <div class="context-block content-search">
 {* DESIGN: Header START *}<div class="box-header"><div class="box-ml">
@@ -40,13 +55,31 @@
 <p class="a4-notice is-info" role="status">{'The search text was too long and was shortened.'|i18n( 'design/admin/content/search' )}</p>
 {/if}
 
-{if and(count($search_subtree_array)|eq(1),$search_subtree_array.0|ne(1))}
+{* Where to search. A new search from this form keeps the section and the locations of the last one *}
 <div class="block">
+<label for="ezcontent_search_section_id">{'In'|i18n( 'design/admin/content/search' )}:</label>
+<select id="ezcontent_search_section_id" name="SectionID">
+<option value="-1">{'Any section'|i18n( 'design/admin/content/search' )}</option>
+{foreach fetch( 'section', 'list' ) as $search_section}
+<option value="{$search_section.id}"{if eq( $search_section.id, $search_section_id )} selected="selected"{/if}>{$search_section.name|wash}</option>
+{/foreach}
+</select>
+</div>
+
+{if first_set( $search_page_limit, 2 )|ne( 2 )}<input type="hidden" name="SearchPageLimit" value="{$search_page_limit|wash}" />{/if}
+
+{if and(count($search_subtree_array)|eq(1),$search_subtree_array.0|ne(1))}
+<fieldset class="block">
+<legend>{'Where'|i18n( 'design/admin/pagelayout' )}</legend>
 <label><input type="radio" name="SubTreeArray" value="1" />{'All content'|i18n('design/admin/content/search')}</label>
 {def $search_node = fetch('content', 'node', hash( 'node_id', $search_subtree_array.0 ))}
 <label><input type="radio" name="SubTreeArray" value="{$search_subtree_array.0|wash}" checked="checked" />{'The same location'|i18n('design/admin/content/search')} ({$search_node.name|wash})</label>
 {undef $search_node}
-</div>
+</fieldset>
+{elseif count( $search_subtree_array )|gt( 1 )}
+{foreach $search_subtree_array as $search_subtree_id}
+<input type="hidden" name="SubTreeArray[]" value="{$search_subtree_id|wash}" />
+{/foreach}
 {/if}
 
 <div class="block">
@@ -110,7 +143,7 @@
 {include name=Navigator
          uri='design:navigator/google.tpl'
          page_uri='/content/search'
-         page_uri_suffix=concat( '?SearchText=', $search_text|urlencode, $search_timestamp|gt( 0 )|choose( '', concat( '&SearchTimestamp=', $search_timestamp ) ), $search_subtree_array|count|gt( 0 )|choose( '', concat( '&', 'SubTreeArray[]'|urlencode, '=', $search_subtree_array|implode( concat( '&', 'SubTreeArray[]'|urlencode, '=' ) ) ) ), $search_section_id|gt( 0 )|choose( '', concat( '&SectionID=', $search_section_id ) ) )
+         page_uri_suffix=concat( '?SearchText=', $search_text|urlencode, $search_timestamp|gt( 0 )|choose( '', concat( '&SearchTimestamp=', $search_timestamp ) ), $search_subtree_array|count|gt( 0 )|choose( '', concat( '&', 'SubTreeArray[]'|urlencode, '=', $search_subtree_array|implode( concat( '&', 'SubTreeArray[]'|urlencode, '=' ) ) ) ), $search_section_id|gt( 0 )|choose( '', concat( '&SectionID=', $search_section_id ) ), first_set( $search_page_limit, 2 )|eq( 2 )|choose( concat( '&SearchPageLimit=', first_set( $search_page_limit, 2 )|urlencode ), '' ) )
          item_count=$search_count
          view_parameters=$view_parameters
          item_limit=$page_limit}

@@ -25,7 +25,7 @@
     {set search_data=$search}
 {/section}
 
-<form action={'/content/advancedsearch/'|ezurl} method="get" role="search">
+<form action={'/content/advancedsearch/'|ezurl} method="get" role="search" aria-label="{'Advanced search'|i18n( 'design/admin/content/search' )|wash}">
 <div class="context-block content-advancesearch">
 {* DESIGN: Header START *}<div class="box-header"><div class="box-ml">
 
@@ -68,7 +68,8 @@ selected="selected"
 </div>
 
 <div class="element">
-<label for="ezcontent_advancesearch_class_attribute_id">{'Class attribute'|i18n( 'design/admin/content/search' )}:</label>
+{* the attributes are there once a class is chosen; until then the label names no field *}
+<label{if $search_contentclass_id|gt( 0 )} for="ezcontent_advancesearch_class_attribute_id"{/if}>{'Class attribute'|i18n( 'design/admin/content/search' )}:</label>
 
 {section name=Attribute show=$search_contentclass_id|gt( 0 )}
 
@@ -196,7 +197,7 @@ selected="selected"
 {include name=navigator
          uri='design:navigator/google.tpl'
          page_uri='/content/advancedsearch'
-         page_uri_suffix=concat('?SearchText=',$full_search_text|urlencode,'&PhraseSearchText=',$phrase_search_text|urlencode,'&SearchContentClassID=',$search_contentclass_id,'&SearchContentClassAttributeID=',$search_contentclass_attribute_id,'&SearchSectionID=',$search_section_id,$search_timestamp|gt(0)|choose('',concat('&SearchTimestamp=',$search_timestamp)),$search_sub_tree|gt(0)|choose( '', concat( '&', 'SubTreeArray[]'|urlencode, '=', $search_sub_tree|implode( concat( '&', 'SubTreeArray[]'|urlencode, '=' ) ) ) ),'&SearchDate=',$search_date,'&SearchPageLimit=',$search_page_limit)
+         page_uri_suffix=concat('?SearchText=',$full_search_text|urlencode,'&PhraseSearchText=',$phrase_search_text|urlencode,'&SearchContentClassID=',$search_contentclass_id,'&SearchContentClassAttributeID=',$search_contentclass_attribute_id,'&SearchSectionID=',$search_section_id,$search_timestamp|gt(0)|choose('',concat('&SearchTimestamp=',$search_timestamp)),$search_sub_tree|count|gt(0)|choose( '', concat( '&', 'SubTreeArray[]'|urlencode, '=', $search_sub_tree|implode( concat( '&', 'SubTreeArray[]'|urlencode, '=' ) ) ) ),'&SearchDate=',$search_date,'&SearchPageLimit=',$search_page_limit)
          item_count=$search_count
          view_parameters=$view_parameters
          item_limit=$page_limit}
