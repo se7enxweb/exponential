@@ -214,7 +214,7 @@ class AdminIconsTest extends PHPUnit\Framework\TestCase
     public function testAdmin4lHeaderBlocksAreInStepWithTheTopMenu()
     {
         $top = (string)file_get_contents( self::root() . '/design/admin4/templates/page_topmenu.tpl' );
-        foreach ( array( 'admin_logo', 'admin_search', 'admin_theme_switch', 'admin_sidebar_toggles', 'admin_tab_menu' ) as $block )
+        foreach ( array( 'admin_logo', 'admin_search', 'admin_theme_switch', 'admin_menu_button', 'admin_sidebar_controls', 'admin_tab_menu' ) as $block )
         {
             $lines = file( self::root() . "/design/admin4l/templates/explayouts/block/$block.tpl", FILE_IGNORE_NEW_LINES );
             foreach ( $lines as $line )

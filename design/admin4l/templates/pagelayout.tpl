@@ -97,28 +97,34 @@
        site menu lists the siteaccesses of the settings at the addresses of the request (parts/a4_header_site.tpl). *}
                 {cache-block keys=array( $ui_context, $ui_component, $user_hash, $current_user.contentobject_id, $access_type, first_set( $module_result.navigation_part, $navigation_part.identifier ), siteaccess_url(), siteaccess_menu_key(), $admin_layout_id, $env_badge.key ) ignore_content_expiry}
 
-                {* HEADER ( SEARCH, LOGO AND USERMENU ): the navbar. The header zone fills it with the logo,
-                   search, theme switch and sidebar toggles, the topmenu zone with the tab menu. Either zone
-                   empty (or no admin layout): admin4's own navbar. *}
-                {def $header_html  = ''
+                {* HEADER ( SEARCH, LOGO AND USERMENU ): the navbar. The header zone fills it with the logo, the menu
+                   button, search, theme switch and sidebar controls, the topmenu zone with the tab menu. Either zone
+                   empty (or no admin layout): admin4's own navbar. The Tab order is admin4's: logo, menu button, menu,
+                   search, tools, sidebar controls. So the header zone is drawn in two parts, the logo and the menu
+                   button before the menu panel, the rest after it. A layout stored with the old admin_sidebar_toggles
+                   block (button and controls in one) draws it in the second part, after the tools. *}
+                {def $header_start = ''
+                     $header_html  = ''
                      $topmenu_html = ''}
                 {if $admin_layout}
-                    {set-block variable=$header_html}{include uri='design:explayouts/admin_zone.tpl' layout=$admin_layout zone_identifier='header'}{/set-block}
+                    {set-block variable=$header_start}{include uri='design:explayouts/admin_zone.tpl' layout=$admin_layout zone_identifier='header' only=array( 'admin_logo', 'admin_menu_button' )}{/set-block}
+                    {set-block variable=$header_html}{include uri='design:explayouts/admin_zone.tpl' layout=$admin_layout zone_identifier='header' skip=array( 'admin_logo', 'admin_menu_button' )}{/set-block}
                     {set-block variable=$topmenu_html}{include uri='design:explayouts/admin_zone.tpl' layout=$admin_layout zone_identifier='topmenu'}{/set-block}
                 {/if}
-                {if and( $header_html|trim|ne( '' ), $topmenu_html|trim|ne( '' ) )}
+                {if and( concat( $header_start, $header_html )|trim|ne( '' ), $topmenu_html|trim|ne( '' ) )}
                 <div id="navbar" class="navbar-main">
-                    {$header_html}
+                    {$header_start}
                     <div id="a4-navbar-menu" class="navbar-menu {if $ui_context_edit}disabled{/if}" role="navigation" aria-label="{'Main menu'|i18n( 'design/admin/pagelayout' )|wash}">
                         <ul class="navbar-bar">
                             {$topmenu_html}
                         </ul>
                     </div>
+                    {$header_html}
                 </div>
                 {else}
                     {include uri='design:page_header.tpl'}
                 {/if}
-                {undef $header_html $topmenu_html}
+                {undef $header_start $header_html $topmenu_html}
             </div>
         </div>
         {/cache-block}{* /Pr tab cache *}
