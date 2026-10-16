@@ -82,217 +82,116 @@
 {if $skin|eq( 'o2k7' )}
 <link rel="stylesheet" type="text/css" href="{'javascript/tinymce8_ez/skins/o2k7/skin.css'|ezdesign( 'no' )}" />
 {/if}
-<script type="text/javascript">
-var eZOe8GlobalSettings = {ldelim}
-    license_key: 'gpl',
+{* The settings every editor on the page shares, as data: ezoe8_start.js reads them and starts the editors, so the
+   page carries no inline script (Content Security Policy without 'unsafe-inline'). JSON only: every value from the
+   installation goes through json_encode, which also writes "</" as "<\/". *}
+<script type="application/json" id="ezoe8-settings">
+{ldelim}
+    "license_key": "gpl",
     {if $tiny_language}
-    language: '{$tiny_language}',
-    language_url: {concat( 'javascript/tinymce8/langs/', $tiny_language, '.js' )|ezdesign},
+    "language": {json_encode( $tiny_language )},
+    "language_url": {json_encode( concat( 'javascript/tinymce8/langs/', $tiny_language, '.js' )|ezdesign( 'no' ) )},
     {/if}
-    directionality: '{$directionality}',
-    external_plugins: {json_encode( $plugin_urls )},
-    // no advlist (split list buttons) and no pagebreak (ezoe pagebreak is a custom tag, not an html comment)
-    plugins: 'lists autolink link anchor table charmap fullscreen code help',
-    menubar: false,
-    promotion: false,
-    branding: false,
-    statusbar: true,
-    elementpath: true,
-    resize: true,
-    min_height: 300,
-    content_css: {json_encode( ezcssfiles( $content_css_list, 3, true() ) )},
-    content_style: '.ezoeItemNonEditable {ldelim} outline: 1px dashed #8aa4c4; background: #f3f7fb; cursor: default; {rdelim} div.ezoeItemNonEditable {ldelim} margin: .5em 0; padding: .25em; {rdelim} td, th {ldelim} min-width: 3em; padding: 2px 4px; {rdelim}',
-    block_formats: 'Paragraph=p; Heading 1=h1; Heading 2=h2; Heading 3=h3; Heading 4=h4; Heading 5=h5; Heading 6=h6; Preformatted=pre',
-    // Same element list as the TinyMCE 3 editor, it reflects what the ezxml parser accepts
-    valid_elements: "-strong/b[class|customattributes],-em/i[class|customattributes],span[id|type|class|title|customattributes|align|style|view|inline|alt],sub[class|type|customattributes|align],sup[class|type|customattributes|align],u[class|type|customattributes|align],pre[class|title|customattributes],ol[class|customattributes],ul[class|customattributes],li[class|customattributes],a[href|name|target|view|title|class|id|customattributes],p[class|customattributes|align|style],img[id|type|class|title|customattributes|align|style|view|inline|alt|src|width|height],table[class|border|width|id|title|customattributes|ezborder|bordercolor|align|style],tr[class|customattributes],th[class|width|rowspan|colspan|customattributes|align|style],td[class|width|rowspan|colspan|customattributes|align|style],div[id|type|class|title|customattributes|align|style|view|inline|alt],h1[class|customattributes|align|style],h2[class|customattributes|align|style],h3[class|customattributes|align|style],h4[class|customattributes|align|style],h5[class|customattributes|align|style],h6[class|customattributes|align|style],br",
-    // ezxml has no address/blockquote, keep underline as <u> like the old editor
-    formats: {ldelim} underline: {ldelim} inline: 'u', exact: true {rdelim} {rdelim},
-    entity_encoding: 'named',
-    entities: '160,nbsp',
-    convert_urls: false,
-    inline_styles: false,
-    object_resizing: false,
-    table_use_colgroups: false,
-    table_default_styles: {ldelim}{rdelim},
-    table_default_attributes: {json_encode( $table_defaults )},
-    table_resize_bars: false,
-    visual_table_class: 'mceItemTable',
-    noneditable_class: 'ezoeItemNonEditable',
-    browser_spellcheck: true,
-    contextmenu: 'ezlink ezembed ezcustomtag ezliteral eztable ezgeneral',
-    // toolbar above a table with the ez dialogs, like the table buttons of the TinyMCE 3 editor
-    table_toolbar: 'eztable eztablecell eztablerow | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol | tabledelete',
-    ez_skin_class: 'ezoe-skin-{$skin|wash}',
-    ez_disable_editor_text: {json_encode( 'Disable editor'|i18n('design/standard/content/datatype') )},
-    ez_xml_tag_alias: {$input_handler.json_xml_tag_alias},
-    ez_path_open_dialog: {cond( ezini( 'EditorSettings', 'TagPathOpenDialog', 'ezoe.ini',,true() )|eq( 'enabled' ), 'true', 'false' )},
-    ez_literal: {json_encode( $input_handler.literal_definition )},
-    ez_table_definitions: {json_encode( $input_handler.table_definitions )},
-    ez_table_dialog: {json_encode( cond( ezini( 'Engine_tinymce8', 'TableDialog', 'ezoe.ini',,true() )|eq( 'modern' ), 'modern', 'classic' ) )},
-    ez_table_classic_texts: {ldelim}
-        properties: {json_encode( 'Properties'|i18n('design/standard/ezoe') )},
-        size: {json_encode( 'Size'|i18n('design/standard/ezoe') )},
-        size_title: {json_encode( 'Click to select table size'|i18n('design/standard/ezoe') )},
-        columns: {json_encode( 'Columns'|i18n('design/standard/ezoe') )},
-        rows: {json_encode( 'Rows'|i18n('design/standard/ezoe') )},
-        width: {json_encode( 'Width'|i18n('design/standard/ezoe') )},
-        border: {json_encode( 'Border'|i18n('design/standard/ezoe') )},
-        'class': {json_encode( 'Class'|i18n('design/standard/ezoe') )},
-        width_title: {json_encode( 'To set the width of the tag, either as percentage by appending % or as pixel size by just using a number.'|i18n('design/standard/ezoe') )},
-        class_title: {json_encode( 'Class are often used to give different design or appearance, either by using a different template, style or both.'|i18n('design/standard/ezoe') )},
-        ok: {json_encode( 'OK'|i18n('design/standard/ezoe') )},
-        cancel: {json_encode( 'Cancel'|i18n('design/standard/ezoe') )}
+    "directionality": {json_encode( $directionality )},
+    "external_plugins": {json_encode( $plugin_urls )},
+    "plugins": "lists autolink link anchor table charmap fullscreen code help",
+    "menubar": false,
+    "promotion": false,
+    "branding": false,
+    "statusbar": true,
+    "elementpath": true,
+    "resize": true,
+    "min_height": 300,
+    "content_css": {json_encode( ezcssfiles( $content_css_list, 3, true() ) )},
+    "content_style": ".ezoeItemNonEditable {ldelim} outline: 1px dashed #8aa4c4; background: #f3f7fb; cursor: default; {rdelim} div.ezoeItemNonEditable {ldelim} margin: .5em 0; padding: .25em; {rdelim} td, th {ldelim} min-width: 3em; padding: 2px 4px; {rdelim}",
+    "block_formats": "Paragraph=p; Heading 1=h1; Heading 2=h2; Heading 3=h3; Heading 4=h4; Heading 5=h5; Heading 6=h6; Preformatted=pre",
+    "valid_elements": "-strong/b[class|customattributes],-em/i[class|customattributes],span[id|type|class|title|customattributes|align|style|view|inline|alt],sub[class|type|customattributes|align],sup[class|type|customattributes|align],u[class|type|customattributes|align],pre[class|title|customattributes],ol[class|customattributes],ul[class|customattributes],li[class|customattributes],a[href|name|target|view|title|class|id|customattributes],p[class|customattributes|align|style],img[id|type|class|title|customattributes|align|style|view|inline|alt|src|width|height],table[class|border|width|id|title|customattributes|ezborder|bordercolor|align|style],tr[class|customattributes],th[class|width|rowspan|colspan|customattributes|align|style],td[class|width|rowspan|colspan|customattributes|align|style],div[id|type|class|title|customattributes|align|style|view|inline|alt],h1[class|customattributes|align|style],h2[class|customattributes|align|style],h3[class|customattributes|align|style],h4[class|customattributes|align|style],h5[class|customattributes|align|style],h6[class|customattributes|align|style],br",
+    "formats": {ldelim} "underline": {ldelim} "inline": "u", "exact": true {rdelim} {rdelim},
+    "entity_encoding": "named",
+    "entities": "160,nbsp",
+    "convert_urls": false,
+    "inline_styles": false,
+    "object_resizing": false,
+    "table_use_colgroups": false,
+    "table_default_styles": {ldelim}{rdelim},
+    "table_default_attributes": {json_encode( $table_defaults )},
+    "table_resize_bars": false,
+    "visual_table_class": "mceItemTable",
+    "noneditable_class": "ezoeItemNonEditable",
+    "browser_spellcheck": true,
+    "contextmenu": "ezlink ezembed ezcustomtag ezliteral eztable ezgeneral",
+    "table_toolbar": "eztable eztablecell eztablerow | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol | tabledelete",
+    "ez_skin_class": {json_encode( concat( 'ezoe-skin-', $skin ) )},
+    "ez_disable_editor_text": {json_encode( 'Disable editor'|i18n('design/standard/content/datatype') )},
+    "ez_xml_tag_alias": {$input_handler.json_xml_tag_alias},
+    "ez_path_open_dialog": {cond( ezini( 'EditorSettings', 'TagPathOpenDialog', 'ezoe.ini',,true() )|eq( 'enabled' ), 'true', 'false' )},
+    "ez_literal": {json_encode( $input_handler.literal_definition )},
+    "ez_table_definitions": {json_encode( $input_handler.table_definitions )},
+    "ez_table_dialog": {json_encode( cond( ezini( 'Engine_tinymce8', 'TableDialog', 'ezoe.ini',,true() )|eq( 'modern' ), 'modern', 'classic' ) )},
+    "ez_table_classic_texts": {ldelim}
+        "properties": {json_encode( 'Properties'|i18n('design/standard/ezoe') )},
+        "size": {json_encode( 'Size'|i18n('design/standard/ezoe') )},
+        "size_title": {json_encode( 'Click to select table size'|i18n('design/standard/ezoe') )},
+        "columns": {json_encode( 'Columns'|i18n('design/standard/ezoe') )},
+        "rows": {json_encode( 'Rows'|i18n('design/standard/ezoe') )},
+        "width": {json_encode( 'Width'|i18n('design/standard/ezoe') )},
+        "border": {json_encode( 'Border'|i18n('design/standard/ezoe') )},
+        "class": {json_encode( 'Class'|i18n('design/standard/ezoe') )},
+        "width_title": {json_encode( 'To set the width of the tag, either as percentage by appending % or as pixel size by just using a number.'|i18n('design/standard/ezoe') )},
+        "class_title": {json_encode( 'Class are often used to give different design or appearance, either by using a different template, style or both.'|i18n('design/standard/ezoe') )},
+        "ok": {json_encode( 'OK'|i18n('design/standard/ezoe') )},
+        "cancel": {json_encode( 'Cancel'|i18n('design/standard/ezoe') )}
     {rdelim},
-    ez_general_definitions: {json_encode( $input_handler.general_definitions )},
-    ez_custom_tags: {json_encode( $input_handler.custom_tag_definitions )},
-    ez_custom_tag_controls: {ldelim}
-        enabled: {cond( $input_handler.custom_tag_controls_enabled, 'true', 'false' )},
-        texts: {ldelim}
-            up: {json_encode( 'Move the custom tag up'|i18n('design/standard/ezoe') )},
-            down: {json_encode( 'Move the custom tag down'|i18n('design/standard/ezoe') )},
-            edit: {json_encode( 'Edit the custom tag'|i18n('design/standard/ezoe') )},
-            remove: {json_encode( 'Remove the custom tag'|i18n('design/standard/ezoe') )},
-            example: {json_encode( 'Example'|i18n('design/standard/ezoe') )}
+    "ez_general_definitions": {json_encode( $input_handler.general_definitions )},
+    "ez_custom_tags": {json_encode( $input_handler.custom_tag_definitions )},
+    "ez_custom_tag_controls": {ldelim}
+        "enabled": {cond( $input_handler.custom_tag_controls_enabled, 'true', 'false' )},
+        "texts": {ldelim}
+            "up": {json_encode( 'Move the custom tag up'|i18n('design/standard/ezoe') )},
+            "down": {json_encode( 'Move the custom tag down'|i18n('design/standard/ezoe') )},
+            "edit": {json_encode( 'Edit the custom tag'|i18n('design/standard/ezoe') )},
+            "remove": {json_encode( 'Remove the custom tag'|i18n('design/standard/ezoe') )},
+            "example": {json_encode( 'Example'|i18n('design/standard/ezoe') )}
         {rdelim}
     {rdelim},
-    ez_link_classes: {json_encode( $link_classes )},
-    ez_link_view_modes: {json_encode( ezini( 'link', 'AvailableViewModes', 'content.ini' ) )},
-    ez_custom_attribute_style_map: {json_encode( ezini( 'EditorSettings', 'CustomAttributeStyleMap', 'ezoe.ini',,true() ) )},
-    ez_settings: {ldelim}
-        root_url: {'/'|ezroot},
-        root_node: {ezini( 'NodeSettings', 'RootNode', 'content.ini' )|int},
-        contentobject_id: {$attribute.contentobject_id},
-        contentobject_version: {$attribute.version},
-        embed_definitions: {json_encode( $input_handler.embed_definitions )},
-        content_edit_url: {'/content/edit'|ezurl},
-        browse_image_alias: {json_encode( ezini( 'EditorSettings', 'BrowseImageAlias', 'ezoe.ini',,true() ) )},
-        search_classes: {json_encode( $search_classes )},
-        browse_roots: {json_encode( $browse_roots )},
-        upload_file_extensions: {json_encode( $input_handler.engine.config.upload_extensions )},
-        upload_from_url: {json_encode( $input_handler.engine.config.upload_from_url )},
-        extension_url: {'/ezoe/'|ezurl},
-        ezjscore_url: {'/ezjscore/'|ezurl},
-        form_token: "@$ezxFormToken@",
-        default_size: {json_encode( ezini( 'ImageSettings', 'DefaultEmbedAlias', 'content.ini' ) )},
-        image_sizes: {json_encode( $image_sizes )},
-        view_modes: {json_encode( $view_modes )},
-        relation_groups: {json_encode( $relation_groups )},
-        relation_default_group: {json_encode( ezini( 'RelationGroupSettings', 'DefaultGroup', 'content.ini' ) )},
-        compatibility_mode: {cond( ezini('EditorSettings', 'CompatibilityMode', 'ezoe.ini',,true())|eq('enabled'), 'true', 'false' )},
-        attachment_icon: {'tango/mail-attachment32.png'|ezimage}
+    "ez_link_classes": {json_encode( $link_classes )},
+    "ez_link_view_modes": {json_encode( ezini( 'link', 'AvailableViewModes', 'content.ini' ) )},
+    "ez_custom_attribute_style_map": {json_encode( ezini( 'EditorSettings', 'CustomAttributeStyleMap', 'ezoe.ini',,true() ) )},
+    "ez_settings": {ldelim}
+        "root_url": {json_encode( '/'|ezroot( 'no' ) )},
+        "root_node": {ezini( 'NodeSettings', 'RootNode', 'content.ini' )|int},
+        "contentobject_id": {$attribute.contentobject_id|int},
+        "contentobject_version": {$attribute.version|int},
+        "embed_definitions": {json_encode( $input_handler.embed_definitions )},
+        "content_edit_url": {json_encode( '/content/edit'|ezurl( 'no' ) )},
+        "browse_image_alias": {json_encode( ezini( 'EditorSettings', 'BrowseImageAlias', 'ezoe.ini',,true() ) )},
+        "search_classes": {json_encode( $search_classes )},
+        "browse_roots": {json_encode( $browse_roots )},
+        "upload_file_extensions": {json_encode( $input_handler.engine.config.upload_extensions )},
+        "upload_from_url": {json_encode( $input_handler.engine.config.upload_from_url )},
+        "extension_url": {json_encode( '/ezoe/'|ezurl( 'no' ) )},
+        "ezjscore_url": {json_encode( '/ezjscore/'|ezurl( 'no' ) )},
+        "form_token": "@$ezxFormToken@",
+        "default_size": {json_encode( ezini( 'ImageSettings', 'DefaultEmbedAlias', 'content.ini' ) )},
+        "image_sizes": {json_encode( $image_sizes )},
+        "view_modes": {json_encode( $view_modes )},
+        "relation_groups": {json_encode( $relation_groups )},
+        "relation_default_group": {json_encode( ezini( 'RelationGroupSettings', 'DefaultGroup', 'content.ini' ) )},
+        "compatibility_mode": {cond( ezini('EditorSettings', 'CompatibilityMode', 'ezoe.ini',,true())|eq('enabled'), 'true', 'false' )},
+        "attachment_icon": {json_encode( 'tango/mail-attachment32.png'|ezimage( 'no' ) )}
     {rdelim}
-{rdelim};
-
-{literal}
-// Maps the button names of ezoe.ini [EditorLayout] Buttons[] (TinyMCE 3 ez theme) to TinyMCE 8 toolbar items.
-// Buttons without a counterpart in the prototype are dropped.
-{/literal}
-var eZOe8ButtonMap = {json_encode( $input_handler.engine.toolbar_map|merge( hash( '|', '|' ) ) )};
-{literal}
-function eZOe8Toolbar( buttons )
-{
-    var items = [];
-    buttons.forEach( function( b ) {
-        var item = eZOe8ButtonMap[ b ];
-        // skip unknown buttons, duplicates (image/object both map to ezembed) and double separators
-        if ( !item || ( item !== '|' && items.indexOf( item ) !== -1 ) || ( item === '|' && ( !items.length || items[ items.length - 1 ] === '|' ) ) )
-            return;
-        items.push( item );
-    });
-    if ( items[ items.length - 1 ] === '|' )
-        items.pop();
-    return items.join( ' ' ) + ' | code';
-}
-
-// Where the visible page starts under the admin's fixed header and sticky button bar, 0 without them
-function eZOe8StickyOffset()
-{
-    var edge = window.getComputedStyle ? parseFloat( window.getComputedStyle( document.documentElement ).getPropertyValue( '--a4-sticky-edge' ) ) : NaN;
-    return isNaN( edge ) ? 0 : edge;
-}
-
-function eZOe8Init( id, attributeId, buttons, pathLocation, rows )
-{
-    var settings = Object.assign( {}, eZOe8GlobalSettings, {
-        selector: '#' + id,
-        toolbar: eZOe8Toolbar( buttons ),
-        toolbar_mode: 'wrap',
-        // the toolbar stays in view while the editor scrolls, below a fixed header and sticky button bar when the
-        // admin design names their bottom (--a4-sticky-edge on <html>); the offset is set again when the editor is
-        // ready and whenever the edge moves (the bar wraps, the header grows), see setup
-        toolbar_sticky: true,
-        toolbar_sticky_offset: eZOe8StickyOffset(),
-        statusbar: pathLocation !== 'none',
-        height: Math.max( 300, rows * 24 ),
-        setup: function( editor ) {
-            editor.options.register( 'ez_skin_class', { processor: 'string', default: '' } );
-            editor.options.register( 'ez_disable_editor_text', { processor: 'string', default: 'Disable editor' } );
-
-            // This script runs while the page is parsed, before the admin design has measured its header and
-            // button bar: the sticky toolbar's offset is read when the editor is ready and again on every change
-            // of the edge (admin4.js sends a4:sticky-edge). TinyMCE reads the option on each scroll.
-            var stickyOffset = function() {
-                editor.options.set( 'toolbar_sticky_offset', eZOe8StickyOffset() );
-                if ( editor.initialized )
-                    editor.dispatch( 'ResizeWindow' );
-            };
-            editor.on( 'init', stickyOffset );
-            document.addEventListener( 'a4:sticky-edge', stickyOffset );
-            editor.on( 'remove', function() {
-                document.removeEventListener( 'a4:sticky-edge', stickyOffset );
-            });
-
-            // skin class for skins/<skin>/skin.css on the editor container
-            editor.on( 'PostRender', function() {
-                if ( editor.options.get( 'ez_skin_class' ) )
-                {
-                    editor.getContainer().classList.add( editor.options.get( 'ez_skin_class' ) );
-                    // dialogs and menus are rendered outside the editor container
-                    document.body.classList.add( editor.options.get( 'ez_skin_class' ) );
-                }
-            });
-
-            // toolbar counterpart of the "Disable editor" form button (ezoe.ini [EditorLayout] button "disable")
-            editor.ui.registry.addButton( 'ezdisable', {
-                icon: 'close',
-                tooltip: editor.options.get( 'ez_disable_editor_text' ),
-                onAction: function() {
-                    var button = document.querySelector( 'input[name="CustomActionButton[' + attributeId + '_disable_editor]"]' );
-                    if ( button )
-                    {
-                        editor.save();
-                        button.click();
-                    }
-                },
-                onSetup: function( api ) {
-                    api.setEnabled( !!document.querySelector( 'input[name="CustomActionButton[' + attributeId + '_disable_editor]"]' ) );
-                }
-            });
-        }
-    });
-    // a text in a right-to-left content language: the textarea says dir="rtl" and its language tag (lang)
-    var source = document.getElementById( id );
-    if ( source && source.getAttribute( 'dir' ) === 'rtl' )
-        settings.directionality = 'rtl';
-    if ( source && source.getAttribute( 'lang' ) )
-    {
-        var setupBefore = settings.setup;
-        settings.setup = function( editor ) {
-            setupBefore( editor );
-            editor.on( 'init', function() {
-                editor.getBody().setAttribute( 'lang', source.getAttribute( 'lang' ) );
-            });
-        };
-    }
-    tinymce.init( settings );
-}
-{/literal}
+{rdelim}
 </script>
+{* ezoe.ini [EditorLayout] Buttons[] (TinyMCE 3 ez theme) to TinyMCE 8 toolbar items, read by eZOe8Toolbar() *}
+<script type="application/json" id="ezoe8-button-map">{json_encode( $input_handler.engine.toolbar_map|merge( hash( '|', '|' ) ) )}</script>
+{* deferred: runs once the page is parsed, when every editor's textarea is there *}
+<script src="{'javascript/tinymce8_ez/ezoe8_start.js'|ezdesign( 'no' )}" charset="utf-8" defer></script>
 {/run-once}
 
-{* lang and dir="rtl" of a text in a right-to-left content language, nothing for a left-to-right one; eZOe8Init reads them *}
+{* lang and dir="rtl" of a text in a right-to-left content language, nothing for a left-to-right one; eZOe8Init reads them.
+   ezoe8_start.js starts the editor from the data-ezoe8-* attributes. *}
 <div class="oe-window">
-    <textarea class="box" id="{$attribute_base}_data_text_{$attribute.id}" name="{$attribute_base}_data_text_{$attribute.id}" cols="88" rows="{$editorRow}"{include uri='design:parts/exp_content_direction.tpl' exp_locale_code=$attribute.language_code}>{$input_handler.input_xml}</textarea>
+    <textarea class="box" id="{$attribute_base}_data_text_{$attribute.id}" name="{$attribute_base}_data_text_{$attribute.id}" cols="88" rows="{$editorRow}" data-ezoe8-attribute="{$attribute.id}" data-ezoe8-buttons="{json_encode( $layout_settings['buttons'] )|wash}" data-ezoe8-path-location="{$layout_settings['path_location']|wash}" data-ezoe8-rows="{$editorRow}"{include uri='design:parts/exp_content_direction.tpl' exp_locale_code=$attribute.language_code}>{$input_handler.input_xml}</textarea>
 </div>
 
 <div class="block">
@@ -300,8 +199,5 @@ function eZOe8Init( id, attributeId, buttons, pathLocation, rows )
         <input class="button{if $layout_settings['buttons']|contains('disable')} hide{/if}" type="submit" name="CustomActionButton[{$attribute.id}_disable_editor]" value="{'Disable editor'|i18n('design/standard/content/datatype')}" />
     {/if}
     {include uri='design:content/datatype/edit/ezxmltext_ezoe_engine_switch.tpl' attribute=$attribute input_handler=$input_handler}
-    <script type="text/javascript">
-    eZOe8Init( '{$attribute_base}_data_text_{$attribute.id}', {$attribute.id}, {json_encode( $layout_settings['buttons'] )}, '{$layout_settings['path_location']}', {$editorRow} );
-    </script>
 </div>
 {/default}

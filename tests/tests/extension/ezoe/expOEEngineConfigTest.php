@@ -142,7 +142,7 @@ class expOEEngineConfigTest extends expOETestCase
     public function testTheTemplateNeverCallsTheCloud()
     {
         $tpl = file_get_contents( $this->root() . '/design/standard/templates/content/datatype/edit/ezxmltext_ezoe_tinymce8.tpl' );
-        $this->assertStringContainsString( "license_key: 'gpl'", $tpl );
+        $this->assertStringContainsString( '"license_key": "gpl"', $tpl );
         $this->assertDoesNotMatchRegularExpression( '#cdn\.tiny\.cloud|api-key|apiKey|cloud\.tinymce#i', $tpl );
     }
 
