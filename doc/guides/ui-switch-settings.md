@@ -36,12 +36,25 @@ siteaccess), in `settings/siteaccess/<siteaccess>/uiswitch.ini.append.php` (one 
 |---|---|---|
 | `Class` | `expUISwitchLanguageProvider` | The provider class. |
 | `Enabled` | `true` | `false` switches this provider off and leaves the others working. |
-| `AllowedValues[]` | `eng-GB`, `eng-US`, `ger-DE` | The locales a user may choose. A locale is offered only when `share/locale/<locale>.ini` exists and, except for English (`eng-*`), `share/translations/<locale>/translation.ts` exists. The siteaccess's own `Locale` is always offered, first, and choosing it clears the choice. |
+| `GroupList[]` | `english`, `major`, `regional` | The groups of the list, in order. A group identifier is `[a-z][a-z0-9_]*`; a group with nothing to offer is left out. Empty, with `AllLanguages=disabled`: no groups, the choice is the list of buttons of #506. |
+| `GroupLabel[<group>]` | *English*, *Major world languages*, *Regional variants* | The heading of a group, translated in the context `kernel/uiswitch/language`. Missing: the identifier. |
+| `GroupValues_<group>[]` | 5, 18 and 10 locales | The locales of a group, in the order shown. Why the shipped ones are what they are: [the feature page](../features/6.0/ui-switch-languages.md#why-the-default-ranking-is-what-it-is). |
+| `AllLanguages` | `enabled` | `enabled`: every locale of `share/locale` (without format variants such as `eng-GB@euro`) is offered and listed A–Z after the groups as *All languages (A–Z)*. `disabled`: only the groups and `AllowedValues[]`; the offered locales that no group names are listed A–Z as *More languages (A–Z)*. Missing: `disabled`. |
+| `ListUntranslated` | `enabled` | `enabled`: locales without a translation of the interface (`share/translations/<locale>/translation.ts`) are offered too, marked *no translation yet*: English texts, their own date and number formats. `disabled`: English (`eng-*`) and the translated languages only. Missing: `disabled`. |
+| `AllowedValues[]` | empty | More locales to offer outside the groups: a format variant (`eng-GB@euro`), or the whole list when there are no groups and `AllLanguages=disabled`. |
 | `RememberPreference` | `disabled` | `enabled`: the choice is also kept in the user's preferences (`exp_uiswitch_language`) and comes back at the next sign-in. `disabled`: it ends with the session, at logout. |
 | `Title` | (none) | Not used by the language provider, whose title is always *Interface language*; other providers show it as the name of their choice. |
 
-A value in `AllowedValues[]` that is not a locale code (`eng-GB`, `nor-NO@intl`), has no locale file or no
-translation is left out silently. A provider with fewer than two values to offer does not appear in the toolbar.
+A locale is offered only when its code is a locale code (`eng-GB`, `nor-NO@intl`) and `share/locale/<locale>.ini`
+exists (with `ListUntranslated=disabled` also a translation, except for English); anything else in the settings is
+left out silently. The siteaccess's own `Locale` is always offered, and choosing it clears the choice. These are also
+the only values `uiswitch/set` accepts. A provider with fewer than two values to offer does not appear in the
+toolbar.
+
+With groups or `AllLanguages=enabled` the choice is a list box with a heading per group and an *Apply* button; each
+entry shows the language's own name, its name in the current interface language and how complete its translation is
+("Deutsch (Deutschland) — German (Germany) (99%)", "Kiswahili (Kenya) — Swahili (Kenya) (no translation yet)"). How
+the names, the A–Z order and the percentages are made: [the feature page](../features/6.0/ui-switch-languages.md).
 
 ## 3. Examples
 
@@ -59,21 +72,57 @@ SiteAccessList[]=editor
 
 The empty `SiteAccessList[]` line first empties the list before the entries are added.
 
-### Change the languages offered
+### Change the groups
 
-The list in an override replaces the default list when it starts with an empty `AllowedValues[]`:
+A list in an override replaces the default list when it starts with an empty line (`GroupValues_major[]`). A
+company working in Europe could put its own languages first:
 
 ```ini
 <?php /* #?ini charset="utf-8"?
 
 [UISwitch_language]
+GroupList[]
+GroupList[]=ours
+GroupList[]=english
+GroupLabel[ours]=Our languages
+GroupValues_ours[]
+GroupValues_ours[]=ger-DE
+GroupValues_ours[]=fre-FR
+GroupValues_ours[]=ita-IT
+*/ ?>
+```
+
+A new heading needs its translation in the context `kernel/uiswitch/language` (an extension's `translations/`), or
+it is shown as written. Without the empty lines, the entries are added to the default ones.
+
+### Offer only a few languages
+
+No groups and no A–Z list of every locale: the choice is the list of buttons, with the siteaccess's own language and
+the ones named:
+
+```ini
+<?php /* #?ini charset="utf-8"?
+
+[UISwitch_language]
+GroupList[]
+AllLanguages=disabled
 AllowedValues[]
 AllowedValues[]=eng-GB
 AllowedValues[]=ger-DE
 */ ?>
 ```
 
-Without the empty line, the entries are added to the default ones.
+### Only translated languages
+
+```ini
+<?php /* #?ini charset="utf-8"?
+
+[UISwitch_language]
+ListUntranslated=disabled
+*/ ?>
+```
+
+The groups then show only English and the languages with `share/translations/<locale>/translation.ts`.
 
 ### Add a language
 
@@ -82,18 +131,20 @@ French needs two files, both shipped:
 - `share/locale/fre-FR.ini` (the locale: date and number formats, the name *Français (France)*);
 - `share/translations/fre-FR/translation.ts` (the translation of the interface).
 
-Then add the locale:
+With the shipped settings French is already offered (*Major world languages*, and A–Z). A locale that
+`share/locale` has but no group names is offered through `AllLanguages=enabled`; to rank it, add it to a group:
 
 ```ini
 <?php /* #?ini charset="utf-8"?
 
 [UISwitch_language]
-AllowedValues[]=fre-FR
+GroupValues_major[]=swe-SE
 */ ?>
 ```
 
-A language without a translation catalogue is not offered; an interface in that language would be English with
-another date format. The catalogues present are the directories of `share/translations/`.
+A new translation (`share/translations/<locale>/translation.ts`) shows its percentage at the next page view: the
+catalogue of names and percentages is cached under the cache directory (`uiswitch/`) and built again by itself when a
+locale or translation file changes.
 
 ### Keep the choice after logout
 
@@ -228,5 +279,7 @@ and is dropped from the session. A provider an extension adds gets its own funct
 ## Related pages
 
 - [The interface language](../features/6.0/ui-switch.md): what users see.
+- [The interface language list](../features/6.0/ui-switch-languages.md): the groups, the A–Z order, translation
+  coverage and why the default ranking is what it is.
 - [The UI switch provider API](../bc/6.0/ui-switch.md): adding a choice from an extension.
 - [Roles and policies](roles-and-policies.md), [Caches](caches.md), [Content languages](content-languages.md).

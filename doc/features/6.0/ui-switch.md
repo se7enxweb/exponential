@@ -25,10 +25,16 @@ the editor and AdminUI use as well.
 
 ## Using it
 
-1. Open the button under *Interface language*. It shows the language in effect, for example *English (United Kingdom)*.
-2. Choose a language from the list. Each language is written in its own name and language (*Deutsch (Deutschland)*),
-   and the current one is marked.
-3. The page you were on loads again, in the chosen language.
+1. Open the list box under *Interface language*. It shows the language in effect, for example *English (United
+   Kingdom)*. The list starts with the most needed languages in groups (*English*, *Major world languages*,
+   *Regional variants*), then every language A–Z; typing the first letters of a name jumps to it.
+2. Choose a language. Each entry gives the language's own name, its name in the current interface language and how
+   complete the translation is (*Deutsch (Deutschland) — German (Germany) (99%)*); a language without a translation
+   says *no translation yet* and shows English texts with its own date and number formats.
+3. Press *Apply*. The page you were on loads again, in the chosen language.
+
+The list, its order and the percentages: [the interface language list](ui-switch-languages.md). An installation whose
+settings have no groups and no A–Z list shows the languages as a list of buttons instead.
 
 Choosing the siteaccess's own language again clears the choice.
 
