@@ -5298,9 +5298,9 @@ e937add4f94216cae7c40f98668ab415  kernel/classes/subitems/columns/expsubitemsrel
 ad3ea82e867f46e355b785b863294064  kernel/classes/subitems/expsubitemspreference.php
 fabadefe859227abf70456f4a19589ea  kernel/classes/subitems/expsubitemsserverfunctions.php
 c4b4bff7b28cecd22c0cc52d9add2ca4  kernel/classes/subitems/expsubitemstemplatecolumn.php
-9f325a13f16356d6183d4832718b343b  kernel/classes/uiswitch/expuiswitch.php
+cfd82d97f20bbaf09c1c8f5ec3bddd74  kernel/classes/uiswitch/expuiswitch.php
 a9e8a0b017ff2949bbc3b1259ba8d3dd  kernel/classes/uiswitch/expuiswitchdesignprovider.php
-50879c7176083dad542328d42abc62ab  kernel/classes/uiswitch/expuiswitchlanguagecatalogue.php
+5afdd68dfaf4de827a7d0d12e294fe09  kernel/classes/uiswitch/expuiswitchlanguagecatalogue.php
 4ede808f8d946b3bfbd5834a36d17ad6  kernel/classes/uiswitch/expuiswitchlanguageprovider.php
 cece546e62048c9a1040f8bf4c0e80b4  kernel/classes/uiswitch/expuiswitchprovider.php
 5750863f551457691b6f01ba06b6a545  kernel/classes/uiswitch/expuiswitchproviderinterface.php
@@ -8103,7 +8103,7 @@ a2ac644b2f632bc8978f9753406fa288  tests/tests/kernel/classes/trash/TrashedByColu
 52fe322a79e2cb6e5252b1e1328bcdb5  tests/tests/kernel/classes/trash/eZContentObjectTrashOldSchemaTest.php
 0a909c2ed4309301ba5e654a7be1d57c  tests/tests/kernel/classes/trash/eZContentObjectTrashRecordTest.php
 097041d3f95ba130650a360ac06a08fa  tests/tests/kernel/classes/uiswitch/expUISwitchDesignProviderTest.php
-e5889fdfa1a05a3531442417623938b2  tests/tests/kernel/classes/uiswitch/expUISwitchLanguageProviderTest.php
+264861d2f7173e2d56749b2296cd5388  tests/tests/kernel/classes/uiswitch/expUISwitchLanguageProviderTest.php
 9e9196bdb9fc31635c0f3674910665d2  tests/tests/kernel/classes/uiswitch/expUISwitchTest.php
 16869d53d788cbb17b7831da7c4cadbf  tests/tests/kernel/classes/uiswitch/expUISwitchTestLanguageTest.php
 23908179beefb9ebfcc66883726b8fe1  tests/tests/kernel/classes/updatesql/CheckDbFilesVersionListTest.php
