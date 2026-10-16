@@ -23011,6 +23011,34 @@ Note: The packages will not be uninstalled.</translation>
         <source>the scripts and styles of the administration</source>
         <translation>the scripts and styles of the administration</translation>
     </message>
+    <message>
+        <source>Sort</source>
+        <translation>Sort</translation>
+    </message>
+    <message>
+        <source>Name (A to Z)</source>
+        <translation>Name (A to Z)</translation>
+    </message>
+    <message>
+        <source>Name (Z to A)</source>
+        <translation>Name (Z to A)</translation>
+    </message>
+    <message>
+        <source>All (%count)</source>
+        <translation>All (%count)</translation>
+    </message>
+    <message>
+        <source>Active (%count)</source>
+        <translation>Active (%count)</translation>
+    </message>
+    <message>
+        <source>Inactive (%count)</source>
+        <translation>Inactive (%count)</translation>
+    </message>
+    <message>
+        <source>Problems (%count)</source>
+        <translation>Problems (%count)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/info</name>

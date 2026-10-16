@@ -623,7 +623,7 @@ ed52e10a5f47b691c8e15ae490adb105  design/admin/templates/setup/datatype.tpl
 dcb722bfda3d71da901504f9da33f0f5  design/admin/templates/setup/datatype_code.tpl
 29d3e871e6de1979d29105f427637288  design/admin/templates/setup/datatype_describe.tpl
 0179400da0c016c0d78216a115fd0f6c  design/admin/templates/setup/designextension.tpl
-bf158ec49ae8bf112c00c9fe66ac5c0a  design/admin/templates/setup/extensions.tpl
+6f7ef6d866f80bce935f5b789b8e63be  design/admin/templates/setup/extensions.tpl
 a925a224cc78a74747132267d11b2cfa  design/admin/templates/setup/handlerextension.tpl
 bdcdfa5742405bda0f2c054e42741b83  design/admin/templates/setup/info.tpl
 af31fc447e00b08df2231c45cc83aff5  design/admin/templates/setup/kerneloverride.tpl
@@ -1254,7 +1254,7 @@ edc1058d4f18817097b30107258c04c5  design/admin4/templates/setup/cronjobs.tpl
 dcb722bfda3d71da901504f9da33f0f5  design/admin4/templates/setup/datatype_code.tpl
 cbc413d613bb196f6da70a5caeea8d01  design/admin4/templates/setup/datatype_describe.tpl
 dda583dc1b439af6d17813d3d415e4ea  design/admin4/templates/setup/designextension.tpl
-74fd403b888aaac08097ad34b43626b5  design/admin4/templates/setup/extensions.tpl
+c95572fba8a6df90af60b0eef2a5bbd2  design/admin4/templates/setup/extensions.tpl
 7221793f43d4526f224d2bba4932db27  design/admin4/templates/setup/handlerextension.tpl
 bdcdfa5742405bda0f2c054e42741b83  design/admin4/templates/setup/info.tpl
 7f200b3f632376d62e444bfaae08d28f  design/admin4/templates/setup/kerneloverride.tpl
@@ -3048,7 +3048,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-b2ccafdb45ef96ccacfdfd21ad8a9031  doc/changelogs/6.0/6.0.15.md
+59a2ead5a5d88cae6e69105f3e8d887e  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3556,7 +3556,7 @@ e6788c036282afd665d79ed6bb9c4d6d  doc/guides/benchmarking.md
 f8d25fa0099e98f521de783195e11d7e  doc/guides/cronjobs.md
 9ea97a05fa2a16e68fe3ddeaf00535b2  doc/guides/deploying.md
 b790dd482cd361bdb034bae2f8ee60a5  doc/guides/drafts-and-pending.md
-8ef6b37beb573032a80a3c90b67dbd20  doc/guides/extensions-page.md
+d3e2a3c7bc0531e43eb098c727361f04  doc/guides/extensions-page.md
 d846df5846d7ca84030fee813bad0ac6  doc/guides/extensions.md
 9ab2a55cb8c3f5b50331448d91683c53  doc/guides/getting-started.md
 b53242f489a852760b7b824ee3e042a2  doc/guides/images/cronjobs/available-scripts.png
@@ -4985,7 +4985,7 @@ c9d493cb666a6959e14d02a914672db4  kernel/classes/expcontentlanguagestates.php
 060a5c445d16458886b00db1d94da18c  kernel/classes/expcontentpendinglist.php
 6c2ca0ea0dd35266d12412be0ce3304c  kernel/classes/expcronjobpause.php
 06c3fd9f915b90205f43300f8a58fe55  kernel/classes/experrorheaderlist.php
-4f8b979e7bac49349e8bab2c65a8e142  kernel/classes/expextensioncatalogue.php
+94f3843533f06fbf6941d6a3c1265c59  kernel/classes/expextensioncatalogue.php
 e0b74fce97e793dcf8a5c7ccd1ad86c0  kernel/classes/expextensionchangeplan.php
 92394bbcdb21059999dc3fddfc00e1f0  kernel/classes/expimageuploadvalidator.php
 64d640a63b25eac5a16a8446f2c2a332  kernel/classes/expinstallationdetailsoutputfilter.php
@@ -5800,7 +5800,7 @@ d6b7ee459c385cc78ca426a0b6f8b362  kernel/private/classes/views/section/assign.ph
 7d08d5aac41889ecbc986434986c09e6  kernel/private/classes/views/setup/cronjobsstream.php
 c82e5ac21ed1b61b72a5e91d6550bf9c  kernel/private/classes/views/setup/datatype.php
 5f37b9085a959384971d12d73b481856  kernel/private/classes/views/setup/designextension.php
-37b9eef82eb7d996b71e5671ea0ae92e  kernel/private/classes/views/setup/extensions.php
+1bce7cf490076a2879db5efff2984829  kernel/private/classes/views/setup/extensions.php
 ba095e1065f22b1f8ce06eaaaeaeb8a6  kernel/private/classes/views/setup/ezsetup.php
 af13a15fd346cd3c53de7f9c8fb7bb81  kernel/private/classes/views/setup/handlerextension.php
 1bd4407f2dcc1e4de24a4daaca3a7acd  kernel/private/classes/views/setup/info.php
@@ -7245,14 +7245,14 @@ a6b9a5e18993b0e8f8f8ff35f99bded0  share/translations/cze-CZ/translation.ts
 a2b163b1fd63c8bdb24c907d8473ad74  share/translations/ell-GR/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-AU/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-NZ/translation.ts
-778f16991cd02d6248f4578c744eeecc  share/translations/eng-US/translation.ts
+66c945338b63669fe27e16005579254e  share/translations/eng-US/translation.ts
 92a2f18fc0ed15cad49dd40e4e496df3  share/translations/esl-ES/translation.ts
 3a1cd7eb19c1ba120877d76a63f9a732  share/translations/esl-MX/translation.ts
 a1ff9edf6db2ff3ff0b2d442410db154  share/translations/fin-FI/translation.ts
 53d8d7f9258c04ed02c4c84a7721e691  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-bb71f5bd8e40e37085f3b45c1af81991  share/translations/ger-DE/translation.ts
+f1249e1d0a54682b2fa7a1906a5c10c0  share/translations/ger-DE/translation.ts
 e97831dd958115eac1866c1c6edbac10  share/translations/ita-IT/translation.ts
 c55b244fe21805a71690ca10e8f33623  share/translations/jpn-JP/translation.ts
 92e922de40aae6851e4478c31f8bf4af  share/translations/nno-NO/translation.ts
@@ -7265,7 +7265,7 @@ d5ee9f6f41a1629151b2c95729988fd1  share/translations/rus-RU/translation.ts
 c0bb0e5ef4ff758c9e505585337f7d2a  share/translations/srp-RS/translation.ts
 175a32374b310580e95bd659a017a77c  share/translations/swe-SE/translation.ts
 0b1b76b5ad6b2f923afd6fd9a9937a8b  share/translations/untranslated/readme.txt
-9ae2e3b337d2c8b9cd97236204a3f8ce  share/translations/untranslated/translation.ts
+2ead4663f38a0639f66bbaf22fb24ba8  share/translations/untranslated/translation.ts
 bae9ff85781e52af001213bdb213a013  shippable.yml
 414f4d1129273ab3dea38b878d554eae  soap.php
 3b6d156f31df70e093aa1a6d8a525cd3  support/ezlupdate-qt4.5/README.txt
@@ -7943,7 +7943,7 @@ e0b9bf7b359936c21de518237b23374d  tests/tests/kernel/classes/setup/AdminUISiteac
 4159402cb6f2996b0958f022dabe3050  tests/tests/kernel/classes/setup/EditorSiteaccessDefaultTest.php
 b26468a072e87640022ee9fe0bbb360e  tests/tests/kernel/classes/setup/EditorSiteaccessModulesTest.php
 728b364a823ae2d29c689cdff5b1c557  tests/tests/kernel/classes/setup/EditorSiteaccessTabsTest.php
-f2423dc1a4140e9f8bb33a822575aec8  tests/tests/kernel/classes/setup/ExtensionChangePlanTest.php
+66e7e5299d742825ba0fc98478401837  tests/tests/kernel/classes/setup/ExtensionChangePlanTest.php
 56cb7815ef06c0e7a095668c99ff57c8  tests/tests/kernel/classes/setup/ExtensionDownloadTest.php
 84a806754eee94940f2ff8fab608690f  tests/tests/kernel/classes/setup/KickstarterFailureReasonTest.php
 b9ab3dc75242d91d9686047634059862  tests/tests/kernel/classes/setup/KickstarterIniDefaultsTest.php

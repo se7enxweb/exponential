@@ -155,7 +155,7 @@ class expExtensionCatalogue
 
     /**
      * One row per extension, for the template: active ones in the planned order first, then the others by name
-     * ($sort 'name' sorts all of them by name instead).
+     * ($sort 'name' sorts all of them by name instead; $dir 'desc' turns the whole list round).
      *
      * Row keys: name, title, version, description, license, info_url, author, copyright, mtime, git, installed,
      * active, access (siteaccesses), position, effective (position the kernel loads it at), current_position,
@@ -163,7 +163,7 @@ class expExtensionCatalogue
      * problems (each: code, severity, other, file), problem_level ('', info, warn, bad), state ('', added,
      * removed, moved), search (lowercase text for the filter).
      */
-    public function rows( expExtensionChangePlan $plan, $sort = 'order' )
+    public function rows( expExtensionChangePlan $plan, $sort = 'order', $dir = 'asc' )
     {
         $planned = $plan->planned;
         $positions = array_flip( $planned );
@@ -190,6 +190,8 @@ class expExtensionCatalogue
             }
             return strnatcasecmp( $a, $b );
         } );
+        if ( $dir === 'desc' )
+            $names = array_reverse( $names );
 
         $rows = array();
         foreach ( $names as $name )

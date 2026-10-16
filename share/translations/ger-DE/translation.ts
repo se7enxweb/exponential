@@ -25816,6 +25816,34 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>the scripts and styles of the administration</source>
         <translation>die Skripte und Styles der Administration</translation>
     </message>
+    <message>
+        <source>Sort</source>
+        <translation>Sortierung</translation>
+    </message>
+    <message>
+        <source>Name (A to Z)</source>
+        <translation>Name (A bis Z)</translation>
+    </message>
+    <message>
+        <source>Name (Z to A)</source>
+        <translation>Name (Z bis A)</translation>
+    </message>
+    <message>
+        <source>All (%count)</source>
+        <translation>Alle (%count)</translation>
+    </message>
+    <message>
+        <source>Active (%count)</source>
+        <translation>Aktiv (%count)</translation>
+    </message>
+    <message>
+        <source>Inactive (%count)</source>
+        <translation>Inaktiv (%count)</translation>
+    </message>
+    <message>
+        <source>Problems (%count)</source>
+        <translation>Probleme (%count)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/info</name>

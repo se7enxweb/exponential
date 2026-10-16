@@ -222,6 +222,21 @@ class ExtensionChangePlanTest extends PHPUnit\Framework\TestCase
         $summary = expExtensionCatalogue::summary( $rows );
         $this->assertSame( array( 'total' => 4, 'active' => 2, 'access' => 1, 'inactive' => 1, 'git' => 1, 'problems' => 1 ), $summary );
         $this->assertSame( array( 'alpha', 'core', 'editor', 'zeta' ), array_column( $catalogue->rows( $plan, 'name' ), 'name' ) );
+        $this->assertSame( array( 'zeta', 'editor', 'core', 'alpha' ), array_column( $catalogue->rows( $plan, 'name', 'desc' ), 'name' ) );
+        $this->assertSame( array( 'zeta', 'alpha', 'core', 'editor' ), array_column( $catalogue->rows( $plan, 'order', 'desc' ), 'name' ) );
+    }
+
+    /** The sort choice: posted as one value (name-desc), or on the address as (sort) and (dir); anything else is the loading order, A to Z */
+    public function testTheSortChoiceComesFromTheFormOrTheAddress()
+    {
+        $view = '\Exponential\View\Kernel\Setup\Extensions';
+        $this->assertSame( array( 'order', 'asc' ), $view::sortChoice( null, array() ) );
+        $this->assertSame( array( 'name', 'desc' ), $view::sortChoice( 'name-desc', array( 'sort' => 'order' ) ) );
+        $this->assertSame( array( 'name', 'asc' ), $view::sortChoice( 'name', array( 'dir' => 'desc' ) ) );
+        $this->assertSame( array( 'name', 'desc' ), $view::sortChoice( null, array( 'sort' => 'name', 'dir' => 'DESC' ) ) );
+        $this->assertSame( array( 'order', 'desc' ), $view::sortChoice( null, array( 'sort' => 'order', 'dir' => 'desc' ) ) );
+        $this->assertSame( array( 'name', 'asc' ), $view::sortChoice( null, array(), 'Name' ) );
+        $this->assertSame( array( 'order', 'asc' ), $view::sortChoice( '<script>', array( 'sort' => 'x', 'dir' => 'sideways' ) ) );
     }
 
     public function testDependenciesAreReadFromExtensionXml()

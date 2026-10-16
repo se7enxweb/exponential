@@ -20043,6 +20043,34 @@ Note: The packages will not be uninstalled.</source>
         <source>the scripts and styles of the administration</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Sort</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name (A to Z)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name (Z to A)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All (%count)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Active (%count)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Inactive (%count)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Problems (%count)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/info</name>

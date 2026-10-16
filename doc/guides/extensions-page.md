@@ -34,7 +34,11 @@ Each card shows:
 | Details | Designs of the extension that siteaccesses use, author, copyright, last change, downloads, and notes |
 
 Above the list: counts (active, inactive, only for siteaccesses, git checkouts, with problems), a search (name,
-description, license), the order (loading order, or all by name) and a filter: all, active, inactive, problems.
+description, license), the sort (**Loading order**, **Name (A to Z)** or **Name (Z to A)**) and a filter, each choice
+with its count: **All (87)**, **Active (62)**, **Inactive (25)**, **Problems (0)**. The arrow keys move between the
+choices of a group. The sort and the filter are kept in the address, so a reload or a bookmark shows the same list:
+`/setup/extensions/(sort)/name/(dir)/desc/(show)/active`. The drag and drop grips are shown in the loading order only.
+In AdminUI the table's **Order** and **Name** headings sort the same way, ascending and descending.
 
 ## 2. Change the list
 

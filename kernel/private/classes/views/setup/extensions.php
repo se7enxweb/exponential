@@ -204,11 +204,10 @@ class Extensions extends \Exponential\Runnable\ModuleView
         $filter = (string)$http->postVariable( 'ExtensionFilter', isset( $userParameters['show'] ) ? $userParameters['show'] : 'all' );
         $filter = in_array( $filter, self::$filters, true ) ? $filter : 'all';
         $search = trim( mb_substr( (string)$http->postVariable( 'ExtensionSearch', '' ), 0, 100 ) );
-        $sort = (string)$http->postVariable( 'ExtensionSort', isset( $userParameters['sort'] ) ? $userParameters['sort']
-                : ( $http->hasGetVariable( 'SortBy' ) ? strtolower( $http->getVariable( 'SortBy' ) ) : 'order' ) );
-        $sort = $sort === 'name' ? 'name' : 'order';
+        list( $sort, $sortDir ) = self::sortChoice( $http->hasPostVariable( 'ExtensionSort' ) ? $http->postVariable( 'ExtensionSort' ) : null,
+                                                     $userParameters, $http->hasGetVariable( 'SortBy' ) ? $http->getVariable( 'SortBy' ) : null );
 
-        $rows = $catalogue->rows( $plan, $sort );
+        $rows = $catalogue->rows( $plan, $sort, $sortDir );
         foreach ( $rows as $i => $row )
         {
             foreach ( $row['problems'] as $j => $problem )
@@ -259,7 +258,9 @@ class Extensions extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'extension_stale', $stale );
         $tpl->setVariable( 'extension_filter', $filter );
         $tpl->setVariable( 'extension_search', $search );
-        $tpl->setVariable( 'extension_sort_mode', $sort );
+        // order, name or name-desc: the value of the sort choice in the form (the loading order has no Z to A there;
+        // the script puts a list the address turned round back in order)
+        $tpl->setVariable( 'extension_sort_mode', $sort === 'name' && $sortDir === 'desc' ? 'name-desc' : $sort );
         $tpl->setVariable( 'extension_ordering', $catalogue->ordering );
         $tpl->setVariable( 'extension_access_map', $catalogue->accessBySiteaccess );
         $tpl->setVariable( 'extension_notice', $notice );
@@ -272,15 +273,15 @@ class Extensions extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'available_extension_array', array_values( array_intersect( $sortedNames, $available ) ) );
         $tpl->setVariable( 'extension_count', count( $available ) );
         $tpl->setVariable( 'limit', count( $available ) );
-        $tpl->setVariable( 'view_parameters', array( 'offset' => 0, 'sort' => $sort, 'dir' => 'asc' ) );
-        $tpl->setVariable( 'extension_sort', array( 'field' => $sort, 'direction' => 'asc', 'opposite' => 'desc' ) );
+        $tpl->setVariable( 'view_parameters', array( 'offset' => 0, 'sort' => $sort, 'dir' => $sortDir ) );
+        $tpl->setVariable( 'extension_sort', array( 'field' => $sort, 'direction' => $sortDir, 'opposite' => $sortDir === 'asc' ? 'desc' : 'asc' ) );
         $tpl->setVariable( 'selected_extension_array', $selectedExtensions );
         $tpl->setVariable( 'access_extension_array', array_values( array_diff( $selectedAccessExtensionArray, $current ) ) );
         $tpl->setVariable( 'active_extension_order', $current );
         $tpl->setVariable( 'extension_positions', \ezpActiveExtensions::positions( $current ) );
         $tpl->setVariable( 'extension_info', $catalogue->info );
         $tpl->setVariable( 'sort_by', $sort );
-        $tpl->setVariable( 'sort_order', 'asc' );
+        $tpl->setVariable( 'sort_order', $sortDir );
 
         $Result = array();
         $Result['content'] = $tpl->fetch( "design:setup/extensions.tpl" );
@@ -371,6 +372,33 @@ class Extensions extends \Exponential\Runnable\ModuleView
         header( 'Cache-Control: no-store' );
         echo json_encode( $response );
         \eZExecution::cleanExit();
+    }
+
+    /**
+     * The order of the list: array( key, direction ), key 'order' (loading order) or 'name', direction 'asc' or
+     * 'desc'. The form posts one value (order, name, name-desc, order-desc); the address carries (sort) and (dir),
+     * as the sortable headings of parts/sortheader.tpl write them; SortBy is the address of the former page.
+     *
+     * @param string|null $posted the posted ExtensionSort, null when nothing was posted
+     * @param array $userParameters the view parameters
+     * @param string|null $sortBy the SortBy GET variable, null when not given
+     * @return array
+     */
+    public static function sortChoice( $posted, array $userParameters, $sortBy = null )
+    {
+        if ( $posted !== null )
+        {
+            $parts = explode( '-', strtolower( (string)$posted ), 2 );
+            $key = $parts[0];
+            $dir = isset( $parts[1] ) ? $parts[1] : 'asc';
+        }
+        else
+        {
+            $key = isset( $userParameters['sort'] ) ? strtolower( (string)$userParameters['sort'] )
+                 : ( $sortBy !== null ? strtolower( (string)$sortBy ) : 'order' );
+            $dir = isset( $userParameters['dir'] ) ? strtolower( (string)$userParameters['dir'] ) : 'asc';
+        }
+        return array( $key === 'name' ? 'name' : 'order', $dir === 'desc' ? 'desc' : 'asc' );
     }
 
     /**

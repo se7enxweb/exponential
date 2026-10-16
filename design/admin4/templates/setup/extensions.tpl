@@ -7,7 +7,8 @@
    Review changes shows what will change (added, removed, moved, the risks and the resulting ActiveExtensions lines)
    and Apply changes writes it in one step. The plan travels in the form (ExtensionPlan[], ExtensionBase), so every
    button works without javascript; the script moves cards in place, adds drag and drop (with the arrow keys on the
-   grip), and filters, searches and sorts without a reload.
+   grip), and filters, searches and sorts without a reload. The sort (loading order, name A to Z or Z to A) and the
+   filter are kept in the address, (sort)/name/(dir)/desc/(show)/active, so a reload or a bookmark shows the same list.
 
    The same file is in design/admin and design/admin4. The variables of the page before the redesign
    (available_extension_array, selected_extension_array, extension_positions, extension_info ...) are still set by
@@ -145,20 +146,21 @@
         <label for="ext-search">{'Search'|i18n( 'design/admin/setup/extensions' )}</label>
         <input type="search" id="ext-search" name="ExtensionSearch" value="{$extension_search|wash}" autocomplete="off" spellcheck="false" aria-controls="ext-list" aria-describedby="ext-count" placeholder="{'Name, description or license'|i18n( 'design/admin/setup/extensions' )|wash}" />
     </div>
-    <fieldset class="a4-field">
-        <legend>{'Order'|i18n( 'design/admin/setup/extensions' )}</legend>
+    <fieldset class="a4-field a4-field-wide">
+        <legend>{'Sort'|i18n( 'design/admin/setup/extensions' )}</legend>
         <div class="a4-chips">
             <label class="a4-chip"><input type="radio" name="ExtensionSort" value="order"{if eq( $extension_sort_mode, 'order' )} checked="checked"{/if} /><span>{'Loading order'|i18n( 'design/admin/setup/extensions' )}</span></label>
-            <label class="a4-chip"><input type="radio" name="ExtensionSort" value="name"{if eq( $extension_sort_mode, 'name' )} checked="checked"{/if} /><span>{'Name'|i18n( 'design/admin/setup/extensions' )}</span></label>
+            <label class="a4-chip"><input type="radio" name="ExtensionSort" value="name"{if eq( $extension_sort_mode, 'name' )} checked="checked"{/if} /><span>{'Name (A to Z)'|i18n( 'design/admin/setup/extensions' )}</span></label>
+            <label class="a4-chip"><input type="radio" name="ExtensionSort" value="name-desc"{if eq( $extension_sort_mode, 'name-desc' )} checked="checked"{/if} /><span>{'Name (Z to A)'|i18n( 'design/admin/setup/extensions' )}</span></label>
         </div>
     </fieldset>
     <fieldset class="a4-field a4-field-wide">
         <legend>{'Show'|i18n( 'design/admin/setup/extensions' )}</legend>
         <div class="a4-chips">
-            <label class="a4-chip"><input type="radio" name="ExtensionFilter" value="all"{if eq( $extension_filter, 'all' )} checked="checked"{/if} /><span>{'All'|i18n( 'design/admin/setup/extensions' )} <small>{$summary.total}</small></span></label>
-            <label class="a4-chip"><input type="radio" name="ExtensionFilter" value="active"{if eq( $extension_filter, 'active' )} checked="checked"{/if} /><span>{'Active'|i18n( 'design/admin/setup/extensions' )} <small>{$summary.active}</small></span></label>
-            <label class="a4-chip"><input type="radio" name="ExtensionFilter" value="inactive"{if eq( $extension_filter, 'inactive' )} checked="checked"{/if} /><span>{'Inactive'|i18n( 'design/admin/setup/extensions' )} <small>{sum( $summary.inactive, $summary.access )}</small></span></label>
-            <label class="a4-chip"><input type="radio" name="ExtensionFilter" value="problems"{if eq( $extension_filter, 'problems' )} checked="checked"{/if} /><span>{'Problems'|i18n( 'design/admin/setup/extensions' )} <small>{$summary.problems}</small></span></label>
+            <label class="a4-chip"><input type="radio" name="ExtensionFilter" value="all"{if eq( $extension_filter, 'all' )} checked="checked"{/if} /><span>{'All (%count)'|i18n( 'design/admin/setup/extensions',, hash( '%count', $summary.total ) )}</span></label>
+            <label class="a4-chip"><input type="radio" name="ExtensionFilter" value="active"{if eq( $extension_filter, 'active' )} checked="checked"{/if} /><span>{'Active (%count)'|i18n( 'design/admin/setup/extensions',, hash( '%count', $summary.active ) )}</span></label>
+            <label class="a4-chip"><input type="radio" name="ExtensionFilter" value="inactive"{if eq( $extension_filter, 'inactive' )} checked="checked"{/if} /><span>{'Inactive (%count)'|i18n( 'design/admin/setup/extensions',, hash( '%count', sum( $summary.inactive, $summary.access ) ) )}</span></label>
+            <label class="a4-chip"><input type="radio" name="ExtensionFilter" value="problems"{if eq( $extension_filter, 'problems' )} checked="checked"{/if} /><span>{'Problems (%count)'|i18n( 'design/admin/setup/extensions',, hash( '%count', $summary.problems ) )}</span></label>
         </div>
     </fieldset>
     <div class="a4-field a4-setup-nojs-only">
@@ -325,13 +327,25 @@
         if ( !dirty ) cards().forEach( function ( li ) { li.classList.remove( 'is-changed' ); } );
     }
 
-    // Cards in the order chosen: the active ones by the plan, then the others by name; or all by name
+    // The address carries the sort and the filter, as /setup/extensions/(sort)/name/(dir)/desc/(show)/active does
+    var baseUrl = form.getAttribute( 'action' ).replace( /\/\(.*$/, '' );
+    function keepInAddress() {
+        if ( !window.history || !history.replaceState ) return;
+        var s = sortMode().split( '-' ), f = filterMode(), url = baseUrl;
+        if ( s[0] !== 'order' || s[1] ) url += '/(sort)/' + s[0];
+        if ( s[1] === 'desc' ) url += '/(dir)/desc';
+        if ( f !== 'all' ) url += '/(show)/' + f;
+        try { history.replaceState( history.state, '', url + location.hash ); } catch ( err ) {}
+    }
+
+    // Cards in the order chosen: the active ones by the plan, then the others by name; or all by name, A to Z or Z to A
     function arrange() {
         var names = plan();
         var byName = function ( a, b ) { return a.getAttribute( 'data-name' ).localeCompare( b.getAttribute( 'data-name' ), undefined, { numeric: true, sensitivity: 'base' } ); };
         var all = cards();
         var sorted;
         if ( sortMode() === 'name' ) sorted = all.sort( byName );
+        else if ( sortMode() === 'name-desc' ) sorted = all.sort( byName ).reverse();
         else {
             var active = names.map( card ).filter( Boolean );
             var rest = all.filter( function ( li ) { return active.indexOf( li ) === -1; } ).sort( byName );
@@ -421,14 +435,16 @@
 
     // Filter, search and sort without a reload
     form.addEventListener( 'change', function ( e ) {
-        if ( e.target.name === 'ExtensionSort' ) { arrange(); filter(); }
-        else if ( e.target.name === 'ExtensionFilter' ) filter();
+        if ( e.target.name === 'ExtensionSort' ) { arrange(); filter(); keepInAddress(); }
+        else if ( e.target.name === 'ExtensionFilter' ) { filter(); keepInAddress(); }
     } );
     search.addEventListener( 'input', filter );
     search.addEventListener( 'keydown', function ( e ) { if ( e.key === 'Enter' ) e.preventDefault(); } );
 
+    arrange();
     renumber();
     filter();
+    keepInAddress();
     var review = document.getElementById( 'ext-review' );
     if ( review && !location.hash ) review.focus();
 })();
