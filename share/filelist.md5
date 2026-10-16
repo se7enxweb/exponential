@@ -4251,6 +4251,7 @@ b67e983627ca245b51be9f0bcf9e5a80  extension/ezjscore/settings/site.ini.append.ph
 df9d1c4ca01c940a0ecd49319dc183d8  extension/ezjscore/translations/esl-MX/translation.ts
 1e56e57978e47563231de051310f8b98  extension/ezjscore/translations/ger-DE/translation.ts
 cb56fd3ca4d66f6d278b0be522e3bae5  extension/ezjscore/translations/heb-IL/translation.ts
+185070897c84b2f99eec95d830551449  extension/ezjscore/translations/lat-VA/translation.ts
 1934ef4b765d46e6c3a8eae97229373e  extension/ezjscore/translations/untranslated/translation.ts
 7bdcec3991d143379ebea0e485a3616f  extension/ezoe/FAQ
 6f0bbae759c31c5def19f3a5c19ed3fd  extension/ezoe/INSTALL
@@ -4767,6 +4768,7 @@ fa1dcd341369fc539d0a397f66e9aec7  extension/ezoe/translations/fre-FR/translation
 d6d7ee8589b8d36a0c4c4eac793e63bd  extension/ezoe/translations/heb-IL/translation.ts
 27a456dec6d79d2cd1099446cf723ba6  extension/ezoe/translations/ita-IT/translation.ts
 83cb07d4be4e2d1cff883ca7d8b5d984  extension/ezoe/translations/jpn-JP/translation.ts
+3f05d24a8df5c12202451ceaf252ea08  extension/ezoe/translations/lat-VA/translation.ts
 eec45b2adf10df254f61640cf79d23f7  extension/ezoe/translations/nor-NO/translation.ts
 6b11671c0e96117f3c5f858f2963ad1b  extension/ezoe/translations/pol-PL/translation.ts
 3085cd02ef06caa8786175721cf7e355  extension/ezoe/translations/por-BR/translation.ts
@@ -7370,7 +7372,7 @@ e4d89f7a801a45e1d0e46de070e94548  share/translations/ger-DE/translation.ts
 4da973b7d3aaa23f30199cc7a6d8c52d  share/translations/heb-IL/translation.ts
 e97831dd958115eac1866c1c6edbac10  share/translations/ita-IT/translation.ts
 c55b244fe21805a71690ca10e8f33623  share/translations/jpn-JP/translation.ts
-cafd1a74ee5d0f4ae3580265b2aaf38e  share/translations/lat-VA/translation.ts
+1f9511f8248899c496a3f6dfcf2a8bee  share/translations/lat-VA/translation.ts
 92e922de40aae6851e4478c31f8bf4af  share/translations/nno-NO/translation.ts
 8bbbf764eeb595adc4615cdca139f3ad  share/translations/nor-NO/readme.txt
 448b926a6d0910153faf3bf794dc85b1  share/translations/nor-NO/translation.ts
@@ -8526,7 +8528,7 @@ cb0fed15dd1df5bc335d598439aec099  tests/tests/lib/ezfile/eZDirDeletionGuardTest.
 c1f6adac19ccaf910436eda6d13af929  tests/tests/lib/ezi18n/eZTSTranslatorTest.php
 86f580b3e8cfbaaf79c8cf442dbd2418  tests/tests/lib/ezi18n/eZTranslatorHandlersTest.php
 0e5565929a5d06a4545e88bc57da4934  tests/tests/lib/ezi18n/expTranslationQualityTest.php
-f70846e4521f38e9e3eb65de2ec44aae  tests/tests/lib/ezi18n/translation-identical-allowlist.json
+f85847accbbca937cc184880251a28c7  tests/tests/lib/ezi18n/translation-identical-allowlist.json
 99d562ea5691945a73f1649c6b7cc76b  tests/tests/lib/ezimage/data/andernach.jpg
 e20e34d1b6a2efc798e50ebbabee680d  tests/tests/lib/ezimage/data/svg/badge.svg
 b8c98ff2af8dc8e9def7bfe094faeb8b  tests/tests/lib/ezimage/data/svg/chart.svg

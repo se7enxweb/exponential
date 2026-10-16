@@ -453,7 +453,6 @@
         "Windows Media Player": "product name (Microsoft media player)"
     },
     "lat-VA": {
-        "ini.ini [IniCommandSettings] Actions[<name>]=<class>, ActionAliases[<alias>]=<name>, ScopeProviders[]=<class> in extension/<name>/settings/ini.ini.append.php": "INI settings and a path; the one word in is Latin too",
         "#level1 - #level2": "only PDF level placeholders and a separator; nothing to translate",
         "#levelIndex1:#levelIndex2": "only PDF level placeholders and a separator; nothing to translate",
         "%device, %width × %height px": "only placeholders and the unit symbol px",
@@ -471,6 +470,7 @@
         "Aquarius": "Latin name of the zodiac sign; English uses the Latin word.",
         "Aries": "Latin name of the zodiac sign; English uses the Latin word.",
         "AUDIT": "Log level code written by the server; shown as it appears in the log lines.",
+        "auto": "Composer preferred-install value (code), explained by the item before",
         "Cancer": "Latin name of the zodiac sign; English uses the Latin word.",
         "CIE": "acronym of the extension (Collected Information Export)",
         "Classes": "Latin word (plural of classis), allowed by the glossary additions",
@@ -494,6 +494,7 @@
         "Exponential Intelligence": "product name",
         "Exponential Intelligence ([AISettings] Enabled)": "product name plus INI setting",
         "extension.xml": "file name, kept unchanged",
+        "eZ Tags": "product name of the eZ Tags extension",
         "ez.no": "domain name",
         "eZFind": "Product/extension name eZFind, kept unchanged.",
         "ezinfo.php": "file name, kept unchanged",
@@ -517,6 +518,7 @@
         "InfoPanel": "RealPlayer control name passed to the player as a parameter value",
         "InfoVolumePanel": "RealPlayer control name passed to the player as a parameter value",
         "INI": "acronym of the settings file format",
+        "ini.ini [IniCommandSettings] Actions[<name>]=<class>, ActionAliases[<alias>]=<name>, ScopeProviders[]=<class> in extension/<name>/settings/ini.ini.append.php": "INI settings and a path; the one word in is Latin too",
         "iPad": "product name",
         "iPhone": "product name",
         "ISBN %data_text": "ISBN is an acronym followed by a placeholder; nothing to translate",
