@@ -16,7 +16,7 @@ eab760120a50cdf35a0fd50618301b24  COPYRIGHT.md
 d34848eec00c077171187386a805c85b  LICENSE
 bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 1bc8d08bda60c234dded6cb03b90dfba  Makefile
-41d738df70a7410b2527f55458f85edb  README.md
+6317a4c9d5332abdff2cdede49edebb7  README.md
 fd07fac4ce74813bf1e9bda18fbcf1b0  SECURITY.md
 7a103568d7c533e99e2d7a5e9f1b5ffb  autoload.php
 119b97309e828a274cd8bf5ee4f22516  autoload/ezp_kernel.php
@@ -3068,7 +3068,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-873121eda602c58df95fe304f6d459b1  doc/changelogs/6.0/6.0.15.md
+68f1a615b46404668ff63859760767e3  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3522,6 +3522,7 @@ f9c24ee19f2caf2e1326cf5158b46bfc  doc/features/6.0/repair-from-the-browser.md
 d19ac2813afb3d92cc981015c8ecdfc1  doc/features/6.0/request-rules.md
 24e8ccadcc06ff46a640a76473fd2d4a  doc/features/6.0/reset-user-password.md
 dfc80bc3e8c5193eda53ed0174e12623  doc/features/6.0/reverse-relation-check.md
+110235eea192b2d314f3cfbed45399f2  doc/features/6.0/right-to-left.md
 cb4ba958c01d20e816fc121fd17f2d6d  doc/features/6.0/robots-txt.md
 5546e1fd2154341af36b7d47c0e72dac  doc/features/6.0/role-and-policy-template-operators.md
 0954ae9de88cdf88556032c14ff33a9c  doc/features/6.0/role-assignment-paging.md
@@ -3543,7 +3544,7 @@ a41622d93efd6c2f53a94f2baa3eed35  doc/features/6.0/template-path-comments.md
 8063b16c2cea020d040be89da085727b  doc/features/6.0/translations-and-languages.md
 617186ceb009791f653e4cbf277d7005  doc/features/6.0/trash-who-and-where.md
 2947d010c70096ee082296ba38ed3f0b  doc/features/6.0/ui-switch-design.md
-94ff63983f9cbfb19e7404fbe5dac71c  doc/features/6.0/ui-switch-languages.md
+d29dcc26e714e5a3e39ec1551b830c73  doc/features/6.0/ui-switch-languages.md
 c16dcb4e9f85e4ba1a80288bb5ca47da  doc/features/6.0/ui-switch.md
 a1eed4391b4f27be93070944c605e35e  doc/features/6.0/user-hygiene.md
 9af0ca11b275e34e8a215ca6983c1589  doc/features/6.0/valkey-cache-hooks.md
@@ -3628,7 +3629,7 @@ f52435ea65b9339e1191f8bbb8753638  doc/guides/system-information.md
 101e9fde2c108fc4cd8427efb0172a4b  doc/guides/test-language-lorem-ipsum.md
 dc5f0aedab105f984fc1d7e71761f4eb  doc/guides/two-factor-login.md
 06d9b73556412ec28f4c1fe7b5c7c58d  doc/guides/ui-switch-design.md
-a3afaf6d6a6b0da90d16514336b307ec  doc/guides/ui-switch-settings.md
+d55259e5b036dd972962aa0bd877bc3f  doc/guides/ui-switch-settings.md
 fc2eb248460e9ebbb10faf76eb446e2e  doc/guides/upgrade-check.md
 96ce9e87d17b31ab1a771517f083e4ea  doc/guides/upgrading.md
 6477f5214f3a7f3dfdf0da2e2284d082  doc/guides/urls-and-aliases.md
@@ -3986,7 +3987,7 @@ e6d2e7ade028ccf4e972ed4ff1b8c589  doc/install/15-migrating-from-5x-legacy.md
 9141bf583876b5c6c08c3fad4c84a583  doc/install/16-migrating-from-ez-platform-and-ibexa.md
 c16be8cb22d2ac62ecb044e4af371544  doc/install/17-migration-reference.md
 ce0b3f77ce09c1b78d7b56dac34a2b38  doc/install/README.md
-8e41e41020b6e412c9a7477cdbcd9d7f  doc/languages.md
+5fcef583f225be30378adb7e402ab55c  doc/languages.md
 96f498c48962f624f83d7484bd72ba84  doc/release-overview
 81b7485665e49e6de38b6e8a216c7136  doc/shop/classeshierarchy.html
 7a4ca93d7c8c4867763c5b42ee925a96  doc/shop/examples/paypal/extensionfiles.html
@@ -5302,7 +5303,7 @@ c4b4bff7b28cecd22c0cc52d9add2ca4  kernel/classes/subitems/expsubitemstemplatecol
 cfd82d97f20bbaf09c1c8f5ec3bddd74  kernel/classes/uiswitch/expuiswitch.php
 a9e8a0b017ff2949bbc3b1259ba8d3dd  kernel/classes/uiswitch/expuiswitchdesignprovider.php
 5afdd68dfaf4de827a7d0d12e294fe09  kernel/classes/uiswitch/expuiswitchlanguagecatalogue.php
-4ede808f8d946b3bfbd5834a36d17ad6  kernel/classes/uiswitch/expuiswitchlanguageprovider.php
+e7347aff1c19ac83d041aa1122306b8c  kernel/classes/uiswitch/expuiswitchlanguageprovider.php
 cece546e62048c9a1040f8bf4c0e80b4  kernel/classes/uiswitch/expuiswitchprovider.php
 5750863f551457691b6f01ba06b6a545  kernel/classes/uiswitch/expuiswitchproviderinterface.php
 b6fd3d4b6e47fadf95e4790620366f14  kernel/classes/user/expregistrationadminaction.php
@@ -5828,7 +5829,7 @@ c82e5ac21ed1b61b72a5e91d6550bf9c  kernel/private/classes/views/setup/datatype.ph
 1bce7cf490076a2879db5efff2984829  kernel/private/classes/views/setup/extensions.php
 ba095e1065f22b1f8ce06eaaaeaeb8a6  kernel/private/classes/views/setup/ezsetup.php
 af13a15fd346cd3c53de7f9c8fb7bb81  kernel/private/classes/views/setup/handlerextension.php
-1bd4407f2dcc1e4de24a4daaca3a7acd  kernel/private/classes/views/setup/info.php
+a775ffc971759d30586900b0d4037bee  kernel/private/classes/views/setup/info.php
 9ec471cd1828163cca17e995aaa27538  kernel/private/classes/views/setup/kerneloverride.php
 c52c0969e44db3dd969bdf15caf1427c  kernel/private/classes/views/setup/maintenance.php
 f3d410d2a77820dc00af01f2bb3ffc68  kernel/private/classes/views/setup/menuconfig.php
@@ -6600,7 +6601,7 @@ aa1ac2879a1589cc5152361a5b6a87a2  settings/textfile.ini
 07043a08c7729eca52c81e7bca768cff  settings/texttoimage.ini
 79b1ecac748b56b0557db0578d643e1f  settings/toolbar.ini
 45add5bfcd26422edd3d6525dc832767  settings/transform.ini
-c5bc2495a1444c22868528876d6e76f0  settings/uiswitch.ini
+c27f3542db00b8490f094c8d1ca4be2c  settings/uiswitch.ini
 f23fe66b3019c3e623ade3854c3af1c5  settings/units.ini
 a053b7b38c86a24626be0de5c4370c9c  settings/upload.ini
 74908928bbc74857bb5e8102bef82d08  settings/velocity.ini
@@ -7352,7 +7353,7 @@ a6b9a5e18993b0e8f8f8ff35f99bded0  share/translations/cze-CZ/translation.ts
 a2b163b1fd63c8bdb24c907d8473ad74  share/translations/ell-GR/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-AU/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-NZ/translation.ts
-5690b903848b46b5ef00983c11e1e797  share/translations/eng-US/translation.ts
+30bd9a615958945fdf5718db53da2408  share/translations/eng-US/translation.ts
 7579459206fde1781c0ac38cefaa61a0  share/translations/esl-ES/translation.ts
 3a1cd7eb19c1ba120877d76a63f9a732  share/translations/esl-MX/translation.ts
 a1ff9edf6db2ff3ff0b2d442410db154  share/translations/fin-FI/translation.ts
@@ -7375,7 +7376,7 @@ c0bb0e5ef4ff758c9e505585337f7d2a  share/translations/srp-RS/translation.ts
 175a32374b310580e95bd659a017a77c  share/translations/swe-SE/translation.ts
 70bdc5a32436bae47a97cd8d7076ddd9  share/translations/tlh-QO/translation.ts
 0b1b76b5ad6b2f923afd6fd9a9937a8b  share/translations/untranslated/readme.txt
-81aab4dc3883017ca237589d38ad67a9  share/translations/untranslated/translation.ts
+9d837cbcbc70ba6eeebcb1f0ee8e79ee  share/translations/untranslated/translation.ts
 bae9ff85781e52af001213bdb213a013  shippable.yml
 414f4d1129273ab3dea38b878d554eae  soap.php
 3b6d156f31df70e093aa1a6d8a525cd3  support/ezlupdate-qt4.5/README.txt
