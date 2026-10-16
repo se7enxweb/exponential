@@ -176,7 +176,7 @@ bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
 b974dde24700fd18ba9d30714509893a  composer.dev.json
 7e531407fc8efd6cf497d4260dd8897c  composer.dev.lock
-fc99045f4008e6c9e76346a1cbd42a7c  composer.json
+d9621b2a66a30675aca8c1fd83ce5307  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 2d91308b2fa30038d9cc37afd0e2d44a  config.env.php.example
 e7da3e13ed7cc993f3d31886d4a42ddc  config.php-RECOMMENDED
@@ -402,7 +402,7 @@ ac31521e1d3e3362c34b594c91a035dd  design/admin/templates/content/dashboard.tpl
 9da33d1967da5abff9e5e93122d26540  design/admin/templates/content/datatype/view/ezxmltags/literal.tpl
 38716ae61d556f13905387960852457c  design/admin/templates/content/draft.tpl
 be10703720b7ceaf157f701c0edca88f  design/admin/templates/content/edit.tpl
-67df8394901ee2cf5f073b426f327757  design/admin/templates/content/edit_attribute.tpl
+72f84e0a807eb0a3fc13bc57a4b89de8  design/admin/templates/content/edit_attribute.tpl
 00f93086667ce9e241dae6c699728f85  design/admin/templates/content/edit_conflict.tpl
 a038803bfb7afe020d14c41475a8859b  design/admin/templates/content/edit_draft.tpl
 b296af3623023fd29dede1e7a28c87b5  design/admin/templates/content/edit_languages.tpl
@@ -2089,10 +2089,10 @@ b298ebe4f1856ed49dc2592bf3a7e733  design/standard/templates/content/datatype/edi
 7f92a72e1d0f3b301604bbaa0e4b7224  design/standard/templates/content/datatype/edit/ezmultioption2.tpl
 dcaa6cd5933cbd4daafa84bcc06521c4  design/standard/templates/content/datatype/edit/ezmultioption2_rules.tpl
 0028da57d49726db76e1910807776e6f  design/standard/templates/content/datatype/edit/ezmultiprice.tpl
-f6742d711f85ac12d88096d7b56ac68b  design/standard/templates/content/datatype/edit/ezobjectrelation.tpl
+332a75e0bdd87b8d62504c60ffc26a89  design/standard/templates/content/datatype/edit/ezobjectrelation.tpl
 29b017f30ad5cb73ba0852726752e185  design/standard/templates/content/datatype/edit/ezobjectrelation_ajax_search.tpl
 1a68fb4b7b0d164fd1752a20a3c00c86  design/standard/templates/content/datatype/edit/ezobjectrelation_ajaxuploader.tpl
-c8d875a1c30ed544b76e569fd89ec0da  design/standard/templates/content/datatype/edit/ezobjectrelationlist.tpl
+6c19da53b569a6af086df8db7e510390  design/standard/templates/content/datatype/edit/ezobjectrelationlist.tpl
 01da2dd0e05d842e8a9fe97b1b0ac3aa  design/standard/templates/content/datatype/edit/ezobjectrelationlist_ajaxuploader.tpl
 7eaf59a62a97383faefc85c16bb732bc  design/standard/templates/content/datatype/edit/ezobjectrelationlist_controls.tpl
 75ee0d3ded9fe34f9507ea47c2107dce  design/standard/templates/content/datatype/edit/ezoption.tpl
@@ -4678,9 +4678,9 @@ ce63529c93d6f4be3747d350bd9b0435  extension/ezoe/design/standard/stylesheets/ski
 9e8448659afb5e65b225a562c0167d75  extension/ezoe/design/standard/stylesheets/skins/o2k7/ui.css
 02a164ba69ca7d9182047b24944e1d69  extension/ezoe/design/standard/stylesheets/skins/o2k7/ui_black.css
 f66b026fe40921b62c0b77798876760a  extension/ezoe/design/standard/stylesheets/skins/o2k7/ui_silver.css
-4f3e088a50e9d3c8165e2d9a451696d6  extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe.tpl
+d7b0fe2bbf0bc636013563d6766d423d  extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe.tpl
 a0d544b59dee824af80629d7ea3f8a70  extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe_engine_switch.tpl
-ac1acbe5799202922d8577c980a8db69  extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe_tinymce8.tpl
+5cdbaab50c5959cae6b2ddb8bc2a38bd  extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe_tinymce8.tpl
 045d0b39a14a481c5a1adba061e2522f  extension/ezoe/design/standard/templates/content/datatype/view/ezxmltags/underline.tpl
 9863bdadb7a1227726fb97d738e888ba  extension/ezoe/design/standard/templates/ezoe/box_bookmarks.tpl
 73baaf2adee2354e62db9f8a10976db6  extension/ezoe/design/standard/templates/ezoe/box_browse.tpl
