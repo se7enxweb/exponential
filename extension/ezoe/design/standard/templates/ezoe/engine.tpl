@@ -35,6 +35,9 @@
 {if $switch_enabled}
     <p>{'The edit form also has a button to switch to each of the other available editors.'|i18n( 'design/standard/ezoe' )}</p>
 {/if}
+{if $forced}
+    <p>{'This site uses %engine for every editor; a choice of your own does not apply here.'|i18n( 'design/standard/ezoe',, hash( '%engine', $engines[$forced] ) )}</p>
+{else}
 <form method="post" action={'/ezoe/engine'|ezurl}>
     <div class="block">
         <label for="ezoe-engine">{'Editor for text fields'|i18n( 'design/standard/ezoe' )}</label>
@@ -48,5 +51,6 @@
     </div>
     <div class="controlbar"><input class="button" type="submit" name="SaveEngineButton" value="{'Save'|i18n( 'design/standard/ezoe' )}" /></div>
 </form>
+{/if}
 </div>
 </div>

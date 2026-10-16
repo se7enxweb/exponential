@@ -159,6 +159,10 @@
         <translation>Aktuell verwendet: %engine. Die Auswahl gilt nur für Ihren Benutzer, der Text Ihrer Inhalte ist mit jedem Editor derselbe.</translation>
     </message>
     <message>
+        <source>This site uses %engine for every editor; a choice of your own does not apply here.</source>
+        <translation>Diese Seite verwendet %engine für alle Redakteure; eine eigene Wahl gilt hier nicht.</translation>
+    </message>
+    <message>
         <source>Editor engines</source>
         <translation>Editoren</translation>
     </message>

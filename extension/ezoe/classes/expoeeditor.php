@@ -115,14 +115,30 @@ class expOEEditor
     }
 
     /**
-     * The engine the current user edits with: the user preference ezoe_engine when it names an available
-     * engine, else the siteaccess setting (ezoe.ini is read per siteaccess), else the global default.
+     * @return string the engine every editor of the siteaccess gets, whatever the user preference says (ezoe.ini
+     *                [EditorSettings] ForceEngine); '' when none is set or the one set is not usable, so an engine that
+     *                is missing (an unbuilt bundle, an inactive extension) never leaves an editor without one
+     */
+    public static function forcedEngine()
+    {
+        $ini = eZINI::instance( 'ezoe.ini' );
+        $id = $ini->hasVariable( 'EditorSettings', 'ForceEngine' ) ? (string) $ini->variable( 'EditorSettings', 'ForceEngine' ) : '';
+        return $id !== '' && self::hasEngine( $id ) ? $id : '';
+    }
+
+    /**
+     * The engine the current user edits with: forcedEngine() when the siteaccess forces one, else the user
+     * preference ezoe_engine when it names an available engine, else the siteaccess setting (ezoe.ini is read per
+     * siteaccess), else the global default.
      *
      * @param string|null $preference the preference value, read for the current user when null
      * @return string an identifier of engines()
      */
     public static function resolve( $preference = null )
     {
+        $forced = self::forcedEngine();
+        if ( $forced !== '' )
+            return $forced;
         if ( $preference === null )
             $preference = eZPreferences::value( self::PREFERENCE );
         if ( is_string( $preference ) && $preference !== '' && self::hasEngine( $preference ) )
@@ -206,9 +222,14 @@ class expOEEditor
         return $details;
     }
 
-    /** @return bool whether editors may choose their engine themselves (ezoe.ini [EditorSettings] EngineSwitch) */
+    /**
+     * @return bool whether editors may choose their engine themselves (ezoe.ini [EditorSettings] EngineSwitch); never
+     *              while the siteaccess forces an engine (ForceEngine)
+     */
     public static function switchEnabled()
     {
+        if ( self::forcedEngine() !== '' )
+            return false;
         $ini = eZINI::instance( 'ezoe.ini' );
         return $ini->hasVariable( 'EditorSettings', 'EngineSwitch' )
             && $ini->variable( 'EditorSettings', 'EngineSwitch' ) === 'enabled';
