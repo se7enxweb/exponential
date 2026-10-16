@@ -1855,7 +1855,7 @@ f4c72a3b44fe9648e42d849832a4b87d  design/standard/images/user_group.png
 ff23b2b1387845ae5f541b38a7951963  design/standard/javascript/exp_bookmarks.js
 3e27389cb0e9b7fcbc78aa9f77b83e9f  design/standard/javascript/exp_password_field.js
 9d4a76ae0bfee514422bbda1b7f99f7d  design/standard/javascript/expdebugbar.js
-3492ec4bc10e9beb9e57dc4554f3067d  design/standard/javascript/ezasynchronouspublishing.js
+926862e4e05c2c21ae1f91b36c18d791  design/standard/javascript/ezasynchronouspublishing.js
 508ff667415a5d98e2a74446341b83ec  design/standard/javascript/ezmultioption/ezmultioption.js
 5665f05feab34431f20fa7d4431da034  design/standard/javascript/lib/ezjslibcookiesupport.js
 f6346e38e58d11bce6e2627c3807bc9f  design/standard/javascript/lib/ezjslibdomsupport.js
@@ -3068,7 +3068,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-5d1ebed78c63471bad187c02fe1aa824  doc/changelogs/6.0/6.0.15.md
+a7ad69db8bc78832c4c9a10a7fbf8a39  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -7442,7 +7442,7 @@ a4e7a187670959adc083b3b4ab09caca  tests/runtests.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 9ff58a769386f12831d56db2598e292e  tests/suite.php
-829f06596ba1c34bc4933b0ee5b94a4d  tests/test-map.json
+8dac76440fb5b32b65f8af9419ca3079  tests/test-map.json
 8b29711fe10a56c5c5b90916f35d0a00  tests/tests/bin/phpcs/NoTypeDeclarationsSniffTest.php
 4e3eeb18c2ea423afb62388e5e3dcafc  tests/tests/bin/phpcs/fixtures/typedeclarations.inc
 a170729e7e161686001ae10895d34d53  tests/tests/design/AdminBaseStylesheetsTest.php
@@ -7503,7 +7503,9 @@ a998bae7f6c7a83dd1eb0f05afc6a6ef  tests/tests/design/AdminTopNodeNameTest.php
 15e49ddad018f337900b8c06c5486efb  tests/tests/design/AdminTreeMenuEscapingTest.php
 3e871accb7d56ac483c1150496cb8d3c  tests/tests/design/AdminTreeViewTest.php
 b1c86fb42e09b8aa8c9834d62706a3b4  tests/tests/design/AdminVisibilityStatusTest.php
+f0f50ee05d633e889c584fbc962ea814  tests/tests/design/AsynchronousPublishingLinkTest.php
 a160ae3b2d682c5f063abf5546023024  tests/tests/design/FormSubmitButtonDisableTest.php
+5582056a45ff633ad8831432b6074f3c  tests/tests/design/js/asynchronous_publishing.js
 ea2584f9208c35d5087694b08ebd88aa  tests/tests/design/js/editor_skin.js
 b7cffb5712803f903d80c45a0cd3f90d  tests/tests/design/js/language_states.js
 a134e1113ff97edab51d735f9fc9fb26  tests/tests/design/js/mega_menu.js
@@ -7618,12 +7620,12 @@ df797f976ce5f225fe73f393ff910b74  tests/tests/extension/ezjscore/ezjscServerFunc
 d1578e74a3b133f4e710d5793b7479ad  tests/tests/extension/ezjscore/ezjscServerFunctionsJsSearchIDsTest.php
 3ef20c0512a951483e7cb7761a9f87f7  tests/tests/extension/ezjscore/ezjscServerFunctionsJsSearchSortByTest.php
 a7f1588e0a629132d1903a8cb5a065a7  tests/tests/extension/ezjscore/ezjscServerFunctionsNodePriorityTest.php
-6bdeaa866d4c0ff6c438a4937df7c3a9  tests/tests/extension/ezjscore/ezjscServerFunctionsPublishingQueueStatusTest.php
+3874e32e779306625ae26f870fab6f60  tests/tests/extension/ezjscore/ezjscServerFunctionsPublishingQueueStatusTest.php
 1045d4d1d9f875ee35726dfa45431264  tests/tests/extension/ezjscore/ezjscServerRouterPolicyTest.php
 4ec3b85aa35f0d5455487a01608a021e  tests/tests/extension/ezjscore/ezjscoreAnonymousAccessTest.php
 d5ef0a34d06298d2da7f951273c12e1d  tests/tests/extension/ezjscore/ezjscoreCallThrowableTest.php
 708d1e986b92531457d34829727a367b  tests/tests/extension/ezjscore/ezjscoreVendoredLibrariesTest.php
-96b393ffa51d1c1ddf355e6d420c20c8  tests/tests/extension/ezjscore/fixtures/publishingqueue_harness.php
+9004bfc49f5764c617f188163c4ed482  tests/tests/extension/ezjscore/fixtures/publishingqueue_harness.php
 66e6cbee478fb7265fcc9ee62f4981c3  tests/tests/extension/ezmultiupload/expMultiuploadServiceTest.php
 dfb38e0e8ada903c6cf26e6b85182c3d  tests/tests/extension/ezmultiupload/expMultiuploadZipTest.php
 be082c2cbbd69c12eee01261f6b2f622  tests/tests/extension/ezoe/expOEContentTypeAndLoadTest.php
@@ -8267,8 +8269,8 @@ d7ca0190a449ce3e4d3bf7e6a05c2aaf  tests/tests/kernel/private/ezpmobiledevicedete
 3800857a4794909b3b08cef7cd20b04c  tests/tests/kernel/private/ezpmobiledevicedetectfilter_test.php
 209510774063bdbcedf0a8a81d4e87ed  tests/tests/kernel/private/ezpmobiledeviceregexpfilter_test.php
 259d772ffe9317ad662e839a06834ca7  tests/tests/kernel/private/eztopologicalsort_test.php
-65a24a3132a371c91678a868d2a8d15c  tests/tests/kernel/private/oauth/ezpOauthAuthorizeRedirectTest.php
-6f31a173fe26a81c18152d80c8e1b2eb  tests/tests/kernel/private/oauth/fixtures/authorize_harness.php
+5153f3a14bbb02c92df15a1c0346286b  tests/tests/kernel/private/oauth/ezpOauthAuthorizeRedirectTest.php
+d95c232638d59bb1576140f5e269a853  tests/tests/kernel/private/oauth/fixtures/authorize_harness.php
 ff5fd6c8ea38ccd01786dc6beab3d757  tests/tests/kernel/private/rest/abstract_test.php
 7374c5861a8fe2feadb136468fb39a0d  tests/tests/kernel/private/rest/application_cache_test.php
 d4f322bfaa51c8aa4da2382f366dcb40  tests/tests/kernel/private/rest/controller_test.php
