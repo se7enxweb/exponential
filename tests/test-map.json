@@ -994,6 +994,12 @@
     "kernel/setup/steps/ezstep_create_sites.php": [
       "tests/tests/kernel/classes/setup/AdminUISiteaccessTest.php",
       "tests/tests/kernel/classes/setup/EditorSiteaccessTabsTest.php"
+    ],
+    "kernel/private/modules/oauth/authorize.php": [
+      "tests/tests/kernel/private/oauth/ezpOauthAuthorizeRedirectTest.php"
+    ],
+    "extension/ezjscore/classes/ezjscserverfunctionspublishingqueue.php": [
+      "tests/tests/extension/ezjscore/ezjscServerFunctionsPublishingQueueStatusTest.php"
     ]
   },
   "generated": {
