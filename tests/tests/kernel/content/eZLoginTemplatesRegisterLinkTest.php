@@ -7,6 +7,9 @@
  *  RL-02 - when the user may open user/register: the register link (or the Sign Up button) is there
  *  RL-03 - when not: it is not there, and the rest of the login form still is
  *  RL-04 - the fetch function can_open is declared by the user module, with the required parameter uri
+ *  RL-05 - admin4's login offers "Forgot your password?" only to a user who may open user/forgotpassword (asked
+ *          with the same fetch, once); before, it asked only whether the module exists, and an administration where
+ *          anonymous may not use user/forgotpassword showed a link to an access denied page
  *
  * Whether a user may open a view is expViewAccess's answer (tested in expViewAccessTest); here each template is
  * rendered as it is by eZTemplate::factory() (the kernel's operators, no database), with only that fetch call put in
@@ -25,6 +28,8 @@
 class eZLoginTemplatesRegisterLinkTest extends PHPUnit\Framework\TestCase
 {
     const FETCH = "fetch( 'user', 'can_open', hash( 'uri', 'user/register' ) )";
+    const FORGOT_FETCH = "fetch( 'user', 'can_open', hash( 'uri', 'user/forgotpassword' ) )";
+    const FORGOT_LOGIN = 'design/admin4/templates/user/login.tpl';
 
     /** @var string private directory of the prepared templates */
     private static $dir;
@@ -84,14 +89,15 @@ class eZLoginTemplatesRegisterLinkTest extends PHPUnit\Framework\TestCase
         return $current;
     }
 
-    private function render( $template, $mayRegister )
+    private function render( $template, $mayRegister, $mayResetPassword = false )
     {
         $source = file_get_contents( $template );
         $this->assertSame( 1, substr_count( $source, self::FETCH ), "RL-01 $template asks can_open once" );
         $file = self::$dir . '/' . md5( $template ) . '.tpl';
-        file_put_contents( $file, str_replace( self::FETCH, '$t1_may_register', $source ) );
+        file_put_contents( $file, str_replace( array( self::FETCH, self::FORGOT_FETCH ), array( '$t1_may_register', '$t1_may_reset' ), $source ) );
         $tpl = eZTemplate::factory();
         $tpl->setVariable( 't1_may_register', $mayRegister );
+        $tpl->setVariable( 't1_may_reset', $mayResetPassword );
         $tpl->setVariable( 'current_user', array( 'is_logged_in' => false ) );
         $tpl->setVariable( 'placement', 'toolbar-t1' );
         $handler = self::exceptionHandler();
@@ -106,6 +112,7 @@ class eZLoginTemplatesRegisterLinkTest extends PHPUnit\Framework\TestCase
             if ( self::exceptionHandler() !== $handler )
                 restore_exception_handler();
             $tpl->unsetVariable( 't1_may_register' );
+            $tpl->unsetVariable( 't1_may_reset' );
             $tpl->unsetVariable( 'current_user' );
             $tpl->unsetVariable( 'placement' );
         }
@@ -128,6 +135,23 @@ class eZLoginTemplatesRegisterLinkTest extends PHPUnit\Framework\TestCase
         $html = $this->render( $template, false );
         $this->assertStringNotContainsString( $registerText, $html );
         $this->assertStringNotContainsString( '/user/register', $html );
+        $this->assertStringContainsString( 'Login', $html, 'the login form is still there' );
+    }
+
+    /** RL-05 */
+    public function testForgotPasswordIsOfferedToWhoMayOpenIt()
+    {
+        $source = file_get_contents( self::FORGOT_LOGIN );
+        $this->assertSame( 1, substr_count( $source, self::FORGOT_FETCH ), 'admin4 login asks can_open for user/forgotpassword once' );
+        $this->assertStringNotContainsString( "\$forgot   = ezmodule( 'user/forgotpassword' )\n", $source, 'not only whether the module exists' );
+
+        $html = $this->render( self::FORGOT_LOGIN, false, true );
+        $this->assertStringContainsString( 'Forgot your password?', $html );
+        $this->assertStringContainsString( '/user/forgotpassword', $html );
+
+        $html = $this->render( self::FORGOT_LOGIN, false, false );
+        $this->assertStringNotContainsString( 'Forgot your password?', $html );
+        $this->assertStringNotContainsString( '/user/forgotpassword', $html );
         $this->assertStringContainsString( 'Login', $html, 'the login form is still there' );
     }
 
