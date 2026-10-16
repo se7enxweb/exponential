@@ -19,7 +19,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 41d738df70a7410b2527f55458f85edb  README.md
 fd07fac4ce74813bf1e9bda18fbcf1b0  SECURITY.md
 7a103568d7c533e99e2d7a5e9f1b5ffb  autoload.php
-d849705c2af882e902a150b751dc23a8  autoload/ezp_kernel.php
+119b97309e828a274cd8bf5ee4f22516  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -64,6 +64,7 @@ eded41434172db6c8697fe6ec6cfdbff  bin/php/contentcheck.php
 0a7d1915373ef3451e32dbafc6b08c6e  bin/php/convertprice2multiprice.php
 c0e2aa3b432485dd3e2c0edad20c76c5  bin/php/dfscleanup.php
 f0f67c88d699385e2c4f30e0c72a413f  bin/php/expcontentjob.php
+11d39b208faceec003544ef794daf0aa  bin/php/exploremipsumfill.php
 6a4db46d8822245538c5ab3e1a5ccc3a  bin/php/explovestack.php
 d740a85c5b65dab46bbba7402504fad0  bin/php/exprepair.php
 f37521856fa926fcc151f0d580022dd9  bin/php/ezapplytemplate.php
@@ -3048,7 +3049,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-4ace2cab0e249d059a7601bbbda4aeca  doc/changelogs/6.0/6.0.15.md
+77761ad039ffe9d9bc079780001106b8  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3551,7 +3552,7 @@ e6788c036282afd665d79ed6bb9c4d6d  doc/guides/benchmarking.md
 833921c92fe7cc4360fb5640748abb88  doc/guides/classic-menu-settings.md
 8f01bc44a84c119de29cd508fe41e05b  doc/guides/collected-information.md
 42311d8c175d353c9ffebeb9431bc599  doc/guides/content-history.md
-1ea30c32f369f09648245e751bf0b3fb  doc/guides/content-languages.md
+168f1e657cae2f6cf19d09ba7dec59b8  doc/guides/content-languages.md
 18e31f5585aae13ae85b1c108c48add9  doc/guides/content-model-and-editing.md
 f8d25fa0099e98f521de783195e11d7e  doc/guides/cronjobs.md
 9ea97a05fa2a16e68fe3ddeaf00535b2  doc/guides/deploying.md
@@ -3603,6 +3604,7 @@ fdcc1e0224cad899a30b1bfc699d942f  doc/guides/security-and-audit.md
 d6248fd6c8f6678c5868d0eb6023ea08  doc/guides/settings-page.md
 f52435ea65b9339e1191f8bbb8753638  doc/guides/system-information.md
 0336ade018fe7f75e7a16ce2eb7356c8  doc/guides/templates-and-design.md
+101e9fde2c108fc4cd8427efb0172a4b  doc/guides/test-language-lorem-ipsum.md
 dc5f0aedab105f984fc1d7e71761f4eb  doc/guides/two-factor-login.md
 06d9b73556412ec28f4c1fe7b5c7c58d  doc/guides/ui-switch-design.md
 a3afaf6d6a6b0da90d16514336b307ec  doc/guides/ui-switch-settings.md
@@ -3963,7 +3965,7 @@ e6d2e7ade028ccf4e972ed4ff1b8c589  doc/install/15-migrating-from-5x-legacy.md
 9141bf583876b5c6c08c3fad4c84a583  doc/install/16-migrating-from-ez-platform-and-ibexa.md
 c16be8cb22d2ac62ecb044e4af371544  doc/install/17-migration-reference.md
 ce0b3f77ce09c1b78d7b56dac34a2b38  doc/install/README.md
-cb6496d84df4c5b694bda1f411c2ab14  doc/languages.md
+8e41e41020b6e412c9a7477cdbcd9d7f  doc/languages.md
 96f498c48962f624f83d7484bd72ba84  doc/release-overview
 81b7485665e49e6de38b6e8a216c7136  doc/shop/classeshierarchy.html
 7a4ca93d7c8c4867763c5b42ee925a96  doc/shop/examples/paypal/extensionfiles.html
@@ -5014,6 +5016,7 @@ d8bfba7e3e116906a27e21641d61ef7b  kernel/classes/exppreloadlock.php
 a9ac5a2c24c07de96e640440ff067bd2  kernel/classes/expsetuplog.php
 ea1f5ed0f6fc16b6076cb12ed7599e93  kernel/classes/expsystemreport.php
 d1743b6d55d3d778b90feac8ba7b953f  kernel/classes/expsystemreportmask.php
+21c77a7f6ab0d4e081886665a6a6f721  kernel/classes/exptestlanguage.php
 0d6cdbe8ebbcc04f5b3df35ad85cd7e0  kernel/classes/expuserloginintegrity.php
 20a51a18f94f7589a62449120a3f9a43  kernel/classes/expvelocity.php
 3b2051fab9283e3c15ac1e5519951c5d  kernel/classes/expvelocityconfig.php
@@ -5277,8 +5280,8 @@ fabadefe859227abf70456f4a19589ea  kernel/classes/subitems/expsubitemsserverfunct
 c4b4bff7b28cecd22c0cc52d9add2ca4  kernel/classes/subitems/expsubitemstemplatecolumn.php
 9f325a13f16356d6183d4832718b343b  kernel/classes/uiswitch/expuiswitch.php
 a9e8a0b017ff2949bbc3b1259ba8d3dd  kernel/classes/uiswitch/expuiswitchdesignprovider.php
-4299341537c5706a048cb8cdec66a159  kernel/classes/uiswitch/expuiswitchlanguagecatalogue.php
-6eb557b726ba8453985a354c87e90c59  kernel/classes/uiswitch/expuiswitchlanguageprovider.php
+50879c7176083dad542328d42abc62ab  kernel/classes/uiswitch/expuiswitchlanguagecatalogue.php
+4ede808f8d946b3bfbd5834a36d17ad6  kernel/classes/uiswitch/expuiswitchlanguageprovider.php
 cece546e62048c9a1040f8bf4c0e80b4  kernel/classes/uiswitch/expuiswitchprovider.php
 5750863f551457691b6f01ba06b6a545  kernel/classes/uiswitch/expuiswitchproviderinterface.php
 593fab124343d47d9159f5daefdc2b93  kernel/classes/user/expregistrationadminaction.php
@@ -5499,6 +5502,7 @@ fc100209dee85f836a6d9ed383e3a0c1  kernel/private/classes/commands/collaborations
 f12e48ebe5663a2c1f489acdd31489af  kernel/private/classes/commands/convertprice2multiprice.php
 21a07ab99816048c850eb65e8735a3c7  kernel/private/classes/commands/dfscleanup.php
 629cddb79ec70350f282b31fd6fe7387  kernel/private/classes/commands/expcontentjob.php
+b11b999bd7841b665af7bdd08b288836  kernel/private/classes/commands/exploremipsumfill.php
 a9b9d8e9a77fb33ca2dc94227b9c3c4a  kernel/private/classes/commands/explovestack.php
 6d8a459160cce77e7dae6b0ca3d3cb37  kernel/private/classes/commands/ezapplytemplate.php
 7d2006d209eb3d149fc2036b08aa5fe8  kernel/private/classes/commands/ezasynchronouspublisher.php
@@ -6575,7 +6579,7 @@ aa1ac2879a1589cc5152361a5b6a87a2  settings/textfile.ini
 07043a08c7729eca52c81e7bca768cff  settings/texttoimage.ini
 79b1ecac748b56b0557db0578d643e1f  settings/toolbar.ini
 45add5bfcd26422edd3d6525dc832767  settings/transform.ini
-cb614c47757bb92da33d9e38baf7e3f2  settings/uiswitch.ini
+c5bc2495a1444c22868528876d6e76f0  settings/uiswitch.ini
 f23fe66b3019c3e623ade3854c3af1c5  settings/units.ini
 a053b7b38c86a24626be0de5c4370c9c  settings/upload.ini
 74908928bbc74857bb5e8102bef82d08  settings/velocity.ini
@@ -7195,6 +7199,7 @@ e7f0cbd790a477a0cbe559931eec65ec  share/locale/por-AO.ini
 98a0d62a6f771aa50a488cdbbf49bf51  share/locale/por-PT.ini
 db8b0e327e55105736724149b06c0fc7  share/locale/por-PT@euro.ini
 0ba713fccf2383c4aee08a557bf6a2e5  share/locale/pus-AF.ini
+c36ba672330a222086290ed0fbbea5e9  share/locale/qlo-ZZ.ini
 65f5e0f1dd48ed91e05efef27dae7b01  share/locale/que-PE.ini
 bb48e9b143c6062bb689c85c6b1d4a15  share/locale/ron-RO.ini
 bb49992c78eb95dc407fefc12e64863f  share/locale/rus-RU.ini
@@ -7325,7 +7330,7 @@ a4e7a187670959adc083b3b4ab09caca  tests/runtests.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 9ff58a769386f12831d56db2598e292e  tests/suite.php
-80b60e78d4ce7f2b3bd4ac68a2044457  tests/test-map.json
+5daf066bf87ae5938fc062552439f96f  tests/test-map.json
 8b29711fe10a56c5c5b90916f35d0a00  tests/tests/bin/phpcs/NoTypeDeclarationsSniffTest.php
 4e3eeb18c2ea423afb62388e5e3dcafc  tests/tests/bin/phpcs/fixtures/typedeclarations.inc
 a170729e7e161686001ae10895d34d53  tests/tests/design/AdminBaseStylesheetsTest.php
@@ -7749,6 +7754,7 @@ cf5d5388e5242328fbc1f6c199a8afd8  tests/tests/kernel/classes/expSectionOverviewT
 e85cd857ca31994bea49b35db2ab078f  tests/tests/kernel/classes/expShippedFeatureDefaultsTest.php
 c513b931571a3dd56abff2cfcdd557c6  tests/tests/kernel/classes/expSystemReportMaskTest.php
 0e63665c6be316de4385ab860a4aeff3  tests/tests/kernel/classes/expSystemReportTest.php
+c46fd8ef85c10a50ff801cd31cba5ed6  tests/tests/kernel/classes/expTestLanguageTest.php
 f0e7540561b9a7d039c5fee3b8912260  tests/tests/kernel/classes/expUrlAdminPagesTest.php
 808113843572bb212ca69e58f900b4dd  tests/tests/kernel/classes/expUserLoginIntegrityTest.php
 bd8b17b821244bcbd789b3b8b81fcb54  tests/tests/kernel/classes/expVelocityEnginesTest.php
@@ -7994,6 +8000,7 @@ a2ac644b2f632bc8978f9753406fa288  tests/tests/kernel/classes/trash/TrashedByColu
 097041d3f95ba130650a360ac06a08fa  tests/tests/kernel/classes/uiswitch/expUISwitchDesignProviderTest.php
 e5889fdfa1a05a3531442417623938b2  tests/tests/kernel/classes/uiswitch/expUISwitchLanguageProviderTest.php
 9e9196bdb9fc31635c0f3674910665d2  tests/tests/kernel/classes/uiswitch/expUISwitchTest.php
+16869d53d788cbb17b7831da7c4cadbf  tests/tests/kernel/classes/uiswitch/expUISwitchTestLanguageTest.php
 23908179beefb9ebfcc66883726b8fe1  tests/tests/kernel/classes/updatesql/CheckDbFilesVersionListTest.php
 68e7667ba121abeb9d36fd8d734c3249  tests/tests/kernel/classes/updatesql/PasswordHashWideningUpdateSqlTest.php
 f1df3a6b0e8d4e048219c7ebb80ceaaf  tests/tests/kernel/classes/updatesql/SixZeroPathSchemaUpdateSqlTest.php
