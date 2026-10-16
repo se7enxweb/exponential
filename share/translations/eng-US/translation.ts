@@ -38289,6 +38289,26 @@ your account.</translation>
         <source>Activate your account</source>
         <translation>Activate your account</translation>
     </message>
+    <message>
+        <source>Email</source>
+        <translation>Email</translation>
+    </message>
+    <message>
+        <source>Activate account</source>
+        <translation>Activate account</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Sign in</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>If the button does not work, copy this address into your browser: %url</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %siteurl because this email address was used to register an account.</source>
+        <translation>This mail was sent by %siteurl because this email address was used to register an account.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/visual/menuconfig</name>
@@ -53362,6 +53382,118 @@ your account.</translation>
         <source>%siteurl registration approved</source>
         <translation>%siteurl registration approved</translation>
     </message>
+    <message>
+        <source>New user registered</source>
+        <translation>New user registered</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Name</translation>
+    </message>
+    <message>
+        <source>Registered at</source>
+        <translation>Registered at</translation>
+    </message>
+    <message>
+        <source>Account status</source>
+        <translation>Account status</translation>
+    </message>
+    <message>
+        <source>Waiting for the user to confirm the email address.</source>
+        <translation>Waiting for the user to confirm the email address.</translation>
+    </message>
+    <message>
+        <source>You can activate the account now or wait until the user confirms the email address.</source>
+        <translation>You can activate the account now or wait until the user confirms the email address.</translation>
+    </message>
+    <message>
+        <source>Disabled until an administrator activates it.</source>
+        <translation>Disabled until an administrator activates it.</translation>
+    </message>
+    <message>
+        <source>The user cannot sign in until you activate the account.</source>
+        <translation>The user cannot sign in until you activate the account.</translation>
+    </message>
+    <message>
+        <source>Waiting for approval before it is published.</source>
+        <translation>Waiting for approval before it is published.</translation>
+    </message>
+    <message>
+        <source>The account is published only after it is approved.</source>
+        <translation>The account is published only after it is approved.</translation>
+    </message>
+    <message>
+        <source>Enabled, but not yet published.</source>
+        <translation>Enabled, but not yet published.</translation>
+    </message>
+    <message>
+        <source>Active.</source>
+        <translation>Active.</translation>
+    </message>
+    <message>
+        <source>Approve</source>
+        <translation>Approve</translation>
+    </message>
+    <message>
+        <source>Activate account</source>
+        <translation>Activate account</translation>
+    </message>
+    <message>
+        <source>View account</source>
+        <translation>View account</translation>
+    </message>
+    <message>
+        <source>Reject and remove</source>
+        <translation>Reject and remove</translation>
+    </message>
+    <message>
+        <source>Open approval item</source>
+        <translation>Open approval item</translation>
+    </message>
+    <message>
+        <source>All unactivated users</source>
+        <translation>All unactivated users</translation>
+    </message>
+    <message>
+        <source>These links open the administration. You need to sign in, and you are asked to confirm before anything changes. Links that change the account work once. All links stop working on %expires.</source>
+        <translation>These links open the administration. You need to sign in, and you are asked to confirm before anything changes. Links that change the account work once. All links stop working on %expires.</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %siteurl because a new user registered.</source>
+        <translation>This mail was sent by %siteurl because a new user registered.</translation>
+    </message>
+    <message>
+        <source>Confirm your email address</source>
+        <translation>Confirm your email address</translation>
+    </message>
+    <message>
+        <source>Click the button to confirm your email address and activate your account.</source>
+        <translation>Click the button to confirm your email address and activate your account.</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Sign in</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>If the button does not work, copy this address into your browser: %url</translation>
+    </message>
+    <message>
+        <source>If you did not register, you can ignore this mail.</source>
+        <translation>If you did not register, you can ignore this mail.</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %siteurl because this email address was used to register an account.</source>
+        <translation>This mail was sent by %siteurl because this email address was used to register an account.</translation>
+    </message>
+    <message>
+        <source>Your account is ready</source>
+        <translation>Your account is ready</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %siteurl because your registration was approved.</source>
+        <translation>This mail was sent by %siteurl because your registration was approved.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/visual/menuconfig</name>
@@ -63306,6 +63438,18 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Interface switch change</source>
         <translation>Interface switch change</translation>
     </message>
+    <message>
+        <source>Registration approve</source>
+        <translation>Registration approve</translation>
+    </message>
+    <message>
+        <source>Registration reject</source>
+        <translation>Registration reject</translation>
+    </message>
+    <message>
+        <source>Registration link refused</source>
+        <translation>Registration link refused</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard</name>
@@ -67688,6 +67832,184 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Back to the dashboard</source>
         <translation>Back to the dashboard</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/registration</name>
+    <message>
+        <source>New registration</source>
+        <translation>New registration</translation>
+    </message>
+    <message>
+        <source>This link cannot be used</source>
+        <translation>This link cannot be used</translation>
+    </message>
+    <message>
+        <source>Approve this registration?</source>
+        <translation>Approve this registration?</translation>
+    </message>
+    <message>
+        <source>Reject this registration?</source>
+        <translation>Reject this registration?</translation>
+    </message>
+    <message>
+        <source>Registration handled</source>
+        <translation>Registration handled</translation>
+    </message>
+    <message>
+        <source>The link has expired. Links in the mail work for a limited time; open the account from the list of unactivated users instead.</source>
+        <translation>The link has expired. Links in the mail work for a limited time; open the account from the list of unactivated users instead.</translation>
+    </message>
+    <message>
+        <source>The link has already been used. Each approve or reject link works once.</source>
+        <translation>The link has already been used. Each approve or reject link works once.</translation>
+    </message>
+    <message>
+        <source>The link is meant for another action.</source>
+        <translation>The link is meant for another action.</translation>
+    </message>
+    <message>
+        <source>The link is invalid: it is incomplete or has been changed. Copy the whole link from the mail.</source>
+        <translation>The link is invalid: it is incomplete or has been changed. Copy the whole link from the mail.</translation>
+    </message>
+    <message>
+        <source>Unactivated users</source>
+        <translation>Unactivated users</translation>
+    </message>
+    <message>
+        <source>The account has been activated and published. The user can sign in now.</source>
+        <translation>The account has been activated and published. The user can sign in now.</translation>
+    </message>
+    <message>
+        <source>The account has been activated; its publication is still waiting.</source>
+        <translation>The account has been activated; its publication is still waiting.</translation>
+    </message>
+    <message>
+        <source>The registration has been approved and the account published. The user can sign in now.</source>
+        <translation>The registration has been approved and the account published. The user can sign in now.</translation>
+    </message>
+    <message>
+        <source>The registration has been approved; its publication is still waiting.</source>
+        <translation>The registration has been approved; its publication is still waiting.</translation>
+    </message>
+    <message>
+        <source>The registration has been rejected and the account removed.</source>
+        <translation>The registration has been rejected and the account removed.</translation>
+    </message>
+    <message>
+        <source>Nothing was done: the account no longer exists.</source>
+        <translation>Nothing was done: the account no longer exists.</translation>
+    </message>
+    <message>
+        <source>Nothing was done: the account is not waiting for a decision any more.</source>
+        <translation>Nothing was done: the account is not waiting for a decision any more.</translation>
+    </message>
+    <message>
+        <source>There is nothing to do: the account no longer exists.</source>
+        <translation>There is nothing to do: the account no longer exists.</translation>
+    </message>
+    <message>
+        <source>There is nothing to do: the account is not waiting for a decision any more.</source>
+        <translation>There is nothing to do: the account is not waiting for a decision any more.</translation>
+    </message>
+    <message>
+        <source>Approving activates the account and completes the registration: the account is published and the user can sign in.</source>
+        <translation>Approving activates the account and completes the registration: the account is published and the user can sign in.</translation>
+    </message>
+    <message>
+        <source>Rejecting removes the account for good. The user is not told.</source>
+        <translation>Rejecting removes the account for good. The user is not told.</translation>
+    </message>
+    <message>
+        <source>Waiting for the user to confirm the e-mail address</source>
+        <translation>Waiting for the user to confirm the e-mail address</translation>
+    </message>
+    <message>
+        <source>Waiting for an administrator to activate it</source>
+        <translation>Waiting for an administrator to activate it</translation>
+    </message>
+    <message>
+        <source>Waiting for approval</source>
+        <translation>Waiting for approval</translation>
+    </message>
+    <message>
+        <source>Activated, publication still waiting</source>
+        <translation>Activated, publication still waiting</translation>
+    </message>
+    <message>
+        <source>Active</source>
+        <translation>Active</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Removed</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Login</translation>
+    </message>
+    <message>
+        <source>E-mail address</source>
+        <translation>E-mail address</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Registered</translation>
+    </message>
+    <message>
+        <source>ID</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Open the approval item</source>
+        <translation>Open the approval item</translation>
+    </message>
+    <message>
+        <source>Open the account</source>
+        <translation>Open the account</translation>
+    </message>
+    <message>
+        <source>Preview the account (not published yet)</source>
+        <translation>Preview the account (not published yet)</translation>
+    </message>
+    <message>
+        <source>The account no longer exists. It was removed, or the registration was rejected.</source>
+        <translation>The account no longer exists. It was removed, or the registration was rejected.</translation>
+    </message>
+    <message>
+        <source>Approve</source>
+        <translation>Approve</translation>
+    </message>
+    <message>
+        <source>Reject and remove</source>
+        <translation>Reject and remove</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
+    </message>
+    <message>
+        <source>Nothing has been changed yet.</source>
+        <translation>Nothing has been changed yet.</translation>
+    </message>
+    <message>
+        <source>Reject</source>
+        <translation>Reject</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Back to the account</translation>
+    </message>
+    <message>
+        <source>This link works until %date.</source>
+        <translation>This link works until %date.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/registration</name>
+    <message>
+        <source>New registration</source>
+        <translation>New registration</translation>
     </message>
 </context>
 </TS>

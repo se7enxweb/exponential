@@ -130,6 +130,37 @@ On the role page:
 
 Every action, here and on the role pages, needs the form token of the page. A request without it is refused with 403.
 
+**From the "New user registered" mail.** With `site.ini [UserSettings] RegistrationFeedback=email` every registration
+sends the administrator (`RegistrationEmail`, else `[MailSettings] AdminEmail`) an HTML mail with the account's
+details, its state and signed links: **View account**, **Activate account** (or **Approve** when a workflow's approval
+item holds it), **Reject and remove**, the approval item, and the list of unactivated users. Each opens
+`user/registration/<token>` in the administration, which needs you signed in with `user/activation` (or as approver
+of the waiting approval item) and asks you to confirm; opening a link changes nothing. Approve activates the account
+as **Activate selected users** does, or accepts the approval item and publishes the account at once; reject removes
+the account. Approve and reject links work once, every link expires. Details:
+[Signed links in the "New user registered" mail](../features/6.0/registration-admin-links.md).
+
+The settings, in `[UserSettings]` (best in `settings/override/site.ini.append.php`):
+
+| Setting | Default | What it does |
+|---|---|---|
+| `RegistrationAdminLinks` | `enabled` | `disabled`: the mail has no links and `user/registration` is not found |
+| `RegistrationAdminBaseURL` | empty | the address of the administration the links point to; empty: `https://` and the `SiteURL` of the administration siteaccess |
+| `RegistrationAdminSiteAccess` | empty | the administration siteaccess; empty: the one whose `[SiteSettings] FrontSiteAccess` is the current siteaccess, else `admin` |
+| `RegistrationActionTTL` | `604800` | how long a link works, in seconds (7 days) |
+
+```ini
+[UserSettings]
+RegistrationAdminBaseURL=https://admin.example.com
+# or, for an administration under a path of the site:
+# RegistrationAdminBaseURL=https://www.example.com/admin
+RegistrationActionTTL=259200
+```
+
+If the `SiteURL` of the administration siteaccess is not an address the administrator can reach from the mail (an
+internal host name, `localhost`, a siteaccess matched by port or by a path the `SiteURL` leaves out), set
+`RegistrationAdminBaseURL`; otherwise the links lead nowhere.
+
 For the accounts that did activate, **Users > Check user accounts** (`user/hygiene`) lists those never signed in,
 not seen for a long time, disabled, locked, orphaned or sharing an e-mail address, and disables, enables or unlocks
 them in bulk: [Check user accounts](../features/6.0/user-hygiene.md). With `[UserSettings]
@@ -183,7 +214,9 @@ policy *ezjscore / call* with the function list **ezjscnode**; a request whose c
 
 ## Who may do this
 
-- The role pages need access to the `role` module. The unactivated users page needs `user/activation`; Check user
+- The role pages need access to the `role` module. The unactivated users page needs `user/activation`, and so do
+  the approve and reject links of the "New user registered" mail (or being approver of the waiting approval item;
+  a view link also opens with `content/edit` on the account); Check user
   accounts needs `user/hygiene`, and `role/assign` for the e-mail addresses; Deactivate and move needs
   `user/deactivate`, and the content rights to move the account.
 - **Nobody gives more than they have.** With `site.ini [RoleSettings] PreventPrivilegeEscalation=enabled` (the
@@ -233,5 +266,6 @@ policy *ezjscore / call* with the function list **ezjscnode**; a request whose c
 
 - [Roles: policy IDs, sorting and order buttons](../features/6.0/role-policy-order.md)
 - [Role assignment paging](../features/6.0/role-assignment-paging.md)
+- [Signed links in the "New user registered" mail](../features/6.0/registration-admin-links.md)
 - [Sections](sections.md), [Object states](object-states.md), [Security and audit](security-and-audit.md)
 - [Changelog 6.0.15](../changelogs/6.0/6.0.15.md)

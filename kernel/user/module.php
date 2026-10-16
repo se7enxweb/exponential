@@ -151,6 +151,23 @@ $ViewList['deactivate'] = array(
     'params' => array(),
 );
 
+// The page of the signed links in the "New user registered" mail of the administrator (expRegistrationAdminAction):
+// user/registration/<token> shows the account (view) or asks to approve or reject it, and acts only on a POST of the
+// confirmation (ConfirmButton). Opens with user/login; the view checks the right to act itself (user/activation, an
+// approver of the waiting approval item, or content/edit on the account to view it).
+// See kernel/private/classes/views/user/registration.php
+$ViewList['registration'] = array(
+    'functions' => array( 'login' ),
+    'script' => 'registration.php',
+    'ui_context' => 'administration',
+    'default_navigation_part' => 'ezusernavigationpart',
+    'single_post_actions' => array(
+        'ConfirmButton' => 'Confirm',
+        'CancelButton' => 'Cancel',
+    ),
+    'params' => array( 'Token' ),
+);
+
 $SiteAccess = array(
     'name'=> 'SiteAccess',
     'values'=> array(),

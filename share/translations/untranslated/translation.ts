@@ -34214,6 +34214,26 @@ your account.</source>
         <source>Activate your account</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Email</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Activate account</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This mail was sent by %siteurl because this email address was used to register an account.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/visual/menuconfig</name>
@@ -49006,6 +49026,118 @@ your account.</source>
         <source>%siteurl registration approved</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>New user registered</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Registered at</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Account status</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Waiting for the user to confirm the email address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can activate the account now or wait until the user confirms the email address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disabled until an administrator activates it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The user cannot sign in until you activate the account.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Waiting for approval before it is published.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The account is published only after it is approved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enabled, but not yet published.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Active.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Approve</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Activate account</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View account</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reject and remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open approval item</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All unactivated users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>These links open the administration. You need to sign in, and you are asked to confirm before anything changes. Links that change the account work once. All links stop working on %expires.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This mail was sent by %siteurl because a new user registered.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Confirm your email address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Click the button to confirm your email address and activate your account.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If you did not register, you can ignore this mail.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This mail was sent by %siteurl because this email address was used to register an account.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your account is ready</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This mail was sent by %siteurl because your registration was approved.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/standard/visual/menuconfig</name>
@@ -55613,6 +55745,18 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Interface switch change</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Registration approve</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Registration reject</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Registration link refused</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/state/assign</name>
@@ -57223,6 +57367,184 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Back to the dashboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/registration</name>
+    <message>
+        <source>New registration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This link cannot be used</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Approve this registration?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reject this registration?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Registration handled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The link has expired. Links in the mail work for a limited time; open the account from the list of unactivated users instead.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The link has already been used. Each approve or reject link works once.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The link is meant for another action.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The link is invalid: it is incomplete or has been changed. Copy the whole link from the mail.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unactivated users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The account has been activated and published. The user can sign in now.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The account has been activated; its publication is still waiting.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The registration has been approved and the account published. The user can sign in now.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The registration has been approved; its publication is still waiting.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The registration has been rejected and the account removed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing was done: the account no longer exists.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing was done: the account is not waiting for a decision any more.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There is nothing to do: the account no longer exists.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There is nothing to do: the account is not waiting for a decision any more.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Approving activates the account and completes the registration: the account is published and the user can sign in.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rejecting removes the account for good. The user is not told.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Waiting for the user to confirm the e-mail address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Waiting for an administrator to activate it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Waiting for approval</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Activated, publication still waiting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Active</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>E-mail address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open the approval item</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open the account</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preview the account (not published yet)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The account no longer exists. It was removed, or the registration was rejected.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Approve</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reject and remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing has been changed yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reject</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This link works until %date.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/registration</name>
+    <message>
+        <source>New registration</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -41266,6 +41266,26 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
         <source>Activate your account</source>
         <translation>Aktivieren Sie Ihr Konto</translation>
     </message>
+    <message>
+        <source>Email</source>
+        <translation>E-Mail</translation>
+    </message>
+    <message>
+        <source>Activate account</source>
+        <translation>Konto aktivieren</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Anmelden</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Falls die Schaltfläche nicht funktioniert, kopieren Sie diese Adresse in Ihren Browser: %url</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %siteurl because this email address was used to register an account.</source>
+        <translation>Diese E-Mail wurde von %siteurl gesendet, weil mit dieser E-Mail-Adresse ein Konto registriert wurde.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/visual/menuconfig</name>
@@ -59398,6 +59418,118 @@ Bitte folgen Sie den Hinweisen in der Email, um Ihr Konto zu aktivieren.</transl
         <source>%siteurl registration approved</source>
         <translation>%siteurl: Registrierung freigegeben</translation>
     </message>
+    <message>
+        <source>New user registered</source>
+        <translation>Neuer Benutzer registriert</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Name</translation>
+    </message>
+    <message>
+        <source>Registered at</source>
+        <translation>Registriert am</translation>
+    </message>
+    <message>
+        <source>Account status</source>
+        <translation>Kontostatus</translation>
+    </message>
+    <message>
+        <source>Waiting for the user to confirm the email address.</source>
+        <translation>Wartet darauf, dass der Benutzer die E-Mail-Adresse bestätigt.</translation>
+    </message>
+    <message>
+        <source>You can activate the account now or wait until the user confirms the email address.</source>
+        <translation>Sie können das Konto jetzt aktivieren oder warten, bis der Benutzer die E-Mail-Adresse bestätigt.</translation>
+    </message>
+    <message>
+        <source>Disabled until an administrator activates it.</source>
+        <translation>Deaktiviert, bis ein Administrator es aktiviert.</translation>
+    </message>
+    <message>
+        <source>The user cannot sign in until you activate the account.</source>
+        <translation>Der Benutzer kann sich erst anmelden, wenn Sie das Konto aktivieren.</translation>
+    </message>
+    <message>
+        <source>Waiting for approval before it is published.</source>
+        <translation>Wartet vor der Veröffentlichung auf Freigabe.</translation>
+    </message>
+    <message>
+        <source>The account is published only after it is approved.</source>
+        <translation>Das Konto wird erst nach der Freigabe veröffentlicht.</translation>
+    </message>
+    <message>
+        <source>Enabled, but not yet published.</source>
+        <translation>Aktiviert, aber noch nicht veröffentlicht.</translation>
+    </message>
+    <message>
+        <source>Active.</source>
+        <translation>Aktiv.</translation>
+    </message>
+    <message>
+        <source>Approve</source>
+        <translation>Freigeben</translation>
+    </message>
+    <message>
+        <source>Activate account</source>
+        <translation>Konto aktivieren</translation>
+    </message>
+    <message>
+        <source>View account</source>
+        <translation>Konto ansehen</translation>
+    </message>
+    <message>
+        <source>Reject and remove</source>
+        <translation>Ablehnen und entfernen</translation>
+    </message>
+    <message>
+        <source>Open approval item</source>
+        <translation>Freigabeeintrag öffnen</translation>
+    </message>
+    <message>
+        <source>All unactivated users</source>
+        <translation>Alle nicht aktivierten Benutzer</translation>
+    </message>
+    <message>
+        <source>These links open the administration. You need to sign in, and you are asked to confirm before anything changes. Links that change the account work once. All links stop working on %expires.</source>
+        <translation>Diese Links öffnen die Administration. Sie müssen sich anmelden und werden vor jeder Änderung um Bestätigung gebeten. Links, die das Konto ändern, funktionieren nur einmal. Alle Links verlieren am %expires ihre Gültigkeit.</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %siteurl because a new user registered.</source>
+        <translation>Diese E-Mail wurde von %siteurl gesendet, weil sich ein neuer Benutzer registriert hat.</translation>
+    </message>
+    <message>
+        <source>Confirm your email address</source>
+        <translation>Bestätigen Sie Ihre E-Mail-Adresse</translation>
+    </message>
+    <message>
+        <source>Click the button to confirm your email address and activate your account.</source>
+        <translation>Klicken Sie auf die Schaltfläche, um Ihre E-Mail-Adresse zu bestätigen und Ihr Konto zu aktivieren.</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Anmelden</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Falls die Schaltfläche nicht funktioniert, kopieren Sie diese Adresse in Ihren Browser: %url</translation>
+    </message>
+    <message>
+        <source>If you did not register, you can ignore this mail.</source>
+        <translation>Wenn Sie sich nicht registriert haben, können Sie diese E-Mail ignorieren.</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %siteurl because this email address was used to register an account.</source>
+        <translation>Diese E-Mail wurde von %siteurl gesendet, weil mit dieser E-Mail-Adresse ein Konto registriert wurde.</translation>
+    </message>
+    <message>
+        <source>Your account is ready</source>
+        <translation>Ihr Konto ist bereit</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %siteurl because your registration was approved.</source>
+        <translation>Diese E-Mail wurde von %siteurl gesendet, weil Ihre Registrierung freigegeben wurde.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/visual/menuconfig</name>
@@ -70855,6 +70987,18 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Interface switch change</source>
         <translation>Oberflächenauswahl geändert</translation>
     </message>
+    <message>
+        <source>Registration approve</source>
+        <translation>Registrierung freigegeben</translation>
+    </message>
+    <message>
+        <source>Registration reject</source>
+        <translation>Registrierung abgelehnt</translation>
+    </message>
+    <message>
+        <source>Registration link refused</source>
+        <translation>Registrierungslink abgewiesen</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard</name>
@@ -74275,6 +74419,184 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Back to the dashboard</source>
         <translation>Zurück zum Dashboard</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/registration</name>
+    <message>
+        <source>New registration</source>
+        <translation>Neue Registrierung</translation>
+    </message>
+    <message>
+        <source>This link cannot be used</source>
+        <translation>Dieser Link kann nicht verwendet werden</translation>
+    </message>
+    <message>
+        <source>Approve this registration?</source>
+        <translation>Diese Registrierung freigeben?</translation>
+    </message>
+    <message>
+        <source>Reject this registration?</source>
+        <translation>Diese Registrierung ablehnen?</translation>
+    </message>
+    <message>
+        <source>Registration handled</source>
+        <translation>Registrierung bearbeitet</translation>
+    </message>
+    <message>
+        <source>The link has expired. Links in the mail work for a limited time; open the account from the list of unactivated users instead.</source>
+        <translation>Der Link ist abgelaufen. Links in der E-Mail gelten nur für begrenzte Zeit; öffnen Sie das Konto stattdessen über die Liste der nicht aktivierten Benutzer.</translation>
+    </message>
+    <message>
+        <source>The link has already been used. Each approve or reject link works once.</source>
+        <translation>Der Link wurde bereits verwendet. Jeder Link zum Freigeben oder Ablehnen funktioniert nur einmal.</translation>
+    </message>
+    <message>
+        <source>The link is meant for another action.</source>
+        <translation>Der Link gehört zu einer anderen Aktion.</translation>
+    </message>
+    <message>
+        <source>The link is invalid: it is incomplete or has been changed. Copy the whole link from the mail.</source>
+        <translation>Der Link ist ungültig: Er ist unvollständig oder wurde verändert. Kopieren Sie den vollständigen Link aus der E-Mail.</translation>
+    </message>
+    <message>
+        <source>Unactivated users</source>
+        <translation>Nicht aktivierte Benutzer</translation>
+    </message>
+    <message>
+        <source>The account has been activated and published. The user can sign in now.</source>
+        <translation>Das Konto wurde aktiviert und veröffentlicht. Der Benutzer kann sich jetzt anmelden.</translation>
+    </message>
+    <message>
+        <source>The account has been activated; its publication is still waiting.</source>
+        <translation>Das Konto wurde aktiviert; seine Veröffentlichung steht noch aus.</translation>
+    </message>
+    <message>
+        <source>The registration has been approved and the account published. The user can sign in now.</source>
+        <translation>Die Registrierung wurde freigegeben und das Konto veröffentlicht. Der Benutzer kann sich jetzt anmelden.</translation>
+    </message>
+    <message>
+        <source>The registration has been approved; its publication is still waiting.</source>
+        <translation>Die Registrierung wurde freigegeben; die Veröffentlichung steht noch aus.</translation>
+    </message>
+    <message>
+        <source>The registration has been rejected and the account removed.</source>
+        <translation>Die Registrierung wurde abgelehnt und das Konto entfernt.</translation>
+    </message>
+    <message>
+        <source>Nothing was done: the account no longer exists.</source>
+        <translation>Es wurde nichts getan: Das Konto existiert nicht mehr.</translation>
+    </message>
+    <message>
+        <source>Nothing was done: the account is not waiting for a decision any more.</source>
+        <translation>Es wurde nichts getan: Das Konto wartet nicht mehr auf eine Entscheidung.</translation>
+    </message>
+    <message>
+        <source>There is nothing to do: the account no longer exists.</source>
+        <translation>Nichts zu tun: Das Konto existiert nicht mehr.</translation>
+    </message>
+    <message>
+        <source>There is nothing to do: the account is not waiting for a decision any more.</source>
+        <translation>Nichts zu tun: Das Konto wartet nicht mehr auf eine Entscheidung.</translation>
+    </message>
+    <message>
+        <source>Approving activates the account and completes the registration: the account is published and the user can sign in.</source>
+        <translation>Die Freigabe aktiviert das Konto und schließt die Registrierung ab: Das Konto wird veröffentlicht und der Benutzer kann sich anmelden.</translation>
+    </message>
+    <message>
+        <source>Rejecting removes the account for good. The user is not told.</source>
+        <translation>Die Ablehnung entfernt das Konto endgültig. Der Benutzer wird nicht benachrichtigt.</translation>
+    </message>
+    <message>
+        <source>Waiting for the user to confirm the e-mail address</source>
+        <translation>Wartet auf die Bestätigung der E-Mail-Adresse durch den Benutzer</translation>
+    </message>
+    <message>
+        <source>Waiting for an administrator to activate it</source>
+        <translation>Wartet auf die Aktivierung durch einen Administrator</translation>
+    </message>
+    <message>
+        <source>Waiting for approval</source>
+        <translation>Wartet auf Freigabe</translation>
+    </message>
+    <message>
+        <source>Activated, publication still waiting</source>
+        <translation>Aktiviert, Veröffentlichung steht noch aus</translation>
+    </message>
+    <message>
+        <source>Active</source>
+        <translation>Aktiv</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Entfernt</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Login</translation>
+    </message>
+    <message>
+        <source>E-mail address</source>
+        <translation>E-Mail-Adresse</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Registriert</translation>
+    </message>
+    <message>
+        <source>ID</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Open the approval item</source>
+        <translation>Freigabeeintrag öffnen</translation>
+    </message>
+    <message>
+        <source>Open the account</source>
+        <translation>Konto öffnen</translation>
+    </message>
+    <message>
+        <source>Preview the account (not published yet)</source>
+        <translation>Vorschau des Kontos (noch nicht veröffentlicht)</translation>
+    </message>
+    <message>
+        <source>The account no longer exists. It was removed, or the registration was rejected.</source>
+        <translation>Das Konto existiert nicht mehr. Es wurde entfernt oder die Registrierung wurde abgelehnt.</translation>
+    </message>
+    <message>
+        <source>Approve</source>
+        <translation>Freigeben</translation>
+    </message>
+    <message>
+        <source>Reject and remove</source>
+        <translation>Ablehnen und entfernen</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abbrechen</translation>
+    </message>
+    <message>
+        <source>Nothing has been changed yet.</source>
+        <translation>Es wurde noch nichts geändert.</translation>
+    </message>
+    <message>
+        <source>Reject</source>
+        <translation>Ablehnen</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Zurück zum Konto</translation>
+    </message>
+    <message>
+        <source>This link works until %date.</source>
+        <translation>Dieser Link gilt bis %date.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/registration</name>
+    <message>
+        <source>New registration</source>
+        <translation>Neue Registrierung</translation>
     </message>
 </context>
 </TS>

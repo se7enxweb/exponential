@@ -37,6 +37,37 @@
       "tests/tests/kernel/classes/security/expFileModeLimitsTest.php",
       "tests/tests/design/AdminStylingRulesTest.php"
     ],
+    "kernel/classes/mail/expmailtemplatebody.php": [
+      "tests/tests/kernel/classes/mail/expMailTemplateBodyTest.php",
+      "tests/tests/kernel/classes/user/expRegistrationUserMailsTest.php"
+    ],
+    "design/standard/templates/user/registrationinfo.tpl": [
+      "tests/tests/kernel/classes/user/expRegistrationUserMailsTest.php"
+    ],
+    "design/standard/templates/user/registrationapproved.tpl": [
+      "tests/tests/kernel/classes/user/expRegistrationUserMailsTest.php"
+    ],
+    "design/standard/templates/user/unactivated_resend_mail.tpl": [
+      "tests/tests/kernel/classes/user/expRegistrationUserMailsTest.php"
+    ],
+    "kernel/classes/user/expunactivatedusers.php": [
+      "tests/tests/kernel/classes/user/expRegistrationUserMailsTest.php"
+    ],
+    "kernel/classes/user/expregistrationadminaction.php": [
+      "tests/tests/kernel/classes/user/expRegistrationAdminActionTest.php"
+    ],
+    "kernel/private/classes/views/user/registration.php": [
+      "tests/tests/kernel/classes/user/expRegistrationAdminActionTest.php"
+    ],
+    "kernel/private/classes/views/user/register.php": [
+      "tests/tests/kernel/classes/user/expRegistrationFeedbackMailTest.php"
+    ],
+    "design/standard/templates/user/registrationfeedback.tpl": [
+      "tests/tests/kernel/classes/user/expRegistrationFeedbackMailTest.php"
+    ],
+    "design/standard/templates/mail/*": [
+      "tests/tests/kernel/classes/user/expRegistrationFeedbackMailTest.php"
+    ],
     "kernel/classes/user/expuserdeactivation.php": [
       "tests/tests/kernel/classes/user/expUserDeactivationTest.php",
       "tests/tests/kernel/classes/user/expUserDeactivationLiveTest.php"

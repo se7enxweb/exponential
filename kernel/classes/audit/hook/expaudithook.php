@@ -38,6 +38,7 @@ class expAuditHook
      */
     public static $verbs = array(
         'access.permission.refused' => 'access',
+        'access.registration.refused' => 'access',
         'access.token.refused' => 'post',
         'access.user.deactivate_move' => 'disable',
         'access.user.deactivated_group.create' => 'create',

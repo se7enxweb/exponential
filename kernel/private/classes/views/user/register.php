@@ -60,10 +60,37 @@ if ( !function_exists( 'checkContentActions' ) )
                         $tpl->setVariable( 'user', $user );
                         $tpl->setVariable( 'object', $object );
                         $tpl->setVariable( 'hostname', $hostname );
+                        // the signed links to the administration (view, approve, reject; the approval item when one
+                        // waits) and the state of the account (expRegistrationAdminAction, user/registration)
+                        $registrationLinks = false;
+                        $registrationState = false;
+                        if ( class_exists( 'expRegistrationAdminAction' ) && $user instanceof eZUser && expRegistrationAdminAction::enabled() )
+                        {
+                            try
+                            {
+                                $registrationLinks = expRegistrationAdminAction::links( $userID );
+                                $registrationState = expRegistrationAdminAction::state( $userID );
+                            }
+                            catch ( Throwable $e )
+                            {
+                                eZDebug::writeError( 'No administration links for the registration mail: ' . $e->getMessage(), 'user/register' );
+                                $registrationLinks = false;
+                            }
+                        }
+                        $tpl->setVariable( 'registration_links', $registrationLinks );
+                        $tpl->setVariable( 'registration_state', $registrationState );
                         $templateResult = $tpl->fetch( 'design:user/registrationfeedback.tpl' );
 
-                        if ( $tpl->hasVariable( 'content_type' ) )
-                            $mail->setContentType( $tpl->variable( 'content_type' ) );
+                        // the body: an HTML mail with a plain-text part when the template sets content_type text/html
+                        // and body_text, else as the template says (expMailTemplateBody)
+                        if ( class_exists( 'expMailTemplateBody' ) )
+                            expMailTemplateBody::apply( $mail, $tpl, $templateResult );
+                        else
+                        {
+                            if ( $tpl->hasVariable( 'content_type' ) )
+                                $mail->setContentType( $tpl->variable( 'content_type' ) );
+                            $mail->setBody( $templateResult );
+                        }
 
                         $emailSender = $ini->variable( 'MailSettings', 'EmailSender' );
                         if ( $tpl->hasVariable( 'email_sender' ) )
@@ -85,7 +112,6 @@ if ( !function_exists( 'checkContentActions' ) )
                         $mail->setSender( $emailSender );
                         $mail->setReceiver( $feedbackReceiver );
                         $mail->setSubject( $subject );
-                        $mail->setBody( $templateResult );
                         $mail->setCategory( 'admin' );
                         $mailResult = eZMailTransport::send( $mail );
                     } break;

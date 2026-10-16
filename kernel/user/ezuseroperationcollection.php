@@ -165,7 +165,12 @@ class eZUserOperationCollection
             $receiver = $user->attribute( 'email' );
             $mail->setReceiver( $receiver );
             $mail->setSubject( $subject );
-            $mail->setBody( $templateResult );
+            // the body: an HTML mail with a plain-text part when the template sets content_type text/html and
+            // body_text, else as the template says (expMailTemplateBody)
+            if ( class_exists( 'expMailTemplateBody' ) )
+                expMailTemplateBody::apply( $mail, $tpl, $templateResult );
+            else
+                $mail->setBody( $templateResult );
             $mail->setCategory( 'security' );
             $mailResult = eZMailTransport::send( $mail );
         }
@@ -262,7 +267,12 @@ class eZUserOperationCollection
         $receiver = $user->attribute( 'email' );
         $mail->setReceiver( $receiver );
         $mail->setSubject( $subject );
-        $mail->setBody( $templateResult );
+        // the body: an HTML mail with a plain-text part when the template sets content_type text/html and
+        // body_text, else as the template says (expMailTemplateBody)
+        if ( class_exists( 'expMailTemplateBody' ) )
+            expMailTemplateBody::apply( $mail, $tpl, $templateResult );
+        else
+            $mail->setBody( $templateResult );
         $mail->setCategory( 'security' );
         $mailResult = eZMailTransport::send( $mail );
 

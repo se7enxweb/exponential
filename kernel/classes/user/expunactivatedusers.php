@@ -471,7 +471,12 @@ class expUnactivatedUsers
         $mail->setContentType( $ini->variable( 'MailSettings', 'ContentType' ) );
         $mail->setReceiver( $email );
         $mail->setSubject( trim( $subject ) );
-        $mail->setBody( $body );
+        // the body: an HTML mail with a plain-text part when the template sets content_type text/html and body_text,
+        // else as the template says (expMailTemplateBody)
+        if ( class_exists( 'expMailTemplateBody' ) )
+            expMailTemplateBody::apply( $mail, $tpl, $body );
+        else
+            $mail->setBody( $body );
         // The category of the registration mail: essential, the mail gate never holds it back
         $mail->setCategory( 'security' );
 
