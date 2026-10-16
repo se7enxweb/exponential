@@ -4971,6 +4971,10 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>right to left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>The name of the language is taken from the locale. A language chosen here wins over the custom fields below.</source>
         <translation type="unfinished"></translation>
     </message>

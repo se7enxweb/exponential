@@ -5298,6 +5298,10 @@
         <translation>already added</translation>
     </message>
     <message>
+        <source>right to left</source>
+        <translation>right to left</translation>
+    </message>
+    <message>
         <source>The name of the language is taken from the locale. A language chosen here wins over the custom fields below.</source>
         <translation>The name of the language is taken from the locale. A language chosen here wins over the custom fields below.</translation>
     </message>

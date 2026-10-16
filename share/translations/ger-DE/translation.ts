@@ -6298,6 +6298,10 @@
         <translation>bereits hinzugefügt</translation>
     </message>
     <message>
+        <source>right to left</source>
+        <translation>von rechts nach links</translation>
+    </message>
+    <message>
         <source>The name of the language is taken from the locale. A language chosen here wins over the custom fields below.</source>
         <translation>Der Name der Sprache wird aus der Locale übernommen. Eine hier gewählte Sprache hat Vorrang vor den Feldern unten.</translation>
     </message>
