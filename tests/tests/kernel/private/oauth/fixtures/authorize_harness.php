@@ -27,6 +27,9 @@ function response( $httpHeader, $location = null )
     harnessResult( array( 'status' => $httpHeader, 'location' => $location ) );
 }
 
+// The stand-ins are declared through eval(): written as class declarations here, the autoload generator (which
+// walks tests/ with -s) would map the kernel's class names to this script, and loading a class would run it.
+eval( <<<'STANDINS'
 class eZHTTPTool
 {
     public static function instance() { return new self(); }
@@ -61,6 +64,8 @@ class eZUser
 {
     public static function currentUser() { harnessResult( array( 'reached' => 'login' ) ); }
 }
+STANDINS
+);
 
 $Params = array( 'Module' => null );
 require dirname( __DIR__, 6 ) . '/kernel/private/modules/oauth/authorize.php';

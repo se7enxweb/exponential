@@ -18,6 +18,9 @@
 
 $GLOBALS['harnessCase'] = json_decode( $argv[1], true );
 
+// The stand-ins are declared through eval(): written as class declarations here, the autoload generator (which
+// walks tests/ with -s) would map the kernel's class names to this script, and loading a class would run it.
+eval( <<<'STANDINS'
 class ezjscServerFunctions
 {
 }
@@ -93,6 +96,8 @@ class ezpContentPublishingProcess
         return null;
     }
 }
+STANDINS
+);
 
 require dirname( __DIR__, 5 ) . '/extension/ezjscore/classes/ezjscserverfunctionspublishingqueue.php';
 

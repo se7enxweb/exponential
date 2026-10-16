@@ -85,4 +85,14 @@ class ezjscServerFunctionsPublishingQueueStatusTest extends PHPUnit\Framework\Te
         $this->assertSame( array( 'error' => 'status is not supported. Reason: Missing argument(s).' ),
                            $this->callStatus( array( 'args' => array( '7' ), 'canRead' => true ) ) );
     }
+
+    public function testTheAutoloadGeneratorFindsNoClassInTheHarness()
+    {
+        // the stand-ins carry kernel class names; declared as classes, ezpgenerateautoloads.php -s would map them to
+        // the harness, a script that runs when it is loaded
+        $tokens = token_get_all( (string)file_get_contents( __DIR__ . '/fixtures/publishingqueue_harness.php' ) );
+        $this->assertNotEmpty( $tokens );
+        foreach ( $tokens as $token )
+            $this->assertFalse( is_array( $token ) && in_array( $token[0], array( T_CLASS, T_INTERFACE, T_TRAIT ), true ), 'a class declaration in the harness' );
+    }
 }

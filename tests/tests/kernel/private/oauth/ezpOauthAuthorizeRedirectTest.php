@@ -73,4 +73,14 @@ class ezpOauthAuthorizeRedirectTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'reached' => 'login' ),
                            $this->authorize( array( 'redirect_uri' => self::ENDPOINT, 'client_id' => 'known-client', 'response_type' => 'code' ) ) );
     }
+
+    public function testTheAutoloadGeneratorFindsNoClassInTheHarness()
+    {
+        // the stand-ins carry kernel class names; declared as classes, ezpgenerateautoloads.php -s would map them to
+        // the harness, a script that runs when it is loaded
+        $tokens = token_get_all( (string)file_get_contents( __DIR__ . '/fixtures/authorize_harness.php' ) );
+        $this->assertNotEmpty( $tokens );
+        foreach ( $tokens as $token )
+            $this->assertFalse( is_array( $token ) && in_array( $token[0], array( T_CLASS, T_INTERFACE, T_TRAIT ), true ), 'a class declaration in the harness' );
+    }
 }
