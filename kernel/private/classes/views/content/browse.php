@@ -51,6 +51,20 @@ class Browse extends \Exponential\Runnable\ModuleView
             return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_NOT_FOUND, 'kernel' ) );
         }
 
+        // admin4 review 15.10.2026: parameters left in the session by an old edit session return to a draft that is
+        // gone, and Cancel ended on "not available". Such parameters belong to no browse in progress: drop them.
+        $browseParameters = $http->sessionVariable( 'BrowseParameters' );
+        $returnTarget = \eZContentBrowse::editReturnTarget( is_array( $browseParameters ) && isset( $browseParameters['from_page'] ) ? $browseParameters['from_page'] : false );
+        if ( $returnTarget !== false )
+        {
+            $returnObject = \eZContentObject::fetch( $returnTarget[0] );
+            if ( !$returnObject || ( $returnTarget[1] !== false && !$returnObject->version( $returnTarget[1] ) ) )
+            {
+                $http->removeSessionVariable( 'BrowseParameters' );
+                return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_NOT_FOUND, 'kernel' ) );
+            }
+        }
+
         // Check if node parameters exist
         $browse = new \eZContentBrowse();
         if ( !isset( $Params['NodeID'] ) && !isset( $Params['NodeList'] ) && !$browse->hasAttribute( 'start_node' ) )

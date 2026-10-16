@@ -220,6 +220,29 @@ class eZContentBrowse
 
     /*!
      \static
+     The object and version a browse request returns to, when \a $page is the edit page of a draft
+     (content/edit/<object id>[/<version>[/<language>]]), or \c false for any other page.
+
+     admin4 review 15.10.2026: BrowseParameters stay in the session after a browse ended without
+     a result, so opening /content/browse/2 directly reused the from_page of an old edit
+     session, and "Cancel" led to content/edit of a draft that no longer exists (error 3, "not
+     available"). kernel/content/browse.php uses this to recognise such a stale return page.
+
+     \return array( object id, version or \c false ) or \c false
+    */
+    static function editReturnTarget( $page )
+    {
+        if ( !is_string( $page ) ||
+             !preg_match( '#^/?(?:[^/]+/)?content/edit/(\d+)(?:/(\d+))?(?:/|$)#', trim( $page ), $matches ) )
+        {
+            return false;
+        }
+
+        return array( (int)$matches[1], isset( $matches[2] ) && $matches[2] !== '' ? (int)$matches[2] : false );
+    }
+
+    /*!
+     \static
      \return the node ID for the node alias \a $nodeName or \c false if no ID could be found.
     */
     static function nodeAliasID( $nodeName )
