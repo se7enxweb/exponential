@@ -2774,7 +2774,7 @@ eca5d5ed39fdf3334394887dad070c6e  design/standard/templates/user/password_change
 0df6c6679df5971b6ce443d1bd0fe421  design/standard/templates/user/preferences_confirm.tpl
 403ede2a718a1989f8627ad885554040  design/standard/templates/user/register.tpl
 ed5856b59fd9402bdad145c9c129582b  design/standard/templates/user/register_user_not_valid.tpl
-938cd9a8633a779408711dc04ba90e4b  design/standard/templates/user/registration.tpl
+8fbe1f4665cf9c6381474f3cec2e4d0e  design/standard/templates/user/registration.tpl
 be1ed870602e97378284d47a65ab8fb5  design/standard/templates/user/registrationapproved.tpl
 291f26bc12b3d0d3e050ee693489fdfe  design/standard/templates/user/registrationfeedback.tpl
 1cfd990147a2ddb88d6e21689efdb4a9  design/standard/templates/user/registrationinfo.tpl
@@ -3515,7 +3515,7 @@ bd00eb2e724c0f4f3612917275e79456  doc/features/6.0/preload-sites-view.md
 c8b45dbcdc4ce2930ae9d5bf6cbcf7f4  doc/features/6.0/quality-checks.md
 b44b9ac50952ac2e8f16cbb8f32b9b1b  doc/features/6.0/rad-tools.md
 08e9e00824933e2b7737283320b6e967  doc/features/6.0/rebranding-to-exponential.md
-b9eb35e498af2b252826737d5c94d661  doc/features/6.0/registration-admin-links.md
+6a7f7df92abdbc6a724d6b7e43addedf  doc/features/6.0/registration-admin-links.md
 12527c047b3b9350ebd0481dcb338531  doc/features/6.0/remote-services-expservices.md
 f9c24ee19f2caf2e1326cf5158b46bfc  doc/features/6.0/repair-from-the-browser.md
 d19ac2813afb3d92cc981015c8ecdfc1  doc/features/6.0/request-rules.md
@@ -5303,7 +5303,7 @@ a9e8a0b017ff2949bbc3b1259ba8d3dd  kernel/classes/uiswitch/expuiswitchdesignprovi
 4ede808f8d946b3bfbd5834a36d17ad6  kernel/classes/uiswitch/expuiswitchlanguageprovider.php
 cece546e62048c9a1040f8bf4c0e80b4  kernel/classes/uiswitch/expuiswitchprovider.php
 5750863f551457691b6f01ba06b6a545  kernel/classes/uiswitch/expuiswitchproviderinterface.php
-593fab124343d47d9159f5daefdc2b93  kernel/classes/user/expregistrationadminaction.php
+b6fd3d4b6e47fadf95e4790620366f14  kernel/classes/user/expregistrationadminaction.php
 4117ebb18983271f3e2f4b9718cbafcb  kernel/classes/user/expunactivatedusers.php
 1ecb253917d292bef2be612baaec6156  kernel/classes/user/expuseraccountoverview.php
 9caa506cdf2fa71f5b6bbce3e2a4654b  kernel/classes/user/expuseraccountstatus.php
@@ -5911,7 +5911,7 @@ b2b3220d7fc35dbeab4b3cec4e5cda74  kernel/private/classes/views/user/megamenu.php
 d407061c56d24d97e47bb1d720fe70b7  kernel/private/classes/views/user/password.php
 9e2edab7f4675a218b2763142a1f27d1  kernel/private/classes/views/user/preferences.php
 d427b343b4930630764393115fe79e9e  kernel/private/classes/views/user/register.php
-f24f7eaddcdc9fe3cb1e858c1b177049  kernel/private/classes/views/user/registration.php
+893e605acb7e5b1831c7d0e1429a07f7  kernel/private/classes/views/user/registration.php
 15ff684909ba08e97c297c40efe2787f  kernel/private/classes/views/user/setting.php
 393719bcd2072ce08507c375dddfdc9d  kernel/private/classes/views/user/success.php
 1fc32fef56eadc6da767ced651e2cca4  kernel/private/classes/views/user/unactivated.php
@@ -8118,7 +8118,7 @@ bfd5243f3cecb3a2a1bd784cfa3398f7  tests/tests/kernel/classes/urlaliasml_regressi
 b960f0cb6775954a66e51c42bd80c882  tests/tests/kernel/classes/urlaliasml_test.php
 b6f45ce384a24cccf17ed74d9da7c988  tests/tests/kernel/classes/user/expPasswordPolicyTest.php
 972ceff89325d374430b9f9d976d4f69  tests/tests/kernel/classes/user/expPasswordSessionStampTest.php
-3a960168ccee3f916530935b5f3a650d  tests/tests/kernel/classes/user/expRegistrationAdminActionTest.php
+ef76664b2fbed14fd6c6ac43e4e029a5  tests/tests/kernel/classes/user/expRegistrationAdminActionTest.php
 af0292a87757d2e869f806286b1b78d8  tests/tests/kernel/classes/user/expRegistrationFeedbackMailTest.php
 fc63055bcb0f1d48ebb5c64f8a116fb7  tests/tests/kernel/classes/user/expRegistrationUserMailsTest.php
 0cf0917e21fbd4ebf5783aff05d50b0a  tests/tests/kernel/classes/user/expUserAccountOverviewTest.php

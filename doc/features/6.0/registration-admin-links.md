@@ -60,13 +60,17 @@ is opened, so the page always shows the current state.
 | State | Meaning | In the mail |
 |---|---|---|
 | `email` | The account is disabled and has an activation key: it waits for the user to click the link of the activation mail (`VerifyUserType=email`). | "Waiting for the user to confirm the email address." You can activate it now or wait. |
-| `administrator` | The account is disabled and has no activation key: only an administrator can activate it. | "Disabled until an administrator activates it." |
+| `administrator` | The account is disabled, has no activation key and has never signed in: only an administrator can activate it. | "Disabled until an administrator activates it." |
 | `workflow` | The publication of the user object waits for an approval item (an *Approve* event in the publish workflow). | "Waiting for approval before it is published." |
 | `pending` | The account is enabled, but its user object is not published yet: a workflow is still running. | "Enabled, but not yet published." No approve or reject. |
+| `disabled` | The account is disabled and has no activation key, but it has signed in before (`ezuservisit.login_count` > 0): an administrator deactivated it. It is not a registration that waits, so an old Activate or Reject link from the mail does not enable or remove it. | (page only: "Deactivated by an administrator") |
 | `active` | Enabled and published. | "Active." Only View account. |
 | `missing` | The account no longer exists (removed, or rejected). | (page only) |
 
-Approve and reject are possible only in the states `email`, `administrator` and `workflow`.
+Approve and reject are possible only in the states `email`, `administrator` and `workflow`. Reject never removes a
+protected account: the anonymous user (`[UserSettings] AnonymousUserID`), the administrator account (`UserCreatorID`
+and the account with the login `admin`, as Users > Unactivated users protects it) and the signed-in user. The page
+does not offer Reject for them, and a reject link for one says there is nothing to do.
 
 ## What approve and reject do
 
@@ -74,7 +78,7 @@ Approve and reject are possible only in the states `email`, `administrator` and 
 |---|---|---|
 | `email`, `administrator` | Activates the account exactly as **Activate** on Users > Unactivated users does: the activation key is removed, the account is enabled and the registration completes (the user object is published, the user gets the "registration approved" mail unless `ActivationByAdministratorSendsApprovalMail=disabled` or `EmailRegistrationInfo=disabled`, and the `post_register` workflow runs). | Removes the account for good: its user object is purged, as **Remove** on Users > Unactivated users does. The user is not told. |
 | `workflow` | Accepts the approval item, as its **Approve** button does, and continues the waiting workflow at once instead of on the next run of the workflow cronjob, so the account is published right away. | Denies the approval item, as its **Deny** button does, then removes the waiting workflow process, the approval item (it would name an account that is gone) and the account. |
-| `pending`, `active`, `missing` | Nothing. The page says there is nothing to do. | Nothing. |
+| `pending`, `active`, `disabled`, `missing` | Nothing. The page says there is nothing to do. | Nothing. |
 
 After the action the page shows the result: *activated*, *approved* or *removed*, and the state the account is in
 now. If the account was handled by someone else between opening the confirmation and pressing the button, the page
@@ -177,7 +181,7 @@ variables (from `kernel/private/classes/views/user/register.php`):
 | `$object` | the user's content object (`name`, `id`, `published`) |
 | `$hostname` | the host name of the site |
 | `$registration_links` | `false` when the links are off, else a hash: `view`, `approve`, `reject` (the signed links), `pending` (the approval item's address or empty), `unactivated` (the list of unactivated users), `expires` (timestamp) |
-| `$registration_state` | `false`, or `email`, `administrator`, `workflow`, `pending`, `active` |
+| `$registration_state` | `false`, or `email`, `administrator`, `workflow`, `pending`, `active`, `disabled` |
 
 It may set, in a `set-block` with `scope=root`: `subject`, `content_type`, `body_text`, `email_sender` and
 `email_receiver`. When `content_type` contains `html` and `body_text` is set, the mail is sent as

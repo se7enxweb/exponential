@@ -36,6 +36,8 @@ class expRegistrationAdminAction
     const STATE_WORKFLOW = 'workflow';      // its publication waits for an approval (collaboration item)
     const STATE_PENDING = 'pending';        // enabled, but the user object is not published (a workflow still runs)
     const STATE_ACTIVE = 'active';          // enabled and published
+    const STATE_DISABLED = 'disabled';      // disabled without an activation key after it had signed in: an
+                                            // administrator deactivated it; not a registration that waits
 
     /** Default lifetime of a link, in seconds (7 days) */
     const DEFAULT_TTL = 604800;
@@ -428,8 +430,11 @@ class expRegistrationAdminAction
         if ( !$user instanceof eZUser || !$object instanceof eZContentObject )
             return self::STATE_MISSING;
         $hasKey = eZUserAccountKey::fetchByUserID( $userID ) instanceof eZUserAccountKey;
-        return self::stateOf( $user->isEnabled( false ), $hasKey, (int)self::pendingCollaborationID( $userID ),
-                              (int)$object->attribute( 'status' ) === eZContentObject::STATUS_PUBLISHED );
+        $enabled = $user->isEnabled( false );
+        // a sign-in is counted in ezuservisit.login_count: an account that has signed in is not a new registration
+        $signedInBefore = !$enabled && !$hasKey && (int)$user->loginCount() > 0;
+        return self::stateOf( $enabled, $hasKey, (int)self::pendingCollaborationID( $userID ),
+                              (int)$object->attribute( 'status' ) === eZContentObject::STATUS_PUBLISHED, $signedInBefore );
     }
 
     /**
@@ -439,14 +444,20 @@ class expRegistrationAdminAction
      * @param bool $hasKey
      * @param int $collaborationID
      * @param bool $published
+     * @param bool $signedInBefore the account has signed in at least once (ezuservisit.login_count > 0)
      * @return string
      */
-    public static function stateOf( $enabled, $hasKey, $collaborationID, $published )
+    public static function stateOf( $enabled, $hasKey, $collaborationID, $published, $signedInBefore = false )
     {
         if ( $collaborationID > 0 )
             return self::STATE_WORKFLOW;
         if ( !$enabled )
-            return $hasKey ? self::STATE_EMAIL : self::STATE_ADMINISTRATOR;
+        {
+            if ( $hasKey )
+                return self::STATE_EMAIL;
+            // disabled without a key after it had been used: deactivated by an administrator, not waiting
+            return $signedInBefore ? self::STATE_DISABLED : self::STATE_ADMINISTRATOR;
+        }
         return $published ? self::STATE_ACTIVE : self::STATE_PENDING;
     }
 
@@ -571,14 +582,23 @@ class expRegistrationAdminAction
 
     /**
      * Rejects a waiting registration: denies the approval item when one waits, and removes the account (its user
-     * object purged, as user/unactivated removes one). An active account is never removed here.
+     * object purged, as user/unactivated removes one). An active account is never removed here, nor a protected one
+     * (protectedIDs(): the anonymous user, the administrator account, the user who rejects).
      *
      * @param int $userID
-     * @return array result (removed|refused), state, state_before
+     * @param int|null $currentUserID the user who rejects; null: the current user
+     * @return array result (removed|refused), state, state_before; reason 'protected' when the account is protected
      */
-    public static function reject( $userID )
+    public static function reject( $userID, $currentUserID = null )
     {
         $userID = (int)$userID;
+        if ( $currentUserID === null )
+            $currentUserID = (int)eZUser::currentUserID();
+        if ( self::isProtected( $userID, self::protectedIDs( $currentUserID ) ) )
+        {
+            $state = self::state( $userID );
+            return array( 'result' => 'refused', 'reason' => 'protected', 'state_before' => $state, 'state' => $state );
+        }
         $before = self::state( $userID );
         if ( !self::allowedInState( self::ACTION_REJECT, $before ) )
             return array( 'result' => 'refused', 'state_before' => $before, 'state' => $before );
@@ -594,6 +614,53 @@ class expRegistrationAdminAction
         if ( $object instanceof eZContentObject )
             $object->purge();
         return array( 'result' => 'removed', 'state_before' => $before, 'state' => self::state( $userID ) );
+    }
+
+    /**
+     * The accounts reject() never removes: the anonymous user (site.ini [UserSettings] AnonymousUserID), the
+     * administrator account (UserCreatorID, and the account with the login "admin", as user/unactivated protects
+     * it) and the user who rejects.
+     *
+     * @param int $currentUserID
+     * @return int[]
+     */
+    public static function protectedIDs( $currentUserID )
+    {
+        $ini = eZINI::instance();
+        $setting = function ( $name ) use ( $ini )
+        {
+            return $ini->hasVariable( 'UserSettings', $name ) ? (int)$ini->variable( 'UserSettings', $name ) : 0;
+        };
+        $admin = eZUser::fetchByName( 'admin' );
+        return self::protectedIDsOf( $currentUserID, $setting( 'AnonymousUserID' ), $setting( 'UserCreatorID' ),
+                                     $admin instanceof eZUser ? (int)$admin->attribute( 'contentobject_id' ) : 0 );
+    }
+
+    /**
+     * The protected ids from their sources (pure, for the tests); 0 stands for none.
+     *
+     * @param int $currentUserID
+     * @param int $anonymousID site.ini [UserSettings] AnonymousUserID
+     * @param int $creatorID site.ini [UserSettings] UserCreatorID (the administrator account)
+     * @param int $adminLoginID the account with the login "admin"
+     * @return int[]
+     */
+    public static function protectedIDsOf( $currentUserID, $anonymousID, $creatorID, $adminLoginID )
+    {
+        $ids = array_map( 'intval', array( $currentUserID, $anonymousID, $creatorID, $adminLoginID ) );
+        return array_values( array_unique( array_filter( $ids, function ( $id ) { return $id > 0; } ) ) );
+    }
+
+    /**
+     * Whether an account is one of the protected ones (pure, for the tests).
+     *
+     * @param int $userID
+     * @param int[] $protected
+     * @return bool
+     */
+    public static function isProtected( $userID, array $protected )
+    {
+        return (int)$userID <= 0 || in_array( (int)$userID, array_map( 'intval', $protected ), true );
     }
 
     /**

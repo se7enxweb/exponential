@@ -70,6 +70,8 @@ class Registration extends \Exponential\Runnable\ModuleView
         $result = null;
         $account = self::account( $userID );
         $state = $account ? $account['state'] : \expRegistrationAdminAction::STATE_MISSING;
+        // the anonymous user, the administrator account and the signed-in user are never removed (reject() refuses)
+        $isProtected = \expRegistrationAdminAction::isProtected( $userID, \expRegistrationAdminAction::protectedIDs( (int)$current->attribute( 'contentobject_id' ) ) );
 
         if ( $mode === 'confirm' && $isPost && $Module->isCurrentAction( 'Confirm' ) )
         {
@@ -88,7 +90,7 @@ class Registration extends \Exponential\Runnable\ModuleView
             }
             else
             {
-                $result = \expRegistrationAdminAction::reject( $userID );
+                $result = \expRegistrationAdminAction::reject( $userID, (int)$current->attribute( 'contentobject_id' ) );
             }
             $mode = 'done';
             // the account as it is now; after a rejection its details from before, to name it
@@ -99,9 +101,10 @@ class Registration extends \Exponential\Runnable\ModuleView
                 $account['state'] = \expRegistrationAdminAction::STATE_MISSING;
             $state = $result['state'];
         }
-        elseif ( $mode === 'confirm' && !\expRegistrationAdminAction::allowedInState( $action, $state ) )
+        elseif ( $mode === 'confirm' && ( !\expRegistrationAdminAction::allowedInState( $action, $state ) ||
+                                          ( $action === \expRegistrationAdminAction::ACTION_REJECT && $isProtected ) ) )
         {
-            // nothing to confirm: the account is active already or gone; the token is left as it is
+            // nothing to confirm: the account is active already, gone or protected; the token is left as it is
             $mode = 'nothing';
         }
 
@@ -111,6 +114,8 @@ class Registration extends \Exponential\Runnable\ModuleView
         {
             foreach ( array( \expRegistrationAdminAction::ACTION_APPROVE, \expRegistrationAdminAction::ACTION_REJECT ) as $next )
             {
+                if ( $next === \expRegistrationAdminAction::ACTION_REJECT && $isProtected )
+                    continue;
                 if ( \expRegistrationAdminAction::allowedInState( $next, $state ) && \expRegistrationAdminAction::may( $current, $userID, $next ) )
                     $actions[$next] = 'user/registration/' . rawurlencode( \expRegistrationAdminAction::create( $userID, $next ) );
             }
@@ -122,6 +127,7 @@ class Registration extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'registration_problem', '' );
         $tpl->setVariable( 'registration_account', $account ? $account : false );
         $tpl->setVariable( 'registration_state', $state );
+        $tpl->setVariable( 'registration_protected', $isProtected );
         $tpl->setVariable( 'registration_result', $result ? $result : false );
         $tpl->setVariable( 'registration_uri', 'user/registration/' . rawurlencode( $token ) );
         $tpl->setVariable( 'registration_expiry', (int)$data['expiry'] );
@@ -156,6 +162,7 @@ class Registration extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'registration_problem', $reason === '' ? 'malformed' : $reason );
         $tpl->setVariable( 'registration_account', false );
         $tpl->setVariable( 'registration_state', '' );
+        $tpl->setVariable( 'registration_protected', false );
         $tpl->setVariable( 'registration_result', false );
         $tpl->setVariable( 'registration_uri', '' );
         $tpl->setVariable( 'registration_expiry', 0 );

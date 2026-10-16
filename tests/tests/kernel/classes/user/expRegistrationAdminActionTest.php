@@ -13,8 +13,11 @@
  *  RA-06 - create() refuses an unknown action
  *  RA-07 - buildBaseURL(): the setting, the SiteURL (https, loopback and example hosts skipped), the root URL
  *  RA-08 - url(): user/registration/<token> under the base
- *  RA-09 - stateOf() for every combination of facts, allowedInState() for every action and state
+ *  RA-09 - stateOf() for every combination of facts (the sign-in included), allowedInState() for every action and state
  *  RA-10 - setAlternativeBody(): multipart/alternative with boundary, text part then HTML part, the ezcMail parts
+ *  RA-11 - A disabled account without a key that has signed in before is "disabled": not waiting, no approve or reject
+ *  RA-12 - The protected accounts (anonymous, administrator, the user who rejects): protectedIDsOf(), isProtected(),
+ *          and reject() checks them before anything else
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -353,14 +356,17 @@ class expRegistrationAdminActionTest extends PHPUnit\Framework\TestCase
                 {
                     foreach ( array( false, true ) as $published )
                     {
-                        if ( $collaborationID > 0 )
-                            $expected = 'workflow';
-                        elseif ( !$enabled )
-                            $expected = $hasKey ? 'email' : 'administrator';
-                        else
-                            $expected = $published ? 'active' : 'pending';
-                        $this->assertSame( $expected, expRegistrationAdminAction::stateOf( $enabled, $hasKey, $collaborationID, $published ),
-                                           var_export( array( $enabled, $hasKey, $collaborationID, $published ), true ) );
+                        foreach ( array( false, true ) as $signedIn )
+                        {
+                            if ( $collaborationID > 0 )
+                                $expected = 'workflow';
+                            elseif ( !$enabled )
+                                $expected = $hasKey ? 'email' : ( $signedIn ? 'disabled' : 'administrator' );
+                            else
+                                $expected = $published ? 'active' : 'pending';
+                            $this->assertSame( $expected, expRegistrationAdminAction::stateOf( $enabled, $hasKey, $collaborationID, $published, $signedIn ),
+                                               var_export( array( $enabled, $hasKey, $collaborationID, $published, $signedIn ), true ) );
+                        }
                     }
                 }
             }
@@ -378,12 +384,61 @@ class expRegistrationAdminActionTest extends PHPUnit\Framework\TestCase
             'workflow' => array( true, true, true ),
             'pending' => array( true, false, false ),
             'active' => array( true, false, false ),
+            'disabled' => array( true, false, false ),
         );
         foreach ( $expected as $state => $allowed )
         {
             foreach ( expRegistrationAdminAction::actions() as $i => $action )
                 $this->assertSame( $allowed[$i], expRegistrationAdminAction::allowedInState( $action, $state ), "$action in $state" );
         }
+    }
+
+    // ---- RA-11 ---------------------------------------------------------------------------------------------------
+
+    public function testDeactivatedAccountIsNotAWaitingRegistration()
+    {
+        // disabled, no key, signed in before: an administrator deactivated it
+        $state = expRegistrationAdminAction::stateOf( false, false, 0, true, true );
+        $this->assertSame( expRegistrationAdminAction::STATE_DISABLED, $state );
+        $this->assertTrue( expRegistrationAdminAction::allowedInState( 'view', $state ) );
+        $this->assertFalse( expRegistrationAdminAction::allowedInState( 'approve', $state ), 'the old Activate link does not enable it again' );
+        $this->assertFalse( expRegistrationAdminAction::allowedInState( 'reject', $state ), 'the old Reject link does not remove it' );
+        // the same account before any sign-in still waits for an administrator; the sign-in counts only without a key
+        $this->assertSame( 'administrator', expRegistrationAdminAction::stateOf( false, false, 0, true, false ) );
+        $this->assertSame( 'email', expRegistrationAdminAction::stateOf( false, true, 0, true, true ) );
+        $this->assertSame( 'workflow', expRegistrationAdminAction::stateOf( false, false, 17, false, true ) );
+        // the default of the fifth argument keeps the four-argument call as it was
+        $this->assertSame( 'administrator', expRegistrationAdminAction::stateOf( false, false, 0, true ) );
+    }
+
+    // ---- RA-12 ---------------------------------------------------------------------------------------------------
+
+    public function testProtectedAccounts()
+    {
+        $protected = expRegistrationAdminAction::protectedIDsOf( 41, 10, 14, 14 );
+        sort( $protected );
+        $this->assertSame( array( 10, 14, 41 ), $protected, 'current user, anonymous, administrator; no duplicates' );
+        $this->assertSame( array( 10 ), expRegistrationAdminAction::protectedIDsOf( 0, 10, 0, 0 ), 'none (0) is left out' );
+        foreach ( array( 10, 14, 41 ) as $id )
+            $this->assertTrue( expRegistrationAdminAction::isProtected( $id, $protected ), "$id" );
+        $this->assertTrue( expRegistrationAdminAction::isProtected( '14', $protected ), 'a string id' );
+        $this->assertTrue( expRegistrationAdminAction::isProtected( 0, $protected ), 'no account' );
+        $this->assertFalse( expRegistrationAdminAction::isProtected( 4711, $protected ) );
+        $this->assertFalse( expRegistrationAdminAction::isProtected( 4711, array() ) );
+    }
+
+    public function testRejectChecksTheProtectedAccountsFirst()
+    {
+        // reject() refuses a protected account before it reads its state or removes anything (source check: the
+        // removal needs a database, the order does not)
+        $source = file_get_contents( dirname( __DIR__, 5 ) . '/kernel/classes/user/expregistrationadminaction.php' );
+        $start = strpos( $source, 'public static function reject(' );
+        $body = substr( $source, $start, strpos( $source, "\n    }\n", $start ) - $start );
+        $guard = strpos( $body, 'self::isProtected(' );
+        $this->assertNotFalse( $guard, 'reject() checks isProtected()' );
+        $this->assertLessThan( strpos( $body, '->purge()' ), $guard );
+        $this->assertLessThan( strpos( $body, "self::audit( 'access.registration.reject'" ), $guard );
+        $this->assertStringContainsString( "'reason' => 'protected'", $body );
     }
 
     // ---- RA-10 ---------------------------------------------------------------------------------------------------

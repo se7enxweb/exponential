@@ -4,8 +4,11 @@
    registration_mode: refused (registration_problem says why: malformed, signature, expired, action, used), view
    (the account, with Approve and Reject when the user may act and the account waits: registration_actions),
    confirm (the question for an approve or reject token, a POST to the same address with ConfirmButton or
-   CancelButton; the form token is added to the form by the kernel), nothing (the account no longer waits) and done
-   (registration_result: result activated, approved, removed or refused, state, state_before).
+   CancelButton; the form token is added to the form by the kernel), nothing (the account no longer waits, was
+   deactivated by an administrator, or is protected from a reject) and done (registration_result: result activated,
+   approved, removed or refused, state, state_before; reason protected when a reject was refused for a protected
+   account). registration_protected: the account is the anonymous user, the administrator account or the signed-in
+   user, which are never removed.
    registration_account: id, name, login, email, created, published, state, collaboration_uri, node_uri, version_uri;
    false when there is no such account. Used by every administration design: shared component classes only, no
    inline styles. Guide: doc/features/6.0/registration-admin-links.md *}
@@ -44,13 +47,13 @@
                 {case match='activated'}{if eq( $res.state, 'active' )}{'The account has been activated and published. The user can sign in now.'|i18n( 'design/standard/user/registration' )}{else}{'The account has been activated; its publication is still waiting.'|i18n( 'design/standard/user/registration' )}{/if}{/case}
                 {case match='approved'}{if eq( $res.state, 'active' )}{'The registration has been approved and the account published. The user can sign in now.'|i18n( 'design/standard/user/registration' )}{else}{'The registration has been approved; its publication is still waiting.'|i18n( 'design/standard/user/registration' )}{/if}{/case}
                 {case match='removed'}{'The registration has been rejected and the account removed.'|i18n( 'design/standard/user/registration' )}{/case}
-                {case}{if eq( $res.state, 'missing' )}{'Nothing was done: the account no longer exists.'|i18n( 'design/standard/user/registration' )}{else}{'Nothing was done: the account is not waiting for a decision any more.'|i18n( 'design/standard/user/registration' )}{/if}{/case}
+                {case}{if eq( first_set( $res.reason, '' ), 'protected' )}{'Nothing was done: this account cannot be removed here.'|i18n( 'design/standard/user/registration' )}{elseif eq( $res.state, 'missing' )}{'Nothing was done: the account no longer exists.'|i18n( 'design/standard/user/registration' )}{else}{'Nothing was done: the account is not waiting for a decision any more.'|i18n( 'design/standard/user/registration' )}{/if}{/case}
             {/switch}</p>
         </div>
         {undef $res}
     {elseif eq( $mode, 'nothing' )}
         <div class="a4-notice is-warn" role="status">
-            <p>{if eq( $state, 'missing' )}{'There is nothing to do: the account no longer exists.'|i18n( 'design/standard/user/registration' )}{else}{'There is nothing to do: the account is not waiting for a decision any more.'|i18n( 'design/standard/user/registration' )}{/if}</p>
+            <p>{if eq( $state, 'missing' )}{'There is nothing to do: the account no longer exists.'|i18n( 'design/standard/user/registration' )}{elseif and( eq( $registration_action, 'reject' ), first_set( $registration_protected, false() ) )}{'There is nothing to do: this account cannot be removed here.'|i18n( 'design/standard/user/registration' )}{elseif eq( $state, 'disabled' )}{'There is nothing to do: an administrator has deactivated this account; it is not a registration that waits.'|i18n( 'design/standard/user/registration' )}{else}{'There is nothing to do: the account is not waiting for a decision any more.'|i18n( 'design/standard/user/registration' )}{/if}</p>
         </div>
     {elseif eq( $mode, 'confirm' )}
         <div class="a4-notice {if $is_approve}is-info{else}is-warn{/if}">
@@ -68,6 +71,7 @@
                 {case match='workflow'}{'Waiting for approval'|i18n( 'design/standard/user/registration' )}{/case}
                 {case match='pending'}{'Activated, publication still waiting'|i18n( 'design/standard/user/registration' )}{/case}
                 {case match='active'}{'Active'|i18n( 'design/standard/user/registration' )}{/case}
+                {case match='disabled'}{'Deactivated by an administrator'|i18n( 'design/standard/user/registration' )}{/case}
                 {case}{'Removed'|i18n( 'design/standard/user/registration' )}{/case}
             {/switch}</span>
         </div>
