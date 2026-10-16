@@ -36,7 +36,7 @@
     <p><a class="a4-btn a4-btn-primary" href={concat( 'package/view/full/', $package.name )|ezurl}>{'Progress on the package page'|i18n('design/admin/package')}</a>
        <a class="a4-btn" href={concat( 'content/job/', $background_job.id )|ezurl}>{'Job page'|i18n('design/admin/package')}</a></p>
     {else}
-    <div class="a4-notice is-bad" role="alert">{'The background install could not be started: %error'|i18n('design/admin/package',, hash( '%error', $background_error ))}</div>
+    <div class="a4-notice is-bad" role="alert">{'The background install could not be started: %error'|i18n('design/admin/package',, hash( '%error', $background_error|wash ))}</div>
     {/if}
 {elseif is_set( $drafts_result )}
 

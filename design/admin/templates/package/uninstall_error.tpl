@@ -3,7 +3,7 @@
 
 {* DESIGN: Header START *}<div class="box-header"><div class="box-ml">
 <h1 class="context-title">
-{'Uninstalling package \'%name\'.'|i18n( 'design/standard/package',, hash( '%name', $package.name ) )}
+{'Uninstalling package \'%name\'.'|i18n( 'design/standard/package',, hash( '%name', $package.name|wash ) )}
 </h1>
 
 {* DESIGN: Mainline *}<div class="header-mainline"></div>
@@ -23,14 +23,14 @@
         <div class="optionslist">
         {def $i=0}
         {foreach $error.actions as $action_id => $action}
-            <input class="radiobutton" id="{$action_id}" type="radio" name="ActionID" value="{$action_id}" {if eq($i, 0)}checked="checked"{/if} />{$action|wash}<br />
+            <input class="radiobutton" id="{$action_id|wash}" type="radio" name="ActionID" value="{$action_id|wash}" {if eq($i, 0)}checked="checked"{/if} />{$action|wash}<br />
             {set $i=inc($i)}
         {/foreach}
         </div>
         <br />
         <label for="RememberAction"><input class="checkbox" id="RememberAction" type="checkbox" name="RememberAction"/>{'Use this choice for all the items'|i18n('design/standard/package')}</label>
     {else}
-        <p>{'Element with ID \'%element_id\' will not be uninstalled.'|i18n( 'design/standard/package',, hash( '%element_id', $error.element_id ) )}</p>
+        <p>{'Element with ID \'%element_id\' will not be uninstalled.'|i18n( 'design/standard/package',, hash( '%element_id', $error.element_id|wash ) )}</p>
     {/if}
 {else}
     <h3 class="a4-h3">{'Unhandled uninstallation error has occurred.'|i18n('design/standard/package')}</h3>

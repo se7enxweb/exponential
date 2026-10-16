@@ -128,6 +128,47 @@ XML;
         $this->assertSame( array(), $package->attribute( 'file-list' ) );
     }
 
+    private function definition( $number, $release, $type )
+    {
+        $esc = function ( $v ) { return htmlspecialchars( $v, ENT_QUOTES | ENT_XML1 ); };
+        return '<?xml version="1.0" encoding="utf-8"?>' . "\n"
+             . '<package version="6.0"><name>k1_token</name><type value="' . $esc( $type ) . '"/>'
+             . '<version><number>' . $esc( $number ) . '</number><release>' . $esc( $release ) . '</release></version></package>';
+    }
+
+    public static function definitionTokenProvider()
+    {
+        return array(
+            'markup in number' => array( '1.0<img src=x onerror=alert(1)>', '1', 'extension', false ),
+            'markup in release' => array( '1.0', '"><script>alert(1)</script>', 'extension', false ),
+            'markup in type' => array( '1.0', '1', 'site"><svg onload=alert(1)>', false ),
+            'space in number' => array( '1 0', '1', 'extension', false ),
+            'semver with build' => array( '1.0.0-beta+exp.sha.5114f85', '0', 'contentobject', true ),
+            'legacy release' => array( '6.0', '6.0.10-stable', 'site', true ),
+            'legacy letters' => array( '3.4.0beta1', '0-alpha1', 'sitestyle', true ),
+        );
+    }
+
+    /**
+     * admin4 review 15.10.2026: version, release and type reached package/view/files unescaped; a definition
+     * whose values are no plain tokens is now not read at all, the forms packages are made with still are.
+     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('definitionTokenProvider')]
+    public function testDefinitionTokensAreValidated( $number, $release, $type, $readable )
+    {
+        file_put_contents( $this->dir . '/package.xml', $this->definition( $number, $release, $type ) );
+        $package = @eZPackage::fetchFromFile( $this->dir . '/package.xml' );
+        if ( !$readable )
+        {
+            $this->assertFalse( $package );
+            return;
+        }
+        $this->assertInstanceOf( 'eZPackage', $package );
+        $this->assertSame( $number, $package->attribute( 'version-number' ) );
+        $this->assertSame( $release, $package->attribute( 'release-number' ) );
+        $this->assertSame( $type, $package->attribute( 'type' ) );
+    }
+
     public function testMissingOrBrokenFiles()
     {
         $this->assertFalse( eZPackage::fetchFromFile( $this->dir . '/missing.xml' ) );
