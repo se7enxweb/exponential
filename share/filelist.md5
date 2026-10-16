@@ -311,14 +311,14 @@ ff4131909f10bebbceb2afa3d873ae3c  design/admin/override/templates/template_look_
 e0c996a801b1373df9824852298b20d9  design/admin/override/templates/tiny_image.tpl
 a2c561e93ef63c93201e81acd4f32741  design/admin/override/templates/window_controls_user.tpl
 f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin/override/templates/windows_user.tpl
-ccb5068053ed1e403eee15131c1add45  design/admin/stylesheets/components.css
+20f88e86fcfd025c9182ef5eb635b7b5  design/admin/stylesheets/components.css
 ce90ff045aa9ad5f6b74ebb4adb49d1f  design/admin/stylesheets/content.css
 58851bdc6d2ec7bd80b0e822175ac466  design/admin/stylesheets/core.css
 62734b59f14ab1cb473727176f810806  design/admin/stylesheets/ezinfo.css
 a7c60bd40ece47b1c7a1942329ddda77  design/admin/stylesheets/modules/content.css
 89658f64e320320fae4c3bbd46951d0e  design/admin/stylesheets/modules/people.css
 c7fa6d94bb886bb5bcddbbddd4373519  design/admin/stylesheets/modules/setup.css
-9ba8c094694ee0f6607c056a7c437d46  design/admin/stylesheets/modules/structure.css
+40e6fed92366bdd7fce5f4320b9f8d73  design/admin/stylesheets/modules/structure.css
 3b1873b1ae4d1c3ffaa636931d9662ed  design/admin/stylesheets/modules/workflow.css
 6c50ca081feaacea35d0ba88f81f92a0  design/admin/stylesheets/packagecompare.css
 2189a4b23bb872ad6d521d1192019f1b  design/admin/stylesheets/pagelayout.css
@@ -914,7 +914,7 @@ f91a366a6abfa6b8a706b154b7aec12c  design/admin4/override/templates/template_look
 6971adb19c3c39b21f245c72b7f73305  design/admin4/override/templates/thumbnail/image_browse.tpl
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
 f0d86e10f1901c44f5e7028366a683b7  design/admin4/stylesheets/admin4.css
-ccb5068053ed1e403eee15131c1add45  design/admin4/stylesheets/components.css
+20f88e86fcfd025c9182ef5eb635b7b5  design/admin4/stylesheets/components.css
 29dbb2aaee5436f235093d29c633111b  design/admin4/stylesheets/content.css
 bc58629618444e04776b7e1408f93fee  design/admin4/stylesheets/core.css
 d57109b58209ac401af2138ffd2ac93d  design/admin4/stylesheets/editor_content.css
@@ -922,7 +922,7 @@ d57109b58209ac401af2138ffd2ac93d  design/admin4/stylesheets/editor_content.css
 a7c60bd40ece47b1c7a1942329ddda77  design/admin4/stylesheets/modules/content.css
 89658f64e320320fae4c3bbd46951d0e  design/admin4/stylesheets/modules/people.css
 c7fa6d94bb886bb5bcddbbddd4373519  design/admin4/stylesheets/modules/setup.css
-9ba8c094694ee0f6607c056a7c437d46  design/admin4/stylesheets/modules/structure.css
+40e6fed92366bdd7fce5f4320b9f8d73  design/admin4/stylesheets/modules/structure.css
 3b1873b1ae4d1c3ffaa636931d9662ed  design/admin4/stylesheets/modules/workflow.css
 6e999aa90b2660caf0fe3e2ef577ecdf  design/admin4/stylesheets/packagecompare.css
 1a4df6df9329aafd4a73afb02604a1a9  design/admin4/stylesheets/pagelayout.css
