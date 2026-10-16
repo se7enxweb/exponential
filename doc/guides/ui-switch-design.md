@@ -140,9 +140,9 @@ out. The tool is the toolbar tool `admin_ui_switch`, template `toolbar/full/admi
 | an extension design | through its chain; every shipped chain ends in `admin` |
 
 The design's page layout must also render the right toolbar (`{tool_bar name='admin_right' view='full'}`; the classic
-page layout does so while the right menu is shown). For a user who switched to a design through the UI switch, the
-classic page layout (`design/admin/templates/pagelayout.tpl`) opens the right menu even when it would be collapsed,
-unless that user closed it (`admin_right_menu_show=0`), so the switch stays in reach. The siteaccess's `toolbar.ini`
+page layout does so while the right menu is shown). The classic page layout
+(`design/admin/templates/pagelayout.tpl`) shows the right menu unless the user closed it (`admin_right_menu_show=0`),
+as admin4 does, so the switch stays in reach. The siteaccess's `toolbar.ini`
 must place the tool there:
 
 ```ini

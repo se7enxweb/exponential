@@ -547,7 +547,7 @@ ee59e11711f04b511967f5335e53cdb9  design/admin/templates/page_header.tpl
 3ceb59d3584d417fdb51fe11e73f2729  design/admin/templates/page_topmenu.tpl
 7595633233e131b1b54c3d3e493c4568  design/admin/templates/page_topmenuitem.tpl
 904563d0775993b51872b7af411dd5b3  design/admin/templates/page_toppath.tpl
-a77381d3af260c15aa4b576e11d8b03c  design/admin/templates/pagelayout.tpl
+4dbe889641370df86c550494916b8788  design/admin/templates/pagelayout.tpl
 2891f454853f3b2f2cac2a94173e257a  design/admin/templates/parts/audit/menu.tpl
 6f4962eafc7286ab584e17db8f6c7b00  design/admin/templates/parts/content/menu.tpl
 1c7130630aa151812d6042bc8d5e0afd  design/admin/templates/parts/ini_menu.tpl
@@ -2892,7 +2892,7 @@ e21f3db4b2792ce0c74ab2480c335f60  doc/bc/6.0/static-cache-defaults.md
 3c9ff9b6730b011a2b825d49fbeff9d6  doc/bc/6.0/svg-images.md
 b3619f3dd7b2c0c98ea03f16cba624e4  doc/bc/6.0/trash.md
 64389016aada25c568fdafc2ebe6ce5e  doc/bc/6.0/trusted-proxies.md
-118733be217d627e127bdfa222ef8448  doc/bc/6.0/ui-switch-design.md
+78f77d46a1c4fda9c55f0f24527261ed  doc/bc/6.0/ui-switch-design.md
 0637dd8b6d6bcb69afd7fa771041c8f5  doc/bc/6.0/ui-switch.md
 7928239ba6369a6bb899ee998ce94b05  doc/bc/6.0/user-password-change.md
 993384f707a1aa6b5574b412be832f5c  doc/bc/6.0/velocity-engine-upgrade-notes.md
@@ -3520,7 +3520,7 @@ a6b2159c09f6336f87bd6e48cf3e8240  doc/features/6.0/template-override-ordering.md
 a41622d93efd6c2f53a94f2baa3eed35  doc/features/6.0/template-path-comments.md
 8063b16c2cea020d040be89da085727b  doc/features/6.0/translations-and-languages.md
 617186ceb009791f653e4cbf277d7005  doc/features/6.0/trash-who-and-where.md
-c458a8c277dd9fe0da3582db3cdfd6dc  doc/features/6.0/ui-switch-design.md
+2947d010c70096ee082296ba38ed3f0b  doc/features/6.0/ui-switch-design.md
 006864120fab01c13775c3a88cb4d120  doc/features/6.0/ui-switch.md
 a1eed4391b4f27be93070944c605e35e  doc/features/6.0/user-hygiene.md
 9af0ca11b275e34e8a215ca6983c1589  doc/features/6.0/valkey-cache-hooks.md
@@ -3602,7 +3602,7 @@ d6248fd6c8f6678c5868d0eb6023ea08  doc/guides/settings-page.md
 f52435ea65b9339e1191f8bbb8753638  doc/guides/system-information.md
 0336ade018fe7f75e7a16ce2eb7356c8  doc/guides/templates-and-design.md
 dc5f0aedab105f984fc1d7e71761f4eb  doc/guides/two-factor-login.md
-49b31888c431b0efbb3b963d2efcfa16  doc/guides/ui-switch-design.md
+06d9b73556412ec28f4c1fe7b5c7c58d  doc/guides/ui-switch-design.md
 fec84e0c9ab0ebfefdd6e89dd722582f  doc/guides/ui-switch-settings.md
 fc2eb248460e9ebbb10faf76eb446e2e  doc/guides/upgrade-check.md
 96ce9e87d17b31ab1a771517f083e4ea  doc/guides/upgrading.md

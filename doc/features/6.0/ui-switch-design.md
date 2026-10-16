@@ -36,9 +36,8 @@ settings are explained in [the guide](../../guides/ui-switch-design.md), the cod
 
 Every design that can be offered renders the same tool in its right toolbar, so you can always switch again: admin4
 and admin4l show it in the right sidebar, the classic `admin` design (and admin2 and admin3, which fall back to it)
-shows it as a classic box that works without JavaScript. The classic design shows it in its right menu; for a user
-who came to it through the switch, that menu opens even if it is collapsed by default, unless the user closed it
-(`admin_right_menu_show=0`), so the way back stays in reach.
+shows it as a classic box that works without JavaScript. The classic design shows it in its right menu, which is
+open unless the user closed it (`admin_right_menu_show=0`), as in admin4, so the way back stays in reach.
 
 The tool appears only when there is something to choose: at least two designs, and a role with `uiswitch/design`.
 

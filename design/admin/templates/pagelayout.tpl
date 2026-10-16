@@ -6,7 +6,7 @@
      $content_edit         = and( $ui_context_edit, eq( $ui_component, 'content' ) )
      $hide_left_menu       = first_set( $module_result.content_info.persistent_variable.left_menu, $content_edit|not )|not
      $hide_right_menu      = first_set( $module_result.content_info.persistent_variable.extra_menu, $ui_context_edit|not )|not
-     $collapse_right_menu  = ezpreference( 'admin_right_menu_show' )|not
+     $collapse_right_menu  = eq( concat( ezpreference( 'admin_right_menu_show' ), '' ), '0' )
      $admin_left_size      = ezpreference( 'admin_left_menu_size' )
      $collapse_left_menu   = eq( ezpreference( 'admin_left_menu_collapsed' ), '1' )
      $admin_theme          = ezpreference( 'admin_theme' )
@@ -23,16 +23,8 @@
 {if $hide_right_menu}
 {set $collapse_right_menu = false()}
 {/if}
-{* A user who came to this design through the UI switch (doc/features/6.0/ui-switch-design.md) and never closed the
-   right menu here sees it open, so the interface choices that lead back stay in reach. Closed on purpose
-   (admin_right_menu_show=0) stays closed; without a switched design nothing changes. *}
-{if and( $collapse_right_menu, ne( concat( ezpreference( 'admin_right_menu_show' ), '' ), '0' ) )}
-{foreach fetch( 'uiswitch', 'toolbar' ) as $exp_ui_choice}
-{if and( eq( $exp_ui_choice.identifier, 'design' ), ne( $exp_ui_choice.current, $exp_ui_choice.default ) )}
-{set $collapse_right_menu = false()}
-{/if}
-{/foreach}
-{/if}
+{* The right menu is open unless this user closed it (admin_right_menu_show=0), as in admin4: it carries the same
+   tools, the interface choices (UI switch) among them, so a user who came here from another design can go back. *}
 
 {* The one inline CSS kept in this design, on purpose (doc/bc/6.0/admin4-styling.md, "Exceptions"): the column
    widths of this editor's preferences, in em from menu.ini [LeftMenuSettings] MenuWidth or a width dragged by hand,

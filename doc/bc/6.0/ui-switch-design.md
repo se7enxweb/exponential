@@ -135,9 +135,9 @@ extension's own `settings/uiswitch.ini.append.php` repeats the same values, whic
 once). Likewise `adminui` is offered only on a siteaccess with `ActiveAccessExtensions[]=exp_adminui`, on a stock
 installation the `adminui` siteaccess alone ([guide](../../guides/ui-switch-design.md#offering-adminui-on-other-siteaccesses)).
 
-The classic `admin` page layout (`design/admin/templates/pagelayout.tpl`) opens its right menu for a user who
-switched to a design through the UI switch, unless that user closed it (`admin_right_menu_show=0`), so the switch
-tool stays in reach.
+The classic `admin` page layout (`design/admin/templates/pagelayout.tpl`) shows its right menu unless the user closed
+it (`admin_right_menu_show=0`), as admin4 does; before, a user who had never set the preference saw it collapsed. So
+the switch tool stays in reach.
 
 On an installation that used the overrides:
 
