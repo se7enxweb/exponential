@@ -17,10 +17,18 @@ function ContentStructureMenu( params, i18n )
     this.nodes = {};
     var thisMenu = this;
 
-    // One listener opens the menu of every node: a click, Enter or Space on the menu button, and Shift+F10 or the
-    // context menu key on a tree item (they click the button).
+    // One listener opens and closes the sub items of every node (a click, Enter or Space on its open/close button,
+    // and the arrow keys of the tree, _pressToggle) and opens the menu of every node: a click, Enter or Space on the
+    // menu button, and Shift+F10 or the context menu key on a tree item (they click the button). The generated
+    // markup carries no inline handlers and does not depend on a global name for the menu.
     document.addEventListener( 'click', function( e )
     {
+        var toggle = e.target && e.target.closest ? e.target.closest( 'a[data-modified-subnode]' ) : null;
+        if ( toggle && _press( toggle ) )
+        {
+            e.preventDefault();
+            return;
+        }
         var opener = e.target && e.target.closest ? e.target.closest( 'a.nodeicon[data-node-id]' ) : null;
         var node = opener ? thisMenu.nodes[opener.getAttribute( 'data-node-id' )] : null;
         if ( !node )
@@ -42,6 +50,16 @@ function ContentStructureMenu( params, i18n )
             '%languages%': node.languages,
             '%classList%': node.classes
         }, node.name, nodeID, node.disableMenuID );
+    } );
+    // Space presses the open/close button like Enter (it is a role="button" link)
+    document.addEventListener( 'keydown', function( e )
+    {
+        var toggle = e.key === ' ' && e.target && e.target.closest ? e.target.closest( 'a[data-modified-subnode]' ) : null;
+        if ( toggle && thisMenu.levels[_toggleNodeID( toggle )] !== undefined )
+        {
+            e.preventDefault();
+            toggle.click();
+        }
     } );
 
     // hashes in ez template doesn't handle numeric keys correctly
@@ -143,7 +161,8 @@ function ContentStructureMenu( params, i18n )
         {
             liclass += ' lastli';
         }
-        if ( params.path && ( params.path[params.path.length-1] == item.node_id || ( !item.has_children && jQuery.inArray( item.node_id, params.path ) !== -1 ) ) )
+        // a node on the path without sub items in the tree is marked too (_onPath compares as strings)
+        if ( params.path && ( params.path[params.path.length-1] == item.node_id || ( !item.has_children && _onPath( item.node_id ) ) ) )
         {
             liclass += ' currentnode';
         }
@@ -154,18 +173,16 @@ function ContentStructureMenu( params, i18n )
         if ( canOpen && !rootNode )
         {
             // A button for keyboards and screen readers: its name says whose sub items it shows, aria-expanded
-            // whether they are shown (_toggleState), and Space presses it like Enter. It keeps the focus after a
-            // press (no blur), so a keyboard can press it again; the ring shows on :focus-visible only.
+            // whether they are shown (_toggleState), and Space presses it like Enter (the listeners above, by its
+            // data-modified-subnode). It keeps the focus after a press (no blur), so a keyboard can press it again;
+            // the ring shows on :focus-visible only.
             html += '<a class="openclose-open" id="a'
                 + nodeID
                 + '" href="#" role="button" aria-expanded="false" aria-label="'
                 + _attr( ( i18n.subitems || '%name' ).split( '%name' ).join( name ) )
-                + '" onkeydown="if ( event.key === \' \' ) { event.preventDefault(); this.click(); }"'
-                + ' onclick="return treeMenu.load( this, '
-                + nodeID
-                + ', '
+                + '" data-modified-subnode="'
                 + ( parseInt( item.modified_subnode, 10 ) || 0 )
-                +' )"><\/a>';
+                + '"><\/a>';
         }
 
         // What the node's menu needs is kept here, by node ID, and read by the click listener below: names are
@@ -456,44 +473,10 @@ function ContentStructureMenu( params, i18n )
                     var aElement = document.getElementById( 'a' + nodeID );
                     if ( aElement )
                     {
-                        aElement.onclick();
+                        _press( aElement );
                     }
                 }
             }
-        }
-    };
-
-    this.collapse = function( parentNodeID )
-    {
-        var divElement = document.getElementById( 'c' + parentNodeID );
-        if ( !divElement )
-        {
-            return;
-        }
-
-        var aElements = divElement.getElementsByTagName( 'a' );
-        for ( var index in aElements )
-        {
-            var aElement = aElements[index];
-            if ( aElement.className == 'openclose-close' )
-            {
-                var nodeID        = aElement.id.substr( 1 );
-                var subdivElement = document.getElementById( 'c' + nodeID );
-                if ( subdivElement )
-                {
-                    subdivElement.className = 'hidden';
-                }
-                _toggleState( aElement, 'openclose-open' );
-                this.setClosed( nodeID );
-            }
-        }
-
-        var aElement = document.getElementById( 'a' + parentNodeID );
-        if ( aElement )
-        {
-            divElement.className = 'hidden';
-            _toggleState( aElement, 'openclose-open' );
-            this.setClosed( parentNodeID );
         }
     };
 
@@ -770,13 +753,42 @@ function ContentStructureMenu( params, i18n )
         return _childLink( li, 'openclose-(?:open|close|busy|error)' );
     }
 
+    // The node is on the path to the current node (params.path: strings from the template; a node ID from the JSON
+    // is a number)
+    function _onPath( nodeID )
+    {
+        for ( var i = 0; i < params.path.length; i++ )
+        {
+            if ( String( params.path[i] ) === String( nodeID ) ) return true;
+        }
+        return false;
+    }
+
+    // The node ID of an open/close button (id "a<node ID>")
+    function _toggleNodeID( toggle )
+    {
+        return parseInt( String( toggle.id ).substr( 1 ), 10 ) || 0;
+    }
+
+    // Press an open/close button of this tree: load, open or close its sub items; false when it is not one of this
+    // tree's
+    function _press( toggle )
+    {
+        var nodeID = _toggleNodeID( toggle );
+        if ( !nodeID || thisMenu.levels[nodeID] === undefined )
+        {
+            return false;
+        }
+        thisMenu.load( toggle, nodeID, parseInt( toggle.getAttribute( 'data-modified-subnode' ), 10 ) || 0 );
+        return true;
+    }
+
     // Press the open/close button of the node li; false when there is nothing to press
     function _pressToggle( li )
     {
         var toggle = _toggleOf( li );
-        if ( toggle && toggle.className !== 'openclose-busy' && toggle.onclick )
+        if ( toggle && toggle.className !== 'openclose-busy' && _press( toggle ) )
         {
-            toggle.onclick();
             return true;
         }
         return false;
@@ -895,24 +907,24 @@ function ContentStructureMenu( params, i18n )
         return String( value ).replace( /&/g, '&amp;' ).replace( /"/g, '&quot;' ).replace( /</g, '&lt;' ).replace( />/g, '&gt;' );
     }
 
-    // Internal cookie functions
+    // Internal cookie functions (only where localStorage is blocked): encodeURIComponent, not the deprecated
+    // escape(); same site only, secure over https
     function _setCookie( name, value, expires, path )
     {
-        document.cookie = name + '=' + escape(value) + ( expires ? '; expires=' + expires.toUTCString(): '' ) + '; path='+ (path ? path : '/');
+        document.cookie = name + '=' + encodeURIComponent( value ) + ( expires ? '; expires=' + expires.toUTCString(): '' ) + '; path='+ (path ? path : '/')
+            + '; SameSite=Lax' + ( window.location && window.location.protocol === 'https:' ? '; Secure' : '' );
     }
 
+    // The cookie of exactly this name; a value escape()d by an older version reads the same (node IDs and "/")
     function _getCookie( name )
     {
-        var n = name + '=', c = document.cookie, start = c.indexOf( n ), end = c.indexOf( ";", start );
-        if ( start !== -1 )
+        var all = document.cookie ? document.cookie.split( /;\s*/ ) : [];
+        for ( var i = 0; i < all.length; i++ )
         {
-            return unescape( c.substring( start + n.length, ( end === -1 ? c.length : end ) ) );
+            if ( all[i].indexOf( name + '=' ) !== 0 ) continue;
+            var value = all[i].substring( name.length + 1 );
+            try { return decodeURIComponent( value ); } catch ( e ) { return value; }
         }
         return null;
-    }
-
-    function _delCookie( name )
-    {
-        _setCookie( name, '', ( new Date() - 86400000 ) );
     }
 }

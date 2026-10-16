@@ -64,7 +64,7 @@ class AdminKeyboardTest extends PHPUnit\Framework\TestCase
         $this->assertStringNotContainsString( 'blur', $m[0] );
         // every change of the symbol goes through _toggleState, which keeps aria-expanded in step
         $this->assertSame( 0, preg_match_all( '/\.className\s*=\s*[\'"]openclose-/', $js ) );
-        $this->assertGreaterThanOrEqual( 6, substr_count( $js, '_toggleState( aElement,' ) );
+        $this->assertGreaterThanOrEqual( 5, substr_count( $js, '_toggleState( aElement,' ) );
         $this->assertStringContainsString( '"subitems":', self::file( 'design/admin4/templates/contentstructuremenu/content_structure_menu_dynamic.tpl' ) );
     }
 

@@ -130,7 +130,7 @@ jQuery(function( $ )
                     clearTimeout( NodeTab.timeout );
                     NodeTab.timeout = null;
                 }
-                var block = $( li[0].parentNode.parentNode.parentNode );
+                var block = li.closest( 'div.tab-block' );
                 block.find("ul.tabs li.selected").removeClass('selected');
                 block.find("div.tab-content.selected").addClass('hide').removeClass('selected');
                 li.addClass('selected');
@@ -147,9 +147,16 @@ jQuery(function( $ )
             }
         },
 
-        // save tab state (using ajax)
+        // save tab state: the preference admin_navigation_content through window.a4Pref (the head script), like the
+        // frame's other remembered choices (a state the server does not take is kept in this browser); a plain POST
+        // where it is missing
         saveTabState : function( intBool )
         {
+            if ( window.a4Pref )
+            {
+                window.a4Pref.set( 'admin_navigation_content', String( intBool ) );
+                return;
+            }
             var url = $.ez.url.replace( 'ezjscore/', 'user/preferences/set_and_exit/admin_navigation_content/' ) + intBool;
             var _token = '', _tokenNode = document.getElementById('ezxform_token_js');
             if ( _tokenNode ) _token = 'ezxform_token=' + _tokenNode.getAttribute('title');
@@ -167,19 +174,23 @@ jQuery(function( $ )
             }
         },
 
-        // set cookie value
+        // set cookie value (encodeURIComponent, not the deprecated escape(); same site only, secure over https)
         setCookie: function( name, value, expires, path )
         {
-            document.cookie = name + '=' + escape(value) + ( expires ? '; expires=' + expires.toUTCString(): '' ) + '; path='+ (path ? path : '/');
+            document.cookie = name + '=' + encodeURIComponent( value ) + ( expires ? '; expires=' + expires.toUTCString(): '' ) + '; path='+ (path ? path : '/')
+                + '; SameSite=Lax' + ( window.location && window.location.protocol === 'https:' ? '; Secure' : '' );
         },
 
-        // get cookie value
+        // get cookie value: the cookie of exactly this name; a value escape()d by an older version reads the same
+        // (tab names are ASCII, where both encodings agree)
         getCookie: function( name )
         {
-            var n = name + '=', c = document.cookie, start = c.indexOf( n ), end = c.indexOf( ";", start );
-            if ( start !== -1 )
+            var all = document.cookie ? document.cookie.split( /;\s*/ ) : [];
+            for ( var i = 0; i < all.length; i++ )
             {
-                return unescape( c.substring( start + n.length, ( end === -1 ? c.length : end ) ) );
+                if ( all[i].indexOf( name + '=' ) !== 0 ) continue;
+                var value = all[i].substring( name.length + 1 );
+                try { return decodeURIComponent( value ); } catch ( e ) { return value; }
             }
             return null;
         }
@@ -197,8 +208,9 @@ jQuery(function( $ )
         if ( e.key === ' ' ) { e.preventDefault(); this.click(); }
     });
 
+    // the tab of the cookie: only a tab name goes into the selector (a broken value threw in jQuery's selector)
     var openTab = NodeTab.getCookie( 'adminNavigationTab' );
-    if ( openTab && $('div.tab-block ul.tabs.tabs-by-cookie #node-tab-' + openTab).length )
+    if ( openTab && /^[a-z0-9_-]+$/i.test( openTab ) && $('div.tab-block ul.tabs.tabs-by-cookie #node-tab-' + openTab).length )
     {
         NodeTab.open( 'node-tab-' + openTab );
     }

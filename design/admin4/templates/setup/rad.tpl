@@ -226,7 +226,7 @@
     // Esc clears rather than leaving somebody with a filtered page and no
     // obvious way back to all of it.
     input.onkeydown = function ( event ) {
-        if ( ( event || window.event ).keyCode === 27 ) { input.value = ''; run(); }
+        if ( event.key === 'Escape' ) { input.value = ''; run(); }
     };
 
     run();
