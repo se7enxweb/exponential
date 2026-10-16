@@ -239,8 +239,10 @@
 
 
 
+    {* lang and dir="rtl" of a text in a right-to-left content language, nothing for a left-to-right one *}
+    {set-block variable=exp_text_attrs}{include uri='design:parts/exp_content_direction.tpl' exp_locale_code=$attribute.language_code}{/set-block}
     <div class="oe-window">
-        <textarea class="box" id="{$attribute_base}_data_text_{$attribute.id}" name="{$attribute_base}_data_text_{$attribute.id}" cols="88" rows="{$editorRow}">{$input_handler.input_xml}</textarea>
+        <textarea class="box" id="{$attribute_base}_data_text_{$attribute.id}" name="{$attribute_base}_data_text_{$attribute.id}" cols="88" rows="{$editorRow}"{$exp_text_attrs}>{$input_handler.input_xml}</textarea>
     </div>
 
     <div class="block">
@@ -254,9 +256,13 @@
         eZOeAttributeSettings['theme_advanced_buttons1'] = "{$layout_settings['buttons']|implode(',')}";
         eZOeAttributeSettings['theme_advanced_statusbar_location'] = "{$layout_settings['path_location']}";
         eZOeAttributeSettings['theme_advanced_toolbar_location'] = "{$layout_settings['toolbar_location']}";
+        // right to left for a text in a right-to-left content language, else the default of ezoe.ini
+        if ( !( 'exp_default_directionality' in eZOeGlobalSettings ) ) eZOeGlobalSettings['exp_default_directionality'] = eZOeGlobalSettings['directionality'];
+        eZOeAttributeSettings['directionality'] = {if $exp_text_attrs|ne( '' )}'rtl'{else}eZOeGlobalSettings['exp_default_directionality']{/if};
 
         eZOeToggleEditor( '{$attribute_base}_data_text_{$attribute.id}', eZOeAttributeSettings );
         </script>
+        {undef $exp_text_attrs}
     </div>
 <!-- End editor -->
 {/if}

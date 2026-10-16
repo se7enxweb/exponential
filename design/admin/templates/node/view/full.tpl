@@ -51,11 +51,12 @@
     {/if}
 {/if}
 
+{* the language the name is shown in: its current language when the object has it, else unknown (nothing marked) *}{def $exp_title_language = cond( $node.object.available_languages|contains( $node.object.current_language ), $node.object.current_language, '' )}
 {if ne( $node.contentobject_id, 0 )}
-<h1 class="context-title"><a href={concat( '/class/view/', $node.object.contentclass_id )|ezurl} onclick="ezpopmenu_showTopLevel( event, 'ClassMenu', ez_createAArray( new Array( '%classID%', {$node.object.contentclass_id}, '%objectID%', {$node.contentobject_id}, '%nodeID%', {$node.node_id}, '%currentURL%', '{$node.url|wash( javascript )|wash}', '%languages%', {$js_class_languages|wash} ) ), '{$node.class_name|wash(javascript)|wash}', {$disabled_sub_menu}, {$disable_another_language} ); return false;">{$node.class_identifier|class_icon( normal, $node.class_name )}</a>&nbsp;{$node.name|wash}&nbsp;[{$node.class_name|wash}]&nbsp;{$hide_status}</h1>
+<h1 class="context-title"><a href={concat( '/class/view/', $node.object.contentclass_id )|ezurl} onclick="ezpopmenu_showTopLevel( event, 'ClassMenu', ez_createAArray( new Array( '%classID%', {$node.object.contentclass_id}, '%objectID%', {$node.contentobject_id}, '%nodeID%', {$node.node_id}, '%currentURL%', '{$node.url|wash( javascript )|wash}', '%languages%', {$js_class_languages|wash} ) ), '{$node.class_name|wash(javascript)|wash}', {$disabled_sub_menu}, {$disable_another_language} ); return false;">{$node.class_identifier|class_icon( normal, $node.class_name )}</a>&nbsp;{set-block variable=exp_name_attrs}{include uri='design:parts/exp_content_direction.tpl' exp_locale_code=$exp_title_language}{/set-block}{if $exp_name_attrs|ne( '' )}<bdi{$exp_name_attrs}>{$node.name|wash}</bdi>{else}{$node.name|wash}{/if}{undef $exp_name_attrs}&nbsp;[{$node.class_name|wash}]&nbsp;{$hide_status}</h1>
 {else}
-<h1 class="context-title">{$node.name|wash}</h1>
-{/if}
+<h1 class="context-title"{include uri='design:parts/exp_content_direction.tpl' exp_locale_code=$exp_title_language}>{$node.name|wash}</h1>
+{/if}{undef $exp_title_language}
 
 {undef $js_class_languages $disable_another_language $disabled_sub_menu $hide_status}
 

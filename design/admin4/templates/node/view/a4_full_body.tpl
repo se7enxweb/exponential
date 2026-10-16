@@ -56,7 +56,8 @@
 <div class="box-header a4-node-head a4-pagehead">
     <a class="a4-node-icon" aria-haspopup="menu" aria-expanded="false" href={concat( '/class/view/', $object.contentclass_id )|ezurl} title="{'Class menu'|i18n( 'design/admin/node/view/full' )|wash}" onclick="ezpopmenu_showTopLevel( event, 'ClassMenu', ez_createAArray( new Array( '%classID%', {$object.contentclass_id}, '%objectID%', {$node.contentobject_id}, '%nodeID%', {$node.node_id}, '%currentURL%', '{$node.url|wash( javascript )|wash}', '%languages%', {$js_class_languages|wash} ) ), '{$node.class_name|wash(javascript)|wash}', {$disabled_sub_menu}, {$disable_another_language} ); return false;">{$node.class_identifier|class_icon( small, $node.class_name )}</a>
     <div class="a4-node-heading a4-pagehead-main">
-        <h1 class="context-title a4-pagehead-title">{$node.name|wash}</h1>
+        {* the language the name is shown in: its current language when the object has it, else unknown (nothing marked) *}{def $exp_title_language = cond( $node.object.available_languages|contains( $node.object.current_language ), $node.object.current_language, '' )}
+        <h1 class="context-title a4-pagehead-title"{include uri='design:parts/exp_content_direction.tpl' exp_locale_code=$exp_title_language}>{$node.name|wash}</h1>{undef $exp_title_language}
         <span class="a4-node-badges">
             <span class="a4-badge a4-badge-class">{$node.class_name|wash}</span>
             {* visible, hidden or hidden by a parent: a badge with its status mark (parts/visibility_status.tpl) *}

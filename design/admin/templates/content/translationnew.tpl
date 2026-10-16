@@ -43,7 +43,7 @@
             <option value="-1"{if $chosen|eq('-1')} selected="selected"{/if}>{'Custom: a name and a locale code of its own (below)'|i18n( 'design/admin/content/translationnew' )}</option>
             {if is_set( $locale_choices )}
             {foreach $locale_choices as $choice}
-            <option value="{$choice.code|wash}" data-search="{$choice.search|wash}"{if $choice.exists} disabled="disabled"{elseif $chosen|eq( $choice.code )} selected="selected"{/if}>{$choice.label|wash}{if $choice.native_name|ne('')}{if $choice.native_name|ne( $choice.label )} &middot; {$choice.native_name|wash}{/if}{/if}{if $choice.country|ne('')} &middot; {$choice.country|wash}{/if} &middot; {$choice.code|wash}{if $choice.exists} &middot; {'already added'|i18n( 'design/admin/content/translationnew' )}{/if}</option>
+            <option value="{$choice.code|wash}" data-search="{$choice.search|wash}"{if $choice.exists} disabled="disabled"{elseif $chosen|eq( $choice.code )} selected="selected"{/if}>{$choice.label|wash}{if $choice.native_name|ne('')}{if $choice.native_name|ne( $choice.label )} &middot; {$choice.native_name|wash}{/if}{/if}{if $choice.country|ne('')} &middot; {$choice.country|wash}{/if} &middot; {$choice.code|wash}{if $choice.rtl} &middot; {'right to left'|i18n( 'design/admin/content/translationnew' )}{/if}{if $choice.exists} &middot; {'already added'|i18n( 'design/admin/content/translationnew' )}{/if}</option>
             {/foreach}
             {else}
             {* Reached from an older view that does not hand the choices over. *}

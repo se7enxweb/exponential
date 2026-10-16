@@ -13,7 +13,9 @@
     {else}
         <label{if $ContentObjectAttribute:item.has_validation_error} class="validation-error"{/if}>{$ContentObjectAttribute:item.contentclass_attribute.name|wash}</label><div class="labelbreak"></div>
         <input type="hidden" name="ContentObjectAttribute_id[]" value="{$ContentObjectAttribute:item.id}" />
+        {set-block variable=exp_text_attrs}{include uri='design:parts/exp_content_direction.tpl' exp_locale_code=$ContentObjectAttribute:item.language_code}{/set-block}{if $exp_text_attrs|ne( '' )}<div class="exp-content-text"{$exp_text_attrs}>{/if}
         {attribute_edit_gui attribute_base=$attribute_base attribute=$ContentObjectAttribute:item view_parameters=$view_parameters}
+        {if $exp_text_attrs|ne( '' )}</div>{/if}{undef $exp_text_attrs}
         </div>
 
     {/if}

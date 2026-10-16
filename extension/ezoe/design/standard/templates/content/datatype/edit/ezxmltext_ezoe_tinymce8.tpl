@@ -270,14 +270,29 @@ function eZOe8Init( id, attributeId, buttons, pathLocation, rows )
             });
         }
     });
+    // a text in a right-to-left content language: the textarea says dir="rtl" and its language tag (lang)
+    var source = document.getElementById( id );
+    if ( source && source.getAttribute( 'dir' ) === 'rtl' )
+        settings.directionality = 'rtl';
+    if ( source && source.getAttribute( 'lang' ) )
+    {
+        var setupBefore = settings.setup;
+        settings.setup = function( editor ) {
+            setupBefore( editor );
+            editor.on( 'init', function() {
+                editor.getBody().setAttribute( 'lang', source.getAttribute( 'lang' ) );
+            });
+        };
+    }
     tinymce.init( settings );
 }
 {/literal}
 </script>
 {/run-once}
 
+{* lang and dir="rtl" of a text in a right-to-left content language, nothing for a left-to-right one; eZOe8Init reads them *}
 <div class="oe-window">
-    <textarea class="box" id="{$attribute_base}_data_text_{$attribute.id}" name="{$attribute_base}_data_text_{$attribute.id}" cols="88" rows="{$editorRow}">{$input_handler.input_xml}</textarea>
+    <textarea class="box" id="{$attribute_base}_data_text_{$attribute.id}" name="{$attribute_base}_data_text_{$attribute.id}" cols="88" rows="{$editorRow}"{include uri='design:parts/exp_content_direction.tpl' exp_locale_code=$attribute.language_code}>{$input_handler.input_xml}</textarea>
 </div>
 
 <div class="block">
