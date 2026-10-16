@@ -93,6 +93,30 @@ class expContentExportEntryTest extends ezpTestCase
             $this->assertSame( 0, eZContentObjectPackageCreator::positiveID( $value ), var_export( $value, true ) );
     }
 
+    /** The wizard's content step: Remove selected with nothing ticked keeps the list (a TypeError before), with rows ticked removes those */
+    public function testRemoveSelectedTakesOutOnlyTheTickedRows()
+    {
+        $tpl = new class { public $vars = array(); public function setVariable( $name, $value ) { $this->vars[$name] = $value; } };
+        $module = null;
+        $creator = new eZContentObjectPackageCreator( 'ezcontentobject' );
+        $data = array( 'node_list' => array( array( 'id' => 42, 'type' => 'node' ), array( 'id' => 43, 'type' => 'subtree' ) ) );
+        $saved = $_POST;
+        try
+        {
+            $_POST = array( 'RemoveSelected' => '1' );
+            $creator->loadObjectList( false, eZHTTPTool::instance(), 'object', $data, $tpl, $module );
+            $this->assertCount( 2, $data['node_list'] );
+            $_POST = array( 'RemoveSelected' => '1', 'DeleteIDArray' => array( '43' ) );
+            $creator->loadObjectList( false, eZHTTPTool::instance(), 'object', $data, $tpl, $module );
+            $this->assertSame( array( array( 'id' => 42, 'type' => 'node' ) ), array_values( $data['node_list'] ) );
+            $this->assertSame( $data['node_list'], $tpl->vars['node_list'] );
+        }
+        finally
+        {
+            $_POST = $saved;
+        }
+    }
+
     #[DataProvider('policies')]
     public function testThePoliciesThatAllowContentExport( array $create, array $export, $expected )
     {

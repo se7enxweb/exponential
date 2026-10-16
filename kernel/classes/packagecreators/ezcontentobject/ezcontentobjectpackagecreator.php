@@ -108,9 +108,11 @@ class eZContentObjectPackageCreator extends eZPackageCreationHandler
         }
         else if( $http->hasPostVariable( 'RemoveSelected' ) )
         {
+            // Remove selected with nothing ticked removes nothing (it ended in a TypeError before)
+            $deleteIDs = $http->hasPostVariable( 'DeleteIDArray' ) ? (array)$http->postVariable( 'DeleteIDArray' ) : array();
             foreach ( array_keys( $persistentData['node_list'] ) as $key )
             {
-                if ( in_array( $persistentData['node_list'][$key]['id'], $http->postVariable( 'DeleteIDArray' ) ) )
+                if ( in_array( $persistentData['node_list'][$key]['id'], $deleteIDs ) )
                 {
                     unset( $persistentData['node_list'][$key] );
                 }
