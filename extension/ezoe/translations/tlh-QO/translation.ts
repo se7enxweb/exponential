@@ -122,6 +122,98 @@
         <translation>%tag_name per ghu&apos;</translation>
     </message>
     <message>
+        <source>TinyMCE 3</source>
+        <translation>TinyMCE 3 choHwI&apos;</translation>
+    </message>
+    <message>
+        <source>TinyMCE 8</source>
+        <translation>TinyMCE 8 choHwI&apos;</translation>
+    </message>
+    <message>
+        <source>Switch to the editor %engine</source>
+        <translation>%engine choHwI&apos; yIlo&apos;</translation>
+    </message>
+    <message>
+        <source>This file type is not accepted by the editor: %file</source>
+        <translation>ghItlh Seghvam lajbe&apos; choHwI&apos;: %file</translation>
+    </message>
+    <message>
+        <source>Online editor</source>
+        <translation>ghItlh choHwI&apos;</translation>
+    </message>
+    <message>
+        <source>The editor of your user was saved.</source>
+        <translation>Qapla&apos;! lo&apos;wI&apos;lIj choHwI&apos; pollu&apos;ta&apos;.</translation>
+    </message>
+    <message>
+        <source>This editor is not available.</source>
+        <translation>choHwI&apos;vam lo&apos;laHbe&apos;lu&apos;.</translation>
+    </message>
+    <message>
+        <source>Editor for text fields</source>
+        <translation>ghItlh tlheghmeyvaD choHwI&apos;</translation>
+    </message>
+    <message>
+        <source>Default of this site (%engine)</source>
+        <translation>yoSvam motlh (%engine)</translation>
+    </message>
+    <message>
+        <source>In use now: %engine. Saved only for your user, the text of your content is the same with every editor.</source>
+        <translation>DaH lo&apos;lu&apos;: %engine. lo&apos;wI&apos;lIjvaD neH pollu&apos;; Hoch choHwI&apos;Daq De&apos;lIj ghItlh rap.</translation>
+    </message>
+    <message>
+        <source>Editor engines</source>
+        <translation>choHwI&apos; QuQmey</translation>
+    </message>
+    <message>
+        <source>Editor</source>
+        <translation>choHwI&apos;</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Dotlh</translation>
+    </message>
+    <message>
+        <source>Available</source>
+        <translation>lo&apos;laH</translation>
+    </message>
+    <message>
+        <source>Available, in use now</source>
+        <translation>lo&apos;laHlu&apos;, DaH lo&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>Not available: its files are missing</source>
+        <translation>lo&apos;laHbe&apos;lu&apos;: ghItlhmeyDaj Dachlu&apos;</translation>
+    </message>
+    <message>
+        <source>Cannot be used: %reason</source>
+        <translation>lo&apos;laHbe&apos;lu&apos;: %reason</translation>
+    </message>
+    <message>
+        <source>The edit form also has a button to switch to each of the other available editors.</source>
+        <translation>Hoch lo&apos;laHbogh choHwI&apos; latlh Dalo&apos;meH leQ ghaj choHmeH ghItlh je.</translation>
+    </message>
+    <message>
+        <source>The Online Editor on TinyMCE 3.5, the editor of every installation.</source>
+        <translation>TinyMCE 3.5 lo&apos;bogh Online Editor, Hoch jomghach choHwI&apos;.</translation>
+    </message>
+    <message>
+        <source>The Online Editor on TinyMCE 8 (GPL), with the dialogs of the Online Editor.</source>
+        <translation>TinyMCE 8 (GPL) lo&apos;bogh Online Editor, Online Editor ja&apos;chuqmeH Qorwaghmey tlhej.</translation>
+    </message>
+    <message>
+        <source>Switch to the new editor (TinyMCE 8)</source>
+        <translation>choHwI&apos; chu&apos; yIlo&apos; (TinyMCE 8)</translation>
+    </message>
+    <message>
+        <source>Switch to the previous editor (TinyMCE 3)</source>
+        <translation>choHwI&apos; nungbogh yIlo&apos; (TinyMCE 3)</translation>
+    </message>
+    <message>
+        <source>The text is kept, the choice is saved for your user.</source>
+        <translation>ghItlh pollu&apos;, &apos;ej lo&apos;wI&apos;lIjvaD wIvghach pollu&apos;.</translation>
+    </message>
+    <message>
         <source>this</source>
         <translation>Dochvam</translation>
     </message>
@@ -1186,6 +1278,90 @@ Qaghvam De&apos; latlh DaneH&apos;a&apos;?</translation>
     <message>
         <source>Click to select table size</source>
         <translation>tetlh qach tInghach DawIvmeH yIchu&apos;</translation>
+    </message>
+    <message>
+        <source>The address is not a valid http or https URL.</source>
+        <translation>http https ghap URL lugh &apos;oHbe&apos; Daq.</translation>
+    </message>
+    <message>
+        <source>Only http and https addresses can be fetched.</source>
+        <translation>http https je Daqmey neH SuqlaHlu&apos;.</translation>
+    </message>
+    <message>
+        <source>Addresses with a user name or password are not accepted.</source>
+        <translation>lo&apos;wI&apos; pong pegh mu&apos; ghap ghajbogh Daqmey lajlu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>The address points to a host that is not reachable from the server for this purpose.</source>
+        <translation>ngoQvamvaD jabwI&apos;vo&apos; paw&apos;laHbe&apos;lu&apos;bogh jabwI&apos;Daq ghoS Daq.</translation>
+    </message>
+    <message>
+        <source>The host name %host could not be resolved.</source>
+        <translation>%host jabwI&apos; pong SovmoHlaHlu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>The address redirects too often.</source>
+        <translation>He choH Daq law&apos;qu&apos;.</translation>
+    </message>
+    <message>
+        <source>The server answered with the status %status, no file was fetched.</source>
+        <translation>Dotlh %status jang jabwI&apos;; pagh ghItlh Suqlu&apos;.</translation>
+    </message>
+    <message>
+        <source>The server sent an empty file.</source>
+        <translation>ghItlh chIm ngeH jabwI&apos;.</translation>
+    </message>
+    <message>
+        <source>The content of the file is not of the type its name says: %file</source>
+        <translation>ghItlh pong ja&apos;bogh Segh &apos;oHbe&apos; ghItlh ngaSbogh De&apos;: %file</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>ghItlh SuqlaHlu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>Upload from a URL is switched off.</source>
+        <translation>URLvo&apos; labghach chu&apos;Ha&apos;lu&apos;ta&apos;.</translation>
+    </message>
+    <message>
+        <source>The file is larger than the allowed %size.</source>
+        <translation>chaw&apos;lu&apos;bogh tInghach %size tIn law&apos; ghItlh.</translation>
+    </message>
+    <message>
+        <source>The server did not answer in time.</source>
+        <translation>poHDaq jangbe&apos; jabwI&apos;.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Hal</translation>
+    </message>
+    <message>
+        <source>From your computer</source>
+        <translation>De&apos;wI&apos;lIjvo&apos;</translation>
+    </message>
+    <message>
+        <source>From a URL</source>
+        <translation>URLvo&apos;</translation>
+    </message>
+    <message>
+        <source>Address of the file (URL)</source>
+        <translation>ghItlh Daq (URL)</translation>
+    </message>
+    <message>
+        <source>The server fetches the file from this address.</source>
+        <translation>Daqvamvo&apos; ghItlh Suq jabwI&apos;.</translation>
+    </message>
+    <message>
+        <source>Upload from URL</source>
+        <translation>URLvo&apos; yIlab</translation>
+    </message>
+    <message>
+        <source>Please enter the address of a file.</source>
+        <translation>ghItlh Daq yIghItlh.</translation>
+    </message>
+    <message>
+        <source>Please enter a valid http or https address without user name and password.</source>
+        <translation>lo&apos;wI&apos; pong pegh mu&apos; je Hutlhbogh http https ghap Daq lugh yIghItlh.</translation>
     </message>
     <message>
         <source>required</source>

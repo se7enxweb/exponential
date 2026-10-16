@@ -119,6 +119,98 @@
         <translation>Ejemplo de la etiqueta %tag_name</translation>
     </message>
     <message>
+        <source>TinyMCE 3</source>
+        <translation>TinyMCE 3</translation>
+    </message>
+    <message>
+        <source>TinyMCE 8</source>
+        <translation>TinyMCE 8</translation>
+    </message>
+    <message>
+        <source>Switch to the editor %engine</source>
+        <translation>Cambiar al editor %engine</translation>
+    </message>
+    <message>
+        <source>This file type is not accepted by the editor: %file</source>
+        <translation>El editor no acepta este tipo de archivo: %file</translation>
+    </message>
+    <message>
+        <source>Online editor</source>
+        <translation>Editor en línea</translation>
+    </message>
+    <message>
+        <source>The editor of your user was saved.</source>
+        <translation>Se guardó el editor de tu usuario.</translation>
+    </message>
+    <message>
+        <source>This editor is not available.</source>
+        <translation>Este editor no está disponible.</translation>
+    </message>
+    <message>
+        <source>Editor for text fields</source>
+        <translation>Editor para campos de texto</translation>
+    </message>
+    <message>
+        <source>Default of this site (%engine)</source>
+        <translation>Predeterminado de este sitio (%engine)</translation>
+    </message>
+    <message>
+        <source>In use now: %engine. Saved only for your user, the text of your content is the same with every editor.</source>
+        <translation>En uso ahora: %engine. Se guarda solo para tu usuario; el texto de tu contenido es el mismo con cualquier editor.</translation>
+    </message>
+    <message>
+        <source>Editor engines</source>
+        <translation>Motores del editor</translation>
+    </message>
+    <message>
+        <source>Editor</source>
+        <translation>Editor</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Estado</translation>
+    </message>
+    <message>
+        <source>Available</source>
+        <translation>Disponible</translation>
+    </message>
+    <message>
+        <source>Available, in use now</source>
+        <translation>Disponible, en uso ahora</translation>
+    </message>
+    <message>
+        <source>Not available: its files are missing</source>
+        <translation>No disponible: faltan sus archivos</translation>
+    </message>
+    <message>
+        <source>Cannot be used: %reason</source>
+        <translation>No se puede usar: %reason</translation>
+    </message>
+    <message>
+        <source>The edit form also has a button to switch to each of the other available editors.</source>
+        <translation>El formulario de edición también tiene un botón para cambiar a cada uno de los otros editores disponibles.</translation>
+    </message>
+    <message>
+        <source>The Online Editor on TinyMCE 3.5, the editor of every installation.</source>
+        <translation>El Online Editor sobre TinyMCE 3.5, el editor de todas las instalaciones.</translation>
+    </message>
+    <message>
+        <source>The Online Editor on TinyMCE 8 (GPL), with the dialogs of the Online Editor.</source>
+        <translation>El Online Editor sobre TinyMCE 8 (GPL), con los diálogos del Online Editor.</translation>
+    </message>
+    <message>
+        <source>Switch to the new editor (TinyMCE 8)</source>
+        <translation>Cambiar al editor nuevo (TinyMCE 8)</translation>
+    </message>
+    <message>
+        <source>Switch to the previous editor (TinyMCE 3)</source>
+        <translation>Cambiar al editor anterior (TinyMCE 3)</translation>
+    </message>
+    <message>
+        <source>The text is kept, the choice is saved for your user.</source>
+        <translation>El texto se conserva; la elección se guarda para tu usuario.</translation>
+    </message>
+    <message>
         <source>this</source>
         <translation>este</translation>
     </message>
@@ -1183,6 +1275,90 @@ Do you want more information about this issue?</source>
     <message>
         <source>Click to select table size</source>
         <translation>Haz clic para seleccionar el tamaño de la tabla</translation>
+    </message>
+    <message>
+        <source>The address is not a valid http or https URL.</source>
+        <translation>La dirección no es una URL http o https válida.</translation>
+    </message>
+    <message>
+        <source>Only http and https addresses can be fetched.</source>
+        <translation>Solo se pueden obtener direcciones http y https.</translation>
+    </message>
+    <message>
+        <source>Addresses with a user name or password are not accepted.</source>
+        <translation>No se aceptan direcciones con nombre de usuario o contraseña.</translation>
+    </message>
+    <message>
+        <source>The address points to a host that is not reachable from the server for this purpose.</source>
+        <translation>La dirección apunta a un servidor al que no se puede acceder desde el servidor para este fin.</translation>
+    </message>
+    <message>
+        <source>The host name %host could not be resolved.</source>
+        <translation>No se pudo resolver el nombre de servidor %host.</translation>
+    </message>
+    <message>
+        <source>The address redirects too often.</source>
+        <translation>La dirección redirige demasiadas veces.</translation>
+    </message>
+    <message>
+        <source>The server answered with the status %status, no file was fetched.</source>
+        <translation>El servidor respondió con el estado %status; no se obtuvo ningún archivo.</translation>
+    </message>
+    <message>
+        <source>The server sent an empty file.</source>
+        <translation>El servidor envió un archivo vacío.</translation>
+    </message>
+    <message>
+        <source>The content of the file is not of the type its name says: %file</source>
+        <translation>El contenido del archivo no es del tipo que indica su nombre: %file</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>No se pudo obtener el archivo.</translation>
+    </message>
+    <message>
+        <source>Upload from a URL is switched off.</source>
+        <translation>La carga desde una URL está desactivada.</translation>
+    </message>
+    <message>
+        <source>The file is larger than the allowed %size.</source>
+        <translation>El archivo es más grande que el tamaño permitido de %size.</translation>
+    </message>
+    <message>
+        <source>The server did not answer in time.</source>
+        <translation>El servidor no respondió a tiempo.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Origen</translation>
+    </message>
+    <message>
+        <source>From your computer</source>
+        <translation>Desde tu computadora</translation>
+    </message>
+    <message>
+        <source>From a URL</source>
+        <translation>Desde una URL</translation>
+    </message>
+    <message>
+        <source>Address of the file (URL)</source>
+        <translation>Dirección del archivo (URL)</translation>
+    </message>
+    <message>
+        <source>The server fetches the file from this address.</source>
+        <translation>El servidor obtiene el archivo desde esta dirección.</translation>
+    </message>
+    <message>
+        <source>Upload from URL</source>
+        <translation>Cargar desde una URL</translation>
+    </message>
+    <message>
+        <source>Please enter the address of a file.</source>
+        <translation>Ingresa la dirección de un archivo.</translation>
+    </message>
+    <message>
+        <source>Please enter a valid http or https address without user name and password.</source>
+        <translation>Ingresa una dirección http o https válida sin nombre de usuario ni contraseña.</translation>
     </message>
     <message>
         <source>required</source>

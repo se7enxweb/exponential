@@ -121,6 +121,98 @@
         <translation>דוגמה לתגית %tag_name</translation>
     </message>
     <message>
+        <source>TinyMCE 3</source>
+        <translation>עורך TinyMCE 3</translation>
+    </message>
+    <message>
+        <source>TinyMCE 8</source>
+        <translation>עורך TinyMCE 8</translation>
+    </message>
+    <message>
+        <source>Switch to the editor %engine</source>
+        <translation>מעבר לעורך %engine</translation>
+    </message>
+    <message>
+        <source>This file type is not accepted by the editor: %file</source>
+        <translation>סוג הקובץ אינו נתמך בעורך: %file</translation>
+    </message>
+    <message>
+        <source>Online editor</source>
+        <translation>עורך מקוון</translation>
+    </message>
+    <message>
+        <source>The editor of your user was saved.</source>
+        <translation>העורך של המשתמש שלך נשמר.</translation>
+    </message>
+    <message>
+        <source>This editor is not available.</source>
+        <translation>עורך זה אינו זמין.</translation>
+    </message>
+    <message>
+        <source>Editor for text fields</source>
+        <translation>עורך לשדות טקסט</translation>
+    </message>
+    <message>
+        <source>Default of this site (%engine)</source>
+        <translation>ברירת המחדל של האתר (%engine)</translation>
+    </message>
+    <message>
+        <source>In use now: %engine. Saved only for your user, the text of your content is the same with every editor.</source>
+        <translation>בשימוש כעת: %engine. הבחירה נשמרת רק למשתמש שלך; הטקסט של התוכן זהה בכל עורך.</translation>
+    </message>
+    <message>
+        <source>Editor engines</source>
+        <translation>מנועי עריכה</translation>
+    </message>
+    <message>
+        <source>Editor</source>
+        <translation>עורך</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>מצב</translation>
+    </message>
+    <message>
+        <source>Available</source>
+        <translation>זמין</translation>
+    </message>
+    <message>
+        <source>Available, in use now</source>
+        <translation>זמין, בשימוש כעת</translation>
+    </message>
+    <message>
+        <source>Not available: its files are missing</source>
+        <translation>לא זמין: הקבצים שלו חסרים</translation>
+    </message>
+    <message>
+        <source>Cannot be used: %reason</source>
+        <translation>לא ניתן להשתמש: %reason</translation>
+    </message>
+    <message>
+        <source>The edit form also has a button to switch to each of the other available editors.</source>
+        <translation>בטופס העריכה יש גם כפתור למעבר לכל אחד מהעורכים הזמינים האחרים.</translation>
+    </message>
+    <message>
+        <source>The Online Editor on TinyMCE 3.5, the editor of every installation.</source>
+        <translation>ה־Online Editor על בסיס TinyMCE 3.5, העורך של כל התקנה.</translation>
+    </message>
+    <message>
+        <source>The Online Editor on TinyMCE 8 (GPL), with the dialogs of the Online Editor.</source>
+        <translation>ה־Online Editor על בסיס TinyMCE 8 (GPL), עם חלונות הדו־שיח של ה־Online Editor.</translation>
+    </message>
+    <message>
+        <source>Switch to the new editor (TinyMCE 8)</source>
+        <translation>מעבר לעורך החדש (TinyMCE 8)</translation>
+    </message>
+    <message>
+        <source>Switch to the previous editor (TinyMCE 3)</source>
+        <translation>מעבר לעורך הקודם (TinyMCE 3)</translation>
+    </message>
+    <message>
+        <source>The text is kept, the choice is saved for your user.</source>
+        <translation>הטקסט נשמר, והבחירה נשמרת למשתמש שלך.</translation>
+    </message>
+    <message>
         <source>this</source>
         <translation>זה</translation>
     </message>
@@ -1185,6 +1277,90 @@ Do you want more information about this issue?</source>
     <message>
         <source>Click to select table size</source>
         <translation>יש ללחוץ כדי לבחור את גודל הטבלה</translation>
+    </message>
+    <message>
+        <source>The address is not a valid http or https URL.</source>
+        <translation>הכתובת אינה כתובת URL תקינה מסוג http או https.</translation>
+    </message>
+    <message>
+        <source>Only http and https addresses can be fetched.</source>
+        <translation>ניתן לשלוף רק כתובות http ו־https.</translation>
+    </message>
+    <message>
+        <source>Addresses with a user name or password are not accepted.</source>
+        <translation>כתובות עם שם משתמש או סיסמה אינן מתקבלות.</translation>
+    </message>
+    <message>
+        <source>The address points to a host that is not reachable from the server for this purpose.</source>
+        <translation>הכתובת מפנה למארח שאינו נגיש מהשרת למטרה זו.</translation>
+    </message>
+    <message>
+        <source>The host name %host could not be resolved.</source>
+        <translation>לא ניתן היה לפענח את שם המארח %host.</translation>
+    </message>
+    <message>
+        <source>The address redirects too often.</source>
+        <translation>הכתובת מפנה הלאה פעמים רבות מדי.</translation>
+    </message>
+    <message>
+        <source>The server answered with the status %status, no file was fetched.</source>
+        <translation>השרת השיב בסטטוס %status, ולא נשלף קובץ.</translation>
+    </message>
+    <message>
+        <source>The server sent an empty file.</source>
+        <translation>השרת שלח קובץ ריק.</translation>
+    </message>
+    <message>
+        <source>The content of the file is not of the type its name says: %file</source>
+        <translation>תוכן הקובץ אינו מהסוג ששמו מציין: %file</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>לא ניתן היה לשלוף את הקובץ.</translation>
+    </message>
+    <message>
+        <source>Upload from a URL is switched off.</source>
+        <translation>העלאה מכתובת URL מושבתת.</translation>
+    </message>
+    <message>
+        <source>The file is larger than the allowed %size.</source>
+        <translation>הקובץ גדול מהגודל המותר, %size.</translation>
+    </message>
+    <message>
+        <source>The server did not answer in time.</source>
+        <translation>השרת לא השיב בזמן.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>מקור</translation>
+    </message>
+    <message>
+        <source>From your computer</source>
+        <translation>מהמחשב שלך</translation>
+    </message>
+    <message>
+        <source>From a URL</source>
+        <translation>מכתובת URL</translation>
+    </message>
+    <message>
+        <source>Address of the file (URL)</source>
+        <translation>כתובת הקובץ (URL)</translation>
+    </message>
+    <message>
+        <source>The server fetches the file from this address.</source>
+        <translation>השרת שולף את הקובץ מכתובת זו.</translation>
+    </message>
+    <message>
+        <source>Upload from URL</source>
+        <translation>העלאה מכתובת URL</translation>
+    </message>
+    <message>
+        <source>Please enter the address of a file.</source>
+        <translation>נא להזין את כתובת הקובץ.</translation>
+    </message>
+    <message>
+        <source>Please enter a valid http or https address without user name and password.</source>
+        <translation>נא להזין כתובת http או https תקינה, ללא שם משתמש וסיסמה.</translation>
     </message>
     <message>
         <source>required</source>

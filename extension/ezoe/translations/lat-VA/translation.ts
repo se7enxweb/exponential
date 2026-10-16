@@ -122,6 +122,98 @@
         <translation>Exemplum pittacii %tag_name</translation>
     </message>
     <message>
+        <source>TinyMCE 3</source>
+        <translation>TinyMCE 3</translation>
+    </message>
+    <message>
+        <source>TinyMCE 8</source>
+        <translation>TinyMCE 8</translation>
+    </message>
+    <message>
+        <source>Switch to the editor %engine</source>
+        <translation>Ad editorem %engine transire</translation>
+    </message>
+    <message>
+        <source>This file type is not accepted by the editor: %file</source>
+        <translation>Hoc fasciculi genus editor non accipit: %file</translation>
+    </message>
+    <message>
+        <source>Online editor</source>
+        <translation>Editor interretialis</translation>
+    </message>
+    <message>
+        <source>The editor of your user was saved.</source>
+        <translation>Editor usoris tui servatus est.</translation>
+    </message>
+    <message>
+        <source>This editor is not available.</source>
+        <translation>Hic editor praesto non est.</translation>
+    </message>
+    <message>
+        <source>Editor for text fields</source>
+        <translation>Editor camporum textus</translation>
+    </message>
+    <message>
+        <source>Default of this site (%engine)</source>
+        <translation>Praedefinitum huius situs (%engine)</translation>
+    </message>
+    <message>
+        <source>In use now: %engine. Saved only for your user, the text of your content is the same with every editor.</source>
+        <translation>Nunc in usu: %engine. Pro usore tuo tantum servatur; textus contentorum tuorum idem est quocumque editore.</translation>
+    </message>
+    <message>
+        <source>Editor engines</source>
+        <translation>Machinae editoris</translation>
+    </message>
+    <message>
+        <source>Editor</source>
+        <translation>Editor</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Available</source>
+        <translation>Praesto</translation>
+    </message>
+    <message>
+        <source>Available, in use now</source>
+        <translation>Praesto, nunc in usu</translation>
+    </message>
+    <message>
+        <source>Not available: its files are missing</source>
+        <translation>Non praesto: fasciculi eius desunt</translation>
+    </message>
+    <message>
+        <source>Cannot be used: %reason</source>
+        <translation>Adhiberi non potest: %reason</translation>
+    </message>
+    <message>
+        <source>The edit form also has a button to switch to each of the other available editors.</source>
+        <translation>Formularium recensendi etiam pugam habet ad quemque ex aliis editoribus praesto transeundum.</translation>
+    </message>
+    <message>
+        <source>The Online Editor on TinyMCE 3.5, the editor of every installation.</source>
+        <translation>Online Editor super TinyMCE 3.5, editor omnis institutionis.</translation>
+    </message>
+    <message>
+        <source>The Online Editor on TinyMCE 8 (GPL), with the dialogs of the Online Editor.</source>
+        <translation>Online Editor super TinyMCE 8 (GPL), cum fenestris dialogi Online Editor.</translation>
+    </message>
+    <message>
+        <source>Switch to the new editor (TinyMCE 8)</source>
+        <translation>Ad editorem novum transire (TinyMCE 8)</translation>
+    </message>
+    <message>
+        <source>Switch to the previous editor (TinyMCE 3)</source>
+        <translation>Ad editorem priorem transire (TinyMCE 3)</translation>
+    </message>
+    <message>
+        <source>The text is kept, the choice is saved for your user.</source>
+        <translation>Textus servatur, electio pro usore tuo servatur.</translation>
+    </message>
+    <message>
         <source>this</source>
         <translation>hoc</translation>
     </message>
@@ -1186,6 +1278,90 @@ Visne plura de hac re scire?</translation>
     <message>
         <source>Click to select table size</source>
         <translation>Preme ut magnitudinem tabulae seligas</translation>
+    </message>
+    <message>
+        <source>The address is not a valid http or https URL.</source>
+        <translation>Inscriptio non est URL http vel https valida.</translation>
+    </message>
+    <message>
+        <source>Only http and https addresses can be fetched.</source>
+        <translation>Inscriptiones http et https tantum arcessi possunt.</translation>
+    </message>
+    <message>
+        <source>Addresses with a user name or password are not accepted.</source>
+        <translation>Inscriptiones cum nomine usoris vel tessera non accipiuntur.</translation>
+    </message>
+    <message>
+        <source>The address points to a host that is not reachable from the server for this purpose.</source>
+        <translation>Inscriptio ad hospitem spectat quem servitrum ad hunc finem attingere non potest.</translation>
+    </message>
+    <message>
+        <source>The host name %host could not be resolved.</source>
+        <translation>Nomen hospitis %host resolvi non potuit.</translation>
+    </message>
+    <message>
+        <source>The address redirects too often.</source>
+        <translation>Inscriptio nimis saepe alio dirigit.</translation>
+    </message>
+    <message>
+        <source>The server answered with the status %status, no file was fetched.</source>
+        <translation>Servitrum statu %status respondit; nullus fasciculus arcessitus est.</translation>
+    </message>
+    <message>
+        <source>The server sent an empty file.</source>
+        <translation>Servitrum fasciculum vacuum misit.</translation>
+    </message>
+    <message>
+        <source>The content of the file is not of the type its name says: %file</source>
+        <translation>Contentum fasciculi non est eius generis quod nomen eius dicit: %file</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Fasciculus arcessi non potuit.</translation>
+    </message>
+    <message>
+        <source>Upload from a URL is switched off.</source>
+        <translation>Impositio ex URL inactiva est.</translation>
+    </message>
+    <message>
+        <source>The file is larger than the allowed %size.</source>
+        <translation>Fasciculus maior est quam %size licita.</translation>
+    </message>
+    <message>
+        <source>The server did not answer in time.</source>
+        <translation>Servitrum tempore non respondit.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Origo</translation>
+    </message>
+    <message>
+        <source>From your computer</source>
+        <translation>Ex computatro tuo</translation>
+    </message>
+    <message>
+        <source>From a URL</source>
+        <translation>Ex URL</translation>
+    </message>
+    <message>
+        <source>Address of the file (URL)</source>
+        <translation>Inscriptio fasciculi (URL)</translation>
+    </message>
+    <message>
+        <source>The server fetches the file from this address.</source>
+        <translation>Servitrum fasciculum ex hac inscriptione arcessit.</translation>
+    </message>
+    <message>
+        <source>Upload from URL</source>
+        <translation>Ex URL imponere</translation>
+    </message>
+    <message>
+        <source>Please enter the address of a file.</source>
+        <translation>Inscriptionem fasciculi inscribe.</translation>
+    </message>
+    <message>
+        <source>Please enter a valid http or https address without user name and password.</source>
+        <translation>Inscriptionem http vel https validam sine nomine usoris et tessera inscribe.</translation>
     </message>
     <message>
         <source>required</source>

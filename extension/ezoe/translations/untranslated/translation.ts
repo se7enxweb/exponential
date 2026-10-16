@@ -119,6 +119,98 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>TinyMCE 3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>TinyMCE 8</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch to the editor %engine</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This file type is not accepted by the editor: %file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Online editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The editor of your user was saved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This editor is not available.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Editor for text fields</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default of this site (%engine)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In use now: %engine. Saved only for your user, the text of your content is the same with every editor.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Editor engines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Available, in use now</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not available: its files are missing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cannot be used: %reason</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The edit form also has a button to switch to each of the other available editors.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The Online Editor on TinyMCE 3.5, the editor of every installation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The Online Editor on TinyMCE 8 (GPL), with the dialogs of the Online Editor.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch to the new editor (TinyMCE 8)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch to the previous editor (TinyMCE 3)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The text is kept, the choice is saved for your user.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>this</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1181,6 +1273,90 @@ Do you want more information about this issue?</source>
     </message>
     <message>
         <source>Click to select table size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The address is not a valid http or https URL.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only http and https addresses can be fetched.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Addresses with a user name or password are not accepted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The address points to a host that is not reachable from the server for this purpose.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The host name %host could not be resolved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The address redirects too often.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The server answered with the status %status, no file was fetched.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The server sent an empty file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The content of the file is not of the type its name says: %file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upload from a URL is switched off.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The file is larger than the allowed %size.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The server did not answer in time.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>From your computer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>From a URL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Address of the file (URL)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The server fetches the file from this address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upload from URL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please enter the address of a file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please enter a valid http or https address without user name and password.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
