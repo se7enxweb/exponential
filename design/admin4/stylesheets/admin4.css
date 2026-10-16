@@ -1945,7 +1945,11 @@ span.classattribute-description {
 
 /* the actions, on the title's row (wrapping under it on narrow windows) */
 .controlbar.a4-node-actions {
-  flex: 0 0 auto;
+  /* sized to its buttons, but never wider than the card: with longer words (Latin, German) the groups wrap instead
+     of pushing Remove and the icon buttons past the card, where #page clipped them */
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: 100%;
   margin: 0;
   padding: 0;
   background: transparent;
@@ -1954,6 +1958,7 @@ span.classattribute-description {
 .controlbar.a4-node-actions form { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2); }
 .controlbar.a4-node-actions .button-left,
 .controlbar.a4-node-actions .button-right { float: none; margin: 0; }
+.controlbar.a4-node-actions .button-left { min-width: 0; max-width: 100%; }
 .controlbar.a4-node-actions .block { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2); margin: 0; }
 .controlbar.a4-node-actions .block select,
 .controlbar.a4-node-actions .block input.button,
