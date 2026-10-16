@@ -4246,6 +4246,7 @@ a13eb1cb59361c9f259aa92f7a3b995b  extension/ezjscore/settings/module.ini.append.
 803fb7c7b02e4b4f5e0e74db69a7c361  extension/ezjscore/settings/rad.ini.append.php
 b67e983627ca245b51be9f0bcf9e5a80  extension/ezjscore/settings/site.ini.append.php
 3c3e354bd4825cf29dc62b588fd1687f  extension/ezjscore/translations/eng-US/translation.ts
+602fe86f8bc6b6b17fb37921babe33df  extension/ezjscore/translations/esl-ES/translation.ts
 1e56e57978e47563231de051310f8b98  extension/ezjscore/translations/ger-DE/translation.ts
 1934ef4b765d46e6c3a8eae97229373e  extension/ezjscore/translations/untranslated/translation.ts
 7bdcec3991d143379ebea0e485a3616f  extension/ezoe/FAQ
@@ -4755,7 +4756,7 @@ f8a85b1a0304fa337737229280fcb45c  extension/ezoe/tests/suite.php
 7a01cb19a8749a323545c01659a2ddba  extension/ezoe/translations/dan-DK/translation.ts
 78a42e2ad90b2c482030782011ab6e00  extension/ezoe/translations/dut-NL/translation.ts
 364dd40b1988b87911e0a0a37fd87917  extension/ezoe/translations/eng-US/translation.ts
-a2513942156d811b6633ed45a77daeaa  extension/ezoe/translations/esl-ES/translation.ts
+349f99fbce16aa3b55e00c72b58b513b  extension/ezoe/translations/esl-ES/translation.ts
 bb5bd9726ef6de446fc6c037ac7cd59a  extension/ezoe/translations/fin-FI/translation.ts
 fa1dcd341369fc539d0a397f66e9aec7  extension/ezoe/translations/fre-FR/translation.ts
 04810c0983e1f15704592180c4857cf1  extension/ezoe/translations/ger-DE/translation.ts
@@ -7354,7 +7355,7 @@ a2b163b1fd63c8bdb24c907d8473ad74  share/translations/ell-GR/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-AU/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-NZ/translation.ts
 022475aa85202e7d0224b230f992f667  share/translations/eng-US/translation.ts
-7579459206fde1781c0ac38cefaa61a0  share/translations/esl-ES/translation.ts
+b23f9be3b92c6d7e2e00376952b8a73c  share/translations/esl-ES/translation.ts
 3a1cd7eb19c1ba120877d76a63f9a732  share/translations/esl-MX/translation.ts
 a1ff9edf6db2ff3ff0b2d442410db154  share/translations/fin-FI/translation.ts
 53d8d7f9258c04ed02c4c84a7721e691  share/translations/fre-FR/translation.ts
