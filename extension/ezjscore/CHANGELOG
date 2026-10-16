@@ -1,8 +1,23 @@
+# 1.8.2
+- Updated: ezjscnode::updatepriority takes the reorder lists of admin4's sub items table
+  (PriorityList, ExpectedPriorityList, Renumber with PageOrder and PageOffset): it refuses to write
+  when another user changed the order meanwhile and answers which nodes differ, renumbers the
+  children in steps of 10 when a page has no room between its neighbours, and runs the check and the
+  write in one transaction. Children with equal priorities are listed in node id order.
+- Updated: ezjscnode::subtree lists the account status (disabled, locked) of the users among the
+  children, when the kernel provides it.
+- Updated: ezjscajaxcontent gives a node's is_hidden and is_invisible flags and the object's
+  initial_language, for the language badges and the hidden marks of admin4.
+- Updated: the ajax uploader sanitizes an uploaded SVG image before it is stored, and refuses one
+  that cannot be read or has nothing that can be shown safely.
+- Updated: Version 1.8.2 in ezinfo.php and extension.xml.
+
 # 1.8.1
 - Added: Spanish (Spain and Mexico), Hebrew, Latin and Klingon translations (esl-ES, esl-MX,
   heb-IL, lat-VA, tlh-QO). They are complete and machine-assisted, and would benefit from a review
   by native speakers.
 - Updated: Version 1.8.1 in ezinfo.php and extension.xml.
+
 
 # 1.8.0
 - Updated: the ajax uploader's browse step asks the upload handler's canUpload() like the other
