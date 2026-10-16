@@ -3068,7 +3068,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-ed5151dd315eede41074f14032f0dfdd  doc/changelogs/6.0/6.0.15.md
+7d0ced7c7194bd85f4e450c4c744f7a1  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -5357,7 +5357,7 @@ f96a90033dfa982c5532d6e86250f804  kernel/common/ezpsiteaccessurloperator.php
 b13aefe62a3e0030247f06a02f133148  kernel/common/eztocoperator.php
 4e1f25ed5d8a1e1f9aa54625a88a8593  kernel/common/eztopmenuoperator.php
 84fe1fae52b9b8b9f029ff975ce1e09b  kernel/common/eztreemenuoperator.php
-3293473ac729a7ec9cda330a6971c449  kernel/common/ezurloperator.php
+6953a12aa883c8681e89d787fac58636  kernel/common/ezurloperator.php
 33112e10449d1ace7abd21ca64f35d8e  kernel/common/ezwordtoimageoperator.php
 02173ea3c8c2a03249c09f3c5fd0f451  kernel/common/i18n.php
 d2ddf7466b4280c4911c37c8102bbfa9  kernel/common/template.php

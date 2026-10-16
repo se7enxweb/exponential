@@ -279,8 +279,8 @@ class eZURLOperator
                     }
 
                     $useTmp = true;
-                    ++$tmpCount;
-                    // transformURI() gives back false for a link it did not change (a scheme or //host)
+                    ++$tmpCount; // %tmp1%: the link
+                    // %tmp2%: transformURI() gives back false for a link it did not change (a scheme or //host)
                     $absoluteVar = '%tmp' . ++$tmpCount . '%';
                     $code = <<<CODEPIECE
 
