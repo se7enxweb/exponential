@@ -22304,6 +22304,42 @@ Note: The packages will not be uninstalled.</source>
         <source>Character set</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>%rate % (%hits hits, %misses misses)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>pages stored</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>counting since</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>servers counting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>entries</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>on disk</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>user contexts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>purged tags</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>last purge</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

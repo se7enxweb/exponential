@@ -25272,6 +25272,42 @@ Note: The packages will not be uninstalled.</translation>
         <source>Character set</source>
         <translation>Character set</translation>
     </message>
+    <message>
+        <source>%rate % (%hits hits, %misses misses)</source>
+        <translation>%rate % (%hits hits, %misses misses)</translation>
+    </message>
+    <message>
+        <source>pages stored</source>
+        <translation>pages stored</translation>
+    </message>
+    <message>
+        <source>counting since</source>
+        <translation>counting since</translation>
+    </message>
+    <message>
+        <source>servers counting</source>
+        <translation>servers counting</translation>
+    </message>
+    <message>
+        <source>entries</source>
+        <translation>entries</translation>
+    </message>
+    <message>
+        <source>on disk</source>
+        <translation>on disk</translation>
+    </message>
+    <message>
+        <source>user contexts</source>
+        <translation>user contexts</translation>
+    </message>
+    <message>
+        <source>purged tags</source>
+        <translation>purged tags</translation>
+    </message>
+    <message>
+        <source>last purge</source>
+        <translation>last purge</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/maintenance</name>

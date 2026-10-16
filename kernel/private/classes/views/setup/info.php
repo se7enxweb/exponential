@@ -1375,24 +1375,26 @@ class Info extends \Exponential\Runnable\ModuleView
                         'label' => 'Hit rate',
                         'percent' => $lookups > 0 ? round( 100 * $stats['hits'] / $lookups ) : 0,
                         'text' => $lookups > 0
-                            ? number_format( 100 * $stats['hits'] / $lookups, 1 ) . ' % (' . number_format( $stats['hits'] ) . ' hits, ' . number_format( $stats['misses'] ) . ' misses)'
+                            ? \ezpI18n::tr( 'design/admin/setup/info', '%rate % (%hits hits, %misses misses)', null,
+                                array( '%rate' => number_format( 100 * $stats['hits'] / $lookups, 1 ),
+                                       '%hits' => number_format( $stats['hits'] ), '%misses' => number_format( $stats['misses'] ) ) )
                             : \ezpI18n::tr( 'design/admin/setup/info', 'no lookups yet' ),
                     );
-                    $httpCache['figures']['pages stored'] = number_format( $stats['stores'] );
-                    $httpCache['figures']['counting since'] = $when( $stats['since'] );
-                    $httpCache['figures']['servers counting'] = $stats['servers'];
+                    $httpCache['figures'][\ezpI18n::tr( 'design/admin/setup/info', 'pages stored' )] = number_format( $stats['stores'] );
+                    $httpCache['figures'][\ezpI18n::tr( 'design/admin/setup/info', 'counting since' )] = $when( $stats['since'] );
+                    $httpCache['figures'][\ezpI18n::tr( 'design/admin/setup/info', 'servers counting' )] = $stats['servers'];
                     foreach ( array_slice( $stats['reasons'], 0, 8, true ) as $reason => $n )
                         $httpCache['reasons'][] = array( 'reason' => $reason, 'count' => number_format( $n ),
                             'percent' => $stats['misses'] > 0 ? round( 100 * $n / $stats['misses'] ) : 0 );
                 }
                 $maxBody = (int)$hcContract->config['maxBodySize'];
                 $httpCache['figures'] = array(
-                    'entries' => ( $inv['counted_all'] ? '' : '≥ ' ) . number_format( $inv['entries'] ),
-                    'on disk' => number_format( $inv['bytes'] / 1048576, 1 ) . ' MB',
-                    'user contexts' => number_format( $inv['records'] ),
-                    'generation' => $inv['generation'] . ' (' . $when( $inv['generation_time'] ) . ')',
-                    'purged tags' => number_format( $inv['purged_tags'] ),
-                    'last purge' => $when( $inv['last_purge'] ),
+                    \ezpI18n::tr( 'design/admin/setup/info', 'entries' ) => ( $inv['counted_all'] ? '' : '≥ ' ) . number_format( $inv['entries'] ),
+                    \ezpI18n::tr( 'design/admin/setup/info', 'on disk' ) => number_format( $inv['bytes'] / 1048576, 1 ) . ' MB',
+                    \ezpI18n::tr( 'design/admin/setup/info', 'user contexts' ) => number_format( $inv['records'] ),
+                    \ezpI18n::tr( 'design/admin/setup/info', 'generation' ) => $inv['generation'] . ' (' . $when( $inv['generation_time'] ) . ')',
+                    \ezpI18n::tr( 'design/admin/setup/info', 'purged tags' ) => number_format( $inv['purged_tags'] ),
+                    \ezpI18n::tr( 'design/admin/setup/info', 'last purge' ) => $when( $inv['last_purge'] ),
                 ) + $httpCache['figures'];
                 $httpCache['settings'] = array(
                     'CachedSiteAccesses' => implode( ', ', (array)$hcIni->variable( 'HttpCacheSettings', 'CachedSiteAccesses' ) ),
@@ -1404,8 +1406,8 @@ class Info extends \Exponential\Runnable\ModuleView
                     'sessions' => $hcContract->config['sessionSavePath'] !== ''
                         ? \ezpI18n::tr( 'design/admin/setup/info', 'files (signed-in visitors cached)' )
                         : \ezpI18n::tr( 'design/admin/setup/info', 'not readable before the kernel (signed-in visitors not served early)' ),
-                    'APCu' => ( $hcContract->config['apcu'] ? 'on' : 'off' ) . ( $stats === null ? ' (' . \ezpI18n::tr( 'design/admin/setup/info', 'not usable in this PHP' ) . ')' : '' ),
-                    'TagHeader' => ( $hcContract->config['tagHeader'] ?? '' ) !== '' ? $hcContract->config['tagHeader'] : 'disabled',
+                    'APCu' => ( $hcContract->config['apcu'] ? \ezpI18n::tr( 'design/admin/setup/info', 'on' ) : \ezpI18n::tr( 'design/admin/setup/info', 'off' ) ) . ( $stats === null ? ' (' . \ezpI18n::tr( 'design/admin/setup/info', 'not usable in this PHP' ) . ')' : '' ),
+                    'TagHeader' => ( $hcContract->config['tagHeader'] ?? '' ) !== '' ? $hcContract->config['tagHeader'] : \ezpI18n::tr( 'design/admin/setup/info', 'disabled' ),
                     'MaxBodySize' => number_format( $maxBody / 1048576, 1 ) . ' MB',
                 );
             }
