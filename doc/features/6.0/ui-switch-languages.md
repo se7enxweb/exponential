@@ -7,7 +7,7 @@ side bar offers every language the kernel has a locale for, not only the few tha
 box with headings:
 
 1. **English**: the English locales administrators use most.
-2. **Major world languages**: the 18 languages most needed by administrators worldwide, ranked (see below).
+2. **Major world languages**: the 19 languages most needed by administrators worldwide, ranked (see below).
 3. **Regional variants**: 10 regional forms of those languages with their own formats.
 4. **All languages (A–Z)**: every language of `share/locale` (about 130), in alphabetical order.
 
@@ -45,8 +45,8 @@ groups keep their list of buttons).
 ## The A–Z order and the names
 
 - The **own name** comes from the locale file (`LanguageName`). Where a file only repeats the English name
-  ("Ukrainian", "Hindi (Devnagari)", "Greek (Hellenic)": the first word is that of `InternationalLanguageName`),
-  PHP's Intl extension gives the own name instead ("Українська (Україна)", "हिन्दी (भारत)").
+  ("Indonesian", "Croatian (Hrvatski)", "Serbian (Српски)": the first word is that of `InternationalLanguageName`),
+  PHP's Intl extension gives the own name instead ("Indonesia (Indonesia)", "Hrvatski (Hrvatska)").
 - The **second name** is the language's name in the reader's current interface language (Intl,
   `Locale::getDisplayName()`), else the English name of the locale file. It is left out when both are the same.
 - Two locales with the same names get their codes added (`[ser-SR]`, `[srp-RS]`).
@@ -117,6 +117,7 @@ administrators work in English; Dutch, Polish and Italian have far fewer speaker
 | Vietnamese | 97 | 0.9% | 16 |
 | Ukrainian | — | 0.6% | 17 |
 | Persian | 82 | 1.0% | 18 |
+| Hebrew | 10 | 0.4% | 19 |
 
 Speakers: Ethnologue, as summarised on Wikipedia's *List of languages by total number of speakers* (2026 edition;
 "—" where the summary has no figure). Websites: W3Techs, *Usage Statistics and Market Share of Content Languages for
@@ -127,13 +128,15 @@ Websites*, October 2026. Figures change every year; the order matters, not the d
   `eng-CA` and `eng-IN`, the largest other English-speaking administrations with their own date formats.
 - **Major world languages**: the top of both lists, Spanish to Russian first (large on both), then Arabic and Hindi
   (very many speakers), then the languages with a large share of websites and business software (Italian, Turkish,
-  Korean, Dutch, Polish) and the large markets of Indonesian, Vietnamese, Ukrainian and Persian. Bengali, Urdu, Thai
+  Korean, Dutch, Polish) and the large markets of Indonesian, Vietnamese, Ukrainian and Persian, then Hebrew
+  (0.4% of websites, more than Thai, and the right-to-left language that has an interface translation and a
+  right-to-left administration layout since #521). Bengali, Urdu, Thai
   and Swahili are in the A–Z list: many speakers, little web content (Thai 0.3%, the others under 0.1%).
 - **Regional variants**: the regional forms with the most users and their own formats: Mexican and US Spanish,
   Canadian and Swiss French, Austrian and Swiss German, European Portuguese, Traditional Chinese of Taiwan and Hong
   Kong, and Egyptian Arabic, the largest Arabic-speaking country.
 
-In all 33 entries, inside the 14 to 35 the list should hold so that the groups stay quick to scan. An installation
+In all 34 entries, inside the 14 to 35 the list should hold so that the groups stay quick to scan. An installation
 with other needs ranks its own: see [UI switch settings](../../guides/ui-switch-settings.md#change-the-groups).
 
 Sources:

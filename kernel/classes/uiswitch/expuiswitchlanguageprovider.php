@@ -299,7 +299,7 @@ class expUISwitchLanguageProvider extends expUISwitchProvider
 
     /**
      * The language's own name: LanguageName of its locale file. Where that file only repeats the English name
-     * ("Ukrainian", "Hindi (Devnagari)", "Greek (Hellenic)": its first word is the first word of
+     * ("Indonesian", "Croatian (Hrvatski)", "Serbian (Српски)": its first word is the first word of
      * InternationalLanguageName), Intl's name of the language in itself is used when the extension knows it, its
      * first letter upper case ("Українська (Україна)"). '' for a code the catalogue does not know.
      *
