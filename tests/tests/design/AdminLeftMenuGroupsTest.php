@@ -117,8 +117,8 @@ class AdminLeftMenuGroupsTest extends PHPUnit\Framework\TestCase
 
         // the page marks the Design tab, so the Design menu is drawn beside it
         $this->assertMatchesRegularExpression( '/\$ViewList\["menuconfig"\] = array\(\s*"script" => "menuconfig\.php",\s*\'default_navigation_part\' => \'ezvisualnavigationpart\',/', self::read( 'kernel/visual/module.php' ) );
-        // every copy of the Design menu names the link the same way
-        foreach ( array( 'design/admin', 'design/admin4', 'extension/exp_adminui/design/adminui' ) as $design )
+        // both core copies of the Design menu name the link the same way (AdminUI's copy ships with exp_adminui)
+        foreach ( array( 'design/admin', 'design/admin4' ) as $design )
         {
             $path = "$design/templates/parts/visual/menu.tpl";
             if ( is_file( dirname( __DIR__, 3 ) . '/' . $path ) )
