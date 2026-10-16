@@ -7462,7 +7462,7 @@ d1c4de508ec508b1743858c1c2b4c347  tests/tests/design/AdminLandmarksTest.php
 8c3a2027917dce05051de3adfbf82c29  tests/tests/design/AdminLanguageBadgeTest.php
 553ec211f2d35a9f993c49a49c6b14c0  tests/tests/design/AdminLanguageStatesTest.php
 31a396539d06fe77f5eeea659fbabc9e  tests/tests/design/AdminLeftColumnFontTest.php
-1c30c098d4f7094ae84b4ce1b68c0e14  tests/tests/design/AdminLeftMenuGroupsTest.php
+9e664017d81214d26d4df3ca1d06e33c  tests/tests/design/AdminLeftMenuGroupsTest.php
 48cd696b239173c498671c040aa3bfbe  tests/tests/design/AdminLegacyControlsTest.php
 584ea937f2fab0b4680470244e488283  tests/tests/design/AdminLogoTest.php
 ff58b887ea06f03f993b5a4203913bb9  tests/tests/design/AdminMegaMenuTest.php
