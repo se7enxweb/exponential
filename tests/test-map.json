@@ -493,7 +493,9 @@
       "tests/tests/design/AdminNodeTabsHeightTest.php",
       "tests/tests/design/AdminVisibilityStatusTest.php",
       "tests/tests/design/AdminResponsiveTest.php",
-      "tests/tests/design/AdminLogoTest.php"
+      "tests/tests/design/AdminLogoTest.php",
+      "tests/tests/design/AdminCssReviewFixesTest.php",
+      "tests/tests/design/AdminTokenContrastTest.php"
     ],
     "extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe_tinymce8.tpl": [
       "tests/tests/design/AdminEditBarTest.php"
@@ -547,7 +549,8 @@
     "design/admin4/stylesheets/pagelayout.css": [
       "tests/tests/design/AdminHeaderTest.php",
       "tests/tests/design/AdminVisibilityStatusTest.php",
-      "tests/tests/design/AdminLeftColumnFontTest.php"
+      "tests/tests/design/AdminLeftColumnFontTest.php",
+      "tests/tests/design/AdminCssReviewFixesTest.php"
     ],
     "extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe_engine_switch.tpl": [
       "tests/tests/extension/ezoe/expOEEngineConfigTest.php",
@@ -598,14 +601,18 @@
       "tests/tests/design/AdminLegacyControlsTest.php",
       "tests/tests/design/AdminPreviewDevicesTest.php",
       "tests/tests/design/AdminIconsTest.php",
-      "tests/tests/design/AdminSubitemsPriorityDragTest.php"
+      "tests/tests/design/AdminSubitemsPriorityDragTest.php",
+      "tests/tests/design/AdminCssReviewFixesTest.php",
+      "tests/tests/design/AdminDensityTest.php"
     ],
     "design/admin/stylesheets/components.css": [
       "tests/tests/design/AdminLegacyControlsTest.php",
       "tests/tests/design/AdminPreviewDevicesTest.php",
       "tests/tests/design/AdminIconsTest.php",
       "tests/tests/design/AdminSubitemsPriorityDragTest.php",
-      "tests/tests/design/AdminFontStackTest.php"
+      "tests/tests/design/AdminFontStackTest.php",
+      "tests/tests/design/AdminCssReviewFixesTest.php",
+      "tests/tests/design/AdminDensityTest.php"
     ],
     "design/admin4/templates/parts/left_width_control.tpl": [
       "tests/tests/design/AdminLegacyControlsTest.php"
@@ -994,6 +1001,12 @@
     "kernel/setup/steps/ezstep_create_sites.php": [
       "tests/tests/kernel/classes/setup/AdminUISiteaccessTest.php",
       "tests/tests/kernel/classes/setup/EditorSiteaccessTabsTest.php"
+    ],
+    "design/admin4/stylesheets/core.css": [
+      "tests/tests/design/AdminCssReviewFixesTest.php"
+    ],
+    "design/admin4/stylesheets/theme/admin_datatable.css": [
+      "tests/tests/design/AdminCssReviewFixesTest.php"
     ]
   },
   "generated": {
