@@ -298,6 +298,10 @@
         <source>Classes on this page: %count</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Only this page is searched: %from to %to of %count.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/copy</name>
@@ -972,6 +976,10 @@
     </message>
     <message>
         <source>Groups on this page: %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only this page is searched: %from to %to of %count.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1864,6 +1872,10 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>No bookmarks match.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Save name</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1881,6 +1893,10 @@
     </message>
     <message>
         <source>Move folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move selected to</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2184,6 +2200,14 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Drag a bookmark or folder onto a folder to move it; the buttons do the same from the keyboard.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Expand all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Move to</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2192,7 +2216,15 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Collapse all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search bookmarks</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2611,6 +2643,14 @@
     </message>
     <message>
         <source>Upload a file and add the resulting object in the relation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose a date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose a date for %name</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3348,6 +3388,10 @@
     </message>
     <message>
         <source>Publish without notifying the subscribers of its location: no notification mail is sent for this version.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Code to embed the object</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4278,6 +4322,10 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Item</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>version %version</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4901,6 +4949,26 @@
     </message>
     <message>
         <source>Edit every ticked result in one form.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search for</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The search text was too long and was shortened.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type the words to search for.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The search could not be run. Try fewer or simpler words, or search again later.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count matches</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5745,6 +5813,134 @@
     </message>
     <message>
         <source>Date trashed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Any</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Anyone</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Details</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last modified by</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No item in the trash matches the filter.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Other locations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Parent exists: restores to its original place.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Parent has moved: choose a place when restoring.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Parent is in the trash too: restore it first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Parent no longer exists: choose a place when restoring.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Restore this item: to its original place, or choose another one.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show only the items that match.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Still in the tree at</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Trashed by</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Trashed from</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Where the removal came from</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>by unknown</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>to</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count below it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%items items in the trash: %top removed directly, %below below them. Oldest: %oldest.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Who trashed an item is recorded from this version on: known for %recorded.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>by %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>last modified by %name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6698,6 +6894,22 @@
         <source>%count selected.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>A URL wildcard sends a whole group of addresses somewhere else with one rule: news/* to articles/{1\} turns news/2026/october into articles/2026/october. Each * of the pattern matches any text, and {1\}, {2\} ... in the destination put that text back. Wildcards are tried in the order they were created, the first that matches is used, and they are only consulted when no URL alias matches the address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create one with the form above, for example old-blog/* to blog/{1\}.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Each * of the pattern is one placeholder, numbered from {1\}. Add a * to the pattern or remove the placeholder; otherwise visitors would be sent to an address with a part missing.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/versions</name>
@@ -6719,6 +6931,18 @@
     </message>
     <message>
         <source>Untouched draft</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rejected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Repeat</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6852,6 +7076,62 @@
         <source>Publish without notifying the subscribers of its location: no notification mail is sent for this version.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Preview of the version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open the preview in a new window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>iPhone</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>iPad</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Desktop</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Large Desktop</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preview size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%device, %width × %height px</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%width × %height px, shown at %scale %</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Landscape</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Landscape: phone and tablet turned on their side</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Repeat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Untouched draft</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/contentstructuremenu</name>
@@ -6909,6 +7189,22 @@
     </message>
     <message>
         <source>(Hidden by parent)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Items below %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Actions for %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content tree</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -7281,6 +7577,46 @@
         <source>If redirection fails, click on the following address: %url.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Check the address for a typing mistake.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error code: kernel 21 (page not found)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If the page belongs to an extension, the extension may not be active on this site.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If the site uses the address to choose a siteaccess (for example /admin/...), make sure the siteaccess name is at the start of the address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The address does not lead to a page of the system.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This page does not exist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use the menu or the tabs to get to the page instead of a saved link; the page may have moved or been renamed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What you can do</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The &quot;%module&quot; part of the system has no page called &quot;%view&quot;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There is no page at &quot;%page&quot;.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/error/shop</name>
@@ -7544,6 +7880,10 @@
     </message>
     <message>
         <source>Information collected by &lt;%object_name&gt; (%collection_count)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select collection %id for removal</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -7810,6 +8150,10 @@
         <source>Next</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Pages</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/navigator/alphabetical</name>
@@ -8041,6 +8385,10 @@
     </message>
     <message>
         <source>Hide available translations.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Languages</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8828,6 +9176,138 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Top node</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This is the top node of the content structure. It is not a content object: it has no class, attributes, translations, versions or other locations, and it cannot be edited, moved or removed. The top-level nodes it holds are listed under Sub items.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Details of the top node: its node ID, depth and path, the number of sub items and the time of the latest change below it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add a location</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Class menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Click to copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Click to copy the remote ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Column name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Column presets:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete preset</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download the items with the visible columns as a CSV file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Drag a column to move it, or use its arrow buttons.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enter number</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export CSV</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find a column:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hidden by a parent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language to edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move %name down</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move %name up</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name of the new preset</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No columns match.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Node</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not copied</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Drag to change the order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Drag the grip to change the order. With the keyboard: Space picks the row up, the arrow keys move it, Space drops it, Escape cancels. Alt+Up and Alt+Down move it by one place at once.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Picked up %name. Position %position of %count.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Position %position of %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Moved to position %position of %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dropped. The order is unchanged.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>list</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8848,7 +9328,1247 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Sort by</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sort order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Main language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Main location</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show tabs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A small preview of the item's image, or its class icon.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The item's name, linked to its page in the admin.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Visible, Hidden or Hidden by superior.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The name of the item's content class.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>People</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Who published the current version.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When the current version was published.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When the item was first published.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The flags of the languages the item is translated into.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The name of the item's section.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The ID of the location (node).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The remote ID of the location, stable across installations.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The ID of the content object.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The remote ID of the content object, stable across installations.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Workflow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The item's object states, as group/state identifiers.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The priority within the parent; editable in place when the parent sorts by priority.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Parent node ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The node ID of the item's parent location.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>How deep the location is in the tree (the content root is 1).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Path string</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The node IDs from the top of the tree down to the item: /1/2/89/120/.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Path identification string</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The location's path as identifiers (ezcontentobject_tree.path_identification_string).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Main node ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The node ID of the object's main location (the same as Node ID when this is it).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Children sorted by</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>How the item sorts its own children: published, name, priority, modified ...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Children sort order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ascending or descending, for the item's own children.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hidden by an editor: the item itself was hidden (not one of its parents).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Invisible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not shown to visitors: hidden itself or below a hidden location.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Container</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Whether the item's class can have children.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Node children count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The direct children you may read. One count query per row.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Subtree size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every item below, all depths, that you may read. One count query per row over the whole subtree: slower for big trees.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Child classes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The classes of the direct children with their numbers, most frequent first. One grouped query per row; counts every child.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Newest child</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The name of the most recently published child you may read. One limited query per row.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The identifier of the item's class, as templates and fetches use it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Class ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The ID of the item's class.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The class groups the item's class belongs to (one query per class, not per row).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Section identifier</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The identifier of the item's section (sorting orders by section ID).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Section ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The ID of the item's section.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Word count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Words in the main text: the first of body, description, intro, short_description, else the first rich text, XML or text block with content. Reads the data map.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Text length</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Characters in the main text, markup left out. Reads the data map.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reading time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Minutes a reader needs for the main text (see Word count), at WordsPerMinute words a minute. Reads the data map.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name length</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Characters in the item's name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rating</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The average star rating (needs the ezstarrating extension); empty when never rated.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ratings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>How many star ratings were given (needs the ezstarrating extension).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Object version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The number of the current (published) version.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every stored version: published, archived, drafts and the rest.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Drafts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open drafts that are not published yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draft authors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Who has an open draft of the item.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Latest draft</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When the most recent open draft was last changed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Archived versions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Earlier versions kept in the history.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version created</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When the current version was started (Modified says when it was published).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Parent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The name of the parent location (fetched once per page).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Whether this is the object's main location.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>How many locations the object has. One query per row.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Other locations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The URL aliases of the object's other locations.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Main location path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The URL alias of the main location, when this row is not it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>URLs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The item's URL alias as the admin uses it (the path from the content root); / for the node at the site root.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All URL aliases</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every own URL alias of the item, in all its languages (/ is the site root). Shares the alias query with the other alias columns.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System URL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>content/view/full/&lt;node id&gt;: the address that always works, whatever the aliases.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Public path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The path visitors use on the public siteaccess: the URL alias without that siteaccess's PathPrefix.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Public URL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The full address on the public site: the public siteaccess's SiteURL and the public path.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>URL slug</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The last element of the URL alias.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>URL aliases</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The item's own URL aliases, one per translation normally. One query per row, shared with the other alias columns.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom URL aliases</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The extra aliases made in Manage URL aliases.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom URL alias count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>How many extra aliases were made in Manage URL aliases.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Old URLs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Former addresses (after renames and moves) that still redirect to the item.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Page title in the browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SEO</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The public site's title for the item's page, worked out as its pagelayout does, without rendering the page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Page title length</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Characters in the page title; search engines show about 60.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Meta title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The title set in the item's metadata attribute (xrowmetadata); empty when none.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Meta description</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The description set in the item's metadata attribute (xrowmetadata).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Meta keywords</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The keywords set in the item's metadata attribute (xrowmetadata).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Subtree modified</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When anything in the item's subtree last changed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Published (age)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>How long ago the item was first published: 3 days ago.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Modified (age)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>How long ago the current version was published.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Days since published</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Whole days since the item was first published.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Days since modified</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Whole days since the current version was published.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Published (ISO 8601)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The publishing time as 2026-10-02T09:30:00+00:00, for copying.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Modified (ISO 8601)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The modification time as 2026-10-02T09:30:00+00:00, for copying.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Newest child published</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When the most recently published child you may read was published. One limited query per row.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The user who created the object (its owner).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Owner ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The object ID of the owner.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>First author</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Who wrote the first version still stored.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contributors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Everyone who wrote a version, in the order of their first version.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Related objects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Objects the item relates to (all relation types). One count query per row.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Related object names</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The names of the first related objects you may read, by name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reverse related objects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Objects that relate to the item: what would point nowhere if it were removed. One count query per row.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reverse related names</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The names of the first objects that relate to the item and that you may read.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The tags on the item (needs the eztags extension and a tags attribute).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tag count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>How many tags the item has (needs the eztags extension).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Initial language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The language the item was first written in.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>How many languages the item is translated into.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language codes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The locales of the translations, e.g. eng-US, ger-DE.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Missing translations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The installation's languages the item is not translated into.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Always available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shown in every language, also those it has no translation in.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>One badge: Visible, Hidden, Hidden by a parent or Locked (a template column).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Locked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In the &quot;locked&quot; state of the Lock (ez_lock) state group.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pending versions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Versions waiting in a workflow, an approval for instance.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rejected versions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Versions an approver rejected.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Workflow processes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Workflow processes running for the item (an approval, a delayed publication). One count query per row.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Whether you may edit the item.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Whether you may remove the item.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can move</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Whether you may move the item.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can hide</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Whether you may hide and reveal the item.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can translate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Whether you may translate the item.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can create below</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Whether you may create content below the item; empty when it is not a container.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The user's login name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>E-mail</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The user's e-mail address. Only for users who may assign roles.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Whether the account may log in.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Locked out</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Locked out after too many failed logins (site.ini [UserSettings] MaxNumberOfFailedLogin).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last visit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When the user's last visit began; empty when they never logged in.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Logins</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>How many times the user has logged in.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed logins</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed login attempts since the last successful one.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The roles that apply to the user, directly or through their groups. Two queries per row.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Role count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>How many roles apply to the user.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Has image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Media</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Whether the item has an image; empty when its class has no image attribute.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Images</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image attributes that hold an image.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image dimensions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Width x height of the original image, in pixels.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The width of the original image, in pixels.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image height</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The height of the original image, in pixels.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image file size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The size of the original image file (in bytes in the CSV).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The MIME type of the original image.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image alternative text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The image's alternative text; empty when it has none, which is worth fixing.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The name the file (binary file or media) was uploaded with.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The size of the stored file (in bytes in the CSV).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The MIME type of the file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Downloads</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>How often the file was downloaded through content/download.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search index words</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Technical</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Word positions the built-in search engine indexed for the item (0: not indexed). One count query per row; empty with another search engine.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Views counted in ezview_counter (filled by the updateviewcount cronjob); empty when never counted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language mask</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The object's language bit mask (bit 0: always available).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes of the current version in the shown language. Reads the data map.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Teaser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The first words of the intro, description or body (a template column).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit link</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The address of the item's edit page, when you may edit it (a Handler column).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Days online</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Whole days since the item was first published (a Handler column).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>year</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>years</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>month</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>months</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>week</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>weeks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>day</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>hour</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>hours</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>minute</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>minutes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 ago</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>in %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>just now</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Visible: visitors of the site can see it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hidden: visitors of the site do not see it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An item above it is hidden, so visitors of the site do not see it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Account disabled: this user cannot log in.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Locked after too many failed logins.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%language – main language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%language – translation exists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%language – missing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%language – outdated, older than %main</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Translate into %language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deactivate and move</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reactivate and move back</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disable this account and move it to the group of deactivated users, remembering where it was. Nothing is removed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable this account and move it back to the locations it had.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Import/Export</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export this item or import into it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Move canceled. %name is back at position %position of %count.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Order saved</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Undo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Previous order restored</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The order was not saved: %error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The previous order was not restored: %error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>unknown error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Someone else changed the order in the meantime. Nothing was saved; the list shows the current order now.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save the priority you are editing (Enter) or cancel it (Escape) before you move a row.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please wait until the order is saved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please wait until the priority is saved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Object</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Order of the visible columns:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please enter a valid number between 1 and 10000</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preset</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preview the current version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remote ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save current as...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Secondary location</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View on site</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View on site (new window)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>by</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>locations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upload files to this location.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -8886,6 +10606,22 @@
     </message>
     <message>
         <source>Notification for node &lt;%node_name&gt; was added successfully.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>My notification settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Notifications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You did not follow node &lt;%node_name&gt;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You no longer get notifications for node &lt;%node_name&gt;.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -9000,6 +10736,22 @@
         <source>Run notification filter</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>%events events handled, %mails messages sent.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Handles the events that wait for the notification cronjob. The notification status page shows what waits and what was sent.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Notification status</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The time event makes the digests that are due ready to be sent by the next run.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/notification/settings</name>
@@ -9009,6 +10761,242 @@
     </message>
     <message>
         <source>Apply changes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add items</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add items to your personal notification list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Added %count notification(s).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Any type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>At once</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By default every change is mailed at once. A digest holds the messages back and sends one e-mail with all of them: every day, once a week or once a month, at the hour you choose.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose Add items to pick content, or open an item and choose Notify me in its menu. You are then told by e-mail when something new is published below it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose which collaboration items you want to get notifications for. An item is, for example, content that waits for your approval, and the comments about it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Collaboration notification</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content no longer exists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content that no longer exists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Daily</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Daily, at</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Day of the month</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dismiss</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>E-mail digest</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hour</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>How the messages come</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If day number is larger than the number of days within the current month, the last day of the current month will be used.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Items I follow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last change below it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Messages go to this address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Monthly</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name contains</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No content below it yet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No followed item matches the filter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No kind of collaboration item sends notifications on this site.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing can be sent for this item. Remove it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing was added: you already follow those items, or you may not read them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Notification status</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Once per month, on day number</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Once per week, on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Receive all messages combined in one digest</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove %count items from your notifications?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove selected items.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Removed %count notification(s).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save collaboration settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save digest settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select item for removal.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switched off: one e-mail for each change, at once.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The hour is the server time of the day the digest is made; the weekly and monthly choices use the time chosen above.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tick at least one item to remove.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Weekday</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Weekly</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You are told by e-mail when content you follow changes, and about the collaboration items you take part in. Choose here what you follow and how the messages come.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You do not follow any items yet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You get an e-mail when something is published below one of these items, if you may read it. Open any item in the content structure and choose Notify me to add more.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You stop getting e-mail about them. The items themselves are not changed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your collaboration notifications were saved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your notification settings were saved.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -11076,6 +13064,10 @@ You can also remove the package without uninstalling it from the package list.</
         <source>Show the %count extensions of this site</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Image file</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/package/list</name>
@@ -11676,6 +13668,10 @@ Note: The packages will not be uninstalled.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Dismiss</source>
         <translation type="unfinished"></translation>
     </message>
@@ -11709,6 +13705,62 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Switch between normal and compact view</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Light mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%tab menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Loading the %tab menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The %tab menu could not be loaded.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Go to %tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open the site</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open the site or another siteaccess</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sites</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>in use</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch between light and dark mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>My e-mail preferences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose which e-mail you get.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -11916,11 +13968,23 @@ Note: The packages will not be uninstalled.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Advanced search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dark mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Syndication</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Export parts of the content tree as feeds, import the feeds of other sites</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Skip to main content</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -11956,7 +14020,43 @@ Note: The packages will not be uninstalled.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Show or hide the left sidebar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show or hide the right sidebar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Logout (%login)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User menu (%name)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open your user object</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Side menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Side column</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Main menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>More</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -11964,6 +14064,10 @@ Note: The packages will not be uninstalled.</source>
     <name>design/admin/pagelayout/leftmenu</name>
     <message>
         <source>Show / Hide leftmenu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide / Show leftmenu</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -12157,6 +14261,30 @@ Note: The packages will not be uninstalled.</source>
         <source>Tabs</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Audit trail</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>My e-mail preferences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The content you follow and how you are told.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Which optional e-mail you get; your consents.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set a new password for your account.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your name, e-mail address and other details.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -12327,6 +14455,50 @@ Note: The packages will not be uninstalled.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>What the AI features send where, on one printable page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The AI providers and models, and their tests.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>AI budgets, queued requests and what they cost.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background jobs: waiting, running and failed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Browse and query the database directly.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Packages with a newer release, and their updates.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The Git checkout of the installation and its updates.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Make, download and remove backups.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Design</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Design content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The design's top node and the objects below it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Unreferenced objects</source>
         <translation type="unfinished"></translation>
     </message>
@@ -12340,6 +14512,170 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Images and files nothing uses, to tidy up or move to the trash.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Check user accounts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Who changed what: the audit settings and archives.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear or regenerate the caches.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The content classes and their attributes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What visitors sent through forms.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find content by its id, remote id or path.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The cronjob parts, their scripts and last runs.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Activate and deactivate extensions.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The settings of the whole site.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Read and edit the INI settings.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The languages content is written in.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The look of the site.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>E-mail categories, suppressions and consents.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Run the maintenance tasks of the installation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The menus of the classic site designs.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pending notifications and the last runs.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The OAuth clients and their access.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Import, export and install packages.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export parts of the content tree as PDF.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warm the caches of the sites.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Wizards for template operators and datatypes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Who may do what, and where.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>RSS imports and exports.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What visitors searched for.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sections group content for access and design.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Who is signed in; end sessions.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The site data rows, read only.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Object state groups and their states.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>PHP, database and server, with health checks.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The templates of the designs and their overrides.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>List and edit templates.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The toolbars and their tools.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Which workflow runs on which event.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Compare files and database with this release.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Check the links in the content.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom URL aliases and forwards.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>URL patterns that redirect or forward.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Workflows that are running or waiting.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Workflow groups, workflows and their events.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Overview</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -12469,6 +14805,42 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Access control</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Check user accounts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Users and user groups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Users and user groups; create and edit accounts.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Who is signed in; end sessions.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Who may do what, and where.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Accounts not yet activated; activate or remove them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -13372,11 +15744,51 @@ Note: The packages will not be uninstalled.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Upload multiple files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Unreferenced objects in subtree</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Broken relations in subtree</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This item as package…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This item and its subtree as package…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Subtree as package, without class definitions…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Subtree as package, with all versions…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open the package wizard…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deactivate and move (user accounts)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reactivate and move back (user accounts)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Import/Export</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -13485,6 +15897,10 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>People who bought this also bought</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Category</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -14009,6 +16425,14 @@ Note: The packages will not be uninstalled.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>ID %id</source>
         <translation type="unfinished"></translation>
     </message>
@@ -14106,6 +16530,10 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Move down</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use the order buttons to set the order of the policies. The up arrow moves the policy one place up. The down arrow moves the policy one place down.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -14874,6 +17302,14 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>use the website toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>check user accounts, and disable, enable and unlock them</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -17330,6 +19766,10 @@ Note: The packages will not be uninstalled.</source>
         <source>%count selected.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Only this page is searched: %from to %to of %count.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/section/view</name>
@@ -19322,6 +21762,174 @@ Note: The packages will not be uninstalled.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>No cronjob part matches.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Site %siteaccess · find a part or script · run every part</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scripts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>suggested</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>by hand</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Compact</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Detailed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Global</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pausing cronjob parts is switched off (cronjob.ini [PauseSettings] Pause=disabled).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All cronjob parts are paused. Resume them to run one.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The &quot;%part&quot; part is paused. Resume it to run it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No cronjob part named &quot;%part&quot; can be paused.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The pause of &quot;%part&quot; could not be written to %directory.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All cronjob parts are paused. A script that runs now goes on to its end; the scripts after it are left out.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All cronjob parts are resumed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The &quot;%part&quot; part is paused. A script that runs now goes on to its end; the scripts after it are left out.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The &quot;%part&quot; part is resumed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All cronjob parts are paused since %since by %user. Nothing runs, from here or from the crontab, until they are resumed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All cronjob parts are paused since %since. Nothing runs, from here or from the crontab, until they are resumed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Resume all parts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pause all parts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Leave every cronjob part out until resumed, whoever starts it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left out by runcronjobs.php until resumed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Resume the %part part</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Leave the %part part out until resumed, whoever starts it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pause</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Since %since by %user</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Since %since</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pauses</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Paused and resumed from this page, newest first</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Resumed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing has been paused from here yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Activated</source>
         <translation type="unfinished"></translation>
     </message>
@@ -19783,6 +22391,42 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Every day at %time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Note: %note</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Note</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Note for a pause or resume (optional)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Kept with the next Pause or Resume pressed on this page; shown under Pauses, on the paused part and in the output of runcronjobs.php.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Docs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Documentation of %script (opens in a new window)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1 script</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next run: %time</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -24365,7 +27009,91 @@ Note: The packages will not be uninstalled.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>A column the admin sub-items list offers under Table options, computed for the visible rows of the current page and exported with the CSV. One [Column_&lt;key&gt;] block per column, which names a class, a static method or a template; for example [Column_wordcount] with Handler=myExtColumns::wordCount adds a column whose value that method returns.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A kind of large content operation that runs in the background in batches, with a progress page, cancel and resume (content/job/&lt;id&gt;, exp:expcontentjob). The kernel ships remove, copy, move, hide, reveal, section, state, addlocation and removelocation; an extension adds its own, for example JobTypes[republish]=myExtJobRepublish.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A subclass of a command, cronjob part or view class, named in site.ini [RunnableSettings] Implementation[]. The file of the command, part or view stays as it is; Runnable::create() makes the subclass instead, and an entry that is not a subclass is ignored. A command reads it from settings/site.ini and settings/override only, because it starts before its siteaccess and extensions are loaded.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A word of the exp:ini command (console exp:ini &lt;action&gt; ...) or a place it can write settings. The kernel ships get, set, add, rem, clear, toggle, copy, where, list, scopes and actions; an extension adds its own, for example Actions[dump]=myExtIniActionDump makes "exp:ini dump" run that class, and ScopeProviders[]=myExtIniScopeProvider adds scopes such as a directory every cluster node shares.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audit alert rule classes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audit archive formats</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audit sinks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audit taxonomy branches</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Command, cronjob part or view re-implemented</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content job type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content job types</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Online editor engines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Debug bar presets</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Debug bar settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every command in bin/, cronjob part in cronjobs/ and module view is a class; a subclass of one, named in site.ini, runs in its place, and listeners can act before and after any of them. For example a site override with Implementation[Exponential\View\Kernel\Content\History]=myHistoryView makes content/history run myHistoryView, which extends the kernel class and changes only what it overrides.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Server functions of ezjscore</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Subitems table column</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Subitems table columns</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>commands, cronjob parts and views as classes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>subitemscolumns.ini [Column_&lt;key&gt;] Class=&lt;class&gt;, Handler=&lt;class&gt;::&lt;method&gt; or Template=design:subitems/columns/&lt;name&gt;.tpl in extension/&lt;name&gt;/settings/subitemscolumns.ini.append.php; defaults and presets in subitems.ini</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>template operators and functions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>template overrides</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -24385,11 +27113,47 @@ Note: The packages will not be uninstalled.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>interfaces and abstract classes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>kernel classes replaced</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>module views</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>places the kernel looks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>registry entries that name no class</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>settings that name a class</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>implements expIniAction (name, description, usage, run( expIniCommandContext )) or expIniScopeProvider (scopes( $root ))</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>content.ini [ContentJobSettings] JobTypes[&lt;name&gt;]=&lt;class&gt; in extension/&lt;name&gt;/settings/content.ini.append.php</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>events</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>exp:ini action or settings scope</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>exp:ini actions and scope providers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -24445,6 +27209,18 @@ Note: The packages will not be uninstalled.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>%counted of them counted as settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%runnables commands, cronjob parts and views are classes a subclass named in site.ini can replace.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>exp:ini has %actions actions and %providers scope providers; an extension adds its own in ini.ini.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>A callable taking ( $run, $part, $siteaccess, $scripts, $single ) and returning true to run the part</source>
         <translation type="unfinished"></translation>
     </message>
@@ -24462,6 +27238,14 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Something that decides whether a cronjob part runs at all, for example a stop switch while a release is deployed. runcronjobs.php asks the filter cronjob/part/run with the part, the siteaccess and the scripts before the first script starts; only true runs the part.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%shown of %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -24737,6 +27521,30 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>.gitignore</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>extension.xml</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ezinfo.php</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -25350,6 +28158,30 @@ Note: The packages will not be uninstalled.</source>
         <source>Whether each language keeps its own value. Turning this off after content exists leaves the translations behind, unreachable.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>.gitignore</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>extension.xml</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ezinfo.php</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/rad/designextension</name>
@@ -25619,6 +28451,30 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>.gitignore</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>extension.xml</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ezinfo.php</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -26972,6 +29828,30 @@ Note: The packages will not be uninstalled.</source>
         <source>Which template draws the attribute as a whole.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>.gitignore</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>extension.xml</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ezinfo.php</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/rad/module</name>
@@ -27213,6 +30093,34 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>.gitignore</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>extension.xml</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ezinfo.php</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>module.php</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -27566,6 +30474,30 @@ Note: The packages will not be uninstalled.</source>
         <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>.gitignore</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>extension.xml</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ezinfo.php</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/rad/override</name>
@@ -27779,6 +30711,30 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Overrides are switched on and the map has been generated, so one written here will be loaded.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>.gitignore</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>extension.xml</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ezinfo.php</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -28288,6 +31244,30 @@ Note: The packages will not be uninstalled.</source>
         <source>Nothing at all. For content that is never shown anywhere but on its own page.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>.gitignore</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>extension.xml</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ezinfo.php</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/rad/survey</name>
@@ -28564,11 +31544,51 @@ Note: The packages will not be uninstalled.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Actions and scopes of exp:ini</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Commands, cronjob parts and views as classes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Registries</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>commands, cronjob parts and views to re-implement</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>exp:ini registrations that cannot work</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>re-implementations that cannot work</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>registry entries that cannot work</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Settings blocks each entry of which registers an implementation: the columns of the subitems table (subitemscolumns.ini [Column_&lt;key&gt;] Class=, Handler=&lt;class&gt;::&lt;method&gt; or Template=), the content job types (content.ini [ContentJobSettings] JobTypes[]), the actions and scope providers of exp:ini (ini.ini [IniCommandSettings]) and the server functions of ezjscore (ezjscore.ini [ezjscServer_&lt;name&gt;] Class=), with every remote service a server function class extending expServiceBase declares (its static $services, called as ezjscore/call/&lt;name&gt;::&lt;service&gt;; each one added to the total, a declared service whose method is missing is broken). An entry that names a class is also one of the settings that name a class and is counted there; the others are added to the total here. An entry whose class, method or template is missing, or whose class does not extend what the registry asks for, is shown as broken. Built-in subitems columns, which the list renders itself, are no point and are not listed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/bc/6.0/rad-extension-surface.md.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Each limitation of a policy function is listed too, with the class and method that give its values; one whose class is not there offers nothing to choose in the role editor and is shown as broken.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>exp:ini actions, and %providers scope providers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>registry entries: %columns subitems columns, %jobs content job types</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -28900,6 +31920,30 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>A fetch with its arguments already decided, called by one short name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>.gitignore</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>extension.xml</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ezinfo.php</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -29370,6 +32414,30 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>The licence text named below. On by default: an extension with no licence file says nothing about how it may be used.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>.gitignore</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>extension.xml</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ezinfo.php</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -33671,6 +36739,18 @@ Note: The packages will not be uninstalled.</source>
         <source>Objects using URL #%url_id (%url_count)</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Queued</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Repeat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Untouched draft</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user</name>
@@ -34172,6 +37252,10 @@ your account.</source>
     </message>
     <message>
         <source>Signing in…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content, sites and layouts, managed in one place.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -35546,6 +38630,98 @@ your account.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Clear the filter to move overrides.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Defined by an extension; its order and conditions can be changed here, removing it is done in the extension</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Drag to move</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filter this page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name, file or condition</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No conditions: used for every request of this template.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save conditions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save the conditions edited above. The order is saved on its own, as you move the overrides.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Saving...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Some overrides were not removed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The order could not be saved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The overrides were not changed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>These are defined by an extension, not in the siteaccess settings, and have to be removed there:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Try earlier</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Try later</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>extension</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>siteaccess</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Defined in settings/siteaccess/%siteaccess/override.ini.append.php</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The overrides are tried from the top, and the first whose conditions all match is used. Drag an override by its handle to a new place, or use its arrows; every change is saved at once as the Priority of these overrides in settings/siteaccess/%siteaccess/override.ini.append.php.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Try %name earlier</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Try %name later</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Remove this condition</source>
         <translation type="unfinished"></translation>
     </message>
@@ -35698,6 +38874,14 @@ your account.</source>
     </message>
     <message>
         <source>Siteaccess</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Priority</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tool</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -36214,6 +39398,10 @@ your account.</source>
     </message>
     <message>
         <source>Confirm removal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only this page is searched: %from to %to of %count.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -38463,6 +41651,10 @@ your account.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Default Open Graph image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Alternative text is required</source>
         <translation type="unfinished"></translation>
     </message>
@@ -40071,6 +43263,22 @@ If you want to send comments to the approver or view the status use the URL belo
     </message>
     <message>
         <source>ISBN %data_text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Canonical Link</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open Graph image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Browse to add an existing object</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -42399,6 +45607,10 @@ The item be can viewed by using the URL below.</source>
         <source>(Owner: %owner)</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Collaboration and approvals</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/standard/notification/addingresult</name>
@@ -42564,6 +45776,10 @@ The item be can viewed by using the URL below.</source>
     </message>
     <message>
         <source>Import package</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%arrowleft Back</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -42890,6 +46106,14 @@ You can also remove the package without uninstalling it from the package list.</
     </message>
     <message>
         <source>No licenses are configured for packages. Add them to package.ini [LicenseSettings] LicenseList.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back to the package</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Package list</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -46748,6 +49972,18 @@ See the requirements page for more information.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Organisation name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Postal address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Who sends the optional e-mail of the site (newsletters, notifications) and their postal address, as the law requires in every such e-mail. Both can be changed later on the e-mail preferences status page; an empty address is allowed and shows a warning there.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Editor site</source>
         <translation type="unfinished"></translation>
     </message>
@@ -50558,6 +53794,10 @@ your account.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Expiry cache</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>REST Application cache</source>
         <translation type="unfinished"></translation>
     </message>
@@ -51366,6 +54606,109 @@ your account.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Aquarius</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Aries</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Birthday</source>
+        <comment>Datatype name</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Canonical url must use https protocol.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Capricorn</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Creditcard number is not a number</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Description should be shorter as 155 characters.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Gemini</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Leo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Libra</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name on creditcard not given</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pisces</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please enter a correct date.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please enter the correct CVV2 code.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sagittarius</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scorpio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Syndicate</source>
+        <comment>Datatype name</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Taurus</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The creditcard was not accepted.
+                                                                  Please check the creditcard data.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This transaction has failed to
+                verify that the use of a secure transaction (MD5 Hash Failed).
+                Please contact the site administrator and inform them of
+                this error. Please do not try to resubmit payment.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Virgio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your creditcard is expired.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>hCaptcha</source>
+        <comment>Datatype name</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>An alternative text is required for this image.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -51478,6 +54821,90 @@ your account.</source>
     </message>
     <message>
         <source>Collaboration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&quot;%1&quot; was approved. It is published when the publishing workflow continues.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&quot;%1&quot; was denied. It is a draft for the author again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A group with this name exists already.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enter a name for the group.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Groups cannot be nested that deep.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only an approver of this item can approve or deny it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The group &quot;%1&quot; was created.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The group &quot;%1&quot; was deleted. Its items are in the main group now.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The group was not found.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The group was renamed to &quot;%1&quot;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The item was moved to &quot;%1&quot;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The item was not found.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The main group cannot be deleted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The main group cannot be renamed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The parent group was not found.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There are too many groups already.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This approval is closed: comments can no longer be added.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This approval was decided already.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Write a comment first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your comment was added.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -51692,7 +55119,63 @@ your account.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>The folder "%name" was created.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The folder could not be created: it needs a name and an existing parent folder.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The folder was renamed to "%name".</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The folder could not be renamed: it needs a name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The folder does not exist.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The folder "%name" and everything in it were deleted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The folder "%name" was deleted, its bookmarks and folders moved up one level.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Moved %count bookmark(s).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing was moved: choose a bookmark and one of your folders.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The folder was moved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The folder cannot be moved there: not into itself or into a folder below it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>The order was saved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The entry was moved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>It cannot be moved there: not into itself or into a folder below it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unknown bookmark action.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -52086,6 +55569,26 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>BC CIE Export</source>
+        <comment>Navigation part</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>CJW Newsletter</source>
+        <comment>Navigation part</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Syndication</source>
+        <comment>Navigation part</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>CIE</source>
+        <comment>Navigation part</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>AdminAid</source>
         <comment>Navigation part</comment>
         <translation type="unfinished"></translation>
@@ -52100,6 +55603,78 @@ You will need to change the class of the node by using the swap functionality.</
     <name>kernel/notification</name>
     <message>
         <source>Notification settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count digest messages are overdue; a run sends them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count events wait and the last run was more than an hour ago (%time). Is the notification cronjob running?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count handled events have nothing left to send; Remove old events clears them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count subscriptions belong to users that no longer exist.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count subscriptions point to content that no longer exists.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A handler failed on %count events in the last run; see the debug log.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add to my notifications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mail is written to files, not sent (site.ini MailSettings Transport=file).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No run is recorded yet. The notification cronjob (part &quot;frequent&quot;) sends the notifications.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Notification status</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Notification was removed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The last run failed: %error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The subtree handler is not available, so no one is notified about published content.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There is no valid sender address: set EmailSender in notification.ini or site.ini.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count messages could not be handed to the mail transport and wait for the next run; each is given up after %hours hours.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count messages were given up in the last run: older than %hours hours, or for an address that cannot be mailed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -52550,6 +56125,10 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Public domain</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Proprietary licenses</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -53468,6 +57047,74 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your current password is not correct.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>At least %1 characters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A lowercase letter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An uppercase letter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A digit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A symbol or space (not a letter or digit)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>At least %1 of: lowercase letters, uppercase letters, digits, symbols</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Does not contain your user name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Is not your current password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The new password must be at least %1 characters long.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The new password must contain a lowercase letter.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The new password must contain an uppercase letter.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The new password must contain a digit.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The new password must contain a symbol or a space.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The new password must mix at least %1 kinds of characters: lowercase letters, uppercase letters, digits, symbols.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The new password must not contain your user name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The new password must be different from your current password.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The new password does not meet the requirements.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/register</name>
@@ -53574,6 +57221,10 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Finish User Registration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>eZ Page swap workflow event</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -54509,6 +58160,98 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The licence &quot;%licence&quot; is not one of the licences configured in package.ini [LicenseSettings]. Choose one from the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>action</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>also a setting that names a class</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>broken entry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>command</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>counted here</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>cronjob part</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>extension</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>kernel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>module view</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>re-implemented by %class</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>scope provider</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audit alert rule classes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audit archive formats</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audit sinks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audit taxonomy branches</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content job types</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Online editor engines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Debug bar presets</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Debug bar settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Server functions of ezjscore</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remote services (expservices)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Subitems table columns</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>exp:ini actions and scope providers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -56006,6 +59749,14 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Legacy bridge test</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Legacy hook test</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Unknown export format %1.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -57245,6 +60996,462 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Id, path or URL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find content by an object, node, attribute or version id, a remote id, a URL alias or the path of a file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete permanently</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Purge from the trash</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Archived</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rejected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Internal draft</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This action is not possible.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count nodes are below it; at most %limit can be removed here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Object %id, %class.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The object goes to the trash from every location listed here, with everything below them. It can be restored from the trash.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The object is deleted from every location listed here, with everything below them. This cannot be undone: nothing goes to the trash.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count nodes below it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>nothing below it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Locations: %locations. Nodes below them: %children. Versions of the object: %versions.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count other objects relate to what is removed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The object is purged from the trash with all its %versions versions. This cannot be undone.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Node %id, trashed from</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version %version (%status, %language) is removed. This cannot be undone. The object keeps its other %count versions.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I understand that this cannot be undone.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back to the finder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing found, or you have no access to what was found.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You do not have the policies this action needs.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You may not remove every location of this object and everything below it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This object cannot go to the trash (it is a user or has users below it); it can only be deleted permanently.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There are too many nodes below it for one removal here; remove it from the content structure, where a large removal runs in the background.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Something below it is waiting for approval; remove it once that is decided.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This part of the content tree is being changed by a background job. Try again when the job is done.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The object is not in the trash.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This version cannot be removed: it is the published one, a workflow still holds it, or you may not remove it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The object changed after the confirmation page was shown. Check it again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tick the box to confirm that this cannot be undone.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An action can only be sent from a form of the finder.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The form has expired or did not come from this site. Open the finder again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This is not an action of the finder.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The action failed. The error log has the details.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The action was refused.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Repeat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Queued</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Found by</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>object id %id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the remote id of the object</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>node id %id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the remote id of node %id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>node %id, which is in the trash</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the URL alias %alias (node %id)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>with the path prefix %prefix of siteaccess %siteaccess</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the last part of the URL alias %alias (node %id)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>an alias containing “%part” (%alias, node %id)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enter at least %count characters to search by part of an alias.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(an old address, kept as history)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>as a page of siteaccess %siteaccess</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>version id %id (version %version)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>attribute id %id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the file path %path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attribute %id (%identifier, %datatype), version %version, %language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Object id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>initial: %language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>States</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remote id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Current version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Locations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Node id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>URL alias</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>None: the object is in the trash.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No location you may read.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Versions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No version you may read (content/versionread).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Original path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Trashed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Trashed by</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>parent %id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Restore</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recognise automatically</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attribute id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Moved to the trash</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleted permanently</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Purged from the trash</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version removed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>object %id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>version %v</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The action was not done.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search for</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enter an object, node, attribute or version id, a remote id, a URL alias, a page URL, or the path or URL of a file below var/ (for example the path of an image). A path that ends with / or * finds every file below it. A number is tried as every kind of id.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The text is too long.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This is not an id, path or URL the finder can look for.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Objects found: %count.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only the first %count are shown; enter a more exact text.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Setup</source>
         <translation type="unfinished"></translation>
     </message>
@@ -57264,7 +61471,203 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>%n spooled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Activity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alert mail recipients</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audit dashboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Built in %ms ms from the index and the stored chain verification; opening this page is recorded (system.audit.read).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cronjob part (audit)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Events per day, last 7 days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed logins</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed logins by address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed logins by login (hashed for unknown accounts)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hash chains</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Health</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last reindex</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last run %time; daily tasks done for %day.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Latest role grants</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Latest warnings and worse</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>On the command line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Operations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Quick links</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Refused views</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Security</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The audit cronjob part has not run for over an hour (last: %time). Rotation, archives, sinks and the index wait for it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Today / 7 days. Families:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Today and 7 days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Top actors today</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Top objects today</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warnings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>alerts, 24 h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>archive due</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>events today</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>failed logins, 24 h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>in 7 days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>last %time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>oldest live %live, last archive %archive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>permission refusals, 24 h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>role grants, 7 days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>rules</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>rules with a problem</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Confirm your password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The password is not correct. The attempt was recorded.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>"%action" is an audit management action. Enter the password of %login again to continue; it stays confirmed for %minutes minutes in this session.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Confirm and continue</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A filter is not valid, so nothing is shown:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>%n addresses</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%n days old</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -57331,6 +61734,774 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Background exports are not available here.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>%count alerts in the last 24 hours</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%live days live, %archive days archived</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%n breaks, first: %first</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%n days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%n events of this job</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%n not indexed yet, read from the files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%n records</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%n repaired</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%total events</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%total events since %from</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%total events, newest first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Actor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alert rules are switched off ([AuditAlertSettings] Alerts=disabled).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alerts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alerts are records of the system channel, which your access does not include.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All audit events</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All channels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An export is recorded (system.audit.export) with the filter, the format, the count and the sha256 of the file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Archive formats</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Archives</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audit alerts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audit archives</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audit charts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audit console</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audit is %state. Live files: %dir.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audit is switched off ([AuditSettings] Audit=disabled): nothing new is recorded.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audit is switched off: nothing new is recorded.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audit settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audit: recent events</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audit: security events</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back to the console</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Before and after</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Behind the files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>CSV</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chain</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Channel %channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Charts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Charts need the audit index (audit.ini [AuditIndexSettings] Index=enabled and its tables). The console still reads the files.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Charts of this filter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Children</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Console</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download the record (JSON)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Event</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Event name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Events per day and channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export audit events</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filter the audit events</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filter the charts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fired alerts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hash chain broken</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hash chain per channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Index</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Installation %id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>JSON</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>JSON lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Kept</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Kept in the index</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Keys</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last indexed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Latest manifests</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Live files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Live files in %log; archives in %archive. Archiving, verifying and restoring are done by the audit cronjob part and by exp:audit (verify, archive, restore).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Logins and failed logins per day</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Most active actors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Most frequent events</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Newer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No alert has fired.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No audit events match this filter.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No audit events yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No audit files yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No events.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No filter: every audit event you may read.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No format handlers are registered here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No keys yet: they are made with the first event.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No security events of notice severity or worse.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No sinks are registered here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Object</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Older</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Oldest archive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Oldest live</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only the newest %max are exported here; exp:audit export has no limit.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Other events of this request</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Page %page of %pages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Parent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pseudonymised after</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recent events</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Records</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Refusals and failures per day</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Request</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rules</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rules are set in audit.ini ([AuditAlertSettings] Rules[] and the [AlertRule_*] blocks); write them with exp:ini.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search: %kind. Opening this page is itself recorded (system.audit.read).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Severity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Severity at least</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Signing key %id, fingerprint %fp</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sinks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The filter:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The latest %limit events of the audit channels in %dir, newest first. Times are local; each record is written in UTC.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The live files are large: the chain state above covers the files of today. Run exp:audit verify for all of them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The numbers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The record as written</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>These events in the console</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This page is request %id; opening it is itself recorded (system.audit.read). On the command line: exp:audit tail, exp:audit show &lt;id&gt;, exp:audit verify.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This page only shows the settings. Write them with exp:ini, for example: ./console exp:ini set audit.ini/AuditConsoleSettings/PageSize 100 override. Every write to audit.ini is recorded (system.audit.setting.write).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Threshold</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Total</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Variable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Verified</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What happened in the system: the audit timeline, events, charts, alerts and exports.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Who</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your access is limited to the channels: %channels.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>cronjob run</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>disabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>enabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>failed logins</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>first</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>first break at record %line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>hash matches the record</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>imported</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>in use</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>last</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>logins</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not working</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>one row per event, for a spreadsheet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>per</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>problem</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>pseudonymised</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>pseudonymised in the index; the file holds the original</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>read from the files (no index)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ready</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>reason</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>record %seq in %file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>roles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>severity %s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>success</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>tables installed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>tables missing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the records as one array</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the records as written, one per line; their hashes can be checked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>unavailable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(today only)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The chain status is the result of the last verification (daily maintenance, exp:audit verify or this button).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Verify now</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not verified yet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>verified %time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All audit events of this node</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No audit events about this node.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The audit trail of this node</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/preferences</name>
@@ -57382,7 +62553,639 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Audit trail</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audit trail of this job</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%done of %total nodes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%s s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All jobs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Average batch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Batch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Batch size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Batches</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancelled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chosen mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content jobs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Continue from the last finished batch.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Counts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download the whole log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Duration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Everything up to the last finished batch is kept. Resume continues from there; nothing is done twice.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Finished</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Job</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Locations copied</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Locations removed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Locations removed, object kept (it has other locations)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Moved to the trash</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing had been copied yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Objects copied</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Objects moved to the trash</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Objects removed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open the node that failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open the parent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open the partial copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Opening the result in %seconds s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Operation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Peak memory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove subtree, delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove the partial copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove the partial copy starts a job that deletes it. To copy the subtree, start the copy again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove, delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Removed items</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Removing %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Running</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Skipped</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Slowest batch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start a job that removes what the cancelled copy created.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Started by</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Started from</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stop after the current batch. What is done so far is kept.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stopping after the current batch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Subtree</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The copy was cancelled.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The job stopped with an error.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The partial copy is no longer there (it has been removed).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The removal was cancelled.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The subtree has been removed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Versions copied</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Waited for a worker</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Waiting for the status...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warnings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What was not removed yet is still in place. Remove it again to remove the rest.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Where it runs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Who</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Worker process</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Worker runs on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Worker starts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>as %user</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>batch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>command line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>deleted permanently</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>on %host</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Also for everything below this node</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Open the result</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%done of %total</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%title, %percent% done.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A remove or copy of a large subtree appears here when it runs in the background.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An operation that overlaps them is refused until they are done.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background jobs are working on this part of the tree</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Below %limit items running now is preselected, from %limit on the background job (content.ini SynchronousLimit). Your last choice is remembered.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose the node to add a location under using the radio buttons then click &quot;Select&quot;. Every selected item keeps its locations and gets one more under that node.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose where to add a location for &lt;%object_name&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear the filters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content jobs (%count)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>How to run it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Jobs per state</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Large subtree removes and copies run in the background, in batches. A job keeps going when you leave its page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last modified</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Locations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Moved to the trash, the items can be restored from the trash later. Without it they are deleted for good. Items you may not remove are marked in red above; then nothing is removed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>My jobs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Newer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No job matches these filters.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Objects with other locations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Older</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Progress and items</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Run in the background (%count items: you can leave the page)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Run in the background (recommended for %count items: you can leave the page)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Run now (this page waits until it is done)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Selected locations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Server</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show the job</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Source and target</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The copy gets the current version of each object unless all versions are chosen, and you as its creator unless the creator is kept (content.ini [CopySettings]).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The operation was not started</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The part copied so far is kept under %target.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There are no content jobs.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This is a large removal. It runs in the background, in batches: you see its progress and can leave the page while it works.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What this touches</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>duration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>only these locations go; the objects keep existing at their other locations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove %count locations of %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only the selected locations are removed; the object keeps its other locations.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Large copies normally run as a background job, but background jobs are not available on this server right now. Try again later, or use the command exp:expcontentjob copy.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This job cannot be cancelled any more.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This job cannot be resumed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There is no partial copy to remove.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not for more than %limit items: the request would take too long (content.ini NowLimit).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not for more than %limit items here (content.ini %setting).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This part of the content tree is being changed by a background job. Try again when the job is done.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not started</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%name and %count more</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copying %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy subtree</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The subtree has been copied.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open the copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove subtree, move to trash</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove, to trash</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The job is done.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open the node</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Node %id</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -57540,6 +63343,158 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Here is what is happening on %site.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Caches</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content items</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content published per day over the last 14 days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content structure</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exponential itself -- the kernel, its designs and the extensions kept in git -- is updated by pulling the newest release into the installation: see which branch and version it runs, what has changed upstream, and update.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Good afternoon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Good evening</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Good morning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Key figures</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Layouts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Media items</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Media library</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Most attacks use flaws that are already fixed in a newer version. Two updates keep this installation safe; check both regularly, and right away when a security release is announced.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>My drafts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>My pending items</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open the Git manager</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open the Updates dashboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Published in the last 7 days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Publishing, last 14 days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Quick actions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stay secure: keep Exponential up to date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The Git manager is not available to you here; ask an administrator to run this step.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The Updates dashboard is not available to you here; ask an administrator to run this step.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The libraries the CMS requires are Composer packages. The Updates dashboard lists the installed packages, checks Packagist for newer versions and security advisories, and updates them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Update the CMS with the Git manager</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Update the libraries with Composer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upgrade check</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upload files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>%delta against the 6 days before, without today</source>
         <translation type="unfinished"></translation>
     </message>
@@ -57568,6 +63523,1034 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>PHP deprecations, written to deprecated.log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Page summary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>high</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>raised</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>normal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Timing points:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Checkpoint</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start (sec)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Duration (sec)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Memory at start (KB)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Memory used (KB)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Accumulator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Duration (%)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Average (sec)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time accumulators:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Note: percentages do not add up to 100% because some accumulators overlap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Queries</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time in queries</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Average</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No statements were recorded for this page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The statements are not recorded. Turn on &quot;SQL output&quot; (DatabaseSettings SQLOutput) in the Settings tab.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Slowest: %ms ms (statement %n)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count PHP files were included. Turn on &quot;Display included files&quot; (DebugSettings DisplayIncludedFiles) in the Settings tab to list them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Included files:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of files included: %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Main resources:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Total runtime</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Peak memory usage</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Database Queries</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Memory now</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Memory limit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Largest steps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Process</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Restarts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Template &amp; content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>INI settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This page and below</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Quick clear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Keep open on reload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SQL query cache</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Off (querycache.ini Mode=off)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mode %mode, MaxAge %age s, MaxRows %rows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>APCu is not available to this server: shared works as request.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>APCu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count results not kept in APCu: less than %reserve % of it was free (ApcuReserve)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count entries</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%used of %size (%pct %)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>APCu used in all: %pct %</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This server</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>since %time: %requests requests, hit rate %rate, %stores stored, %writes writes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>generation %gen, cleared %time, %count tables written in the last MaxAge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What is cached (by table)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Table</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hits</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Largest entries</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only the first %count entries were read.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing is cached on this server yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clears every cached result (a new generation).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Counters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zeroes this server's counters; the cached results stay.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>QC %rate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SQL query cache: hit rate and database time saved (estimated); %hits hits, %misses misses, %stores stored, %skipped not cached, %writes writes, mode %mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Storage %storage (setting %setting), ApcuReserve %reserve %</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Resize the debug panel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Drag or use the arrow keys to change the height; double-click for the default height.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count pixels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The saved time is %share % of this page&apos;s time: without the cache about %without ms instead of %with ms</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(%factor times as long)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cache</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Timing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SQL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Included files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Memory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Velocity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Debug report sections</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filter settings and report rows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No rows match the filter.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count rows match</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear filter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Errors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warnings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Notices</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Timing points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Strict</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy Messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copied 1 message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copied %count messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No messages to copy.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Could not copy the messages.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sort by time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sort by order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Slowest first</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Loading...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Could not load: %error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Retry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign in with a user who may change settings (setup/setup) to change them here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign in with setup access to change debug settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign in with cache access to manage caches</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The settings service is not available yet. The classic controls below still work.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Effective value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Comes from</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Write to</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Applied</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not changed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>global override</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>siteaccess</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>extension</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>enabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>disabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>One entry per line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Expires</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For 1 hour</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Today</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Until removed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add my IPv4 address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add my IPv6 address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add my /24</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add my /64</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your address as the server sees it: %ip</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This request matched: %entry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This request matched no entry.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>IPv4 or IPv6 address or CIDR range, for example 192.0.2.10, 192.0.2.0/24, 2001:db8::/64</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not a valid IPv4 or IPv6 address or CIDR range.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A prefix length must be 0 to 32 for IPv4.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A prefix length must be 0 to 128 for IPv6.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Already in the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Test an address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>matches %entry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>matches no entry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning: your own address is not in the list. Applying it locks you out of the debug output.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning: the list is empty. With &quot;Debug by IP&quot; on, nobody gets the debug output.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning: %entry opens the debug output to everyone.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>expires %time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add me</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find a user</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User ID or name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No user found.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning: you are not in the list. Applying it locks you out of the debug output.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Presets</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Apply preset</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Revert preset</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save current as preset</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preset name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preset &quot;%name&quot; applied.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preset reverted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Undo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Undone</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No changes yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%user changed %setting from %old to %new in %scope</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extension switches</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reload the page to see the effect.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reload now</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cleared</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clearing...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last cleared: %time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This page only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clears the view cache of the node this page shows.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This page is not a content node.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Velocity response cache</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clears the pages Velocity keeps in memory.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OPcache</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Memory used</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hit rate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cached scripts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By tag</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All caches</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You may not clear caches (setup/managecache).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Engine</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Received by Velocity on port %port and rendered by a Velocity worker.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Received by Velocity on port %port and rendered by the Velocity parent process (no worker).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Received by Velocity on port %port and rendered by php-cgi, which Velocity starts for this script (Q.webserver.cgi.patterns).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rendered on the command line (%sapi), not for a web request.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Served by %server / PHP-FPM (port %port), not by Velocity.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Served by PHP-FPM (port %port), not by Velocity.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Served by Apache with mod_php (port %port), not by Velocity.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Served by FrankenPHP (port %port), not by Velocity.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Served by %server (%sapi, port %port), not by Velocity.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>port %port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>forwarded headers: %headers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Entered</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Received by</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rendered by</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rendered at</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cached</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No: a page with this report is rendered for each request and kept by no cache (Cache-Control: private, no-store).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Velocity worker</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Velocity parent process</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>php-cgi</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>PHP-FPM</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>mod_php</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>FrankenPHP</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not available: opcache_get_status() is disabled for this PHP (disable_functions).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not available: OPcache is not loaded in this PHP.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This report was rendered at %time by %renderer for a request on port %entry, %age before this page was loaded on port %port: the page came from a cache, not from this request.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open the debug report</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Minimise debug bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show debug bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count errors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count warnings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(By User)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(By IP Address)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Debug report</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Classic controls</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Template usage is not recorded. Turn on &quot;Show used templates&quot; (TemplateSettings ShowUsedTemplates) in the Settings tab.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time used to render debug report: %time secs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Page time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count SQL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SQL queries and their time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Peak memory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count tpl</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Templates used</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count warn</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count err</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -57642,6 +64625,194 @@ You will need to change the class of the node by using the swap functionality.</
     <name>design/admin/user/deactivate</name>
     <message>
         <source>Roles are assigned to the group of deactivated users, so the accounts moved into it would get them. Remove those role assignments first. Nothing was changed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deactivate and move</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reactivate and move back</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deactivated users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deactivated users (created now)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disabled accounts, kept instead of removed. No roles; hidden.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the anonymous user, the administrator account or you</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not found, or not visible to you</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not a user account</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>you may not edit, move or remove them, or not place them where they go</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>without a location</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>a location has sub-items</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the group of deactivated users is missing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>never activated: activate them under Unactivated users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>neither a former location nor the default user group can take them</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>already in that state</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The node set in site.ini [UserSettings] DeactivatedUserGroupNodeID does not exist. Correct the setting or leave it empty.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An object with the remote id of the group of deactivated users exists but has no published location. Publish it, or set [UserSettings] DeactivatedUserGroupNodeID.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The group of deactivated users does not exist yet, and you may not create it (a user group below the Users node). Ask an administrator to create it, for instance with bin/php/ezcreatedeactivatedusergroup.php.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The group of deactivated users could not be created. Nothing was changed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deactivate and move %count accounts?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reactivate and move back %count accounts?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Each account is disabled, so it cannot sign in, and its sessions end. Its locations are brought together in the group of deactivated users, which has no roles and is hidden; where it was is remembered. Its content and the roles assigned to the account itself stay. Nothing is removed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Each account is enabled and moved back to the locations it had. A former location that no longer exists or that you may not use is left out; when the main one is, the account goes to the default user group.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%selected selected; each is checked again when you confirm.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Accounts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In the groups now</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Goes to</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>default user group: the former main location is gone or not yours to use</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count former locations left out (gone or not yours to use)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left out:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count %reason</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count accounts deactivated and moved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count accounts reactivated and moved back.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count left out: %reason</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count could not be changed; nothing was changed for them</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count went to the default user group, as their former main location is gone or not yours to use</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count former locations were left out (gone or not yours to use)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Retire user accounts instead of removing them: users never go to the trash, so removing one cannot be undone. Deactivate and move disables an account and brings its locations together in the group of deactivated users; Reactivate and move back puts it back where it was.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No account was selected. Tick the accounts first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose the accounts on Users &gt; Check user accounts, or use the button on a user’s page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Check user accounts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>was disabled already before; enabled now</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -57962,6 +65133,3127 @@ You will need to change the class of the node by using the swap functionality.</
     <name>design/admin/toolbar/uiswitch/language</name>
     <message>
         <source>Apply</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/collaboration/inbox</name>
+    <message>
+        <source>%n items in this group.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%n messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1 message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All items</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Any</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Approve &quot;%title&quot;? It is published when the publishing workflow continues.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Approved</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attach the workflow to the trigger content / publish / before.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Closed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Collaboration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Collaboration items are created by the system, not by hand: content that is sent for approval appears here, with the conversation about it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content that waits for a decision, your own submissions and the conversations about them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create a workflow with an Approve event: choose the approvers and, if needed, the sections and user groups it applies to.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Decision</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete the group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete this group and its subgroups? Their items move to the main group.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Denied</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deny &quot;%title&quot;? It becomes a draft for the author again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dismiss</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I decide</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I sent it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Inbox</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last activity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manage this group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move an item here from its page, or choose this group there.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move to group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Needs your decision</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New subgroup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No items in this group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No items match these filters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing to handle yet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only an approver can approve or deny this item.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open the content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rename the group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sent by</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show all items</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There are no messages yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This approval is closed: comments can no longer be added.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This is your main group: it cannot be renamed or deleted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To see the tool with example content, run:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unread messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version %v of the content, saved %time by %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Waiting for approval</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Waiting for your decision</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When an editor publishes content the workflow applies to, an item is created for the approvers and appears in their inbox.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Workflows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your items waiting for others</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your role</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>from %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>sent by you</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/parts/audit/menu</name>
+    <message>
+        <source>Health, activity, security and alerts at a glance.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The timeline of events, with filters and search.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The latest 100 events of all channels.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Events, refusals and logins per day.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The alerts that fired and the rules in use.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The console's filter as CSV or JSON.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Live files, archives and their verification.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The effective audit settings, sinks and index.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/parts/design/menu</name>
+    <message>
+        <source>The look of the site.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The toolbars and their tools.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The menus of the classic site designs.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>List and edit templates.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The templates of the designs and their overrides.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/password_page</name>
+    <message>
+        <source>Change password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Signed in as %login.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your password was changed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You stay signed in here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your other sessions (%count) were signed out.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A confirmation was sent to your e-mail address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Continue</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The password could not be changed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Current password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generate a strong password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Strength</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your new password needs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not met</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>At least %1 characters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Confirm new password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your current password is not correct.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The new password must be at least %1 characters long.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The two new passwords do not match.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You were signed out on your other devices.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/hygiene</name>
+    <message>
+        <source>Shared login</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count accounts use this login.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Accounts without a counted sign-in. The anonymous user is not one of them: it cannot sign in.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Accounts that signed in at least once and whose last visit is longer ago than the number of days.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Accounts that cannot sign in because they are disabled, including those never activated.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Accounts with more failed sign-ins than the limit (%max); none while the limit is 0.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Accounts whose user object is missing, was never published, or has no location in the tree.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Logins that more than one account has, in any case. Resolve them, then the unique index on logins can be added (exp:user-login-check --fix-index).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>E-mail addresses that more than one account has, in any case.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every account whose user object is not in the trash.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count published user objects have no account. They cannot sign in, are not listed here and no action applies to them; open them in the content tree.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Active</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not activated</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Locked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No user object</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Never published</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No location</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Never signed in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the anonymous user, the administrator account or you</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not found, removed meanwhile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>without a user object</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>you may not edit them</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>never activated: activate them under Unactivated users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>already in that state</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unlock</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Check user accounts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disable %count accounts?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable %count accounts?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unlock %count accounts?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A disabled account cannot sign in, and its sessions end now. Its content, groups and roles stay; enable it again at any time.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The accounts can sign in again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The count of failed sign-ins goes back to zero, so the accounts can sign in again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%selected selected; each is checked again when you confirm.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left out:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count %reason</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find accounts nobody uses or that need a look: never signed in, not seen for a long time, disabled, locked after failed sign-ins, without a user object or location, or sharing an e-mail address. Disable, enable or unlock them in bulk, or export the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count accounts disabled.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count accounts enabled.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count accounts unlocked.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count left out: %reason</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count could not be changed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No account was selected. Tick the accounts first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All accounts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not seen for %days days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Orphaned</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shared e-mail address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find an account</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Any part of the name, the login or the e-mail address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Any part of the name or the login.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not seen for at least (days)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Accounts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>E-mail</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last visit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Never changed here: the anonymous user, the administrator account or you.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count accounts use this address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>×%count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins; the limit is %max.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count days ago</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No account matches.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disable the ticked accounts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable the ticked accounts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unlock the ticked accounts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count selected.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deactivate and move the ticked accounts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reactivate and move back the ticked accounts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>deactivated</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Moved here by Deactivate and move; Reactivate and move back puts it back.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/audit</name>
+    <message>
+        <source>Not recorded, so refused</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not done: the audit cannot record it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The audit log cannot be written at the moment (channel %channel), and this site is set to refuse security-relevant actions that cannot be recorded. Nothing was changed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please try again later, or tell the administrator: the details are in the error log under AUDIT-REFUSED.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>syndication</name>
+    <message>
+        <source>Deleted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Denied</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ignoring</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Installed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Installing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>syndication/edit</name>
+    <message>
+        <source>Node</source>
+        <comment>Source type</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Subtree</source>
+        <comment>Source type</comment>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>syndication/import</name>
+    <message>
+        <source>Syndication</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>syndication/list</name>
+    <message>
+        <source>Add Filter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add Source</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit Filter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>List</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Syndication</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Syndication Import</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>syndication/menu</name>
+    <message>
+        <source>Syndication</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/extract</name>
+    <message>
+        <source>Location in the tree (path)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/notification/addconfirm</name>
+    <message>
+        <source>Add to my notifications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Get an e-mail when something new is published below %node_name?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Notify me</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Notify me about updates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stop notifications for this item</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You already follow %node_name. You get an e-mail when something is published below it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You already follow this item</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You get an e-mail when something is published below it. You can stop that here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You get an e-mail when something new is published below this item, as long as you may read it. You can change this under My notification settings.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/notification/removeresult</name>
+    <message>
+        <source>Notifications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You did not follow node &lt;%node_name&gt;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You no longer get notifications for node &lt;%node_name&gt;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/notification/status</name>
+    <message>
+        <source>1 year</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>180 days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>30 days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>90 days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A run is in progress (process %pid, since %time).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attention</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose an age of at least one day.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Collaboration rules</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Console:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content no longer exists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Digests chosen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Events wait here until the notification cronjob handles them: it sends the messages, or keeps them for a digest. This page shows what waits, what was sent and what looks wrong.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Events waiting to be handled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Finished. Reload the page to see the new numbers.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Handled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Handlers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Made</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mail and handlers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mail transport</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Messages kept for a digest</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Messages to %count recipients, last 24 hours</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Messages waiting now</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Messages: sent / recipients.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>My notification settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No events.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No one follows any item yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No run is recorded yet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Note</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing looks wrong.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Notification status</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preview (dry run)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Problem</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recent runs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove %count subscriptions whose content is gone</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove all events older than the chosen age, with their waiting messages? This cannot be undone.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove events older than</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove handled events with nothing left to send</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Removed %count events older than the chosen age (%unknown of unknown age were kept).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Removed %count handled events that had nothing left to send.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Removed %count subscriptions whose content no longer exists.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Run now</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Run now needs a background process: %reason</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Run the notifications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Run the notifications now? Messages that are due are sent.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sender</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Started by</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Starting in the background...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Subscriptions by %users users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The list per user and item: ./console exp:notification:subscriptions list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The notification cronjob does this on a schedule (part frequent, or php runcronjobs.php notification). Run now starts the same pass in the background; Preview lists what would be sent and changes nothing.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The run failed or stopped. See the lines above.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Without JavaScript:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>daily</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>due</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>monthly</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>waiting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>weekly</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>given up</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not sent</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/notification/addconfirm</name>
+    <message>
+        <source>Add to my notifications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Get an e-mail when something new is published below %node_name?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Notify me</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stop notifications for this item</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You already follow %node_name. You get an e-mail when something is published below it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/notification/removeresult</name>
+    <message>
+        <source>Notifications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You did not follow node &lt;%node_name&gt;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You no longer get notifications for node &lt;%node_name&gt;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/mailpreferences</name>
+    <message>
+        <source>E-mail preferences: categories</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Each e-mail the system sends belongs to a category. People turn optional categories on and off on their preference page; essential ones are always sent and are listed there with their description.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Settings file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Made here</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Categories</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>How often</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Confirmation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Defined in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Essential, always sent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Optional, off until turned on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Double opt-in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit "%name"</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New category</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This category is defined in %source. What you change here is stored in the database and shown instead; the identifier and the kind stay as they are defined.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A new category is optional: nobody receives it until they turn it on. Code sends e-mail in it with eZMail::setCategory( identifier ).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Identifier:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits and underscores; it cannot be changed later.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Description, as people see it on their preference page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>How often people may choose to get it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>None ticked: it is sent when it happens, with no choice of frequency.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ask for a confirmation by e-mail before the first message (double opt-in; use it for newsletters and marketing)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create category</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use the defined name and description again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove this category</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>E-mail preferences: consent log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every change of an e-mail preference: when, by whom, where, the exact text the person saw and the address the request came from. The log is kept for the life of the account and the retention time after it; a removed account leaves an anonymised record that proves the withdrawal.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>E-mail address or user ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export as CSV</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Records</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No records match.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Person</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Text shown</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>IP address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>by %actor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>E-mail preferences: status</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every e-mail the system sends passes the mail gate: it checks the main switch, the category and the suppression list of the recipient, and adds the footer and the unsubscribe links to optional e-mail. This page shows whether that works and what it did.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Problem</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attention</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Note</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing looks wrong.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Settings in use</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The settings are in mailpreferences.ini; the organisation, the postal address, the bounce mailbox and the site secret belong in a settings override.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Related pages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>E-mail preferences: suppression list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No optional e-mail is sent to an address on this list: hard bounces, complaints, requests to stop all e-mail and legal requests. Essential e-mail still goes. Only a hash of the address is kept, never the address itself.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Check an address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>E-mail address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This address is on the list (%reason, since %date).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This address is not on the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lift the block for this address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add an address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Note (optional; no personal data)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add to the list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>On the list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The list is empty.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Since</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Address hash</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lift</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>E-mail preferences: a user</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find a user by name, login, e-mail address or ID to see their preferences and consent history, or to change them on their request. Your changes are recorded as made by you.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name, login, e-mail address or user ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No user found.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>E-mail preferences administration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Suppression list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Consent log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A user</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%from to %to of %total</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find another user</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>People with stored preferences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Turned all optional e-mail off</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Waiting for a confirmation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Addresses on the suppression list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Optional e-mails sent, last 24 hours</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Blocked by a preference, last 24 hours</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Without a category, last 7 days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Errors, last 24 hours</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Consent records</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(not set)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mail gate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>On</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Organisation in the footer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Postal address in the footer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Links in e-mails point to</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Site secret of the links</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generated</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not generated yet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last e-mail through the gate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bounce mailbox, last read</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>My e-mail preferences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Notification status</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The "send me a link" page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The identifier may only hold lower case letters, digits and underscores, and must start with a letter.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A category with this identifier exists already.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This category does not exist any more.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please give the category a name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The category "%name" was created.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The category "%name" was saved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The category could not be saved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The category "%name" was removed. The choices people made for it are kept in their records.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The category "%name" uses the name and description of its definition again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please enter a complete e-mail address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please choose a reason.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The address was added to the suppression list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The block was lifted. Optional e-mail goes to the address again where the person turned it on.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Anonymised</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An address (only its hash is kept)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hard bounce</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Complaint (marked as spam)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The person stopped all e-mail</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Legal request</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Added by an administrator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Newsletter blacklist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The file holds the hashes, reasons, dates and notes; no address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sender details</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every optional e-mail names who sends it and their postal address, as the law requires. Without an organisation name the site name is used.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Organisation name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Postal address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save the sender details</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The sender details were saved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The sender details could not be saved: the settings override is not writable.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The sender details could not be saved: %error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the site name</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mailpreferences</name>
+    <message>
+        <source>New address asked for, waiting for confirmation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>How we handle your data:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Privacy notice</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>How we handle your data: our privacy notice</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Confirm your e-mail address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Confirm your subscription</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This link does not work any more</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The link may be incomplete, already used or too old. Nothing was changed. To try again, turn the e-mail on again on your preference page; you will get a new link.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Send me a link to my preferences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Thank you, your e-mail address is confirmed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>From now on we write to %email.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Thank you, your subscription is confirmed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%email now gets e-mail of the kind "%category". You can turn it off at any time, with the link at the end of every one of these e-mails or on your preference page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manage my e-mail preferences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use %email for this account?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Someone asked to change the e-mail address of an account to this address. Confirm only if that was you.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Send e-mail of the kind "%category" to %email?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Confirm only if you asked for it. If you did not, do nothing: without your confirmation nothing is sent.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Yes, confirm</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please confirm: %category from %site</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You asked to receive "%category" from %site at %email.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To confirm, open this link and press the button:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The link works until %date.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, ignore this e-mail: nothing changes without your confirmation, and we will not write again about it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Confirm your new e-mail address for %site</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. To confirm that this is your address, open this link and press the button:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, ignore this e-mail: the account keeps its address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You get this e-mail because you turned on "%category" on %site.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unsubscribe with one click:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose which e-mail you get:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unsubscribe</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your link to manage e-mail from %site</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. Open it to see every kind of e-mail, turn each on or off, or stop all optional e-mail:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The link works until %date. Please do not forward this e-mail: the link lets anyone change your preferences.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If you did not ask for it, you can ignore this e-mail; nothing has changed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>E-mail preferences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Whether notifications are sent at all, how often, and every other kind of e-mail, is chosen on one page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>See and change every kind of e-mail we send you, including newsletters, or stop all optional e-mail, on one page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose which e-mail you get from us, download your e-mail data, or stop all optional e-mail.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open my e-mail preferences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manage my e-mail without an account</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>At once</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Daily summary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Weekly summary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No optional e-mail is sent to this address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>It is on our list of addresses that receive no optional e-mail, for example after a request to stop all e-mail or after messages to it could not be delivered. Essential messages about your account are still sent.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If you stopped all e-mail yourself, turning optional e-mail on again lifts the block. A block because messages could not be delivered stays until you contact us.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Send me optional e-mail</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>On</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You receive the kinds of e-mail you turned on below.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You receive no optional e-mail. Your choices below are kept and come back when you turn it on again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Turn off all optional e-mail</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Turn on optional e-mail</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What you want to receive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This site sends no optional e-mail at the moment.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Turn on only what you want. Nothing is on until you turn it on, and you can turn anything off here at any time.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Optional e-mail is off at the moment, so none of these is sent.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Waiting for your confirmation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>We sent a confirmation link to %email. This starts once you open it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When you turn this on, we first send you a link to confirm it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>How often:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save my choices</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Always sent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>These messages are needed to run your account or are required by law. They cannot be turned off, but they never contain advertising.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Consent history</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your e-mail data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every change is recorded with its time, where it was made and the exact text that was shown.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download as JSON</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download my e-mail data (JSON)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download as CSV</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download my e-mail data (CSV)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No changes recorded yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The newest %shown of %total records. The download has all of them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Text shown</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>E-mail from us (optional)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tick what you want to receive. You can change it at any time on your e-mail preference page, and every one of these e-mails has an unsubscribe link.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>we send you a link to confirm it first</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manage your e-mail without an account</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enter your e-mail address. We send you a personal link to a page where you can see and change every kind of e-mail we may send you, or stop all of it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please check your inbox.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If we send e-mail to %email, a message with your personal link is on its way. The link works for %hours hours.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing arrived? Look in the spam folder, or try again in a few minutes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>E-mail address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Send me the link</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Have an account? Sign in and open your e-mail preferences directly.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>E-mail preferences of %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You are changing these preferences for the user. Each change is recorded as made by an administrator, with your name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose which e-mail you want from us. Essential messages about your account are always sent; everything else only if you want it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For: %email</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You opened this page with the personal link from one of our e-mails. Please do not forward that e-mail: the link lets anyone change these preferences.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Which pages and items you follow is chosen in the notification settings; whether those notifications are sent at all is chosen here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Notification settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The link may be incomplete or too old. We can send you a new one: you will get a link to a page where you can turn off any e-mail.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Send me a new link</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You are unsubscribed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%email gets no more e-mail of the kind "%category".</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%email gets no more optional e-mail from us. Essential messages about an account, such as a password reset, are still sent.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your other e-mail</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>See and change everything we may send you, or turn this back on, on your preference page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stop e-mail of the kind "%category"?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stop all optional e-mail?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Or choose exactly what you want to receive:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please enter a complete e-mail address, for example name@example.com.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This link does not work any more: it may be incomplete or too old. Enter your e-mail address and we send you a new one.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All optional e-mail</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>One-click unsubscribe from the mail program (RFC 8058): %what</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preference page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Link in an e-mail</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Changed by an administrator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Registration form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Newsletter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Confirmation link</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Turned on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Turned off</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Asked for, waiting for confirmation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Confirmed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Optional e-mail turned on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All optional e-mail turned off</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Frequency changed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preferences erased</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Data downloaded</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Address blocked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Address block lifted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your choices could not be saved. Please try again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All optional e-mail is off. Essential messages about your account are still sent.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Optional e-mail is on: you get the kinds of e-mail you turned on below.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing below is turned on yet. Turn on what you want and save.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This address is still blocked because messages to it could not be delivered, or because of a request we must follow. Please contact us to lift the block.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing was changed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your choices were saved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>We sent a confirmation link to %email for: %list. Each starts once you open its link.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Optional e-mail is off at the moment, so none of these is sent until you turn it on.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download my e-mail data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your subscriptions:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>kernel/mailpreferences</name>
+    <message>
+        <source>Manage e-mail</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>E-mail preferences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Send me a link</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>My e-mail preferences</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>kernel/mailpreferences/mail</name>
+    <message>
+        <source>Privacy notice</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You receive this e-mail because you switched on "%category".</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manage your e-mail preferences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unsubscribe from "%category"</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please confirm: %category</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please confirm that you want to receive "%category" at this address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, ignore this e-mail: nothing will be sent to you.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please confirm your new e-mail address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please confirm that this is the new e-mail address of your account.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, ignore this e-mail: your account keeps its address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unsubscribe link</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your link to your e-mail preferences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>With this link you can choose which e-mail you receive from us:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, ignore this e-mail.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change of the e-mail address of the account</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The e-mail address of your account is being changed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Someone asked to change the e-mail address of your account to %email. The change takes effect only when it is confirmed with the link sent to the new address; until then your account keeps this address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, change your password and contact us.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>kernel/mailpreferences/status</name>
+    <message>
+        <source>The optional category "%category" is set to be on for everybody (DefaultOn=true). That is opt-out, which the law does not allow for most optional mail: it is treated as off until a person turns it on. Set DefaultOn=false, or [CategorySettings] AllowDefaultOn=enabled in mailpreferences.ini where opt-out is lawful.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Optional categories may be on for everybody ([CategorySettings] AllowDefaultOn=enabled). Make sure the law of your recipients allows opt-out for them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The %purpose links of mail are set to work for %days days ([TokenSettings] TTL[%purpose]). The law asks for at least 60 days, so 60 days are used. Set 0 (never expire) or at least 5184000.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count optional mails in the last 7 days had no sender address; the site&apos;s sender ([MailSettings] EmailSender or AdminEmail) was used. The gate log names the code that sent them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No privacy notice is linked from the mail footer and the preference page: set [FooterSettings] PrivacyURL in mailpreferences.ini, or menu.ini [SiteInfo] PrivacyPolicyID of the public siteaccess.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The table %table is missing: run the database update.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The postal address of the mail footer is empty: enter it under "Sender details" on this page (mailpreferences/admin/status). The law requires the organisation and its postal address in every optional mail; mail is sent without it until then.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The site secret of the links has not been generated yet; it is made on first use.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The mail gate is disabled: optional mail is sent without checking the preferences.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count mails without a category in the last 7 days.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count mails could not be sent or checked in the last 24 hours.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The bounce mailbox could not be read: %error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The bounce mailbox has not been read since %time: is the cronjob part mailbounces running?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The bounce mailbox has never been read: is the cronjob part mailbounces running?</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>kernel/mailpreferences/categories</name>
+    <message>
+        <source>Content notifications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mail about new and changed content in the parts of the site you follow.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Collaboration and approvals</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mail about content waiting for your approval and the messages of your collaboration items.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Newsletters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The newsletters you subscribe to.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Offers and news</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Offers, events and news about our products and services.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Application and system notices</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Notices about the site and its features that are not about your account.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Account security</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Password reset, account activation, confirmation of a new e-mail address and security alerts.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Orders and receipts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Confirmations and receipts of your orders.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Legal and service notices</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Changes to the terms and the privacy notice, and notices we are required to send.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Administration alerts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System alerts for the administrators of the site.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Newsletter statistics</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Count which newsletters I open and which links I click, so the newsletters get better</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Newsletters by SMS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Short newsletters to my mobile phone</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/password/js</name>
+    <message>
+        <source>Show</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The passwords match.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The passwords do not match yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Strength</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Very weak</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Weak</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fair</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Good</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Strong</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>met</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not met yet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A strong password was generated and filled into both fields. Store it before you save.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/password/mail</name>
+    <message>
+        <source>Your password was changed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The password of your account %login was changed on %date.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If you did this, you do not need to do anything.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If you did not, reset your password at once with "%forgot" on the login page, and contact us.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/password_changed_mail</name>
+    <message>
+        <source>Your password on %site was changed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The password of your account %login on %site was changed on %date.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The change came from the address %ip.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If you made this change, you do not need to do anything.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You were signed out on your other devices; sign in there again with the new password.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/password/account</name>
+    <message>
+        <source>The password must contain a lowercase letter.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The password must contain an uppercase letter.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The password must contain a digit.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The password must contain a symbol or a space.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The password must mix at least %1 kinds of characters: lowercase letters, uppercase letters, digits, symbols.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The password must not contain the user name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The password must be different from the current password.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The password does not meet the requirements.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/setupmenu</name>
+    <message>
+        <source>All parts paused</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1 part paused</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count parts paused</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Configure the installation: content model, site and URLs, workflows, users and the system.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose a function in the Setup menu.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Functions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1 class</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count classes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1 section</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count sections</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1 language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count languages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1 active</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count active</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1 user signed in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count users signed in</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/success</name>
+    <message>
+        <source>Check your e-mail</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your account has been created. One step is left: confirm your e-mail address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>We sent a message to %email. Open the link in it to activate your account; then you can sign in.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>We sent a message to the e-mail address you entered. Open the link in it to activate your account; then you can sign in.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No message after a few minutes? Look in your spam folder.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your account is waiting for approval</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your account has been created. An administrator checks new accounts before they can be used.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You will get an e-mail as soon as your account is approved; then you can sign in.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Welcome, %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Welcome</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your account is ready and you are signed in.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your e-mail address is confirmed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your account is active and you are signed in.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your account is active. You can sign in now.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An administrator checks new accounts before they can be used.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your account is already active</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You are signed in.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The account was activated before. You can sign in.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This activation link does not work</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The link is not valid, or it has been used already. Your account was not activated.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy the whole link from the e-mail into the address bar of your browser. If you activated the account before, sign in.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>We could not find your account</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The account of this registration does not exist (any more).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please register again, or contact us if the problem stays.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your account is ready</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your account has been created and you are signed in.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your account has been created. You can sign in now.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next steps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>My profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Register</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Home</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sitemap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tag cloud</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Administration</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
