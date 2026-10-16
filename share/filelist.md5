@@ -698,7 +698,7 @@ a28d02058dcaceb3f0bd665a92aff6b9  design/admin/templates/tabs/audit/node_header.
 ada1aff5b3a0bc20045fb02c26285539  design/admin/templates/translations.tpl
 1a1b45cfbbbdc5566746d17c2f308bde  design/admin/templates/trigger/exp_list_script.tpl
 7493791b5d5fa207224044f195b59645  design/admin/templates/trigger/list.tpl
-7a981d87bda92c5b3e0b5cfb024e3ac4  design/admin/templates/uiswitch/choices.tpl
+0c5ab9c58d71ea33e4b9c11ef2900de8  design/admin/templates/uiswitch/choices.tpl
 e80df129f54dd091607755b00518d11e  design/admin/templates/url/edit.tpl
 283eacf0a38118266361f7a0c35a9de7  design/admin/templates/url/list.tpl
 544c98b0e3f60c4a1240b1c1347d40f6  design/admin/templates/url/view.tpl

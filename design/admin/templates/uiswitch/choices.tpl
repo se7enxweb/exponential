@@ -10,6 +10,9 @@
 {def $exp_ui_prefix = cond( is_set( $prefix ), $prefix, 'uiswitch-classic' )
      $exp_ui_back = cond( is_set( $requested_uri_string ), concat( '/', $requested_uri_string|trim( '/' ) ), '' )}
 {foreach $choices as $exp_ui_choice}
+{if and( is_set( $exp_ui_choice.groups ), $exp_ui_choice.groups|count )}
+{include uri='design:uiswitch/grouped.tpl' choice=$exp_ui_choice prefix=$exp_ui_prefix back=$exp_ui_back}
+{else}
 <div class="block" data-provider="{$exp_ui_choice.identifier|wash}">
 <p class="a4-meta" id="{$exp_ui_prefix}-{$exp_ui_choice.identifier|wash}-label">{$exp_ui_choice.title|wash}</p>
 <form id="{$exp_ui_prefix}-{$exp_ui_choice.identifier|wash}-form" method="post" action={'/uiswitch/set'|ezurl} aria-labelledby="{$exp_ui_prefix}-{$exp_ui_choice.identifier|wash}-label">
@@ -22,5 +25,6 @@
 </ul>
 </form>
 </div>
+{/if}
 {/foreach}
 {undef $exp_ui_prefix $exp_ui_back}
