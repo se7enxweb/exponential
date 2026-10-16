@@ -8,6 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {* SectionID is cast to a number: every distinct raw value would write its own cache file *}
     {* Do some uncacheable left + right menu stuff before cache-block's *}
     {* $hide_left_menu and $hide_right_menu as the admin design defines them: on content edit pages (edit, history,
        version view ...) the page's own template brings the left column (Object information) and the content tree
@@ -21,7 +22,7 @@
      $admin_left_size      = ezpreference( 'admin_left_menu_size' )
      $admin_theme          = ezpreference( 'admin_theme' )
      $left_size_hash       = 0
-     $search_hash          = array( cond( ezhttp_hasvariable( 'SectionID', 'get' ), ezhttp( 'SectionID', 'get' ) ) )
+     $search_hash          = array( cond( ezhttp_hasvariable( 'SectionID', 'get' ), ezhttp( 'SectionID', 'get' )|int ) )
      $user_hash = concat( $current_user.role_id_list|implode( ',' ), ',', $current_user.limited_assignment_value_list|implode( ',' ), ',', $current_user.is_logged_in|choose( 'anonymous', 'user' ) )
      $uri_cache_key        = $module_result.uri
      $main_wrapped         = false()
@@ -39,7 +40,7 @@
     {if and( ezini_hasvariable( 'AdminLayoutSettings', 'Enabled', 'explayouts.ini' ), eq( ezini( 'AdminLayoutSettings', 'Enabled', 'explayouts.ini' ), 'enabled' ) )}
         {set $admin_layout = fetch( 'explayouts', 'resolve_admin_layout', hash( 'module', first_set( $admin_mp.module_name, '' ), 'view', first_set( $admin_mp.function_name, '' ) ) )}
         {if and( is_array( $admin_layout ), is_set( $admin_layout.block_count ), $admin_layout.block_count|gt( 0 ) )}
-            {set $admin_layout_id   = concat( $admin_layout.id, '-', fetch( 'explayouts', 'admin_layout_cache_key', hash( 'module', first_set( $admin_mp.module_name, '' ), 'view', first_set( $admin_mp.function_name, '' ) ) ).result.0 )
+            {set $admin_layout_id   = concat( $admin_layout.id, '-', fetch( 'explayouts', 'admin_layout_cache_key', hash( 'module', first_set( $admin_mp.module_name, '' ), 'view', first_set( $admin_mp.function_name, '' ) ) )|implode( '-' ) )
                  $admin_layout_type = $admin_layout.layout_type}
             {* the layout type decides which side columns the page has *}
             {if $admin_layout_type|eq( 'admin_full' )}
