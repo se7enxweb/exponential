@@ -1,11 +1,12 @@
 # Languages in Exponential
 
 The one place that says which languages Exponential supports, at which level, and how to add more. The figures
-were taken on 15 October 2026 (Exponential 6.0.15).
+were taken on 15 October 2026, those of the administration translations on 16 October 2026 (Exponential 6.0.15).
 
 In short: **219 locale files** (213 languages and countries plus 6 variations, in 32 scripts, 28 of them written
 right to left) can be chosen as content languages and siteaccess locales; **30 administration translations**
-exist, two of them complete (`eng-US`, `ger-DE`) and three first drafts (Hebrew, Latin and, for fun, Klingon).
+exist, seven of them complete (`eng-US`, `ger-DE`, Spanish for Spain and Mexico, Hebrew, Latin and, for fun,
+Klingon).
 Every locale is plain INI: nothing here needs a PHP extension at run time.
 
 ## Contents
@@ -52,9 +53,8 @@ The details are elsewhere and not repeated here:
 
 | Level | What works | Languages |
 |---|---|---|
-| **Full: interface and content** | The administration speaks the language completely (at least 99% of the current strings); content, dates, numbers and currency follow the locale. | `eng-US` (and every `eng-*` locale, English being the language of the source texts), `ger-DE` |
-| **Partial interface, full content** | An administration translation exists but covers 19 to 46% of today's strings (it was complete for an older release). Strings without a translation show in English. Content as above. | the 24 older translations with strings, see [section 4](#4-every-administration-translation) |
-| **First draft** | Some of the most visible strings (login, menus, buttons: 214 in Hebrew, 143 in Latin, 56 in Klingon), not yet reviewed by a native speaker; the rest in English. | `heb-IL`, `lat-VA`, `tlh-QO` (Klingon's messages still marked unfinished) |
+| **Full: interface and content** | The administration speaks the language completely (at least 99% of the current strings); content, dates, numbers and currency follow the locale. | `eng-US` (and every `eng-*` locale, English being the language of the source texts), `ger-DE`, `esl-ES`, `esl-MX`, `heb-IL`, `lat-VA`, `tlh-QO` (the last five machine-assisted, see [section 4](#4-every-administration-translation)) |
+| **Partial interface, full content** | An administration translation exists but covers 16 to 39% of today's strings (it was complete for an older release). Strings without a translation show in English. Content as above. | the 22 older translations with strings, see [section 4](#4-every-administration-translation) |
 | **Content only** | No administration translation: the interface stays English. Content can be written in the language, and a siteaccess with the locale formats dates, numbers and currency for it. | every other locale, among them nearly all 170 added in 6.0.15 |
 
 `nno-NO` has a translation file without a single translated string, so it is content only in practice.
@@ -115,25 +115,25 @@ The table is generated from the locale files; do not edit it by hand.
 | `bre-FR` | Breton | Brezhoneg | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `brx-IN` | Bodo | बर’ | South Asia | LTR | Devanagari (`Deva`) | CLDR 44 | — |
 | `bul-BG` | Bulgarian | Български | Europe | LTR | Cyrillic (`Cyrl`) | CLDR 44 | — |
-| `cat-ES` | Catalan | Català | Europe | LTR | Latin (`Latn`) | older, hand-made | 44% |
+| `cat-ES` | Catalan | Català | Europe | LTR | Latin (`Latn`) | older, hand-made | 37% |
 | `ceb-PH` | Cebuano | Cebuano | Southeast Asia | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `che-RU` | Chechen | Нохчийн | Europe | LTR | Cyrillic (`Cyrl`) | CLDR 44 | — |
-| `chi-CN` | Simplified Chinese | 简体中文 | East Asia | LTR | Han (Simplified) (`Hans`) | older, hand-made, fixed in 6.0.15 | 44% |
-| `chi-HK` | Traditional Chinese (HongKong) | 繁體中文 (香港) | East Asia | LTR | Han (Traditional) (`Hant`) | older, hand-made, fixed in 6.0.15 | 32% |
+| `chi-CN` | Simplified Chinese | 简体中文 | East Asia | LTR | Han (Simplified) (`Hans`) | older, hand-made, fixed in 6.0.15 | 37% |
+| `chi-HK` | Traditional Chinese (HongKong) | 繁體中文 (香港) | East Asia | LTR | Han (Traditional) (`Hant`) | older, hand-made, fixed in 6.0.15 | 27% |
 | `chi-SG` | Simplified Chinese (Singapore) | 简体中文 (新加坡) | Southeast Asia | LTR | Han (Simplified) (`Hans`) | CLDR 44 | — |
-| `chi-TW` | Traditional Chinese (Taiwan) | 繁體中文 (臺灣) | East Asia | LTR | Han (Traditional) (`Hant`) | older, hand-made | 32% |
+| `chi-TW` | Traditional Chinese (Taiwan) | 繁體中文 (臺灣) | East Asia | LTR | Han (Traditional) (`Hant`) | older, hand-made | 27% |
 | `ckb-IQ` | Central Kurdish | کوردیی ناوەندی | Middle East | RTL | Arabic (`Arab`) | CLDR 44 | — |
-| `cro-HR` | Croatian (Hrvatski) | Croatian (Hrvatski) | Europe | LTR | Latin (`Latn`) | older, hand-made | 38% |
+| `cro-HR` | Croatian (Hrvatski) | Croatian (Hrvatski) | Europe | LTR | Latin (`Latn`) | older, hand-made | 32% |
 | `cym-GB` | Welsh | Cymraeg | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
-| `cze-CZ` | Czech | Čeština | Europe | LTR | Latin (`Latn`) | older, hand-made | 38% |
-| `dan-DK` | Danish | Dansk | Europe | LTR | Latin (`Latn`) | older, hand-made | 19% |
+| `cze-CZ` | Czech | Čeština | Europe | LTR | Latin (`Latn`) | older, hand-made | 32% |
+| `dan-DK` | Danish | Dansk | Europe | LTR | Latin (`Latn`) | older, hand-made | 16% |
 | `div-MV` | Dhivehi | ދިވެހި | South Asia | RTL | Thaana (`Thaa`) | hand-made names, CLDR 44 conventions | — |
 | `doi-IN` | Dogri | डोगरी | South Asia | LTR | Devanagari (`Deva`) | CLDR 44 | — |
 | `dsb-DE` | Lower Sorbian | Dolnoserbšćina | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `dut-BE` | Dutch (Belgium) | Nederlands (België) | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
-| `dut-NL` | Dutch | Nederlands | Europe | LTR | Latin (`Latn`) | older, hand-made | 39% |
+| `dut-NL` | Dutch | Nederlands | Europe | LTR | Latin (`Latn`) | older, hand-made | 33% |
 | `dzo-BT` | Dzongkha | རྫོང་ཁ | South Asia | LTR | Tibetan (`Tibt`) | CLDR 44 | — |
-| `ell-GR` | Greek (Hellenic) | Ελληνικά | Europe | LTR | Greek (`Grek`) | older, hand-made, fixed in 6.0.15 | 42% |
+| `ell-GR` | Greek (Hellenic) | Ελληνικά | Europe | LTR | Greek (`Grek`) | older, hand-made, fixed in 6.0.15 | 36% |
 | `eng-AU` | English (Australia) | English (Australia) | Oceania | LTR | Latin (`Latn`) | older, hand-made | 100% |
 | `eng-CA` | English (Canada) | English (Canada) | Americas | LTR | Latin (`Latn`) | older, hand-made | 100% |
 | `eng-GB` | English (United Kingdom) | English (United Kingdom) | Europe | LTR | Latin (`Latn`) | older, hand-made | 100% |
@@ -157,9 +157,9 @@ The table is generated from the locale files; do not edit it by hand.
 | `esl-CU` | Spanish (Cuba) | Español (Cuba) | Americas | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `esl-DO` | Spanish (Dominican Republic) | Español (República Dominicana) | Americas | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `esl-EC` | Spanish (Ecuador) | Español (Ecuador) | Americas | LTR | Latin (`Latn`) | CLDR 44 | — |
-| `esl-ES` | Spanish (Spain) | Español (España) | Europe | LTR | Latin (`Latn`) | older, hand-made | 46% |
+| `esl-ES` | Spanish (Spain) | Español (España) | Europe | LTR | Latin (`Latn`) | older, hand-made | 100% |
 | `esl-GT` | Spanish (Guatemala) | Español (Guatemala) | Americas | LTR | Latin (`Latn`) | CLDR 44 | — |
-| `esl-MX` | Spanish (Mexico) | Español (México) | Americas | LTR | Latin (`Latn`) | older, hand-made | 45% |
+| `esl-MX` | Spanish (Mexico) | Español (México) | Americas | LTR | Latin (`Latn`) | older, hand-made | 100% |
 | `esl-PE` | Spanish (Peru) | Español (Perú) | Americas | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `esl-US` | Spanish (United States) | Español (Estados Unidos) | Americas | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `esl-UY` | Spanish (Uruguay) | Español (Uruguay) | Americas | LTR | Latin (`Latn`) | CLDR 44 | — |
@@ -171,14 +171,14 @@ The table is generated from the locale files; do not edit it by hand.
 | `fas-AF` | Dari (Afghanistan) | دری (افغانستان) | Central Asia and Caucasus | RTL | Arabic (`Arab`) | CLDR 44 | — |
 | `fas-IR` | Persian | فارسی | Middle East | RTL | Arabic (`Arab`) | CLDR 44 | — |
 | `fil-PH` | Filipino | Filipino | Southeast Asia | LTR | Latin (`Latn`) | CLDR 44 | — |
-| `fin-FI` | Finnish | Suomi | Europe | LTR | Latin (`Latn`) | older, hand-made | 38% |
+| `fin-FI` | Finnish | Suomi | Europe | LTR | Latin (`Latn`) | older, hand-made | 32% |
 | `fre-BE` | French (Belgium) | Français (Belgique) | Europe | LTR | Latin (`Latn`) | older, hand-made | — |
 | `fre-CA` | French (Canada) | Français (Canada) | Americas | LTR | Latin (`Latn`) | older, hand-made | — |
 | `fre-CD` | French (Congo - Kinshasa) | Français (Congo-Kinshasa) | Africa | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `fre-CH` | French (Switzerland) | Français (Suisse) | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `fre-CI` | French (Côte d’Ivoire) | Français (Côte d’Ivoire) | Africa | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `fre-CM` | French (Cameroon) | Français (Cameroun) | Africa | LTR | Latin (`Latn`) | CLDR 44 | — |
-| `fre-FR` | French (France) | Français (France) | Europe | LTR | Latin (`Latn`) | older, hand-made | 46% |
+| `fre-FR` | French (France) | Français (France) | Europe | LTR | Latin (`Latn`) | older, hand-made | 39% |
 | `fre-MA` | French (Morocco) | Français (Maroc) | Africa | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `fre-SN` | French (Senegal) | Français (Sénégal) | Africa | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `fry-NL` | Western Frisian | Frysk | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
@@ -193,7 +193,7 @@ The table is generated from the locale files; do not edit it by hand.
 | `guj-IN` | Gujarati | ગુજરાતી | South Asia | LTR | Gujarati (`Gujr`) | CLDR 44 | — |
 | `hau-NG` | Hausa | Hausa | Africa | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `haw-US` | Hawaiian | ʻŌlelo Hawaiʻi | Oceania | LTR | Latin (`Latn`) | CLDR 44 | — |
-| `heb-IL` | Hebrew | עברית | Middle East | RTL | Hebrew (`Hebr`) | older, regenerated from CLDR 44 | 1% |
+| `heb-IL` | Hebrew | עברית | Middle East | RTL | Hebrew (`Hebr`) | older, regenerated from CLDR 44 | 100% |
 | `hin-IN` | Hindi | हिन्दी | South Asia | LTR | Devanagari (`Deva`) | older, regenerated from CLDR 44 | — |
 | `hsb-DE` | Upper Sorbian | Hornjoserbšćina | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `hun-HU` | Hungarian | Magyar | Europe | LTR | Latin (`Latn`) | older, hand-made | — |
@@ -202,9 +202,9 @@ The table is generated from the locale files; do not edit it by hand.
 | `ind-ID` | Indonesian | Indonesian | Southeast Asia | LTR | Latin (`Latn`) | older, hand-made | — |
 | `isl-IS` | Icelandic | Íslenska | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `ita-CH` | Italian (Switzerland) | Italiano (Svizzera) | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
-| `ita-IT` | Italian | Italiano | Europe | LTR | Latin (`Latn`) | older, hand-made | 44% |
+| `ita-IT` | Italian | Italiano | Europe | LTR | Latin (`Latn`) | older, hand-made | 38% |
 | `jav-ID` | Javanese | Jawa | Southeast Asia | LTR | Latin (`Latn`) | CLDR 44 | — |
-| `jpn-JP` | Japanese | 日本語 | East Asia | LTR | Japanese (Han, Hiragana, Katakana) (`Jpan`) | older, hand-made | 44% |
+| `jpn-JP` | Japanese | 日本語 | East Asia | LTR | Japanese (Han, Hiragana, Katakana) (`Jpan`) | older, hand-made | 37% |
 | `jpn-JP@international` | Variant of `jpn-JP`: @international |  | East Asia | LTR | Japanese (Han, Hiragana, Katakana) (`Jpan`) | older variation, hand-made | — |
 | `kab-DZ` | Kabyle | Taqbaylit | Africa | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `kal-GL` | Greenlandic | Kalaallisut | Americas | LTR | Latin (`Latn`) | CLDR 44 | — |
@@ -220,7 +220,7 @@ The table is generated from the locale files; do not edit it by hand.
 | `kor-KR` | Korean | 한국어 | East Asia | LTR | Korean (Hangul, Han) (`Kore`) | older, regenerated from CLDR 44 | — |
 | `kur-TR` | Kurdish | Kurdî (kurmancî) | Middle East | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `lao-LA` | Lao | ລາວ | Southeast Asia | LTR | Lao (`Laoo`) | CLDR 44 | — |
-| `lat-VA` | Latin | Latina | Europe | LTR | Latin (`Latn`) | hand-made names, CLDR 44 conventions | 1% |
+| `lat-VA` | Latin | Latina | Europe | LTR | Latin (`Latn`) | hand-made names, CLDR 44 conventions | 100% |
 | `lav-LV` | Latvian | Latviešu | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `lin-CD` | Lingala | Lingála | Africa | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `lit-LT` | Lithuanian | Lietuvių | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
@@ -241,7 +241,7 @@ The table is generated from the locale files; do not edit it by hand.
 | `mya-MM` | Burmese | မြန်မာ | Southeast Asia | LTR | Myanmar (`Mymr`) | CLDR 44 | — |
 | `nep-NP` | Nepali | नेपाली | South Asia | LTR | Devanagari (`Deva`) | CLDR 44 | — |
 | `nno-NO` | Norwegian (Nynorsk) | Norsk (Nynorsk) | Europe | LTR | Latin (`Latn`) | older, hand-made | 0% |
-| `nor-NO` | Norwegian (Bokmal) | Norsk (Bokmål) | Europe | LTR | Latin (`Latn`) | older, hand-made | 42% |
+| `nor-NO` | Norwegian (Bokmal) | Norsk (Bokmål) | Europe | LTR | Latin (`Latn`) | older, hand-made | 36% |
 | `nor-NO@intl` | Variant of `nor-NO`: Internasjonalt Format |  | Europe | LTR | Latin (`Latn`) | older variation, hand-made | — |
 | `nor-NO@spraakraad` | Variant of `nor-NO`: Norsk Språkråd |  | Europe | LTR | Latin (`Latn`) | older variation, hand-made | — |
 | `nqo-GN` | N’Ko | ߒߞߏ | Africa | RTL | N’Ko (`Nkoo`) | CLDR 44 | — |
@@ -251,9 +251,9 @@ The table is generated from the locale files; do not edit it by hand.
 | `pan-IN` | Punjabi | ਪੰਜਾਬੀ | South Asia | LTR | Gurmukhi (`Guru`) | CLDR 44 | — |
 | `pcm-NG` | Nigerian Pidgin | Naijíriá Píjin | Africa | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `pnb-PK` | Western Punjabi (Shahmukhi) | پنجابی | South Asia | RTL | Arabic (`Arab`) | CLDR 44 | — |
-| `pol-PL` | Polish | Polski | Europe | LTR | Latin (`Latn`) | older, hand-made | 38% |
+| `pol-PL` | Polish | Polski | Europe | LTR | Latin (`Latn`) | older, hand-made | 32% |
 | `por-AO` | Portuguese (Angola) | Português (Angola) | Africa | LTR | Latin (`Latn`) | CLDR 44 | — |
-| `por-BR` | Portuguese (Brazil) | Português | Americas | LTR | Latin (`Latn`) | older, hand-made | 45% |
+| `por-BR` | Portuguese (Brazil) | Português | Americas | LTR | Latin (`Latn`) | older, hand-made | 38% |
 | `por-CV` | Portuguese (Cape Verde) | Português (Cabo Verde) | Africa | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `por-MZ` | Portuguese (Mozambique) | Português | Africa | LTR | Latin (`Latn`) | older, hand-made | — |
 | `por-PT` | Portuguese (Portugal) | Português | Europe | LTR | Latin (`Latn`) | older, hand-made | — |
@@ -263,10 +263,10 @@ The table is generated from the locale files; do not edit it by hand.
 | `roh-CH` | Romansh | Rumantsch | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `ron-RO` | Romanian | Română | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `run-BI` | Kirundi | Ikirundi | Africa | LTR | Latin (`Latn`) | CLDR 44 | — |
-| `rus-RU` | Russian | Русский | Europe | LTR | Cyrillic (`Cyrl`) | older, hand-made | 38% |
+| `rus-RU` | Russian | Русский | Europe | LTR | Cyrillic (`Cyrl`) | older, hand-made | 32% |
 | `san-IN` | Sanskrit | संस्कृत भाषा | South Asia | LTR | Devanagari (`Deva`) | CLDR 44 | — |
 | `sat-IN` | Santali | ᱥᱟᱱᱛᱟᱲᱤ | South Asia | LTR | Ol Chiki (`Olck`) | CLDR 44 | — |
-| `ser-SR` | Serbian (Srpski) | Serbian (Srpski) | Europe | LTR | Latin (`Latn`) | older, hand-made | 28% |
+| `ser-SR` | Serbian (Srpski) | Serbian (Srpski) | Europe | LTR | Latin (`Latn`) | older, hand-made | 23% |
 | `sin-LK` | Sinhala | සිංහල | South Asia | LTR | Sinhala (`Sinh`) | CLDR 44 | — |
 | `slk-SK` | Slovak | Slovenčina | Europe | LTR | Latin (`Latn`) | older, hand-made | — |
 | `slv-SI` | Slovenian | Slovenščina | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
@@ -275,11 +275,11 @@ The table is generated from the locale files; do not edit it by hand.
 | `snd-PK` | Sindhi | سنڌي | South Asia | RTL | Arabic (`Arab`) | CLDR 44 | — |
 | `som-SO` | Somali | Soomaali | Africa | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `sqi-AL` | Albanian | Shqip | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
-| `srp-RS` | Serbian (Српски) | Serbian (Српски) | Europe | LTR | Cyrillic (`Cyrl`) | older, hand-made | 38% |
+| `srp-RS` | Serbian (Српски) | Serbian (Српски) | Europe | LTR | Cyrillic (`Cyrl`) | older, hand-made | 32% |
 | `sun-ID` | Sundanese | Basa Sunda | Southeast Asia | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `swa-KE` | Swahili (Kenya) | Kiswahili (Kenya) | Africa | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `swa-TZ` | Swahili (Tanzania) | Kiswahili (Tanzania) | Africa | LTR | Latin (`Latn`) | CLDR 44 | — |
-| `swe-SE` | Swedish | Svenska | Europe | LTR | Latin (`Latn`) | older, hand-made | 45% |
+| `swe-SE` | Swedish | Svenska | Europe | LTR | Latin (`Latn`) | older, hand-made | 38% |
 | `syr-IQ` | Syriac (Iraq) | ܣܘܪܝܝܐ (ܥܝܪܩ) | Middle East | RTL | Syriac (`Syrc`) | CLDR 44 | — |
 | `syr-SY` | Syriac (Syria) | ܣܘܪܝܝܐ (ܣܘܪܝܐ) | Middle East | RTL | Syriac (`Syrc`) | CLDR 44 | — |
 | `tam-IN` | Tamil (India) | தமிழ் (இந்தியா) | South Asia | LTR | Tamil (`Taml`) | CLDR 44 | — |
@@ -290,7 +290,7 @@ The table is generated from the locale files; do not edit it by hand.
 | `tgk-TJ` | Tajik | Тоҷикӣ | Central Asia and Caucasus | LTR | Cyrillic (`Cyrl`) | CLDR 44 | — |
 | `tha-TH` | Thai | ไทย | Southeast Asia | LTR | Thai (`Thai`) | CLDR 44 | — |
 | `tir-ET` | Tigrinya | ትግርኛ | Africa | LTR | Ethiopic (`Ethi`) | CLDR 44 | — |
-| `tlh-QO` | Klingon | tlhIngan Hol | Worldwide (fictional) | LTR | Latin (`Latn`) | hand-made | 0% |
+| `tlh-QO` | Klingon | tlhIngan Hol | Worldwide (fictional) | LTR | Latin (`Latn`) | hand-made | 100% |
 | `ton-TO` | Tongan | Lea fakatonga | Oceania | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `tuk-TM` | Turkmen | Türkmen dili | Central Asia and Caucasus | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `tur-TR` | Turkish | Türkçe | Middle East | LTR | Latin (`Latn`) | older, hand-made | — |
@@ -386,60 +386,65 @@ between ideographs. The Klingon script pIqaD is never used (see Klingon above).
 
 ## 4. Every administration translation
 
-Measured on 15 October 2026, in two ways (both rounded down):
+Measured on 16 October 2026, in two ways (both rounded down):
 
 - **Own file finished**: finished messages of the file divided by all its messages, obsolete ones left out, each
   context, source and comment counted once. `php bin/php/ezchecktranslation.php <code>` prints a similar "Percent
   finished".
-- **Current strings translated**: how many of the 14,075 strings in `share/translations/untranslated/translation.ts`
+- **Current strings translated**: how many of the 16,623 strings in `share/translations/untranslated/translation.ts`
   (every string the kernel and its designs ask for today) the file translates, same context, source and comment,
   finished and not empty. This is what an administrator sees, and what the interface language choice shows as
   coverage: the rest shows in English.
 
-Most translations were complete for the strings of older releases; 6.0 added about 7,500 strings (admin4, the
-new Setup pages, audit, packages, jobs and more) that only `eng-US` and `ger-DE` translate so far.
+Most translations were complete for the strings of older releases; 6.0 added about 10,000 strings (admin4, the
+new Setup pages, audit, packages, jobs and more) that only `eng-US`, `ger-DE` and the five machine-assisted
+translations translate so far. English is the source language: the two strings `eng-US` lacks show their English
+source text, and the interface language choice counts English as 100%.
 
 | Translation | Own file finished | Current strings translated |
 |---|---:|---:|
-| `eng-US` | 100% (16,626 of 16,626) | 100% (14,075 of 14,075) |
-| `ger-DE` | 99% (16,504 of 16,519) | 99% (13,969 of 14,075) |
-| `fre-FR` | 99% (6,510 of 6,511) | 46% (6,510 of 14,075) |
-| `esl-ES` | 99% (6,509 of 6,511) | 46% (6,509 of 14,075) |
-| `por-BR` | 99% (6,465 of 6,512) | 45% (6,465 of 14,075) |
-| `swe-SE` | 99% (6,463 of 6,512) | 45% (6,463 of 14,075) |
-| `esl-MX` | 98% (6,389 of 6,511) | 45% (6,389 of 14,075) |
-| `ita-IT` | 97% (6,319 of 6,512) | 44% (6,319 of 14,075) |
-| `cat-ES` | 96% (6,314 of 6,512) | 44% (6,314 of 14,075) |
-| `jpn-JP` | 96% (6,281 of 6,513) | 44% (6,281 of 14,075) |
-| `chi-CN` | 95% (6,210 of 6,512) | 44% (6,210 of 14,075) |
-| `ell-GR` | 92% (6,019 of 6,512) | 42% (6,019 of 14,075) |
-| `nor-NO` | 92% (6,003 of 6,512) | 42% (6,003 of 14,075) |
-| `dut-NL` | 85% (5,565 of 6,512) | 39% (5,565 of 14,075) |
-| `eng-AU` | 84% (5,499 of 6,512) | 39% (5,499 of 14,075) |
-| `eng-NZ` | 84% (5,499 of 6,512) | 39% (5,499 of 14,075) |
-| `cro-HR` | 83% (5,463 of 6,512) | 38% (5,463 of 14,075) |
-| `pol-PL` | 83% (5,407 of 6,512) | 38% (5,407 of 14,075) |
-| `fin-FI` | 82% (5,369 of 6,512) | 38% (5,369 of 14,075) |
-| `cze-CZ` | 82% (5,367 of 6,512) | 38% (5,367 of 14,075) |
-| `srp-RS` | 82% (5,357 of 6,511) | 38% (5,357 of 14,075) |
-| `rus-RU` | 82% (5,351 of 6,512) | 38% (5,351 of 14,075) |
-| `chi-HK` | 70% (4,592 of 6,509) | 32% (4,592 of 14,075) |
-| `chi-TW` | 70% (4,592 of 6,509) | 32% (4,592 of 14,075) |
-| `ser-SR` | 60% (3,957 of 6,512) | 28% (3,957 of 14,075) |
-| `dan-DK` | 41% (2,696 of 6,512) | 19% (2,696 of 14,075) |
-| `heb-IL` | 36% (214 of 581) | 1% (214 of 14,075) |
-| `lat-VA` | 24% (143 of 578) | 1% (143 of 14,075) |
-| `nno-NO` | 0% (0 of 6,512) | 0% (0 of 14,075) |
-| `tlh-QO` | 0% (0 of 56) | 0% (0 of 14,075) |
+| `eng-US` | 100% (16,626 of 16,626) | 99% (16,621 of 16,623) |
+| `esl-ES` | 100% (16,623 of 16,623) | 100% (16,623 of 16,623) |
+| `esl-MX` | 100% (16,623 of 16,623) | 100% (16,623 of 16,623) |
+| `heb-IL` | 100% (16,623 of 16,623) | 100% (16,623 of 16,623) |
+| `lat-VA` | 100% (16,623 of 16,623) | 100% (16,623 of 16,623) |
+| `tlh-QO` | 100% (16,623 of 16,623) | 100% (16,623 of 16,623) |
+| `ger-DE` | 99% (16,514 of 16,529) | 99% (16,509 of 16,623) |
+| `fre-FR` | 99% (6,510 of 6,511) | 39% (6,510 of 16,623) |
+| `por-BR` | 99% (6,465 of 6,512) | 38% (6,465 of 16,623) |
+| `swe-SE` | 99% (6,463 of 6,512) | 38% (6,463 of 16,623) |
+| `ita-IT` | 97% (6,319 of 6,512) | 38% (6,319 of 16,623) |
+| `cat-ES` | 96% (6,314 of 6,512) | 37% (6,314 of 16,623) |
+| `jpn-JP` | 96% (6,281 of 6,513) | 37% (6,281 of 16,623) |
+| `chi-CN` | 95% (6,210 of 6,512) | 37% (6,210 of 16,623) |
+| `ell-GR` | 92% (6,019 of 6,512) | 36% (6,019 of 16,623) |
+| `nor-NO` | 92% (6,003 of 6,512) | 36% (6,003 of 16,623) |
+| `dut-NL` | 85% (5,565 of 6,512) | 33% (5,565 of 16,623) |
+| `eng-AU` | 84% (5,499 of 6,512) | 33% (5,499 of 16,623) |
+| `eng-NZ` | 84% (5,499 of 6,512) | 33% (5,499 of 16,623) |
+| `cro-HR` | 83% (5,463 of 6,512) | 32% (5,463 of 16,623) |
+| `pol-PL` | 83% (5,407 of 6,512) | 32% (5,407 of 16,623) |
+| `fin-FI` | 82% (5,369 of 6,512) | 32% (5,369 of 16,623) |
+| `cze-CZ` | 82% (5,367 of 6,512) | 32% (5,367 of 16,623) |
+| `srp-RS` | 82% (5,357 of 6,511) | 32% (5,357 of 16,623) |
+| `rus-RU` | 82% (5,351 of 6,512) | 32% (5,351 of 16,623) |
+| `chi-HK` | 70% (4,592 of 6,509) | 27% (4,592 of 16,623) |
+| `chi-TW` | 70% (4,592 of 6,509) | 27% (4,592 of 16,623) |
+| `ser-SR` | 60% (3,957 of 6,512) | 23% (3,957 of 16,623) |
+| `dan-DK` | 41% (2,696 of 6,512) | 16% (2,696 of 16,623) |
+| `nno-NO` | 0% (0 of 6,512) | 0% (0 of 16,623) |
 
 Notes:
 
-- **Hebrew** (`heb-IL`) and **Latin** (`lat-VA`) are first drafts of the most visible strings (login, the main
-  menus, the common buttons and messages), written for 6.0.15. **Klingon** (`tlh-QO`) is a playful first draft of
-  56 of those strings, taken from Marc Okrand's *The Klingon Dictionary* (`nej` Search, `mej` Logout, `pegh mu'`
-  Password, `SeHlaw` Setup, `veQ` Trash, `chaw' tu'lu'be'!` Access denied). All three need a native (or fluent)
-  speaker's review. Klingon's messages are all marked unfinished, so it counts 0% (and shows English) until someone
-  fluent confirms them.
+- **Spanish** (`esl-ES`, `esl-MX`) was complete for an older release; the strings added since were translated
+  for 6.0.15, machine-assisted, in each country's own usage. A review by a native speaker is welcome.
+- **Hebrew** (`heb-IL`), **Latin** (`lat-VA`) and **Klingon** (`tlh-QO`) are complete since 6.0.15. They are
+  machine-assisted and should get a review before a site relies on them: Hebrew by a native speaker, Latin by a
+  Latinist (new terms follow the conventions of modern Latin software translations), Klingon in the style of the
+  Klingon Language Institute. Klingon is written in the Latin transcription of Marc Okrand's *The Klingon
+  Dictionary* (`nej` Search, `mej` Logout, `pegh mu'` Password, `SeHlaw` Setup, `veQ` Trash), with descriptive
+  compounds for newer concepts.
+- The catalogues of the active extensions are complete in these five languages too; each extension releases them.
 - Two directories have no locale file of the same meaning: `ser-SR` and `srp-RS` are both Serbian (`ser-SR` in Latin
   script, `srp-RS` in Cyrillic; both locale files exist).
 - Translations of extensions live in each extension's `translations/` directory and are not counted here.
@@ -455,7 +460,7 @@ which takes its figures from Ethnologue (2026 edition); read on 15 October 2026.
 | 1 | English | 1,493 | `eng-US`, `eng-GB`, `eng-CA`, `eng-AU`, `eng-NZ`, `eng-IE`, `eng-IN`, `eng-SG`, `eng-ZA`, `eng-NG`, `eng-KE`, `eng-GH`, `eng-PK`, `eng-PH` | `eng-US` full; `eng-AU`, `eng-NZ` partial |
 | 2 | Mandarin Chinese | 1,183 | `chi-CN`, `chi-SG` (Simplified), `chi-TW`, `chi-HK` (Traditional) | `chi-CN`, `chi-TW`, `chi-HK` partial |
 | 3 | Hindi | 611 | `hin-IN` | none |
-| 4 | Spanish | 561 | `esl-ES`, `esl-MX`, `esl-AR`, `esl-CO`, `esl-CL`, `esl-PE`, `esl-US`, `esl-VE`, `esl-EC`, `esl-GT`, `esl-CU`, `esl-DO`, `esl-BO`, `esl-UY` | `esl-ES`, `esl-MX` partial |
+| 4 | Spanish | 561 | `esl-ES`, `esl-MX`, `esl-AR`, `esl-CO`, `esl-CL`, `esl-PE`, `esl-US`, `esl-VE`, `esl-EC`, `esl-GT`, `esl-CU`, `esl-DO`, `esl-BO`, `esl-UY` | `esl-ES`, `esl-MX` full |
 | 5 | Modern Standard Arabic | 335 | `ara-SA`, `ara-EG`, `ara-AE`, `ara-MA`, `ara-DZ`, `ara-TN`, `ara-IQ`, `ara-JO`, `ara-LB`, `ara-SY`, `ara-KW`, `ara-QA` | none |
 | 6 | French | 334 | `fre-FR`, `fre-BE`, `fre-CA`, `fre-CH`, `fre-SN`, `fre-CI`, `fre-CM`, `fre-MA`, `fre-CD` | `fre-FR` partial |
 | 7 | Bengali | 274 | `ben-BD`, `ben-IN` | none |
@@ -492,7 +497,7 @@ which takes its figures from Ethnologue (2026 edition); read on 15 October 2026.
 | 38 | Bhojpuri | 53 | `bho-IN` | none |
 
 Before 6.0.15, 18 of these 38 languages had a locale (counting a spoken variety by its written language); now all
-38 do. Eleven have an administration translation, two of them (English and German) complete.
+38 do. Eleven have an administration translation, three of them (English, German and Spanish) complete.
 
 Beyond them, the A–Z list now covers nearly every language with a written standard and CLDR data: the official
 languages of India (all 22 scheduled languages, among them Maithili, Konkani, Manipuri, Santali, Dogri, Bodo and
@@ -641,8 +646,16 @@ cache needs clearing (the choice's catalogue is keyed by the names, sizes and ti
    preference) with `Locale=<code>`, after clearing the translation cache
    (`php bin/php/ezcache.php --clear-tag=i18n --allow-root-user`).
 
-Translations of the strings added since 6.0 (about 7,500) are the most useful work for every language but English
-and German, and a review of the Hebrew, Latin and Klingon drafts is the quickest win.
+**Quality test.** `tests/tests/lib/ezi18n/expTranslationQualityTest.php` (no database needed) checks the
+machine-assisted catalogues and those of ezoe and ezjscore: a finished translation keeps the placeholders, HTML tags
+and entities, leading and trailing whitespace and line breaks of its source, and is neither empty nor the English
+text itself. Where the English text is right (a product name, a code, a word spelled the same), add it with its
+reason to `tests/tests/lib/ezi18n/translation-identical-allowlist.json`; never weaken the test. A newly completed
+language joins the test's list of languages.
+
+Translations of the strings added since 6.0 (about 10,000) are the most useful work for every language but the seven
+complete ones, and a review of the machine-assisted Spanish, Hebrew, Latin and Klingon translations is the quickest
+win.
 
 ## 9. Right-to-left languages
 
@@ -694,8 +707,8 @@ their layout skeleton (header, left menu, content, right toolbar) is direction-s
 of it being placed by left and right. The details, the CSS rules and what still needs checking are in
 [Right-to-left languages](features/6.0/right-to-left.md).
 
-**Interface translations.** Hebrew (`heb-IL`) is the one right-to-left language with an administration translation,
-a first draft that needs a review by a native speaker before a site relies on it
+**Interface translations.** Hebrew (`heb-IL`) is the one right-to-left language with an administration translation.
+It is complete but machine-assisted, and needs a review by a native speaker before a site relies on it
 ([section 8](#8-adding-or-completing-an-administration-translation)).
 
 ## 10. No PHP extension at run time

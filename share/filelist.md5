@@ -3068,7 +3068,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-860728fa0bf2bc5715b4cb24f8256730  doc/changelogs/6.0/6.0.15.md
+0d347f7a8c089c5af4dfc1a53b44b279  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3988,7 +3988,7 @@ e6d2e7ade028ccf4e972ed4ff1b8c589  doc/install/15-migrating-from-5x-legacy.md
 9141bf583876b5c6c08c3fad4c84a583  doc/install/16-migrating-from-ez-platform-and-ibexa.md
 c16be8cb22d2ac62ecb044e4af371544  doc/install/17-migration-reference.md
 ce0b3f77ce09c1b78d7b56dac34a2b38  doc/install/README.md
-5fcef583f225be30378adb7e402ab55c  doc/languages.md
+27651d450d6c3dc84be5643d272a06e2  doc/languages.md
 96f498c48962f624f83d7484bd72ba84  doc/release-overview
 81b7485665e49e6de38b6e8a216c7136  doc/shop/classeshierarchy.html
 7a4ca93d7c8c4867763c5b42ee925a96  doc/shop/examples/paypal/extensionfiles.html
