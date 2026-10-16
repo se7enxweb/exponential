@@ -43,11 +43,12 @@
      $count_trash     = fetch( 'content', 'trash_count' )}
 
 {* The last 14 days of publishing, oldest first *}
-{def $days = array() $day_max = 1 $day_from = 0 $day_count = 0}
+{def $days = array() $day_max = 1 $day_from = 0 $day_count = 0 $day_total = 0}
 {for 13 to 0 as $i}
     {set $day_from = sub( $day_start, mul( $i, 86400 ) )}
     {set $day_count = fetch( 'content', 'tree_count', hash( 'parent_node_id', 1, 'attribute_filter', array( array( 'published', 'between', array( $day_from, sum( $day_from, 86399 ) ) ) ) ) )}
     {set $days = $days|append( hash( 'time', $day_from, 'count', $day_count ) )}
+    {set $day_total = sum( $day_total, $day_count )}
     {if gt( $day_count, $day_max )}{set $day_max = $day_count}{/if}
 {/for}
 {* The last 7 days (the figure, today included) from the same counts, and its trend from full days only: the 6 days
@@ -112,6 +113,10 @@
         {* ---- Activity ---- *}
         <section class="a4-dash-card a4-dash-activity">
             <header><h2>{'Publishing, last 14 days'|i18n( 'design/admin/dashboard' )}</h2></header>
+            {if $day_total|eq( 0 )}
+            {* all 14 bars would be empty: say so, as text *}
+            <p class="a4-empty">{'Nothing was published in the last 14 days.'|i18n( 'design/admin/dashboard' )}</p>
+            {else}
             <div class="a4-dash-bars" aria-hidden="true">{* the numbers are the table below, for screen readers too *}
                 {foreach $days as $d}
                 <div class="a4-dash-bar" title="{$d.time|l10n( 'shortdate' )}: {$d.count}">
@@ -121,6 +126,7 @@
                 </div>
                 {/foreach}
             </div>
+            {/if}
             {* the same numbers as a table: the chart says only what it shows *}
             <details class="a4-dash-data">
                 <summary>{'Show the numbers'|i18n( 'design/admin/dashboard' )}</summary>
