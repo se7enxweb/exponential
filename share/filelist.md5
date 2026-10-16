@@ -829,7 +829,7 @@ f1070d15631a97d1b594b7b75a8231d6  design/admin3/templates/content/edit.tpl
 02474d5bf8a508eb4af0f63c623a678b  design/admin3/templates/content/edit_menu.tpl
 ada5d12461d8b215c68aca061f8d2368  design/admin3/templates/content/history.tpl
 3d1c7e6f28404ca56bb4b01ea9248f5e  design/admin3/templates/content/view/versionview.tpl
-efff1fd10ce90d6168b249169c1cf066  design/admin3/templates/loginpagelayout.tpl
+7f8ecb7c83deb1129284631b7de16cac  design/admin3/templates/loginpagelayout.tpl
 870244c1a24f9eb612d6ea5f97d243d0  design/admin3/templates/page_head_script.tpl
 b2eb690cdc87ce43c243e5d764bddd39  design/admin3/templates/page_head_style.tpl
 cb128a4645e891cd796919aad3ed36d1  design/admin3/templates/page_header.tpl
@@ -837,7 +837,7 @@ cb128a4645e891cd796919aad3ed36d1  design/admin3/templates/page_header.tpl
 68ef800e886d8f0bbe4c2216f50e0c18  design/admin3/templates/page_search.tpl
 e197b66c63a2bcf4e5d9777cd91f6300  design/admin3/templates/page_topmenu.tpl
 cf8663798cf45b3045efbc98b8d831c5  design/admin3/templates/page_topmenuitem.tpl
-9d5f475181bf955ec0f7267af8289f78  design/admin3/templates/pagelayout.tpl
+e1bf38dbc7828053983dd6d4b819473c  design/admin3/templates/pagelayout.tpl
 e32e963f4d25c52a7f8d3eb520c0b227  design/admin3/templates/parts/user/menu.tpl
 03bf0a50004b366a1cbe7f46bb57d6ce  design/admin3/templates/window_controls.tpl
 a41265a8c8cf4698837a304aae23bb6a  design/admin4/fonts/IcoMoon.eot
@@ -3068,7 +3068,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-0d347f7a8c089c5af4dfc1a53b44b279  doc/changelogs/6.0/6.0.15.md
+883a5974c3384aa82fd13a5d00dd5273  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3522,7 +3522,7 @@ f9c24ee19f2caf2e1326cf5158b46bfc  doc/features/6.0/repair-from-the-browser.md
 d19ac2813afb3d92cc981015c8ecdfc1  doc/features/6.0/request-rules.md
 24e8ccadcc06ff46a640a76473fd2d4a  doc/features/6.0/reset-user-password.md
 dfc80bc3e8c5193eda53ed0174e12623  doc/features/6.0/reverse-relation-check.md
-50d11bbd85be1df3298f33bf0828cc7d  doc/features/6.0/right-to-left.md
+f3e55ab662ea59e47a493133318f41ee  doc/features/6.0/right-to-left.md
 cb4ba958c01d20e816fc121fd17f2d6d  doc/features/6.0/robots-txt.md
 5546e1fd2154341af36b7d47c0e72dac  doc/features/6.0/role-and-policy-template-operators.md
 0954ae9de88cdf88556032c14ff33a9c  doc/features/6.0/role-assignment-paging.md
