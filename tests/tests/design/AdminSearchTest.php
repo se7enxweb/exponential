@@ -18,6 +18,8 @@
  *          searches nothing
  *  AS-12 - The search landmarks have names, the scope button opens a dialog, a result's checkbox names the item, the
  *          location radios are a group, the class attribute label points at a field only when there is one
+ *  AS-13 - A page past the last one says that it has no matches and links to the first page, instead of the count
+ *          above an empty result list
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminSearchTest.php
  *
@@ -145,7 +147,8 @@ class AdminSearchTest extends PHPUnit\Framework\TestCase
     public function testNewTextsAreTranslated()
     {
         $texts = array( 'design/admin/content/search' => array( 'Search for', 'The search text was too long and was shortened.', 'Type the words to search for.',
-                                                                 'The search could not be run. Try fewer or simpler words, or search again later.', '%count matches' ),
+                                                                 'The search could not be run. Try fewer or simpler words, or search again later.', '%count matches',
+                                                                 'There are no matches on this page.', 'Go to the first page' ),
                         'design/admin/navigator' => array( 'Pages' ),
                         'design/admin/pagelayout' => array( 'Quick search', 'Where' ),
                         'design/admin/setup/rad' => array( '%shown of %count' ),
@@ -221,6 +224,21 @@ class AdminSearchTest extends PHPUnit\Framework\TestCase
 
         $advanced = self::read( 'design/admin4/templates/content/advancedsearch.tpl' );
         $this->assertStringContainsString( '<label{if $search_contentclass_id|gt( 0 )} for="ezcontent_advancesearch_class_attribute_id"{/if}>', $advanced );
+    }
+    /** AS-13 */
+    public function testAPagePastTheLastLinksToTheFirstPage()
+    {
+        $tpl = self::read( 'design/admin4/templates/content/search.tpl' );
+        $this->assertSame( 1, preg_match( '#\{if \$search_count\}(.*?)\n\{/if\}\n\n</form>#s', $tpl, $m ), 'the result block' );
+        $block = $m[1];
+        // the result list only with results on this page
+        $this->assertMatchesRegularExpression( "#\{if \\\$search_result\}\n\{include name=Result uri='design:content/searchresult.tpl' search_result=\\\$search_result\}\n\{else\}#", $block );
+        $this->assertStringContainsString( "{'There are no matches on this page.'|i18n( 'design/admin/content/search' )} <a href={concat( '/content/search', \$search_page_suffix )|ezurl}>{'Go to the first page'|i18n( 'design/admin/content/search' )}</a>", $block );
+        // the first page is the search's address without (offset): the same words, locations, section and page size
+        $this->assertSame( 1, substr_count( $tpl, "{def \$search_page_suffix = concat( '?SearchText=', \$search_text|urlencode," ) );
+        $this->assertStringContainsString( 'page_uri_suffix=$search_page_suffix', $block );
+        $this->assertSame( 1, preg_match( '#^\{def \$search_page_suffix = .*$#m', $block, $def ) );
+        $this->assertStringNotContainsString( 'offset', $def[0] );
     }
 
     private static function xpathString( $text )

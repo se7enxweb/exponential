@@ -5062,6 +5062,14 @@
         <translation>%count matches</translation>
     </message>
     <message>
+        <source>There are no matches on this page.</source>
+        <translation>There are no matches on this page.</translation>
+    </message>
+    <message>
+        <source>Go to the first page</source>
+        <translation>Go to the first page</translation>
+    </message>
+    <message>
         <source>Update attributes</source>
         <translation>Update attributes</translation>
     </message>
