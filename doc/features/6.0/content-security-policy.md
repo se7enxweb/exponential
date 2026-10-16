@@ -42,6 +42,9 @@ ReportURI=
 - **Directives[]**: the policy, one directive per entry. Set an entry empty in an override to leave the directive out;
   an override that starts with `Directives[]` alone replaces the whole list. An entry whose value holds `;` or `,`, or
   whose name is not a directive name, is ignored, so a setting cannot split the header or add a directive of its own.
+  `frame-ancestors` and `sandbox` are sent only when the policy is enforced: browsers ignore them in a report-only
+  policy (and say so in the console). Framing stays limited by `SecurityHeaders[]` (`X-Frame-Options`,
+  `frame-ancestors 'self'`) in every mode.
 - **ReportURI**: where the browser posts its reports (`report-uri`), for example a collector of your own. Empty: the
   developer console only.
 
@@ -72,6 +75,11 @@ Mode=enforce
   stylesheets); `font-src` adds `data:`.
 - `object-src 'none'`, `base-uri 'self'`, `form-action 'self'`, `frame-ancestors 'self'` close the plugin, base URL,
   form target and framing paths.
+
+Before you set `Mode=enforce`, mind what `object-src 'none'` blocks: the `<object>`/`<embed>` players of the legacy
+media previews (`admin_preview/flash.tpl`, `windows_media.tpl`, `real_video.tpl`, `quicktime.tpl` and the `ezmedia`
+view templates; browsers no longer run these plugins anyway) and a PDF shown inline through `<object>` or `<embed>`.
+Allow it where you need it, e.g. `Directives[object-src]='self'`.
 
 A page that needs more (a map service, a font host, an analytics script) adds the host to the directive in its
 siteaccess, for example `Directives[script-src]='self' https://maps.example.com`.

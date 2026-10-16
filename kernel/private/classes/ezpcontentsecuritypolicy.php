@@ -15,6 +15,7 @@
  *   block and blocks nothing), enforce (Content-Security-Policy), or auto: report-only on an administration
  *   siteaccess ([DesignSettings] SiteDesign begins with "admin"), disabled elsewhere.
  * - Directives[<directive>]=<sources>: the policy, one directive per entry; an empty value leaves the directive out.
+ *   frame-ancestors and sandbox are sent only when the policy is enforced (browsers ignore them in report-only).
  * - ReportURI: where the browser sends its reports (report-uri); empty: none.
  *
  * The policy is a header of its own beside [HTTPHeaderSettings] SecurityHeaders[]: an enforced policy is sent after
@@ -31,6 +32,9 @@ class ezpContentSecurityPolicy
 
     const HEADER_ENFORCE = 'Content-Security-Policy';
     const HEADER_REPORT_ONLY = 'Content-Security-Policy-Report-Only';
+
+    /** Directives browsers ignore in a report-only policy */
+    const NOT_IN_REPORT_ONLY = array( 'frame-ancestors', 'sandbox' );
 
     /**
      * The headers of the policy for the current siteaccess: none, or one of Content-Security-Policy and
@@ -51,10 +55,33 @@ class ezpContentSecurityPolicy
         if ( $mode === self::MODE_DISABLED )
             return array();
 
-        $policy = self::policy( $value( 'Directives', array() ), $value( 'ReportURI', '' ) );
+        $directives = $value( 'Directives', array() );
+        if ( $mode === self::MODE_REPORT_ONLY )
+            $directives = self::reportOnlyDirectives( $directives );
+        $policy = self::policy( $directives, $value( 'ReportURI', '' ) );
         if ( $policy === '' )
             return array();
         return array( $mode === self::MODE_ENFORCE ? self::HEADER_ENFORCE : self::HEADER_REPORT_ONLY => $policy );
+    }
+
+    /**
+     * The directives a report-only policy may carry: browsers ignore frame-ancestors and sandbox there (and say so in
+     * the console on every page), so they are left out of Content-Security-Policy-Report-Only and sent only when the
+     * policy is enforced. Framing stays limited by SecurityHeaders[] (X-Frame-Options, frame-ancestors).
+     *
+     * @param mixed $directives Directives[] (name => sources)
+     * @return array
+     */
+    public static function reportOnlyDirectives( $directives )
+    {
+        if ( !is_array( $directives ) )
+            return array();
+        foreach ( array_keys( $directives ) as $name )
+        {
+            if ( in_array( strtolower( trim( (string)$name ) ), self::NOT_IN_REPORT_ONLY, true ) )
+                unset( $directives[$name] );
+        }
+        return $directives;
     }
 
     /**

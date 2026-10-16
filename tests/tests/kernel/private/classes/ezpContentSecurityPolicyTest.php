@@ -38,12 +38,16 @@ class ezpContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
         $this->saved = array();
     }
 
+    /** Sets a site.ini value for this test (null: removes it); tearDown() puts the old one back */
     private function setting( $section, $name, $value )
     {
         $ini = eZINI::instance();
         if ( !isset( $this->saved[$section] ) || !array_key_exists( $name, $this->saved[$section] ) )
             $this->saved[$section][$name] = $ini->hasVariable( $section, $name ) ? array( $ini->variable( $section, $name ) ) : null;
-        $ini->setVariable( $section, $name, $value );
+        if ( $value === null )
+            $ini->removeSetting( $section, $name );
+        else
+            $ini->setVariable( $section, $name, $value );
     }
 
     // ------------------------------------------------------------ mode
@@ -180,6 +184,43 @@ class ezpContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
         $this->setting( 'ContentSecurityPolicy', 'Mode', 'disabled' );
         $headers = ezpKernelWeb::securityHeaders();
         $this->assertSame( array( 'X-Content-Type-Options' => 'nosniff', 'Content-Security-Policy' => "frame-ancestors 'self'" ), $headers );
+    }
+
+    /** Browsers ignore frame-ancestors and sandbox in a report-only policy: sent only when enforced */
+    public function testReportOnlyLeavesOutWhatBrowsersIgnoreThere()
+    {
+        $this->setting( 'ContentSecurityPolicy', 'Directives', array( 'default-src' => "'self'", 'Frame-Ancestors' => "'self'",
+                                                                      'sandbox' => 'allow-forms', 'object-src' => "'none'" ) );
+        $this->setting( 'ContentSecurityPolicy', 'ReportURI', '/csp-report' );
+        $this->setting( 'DesignSettings', 'SiteDesign', 'admin4' );
+
+        $this->setting( 'ContentSecurityPolicy', 'Mode', 'report-only' );
+        $this->assertSame( array( 'Content-Security-Policy-Report-Only' => "default-src 'self'; object-src 'none'; report-uri /csp-report" ),
+                           ezpContentSecurityPolicy::headers() );
+        $this->setting( 'ContentSecurityPolicy', 'Mode', 'auto' );
+        $this->assertSame( array( 'Content-Security-Policy-Report-Only' => "default-src 'self'; object-src 'none'; report-uri /csp-report" ),
+                           ezpContentSecurityPolicy::headers() );
+
+        $this->setting( 'ContentSecurityPolicy', 'Mode', 'enforce' );
+        $this->assertSame( array( 'Content-Security-Policy' => "default-src 'self'; frame-ancestors 'self'; sandbox allow-forms; object-src 'none'; report-uri /csp-report" ),
+                           ezpContentSecurityPolicy::headers() );
+
+        $this->assertSame( array( 'a' => 'b' ), ezpContentSecurityPolicy::reportOnlyDirectives( array( 'a' => 'b', ' SANDBOX ' => 'x' ) ) );
+        $this->assertSame( array(), ezpContentSecurityPolicy::reportOnlyDirectives( 'frame-ancestors x' ) );
+    }
+
+    /** Without SecurityHeaders[] (removed, or not a list) the policy is sent all the same */
+    public function testThePolicyIsSentWithoutSecurityHeaders()
+    {
+        $this->setting( 'ContentSecurityPolicy', 'Directives', array( 'script-src' => "'self'" ) );
+        $this->setting( 'ContentSecurityPolicy', 'ReportURI', '' );
+        $this->setting( 'ContentSecurityPolicy', 'Mode', 'report-only' );
+        foreach ( array( null, 'not a list' ) as $securityHeaders )
+        {
+            $this->setting( 'HTTPHeaderSettings', 'SecurityHeaders', $securityHeaders );
+            $this->assertSame( array( 'Content-Security-Policy-Report-Only' => "script-src 'self'" ), ezpKernelWeb::securityHeaders(),
+                               var_export( $securityHeaders, true ) );
+        }
     }
 
     public function testShippedDefaults()

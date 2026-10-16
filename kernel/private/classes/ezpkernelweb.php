@@ -1234,8 +1234,9 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
         $configured = $ini->hasVariable( 'HTTPHeaderSettings', 'SecurityHeaders' )
             ? $ini->variable( 'HTTPHeaderSettings', 'SecurityHeaders' )
             : array();
+        // A SecurityHeaders that is no list adds no header of its own; the policy below is still sent
         if ( !is_array( $configured ) )
-            return array();
+            $configured = array();
 
         $headers = array();
         foreach ( $configured as $name => $value )
