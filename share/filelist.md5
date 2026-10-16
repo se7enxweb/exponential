@@ -878,7 +878,7 @@ ac084a07607e6d6c5a845da15423854f  design/admin4/images/view-fullscreen.png
 9257c4d949d4225fb464a98ceac29696  design/admin4/javascript/admin4.js
 611b86193bc31bf56218fc25131e04b8  design/admin4/javascript/contentstructuremenu_dynamic.js
 a5e25bc5b912c88678afe25d798ade81  design/admin4/javascript/expajaxuploader.js
-d2831992a6a754e322ae8aae77156be2  design/admin4/javascript/ezadmin_menubar.js
+b3e4fc9a2d607edf2ec93b993ef2789f  design/admin4/javascript/ezadmin_menubar.js
 59795cfe15e8bc99974d7d9099794478  design/admin4/javascript/ezajaxrelations_jquery.js
 a28728171fd43a28e1ffc80bc858e768  design/admin4/javascript/ezajaxsubitems_expdatatable.js
 031d335156c09ec9dc3db2f2d3730087  design/admin4/javascript/node_tabs.js
@@ -7455,7 +7455,7 @@ a15f60da55163c3055ee1c45bfd5a806  tests/tests/design/AdminCardsTest.php
 7a6d21774343c1bfa611fd993416166c  tests/tests/design/AdminEditBarTest.php
 99d5c1ba62dc2dd021f478d557ea40dd  tests/tests/design/AdminEditorSkinTest.php
 438babfea7d674b5ae84c50a71940ab6  tests/tests/design/AdminEnvironmentBadgeTest.php
-2cbf98d0d087a48bdb8002bf38397a65  tests/tests/design/AdminFirstPaintColumnsTest.php
+13f11ab790d1c1440fe3549703216e2b  tests/tests/design/AdminFirstPaintColumnsTest.php
 d3eb59f229be42df66f1b0b8cfaf5519  tests/tests/design/AdminFontStackTest.php
 e0969685ae94ce6950d89ebe71ea65d1  tests/tests/design/AdminFormErrorsTest.php
 c76f86863ef135a2c51d2083890f9380  tests/tests/design/AdminFormLabelsTest.php

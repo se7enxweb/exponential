@@ -465,8 +465,12 @@
     }
 
     $(function () {
-        sidebarToggle();
-        endPreload();
+        // finally: if applying the state throws, the page must not keep a4-preload (no transitions, columns frozen)
+        try {
+            sidebarToggle();
+        } finally {
+            endPreload();
+        }
         navbarToggle();
         leftMenuResize();
     });
