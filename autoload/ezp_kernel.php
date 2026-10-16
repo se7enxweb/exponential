@@ -1269,6 +1269,7 @@ return array(
       'ezpContentPublishingQueueProcessor'                           => 'kernel/private/classes/ezpcontentpublishingqueueprocessor.php',
       'ezpContentPublishingQueueReaderInterface'                     => 'kernel/private/interfaces/ezpcontentpublishingqueuereader.php',
       'ezpContentRepository'                                         => 'kernel/private/api/content/repository.php',
+      'ezpContentSecurityPolicy'                                     => 'kernel/private/classes/ezpcontentsecuritypolicy.php',
       'ezpContentSortingCriteria'                                    => 'kernel/private/api/content/criteria/sorting.php',
       'ezpContentXHTMLRenderer'                                      => 'kernel/private/rest/classes/renderers/xhtml_content_renderer.php',
       'ezpDatabaseBasedClusterFileHandler'                           => 'kernel/private/interfaces/ezpdatabasebasedclusterfilehandler.php',

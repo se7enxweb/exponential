@@ -1445,7 +1445,11 @@
     "kernel/private/classes/ezpactiveextensions.php": [
       "tests/tests/kernel/classes/setup/ExtensionChangePlanTest.php"
     ],
+    "kernel/private/classes/ezpcontentsecuritypolicy.php": [
+      "tests/tests/kernel/private/classes/ezpContentSecurityPolicyTest.php"
+    ],
     "kernel/private/classes/ezpkernelweb.php": [
+      "tests/tests/kernel/private/classes/ezpContentSecurityPolicyTest.php",
       "tests/tests/lib/ezsession/eZSessionResponseCookieTest.php"
     ],
     "kernel/private/classes/ezscriptclusterpurge.php": [
@@ -1739,6 +1743,7 @@
       "tests/tests/kernel/classes/runnable/RunnableExtensionPointsTest.php",
       "tests/tests/kernel/classes/user/expPasswordPolicyTest.php",
       "tests/tests/kernel/content/eZContentFunctionCollectionSiteDataTest.php",
+      "tests/tests/kernel/private/classes/ezpContentSecurityPolicyTest.php",
       "tests/tests/lib/ezdb/eZSQLite3TransactionWaitTest.php",
       "tests/tests/lib/ezfile/eZLogMaxSizeTest.php",
       "tests/tests/lib/ezutils/eZINIEnvironmentTest.php",

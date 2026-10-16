@@ -448,8 +448,10 @@ redirects, 304 answers) through `[ServerSettings] ResponseHeaders[]`, and adds t
 there if you want them (Apache `mod_headers`: `Header always set X-Content-Type-Options "nosniff"`; nginx:
 `add_header X-Content-Type-Options "nosniff" always;`).
 
-A full content security policy (`script-src`, `style-src`) is not shipped: designs and extensions use inline scripts.
-Build one per site with the browser's console and a report-only header before enforcing it.
+A full content security policy (`script-src`, `style-src`) is sent from `site.ini [ContentSecurityPolicy]`:
+report-only on the administration by default, off on the sites, whose designs and extensions may use inline scripts.
+Watch the reports (browser console, `ReportURI`) before enforcing it, see
+[Content Security Policy](../features/6.0/content-security-policy.md).
 
 ### HTTPS everywhere
 
