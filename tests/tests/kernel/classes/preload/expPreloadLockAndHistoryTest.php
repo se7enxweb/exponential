@@ -14,6 +14,12 @@
  *  PH-07 a stop is asked for a running run only, and seen by the run
  *  PH-08 failures keep the address, the status code and three linking pages, with how many more
  *  PH-09 a run of an older version that wrote only its events is read from them
+ *  PH-10 a run whose id is all digits is listed, current() and pruned like any other
+ *
+ * Stress note (2026-10-15): PH-06 failed once in CI (1 run in a few hundred) because newID() is random and an
+ * id of 16 decimal digits (chance (10/16)^16, about 1 in 1,850 per id, five ids per run) became an integer
+ * array key in expPreloadHistory::ids(), failed isID() and dropped out of runs(). Fixed in ids(); PH-10 pins it
+ * with fixed all-digit ids. Stressed afterwards: this file 500 times in a row and 4 copies at once, all green.
  *
  * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -212,5 +218,25 @@ class expPreloadLockAndHistoryTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 9.5, $read['seconds'] );
         $this->assertSame( 404, $read['failures'][0]['status'] );
         $this->assertSame( 1000.0, $read['started'] );
+    }
+
+    /** PH-10 */
+    public function testAnAllDigitIdIsListed()
+    {
+        $history = new expPreloadHistory( $this->dir );
+        $ids = array( '7540976905486035', 'abcdef0123456789', '1234567890123456' );
+        foreach ( $ids as $i => $id )
+        {
+            $this->assertTrue( expPreloadHistory::isID( $id ) );
+            $history->create( $id, array( 'started' => 1000 + $i ) );
+            $history->update( $id, array( 'state' => 'finished' ) );
+        }
+        $history->update( $ids[0], array( 'state' => 'running', 'pid' => getmypid() ) );
+
+        $this->assertSame( array( $ids[2], $ids[1], $ids[0] ), array_column( $history->runs(), 'id' ) );
+        $this->assertSame( $ids[0], $history->current()['id'] );
+        $this->assertSame( 1, $history->prune( 1 ) );
+        $this->assertSame( array( $ids[2], $ids[0] ), array_column( $history->runs(), 'id' ) );
+        $this->assertFileDoesNotExist( $this->dir . '/' . $ids[1] . '.json' );
     }
 }

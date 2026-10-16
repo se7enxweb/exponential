@@ -392,7 +392,8 @@ class expPreloadHistory
             if ( self::isID( $id ) )
                 $ids[$id] = true;
         }
-        return array_keys( $ids );
+        // an id of 16 decimal digits is an integer key here; give it back as the string it is, or isID() refuses it
+        return array_map( 'strval', array_keys( $ids ) );
     }
 
     private function ensureDirectory()
