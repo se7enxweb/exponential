@@ -268,4 +268,5 @@ policy *ezjscore / call* with the function list **ezjscnode**; a request whose c
 - [Role assignment paging](../features/6.0/role-assignment-paging.md)
 - [Signed links in the "New user registered" mail](../features/6.0/registration-admin-links.md)
 - [Sections](sections.md), [Object states](object-states.md), [Security and audit](security-and-audit.md)
+- [Changing owners](changing-owners.md): the `owner/change` and `owner/subtree` policies of ezownerchange
 - [Changelog 6.0.15](../changelogs/6.0/6.0.15.md)
