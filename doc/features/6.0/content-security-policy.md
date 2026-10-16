@@ -109,8 +109,8 @@ How the pieces work, for templates of your own and for extensions:
   `design/admin4/javascript/a4_actions.js` (loaded on every admin4 page): `data-a4-confirm="Question?"` (a link,
   button or form), `data-a4-discard-confirm`, `data-a4-toggle-checkboxes="Name[]"` (with `data-a4-form` for another
   form), `data-a4-check-all="#selector"`, `data-a4-dismiss`, `data-a4-submit-on-change`,
-  `data-a4-navigate-on-change`, `data-a4-reset-field`, `data-a4-print`, `data-a4-disable-on-submit` and
-  `data-a4-focus`. The header comment of the file describes each.
+  `data-a4-navigate-on-change`, `data-a4-reset-field` and `data-a4-focus`. The header comment of the file
+  describes each.
 - **Context menus** (`popupmenu/*.tpl`, `ezpopupmenu.js`) are declared in `data-menu-*` attributes: on the menu
   `data-menu-depth` and `data-menu-header`; on an item `data-menu-url`, `data-menu-shown-if`,
   `data-menu-disabled-class`, `data-menu-disabled-for`, `data-menu-variable` with `data-menu-template` (the id of a
