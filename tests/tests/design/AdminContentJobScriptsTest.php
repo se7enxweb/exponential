@@ -1,6 +1,6 @@
 <?php
 /**
- * The scripts of the content job pages in admin4. Checked on the files and,
+ * The scripts of the content job pages and the relation search of the edit form in admin4. Checked on the files and,
  * in node, against a small stand-in for the DOM (js/mini_dom.js); no database.
  *
  * - CJS-01: the progress page (page/content_job.js) stops polling with a message of its own when the job is gone or
@@ -10,6 +10,9 @@
  * - CJS-02: the "run now or in the background" choice (page/content_job_mode_choice.js) saves the preference through
  *   window.a4Pref, which POSTs to user/preferences/set_and_exit with the form token, and sends no request of its own
  *   (js/content_job_mode_choice.js).
+ * - CJS-03: the relation search of the edit form (ezajaxrelations_jquery.js of admin and admin4) sends the search
+ *   text as the POST parameter SearchStr, which ezjscServerFunctionsJs::search() reads, and not as an argument of the
+ *   call: there it lost its tags (strip_tags) and was cut at '::'.
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminContentJobScriptsTest.php
  *
@@ -101,4 +104,17 @@ class AdminContentJobScriptsTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( "'ezxform_token=' + encodeURIComponent(token)", $head );
     }
 
+    /** CJS-03 */
+    public function testTheRelationSearchSendsTheTextAsSearchStr()
+    {
+        foreach ( array( 'admin', 'admin4' ) as $design )
+        {
+            $script = self::read( "design/$design/javascript/ezajaxrelations_jquery.js" );
+            $this->assertDoesNotMatchRegularExpression( '/[\'"]ezjsc::search::[\'"]\s*\+/', $script, "$design: the text is not part of the call" );
+            $this->assertStringContainsString( "'SearchStr': text.val()", $script, $design );
+            $this->assertStringContainsString( "$.ez( 'ezjsc::search', params, _searchCallBack );", $script, $design );
+        }
+        $server = self::read( 'extension/ezjscore/classes/ezjscserverfunctionsjs.php' );
+        $this->assertStringContainsString( "\$http->hasPostVariable( 'SearchStr' )", $server, 'the server reads SearchStr' );
+    }
 }
