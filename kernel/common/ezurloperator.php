@@ -237,6 +237,9 @@ class eZURLOperator
                             false;
 
         $useTmp = false;
+        // Set by ezurl: the name of the variable that is true at run time when the link was given back
+        // untouched (absolute), and is escaped below if it goes into quotes
+        $absoluteVar = false;
 
         $newElements = array();
         $values = array();
@@ -252,7 +255,9 @@ class eZURLOperator
 
                     $serverURL = isset( $parameters[2] ) ? eZTemplateNodeTool::elementConstantValue( $parameters[2] ) : eZURI::getTransformURIMode();
 
-                    eZURI::transformURI( $url, false, $serverURL );
+                    $absolute = !eZURI::transformURI( $url, false, $serverURL );
+                    if ( $absolute && $this->applyQuotes( $url, $parameters[1], true ) !== false )
+                        $url = self::escapeAbsoluteURL( $url );
 
                     $url = $this->applyQuotes( $url, $parameters[1] );
                     return array( eZTemplateNodeTool::createStringElement( $url ) );
@@ -273,15 +278,17 @@ class eZURLOperator
                         $parameter = "eZURI::getTransformURIMode()";
                     }
 
+                    $useTmp = true;
+                    ++$tmpCount;
+                    // transformURI() gives back false for a link it did not change (a scheme or //host)
+                    $absoluteVar = '%tmp' . ++$tmpCount . '%';
                     $code = <<<CODEPIECE
 
 %tmp1% = %1%;
-eZURI::transformURI( %tmp1%, false, $parameter );
+$absoluteVar = !eZURI::transformURI( %tmp1%, false, $parameter );
 
 CODEPIECE;
                     unset( $parameter );
-                    $useTmp = true;
-                    ++$tmpCount;
 
                 }
                 else
@@ -298,9 +305,10 @@ CODEPIECE;
                         $parameter = "eZURI::getTransformURIMode()";
                     }
 
+                    $absoluteVar = '%tmp' . ++$tmpCount . '%';
                     $code = <<<CODEPIECE
 
-eZURI::transformURI( %1%, false, $parameter );
+$absoluteVar = !eZURI::transformURI( %1%, false, $parameter );
 
 CODEPIECE;
                     unset( $parameter );
@@ -536,6 +544,18 @@ CODEPIECE;
                  '}' . "\n";
         }
 
+        // An absolute link that goes into quotes is escaped for the HTML attribute, as transformURI() escapes
+        // the links it builds. Measured without it: a $url of 'https://a.example/" onmouseover="alert(1)' in
+        // <a href={$url|ezurl}> gave <a href="https://a.example/" onmouseover="alert(1)">, the attribute closed
+        // and a handler added. Not for quote 'no': that output also goes into headers, mails and scripts.
+        $escapeAbsoluteCode = '';
+        if ( $absoluteVar !== false )
+        {
+            $target = $useTmp ? '%tmp1%' : '%1%';
+            $escapeAbsoluteCode = 'if ( ' . $absoluteVar . ' )' . "\n" .
+                                  '    ' . $target . ' = eZURLOperator::escapeAbsoluteURL( ' . $target . ' );' . "\n";
+        }
+
         if ( count( $parameters ) > $paramCount )
         {
             if ( eZTemplateNodeTool::isConstantElement( $parameters[$paramCount] ) )
@@ -550,6 +570,7 @@ CODEPIECE;
                     $quote = false;
                 if ( $quote !== false )
                 {
+                    $code .= $escapeAbsoluteCode;
                     $values[] = array( eZTemplateNodeTool::createStringElement( $quote ) );
                     if ( $useTmp )
                     {
@@ -569,11 +590,13 @@ CODEPIECE;
                     $code .= 'switch (%' . count( $values ) . '%)'          . "\n" .
                              '{'                                            . "\n" .
                              '    case \'single\':'                         . "\n" .
+                             $escapeAbsoluteCode .
                              '         %tmp1% = \'\\\'\' . %tmp1% . \'\\\'\' ;'  . "\n" .
                              '         break;'                              . "\n" .
                              '    case \'no\':'                             . "\n" .
                              '         break;'                              . "\n" .
                              '     default:'                                . "\n" .
+                             $escapeAbsoluteCode .
                              '         %tmp1% = \'"\' . %tmp1% . \'"\' ;'    . "\n" .
                              '}'  . "\n";
                 }
@@ -582,11 +605,13 @@ CODEPIECE;
                     $code .= 'switch (%' . count( $values ) . '%)'          . "\n" .
                              '{'                                            . "\n" .
                              '    case \'single\':'                         . "\n" .
+                             $escapeAbsoluteCode .
                              '         %1% = \'\\\'\' . %1% . \'\\\'\' ;'   . "\n" .
                              '         break;'                              . "\n" .
                              '    case \'no\':'                             . "\n" .
                              '         break;'                              . "\n" .
                              '     default:'                                . "\n" .
+                             $escapeAbsoluteCode .
                              '         %1% = \'"\' . %1% . \'"\' ;'         . "\n" .
                              '}'  . "\n";
                 }
@@ -594,6 +619,7 @@ CODEPIECE;
         }
         else
         {
+            $code .= $escapeAbsoluteCode;
             $quote = '"';
             $values[] = array( eZTemplateNodeTool::createStringElement( $quote ) );
             if ( $useTmp )
@@ -679,6 +705,8 @@ CODEPIECE;
 
     function modify( $tpl, $operatorName, $operatorParameters, $rootNamespace, $currentNamespace, &$operatorValue, $namedParameters, $placement )
     {
+        // ezurl and ezroot: true when the link was given back untouched (a scheme or //host)
+        $absolute = false;
         switch ( $operatorName )
         {
             case $this->ININameHasVariable:
@@ -871,7 +899,7 @@ CODEPIECE;
 
             case $this->URLName:
             {
-                eZURI::transformURI( $operatorValue, false, $namedParameters['server_url'] );
+                $absolute = !eZURI::transformURI( $operatorValue, false, $namedParameters['server_url'] );
 
             } break;
 
@@ -879,7 +907,10 @@ CODEPIECE;
             {
                 if ( preg_match( "#^[a-zA-Z0-9]+:#", $operatorValue ) or
                      substr( $operatorValue, 0, 2 ) == '//' )
-                     break;
+                {
+                    $absolute = true;
+                    break;
+                }
                 if ( strlen( $operatorValue ) > 0 and
                      $operatorValue[0] != '/' )
                     $operatorValue = '/' . $operatorValue;
@@ -950,7 +981,26 @@ CODEPIECE;
             $operatorValue = $http->createRedirectUrl( $operatorValue, array( 'pre_url' => false ) );
         }
         if ( $quote !== false )
+        {
+            // The same as in urlTransformation(): an absolute link in quotes is escaped for the attribute
+            if ( $absolute )
+                $operatorValue = self::escapeAbsoluteURL( $operatorValue );
             $operatorValue = $quote . $operatorValue . $quote;
+        }
+    }
+
+    /**
+     * Escapes a link that eZURI::transformURI() gave back untouched (one with a scheme, such as https: or
+     * mailto:, or a protocol-relative //host one) for an HTML attribute, exactly as transformURI() escapes
+     * the links it builds: an &amp; already in it stays &amp;. ezurl and ezroot call it when they put the
+     * link in quotes. It does not make a link safe to follow: a javascript: link stays one.
+     *
+     * @param string $url
+     * @return string
+     */
+    public static function escapeAbsoluteURL( $url )
+    {
+        return str_replace( '&amp;amp;', '&amp;', htmlspecialchars( (string)$url, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) );
     }
 
     /*!
