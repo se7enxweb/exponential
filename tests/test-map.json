@@ -167,14 +167,40 @@
     "design/admin4/templates/dashboard/audit.tpl": [
       "tests/tests/design/AdminTimelineTest.php"
     ],
+    "design/admin*/templates/popupmenu/popup_sub_siteaccess_menus.tpl": [
+      "tests/tests/design/AdminPopupSiteAccessMenuVariablesTest.php"
+    ],
     "design/admin4/templates/tabs/audit/node.tpl": [
       "tests/tests/design/AdminTimelineTest.php"
     ],
     "kernel/classes/ezdbgarbagecollector.php": [
       "tests/tests/kernel/classes/eZDBGarbageCollectorBasketQueryTest.php"
     ],
+    "kernel/classes/ezcontentobjecttreenode.php": [
+      "tests/tests/kernel/classes/eZContentObjectTreeNodeMissingPathLogTest.php"
+    ],
     "kernel/common/ezpi18n.php": [
       "tests/tests/kernel/common/ezpI18nMissingTranslationLogTest.php"
+    ],
+    "kernel/private/classes/commands/explogs.php": [
+      "tests/tests/kernel/logviewer/expLogManagerTest.php"
+    ],
+    "cronjobs/explogrotate.php": [
+      "tests/tests/kernel/logviewer/expLogManagerTest.php"
+    ],
+    "kernel/private/classes/cronjobs/explogrotate.php": [
+      "tests/tests/kernel/logviewer/expLogManagerTest.php"
+    ],
+    "kernel/classes/logviewer/explogmanager.php": [
+      "tests/tests/kernel/logviewer/expLogManagerTest.php"
+    ],
+    "lib/ezfile/classes/explogrotator.php": [
+      "tests/tests/lib/ezfile/expLogRotatorTest.php",
+      "tests/tests/kernel/logviewer/expLogManagerTest.php"
+    ],
+    "lib/eztemplate/classes/eztemplate.php": [
+      "tests/tests/lib/eztemplate/eZTemplateVanishedCompiledTemplateTest.php",
+      "tests/tests/lib/eztemplate/eZTemplateEngineRenderTest.php"
     ],
     "lib/ezfile/classes/ezlog.php": [
       "tests/tests/lib/ezfile/expLogRotatorTest.php",
@@ -925,10 +951,14 @@
       "tests/tests/kernel/logviewer/expLogArchiveViewTest.php",
       "tests/tests/kernel/logviewer/expLogHealthTest.php",
       "tests/tests/kernel/logviewer/expLogDigestTest.php",
-      "tests/tests/kernel/logviewer/expLogManagerFallbackTest.php"
+      "tests/tests/kernel/logviewer/expLogManagerFallbackTest.php",
+      "tests/tests/kernel/logviewer/expLogBundleTest.php"
     ],
     "kernel/classes/logviewer/exploghealth.php": [
       "tests/tests/kernel/logviewer/expLogHealthTest.php"
+    ],
+    "kernel/classes/logviewer/explogbundle.php": [
+      "tests/tests/kernel/logviewer/expLogBundleTest.php"
     ],
     "kernel/classes/logviewer/explogdigest.php": [
       "tests/tests/kernel/logviewer/expLogDigestTest.php"
@@ -963,7 +993,8 @@
       "tests/tests/kernel/logviewer/expLogArchiveViewTest.php",
       "tests/tests/kernel/logviewer/expLogHealthTest.php",
       "tests/tests/kernel/logviewer/expLogDigestTest.php",
-      "tests/tests/kernel/logviewer/expLogManagerFallbackTest.php"
+      "tests/tests/kernel/logviewer/expLogManagerFallbackTest.php",
+      "tests/tests/kernel/logviewer/expLogBundleTest.php"
     ],
     "kernel/setup/logs*.php": [
       "tests/tests/kernel/logviewer/expLogViewerTest.php",
@@ -978,6 +1009,7 @@
       "tests/tests/kernel/logviewer/expLogHealthTest.php",
       "tests/tests/kernel/logviewer/expLogDigestTest.php",
       "tests/tests/kernel/logviewer/expLogManagerFallbackTest.php",
+      "tests/tests/kernel/logviewer/expLogBundleTest.php",
       "tests/tests/kernel/classes/ini/expIniRoundTripTest.php"
     ],
     "tests/tests/kernel/logviewer/expLogViewerTestFixtures.php": [

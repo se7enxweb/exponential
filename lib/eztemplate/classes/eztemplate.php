@@ -536,11 +536,13 @@ class eZTemplate
             if ( $resourceData['compiled-template'] )
             {
                 $textElements = array();
-                if ( $this->executeCompiledTemplate( $resourceData, $textElements, "", "", $extraParameters ) )
+                if ( $this->executeCompiledTemplate( $resourceData, $textElements, "", "", $extraParameters ) ||
+                     $this->reloadAfterFailedCompiledTemplate( $template, $resourceData, $textElements, "", "", $extraParameters ) )
                 {
                     $text = implode( '', $textElements );
                     $templateCompilationUsed = true;
                 }
+                $root =& $resourceData['root-node'];
             }
             if ( !$templateCompilationUsed )
             {
@@ -549,7 +551,7 @@ class eZTemplate
                     $fname = $resourceData['template-filename'];
                     eZDebug::writeDebug( "FETCH START URI: $template, $fname" );
                 }
-                $this->process( $root, $text, "", "" );
+                $this->process( $root, $text, "", "", $template );
                 if ( eZTemplate::isDebugEnabled() )
                     eZDebug::writeDebug( "FETCH END URI: $template, $fname" );
             }
@@ -591,8 +593,56 @@ class eZTemplate
         return $text;
     }
 
-    function process( $root, &$text, $rootNamespace, $currentNamespace )
+    /**
+     * A compiled template was found when the template was loaded, but its file could not be run: it was removed in
+     * between (a template cache clear while the page renders: "Unknown compiled template"). The template is loaded
+     * once more, which compiles it again, and run; when that fails too, its tree (loaded with it) is processed by the
+     * caller. Before, the caller processed a template that had no tree, which wrote "Trying to access array offset on
+     * null" for every such template.
+     *
+     * @param string $uri
+     * @param array $resourceData replaced by the reloaded template's
+     * @param array $textElements
+     * @param string $rootNamespace
+     * @param string $currentNamespace
+     * @param array|false $extraParameters
+     * @return bool true when the compiled template ran and wrote to $textElements
+     */
+    function reloadAfterFailedCompiledTemplate( $uri, &$resourceData, &$textElements, $rootNamespace, $currentNamespace, &$extraParameters )
     {
+        if ( !is_string( $uri ) || $uri === '' || ( isset( $resourceData['root-node'] ) && $resourceData['root-node'] !== null ) )
+            return false;
+        $reloaded = $this->loadURIRoot( $uri, false, $extraParameters );
+        if ( !$reloaded )
+            return false;
+        $resourceData = $reloaded;
+        if ( !empty( $resourceData['compiled-template'] ) && $resourceData['root-node'] === null )
+            return $this->executeCompiledTemplate( $resourceData, $textElements, $rootNamespace, $currentNamespace, $extraParameters );
+        return false;
+    }
+
+    /**
+     * @param array|null $root the template's tree
+     * @param string $text the output
+     * @param string $rootNamespace
+     * @param string $currentNamespace
+     * @param string $templateName for the error when there is no tree
+     */
+    function process( $root, &$text, $rootNamespace, $currentNamespace, $templateName = '' )
+    {
+        if ( !is_array( $root ) )
+        {
+            // A template without a tree (it could not be loaded or parsed): one error per template and request,
+            // not a PHP warning for every node
+            $name = $templateName !== '' ? $templateName : '(unknown template)';
+            if ( !isset( $this->MissingRootReported[$name] ) )
+            {
+                $this->MissingRootReported[$name] = true;
+                eZDebug::writeError( "The template '$name' has no tree to process (it could not be loaded or parsed); it renders nothing", __METHOD__ );
+            }
+            $text = '';
+            return;
+        }
         $this->createLocalVariablesList();
 
         $textElements = array();
@@ -609,6 +659,8 @@ class eZTemplate
     function processNode( $node, &$textElements, $rootNamespace, $currentNamespace )
     {
         $rslt = null;
+        if ( !is_array( $node ) || !isset( $node[0] ) )
+            return $rslt;
         $nodeType = $node[0];
         if ( $nodeType == eZTemplate::NODE_ROOT )
         {
@@ -882,7 +934,8 @@ class eZTemplate
 
         if ( $resourceData['compiled-template'] )
         {
-            if ( $this->executeCompiledTemplate( $resourceData, $textElements, $rootNamespace, $currentNamespace, $extraParameters ) )
+            if ( $this->executeCompiledTemplate( $resourceData, $textElements, $rootNamespace, $currentNamespace, $extraParameters ) ||
+                 $this->reloadAfterFailedCompiledTemplate( $uri, $resourceData, $textElements, $rootNamespace, $currentNamespace, $extraParameters ) )
                 $templateCompilationUsed = true;
         }
         if ( !$templateCompilationUsed )
@@ -893,7 +946,7 @@ class eZTemplate
                 $fname = $resourceData['template-filename'];
                 eZDebug::writeDebug( "START URI: $uri, $fname" );
             }
-            $this->process( $resourceData['root-node'], $text, $rootNamespace, $currentNamespace );
+            $this->process( $resourceData['root-node'], $text, $rootNamespace, $currentNamespace, $uri );
             if ( eZTemplate::isDebugEnabled() )
                 eZDebug::writeDebug( "END URI: $uri, $fname" );
             $this->setIncludeOutput( $uri, $text );
@@ -2931,6 +2984,14 @@ class eZTemplate
      * @var array|null
      */
     public $OperatorDefaultWarnings = null;
+
+    /**
+     * The templates without a tree already reported by process() (one error per template for this template object,
+     * which a request uses for all its templates).
+     *
+     * @var array template name => true
+     */
+    public $MissingRootReported = array();
 }
 
 ?>

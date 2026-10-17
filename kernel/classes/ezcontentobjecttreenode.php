@@ -4295,6 +4295,41 @@ class eZContentObjectTreeNode extends eZPersistentObject
         }
     }
 
+    /**
+     * pathWithNames() could not build the node's URL path in the languages of this siteaccess and falls back to
+     * content/view/full/<id>. When every node of the path has a URL alias, only in other languages (content of a
+     * site in another language, asked for from a siteaccess that does not show that language, as a sitemap cronjob
+     * does), that is the designed fallback and only debug output. When an element has no alias at all, the URL
+     * aliases are missing and updateniceurls.php rebuilds them: that is an error, as before.
+     *
+     * @param array $pathArray the node ids of the path asked for
+     */
+    protected function reportMissingPath( array $pathArray )
+    {
+        $nodeID = $this->attribute( 'node_id' );
+        $missing = array();
+        foreach ( $pathArray as $pathNodeID )
+        {
+            if ( !$this->hasURLAlias( $pathNodeID ) )
+                $missing[] = $pathNodeID;
+        }
+        if ( $missing )
+            eZDebug::writeError( __CLASS__ . "::pathWithNames() failed to fetch path of node $nodeID: no URL alias for node(s) " . implode( ', ', $missing ) . ", falling back to generated url entries. Run updateniceurls.php to fix the problem.", __METHOD__ );
+        else
+            eZDebug::writeDebug( "Node $nodeID has no URL alias path in the languages of this siteaccess, only in others; content/view/full/$nodeID is used", __METHOD__ );
+    }
+
+    /**
+     * Whether a node has a URL alias in any language.
+     *
+     * @param int $nodeID
+     * @return bool
+     */
+    protected function hasURLAlias( $nodeID )
+    {
+        return (bool)eZURLAliasML::fetchByAction( 'eznode', $nodeID );
+    }
+
     /*!
      \return an url alias for the current node. It will generate a unique alias.
     */
@@ -4332,7 +4367,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
                     return '';
                 }
 
-                eZDebug::writeError( __METHOD__ . "() failed to fetch path of node " . $this->attribute( 'node_id' ) . ", falling back to generated url entries. Run updateniceurls.php to fix the problem." );
+                $this->reportMissingPath( $pathArray );
 
                 // Return a perma-link when the path lookup failed, this link will always work
                 $path = 'content/view/full/' . $this->attribute( 'node_id' );

@@ -1,12 +1,14 @@
 <?php
 /**
- * @description The log viewer on the command line: list the log files, follow one, search them and their rotations, find an error reference and the lines of its request (read only, masked by default)
+ * @description The log viewer on the command line: list the log files, follow one, search them and their rotations, find an error reference and the lines of its request (masked by default); rotate logs and prune their archives
  * @alias exp:logs
  *
  * File containing the exp:logs command (doc/features/6.0/log-viewer.md, "On the command line"). It uses the same
  * classes and settings (logviewer.ini) as Setup > Log files: the same files (the allow-list of directories), the
  * same masking, the same limits. The command line is the server's operator, so no policy is checked; one
- * system.log.read is recorded per run that reads a file.
+ * system.log.read is recorded per run that reads a file. --rotate, --rotate-all, --prune, --compress and --truncate change
+ * files (expLogManager, doc/features/6.0/log-rotation.md) and are recorded as system.log.rotate, system.log.delete and
+ * system.log.truncate.
  *
  * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -43,14 +45,33 @@ class Explogs extends \Exponential\Runnable\Command
                                  "./console exp:logs --reference=ERR-0123456789          where an error page's reference is, and its request\n" .
                                  "./console exp:logs --related=var/log/error.log:123456      the lines of the request of the entry at that offset\n" .
                                  "\n" .
+                                 "Log management (doc/features/6.0/log-rotation.md):\n" .
+                                 "./console exp:logs --archives                              each log with its archives and their sizes\n" .
+                                 "./console exp:logs --rotate=error,debug                    rotate these logs now (keys as in --archives, or ids)\n" .
+                                 "./console exp:logs --rotate-all                            rotate every log that is not empty\n" .
+                                 "./console exp:logs --prune --dry-run                       the archives beyond site.ini [FileSettings] limits\n" .
+                                 "./console exp:logs --prune=error                           remove them (all logs, or these)\n" .
+                                 "./console exp:logs --compress                              compress the archives from .2 on\n" .
+                                 "./console exp:logs --truncate=debug [--in-place]           empty a log (rotated, or in place)\n" .
+                                 "\n" .
                                  "Exit code: 0 something listed or found, 1 nothing found, 2 error.",
                 'use-session'    => false,
                 'use-modules'    => true,
                 'use-extensions' => true
             )
         );
-        $options = $this->startup( '[list][tail:][lines:][follow][interval:][search:][regex][case][file:][scope:][rotations][level:][from:][to:][sa:][uri:][ip:][cursor:][limit:][reference:][related:][unmask][json][color:]', '', array(
+        $options = $this->startup( '[list][archives][rotate:][rotate-all][force][prune;][days:][compress;][truncate:][in-place][dry-run][tail:][lines:][follow][interval:][search:][regex][case][file:][scope:][rotations][level:][from:][to:][sa:][uri:][ip:][cursor:][limit:][reference:][related:][unmask][json][color:]', '', array(
             'list'       => 'List the log files the viewer may open, by group, with size, time and lines a minute',
+            'archives'   => 'List the logs that can be rotated, with their archives (.1 .. .N, .gz) and sizes, and the limits',
+            'rotate'     => 'Rotate these logs now, whatever their size: keys (error,debug,site-storage) or ids (var/log/error.log), comma separated',
+            'rotate-all' => 'Rotate every log over its MaxSize (with --force: every log that is not empty)',
+            'force'      => 'With --rotate-all: also the logs under their MaxSize',
+            'prune'      => 'Remove the archives beyond the limits (Keep, MaxAgeDays): of every log, or of these keys',
+            'days'       => 'With --prune: remove archives older than this many days instead of MaxAgeDays',
+            'compress'   => 'Compress the plain archives from .2 on: of every log, or of these keys',
+            'truncate'   => 'Empty these logs: rotate them (the content stays in .1), or with --in-place empty the file itself',
+            'in-place'   => 'With --truncate: empty the file in place, keeping no copy',
+            'dry-run'    => 'With --rotate, --rotate-all, --prune, --compress or --truncate: only print the plan',
             'tail'       => 'The last entries of a file (its path relative to the root, e.g. var/log/error.log)',
             'lines'      => 'With --tail: how many entries (default 20)',
             'follow'     => 'With --tail: go on printing what the file gains, polling with backoff (Ctrl-C ends)',
@@ -91,7 +112,25 @@ class Explogs extends \Exponential\Runnable\Command
 
         try
         {
-            if ( !empty( $options['list'] ) )
+            $dryRun = !empty( $options['dry-run'] );
+            $listOf = function ( $value ) {
+                return is_string( $value ) && $value !== '' ? self::names( $value ) : 'all';
+            };
+            if ( !empty( $options['archives'] ) )
+                $code = $this->archives( \expLogManager::instance() );
+            else if ( !empty( $options['rotate'] ) )
+                $code = $this->manage( \expLogManager::instance(), 'rotate', self::names( $options['rotate'] ), $dryRun, array( 'force' => true ) );
+            else if ( !empty( $options['rotate-all'] ) )
+                $code = $this->manage( \expLogManager::instance(), 'rotate', 'all', $dryRun, array( 'force' => !empty( $options['force'] ) ) );
+            else if ( array_key_exists( 'prune', $options ) && $options['prune'] !== null && $options['prune'] !== false )
+                $code = $this->manage( \expLogManager::instance(), 'prune', $listOf( $options['prune'] ), $dryRun,
+                                       array( 'days' => isset( $options['days'] ) && $options['days'] !== false && $options['days'] !== null ? (int)$options['days'] : null ) );
+            else if ( array_key_exists( 'compress', $options ) && $options['compress'] !== null && $options['compress'] !== false )
+                $code = $this->manage( \expLogManager::instance(), 'compress', $listOf( $options['compress'] ), $dryRun );
+            else if ( !empty( $options['truncate'] ) )
+                $code = $this->manage( \expLogManager::instance(), 'truncate', self::names( $options['truncate'] ), $dryRun,
+                                       array( 'archive_first' => empty( $options['in-place'] ) ) );
+            else if ( !empty( $options['list'] ) )
                 $code = $this->listFiles( $viewer );
             else if ( !empty( $options['tail'] ) )
                 $code = $this->tail( $viewer, (string)$options['tail'], $options );
@@ -105,7 +144,7 @@ class Explogs extends \Exponential\Runnable\Command
                 $code = $this->related( $viewer, (string)$options['related'] );
             else
             {
-                $cli->error( 'Nothing to do: give --list, --tail, --search, --reference or --related (--help lists the options)' );
+                $cli->error( 'Nothing to do: give --list, --tail, --search, --reference, --related, --archives, --rotate, --rotate-all, --prune, --compress or --truncate (--help lists the options)' );
                 $code = 2;
             }
         }
@@ -115,6 +154,107 @@ class Explogs extends \Exponential\Runnable\Command
             $code = 2;
         }
         $this->shutdown( $code );
+    }
+
+    /** A comma separated list of names */
+    protected static function names( $value )
+    {
+        return array_values( array_filter( array_map( 'trim', explode( ',', (string)$value ) ), 'strlen' ) );
+    }
+
+    /** --archives */
+    protected function archives( \expLogManager $manager )
+    {
+        $logs = $manager->logs();
+        if ( $this->json )
+        {
+            $this->printJson( array( 'logs' => $logs ) );
+            return $logs ? 0 : 1;
+        }
+        $cli = $this->cli();
+        $total = 0;
+        foreach ( $logs as $key => $log )
+        {
+            $l = $log['limits'];
+            $cli->output( sprintf( '  %-28s %-40s %10s  %d archive(s) %10s  %s  keep %d, max %s%s%s%s', $key, $log['id'], self::bytes( $log['size'] ),
+                                   count( $log['archives'] ), self::bytes( $log['archive_bytes'] ),
+                                   $log['growth'] === null ? '' : self::bytes( $log['growth'] ) . '/h',
+                                   $l['keep'], self::bytes( $l['max_size'] ), $l['compress'] ? ', compressed' : '',
+                                   $l['max_age_days'] > 0 ? ', ' . $l['max_age_days'] . ' days' : '',
+                                   $log['writable'] ? '' : '  (not writable for the other user: ' . $log['owner'] . ':' . $log['owner_group'] . ')' ) );
+            foreach ( $log['archives'] as $archive )
+                $cli->output( sprintf( '      %-60s %10s  %s', $archive['name'], self::bytes( $archive['size'] ), date( 'Y-m-d H:i:s', $archive['mtime'] ) ) );
+            $total += $log['size'] + $log['archive_bytes'];
+        }
+        $cli->output( sprintf( '%d log(s), %s with their archives. Limits: logviewer.ini [RotationSettings], else site.ini [FileSettings]', count( $logs ), self::bytes( $total ) ) );
+        return $logs ? 0 : 1;
+    }
+
+    /**
+     * --rotate | --rotate-all | --prune | --compress | --truncate, with --dry-run: a plan of expLogManager, printed or
+     * applied. Exit code 0 done, 1 nothing to do, 2 an unknown name or a failed step.
+     *
+     * @param \expLogManager $manager
+     * @param string $op rotate | prune | compress | truncate
+     * @param string[]|string $names or 'all'
+     * @param bool $dryRun
+     * @param array $opts for plan()
+     * @return int
+     */
+    protected function manage( \expLogManager $manager, $op, $names, $dryRun, array $opts = array() )
+    {
+        $cli = $this->cli();
+        $plan = $manager->plan( $names, $op, $opts );
+        $result = $dryRun ? null : $manager->apply( $plan );
+        $steps = $dryRun ? $plan['steps'] : $result['steps'];
+        $code = $plan['unknown'] ? 2 : ( $steps ? 0 : 1 );
+        $bytes = 0;
+        foreach ( $steps as $step )
+        {
+            $bytes += (int)$step['bytes'];
+            if ( !$dryRun && !$step['done'] && !in_array( $step['error'], array( 'missing', 'moved', 'skipped' ), true ) )
+                $code = 2;
+            if ( !$dryRun && $step['done'] )
+            {
+                $action = $step['op'] === 'delete' ? 'delete' : ( $step['op'] === 'truncate' ? 'truncate' : 'rotate' );
+                if ( $step['op'] !== 'compress' )
+                    $this->audit( $action, $step['key'], (int)$step['bytes'], array( 'step' => $step['op'], 'file' => $step['from'], 'to' => $step['to'] ) );
+            }
+        }
+        if ( $this->json )
+        {
+            $this->printJson( array( 'op' => $op, 'dry_run' => $dryRun, 'steps' => $steps, 'unknown' => $plan['unknown'], 'bytes' => $bytes ) );
+            return $code;
+        }
+        foreach ( $steps as $step )
+        {
+            $what = sprintf( '%-8s %-28s %s%s  %s', $step['op'], $step['key'], $step['from'], $step['to'] !== '' && $step['to'] !== $step['from'] ? ' -> ' . $step['to'] : '',
+                             self::bytes( $step['bytes'] ) . ( isset( $step['reason'] ) ? ' (' . $step['reason'] . ')' : '' ) );
+            if ( $dryRun )
+                $cli->output( 'would ' . $what );
+            else if ( $step['done'] )
+                $cli->output( 'PASS ' . $what );
+            else
+                $cli->error( ( in_array( $step['error'], array( 'missing', 'moved', 'skipped' ), true ) ? 'SKIP ' : 'FAIL ' ) . $what . ': ' . $step['error'] );
+        }
+        foreach ( $plan['unknown'] as $name )
+            $cli->error( 'FAIL: not a log that can be managed: ' . $name . ' (see --archives)' );
+        $cli->output( $steps ? sprintf( '%d step(s), %s%s', count( $steps ), self::bytes( $bytes ), $dryRun ? ' (dry run: nothing changed)' : '' )
+                             : 'Nothing to ' . $op );
+        return $code;
+    }
+
+    /** Records a change to the logs in the audit trail (system.log.rotate | system.log.delete), as the log viewer does */
+    protected function audit( $action, $id, $size, array $after )
+    {
+        try
+        {
+            \expLogViewer::audit( $action, array( 'id' => (string)$id, 'size' => (int)$size ), $after + array( 'source' => 'exp:logs' ) );
+        }
+        catch ( \Throwable $e )
+        {
+            // the change is done; a failing audit trail must not turn it into a failure
+        }
     }
 
     /** --list */
