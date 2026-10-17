@@ -16515,6 +16515,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Suchbereich</translation>
     </message>
     <message>
+        <source>Quick search</source>
+        <translation>Schnellsuche</translation>
+    </message>
+    <message>
         <source>Section</source>
         <translation>Sektion</translation>
     </message>

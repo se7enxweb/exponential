@@ -1057,6 +1057,18 @@
     ],
     "extension/ezoe/translations/ger-DE/translation.ts": [
       "tests/tests/design/AdminReviewTemplateWarningsTest.php"
+    ],
+    "design/admin4/templates/content/searchresult.tpl": [
+      "tests/tests/design/AdminSearchTest.php"
+    ],
+    "design/admin4/templates/content/search.tpl": [
+      "tests/tests/design/AdminSearchTest.php"
+    ],
+    "design/admin4/templates/content/advancedsearch.tpl": [
+      "tests/tests/design/AdminSearchTest.php"
+    ],
+    "design/admin4/templates/page_search.tpl": [
+      "tests/tests/design/AdminSearchTest.php"
     ]
   },
   "generated": {
