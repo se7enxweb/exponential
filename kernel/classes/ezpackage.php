@@ -2468,7 +2468,8 @@ class eZPackage
         $type = $root->getElementsByTagName( 'type' );
         if ( $type->length > 0 )
         {
-            $parameters['type'] = $type->item( 0 )->getAttribute( 'value' );
+            // trimmed like the version below: white space around the value is no part of the type
+            $parameters['type'] = trim( $type->item( 0 )->getAttribute( 'value' ) );
         }
 
         if ( $parameters['vendor'] )
@@ -2676,6 +2677,10 @@ class eZPackage
         {
             $versionNumber = $versionNode->getElementsByTagName( 'number' )->item( 0 )?->textContent ?? false;
             $versionRelease = $versionNode->getElementsByTagName( 'release' )->item( 0 )?->textContent ?? false;
+            // A hand-written package.xml may wrap the values in white space (<number>\n  1.0\n</number>). It is
+            // no part of the number, and the check below must not refuse such a package for it.
+            $versionNumber = $versionNumber === false ? false : trim( $versionNumber );
+            $versionRelease = $versionRelease === false ? false : trim( $versionRelease );
         }
         // admin4 review 15.10.2026: version, release and type went from package.xml into the package views
         // unchecked (only the name passed isValidName()); a <number> carrying markup ran as script in

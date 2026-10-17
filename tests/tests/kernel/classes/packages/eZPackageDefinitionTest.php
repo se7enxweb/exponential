@@ -146,6 +146,13 @@ XML;
             'semver with build' => array( '1.0.0-beta+exp.sha.5114f85', '0', 'contentobject', true ),
             'legacy release' => array( '6.0', '6.0.10-stable', 'site', true ),
             'legacy letters' => array( '3.4.0beta1', '0-alpha1', 'sitestyle', true ),
+            // the forms the shipped packages use (content classes, sites, extensions of the package server)
+            'shipped content class' => array( '1.0', '1', 'contentclass', true ),
+            'shipped site' => array( '6.0', '15-stable', 'site', true ),
+            'shipped extension' => array( '1.5', '0', 'extension', true ),
+            'longest token' => array( str_repeat( '1', 64 ), '1', 'extension', true ),
+            'token too long' => array( str_repeat( '1', 65 ), '1', 'extension', false ),
+            'quote in type' => array( '1.0', '1', "site'x", false ),
         );
     }
 
@@ -167,6 +174,22 @@ XML;
         $this->assertSame( $number, $package->attribute( 'version-number' ) );
         $this->assertSame( $release, $package->attribute( 'release-number' ) );
         $this->assertSame( $type, $package->attribute( 'type' ) );
+    }
+
+    /**
+     * A hand-written package.xml may wrap its values in white space. That is no markup: the package is read, with the
+     * values trimmed, instead of being refused by the token check.
+     */
+    public function testWhiteSpaceAroundTheValuesIsTrimmedNotRefused()
+    {
+        file_put_contents( $this->dir . '/package.xml', '<?xml version="1.0" encoding="utf-8"?>' . "\n"
+            . "<package version=\"6.0\"><name>k1_token</name><type value=\" extension \"/>\n"
+            . "<version>\n  <number>\n    1.0\n  </number>\n  <release> 2 </release>\n</version></package>" );
+        $package = @eZPackage::fetchFromFile( $this->dir . '/package.xml' );
+        $this->assertInstanceOf( 'eZPackage', $package );
+        $this->assertSame( '1.0', $package->attribute( 'version-number' ) );
+        $this->assertSame( '2', $package->attribute( 'release-number' ) );
+        $this->assertSame( 'extension', $package->attribute( 'type' ) );
     }
 
     public function testMissingOrBrokenFiles()
