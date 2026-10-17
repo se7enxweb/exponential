@@ -167,6 +167,9 @@
     "design/admin4/templates/dashboard/audit.tpl": [
       "tests/tests/design/AdminTimelineTest.php"
     ],
+    "design/admin*/templates/popupmenu/popup_sub_siteaccess_menus.tpl": [
+      "tests/tests/design/AdminPopupSiteAccessMenuVariablesTest.php"
+    ],
     "design/admin4/templates/tabs/audit/node.tpl": [
       "tests/tests/design/AdminTimelineTest.php"
     ],
