@@ -173,7 +173,8 @@ class View extends \Exponential\Runnable\ModuleView
                 // The path is complete and encoded already (the search twice, on purpose), so it goes out as
                 // it is, with only the siteaccess prefix added.
                 $target = $browseURL( $state );
-                \eZURI::transformURI( $target, false, 'full' );
+                // Without HTML escaping: the address goes into the Location header, where &amp; would stay &amp;
+                \eZURI::transformURI( $target, false, 'full', false );
                 \eZHTTPTool::redirect( $target, array(), '302 Found', false );
                 \eZExecution::cleanExit();
             }
