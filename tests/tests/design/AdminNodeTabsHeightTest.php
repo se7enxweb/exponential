@@ -161,8 +161,8 @@ class AdminNodeTabsHeightTest extends PHPUnit\Framework\TestCase
 
         $head = self::read( 'design/admin4/javascript/a4_head.js' );
         $this->assertStringContainsString( "if (value === '') window.localStorage.removeItem(key);", $head );
-        $this->assertStringContainsString( '.then(function (r) { if (!r.ok || r.redirected) fail(); }, fail);', $head );
-        $this->assertStringContainsString( 'send(name, value, function () { if (root.getAttribute(attr(name)) === shown) local(key, value); });', $head );
+        $this->assertStringContainsString( '.then(function (r) { if (!r.ok || r.redirected) fail(); else if (saved) saved(); }, fail);', $head );
+        $this->assertStringContainsString( 'send(name, value, function () { if (root.getAttribute(attr(name)) === shown) local(key, value); },', $head );
     }
 
     /** TH-02 */

@@ -3,9 +3,10 @@
    LoginButton and RedirectURI. Built for fast use on phones: labels above large fields, the right keyboard and
    autofill hints (username, current-password), Enter moves to the password and then signs in, a show/hide button
    for the password, one full-width button that cannot be sent twice (admin4.js), messages at the top in one box. *}
-{* $register: user/register exists and this user may open it (policy omit list or the user/register policy) *}
+{* $register, $forgot: the view exists and this user may open it (policy omit list or the user/register,
+   user/password policy); an administration where anonymous may not reset a password shows no link to a denied page *}
 {def $register = and( ezmodule( 'user/register' ), fetch( 'user', 'can_open', hash( 'uri', 'user/register' ) ) )
-     $forgot   = ezmodule( 'user/forgotpassword' )
+     $forgot   = and( ezmodule( 'user/forgotpassword' ), fetch( 'user', 'can_open', hash( 'uri', 'user/forgotpassword' ) ) )
      $remember = and( ezini_hasvariable( 'Session', 'RememberMeTimeout' ), ezini( 'Session', 'RememberMeTimeout' ) )}
 
 <h1 class="a4-login-title">{'Sign in to Exponential'|i18n( 'design/admin/user/login' )}</h1>

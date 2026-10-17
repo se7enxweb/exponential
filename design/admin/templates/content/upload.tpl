@@ -59,7 +59,7 @@
         <p>{'The following errors occurred'|i18n( 'design/admin/content/upload' )}:</p>
         <ul>
             {section var=error loop=$errors}
-                <li>{$error.description}</li>
+                <li>{$error.description|wash}</li>
             {/section}
         </ul>
     </div>

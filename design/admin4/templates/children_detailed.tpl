@@ -170,7 +170,8 @@
             'export_csv_title', 'Download the items with the visible columns as a CSV file'|i18n( 'design/admin/node/view/full' ),
             'copy_title', 'Click to copy'|i18n( 'design/admin/node/view/full' ),
             'copied', 'Copied'|i18n( 'design/admin/node/view/full' ),
-            'copy_failed', 'Not copied'|i18n( 'design/admin/node/view/full' )
+            'copy_failed', 'Not copied'|i18n( 'design/admin/node/view/full' ),
+            'save_failed', 'Not saved: %error'|i18n( 'design/admin/node/view/full' )
         ),
         'DRAG', hash(
             'column', 'Order'|i18n( 'design/admin/node/view/full' ),

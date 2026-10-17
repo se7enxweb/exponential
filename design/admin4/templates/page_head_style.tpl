@@ -6,11 +6,13 @@
    changes while the page is open. The header's #a4-theme-toggle steps light -> dark -> system -> light and stores
    the step; its name says the mode in use ("Color mode: …", data-label-*), its title the next step
    (data-title-*), and #a4-theme-status announces a press. A switch without data-label-system (an older copy of
-   the markup) keeps stepping between light and dark. Other open admin tabs follow through the storage event.
+   the markup) keeps stepping between light and dark. Other open admin tabs follow through the storage event: a
+   signed-in user's choice is written to localStorage too once it is saved (window.a4Pref.set's share).
    Storage that is blocked (private windows, policies) only means the choice is not remembered.
    This script is the one piece of the page's look that cannot wait for the stylesheets (a page drawn light and then
    switched would flash). It also sets the left column's hand-dragged width (data-a4-left-width on <html>, from the
-   admin_left_menu_size preference) as --left-sidebar-width; the preset sizes are in pagelayout.css. No <style>. *}
+   admin_left_menu_size preference; without a preference and without a preset size, the browser's copy of a width
+   that could not be saved) as --left-sidebar-width; the preset sizes are in pagelayout.css. The code is a4_head.js. *}
 {ezscript( array( 'a4_head.js' ) )}
 
 {if is_unset( $load_css_file_list )}
@@ -21,15 +23,9 @@
   {def $load_main_css = true()}
 {/if}
 
-{if is_unset( $admin_theme )}
-  {def $admin_theme = ''}
-{/if}
-
-{if $admin_theme}
-  {def $admin_theme_css = concat( 'theme/', $admin_theme, '.css' )}
-{else}
-  {def $admin_theme_css = 'theme/rounded.css'}
-{/if}
+{* admin4 ships one theme stylesheet: an admin_theme preference left from an older admin design names a file admin4
+   does not have, which the packer skipped (only an eZDebug warning) and the frame lost rounded.css; so the name is
+   fixed here *}
 
 {if $load_main_css}
   {* load main css files and required css files *}
@@ -38,7 +34,7 @@
                         'debug.css',
                         'pagelayout.css',
                         'content.css',
-                        $admin_theme_css,
+                        'theme/rounded.css',
                         'theme/admin_datatable.css',
                         'theme/modalwindow.css',
                         'admin4.css',
@@ -49,7 +45,7 @@
                         'debug.css',
                         'pagelayout.css',
                         'content.css',
-                        $admin_theme_css,
+                        'theme/rounded.css',
                         'theme/admin_datatable.css',
                         'admin4.css',
                         ezini( 'StylesheetSettings', 'AdminComponentCSSFileList', 'design.ini' ) ) )}

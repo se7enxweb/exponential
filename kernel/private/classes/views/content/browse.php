@@ -45,6 +45,12 @@ class Browse extends \Exponential\Runnable\ModuleView
             return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' ) );
         }
 
+        // admin4 review 15.10.2026: parameters left in the session by an old edit session return to a draft that is
+        // gone, and Cancel ended on "not available". Such parameters belong to no browse in progress: drop them, and
+        // the page answers as a browse without parameters does (not found).
+        if ( $http->hasSessionVariable( 'BrowseParameters' ) && self::returnsToMissingDraft( $http->sessionVariable( 'BrowseParameters' ) ) )
+            $http->removeSessionVariable( 'BrowseParameters' );
+
         // Check that Browse parameters exists
         if ( !$http->hasSessionVariable( 'BrowseParameters' ) )
         {
@@ -241,6 +247,22 @@ class Browse extends \Exponential\Runnable\ModuleView
         }
 
         return $this->viewResult( isset( $Result ) ? $Result : null, null );
+    }
+
+    /**
+     * Whether browse parameters return to the edit page of an object or version that no longer exists
+     * (eZContentBrowse::editReturnTarget()).
+     *
+     * @param mixed $browseParameters the session's BrowseParameters
+     * @return bool
+     */
+    public static function returnsToMissingDraft( $browseParameters )
+    {
+        $target = \eZContentBrowse::editReturnTarget( is_array( $browseParameters ) && isset( $browseParameters['from_page'] ) ? $browseParameters['from_page'] : false );
+        if ( $target === false )
+            return false;
+        $object = \eZContentObject::fetch( $target[0] );
+        return !$object || ( $target[1] !== false && !$object->version( $target[1] ) );
     }
 }
 

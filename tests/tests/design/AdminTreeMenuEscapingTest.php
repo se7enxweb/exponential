@@ -176,6 +176,18 @@ class AdminTreeMenuEscapingTest extends PHPUnit\Framework\TestCase
         }
     }
 
+    /** The reasons an upload failed carry the file's name and the handler's text: printed as text */
+    public function testUploadErrorsAreWashed()
+    {
+        $copies = self::copies( 'templates/content/upload.tpl', array( 'admin', 'admin4', 'standard' ) );
+        $this->assertCount( 3, $copies );
+        foreach ( $copies as $path => $tpl )
+        {
+            $this->assertStringContainsString( '<li>{$error.description|wash}</li>', $tpl, $path );
+            $this->assertStringNotContainsString( '{$error.description}', $tpl, $path );
+        }
+    }
+
     /**
      * A name in a JS string inside an onclick attribute (the classic admin design): JS-escaped, then HTML-escaped for
      * the attribute. The admin4 openers have no handler (doc/features/6.0/content-security-policy.md): the name is

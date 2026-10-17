@@ -542,6 +542,7 @@ div.popupmenu {
     z-index: var(--a4-z-menu);   /* above the header and the sidebar tabs: a menu that opens upwards is not cut off */
     /* a menu taller than the window scrolls inside itself */
     max-height: calc(100vh - 2 * var(--a4-space-3));
+    max-height: calc(100dvh - 2 * var(--a4-space-3));
     overflow-y: auto;
     display: none;
 }
@@ -1659,13 +1660,8 @@ fieldset {
     z-index: var(--a4-z-overlay) !important;
 }
 
-div:has(.modal-window) {
-    z-index: var(--a4-z-modal) !important;
-    position: fixed;
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%);
-}
+/* The legacy YUI modal window (div:has(.modal-window), fixed and centred by !important) is removed: nothing writes
+   .modal-window any more (exp::dialog replaced it), and :has() matched every ancestor of one. */
 /* =============================== */
 /* 01-05-2024 */
 /* =============================== */

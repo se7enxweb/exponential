@@ -204,6 +204,21 @@ class expUserDeactivationTest extends PHPUnit\Framework\TestCase
         return self::state();
     }
 
+    /** An eZHTTPTool stand-in: a session and the POST variables */
+    private static function http( array $post, array $session = array() )
+    {
+        return new class( $post, $session ) {
+            public $post;
+            public $session;
+            public function __construct( array $post, array $session ) { $this->post = $post; $this->session = $session; }
+            public function hasPostVariable( $name ) { return array_key_exists( $name, $this->post ); }
+            public function postVariable( $name ) { return $this->post[$name]; }
+            public function hasSessionVariable( $name ) { return array_key_exists( $name, $this->session ); }
+            public function sessionVariable( $name ) { return $this->session[$name]; }
+            public function setSessionVariable( $name, $value ) { $this->session[$name] = $value; }
+        };
+    }
+
     /** UD-06 */
     public function testPageAndEntryPoints()
     {
@@ -262,6 +277,18 @@ class expUserDeactivationTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( '<input type="hidden" name="DeactivateToken" value="{$deactivate_confirm.token|wash}" />', $tpl );
         $this->assertStringContainsString( '$confirmed = $action !== null && self::checkConfirmToken( $http );', $view, 'confirm needs the page\'s own token' );
         $this->assertStringContainsString( 'hash_equals( $expected, $given )', $view );
+        // ... and does not take a token other than the session's (admin4 review 15.10.2026: no test ran the check)
+        $check = new ReflectionMethod( '\\Exponential\\View\\Kernel\\User\\Deactivate', 'checkConfirmToken' );
+        $make = new ReflectionMethod( '\\Exponential\\View\\Kernel\\User\\Deactivate', 'confirmToken' );
+        $http = self::http( array() );
+        $token = $make->invoke( null, $http );
+        $this->assertMatchesRegularExpression( '/^[0-9a-f]{64}$/', $token );
+        $post = array( 'ConfirmButton' => '1', 'DeactivateAction' => 'deactivate_move' );
+        $this->assertTrue( $check->invoke( null, self::http( $post + array( 'DeactivateToken' => $token ), $http->session ) ) );
+        $this->assertFalse( $check->invoke( null, self::http( $post, $http->session ) ), 'without the token' );
+        $this->assertFalse( $check->invoke( null, self::http( $post + array( 'DeactivateToken' => strrev( $token ) ), $http->session ) ), 'a mismatching token' );
+        $this->assertFalse( $check->invoke( null, self::http( $post + array( 'DeactivateToken' => array( $token ) ), $http->session ) ), 'not a string' );
+        $this->assertFalse( $check->invoke( null, self::http( $post + array( 'DeactivateToken' => $token ) ) ), 'another session' );
         $this->assertDoesNotMatchRegularExpression( '/\{\$(account|name|id|back)(\.[a-z_]+)?\}/', $tpl, 'every value is washed' );
 
         // the texts in both translations

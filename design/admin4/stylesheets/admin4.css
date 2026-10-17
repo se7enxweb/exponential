@@ -819,6 +819,7 @@ body,
   z-index: var(--a4-z-popover);
   min-width: 13rem;
   max-height: calc(100vh - var(--header-height) - var(--a4-space-5));
+  max-height: calc(100dvh - var(--header-height) - var(--a4-space-5));   /* iOS: the visible height, not the one with the bars collapsed */
   overflow-y: auto;
   margin: 0;
   padding: var(--a4-space-1);
@@ -1063,6 +1064,7 @@ body,
     width: fit-content;   /* as wide as its groups need; centred by the auto margins */
     max-width: min(var(--a4-content-max), calc(100vw - 2 * var(--a4-space-5)));
     max-height: calc(100vh - var(--header-height) - var(--a4-space-6));
+    max-height: calc(100dvh - var(--header-height) - var(--a4-space-6));
     margin-inline: auto;
     overflow-y: auto;
     overscroll-behavior: contain;
@@ -1238,7 +1240,7 @@ body,
   align-items: center;
   gap: var(--a4-space-2);
   margin: 0;
-  padding: var(--a4-space-2) var(--a4-space-3) var(--a4-space-2) var(--a4-space-3);
+  padding: var(--a4-space-2);   /* the same round icon button at every width (the label is read by screen readers, not shown) */
   border: 1px solid var(--a4-header-field-line);
   border-radius: 999px;
   background-color: var(--a4-header-field);
@@ -1268,8 +1270,6 @@ html[data-a4-theme-choice="dark"] .a4-theme-toggle .a4-icon-sun,
 html[data-a4-theme-choice="system"] .a4-theme-toggle .a4-icon-sun { display: none; }
 html[data-a4-theme-choice="dark"] .a4-theme-toggle .a4-icon-moon,
 html[data-a4-theme-choice="system"] .a4-theme-toggle .a4-icon-system { display: inline-block; }
-/* The same round icon button at every width (the label is read by screen readers, not shown) */
-.a4-theme-toggle { padding: var(--a4-space-2) var(--a4-space-2); }
 .a4-theme-toggle .a4-theme-label {
   position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden;
   clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0;
@@ -1965,14 +1965,13 @@ span.classattribute-description {
 /* the node head is the page header; its own padding replaces the component's bottom margin */
 .a4-node-head.a4-pagehead { margin: 0; }
 .a4-node-badges { display: inline-flex; flex-wrap: wrap; gap: var(--a4-space-1); }
-.a4-badge {
-  display: inline-flex; align-items: center; padding: 1px var(--a4-space-2); border-radius: 999px;
-  font-size: var(--a4-text-xs); font-weight: 600; line-height: 1.6; color: var(--a4-muted);
-  background: var(--a4-soft); box-shadow: inset 0 0 0 1px var(--a4-line);
-}
-.a4-badge-class { color: var(--a4-accent-text); background-color: var(--a4-accent-soft); box-shadow: none; }
-/* a state badge (the visibility and account status beside the title) has its tint and no line */
-.a4-badge.is-ok, .a4-badge.is-warn, .a4-badge.is-bad { box-shadow: none; }
+/* the badge itself is components.css; the node head adds only the neutral badge's line (scoped: an unscoped
+   box-shadow here put a grey edge on the neutral badges of every page) */
+.a4-node-badges .a4-badge { box-shadow: inset 0 0 0 1px var(--a4-line); }
+.a4-node-badges .a4-badge-class { color: var(--a4-accent-text); background-color: var(--a4-accent-soft); }
+/* the tinted badges (class, and the state beside the title) have their tint and no line */
+.a4-node-badges .a4-badge-class, .a4-node-badges .a4-badge.is-ok, .a4-node-badges .a4-badge.is-warn,
+.a4-node-badges .a4-badge.is-bad { box-shadow: none; }
 
 /* the actions, on the title's row (wrapping under it on narrow windows) */
 .controlbar.a4-node-actions {
@@ -2233,8 +2232,9 @@ html:has(body.a4-login-page) { background: var(--a4-surface); }
 .a4-reveal .a4-eye-off { display: none; }
 .a4-reveal[aria-pressed="true"] .a4-eye { display: none; }
 .a4-reveal[aria-pressed="true"] .a4-eye-off { display: inline-block; }
-.a4-check { display: flex; align-items: center; gap: var(--a4-space-3); margin: var(--a4-space-4) 0 0; font-size: var(--a4-text-m); font-weight: 500; color: var(--a4-ink); cursor: pointer; }
-.a4-check input { width: 18px; height: 18px; margin: 0; accent-color: var(--a4-accent-strong); }
+/* scoped to the form: a bare .a4-check here reached every checkbox row of the admin (components.css only overrides part of it) */
+.a4-login-form .a4-check { display: flex; align-items: center; gap: var(--a4-space-3); margin: var(--a4-space-4) 0 0; font-size: var(--a4-text-m); font-weight: 500; color: var(--a4-ink); cursor: pointer; }
+.a4-login-form .a4-check input { width: 18px; height: 18px; margin: 0; accent-color: var(--a4-accent-strong); }
 .a4-login-note { margin: var(--a4-space-3) 0 0; font-size: var(--a4-text-s); color: var(--a4-muted); }
 .a4-login-form #loginbutton {
   box-sizing: border-box; width: 100%; height: 48px; margin: var(--a4-space-5) 0 0; padding: 0 var(--a4-space-4);
@@ -2488,9 +2488,10 @@ html {
     min-width: 0;
   }
   .controlbar.a4-node-actions .block { gap: var(--a4-space-1); }
+  /* the language choice keeps room for its longest usual label ("English (American)"); the buttons wrap first */
   .controlbar.a4-node-actions .block select {
-    flex: 1 1 150px;
-    min-width: 0;
+    flex: 1 1 10.5em;
+    min-width: 10.5em;
   }
   .controlbar.a4-node-actions .block input.button,
   .controlbar.a4-node-actions .block input.defaultbutton,
@@ -2515,11 +2516,6 @@ html {
   .controlbar.a4-node-actions .block input.defaultbutton,
   .controlbar.a4-node-actions .block input.button-disabled,
   .controlbar.a4-node-actions .block .a4-node-upload { flex: 0 0 auto; }
-  .controlbar.a4-node-actions .block select { flex: 1 1 120px; }
-}
-@media (max-width: 767px) {
-  /* the language choice keeps room for its longest usual label ("English (American)"); the buttons wrap first */
-  .controlbar.a4-node-actions .block select { flex: 1 1 10.5em; min-width: 10.5em; }
 }
 
 /* ---- Change password (user/password.tpl, design:javascript/exp_password_field.js) ------------------------------
@@ -2583,9 +2579,19 @@ html {
 .a4pw-rules-title { margin: var(--a4-space-3) 0 var(--a4-space-1); font-size: var(--a4-text-s); font-weight: 650; color: var(--a4-muted); }
 .a4pw-rules { margin: 0; padding: 0; list-style: none; font-size: var(--a4-text-m); }
 .a4pw-rules li { display: flex; align-items: flex-start; gap: var(--a4-space-2); margin: var(--a4-space-1) 0; padding: 0; color: var(--a4-ink); background: none; }
-.a4pw-rule-icon { flex: 0 0 auto; width: 16px; height: 16px; margin-top: 2px; border: 2px solid var(--a4-field-line); border-radius: 50%; }
+.a4pw-rule-icon { position: relative; flex: 0 0 auto; width: 16px; height: 16px; margin-top: 2px; border: 2px solid var(--a4-field-line); border-radius: 50%; }
 .a4pw-rules li[data-state="met"] { color: var(--a4-ok); }
-.a4pw-rules li[data-state="met"] .a4pw-rule-icon { border-color: var(--a4-ok); background: var(--a4-ok) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.3l2.6 2.6L12 5.5' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 12px no-repeat; }
+.a4pw-rules li[data-state="met"] .a4pw-rule-icon { border-color: var(--a4-ok); background: var(--a4-ok); }
+/* the tick is a mask in the card's colour (a white stroke was 1.4:1 on the light green of dark mode) */
+.a4pw-rules li[data-state="met"] .a4pw-rule-icon::after {
+  content: ""; position: absolute; inset: -1px; background-color: var(--a4-card);
+  -webkit-mask: url(../../../share/icons/bootstrap-icons/svg/check-lg.svg) center / contain no-repeat;
+  mask: url(../../../share/icons/bootstrap-icons/svg/check-lg.svg) center / contain no-repeat;
+}
+@media (forced-colors: active) {
+  .a4pw-rules li[data-state="met"] .a4pw-rule-icon { forced-color-adjust: none; border-color: CanvasText; background: CanvasText; }
+  .a4pw-rules li[data-state="met"] .a4pw-rule-icon::after { forced-color-adjust: none; background-color: Canvas; }
+}
 .a4pw-rules li[data-state="unmet"] .a4pw-rule-icon { border-color: var(--a4-field-line); }
 .a4pw-field.invalid .a4pw-rules li[data-state="unmet"] { color: var(--a4-bad); }
 .a4pw-field.invalid .a4pw-rules li[data-state="unmet"] .a4pw-rule-icon { border-color: var(--a4-bad); }
@@ -2640,11 +2646,21 @@ html {
 html:root {
   --exp-ink: var(--a4-ink); --exp-muted: var(--a4-muted); --exp-faint: var(--a4-disabled); --exp-line: var(--a4-line);
   --exp-soft: var(--a4-soft); --exp-card: var(--a4-card);
-  --exp-accent: var(--a4-accent); --exp-accent-dark: var(--a4-accent-hover); --exp-accent-ring: var(--a4-ring);
+  /* the accent is a FILL under white text in expui (primary dialog button, upload button, selected day): the strong
+     and the pressed orange, 5.2:1 and 7.3:1 with white (admin4's --a4-accent, #f26a21, is 3.1:1). The ring is the
+     tint expui lays over the drop zone; its focus ring is set to --a4-ring below. */
+  --exp-accent: var(--a4-accent-strong); --exp-accent-dark: var(--a4-accent-press); --exp-accent-ring: var(--a4-accent-soft);
   --exp-ok: var(--a4-ok); --exp-ok-bg: var(--a4-ok-bg); --exp-warn: var(--a4-warn); --exp-warn-bg: var(--a4-warn-bg);
   --exp-bad: var(--a4-bad); --exp-bad-bg: var(--a4-bad-bg); --exp-info: var(--a4-info); --exp-info-bg: var(--a4-info-bg);
   --exp-shadow: var(--a4-shadow-s); --exp-shadow-up: var(--a4-shadow-m); --exp-mono: var(--a4-mono);
 }
+/* in dark mode --a4-accent-press is a light orange, which white text cannot sit on: the hover fill stays the strong one */
+html[data-a4-theme="dark"]:root { --exp-accent-dark: var(--a4-accent-strong); }
+/* expui draws its focus as a box-shadow in --exp-accent-ring, now a tint: the 3 px ring of admin4 instead (3:1) */
+html .exp-focus-ring:focus-visible, html .exp-scope :focus-visible, html .exp-dialog :focus-visible,
+html .exp-upload :focus-visible, html .exp-upload-select:focus-within, html .exp-datepicker button:focus-visible,
+html img.datepicker-icon:focus-visible { box-shadow: 0 0 0 3px var(--a4-ring); }
+html .exp-dt-menu [role=menuitem]:focus-visible { box-shadow: inset 0 0 0 2px var(--a4-ring); }
 html .exp-dt, html .exp-dt-actions, html .exp-dt-pager, html .exp-dt-dialog {
   --exp-dt-head: var(--a4-soft); --exp-dt-head-sortable: var(--a4-soft); --exp-dt-head-sorted: var(--a4-accent-soft);
   --exp-dt-head-ink: var(--a4-ink); --exp-dt-head-line: var(--a4-line); --exp-dt-row: var(--a4-surface);
@@ -2676,13 +2692,12 @@ html #action-controls .exp-dt-action {
   display: inline-flex;
   box-sizing: border-box;
   height: var(--a4-control-h);
-  margin-inline-start: var(--a4-space-2);
+  margin-inline-start: 0;   /* the toolbar's gap spaces the buttons (below) */
   border: 1px solid var(--a4-line-strong);
   border-radius: var(--a4-radius-s);
   background-color: var(--a4-card);
   font-size: var(--a4-text-s);
 }
-html #action-controls .exp-dt-action-group:first-child .exp-dt-action { margin-inline-start: 0; }
 html #action-controls .exp-dt-action:hover { border-color: var(--a4-field-line); background-color: var(--a4-soft); }
 html #action-controls .exp-dt-action-disabled,
 html #action-controls .exp-dt-action-disabled:hover { border-color: var(--a4-line); background-color: var(--a4-soft); }
@@ -2774,9 +2789,17 @@ div#contentstructure ul#content_tree_menu ul a.openclose-open::after,
 div#contentstructure ul#content_tree_menu ul a.openclose-close::after {
   content: "";
   position: absolute;
-  inset: -2px 0 -2px -4px;   /* 20 x 20px: wider would cover the row above or below or the node's own link */
+  inset: -4px 0 -4px -8px;   /* 24 x 24px (the rows are 24px apart, so it stays inside its own row) */
 }
-:where([dir="rtl"]) div#contentstructure ul#content_tree_menu ul a.openclose-open::after, :where([dir="rtl"]) div#contentstructure ul#content_tree_menu ul a.openclose-close::after { inset: -2px -4px -2px 0; }
+/* the node's menu button ("Actions for ..."): its 16px icon gets the same 24 x 24px target; coarse pointers below
+   give the button itself that size instead */
+div#contentstructure ul#content_tree_menu a.nodeicon { position: relative; }
+div#contentstructure ul#content_tree_menu a.nodeicon::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+}
+:where([dir="rtl"]) div#contentstructure ul#content_tree_menu ul a.openclose-open::after, :where([dir="rtl"]) div#contentstructure ul#content_tree_menu ul a.openclose-close::after { inset: -4px -8px -4px 0; }
 #header .searchblock .searchscope {   /* the button itself is 24 x 24px (WCAG 2.5.8), at the field's left edge */
   inset-inline-start: var(--a4-space-1);
   width: var(--a4-space-5);
@@ -3158,8 +3181,10 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: .01ms !important;
+    animation-delay: 0s !important;   /* a delayed one would still wait */
     animation-iteration-count: 1 !important;
     transition-duration: .01ms !important;
+    transition-delay: 0s !important;
     scroll-behavior: auto !important;
   }
 }
@@ -3404,8 +3429,6 @@ html #action-controls {
   align-items: center;
   gap: var(--a4-space-2);
 }
-html #action-controls .exp-dt-action,
-html #action-controls .exp-dt-action-group:first-child .exp-dt-action { margin-inline-start: 0; }
 
 /* On a phone a long search result name breaks rather than widening the result table past the screen */
 @media screen and (max-width: 575.98px) {
@@ -3437,9 +3460,7 @@ body { font-size: var(--a4-text-body); }
 
 /* Touch screens: the small controls get a 24px target (WCAG 2.5.8) */
 @media (pointer: coarse) {
-  div#contentstructure ul#content_tree_menu ul a.openclose-open::after,
-  div#contentstructure ul#content_tree_menu ul a.openclose-close::after { inset: -4px 0 -4px -8px; }   /* 24 x 24px; rows are 24px apart */
-  :where([dir="rtl"]) div#contentstructure ul#content_tree_menu ul a.openclose-open::after, :where([dir="rtl"]) div#contentstructure ul#content_tree_menu ul a.openclose-close::after { inset: -4px -8px -4px 0; }
+  div#contentstructure ul#content_tree_menu a.nodeicon::after { content: none; }
   div#contentstructure ul#content_tree_menu a.nodeicon { display: inline-flex; min-width: var(--a4-space-5); min-height: var(--a4-space-5); align-items: center; justify-content: center; }
   #header .searchblock .searchscope,
   #searchscope-mobile { width: var(--a4-space-5); height: var(--a4-space-5); margin-top: calc(-0.5 * var(--a4-space-5)); }

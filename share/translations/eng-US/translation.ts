@@ -5062,6 +5062,14 @@
         <translation>%count matches</translation>
     </message>
     <message>
+        <source>There are no matches on this page.</source>
+        <translation>There are no matches on this page.</translation>
+    </message>
+    <message>
+        <source>Go to the first page</source>
+        <translation>Go to the first page</translation>
+    </message>
+    <message>
         <source>Update attributes</source>
         <translation>Update attributes</translation>
     </message>
@@ -10835,6 +10843,10 @@
         <source>The sub items cannot be listed: Exponential UI (the extension expui) is not active or not loaded on this siteaccess.</source>
         <translation>The sub items cannot be listed: Exponential UI (the extension expui) is not active or not loaded on this siteaccess.</translation>
     </message>
+    <message>
+        <source>Not saved: %error</source>
+        <translation>Not saved: %error</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/node/view/line</name>
@@ -14132,6 +14144,10 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>Search scope</source>
         <translation>Search scope</translation>
+    </message>
+    <message>
+        <source>Quick search</source>
+        <translation>Quick search</translation>
     </message>
     <message>
         <source>Section</source>
@@ -45254,6 +45270,10 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>Fewer keywords result in more matches. Try reducing keywords until you get a result.</source>
         <translation>Fewer keywords result in more matches. Try reducing keywords until you get a result.</translation>
     </message>
+    <message>
+        <source>The search failed. Try again.</source>
+        <translation>The search failed. Try again.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/tipafriend</name>
@@ -64416,6 +64436,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Publishing, last 14 days</source>
         <translation>Publishing, last 14 days</translation>
+    </message>
+    <message>
+        <source>Nothing was published in the last 14 days.</source>
+        <translation>Nothing was published in the last 14 days.</translation>
     </message>
     <message>
         <source>Quick actions</source>

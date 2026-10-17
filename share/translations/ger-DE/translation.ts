@@ -5832,6 +5832,14 @@
         <translation>%count Treffer</translation>
     </message>
     <message>
+        <source>There are no matches on this page.</source>
+        <translation>Auf dieser Seite gibt es keine Treffer.</translation>
+    </message>
+    <message>
+        <source>Go to the first page</source>
+        <translation>Zur ersten Seite</translation>
+    </message>
+    <message>
         <source>Update attributes</source>
         <translation>Attribute aktualisieren</translation>
     </message>
@@ -13030,6 +13038,10 @@
         <source>The sub items cannot be listed: Exponential UI (the extension expui) is not active or not loaded on this siteaccess.</source>
         <translation>Die Unterelemente können nicht aufgelistet werden: Exponential UI (die Extension expui) ist in diesem Siteaccess nicht aktiv oder nicht geladen.</translation>
     </message>
+    <message>
+        <source>Not saved: %error</source>
+        <translation>Nicht gespeichert: %error</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/node/view/line</name>
@@ -16522,6 +16534,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Search scope</source>
         <translation>Suchbereich</translation>
+    </message>
+    <message>
+        <source>Quick search</source>
+        <translation>Schnellsuche</translation>
     </message>
     <message>
         <source>Section</source>
@@ -49680,6 +49696,10 @@ Sie sollten entweder den Benutzer kontaktieren oder einen neuen Entwurf erstelle
         <source>Fewer keywords result in more matches. Try reducing keywords until you get a result.</source>
         <translation>Weniger Suchwörter liefern mehr Ergebnisse. Versuchen Sie die Suchwörter zu reduzieren, bis Sie ein Ergebnis bekommen.</translation>
     </message>
+    <message>
+        <source>The search failed. Try again.</source>
+        <translation>Die Suche ist fehlgeschlagen. Bitte erneut versuchen.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/tipafriend</name>
@@ -73119,6 +73139,10 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Publishing, last 14 days</source>
         <translation>Veröffentlichungen, letzte 14 Tage</translation>
+    </message>
+    <message>
+        <source>Nothing was published in the last 14 days.</source>
+        <translation>In den letzten 14 Tagen wurde nichts veröffentlicht.</translation>
     </message>
     <message>
         <source>Quick actions</source>

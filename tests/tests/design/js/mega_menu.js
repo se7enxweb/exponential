@@ -1,5 +1,6 @@
 // Runs design/admin4/javascript/a4_mega_menu.js against a small stand-in for the browser (the tab's list item with the
-// tab link, the button and the panel, with { second: true } a second tab's (users) as well, the document's listeners, matchMedia, timers that only move when told, fetch)
+// tab link, the button and the panel, with { second: true } a second tab's (users) as well, the document's listeners, matchMedia, timers that only move when told, fetch;
+// with { hang: n } the first n requests never answer)
 // and prints one JSON line per scenario.
 // Usage: node mega_menu.js <path to a4_mega_menu.js>
 'use strict';
@@ -16,7 +17,7 @@ function listeners() {
 }
 
 async function run(steps, options) {
-    const opts = Object.assign({ wide: true, fine: true, fetchOk: true, fragment: true, other: false, inMore: false, second: false }, options || {});
+    const opts = Object.assign({ wide: true, fine: true, fetchOk: true, fragment: true, other: false, inMore: false, second: false, hang: 0 }, options || {});
     const log = [];
     let fetches = 0;
     let now = 0;
@@ -107,6 +108,8 @@ async function run(steps, options) {
         clearTimeout(t) { timers = timers.filter((x) => x !== t); },
         fetch() {
             fetches++;
+            // the first `hang` requests never answer
+            if (fetches <= opts.hang) { return new Promise(() => {}); }
             if (!opts.fetchOk) { return Promise.resolve({ ok: false, status: 500, text: () => Promise.resolve('') }); }
             return Promise.resolve({ ok: true, status: 200, text: () => Promise.resolve(opts.fragment ? 'fragment' : '<html>sign in</html>') });
         },
@@ -230,6 +233,9 @@ const scenarios = {
     'a failed load is tried again': [['click', 'click', 'click'], { fetchOk: false }],
     'a page in place of the fragment is no menu': [['click'], { fragment: false }],
     'arrowdown after a failed load focuses the overview link': [['focus toggle', 'arrowdown'], { fetchOk: false }],
+    'a load without an answer is still busy before 10s': [['click', 'wait:9999'], { hang: 1 }],
+    'a load without an answer says so after 10s': [['click', 'wait:10000'], { hang: 1 }],
+    'a load without an answer is tried again': [['click', 'wait:10000', 'click', 'click'], { hang: 1 }],
     'two tabs: opening the second closes the first': [['click', 'click second'], { second: true }],
     'two tabs: opening the first again closes the second': [['click', 'click second', 'click'], { second: true }],
     'two tabs: a preview of the second closes the first': [['enter', 'wait:300', 'leave', 'enter second', 'wait:300'], { second: true }],

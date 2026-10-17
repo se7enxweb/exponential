@@ -238,11 +238,48 @@ class AdminResponsiveTest extends PHPUnit\Framework\TestCase
 
     public function testTreeArrowsAndTheLanguageChoiceAreLargeEnoughToTouch()
     {
-        $coarse = AdminBaseStylesheetsTest::rules( self::media( self::css( 'admin4.css' ), '(pointer: coarse)' ) );
-        $this->assertSame( '-4px 0 -4px -8px', $coarse['div#contentstructure ul#content_tree_menu ul a.openclose-open::after, div#contentstructure ul#content_tree_menu ul a.openclose-close::after']['inset'], '16px arrow + 8px = 24px' );
+        // at every pointer (WCAG 2.5.8), not only on touch screens: the live review measured 16 x 16px
+        $rules = AdminBaseStylesheetsTest::rules( self::css( 'admin4.css' ) );
+        $this->assertSame( '-4px 0 -4px -8px', $rules['div#contentstructure ul#content_tree_menu ul a.openclose-open::after, div#contentstructure ul#content_tree_menu ul a.openclose-close::after']['inset'], '16px arrow + 8px = 24px' );
         // the node's language choice is as high as the buttons beside it at every width (32px)
         $rules = AdminBaseStylesheetsTest::rules( self::css( 'admin4.css' ) );
         $this->assertSame( 'var(--a4-control-h)', $rules['.controlbar.a4-node-actions form .button-left .block select']['height'] );
+    }
+
+    /**
+     * The node's "Actions for ..." button in the tree is a 16px icon: an invisible ::after makes it a 24 x 24px target
+     * without moving the icon (a min-size on the link itself would shift every row); coarse pointers get the size on
+     * the button and drop the pseudo-element, which would then be 32px and cover the rows around it.
+     */
+    public function testTheTreeMenuButtonHasATwentyFourPixelTargetWithoutMovingTheIcon()
+    {
+        $css = self::css( 'admin4.css' );
+        $rules = AdminBaseStylesheetsTest::rules( $css );
+        $link = 'div#contentstructure ul#content_tree_menu a.nodeicon';
+        $this->assertSame( 'relative', $rules[$link]['position'] );
+        $this->assertMatchesRegularExpression( '/' . preg_quote( $link, '/' ) . '::after \{\s*content: "";\s*position: absolute;\s*inset: -4px;/', $css );
+        $coarse = self::media( $css, '(pointer: coarse)' );
+        $this->assertStringContainsString( $link . '::after { content: none; }', $coarse );
+    }
+
+    /**
+     * Between a phone and a desktop (820px in the live review) the node's actions were one line of 965px in a 740px
+     * card: a flex item with flex: 0 0 auto and the default min-width: auto keeps its content's width, its form never
+     * wrapped, and #page's overflow-x: clip hid Remove and the icon buttons with no scrollbar. The group may shrink to
+     * the card and then wraps at every width.
+     */
+    public function testTheNodeActionsWrapInsteadOfRunningPastTheCard()
+    {
+        $rules = AdminBaseStylesheetsTest::rules( self::css( 'admin4.css' ) );
+        $bar = $rules['.controlbar.a4-node-actions'];
+        $this->assertMatchesRegularExpression( '/\n\.controlbar\.a4-node-actions \{\s*flex: 0 1 auto;/', self::css( 'admin4.css' ), 'shrinkable: a flex-shrink of 0 keeps the content width' );
+        $this->assertSame( '0', $bar['min-width'], 'min-width: auto is the content width' );
+        $this->assertSame( '100%', $bar['max-width'] );
+        $this->assertSame( 'wrap', $rules['.controlbar.a4-node-actions form']['flex-wrap'] );
+        $this->assertSame( 'wrap', $rules['.controlbar.a4-node-actions .block']['flex-wrap'] );
+        $this->assertSame( 'wrap', $rules['.a4-node-head']['flex-wrap'] );
+        // the language choice is declared once for the phone, not three times in successive blocks
+        $this->assertSame( 1, preg_match_all( '/\.controlbar\.a4-node-actions \.block select \{\s*flex:/', self::css( 'admin4.css' ) ) );
     }
 
     public function testTheBodyTextGrowsModestlyOnVeryWideWindows()

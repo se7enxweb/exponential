@@ -115,7 +115,7 @@ class AdminScriptsTest extends PHPUnit\Framework\TestCase
         $this->assertStringNotContainsString( 'e.which', $relations );
         $this->assertStringContainsString( "if ( e.key === 'Enter' && !e.isComposing )", $relations );
         $this->assertStringNotContainsString( 'alert( data.content.error_text )', $relations );
-        $this->assertStringContainsString( 'var message = data && ( data.error_text || ( data.content && data.content.error_text ) );', $relations );
+        $this->assertStringContainsString( '_error( data && ( data.error_text || ( data.content && data.content.error_text ) ) );', $relations );
 
         $uploader = self::code( 'design/admin4/javascript/expajaxuploader.js' );
         $this->assertStringContainsString( "if (typeof json.html !== 'string') {", $uploader );

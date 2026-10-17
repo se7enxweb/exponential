@@ -12,6 +12,8 @@
 {* DESIGN: Content START *}<div class="box-ml"><div class="box-mr"><div class="box-content">
 <div class="context-attributes">
 
+{def $toolbar_preview_plain = array( 'basket', 'best_seller', 'calendar', 'create_object', 'drafts', 'link', 'login', 'node_list', 'notification', 'preferred_currency', 'searchbox', 'user_country', 'users' )
+     $toolbar_preview_line  = array( 'basket', 'link', 'login', 'notification', 'searchbox', 'setup_link', 'users' )}
 {section show=$tool_list}
 <table class="list" width="100%" cellspacing="0" cellpadding="0" border="0">
 {section var=Tool loop=$tool_list}
@@ -25,10 +27,12 @@
 <tr>
     <td></td>
     <td>
+    {* only the tools that ship a preview image get one (design/standard/images/toolbar); the other tools
+       (the admin_* ones, setup_link) have none, and a missing image would show as a broken one *}
     {if eq($toolbar_position,right)}
-        <img src={concat( "toolbar/", $Tool.name|wash, ".png" )|ezimage} alt="{$Tool.name|wash}" />
+        {if $toolbar_preview_plain|contains( $Tool.name )}<img src={concat( "toolbar/", $Tool.name|wash, ".png" )|ezimage} alt="{$Tool.name|wash}" />{/if}
     {else}
-        <img src={concat( "toolbar/", $Tool.name|wash, "_line.png" )|ezimage} alt="{$Tool.name|wash}" />
+        {if $toolbar_preview_line|contains( $Tool.name )}<img src={concat( "toolbar/", $Tool.name|wash, "_line.png" )|ezimage} alt="{$Tool.name|wash}" />{/if}
     {/if}
     <br /> <!-- Break before list of parameters -->
         <table>

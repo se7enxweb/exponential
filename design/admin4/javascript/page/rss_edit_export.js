@@ -65,7 +65,8 @@ var expRssExportFocus = expRssExportScript ? expRssExportScript.getAttribute( 'd
     if ( search && apply )
     {
         search.onkeydown = function ( event ) {
-            if ( ( event || window.event ).keyCode !== 13 ) return true;
+            // event.key (keyCode is deprecated); not while an input method composes a word
+            if ( event.key !== 'Enter' || event.isComposing ) return true;
             apply.click();
             return false;
         };
