@@ -498,7 +498,8 @@
       "tests/tests/design/AdminLogoTest.php"
     ],
     "extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe_tinymce8.tpl": [
-      "tests/tests/design/AdminEditBarTest.php"
+      "tests/tests/design/AdminEditBarTest.php",
+      "tests/tests/design/AdminContentSecurityPolicyTest.php"
     ],
     "extension/ezjscore/classes/ezjscpacker.php": [
       "tests/tests/extension/ezjscore/ezjscPackerNoVersionQueryTest.php"
@@ -948,7 +949,8 @@
     "settings/uiswitch.ini": [
       "tests/tests/kernel/classes/uiswitch/expUISwitchTest.php",
       "tests/tests/kernel/classes/uiswitch/expUISwitchDesignProviderTest.php",
-      "tests/tests/kernel/classes/uiswitch/expUISwitchLanguageProviderTest.php"
+      "tests/tests/kernel/classes/uiswitch/expUISwitchLanguageProviderTest.php",
+      "tests/tests/design/AdminContentSecurityPolicyTest.php"
     ],
     "lib/eztemplate/classes/eztemplatecompiler.php": [
       "tests/tests/kernel/classes/uiswitch/expUISwitchTest.php"
@@ -1001,6 +1003,13 @@
       "tests/tests/design/AdminContentSecurityPolicyTest.php"
     ],
     "design/standard/templates/*": [
+      "tests/tests/design/AdminContentSecurityPolicyTest.php"
+    ],
+    "extension/ezoe/design/standard/javascript/tinymce8_ez/ezoe8_start.js": [
+      "tests/tests/design/AdminContentSecurityPolicyTest.php",
+      "tests/tests/design/AdminEditBarTest.php"
+    ],
+    "extension/*/design/*": [
       "tests/tests/design/AdminContentSecurityPolicyTest.php"
     ]
   },

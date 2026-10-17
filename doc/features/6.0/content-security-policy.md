@@ -86,10 +86,21 @@ siteaccess, for example `Directives[script-src]='self' https://maps.example.com`
 
 ## The administration without inline code
 
-admin4 and admin4l, and the templates of admin3, admin and standard that they render, carry no inline `<script>`, no
-`on...=` attribute, no `javascript:` link, no `style=""` attribute and no `<style>` element, so the administration
-runs under the shipped policy. `tests/tests/design/AdminContentSecurityPolicyTest.php` holds this for every template of
-the two design chains and for the scripts of admin4; the few exceptions it lists are below.
+admin4 and admin4l, and the templates of admin3, admin2, admin and standard that they render, carry no inline
+`<script>`, no `on...=` attribute, no `javascript:` link, no `style=""` attribute and no `<style>` element, so the
+administration runs under the shipped policy. `tests/tests/design/AdminContentSecurityPolicyTest.php` holds this for
+every template of the two design chains and for the scripts of admin4; the exceptions it lists are below.
+
+The test reads the chain the way the kernel builds it: the designs of `uiswitch.ini [UISwitch] DesignChain[]` (or
+those of an administration siteaccess: `SiteDesign`, `AdditionalSiteDesignList[]`, `StandardDesign`) and, for each
+design, first the design directories of the active extensions (`design.ini [ExtensionSettings] DesignExtensions[]`),
+then the core directory. An extension's template therefore counts where it replaces a core template, and so do the
+extension templates nothing in the core has, such as the edit templates of the online editor. Active are the
+extensions of `site.ini [ExtensionSettings] ActiveExtensions[]` (with `settings/override`) and the
+`ActiveAccessExtensions[]` of every siteaccess whose `SiteDesign` is admin4 or admin4l; a checkout without
+`settings/override` counts every extension it carries. What an extension still has inline is listed per extension in
+`EXTENSION_ALLOWLIST`, with the reason; like the list of core templates it only shrinks: the test fails when a listed
+file has less inline code than listed, or is no longer rendered, until the entry is lowered or removed.
 
 How the pieces work, for templates of your own and for extensions:
 
@@ -141,13 +152,24 @@ identical to admin4's; the other templates of the classic admin design are uncha
   Add `'unsafe-inline'` to `style-src` if that matters for your content.
 - **The receipt** (`shop/orderreceipt_style.tpl`) keeps its `<style>` element: it is shared with the receipt as a file
   to keep (`orderreceipt_document.tpl`), which must carry its own styles.
-- **Rich text editors.** TinyMCE 3 (ezoe) is not converted: its dialogs (`extension/ezoe/design/standard/templates/
-  ezoe/*.tpl`) have about 40 inline scripts and 50 `javascript:` links, and the editor itself writes event handler
-  attributes. A siteaccess that edits with ezoe's TinyMCE 3 needs `Directives[script-src]='self' 'unsafe-inline'` and
-  `Directives[style-src]='self' 'unsafe-inline'` before it enforces the policy. TinyMCE 8 and Tiptap load from files;
-  their editors set styles of their own (TinyMCE's documentation asks for `style-src 'unsafe-inline'`; Tiptap's
-  extension adds one `<style>` element), so enforce with `'unsafe-inline'` in `style-src` where they are used, or keep
-  the administration in `report-only` until they are checked.
+- **Rich text editors.** The TinyMCE 8 engine of ezoe starts from a file: `ezxmltext_ezoe_tinymce8.tpl` writes the
+  settings every editor shares as `<script type="application/json" id="ezoe8-settings">` and the toolbar map as
+  `id="ezoe8-button-map"`, each textarea carries its attribute id, buttons, path location and rows in `data-ezoe8-*`
+  attributes, and `javascript/tinymce8_ez/ezoe8_start.js` (loaded with `defer`) reads them and calls `tinymce.init`.
+  A data block of your own is printed from a `set-block` with `|explode( '<' )|implode( '\u003c' )|explode( '>' )|
+  implode( '\u003e' )`: `json_encode` leaves `<!--` and `<script` in a value as they are, and `<!--<script>` makes the
+  browser read past the block's `</script>`, so the scripts after it do not run.
+  TinyMCE 8 itself sets styles on its own elements (its documentation asks for `style-src 'unsafe-inline'`), so
+  enforce with `'unsafe-inline'` in `style-src` where it is used.
+  TinyMCE 3, the default engine (`ezoe.ini [EditorSettings] EditorEngine=tinymce3`), is not converted: its edit
+  template `ezxmltext_ezoe.tpl` starts the editor with an inline script, and its dialogs (the 27 templates under
+  `extension/ezoe/design/standard/templates/ezoe/` that carry inline code) have 23 inline scripts, 13 event handler
+  attributes, 51 `javascript:` links, 52 `style=""` attributes and one `<style>` element (counted 16 October 2026).
+  `tiny_mce.js` and `tiny_mce_popup.js` write `javascript:` links and `onclick` attributes into the toolbars and
+  dialogs they build, so moving the templates into files alone would not make TinyMCE 3 run under the policy. A siteaccess that edits with TinyMCE 3 needs
+  `Directives[script-src]='self' 'unsafe-inline'` and `Directives[style-src]='self' 'unsafe-inline'` before it
+  enforces the policy, or switches to TinyMCE 8. Editors of other packages (Tiptap, exp_oe_tiptap) are checked by the
+  same test when they are installed; what they still write inline is in `EXTENSION_ALLOWLIST`.
 - **Extensions** that write inline scripts or handlers into admin pages (their own menu items, page scripts) are
   reported until they move to files and `data-*` attributes as described above.
 
