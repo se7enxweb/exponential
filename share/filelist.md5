@@ -176,7 +176,7 @@ bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
 b974dde24700fd18ba9d30714509893a  composer.dev.json
 7e531407fc8efd6cf497d4260dd8897c  composer.dev.lock
-76d667d085b8f02aba70e39b99bd4c16  composer.json
+7079b8d40cd0d52c78d0692b8525360a  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 2d91308b2fa30038d9cc37afd0e2d44a  config.env.php.example
 e7da3e13ed7cc993f3d31886d4a42ddc  config.php-RECOMMENDED
@@ -1991,7 +1991,7 @@ ff23b2b1387845ae5f541b38a7951963  design/standard/javascript/exp_bookmarks.js
 508ff667415a5d98e2a74446341b83ec  design/standard/javascript/ezmultioption/ezmultioption.js
 f7ce87dae4d5dd619b42b2bc9dbaa5f2  design/standard/javascript/ezmultioption/ezmultioption_view.js
 5665f05feab34431f20fa7d4431da034  design/standard/javascript/lib/ezjslibcookiesupport.js
-f6346e38e58d11bce6e2627c3807bc9f  design/standard/javascript/lib/ezjslibdomsupport.js
+bb0007f5cc6341aee3124a9be233f65c  design/standard/javascript/lib/ezjslibdomsupport.js
 c1a6db23aca66699d43746d3490bdcd1  design/standard/javascript/lib/ezjslibimagepreloader.js
 235ac48a64c5afbbffe58bf9138675d1  design/standard/javascript/lib/ezjslibmousetracker.js
 3e0528b5d5824528c77254eddd67727c  design/standard/javascript/oauthadmin_list.js
@@ -3213,7 +3213,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-61a430156f405ee3c0f1a3f1d9ac2df8  doc/changelogs/6.0/6.0.15.md
+7b6e3880c52b6a4f9f7dcaf63d18cedd  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -7637,7 +7637,7 @@ d00495e13b2643dca44135655f503e9e  tests/tests/design/AdminLanguageBadgeTest.php
 8651979eaaea5b1368a970e1457e6d74  tests/tests/design/AdminLanguageStatesTest.php
 07a7a3043f1352749310d984f400f16e  tests/tests/design/AdminLeftColumnFontTest.php
 e67d11b4120f80af5e51a0620111b80c  tests/tests/design/AdminLeftMenuGroupsTest.php
-91ec59eb622b94dbec095d8b46a351eb  tests/tests/design/AdminLegacyControlsTest.php
+dc14dee54a308e172d9c1703fd9e8154  tests/tests/design/AdminLegacyControlsTest.php
 9f826f15d182df9cbdc32216c3c3b5fa  tests/tests/design/AdminLogoTest.php
 a62f32e685f53db3824c5798db7af54d  tests/tests/design/AdminMegaMenuTest.php
 d15c80b2a7f326f7bfffe8510e68905a  tests/tests/design/AdminMenuPolicyListTest.php
