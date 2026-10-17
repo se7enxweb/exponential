@@ -83,12 +83,12 @@ class expLogRateLimit
     /** Writes the state (temporary file and rename, no lock) */
     protected function save()
     {
-        if ( !is_dir( $this->dir ) && !@mkdir( $this->dir, class_exists( 'eZFile' ) ? eZFile::fileMode( 0770 ) : 0770, true ) && !is_dir( $this->dir ) )
+        if ( !is_dir( $this->dir ) && !@mkdir( $this->dir, eZDir::dirMode( 0770 ), true ) && !is_dir( $this->dir ) )
             return;
         $tmp = $this->file() . '.' . getmypid() . '.' . mt_rand() . '.tmp';
         if ( @file_put_contents( $tmp, json_encode( $this->state ) ) === false )
             return;
-        @chmod( $tmp, class_exists( 'eZFile' ) ? eZFile::fileMode( 0660 ) : 0660 );
+        @chmod( $tmp, eZFile::fileMode( 0660 ) );
         if ( !@rename( $tmp, $this->file() ) )
             @unlink( $tmp );
     }

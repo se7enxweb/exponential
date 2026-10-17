@@ -124,12 +124,12 @@ class expLogFileStats
         if ( $this->file === null )
             return;
         $dir = dirname( $this->file );
-        if ( !is_dir( $dir ) && !@mkdir( $dir, class_exists( 'eZFile' ) ? eZFile::fileMode( 0770 ) : 0770, true ) && !is_dir( $dir ) )
+        if ( !is_dir( $dir ) && !@mkdir( $dir, eZDir::dirMode( 0770 ), true ) && !is_dir( $dir ) )
             return;
         $tmp = $this->file . '.' . getmypid() . '.' . mt_rand() . '.tmp';
         if ( @file_put_contents( $tmp, json_encode( $samples ) ) === false )
             return;
-        @chmod( $tmp, class_exists( 'eZFile' ) ? eZFile::fileMode( 0660 ) : 0660 );
+        @chmod( $tmp, eZFile::fileMode( 0660 ) );
         if ( !@rename( $tmp, $this->file ) )
             @unlink( $tmp );
     }

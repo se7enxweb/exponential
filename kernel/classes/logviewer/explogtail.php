@@ -238,14 +238,14 @@ class expLogTail
             $start += strlen( $data ) - $max;
             $data = substr( $data, -$max );
         }
-        if ( !is_dir( $this->cacheDir ) && !@mkdir( $this->cacheDir, class_exists( 'eZFile' ) ? eZFile::fileMode( 0770 ) : 0770, true ) && !is_dir( $this->cacheDir ) )
+        if ( !is_dir( $this->cacheDir ) && !@mkdir( $this->cacheDir, eZDir::dirMode( 0770 ), true ) && !is_dir( $this->cacheDir ) )
             return;
         $meta = json_encode( array( 'path' => $path, 'ino' => $ino, 'size' => $size, 'mtime' => $mtime, 'start' => $start,
                                     'length' => strlen( $data ), 'time' => time() ), JSON_UNESCAPED_SLASHES );
         $tmp = $file . '.' . getmypid() . '.' . mt_rand() . '.tmp';
         if ( @file_put_contents( $tmp, $meta . "\n" . $data ) === false )
             return;
-        @chmod( $tmp, class_exists( 'eZFile' ) ? eZFile::fileMode( 0660 ) : 0660 );
+        @chmod( $tmp, eZFile::fileMode( 0660 ) );
         if ( !@rename( $tmp, $file ) )
             @unlink( $tmp );
     }
