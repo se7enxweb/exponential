@@ -1,53 +1,54 @@
 <?php
 /**
- * What log management offers the views of the log viewer (doc/features/6.0/log-viewer.md, "Managing logs"): every log
- * with its archives and limits, and rotate, prune, compress and empty, always as a plan first (the dry run) and then
- * applied. expLogManager (the kernel's service) and expLogManagerFallback implement it; expLogManagerFactory::get()
- * gives the one to use.
+ * File containing the expLogManagerInterface interface.
  *
- * Shapes:
- *   logs(): key => array( key, id, path, name, group, size, mtime, lines (estimated), archives (list of array( id, name,
- *           rotation, size, gz, mtime )), archive_bytes, growth (bytes an hour since the last rotation, or null),
- *           limits (array( max_size, keep, compress, max_age_days, source => limit => array( file, section, var ) )),
- *           writable (bool: the web server's user can write the file and its directory), owner, owner_group, managed (bool) )
- *           (group is the viewer's group: kernel, site, extensions, webserver; owner_group the file's owning group)
- *   select( $names ): array( keys => the keys to manage, refused => name => reason (unknown, archive, webserver, outside) )
- *   plan( $keys, $op, $opts ): array( steps => list of array( key, op, from, to, bytes ), unknown => list of keys )
- *           $op rotate | prune | compress | truncate; $opts force (rotate also under the size limit), archive_first
- *           (truncate: copy to .1 first, default true), days (prune: older than this; default the log's max_age_days)
- *           A step's op: delete | rename | copy | gzip | truncate; from and to are file ids (relative to the root).
- *   apply( $plan ): array( ok, error, steps => the plan's steps, each with done (bool) and error )
- *   rotate( $key ), prune( $key, $days ), compress( $key ), truncate( $key, $archiveFirst ): array( ok, error, steps )
- *   Errors: not_allowed | unknown | locked | rename | missing | moved | skipped | empty
- *   effectiveSettings( $key ): the limits with their sources, or null for an unknown key
- *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */
 
+/**
+ * Log management (doc/features/6.0/log-rotation.md, "For developers"): what the command line, the cronjob part "logs"
+ * and the log viewer's actions use. The kernel's implementation is expLogManager; another one (a cluster that keeps
+ * its logs elsewhere) implements the same.
+ *
+ * Every operation is a plan first (plan(): nothing changes) that apply() carries out step by step. A step result has
+ * done (bool) and error ('' | not_allowed | unknown | locked | rename | missing | moved | skipped | empty | unlink |
+ * compress); missing, moved and skipped mean the disk changed since the plan and count as done.
+ */
 interface expLogManagerInterface
 {
-    /** @return array key => log (see above) */
+    /**
+     * @return array key => key, id, path, name, group (kernel, site, extensions), size, mtime,
+     *               archives [{id, name, rotation, size, gz, mtime}], archive_bytes, growth (bytes an hour or null),
+     *               limits {max_size, keep, compress, max_age_days, source{<limit>: {file, section, var}}}, writable,
+     *               owner, owner_group
+     */
     public function logs();
 
     /**
-     * @param string[] $names log keys (or file ids) asked for
-     * @return array keys (to manage), refused (name => unknown | archive | webserver | outside)
+     * @param string $key
+     * @return array max_size, keep, compress, max_age_days => {value, source{file, section, var}}
+     */
+    public function effectiveSettings( $key );
+
+    /**
+     * @param string[] $names keys or ids
+     * @return array found (key => resolved file), unknown (names)
      */
     public function select( array $names );
 
     /**
-     * @param array|string $keys a list of keys, or 'all'
+     * @param string[]|string $keys keys or ids, or 'all'
      * @param string $op rotate | prune | compress | truncate
-     * @param array $opts
-     * @return array steps, unknown
+     * @param array $opts force, days, archive_first, from
+     * @return array op, steps [{key, op, from, to, bytes[, reason]}], unknown []
      */
     public function plan( $keys, $op, array $opts = array() );
 
     /**
-     * @param array $plan from plan()
-     * @return array ok, error, steps
+     * @param array $plan
+     * @return array ok, error, steps (each with done and error)
      */
     public function apply( array $plan );
 
@@ -62,7 +63,4 @@ interface expLogManagerInterface
 
     /** @return array ok, error, steps */
     public function truncate( $key, $archiveFirst = true );
-
-    /** @return array|null */
-    public function effectiveSettings( $key );
 }
