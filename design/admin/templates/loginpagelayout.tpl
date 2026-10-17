@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{$site.http_equiv.Content-language|wash}"{if eq( first_set( $site.text_direction, 'ltr' ), 'rtl' )} dir="rtl"{/if}>
+<html lang="{$site.http_equiv.Content-language|wash}" data-a4-modes="light"{if eq( first_set( $site.text_direction, 'ltr' ), 'rtl' )} dir="rtl"{/if}>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 {def $admin_theme = ezpreference( 'admin_theme' )}

@@ -4,7 +4,8 @@
  * One file, one prefix (.a4-), loaded through design.ini [StylesheetSettings] AdminComponentCSSFileList so the
  * ezjscore packer bundles and caches it with the rest of the admin's CSS. The same file is in design/admin and
  * design/admin4 (a test keeps the two identical), so a template shared by every administration design can use
- * the classes in each of them; only admin4 has a dark mode, switched by html[data-a4-theme="dark"].
+ * the classes in each of them; only admin4 has a dark mode, switched by html[data-a4-theme="dark"] (a page layout
+ * with html[data-a4-modes="light"] stays light even then).
  *
  * Rules (doc/bc/6.0/admin4-styling.md):
  * - no <style> block and no style="" attribute in a template: CSS lives here or in stylesheets/modules/;
@@ -201,7 +202,11 @@ html:lang(th), [lang]:lang(th), html:lang(lo), [lang]:lang(lo), html:lang(km), [
 
 /* ---- Tokens: dark (admin4) --------------------------------------------------------------------------------- */
 
-html[data-a4-theme="dark"] {
+/* A page layout that has only the light mode says so with html[data-a4-modes="light"] (design/admin's pagelayout
+   and loginpagelayout): its frame, header and columns are drawn in light colours, so dark tokens there would put
+   light text on a light background (#558: the search field and the current user's name at 1.2:1 to 2.3:1). The
+   :where() keeps this block's weight at html[data-a4-theme="dark"], so the frames' own dark blocks still win. */
+html[data-a4-theme="dark"]:not(:where([data-a4-modes="light"])) {
   color-scheme: dark;
   --a4-accent: #f26a21;
   --a4-accent-hover: #ff8a4c;
