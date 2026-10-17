@@ -26790,6 +26790,19 @@ INSERT INTO ezpolicy (
   0,
   3
 );
+INSERT INTO ezpolicy (
+  function_name,
+  id,
+  module_name,
+  original_id,
+  role_id
+) VALUES (
+  'authorize',
+  334,
+  'oauth',
+  0,
+  3
+);
 
 INSERT INTO ezpolicy_limitation (
   id,
