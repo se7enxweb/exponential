@@ -207,16 +207,28 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
         $this->assertFileDoesNotExist( self::root() . '/kernel/setup/megamenu.php', 'one view for every tab, no second one for Setup' );
         $this->assertStringNotContainsString( "\$ViewList['megamenu']", self::read( 'kernel/setup/module.php' ) );
         $view = self::read( 'kernel/private/classes/views/user/megamenu.php' );
-        $this->assertStringContainsString( "\$Result['pagelayout'] = false;", $view );
+        // a bare answer for a script, whatever the verdict: no page layout, no debug report, private, its own end
+        $this->assertStringNotContainsString( "\$Result['pagelayout']", $view );
+        $this->assertStringNotContainsString( 'handleError(', $view, 'no error page in the page layout' );
         $this->assertStringContainsString( "header( 'Cache-Control: private, no-store' );", $view );
+        $this->assertStringContainsString( "header( 'Vary: Cookie' );", $view );
+        $this->assertStringContainsString( "header( 'X-Exp-Mega: ' . \$verdict );", $view );
         $this->assertStringContainsString( "'debug-enabled' => false", $view );
         $this->assertStringContainsString( "\$tpl->fetch( 'design:user/megamenu.tpl' )", $view );
-        // the tab is checked before anything is drawn: not a tab of the setting (not available), not open (denied)
+        $this->assertStringContainsString( '\eZExecution::cleanExit();', $view );
+        // cleanExit() ends a Velocity request by throwing: never inside a catch
+        $this->assertDoesNotMatchRegularExpression( '/\bcatch\s*\(/', $view );
+        // the debug report is off and the session released before anything is drawn, the verdict made before both
         $fetch = strpos( $view, "\$tpl->fetch(" );
-        $this->assertLessThan( $fetch, strpos( $view, 'return $Module->handleError( \eZError::KERNEL_NOT_AVAILABLE' ) );
-        $this->assertLessThan( $fetch, strpos( $view, 'return $Module->handleError( \eZError::KERNEL_ACCESS_DENIED' ) );
+        $this->assertLessThan( $fetch, strpos( $view, "'debug-enabled' => false" ) );
+        $this->assertLessThan( $fetch, strpos( $view, 'self::releaseSession();' ) );
+        $this->assertLessThan( strpos( $view, 'self::releaseSession();' ), strpos( $view, '$verdict = self::verdict(' ) );
         $this->assertStringContainsString( 'new \eZTopMenuOperator()', $view, 'the header\'s own verdict on the tab' );
-        $this->assertLessThan( $fetch, strpos( $view, '\eZUser::currentUser()->isRegistered()' ), 'never for the anonymous user' );
+        $this->assertStringContainsString( '$user->canLoginToSiteAccess( $access )', $view, 'the kernel\'s user/login check, made by the view' );
+        // every visitor reaches the view, which makes the checks itself (a refusal is a 403 for the script, not a page)
+        $site = self::read( 'settings/site.ini' );
+        $this->assertStringContainsString( "\nAnonymousAccessList[]=user/megamenu\n", $site );
+        $this->assertStringContainsString( "\nPolicyOmitList[]=user/megamenu\n", $site );
         $this->assertStringContainsString( "'Exponential\\\\View\\\\Kernel\\\\User\\\\Megamenu'", self::read( 'autoload/ezp_kernel.php' ) );
         $this->assertStringNotContainsString( 'Setup\\\\Megamenu', self::read( 'autoload/ezp_kernel.php' ) );
         $this->assertStringContainsString( '\Exponential\View\Kernel\User\Megamenu::main(', self::read( 'kernel/user/megamenu.php' ) );
@@ -582,7 +594,7 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
             $this->assertIsArray( $row, 'the harness ran: ' . $out );
             $s[$row['name']] = $row;
         }
-        $this->assertCount( 17, $s, $out );
+        $this->assertCount( 18, $s, $out );
 
         $menu = function ( array $state, $requests, $name ) {
             $this->assertTrue( $state['menu'], $name );
@@ -636,7 +648,10 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 2, $s['reopening after a failure loads again']['requests'] );
 
         // signed out: not tried again, a link to sign in instead of the error
-        foreach ( array( 'signed out 403', 'signed out 401', 'signed out redirect', 'signed out page' ) as $name )
+        $this->assertSame( 'ERROR', $s['denied verdict is no sign-in']['status'], 'X-Exp-Mega: denied' );
+        $this->assertNull( $s['denied verdict is no sign-in']['signin'] );
+        $this->assertSame( 1, $s['denied verdict is no sign-in']['requests'] );
+        foreach ( array( 'signed out 403', 'signed out 401', 'signed out verdict', 'signed out redirect', 'signed out page' ) as $name )
         {
             $this->assertSame( 'SIGNED OUT', $s[$name]['status'], $name );
             $this->assertSame( array( 'text' => 'SIGN IN', 'href' => '/admin/user/login' ), $s[$name]['signin'], $name );
@@ -772,28 +787,22 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * MM-03: run() itself refuses the anonymous user for a tab that is switched on (user/login is a policy the anonymous
-     * user may hold), and answers "not available" for a tab that is not, before it looks at the user
+     * MM-03: run() itself refuses the anonymous user for a tab that is switched on with a bare 403 (X-Exp-Mega:
+     * signed-out), and a tab that is not with a 404 (unknown), before it looks at the user; never a page, never a body
      */
     public function testTheViewRefusesTheAnonymousUser()
     {
         $this->menuIni( array( 'TopAdminMenu' => array( 'MegaMenuTabs' => array( 'setup' ) ) ) );
-        $module = new class {
-            public $errors = array();
-            public function handleError( $code, $type ) { $this->errors[] = array( $code, $type ); return array( 'error' => $code ); }
-        };
         $key = 'eZUserGlobalInstance_';
         $saved = array_key_exists( $key, $GLOBALS ) ? array( $GLOBALS[$key] ) : null;
         $GLOBALS[$key] = new eZUser( array( 'contentobject_id' => eZUser::anonymousId(), 'login' => 'anonymous', 'email' => '' ) );
         try
         {
             $this->assertFalse( eZUser::currentUser()->isRegistered(), 'the stand-in is the anonymous user' );
-            $view = new \Exponential\View\Kernel\User\Megamenu();
-            $this->assertSame( array( 'error' => eZError::KERNEL_ACCESS_DENIED ),
-                               $view->run( array( 'Params' => array( 'Module' => $module, 'Tab' => 'setup' ) ) ) );
-            $this->assertSame( array( array( eZError::KERNEL_ACCESS_DENIED, 'kernel' ) ), $module->errors );
-            $this->assertSame( array( 'error' => eZError::KERNEL_NOT_AVAILABLE ),
-                               $view->run( array( 'Params' => array( 'Module' => $module, 'Tab' => 'content' ) ) ) );
+            $view = self::capturingView();
+            $this->assertSame( array( 'signed-out', 403, '' ), $view->run( array( 'Params' => array( 'Module' => null, 'Tab' => 'setup' ) ) ) );
+            $this->assertSame( array( 'unknown', 404, '' ), $view->run( array( 'Params' => array( 'Module' => null, 'Tab' => 'content' ) ) ) );
+            $this->assertSame( array( 'unknown', 404, '' ), $view->run( array( 'Params' => array( 'Module' => null ) ) ), 'no tab' );
         }
         finally
         {
@@ -802,6 +811,72 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
             else
                 $GLOBALS[$key] = $saved[0];
         }
+    }
+
+    /** MM-03: the verdict, in its order: the tab, the sign-in, the siteaccess, the tab open to the user */
+    public function testTheVerdictChecksTheTabTheSignInTheSiteaccessAndTheTabsAccess()
+    {
+        $view = 'Exponential\View\Kernel\User\Megamenu';
+        $tab = array( 'NavigationPartIdentifier' => 'mmtnavigationpart', 'Name' => 'MMT', 'URL' => array( 'default' => 'mmt/view' ),
+                      'Enabled' => array( 'default' => 'true' ), 'Shown' => array( 'default' => 'true' ) );
+        $ini = $this->menuIni( array(
+            'TopAdminMenu' => array( 'Tabs' => array( 'mmt' ), 'HiddenTabs' => array(), 'SetupTabs' => array() ),
+            'MenuAccessSettings' => array( 'CheckViewAccess' => 'disabled' ),
+            'Topmenu_mmt' => $tab,
+        ) );
+        $template = 'design:parts/setup/mega_menu.tpl';
+        $anonymous = new eZUser( array( 'contentobject_id' => eZUser::anonymousId(), 'login' => 'anonymous', 'email' => '' ) );
+        $member = self::standInUser( true );
+        $outsider = self::standInUser( false );
+        $access = array( 'name' => 'admin' );
+
+        $this->assertSame( 'unknown', $view::verdict( 'mmt', null, $member, $access, $ini ), 'a tab the view does not serve, whoever asks' );
+        $this->assertSame( 'unknown', $view::verdict( 'mmt', null, $anonymous, $access, $ini ) );
+        $this->assertSame( 'signed-out', $view::verdict( 'mmt', $template, $anonymous, $access, $ini ) );
+        $this->assertSame( 'denied', $view::verdict( 'mmt', $template, $outsider, $access, $ini ), 'no user/login for this siteaccess' );
+        $this->assertSame( 'ok', $view::verdict( 'mmt', $template, $member, $access, $ini ) );
+        $this->menuIni( array( 'TopAdminMenu' => array( 'HiddenTabs' => array( 'mmt' ) ) ) );
+        $this->assertSame( 'denied', $view::verdict( 'mmt', $template, $member, $access, $ini ), 'a tab not open to the user' );
+
+        // each verdict has its status: the fragment 200, a tab not served 404, every refusal 403
+        $this->assertSame( array( 'ok' => 200, 'unknown' => 404, 'signed-out' => 403, 'denied' => 403 ), $view::STATUS );
+    }
+
+    /** MM-03: the fragment loses the templates' indentation between its tags, nothing else */
+    public function testTheFragmentIsSentWithoutTheTemplatesIndentation()
+    {
+        $view = 'Exponential\View\Kernel\User\Megamenu';
+        $html = "\n  <div class=\"a4-mega-groups\" data-a4-mega-groups>\n\n      <section>\n        <h2>Setup  menu</h2>\n"
+              . "        <a href=\"/admin/setup/cache\">Caches</a>\n      </section>\n  </div>\n";
+        $this->assertSame( '<div class="a4-mega-groups" data-a4-mega-groups> <section> <h2>Setup  menu</h2> <a href="/admin/setup/cache">Caches</a> </section> </div>',
+                           $view::compact( $html ) );
+        // an element whose white space counts keeps the fragment as it is
+        $pre = "<div data-a4-mega-groups>\n  <pre>a\n  b</pre>\n</div>";
+        $this->assertSame( $pre, $view::compact( "\n" . $pre . "\n" ) );
+        $this->assertSame( '', $view::compact( '' ) );
+    }
+
+    /** the view with send() answering its arguments instead of ending the request */
+    private static function capturingView()
+    {
+        return new class extends \Exponential\View\Kernel\User\Megamenu {
+            protected function send( $verdict, $body )
+            {
+                return array( $verdict, self::STATUS[$verdict], $body );
+            }
+        };
+    }
+
+    /** a signed-in user (no database) who may, or may not, log in to the siteaccess */
+    private static function standInUser( $mayLogIn )
+    {
+        $user = new class( array( 'contentobject_id' => 987654321, 'login' => 'mmtuser', 'email' => '' ) ) extends eZUser {
+            public $mayLogIn = true;
+            public function isRegistered() { return true; }
+            public function canLoginToSiteAccess( $access ) { return $this->mayLogIn; }
+        };
+        $user->mayLogIn = $mayLogIn;
+        return $user;
     }
 
     /** MM-08 */

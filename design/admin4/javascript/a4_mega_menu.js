@@ -177,6 +177,9 @@
                 }
                 pending.then(function (response) {
                     var code = response.status;
+                    // the view names its verdict (X-Exp-Mega): a signed-in user refused the tab is not signed out
+                    var verdict = response.headers && response.headers.get ? response.headers.get('X-Exp-Mega') : null;
+                    if (verdict === 'denied' || verdict === 'unknown') throw new Failure('failed', verdict);
                     if (code === 401 || code === 403) throw new Failure('signed-out', code);
                     if (response.redirected && /\/user\/login(?:[/?#]|$)/.test(response.url || '')) throw new Failure('signed-out', 'login');
                     if (code >= 500 || code === 408 || code === 429) throw new Failure('transient', code);

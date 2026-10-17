@@ -66,6 +66,7 @@ function run(plan, options) {
             status: a.status,
             ok: a.status >= 200 && a.status < 300,
             redirected: !!a.redirected,
+            headers: { get: (name) => (name.toLowerCase() === 'x-exp-mega' ? (a.verdict || null) : null) },
             url: a.url || 'https://example.test/admin/user/megamenu/setup',
             text: () => Promise.resolve(a.body || ''),
         };
@@ -206,6 +207,20 @@ function out(name, value) { process.stdout.write(JSON.stringify(Object.assign({ 
         await t.click(t.toggle());
         await t.advance(5000);
         out('signed out ' + code, t.state());
+    }
+    // the view's own verdicts: 403 signed-out is the signed-out state; 403 denied (a signed-in user refused the tab) is
+    // a failure, not "signed out"
+    {
+        const t = run([{ status: 403, verdict: 'signed-out' }]);
+        await t.click(t.toggle());
+        await t.advance(5000);
+        out('signed out verdict', t.state());
+    }
+    {
+        const t = run([{ status: 403, verdict: 'denied' }]);
+        await t.click(t.toggle());
+        await t.advance(5000);
+        out('denied verdict is no sign-in', t.state());
     }
     // a redirect to the sign-in page, or a sign-in page in place of the menu: signed out
     {
