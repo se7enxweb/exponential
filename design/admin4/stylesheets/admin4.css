@@ -1302,14 +1302,18 @@ html[data-a4-theme-choice="system"] .a4-theme-toggle .a4-icon-system { display: 
    (Trash, the content finder, the width buttons) stand at the card's foot from the first paint. The tree is built by
    contentstructuremenu_dynamic.js after the page is parsed; until 2026-10 it grew the card, and every part below it
    moved down 20-600px as it opened to the current node (a layout shift on every page with the tree). A column too
-   short for the tree's least height (8rem) and the parts scrolls as a whole. */
+   short for the tree's least height (8rem) and the parts scrolls as a whole.
+   Every rule starts at #leftmenu-design > #content-tree, the card the column makes a flex column. A menu that wraps
+   the tree in its own box (the newsletter menu: #newsletter-menu > #content-tree, then its Administer and Settings
+   lists) keeps the ordinary flow: there the inner boxes with flex-basis 0 had no height of their own, the card ended
+   under its heading and the tree was drawn over the lists after it. */
 #leftmenu-design:has(> #content-tree) { display: flex; flex: 1 1 auto; flex-direction: column; min-height: 0; }
 #leftmenu-design:has(> #content-tree) > * { flex: none; }
 #leftmenu-design > #content-tree,
-#content-tree > .box-bc,
-#content-tree > .box-bc > .box-ml,
-#content-tree > .box-bc > .box-ml > .box-content { display: flex; flex: 1 1 0; flex-direction: column; min-height: 0; }
-#content-tree #contentstructure { flex: 1 1 0; min-height: 8rem; overflow: auto; }
+#leftmenu-design > #content-tree > .box-bc,
+#leftmenu-design > #content-tree > .box-bc > .box-ml,
+#leftmenu-design > #content-tree > .box-bc > .box-ml > .box-content { display: flex; flex: 1 1 0; flex-direction: column; min-height: 0; }
+#leftmenu-design > #content-tree #contentstructure { flex: 1 1 0; min-height: 8rem; overflow: auto; }
 
 /* One gutter between the cards: --a4-gutter (24px) between a side column's card and the content, under
    the header and at the cards' bottom, the gap of a common 24px layout grid. The window's edges keep at least 24px
