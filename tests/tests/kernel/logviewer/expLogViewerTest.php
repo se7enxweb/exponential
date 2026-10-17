@@ -11,6 +11,8 @@
  *         not those of another request; the audit window
  *  LV-63  reference(): an error reference in a rotation is found, with its request's lines
  *  LV-64  searchFiles(): the file and its rotations; every kernel log; actions() follow the settings and the policy
+ *  LV-65  search(): a masked viewer's request and client address filters compare what the viewer is shown, an
+ *         unmasked viewer's compare what is written
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -180,5 +182,34 @@ class expLogViewerTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'download' => true, 'rotate' => true, 'truncate' => true, 'delete' => true ), $on->actions( true ) );
         $this->assertSame( array( 'download' => true, 'rotate' => false, 'truncate' => false, 'delete' => false ), $on->actions( false ), 'managelogs is needed' );
         $this->assertTrue( $v->enabled() );
+    }
+
+    /** LV-65 */
+    public function testSearchComparesWhatTheViewerIsShown()
+    {
+        file_put_contents( $this->root . '/var/log/error.log',
+                           $this->line( self::START, '192.0.2.10', 'https://example.test/reset?token=abc123def456&mail=jane@example.com', 'Error: reset failed' )
+                           . $this->line( self::START + 1, '192.0.200.20', 'https://example.test/news', 'Error: other' ) );
+        $urls = function ( expLogViewer $v, array $in ) {
+            $r = $v->search( $v->searchFiles( 'var/log/error.log' ), expLogSearch::criteria( $in ) );
+            $this->assertSame( '', $r['error'] );
+            return array_column( $r['entries'], 'u' );
+        };
+        $masked = $this->viewer();
+        $shown = 'https://example.test/reset?token=***&mail=j***@***.com';
+        $this->assertSame( array( $shown, 'https://example.test/news' ), $urls( $masked, array( 'ip' => '192.0.' ) ) );
+        $this->assertSame( array(), $urls( $masked, array( 'ip' => '192.0.2' ) ), 'shown as 192.0.x.x: the hidden part is not an oracle' );
+        $this->assertSame( array(), $urls( $masked, array( 'ip' => '192.0.2.10' ) ) );
+        $this->assertSame( array(), $urls( $masked, array( 'uri' => 'token=abc' ) ) );
+        $this->assertSame( array(), $urls( $masked, array( 'uri' => 'jane@' ) ) );
+        $this->assertSame( array( $shown ), $urls( $masked, array( 'uri' => 'reset?token=' ) ) );
+
+        // unmasked: the address and the e-mail address as written; a token in an address stays hidden, and unfound
+        $plain = $this->viewer( true );
+        $written = 'https://example.test/reset?token=***&mail=jane@example.com';
+        $this->assertSame( array( $written ), $urls( $plain, array( 'ip' => '192.0.2.10' ) ) );
+        $this->assertSame( array( $written ), $urls( $plain, array( 'ip' => '192.0.2.' ) ) );
+        $this->assertSame( array( $written ), $urls( $plain, array( 'uri' => 'jane@example.com' ) ) );
+        $this->assertSame( array(), $urls( $plain, array( 'uri' => 'token=abc' ) ) );
     }
 }

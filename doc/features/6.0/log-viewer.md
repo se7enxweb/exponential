@@ -287,9 +287,12 @@ cursor `<file>:<offset>`). A regular expression runs with `pcre.backtrack_limit`
 the JIT (which ignores that limit); a pattern that needs more on one line (`(a+)+$` and the like) stops the search with
 "The regular expression is too expensive" instead of holding the server.
 
-With masking on, the text must also match the line as it is shown: a hidden value cannot be found by searching for
-it. The client address filter compares the address as written (an operator searching for an address from an incident
-report), and the results still show it masked.
+A search finds only what the viewer is shown: the text, the request and the client address must also match as they
+are shown, so a hidden value cannot be found by searching for it, one guess at a time. With masking on, the client
+address filter compares the masked address: `203.0.` finds `203.0.113.7` (shown as `203.0.x.x`), `203.0.113` finds
+nothing. To search for a whole address from an incident report, a viewer with `setup/unmasklogs` switches **Show
+unmasked** on. The values of secret settings and a password in an address are hidden from every viewer, so they are
+never found, masked or not.
 
 ## The line format and cross-references
 
