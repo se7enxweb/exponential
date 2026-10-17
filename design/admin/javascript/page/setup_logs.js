@@ -181,7 +181,7 @@
         {
             case 'reference':
                 // setup/logs?key=... answers 303 with the permalink of the search
-                return urls.page + '?key=' + encodeURIComponent( file.key || '' ) + ( file.rotation ? '&rotation=' + encodeURIComponent( file.rotation ) : '' ) +
+                return urls.page + '?key=' + encodeURIComponent( file.key || '' ) + ( file.rotation ? '&archive=' + encodeURIComponent( file.rotation ) : '' ) +
                        '&reference=' + encodeURIComponent( value ) + '&scope=kernel&rotations=1' + ( state.unmasked ? '&unmask=1' : '' );
             case 'url':
                 try
@@ -963,6 +963,62 @@
                 navigator.clipboard.writeText( permalinkField.value ).then( copied, fallback );
             else
                 fallback();
+        } );
+    }
+
+    // ---- copy messages: the lines shown, as plain text (page/setup_logs_copy.js) ----
+    // Following: every line kept on the page. Paused (or not following): the lines in view, as a selection of the
+    // rows on screen would give them.
+    var copyMessages = el( 'log-copy-messages' );
+    var shownEntries = function () {
+        if ( !paused && follow )
+            return entries.slice();
+        var box = view.getBoundingClientRect(), out = [];
+        var rows = list.children;
+        for ( var i = 0; i < rows.length; i++ )
+        {
+            var r = rows[i].getBoundingClientRect();
+            var index = parseInt( rows[i].getAttribute( 'data-index' ), 10 );
+            if ( r.bottom > box.top && r.top < box.bottom && entries[index] )
+                out.push( entries[index] );
+        }
+        return out;
+    };
+    var copyText = function ( value, done ) {
+        var fallback = function () {
+            var area = document.createElement( 'textarea' );
+            area.value = value;
+            area.setAttribute( 'readonly', 'readonly' );
+            area.className = 'a4-sr-only';
+            document.body.appendChild( area );
+            area.select();
+            var ok = false;
+            try { ok = document.execCommand( 'copy' ); } catch ( e ) { ok = false; }
+            document.body.removeChild( area );
+            if ( copyMessages )
+                copyMessages.focus();
+            done( ok );
+        };
+        if ( navigator.clipboard && navigator.clipboard.writeText && window.isSecureContext !== false )
+            navigator.clipboard.writeText( value ).then( function () { done( true ); }, fallback );
+        else
+            fallback();
+    };
+    if ( copyMessages && window.ExpLogCopy )
+    {
+        copyMessages.disabled = false;
+        copyMessages.addEventListener( 'click', function () {
+            var shown = shownEntries();
+            var value = window.ExpLogCopy.textOf( shown, { wrap: wrap, levelName: levelName, rotated: text( 'rotated' ), cut: text( 'cut' ) } );
+            copyText( value, function ( ok ) {
+                var message = ok ? ( shown.length === 1 ? text( 'lines-copied-one' ) : text( 'lines-copied' ).replace( '%count', String( shown.length ) ) )
+                                 : text( 'lines-copy-failed' );
+                // the toast's region announces it; without toasts (the classic design) the page's own polite region
+                if ( window.a4Toast && document.getElementById( 'a4-toasts' ) )
+                    window.a4Toast( message, ok ? 'ok' : 'bad', copyMessages );
+                else
+                    say( message );
+            } );
         } );
     }
 

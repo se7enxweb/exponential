@@ -340,7 +340,37 @@ $ViewList['logs'] = array(
                                  'case' => 'case', 'from' => 'from', 'to' => 'to', 'siteaccess' => 'siteaccess', 'uri' => 'uri',
                                  'ip' => 'ip', 'reference' => 'reference', 'scope' => 'scope', 'rotations' => 'rotations',
                                  'cursor' => 'cursor', 'offset' => 'offset', 'follow' => 'follow', 'wrap' => 'wrap',
-                                 'unmask' => 'unmask', 'done' => 'done', 'ok' => 'ok' ) );
+                                 'unmask' => 'unmask', 'done' => 'done', 'ok' => 'ok', 'archive' => 'archive' ) );
+
+// Log management (doc/features/6.0/log-viewer.md, "Managing logs"): every log with its archives, sizes and limits,
+// rotate, empty, compress and prune one log or all of them, always with a preview first (GET shows, POST with the
+// form token and ConfirmButton changes). Policy setup/managelogs; the actions also need [ActionSettings].
+$ViewList['logsmanage'] = array(
+    'functions' => array( 'managelogs' ),
+    'script' => 'logsmanage.php',
+    'ui_context' => 'administration',
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'params' => array( 'Key' ),
+    'unordered_params' => array( 'op' => 'op', 'days' => 'days' ) );
+
+// The health of the logs: disk use against the budget, the fastest growing, those over their limit, files the web
+// server cannot write, the newest error per log, and the effective rotation settings with where each is set.
+$ViewList['logshealth'] = array(
+    'functions' => array( 'logs' ),
+    'script' => 'logshealth.php',
+    'ui_context' => 'administration',
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'params' => array() );
+
+// The error digest: the distinct messages of the last hours per log, normalized and counted, each linked to its
+// filtered view; "known" messages are hidden per user (preference admin_logviewer_known, POST with the form token).
+$ViewList['logsdigest'] = array(
+    'functions' => array( 'logs' ),
+    'script' => 'logsdigest.php',
+    'ui_context' => 'administration',
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'params' => array( 'Key' ),
+    'unordered_params' => array( 'hours' => 'hours', 'known' => 'known' ) );
 
 $ViewList['logsfeed'] = array(
     'functions' => array( 'logs' ),
