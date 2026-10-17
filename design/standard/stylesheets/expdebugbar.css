@@ -69,14 +69,18 @@ html[data-a4-theme="dark"] #debug {
    never more than the room above the bar. The two heights are custom properties the bar's script sets on the root
    element at run time (--exp-debug-bar-h: the measured bar; --exp-debug-panel-h: the saved panel height). */
 #debug, #debug[data-exp-debug-bar] { margin: 0; padding: 0; border: 0; background: transparent; box-shadow: none; }
+/* #571: the bar's markup is complete at the first paint (expDebugBarReport::barHtml()) and it keeps at least the
+   height of one line (the 38px the page's padding and the panel assume until the script has measured it), so it never
+   grows after load; its sides are logical (margin-inline-*, inset-inline-*), so the link stays at the end of the line
+   in a right-to-left interface as well. */
 #debug > h2 {
-  position: fixed; left: 0; right: 0; bottom: 0; z-index: 2147483000; margin: 0;
+  position: fixed; inset-inline: 0; bottom: 0; z-index: 2147483000; margin: 0; box-sizing: border-box; min-height: 38px;
   display: flex; flex-wrap: wrap; align-items: center; background: var(--xd-bg-bar); border-top: 1px solid var(--xd-line-strong);
   box-shadow: 0 -2px 6px var(--xd-shadow); font-size: 14px;
 }
 #debug > h2 > a { flex: 1 1 auto; padding: 8px 12px; color: var(--xd-fg); text-decoration: none; }
 #debug > h2 > label.debug-keep-open {
-  margin-left: 1em; margin-right: 12px; color: var(--xd-fg); font-size: 12px; font-weight: normal; cursor: pointer; white-space: nowrap;
+  margin-inline-start: 1em; margin-inline-end: 12px; color: var(--xd-fg); font-size: 12px; font-weight: normal; cursor: pointer; white-space: nowrap;
 }
 #debug-details { display: none; }
 #debug-details.active {
@@ -104,7 +108,7 @@ body.exp-debug-bar { padding-bottom: calc(var(--exp-debug-bar-h, 38px) + 8px); }
 
 /* --- the pinned bar */
 #debug > h2 > a { font-weight: 600; }
-#debug > h2 > a::after { margin-left: .5em; }
+#debug > h2 > a::after { margin-inline-start: .5em; }
 #debug .exp-debug-summary { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; padding: 4px 0; }
 #debug .exp-debug-chip {
   font: 12px/1.2 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; padding: 3px 7px; border-radius: 10px;
@@ -114,7 +118,7 @@ body.exp-debug-bar { padding-bottom: calc(var(--exp-debug-bar-h, 38px) + 8px); }
 #debug .exp-debug-chip[data-level="high"] { background: var(--xd-high-bg); color: var(--xd-high); border-color: currentColor; font-weight: 700; }
 #debug .exp-debug-chip:hover { filter: brightness(.95); }
 /* OPcache, APCu, then the PHP and Exponential versions: the last chips, at the right end of the summary */
-#debug .exp-debug-chip.exp-debug-end { margin-left: auto; }
+#debug .exp-debug-chip.exp-debug-end { margin-inline-start: auto; }
 
 /* --- the panel */
 #debug-details.active { padding: 0 12px 12px; color: var(--xd-fg); background: var(--xd-bg); }
@@ -297,19 +301,19 @@ textarea.exp-debug-copy-area { position: fixed; top: 0; left: -9999px; width: 1p
 #debug .exp-debug-symbol-front { stroke: #1d1f23; }
 #debug > h2 > button.exp-debug-logo {
   flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px;
-  margin: 0 0 0 6px; padding: 0; border: 1px solid transparent; border-radius: 6px; background: transparent; color: var(--xd-fg); cursor: pointer;
+  margin: 0; margin-inline-start: 6px; padding: 0; border: 1px solid transparent; border-radius: 6px; background: transparent; color: var(--xd-fg); cursor: pointer;
 }
 #debug > h2 > button.exp-debug-logo:hover { background: var(--xd-bg-soft); border-color: var(--xd-line); }
 #debug.exp-debug-min > h2, #debug.exp-debug-min > #debug-details, #debug.exp-debug-min > #debug-details.active { display: none; }
 #debug > button.exp-debug-restore {
-  position: fixed; right: 8px; bottom: 8px; z-index: 2147483000; box-sizing: border-box; width: 40px; height: 40px; padding: 0;
+  position: fixed; inset-inline-end: 8px; bottom: 8px; z-index: 2147483000; box-sizing: border-box; width: 40px; height: 40px; padding: 0;
   display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--xd-line-strong); border-radius: 8px;
   background: var(--xd-bg-bar); color: var(--xd-fg); box-shadow: 0 2px 8px rgba(0, 0, 0, .25); cursor: pointer;
 }
 #debug > button.exp-debug-restore[hidden] { display: none; }
 #debug > button.exp-debug-restore:hover { background: var(--xd-bg-soft); }
 #debug .exp-debug-restore-badge {
-  position: absolute; top: -6px; right: -6px; min-width: 16px; height: 16px; padding: 0 4px; box-sizing: border-box; border-radius: 8px;
+  position: absolute; top: -6px; inset-inline-end: -6px; min-width: 16px; height: 16px; padding: 0 4px; box-sizing: border-box; border-radius: 8px;
   font: 700 10px/16px system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; text-align: center;
   background: #b01717; color: #ffffff;
 }
@@ -319,10 +323,10 @@ textarea.exp-debug-copy-area { position: fixed; top: 0; left: -9999px; width: 1p
 /* Bar layout: the page summary and "Keep open on reload" on the left, the "Exp Debug" title and the logo at the
    right end of the bar (next to where the minimised tab sits). Order only; the reading and tab order of the markup
    stays as it is for keyboard and screen reader users. */
-#debug[data-exp-debug-bar] > h2 > .exp-debug-summary { order: 1; flex: 1 1 auto; justify-content: flex-start; padding-left: 8px; }
-#debug[data-exp-debug-bar] > h2 > label.debug-keep-open { order: 2; margin-left: 12px; margin-right: 12px; }
-#debug[data-exp-debug-bar] > h2 > a { order: 3; flex: 0 0 auto; margin-left: auto; }
-#debug[data-exp-debug-bar] > h2 > button.exp-debug-logo { order: 4; margin-left: 6px; margin-right: 6px; }
+#debug[data-exp-debug-bar] > h2 > .exp-debug-summary { order: 1; flex: 1 1 auto; justify-content: flex-start; padding-inline-start: 8px; }
+#debug[data-exp-debug-bar] > h2 > label.debug-keep-open { order: 2; margin-inline-start: 12px; margin-inline-end: 12px; }
+#debug[data-exp-debug-bar] > h2 > a { order: 3; flex: 0 0 auto; margin-inline-start: auto; }
+#debug[data-exp-debug-bar] > h2 > button.exp-debug-logo { order: 4; margin-inline-start: 6px; margin-inline-end: 6px; }
 
 /* The SQL query cache in the Cache tab: what is cached by table and the largest entries (expdebugbar.js,
    renderQueryCache), drawn like the facts tables; the figures right aligned in equal digits. */

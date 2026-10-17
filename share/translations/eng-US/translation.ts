@@ -61975,6 +61975,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The settings that decide caching and compiling, and how many templates ran from the compiled cache or were compiled now. Right after a template cache clear every template is compiled once.</source>
         <translation>The settings that decide caching and compiling, and how many templates ran from the compiled cache or were compiled now. Right after a template cache clear every template is compiled once.</translation>
     </message>
+    <message>
+        <source>Deprecations</source>
+        <translation>Deprecations</translation>
+    </message>
+    <message>
+        <source>Module</source>
+        <translation>Module</translation>
+    </message>
+    <message>
+        <source>Node ID</source>
+        <translation>Node ID</translation>
+    </message>
+    <message>
+        <source>HTTP status</source>
+        <translation>HTTP status</translation>
+    </message>
+    <message>
+        <source>Query time</source>
+        <translation>Query time</translation>
+    </message>
+    <message>
+        <source>Request</source>
+        <translation>Request</translation>
+    </message>
+    <message>
+        <source>Share of page time</source>
+        <translation>Share of page time</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/audit</name>

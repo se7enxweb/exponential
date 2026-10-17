@@ -70678,6 +70678,34 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>The settings that decide caching and compiling, and how many templates ran from the compiled cache or were compiled now. Right after a template cache clear every template is compiled once.</source>
         <translation>Die Einstellungen, die über Cache und Kompilierung entscheiden, und wie viele Templates aus dem kompilierten Cache liefen oder jetzt kompiliert wurden. Direkt nach dem Leeren des Template-Caches wird jedes Template einmal kompiliert.</translation>
     </message>
+    <message>
+        <source>Deprecations</source>
+        <translation>Deprecations</translation>
+    </message>
+    <message>
+        <source>Module</source>
+        <translation>Modul</translation>
+    </message>
+    <message>
+        <source>Node ID</source>
+        <translation>Knoten-ID</translation>
+    </message>
+    <message>
+        <source>HTTP status</source>
+        <translation>HTTP-Status</translation>
+    </message>
+    <message>
+        <source>Query time</source>
+        <translation>Abfragezeit</translation>
+    </message>
+    <message>
+        <source>Request</source>
+        <translation>Anfrage</translation>
+    </message>
+    <message>
+        <source>Share of page time</source>
+        <translation>Anteil an der Seitenzeit</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/audit</name>

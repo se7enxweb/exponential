@@ -22,10 +22,10 @@ class ezpOauthAuthorizeRedirectTest extends PHPUnit\Framework\TestCase
     const ENDPOINT = 'https://client.example/callback';
 
     /** @return array the JSON object the harness printed */
-    private function authorize( array $get, array $post = array() )
+    private function authorize( array $get, array $post = array(), array $extra = array() )
     {
         $line = array( PHP_BINARY, '-n', '-d', 'display_errors=stderr', __DIR__ . '/fixtures/authorize_harness.php',
-                       json_encode( array( 'get' => $get, 'post' => $post ) ) );
+                       json_encode( array( 'get' => $get, 'post' => $post ) + $extra ) );
         $process = proc_open( $line, array( 1 => array( 'pipe', 'w' ), 2 => array( 'pipe', 'w' ) ), $pipes );
         $this->assertIsResource( $process );
         $out = stream_get_contents( $pipes[1] );
@@ -73,6 +73,56 @@ class ezpOauthAuthorizeRedirectTest extends PHPUnit\Framework\TestCase
     {
         $this->assertSame( array( 'reached' => 'login' ),
                            $this->authorize( array( 'redirect_uri' => self::ENDPOINT, 'client_id' => 'known-client', 'response_type' => 'code' ) ) );
+    }
+
+    private static function validRequest()
+    {
+        return array( 'redirect_uri' => self::ENDPOINT, 'client_id' => 'known-client', 'response_type' => 'code' );
+    }
+
+    public static function deniedAccessProvider()
+    {
+        return array(
+            // the result of the old check "!$access['accessWord'] == 'yes'" was false for every one of these
+            'no policy'                    => array( array( 'accessWord' => 'no' ) ),
+            'limited to another siteaccess' => array( array( 'accessWord' => 'limited', 'policies' => array( array( 'SiteAccess' => array( (string)crc32( 'other' ) ) ) ) ) ),
+            'limited without policies'     => array( array( 'accessWord' => 'limited', 'policies' => array() ) ),
+        );
+    }
+
+    #[\PHPUnit\Framework\Attributes\DataProvider('deniedAccessProvider')]
+    public function testASignedInUserWithoutThePolicyIsSentBackWithAccessDenied( array $access )
+    {
+        $this->assertSame(
+            array( 'status' => '302 Found',
+                   'location' => self::ENDPOINT . '?error=access_denied&error_description=' . urlencode( 'The user may not authorize clients' ) ),
+            $this->authorize( self::validRequest(), array(), array( 'user' => $access, 'siteaccess' => 'site' ) ) );
+    }
+
+    public static function allowedAccessProvider()
+    {
+        return array(
+            'every function'             => array( array( 'accessWord' => 'yes' ) ),
+            'limited to this siteaccess' => array( array( 'accessWord' => 'limited', 'policies' => array( array( 'SiteAccess' => array( sprintf( '%u', crc32( 'site' ) ) ) ) ) ) ),
+            'limited, no siteaccess limitation' => array( array( 'accessWord' => 'limited', 'policies' => array( array( 'Section' => array( '1' ) ) ) ) ),
+        );
+    }
+
+    #[\PHPUnit\Framework\Attributes\DataProvider('allowedAccessProvider')]
+    public function testASignedInUserWithThePolicyGoesOnToTheAuthorization( array $access )
+    {
+        $this->assertSame( array( 'reached' => 'authorization' ),
+                           $this->authorize( self::validRequest(), array(), array( 'user' => $access, 'siteaccess' => 'site' ) ) );
+    }
+
+    public function testThePolicyCheckCanBeSwitchedOffForAnUpgrade()
+    {
+        $this->assertSame( array( 'reached' => 'authorization' ),
+                           $this->authorize( self::validRequest(), array(),
+                                             array( 'user' => array( 'accessWord' => 'no' ), 'requirePolicy' => 'disabled' ) ) );
+        $this->assertSame( '302 Found',
+                           $this->authorize( self::validRequest(), array(),
+                                             array( 'user' => array( 'accessWord' => 'no' ), 'requirePolicy' => 'enabled' ) )['status'] );
     }
 
     public function testTheAutoloadGeneratorFindsNoClassInTheHarness()
