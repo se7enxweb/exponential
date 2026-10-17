@@ -61947,6 +61947,38 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>Resolve</source>
         <translation>Solvere</translation>
     </message>
+    <message>
+        <source>Websites</source>
+        <translation>Situs interretiales</translation>
+    </message>
+    <message>
+        <source>Media</source>
+        <translation>Res mediales</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Usores</translation>
+    </message>
+    <message>
+        <source>Design</source>
+        <translation>Designatio</translation>
+    </message>
+    <message>
+        <source>Sites and sections</source>
+        <translation>Situs et sectiones</translation>
+    </message>
+    <message>
+        <source>(contains the start location)</source>
+        <translation>(locum initii continet)</translation>
+    </message>
+    <message>
+        <source>More…</source>
+        <translation>Plura…</translation>
+    </message>
+    <message>
+        <source>Choose another site or section with the node picker</source>
+        <translation>Alium situm vel sectionem selectore nodorum eligere</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
