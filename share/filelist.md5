@@ -3227,7 +3227,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-3721e86b8da91f37692dd7f24e0a8f9f  doc/changelogs/6.0/6.0.15.md
+8eb1e6004b15a248de84ea731aa5e751  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3682,7 +3682,7 @@ b44b9ac50952ac2e8f16cbb8f32b9b1b  doc/features/6.0/rad-tools.md
 6a7f7df92abdbc6a724d6b7e43addedf  doc/features/6.0/registration-admin-links.md
 12527c047b3b9350ebd0481dcb338531  doc/features/6.0/remote-services-expservices.md
 f9c24ee19f2caf2e1326cf5158b46bfc  doc/features/6.0/repair-from-the-browser.md
-399d056cd5338bec3112cb4fe959fee0  doc/features/6.0/request-logs.md
+6a15c03c850d89a4283c29ef13f3fd1f  doc/features/6.0/request-logs.md
 d19ac2813afb3d92cc981015c8ecdfc1  doc/features/6.0/request-rules.md
 24e8ccadcc06ff46a640a76473fd2d4a  doc/features/6.0/reset-user-password.md
 dfc80bc3e8c5193eda53ed0174e12623  doc/features/6.0/reverse-relation-check.md
@@ -5950,7 +5950,7 @@ e4b8872022000056c55f2cd172f70a7b  kernel/private/classes/views/content/collectin
 8811ebb386d80a3f8f98660a80810576  kernel/private/classes/views/content/copy.php
 df872c5ec934f64aa7579eca83cbe3cd  kernel/private/classes/views/content/copysubtree.php
 55473f7e3fc2cdc90ddbca2bbc9c90f1  kernel/private/classes/views/content/dashboard.php
-857bdbfb58efbb90288756c604c2c2bc  kernel/private/classes/views/content/download.php
+4a85a5e0008e8e4a1282293a7cd604d5  kernel/private/classes/views/content/download.php
 34575b3cf8f61d2b53dd79be756cd20d  kernel/private/classes/views/content/draft.php
 589c1932dd859b4d9ea2c85bef7e2292  kernel/private/classes/views/content/edit.php
 ba4c2da3ed8b6407d52ef7c9839c06c3  kernel/private/classes/views/content/hide.php
