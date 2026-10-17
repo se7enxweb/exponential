@@ -4323,8 +4323,9 @@ b1d522f844f26c1ced98f4d638d76f63  extension/expservices/design/expportal_jquery/
 2c83ea5271a157914199ae8086ec7efa  extension/expservices/design/expportal_jquery/javascript/portal/news.js
 4f19387c5c9903b06b41511baf6b1e18  extension/expservices/design/expportal_jquery/javascript/portal/search.js
 2d85e3865d96e17e37082be24e7554ab  extension/expservices/design/expportal_jquery/javascript/portal/shop.js
+67ed72a775cea0671f9c332c6bfa37cc  extension/expservices/design/expportal_jquery/javascript/portal/theme_head.js
 b15f4c3e509628bd74f5a9caeb0e9e19  extension/expservices/design/expportal_jquery/stylesheets/portal.css
-92821f6500933559cd0d01036e38519b  extension/expservices/design/expportal_jquery/templates/pagelayout.tpl
+2072b2b4fb617f022553b411c6d65dbe  extension/expservices/design/expportal_jquery/templates/pagelayout.tpl
 4ba0c6042b1e5da7d683a32c4c6535f4  extension/expservices/design/expportal_react/javascript/portal/api.js
 b248cbf5c196a8d65852516604f0e386  extension/expservices/design/expportal_react/javascript/portal/app.js
 02d0b364cec550f3de6faff7b37b9b46  extension/expservices/design/expportal_react/javascript/portal/pages/feeds.js
@@ -4348,7 +4349,7 @@ ae349a1f831ef056202da5a7791749ad  extension/expservices/design/expportal_reactiv
 a5a0ded18d815bc2af21708c761fb135  extension/expservices/design/expportal_reactive/javascript/reactive/effects.js
 4f61e42ab5c641a0db33dcdcd1a621ed  extension/expservices/design/expportal_reactive/javascript/reactive/store.js
 333a735ee3665d702a2847fa37182487  extension/expservices/design/expportal_reactive/javascript/reactive/vdom.js
-e2a60289ad1c3bbe39c89ed4bfc3a0e8  extension/expservices/design/expportal_reactive/templates/pagelayout.tpl
+581da8185137b869e391cd6b15e9773c  extension/expservices/design/expportal_reactive/templates/pagelayout.tpl
 7257506e273b79a601bba8b9660180f2  extension/expservices/design/expportal_wireframe/javascript/wireframe.js
 b69d305204dd0459049af2ee6e264f8b  extension/expservices/design/expportal_wireframe/stylesheets/wireframe.css
 c7f40c2be79241d3bf9a5db1bbce34f1  extension/expservices/design/expportal_wireframe/templates/pagelayout.tpl
