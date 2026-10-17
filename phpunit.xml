@@ -165,6 +165,18 @@
         </testsuite>
 
         <!--
+          admin-extensions: the admin templates and stylesheets of git_manager, ezupdate and sevenx_dse follow the admin
+          design rules (no inline CSS or scripts, tokens only, admin4 menus with the width switch). Reads files only; a
+          test whose extension is not installed is skipped.
+          Run: php vendor/bin/phpunit - -testsuite admin-extensions
+        -->
+        <testsuite name="admin-extensions">
+            <file>tests/tests/extension/git_manager/GitManagerAdminStylingTest.php</file>
+            <file>tests/tests/extension/ezupdate/ezUpdateAdminStylingTest.php</file>
+            <file>tests/tests/extension/sevenx_dse/SevenxDseAdminStylingTest.php</file>
+        </testsuite>
+
+        <!--
           quality: the sniffs of the code style check (bin/phpcs/). Needs the development tools (make devtools).
           Run: php vendor/bin/phpunit - -testsuite quality
         -->
