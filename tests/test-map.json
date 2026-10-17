@@ -912,10 +912,14 @@
       "tests/tests/kernel/logviewer/expLogArchiveViewTest.php",
       "tests/tests/kernel/logviewer/expLogHealthTest.php",
       "tests/tests/kernel/logviewer/expLogDigestTest.php",
-      "tests/tests/kernel/logviewer/expLogManagerFallbackTest.php"
+      "tests/tests/kernel/logviewer/expLogManagerFallbackTest.php",
+      "tests/tests/kernel/logviewer/expLogBundleTest.php"
     ],
     "kernel/classes/logviewer/exploghealth.php": [
       "tests/tests/kernel/logviewer/expLogHealthTest.php"
+    ],
+    "kernel/classes/logviewer/explogbundle.php": [
+      "tests/tests/kernel/logviewer/expLogBundleTest.php"
     ],
     "kernel/classes/logviewer/explogdigest.php": [
       "tests/tests/kernel/logviewer/expLogDigestTest.php"
@@ -950,7 +954,8 @@
       "tests/tests/kernel/logviewer/expLogArchiveViewTest.php",
       "tests/tests/kernel/logviewer/expLogHealthTest.php",
       "tests/tests/kernel/logviewer/expLogDigestTest.php",
-      "tests/tests/kernel/logviewer/expLogManagerFallbackTest.php"
+      "tests/tests/kernel/logviewer/expLogManagerFallbackTest.php",
+      "tests/tests/kernel/logviewer/expLogBundleTest.php"
     ],
     "kernel/setup/logs*.php": [
       "tests/tests/kernel/logviewer/expLogViewerTest.php",
@@ -965,6 +970,7 @@
       "tests/tests/kernel/logviewer/expLogHealthTest.php",
       "tests/tests/kernel/logviewer/expLogDigestTest.php",
       "tests/tests/kernel/logviewer/expLogManagerFallbackTest.php",
+      "tests/tests/kernel/logviewer/expLogBundleTest.php",
       "tests/tests/kernel/classes/ini/expIniRoundTripTest.php"
     ],
     "tests/tests/kernel/logviewer/expLogViewerTestFixtures.php": [

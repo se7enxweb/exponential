@@ -1380,3 +1380,8 @@ label.a4-package-option-label {
 @media (forced-colors: active) {
   .a4-setup-log-nav-btn.is-current { outline: 2px solid Highlight; outline-offset: 2px; }
 }
+
+/* ---- w551c bundle: "Download all logs", its options and the warning of the unredacted choice, at the start ---- */
+.a4-setup-logmanage-bundle { flex-wrap: wrap; justify-content: flex-start; align-items: center; gap: var(--a4-space-2) var(--a4-space-3); margin: 0 0 var(--a4-space-4); }
+.a4-setup-logmanage-bundle .a4-help { flex-basis: 100%; }
+.a4-setup-logmanage-bundle-warn { flex-basis: 100%; margin: 0; }
