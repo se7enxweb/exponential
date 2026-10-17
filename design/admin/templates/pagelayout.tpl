@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{$site.http_equiv.Content-language|wash}"{if eq( first_set( $site.text_direction, 'ltr' ), 'rtl' )} dir="rtl"{/if}>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 {* Do some uncacheable left + right menu stuff before cache-block's *}
 {def $ui_context_edit      = eq( $ui_context, 'edit' )
      $content_edit         = and( $ui_context_edit, eq( $ui_component, 'content' ) )
