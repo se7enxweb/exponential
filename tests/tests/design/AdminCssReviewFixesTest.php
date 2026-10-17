@@ -157,7 +157,8 @@ class AdminCssReviewFixesTest extends PHPUnit\Framework\TestCase
         {
             $this->assertStringNotContainsString( "IcoMoon$dead", $face[0] );
         }
-        $this->assertMatchesRegularExpression( '/font-display:\s*swap/', $face[0] );
+        // block, not swap: an icon glyph has no readable fallback letter, and a swapped-in letter of another width moved the pagers (#554)
+        $this->assertMatchesRegularExpression( '/font-display:\s*block/', $face[0] );
         $this->assertDoesNotMatchRegularExpression( '/\bspeak\s*:/', preg_replace( '#/\*.*?\*/#s', '', $css ), 'speak is obsolete' );
         $this->assertStringContainsString( 'content: attr(data-icon) / "";', $css, 'no text for the private-use glyph' );
     }

@@ -117,11 +117,16 @@ pre.wordwrap span.line /* Style for tag wrapping around each line of text */
     src: url('../fonts/IcoMoon.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-    font-display: swap;
+    font-display: block; /* icons: no fallback letter is drawn while the font loads */
 }
 
+/* a 1em box from the first paint (an IcoMoon glyph is 1em wide): the arrows do not change width when the font
+   arrives after the fallback glyph has been drawn */
 [data-icon]:before
 {
+    display: inline-block;
+    inline-size: 1em;
+    text-align: center;
     font-family: 'IcoMoon';
     content: attr(data-icon);
     content: attr(data-icon) / "";   /* a glyph from the private-use area: no text for a screen reader */
