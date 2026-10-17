@@ -114,6 +114,10 @@
 }
 .a4-role-picked li:last-child { border-bottom: 0; }
 .a4-role-picked input { width: 18px; height: 18px; accent-color: var(--a4-accent-strong); }
+/* role/list: "Select all on this page" is there from the first paint with the script (html.a4-js, set by a4_head.js
+   before the first paint), not only once role_list.js unhides it at the end of the page: on a narrow screen it wraps
+   to a line of its own in the section head, and the role cards under it moved down by that line while the page loaded. */
+html.a4-js .a4-section-head:has(> #role-list-title) > label.exp-js-only[hidden] { display: inline; }
 
 @media (max-width: 600px) {
   .a4-role-policy { padding: var(--a4-space-2) var(--a4-space-3); }

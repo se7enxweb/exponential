@@ -99,7 +99,7 @@ class AdminLandmarksTest extends PHPUnit\Framework\TestCase
         $this->assertMatchesRegularExpression( '#<div id="leftmenu" class="sidebar left" role="navigation" aria-label="#', $layout );
         $this->assertMatchesRegularExpression( '#class="navbar-menu[^"]*" role="navigation" aria-label="#', $layout );
         // The skip link's target is part of the cached header block's key
-        $this->assertMatchesRegularExpression( '#\{cache-block keys=array\( \$uri_cache_key,[^}]*\$main_wrapped \) ignore_content_expiry\}#', $layout );
+        $this->assertMatchesRegularExpression( '#\{cache-block keys=array\( \$uri_cache_key,[^}]*\$main_wrapped(?:, \$a4_columns)? \) ignore_content_expiry\}#', $layout );
     }
 
     /** The edit-type pages (content/edit, history, version view ...) bring #maincontent themselves */
