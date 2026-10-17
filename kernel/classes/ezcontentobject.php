@@ -422,8 +422,11 @@ class eZContentObject extends eZPersistentObject
     function versionLanguageName( $version, $lang = false )
     {
         $name = false;
-        if ( !$version > 0 )
+        if ( !( $version > 0 ) ) // was !$version > 0, i.e. (!$version) > 0: a negative version ran on to the database
         {
+            // $contentObjectID is not set yet here (it is set below this early return); with version 0 every call
+            // raised "Undefined variable $contentObjectID".
+            $contentObjectID = $this->attribute( 'id' );
             eZDebug::writeNotice( "There is no object name for version($version) of the content object ($contentObjectID) in language($lang)", __METHOD__ );
             return $name;
         }
