@@ -867,6 +867,35 @@
     "design/admin/templates/role/exp_grant_refused.tpl": [
       "tests/tests/kernel/classes/user/expUserDeactivationTest.php"
     ],
+    "kernel/classes/logviewer/*": [
+      "tests/tests/kernel/logviewer/expLogParserTest.php",
+      "tests/tests/kernel/logviewer/expLogTailTest.php",
+      "tests/tests/kernel/logviewer/expLogRedactorTest.php",
+      "tests/tests/kernel/logviewer/expLogFileLocatorTest.php",
+      "tests/tests/kernel/logviewer/expLogSearchTest.php",
+      "tests/tests/kernel/logviewer/expLogActionsTest.php",
+      "tests/tests/kernel/logviewer/expLogViewerTest.php"
+    ],
+    "kernel/private/classes/views/setup/logs*.php": [
+      "tests/tests/kernel/logviewer/expLogViewerTest.php",
+      "tests/tests/kernel/logviewer/expLogActionsTest.php",
+      "tests/tests/kernel/logviewer/expLogSearchTest.php"
+    ],
+    "kernel/setup/logs*.php": [
+      "tests/tests/kernel/logviewer/expLogViewerTest.php"
+    ],
+    "settings/logviewer.ini": [
+      "tests/tests/kernel/logviewer/expLogActionsTest.php",
+      "tests/tests/kernel/logviewer/expLogViewerTest.php",
+      "tests/tests/kernel/classes/ini/expIniRoundTripTest.php"
+    ],
+    "tests/tests/kernel/logviewer/expLogViewerTestFixtures.php": [
+      "tests/tests/kernel/logviewer/expLogTailTest.php",
+      "tests/tests/kernel/logviewer/expLogFileLocatorTest.php",
+      "tests/tests/kernel/logviewer/expLogSearchTest.php",
+      "tests/tests/kernel/logviewer/expLogActionsTest.php",
+      "tests/tests/kernel/logviewer/expLogViewerTest.php"
+    ],
     "kernel/contentcheck/*": [
       "tests/tests/kernel/contentcheck/expContentCheckQueryTest.php",
       "tests/tests/kernel/contentcheck/expContentCheckSandboxTest.php",
