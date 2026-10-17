@@ -17,7 +17,7 @@
     var root = document.documentElement, url = root.getAttribute('data-a4-pref-url');
     // html.a4-js: the frame's scripts run. Set before the first paint, so the stylesheets draw a part the scripts
     // change once the document is parsed (the disclosures of the right column) in its final state from the start.
-    root.classList.add('a4-js');
+    if (root.classList) root.classList.add('a4-js');
     function attr(name) { return 'data-a4-pref-' + name.replace(/_/g, '-'); }
     function local(key, value) {
         try {

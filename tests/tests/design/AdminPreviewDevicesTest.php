@@ -153,23 +153,25 @@ class AdminPreviewDevicesTest extends PHPUnit\Framework\TestCase
         $css = preg_replace( '#/\*.*?\*/#s', '', self::read( 'design/admin4/stylesheets/modules/content.css' ) );
         $rules = AdminBaseStylesheetsTest::rules( $css );
         $this->assertSame( 'flex', $rules['html.a4-js .a4-content-preview-bar[hidden]']['display'] );
-        $this->assertSame( array( '1280', '800' ), array( $rules['html.a4-js .a4-content-preview-stage']['--a4-preview-w'], $rules['html.a4-js .a4-content-preview-stage']['--a4-preview-h'] ),
-                           'empty preference: desktop' );
+        // the frame in each device's size, narrowed to the column with its proportions (plain values: a module
+        // stylesheet declares no custom properties of its own)
+        $sizes = array( 'html.a4-js .a4-content-preview-stage .a4-content-preview-device' => array( 1280, 800 ) );
         foreach ( self::DEVICES as $id => list( $icon, $width, $height, $name ) )
         {
-            if ( $id === 'desktop' )
-                continue;
-            $rule = $rules['html.a4-js[data-a4-pref-admin-preview-device="' . $id . '"] .a4-content-preview-stage'];
-            $this->assertSame( array( (string)$width, (string)$height ), array( $rule['--a4-preview-w'], $rule['--a4-preview-h'] ), "the size of $id" );
+            if ( $id !== 'desktop' )
+                $sizes['html.a4-js[data-a4-pref-admin-preview-device="' . $id . '"] .a4-content-preview-stage .a4-content-preview-device'] = array( $width, $height );
         }
         foreach ( array( 'phone', 'tablet' ) as $id )
         {
-            $rule = $rules['html.a4-js[data-a4-pref-admin-preview-device="' . $id . '"][data-a4-pref-admin-preview-landscape="1"] .a4-content-preview-stage'];
-            $this->assertSame( array( (string)self::DEVICES[$id][2], (string)self::DEVICES[$id][1] ), array( $rule['--a4-preview-w'], $rule['--a4-preview-h'] ), "$id turned" );
+            $sizes['html.a4-js[data-a4-pref-admin-preview-device="' . $id . '"][data-a4-pref-admin-preview-landscape="1"] .a4-content-preview-stage .a4-content-preview-device']
+                = array( self::DEVICES[$id][2], self::DEVICES[$id][1] );
         }
-        $frame = $rules['html.a4-js .a4-content-preview-stage .a4-content-preview-device'];
-        $this->assertSame( 'min(calc(var(--a4-preview-w) * 1px), calc(100% - 2px))', $frame['width'], 'narrowed to the column, its edges on top' );
-        $this->assertSame( 'var(--a4-preview-w) / var(--a4-preview-h)', $frame['aspect-ratio'] );
+        foreach ( $sizes as $selector => list( $width, $height ) )
+        {
+            $this->assertArrayHasKey( $selector, $rules );
+            $this->assertSame( "min({$width}px, calc(100% - 2px))", $rules[$selector]['width'], "$selector: narrowed to the column, its edges on top" );
+            $this->assertSame( "$width / $height", $rules[$selector]['aspect-ratio'], $selector );
+        }
         // the script's own sizes win over these (inline), and without the script nothing changes
         $this->assertStringContainsString( "device.style.width = Math.floor(w * scale) + 'px';", self::read( 'design/admin4/javascript/admin4.js' ) );
     }

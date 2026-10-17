@@ -29,7 +29,8 @@ class AdminEditAttributeTemplatesTest extends PHPUnit\Framework\TestCase
     public function testTheListIsDeclaredEmpty()
     {
         $ini = self::read( 'settings/content.ini' );
-        $this->assertMatchesRegularExpression( '/\[EditSettings\][^\[]*^AttributeTemplates\[\]$/m', $ini );
+        // the section runs to the next line that opens a section (its comments name the list with [] too)
+        $this->assertMatchesRegularExpression( '/^\[EditSettings\]$(?:\n(?!\[).*)*\n^AttributeTemplates\[\]$/m', $ini );
         $this->assertDoesNotMatchRegularExpression( '/^AttributeTemplates\[\]=/m', $ini, 'no template by default' );
     }
 
