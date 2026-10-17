@@ -322,6 +322,11 @@ class expRequestLog
                     self::$verdict = true;
                 }
             }
+            // A classified request's answer is never kept by a shared cache (Velocity's response cache, a proxy):
+            // kept, the same request sent again was answered from it and never reached the classifier, so a
+            // probe repeated five times wrote one security line under Velocity and five under Apache.
+            if ( self::$verdict )
+                self::keepOutOfSharedCaches();
         }
         catch ( Throwable $e )
         {
@@ -331,6 +336,21 @@ class expRequestLog
             self::$verdict = false;
         }
         return self::$verdict;
+    }
+
+    /**
+     * Marks the answer of a classified request private, no-store (ezpRequestRuleKernel::keepOutOfSharedCaches()),
+     * so no shared cache keeps it and the next identical request is classified again. Late headers are fine under
+     * Velocity, which collects them after the clean-up handlers ran; once headers are sent it does nothing.
+     *
+     * @return void
+     */
+    protected static function keepOutOfSharedCaches()
+    {
+        if ( class_exists( 'ezpRequestRuleKernel' ) )
+            ezpRequestRuleKernel::keepOutOfSharedCaches();
+        else if ( !headers_sent() )
+            header( 'Cache-Control: private, no-store' );
     }
 
     /**

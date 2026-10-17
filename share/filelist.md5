@@ -3068,7 +3068,7 @@ ea7c02ab8c7a9b67149e612bca1f10ab  doc/bc/6.0/phpunitv13.md
 9512bd3007f2fa5c5ede9f050f49297e  doc/bc/6.0/rad-security.md
 4a8181eadee679b8558fe125d10df9c1  doc/bc/6.0/redirect-query-and-image-alias-guards.md
 ec58de54f835ce1e62ff06f43ccbdc23  doc/bc/6.0/repair.md
-9a20a73e9663b4839cc8a2c370a4a571  doc/bc/6.0/response-cache-and-navigation.md
+5114fa2de0860b45754d8b3e15f62bc1  doc/bc/6.0/response-cache-and-navigation.md
 42da9bad10b511619fee08bc9233c4b6  doc/bc/6.0/role-policy-paging.md
 7e517a45f444b0f9ced02b40e3fffe94  doc/bc/6.0/shop-basket-view-name.md
 767f022c02ef26ed61285e79a369c8b1  doc/bc/6.0/sql-query-cache.md
@@ -3233,7 +3233,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-5324f1099a3cc8d5d99a8ea36f6ee42b  doc/changelogs/6.0/6.0.15.md
+796e8ea8ab59e4ef8f81035c07848ae1  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3724,7 +3724,7 @@ cc8bb968e1c59a87aeb1832017543308  doc/features/6.0/velocity-discovery-federation
 631068be86692a9e13aeab5ff40ed8a6  doc/features/6.0/velocity-https-certificates.md
 609de8c320265356f3b7ee6e4612eb47  doc/features/6.0/velocity-opcode-cache-and-profile.md
 a6174671d4a040f86383eb0381ce3ab0  doc/features/6.0/velocity-packages-and-binaries.md
-e161ae937af452c4cce629aab52ff642  doc/features/6.0/velocity-persistent-worker-server.md
+afd830bf1382703c5fd4da6d6191d915  doc/features/6.0/velocity-persistent-worker-server.md
 a72372bfbed72cfa54a1c57099f1a532  doc/features/6.0/velocity-q-shell.md
 7aca62cdf7dc9024a1a2653cb2350236  doc/features/6.0/velocity-response-cache.md
 288e51c6e830565630751a7e6166d9ba  doc/features/6.0/velocity-scheduler.md
@@ -4150,7 +4150,7 @@ f71ac215485dd1f34c31daf0f7f2489f  doc/install/04-choosing-an-install-method.md
 b837bb8f78e8b41765d74c2245edf6d6  doc/install/05-setup-wizard.md
 9c81adae2c303fc9197980ecefe948f7  doc/install/06-kickstarter.md
 d37e9fa621c3f015bb71bdbd497b4b9e  doc/install/07-console-install.md
-4f5a89d708dfeff88bb50227abd3d599  doc/install/08-serving-the-site.md
+ed12923e4234004b770f77d7181e957d  doc/install/08-serving-the-site.md
 fa049bc87c19affc44ca8f745d9e197c  doc/install/09-databases.md
 5d304c2a04345b1958c8632696aeef8e  doc/install/10-after-installing.md
 c376342fb415dc3c6efc6d35be96b628  doc/install/11-upgrading.md
@@ -5226,7 +5226,7 @@ dbf729b5e4373a73ea096e996a48b931  kernel/classes/expsystemreport.php
 d1743b6d55d3d778b90feac8ba7b953f  kernel/classes/expsystemreportmask.php
 21c77a7f6ab0d4e081886665a6a6f721  kernel/classes/exptestlanguage.php
 0d6cdbe8ebbcc04f5b3df35ad85cd7e0  kernel/classes/expuserloginintegrity.php
-20a51a18f94f7589a62449120a3f9a43  kernel/classes/expvelocity.php
+59493771097567369a08c4bef7f5f9ba  kernel/classes/expvelocity.php
 3b2051fab9283e3c15ac1e5519951c5d  kernel/classes/expvelocityconfig.php
 c748b14e37c7c23f4b66f5df522d253c  kernel/classes/expvelocityconfiglayout.php
 5936100316b019b80078d1c4cb56c07b  kernel/classes/expvelocitydeploy.php
@@ -5486,7 +5486,7 @@ eee1e19630ba6c3d438ba4b73b6a0e25  kernel/classes/requestclassifier/exprequestrul
 7b2f8c73d2b6b59757c7cfb1471f0de3  kernel/classes/requestclassifier/exprequestthresholdcounter.php
 db61c9e4cce019e2e98d05083814a049  kernel/classes/requestclassifier/exprequestverdict.php
 71602a482643a57b3f52f513e5d6c108  kernel/classes/requestclassifier/exprequestverdictlistenerinterface.php
-813bd713690a9397876aeccd1307d53b  kernel/classes/requestlog/exprequestlog.php
+8b977c4d31719c45f111564b17aec6dd  kernel/classes/requestlog/exprequestlog.php
 eb78def01da4fef4c8d3826bef26752c  kernel/classes/role/exprolegrantcheck.php
 71ecdf5f28d06bb754e0dee6dab697fc  kernel/classes/role/exprolepage.php
 dc665737a69c0b50fbeee0f5a53f2582  kernel/classes/role/exprolepolicysentence.php
@@ -6850,7 +6850,7 @@ aa1ac2879a1589cc5152361a5b6a87a2  settings/textfile.ini
 0e7434c643d1e1dfe866ee4be55ff5db  settings/uiswitch.ini
 f23fe66b3019c3e623ade3854c3af1c5  settings/units.ini
 a053b7b38c86a24626be0de5c4370c9c  settings/upload.ini
-74908928bbc74857bb5e8102bef82d08  settings/velocity.ini
+0d6620f08d1f3e5244cfb72ba93c12f1  settings/velocity.ini
 4458e8a6aace15cac216a1b48075d17f  settings/viewcache.ini
 6b0d7027cd5f03b0b476e7b52023db28  settings/webdav.ini
 38b904d75d6c87157a8e9d252efccab2  settings/wordmatch.ini
@@ -8834,7 +8834,7 @@ e9be704d52153bd5f082c0d389cc9d6e  tests/tests/kernel/requestclassifier/expReques
 1bdad4a13363124b4ef82ffb75a60626  tests/tests/kernel/requestclassifier/expRequestClassifierTest.php
 320ecf8d91b393c2bef66451e292af55  tests/tests/kernel/requestclassifier/expRequestClassifierThresholdTest.php
 634ae8dfdbacb82c9631bc75edf79267  tests/tests/kernel/requestlog/expRequestLogRequestEndTest.php
-f1d6df78928fbba651e25d8e16d4127c  tests/tests/kernel/requestlog/expRequestLogTest.php
+88fb65a4d3c0d40f79b0fdc9bead12c7  tests/tests/kernel/requestlog/expRequestLogTest.php
 06d9d77a8d02bfd8f318367ad8d2ce31  tests/tests/kernel/requestlog/fixtures/request_ending_in_clean_exit.php
 0c4d498d365638f271d6368732362b01  tests/tests/kernel/search/eZSearchEngineIdsTest.php
 3fd64cf8d6100ef095a212afa06b5f22  tests/tests/kernel/search/eZSearchEngineIntegerClampTest.php

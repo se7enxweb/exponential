@@ -16,6 +16,7 @@
  *  RL-10 finish(): a reason the error module never saw ends as a 404 line, or as its old error line otherwise
  *  RL-11 the call sites are guarded: ezpkernelweb.php (reason, noteView, begin in run, finish in shutdown), ezmodule.php
  *        (Undefined view of the requested module, noteView in handleError), error/view.php (handleError)
+ *  RL-12 a classified request's answer is marked private, no-store, so no shared cache keeps it
  *
  * The log is written below var/tmp of the installation, never var/log. No database.
  *
@@ -273,6 +274,28 @@ class expRequestLogTest extends PHPUnit\Framework\TestCase
         expRequestLog::reason( 'module', 'x' );
         $this->assertTrue( expRequestLog::handleError( 404, 'kernel', 20 ) );
         $this->assertCount( 1, $this->lines() );
+    }
+
+    /**
+     * RL-12: a classified request's answer is marked private, no-store, so no shared cache (Velocity's response
+     * cache) keeps it and the same request sent again is classified again; an unclassified one is left alone.
+     */
+    public function testVerdictKeepsTheAnswerOutOfSharedCaches()
+    {
+        $GLOBALS['ezpRequestRuleNoStore'] = false;
+        expRequestLog::reset();
+        expRequestLog::finish( 200 );
+        $this->assertFalse( $GLOBALS['ezpRequestRuleNoStore'], 'no verdict: cacheable as before' );
+
+        $this->stubClassifier( true );
+        foreach ( array( 200, 404 ) as $status )
+        {
+            $GLOBALS['ezpRequestRuleNoStore'] = false;
+            expRequestLog::reset();
+            expRequestLog::finish( $status );
+            $this->assertTrue( $GLOBALS['ezpRequestRuleNoStore'], "verdict at $status: kept out of shared caches" );
+        }
+        $GLOBALS['ezpRequestRuleNoStore'] = false;
     }
 
     /** RL-9 */

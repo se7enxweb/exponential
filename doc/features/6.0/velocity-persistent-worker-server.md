@@ -138,8 +138,9 @@ Velocity works best with the caches stacked in front of the renderer.
    headers (see [HTTP caching for anonymous visitors](../../bc/6.0/http-caching.md)).
 2. **Server response cache** (`[CacheSettings]`): whole anonymous pages, with
    `StaleWhileRevalidate=60` so a page that expires is rendered by one request
-   while the others receive the stored copy, `NotFoundSeconds=60` so a missing
-   page is remembered, and `MinifyHtml`.
+   while the others receive the stored copy, `NotFoundSeconds=0` so every missing
+   page reaches PHP and its logs, `HonorRequestNoCache` so a `no-cache` request
+   does too, and `MinifyHtml`.
 3. **Role-aware HTTP cache** (`settings/httpcache.ini`, off by default):
    rendered pages kept per permission context, answered before the kernel
    starts, for signed-in visitors too. See [HTTP cache](../../bc/6.0/httpcache.md).
