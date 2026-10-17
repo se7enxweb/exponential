@@ -217,7 +217,9 @@ that matched, the engine (Velocity or the SAPI), the siteaccess, and the SQL que
 (`querycache`: `eZDBQueryCache::debugSnapshot()` with the stale statements replaced by their number, `stale_count`;
 null while the cache is off). Every figure has a level, `ok`, `warn`
 or `high`, against `Thresholds[]` in debugbar.ini (`time_ms`, `sql_count`, `sql_ms`, `memory_mb`, `templates`, each
-`<warn>;<high>`; `querycache_hit_rate` is a hit rate in percent and turns the level up **below** its values, see
+`<warn>;<high>`; `opcache_memory` and `apcu_memory` are the memory in use in percent, `opcache` and `apcu` in the
+summary, null while they are off or for a user without `setup/setup`; `querycache_hit_rate` is a hit rate in percent
+and turns the level up **below** its values, see
 `expDebugBarReport::queryCacheLevel()`, the one place of these rules: `expDebugBarSummary::queryCache()` and the bar's own fallback both build the figures with `expDebugBarReport::queryCacheFigures()`). `expDebugBarSummary::json()` is the same as JSON that is safe inside a `<script>` element.
 
 ## Server functions
@@ -399,6 +401,15 @@ The summary in the bar shows the request at a glance; each value opens its tab:
 | SQL query cache (`QC 83 % · -186 ms (186 %)`: hit rate, database time saved, and that time in percent of the page's time; only while the cache is on) | SQL | `Thresholds[querycache_hit_rate]` (amber below 50 %, red below 10 %; amber when a write made everything stale, red in `shared` without APCu) |
 | warnings, errors | Messages (filtered to that level) | any warning is amber, any error red |
 | deprecations (`3 depr`) | Messages | any deprecation is amber |
+| OPcache memory in use (`OPc 66 %`, the title with MB, hit rate, scripts and restarts; only while OPcache is on for the process) | Server | `Thresholds[opcache_memory]` (amber from 80 %, red from 95 %) |
+| APCu memory in use (`APCu 25 %`, the title with MB, entries, hit rate and expunges; only while APCu is on for the process) | Server | `Thresholds[apcu_memory]` (amber from 75 %, red from 90 %) |
+| versions (`PHP 8.4.19 \| Exp 6.0.15`, Exponential shortened to Exp; the last chip, at the right end) | Server | never coloured |
+
+The OPcache, APCu and versions chips show only to a user who may see the privileged rows of the Server tab (the
+policies `setup/setup` or `setup/managecache`): the bar also shows to anonymous visitors when `DebugByIP` matches, and
+the state of the server is not theirs to read. APCu is one memory for every site of the PHP pool; at 75 % in use the
+SQL query cache has already stopped adding results (`querycache.ini ApcuReserve=25`). The Server tab lists APCu
+below OPcache. A process without them (the command line, where `apc.enable_cli` is usually off) shows no chip for them. The three are the last chips, at the right end of the summary.
 
 PHP deprecations are only counted in the bar: with `site.ini [DebugSettings] DeprecatedLog=enabled` (the default)
 each distinct message is written once per request to `var/log/deprecated.log`, and none is kept in memory or listed
@@ -422,7 +433,9 @@ the report's own defaults.
 | Templates | the templates used (`ShowUsedTemplates`) and the CSS/JS packer report, or how to turn them on |
 | Included files | the included PHP files (`DisplayIncludedFiles`), or their number and how to list them |
 | Memory | the classic "Main resources" table, memory now, peak, limit and share, and the five steps that took the most |
-| Velocity | where the request entered and which process rendered the report, in one sentence (see [below](#velocity-where-the-request-entered-and-what-rendered-it)), the facts behind it, OPcache status, and Velocity's response cache |
+| Rendering | how the page was rendered: the controller, the content view cache and its key, the compiled templates (see [below](#rendering-controller-content-view-cache-and-compiled-templates)); only for `setup/setup` |
+| (extensions) | a tab per panel an extension registers, after Memory (see [Panels of extensions](#panels-of-extensions)) |
+| Server | where the request entered and which process rendered the report (Exponential Velocity, PHP-FPM, mod_php, the command line ...), in one sentence (see [below](#server-where-the-request-entered-and-what-rendered-it)), the facts behind it, OPcache status, and Velocity's response cache; called Velocity until 16 October 2026, its section id is still `exp-debug-panel-velocity` |
 | Other | reports appended by extensions with `eZDebug::appendBottomReport()` that belong to no tab (only when there are any) |
 
 Every section keeps its id, so scripts and stylesheets written for the classic report still find it.
@@ -464,7 +477,101 @@ Drawn from `expdebugbar::cache`: "This page only" (the view cache of the node th
 response cache, OPcache of the serving process, every cache tag and every cache ID with its description and when
 it was last cleared, and all caches. Each clear says what it did.
 
-### Velocity: where the request entered and what rendered it
+### Rendering: controller, content view cache and compiled templates
+
+The tab answers "why is this page slow or not cached" without reading the code. Only a user with `setup/setup` sees
+it and its chips, as the cache key carries the role and limitation ids of the user. Each part opens with a short
+explanation of what it shows. It has five parts:
+
+- **Controller**: every module view that ran, in order (an error page or a forward adds one), with the view class
+  that ran it (`Exponential\View\Kernel\...`, see [cli_cronjob_view_abstractions.md](cli_cronjob_view_abstractions.md))
+  and the script; the siteaccess, the navigation part and, folded, the design order (the first base that has a
+  template wins).
+- **Template tree**, right after the controller and open: every template in the order it started
+  (`eZTemplate::fetch()` for the outermost, `processURI()` for each `{include}`, `node_view_gui` and the like), nested
+  under the template that included it with a guide line per level, and the time it took including what it included
+  (not the parsing or compiling of the template itself). Where the overrides chose another file than the template's
+  own place in a design (`node/view/full.tpl` → `.../override/templates/full/folder.tpl`) the file follows the name
+  in the accent colour; otherwise the file is the tooltip. A template run without the compiler is marked *not
+  compiled*. Templates of a view read from the view cache are not rendered and so not listed. At most 2000 entries,
+  every template counted; `debugbar.ini [DebugBarSettings] RenderTree=disabled` leaves the tree out.
+- **Content view cache**, when a content view ran: one row laid out like the cache blocks below, with the node and
+  view mode, the state and its reason, the time to look the file up and to generate the view, the size, the file's
+  age, and folded the key part by part as it was hashed, with the hash and the cache file. A part a
+  `content/view/cachekeys` listener added or changed is marked *listener*.
+
+| State | Chip | Meaning |
+|---|---|---|
+| Read from the cache | View: hit | the file was used; with its age and size (no age or size for Valkey) |
+| Generated and stored in the cache | View: new | no file, or the old one was not used; the reason says why (expired by `cache_ttl`, by a template in development mode, by a cache clear, `no_cache`) |
+| Generated without storing it in the cache | View: new | the cache file said `no_cache` (a view that sets `no_cache` leaves only that note in its file), or the result is not kept |
+| Not used | View: off | `ViewCaching` disabled, the caller turned it off (`$Params['ViewCache']`), the view mode is not in `CachedViewModes`, or `ViewCacheTweaks[<node>]` contains `disabled` |
+
+- **Cache blocks**: every `{cache-block}` in the order it was looked up, with the template and line, the state (hit,
+  generated, not found), the time to look it up and to generate it (an outer block's time holds the blocks inside
+  it), the size, the expiry (`expiry`, `subtree_expiry`) and, folded, the keys and the cache file. At most 200 rows;
+  the line above the table counts every block. The chip **CB hits/count** is raised while a block was not read from
+  the cache. A template compiled before this version names no template and no generation time: clear the template
+  cache once (`php bin/php/ezcache.php --clear-tag=template`). Code that calls `eZTemplateCacheBlock::retrieve()`
+  itself (`content/treemenu`) shows its keys without a template.
+- **Templates**: `ViewCaching`, `TemplateCompile`, `CompileExecution`, `TemplateCache` and `DevelopmentMode` in
+  effect, how many templates were rendered, how often a compiled template ran and how many were compiled in this
+  request, with their files. The chip **Compiled N** is raised while N is not 0: right after a template cache clear
+  every template is compiled once.
+
+Values longer than 200 characters are cut; the whole value is the tooltip. The collector is `expRenderStats`
+(`kernel/classes/debugbar/exprenderstats.php`). The kernel notes into it where it decides (`eZModule::run()`,
+`ModuleView::main()`, the content/view view, `eZNodeviewfunctions`, `eZTemplateCompiler`, `eZTemplateCacheBlock`, `eZTemplate`);
+every note returns at once without debug output, and `ezpKernelWeb` starts each request empty, also in a persistent
+worker. The compiled code of a cache-block passes its placement to `eZTemplateCacheBlock::handle()` (new optional
+parameters `$placement` and `$keys`) and stores through `eZTemplateCacheBlock::store()`, which notes the generation
+time; custom code that calls `handle()` or `storeCache()` as before keeps working.
+
+Tests: `expRenderStatsTest`, `expRenderStatsCacheBlockTest` and `expRenderStatsTreeTest` (no database).
+
+### Panels of extensions
+
+An extension can add its own tab to the bar, with a chip in the summary and data in the page's JSON - for example
+the layout a page was built from. It names an id and a class in its `settings/debugbar.ini.append.php`:
+
+```ini
+[DebugBarSettings]
+Panels[]=mylayouts
+
+[Panel_mylayouts]
+Class=myLayoutsDebugBarPanel
+```
+
+The class implements `expDebugBarPanelInterface` (`kernel/classes/debugbar/expdebugbarpanelinterface.php`):
+
+```php
+class myLayoutsDebugBarPanel implements expDebugBarPanelInterface
+{
+    public function visible()
+    {
+        // the bar also shows to anonymous visitors when DebugByIP matches
+        $access = eZUser::currentUser()->hasAccessTo( 'mylayouts', 'edit' );
+        return $access['accessWord'] !== 'no';
+    }
+    public function title() { return ezpI18n::tr( 'extension/mylayouts', 'Layouts' ); }
+    public function chip() { return array( 'text' => 'Layout: Home', 'title' => 'Rule home', 'level' => 'ok' ); }
+    public function html() { return '<p>' . htmlspecialchars( 'Home', ENT_QUOTES ) . '</p>'; }
+    public function data() { return array( 'layout' => 'home' ); }
+}
+```
+
+- The tab's id is `x-<id>` in lower case (`data-tab="x-mylayouts"`, section `exp-debug-panel-x-mylayouts`), so it
+  never meets a built-in tab. An id is letters, digits and `_`; two ids that differ only in case are one id.
+- `visible()` comes first; a panel that says no draws nothing. `html()` is printed as it is: the panel escapes what
+  it puts in. The chip's text and title are escaped by the bar, a level other than `ok`, `warn` or `high` is `ok`,
+  and a click on the chip opens the tab. `data()` goes to `panels.<id>` of the JSON (`#exp-debug-data`).
+- An entry without a usable class (no `Class`, an unknown class, one without the interface) and a panel that throws
+  or gives no title are left out with a warning in the debug output; the rest of the bar is drawn.
+- The class is created without arguments for every report, before `visible()` and also for anonymous visitors: keep
+  the constructor trivial, without data access, and the rest cheap, since the bar renders on every page that shows it.
+  `html()` returns its markup and prints nothing itself.
+
+### Server: where the request entered and what rendered it
 
 The tab opens with one sentence that says where the request entered and which process rendered the report, then
 the facts behind it (`expDebugBarReport::engineFacts()`, from the server variables and `engineProbe()`):

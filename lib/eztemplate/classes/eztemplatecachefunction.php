@@ -145,7 +145,7 @@ class eZTemplateCacheFunction
         else
         {
             $nodeIDText = var_export( $nodeID, true );
-            $code .= "list(\$cacheHandler_{$codePlacementHash}, \$contentData) =\n  eZTemplateCacheBlock::handle( $cachePathText, $nodeIDText, $ttlCode, " . ($ignoreContentExpiry ? "false" : "true") . " );\n";
+            $code .= "list(\$cacheHandler_{$codePlacementHash}, \$contentData) =\n  eZTemplateCacheBlock::handle( $cachePathText, $nodeIDText, $ttlCode, " . ($ignoreContentExpiry ? "false" : "true") . ", $placementKeyStringText );\n";
         }
         $code .=
             "if ( !( \$contentData instanceof eZClusterFileFailure ) )\n" .
@@ -166,7 +166,7 @@ class eZTemplateCacheFunction
         $newNodes[] = eZTemplateNodeTool::createAssignFromOutputVariableNode( 'cachedText', array( 'spacing' => 4 ) );
 
         $code =
-            "\$cacheHandler_{$codePlacementHash}->storeCache( array( 'scope' => 'template-block', 'binarydata' => \$cachedText ) );\n";
+            "eZTemplateCacheBlock::store( \$cacheHandler_{$codePlacementHash}, \$cachedText );\n";
 
         $newNodes[] = eZTemplateNodeTool::createCodePieceNode( $code, array( 'spacing' => 4 ) );
         $newNodes[] = eZTemplateNodeTool::createOutputVariableDecreaseNode( array( 'spacing' => 4 ) );
@@ -287,17 +287,36 @@ class eZTemplateCacheFunction
                        "functionChildren" => $functionChildren,
                        "rootNamespace" => $rootNamespace,
                        "currentNamespace" => $currentNamespace );
-        return $cacheFile->processCache( array( 'eZTemplateCacheBlock', 'retrieveContent' ),
-                                         array( $this, 'generateProcessedContent' ),
-                                         $ttl,
-                                         $globalExpiryTime,
-                                         $args );
+        $noted = !empty( $GLOBALS['eZDebugEnabled'] ) && class_exists( 'expRenderStats' );
+        $start = microtime( true );
+        $this->generateMs = null;
+        $result = $cacheFile->processCache( array( 'eZTemplateCacheBlock', 'retrieveContent' ),
+                                            array( $this, 'generateProcessedContent' ),
+                                            $ttl,
+                                            $globalExpiryTime,
+                                            $args );
+        if ( $noted )
+        {
+            $total = ( microtime( true ) - $start ) * 1000;
+            $generated = $this->generateMs !== null;
+            expRenderStats::noteCacheBlock( spl_object_id( $cacheFile ), $phpPath, $placementString, $keys, $nodeID, $ttl, !$generated,
+                                            $generated ? max( 0.0, $total - $this->generateMs ) : $total, $this->generateMs,
+                                            is_string( $result ) ? strlen( $result ) : null );
+        }
+        return $result;
     }
 
     function generateProcessedContent( $fname, $args )
     {
         extract( $args );
+        $noted = !empty( $GLOBALS['eZDebugEnabled'] ) && class_exists( 'expRenderStats' );
+        if ( $noted )
+            expRenderStats::cacheBlockGenerationStarted();
+        $start = microtime( true );
         $content = eZTemplateCacheFunction::processUncached( $tpl, $functionChildren, $rootNamespace, $currentNamespace );
+        $this->generateMs = ( microtime( true ) - $start ) * 1000;
+        if ( $noted )
+            expRenderStats::cacheBlockGenerationEnded();
         return array( 'scope'      => 'template-block',
                       'content'    => $content,
                       'binarydata' => $content );
@@ -336,6 +355,9 @@ class eZTemplateCacheFunction
     /// \privatesection
     /// Name of the function
     public $BlockName;
+
+    /// Time the uncompiled path took to generate the last block, for the debug bar; null when it was read
+    public $generateMs = null;
 }
 
 ?>

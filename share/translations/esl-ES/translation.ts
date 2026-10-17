@@ -65862,6 +65862,246 @@ Tendrás que cambiar la clase del nudo mediante la función de intercambio.</tra
         <source>%count err</source>
         <translation>%count err.</translation>
     </message>
+    <message>
+        <source>Rendering</source>
+        <translation>Renderizado</translation>
+    </message>
+    <message>
+        <source>View: hit</source>
+        <translation>Vista: acierto</translation>
+    </message>
+    <message>
+        <source>View: new</source>
+        <translation>Vista: nueva</translation>
+    </message>
+    <message>
+        <source>View: off</source>
+        <translation>Vista: desactivada</translation>
+    </message>
+    <message>
+        <source>View: ?</source>
+        <translation>Vista: ?</translation>
+    </message>
+    <message>
+        <source>Content view cache</source>
+        <translation>Caché de la vista de contenido</translation>
+    </message>
+    <message>
+        <source>Compiled %count</source>
+        <translation>Compiladas %count</translation>
+    </message>
+    <message>
+        <source>%compiled templates compiled in this request, %executed runs of compiled templates</source>
+        <translation>%compiled plantillas compiladas en esta petición, %executed ejecuciones de plantillas compiladas</translation>
+    </message>
+    <message>
+        <source>Read from the cache</source>
+        <translation>Leída de la caché</translation>
+    </message>
+    <message>
+        <source>Generated and stored in the cache</source>
+        <translation>Generada y guardada en la caché</translation>
+    </message>
+    <message>
+        <source>Generated without storing it in the cache</source>
+        <translation>Generada sin guardarla en la caché</translation>
+    </message>
+    <message>
+        <source>The cache file was not used</source>
+        <translation>No se usó el archivo de caché</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>No se usa</translation>
+    </message>
+    <message>
+        <source>The key was built, no outcome was noted</source>
+        <translation>Se generó la clave, no se registró ningún resultado</translation>
+    </message>
+    <message>
+        <source>Controller</source>
+        <translation>Controlador</translation>
+    </message>
+    <message>
+        <source>No module view ran.</source>
+        <translation>No se ejecutó ninguna vista de módulo.</translation>
+    </message>
+    <message>
+        <source>Module view</source>
+        <translation>Vista de módulo</translation>
+    </message>
+    <message>
+        <source>View class</source>
+        <translation>Clase de la vista</translation>
+    </message>
+    <message>
+        <source>Script</source>
+        <translation>Script</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>Navigation part</source>
+        <translation>Parte de navegación</translation>
+    </message>
+    <message>
+        <source>Design order (%count bases)</source>
+        <translation>Orden de diseños (%count bases)</translation>
+    </message>
+    <message>
+        <source>No content view ran on this page.</source>
+        <translation>En esta página no se ejecutó ninguna vista de contenido.</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Hash</source>
+        <translation>Hash</translation>
+    </message>
+    <message>
+        <source>Cache file</source>
+        <translation>Archivo de caché</translation>
+    </message>
+    <message>
+        <source>Cache key (%count parts)</source>
+        <translation>Clave de caché (%count partes)</translation>
+    </message>
+    <message>
+        <source>Added or changed by a content/view/cachekeys listener</source>
+        <translation>Añadida o cambiada por un listener de content/view/cachekeys</translation>
+    </message>
+    <message>
+        <source>listener</source>
+        <translation>listener</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>vacío</translation>
+    </message>
+    <message>
+        <source>Compiled templates run</source>
+        <translation>Plantillas compiladas ejecutadas</translation>
+    </message>
+    <message>
+        <source>Compiled in this request</source>
+        <translation>Compiladas en esta petición</translation>
+    </message>
+    <message>
+        <source>Templates compiled in this request</source>
+        <translation>Plantillas compiladas en esta petición</translation>
+    </message>
+    <message>
+        <source>CB %hits/%count</source>
+        <translation>CB %hits/%count</translation>
+    </message>
+    <message>
+        <source>Cache blocks: %hits of %count read from the cache, %generated ms to generate the others (outermost blocks)</source>
+        <translation>Bloques de caché: %hits de %count leídos de la caché, %generated ms para generar los demás (bloques exteriores)</translation>
+    </message>
+    <message>
+        <source>Cache blocks</source>
+        <translation>Bloques de caché</translation>
+    </message>
+    <message>
+        <source>No cache-block ran on this page.</source>
+        <translation>En esta página no se ejecutó ningún cache-block.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache; %lookup ms to look them up, %generated ms to generate the others (outermost blocks; a row's time holds the blocks inside it).</source>
+        <translation>%hits de %count leídos de la caché; %lookup ms para buscarlos, %generated ms para generar los demás (bloques exteriores; el tiempo de una fila incluye los bloques que contiene).</translation>
+    </message>
+    <message>
+        <source>The first %shown are listed.</source>
+        <translation>Se muestran los primeros %shown.</translation>
+    </message>
+    <message>
+        <source>hit</source>
+        <translation>acierto</translation>
+    </message>
+    <message>
+        <source>generated</source>
+        <translation>generado</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>no encontrado</translation>
+    </message>
+    <message>
+        <source>Lookup</source>
+        <translation>Búsqueda</translation>
+    </message>
+    <message>
+        <source>Generation</source>
+        <translation>Generación</translation>
+    </message>
+    <message>
+        <source>Expiry</source>
+        <translation>Caducidad</translation>
+    </message>
+    <message>
+        <source>Keys</source>
+        <translation>Claves</translation>
+    </message>
+    <message>
+        <source>keys</source>
+        <translation>claves</translation>
+    </message>
+    <message>
+        <source>unknown (custom code, or a template compiled before)</source>
+        <translation>desconocido (código propio o una plantilla compilada antes)</translation>
+    </message>
+    <message>
+        <source>subtree %node</source>
+        <translation>subárbol %node</translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation>Vista</translation>
+    </message>
+    <message>
+        <source>node %node</source>
+        <translation>nodo %node</translation>
+    </message>
+    <message>
+        <source>Templates rendered</source>
+        <translation>Plantillas renderizadas</translation>
+    </message>
+    <message>
+        <source>%count templates</source>
+        <translation>%count plantillas</translation>
+    </message>
+    <message>
+        <source>not compiled</source>
+        <translation>sin compilar</translation>
+    </message>
+    <message>
+        <source>Template tree</source>
+        <translation>Árbol de plantillas</translation>
+    </message>
+    <message>
+        <source>The module views that ran for this request, in order (an error page or a redirect adds one), with the class that ran each view and its script; below them the siteaccess, the navigation part and the design bases in the order templates are looked up.</source>
+        <translation>Las vistas de módulo que se ejecutaron para esta petición, en orden (una página de error o una redirección añade una), con la clase que ejecutó cada vista y su script; debajo, el siteaccess, la parte de navegación y las bases de diseño en el orden en que se buscan las plantillas.</translation>
+    </message>
+    <message>
+        <source>Every template this request rendered, in the order it started, nested under the template that included it. An arrow names the file an override chose; otherwise point at a name to see its file. A time holds everything the template included, not the parsing or compiling of the template itself. Templates of a view read from the view cache are not rendered and not listed.</source>
+        <translation>Cada plantilla que renderizó esta petición, en el orden en que empezó, anidada bajo la plantilla que la incluyó. Una flecha indica el archivo que eligió un override; si no, pase el puntero sobre un nombre para ver su archivo. Un tiempo incluye todo lo que la plantilla incluyó, no el análisis ni la compilación de la propia plantilla. Las plantillas de una vista leída de la caché de vistas no se renderizan ni se listan.</translation>
+    </message>
+    <message>
+        <source>Whether the content view (content/view) was read from its cache file or generated, and why. The key decides the file: two requests with the same parts share it. Lookup is the time to find and read the file, generation the time to render the view.</source>
+        <translation>Si la vista de contenido (content/view) se leyó de su archivo de caché o se generó, y por qué. La clave decide el archivo: dos peticiones con las mismas partes lo comparten. La búsqueda es el tiempo para encontrar y leer el archivo; la generación, el tiempo para renderizar la vista.</translation>
+    </message>
+    <message>
+        <source>Every {cache-block} in the order it was looked up. A hit costs only the lookup; a generated block renders its content and stores it for the next request. A block inside a generated block only runs then, so the counts differ between a first and a second request.</source>
+        <translation>Cada {cache-block} en el orden en que se buscó. Un acierto solo cuesta la búsqueda; un bloque generado renderiza su contenido y lo guarda para la siguiente petición. Un bloque dentro de un bloque generado solo se ejecuta entonces, por eso los recuentos difieren entre una primera y una segunda petición.</translation>
+    </message>
+    <message>
+        <source>The settings that decide caching and compiling, and how many templates ran from the compiled cache or were compiled now. Right after a template cache clear every template is compiled once.</source>
+        <translation>Los ajustes que deciden la caché y la compilación, y cuántas plantillas se ejecutaron desde la caché compilada o se compilaron ahora. Justo después de vaciar la caché de plantillas, cada plantilla se compila una vez.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

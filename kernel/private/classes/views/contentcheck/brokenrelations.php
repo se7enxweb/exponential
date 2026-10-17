@@ -33,13 +33,11 @@ class Brokenrelations extends \Exponential\Runnable\ModuleView
             if ( $http->hasGetVariable( $name ) )
                 $input[$name] = $http->getVariable( $name );
         }
-        // the node from the address, or from the filter form (GET NodeID), which then becomes the address
-        $input['NodeID'] = isset( $Params['NodeID'] ) ? $Params['NodeID'] : null;
-        if ( $http->hasGetVariable( 'NodeID' ) )
-        {
-            $params = \expContentCheckBrokenRelations::parameters( array_merge( $input, array( 'NodeID' => $http->getVariable( 'NodeID' ) ) ), Unreferenced::rootNodeID() );
-            return $module->redirectTo( '/contentcheck/brokenrelations/' . (int)$params['node_id'] . self::querySuffix( $params ) );
-        }
+        // the node from the filter form (GET NodeID), else from the address. No redirect to an address with the node:
+        // the kernel carries the query of a request over every module redirect, so the NodeID of the form came back
+        // with the redirect and sent it to the same address again, until the browser gave up (too many redirects)
+        $input['NodeID'] = self::chosenNodeID( isset( $Params['NodeID'] ) ? $Params['NodeID'] : null,
+                                               $http->hasGetVariable( 'NodeID' ) ? $http->getVariable( 'NodeID' ) : null );
         $input['Limit'] = $limit;
         // without a node: the content tree's top node, which a user with a limited content/read may read as well
         $params = \expContentCheckBrokenRelations::parameters( $input, Unreferenced::rootNodeID() );
@@ -62,6 +60,23 @@ class Brokenrelations extends \Exponential\Runnable\ModuleView
         return array( 'content' => $tpl->fetch( 'design:contentcheck/brokenrelations.tpl' ),
                       'path' => array( array( 'text' => \ezpI18n::tr( 'kernel/contentcheck', 'Setup' ), 'url' => 'setup/menu' ),
                                        array( 'text' => \ezpI18n::tr( 'kernel/contentcheck', 'Broken relations' ), 'url' => false ) ) );
+    }
+
+    /**
+     * The node the check starts from: the one of the filter form (GET NodeID) when it is a node id, else the one in
+     * the address; null for neither (the content tree's top node then).
+     *
+     * @param mixed $addressNodeID the view parameter NodeID
+     * @param mixed $formNodeID GET NodeID, or null when the request has none
+     * @return int|null
+     */
+    public static function chosenNodeID( $addressNodeID, $formNodeID )
+    {
+        $form = $formNodeID === null || is_array( $formNodeID ) ? array() : \expContentCheck::idList( $formNodeID, 1 );
+        if ( $form )
+            return $form[0];
+        $address = $addressNodeID === null || is_array( $addressNodeID ) ? array() : \expContentCheck::idList( $addressNodeID, 1 );
+        return $address ? $address[0] : null;
     }
 
     /**
