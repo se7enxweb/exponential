@@ -10575,6 +10575,10 @@
         <source>Upload files to this location.</source>
         <translation>DaqvamDaq ghItlhmey tIlab.</translation>
     </message>
+    <message>
+        <source>The sub items cannot be listed: Exponential UI (the extension expui) is not active or not loaded on this siteaccess.</source>
+        <translation>puq Dochmey tetlhDaq lanlu&apos;laHbe&apos;: yoS lojmItvamDaq Exponential UI (expui chuqtaHghach) chu&apos;lu&apos;be&apos; pagh lI&apos;lu&apos;be&apos;.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/node/view/line</name>
@@ -14687,6 +14691,14 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
     <message>
         <source>Overview</source>
         <translation>naQ leghghach</translation>
+    </message>
+    <message>
+        <source>Storage files</source>
+        <translation>ghItlh polmeH Daq ghItlhmey</translation>
+    </message>
+    <message>
+        <source>Files in the storage that nothing uses, and files with the wrong owner or mode.</source>
+        <translation>pagh lo&apos;bogh ghItlh polmeH Daq ghItlhmey, ghajwI&apos; pagh chaw&apos;mey muj ghajbogh ghItlhmey je.</translation>
     </message>
 </context>
 <context>
@@ -60011,6 +60023,26 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>Registration link refused</source>
         <translation>muvghach rarwI&apos; lajQo&apos;lu&apos;ta&apos;</translation>
     </message>
+    <message>
+        <source>Image aliases regenerate</source>
+        <translation>mIllogh pong latlhmey chenmoHqa&apos;ghach</translation>
+    </message>
+    <message>
+        <source>Missing file restore</source>
+        <translation>tu&apos;lu&apos;be&apos;bogh ghItlh cheghmoHghach</translation>
+    </message>
+    <message>
+        <source>Missing file replace</source>
+        <translation>tu&apos;lu&apos;be&apos;bogh ghItlh tamghach</translation>
+    </message>
+    <message>
+        <source>Missing file reference remove</source>
+        <translation>tu&apos;lu&apos;be&apos;bogh ghItlh &apos;oSwI&apos; teqghach</translation>
+    </message>
+    <message>
+        <source>Missing file review mark</source>
+        <translation>tu&apos;lu&apos;be&apos;bogh ghItlh nuDmeH wIvghach</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/state/assign</name>
@@ -61138,6 +61170,782 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>Change or remove the rule target.</source>
         <translation>chut ghoch yIchoH pagh yIteq.</translation>
+    </message>
+    <message>
+        <source>Start location (node id)</source>
+        <translation>tagh Daq (Sor Daq ngu&apos;meH mI&apos;)</translation>
+    </message>
+    <message>
+        <source>Now: %path</source>
+        <translation>DaH: %path</translation>
+    </message>
+    <message>
+        <source>1 is the whole tree. Your choice is remembered.</source>
+        <translation>1: Sor naQ. DawIvbogh qawlu&apos;.</translation>
+    </message>
+    <message>
+        <source>Start locations</source>
+        <translation>tagh Daqmey</translation>
+    </message>
+    <message>
+        <source>Choose with the node picker</source>
+        <translation>Sor Daq wIvwI&apos; yIlo&apos;</translation>
+    </message>
+    <message>
+        <source>Wrong owner</source>
+        <translation>ghajwI&apos; muj</translation>
+    </message>
+    <message>
+        <source>Wrong mode</source>
+        <translation>chaw&apos;mey muj</translation>
+    </message>
+    <message>
+        <source>Empty file</source>
+        <translation>ghItlh chIm</translation>
+    </message>
+    <message>
+        <source>Name differs in case</source>
+        <translation>pong ngutlh tIn mach je pIm</translation>
+    </message>
+    <message>
+        <source>Path differs from its parts</source>
+        <translation>He &apos;ay&apos;meyDaj pIm</translation>
+    </message>
+    <message>
+        <source>In another type directory</source>
+        <translation>latlh Segh ghItlh pa&apos;Daq</translation>
+    </message>
+    <message>
+        <source>Path</source>
+        <translation>He</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>qanghach</translation>
+    </message>
+    <message>
+        <source>moved to the quarantine</source>
+        <translation>ghItlh mo&apos;Daq vIHmoHlu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>restored</source>
+        <translation>cheghmoHlu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>deleted from the quarantine</source>
+        <translation>ghItlh mo&apos;vo&apos; Qaw&apos;lu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>given the expected owner and mode</source>
+        <translation>ghajwI&apos; chaw&apos;mey je pIHlu&apos;bogh noblu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Storage files</source>
+        <translation>ghItlh polmeH Daq ghItlhmey</translation>
+    </message>
+    <message>
+        <source>The files below %dir: those no content uses (orphan files), and the file-system problems of those it uses. A file counts as used when a version of any object, also an old one or one in the trash, names it, or when a field, a layout, a setting or a template names its path. Files younger than %days days are never orphans. Nothing is deleted from the storage: orphans go to a quarantine, from where they can be restored.</source>
+        <translation>%dir bIng ghItlhmey: pagh De&apos; lo&apos;bogh ghItlhmey (lo&apos;lu&apos;be&apos;bogh ghItlhmey), lo&apos;lu&apos;bogh ghItlhmey ghItlh pat Qaghmey je. ghItlh lo&apos;lu&apos; &apos;e&apos; togh&apos;lu&apos; Doch chovnatlh ponglu&apos;chugh (ngo&apos;bogh chovnatlh pagh veQDaq ngaSbogh chovnatlh je), pagh He ponglu&apos;chugh tlhegh, mIch mIw, DuH pagh mIw &apos;echlet. %days jaj qanbe&apos;bogh ghItlhmey not lo&apos;lu&apos;be&apos;bogh ghItlhmey &apos;oH. ghItlh polmeH Daqvo&apos; pagh Qaw&apos;lu&apos;: ghItlh mo&apos;Daq ghoS lo&apos;lu&apos;be&apos;bogh ghItlhmey, &apos;ej pa&apos;vo&apos; cheghmoHlu&apos;laH.</translation>
+    </message>
+    <message>
+        <source>%count files (%size) were %action.</source>
+        <translation>%count ghItlh (%size): %action.</translation>
+    </message>
+    <message>
+        <source>%count could not be changed.</source>
+        <translation>%count choHlu&apos;laHbe&apos;ta&apos;.</translation>
+    </message>
+    <message>
+        <source>Nothing was changed: the files changed after the confirmation. Tick them again.</source>
+        <translation>pagh choHlu&apos;ta&apos;: Da&apos;olpu&apos;DI&apos; ghItlhmey choHpu&apos;. tIwIvqa&apos;.</translation>
+    </message>
+    <message>
+        <source>Nothing was changed.</source>
+        <translation>pagh choHlu&apos;.</translation>
+    </message>
+    <message>
+        <source>The files are kept by a cluster file handler: they are read from its table, owner and mode are not checked, and nothing can be moved or fixed here.</source>
+        <translation>jabwI&apos; ghom ghItlh vu&apos;wI&apos; ghItlhmey pol: SomHomDajvo&apos; laDlu&apos;, ghajwI&apos; chaw&apos;mey je &apos;ollu&apos;be&apos;, &apos;ej naDev pagh vIHmoHlu&apos;laH pagh tI&apos;lu&apos;laH.</translation>
+    </message>
+    <message>
+        <source>Last scan</source>
+        <translation>Qav neja&apos;ghach</translation>
+    </message>
+    <message>
+        <source>The storage has not been scanned yet.</source>
+        <translation>wej ghItlh polmeH Daq neja&apos;lu&apos;.</translation>
+    </message>
+    <message>
+        <source>A scan started at %time is not finished (%percent %).</source>
+        <translation>%time poHDaq neja&apos;ghach taghlu&apos;pu&apos;; wej rInpu&apos; (%percent %).</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>ghoSghach</translation>
+    </message>
+    <message>
+        <source>Finished</source>
+        <translation>rInta&apos;</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>ghItlhmey</translation>
+    </message>
+    <message>
+        <source>Used</source>
+        <translation>lo&apos;lu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Orphan files</source>
+        <translation>lo&apos;lu&apos;be&apos;bogh ghItlhmey</translation>
+    </message>
+    <message>
+        <source>Too new to judge</source>
+        <translation>chu&apos;qu&apos;; wej noHlu&apos;laH</translation>
+    </message>
+    <message>
+        <source>Took</source>
+        <translation>poH lo&apos;lu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>%seconds s in %steps steps</source>
+        <translation>%seconds lup, %steps mIw &apos;ay&apos;</translation>
+    </message>
+    <message>
+        <source>Files were changed since this scan; the lists leave out what was moved or fixed.</source>
+        <translation>neja&apos;ghachvam ret ghItlhmey choHlu&apos;pu&apos;; vIHmoHlu&apos;pu&apos;bogh pagh tI&apos;lu&apos;pu&apos;bogh Dochmey chellu&apos;be&apos; tetlhmeyDaq.</translation>
+    </message>
+    <message>
+        <source>The reference index could not be read completely, so paths named only in rich text, layouts, settings or templates were not seen. Nothing is moved until it can be read.</source>
+        <translation>&apos;oSwI&apos; mI&apos; tetlh naQ laDlu&apos;laHbe&apos;pu&apos;; vaj ghItlh &apos;IH, mIch mIwmey, DuHmey pagh mIw &apos;echletmeyDaq neH ponglu&apos;bogh Hemey leghlu&apos;be&apos;pu&apos;. laDlu&apos;laHpa&apos; pagh vIHmoHlu&apos;.</translation>
+    </message>
+    <message>
+        <source>Continue the scan</source>
+        <translation>neja&apos;ghach yItaH</translation>
+    </message>
+    <message>
+        <source>Start again</source>
+        <translation>yItaghqa&apos;</translation>
+    </message>
+    <message>
+        <source>Scan again</source>
+        <translation>yInej&apos;aqa&apos;</translation>
+    </message>
+    <message>
+        <source>Scan the storage</source>
+        <translation>ghItlh polmeH Daq yInej&apos;a&apos;</translation>
+    </message>
+    <message>
+        <source>The scan runs in steps of a few seconds and can be continued later; on a large storage run ./console exp:content-check --storage.</source>
+        <translation>neja&apos;ghach mIw &apos;ay&apos;mey ruQ, wa&apos; mIw &apos;ay&apos; lup puS; ghIq taHlu&apos;laH. ghItlh polmeH Daq tIn: ./console exp:content-check --storage yIQapmoH.</translation>
+    </message>
+    <message>
+        <source>Lists</source>
+        <translation>tetlhmey</translation>
+    </message>
+    <message>
+        <source>File problems</source>
+        <translation>ghItlh Qaghmey</translation>
+    </message>
+    <message>
+        <source>Quarantine</source>
+        <translation>ghItlh mo&apos;</translation>
+    </message>
+    <message>
+        <source>Problems</source>
+        <translation>Sengmey</translation>
+    </message>
+    <message>
+        <source>Orphan files belong to no content, so the start location does not apply to them: the whole storage is listed.</source>
+        <translation>pagh De&apos; ghaj lo&apos;lu&apos;be&apos;bogh ghItlhmey; vaj chaH lo&apos;be&apos; tagh Daq: ghItlh polmeH Daq naQ tetlhDaq lanlu&apos;.</translation>
+    </message>
+    <message>
+        <source>%count files (%size) in %dir.</source>
+        <translation>%count ghItlh (%size), Daq: %dir.</translation>
+    </message>
+    <message>
+        <source>The scan keeps the first %count orphans; move them, then scan again for the others.</source>
+        <translation>wa&apos;DIch %count lo&apos;lu&apos;be&apos;bogh ghItlh neH pol neja&apos;ghach; tIvIHmoH, ghIq yInej&apos;aqa&apos; latlh Data&apos;meH.</translation>
+    </message>
+    <message>
+        <source>Scan the storage to see this list.</source>
+        <translation>tetlhvam DaleghmeH ghItlh polmeH Daq yInej&apos;a&apos;.</translation>
+    </message>
+    <message>
+        <source>No orphan files.</source>
+        <translation>lo&apos;lu&apos;be&apos;bogh ghItlh tu&apos;lu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>No file problems below this node match the filter.</source>
+        <translation>Sor Daqvam bIng Say&apos;moHwI&apos; rurbogh ghItlh Qagh tu&apos;lu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>The quarantine is empty.</source>
+        <translation>chIm ghItlh mo&apos;.</translation>
+    </message>
+    <message>
+        <source>Problem</source>
+        <translation>Seng</translation>
+    </message>
+    <message>
+        <source>Used by</source>
+        <translation>lo&apos;bogh Dochmey</translation>
+    </message>
+    <message>
+        <source>Moved on</source>
+        <translation>vIHmoHlu&apos;ta&apos;bogh jaj</translation>
+    </message>
+    <message>
+        <source>Owner and mode</source>
+        <translation>ghajwI&apos; chaw&apos;mey je</translation>
+    </message>
+    <message>
+        <source>%days d</source>
+        <translation>%days jaj</translation>
+    </message>
+    <message>
+        <source>Found: %path</source>
+        <translation>tu&apos;lu&apos;ta&apos;: %path</translation>
+    </message>
+    <message>
+        <source>Move ticked files to the quarantine</source>
+        <translation>ghItlh mo&apos;Daq wIvlu&apos;ta&apos;bogh ghItlhmey tIvIHmoH</translation>
+    </message>
+    <message>
+        <source>Fix owner and mode of ticked files</source>
+        <translation>wIvlu&apos;ta&apos;bogh ghItlhmey ghajwI&apos; chaw&apos;mey je tItI&apos;</translation>
+    </message>
+    <message>
+        <source>Restore ticked files</source>
+        <translation>wIvlu&apos;ta&apos;bogh ghItlhmey tIcheghmoH</translation>
+    </message>
+    <message>
+        <source>Delete ticked files permanently</source>
+        <translation>wIvlu&apos;ta&apos;bogh ghItlhmey reH tIQaw&apos;</translation>
+    </message>
+    <message>
+        <source>The next page is a dry run: it shows what would happen to each file and changes nothing until you confirm. At most %count files at a time.</source>
+        <translation>nav veb tobmeH Qapghach &apos;oH: ghItlh Hoch qaSbogh &apos;ang &apos;ej Da&apos;olpa&apos; pagh choH. wa&apos;logh %count ghItlh law&apos; law&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>Move to the quarantine</source>
+        <translation>ghItlh mo&apos;Daq yIvIHmoH</translation>
+    </message>
+    <message>
+        <source>Restore from the quarantine</source>
+        <translation>ghItlh mo&apos;vo&apos; yIcheghmoH</translation>
+    </message>
+    <message>
+        <source>Delete from the quarantine</source>
+        <translation>ghItlh mo&apos;vo&apos; yIQaw&apos;</translation>
+    </message>
+    <message>
+        <source>Fix owner and mode</source>
+        <translation>ghajwI&apos; chaw&apos;mey je tItI&apos;</translation>
+    </message>
+    <message>
+        <source>Moved to the quarantine</source>
+        <translation>ghItlh mo&apos;Daq vIHmoHlu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Moved back to the storage</source>
+        <translation>ghItlh polmeH Daq cheghmoHlu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Deleted permanently</source>
+        <translation>reH Qaw&apos;lu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Owner and mode set</source>
+        <translation>ghajwI&apos; chaw&apos;mey je choHlu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>The file is not there (any more).</source>
+        <translation>naDev ghItlh tu&apos;lu&apos;be&apos; (DaH).</translation>
+    </message>
+    <message>
+        <source>The file is not in a directory the check covers.</source>
+        <translation>&apos;olghachvam ghItlh pa&apos;mey ngaSbe&apos; ghItlh pa&apos;.</translation>
+    </message>
+    <message>
+        <source>The file is a symbolic link.</source>
+        <translation>ghItlh rarwI&apos; &apos;oH ghItlhvam&apos;e&apos;.</translation>
+    </message>
+    <message>
+        <source>The path is in the ignored list.</source>
+        <translation>buSHa&apos;lu&apos;bogh tetlhDaq He tu&apos;lu&apos;.</translation>
+    </message>
+    <message>
+        <source>The file is too new to judge.</source>
+        <translation>chu&apos;qu&apos; ghItlh; wej noHlu&apos;laH.</translation>
+    </message>
+    <message>
+        <source>Content uses the file now.</source>
+        <translation>DaH ghItlh lo&apos; De&apos;.</translation>
+    </message>
+    <message>
+        <source>No content uses the file: it is an orphan, not a problem.</source>
+        <translation>pagh De&apos; lo&apos; ghItlh: lo&apos;lu&apos;be&apos;bogh ghItlh &apos;oH, Qagh &apos;oHbe&apos;.</translation>
+    </message>
+    <message>
+        <source>A file is already at the destination.</source>
+        <translation>ghochDaq ghItlh tu&apos;lu&apos;pu&apos;.</translation>
+    </message>
+    <message>
+        <source>The reference index cannot be read now.</source>
+        <translation>DaH &apos;oSwI&apos; mI&apos; tetlh laDlu&apos;laHbe&apos;.</translation>
+    </message>
+    <message>
+        <source>Files of a cluster file handler cannot be changed here.</source>
+        <translation>jabwI&apos; ghom ghItlh vu&apos;wI&apos; ghItlhmey naDev choHlu&apos;laHbe&apos;.</translation>
+    </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions as root.</source>
+        <translation>ghajwI&apos; choHlaH De&apos; pat loHwI&apos; neH: root rurmeH ./console exp:content-check --fix-permissions yIQapmoH.</translation>
+    </message>
+    <message>
+        <source>This server process does not own the file, so it cannot change its mode.</source>
+        <translation>ghItlh ghajbe&apos; jabwI&apos; Qu&apos;vam; vaj chaw&apos;meyDaj choHlaHbe&apos;.</translation>
+    </message>
+    <message>
+        <source>Owner and mode are already as expected.</source>
+        <translation>pIHlu&apos;bogh rur ghajwI&apos; chaw&apos;mey je.</translation>
+    </message>
+    <message>
+        <source>No file was ticked. Tick the files first.</source>
+        <translation>ghItlh wIvlu&apos;be&apos;. wa&apos;DIch ghItlhmey tIwIv.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing has been changed yet.</source>
+        <translation>tobmeH Qapghach: wej pagh choHlu&apos;.</translation>
+    </message>
+    <message>
+        <source>Only the first %count ticked files are taken; do the others afterwards.</source>
+        <translation>wIvlu&apos;ta&apos;bogh ghItlh %count wa&apos;DIch neH tlhaplu&apos;; ghIq latlh tIwIv.</translation>
+    </message>
+    <message>
+        <source>%count files (%size) will be moved to %dir, below the date of today, keeping their path. They can be restored from there.</source>
+        <translation>%count ghItlh (%size) vIHmoHlu&apos;; ghoch: %dir, DaHjaj jaj bIng. Hemeychaj pollu&apos;. pa&apos;vo&apos; cheghmoHlu&apos;laH.</translation>
+    </message>
+    <message>
+        <source>%count files (%size) will be deleted from the quarantine. This cannot be undone.</source>
+        <translation>ghItlh mo&apos;vo&apos; %count ghItlh (%size) Qaw&apos;lu&apos;. Qaw&apos;ghachvam chegh&apos;eghmoHlaHbe&apos;.</translation>
+    </message>
+    <message>
+        <source>%count files (%size) will be moved back to their place in the storage.</source>
+        <translation>ghItlh polmeH DaqDaq Daqchajvo&apos; %count ghItlh (%size) cheghmoHlu&apos;.</translation>
+    </message>
+    <message>
+        <source>%count files will get the expected owner and mode; nothing else is changed.</source>
+        <translation>pIHlu&apos;bogh ghajwI&apos; chaw&apos;mey je ghajchoH %count ghItlh; latlh pagh choHlu&apos;.</translation>
+    </message>
+    <message>
+        <source>None of the ticked files can be changed.</source>
+        <translation>wIvlu&apos;ta&apos;bogh ghItlh wa&apos; choHlu&apos;laHbe&apos;.</translation>
+    </message>
+    <message>
+        <source>To: %path</source>
+        <translation>Daq: %path</translation>
+    </message>
+    <message>
+        <source>Left as it is</source>
+        <translation>choHlu&apos;be&apos;</translation>
+    </message>
+    <message>
+        <source>I understand that these files are deleted permanently.</source>
+        <translation>ghItlhmeyvam reH Qaw&apos;lu&apos; &apos;e&apos; vIyaj.</translation>
+    </message>
+    <message>
+        <source>Confirm for %count files</source>
+        <translation>%count ghItlhvaD yI&apos;ol</translation>
+    </message>
+    <message>
+        <source>Scanning the storage</source>
+        <translation>ghItlh polmeH Daq nej&apos;a&apos;lu&apos;taH</translation>
+    </message>
+    <message>
+        <source>%files files read so far (%size), %orphans of them orphans; %percent % done.</source>
+        <translation>DaH %files ghItlh laDlu&apos;pu&apos; (%size), %orphans lo&apos;lu&apos;be&apos;; %percent % rInpu&apos;.</translation>
+    </message>
+    <message>
+        <source>Stop here</source>
+        <translation>naDev yImev</translation>
+    </message>
+    <message>
+        <source>The scan goes on by itself. Stop it at any time; it can be continued later.</source>
+        <translation>neja&apos;ghach taHtaH. reH DamevmoHlaH; ghIq taHlu&apos;laH.</translation>
+    </message>
+    <message>
+        <source>This page only takes the forms of the storage files.</source>
+        <translation>ghItlh polmeH Daq ghItlhmey De&apos; lanmeH ghItlhmey neH laj navvam.</translation>
+    </message>
+    <message>
+        <source>You may not do this with storage files.</source>
+        <translation>ghItlh polmeH Daq ghItlhmeyvaD Dochvam DaruchmeH chaw&apos; Daghajbe&apos;.</translation>
+    </message>
+    <message>
+        <source>The form has expired. Open the list again and tick the files once more.</source>
+        <translation>Heghpu&apos; De&apos; lanmeH ghItlh. tetlh yIpoSmoHqa&apos; &apos;ej ghItlhmey tIwIvqa&apos;.</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>yI&apos;ol</translation>
+    </message>
+    <message>
+        <source>Choose classes</source>
+        <translation>buvmey tIwIv</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>buvmey Hoch</translation>
+    </message>
+    <message>
+        <source>No class</source>
+        <translation>buv pagh</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>navvamDaq Hoch yIwIv</translation>
+    </message>
+    <message>
+        <source>Select none</source>
+        <translation>pagh yIwIv</translation>
+    </message>
+    <message>
+        <source>%selected of %total selected</source>
+        <translation>%selected wIvlu&apos;ta&apos; (Hoch: %total)</translation>
+    </message>
+    <message>
+        <source>Move all %count results to the trash</source>
+        <translation>veQDaq %count jangghach Hoch tIvIHmoH</translation>
+    </message>
+    <message>
+        <source>Move all %count files to the quarantine</source>
+        <translation>ghItlh mo&apos;Daq %count ghItlh Hoch tIvIHmoH</translation>
+    </message>
+    <message>
+        <source>Fix owner and mode of all %count results</source>
+        <translation>%count jangghach Hoch ghajwI&apos; chaw&apos;mey je tItI&apos;</translation>
+    </message>
+    <message>
+        <source>Restore all %count files</source>
+        <translation>%count ghItlh Hoch tIcheghmoH</translation>
+    </message>
+    <message>
+        <source>Select all</source>
+        <translation>Hoch yIwIv</translation>
+    </message>
+    <message>
+        <source>File missing</source>
+        <translation>ghItlh tu&apos;lu&apos;be&apos;</translation>
+    </message>
+    <message>
+        <source>Alias missing</source>
+        <translation>mIllogh pong latlh tu&apos;lu&apos;be&apos;</translation>
+    </message>
+    <message>
+        <source>Alias out of date</source>
+        <translation>mIllogh pong latlh ngo&apos;qu&apos;</translation>
+    </message>
+    <message>
+        <source>Alias never made</source>
+        <translation>mIllogh pong latlh not chenmoHlu&apos;</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>Hutlh</translation>
+    </message>
+    <message>
+        <source>out of date</source>
+        <translation>ngo&apos;qu&apos;</translation>
+    </message>
+    <message>
+        <source>never made</source>
+        <translation>not chenmoHlu&apos;</translation>
+    </message>
+    <message>
+        <source>Regenerate</source>
+        <translation>yIchenmoHqa&apos;</translation>
+    </message>
+    <message>
+        <source>Restore</source>
+        <translation>yIcheghmoH</translation>
+    </message>
+    <message>
+        <source>Re-upload</source>
+        <translation>yIlabqa&apos;</translation>
+    </message>
+    <message>
+        <source>Remove reference</source>
+        <translation>&apos;oSwI&apos; yIteq</translation>
+    </message>
+    <message>
+        <source>Mark for review</source>
+        <translation>nuDmeH yIwIv</translation>
+    </message>
+    <message>
+        <source>Version %version</source>
+        <translation>chovnatlh %version</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>nab</translation>
+    </message>
+    <message>
+        <source>File: %time</source>
+        <translation>ghItlh: %time</translation>
+    </message>
+    <message>
+        <source>Marked for review</source>
+        <translation>nuDmeH wIvlu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Regenerate the aliases from the original</source>
+        <translation>wa&apos;DIch mIllogh vo&apos; mIllogh pong latlhmey tIchenmoHqa&apos;</translation>
+    </message>
+    <message>
+        <source>Restore from another version</source>
+        <translation>latlh chovnatlhvo&apos; yIcheghmoH</translation>
+    </message>
+    <message>
+        <source>Re-upload or replace the file</source>
+        <translation>ghItlh yIlabqa&apos; pagh yItam</translation>
+    </message>
+    <message>
+        <source>Remove the dead reference</source>
+        <translation>Heghpu&apos;bogh &apos;oSwI&apos; yIteq</translation>
+    </message>
+    <message>
+        <source>Missing files in %dir</source>
+        <translation>tu&apos;lu&apos;be&apos;bogh ghItlhmey, Daq: %dir</translation>
+    </message>
+    <message>
+        <source>Images, files and media whose file is not in the storage, in the published version and in drafts, and images whose aliases are missing or were made with other settings.</source>
+        <translation>HochvaD &apos;anglu&apos;ta&apos;bogh chovnatlhDaq nabmeyDaq je, ghItlh polmeH DaqDaq ghItlhchaj tu&apos;lu&apos;be&apos;bogh mIllogh, ghItlhmey mIllogh jo je; mIllogh pong latlhmeychaj tu&apos;lu&apos;be&apos;bogh pagh latlh DuHmey lo&apos;taHvIS chenmoHlu&apos;pu&apos;bogh mIllogh je.</translation>
+    </message>
+    <message>
+        <source>Nothing was changed: the files or your access changed after the confirmation. Choose the rows again.</source>
+        <translation>pagh choHlu&apos;ta&apos;: Da&apos;olpu&apos;DI&apos; ghItlhmey pagh &apos;el chaw&apos;lIj choHpu&apos;. tlheghmey tIwIvqa&apos;.</translation>
+    </message>
+    <message>
+        <source>%count field versions done.</source>
+        <translation>%count tlhegh chovnatlh rInta&apos;.</translation>
+    </message>
+    <message>
+        <source>%count could not be done.</source>
+        <translation>%count rInmoHlu&apos;laHbe&apos;ta&apos;.</translation>
+    </message>
+    <message>
+        <source>No missing file and no alias problem found.</source>
+        <translation>tu&apos;lu&apos;be&apos;bogh ghItlh tu&apos;lu&apos;be&apos;, mIllogh pong latlh Qagh tu&apos;lu&apos;be&apos; je.</translation>
+    </message>
+    <message>
+        <source>Nothing found among these objects. Go on with the next page.</source>
+        <translation>Dochmeyvam pagh tu&apos;lu&apos;. nav veb yIghoS.</translation>
+    </message>
+    <message>
+        <source>Object</source>
+        <translation>Doch</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>chovnatlh</translation>
+    </message>
+    <message>
+        <source>Expected path</source>
+        <translation>He pIHlu&apos;bogh</translation>
+    </message>
+    <message>
+        <source>Missing files from the start</source>
+        <translation>taghvo&apos; tu&apos;lu&apos;be&apos;bogh ghItlhmey</translation>
+    </message>
+    <message>
+        <source>Next page of missing files</source>
+        <translation>tu&apos;lu&apos;be&apos;bogh ghItlhmey nav veb</translation>
+    </message>
+    <message>
+        <source>With the ticked rows</source>
+        <translation>wIvlu&apos;ta&apos;bogh tlheghmey</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>nungbogh mIllogh</translation>
+    </message>
+    <message>
+        <source>The next page shows what will happen to each row and asks you to confirm. At most %count rows at a time; they are done in batches.</source>
+        <translation>nav veb tlhegh Hoch qaSbogh &apos;ang &apos;ej Da&apos;olmeH tlhob. wa&apos;logh %count tlhegh law&apos; law&apos;be&apos;; ghommey ruQlu&apos;.</translation>
+    </message>
+    <message>
+        <source>Published version</source>
+        <translation>HochvaD &apos;anglu&apos;ta&apos;bogh chovnatlh</translation>
+    </message>
+    <message>
+        <source>Drafts</source>
+        <translation>nabmey</translation>
+    </message>
+    <message>
+        <source>Missing files: problems</source>
+        <translation>tu&apos;lu&apos;be&apos;bogh ghItlhmey: Qaghmey</translation>
+    </message>
+    <message>
+        <source>Missing files: versions</source>
+        <translation>tu&apos;lu&apos;be&apos;bogh ghItlhmey: chovnatlhmey</translation>
+    </message>
+    <message>
+        <source>You may not edit this object.</source>
+        <translation>Dochvam DachoHlaHbe&apos;.</translation>
+    </message>
+    <message>
+        <source>Nothing is wrong with it any more.</source>
+        <translation>DaH Qagh ghajbe&apos;.</translation>
+    </message>
+    <message>
+        <source>The original file is missing: restore or upload it first.</source>
+        <translation>wa&apos;DIch ghItlh tu&apos;lu&apos;be&apos;: wa&apos;DIch yIcheghmoH pagh yIlab.</translation>
+    </message>
+    <message>
+        <source>This kind of field has no image aliases.</source>
+        <translation>tlheghvam Segh mIllogh pong latlhmey ghajbe&apos;.</translation>
+    </message>
+    <message>
+        <source>No other version of this field still has its file.</source>
+        <translation>tlheghvam latlh chovnatlh ghItlhDaj ghajtaHbe&apos;.</translation>
+    </message>
+    <message>
+        <source>Its file is not missing.</source>
+        <translation>ghItlhDaj tu&apos;lu&apos;.</translation>
+    </message>
+    <message>
+        <source>No file was given, or the file to copy is gone.</source>
+        <translation>ghItlh noblu&apos;be&apos;, pagh lI&apos;lu&apos;meH ghItlh ghoSpu&apos;.</translation>
+    </message>
+    <message>
+        <source>The file must have the same extension as the expected path, and an image must be an image.</source>
+        <translation>He pIHlu&apos;bogh rur ghItlh pong Qav, &apos;ej mIllogh &apos;oHnIS mIllogh&apos;e&apos;.</translation>
+    </message>
+    <message>
+        <source>The file is too large.</source>
+        <translation>tInqu&apos;qu&apos; ghItlh.</translation>
+    </message>
+    <message>
+        <source>A file is at the expected path now; it was left alone.</source>
+        <translation>DaH He pIHlu&apos;bogh Daq ghItlh tu&apos;lu&apos;; choHlu&apos;be&apos;ta&apos;.</translation>
+    </message>
+    <message>
+        <source>The file could not be written to the storage.</source>
+        <translation>ghItlh polmeH DaqDaq ghItlh ghItlhlu&apos;laHbe&apos;ta&apos;.</translation>
+    </message>
+    <message>
+        <source>It could not be done. The debug output says why.</source>
+        <translation>rInmoHlu&apos;laHbe&apos;ta&apos;. qatlh &apos;e&apos; ja&apos; Qagh nejghach De&apos;.</translation>
+    </message>
+    <message>
+        <source>Only the first %count objects were checked. Choose a smaller subtree to see the rest.</source>
+        <translation>wa&apos;DIch %count Doch neH &apos;ollu&apos;ta&apos;. latlh DaleghmeH SorHom mach yIwIv.</translation>
+    </message>
+    <message>
+        <source>Tick at least one problem and one version.</source>
+        <translation>wa&apos; Qagh wa&apos; chovnatlh je yIwIv; puS law&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>Preview for all %count results</source>
+        <translation>%count jangghach Hoch nungbogh mIllogh</translation>
+    </message>
+    <message>
+        <source>Regenerate the aliases</source>
+        <translation>mIllogh pong latlhmey tIchenmoHqa&apos;</translation>
+    </message>
+    <message>
+        <source>The aliases of each image are made again from its original, with the settings of image.ini now. The original is not changed.</source>
+        <translation>mIllogh Hoch mIllogh pong latlhmey chenmoHqa&apos;lu&apos;, wa&apos;DIch mIlloghDajvo&apos;, DaH image.ini DuHmey lo&apos;taHvIS. wa&apos;DIch mIllogh choHlu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>The file of another version of the same field, which still has it, is copied to the expected path. Nothing is overwritten; an image then gets its aliases again.</source>
+        <translation>ghItlhvetlh ghajtaHbogh rap tlhegh latlh chovnatlh ghItlh lI&apos;lu&apos;; He pIHlu&apos;bogh ghoS. pagh ghItlhqa&apos;lu&apos;; ghIq mIllogh pong latlhmeyDaj ghajqa&apos; mIllogh.</translation>
+    </message>
+    <message>
+        <source>Choose a file for each field version. It is put at the expected path and must have the same extension; an image must be an image. Nothing is overwritten.</source>
+        <translation>tlhegh chovnatlh HochvaD ghItlh yIwIv. He pIHlu&apos;bogh Daq lanlu&apos;, &apos;ej rap ghItlh pong Qav ghajnIS; mIllogh &apos;oHnIS mIllogh&apos;e&apos;. pagh ghItlhqa&apos;lu&apos;.</translation>
+    </message>
+    <message>
+        <source>The field is emptied in this version: it no longer names the missing file. No file is deleted. A required field must be filled again at the next edit.</source>
+        <translation>chovnatlhvamDaq tlhegh chImmoHlu&apos;: tu&apos;lu&apos;be&apos;bogh ghItlh pongbe&apos;. pagh ghItlh Qaw&apos;lu&apos;. DachoHDI&apos; veb, tlhegh poQlu&apos;bogh yImebqa&apos;.</translation>
+    </message>
+    <message>
+        <source>Each field version is marked for review in the list, with your name and the time. Nothing else changes.</source>
+        <translation>tetlhDaq nuDmeH tlhegh chovnatlh Hoch wIvlu&apos;, ponglIj poH je lo&apos;taHvIS. latlh pagh choH.</translation>
+    </message>
+    <message>
+        <source>Resolve missing files</source>
+        <translation>tu&apos;lu&apos;be&apos;bogh ghItlhmey tItI&apos;</translation>
+    </message>
+    <message>
+        <source>No row was ticked or no action chosen. Tick the rows first.</source>
+        <translation>tlhegh wIvlu&apos;be&apos; pagh vangghach wIvlu&apos;be&apos;. wa&apos;DIch tlheghmey tIwIv.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows are taken; do the others afterwards.</source>
+        <translation>wa&apos;DIch %count tlhegh neH tlhaplu&apos;; ghIq latlh tIwIv.</translation>
+    </message>
+    <message>
+        <source>%count field versions, done %batch at a time.</source>
+        <translation>%count tlhegh chovnatlh; wa&apos;logh %batch rInmoHlu&apos;.</translation>
+    </message>
+    <message>
+        <source>None of the chosen rows can be resolved this way.</source>
+        <translation>mIwvam lo&apos;taHvIS wIvlu&apos;ta&apos;bogh tlhegh wa&apos; tI&apos;lu&apos;laHbe&apos;.</translation>
+    </message>
+    <message>
+        <source>Field %id</source>
+        <translation>tlhegh %id</translation>
+    </message>
+    <message>
+        <source>Copied from version %version</source>
+        <translation>chovnatlh %version vo&apos; lI&apos;lu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ghItlh</translation>
+    </message>
+    <message>
+        <source>Aliases made again</source>
+        <translation>mIllogh pong latlhmey chenmoHqa&apos;lu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Reference removed</source>
+        <translation>&apos;oSwI&apos; teqlu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Not done</source>
+        <translation>rInmoHlu&apos;be&apos;</translation>
+    </message>
+    <message>
+        <source>Go on with the next batch by itself</source>
+        <translation>ghom veb nIteb yItaH</translation>
+    </message>
+    <message>
+        <source>Confirm for %count field versions</source>
+        <translation>%count tlhegh chovnatlhvaD yI&apos;ol</translation>
+    </message>
+    <message>
+        <source>%done of %total field versions done, %failed not done, %left to go.</source>
+        <translation>%done tlhegh chovnatlh rInta&apos; (Hoch: %total), %failed rInbe&apos;, %left ratlh.</translation>
+    </message>
+    <message>
+        <source>Go on with the next batch</source>
+        <translation>ghom veb yItaH</translation>
+    </message>
+    <message>
+        <source>This page only takes the form of the missing files of the broken relations.</source>
+        <translation>ghorlu&apos;pu&apos;bogh rarghachmey tu&apos;lu&apos;be&apos;bogh ghItlhmey De&apos; lanmeH ghItlh neH laj navvam.</translation>
+    </message>
+    <message>
+        <source>The form has expired. Open the list again and choose the rows once more.</source>
+        <translation>Heghpu&apos; De&apos; lanmeH ghItlh. tetlh yIpoSmoHqa&apos; &apos;ej tlheghmey tIwIvqa&apos;.</translation>
+    </message>
+    <message>
+        <source>Resolve</source>
+        <translation>yItI&apos;</translation>
     </message>
 </context>
 <context>
@@ -63363,6 +64171,18 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>the system (cronjob or command line)</source>
         <translation>pat (poH Qu&apos; pagh ra&apos;ghach tlhegh)</translation>
     </message>
+    <message>
+        <source>This job no longer exists or you may not see it. The status is not updated any more.</source>
+        <translation>Qu&apos;vam tu&apos;lu&apos;be&apos;chu&apos; pagh DaleghmeH chaw&apos; Daghajbe&apos;. Dotlh De&apos; chu&apos;moHlu&apos;be&apos;qa&apos;.</translation>
+    </message>
+    <message>
+        <source>You are no longer signed in. Sign in again and reload this page to follow the job.</source>
+        <translation>DaH Da&apos;elbe&apos;. yI&apos;elqa&apos; &apos;ej Qu&apos; DatlhejmeH navvam yIHevqa&apos;.</translation>
+    </message>
+    <message>
+        <source>The status could not be shown. Reload the page to follow the job.</source>
+        <translation>Dotlh &apos;anglu&apos;laHbe&apos;ta&apos;. Qu&apos; DatlhejmeH nav yIHevqa&apos;.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/reverserelations</name>
@@ -64703,6 +65523,278 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>%count err</source>
         <translation>%count Qagh</translation>
+    </message>
+    <message>
+        <source>Server</source>
+        <translation>jabwI&apos;</translation>
+    </message>
+    <message>
+        <source>Versions: PHP %php (%sapi), Exponential %exponential</source>
+        <translation>chovnatlhmey: PHP %php (%sapi), Exponential %exponential</translation>
+    </message>
+    <message>
+        <source>OPc %pct %</source>
+        <translation>OPc %pct %</translation>
+    </message>
+    <message>
+        <source>OPcache memory: %used of %size MB in use, hit rate %rate %, %scripts scripts, %restarts restarts</source>
+        <translation>OPcache qawHaq: %used / %size MB lo&apos;lu&apos;, tu&apos;ghach mI&apos; %rate %, %scripts ngoq ghItlh, %restarts taghqa&apos;ghach</translation>
+    </message>
+    <message>
+        <source>APCu %pct %</source>
+        <translation>APCu %pct %</translation>
+    </message>
+    <message>
+        <source>APCu memory, shared by every site of the PHP pool: %used of %size MB in use, %entries entries, hit rate %rate %, %expunges expunges</source>
+        <translation>APCu qawHaq; PHP ghom yoS Hoch lo&apos;: %used / %size MB lo&apos;lu&apos;, %entries Doch, tu&apos;ghach mI&apos; %rate %, %expunges woDghach</translation>
+    </message>
+    <message>
+        <source>Not available: APCu is not loaded or not enabled for this PHP.</source>
+        <translation>lo&apos;laHbe&apos;: PHPvamvaD APCu lI&apos;lu&apos;be&apos; pagh chu&apos;lu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>Expunges</source>
+        <translation>woDghachmey</translation>
+    </message>
+    <message>
+        <source>Rendering</source>
+        <translation>&apos;aghghach</translation>
+    </message>
+    <message>
+        <source>View: hit</source>
+        <translation>Qorwagh: tu&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>View: new</source>
+        <translation>Qorwagh: chu&apos;</translation>
+    </message>
+    <message>
+        <source>View: off</source>
+        <translation>Qorwagh: chu&apos;Ha&apos;</translation>
+    </message>
+    <message>
+        <source>View: ?</source>
+        <translation>Qorwagh: ?</translation>
+    </message>
+    <message>
+        <source>Content view cache</source>
+        <translation>De&apos; Qorwagh De&apos; polwI&apos;</translation>
+    </message>
+    <message>
+        <source>Compiled %count</source>
+        <translation>mughlu&apos;ta&apos;: %count</translation>
+    </message>
+    <message>
+        <source>%compiled templates compiled in this request, %executed runs of compiled templates</source>
+        <translation>tlhobghachvamDaq %compiled mIw &apos;echlet mughlu&apos;ta&apos;, mughlu&apos;pu&apos;bogh mIw &apos;echletmey %executed Qapghach</translation>
+    </message>
+    <message>
+        <source>Read from the cache</source>
+        <translation>De&apos; polwI&apos;vo&apos; laDlu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Generated and stored in the cache</source>
+        <translation>chenmoHlu&apos;ta&apos; &apos;ej De&apos; polwI&apos;Daq pollu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Generated without storing it in the cache</source>
+        <translation>chenmoHlu&apos;ta&apos;; De&apos; polwI&apos;Daq pollu&apos;be&apos;</translation>
+    </message>
+    <message>
+        <source>The cache file was not used</source>
+        <translation>De&apos; polwI&apos; ghItlh lo&apos;lu&apos;be&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>lo&apos;lu&apos;be&apos;</translation>
+    </message>
+    <message>
+        <source>The key was built, no outcome was noted</source>
+        <translation>ngaQHa&apos;moHwI&apos; chenmoHlu&apos;ta&apos;; ghotlh qonlu&apos;be&apos;</translation>
+    </message>
+    <message>
+        <source>Controller</source>
+        <translation>SeHwI&apos;</translation>
+    </message>
+    <message>
+        <source>No module view ran.</source>
+        <translation>ngoq &apos;ay&apos; Qorwagh Qapbe&apos;pu&apos;.</translation>
+    </message>
+    <message>
+        <source>Module view</source>
+        <translation>ngoq &apos;ay&apos; Qorwagh</translation>
+    </message>
+    <message>
+        <source>View class</source>
+        <translation>buv yIlegh</translation>
+    </message>
+    <message>
+        <source>Script</source>
+        <translation>ngoq ghItlh</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>yoS lojmIt</translation>
+    </message>
+    <message>
+        <source>Navigation part</source>
+        <translation>HIDjolev &apos;ay&apos;</translation>
+    </message>
+    <message>
+        <source>Design order (%count bases)</source>
+        <translation>mIllogh nab mIw (%count bID)</translation>
+    </message>
+    <message>
+        <source>No content view ran on this page.</source>
+        <translation>navvamDaq De&apos; Qorwagh Qapbe&apos;pu&apos;.</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds lup</translation>
+    </message>
+    <message>
+        <source>Hash</source>
+        <translation>pegh ngoq</translation>
+    </message>
+    <message>
+        <source>Cache file</source>
+        <translation>De&apos; polwI&apos; ghItlh</translation>
+    </message>
+    <message>
+        <source>Cache key (%count parts)</source>
+        <translation>De&apos; polwI&apos; ngaQHa&apos;moHwI&apos; (%count &apos;ay&apos;)</translation>
+    </message>
+    <message>
+        <source>Added or changed by a content/view/cachekeys listener</source>
+        <translation>content/view/cachekeys QoywI&apos; chel pagh choH</translation>
+    </message>
+    <message>
+        <source>listener</source>
+        <translation>QoywI&apos;</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>chIm</translation>
+    </message>
+    <message>
+        <source>Compiled templates run</source>
+        <translation>mughlu&apos;pu&apos;bogh mIw &apos;echletmey Qapghach</translation>
+    </message>
+    <message>
+        <source>Compiled in this request</source>
+        <translation>tlhobghachvamDaq mughlu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Templates compiled in this request</source>
+        <translation>tlhobghachvamDaq mughlu&apos;ta&apos;bogh mIw &apos;echletmey</translation>
+    </message>
+    <message>
+        <source>CB %hits/%count</source>
+        <translation>ngogh %hits/%count</translation>
+    </message>
+    <message>
+        <source>Cache blocks: %hits of %count read from the cache, %generated ms to generate the others (outermost blocks)</source>
+        <translation>De&apos; polwI&apos; ngoghmey: De&apos; polwI&apos;vo&apos; %hits laDlu&apos;ta&apos; (Hoch: %count), latlh chenmoHmeH %generated ms (Hur ngoghmey)</translation>
+    </message>
+    <message>
+        <source>Cache blocks</source>
+        <translation>De&apos; polwI&apos; ngoghmey</translation>
+    </message>
+    <message>
+        <source>No cache-block ran on this page.</source>
+        <translation>navvamDaq De&apos; polwI&apos; ngogh Qapbe&apos;pu&apos;.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache; %lookup ms to look them up, %generated ms to generate the others (outermost blocks; a row's time holds the blocks inside it).</source>
+        <translation>De&apos; polwI&apos;vo&apos; %hits laDlu&apos;ta&apos; (Hoch: %count); nejmeH %lookup ms, latlh chenmoHmeH %generated ms (Hur ngoghmey; tlhegh poH ngoghmey qoDDaj ngaS).</translation>
+    </message>
+    <message>
+        <source>The first %shown are listed.</source>
+        <translation>wa&apos;DIch %shown neH tetlhDaq lanlu&apos;.</translation>
+    </message>
+    <message>
+        <source>hit</source>
+        <translation>tu&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>generated</source>
+        <translation>chenmoHlu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>tu&apos;lu&apos;be&apos;</translation>
+    </message>
+    <message>
+        <source>Lookup</source>
+        <translation>nejghach</translation>
+    </message>
+    <message>
+        <source>Generation</source>
+        <translation>chenmoHghach</translation>
+    </message>
+    <message>
+        <source>Expiry</source>
+        <translation>Heghghach</translation>
+    </message>
+    <message>
+        <source>Keys</source>
+        <translation>ngaQHa&apos;moHwI&apos;mey</translation>
+    </message>
+    <message>
+        <source>keys</source>
+        <translation>ngaQHa&apos;moHwI&apos;mey</translation>
+    </message>
+    <message>
+        <source>unknown (custom code, or a template compiled before)</source>
+        <translation>Sovlu&apos;be&apos; (ngoq chu&apos;, pagh ret mughlu&apos;pu&apos;bogh mIw &apos;echlet)</translation>
+    </message>
+    <message>
+        <source>subtree %node</source>
+        <translation>SorHom: %node</translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation>yIlegh</translation>
+    </message>
+    <message>
+        <source>node %node</source>
+        <translation>Sor Daq: %node</translation>
+    </message>
+    <message>
+        <source>Templates rendered</source>
+        <translation>cha&apos;lu&apos;ta&apos;bogh mIw &apos;echletmey</translation>
+    </message>
+    <message>
+        <source>%count templates</source>
+        <translation>%count mIw &apos;echlet</translation>
+    </message>
+    <message>
+        <source>not compiled</source>
+        <translation>mughlu&apos;be&apos;</translation>
+    </message>
+    <message>
+        <source>Template tree</source>
+        <translation>mIw &apos;echlet Sor</translation>
+    </message>
+    <message>
+        <source>The module views that ran for this request, in order (an error page or a redirect adds one), with the class that ran each view and its script; below them the siteaccess, the navigation part and the design bases in the order templates are looked up.</source>
+        <translation>tlhobghachvamvaD Qappu&apos;bogh ngoq &apos;ay&apos; Qorwaghmey, mIw rurbogh (Qagh nav pagh He choHghach wa&apos; chel), Qorwagh Hoch QapmoHbogh buv ngoq ghItlhDaj je; bIngchaj yoS lojmIt, He &apos;ay&apos;, mIllogh nab bIDmey je, mIw &apos;echletmey nejlu&apos;meH mIw rur.</translation>
+    </message>
+    <message>
+        <source>Every template this request rendered, in the order it started, nested under the template that included it. An arrow names the file an override chose; otherwise point at a name to see its file. A time holds everything the template included, not the parsing or compiling of the template itself. Templates of a view read from the view cache are not rendered and not listed.</source>
+        <translation>tlhobghachvam cha&apos;pu&apos;bogh mIw &apos;echlet Hoch, taghpu&apos;meH mIw rur, qempu&apos;bogh mIw &apos;echlet bIng. nIvwI&apos; wIvpu&apos;bogh ghItlh ponglu&apos;bogh naQjej; pagh pong yIngu&apos; ghItlhDaj DaleghmeH. poH qemlu&apos;pu&apos;bogh Hoch ngaS, mIw &apos;echlet nojghach mughghach je ngaSbe&apos;. Qorwagh De&apos; polwI&apos;vo&apos; laDlu&apos;pu&apos;bogh Qorwagh mIw &apos;echletmey cha&apos;lu&apos;be&apos; &apos;ej tetlhDaq lanlu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>Whether the content view (content/view) was read from its cache file or generated, and why. The key decides the file: two requests with the same parts share it. Lookup is the time to find and read the file, generation the time to render the view.</source>
+        <translation>De&apos; polwI&apos; ghItlhvo&apos; De&apos; Qorwagh (content/view) laDlu&apos;pu&apos;&apos;a&apos; pagh chenmoHlu&apos;pu&apos;&apos;a&apos;, &apos;ej qatlh. ghItlh wIv ngaQHa&apos;moHwI&apos;: rap &apos;ay&apos;mey ghajbogh cha&apos; tlhobghach ghItlh rap lo&apos;. nejghach: ghItlh SammeH laDmeH je poH; chenmoHghach: Qorwagh cha&apos;meH poH.</translation>
+    </message>
+    <message>
+        <source>Every {cache-block} in the order it was looked up. A hit costs only the lookup; a generated block renders its content and stores it for the next request. A block inside a generated block only runs then, so the counts differ between a first and a second request.</source>
+        <translation>{cache-block} Hoch, nejlu&apos;pu&apos;meH mIw rur. tu&apos;ghach: nejghach neH lo&apos;. chenmoHlu&apos;pu&apos;bogh ngogh: De&apos;Daj cha&apos; &apos;ej tlhobghach vebvaD pol. chenmoHlu&apos;pu&apos;bogh ngogh qoD ngogh: vaj neH Qap; vaj wa&apos;DIch cha&apos;DIch tlhobghachmey mI&apos;mey pIm.</translation>
+    </message>
+    <message>
+        <source>The settings that decide caching and compiling, and how many templates ran from the compiled cache or were compiled now. Right after a template cache clear every template is compiled once.</source>
+        <translation>De&apos; polwI&apos; mughghach je wIvbogh DuHmey, &apos;ej mughlu&apos;pu&apos;bogh De&apos; polwI&apos;vo&apos; Qappu&apos;bogh pagh DaH mughlu&apos;pu&apos;bogh mIw &apos;echletmey mI&apos;. mIw &apos;echlet De&apos; polwI&apos; chImmoHlu&apos;DI&apos; mIw &apos;echlet Hoch wa&apos;logh mughlu&apos;.</translation>
     </message>
 </context>
 <context>

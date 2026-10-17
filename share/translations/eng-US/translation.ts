@@ -46838,6 +46838,10 @@ The item be can viewed by using the URL below.</translation>
         <translation>Import package</translation>
     </message>
     <message>
+        <source>%arrowleft Back</source>
+        <translation>%arrowleft Back</translation>
+    </message>
+    <message>
         <source>Next %arrowright</source>
         <translation>Next %arrowright</translation>
     </message>
@@ -57264,6 +57268,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Public domain</source>
         <translation>Public domain</translation>
+    </message>
+    <message>
+        <source>Proprietary licenses</source>
+        <translation>Proprietary licenses</translation>
     </message>
     <message>
         <source>Other licenses</source>

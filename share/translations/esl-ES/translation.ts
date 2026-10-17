@@ -10965,6 +10965,10 @@
         <translation>Subir archivos a esta ubicación.</translation>
     </message>
     <message>
+        <source>The sub items cannot be listed: Exponential UI (the extension expui) is not active or not loaded on this siteaccess.</source>
+        <translation>No se pueden listar los subelementos: Exponential UI (la extensión expui) no está activa o no está cargada en este acceso al sitio.</translation>
+    </message>
+    <message>
         <source>Sub items [%children_count]</source>
         <translation type="obsolete">Sub elementos [%children_count]</translation>
     </message>
@@ -15360,6 +15364,14 @@ Nota: los paquetes no serán desinstalados.</translation>
     <message>
         <source>Overview</source>
         <translation>Vista general</translation>
+    </message>
+    <message>
+        <source>Storage files</source>
+        <translation>Archivos del almacenamiento</translation>
+    </message>
+    <message>
+        <source>Files in the storage that nothing uses, and files with the wrong owner or mode.</source>
+        <translation>Archivos del almacenamiento que nada usa, y archivos con un propietario o unos permisos incorrectos.</translation>
     </message>
     <message>
         <source>URL management</source>
@@ -61169,6 +61181,26 @@ Tendrás que cambiar la clase del nudo mediante la función de intercambio.</tra
         <source>Registration link refused</source>
         <translation>Enlace de registro rechazado</translation>
     </message>
+    <message>
+        <source>Image aliases regenerate</source>
+        <translation>Regeneración de alias de imagen</translation>
+    </message>
+    <message>
+        <source>Missing file restore</source>
+        <translation>Restauración de archivo que falta</translation>
+    </message>
+    <message>
+        <source>Missing file replace</source>
+        <translation>Sustitución de archivo que falta</translation>
+    </message>
+    <message>
+        <source>Missing file reference remove</source>
+        <translation>Eliminación de referencia a archivo que falta</translation>
+    </message>
+    <message>
+        <source>Missing file review mark</source>
+        <translation>Marca de revisión de archivo que falta</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/state/assign</name>
@@ -62296,6 +62328,782 @@ Tendrás que cambiar la clase del nudo mediante la función de intercambio.</tra
     <message>
         <source>Change or remove the rule target.</source>
         <translation>Cambia o elimina el destino de la regla.</translation>
+    </message>
+    <message>
+        <source>Start location (node id)</source>
+        <translation>Ubicación de inicio (ID de nudo)</translation>
+    </message>
+    <message>
+        <source>Now: %path</source>
+        <translation>Ahora: %path</translation>
+    </message>
+    <message>
+        <source>1 is the whole tree. Your choice is remembered.</source>
+        <translation>1 es todo el árbol. Tu elección se recuerda.</translation>
+    </message>
+    <message>
+        <source>Start locations</source>
+        <translation>Ubicaciones de inicio</translation>
+    </message>
+    <message>
+        <source>Choose with the node picker</source>
+        <translation>Elegir con el selector de nudos</translation>
+    </message>
+    <message>
+        <source>Wrong owner</source>
+        <translation>Propietario incorrecto</translation>
+    </message>
+    <message>
+        <source>Wrong mode</source>
+        <translation>Permisos incorrectos</translation>
+    </message>
+    <message>
+        <source>Empty file</source>
+        <translation>Archivo vacío</translation>
+    </message>
+    <message>
+        <source>Name differs in case</source>
+        <translation>El nombre difiere en mayúsculas y minúsculas</translation>
+    </message>
+    <message>
+        <source>Path differs from its parts</source>
+        <translation>La ruta difiere de sus partes</translation>
+    </message>
+    <message>
+        <source>In another type directory</source>
+        <translation>En el directorio de otro tipo</translation>
+    </message>
+    <message>
+        <source>Path</source>
+        <translation>Ruta</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Antigüedad</translation>
+    </message>
+    <message>
+        <source>moved to the quarantine</source>
+        <translation>se han movido a la cuarentena</translation>
+    </message>
+    <message>
+        <source>restored</source>
+        <translation>se han restaurado</translation>
+    </message>
+    <message>
+        <source>deleted from the quarantine</source>
+        <translation>se han borrado de la cuarentena</translation>
+    </message>
+    <message>
+        <source>given the expected owner and mode</source>
+        <translation>han recibido el propietario y los permisos esperados</translation>
+    </message>
+    <message>
+        <source>Storage files</source>
+        <translation>Archivos del almacenamiento</translation>
+    </message>
+    <message>
+        <source>The files below %dir: those no content uses (orphan files), and the file-system problems of those it uses. A file counts as used when a version of any object, also an old one or one in the trash, names it, or when a field, a layout, a setting or a template names its path. Files younger than %days days are never orphans. Nothing is deleted from the storage: orphans go to a quarantine, from where they can be restored.</source>
+        <translation>Los archivos bajo %dir: los que ningún contenido usa (archivos huérfanos), y los problemas del sistema de archivos de los que sí se usan. Un archivo cuenta como usado cuando lo nombra una versión de cualquier objeto, también una antigua o una que está en la papelera, o cuando un campo, una disposición, un parámetro o una plantilla nombra su ruta. Los archivos con menos de %days días nunca son huérfanos. No se borra nada del almacenamiento: los huérfanos van a una cuarentena, desde donde se pueden restaurar.</translation>
+    </message>
+    <message>
+        <source>%count files (%size) were %action.</source>
+        <translation>%count archivos (%size) %action.</translation>
+    </message>
+    <message>
+        <source>%count could not be changed.</source>
+        <translation>No se han podido cambiar %count.</translation>
+    </message>
+    <message>
+        <source>Nothing was changed: the files changed after the confirmation. Tick them again.</source>
+        <translation>No se ha cambiado nada: los archivos han cambiado después de la confirmación. Vuelve a marcarlos.</translation>
+    </message>
+    <message>
+        <source>Nothing was changed.</source>
+        <translation>No se ha cambiado nada.</translation>
+    </message>
+    <message>
+        <source>The files are kept by a cluster file handler: they are read from its table, owner and mode are not checked, and nothing can be moved or fixed here.</source>
+        <translation>Los archivos los guarda un gestor de archivos de clúster: se leen de su tabla, no se comprueban el propietario ni los permisos, y aquí no se puede mover ni corregir nada.</translation>
+    </message>
+    <message>
+        <source>Last scan</source>
+        <translation>Último análisis</translation>
+    </message>
+    <message>
+        <source>The storage has not been scanned yet.</source>
+        <translation>El almacenamiento aún no se ha analizado.</translation>
+    </message>
+    <message>
+        <source>A scan started at %time is not finished (%percent %).</source>
+        <translation>Un análisis iniciado a las %time no ha terminado (%percent %).</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Progreso</translation>
+    </message>
+    <message>
+        <source>Finished</source>
+        <translation>Terminado</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Archivos</translation>
+    </message>
+    <message>
+        <source>Used</source>
+        <translation>Usado</translation>
+    </message>
+    <message>
+        <source>Orphan files</source>
+        <translation>Archivos huérfanos</translation>
+    </message>
+    <message>
+        <source>Too new to judge</source>
+        <translation>Demasiado reciente para juzgarlo</translation>
+    </message>
+    <message>
+        <source>Took</source>
+        <translation>Duración</translation>
+    </message>
+    <message>
+        <source>%seconds s in %steps steps</source>
+        <translation>%seconds s en %steps pasos</translation>
+    </message>
+    <message>
+        <source>Files were changed since this scan; the lists leave out what was moved or fixed.</source>
+        <translation>Se han cambiado archivos desde este análisis; las listas omiten lo que se ha movido o corregido.</translation>
+    </message>
+    <message>
+        <source>The reference index could not be read completely, so paths named only in rich text, layouts, settings or templates were not seen. Nothing is moved until it can be read.</source>
+        <translation>No se ha podido leer el índice de referencias por completo, así que no se han visto las rutas nombradas solo en texto enriquecido, disposiciones, parámetros o plantillas. No se mueve nada hasta que se pueda leer.</translation>
+    </message>
+    <message>
+        <source>Continue the scan</source>
+        <translation>Continuar el análisis</translation>
+    </message>
+    <message>
+        <source>Start again</source>
+        <translation>Empezar de nuevo</translation>
+    </message>
+    <message>
+        <source>Scan again</source>
+        <translation>Volver a analizar</translation>
+    </message>
+    <message>
+        <source>Scan the storage</source>
+        <translation>Analizar el almacenamiento</translation>
+    </message>
+    <message>
+        <source>The scan runs in steps of a few seconds and can be continued later; on a large storage run ./console exp:content-check --storage.</source>
+        <translation>El análisis se ejecuta en pasos de unos segundos y se puede continuar más tarde; en un almacenamiento grande ejecuta ./console exp:content-check --storage.</translation>
+    </message>
+    <message>
+        <source>Lists</source>
+        <translation>Listas</translation>
+    </message>
+    <message>
+        <source>File problems</source>
+        <translation>Problemas de archivos</translation>
+    </message>
+    <message>
+        <source>Quarantine</source>
+        <translation>Cuarentena</translation>
+    </message>
+    <message>
+        <source>Problems</source>
+        <translation>Problemas</translation>
+    </message>
+    <message>
+        <source>Orphan files belong to no content, so the start location does not apply to them: the whole storage is listed.</source>
+        <translation>Los archivos huérfanos no pertenecen a ningún contenido, así que la ubicación de inicio no se aplica a ellos: se lista todo el almacenamiento.</translation>
+    </message>
+    <message>
+        <source>%count files (%size) in %dir.</source>
+        <translation>%count archivos (%size) en %dir.</translation>
+    </message>
+    <message>
+        <source>The scan keeps the first %count orphans; move them, then scan again for the others.</source>
+        <translation>El análisis guarda los primeros %count huérfanos; muévelos y vuelve a analizar para ver los demás.</translation>
+    </message>
+    <message>
+        <source>Scan the storage to see this list.</source>
+        <translation>Analiza el almacenamiento para ver esta lista.</translation>
+    </message>
+    <message>
+        <source>No orphan files.</source>
+        <translation>No hay archivos huérfanos.</translation>
+    </message>
+    <message>
+        <source>No file problems below this node match the filter.</source>
+        <translation>Ningún problema de archivos bajo este nudo coincide con el filtro.</translation>
+    </message>
+    <message>
+        <source>The quarantine is empty.</source>
+        <translation>La cuarentena está vacía.</translation>
+    </message>
+    <message>
+        <source>Problem</source>
+        <translation>Problema</translation>
+    </message>
+    <message>
+        <source>Used by</source>
+        <translation>Usado por</translation>
+    </message>
+    <message>
+        <source>Moved on</source>
+        <translation>Movido el</translation>
+    </message>
+    <message>
+        <source>Owner and mode</source>
+        <translation>Propietario y permisos</translation>
+    </message>
+    <message>
+        <source>%days d</source>
+        <translation>%days días</translation>
+    </message>
+    <message>
+        <source>Found: %path</source>
+        <translation>Encontrado: %path</translation>
+    </message>
+    <message>
+        <source>Move ticked files to the quarantine</source>
+        <translation>Mover los archivos marcados a la cuarentena</translation>
+    </message>
+    <message>
+        <source>Fix owner and mode of ticked files</source>
+        <translation>Corregir el propietario y los permisos de los archivos marcados</translation>
+    </message>
+    <message>
+        <source>Restore ticked files</source>
+        <translation>Restaurar los archivos marcados</translation>
+    </message>
+    <message>
+        <source>Delete ticked files permanently</source>
+        <translation>Borrar definitivamente los archivos marcados</translation>
+    </message>
+    <message>
+        <source>The next page is a dry run: it shows what would happen to each file and changes nothing until you confirm. At most %count files at a time.</source>
+        <translation>La página siguiente es una simulación: muestra lo que ocurriría con cada archivo y no cambia nada hasta que lo confirmes. Como máximo %count archivos a la vez.</translation>
+    </message>
+    <message>
+        <source>Move to the quarantine</source>
+        <translation>Mover a la cuarentena</translation>
+    </message>
+    <message>
+        <source>Restore from the quarantine</source>
+        <translation>Restaurar desde la cuarentena</translation>
+    </message>
+    <message>
+        <source>Delete from the quarantine</source>
+        <translation>Borrar de la cuarentena</translation>
+    </message>
+    <message>
+        <source>Fix owner and mode</source>
+        <translation>Corregir propietario y permisos</translation>
+    </message>
+    <message>
+        <source>Moved to the quarantine</source>
+        <translation>Movido a la cuarentena</translation>
+    </message>
+    <message>
+        <source>Moved back to the storage</source>
+        <translation>Devuelto al almacenamiento</translation>
+    </message>
+    <message>
+        <source>Deleted permanently</source>
+        <translation>Borrado definitivamente</translation>
+    </message>
+    <message>
+        <source>Owner and mode set</source>
+        <translation>Propietario y permisos establecidos</translation>
+    </message>
+    <message>
+        <source>The file is not there (any more).</source>
+        <translation>El archivo no está ahí (ya no).</translation>
+    </message>
+    <message>
+        <source>The file is not in a directory the check covers.</source>
+        <translation>El archivo no está en un directorio que cubra la comprobación.</translation>
+    </message>
+    <message>
+        <source>The file is a symbolic link.</source>
+        <translation>El archivo es un enlace simbólico.</translation>
+    </message>
+    <message>
+        <source>The path is in the ignored list.</source>
+        <translation>La ruta está en la lista de ignorados.</translation>
+    </message>
+    <message>
+        <source>The file is too new to judge.</source>
+        <translation>El archivo es demasiado reciente para juzgarlo.</translation>
+    </message>
+    <message>
+        <source>Content uses the file now.</source>
+        <translation>Ahora hay contenido que usa el archivo.</translation>
+    </message>
+    <message>
+        <source>No content uses the file: it is an orphan, not a problem.</source>
+        <translation>Ningún contenido usa el archivo: es huérfano, no un problema.</translation>
+    </message>
+    <message>
+        <source>A file is already at the destination.</source>
+        <translation>Ya hay un archivo en el destino.</translation>
+    </message>
+    <message>
+        <source>The reference index cannot be read now.</source>
+        <translation>Ahora no se puede leer el índice de referencias.</translation>
+    </message>
+    <message>
+        <source>Files of a cluster file handler cannot be changed here.</source>
+        <translation>Los archivos de un gestor de archivos de clúster no se pueden cambiar aquí.</translation>
+    </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions as root.</source>
+        <translation>Solo el administrador del sistema puede cambiar el propietario: ejecuta ./console exp:content-check --fix-permissions como root.</translation>
+    </message>
+    <message>
+        <source>This server process does not own the file, so it cannot change its mode.</source>
+        <translation>Este proceso del servidor no es el propietario del archivo, así que no puede cambiar sus permisos.</translation>
+    </message>
+    <message>
+        <source>Owner and mode are already as expected.</source>
+        <translation>El propietario y los permisos ya son los esperados.</translation>
+    </message>
+    <message>
+        <source>No file was ticked. Tick the files first.</source>
+        <translation>No se ha marcado ningún archivo. Marca primero los archivos.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing has been changed yet.</source>
+        <translation>Simulación: todavía no se ha cambiado nada.</translation>
+    </message>
+    <message>
+        <source>Only the first %count ticked files are taken; do the others afterwards.</source>
+        <translation>Solo se toman los primeros %count archivos marcados; ocúpate de los demás después.</translation>
+    </message>
+    <message>
+        <source>%count files (%size) will be moved to %dir, below the date of today, keeping their path. They can be restored from there.</source>
+        <translation>%count archivos (%size) se moverán a %dir, bajo la fecha de hoy, conservando su ruta. Se pueden restaurar desde allí.</translation>
+    </message>
+    <message>
+        <source>%count files (%size) will be deleted from the quarantine. This cannot be undone.</source>
+        <translation>%count archivos (%size) se borrarán de la cuarentena. Esto no se puede deshacer.</translation>
+    </message>
+    <message>
+        <source>%count files (%size) will be moved back to their place in the storage.</source>
+        <translation>%count archivos (%size) se devolverán a su lugar en el almacenamiento.</translation>
+    </message>
+    <message>
+        <source>%count files will get the expected owner and mode; nothing else is changed.</source>
+        <translation>%count archivos recibirán el propietario y los permisos esperados; no se cambia nada más.</translation>
+    </message>
+    <message>
+        <source>None of the ticked files can be changed.</source>
+        <translation>Ninguno de los archivos marcados se puede cambiar.</translation>
+    </message>
+    <message>
+        <source>To: %path</source>
+        <translation>A: %path</translation>
+    </message>
+    <message>
+        <source>Left as it is</source>
+        <translation>Se deja como está</translation>
+    </message>
+    <message>
+        <source>I understand that these files are deleted permanently.</source>
+        <translation>Entiendo que estos archivos se borran definitivamente.</translation>
+    </message>
+    <message>
+        <source>Confirm for %count files</source>
+        <translation>Confirmar para %count archivos</translation>
+    </message>
+    <message>
+        <source>Scanning the storage</source>
+        <translation>Analizando el almacenamiento</translation>
+    </message>
+    <message>
+        <source>%files files read so far (%size), %orphans of them orphans; %percent % done.</source>
+        <translation>%files archivos leídos hasta ahora (%size), %orphans de ellos huérfanos; %percent % hecho.</translation>
+    </message>
+    <message>
+        <source>Stop here</source>
+        <translation>Detener aquí</translation>
+    </message>
+    <message>
+        <source>The scan goes on by itself. Stop it at any time; it can be continued later.</source>
+        <translation>El análisis continúa por sí solo. Detenlo cuando quieras; se puede continuar más tarde.</translation>
+    </message>
+    <message>
+        <source>This page only takes the forms of the storage files.</source>
+        <translation>Esta página solo acepta los formularios de los archivos del almacenamiento.</translation>
+    </message>
+    <message>
+        <source>You may not do this with storage files.</source>
+        <translation>No puedes hacer esto con los archivos del almacenamiento.</translation>
+    </message>
+    <message>
+        <source>The form has expired. Open the list again and tick the files once more.</source>
+        <translation>El formulario ha caducado. Vuelve a abrir la lista y marca los archivos otra vez.</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Confirmar</translation>
+    </message>
+    <message>
+        <source>Choose classes</source>
+        <translation>Elegir clases</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Todas las clases</translation>
+    </message>
+    <message>
+        <source>No class</source>
+        <translation>Sin clase</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Seleccionar todo en esta página</translation>
+    </message>
+    <message>
+        <source>Select none</source>
+        <translation>No seleccionar ninguno</translation>
+    </message>
+    <message>
+        <source>%selected of %total selected</source>
+        <translation>%selected de %total seleccionados</translation>
+    </message>
+    <message>
+        <source>Move all %count results to the trash</source>
+        <translation>Mover los %count resultados a la papelera</translation>
+    </message>
+    <message>
+        <source>Move all %count files to the quarantine</source>
+        <translation>Mover los %count archivos a la cuarentena</translation>
+    </message>
+    <message>
+        <source>Fix owner and mode of all %count results</source>
+        <translation>Corregir el propietario y los permisos de los %count resultados</translation>
+    </message>
+    <message>
+        <source>Restore all %count files</source>
+        <translation>Restaurar los %count archivos</translation>
+    </message>
+    <message>
+        <source>Select all</source>
+        <translation>Seleccionar todo</translation>
+    </message>
+    <message>
+        <source>File missing</source>
+        <translation>Falta el archivo</translation>
+    </message>
+    <message>
+        <source>Alias missing</source>
+        <translation>Falta el alias</translation>
+    </message>
+    <message>
+        <source>Alias out of date</source>
+        <translation>Alias desactualizado</translation>
+    </message>
+    <message>
+        <source>Alias never made</source>
+        <translation>Alias nunca creado</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>falta</translation>
+    </message>
+    <message>
+        <source>out of date</source>
+        <translation>desactualizado</translation>
+    </message>
+    <message>
+        <source>never made</source>
+        <translation>nunca creado</translation>
+    </message>
+    <message>
+        <source>Regenerate</source>
+        <translation>Regenerar</translation>
+    </message>
+    <message>
+        <source>Restore</source>
+        <translation>Restaurar</translation>
+    </message>
+    <message>
+        <source>Re-upload</source>
+        <translation>Volver a subir</translation>
+    </message>
+    <message>
+        <source>Remove reference</source>
+        <translation>Eliminar la referencia</translation>
+    </message>
+    <message>
+        <source>Mark for review</source>
+        <translation>Marcar para revisión</translation>
+    </message>
+    <message>
+        <source>Version %version</source>
+        <translation>Versión %version</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Borrador</translation>
+    </message>
+    <message>
+        <source>File: %time</source>
+        <translation>Archivo: %time</translation>
+    </message>
+    <message>
+        <source>Marked for review</source>
+        <translation>Marcado para revisión</translation>
+    </message>
+    <message>
+        <source>Regenerate the aliases from the original</source>
+        <translation>Regenerar los alias a partir del original</translation>
+    </message>
+    <message>
+        <source>Restore from another version</source>
+        <translation>Restaurar desde otra versión</translation>
+    </message>
+    <message>
+        <source>Re-upload or replace the file</source>
+        <translation>Volver a subir o reemplazar el archivo</translation>
+    </message>
+    <message>
+        <source>Remove the dead reference</source>
+        <translation>Eliminar la referencia muerta</translation>
+    </message>
+    <message>
+        <source>Missing files in %dir</source>
+        <translation>Archivos que faltan en %dir</translation>
+    </message>
+    <message>
+        <source>Images, files and media whose file is not in the storage, in the published version and in drafts, and images whose aliases are missing or were made with other settings.</source>
+        <translation>Imágenes, archivos y elementos multimedia cuyo archivo no está en el almacenamiento, en la versión publicada y en los borradores, e imágenes cuyos alias faltan o se crearon con otros parámetros.</translation>
+    </message>
+    <message>
+        <source>Nothing was changed: the files or your access changed after the confirmation. Choose the rows again.</source>
+        <translation>No se ha cambiado nada: los archivos o tu acceso han cambiado después de la confirmación. Vuelve a elegir las filas.</translation>
+    </message>
+    <message>
+        <source>%count field versions done.</source>
+        <translation>%count versiones de campo hechas.</translation>
+    </message>
+    <message>
+        <source>%count could not be done.</source>
+        <translation>No se han podido hacer %count.</translation>
+    </message>
+    <message>
+        <source>No missing file and no alias problem found.</source>
+        <translation>No se ha encontrado ningún archivo que falte ni ningún problema de alias.</translation>
+    </message>
+    <message>
+        <source>Nothing found among these objects. Go on with the next page.</source>
+        <translation>No se ha encontrado nada entre estos objetos. Continúa con la página siguiente.</translation>
+    </message>
+    <message>
+        <source>Object</source>
+        <translation>Objeto</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Versión</translation>
+    </message>
+    <message>
+        <source>Expected path</source>
+        <translation>Ruta esperada</translation>
+    </message>
+    <message>
+        <source>Missing files from the start</source>
+        <translation>Archivos que faltan desde el principio</translation>
+    </message>
+    <message>
+        <source>Next page of missing files</source>
+        <translation>Página siguiente de archivos que faltan</translation>
+    </message>
+    <message>
+        <source>With the ticked rows</source>
+        <translation>Con las filas marcadas</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Vista previa</translation>
+    </message>
+    <message>
+        <source>The next page shows what will happen to each row and asks you to confirm. At most %count rows at a time; they are done in batches.</source>
+        <translation>La página siguiente muestra lo que va a ocurrir con cada fila y te pide que lo confirmes. Como máximo %count filas a la vez; se hacen por lotes.</translation>
+    </message>
+    <message>
+        <source>Published version</source>
+        <translation>Versión publicada</translation>
+    </message>
+    <message>
+        <source>Drafts</source>
+        <translation>Borradores</translation>
+    </message>
+    <message>
+        <source>Missing files: problems</source>
+        <translation>Archivos que faltan: problemas</translation>
+    </message>
+    <message>
+        <source>Missing files: versions</source>
+        <translation>Archivos que faltan: versiones</translation>
+    </message>
+    <message>
+        <source>You may not edit this object.</source>
+        <translation>No puedes editar este objeto.</translation>
+    </message>
+    <message>
+        <source>Nothing is wrong with it any more.</source>
+        <translation>Ya no le pasa nada.</translation>
+    </message>
+    <message>
+        <source>The original file is missing: restore or upload it first.</source>
+        <translation>Falta el archivo original: restáuralo o súbelo primero.</translation>
+    </message>
+    <message>
+        <source>This kind of field has no image aliases.</source>
+        <translation>Este tipo de campo no tiene alias de imagen.</translation>
+    </message>
+    <message>
+        <source>No other version of this field still has its file.</source>
+        <translation>Ninguna otra versión de este campo conserva su archivo.</translation>
+    </message>
+    <message>
+        <source>Its file is not missing.</source>
+        <translation>Su archivo no falta.</translation>
+    </message>
+    <message>
+        <source>No file was given, or the file to copy is gone.</source>
+        <translation>No se ha indicado ningún archivo, o el archivo que se iba a copiar ya no está.</translation>
+    </message>
+    <message>
+        <source>The file must have the same extension as the expected path, and an image must be an image.</source>
+        <translation>El archivo debe tener la misma extensión que la ruta esperada, y una imagen debe ser una imagen.</translation>
+    </message>
+    <message>
+        <source>The file is too large.</source>
+        <translation>El archivo es demasiado grande.</translation>
+    </message>
+    <message>
+        <source>A file is at the expected path now; it was left alone.</source>
+        <translation>Ahora hay un archivo en la ruta esperada; no se ha tocado.</translation>
+    </message>
+    <message>
+        <source>The file could not be written to the storage.</source>
+        <translation>No se ha podido escribir el archivo en el almacenamiento.</translation>
+    </message>
+    <message>
+        <source>It could not be done. The debug output says why.</source>
+        <translation>No se ha podido hacer. La salida de depuración indica por qué.</translation>
+    </message>
+    <message>
+        <source>Only the first %count objects were checked. Choose a smaller subtree to see the rest.</source>
+        <translation>Solo se han comprobado los primeros %count objetos. Elige un subárbol más pequeño para ver el resto.</translation>
+    </message>
+    <message>
+        <source>Tick at least one problem and one version.</source>
+        <translation>Marca al menos un problema y una versión.</translation>
+    </message>
+    <message>
+        <source>Preview for all %count results</source>
+        <translation>Vista previa de los %count resultados</translation>
+    </message>
+    <message>
+        <source>Regenerate the aliases</source>
+        <translation>Regenerar los alias</translation>
+    </message>
+    <message>
+        <source>The aliases of each image are made again from its original, with the settings of image.ini now. The original is not changed.</source>
+        <translation>Los alias de cada imagen se vuelven a crear a partir de su original, con los parámetros actuales de image.ini. El original no se cambia.</translation>
+    </message>
+    <message>
+        <source>The file of another version of the same field, which still has it, is copied to the expected path. Nothing is overwritten; an image then gets its aliases again.</source>
+        <translation>El archivo de otra versión del mismo campo que aún lo conserva se copia a la ruta esperada. No se sobrescribe nada; después, una imagen vuelve a recibir sus alias.</translation>
+    </message>
+    <message>
+        <source>Choose a file for each field version. It is put at the expected path and must have the same extension; an image must be an image. Nothing is overwritten.</source>
+        <translation>Elige un archivo para cada versión de campo. Se coloca en la ruta esperada y debe tener la misma extensión; una imagen debe ser una imagen. No se sobrescribe nada.</translation>
+    </message>
+    <message>
+        <source>The field is emptied in this version: it no longer names the missing file. No file is deleted. A required field must be filled again at the next edit.</source>
+        <translation>El campo se vacía en esta versión: ya no nombra el archivo que falta. No se borra ningún archivo. Un campo obligatorio se debe volver a rellenar en la próxima edición.</translation>
+    </message>
+    <message>
+        <source>Each field version is marked for review in the list, with your name and the time. Nothing else changes.</source>
+        <translation>Cada versión de campo se marca para revisión en la lista, con tu nombre y la hora. No cambia nada más.</translation>
+    </message>
+    <message>
+        <source>Resolve missing files</source>
+        <translation>Resolver archivos que faltan</translation>
+    </message>
+    <message>
+        <source>No row was ticked or no action chosen. Tick the rows first.</source>
+        <translation>No se ha marcado ninguna fila o no se ha elegido ninguna acción. Marca primero las filas.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows are taken; do the others afterwards.</source>
+        <translation>Solo se toman las primeras %count filas; haz las demás después.</translation>
+    </message>
+    <message>
+        <source>%count field versions, done %batch at a time.</source>
+        <translation>%count versiones de campo, %batch cada vez.</translation>
+    </message>
+    <message>
+        <source>None of the chosen rows can be resolved this way.</source>
+        <translation>Ninguna de las filas elegidas se puede resolver de esta manera.</translation>
+    </message>
+    <message>
+        <source>Field %id</source>
+        <translation>Campo %id</translation>
+    </message>
+    <message>
+        <source>Copied from version %version</source>
+        <translation>Copiado de la versión %version</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Archivo</translation>
+    </message>
+    <message>
+        <source>Aliases made again</source>
+        <translation>Alias creados de nuevo</translation>
+    </message>
+    <message>
+        <source>Reference removed</source>
+        <translation>Referencia eliminada</translation>
+    </message>
+    <message>
+        <source>Not done</source>
+        <translation>No hecho</translation>
+    </message>
+    <message>
+        <source>Go on with the next batch by itself</source>
+        <translation>Continuar con el siguiente lote automáticamente</translation>
+    </message>
+    <message>
+        <source>Confirm for %count field versions</source>
+        <translation>Confirmar para %count versiones de campo</translation>
+    </message>
+    <message>
+        <source>%done of %total field versions done, %failed not done, %left to go.</source>
+        <translation>%done de %total versiones de campo hechas, %failed sin hacer, %left pendientes.</translation>
+    </message>
+    <message>
+        <source>Go on with the next batch</source>
+        <translation>Continuar con el siguiente lote</translation>
+    </message>
+    <message>
+        <source>This page only takes the form of the missing files of the broken relations.</source>
+        <translation>Esta página solo acepta el formulario de los archivos que faltan de las relaciones rotas.</translation>
+    </message>
+    <message>
+        <source>The form has expired. Open the list again and choose the rows once more.</source>
+        <translation>El formulario ha caducado. Vuelve a abrir la lista y elige las filas otra vez.</translation>
+    </message>
+    <message>
+        <source>Resolve</source>
+        <translation>Resolver</translation>
     </message>
 </context>
 <context>
@@ -64521,6 +65329,18 @@ Tendrás que cambiar la clase del nudo mediante la función de intercambio.</tra
         <source>the system (cronjob or command line)</source>
         <translation>el sistema (tarea programada o línea de comandos)</translation>
     </message>
+    <message>
+        <source>This job no longer exists or you may not see it. The status is not updated any more.</source>
+        <translation>Esta tarea ya no existe o no puedes verla. El estado ya no se actualiza.</translation>
+    </message>
+    <message>
+        <source>You are no longer signed in. Sign in again and reload this page to follow the job.</source>
+        <translation>Ya no has iniciado sesión. Vuelve a iniciar sesión y recarga esta página para seguir la tarea.</translation>
+    </message>
+    <message>
+        <source>The status could not be shown. Reload the page to follow the job.</source>
+        <translation>No se ha podido mostrar el estado. Recarga la página para seguir la tarea.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/reverserelations</name>
@@ -65861,6 +66681,38 @@ Tendrás que cambiar la clase del nudo mediante la función de intercambio.</tra
     <message>
         <source>%count err</source>
         <translation>%count err.</translation>
+    </message>
+    <message>
+        <source>Server</source>
+        <translation>Servidor</translation>
+    </message>
+    <message>
+        <source>Versions: PHP %php (%sapi), Exponential %exponential</source>
+        <translation>Versiones: PHP %php (%sapi), Exponential %exponential</translation>
+    </message>
+    <message>
+        <source>OPc %pct %</source>
+        <translation>OPc %pct %</translation>
+    </message>
+    <message>
+        <source>OPcache memory: %used of %size MB in use, hit rate %rate %, %scripts scripts, %restarts restarts</source>
+        <translation>Memoria de OPcache: %used de %size MB en uso, tasa de aciertos %rate %, %scripts scripts, %restarts reinicios</translation>
+    </message>
+    <message>
+        <source>APCu %pct %</source>
+        <translation>APCu %pct %</translation>
+    </message>
+    <message>
+        <source>APCu memory, shared by every site of the PHP pool: %used of %size MB in use, %entries entries, hit rate %rate %, %expunges expunges</source>
+        <translation>Memoria de APCu, compartida por todos los sitios del pool de PHP: %used de %size MB en uso, %entries entradas, tasa de aciertos %rate %, %expunges vaciados</translation>
+    </message>
+    <message>
+        <source>Not available: APCu is not loaded or not enabled for this PHP.</source>
+        <translation>No disponible: APCu no está cargado o no está activado para este PHP.</translation>
+    </message>
+    <message>
+        <source>Expunges</source>
+        <translation>Vaciados</translation>
     </message>
     <message>
         <source>Rendering</source>
