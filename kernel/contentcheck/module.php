@@ -57,7 +57,7 @@ $ViewList['fixfiles'] = array(
 $ViewList['scope'] = array(
     'default_navigation_part' => 'ezsetupnavigationpart',
     'script' => 'scope.php',
-    'params' => array( 'View', 'NodeID' ) );
+    'params' => array( 'View', 'NodeID', 'StartNodeID' ) );
 
 // The storage files: orphans (no content uses them), file-system problems of the used ones below the node, and the
 // quarantine (GET: Show, Sort, Order, Kind[]; (offset) in the address)

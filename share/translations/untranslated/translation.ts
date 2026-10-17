@@ -61816,6 +61816,38 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Resolve</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Websites</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Media</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Design</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sites and sections</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(contains the start location)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>More…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose another site or section with the node picker</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>

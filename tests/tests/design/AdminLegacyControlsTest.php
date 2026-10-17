@@ -216,6 +216,43 @@ class AdminLegacyControlsTest extends PHPUnit\Framework\TestCase
         }
     }
 
+    /**
+     * #553: an extension module's left menu ends with the same width switch as the kernel's, in admin4 and the designs
+     * built on it (admin4l). An extension whose classic menu (design/standard, admin, admin2, admin3) carries the classic
+     * width links ships a design/admin4 menu that includes parts/left_width_control.tpl instead of a copy, and no
+     * admin4 menu of an extension writes width links of its own.
+     */
+    public function testExtensionLeftMenusUseTheKernelWidthSwitchInAdmin4()
+    {
+        $root = self::root();
+        $classic = glob( $root . '/extension/*/design/{standard,admin,admin2,admin3}/templates/parts/*/{menu,*_menu}.tpl', GLOB_BRACE ) ?: array();
+        $admin4 = glob( $root . '/extension/*/design/admin4/templates/parts/*/menu.tpl' ) ?: array();
+        if ( !$classic && !$admin4 )
+        {
+            $this->markTestSkipped( 'no extension with a left menu is installed' );
+        }
+        foreach ( $classic as $menu )
+        {
+            if ( strpos( AdminFiles::read( $menu ), 'id="widthcontrol-links"' ) === false )
+            {
+                continue;
+            }
+            $relative = substr( $menu, strlen( $root ) + 1 );
+            preg_match( '#^extension/([^/]+)/design/[^/]+/templates/parts/([^/]+)/#', $relative, $m );
+            $this->assertFileExists( "$root/extension/{$m[1]}/design/admin4/templates/parts/{$m[2]}/menu.tpl",
+                                     "$relative copies the classic width links; admin4 needs a menu with the kernel's switch" );
+        }
+        foreach ( $admin4 as $menu )
+        {
+            $source = AdminFiles::read( $menu );
+            $relative = substr( $menu, strlen( $root ) + 1 );
+            $this->assertStringNotContainsString( 'id="widthcontrol-links"', $source, "$relative writes its own width switch" );
+            $this->assertStringNotContainsString( 'widthcontrol-handler', $source, "$relative writes its own drag grip" );
+            $this->assertMatchesRegularExpression( "#\{include uri=(?:'design:parts/left_width_control\.tpl'|concat\( 'design:parts/', 'left_width_control\.tpl' \))\}#",
+                                                   $source, "$relative ends with the kernel's width switch" );
+        }
+    }
+
     public function testTheWidthSwitchIsThreeNamedIconButtons()
     {
         $switch = self::template( 'parts/left_width_control.tpl' );

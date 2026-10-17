@@ -1271,3 +1271,14 @@ label.a4-package-option-label {
   .a4-setup-log-src { border-color: CanvasText; }
   .a4-setup-log-link, .a4-setup-log-detail-text a { color: LinkText; }
 }
+
+/* ---- contentcheck: the start location of every check (design:contentcheck/scope.tpl) ----------------------- */
+
+/* Two rows of links in the filter bar: the quick scope buttons, then the sites and sections under the content root */
+.a4-setup-scope { flex-direction: column; align-items: stretch; gap: var(--a4-space-2); margin: var(--a4-space-2) 0 0; }
+.a4-setup-scope-label { flex: 0 0 auto; min-width: 9rem; color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 600; }
+/* the site or section the start location lies in */
+.a4-setup-scope .is-within { border-color: var(--a4-accent); }
+@media (max-width: 600px) {
+  .a4-setup-scope-label { flex-basis: 100%; }
+}
