@@ -16,8 +16,10 @@ listed by its error digest and its log health page, and are rotated like the oth
 | `notice.log` | the answers 401 and 403, as before: they are access answers; the security side is in `auth.log` and the audit trail | notice |
 | `security.log` | a request the request classifier names a probe, a traversal, an injection, an attack tool or a burst of not-found answers, **with any status** (200, 401, 403, 404, 500 ...) | warning |
 
-- **Not every request is classified.** A request that ends through `eZExecution::cleanExit()` (a file download, an
-  ezjscore call) is not classified at its end; it is only when it fails through the error module.
+- **Every request is classified once, whichever way it ends:** at the normal end, through `eZExecution::cleanExit()`
+  (a file download, an ezjscore call, a redirect, a view that sends its own output), through the error module, or
+  after a fatal error. A probe such as `/content/download/../../etc/passwd` is in `security.log` even when the
+  download view answers it itself; a normal download or ezjscore call is not flagged.
 - **One line per request, in one log.** A request is in `security.log` *or* `404.log` *or* (for a real fault)
   `error.log`, never in two of them. A classified probe that ends in a 404 is in `security.log` only; its 404 line
   (and the 401/403 notice of a classified request) is not written.
@@ -273,6 +275,13 @@ neither reads the other's rules.
   the page is missing (the first reason wins), `handleError()` is called by the error module and writes the security
   line or the 404 line, `finish()` at the end of the request classifies what was not classified yet. `reset()` for
   tests and persistent workers.
+- How a request ends does not matter: `ezpKernelWeb::run()` calls `expRequestLog::begin()`, which resets the state
+  and registers `expRequestLog::finish()` as a clean-up handler of `eZExecution`. `eZExecution::cleanup()` runs on
+  `cleanExit()`, at the normal end (`ezpKernelWeb::shutdown()`, which also calls `finish()` itself) and in the shutdown
+  handler after a fatal error; only the first `finish()` of a request counts (`expRequestLog::finished()`). Under
+  Velocity's persistent workers `eZExecution` keeps the handlers per request (`REQUEST_TIME_FLOAT`) and adds a handler
+  once, so nothing is carried over or doubled. Never wrap a `cleanExit()` in `catch ( Exception )`: under Velocity it
+  ends the request by throwing.
 - `expRequestClassifier` (`kernel/classes/requestclassifier/`): `instance()`, `classify( expRequestContext )`,
   `securityLine()`, `log()`; with `expRequestContext` (`fromGlobals()`, `create()` for tests), `expRequestVerdict`,
   `expRequestRuleSetInterface`, `expRequestPatternRuleSet` and `expRequestVerdictListenerInterface`.

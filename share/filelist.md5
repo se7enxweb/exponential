@@ -182,7 +182,7 @@ bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
 b974dde24700fd18ba9d30714509893a  composer.dev.json
 7e531407fc8efd6cf497d4260dd8897c  composer.dev.lock
-a048647fd1801430fbfe941f1216cdaa  composer.json
+d4425365cfd27a0cbc3cfd54a5a9c839  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 2d91308b2fa30038d9cc37afd0e2d44a  config.env.php.example
 e7da3e13ed7cc993f3d31886d4a42ddc  config.php-RECOMMENDED
@@ -3233,7 +3233,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-e6e14721dc8ca6ef11790eab75fbffb4  doc/changelogs/6.0/6.0.15.md
+f9ec3e322984e9f249508de48648ada9  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3688,7 +3688,7 @@ b44b9ac50952ac2e8f16cbb8f32b9b1b  doc/features/6.0/rad-tools.md
 6a7f7df92abdbc6a724d6b7e43addedf  doc/features/6.0/registration-admin-links.md
 12527c047b3b9350ebd0481dcb338531  doc/features/6.0/remote-services-expservices.md
 f9c24ee19f2caf2e1326cf5158b46bfc  doc/features/6.0/repair-from-the-browser.md
-6a15c03c850d89a4283c29ef13f3fd1f  doc/features/6.0/request-logs.md
+521798acce340ddc6feed087203b19de  doc/features/6.0/request-logs.md
 d19ac2813afb3d92cc981015c8ecdfc1  doc/features/6.0/request-rules.md
 24e8ccadcc06ff46a640a76473fd2d4a  doc/features/6.0/reset-user-password.md
 dfc80bc3e8c5193eda53ed0174e12623  doc/features/6.0/reverse-relation-check.md
@@ -5474,7 +5474,7 @@ abe2da30aaff0ef9c3a55b266294cffe  kernel/classes/packageinstallers/ezinstallscri
 b35e4d6bc8a648dee5d61e2d40dd626c  kernel/classes/pdfexport/exppdfexportform.php
 1ede383fc4684bf5752fe4d7d9100c3c  kernel/classes/pdfexport/exppdfexportgenerator.php
 ea651d149f268843f31794ebedf4540b  kernel/classes/pdfexport/exppdfexportinfo.php
-54a11205f4d9ab81601868c9237f2e7d  kernel/classes/requestclassifier/exprequestclassifier.php
+1b68facba98fc75248f5237d1ff435dc  kernel/classes/requestclassifier/exprequestclassifier.php
 06f4444fcae22ecc481875a1a47dc311  kernel/classes/requestclassifier/exprequestcontext.php
 4890ae073b9bd6026eac87db44f7f543  kernel/classes/requestclassifier/exprequestpatternruleset.php
 1a88bad818302d181c37a17008cf33e0  kernel/classes/requestclassifier/exprequestrulesetinjection.php
@@ -5486,7 +5486,7 @@ eee1e19630ba6c3d438ba4b73b6a0e25  kernel/classes/requestclassifier/exprequestrul
 7b2f8c73d2b6b59757c7cfb1471f0de3  kernel/classes/requestclassifier/exprequestthresholdcounter.php
 db61c9e4cce019e2e98d05083814a049  kernel/classes/requestclassifier/exprequestverdict.php
 71602a482643a57b3f52f513e5d6c108  kernel/classes/requestclassifier/exprequestverdictlistenerinterface.php
-7bea695f275be5d9cf5eb488b4837c25  kernel/classes/requestlog/exprequestlog.php
+813bd713690a9397876aeccd1307d53b  kernel/classes/requestlog/exprequestlog.php
 eb78def01da4fef4c8d3826bef26752c  kernel/classes/role/exprolegrantcheck.php
 71ecdf5f28d06bb754e0dee6dab697fc  kernel/classes/role/exprolepage.php
 dc665737a69c0b50fbeee0f5a53f2582  kernel/classes/role/exprolepolicysentence.php
@@ -5882,7 +5882,7 @@ cecedcc8d3f8f0c9cd7745fb3a8c67db  kernel/private/classes/ezpkernel.php
 28b56f2df1290892158aedc26b81b0c8  kernel/private/classes/ezpkernelredirect.php
 177993fa9e64be25d35ab1bc40e66544  kernel/private/classes/ezpkernelresult.php
 e6ce6d62141661a4cf4b57a97febf591  kernel/private/classes/ezpkerneltreemenu.php
-a0939cff01cc497a0ce891b7b8ad232c  kernel/private/classes/ezpkernelweb.php
+07c7a8056858c2eb31fda676f344e812  kernel/private/classes/ezpkernelweb.php
 2b8a42157ac99a624a5cd28409ac43d6  kernel/private/classes/ezplanguageswitcher.php
 c40373eb533e1704ca522996e35b8e1e  kernel/private/classes/ezpmail.php
 0548609342e2db364a28094abfb637a8  kernel/private/classes/ezpmobiledevicedetect.php
@@ -6776,7 +6776,7 @@ b747687983606af5b5ef77e4a7ff73bd  lib/ezutils/classes/ezwizardbaseclassloader.ph
 72ac1e093ee82d6fbf003d4432240000  phpcs.xml.dist
 ef2da25522d8ed3513c81b1343870c7e  phpstan-baseline.neon
 1f1afac4ef3101d57248f02c262ad6d1  phpstan.neon.dist
-0709d39a6c64fdc5e2f2036ae2570a05  phpunit.xml
+c8c6f6e2b83a77d41461027351aa34ba  phpunit.xml
 c981f3e6ff32017cd87f4b02adc3dfa9  robots.txt
 0e6836ac300696c897053d3d97f46af7  runcronjobs.php
 17f0220e8e577b7bf95ffbea6f562fd2  schemas/translation/ts.rng
@@ -8832,7 +8832,9 @@ ea78290da17011e1c5e5fa5c26e2f812  tests/tests/kernel/private/webdav/regression/P
 e9be704d52153bd5f082c0d389cc9d6e  tests/tests/kernel/requestclassifier/expRequestClassifierRulesTest.php
 1bdad4a13363124b4ef82ffb75a60626  tests/tests/kernel/requestclassifier/expRequestClassifierTest.php
 320ecf8d91b393c2bef66451e292af55  tests/tests/kernel/requestclassifier/expRequestClassifierThresholdTest.php
-00bd9d5990ece58677ed9bd6108e434a  tests/tests/kernel/requestlog/expRequestLogTest.php
+634ae8dfdbacb82c9631bc75edf79267  tests/tests/kernel/requestlog/expRequestLogRequestEndTest.php
+f1d6df78928fbba651e25d8e16d4127c  tests/tests/kernel/requestlog/expRequestLogTest.php
+06d9d77a8d02bfd8f318367ad8d2ce31  tests/tests/kernel/requestlog/fixtures/request_ending_in_clean_exit.php
 0c4d498d365638f271d6368732362b01  tests/tests/kernel/search/eZSearchEngineIdsTest.php
 3fd64cf8d6100ef095a212afa06b5f22  tests/tests/kernel/search/eZSearchEngineIntegerClampTest.php
 7672ec3f2714756db70059a8fdabf898  tests/tests/kernel/search/ezsearchengine_regression.php

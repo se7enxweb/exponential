@@ -14,7 +14,7 @@
  *  RL-8  a classifier verdict: the security path for any status, no 404 line, no old line
  *  RL-9  the node or object of the view (NodeID, ObjectID) and the fallback kernel:<type>/<number>
  *  RL-10 finish(): a reason the error module never saw ends as a 404 line, or as its old error line otherwise
- *  RL-11 the call sites are guarded: ezpkernelweb.php (reason, noteView, finish in shutdown), ezmodule.php
+ *  RL-11 the call sites are guarded: ezpkernelweb.php (reason, noteView, begin in run, finish in shutdown), ezmodule.php
  *        (Undefined view of the requested module, noteView in handleError), error/view.php (handleError)
  *
  * The log is written below var/tmp of the installation, never var/log. No database.
@@ -338,6 +338,7 @@ class expRequestLogTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( "!expRequestLog::reason( 'disabled', \$disabledDetail, null, \$disabledLine )", $web );
         $this->assertSame( 2, substr_count( $web, "expRequestLog::reason( 'view', \$moduleName . '/' . \$functionName );" ) );
         $this->assertStringContainsString( 'expRequestLog::finish();', $web );
+        $this->assertStringContainsString( 'expRequestLog::begin();', $web );
         $this->assertStringContainsString( 'expRequestLog::noteView(', $web );
         // every call (not a comment) has its class_exists() guard on its own line or the line before (a Velocity
         // worker keeps the autoload map of its warm-up, which may not know the class); the try block of finish() is
