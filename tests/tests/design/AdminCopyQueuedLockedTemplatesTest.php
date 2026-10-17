@@ -177,8 +177,9 @@ class AdminCopyQueuedLockedTemplatesTest extends PHPUnit\Framework\TestCase
         foreach ( $read[1] as $attribute )
             $this->assertStringContainsString( $attribute . '="', $source, "content_queued.js reads $attribute" );
         $this->assertStringContainsString( "ezscript_require( array( 'ezjsc::jquery', 'exp::core::shared', 'exp::io', 'ezasynchronouspublishing.js' ) )", $source );
-        $this->assertStringContainsString( "<script type=\"text/javascript\" src={'javascript/content_queued.js'|ezdesign}></script>", $source );
-        $this->assertStringContainsString( "{'stylesheets/content_queued.css'|ezdesign}", $source );
+        // through the packer (ezjscPackerNoVersionQueryTest PC-04: no plain script or stylesheet tag in admin4)
+        $this->assertStringContainsString( "{ezscript( array( 'content_queued.js' ) )}", $source );
+        $this->assertStringContainsString( "{ezcss_require( 'content_queued.css' )}", $source );
         $this->assertStringContainsString( '.ezap-hidden', self::read( 'design/standard/stylesheets/content_queued.css' ) );
     }
 
