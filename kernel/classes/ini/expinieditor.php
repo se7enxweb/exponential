@@ -861,7 +861,8 @@ class expIniEditor
      *
      * Options: dryRun (false) -- only report; backup (true) -- copy the old file to
      * <backupRoot>/<Ymd-His>/<relative path> first; backupRoot (<root>var/backup/ini); allowDefault (false) -- may
-     * write the default scope (settings/*.ini); create (true) -- may create a missing file and directories.
+     * write the default scope (settings/*.ini); create (true) -- may create a missing file and directories;
+     * generatedSecret (false) -- key material generated on first use, written also with ManagedByDeployment.
      *
      * The write is atomic (a temporary file in the same directory, then rename) and keeps the file's owner, group
      * and mode; a new file and new directories get the owner and group of the nearest existing parent directory.
@@ -876,7 +877,8 @@ class expIniEditor
     public function save( array $options = array() )
     {
         $options += array( 'dryRun' => false, 'backup' => true, 'backupRoot' => self::root() . 'var/backup/ini',
-                           'allowDefault' => false, 'create' => true, 'createScope' => false );
+                           'allowDefault' => false, 'create' => true, 'createScope' => false,
+                           'generatedSecret' => false );
         $data = array( 'path' => $this->path, 'relativePath' => $this->relativePath(), 'created' => !$this->existed,
                        'dryRun' => (bool)$options['dryRun'], 'warnings' => array() );
         if ( !$this->scope->policyWritable() && !$options['allowDefault'] )
@@ -900,6 +902,12 @@ class expIniEditor
         }
         if ( $missingExtension && !$options['createScope'] )
             throw expIniException::refused( "The extension '$ext' does not exist (no directory extension/$ext); creating it was not allowed (createScope)" );
+
+        // site.ini [ConfigurationSettings] ManagedByDeployment=enabled: the settings come from the deployment
+        // only (command line scripts still write). Key material the code generates itself on first use (generatedSecret:
+        // audit and mail preference keys) is runtime state, not configuration, and is still written.
+        if ( class_exists( 'expManagedConfiguration' ) && !$options['generatedSecret'] && expManagedConfiguration::refusesWrite() )
+            throw expIniException::refused( "The configuration is managed by the deployment (site.ini [ConfigurationSettings] ManagedByDeployment); nothing written to {$this->relativePath()}." );
 
         $new = $this->content();
         $existsNow = is_file( $this->path );

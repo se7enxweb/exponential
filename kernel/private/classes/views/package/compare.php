@@ -36,7 +36,9 @@ class Compare extends \Exponential\Runnable\ModuleView
             return $this->viewResult( isset( $Result ) ? $Result : null,  $module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
         if ( !$package->attribute( 'can_read' ) )
             return $this->viewResult( isset( $Result ) ? $Result : null,  $module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' ) );
-        $canImport = (bool)$package->attribute( 'can_install' );
+        // importing from a package is installing it piece by piece; with the configuration managed by
+        // the deployment the comparison stays, the import does not (package/install is locked as well)
+        $canImport = (bool)$package->attribute( 'can_install' ) && !\expManagedConfiguration::isEnabled();
 
         $http = \eZHTTPTool::instance();
         $userParameters = isset( $Params['UserParameters'] ) && is_array( $Params['UserParameters'] ) ? $Params['UserParameters'] : array();
