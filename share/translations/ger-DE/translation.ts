@@ -17424,6 +17424,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Files in the storage that nothing uses, and files with the wrong owner or mode.</source>
         <translation>Dateien im Speicher, die nichts verwendet, und Dateien mit falschem Eigentümer oder falschen Rechten.</translation>
     </message>
+    <message>
+        <source>Log files</source>
+        <translation>Logdateien</translation>
+    </message>
+    <message>
+        <source>Follow, search and cross-reference the log files.</source>
+        <translation>Die Logdateien verfolgen, durchsuchen und querverweisen.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -66291,6 +66299,18 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Site data</source>
         <translation>Site-Daten</translation>
     </message>
+    <message>
+        <source>Setup</source>
+        <translation>Setup</translation>
+    </message>
+    <message>
+        <source>Log files</source>
+        <translation>Logdateien</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Bestätigen</translation>
+    </message>
 </context>
 <context>
     <name>kernel/shop</name>
@@ -76467,6 +76487,525 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Name</source>
         <translation>Name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/logs</name>
+    <message>
+        <source>Error</source>
+        <translation>Fehler</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Warnung</translation>
+    </message>
+    <message>
+        <source>Notice</source>
+        <translation>Hinweis</translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <translation>Debug</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Kernel</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Site</translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation>Erweiterungen</translation>
+    </message>
+    <message>
+        <source>Rotated archives</source>
+        <translation>Rotierte Archive</translation>
+    </message>
+    <message>
+        <source>Log file %name</source>
+        <translation>Logdatei %name</translation>
+    </message>
+    <message>
+        <source>Log files</source>
+        <translation>Logdateien</translation>
+    </message>
+    <message>
+        <source>Follows a log file as it is written, searches it and its rotations, and links the lines of one request. Nothing on this page changes a file unless an action below says so.</source>
+        <translation>Verfolgt eine Logdatei, während sie geschrieben wird, durchsucht sie und ihre Rotationen und verknüpft die Zeilen einer Anfrage. Nichts auf dieser Seite ändert eine Datei, außer eine Aktion unten sagt es.</translation>
+    </message>
+    <message>
+        <source>The file was rotated. The next line written starts a new file.</source>
+        <translation>Die Datei wurde rotiert. Die nächste geschriebene Zeile beginnt eine neue Datei.</translation>
+    </message>
+    <message>
+        <source>The file was emptied.</source>
+        <translation>Die Datei wurde geleert.</translation>
+    </message>
+    <message>
+        <source>The archived rotation was removed.</source>
+        <translation>Die archivierte Rotation wurde entfernt.</translation>
+    </message>
+    <message>
+        <source>The action could not be carried out. The web server may not change the file or its directory.</source>
+        <translation>Die Aktion konnte nicht ausgeführt werden. Der Webserver darf die Datei oder ihr Verzeichnis nicht ändern.</translation>
+    </message>
+    <message>
+        <source>The file asked for is not a log file this viewer may open (settings/logviewer.ini [LogViewerSettings] Directories[] and FilePatterns[]). The default file is shown instead.</source>
+        <translation>Die angefragte Datei ist keine Logdatei, die dieser Viewer öffnen darf (settings/logviewer.ini [LogViewerSettings] Directories[] und FilePatterns[]). Stattdessen wird die Standarddatei gezeigt.</translation>
+    </message>
+    <message>
+        <source>The search could not be run:</source>
+        <translation>Die Suche konnte nicht ausgeführt werden:</translation>
+    </message>
+    <message>
+        <source>The search text is too long.</source>
+        <translation>Der Suchtext ist zu lang.</translation>
+    </message>
+    <message>
+        <source>"%field" is not a time.</source>
+        <translation>„%field“ ist keine Zeitangabe.</translation>
+    </message>
+    <message>
+        <source>The IP address may only hold digits, letters a to f, dots and colons.</source>
+        <translation>Die IP-Adresse darf nur Ziffern, die Buchstaben a bis f, Punkte und Doppelpunkte enthalten.</translation>
+    </message>
+    <message>
+        <source>The regular expression is not valid.</source>
+        <translation>Der reguläre Ausdruck ist nicht gültig.</translation>
+    </message>
+    <message>
+        <source>An error reference looks like ERR-0123456789.</source>
+        <translation>Eine Fehlerreferenz sieht so aus: ERR-0123456789.</translation>
+    </message>
+    <message>
+        <source>There is no log file this viewer may open yet.</source>
+        <translation>Es gibt noch keine Logdatei, die dieser Viewer öffnen darf.</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Datei</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Öffnen</translation>
+    </message>
+    <message>
+        <source>Changed %time</source>
+        <translation>Geändert %time</translation>
+    </message>
+    <message>
+        <source>Compressed, read only</source>
+        <translation>Komprimiert, nur lesbar</translation>
+    </message>
+    <message>
+        <source>Archived rotation, not followed</source>
+        <translation>Archivierte Rotation, wird nicht verfolgt</translation>
+    </message>
+    <message>
+        <source>E-mail addresses, IP addresses and secrets are masked</source>
+        <translation>E-Mail-Adressen, IP-Adressen und Geheimnisse sind maskiert</translation>
+    </message>
+    <message>
+        <source>Shown unmasked</source>
+        <translation>Unmaskiert angezeigt</translation>
+    </message>
+    <message>
+        <source>Controls</source>
+        <translation>Steuerung</translation>
+    </message>
+    <message>
+        <source>Search results</source>
+        <translation>Suchergebnisse</translation>
+    </message>
+    <message>
+        <source>Archive</source>
+        <translation>Archiv</translation>
+    </message>
+    <message>
+        <source>Following</source>
+        <translation>Wird verfolgt</translation>
+    </message>
+    <message>
+        <source>Pause</source>
+        <translation>Anhalten</translation>
+    </message>
+    <message>
+        <source>Newest</source>
+        <translation>Neueste</translation>
+    </message>
+    <message>
+        <source>Follow</source>
+        <translation>Verfolgen</translation>
+    </message>
+    <message>
+        <source>Wrap lines</source>
+        <translation>Zeilen umbrechen</translation>
+    </message>
+    <message>
+        <source>Mask again</source>
+        <translation>Wieder maskieren</translation>
+    </message>
+    <message>
+        <source>Show unmasked</source>
+        <translation>Unmaskiert zeigen</translation>
+    </message>
+    <message>
+        <source>Find in the loaded lines</source>
+        <translation>In den geladenen Zeilen suchen</translation>
+    </message>
+    <message>
+        <source>Find in view</source>
+        <translation>In der Ansicht suchen</translation>
+    </message>
+    <message>
+        <source>Previous match (Shift+Enter)</source>
+        <translation>Vorheriger Treffer (Umschalt+Eingabe)</translation>
+    </message>
+    <message>
+        <source>Previous match</source>
+        <translation>Vorheriger Treffer</translation>
+    </message>
+    <message>
+        <source>Next match (Enter)</source>
+        <translation>Nächster Treffer (Eingabe)</translation>
+    </message>
+    <message>
+        <source>Next match</source>
+        <translation>Nächster Treffer</translation>
+    </message>
+    <message>
+        <source>Keys in the list: Space pauses or resumes, End jumps to the newest line, Up and Down move, Enter opens a line, n and N find the next and previous match.</source>
+        <translation>Tasten in der Liste: Leertaste hält an oder setzt fort, Ende springt zur neuesten Zeile, Auf und Ab bewegen, Eingabe öffnet eine Zeile, n und N finden den nächsten und vorherigen Treffer.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Suchen</translation>
+    </message>
+    <message>
+        <source>Search the log files</source>
+        <translation>Die Logdateien durchsuchen</translation>
+    </message>
+    <message>
+        <source>Text</source>
+        <translation>Text</translation>
+    </message>
+    <message>
+        <source>Literal text, or a regular expression (without delimiters) when Regular expression is ticked. A search stops after a few seconds and offers to go on.</source>
+        <translation>Wörtlicher Text oder, wenn „Regulärer Ausdruck“ angekreuzt ist, ein regulärer Ausdruck (ohne Begrenzer). Eine Suche hält nach wenigen Sekunden an und bietet an, weiterzusuchen.</translation>
+    </message>
+    <message>
+        <source>Regular expression</source>
+        <translation>Regulärer Ausdruck</translation>
+    </message>
+    <message>
+        <source>Match case</source>
+        <translation>Groß-/Kleinschreibung beachten</translation>
+    </message>
+    <message>
+        <source>Levels</source>
+        <translation>Stufen</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Von</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Bis</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>Request address contains</source>
+        <translation>Anfrageadresse enthält</translation>
+    </message>
+    <message>
+        <source>Client IP starts with</source>
+        <translation>Client-IP beginnt mit</translation>
+    </message>
+    <message>
+        <source>Error reference</source>
+        <translation>Fehlerreferenz</translation>
+    </message>
+    <message>
+        <source>The reference an error page showed: finds its line in every kernel log and its rotations, and the lines of its request.</source>
+        <translation>Die Referenz, die eine Fehlerseite zeigte: findet ihre Zeile in jedem Kernel-Log und seinen Rotationen und die Zeilen ihrer Anfrage.</translation>
+    </message>
+    <message>
+        <source>Search in</source>
+        <translation>Suchen in</translation>
+    </message>
+    <message>
+        <source>This file</source>
+        <translation>Diese Datei</translation>
+    </message>
+    <message>
+        <source>All kernel logs</source>
+        <translation>Alle Kernel-Logs</translation>
+    </message>
+    <message>
+        <source>All log files</source>
+        <translation>Alle Logdateien</translation>
+    </message>
+    <message>
+        <source>Include rotated files</source>
+        <translation>Rotierte Dateien einbeziehen</translation>
+    </message>
+    <message>
+        <source>Back to following</source>
+        <translation>Zurück zum Verfolgen</translation>
+    </message>
+    <message>
+        <source>%count entries found</source>
+        <translation>%count Einträge gefunden</translation>
+    </message>
+    <message>
+        <source>(the search stopped after its time limit; more may follow)</source>
+        <translation>(die Suche hielt nach ihrem Zeitlimit an; weitere können folgen)</translation>
+    </message>
+    <message>
+        <source>(the search stopped after reading its share; more may follow)</source>
+        <translation>(die Suche hielt nach ihrem Leseanteil an; weitere können folgen)</translation>
+    </message>
+    <message>
+        <source>(the first page of results)</source>
+        <translation>(die erste Seite der Ergebnisse)</translation>
+    </message>
+    <message>
+        <source>(the regular expression needed too much work on a line and was stopped; make it more specific)</source>
+        <translation>(der reguläre Ausdruck brauchte zu viel Arbeit für eine Zeile und wurde angehalten; bitte genauer fassen)</translation>
+    </message>
+    <message>
+        <source>The request of %reference</source>
+        <translation>Die Anfrage von %reference</translation>
+    </message>
+    <message>
+        <source>No other line of this request was found.</source>
+        <translation>Keine weitere Zeile dieser Anfrage gefunden.</translation>
+    </message>
+    <message>
+        <source>The audit of this moment</source>
+        <translation>Das Audit dieses Moments</translation>
+    </message>
+    <message>
+        <source>Lines of %name</source>
+        <translation>Zeilen von %name</translation>
+    </message>
+    <message>
+        <source>Nothing matches the search.</source>
+        <translation>Nichts passt zur Suche.</translation>
+    </message>
+    <message>
+        <source>The file is empty.</source>
+        <translation>Die Datei ist leer.</translation>
+    </message>
+    <message>
+        <source>More results</source>
+        <translation>Weitere Ergebnisse</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Eintrag</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation>Schließen</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Aktionen</translation>
+    </message>
+    <message>
+        <source>From byte</source>
+        <translation>Ab Byte</translation>
+    </message>
+    <message>
+        <source>To byte</source>
+        <translation>Bis Byte</translation>
+    </message>
+    <message>
+        <source>Download (gzip)</source>
+        <translation>Herunterladen (gzip)</translation>
+    </message>
+    <message>
+        <source>Empty fields: the last %size of the file. Masked as shown here; recorded in the audit.</source>
+        <translation>Leere Felder: die letzten %size der Datei. Maskiert wie hier gezeigt; wird im Audit festgehalten.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Jetzt rotieren</translation>
+    </message>
+    <message>
+        <source>Empty the file</source>
+        <translation>Datei leeren</translation>
+    </message>
+    <message>
+        <source>Remove this rotation</source>
+        <translation>Diese Rotation entfernen</translation>
+    </message>
+    <message>
+        <source>Each of these asks for a confirmation first and is recorded in the audit.</source>
+        <translation>Jede dieser Aktionen fragt zuerst nach einer Bestätigung und wird im Audit festgehalten.</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Fortsetzen</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Angehalten</translation>
+    </message>
+    <message>
+        <source>Waiting %seconds s (too many requests)</source>
+        <translation>Warte %seconds s (zu viele Anfragen)</translation>
+    </message>
+    <message>
+        <source>No answer from the server; trying again</source>
+        <translation>Keine Antwort vom Server; neuer Versuch</translation>
+    </message>
+    <message>
+        <source>The file can no longer be read</source>
+        <translation>Die Datei kann nicht mehr gelesen werden</translation>
+    </message>
+    <message>
+        <source>%count new lines</source>
+        <translation>%count neue Zeilen</translation>
+    </message>
+    <message>
+        <source>1 new line</source>
+        <translation>1 neue Zeile</translation>
+    </message>
+    <message>
+        <source>The file was rotated or emptied; following the new one.</source>
+        <translation>Die Datei wurde rotiert oder geleert; die neue wird verfolgt.</translation>
+    </message>
+    <message>
+        <source>Match %index of %count</source>
+        <translation>Treffer %index von %count</translation>
+    </message>
+    <message>
+        <source>No match</source>
+        <translation>Kein Treffer</translation>
+    </message>
+    <message>
+        <source>%count lines kept (the oldest are dropped from the page, never from the file)</source>
+        <translation>%count Zeilen behalten (die ältesten fallen aus der Seite heraus, nie aus der Datei)</translation>
+    </message>
+    <message>
+        <source>Entry at %time</source>
+        <translation>Eintrag um %time</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Zeit</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>Stufe</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Quelle</translation>
+    </message>
+    <message>
+        <source>Client</source>
+        <translation>Client</translation>
+    </message>
+    <message>
+        <source>Request</source>
+        <translation>Anfrage</translation>
+    </message>
+    <message>
+        <source>Byte offset</source>
+        <translation>Byte-Position</translation>
+    </message>
+    <message>
+        <source>Lines of the same request</source>
+        <translation>Zeilen derselben Anfrage</translation>
+    </message>
+    <message>
+        <source>Looking for the lines of this request…</source>
+        <translation>Suche die Zeilen dieser Anfrage …</translation>
+    </message>
+    <message>
+        <source>Debug output of this request</source>
+        <translation>Debug-Ausgabe dieser Anfrage</translation>
+    </message>
+    <message>
+        <source>No debug output of this request was logged.</source>
+        <translation>Für diese Anfrage wurde keine Debug-Ausgabe protokolliert.</translation>
+    </message>
+    <message>
+        <source>Find %reference everywhere</source>
+        <translation>%reference überall suchen</translation>
+    </message>
+    <message>
+        <source>Open the request</source>
+        <translation>Die Anfrage öffnen</translation>
+    </message>
+    <message>
+        <source>(cut: the entry is longer than the viewer keeps)</source>
+        <translation>(gekürzt: der Eintrag ist länger, als der Viewer behält)</translation>
+    </message>
+    <message>
+        <source>Loading more results…</source>
+        <translation>Lade weitere Ergebnisse …</translation>
+    </message>
+    <message>
+        <source>No more results.</source>
+        <translation>Keine weiteren Ergebnisse.</translation>
+    </message>
+    <message>
+        <source>The request failed: %error</source>
+        <translation>Die Anfrage schlug fehl: %error</translation>
+    </message>
+    <message>
+        <source>The web server may not read this file.</source>
+        <translation>Der Webserver darf diese Datei nicht lesen.</translation>
+    </message>
+    <message>
+        <source>rate: measuring</source>
+        <translation>Rate: wird gemessen</translation>
+    </message>
+    <message>
+        <source>%rate lines/min</source>
+        <translation>%rate Zeilen/min</translation>
+    </message>
+    <message>
+        <source>Rotate %name now?</source>
+        <translation>%name jetzt rotieren?</translation>
+    </message>
+    <message>
+        <source>Empty %name?</source>
+        <translation>%name leeren?</translation>
+    </message>
+    <message>
+        <source>Remove %name?</source>
+        <translation>%name entfernen?</translation>
+    </message>
+    <message>
+        <source>The file becomes %name.1 and the older rotations move one number up; the oldest beyond %count is removed. The next line written starts a new file.</source>
+        <translation>Die Datei wird zu %name.1 und die älteren Rotationen rücken eine Nummer weiter; die älteste über %count hinaus wird entfernt. Die nächste geschriebene Zeile beginnt eine neue Datei.</translation>
+    </message>
+    <message>
+        <source>Every line of the file (%size) is removed for good. Download it first if it may still be needed.</source>
+        <translation>Jede Zeile der Datei (%size) wird endgültig entfernt. Laden Sie sie zuerst herunter, wenn sie noch gebraucht werden könnte.</translation>
+    </message>
+    <message>
+        <source>The archived rotation (%size) is removed for good.</source>
+        <translation>Die archivierte Rotation (%size) wird endgültig entfernt.</translation>
+    </message>
+    <message>
+        <source>The action is recorded in the audit.</source>
+        <translation>Die Aktion wird im Audit festgehalten.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abbrechen</translation>
     </message>
 </context>
 </TS>
