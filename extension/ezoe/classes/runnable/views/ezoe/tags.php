@@ -10,6 +10,24 @@ namespace Exponential\View\Extension\Ezoe\Ezoe
 
 class Tags extends \Exponential\Runnable\ModuleView
 {
+    /**
+     * Whether the dialog of a custom tag may open for the name from the address: no name (a new tag, the editor
+     * sends "undefined") or one of content.ini [CustomTagSettings] AvailableCustomTags[]. The name goes into a
+     * script string and a class attribute of tag_custom.tpl, so any other value is refused.
+     *
+     * @param mixed $name the CustomTagName parameter, trimmed, "undefined" already turned into ''
+     * @param array $available AvailableCustomTags[]
+     * @return bool
+     */
+    public static function customTagNameAllowed( $name, array $available )
+    {
+        if ( !is_string( $name ) )
+            return false;
+        if ( $name === '' )
+            return true;
+        return in_array( $name, array_map( 'strval', $available ), true );
+    }
+
     public function run( array $scope )
     {
         // the including function's variables ($Params, $Module, $cli, ...)
@@ -84,7 +102,7 @@ class Tags extends \Exponential\Runnable\ModuleView
 
         if ( !$templateName )
         {
-           echo \ezpI18n::tr( 'design/standard/ezoe', 'Invalid parameter: %parameter = %value', null, array( '%parameter' => 'TagName', '%value' => $tagName ) );
+           echo \ezpI18n::tr( 'design/standard/ezoe', 'Invalid parameter: %parameter = %value', null, array( '%parameter' => 'TagName', '%value' => htmlspecialchars( $tagName, ENT_QUOTES, 'UTF-8' ) ) );
            \eZExecution::cleanExit();
         }
 
@@ -98,6 +116,15 @@ class Tags extends \Exponential\Runnable\ModuleView
 
         if ( $tagName === 'custom' )
         {
+            // only a name of AvailableCustomTags[] reaches the template (it is printed into a script string)
+            $availableCustomTags = $contentIni->hasVariable( 'CustomTagSettings', 'AvailableCustomTags' )
+                ? (array) $contentIni->variable( 'CustomTagSettings', 'AvailableCustomTags' ) : array();
+            if ( !self::customTagNameAllowed( $customTagName, $availableCustomTags ) )
+            {
+               echo \ezpI18n::tr( 'design/standard/ezoe', 'Invalid parameter: %parameter = %value', null, array( '%parameter' => 'CustomTagName', '%value' => htmlspecialchars( $customTagName, ENT_QUOTES, 'UTF-8' ) ) );
+               \eZExecution::cleanExit();
+            }
+
             // custom tags dosn't have a class, so we use custom tag name as class internally
             // in the editor to be able to have different styles on differnt custom tags.
             if ( $contentIni->hasVariable( 'CustomTagSettings', 'CustomTagsDescription' ) )
@@ -108,7 +135,7 @@ class Tags extends \Exponential\Runnable\ModuleView
             if ( $contentIni->hasVariable( 'CustomTagSettings', 'IsInline' ) )
                 $customInlineList = $contentIni->variable( 'CustomTagSettings', 'IsInline' );
 
-            foreach( $contentIni->variable( 'CustomTagSettings', 'AvailableCustomTags' ) as $tag )
+            foreach( $availableCustomTags as $tag )
             {
                 if ( isset( $customTagDescription[$tag] ) )
                     $classList[$tag] = $customTagDescription[$tag];

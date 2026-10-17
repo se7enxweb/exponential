@@ -25,7 +25,7 @@
 
 {* The address keeps the page and the sort of the policy list, so a button pressed on page three of a sorted list
    comes back to that page, sorted. *}
-<form name="roleedit" id="roleedit" method="post" class="a4-page a4-standalone" action={concat( $module.functions.edit.uri, '/', $role.id,
+<form name="roleedit" id="roleedit" data-differs="{if $differs}1{else}0{/if}" data-text-leave="{'This draft has unsaved changes. Leave the page anyway?'|i18n( 'design/admin/role/edit' )|wash}" method="post" class="a4-page a4-standalone" action={concat( $module.functions.edit.uri, '/', $role.id,
                                                     '/(policy_offset)/', $policy_offset,
                                                     '/(policy_sort)/', $policy_sort.field,
                                                     '/(policy_dir)/', $policy_sort.direction )|ezurl}>
@@ -183,97 +183,9 @@
 {if and( is_set( $redirect_if_discarded ), $redirect_if_discarded )}<input type="hidden" name="RedirectIfDiscarded" value="{$redirect_if_discarded|wash}" />{/if}
 </form>
 
-<script type="text/javascript">
-var expRoleEditText = {ldelim} leave: '{'This draft has unsaved changes. Leave the page anyway?'|i18n( 'design/admin/role/edit' )|wash( javascript )}' {rdelim};
-var expRoleEditDiffers = {if $differs}true{else}false{/if};
-{literal}
-(function () {
-    var form = document.getElementById( 'roleedit' ), name = document.getElementById( 'roleName' );
-    if ( !form || !name ) return;
-    var initial = name.value, submitting = false, dirtyEl = document.getElementById( 'role-edit-dirty' );
-    function dirty() { return expRoleEditDiffers || name.value !== initial; }
-    name.addEventListener( 'input', function () { if ( dirtyEl ) dirtyEl.hidden = !dirty(); } );
-    form.addEventListener( 'submit', function () { submitting = true; } );
-    // Leaving by a link, the address bar or closing the tab, not by Save, Cancel or another button of the form
-    window.addEventListener( 'beforeunload', function ( e ) {
-        if ( submitting || !dirty() ) return;
-        e.preventDefault();
-        e.returnValue = expRoleEditText.leave;
-        return expRoleEditText.leave;
-    } );
-    if ( !expRoleEditDiffers && !document.getElementById( 'role-edit-moved' ) ) { name.focus(); name.select(); }
-})();
-{/literal}
-</script>
+{ezscript( array( 'page/role_edit.js' ) )}
 
 {if $policy_order_editable}
-<script type="text/javascript">
-var expRoleOrder = {ldelim} offset: {$policy_offset}, moved: '{'Moved to position %position.'|i18n( 'design/admin/role/edit' )|wash( javascript )}' {rdelim};
-{literal}
-/* Drag and drop and the arrow keys on the grip. Both send the move the buttons send (MovePolicyTo with the place in
-   the whole list, or MovePolicyUp / MovePolicyDown), so the server makes it in the draft; nothing is reordered only
-   on screen. */
-(function () {
-    var form = document.getElementById( 'roleedit' ), list = document.getElementById( 'role-edit-policies' );
-    if ( !form || !list ) return;
-    var grips = list.querySelectorAll( '.a4-grip' ), i, dragged = null, startIndex = -1;
-    for ( i = 0; i < grips.length; i++ ) grips[i].hidden = false;
-    function items() { return Array.prototype.slice.call( list.querySelectorAll( ':scope > li.a4-role-policy' ) ); }
-    function send( name, value, position ) {
-        var b = document.createElement( 'button' );
-        b.type = 'submit'; b.name = name; b.value = value; b.hidden = true;
-        if ( position ) {
-            var field = form.querySelector( 'input[name="MovePolicyPosition[' + value + ']"]' );
-            if ( !field ) { field = document.createElement( 'input' ); field.type = 'hidden'; field.name = 'MovePolicyPosition[' + value + ']'; form.appendChild( field ); }
-            field.value = position;
-            try { sessionStorage.setItem( 'exp-role-grip', String( position ) ); } catch ( e ) {}
-        }
-        form.appendChild( b );
-        if ( form.requestSubmit ) form.requestSubmit( b ); else b.click();
-    }
-    list.addEventListener( 'dragstart', function ( e ) {
-        var grip = e.target.closest ? e.target.closest( '.a4-grip' ) : null;
-        if ( !grip ) { e.preventDefault(); return; }
-        dragged = grip.closest( 'li.a4-role-policy' );
-        startIndex = items().indexOf( dragged );
-        dragged.classList.add( 'is-dragging' );
-        e.dataTransfer.effectAllowed = 'move';
-        try { e.dataTransfer.setData( 'text/plain', grip.getAttribute( 'data-policy' ) ); e.dataTransfer.setDragImage( dragged, 20, 20 ); } catch ( x ) {}
-    } );
-    list.addEventListener( 'dragover', function ( e ) {
-        if ( !dragged ) return;
-        e.preventDefault();
-        var over = e.target.closest ? e.target.closest( 'li.a4-role-policy' ) : null;
-        if ( !over || over === dragged ) return;
-        var box = over.getBoundingClientRect();
-        list.insertBefore( dragged, e.clientY > box.top + box.height / 2 ? over.nextSibling : over );
-    } );
-    list.addEventListener( 'drop', function ( e ) { if ( dragged ) e.preventDefault(); } );
-    list.addEventListener( 'dragend', function () {
-        if ( !dragged ) return;
-        var index = items().indexOf( dragged ), grip = dragged.querySelector( '.a4-grip' );
-        dragged.classList.remove( 'is-dragging' );
-        var moved = dragged; dragged = null;
-        if ( index !== startIndex && index >= 0 ) send( 'MovePolicyTo', grip.getAttribute( 'data-policy' ), expRoleOrder.offset + index + 1 );
-    } );
-    list.addEventListener( 'keydown', function ( e ) {
-        var grip = e.target.closest ? e.target.closest( '.a4-grip' ) : null;
-        if ( !grip || ( e.key !== 'ArrowUp' && e.key !== 'ArrowDown' ) ) return;
-        e.preventDefault();
-        var row = grip.closest( 'li.a4-role-policy' ), b = row.querySelector( e.key === 'ArrowUp' ? '.exp-move-up' : '.exp-move-down' );
-        if ( !b || b.disabled ) return;
-        var position = parseInt( grip.getAttribute( 'data-position' ), 10 ) + ( e.key === 'ArrowUp' ? -1 : 1 );
-        try { sessionStorage.setItem( 'exp-role-grip', String( position ) ); } catch ( x ) {}
-        if ( form.requestSubmit ) form.requestSubmit( b ); else b.click();
-    } );
-    // Back from a move: the grip of the moved policy gets the focus again
-    var last = null;
-    try { last = sessionStorage.getItem( 'exp-role-grip' ); sessionStorage.removeItem( 'exp-role-grip' ); } catch ( e ) {}
-    if ( last ) {
-        var target = list.querySelector( '.a4-grip[data-position="' + last + '"]' );
-        if ( target ) { target.focus(); target.closest( 'li.a4-role-policy' ).classList.add( 'is-moved' ); }
-    }
-})();
-{/literal}
-</script>
+<div id="role-edit-order" hidden data-offset="{$policy_offset|int}" data-text-moved="{'Moved to position %position.'|i18n( 'design/admin/role/edit' )|wash}"></div>
+{ezscript( array( 'page/role_edit_order.js' ) )}
 {/if}

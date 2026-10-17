@@ -71,7 +71,7 @@ class AdminDensityTest extends PHPUnit\Framework\TestCase
 
     public function testTheHeadScriptOnlyDropsAnOldStoredValue()
     {
-        $head = self::file( 'design/admin4/templates/page_head_style.tpl' );
+        $head = self::file( 'design/admin4/javascript/a4_head.js' );
         $this->assertStringNotContainsString( "setAttribute('data-a4-density'", $head );
         $this->assertStringNotContainsString( "a4Pref.get('admin_density'", $head );
         $this->assertStringNotContainsString( "a4Pref.set('admin_density'", $head );

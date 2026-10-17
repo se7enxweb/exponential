@@ -44,6 +44,28 @@ function ContentStructureMenu( params, i18n )
         }, node.name, nodeID, node.disableMenuID );
     } );
 
+    // The open/close buttons: a click (or Space, as for a button) loads, opens or closes the node's sub items. One
+    // listener for all of them, no handler attribute (doc/features/6.0/content-security-policy.md).
+    document.addEventListener( 'click', function( e )
+    {
+        var toggle = e.target && e.target.closest ? e.target.closest( 'a[data-tree-load]' ) : null;
+        if ( !toggle || thisMenu.levels[toggle.getAttribute( 'data-tree-load' )] === undefined )
+        {
+            return;
+        }
+        e.preventDefault();
+        thisMenu.press( toggle );
+    } );
+    document.addEventListener( 'keydown', function( e )
+    {
+        var toggle = e.target && e.target.closest ? e.target.closest( 'a[data-tree-load]' ) : null;
+        if ( toggle && e.key === ' ' && thisMenu.levels[toggle.getAttribute( 'data-tree-load' )] !== undefined )
+        {
+            e.preventDefault();
+            toggle.click();
+        }
+    } );
+
     // hashes in ez template doesn't handle numeric keys correctly
     // an underscore has been prepended in keys and is removed here
     var arrayTemp = [];
@@ -160,12 +182,11 @@ function ContentStructureMenu( params, i18n )
                 + nodeID
                 + '" href="#" role="button" aria-expanded="false" aria-label="'
                 + _attr( ( i18n.subitems || '%name' ).split( '%name' ).join( name ) )
-                + '" onkeydown="if ( event.key === \' \' ) { event.preventDefault(); this.click(); }"'
-                + ' onclick="return treeMenu.load( this, '
+                + '" data-tree-load="'
                 + nodeID
-                + ', '
+                + '" data-tree-modified="'
                 + ( parseInt( item.modified_subnode, 10 ) || 0 )
-                +' )"><\/a>';
+                + '"><\/a>';
         }
 
         // What the node's menu needs is kept here, by node ID, and read by the click listener below: names are
@@ -428,6 +449,13 @@ function ContentStructureMenu( params, i18n )
         return false;
     };
 
+    // An open/close button pressed: the node's sub items loaded, opened or closed
+    this.press = function( toggle )
+    {
+        return this.load( toggle, parseInt( toggle.getAttribute( 'data-tree-load' ), 10 ),
+                          parseInt( toggle.getAttribute( 'data-tree-modified' ), 10 ) || 0 );
+    };
+
     this.openUnder = function( parentNodeID )
     {
         var divElement = document.getElementById( 'c' + parentNodeID );
@@ -457,9 +485,9 @@ function ContentStructureMenu( params, i18n )
                 if ( this.isOpen( nodeID ) )
                 {
                     var aElement = document.getElementById( 'a' + nodeID );
-                    if ( aElement )
+                    if ( aElement && aElement.hasAttribute( 'data-tree-load' ) )
                     {
-                        aElement.onclick();
+                        this.press( aElement );
                     }
                 }
             }
@@ -777,9 +805,9 @@ function ContentStructureMenu( params, i18n )
     function _pressToggle( li )
     {
         var toggle = _toggleOf( li );
-        if ( toggle && toggle.className !== 'openclose-busy' && toggle.onclick )
+        if ( toggle && toggle.className !== 'openclose-busy' && toggle.hasAttribute( 'data-tree-load' ) )
         {
-            toggle.onclick();
+            thisMenu.press( toggle );
             return true;
         }
         return false;
@@ -918,4 +946,77 @@ function ContentStructureMenu( params, i18n )
     {
         _setCookie( name, '', ( new Date() - 86400000 ) );
     }
+}
+
+/*
+ * The tree of a page: each div.content-tree-menu (contentstructuremenu/content_structure_menu_dynamic.tpl) carries
+ * its data as JSON in data-tree-root, data-tree-params and data-tree-request, and its list (ul#content_tree_menu).
+ * The tree is drawn when the page is parsed; window.treeMenu is the last one, as with the inline script before.
+ */
+ContentStructureMenu.fromElement = function( holder )
+{
+    var read = function( name )
+    {
+        try { return JSON.parse( holder.getAttribute( name ) || '{}' ) || {}; } catch ( e ) { return {}; }
+    };
+    var ul = holder.querySelector( 'ul' ), rootNode = read( 'data-tree-root' ), params = read( 'data-tree-params' );
+    var request = read( 'data-tree-request' ), i18n = params.i18n || {};
+    if ( !ul || rootNode.node_id === undefined )
+    {
+        return null;
+    }
+    for ( var key in request )
+    {
+        params[key] = request[key];
+    }
+    var hideNodes = [];
+    for ( var h = 0; params.hideNodes && h < params.hideNodes.length; h++ )
+    {
+        if ( !isNaN( parseInt( params.hideNodes[h], 10 ) ) ) hideNodes.push( parseInt( params.hideNodes[h], 10 ) );
+    }
+    params.hideNodes = hideNodes;
+    params.action = params.action || '';
+    params.iconsList = {};
+    for ( var identifier in params.icons || {} )
+    {
+        params.iconsList[identifier] = params.wwwDirPrefix + params.icons[identifier];
+    }
+    params.iconsList['__default__'] = params.wwwDirPrefix + params.defaultIcon;
+    if ( params.preloadIcons && window.ezjslib_preloadImageList )
+    {
+        window.ezjslib_preloadImageList( params.iconsList );
+    }
+
+    var menu = new ContentStructureMenu( params, i18n );
+    ul.innerHTML = menu.generateEntry( rootNode, false, true );
+    menu.tree( ul );
+    menu.load( false, rootNode.node_id, rootNode.modified_subnode );
+    holder.contentStructureMenu = menu;
+    window.treeMenu = menu;
+    return menu;
+};
+
+ContentStructureMenu.drawAll = function()
+{
+    if ( !document.querySelectorAll )
+    {
+        return;
+    }
+    var holders = document.querySelectorAll( 'div.content-tree-menu[data-tree-root]' );
+    for ( var i = 0; i < holders.length; i++ )
+    {
+        if ( !holders[i].contentStructureMenu )
+        {
+            ContentStructureMenu.fromElement( holders[i] );
+        }
+    }
+};
+
+if ( document.readyState === 'loading' )
+{
+    document.addEventListener( 'DOMContentLoaded', ContentStructureMenu.drawAll );
+}
+else
+{
+    ContentStructureMenu.drawAll();
 }

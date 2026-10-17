@@ -1055,6 +1055,7 @@ return array(
       'expContentJobWorker'                                          => 'kernel/classes/contentjob/expcontentjobworker.php',
       'expContentLanguageStates'                                     => 'kernel/classes/expcontentlanguagestates.php',
       'expContentPendingList'                                        => 'kernel/classes/expcontentpendinglist.php',
+      'expContentSecurityPolicy'                                     => 'kernel/private/classes/expcontentsecuritypolicy.php',
       'expCountryGroups'                                             => 'kernel/classes/datatypes/ezcountry/expcountrygroups.php',
       'expCronjobPause'                                              => 'kernel/classes/expcronjobpause.php',
       'expCronjobRunner'                                             => 'kernel/setup/expcronjobrunner.php',

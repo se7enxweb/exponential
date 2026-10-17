@@ -42,7 +42,7 @@ class AdminPreferencesTest extends PHPUnit\Framework\TestCase
 
     public function testOneHelperReadsAndSavesThem()
     {
-        $head = self::read( 'design/admin4/templates/page_head_style.tpl' );
+        $head = self::read( 'design/admin4/javascript/a4_head.js' );
         $start = strpos( $head, 'window.a4Pref = {' );
         $this->assertNotFalse( $start );
         // the helper comes before the scripts that use it
@@ -59,7 +59,7 @@ class AdminPreferencesTest extends PHPUnit\Framework\TestCase
 
     public function testEveryFeatureUsesTheHelper()
     {
-        $head = self::read( 'design/admin4/templates/page_head_style.tpl' );
+        $head = self::read( 'design/admin4/javascript/a4_head.js' );
         $this->assertStringContainsString( "window.a4Pref.set('admin_color_mode', next, KEY)", $head );
         $menubar = self::read( 'design/admin4/javascript/ezadmin_menubar.js' );
         $this->assertStringContainsString( 'const prefs = { left: "admin_left_sidebar", right: "admin_right_sidebar" };', $menubar );

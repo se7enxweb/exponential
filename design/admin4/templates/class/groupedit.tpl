@@ -23,7 +23,7 @@
 <div class="a4-form">
     <div class="a4-field">
         <label for="classGroupName">{'Name'|i18n( 'design/admin/class/groupedit' )}</label>
-        <input id="classGroupName" type="text" name="Group_name" value="{$classgroup.name|wash}" maxlength="255" aria-describedby="classGroupName-help" />
+        <input id="classGroupName" type="text" data-a4-focus name="Group_name" value="{$classgroup.name|wash}" maxlength="255" aria-describedby="classGroupName-help" />
         <span class="a4-help" id="classGroupName-help">{'For example Content, Media or Users.'|i18n( 'design/admin/class/groupedit' )}</span>
     </div>
 </div>
@@ -43,6 +43,3 @@
 {if and( is_set( $redirect_if_discarded ), $redirect_if_discarded )}<input type="hidden" name="RedirectIfDiscarded" value="{$redirect_if_discarded|wash}" />{/if}
 </form>
 
-<script type="text/javascript">
-(function () {ldelim} var f = document.getElementById( 'classGroupName' ); if ( f ) {ldelim} f.focus(); f.select(); {rdelim} {rdelim})();
-</script>

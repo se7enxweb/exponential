@@ -30,6 +30,7 @@ $tpl = eZTemplate::factory();
 $tpl->setVariable( 'engines', expOEEditor::labels() );
 $tpl->setVariable( 'details', expOEEditor::details() );
 $tpl->setVariable( 'switch_enabled', expOEEditor::switchEnabled() );
+$tpl->setVariable( 'forced', expOEEditor::forcedEngine() );
 $tpl->setVariable( 'preference', is_string( $preference ) ? $preference : '' );
 $tpl->setVariable( 'resolved', expOEEditor::resolve() );
 $tpl->setVariable( 'configured', expOEEditor::configuredEngine() );

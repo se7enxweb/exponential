@@ -47,7 +47,7 @@
 {* Collection table. *}
 <table class="list" cellspacing="0">
 <tr>
-    <th scope="col" class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/infocollector/collectionlist' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/infocollector/collectionlist' )|wash}" onclick="ezjs_toggleCheckboxes( document.collections, 'CollectionIDArray[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
+    <th scope="col" class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/infocollector/collectionlist' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/infocollector/collectionlist' )|wash}" data-a4-toggle-checkboxes="CollectionIDArray[]" data-a4-form="collections"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
     <th scope="col" class="tight">{'Collection ID'|i18n( 'design/admin/infocollector/collectionlist' )}</th>
     <th scope="col">{'Created'|i18n( 'design/admin/infocollector/collectionlist' )}</th>
     <th scope="col">{'Modified'|i18n( 'design/admin/infocollector/collectionlist' )}</th>

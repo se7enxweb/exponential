@@ -24,7 +24,7 @@
 <section class="exp-section" aria-labelledby="oauth-app-facts-title">
 <div class="exp-card">
     <h2 class="exp-h2" id="oauth-app-facts-title">{'How the application signs in'|i18n( 'design/admin/oauthadmin' )}</h2>
-    {if $application.description|ne('')}<p class="exp-intro" style="margin: 6px 0 0;">{$application.description|wash}</p>{/if}
+    {if $application.description|ne('')}<p class="exp-intro exp-intro-tight">{$application.description|wash}</p>{/if}
     <dl class="exp-facts">
         <div>
             <dt id="oauth-client-id-label">{'Client identifier'|i18n( 'extension/oauthadmin' )}</dt>

@@ -1,17 +1,8 @@
 <!-- Edit class submenu -->
-<script type="text/javascript">
-menuArray['EditClassSubmenu'] = {ldelim} 'depth': 1 {rdelim};
-menuArray['EditClassSubmenu']['elements'] = {ldelim}{rdelim};
-menuArray['EditClassSubmenu']['elements']['edit-class-languages'] = {ldelim} 'variable': '%languages%' {rdelim};
-menuArray['EditClassSubmenu']['elements']['edit-class-languages']['content'] = '<a href={"/class/edit/%classID%/(language)/%locale%"|ezurl} onmouseover="ezpopmenu_mouseOver( \'EditClassSubmenu\' )">%name%<\/a>';
-menuArray['EditClassSubmenu']['elements']['edit-class-another-language'] = {ldelim} 'url': {"/class/edit/%classID%"|ezurl} {rdelim};
-menuArray['EditClassSubmenu']['elements']['edit-class-another-language']['disabled_class'] = 'menu-item-disabled';
-</script>
 
-<div class="popupmenu" id="EditClassSubmenu">
-    <div id="edit-class-languages"></div>
+<div class="popupmenu" id="EditClassSubmenu" data-menu-depth="1">
+    <template id="edit-class-languages-template"><a href={"/class/edit/%classID%/(language)/%locale%"|ezurl}>%name%</a></template>
+    <div id="edit-class-languages" data-menu-variable="%languages%" data-menu-template="edit-class-languages-template"></div>
     <hr />
-    <!-- <a id="edit-class-another-language" href="#" onmouseover="ezpopmenu_mouseOver( 'EditClassSubmenu' )">{'Another language'|i18n( 'design/admin/popupmenu' )}</a> -->
-    <!-- <div id="edit-class-another-language"></div> -->
-    <a id="edit-class-another-language" href="#" onmouseover="ezpopmenu_mouseOver( 'EditClassSubmenu' )">{'New translation'|i18n( 'design/admin/popupmenu' )}</a>
+    <a id="edit-class-another-language" data-menu-url={"/class/edit/%classID%"|ezurl} data-menu-disabled-class="menu-item-disabled" href="#">{'New translation'|i18n( 'design/admin/popupmenu' )}</a>
 </div>

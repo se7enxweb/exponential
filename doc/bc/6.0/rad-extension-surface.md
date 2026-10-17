@@ -1183,7 +1183,6 @@ Fetch functions: `waiting`, `valid`, `archived`, `valid_nodes`, `block`, `allowe
 | `ezoe/embed_view` | `editor` | 1 |
 | `ezoe/load` | `editor` | 3 |
 | `ezoe/spellcheck_rpc` | `editor` | 0 |
-| `ezoe/atd_rpc` | `editor` | 0 |
 
 ### flash
 

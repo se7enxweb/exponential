@@ -90,7 +90,7 @@
     {/if}
     <div class="a4-field">
         <label for="settings-type">{'Type'|i18n( 'design/admin/settings' )}</label>
-        <select name="SettingType" id="settings-type" onchange="this.form.submit()">
+        <select name="SettingType" id="settings-type" data-a4-submit-on-change>
         {foreach $setting_type_array as $type_key => $type_name}<option value="{$type_key|wash}"{if eq( $type_key, $setting_type )} selected="selected"{/if}>{$type_name|wash}</option>{/foreach}
         </select>
         <noscript><button type="submit" class="a4-btn a4-btn-small" name="ChangeSettingType" value="1" formnovalidate="formnovalidate">{'Change type'|i18n( 'design/admin/settings' )}</button></noscript>

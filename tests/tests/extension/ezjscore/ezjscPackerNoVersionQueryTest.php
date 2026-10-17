@@ -5,7 +5,8 @@
  * file name, which is the packer's own mechanism.
  *
  *  PC-01 - packing off (DevelopmentMode, Packer=disabled): each file's URL is the file's own address, no ?v=
- *  PC-02 - a file URL is written as <script src> / <link href>, generated content inline
+ *  PC-02 - a file URL is written as <script src> / <link href>; generated content is told from it (and written to a
+ *          file of its own, ezjscPackerGeneratedContentTest)
  *  PC-03 - packed files carry the newest file time in their name (AppendLastModifiedTime is on by default)
  *  PC-04 - admin4 loads its scripts and stylesheets only through ezscript/ezcss, not as plain tags
  *  PC-05 - no template, script or class of the kernel, its designs or its extensions puts a ?v= query on a link
@@ -23,7 +24,7 @@ class ezjscPackerNoVersionQueryTest extends PHPUnit\Framework\TestCase
 {
     /** A ?v= that is no asset link: the query of a web service call (Google's feed API takes its API version so) */
     const NOT_AN_ASSET_LINK = array(
-        'design/standard/templates/dashboard/community_activity.tpl' => 'ajax.googleapis.com/ajax/services/feed/load?v=1.0',
+        'design/standard/javascript/dashboard_community_activity.js' => 'ajax.googleapis.com/ajax/services/feed/load?v=1.0',
     );
 
     /** The extensions the kernel repository ships */

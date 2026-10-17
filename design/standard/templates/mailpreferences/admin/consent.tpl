@@ -45,7 +45,7 @@
                 <input type="date" id="mp-log-to" name="to" value="{$filters.to|wash}" />
             </div>
         </div>
-        <div class="mp-actions" style="margin-top:0;">
+        <div class="mp-actions mp-actions-flush">
             <input class="mp-btn primary" type="submit" value="{'Show'|i18n( 'design/admin/mailpreferences' )}" />
             <a class="mp-btn" href={'mailpreferences/admin/consent'|ezurl}>{'Clear'|i18n( 'design/admin/mailpreferences' )}</a>
 {if $export_uri}

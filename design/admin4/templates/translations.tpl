@@ -21,7 +21,7 @@
 
 <table id="tab-translations-list" class="list" cellspacing="0" summary="{'Language list of translations for current object.'|i18n( 'design/admin/node/view/full' )}">
 <tr>
-    <th scope="col" class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/node/view/full' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/node/view/full' )|wash}" onclick="ezjs_toggleCheckboxes( document.translationsform, 'LanguageID[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
+    <th scope="col" class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/node/view/full' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/node/view/full' )|wash}" data-a4-toggle-checkboxes="LanguageID[]" data-a4-form="translationsform"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
     <th scope="col">{'Language'|i18n( 'design/admin/node/view/full' )}</th>
     <th scope="col">{'Locale'|i18n( 'design/admin/node/view/full' )}</th>
     <th scope="col" class="tight">{'Main'|i18n( 'design/admin/node/view/full' )}</th>
@@ -103,20 +103,7 @@
 {if $object_can_edit}
     {if $translations_count|gt( 1 )}
     <input id="tab-translations-list-set-main" class="button" type="submit" name="UpdateInitialLanguageButton" value="{'Set main'|i18n( 'design/admin/node/view/full' )}" title="{'Select the desired main language using the radio buttons above then click this button to store the setting.'|i18n( 'design/admin/node/view/full' )}" />
-    <script type="text/javascript">
-    {literal}
-    (function( $ )
-    {
-        $('#tab-translations-list input.main-translation-radio').on('change', function()
-        {
-            if ( this.className === 'main-translation-radio' )
-                $('#tab-translations-list-set-main').removeClass('button').addClass('defaultbutton');
-            else
-                $('#tab-translations-list-set-main').removeClass('defaultbutton').addClass('button');
-        });
-    })( jQuery );
-    {/literal}
-    </script>
+    {ezscript( array( 'page/translations_main.js' ) )}
     {else}
     <input class="button-disabled" type="submit" name="UpdateInitialLanguageButton" value="{'Set main'|i18n( 'design/admin/node/view/full' )}" disabled="disabled" title="{'You cannot change the main language because the object is not translated to any other languages.'|i18n( 'design/admin/node/view/full' )}" />
     {/if}
@@ -140,17 +127,7 @@
 <div class="block">
 {if $object_can_edit}
     <input id="tab-translations-alwaysavailable-btn" class="button" type="submit" name="UpdateAlwaysAvailableButton" value="{'Update'|i18n( 'design/admin/node/view/full' )}" title="{'Use this button to store the value of the checkbox above.'|i18n( 'design/admin/node/view/full' )}" />
-    <script type="text/javascript">
-    {literal}
-    (function( $ )
-    {
-        $('#tab-translations-alwaysavailable-checkbox').on('change', function()
-        {
-            $('#tab-translations-alwaysavailable-btn').removeClass('button').addClass('defaultbutton');
-        });
-    })( jQuery );
-    {/literal}
-    </script>
+    {ezscript( array( 'page/translations_always_available.js' ) )}
 {else}
     <input class="button-disabled" disabled="disabled" type="submit" name="UpdateAlwaysAvailableButton" value="{'Update'|i18n( 'design/admin/node/view/full' )}" title="{'You do not have permission to change this setting.'|i18n( 'design/admin/node/view/full' )}" />
 {/if}

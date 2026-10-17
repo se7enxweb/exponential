@@ -86,7 +86,7 @@
 <div class="block">
     <input class="button" type="submit" name="PublishButton" value="{'Send for publishing'|i18n( 'design/admin/content/edit' )}" title="{'Publish the contents of the draft that is being edited. The draft will become the published version of the object.'|i18n( 'design/admin/content/edit' )}" />
     <input class="button" type="submit" name="StoreButton" value="{'Store draft'|i18n( 'design/admin/content/edit' )}" title="{'Store the contents of the draft that is being edited and continue editing. Use this button to periodically save your work while editing.'|i18n( 'design/admin/content/edit' )}" />
-    <input class="button" type="submit" name="DiscardButton" value="{'Discard draft'|i18n( 'design/admin/content/edit' )}" onclick="return confirmDiscard( '{'Are you sure you want to discard the draft?'|i18n( 'design/admin/content/edit' )|wash(javascript)|wash}' );" title="{'Discard the draft that is being edited. This will also remove the translations that belong to the draft (if any).'|i18n( 'design/admin/content/edit' ) }" />
+    <input class="button" type="submit" name="DiscardButton" value="{'Discard draft'|i18n( 'design/admin/content/edit' )}" data-a4-discard-confirm="{'Are you sure you want to discard the draft?'|i18n( 'design/admin/content/edit' )|wash}" title="{'Discard the draft that is being edited. This will also remove the translations that belong to the draft (if any).'|i18n( 'design/admin/content/edit' ) }" />
     <input type="hidden" name="DiscardConfirm" value="1" />
 </div>
 {* DESIGN: Control bar END *}</div></div>
@@ -126,32 +126,6 @@
 
 
 
-{literal}
-<script type="text/javascript">
-jQuery(function( $ )//called on document.ready
-{
-    with( document.editform )
-    {
-        for( var i = 0, l = elements.length; i < l; i++ )
-        {
-            if( elements[i].type == 'text' )
-            {
-                elements[i].select();
-                elements[i].focus();
-                return;
-            }
-        }
-    }
-});
-
-function confirmDiscard( question )
-{
-    // Disable/bypass the reload-based (plain HTML) confirmation interface.
-    document.editform.DiscardConfirm.value = "0";
-
-    // Ask user if she really wants do it, return this to the handler.
-    return confirm( question );
-}
-</script>
-{/literal}
+{* The first text field gets the focus; the Discard button's confirmation is data-a4-discard-confirm (a4_actions.js) *}
+{ezscript( array( 'page/template_look_edit.js' ) )}
 

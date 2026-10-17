@@ -15,7 +15,7 @@
 {* Name *}
 <div class="block">
 <label for="discountruleName">{'Name'|i18n( 'design/admin/shop/discountruleedit' )}:</label>
-<input class="box" id="discountruleName" type="text" name="discountrule_name" value="{$discountrule.name|wash}" size="40" />
+<input class="box" id="discountruleName" data-a4-focus type="text" name="discountrule_name" value="{$discountrule.name|wash}" size="40" />
 </div>
 
 {* Discount precent *}
@@ -76,7 +76,7 @@
 {section show=$product_list}
 <table class="list" cellspacing="0">
 <tr>
-<th scope="col" class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/shop/discountruleedit' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/shop/discountruleedit' )|wash}" onclick="ezjs_toggleCheckboxes( document.DiscountRuleEdit, 'DeleteProductIDArray[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
+<th scope="col" class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/shop/discountruleedit' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/shop/discountruleedit' )|wash}" data-a4-toggle-checkboxes="DeleteProductIDArray[]" data-a4-form="DiscountRuleEdit"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
 <th scope="col">{'Name'|i18n( 'design/admin/shop/discountruleedit' )}</th>
 </tr>
 {section var=Product show=$product_list loop=$product_list sequence=array( bglight, bgdark )}
@@ -118,12 +118,3 @@
 </div>
 </form>
 
-{literal}
-<script type="text/javascript">
-jQuery(function( $ )//called on document.ready
-{
-    document.getElementById('discountruleName').select();
-    document.getElementById('discountruleName').focus();
-});
-</script>
-{/literal}

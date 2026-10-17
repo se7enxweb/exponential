@@ -28,6 +28,20 @@ class expCronjobsCompactViewTest extends PHPUnit\Framework\TestCase
     }
 
     /**
+     * The script of the page: inline in design/admin, in javascript/page/setup_cronjobs.js in design/admin4 (which
+     * runs under a Content Security Policy without 'unsafe-inline').
+     */
+    private function script( $design )
+    {
+        $tpl = $this->template( $design );
+        if ( $design !== 'admin4' )
+            return $tpl;
+        $this->assertStringContainsString( "{ezscript( array( 'page/setup_cronjobs.js' ) )}", $tpl );
+        $this->assertStringNotContainsString( '<script type="text/javascript">', $tpl );
+        return (string)file_get_contents( __DIR__ . '/../../../../design/admin4/javascript/page/setup_cronjobs.js' );
+    }
+
+    /**
      * @dataProvider designs
      */
     #[\PHPUnit\Framework\Attributes\DataProvider( 'designs' )]
@@ -62,7 +76,7 @@ class expCronjobsCompactViewTest extends PHPUnit\Framework\TestCase
                          '{foreach $cronjob_part.scripts as $cronjob_script}', '{$cronjob_script.description|wash}' ) as $needle )
             $this->assertStringContainsString( $needle, $table[1], $needle );
         // The filter of the page looks at the rows of the table as well as at the cards.
-        $this->assertStringContainsString( "'#cronjob-list > .a4-card, #cronjob-table .a4-setup-part-row'", $tpl );
+        $this->assertStringContainsString( "'#cronjob-list > .a4-card, #cronjob-table .a4-setup-part-row'", $this->script( $design ) );
         // Every variable the rows define is dropped again.
         $this->assertStringContainsString( '{undef $cronjob_paused $cronjob_blocked $cronjob_runnable}', $table[1] );
     }
@@ -86,10 +100,10 @@ class expCronjobsCompactViewTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( 'id="cronjob-siteaccess" name="CronjobSiteAccess"', $tpl );
         // The scripts of a row are a <details> of their own; the search opens it when it matches a script.
         $this->assertStringContainsString( '<details class="a4-setup-compact-scripts">', $tpl );
-        $this->assertStringContainsString( "card.querySelector( '.a4-setup-scripts, .a4-setup-compact-scripts' )", $tpl );
+        $this->assertStringContainsString( "card.querySelector( '.a4-setup-scripts, .a4-setup-compact-scripts' )", $this->script( $design ) );
         // With javascript they open in a row of their own below the part, so several can be open at once.
         $this->assertStringContainsString( '<tr class="a4-setup-compact-detail" data-part="{$cronjob_part.name|wash}" hidden>', $tpl );
-        $this->assertStringContainsString( "compactTable.classList.add( 'is-scripted' );", $tpl );
+        $this->assertStringContainsString( "compactTable.classList.add( 'is-scripted' );", $this->script( $design ) );
         // Each script says where it comes from: the kernel or the extension it belongs to, and its directory.
         $this->assertStringContainsString( '{if $cronjob_script.origin|eq(\'kernel\')}', $tpl );
         $this->assertStringContainsString( '{$cronjob_script.directory|wash}/', $tpl );

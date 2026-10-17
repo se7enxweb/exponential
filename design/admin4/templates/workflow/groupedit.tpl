@@ -16,7 +16,7 @@
 
 <div class="block">
     <label for="workflowGroupName">{'Name'|i18n( 'design/admin/workflow/groupedit' )}:</label>
-    <input class="box" id="workflowGroupName" type="text" name="WorkflowGroup_name" value="{$workflow_group.name|wash}" />
+    <input class="box" id="workflowGroupName" type="text" data-a4-focus name="WorkflowGroup_name" value="{$workflow_group.name|wash}" />
 </div>
 
 </div>
@@ -38,12 +38,3 @@
 
 </form>
 
-{literal}
-<script type="text/javascript">
-jQuery(function( $ )//called on document.ready
-{
-    document.getElementById('workflowGroupName').select();
-    document.getElementById('workflowGroupName').focus();
-});
-</script>
-{/literal}

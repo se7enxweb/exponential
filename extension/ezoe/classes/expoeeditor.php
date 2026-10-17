@@ -21,7 +21,7 @@ class expOEEditor
     const PREFERENCE = 'ezoe_engine';
 
     /** @var array extensions that are never accepted, wherever they stand in a file name */
-    protected static $executableExtensions = array( 'php', 'php3', 'php4', 'php5', 'php7', 'php8', 'phtml', 'phar', 'pht', 'phps', 'pl', 'cgi', 'asp', 'aspx', 'jsp', 'sh', 'exe', 'htaccess' );
+    protected static $executableExtensions = array( 'php', 'php3', 'php4', 'php5', 'php7', 'php8', 'phtml', 'phar', 'pht', 'phtm', 'php6', 'phps', 'shtml', 'pl', 'cgi', 'asp', 'aspx', 'jsp', 'sh', 'exe', 'htaccess' );
 
     /** @var array|null id => expOEEditorEngine */
     protected static $engines = null;
@@ -115,14 +115,30 @@ class expOEEditor
     }
 
     /**
-     * The engine the current user edits with: the user preference ezoe_engine when it names an available
-     * engine, else the siteaccess setting (ezoe.ini is read per siteaccess), else the global default.
+     * @return string the engine every editor of the siteaccess gets, whatever the user preference says (ezoe.ini
+     *                [EditorSettings] ForceEngine); '' when none is set or the one set is not usable, so an engine that
+     *                is missing (an unbuilt bundle, an inactive extension) never leaves an editor without one
+     */
+    public static function forcedEngine()
+    {
+        $ini = eZINI::instance( 'ezoe.ini' );
+        $id = $ini->hasVariable( 'EditorSettings', 'ForceEngine' ) ? (string) $ini->variable( 'EditorSettings', 'ForceEngine' ) : '';
+        return $id !== '' && self::hasEngine( $id ) ? $id : '';
+    }
+
+    /**
+     * The engine the current user edits with: forcedEngine() when the siteaccess forces one, else the user
+     * preference ezoe_engine when it names an available engine, else the siteaccess setting (ezoe.ini is read per
+     * siteaccess), else the global default.
      *
      * @param string|null $preference the preference value, read for the current user when null
      * @return string an identifier of engines()
      */
     public static function resolve( $preference = null )
     {
+        $forced = self::forcedEngine();
+        if ( $forced !== '' )
+            return $forced;
         if ( $preference === null )
             $preference = eZPreferences::value( self::PREFERENCE );
         if ( is_string( $preference ) && $preference !== '' && self::hasEngine( $preference ) )
@@ -206,9 +222,14 @@ class expOEEditor
         return $details;
     }
 
-    /** @return bool whether editors may choose their engine themselves (ezoe.ini [EditorSettings] EngineSwitch) */
+    /**
+     * @return bool whether editors may choose their engine themselves (ezoe.ini [EditorSettings] EngineSwitch); never
+     *              while the siteaccess forces an engine (ForceEngine)
+     */
     public static function switchEnabled()
     {
+        if ( self::forcedEngine() !== '' )
+            return false;
         $ini = eZINI::instance( 'ezoe.ini' );
         return $ini->hasVariable( 'EditorSettings', 'EngineSwitch' )
             && $ini->variable( 'EditorSettings', 'EngineSwitch' ) === 'enabled';
@@ -277,30 +298,35 @@ class expOEEditor
     }
 
     /**
-     * Whether the server accepts an uploaded file name. ezoe.ini [EditorSettings] UploadExtensionCheck:
-     * 'engine' (default) checks when the user's engine is not tinymce3 (the TinyMCE 3 dialog has never
-     * limited types), 'always' checks every upload, 'disabled' none. A file with no extension is refused
-     * whenever the check is on.
+     * Whether the server accepts an uploaded file name. A name with an executable type anywhere in it (php,
+     * phtml, sh, .htaccess, ...) is refused always, whatever the engine and the mode. ezoe.ini [EditorSettings]
+     * UploadExtensionCheck then decides about the list UploadFileExtensions[]: 'engine' (default) checks it when
+     * the user's engine is not tinymce3 (the TinyMCE 3 dialog has never limited types), 'always' for every upload,
+     * 'disabled' never. A file with no extension is refused whenever the list is checked.
      *
      * @param string $fileName the name the client sent
      * @return bool
      */
     public static function uploadExtensionAllowed( $fileName )
     {
+        $parts = explode( '.', basename( str_replace( '\\', '/', (string) $fileName ) ) );
+        array_shift( $parts );
+        // "shell.php.jpg" is served as PHP by some server setups: no executable type anywhere in the name. First and
+        // for every engine: TinyMCE 3 users skip the list below, and a server without the .htaccess rules (nginx)
+        // would run what was uploaded
+        foreach ( $parts as $part )
+        {
+            // "x.php " and "x.php." are stored as x.php by some file systems and servers: white space, NUL and dots
+            // around a part do not hide it
+            if ( in_array( strtolower( trim( $part, " \t\r\n\0\x0B." ) ), self::$executableExtensions, true ) )
+                return false;
+        }
         $ini  = eZINI::instance( 'ezoe.ini' );
         $mode = $ini->hasVariable( 'EditorSettings', 'UploadExtensionCheck' ) ? $ini->variable( 'EditorSettings', 'UploadExtensionCheck' ) : 'engine';
         if ( $mode === 'disabled' || ( $mode !== 'always' && self::resolve() === self::DEFAULT_ENGINE ) )
             return true;
-        $parts = explode( '.', basename( str_replace( '\\', '/', (string) $fileName ) ) );
-        if ( count( $parts ) < 2 )
+        if ( count( $parts ) < 1 )
             return false;
-        array_shift( $parts );
-        // "shell.php.jpg" is served as PHP by some server setups: no executable type anywhere in the name
-        foreach ( $parts as $part )
-        {
-            if ( in_array( strtolower( $part ), self::$executableExtensions, true ) )
-                return false;
-        }
         return in_array( strtolower( end( $parts ) ), self::uploadExtensions(), true );
     }
 }

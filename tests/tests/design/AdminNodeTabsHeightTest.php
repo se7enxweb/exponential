@@ -3,7 +3,7 @@
  * admin4's node view: the tab box (#window-controls) keeps the height the user gave it, checked on the files alone
  * (no database):
  *
- *  TH-01 - the behaviour (admin4.js with window.a4Pref of page_head_style.tpl run in node,
+ *  TH-01 - the behaviour (admin4.js with window.a4Pref of a4_head.js run in node,
  *          tests/tests/design/js/tabs_height.js; skipped without node): the preference wins over the browser's copy,
  *          which wins over the default; a drag saves once at its end, keys once 400ms after the last one, an unchanged
  *          height not at all; the height is held between 10em and 60em and 85% of the window; the reset button and
@@ -63,7 +63,7 @@ class AdminNodeTabsHeightTest extends PHPUnit\Framework\TestCase
         $node = AdminNodeBinary::require();
         $out = (string)shell_exec( escapeshellarg( $node ) . ' ' . escapeshellarg( __DIR__ . '/js/tabs_height.js' ) . ' '
                                    . escapeshellarg( self::root() . '/design/admin4/javascript/admin4.js' ) . ' '
-                                   . escapeshellarg( self::root() . '/design/admin4/templates/page_head_style.tpl' ) );
+                                   . escapeshellarg( self::root() . '/design/admin4/javascript/a4_head.js' ) );
         $s = array();
         foreach ( array_filter( explode( "\n", $out ) ) as $line )
         {
@@ -159,7 +159,7 @@ class AdminNodeTabsHeightTest extends PHPUnit\Framework\TestCase
         $this->assertMatchesRegularExpression( '/#window-controls \{[^}]*height: 20em;/', $base );
         $this->assertMatchesRegularExpression( '/#window-controls\.layouts-active \{[^}]*height: 22em;/', $base );
 
-        $head = self::read( 'design/admin4/templates/page_head_style.tpl' );
+        $head = self::read( 'design/admin4/javascript/a4_head.js' );
         $this->assertStringContainsString( "if (value === '') window.localStorage.removeItem(key);", $head );
         $this->assertStringContainsString( '.then(function (r) { if (!r.ok || r.redirected) fail(); }, fail);', $head );
         $this->assertStringContainsString( 'send(name, value, function () { if (root.getAttribute(attr(name)) === shown) local(key, value); });', $head );

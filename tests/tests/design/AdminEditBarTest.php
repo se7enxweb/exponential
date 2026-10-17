@@ -71,12 +71,13 @@ class AdminEditBarTest extends PHPUnit\Framework\TestCase
         // under the bar's own layer: the bar stays over the toolbar where they meet
         $this->assertMatchesRegularExpression( '/--a4-z-sticky: (\d+);/', self::file( 'design/admin4/stylesheets/components.css' ) );
 
-        $tpl = self::file( 'extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe_tinymce8.tpl' );
+        // the TinyMCE 8 editor starts from ezoe8_start.js (the edit template carries no script)
+        $tpl = self::file( 'extension/ezoe/design/standard/javascript/tinymce8_ez/ezoe8_start.js' );
         $this->assertStringContainsString( 'toolbar_sticky: true,', $tpl );
         $this->assertStringContainsString( 'toolbar_sticky_offset: eZOe8StickyOffset(),', $tpl );
         $this->assertStringContainsString( "getPropertyValue( '--a4-sticky-edge' )", $tpl );
-        // the template runs while the page is parsed, before admin4.js measured the edge: the offset is set again
-        // when the editor is ready and on every change of the edge
+        // the editor may start before admin4.js measured the edge: the offset is set again when the editor is ready
+        // and on every change of the edge
         $this->assertStringContainsString( "editor.options.set( 'toolbar_sticky_offset', eZOe8StickyOffset() );", $tpl );
         $this->assertStringContainsString( "editor.on( 'init', stickyOffset );", $tpl );
         $this->assertStringContainsString( "document.addEventListener( 'a4:sticky-edge', stickyOffset );", $tpl );

@@ -398,7 +398,7 @@
             <ul class="a4-setup-inline">{foreach $http_cache.settings as $name => $value}<li><code>{$name|wash}</code> {$value|wash}</li>{/foreach}<li><code>{$http_cache.dir|wash}</code></li></ul>
             {if $can_flush_caches}
             <form method="post" action={'/setup/info'|ezurl} class="a4-actions">
-                <button type="submit" class="a4-btn a4-btn-small" name="HttpCacheAction" value="purge" onclick="return confirm( '{'Purge every cached page?'|i18n( 'design/admin/setup/info' )|wash( javascript )|wash}' );">{'Purge all pages'|i18n( 'design/admin/setup/info' )}</button>
+                <button type="submit" class="a4-btn a4-btn-small" name="HttpCacheAction" value="purge" data-a4-confirm="{'Purge every cached page?'|i18n( 'design/admin/setup/info' )|wash}">{'Purge all pages'|i18n( 'design/admin/setup/info' )}</button>
                 <button type="submit" class="a4-btn a4-btn-small" name="HttpCacheAction" value="gc">{'Remove dead entries'|i18n( 'design/admin/setup/info' )}</button>
                 {if $http_cache.stats}<button type="submit" class="a4-btn a4-btn-small" name="HttpCacheAction" value="reset">{'Reset counters'|i18n( 'design/admin/setup/info' )}</button>{/if}
             </form>
@@ -598,30 +598,5 @@
 </div></div></div>
 </div>
 
-{literal}
-<script>
-(function () {
-    var button = document.getElementById('exp-sysinfo-copy');
-    var text = document.getElementById('exp-sysinfo-report-text');
-    var status = document.getElementById('exp-sysinfo-copy-status');
-    if (!button || !text) return;
-    button.hidden = false;
-    button.addEventListener('click', function () {
-        var done = function () { status.textContent = button.getAttribute('data-done'); };
-        var fallback = function () {
-            var details = document.getElementById('exp-sysinfo-report');
-            if (details) details.open = true;
-            text.focus(); text.select();
-            try { if (document.execCommand('copy')) { done(); return; } } catch (e) {}
-            status.textContent = button.getAttribute('data-manual');
-        };
-        if (navigator.clipboard && window.isSecureContext) {
-            navigator.clipboard.writeText(text.value).then(done, fallback);
-        } else {
-            fallback();
-        }
-    });
-})();
-</script>
-{/literal}
+{ezscript( array( 'page/setup_info.js' ) )}
 {undef $si $si_state_class $si_state_label $si_open_checks $si_level}

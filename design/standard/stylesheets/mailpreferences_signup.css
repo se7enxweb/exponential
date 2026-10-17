@@ -1,0 +1,44 @@
+/*
+ * The optional e-mail on the registration form (mailpreferences/parts/signup.tpl), in every design. It was inline
+ * style="" attributes; the values are the same, and the selectors are specific enough to keep a design's general
+ * form rules (fieldset, legend, label, input) off it, as the inline styles did.
+ */
+fieldset.mp-signup-box {
+  border: 0;
+  padding: 0;
+  margin: 1em 0;
+  min-width: 0;
+}
+fieldset.mp-signup-box > legend {
+  font-weight: 650;
+  padding: 0;
+  margin: 0 0 .3em;
+  border: 0;
+  font-size: 1em;
+  width: auto;
+}
+fieldset.mp-signup-box > p {
+  margin: 0 0 .5em;
+}
+fieldset.mp-signup-box > .mp-signup-option {
+  display: flex;
+  gap: .5em;
+  align-items: flex-start;
+  margin: 0 0 .45em;
+}
+fieldset.mp-signup-box > .mp-signup-option > input {
+  width: 1.1em;
+  height: 1.1em;
+  margin: .25em 0 0;
+  flex: none;
+}
+fieldset.mp-signup-box > .mp-signup-option > label {
+  font-weight: 400;
+  display: block;
+  margin: 0;
+  float: none;
+  width: auto;
+}
+fieldset.mp-signup-box .mp-signup-note {
+  opacity: .8;
+}

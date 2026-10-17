@@ -1,6 +1,7 @@
 {* The progress page of a content job (content/job/<id>): a subtree remove or copy running in the background.
    The page polls content/job/<id>?json=1 every two seconds and updates the bar, the counts, the message and the
-   log; when the job finishes it opens the result, when it fails or is cancelled it reloads to show the buttons. *}
+   log; when the job finishes it opens the result, when it fails or is cancelled it reloads to show the buttons.
+   It stops with a message when the job is gone or the session has ended (page/content_job.js). *}
 {def $state_names = hash( 'queued',    'Waiting'|i18n( 'design/admin/content/job' ),
                           'running',   'Running'|i18n( 'design/admin/content/job' ),
                           'done',      'Done'|i18n( 'design/admin/content/job' ),
@@ -16,6 +17,9 @@
      data-text-opening="{'Opening the result in %seconds s'|i18n( 'design/admin/content/job' )|wash}"
      data-text-stopping="{'Stopping after the current batch'|i18n( 'design/admin/content/job' )|wash}"
      data-text-waiting="{'Waiting for the status...'|i18n( 'design/admin/content/job' )|wash}"
+     data-text-gone="{'This job no longer exists or you may not see it. The status is not updated any more.'|i18n( 'design/admin/content/job' )|wash}"
+     data-text-signed-out="{'You are no longer signed in. Sign in again and reload this page to follow the job.'|i18n( 'design/admin/content/job' )|wash}"
+     data-text-error="{'The status could not be shown. Reload the page to follow the job.'|i18n( 'design/admin/content/job' )|wash}"
      data-states="{concat( $state_names.queued, '|', $state_names.running, '|', $state_names.done, '|', $state_names.failed, '|', $state_names.cancelled )|wash}">
 
 {* DESIGN: Header START *}<div class="box-header"><div class="box-ml">
@@ -125,41 +129,5 @@
 </div>
 
 {if or( $finished|not, $job.just_finished )}
-<script type="text/javascript">
-{literal}
-(function () {
-  var box = document.getElementById('exp-contentjob'); if (!box || !window.fetch) return;
-  var url = box.getAttribute('data-status-url'), first = box.getAttribute('data-state');
-  var names = box.getAttribute('data-states').split('|'), keys = ['queued', 'running', 'done', 'failed', 'cancelled'];
-  var t = function (k, map) { var s = box.getAttribute('data-text-' + k); for (var m in map) s = s.split(m).join(map[m]); return s; };
-  var q = function (sel) { return box.querySelector(sel); };
-  function show(s) {
-    var badge = q('.a4-content-job-state'); badge.className = 'a4-badge a4-content-job-state ' + s.state; badge.textContent = names[keys.indexOf(s.state)] || s.state;
-    q('.a4-content-job-counts').textContent = t('counts', {'%done': s.done, '%total': s.total});
-    var bar = q('.a4-content-job-bar'); bar.className = 'a4-meter a4-content-job-bar ' + s.state; bar.setAttribute('aria-valuenow', s.percent); q('.a4-content-job-bar span').className = 'a4-pct-' + Math.max(0, Math.min(100, Math.round(s.percent)));
-    q('.a4-content-job-message').textContent = s.cancel_requested && s.state === 'running' ? t('stopping', {}) : (s.message || '');
-    var cb = q('.a4-content-job-batch'); if (cb) cb.textContent = s.batch;
-    if (s.started) q('.a4-content-job-elapsed').textContent = t('elapsed', {'%seconds': Math.max(0, (s.finished || s.now) - s.started)});
-    var log = q('.a4-content-job-log'), atEnd = log.scrollTop + log.clientHeight >= log.scrollHeight - 4;
-    log.textContent = s.log || ''; if (atEnd) log.scrollTop = log.scrollHeight;
-  }
-  function poll() {
-    fetch(url, {cache: 'no-store', credentials: 'same-origin'}).then(function (r) { return r.json(); }).then(function (s) {
-      if (!s.ok) { q('.a4-content-job-message').textContent = s.error || t('waiting', {}); setTimeout(poll, 4000); return; }
-      show(s);
-      if (s.can_resume && !box.hasAttribute('data-can-resume')) { location.reload(); return; }
-      if (s.state === 'done') {
-        var done = q('.a4-content-job-done'), a = q('.a4-content-job-open'), n = 3; done.hidden = false;
-        if (s.redirect_url) a.href = s.redirect_url;
-        (function tick() { q('.a4-content-job-auto').textContent = t('opening', {'%seconds': n}); if (n-- <= 0) location.href = a.href; else setTimeout(tick, 1000); })();
-        return;
-      }
-      if (s.state !== first && s.state !== 'running' && s.state !== 'queued') { location.reload(); return; }
-      setTimeout(poll, 2000);
-    }).catch(function () { q('.a4-content-job-message').textContent = t('waiting', {}); setTimeout(poll, 4000); });
-  }
-  poll();
-})();
-{/literal}
-</script>
+{ezscript( array( 'page/content_job.js' ) )}
 {/if}

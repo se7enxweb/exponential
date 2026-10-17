@@ -255,9 +255,13 @@ class AdminVisibilityStatusTest extends PHPUnit\Framework\TestCase
             foreach ( array( 'visible', 'hidden', 'hidden_by_parent', 'visible_title', 'hidden_title', 'hidden_by_parent_title',
                              'disabled', 'disabled_title', 'locked', 'locked_title' ) as $key )
             {
-                $this->assertMatchesRegularExpression( '/\b' . $key . ': "\{\'[^\']+\'\|i18n\( \'' . preg_quote( self::CONTEXT, '/' ) . '\' \)\|wash\(\'javascript\'\)\}"/', $tpl, "$design: $key" );
+                // admin4: the labels are JSON in data-labels (no inline script); the classic design: in its inline script
+                $pattern = $design === 'admin4'
+                    ? '/\'' . $key . '\', \'[^\']+\'\|i18n\( \'' . preg_quote( self::CONTEXT, '/' ) . '\' \)[,\n]/'
+                    : '/\b' . $key . ': "\{\'[^\']+\'\|i18n\( \'' . preg_quote( self::CONTEXT, '/' ) . '\' \)\|wash\(\'javascript\'\)\}"/';
+                $this->assertMatchesRegularExpression( $pattern, $tpl, "$design: $key" );
             }
-            $this->assertStringContainsString( "\"account_disabled\":\"{'Account disabled'|i18n('design/admin/contentstructuremenu')|wash(xhtml)|wash(javascript)}\"",
+            $this->assertStringContainsString( "'account_disabled', 'Account disabled'|i18n('design/admin/contentstructuremenu')|wash(xhtml),",
                 self::file( "design/$design/templates/contentstructuremenu/content_structure_menu_dynamic.tpl" ) );
         }
 

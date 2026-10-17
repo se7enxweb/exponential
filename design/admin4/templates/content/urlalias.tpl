@@ -69,7 +69,7 @@
 {else}
 <table class="list" cellspacing="0" >
 <tr>
-    <th scope="col" class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/content/urlalias' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/content/urlalias' )|wash}" onclick="ezjs_toggleCheckboxes( document.aliasform, 'ElementList[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
+    <th scope="col" class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/content/urlalias' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/content/urlalias' )|wash}" data-a4-toggle-checkboxes="ElementList[]" data-a4-form="aliasform"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
     <th scope="col">{'URL alias'|i18n( 'design/admin/content/urlalias' )}</th>
     <th scope="col">{'Language'|i18n( 'design/admin/content/urlalias' )}</th>
     <th scope="col">{'Type'|i18n( 'design/admin/content/urlalias' )}</th>
@@ -134,8 +134,8 @@
     <div class="button-left">
         {if $node.can_edit}
             {if $aliasList|count|gt( 0 )}
-            <input class="button" type="submit" name="RemoveAliasButton" value="{'Remove selected'|i18n( 'design/admin/content/urlalias' )}" title="{'Remove selected alias from the list above.'|i18n( 'design/admin/content/urlalias' )}" onclick="return confirm( '{'Are you sure you want to remove the selected aliases?'|i18n( 'design/admin/content/urlalias' )}' );" />
-            <input class="button" type="submit" name="RemoveAllAliasesButton" value="{'Remove all'|i18n( 'design/admin/content/urlalias' )}" title="{'Remove all aliases for this node.'|i18n( 'design/admin/content/urlalias' )}" onclick="return confirm( '{'Are you sure you want to remove all aliases for this node?'|i18n( 'design/admin/content/urlalias' )}' );" />
+            <input class="button" type="submit" name="RemoveAliasButton" value="{'Remove selected'|i18n( 'design/admin/content/urlalias' )}" title="{'Remove selected alias from the list above.'|i18n( 'design/admin/content/urlalias' )}" data-a4-confirm="{'Are you sure you want to remove the selected aliases?'|i18n( 'design/admin/content/urlalias' )|wash}" />
+            <input class="button" type="submit" name="RemoveAllAliasesButton" value="{'Remove all'|i18n( 'design/admin/content/urlalias' )}" title="{'Remove all aliases for this node.'|i18n( 'design/admin/content/urlalias' )}" data-a4-confirm="{'Are you sure you want to remove all aliases for this node?'|i18n( 'design/admin/content/urlalias' )|wash}" />
             {else}
             <input class="button-disabled" type="submit" name="RemoveAliasButton" value="{'Remove selected'|i18n( 'design/admin/content/urlalias' )}" title="{'There are no removable aliases.'|i18n( 'design/admin/content/urlalias' )}" disabled="disabled" />
             <input class="button-disabled" type="submit" name="RemoveAllAliasesButton" value="{'Remove all'|i18n( 'design/admin/content/urlalias' )}" title="{'There are no removable aliases.'|i18n( 'design/admin/content/urlalias' )}" disabled="disabled" />
@@ -311,21 +311,5 @@
 </form>
 
 {literal}
-<script type="text/javascript">
-jQuery(function( $ )//called on document.ready
-{
-    with( document.aliasform )
-    {
-        for( var i = 0, l = elements.length; i < l; i++ )
-        {
-            if( elements[i].type == 'text' && elements[i].name == 'AliasText' )
-            {
-                elements[i].select();
-                elements[i].focus();
-                return;
-            }
-        }
-    }
-});
-</script>
+{ezscript( array( 'page/content_urlalias.js' ) )}
 {/literal}

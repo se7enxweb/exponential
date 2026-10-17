@@ -72,7 +72,8 @@ class ListView extends \Exponential\Runnable\ModuleView
             $target = self::listURI( \eZPackageRequestGuard::repository( $chosen, $repositories ) ? $chosen : '',
                                      array( 'search' => $get( 'SearchText' ), 'type' => $get( 'Type' ), 'state' => $get( 'State' ),
                                             'sort' => $get( 'Sort' ), 'dir' => '' ) );
-            \eZURI::transformURI( $target, false, 'full' );
+            // Without HTML escaping: the address goes into the Location header, where &amp; would stay &amp;
+            \eZURI::transformURI( $target, false, 'full', false );
             \eZHTTPTool::redirect( $target, array(), '302 Found', false );
             \eZExecution::cleanExit();
         }

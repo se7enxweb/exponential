@@ -13,7 +13,7 @@
 {section show=$discountgroup_array}
 <table class="list" cellspacing="0">
 <tr>
-    <th scope="col" class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/shop/discountgroup' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/shop/discountgroup' )|wash}" onclick="ezjs_toggleCheckboxes( document.DiscountGroup, 'discountGroupIDList[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
+    <th scope="col" class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/shop/discountgroup' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/shop/discountgroup' )|wash}" data-a4-toggle-checkboxes="discountGroupIDList[]" data-a4-form="DiscountGroup"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
     <th scope="col" class="wide">{'Name'|i18n( 'design/admin/shop/discountgroup' )}</th>
     <th scope="col" class="tight">&nbsp;</th>
 </tr>

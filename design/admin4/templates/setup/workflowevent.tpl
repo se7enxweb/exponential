@@ -107,7 +107,7 @@
 {/if}
 
 <div class="a4-actions">
-    <button type="button" class="a4-btn a4-btn-small" id="wfeTriggersNone">{'Tick none'|i18n( 'design/admin/setup/rad/workflowevent' )}</button>
+    <button type="button" class="a4-btn a4-btn-small" id="wfeTriggersNone" data-a4-check-all="input[type=checkbox][name='Triggers[]']" data-a4-check-value="0">{'Tick none'|i18n( 'design/admin/setup/rad/workflowevent' )}</button>
     <button type="submit" class="a4-btn a4-btn-small" name="PreviewButton" value="1">{'Refresh preview'|i18n( 'design/admin/setup/rad/workflowevent' )}</button>
 </div>
 
@@ -260,8 +260,8 @@
 </div>
 
 <div class="a4-actions">
-    <button type="button" class="a4-btn a4-btn-small" id="wfeOpenAll">{'Open all'|i18n( 'design/admin/setup/rad/workflowevent' )}</button>
-    <button type="button" class="a4-btn a4-btn-small" id="wfeCloseAll">{'Close all'|i18n( 'design/admin/setup/rad/workflowevent' )}</button>
+    <button type="button" class="a4-btn a4-btn-small" id="wfeOpenAll" data-a4-wz-fold="open">{'Open all'|i18n( 'design/admin/setup/rad/workflowevent' )}</button>
+    <button type="button" class="a4-btn a4-btn-small" id="wfeCloseAll" data-a4-wz-fold="close">{'Close all'|i18n( 'design/admin/setup/rad/workflowevent' )}</button>
 </div>
 
 {foreach $wizard_files as $wfe_file}
@@ -303,71 +303,4 @@
 </div>
 </form>
 
-{literal}
-<script type="text/javascript">
-( function () {
-    function fold( panel, open )
-    {
-        var collapsed = panel.className.indexOf( 'is-collapsed' ) !== -1;
-        if ( open === collapsed )
-        {
-            panel.className = open
-                ? panel.className.replace( / ?is-collapsed/, '' )
-                : panel.className + ' is-collapsed';
-        }
-        var toggle = panel.getElementsByTagName( 'span' )[0];
-        if ( toggle ) toggle.innerHTML = open ? '&minus;' : '+';
-    }
-
-    var divs = document.getElementsByTagName( 'div' ), files = [], i;
-    for ( i = 0; i < divs.length; i++ )
-        if ( divs[i].className.indexOf( 'a4-setup-wz-file' ) === 0 )
-            files.push( divs[i] );
-
-    for ( i = 0; i < files.length; i++ )
-    {
-        ( function ( panel ) {
-            var head = panel.getElementsByTagName( 'div' )[0];
-            if ( !head ) return;
-            head.onclick = function () {
-                fold( panel, panel.className.indexOf( 'is-collapsed' ) !== -1 );
-                return false;
-            };
-        } )( files[i] );
-    }
-
-    function every( open ) { for ( var j = 0; j < files.length; j++ ) fold( files[j], open ); }
-
-    var openAll = document.getElementById( 'wfeOpenAll' ),
-        closeAll = document.getElementById( 'wfeCloseAll' );
-    if ( openAll )  openAll.onclick  = function () { every( true ); return false; };
-    if ( closeAll ) closeAll.onclick = function () { every( false ); return false; };
-
-    var none = document.getElementById( 'wfeTriggersNone' );
-    if ( none )
-    {
-        none.onclick = function () {
-            var boxes = document.getElementsByTagName( 'input' ), b;
-            for ( b = 0; b < boxes.length; b++ )
-                if ( boxes[b].type === 'checkbox' && boxes[b].name === 'Triggers[]' )
-                    boxes[b].checked = false;
-            return false;
-        };
-    }
-
-    // The event name drives the class name; show it as it is typed.
-    var event = document.getElementById( 'wfeEvent' );
-    if ( event )
-    {
-        event.onkeyup = function () {
-            var clean = event.value.toLowerCase().replace( /[^a-z0-9]+/g, '' ),
-                hint = event.parentNode.getElementsByTagName( 'span' )[0];
-            if ( hint )
-                hint.textContent = clean === ''
-                    ? hint.getAttribute( 'data-empty' )
-                    : hint.getAttribute( 'data-named' ).split( '%class' ).join( clean + 'Type' );
-        };
-    }
-} )();
-</script>
-{/literal}
+{ezscript( array( 'page/setup_wizard_files.js', 'page/setup_workflowevent.js' ) )}
