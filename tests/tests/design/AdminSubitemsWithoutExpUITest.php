@@ -17,6 +17,8 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminNodeBinary.php';
+
 class AdminSubitemsWithoutExpUITest extends PHPUnit\Framework\TestCase
 {
     const CONTEXT = 'design/admin/node/view/full';

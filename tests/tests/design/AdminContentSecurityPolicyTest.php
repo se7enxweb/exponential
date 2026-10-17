@@ -41,6 +41,8 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminNodeBinary.php';
+
 class AdminContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
 {
     /**
@@ -255,6 +257,9 @@ class AdminContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
             foreach ( glob( "$root/extension/*", GLOB_ONLYDIR ) as $dir )
                 $global[] = basename( $dir );
         }
+        // The extensions this repository ships are always checked, also when settings/override exists without
+        // listing them (other tests of a full run create that directory, and the chain then lost ezoe)
+        $global = array_merge( $global, self::SHIPPED_EXTENSIONS );
         $global = array_values( array_unique( array_filter( $global, array( __CLASS__, 'checkedExtension' ) ) ) );
 
         // the settings directories of every siteaccess: settings/siteaccess/<name> and those of the active extensions

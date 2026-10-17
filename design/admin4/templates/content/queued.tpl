@@ -9,7 +9,7 @@
    placeholders (.ezap-hidden) are in stylesheets/content_queued.css; both come from design/standard. *}
 {exp_config()}
 {ezscript_require( array( 'ezjsc::jquery', 'exp::core::shared', 'exp::io', 'ezasynchronouspublishing.js' ) )}
-<link rel="stylesheet" type="text/css" href={'stylesheets/content_queued.css'|ezdesign} />
+{ezcss_require( 'content_queued.css' )}
 
 <div class="a4-page a4-standalone">
 <div class="context-block">
@@ -53,4 +53,4 @@
 </div></div></div>
 </div>
 </div>
-<script type="text/javascript" src={'javascript/content_queued.js'|ezdesign}></script>
+{ezscript( array( 'content_queued.js' ) )}

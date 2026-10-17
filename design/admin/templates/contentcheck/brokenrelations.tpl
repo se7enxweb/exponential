@@ -75,8 +75,8 @@
     <div class="a4-field">
         <button type="submit" class="a4-btn a4-btn-primary">{'Show'|i18n( 'kernel/contentcheck' )}</button>
     </div>
-    {include uri='design:contentcheck/filter_choice.tpl' name='Kind' label='Targets'|i18n( 'kernel/contentcheck' )}
-    {include uri='design:contentcheck/filter_choice.tpl' name='Relation' label='References'|i18n( 'kernel/contentcheck' )}
+    {include uri='design:contentcheck/filter_choice.tpl' group='Kind' label='Targets'|i18n( 'kernel/contentcheck' )}
+    {include uri='design:contentcheck/filter_choice.tpl' group='Relation' label='References'|i18n( 'kernel/contentcheck' )}
 </form>
 </section>
 
