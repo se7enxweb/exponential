@@ -968,6 +968,10 @@ Community". A template can also set `$show_community_links`.
 - admin4 keeps its own copy of `ezajaxsubitems_expdatatable.js`: it must work with no other admin design present, and
   a single copy in `design/standard` would be shadowed by any design that has its own. Change both copies together.
 - The CSS packer used to remove the space before a colon in selectors (`a :hover` became `a:hover`). Fixed.
+- expui's widgets (dialogs, the upload button, the date picker) take admin4's tokens through a bridge in `admin4.css`:
+  `--exp-accent` is `--a4-accent-strong`, `--exp-accent-dark` is `--a4-accent-press` (dark mode:
+  `--a4-accent-strong`), `--exp-accent-ring` is `--a4-accent-soft`, so white text on the primary button keeps 5.2:1;
+  their focus rings are overridden to admin4's 3 px `--a4-ring`.
 
 ## Changes to the other designs on the same day
 

@@ -182,4 +182,62 @@ class AdminTokenContrastTest extends PHPUnit\Framework\TestCase
         }
         $this->assertSame( array(), $failures );
     }
+
+    /**
+     * Resolves a custom property of the expui bridge (html:root in admin4.css, with the dark mode's override) to a
+     * colour: var(--a4-x) is looked up in the mode's tokens
+     */
+    private static function bridge( $mode, $name )
+    {
+        $frame = file_get_contents( dirname( __DIR__, 3 ) . '/design/admin4/stylesheets/admin4.css' );
+        $bridge = self::tokens( $frame, 'html:root' );
+        if ( $mode === 'dark' )
+        {
+            $bridge = self::tokens( $frame, 'html[data-a4-theme="dark"]:root' ) + $bridge;
+        }
+        self::assertArrayHasKey( $name, $bridge, "$mode: $name" );
+        self::assertMatchesRegularExpression( '/^var\((--[\w-]+)\)$/', $bridge[$name] );
+        preg_match( '/^var\((--[\w-]+)\)$/', $bridge[$name], $m );
+        return self::$modes[$mode][$m[1]];
+    }
+
+    /**
+     * expui paints --exp-accent and --exp-accent-dark as the FILL of its primary dialog button, its upload button and a
+     * selected day, with white text (exp/dialog.css, upload.css, datepicker.css): the bridge must map them to fills
+     * white reaches 4.5:1 on, in both modes (it mapped --a4-accent, 3.06:1, and in dark mode --a4-accent-hover, 2.34:1).
+     * The accent also draws outlines and a spinner edge: 3:1 on the card.
+     */
+    public function testTheExpuiBridgeFillsCarryWhiteText()
+    {
+        $failures = array();
+        foreach ( array( 'light', 'dark' ) as $mode )
+        {
+            foreach ( array( '--exp-accent', '--exp-accent-dark' ) as $name )
+            {
+                $fill = self::bridge( $mode, $name );
+                $ratio = self::ratio( '#ffffff', $fill );
+                if ( $ratio < 4.5 )
+                {
+                    $failures[] = sprintf( '%s: white on %s (%s) is %.2F:1, needs 4.5:1', $mode, $name, $fill, $ratio );
+                }
+            }
+            $card = self::$modes[$mode]['--a4-card'];
+            $this->assertGreaterThanOrEqual( 3.0, self::ratio( self::bridge( $mode, '--exp-accent' ), $card ), "$mode: the accent as an outline on the card" );
+        }
+        $this->assertSame( array(), $failures );
+    }
+
+    /**
+     * --exp-accent-ring is the tint expui lays over a drop zone while a file is dragged (upload.css) and its focus ring
+     * is a box-shadow in the same colour: the tint stays a translucent fill, and the focus rings of expui's widgets are
+     * set to --a4-ring (3:1, checked above) in admin4.css
+     */
+    public function testTheExpuiRingIsATintAndTheFocusRingsAreStillTheRing()
+    {
+        $frame = file_get_contents( dirname( __DIR__, 3 ) . '/design/admin4/stylesheets/admin4.css' );
+        $bridge = self::tokens( $frame, 'html:root' );
+        $this->assertSame( 'var(--a4-accent-soft)', $bridge['--exp-accent-ring'] );
+        $this->assertMatchesRegularExpression( '/html \.exp-focus-ring:focus-visible, html \.exp-scope :focus-visible, html \.exp-dialog :focus-visible,\s*html \.exp-upload :focus-visible, html \.exp-upload-select:focus-within, html \.exp-datepicker button:focus-visible,\s*html img\.datepicker-icon:focus-visible \{ box-shadow: 0 0 0 3px var\(--a4-ring\); \}/', $frame );
+        $this->assertStringContainsString( 'html .exp-dt-menu [role=menuitem]:focus-visible { box-shadow: inset 0 0 0 2px var(--a4-ring); }', $frame );
+    }
 }
