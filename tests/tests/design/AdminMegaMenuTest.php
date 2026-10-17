@@ -15,6 +15,8 @@
  *  MM-06 - the script: click, ArrowDown, Escape, Tab, a click outside, the delayed hover preview (300 ms in, 400 ms
  *          out, mouse only; the focus coming in keeps it), the width, the "More" list, one load and a failed one
  *          (a4_mega_menu.js run in node, tests/tests/design/js/mega_menu.js; skipped without node)
+ *  MM-09 - the load of the links: one request, retried once after a passing failure, aborts are no error, the
+ *          signed-out state, "Try again", the fragment marker, one binding (js/mega_menu_load.js on mini_dom.js)
  *  MM-08 - the Users tab: [Topmenu_users] MegaMenuTemplate draws [Leftmenu_user_mega], which adds [Leftmenu_user] and
  *          [Leftmenu_my] instead of restating their links; its MegaMenuLinks[] names existing links with icons,
  *          descriptions and names in ger-DE and eng-US
@@ -205,23 +207,35 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
         $this->assertFileDoesNotExist( self::root() . '/kernel/setup/megamenu.php', 'one view for every tab, no second one for Setup' );
         $this->assertStringNotContainsString( "\$ViewList['megamenu']", self::read( 'kernel/setup/module.php' ) );
         $view = self::read( 'kernel/private/classes/views/user/megamenu.php' );
-        $this->assertStringContainsString( "\$Result['pagelayout'] = false;", $view );
+        // a bare answer for a script, whatever the verdict: no page layout, no debug report, private, its own end
+        $this->assertStringNotContainsString( "\$Result['pagelayout']", $view );
+        $this->assertStringNotContainsString( 'handleError(', $view, 'no error page in the page layout' );
         $this->assertStringContainsString( "header( 'Cache-Control: private, no-store' );", $view );
+        $this->assertStringContainsString( "header( 'Vary: Cookie' );", $view );
+        $this->assertStringContainsString( "header( 'X-Exp-Mega: ' . \$verdict );", $view );
         $this->assertStringContainsString( "'debug-enabled' => false", $view );
         $this->assertStringContainsString( "\$tpl->fetch( 'design:user/megamenu.tpl' )", $view );
-        // the tab is checked before anything is drawn: not a tab of the setting (not available), not open (denied)
+        $this->assertStringContainsString( '\eZExecution::cleanExit();', $view );
+        // cleanExit() ends a Velocity request by throwing: never inside a catch
+        $this->assertDoesNotMatchRegularExpression( '/\bcatch\s*\(/', $view );
+        // the debug report is off and the session released before anything is drawn, the verdict made before both
         $fetch = strpos( $view, "\$tpl->fetch(" );
-        $this->assertLessThan( $fetch, strpos( $view, 'return $Module->handleError( \eZError::KERNEL_NOT_AVAILABLE' ) );
-        $this->assertLessThan( $fetch, strpos( $view, 'return $Module->handleError( \eZError::KERNEL_ACCESS_DENIED' ) );
+        $this->assertLessThan( $fetch, strpos( $view, "'debug-enabled' => false" ) );
+        $this->assertLessThan( $fetch, strpos( $view, 'self::releaseSession();' ) );
+        $this->assertLessThan( strpos( $view, 'self::releaseSession();' ), strpos( $view, '$verdict = self::verdict(' ) );
         $this->assertStringContainsString( 'new \eZTopMenuOperator()', $view, 'the header\'s own verdict on the tab' );
-        $this->assertLessThan( $fetch, strpos( $view, '\eZUser::currentUser()->isRegistered()' ), 'never for the anonymous user' );
+        $this->assertStringContainsString( '$user->canLoginToSiteAccess( $access )', $view, 'the kernel\'s user/login check, made by the view' );
+        // every visitor reaches the view, which makes the checks itself (a refusal is a 403 for the script, not a page)
+        $site = self::read( 'settings/site.ini' );
+        $this->assertStringContainsString( "\nAnonymousAccessList[]=user/megamenu\n", $site );
+        $this->assertStringContainsString( "\nPolicyOmitList[]=user/megamenu\n", $site );
         $this->assertStringContainsString( "'Exponential\\\\View\\\\Kernel\\\\User\\\\Megamenu'", self::read( 'autoload/ezp_kernel.php' ) );
         $this->assertStringNotContainsString( 'Setup\\\\Megamenu', self::read( 'autoload/ezp_kernel.php' ) );
         $this->assertStringContainsString( '\Exponential\View\Kernel\User\Megamenu::main(', self::read( 'kernel/user/megamenu.php' ) );
 
         // the fragment: the tab's MegaMenuTemplate, which draws the tab's menu as the mega menu's groups
         $fragment = self::read( 'design/admin4/templates/user/megamenu.tpl' );
-        $this->assertStringContainsString( '<div class="a4-mega-groups" data-a4-mega-groups>', $fragment );
+        $this->assertStringContainsString( '<div class="a4-mega-groups" data-a4-mega-groups data-a4-mega-fragment="{$mega_tab|wash}">', $fragment );
         $this->assertStringContainsString( '{include uri=$mega_template}', $fragment );
         $this->assertStringNotContainsString( 'ezini(', $fragment, 'no second configuration' );
         $setup = self::read( 'design/admin4/templates/parts/setup/mega_menu.tpl' );
@@ -281,7 +295,9 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
     {
         $strings = array( '%tab menu' => 'Menü „%tab“', 'Loading the %tab menu' => 'Menü „%tab“ wird geladen',
                           'The %tab menu could not be loaded.' => 'Das Menü „%tab“ konnte nicht geladen werden.',
-                          'Go to %tab' => 'Weiter zu „%tab“' );
+                          'Go to %tab' => 'Weiter zu „%tab“', 'Try again' => 'Erneut versuchen',
+                          'You are signed out. Sign in again to see the %tab menu.' => 'Sie sind abgemeldet. Melden Sie sich erneut an, um das Menü „%tab“ zu sehen.',
+                          'Sign in' => 'Anmelden' );
         foreach ( array( 'ger-DE', 'eng-US' ) as $language )
         {
             $dom = new DOMDocument();
@@ -455,7 +471,7 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
             $this->assertIsArray( $row, 'the harness ran: ' . $out );
             $s[$row['name']] = $row;
         }
-        $this->assertCount( 39, $s );
+        $this->assertCount( 40, $s );
 
         $open = function ( $name ) use ( $s ) {
             $this->assertSame( 'true', $s[$name]['expanded'], $name );
@@ -524,15 +540,19 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
             $this->assertSame( 'could not be loaded', $s[$name]['status'], $name );
             $this->assertNull( $s[$name]['busy'], $name );
         }
-        $this->assertSame( 2, $s['a failed load is tried again']['fetches'] );
+        // a server error is tried once more (2 requests) before the panel says so; the next opening loads again
+        $this->assertSame( 2, $s['a failed load says so']['fetches'] );
+        $this->assertSame( 3, $s['a failed load is tried again']['fetches'] );
         $this->assertSame( 'all link', $s['arrowdown after a failed load focuses the overview link']['focus'] );
-        // a load without an answer is given up after 10 s: busy until then, then the error, and the next opening
-        // loads again (it kept the load blocked and the panel busy for good)
+        // a request without an answer is given up after 10 s and tried once more: busy until then, the menu when the
+        // second answers, the error when it does not either, and the next opening loads again
         $this->assertSame( 'true', $s['a load without an answer is still busy before 10s']['busy'] );
         $this->assertNull( $s['a load without an answer is still busy before 10s']['status'] );
-        $this->assertSame( 'could not be loaded', $s['a load without an answer says so after 10s']['status'] );
-        $this->assertNull( $s['a load without an answer says so after 10s']['busy'] );
-        $this->assertSame( 2, $s['a load without an answer is tried again']['fetches'] );
+        $this->assertSame( 'groups', $s['a load without an answer is tried once more']['content'] );
+        $this->assertSame( 2, $s['a load without an answer is tried once more']['fetches'] );
+        $this->assertSame( 'could not be loaded', $s['a load without an answer twice says so']['status'] );
+        $this->assertNull( $s['a load without an answer twice says so']['busy'] );
+        $this->assertSame( 3, $s['a load without an answer is tried again']['fetches'] );
         $this->assertSame( 'groups', $s['a load without an answer is tried again']['content'] );
 
         // two tabs: one panel at a time, whatever opens the other (a click, the hover preview)
@@ -553,6 +573,109 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
         // a panel opened on purpose is not replaced by the hover preview of another tab
         $open( 'two tabs: hovering the second keeps the first opened by a click' );
         $second( 'two tabs: hovering the second keeps the first opened by a click', false );
+    }
+
+    /**
+     * MM-09 - the load of the links (#577): one request per tab and page with the session's cookie, never from the
+     * HTTP cache; a request the browser stops is no error; a passing failure (no connection, 5xx, no answer, not the
+     * menu) is tried once more; 401, 403 or a sign-in page show the signed-out state with a link to sign in; a
+     * failure for good offers "Try again" and keeps the link to the tab's page; the menu is the fragment's marked
+     * element (data-a4-mega-fragment); the script run twice binds once. a4_mega_menu.js in node against mini_dom.js.
+     */
+    public function testTheLoadOfTheLinksSurvivesFailures()
+    {
+        $node = AdminNodeBinary::require();
+        $out = (string)shell_exec( escapeshellarg( $node ) . ' ' . escapeshellarg( __DIR__ . '/js/mega_menu_load.js' ) . ' '
+                                   . escapeshellarg( self::root() . '/design/admin4/javascript/a4_mega_menu.js' ) . ' 2>&1' );
+        $s = array();
+        foreach ( array_filter( explode( "\n", $out ) ) as $line )
+        {
+            $row = json_decode( $line, true );
+            $this->assertIsArray( $row, 'the harness ran: ' . $out );
+            $s[$row['name']] = $row;
+        }
+        $this->assertCount( 19, $s, $out );
+
+        $menu = function ( array $state, $requests, $name ) {
+            $this->assertTrue( $state['menu'], $name );
+            $this->assertSame( $requests, $state['requests'], $name );
+            $this->assertNull( $state['busy'], $name );
+            $this->assertNull( $state['retry'], $name );
+            $this->assertTrue( $state['open'], $name );
+        };
+        $menu( $s['success'], 1, 'success' );
+        $this->assertSame( '/admin/user/megamenu/setup', $s['success']['url'] );
+        $this->assertSame( 'same-origin', $s['success']['credentials'] );
+        $this->assertSame( 'no-store', $s['success']['cache'] );
+        $this->assertSame( 'text/html', $s['success']['accept'] );
+        $this->assertSame( 'XMLHttpRequest', $s['success']['xrw'] );
+        $menu( $s['success is cached'], 1, 'success is cached' );
+
+        // stopped by the browser: no error, the loading line; the next opening loads again
+        $during = $s['abort is no error']['during'];
+        $this->assertSame( 'LOADING', $during['status'] );
+        $this->assertNull( $during['retry'] );
+        $this->assertNull( $during['busy'] );
+        $menu( $s['abort is no error']['after'], 2, 'abort: next opening' );
+        $menu( $s['abort is tried again'], 2, 'abort is tried again' );
+        // the page being left by another link: the network error of the stopped request (Firefox) is no error either
+        $during = $s['navigation network error is no error']['during'];
+        $this->assertSame( 'LOADING', $during['status'] );
+        $this->assertNull( $during['retry'] );
+        $this->assertSame( 1, $during['requests'], 'not tried again while the page is left' );
+        $menu( $s['navigation network error is no error']['after'], 2, 'navigation network error: next opening' );
+
+        // one request in flight, closing cancels nothing
+        $this->assertSame( 'true', $s['in-flight request is reused']['closed']['busy'] );
+        $menu( $s['in-flight request is reused']['after'], 1, 'in-flight request is reused' );
+
+        // a passing failure is tried once more after 600 ms, without showing the error in between
+        $this->assertSame( 'LOADING', $s['retry then success']['waiting']['status'] );
+        $this->assertSame( 1, $s['retry then success']['waiting']['requests'] );
+        $menu( $s['retry then success']['after'], 2, 'retry then success' );
+        $menu( $s['timeout then success'], 2, 'timeout then success' );
+
+        // a failure for good: the error, "Try again" (kept under the click, disabled while it loads), the tab's link
+        $failed = $s['failure offers try again'];
+        $this->assertSame( 'ERROR', $failed['failed']['status'] );
+        $this->assertSame( 'TRY AGAIN', $failed['failed']['retry'] );
+        $this->assertTrue( $failed['failed']['goTo'] );
+        $this->assertTrue( $failed['clicked']['open'], 'the click on "Try again" is not one outside' );
+        $this->assertTrue( $failed['clicked']['retryDisabled'] );
+        $menu( $failed['after'], 3, 'try again' );
+        foreach ( array( 'no marker is no menu' => 2, 'not found is not retried' => 1 ) as $name => $requests )
+        {
+            $this->assertSame( 'ERROR', $s[$name]['status'], $name );
+            $this->assertSame( 'TRY AGAIN', $s[$name]['retry'], $name );
+            $this->assertSame( $requests, $s[$name]['requests'], $name );
+            $this->assertTrue( $s[$name]['goTo'], $name );
+        }
+        $this->assertSame( 'LOADING', $s['reopening after a failure loads again']['status'] );
+        $this->assertSame( 2, $s['reopening after a failure loads again']['requests'] );
+
+        // signed out: not tried again, a link to sign in instead of the error
+        $this->assertSame( 'ERROR', $s['denied verdict is no sign-in']['status'], 'X-Exp-Mega: denied' );
+        $this->assertNull( $s['denied verdict is no sign-in']['signin'] );
+        $this->assertSame( 1, $s['denied verdict is no sign-in']['requests'] );
+        foreach ( array( 'signed out 403', 'signed out 401', 'signed out verdict', 'signed out redirect', 'signed out page' ) as $name )
+        {
+            $this->assertSame( 'SIGNED OUT', $s[$name]['status'], $name );
+            $this->assertSame( array( 'text' => 'SIGN IN', 'href' => '/admin/user/login' ), $s[$name]['signin'], $name );
+            $this->assertNull( $s[$name]['retry'], $name );
+            $this->assertSame( 1, $s[$name]['requests'], $name );
+            $this->assertTrue( $s[$name]['goTo'], $name );
+        }
+
+        // the script twice on the page: one binding, one request, the click opens
+        $menu( $s['double init'], 1, 'double init' );
+        $this->assertSame( 'true', $s['double init']['expanded'] );
+        $this->assertTrue( $s['double init']['bound'] );
+
+        // the panel carries the texts and the sign-in address the script shows
+        $item = self::read( 'design/admin4/templates/page_topmenuitem.tpl' );
+        foreach ( array( 'data-a4-mega-retry=', 'data-a4-mega-signed-out=', 'data-a4-mega-signin=', "data-a4-mega-login={'user/login'|ezurl}" ) as $attribute )
+            $this->assertStringContainsString( $attribute, $item );
+        $this->assertStringContainsString( 'data-a4-mega-fragment="{$mega_tab|wash}"', self::read( 'design/standard/templates/user/megamenu.tpl' ) );
     }
 
     /** menu.ini with the given values set in this process; undone in tearDown() */
@@ -670,28 +793,22 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * MM-03: run() itself refuses the anonymous user for a tab that is switched on (user/login is a policy the anonymous
-     * user may hold), and answers "not available" for a tab that is not, before it looks at the user
+     * MM-03: run() itself refuses the anonymous user for a tab that is switched on with a bare 403 (X-Exp-Mega:
+     * signed-out), and a tab that is not with a 404 (unknown), before it looks at the user; never a page, never a body
      */
     public function testTheViewRefusesTheAnonymousUser()
     {
         $this->menuIni( array( 'TopAdminMenu' => array( 'MegaMenuTabs' => array( 'setup' ) ) ) );
-        $module = new class {
-            public $errors = array();
-            public function handleError( $code, $type ) { $this->errors[] = array( $code, $type ); return array( 'error' => $code ); }
-        };
         $key = 'eZUserGlobalInstance_';
         $saved = array_key_exists( $key, $GLOBALS ) ? array( $GLOBALS[$key] ) : null;
         $GLOBALS[$key] = new eZUser( array( 'contentobject_id' => eZUser::anonymousId(), 'login' => 'anonymous', 'email' => '' ) );
         try
         {
             $this->assertFalse( eZUser::currentUser()->isRegistered(), 'the stand-in is the anonymous user' );
-            $view = new \Exponential\View\Kernel\User\Megamenu();
-            $this->assertSame( array( 'error' => eZError::KERNEL_ACCESS_DENIED ),
-                               $view->run( array( 'Params' => array( 'Module' => $module, 'Tab' => 'setup' ) ) ) );
-            $this->assertSame( array( array( eZError::KERNEL_ACCESS_DENIED, 'kernel' ) ), $module->errors );
-            $this->assertSame( array( 'error' => eZError::KERNEL_NOT_AVAILABLE ),
-                               $view->run( array( 'Params' => array( 'Module' => $module, 'Tab' => 'content' ) ) ) );
+            $view = self::capturingView();
+            $this->assertSame( array( 'signed-out', 403, '' ), $view->run( array( 'Params' => array( 'Module' => null, 'Tab' => 'setup' ) ) ) );
+            $this->assertSame( array( 'unknown', 404, '' ), $view->run( array( 'Params' => array( 'Module' => null, 'Tab' => 'content' ) ) ) );
+            $this->assertSame( array( 'unknown', 404, '' ), $view->run( array( 'Params' => array( 'Module' => null ) ) ), 'no tab' );
         }
         finally
         {
@@ -700,6 +817,72 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
             else
                 $GLOBALS[$key] = $saved[0];
         }
+    }
+
+    /** MM-03: the verdict, in its order: the tab, the sign-in, the siteaccess, the tab open to the user */
+    public function testTheVerdictChecksTheTabTheSignInTheSiteaccessAndTheTabsAccess()
+    {
+        $view = 'Exponential\View\Kernel\User\Megamenu';
+        $tab = array( 'NavigationPartIdentifier' => 'mmtnavigationpart', 'Name' => 'MMT', 'URL' => array( 'default' => 'mmt/view' ),
+                      'Enabled' => array( 'default' => 'true' ), 'Shown' => array( 'default' => 'true' ) );
+        $ini = $this->menuIni( array(
+            'TopAdminMenu' => array( 'Tabs' => array( 'mmt' ), 'HiddenTabs' => array(), 'SetupTabs' => array() ),
+            'MenuAccessSettings' => array( 'CheckViewAccess' => 'disabled' ),
+            'Topmenu_mmt' => $tab,
+        ) );
+        $template = 'design:parts/setup/mega_menu.tpl';
+        $anonymous = new eZUser( array( 'contentobject_id' => eZUser::anonymousId(), 'login' => 'anonymous', 'email' => '' ) );
+        $member = self::standInUser( true );
+        $outsider = self::standInUser( false );
+        $access = array( 'name' => 'admin' );
+
+        $this->assertSame( 'unknown', $view::verdict( 'mmt', null, $member, $access, $ini ), 'a tab the view does not serve, whoever asks' );
+        $this->assertSame( 'unknown', $view::verdict( 'mmt', null, $anonymous, $access, $ini ) );
+        $this->assertSame( 'signed-out', $view::verdict( 'mmt', $template, $anonymous, $access, $ini ) );
+        $this->assertSame( 'denied', $view::verdict( 'mmt', $template, $outsider, $access, $ini ), 'no user/login for this siteaccess' );
+        $this->assertSame( 'ok', $view::verdict( 'mmt', $template, $member, $access, $ini ) );
+        $this->menuIni( array( 'TopAdminMenu' => array( 'HiddenTabs' => array( 'mmt' ) ) ) );
+        $this->assertSame( 'denied', $view::verdict( 'mmt', $template, $member, $access, $ini ), 'a tab not open to the user' );
+
+        // each verdict has its status: the fragment 200, a tab not served 404, every refusal 403
+        $this->assertSame( array( 'ok' => 200, 'unknown' => 404, 'signed-out' => 403, 'denied' => 403 ), $view::STATUS );
+    }
+
+    /** MM-03: the fragment loses the templates' indentation between its tags, nothing else */
+    public function testTheFragmentIsSentWithoutTheTemplatesIndentation()
+    {
+        $view = 'Exponential\View\Kernel\User\Megamenu';
+        $html = "\n  <div class=\"a4-mega-groups\" data-a4-mega-groups>\n\n      <section>\n        <h2>Setup  menu</h2>\n"
+              . "        <a href=\"/admin/setup/cache\">Caches</a>\n      </section>\n  </div>\n";
+        $this->assertSame( '<div class="a4-mega-groups" data-a4-mega-groups> <section> <h2>Setup  menu</h2> <a href="/admin/setup/cache">Caches</a> </section> </div>',
+                           $view::compact( $html ) );
+        // an element whose white space counts keeps the fragment as it is
+        $pre = "<div data-a4-mega-groups>\n  <pre>a\n  b</pre>\n</div>";
+        $this->assertSame( $pre, $view::compact( "\n" . $pre . "\n" ) );
+        $this->assertSame( '', $view::compact( '' ) );
+    }
+
+    /** the view with send() answering its arguments instead of ending the request */
+    private static function capturingView()
+    {
+        return new class extends \Exponential\View\Kernel\User\Megamenu {
+            protected function send( $verdict, $body )
+            {
+                return array( $verdict, self::STATUS[$verdict], $body );
+            }
+        };
+    }
+
+    /** a signed-in user (no database) who may, or may not, log in to the siteaccess */
+    private static function standInUser( $mayLogIn )
+    {
+        $user = new class( array( 'contentobject_id' => 987654321, 'login' => 'mmtuser', 'email' => '' ) ) extends eZUser {
+            public $mayLogIn = true;
+            public function isRegistered() { return true; }
+            public function canLoginToSiteAccess( $access ) { return $this->mayLogIn; }
+        };
+        $user->mayLogIn = $mayLogIn;
+        return $user;
     }
 
     /** MM-08 */

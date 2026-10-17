@@ -325,7 +325,7 @@ class expAuditKeys
                 else
                     $editor->set( self::BLOCK, $var, $value );
             }
-            $editor->save( array( 'backup' => false ) );
+            $editor->save( array( 'backup' => false, 'generatedSecret' => true ) );
             if ( !$existed )
                 @chmod( $scope->path( 'audit.ini' ), eZFile::fileMode( 0640 ) );
             return true;

@@ -1,4 +1,5 @@
-{if fetch( 'user', 'has_access_to', hash( 'module', 'setup', 'function', 'setup' ) )}
+{if and( fetch( 'user', 'has_access_to', hash( 'module', 'setup', 'function', 'setup' ) ),
+        fetch( 'user', 'can_open', hash( 'uri', 'setup/settingstoolbar' ) ) )}
 
 <div id="quicksettings-tool">
 {* DESIGN: Header START *}<div class="box-header"><div class="box-ml">

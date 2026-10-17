@@ -582,13 +582,25 @@ opens the user form directly. A permission check for one user has no view in the
   for more than 12 keys. The header and the panel simply leave out what they cannot use. The message is written when
   the page's cache block is built, so clear the template-block cache to see it again.
 - **One source, loaded when needed.** The links are those of the tab's menu: `user/megamenu/<tab>`, one view for
-  every tab, without page layout (`ui_context` ajax, `Cache-Control: private, no-store`), draws the tab's
+  every tab, without page layout (`ui_context` ajax, `Cache-Control: private, no-store`, `Vary: Cookie`, no debug
+  report even with `DebugOutput=enabled`, the templates' indentation between tags removed: about 5 KB for Setup
+  instead of 75 KB), draws the tab's
   `MegaMenuTemplate` (`user/megamenu.tpl`), which goes through `parts/ini_menu.tpl` with `tiles_layout='mega'`
   (`parts/a4_mega_menu.tpl`): the same names, groups, icons (`LinkIcons[]`), descriptions (`LinkDescriptions[]`)
   and access checks (`PolicyList_<link>[]`, `CheckViewAccess`, `NoAccessLinks`), without figures. `a4_mega_menu.js`
   asks for it once, when the panel is first opened; the page itself carries only the button, a status line and the
-  tab's link (about 1 KB), cached with the header per role set (`$user_hash`), as the tabs are. A load that fails
-  says so in the panel and is tried again on the next opening; the tab's link stays.
+  tab's link (about 1 KB), cached with the header per role set (`$user_hash`), as the tabs are.
+- **The load.** One request per tab and page (`credentials: same-origin`, `Accept: text/html`,
+  `X-Requested-With`, `cache: no-store`): an opening while it runs waits for the same request, closing the panel
+  cancels nothing, and the links stay for the life of the page. The answer is the menu only when it holds the
+  fragment's marker, `data-a4-mega-fragment="<tab>"` (set by `user/megamenu.tpl`; a design's own fragment without
+  it is still taken by its `data-a4-mega-groups`). A passing failure (no connection, 5xx, 408, 429, no answer
+  after 10 s, an answer that is not the menu) is tried once more after 600 ms. A 401, a 403, a redirect to
+  `user/login` or a sign-in page in its place shows that the user is signed out, with a "Sign in" link
+  (`data-a4-mega-signed-out`, `data-a4-mega-signin`, `data-a4-mega-login` on the panel). A failure for good says
+  so (`data-a4-mega-error`) with a "Try again" button (`data-a4-mega-retry`); the tab's link stays under it, and the
+  next opening tries again too. A request the browser stops because another page is being opened (an AbortError, or the network error Firefox gives) is no
+  failure. The script binds each tab once (`data-a4-mega-bound`), however often it is loaded.
 - **The rights.** The view's policy is `user/login` (any user of the siteaccess, as `user/preferences`), since the
   tabs belong to different modules and a policy of one of them would keep the others' users out. The rights are
   the tab's and the links': the view answers only for a tab named in `MegaMenuTabs[]` with a `MegaMenuTemplate`
@@ -602,6 +614,18 @@ opens the user form directly. A permission check for one user has no view in the
   ones have. The request is a
   view of the user module, so the audit trail records it as `access.view.sensitive` once per page on which a panel
   is opened.
+- **Answers for the script.** The view answers its script, never a person, so each answer is a bare response with
+  a status and an `X-Exp-Mega` header naming the verdict: `200 ok` (the fragment), `404 unknown` (a tab it does not
+  serve), `403 signed-out` (no signed-in user, or a session asked to sign in again) and `403 denied` (no
+  `user/login` for this siteaccess, or the tab is not open to the user). Never the sign-in page or an error page
+  with the page layout. For that, `site.ini` names `user/megamenu` in `[SiteAccessSettings] AnonymousAccessList[]`
+  and `[RoleSettings] PolicyOmitList[]`, and the view makes the kernel's checks itself (`user/login` with its
+  `SiteAccess` limitation, then the tab). A site that drops either entry gets the old behaviour back: the sign-in
+  page or the error page, which the script also treats as a failed load.
+- **The session.** The view only reads the session, so it closes it (`session_write_close()`) as soon as the
+  verdict is made: the page's other requests do not wait for the menu. It still waits, like every request of a
+  session, while another request of the same session holds the session's lock (the file handler and Velocity lock
+  the session for the whole request), so a slow page loading in another tab delays the panel by that page's time.
 - **Look:** an admin4 card (`--a4-card`, `--a4-line`, `--a4-radius-s`, `--a4-shadow-m`), centred under the header
   and as wide as its groups need: up to three groups of 17rem side by side, so a short choice makes a narrow card;
   descriptions wrap instead of being cut. Light and dark, a CanvasText border and Highlight states under forced colors, no transition

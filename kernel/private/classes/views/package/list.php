@@ -80,7 +80,9 @@ class ListView extends \Exponential\Runnable\ModuleView
 
         $scan = \eZPackageCatalog::scan( $repositories );
         $cards = $scan['cards'];
-        $canRemove = \eZPackage::canUsePolicyFunction( 'remove' );
+        // with the configuration managed by the deployment packages are neither installed nor removed from the
+        // browser; the list stays, the remove actions are refused (package/install is locked as well)
+        $canRemove = \eZPackage::canUsePolicyFunction( 'remove' ) && !\expManagedConfiguration::isEnabled();
         $removePolicy = function ( array $card )
         {
             $package = \eZPackage::create( $card['name'], array( 'type' => $card['type'] ) );
