@@ -4074,7 +4074,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
     function pathArray()
     {
         $pathString = $this->attribute( 'path_string' );
-        $pathItems = explode( '/', $pathString );
+        $pathItems = explode( '/', (string)$pathString );
         $pathArray = array();
         foreach ( $pathItems as $pathItem )
         {
@@ -7600,7 +7600,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
             if ( !$pathString )
                 return $falseValue;
 
-            $pathItems = explode( '/', $pathString );
+            $pathItems = explode( '/', (string)$pathString );
             $pathArray = array();
             foreach ( $pathItems as $pathItem )
             {

@@ -698,25 +698,30 @@ class eZContentObject extends eZPersistentObject
             $language = $this->CurrentLanguage;
         }
 
-        if ( !$language || !isset( $eZContentObjectDataMapCache[$this->ID][$version][$language] ) )
+        // The root node's empty object has neither a version nor a language: key it by '' as PHP did for null,
+        // without the null array offset PHP 8.5 deprecates.
+        $versionKey = $version ?? '';
+        $languageKey = $language ?? '';
+        if ( !$language || !isset( $eZContentObjectDataMapCache[$this->ID][$versionKey][$languageKey] ) )
         {
             $data = $this->contentObjectAttributes( true, $version, $language );
 
             if ( !$language )
             {
                 $language = $this->CurrentLanguage;
+                $languageKey = $language ?? '';
             }
 
             // Store the attributes for later use
-            $this->ContentObjectAttributeArray[$version][$language] = $data;
-            $eZContentObjectDataMapCache[$this->ID][$version][$language] = $data;
+            $this->ContentObjectAttributeArray[$versionKey][$languageKey] = $data;
+            $eZContentObjectDataMapCache[$this->ID][$versionKey][$languageKey] = $data;
         }
         else
         {
-            $data = $eZContentObjectDataMapCache[$this->ID][$version][$language];
+            $data = $eZContentObjectDataMapCache[$this->ID][$versionKey][$languageKey];
         }
 
-        if ( !isset( $this->DataMap[$version][$language] ) )
+        if ( !isset( $this->DataMap[$versionKey][$languageKey] ) )
         {
             $ret = array();
             /* @var eZContentObjectAttribute[] $data */
@@ -725,11 +730,11 @@ class eZContentObject extends eZPersistentObject
                 $identifier = $item->contentClassAttributeIdentifier();
                 $ret[$identifier] = $data[$key];
             }
-            $this->DataMap[$version][$language] = $ret;
+            $this->DataMap[$versionKey][$languageKey] = $ret;
         }
         else
         {
-            $ret = $this->DataMap[$version][$language];
+            $ret = $this->DataMap[$versionKey][$languageKey];
         }
         return $ret;
     }
