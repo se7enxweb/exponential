@@ -129,18 +129,49 @@ class AdminPreviewDevicesTest extends PHPUnit\Framework\TestCase
         $this->assertSame( $css, self::read( 'design/admin/stylesheets/modules/content.css' ), 'design/admin keeps a copy' );
         $rules = AdminBaseStylesheetsTest::rules( preg_replace( '#/\*.*?\*/#s', '', $css ) );
         $this->assertSame( 'none', $rules['.a4-content-preview-bar[hidden]']['display'] );
-        $this->assertSame( 'var(--a4-soft)', $rules['.a4-content-preview-stage.is-device']['background-color'] );
-        $frame = $rules['.a4-content-preview-stage.is-device .a4-content-preview-device'];
+        $this->assertSame( 'var(--a4-soft)', $rules['.a4-content-preview-stage.is-device, html.a4-js .a4-content-preview-stage']['background-color'] );
+        $frame = $rules['.a4-content-preview-stage.is-device .a4-content-preview-device, html.a4-js .a4-content-preview-stage .a4-content-preview-device'];
         $this->assertSame( 'content-box', $frame['box-sizing'], 'the script sizes the page, the edge comes on top' );
         $this->assertSame( '1px solid var(--a4-line-strong)', $frame['border'] );
         $this->assertSame( 'var(--a4-radius-s)', $frame['border-radius'] );
-        $this->assertSame( '0 0', $rules['.a4-content-preview-stage.is-device .a4-content-preview-device iframe']['transform-origin'] );
+        $this->assertSame( '0 0', $rules['.a4-content-preview-stage.is-device .a4-content-preview-device iframe, html.a4-js .a4-content-preview-stage .a4-content-preview-device iframe']['transform-origin'] );
         $disabled = $rules['.a4-content-preview-bar .a4-tabs.is-segmented > button:disabled, .a4-content-preview-bar .a4-tabs.is-segmented > button:disabled:hover'];
         $this->assertSame( 'var(--a4-disabled)', $disabled['color'] );
         $this->assertMatchesRegularExpression( '/@container \(max-width: 640px\) \{\s*\.a4-content-preview-bar \.a4-content-preview-device-name \{[^}]*position: absolute;[^}]*clip: rect\(0 0 0 0\);/', $css,
                                                'a narrow column shows the icons only; the names stay for screen readers' );
         $forced = AdminBaseStylesheetsTest::rules( preg_replace( '#/\*.*?\*/#s', '', $css ), true );
-        $this->assertSame( 'CanvasText', $forced['.a4-content-preview-stage.is-device .a4-content-preview-device']['border-color'] );
+        $this->assertSame( 'CanvasText', $forced['.a4-content-preview-stage.is-device .a4-content-preview-device, html.a4-js .a4-content-preview-stage .a4-content-preview-device']['border-color'] );
+    }
+
+    /**
+     * With the frame's scripts (html.a4-js, set by a4_head.js before the first paint) the bar and the device frame are
+     * drawn from the first paint, the frame in the saved device's size and proportions (the preferences on <html>), so
+     * nothing below the preview moves when admin4.js takes it on (a layout shift of 0.07 at 1440px before).
+     */
+    public function testTheBarAndTheFrameAreThereAtTheFirstPaint()
+    {
+        $css = preg_replace( '#/\*.*?\*/#s', '', self::read( 'design/admin4/stylesheets/modules/content.css' ) );
+        $rules = AdminBaseStylesheetsTest::rules( $css );
+        $this->assertSame( 'flex', $rules['html.a4-js .a4-content-preview-bar[hidden]']['display'] );
+        $this->assertSame( array( '1280', '800' ), array( $rules['html.a4-js .a4-content-preview-stage']['--a4-preview-w'], $rules['html.a4-js .a4-content-preview-stage']['--a4-preview-h'] ),
+                           'empty preference: desktop' );
+        foreach ( self::DEVICES as $id => list( $icon, $width, $height, $name ) )
+        {
+            if ( $id === 'desktop' )
+                continue;
+            $rule = $rules['html.a4-js[data-a4-pref-admin-preview-device="' . $id . '"] .a4-content-preview-stage'];
+            $this->assertSame( array( (string)$width, (string)$height ), array( $rule['--a4-preview-w'], $rule['--a4-preview-h'] ), "the size of $id" );
+        }
+        foreach ( array( 'phone', 'tablet' ) as $id )
+        {
+            $rule = $rules['html.a4-js[data-a4-pref-admin-preview-device="' . $id . '"][data-a4-pref-admin-preview-landscape="1"] .a4-content-preview-stage'];
+            $this->assertSame( array( (string)self::DEVICES[$id][2], (string)self::DEVICES[$id][1] ), array( $rule['--a4-preview-w'], $rule['--a4-preview-h'] ), "$id turned" );
+        }
+        $frame = $rules['html.a4-js .a4-content-preview-stage .a4-content-preview-device'];
+        $this->assertSame( 'min(calc(var(--a4-preview-w) * 1px), calc(100% - 2px))', $frame['width'], 'narrowed to the column, its edges on top' );
+        $this->assertSame( 'var(--a4-preview-w) / var(--a4-preview-h)', $frame['aspect-ratio'] );
+        // the script's own sizes win over these (inline), and without the script nothing changes
+        $this->assertStringContainsString( "device.style.width = Math.floor(w * scale) + 'px';", self::read( 'design/admin4/javascript/admin4.js' ) );
     }
 
     public function testTheIconsAreBootstrapIconsWithTheirRules()
