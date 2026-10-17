@@ -225,7 +225,7 @@ $ViewList["extensions"] = array(
 // with managecache alone must keep it. A user with none of them gets the access denied page, which names the policy
 // of the last function eZUser::hasAccessToView() asked (system_info); any one of the listed functions opens the view.
 $ViewList['menu'] = array(
-    'functions' => array( 'setup or administrate or managecache or managecronjobs or preload or system_info' ),
+    'functions' => array( 'setup or administrate or managecache or managecronjobs or preload or system_info or logs' ),
     'script' => 'setupmenu.php',
     'default_navigation_part' => 'ezsetupnavigationpart',
     'params' => array( ) );
@@ -326,6 +326,29 @@ $ViewList['systemupgrade'] = array(
                                     'DownloadSchemaReportButton' => 'DownloadSchemaReport' ),
     'params' => array( ) );
 
+// The log viewer (doc/features/6.0/log-viewer.md): the page, its feed (polls, searches, related lines; JSON, short
+// requests, never held open) and its actions (POST only). The file is named by ?file=<path relative to the root>.
+$ViewList['logs'] = array(
+    'functions' => array( 'logs' ),
+    'script' => 'logs.php',
+    'ui_context' => 'administration',
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'params' => array() );
+
+$ViewList['logsfeed'] = array(
+    'functions' => array( 'logs' ),
+    'script' => 'logsfeed.php',
+    'ui_context' => 'ajax',
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'params' => array() );
+
+$ViewList['logsaction'] = array(
+    'functions' => array( 'logs' ),
+    'script' => 'logsaction.php',
+    'ui_context' => 'administration',
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'params' => array() );
+
 
 /*! Provided for backwards compatibility */
 $ViewList["toolbarlist"] = array(
@@ -389,6 +412,10 @@ $ViewList["templatecreate"] = array(
 $FunctionList = array();
 $FunctionList['administrate'] = array();
 $FunctionList['install'] = array();
+// the log viewer: read (logs), rotate, empty and remove archives (managelogs), see unmasked (unmasklogs)
+$FunctionList['logs'] = array();
+$FunctionList['managelogs'] = array();
+$FunctionList['unmasklogs'] = array();
 $FunctionList['managecache'] = array();
 $FunctionList['managecronjobs'] = array();
 $FunctionList['preload'] = array();
