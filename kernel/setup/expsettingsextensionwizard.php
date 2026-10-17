@@ -815,9 +815,10 @@ class expSettingsExtensionWizard extends expExtensionWizard
             if ( $ini->hasVariable( 'IconSettings', $variable ) )
                 $themes[] = (string) $ini->variable( 'IconSettings', $variable );
 
-        if ( $ini->hasVariable( 'IconSettings', 'AdditionalThemeList' ) )
-            foreach ( (array) $ini->variable( 'IconSettings', 'AdditionalThemeList' ) as $theme )
-                $themes[] = (string) $theme;
+        foreach ( array( 'AdditionalThemeList', 'DesignTheme' ) as $variable )
+            if ( $ini->hasVariable( 'IconSettings', $variable ) )
+                foreach ( (array) $ini->variable( 'IconSettings', $variable ) as $theme )
+                    $themes[] = (string) $theme;
 
         return in_array( $settings['theme'], $themes, true ) ? array( $settings['theme'] ) : array();
     }

@@ -25,18 +25,10 @@ present: every template a view of the kernel fetches or an admin4 template inclu
 
 3. Reload the admin. The header shows a mode switch (light, dark, system) after the search box.
 
-4. Optional, for the class, file type and class group icons in Bootstrap Icons as well: in the admin siteaccess's
-   `icon.ini.append.php`, set
-
-   ```ini
-   [IconSettings]
-   Theme=bootstrap-icons
-   AdditionalThemeList[]
-   AdditionalThemeList[]=crystal-admin
-   ```
-
-   and clear the caches again. Without it these icons stay the crystal PNGs; everything else in admin4 draws
-   Bootstrap Icons either way (see [Icons](#icons)).
+4. Nothing to do for the class, file type and class group icons: `settings/icon.ini` gives admin4 and admin4l the
+   `bootstrap-icons` theme (`[IconSettings] DesignTheme[admin4]`, `DesignTheme[admin4l]`), whatever `Theme` the
+   siteaccess sets; that theme is searched right after it. To keep the crystal PNGs, set `DesignTheme[admin4]=` (empty)
+   in the siteaccess's `icon.ini.append.php` (see [Icons](#icons)).
 
 The siteaccess's design list still names `admin3`, `admin2` and `admin`, for the extensions' folders of those names
 (the three templates that `bccie` and `enhancedezbinaryfile` override in their own admin2 folder stay with the
@@ -247,11 +239,12 @@ are in `share/icons/bootstrap-icons/svg/`, unchanged, with the license beside th
   Bootstrap icons as masks on a pseudo-element, in place of the GIF and PNG sprites. The tree's open and close are
   a caret right and a caret down on the column's own background, so the connector line does not cross them.
 - **Class, file type, class group and other icons** (`class_icon`, `mimetype_icon`, `classgroup_icon`, `icon`,
-  `icon_info` of the content tree): the icon theme `bootstrap-icons`, chosen in the admin siteaccess's `icon.ini`
-  (step 4 above). Its `icon.ini` maps every class and MIME type of `crystal-admin`, the classes of the website
+  `icon_info` of the content tree): the icon theme `bootstrap-icons`, which follows the design
+  (`icon.ini [IconSettings] DesignTheme[admin4]`, step 4 above): a user who switches to admin3 gets the siteaccess's
+  `Theme` again. Its `icon.ini` maps every class and MIME type of `crystal-admin`, the classes of the website
   interface and demo packages and the OOXML, EPUB, RTF, CSV, XML, JSON and SVG types; one SVG serves every size. For
-  a class it does not map, `class_icon` and the other operators take the `crystal-admin` PNG of
-  `AdditionalThemeList[]`, but the content tree (`icon_info`) reads only the first theme and shows the theme's
+  a class it does not map, `class_icon` and the other operators take the PNG of the siteaccess's `Theme`
+  (`crystal-admin` in an admin siteaccess), but the content tree (`icon_info`) reads only the first theme and shows the theme's
   `Default`: add a class of your own to `ClassMap` in an `icon.ini.append.php`. In dark mode a filter in `admin4.css` turns these
   `<img>` icons light, since an SVG in an `<img>` cannot take the page's colours.
 - The classic designs (`admin`, `admin3`) keep their images; `.a4-icon` and `.a4-icon-btn` are in their

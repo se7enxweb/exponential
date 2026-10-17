@@ -4,7 +4,8 @@
  *
  * - one row of 56px from 1280px (logo, main menu, search, site, light/dark, user menu, logout), two rows of 48 + 40px from
  *   576px, one row of 56px on a phone; --header-height defaults to these heights on the root and admin4.js sets the
- *   measured one there, so everything that keeps clear of the header reads the same value;
+ *   measured one there, so everything that keeps clear of the header reads the same value; from 576px the logo's box
+ *   is as high as the tools, so a paint of the half-parsed header does not draw the menu row higher;
  * - the main menu stays on one line: the tabs that do not fit go into a "More" disclosure (aria-expanded,
  *   aria-controls), hidden until the script needs it; without the script the row scrolls;
  * - logout is an icon button of its own beside the user menu, named "Logout (<login>)", one click away; the user
@@ -69,6 +70,10 @@ class AdminHeaderTest extends PHPUnit\Framework\TestCase
         $this->assertSame( '88px', $tablet[':root']['--header-height'] );
         $this->assertSame( '0 0 100%', $tablet['.navbar-menu']['flex'], 'the menu is the second row' );
         $this->assertSame( '5', $tablet['.navbar-menu']['order'] );
+        // the first row as high with the logo alone as with the tools (36px, the search button's height): a paint of the
+        // half-parsed header, before the tools that follow the menu, drew the menu 4px higher and it moved down (a layout shift)
+        $this->assertSame( '36px', $tablet['.header-logo']['min-height'] );
+        $this->assertMatchesRegularExpression( '/#header \.searchblock \.searchbuttonfield\s*\{[^}]*height:\s*36px;/', $css );
         $wide = AdminBaseStylesheetsTest::rules( self::media( $css, 'screen and (min-width: 1280px)' ) );
         $this->assertSame( '56px', $wide[':root']['--header-height'] );
         $this->assertSame( 'nowrap', $wide['.navbar-main']['flex-wrap'] );

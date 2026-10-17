@@ -468,8 +468,9 @@ class expRADHealth
             if ( $ini->hasVariable( 'IconSettings', $variable ) )
                 $themes[] = (string) $ini->variable( 'IconSettings', $variable );
 
-        foreach ( self::listOf( $ini, 'IconSettings', 'AdditionalThemeList' ) as $theme )
-            $themes[] = $theme;
+        foreach ( array( 'AdditionalThemeList', 'DesignTheme' ) as $variable )
+            foreach ( self::listOf( $ini, 'IconSettings', $variable ) as $theme )
+                $themes[] = $theme;
 
         $roots = array( rtrim( (string) $ini->variable( 'IconSettings', 'Repository' ), '/' ) );
 

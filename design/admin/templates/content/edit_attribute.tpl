@@ -1,6 +1,7 @@
 {default $view_parameters            = array()
          $attribute_categorys        = ezini( 'ClassAttributeSettings', 'CategoryList', 'content.ini' )
          $attribute_default_category = ezini( 'ClassAttributeSettings', 'DefaultCategory', 'content.ini' )}
+{def $exp_attribute_templates = cond( ezini_hasvariable( 'EditSettings', 'AttributeTemplates', 'content.ini' ), ezini( 'EditSettings', 'AttributeTemplates', 'content.ini' ), array() )}
 
 {foreach $content_attributes_grouped_data_map as $attribute_group => $content_attributes_grouped}
 {if $attribute_group|ne( $attribute_default_category )}
@@ -13,12 +14,18 @@
      $exp_own_fieldset = and( or( ne( $attribute.can_translate, 0 ), eq( $object.initial_language_code, $attribute.language_code ) ), $is_translating_content|not, $attribute.display_info.edit.grouped_input )}
 {* A named group; a grouped input names itself with its fieldset and legend *}
 <div class="block ezcca-edit-datatype-{$attribute.data_type_string} ezcca-edit-{$attribute_identifier}"{if $exp_own_fieldset|not} role="group" aria-labelledby="ezcca-name-{$attribute.id}"{/if}>
+{* The templates of content.ini [EditSettings] AttributeTemplates[] (extensions' tools of a field, drawn with the page so
+   nothing moves when scripts start): after the label, or first in the block when the field has its own fieldset or
+   is being translated *}
+{set-block variable=exp_attribute_hook}{foreach $exp_attribute_templates as $exp_attribute_template}{include uri=concat( 'design:', $exp_attribute_template )}{/foreach}{/set-block}
+{if and( and( eq( $attribute.can_translate, 0 ), ne( $object.initial_language_code, $attribute.language_code ) )|not, or( $is_translating_content, $attribute.display_info.edit.grouped_input ) )}{$exp_attribute_hook}{/if}
 {* Show view GUI if we can't edit, otherwise: show edit GUI. *}
 {if and( eq( $attribute.can_translate, 0 ), ne( $object.initial_language_code, $attribute.language_code ) )}
     <label><span id="ezcca-name-{$attribute.id}">{first_set( $contentclass_attribute.nameList[$content_language], $contentclass_attribute.name )|wash}</span>
         {if $attribute.can_translate|not} <span class="nontranslatable">({'not translatable'|i18n( 'design/admin/content/edit_attribute' )})</span>{/if}:
         {if $contentclass_attribute.description} <span class="classattribute-description">{first_set( $contentclass_attribute.descriptionList[$content_language], $contentclass_attribute.description)|wash}</span>{/if}
     </label>
+    {$exp_attribute_hook}
     {if $is_translating_content}
         <div class="original">
         {attribute_view_gui attribute_base=$attribute_base attribute=$attribute view_parameters=$view_parameters}
@@ -69,6 +76,7 @@
                 {if $attribute.is_information_collector} <span class="collector">({'information collector'|i18n( 'design/admin/content/edit_attribute' )})</span>{/if}:
                 {if $contentclass_attribute.description} <span class="classattribute-description">{first_set( $contentclass_attribute.descriptionList[$content_language], $contentclass_attribute.description)|wash}</span>{/if}
             </label>
+            {$exp_attribute_hook}
             {set-block variable=exp_text_attrs}{include uri='design:parts/exp_content_direction.tpl' exp_locale_code=$attribute.language_code}{/set-block}{if $exp_text_attrs|ne( '' )}<div class="exp-content-text"{$exp_text_attrs}>{/if}
             {attribute_edit_gui attribute_base=$attribute_base attribute=$attribute view_parameters=$view_parameters}
             {if $exp_text_attrs|ne( '' )}</div>{/if}{undef $exp_text_attrs}
@@ -77,7 +85,7 @@
     {/if}
 {/if}
 </div>
-{undef $contentclass_attribute $exp_own_fieldset}
+{undef $contentclass_attribute $exp_own_fieldset $exp_attribute_hook}
 {/foreach}
 {if $attribute_group|ne( $attribute_default_category )}
     </div>
@@ -119,4 +127,5 @@ jQuery(function( $ )
 </script>
 {* /if *}
 {/run-once}
+{undef $exp_attribute_templates}
 {/default}

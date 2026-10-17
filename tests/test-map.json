@@ -1356,6 +1356,30 @@
     "kernel/private/classes/views/setup/templateoperator.php": [
       "tests/tests/design/AdminSetupWizardTemplatesTest.php"
     ],
+    "kernel/common/ezwordtoimageoperator.php": [
+      "tests/tests/kernel/common/eZWordToImageOperatorDesignThemeTest.php"
+    ],
+    "settings/icon.ini": [
+      "tests/tests/kernel/common/eZWordToImageOperatorDesignThemeTest.php"
+    ],
+    "kernel/classes/ezsiteaccess.php": [
+      "tests/tests/kernel/classes/eZSiteAccessGetIniAndFindPathTest.php"
+    ],
+    "kernel/classes/datatypes/ezxmltext/ezxmlinputhandler.php": [
+      "tests/tests/kernel/datatypes/ezxmltext/eZXMLInputSupplementaryCharactersTest.php",
+      "tests/tests/extension/ezoe/expOEFormulaTextTest.php"
+    ],
+    "kernel/classes/datatypes/ezxmltext/ezxmlinputparser.php": [
+      "tests/tests/kernel/datatypes/ezxmltext/eZXMLInputSupplementaryCharactersTest.php",
+      "tests/tests/extension/ezoe/expOEFormulaTextTest.php"
+    ],
+    "settings/content.ini": [
+      "tests/tests/extension/ezoe/expOEFormulaTextTest.php"
+    ],
+    "settings/ezxml.ini": [
+      "tests/tests/kernel/datatypes/ezxmltext/eZXMLInputSupplementaryCharactersTest.php",
+      "tests/tests/extension/ezoe/expOEFormulaTextTest.php"
+    ],
     "design/admin4/javascript/page/content_edit_attribute.js": [
       "tests/tests/design/AdminContentEditAttributeKindsTest.php"
     ],
@@ -1632,7 +1656,8 @@
       "tests/tests/extension/ezoe/expOEEngineViewTest.php"
     ],
     "extension/ezoe/ezxmltext/handlers/input/ezoexmlinput.php": [
-      "tests/tests/extension/ezoe/expOEInputTableCellTextTest.php"
+      "tests/tests/extension/ezoe/expOEInputTableCellTextTest.php",
+      "tests/tests/extension/ezoe/expOEFormulaTextTest.php"
     ],
     "extension/ezoe/modules/ezoe/engine.php": [
       "tests/tests/extension/ezoe/expOEEngineViewTest.php"
