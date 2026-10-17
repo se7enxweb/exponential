@@ -18,11 +18,13 @@ jQuery(function( $ )
         var box = $( this.parentNode.parentNode ), text = box.find('input.ezobject-relation-search-text');
         if ( text.val() )
         {
-            var params = { 'CallbackID': box.attr('id'), 'EncodingFetchSection': 1 };
+            // the text is a POST parameter, not part of the call: in the call it lost its tags (strip_tags) and was
+            // cut at '::', the separator of the call's arguments
+            var params = { 'SearchStr': text.val(), 'CallbackID': box.attr('id'), 'EncodingFetchSection': 1 };
             var node = box.find("*[name*='_for_object_start_node']"), classes = box.find("input[name*='_for_object_class_constraint_list']");
             if ( node.length ) params['SearchSubTreeArray'] = node.val();
             if ( classes.length ) params['SearchContentClassIdentifier'] = classes.val();
-            $.ez( 'ezjsc::search::' + text.val(), params, _searchCallBack );
+            $.ez( 'ezjsc::search', params, _searchCallBack );
         }
         return false;
     }
