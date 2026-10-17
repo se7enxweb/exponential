@@ -98,7 +98,9 @@ For an application that lets *other* users sign in and act for them.
    identifier, a secret and the redirect address of the application.
 2. The application sends the user to the authorize page of the site:
    `https://example.com/oauth/authorize?client_id=<client id>&redirect_uri=<redirect uri>&response_type=code`.
-   The user signs in and allows the application; the site redirects back with `code=<code>`.
+   The user signs in and allows the application; the site redirects back with `code=<code>`. The user needs the
+   policy *OAuth / Authorize* (`oauth/authorize`); without it the site redirects back with `error=access_denied`
+   ([upgrade note](../bc/6.0/oauth-authorize-policy.md)).
 3. The application exchanges the code for a token at the token endpoint,
    `POST /api/auth/v1/oauth/token`, with `grant_type=authorization_code`, `client_id`, `client_secret`, `code` and
    `redirect_uri`.

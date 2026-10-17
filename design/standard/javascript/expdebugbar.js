@@ -77,12 +77,21 @@
     const details = document.getElementById('debug-details');
     if (loaders[id] && !loaded[id] && details && details.classList.contains('active')) { loaded[id] = true; loaders[id](); }
   };
+  // The toolbar theme lists the tabs one below the other from 761px on (expdebugbar-toolbar.css): there the up and
+  // down arrows move. Asked again on every key and on every change of the width, so a resized window agrees.
+  const sideways = root.getAttribute('data-exp-debug-theme') === 'toolbar' && window.matchMedia ? window.matchMedia('(min-width: 761px)') : null;
+  const vertical = () => !!(sideways && sideways.matches);
+  const tabList = root.querySelector('.exp-debug-tabs');
+  const orient = () => { if (tabList) { if (vertical()) tabList.setAttribute('aria-orientation', 'vertical'); else tabList.removeAttribute('aria-orientation'); } };
+  orient();
+  if (sideways && sideways.addEventListener) sideways.addEventListener('change', orient);
   tabs.forEach((tab, i) => {
     tab.addEventListener('click', () => select(tab.getAttribute('data-tab')));
     tab.addEventListener('keydown', (e) => {
       let j = null;
-      if (e.key === 'ArrowRight') j = (i + 1) % tabs.length;
-      else if (e.key === 'ArrowLeft') j = (i - 1 + tabs.length) % tabs.length;
+      const nextKey = vertical() ? 'ArrowDown' : 'ArrowRight', previousKey = vertical() ? 'ArrowUp' : 'ArrowLeft';
+      if (e.key === nextKey) j = (i + 1) % tabs.length;
+      else if (e.key === previousKey) j = (i - 1 + tabs.length) % tabs.length;
       else if (e.key === 'Home') j = 0;
       else if (e.key === 'End') j = tabs.length - 1;
       if (j !== null) { e.preventDefault(); select(tabs[j].getAttribute('data-tab'), true); }
@@ -241,7 +250,7 @@
       tab.title = q && rows.length ? t('%count rows match', { '%count': shown }) : '';
       let note = panel.querySelector(':scope > .exp-debug-empty');
       if (q && rows.length && !shown) {
-        if (!note) { note = el('p', { class: 'exp-debug-empty', role: 'status' }, t('No rows match the filter.')); panel.insertBefore(note, panel.children[1] || null); }
+        if (!note) { note = el('p', { class: 'exp-debug-empty', role: 'status' }, t('No rows match the filter.')); const metrics = panel.querySelector(':scope > .exp-debug-metrics'); panel.insertBefore(note, metrics ? metrics.nextSibling : (panel.children[1] || null)); }
       } else if (note) note.remove();
     });
   };
@@ -936,16 +945,25 @@
       });
       return svg;
     };
-    const count = (key) => { const c = bar.querySelector('.exp-debug-chip[data-key="' + key + '"]'); return c ? parseInt(c.textContent, 10) || 0 : 0; };
+    // the toolbar theme keeps the chip's text in .exp-debug-chip-text, next to its popup
+    const count = (key) => { const c = bar.querySelector('.exp-debug-chip[data-key="' + key + '"]'); return c ? parseInt((c.querySelector('.exp-debug-chip-text') || c).textContent, 10) || 0 : 0; };
     const errors = count('errors'), warnings = count('warnings');
     const level = errors > 0 ? 'high' : (warnings > 0 ? 'warn' : '');
     const badgeLabel = errors > 0 ? t('%count errors', { '%count': errors }) : (warnings > 0 ? t('%count warnings', { '%count': warnings }) : '');
-    const minButton = el('button', { type: 'button', class: 'exp-debug-logo', 'aria-label': t('Minimise debug bar'), title: t('Minimise debug bar') }, symbol());
-    const restore = el('button', { type: 'button', class: 'exp-debug-restore', hidden: true,
-      'aria-label': t('Show debug bar') + (badgeLabel ? ' (' + badgeLabel + ')' : ''), title: t('Show debug bar') + (badgeLabel ? ' (' + badgeLabel + ')' : '') },
-      symbol(), level ? el('span', { class: 'exp-debug-restore-badge', 'data-level': level, 'aria-hidden': 'true' }, String(errors > 0 ? errors : warnings)) : null);
-    bar.insertBefore(minButton, bar.firstChild);
-    root.appendChild(restore);
+    // the report draws both in its markup since #571 (expDebugBarReport::barHtml(), so the bar's first paint is
+    // final); they are made here only for a report from before that
+    let minButton = bar.querySelector(':scope > button.exp-debug-logo');
+    if (!minButton) {
+      minButton = el('button', { type: 'button', class: 'exp-debug-logo', 'aria-label': t('Minimise debug bar'), title: t('Minimise debug bar') }, symbol());
+      bar.insertBefore(minButton, bar.firstChild);
+    }
+    let restore = root.querySelector(':scope > button.exp-debug-restore');
+    if (!restore) {
+      restore = el('button', { type: 'button', class: 'exp-debug-restore', hidden: true,
+        'aria-label': t('Show debug bar') + (badgeLabel ? ' (' + badgeLabel + ')' : ''), title: t('Show debug bar') + (badgeLabel ? ' (' + badgeLabel + ')' : '') },
+        symbol(), level ? el('span', { class: 'exp-debug-restore-badge', 'data-level': level, 'aria-hidden': 'true' }, String(errors > 0 ? errors : warnings)) : null);
+      root.appendChild(restore);
+    }
     const setMin = (min, focus) => {
       root.classList.toggle('exp-debug-min', min);
       restore.hidden = !min;

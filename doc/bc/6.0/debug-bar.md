@@ -300,8 +300,10 @@ test (and puts them back if they differ). Its log is a file of its own under `va
 | Part | Where |
 |---|---|
 | Report markup, summary, data block | `expDebugBarReport` (`lib/ezutils/classes/expdebugbarreport.php`), called by `eZDebug::printReportInternal()` for HTML reports |
+| Open and close, "Keep open on reload", saved panel height, minimised bar (runs at once, before the first paint) | `design/standard/javascript/expdebugbar-head.js` |
 | Tabs, filter, settings, IP list, presets, cache, change log | `design/standard/javascript/expdebugbar.js` |
 | Styles (light and dark) | `design/standard/stylesheets/expdebugbar.css` |
+| Toolbar theme (`Theme=toolbar`) | `design/standard/stylesheets/expdebugbar-toolbar.css`, linked after it |
 | Words | context `design/standard/debugbar` in `share/translations/*/translation.ts` (eng-US, ger-DE) |
 
 The report links the script and the stylesheet itself, so every design gets the bar: admin, admin2, admin3, admin4
@@ -313,7 +315,12 @@ Text reports (`Debug=inline` on the command line) and the popup window are uncha
 ### No inline CSS
 
 Neither report prints a `<style>` element or a `style=""` attribute (AGENTS.md "Admin design and template styling
-rules"); the open and close of the pinned bar stay an inline script.
+rules"), and no inline script: the part that must run before the first paint is `expdebugbar-head.js`, linked
+without `defer`, so a Content-Security-Policy with `script-src 'self'` holds. The bar's markup is complete at the first
+paint (the minimise symbol, the link, the chips, "Keep open on reload" and the hidden tab that restores the bar are
+all printed by `expDebugBarReport::barHtml()`), the bar keeps at least the height of one line, and its sides are
+logical (`margin-inline-*`, `inset-inline-*`), so it does not grow or move after load and its link stays at the end
+of the line in a right-to-left interface (#571).
 
 - **The bar**: every rule, the pinned bar and the panel above it included, is in `expdebugbar.css` and takes its
   colours from the bar's `--xd-*` tokens, each with a value for `prefers-color-scheme: dark` and for admin4's
@@ -342,6 +349,33 @@ above it, which scrolls on its own. No page ever has to be scrolled to use it. "
 open panel in the browser (`localStorage` keys `exp-debug-keep`, `exp-debug-open`), and the last tab
 (`exp-debug-tab`). Escape closes the panel.
 
+### Themes
+
+`debugbar.ini [DebugBarSettings] Theme` sets how the pinned bar looks; the panel above it is the same in both. It is
+also a setting of the bar (Settings tab, Debug output, "Bar theme").
+
+| Value | The bar |
+|---|---|
+| `default` | The summary as light chips (dark in a dark colour scheme), the details of a chip in its tooltip (`title`). Also any value that is not `toolbar`. |
+| `toolbar` | A dark, compact toolbar in both colour schemes, in the manner of the Symfony web debug toolbar: each block with an icon, the first block the request (HTTP status and module/view, green, amber from status 400, red from 500; it opens the Server tab), amber and red blocks filled with their colour, and the details of a block in a popup above it while the pointer or the keyboard focus is on it. "Keep open on reload" shows its box alone, the words as its tooltip. "Exp Debug", the switch of the panel, is a lighter block of its own at the right end, filled orange while the panel is open; its arrow points up, and down while it is open. |
+
+In the toolbar theme a chip carries its text in `.exp-debug-chip-text` and its popup in `.exp-debug-chip-info`
+(`aria-hidden`, the chip's `aria-label` says the same) and has no `title`. The popup lists the rows a chip gives
+(`'rows'`, label => value: page and query time, queries and their share of the page time, peak memory and the
+memory limit, templates, the counts of errors, warnings, notices and deprecations, the request's status, module,
+view, siteaccess and node), or the chip's title alone. A chip of an extension's panel gets a generic icon; the
+icons are Bootstrap Icons (`share/icons/bootstrap-icons`, MIT) inlined in the stylesheet as masks, so no further file
+is loaded. The status is `http_response_code()` when the report is rendered; where PHP does not know it (the command
+line, a persistent worker) the block shows module/view only.
+
+The panel in the toolbar theme follows the Symfony profiler, from a window width of 761 px on: the tabs are a dark menu
+down the left side (an icon each, the count at the right, the open tab marked, the filter box above them; the up and
+down arrows move between them), the open tab has a large title, and the tabs whose chip has rows (Messages, Timing,
+SQL, Templates, Memory, Server) start with those figures as metrics in large type (`expDebugBarReport::metricsHtml()`,
+a `<dl class="exp-debug-metrics">`). Tables have open rows with a line between them; a message has a bar in the colour
+of its level. The panel's colours stay those of `expdebugbar.css`, light and dark. Narrower windows keep the row of
+tabs above the panel.
+
 ### The panel's height
 
 The open panel is full width, so only its height changes. The strip on its top edge (the edge facing the page, the
@@ -365,14 +399,14 @@ The height is saved once at the end of a drag, or 0.6 s after the last key press
 - **Logged in**: in the user preference `expdebugbar_panel_height` (eZPreferences, through
   `expdebugbar::panelheight`), so it follows the user to any browser. `0` means the default height. The report reads
   it back (`expDebugBarReport::savedPanelHeight()`) and prints it on the panel as `data-exp-debug-panel-height`; the
-  report's inline script sets `--exp-debug-panel-h` from it before the panel opens, so it opens at that height
+  report's first script (`expdebugbar-head.js`) sets `--exp-debug-panel-h` from it before the panel opens, so it opens at that height
   without a jump.
 - **Anonymous** (the bar shown by IP): no preference is read or saved and no request is sent, since eZPreferences
   keep an anonymous user's values in the session and the debug bar must never start a session
   (`savedPanelHeight()` returns 0 without asking, and `expdebugbar::panelheight` refuses an anonymous visitor
   before the token check). The height is kept in the browser instead: `localStorage` key `exp-debug-panel-height`,
   every access in `try`/`catch` (blocked storage means the default height), read back and held between 120 and
-  4000 px by the report's inline script before the panel opens; anything but a whole number of pixels is ignored.
+  4000 px by `expdebugbar-head.js` before the panel opens; anything but a whole number of pixels is ignored.
   It stays in that browser only; another browser or a private window starts at the default.
   On a siteaccess that requires a sign-in (the admin), `ezjscore/call` needs a signed-in user since 6.0.15, so on
   an anonymous admin page (the sign-in page) the panels that ask the server (cache, log, summary) show "Could not
