@@ -1569,3 +1569,21 @@ html .exp-dt, html .exp-dt-actions, html .exp-dt-pager, html .exp-dt-dialog {
   #maincontent :is(td, th) > a[href] { display: inline-flex; align-items: center; min-height: var(--a4-control-h); }
   ul.tabs li a, ul.tabs li span.disabled { display: flex; align-items: center; min-height: var(--a4-control-h); box-sizing: border-box; }
 }
+
+
+/* ---- node view ---- the sub-items table's place while it loads (children_detailed.tpl .a4-subitems-reserve), in
+   this file because it is the classic design's alone (admin4 sizes its own in admin4.css; modules/content.css is
+   the same file in both designs): the script draws the table after the page, first a loading line and then its rows, and the pager and
+   everything under it moved down by the whole table on every node view. The reserve holds the header (the table's
+   head and the space above it, about 67px), a line per row of the first page (a row is about 28px) and the pager,
+   while the list is empty (before the script) or loading (aria-busy: the head and the loading line are there, so
+   those two give way). It is hidden: its own move when it gives way is no layout shift. --------------------------- */
+
+.a4-subitems-reserve { display: none; visibility: hidden; }
+html.exp-js #content-sub-items-list:empty + .a4-subitems-reserve,
+#content-sub-items-list:has(table[aria-busy]) + .a4-subitems-reserve { display: block; }
+.a4-subitems-reserve > span { display: block; height: calc(var(--a4-space-5) + var(--a4-space-1)); }
+.a4-subitems-reserve > .a4-subitems-reserve-head { height: calc(var(--a4-space-7) + var(--a4-space-4) + var(--a4-space-1)); }
+.a4-subitems-reserve > .a4-subitems-reserve-pager { height: calc(var(--a4-space-6) + var(--a4-space-1)); }
+#content-sub-items-list:has(table[aria-busy]) + .a4-subitems-reserve > .a4-subitems-reserve-head,
+#content-sub-items-list:has(table[aria-busy]) + .a4-subitems-reserve > .a4-subitems-reserve-head + span { display: none; }

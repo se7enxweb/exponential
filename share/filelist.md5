@@ -331,13 +331,13 @@ f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin/override/templates/windows_user.t
 ce90ff045aa9ad5f6b74ebb4adb49d1f  design/admin/stylesheets/content.css
 58851bdc6d2ec7bd80b0e822175ac466  design/admin/stylesheets/core.css
 62734b59f14ab1cb473727176f810806  design/admin/stylesheets/ezinfo.css
-fbefe2f1c52896b838a121c6a9f228f1  design/admin/stylesheets/modules/content.css
+8cc64413ebee3f4375a31c94d48286b9  design/admin/stylesheets/modules/content.css
 aa82582790ae9045ab54f1183a83a860  design/admin/stylesheets/modules/people.css
 dfb29f95a62780e5c09df46a0e996f6f  design/admin/stylesheets/modules/setup.css
 40e6fed92366bdd7fce5f4320b9f8d73  design/admin/stylesheets/modules/structure.css
 3b1873b1ae4d1c3ffaa636931d9662ed  design/admin/stylesheets/modules/workflow.css
 6c50ca081feaacea35d0ba88f81f92a0  design/admin/stylesheets/packagecompare.css
-f61591a9765d9f42dc6bfc7232e7c99f  design/admin/stylesheets/pagelayout.css
+8571202bbbf6bc6c39c6e1e17940cff9  design/admin/stylesheets/pagelayout.css
 2d02f74460d590ebf57e8230963c891e  design/admin/stylesheets/theme/admin_datatable.css
 80e40d820b12263064128a75be2de07b  design/admin/stylesheets/theme/modalwindow.css
 017f424deeeb46501db6bcf63990e746  design/admin/stylesheets/theme/rounded.css
@@ -359,7 +359,7 @@ d8edfe4bd7af7efd97f8819de5d247b8  design/admin/templates/audit/recent.tpl
 285f50ecd0189915430a72868d737398  design/admin/templates/audit/settings.tpl
 6ad3a8724d541edaf79af7df5927ab5a  design/admin/templates/audit/sources.tpl
 f7be1f801db4c00267f7b1e9bad939c8  design/admin/templates/children.tpl
-7dce6056b6392c532cb0e1c3fc1f8336  design/admin/templates/children_detailed.tpl
+46ec2e9cdb4f1348387240388bba7ec5  design/admin/templates/children_detailed.tpl
 e43630d07c69d19c6b4301797c3a915e  design/admin/templates/class/classlist.tpl
 51fd6b1a1612e389ee44ce3d6cbe83d1  design/admin/templates/class/copy_confirm.tpl
 2f32def3d98933143182da37d73213f4  design/admin/templates/class/datatype/browse_objectrelation_placement.tpl
