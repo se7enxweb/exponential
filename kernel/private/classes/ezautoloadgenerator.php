@@ -265,16 +265,31 @@ class eZAutoloadGenerator
             $filename = $this->nameTable( $location );
             $filePath = $targetBasedir . DIRECTORY_SEPARATOR . $filename;
 
-             $file = fopen( $filePath, "w+" );
+             // Written beside the target and renamed over it: every PHP process that includes the array while it
+             // is regenerated (a web request during a deploy, another test process of the same tree) reads the
+             // old file or the new one whole, never a truncated one.
+             $tempPath = $filePath . '.' . getmypid() . '.' . bin2hex( random_bytes( 4 ) ) . '.tmp';
+             $file = fopen( $tempPath, "w" );
              if ( $file )
              {
-                 fwrite( $file, $this->dumpArrayStart( $location ) );
-                 fwrite( $file, $data );
-                 fwrite( $file, $this->dumpArrayEnd() );
+                 $written = fwrite( $file, $this->dumpArrayStart( $location ) . $data . $this->dumpArrayEnd() );
                  fclose( $file );
                  // Within EZP_FILE_MODE_MAX
-                 chmod( $filePath, eZFile::fileMode( $this->autoloadFileMode( $location ) ) );
-
+                 chmod( $tempPath, eZFile::fileMode( $this->autoloadFileMode( $location ) ) );
+                 // The renamed file keeps the owner and group the old one had, as the file rewritten in place
+                 // did (a run as root must not leave the site user with an array it cannot rewrite)
+                 if ( is_file( $filePath ) && ( $stat = @stat( $filePath ) ) )
+                 {
+                     @chown( $tempPath, $stat['uid'] );
+                     @chgrp( $tempPath, $stat['gid'] );
+                 }
+                 if ( $written === false || !rename( $tempPath, $filePath ) )
+                 {
+                     @unlink( $tempPath );
+                     throw new Exception( __METHOD__ . ": The file {$filePath} could not be written." );
+                 }
+                 if ( function_exists( 'opcache_invalidate' ) )
+                     @opcache_invalidate( $filePath, true );
              }
              else
              {
