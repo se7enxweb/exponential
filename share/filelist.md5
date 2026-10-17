@@ -7589,7 +7589,7 @@ d0b5aa00017cc4b2f855ec57b36bf966  tests/test-map.json
 759fe4ff4c2d9fc1985f080528d04c2f  tests/tests/design/AdminCardsTest.php
 f8fc661b72f217d00398c1a6862843d3  tests/tests/design/AdminContentEditFormsTest.php
 cb34401be4cee0b728449535cc448c34  tests/tests/design/AdminContentJobScriptsTest.php
-03e9f1e487ca9845da1336404d73a236  tests/tests/design/AdminContentSecurityPolicyTest.php
+8b4a9581fc2949dd1f68b8473cfc42bb  tests/tests/design/AdminContentSecurityPolicyTest.php
 98b9cecd8a6f9763c8420e981193033a  tests/tests/design/AdminContextMenuNestedSubmenuTest.php
 47cf06780130e2ef6fda1dd6c94dedaf  tests/tests/design/AdminContextMenuTest.php
 802317852f92d7cf87bc4e88cf7d4578  tests/tests/design/AdminCopyQueuedLockedTemplatesTest.php
@@ -7641,7 +7641,7 @@ ad2e8a9f0e0f64e4beff55bac4ff1265  tests/tests/design/AdminSiteAccessMenuTest.php
 dd48e1fb361c6ad99fb9a8330f66042a  tests/tests/design/AdminStylingRulesTest.php
 b2a98204e4bdaea7429f5e3718ae2aac  tests/tests/design/AdminSubitemsPriorityDragTest.php
 f7ac963fcf5507d76f586eaa634c782c  tests/tests/design/AdminSubitemsTranslationsTest.php
-fd7ecaf33d1d1892f298520d905288eb  tests/tests/design/AdminSubitemsWithoutExpUITest.php
+98822314b398745a8bb3acc97aa82e5b  tests/tests/design/AdminSubitemsWithoutExpUITest.php
 7e25daf854e27ae8480a265adbfe41f4  tests/tests/design/AdminTemplateFramesTest.php
 598356dd8c4c4db4c1610c27c343efcb  tests/tests/design/AdminThemeSwitchTest.php
 c5f4f7603464b68c2e9080e297705d34  tests/tests/design/AdminTimelineTest.php
