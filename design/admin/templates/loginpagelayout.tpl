@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{$site.http_equiv.Content-language|wash}"{if eq( first_set( $site.text_direction, 'ltr' ), 'rtl' )} dir="rtl"{/if}>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 {def $admin_theme = ezpreference( 'admin_theme' )}
 
 {cache-block keys=array( $navigation_part.identifier, $ui_context, $ui_component, $admin_theme, $access_type )}{* Pr tab cache *}

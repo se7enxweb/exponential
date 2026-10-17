@@ -423,11 +423,11 @@ div#columns.hide-rightmenu div#maincolumn { margin-inline-end: 0; }
 
 }
 
-/* This is not supported by IE6, some DOM cleanup is needed to avoid it */
+/* The tools keep inside the column: a minimum width of 12em ran them 5px past it, and past the window's edge */
 #rightmenu-design > div
 {
     margin-top: 0.5em;
-    min-width: 12em;
+    min-width: 0;
 }
 
 #rightmenu-design ul
@@ -438,7 +438,17 @@ div#columns.hide-rightmenu div#maincolumn { margin-inline-end: 0; }
 #rightmenu-design select
 {
     width:145px;
+    max-width: 100%;
 }
+
+#rightmenu-design :is(input, select, textarea, button) { box-sizing: border-box; max-width: 100%; }
+
+/* The interface choices (uiswitch/choices.tpl and the grouped language list): one button a row, as wide as the
+   column, a long name wrapping inside its button */
+#uiswitch-tool ul.a4-stack { margin-inline-start: 0; }
+#uiswitch-tool :is(form, .a4-stack, li) { min-width: 0; }
+#uiswitch-tool .a4-btn { box-sizing: border-box; width: 100%; min-width: 0; white-space: normal; overflow-wrap: anywhere; }
+#uiswitch-tool select { width: 100%; }
 
 #rightmenu label { font-weight:normal; }
 
@@ -1491,4 +1501,56 @@ html:root {
 /* the header row of expui's tables, as table.list th: white on the grey (5.0:1; its #eee was 4.4:1) */
 html .exp-dt, html .exp-dt-actions, html .exp-dt-pager, html .exp-dt-dialog {
     --exp-dt-head-ink: #fff;
+}
+
+/* ---- Narrow windows and phones -------------------------------------------------------------------------------
+   Below 760px the columns stack: the page's own content first, then the left menu (the content tree or the
+   section's menu), then the right column's tools. The header wraps (logo and logout, the search, the tabs), wide
+   tables scroll sideways inside their own box, fields and pictures keep to the width of the column, and buttons,
+   tabs and menu links are 44px high (one control height, --a4-control-h). Wider windows are unchanged. Three ids
+   outweigh the column widths of the editor's preferences (pagelayout.tpl's style block, two ids). */
+@media (max-width: 760px) {
+  :root { --a4-control-h: 44px; }
+
+  /* the header: logo and logout on the first row, the search on the second, the tabs under them */
+  #header-design { display: flex; flex-wrap: wrap; align-items: center; column-gap: var(--a4-space-3); padding-inline: var(--a4-space-3); }
+  #header-design::after { content: none; }
+  #header-logo { order: 1; }
+  #header-usermenu { order: 2; float: none; margin: 0; margin-inline-start: auto; }
+  #header-usermenu a, #header-usermenu span { display: inline-flex; align-items: center; min-height: var(--a4-control-h); padding-inline: var(--a4-space-2); }
+  #header-search { order: 3; flex: 1 1 100%; float: none; padding: 0 0 var(--a4-space-2); }
+  #header-search .searchblock { float: none; }
+  #header-search .searchblock > form { display: flex; align-items: center; gap: var(--a4-space-1); }
+  #header-search #searchtextwrapper { float: none; flex: 1 1 auto; min-width: 0; }
+  #header-search #searchtext { box-sizing: border-box; width: 100%; height: var(--a4-control-h); }
+  #header-search .searchbuttonfield { float: none; flex: 0 0 auto; height: var(--a4-control-h); width: var(--a4-control-h); box-sizing: border-box; }
+  #header-topmenu { order: 4; flex: 1 1 100%; margin: 0; padding-top: 0; min-width: 0; }
+  #header-topmenu ul { display: flex; flex-wrap: wrap; gap: 0 var(--a4-space-1); }
+  #header-topmenu ul li { float: none; }
+  #header-topmenu ul li a, #header-topmenu ul li span.disabled { display: flex; align-items: center; min-height: var(--a4-control-h); box-sizing: border-box; margin: 0; padding-inline: var(--a4-space-3); }
+
+  /* the columns, one under the other */
+  #page #columns { display: flex; flex-direction: column; }
+  #left-panels-separator, #right-panels-separator, #widthcontrol-handler, #page #columns a.show-hide-control { display: none; }
+  #page #columns #maincolumn { order: 1; display: flex; flex-direction: column; margin: 0; padding-inline: 0; border-inline-end: 0; min-width: 0; }
+  /* !important: leftmenu_widthcontrol.js writes the start margin into the style attribute of a page loaded wide */
+  #page #columns #maincontent { order: 1; margin: 0 !important; min-width: 0; }
+  #page #columns #leftmenu { order: 2; float: none; width: auto; margin: 0; min-height: 0; }
+  #page #columns #leftmenu.collapsed #leftmenu-design { visibility: visible; }
+  #page #columns #rightmenu { order: 2; float: none; width: auto; min-height: 0; overflow: visible; }
+  #leftmenu-design, #rightmenu-design { margin: 0; min-height: 0; }
+  #rightmenu-design :is(select, input[type=text], input[type=search]) { width: 100%; min-height: var(--a4-control-h); }
+  #maincontent-design { margin: 0; padding: var(--a4-space-3); overflow-wrap: break-word; }
+  #leftmenu-design a, #rightmenu-design li a, ul.leftmenu-items li a { display: inline-flex; align-items: center; min-height: var(--a4-control-h); }
+
+  /* the content: tables scroll inside their own box, nothing else is wider than the column */
+  /* a table with links or fields scrolls (they let the keyboard reach the box); one of text only wraps instead */
+  #maincontent table:has(:is(a[href], button, input, select, textarea, [tabindex])) { display: block; max-width: 100%; overflow-x: auto; }
+  #maincontent table:not(:has(:is(a[href], button, input, select, textarea, [tabindex]))) { max-width: 100%; overflow-wrap: anywhere; }
+  #maincontent :is(input:not([type=checkbox]):not([type=radio]):not([type=hidden]), select, textarea) { box-sizing: border-box; max-width: 100%; }
+  #maincontent :is(img, video, iframe, object, embed) { max-width: 100%; height: auto; }
+  #maincontent pre { max-width: 100%; overflow-x: auto; }
+  #page :is(input.button, input.defaultbutton, input.button-disabled, button.button, a.button, .a4-btn, .exp-dt-button) { min-height: var(--a4-control-h); }
+  #maincontent :is(td, th) > a[href] { display: inline-flex; align-items: center; min-height: var(--a4-control-h); }
+  ul.tabs li a, ul.tabs li span.disabled { display: flex; align-items: center; min-height: var(--a4-control-h); box-sizing: border-box; }
 }

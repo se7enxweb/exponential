@@ -18,9 +18,9 @@
     {if $current_siteaccess}
 {*        <p>{'Current siteaccess'|i18n( 'design/admin/visual/toolbar' )}: <strong>{$current_siteaccess}</strong></p> *}
     {/if}
-{*        <label>{'Select siteaccess'|i18n( 'design/admin/visual/toolbar' )}:</label> *}
+        <label for="toolbarlist-siteaccess" class="a4-sr-only">{'Select siteaccess'|i18n( 'design/admin/visual/toolbar' )}</label>
 
-        <select name="CurrentSiteAccess">
+        <select id="toolbarlist-siteaccess" name="CurrentSiteAccess">
             {section var=siteaccess loop=$siteaccess_list}
                 {if eq( $current_siteaccess, $siteaccess )}
                     <option value="{$siteaccess}" selected="selected">{$siteaccess}</option>
