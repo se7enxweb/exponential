@@ -4,6 +4,8 @@
  * location of a check with the shared node picker.
  *
  *   GET  contentcheck/scope/<view>/<node id>   opens the node picker (content/browse) at that node
+ *   GET  contentcheck/scope/<view>/<node id>/<start node id>   opens it at <start node id> ("More" of the sites row);
+ *                                              a cancel still goes back to the check at <node id>
  *   POST from the node picker                  remembers the chosen node and opens contentcheck/<view>/<node id>
  *
  * <view> must be one of contentcheck.ini [ScopeSettings] ViewList[]. The chosen node must be one the user may read;
@@ -39,6 +41,10 @@ class Scope extends \Exponential\Runnable\ModuleView
         {
             $start = \expContentCheck::readableNode( $decision['node_id'] );
             $startID = $start && $decision['node_id'] > 1 ? $decision['node_id'] : \expContentCheckScope::rootNodeID();
+            // "More" of the sites row opens the picker at the content root; a cancel still goes back to the check
+            $other = isset( $Params['StartNodeID'] ) ? \expContentCheck::id( $Params['StartNodeID'], 0 ) : 0;
+            if ( $other > 1 && \expContentCheck::readableNode( $other ) )
+                $startID = $other;
             $back = '/contentcheck/' . $decision['view'] . '/' . (int)$decision['node_id'];
             \eZContentBrowse::browse( array( 'action_name' => \expContentCheckScope::BROWSE_ACTION,
                                              'description_template' => false,

@@ -25,7 +25,8 @@ backups or clean up disks, and for anyone who sees broken images on the site.
 
 1. Sign in to the administration and open **Setup > Broken relations** (or **Advanced > Broken relations in
    subtree** in the context menu of a node in the content tree).
-2. In **Start location**, keep the top node or give the node id of the part of the tree to check.
+2. In **Start location**, keep the top node, press **Whole tree**, **Websites** or **Media**, or one of the sites
+   and sections in the row beneath them, or give the node id of the part of the tree to check.
 3. Under **Targets**, tick **Missing files in var/site/storage** (the name of your storage directory is shown).
    Untick the other targets if you only want the files.
 4. Press **Check**.

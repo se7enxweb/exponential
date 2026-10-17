@@ -8,9 +8,11 @@
  * else the content tree's top node (content.ini [NodeSettings] RootNode). A node given in the form or the address
  * becomes the preference, so the next check opens where the last one was.
  *
- * The presets (contentcheck.ini [ScopeSettings] PresetList[]) name the usual places: the whole tree, the content,
- * Media, Media/Images and Users; any other node is chosen with the shared node picker (content/browse) through the
- * view contentcheck/scope. The views that take a start location are listed in ViewList[].
+ * The presets (contentcheck.ini [ScopeSettings] PresetList[]) are the quick scope buttons: the whole tree, the
+ * websites (the content root) and Media by default. Beneath them a second row lists the sites, sections and top
+ * folders under the content root (SiteRow*), so a check can start in one site's subtree. Any other node, Users among
+ * them, is chosen with the shared node picker (content/browse) through the view contentcheck/scope. The views that
+ * take a start location are listed in ViewList[].
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -26,7 +28,14 @@ class expContentCheckScope
     const BROWSE_ACTION = 'ContentCheckScope';
 
     /** The presets without a setting */
-    const DEFAULT_PRESETS = array( 'tree', 'content', 'media', 'media/images', 'users' );
+    const DEFAULT_PRESETS = array( 'tree', 'content', 'media' );
+
+    /** The second row without a setting: the children of this preset, at most this many before "More" */
+    const DEFAULT_SITE_ROW_PARENT = 'content';
+    const DEFAULT_SITE_ROW_LIMIT = 12;
+
+    /** How many children of the content root are read at most for the second row */
+    const SITE_ROW_SCAN = 200;
 
     /** The views without a setting */
     const DEFAULT_VIEWS = array( 'unreferenced', 'brokenrelations', 'storage' );
@@ -225,21 +234,26 @@ class expContentCheckScope
     }
 
     /**
-     * What the scope selector (design:contentcheck/scope.tpl) shows: the node, its path, the presets the user may
-     * read, and the address of the node picker.
+     * What the scope selector (design:contentcheck/scope.tpl) shows: the node, its path, the quick scope buttons the
+     * user may read (presets), the second row of sites and sections under the content root, and the addresses of the
+     * node picker.
      *
      * @param int $nodeID the start location
      * @param string $view the view the selector belongs to (its links and the picker return there)
-     * @return array hash( node_id, node_name, path, view, presets => list of hash( key, node_id, name, current ), browse_url )
+     * @param array $keep GET fields the scope links keep, e.g. array( 'Show' => 'problems' ) (only plain names and values)
+     * @return array hash( node_id, node_name, path, view, query, presets => list of hash( key, node_id, name, label, path,
+     *               current ), sites => hash( parent_id, parent_label, items => list of hash( node_id, name, current,
+     *               within ), more, more_url ), browse_url )
      */
-    public static function forTemplate( $nodeID, $view )
+    public static function forTemplate( $nodeID, $view, array $keep = array() )
     {
         $nodeID = (int)$nodeID;
         $view = self::view( $view ) ?: '';
         $node = expContentCheck::readableNode( $nodeID );
         $scope = array( 'node_id' => $nodeID, 'node_name' => self::nodeName( $node ), 'path' => self::nodePath( $node ),
-                        'view' => $view, 'presets' => array(),
-                        'browse_url' => $view !== '' ? '/contentcheck/scope/' . $view . '/' . $nodeID : '' );
+                        'view' => $view, 'query' => self::query( $keep ), 'presets' => array(),
+                        'sites' => array( 'parent_id' => 0, 'parent_label' => '', 'items' => array(), 'more' => false, 'more_url' => '' ),
+                        'browse_url' => self::browseURL( $view, $nodeID ) );
         $seen = array();
         foreach ( self::presetSources() as $key => $source )
         {
@@ -250,10 +264,153 @@ class expContentCheckScope
             if ( !$presetNode )
                 continue;
             $seen[$presetID] = true;
-            $scope['presets'][] = array( 'key' => (string)$key, 'node_id' => $presetID, 'name' => self::nodeName( $presetNode ),
+            $name = self::nodeName( $presetNode );
+            $scope['presets'][] = array( 'key' => (string)$key, 'node_id' => $presetID, 'name' => $name,
+                                         'label' => self::presetLabel( $key, $name ),
                                          'path' => self::nodePath( $presetNode ), 'current' => $presetID === $nodeID );
         }
+
+        $settings = self::siteRowSettings();
+        $parentSource = $settings['enabled'] ? self::presetSource( $settings['parent'] ) : null;
+        $parentID = $parentSource !== null ? self::presetNodeID( $parentSource ) : 0;
+        $parent = $parentID > 1 ? expContentCheck::readableNode( $parentID ) : null;
+        if ( $parent instanceof eZContentObjectTreeNode )
+        {
+            $row = self::siteRow( self::childRows( $parent ), $node instanceof eZContentObjectTreeNode ? (string)$node->attribute( 'path_string' ) : '',
+                                  $nodeID, $settings['limit'] );
+            $scope['sites'] = array( 'parent_id' => $parentID,
+                                     'parent_label' => self::presetLabel( $settings['parent'], self::nodeName( $parent ) ),
+                                     'items' => $row['items'], 'more' => $row['more'],
+                                     'more_url' => $row['more'] ? self::browseURL( $view, $nodeID, $parentID ) : '' );
+        }
         return $scope;
+    }
+
+    /**
+     * The label of a quick scope button: a name for the named presets (the whole tree, Websites, Media, Users, Setup,
+     * Design), the node's own name for a node id or a URL alias path.
+     *
+     * @param mixed $key a PresetList[] entry
+     * @param string $nodeName
+     * @return string
+     */
+    public static function presetLabel( $key, $nodeName )
+    {
+        switch ( is_string( $key ) ? $key : '' )
+        {
+            case 'tree': return ezpI18n::tr( 'kernel/contentcheck', 'Whole tree' );
+            case 'content': return ezpI18n::tr( 'kernel/contentcheck', 'Websites' );
+            case 'media': return ezpI18n::tr( 'kernel/contentcheck', 'Media' );
+            case 'users': return ezpI18n::tr( 'kernel/contentcheck', 'Users' );
+            case 'setup': return ezpI18n::tr( 'kernel/contentcheck', 'Setup' );
+            case 'design': return ezpI18n::tr( 'kernel/contentcheck', 'Design' );
+        }
+        return (string)$nodeName;
+    }
+
+    /**
+     * The second row as configured (contentcheck.ini [ScopeSettings] SiteRow, SiteRowParent, SiteRowLimit).
+     *
+     * @return array hash( enabled => bool, parent => a preset key, limit => 1..50 )
+     */
+    public static function siteRowSettings()
+    {
+        $parent = expContentCheck::setting( 'ScopeSettings', 'SiteRowParent', self::DEFAULT_SITE_ROW_PARENT );
+        return array( 'enabled' => expContentCheck::setting( 'ScopeSettings', 'SiteRow', 'enabled' ) !== 'disabled',
+                      'parent' => self::presetSource( $parent ) !== null ? (string)$parent : self::DEFAULT_SITE_ROW_PARENT,
+                      'limit' => expContentCheck::intSetting( 'ScopeSettings', 'SiteRowLimit', self::DEFAULT_SITE_ROW_LIMIT, 1, 50 ) );
+    }
+
+    /**
+     * The second row from the children of the content root, already in their sort order: the visible ones only (not
+     * hidden, not invisible), the first $limit of them, and whether there are more.
+     *
+     * @param array $children list of hash( node_id, name, is_hidden, is_invisible )
+     * @param string $currentPath the path_string of the start location ('' unknown)
+     * @param int $currentID the start location
+     * @param int $limit
+     * @return array hash( items => list of hash( node_id, name, current: the start location, within: the start location
+     *               is below it ), more => bool )
+     */
+    public static function siteRow( array $children, $currentPath, $currentID, $limit )
+    {
+        $items = array();
+        $more = false;
+        $limit = max( 1, (int)$limit );
+        $seen = array();
+        foreach ( $children as $child )
+        {
+            if ( !is_array( $child ) || !isset( $child['node_id'] ) || (int)$child['node_id'] <= 0 || isset( $seen[(int)$child['node_id']] )
+                 || !empty( $child['is_hidden'] ) || !empty( $child['is_invisible'] ) )
+                continue;
+            $id = (int)$child['node_id'];
+            $seen[$id] = true;
+            if ( count( $items ) >= $limit )
+            {
+                $more = true;
+                break;
+            }
+            $items[] = array( 'node_id' => $id, 'name' => isset( $child['name'] ) ? (string)$child['name'] : '',
+                              'current' => $id === (int)$currentID,
+                              'within' => $id !== (int)$currentID && strpos( (string)$currentPath, '/' . $id . '/' ) !== false );
+        }
+        return array( 'items' => $items, 'more' => $more );
+    }
+
+    /**
+     * The children of a node in the node's own sort order, as rows for siteRow() (the user's read access applies).
+     *
+     * @param eZContentObjectTreeNode $parent
+     * @return array
+     */
+    protected static function childRows( eZContentObjectTreeNode $parent )
+    {
+        $children = $parent->subTree( array( 'Depth' => 1, 'DepthOperator' => 'eq', 'Limit' => self::SITE_ROW_SCAN,
+                                             'SortBy' => $parent->sortArray(), 'IgnoreVisibility' => true,
+                                             'LoadDataMap' => false, 'AsObject' => true ) );
+        $rows = array();
+        foreach ( is_array( $children ) ? $children : array() as $child )
+        {
+            if ( $child instanceof eZContentObjectTreeNode )
+                $rows[] = array( 'node_id' => (int)$child->attribute( 'node_id' ), 'name' => (string)$child->attribute( 'name' ),
+                                 'is_hidden' => (int)$child->attribute( 'is_hidden' ), 'is_invisible' => (int)$child->attribute( 'is_invisible' ) );
+        }
+        return $rows;
+    }
+
+    /**
+     * The address of the node picker for a check: it comes back to the check at $nodeID and opens at $startID (or at
+     * $nodeID).
+     *
+     * @param string $view
+     * @param int $nodeID
+     * @param int $startID 0: $nodeID
+     * @return string '' without a view
+     */
+    public static function browseURL( $view, $nodeID, $startID = 0 )
+    {
+        if ( self::view( $view ) === null )
+            return '';
+        $url = '/contentcheck/scope/' . $view . '/' . (int)$nodeID;
+        return (int)$startID > 0 && (int)$startID !== (int)$nodeID ? $url . '/' . (int)$startID : $url;
+    }
+
+    /**
+     * The query the scope links keep: plain field names with plain values only.
+     *
+     * @param array $keep
+     * @return string '' or '?Name=value&...'
+     */
+    public static function query( array $keep )
+    {
+        $clean = array();
+        foreach ( $keep as $name => $value )
+        {
+            if ( is_string( $name ) && preg_match( '/^[A-Za-z][A-Za-z0-9_]{0,40}$/', $name ) && $name !== 'NodeID'
+                 && is_scalar( $value ) && preg_match( '/^[A-Za-z0-9_\-]{1,40}$/', (string)$value ) )
+                $clean[$name] = (string)$value;
+        }
+        return $clean ? '?' . http_build_query( $clean, '', '&' ) : '';
     }
 
     /**
