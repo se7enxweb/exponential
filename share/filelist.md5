@@ -284,6 +284,7 @@ ac084a07607e6d6c5a845da15423854f  design/admin/images/view-fullscreen.png
 bfafd7d7df0571b71ba1cbacadfb2949  design/admin/javascript/contentcheck_select.js
 d04051dd86493ca0c7a5a7d8ef2e9788  design/admin/javascript/contentcheck_storage.js
 8efbbdaa6de1c48f6827f760b04f2dd0  design/admin/javascript/contentstructuremenu_dynamic.js
+3bf53d527c77fbe92265242d582073ff  design/admin/javascript/exp_admin_head.js
 ccc9542289d65bc6f5a7bbf6dbe04821  design/admin/javascript/expajaxuploader.js
 57d8995b892a18ef13ca0b9779bc29c7  design/admin/javascript/ezajaxrelations_jquery.js
 a7c1e5a25f185f993412621b9a08cd32  design/admin/javascript/ezajaxsubitems_expdatatable.js
@@ -330,13 +331,13 @@ f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin/override/templates/windows_user.t
 ce90ff045aa9ad5f6b74ebb4adb49d1f  design/admin/stylesheets/content.css
 58851bdc6d2ec7bd80b0e822175ac466  design/admin/stylesheets/core.css
 62734b59f14ab1cb473727176f810806  design/admin/stylesheets/ezinfo.css
-8cc64413ebee3f4375a31c94d48286b9  design/admin/stylesheets/modules/content.css
+efcd29e36a9058415634a1aad9844525  design/admin/stylesheets/modules/content.css
 aa82582790ae9045ab54f1183a83a860  design/admin/stylesheets/modules/people.css
 dfb29f95a62780e5c09df46a0e996f6f  design/admin/stylesheets/modules/setup.css
 40e6fed92366bdd7fce5f4320b9f8d73  design/admin/stylesheets/modules/structure.css
 3b1873b1ae4d1c3ffaa636931d9662ed  design/admin/stylesheets/modules/workflow.css
 6c50ca081feaacea35d0ba88f81f92a0  design/admin/stylesheets/packagecompare.css
-80aa4fbe72a9a1957ca9282a392afaff  design/admin/stylesheets/pagelayout.css
+c053e99799fe189035f65d93f0a733ef  design/admin/stylesheets/pagelayout.css
 2d02f74460d590ebf57e8230963c891e  design/admin/stylesheets/theme/admin_datatable.css
 80e40d820b12263064128a75be2de07b  design/admin/stylesheets/theme/modalwindow.css
 017f424deeeb46501db6bcf63990e746  design/admin/stylesheets/theme/rounded.css
@@ -358,7 +359,7 @@ d8edfe4bd7af7efd97f8819de5d247b8  design/admin/templates/audit/recent.tpl
 285f50ecd0189915430a72868d737398  design/admin/templates/audit/settings.tpl
 6ad3a8724d541edaf79af7df5927ab5a  design/admin/templates/audit/sources.tpl
 f7be1f801db4c00267f7b1e9bad939c8  design/admin/templates/children.tpl
-e697891bccdff71bc8bdaf56d5bcae23  design/admin/templates/children_detailed.tpl
+7dce6056b6392c532cb0e1c3fc1f8336  design/admin/templates/children_detailed.tpl
 e43630d07c69d19c6b4301797c3a915e  design/admin/templates/class/classlist.tpl
 51fd6b1a1612e389ee44ce3d6cbe83d1  design/admin/templates/class/copy_confirm.tpl
 2f32def3d98933143182da37d73213f4  design/admin/templates/class/datatype/browse_objectrelation_placement.tpl
@@ -578,7 +579,7 @@ f282688f9c5b255781005e8124e243cc  design/admin/templates/package/uninstall_error
 788da154ca78059ea6dadf6003b2fbdd  design/admin/templates/package/view/full.tpl
 2abe6f21fa320f3cb42198403d679dcc  design/admin/templates/page_copyright.tpl
 fda9299f029c731efb3f2a7d8cae2fe8  design/admin/templates/page_head_script.tpl
-d36fb8b0214dc562de0e80f07911a4cf  design/admin/templates/page_head_style.tpl
+9b35e3bf7adb0350c55c63dadb305f35  design/admin/templates/page_head_style.tpl
 dbcd6a019f44c7b1bcf92f13c30f641f  design/admin/templates/page_head_style_inline.tpl
 ee59e11711f04b511967f5335e53cdb9  design/admin/templates/page_header.tpl
 2fbd947226762a9f26b46f0f28d34ea4  design/admin/templates/page_leftmenu.tpl
@@ -590,7 +591,7 @@ ee59e11711f04b511967f5335e53cdb9  design/admin/templates/page_header.tpl
 3ceb59d3584d417fdb51fe11e73f2729  design/admin/templates/page_topmenu.tpl
 7595633233e131b1b54c3d3e493c4568  design/admin/templates/page_topmenuitem.tpl
 def1e69baea2cb9d93a8d1af2bf5f692  design/admin/templates/page_toppath.tpl
-ed2076717ceee772d535bfc11bb00bb3  design/admin/templates/pagelayout.tpl
+2a9016a3646eca940e4e8e68ae84a879  design/admin/templates/pagelayout.tpl
 2891f454853f3b2f2cac2a94173e257a  design/admin/templates/parts/audit/menu.tpl
 6f4962eafc7286ab584e17db8f6c7b00  design/admin/templates/parts/content/menu.tpl
 d7600cfd918e52be3b4f25b90a040ba7  design/admin/templates/parts/ini_menu.tpl
