@@ -3407,6 +3407,21 @@ html #action-controls {
 html #action-controls .exp-dt-action,
 html #action-controls .exp-dt-action-group:first-child .exp-dt-action { margin-inline-start: 0; }
 
+/* The sub-items table's place while it loads (children_detailed.tpl .a4-subitems-reserve): the script draws the
+   table after the page, empty until its rows arrive, and everything under it (the pager, the footer) moved down by the
+   whole table on every node view. The reserve holds the toolbar and the header (2 x 32px + the toolbar's 10px
+   margins - 8px of the gap = 76px), a 32px line per row of the first page and the pager, while the list is empty
+   (before the script) or loading (aria-busy). The loading message takes the first line, as tall as a row. */
+.a4-subitems-reserve { display: none; visibility: hidden; }   /* hidden: its own move when it gives way is no layout shift */
+html.exp-js #content-sub-items-list:empty + .a4-subitems-reserve,
+#content-sub-items-list:has(table[aria-busy]) + .a4-subitems-reserve { display: block; }
+.a4-subitems-reserve > span { display: block; height: var(--a4-control-h); }
+.a4-subitems-reserve > .a4-subitems-reserve-head { height: calc(2 * var(--a4-control-h) + var(--a4-space-3)); }
+.a4-subitems-reserve > .a4-subitems-reserve-pager { height: calc(var(--a4-control-h) + var(--a4-space-2)); }
+#content-sub-items-list:has(table[aria-busy]) + .a4-subitems-reserve > .a4-subitems-reserve-head { display: none; }
+#content-sub-items-list:has(table[aria-busy] > .exp-dt-message:not([hidden])) + .a4-subitems-reserve > .a4-subitems-reserve-head + span { display: none; }
+html #content-sub-items-list .exp-dt-message td { box-sizing: border-box; height: var(--a4-control-h); }
+
 /* On a phone a long search result name breaks rather than widening the result table past the screen */
 @media screen and (max-width: 575.98px) {
   table.a4-search-results td a { overflow-wrap: anywhere; }
