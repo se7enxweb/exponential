@@ -3,7 +3,7 @@
    Variables: scope (the start location, see scope.tpl), params (show, sort, order, kinds, offset, limit, node_id),
    state (the last scan, or null), percent, rows (the page), count, quarantine (the listing, with Show=quarantine),
    quarantine_root, storage_dir, kinds, sorts, min_age_days, cluster (report only), can_quarantine, can_fix,
-   batch_limit, feedback, page_uri, page_uri_suffix, view_parameters, limit, limit_choices, limit_preference,
+   batch_limit, feedback, select_all (GET SelectAll: every box of the page ticked), page_uri, page_uri_suffix, view_parameters, limit, limit_choices, limit_preference,
    form_token, token_field. The lists and filters are GET; the scan and every action are posted to
    contentcheck/storageaction, which shows each action's plan first and asks to confirm. The same file is in
    design/admin and design/admin4. *}
@@ -22,8 +22,9 @@
                            'delete', 'deleted from the quarantine'|i18n( 'kernel/contentcheck' ),
                            'permissions', 'given the expected owner and mode'|i18n( 'kernel/contentcheck' ) )
      $done = and( $state, eq( $state.phase, 'done' ) )
-     $tickable = false()}
-{if eq( $params.show, 'orphans' )}{set $tickable = $can_quarantine}{elseif eq( $params.show, 'quarantine' )}{set $tickable = $can_quarantine}{else}{foreach $rows as $row}{if and( $can_fix, $row.fixable )}{set $tickable = true()}{/if}{/foreach}{/if}
+     $tickable = false()
+     $tickable_count = 0}
+{if eq( $params.show, 'orphans' )}{set $tickable = $can_quarantine}{set $tickable_count = $rows|count}{elseif eq( $params.show, 'quarantine' )}{set $tickable = $can_quarantine}{set $tickable_count = $rows|count}{else}{foreach $rows as $row}{if and( $can_fix, $row.fixable )}{set $tickable = true()}{set $tickable_count = $tickable_count|inc}{/if}{/foreach}{/if}
 
 <div class="context-block a4-page a4-contentcheck">
 
@@ -168,10 +169,10 @@
 <p class="a4-empty">{if eq( $params.show, 'orphans' )}{'No orphan files.'|i18n( 'kernel/contentcheck' )}{elseif eq( $params.show, 'problems' )}{'No file problems below this node match the filter.'|i18n( 'kernel/contentcheck' )}{else}{'The quarantine is empty.'|i18n( 'kernel/contentcheck' )}{/if}</p>
 {else}
 <div class="a4-table-wrap">
-<table class="a4-table">
+<table class="a4-table" data-a4-select="1">
 <thead>
 <tr>
-    {if $tickable}<th scope="col" class="tight"><span class="a4-sr-only">{'Select'|i18n( 'kernel/contentcheck' )}</span></th>{/if}
+    {if $tickable}<th scope="col" class="tight">{include uri='design:contentcheck/select_all.tpl' select_all=$select_all}</th>{/if}
     {if eq( $params.show, 'problems' )}<th scope="col">{'Problem'|i18n( 'kernel/contentcheck' )}</th>{/if}
     <th scope="col">{'Path'|i18n( 'kernel/contentcheck' )}</th>
     {if eq( $params.show, 'problems' )}<th scope="col">{'Used by'|i18n( 'kernel/contentcheck' )}</th>{/if}
@@ -185,20 +186,20 @@
 {foreach $rows as $row}
 <tr>
     {if eq( $params.show, 'orphans' )}
-    {if $tickable}<td><input type="checkbox" name="Items[]" value="{$row.path|wash}" aria-label="{$row.path|wash}" /></td>{/if}
+    {if $tickable}<td><input type="checkbox" name="Items[]" value="{$row.path|wash}" aria-label="{$row.path|wash}" data-a4-select-item="1"{if $select_all} checked="checked"{/if} /></td>{/if}
     <td><span class="a4-tag is-mono">{$row.path|wash}</span></td>
     <td class="a4-num">{$row.size|si( byte )}</td>
     <td class="a4-num">{'%days d'|i18n( 'kernel/contentcheck',, hash( '%days', $row.age_days ) )}</td>
     <td>{$row.owner|wash} {$row.mode|wash}</td>
     {elseif eq( $params.show, 'problems' )}
-    {if $tickable}<td>{if and( $can_fix, $row.fixable )}<input type="checkbox" name="Items[]" value="{$row.path|wash}" aria-label="{$row.path|wash}" />{/if}</td>{/if}
+    {if $tickable}<td>{if and( $can_fix, $row.fixable )}<input type="checkbox" name="Items[]" value="{$row.path|wash}" aria-label="{$row.path|wash}" data-a4-select-item="1"{if $select_all} checked="checked"{/if} />{/if}</td>{/if}
     <td><span class="a4-tag {$kind_classes[$row.kind]}">{$kind_names[$row.kind]|wash}</span></td>
     <td><span class="a4-tag is-mono">{$row.path|wash}</span>{if $row.detail|ne( '' )}<div class="a4-meta">{'Found: %path'|i18n( 'kernel/contentcheck',, hash( '%path', $row.detail ) )|wash}</div>{/if}</td>
     <td>{if $row.node_id|gt( 0 )}<a href={concat( '/content/view/full/', $row.node_id )|ezurl}>{$row.name|wash}</a><div class="a4-meta">{'Object %id'|i18n( 'kernel/contentcheck',, hash( '%id', $row.object_id ) )}</div>{else}&ndash;{/if}</td>
     <td class="a4-num">{if $row.size|ge( 0 )}{$row.size|si( byte )}{else}&ndash;{/if}</td>
     <td>{$row.owner|wash} {$row.mode|wash}</td>
     {else}
-    {if $tickable}<td><input type="checkbox" name="Items[]" value="{$row.item|wash}" aria-label="{$row.path|wash}" /></td>{/if}
+    {if $tickable}<td><input type="checkbox" name="Items[]" value="{$row.item|wash}" aria-label="{$row.path|wash}" data-a4-select-item="1"{if $select_all} checked="checked"{/if} /></td>{/if}
     <td><span class="a4-tag is-mono">{$row.path|wash}</span></td>
     <td>{$row.date|wash}</td>
     <td class="a4-num">{$row.size|si( byte )}</td>
@@ -235,14 +236,21 @@
 
 {if and( $tickable, $rows|count|gt( 0 ) )}
 <div class="a4-toolbar is-bottom">
+    {include uri='design:contentcheck/select_count.tpl' select_all=$select_all total=$tickable_count
+             page_url=concat( $page_uri, '/(offset)/', $params.offset, $page_uri_suffix )}
+    {if eq( $params.show, 'orphans' )}<input type="hidden" name="Sort" value="{$params.sort|wash}" /><input type="hidden" name="Order" value="{$params.order|wash}" />{/if}
+    {if eq( $params.show, 'problems' )}{foreach $params.kinds as $kind}<input type="hidden" name="Kind[]" value="{$kind|wash}" />{/foreach}{/if}
     <div class="a4-actions">
     {if eq( $params.show, 'orphans' )}
         <button type="submit" class="a4-btn a4-btn-outline-danger" name="Action" value="quarantine" aria-describedby="cc-action-help">{'Move ticked files to the quarantine'|i18n( 'kernel/contentcheck' )}</button>
+        {if $count|gt( $rows|count )}<button type="submit" class="a4-btn a4-btn-outline-danger" name="AllResultsAction" value="quarantine" aria-describedby="cc-action-help">{'Move all %count files to the quarantine'|i18n( 'kernel/contentcheck',, hash( '%count', $count ) )}</button>{/if}
     {elseif eq( $params.show, 'problems' )}
         <button type="submit" class="a4-btn" name="Action" value="permissions" aria-describedby="cc-action-help">{'Fix owner and mode of ticked files'|i18n( 'kernel/contentcheck' )}</button>
+        {if $count|gt( $rows|count )}<button type="submit" class="a4-btn" name="AllResultsAction" value="permissions" aria-describedby="cc-action-help">{'Fix owner and mode of all %count results'|i18n( 'kernel/contentcheck',, hash( '%count', $count ) )}</button>{/if}
     {else}
         <button type="submit" class="a4-btn" name="Action" value="restore" aria-describedby="cc-action-help">{'Restore ticked files'|i18n( 'kernel/contentcheck' )}</button>
         <button type="submit" class="a4-btn a4-btn-outline-danger" name="Action" value="delete" aria-describedby="cc-action-help">{'Delete ticked files permanently'|i18n( 'kernel/contentcheck' )}</button>
+        {if $count|gt( $rows|count )}<button type="submit" class="a4-btn" name="AllResultsAction" value="restore" aria-describedby="cc-action-help">{'Restore all %count files'|i18n( 'kernel/contentcheck',, hash( '%count', $count ) )}</button>{/if}
     {/if}
     </div>
     <p class="a4-meta" id="cc-action-help">{'The next page is a dry run: it shows what would happen to each file and changes nothing until you confirm. At most %count files at a time.'|i18n( 'kernel/contentcheck',, hash( '%count', $batch_limit ) )}</p>
@@ -252,4 +260,4 @@
 
 </div></div></div>
 </div>
-{undef $kind_names $kind_classes $sort_names $action_names $done $tickable}
+{undef $kind_names $kind_classes $sort_names $action_names $done $tickable $tickable_count}

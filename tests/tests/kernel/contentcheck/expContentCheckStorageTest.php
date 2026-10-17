@@ -21,6 +21,10 @@
  *         destination is never overwritten, links and paths outside are refused, a delete needs its own item
  *  CS-11  the storage view: the list, order and kinds read from the request; the pages keep them; the orphans sorted
  *  CS-12  the scan state as the view shows it: the share done; what an action took out of the lists
+ *  CS-14  "All N results": the action for the whole list always shows its plan first; the trash of the unreferenced
+ *         objects the same
+ *  CS-13  the class filter of the unreferenced objects: "All classes" and "No class" are buttons of the form (no
+ *         JavaScript needed) and come after "Show", which Enter in a field must keep pressing
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -376,5 +380,49 @@ class expContentCheckStorageTest extends PHPUnit\Framework\TestCase
         $after = expContentCheckStorage::lastScan();
         $this->assertSame( array( 'empty' ), array_column( $after['problems'], 'k' ), 'an empty file is not fixed by owner and mode' );
         $this->assertSame( array( 0, 0, 1 ), array_values( $after['counts']['problems'] ) );
+    }
+
+    /** CS-13 */
+    public function testTheClassFilterButtons()
+    {
+        $this->assertSame( array( 5, 12 ), \Exponential\View\Kernel\Contentcheck\Unreferenced::classChoice( array( 'ClassID' => array( '5' ) ), array( '5', 12 ), true, false ) );
+        $this->assertSame( array(), \Exponential\View\Kernel\Contentcheck\Unreferenced::classChoice( array( 'ClassID' => array( '5' ) ), array( 5, 12 ), true, true ) );
+        $this->assertSame( array( '5' ), \Exponential\View\Kernel\Contentcheck\Unreferenced::classChoice( array( 'ClassID' => array( '5' ) ), array( 5, 12 ), false, false ) );
+        $this->assertSame( '5,12', \Exponential\View\Kernel\Contentcheck\Unreferenced::classChoice( array( 'ClassID' => '5,12' ), array( 5 ), false, false ) );
+        $this->assertSame( array(), \Exponential\View\Kernel\Contentcheck\Unreferenced::classChoice( array(), array( 5 ), false, false ) );
+
+        $root = dirname( __DIR__, 4 );
+        foreach ( array( 'admin', 'admin4' ) as $design )
+        {
+            $tpl = (string)file_get_contents( $root . '/design/' . $design . '/templates/contentcheck/unreferenced.tpl' );
+            $show = strpos( $tpl, "{'Show'|i18n( 'kernel/contentcheck' )}</button>" );
+            $this->assertNotFalse( $show, $design );
+            foreach ( array( 'AllClassesButton', 'NoClassesButton' ) as $button )
+            {
+                $at = strpos( $tpl, 'name="' . $button . '"' );
+                $this->assertNotFalse( $at, $design . ' ' . $button );
+                $this->assertGreaterThan( $show, $at, $design . ': ' . $button . ' after Show' );
+            }
+        }
+    }
+
+    /** CS-14 */
+    public function testAllResultsAlwaysPlanFirst()
+    {
+        $all = function () { return true; };
+        $base = array( expContentCheck::TOKEN_FIELD => expContentCheck::formToken(), 'NodeID' => '43', 'Show' => 'orphans' );
+        $d = Storageaction::decide( 'POST', $base + array( 'AllResultsAction' => 'quarantine' ), $all );
+        $this->assertSame( array( 'confirm', 'quarantine', true ), array( $d['step'], $d['action'], $d['all_results'] ) );
+        $d = Storageaction::decide( 'POST', $base + array( 'AllResultsAction' => 'quarantine', 'Action' => 'quarantine', 'Items' => array( 'images/a.jpg' ), 'ConfirmButton' => 1 ), $all );
+        $this->assertSame( array( 'execute', false ), array( $d['step'], $d['all_results'] ), 'the confirmation posts the planned files' );
+        $this->assertSame( 'cancel', Storageaction::decide( 'POST', $base + array( 'AllResultsAction' => 'chmod' ), $all )['step'] );
+        $only = function ( $f ) { return $f === 'storage'; };
+        $this->assertSame( 'policy', Storageaction::decide( 'POST', $base + array( 'AllResultsAction' => 'delete' ), $only )['reason'] );
+
+        $post = array( expContentCheck::TOKEN_FIELD => expContentCheck::formToken(), 'NodeID' => '43', 'AllResultsButton' => 1 );
+        $d = \Exponential\View\Kernel\Contentcheck\Trash::decide( 'POST', $post );
+        $this->assertSame( array( 'confirm', true ), array( $d['step'], $d['all_results'] ) );
+        $d = \Exponential\View\Kernel\Contentcheck\Trash::decide( 'POST', $post + array( 'ObjectIDList' => array( '5' ), 'ConfirmButton' => 1 ) );
+        $this->assertSame( array( 'execute', false ), array( $d['step'], $d['all_results'] ) );
     }
 }

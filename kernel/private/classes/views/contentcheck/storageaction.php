@@ -76,6 +76,9 @@ class Storageaction extends \Exponential\Runnable\ModuleView
 
             case 'confirm':
             default:
+                // "All N results": every file of the list shown (its filters), at most one batch; the plan says so
+                if ( $decision['all_results'] )
+                    $decision['items'] = self::allResults( $decision['action'], $decision['node_id'], $_POST );
                 $plan = \expContentCheckQuarantine::plan( $decision['action'], $decision['items'] );
                 return $this->page( 'design:contentcheck/storage_confirm.tpl',
                                     array( 'plan' => $plan, 'node_id' => (int)$decision['node_id'], 'show' => $decision['show'],
@@ -101,7 +104,7 @@ class Storageaction extends \Exponential\Runnable\ModuleView
     public static function decide( $method, array $post, $hasPolicy )
     {
         $show = isset( $post['Show'] ) && in_array( $post['Show'], Storage::SHOWS, true ) ? $post['Show'] : 'orphans';
-        $decision = array( 'step' => 'refused', 'reason' => '', 'action' => '', 'items' => array(), 'restart' => false,
+        $decision = array( 'step' => 'refused', 'reason' => '', 'action' => '', 'items' => array(), 'restart' => false, 'all_results' => false,
                            'node_id' => \expContentCheck::id( isset( $post['NodeID'] ) ? $post['NodeID'] : null, \expContentCheckScope::rootNodeID() ),
                            'show' => $show, 'needs_delete_box' => false );
         if ( strtoupper( (string)$method ) !== 'POST' )
@@ -116,7 +119,9 @@ class Storageaction extends \Exponential\Runnable\ModuleView
         if ( isset( $post['ScanButton'] ) || isset( $post['ContinueButton'] ) || isset( $post['RestartButton'] ) )
             return array_merge( $decision, array( 'step' => 'scan', 'restart' => isset( $post['ScanButton'] ) || isset( $post['RestartButton'] ) ) );
 
-        $action = isset( $post['Action'] ) && is_string( $post['Action'] ) && in_array( $post['Action'], \expContentCheckQuarantine::ACTIONS, true ) ? $post['Action'] : '';
+        // AllResultsAction=<action>: the same action for the whole list ("All N results")
+        $field = isset( $post['AllResultsAction'] ) && !isset( $post['ConfirmButton'] ) ? $post['AllResultsAction'] : ( isset( $post['Action'] ) ? $post['Action'] : null );
+        $action = is_string( $field ) && in_array( $field, \expContentCheckQuarantine::ACTIONS, true ) ? $field : '';
         if ( $action === '' )
             return array_merge( $decision, array( 'step' => 'cancel' ) );
         $decision['action'] = $action;
@@ -127,7 +132,55 @@ class Storageaction extends \Exponential\Runnable\ModuleView
         $confirmed = isset( $post['ConfirmButton'] ) && $decision['items']
                      && ( $action !== 'delete' || ( isset( $post['ConfirmDelete'] ) && $post['ConfirmDelete'] === '1' ) );
         $decision['step'] = $confirmed ? 'execute' : 'confirm';
+        // the whole list instead of the ticked rows: always the plan first
+        $decision['all_results'] = isset( $post['AllResultsAction'] ) && !isset( $post['ConfirmButton'] );
+        if ( $decision['all_results'] )
+            $decision['step'] = 'confirm';
         return $decision;
+    }
+
+    /**
+     * Every item of the list an action belongs to, in the order shown, at most one batch and one more (which tells
+     * that there were more): the orphans of the last scan, the fixable problems below the node, the quarantine.
+     *
+     * @param string $action
+     * @param int $nodeID
+     * @param array $post Sort, Order, Kind[] of the list
+     * @return string[]
+     */
+    public static function allResults( $action, $nodeID, array $post )
+    {
+        $max = \expContentCheckQuarantine::batchLimit() + 1;
+        $items = array();
+        if ( $action === 'restore' || $action === 'delete' )
+        {
+            foreach ( \expContentCheckQuarantine::listing( $max )['items'] as $item )
+                $items[] = $item['item'];
+            return array_slice( $items, 0, $max );
+        }
+        $state = \expContentCheckStorage::lastScan();
+        if ( !$state || $state['phase'] !== 'done' )
+            return array();
+        $params = Storage::parameters( array( 'Sort' => isset( $post['Sort'] ) ? $post['Sort'] : null, 'Order' => isset( $post['Order'] ) ? $post['Order'] : null,
+                                              'Kind' => isset( $post['Kind'] ) ? $post['Kind'] : null ) );
+        if ( $action === 'quarantine' )
+        {
+            foreach ( \expContentCheckStorage::sortedOrphans( $state, $params['sort'], $params['order'] ) as $orphan )
+            {
+                $items[] = $orphan['p'];
+                if ( count( $items ) >= $max )
+                    break;
+            }
+            return $items;
+        }
+        foreach ( \expContentCheckStorage::problemsBelow( $state, (int)$nodeID, $params['kinds'] ) as $row )
+        {
+            if ( $row['fixable'] && !in_array( $row['path'], $items, true ) )
+                $items[] = $row['path'];
+            if ( count( $items ) >= $max )
+                break;
+        }
+        return $items;
     }
 
     /**

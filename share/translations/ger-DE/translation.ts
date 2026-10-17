@@ -63917,6 +63917,46 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Confirm</source>
         <translation>Bestätigen</translation>
     </message>
+    <message>
+        <source>Choose classes</source>
+        <translation>Klassen wählen</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Alle Klassen</translation>
+    </message>
+    <message>
+        <source>No class</source>
+        <translation>Keine Klasse</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Alle auf dieser Seite auswählen</translation>
+    </message>
+    <message>
+        <source>Select none</source>
+        <translation>Keine auswählen</translation>
+    </message>
+    <message>
+        <source>%selected of %total selected</source>
+        <translation>%selected von %total ausgewählt</translation>
+    </message>
+    <message>
+        <source>Move all %count results to the trash</source>
+        <translation>Alle %count Ergebnisse in den Papierkorb verschieben</translation>
+    </message>
+    <message>
+        <source>Move all %count files to the quarantine</source>
+        <translation>Alle %count Dateien in die Quarantäne verschieben</translation>
+    </message>
+    <message>
+        <source>Fix owner and mode of all %count results</source>
+        <translation>Eigentümer und Rechte aller %count Ergebnisse korrigieren</translation>
+    </message>
+    <message>
+        <source>Restore all %count files</source>
+        <translation>Alle %count Dateien wiederherstellen</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>

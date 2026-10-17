@@ -67749,6 +67749,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Confirm</source>
         <translation>Confirm</translation>
     </message>
+    <message>
+        <source>Choose classes</source>
+        <translation>Choose classes</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>All classes</translation>
+    </message>
+    <message>
+        <source>No class</source>
+        <translation>No class</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Select all on this page</translation>
+    </message>
+    <message>
+        <source>Select none</source>
+        <translation>Select none</translation>
+    </message>
+    <message>
+        <source>%selected of %total selected</source>
+        <translation>%selected of %total selected</translation>
+    </message>
+    <message>
+        <source>Move all %count results to the trash</source>
+        <translation>Move all %count results to the trash</translation>
+    </message>
+    <message>
+        <source>Move all %count files to the quarantine</source>
+        <translation>Move all %count files to the quarantine</translation>
+    </message>
+    <message>
+        <source>Fix owner and mode of all %count results</source>
+        <translation>Fix owner and mode of all %count results</translation>
+    </message>
+    <message>
+        <source>Restore all %count files</source>
+        <translation>Restore all %count files</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>

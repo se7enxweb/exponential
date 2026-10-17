@@ -2,7 +2,8 @@
 
    Variables: result (node, count, rows, error), params (node_id, class_ids, sort, order, containers, offset,
    limit), scope (the start location, see scope.tpl), class_options, sorts, page_uri, page_uri_suffix, view_parameters, limit, limit_choices,
-   limit_preference, feedback (the outcome of a move to the trash, or null), can_trash, batch_limit, form_token,
+   limit_preference, feedback (the outcome of a move to the trash, or null), select_all (GET SelectAll: every box of the page ticked, the
+   way without JavaScript; contentcheck_select.js adds the master box), can_trash, batch_limit, form_token,
    token_field. Only what the user may read is in result.rows; a row can be ticked only when the user may move it
    to the trash. The filters are a GET form; the ticked rows are posted to contentcheck/trash, which asks for a
    confirmation first. The same file is in design/admin and design/admin4. *}
@@ -13,8 +14,9 @@
                          'id', 'Object id'|i18n( 'kernel/contentcheck' ) )
      $node = $result.node
      $rows = $result.rows
-     $tickable = false()}
-{foreach $rows as $row}{if $row.can_trash}{set $tickable = true()}{/if}{/foreach}
+     $tickable = false()
+     $tickable_count = 0}
+{foreach $rows as $row}{if $row.can_trash}{set $tickable = true()}{set $tickable_count = $tickable_count|inc}{/if}{/foreach}
 
 <div class="context-block a4-page a4-contentcheck">
 
@@ -86,6 +88,14 @@
     <div class="a4-field">
         <button type="submit" class="a4-btn a4-btn-primary">{'Show'|i18n( 'kernel/contentcheck' )}</button>
     </div>
+    {* after Show: Enter in a field submits the form with its first button, which must stay Show *}
+    <div class="a4-field" role="group" aria-labelledby="cc-class-quick">
+        <span class="a4-label" id="cc-class-quick">{'Choose classes'|i18n( 'kernel/contentcheck' )}</span>
+        <div class="a4-row">
+            <button type="submit" class="a4-btn a4-btn-small" name="AllClassesButton" value="1">{'All classes'|i18n( 'kernel/contentcheck' )}</button>
+            <button type="submit" class="a4-btn a4-btn-small" name="NoClassesButton" value="1">{'No class'|i18n( 'kernel/contentcheck' )}</button>
+        </div>
+    </div>
 </form>
 </section>
 
@@ -105,10 +115,10 @@
 <p class="a4-empty">{'No unused asset below this node matches the filter.'|i18n( 'kernel/contentcheck' )}</p>
 {else}
 <div class="a4-table-wrap">
-<table class="a4-table">
+<table class="a4-table" data-a4-select="1">
 <thead>
 <tr>
-    {if and( $can_trash, $tickable )}<th scope="col" class="tight"><span class="a4-sr-only">{'Select'|i18n( 'kernel/contentcheck' )}</span></th>{/if}
+    {if and( $can_trash, $tickable )}<th scope="col" class="tight">{include uri='design:contentcheck/select_all.tpl' select_all=$select_all}</th>{/if}
     <th scope="col">{'Name'|i18n( 'kernel/contentcheck' )}</th>
     <th scope="col">{'Class'|i18n( 'kernel/contentcheck' )}</th>
     <th scope="col" class="a4-num">{'Size'|i18n( 'kernel/contentcheck' )}</th>
@@ -119,7 +129,7 @@
 <tbody>
 {foreach $rows as $row}
 <tr>
-    {if and( $can_trash, $tickable )}<td>{if $row.can_trash}<input type="checkbox" name="ObjectIDList[]" value="{$row.object_id}" aria-label="{$row.name|wash}" />{/if}</td>{/if}
+    {if and( $can_trash, $tickable )}<td>{if $row.can_trash}<input type="checkbox" name="ObjectIDList[]" value="{$row.object_id}" aria-label="{$row.name|wash}" data-a4-select-item="1"{if $select_all} checked="checked"{/if} />{/if}</td>{/if}
     <td><a href={concat( '/content/view/full/', $row.node_id )|ezurl}>{$row.name|wash}</a>{if $row.hidden} <span class="a4-tag is-warn">{'Hidden'|i18n( 'kernel/contentcheck' )}</span>{/if}
         <div class="a4-meta">{'Object %id'|i18n( 'kernel/contentcheck',, hash( '%id', $row.object_id ) )}{if $row.children|gt( 0 )} &middot; {'%count sub-items'|i18n( 'kernel/contentcheck',, hash( '%count', $row.children ) )}{/if}</div></td>
     <td>{$row.class_name|wash}</td>
@@ -158,8 +168,15 @@
 
 {if and( $can_trash, $tickable )}
 <div class="a4-toolbar is-bottom">
+    {include uri='design:contentcheck/select_count.tpl' select_all=$select_all total=$tickable_count
+             page_url=concat( $page_uri, '/(offset)/', $params.offset, $page_uri_suffix )}
     <div class="a4-actions">
         <button type="submit" class="a4-btn a4-btn-outline-danger" name="TrashButton" value="1" aria-describedby="cc-trash-help">{'Move ticked objects to the trash'|i18n( 'kernel/contentcheck' )}</button>
+        {if $result.count|gt( $rows|count )}
+        {foreach $params.class_ids as $class_id}<input type="hidden" name="ClassID[]" value="{$class_id}" />{/foreach}
+        {if $params.containers}<input type="hidden" name="Containers" value="1" />{/if}
+        <button type="submit" class="a4-btn a4-btn-outline-danger" name="AllResultsButton" value="1" aria-describedby="cc-trash-help">{'Move all %count results to the trash'|i18n( 'kernel/contentcheck',, hash( '%count', $result.count ) )}</button>
+        {/if}
     </div>
     <p class="a4-meta" id="cc-trash-help">{'The next page shows what will happen and asks you to confirm. At most %count objects at a time; they can be restored from the trash.'|i18n( 'kernel/contentcheck',, hash( '%count', $batch_limit ) )}</p>
 </div>
@@ -168,4 +185,4 @@
 
 </div></div></div>
 </div>
-{undef $sort_names $node $rows $tickable}
+{undef $sort_names $node $rows $tickable $tickable_count}

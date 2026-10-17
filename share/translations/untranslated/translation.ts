@@ -61416,6 +61416,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Confirm</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Choose classes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No class</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select none</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%selected of %total selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move all %count results to the trash</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move all %count files to the quarantine</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fix owner and mode of all %count results</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Restore all %count files</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>

@@ -111,6 +111,7 @@ class Storage extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'can_fix', \expContentCheck::hasPolicy( 'contentcheck', 'permissions' ) && \expContentCheckStorage::canChangeFiles() );
         $tpl->setVariable( 'batch_limit', \expContentCheckQuarantine::batchLimit() );
         $tpl->setVariable( 'feedback', $feedback );
+        $tpl->setVariable( 'select_all', $http->hasGetVariable( 'SelectAll' ) && $http->getVariable( 'SelectAll' ) === '1' );
         $tpl->setVariable( 'page_uri', '/contentcheck/storage/' . $nodeID );
         $tpl->setVariable( 'page_uri_suffix', self::querySuffix( $params ) );
         $tpl->setVariable( 'view_parameters', array( 'offset' => $params['offset'] ) );
