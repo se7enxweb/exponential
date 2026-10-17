@@ -63965,6 +63965,210 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Select all</source>
         <translation>Alle auswählen</translation>
     </message>
+    <message>
+        <source>File missing</source>
+        <translation>Datei fehlt</translation>
+    </message>
+    <message>
+        <source>Alias missing</source>
+        <translation>Variante fehlt</translation>
+    </message>
+    <message>
+        <source>Alias out of date</source>
+        <translation>Variante veraltet</translation>
+    </message>
+    <message>
+        <source>Alias never made</source>
+        <translation>Variante nie erstellt</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>fehlt</translation>
+    </message>
+    <message>
+        <source>out of date</source>
+        <translation>veraltet</translation>
+    </message>
+    <message>
+        <source>never made</source>
+        <translation>nie erstellt</translation>
+    </message>
+    <message>
+        <source>Regenerate</source>
+        <translation>Neu erstellen</translation>
+    </message>
+    <message>
+        <source>Restore</source>
+        <translation>Wiederherstellen</translation>
+    </message>
+    <message>
+        <source>Re-upload</source>
+        <translation>Neu hochladen</translation>
+    </message>
+    <message>
+        <source>Remove reference</source>
+        <translation>Verweis entfernen</translation>
+    </message>
+    <message>
+        <source>Mark for review</source>
+        <translation>Zur Prüfung markieren</translation>
+    </message>
+    <message>
+        <source>Version %version</source>
+        <translation>Version %version</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Entwurf</translation>
+    </message>
+    <message>
+        <source>File: %time</source>
+        <translation>Datei: %time</translation>
+    </message>
+    <message>
+        <source>Marked for review</source>
+        <translation>Zur Prüfung markiert</translation>
+    </message>
+    <message>
+        <source>Regenerate the aliases from the original</source>
+        <translation>Bildvarianten aus dem Original neu erstellen</translation>
+    </message>
+    <message>
+        <source>Restore from another version</source>
+        <translation>Aus einer anderen Version wiederherstellen</translation>
+    </message>
+    <message>
+        <source>Re-upload or replace the file</source>
+        <translation>Datei neu hochladen oder ersetzen</translation>
+    </message>
+    <message>
+        <source>Remove the dead reference</source>
+        <translation>Toten Verweis entfernen</translation>
+    </message>
+    <message>
+        <source>Missing files in %dir</source>
+        <translation>Fehlende Dateien in %dir</translation>
+    </message>
+    <message>
+        <source>Images, files and media whose file is not in the storage, in the published version and in drafts, and images whose aliases are missing or were made with other settings.</source>
+        <translation>Bilder, Dateien und Medien, deren Datei nicht im Speicher liegt, in der veröffentlichten Version und in Entwürfen, und Bilder, deren Varianten fehlen oder mit anderen Einstellungen erstellt wurden.</translation>
+    </message>
+    <message>
+        <source>Nothing was changed: the files or your access changed after the confirmation. Choose the rows again.</source>
+        <translation>Nichts wurde geändert: Die Dateien oder Ihre Rechte haben sich nach der Bestätigung geändert. Wählen Sie die Zeilen erneut.</translation>
+    </message>
+    <message>
+        <source>%count field versions done.</source>
+        <translation>%count Feldversionen erledigt.</translation>
+    </message>
+    <message>
+        <source>%count could not be done.</source>
+        <translation>%count konnten nicht erledigt werden.</translation>
+    </message>
+    <message>
+        <source>No missing file and no alias problem found.</source>
+        <translation>Keine fehlende Datei und kein Problem mit Bildvarianten gefunden.</translation>
+    </message>
+    <message>
+        <source>Nothing found among these objects. Go on with the next page.</source>
+        <translation>Unter diesen Objekten wurde nichts gefunden. Fahren Sie mit der nächsten Seite fort.</translation>
+    </message>
+    <message>
+        <source>Object</source>
+        <translation>Objekt</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
+        <source>Expected path</source>
+        <translation>Erwarteter Pfad</translation>
+    </message>
+    <message>
+        <source>Missing files from the start</source>
+        <translation>Fehlende Dateien von vorn</translation>
+    </message>
+    <message>
+        <source>Next page of missing files</source>
+        <translation>Nächste Seite fehlender Dateien</translation>
+    </message>
+    <message>
+        <source>With the ticked rows</source>
+        <translation>Mit den markierten Zeilen</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Vorschau</translation>
+    </message>
+    <message>
+        <source>The next page shows what will happen to each row and asks you to confirm. At most %count rows at a time; they are done in batches.</source>
+        <translation>Die nächste Seite zeigt, was mit jeder Zeile geschieht, und bittet um Bestätigung. Höchstens %count Zeilen auf einmal; sie werden in Stapeln erledigt.</translation>
+    </message>
+    <message>
+        <source>Published version</source>
+        <translation>Veröffentlichte Version</translation>
+    </message>
+    <message>
+        <source>Drafts</source>
+        <translation>Entwürfe</translation>
+    </message>
+    <message>
+        <source>Missing files: problems</source>
+        <translation>Fehlende Dateien: Probleme</translation>
+    </message>
+    <message>
+        <source>Missing files: versions</source>
+        <translation>Fehlende Dateien: Versionen</translation>
+    </message>
+    <message>
+        <source>You may not edit this object.</source>
+        <translation>Sie dürfen dieses Objekt nicht bearbeiten.</translation>
+    </message>
+    <message>
+        <source>Nothing is wrong with it any more.</source>
+        <translation>Damit ist nichts mehr falsch.</translation>
+    </message>
+    <message>
+        <source>The original file is missing: restore or upload it first.</source>
+        <translation>Die Originaldatei fehlt: Stellen Sie sie zuerst wieder her oder laden Sie sie hoch.</translation>
+    </message>
+    <message>
+        <source>This kind of field has no image aliases.</source>
+        <translation>Diese Art von Feld hat keine Bildvarianten.</translation>
+    </message>
+    <message>
+        <source>No other version of this field still has its file.</source>
+        <translation>Keine andere Version dieses Feldes hat ihre Datei noch.</translation>
+    </message>
+    <message>
+        <source>Its file is not missing.</source>
+        <translation>Seine Datei fehlt nicht.</translation>
+    </message>
+    <message>
+        <source>No file was given, or the file to copy is gone.</source>
+        <translation>Es wurde keine Datei angegeben, oder die zu kopierende Datei ist verschwunden.</translation>
+    </message>
+    <message>
+        <source>The file must have the same extension as the expected path, and an image must be an image.</source>
+        <translation>Die Datei muss dieselbe Endung wie der erwartete Pfad haben, und ein Bild muss ein Bild sein.</translation>
+    </message>
+    <message>
+        <source>The file is too large.</source>
+        <translation>Die Datei ist zu groß.</translation>
+    </message>
+    <message>
+        <source>A file is at the expected path now; it was left alone.</source>
+        <translation>Am erwarteten Pfad liegt jetzt eine Datei; sie wurde nicht angetastet.</translation>
+    </message>
+    <message>
+        <source>The file could not be written to the storage.</source>
+        <translation>Die Datei konnte nicht in den Speicher geschrieben werden.</translation>
+    </message>
+    <message>
+        <source>It could not be done. The debug output says why.</source>
+        <translation>Es konnte nicht erledigt werden. Die Debug-Ausgabe nennt den Grund.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>

@@ -3,7 +3,9 @@
  * The contentcheck/brokenrelations view (doc/features/6.0/content-checks.md, "Broken relations"): visible,
  * published content below a node (contentcheck/brokenrelations/<node id>, the content tree's top node without one) that refers
  * to deleted, trashed, hidden or unpublished content, page by page. Read only. Needs the policy
- * contentcheck/brokenrelations; answers on administration siteaccesses only.
+ * contentcheck/brokenrelations; answers on administration siteaccesses only. With the target "Missing files"
+ * (Kind[]=missing_file) it also lists the content whose files are missing from the storage and the images with
+ * missing or stale aliases (expContentCheckFiles, doc "Missing files"), paged on their own (FileAfter).
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -57,9 +59,23 @@ class Brokenrelations extends \Exponential\Runnable\ModuleView
         // without a node: the content tree's top node, which a user with a limited content/read may read as well
         $params = \expContentCheckBrokenRelations::parameters( $input, Unreferenced::rootNodeID() );
 
-        $result = \expContentCheckBrokenRelations::scan( $params );
+        // the target "Missing files" (Kind[]=missing_file, expContentCheckFiles): the files of the content below the
+        // node that are not in the storage; ticked alone, no relation is checked
+        $files = method_exists( 'expContentCheckFiles', 'section' ) ? \expContentCheckFiles::target( isset( $input['Kind'] ) ? $input['Kind'] : array() )
+                                                                   : array( 'enabled' => false, 'only' => false );
+        if ( $files['only'] )
+            $params['kinds'] = array();
+
+        $result = $files['only'] ? \expContentCheckFiles::noBrokenRelations( $params['node_id'], $params['after'] ) : \expContentCheckBrokenRelations::scan( $params );
         if ( $result['error'] === 'not_found' )
             return $module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' );
+        $filterSuffix = self::querySuffix( $params );
+        $missingFiles = array( 'enabled' => false, 'only' => false, 'storage_dir' => method_exists( 'expContentCheckFiles', 'section' ) ? \eZSys::storageDirectory() : '' );
+        if ( $files['enabled'] )
+        {
+            $missingFiles = \expContentCheckFiles::section( $_GET, (int)$params['node_id'], $limit ) + $files;
+            $filterSuffix = \expContentCheckFiles::querySuffix( $filterSuffix, $params['kinds'], $missingFiles['params'] );
+        }
 
         $tpl = \eZTemplate::factory();
         $tpl->setVariable( 'result', $result );
@@ -70,7 +86,8 @@ class Brokenrelations extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'relations_shown', in_array( 'Relation', $none, true ) ? array() : $params['relations'] );
         $tpl->setVariable( 'relations', \expContentCheckBrokenRelations::RELATIONS );
         $tpl->setVariable( 'page_uri', '/contentcheck/brokenrelations/' . (int)$params['node_id'] );
-        $tpl->setVariable( 'filter_suffix', self::querySuffix( $params ) );
+        $tpl->setVariable( 'filter_suffix', $filterSuffix );
+        $tpl->setVariable( 'missing_files', $missingFiles );
         $tpl->setVariable( 'limit', $limit );
         $tpl->setVariable( 'limit_choices', $limitChoices );
         $tpl->setVariable( 'limit_preference', self::LIMIT_PREFERENCE );
