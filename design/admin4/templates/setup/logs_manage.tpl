@@ -14,6 +14,7 @@
 </div></div>
 
 <div class="box-bc"><div class="box-ml"><div class="box-content">
+{include uri='design:setup/logs_nav.tpl' log_nav_current='manage'}
 
 <p class="a4-meta">{'Rotate, empty, compress and prune the log files. Every action shows exactly what it will do before anything changes, and every step is recorded in the audit. The web server owns its logs: they are shown here but never changed.'|i18n( 'design/admin/setup/logs' )}</p>
 

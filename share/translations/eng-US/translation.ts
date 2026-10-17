@@ -70851,5 +70851,9 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Log tools</source>
         <translation>Log tools</translation>
     </message>
+    <message>
+        <source>Logs</source>
+        <translation>Logs</translation>
+    </message>
 </context>
 </TS>

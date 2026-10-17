@@ -20,6 +20,7 @@
 </div></div>
 
 <div class="box-bc"><div class="box-ml"><div class="box-content">
+{include uri='design:setup/logs_nav.tpl' log_nav_current='manage'}
 
 {if $log_plan.steps|count}
 <div class="a4-notice {if or( $log_op|eq( 'truncate' ), $log_op|eq( 'prune' ), $log_op|eq( 'prune_all' ) )}is-bad{else}is-warn{/if}" role="alert">

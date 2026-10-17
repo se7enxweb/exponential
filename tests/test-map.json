@@ -917,11 +917,13 @@
       "tests/tests/kernel/logviewer/expLogHealthTest.php"
     ],
     "design/*/templates/setup/logs*.tpl": [
+      "tests/tests/design/LogViewerNavTest.php",
       "tests/tests/design/LogViewerCopyMessagesTest.php",
       "tests/tests/kernel/logviewer/expLogWrapPreferenceTest.php",
       "tests/tests/design/AdminStylingRulesTest.php"
     ],
     "design/*/javascript/page/setup_logs*.js": [
+      "tests/tests/design/LogViewerNavTest.php",
       "tests/tests/design/LogViewerCopyMessagesTest.php",
       "tests/tests/kernel/logviewer/expLogWrapPreferenceTest.php",
       "tests/tests/design/AdminContentSecurityPolicyTest.php"

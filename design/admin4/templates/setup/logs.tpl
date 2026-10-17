@@ -75,14 +75,8 @@
 
 <p class="a4-intro">{'Follows a log file as it is written, searches it and its rotations, and links the lines of one request. Nothing on this page changes a file unless an action below says so.'|i18n( 'design/admin/setup/logs' )}</p>
 
-{* The other pages of the log viewer: managing the logs (setup/managelogs), their health and the error digest *}
-<nav aria-label="{'Log tools'|i18n( 'design/admin/setup/logs' )|wash}">
-<ul class="a4-setup-inline a4-setup-log-tools">
-    {if fetch( 'user', 'has_access_to', hash( 'module', 'setup', 'function', 'managelogs' ) )}<li><a href={'setup/logsmanage'|ezurl}>{'Manage logs'|i18n( 'design/admin/setup/logs' )}</a></li>{/if}
-    <li><a href={'setup/logshealth'|ezurl}>{'Log health'|i18n( 'design/admin/setup/logs' )}</a></li>
-    <li><a href={'setup/logsdigest'|ezurl}>{'Error digest'|i18n( 'design/admin/setup/logs' )}</a></li>
-</ul>
-</nav>
+{* The buttons of the log viewer's pages (setup/logs_nav.tpl) *}
+{include uri='design:setup/logs_nav.tpl' log_nav_current='logs'}
 
 {if $log_done|ne( '' )}
 <div class="a4-notice {if $log_done_ok}is-ok{else}is-bad{/if}" role="{if $log_done_ok}status{else}alert{/if}">

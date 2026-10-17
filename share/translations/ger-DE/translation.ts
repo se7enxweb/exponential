@@ -77791,5 +77791,9 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Log tools</source>
         <translation>Log-Werkzeuge</translation>
     </message>
+    <message>
+        <source>Logs</source>
+        <translation>Logs</translation>
+    </message>
 </context>
 </TS>

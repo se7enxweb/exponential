@@ -16,6 +16,7 @@
 </div></div>
 
 <div class="box-bc"><div class="box-ml"><div class="box-content">
+{include uri='design:setup/logs_nav.tpl' log_nav_current='health'}
 
 <p class="a4-meta">{'How much disk the logs use, which grow fastest, which are over their limit or cannot be written by the web server, the newest error of each, and the rotation settings in effect. Nothing on this page changes a file.'|i18n( 'design/admin/setup/logs' )}</p>
 
