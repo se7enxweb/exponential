@@ -201,7 +201,7 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
   ([styling rules, "Edit forms"](../../bc/6.0/admin4-styling.md#edit-forms)).
 - **Frame.** Side column margins are halved (a 16 px gap). The sidebar buttons sit on the window edges at 48% of the
   window height; they are named after their column ("Left column", "Right column"), say with `aria-expanded` whether
-  it shows, and on a narrow window Escape closes a column open over the page and returns the focus to its tab. Long names in the side columns wrap instead of being cut off.
+  it shows, and on a narrow window Escape closes a column open over the page and returns the focus to its tab. Below 1024px both tabs stay fixed on the window's edge while their column is open over the page, in the 24 px its card leaves there; on a touch screen they are 48 px high. The left column's width grip is not shown on a phone. Long names in the side columns wrap instead of being cut off.
   The User preferences block of the right column (Locations, Re-edit) shows "on" and "off" as tabs, like the node
   view's tabs: the current state in the accent tint with a bar under it (the pressed button of a POST form, `aria-pressed`), the other one quiet
   ([styling rules, "Legacy controls and the side columns"](../../bc/6.0/admin4-styling.md#legacy-controls-and-the-side-columns)).

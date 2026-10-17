@@ -173,10 +173,51 @@ class AdminResponsiveTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'var(--a4-space-5)', $rules['.a4-node-langs .a4-lang']['min-height'] );
     }
 
-    public function testTheLeftDrawerKeepsItsTabAtItsEdge()
+    /**
+     * The left drawer's tab stands where the right one does: fixed on the window's edge, open or closed, in the 24px
+     * the card leaves there. It moved with the drawer's width before, which on a phone put it (and the width grip)
+     * in the middle of the screen over the page, and right to left off the screen.
+     */
+    public function testTheLeftDrawersTabStaysOnTheWindowsEdge()
     {
-        $drawer = AdminBaseStylesheetsTest::rules( self::media( self::css( 'admin4.css' ), 'screen and (max-width: 1023.98px)' ) );
-        $this->assertStringStartsWith( 'min(var(--left-sidebar-width', $drawer['body:has(#leftmenu.sidebar.show) .sidebar-control.left']['translate'] );
+        $css = self::css( 'admin4.css' );
+        // nothing moves a tab, at any width and whether its column is open or not: no translate or transform, and
+        // an inset only of 0 (pagelayout.css sets inset-inline-start/end: 0 from 1024px)
+        foreach ( array( 'admin4.css', 'pagelayout.css' ) as $file )
+        {
+            foreach ( AdminBaseStylesheetsTest::rules( self::css( $file ) ) as $selector => $declarations )
+            {
+                if ( !preg_match( '#\.sidebar-control(?![-\w])#', $selector ) || strpos( $selector, '.a4-icon' ) !== false )
+                {
+                    continue;
+                }
+                foreach ( $declarations as $property => $value )
+                {
+                    $this->assertNotContains( $property, array( 'translate', 'transform', 'left', 'right' ), "$file: $selector" );
+                    if ( strpos( $property, 'inset' ) === 0 )
+                    {
+                        $this->assertSame( '0', $value, "$file: $selector" );
+                    }
+                }
+            }
+        }
+        // the tabs' row is fixed on the window from edge to edge (logical insets: right to left as well)
+        $rules = AdminBaseStylesheetsTest::rules( $css );
+        $this->assertSame( 'fixed', $rules['.sidebar-controls']['position'] );
+        $this->assertSame( '0', $rules['.sidebar-controls']['inset-inline-start'] );
+        $this->assertSame( '0', $rules['.sidebar-controls']['inset-inline-end'] );
+        // the tab fits the card's margin at the window's edge: 24px wide, 24px left by the card on both sides
+        $this->assertSame( '1.5rem', $rules['.sidebar-control']['width'] );
+        $this->assertStringEndsWith( ' var(--a4-space-5)', $rules['.sidebar > div, .sidebar.left > div']['margin'], 'left card: 24px at the window\'s edge' );
+        $this->assertStringStartsWith( 'var(--a4-gutter) var(--a4-space-5) ', $rules['.sidebar.right > div']['margin'], 'right card: 24px at the window\'s edge' );
+        // a drawer leaves 48px of the page at any saved width; a phone has no width grip
+        $drawer = AdminBaseStylesheetsTest::rules( self::media( $css, 'screen and (max-width: 1023.98px)' ) );
+        $this->assertSame( 'calc(100vw - var(--a4-space-7))', $drawer['.sidebar.left']['max-width'] );
+        $phone = AdminBaseStylesheetsTest::rules( self::media( $css, 'screen and (max-width: 575.98px)' ) );
+        $this->assertSame( 'none', $phone['.leftmenu-resize-handle']['display'] );
+        // a touch screen: 48px high tabs
+        $coarse = AdminBaseStylesheetsTest::rules( self::media( $css, '(pointer: coarse)' ) );
+        $this->assertSame( 'var(--a4-space-7)', $coarse['.sidebar-control']['height'] );
     }
 
     public function testSearchResultsShowTypeAndPathOnAPhone()

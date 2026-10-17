@@ -3305,11 +3305,20 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
   .sidebar.right.show #rightmenu-design { box-shadow: 0 0 0 1px var(--a4-card-edge), var(--a4-shadow-m); }
 }
 
-/* An open left drawer (below 1024px) keeps its tab at its right edge instead of over the tree */
+/* The left drawer (below 1024px) as the right one: its tab stays fixed on the window's edge, open or closed, in the
+   24px the card leaves there (.sidebar.left > div), so it neither covers the tree nor moves with the column's width.
+   Until 2026-10 the open drawer moved its tab to its far edge: by the width dragged on a wide window, which put it
+   in the middle of a phone's screen over the page (and, right to left, off the screen). The drawer leaves 48px of
+   the page visible at any saved width, and on a phone it has no width grip: dragging there moved the page. */
 @media screen and (max-width: 1023.98px) {
-  body:has(#leftmenu.sidebar.show) .sidebar-control.left {
-    translate: min(var(--left-sidebar-width, 16rem), calc(100vw - var(--a4-space-7))) 0;
-  }
+  .sidebar.left { max-width: calc(100vw - var(--a4-space-7)); }
+}
+@media screen and (max-width: 575.98px) {
+  .leftmenu-resize-handle { display: none; }
+}
+/* A touch screen: both tabs 48px high, a comfortable target where only 24px of the width is free */
+@media (pointer: coarse) {
+  .sidebar-control { height: var(--a4-space-7); }
 }
 
 /* A very wide window: the content column stops growing, so a page's actions stay near what they act on */

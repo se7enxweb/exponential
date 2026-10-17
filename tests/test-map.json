@@ -547,7 +547,8 @@
     "design/admin4/stylesheets/pagelayout.css": [
       "tests/tests/design/AdminHeaderTest.php",
       "tests/tests/design/AdminVisibilityStatusTest.php",
-      "tests/tests/design/AdminLeftColumnFontTest.php"
+      "tests/tests/design/AdminLeftColumnFontTest.php",
+      "tests/tests/design/AdminResponsiveTest.php"
     ],
     "extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe_engine_switch.tpl": [
       "tests/tests/extension/ezoe/expOEEngineConfigTest.php",
