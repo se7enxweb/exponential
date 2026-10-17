@@ -194,7 +194,9 @@ class View extends \Exponential\Runnable\ModuleView
                         }
                     }
 
-                    \eZDebug::writeWarning($accessMessage, "Insufficient permissions", "kernel/error/view.php");
+                    // Which policy was missing, for whoever debugs the role: the refusal itself is the designed answer
+                    // (a 403/401 notice above), so the detail is debug output, not a warning
+                    \eZDebug::writeDebug( $accessMessage, "Insufficient permissions" );
                 }
 
             }
