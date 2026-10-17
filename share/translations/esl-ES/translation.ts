@@ -63105,6 +63105,38 @@ Tendrás que cambiar la clase del nudo mediante la función de intercambio.</tra
         <source>Resolve</source>
         <translation>Resolver</translation>
     </message>
+    <message>
+        <source>Websites</source>
+        <translation>Sitios web</translation>
+    </message>
+    <message>
+        <source>Media</source>
+        <translation>Multimedia</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Usuarios</translation>
+    </message>
+    <message>
+        <source>Design</source>
+        <translation>Diseño</translation>
+    </message>
+    <message>
+        <source>Sites and sections</source>
+        <translation>Sitios y secciones</translation>
+    </message>
+    <message>
+        <source>(contains the start location)</source>
+        <translation>(contiene la ubicación de inicio)</translation>
+    </message>
+    <message>
+        <source>More…</source>
+        <translation>Más…</translation>
+    </message>
+    <message>
+        <source>Choose another site or section with the node picker</source>
+        <translation>Elegir otro sitio o sección con el selector de nudos</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>

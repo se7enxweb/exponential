@@ -150,6 +150,8 @@ function  ezjslib_createHTMLChildImageNode( node, imageSource, imageWidth, image
     if ( node != null )
     {
         var imageNode = document.createElement( 'img' );
+        // Decorative: the link or label around it carries the name (the fold icons of the tree menus).
+        imageNode.alt = '';
         imageNode.src = imageSource;
         if ( imageWidth )
             imageNode.width = imageWidth;
