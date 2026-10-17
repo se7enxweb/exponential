@@ -278,7 +278,7 @@ ac084a07607e6d6c5a845da15423854f  design/admin/images/view-fullscreen.png
 a5e25bc5b912c88678afe25d798ade81  design/admin/javascript/expajaxuploader.js
 59795cfe15e8bc99974d7d9099794478  design/admin/javascript/ezajaxrelations_jquery.js
 a493b6364081fa243022e877e7d0c10d  design/admin/javascript/ezajaxsubitems_expdatatable.js
-415a9e1414e032778c6d8bbd1f575633  design/admin/javascript/leftmenu_widthcontrol.js
+0008a7955d1f67c5efd0f08fe978f284  design/admin/javascript/leftmenu_widthcontrol.js
 d5da958d6db22f93e9b4cffa6342bef5  design/admin/javascript/node_tabs.js
 b947add2bd87d74ad1fbe2a531210691  design/admin/javascript/popupmenu/ezpopupmenu.js
 54cb1a1df10aa18ea280c08a9d97a328  design/admin/override/templates/admin_preview/article.tpl
@@ -321,7 +321,7 @@ c7fa6d94bb886bb5bcddbbddd4373519  design/admin/stylesheets/modules/setup.css
 40e6fed92366bdd7fce5f4320b9f8d73  design/admin/stylesheets/modules/structure.css
 3b1873b1ae4d1c3ffaa636931d9662ed  design/admin/stylesheets/modules/workflow.css
 6c50ca081feaacea35d0ba88f81f92a0  design/admin/stylesheets/packagecompare.css
-2189a4b23bb872ad6d521d1192019f1b  design/admin/stylesheets/pagelayout.css
+80aa4fbe72a9a1957ca9282a392afaff  design/admin/stylesheets/pagelayout.css
 2d02f74460d590ebf57e8230963c891e  design/admin/stylesheets/theme/admin_datatable.css
 80e40d820b12263064128a75be2de07b  design/admin/stylesheets/theme/modalwindow.css
 017f424deeeb46501db6bcf63990e746  design/admin/stylesheets/theme/rounded.css
@@ -479,7 +479,7 @@ c4d695a653871ae2539df1bcce84cbb3  design/admin/templates/infocollector/confirmre
 2e7c4746b1a5f12c8facf95bb436f8ee  design/admin/templates/infocollector/overview.tpl
 de4e5cdee8dfb17cd7debdcb194f465f  design/admin/templates/infocollector/view.tpl
 cfe18e7f48fc2a5e2adcba1f3b1d663b  design/admin/templates/locations.tpl
-3bc7a20a23df69aa35a6dc70f65bfae5  design/admin/templates/loginpagelayout.tpl
+ed899da377e29138ee11185cef8242b4  design/admin/templates/loginpagelayout.tpl
 d46cea2b63c572909d3227810bf252d6  design/admin/templates/mailpreferences/parts/page_end.tpl
 276fa802173b742af3564b477942c4af  design/admin/templates/mailpreferences/parts/page_start.tpl
 e6a3c2f8012b44d7d40ee02614debd4b  design/admin/templates/navigator/alphabetical.tpl
@@ -557,7 +557,7 @@ ee59e11711f04b511967f5335e53cdb9  design/admin/templates/page_header.tpl
 3ceb59d3584d417fdb51fe11e73f2729  design/admin/templates/page_topmenu.tpl
 7595633233e131b1b54c3d3e493c4568  design/admin/templates/page_topmenuitem.tpl
 def1e69baea2cb9d93a8d1af2bf5f692  design/admin/templates/page_toppath.tpl
-ec174b556f37cedf0edcee4835be649b  design/admin/templates/pagelayout.tpl
+4a47b992649aacbbec8e550b054df1a4  design/admin/templates/pagelayout.tpl
 2891f454853f3b2f2cac2a94173e257a  design/admin/templates/parts/audit/menu.tpl
 6f4962eafc7286ab584e17db8f6c7b00  design/admin/templates/parts/content/menu.tpl
 1c7130630aa151812d6042bc8d5e0afd  design/admin/templates/parts/ini_menu.tpl
@@ -3068,7 +3068,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-555dec232902acf7a3d86ed72b7497f6  doc/changelogs/6.0/6.0.15.md
+612b33007c14da0e6fbedcfca6fcaabf  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -7507,6 +7507,7 @@ a998bae7f6c7a83dd1eb0f05afc6a6ef  tests/tests/design/AdminTopNodeNameTest.php
 15e49ddad018f337900b8c06c5486efb  tests/tests/design/AdminTreeMenuEscapingTest.php
 3e871accb7d56ac483c1150496cb8d3c  tests/tests/design/AdminTreeViewTest.php
 b1c86fb42e09b8aa8c9834d62706a3b4  tests/tests/design/AdminVisibilityStatusTest.php
+72b8688d77884e0a8d3b705c186a7191  tests/tests/design/ClassicAdminNarrowWindowTest.php
 a160ae3b2d682c5f063abf5546023024  tests/tests/design/FormSubmitButtonDisableTest.php
 ea2584f9208c35d5087694b08ebd88aa  tests/tests/design/js/editor_skin.js
 b7cffb5712803f903d80c45a0cd3f90d  tests/tests/design/js/language_states.js
