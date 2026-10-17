@@ -112,7 +112,7 @@ checks what a web server recorded reads the site's audit directory, `expAuditCon
 
 `.github/workflows/quality.yml` runs on every push and pull request to `main`: PHP syntax of the changed files with
 PHP 8.3, JavaScript syntax of the changed scripts (`node --check` with Node.js 22, which reads an ES module in a
-`.js` file), the manifest, the commit messages of the pushed or proposed commits, PHPStan and the tests of the own sniffs
+`.js` file), the manifest, the commit messages of the pushed or proposed commits (a contributor's commit only warns), PHPStan and the tests of the own sniffs
 (their own job, on PHP 8.4) block; the code style of the changed files, including type declarations and PHP 8.0
 compatibility, is reported as a warning.
 
@@ -149,8 +149,14 @@ them depend on the branch, not on the code:
   result, e.g. `Updated: The file manifest carries the checksums of ...`. The check stays blocking for pull
   requests: a branch merged with a stale line puts that line on `main`, where every site's upgrade check lists the
   file as modified.
-- **The commit messages.** Every commit of the branch starts with `Added: `, `Updated: `, `Fixed: `, `Removed: `
-  or `Renamed: `. A merge commit is not checked. Reword a commit with `git rebase -i` before the merge.
+- **The commit messages.** `.githooks/check-commit-range <base> <head>` checks every commit of the push or the pull
+  request; CI and the local gates run the same script. A commit by a project author (an address listed in
+  `.githooks/commit-msg-authors`) starts with `Added: `, `Updated: `, `Fixed: `, `Removed: ` or `Renamed: `, or the
+  check fails; reword it with `git rebase -i` before the merge. A commit by anyone else is a contributor's commit:
+  every pull request is merged and its commits are kept as written, so a subject such as `Changed: ...` or
+  `Fix typo` is a warning annotation, never a failure, on the pull request and later on `main`. A merge commit is
+  not checked. `EXP_COMMIT_MSG_STRICT_ALL=1` makes every author strict, for a contributor who wants the project's
+  check on their own branch.
 
 When `main` changed `share/filelist.md5` since the branch started, merge `main` into the branch and run
 `make manifest-fix` again rather than resolving the conflict by hand.
@@ -167,9 +173,7 @@ The blocking checks of the Quality workflow look at the commits of the push, so 
 ```sh
 git diff --name-only --diff-filter=AM origin/main..HEAD -- '*.php' | xargs -r -n1 php -l   # syntax of changed files
 php bin/php/checkmanifest.php --all                                                        # the file manifest
-for c in $(git rev-list --no-merges origin/main..HEAD); do
-    git log -1 --format=%B "$c" | sh .githooks/commit-msg /dev/stdin || echo "$c"
-done                                                                                       # the commit messages
+sh .githooks/check-commit-range origin/main HEAD                                           # the commit messages
 make phpstan                                                                               # needs make devtools
 ```
 

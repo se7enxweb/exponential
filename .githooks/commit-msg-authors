@@ -1,0 +1,5 @@
+# The authors whose commits must start with Added:, Updated:, Fixed:, Removed: or Renamed:
+# (.githooks/check-commit-range, CI step "Commit messages"). One e-mail address per line.
+# A commit by any other author is a contributor's commit: it is kept as written, and a
+# subject outside these prefixes is a warning, never a failure.
+info@se7enx.com

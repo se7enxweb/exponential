@@ -1,0 +1,70 @@
+#!/bin/sh
+# Checks the commit messages of a range of commits, the way CI does it (Quality workflow,
+# step "Commit messages") and the local gates before a push.
+#
+#   sh .githooks/check-commit-range [--github] <base> <head>
+#
+# Every non-merge commit of <base>..<head> is checked with .githooks/commit-msg.
+#
+# The policy (doc/features/6.0/quality-checks.md, "The commit messages"):
+# - A commit by a project author (an e-mail address listed in .githooks/commit-msg-authors)
+#   must start with Added:, Updated:, Fixed:, Removed: or Renamed:. A bad subject fails.
+# - A commit by anyone else, a contributor whose pull request was merged, is kept as written:
+#   every pull request is merged and its commits are never rewritten, so a subject such as
+#   "Changed: ..." or "Fix ..." is reported as a warning and never fails the check.
+# - EXP_COMMIT_MSG_STRICT_ALL=1 makes every author strict (for a contributor who wants to
+#   check their own branch the way the project checks its own commits).
+#
+# --github prints the findings as GitHub annotations (::error:: and ::warning::).
+# Exits 1 when a project commit has a bad subject, else 0.
+
+github=0
+if [ "$1" = "--github" ]; then
+    github=1
+    shift
+fi
+if [ $# -ne 2 ]; then
+    echo "usage: sh .githooks/check-commit-range [--github] <base> <head>" >&2
+    exit 2
+fi
+base=$1
+head=$2
+
+dir=$(dirname "$0")
+authors="$dir/commit-msg-authors"
+tmp=$(mktemp "${TMPDIR:-/tmp}/commit-msg.XXXXXX") || exit 2
+trap 'rm -f "$tmp"' EXIT INT TERM
+
+is_project_author() {
+    [ "${EXP_COMMIT_MSG_STRICT_ALL:-0}" = 1 ] && return 0
+    [ -f "$authors" ] || return 1
+    # one address per line; blank lines and # comments are ignored; case-insensitive
+    grep -v '^[[:space:]]*#' "$authors" | tr -d ' \t\r' | grep -qixF -- "$1"
+}
+
+commits=$(git rev-list --no-merges "$base..$head") || exit 2
+n=0; errors=0; warnings=0
+for commit in $commits; do
+    n=$((n + 1))
+    git log -1 --format=%B "$commit" > "$tmp"
+    sh "$dir/commit-msg" "$tmp" > /dev/null && continue
+    line=$(git log -1 --format='%h %s' "$commit")
+    email=$(git log -1 --format='%ae' "$commit")
+    if is_project_author "$email"; then
+        errors=$((errors + 1))
+        if [ $github = 1 ]; then
+            echo "::error::Commit $line does not start with Added:, Updated:, Fixed:, Removed: or Renamed:"
+        else
+            echo "   bad subject: $line"
+        fi
+    else
+        warnings=$((warnings + 1))
+        if [ $github = 1 ]; then
+            echo "::warning::Contributor commit $line does not use the project prefixes; it is kept as written"
+        else
+            echo "   contributor subject kept as written (warning): $line"
+        fi
+    fi
+done
+echo "commit messages: $n commit(s), $errors error(s), $warnings contributor warning(s)"
+[ $errors = 0 ]

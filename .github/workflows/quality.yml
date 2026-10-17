@@ -116,17 +116,12 @@ jobs:
           } >> "$GITHUB_STEP_SUMMARY"
           exit 1
 
+      # A commit by a project author (.githooks/commit-msg-authors) must start with Added:, Updated:,
+      # Fixed:, Removed: or Renamed:. A contributor's commit is merged and kept as written, so its
+      # subject is only a warning: a merged pull request never turns main red (quality-checks.md).
+      # The local gates run the same script.
       - name: Commit messages
-        run: |
-          status=0
-          for commit in $(git rev-list --no-merges ${{ steps.range.outputs.base }}..${{ steps.range.outputs.head }}); do
-            git log -1 --format=%B "$commit" > "$RUNNER_TEMP/message"
-            if ! sh .githooks/commit-msg "$RUNNER_TEMP/message" >/dev/null; then
-              echo "::error::Commit $(git log -1 --format='%h %s' "$commit") does not start with Added:, Updated:, Fixed:, Removed: or Renamed:"
-              status=1
-            fi
-          done
-          exit $status
+        run: TMPDIR="$RUNNER_TEMP" sh .githooks/check-commit-range --github ${{ steps.range.outputs.base }} ${{ steps.range.outputs.head }}
 
       - name: Cache development tools
         uses: actions/cache@v4
