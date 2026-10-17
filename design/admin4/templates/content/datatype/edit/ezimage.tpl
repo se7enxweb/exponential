@@ -27,6 +27,7 @@
 {/if}
 
 {if $attribute_content.original.is_valid}
+{include uri='design:content/datatype/edit/ezimage_editor.tpl'}
 <input class="button" type="submit" name="CustomActionButton[{$attribute.id}_delete_image]" value="{'Remove image'|i18n( 'design/standard/content/datatype' )}" />
 {else}
 <input class="button-disabled" type="submit" name="CustomActionButton[{$attribute.id}_delete_image]" value="{'Remove image'|i18n( 'design/standard/content/datatype' )}" disabled="disabled" />
