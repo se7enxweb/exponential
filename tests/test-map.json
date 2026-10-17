@@ -209,7 +209,8 @@
       "tests/tests/design/AdminRetiredClassesTest.php",
       "tests/tests/design/AdminSelfContainedTest.php",
       "tests/tests/design/AdminMegaMenuTest.php",
-      "tests/tests/design/AdminLanguageStatesTest.php"
+      "tests/tests/design/AdminLanguageStatesTest.php",
+      "tests/tests/design/AdminContentSecurityPolicyTest.php"
     ],
     "design/admin*/stylesheets/*": [
       "tests/tests/design/AdminStylingRulesTest.php",
@@ -398,7 +399,8 @@
     ],
     "design/admin4/javascript/*": [
       "tests/tests/design/AdminKeyboardTest.php",
-      "tests/tests/design/AdminTreeViewTest.php"
+      "tests/tests/design/AdminTreeViewTest.php",
+      "tests/tests/design/AdminContentSecurityPolicyTest.php"
     ],
     "design/admin/javascript/contentstructuremenu_dynamic.js": [
       "tests/tests/design/AdminTreeViewTest.php",
@@ -513,7 +515,8 @@
       "tests/tests/design/AdminFirstPaintColumnsTest.php"
     ],
     "extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe_tinymce8.tpl": [
-      "tests/tests/design/AdminEditBarTest.php"
+      "tests/tests/design/AdminEditBarTest.php",
+      "tests/tests/design/AdminContentSecurityPolicyTest.php"
     ],
     "extension/ezjscore/classes/ezjscpacker.php": [
       "tests/tests/extension/ezjscore/ezjscPackerNoVersionQueryTest.php"
@@ -973,7 +976,8 @@
     "settings/uiswitch.ini": [
       "tests/tests/kernel/classes/uiswitch/expUISwitchTest.php",
       "tests/tests/kernel/classes/uiswitch/expUISwitchDesignProviderTest.php",
-      "tests/tests/kernel/classes/uiswitch/expUISwitchLanguageProviderTest.php"
+      "tests/tests/kernel/classes/uiswitch/expUISwitchLanguageProviderTest.php",
+      "tests/tests/design/AdminContentSecurityPolicyTest.php"
     ],
     "lib/eztemplate/classes/eztemplatecompiler.php": [
       "tests/tests/kernel/classes/uiswitch/expUISwitchTest.php"
@@ -1158,6 +1162,38 @@
     ],
     "design/admin4/templates/content/datatype/edit/ezobjectrelation_ajax_search.tpl": [
       "tests/tests/design/AdminScriptFailureTextsTest.php"
+    ],
+    "design/admin4l/templates/*": [
+      "tests/tests/design/AdminContentSecurityPolicyTest.php"
+    ],
+    "design/standard/templates/*": [
+      "tests/tests/design/AdminContentSecurityPolicyTest.php"
+    ],
+    "extension/ezoe/design/standard/javascript/tinymce8_ez/ezoe8_start.js": [
+      "tests/tests/design/AdminContentSecurityPolicyTest.php",
+      "tests/tests/design/AdminEditBarTest.php"
+    ],
+    "extension/*/design/*": [
+      "tests/tests/design/AdminContentSecurityPolicyTest.php"
+    ],
+    "kernel/private/modules/oauth/authorize.php": [
+      "tests/tests/kernel/private/oauth/ezpOauthAuthorizeRedirectTest.php"
+    ],
+    "extension/ezjscore/classes/ezjscserverfunctionspublishingqueue.php": [
+      "tests/tests/extension/ezjscore/ezjscServerFunctionsPublishingQueueStatusTest.php"
+    ],
+    "design/standard/javascript/ezasynchronouspublishing.js": [
+      "tests/tests/design/AsynchronousPublishingLinkTest.php"
+    ],
+    "extension/ezoe/modules/ezoe/module.php": [
+      "tests/tests/extension/ezoe/expOEAtdRemovedTest.php"
+    ],
+    "extension/ezoe/settings/ezoe.ini": [
+      "tests/tests/extension/ezoe/expOEAtdRemovedTest.php",
+      "tests/tests/extension/ezoe/expOEUploadExecutableTest.php"
+    ],
+    "extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe.tpl": [
+      "tests/tests/extension/ezoe/expOEAtdRemovedTest.php"
     ]
   },
   "generated": {
@@ -1279,7 +1315,8 @@
       "tests/tests/kernel/private/expAdminViewsDebugCleanTest.php"
     ],
     "design/admin4/templates/loginpagelayout.tpl": [
-      "tests/tests/design/AdminEnvironmentBadgeTest.php"
+      "tests/tests/design/AdminEnvironmentBadgeTest.php",
+      "tests/tests/design/AdminContentSecurityPolicyTest.php"
     ],
     "design/admin4/templates/node/view/a4_full_body.tpl": [
       "tests/tests/kernel/content/eZAdminFullViewCopyButtonTest.php",
@@ -1294,7 +1331,8 @@
     ],
     "design/admin4/templates/pagelayout.tpl": [
       "tests/tests/design/AdminEnvironmentBadgeTest.php",
-      "tests/tests/design/AdminSiteAccessMenuTest.php"
+      "tests/tests/design/AdminSiteAccessMenuTest.php",
+      "tests/tests/design/AdminContentSecurityPolicyTest.php"
     ],
     "design/admin4/templates/parts/a4_environment_badge.tpl": [
       "tests/tests/design/AdminEnvironmentBadgeTest.php"
@@ -1389,14 +1427,16 @@
     ],
     "extension/ezoe/classes/runnable/views/ezoe/relations.php": [
       "tests/tests/extension/ezoe/expOEContentTypeAndLoadTest.php",
-      "tests/tests/extension/ezoe/expOERelationsEmbedIdTest.php"
+      "tests/tests/extension/ezoe/expOERelationsEmbedIdTest.php",
+      "tests/tests/extension/ezoe/expOEEmbedViewTest.php"
     ],
     "extension/ezoe/classes/runnable/views/ezoe/spellcheck_rpc.php": [
       "tests/tests/extension/ezoe/ezoeSpellcheckRpcRawInputTest.php",
       "tests/tests/extension/ezoe/ezoeSpellcheckRpcRequestParamTest.php"
     ],
     "extension/ezoe/classes/runnable/views/ezoe/tags.php": [
-      "tests/tests/extension/ezoe/expOECustomTagListTest.php"
+      "tests/tests/extension/ezoe/expOECustomTagListTest.php",
+      "tests/tests/extension/ezoe/expOECustomTagNameTest.php"
     ],
     "extension/ezoe/classes/runnable/views/ezoe/upload.php": [
       "tests/tests/extension/ezoe/expOEDialogAccessRulesTest.php",
@@ -1610,7 +1650,8 @@
       "tests/tests/kernel/classes/setup/ExtensionChangePlanTest.php"
     ],
     "kernel/private/classes/ezpkernelweb.php": [
-      "tests/tests/lib/ezsession/eZSessionResponseCookieTest.php"
+      "tests/tests/lib/ezsession/eZSessionResponseCookieTest.php",
+      "tests/tests/kernel/private/classes/expContentSecurityPolicyTest.php"
     ],
     "kernel/private/classes/ezscriptclusterpurge.php": [
       "tests/tests/kernel/classes/runnable/ClusterPurgeCronjobExpiryTest.php"
@@ -1906,7 +1947,8 @@
       "tests/tests/lib/ezdb/eZSQLite3TransactionWaitTest.php",
       "tests/tests/lib/ezfile/eZLogMaxSizeTest.php",
       "tests/tests/lib/ezutils/eZINIEnvironmentTest.php",
-      "tests/tests/design/AdminSiteAccessMenuTest.php"
+      "tests/tests/design/AdminSiteAccessMenuTest.php",
+      "tests/tests/kernel/private/classes/expContentSecurityPolicyTest.php"
     ],
     "settings/subitems.ini": [
       "tests/tests/kernel/classes/subitems/expSubitemsColumnRegistryTest.php"
@@ -1993,6 +2035,60 @@
     ],
     "design/admin4l/templates/explayouts/block/admin_theme_switch.tpl": [
       "tests/tests/design/AdminSiteAccessMenuTest.php"
+    ],
+    "design/admin/javascript/contentstructuremenu_dynamic.js": [
+      "tests/tests/design/AdminContentSecurityPolicyTest.php"
+    ],
+    "design/admin/javascript/popupmenu/ezpopupmenu.js": [
+      "tests/tests/design/AdminContentSecurityPolicyTest.php"
+    ],
+    "design/admin4/javascript/a4_actions.js": [
+      "tests/tests/design/AdminContentSecurityPolicyTest.php"
+    ],
+    "design/admin4/javascript/a4_head.js": [
+      "tests/tests/design/AdminContentSecurityPolicyTest.php"
+    ],
+    "design/admin4/javascript/contentstructuremenu_dynamic.js": [
+      "tests/tests/design/AdminContentSecurityPolicyTest.php"
+    ],
+    "design/admin4/javascript/popupmenu/ezpopupmenu.js": [
+      "tests/tests/design/AdminContentSecurityPolicyTest.php"
+    ],
+    "design/admin4/templates/page_head_script.tpl": [
+      "tests/tests/design/AdminContentSecurityPolicyTest.php"
+    ],
+    "design/admin4/templates/page_head_style.tpl": [
+      "tests/tests/design/AdminContentSecurityPolicyTest.php"
+    ],
+    "design/standard/javascript/contentstructuremenu/contentstructuremenu.js": [
+      "tests/tests/design/AdminContentSecurityPolicyTest.php"
+    ],
+    "design/standard/javascript/lib/ezjslibimagepreloader.js": [
+      "tests/tests/design/AdminContentSecurityPolicyTest.php"
+    ],
+    "design/standard/javascript/tools/ezjsselection.js": [
+      "tests/tests/design/AdminContentSecurityPolicyTest.php"
+    ],
+    "extension/ezjscore/classes/ezjscpacker.php": [
+      "tests/tests/extension/ezjscore/ezjscPackerGeneratedContentTest.php"
+    ],
+    "kernel/private/classes/expcontentsecuritypolicy.php": [
+      "tests/tests/kernel/private/classes/expContentSecurityPolicyTest.php"
+    ],
+    "kernel/private/classes/views/package/compare.php": [
+      "tests/tests/kernel/private/views/PackageViewRedirectTest.php"
+    ],
+    "kernel/private/classes/views/package/list.php": [
+      "tests/tests/kernel/private/views/PackageViewRedirectTest.php"
+    ],
+    "kernel/private/classes/views/package/view.php": [
+      "tests/tests/kernel/private/views/PackageViewRedirectTest.php"
+    ],
+    "extension/ezoe/design/standard/templates/ezoe/tag_custom.tpl": [
+      "tests/tests/extension/ezoe/expOECustomTagNameTest.php"
+    ],
+    "extension/ezoe/classes/runnable/views/ezoe/embed_view.php": [
+      "tests/tests/extension/ezoe/expOEEmbedViewTest.php"
     ]
   }
 }

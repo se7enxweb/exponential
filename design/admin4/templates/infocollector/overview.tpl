@@ -206,16 +206,5 @@
 
 </form>
 
-{literal}
-<script>
-(function () {
-    var list = document.getElementById('info-list'), all = document.getElementById('info-select-all');
-    if (!list || !all) return;
-    var boxes = function () { return Array.prototype.slice.call(list.querySelectorAll('input[name="ObjectIDArray[]"]')); };
-    all.parentNode.hidden = false;
-    all.addEventListener('change', function () { boxes().forEach(function (b) { b.checked = all.checked; }); });
-    list.addEventListener('change', function () { var b = boxes(); all.checked = b.length > 0 && b.every(function (x) { return x.checked; }); });
-})();
-</script>
-{/literal}
+{ezscript( array( 'page/infocollector_overview.js' ) )}
 {undef $summary $search $sort $order $feedback $can_filter $recent_days $candidates $candidate_count}

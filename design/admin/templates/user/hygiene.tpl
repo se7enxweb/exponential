@@ -254,24 +254,8 @@
 </div>
 </form>
 
-<script type="text/javascript">
-var expHygieneText = {ldelim} selected: '{'%count selected.'|i18n( 'design/admin/user/hygiene' )|wash( javascript )}' {rdelim};
-{literal}
-(function () {
-    var table = document.getElementById( 'hygiene-list' ), all = document.getElementById( 'hygiene-select-all' ), out = document.getElementById( 'hygiene-selected-count' );
-    if ( !table ) return;
-    function boxes() { return table.querySelectorAll( 'input[name="UserIDArray[]"]' ); }
-    function update() {
-        var b = boxes(), n = 0, i;
-        for ( i = 0; i < b.length; i++ ) if ( b[i].checked ) n++;
-        if ( out ) out.textContent = n ? expHygieneText.selected.split( '%count' ).join( n ) : '';
-        if ( all ) { all.checked = n > 0 && n === b.length; all.indeterminate = n > 0 && n < b.length; }
-    }
-    if ( all ) { all.hidden = false; all.addEventListener( 'change', function () { var b = boxes(), i; for ( i = 0; i < b.length; i++ ) b[i].checked = all.checked; update(); } ); }
-    table.addEventListener( 'change', update );
-})();
-{/literal}
-</script>
+<div id="user-hygiene-data" hidden data-hygiene-text-selected="{'%count selected.'|i18n( 'design/admin/user/hygiene' )|wash}"></div>
+{ezscript( array( 'page/user_hygiene.js' ) )}
 {/if}
 
 </div></div></div>

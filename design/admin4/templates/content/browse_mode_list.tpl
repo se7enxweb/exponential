@@ -11,7 +11,7 @@
 <tr>
     <th scope="col" class="tight">
     {if eq( $select_type, 'checkbox' )}
-        <button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/content/browse' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/content/browse' )|wash}" onclick="ezjs_toggleCheckboxes( document.browse, '{$select_name}[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button>
+        <button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/content/browse' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/content/browse' )|wash}" data-a4-toggle-checkboxes="{$select_name|wash}[]" data-a4-form="browse"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button>
     {else}
         &nbsp;
     {/if}

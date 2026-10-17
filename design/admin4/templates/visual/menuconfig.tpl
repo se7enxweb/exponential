@@ -387,36 +387,7 @@
 
     <div class="a4-notice is-info"><p><strong>{'With Exponential Layouts:'|i18n( 'design/admin/visual/menuconfig' )}</strong> {'a siteaccess that renders through Layouts draws its menus with blocks in a layout zone, so none of these templates apply there. Classic and Layouts siteaccesses can live side by side in one installation, each with its own design.'|i18n( 'design/admin/visual/menuconfig' )}{if first_set( $menu_layouts_url, false() )} <a href={$menu_layouts_url|ezurl}>{'Open the layout editor'|i18n( 'design/admin/visual/menuconfig' )}</a>{/if}</p></div>
 </section>
-{literal}
-<script>
-(function () {
-    var buttons = document.querySelectorAll('.a4-visual .a4-visual-copy');
-    Array.prototype.forEach.call(buttons, function (button) {
-        var target = document.getElementById(button.getAttribute('data-copy'));
-        if (!target) { return; }
-        button.hidden = false;
-        var label = button.textContent;
-        button.addEventListener('click', function () {
-            var text = target.textContent;
-            var done = function () {
-                button.textContent = label + ' ✓'; setTimeout(function () { button.textContent = label; }, 1500);
-                // the tick is only seen; the toast also tells a screen reader
-                if (window.a4Toast) window.a4Toast(button.getAttribute('data-copied'), 'ok', button);
-            };
-            // a copy that failed says so instead of doing nothing
-            var failed = function () { if (window.a4Toast) window.a4Toast(button.getAttribute('data-copy-failed'), 'bad', button); };
-            if (navigator.clipboard && window.isSecureContext) {
-                navigator.clipboard.writeText(text).then(done, failed);
-            } else {
-                var range = document.createRange(); range.selectNodeContents(target);
-                var selection = window.getSelection(); selection.removeAllRanges(); selection.addRange(range);
-                try { if (document.execCommand('copy')) { done(); } else { failed(); } } catch (e) { failed(); }
-            }
-        });
-    });
-})();
-</script>
-{/literal}
+{ezscript( array( 'page/visual_menuconfig.js' ) )}
 {undef $mc_survey $mc_examples}
 
 <details class="a4-fold" id="menuconfig-history">

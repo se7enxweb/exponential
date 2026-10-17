@@ -13,7 +13,7 @@
 {/set-block}
 {if $node_export_probe|trim|ne( '' )}
 {def $node_can_import = cond( and( $node.object.content_class.is_container, $node.can_create ), 1, 0 )}
-    {if first_set( $in_list, false() )}<li>{/if}<a class="{first_set( $button_class, 'a4-btn' )} a4-node-import-export" id="node-import-export-{$node.node_id}" href="#" role="button" aria-haspopup="menu" aria-expanded="false" title="{'Export this item or import into it.'|i18n( 'design/admin/node/view/full' )|wash}" onclick="ezpopmenu_showTopLevel( event, 'ImportExportMenu', ez_createAArray( new Array( '%nodeID%', {$node.node_id}, '%objectID%', {$node.contentobject_id}, '%canImport%', {$node_can_import} ) ), '{$node.name|wash( javascript )|wash}' ); return false;"><span class="a4-icon a4-bi-arrow-down-up" aria-hidden="true"></span> {'Import/Export'|i18n( 'design/admin/node/view/full' )}</a>{if first_set( $in_list, false() )}</li>{/if}
+    {if first_set( $in_list, false() )}<li>{/if}<a class="{first_set( $button_class, 'a4-btn' )} a4-node-import-export" id="node-import-export-{$node.node_id}" href="#" role="button" aria-haspopup="menu" aria-expanded="false" title="{'Export this item or import into it.'|i18n( 'design/admin/node/view/full' )|wash}" data-menu-open="ImportExportMenu" data-menu-values="{json_encode( hash( '%nodeID%', $node.node_id, '%objectID%', $node.contentobject_id, '%canImport%', $node_can_import ) )|wash}" data-menu-title="{$node.name|wash}"><span class="a4-icon a4-bi-arrow-down-up" aria-hidden="true"></span> {'Import/Export'|i18n( 'design/admin/node/view/full' )}</a>{if first_set( $in_list, false() )}</li>{/if}
 {undef $node_can_import}
 {/if}
 {undef $node_export_probe}

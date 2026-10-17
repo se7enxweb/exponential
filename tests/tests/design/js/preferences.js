@@ -1,9 +1,9 @@
-// Runs window.a4Pref and the color mode script of design/admin4/templates/page_head_style.tpl, and two parts of
+// Runs window.a4Pref and the color mode script of design/admin4/javascript/a4_head.js, and two parts of
 // design/admin4/javascript/admin4.js (the left menu's groups, the sign-in page), against a small stand-in for the
 // browser: <html> with its attributes and style, localStorage, fetch (answers as a scenario says), the toggle event
 // of <details>, which a browser queues as a task (here: after the current script, like setImmediate). Prints one JSON
 // object, one entry per scenario.
-// Usage: node preferences.js <path to admin4.js> <path to page_head_style.tpl>
+// Usage: node preferences.js <path to admin4.js> <path to a4_head.js>
 'use strict';
 const fs = require('fs');
 const vm = require('vm');

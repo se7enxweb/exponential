@@ -68,7 +68,10 @@ class AdminFormErrorsTest extends PHPUnit\Framework\TestCase
 
     public function testTheScriptMarksTheControlsOfEveryDatatype()
     {
-        $tpl = self::read( 'design/admin4/templates/content/edit_attribute.tpl' );
+        // the script is a file of its own (no inline script, doc/features/6.0/content-security-policy.md)
+        $this->assertStringContainsString( "{ezscript( array( 'page/content_edit_attribute.js' ) )}",
+                                           self::read( 'design/admin4/templates/content/edit_attribute.tpl' ) );
+        $tpl = self::read( 'design/admin4/javascript/page/content_edit_attribute.js' );
         foreach ( array( "attr( 'aria-required', 'true' )", "setAttribute( 'aria-invalid', 'true' )", "setAttribute( 'aria-describedby'",
                          "not('.original *, .a4-no-field-mark, .a4-no-field-mark *')", ':not([type=reset]):not([type=file])',
                          '/delete|remove|selection/i', "$('#a4-error-summary').trigger('focus')", '.a4-content-attr.is-invalid',

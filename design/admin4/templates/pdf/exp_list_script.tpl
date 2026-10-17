@@ -1,47 +1,8 @@
 {* "Select all on this page" and the selection count of the PDF export list (pdf/list). Without javascript the box
    is not shown and every button still submits the form. The search, the filter and the order are links and a form,
    so they need no script. Parameter: text_selected ("%count selected.").
-   The same file is in design/admin and design/admin4. *}
+   design/admin keeps its own copy with the script inline; here the code is page/exp_list_script.js. *}
 {default text_selected=''}
-<script type="text/javascript">
-var expPdfListText = {ldelim} selected: '{$text_selected|wash( javascript )}' {rdelim};
-{literal}
-(function () {
-    function each( selector, fn, root ) {
-        var nodes = ( root || document ).querySelectorAll( selector ), i;
-        for ( i = 0; i < nodes.length; i++ ) fn( nodes[i] );
-    }
-    each( '.a4-page .exp-js-only', function ( el ) { el.hidden = false; } );
-
-    function update() {
-        each( '.a4-page [data-select-all]', function ( all ) {
-            var name = all.getAttribute( 'data-select-all' ), total = 0, ticked = 0;
-            each( 'input[type="checkbox"]', function ( box ) {
-                if ( box.name !== name ) return;
-                total++;
-                if ( box.checked ) ticked++;
-                var card = box.closest( '.a4-card' );
-                if ( card ) card.classList.toggle( 'is-selected', box.checked );
-            }, all.form || document );
-            all.checked = total > 0 && ticked === total;
-            all.indeterminate = ticked > 0 && ticked < total;
-        } );
-        each( '.a4-page .exp-selected-count', function ( out ) {
-            var name = out.getAttribute( 'data-for' ), n = 0;
-            each( 'input[type="checkbox"]', function ( box ) { if ( box.name === name && box.checked ) n++; }, out.closest( 'form' ) || document );
-            out.textContent = n ? expPdfListText.selected.split( '%count' ).join( n ) : '';
-        } );
-    }
-    each( '.a4-page [data-select-all]', function ( all ) {
-        all.addEventListener( 'change', function () {
-            var name = all.getAttribute( 'data-select-all' );
-            each( 'input[type="checkbox"]', function ( box ) { if ( box.name === name ) box.checked = all.checked; }, all.form || document );
-            update();
-        } );
-    } );
-    each( '.a4-page [data-list]', function ( list ) { list.addEventListener( 'change', update ); } );
-    update();
-})();
-{/literal}
-</script>
+<div hidden data-exp-list data-exp-list-scope=".a4-page" data-exp-list-prefix="exp" data-exp-list-filter="0" data-text-selected="{$text_selected|wash}"></div>
+{ezscript( array( 'page/exp_list_script.js' ) )}
 {/default}

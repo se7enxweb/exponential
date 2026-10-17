@@ -122,12 +122,12 @@ class AdminContextMenuNestedSubmenuTest extends PHPUnit\Framework\TestCase
         $advanced = $this->template( 'popupmenu/popup_sub_advance_menu.tpl' );
         $this->assertStringContainsString( "popupmenu/popup_export_items.tpl' menu_id='ExportMenu' item_prefix='menu-export' sub_menu_depth=3 with_import=false()", $advanced );
         $this->assertStringContainsString( 'id="menu-export" class="more"', $advanced, 'Export opens a submenu (aria-haspopup from the class more)' );
-        $this->assertStringContainsString( "menuArray['ExportMenu'] = {ldelim} 'depth': 2 {rdelim};", $advanced );
+        $this->assertStringContainsString( 'id="ExportMenu" data-menu-depth="2"', $advanced );
         $this->assertStringNotContainsString( 'package/create/', $advanced, 'the entries are not repeated here' );
 
         $menu = $this->template( 'popupmenu/popup_import_export_menu.tpl' );
         $this->assertStringContainsString( "popupmenu/popup_export_items.tpl' menu_id='ImportExportMenu' item_prefix='node-export' sub_menu_depth=1 with_import=true()", $menu );
-        $this->assertStringContainsString( "menuArray['ImportExportMenu'] = {ldelim} 'depth': 0", $menu );
+        $this->assertStringContainsString( 'id="ImportExportMenu" data-menu-depth="0" data-menu-header="node-export-header"', $menu );
         $this->assertStringContainsString( "popupmenu/popup_import_export_menu.tpl", $this->template( 'popupmenu/popup_menu.tpl' ) );
     }
 
@@ -139,8 +139,8 @@ class AdminContextMenuNestedSubmenuTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( "popupmenu/popup_export_items.tpl' menu_id='ImportExportMenu' item_prefix='node-export' sub_menu_depth=1 with_import=true()", $button,
             'shown only when the shared definition has an entry' );
         $this->assertStringContainsString( 'role="button" aria-haspopup="menu" aria-expanded="false"', $button );
-        $this->assertStringContainsString( "ezpopmenu_showTopLevel( event, 'ImportExportMenu'", $button );
-        $this->assertStringContainsString( "'%canImport%', {\$node_can_import}", $button );
+        $this->assertStringContainsString( 'data-menu-open="ImportExportMenu"', $button );
+        $this->assertStringContainsString( "'%canImport%', \$node_can_import", $button );
         $this->assertStringContainsString( 'and( $node.object.content_class.is_container, $node.can_create )', $button );
         $this->assertStringContainsString( 'a4-bi-arrow-down-up', $button );
         foreach ( array( 'admin4' => 'node/view/a4_full_body.tpl', 'admin' => 'node/view/full.tpl' ) as $design => $view )
@@ -157,7 +157,7 @@ class AdminContextMenuNestedSubmenuTest extends PHPUnit\Framework\TestCase
     public function testAnItemCanBeShownOnlyWhenAValueIsSet()
     {
         $js = self::js();
-        $this->assertStringContainsString( "var shownIf = menuArray[menuID]['elements'][i]['shown_if'];", $js );
+        $this->assertStringContainsString( "var shownIf = item['shown_if'];", $js );
         $this->assertStringContainsString( "hrefElement.style.display = ( shownValue && String( shownValue ) !== '0' ) ? '' : 'none';", $js );
     }
 }

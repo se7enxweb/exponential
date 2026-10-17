@@ -24,7 +24,7 @@ class AdminThemeSwitchTest extends PHPUnit\Framework\TestCase
 
     public function testTheScriptKnowsTheSystemMode()
     {
-        $js = self::read( 'design/admin4/templates/page_head_style.tpl' );
+        $js = self::read( 'design/admin4/javascript/a4_head.js' );
         $this->assertStringContainsString( "matchMedia( '(prefers-color-scheme: dark)' )", $js );
         $this->assertStringContainsString( "root.setAttribute('data-a4-theme', dark ? 'dark' : 'light')", $js,
             'the stylesheets read data-a4-theme, which must stay light or dark' );

@@ -48,8 +48,10 @@ class AdminScriptFailureTextsTest extends PHPUnit\Framework\TestCase
                 "#<p id=\"ezobjectrelation-search-failed-text\" class=\"hide\">\{'The search failed\. Try again\.'\|i18n\( 'design/standard/content/search' \)\|wash\}</p>#",
                 self::file( "$design/templates/content/datatype/edit/ezobjectrelation_ajax_search.tpl" ), $design );
             $this->assertStringContainsString( 'O3.save_failed', self::file( "$design/javascript/ezajaxsubitems_expdatatable.js" ), $design );
-            $this->assertMatchesRegularExpression(
-                "#save_failed: \"\{'Not saved: %error'\|i18n\( 'design/admin/node/view/full' \)\|wash\('javascript'\)\}\"#",
+            // admin: the inline label script; admin4: the data-labels hash (no inline script, Content Security Policy)
+            $this->assertMatchesRegularExpression( $design === 'design/admin4'
+                ? "#'save_failed', 'Not saved: %error'\|i18n\( 'design/admin/node/view/full' \)#"
+                : "#save_failed: \"\{'Not saved: %error'\|i18n\( 'design/admin/node/view/full' \)\|wash\('javascript'\)\}\"#",
                 self::file( "$design/templates/children_detailed.tpl" ), $design );
         }
     }

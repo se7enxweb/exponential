@@ -94,7 +94,13 @@ var eZAsynchronousPublishingApp = (function() {
                         window.location = ret.cfg.redirect_uri;
                     } else {
                         display($finished, function ($element) {
-                            $element.find('#ezap-contentview-uri').attr('href', content.node_uri);
+                            // no node_uri for a user who cannot read the published object: no link to it
+                            var $link = $element.find('#ezap-contentview-uri');
+                            if ( content.node_uri ) {
+                                $link.attr('href', content.node_uri).css('display', '');
+                            } else {
+                                $link.css('display', 'none');
+                            }
                         });
                     }
                 } else if ( content && content.status == 'deferred' ) {

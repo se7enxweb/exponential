@@ -1,220 +1,37 @@
 {def $section         = fetch( 'section', 'object', hash( 'section_id', $node.object.section_id ) )
     $visible_columns  = ezini('SubItems', 'VisibleColumns', 'admininterface.ini')
-    $locales          = fetch( 'content', 'translation_list' ) }
+    $locales          = fetch( 'content', 'translation_list' )
+    $subitems_languages = hash()
+    $subitems_badges  = hash()
+    $subitems_badge   = ''
+    $subitems_sort_key = 'published_date'
+    $subitems_create_groups  = array()
+    $subitems_create_options = array()
+    $subitems_group_options  = array()}
 
-{literal}
-<script type="text/javascript">
-(function() {
-{/literal}
+{* The sub-items table's settings and texts: data attributes of #subitems-config, which page/children_detailed.js
+   hands to the table script (ezajaxsubitems_expdatatable.js). No inline script, so the page runs under a Content
+   Security Policy without 'unsafe-inline'. The values are JSON (json_encode), HTML-escaped for the attribute. *}
 
 {* The names of the "Edit in" menu: the content languages' names, as the row menus, the history and the drafts
    show them, not the locale's international name *}
-var availableLanguages = {ldelim}{*
-    *}{foreach fetch( 'content', 'prioritized_languages' ) as $language}{*
-        *}'{$language.locale|wash(javascript)}': '{$language.name|wash(javascript)}'{*
-        *}{delimiter},{/delimiter}{*
-    *}{/foreach}{*
-*}{rdelim};
+{foreach fetch( 'content', 'prioritized_languages' ) as $language}{set $subitems_languages = $subitems_languages|merge( hash( $language.locale, $language.name ) )}{/foreach}
 
 {* The short code of each language for the Translations column (DE, EN: the language, never the region; the name tells eng-GB and eng-US apart). *}
-var languageBadges = {ldelim}{*
-    *}{foreach $locales as $locale}{*
-        *}'{$locale.locale_code|wash(javascript)}': '{include uri='design:parts/language_badge.tpl' locale=$locale.locale_code badge_plain=true()}'{*
-        *}{delimiter},{/delimiter}{*
-    *}{/foreach}{*
-*}{rdelim};
-
-var vcols = {ldelim}
-
-{foreach $visible_columns as $index => $object}
-    {$index} : '{$object}'.split(';'){delimiter},
-
-{/delimiter}
-{/foreach}
-
-{rdelim};
-
-var confObj = {ldelim}
-
+{foreach $locales as $locale}{*
+    *}{set-block variable=subitems_badge}{include uri='design:parts/language_badge.tpl' locale=$locale.locale_code badge_plain=true()}{/set-block}{*
+    *}{set $subitems_badges = $subitems_badges|merge( hash( $locale.locale_code, $subitems_badge ) )}{*
+*}{/foreach}
 
 {switch match=$node.sort_field}
-{case match='2'}    sortKey: "published_date",{/case}
-{case match='3'}    sortKey: "modified_date",{/case}
-{case match='4'}    sortKey: "section",{/case}
-{case match='7'}    sortKey: "class_name",{/case}
-{case match='8'}    sortKey: "priority",{/case}
-{case match='9'}    sortKey: "name",{/case}
-{case}    sortKey: "published_date",{/case}
+{case match='2'}{set $subitems_sort_key = 'published_date'}{/case}
+{case match='3'}{set $subitems_sort_key = 'modified_date'}{/case}
+{case match='4'}{set $subitems_sort_key = 'section'}{/case}
+{case match='7'}{set $subitems_sort_key = 'class_name'}{/case}
+{case match='8'}{set $subitems_sort_key = 'priority'}{/case}
+{case match='9'}{set $subitems_sort_key = 'name'}{/case}
+{case}{set $subitems_sort_key = 'published_date'}{/case}
 {/switch}
-
-    dataSourceURL: "{concat('ezjscore/call/ezjscnode::subtree::', $node.node_id)|ezurl('no')}",
-    nodeID: {$node.node_id|int()},
-    {* Reordering the rows by drag and drop (subitems_priority_drag.js): only where the children are sorted by
-       priority and the user may change the priorities - the condition of the classic priority fields
-       (children.tpl $priority). parentObjectID: the object whose cache is cleared, as content/action does. *}
-    priorityDrag: {if and( eq( $node.sort_array[0][0], 'priority' ), $node.can_edit )}true{else}false{/if},
-    parentObjectID: {$node.contentobject_id|int()},
-    {* The subitems column registry: expsubitems::columns / ::rows / ::savepreference, and the CSV export.
-       Without the server functions the table stays the classic one. *}
-    subitemsServer: {if ezini_hasvariable( 'ezjscServer_expsubitems', 'Class', 'ezjscore.ini' )}true{else}false{/if},
-    exportURL: "{concat('content/subitemsexport/', $node.node_id)|ezurl('no')}",
-    editPrefixURL: {'/content/edit/'|ezurl},
-    rowsPrPage: {$number_of_items},
-    sortOrder: {$node.sort_order},
-    nameFilter: '{$view_parameters.namefilter|wash(javascript)}',
-    defaultShownColumns: vcols,
-    navigationPart: "{$section.navigation_part_identifier}",
-    cookieName: "eZSubitemColumns",
-    cookieSecure: false,
-    cookieDomain: "{ezsys(hostname)}",
-    languages: availableLanguages,
-    classesString: {$node.classes_js_array},
-    languageBadges: languageBadges,
-    editInLanguage: "{'Edit in <%language_name>.'|i18n( 'design/admin/node/view/full',, hash( '%language_name', '%language_name' ) )|wash('javascript')}",
-    {* The state of each badge in the Translations column (main, present, missing) as its title and accessible name.
-       The missing languages only on a site with up to 6 languages (expContentLanguageStates::LIST_MISSING_LIMIT):
-       with more, a row's badges would wrap and bury the ones it has; the Missing translations column lists them. *}
-    languageStates: {ldelim}
-        main: "{'%language – main language'|i18n( 'design/admin/node/view/full',, hash( '%language', '%language' ) )|wash('javascript')}",
-        present: "{'%language – translation exists'|i18n( 'design/admin/node/view/full',, hash( '%language', '%language' ) )|wash('javascript')}",
-        missing: "{'%language – missing'|i18n( 'design/admin/node/view/full',, hash( '%language', '%language' ) )|wash('javascript')}"
-    {rdelim},
-    showMissingLanguages: {if le( fetch( 'content', 'prioritized_languages' )|count, 6 )}true{else}false{/if}
-
-{rdelim}
-
-
-{* Where "Edit selected" sends the selection. Built with ezurl so it carries
-   the siteaccess and index file this installation actually uses, rather than
-   a path hardcoded in the javascript. *}
-{* On window: this script runs inside a function, and a plain var here was
-   that function's own, so the datatable script never saw it and sent the
-   selection to a bare /content/multiedit - the public siteaccess. *}
-window.eZExpMultiEditURL = "{'content/multiedit'|ezurl('no')}";
-var labelsObj = {ldelim}
-
-
-    DATA_TABLE: {ldelim}
-
-                        msg_loading: "{'Loading ...'|i18n( 'design/admin/node/view/full' )|wash('javascript')}"
-                    {rdelim},
-
-    DATA_TABLE_COLS: {ldelim}
-
-                        thumbnail: "{'Thumbnail'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        name: "{'Name'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        visibility: "{'Visibility'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        type: "{'Type'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        modifier: "{'Modifier'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        modified: "{'Modified'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        published: "{'Published'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        section: "{'Section'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        translations: "{'Translations'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        priority: "{'Priority'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        nodeid: "{'Node ID'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        objectid: "{'Object ID'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        noderemoteid: "{'Node remote ID'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        objectremoteid: "{'Object remote ID'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        objectstate: "{'Object state'|i18n( 'design/admin/node/view/full' )|wash('javascript')}"
-                    {rdelim},
-
-    {* The status marks before each name: a node's visibility, a user account's state (components.css .a4-mark) *}
-    STATUS: {ldelim}
-
-                        visible: "{'Visible'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        hidden: "{'Hidden'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        hidden_by_parent: "{'Hidden by a parent'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        visible_title: "{'Visible: visitors of the site can see it.'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        hidden_title: "{'Hidden: visitors of the site do not see it.'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        hidden_by_parent_title: "{'An item above it is hidden, so visitors of the site do not see it.'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        disabled: "{'Disabled'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        disabled_title: "{'Account disabled: this user cannot log in.'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        locked: "{'Locked'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        locked_title: "{'Locked after too many failed logins.'|i18n( 'design/admin/node/view/full' )|wash('javascript')}"
-                    {rdelim},
-
-    TABLE_OPTIONS: {ldelim}
-
-                        header: "{'Table options'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        header_noipp: "{'Number of items per page:'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        header_vtc: "{'Visible table columns:'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        button_close: "{'Close'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        custom_label: "{'Custom'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        custom_placeholder: "{'Enter number'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        custom_invalid: "{'Please enter a valid number between 1 and 10000'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        filter_label: "{'Find a column:'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        filter_placeholder: "{'Column name'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        filter_none: "{'No columns match.'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        group_other: "{'Other'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        order_legend: "{'Order of the visible columns:'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        order_hint: "{'Drag a column to move it, or use its arrow buttons.'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        order_up: "{'Move %name up'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        order_down: "{'Move %name down'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        presets_legend: "{'Column presets:'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        presets_choose: "{'Preset'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        presets_none: "{'None'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        presets_name: "{'Name of the new preset'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        presets_save_as: "{'Save current as...'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        presets_delete: "{'Delete preset'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        export_csv: "{'Export CSV'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        export_csv_title: "{'Download the items with the visible columns as a CSV file'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        copy_title: "{'Click to copy'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        copied: "{'Copied'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        copy_failed: "{'Not copied'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        save_failed: "{'Not saved: %error'|i18n( 'design/admin/node/view/full' )|wash('javascript')}"
-                   {rdelim},
-
-    {* Reordering the rows by drag and drop (subitems_priority_drag.js); %name, %position, %count and %error are
-       filled in by the script *}
-    DRAG: {ldelim}
-
-                        column: "{'Order'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        grip: "{'Move %name'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        grip_title: "{'Drag to change the order'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        hint: "{'Drag the grip to change the order. With the keyboard: Space picks the row up, the arrow keys move it, Space drops it, Escape cancels. Alt+Up and Alt+Down move it by one place at once.'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        picked: "{'Picked up %name. Position %position of %count.'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        position: "{'Position %position of %count'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        moved: "{'Moved to position %position of %count'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        dropped_same: "{'Dropped. The order is unchanged.'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        cancelled: "{'Move canceled. %name is back at position %position of %count.'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        saved: "{'Order saved'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        undo: "{'Undo'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        restored: "{'Previous order restored'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        error: "{'The order was not saved: %error'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        undo_error: "{'The previous order was not restored: %error'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        error_unknown: "{'unknown error'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        conflict: "{'Someone else changed the order in the meantime. Nothing was saved; the list shows the current order now.'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        unsaved_edit: "{'Save the priority you are editing (Enter) or cancel it (Escape) before you move a row.'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        busy: "{'Please wait until the order is saved.'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        wait_edit: "{'Please wait until the priority is saved.'|i18n( 'design/admin/node/view/full' )|wash('javascript')}"
-                   {rdelim},
-
-    ACTION_BUTTONS: {ldelim}
-
-                        select: "{'Select'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        select_sav: "{'Select all visible'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        select_sn: "{'Select none'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        select_inv: "{'Invert selection'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        create_new: "{'Create new'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        more_actions: "{'More actions'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        more_actions_rs: "{'Remove selected'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        more_actions_ms: "{'Move selected'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        more_actions_cp: "{'Copy selected'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        more_actions_hs: "{'Hide selected'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        more_actions_us: "{'Unhide selected'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        create_multiple: "{'Create multiple new'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        more_actions_me: "{'Edit selected'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        more_actions_al: "{'Add a location'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        more_actions_no: "{'Use the checkboxes to select one or more items.'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        table_options: "{'Table options'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        first_page: "&laquo;&nbsp;{'first'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        previous_page: "&lsaquo;&nbsp;{'prev'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        next_page: "{'next'|i18n( 'design/admin/node/view/full' )|wash('javascript')}&nbsp;&rsaquo;",
-                        last_page: "{'last'|i18n( 'design/admin/node/view/full' )|wash('javascript')}&nbsp;&raquo;"
-                    {rdelim}
-
-
-{rdelim};
 
 {if and( $node.is_container,  $node.can_create)}
     {if $node.path_array|contains( ezini( 'NodeSettings', 'MediaRootNode', 'content.ini' ) )}
@@ -233,71 +50,180 @@ var labelsObj = {ldelim}
                                                                                      'group_id', $group_id,
                                                                                      'group_by_class_group', true() ) )}
 
-    var createGroups = [
-
+    {* The "Create new" menu: one group per class group, its classes (names HTML-escaped: the menu shows them as markup) *}
     {foreach $can_create_classes as $group}
-        "{$group.group_name|wash(javascript)}"
-        {delimiter}
-        ,
-        {/delimiter}
-    {/foreach}
-
-    ];
-
-    var createOptions = [
-
-    {foreach $can_create_classes as $group}
-        [
+        {set $subitems_create_groups = $subitems_create_groups|append( $group.group_name )}
+        {set $subitems_group_options = array()}
         {foreach $group.items as $can_create_class}
             {if $can_create_class.can_instantiate_languages}
-            {ldelim} text: "{$can_create_class.name|wash()}", value: {$can_create_class.id} {rdelim}
-
+                {set $subitems_group_options = $subitems_group_options|append( hash( 'text', $can_create_class.name|wash(), 'value', $can_create_class.id|int() ) )}
             {/if}
-            {delimiter}{if $can_create_class.can_instantiate_languages},{/if}{/delimiter}
         {/foreach}
-        ]
-        {delimiter}
-        ,
-        {/delimiter}
+        {set $subitems_create_options = $subitems_create_options|append( $subitems_group_options )}
     {/foreach}
-    ];
-
-{else}
-    var createGroups = [];
-    var createOptions = [];
 {/if}
 
-var noTableText = "{'The sub items cannot be listed: Exponential UI (the extension expui) is not active or not loaded on this siteaccess.'|i18n( 'design/admin/node/view/full' )|wash('javascript')}";
-{literal}
-// The sub-items table: Exponential UI's exp::datatable (ezajaxsubitems_expdatatable.js)
-if ( window.Exp && Exp.$ && Exp.$.fn.expDataTable && window.eZAjaxSubitemsExpDataTable ) {
-    Exp.ready( function() {
-        eZAjaxSubitemsExpDataTable.init(confObj, labelsObj, createGroups, createOptions);
-    } );
-}
-else {
-    // Without Exponential UI the table cannot be drawn: say so instead of leaving its place empty. The place comes
-    // after this script, so the note waits for the page.
-    var showNoTable = function() {
-        var list = document.getElementById( 'content-sub-items-list' );
-        if ( !list || list.querySelector( '.exp-no-subitems-table' ) )
-            return;
-        var note = document.createElement( 'div' );
-        note.className = 'a4-notice is-warn exp-no-subitems-table';
-        note.setAttribute( 'role', 'status' );
-        note.textContent = noTableText;
-        list.appendChild( note );
-    };
-    if ( document.readyState === 'loading' )
-        document.addEventListener( 'DOMContentLoaded', showNoTable );
-    else
-        showNoTable();
-}
-
-})();
-{/literal}
-{undef $section $visible_columns $locales}
-</script>
+{* priorityDrag - reordering the rows by drag and drop (subitems_priority_drag.js): only where the children are
+   sorted by priority and the user may change the priorities - the condition of the classic priority fields
+   (children.tpl $priority). parentObjectID: the object whose cache is cleared, as content/action does.
+   subitemsServer - the subitems column registry: expsubitems::columns / ::rows / ::savepreference, and the CSV
+   export. Without the server functions the table stays the classic one.
+   defaultShownColumns - the columns of each navigation part, separated by ; (split by the page script).
+   classesString - the classes that may be created here (node.classes_js_array: JSON, or '' for none).
+   languageStates - the state of each badge in the Translations column (main, present, missing) as its title and
+   accessible name. The missing languages only on a site with up to 6 languages
+   (expContentLanguageStates::LIST_MISSING_LIMIT): with more, a row's badges would wrap and bury the ones it has;
+   the Missing translations column lists them. *}
+{* data-no-table: the note shown in the place of the table when Exponential UI is not active or not loaded.
+   data-multiedit-url: where "Edit selected" sends the selection. Built with ezurl so it carries the siteaccess and
+   index file this installation actually uses, rather than a path hardcoded in the javascript. The page script sets
+   it as window.eZExpMultiEditURL, where the datatable script looks for it; without it the selection went to a bare
+   /content/multiedit - the public siteaccess. *}
+{* The labels: STATUS - the status marks before each name: a node's visibility, a user account's state
+   (components.css .a4-mark). DRAG - reordering the rows by drag and drop (subitems_priority_drag.js); %name,
+   %position, %count and %error are filled in by the script. *}
+<div id="subitems-config" hidden
+     data-conf="{json_encode( hash(
+        'sortKey', $subitems_sort_key,
+        'dataSourceURL', concat('ezjscore/call/ezjscnode::subtree::', $node.node_id)|ezurl('no'),
+        'nodeID', $node.node_id|int(),
+        'priorityDrag', and( eq( $node.sort_array[0][0], 'priority' ), $node.can_edit ),
+        'parentObjectID', $node.contentobject_id|int(),
+        'subitemsServer', ezini_hasvariable( 'ezjscServer_expsubitems', 'Class', 'ezjscore.ini' ),
+        'exportURL', concat('content/subitemsexport/', $node.node_id)|ezurl('no'),
+        'editPrefixURL', '/content/edit/'|ezurl('no'),
+        'rowsPrPage', $number_of_items|int(),
+        'sortOrder', $node.sort_order|int(),
+        'nameFilter', $view_parameters.namefilter,
+        'defaultShownColumns', $visible_columns,
+        'navigationPart', $section.navigation_part_identifier,
+        'cookieName', 'eZSubitemColumns',
+        'cookieSecure', false(),
+        'cookieDomain', ezsys( 'hostname' ),
+        'languages', $subitems_languages,
+        'classesString', $node.classes_js_array,
+        'languageBadges', $subitems_badges,
+        'editInLanguage', 'Edit in <%language_name>.'|i18n( 'design/admin/node/view/full',, hash( '%language_name', '%language_name' ) ),
+        'languageStates', hash(
+            'main', '%language – main language'|i18n( 'design/admin/node/view/full',, hash( '%language', '%language' ) ),
+            'present', '%language – translation exists'|i18n( 'design/admin/node/view/full',, hash( '%language', '%language' ) ),
+            'missing', '%language – missing'|i18n( 'design/admin/node/view/full',, hash( '%language', '%language' ) )
+        ),
+        'showMissingLanguages', le( fetch( 'content', 'prioritized_languages' )|count, 6 )
+     ) )|wash}"
+     data-labels="{json_encode( hash(
+        'DATA_TABLE', hash(
+            'msg_loading', 'Loading ...'|i18n( 'design/admin/node/view/full' )
+        ),
+        'DATA_TABLE_COLS', hash(
+            'thumbnail', 'Thumbnail'|i18n( 'design/admin/node/view/full' ),
+            'name', 'Name'|i18n( 'design/admin/node/view/full' ),
+            'visibility', 'Visibility'|i18n( 'design/admin/node/view/full' ),
+            'type', 'Type'|i18n( 'design/admin/node/view/full' ),
+            'modifier', 'Modifier'|i18n( 'design/admin/node/view/full' ),
+            'modified', 'Modified'|i18n( 'design/admin/node/view/full' ),
+            'published', 'Published'|i18n( 'design/admin/node/view/full' ),
+            'section', 'Section'|i18n( 'design/admin/node/view/full' ),
+            'translations', 'Translations'|i18n( 'design/admin/node/view/full' ),
+            'priority', 'Priority'|i18n( 'design/admin/node/view/full' ),
+            'nodeid', 'Node ID'|i18n( 'design/admin/node/view/full' ),
+            'objectid', 'Object ID'|i18n( 'design/admin/node/view/full' ),
+            'noderemoteid', 'Node remote ID'|i18n( 'design/admin/node/view/full' ),
+            'objectremoteid', 'Object remote ID'|i18n( 'design/admin/node/view/full' ),
+            'objectstate', 'Object state'|i18n( 'design/admin/node/view/full' )
+        ),
+        'STATUS', hash(
+            'visible', 'Visible'|i18n( 'design/admin/node/view/full' ),
+            'hidden', 'Hidden'|i18n( 'design/admin/node/view/full' ),
+            'hidden_by_parent', 'Hidden by a parent'|i18n( 'design/admin/node/view/full' ),
+            'visible_title', 'Visible: visitors of the site can see it.'|i18n( 'design/admin/node/view/full' ),
+            'hidden_title', 'Hidden: visitors of the site do not see it.'|i18n( 'design/admin/node/view/full' ),
+            'hidden_by_parent_title', 'An item above it is hidden, so visitors of the site do not see it.'|i18n( 'design/admin/node/view/full' ),
+            'disabled', 'Disabled'|i18n( 'design/admin/node/view/full' ),
+            'disabled_title', 'Account disabled: this user cannot log in.'|i18n( 'design/admin/node/view/full' ),
+            'locked', 'Locked'|i18n( 'design/admin/node/view/full' ),
+            'locked_title', 'Locked after too many failed logins.'|i18n( 'design/admin/node/view/full' )
+        ),
+        'TABLE_OPTIONS', hash(
+            'header', 'Table options'|i18n( 'design/admin/node/view/full' ),
+            'header_noipp', 'Number of items per page:'|i18n( 'design/admin/node/view/full' ),
+            'header_vtc', 'Visible table columns:'|i18n( 'design/admin/node/view/full' ),
+            'button_close', 'Close'|i18n( 'design/admin/node/view/full' ),
+            'custom_label', 'Custom'|i18n( 'design/admin/node/view/full' ),
+            'custom_placeholder', 'Enter number'|i18n( 'design/admin/node/view/full' ),
+            'custom_invalid', 'Please enter a valid number between 1 and 10000'|i18n( 'design/admin/node/view/full' ),
+            'filter_label', 'Find a column:'|i18n( 'design/admin/node/view/full' ),
+            'filter_placeholder', 'Column name'|i18n( 'design/admin/node/view/full' ),
+            'filter_none', 'No columns match.'|i18n( 'design/admin/node/view/full' ),
+            'group_other', 'Other'|i18n( 'design/admin/node/view/full' ),
+            'order_legend', 'Order of the visible columns:'|i18n( 'design/admin/node/view/full' ),
+            'order_hint', 'Drag a column to move it, or use its arrow buttons.'|i18n( 'design/admin/node/view/full' ),
+            'order_up', 'Move %name up'|i18n( 'design/admin/node/view/full' ),
+            'order_down', 'Move %name down'|i18n( 'design/admin/node/view/full' ),
+            'presets_legend', 'Column presets:'|i18n( 'design/admin/node/view/full' ),
+            'presets_choose', 'Preset'|i18n( 'design/admin/node/view/full' ),
+            'presets_none', 'None'|i18n( 'design/admin/node/view/full' ),
+            'presets_name', 'Name of the new preset'|i18n( 'design/admin/node/view/full' ),
+            'presets_save_as', 'Save current as...'|i18n( 'design/admin/node/view/full' ),
+            'presets_delete', 'Delete preset'|i18n( 'design/admin/node/view/full' ),
+            'export_csv', 'Export CSV'|i18n( 'design/admin/node/view/full' ),
+            'export_csv_title', 'Download the items with the visible columns as a CSV file'|i18n( 'design/admin/node/view/full' ),
+            'copy_title', 'Click to copy'|i18n( 'design/admin/node/view/full' ),
+            'copied', 'Copied'|i18n( 'design/admin/node/view/full' ),
+            'copy_failed', 'Not copied'|i18n( 'design/admin/node/view/full' ),
+            'save_failed', 'Not saved: %error'|i18n( 'design/admin/node/view/full' )
+        ),
+        'DRAG', hash(
+            'column', 'Order'|i18n( 'design/admin/node/view/full' ),
+            'grip', 'Move %name'|i18n( 'design/admin/node/view/full' ),
+            'grip_title', 'Drag to change the order'|i18n( 'design/admin/node/view/full' ),
+            'hint', 'Drag the grip to change the order. With the keyboard: Space picks the row up, the arrow keys move it, Space drops it, Escape cancels. Alt+Up and Alt+Down move it by one place at once.'|i18n( 'design/admin/node/view/full' ),
+            'picked', 'Picked up %name. Position %position of %count.'|i18n( 'design/admin/node/view/full' ),
+            'position', 'Position %position of %count'|i18n( 'design/admin/node/view/full' ),
+            'moved', 'Moved to position %position of %count'|i18n( 'design/admin/node/view/full' ),
+            'dropped_same', 'Dropped. The order is unchanged.'|i18n( 'design/admin/node/view/full' ),
+            'cancelled', 'Move canceled. %name is back at position %position of %count.'|i18n( 'design/admin/node/view/full' ),
+            'saved', 'Order saved'|i18n( 'design/admin/node/view/full' ),
+            'undo', 'Undo'|i18n( 'design/admin/node/view/full' ),
+            'restored', 'Previous order restored'|i18n( 'design/admin/node/view/full' ),
+            'error', 'The order was not saved: %error'|i18n( 'design/admin/node/view/full' ),
+            'undo_error', 'The previous order was not restored: %error'|i18n( 'design/admin/node/view/full' ),
+            'error_unknown', 'unknown error'|i18n( 'design/admin/node/view/full' ),
+            'conflict', 'Someone else changed the order in the meantime. Nothing was saved; the list shows the current order now.'|i18n( 'design/admin/node/view/full' ),
+            'unsaved_edit', 'Save the priority you are editing (Enter) or cancel it (Escape) before you move a row.'|i18n( 'design/admin/node/view/full' ),
+            'busy', 'Please wait until the order is saved.'|i18n( 'design/admin/node/view/full' ),
+            'wait_edit', 'Please wait until the priority is saved.'|i18n( 'design/admin/node/view/full' )
+        ),
+        'ACTION_BUTTONS', hash(
+            'select', 'Select'|i18n( 'design/admin/node/view/full' ),
+            'select_sav', 'Select all visible'|i18n( 'design/admin/node/view/full' ),
+            'select_sn', 'Select none'|i18n( 'design/admin/node/view/full' ),
+            'select_inv', 'Invert selection'|i18n( 'design/admin/node/view/full' ),
+            'create_new', 'Create new'|i18n( 'design/admin/node/view/full' ),
+            'more_actions', 'More actions'|i18n( 'design/admin/node/view/full' ),
+            'more_actions_rs', 'Remove selected'|i18n( 'design/admin/node/view/full' ),
+            'more_actions_ms', 'Move selected'|i18n( 'design/admin/node/view/full' ),
+            'more_actions_cp', 'Copy selected'|i18n( 'design/admin/node/view/full' ),
+            'more_actions_hs', 'Hide selected'|i18n( 'design/admin/node/view/full' ),
+            'more_actions_us', 'Unhide selected'|i18n( 'design/admin/node/view/full' ),
+            'create_multiple', 'Create multiple new'|i18n( 'design/admin/node/view/full' ),
+            'more_actions_me', 'Edit selected'|i18n( 'design/admin/node/view/full' ),
+            'more_actions_al', 'Add a location'|i18n( 'design/admin/node/view/full' ),
+            'more_actions_no', 'Use the checkboxes to select one or more items.'|i18n( 'design/admin/node/view/full' ),
+            'table_options', 'Table options'|i18n( 'design/admin/node/view/full' ),
+            'first_page', concat( '&laquo;&nbsp;', 'first'|i18n( 'design/admin/node/view/full' ) ),
+            'previous_page', concat( '&lsaquo;&nbsp;', 'prev'|i18n( 'design/admin/node/view/full' ) ),
+            'next_page', concat( 'next'|i18n( 'design/admin/node/view/full' ), '&nbsp;&rsaquo;' ),
+            'last_page', concat( 'last'|i18n( 'design/admin/node/view/full' ), '&nbsp;&raquo;' )
+        )
+     ) )|wash}"
+     data-create-groups="{json_encode( $subitems_create_groups )|wash}"
+     data-create-options="{json_encode( $subitems_create_options )|wash}"
+     data-multiedit-url="{'content/multiedit'|ezurl('no')|wash}"
+     data-no-table="{'The sub items cannot be listed: Exponential UI (the extension expui) is not active or not loaded on this siteaccess.'|i18n( 'design/admin/node/view/full' )|wash}"></div>
+{ezscript( array( 'page/children_detailed.js' ) )}
+{undef $section $visible_columns $locales $subitems_languages $subitems_badges $subitems_badge $subitems_sort_key
+       $subitems_create_groups $subitems_create_options $subitems_group_options}
 
 <div id="action-controls-container">
     <div id="action-controls"></div>

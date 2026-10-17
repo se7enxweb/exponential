@@ -35,7 +35,7 @@
     <div class="a4-field a4-content-languages-js-only" hidden>
         <label for="locale-search">{'Find a language'|i18n( 'design/admin/content/translationnew' )}</label>
         <input type="search" id="locale-search" autocomplete="off" spellcheck="false" aria-controls="localeSelector" aria-describedby="locale-search-count" placeholder="{'Name, code or country, e.g. German, ger, Austria'|i18n( 'design/admin/content/translationnew' )}" />
-        <span class="a4-meta" id="locale-search-count" aria-live="polite"></span>
+        <span class="a4-meta" id="locale-search-count" aria-live="polite" data-text-shown="{'%shown of %count languages match'|i18n( 'design/admin/content/translationnew' )|wash}" data-text-all="{'%count languages'|i18n( 'design/admin/content/translationnew' )|wash}"></span>
     </div>
     <div class="a4-field">
         <label for="localeSelector">{'Translation'|i18n( 'design/admin/content/translationnew' )}</label>
@@ -102,62 +102,4 @@
 </form>
 {undef $chosen $choice_count}
 
-<script type="text/javascript">
-var expLocaleText = {ldelim}
-    shown: '{'%shown of %count languages match'|i18n( 'design/admin/content/translationnew' )|wash( javascript )}',
-    all: '{'%count languages'|i18n( 'design/admin/content/translationnew' )|wash( javascript )}'
-{rdelim};
-{literal}
-(function () {
-    var select = document.getElementById( 'localeSelector' );
-    var search = document.getElementById( 'locale-search' );
-    var count = document.getElementById( 'locale-search-count' );
-    var custom = document.getElementById( 'language-custom' );
-    if ( !select ) return;
-    var nodes = document.querySelectorAll( '#language-new-form .a4-content-languages-js-only' ), i;
-    for ( i = 0; i < nodes.length; i++ ) nodes[i].hidden = false;
-
-    // The custom fields only count with "Custom" chosen; off otherwise, as the old form did.
-    function syncCustom() {
-        if ( custom ) custom.disabled = select.value !== '-1' && select.value !== '';
-    }
-    select.addEventListener( 'change', syncCustom );
-    syncCustom();
-
-    // Typing narrows the list to the languages whose name, code or country hold every word typed.
-    function filter() {
-        var words = search.value.toLowerCase().split( /\s+/ ).filter( Boolean );
-        var shown = 0, total = 0, first = null;
-        for ( var j = 0; j < select.options.length; j++ ) {
-            var option = select.options[j];
-            if ( option.value === '-1' ) continue;
-            total++;
-            var hay = option.getAttribute( 'data-search' ) || option.text.toLowerCase();
-            var ok = true;
-            for ( var k = 0; ok && k < words.length; k++ ) ok = hay.indexOf( words[k] ) !== -1;
-            option.hidden = !ok;
-            if ( ok ) { shown++; if ( !first && !option.disabled ) first = option; }
-        }
-        count.textContent = words.length
-            ? expLocaleText.shown.split( '%shown' ).join( shown ).split( '%count' ).join( total )
-            : expLocaleText.all.split( '%count' ).join( total );
-        return first;
-    }
-    if ( search ) {
-        search.addEventListener( 'input', filter );
-        // Enter picks the first match instead of sending the form; arrow down moves into the list.
-        search.addEventListener( 'keydown', function ( e ) {
-            if ( e.key === 'Enter' ) {
-                e.preventDefault();
-                var first = filter();
-                if ( first ) { select.value = first.value; syncCustom(); select.focus(); }
-            } else if ( e.key === 'ArrowDown' ) {
-                e.preventDefault();
-                select.focus();
-            }
-        } );
-        filter();
-    }
-})();
-{/literal}
-</script>
+{ezscript( array( 'page/content_translationnew.js' ) )}

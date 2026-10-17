@@ -7,7 +7,7 @@
                                            )}
 
 <script type="text/javascript">
-var ezTagName = '{$tag_name|wash}', customTagName = '{$custom_tag_name}', imageIcon = {"tango/image-x-generic22.png"|ezimage};
+var ezTagName = '{$tag_name|wash}', customTagName = '{$custom_tag_name|wash('javascript')}', imageIcon = {"tango/image-x-generic22.png"|ezimage};
 eZOEPopupUtils.settings.customAttributeStyleMap = {$custom_attribute_style_map};
 eZOEPopupUtils.settings.tagEditTitleText = "{'Edit %tag_name tag'|i18n('design/standard/ezoe', '', hash( '%tag_name', concat('&lt;', $tag_name_alias, '.', $custom_tag_name, '&gt;') ))|wash('javascript')}";
 {literal}
@@ -178,7 +178,7 @@ function filterOutCustomBlockTags( n )
 </script>
 
 
-<div class="tag-view tag-type-{$tag_name} custom-tag-type-{$custom_tag_name}">
+<div class="tag-view tag-type-{$tag_name|wash} custom-tag-type-{$custom_tag_name|wash}">
 
     <form action="JavaScript:void(0)" method="post" name="EditForm" id="EditForm" enctype="multipart/form-data">
 

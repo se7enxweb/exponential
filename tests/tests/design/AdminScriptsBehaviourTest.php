@@ -3,7 +3,7 @@
  * admin4's scripts where a choice is saved, a request fails or a result is pressed, run in node against small
  * stand-ins for the browser (tests/tests/design/js/*.js; each test is skipped without node):
  *
- *  - remembered choices (window.a4Pref, page_head_style.tpl; admin4.js): a value already stored is not sent again,
+ *  - remembered choices (window.a4Pref, a4_head.js; admin4.js): a value already stored is not sent again,
  *    so the left menu's groups write nothing on a page view; the color mode reaches the other open tabs; a width the
  *    server did not get comes back from the browser; the sign-in button gets its label back after back/forward;
  *  - the left column's grip (ezadmin_menubar.js) saves through window.a4Pref, and only a changed width;
@@ -55,7 +55,7 @@ class AdminScriptsBehaviourTest extends PHPUnit\Framework\TestCase
 
     public function testOnlyAChangedChoiceIsSaved()
     {
-        $s = $this->harness( 'preferences.js', array( 'design/admin4/javascript/admin4.js', 'design/admin4/templates/page_head_style.tpl' ) );
+        $s = $this->harness( 'preferences.js', array( 'design/admin4/javascript/admin4.js', 'design/admin4/javascript/a4_head.js' ) );
         // a value already on <html> is not sent again; a new one once
         $this->assertSame( array( 'admin_x=2' ), $s['unchanged is not sent']['fetches'] );
         // the left menu's groups: closing the stored-closed groups on load saved them again on every page view
@@ -68,7 +68,7 @@ class AdminScriptsBehaviourTest extends PHPUnit\Framework\TestCase
 
     public function testTheColorModeReachesTheOtherTabs()
     {
-        $s = $this->harness( 'preferences.js', array( 'design/admin4/javascript/admin4.js', 'design/admin4/templates/page_head_style.tpl' ) );
+        $s = $this->harness( 'preferences.js', array( 'design/admin4/javascript/admin4.js', 'design/admin4/javascript/a4_head.js' ) );
         // shared: written to the browser once saved; without share nothing is kept in the browser
         $this->assertSame( array( 'key-x' => 'a' ), $s['shared when saved']['store'] );
         $this->assertSame( array( 'admin_color_mode=dark' ), $s['color mode reaches the other tabs']['fetches'] );
@@ -86,7 +86,7 @@ class AdminScriptsBehaviourTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'admin_left_menu_size=224px' ), $s['Home at the narrowest saves once'] );
         // a width the server did not get (window.a4Pref kept it in the browser) is drawn, unless a preset or the
         // preference says otherwise
-        $p = $this->harness( 'preferences.js', array( 'design/admin4/javascript/admin4.js', 'design/admin4/templates/page_head_style.tpl' ) );
+        $p = $this->harness( 'preferences.js', array( 'design/admin4/javascript/admin4.js', 'design/admin4/javascript/a4_head.js' ) );
         $this->assertSame( '300px', $p['left width from the browser'] );
         $this->assertNull( $p['left width: a preset wins'] );
         $this->assertSame( '280px', $p['left width: the preference wins'] );
@@ -95,7 +95,7 @@ class AdminScriptsBehaviourTest extends PHPUnit\Framework\TestCase
 
     public function testTheSignInButtonGetsItsLabelBack()
     {
-        $s = $this->harness( 'preferences.js', array( 'design/admin4/javascript/admin4.js', 'design/admin4/templates/page_head_style.tpl' ) );
+        $s = $this->harness( 'preferences.js', array( 'design/admin4/javascript/admin4.js', 'design/admin4/javascript/a4_head.js' ) );
         $this->assertSame( array( 'busy' => "Signing in\u{2026}", 'back' => 'Sign in', 'ariaBusy' => null ), $s['sign-in label'] );
     }
 
@@ -238,11 +238,14 @@ class AdminScriptsBehaviourTest extends PHPUnit\Framework\TestCase
 
     public function testTheSubItemsListSaysOnceWhenItsScriptsAreMissing()
     {
-        // one note where the list cannot be drawn: the one of AdminSubitemsWithoutExpUITest (the merge of this
-        // review with main kept that one; a second branch of its own was a syntax error)
+        // one note where the list cannot be drawn: the one of AdminSubitemsWithoutExpUITest, drawn by the page script
+        // (the merge of this review with main kept that one; a second note of its own was dropped)
         $tpl = self::read( 'design/admin4/templates/children_detailed.tpl' );
-        $this->assertStringContainsString( "note.className = 'a4-notice is-warn exp-no-subitems-table';", $tpl );
-        $this->assertSame( 1, preg_match_all( '/\belse\s*\{/', $tpl ) );
+        $this->assertStringNotContainsString( '<script', $tpl );
         $this->assertStringNotContainsString( 'the scripts of the list (Exponential UI) are not loaded', $tpl );
+        $js = self::read( 'design/admin4/javascript/page/children_detailed.js' );
+        $this->assertSame( 1, substr_count( $js, "note.className = 'a4-notice is-warn exp-no-subitems-table';" ) );
+        // a sub-items option the server did not save says so (TABLE_OPTIONS.save_failed)
+        $this->assertStringContainsString( "'save_failed', 'Not saved: %error'|i18n( 'design/admin/node/view/full' )", $tpl );
     }
 }

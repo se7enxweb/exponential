@@ -45,7 +45,7 @@
             <button type="button" class="a4-btn" id="nf-run-dry"{if $job_available|not} disabled="disabled"{/if}>{'Preview (dry run)'|i18n( 'design/admin/notification/status' )}</button>
         </div>
         <p class="a4-help" id="nf-run-state" role="status" aria-live="polite"></p>
-        <pre class="a4-pre" id="nf-console" hidden="hidden"></pre>
+        <pre class="a4-pre" id="nf-console" hidden="hidden" data-job-url={'notification/job'|ezurl} data-text-starting="{'Starting in the background...'|i18n( 'design/admin/notification/status' )|wash}" data-text-finished="{'Finished. Reload the page to see the new numbers.'|i18n( 'design/admin/notification/status' )|wash}" data-text-failed="{'The run failed or stopped. See the lines above.'|i18n( 'design/admin/notification/status' )|wash}" data-text-confirm="{'Run the notifications now? Messages that are due are sent.'|i18n( 'design/admin/notification/status' )|wash}"></pre>
         <form method="post" action={'notification/runfilter'|ezurl} class="a4-help">
             {'Without JavaScript:'|i18n( 'design/admin/notification/status' )}
             <input class="a4-btn" type="submit" name="RunFilterButton" value="{'Run notification filter'|i18n( 'design/admin/notification/runfilter' )}" />
@@ -91,7 +91,7 @@
                     <input class="a4-btn" type="submit" name="CleanupHandled" value="{'Remove handled events with nothing left to send'|i18n( 'design/admin/notification/status' )}"{if $status.handled_orphans|eq( 0 )} disabled="disabled"{/if} />
                 </div>
             </form>
-            <form method="post" action={'notification/status'|ezurl} onsubmit="return confirm( this.getAttribute( 'data-confirm' ) );" data-confirm="{'Remove all events older than the chosen age, with their waiting messages? This cannot be undone.'|i18n( 'design/admin/notification/status' )|wash}">
+            <form method="post" action={'notification/status'|ezurl} data-a4-confirm="{'Remove all events older than the chosen age, with their waiting messages? This cannot be undone.'|i18n( 'design/admin/notification/status' )|wash}">
                 <div class="a4-actions a4-notification-field">
                     <label for="nf-age">{'Remove events older than'|i18n( 'design/admin/notification/status' )}</label>
                     <select id="nf-age" name="OlderThan">
@@ -143,78 +143,4 @@
     </div>
 </div>
 
-<script type="text/javascript">
-(function () {ldelim}
-    var jobUrl = {'notification/job'|ezurl()};
-    var runBtn = document.getElementById( 'nf-run-now' ), dryBtn = document.getElementById( 'nf-run-dry' );
-    var box = document.getElementById( 'nf-console' ), state = document.getElementById( 'nf-run-state' );
-    if ( !runBtn || !dryBtn ) return;
-    var csrf = document.querySelector( 'meta[name="csrf-token"]' );
-    var T = {ldelim}
-        starting: "{'Starting in the background...'|i18n( 'design/admin/notification/status' )|wash( 'javascript' )}",
-        finished: "{'Finished. Reload the page to see the new numbers.'|i18n( 'design/admin/notification/status' )|wash( 'javascript' )}",
-        failed: "{'The run failed or stopped. See the lines above.'|i18n( 'design/admin/notification/status' )|wash( 'javascript' )}",
-        confirm: "{'Run the notifications now? Messages that are due are sent.'|i18n( 'design/admin/notification/status' )|wash( 'javascript' )}"
-    {rdelim};
-    var timer = null, jobId = null, offset = 0;
-
-    function tokenField() {ldelim}
-        var f = document.querySelector( 'input[name="ezxform_token"]' );
-        return f ? f.value : '';
-    {rdelim}
-    function post( data, done ) {ldelim}
-        var r = new XMLHttpRequest();
-        r.open( 'POST', jobUrl, true );
-        r.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded' );
-        r.setRequestHeader( 'X-Requested-With', 'XMLHttpRequest' );
-        if ( csrf ) r.setRequestHeader( 'X-CSRF-Token', csrf.getAttribute( 'content' ) );
-        var t = tokenField();
-        if ( t ) data.ezxform_token = t;
-        r.onload = function () {ldelim}
-            var a = null; try {ldelim} a = JSON.parse( r.responseText ); {rdelim} catch ( e ) {ldelim}{rdelim}
-            done( r.status, a );
-        {rdelim};
-        r.onerror = function () {ldelim} done( 0, null ); {rdelim};
-        var p = []; for ( var k in data ) p.push( encodeURIComponent( k ) + '=' + encodeURIComponent( data[k] ) );
-        r.send( p.join( '&' ) );
-    {rdelim}
-    function line( text ) {ldelim}
-        box.appendChild( document.createTextNode( text + "\n" ) );
-        box.scrollTop = box.scrollHeight;
-    {rdelim}
-    function busy( on ) {ldelim} runBtn.disabled = on; dryBtn.disabled = on; {rdelim}
-    function poll() {ldelim}
-        if ( !jobId ) return;
-        var r = new XMLHttpRequest();
-        r.open( 'GET', jobUrl + '/' + jobId + '/' + offset, true );
-        r.setRequestHeader( 'X-Requested-With', 'XMLHttpRequest' );
-        r.onload = function () {ldelim}
-            var a = null; try {ldelim} a = JSON.parse( r.responseText ); {rdelim} catch ( e ) {ldelim}{rdelim}
-            if ( !a || !a.events ) {ldelim} state.textContent = T.failed; busy( false ); jobId = null; return; {rdelim}
-            var failed = false;
-            for ( var i = 0; i < a.events.length; i++ ) {ldelim}
-                var e = a.events[i];
-                if ( e.type === 'end' ) {ldelim} failed = e.result !== 'ok'; {rdelim}
-                else line( e.message );
-            {rdelim}
-            offset = a.offset;
-            if ( a.done ) {ldelim} state.textContent = failed ? T.failed : T.finished; busy( false ); jobId = null; {rdelim}
-            else timer = window.setTimeout( poll, 1000 );
-        {rdelim};
-        r.onerror = function () {ldelim} timer = window.setTimeout( poll, 3000 ); {rdelim};
-        r.send();
-    {rdelim}
-    function start( dry ) {ldelim}
-        if ( jobId ) return;
-        if ( !dry && !window.confirm( T.confirm ) ) return;
-        box.hidden = false; box.textContent = ''; offset = 0; busy( true ); state.textContent = T.starting;
-        post( dry ? {ldelim} Action: 'start', DryRun: '1' {rdelim} : {ldelim} Action: 'start' {rdelim}, function ( status, a ) {ldelim}
-            if ( !a || !a.id ) {ldelim} line( a && a.error ? a.error : 'HTTP ' + status ); state.textContent = T.failed; busy( false ); return; {rdelim}
-            jobId = a.id; state.textContent = '';
-            poll();
-        {rdelim} );
-    {rdelim}
-    runBtn.onclick = function () {ldelim} start( false ); {rdelim};
-    dryBtn.onclick = function () {ldelim} start( true ); {rdelim};
-{rdelim})();
-</script>
+{ezscript( array( 'page/notification_status.js' ) )}

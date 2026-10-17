@@ -17,18 +17,10 @@ function ContentStructureMenu( params, i18n )
     this.nodes = {};
     var thisMenu = this;
 
-    // One listener opens and closes the sub items of every node (a click, Enter or Space on its open/close button,
-    // and the arrow keys of the tree, _pressToggle) and opens the menu of every node: a click, Enter or Space on the
-    // menu button, and Shift+F10 or the context menu key on a tree item (they click the button). The generated
-    // markup carries no inline handlers and does not depend on a global name for the menu.
+    // One listener opens the menu of every node: a click, Enter or Space on the menu button, and Shift+F10 or the
+    // context menu key on a tree item (they click the button).
     document.addEventListener( 'click', function( e )
     {
-        var toggle = e.target && e.target.closest ? e.target.closest( 'a[data-modified-subnode]' ) : null;
-        if ( toggle && _press( toggle ) )
-        {
-            e.preventDefault();
-            return;
-        }
         var opener = e.target && e.target.closest ? e.target.closest( 'a.nodeicon[data-node-id]' ) : null;
         var node = opener ? thisMenu.nodes[opener.getAttribute( 'data-node-id' )] : null;
         if ( !node )
@@ -51,11 +43,23 @@ function ContentStructureMenu( params, i18n )
             '%classList%': node.classes
         }, node.name, nodeID, node.disableMenuID );
     } );
-    // Space presses the open/close button like Enter (it is a role="button" link)
+
+    // The open/close buttons: a click (or Space, as for a button) loads, opens or closes the node's sub items. One
+    // listener for all of them, no handler attribute (doc/features/6.0/content-security-policy.md).
+    document.addEventListener( 'click', function( e )
+    {
+        var toggle = e.target && e.target.closest ? e.target.closest( 'a[data-tree-load]' ) : null;
+        if ( !toggle || thisMenu.levels[toggle.getAttribute( 'data-tree-load' )] === undefined )
+        {
+            return;
+        }
+        e.preventDefault();
+        thisMenu.press( toggle );
+    } );
     document.addEventListener( 'keydown', function( e )
     {
-        var toggle = e.key === ' ' && e.target && e.target.closest ? e.target.closest( 'a[data-modified-subnode]' ) : null;
-        if ( toggle && thisMenu.levels[_toggleNodeID( toggle )] !== undefined )
+        var toggle = e.target && e.target.closest ? e.target.closest( 'a[data-tree-load]' ) : null;
+        if ( toggle && e.key === ' ' && thisMenu.levels[toggle.getAttribute( 'data-tree-load' )] !== undefined )
         {
             e.preventDefault();
             toggle.click();
@@ -173,14 +177,15 @@ function ContentStructureMenu( params, i18n )
         if ( canOpen && !rootNode )
         {
             // A button for keyboards and screen readers: its name says whose sub items it shows, aria-expanded
-            // whether they are shown (_toggleState), and Space presses it like Enter (the listeners above, by its
-            // data-modified-subnode). It keeps the focus after a press (no blur), so a keyboard can press it again;
-            // the ring shows on :focus-visible only.
+            // whether they are shown (_toggleState), and Space presses it like Enter. It keeps the focus after a
+            // press (no blur), so a keyboard can press it again; the ring shows on :focus-visible only.
             html += '<a class="openclose-open" id="a'
                 + nodeID
                 + '" href="#" role="button" aria-expanded="false" aria-label="'
                 + _attr( ( i18n.subitems || '%name' ).split( '%name' ).join( name ) )
-                + '" data-modified-subnode="'
+                + '" data-tree-load="'
+                + nodeID
+                + '" data-tree-modified="'
                 + ( parseInt( item.modified_subnode, 10 ) || 0 )
                 + '"><\/a>';
         }
@@ -445,6 +450,13 @@ function ContentStructureMenu( params, i18n )
         return false;
     };
 
+    // An open/close button pressed: the node's sub items loaded, opened or closed
+    this.press = function( toggle )
+    {
+        return this.load( toggle, parseInt( toggle.getAttribute( 'data-tree-load' ), 10 ),
+                          parseInt( toggle.getAttribute( 'data-tree-modified' ), 10 ) || 0 );
+    };
+
     this.openUnder = function( parentNodeID )
     {
         var divElement = document.getElementById( 'c' + parentNodeID );
@@ -474,12 +486,46 @@ function ContentStructureMenu( params, i18n )
                 if ( this.isOpen( nodeID ) )
                 {
                     var aElement = document.getElementById( 'a' + nodeID );
-                    if ( aElement )
+                    if ( aElement && aElement.hasAttribute( 'data-tree-load' ) )
                     {
-                        _press( aElement );
+                        this.press( aElement );
                     }
                 }
             }
+        }
+    };
+
+    this.collapse = function( parentNodeID )
+    {
+        var divElement = document.getElementById( 'c' + parentNodeID );
+        if ( !divElement )
+        {
+            return;
+        }
+
+        var aElements = divElement.getElementsByTagName( 'a' );
+        for ( var index in aElements )
+        {
+            var aElement = aElements[index];
+            if ( aElement.className == 'openclose-close' )
+            {
+                var nodeID        = aElement.id.substr( 1 );
+                var subdivElement = document.getElementById( 'c' + nodeID );
+                if ( subdivElement )
+                {
+                    subdivElement.className = 'hidden';
+                }
+                _toggleState( aElement, 'openclose-open' );
+                this.setClosed( nodeID );
+            }
+        }
+
+        var aElement = document.getElementById( 'a' + parentNodeID );
+        if ( aElement )
+        {
+            divElement.className = 'hidden';
+            _toggleState( aElement, 'openclose-open' );
+            this.setClosed( parentNodeID );
         }
     };
 
@@ -756,42 +802,13 @@ function ContentStructureMenu( params, i18n )
         return _childLink( li, 'openclose-(?:open|close|busy|error)' );
     }
 
-    // The node is on the path to the current node (params.path: strings from the template; a node ID from the JSON
-    // is a number)
-    function _onPath( nodeID )
-    {
-        for ( var i = 0; i < params.path.length; i++ )
-        {
-            if ( String( params.path[i] ) === String( nodeID ) ) return true;
-        }
-        return false;
-    }
-
-    // The node ID of an open/close button (id "a<node ID>")
-    function _toggleNodeID( toggle )
-    {
-        return parseInt( String( toggle.id ).substr( 1 ), 10 ) || 0;
-    }
-
-    // Press an open/close button of this tree: load, open or close its sub items; false when it is not one of this
-    // tree's
-    function _press( toggle )
-    {
-        var nodeID = _toggleNodeID( toggle );
-        if ( !nodeID || thisMenu.levels[nodeID] === undefined )
-        {
-            return false;
-        }
-        thisMenu.load( toggle, nodeID, parseInt( toggle.getAttribute( 'data-modified-subnode' ), 10 ) || 0 );
-        return true;
-    }
-
     // Press the open/close button of the node li; false when there is nothing to press
     function _pressToggle( li )
     {
         var toggle = _toggleOf( li );
-        if ( toggle && toggle.className !== 'openclose-busy' && _press( toggle ) )
+        if ( toggle && toggle.className !== 'openclose-busy' && toggle.hasAttribute( 'data-tree-load' ) )
         {
+            thisMenu.press( toggle );
             return true;
         }
         return false;
@@ -910,6 +927,17 @@ function ContentStructureMenu( params, i18n )
         return String( value ).replace( /&/g, '&amp;' ).replace( /"/g, '&quot;' ).replace( /</g, '&lt;' ).replace( />/g, '&gt;' );
     }
 
+    // The node is on the path to the current node (params.path: strings from the template; a node ID from the JSON
+    // is a number)
+    function _onPath( nodeID )
+    {
+        for ( var i = 0; i < params.path.length; i++ )
+        {
+            if ( String( params.path[i] ) === String( nodeID ) ) return true;
+        }
+        return false;
+    }
+
     // Internal cookie functions (only where localStorage is blocked): encodeURIComponent, not the deprecated
     // escape(); same site only, secure over https
     function _setCookie( name, value, expires, path )
@@ -930,4 +958,82 @@ function ContentStructureMenu( params, i18n )
         }
         return null;
     }
+
+    function _delCookie( name )
+    {
+        _setCookie( name, '', ( new Date() - 86400000 ) );
+    }
+}
+
+/*
+ * The tree of a page: each div.content-tree-menu (contentstructuremenu/content_structure_menu_dynamic.tpl) carries
+ * its data as JSON in data-tree-root, data-tree-params and data-tree-request, and its list (ul#content_tree_menu).
+ * The tree is drawn when the page is parsed; window.treeMenu is the last one, as with the inline script before.
+ */
+ContentStructureMenu.fromElement = function( holder )
+{
+    var read = function( name )
+    {
+        try { return JSON.parse( holder.getAttribute( name ) || '{}' ) || {}; } catch ( e ) { return {}; }
+    };
+    var ul = holder.querySelector( 'ul' ), rootNode = read( 'data-tree-root' ), params = read( 'data-tree-params' );
+    var request = read( 'data-tree-request' ), i18n = params.i18n || {};
+    if ( !ul || rootNode.node_id === undefined )
+    {
+        return null;
+    }
+    for ( var key in request )
+    {
+        params[key] = request[key];
+    }
+    var hideNodes = [];
+    for ( var h = 0; params.hideNodes && h < params.hideNodes.length; h++ )
+    {
+        if ( !isNaN( parseInt( params.hideNodes[h], 10 ) ) ) hideNodes.push( parseInt( params.hideNodes[h], 10 ) );
+    }
+    params.hideNodes = hideNodes;
+    params.action = params.action || '';
+    params.iconsList = {};
+    for ( var identifier in params.icons || {} )
+    {
+        params.iconsList[identifier] = params.wwwDirPrefix + params.icons[identifier];
+    }
+    params.iconsList['__default__'] = params.wwwDirPrefix + params.defaultIcon;
+    if ( params.preloadIcons && window.ezjslib_preloadImageList )
+    {
+        window.ezjslib_preloadImageList( params.iconsList );
+    }
+
+    var menu = new ContentStructureMenu( params, i18n );
+    ul.innerHTML = menu.generateEntry( rootNode, false, true );
+    menu.tree( ul );
+    menu.load( false, rootNode.node_id, rootNode.modified_subnode );
+    holder.contentStructureMenu = menu;
+    window.treeMenu = menu;
+    return menu;
+};
+
+ContentStructureMenu.drawAll = function()
+{
+    if ( !document.querySelectorAll )
+    {
+        return;
+    }
+    var holders = document.querySelectorAll( 'div.content-tree-menu[data-tree-root]' );
+    for ( var i = 0; i < holders.length; i++ )
+    {
+        if ( !holders[i].contentStructureMenu )
+        {
+            ContentStructureMenu.fromElement( holders[i] );
+        }
+    }
+};
+
+if ( document.readyState === 'loading' )
+{
+    document.addEventListener( 'DOMContentLoaded', ContentStructureMenu.drawAll );
+}
+else
+{
+    ContentStructureMenu.drawAll();
 }

@@ -137,7 +137,8 @@ class AdminNoticesTest extends PHPUnit\Framework\TestCase
         $this->assertSame( substr_count( $body, 'data-a4-copy=' ), substr_count( $body, 'data-a4-copy-failed=' ) );
         $js = AdminFiles::read( self::root() . '/design/admin4/javascript/admin4.js' );
         $this->assertStringContainsString( "window.a4Toast(chip.getAttribute('data-a4-copy-failed'), 'bad', chip)", $js );
-        $menu = AdminFiles::read( self::root() . '/design/admin4/templates/visual/menuconfig.tpl' );
+        $this->assertStringContainsString( "{ezscript( array( 'page/visual_menuconfig.js' ) )}", AdminFiles::read( self::root() . '/design/admin4/templates/visual/menuconfig.tpl' ) );
+        $menu = AdminFiles::read( self::root() . '/design/admin4/javascript/page/visual_menuconfig.js' );
         $this->assertStringContainsString( "window.a4Toast(button.getAttribute('data-copy-failed'), 'bad', button)", $menu );
         foreach ( array( 'eng-US', 'ger-DE' ) as $lang )
         {
@@ -152,7 +153,7 @@ class AdminNoticesTest extends PHPUnit\Framework\TestCase
         $this->assertSame( substr_count( $body, 'data-a4-copy=' ), substr_count( $body, 'data-a4-copied=' ), 'every copy chip names its toast' );
         $js = AdminFiles::read( self::root() . '/design/admin4/javascript/admin4.js' );
         $this->assertStringContainsString( "window.a4Toast(chip.getAttribute('data-a4-copied')", $js );
-        $menu = AdminFiles::read( self::root() . '/design/admin4/templates/visual/menuconfig.tpl' );
+        $menu = AdminFiles::read( self::root() . '/design/admin4/javascript/page/visual_menuconfig.js' );
         $this->assertStringContainsString( "window.a4Toast(button.getAttribute('data-copied'), 'ok', button)", $menu );
     }
 }

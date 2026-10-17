@@ -71,7 +71,7 @@ class AdminScriptsTest extends PHPUnit\Framework\TestCase
             $this->assertStringNotContainsString( 'params.classes[item.class_id].', $js, $path );
             $this->assertStringContainsString( "if ( divElement.className == 'error' )", $js, $path );
             $this->assertDoesNotMatchRegularExpression( '/aElement\.onclick\s*=\s*function\s*\(\s*\)\s*\{\s*return false;/', $js, $path );
-            $this->assertStringContainsString( "toggle.className !== 'openclose-busy' && _press( toggle )", $js, $path );
+            $this->assertStringContainsString( "toggle.className !== 'openclose-busy' && toggle.hasAttribute( 'data-tree-load' )", $js, $path );
             $this->assertStringContainsString( 'var expireDate = new Date();', $js, $path );
         }
     }

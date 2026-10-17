@@ -7,11 +7,12 @@
 
     <title>{'Exponential redirection - %url'|i18n('design/standard/layout',,hash('%url',$redirect_uri|wash))}</title>
 </head>
-<body onload="document.forms.Redirect.RedirectButton.focus()">
+<body>
   <form action="{$redirect_uri|wash}" method="post" name="Redirect">
   {include uri="design:page_warning.tpl"}
   {"Redirecting to %url"|i18n('design/standard/layout',,hash('%url',concat("<b>",$redirect_uri|wash,"</b>")))} <br/>
-  <input class="standardbutton" type="submit" name="RedirectButton" value="{'Redirect'|i18n('design/standard/layout')}"/>
+  {* autofocus: the button has the focus on load (it was an onload handler on <body>) *}
+  <input class="standardbutton" type="submit" name="RedirectButton" value="{'Redirect'|i18n('design/standard/layout')}" autofocus="autofocus"/>
   </form>
 
 <!--DEBUG_REPORT-->

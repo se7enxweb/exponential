@@ -8,7 +8,7 @@
 
     {include uri="design:package/install_header.tpl"}
 
-    <input type="checkbox" id="UseDatesFromPackage" name="UseDatesFromPackage" value="1" {if $use_dates_from_package}checked="checked"{/if} /> <label style="font-weight:normal;display:inline;" for="UseDatesFromPackage">{'Use content object modification and publication dates from the package.'|i18n('design/standard/package')}</label>
+    <input type="checkbox" id="UseDatesFromPackage" name="UseDatesFromPackage" value="1" {if $use_dates_from_package}checked="checked"{/if} /> <label class="a4-package-option-label" for="UseDatesFromPackage">{'Use content object modification and publication dates from the package.'|i18n('design/standard/package')}</label>
 
     {include uri="design:package/navigator.tpl"}
 

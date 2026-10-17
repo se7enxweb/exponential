@@ -67,7 +67,7 @@
 
 <table class="list" cellspacing="0">
 <tr>
-    <th scope="col" class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/shop/basket' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/shop/basket' )|wash}" onclick="ezjs_toggleCheckboxes( document.basket, 'RemoveProductItemDeleteList[]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
+    <th scope="col" class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/shop/basket' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/shop/basket' )|wash}" data-a4-toggle-checkboxes="RemoveProductItemDeleteList[]" data-a4-form="basket"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
     <th scope="col">{'Product'|i18n( 'design/admin/shop/basket' )}</th>
     <th scope="col">{'Quantity'|i18n( 'design/admin/shop/basket' )}</th>
     <th scope="col">{'VAT'|i18n( 'design/admin/shop/basket' )}</th>

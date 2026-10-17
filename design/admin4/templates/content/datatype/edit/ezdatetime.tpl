@@ -27,8 +27,10 @@
 </div>
 <div>
 {* A button, so the keyboard reaches the calendar (exp::datepicker gives the focus back to it on Escape). *}
-<button type="button" class="a4-btn a4-btn-icon a4-content-datepicker-icon" id="{$attribute_base}_datetime_cal_{$attribute.id}" aria-haspopup="dialog" title="{'Choose a date'|i18n( 'design/admin/content/datatype' )|wash}" aria-label="{'Choose a date for %name'|i18n( 'design/admin/content/datatype',, hash( '%name', $attribute.contentclass_attribute.name ) )|wash}" onclick="showDatePicker( '{$attribute_base}', '{$attribute.id}', 'datetime' );"><span class="a4-icon a4-bi-calendar3" aria-hidden="true"></span></button>
+<button type="button" class="a4-btn a4-btn-icon a4-content-datepicker-icon" id="{$attribute_base}_datetime_cal_{$attribute.id}" aria-haspopup="dialog" title="{'Choose a date'|i18n( 'design/admin/content/datatype' )|wash}" aria-label="{'Choose a date for %name'|i18n( 'design/admin/content/datatype',, hash( '%name', $attribute.contentclass_attribute.name ) )|wash}" data-a4-datepicker="datetime" data-a4-datepicker-base="{$attribute_base|wash}" data-a4-datepicker-id="{$attribute.id|wash}"><span class="a4-icon a4-bi-calendar3" aria-hidden="true"></span></button>
 <div id="{$attribute_base}_datetime_cal_container_{$attribute.id}" class="a4-content-datepicker"></div>
+{* the button opens the calendar through page/content_datepicker.js (data-a4-datepicker) *}
+{ezscript( array( 'page/content_datepicker.js' ) )}
 </div>
 </div>
 

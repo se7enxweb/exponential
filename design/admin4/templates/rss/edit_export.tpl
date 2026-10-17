@@ -156,13 +156,13 @@
             <span class="a4-help">{'Click this button to select the source node for the RSS export source. Objects of the type selected in the drop-down below published as sub items of the selected node will be included in the RSS export.'|i18n( 'design/admin/rss/edit_export' )}</span>
         </div>
         <div class="a4-field">
-            <label class="a4-check"><input type="checkbox" id="rssExporSubNodes_{$Source:index}" name="Item_Subnodes_{$Source:index}"{if $Source:item.subnodes|eq( 1 )} checked="checked"{/if} onchange="document.getElementById('Ignore_Values_On_Browse_{$Source:index}').value=0;" /> {'Subnodes'|i18n( 'design/admin/rss/edit_export' )}</label>
+            <label class="a4-check"><input type="checkbox" id="rssExporSubNodes_{$Source:index}" name="Item_Subnodes_{$Source:index}"{if $Source:item.subnodes|eq( 1 )} checked="checked"{/if} data-a4-reset-field="Ignore_Values_On_Browse_{$Source:index}" /> {'Subnodes'|i18n( 'design/admin/rss/edit_export' )}</label>
             <span class="a4-help">{'Activate this checkbox if objects from the subnodes of the source should also be fed.'|i18n( 'design/admin/rss/edit_export' )}</span>
         </div>
         <div class="a4-field">
             <label for="rssExporClass_{$Source:index}">{'Class'|i18n( 'design/admin/rss/edit_export' )}</label>
             <div class="a4-searchrow">
-                <select id="rssExporClass_{$Source:index}" name="Item_Class_{$Source:index}" onchange="document.getElementById('Ignore_Values_On_Browse_{$Source:index}').value=0;">
+                <select id="rssExporClass_{$Source:index}" name="Item_Class_{$Source:index}" data-a4-reset-field="Ignore_Values_On_Browse_{$Source:index}">
                 {section name=ContentClass loop=$rss_class_array}
                     <option value="{$:item.id}"{if eq( $:item.id, $Source:item.class_id )} selected="selected"{/if}>{$:item.name|wash}</option>
                 {/section}
@@ -177,7 +177,7 @@
     <div class="a4-rss-mapping">
         <div class="a4-field">
             <label for="rssExporClass_{$Source:index}_title">{'Title'|i18n( 'design/admin/rss/edit_export' )}</label>
-            <select id="rssExporClass_{$Source:index}_title" name="Item_Class_Attribute_Title_{$Source:index}" onchange="document.getElementById('Ignore_Values_On_Browse_{$Source:index}').value=0;">
+            <select id="rssExporClass_{$Source:index}_title" name="Item_Class_Attribute_Title_{$Source:index}" data-a4-reset-field="Ignore_Values_On_Browse_{$Source:index}">
             {section name=ClassAttribute loop=$rss_export.item_list[$Source:index].class_attributes}
                 <option value="{$:item.identifier|wash}"{if eq( $Source:item.title, $:item.identifier )} selected="selected"{/if}>{$:item.name|wash}</option>
             {/section}
@@ -186,7 +186,7 @@
         </div>
         <div class="a4-field">
             <label for="rssExporClass_{$Source:index}_desc">{'Description'|i18n( 'design/admin/rss/edit_export' )} ({'optional'|i18n( 'design/admin/rss/edit_export' )})</label>
-            <select id="rssExporClass_{$Source:index}_desc" name="Item_Class_Attribute_Description_{$Source:index}" onchange="document.getElementById('Ignore_Values_On_Browse_{$Source:index}').value=0;">
+            <select id="rssExporClass_{$Source:index}_desc" name="Item_Class_Attribute_Description_{$Source:index}" data-a4-reset-field="Ignore_Values_On_Browse_{$Source:index}">
                 <option value="">[{'Skip'|i18n( 'design/admin/rss/edit_export' )}]</option>
             {section name=ClassAttribute loop=$rss_export.item_list[$Source:index].class_attributes}
                 <option value="{$:item.identifier|wash}"{if eq( $Source:item.description, $:item.identifier )} selected="selected"{/if}>{$:item.name|wash}</option>
@@ -196,7 +196,7 @@
         </div>
         <div class="a4-field">
             <label for="rssExporClass_{$Source:index}_category">{'Category'|i18n( 'design/admin/rss/edit_export' )} ({'optional'|i18n( 'design/admin/rss/edit_export' )})</label>
-            <select id="rssExporClass_{$Source:index}_category" name="Item_Class_Attribute_Category_{$Source:index}" onchange="document.getElementById('Ignore_Values_On_Browse_{$Source:index}').value=0;">
+            <select id="rssExporClass_{$Source:index}_category" name="Item_Class_Attribute_Category_{$Source:index}" data-a4-reset-field="Ignore_Values_On_Browse_{$Source:index}">
                 <option value="">[{'Skip'|i18n( 'design/admin/rss/edit_export' )}]</option>
             {section name=ClassAttribute loop=$rss_export.item_list[$Source:index].class_attributes}
                 <option value="{$:item.identifier|wash}"{if eq( $Source:item.category, $:item.identifier )} selected="selected"{/if}>{$:item.name|wash}</option>
@@ -206,7 +206,7 @@
         </div>
         <div class="a4-field">
             <label for="rssExporClass_{$Source:index}_enclosure">{'Enclosure (media)'|i18n( 'design/admin/rss/edit_export' )} ({'optional'|i18n( 'design/admin/rss/edit_export' )})</label>
-            <select id="rssExporClass_{$Source:index}_enclosure" name="Item_Class_Attribute_Enclosure_{$Source:index}" onchange="document.getElementById('Ignore_Values_On_Browse_{$Source:index}').value=0;">
+            <select id="rssExporClass_{$Source:index}_enclosure" name="Item_Class_Attribute_Enclosure_{$Source:index}" data-a4-reset-field="Ignore_Values_On_Browse_{$Source:index}">
                 <option value="">[{'Skip'|i18n( 'design/admin/rss/edit_export' )}]</option>
             {foreach $rss_export.item_list[$Source:index].class_attributes as $class_attribute}
                 <option value="{$class_attribute.identifier|wash}"{if eq( $Source:item.enclosure, $class_attribute.identifier )} selected="selected"{/if}>{$class_attribute.name|wash}</option>
@@ -335,74 +335,5 @@
 </form>
 {undef $feed_url $source_count}
 
-<script type="text/javascript">
-var expRssExportFocus = {if not( $valid )}'rss-export-errors'{else}'exportName'{/if};
-{literal}
-( function () {
-    var focus = document.getElementById( expRssExportFocus );
-    if ( focus ) { focus.focus(); if ( focus.select ) focus.select(); }
-
-    var version = document.getElementById( 'rssExportVersion' );
-    if ( !version ) return;
-
-    // Which half of the page applies follows the format. The server decides the same thing after every submit;
-    // this only saves waiting for one.
-    function show()
-    {
-        var opml    = version.value === 'OPML',
-            podcast = version.value === 'ITUNES',
-            sources = document.getElementById( 'rssExportSources' ),
-            panel   = document.getElementById( 'rssExportOPML' ),
-            pod     = document.getElementById( 'rssExportPodcast' ),
-            add     = document.getElementById( 'rssExportAddSource' ),
-            limit   = document.getElementById( 'rssExportLimitBlock' );
-
-        // A podcast keeps its sources: the episodes come from content. Only OPML replaces them with other feeds.
-        if ( sources ) sources.hidden = opml;
-        if ( panel )   panel.hidden   = !opml;
-        if ( pod )     pod.hidden     = !podcast;
-        if ( add )     add.hidden     = opml;
-        if ( limit )   limit.hidden   = opml;
-
-        subcategories();
-    }
-
-    // Only the subcategories of the chosen category are worth offering; Apple rejects a pairing that is not its own.
-    function subcategories()
-    {
-        var category = document.getElementById( 'podcastCategory' ),
-            sub      = document.getElementById( 'podcastSubcategory' );
-        if ( !category || !sub ) return;
-        var chosen = category.value, cleared = false;
-        for ( var i = 0; i < sub.options.length; i++ )
-        {
-            var option = sub.options[i], parent = option.getAttribute( 'data-parent' );
-            if ( !parent ) continue;
-            var applies = parent === chosen;
-            option.hidden = !applies;
-            option.disabled = !applies;
-            if ( !applies && option.selected ) { option.selected = false; cleared = true; }
-        }
-        if ( cleared ) sub.selectedIndex = 0;
-    }
-
-    version.onchange = show;
-    var podcastCategory = document.getElementById( 'podcastCategory' );
-    if ( podcastCategory ) podcastCategory.onchange = subcategories;
-    show();
-
-    // Enter in the feed browser's search box searches instead of pressing the first button of the form.
-    var search = document.getElementById( 'feedBrowserSearch' ),
-        apply  = document.getElementById( 'feedBrowserApply' );
-    if ( search && apply )
-    {
-        search.onkeydown = function ( event ) {
-            // event.key (keyCode is deprecated); not while an input method composes a word
-            if ( event.key !== 'Enter' || event.isComposing ) return true;
-            apply.click();
-            return false;
-        };
-    }
-} )();
-{/literal}
-</script>
+<div id="rss-export-script" hidden data-focus="{if not( $valid )}rss-export-errors{else}exportName{/if}"></div>
+{ezscript( array( 'page/rss_edit_export.js' ) )}

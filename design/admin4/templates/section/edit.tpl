@@ -95,44 +95,5 @@
 {if and( is_set( $redirect_if_discarded ), $redirect_if_discarded )}<input type="hidden" name="RedirectIfDiscarded" value="{$redirect_if_discarded|wash}" />{/if}
 </form>
 
-<script type="text/javascript">
-var expSectionEditNew = {if $is_new}true{else}false{/if};
-var expSectionEditError = {if $error}true{else}false{/if};
-var expSectionEditText = {ldelim}
-    pattern: '{'Identifier should consist of letters, numbers or \'_\' with letter prefix.'|i18n( 'design/admin/section/edit' )|wash( javascript )}',
-    empty: '{'Identifier can not be empty'|i18n( 'design/admin/section/edit' )|wash( javascript )}'
-{rdelim};
-{literal}
-(function () {
-    var nameEl = document.getElementById( 'sectionName' );
-    var idEl = document.getElementById( 'SectionIdentifier' );
-    if ( !nameEl || !idEl ) return;
-    if ( expSectionEditError ) {
-        var box = document.getElementById( 'section-edit-error' );
-        idEl.focus(); idEl.select();
-        if ( box ) box.setAttribute( 'aria-live', 'assertive' );
-    } else {
-        nameEl.focus(); nameEl.select();
-    }
-    // A new section's identifier follows its name ("Members area" -> "members_area") until it is typed in.
-    var typed = !expSectionEditNew || idEl.value !== '';
-    idEl.addEventListener( 'input', function () { typed = idEl.value !== ''; idEl.setCustomValidity( '' ); } );
-    nameEl.addEventListener( 'input', function () {
-        if ( typed ) return;
-        var s = nameEl.value.toLowerCase();
-        if ( s.normalize ) s = s.normalize( 'NFD' ).replace( /[̀-ͯ]/g, '' );
-        s = s.replace( /ß/g, 'ss' ).replace( /[^a-z0-9_]+/g, '_' ).replace( /^[^a-z]+/, '' ).replace( /_+$/, '' );
-        idEl.value = s;
-    } );
-    // The same checks as the server, before the round trip; the server still has the last word.
-    document.getElementById( 'section-edit-form' ).addEventListener( 'submit', function ( e ) {
-        var store = e.submitter ? e.submitter.name === 'StoreButton' : true;
-        if ( !store ) return;
-        var v = idEl.value.trim();
-        var msg = v === '' ? expSectionEditText.empty : ( /^[A-Za-z][A-Za-z0-9_]*$/.test( v ) ? '' : expSectionEditText.pattern );
-        idEl.setCustomValidity( msg );
-        if ( msg ) { e.preventDefault(); idEl.setAttribute( 'aria-invalid', 'true' ); idEl.reportValidity(); idEl.focus(); }
-    } );
-})();
-{/literal}
-</script>
+<div id="section-edit-data" hidden data-section-edit-new="{if $is_new}1{else}0{/if}" data-section-edit-error="{if $error}1{else}0{/if}" data-section-edit-text-pattern="{'Identifier should consist of letters, numbers or \'_\' with letter prefix.'|i18n( 'design/admin/section/edit' )|wash}" data-section-edit-text-empty="{'Identifier can not be empty'|i18n( 'design/admin/section/edit' )|wash}"></div>
+{ezscript( array( 'page/section_edit.js' ) )}

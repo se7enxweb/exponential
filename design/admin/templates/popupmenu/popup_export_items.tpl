@@ -11,17 +11,11 @@
      parameters; each checks its own policies. Nothing is output when there is no entry for the user. *}
 {set-block variable=$export_package_items}
 {if fetch( 'package', 'content_export_access' )}
-<script type="text/javascript">
-menuArray['{$menu_id}']['elements']['{$item_prefix}-package-node'] = {ldelim} 'url': {"package/create/(creator)/ezcontentobject/(node)/%nodeID%"|ezurl} {rdelim};
-menuArray['{$menu_id}']['elements']['{$item_prefix}-package-subtree'] = {ldelim} 'url': {"package/create/(creator)/ezcontentobject/(node)/%nodeID%/(subtree)/1"|ezurl} {rdelim};
-menuArray['{$menu_id}']['elements']['{$item_prefix}-package-content'] = {ldelim} 'url': {"package/create/(creator)/ezcontentobject/(node)/%nodeID%/(subtree)/1/(classes)/0"|ezurl} {rdelim};
-menuArray['{$menu_id}']['elements']['{$item_prefix}-package-versions'] = {ldelim} 'url': {"package/create/(creator)/ezcontentobject/(node)/%nodeID%/(subtree)/1/(versions)/all"|ezurl} {rdelim};
-</script>
-    <a id="{$item_prefix}-package-node" href="#" onmouseover="ezpopmenu_mouseOver( '{$menu_id}' )"><span class="a4-icon a4-bi-box-seam" aria-hidden="true"></span> {'This item as package…'|i18n( 'design/admin/popupmenu' )}</a>
-    <a id="{$item_prefix}-package-subtree" href="#" onmouseover="ezpopmenu_mouseOver( '{$menu_id}' )"><span class="a4-icon a4-bi-box-seam" aria-hidden="true"></span> {'This item and its subtree as package…'|i18n( 'design/admin/popupmenu' )}</a>
-    <a id="{$item_prefix}-package-content" href="#" onmouseover="ezpopmenu_mouseOver( '{$menu_id}' )"><span class="a4-icon a4-bi-box-seam" aria-hidden="true"></span> {'Subtree as package, without class definitions…'|i18n( 'design/admin/popupmenu' )}</a>
-    <a id="{$item_prefix}-package-versions" href="#" onmouseover="ezpopmenu_mouseOver( '{$menu_id}' )"><span class="a4-icon a4-bi-box-seam" aria-hidden="true"></span> {'Subtree as package, with all versions…'|i18n( 'design/admin/popupmenu' )}</a>
-    <a id="{$item_prefix}-package-wizard" href={'package/create'|ezurl} onmouseover="ezpopmenu_mouseOver( '{$menu_id}' )"><span class="a4-icon a4-bi-magic" aria-hidden="true"></span> {'Open the package wizard…'|i18n( 'design/admin/popupmenu' )}</a>
+    <a id="{$item_prefix}-package-node" data-menu-url={"package/create/(creator)/ezcontentobject/(node)/%nodeID%"|ezurl} href="#"><span class="a4-icon a4-bi-box-seam" aria-hidden="true"></span> {'This item as package…'|i18n( 'design/admin/popupmenu' )}</a>
+    <a id="{$item_prefix}-package-subtree" data-menu-url={"package/create/(creator)/ezcontentobject/(node)/%nodeID%/(subtree)/1"|ezurl} href="#"><span class="a4-icon a4-bi-box-seam" aria-hidden="true"></span> {'This item and its subtree as package…'|i18n( 'design/admin/popupmenu' )}</a>
+    <a id="{$item_prefix}-package-content" data-menu-url={"package/create/(creator)/ezcontentobject/(node)/%nodeID%/(subtree)/1/(classes)/0"|ezurl} href="#"><span class="a4-icon a4-bi-box-seam" aria-hidden="true"></span> {'Subtree as package, without class definitions…'|i18n( 'design/admin/popupmenu' )}</a>
+    <a id="{$item_prefix}-package-versions" data-menu-url={"package/create/(creator)/ezcontentobject/(node)/%nodeID%/(subtree)/1/(versions)/all"|ezurl} href="#"><span class="a4-icon a4-bi-box-seam" aria-hidden="true"></span> {'Subtree as package, with all versions…'|i18n( 'design/admin/popupmenu' )}</a>
+    <a id="{$item_prefix}-package-wizard" href={'package/create'|ezurl}><span class="a4-icon a4-bi-magic" aria-hidden="true"></span> {'Open the package wizard…'|i18n( 'design/admin/popupmenu' )}</a>
 {/if}
 {/set-block}
 {set-block variable=$export_extension_items}

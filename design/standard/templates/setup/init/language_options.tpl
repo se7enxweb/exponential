@@ -52,33 +52,9 @@ To fix this problem you must do one of the following:"|i18n('design/standard/set
 
 </fieldset>
 
-{literal}
-<script type="text/javascript">
-// The default language is not also an additional one: choosing a language as
-// the default clears and disables its checkbox (the server checks it as well)
-(function () {
-    var table = document.getElementById( 'eZSetupLanguageTable' );
-    if ( !table || !table.querySelectorAll )
-        return;
-    var radios = table.querySelectorAll( 'input[name="eZSetupDefaultLanguage"]' );
-    function sync() {
-        for ( var i = 0; i < radios.length; i++ ) {
-            var box = document.getElementById( 'eZSetupLanguages_' + radios[i].value );
-            if ( !box )
-                continue;
-            if ( radios[i].checked )
-                box.checked = false;
-            box.disabled = radios[i].checked;
-        }
-    }
-    for ( var i = 0; i < radios.length; i++ )
-        radios[i].onchange = sync;
-    // A refused answer is shown as given, both boxes ticked: leave it visible
-    if ( !document.querySelector( '.error' ) )
-        sync();
-})();
-</script>
-{/literal}
+{* The default language is not also an additional one: javascript/setup_language_options.js (a file of its own,
+   for a Content Security Policy without 'unsafe-inline') *}
+<script type="text/javascript" src={'javascript/setup_language_options.js'|ezdesign}></script>
 
 </p>
 

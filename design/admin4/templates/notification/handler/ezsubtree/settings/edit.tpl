@@ -49,7 +49,7 @@
     <form method="post" action={$base|ezurl} id="nf-rules">
         <input type="hidden" name="UseConfirm" value="1" />
 {if $subscriptions|count|gt( 0 )}
-        <label class="a4-notification-selectall"><input type="checkbox" onclick="var b=document.querySelectorAll('#nf-rules .a4-notification-pick');for(var i=0;i&lt;b.length;i++)b[i].checked=this.checked;" /> {'Select all on this page'|i18n( 'design/admin/notification/settings' )}</label>
+        <label class="a4-notification-selectall"><input type="checkbox" data-nf-select-all /> {'Select all on this page'|i18n( 'design/admin/notification/settings' )}</label>
         <ul class="a4-notification-list">
     {foreach $subscriptions as $row}
             <li class="a4-notification-row{if $row.missing} is-gone{/if}">
@@ -88,4 +88,5 @@
 {/if}
         </div>
     </form>
+{ezscript( array( 'page/notification_ezsubtree_settings.js' ) )}
 </section>
