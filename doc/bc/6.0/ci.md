@@ -9,7 +9,7 @@ hooks, file manifest, code style, PHPStan, the tests of a change) are described 
 
 | | |
 |---|---|
-| What runs | **Quality** on every push and pull request, **PHPUnit** and **Performance** when PHP (Performance: also templates and settings) changes, and **CI health** once a week. |
+| What runs | **Quality** and **PHPUnit** on every push and pull request, **Performance** when PHP, templates or settings change, and **CI health** once a week. |
 | What blocks | Quality and PHPUnit. Performance is a warning only, and CI health only reports. |
 | A red check | Open the run, find the failed step in the table below, and run that step's command on your machine. `gh run view <id> --log-failed` prints only the failed steps' log. |
 | A contributor's commit | Kept as written. A subject outside `Added:`/`Updated:`/`Fixed:`/`Removed:`/`Renamed:` is a warning for a contributor, and an error only for the project's own authors. |
@@ -20,11 +20,11 @@ hooks, file manifest, code style, PHPStan, the tests of a change) are described 
 | Workflow | Runs on | Jobs | Blocks |
 |---|---|---|---|
 | `quality.yml` (Quality) | every push to `main` and every pull request to it, and by hand | **Syntax, manifest, commit messages, code style** (PHP 8.3, Node.js 22), **PHPStan** (PHP 8.3), **Code style sniff tests** (PHP 8.4), **PHP 8.0 (oldest supported) syntax and boot** | yes; code style is a warning |
-| `phpunit.yml` (PHPUnit) | a push or pull request that changes `*.php`, `composer.json`, `composer.lock`, `phpunit.xml` or the workflow, and by hand | **PHPUnit (PHP 8.1 to 8.5)**, a matrix without a database; **Database tests** on MySQL 8.0 and PostgreSQL 15 (PHP 8.3) | yes |
-| `performance.yml` (Performance) | a push or pull request that changes PHP, templates, `settings/`, the German translation or `tests/benchmark/` | **Micro benchmark (PHP 8.5)** against `tests/benchmark/baseline.json` | no (`continue-on-error`); a newer push to the same branch cancels a running one |
+| `phpunit.yml` (PHPUnit) | every push to `main` and every pull request to it (no paths filter: the tests also read templates, stylesheets, scripts, translations, settings and documentation), and by hand | **PHPUnit (PHP 8.1 to 8.5)**, a matrix without a database; **Database tests** on MySQL 8.0 and PostgreSQL 15 (PHP 8.3) | yes |
+| `performance.yml` (Performance) | a push or pull request that changes PHP, templates, `settings/`, the German translation or `tests/benchmark/` | **Micro benchmark (PHP 8.5)** against `tests/benchmark/baseline.json`; a probe over the threshold is measured once more and only the second run counts | no (`continue-on-error`) |
 | `ci-health.yml` (CI health) | Mondays 06:17 UTC, and by hand | **CI health report** | no; it only reports |
 
-Three things hold for all of them:
+These things hold for all of them:
 
 - **The root package is `dev-main`.** The workflows set `COMPOSER_ROOT_VERSION=dev-main`, because a pull request is
   checked out as a detached merge commit, where Composer would call the root package `dev-<sha>` and no package that
@@ -36,6 +36,14 @@ Three things hold for all of them:
   change in this repository.
 - **A pull request is tested as merged into `main`.** The checks see `main` plus the branch, so a branch that was
   green can turn red when `main` moves. Merge `main` into the branch and push again.
+- **Only a superseded pull request run is cancelled.** Quality, PHPUnit and Performance have one concurrency group
+  per pull request, and a new push to the branch cancels the run it replaces. A push to `main` gets a group of its
+  own commit, so a later push never cancels it halfway and every commit on `main` keeps a complete result. A
+  cancelled run on a pull request is therefore not a failure; look at the newest run of the branch.
+- **Network steps are retried, hung jobs are stopped.** Every Composer install or update is tried up to three times,
+  15 and 30 seconds apart. The PHP 8.0 production install retries only a network error: a requirement PHP 8.0 cannot
+  meet fails at once, because that is what the step checks. Composer downloads are cached per PHP version. Every job
+  has a timeout (20 or 30 minutes), so a hung job fails instead of blocking the queue for six hours.
 
 ## Reproduce a failure on your machine
 
