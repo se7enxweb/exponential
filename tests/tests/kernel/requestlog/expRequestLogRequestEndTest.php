@@ -218,8 +218,9 @@ class expRequestLogRequestEndTest extends PHPUnit\Framework\TestCase
         $this->assertCount( 1, $lines );
         $this->assertStringContainsString( 'injection', $lines[0] );
         $this->assertStringContainsString( '/ezjscore/call/', $lines[0] );
-        // the query value is never written
-        $this->assertStringNotContainsString( 'UNION', $lines[0] );
+        // the client address is masked (the query stays: it is the evidence, doc/features/6.0/request-logs.md)
+        $this->assertStringContainsString( '[203.0.x.x]', $lines[0] );
+        $this->assertStringNotContainsString( '203.0.113.9', $lines[0] );
     }
 
     /** RE-4 */

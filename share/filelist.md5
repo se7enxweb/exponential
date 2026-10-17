@@ -8831,7 +8831,7 @@ ea78290da17011e1c5e5fa5c26e2f812  tests/tests/kernel/private/webdav/regression/P
 e9be704d52153bd5f082c0d389cc9d6e  tests/tests/kernel/requestclassifier/expRequestClassifierRulesTest.php
 1bdad4a13363124b4ef82ffb75a60626  tests/tests/kernel/requestclassifier/expRequestClassifierTest.php
 320ecf8d91b393c2bef66451e292af55  tests/tests/kernel/requestclassifier/expRequestClassifierThresholdTest.php
-0ac818694c0ee66572ee4a560a095caf  tests/tests/kernel/requestlog/expRequestLogRequestEndTest.php
+634ae8dfdbacb82c9631bc75edf79267  tests/tests/kernel/requestlog/expRequestLogRequestEndTest.php
 f1d6df78928fbba651e25d8e16d4127c  tests/tests/kernel/requestlog/expRequestLogTest.php
 06d9d77a8d02bfd8f318367ad8d2ce31  tests/tests/kernel/requestlog/fixtures/request_ending_in_clean_exit.php
 0c4d498d365638f271d6368732362b01  tests/tests/kernel/search/eZSearchEngineIdsTest.php
