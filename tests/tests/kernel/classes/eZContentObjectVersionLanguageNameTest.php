@@ -3,7 +3,7 @@
  * eZContentObject::versionLanguageName() with version 0: the early return before the database raised
  * "Undefined variable $contentObjectID", because the variable is set further down. No database needed.
  *
- *  VL-01 - Version 0 liefert false, ohne PHP-Warnung
+ *  VL-01 - Version 0 returns false without a PHP warning
  *  VL-02 - A negative version as well (it used to run on to the database)
  *  VL-03 - Both return without touching the database (a stand-in fails on every access)
  *
@@ -12,7 +12,7 @@
  * @package tests
  */
 /** Database stand-in: every access is an error */
-class eZVersionLanguageNameStandInDB extends eZNullDB
+class expVersionLanguageNameStandInDB extends eZNullDB
 {
     public static $touched = 0;
 
@@ -38,8 +38,8 @@ class eZContentObjectVersionLanguageNameTest extends PHPUnit\Framework\TestCase
     private function callCollectingWarnings( $version )
     {
         $previousDB = $GLOBALS['eZDBGlobalInstance'] ?? null;
-        eZVersionLanguageNameStandInDB::$touched = 0;
-        eZDB::setInstance( new eZVersionLanguageNameStandInDB( array() ) );
+        expVersionLanguageNameStandInDB::$touched = 0;
+        eZDB::setInstance( new expVersionLanguageNameStandInDB( array() ) );
         $object = new eZContentObject( array( 'id' => 4711 ) );
         $messages = array();
         set_error_handler( function ( $no, $str ) use ( &$messages ) { $messages[] = $str; return true; } );
@@ -73,6 +73,6 @@ class eZContentObjectVersionLanguageNameTest extends PHPUnit\Framework\TestCase
     {
         $this->callCollectingWarnings( 0 );
         $this->callCollectingWarnings( -1 );
-        $this->assertSame( 0, eZVersionLanguageNameStandInDB::$touched );
+        $this->assertSame( 0, expVersionLanguageNameStandInDB::$touched );
     }
 }
