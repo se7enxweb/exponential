@@ -1125,6 +1125,9 @@
     "design/admin4/templates/package/*": [
       "tests/tests/design/AdminStoredValueEscapingTest.php"
     ],
+    "design/standard/templates/package/*": [
+      "tests/tests/design/AdminStoredValueEscapingTest.php"
+    ],
     "design/admin/templates/content/browse.tpl": [
       "tests/tests/design/AdminStoredValueEscapingTest.php"
     ],

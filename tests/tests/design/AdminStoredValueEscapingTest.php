@@ -48,8 +48,6 @@ class AdminStoredValueEscapingTest extends PHPUnit\Framework\TestCase
             'browse hidden fields' => array( 'content/browse.tpl',
                 array( 'value="{$PersistentData.item|wash}"', 'value="{$browse.action_name|wash}"', 'name="{$browse.browse_custom_action.name|wash}" value="{$browse.browse_custom_action.value|wash}"' ),
                 array( 'value="{$PersistentData.item}"', 'value="{$browse.action_name}"', '{$browse.browse_custom_action.name}' ) ),
-            'sub-items class name in script' => array( 'children_detailed.tpl',
-                array( 'text: "{$can_create_class.name|wash|wash(javascript)}"' ), array( 'text: "{$can_create_class.name|wash()}"' ) ),
             'template name' => array( 'visual/templatecreate.tpl',
                 array( 'value="{$template_name|wash}"', '<option value="{$extensionName|wash}">{$extensionName|wash}</option>' ),
                 array( 'value="{$template_name}"', '{$extensionName}' ) ),
@@ -96,6 +94,72 @@ class AdminStoredValueEscapingTest extends PHPUnit\Framework\TestCase
             $this->assertStringContainsString( '$csm_perm_key = concat( $csm_user.role_id_list|implode', $tpl, $file );
             $this->assertStringContainsString( "limited_assignment_value_list|implode( ',' ) )|md5", $tpl, $file );
             $this->assertLessThan( strpos( $tpl, "'can_instantiate_class_list'" ), strpos( $tpl, '$csm_perm_key )' ), $file );
+            // the menu keeps its data attributes (no inline script) and drops its variables again
+            $this->assertStringNotContainsString( '<script', $tpl, $file );
+            $this->assertStringContainsString( '{undef $tree_path $csm_user $csm_perm_key}', $tpl, $file );
+        }
+    }
+
+    /**
+     * The class names of the sub-items table's "Create" menu are shown as HTML (html: true in
+     * ezajaxsubitems_expdatatable.js), so they are washed for HTML first and then for their carrier: a JavaScript
+     * string in the inline script of design/admin, JSON in a data attribute in design/admin4 (no inline script since
+     * the Content Security Policy wave). A class name ending in a backslash broke the inline script.
+     */
+    public function testSubItemsClassNamesAreEscapedForTheirContext()
+    {
+        $base = dirname( __DIR__, 3 );
+        $admin = (string)file_get_contents( "$base/design/admin/templates/children_detailed.tpl" );
+        $this->assertStringContainsString( 'text: "{$can_create_class.name|wash|wash(javascript)}"', $admin );
+        $this->assertStringNotContainsString( 'text: "{$can_create_class.name|wash()}"', $admin );
+        $this->assertStringContainsString( '"{$group.group_name|wash(javascript)}"', $admin );
+
+        $admin4 = (string)file_get_contents( "$base/design/admin4/templates/children_detailed.tpl" );
+        $this->assertStringNotContainsString( 'text: "', $admin4, 'admin4 carries the options as JSON, not as script' );
+        $this->assertStringContainsString( "hash( 'text', \$can_create_class.name|wash(), 'value', \$can_create_class.id|int() )", $admin4 );
+        $this->assertStringContainsString( 'data-create-options="{json_encode( $subitems_create_options )|wash}"', $admin4 );
+    }
+
+    /**
+     * What the two layers make of a hostile class name: the JavaScript string literal holds no quote, backslash or
+     * angle bracket of its own, and once the browser has read it the text is the HTML-escaped name, so the menu that
+     * puts it in as HTML shows the name instead of running it.
+     */
+    public function testTheTwoLayersOfTheInlineScriptKeepAHostileNameInert()
+    {
+        $name = 'Article\\"</script><img src=x onerror=alert(1)>\'';
+        $literal = eZTemplateStringOperator::javascriptString( htmlspecialchars( $name, ENT_QUOTES ) );
+        $this->assertDoesNotMatchRegularExpression( '/(?<!\\\\)["\'<>]/', $literal );
+        $this->assertStringNotContainsString( '</script', $literal );
+        $decoded = json_decode( '"' . preg_replace_callback( '/\\\\(x[0-9A-F]{2}|0[0-7]{2})/', function ( $m )
+        {
+            return sprintf( '\\u%04x', $m[1][0] === 'x' ? hexdec( substr( $m[1], 1 ) ) : octdec( $m[1] ) );
+        }, $literal ) . '"' );
+        $this->assertSame( htmlspecialchars( $name, ENT_QUOTES ), $decoded );
+    }
+
+    /**
+     * design/standard is the fallback of every design without its own package pages: the same package values are
+     * escaped there, and the description, which only it printed raw.
+     */
+    public function testTheStandardDesignPackagePagesEscapeTheDefinition()
+    {
+        $base = dirname( __DIR__, 3 ) . '/design/standard/templates/package';
+        foreach ( array( 'view/files.tpl', 'view/full.tpl' ) as $path )
+        {
+            $tpl = (string)file_get_contents( "$base/$path" );
+            $this->assertStringContainsString( '{$package.version-number|wash}-{$package.release-number|wash}', $tpl, $path );
+            $this->assertStringContainsString( '[{$package.type|wash}]', $tpl, $path );
+            $this->assertStringNotContainsString( '{$package.version-number}', $tpl, $path );
+        }
+        $this->assertStringContainsString( '{$package.description|wash|nl2br}', (string)file_get_contents( "$base/view/full.tpl" ) );
+        $this->assertStringContainsString( '{$:item.version-number|wash}-{$:item.release-number|wash}', (string)file_get_contents( "$base/list.tpl" ) );
+        foreach ( array( 'install_error.tpl', 'uninstall_error.tpl' ) as $path )
+        {
+            $tpl = (string)file_get_contents( "$base/$path" );
+            $this->assertStringContainsString( "'{\$package.name|wash}'", $tpl, $path );
+            $this->assertStringContainsString( 'value="{$action_id|wash}"', $tpl, $path );
+            $this->assertStringContainsString( "'%element_id', \$error.element_id|wash", $tpl, $path );
         }
     }
 
