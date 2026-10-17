@@ -61447,6 +61447,78 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Templates compiled in this request</source>
         <translation>Templates compiled in this request</translation>
     </message>
+    <message>
+        <source>CB %hits/%count</source>
+        <translation>CB %hits/%count</translation>
+    </message>
+    <message>
+        <source>Cache blocks: %hits of %count read from the cache, %generated ms to generate the others (outermost blocks)</source>
+        <translation>Cache blocks: %hits of %count read from the cache, %generated ms to generate the others (outermost blocks)</translation>
+    </message>
+    <message>
+        <source>Cache blocks</source>
+        <translation>Cache blocks</translation>
+    </message>
+    <message>
+        <source>No cache-block ran on this page.</source>
+        <translation>No cache-block ran on this page.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache; %lookup ms to look them up, %generated ms to generate the others (outermost blocks; a row's time holds the blocks inside it).</source>
+        <translation>%hits of %count read from the cache; %lookup ms to look them up, %generated ms to generate the others (outermost blocks; a row's time holds the blocks inside it).</translation>
+    </message>
+    <message>
+        <source>The first %shown are listed.</source>
+        <translation>The first %shown are listed.</translation>
+    </message>
+    <message>
+        <source>hit</source>
+        <translation>hit</translation>
+    </message>
+    <message>
+        <source>generated</source>
+        <translation>generated</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>not found</translation>
+    </message>
+    <message>
+        <source>Lookup</source>
+        <translation>Lookup</translation>
+    </message>
+    <message>
+        <source>Generation</source>
+        <translation>Generation</translation>
+    </message>
+    <message>
+        <source>Expiry</source>
+        <translation>Expiry</translation>
+    </message>
+    <message>
+        <source>Keys</source>
+        <translation>Keys</translation>
+    </message>
+    <message>
+        <source>keys</source>
+        <translation>keys</translation>
+    </message>
+    <message>
+        <source>unknown (custom code, or a template compiled before)</source>
+        <translation>unknown (custom code, or a template compiled before)</translation>
+    </message>
+    <message>
+        <source>subtree %node</source>
+        <translation>subtree %node</translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation>View</translation>
+    </message>
+    <message>
+        <source>node %node</source>
+        <translation>node %node</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/audit</name>

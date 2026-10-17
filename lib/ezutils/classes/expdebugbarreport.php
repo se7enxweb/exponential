@@ -1153,7 +1153,10 @@ class expDebugBarReport
         if ( !class_exists( 'expRenderStats' ) )
             return null;
         $data = array( 'views' => expRenderStats::views(), 'view_cache' => expRenderStats::viewCache(),
-                       'templates' => expRenderStats::templates(), 'siteaccess' => '', 'navigation_part' => '',
+                       'templates' => expRenderStats::templates(),
+                       'cache_blocks' => method_exists( 'expRenderStats', 'cacheBlocks' ) ? expRenderStats::cacheBlocks() : array(),
+                       'cache_block_totals' => method_exists( 'expRenderStats', 'cacheBlockTotals' ) ? expRenderStats::cacheBlockTotals() : null,
+                       'siteaccess' => '', 'navigation_part' => '',
                        'design' => array(), 'settings' => array() );
         if ( isset( $GLOBALS['eZCurrentAccess']['name'] ) )
             $data['siteaccess'] = (string)$GLOBALS['eZCurrentAccess']['name'];
@@ -1205,6 +1208,16 @@ class expDebugBarReport
             $state = isset( $words[$cache['state']] ) ? $cache['state'] : 'pending';
             $chips[] = array( 'rendering', 'viewcache', $state === 'hit' || $state === 'off' ? 'ok' : 'warn', $words[$state],
                               self::t( 'Content view cache' ) . ': ' . self::renderingStateText( $cache ) );
+        }
+        $totals = isset( $r['cache_block_totals'] ) ? $r['cache_block_totals'] : null;
+        if ( $totals && $totals['count'] > 0 )
+        {
+            $misses = $totals['count'] - $totals['hits'];
+            $chips[] = array( 'rendering', 'cacheblocks', $misses > 0 ? 'warn' : 'ok',
+                              self::t( 'CB %hits/%count', array( '%hits' => $totals['hits'], '%count' => $totals['count'] ) ),
+                              self::t( 'Cache blocks: %hits of %count read from the cache, %generated ms to generate the others (outermost blocks)',
+                                       array( '%hits' => $totals['hits'], '%count' => $totals['count'],
+                                              '%generated' => number_format( $totals['generate_ms'], 0, '.', '' ) ) ) );
         }
         $compiled = count( $r['templates']['compiled'] );
         $chips[] = array( 'rendering', 'compiled', $compiled > 0 ? 'warn' : 'ok', self::t( 'Compiled %count', array( '%count' => $compiled ) ),
@@ -1271,32 +1284,41 @@ class expDebugBarReport
             $html .= '<p class="exp-debug-hint">' . self::h( 'No content view ran on this page.' ) . '</p>';
         else
         {
-            $html .= '<table class="exp-debug-facts" data-state="' . self::a( $cache['state'] ) . '">';
-            $html .= '<tr><th>' . self::h( 'State' ) . '</th><td>' . self::renderingValue( self::renderingStateText( $cache ) ) . '</td></tr>';
-            if ( $cache['age'] !== null )
-                $html .= '<tr><th>' . self::h( 'Age' ) . '</th><td>' . self::h( '%seconds s', array( '%seconds' => (int)$cache['age'] ) ) . '</td></tr>';
-            if ( $cache['size'] !== null )
-                $html .= '<tr><th>' . self::h( 'Size' ) . '</th><td>' . number_format( $cache['size'] / 1024, 1 ) . ' KB</td></tr>';
-            if ( $cache['path'] !== null )
-            {
-                $html .= '<tr><th>' . self::h( 'Hash' ) . '</th><td><code>' . self::a( $cache['hash'] ) . '</code></td></tr>';
-                $html .= '<tr><th>' . self::h( 'Cache file' ) . '</th><td>' . self::renderingValue( self::relativePath( $cache['path'] ) ) . '</td></tr>';
-            }
-            $html .= '</table>';
+            // laid out like the cache blocks below: one row, the key folded in the last column
+            $cache += array( 'node_id' => null, 'view_mode' => null, 'lookup_ms' => null, 'generate_ms' => null );
+            $node = isset( $cache['parts']['node_id'] ) ? $cache['parts']['node_id'] : $cache['node_id'];
+            $mode = isset( $cache['parts']['viewmode'] ) ? $cache['parts']['viewmode'] : $cache['view_mode'];
+            $view = $node === null ? '-' : self::renderingValue( self::t( 'node %node', array( '%node' => (int)$node ) ) . ( $mode === null ? '' : ', ' . $mode ) );
+            $keys = '-';
             if ( $cache['parts'] )
             {
-                $html .= '<details class="exp-debug-render-keys"><summary>' . self::h( 'Cache key (%count parts)', array( '%count' => count( $cache['parts'] ) ) ) . '</summary>';
-                $html .= '<table class="exp-debug-facts">';
+                $keys = '<details class="exp-debug-render-keys"><summary>' . self::h( 'Cache key (%count parts)', array( '%count' => count( $cache['parts'] ) ) ) . '</summary>';
+                $keys .= '<table class="exp-debug-facts">';
                 foreach ( $cache['parts'] as $name => $value )
                 {
                     $mark = in_array( $name, $cache['from_listeners'], true )
                         ? ' <span class="exp-debug-badge" title="' . self::h( 'Added or changed by a content/view/cachekeys listener' ) . '">' . self::h( 'listener' ) . '</span>' : '';
                     $shown = $value === null ? '' : ( is_bool( $value ) ? ( $value ? '1' : '' ) : (string)$value );
-                    $html .= '<tr><th>' . self::a( $name ) . $mark . '</th><td>' . ( $shown === '' ? '<em>' . self::h( 'empty' ) . '</em>' : self::renderingValue( $shown ) ) . '</td></tr>';
+                    $keys .= '<tr><th>' . self::a( $name ) . $mark . '</th><td>' . ( $shown === '' ? '<em>' . self::h( 'empty' ) . '</em>' : self::renderingValue( $shown ) ) . '</td></tr>';
                 }
-                $html .= '</table></details>';
+                $keys .= '</table>';
+                if ( $cache['path'] !== null )
+                    $keys .= self::h( 'Hash' ) . ' <code>' . self::a( $cache['hash'] ) . '</code><br><code>' . self::renderingValue( self::relativePath( $cache['path'] ) ) . '</code>';
+                $keys .= '</details>';
             }
+            $ms = function ( $value ) { return $value === null ? '-' : number_format( $value, 1, '.', '' ) . ' ms'; };
+            $html .= '<table class="exp-debug-facts exp-debug-viewcache"><tr><th>' . self::h( 'View' ) . '</th><th>' . self::h( 'State' )
+                   . '</th><th>' . self::h( 'Lookup' ) . '</th><th>' . self::h( 'Generation' ) . '</th><th>' . self::h( 'Size' )
+                   . '</th><th>' . self::h( 'Age' ) . '</th><th>' . self::h( 'Keys' ) . '</th></tr>';
+            $html .= '<tr data-state="' . self::a( $cache['state'] ) . '"><td>' . $view . '</td><td>' . self::renderingValue( self::renderingStateText( $cache ) )
+                   . '</td><td>' . $ms( $cache['lookup_ms'] ) . '</td><td>' . $ms( $cache['generate_ms'] ) . '</td><td>'
+                   . ( $cache['size'] === null ? '-' : number_format( $cache['size'] / 1024, 1 ) . ' KB' ) . '</td><td>'
+                   . ( $cache['age'] === null ? '-' : self::h( '%seconds s', array( '%seconds' => (int)$cache['age'] ) ) ) . '</td><td>' . $keys . '</td></tr>';
+            $html .= '</table>';
         }
+
+        $html .= self::cacheBlocksHtml( isset( $r['cache_blocks'] ) ? $r['cache_blocks'] : array(),
+                                        isset( $r['cache_block_totals'] ) ? $r['cache_block_totals'] : null );
 
         $html .= '<h3>' . self::h( 'Templates' ) . '</h3>';
         $settings = $r['settings'];
@@ -1318,6 +1340,48 @@ class expDebugBarReport
             $html .= '</ul></details>';
         }
         return $html;
+    }
+
+    /**
+     * The cache blocks of the Rendering tab: one row per {cache-block} in the order they were looked up.
+     *
+     * @param array $blocks expRenderStats::cacheBlocks()
+     * @param array|null $totals expRenderStats::cacheBlockTotals()
+     * @return string
+     */
+    protected static function cacheBlocksHtml( array $blocks, $totals )
+    {
+        $html = '<h3>' . self::h( 'Cache blocks' ) . '</h3>';
+        if ( !$totals || $totals['count'] == 0 )
+            return $html . '<p class="exp-debug-hint">' . self::h( 'No cache-block ran on this page.' ) . '</p>';
+        $html .= '<p class="exp-debug-hint">' . self::h( '%hits of %count read from the cache; %lookup ms to look them up, %generated ms to generate the others (outermost blocks; a row\'s time holds the blocks inside it).',
+                    array( '%hits' => $totals['hits'], '%count' => $totals['count'],
+                           '%lookup' => number_format( $totals['lookup_ms'], 1, '.', '' ),
+                           '%generated' => number_format( $totals['generate_ms'], 1, '.', '' ) ) ) . '</p>';
+        if ( count( $blocks ) < $totals['count'] )
+            $html .= '<p class="exp-debug-hint">' . self::h( 'The first %shown are listed.', array( '%shown' => count( $blocks ) ) ) . '</p>';
+        $states = array( 'hit' => 'hit', 'generated' => 'generated', 'pending' => 'not found' );
+        $html .= '<table class="exp-debug-facts exp-debug-cacheblocks"><tr><th>' . self::h( 'Template' ) . '</th><th>' . self::h( 'State' )
+               . '</th><th>' . self::h( 'Lookup' ) . '</th><th>' . self::h( 'Generation' ) . '</th><th>' . self::h( 'Size' )
+               . '</th><th>' . self::h( 'Expiry' ) . '</th><th>' . self::h( 'Keys' ) . '</th></tr>';
+        foreach ( $blocks as $block )
+        {
+            $where = $block['template'] === null ? '<em>' . self::h( 'unknown (custom code, or a template compiled before)' ) . '</em>'
+                : self::renderingValue( self::relativePath( $block['template'] ) . ':' . (int)$block['line'] );
+            $expiry = array();
+            if ( $block['ttl'] !== null )
+                $expiry[] = self::t( '%seconds s', array( '%seconds' => $block['ttl'] ) );
+            if ( $block['node_id'] !== null )
+                $expiry[] = self::t( 'subtree %node', array( '%node' => $block['node_id'] ) );
+            $keys = $block['keys'] === null ? '-' : '<details><summary>' . self::h( 'keys' ) . '</summary>' . self::renderingValue( $block['keys'] )
+                  . '<br><code>' . self::renderingValue( self::relativePath( $block['path'] ) ) . '</code></details>';
+            $html .= '<tr data-state="' . self::a( $block['state'] ) . '"><td>' . $where . '</td><td>' . self::h( $states[$block['state']] ) . '</td><td>'
+                   . number_format( $block['lookup_ms'], 1, '.', '' ) . ' ms</td><td>'
+                   . ( $block['generate_ms'] === null ? '-' : number_format( $block['generate_ms'], 1, '.', '' ) . ' ms' ) . '</td><td>'
+                   . ( $block['size'] === null ? '-' : number_format( $block['size'] / 1024, 1 ) . ' KB' ) . '</td><td>'
+                   . ( $expiry ? self::a( implode( ', ', $expiry ) ) : '-' ) . '</td><td>' . $keys . '</td></tr>';
+        }
+        return $html . '</table>';
     }
 
     /** A value of the Rendering tab, escaped; cut after RENDERING_VALUE_MAX characters with the whole value as tooltip. */
