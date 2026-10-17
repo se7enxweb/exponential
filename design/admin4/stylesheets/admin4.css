@@ -247,7 +247,10 @@ body,
   .header-search-mobile {
     display: none;
   }
-  .header-logo { order: 1; align-items: center; }
+  /* the logo's box as high as the tools (36px): the first row is as high with the logo alone as with every tool. The
+     tools stand after the main menu in the markup, so a paint of the half-parsed header drew the row 32px high and
+     the menu 4px higher, and it moved down when the search arrived (a layout shift from 576px to 1279px). */
+  .header-logo { order: 1; align-items: center; min-height: 36px; }
   .header-search {
     display: block;
     order: 2;
