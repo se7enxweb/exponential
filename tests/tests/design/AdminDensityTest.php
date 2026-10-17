@@ -13,6 +13,8 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminDensityTest extends PHPUnit\Framework\TestCase
 {
     /** The tokens the compact view used to set anew; each now has one value */
@@ -22,16 +24,16 @@ class AdminDensityTest extends PHPUnit\Framework\TestCase
 
     private static function file( $path )
     {
-        return (string)file_get_contents( dirname( __DIR__, 3 ) . '/' . $path );
+        return AdminFiles::read( dirname( __DIR__, 3 ) . '/' . $path );
     }
 
     public function testNoStylesheetHasADensityRule()
     {
         $root = dirname( __DIR__, 3 );
-        foreach ( array_merge( glob( "$root/design/admin4/stylesheets/{,*/}*.css", GLOB_BRACE ) ?: array(),
+        foreach ( array_merge( AdminFiles::files( "$root/design/admin4/stylesheets/{,*/}*.css", GLOB_BRACE ),
                                array( "$root/design/admin/stylesheets/components.css" ) ) as $file )
         {
-            $css = preg_replace( '#/\*.*?\*/#s', '', (string)file_get_contents( $file ) );
+            $css = preg_replace( '#/\*.*?\*/#s', '', AdminFiles::read( $file ) );
             $this->assertStringNotContainsString( 'data-a4-density', $css, basename( $file ) . ' styles a density that no longer exists' );
             $this->assertStringNotContainsString( 'a4-density-toggle', $css, basename( $file ) );
         }

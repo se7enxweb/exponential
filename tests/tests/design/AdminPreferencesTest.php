@@ -13,13 +13,15 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminPreferencesTest extends PHPUnit\Framework\TestCase
 {
     const NAMES = array( 'admin_color_mode', 'admin_left_sidebar', 'admin_right_sidebar', 'admin_right_drawer', 'admin_navgroups', 'admin_preview_device', 'admin_preview_landscape' );
 
     private static function read( $path )
     {
-        return (string)file_get_contents( dirname( __DIR__, 3 ) . '/' . $path );
+        return AdminFiles::read( dirname( __DIR__, 3 ) . '/' . $path );
     }
 
     public function testTheAttributesComeFromTheUsersPreferences()

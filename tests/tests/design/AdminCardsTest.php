@@ -11,11 +11,13 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminCardsTest extends PHPUnit\Framework\TestCase
 {
     private static function css( $design )
     {
-        return (string)file_get_contents( dirname( __DIR__, 3 ) . "/design/$design/stylesheets/components.css" );
+        return AdminFiles::read( dirname( __DIR__, 3 ) . "/design/$design/stylesheets/components.css" );
     }
 
     public function testBothCopiesDefineTheCardParts()
@@ -73,7 +75,7 @@ class AdminCardsTest extends PHPUnit\Framework\TestCase
         {
             if ( substr( (string)$file, -4 ) !== '.tpl' )
                 continue;
-            if ( preg_match( '/class="a4-card"[^>]*>\s*<div class="a4-section-head">/', (string)file_get_contents( (string)$file ) ) )
+            if ( preg_match( '/class="a4-card"[^>]*>\s*<div class="a4-section-head">/', AdminFiles::read( (string)$file ) ) )
                 $found[] = substr( (string)$file, strlen( $root ) + 1 );
         }
         $this->assertSame( array(), $found, 'Cards that open with a4-section-head: use a4-card-head (and a4-card-body for the rest)' );

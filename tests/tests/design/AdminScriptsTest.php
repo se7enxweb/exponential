@@ -14,6 +14,10 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminNodeBinary.php';
+
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminScriptsTest extends PHPUnit\Framework\TestCase
 {
     /** Designs whose copy of a script is kept identical to admin4's (AdminContextMenuTest holds the menu ones) */
@@ -29,7 +33,7 @@ class AdminScriptsTest extends PHPUnit\Framework\TestCase
         $file = self::root() . '/' . $path;
         if ( !is_file( $file ) )
             throw new RuntimeException( "$path is missing" );
-        return (string)file_get_contents( $file );
+        return AdminFiles::read( $file );
     }
 
     /** The source without its comments, so a comment cannot satisfy or fail an assertion on code */
@@ -142,9 +146,7 @@ class AdminScriptsTest extends PHPUnit\Framework\TestCase
     /** Every script of the admin designs parses: node --check, where node is installed */
     public function testEveryAdminScriptParses()
     {
-        $node = trim( (string)shell_exec( 'command -v node 2>/dev/null' ) );
-        if ( $node === '' )
-            $this->markTestSkipped( 'node is not installed' );
+        $node = AdminNodeBinary::require();
         $failed = array();
         $count = 0;
         foreach ( array( 'admin4', 'admin4l', 'admin3', 'admin' ) as $design )

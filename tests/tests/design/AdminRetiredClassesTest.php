@@ -12,6 +12,8 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminRetiredClassesTest extends PHPUnit\Framework\TestCase
 {
     /** Classes no stylesheet of the admin designs defines any more, => what replaces them */
@@ -24,10 +26,13 @@ class AdminRetiredClassesTest extends PHPUnit\Framework\TestCase
         $root = dirname( __DIR__, 3 );
         foreach ( self::DESIGNS as $design )
         {
-            foreach ( glob( "$root/design/$design/stylesheets/{,*/}*.css", GLOB_BRACE ) ?: array() as $css )
+            // admin4l carries no stylesheets of its own (it inherits admin4's); admin4 must have some
+            $pattern = "$root/design/$design/stylesheets/{,*/}*.css";
+            $files = $design === 'admin4l' ? ( glob( $pattern, GLOB_BRACE ) ?: array() ) : AdminFiles::files( $pattern, GLOB_BRACE );
+            foreach ( $files as $css )
             {
                 foreach ( array_keys( self::RETIRED ) as $class )
-                    $this->assertDoesNotMatchRegularExpression( '/\.' . preg_quote( $class, '/' ) . '(?![\w-])/', (string)file_get_contents( $css ),
+                    $this->assertDoesNotMatchRegularExpression( '/\.' . preg_quote( $class, '/' ) . '(?![\w-])/', AdminFiles::read( $css ),
                         "$css defines .$class again: then take it off RETIRED" );
             }
         }
@@ -40,6 +45,8 @@ class AdminRetiredClassesTest extends PHPUnit\Framework\TestCase
         foreach ( self::DESIGNS as $design )
         {
             $dir = "$root/design/$design/templates";
+            if ( $design === 'admin4' )
+                $this->assertDirectoryExists( $dir, 'the loop would check nothing without admin4 templates' );
             if ( !is_dir( $dir ) )
                 continue;
             $it = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( $dir, FilesystemIterator::SKIP_DOTS ) );
@@ -48,7 +55,7 @@ class AdminRetiredClassesTest extends PHPUnit\Framework\TestCase
                 if ( substr( $file->getFilename(), -4 ) !== '.tpl' )
                     continue;
                 // template comments {* ... *} are not read
-                $text = preg_replace( '/\{\*.*?\*\}/s', '', (string)file_get_contents( $file->getPathname() ) );
+                $text = preg_replace( '/\{\*.*?\*\}/s', '', AdminFiles::read( $file->getPathname() ) );
                 foreach ( array_keys( self::RETIRED ) as $class )
                 {
                     if ( preg_match( '/class="[^"]*(?<![\w-])' . preg_quote( $class, '/' ) . '(?![\w-])/', $text ) )

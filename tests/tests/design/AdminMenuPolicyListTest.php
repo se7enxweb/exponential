@@ -13,6 +13,8 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminMenuPolicyListTest extends PHPUnit\Framework\TestCase
 {
     private static function root()
@@ -30,7 +32,7 @@ class AdminMenuPolicyListTest extends PHPUnit\Framework\TestCase
         if ( !preg_match( '/^\w+$/', $module ) || !is_file( $file ) )
             return null;
         // read, not included: some modules build their limitation values from the database
-        preg_match_all( '/^\$FunctionList\[\s*[\'"](\w+)[\'"]\s*\]\s*=/m', (string)file_get_contents( $file ), $m );
+        preg_match_all( '/^\$FunctionList\[\s*[\'"](\w+)[\'"]\s*\]\s*=/m', AdminFiles::read( $file ), $m );
         return array_values( array_unique( $m[1] ) );
     }
 
@@ -65,7 +67,7 @@ class AdminMenuPolicyListTest extends PHPUnit\Framework\TestCase
 
     public function testEveryPolicyOfTheMenusExists()
     {
-        $ini = (string)file_get_contents( self::root() . '/settings/menu.ini' );
+        $ini = AdminFiles::read( self::root() . '/settings/menu.ini' );
         // the commented examples too: they are what an administrator uncomments
         preg_match_all( '/^#?\s*PolicyList(?:_\w+)?\[\]=(\S+)\s*$/m', $ini, $m );
         $values = array_values( array_diff( array_unique( $m[1] ), array( '<value>' ) ) );
@@ -78,8 +80,8 @@ class AdminMenuPolicyListTest extends PHPUnit\Framework\TestCase
 
     public function testTheDesignTabOpensTheDesignTopNodeById()
     {
-        $menu = (string)file_get_contents( self::root() . '/settings/menu.ini' );
-        $content = (string)file_get_contents( self::root() . '/settings/content.ini' );
+        $menu = AdminFiles::read( self::root() . '/settings/menu.ini' );
+        $content = AdminFiles::read( self::root() . '/settings/content.ini' );
         $this->assertMatchesRegularExpression( '/^DesignRootNode=58$/m', $content );
         $this->assertSame( 1, preg_match( '/^\[Topmenu_design\]$(.*?)^\[/ms', $menu, $block ) );
         $this->assertMatchesRegularExpression( '/^URL\[default\]=content\/view\/full\/58$/m', $block[1] );

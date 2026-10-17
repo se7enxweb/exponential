@@ -582,10 +582,9 @@ class AdminContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
     /** The JSON lines a harness of js/ printed, by case name */
     private function harness( $script, $file )
     {
-        $node = trim( (string)shell_exec( 'command -v node 2>/dev/null' ) );
-        if ( $node === '' )
-            $this->markTestSkipped( 'node is not installed' );
-        $out = (string)shell_exec( escapeshellarg( $node ) . ' ' . escapeshellarg( __DIR__ . "/js/$script" ) . ' '
+        // skipped without node on a developer machine, a failure where CI is set
+        $node = AdminNodeBinary::require();
+        $out =(string)shell_exec( escapeshellarg( $node ) . ' ' . escapeshellarg( __DIR__ . "/js/$script" ) . ' '
                                    . escapeshellarg( self::root() . "/$file" ) . ' 2>&1' );
         $cases = array();
         foreach ( array_filter( explode( "\n", $out ) ) as $line )

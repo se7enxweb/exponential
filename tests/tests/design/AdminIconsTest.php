@@ -16,6 +16,8 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminIconsTest extends PHPUnit\Framework\TestCase
 {
     const THEME = 'share/icons/bootstrap-icons';
@@ -33,7 +35,7 @@ class AdminIconsTest extends PHPUnit\Framework\TestCase
     private static function svgFiles()
     {
         $names = array();
-        foreach ( glob( self::root() . '/' . self::THEME . '/svg/*.svg' ) ?: array() as $file )
+        foreach ( AdminFiles::files( self::root() . '/' . self::THEME . '/svg/*.svg' ) as $file )
             $names[] = basename( $file );
         sort( $names );
         return $names;
@@ -57,9 +59,9 @@ class AdminIconsTest extends PHPUnit\Framework\TestCase
         $found = array();
         foreach ( array( 'admin4', 'admin' ) as $design )
         {
-            foreach ( glob( self::root() . "/design/$design/stylesheets/{,*/}*.css", GLOB_BRACE ) ?: array() as $css )
+            foreach ( AdminFiles::files( self::root() . "/design/$design/stylesheets/{,*/}*.css", GLOB_BRACE ) as $css )
             {
-                preg_match_all( '#url\(\s*[\'"]?([^\'")]*bootstrap-icons/svg/[^\'")]+)[\'"]?\s*\)#', (string)file_get_contents( $css ), $m );
+                preg_match_all( '#url\(\s*[\'"]?([^\'")]*bootstrap-icons/svg/[^\'")]+)[\'"]?\s*\)#', AdminFiles::read( $css ), $m );
                 foreach ( $m[1] as $url )
                     $found[] = array( $css, $url );
             }
@@ -88,7 +90,7 @@ class AdminIconsTest extends PHPUnit\Framework\TestCase
     {
         $licence = self::root() . '/' . self::THEME . '/LICENSE';
         $this->assertFileExists( $licence );
-        $this->assertStringContainsString( 'The MIT License', (string)file_get_contents( $licence ) );
+        $this->assertStringContainsString( 'The MIT License', AdminFiles::read( $licence ) );
     }
 
     public function testEveryFileTheThemeNamesExists()
@@ -108,7 +110,7 @@ class AdminIconsTest extends PHPUnit\Framework\TestCase
         $problems = array();
         foreach ( array( 'share/icons/crystal-admin', 'share/icons/crystal' ) as $theme )
         {
-            $ini = (string)file_get_contents( self::root() . "/$theme/icon.ini" );
+            $ini = AdminFiles::read( self::root() . "/$theme/icon.ini" );
             preg_match_all( '/^Sizes\[\w+\]=(\S+)\s*$/m', $ini, $sizes );
             preg_match_all( '/^(?:Default|\w+Map\[[^\]]*\])=(\S+)\s*$/m', $ini, $files );
             $this->assertNotEmpty( $sizes[1], "$theme: no sizes" );
@@ -127,7 +129,7 @@ class AdminIconsTest extends PHPUnit\Framework\TestCase
                     $problems[] = "$theme: MimeMap[$type] is not one MIME type or top-level type";
             }
         }
-        $this->assertMatchesRegularExpression( '/^ClassMap\[job\]=apps\/job\.png$/m', (string)file_get_contents( self::root() . '/share/icons/crystal-admin/icon.ini' ) );
+        $this->assertMatchesRegularExpression( '/^ClassMap\[job\]=apps\/job\.png$/m', AdminFiles::read( self::root() . '/share/icons/crystal-admin/icon.ini' ) );
         $this->assertSame( array(), $problems, 'The crystal icon themes name files or types that do not exist' );
     }
 
@@ -145,7 +147,7 @@ class AdminIconsTest extends PHPUnit\Framework\TestCase
 
     public function testEveryIconClassHasItsFileAndEveryUsedClassExists()
     {
-        $components = (string)file_get_contents( self::root() . '/design/admin4/stylesheets/components.css' );
+        $components = AdminFiles::read( self::root() . '/design/admin4/stylesheets/components.css' );
         preg_match_all( '/^\.a4-bi-([a-z0-9-]+) \{[^}]*url\([^)]*\/svg\/([a-z0-9-]+)\.svg\)/m', $components, $m, PREG_SET_ORDER );
         $defined = array();
         foreach ( $m as $rule )
@@ -160,7 +162,7 @@ class AdminIconsTest extends PHPUnit\Framework\TestCase
         $unknown = array();
         foreach ( self::adminTemplates() as $file )
         {
-            preg_match_all( '/\ba4-bi-([a-z0-9-]+)/', (string)file_get_contents( $file ), $used );
+            preg_match_all( '/\ba4-bi-([a-z0-9-]+)/', AdminFiles::read( $file ), $used );
             foreach ( array_diff( $used[1], $defined ) as $name )
                 $unknown[] = substr( $file, strlen( self::root() ) + 1 ) . ': a4-bi-' . $name;
         }
@@ -179,7 +181,7 @@ class AdminIconsTest extends PHPUnit\Framework\TestCase
     {
         foreach ( self::svgFiles() as $name )
         {
-            $svg = (string)file_get_contents( self::root() . '/' . self::THEME . '/svg/' . $name );
+            $svg = AdminFiles::read( self::root() . '/' . self::THEME . '/svg/' . $name );
             $icon = substr( $name, 0, -4 );
             $this->assertStringStartsWith( '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-' . $icon . '" viewBox="0 0 16 16">', $svg, $name );
             $this->assertDoesNotMatchRegularExpression( '/<script|\son\w+\s*=|href\s*=|<foreignObject/i', $svg, $name );
@@ -193,7 +195,7 @@ class AdminIconsTest extends PHPUnit\Framework\TestCase
         foreach ( self::adminTemplates() as $file )
         {
             // template comments {* ... *} are not read
-            $text = preg_replace( '/\{\*.*?\*\}/s', '', (string)file_get_contents( $file ) );
+            $text = preg_replace( '/\{\*.*?\*\}/s', '', AdminFiles::read( $file ) );
             $short = substr( $file, strlen( self::root() ) + 1 );
             if ( preg_match( "/'(?:$images)'\|ezimage/", $text ) )
                 $found[] = "$short: a GIF or PNG icon (use .a4-icon)";
@@ -209,12 +211,12 @@ class AdminIconsTest extends PHPUnit\Framework\TestCase
     /**
      * admin4l's header blocks are copies of parts of admin4's page_topmenu.tpl ("keep in step"): every line of
      * their markup is in page_topmenu.tpl, so a change of the icons or names there cannot leave admin4l behind.
-     * The tab menu block keeps a plain .navbar-menu wrapper; the zone's wrapper in admin4l's page layout is the landmark.
+     * The tab menu block draws only the <li> items; the wrapper in admin4l's page layout is the landmark.
      */
     public function testAdmin4lHeaderBlocksAreInStepWithTheTopMenu()
     {
-        $top = (string)file_get_contents( self::root() . '/design/admin4/templates/page_topmenu.tpl' );
-        foreach ( array( 'admin_logo', 'admin_search', 'admin_theme_switch', 'admin_sidebar_toggles', 'admin_tab_menu' ) as $block )
+        $top = AdminFiles::read( self::root() . '/design/admin4/templates/page_topmenu.tpl' );
+        foreach ( array( 'admin_logo', 'admin_search', 'admin_theme_switch', 'admin_menu_button', 'admin_sidebar_controls', 'admin_tab_menu' ) as $block )
         {
             $lines = file( self::root() . "/design/admin4l/templates/explayouts/block/$block.tpl", FILE_IGNORE_NEW_LINES );
             foreach ( $lines as $line )
@@ -244,20 +246,20 @@ class AdminIconsTest extends PHPUnit\Framework\TestCase
         $root = self::root();
         foreach ( self::SITE_LINKS as $file => $icon )
         {
-            $text = (string)file_get_contents( "$root/$file" );
+            $text = AdminFiles::read( "$root/$file" );
             // the header's part: the site link and, in its place with the script, the site menu's button
             $this->assertSame( $file === 'design/admin4/templates/parts/a4_header_site.tpl' ? 2 : 1, substr_count( $text, $icon ), "$file: the site link shows the globe" );
             $this->assertStringNotContainsString( 'a4-bi-box-arrow-up-right', $text, "$file: no arrow on the site link" );
         }
-        $this->assertMatchesRegularExpression( '/<a class="site-preview a4-header-btn" href="\{siteaccess_url\(\)\|wash\}"[^>]*>\s*' . preg_quote( self::SITE_LINKS['design/admin4/templates/parts/a4_header_site.tpl'], '/' ) . '/', (string)file_get_contents( "$root/design/admin4/templates/parts/a4_header_site.tpl" ) );
-        $this->assertMatchesRegularExpression( '/<button type="button" id="a4-site-toggle" [^>]*>\s*' . preg_quote( self::SITE_LINKS['design/admin4/templates/parts/a4_header_site.tpl'], '/' ) . '/', (string)file_get_contents( "$root/design/admin4/templates/parts/a4_header_site.tpl" ) );
+        $this->assertMatchesRegularExpression( '/<a class="site-preview a4-header-btn" href="\{siteaccess_url\(\)\|wash\}"[^>]*>\s*' . preg_quote( self::SITE_LINKS['design/admin4/templates/parts/a4_header_site.tpl'], '/' ) . '/', AdminFiles::read( "$root/design/admin4/templates/parts/a4_header_site.tpl" ) );
+        $this->assertMatchesRegularExpression( '/<button type="button" id="a4-site-toggle" [^>]*>\s*' . preg_quote( self::SITE_LINKS['design/admin4/templates/parts/a4_header_site.tpl'], '/' ) . '/', AdminFiles::read( "$root/design/admin4/templates/parts/a4_header_site.tpl" ) );
         foreach ( array( 'design/admin4/templates/page_topmenu.tpl', 'design/admin4l/templates/explayouts/block/admin_theme_switch.tpl' ) as $file )
-            $this->assertStringContainsString( "{include uri='design:parts/a4_header_site.tpl'}", (string)file_get_contents( "$root/$file" ), $file );
-        $this->assertMatchesRegularExpression( '/<a class="a4-icon-button" href="\{\$site_url\|wash\}"[^>]*>' . preg_quote( self::SITE_LINKS['design/admin4/templates/node/view/a4_full_body.tpl'], '/' ) . '<\/a>/', (string)file_get_contents( "$root/design/admin4/templates/node/view/a4_full_body.tpl" ) );
+            $this->assertStringContainsString( "{include uri='design:parts/a4_header_site.tpl'}", AdminFiles::read( "$root/$file" ), $file );
+        $this->assertMatchesRegularExpression( '/<a class="a4-icon-button" href="\{\$site_url\|wash\}"[^>]*>' . preg_quote( self::SITE_LINKS['design/admin4/templates/node/view/a4_full_body.tpl'], '/' ) . '<\/a>/', AdminFiles::read( "$root/design/admin4/templates/node/view/a4_full_body.tpl" ) );
         $rule = '.a4-bi-globe2 { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/globe2.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/globe2.svg); }';
         foreach ( array( 'admin4', 'admin' ) as $design )
-            $this->assertStringContainsString( $rule, (string)file_get_contents( "$root/design/$design/stylesheets/components.css" ), "design/$design: the mask rule" );
-        $this->assertMatchesRegularExpression( '/^IconList\[\]=globe2$/m', (string)file_get_contents( "$root/settings/design.ini" ) );
-        $this->assertStringStartsWith( '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-globe2" viewBox="0 0 16 16">', (string)file_get_contents( "$root/" . self::THEME . '/svg/globe2.svg' ) );
+            $this->assertStringContainsString( $rule, AdminFiles::read( "$root/design/$design/stylesheets/components.css" ), "design/$design: the mask rule" );
+        $this->assertMatchesRegularExpression( '/^IconList\[\]=globe2$/m', AdminFiles::read( "$root/settings/design.ini" ) );
+        $this->assertStringStartsWith( '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-globe2" viewBox="0 0 16 16">', AdminFiles::read( "$root/" . self::THEME . '/svg/globe2.svg' ) );
     }
 }

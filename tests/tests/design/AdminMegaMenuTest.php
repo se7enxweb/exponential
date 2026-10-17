@@ -31,6 +31,10 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminNodeBinary.php';
+
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
 {
     private static function root()
@@ -441,9 +445,7 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
     /** MM-06 */
     public function testTheScriptOpensAndClosesTheMenu()
     {
-        $node = trim( (string)shell_exec( 'command -v node 2>/dev/null' ) );
-        if ( $node === '' )
-            $this->markTestSkipped( 'node is not installed' );
+        $node = AdminNodeBinary::require();
         $out = (string)shell_exec( escapeshellarg( $node ) . ' ' . escapeshellarg( __DIR__ . '/js/mega_menu.js' ) . ' '
                                    . escapeshellarg( self::root() . '/design/admin4/javascript/a4_mega_menu.js' ) . ' 2>&1' );
         $s = array();
@@ -659,6 +661,39 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
         $this->assertFalse( $view::tabIsOpen( 'mmt', $ini ), 'a tab not in Tabs[]' );
     }
 
+    /**
+     * MM-03: run() itself refuses the anonymous user for a tab that is switched on (user/login is a policy the anonymous
+     * user may hold), and answers "not available" for a tab that is not, before it looks at the user
+     */
+    public function testTheViewRefusesTheAnonymousUser()
+    {
+        $this->menuIni( array( 'TopAdminMenu' => array( 'MegaMenuTabs' => array( 'setup' ) ) ) );
+        $module = new class {
+            public $errors = array();
+            public function handleError( $code, $type ) { $this->errors[] = array( $code, $type ); return array( 'error' => $code ); }
+        };
+        $key = 'eZUserGlobalInstance_';
+        $saved = array_key_exists( $key, $GLOBALS ) ? array( $GLOBALS[$key] ) : null;
+        $GLOBALS[$key] = new eZUser( array( 'contentobject_id' => eZUser::anonymousId(), 'login' => 'anonymous', 'email' => '' ) );
+        try
+        {
+            $this->assertFalse( eZUser::currentUser()->isRegistered(), 'the stand-in is the anonymous user' );
+            $view = new \Exponential\View\Kernel\User\Megamenu();
+            $this->assertSame( array( 'error' => eZError::KERNEL_ACCESS_DENIED ),
+                               $view->run( array( 'Params' => array( 'Module' => $module, 'Tab' => 'setup' ) ) ) );
+            $this->assertSame( array( array( eZError::KERNEL_ACCESS_DENIED, 'kernel' ) ), $module->errors );
+            $this->assertSame( array( 'error' => eZError::KERNEL_NOT_AVAILABLE ),
+                               $view->run( array( 'Params' => array( 'Module' => $module, 'Tab' => 'content' ) ) ) );
+        }
+        finally
+        {
+            if ( $saved === null )
+                unset( $GLOBALS[$key] );
+            else
+                $GLOBALS[$key] = $saved[0];
+        }
+    }
+
     /** MM-08 */
     public function testTheUsersTabReusesTheMenusThatDefineItsLinks()
     {
@@ -712,7 +747,7 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
             $this->assertNotNull( $icon, "[$section] LinkIcons[$link]" );
             $this->assertContains( $icon, $icons[1], "LinkIcons[$link]=$icon is not in design.ini IconList[]" );
             $this->assertStringStartsWith( '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-' . $icon . '"',
-                                           (string)file_get_contents( self::root() . "/share/icons/bootstrap-icons/svg/$icon.svg" ), "$icon.svg" );
+                                           AdminFiles::read( self::root() . "/share/icons/bootstrap-icons/svg/$icon.svg" ), "$icon.svg" );
             $text = $ini[$section]['LinkDescriptions'][$link] ?? null;
             $this->assertNotNull( $text, "[$section] LinkDescriptions[$link]" );
             // the description is translated in its section's context, the name comes from the template's i18n_hash

@@ -22,6 +22,8 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminSearchTest extends PHPUnit\Framework\TestCase
 {
     private static function root()
@@ -31,7 +33,7 @@ class AdminSearchTest extends PHPUnit\Framework\TestCase
 
     private static function read( $path )
     {
-        return (string)file_get_contents( self::root() . '/' . $path );
+        return AdminFiles::read( self::root() . '/' . $path );
     }
 
     /** AS-01 */

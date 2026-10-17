@@ -129,6 +129,9 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
         // events and cached actors are cleared (doc/bc/6.0/audit.md, "Buffering and flushing")
         if ( class_exists( 'expAudit' ) )
             expAudit::resetRequest();
+        // What the debug bar's Rendering tab shows of the previous request
+        if ( class_exists( 'expRenderStats' ) )
+            expRenderStats::resetRequest();
 
         if ( isset( $settings['injected-settings'] ) )
         {

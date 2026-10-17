@@ -14,13 +14,15 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminTreeMenuEscapingTest extends PHPUnit\Framework\TestCase
 {
     private static function file( $path )
     {
         $file = dirname( __DIR__, 3 ) . '/' . $path;
         self::assertFileExists( $file );
-        return (string)file_get_contents( $file );
+        return AdminFiles::read( $file );
     }
 
     /** The existing copies of a design file */
@@ -86,7 +88,7 @@ class AdminTreeMenuEscapingTest extends PHPUnit\Framework\TestCase
             {
                 if ( substr( $file->getFilename(), -4 ) !== '.tpl' )
                     continue;
-                $tpl = (string)file_get_contents( $file->getPathname() );
+                $tpl = AdminFiles::read( $file->getPathname() );
                 $outside = preg_replace( '#<script\b[^>]*>.*?</script>#is', '', $tpl );
                 if ( preg_match_all( '/\|wash\(\s*["\']?javascript["\']?\s*\)(?!\s*\|wash\b)/', $outside, $m ) )
                     $found[] = substr( $file->getPathname(), strlen( $root ) + 1 ) . ' (' . count( $m[0] ) . ')';
@@ -255,7 +257,7 @@ class AdminTreeMenuEscapingTest extends PHPUnit\Framework\TestCase
             {
                 if ( substr( $file->getFilename(), -4 ) !== '.tpl' )
                     continue;
-                $this->assertDoesNotMatchRegularExpression( "#href=\\{[^}]*'/?content/hide/#", (string)file_get_contents( $file->getPathname() ),
+                $this->assertDoesNotMatchRegularExpression( "#href=\\{[^}]*'/?content/hide/#", AdminFiles::read( $file->getPathname() ),
                                                             substr( $file->getPathname(), strlen( $root ) + 1 ) . ' links to content/hide' );
             }
         }

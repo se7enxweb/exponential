@@ -24,6 +24,10 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminNodeBinary.php';
+
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminSubitemsPriorityDragTest extends PHPUnit\Framework\TestCase
 {
     private static function root()
@@ -33,7 +37,7 @@ class AdminSubitemsPriorityDragTest extends PHPUnit\Framework\TestCase
 
     private static function read( $path )
     {
-        return (string)file_get_contents( self::root() . '/' . $path );
+        return AdminFiles::read( self::root() . '/' . $path );
     }
 
     /** The DRAG labels of children_detailed.tpl: key => English text */
@@ -56,9 +60,7 @@ class AdminSubitemsPriorityDragTest extends PHPUnit\Framework\TestCase
     /** PD-01 */
     public function testTheOrderIsGivenOutAndSavedSafely()
     {
-        $node = trim( (string)shell_exec( 'command -v node 2>/dev/null' ) );
-        if ( $node === '' )
-            $this->markTestSkipped( 'node is not installed' );
+        $node = AdminNodeBinary::require();
         $out = (string)shell_exec( escapeshellarg( $node ) . ' ' . escapeshellarg( __DIR__ . '/js/priority_drag.js' ) . ' '
                                    . escapeshellarg( self::root() . '/design/admin4/javascript/subitems_priority_drag.js' ) . ' 2>&1' );
         $s = array();

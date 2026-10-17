@@ -74,7 +74,8 @@
    accessible name. The missing languages only on a site with up to 6 languages
    (expContentLanguageStates::LIST_MISSING_LIMIT): with more, a row's badges would wrap and bury the ones it has;
    the Missing translations column lists them. *}
-{* data-multiedit-url: where "Edit selected" sends the selection. Built with ezurl so it carries the siteaccess and
+{* data-no-table: the note shown in the place of the table when Exponential UI is not active or not loaded.
+   data-multiedit-url: where "Edit selected" sends the selection. Built with ezurl so it carries the siteaccess and
    index file this installation actually uses, rather than a path hardcoded in the javascript. The page script sets
    it as window.eZExpMultiEditURL, where the datatable script looks for it; without it the selection went to a bare
    /content/multiedit - the public siteaccess. *}
@@ -217,7 +218,8 @@
      ) )|wash}"
      data-create-groups="{json_encode( $subitems_create_groups )|wash}"
      data-create-options="{json_encode( $subitems_create_options )|wash}"
-     data-multiedit-url="{'content/multiedit'|ezurl('no')|wash}"></div>
+     data-multiedit-url="{'content/multiedit'|ezurl('no')|wash}"
+     data-no-table="{'The sub items cannot be listed: Exponential UI (the extension expui) is not active or not loaded on this siteaccess.'|i18n( 'design/admin/node/view/full' )|wash}"></div>
 {ezscript( array( 'page/children_detailed.js' ) )}
 {undef $section $visible_columns $locales $subitems_languages $subitems_badges $subitems_badge $subitems_sort_key
        $subitems_create_groups $subitems_create_options $subitems_group_options}
