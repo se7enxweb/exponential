@@ -1132,6 +1132,7 @@ return array(
       'expKickstarterIni'                                            => 'kernel/classes/expkickstarterini.php',
       'expLinkCheck'                                                 => 'kernel/classes/explinkcheck.php',
       'expLogActions'                                                => 'kernel/classes/logviewer/explogactions.php',
+      'expLogBundle'                                                 => 'kernel/classes/logviewer/explogbundle.php',
       'expLogDigest'                                                 => 'kernel/classes/logviewer/explogdigest.php',
       'expLogFileLocator'                                            => 'kernel/classes/logviewer/explogfilelocator.php',
       'expLogFileStats'                                              => 'kernel/classes/logviewer/explogfilestats.php',

@@ -152,6 +152,39 @@ class eZWordToImageOperatorDesignThemeTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'bootstrap-icons', $tpl->fetch( $file ) );
     }
 
+    /**
+     * An extension's ClassMap[] override names a crystal path (cjw_newsletter: filesystems/folder_txt.png). The content
+     * tree builds its icon URLs from icon_info's map and theme path, so under bootstrap-icons that entry would be a
+     * 404; it is left out there, and kept where the theme has the file.
+     */
+    public function testIconInfoLeavesOutAnOverrideTheThemeHasNoFileFor()
+    {
+        $icon = eZINI::instance( 'icon.ini' );
+        $hadMap = $icon->hasVariable( 'ClassIcons', 'ClassMap' );
+        $savedMap = $hadMap ? $icon->variable( 'ClassIcons', 'ClassMap' ) : null;
+        $icon->setVariable( 'ClassIcons', 'ClassMap', array( 'w567_crystal_only' => 'filesystems/folder_txt.png' ) );
+        try
+        {
+            $file = $this->dir . '/icon_info_map.tpl';
+            file_put_contents( $file, "{def \$i = icon_info( 'class' )}{\$i.theme}:{cond( is_set( \$i.icons.w567_crystal_only ), \$i.icons.w567_crystal_only, 'none' )}" );
+
+            $this->design( 'admin4' );
+            eZTemplate::resetInstance();
+            $this->assertSame( 'bootstrap-icons:none', eZTemplate::factory()->fetch( $file ) );
+
+            $this->design( 'admin3' );
+            eZTemplate::resetInstance();
+            $this->assertSame( 'crystal-admin:filesystems/folder_txt.png', eZTemplate::factory()->fetch( $file ) );
+        }
+        finally
+        {
+            if ( $hadMap )
+                $icon->setVariable( 'ClassIcons', 'ClassMap', $savedMap );
+            else
+                $this->removeVariable( $icon, 'ClassIcons', 'ClassMap' );
+        }
+    }
+
     private function design( $design )
     {
         eZINI::instance()->setVariable( 'DesignSettings', 'SiteDesign', $design );
