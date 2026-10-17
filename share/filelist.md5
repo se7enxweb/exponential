@@ -177,7 +177,7 @@ bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
 b974dde24700fd18ba9d30714509893a  composer.dev.json
 7e531407fc8efd6cf497d4260dd8897c  composer.dev.lock
-062c84988e537cb15b3b4776565c7b24  composer.json
+7a3b4d6e5a0619ae6ffa6a8a560382f5  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 2d91308b2fa30038d9cc37afd0e2d44a  config.env.php.example
 e7da3e13ed7cc993f3d31886d4a42ddc  config.php-RECOMMENDED
@@ -614,7 +614,7 @@ a9871010a40209dee233c81640f06d9f  design/admin/templates/popupmenu/popup_export_
 38c0973b3930bb871586a6025650b3c0  design/admin/templates/popupmenu/popup_sub_createhere_menu.tpl
 0e056d3ef6a2cd0a4ac00bf06c06b897  design/admin/templates/popupmenu/popup_sub_edit_menu.tpl
 e6e30f9197ee3b660a776d31bc151b53  design/admin/templates/popupmenu/popup_sub_editclass_menu.tpl
-c28129092238f3cdc79e1bf074a20e22  design/admin/templates/popupmenu/popup_sub_siteaccess_menus.tpl
+98c8d8cc4b62c5c98b8ed577e72c5e4a  design/admin/templates/popupmenu/popup_sub_siteaccess_menus.tpl
 6465fbe846663bc4a2f4c12eec1cd58b  design/admin/templates/popupmenu/popup_subitems_menu.tpl
 ea276526766052b8207ab44bea3f39db  design/admin/templates/preview.tpl
 fede93828d15f3e7e645792e71a2b30e  design/admin/templates/relations.tpl
@@ -1357,7 +1357,7 @@ a9871010a40209dee233c81640f06d9f  design/admin4/templates/popupmenu/popup_export
 38c0973b3930bb871586a6025650b3c0  design/admin4/templates/popupmenu/popup_sub_createhere_menu.tpl
 0e056d3ef6a2cd0a4ac00bf06c06b897  design/admin4/templates/popupmenu/popup_sub_edit_menu.tpl
 e6e30f9197ee3b660a776d31bc151b53  design/admin4/templates/popupmenu/popup_sub_editclass_menu.tpl
-c28129092238f3cdc79e1bf074a20e22  design/admin4/templates/popupmenu/popup_sub_siteaccess_menus.tpl
+98c8d8cc4b62c5c98b8ed577e72c5e4a  design/admin4/templates/popupmenu/popup_sub_siteaccess_menus.tpl
 6465fbe846663bc4a2f4c12eec1cd58b  design/admin4/templates/popupmenu/popup_subitems_menu.tpl
 ea276526766052b8207ab44bea3f39db  design/admin4/templates/preview.tpl
 f59d5e7db2e30a0e226e913fdfc4be26  design/admin4/templates/relations.tpl
@@ -3223,7 +3223,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-9d2613ca3005ebe5f6c632a6128fac0f  doc/changelogs/6.0/6.0.15.md
+2af782ad0315559e48e2c1e62139d386  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -7659,7 +7659,7 @@ a4e7a187670959adc083b3b4ab09caca  tests/runtests.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 9ff58a769386f12831d56db2598e292e  tests/suite.php
-c553e8b54b65560d840704e0341f6d5b  tests/test-map.json
+8734bec3381b78ed659a33c0ab3e0e9e  tests/test-map.json
 8b29711fe10a56c5c5b90916f35d0a00  tests/tests/bin/phpcs/NoTypeDeclarationsSniffTest.php
 4e3eeb18c2ea423afb62388e5e3dcafc  tests/tests/bin/phpcs/fixtures/typedeclarations.inc
 0f61a66b5e0996561766fc594dec3781  tests/tests/design/Admin4lReviewTest.php
@@ -7708,6 +7708,7 @@ f439d02bf7ee68ecca6ccd30ffe60170  tests/tests/design/AdminNodeUploadButtonTest.p
 907a0875297199e04b4cd7968a4ba33e  tests/tests/design/AdminPackageWizardTest.php
 a60c3633a9045361377a90f14d676472  tests/tests/design/AdminPageHeaderTest.php
 760c260eefaac3abe202655d074fd6c9  tests/tests/design/AdminPhoneMenuTest.php
+c7a83ca94e5008c349693102cdcbeedd  tests/tests/design/AdminPopupSiteAccessMenuVariablesTest.php
 964332e29381bae7173aa9450cd52780  tests/tests/design/AdminPreferencesTest.php
 88d5471b0a77c9b9d6aefb5d1db6c8bd  tests/tests/design/AdminPreviewDevicesTest.php
 d3d40e761c6b85ebaddc3ceee2a5b66e  tests/tests/design/AdminResponsiveTest.php
