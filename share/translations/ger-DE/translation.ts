@@ -68840,6 +68840,34 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Server</source>
         <translation>Server</translation>
     </message>
+    <message>
+        <source>Versions: PHP %php (%sapi), Exponential %exponential</source>
+        <translation>Versionen: PHP %php (%sapi), Exponential %exponential</translation>
+    </message>
+    <message>
+        <source>OPc %pct %</source>
+        <translation>OPc %pct %</translation>
+    </message>
+    <message>
+        <source>OPcache memory: %used of %size MB in use, hit rate %rate %, %scripts scripts, %restarts restarts</source>
+        <translation>OPcache-Speicher: %used von %size MB belegt, Trefferquote %rate %, %scripts Skripte, %restarts Neustarts</translation>
+    </message>
+    <message>
+        <source>APCu %pct %</source>
+        <translation>APCu %pct %</translation>
+    </message>
+    <message>
+        <source>APCu memory, shared by every site of the PHP pool: %used of %size MB in use, %entries entries, hit rate %rate %, %expunges expunges</source>
+        <translation>APCu-Speicher, von allen Sites des PHP-Pools geteilt: %used von %size MB belegt, %entries Einträge, Trefferquote %rate %, %expunges Komplettleerungen</translation>
+    </message>
+    <message>
+        <source>Not available: APCu is not loaded or not enabled for this PHP.</source>
+        <translation>Nicht verfügbar: APCu ist in diesem PHP nicht geladen oder nicht eingeschaltet.</translation>
+    </message>
+    <message>
+        <source>Expunges</source>
+        <translation>Komplettleerungen</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/audit</name>

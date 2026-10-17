@@ -1868,7 +1868,7 @@ bca28d129e420ebe0e8a332a15c24fd4  design/standard/stylesheets/core.css
 480210c74d385593961fa435116fa328  design/standard/stylesheets/debug.css
 95aae21af74d28590b2b95defccd916e  design/standard/stylesheets/exp_bookmarks.css
 e893b624988aeccab0abef6a46d6e0fa  design/standard/stylesheets/exp_password_page.css
-14369dee7a0c638eab0036357e641cc1  design/standard/stylesheets/expdebugbar.css
+2e16475edc01a00fce0318f4fcacb9f9  design/standard/stylesheets/expdebugbar.css
 c815977883ff0447b636e3b2206828a4  design/standard/stylesheets/loginpagelayout.css
 d30d96f7fbd57acdf214228a9caeeee2  design/standard/stylesheets/mailpreferences_account_link.css
 d5de150d8a583b510f49f7c3021088cf  design/standard/stylesheets/manual.css
@@ -5000,7 +5000,7 @@ a705b7b9949ecc7715ea6659cee28f45  kernel/classes/debugbar/expdebugbarpanelinterf
 beb37980ae16c730c675be377ddb24a8  kernel/classes/debugbar/expdebugbarregistry.php
 97cd8ffd5cf12239d7c5dc01ebf2599e  kernel/classes/debugbar/expdebugbarserverfunctions.php
 a5a49ed6cf0490a3dd6bb00d8c1a1d45  kernel/classes/debugbar/expdebugbarsettings.php
-b1e60e81fdb21e7d85d9a6874999cb63  kernel/classes/debugbar/expdebugbarsummary.php
+02ab8887bae20a300d051408a0dcca4c  kernel/classes/debugbar/expdebugbarsummary.php
 d0b9fe4899a6bfc77d3e2fe69b0d9a3e  kernel/classes/expadminpagination.php
 0dc063d43d781562aceed1ea6df05f57  kernel/classes/expbenchmark.php
 0f21cab2bd8703ec564d77e3042723f2  kernel/classes/expbenchmarkhttp.php
@@ -8632,6 +8632,7 @@ ffcf86e89c7ff74ede52e2ec04b52b1a  tests/tests/lib/ezutils/eZUtilsHelpersTest.php
 5a6a2e5b321e7ffd6129aec115d8cd0d  tests/tests/lib/ezutils/expDebugBarReportEngineTest.php
 b99dee804176afb040d2d3199defbcf5  tests/tests/lib/ezutils/expDebugBarReportMessageTextTest.php
 d61d567806f489ef8da1039db441411f  tests/tests/lib/ezutils/expDebugBarReportPanelHeightTest.php
+104050181feaa35129f61c3900abd978  tests/tests/lib/ezutils/expDebugBarReportRuntimeChipsTest.php
 b52fb09b44b7e75ab5ec7b700cd19784  tests/tests/lib/ezutils/expDebugReportNoInlineCssTest.php
 73b71352cf122c5331f60f4ca3185288  tests/tests/lib/ezutils/ezdebug_regression.php
 43dca975479fcb28e788dece5baeef99  tests/tests/lib/ezutils/ezhttptool_regression.php

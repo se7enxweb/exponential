@@ -217,7 +217,9 @@ that matched, the engine (Velocity or the SAPI), the siteaccess, and the SQL que
 (`querycache`: `eZDBQueryCache::debugSnapshot()` with the stale statements replaced by their number, `stale_count`;
 null while the cache is off). Every figure has a level, `ok`, `warn`
 or `high`, against `Thresholds[]` in debugbar.ini (`time_ms`, `sql_count`, `sql_ms`, `memory_mb`, `templates`, each
-`<warn>;<high>`; `querycache_hit_rate` is a hit rate in percent and turns the level up **below** its values, see
+`<warn>;<high>`; `opcache_memory` and `apcu_memory` are the memory in use in percent, `opcache` and `apcu` in the
+summary, null while they are off or for a user without `setup/setup`; `querycache_hit_rate` is a hit rate in percent
+and turns the level up **below** its values, see
 `expDebugBarReport::queryCacheLevel()`, the one place of these rules: `expDebugBarSummary::queryCache()` and the bar's own fallback both build the figures with `expDebugBarReport::queryCacheFigures()`). `expDebugBarSummary::json()` is the same as JSON that is safe inside a `<script>` element.
 
 ## Server functions
@@ -399,6 +401,15 @@ The summary in the bar shows the request at a glance; each value opens its tab:
 | SQL query cache (`QC 83 % · -186 ms (186 %)`: hit rate, database time saved, and that time in percent of the page's time; only while the cache is on) | SQL | `Thresholds[querycache_hit_rate]` (amber below 50 %, red below 10 %; amber when a write made everything stale, red in `shared` without APCu) |
 | warnings, errors | Messages (filtered to that level) | any warning is amber, any error red |
 | deprecations (`3 depr`) | Messages | any deprecation is amber |
+| OPcache memory in use (`OPc 66 %`, the title with MB, hit rate, scripts and restarts; only while OPcache is on for the process) | Velocity | `Thresholds[opcache_memory]` (amber from 80 %, red from 95 %) |
+| APCu memory in use (`APCu 25 %`, the title with MB, entries, hit rate and expunges; only while APCu is on for the process) | Velocity | `Thresholds[apcu_memory]` (amber from 75 %, red from 90 %) |
+| versions (`PHP 8.4.19 \| Exp 6.0.15`, Exponential shortened to Exp; the last chip, at the right end) | Velocity | never coloured |
+
+The OPcache, APCu and versions chips show only to a user who may see the privileged rows of the Velocity tab (the
+policies `setup/setup` or `setup/managecache`): the bar also shows to anonymous visitors when `DebugByIP` matches, and
+the state of the server is not theirs to read. APCu is one memory for every site of the PHP pool; at 75 % in use the
+SQL query cache has already stopped adding results (`querycache.ini ApcuReserve=25`). The Velocity tab lists APCu
+below OPcache. A process without them (the command line, where `apc.enable_cli` is usually off) shows no chip for them. The three are the last chips, at the right end of the summary.
 
 PHP deprecations are only counted in the bar: with `site.ini [DebugSettings] DeprecatedLog=enabled` (the default)
 each distinct message is written once per request to `var/log/deprecated.log`, and none is kept in memory or listed

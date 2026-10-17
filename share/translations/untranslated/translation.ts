@@ -64557,6 +64557,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Server</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Versions: PHP %php (%sapi), Exponential %exponential</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OPc %pct %</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OPcache memory: %used of %size MB in use, hit rate %rate %, %scripts scripts, %restarts restarts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>APCu %pct %</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>APCu memory, shared by every site of the PHP pool: %used of %size MB in use, %entries entries, hit rate %rate %, %expunges expunges</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not available: APCu is not loaded or not enabled for this PHP.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Expunges</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

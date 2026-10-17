@@ -58,6 +58,8 @@ class expDebugBarReport
         'memory_abs'=> array( 'warn' => 134217728, 'high' => 268435456 ), // 128 MB, 256 MB
         'templates' => array( 'warn' => 150, 'high' => 400 ),
         'querycache_hit_rate' => array( 'warn' => 50, 'high' => 10 ), // percent: the level rises BELOW these
+        'opcache_memory' => array( 'warn' => 80, 'high' => 95 ),     // percent of opcache.memory_consumption used
+        'apcu_memory'    => array( 'warn' => 75, 'high' => 90 ),     // percent of apc.shm_size used
     );
 
     /**
@@ -297,6 +299,9 @@ class expDebugBarReport
             // Written to deprecated.log and counted only, never listed with the messages (eZDebug::writeDeprecated())
             'deprecations' => eZDebug::deprecatedCount(),
             'levels'    => array(),
+            // PHP, OPcache and APCu of the process that rendered the page: only for those who may see the privileged
+            // rows of the Velocity tab, since the bar can show to anonymous visitors (DebugByIP)
+            'runtime'   => self::runtimeFigures( $userInfo['can_setup'] || $userInfo['can_cache'] ),
         );
 
         // The server side's summary (kernel/classes/debugbar), when it is loaded: its levels follow
@@ -307,7 +312,8 @@ class expDebugBarReport
             try
             {
                 $serverSummary = expDebugBarSummary::collect();
-                foreach ( array( 'time' => 'time', 'sql' => 'sql', 'memory' => 'memory', 'templates' => 'templates' ) as $from => $to )
+                foreach ( array( 'time' => 'time', 'sql' => 'sql', 'memory' => 'memory', 'templates' => 'templates',
+                                 'opcache' => 'opcache', 'apcu' => 'apcu' ) as $from => $to )
                 {
                     if ( isset( $serverSummary[$from]['level'] ) && in_array( $serverSummary[$from]['level'], array( 'ok', 'warn', 'high' ), true ) )
                         $summary['levels'][$to] = $serverSummary[$from]['level'];
@@ -655,13 +661,19 @@ class expDebugBarReport
                           self::t( 'PHP deprecations, written to deprecated.log' ) );
         foreach ( isset( $s['panels'] ) ? (array)$s['panels'] : array() as $chip )
             $chips[] = $chip;
+        // At the right end: OPcache, APCu, then the versions; the first of them pushes them all there
+        $runtime = isset( $s['runtime'] ) ? $s['runtime'] : null;
+        $end = array_values( array_filter( array_merge( self::runtimeChips( $runtime, (array)$s['levels'] ), array( self::versionsChip( $runtime ) ) ) ) );
+        foreach ( $end as $i => $chip )
+            $chips[] = $i === 0 ? array_merge( $chip, array( true ) ) : $chip;
 
         $html = '<span class="exp-debug-summary" role="group" aria-label="' . self::h( 'Page summary' ) . '">';
         foreach ( $chips as $chip )
         {
             list( $tab, $key, $lvl, $text, $title ) = $chip;
+            $push = !empty( $chip[5] );
             $levelWord = $lvl === 'high' ? self::t( 'high' ) : ( $lvl === 'warn' ? self::t( 'raised' ) : self::t( 'normal' ) );
-            $html .= '<button type="button" class="exp-debug-chip" data-tab="' . $tab . '" data-key="' . $key . '" data-level="' . $lvl . '"'
+            $html .= '<button type="button" class="exp-debug-chip' . ( $push ? ' exp-debug-end' : '' ) . '" data-tab="' . $tab . '" data-key="' . $key . '" data-level="' . $lvl . '"'
                    . ' title="' . htmlspecialchars( $title . ' (' . $levelWord . ')', ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '"'
                    . ' aria-label="' . htmlspecialchars( $title . ': ' . $text . ' (' . $levelWord . ')', ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '">'
                    . htmlspecialchars( $text, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '</button>';
@@ -1099,6 +1111,7 @@ class expDebugBarReport
         if ( $privileged )
         {
             $html .= '<h3>' . self::h( 'OPcache' ) . '</h3>' . self::opcacheHtml();
+            $html .= '<h3>' . self::h( 'APCu' ) . '</h3>' . self::apcuHtml();
             $html .= '<div class="exp-debug-velocity-cache"></div>';
         }
         return $html;
@@ -1167,6 +1180,155 @@ class expDebugBarReport
             }
         }
         return $panels;
+    }
+
+    /**
+     * PHP version, OPcache and APCu of the process that rendered the page, for the summary chips, or null for a
+     * viewer who may not see them. OPcache and APCu are null when they are not loaded or not on for this process.
+     *
+     * @param bool $privileged the viewer may see the privileged rows of the Velocity tab (setup or cache rights)
+     * @return array|null array( 'php' => string, 'sapi' => string, 'exponential' => string|null, 'opcache' => array|null,
+     *                    'apcu' => array|null )
+     */
+    public static function runtimeFigures( $privileged )
+    {
+        if ( !$privileged )
+            return null;
+        $opcache = self::opcacheStatus();
+        return array( 'php' => PHP_VERSION, 'sapi' => PHP_SAPI,
+                      'exponential' => class_exists( 'eZPublishSDK' ) ? eZPublishSDK::version( true, false, false ) : null,
+                      'opcache' => is_array( $opcache ) && !empty( $opcache['enabled'] ) ? $opcache : null,
+                      'apcu' => self::apcuStatus() );
+    }
+
+    /**
+     * The chips of runtimeFigures() for OPcache and APCu, with the share of their memory in use; summaryHtml() draws them
+     * at the right end before the versions (versionsChip()). A level from $levels (the kernel's summary, which follows debugbar.ini Thresholds[]) wins over
+     * the defaults.
+     *
+     * @param array|null $runtime runtimeFigures()
+     * @param array $levels 'opcache' / 'apcu' => ok | warn | high
+     * @return array one chip per cache that is on: array( tab, key, level, text, title )
+     */
+    public static function runtimeChips( $runtime, array $levels = array() )
+    {
+        if ( !is_array( $runtime ) )
+            return array();
+        $t = self::memoryThresholds();
+        $level = function( $pct, array $limits ) { return $pct >= $limits['high'] ? 'high' : ( $pct >= $limits['warn'] ? 'warn' : 'ok' ); };
+        $chips = array();
+        $o = $runtime['opcache'];
+        if ( is_array( $o ) )
+        {
+            $size = $o['used'] + $o['free'];
+            $pct = $size > 0 ? $o['used'] / $size * 100 : 0;
+            $lvl = isset( $levels['opcache'] ) && in_array( $levels['opcache'], array( 'ok', 'warn', 'high' ), true )
+                 ? $levels['opcache'] : $level( $pct, $t['opcache_memory'] );
+            $chips[] = array( 'velocity', 'opcache', $lvl, self::t( 'OPc %pct %', array( '%pct' => number_format( $pct, 0 ) ) ),
+                              self::t( 'OPcache memory: %used of %size MB in use, hit rate %rate %, %scripts scripts, %restarts restarts',
+                                       array( '%used' => number_format( $o['used'] / 1048576, 1 ), '%size' => number_format( $size / 1048576, 0 ),
+                                              '%rate' => $o['hit_rate'], '%scripts' => $o['scripts'], '%restarts' => $o['restarts'] ) ) );
+        }
+        $a = $runtime['apcu'];
+        if ( is_array( $a ) )
+        {
+            $pct = $a['size'] > 0 ? $a['used'] / $a['size'] * 100 : 0;
+            $lvl = isset( $levels['apcu'] ) && in_array( $levels['apcu'], array( 'ok', 'warn', 'high' ), true )
+                 ? $levels['apcu'] : $level( $pct, $t['apcu_memory'] );
+            $chips[] = array( 'velocity', 'apcu', $lvl, self::t( 'APCu %pct %', array( '%pct' => number_format( $pct, 0 ) ) ),
+                              self::t( 'APCu memory, shared by every site of the PHP pool: %used of %size MB in use, %entries entries, hit rate %rate %, %expunges expunges',
+                                       array( '%used' => number_format( $a['used'] / 1048576, 1 ), '%size' => number_format( $a['size'] / 1048576, 0 ),
+                                              '%entries' => $a['entries'], '%rate' => $a['hit_rate'], '%expunges' => $a['expunges'] ) ) );
+        }
+        return $chips;
+    }
+
+    /**
+     * The limits of the OPcache and APCu chips: debugbar.ini [DebugBarSettings] Thresholds[opcache_memory] and
+     * Thresholds[apcu_memory] where the kernel's registry can read them, else the defaults. The kernel's summary gives
+     * its levels only to users with setup/setup; a user with only setup/managecache sees the chips too, with the same
+     * limits.
+     *
+     * @return array 'opcache_memory' / 'apcu_memory' => array( 'warn' => percent, 'high' => percent )
+     */
+    protected static function memoryThresholds()
+    {
+        $limits = array( 'opcache_memory' => self::$thresholds['opcache_memory'], 'apcu_memory' => self::$thresholds['apcu_memory'] );
+        if ( class_exists( 'expDebugBarRegistry' ) && class_exists( 'eZINI', false ) )
+        {
+            try
+            {
+                $ini = ( new expDebugBarRegistry() )->thresholds();
+                foreach ( array_keys( $limits ) as $name )
+                {
+                    if ( isset( $ini[$name] ) )
+                        $limits[$name] = array( 'warn' => $ini[$name][0], 'high' => $ini[$name][1] );
+                }
+            }
+            catch ( Throwable $e )
+            {
+            }
+        }
+        return $limits;
+    }
+
+    /**
+     * The chip with the versions of PHP and Exponential, drawn last at the right end of the summary, or null for a
+     * viewer who may not see them (runtimeFigures() is null then).
+     *
+     * @param array|null $runtime runtimeFigures()
+     * @return array|null a chip as summaryHtml() draws it: array( tab, key, level, text, title )
+     */
+    public static function versionsChip( $runtime )
+    {
+        if ( !is_array( $runtime ) )
+            return null;
+        $text = 'PHP ' . $runtime['php'] . ( !empty( $runtime['exponential'] ) ? ' | Exp ' . $runtime['exponential'] : '' );
+        return array( 'velocity', 'versions', 'ok', $text,
+                      self::t( 'Versions: PHP %php (%sapi), Exponential %exponential',
+                               array( '%php' => $runtime['php'], '%sapi' => $runtime['sapi'],
+                                      '%exponential' => !empty( $runtime['exponential'] ) ? $runtime['exponential'] : '-' ) ) );
+    }
+
+    /**
+     * APCu of the process that rendered this page, or null when APCu is not loaded or not enabled for it (the
+     * command line has it off unless apc.enable_cli is set). Memory without the block lists, so it stays cheap.
+     *
+     * @return array|null
+     */
+    public static function apcuStatus()
+    {
+        if ( !function_exists( 'apcu_enabled' ) || !apcu_enabled() )
+            return null;
+        $sma = @apcu_sma_info( true );
+        $info = @apcu_cache_info( true );
+        if ( !is_array( $sma ) || !is_array( $info ) )
+            return null;
+        $size = (int)( isset( $sma['num_seg'], $sma['seg_size'] ) ? $sma['num_seg'] * $sma['seg_size'] : 0 );
+        $avail = (int)( isset( $sma['avail_mem'] ) ? $sma['avail_mem'] : 0 );
+        $hits = (int)( isset( $info['num_hits'] ) ? $info['num_hits'] : 0 );
+        $misses = (int)( isset( $info['num_misses'] ) ? $info['num_misses'] : 0 );
+        return array(
+            'size'     => $size,
+            'used'     => max( 0, $size - $avail ),
+            'entries'  => (int)( isset( $info['num_entries'] ) ? $info['num_entries'] : 0 ),
+            'hit_rate' => $hits + $misses > 0 ? round( $hits / ( $hits + $misses ) * 100, 2 ) : 0,
+            'expunges' => (int)( isset( $info['expunges'] ) ? $info['expunges'] : 0 ),
+        );
+    }
+
+    /** APCu facts for the Velocity tab, or a hint why there are none. */
+    protected static function apcuHtml()
+    {
+        $a = self::apcuStatus();
+        if ( $a === null )
+            return '<p class="exp-debug-hint">' . self::h( 'Not available: APCu is not loaded or not enabled for this PHP.' ) . '</p>';
+        $html = '<table class="exp-debug-facts exp-debug-apcu">';
+        $html .= '<tr><th>' . self::h( 'Memory used' ) . '</th><td>' . number_format( $a['used'] / 1048576, 1 ) . ' MB / ' . number_format( $a['size'] / 1048576, 0 ) . ' MB</td></tr>';
+        $html .= '<tr><th>' . self::h( 'Entries' ) . '</th><td>' . $a['entries'] . '</td></tr>';
+        $html .= '<tr><th>' . self::h( 'Hit rate' ) . '</th><td>' . $a['hit_rate'] . ' %</td></tr>';
+        $html .= '<tr><th>' . self::h( 'Expunges' ) . '</th><td>' . $a['expunges'] . '</td></tr>';
+        return $html . '</table>';
     }
 
     /** OPcache status of the process that rendered this page. */

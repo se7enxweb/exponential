@@ -113,6 +113,8 @@ body.exp-debug-bar { padding-bottom: calc(var(--exp-debug-bar-h, 38px) + 8px); }
 #debug .exp-debug-chip[data-level="warn"] { background: var(--xd-warn-bg); color: var(--xd-warn); border-color: currentColor; }
 #debug .exp-debug-chip[data-level="high"] { background: var(--xd-high-bg); color: var(--xd-high); border-color: currentColor; font-weight: 700; }
 #debug .exp-debug-chip:hover { filter: brightness(.95); }
+/* OPcache, APCu, then the PHP and Exponential versions: the last chips, at the right end of the summary */
+#debug .exp-debug-chip.exp-debug-end { margin-left: auto; }
 
 /* --- the panel */
 #debug-details.active { padding: 0 12px 12px; color: var(--xd-fg); background: var(--xd-bg); }
