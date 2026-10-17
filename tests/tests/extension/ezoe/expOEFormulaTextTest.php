@@ -23,6 +23,7 @@ class expOEFormulaTextTest extends PHPUnit\Framework\TestCase
 
     protected $saved = array();
     protected $savedSchema = null;
+    protected $savedSupplementary = null;
 
     public function setUp(): void
     {
@@ -45,6 +46,11 @@ class expOEFormulaTextTest extends PHPUnit\Framework\TestCase
         $this->savedSchema = $GLOBALS['eZXMLSchemaGlobalInstance'] ?? null;
         unset( $GLOBALS['eZXMLSchemaGlobalInstance'] );
         $this->resetTeXSourceCache();
+        // characters above U+FFFF are kept only where the database can store them; these tests are about the editor
+        $xmlIni = eZINI::instance( 'ezxml.ini' );
+        $this->savedSupplementary = $xmlIni->hasVariable( 'InputSettings', 'SupplementaryCharacters' ) ?
+                                    $xmlIni->variable( 'InputSettings', 'SupplementaryCharacters' ) : null;
+        $xmlIni->setVariable( 'InputSettings', 'SupplementaryCharacters', 'enabled' );
     }
 
     public function tearDown(): void
@@ -59,6 +65,11 @@ class expOEFormulaTextTest extends PHPUnit\Framework\TestCase
                 $ini->setVariable( $block, $name, $value );
         }
         $this->saved = array();
+        $xmlIni = eZINI::instance( 'ezxml.ini' );
+        if ( $this->savedSupplementary === null )
+            $xmlIni->removeSetting( 'InputSettings', 'SupplementaryCharacters' );
+        else
+            $xmlIni->setVariable( 'InputSettings', 'SupplementaryCharacters', $this->savedSupplementary );
         if ( $this->savedSchema !== null )
             $GLOBALS['eZXMLSchemaGlobalInstance'] = $this->savedSchema;
         else
@@ -196,6 +207,10 @@ class expOEFormulaTextTest extends PHPUnit\Framework\TestCase
             'three backslashes'   => array( "\\\\\\alpha%\nbeta", '\\\\\\alpha beta' ),
             'comment lines in a row' => array( "\\alpha%a\n%b\nc", '\\alpha c' ),
             'comment lines, indented' => array( "a%x\n  %y\n  b", 'ab' ),
+            'start of the text'   => array( "%c\nx", 'x' ),
+            'CR only'             => array( "a%c\rb", 'ab' ),
+            'control word at the start' => array( "\\alpha%\nbeta", '\\alpha beta' ),
+            'next line not ASCII' => array( "\\alpha%\n\u{00E9}", "\\alpha\u{00E9}" ),
         );
     }
 
@@ -203,5 +218,14 @@ class expOEFormulaTextTest extends PHPUnit\Framework\TestCase
     public function testTeXWithoutLineComments( $text, $expected )
     {
         $this->assertSame( $expected, eZOEXMLInput::texWithoutLineComments( $text ) );
+    }
+
+    public function testManyCommentsInALongTextTakeLinearTime()
+    {
+        $text = str_repeat( "\\alpha + x_{1} % a comment on this line\n  ", 20000 ) . 'b';
+        $start = microtime( true );
+        $result = eZOEXMLInput::texWithoutLineComments( $text );
+        $this->assertLessThan( 5.0, microtime( true ) - $start );
+        $this->assertSame( str_repeat( '\\alpha + x_{1} ', 20000 ) . 'b', $result );
     }
 }

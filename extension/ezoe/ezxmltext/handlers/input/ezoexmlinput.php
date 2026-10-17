@@ -2049,15 +2049,39 @@ class eZOEXMLInput extends eZXMLInputHandler
             '/(?<!\\\\)((?:\\\\\\\\)*)(?:%[^\r\n]*(?:\r\n|\r|\n)[ \t]*)+/',
             static function ( $match ) use ( $text )
             {
-                $start = $match[0][1];
-                $end = $start + strlen( $match[0][0] );
-                if ( $match[1][0] !== '' || !isset( $text[$end] ) || !ctype_alpha( $text[$end] ) ||
-                     !preg_match( '/(\\\\+)[A-Za-z]+$/', substr( $text, 0, $start ), $before ) ||
-                     strlen( $before[1] ) % 2 === 0 )
+                if ( $match[1][0] !== '' )
                 {
                     return $match[1][0];
                 }
-                return ' ';
+                // TeX letters are ASCII only (ctype_alpha() would follow the locale)
+                $isLetter = static function ( $c )
+                {
+                    return ( $c >= 'a' && $c <= 'z' ) || ( $c >= 'A' && $c <= 'Z' );
+                };
+                $start = $match[0][1];
+                $end = $start + strlen( $match[0][0] );
+                if ( !isset( $text[$end] ) || !$isLetter( $text[$end] ) )
+                {
+                    return '';
+                }
+                // Walk back over the letters and the backslashes before the %, instead of matching a regular
+                // expression against the whole text before it for every comment
+                $i = $start - 1;
+                while ( $i >= 0 && $isLetter( $text[$i] ) )
+                {
+                    --$i;
+                }
+                if ( $i === $start - 1 )
+                {
+                    return '';
+                }
+                $backslashes = 0;
+                while ( $i >= 0 && $text[$i] === '\\' )
+                {
+                    ++$backslashes;
+                    --$i;
+                }
+                return $backslashes % 2 === 1 ? ' ' : '';
             },
             $text, -1, $count, PREG_OFFSET_CAPTURE );
     }
