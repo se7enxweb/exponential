@@ -238,7 +238,7 @@
     var emptyText = emptyOld ? emptyOld.textContent : '';
     view.textContent = '';
     view.classList.add( 'is-scripted' );
-    view.setAttribute( 'aria-activedescendant', '' );
+    view.setAttribute( 'role', 'group' );
     var heading = document.createElement( 'h2' );
     heading.className = 'a4-sr-only';
     heading.id = 'log-view-title';
@@ -304,7 +304,7 @@
         }
         list.appendChild( frag );
         var activeEntry = active >= 0 ? entries[active] : null;
-        view.setAttribute( 'aria-activedescendant', activeEntry && active >= from && active < to ? 'log-row-' + activeEntry._n : '' );
+        if ( activeEntry && active >= from && active < to ) view.setAttribute( 'aria-activedescendant', 'log-row-' + activeEntry._n ); else view.removeAttribute( 'aria-activedescendant' );
     };
     var schedule = function () {
         if ( !scheduled )
