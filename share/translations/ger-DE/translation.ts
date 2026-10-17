@@ -66555,6 +66555,18 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Confirm</source>
         <translation>Bestätigen</translation>
     </message>
+    <message>
+        <source>Manage logs</source>
+        <translation>Logs verwalten</translation>
+    </message>
+    <message>
+        <source>Log health</source>
+        <translation>Zustand der Logs</translation>
+    </message>
+    <message>
+        <source>Error digest</source>
+        <translation>Fehlerübersicht</translation>
+    </message>
 </context>
 <context>
     <name>kernel/shop</name>
@@ -77278,6 +77290,506 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Web server</source>
         <translation>Webserver</translation>
+    </message>
+    <message>
+        <source>Copy messages</source>
+        <translation>Meldungen kopieren</translation>
+    </message>
+    <message>
+        <source>Copy messages copies the lines shown as plain text: every kept line while following, the lines in view while paused. They are masked as shown.</source>
+        <translation>„Meldungen kopieren“ kopiert die angezeigten Zeilen als reinen Text: beim Verfolgen jede behaltene Zeile, angehalten die Zeilen im sichtbaren Bereich. Sie sind maskiert wie angezeigt.</translation>
+    </message>
+    <message>
+        <source>%count lines copied</source>
+        <translation>%count Zeilen kopiert</translation>
+    </message>
+    <message>
+        <source>1 line copied</source>
+        <translation>1 Zeile kopiert</translation>
+    </message>
+    <message>
+        <source>The lines could not be copied. Select them in the list and copy them with the keyboard.</source>
+        <translation>Die Zeilen konnten nicht kopiert werden. Markieren Sie sie in der Liste und kopieren Sie sie mit der Tastatur.</translation>
+    </message>
+    <message>
+        <source>%count logs</source>
+        <translation>%count Logs</translation>
+    </message>
+    <message>
+        <source>%size are removed for good.</source>
+        <translation>%size werden endgültig entfernt.</translation>
+    </message>
+    <message>
+        <source>%size in all</source>
+        <translation>%size insgesamt</translation>
+    </message>
+    <message>
+        <source>%size with their archives</source>
+        <translation>%size mit ihren Archiven</translation>
+    </message>
+    <message>
+        <source>%size/h</source>
+        <translation>%size/h</translation>
+    </message>
+    <message>
+        <source>Archives</source>
+        <translation>Archive</translation>
+    </message>
+    <message>
+        <source>At most %days days</source>
+        <translation>Höchstens %days Tage</translation>
+    </message>
+    <message>
+        <source>Back to the logs</source>
+        <translation>Zurück zu den Logs</translation>
+    </message>
+    <message>
+        <source>Becomes</source>
+        <translation>Wird zu</translation>
+    </message>
+    <message>
+        <source>Carry out %count steps</source>
+        <translation>%count Schritte ausführen</translation>
+    </message>
+    <message>
+        <source>Compress archives…</source>
+        <translation>Archive komprimieren …</translation>
+    </message>
+    <message>
+        <source>Compress the archives of %key?</source>
+        <translation>Die Archive von %key komprimieren?</translation>
+    </message>
+    <message>
+        <source>Compressed</source>
+        <translation>Komprimiert</translation>
+    </message>
+    <message>
+        <source>Delete archives…</source>
+        <translation>Archive löschen …</translation>
+    </message>
+    <message>
+        <source>Delete the old archives of %key?</source>
+        <translation>Die alten Archive von %key löschen?</translation>
+    </message>
+    <message>
+        <source>Done: %count steps.</source>
+        <translation>Erledigt: %count Schritte.</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Herunterladen</translation>
+    </message>
+    <message>
+        <source>Empty %key after archiving it?</source>
+        <translation>%key nach dem Archivieren leeren?</translation>
+    </message>
+    <message>
+        <source>Empty (archive first)…</source>
+        <translation>Leeren (vorher archivieren) …</translation>
+    </message>
+    <message>
+        <source>Growth</source>
+        <translation>Zuwachs</translation>
+    </message>
+    <message>
+        <source>Keep %count</source>
+        <translation>%count behalten</translation>
+    </message>
+    <message>
+        <source>Last write</source>
+        <translation>Zuletzt geschrieben</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Grenzen</translation>
+    </message>
+    <message>
+        <source>Lines (about)</source>
+        <translation>Zeilen (etwa)</translation>
+    </message>
+    <message>
+        <source>Log</source>
+        <translation>Log</translation>
+    </message>
+    <message>
+        <source>Manage logs</source>
+        <translation>Logs verwalten</translation>
+    </message>
+    <message>
+        <source>Not compressed</source>
+        <translation>Nicht komprimiert</translation>
+    </message>
+    <message>
+        <source>Not everything was done (%error): %done of %count steps.</source>
+        <translation>Nicht alles wurde erledigt (%error): %done von %count Schritten.</translation>
+    </message>
+    <message>
+        <source>Not managed here: %keys</source>
+        <translation>Hier nicht verwaltet: %keys</translation>
+    </message>
+    <message>
+        <source>Not writable: %owner:%group</source>
+        <translation>Nicht schreibbar: %owner:%group</translation>
+    </message>
+    <message>
+        <source>Nothing to do: no file needs this action now.</source>
+        <translation>Nichts zu tun: keine Datei braucht diese Aktion jetzt.</translation>
+    </message>
+    <message>
+        <source>Older than (days)</source>
+        <translation>Älter als (Tage)</translation>
+    </message>
+    <message>
+        <source>Prune all archives…</source>
+        <translation>Alle Archive aufräumen …</translation>
+    </message>
+    <message>
+        <source>Prune the archives of every log?</source>
+        <translation>Die Archive aller Logs aufräumen?</translation>
+    </message>
+    <message>
+        <source>Rotate %key now?</source>
+        <translation>%key jetzt rotieren?</translation>
+    </message>
+    <message>
+        <source>Rotate all over their limit…</source>
+        <translation>Alle über ihrer Grenze rotieren …</translation>
+    </message>
+    <message>
+        <source>Rotate at %size</source>
+        <translation>Rotieren bei %size</translation>
+    </message>
+    <message>
+        <source>Rotate every log over its limit?</source>
+        <translation>Jedes Log über seiner Grenze rotieren?</translation>
+    </message>
+    <message>
+        <source>Rotate now…</source>
+        <translation>Jetzt rotieren …</translation>
+    </message>
+    <message>
+        <source>Rotate, empty, compress and prune the log files. Every action shows exactly what it will do before anything changes, and every step is recorded in the audit. The web server owns its logs: they are shown here but never changed.</source>
+        <translation>Logdateien rotieren, leeren, komprimieren und aufräumen. Jede Aktion zeigt genau, was sie tun wird, bevor sich etwas ändert, und jeder Schritt wird im Audit festgehalten. Die Logs des Webservers gehören ihm: Sie werden hier gezeigt, aber nie geändert.</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Größe</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Schritt</translation>
+    </message>
+    <message>
+        <source>The actions are switched off in settings/logviewer.ini [ActionSettings].</source>
+        <translation>Die Aktionen sind in settings/logviewer.ini [ActionSettings] ausgeschaltet.</translation>
+    </message>
+    <message>
+        <source>The log files, their archives and their limits</source>
+        <translation>Die Logdateien, ihre Archive und ihre Grenzen</translation>
+    </message>
+    <message>
+        <source>The steps of this action</source>
+        <translation>Die Schritte dieser Aktion</translation>
+    </message>
+    <message>
+        <source>The web server cannot write this file or its directory: owner %owner, group %group.</source>
+        <translation>Der Webserver kann diese Datei oder ihr Verzeichnis nicht schreiben: Besitzer %owner, Gruppe %group.</translation>
+    </message>
+    <message>
+        <source>This is a preview: nothing has changed yet. Confirm to carry out these %count steps. The files are checked again before each step, and each step is recorded in the audit.</source>
+        <translation>Dies ist eine Vorschau: Noch hat sich nichts geändert. Bestätigen Sie, um diese %count Schritte auszuführen. Die Dateien werden vor jedem Schritt erneut geprüft, und jeder Schritt wird im Audit festgehalten.</translation>
+    </message>
+    <message>
+        <source>Web server, read only</source>
+        <translation>Webserver, nur lesbar</translation>
+    </message>
+    <message>
+        <source>compress</source>
+        <translation>komprimieren</translation>
+    </message>
+    <message>
+        <source>copy</source>
+        <translation>kopieren</translation>
+    </message>
+    <message>
+        <source>delete</source>
+        <translation>löschen</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>leeren</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>keine</translation>
+    </message>
+    <message>
+        <source>over the limit</source>
+        <translation>über der Grenze</translation>
+    </message>
+    <message>
+        <source>rename</source>
+        <translation>umbenennen</translation>
+    </message>
+    <message>
+        <source>%days days</source>
+        <translation>%days Tage</translation>
+    </message>
+    <message>
+        <source>%size of %limit</source>
+        <translation>%size von %limit</translation>
+    </message>
+    <message>
+        <source>%size per hour</source>
+        <translation>%size pro Stunde</translation>
+    </message>
+    <message>
+        <source>(no budget set)</source>
+        <translation>(kein Budget gesetzt)</translation>
+    </message>
+    <message>
+        <source>Archives compressed</source>
+        <translation>Archive komprimiert</translation>
+    </message>
+    <message>
+        <source>Archives kept</source>
+        <translation>Behaltene Archive</translation>
+    </message>
+    <message>
+        <source>Archives removed after</source>
+        <translation>Archive entfernt nach</translation>
+    </message>
+    <message>
+        <source>Archives: %size</source>
+        <translation>Archive: %size</translation>
+    </message>
+    <message>
+        <source>Budget: logviewer.ini [HealthSettings] DiskBudget</source>
+        <translation>Budget: logviewer.ini [HealthSettings] DiskBudget</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Geändert</translation>
+    </message>
+    <message>
+        <source>Current files: %size</source>
+        <translation>Aktuelle Dateien: %size</translation>
+    </message>
+    <message>
+        <source>Disk use</source>
+        <translation>Speicherbelegung</translation>
+    </message>
+    <message>
+        <source>Every log</source>
+        <translation>Alle Logs</translation>
+    </message>
+    <message>
+        <source>Every log is within its limit.</source>
+        <translation>Jedes Log liegt innerhalb seiner Grenze.</translation>
+    </message>
+    <message>
+        <source>Fastest growing</source>
+        <translation>Am schnellsten wachsend</translation>
+    </message>
+    <message>
+        <source>How much disk the logs use, which grow fastest, which are over their limit or cannot be written by the web server, the newest error of each, and the rotation settings in effect. Nothing on this page changes a file.</source>
+        <translation>Wie viel Speicher die Logs belegen, welche am schnellsten wachsen, welche über ihrer Grenze liegen oder vom Webserver nicht geschrieben werden können, der neueste Fehler jedes Logs und die geltenden Rotationseinstellungen. Nichts auf dieser Seite ändert eine Datei.</translation>
+    </message>
+    <message>
+        <source>Largest size</source>
+        <translation>Größte Größe</translation>
+    </message>
+    <message>
+        <source>Log health</source>
+        <translation>Zustand der Logs</translation>
+    </message>
+    <message>
+        <source>Manage</source>
+        <translation>Verwalten</translation>
+    </message>
+    <message>
+        <source>Newest error</source>
+        <translation>Neuester Fehler</translation>
+    </message>
+    <message>
+        <source>No log is known to grow yet: growth is measured between rotations.</source>
+        <translation>Von keinem Log ist ein Wachstum bekannt: es wird zwischen Rotationen gemessen.</translation>
+    </message>
+    <message>
+        <source>Not writable by the web server</source>
+        <translation>Vom Webserver nicht beschreibbar</translation>
+    </message>
+    <message>
+        <source>Over their size limit</source>
+        <translation>Über ihrer Größengrenze</translation>
+    </message>
+    <message>
+        <source>Read only. Each value names the settings file, section and variable it comes from; change it there (in an override), not here.</source>
+        <translation>Nur lesbar. Jeder Wert nennt die Einstellungsdatei, den Abschnitt und die Variable, aus der er kommt; ändern Sie ihn dort (in einem Override), nicht hier.</translation>
+    </message>
+    <message>
+        <source>Rotation settings in effect</source>
+        <translation>Geltende Rotationseinstellungen</translation>
+    </message>
+    <message>
+        <source>Set in</source>
+        <translation>Gesetzt in</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Einstellung</translation>
+    </message>
+    <message>
+        <source>The log files belong to different users (%owners). A file created by one user may not be writable by the other; give them one owner, or a shared group with group write.</source>
+        <translation>Die Logdateien gehören verschiedenen Benutzern (%owners). Eine Datei, die ein Benutzer angelegt hat, kann für den anderen nicht beschreibbar sein; geben Sie ihnen einen Eigentümer oder eine gemeinsame Gruppe mit Gruppenschreibrecht.</translation>
+    </message>
+    <message>
+        <source>The log manager is not available, so sizes, limits and archives cannot be listed.</source>
+        <translation>Die Logverwaltung ist nicht verfügbar, daher können Größen, Grenzen und Archive nicht aufgelistet werden.</translation>
+    </message>
+    <message>
+        <source>The web server can write every log.</source>
+        <translation>Der Webserver kann jedes Log schreiben.</translation>
+    </message>
+    <message>
+        <source>The web server cannot append to these files, so what it logs is lost. They were usually created by a command line or Exponential Velocity running as another user.</source>
+        <translation>Der Webserver kann an diese Dateien nichts anhängen, daher geht verloren, was er protokolliert. Sie wurden meist von einer Kommandozeile oder von Exponential Velocity unter einem anderen Benutzer angelegt.</translation>
+    </message>
+    <message>
+        <source>There is no log to show.</source>
+        <translation>Es gibt kein Log anzuzeigen.</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Wert</translation>
+    </message>
+    <message>
+        <source>built-in default</source>
+        <translation>eingebauter Standard</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>nie</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nein</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>keine Grenze</translation>
+    </message>
+    <message>
+        <source>none in the last lines</source>
+        <translation>keiner in den letzten Zeilen</translation>
+    </message>
+    <message>
+        <source>not writable</source>
+        <translation>nicht beschreibbar</translation>
+    </message>
+    <message>
+        <source>of a budget of %budget (%percent %)</source>
+        <translation>von einem Budget von %budget (%percent %)</translation>
+    </message>
+    <message>
+        <source>over limit</source>
+        <translation>über der Grenze</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ja</translation>
+    </message>
+    <message>
+        <source>Error digest</source>
+        <translation>Fehlerübersicht</translation>
+    </message>
+    <message>
+        <source>The distinct errors and warnings of the last hours, with numbers, ids, quoted values and paths set aside so that repeats of one problem count as one line. Messages are always masked here.</source>
+        <translation>Die verschiedenen Fehler und Warnungen der letzten Stunden, ohne Zahlen, IDs, Werte in Anführungszeichen und Pfade, damit Wiederholungen eines Problems als eine Zeile zählen. Meldungen sind hier immer maskiert.</translation>
+    </message>
+    <message>
+        <source>Time window</source>
+        <translation>Zeitfenster</translation>
+    </message>
+    <message>
+        <source>Last</source>
+        <translation>Letzte</translation>
+    </message>
+    <message>
+        <source>%count h</source>
+        <translation>%count h</translation>
+    </message>
+    <message>
+        <source>Hide known messages</source>
+        <translation>Bekannte Meldungen ausblenden</translation>
+    </message>
+    <message>
+        <source>Show known messages</source>
+        <translation>Bekannte Meldungen zeigen</translation>
+    </message>
+    <message>
+        <source>Since %time; levels: %levels.</source>
+        <translation>Seit %time; Stufen: %levels.</translation>
+    </message>
+    <message>
+        <source>%count known messages are hidden.</source>
+        <translation>%count bekannte Meldungen sind ausgeblendet.</translation>
+    </message>
+    <message>
+        <source>There is no log this digest can read.</source>
+        <translation>Es gibt kein Log, das diese Übersicht lesen kann.</translation>
+    </message>
+    <message>
+        <source>%count entries in %groups messages</source>
+        <translation>%count Einträge in %groups Meldungen</translation>
+    </message>
+    <message>
+        <source>Only the first %size of the window were read; the file holds more.</source>
+        <translation>Nur die ersten %size des Zeitfensters wurden gelesen; die Datei enthält mehr.</translation>
+    </message>
+    <message>
+        <source>Messages of %name</source>
+        <translation>Meldungen von %name</translation>
+    </message>
+    <message>
+        <source>Count</source>
+        <translation>Anzahl</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Meldung</translation>
+    </message>
+    <message>
+        <source>Last seen</source>
+        <translation>Zuletzt gesehen</translation>
+    </message>
+    <message>
+        <source>Known</source>
+        <translation>Bekannt</translation>
+    </message>
+    <message>
+        <source>Open the newest entry</source>
+        <translation>Den neuesten Eintrag öffnen</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Zeigen</translation>
+    </message>
+    <message>
+        <source>List again</source>
+        <translation>Wieder anzeigen</translation>
+    </message>
+    <message>
+        <source>Mark as known</source>
+        <translation>Als bekannt markieren</translation>
+    </message>
+    <message>
+        <source>No error or warning in this window.</source>
+        <translation>Kein Fehler und keine Warnung in diesem Zeitfenster.</translation>
+    </message>
+    <message>
+        <source>Log tools</source>
+        <translation>Log-Werkzeuge</translation>
     </message>
 </context>
 </TS>

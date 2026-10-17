@@ -56766,6 +56766,18 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Confirm</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Manage logs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Log health</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error digest</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>kernel/shop</name>
@@ -70133,6 +70145,506 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Web server</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy messages copies the lines shown as plain text: every kept line while following, the lines in view while paused. They are masked as shown.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count lines copied</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1 line copied</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The lines could not be copied. Select them in the list and copy them with the keyboard.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count logs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%size are removed for good.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%size in all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%size with their archives</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%size/h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Archives</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>At most %days days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back to the logs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Becomes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Carry out %count steps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Compress archives…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Compress the archives of %key?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Compressed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete archives…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete the old archives of %key?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Done: %count steps.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Empty %key after archiving it?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Empty (archive first)…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Growth</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Keep %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last write</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lines (about)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manage logs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not compressed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not everything was done (%error): %done of %count steps.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not managed here: %keys</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not writable: %owner:%group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing to do: no file needs this action now.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Older than (days)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Prune all archives…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Prune the archives of every log?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotate %key now?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotate all over their limit…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotate at %size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotate every log over its limit?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotate now…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotate, empty, compress and prune the log files. Every action shows exactly what it will do before anything changes, and every step is recorded in the audit. The web server owns its logs: they are shown here but never changed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The actions are switched off in settings/logviewer.ini [ActionSettings].</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The log files, their archives and their limits</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The steps of this action</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The web server cannot write this file or its directory: owner %owner, group %group.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This is a preview: nothing has changed yet. Confirm to carry out these %count steps. The files are checked again before each step, and each step is recorded in the audit.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Web server, read only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>compress</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>over the limit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>rename</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%days days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%size of %limit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%size per hour</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(no budget set)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Archives compressed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Archives kept</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Archives removed after</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Archives: %size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Budget: logviewer.ini [HealthSettings] DiskBudget</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Current files: %size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disk use</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every log is within its limit.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fastest growing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>How much disk the logs use, which grow fastest, which are over their limit or cannot be written by the web server, the newest error of each, and the rotation settings in effect. Nothing on this page changes a file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Largest size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Log health</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manage</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Newest error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No log is known to grow yet: growth is measured between rotations.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not writable by the web server</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Over their size limit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Read only. Each value names the settings file, section and variable it comes from; change it there (in an override), not here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotation settings in effect</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The log files belong to different users (%owners). A file created by one user may not be writable by the other; give them one owner, or a shared group with group write.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The log manager is not available, so sizes, limits and archives cannot be listed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The web server can write every log.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The web server cannot append to these files, so what it logs is lost. They were usually created by a command line or Exponential Velocity running as another user.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There is no log to show.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>built-in default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>none in the last lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not writable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>of a budget of %budget (%percent %)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>over limit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error digest</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The distinct errors and warnings of the last hours, with numbers, ids, quoted values and paths set aside so that repeats of one problem count as one line. Messages are always masked here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide known messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show known messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Since %time; levels: %levels.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count known messages are hidden.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There is no log this digest can read.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count entries in %groups messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only the first %size of the window were read; the file holds more.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Messages of %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last seen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Known</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open the newest entry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>List again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mark as known</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No error or warning in this window.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Log tools</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

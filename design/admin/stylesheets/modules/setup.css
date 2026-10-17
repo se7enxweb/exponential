@@ -1302,3 +1302,55 @@ label.a4-package-option-label {
 .a4-setup-sa-list .a4-badges { margin: 0; }
 .a4-setup-sa-list .a4-actions { display: flex; flex-wrap: wrap; gap: var(--a4-space-2); margin: 0; }
 .a4-setup-sa-url { margin: 0; overflow-wrap: anywhere; }
+
+/* ---- w551b health: Setup > Log files > Health (setup/logshealth, setup/logs_health.tpl) ---- */
+.a4-setup-loghealth-total { margin: var(--a4-space-2) 0; }
+.a4-setup-loghealth-meter { display: block; width: 100%; max-width: 40rem; height: var(--a4-space-3); margin: 0 0 var(--a4-space-2); }
+.a4-setup-loghealth-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: var(--a4-space-3); margin: var(--a4-space-3) 0; }
+.a4-setup-loghealth-grid > .a4-card + .a4-card { margin-top: 0; }
+.a4-setup-loghealth-list { margin: 0; padding-inline-start: var(--a4-space-4); }
+.a4-setup-loghealth-list li { margin: 0 0 var(--a4-space-1); overflow-wrap: anywhere; }
+.a4-setup-loghealth-table td, .a4-setup-loghealth-table th { vertical-align: top; }
+.a4-setup-loghealth-error { min-width: 12rem; }
+.a4-setup-loghealth-message { display: block; font-family: var(--a4-mono); font-size: var(--a4-text-s); overflow-wrap: anywhere; }
+.a4-setup-loghealth-table tr.is-attention > th { box-shadow: inset 3px 0 0 var(--a4-warn); }
+[dir="rtl"] .a4-setup-loghealth-table tr.is-attention > th { box-shadow: inset -3px 0 0 var(--a4-warn); }
+.a4-setup-loghealth-settings code { overflow-wrap: anywhere; }
+@media (forced-colors: active) {
+  .a4-setup-loghealth-table tr.is-attention > th { box-shadow: none; border-inline-start: 3px solid CanvasText; }
+}
+
+/* ---- w551b digest: the error digest (setup/logsdigest, design:setup/logs_digest.tpl) ---------------------------- */
+.a4-setup-logdigest-intro { margin: 0 0 var(--a4-space-3); color: var(--a4-muted); max-width: 72ch; }
+.a4-setup-logdigest-filters { flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--a4-space-2); margin: 0 0 var(--a4-space-2); }
+.a4-setup-logdigest-hours { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2); }
+.a4-setup-logdigest-hours ul { margin: 0; }
+.a4-setup-logdigest-label { color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-setup-logdigest-log { margin: 0 0 var(--a4-space-4); }
+.a4-setup-logdigest-scroll { overflow-x: auto; max-width: 100%; }
+.a4-setup-logdigest-table { width: 100%; }
+.a4-setup-logdigest-count { text-align: end; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.a4-setup-logdigest-msg { min-width: 18rem; overflow-wrap: anywhere; }
+.a4-setup-logdigest-msg code { font-family: var(--a4-mono); font-size: var(--a4-text-s); color: var(--a4-ink); }
+.a4-setup-logdigest-sample { display: block; margin-top: var(--a4-space-1); font-family: var(--a4-mono); font-size: var(--a4-text-xs); color: var(--a4-muted); }
+.a4-setup-logdigest-last { white-space: nowrap; }
+.a4-setup-logdigest-actions { white-space: nowrap; }
+.a4-setup-logdigest-actions .a4-btn { margin-inline-end: var(--a4-space-1); }
+.a4-setup-logdigest-form { display: inline; margin: 0; }
+.a4-setup-logdigest-table tr.is-known td { color: var(--a4-muted); }
+@media (max-width: 600px) {
+  .a4-setup-logdigest-msg { min-width: 12rem; }
+}
+
+/* ---- w551b manage: Setup > Log files > Manage logs (setup/logsmanage, setup/logs_manage*.tpl) ---- */
+.a4-setup-logmanage-all { flex-wrap: wrap; gap: var(--a4-space-2); margin: 0 0 var(--a4-space-3); }
+.a4-setup-logmanage-table th[scope="row"] { overflow-wrap: anywhere; }
+.a4-setup-logmanage-archives,
+.a4-setup-logmanage-limits { list-style: none; margin: 0; padding: 0; font-size: var(--a4-text-xs); }
+.a4-setup-logmanage-archives li,
+.a4-setup-logmanage-limits li { margin: 0 0 var(--a4-space-1); overflow-wrap: anywhere; }
+.a4-setup-logmanage-actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-1); margin: 0 0 var(--a4-space-1); }
+.a4-setup-logmanage-days { display: inline-flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-1); }
+.a4-setup-logmanage-days .a4-input { width: 5.5rem; }
+.a4-setup-logmanage-days label { font-size: var(--a4-text-xs); color: var(--a4-muted); }
+.a4-setup-logmanage-plan code { overflow-wrap: anywhere; }

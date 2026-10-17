@@ -59,8 +59,8 @@
 {if $log_unmasked}{set $log_crit = concat( $log_crit, '&unmask=1' )}{/if}
 {if $log_has_file}
     {set $log_q = concat( 'file=', $log_file.id|rawurlencode, $log_crit )
-         $log_page_q = concat( 'key=', $log_file.key|rawurlencode, cond( $log_file.rotation|ne( 0 ), concat( '&rotation=', $log_file.rotation ), '' ), $log_crit )
-         $log_base = concat( 'setup/logs/view/', $log_file.key, cond( $log_file.rotation|ne( 0 ), concat( '/(rotation)/', $log_file.rotation ), '' ) )
+         $log_page_q = concat( 'key=', $log_file.key|rawurlencode, cond( $log_file.rotation|ne( 0 ), concat( '&archive=', $log_file.rotation ), '' ), $log_crit )
+         $log_base = concat( 'setup/logs/view/', $log_file.key, cond( $log_file.rotation|ne( 0 ), concat( '/(archive)/', $log_file.rotation ), '' ) )
          $log_label = cond( $log_file.label|ne( '' ), $log_file.label, $log_file.name )}
 {/if}
 
@@ -74,6 +74,15 @@
 <div class="box-bc"><div class="box-ml"><div class="box-content">
 
 <p class="a4-intro">{'Follows a log file as it is written, searches it and its rotations, and links the lines of one request. Nothing on this page changes a file unless an action below says so.'|i18n( 'design/admin/setup/logs' )}</p>
+
+{* The other pages of the log viewer: managing the logs (setup/managelogs), their health and the error digest *}
+<nav aria-label="{'Log tools'|i18n( 'design/admin/setup/logs' )|wash}">
+<ul class="a4-setup-inline a4-setup-log-tools">
+    {if fetch( 'user', 'has_access_to', hash( 'module', 'setup', 'function', 'managelogs' ) )}<li><a href={'setup/logsmanage'|ezurl}>{'Manage logs'|i18n( 'design/admin/setup/logs' )}</a></li>{/if}
+    <li><a href={'setup/logshealth'|ezurl}>{'Log health'|i18n( 'design/admin/setup/logs' )}</a></li>
+    <li><a href={'setup/logsdigest'|ezurl}>{'Error digest'|i18n( 'design/admin/setup/logs' )}</a></li>
+</ul>
+</nav>
 
 {if $log_done|ne( '' )}
 <div class="a4-notice {if $log_done_ok}is-ok{else}is-bad{/if}" role="{if $log_done_ok}status{else}alert{/if}">
@@ -124,7 +133,7 @@
         {if $log_list|count}
         <optgroup label="{$log_group_names[ $log_group ]|wash}">
         {foreach $log_list as $log_item}
-            <option value="{$log_item.id|wash}" data-href={concat( 'setup/logs/view/', $log_item.key, cond( $log_item.rotation|ne( 0 ), concat( '/(rotation)/', $log_item.rotation ), '' ), cond( $log_unmasked, '/(unmask)/1', '' ) )|ezurl}{if $log_item.id|eq( $log_file.id )} selected="selected"{/if}>{if $log_item.configured}{$log_item.label|wash} ({$log_item.name|wash}){else}{$log_item.id|wash}{/if}</option>
+            <option value="{$log_item.id|wash}" data-href={concat( 'setup/logs/view/', $log_item.key, cond( $log_item.rotation|ne( 0 ), concat( '/(archive)/', $log_item.rotation ), '' ), cond( $log_unmasked, '/(unmask)/1', '' ) )|ezurl}{if $log_item.id|eq( $log_file.id )} selected="selected"{/if}>{if $log_item.configured}{$log_item.label|wash} ({$log_item.name|wash}){else}{$log_item.id|wash}{/if}</option>
         {/foreach}
         </optgroup>
         {/if}
@@ -138,7 +147,8 @@
 <div class="a4-row a4-setup-log-permalink">
     <label for="log-permalink">{'Permalink'|i18n( 'design/admin/setup/logs' )}</label>
     <input type="text" id="log-permalink" class="a4-input" readonly="readonly" value={$log_permalink|ezurl( 'double', 'full' )} aria-describedby="log-permalink-help" />
-    <div class="a4-setup-log-picker-actions"><button type="button" class="a4-btn a4-btn-primary" id="log-copy-link" disabled="disabled"><span class="a4-icon a4-bi-link-45deg" aria-hidden="true"></span>{'Copy permalink'|i18n( 'design/admin/setup/logs' )}</button></div>
+    <div class="a4-setup-log-picker-actions"><button type="button" class="a4-btn a4-btn-primary" id="log-copy-messages" disabled="disabled" aria-describedby="log-copy-messages-help"><span class="a4-icon a4-bi-files" aria-hidden="true"></span>{'Copy messages'|i18n( 'design/admin/setup/logs' )}</button><button type="button" class="a4-btn a4-btn-primary" id="log-copy-link" disabled="disabled"><span class="a4-icon a4-bi-link-45deg" aria-hidden="true"></span>{'Copy permalink'|i18n( 'design/admin/setup/logs' )}</button></div>
+    <span class="a4-help" id="log-copy-messages-help">{'Copy messages copies the lines shown as plain text: every kept line while following, the lines in view while paused. They are masked as shown.'|i18n( 'design/admin/setup/logs' )}</span>
     <span class="a4-help" id="log-permalink-help">{'A link to this log and this view (filters, search, paused or following, the focused line), to bookmark or share. It never shows the lines unmasked.'|i18n( 'design/admin/setup/logs' )}</span>
 </div>
 
@@ -378,6 +388,9 @@
      data-permalink-url={$log_permalink|ezurl}
      data-base-url={$log_base|ezurl}
      data-text-copied="{'Link copied'|i18n( 'design/admin/setup/logs' )|wash}"
+     data-text-lines-copied="{'%count lines copied'|i18n( 'design/admin/setup/logs' )|wash}"
+     data-text-lines-copied-one="{'1 line copied'|i18n( 'design/admin/setup/logs' )|wash}"
+     data-text-lines-copy-failed="{'The lines could not be copied. Select them in the list and copy them with the keyboard.'|i18n( 'design/admin/setup/logs' )|wash}"
      data-text-copy-failed="{'The link could not be copied; it is selected in the field, copy it with the keyboard.'|i18n( 'design/admin/setup/logs' )|wash}"
      data-can-unmask="{if $log_can_unmask}1{else}0{/if}"
      data-text-pause="{'Pause'|i18n( 'design/admin/setup/logs' )|wash}"
@@ -422,7 +435,7 @@
      data-text-level-debug="{'Debug'|i18n( 'design/admin/setup/logs' )|wash}"></div>
 {set-block variable=$log_state_block}{$log_state_json}{/set-block}
 <script type="application/json" id="log-state">{$log_state_block|explode( '<' )|implode( '\u003c' )|explode( '>' )|implode( '\u003e' )}</script>
-{ezscript( array( 'page/setup_logs.js' ) )}
+{ezscript( array( 'page/setup_logs_copy.js', 'page/setup_logs.js' ) )}
 
 </div></div></div>
 </div>

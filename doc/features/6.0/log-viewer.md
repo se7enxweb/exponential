@@ -367,6 +367,82 @@ page that names the file, its size and what will happen. Opening a file records 
 session per `[ViewerAuditSettings] ReadInterval` seconds, so following a file does not write a record per poll. The
 audit names are in the catalogue of [the audit trail](../../bc/6.0/audit.md) (channel `system`).
 
+## Managing logs
+
+**Setup > Log files > Manage logs** (`setup/managelogs`; `/setup/logsmanage`, or `/setup/logsmanage/<key>` for one log)
+lists every log the viewer may open with its size, an estimate of its lines, its last write, its growth (bytes an
+hour since the last rotation), its archives (`.1` .. `.N`, each with its size and whether it is compressed) and the
+limits that apply to it. Per log:
+
+| Action | What it does | Switched on by |
+| --- | --- | --- |
+| Rotate now | `.N-1` becomes `.N`, the oldest beyond the limit `keep` is removed, the file becomes `.1` | `[ActionSettings] Rotate` |
+| Empty | the file is copied to `.1` first (archive first), then emptied in place (same inode, the writers go on) | `Truncate` |
+| Compress archives | each plain archive `.N` becomes `.N.gz` | `Compress` |
+| Remove old archives | the archives older than N days, and those beyond `keep` | `DeleteArchives` |
+| Download | the current log or an archive, masked, as gzip (the viewer's download, `setup/logsaction`) | `Download` |
+
+**Rotate all** rotates every log over its size limit; **Prune all** removes the old archives of every log. Every
+action, one log or all, first shows its **preview**: each step it would take (rename, copy, compress, remove, empty)
+with the files and their sizes, and changes nothing. Its **Confirm** posts it again: the plan is applied under a lock
+per log (a log being rotated elsewhere answers "locked"), and each step is checked against the disk again, so a plan
+that went stale is skipped step by step (a target that appeared since is never overwritten). Every POST carries the
+form token. A log configured by key (the web server's) is listed but never managed: its program owns it.
+
+The limits of a log, first found wins:
+1. `logviewer.ini [RotationSettings]` `MaxSize[<key>]`, `Keep[<key>]`, `Compress[<key>]`, `MaxAgeDays[<key>]`;
+2. `site.ini [FileSettings]` `LogFileMaxSize`, `LogFileRotateCount`, `LogFileCompress`, `LogFileMaxAge`;
+3. 2 MB, 3 archives, not compressed, no age limit.
+
+The page shows where each limit comes from (file, section, setting). The work is done by the log manager
+(`expLogManagerFactory::get()`: `expLogManager` when it is installed, else a built-in fallback with the same API).
+Scheduled rotation comes with the log manager: the cronjob part `logs` (`cronjobs/explogrotate.php`,
+`[CronjobPart-logs]`), which applies the size and age limits and is in no part that runs by default.
+
+Audit: a rename or copy as `system.log.rotate` (compressing with `after.action` `compress`), emptying as
+`system.log.truncate`, removing as `system.log.delete`.
+
+## Log health
+
+**Setup > Log files > Log health** (`setup/logs`; `/setup/logshealth`) shows at a glance:
+
+- the disk all logs and their archives use, against `[HealthSettings] DiskBudget` (default 256 MB; a warning from
+  80 %, an alert over it; 0: no budget);
+- the fastest growing logs, and the logs over their size limit (with a link to manage them, for `setup/managelogs`);
+- the files the web server's user cannot write, with a warning when the logs have mixed owners (for example some
+  written by root from the command line and some by the web server's user), which stops rotation and new lines;
+- the newest error of each log, masked, linked to its line (the log's permalink with `(offset)/N`, paused);
+- read only: the rotation settings in effect per log (maximum size, archives kept, compression, age), each with the
+  INI file, section and setting it comes from.
+
+## Error digest
+
+**Setup > Log files > Error digest** (`setup/logs`; `/setup/logsdigest`, `/setup/logsdigest/<key>` for one log,
+`/(hours)/N` for another window, 1 to 168) lists the distinct errors and warnings of the last `[DigestSettings] Hours`
+(24) of the kernel logs: each message masked, then normalized (numbers, hexadecimal values, ids, quoted values, paths
+and `ERR-` references set aside), grouped and counted, most frequent first, at most `MaxMessages` (50) per log, with
+its most severe level and when it was last seen. Each group links to the log's view filtered by level, a search for
+its text and the start of the window; its time links to the newest such line. Each log is entered at the start of the
+window by a binary search on its times and read for at most `MaxBytesPerFile` (8 MB); a log read only in part says so.
+
+**Mark as known** hides a group for the viewer (a POST with the form token; the user preference
+`admin_logviewer_known`, at most 200 groups); `/(known)/1` lists the known ones too, with **List again**.
+
+## Archives
+
+A rotation opens in the same viewer, read only, under its own permalink: `/setup/logs/view/<key>/(archive)/N` (`.N`,
+or `.N.gz` when there is no plain one). `(rotation)/N` is still read as the same. An archive is never followed (no
+polling); it can be searched, downloaded and, with `DeleteArchives`, removed, never rotated or emptied. Old links of
+the form `?file=var/log/error.log.2` answer 301 with `/setup/logs/view/error/(archive)/2`.
+
+## Copy messages
+
+**Copy messages** (the first button of the row under the file chooser) copies the lines the viewer shows as plain
+text, as a selection of them by hand would: in display order, one entry a line (time, level, file, source, request,
+message; a wrapped message keeps its line breaks, an unwrapped one shows them as ↵), masked as shown. While following,
+it copies every line kept; while paused, the lines on screen. It uses the clipboard of the browser (with a fallback for
+pages that are not served over HTTPS) and says "12 lines copied" in a short message and to screen readers.
+
 ## Which files
 
 The viewer opens only files it lists, and it lists only these (`expLogFileLocator`):
@@ -453,6 +529,7 @@ siteaccess.
 | `MaxLinesKept` | `5000` | the entries the page keeps |
 | `ChunkCacheTTL` | `10` | seconds the last chunk of a file is kept; 0 switches the cache off |
 | `ChunkCacheMaxBytes` | `262144` | the most bytes of a cached chunk |
+| `WrapLines` | `enabled` | long lines wrapped for a viewer who has not chosen (the preference `admin_logviewer_wrap`) |
 | `[SearchSettings] MaxBytesPerRequest` | `33554432` | the most one search request reads |
 | `TimeLimit` | `2000` | ms one search request reads |
 | `MaxResults` | `200` | entries one search request returns |
@@ -466,6 +543,10 @@ siteaccess.
 | `SecretGroups[]` | `site.ini;DatabaseSettings`, `site.ini;MailSettings` | groups whose secret-named values are never shown |
 | `[ActionSettings] Download` | `enabled` | download a range |
 | `Rotate`, `Truncate`, `DeleteArchives` | `disabled` | rotate now, empty, remove archived rotations |
+| `Compress` | `disabled` | compress archived rotations (see [Managing logs](#managing-logs)) |
+| `[RotationSettings] MaxSize[<key>]`, `Keep[<key>]`, `Compress[<key>]`, `MaxAgeDays[<key>]` | (none: `site.ini [FileSettings]`) | the limits of one log (see [Managing logs](#managing-logs)) |
+| `[HealthSettings] DiskBudget` | `268435456` | the disk all logs may use together (see [Log health](#log-health)); 0: none |
+| `[DigestSettings] Hours`, `MaxMessages`, `MaxBytesPerFile`, `Levels[]` | `24`, `50`, `8388608`, `error`, `warning` | the error digest (see [Error digest](#error-digest)) |
 | `MaxDownloadBytes` | `52428800` | the largest range of one download |
 | `[RateLimitSettings] Requests`, `Window` | `120`, `60` | feed requests per session and window (seconds) |
 | `[ViewerAuditSettings] ReadInterval` | `600` | seconds between two `system.log.read` of the same file and session |
