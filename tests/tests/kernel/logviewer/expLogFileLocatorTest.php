@@ -8,7 +8,7 @@
  *         allowed file resolves
  *  LV-33  a directory of Directories[] (also through *) that resolves outside the root is never allowed
  *  LV-34  FilePatterns[], ExcludePatterns[], subdirectories are neither listed nor opened
- *  LV-35  groups kernel, site, extensions, archives; rotations and .gz; the file level
+ *  LV-35  groups kernel, site, extensions, webserver (empty by default), archives; rotations and .gz; the file level
  *  LV-36  rotationsOf() in number order; defaultID()
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
@@ -129,7 +129,8 @@ class expLogFileLocatorTest extends PHPUnit\Framework\TestCase
     public function testGroups()
     {
         $groups = $this->locator()->listFiles();
-        $this->assertSame( array( 'kernel', 'site', 'extensions', 'archives' ), array_keys( $groups ) );
+        $this->assertSame( array( 'kernel', 'site', 'extensions', 'webserver', 'archives' ), array_keys( $groups ) );
+        $this->assertSame( array(), $groups['webserver'], 'the web server logs are opt-in: none without LogPath[]' );
         $this->assertSame( array( 'var/log/error.log', 'var/log/warning.log' ), array_column( $groups['kernel'], 'id' ) );
         $this->assertSame( array( 'var/site/log/storage.log' ), array_column( $groups['site'], 'id' ) );
         $this->assertContains( 'var/log/expmcp.log', array_column( $groups['extensions'], 'id' ) );
