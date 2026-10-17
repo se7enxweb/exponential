@@ -267,7 +267,8 @@
       "tests/tests/design/AdminLeftMenuGroupsTest.php",
       "tests/tests/design/AdminMegaMenuTest.php",
       "tests/tests/design/AdminPreviewDevicesTest.php",
-      "tests/tests/design/AdminIconsTest.php"
+      "tests/tests/design/AdminIconsTest.php",
+      "tests/tests/design/AdminContentEditAttributeKindsTest.php"
     ],
     "design/admin4/javascript/ezadmin_menubar.js": [
       "tests/tests/design/AdminStylingRulesTest.php",
@@ -335,7 +336,8 @@
     ],
     "design/admin4/templates/content/edit_attribute.tpl": [
       "tests/tests/design/AdminFormErrorsTest.php",
-      "tests/tests/design/AdminContentEditFormsTest.php"
+      "tests/tests/design/AdminContentEditFormsTest.php",
+      "tests/tests/design/AdminContentEditAttributeKindsTest.php"
     ],
     "design/admin4/templates/content/edit_validation.tpl": [
       "tests/tests/design/AdminFormErrorsTest.php"
@@ -638,7 +640,9 @@
       "tests/tests/design/AdminIconsTest.php",
       "tests/tests/design/AdminSubitemsPriorityDragTest.php",
       "tests/tests/design/AdminCssReviewFixesTest.php",
-      "tests/tests/design/AdminDensityTest.php"
+      "tests/tests/design/AdminDensityTest.php",
+      "tests/tests/design/AdminContentEditAttributeKindsTest.php",
+      "tests/tests/design/AdminRoleListZebraTest.php"
     ],
     "design/admin/stylesheets/components.css": [
       "tests/tests/design/AdminLegacyControlsTest.php",
@@ -647,7 +651,9 @@
       "tests/tests/design/AdminSubitemsPriorityDragTest.php",
       "tests/tests/design/AdminFontStackTest.php",
       "tests/tests/design/AdminCssReviewFixesTest.php",
-      "tests/tests/design/AdminDensityTest.php"
+      "tests/tests/design/AdminDensityTest.php",
+      "tests/tests/design/AdminContentEditAttributeKindsTest.php",
+      "tests/tests/design/AdminRoleListZebraTest.php"
     ],
     "design/admin4/templates/parts/left_width_control.tpl": [
       "tests/tests/design/AdminLegacyControlsTest.php"
@@ -657,11 +663,13 @@
     ],
     "design/admin4/stylesheets/modules/content.css": [
       "tests/tests/design/AdminPreviewDevicesTest.php",
-      "tests/tests/design/AdminSubitemsPriorityDragTest.php"
+      "tests/tests/design/AdminSubitemsPriorityDragTest.php",
+      "tests/tests/design/AdminContentEditAttributeKindsTest.php"
     ],
     "design/admin/stylesheets/modules/content.css": [
       "tests/tests/design/AdminPreviewDevicesTest.php",
-      "tests/tests/design/AdminSubitemsPriorityDragTest.php"
+      "tests/tests/design/AdminSubitemsPriorityDragTest.php",
+      "tests/tests/design/AdminContentEditAttributeKindsTest.php"
     ],
     "design/admin4/templates/parts/a4_tabs_height.tpl": [
       "tests/tests/design/AdminNodeTabsHeightTest.php"
@@ -1100,7 +1108,8 @@
       "tests/tests/design/AdminReviewTemplateWarningsTest.php"
     ],
     "settings/admininterface.ini": [
-      "tests/tests/design/AdminReviewTemplateWarningsTest.php"
+      "tests/tests/design/AdminReviewTemplateWarningsTest.php",
+      "tests/tests/design/AdminContentEditAttributeKindsTest.php"
     ],
     "design/admin/templates/class/view.tpl": [
       "tests/tests/design/AdminReviewTemplateWarningsTest.php"
@@ -1343,6 +1352,27 @@
     ],
     "kernel/private/classes/views/setup/templateoperator.php": [
       "tests/tests/design/AdminSetupWizardTemplatesTest.php"
+    ],
+    "design/admin4/javascript/page/content_edit_attribute.js": [
+      "tests/tests/design/AdminContentEditAttributeKindsTest.php"
+    ],
+    "design/admin4/stylesheets/content.css": [
+      "tests/tests/design/AdminContentEditAttributeKindsTest.php"
+    ],
+    "design/admin4/stylesheets/modules/people.css": [
+      "tests/tests/design/AdminRoleListZebraTest.php"
+    ],
+    "design/admin/stylesheets/modules/people.css": [
+      "tests/tests/design/AdminRoleListZebraTest.php"
+    ],
+    "design/admin4/templates/role/list.tpl": [
+      "tests/tests/design/AdminRoleListZebraTest.php"
+    ],
+    "design/admin4/templates/role/view.tpl": [
+      "tests/tests/design/AdminRoleListZebraTest.php"
+    ],
+    "design/admin4/templates/role/edit.tpl": [
+      "tests/tests/design/AdminRoleListZebraTest.php"
     ]
   },
   "generated": {

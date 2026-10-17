@@ -306,7 +306,7 @@
 
 /* a summary link scrolls its field below the fixed header, not behind it (WCAG 2.4.11) */
 .a4-content-attr, #a4-error-summary { scroll-margin-top: calc(var(--header-height, 6.25rem) + var(--a4-space-3)); }
-.a4-content-attr.is-invalid { border-inline-start: 3px solid var(--a4-bad); padding-inline-start: var(--a4-space-3); }
+div.block.a4-content-attr.is-invalid { border-color: var(--a4-bad); border-inline-start-width: 3px; padding-inline-start: calc(var(--a4-space-4) - 2px); }
 .a4-content-attr-error { display: flex; gap: var(--a4-space-1); align-items: baseline; margin: var(--a4-space-1) 0 var(--a4-space-2); }
 /* the controls' invalid edge: see "the attribute forms" below, after the field look it overrides */
 
@@ -338,7 +338,77 @@
   font-size: var(--a4-text-xs);
   font-weight: 400;
 }
-div.block.a4-content-attr { margin: 0 0 var(--a4-space-5); padding-bottom: 0; }   /* .box-content div.block adds 1em */
+/* ---- edit ---- each attribute is a card: its edge shows where one datatype's controls end and the next
+   begin, a rich text editor's toolbar included. Its corner names the kind of input (.a4-content-attr-kind, from
+   admininterface.ini [ContentEditAttributeSettings]); the name keeps room for it. The cards of a group stand in
+   .a4-content-attrs; two short ones next to each other (.is-compact, CompactDatatypes) share a row on a wide
+   window, a third one alone takes the row again */
+.a4-content-attrs { display: flex; flex-wrap: wrap; gap: var(--a4-space-4); margin: 0 0 var(--a4-space-5); }
+div.block.a4-content-attr {
+  position: relative;
+  box-sizing: border-box;
+  margin: 0 0 var(--a4-space-4);   /* .box-content div.block adds 1em */
+  padding: var(--a4-space-4);
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius);
+  background-color: var(--a4-card);
+}
+.a4-content-attrs > div.block.a4-content-attr { flex: 1 1 100%; min-width: 0; margin: 0; }
+@media (min-width: 64em) {
+  .a4-content-attrs > div.block.a4-content-attr.is-compact:has(+ .a4-content-attr.is-compact),
+  .a4-content-attrs > div.block.a4-content-attr.is-compact + div.block.a4-content-attr.is-compact { flex-basis: calc(50% - var(--a4-space-4) / 2); }
+}
+.a4-content-attr > :is(.a4-content-attr-label, fieldset > legend.a4-content-attr-label) { margin-bottom: var(--a4-space-3); padding-inline-end: calc(4 * var(--a4-space-7)); }
+.a4-content-attr-kind {
+  position: absolute;
+  top: var(--a4-space-3);
+  inset-inline-end: var(--a4-space-3);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--a4-space-1);
+  max-width: 12em;
+  padding: 2px var(--a4-space-2);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+  color: var(--a4-muted);
+  font-size: var(--a4-text-xs);
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  pointer-events: none;
+}
+.a4-content-attr-kind .a4-icon { flex: 0 0 auto; }
+/* a phone: the kind stands above the name, which keeps the full width */
+@media (max-width: 40em) {
+  .a4-content-attr-kind { position: static; margin: 0 0 var(--a4-space-2); }
+  .a4-content-attr > :is(.a4-content-attr-label, fieldset > legend.a4-content-attr-label) { padding-inline-end: 0; }
+}
+
+/* the fields of a long form above it, each a link to its card: a row of chips that wraps */
+.a4-content-attr-nav { margin: 0 0 var(--a4-space-4); }
+.a4-content-attr-nav ul { display: flex; flex-wrap: wrap; gap: var(--a4-space-1) var(--a4-space-2); margin: 0; padding: 0; list-style: none; }
+.a4-content-attr-nav li { margin: 0; padding: 0; }
+.a4-content-attr-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--a4-space-1);
+  padding: 2px var(--a4-space-2);
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  color: var(--a4-ink);
+  font-size: var(--a4-text-xs);
+  text-decoration: none;
+}
+.a4-content-attr-nav a .a4-icon { color: var(--a4-muted); }
+.a4-content-attr-nav a:hover { border-color: var(--a4-accent); color: var(--a4-accent-text); }
+.a4-content-attr-nav a:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 1px; }
+.a4-content-attr-nav a.is-invalid { border-color: var(--a4-bad); color: var(--a4-bad); }
+@media (forced-colors: active) {
+  div.block.a4-content-attr, .a4-content-attr-kind, .a4-content-attr-nav a { border: 1px solid CanvasText; }
+}
 
 /* a grouped input (author, matrix, date and time, image ...) is a fieldset whose legend is the name: no box of its
    own, the parts stand on the card like the other fields (#page: the phone rule #maincontent fieldset pads it) */

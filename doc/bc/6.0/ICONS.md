@@ -143,7 +143,7 @@ The `IconExtensions[]` entry makes the icon engine look in `extension/mycompany_
 ## The bootstrap-icons theme
 
 `share/icons/bootstrap-icons/` is a second admin icon theme next to `crystal-admin`, made for the admin4 design:
-Bootstrap Icons 1.13.1 (MIT, `LICENSE` beside them) as SVG, one file for every size (`Sizes[normal]=32x32;svg`,
+Bootstrap Icons 1.13.2 (MIT, `LICENSE` beside them) as SVG, one file for every size (`Sizes[normal]=32x32;svg`,
 the part after the semicolon is the subdirectory). Its `icon.ini` maps the same classes, MIME types, class groups and
 other icons as `crystal-admin`, and more. Switch an admin siteaccess to it with
 

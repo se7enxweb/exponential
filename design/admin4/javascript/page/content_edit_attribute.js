@@ -38,6 +38,16 @@ jQuery(function( $ )
         }
     } );
 
+    // A link to an attribute (the list of fields above the form, the error summary) opens the collapsed group the
+    // attribute stands in, so it does not lead to a hidden card
+    $( document ).on( 'click', 'a[href^="#ezcca-attr-"]', function(){
+        var target = document.getElementById( this.getAttribute('href').slice( 1 ) );
+        if ( !target ) return;
+        $( target ).parents('fieldset.ezcca-collapsible.ezcca-collapsed').each( function(){
+            $( this ).removeClass('ezcca-collapsed').find('div.ezcca-collapsible-fieldset-content').first().show();
+        } );
+    } );
+
     // The datatype templates draw the controls; required and invalid are set on them here, once for all
     // datatypes: aria-required, aria-invalid and the attribute's message as description. The original
     // (read-only) side of a translation is left alone.
