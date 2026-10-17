@@ -1016,7 +1016,9 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
   .a4-setup-wz-match.is-current,
   .a4-setup-wz-tables tr.is-selected,
   .a4-page a.a4-setup-survey-tab.is-current,
-  .a4-page a.a4-setup-survey-kind.is-current { outline: 2px solid Highlight; outline-offset: -2px; }
+  .a4-page a.a4-setup-survey-kind.is-current,
+  .a4-setup-sa-list .a4-card.is-current,
+  :where([dir="rtl"]) .a4-setup-sa-list .a4-card.is-current { outline: 2px solid Highlight; outline-offset: -2px; }
 }
 
 /* ---- setup/menu: the Setup overview -------------------------------------------------------------------------- */
