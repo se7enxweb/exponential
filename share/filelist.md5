@@ -1013,7 +1013,7 @@ b85be7774f406553186dbc720d2914a9  design/admin4/override/templates/embed_image.t
 03505c55345b654eeb275f3b614a92bf  design/admin4/override/templates/thumbnail/image.tpl
 6971adb19c3c39b21f245c72b7f73305  design/admin4/override/templates/thumbnail/image_browse.tpl
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
-205c65ea5506b41c2a7048d96becfd33  design/admin4/stylesheets/admin4.css
+7a50b4a444cefbb9f8f3ba1390f21312  design/admin4/stylesheets/admin4.css
 20f88e86fcfd025c9182ef5eb635b7b5  design/admin4/stylesheets/components.css
 29dbb2aaee5436f235093d29c633111b  design/admin4/stylesheets/content.css
 bc58629618444e04776b7e1408f93fee  design/admin4/stylesheets/core.css
@@ -1047,7 +1047,7 @@ c7eb697cccc88a7038703f8fcc862659  design/admin4/templates/audit/reauth.tpl
 eb264deee765003628f666064dea68f3  design/admin4/templates/audit/settings.tpl
 6ad3a8724d541edaf79af7df5927ab5a  design/admin4/templates/audit/sources.tpl
 3064ea19ba4df8b3b2d4887a53c0bc27  design/admin4/templates/children.tpl
-bc4f268cd14253cf056412d0cdf68551  design/admin4/templates/children_detailed.tpl
+bba31ec59db28e842d047ad355b267c3  design/admin4/templates/children_detailed.tpl
 f60e0f377f64ba0eb70026b66a183a75  design/admin4/templates/class/classlist.tpl
 51fd6b1a1612e389ee44ce3d6cbe83d1  design/admin4/templates/class/copy_confirm.tpl
 2f32def3d98933143182da37d73213f4  design/admin4/templates/class/datatype/browse_objectrelation_placement.tpl
