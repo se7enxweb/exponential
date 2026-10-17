@@ -7634,7 +7634,7 @@ df9169b60283ae0c34ac07e8909c9b54  tests/tests/design/AdminRetiredClassesTest.php
 c6696bb26b02b77930b8f73ecb0f1a40  tests/tests/design/AdminReverseRelationCheckTest.php
 999bf935b744564d34820f18ed44071c  tests/tests/design/AdminReviewTemplateWarningsTest.php
 4e1fa8a8f96a88cb202a1d802d384698  tests/tests/design/AdminScriptFailureTextsTest.php
-d15f8d7ac822785d70d7f4102a9b08a3  tests/tests/design/AdminScriptsBehaviourTest.php
+e31cb067f10191fa2cc5029c7de4651a  tests/tests/design/AdminScriptsBehaviourTest.php
 2886d6d1bc84430c38d64bb2b40f78c5  tests/tests/design/AdminScriptsTest.php
 1654e973de5806f25d2ed377f3bfca49  tests/tests/design/AdminSearchTest.php
 56992a596f3d012b3958a7d030f58be7  tests/tests/design/AdminSelfContainedTest.php
@@ -7682,7 +7682,7 @@ d2faa77782cb14493e2d79691451b89d  tests/tests/design/js/segmented_switch.js
 01986459a7736d7251c29c45a3255df5  tests/tests/design/js/subitems_no_table.js
 ad8bc87d769da649d5e6f6295e935bfc  tests/tests/design/js/subitems_save.js
 086d286bdc500e26d4c6f5c27c2b2a6c  tests/tests/design/js/tabs_height.js
-e5c297694e6354d8040d0a5340d70d74  tests/tests/design/js/tree_toggle.js
+21216ef3117d1a782916cf6f32a369be  tests/tests/design/js/tree_toggle.js
 3c49cd2a8a5a2d22b1b1ca15d780486b  tests/tests/design/js/uploader.js
 434787210214832488331f2a52f7ceb2  tests/tests/design/js/visibility_status.js
 dcc45e4631fc358b0384c51d17ff8d67  tests/tests/extension/bccie/ezBccieTest.php
