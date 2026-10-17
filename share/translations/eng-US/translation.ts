@@ -61519,6 +61519,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>node %node</source>
         <translation>node %node</translation>
     </message>
+    <message>
+        <source>Templates rendered</source>
+        <translation>Templates rendered</translation>
+    </message>
+    <message>
+        <source>%count templates</source>
+        <translation>%count templates</translation>
+    </message>
+    <message>
+        <source>not compiled</source>
+        <translation>not compiled</translation>
+    </message>
+    <message>
+        <source>Template tree</source>
+        <translation>Template tree</translation>
+    </message>
+    <message>
+        <source>The module views that ran for this request, in order (an error page or a redirect adds one), with the class that ran each view and its script; below them the siteaccess, the navigation part and the design bases in the order templates are looked up.</source>
+        <translation>The module views that ran for this request, in order (an error page or a redirect adds one), with the class that ran each view and its script; below them the siteaccess, the navigation part and the design bases in the order templates are looked up.</translation>
+    </message>
+    <message>
+        <source>Every template this request rendered, in the order it started, nested under the template that included it. An arrow names the file an override chose; otherwise point at a name to see its file. A time holds everything the template included, not the parsing or compiling of the template itself. Templates of a view read from the view cache are not rendered and not listed.</source>
+        <translation>Every template this request rendered, in the order it started, nested under the template that included it. An arrow names the file an override chose; otherwise point at a name to see its file. A time holds everything the template included, not the parsing or compiling of the template itself. Templates of a view read from the view cache are not rendered and not listed.</translation>
+    </message>
+    <message>
+        <source>Whether the content view (content/view) was read from its cache file or generated, and why. The key decides the file: two requests with the same parts share it. Lookup is the time to find and read the file, generation the time to render the view.</source>
+        <translation>Whether the content view (content/view) was read from its cache file or generated, and why. The key decides the file: two requests with the same parts share it. Lookup is the time to find and read the file, generation the time to render the view.</translation>
+    </message>
+    <message>
+        <source>Every {cache-block} in the order it was looked up. A hit costs only the lookup; a generated block renders its content and stores it for the next request. A block inside a generated block only runs then, so the counts differ between a first and a second request.</source>
+        <translation>Every {cache-block} in the order it was looked up. A hit costs only the lookup; a generated block renders its content and stores it for the next request. A block inside a generated block only runs then, so the counts differ between a first and a second request.</translation>
+    </message>
+    <message>
+        <source>The settings that decide caching and compiling, and how many templates ran from the compiled cache or were compiled now. Right after a template cache clear every template is compiled once.</source>
+        <translation>The settings that decide caching and compiling, and how many templates ran from the compiled cache or were compiled now. Right after a template cache clear every template is compiled once.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/audit</name>

@@ -1156,6 +1156,8 @@ class expDebugBarReport
                        'templates' => expRenderStats::templates(),
                        'cache_blocks' => method_exists( 'expRenderStats', 'cacheBlocks' ) ? expRenderStats::cacheBlocks() : array(),
                        'cache_block_totals' => method_exists( 'expRenderStats', 'cacheBlockTotals' ) ? expRenderStats::cacheBlockTotals() : null,
+                       'tree' => method_exists( 'expRenderStats', 'tree' ) ? expRenderStats::tree() : array(),
+                       'tree_count' => method_exists( 'expRenderStats', 'treeCount' ) ? expRenderStats::treeCount() : 0,
                        'siteaccess' => '', 'navigation_part' => '',
                        'design' => array(), 'settings' => array() );
         if ( isset( $GLOBALS['eZCurrentAccess']['name'] ) )
@@ -1250,6 +1252,7 @@ class expDebugBarReport
     public static function renderingHtml( array $r )
     {
         $html = '<h3>' . self::h( 'Controller' ) . '</h3>';
+        $html .= '<p class="exp-debug-hint exp-debug-render-explain">' . self::h( 'The module views that ran for this request, in order (an error page or a redirect adds one), with the class that ran each view and its script; below them the siteaccess, the navigation part and the design bases in the order templates are looked up.' ) . '</p>';
         if ( !$r['views'] )
             $html .= '<p class="exp-debug-hint">' . self::h( 'No module view ran.' ) . '</p>';
         else
@@ -1278,7 +1281,11 @@ class expDebugBarReport
             $html .= '</ol></details>';
         }
 
+        // the tree right after the controller: what rendered the page, open
+        $html .= self::templateTreeHtml( isset( $r['tree'] ) ? $r['tree'] : array(), isset( $r['tree_count'] ) ? (int)$r['tree_count'] : 0 );
+
         $html .= '<h3>' . self::h( 'Content view cache' ) . '</h3>';
+        $html .= '<p class="exp-debug-hint exp-debug-render-explain">' . self::h( 'Whether the content view (content/view) was read from its cache file or generated, and why. The key decides the file: two requests with the same parts share it. Lookup is the time to find and read the file, generation the time to render the view.' ) . '</p>';
         $cache = $r['view_cache'];
         if ( !is_array( $cache ) || $cache['state'] === null )
             $html .= '<p class="exp-debug-hint">' . self::h( 'No content view ran on this page.' ) . '</p>';
@@ -1321,6 +1328,7 @@ class expDebugBarReport
                                         isset( $r['cache_block_totals'] ) ? $r['cache_block_totals'] : null );
 
         $html .= '<h3>' . self::h( 'Templates' ) . '</h3>';
+        $html .= '<p class="exp-debug-hint exp-debug-render-explain">' . self::h( 'The settings that decide caching and compiling, and how many templates ran from the compiled cache or were compiled now. Right after a template cache clear every template is compiled once.' ) . '</p>';
         $settings = $r['settings'];
         $html .= '<table class="exp-debug-facts">';
         foreach ( array( 'ViewCaching', 'TemplateCompile', 'CompileExecution', 'TemplateCache', 'DevelopmentMode' ) as $name )
@@ -1329,6 +1337,7 @@ class expDebugBarReport
                 $html .= '<tr><th>' . self::a( $name ) . '</th><td>' . self::a( $settings[$name] ) . '</td></tr>';
         }
         $compiled = $r['templates']['compiled'];
+        $html .= '<tr><th>' . self::h( 'Templates rendered' ) . '</th><td>' . ( empty( $r['tree_count'] ) ? '-' : (int)$r['tree_count'] ) . '</td></tr>';
         $html .= '<tr><th>' . self::h( 'Compiled templates run' ) . '</th><td>' . (int)$r['templates']['executed'] . '</td></tr>';
         $html .= '<tr><th>' . self::h( 'Compiled in this request' ) . '</th><td>' . count( $compiled ) . '</td></tr>';
         $html .= '</table>';
@@ -1343,6 +1352,84 @@ class expDebugBarReport
     }
 
     /**
+     * The template tree of the Rendering tab: every template in the order it started, nested under the template
+     * that included it, with the file the overrides chose and the time it took including what it included.
+     *
+     * @param array $tree expRenderStats::tree()
+     * @param int $count expRenderStats::treeCount()
+     * @return string
+     */
+    protected static function templateTreeHtml( array $tree, $count )
+    {
+        if ( !$tree )
+            return '';
+        $html = '<h3>' . self::h( 'Template tree' ) . '</h3>';
+        $html .= '<p class="exp-debug-hint exp-debug-render-explain">' . self::h( 'Every template this request rendered, in the order it started, nested under the template that included it. An arrow names the file an override chose; otherwise point at a name to see its file. A time holds everything the template included, not the parsing or compiling of the template itself. Templates of a view read from the view cache are not rendered and not listed.' ) . '</p>';
+        $html .= '<details class="exp-debug-render-tree" open><summary>' . self::h( '%count templates', array( '%count' => $count ) ) . '</summary>';
+        if ( count( $tree ) < $count )
+            $html .= '<p class="exp-debug-hint">' . self::h( 'The first %shown are listed.', array( '%shown' => count( $tree ) ) ) . '</p>';
+        $html .= '<ul class="exp-debug-tree">';
+        $depth = 0;
+        $open = false;
+        // the recorded depths of the entries above the current one: a template left on the stack by an exception that
+        // was caught makes what follows deeper than its place, so the level in the list comes from this stack
+        $above = array();
+        foreach ( $tree as $entry )
+        {
+            while ( $above && end( $above ) >= (int)$entry['depth'] )
+                array_pop( $above );
+            $entryDepth = count( $above );
+            $above[] = (int)$entry['depth'];
+            // preorder with depths: open a list for a child, close lists back to the entry's depth
+            if ( $open && $entryDepth > $depth )
+            {
+                $html .= '<ul>';
+                $depth = $entryDepth;
+            }
+            else
+            {
+                if ( $open )
+                    $html .= '</li>';
+                while ( $depth > $entryDepth )
+                {
+                    $html .= '</ul></li>';
+                    $depth--;
+                }
+            }
+            $html .= '<li>' . self::templateTreeLabel( $entry );
+            $open = true;
+        }
+        if ( $open )
+            $html .= '</li>';
+        while ( $depth > 0 )
+        {
+            $html .= '</ul></li>';
+            $depth--;
+        }
+        return $html . '</ul></details>';
+    }
+
+    /** One template of the tree: the name asked for, the file used when an override chose another, time, compiled */
+    protected static function templateTreeLabel( array $entry )
+    {
+        $design = strpos( $entry['uri'], 'design:' ) === 0;
+        $uri = $design ? substr( $entry['uri'], 7 ) : self::relativePath( preg_replace( '/^file:/', '', $entry['uri'] ) );
+        $file = $entry['file'] === null ? null : self::relativePath( $entry['file'] );
+        // a design template in its own place (not below override/): no override; a file template is its file
+        $own = $file === null || $file === $uri
+               || ( $design && substr( $file, -strlen( '/templates/' . $uri ) ) === '/templates/' . $uri
+                    && strpos( $file, '/override/templates/' ) === false );
+        if ( $own )
+            $label = '<code' . ( $file === null || $file === $uri ? '' : ' title="' . self::a( $file ) . '"' ) . '>' . self::renderingValue( $uri ) . '</code>';
+        else
+            $label = '<code>' . self::renderingValue( $uri ) . '</code> &rarr; <span class="exp-debug-render-override">' . self::renderingValue( $file ) . '</span>';
+        $label .= ' <span class="exp-debug-render-ms">' . ( $entry['ms'] === null ? '-' : number_format( $entry['ms'], 1, '.', '' ) . ' ms' ) . '</span>';
+        if ( !$entry['compiled'] )
+            $label .= ' <span class="exp-debug-badge">' . self::h( 'not compiled' ) . '</span>';
+        return $label;
+    }
+
+    /**
      * The cache blocks of the Rendering tab: one row per {cache-block} in the order they were looked up.
      *
      * @param array $blocks expRenderStats::cacheBlocks()
@@ -1352,6 +1439,7 @@ class expDebugBarReport
     protected static function cacheBlocksHtml( array $blocks, $totals )
     {
         $html = '<h3>' . self::h( 'Cache blocks' ) . '</h3>';
+        $html .= '<p class="exp-debug-hint exp-debug-render-explain">' . self::h( 'Every {cache-block} in the order it was looked up. A hit costs only the lookup; a generated block renders its content and stores it for the next request. A block inside a generated block only runs then, so the counts differ between a first and a second request.' ) . '</p>';
         if ( !$totals || $totals['count'] == 0 )
             return $html . '<p class="exp-debug-hint">' . self::h( 'No cache-block ran on this page.' ) . '</p>';
         $html .= '<p class="exp-debug-hint">' . self::h( '%hits of %count read from the cache; %lookup ms to look them up, %generated ms to generate the others (outermost blocks; a row\'s time holds the blocks inside it).',
@@ -1398,8 +1486,10 @@ class expDebugBarReport
     /** A path below the installation root without the root, which says nothing to the reader. */
     public static function relativePath( $path )
     {
+        static $root = null;
         $path = (string)$path;
-        $root = getcwd();
+        if ( $root === null )
+            $root = getcwd();
         if ( $root !== false && $root !== '' && strpos( $path, $root . '/' ) === 0 )
             return substr( $path, strlen( $root ) + 1 );
         return strpos( $path, './' ) === 0 ? substr( $path, 2 ) : $path;

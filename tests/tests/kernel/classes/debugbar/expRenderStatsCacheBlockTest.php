@@ -183,9 +183,6 @@ class expRenderStatsCacheBlockTest extends PHPUnit\Framework\TestCase
         return array( 'compiled' => array( true ), 'interpreted' => array( false ) );
     }
 
-    /**
-     * @dataProvider modeProvider
-     */
     #[PHPUnit\Framework\Attributes\DataProvider( 'modeProvider' )]
     public function testCacheBlockInATemplate( $compiled )
     {
