@@ -8,6 +8,12 @@
  * the audit of that moment; n/N and the find box find within the kept lines. New lines are announced politely, at
  * most every few seconds. Every text from the log is put in with textContent, never as markup.
  *
+ * The address is a permalink (setup/logs/view/<key>/(name)/value, expLogPermalink): the script keeps it in step with
+ * the view (history.replaceState): (follow)/0 while paused, (wrap)/1 with wrapped lines, (offset)/N for the focused
+ * entry; it honors them on load. A value is written as the server writes it: every character other than A-Z a-z 0-9
+ * _ . , - as ~ and the two hex digits of each of its UTF-8 bytes. "Copy permalink" copies the link without the
+ * unmasked choice.
+ *
  * The values from the template are the data-* attributes of #log-script, the data it starts from the JSON of
  * #log-state. A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'.
  * The same file is in design/admin and design/admin4.
@@ -34,8 +40,26 @@
     var slash = function ( url ) { return url && url.charAt( url.length - 1 ) !== '/' ? url + '/' : url; };
     var urls = {
         feed: data( 'feed-url' ), page: data( 'page-url' ), node: slash( data( 'node-url' ) ), klass: slash( data( 'class-url' ) ),
-        finder: data( 'finder-url' ), template: slash( data( 'template-url' ) ), audit: slash( data( 'audit-url' ) )
+        finder: data( 'finder-url' ), template: slash( data( 'template-url' ) ), audit: slash( data( 'audit-url' ) ),
+        permalink: data( 'permalink-url' ), base: data( 'base-url' )
     };
+    // a value of a permalink, as expLogPermalink::encode() writes it
+    var encodeValue = function ( value ) {
+        var out = '';
+        var bytes = unescape( encodeURIComponent( String( value ) ) );
+        for ( var i = 0; i < bytes.length; i++ )
+        {
+            var c = bytes.charAt( i );
+            if ( /[A-Za-z0-9_.,\-]/.test( c ) )
+                out += c;
+            else
+                out += '~' + ( '0' + bytes.charCodeAt( i ).toString( 16 ).toUpperCase() ).slice( -2 );
+        }
+        return out;
+    };
+    // the permalink of the view without the parameters the script writes itself
+    var VIEW_PARAMS = /\/\((follow|wrap|offset|unmask)\)\/[^\/]*/g;
+    var permalinkBase = ( urls.permalink || urls.base || '' ).replace( VIEW_PARAMS, '' );
     var searchQuery = data( 'search-query' );
     var canUnmask = data( 'can-unmask' ) === '1';
     var client = state.client || {};
@@ -58,9 +82,9 @@
             store.set( 'expLogViewerUnmask', unmaskLink.getAttribute( 'data-unmasked' ) === '1' ? '0' : '1' );
         } );
     }
-    if ( canUnmask && !state.unmasked && store.get( 'expLogViewerUnmask' ) === '1' && !/[?&]unmask=/.test( window.location.search ) )
+    if ( canUnmask && !state.unmasked && store.get( 'expLogViewerUnmask' ) === '1' && permalinkBase && !/\/\(unmask\)\//.test( window.location.pathname ) )
     {
-        window.location.replace( window.location.pathname + ( window.location.search ? window.location.search + '&' : '?' ) + 'unmask=1' );
+        window.location.replace( permalinkBase + '/(unmask)/1' );
         return;
     }
 
@@ -144,7 +168,9 @@
         switch ( type )
         {
             case 'reference':
-                return urls.page + '?file=' + encodeURIComponent( file.id ) + '&reference=' + encodeURIComponent( value ) + '&scope=kernel&rotations=1' + ( state.unmasked ? '&unmask=1' : '' );
+                // setup/logs?key=... answers 303 with the permalink of the search
+                return urls.page + '?key=' + encodeURIComponent( file.key || '' ) + ( file.rotation ? '&rotation=' + encodeURIComponent( file.rotation ) : '' ) +
+                       '&reference=' + encodeURIComponent( value ) + '&scope=kernel&rotations=1' + ( state.unmasked ? '&unmask=1' : '' );
             case 'url':
                 try
                 {
@@ -305,6 +331,7 @@
         list.appendChild( frag );
         var activeEntry = active >= 0 ? entries[active] : null;
         if ( activeEntry && active >= from && active < to ) view.setAttribute( 'aria-activedescendant', 'log-row-' + activeEntry._n ); else view.removeAttribute( 'aria-activedescendant' );
+        syncLater();
     };
     var schedule = function () {
         if ( !scheduled )
@@ -312,6 +339,40 @@
             scheduled = true;
             window.requestAnimationFrame( render );
         }
+    };
+
+    // ---- the address: the permalink of what is shown ----
+    var permalinkField = document.getElementById( 'log-permalink' ), copyButton = document.getElementById( 'log-copy-link' );
+    var syncTimer = null;
+    var viewPath = function () {
+        var path = permalinkBase;
+        if ( !path )
+            return '';
+        var focused = active >= 0 && entries[active] && !follow ? entries[active] : null;
+        if ( focused && typeof focused.o === 'number' )
+            path += '/(offset)/' + encodeValue( focused.o );
+        if ( paused && liveFile && !searching )
+            path += '/(follow)/0';
+        if ( wrap )
+            path += '/(wrap)/1';
+        return path;
+    };
+    var syncUrl = function () {
+        syncTimer = null;
+        var path = viewPath();
+        if ( !path )
+            return;
+        if ( permalinkField )
+            permalinkField.value = window.location.origin + path;
+        var shown = path + ( state.unmasked ? '/(unmask)/1' : '' );
+        if ( window.history && window.history.replaceState && window.location.pathname !== shown )
+        {
+            try { window.history.replaceState( window.history.state, '', shown ); } catch ( e ) { /* the address stays */ }
+        }
+    };
+    var syncLater = function () {
+        if ( syncTimer === null )
+            syncTimer = window.setTimeout( syncUrl, 400 );
     };
     var atBottom = function () {
         return view.scrollTop + view.clientHeight >= view.scrollHeight - Math.max( 4, rowHeight );
@@ -496,6 +557,7 @@
             pauseLabel.textContent = on ? text( 'resume' ) : text( 'pause' );
         setStatus( on ? text( 'paused' ) : text( 'following' ), on ? 'is-warn' : 'is-running' );
         say( on ? text( 'paused' ) : text( 'following' ) );
+        syncLater();
         if ( on )
             plan( 0 );
         else
@@ -855,15 +917,78 @@
             } );
         } );
 
-    // ---- start ----
+    // ---- the file chooser opens the option's permalink ----
+    var picker = el( 'log-picker' ), pickerForm = el( 'log-picker-form' );
+    var openPicked = function ( ev ) {
+        var option = picker && picker.options[picker.selectedIndex];
+        var href = option ? option.getAttribute( 'data-href' ) : '';
+        if ( !href )
+            return;
+        if ( ev )
+            ev.preventDefault();
+        window.location.href = href;
+    };
+    if ( picker )
+        picker.addEventListener( 'change', function () { openPicked( null ); } );
+    if ( pickerForm )
+        pickerForm.addEventListener( 'submit', openPicked );
+
+    // ---- copy the permalink ----
+    if ( copyButton && permalinkField )
+    {
+        copyButton.disabled = false;
+        var copied = function () { say( text( 'copied' ) ); };
+        var fallback = function () {
+            permalinkField.focus();
+            permalinkField.select();
+            var ok = false;
+            try { ok = document.execCommand( 'copy' ); } catch ( e ) { ok = false; }
+            say( ok ? text( 'copied' ) : text( 'copy-failed' ) );
+        };
+        copyButton.addEventListener( 'click', function () {
+            syncUrl();
+            if ( navigator.clipboard && navigator.clipboard.writeText )
+                navigator.clipboard.writeText( permalinkField.value ).then( copied, fallback );
+            else
+                fallback();
+        } );
+    }
+
+    // ---- start: as the address asks (paused, wrapped, a focused entry) ----
+    var asked = state.view || {};
     add( ( source && source.entries ) || [], searching );
     setStatus( searching ? text( 'results' ) : ( liveFile ? text( 'following' ) : text( 'archive' ) ), liveFile ? 'is-running' : '' );
-    if ( searching )
+    if ( asked.wrap && wrapBox )
+    {
+        wrapBox.checked = true;
+        wrap = true;
+        view.classList.add( 'is-wrapped' );
+    }
+    var focusAt = -1;
+    if ( typeof asked.offset === 'number' && asked.offset >= 0 )
+    {
+        for ( var k = 0; k < entries.length; k++ )
+            if ( entries[k].o === asked.offset )
+                focusAt = k;
+    }
+    if ( focusAt >= 0 )
+    {
+        follow = false;
+        if ( followBox )
+            followBox.checked = false;
+        active = focusAt;
+        render();
+        scrollToIndex( focusAt );
+    }
+    else if ( searching )
     {
         follow = false;
         render();
     }
     else
         toBottom();
+    if ( asked.follow === false && liveFile && !searching )
+        setPaused( true );
     plan( interval );
+    syncLater();
 }() );

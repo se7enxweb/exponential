@@ -4,7 +4,12 @@
    Variables (kernel/private/classes/views/setup/logs.php): log_file, log_error, log_initial, log_search,
    log_related, log_searching, log_criteria, log_scope, log_rotations, log_levels, log_actions, log_can_unmask,
    log_unmasked, log_masking, log_client, log_token_field, log_token, log_done, log_done_ok, log_siteaccesses,
-   log_max_download, log_groups, log_state_json.
+   log_max_download, log_groups, log_state_json, log_permalink (setup/logs/view/<key>... of this view, without done, ok
+   and unmask), log_key, log_view_state.
+
+   Every link of the page is a permalink by log key (expLogPermalink): setup/logs/view/<key>/(name)/value. The search
+   form and the paging link go through setup/logs?key=<key>&..., which answers 303 with the permalink, so they work
+   without JavaScript; the script keeps the address in step with the view (paused, wrapped, the focused entry).
 
    Without JavaScript the page shows the end of the file (or the results of the search) as a list, the search form,
    paging of the results and the actions. page/setup_logs.js follows the file through setup/logsfeed (short
@@ -20,9 +25,14 @@
      $log_group_names = hash( 'kernel',     'Kernel'|i18n( 'design/admin/setup/logs' ),
                               'site',       'Site'|i18n( 'design/admin/setup/logs' ),
                               'extensions', 'Extensions'|i18n( 'design/admin/setup/logs' ),
+                              'webserver',  'Web server'|i18n( 'design/admin/setup/logs' ),
                               'archives',   'Rotated archives'|i18n( 'design/admin/setup/logs' ) )
      $log_entries = array()
      $log_q = ''
+     $log_crit = ''
+     $log_page_q = ''
+     $log_base = 'setup/logs'
+     $log_label = ''
      $log_has_file = is_set( $log_file.id )
      $log_can_templates = fetch( 'user', 'has_access_to', hash( 'module', 'setup', 'function', 'setup' ) )
      $log_can_finder = fetch( 'user', 'has_access_to', hash( 'module', 'contentfinder', 'function', 'search' ) )
@@ -32,26 +42,32 @@
 {elseif is_set( $log_initial.entries )}
     {set $log_entries = $log_initial.entries}
 {/if}
-{* The query of this page's search, for the paging link and the script's "More results" *}
-{if $log_has_file}{set $log_q = concat( 'file=', $log_file.id|rawurlencode )}{/if}
-{if $log_criteria.q|ne( '' )}{set $log_q = concat( $log_q, '&q=', $log_criteria.q|rawurlencode )}{/if}
-{if $log_criteria.regex}{set $log_q = concat( $log_q, '&regex=1' )}{/if}
-{if $log_criteria.case}{set $log_q = concat( $log_q, '&case=1' )}{/if}
-{if $log_criteria.levels|count}{set $log_q = concat( $log_q, '&levels=', $log_criteria.levels|implode( ',' ) )}{/if}
-{if $log_criteria.from_text|ne( '' )}{set $log_q = concat( $log_q, '&from=', $log_criteria.from_text|rawurlencode )}{/if}
-{if $log_criteria.to_text|ne( '' )}{set $log_q = concat( $log_q, '&to=', $log_criteria.to_text|rawurlencode )}{/if}
-{if $log_criteria.siteaccess|ne( '' )}{set $log_q = concat( $log_q, '&siteaccess=', $log_criteria.siteaccess|rawurlencode )}{/if}
-{if $log_criteria.uri|ne( '' )}{set $log_q = concat( $log_q, '&uri=', $log_criteria.uri|rawurlencode )}{/if}
-{if $log_criteria.ip|ne( '' )}{set $log_q = concat( $log_q, '&ip=', $log_criteria.ip|rawurlencode )}{/if}
-{if $log_criteria.reference|ne( '' )}{set $log_q = concat( $log_q, '&reference=', $log_criteria.reference|rawurlencode )}{/if}
-{set $log_q = concat( $log_q, '&scope=', $log_scope|rawurlencode )}
-{if $log_rotations}{set $log_q = concat( $log_q, '&rotations=1' )}{/if}
-{if $log_unmasked}{set $log_q = concat( $log_q, '&unmask=1' )}{/if}
+{* The criteria of this page's search: for the feed ($log_q, by file id) and for the paging link ($log_page_q, by key:
+   setup/logs?key=... answers 303 with the permalink). $log_base is the plain permalink of the log. *}
+{if $log_criteria.q|ne( '' )}{set $log_crit = concat( $log_crit, '&q=', $log_criteria.q|rawurlencode )}{/if}
+{if $log_criteria.regex}{set $log_crit = concat( $log_crit, '&regex=1' )}{/if}
+{if $log_criteria.case}{set $log_crit = concat( $log_crit, '&case=1' )}{/if}
+{if $log_criteria.levels|count}{set $log_crit = concat( $log_crit, '&levels=', $log_criteria.levels|implode( ',' ) )}{/if}
+{if $log_criteria.from_text|ne( '' )}{set $log_crit = concat( $log_crit, '&from=', $log_criteria.from_text|rawurlencode )}{/if}
+{if $log_criteria.to_text|ne( '' )}{set $log_crit = concat( $log_crit, '&to=', $log_criteria.to_text|rawurlencode )}{/if}
+{if $log_criteria.siteaccess|ne( '' )}{set $log_crit = concat( $log_crit, '&siteaccess=', $log_criteria.siteaccess|rawurlencode )}{/if}
+{if $log_criteria.uri|ne( '' )}{set $log_crit = concat( $log_crit, '&uri=', $log_criteria.uri|rawurlencode )}{/if}
+{if $log_criteria.ip|ne( '' )}{set $log_crit = concat( $log_crit, '&ip=', $log_criteria.ip|rawurlencode )}{/if}
+{if $log_criteria.reference|ne( '' )}{set $log_crit = concat( $log_crit, '&reference=', $log_criteria.reference|rawurlencode )}{/if}
+{set $log_crit = concat( $log_crit, '&scope=', $log_scope|rawurlencode )}
+{if $log_rotations}{set $log_crit = concat( $log_crit, '&rotations=1' )}{/if}
+{if $log_unmasked}{set $log_crit = concat( $log_crit, '&unmask=1' )}{/if}
+{if $log_has_file}
+    {set $log_q = concat( 'file=', $log_file.id|rawurlencode, $log_crit )
+         $log_page_q = concat( 'key=', $log_file.key|rawurlencode, cond( $log_file.rotation|ne( 0 ), concat( '&rotation=', $log_file.rotation ), '' ), $log_crit )
+         $log_base = concat( 'setup/logs/view/', $log_file.key, cond( $log_file.rotation|ne( 0 ), concat( '/(rotation)/', $log_file.rotation ), '' ) )
+         $log_label = cond( $log_file.label|ne( '' ), $log_file.label, $log_file.name )}
+{/if}
 
 <div class="context-block a4-page a4-setup-logs{if $log_searching} is-searching{/if}" id="a4-setup-logs">
 
 <div class="box-header"><div class="box-ml">
-<h1 class="context-title">{if $log_has_file}{'Log file %name'|i18n( 'design/admin/setup/logs',, hash( '%name', $log_file.name ) )|wash}{else}{'Log files'|i18n( 'design/admin/setup/logs' )}{/if}</h1>
+<h1 class="context-title">{if $log_has_file}{'Log file %name'|i18n( 'design/admin/setup/logs',, hash( '%name', $log_label ) )|wash}{else}{'Log files'|i18n( 'design/admin/setup/logs' )}{/if}</h1>
 <div class="header-mainline"></div>
 </div></div>
 
@@ -99,15 +115,16 @@
 <div class="a4-notice is-info" role="status">{'There is no log file this viewer may open yet.'|i18n( 'design/admin/setup/logs' )}</div>
 {else}
 
-{* The file: a compact chooser for narrow windows, where the left menu is folded away *}
-<form method="get" action={'setup/logs'|ezurl} class="a4-setup-log-picker">
+{* The file: a compact chooser for narrow windows, where the left menu is folded away. Without JavaScript it sends the
+   key (setup/logs?key=..., answered 303 with the permalink); the script opens the option's permalink at once. *}
+<form method="get" action={'setup/logs'|ezurl} class="a4-setup-log-picker" id="log-picker-form">
     <label for="log-picker">{'File'|i18n( 'design/admin/setup/logs' )}</label>
     <select id="log-picker" name="file">
     {foreach $log_groups as $log_group => $log_list}
         {if $log_list|count}
         <optgroup label="{$log_group_names[ $log_group ]|wash}">
         {foreach $log_list as $log_item}
-            <option value="{$log_item.id|wash}"{if $log_item.id|eq( $log_file.id )} selected="selected"{/if}>{$log_item.id|wash}</option>
+            <option value="{$log_item.id|wash}" data-href={concat( 'setup/logs/view/', $log_item.key, cond( $log_item.rotation|ne( 0 ), concat( '/(rotation)/', $log_item.rotation ), '' ), cond( $log_unmasked, '/(unmask)/1', '' ) )|ezurl}{if $log_item.id|eq( $log_file.id )} selected="selected"{/if}>{if $log_item.configured}{$log_item.label|wash} ({$log_item.name|wash}){else}{$log_item.id|wash}{/if}</option>
         {/foreach}
         </optgroup>
         {/if}
@@ -117,8 +134,17 @@
     <button type="submit" class="a4-btn a4-btn-small">{'Open'|i18n( 'design/admin/setup/logs' )}</button>
 </form>
 
+{* The permalink of this view (never with the unmasked choice): selectable without JavaScript, copied with the button *}
+<div class="a4-row a4-setup-log-permalink">
+    <label for="log-permalink">{'Permalink'|i18n( 'design/admin/setup/logs' )}</label>
+    <input type="text" id="log-permalink" class="a4-input" readonly="readonly" value={$log_permalink|ezurl( 'double', 'full' )} aria-describedby="log-permalink-help" />
+    <button type="button" class="a4-btn a4-btn-small" id="log-copy-link" disabled="disabled"><span class="a4-icon a4-bi-link-45deg" aria-hidden="true"></span>{'Copy permalink'|i18n( 'design/admin/setup/logs' )}</button>
+    <span class="a4-help" id="log-permalink-help">{'A link to this log and this view (filters, search, paused or following, the focused line), to bookmark or share. It never shows the lines unmasked.'|i18n( 'design/admin/setup/logs' )}</span>
+</div>
+
 <ul class="a4-setup-inline a4-setup-log-facts">
-    <li><code>{$log_file.id|wash}</code></li>
+    <li><code>{if $log_file.configured}{$log_file.name|wash}{else}{$log_file.id|wash}{/if}</code></li>
+    <li><code>{$log_file.key|wash}</code></li>
     <li>{$log_group_names[ $log_file.group ]|wash}</li>
     <li id="log-size">{$log_file.size|si( byte )}</li>
     <li>{'Changed %time'|i18n( 'design/admin/setup/logs',, hash( '%time', $log_file.mtime|l10n( 'shortdatetime' ) ) )|wash}</li>
@@ -144,7 +170,7 @@
         <label class="a4-check a4-setup-log-switch"><input type="checkbox" id="log-wrap" disabled="disabled" /><span>{'Wrap lines'|i18n( 'design/admin/setup/logs' )}</span></label>
         {if $log_can_unmask}
         <a class="a4-btn a4-btn-small a4-btn-ghost" id="log-unmask" data-unmasked="{if $log_unmasked}1{else}0{/if}"
-           href={concat( 'setup/logs?file=', $log_file.id|rawurlencode, cond( $log_unmasked, '', '&unmask=1' ) )|ezurl}>
+           href={concat( $log_permalink, cond( $log_unmasked, '', '/(unmask)/1' ) )|ezurl}>
             <span class="a4-icon {if $log_unmasked}a4-bi-eye-slash{else}a4-bi-eye{/if}" aria-hidden="true"></span>{if $log_unmasked}{'Mask again'|i18n( 'design/admin/setup/logs' )}{else}{'Show unmasked'|i18n( 'design/admin/setup/logs' )}{/if}
         </a>
         {/if}
@@ -164,7 +190,8 @@
 <summary>{'Search'|i18n( 'design/admin/setup/logs' )}</summary>
 <div class="a4-fold-body">
 <form method="get" action={'setup/logs'|ezurl} class="a4-filterbar a4-setup-log-searchform" role="search" aria-label="{'Search the log files'|i18n( 'design/admin/setup/logs' )|wash}">
-    <input type="hidden" name="file" value="{$log_file.id|wash}" />
+    <input type="hidden" name="key" value="{$log_file.key|wash}" />
+    {if $log_file.rotation|ne( 0 )}<input type="hidden" name="rotation" value="{$log_file.rotation|wash}" />{/if}
     {if $log_unmasked}<input type="hidden" name="unmask" value="1" />{/if}
     <div class="a4-field a4-field-wide">
         <label for="log-q">{'Text'|i18n( 'design/admin/setup/logs' )}</label>
@@ -218,7 +245,7 @@
     </fieldset>
     <div class="a4-field a4-field-wide a4-row">
         <button type="submit" class="a4-btn a4-btn-primary"><span class="a4-icon a4-bi-search" aria-hidden="true"></span>{'Search'|i18n( 'design/admin/setup/logs' )}</button>
-        {if $log_searching}<a class="a4-btn" href={concat( 'setup/logs?file=', $log_file.id|rawurlencode, cond( $log_unmasked, '&unmask=1', '' ) )|ezurl}>{'Back to following'|i18n( 'design/admin/setup/logs' )}</a>{/if}
+        {if $log_searching}<a class="a4-btn" href={concat( $log_base, cond( $log_unmasked, '/(unmask)/1', '' ) )|ezurl}>{'Back to following'|i18n( 'design/admin/setup/logs' )}</a>{/if}
     </div>
 </form>
 </div>
@@ -279,7 +306,7 @@
 </div>
 
 {if and( $log_searching, is_set( $log_search.cursor ), $log_search.cursor|ne( '' ) )}
-<p class="a4-setup-log-more"><a class="a4-btn" id="log-more" href={concat( 'setup/logs?', $log_q, '&cursor=', $log_search.cursor|rawurlencode )|ezurl}>{'More results'|i18n( 'design/admin/setup/logs' )}</a></p>
+<p class="a4-setup-log-more"><a class="a4-btn" id="log-more" href={concat( 'setup/logs?', $log_page_q, '&cursor=', $log_search.cursor|rawurlencode )|ezurl}>{'More results'|i18n( 'design/admin/setup/logs' )}</a></p>
 {/if}
 
 {* ---- one entry, opened by the script ---- *}
@@ -317,7 +344,7 @@
         <p class="a4-help">{'Empty fields: the last %size of the file. Masked as shown here; recorded in the audit.'|i18n( 'design/admin/setup/logs',, hash( '%size', $log_max_download|si( byte ) ) )|wash}</p>
     </form>
     {/if}
-    {if or( and( $log_actions.rotate, $log_file.archive|not ), and( $log_actions.truncate, $log_file.archive|not ), and( $log_actions.delete, $log_file.archive ) )}
+    {if and( $log_file.configured|not, or( and( $log_actions.rotate, $log_file.archive|not ), and( $log_actions.truncate, $log_file.archive|not ), and( $log_actions.delete, $log_file.archive ) ) )}
     <form method="post" action={'setup/logsaction'|ezurl} class="a4-row a4-setup-log-manage">
         <input type="hidden" name="{$log_token_field|wash}" value="{$log_token|wash}" />
         <input type="hidden" name="File" value="{$log_file.id|wash}" />
@@ -345,6 +372,10 @@
      data-template-url={if $log_can_templates}{'setup/templateview'|ezurl}{else}""{/if}
      data-audit-url={if $log_can_audit}{'audit/console'|ezurl}{else}""{/if}
      data-search-query="{$log_q|wash}"
+     data-permalink-url={$log_permalink|ezurl}
+     data-base-url={$log_base|ezurl}
+     data-text-copied="{'Link copied'|i18n( 'design/admin/setup/logs' )|wash}"
+     data-text-copy-failed="{'The link could not be copied; it is selected in the field, copy it with the keyboard.'|i18n( 'design/admin/setup/logs' )|wash}"
      data-can-unmask="{if $log_can_unmask}1{else}0{/if}"
      data-text-pause="{'Pause'|i18n( 'design/admin/setup/logs' )|wash}"
      data-text-resume="{'Resume'|i18n( 'design/admin/setup/logs' )|wash}"
@@ -392,4 +423,4 @@
 
 </div></div></div>
 </div>
-{undef $log_level_names $log_group_names $log_entries $log_q $log_has_file $log_can_templates $log_can_finder $log_can_audit}
+{undef $log_level_names $log_group_names $log_entries $log_q $log_crit $log_page_q $log_base $log_label $log_has_file $log_can_templates $log_can_finder $log_can_audit}

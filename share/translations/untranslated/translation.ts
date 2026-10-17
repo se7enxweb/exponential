@@ -69919,5 +69919,29 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>A link to this log and this view (filters, search, paused or following, the focused line), to bookmark or share. It never shows the lines unmasked.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy permalink</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Link copied</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Permalink</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The link could not be copied; it is selected in the field, copy it with the keyboard.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Web server</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

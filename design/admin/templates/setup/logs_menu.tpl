@@ -1,7 +1,8 @@
 {* The left menu of the log viewer (setup/logs, setup/logsaction; doc/features/6.0/log-viewer.md, "The navigator"):
-   the Setup menu, then every log file the viewer may open, grouped Kernel, Site, Extensions and Rotated archives,
-   each with its size, its last change and the lines a minute it gains (from fetch( 'setup', 'log_files' ), which is
-   empty for a user without setup/logs). The open file's link carries aria-current="page".
+   the Setup menu, then every log the viewer may open, grouped Kernel, Site, Extensions, Web server and Rotated
+   archives, each with its size, its last change and the lines a minute it gains (from fetch( 'setup', 'log_files' ),
+   which is empty for a user without setup/logs). Each link is the log's permalink, setup/logs/view/<key>[/(rotation)/N].
+   The open file's link carries aria-current="page". A log configured by key shows its label, with the file name below.
 
    The same file is in design/admin and design/admin4. Styles: stylesheets/modules/setup.css (.a4-setup-lognav). *}
 {include uri='design:parts/setup/menu.tpl'}
@@ -11,9 +12,9 @@
      $lognav_names = hash( 'kernel',     'Kernel'|i18n( 'design/admin/setup/logs' ),
                            'site',       'Site'|i18n( 'design/admin/setup/logs' ),
                            'extensions', 'Extensions'|i18n( 'design/admin/setup/logs' ),
+                           'webserver',  'Web server'|i18n( 'design/admin/setup/logs' ),
                            'archives',   'Rotated archives'|i18n( 'design/admin/setup/logs' ) )}
 {if is_set( $log_file.id )}{set $lognav_current = $log_file.id}{/if}
-{if and( $lognav_current|eq( '' ), ezhttp_hasvariable( 'file', 'get' ) )}{set $lognav_current = ezhttp( 'file', 'get' )}{/if}
 {if $lognav_groups|count}
 <nav class="a4-setup-lognav" aria-labelledby="a4-setup-lognav-title">
 {* DESIGN: Header START *}<div class="box-header"><div class="box-ml">
@@ -23,17 +24,18 @@
 {foreach $lognav_groups as $lognav_group => $lognav_files}
     {if $lognav_files|count|gt( 0 )}
     <details class="a4-navgroup a4-setup-lognav-group" open>
-        <summary class="a4-nav-title">{$lognav_names[ $lognav_group ]|wash} <span class="a4-setup-lognav-count">({$lognav_files|count})</span></summary>
+        <summary class="a4-nav-title">{first_set( $lognav_names[ $lognav_group ], $lognav_group )|wash} <span class="a4-setup-lognav-count">({$lognav_files|count})</span></summary>
         <ul class="leftmenu-items a4-setup-lognav-items">
         {foreach $lognav_files as $lognav_file}
             <li{if $lognav_file.id|eq( $lognav_current )} class="current"{/if}><div>
                 {if $lognav_file.readable}
-                <a href={concat( 'setup/logs?file=', $lognav_file.id|urlencode )|ezurl}{if $lognav_file.id|eq( $lognav_current )} aria-current="page"{/if} class="a4-setup-lognav-link" data-level="{$lognav_file.level|wash}">
+                <a href={concat( 'setup/logs/view/', $lognav_file.key, cond( $lognav_file.rotation|ne( 0 ), concat( '/(rotation)/', $lognav_file.rotation ), '' ) )|ezurl}{if $lognav_file.id|eq( $lognav_current )} aria-current="page"{/if} class="a4-setup-lognav-link" data-level="{$lognav_file.level|wash}">
                 {else}
                 <span class="disabled a4-setup-lognav-link" title="{'The web server may not read this file.'|i18n( 'design/admin/setup/logs' )|wash}">
                 {/if}
-                    <span class="a4-setup-lognav-name">{$lognav_file.name|wash}</span>
-                    {if or( $lognav_group|eq( 'site' ), $lognav_group|eq( 'archives' ) )}<span class="a4-setup-lognav-dir">{$lognav_file.dir|wash}</span>{/if}
+                    <span class="a4-setup-lognav-name">{if and( $lognav_file.configured, $lognav_file.archive|not )}{$lognav_file.label|wash}{else}{$lognav_file.name|wash}{/if}</span>
+                    {if and( $lognav_file.configured, $lognav_file.archive|not )}<span class="a4-setup-lognav-dir">{$lognav_file.name|wash}</span>
+                    {elseif and( $lognav_file.configured|not, or( $lognav_group|eq( 'site' ), $lognav_group|eq( 'archives' ) ) )}<span class="a4-setup-lognav-dir">{$lognav_file.dir|wash}</span>{/if}
                     <span class="a4-setup-lognav-meta">
                         <span>{$lognav_file.size|si( byte )}</span>
                         <span><time datetime="{$lognav_file.mtime|datetime( 'custom', '%Y-%m-%dT%H:%i:%s' )}">{$lognav_file.mtime|l10n( 'shortdatetime' )}</time></span>

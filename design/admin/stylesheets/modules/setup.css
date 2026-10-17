@@ -1107,6 +1107,10 @@ label.a4-package-option-label {
 /* The file chooser for narrow windows, the facts of the file and the controls */
 .a4-setup-log-picker { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2); margin: 0 0 var(--a4-space-3); }
 .a4-setup-log-picker select { min-width: 0; max-width: 100%; flex: 1 1 220px; }
+/* The permalink of the view: a read-only field to select, and the copy button */
+.a4-setup-log-permalink { flex-wrap: wrap; align-items: center; gap: var(--a4-space-2); margin: 0 0 var(--a4-space-3); }
+.a4-setup-log-permalink .a4-input { flex: 1 1 260px; min-width: 0; max-width: 100%; font-family: var(--a4-mono); }
+.a4-setup-log-permalink .a4-help { flex-basis: 100%; }
 .a4-setup-log-facts { margin: 0 0 var(--a4-space-3); overflow-wrap: anywhere; }
 .a4-setup-log-toolbar {
   position: sticky;

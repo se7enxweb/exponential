@@ -77039,5 +77039,29 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
+    <message>
+        <source>A link to this log and this view (filters, search, paused or following, the focused line), to bookmark or share. It never shows the lines unmasked.</source>
+        <translation>Ein Link zu diesem Log und dieser Ansicht (Filter, Suche, angehalten oder verfolgend, die ausgewählte Zeile) zum Merken oder Teilen. Er zeigt die Zeilen nie unmaskiert.</translation>
+    </message>
+    <message>
+        <source>Copy permalink</source>
+        <translation>Permalink kopieren</translation>
+    </message>
+    <message>
+        <source>Link copied</source>
+        <translation>Link kopiert</translation>
+    </message>
+    <message>
+        <source>Permalink</source>
+        <translation>Permalink</translation>
+    </message>
+    <message>
+        <source>The link could not be copied; it is selected in the field, copy it with the keyboard.</source>
+        <translation>Der Link konnte nicht kopiert werden; er ist im Feld markiert, kopieren Sie ihn mit der Tastatur.</translation>
+    </message>
+    <message>
+        <source>Web server</source>
+        <translation>Webserver</translation>
+    </message>
 </context>
 </TS>

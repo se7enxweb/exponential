@@ -70099,5 +70099,29 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Cancel</source>
         <translation>Cancel</translation>
     </message>
+    <message>
+        <source>A link to this log and this view (filters, search, paused or following, the focused line), to bookmark or share. It never shows the lines unmasked.</source>
+        <translation>A link to this log and this view (filters, search, paused or following, the focused line), to bookmark or share. It never shows the lines unmasked.</translation>
+    </message>
+    <message>
+        <source>Copy permalink</source>
+        <translation>Copy permalink</translation>
+    </message>
+    <message>
+        <source>Link copied</source>
+        <translation>Link copied</translation>
+    </message>
+    <message>
+        <source>Permalink</source>
+        <translation>Permalink</translation>
+    </message>
+    <message>
+        <source>The link could not be copied; it is selected in the field, copy it with the keyboard.</source>
+        <translation>The link could not be copied; it is selected in the field, copy it with the keyboard.</translation>
+    </message>
+    <message>
+        <source>Web server</source>
+        <translation>Web server</translation>
+    </message>
 </context>
 </TS>
