@@ -5117,7 +5117,7 @@ e5b2a2662a2b0de99fd4f1d6d63786e8  kernel/classes/datatypes/ezuser/ezuser.php
 c4c838b8f66a7fe34e990363d767d756  kernel/classes/datatypes/ezuser/ezuserloginhandler.php
 5ad5426c40ee23249cfeaeaf7ebfc422  kernel/classes/datatypes/ezuser/ezusersetting.php
 57ccebfb2e208033a9dd81415f35937f  kernel/classes/datatypes/ezuser/ezusertype.php
-24d81e89f3eb9f5c34220e8f4132fbd8  kernel/classes/datatypes/ezxmltext/ezxmlinputhandler.php
+1a8700ce4387c0176e386ae6ee0e5df4  kernel/classes/datatypes/ezxmltext/ezxmlinputhandler.php
 262a87f05bcc2be853a8f234ac70848e  kernel/classes/datatypes/ezxmltext/ezxmlinputparser.php
 2165581a04a9104b665395350c40188f  kernel/classes/datatypes/ezxmltext/ezxmloutputhandler.php
 7e3e4d2b10fd3ee473b8e4c86b142d6c  kernel/classes/datatypes/ezxmltext/ezxmlschema.php
