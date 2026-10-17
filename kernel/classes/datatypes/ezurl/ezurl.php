@@ -605,20 +605,14 @@ class eZURL extends eZPersistentObject
     /*!
      \static
      Returns the URL with the given URL. Returns false if the URL does not exist.
+     Exact match, as registerURL(): the url column compares with its collation (case and accents ignored), so a
+     lookup by it alone found every spelling, and with two of them (registerURL() stores each spelling in a row of
+     its own) it returned false and its caller stored yet another row on every save.
     */
     static function urlByURL( $urlText )
     {
-        $db = eZDB::instance();
-
-        $url = false;
-        $checkURLQuery = "SELECT * FROM ezurl WHERE url='" . $db->escapeString( $urlText ) . "'";
-        $urlArray = $db->arrayQuery( $checkURLQuery );
-
-        if ( count( $urlArray ) == 1 )
-        {
-            $url = new eZURL( $urlArray[0] );
-        }
-        return $url;
+        $url = self::fetchExactByUrl( (string)$urlText );
+        return $url instanceof eZURL ? $url : false;
     }
 }
 
