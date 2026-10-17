@@ -17,13 +17,13 @@
 
 namespace
 {
-if ( !function_exists( 'applyChanges' ) ) {
+if ( !function_exists( 'expModuleViewShopVatTypeApplyChanges' ) ) {
 /*!
   Apply changes made to VAT types' names and/or percentages.
 
   \return errors array
  */
-function applyChanges( $module, $http, $vatTypeArray = false )
+function expModuleViewShopVatTypeApplyChanges( $module, $http, $vatTypeArray = false )
 {
     $errors = array();
     if ( $vatTypeArray === false )
@@ -67,14 +67,14 @@ function applyChanges( $module, $http, $vatTypeArray = false )
 }
 }
 
-if ( !function_exists( 'generateUniqueVatTypeName' ) ) {
+if ( !function_exists( 'expModuleViewShopVatTypeGenerateUniqueName' ) ) {
 /**
  * Generate a unique VAT type name.
  *
  * The generated name looks like "VAT type X"
  * where X is a unique number.
  */
-function generateUniqueVatTypeName( $vatTypes )
+function expModuleViewShopVatTypeGenerateUniqueName( $vatTypes )
 {
     $commonPart = ezpI18n::tr( 'kernel/shop', 'VAT type' );
     $maxNumber = 0;
@@ -95,13 +95,13 @@ function generateUniqueVatTypeName( $vatTypes )
 }
 }
 
-if ( !function_exists( 'findDependencies' ) ) {
+if ( !function_exists( 'expModuleViewShopVatTypeFindDependencies' ) ) {
 /**
  * Determine dependent VAT rules and products for the given VAT types.
  *
  * \private
  */
-function findDependencies( $vatTypeIDList, &$deps, &$haveDeps, &$canRemove )
+function expModuleViewShopVatTypeFindDependencies( $vatTypeIDList, &$deps, &$haveDeps, &$canRemove )
 {
     // Find dependencies (products and/or VAT rules).
     $deps = array();
@@ -161,17 +161,17 @@ class Vattype extends \Exponential\Runnable\ModuleView
         if ( $module->isCurrentAction( 'Add' ) )
         {
             $vatTypeArray = \eZVatType::fetchList( true, true );
-            $errors = applyChanges( $module, $http, $vatTypeArray );
+            $errors = expModuleViewShopVatTypeApplyChanges( $module, $http, $vatTypeArray );
 
             $vatType = \eZVatType::create();
-            $vatType->setAttribute( 'name', generateUniqueVatTypeName( $vatTypeArray ) );
+            $vatType->setAttribute( 'name', expModuleViewShopVatTypeGenerateUniqueName( $vatTypeArray ) );
             $vatType->store();
             $tpl->setVariable( 'last_added_id', $vatType->attribute( 'id' ) );
         }
         // Save changes made to names and percentages.
         elseif ( $module->isCurrentAction( 'SaveChanges' ) )
         {
-            $errors = applyChanges( $module, $http );
+            $errors = expModuleViewShopVatTypeApplyChanges( $module, $http );
         }
         // Remove checked VAT types [with or without confirmation].
         elseif ( $module->isCurrentAction( 'Remove' ) )
@@ -180,7 +180,7 @@ class Vattype extends \Exponential\Runnable\ModuleView
             $deps = array();
             $haveDeps = false;
             $canRemove = true;
-            findDependencies( $vatIDsToRemove, $deps, $haveDeps, $canRemove );
+            expModuleViewShopVatTypeFindDependencies( $vatIDsToRemove, $deps, $haveDeps, $canRemove );
 
             $errors = false;
             $showDeps = true;
@@ -238,7 +238,7 @@ class Vattype extends \Exponential\Runnable\ModuleView
             }
 
             if ( !$afterConfirmation )
-                $errors = applyChanges( $module, $http );
+                $errors = expModuleViewShopVatTypeApplyChanges( $module, $http );
 
             $db = \eZDB::instance();
             $db->begin();

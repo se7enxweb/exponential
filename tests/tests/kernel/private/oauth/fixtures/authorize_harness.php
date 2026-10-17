@@ -4,7 +4,7 @@
  * own (ezpOauthAuthorizeRedirectTest). The request is the JSON object of the first argument ("get" and "post"); the
  * known client is "known-client" with the end point https://client.example/callback.
  *
- * Prints one JSON object and exits: the status line and the Location the view answered with (response(), whose
+ * Prints one JSON object and exits: the status line and the Location the view answered with (expModuleViewOauthAuthorizeResponse(), whose
  * header() calls a CLI process cannot see), or the step the view reached ("login" when it asked for the user,
  * "authorization" when it went on to the client's authorization of the user).
  *
@@ -30,7 +30,7 @@ function harnessResult( array $result )
     exit( 0 );
 }
 
-function response( $httpHeader, $location = null )
+function expModuleViewOauthAuthorizeResponse( $httpHeader, $location = null )
 {
     harnessResult( array( 'status' => $httpHeader, 'location' => $location ) );
 }

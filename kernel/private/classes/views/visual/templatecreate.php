@@ -17,8 +17,8 @@
 
 namespace
 {
-if ( !function_exists( 'generateDefaultCopyCode' ) ) {
-function generateDefaultCopyCode( $http, $template, $classIdentifier = '' )
+if ( !function_exists( 'expModuleViewVisualTemplateCreateDefaultCopyCode' ) ) {
+function expModuleViewVisualTemplateCreateDefaultCopyCode( $http, $template, $classIdentifier = '' )
 {
     $templateCode = "";
     $siteAccess = $http->sessionVariable( 'eZTemplateAdminCurrentSiteAccess' );
@@ -132,8 +132,8 @@ function generateDefaultCopyCode( $http, $template, $classIdentifier = '' )
 }
 }
 
-if ( !function_exists( 'generateNodeViewTemplate' ) ) {
-function generateNodeViewTemplate( $http, $template, $fileName )
+if ( !function_exists( 'expModuleViewVisualTemplateCreateNodeViewTemplate' ) ) {
+function expModuleViewVisualTemplateCreateNodeViewTemplate( $http, $template, $fileName )
 {
     $matchArray = $http->postVariable( 'Match' );
 
@@ -147,7 +147,7 @@ function generateNodeViewTemplate( $http, $template, $fileName )
     {
         case 'DefaultCopy' :
         {
-            $templateCode = generateDefaultCopyCode( $http, $template, $classIdentifier );
+            $templateCode = expModuleViewVisualTemplateCreateDefaultCopyCode( $http, $template, $classIdentifier );
         }break;
 
         case 'ContainerTemplate' :
@@ -214,8 +214,8 @@ function generateNodeViewTemplate( $http, $template, $fileName )
 }
 }
 
-if ( !function_exists( 'generateObjectViewTemplate' ) ) {
-function generateObjectViewTemplate( $http, $template, $fileName )
+if ( !function_exists( 'expModuleViewVisualTemplateCreateObjectViewTemplate' ) ) {
+function expModuleViewVisualTemplateCreateObjectViewTemplate( $http, $template, $fileName )
 {
     $matchArray = $http->postVariable( 'Match' );
 
@@ -229,7 +229,7 @@ function generateObjectViewTemplate( $http, $template, $fileName )
     {
         case 'DefaultCopy' :
         {
-            $templateCode = generateDefaultCopyCode( $http, $template, $classIdentifier );
+            $templateCode = expModuleViewVisualTemplateCreateDefaultCopyCode( $http, $template, $classIdentifier );
         }break;
 
         case 'ViewTemplate' :
@@ -260,8 +260,8 @@ function generateObjectViewTemplate( $http, $template, $fileName )
 }
 }
 
-if ( !function_exists( 'generatePagelayoutTemplate' ) ) {
-function generatePagelayoutTemplate( $http, $template, $fileName )
+if ( !function_exists( 'expModuleViewVisualTemplateCreatePagelayoutTemplate' ) ) {
+function expModuleViewVisualTemplateCreatePagelayoutTemplate( $http, $template, $fileName )
 {
     $templateCode = "";
     $classIdentifier = '';
@@ -270,7 +270,7 @@ function generatePagelayoutTemplate( $http, $template, $fileName )
     {
         case 'DefaultCopy' :
         {
-            $templateCode = generateDefaultCopyCode( $http, $template, $classIdentifier );
+            $templateCode = expModuleViewVisualTemplateCreateDefaultCopyCode( $http, $template, $classIdentifier );
         }break;
 
         default:
@@ -295,8 +295,8 @@ function generatePagelayoutTemplate( $http, $template, $fileName )
 }
 }
 
-if ( !function_exists( 'generateDefaultTemplate' ) ) {
-function generateDefaultTemplate( $http, $template, $fileName )
+if ( !function_exists( 'expModuleViewVisualTemplateCreateDefaultTemplate' ) ) {
+function expModuleViewVisualTemplateCreateDefaultTemplate( $http, $template, $fileName )
 {
     $templateCode = "";
     $classIdentifier = '';
@@ -305,7 +305,7 @@ function generateDefaultTemplate( $http, $template, $fileName )
     {
         case 'DefaultCopy' :
         {
-            $templateCode = generateDefaultCopyCode( $http, $template, $classIdentifier );
+            $templateCode = expModuleViewVisualTemplateCreateDefaultCopyCode( $http, $template, $classIdentifier );
         }break;
 
         default:
@@ -478,22 +478,22 @@ class Templatecreate extends \Exponential\Runnable\ModuleView
                 {
                     case "node_view":
                     {
-                        $templateCode = generateNodeViewTemplate( $http, $template, $fileName );
+                        $templateCode = expModuleViewVisualTemplateCreateNodeViewTemplate( $http, $template, $fileName );
                     }break;
 
                     case "object_view":
                     {
-                        $templateCode = generateObjectViewTemplate( $http, $template, $fileName );
+                        $templateCode = expModuleViewVisualTemplateCreateObjectViewTemplate( $http, $template, $fileName );
                     }break;
 
                     case "pagelayout":
                     {
-                        $templateCode = generatePagelayoutTemplate( $http, $template, $fileName );
+                        $templateCode = expModuleViewVisualTemplateCreatePagelayoutTemplate( $http, $template, $fileName );
                     }break;
 
                     default:
                     {
-                        $templateCode = generateDefaultTemplate( $http, $template, $fileName );
+                        $templateCode = expModuleViewVisualTemplateCreateDefaultTemplate( $http, $template, $fileName );
                     }break;
                 }
 

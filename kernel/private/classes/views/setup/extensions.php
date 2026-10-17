@@ -22,8 +22,8 @@
 
 namespace
 {
-if ( !function_exists( 'updateAutoload' ) ) {
-function updateAutoload( $tpl = null )
+if ( !function_exists( 'expModuleViewSetupExtensionsUpdateAutoload' ) ) {
+function expModuleViewSetupExtensionsUpdateAutoload( $tpl = null )
 {
     $autoloadGenerator = new eZAutoloadGenerator();
     $warnings = array();
@@ -141,7 +141,7 @@ class Extensions extends \Exponential\Runnable\ModuleView
 
         if ( $module->isCurrentAction( 'GenerateAutoloadArrays' ) )
         {
-            updateAutoload( $tpl );
+            expModuleViewSetupExtensionsUpdateAutoload( $tpl );
             $tpl->setVariable( 'save_message', \ezpI18n::tr( 'design/admin/setup/extensions', 'The autoload arrays of the extensions were regenerated.' ) );
         }
 
@@ -316,7 +316,7 @@ class Extensions extends \Exponential\Runnable\ModuleView
             // evaluated policy wildcards in the user info cache follow the active modules
             \eZCache::clearByID( 'user_info_cache' );
         }
-        $warnings = updateAutoload( $tpl );
+        $warnings = expModuleViewSetupExtensionsUpdateAutoload( $tpl );
 
         $velocity = null;
         try

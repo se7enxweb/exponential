@@ -17,8 +17,8 @@
 
 namespace
 {
-if ( !function_exists( 'removeRelatedCache' ) ) {
-function removeRelatedCache( $siteAccess )
+if ( !function_exists( 'expModuleViewVisualToolbarRemoveRelatedCache' ) ) {
+function expModuleViewVisualToolbarRemoveRelatedCache( $siteAccess )
 {
     // Delete compiled template, in the cache directory of that siteaccess (also below CacheVarDir)
     $iniPath = eZSiteAccess::findPathToSiteAccess( $siteAccess );
@@ -220,7 +220,7 @@ class Toolbar extends \Exponential\Runnable\ModuleView
                                                         'persistent_data' => array( 'tool_index' => $res[1], 'parameter_name' => $res[2] ),
                                                         'from_page' => "/visual/toolbar/$currentSiteAccess/$toolbarPosition/" ),
                                                  $module );
-                        removeRelatedCache( $currentSiteAccess );
+                        expModuleViewVisualToolbarRemoveRelatedCache( $currentSiteAccess );
                         return $this->viewResult( isset( $Result ) ? $Result : null, null );
                     }
 
@@ -234,7 +234,7 @@ class Toolbar extends \Exponential\Runnable\ModuleView
                                                         'persistent_data' => array( 'tool_index' => $res[1], 'parameter_name' => $res[2] ),
                                                         'from_page' => "/visual/toolbar/$currentSiteAccess/$toolbarPosition/" ),
                                                  $module );
-                        removeRelatedCache( $currentSiteAccess );
+                        expModuleViewVisualToolbarRemoveRelatedCache( $currentSiteAccess );
                         return $this->viewResult( isset( $Result ) ? $Result : null, null );
                     }
                 }
@@ -371,7 +371,7 @@ class Toolbar extends \Exponential\Runnable\ModuleView
         }
         if ( $removeCache )
         {
-            removeRelatedCache( $currentSiteAccess );
+            expModuleViewVisualToolbarRemoveRelatedCache( $currentSiteAccess );
         }
 
         $toolbarIni = \eZINI::instance( "toolbar.ini", 'settings', null, false, true, false );

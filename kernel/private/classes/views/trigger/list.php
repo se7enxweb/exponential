@@ -17,8 +17,8 @@
 
 namespace
 {
-if ( !function_exists( 'makeTriggerArray' ) ) {
-function makeTriggerArray( $triggerList )
+if ( !function_exists( 'expModuleViewTriggerListMakeTriggerArray' ) ) {
+function expModuleViewTriggerListMakeTriggerArray( $triggerList )
 {
     $triggerArray = array();
     foreach ( $triggerList as $trigger )
@@ -235,7 +235,7 @@ class ListView extends \Exponential\Runnable\ModuleView
 
         $possibleTriggers = array();
 
-        $triggers = makeTriggerArray( \eZTrigger::fetchList() );
+        $triggers = expModuleViewTriggerListMakeTriggerArray( \eZTrigger::fetchList() );
 
         foreach ( array_unique( \eZINI::instance( 'workflow.ini' )->variable( 'OperationSettings', 'AvailableOperationList' ) ) as $operation )
         {

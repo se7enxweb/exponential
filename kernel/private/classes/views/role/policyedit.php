@@ -17,7 +17,7 @@
 
 namespace
 {
-if ( !function_exists( 'processDropdownLimitations' ) ) {
+if ( !function_exists( 'expModuleViewRolePolicyEditProcessDropdownLimitations' ) ) {
 /**
  * Applies the POST submitted limitations as found in the dropdowns
  * @param eZPolicy $policy
@@ -27,7 +27,7 @@ if ( !function_exists( 'processDropdownLimitations' ) ) {
  *
  * @return bool True if limitations were found, false otherwise
  */
-function processDropdownLimitations( &$policy, $currentModule, $currentFunction, $currentFunctionLimitations )
+function expModuleViewRolePolicyEditProcessDropdownLimitations( &$policy, $currentModule, $currentFunction, $currentFunctionLimitations )
 {
     $hasLimitation = false;
 
@@ -134,7 +134,7 @@ class Policyedit extends \Exponential\Runnable\ModuleView
         $http = \eZHTTPTool::instance();
         if ( $http->hasPostVariable( 'DeleteNodeButton' ) )
         {
-            processDropdownLimitations( $policy, $currentModule, $currentFunction, $currentFunctionLimitations );
+            expModuleViewRolePolicyEditProcessDropdownLimitations( $policy, $currentModule, $currentFunction, $currentFunctionLimitations );
 
             if ( $http->hasPostVariable( 'DeleteNodeIDArray' ) )
             {
@@ -155,7 +155,7 @@ class Policyedit extends \Exponential\Runnable\ModuleView
 
         if ( $http->hasPostVariable( 'DeleteSubtreeButton' ) )
         {
-            processDropdownLimitations( $policy, $currentModule, $currentFunction, $currentFunctionLimitations );
+            expModuleViewRolePolicyEditProcessDropdownLimitations( $policy, $currentModule, $currentFunction, $currentFunctionLimitations );
 
             // store the temporary policy
             if ( $http->hasPostVariable( 'DeleteSubtreeIDArray' ) )
@@ -258,7 +258,7 @@ class Policyedit extends \Exponential\Runnable\ModuleView
                 }
             }
 
-            if ( processDropdownLimitations( $policy, $currentModule, $currentFunction, $currentFunctionLimitations ) === true )
+            if ( expModuleViewRolePolicyEditProcessDropdownLimitations( $policy, $currentModule, $currentFunction, $currentFunctionLimitations ) === true )
                 $hasLimitation = true;
 
             $policy->store();
@@ -287,7 +287,7 @@ class Policyedit extends \Exponential\Runnable\ModuleView
 
         if ( $http->hasPostVariable( 'BrowseLimitationNodeButton' ) )
         {
-            processDropdownLimitations( $policy, $currentModule, $currentFunction, $currentFunctionLimitations );
+            expModuleViewRolePolicyEditProcessDropdownLimitations( $policy, $currentModule, $currentFunction, $currentFunctionLimitations );
             \eZContentBrowse::browse( array( 'action_name' => 'FindLimitationNode',
                                             'content' => array( 'policy_id' => $originalPolicyID ),
                                             'from_page' => '/role/policyedit/' . $originalPolicyID ),
@@ -297,7 +297,7 @@ class Policyedit extends \Exponential\Runnable\ModuleView
 
         if ( $http->hasPostVariable( 'BrowseLimitationSubtreeButton' ) )
         {
-            processDropdownLimitations( $policy, $currentModule, $currentFunction, $currentFunctionLimitations );
+            expModuleViewRolePolicyEditProcessDropdownLimitations( $policy, $currentModule, $currentFunction, $currentFunctionLimitations );
             \eZContentBrowse::browse( array( 'action_name' => 'FindLimitationSubtree',
                                             'content' => array( 'policy_id' => $originalPolicyID ),
                                             'from_page' => '/role/policyedit/' . $originalPolicyID ),

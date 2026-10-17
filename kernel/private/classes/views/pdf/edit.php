@@ -23,7 +23,7 @@
 
 namespace
 {
-if ( !function_exists( 'generatePDF' ) ) {
+if ( !function_exists( 'expModuleViewPdfEditGeneratePdf' ) ) {
 /*!
  \generate and output PDF data, either to file or stream
 
@@ -33,7 +33,7 @@ if ( !function_exists( 'generatePDF' ) ) {
  \param toFile, false if generate to stream, $
                 filename if generate to file
 */
-function generatePDF( $pdfExport, $toFile = false )
+function expModuleViewPdfEditGeneratePdf( $pdfExport, $toFile = false )
 {
     if ( $pdfExport == null )
         return;

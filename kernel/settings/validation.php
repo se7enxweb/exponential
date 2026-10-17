@@ -8,8 +8,8 @@
  */
 
 
-if ( !function_exists( 'validate' ) ) {
-function validate( $fields, $type, $spacesAllowed = true )
+if ( !function_exists( 'expSettingsValidate' ) ) {
+function expSettingsValidate( $fields, $type, $spacesAllowed = true )
 {
     $validationMessage = '';
     $fieldContainingError = '';

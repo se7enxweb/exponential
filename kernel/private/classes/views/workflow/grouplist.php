@@ -20,8 +20,8 @@ namespace
 // Kept for code outside that may call it. The page itself no longer does: it removes through a confirmation and
 // Grouplist::removeGroups(), which keeps a workflow that is also in another group, removes disabled workflows too
 // and takes their events and versions with them.
-if ( !function_exists( 'removeSelectedGroups' ) ) {
-function removeSelectedGroups( $http, &$groups, $base )
+if ( !function_exists( 'expModuleViewWorkflowGroupListRemoveSelectedGroups' ) ) {
+function expModuleViewWorkflowGroupListRemoveSelectedGroups( $http, &$groups, $base )
 {
     if ( $http->hasPostVariable( "DeleteGroupButton" ) )
     {

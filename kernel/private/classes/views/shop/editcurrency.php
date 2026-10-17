@@ -17,7 +17,7 @@
 
 namespace
 {
-if ( !function_exists( 'validateCurrencyData' ) ) {
+if ( !function_exists( 'expModuleViewShopEditCurrencyValidateData' ) ) {
 /**
  * Validates currency data:
  *  - checks that custom_rate_value & rate_factor are provided and are floats.
@@ -26,7 +26,7 @@ if ( !function_exists( 'validateCurrencyData' ) ) {
  *        remove invalid values since it is passed by reference
  * @return false|string True if data is valid, an error message if it's not
  */
-function validateCurrencyData( &$currencyData )
+function expModuleViewShopEditCurrencyValidateData( &$currencyData )
 {
     $return = false;
 
@@ -91,7 +91,7 @@ class Editcurrency extends \Exponential\Runnable\ModuleView
             }
             else
             {
-                $error = validateCurrencyData( $currencyParams );
+                $error = expModuleViewShopEditCurrencyValidateData( $currencyParams );
                 if ( $error === false )
                 {
                     \eZShopFunctions::createCurrency( $currencyParams );
@@ -110,7 +110,7 @@ class Editcurrency extends \Exponential\Runnable\ModuleView
             $errCode = \eZShopFunctions::changeCurrency( $originalCurrencyCode, $currencyParams['code'] );
             if ( $errCode === \eZCurrencyData::ERROR_OK )
             {
-                $error = validateCurrencyData( $currencyParams );
+                $error = expModuleViewShopEditCurrencyValidateData( $currencyParams );
                 if ( $error === false )
                 {
                     $currency = \eZCurrencyData::fetch( $currencyParams['code'] );

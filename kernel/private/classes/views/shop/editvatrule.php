@@ -17,13 +17,13 @@
 
 namespace
 {
-if ( !function_exists( 'checkEnteredData' ) ) {
+if ( !function_exists( 'expModuleViewShopEditVatRuleCheckEnteredData' ) ) {
 /**
  * Check entered data.
  *
  * \return list of errors found, or false if the data is ok.
  */
-function checkEnteredData( $country, $categories, $vatType, $productCategories, $ruleID )
+function expModuleViewShopEditVatRuleCheckEnteredData( $country, $categories, $vatType, $productCategories, $ruleID )
 {
     $errors = false;
     $errorHeader = '';
@@ -154,7 +154,7 @@ class Editvatrule extends \Exponential\Runnable\ModuleView
             if ( in_array( '*', $chosenCategories ) )
                 $chosenCategories = array();
 
-            list( $errorHeader, $errors ) = checkEnteredData( $chosenCountry, $chosenCategories, $chosenVatType,
+            list( $errorHeader, $errors ) = expModuleViewShopEditVatRuleCheckEnteredData( $chosenCountry, $chosenCategories, $chosenVatType,
                                                               $productCategories, $ruleID );
 
             // save rule (creating it if not exists)

@@ -17,11 +17,11 @@
 
 namespace
 {
-if ( !function_exists( 'contentPDFPassthrough' ) ) {
+if ( !function_exists( 'expModuleViewContentPdfPassthrough' ) ) {
 /*!
   Passthrough PDF cache file, and exit cleanly
 */
-function contentPDFPassthrough( $cacheFile )
+function expModuleViewContentPdfPassthrough( $cacheFile )
 {
     $file = eZClusterFileHandler::instance( $cacheFile );
 
@@ -64,11 +64,11 @@ function contentPDFPassthrough( $cacheFile )
 }
 }
 
-if ( !function_exists( 'contentPDFGenerate' ) ) {
+if ( !function_exists( 'expModuleViewContentPdfGenerate' ) ) {
 /*!
   generate PDF, and output stream.
 */
-function contentPDFGenerate( $cacheFile,
+function expModuleViewContentPdfGenerate( $cacheFile,
                              $node,
                              $object = false,
                              $viewCacheEnabled = true,
@@ -238,7 +238,7 @@ class Pdf extends \Exponential\Runnable\ModuleView
                 $cachePathInfo = \eZContentCache::cachePathInfo( $designSetting, $NodeID, 'pdf', $language, $Offset, $roleList, $discountList, $layout, false,
                                                                 array( 'view_parameters' => $viewParameters ) );
 
-                contentPDFPassthrough( $cachePathInfo['path'] );
+                expModuleViewContentPdfPassthrough( $cachePathInfo['path'] );
             }
         }
 
@@ -275,7 +275,7 @@ class Pdf extends \Exponential\Runnable\ModuleView
                         {
                             $cachePathInfo = \eZContentCache::cachePathInfo( $designSetting, $NodeID, 'pdf', $language, $Offset, $roleList, $discountList, $layout, false,
                                                                             array( 'view_parameters' => $viewParameters ) );
-                            contentPDFPassthrough( $cachePathInfo['path'] );
+                            expModuleViewContentPdfPassthrough( $cachePathInfo['path'] );
                         }
                     }
 
@@ -313,14 +313,14 @@ class Pdf extends \Exponential\Runnable\ModuleView
                                                                     array( 'view_parameters' => $viewParameters ) );
                     $node = \eZContentObjectTreeNode::fetch( $NodeID );
 
-                    contentPDFGenerate( $cachePathInfo['path'] , $node, false, $viewCacheEnabled, $LanguageCode, $viewParameters );
+                    expModuleViewContentPdfGenerate( $cachePathInfo['path'] , $node, false, $viewCacheEnabled, $LanguageCode, $viewParameters );
 
                     if ( $viewCacheEnabled  )
                     {
                         \eZDebugSetting::writeDebug( 'kernel-content-pdf-cache', 'cache written', 'content/pdf' );
                     }
 
-                    contentPDFPassthrough( $cachePathInfo['path'] );
+                    expModuleViewContentPdfPassthrough( $cachePathInfo['path'] );
                 }
             }break;
             case \eZModuleOperationInfo::STATUS_HALTED:

@@ -96,11 +96,11 @@ if ( !function_exists( 'expContentEditCheckContentActions' ) )
             return eZModule::HOOK_STATUS_CANCEL_RUN;
         }
 
-        if ( !function_exists( 'computeRedirect' ) )
+        if ( !function_exists( 'expModuleViewContentEditComputeRedirect' ) )
         {
         // helper function which computes the redirect after
         // publishing and final store of a draft.
-        function computeRedirect( $module, $object, $version, $EditLanguage = false )
+        function expModuleViewContentEditComputeRedirect( $module, $object, $version, $EditLanguage = false )
         {
             $http = eZHTTPTool::instance();
 
@@ -213,7 +213,7 @@ if ( !function_exists( 'expContentEditCheckContentActions' ) )
 
         if( $module->isCurrentAction( 'StoreExit' ) )
         {
-            computeRedirect( $module, $object, $version, $EditLanguage );
+            expModuleViewContentEditComputeRedirect( $module, $object, $version, $EditLanguage );
             return eZModule::HOOK_STATUS_CANCEL_RUN;
         }
 
@@ -372,7 +372,7 @@ if ( !function_exists( 'expContentEditCheckContentActions' ) )
 
             $http = eZHTTPTool::instance();
 
-            computeRedirect( $module, $object, $version, $EditLanguage );
+            expModuleViewContentEditComputeRedirect( $module, $object, $version, $EditLanguage );
             // we have set redirection URI for module so we don't need to continue module execution
             return eZModule::HOOK_STATUS_CANCEL_RUN;
         }

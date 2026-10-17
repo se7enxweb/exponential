@@ -17,9 +17,9 @@
 
 namespace
 {
-if ( !function_exists( 'copyPublishContentObject' ) ) {
+if ( !function_exists( 'expModuleViewContentCopySubtreeCopyPublishContentObject' ) ) {
 ///// functions START =============================================================================
-function copyPublishContentObject( $sourceObject,
+function expModuleViewContentCopySubtreeCopyPublishContentObject( $sourceObject,
                                    $sourceSubtreeNodeIDList,
                                    &$syncNodeIDListSrc, &$syncNodeIDListNew,
                                    &$syncObjectIDListSrc, &$syncObjectIDListNew,
@@ -359,8 +359,8 @@ function copyPublishContentObject( $sourceObject,
 } // function copyPublishContentObject END
 }
 
-if ( !function_exists( 'copySubtree' ) ) {
-function copySubtree( $srcNodeID, $dstNodeID, &$notifications, $allVersions, $keepCreator, $keepTime )
+if ( !function_exists( 'expModuleViewContentCopySubtreeCopySubtree' ) ) {
+function expModuleViewContentCopySubtreeCopySubtree( $srcNodeID, $dstNodeID, &$notifications, $allVersions, $keepCreator, $keepTime )
 {
     // 1. Copy subtree and form the arrays of accordance of the old and new nodes and content objects.
 
@@ -454,7 +454,7 @@ function copySubtree( $srcNodeID, $dstNodeID, &$notifications, $allVersions, $ke
             $sourceObject = $sourceNodeList[ $i ]->object();
 
             $srcSubtreeNodeIDlist = ($sourceNodeID == $sourceSubTreeMainNodeID) ? $syncNodeIDListSrc : $sourceNodeIDList;
-            $copyResult = copyPublishContentObject( $sourceObject,
+            $copyResult = expModuleViewContentCopySubtreeCopyPublishContentObject( $sourceObject,
                                                     $srcSubtreeNodeIDlist,
                                                     $syncNodeIDListSrc, $syncNodeIDListNew,
                                                     $syncObjectIDListSrc, $syncObjectIDListNew,
@@ -726,11 +726,11 @@ function copySubtree( $srcNodeID, $dstNodeID, &$notifications, $allVersions, $ke
 } // function copySubtree END
 }
 
-if ( !function_exists( 'browse' ) ) {
+if ( !function_exists( 'expModuleViewContentCopySubtreeBrowse' ) ) {
 /*!
 Browse for node to place the object copy into
 */
-function browse( $Module, $srcNode, $contentJob = null )
+function expModuleViewContentCopySubtreeBrowse( $Module, $srcNode, $contentJob = null )
 {
     if ( $Module->hasActionParameter( 'LanguageCode' ) )
         $languageCode = $Module->actionParameter( 'LanguageCode' );
@@ -784,12 +784,12 @@ function browse( $Module, $srcNode, $contentJob = null )
 }
 }
 
-if ( !function_exists( 'chooseOptionsToCopy' ) ) {
+if ( !function_exists( 'expModuleViewContentCopySubtreeChooseOptions' ) ) {
 /*!
 Redirect to the page that lets a user to choose which versions to copy:
 either all version or the current one.
 */
-function chooseOptionsToCopy( $Module, &$Result, $srcNode, $chooseVersions, $chooseCreator, $chooseTime )
+function expModuleViewContentCopySubtreeChooseOptions( $Module, &$Result, $srcNode, $chooseVersions, $chooseCreator, $chooseTime )
 {
         $selectedNodeIDArray = eZContentBrowse::result( $Module->currentAction() );
 
@@ -812,8 +812,8 @@ function chooseOptionsToCopy( $Module, &$Result, $srcNode, $chooseVersions, $cho
 }
 }
 
-if ( !function_exists( 'showNotificationAfterCopying' ) ) {
-function showNotificationAfterCopying( $http, $Module, &$Result, &$Notifications, $srcNode )
+if ( !function_exists( 'expModuleViewContentCopySubtreeShowNotification' ) ) {
+function expModuleViewContentCopySubtreeShowNotification( $http, $Module, &$Result, &$Notifications, $srcNode )
 {
     $tpl = eZTemplate::factory();
 
@@ -954,7 +954,7 @@ class Copysubtree extends \Exponential\Runnable\ModuleView
             $notifications['Warnings'][] = \ezpI18n::tr( 'design/admin/content/job',
                                                    'Large copies normally run as a background job, but background jobs are not available on this server right now. Try again later, or use the command exp:expcontentjob copy.' );
             $notifications['Result'] = false;
-            showNotificationAfterCopying( $http, $Module, $Result, $notifications, $srcNode );
+            expModuleViewContentCopySubtreeShowNotification( $http, $Module, $Result, $notifications, $srcNode );
             return $this->viewResult( isset( $Result ) ? $Result : null, null );
         }
 
@@ -996,11 +996,11 @@ class Copysubtree extends \Exponential\Runnable\ModuleView
             $newParentNodeID = $http->postVariable( 'SelectedNodeID' );
             if ( $jobResult = $this->jobOrRefusal( $Module, $runAsJob, $NodeID, $newParentNodeID, $srcNode, $allVersions, $keepCreator, $keepTime ) )
                 return $jobResult;
-            copySubtree( $NodeID, $newParentNodeID, $notifications, $allVersions, $keepCreator, $keepTime );
+            expModuleViewContentCopySubtreeCopySubtree( $NodeID, $newParentNodeID, $notifications, $allVersions, $keepCreator, $keepTime );
 
             if ( $showNotification )
             {
-                showNotificationAfterCopying( $http, $Module, $Result, $notifications, $srcNode );
+                expModuleViewContentCopySubtreeShowNotification( $http, $Module, $Result, $notifications, $srcNode );
                 return $this->viewResult( isset( $Result ) ? $Result : null, null );
             }
             return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->redirectToView( 'view', array( 'full', $newParentNodeID ) ) );
@@ -1011,7 +1011,7 @@ class Copysubtree extends \Exponential\Runnable\ModuleView
             if( $chooseVersions or $chooseCreator or $chooseTime )
             {
                 // redirect to the page with choice of versions to copy
-                chooseOptionsToCopy( $Module, $Result, $srcNode, $chooseVersions, $chooseCreator, $chooseTime );
+                expModuleViewContentCopySubtreeChooseOptions( $Module, $Result, $srcNode, $chooseVersions, $chooseCreator, $chooseTime );
             }
             else
             {
@@ -1020,11 +1020,11 @@ class Copysubtree extends \Exponential\Runnable\ModuleView
                 $newParentNodeID = $selectedNodeIDArray[0];
                 if ( $jobResult = $this->jobOrRefusal( $Module, $runAsJob, $NodeID, $newParentNodeID, $srcNode, $allVersions, $keepCreator, $keepTime ) )
                     return $jobResult;
-                copySubtree( $NodeID, $newParentNodeID, $notifications, $allVersions, $keepCreator, $keepTime );
+                expModuleViewContentCopySubtreeCopySubtree( $NodeID, $newParentNodeID, $notifications, $allVersions, $keepCreator, $keepTime );
 
                 if ( $showNotification )
                 {
-                    showNotificationAfterCopying( $http, $Module, $Result, $notifications, $srcNode );
+                    expModuleViewContentCopySubtreeShowNotification( $http, $Module, $Result, $notifications, $srcNode );
                     return $this->viewResult( isset( $Result ) ? $Result : null, null );
                 }
                 return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->redirectToView( 'view', array( 'full', $newParentNodeID ) ) );
@@ -1034,7 +1034,7 @@ class Copysubtree extends \Exponential\Runnable\ModuleView
         {   //Browse for target node.
             //We get here when a user clicks "copy" button when viewing some node.
             $jobCopyParams = array( 'source_node_id' => (int) $NodeID );
-            browse( $Module, $srcNode, array(
+            expModuleViewContentCopySubtreeBrowse( $Module, $srcNode, array(
                 'mode' => self::contentJob( 'modeChoice', 'copy', 'copy', $jobCopyParams, $maxNodesCopySubtree, '[CopySettings] MaxNodesCopySubtree' ),
                 'summary' => class_exists( 'Exponential\\Service\\ContentJobDetails' ) ? \Exponential\Service\ContentJobDetails::subtreeSummary( array( (int) $NodeID ) ) : null ) );
         }

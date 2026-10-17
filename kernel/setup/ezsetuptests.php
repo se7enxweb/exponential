@@ -790,11 +790,11 @@ function eZSetupCheckExecutable( $type )
 }
 }
 
-if ( !function_exists( 'testPHPIni' ) ) {
+if ( !function_exists( 'expSetupTestPHPIni' ) ) {
 /*!
     Test php ini settings
 */
-function testPHPIni( $parameters )
+function expSetupTestPHPIni( $parameters )
 {
     $setting = $parameters["setting"];
     $state = $parameters["state"];

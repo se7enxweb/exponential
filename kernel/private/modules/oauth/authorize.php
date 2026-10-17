@@ -15,7 +15,7 @@
  * @package oauth
  */
 
-if ( !function_exists( 'error' ) ) {
+if ( !function_exists( 'expModuleViewOauthAuthorizeError' ) ) {
 /**
  * oAuth error handler function. Terminates execution after redirecting.
  *
@@ -25,16 +25,16 @@ if ( !function_exists( 'error' ) ) {
  *
  * @return void
  */
-function error( $redirectUri, $errorCode, $message = null )
+function expModuleViewOauthAuthorizeError( $redirectUri, $errorCode, $message = null )
 {
     $location = "{$redirectUri}?error=" . urlencode( $errorCode );
     if( $message !== null )
         $location .= '&error_description=' . urlencode( $message );
-    response( '302 Found', $location );
+    expModuleViewOauthAuthorizeResponse( '302 Found', $location );
 }
 }
 
-if ( !function_exists( 'response' ) ) {
+if ( !function_exists( 'expModuleViewOauthAuthorizeResponse' ) ) {
 /**
  * oAuth2 response handler function. Terminates execution after sending the headers.
  *
@@ -43,7 +43,7 @@ if ( !function_exists( 'response' ) ) {
  *
  * @return void
  */
-function response( $httpHeader, $location = null )
+function expModuleViewOauthAuthorizeResponse( $httpHeader, $location = null )
 {
     header( "HTTP/1.1 $httpHeader" );
     if ( $location !== null )
@@ -53,7 +53,7 @@ function response( $httpHeader, $location = null )
 }
 }
 
-if ( !function_exists( 'getHTTPVariable' ) ) {
+if ( !function_exists( 'expModuleViewOauthAuthorizeGetHTTPVariable' ) ) {
 /**
  * Helper function that reads an HTTP variable over GET or POST, depending on the stage.
  * The POST variables AuthorizeButton and DenyButton will make the function read from POST
@@ -61,7 +61,7 @@ if ( !function_exists( 'getHTTPVariable' ) ) {
  * @param string $variable
  * @return mixed The parameter, or false if not set
  */
-function getHTTPVariable( $variable )
+function expModuleViewOauthAuthorizeGetHTTPVariable( $variable )
 {
     // Computed on every call, not kept in function statics: this function is
     // declared once per persistent worker, so a static $hasPost would be fixed
@@ -85,43 +85,43 @@ $restINI = eZINI::instance( 'rest.ini' );
 // Redirect URI, client ID and the client's end point are checked first, without redirecting: until the redirect_uri
 // is known to be the end point of a registered client it is the requester's address, and an error sent there would
 // make this view an open redirector. RFC 6749, section 4.1.2.1: inform the resource owner, do not redirect.
-if ( !is_string( $pRedirectUri = getHTTPVariable( 'redirect_uri' ) ) )
+if ( !is_string( $pRedirectUri = expModuleViewOauthAuthorizeGetHTTPVariable( 'redirect_uri' ) ) )
 {
-    response( '400 Bad Request' );
+    expModuleViewOauthAuthorizeResponse( '400 Bad Request' );
 }
 
 // Client ID
-if ( !is_string( $pClientId = getHTTPVariable( 'client_id' ) ) )
+if ( !is_string( $pClientId = expModuleViewOauthAuthorizeGetHTTPVariable( 'client_id' ) ) )
 {
-    response( '400 Bad Request' );
+    expModuleViewOauthAuthorizeResponse( '400 Bad Request' );
 }
 
 // Try loading the REST client based on the ID
 $application = ezpRestClient::fetchByClientId( $pClientId );
 if ( !$application instanceof ezpRestClient )
 {
-    response( '400 Bad Request' );
+    expModuleViewOauthAuthorizeResponse( '400 Bad Request' );
 }
 
 // The client is found, validate the redirect_uri; an empty one is no end point, even for a client stored without one
 // (the code or token would go to the relative address "?access_token=...")
 if ( $pRedirectUri === '' || !$application->isEndPointValid( $pRedirectUri ) )
 {
-    response( '400 Bad Request' );
+    expModuleViewOauthAuthorizeResponse( '400 Bad Request' );
 }
 
 // From here on errors are sent to the client's end point
 
 // Requested response type
-if ( ( $pResponseType = getHTTPVariable( 'response_type' ) ) === false )
+if ( ( $pResponseType = expModuleViewOauthAuthorizeGetHTTPVariable( 'response_type' ) ) === false )
 {
-    error( $pRedirectUri, 'invalid_request', "Missing response_type parameter" );
+    expModuleViewOauthAuthorizeError( $pRedirectUri, 'invalid_request', "Missing response_type parameter" );
     // redirect to the redirect_uri with GET parameter error=invalid_request
     // @todo mismatch between chapters 3.2's example (error=access-denied) and error codes list at 3.2.1 (error=access_denied)
 }
 
 // Scope
-$pScope = getHTTPVariable( 'scope' );
+$pScope = expModuleViewOauthAuthorizeGetHTTPVariable( 'scope' );
 
 // @todo The spec mentions (FIXME:chapter) throwing an error if the request has extra parameters. Check this.
 
@@ -154,7 +154,7 @@ if ( !$user->isRegistered() )
 // section 4.1.2.1). Before 6.0.15 a negation bound before the comparison made this check always pass.
 if ( !expOAuthAuthorizePolicy::userMayAuthorize( $user, expOAuthAuthorizePolicy::currentSiteAccessName(), $restINI ) )
 {
-    error( $pRedirectUri, 'access_denied', 'The user may not authorize clients' );
+    expModuleViewOauthAuthorizeError( $pRedirectUri, 'access_denied', 'The user may not authorize clients' );
 }
 
 // Everything is valid. Process to app authorization.
@@ -165,7 +165,7 @@ if ( !$application->isAuthorizedByUser( $pScope, eZUser::currentUser() ) )
     // authorization denied: redirect
     if ( $http->hasPostVariable( 'DenyButton' ) )
     {
-        error( $pRedirectUri, 'access_denied' );
+        expModuleViewOauthAuthorizeError( $pRedirectUri, 'access_denied' );
     }
 
     elseif ( $http->hasPostVariable( 'AuthorizeButton' ) )
@@ -233,7 +233,7 @@ if ( $pResponseType == 'token')
     $parameters[] = "expires_in=$rExpiresIn";
     $location = "{$pRedirectUri}?" . implode( '&', $parameters );
 
-    response( '302 Found', $location );
+    expModuleViewOauthAuthorizeResponse( '302 Found', $location );
 }
 elseif ( $pResponseType ==  'code')
 {
@@ -265,7 +265,7 @@ elseif ( $pResponseType ==  'code')
     $parameters[] = "expires_in=$rExpiresIn";
     $location = "{$pRedirectUri}?" . implode( '&', $parameters );
 
-    response( '302 Found', $location );
+    expModuleViewOauthAuthorizeResponse( '302 Found', $location );
 }
 
 

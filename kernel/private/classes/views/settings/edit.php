@@ -25,8 +25,8 @@
 
 namespace
 {
-if ( !function_exists( 'parseArrayToStr' ) ) {
-function parseArrayToStr( $value, $separator )
+if ( !function_exists( 'expModuleViewSettingsEditParseArrayToStr' ) ) {
+function expModuleViewSettingsEditParseArrayToStr( $value, $separator )
 {
     if ( !is_array( $value ) )
         return $value;
@@ -136,8 +136,8 @@ class Edit extends \Exponential\Runnable\ModuleView
                 require_once 'kernel/settings/validation.php';
                 // an array may be empty: "leave the first line empty" makes one
                 $validationResult = $settingType === 'array'
-                    ? validate( array( 'Name' => $settingName ), array( 'name' ), true )
-                    : validate( array( 'Name' => $settingName, 'Value' => $valueToWrite ), array( 'name', $settingType ), true );
+                    ? expSettingsValidate( array( 'Name' => $settingName ), array( 'name' ), true )
+                    : expSettingsValidate( array( 'Name' => $settingName, 'Value' => $valueToWrite ), array( 'name', $settingType ), true );
                 if ( $validationResult['hasValidationError'] )
                     $error = array( $validationResult['type'], $validationResult['message'], $validationResult['fieldContainingError'] );
             }
@@ -181,7 +181,7 @@ class Edit extends \Exponential\Runnable\ModuleView
                 $settingType = $setting !== null ? $setting['type'] : 'string';
             // an array is shown as it is in effect, so saving it as shown must replace it, not add to it: the
             // empty first line empties the array in the file written before these elements
-            $value = $isSecret ? '' : ( is_array( $current ) ? "\n" . parseArrayToStr( $current, "\n" ) : (string)$current );
+            $value = $isSecret ? '' : ( is_array( $current ) ? "\n" . expModuleViewSettingsEditParseArrayToStr( $current, "\n" ) : (string)$current );
         }
 
         // Every file of the chain that sets it, in load order, values as the page may show them
@@ -251,7 +251,7 @@ class Edit extends \Exponential\Runnable\ModuleView
         foreach ( $setting['steps'] as $step )
         {
             $shown = $rule->displayValue( $setting['name'], $step['value'] );
-            $text = is_array( $shown ) ? parseArrayToStr( $shown, "\n" ) : (string)$shown;
+            $text = is_array( $shown ) ? expModuleViewSettingsEditParseArrayToStr( $shown, "\n" ) : (string)$shown;
             $kind = $step['placement']['kind'];
             if ( $kind === 'extension' )
                 $values['extensions'][$step['placement']['extension']] = $text;

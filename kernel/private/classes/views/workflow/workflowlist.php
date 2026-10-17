@@ -17,7 +17,7 @@
 
 namespace
 {
-if ( !function_exists( 'removeWorkflowCompletely' ) ) {
+if ( !function_exists( 'expModuleViewWorkflowWorkflowListRemoveWorkflowCompletely' ) ) {
 /**
  * Removes a workflow and everything that belongs to it.
  *
@@ -28,7 +28,7 @@ if ( !function_exists( 'removeWorkflowCompletely' ) ) {
  *
  * @param int $workflowID
  */
-function removeWorkflowCompletely( $workflowID )
+function expModuleViewWorkflowWorkflowListRemoveWorkflowCompletely( $workflowID )
 {
     $workflowID = (int) $workflowID;
 
@@ -110,7 +110,7 @@ class Workflowlist extends \Exponential\Runnable\ModuleView
                             // while the branch that did the removing read a post
                             // variable no form has ever sent, so nothing ever reached
                             // it and no workflow was ever actually deleted.
-                            removeWorkflowCompletely( $workflowID );
+                            expModuleViewWorkflowWorkflowListRemoveWorkflowCompletely( $workflowID );
                         }
                         else
                         {
@@ -122,7 +122,7 @@ class Workflowlist extends \Exponential\Runnable\ModuleView
                     else
                     {
                         // No row for it any more; clear whatever it left behind.
-                        removeWorkflowCompletely( $workflowID );
+                        expModuleViewWorkflowWorkflowListRemoveWorkflowCompletely( $workflowID );
                     }
                 }
             }
@@ -131,7 +131,7 @@ class Workflowlist extends \Exponential\Runnable\ModuleView
                 // Removed from the list rather than from a group, so there is no group
                 // to leave them in.
                 foreach ( (array) $http->postVariable( 'Workflow_id_checked' ) as $workflowID )
-                    removeWorkflowCompletely( $workflowID );
+                    expModuleViewWorkflowWorkflowListRemoveWorkflowCompletely( $workflowID );
             }
         }
 

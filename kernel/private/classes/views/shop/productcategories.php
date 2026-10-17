@@ -17,13 +17,13 @@
 
 namespace
 {
-if ( !function_exists( 'applyChanges' ) ) {
+if ( !function_exists( 'expModuleViewShopProductCategoriesApplyChanges' ) ) {
 /*!
   Apply changes made to categories' names.
 
   \return errors, empty array if none exists
  */
-function applyChanges( $module, $http, $productCategories = false )
+function expModuleViewShopProductCategoriesApplyChanges( $module, $http, $productCategories = false )
 {
     $errors = array();
     if ( $productCategories === false )
@@ -55,14 +55,14 @@ function applyChanges( $module, $http, $productCategories = false )
 }
 }
 
-if ( !function_exists( 'generateUniqueCategoryName' ) ) {
+if ( !function_exists( 'expModuleViewShopProductCategoriesGenerateUniqueName' ) ) {
 /**
  * Generate a unique category name.
  *
  * The generated name looks like "Product category X"
  * where X is a unique number.
  */
-function generateUniqueCategoryName( $productCategories )
+function expModuleViewShopProductCategoriesGenerateUniqueName( $productCategories )
 {
     $commonPart = ezpI18n::tr( 'kernel/shop/productcategories', 'Product category' );
     $maxNumber = 0;
@@ -108,7 +108,7 @@ class Productcategories extends \Exponential\Runnable\ModuleView
         // Otherwise shows confirmation dialog with the dependencies displayed.
         if ( $module->isCurrentAction( 'Remove' ) )
         {
-            $errors = applyChanges( $module, $http );
+            $errors = expModuleViewShopProductCategoriesApplyChanges( $module, $http );
 
             if ( !$module->hasActionParameter( 'CategoryIDList' ) )
                 $catIDList = array();
@@ -187,17 +187,17 @@ class Productcategories extends \Exponential\Runnable\ModuleView
         elseif ( $module->isCurrentAction( 'Add' ) )
         {
             $productCategories = \eZProductCategory::fetchList( true );
-            $errors = applyChanges( $module, $http, $productCategories );
+            $errors = expModuleViewShopProductCategoriesApplyChanges( $module, $http, $productCategories );
 
             $category = \eZProductCategory::create();
-            $category->setAttribute( 'name', generateUniqueCategoryName( $productCategories ) );
+            $category->setAttribute( 'name', expModuleViewShopProductCategoriesGenerateUniqueName( $productCategories ) );
             $category->store();
             $tpl->setVariable( 'last_added_id', $category->attribute( 'id' ) );
         }
         // Apply changes made to categories' names.
         elseif ( $module->isCurrentAction( 'StoreChanges' ) )
         {
-            $errors = applyChanges( $module, $http );
+            $errors = expModuleViewShopProductCategoriesApplyChanges( $module, $http );
         }
 
         // (re-)fetch product categoried list to display them in the template

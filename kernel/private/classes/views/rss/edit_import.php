@@ -17,8 +17,8 @@
 
 namespace
 {
-if ( !function_exists( 'storeRSSImport' ) ) {
-function storeRSSImport( $rssImport, $http, $publish = false )
+if ( !function_exists( 'expModuleViewRssEditImportStore' ) ) {
+function expModuleViewRssEditImportStore( $rssImport, $http, $publish = false )
 {
     $rssImport->setAttribute( 'name', $http->postVariable( 'name' ) );
     $rssImport->setAttribute( 'url', $http->postVariable( 'url' ) );
@@ -75,8 +75,8 @@ function storeRSSImport( $rssImport, $http, $publish = false )
 }
 }
 
-if ( !function_exists( 'checkTimeout' ) ) {
-function checkTimeout( $rssImport )
+if ( !function_exists( 'expModuleViewRssEditImportCheckTimeout' ) ) {
+function expModuleViewRssEditImportCheckTimeout( $rssImport )
 {
     $user = eZUser::currentUser();
     $contentIni = eZINI::instance( 'content.ini' );
@@ -179,7 +179,7 @@ class EditImport extends \Exponential\Runnable\ModuleView
         }
         else
         {
-            $timeout = checkTimeout( $rssImport );
+            $timeout = expModuleViewRssEditImportCheckTimeout( $rssImport );
             if ( $timeout !== false )
             {
                 return $this->viewResult( isset( $Result ) ? $Result : null,  $timeout );
@@ -202,7 +202,7 @@ class EditImport extends \Exponential\Runnable\ModuleView
             }
             $importDescription['rss_version'] = $version;
             $rssImport->setImportDescription( $importDescription );
-            storeRSSImport( $rssImport, $http );
+            expModuleViewRssEditImportStore( $rssImport, $http );
         }
         else if ( $Module->isCurrentAction( 'Store' ) )
         {
@@ -212,10 +212,10 @@ class EditImport extends \Exponential\Runnable\ModuleView
                                                 $http->hasPostVariable( 'url' ) ? $http->postVariable( 'url' ) : '' );
             if ( !$validationErrors )
             {
-                storeRSSImport( $rssImport, $http, true );
+                expModuleViewRssEditImportStore( $rssImport, $http, true );
                 return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->redirectTo( '/rss/list' ) );
             }
-            storeRSSImport( $rssImport, $http );
+            expModuleViewRssEditImportStore( $rssImport, $http );
         }
         else if ( $Module->isCurrentAction( 'Cancel' ) )
         {
@@ -224,7 +224,7 @@ class EditImport extends \Exponential\Runnable\ModuleView
         }
         else if ( $Module->isCurrentAction( 'BrowseDestination' ) )
         {
-            storeRSSImport( $rssImport, $http );
+            expModuleViewRssEditImportStore( $rssImport, $http );
             return $this->viewResult( isset( $Result ) ? $Result : null,  \eZContentBrowse::browse( array( 'action_name' => 'RSSObjectBrowse',
                                                    'description_template' => 'design:rss/browse_destination.tpl',
                                                    'from_page' => '/rss/edit_import/'.$rssImportID.'/destination' ),
@@ -232,7 +232,7 @@ class EditImport extends \Exponential\Runnable\ModuleView
         }
         else if ( $Module->isCurrentAction( 'BrowseUser' ) )
         {
-            storeRSSImport( $rssImport, $http );
+            expModuleViewRssEditImportStore( $rssImport, $http );
             return $this->viewResult( isset( $Result ) ? $Result : null,  \eZContentBrowse::browse( array( 'action_name' => 'RSSUserBrowse',
                                                    'description_template' => 'design:rss/browse_user.tpl',
                                                    'from_page' => '/rss/edit_import/'.$rssImportID.'/user' ),

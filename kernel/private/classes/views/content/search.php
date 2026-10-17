@@ -17,11 +17,11 @@
 
 namespace
 {
-if ( !function_exists( 'pageLimit' ) ) {
+if ( !function_exists( 'expModuleViewContentSearchPageLimit' ) ) {
 /*!
  Get search limit
  */
-function pageLimit( $searchPageLimit )
+function expModuleViewContentSearchPageLimit( $searchPageLimit )
 {
     switch ( $searchPageLimit )
     {
@@ -76,7 +76,7 @@ class Search extends \Exponential\Runnable\ModuleView
         {
             $pageLimit = (int)$http->variable( 'BrowsePageLimit' );
             if ( $pageLimit < 1 )
-                $pageLimit = pageLimit( $searchPageLimit );
+                $pageLimit = expModuleViewContentSearchPageLimit( $searchPageLimit );
         }
         else
         {
@@ -84,7 +84,7 @@ class Search extends \Exponential\Runnable\ModuleView
             {
                 $searchPageLimit = (int)$http->variable( 'SearchPageLimit' );
             }
-            $pageLimit = pageLimit( $searchPageLimit );
+            $pageLimit = expModuleViewContentSearchPageLimit( $searchPageLimit );
         }
 
         $maximumSearchLimit = $ini->variable( 'SearchSettings', 'MaximumSearchLimit' );

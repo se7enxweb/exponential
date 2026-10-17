@@ -17,13 +17,13 @@
 
 namespace
 {
-if ( !function_exists( 'findErrors' ) ) {
+if ( !function_exists( 'expModuleViewShopVatRulesFindErrors' ) ) {
 /**
  * Find errors in VAT charging rules.
  *
  * \return list of errors, or false if no errors found.
  */
-function findErrors( $vatRules )
+function expModuleViewShopVatRulesFindErrors( $vatRules )
 {
     $errors = false;
 
@@ -104,14 +104,14 @@ function findErrors( $vatRules )
 }
 }
 
-if ( !function_exists( 'compareVatRules' ) ) {
+if ( !function_exists( 'expModuleViewShopVatRulesCompare' ) ) {
 /**
  * Auxiliary function used to sort VAT rules.
  *
  * Rules are sorted by country and categories.
  * Any specific categories list or country is considered less than '*' (Any).
  */
-function compareVatRules($a, $b)
+function expModuleViewShopVatRulesCompare($a, $b)
 {
     // Compare countries.
 
@@ -217,8 +217,8 @@ class Vatrules extends \Exponential\Runnable\ModuleView
         $pageLimit  = \expAdminPagination::limit( 'shop/vatrules' );
         $pageOffset = \expAdminPagination::offset( $Params );
         $vatRules = \expAdminPagination::page( $vatRules, $pageOffset, $pageLimit );
-        $errors = findErrors( $vatRules );
-        usort( $vatRules, 'compareVatRules' );
+        $errors = expModuleViewShopVatRulesFindErrors( $vatRules );
+        usort( $vatRules, 'expModuleViewShopVatRulesCompare' );
 
         $tpl->setVariable( 'rules', $vatRules );
         $tpl->setVariable( 'errors', $errors );

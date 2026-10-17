@@ -17,22 +17,22 @@
 
 namespace
 {
-if ( !function_exists( 'getLicense' ) ) {
+if ( !function_exists( 'expModuleViewEzinfoAboutLicense' ) ) {
 /*!
   Returns contents of LICENSE file in ezp legacy root directory, or false on failure.
 */
-function getLicense()
+function expModuleViewEzinfoAboutLicense()
 {
     return file_get_contents( 'LICENSE' );
 }
 }
 
-if ( !function_exists( 'getContributors' ) ) {
+if ( !function_exists( 'expModuleViewEzinfoAboutContributors' ) ) {
 /*!
   Returns list of contributors;
   Searches all php files in \a $pathToDir and tries to fetch contributor's info
 */
-function getContributors( $pathToDir )
+function expModuleViewEzinfoAboutContributors( $pathToDir )
 {
     $contribFiles = eZDir::recursiveFind( $pathToDir, "php" );
     $contributors = array();
@@ -62,11 +62,11 @@ function getContributors( $pathToDir )
 }
 }
 
-if ( !function_exists( 'getThirdPartySoftware' ) ) {
+if ( !function_exists( 'expModuleViewEzinfoAboutThirdPartySoftware' ) ) {
 /*!
   Returns third-party software from \a $pathToFile
 */
-function getThirdPartySoftware( $pathToFile )
+function expModuleViewEzinfoAboutThirdPartySoftware( $pathToFile )
 {
     if ( !file_exists( $pathToFile ) )
         return array();
@@ -81,13 +81,13 @@ function getThirdPartySoftware( $pathToFile )
 }
 }
 
-if ( !function_exists( 'getExtensionsInfo' ) ) {
+if ( !function_exists( 'expModuleViewEzinfoAboutExtensionsInfo' ) ) {
 /*!
   Returns the info of the extensions active in this siteaccess (eZExtension::extensionLists() 'here': ActiveExtensions,
   this siteaccess's ActiveAccessExtensions and those switched on at run time, found on disk, in loading order), the
   same extensions the dashboard and the update dashboard count as active in this siteaccess
 */
-function getExtensionsInfo()
+function expModuleViewEzinfoAboutExtensionsInfo()
 {
     $lists = eZExtension::extensionLists( null, false );
     $selectedExtensions = $lists['here'];
@@ -157,14 +157,14 @@ function ezinfoAboutUrl( $url )
 }
 }
 
-if ( !function_exists( 'getExtensionRows' ) ) {
+if ( !function_exists( 'expModuleViewEzinfoAboutExtensionRows' ) ) {
 /*!
   One row per extension of \a $extensions (as getExtensionsInfo() returns them) for a table:
   position (the loading order), identifier, name, description, version, license, url,
   copyright, author and includes (the third-party software it says it includes, each with
   name, version, license, copyright and url). Every value is plain text.
 */
-function getExtensionRows( array $extensions )
+function expModuleViewEzinfoAboutExtensionRows( array $extensions )
 {
     $rows = array();
     $position = 0;
@@ -212,12 +212,12 @@ function getExtensionRows( array $extensions )
 }
 }
 
-if ( !function_exists( 'sortExtensionRows' ) ) {
+if ( !function_exists( 'expModuleViewEzinfoAboutSortExtensionRows' ) ) {
 /*!
   \a $rows sorted by \a $field (position, name, identifier, version or license) in
   \a $direction (asc or desc); rows with the same value keep the loading order
 */
-function sortExtensionRows( array $rows, $field, $direction )
+function expModuleViewEzinfoAboutSortExtensionRows( array $rows, $field, $direction )
 {
     usort( $rows, function( $a, $b ) use ( $field, $direction )
     {
@@ -235,21 +235,21 @@ function sortExtensionRows( array $rows, $field, $direction )
 }
 }
 
-if ( !function_exists( 'strReplaceByArray' ) ) {
+if ( !function_exists( 'expModuleViewEzinfoAboutStrReplaceByArray' ) ) {
 /*!
   Replaces all occurrences (in \a $subjects) of the search string (keys of \a $searches )
   with the replacement string (values of \a $searches)
 
   Returns array with replacements
 */
-function strReplaceByArray( $searches = array(), $subjects = array() )
+function expModuleViewEzinfoAboutStrReplaceByArray( $searches = array(), $subjects = array() )
 {
     $retArray = array();
     foreach( $subjects as $key => $subject )
     {
         if ( is_array( $subject ) )
         {
-            $retArray[$key] = strReplaceByArray( $searches, $subject );
+            $retArray[$key] = expModuleViewEzinfoAboutStrReplaceByArray( $searches, $subject );
         }
         else
         {
@@ -301,10 +301,10 @@ class About extends \Exponential\Runnable\ModuleView
         PHP projects. Because Exponential is a web-based application, it can
         be accessed from anywhere you have an internet connection.</p>';
 
-        $license = getLicense();
-        $contributors = getContributors( EZ_ABOUT_CONTRIBUTORS_DIR );
-        $thirdPartySoftware = getThirdPartySoftware( EZ_ABOUT_THIRDPARTY_SOFTWARE_FILE );
-        $extensions = getExtensionsInfo();
+        $license = expModuleViewEzinfoAboutLicense();
+        $contributors = expModuleViewEzinfoAboutContributors( EZ_ABOUT_CONTRIBUTORS_DIR );
+        $thirdPartySoftware = expModuleViewEzinfoAboutThirdPartySoftware( EZ_ABOUT_THIRDPARTY_SOFTWARE_FILE );
+        $extensions = expModuleViewEzinfoAboutExtensionsInfo();
 
         // The extensions and the software they include as table rows of plain text, made before the
         // links are put into the texts below. Sorted by the (sort) and (dir) view parameters.
@@ -315,7 +315,7 @@ class About extends \Exponential\Runnable\ModuleView
         $sortBy = isset( $extensionSortFields[$sortBy] ) ? $sortBy : 'order';
         $sortDirection = ( isset( $userParameters['dir'] ) && $userParameters['dir'] === 'desc' ) ? 'desc' : 'asc';
 
-        $extensionRows = getExtensionRows( $extensions );
+        $extensionRows = expModuleViewEzinfoAboutExtensionRows( $extensions );
         $thirdPartyRows = array();
         foreach ( $extensionRows as $row )
         {
@@ -326,12 +326,12 @@ class About extends \Exponential\Runnable\ModuleView
             }
         }
         uasort( $thirdPartyRows, function( $a, $b ) { return strnatcasecmp( $a['name'], $b['name'] ); } );
-        $extensionRows = sortExtensionRows( $extensionRows, $extensionSortFields[$sortBy], $sortDirection );
+        $extensionRows = expModuleViewEzinfoAboutSortExtensionRows( $extensionRows, $extensionSortFields[$sortBy], $sortDirection );
 
         list( $whatIsEzPublish,
               $contributors,
               $thirdPartySoftware,
-              $extensions ) = strReplaceByArray( array( 'eZ Systems AS' => '<a href="http://ez.no/">eZ Systems AS</a>',
+              $extensions ) = expModuleViewEzinfoAboutStrReplaceByArray( array( 'eZ Systems AS' => '<a href="http://ez.no/">eZ Systems AS</a>',
                                                         'eZ Systems as' => '<a href="http://ez.no/">eZ Systems AS</a>',
                                                         'eZ systems AS' => '<a href="http://ez.no/">eZ Systems AS</a>',
                                                         'eZ systems as' => '<a href="http://ez.no/">eZ Systems AS</a>',

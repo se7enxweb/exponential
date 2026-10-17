@@ -17,11 +17,11 @@
 
 namespace
 {
-if ( !function_exists( 'copyObject' ) ) {
+if ( !function_exists( 'expModuleViewContentCopyCopyObject' ) ) {
 /*!
  Copy the specified object to a given node
 */
-function copyObject( $Module, $object, $allVersions, $newParentNodeID )
+function expModuleViewContentCopyCopyObject( $Module, $object, $allVersions, $newParentNodeID )
 {
     if ( !$newParentNodeID )
         return $Module->redirectToView( 'view', array( 'full', 2 ) );
@@ -90,11 +90,11 @@ function copyObject( $Module, $object, $allVersions, $newParentNodeID )
 }
 }
 
-if ( !function_exists( 'browse' ) ) {
+if ( !function_exists( 'expModuleViewContentCopyBrowse' ) ) {
 /*!
 Browse for node to place the object copy into
 */
-function browse( $Module, $object )
+function expModuleViewContentCopyBrowse( $Module, $object )
 {
     if ( $Module->hasActionParameter( 'LanguageCode' ) )
         $languageCode = $Module->actionParameter( 'LanguageCode' );
@@ -144,12 +144,12 @@ function browse( $Module, $object )
 }
 }
 
-if ( !function_exists( 'chooseObjectVersionsToCopy' ) ) {
+if ( !function_exists( 'expModuleViewContentCopyChooseObjectVersions' ) ) {
 /*!
 Redirect to the page that lets a user to choose which versions to copy:
 either all version or the current one.
 */
-function chooseObjectVersionsToCopy( $Module, &$Result, $object )
+function expModuleViewContentCopyChooseObjectVersions( $Module, &$Result, $object )
 {
         $selectedNodeIDArray = eZContentBrowse::result( $Module->currentAction() );
 
@@ -243,7 +243,7 @@ class Copy extends \Exponential\Runnable\ModuleView
         {
             // actually do copying after a user has selected object versions to copy
             $newParentNodeID = $http->postVariable( 'SelectedNodeID' );
-            return $this->viewResult( isset( $Result ) ? $Result : null,  copyObject( $Module, $object, $allVersions, $newParentNodeID ) );
+            return $this->viewResult( isset( $Result ) ? $Result : null,  expModuleViewContentCopyCopyObject( $Module, $object, $allVersions, $newParentNodeID ) );
         }
         else if ( $Module->isCurrentAction( 'CopyNode' ) )
         {
@@ -252,14 +252,14 @@ class Copy extends \Exponential\Runnable\ModuleView
             {
                 // redirect to the page with choice of versions to copy
                 $Result = array();
-                chooseObjectVersionsToCopy( $Module, $Result, $object );
+                expModuleViewContentCopyChooseObjectVersions( $Module, $Result, $object );
             }
             else
             {
                 // actually do copying of the pre-configured object version(s)
                 $selectedNodeIDArray = \eZContentBrowse::result( $Module->currentAction() );
                 $newParentNodeID = $selectedNodeIDArray[0];
-                return $this->viewResult( isset( $Result ) ? $Result : null,  copyObject( $Module, $object, $allVersions, $newParentNodeID ) );
+                return $this->viewResult( isset( $Result ) ? $Result : null,  expModuleViewContentCopyCopyObject( $Module, $object, $allVersions, $newParentNodeID ) );
             }
         }
         else // default, initial action
@@ -268,7 +268,7 @@ class Copy extends \Exponential\Runnable\ModuleView
             Browse for target node.
             We get here when a user clicks "copy" button when viewing some node.
             */
-            browse( $Module, $object );
+            expModuleViewContentCopyBrowse( $Module, $object );
         }
 
         return $this->viewResult( isset( $Result ) ? $Result : null, null );
