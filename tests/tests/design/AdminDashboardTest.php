@@ -11,11 +11,13 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminDashboardTest extends PHPUnit\Framework\TestCase
 {
     private static function read( $path )
     {
-        return (string)file_get_contents( dirname( __DIR__, 3 ) . '/' . $path );
+        return AdminFiles::read( dirname( __DIR__, 3 ) . '/' . $path );
     }
 
     public function testEveryFigureHasAnIconTile()
