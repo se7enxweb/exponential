@@ -1223,7 +1223,8 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
      * The security headers every page is sent with, from site.ini
      * [HTTPHeaderSettings] SecurityHeaders[<name>]=<value>. An empty value
      * drops that header; Strict-Transport-Security is only sent over HTTPS.
-     * Custom headers ([HTTPHeaderSettings] HeaderList) still override these.
+     * The Content Security Policy of [ContentSecurityPolicy] is added
+     * (ezpContentSecurityPolicy). Custom headers ([HTTPHeaderSettings] HeaderList) still override these.
      *
      * @return array header name => value
      */
@@ -1233,8 +1234,9 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
         $configured = $ini->hasVariable( 'HTTPHeaderSettings', 'SecurityHeaders' )
             ? $ini->variable( 'HTTPHeaderSettings', 'SecurityHeaders' )
             : array();
+        // A SecurityHeaders that is no list adds no header of its own; the policy below is still sent
         if ( !is_array( $configured ) )
-            return array();
+            $configured = array();
 
         $headers = array();
         foreach ( $configured as $name => $value )
@@ -1249,7 +1251,9 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
                 continue;
             $headers[$name] = $value;
         }
-        return $headers;
+        // The Content Security Policy of [ContentSecurityPolicy]: report-only as a header of its own, enforced as a
+        // second policy after the Content-Security-Policy above
+        return ezpContentSecurityPolicy::merge( $headers, ezpContentSecurityPolicy::headers( $ini ) );
     }
 
     /**
