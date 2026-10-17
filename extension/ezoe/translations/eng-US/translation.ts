@@ -163,6 +163,10 @@
         <translation>In use now: %engine. Saved only for your user, the text of your content is the same with every editor.</translation>
     </message>
     <message>
+        <source>This site uses %engine for every editor; a choice of your own does not apply here.</source>
+        <translation>This site uses %engine for every editor; a choice of your own does not apply here.</translation>
+    </message>
+    <message>
         <source>Editor engines</source>
         <translation>Editor engines</translation>
     </message>

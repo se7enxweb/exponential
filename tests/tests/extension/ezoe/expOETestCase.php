@@ -81,6 +81,8 @@ abstract class expOETestCase extends expServicesCoreTestCase
                 $ini->removeSetting( 'EditorSettings', 'EngineSwitch' );
             else
                 $ini->setVariable( 'EditorSettings', 'EngineSwitch', $this->savedSwitch );
+            // ForceEngine is not set in the shipped ezoe.ini: a test that sets it leaves nothing behind
+            $ini->removeSetting( 'EditorSettings', 'ForceEngine' );
             $this->loginAdmin();
             // put the admin's stored preference back exactly as it was (no row stays no row)
             $admin = eZUser::fetchByName( 'admin' );
