@@ -89,4 +89,17 @@ class expLogRedactorTest extends PHPUnit\Framework\TestCase
         $r = expLogRedactor::fromConfig( $config, true );
         $this->assertSame( 'jane@example.com 192.0.2.5', $r->text( 'jane@example.com 192.0.2.5' ) );
     }
+
+    /** LV-25 a block of many lines is masked as each line on its own (the download masks blocks, the viewer lines) */
+    public function testBlockMaskedLikeLines()
+    {
+        $lines = array( 'connect mysql://app:hunter2@db.example.test/site failed', 'plain line without anything',
+                        'user:secretpw@db.example.test', 'Error: password=abc123 for jane@example.com from 192.0.2.7',
+                        'token: zzz9 session_id=ABCDEF1234567890ABCDEF1234567890', 'eyJhbGciOiJIUzI1.eyJzdWIiOiIxMjM0.SflKxwRJSMeKKF2QT4' );
+        $r = new expLogRedactor( true, true, true, array( 'hunter2' ) );
+        $one = array_map( array( $r, 'text' ), $lines );
+        $this->assertSame( implode( "\n", $one ), $r->text( implode( "\n", $lines ) ) );
+        $this->assertStringNotContainsString( 'hunter2', $r->text( implode( "\n", $lines ) ) );
+        $this->assertStringNotContainsString( 'secretpw', $r->text( implode( "\n", $lines ) ) );
+    }
 }
