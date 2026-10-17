@@ -455,7 +455,7 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
             $this->assertIsArray( $row, 'the harness ran: ' . $out );
             $s[$row['name']] = $row;
         }
-        $this->assertCount( 36, $s );
+        $this->assertCount( 39, $s );
 
         $open = function ( $name ) use ( $s ) {
             $this->assertSame( 'true', $s[$name]['expanded'], $name );
@@ -526,6 +526,14 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
         }
         $this->assertSame( 2, $s['a failed load is tried again']['fetches'] );
         $this->assertSame( 'all link', $s['arrowdown after a failed load focuses the overview link']['focus'] );
+        // a load without an answer is given up after 10 s: busy until then, then the error, and the next opening
+        // loads again (it kept the load blocked and the panel busy for good)
+        $this->assertSame( 'true', $s['a load without an answer is still busy before 10s']['busy'] );
+        $this->assertNull( $s['a load without an answer is still busy before 10s']['status'] );
+        $this->assertSame( 'could not be loaded', $s['a load without an answer says so after 10s']['status'] );
+        $this->assertNull( $s['a load without an answer says so after 10s']['busy'] );
+        $this->assertSame( 2, $s['a load without an answer is tried again']['fetches'] );
+        $this->assertSame( 'groups', $s['a load without an answer is tried again']['content'] );
 
         // two tabs: one panel at a time, whatever opens the other (a click, the hover preview)
         $second = function ( $name, $open ) use ( $s ) {

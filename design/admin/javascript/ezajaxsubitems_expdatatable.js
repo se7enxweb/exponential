@@ -29,7 +29,9 @@ var eZAjaxSubitemsExpDataTable = (function () {
     'use strict';
 
     // ---- the eZSubitemColumns cookie, as YAHOO.util.Cookie.getSub / setSub wrote it ----------------------------
-    // name=sub1=value1&sub2=value2, each sub name and value encodeURIComponent()ed; the value is escape()d first
+    // name=sub1=value1&sub2=value2, each sub name and value encodeURIComponent()ed. YUI escape()d the value first
+    // (the deprecated escape()); a value is still decoded a second time, so a cookie written that way reads the same
+    // (column keys are ASCII: escape() and encodeURIComponent() agree on them), and is no longer escaped when written.
 
     function readSubs(name) {
         var all = document.cookie ? document.cookie.split(/;\s/g) : [], subs = {};
@@ -51,16 +53,18 @@ var eZAjaxSubitemsExpDataTable = (function () {
     function getCookieSubMultiValue(name, sub) {
         var subs = readSubs(name);
         if (!Object.prototype.hasOwnProperty.call(subs, sub)) { return null; }
-        return window.unescape(subs[sub]).split('|');
+        var value = subs[sub];
+        try { value = decodeURIComponent(value); } catch (e) { /* a lone % of an old value: kept as it is */ }
+        return value.split('|');
     }
 
     function setCookieSubMultiValue(name, sub, values, secure) {
         var subs = readSubs(name), expires = new Date(), parts = [];
-        subs[sub] = window.escape(values.join('|'));
+        subs[sub] = values.join('|');
         expires.setFullYear(expires.getFullYear() + 10);
         Object.keys(subs).forEach(function (k) { parts.push(encodeURIComponent(k) + '=' + encodeURIComponent(subs[k])); });
         document.cookie = encodeURIComponent(name) + '=' + parts.join('&') + '; expires=' + expires.toUTCString() +
-                          '; path=/' + (secure ? '; secure' : '');
+                          '; path=/; SameSite=Lax' + (secure ? '; secure' : '');
     }
 
     // Where Edit selected and Create multiple new send the list form: the URL the template gives, else the form's
@@ -291,6 +295,16 @@ var eZAjaxSubitemsExpDataTable = (function () {
         var $list = $('#content-sub-items-list');
         var sortOptions = { key: confObj.sortKey, dir: confObj.sortOrder === 1 ? 'asc' : 'desc' };
         var rowsPerPage = confObj.rowsPrPage;
+        // A choice of the table options that did not reach the server: an error toast (admin4.js), the console
+        // without one. The text is the template's TABLE_OPTIONS.save_failed with %error, else the error's own
+        // (Exp.io's, in the page's language).
+        var notSaved = function (e) {
+            var O3 = labelsObj.TABLE_OPTIONS || {}, why = (e && e.message) || '';
+            var message = O3.save_failed ? String(O3.save_failed).replace('%error', function () { return why; }) : why;
+            if (window.a4Toast && message) { window.a4Toast(message, 'bad'); }
+            else if (window.console) { window.console.warn('sub items: the table options were not saved', why); }
+        };
+
         var server = meta ? serverMode(meta) : null;
 
         /** The table on the column registry: its columns, rows source, saved choice, presets and CSV export. */
@@ -352,15 +366,14 @@ var eZAjaxSubitemsExpDataTable = (function () {
                 return JSON.stringify({ visible: state.visible, preset: state.preset, page_size: state.pageSize || null, presets: userPresets() });
             };
             var timer = null;
+            // saves the choice; rejects when it was not saved (an expired session, a refusal, a server error)
             var flush = function () {
                 if (timer) { window.clearTimeout(timer); timer = null; }
-                return window.Exp.io.call('expsubitems::savepreference', [confObj.nodeID], { data: { preference: payload() } }).catch(function (e) {
-                    if (window.console) { window.console.warn('sub items: the table options were not saved', e && e.message); }
-                });
+                return window.Exp.io.call('expsubitems::savepreference', [confObj.nodeID], { data: { preference: payload() } });
             };
             var queueSave = function () {
                 if (timer) { window.clearTimeout(timer); }
-                timer = window.setTimeout(flush, 700);
+                timer = window.setTimeout(function () { flush().catch(notSaved); }, 700);
             };
             // leaving the page within the delay: the last change still reaches the server
             window.addEventListener('pagehide', function () {
@@ -372,7 +385,7 @@ var eZAjaxSubitemsExpDataTable = (function () {
                 body.append('preference', payload());
                 window.navigator.sendBeacon(window.Exp.config.call, body);
             });
-            if (migrate) { flush(); }
+            if (migrate) { flush().catch(function (e) { if (window.console) { window.console.warn('sub items: the columns of the cookie were not saved', e && e.message); } }); }
             if (state.pageSize > 0) { rowsPerPage = state.pageSize; }
 
             // sorting: built-ins by the names ezjscnode::subtree knows, registry columns by their key
@@ -434,16 +447,19 @@ var eZAjaxSubitemsExpDataTable = (function () {
                             state.preset = item.id;
                             this.setShown(keys);
                         },
+                        // not saved: the presets go back to what they were before (the table draws them again from
+                        // there), and the user is told
                         onSave: function (name, keys) {
-                            var id = 'u' + Date.now().toString(36);
+                            var id = 'u' + Date.now().toString(36), before = presets.slice(), was = state.preset;
                             presets.push({ id: id, name: name, columns: keys.slice(), source: 'user' });
                             state.preset = id;
-                            return flush();
+                            return flush().catch(function (e) { presets = before; state.preset = was; notSaved(e); });
                         },
                         onDelete: function (item) {
+                            var before = presets.slice(), was = state.preset;
                             presets = presets.filter(function (p) { return !(p.id === item.id && p.source === 'user'); });
                             if (state.preset === item.id) { state.preset = null; }
-                            return flush();
+                            return flush().catch(function (e) { presets = before; state.preset = was; notSaved(e); });
                         }
                     },
                     buttons: confObj.exportURL && meta.csv_export !== false ? [{
@@ -569,9 +585,7 @@ var eZAjaxSubitemsExpDataTable = (function () {
                     legend: O.header_noipp,
                     items: [{ id: 1, count: 10 }, { id: 2, count: 25 }, { id: 3, count: 50 }, { id: 4, count: 100 }, { id: 5, count: 200 }, { id: 6, count: 500 }],
                     onSelect: function (item) {
-                        window.Exp.prefs.set('admin_list_limit', item.id).catch(function (e) {
-                            if (window.console) { window.console.warn('sub items: admin_list_limit was not saved', e && e.message); }
-                        });
+                        window.Exp.prefs.set('admin_list_limit', item.id).catch(notSaved);
                     },
                     custom: { label: O.custom_label, placeholder: O.custom_placeholder || 'Enter number', max: 10000,
                               invalid: O.custom_invalid || 'Please enter a valid number between 1 and 10000' }

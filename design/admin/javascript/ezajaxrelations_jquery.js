@@ -22,9 +22,26 @@ jQuery(function( $ )
             var node = box.find("*[name*='_for_object_start_node']"), classes = box.find("input[name*='_for_object_class_constraint_list']");
             if ( node.length ) params['SearchSubTreeArray'] = node.val();
             if ( classes.length ) params['SearchContentClassIdentifier'] = classes.val();
-            $.ez( 'ezjsc::search::' + text.val(), params, _searchCallBack );
+            // a failed request (an expired session, a server error) says so instead of doing nothing
+            var request = $.ez( 'ezjsc::search::' + text.val(), params, _searchCallBack );
+            if ( request && request.fail )
+            {
+                request.fail( function( xhr )
+                {
+                    var failed = $('#ezobjectrelation-search-failed-text');
+                    _error( failed.length ? failed.text() : 'HTTP ' + ( xhr && xhr.status ? xhr.status : 0 ) );
+                });
+            }
         }
         return false;
+    }
+
+    // An error: the page's toast (admin4.js), alert() where there is none
+    function _error( message )
+    {
+        if ( !message ) return;
+        if ( window.a4Toast ) window.a4Toast( message, 'bad' );
+        else alert( message );
     }
 
     // Ajax search callback
@@ -39,14 +56,18 @@ jQuery(function( $ )
                 var arr = data.content.SearchResult, pub = $('#ezobjectrelation-search-published-text');
                 for ( var i = 0, l = arr.length; i < l; i++ )
                 {
-                    var aElem = $( '<a></a>' );
+                    // A result is a button (a link with href, so Tab reaches it and Enter presses it; Space too)
+                    var aElem = $( '<a href="#" role="button"></a>' );
                     aElem.on( 'click', { boxID: boxID,
                                            id: arr[i].id,
                                            name: arr[i].name,
                                            className: arr[i].class_name,
                                            sectionName: arr[i].section.name,
                                            publishedTxt: pub.val() }, function(e) {
+                        e.preventDefault();
                         ezajaxrelationsSearchAddObject( this, e.data.boxID, e.data.id, e.data.name, e.data.className, e.data.sectionName, e.data.publishedTxt );
+                    } ).on( 'keydown', function( e ) {
+                        if ( e.key === ' ' ) { e.preventDefault(); this.click(); }
                     } );
                     aElem.append( arr[i].name );
                     aElem.attr( 'title', aElem.text() );
@@ -72,15 +93,16 @@ jQuery(function( $ )
         else
         {
             // ezjscore reports a failure in error_text beside an empty content; no answer at all says nothing
-            var message = data && ( data.error_text || ( data.content && data.content.error_text ) );
-            if ( message ) alert( message );
+            _error( data && ( data.error_text || ( data.content && data.content.error_text ) ) );
         }
     }
 
-    // function for selecting a search result object
+    // function for selecting a search result object; a result is added once (a second press of it added the same
+    // object as a second relation row)
     function _addObject( link, boxID, id, name, className, sectionName, publishedTxt )
     {
-        link.onclick = function(){return false;};
+        if ( link.getAttribute( 'aria-disabled' ) === 'true' ) return;
+        link.setAttribute( 'aria-disabled', 'true' );
         link.className = 'disabled';
         var tr = $( boxID + ' table tbody tr:last-child' ), tds = tr.find('td'), listMode = tds.length > 4;
         if ( listMode )

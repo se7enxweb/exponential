@@ -10835,6 +10835,10 @@
         <source>The sub items cannot be listed: Exponential UI (the extension expui) is not active or not loaded on this siteaccess.</source>
         <translation>The sub items cannot be listed: Exponential UI (the extension expui) is not active or not loaded on this siteaccess.</translation>
     </message>
+    <message>
+        <source>Not saved: %error</source>
+        <translation>Not saved: %error</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/node/view/line</name>
@@ -45057,6 +45061,10 @@ If you want to send comments to the approver or view the status use the URL belo
     <message>
         <source>Fewer keywords result in more matches. Try reducing keywords until you get a result.</source>
         <translation>Fewer keywords result in more matches. Try reducing keywords until you get a result.</translation>
+    </message>
+    <message>
+        <source>The search failed. Try again.</source>
+        <translation>The search failed. Try again.</translation>
     </message>
 </context>
 <context>

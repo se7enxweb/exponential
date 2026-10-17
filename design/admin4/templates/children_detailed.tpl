@@ -160,7 +160,8 @@ var labelsObj = {ldelim}
                         export_csv_title: "{'Download the items with the visible columns as a CSV file'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
                         copy_title: "{'Click to copy'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
                         copied: "{'Copied'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
-                        copy_failed: "{'Not copied'|i18n( 'design/admin/node/view/full' )|wash('javascript')}"
+                        copy_failed: "{'Not copied'|i18n( 'design/admin/node/view/full' )|wash('javascript')}",
+                        save_failed: "{'Not saved: %error'|i18n( 'design/admin/node/view/full' )|wash('javascript')}"
                    {rdelim},
 
     {* Reordering the rows by drag and drop (subitems_priority_drag.js); %name, %position, %count and %error are

@@ -79,7 +79,12 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
   (`design:parts/a4_preference_attributes.tpl`, `data-a4-pref-*`) and saves them through
   `user/preferences/set_and_exit`. An anonymous page keeps them in the browser (`localStorage`) only; a browser
   choice made before is taken along once. A preference that cannot be saved is kept in the browser instead, and
-  `set( name, '' )` forgets a choice (the preference set empty, the browser's copy removed). `tests/tests/design/AdminPreferencesTest.php` checks it.
+  `set( name, '' )` forgets a choice (the preference set empty, the browser's copy removed). `set()` sends nothing
+  when the value is already the one on `<html>`, so a page view writes no preference back. `set( name, value,
+  legacyKey, share )`: with `share` a saved value is also written to `localStorage`, so other open tabs follow (the
+  color mode does this). The left column's width (`admin_left_menu_size`) and the node view's tab switch
+  (`admin_navigation_content`) are saved through `window.a4Pref` too; a width that could not be saved is drawn from
+  the browser (`exp-a4-admin_left_menu_size`) while no preference and no preset size is set. `tests/tests/design/AdminPreferencesTest.php` checks it.
   The side columns are drawn with these preferences on the first paint: until `ezadmin_menubar.js` has applied
   their state, `html.a4-preload` (both page layouts) shows a column beside the content unless it is saved closed,
   with the room an open column takes, and runs no transitions; the script removes the class two frames later
@@ -976,6 +981,8 @@ Community". A template can also set `$show_community_links`.
   `--exp-accent` is `--a4-accent-strong`, `--exp-accent-dark` is `--a4-accent-press` (dark mode:
   `--a4-accent-strong`), `--exp-accent-ring` is `--a4-accent-soft`, so white text on the primary button keeps 5.2:1;
   their focus rings are overridden to admin4's 3 px `--a4-ring`.
+- admin4 loads `theme/rounded.css` by name; the `admin_theme` preference of older designs is not read, so an old
+  stored value cannot swap the theme stylesheet.
 
 ## Changes to the other designs on the same day
 

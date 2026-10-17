@@ -99,7 +99,13 @@
         return Exp.io.call(a.fn, a.args, opts).then(function (content) {
             if (!current()) { return; }
             self.endAjax();
-            self.lastMetaData = content ? content.meta_data : false;
+            // an empty answer (or one without its html) is an error, not a step: shown, not thrown
+            if (!content || typeof content.html !== 'string') {
+                self.lastMetaData = false;
+                self.displayError(self.conf.parseJSONErrorText);
+                return;
+            }
+            self.lastMetaData = content.meta_data;
             if ($into) { $into[0].innerHTML = content.html; } else { self.setContent(content.html); }
             return content;
         }, function (error) {

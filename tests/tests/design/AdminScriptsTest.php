@@ -71,7 +71,7 @@ class AdminScriptsTest extends PHPUnit\Framework\TestCase
             $this->assertStringNotContainsString( 'params.classes[item.class_id].', $js, $path );
             $this->assertStringContainsString( "if ( divElement.className == 'error' )", $js, $path );
             $this->assertDoesNotMatchRegularExpression( '/aElement\.onclick\s*=\s*function\s*\(\s*\)\s*\{\s*return false;/', $js, $path );
-            $this->assertStringContainsString( "toggle.className !== 'openclose-busy' && toggle.onclick", $js, $path );
+            $this->assertStringContainsString( "toggle.className !== 'openclose-busy' && _press( toggle )", $js, $path );
             $this->assertStringContainsString( 'var expireDate = new Date();', $js, $path );
         }
     }
@@ -115,7 +115,7 @@ class AdminScriptsTest extends PHPUnit\Framework\TestCase
         $this->assertStringNotContainsString( 'e.which', $relations );
         $this->assertStringContainsString( "if ( e.key === 'Enter' && !e.isComposing )", $relations );
         $this->assertStringNotContainsString( 'alert( data.content.error_text )', $relations );
-        $this->assertStringContainsString( 'var message = data && ( data.error_text || ( data.content && data.content.error_text ) );', $relations );
+        $this->assertStringContainsString( '_error( data && ( data.error_text || ( data.content && data.content.error_text ) ) );', $relations );
 
         $uploader = self::code( 'design/admin4/javascript/expajaxuploader.js' );
         $this->assertStringContainsString( "if (typeof json.html !== 'string') {", $uploader );

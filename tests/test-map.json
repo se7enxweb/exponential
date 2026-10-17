@@ -154,7 +154,8 @@
     "design/admin4/templates/page_head_style.tpl": [
       "tests/tests/design/AdminBaseStylesheetsTest.php",
       "tests/tests/design/AdminPreferencesTest.php",
-      "tests/tests/design/AdminNodeTabsHeightTest.php"
+      "tests/tests/design/AdminNodeTabsHeightTest.php",
+      "tests/tests/design/AdminScriptsBehaviourTest.php"
     ],
     "design/admin3/templates/page_head_style.tpl": [
       "tests/tests/design/AdminBaseStylesheetsTest.php"
@@ -261,7 +262,8 @@
       "tests/tests/design/AdminStylingRulesTest.php",
       "tests/tests/design/AdminPreferencesTest.php",
       "tests/tests/design/AdminPhoneMenuTest.php",
-      "tests/tests/design/AdminFirstPaintColumnsTest.php"
+      "tests/tests/design/AdminFirstPaintColumnsTest.php",
+      "tests/tests/design/AdminScriptsBehaviourTest.php"
     ],
     "design/admin4/templates/page_topmenu.tpl": [
       "tests/tests/design/AdminStylingRulesTest.php",
@@ -399,7 +401,10 @@
       "tests/tests/design/AdminTreeViewTest.php"
     ],
     "design/admin/javascript/contentstructuremenu_dynamic.js": [
-      "tests/tests/design/AdminTreeViewTest.php"
+      "tests/tests/design/AdminTreeViewTest.php",
+      "tests/tests/design/AdminScriptsBehaviourTest.php",
+      "tests/tests/design/AdminKeyboardTest.php",
+      "tests/tests/design/AdminScriptsTest.php"
     ],
     "design/admin4/javascript/admin4.js": [
       "tests/tests/design/AdminNoticesTest.php",
@@ -414,7 +419,8 @@
       "tests/tests/design/AdminSubitemsPriorityDragTest.php",
       "tests/tests/design/AdminPhoneMenuTest.php",
       "tests/tests/design/AdminHeaderTest.php",
-      "tests/tests/design/AdminSiteAccessMenuTest.php"
+      "tests/tests/design/AdminSiteAccessMenuTest.php",
+      "tests/tests/design/AdminScriptsBehaviourTest.php"
     ],
     "extension/ezjscore/design/standard/javascript/*": [
       "tests/tests/extension/ezjscore/ezjscoreVendoredLibrariesTest.php"
@@ -456,12 +462,14 @@
     "design/admin/javascript/popupmenu/ezpopupmenu.js": [
       "tests/tests/design/AdminContextMenuTest.php",
       "tests/tests/design/AdminContextMenuNestedSubmenuTest.php",
-      "tests/tests/design/AdminScriptsTest.php"
+      "tests/tests/design/AdminScriptsTest.php",
+      "tests/tests/design/AdminScriptsBehaviourTest.php"
     ],
     "design/admin4/javascript/popupmenu/ezpopupmenu.js": [
       "tests/tests/design/AdminContextMenuTest.php",
       "tests/tests/design/AdminContextMenuNestedSubmenuTest.php",
-      "tests/tests/design/AdminScriptsTest.php"
+      "tests/tests/design/AdminScriptsTest.php",
+      "tests/tests/design/AdminScriptsBehaviourTest.php"
     ],
     "design/admin3/templates/content/browse_current_node.tpl": [
       "tests/tests/design/AdminBrowseCurrentNodeTest.php"
@@ -470,11 +478,14 @@
       "tests/tests/design/AdminBrowseCurrentNodeTest.php"
     ],
     "design/admin/templates/children_detailed.tpl": [
-      "tests/tests/design/AdminJobTranslationsTest.php"
+      "tests/tests/design/AdminJobTranslationsTest.php",
+      "tests/tests/design/AdminScriptFailureTextsTest.php"
     ],
     "design/admin4/templates/children_detailed.tpl": [
       "tests/tests/design/AdminJobTranslationsTest.php",
-      "tests/tests/design/AdminSubitemsPriorityDragTest.php"
+      "tests/tests/design/AdminSubitemsPriorityDragTest.php",
+      "tests/tests/design/AdminScriptsBehaviourTest.php",
+      "tests/tests/design/AdminScriptFailureTextsTest.php"
     ],
     "design/admin/templates/contentstructuremenu/content_structure_menu_dynamic.tpl": [
       "tests/tests/design/AdminJobTranslationsTest.php"
@@ -781,10 +792,12 @@
       "tests/tests/design/AdminSubitemsPriorityDragTest.php"
     ],
     "design/admin4/javascript/ezajaxsubitems_expdatatable.js": [
-      "tests/tests/design/AdminSubitemsPriorityDragTest.php"
+      "tests/tests/design/AdminSubitemsPriorityDragTest.php",
+      "tests/tests/design/AdminScriptsBehaviourTest.php"
     ],
     "design/admin/javascript/ezajaxsubitems_expdatatable.js": [
-      "tests/tests/design/AdminSubitemsPriorityDragTest.php"
+      "tests/tests/design/AdminSubitemsPriorityDragTest.php",
+      "tests/tests/design/AdminScriptsBehaviourTest.php"
     ],
     "design/admin4/templates/children.tpl": [
       "tests/tests/design/AdminSubitemsPriorityDragTest.php"
@@ -1111,6 +1124,40 @@
     ],
     "design/admin4l/templates/explayouts/block/admin_sidebar_toggles.tpl": [
       "tests/tests/design/AdminHeaderTabOrderTest.php"
+    ],
+    "design/admin4/javascript/node_tabs.js": [
+      "tests/tests/design/AdminScriptsBehaviourTest.php"
+    ],
+    "design/admin4/templates/rss/edit_export.tpl": [
+      "tests/tests/design/AdminScriptsBehaviourTest.php"
+    ],
+    "design/admin4/templates/setup/rad.tpl": [
+      "tests/tests/design/AdminScriptsBehaviourTest.php"
+    ],
+    "design/admin/javascript/ezajaxrelations_jquery.js": [
+      "tests/tests/design/AdminScriptsBehaviourTest.php",
+      "tests/tests/design/AdminScriptsTest.php"
+    ],
+    "design/admin4/javascript/ezajaxrelations_jquery.js": [
+      "tests/tests/design/AdminScriptsBehaviourTest.php",
+      "tests/tests/design/AdminScriptsTest.php"
+    ],
+    "design/admin/javascript/expajaxuploader.js": [
+      "tests/tests/design/AdminScriptsBehaviourTest.php"
+    ],
+    "design/admin4/javascript/expajaxuploader.js": [
+      "tests/tests/design/AdminScriptsBehaviourTest.php"
+    ],
+    "design/admin4/javascript/contentstructuremenu_dynamic.js": [
+      "tests/tests/design/AdminScriptsBehaviourTest.php",
+      "tests/tests/design/AdminKeyboardTest.php",
+      "tests/tests/design/AdminScriptsTest.php"
+    ],
+    "design/admin/templates/content/datatype/edit/ezobjectrelation_ajax_search.tpl": [
+      "tests/tests/design/AdminScriptFailureTextsTest.php"
+    ],
+    "design/admin4/templates/content/datatype/edit/ezobjectrelation_ajax_search.tpl": [
+      "tests/tests/design/AdminScriptFailureTextsTest.php"
     ]
   },
   "generated": {

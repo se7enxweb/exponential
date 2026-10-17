@@ -20,7 +20,8 @@
  *   and the script keeps the panel closed; the tab is then a plain link, and the phone menu is unchanged.
  * - The panel's groups and links are loaded once, from the button's data-a4-mega-src (user/megamenu/<tab>), the
  *   first time it opens: the page itself carries only the button, a status line and the link to the tab's page. A failed
- *   load says so in the panel (data-a4-mega-error) and is tried again on the next opening. A link to the page
+ *   load, or one without an answer after 10 s, says so in the panel (data-a4-mega-error) and is tried again on the
+ *   next opening. A link to the page
  *   shown (the tab's link included) is marked aria-current="page".
  * Plain JavaScript, no library; window.matchMedia, setTimeout and fetch are read from window, so the behaviour can
  * be run outside a browser (tests/tests/design/js/mega_menu.js).
@@ -28,7 +29,7 @@
 (function () {
     'use strict';
 
-    var ENTER_DELAY = 300, LEAVE_DELAY = 400;
+    var ENTER_DELAY = 300, LEAVE_DELAY = 400, LOAD_TIMEOUT = 10000;
     var menus = [];      // per tab with a mega menu: { close, isOpen }; one panel is open at a time
 
     function megaMenu(item) {
@@ -86,16 +87,34 @@
             });
         }
 
+        // the request, given up (and aborted where the browser can) when no answer has come after LOAD_TIMEOUT: a
+        // server that never answers must not leave the panel busy and the load blocked for good
+        function request() {
+            var controller = typeof window.AbortController === 'function' ? new window.AbortController() : null;
+            var init = { credentials: 'same-origin', headers: { 'X-Requested-With': 'XMLHttpRequest' } };
+            if (controller) init.signal = controller.signal;
+            return new Promise(function (resolve, reject) {
+                var limit = window.setTimeout(function () {
+                    if (controller) controller.abort();
+                    reject(new Error('no answer'));
+                }, LOAD_TIMEOUT);
+                window.fetch(toggle.getAttribute('data-a4-mega-src'), init).then(function (response) {
+                    if (!response.ok) throw new Error('HTTP ' + response.status);
+                    return response.text();
+                }).then(function (html) {
+                    window.clearTimeout(limit);
+                    resolve(html);
+                }, function (error) {
+                    window.clearTimeout(limit);
+                    reject(error);
+                });
+            });
+        }
+
         function load() {
             if (loading) return loading;
             panel.setAttribute('aria-busy', 'true');
-            loading = window.fetch(toggle.getAttribute('data-a4-mega-src'), {
-                credentials: 'same-origin',
-                headers: { 'X-Requested-With': 'XMLHttpRequest' }
-            }).then(function (response) {
-                if (!response.ok) throw new Error('HTTP ' + response.status);
-                return response.text();
-            }).then(function (html) {
+            loading = request().then(function (html) {
                 // only the fragment's element: a sign-in or error page in its place is not the menu
                 var template = document.createElement('template');
                 template.innerHTML = html;
