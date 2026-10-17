@@ -169,7 +169,7 @@
     <span class="a4-meta">{if $package_count|gt( 0 )}{'%from to %to of %count'|i18n( 'design/admin/package/list',, hash( '%from', $package_pager.from, '%to', $package_pager.to, '%count', $package_count ) )}{/if}{if $q.dir|eq( 'desc' )} &middot; {'%sort, descending'|i18n( 'design/admin/package/list',, hash( '%sort', $sort_labels[$q.sort] ) )|wash}{else} &middot; {'%sort, ascending'|i18n( 'design/admin/package/list',, hash( '%sort', $sort_labels[$q.sort] ) )|wash}{/if}
         &middot; <a href={$package_reverse_uri|ezurl}>{'Reverse'|i18n( 'design/admin/package/list' )}</a></span>
     {if and( $package_can_remove, $package_cards|count|gt( 0 ) )}
-    <label class="a4-meta exp-js-only" hidden><input type="checkbox" id="package-select-all" /> {'Select all on this page'|i18n( 'design/admin/package/list' )}</label>
+    <label class="a4-meta exp-js-only exp-js-late" hidden><input type="checkbox" id="package-select-all" /> {'Select all on this page'|i18n( 'design/admin/package/list' )}</label>
     {/if}
 </div>
 
