@@ -36,6 +36,9 @@ class expVelocityRestartUnit
     /** Set in the detached process: the token that names its result file. */
     const TOKEN_ENV = 'EXP_VELOCITY_RESTART_TOKEN';
 
+    /** Set in the detached process: the pid of the caller that waits for it. */
+    const CALLER_ENV = 'EXP_VELOCITY_RESTART_CALLER';
+
     /** 0 turns detaching off for one call. */
     const SWITCH_ENV = 'EXP_VELOCITY_DETACHED_RESTART';
 
@@ -108,11 +111,15 @@ class expVelocityRestartUnit
      * @param string $setsid the setsid binary
      * @param string|false $systemdRun the systemd-run binary, or false for none
      * @param string $unit the scope's name
+     * @param int $caller the waiting caller's pid; 0 for none
      * @return string
      */
-    public static function detachedCommand( $php, $script, array $args, $token, $log, $setsid, $systemdRun, $unit )
+    public static function detachedCommand( $php, $script, array $args, $token, $log, $setsid, $systemdRun, $unit, $caller = 0 )
     {
-        $inner = array_merge( array( $setsid, '-f', 'env', self::TOKEN_ENV . '=' . $token, $php, $script ), array_values( $args ) );
+        $env = array( self::TOKEN_ENV . '=' . $token );
+        if ( (int)$caller > 0 )
+            $env[] = self::CALLER_ENV . '=' . (int)$caller;
+        $inner = array_merge( array( $setsid, '-f', 'env' ), $env, array( $php, $script ), array_values( $args ) );
         $prefix = array();
         if ( $systemdRun !== false && $systemdRun !== '' )
             $prefix = array( $systemdRun, '--scope', '--quiet', '--collect', '--unit=' . $unit, '--' );
@@ -167,12 +174,12 @@ class expVelocityRestartUnit
 
         $code = 1;
         $out = array();
-        @exec( self::detachedCommand( PHP_BINARY, $script, $args, $token, $log, $setsid, $systemdRun, $unit ), $out, $code );
+        @exec( self::detachedCommand( PHP_BINARY, $script, $args, $token, $log, $setsid, $systemdRun, $unit, getmypid() ), $out, $code );
         if ( $code !== 0 && $systemdRun !== false )
         {
             // No scope (a container, a user without the right): the session alone.
             $unit = '';
-            @exec( self::detachedCommand( PHP_BINARY, $script, $args, $token, $log, $setsid, false, $unit ), $out, $code );
+            @exec( self::detachedCommand( PHP_BINARY, $script, $args, $token, $log, $setsid, false, $unit, getmypid() ), $out, $code );
         }
         if ( $code !== 0 )
             return null;
@@ -287,6 +294,13 @@ class expVelocityRestartUnit
         $file = $unit->resultFile( (string)getenv( self::TOKEN_ENV ) );
         @file_put_contents( $file . '.tmp', json_encode( array( 'code' => $ok ? 0 : 1, 'pid' => getmypid(), 'ended' => time() ) ) );
         @rename( $file . '.tmp', $file );
+        // Nobody left to read them: the caller was killed while it waited.
+        $caller = (int)getenv( self::CALLER_ENV );
+        if ( $caller > 0 && !expVelocityMarkers::pidAlive( $caller ) )
+        {
+            @unlink( $file );
+            @unlink( $unit->logFile( (string)getenv( self::TOKEN_ENV ) ) );
+        }
     }
 
     /** Ended without childDone (a fatal error, an exit elsewhere): failed. */
