@@ -326,6 +326,10 @@ class expDebugBarReport
         }
         $summary['querycache'] = $serverSummary !== null && array_key_exists( 'querycache', $serverSummary )
             ? $serverSummary['querycache'] : self::queryCacheSummary();
+        // How the page was rendered (controller, view cache key, compiled templates): for setup/setup only, as the
+        // cache key carries the user's role and limitation ids
+        $rendering = $userInfo['can_setup'] ? self::renderingData() : null;
+        $summary['rendering'] = $rendering === null ? null : self::renderingChips( $rendering );
 
         // the chips of the extensions' panels (collected before the messages, see above)
         $summary['panels'] = array();
@@ -342,6 +346,7 @@ class expDebugBarReport
             'timing'    => self::t( 'Timing' ),
             'sql'       => self::t( 'SQL' ),
             'templates' => self::t( 'Templates' ),
+            'rendering' => self::t( 'Rendering' ),
             'includes'  => self::t( 'Included files' ),
             'memory'    => self::t( 'Memory' ),
         );
@@ -349,6 +354,9 @@ class expDebugBarReport
             $tabs[$panel['tab']] = $panel['title'];
         // id velocity, as the tab was named first: scripts and stylesheets find the section by it
         $tabs['velocity'] = self::t( 'Server' );
+
+        if ( $rendering === null )
+            unset( $tabs['rendering'] );
         if ( $otherReports !== '' )
             $tabs['other'] = self::t( 'Other' );
         $badges = array(
@@ -440,6 +448,14 @@ class expDebugBarReport
             echo '<p class="exp-debug-hint">' . self::h( 'Template usage is not recorded. Turn on "Show used templates" (TemplateSettings ShowUsedTemplates) in the Settings tab.' ) . '</p>';
         echo $templateReports;
         self::panelEnd();
+
+        // --- Rendering
+        if ( $rendering !== null )
+        {
+            self::panelStart( 'rendering', $tabs );
+            echo self::renderingHtml( $rendering );
+            self::panelEnd();
+        }
 
         // --- Included files
         self::panelStart( 'includes', $tabs );
@@ -650,6 +666,11 @@ class expDebugBarReport
         if ( $s['templates'] !== null )
             $chips[] = array( 'templates', 'templates', $tplLevel,
                               self::t( '%count tpl', array( '%count' => $s['templates'] ) ), self::t( 'Templates used' ) );
+        if ( !empty( $s['rendering'] ) )
+        {
+            foreach ( $s['rendering'] as $chip )
+                $chips[] = $chip;
+        }
         $chips[] = array( 'messages', 'warnings', $s['warnings'] > 0 ? 'warn' : 'ok',
                           self::t( '%count warn', array( '%count' => $s['warnings'] ) ), self::t( 'Warnings' ) );
         $chips[] = array( 'messages', 'errors', $s['errors'] > 0 ? 'high' : 'ok',
@@ -1116,6 +1137,208 @@ class expDebugBarReport
             $html .= '<div class="exp-debug-velocity-cache"></div>';
         }
         return $html;
+    }
+
+    /** Longest value the Rendering tab shows in full; a longer one is cut, the whole value is its tooltip */
+    const RENDERING_VALUE_MAX = 200;
+
+    /**
+     * What the Rendering tab shows: what expRenderStats noted for this request and the settings that decide it.
+     *
+     * @return array|null views, view_cache, templates, siteaccess, navigation_part, design, settings; null when the
+     *                    kernel's collector is not loaded
+     */
+    public static function renderingData()
+    {
+        if ( !class_exists( 'expRenderStats' ) )
+            return null;
+        $data = array( 'views' => expRenderStats::views(), 'view_cache' => expRenderStats::viewCache(),
+                       'templates' => expRenderStats::templates(), 'siteaccess' => '', 'navigation_part' => '',
+                       'design' => array(), 'settings' => array() );
+        if ( isset( $GLOBALS['eZCurrentAccess']['name'] ) )
+            $data['siteaccess'] = (string)$GLOBALS['eZCurrentAccess']['name'];
+        try
+        {
+            $ini = eZINI::instance();
+            foreach ( array( 'ContentSettings' => array( 'ViewCaching' ),
+                             'TemplateSettings' => array( 'TemplateCompile', 'TemplateCache', 'CompileExecution', 'DevelopmentMode' ) ) as $group => $names )
+            {
+                foreach ( $names as $name )
+                    $data['settings'][$name] = $ini->hasVariable( $group, $name ) ? (string)$ini->variable( $group, $name ) : '';
+            }
+            if ( class_exists( 'eZTemplateDesignResource' ) )
+            {
+                foreach ( (array)eZTemplateDesignResource::allDesignBases() as $base )
+                    $data['design'][] = (string)$base;
+            }
+            if ( class_exists( 'eZTemplate', false ) )
+            {
+                $tpl = eZTemplate::factory();
+                if ( $tpl->hasVariable( 'module_result' ) )
+                {
+                    $result = $tpl->variable( 'module_result' );
+                    if ( isset( $result['navigation_part'] ) && is_scalar( $result['navigation_part'] ) )
+                        $data['navigation_part'] = (string)$result['navigation_part'];
+                }
+            }
+        }
+        catch ( Throwable $e )
+        {
+        }
+        return $data;
+    }
+
+    /**
+     * The chips of the Rendering tab: what the content view cache did, and how many templates were compiled now.
+     *
+     * @param array $r renderingData()
+     * @return array chips as summaryHtml() takes them
+     */
+    public static function renderingChips( array $r )
+    {
+        $chips = array();
+        $cache = $r['view_cache'];
+        if ( is_array( $cache ) && $cache['state'] !== null )
+        {
+            $words = array( 'hit' => self::t( 'View: hit' ), 'generated' => self::t( 'View: new' ), 'uncached' => self::t( 'View: new' ),
+                            'expired' => self::t( 'View: new' ), 'off' => self::t( 'View: off' ), 'pending' => self::t( 'View: ?' ) );
+            $state = isset( $words[$cache['state']] ) ? $cache['state'] : 'pending';
+            $chips[] = array( 'rendering', 'viewcache', $state === 'hit' || $state === 'off' ? 'ok' : 'warn', $words[$state],
+                              self::t( 'Content view cache' ) . ': ' . self::renderingStateText( $cache ) );
+        }
+        $compiled = count( $r['templates']['compiled'] );
+        $chips[] = array( 'rendering', 'compiled', $compiled > 0 ? 'warn' : 'ok', self::t( 'Compiled %count', array( '%count' => $compiled ) ),
+                          self::t( '%compiled templates compiled in this request, %executed runs of compiled templates',
+                                   array( '%compiled' => $compiled, '%executed' => (int)$r['templates']['executed'] ) ) );
+        return $chips;
+    }
+
+    /** The content view cache's state as a sentence, with its reason. */
+    protected static function renderingStateText( array $cache )
+    {
+        $texts = array( 'hit' => 'Read from the cache',
+                        'generated' => 'Generated and stored in the cache',
+                        'uncached' => 'Generated without storing it in the cache',
+                        'expired' => 'The cache file was not used',
+                        'off' => 'Not used',
+                        'pending' => 'The key was built, no outcome was noted' );
+        $text = self::t( isset( $texts[$cache['state']] ) ? $texts[$cache['state']] : $texts['pending'] );
+        if ( $cache['reason'] !== '' )
+            $text .= ' (' . $cache['reason'] . ')';
+        return $text;
+    }
+
+    /**
+     * The Rendering tab: the controller, the content view cache and its key, and the template compilation.
+     *
+     * @param array $r renderingData()
+     * @return string
+     */
+    public static function renderingHtml( array $r )
+    {
+        $html = '<h3>' . self::h( 'Controller' ) . '</h3>';
+        if ( !$r['views'] )
+            $html .= '<p class="exp-debug-hint">' . self::h( 'No module view ran.' ) . '</p>';
+        else
+        {
+            $html .= '<table class="exp-debug-facts"><tr><th>' . self::h( 'Module view' ) . '</th><th>' . self::h( 'View class' )
+                   . '</th><th>' . self::h( 'Script' ) . '</th></tr>';
+            foreach ( $r['views'] as $view )
+            {
+                $html .= '<tr><td>' . self::a( $view['module'] . '/' . $view['view'] ) . '</td><td>'
+                       . ( $view['class'] === null ? '-' : self::a( $view['class'] ) ) . '</td><td>' . self::renderingValue( self::relativePath( $view['script'] ) ) . '</td></tr>';
+            }
+            $html .= '</table>';
+        }
+        $rows = array( self::t( 'Siteaccess' ) => $r['siteaccess'],
+                       self::t( 'Navigation part' ) => $r['navigation_part'] );
+        $html .= '<table class="exp-debug-facts">';
+        foreach ( $rows as $k => $v )
+            $html .= '<tr><th>' . self::a( $k ) . '</th><td>' . ( $v === '' ? '-' : self::renderingValue( $v ) ) . '</td></tr>';
+        $html .= '</table>';
+        if ( $r['design'] )
+        {
+            // the first base that has a template wins
+            $html .= '<details class="exp-debug-render-design"><summary>' . self::h( 'Design order (%count bases)', array( '%count' => count( $r['design'] ) ) ) . '</summary><ol>';
+            foreach ( $r['design'] as $base )
+                $html .= '<li>' . self::renderingValue( self::relativePath( $base ) ) . '</li>';
+            $html .= '</ol></details>';
+        }
+
+        $html .= '<h3>' . self::h( 'Content view cache' ) . '</h3>';
+        $cache = $r['view_cache'];
+        if ( !is_array( $cache ) || $cache['state'] === null )
+            $html .= '<p class="exp-debug-hint">' . self::h( 'No content view ran on this page.' ) . '</p>';
+        else
+        {
+            $html .= '<table class="exp-debug-facts" data-state="' . self::a( $cache['state'] ) . '">';
+            $html .= '<tr><th>' . self::h( 'State' ) . '</th><td>' . self::renderingValue( self::renderingStateText( $cache ) ) . '</td></tr>';
+            if ( $cache['age'] !== null )
+                $html .= '<tr><th>' . self::h( 'Age' ) . '</th><td>' . self::h( '%seconds s', array( '%seconds' => (int)$cache['age'] ) ) . '</td></tr>';
+            if ( $cache['size'] !== null )
+                $html .= '<tr><th>' . self::h( 'Size' ) . '</th><td>' . number_format( $cache['size'] / 1024, 1 ) . ' KB</td></tr>';
+            if ( $cache['path'] !== null )
+            {
+                $html .= '<tr><th>' . self::h( 'Hash' ) . '</th><td><code>' . self::a( $cache['hash'] ) . '</code></td></tr>';
+                $html .= '<tr><th>' . self::h( 'Cache file' ) . '</th><td>' . self::renderingValue( self::relativePath( $cache['path'] ) ) . '</td></tr>';
+            }
+            $html .= '</table>';
+            if ( $cache['parts'] )
+            {
+                $html .= '<details class="exp-debug-render-keys"><summary>' . self::h( 'Cache key (%count parts)', array( '%count' => count( $cache['parts'] ) ) ) . '</summary>';
+                $html .= '<table class="exp-debug-facts">';
+                foreach ( $cache['parts'] as $name => $value )
+                {
+                    $mark = in_array( $name, $cache['from_listeners'], true )
+                        ? ' <span class="exp-debug-badge" title="' . self::h( 'Added or changed by a content/view/cachekeys listener' ) . '">' . self::h( 'listener' ) . '</span>' : '';
+                    $shown = $value === null ? '' : ( is_bool( $value ) ? ( $value ? '1' : '' ) : (string)$value );
+                    $html .= '<tr><th>' . self::a( $name ) . $mark . '</th><td>' . ( $shown === '' ? '<em>' . self::h( 'empty' ) . '</em>' : self::renderingValue( $shown ) ) . '</td></tr>';
+                }
+                $html .= '</table></details>';
+            }
+        }
+
+        $html .= '<h3>' . self::h( 'Templates' ) . '</h3>';
+        $settings = $r['settings'];
+        $html .= '<table class="exp-debug-facts">';
+        foreach ( array( 'ViewCaching', 'TemplateCompile', 'CompileExecution', 'TemplateCache', 'DevelopmentMode' ) as $name )
+        {
+            if ( isset( $settings[$name] ) )
+                $html .= '<tr><th>' . self::a( $name ) . '</th><td>' . self::a( $settings[$name] ) . '</td></tr>';
+        }
+        $compiled = $r['templates']['compiled'];
+        $html .= '<tr><th>' . self::h( 'Compiled templates run' ) . '</th><td>' . (int)$r['templates']['executed'] . '</td></tr>';
+        $html .= '<tr><th>' . self::h( 'Compiled in this request' ) . '</th><td>' . count( $compiled ) . '</td></tr>';
+        $html .= '</table>';
+        if ( $compiled )
+        {
+            $html .= '<details class="exp-debug-render-compiled"><summary>' . self::h( 'Templates compiled in this request' ) . '</summary><ul>';
+            foreach ( $compiled as $file )
+                $html .= '<li>' . self::renderingValue( self::relativePath( $file ) ) . '</li>';
+            $html .= '</ul></details>';
+        }
+        return $html;
+    }
+
+    /** A value of the Rendering tab, escaped; cut after RENDERING_VALUE_MAX characters with the whole value as tooltip. */
+    protected static function renderingValue( $value )
+    {
+        $value = (string)$value;
+        $length = function_exists( 'mb_strlen' ) ? mb_strlen( $value, 'UTF-8' ) : strlen( $value );
+        if ( $length <= self::RENDERING_VALUE_MAX )
+            return self::a( $value );
+        $cut = function_exists( 'mb_substr' ) ? mb_substr( $value, 0, self::RENDERING_VALUE_MAX, 'UTF-8' ) : substr( $value, 0, self::RENDERING_VALUE_MAX );
+        return '<span title="' . self::a( $value ) . '">' . self::a( $cut ) . '&hellip;</span>';
+    }
+
+    /** A path below the installation root without the root, which says nothing to the reader. */
+    public static function relativePath( $path )
+    {
+        $path = (string)$path;
+        $root = getcwd();
+        if ( $root !== false && $root !== '' && strpos( $path, $root . '/' ) === 0 )
+            return substr( $path, strlen( $root ) + 1 );
+        return strpos( $path, './' ) === 0 ? substr( $path, 2 ) : $path;
     }
 
     /** htmlspecialchars() for text and attribute values. */

@@ -68868,6 +68868,138 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Expunges</source>
         <translation>Komplettleerungen</translation>
     </message>
+    <message>
+        <source>Rendering</source>
+        <translation>Rendering</translation>
+    </message>
+    <message>
+        <source>View: hit</source>
+        <translation>View: Treffer</translation>
+    </message>
+    <message>
+        <source>View: new</source>
+        <translation>View: neu</translation>
+    </message>
+    <message>
+        <source>View: off</source>
+        <translation>View: aus</translation>
+    </message>
+    <message>
+        <source>View: ?</source>
+        <translation>View: ?</translation>
+    </message>
+    <message>
+        <source>Content view cache</source>
+        <translation>Cache der Inhaltsansicht</translation>
+    </message>
+    <message>
+        <source>Compiled %count</source>
+        <translation>Kompiliert %count</translation>
+    </message>
+    <message>
+        <source>%compiled templates compiled in this request, %executed runs of compiled templates</source>
+        <translation>%compiled Templates in dieser Anfrage kompiliert, %executed Läufe kompilierter Templates</translation>
+    </message>
+    <message>
+        <source>Read from the cache</source>
+        <translation>Aus dem Cache gelesen</translation>
+    </message>
+    <message>
+        <source>Generated and stored in the cache</source>
+        <translation>Erzeugt und im Cache gespeichert</translation>
+    </message>
+    <message>
+        <source>Generated without storing it in the cache</source>
+        <translation>Erzeugt, ohne sie im Cache zu speichern</translation>
+    </message>
+    <message>
+        <source>The cache file was not used</source>
+        <translation>Die Cache-Datei wurde nicht verwendet</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Nicht verwendet</translation>
+    </message>
+    <message>
+        <source>The key was built, no outcome was noted</source>
+        <translation>Der Schlüssel wurde gebildet, ein Ergebnis wurde nicht vermerkt</translation>
+    </message>
+    <message>
+        <source>Controller</source>
+        <translation>Controller</translation>
+    </message>
+    <message>
+        <source>No module view ran.</source>
+        <translation>Es lief keine Modulansicht.</translation>
+    </message>
+    <message>
+        <source>Module view</source>
+        <translation>Modulansicht</translation>
+    </message>
+    <message>
+        <source>View class</source>
+        <translation>View-Klasse</translation>
+    </message>
+    <message>
+        <source>Script</source>
+        <translation>Skript</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>Navigation part</source>
+        <translation>Navigationsbereich</translation>
+    </message>
+    <message>
+        <source>Design order (%count bases)</source>
+        <translation>Design-Reihenfolge (%count Basen)</translation>
+    </message>
+    <message>
+        <source>No content view ran on this page.</source>
+        <translation>Auf dieser Seite lief keine Inhaltsansicht.</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Hash</source>
+        <translation>Hash</translation>
+    </message>
+    <message>
+        <source>Cache file</source>
+        <translation>Cache-Datei</translation>
+    </message>
+    <message>
+        <source>Cache key (%count parts)</source>
+        <translation>Cache-Schlüssel (%count Teile)</translation>
+    </message>
+    <message>
+        <source>Added or changed by a content/view/cachekeys listener</source>
+        <translation>Von einem Listener für content/view/cachekeys hinzugefügt oder geändert</translation>
+    </message>
+    <message>
+        <source>listener</source>
+        <translation>Listener</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>leer</translation>
+    </message>
+    <message>
+        <source>Compiled templates run</source>
+        <translation>Ausgeführte kompilierte Templates</translation>
+    </message>
+    <message>
+        <source>Compiled in this request</source>
+        <translation>In dieser Anfrage kompiliert</translation>
+    </message>
+    <message>
+        <source>Templates compiled in this request</source>
+        <translation>In dieser Anfrage kompilierte Templates</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/audit</name>

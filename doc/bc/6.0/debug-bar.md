@@ -433,6 +433,7 @@ the report's own defaults.
 | Templates | the templates used (`ShowUsedTemplates`) and the CSS/JS packer report, or how to turn them on |
 | Included files | the included PHP files (`DisplayIncludedFiles`), or their number and how to list them |
 | Memory | the classic "Main resources" table, memory now, peak, limit and share, and the five steps that took the most |
+| Rendering | how the page was rendered: the controller, the content view cache and its key, the compiled templates (see [below](#rendering-controller-content-view-cache-and-compiled-templates)); only for `setup/setup` |
 | (extensions) | a tab per panel an extension registers, after Memory (see [Panels of extensions](#panels-of-extensions)) |
 | Server | where the request entered and which process rendered the report (Exponential Velocity, PHP-FPM, mod_php, the command line ...), in one sentence (see [below](#server-where-the-request-entered-and-what-rendered-it)), the facts behind it, OPcache status, and Velocity's response cache; called Velocity until 16 October 2026, its section id is still `exp-debug-panel-velocity` |
 | Other | reports appended by extensions with `eZDebug::appendBottomReport()` that belong to no tab (only when there are any) |
@@ -475,6 +476,37 @@ The user list (`DebugUserIDList[]`) takes one user ID per line, "Add me" adds th
 Drawn from `expdebugbar::cache`: "This page only" (the view cache of the node the page shows), Velocity's
 response cache, OPcache of the serving process, every cache tag and every cache ID with its description and when
 it was last cleared, and all caches. Each clear says what it did.
+
+### Rendering: controller, content view cache and compiled templates
+
+The tab answers "why is this page slow or not cached" without reading the code. Only a user with `setup/setup` sees
+it and its chips, as the cache key carries the role and limitation ids of the user. It has three parts:
+
+- **Controller**: every module view that ran, in order (an error page or a forward adds one), with the view class
+  that ran it (`Exponential\View\Kernel\...`, see [cli_cronjob_view_abstractions.md](cli_cronjob_view_abstractions.md))
+  and the script; the siteaccess, the navigation part and, folded, the design order (the first base that has a
+  template wins).
+- **Content view cache**, when a content view ran: the state and its reason, the hash and the cache file, and folded
+  the key part by part as it was hashed. A part a `content/view/cachekeys` listener added or changed is marked
+  *listener*.
+
+| State | Chip | Meaning |
+|---|---|---|
+| Read from the cache | View: hit | the file was used; with its age and size (no age or size for Valkey) |
+| Generated and stored in the cache | View: new | no file, or the old one was not used; the reason says why (expired by `cache_ttl`, by a template in development mode, by a cache clear, `no_cache`) |
+| Generated without storing it in the cache | View: new | the cache file said `no_cache` (a view that sets `no_cache` leaves only that note in its file), or the result is not kept |
+| Not used | View: off | `ViewCaching` disabled, the caller turned it off (`$Params['ViewCache']`), the view mode is not in `CachedViewModes`, or `ViewCacheTweaks[<node>]` contains `disabled` |
+
+- **Templates**: `ViewCaching`, `TemplateCompile`, `CompileExecution`, `TemplateCache` and `DevelopmentMode` in
+  effect, how often a compiled template ran and how many were compiled in this request, with their files. The chip
+  **Compiled N** is raised while N is not 0: right after a template cache clear every template is compiled once.
+
+Values longer than 200 characters are cut; the whole value is the tooltip. The collector is `expRenderStats`
+(`kernel/classes/debugbar/exprenderstats.php`). The kernel notes into it where it decides (`eZModule::run()`,
+`ModuleView::main()`, the content/view view, `eZNodeviewfunctions`, `eZTemplateCompiler`); every note returns at once
+without debug output, and `ezpKernelWeb` starts each request empty, also in a persistent worker.
+
+Test: `expRenderStatsTest` (no database).
 
 ### Panels of extensions
 

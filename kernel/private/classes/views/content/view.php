@@ -85,14 +85,18 @@ class View extends \Exponential\Runnable\ModuleView
             } );
 
         $viewCacheEnabled = ( $ini->variable( 'ContentSettings', 'ViewCaching' ) == 'enabled' );
+        // Why the view cache is not used, for the debug bar's Rendering tab
+        $viewCacheOffReason = $viewCacheEnabled ? '' : 'site.ini [ContentSettings] ViewCaching is disabled';
 
         if ( isset( $Params['ViewCache'] ) )
         {
             $viewCacheEnabled = $Params['ViewCache'];
+            $viewCacheOffReason = $viewCacheEnabled ? '' : 'the caller turned it off (ViewCache parameter)';
         }
         elseif ( $viewCacheEnabled && !in_array( $ViewMode, $ini->variableArray( 'ContentSettings', 'CachedViewModes' ) ) )
         {
             $viewCacheEnabled = false;
+            $viewCacheOffReason = 'the view mode ' . $ViewMode . ' is not in [ContentSettings] CachedViewModes';
         }
 
         if ( $viewCacheEnabled && $ini->hasVariable( 'ContentSettings', 'ViewCacheTweaks' ) )
@@ -101,8 +105,11 @@ class View extends \Exponential\Runnable\ModuleView
             if ( isset( $viewCacheTweaks[$NodeID] ) && strpos( $viewCacheTweaks[$NodeID], 'disabled' ) !== false )
             {
                 $viewCacheEnabled = false;
+                $viewCacheOffReason = '[ContentSettings] ViewCacheTweaks[' . (int)$NodeID . '] contains disabled';
             }
         }
+        if ( !$viewCacheEnabled )
+            \expRenderStats::noteViewCacheOff( $viewCacheOffReason );
 
         $collectionAttributes = false;
         if ( isset( $Params['CollectionAttributes'] ) )
@@ -208,6 +215,8 @@ class View extends \Exponential\Runnable\ModuleView
                     $viewParameters,
                     false
                 );
+                \expRenderStats::noteViewCacheKey( $cacheFileArray['cache_keys'], $cacheFileArray['cache_keys_from_listeners'],
+                                                   $cacheFileArray['cache_hash'], $cacheFileArray['cache_path'] );
 
                 if ( class_exists( 'sevenxValkeyCacheBlock' ) )
                 {
@@ -217,6 +226,7 @@ class View extends \Exponential\Runnable\ModuleView
 
                     if ( is_array( $result ) && isset( $result['no_cache'] ) && $result['no_cache'] )
                     {
+                        \expRenderStats::noteViewCacheExpired( 'no_cache' );
                         $data = \eZNodeviewfunctions::contentViewGenerate( false, $args );
                         $result = $data['content'];
                     }
@@ -229,7 +239,12 @@ class View extends \Exponential\Runnable\ModuleView
                         if ( !isset( $result['no_cache'] ) || !$result['no_cache'] )
                         {
                             $sevenxValkeyCacheBlock->put( $cacheFileArray['cache_path'], $result, 3600, 0, $NodeID );
+                            \expRenderStats::noteViewGenerated( $cacheFileArray['cache_path'] );
                         }
+                    }
+                    else
+                    {
+                        \expRenderStats::noteViewCacheHit();
                     }
                 }
                 else

@@ -410,6 +410,7 @@ class eZNodeviewfunctions
 
         // An extension adds keys (a permission the roles do not show) or leaves some out (a class whose pages are the
         // same for everyone); a listener that returns no array changes nothing
+        $kernelKeys = $cacheHashArray;
         $filtered = ezpEvent::getInstance()->filter( 'content/view/cachekeys', $cacheHashArray,
                                                      array( 'user' => $user,
                                                             'node_id' => $nodeID,
@@ -445,14 +446,25 @@ class eZNodeviewfunctions
             $cacheHashArray = array_replace( $structural, $filtered );
         }
 
-        $cacheFile = $nodeID . '-' . $cacheNameExtra . md5( implode( '-', $cacheHashArray ) ) . '.cache';
+        $cacheHash = md5( implode( '-', $cacheHashArray ) );
+        $cacheFile = $nodeID . '-' . $cacheNameExtra . $cacheHash . '.cache';
         $extraPath = eZDir::filenamePath( $nodeID );
         $cacheDir = eZDir::path( array( eZSys::cacheDirectory(), $ini->variable( 'ContentSettings', 'CacheDir' ), $currentSiteAccess, $extraPath ) );
         $cachePath = eZDir::path( array( $cacheDir, $cacheFile ) );
+        // The keys as hashed, and those a listener added or changed, for the debug bar's Rendering tab
+        $fromListeners = array();
+        foreach ( empty( $GLOBALS['eZDebugEnabled'] ) ? array() : $cacheHashArray as $key => $value )
+        {
+            if ( !array_key_exists( $key, $kernelKeys ) || (string)$kernelKeys[$key] !== (string)$value )
+                $fromListeners[] = $key;
+        }
 
         return array( 'cache_path' => $cachePath,
                       'cache_dir' => $cacheDir,
-                      'cache_file' => $cacheFile );
+                      'cache_file' => $cacheFile,
+                      'cache_hash' => $cacheHash,
+                      'cache_keys' => $cacheHashArray,
+                      'cache_keys_from_listeners' => $fromListeners );
     }
 
     /**
@@ -490,6 +502,7 @@ class eZNodeviewfunctions
             // return an eZClusterFileFailure if it has
             if ( isset( $Result['no_cache'] ) )
             {
+                expRenderStats::noteViewCacheExpired( 'Cache has been disabled for this node (no_cache)' );
                 return new eZClusterFileFailure( 3, "Cache has been disabled for this node" );
             }
 
@@ -546,6 +559,7 @@ class eZNodeviewfunctions
                             )
                         );
                     }
+                    expRenderStats::noteViewCacheHit( $file, $mtime );
                     return $Result;
                 }
                 $keyArray = array( array( 'object', $Result['content_info']['object_id'] ),
@@ -579,6 +593,7 @@ class eZNodeviewfunctions
                 $res = eZTemplateDesignResource::instance();
                 $res->setKeys( $keyArray );
 
+                expRenderStats::noteViewCacheHit( $file, $mtime );
                 return $Result;
             }
         }
@@ -590,6 +605,7 @@ class eZNodeviewfunctions
         // Cache is expired so return specialized cluster object
         if ( !isset( $expiryReason ) )
             $expiryReason = 'Content cache is expired';
+        expRenderStats::noteViewCacheExpired( $expiryReason );
         return new eZClusterFileFailure( 1, $expiryReason );
     }
 
@@ -614,6 +630,21 @@ class eZNodeviewfunctions
      * @return array
      */
     static public function contentViewGenerate( $file, $args )
+    {
+        $retval = self::contentViewGenerateResult( $file, $args );
+        // Stored only with a file and 'store' (not when the cache file said no_cache), for the debug bar's Rendering tab
+        expRenderStats::noteViewGenerated( $file !== false && !empty( $retval['store'] ) ? $file : false );
+        return $retval;
+    }
+
+    /**
+     * What contentViewGenerate() returns.
+     *
+     * @param string|false $file
+     * @param array $args
+     * @return array
+     */
+    static protected function contentViewGenerateResult( $file, $args )
     {
         extract( $args );
         $node = eZContentObjectTreeNode::fetch( $NodeID );

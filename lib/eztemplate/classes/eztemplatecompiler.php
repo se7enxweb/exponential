@@ -409,6 +409,8 @@ class eZTemplateCompiler
                                                                           $rootNamespace, $currentNamespace );
             if ( $helperStatus )
             {
+                if ( !empty( $GLOBALS['eZDebugEnabled'] ) && class_exists( 'expRenderStats' ) )
+                    expRenderStats::noteTemplateExecuted();
                 $textElements[] = $text;
                 return true;
             }
@@ -638,6 +640,8 @@ class eZTemplateCompiler
         if ( !$resourceData['test-compile'] )
         {
             $php->store( true );
+            if ( class_exists( 'expRenderStats' ) )
+                expRenderStats::noteTemplateCompiled( $resourceData['template-filename'] );
         }
 
         return true;

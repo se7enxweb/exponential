@@ -68446,6 +68446,138 @@ Tendrás que cambiar la clase del nudo con la función de intercambio.</translat
         <source>%count err</source>
         <translation>%count err.</translation>
     </message>
+    <message>
+        <source>Rendering</source>
+        <translation>Renderizado</translation>
+    </message>
+    <message>
+        <source>View: hit</source>
+        <translation>Vista: acierto</translation>
+    </message>
+    <message>
+        <source>View: new</source>
+        <translation>Vista: nueva</translation>
+    </message>
+    <message>
+        <source>View: off</source>
+        <translation>Vista: desactivada</translation>
+    </message>
+    <message>
+        <source>View: ?</source>
+        <translation>Vista: ?</translation>
+    </message>
+    <message>
+        <source>Content view cache</source>
+        <translation>Caché de la vista de contenido</translation>
+    </message>
+    <message>
+        <source>Compiled %count</source>
+        <translation>Compiladas %count</translation>
+    </message>
+    <message>
+        <source>%compiled templates compiled in this request, %executed runs of compiled templates</source>
+        <translation>%compiled plantillas compiladas en esta petición, %executed ejecuciones de plantillas compiladas</translation>
+    </message>
+    <message>
+        <source>Read from the cache</source>
+        <translation>Leída de la caché</translation>
+    </message>
+    <message>
+        <source>Generated and stored in the cache</source>
+        <translation>Generada y guardada en la caché</translation>
+    </message>
+    <message>
+        <source>Generated without storing it in the cache</source>
+        <translation>Generada sin guardarla en la caché</translation>
+    </message>
+    <message>
+        <source>The cache file was not used</source>
+        <translation>No se usó el archivo de caché</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>No se usa</translation>
+    </message>
+    <message>
+        <source>The key was built, no outcome was noted</source>
+        <translation>Se generó la clave, no se registró ningún resultado</translation>
+    </message>
+    <message>
+        <source>Controller</source>
+        <translation>Controlador</translation>
+    </message>
+    <message>
+        <source>No module view ran.</source>
+        <translation>No se ejecutó ninguna vista de módulo.</translation>
+    </message>
+    <message>
+        <source>Module view</source>
+        <translation>Vista de módulo</translation>
+    </message>
+    <message>
+        <source>View class</source>
+        <translation>Clase de la vista</translation>
+    </message>
+    <message>
+        <source>Script</source>
+        <translation>Script</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>Navigation part</source>
+        <translation>Parte de navegación</translation>
+    </message>
+    <message>
+        <source>Design order (%count bases)</source>
+        <translation>Orden de diseños (%count bases)</translation>
+    </message>
+    <message>
+        <source>No content view ran on this page.</source>
+        <translation>En esta página no se ejecutó ninguna vista de contenido.</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Hash</source>
+        <translation>Hash</translation>
+    </message>
+    <message>
+        <source>Cache file</source>
+        <translation>Archivo de caché</translation>
+    </message>
+    <message>
+        <source>Cache key (%count parts)</source>
+        <translation>Clave de caché (%count partes)</translation>
+    </message>
+    <message>
+        <source>Added or changed by a content/view/cachekeys listener</source>
+        <translation>Añadida o cambiada por un listener de content/view/cachekeys</translation>
+    </message>
+    <message>
+        <source>listener</source>
+        <translation>listener</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>vacío</translation>
+    </message>
+    <message>
+        <source>Compiled templates run</source>
+        <translation>Plantillas compiladas ejecutadas</translation>
+    </message>
+    <message>
+        <source>Compiled in this request</source>
+        <translation>Compiladas en esta petición</translation>
+    </message>
+    <message>
+        <source>Templates compiled in this request</source>
+        <translation>Plantillas compiladas en esta petición</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
