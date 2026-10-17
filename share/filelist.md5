@@ -1016,7 +1016,7 @@ e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tp
 205c65ea5506b41c2a7048d96becfd33  design/admin4/stylesheets/admin4.css
 20f88e86fcfd025c9182ef5eb635b7b5  design/admin4/stylesheets/components.css
 29dbb2aaee5436f235093d29c633111b  design/admin4/stylesheets/content.css
-bc58629618444e04776b7e1408f93fee  design/admin4/stylesheets/core.css
+e09683f9f281d89500b42b38a18f90d5  design/admin4/stylesheets/core.css
 d57109b58209ac401af2138ffd2ac93d  design/admin4/stylesheets/editor_content.css
 01f2edc08922c1da1e00b33fe6cf1a5c  design/admin4/stylesheets/ezinfo.css
 a7c60bd40ece47b1c7a1942329ddda77  design/admin4/stylesheets/modules/content.css
@@ -7608,7 +7608,7 @@ ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 8b29711fe10a56c5c5b90916f35d0a00  tests/tests/bin/phpcs/NoTypeDeclarationsSniffTest.php
 4e3eeb18c2ea423afb62388e5e3dcafc  tests/tests/bin/phpcs/fixtures/typedeclarations.inc
 0f61a66b5e0996561766fc594dec3781  tests/tests/design/Admin4lReviewTest.php
-63302f632f643c7097065d9f890005c9  tests/tests/design/AdminBaseStylesheetsTest.php
+1ae5a0d8d8818787dcfc5b08f01fbeb7  tests/tests/design/AdminBaseStylesheetsTest.php
 59ec01ce80314b5d77be3007f4a32b66  tests/tests/design/AdminBrowseCurrentNodeTest.php
 759fe4ff4c2d9fc1985f080528d04c2f  tests/tests/design/AdminCardsTest.php
 f8fc661b72f217d00398c1a6862843d3  tests/tests/design/AdminContentEditFormsTest.php
