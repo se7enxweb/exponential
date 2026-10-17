@@ -156,7 +156,7 @@ class expVelocityWatchdog
 
         $dir = $this->runDirectory();
         if ( !is_dir( $dir ) )
-            @mkdir( $dir, 0755, true );
+            eZDir::mkdir( $dir, false, true );
         // One run at a time: a slow start must not meet the next timer tick.
         $own = @fopen( $dir . '/watchdog.lock', 'c' );
         if ( !$own || !flock( $own, LOCK_EX | LOCK_NB ) )
@@ -425,7 +425,7 @@ class expVelocityWatchdog
                          $result['action'], $result['reason'], str_replace( array( '"', "\n" ), array( "'", ' ' ), $result['detail'] ), getmypid() );
         $file = $this->logFile();
         if ( !is_dir( dirname( $file ) ) )
-            @mkdir( dirname( $file ), 0755, true );
+            eZDir::mkdir( dirname( $file ), false, true );
         @file_put_contents( $file, $line, FILE_APPEND | LOCK_EX );
     }
 
@@ -447,7 +447,11 @@ class expVelocityWatchdog
              // The server it starts goes into a scope of its own; should one
              // still be left here, it is not ended with this oneshot service.
              . "KillMode=process\n"
-             . "TimeoutStartSec=600\n";
+             . "TimeoutStartSec=600\n"
+             // Every check would put its banner and verdict into the journal
+             // (about 2,000 runs a day); what it did is in its own log, and
+             // errors still reach the journal on stderr.
+             . "StandardOutput=null\n";
     }
 
     public function timerUnit()
@@ -514,7 +518,7 @@ class expVelocityWatchdog
         if ( $available !== null )
         {
             if ( !is_dir( dirname( $available ) ) )
-                @mkdir( dirname( $available ), 0755, true );
+                eZDir::mkdir( dirname( $available ), false, true );
             if ( !is_file( $available ) )
             {
                 @file_put_contents( $available, $this->confText() );
@@ -524,7 +528,7 @@ class expVelocityWatchdog
             if ( !is_file( $enabled ) )
             {
                 if ( !is_dir( dirname( $enabled ) ) )
-                    @mkdir( dirname( $enabled ), 0755, true );
+                    eZDir::mkdir( dirname( $enabled ), false, true );
                 if ( is_link( $enabled ) )
                     @unlink( $enabled );
                 @symlink( '../conf-available/' . basename( $available ), $enabled );
