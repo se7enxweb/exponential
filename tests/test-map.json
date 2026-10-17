@@ -266,7 +266,8 @@
       "tests/tests/design/AdminStylingRulesTest.php",
       "tests/tests/design/AdminHeaderTest.php",
       "tests/tests/design/AdminLogoTest.php",
-      "tests/tests/design/AdminPhoneMenuTest.php"
+      "tests/tests/design/AdminPhoneMenuTest.php",
+      "tests/tests/design/AdminHeaderTabOrderTest.php"
     ],
     "design/admin4/templates/parts/a4_header_user.tpl": [
       "tests/tests/design/AdminHeaderTest.php",
@@ -542,7 +543,8 @@
     ],
     "design/admin4l/templates/explayouts/block/admin_*.tpl": [
       "tests/tests/design/AdminHeaderTest.php",
-      "tests/tests/design/AdminIconsTest.php"
+      "tests/tests/design/AdminIconsTest.php",
+      "tests/tests/design/AdminHeaderTabOrderTest.php"
     ],
     "design/admin4/stylesheets/pagelayout.css": [
       "tests/tests/design/AdminHeaderTest.php",
@@ -998,13 +1000,23 @@
       "tests/tests/kernel/classes/setup/EditorSiteaccessTabsTest.php"
     ],
     "design/admin4l/templates/pagelayout.tpl": [
-      "tests/tests/design/Admin4lReviewTest.php"
+      "tests/tests/design/Admin4lReviewTest.php",
+      "tests/tests/design/AdminHeaderTabOrderTest.php"
     ],
     "design/admin4l/templates/explayouts/block/admin_toolbar_right.tpl": [
       "tests/tests/design/Admin4lReviewTest.php"
     ],
     "design/admin4l/templates/explayouts/block/admin_toolbar_developer.tpl": [
       "tests/tests/design/Admin4lReviewTest.php"
+    ],
+    "design/admin4l/templates/explayouts/block/admin_menu_button.tpl": [
+      "tests/tests/design/AdminHeaderTabOrderTest.php"
+    ],
+    "design/admin4l/templates/explayouts/block/admin_sidebar_controls.tpl": [
+      "tests/tests/design/AdminHeaderTabOrderTest.php"
+    ],
+    "design/admin4l/templates/explayouts/block/admin_sidebar_toggles.tpl": [
+      "tests/tests/design/AdminHeaderTabOrderTest.php"
     ]
   },
   "generated": {

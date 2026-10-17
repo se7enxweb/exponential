@@ -60,7 +60,7 @@ Blocks (`[AdminBlockSettings]` in `explayouts.ini`, each `Group=admin`; the view
 
 | Part of the page | Blocks |
 |---|---|
-| Header | `admin_logo`, `admin_search`, `admin_theme_switch`, `admin_sidebar_toggles`, `admin_tab_menu` (for the **topmenu** zone: it draws only the list items, the page draws the one menu panel around them) |
+| Header | `admin_logo`, `admin_menu_button`, `admin_search`, `admin_theme_switch`, `admin_sidebar_controls` (the page draws the logo and the menu button before the menu panel and the rest of the header zone after it, so the Tab order is admin4's; `admin_sidebar_toggles`, the menu button and the sidebar controls in one block, still works in layouts stored before the split, and is drawn after the tools); `admin_tab_menu` for the **topmenu** zone: it draws only the list items, the page draws the one menu panel around them |
 | Left sidebar | `admin_left_menu` (the menu of the current navigation part; optional parameter `part` forces one), `admin_content_tree` |
 | Right sidebar | `admin_toolbar_right`, `admin_toolbar_developer` (the toolbars `admin_right` and `admin_developer` of `toolbar.ini`, as admin4 draws them, in admin4's order), or the single tools `admin_clear_cache`, `admin_bookmarks`, `admin_current_user`, `admin_preferences`, `admin_quick_settings` |
 | Page | `admin_breadcrumb`, `admin_module_result`, `admin_footer`, `admin_popup_menu`, `admin_overlay`, `admin_debug_area` |

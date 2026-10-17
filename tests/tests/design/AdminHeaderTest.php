@@ -255,7 +255,7 @@ class AdminHeaderTest extends PHPUnit\Framework\TestCase
             $block = array( 1 => substr( $layout, $open, strpos( $layout, '{/cache-block}', $at ) - $open ) );
         }
         // admin4l draws the header zone (admin_theme_switch.tpl includes this template) in the same block
-        $this->assertStringContainsString( "{include uri='design:explayouts/admin_zone.tpl' layout=\$admin_layout zone_identifier='header'}", $block[1] );
+        $this->assertStringContainsString( "{include uri='design:explayouts/admin_zone.tpl' layout=\$admin_layout zone_identifier='header' skip=array( 'admin_logo', 'admin_menu_button' )}", $block[1] );
         $this->assertStringContainsString( "{include uri='design:page_topmenu.tpl'}", self::file( 'design/admin4/templates/page_header.tpl' ) );
         $this->assertStringContainsString( '$user_hash = concat( $current_user.role_id_list|implode( \',\' ), \',\', $current_user.limited_assignment_value_list|implode( \',\' )', self::file( 'design/admin4/templates/pagelayout.tpl' ) );
 

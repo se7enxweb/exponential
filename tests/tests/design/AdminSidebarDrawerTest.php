@@ -103,7 +103,7 @@ class AdminSidebarDrawerTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'start:--', 'click-right:-R', 'focus:left:-R', 'tab>page:-R' ), $s['trapOutside']['states'] );
         // the tab reports the state
         foreach ( array( 'admin4' => 'design/admin4/templates/page_topmenu.tpl',
-                         'admin4l' => 'design/admin4l/templates/explayouts/block/admin_sidebar_toggles.tpl' ) as $design => $path )
+                         'admin4l' => 'design/admin4l/templates/explayouts/block/admin_sidebar_controls.tpl' ) as $design => $path )
         {
             $this->assertStringContainsString( 'class="sidebar-control right" aria-controls="rightmenu" aria-expanded="false"', self::read( $path ), $design );
         }
