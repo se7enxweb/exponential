@@ -327,13 +327,20 @@ $ViewList['systemupgrade'] = array(
     'params' => array( ) );
 
 // The log viewer (doc/features/6.0/log-viewer.md): the page, its feed (polls, searches, related lines; JSON, short
-// requests, never held open) and its actions (POST only). The file is named by ?file=<path relative to the root>.
+// requests, never held open) and its actions (POST only). The page's permalinks name a log by its key and its state
+// by view parameters: setup/logs/view/<key>/(level)/error/(search)/timeout/(follow)/0 (expLogPermalink); a link of
+// the old form setup/logs?file=<path> answers 301 with the permalink.
 $ViewList['logs'] = array(
     'functions' => array( 'logs' ),
     'script' => 'logs.php',
     'ui_context' => 'administration',
     'default_navigation_part' => 'ezsetupnavigationpart',
-    'params' => array() );
+    'params' => array( 'Mode', 'Key' ),
+    'unordered_params' => array( 'rotation' => 'rotation', 'level' => 'level', 'search' => 'search', 'regex' => 'regex',
+                                 'case' => 'case', 'from' => 'from', 'to' => 'to', 'siteaccess' => 'siteaccess', 'uri' => 'uri',
+                                 'ip' => 'ip', 'reference' => 'reference', 'scope' => 'scope', 'rotations' => 'rotations',
+                                 'cursor' => 'cursor', 'offset' => 'offset', 'follow' => 'follow', 'wrap' => 'wrap',
+                                 'unmask' => 'unmask', 'done' => 'done', 'ok' => 'ok' ) );
 
 $ViewList['logsfeed'] = array(
     'functions' => array( 'logs' ),

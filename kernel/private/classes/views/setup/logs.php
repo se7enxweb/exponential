@@ -19,11 +19,9 @@ namespace Exponential\View\Kernel\Setup
 
 class Logs extends \Exponential\Runnable\ModuleView
 {
-    /** The search fields read from the request */
-    const SEARCH_FIELDS = array( 'q', 'regex', 'case', 'levels', 'from', 'to', 'siteaccess', 'uri', 'ip', 'reference' );
-
-    /** The outcomes of actions the page may report (done=<action>) */
-    const DONE = array( 'rotate', 'truncate', 'delete' );
+    /** The fields of the old query string (setup/logs?file=...&q=...) that a redirect carries into the permalink */
+    const LEGACY_FIELDS = array( 'q', 'regex', 'case', 'levels', 'from', 'to', 'siteaccess', 'uri', 'ip', 'reference', 'scope',
+                                 'rotations', 'cursor', 'offset', 'follow', 'wrap', 'unmask', 'done', 'ok' );
 
     public function run( array $scope )
     {
@@ -31,37 +29,88 @@ class Logs extends \Exponential\Runnable\ModuleView
         $Module = $Params['Module'];
         $http = \eZHTTPTool::instance();
 
-        $askUnmask = $http->hasGetVariable( 'unmask' ) && (string)$http->getVariable( 'unmask' ) === '1';
-        $viewer = \expLogViewer::forCurrentUser( $askUnmask );
-        if ( !$viewer->enabled() )
+        $config = \expLogViewerConfig::instance();
+        if ( !$config->enabled( 'LogViewerSettings', 'LogViewer' ) )
             return $Module->handleError( \eZError::KERNEL_MODULE_NOT_FOUND, 'kernel' );
-        $config = $viewer->config();
-        $locator = $viewer->locator();
+        $locator = new \expLogFileLocator( $config );
 
-        $error = '';
-        $fileID = $http->hasGetVariable( 'file' ) && is_string( $http->getVariable( 'file' ) ) ? (string)$http->getVariable( 'file' ) : '';
-        $file = $fileID !== '' ? $locator->resolve( $fileID ) : null;
-        if ( $fileID !== '' && $file === null )
-            $error = 'not_allowed';
-        if ( $file === null )
+        // The old links (?file=<path>) and the search form without JavaScript (?key=...&q=...): the same view as a
+        // permalink. 301 for an old link, 303 for a form.
+        if ( !empty( $_GET ) && ( isset( $_GET['file'] ) || isset( $_GET['key'] ) ) )
         {
-            $default = $locator->defaultID();
-            $file = $default !== null ? $locator->resolve( $default ) : null;
+            $legacy = isset( $_GET['file'] ) && !isset( $_GET['key'] );
+            $in = array();
+            foreach ( self::LEGACY_FIELDS as $field )
+                if ( isset( $_GET[$field] ) )
+                    $in[$field] = $_GET[$field];
+            $state = \expLogPermalink::state( $in, false );
+            $target = null;
+            if ( $legacy )
+            {
+                $file = is_string( $_GET['file'] ) ? $locator->resolve( $_GET['file'] ) : null;
+                if ( $file !== null )
+                {
+                    $state['rotation'] = $file['rotation'];
+                    $target = \expLogPermalink::build( $file['key'], $state );
+                }
+            }
+            else if ( is_string( $_GET['key'] ) && $locator->resolveKey( $_GET['key'], isset( $_GET['rotation'] ) ? (int)$_GET['rotation'] : 0 ) !== null )
+            {
+                $state['rotation'] = isset( $_GET['rotation'] ) ? (int)$_GET['rotation'] : 0;
+                $target = \expLogPermalink::build( (string)$_GET['key'], $state );
+            }
+            if ( $target !== null )
+            {
+                $url = '/' . $target;
+                \eZURI::transformURI( $url );
+                if ( method_exists( '\eZExecution', 'discardOutputBuffers' ) )
+                    \eZExecution::discardOutputBuffers();
+                header( $legacy ? 'HTTP/1.1 301 Moved Permanently' : 'HTTP/1.1 303 See Other' );
+                header( 'Location: ' . $url );
+                header( 'Cache-Control: no-store' );
+                \eZExecution::cleanExit();
+            }
+            return $this->notFound( $Module );
         }
 
-        // the search, when the page was opened with one
-        $in = array();
-        foreach ( self::SEARCH_FIELDS as $field )
-            if ( $http->hasGetVariable( $field ) )
-                $in[$field] = $http->getVariable( $field );
+        // setup/logs/view/<key>/(name)/value...; setup/logs alone opens the default log
+        $mode = isset( $Params['Mode'] ) ? (string)$Params['Mode'] : '';
+        $key = isset( $Params['Key'] ) ? (string)$Params['Key'] : '';
+        if ( $mode !== '' && $mode !== 'view' )
+            return $this->notFound( $Module );
+        $state = \expLogPermalink::state( $Params, true );
+        if ( $mode === 'view' && $key === '' )
+            return $Module->redirectTo( '/setup/logs' );
+
+        $askUnmask = $state['unmask'];
+        $viewer = new \expLogViewer( $config, $locator, $askUnmask && \expLogViewer::can( 'unmasklogs' ) );
+        $error = '';
+        if ( $mode === 'view' )
+        {
+            $file = $locator->resolveKey( $key, $state['rotation'] );
+            if ( $file === null )
+                return $this->notFound( $Module );
+        }
+        else
+        {
+            $file = null;
+            $defaultKey = (string)$config->get( 'LogViewerSettings', 'DefaultKey' );
+            if ( $defaultKey !== '' )
+                $file = $locator->resolveKey( $defaultKey, 0 );
+            if ( $file === null )
+            {
+                $default = $locator->defaultID();
+                $file = $default !== null ? $locator->resolve( $default ) : null;
+            }
+        }
+
+        // the search, when the view asks for one
+        $in = \expLogPermalink::criteriaInput( $state );
         $criteria = \expLogSearch::criteria( $in, $config->int( 'SearchSettings', 'MaxPatternLength' ) );
-        $searching = $criteria['q'] !== '' || $criteria['levels'] || $criteria['from'] !== null || $criteria['to'] !== null
-                     || $criteria['siteaccess'] !== '' || $criteria['uri'] !== '' || $criteria['ip'] !== '' || $criteria['reference'] !== ''
-                     || $criteria['invalid'];
-        $scopeName = $http->hasGetVariable( 'scope' ) && in_array( $http->getVariable( 'scope' ), array( 'file', 'kernel', 'all' ), true )
-                     ? (string)$http->getVariable( 'scope' ) : ( $criteria['reference'] !== '' ? 'kernel' : 'file' );
-        $rotations = $http->hasGetVariable( 'rotations' ) ? (bool)$http->getVariable( 'rotations' ) : $criteria['reference'] !== '';
-        $cursor = $http->hasGetVariable( 'cursor' ) && is_string( $http->getVariable( 'cursor' ) ) ? (string)$http->getVariable( 'cursor' ) : '';
+        $searching = \expLogPermalink::searching( $state ) || $criteria['invalid'];
+        $scopeName = $state['scope'] !== 'file' ? $state['scope'] : ( $criteria['reference'] !== '' ? 'kernel' : 'file' );
+        $rotations = $state['rotations'] || $criteria['reference'] !== '';
+        $cursor = $state['cursor'];
 
         $limit = \expLogRateLimit::forSession( $config );
         $initial = null;
@@ -86,10 +135,11 @@ class Logs extends \Exponential\Runnable\ModuleView
                 $initial = $viewer->tail( $file['id'], -1 );
         }
 
-        $done = $http->hasGetVariable( 'done' ) && in_array( $http->getVariable( 'done' ), self::DONE, true ) ? (string)$http->getVariable( 'done' ) : '';
+        $done = $state['done'];
         $token = \expLogViewer::formToken();
         $client = $config->clientSettings();
         $navigator = \expLogViewer::navigatorForCurrentUser();
+        $permalink = $file !== null ? \expLogPermalink::build( $file['key'], array( 'rotation' => $file['rotation'] ) + $state, array( 'done', 'ok', 'unmask' ) ) : '';
 
         $siteAccesses = array();
         $ini = \eZINI::instance();
@@ -118,7 +168,11 @@ class Logs extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'log_token_field', $token['field'] );
         $tpl->setVariable( 'log_token', $token['token'] );
         $tpl->setVariable( 'log_done', $done );
-        $tpl->setVariable( 'log_done_ok', $http->hasGetVariable( 'ok' ) && (string)$http->getVariable( 'ok' ) === '1' );
+        $tpl->setVariable( 'log_done_ok', $state['ok'] );
+        // the permalink of this view (without the outcome of an action and without unmask), its key and its state
+        $tpl->setVariable( 'log_permalink', $permalink );
+        $tpl->setVariable( 'log_key', $file !== null ? $file['key'] : '' );
+        $tpl->setVariable( 'log_view_state', $state );
         $tpl->setVariable( 'log_siteaccesses', $siteAccesses );
         $tpl->setVariable( 'log_max_download', $config->int( 'ActionSettings', 'MaxDownloadBytes' ) );
         // the data the script starts from, as JSON in a script element of type application/json
@@ -126,6 +180,7 @@ class Logs extends \Exponential\Runnable\ModuleView
             'file' => $file !== null ? \expLogViewer::fileInfo( $file ) : null,
             'initial' => $initial, 'search' => $search, 'related' => $related, 'searching' => $searching,
             'client' => $client, 'unmasked' => $viewer->unmasked(),
+            'key' => $file !== null ? $file['key'] : '', 'view' => $state, 'permalink' => $permalink,
         ), $flags ) );
 
         $Result = array();
@@ -134,6 +189,18 @@ class Logs extends \Exponential\Runnable\ModuleView
         $Result['path'] = array( array( 'url' => 'setup/menu', 'text' => \ezpI18n::tr( 'kernel/setup', 'Setup' ) ),
                                  array( 'url' => false, 'text' => \ezpI18n::tr( 'kernel/setup', 'Log files' ) ) );
         return $Result;
+    }
+
+    /**
+     * A key, a rotation or an old link the viewer may not open: the kernel's "not found" page (404), the same for a
+     * key that does not exist and for one that is not allowed, so the answer tells nothing about the disk.
+     *
+     * @param \eZModule $Module
+     * @return array
+     */
+    protected function notFound( $Module )
+    {
+        return $Module->handleError( \eZError::KERNEL_NOT_FOUND, 'kernel' );
     }
 }
 

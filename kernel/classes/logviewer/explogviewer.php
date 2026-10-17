@@ -226,7 +226,9 @@ class expLogViewer
     {
         return array( 'id' => $file['id'], 'name' => $file['name'], 'dir' => $file['dir'], 'group' => $file['group'],
                       'archive' => (bool)$file['archive'], 'gz' => (bool)$file['gz'], 'size' => (int)$file['size'],
-                      'mtime' => (int)$file['mtime'], 'ino' => (int)$file['ino'], 'level' => $file['level'] );
+                      'mtime' => (int)$file['mtime'], 'ino' => (int)$file['ino'], 'level' => $file['level'],
+                      'key' => isset( $file['key'] ) ? $file['key'] : '', 'rotation' => isset( $file['rotation'] ) ? (int)$file['rotation'] : 0,
+                      'label' => isset( $file['label'] ) ? $file['label'] : $file['name'], 'configured' => !empty( $file['configured'] ) );
     }
 
     /**

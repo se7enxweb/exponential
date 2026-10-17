@@ -66,11 +66,20 @@ class expLogParser
             return false;
         $c = $line[0];
         if ( $c === '[' )
-            return preg_match( '/^\[ ?(?:[A-Z][a-z]{2} \d|\d{4}-\d{2}-\d{2})/', $line ) === 1;
+            return preg_match( '/^\[ ?(?:[A-Z][a-z]{2} (?:\d|[A-Z][a-z]{2} {1,2}\d)|\d{4}-\d{2}-\d{2})/', $line ) === 1;
         if ( $c === '{' )
             return substr( rtrim( $line ), -1 ) === '}';
-        return $c >= '0' && $c <= '9' && preg_match( '/^\d{4}-\d{2}-\d{2}[T ]\d{2}:\d{2}/', $line ) === 1;
+        if ( $c >= '0' && $c <= '9' && preg_match( '/^\d{4}-\d{2}-\d{2}[T ]\d{2}:\d{2}/', $line ) === 1 )
+            return true;
+        // a web server's access log: every line is an entry
+        return strpos( $line, '] "' ) !== false && preg_match( self::RE_ACCESS, $line ) === 1;
     }
+
+    /** A web server's access log, common or combined: host ident user [time] "request" status bytes ... */
+    const RE_ACCESS = '#^(\S+) \S+ (\S+) \[(\d{2}/[A-Z][a-z]{2}/\d{4}:\d{2}:\d{2}:\d{2} [+\-]\d{4})\] "(?:(\S+) (\S+)(?: [^"]*)?|[^"]*)" (\d{3}) (\S+)(.*)$#s';
+
+    /** A web server's error log (Apache 2.4): [Fri Oct 17 01:54:58.123456 2026] [module:level] [pid N] [client ip:port] message */
+    const RE_APACHE_ERROR = '/^\[([A-Z][a-z]{2} [A-Z][a-z]{2} {1,2}\d{1,2} \d{2}:\d{2}:\d{2}(?:\.\d+)? \d{4})\] \[(?:[\w\-]+:)?(\w+)\](?: \[pid \d+(?::tid \d+)?\])?(?: \[client ([^\]]+)\])? ?(.*)$/s';
 
     /**
      * The header fields of the first line of an entry.
@@ -96,6 +105,23 @@ class expLogParser
             $data = json_decode( $line, true );
             if ( is_array( $data ) )
                 return self::jsonHeader( $data );
+        }
+        if ( $line[0] === '[' && preg_match( self::RE_APACHE_ERROR, $line, $m ) )
+        {
+            $client = isset( $m[3] ) ? preg_replace( '/:\d+$/', '', $m[3] ) : '';
+            return array( 'time_text' => $m[1], 'time' => self::time( preg_replace( '/\.\d+/', '', $m[1] ) ), 'ip' => $client,
+                          'siteaccess' => '', 'url' => '', 'message' => $m[2] . ': ' . ( isset( $m[4] ) ? $m[4] : '' ),
+                          'format' => 'apache_error', 'level' => self::level( $m[2] . ':' ) );
+        }
+        if ( strpos( $line, '] "' ) !== false && preg_match( self::RE_ACCESS, $line, $m ) )
+        {
+            $d = DateTime::createFromFormat( 'd/M/Y:H:i:s O', $m[3] );
+            $status = (int)$m[6];
+            return array( 'time_text' => $m[3], 'time' => $d ? $d->getTimestamp() : null, 'ip' => $m[1], 'siteaccess' => '',
+                          'url' => isset( $m[5] ) ? (string)$m[5] : '',
+                          'message' => ( $m[4] !== '' ? $m[4] . ' ' . $m[5] . ' ' : '' ) . $status . ' ' . $m[7] . $m[8],
+                          'format' => 'access', 'status' => $status,
+                          'level' => $status >= 500 ? 'error' : ( $status >= 400 ? 'warning' : 'notice' ) );
         }
         if ( preg_match( self::RE_ISO, $line, $m ) )
             return array( 'time_text' => $m[1], 'time' => self::time( $m[1] ), 'ip' => '', 'siteaccess' => '', 'url' => '',
@@ -280,7 +306,7 @@ class expLogParser
                       'time' => $h !== null ? $h['time'] : null, 'time_text' => $h !== null ? $h['time_text'] : '',
                       'ip' => $h !== null ? $h['ip'] : '', 'siteaccess' => $h !== null ? $h['siteaccess'] : '',
                       'url' => $h !== null ? $h['url'] : '', 'format' => $h !== null ? $h['format'] : '',
-                      'level' => $h !== null || $fileLevel !== '' ? self::level( $levelText, $fileLevel ) : 'notice',
+                      'level' => isset( $h['level'] ) ? $h['level'] : ( $h !== null || $fileLevel !== '' ? self::level( $levelText, $fileLevel ) : 'notice' ),
                       'source' => $h !== null ? self::source( $h ) : '',
                       'text' => $text, 'truncated' => !empty( $current['truncated'] ),
                       'references' => array_values( array_unique( $refs[0] ) ) );

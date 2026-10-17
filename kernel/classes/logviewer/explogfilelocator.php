@@ -23,7 +23,11 @@ class expLogFileLocator
     const GROUP_KERNEL = 'kernel';
     const GROUP_SITE = 'site';
     const GROUP_EXTENSIONS = 'extensions';
+    const GROUP_WEBSERVER = 'webserver';
     const GROUP_ARCHIVES = 'archives';
+
+    /** The shape of a log key: what a permalink /setup/logs/view/<key> may name */
+    const KEY_PATTERN = '/^[A-Za-z0-9][A-Za-z0-9._\-]{0,63}$/';
 
     /** The longest id accepted */
     const MAX_ID_LENGTH = 512;
@@ -36,6 +40,12 @@ class expLogFileLocator
 
     /** @var array|null real directory path => id of the directory (relative), this instance */
     protected $directories = null;
+
+    /** @var array|null the configured logs, this instance (configuredLogs()) */
+    protected $configured = null;
+
+    /** @var array|null the listing, this instance (listFiles()) */
+    protected $listing = null;
 
     /**
      * @param expLogViewerConfig $config
@@ -159,6 +169,8 @@ class expLogFileLocator
     {
         if ( !self::validId( $id ) )
             return null;
+        if ( $id[0] === '@' )
+            return $this->resolveConfigured( $id );
         $name = basename( $id );
         if ( !$this->nameAllowed( $name ) )
             return null;
@@ -213,8 +225,14 @@ class expLogFileLocator
         }
         if ( $gz && $rotation === 0 && $base === $plain )
             $rotation = -1; // a compressed file without a number: an archive all the same
+        $configured = $dirID !== '' && $dirID[0] === '@' ? $this->configuredLogs() : array();
+        $ini = isset( $configured[substr( $dirID, 1 )] ) ? $configured[substr( $dirID, 1 )] : null;
+        if ( $ini !== null )
+            $base = $ini['base'];
         if ( $rotation !== 0 || $gz )
             $group = self::GROUP_ARCHIVES;
+        else if ( $ini !== null )
+            $group = $ini['group'];
         else if ( $this->isKernelName( $base ) && $this->isKernelDirectory( $dirID ) )
             $group = self::GROUP_KERNEL;
         else if ( $this->isSiteDirectory( $dirID ) )
@@ -224,7 +242,147 @@ class expLogFileLocator
         return array( 'id' => ( $dirID !== '' ? $dirID . '/' : '' ) . $name, 'name' => $name, 'dir' => $dirID, 'group' => $group,
                       'base' => $base, 'base_id' => ( $dirID !== '' ? $dirID . '/' : '' ) . $base,
                       'rotation' => $rotation, 'gz' => $gz, 'archive' => $group === self::GROUP_ARCHIVES,
-                      'level' => $this->fileLevel( $name ) );
+                      'level' => $this->fileLevel( $name ), 'key' => self::keyFor( $dirID, $base ),
+                      'label' => $ini !== null && $ini['label'] !== '' ? $ini['label'] : $base,
+                      'configured' => $ini !== null );
+    }
+
+    /**
+     * The key of a log in the permalinks (doc/features/6.0/log-viewer.md, "Permalinks"). Pure.
+     *  - a log configured in LogList[] (directory id "@<key>"): its key;
+     *  - var/log/<name>.log: <name>, e.g. error, debug, expmcp;
+     *  - var/<site>/log/<name>.log: <site>-<name>, e.g. site-storage;
+     *  - any other allowed directory: the directory with - for /, then -<name>.
+     * Characters other than letters, digits, . _ - become -.
+     *
+     * @param string $dirID
+     * @param string $base the current file's name
+     * @return string
+     */
+    public static function keyFor( $dirID, $base )
+    {
+        if ( $dirID !== '' && $dirID[0] === '@' )
+            return substr( $dirID, 1 );
+        $name = preg_replace( '/\.log$/', '', (string)$base );
+        if ( $dirID === 'var/log' )
+            $key = $name;
+        else if ( preg_match( '#^var/([^/]+)/log$#', $dirID, $m ) )
+            $key = $m[1] . '-' . $name;
+        else
+            $key = str_replace( '/', '-', $dirID ) . '-' . $name;
+        $key = preg_replace( '/[^A-Za-z0-9._\-]+/', '-', $key );
+        return ltrim( substr( $key, 0, 64 ), '.-_' );
+    }
+
+    /**
+     * The logs configured by key ([LogViewerSettings] LogList[], LogPath[], LogLabel[], LogGroup[]): the web server's
+     * logs and any other file outside the log directories. A key without a path (the default of the web server's
+     * keys) or whose path is not a regular file is left out. The path is the administrator's choice in the settings,
+     * so it may be outside the installation root; its rotations are the files <name>.N and <name>.N.gz beside it.
+     *
+     * @return array key => key, path (real), dir (real directory), base, label, group
+     */
+    public function configuredLogs()
+    {
+        if ( $this->configured !== null )
+            return $this->configured;
+        $out = array();
+        $paths = $this->config->hash( 'LogViewerSettings', 'LogPath' );
+        $labels = $this->config->hash( 'LogViewerSettings', 'LogLabel' );
+        $groups = $this->config->hash( 'LogViewerSettings', 'LogGroup' );
+        $known = array( self::GROUP_KERNEL, self::GROUP_SITE, self::GROUP_EXTENSIONS, self::GROUP_WEBSERVER );
+        foreach ( $this->config->lst( 'LogViewerSettings', 'LogList' ) as $key )
+        {
+            if ( !preg_match( self::KEY_PATTERN, $key ) || !isset( $paths[$key] ) || trim( (string)$paths[$key] ) === '' )
+                continue;
+            $path = str_replace( '\\', '/', trim( (string)$paths[$key] ) );
+            if ( strpos( $path, "\0" ) !== false )
+                continue;
+            if ( $path[0] !== '/' )
+                $path = $this->config->root() . '/' . $path;
+            $real = realpath( $path );
+            if ( $real === false || !is_file( $real ) )
+                continue;
+            $real = str_replace( '\\', '/', $real );
+            $group = isset( $groups[$key] ) && in_array( trim( (string)$groups[$key] ), $known, true ) ? trim( (string)$groups[$key] ) : self::GROUP_WEBSERVER;
+            $out[$key] = array( 'key' => $key, 'path' => $real, 'dir' => dirname( $real ), 'base' => basename( $real ),
+                                'label' => isset( $labels[$key] ) ? trim( (string)$labels[$key] ) : '', 'group' => $group );
+        }
+        return $this->configured = $out;
+    }
+
+    /**
+     * A file of a configured log: "@<key>/<name>", where <name> is the log's file or one of its rotations.
+     *
+     * @param string $id
+     * @return array|null as resolve()
+     */
+    protected function resolveConfigured( $id )
+    {
+        if ( !preg_match( '#^@([^/]+)/([^/]+)$#', $id, $m ) )
+            return null;
+        $logs = $this->configuredLogs();
+        if ( !isset( $logs[$m[1]] ) )
+            return null;
+        $log = $logs[$m[1]];
+        $name = $m[2];
+        if ( !self::isRotationName( $log['base'], $name ) )
+            return null;
+        $path = $log['dir'] . '/' . $name;
+        if ( !is_file( $path ) || !is_readable( $path ) )
+            return null;
+        // a rotation that is a link leading out of the log's directory is not the log's
+        $target = realpath( $path );
+        if ( $target === false || dirname( str_replace( '\\', '/', $target ) ) !== $log['dir'] )
+            return null;
+        $stat = @stat( $path );
+        if ( $stat === false )
+            return null;
+        $info = $this->describe( '@' . $log['key'], $name );
+        $info['path'] = $path;
+        $info['size'] = (int)$stat['size'];
+        $info['mtime'] = (int)$stat['mtime'];
+        $info['ino'] = (int)$stat['ino'];
+        return $info;
+    }
+
+    /**
+     * Whether a name is a log's own file or one of its rotations (<base>, <base>.N, <base>.N.gz, <base>.gz). Pure.
+     *
+     * @param string $base
+     * @param string $name
+     * @return bool
+     */
+    public static function isRotationName( $base, $name )
+    {
+        return $name === $base || $name === $base . '.gz' || preg_match( '/^' . preg_quote( $base, '/' ) . '\.\d{1,4}(\.gz)?$/', $name ) === 1;
+    }
+
+    /**
+     * The file of a log key and rotation (0: the current file), when the viewer may open it.
+     *
+     * @param string $key
+     * @param int $rotation
+     * @return array|null as resolve()
+     */
+    public function resolveKey( $key, $rotation = 0 )
+    {
+        if ( !is_string( $key ) || !preg_match( self::KEY_PATTERN, $key ) )
+            return null;
+        $rotation = (int)$rotation;
+        $found = null;
+        foreach ( $this->listFiles() as $list )
+        {
+            foreach ( $list as $info )
+            {
+                if ( $info['key'] !== $key || $info['rotation'] !== $rotation )
+                    continue;
+                // a plain rotation before a compressed one of the same number
+                if ( $found === null || ( $found['gz'] && !$info['gz'] ) )
+                    $found = $info;
+            }
+        }
+        return $found !== null ? $this->resolve( $found['id'] ) : null;
     }
 
     /** @return bool the name is one of KernelLogs[] */
@@ -273,7 +431,10 @@ class expLogFileLocator
      */
     public function listFiles()
     {
-        $groups = array( self::GROUP_KERNEL => array(), self::GROUP_SITE => array(), self::GROUP_EXTENSIONS => array(), self::GROUP_ARCHIVES => array() );
+        if ( $this->listing !== null )
+            return $this->listing;
+        $groups = array( self::GROUP_KERNEL => array(), self::GROUP_SITE => array(), self::GROUP_EXTENSIONS => array(), self::GROUP_WEBSERVER => array(),
+                         self::GROUP_ARCHIVES => array() );
         $seen = array();
         foreach ( $this->directories() as $real => $dirID )
         {
@@ -305,6 +466,31 @@ class expLogFileLocator
                 $groups[$info['group']][] = $info;
             }
         }
+        // the logs configured by key (the web server's ...): the file and its rotations beside it
+        foreach ( $this->configuredLogs() as $key => $log )
+        {
+            $names = @scandir( $log['dir'] );
+            if ( !is_array( $names ) )
+                continue;
+            foreach ( $names as $name )
+            {
+                if ( !self::isRotationName( $log['base'], $name ) )
+                    continue;
+                $path = $log['dir'] . '/' . $name;
+                $target = realpath( $path );
+                if ( $target === false || dirname( str_replace( '\\', '/', $target ) ) !== $log['dir'] )
+                    continue;
+                $stat = @stat( $path );
+                if ( $stat === false || ( $stat['mode'] & 0170000 ) !== 0100000 )
+                    continue;
+                $info = $this->describe( '@' . $key, $name );
+                $info['size'] = (int)$stat['size'];
+                $info['mtime'] = (int)$stat['mtime'];
+                $info['ino'] = (int)$stat['ino'];
+                $info['readable'] = is_readable( $path );
+                $groups[$info['group']][] = $info;
+            }
+        }
         $kernelOrder = array_flip( $this->config->lst( 'LogViewerSettings', 'KernelLogs' ) );
         foreach ( $groups as $group => &$list )
         {
@@ -325,7 +511,7 @@ class expLogFileLocator
             } );
         }
         unset( $list );
-        return $groups;
+        return $this->listing = $groups;
     }
 
     /**

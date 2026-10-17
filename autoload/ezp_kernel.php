@@ -1131,6 +1131,7 @@ return array(
       'expLogFileLocator'                                            => 'kernel/classes/logviewer/explogfilelocator.php',
       'expLogFileStats'                                              => 'kernel/classes/logviewer/explogfilestats.php',
       'expLogParser'                                                 => 'kernel/classes/logviewer/explogparser.php',
+      'expLogPermalink'                                              => 'kernel/classes/logviewer/explogpermalink.php',
       'expLogRateLimit'                                              => 'kernel/classes/logviewer/explogratelimit.php',
       'expLogRedactor'                                               => 'kernel/classes/logviewer/explogredactor.php',
       'expLogSearch'                                                 => 'kernel/classes/logviewer/explogsearch.php',

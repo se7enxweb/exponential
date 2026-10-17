@@ -32,6 +32,11 @@ class expLogViewerConfig
             'KernelLogs' => array( 'error.log', 'warning.log', 'notice.log', 'debug.log', 'strict.log', 'deprecated.log', 'auth.log',
                                    'cronjob*.log', 'storage.log', 'setup.log', 'mail.log', 'trashpurge.log' ),
             'DefaultFile' => 'var/log/error.log',
+            'DefaultKey' => 'error',
+            'LogList' => array( 'webserver-access', 'webserver-error' ),
+            'LogPath' => array(),
+            'LogLabel' => array( 'webserver-access' => 'Web server access log', 'webserver-error' => 'Web server error log' ),
+            'LogGroup' => array(),
             'FileLevels' => array( 'error.log*;error', '*error*.log*;error', 'warning.log*;warning', 'strict.log*;warning',
                                    'deprecated.log*;notice', 'notice.log*;notice', 'debug.log*;debug' ),
         ),
@@ -206,6 +211,24 @@ class expLogViewerConfig
         foreach ( $value as $item )
             if ( is_scalar( $item ) && trim( (string)$item ) !== '' )
                 $out[] = trim( (string)$item );
+        return $out;
+    }
+
+    /**
+     * A setting with keys (LogPath[<key>]=...): key => value, the non-empty scalar ones.
+     *
+     * @param string $group
+     * @param string $name
+     * @return array
+     */
+    public function hash( $group, $name )
+    {
+        $value = $this->get( $group, $name );
+        $out = array();
+        if ( is_array( $value ) )
+            foreach ( $value as $k => $v )
+                if ( is_string( $k ) && is_scalar( $v ) && trim( (string)$v ) !== '' )
+                    $out[$k] = trim( (string)$v );
         return $out;
     }
 

@@ -36,7 +36,8 @@ class Logsaction extends \Exponential\Runnable\ModuleView
             return $Module->redirectTo( '/setup/logs' );
 
         $fileID = $http->hasPostVariable( 'File' ) && is_string( $http->postVariable( 'File' ) ) ? (string)$http->postVariable( 'File' ) : '';
-        $back = '/setup/logs' . ( $fileID !== '' && \expLogFileLocator::validId( $fileID ) ? '?file=' . rawurlencode( $fileID ) : '' );
+        $backFile = $fileID !== '' ? $viewer->locator()->resolve( $fileID ) : null;
+        $back = $backFile !== null ? '/' . \expLogPermalink::build( $backFile['key'], array( 'rotation' => $backFile['rotation'] ) ) : '/setup/logs';
         if ( $http->hasPostVariable( 'CancelButton' ) )
             return $Module->redirectTo( $back );
 
@@ -61,6 +62,9 @@ class Logsaction extends \Exponential\Runnable\ModuleView
         $file = $viewer->locator()->resolve( $fileID );
         if ( $file === null )
             return $Module->handleError( \eZError::KERNEL_NOT_FOUND, 'kernel' );
+        // a log configured by key (the web server's) belongs to its program: read and download only
+        if ( $action !== 'download' && !empty( $file['configured'] ) )
+            return $Module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' );
 
         if ( $action === 'download' )
         {
@@ -110,8 +114,8 @@ class Logsaction extends \Exponential\Runnable\ModuleView
             $after['renamed'] = $outcome['renamed'];
         \expLogViewer::audit( $action, $file, $after );
         // after a removed rotation, the current file of it
-        $target = $action === 'delete' ? ( $file['dir'] !== '' ? $file['dir'] . '/' : '' ) . $file['base'] : $file['id'];
-        return $Module->redirectTo( '/setup/logs?file=' . rawurlencode( $target ) . '&done=' . $action . '&ok=' . ( $outcome['ok'] ? '1' : '0' ) );
+        $rotation = $action === 'truncate' ? $file['rotation'] : 0;
+        return $Module->redirectTo( '/' . \expLogPermalink::build( $file['key'], array( 'rotation' => $rotation, 'done' => $action, 'ok' => (bool)$outcome['ok'] ) ) );
     }
 }
 
