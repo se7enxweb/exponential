@@ -19,6 +19,9 @@
  *  FP-06 - html.a4-js (a4_head.js, before the first paint) draws the right column's disclosures closed from the start
  *  FP-07 - the content tree scrolls in a card that fills the column: Trash, the content finder and the width buttons
  *          stand at its foot and do not move while the tree is built
+ *  FP-08 - those rules only reach the card that is the column's own child (#leftmenu-design > #content-tree): a menu
+ *          that wraps the tree in a box of its own with lists after it (the newsletter menu) keeps the ordinary flow,
+ *          where flex-basis 0 left the card one heading high and drew the tree over the lists
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminFirstPaintColumnsTest.php
  *
@@ -216,7 +219,7 @@ class AdminFirstPaintColumnsTest extends PHPUnit\Framework\TestCase
                            self::declarations( $css, '#leftmenu-design:has(> #content-tree)' ) );
         $this->assertSame( array( 'flex' => 'none' ), self::declarations( $css, '#leftmenu-design:has(> #content-tree) > *' ) );
         $this->assertSame( array( 'flex' => '1 1 0', 'min-height' => '8rem', 'overflow' => 'auto' ),
-                           self::declarations( $css, '#content-tree #contentstructure' ) );
+                           self::declarations( $css, '#leftmenu-design > #content-tree #contentstructure' ) );
         // the cards the rules are written for: #content-tree, its .box-bc > .box-ml > .box-content, the tree in it
         foreach ( array( 'content', 'media', 'my', 'user' ) as $part )
         {
@@ -224,5 +227,33 @@ class AdminFirstPaintColumnsTest extends PHPUnit\Framework\TestCase
             $this->assertMatchesRegularExpression( '/<div id="content-tree">.*<div class="box-bc"><div class="box-ml"><div class="box-content">\s*(\{[^}]*\}\s*)*<div id="contentstructure">/s',
                                                    $menu, $part );
         }
+    }
+
+    public function testTheTreeCardRulesOnlyReachTheColumnsOwnCard()
+    {
+        $css = self::read( 'design/admin4/stylesheets/admin4.css' );
+        $this->assertSame( array( 'display' => 'flex', 'flex' => '1 1 0', 'flex-direction' => 'column', 'min-height' => '0' ),
+                           self::declarations( $css, '#leftmenu-design > #content-tree > .box-bc > .box-ml > .box-content' ) );
+        // every selector that sizes the card's inner boxes or the tree starts at the column's own card
+        preg_match_all( '/([^{}]+)\{([^}]*)\}/', preg_replace( '#/\*.*?\*/#s', '', $css ), $rules, PREG_SET_ORDER );
+        $checked = 0;
+        foreach ( $rules as $rule )
+        {
+            if ( strpos( $rule[2], 'flex' ) === false && strpos( $rule[2], 'min-height' ) === false )
+            {
+                continue;
+            }
+            foreach ( explode( ',', $rule[1] ) as $selector )
+            {
+                $selector = trim( $selector );
+                if ( preg_match( '/#content-tree(\s*>\s*\.box-bc|\s+#contentstructure)/', $selector ) )
+                {
+                    ++$checked;
+                    $this->assertStringStartsWith( '#leftmenu-design > #content-tree', $selector,
+                                                   'a wrapped tree (the newsletter menu) would collapse to its heading' );
+                }
+            }
+        }
+        $this->assertGreaterThanOrEqual( 4, $checked );
     }
 }

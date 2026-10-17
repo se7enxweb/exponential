@@ -167,11 +167,17 @@
     "design/admin4/templates/dashboard/audit.tpl": [
       "tests/tests/design/AdminTimelineTest.php"
     ],
+    "design/admin*/templates/popupmenu/popup_sub_siteaccess_menus.tpl": [
+      "tests/tests/design/AdminPopupSiteAccessMenuVariablesTest.php"
+    ],
     "design/admin4/templates/tabs/audit/node.tpl": [
       "tests/tests/design/AdminTimelineTest.php"
     ],
     "kernel/classes/ezdbgarbagecollector.php": [
       "tests/tests/kernel/classes/eZDBGarbageCollectorBasketQueryTest.php"
+    ],
+    "kernel/classes/ezcontentobjecttreenode.php": [
+      "tests/tests/kernel/classes/eZContentObjectTreeNodeMissingPathLogTest.php"
     ],
     "kernel/common/ezpi18n.php": [
       "tests/tests/kernel/common/ezpI18nMissingTranslationLogTest.php"
