@@ -3521,6 +3521,122 @@
         <source>information collector</source>
         <translation>recolector de información</translation>
     </message>
+    <message>
+        <source>Fields of this form</source>
+        <translation>Campos de este formulario</translation>
+    </message>
+    <message>
+        <source>Text</source>
+        <translation>Texto</translation>
+    </message>
+    <message>
+        <source>Rich text</source>
+        <translation>Texto enriquecido</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Número</translation>
+    </message>
+    <message>
+        <source>Yes/no</source>
+        <translation>Sí/no</translation>
+    </message>
+    <message>
+        <source>Choice</source>
+        <translation>Selección</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Fecha</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Hora</translation>
+    </message>
+    <message>
+        <source>Link</source>
+        <translation>Enlace</translation>
+    </message>
+    <message>
+        <source>E-mail</source>
+        <translation>Correo electrónico</translation>
+    </message>
+    <message>
+        <source>Relation</source>
+        <translation>Relación</translation>
+    </message>
+    <message>
+        <source>Image</source>
+        <translation>Imagen</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Archivo</translation>
+    </message>
+    <message>
+        <source>Media</source>
+        <translation>Multimedia</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Etiquetas</translation>
+    </message>
+    <message>
+        <source>People</source>
+        <translation>Personas</translation>
+    </message>
+    <message>
+        <source>User account</source>
+        <translation>Cuenta de usuario</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Ubicación</translation>
+    </message>
+    <message>
+        <source>Rating</source>
+        <translation>Valoración</translation>
+    </message>
+    <message>
+        <source>Metadata</source>
+        <translation>Metadatos</translation>
+    </message>
+    <message>
+        <source>Shop</source>
+        <translation>Tienda</translation>
+    </message>
+    <message>
+        <source>Table</source>
+        <translation>Tabla</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Ajuste</translation>
+    </message>
+    <message>
+        <source>Package</source>
+        <translation>Paquete</translation>
+    </message>
+    <message>
+        <source>Notification</source>
+        <translation>Notificación</translation>
+    </message>
+    <message>
+        <source>Security</source>
+        <translation>Seguridad</translation>
+    </message>
+    <message>
+        <source>Newsletter</source>
+        <translation>Boletín</translation>
+    </message>
+    <message>
+        <source>Feed</source>
+        <translation>Fuente de noticias</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>Otro</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/edit_draft</name>

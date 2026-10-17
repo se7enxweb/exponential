@@ -28,6 +28,10 @@
   border-radius: var(--a4-radius-s);
   background-color: var(--a4-card);
 }
+/* zebra, as the data tables (--a4-zebra): every second policy of a list and every second role card of role/list,
+   so a long list reads row by row; a moved policy's tint below still wins */
+.a4-role-policies > .a4-role-policy:where(:nth-child(even of :not([hidden]))),
+#role-list > .a4-card:where(:nth-child(even of :not([hidden]))) { background-color: var(--a4-zebra); }
 .a4-role-policy.is-full { border-color: var(--a4-bad-line); box-shadow: inset var(--a4-space-1) 0 0 var(--a4-bad); }
 .a4-role-policy.is-roles { box-shadow: inset var(--a4-space-1) 0 0 var(--a4-warn); }
 .a4-role-policy.is-selected { border-color: var(--a4-accent); }

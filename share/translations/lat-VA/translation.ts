@@ -3412,6 +3412,122 @@
         <source>information collector</source>
         <translation>collector notitiae</translation>
     </message>
+    <message>
+        <source>Fields of this form</source>
+        <translation>Campi huius formulae</translation>
+    </message>
+    <message>
+        <source>Text</source>
+        <translation>Textus</translation>
+    </message>
+    <message>
+        <source>Rich text</source>
+        <translation>Textus ornatus</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Numerus</translation>
+    </message>
+    <message>
+        <source>Yes/no</source>
+        <translation>Ita/non</translation>
+    </message>
+    <message>
+        <source>Choice</source>
+        <translation>Electio</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Dies</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Hora</translation>
+    </message>
+    <message>
+        <source>Link</source>
+        <translation>Nexus</translation>
+    </message>
+    <message>
+        <source>E-mail</source>
+        <translation>Epistula electronica</translation>
+    </message>
+    <message>
+        <source>Relation</source>
+        <translation>Relatio</translation>
+    </message>
+    <message>
+        <source>Image</source>
+        <translation>Imago</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fasciculus</translation>
+    </message>
+    <message>
+        <source>Media</source>
+        <translation>Res mediales</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Pittacia</translation>
+    </message>
+    <message>
+        <source>People</source>
+        <translation>Homines</translation>
+    </message>
+    <message>
+        <source>User account</source>
+        <translation>Ratio usoris</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Locus</translation>
+    </message>
+    <message>
+        <source>Rating</source>
+        <translation>Aestimatio</translation>
+    </message>
+    <message>
+        <source>Metadata</source>
+        <translation>Notae datorum</translation>
+    </message>
+    <message>
+        <source>Shop</source>
+        <translation>Taberna</translation>
+    </message>
+    <message>
+        <source>Table</source>
+        <translation>Tabula</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Optio</translation>
+    </message>
+    <message>
+        <source>Package</source>
+        <translation>Sarcina</translation>
+    </message>
+    <message>
+        <source>Notification</source>
+        <translation>Monitio</translation>
+    </message>
+    <message>
+        <source>Security</source>
+        <translation>Securitas</translation>
+    </message>
+    <message>
+        <source>Newsletter</source>
+        <translation>Litterae nuntiae</translation>
+    </message>
+    <message>
+        <source>Feed</source>
+        <translation>Fons nuntiorum</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>Aliud</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/edit_draft</name>
