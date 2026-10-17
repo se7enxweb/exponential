@@ -41,7 +41,8 @@ class expOEUploadExecutableTest extends PHPUnit\Framework\TestCase
     public static function executables()
     {
         $names = array( 'x.php', 'x.PHP', 'shell.php.jpg', 'x.phtml', 'x.phar', 'x.pht', 'x.php5', 'x.php8', 'run.sh', 'run.exe', 'x.cgi',
-                        'x.pl', 'x.asp', 'x.aspx', 'x.jsp', '.htaccess', '../../x.php', 'a\\b\\c.php' );
+                        'x.pl', 'x.asp', 'x.aspx', 'x.jsp', '.htaccess', '../../x.php', 'a\\b\\c.php',
+                        'x.php.', 'x.php ', "x.php\t.jpg", 'X.PhTmL', 'x.phtm', 'x.php6', 'x.shtml' );
         $cases = array();
         foreach ( array( 'engine', 'always', 'disabled' ) as $mode )
             foreach ( $names as $name )

@@ -21,7 +21,7 @@ class expOEEditor
     const PREFERENCE = 'ezoe_engine';
 
     /** @var array extensions that are never accepted, wherever they stand in a file name */
-    protected static $executableExtensions = array( 'php', 'php3', 'php4', 'php5', 'php7', 'php8', 'phtml', 'phar', 'pht', 'phps', 'pl', 'cgi', 'asp', 'aspx', 'jsp', 'sh', 'exe', 'htaccess' );
+    protected static $executableExtensions = array( 'php', 'php3', 'php4', 'php5', 'php7', 'php8', 'phtml', 'phar', 'pht', 'phtm', 'php6', 'phps', 'shtml', 'pl', 'cgi', 'asp', 'aspx', 'jsp', 'sh', 'exe', 'htaccess' );
 
     /** @var array|null id => expOEEditorEngine */
     protected static $engines = null;
@@ -316,7 +316,9 @@ class expOEEditor
         // would run what was uploaded
         foreach ( $parts as $part )
         {
-            if ( in_array( strtolower( $part ), self::$executableExtensions, true ) )
+            // "x.php " and "x.php." are stored as x.php by some file systems and servers: white space, NUL and dots
+            // around a part do not hide it
+            if ( in_array( strtolower( trim( $part, " \t\r\n\0\x0B." ) ), self::$executableExtensions, true ) )
                 return false;
         }
         $ini  = eZINI::instance( 'ezoe.ini' );
