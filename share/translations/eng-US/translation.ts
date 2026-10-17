@@ -63902,6 +63902,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Publishing, last 14 days</translation>
     </message>
     <message>
+        <source>Nothing was published in the last 14 days.</source>
+        <translation>Nothing was published in the last 14 days.</translation>
+    </message>
+    <message>
         <source>Quick actions</source>
         <translation>Quick actions</translation>
     </message>
