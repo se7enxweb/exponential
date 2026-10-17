@@ -180,7 +180,7 @@
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>New class</source>
@@ -889,7 +889,7 @@
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Remove the selected class groups. This will also remove all classes that only exist within the selected groups.</source>
@@ -1402,7 +1402,7 @@
     </message>
     <message>
         <source>Input did not validate</source>
-        <translation>Eingabe ist ungültig</translation>
+        <translation>Die Eingabe ist ungültig</translation>
     </message>
     <message>
         <source>%class_name [Class]</source>
@@ -1458,7 +1458,7 @@
     </message>
     <message>
         <source>Siteaccess</source>
-        <translation>Seitenzugang</translation>
+        <translation>Siteaccess</translation>
     </message>
     <message>
         <source>View template overrides for the &lt;%source_template_name&gt; template.</source>
@@ -1522,7 +1522,7 @@
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Remove selected languages from the list above.</source>
@@ -1972,7 +1972,7 @@
     </message>
     <message>
         <source>Create a workflow with an Approve event: choose the approvers and, if needed, the sections and user groups it applies to.</source>
-        <translation>Einen Workflow mit einem Freigabe-Ereignis anlegen: die Freigeber wählen und, falls nötig, die Bereiche und Benutzergruppen, für die er gilt.</translation>
+        <translation>Einen Workflow mit einem Freigabe-Ereignis anlegen: die Freigeber wählen und, falls nötig, die Sektionen und Benutzergruppen, für die er gilt.</translation>
     </message>
     <message>
         <source>Decision</source>
@@ -2199,7 +2199,7 @@
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Invert selection.</source>
@@ -3378,7 +3378,7 @@
     <name>design/admin/content/draft</name>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Remove all</source>
@@ -3857,7 +3857,7 @@
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Remove selected locations.</source>
@@ -4845,7 +4845,7 @@
     </message>
     <message>
         <source>Pending</source>
-        <translation>Schwebend</translation>
+        <translation>Ausstehend</translation>
     </message>
     <message>
         <source>Archived</source>
@@ -4881,7 +4881,7 @@
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Remove the selected versions from the object.</source>
@@ -4997,7 +4997,7 @@
     </message>
     <message>
         <source>The list shows every version of the object. You can compare and copy its published, archived and rejected versions and your own; a draft or pending version of someone else only with the policy content/versionread for it.</source>
-        <translation>Die Liste zeigt alle Versionen des Objekts. Seine veröffentlichten, archivierten und abgelehnten Versionen und Ihre eigenen können Sie vergleichen und kopieren; einen Entwurf oder eine wartende Version eines anderen nur mit der Richtlinie content/versionread dafür.</translation>
+        <translation>Die Liste zeigt alle Versionen des Objekts. Seine veröffentlichten, archivierten und abgelehnten Versionen und Ihre eigenen können Sie vergleichen und kopieren; einen Entwurf oder eine ausstehende Version eines anderen nur mit der Richtlinie content/versionread dafür.</translation>
     </message>
     <message>
         <source>The versions were not compared</source>
@@ -5487,7 +5487,7 @@
     </message>
     <message>
         <source>My pending items (%pending_count)</source>
-        <translation>Ihre wartenden Einträge (%pending_count)</translation>
+        <translation>Ihre ausstehenden Einträge (%pending_count)</translation>
     </message>
     <message>
         <source>Waiting for approval</source>
@@ -5507,7 +5507,7 @@
     </message>
     <message>
         <source>A version is pending when you have sent it for publishing and a workflow holds it, usually an approval: it is published when it is approved. Here are your pending versions and, if you approve content, the versions waiting for your approval that you may read. Open the approval to read the comments or to approve.</source>
-        <translation>Eine Version wartet, wenn Sie sie zum Veröffentlichen geschickt haben und ein Workflow sie hält, meist eine Freigabe: Sie wird veröffentlicht, wenn sie freigegeben ist. Hier stehen Ihre wartenden Versionen und, wenn Sie Inhalte freigeben, die Versionen, die auf Ihre Freigabe warten und die Sie lesen dürfen. Öffnen Sie die Freigabe, um die Kommentare zu lesen oder freizugeben.</translation>
+        <translation>Eine Version wartet, wenn Sie sie zum Veröffentlichen geschickt haben und ein Workflow sie hält, meist eine Freigabe: Sie wird veröffentlicht, wenn sie freigegeben ist. Hier stehen Ihre ausstehenden Versionen und, wenn Sie Inhalte freigeben, die Versionen, die auf Ihre Freigabe warten und die Sie lesen dürfen. Öffnen Sie die Freigabe, um die Kommentare zu lesen oder freizugeben.</translation>
     </message>
     <message>
         <source>Overview</source>
@@ -5555,7 +5555,7 @@
     </message>
     <message>
         <source>Pending versions</source>
-        <translation>Wartende Versionen</translation>
+        <translation>Ausstehende Versionen</translation>
     </message>
     <message>
         <source>%from to %to of %count</source>
@@ -5567,7 +5567,7 @@
     </message>
     <message>
         <source>No pending version matches these filters.</source>
-        <translation>Keine wartende Version passt zu diesen Filtern.</translation>
+        <translation>Keine ausstehende Version passt zu diesen Filtern.</translation>
     </message>
     <message>
         <source>Show all</source>
@@ -5643,7 +5643,7 @@
     </message>
     <message>
         <source>No workflow process or approval holds this version any more. If it stays pending, ask an administrator to look at Setup &gt; Workflow processes.</source>
-        <translation>Kein Workflow-Prozess und keine Freigabe hält diese Version mehr. Bleibt sie wartend, bitten Sie einen Administrator, unter Einstellungen &gt; Workflow-Prozesse nachzusehen.</translation>
+        <translation>Kein Workflow-Prozess und keine Freigabe hält diese Version mehr. Bleibt sie ausstehend, bitten Sie einen Administrator, unter Einstellungen &gt; Workflow-Prozesse nachzusehen.</translation>
     </message>
     <message>
         <source>Per page</source>
@@ -6498,7 +6498,7 @@
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Add language</source>
@@ -7192,7 +7192,7 @@
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Permanently remove the selected items.</source>
@@ -7300,7 +7300,7 @@
     </message>
     <message>
         <source>Owner</source>
-        <translation>Besitzer</translation>
+        <translation>Eigentümer</translation>
     </message>
     <message>
         <source>Parent exists: restores to its original place.</source>
@@ -7585,7 +7585,7 @@
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Remove selected alias from the list above.</source>
@@ -7828,7 +7828,7 @@
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Remove selected aliases from the list above.</source>
@@ -8171,7 +8171,7 @@
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Remove selected aliases from the list above.</source>
@@ -8677,7 +8677,7 @@
     </message>
     <message>
         <source>Pending</source>
-        <translation>Schwebend</translation>
+        <translation>Ausstehend</translation>
     </message>
     <message>
         <source>Archived</source>
@@ -8888,7 +8888,7 @@
     </message>
     <message>
         <source>Pending</source>
-        <translation>Schwebend</translation>
+        <translation>Ausstehend</translation>
     </message>
     <message>
         <source>Archived</source>
@@ -8940,7 +8940,7 @@
     </message>
     <message>
         <source>Siteaccess</source>
-        <translation>Seitenzugang</translation>
+        <translation>Siteaccess</translation>
     </message>
     <message>
         <source>You do not have permissions to manage the versions of this object.</source>
@@ -8968,7 +8968,7 @@
     </message>
     <message>
         <source>Your selected translation does not match the language of your selected siteaccess. This may lead to unexpected results in the preview, however it may also be what you intended.</source>
-        <translation>Die ausgewählte Sprache stimmt nicht überein mit der Sprache des ausgewählten Seitenzugangs. Das kann zu unerwarteten Ergebnissen in der Vorschau führen, kann aber auch von Ihnen beabsichtigt sein.</translation>
+        <translation>Die ausgewählte Sprache stimmt nicht überein mit der Sprache des ausgewählten Siteaccess. Das kann zu unerwarteten Ergebnissen in der Vorschau führen, kann aber auch von Ihnen beabsichtigt sein.</translation>
     </message>
     <message>
         <source>Back to edit</source>
@@ -9111,7 +9111,7 @@
     </message>
     <message>
         <source>Dynamic tree menu is disabled for this siteaccess!</source>
-        <translation>Das dynamische Baummenü ist für diesen Seitenzugang deaktiviert!</translation>
+        <translation>Das dynamische Baummenü ist für diesen Siteaccess deaktiviert!</translation>
     </message>
     <message>
         <source>(Hidden)</source>
@@ -9311,7 +9311,7 @@
     </message>
     <message>
         <source>Currently you do not have any pending items available.</source>
-        <translation>Sie haben keine schwebenden Einträge.</translation>
+        <translation>Sie haben keine ausstehenden Einträge.</translation>
     </message>
 </context>
 <context>
@@ -9615,7 +9615,7 @@
     </message>
     <message>
         <source>The site is using URL matching to determine which siteaccess to use, but the name of the siteaccess is missing from the URL. Try to add the name of the siteaccess; it should be specified before the name of the module.</source>
-        <translation>Im Link fehlt der Name des Seitenzugangs. Versuchen Sie, die URL um den Namen des Seitenzugangs zu ergänzen.</translation>
+        <translation>Im Link fehlt der Name des Siteaccess. Versuchen Sie, die URL um den Namen des Siteaccess zu ergänzen.</translation>
     </message>
     <message>
         <source>The requested view cannot be accessed.</source>
@@ -9651,7 +9651,7 @@
     </message>
     <message>
         <source>If the page belongs to an extension, the extension may not be active on this site.</source>
-        <translation>Gehört die Seite zu einer Erweiterung, ist die Erweiterung auf dieser Website möglicherweise nicht aktiv.</translation>
+        <translation>Gehört die Seite zu einer Extension, ist die Extension auf dieser Website möglicherweise nicht aktiv.</translation>
     </message>
     <message>
         <source>If the site uses the address to choose a siteaccess (for example /admin/...), make sure the siteaccess name is at the start of the address.</source>
@@ -9745,7 +9745,7 @@
     </message>
     <message>
         <source>Extensions</source>
-        <translation>Erweiterungen</translation>
+        <translation>Extensions</translation>
     </message>
     <message>
         <source>Exponential information: %version</source>
@@ -9841,7 +9841,7 @@
     </message>
     <message>
         <source>Order is the loading order: an extension earlier in the list overrides the settings and templates of the ones after it.</source>
-        <translation>Die Reihenfolge ist die Ladereihenfolge: Eine Erweiterung weiter oben in der Liste überschreibt die Einstellungen und Templates der nachfolgenden.</translation>
+        <translation>Die Reihenfolge ist die Ladereihenfolge: Eine Extension weiter oben in der Liste überschreibt die Einstellungen und Templates der nachfolgenden.</translation>
     </message>
     <message>
         <source>Order</source>
@@ -9885,7 +9885,7 @@
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>
-        <translation>Die folgende Liste enthält die Erweiterungen, die diese Exponential-Installation zur Laufzeit geladen hat.</translation>
+        <translation>Die folgende Liste enthält die Extensions, die diese Exponential-Installation zur Laufzeit geladen hat.</translation>
     </message>
     <message>
         <source>The following is a list of the third-party software that is distributed with this copy of Exponential. The list of third party software includes the license for the software in question and the directory or files that contain the third-party software.</source>
@@ -9905,7 +9905,7 @@
     </message>
     <message>
         <source>extensions active in this siteaccess, %on_disk on disk</source>
-        <translation>Erweiterungen in diesem Siteaccess aktiv, %on_disk im Dateisystem</translation>
+        <translation>Extensions in diesem Siteaccess aktiv, %on_disk im Dateisystem</translation>
     </message>
     <message>
         <source>third-party components</source>
@@ -9944,7 +9944,7 @@
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Remove selected collection.</source>
@@ -10046,7 +10046,7 @@
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Remove all information that was collected by the selected objects.</source>
@@ -10086,7 +10086,7 @@
     </message>
     <message>
         <source>Overview</source>
-        <translation>Überblick</translation>
+        <translation>Übersicht</translation>
     </message>
     <message>
         <source>Objects with collections</source>
@@ -10704,7 +10704,7 @@
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Remove the selected items from the list above.</source>
@@ -12288,7 +12288,7 @@
     </message>
     <message>
         <source>The average star rating (needs the ezstarrating extension); empty when never rated.</source>
-        <translation>Die durchschnittliche Sternebewertung (braucht die Erweiterung ezstarrating); leer, wenn nie bewertet.</translation>
+        <translation>Die durchschnittliche Sternebewertung (braucht die Extension ezstarrating); leer, wenn nie bewertet.</translation>
     </message>
     <message>
         <source>Ratings</source>
@@ -12296,7 +12296,7 @@
     </message>
     <message>
         <source>How many star ratings were given (needs the ezstarrating extension).</source>
-        <translation>Wie viele Sternebewertungen abgegeben wurden (braucht die Erweiterung ezstarrating).</translation>
+        <translation>Wie viele Sternebewertungen abgegeben wurden (braucht die Extension ezstarrating).</translation>
     </message>
     <message>
         <source>Object version</source>
@@ -12644,7 +12644,7 @@
     </message>
     <message>
         <source>The tags on the item (needs the eztags extension and a tags attribute).</source>
-        <translation>Die Tags des Elements (braucht die Erweiterung eztags und ein Tags-Attribut).</translation>
+        <translation>Die Tags des Elements (braucht die Extension eztags und ein Tags-Attribut).</translation>
     </message>
     <message>
         <source>Tag count</source>
@@ -12652,7 +12652,7 @@
     </message>
     <message>
         <source>How many tags the item has (needs the eztags extension).</source>
-        <translation>Wie viele Tags das Element hat (braucht die Erweiterung eztags).</translation>
+        <translation>Wie viele Tags das Element hat (braucht die Extension eztags).</translation>
     </message>
     <message>
         <source>Initial language</source>
@@ -12708,7 +12708,7 @@
     </message>
     <message>
         <source>Pending versions</source>
-        <translation>Wartende Versionen</translation>
+        <translation>Ausstehende Versionen</translation>
     </message>
     <message>
         <source>Versions waiting in a workflow, an approval for instance.</source>
@@ -13282,7 +13282,7 @@
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>My item notifications [%notification_count]</source>
@@ -13524,7 +13524,7 @@
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Auswahl entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Remove selected items.</source>
@@ -13713,7 +13713,7 @@
     </message>
     <message>
         <source>Select templates from the following siteaccesses</source>
-        <translation>Templates von folgendem Seiten Zugang verwenden</translation>
+        <translation>Templates aus folgenden Siteaccesses verwenden</translation>
     </message>
     <message>
         <source>Versions</source>
@@ -13781,7 +13781,7 @@
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Add subtree</source>
@@ -15160,7 +15160,7 @@ Falls Sie die Deinstallation im Moment nicht durchführen wollen, können Sie da
     </message>
     <message>
         <source>Extensions</source>
-        <translation>Erweiterungen</translation>
+        <translation>Extensions</translation>
     </message>
     <message>
         <source>Settings files</source>
@@ -15264,7 +15264,7 @@ Falls Sie die Deinstallation im Moment nicht durchführen wollen, können Sie da
     </message>
     <message>
         <source>Nothing is published and no published object is changed: each draft is reviewed and published by a person. Classes, settings, design files and extensions are not installed.</source>
-        <translation>Nichts wird veröffentlicht und kein veröffentlichtes Objekt geändert: Jeder Entwurf wird von einer Person geprüft und veröffentlicht. Klassen, Einstellungen, Design-Dateien und Erweiterungen werden nicht installiert.</translation>
+        <translation>Nichts wird veröffentlicht und kein veröffentlichtes Objekt geändert: Jeder Entwurf wird von einer Person geprüft und veröffentlicht. Klassen, Einstellungen, Design-Dateien und Extensions werden nicht installiert.</translation>
     </message>
     <message>
         <source>An object that exists already</source>
@@ -15568,7 +15568,7 @@ Falls Sie die Deinstallation im Moment nicht durchführen wollen, können Sie da
     </message>
     <message>
         <source>Extensions (%count)</source>
-        <translation>Erweiterungen (%count)</translation>
+        <translation>Extensions (%count)</translation>
     </message>
     <message>
         <source>Filter by name</source>
@@ -15628,7 +15628,7 @@ Falls Sie die Deinstallation im Moment nicht durchführen wollen, können Sie da
     </message>
     <message>
         <source>No extension matches the filter.</source>
-        <translation>Keine Erweiterung passt zum Filter.</translation>
+        <translation>Keine Extension passt zum Filter.</translation>
     </message>
     <message>
         <source>No image added yet.</source>
@@ -15716,7 +15716,7 @@ Falls Sie die Deinstallation im Moment nicht durchführen wollen, können Sie da
     </message>
     <message>
         <source>The files of extensions, as they are on this site. Exporting extensions has to be switched on first.</source>
-        <translation>Die Dateien von Erweiterungen, so wie sie auf dieser Site sind. Der Export von Erweiterungen muss zuerst eingeschaltet werden.</translation>
+        <translation>Die Dateien von Extensions, so wie sie auf dieser Site sind. Der Export von Extensions muss zuerst eingeschaltet werden.</translation>
     </message>
     <message>
         <source>The first entry in the package changelog. Then check the review below and create the package.</source>
@@ -15756,7 +15756,7 @@ Falls Sie die Deinstallation im Moment nicht durchführen wollen, können Sie da
     </message>
     <message>
         <source>Show the %count extensions of this site</source>
-        <translation>Die %count Erweiterungen dieser Site anzeigen</translation>
+        <translation>Die %count Extensions dieser Site anzeigen</translation>
     </message>
 </context>
 <context>
@@ -15843,7 +15843,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Import new package</source>
@@ -16023,7 +16023,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>A package carries content classes, content, extensions, settings or a whole site, to install here or to take to another installation. Packages are kept in repositories under %path: "local" holds the packages made or imported here, the others hold packages by vendor. The setup wizard installs new sites from these packages, and the published packages are built from them, so a package marked "Installer source" should be changed only on purpose.</source>
-        <translation>Ein Paket enthält Inhaltsklassen, Inhalte, Erweiterungen, Einstellungen oder eine ganze Site, um sie hier zu installieren oder in eine andere Installation mitzunehmen. Pakete liegen in Repositories unter %path: "local" enthält die hier erstellten oder importierten Pakete, die anderen enthalten Pakete nach Anbieter. Der Setup-Assistent installiert neue Sites aus diesen Paketen, und die veröffentlichten Pakete werden aus ihnen gebaut; ein als "Installer-Quelle" markiertes Paket sollte daher nur mit Absicht geändert werden.</translation>
+        <translation>Ein Paket enthält Inhaltsklassen, Inhalte, Extensions, Einstellungen oder eine ganze Site, um sie hier zu installieren oder in eine andere Installation mitzunehmen. Pakete liegen in Repositories unter %path: "local" enthält die hier erstellten oder importierten Pakete, die anderen enthalten Pakete nach Anbieter. Der Setup-Assistent installiert neue Sites aus diesen Paketen, und die veröffentlichten Pakete werden aus ihnen gebaut; ein als "Installer-Quelle" markiertes Paket sollte daher nur mit Absicht geändert werden.</translation>
     </message>
     <message>
         <source>Removed: %names.</source>
@@ -16581,7 +16581,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Siteaccess:</source>
-        <translation>Seitenzugang:</translation>
+        <translation>Siteaccess:</translation>
     </message>
     <message>
         <source>Global (override)</source>
@@ -17188,7 +17188,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Activate and deactivate extensions.</source>
-        <translation>Erweiterungen aktivieren und deaktivieren.</translation>
+        <translation>Extensions aktivieren und deaktivieren.</translation>
     </message>
     <message>
         <source>The settings of the whole site.</source>
@@ -17344,7 +17344,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Extensions</source>
-        <translation>Erweiterungen</translation>
+        <translation>Extensions</translation>
     </message>
     <message>
         <source>Ini settings</source>
@@ -17605,7 +17605,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>VAT rules</source>
-        <translation>USt Regeln</translation>
+        <translation>USt-Regeln</translation>
     </message>
     <message>
         <source>Product categories</source>
@@ -17625,7 +17625,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Dashboard</source>
-        <translation>Übersicht</translation>
+        <translation>Dashboard</translation>
     </message>
 </context>
 <context>
@@ -17929,7 +17929,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>%class, section %section, node %id, %children direct children</source>
-        <translation>%class, Bereich %section, Knoten %id, %children direkte Unterelemente</translation>
+        <translation>%class, Sektion %section, Knoten %id, %children direkte Unterelemente</translation>
     </message>
     <message>
         <source>Choose another source node. What is typed in the form is kept.</source>
@@ -18100,7 +18100,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Remove selected PDF exports.</source>
@@ -18280,7 +18280,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Overview</source>
-        <translation>Überblick</translation>
+        <translation>Übersicht</translation>
     </message>
     <message>
         <source>Exports</source>
@@ -18655,7 +18655,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Choose siteaccess</source>
-        <translation>Seitenzugang auswählen</translation>
+        <translation>Siteaccess auswählen</translation>
     </message>
     <message>
         <source>Create RSS/ATOM feed</source>
@@ -19237,7 +19237,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Add nodes</source>
@@ -19356,7 +19356,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Remove selected policies</source>
@@ -19638,7 +19638,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Remove selected roles.</source>
@@ -19869,7 +19869,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Add nodes</source>
@@ -20196,7 +20196,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>see the list of pending content</source>
-        <translation>die Liste wartender Inhalte sehen</translation>
+        <translation>die Liste ausstehender Inhalte sehen</translation>
     </message>
     <message>
         <source>send content to a friend</source>
@@ -20375,7 +20375,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Remove selected assignments</source>
@@ -20463,7 +20463,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>No extension handler evaluates this limitation, so this policy gives no access</source>
-        <translation>Keine Erweiterung wertet diese Einschränkung aus, daher gewährt diese Richtlinie keinen Zugriff</translation>
+        <translation>Keine Extension wertet diese Einschränkung aus, daher gewährt diese Richtlinie keinen Zugriff</translation>
     </message>
     <message>
         <source>(no handler, denies)</source>
@@ -20727,7 +20727,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <name>design/admin/rss/browse_user</name>
     <message>
         <source>Choose owner for RSS imported objects</source>
-        <translation>Einen Besitzer für per RSS importierte Objekte auswählen</translation>
+        <translation>Einen Eigentümer für per RSS importierte Objekte auswählen</translation>
     </message>
     <message>
         <source>Use the radio buttons to choose a user and click &quot;OK&quot;. The user will become the owner of the objects that were imported using RSS.</source>
@@ -20739,7 +20739,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Use the radio buttons to choose a user then click &quot;OK&quot;. The user will become the owner of the objects that were imported using RSS.</source>
-        <translation>Benutzen Sie die Optionsfelder, um einen Benutzer auszuwählen und klicken Sie dann auf &quot;OK&quot;. Der Benutzer wird der Besitzer der Objekte werden, die per RSS importiert wurden.</translation>
+        <translation>Benutzen Sie die Optionsfelder, um einen Benutzer auszuwählen und klicken Sie dann auf &quot;OK&quot;. Der Benutzer wird der Eigentümer der Objekte werden, die per RSS importiert wurden.</translation>
     </message>
     <message>
         <source>The owner needs no login of their own; the import creates the objects on their behalf.</source>
@@ -21102,7 +21102,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>A two letter code such as en, or a regional one such as en-us. Left empty the siteaccess language is used.</source>
-        <translation>Ein Code aus zwei Buchstaben wie en oder ein regionaler wie en-us. Bleibt das Feld leer, wird die Sprache des Seitenzugangs verwendet.</translation>
+        <translation>Ein Code aus zwei Buchstaben wie en oder ein regionaler wie en-us. Bleibt das Feld leer, wird die Sprache des Siteaccess verwendet.</translation>
     </message>
     <message>
         <source>Subtitle</source>
@@ -21314,7 +21314,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Take the ticked outlines out of the document.</source>
@@ -21545,7 +21545,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Click this button to select the user who should own the objects created by the import.</source>
-        <translation>Klicken Sie auf diesen Knopf, um den Benutzer auszuwählen, der Besitzer der vom Import erstellten Objekte sein soll.</translation>
+        <translation>Klicken Sie auf diesen Knopf, um den Benutzer auszuwählen, der Eigentümer der vom Import erstellten Objekte sein soll.</translation>
     </message>
     <message>
         <source>Use this drop down to select the type of object the import should create. Click the &quot;Set&quot; button to load the correct attribute types for the remaining fields.</source>
@@ -21740,7 +21740,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>New export</source>
@@ -22454,7 +22454,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>The other items were assigned. A section/assign policy decides which objects you may assign (its Class, Owner and Section limitations) and which sections you may assign them to (NewSection).</source>
-        <translation>Die übrigen Elemente wurden zugewiesen. Eine Richtlinie section/assign legt fest, welche Objekte Sie zuweisen dürfen (ihre Einschränkungen Klasse, Besitzer und Sektion) und welchen Sektionen (NewSection).</translation>
+        <translation>Die übrigen Elemente wurden zugewiesen. Eine Richtlinie section/assign legt fest, welche Objekte Sie zuweisen dürfen (ihre Einschränkungen Klasse, Eigentümer und Sektion) und welchen Sektionen (NewSection).</translation>
     </message>
     <message>
         <source>A section/assign policy allows this section, but no class of object it names. An administrator can widen its Class limitation.</source>
@@ -22738,7 +22738,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>New section</source>
@@ -23244,7 +23244,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Siteaccess setting</source>
-        <translation>Seitenzugangs- Einstellungen</translation>
+        <translation>Siteaccess-Einstellungen</translation>
     </message>
     <message>
         <source>Override setting (global)</source>
@@ -23288,7 +23288,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Input did not validate</source>
-        <translation>Die Eingabe konnte nicht validiert werden</translation>
+        <translation>Die Eingabe ist ungültig</translation>
     </message>
     <message>
         <source>%valfield is empty</source>
@@ -23348,7 +23348,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Using siteaccess</source>
-        <translation>Benutzt Seiten Zugang</translation>
+        <translation>Verwendeter Siteaccess</translation>
     </message>
     <message>
         <source>%ini_file consist of %blocks section(s) and %setting_count different setting(s)</source>
@@ -23364,7 +23364,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Select siteaccess</source>
-        <translation>Seiten Zugang auswählen</translation>
+        <translation>Siteaccess auswählen</translation>
     </message>
     <message>
         <source>Select</source>
@@ -23372,7 +23372,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Settings for %inifile in siteaccess %siteaccess</source>
-        <translation>Einstellungen für %inifile in Seiten Zugang %siteaccess</translation>
+        <translation>Einstellungen für %inifile im Siteaccess %siteaccess</translation>
     </message>
     <message>
         <source>[add setting]</source>
@@ -23392,7 +23392,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Ini setting</source>
@@ -23420,7 +23420,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Siteaccess</source>
-        <translation>Seitenzugang</translation>
+        <translation>Siteaccess</translation>
     </message>
     <message>
         <source>Values for each location setting are shown. The first values are lowest priority; the values toward the end have higher priority than the first ones.</source>
@@ -23504,7 +23504,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Using siteaccess:</source>
-        <translation>Verwendeter Seitenzugang:</translation>
+        <translation>Verwendeter Siteaccess:</translation>
     </message>
     <message>
         <source>%ini_file consist of %block_count section(s) and %setting_count different setting(s)</source>
@@ -23628,11 +23628,11 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>In an extension</source>
-        <translation>In einer Erweiterung</translation>
+        <translation>In einer Extension</translation>
     </message>
     <message>
         <source>Changes the extension’s own settings file, which an update of the extension replaces. Prefer the siteaccess or the global override.</source>
-        <translation>Ändert die Einstellungsdatei der Erweiterung selbst, die ein Update der Erweiterung ersetzt. Besser den Siteaccess oder den globalen Override wählen.</translation>
+        <translation>Ändert die Einstellungsdatei der Extension selbst, die ein Update der Extension ersetzt. Besser den Siteaccess oder den globalen Override wählen.</translation>
     </message>
     <message>
         <source>Saving clears the INI cache, so PHP-FPM and Velocity read the change on their next request.</source>
@@ -23660,15 +23660,15 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Extension %extension</source>
-        <translation>Erweiterung %extension</translation>
+        <translation>Extension %extension</translation>
     </message>
     <message>
         <source>Extension %extension for %siteaccess</source>
-        <translation>Erweiterung %extension für %siteaccess</translation>
+        <translation>Extension %extension für %siteaccess</translation>
     </message>
     <message>
         <source>Extension %extension (%dir)</source>
-        <translation>Erweiterung %extension (%dir)</translation>
+        <translation>Extension %extension (%dir)</translation>
     </message>
     <message>
         <source>Unknown</source>
@@ -23688,7 +23688,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Choose where to save the setting: the siteaccess, the global override or an active extension.</source>
-        <translation>Wählen Sie, wo die Einstellung gespeichert wird: im Siteaccess, im globalen Override oder in einer aktiven Erweiterung.</translation>
+        <translation>Wählen Sie, wo die Einstellung gespeichert wird: im Siteaccess, im globalen Override oder in einer aktiven Extension.</translation>
     </message>
     <message>
         <source>This setting is read only (site.ini [eZINISettings] ReadonlySettingList) and cannot be changed here.</source>
@@ -23716,7 +23716,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Every INI file is read in layers: settings/&lt;file&gt;.ini first, then the files of the active extensions and of the siteaccess, then settings/override. A later file wins: it replaces a plain value, and adds to an array unless it empties the array first. This page shows the value in effect, the file it comes from and every file that sets it. Passwords, keys, tokens and other secrets are never shown.</source>
-        <translation>Jede INI-Datei wird in Schichten gelesen: zuerst settings/&lt;Datei&gt;.ini, dann die Dateien der aktiven Erweiterungen und des Siteaccess, dann settings/override. Eine spätere Datei gewinnt: Sie ersetzt einen einfachen Wert und ergänzt ein Array, außer sie leert es zuerst. Diese Seite zeigt den wirksamen Wert, die Datei, aus der er kommt, und jede Datei, die ihn setzt. Passwörter, Schlüssel, Tokens und andere Geheimnisse werden nie angezeigt.</translation>
+        <translation>Jede INI-Datei wird in Schichten gelesen: zuerst settings/&lt;Datei&gt;.ini, dann die Dateien der aktiven Extensions und des Siteaccess, dann settings/override. Eine spätere Datei gewinnt: Sie ersetzt einen einfachen Wert und ergänzt ein Array, außer sie leert es zuerst. Diese Seite zeigt den wirksamen Wert, die Datei, aus der er kommt, und jede Datei, die ihn setzt. Passwörter, Schlüssel, Tokens und andere Geheimnisse werden nie angezeigt.</translation>
     </message>
     <message>
         <source>Nothing was changed.</source>
@@ -24032,7 +24032,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Remove takes a ticked setting out of settings/override or the siteaccess file that sets it last; the value of the next file down, or the default, takes over. Settings from settings/%file and from extensions cannot be removed here.</source>
-        <translation>Entfernen nimmt eine angehakte Einstellung aus settings/override oder der Siteaccess-Datei, die sie zuletzt setzt; dann gilt der Wert der nächsten Datei darunter oder der Standard. Einstellungen aus settings/%file und aus Erweiterungen lassen sich hier nicht entfernen.</translation>
+        <translation>Entfernen nimmt eine angehakte Einstellung aus settings/override oder der Siteaccess-Datei, die sie zuletzt setzt; dann gilt der Wert der nächsten Datei darunter oder der Standard. Einstellungen aus settings/%file und aus Extensions lassen sich hier nicht entfernen.</translation>
     </message>
 </context>
 <context>
@@ -24318,7 +24318,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Every siteaccess either requires a login or has no SiteSettings/SiteURL, so there is no page to fetch and store.</source>
-        <translation>Jeder Seitenzugang erfordert entweder eine Anmeldung oder hat keine SiteSettings/SiteURL, daher gibt es keine Seite, die abgerufen und gespeichert werden kann.</translation>
+        <translation>Jeder Siteaccess erfordert entweder eine Anmeldung oder hat keine SiteSettings/SiteURL, daher gibt es keine Seite, die abgerufen und gespeichert werden kann.</translation>
     </message>
     <message>
         <source>Pages are written to</source>
@@ -24790,7 +24790,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Settings, extensions and translations. A running Velocity keeps settings in memory: restart it after clearing them.</source>
-        <translation>Einstellungen, Erweiterungen und Übersetzungen. Ein laufendes Velocity hält Einstellungen im Speicher: starten Sie es nach dem Leeren neu.</translation>
+        <translation>Einstellungen, Extensions und Übersetzungen. Ein laufendes Velocity hält Einstellungen im Speicher: starten Sie es nach dem Leeren neu.</translation>
     </message>
     <message>
         <source>Images</source>
@@ -24814,7 +24814,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Caches of extensions that belong to no other group.</source>
-        <translation>Caches von Erweiterungen, die zu keiner anderen Gruppe gehören.</translation>
+        <translation>Caches von Extensions, die zu keiner anderen Gruppe gehören.</translation>
     </message>
     <message>
         <source>The rendered views of content: what a page shows of each object, per view mode and user.</source>
@@ -24902,7 +24902,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>The list of active extensions.</source>
-        <translation>Die Liste der aktiven Erweiterungen.</translation>
+        <translation>Die Liste der aktiven Extensions.</translation>
     </message>
     <message>
         <source>Compiled translations of the interface.</source>
@@ -25173,7 +25173,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>No siteaccess named &quot;%siteaccess&quot; is served by this installation.</source>
-        <translation>Diese Installation bedient keinen Seitenzugang namens „%siteaccess“.</translation>
+        <translation>Diese Installation bedient keinen Siteaccess namens „%siteaccess“.</translation>
     </message>
     <message>
         <source>The &quot;%part&quot; part is still running as process %pid. Wait for it, or stop it first.</source>
@@ -25951,15 +25951,15 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Extensions</source>
-        <translation>Erweiterungen</translation>
+        <translation>Extensions</translation>
     </message>
     <message>
         <source>Every extension this installation can see, in one list. The active ones come first, in the order of ActiveExtensions in %file: an extension higher in the list has the higher priority for settings, templates and designs. Move, activate and deactivate them here, then review and apply the changes in one step.</source>
-        <translation>Alle Erweiterungen, die diese Installation sieht, in einer Liste. Die aktiven stehen zuerst, in der Reihenfolge von ActiveExtensions in %file: Eine Erweiterung weiter oben hat Vorrang bei Einstellungen, Templates und Designs. Verschieben, aktivieren und deaktivieren Sie sie hier, prüfen Sie die Änderungen und übernehmen Sie sie in einem Schritt.</translation>
+        <translation>Alle Extensions, die diese Installation sieht, in einer Liste. Die aktiven stehen zuerst, in der Reihenfolge von ActiveExtensions in %file: Eine Extension weiter oben hat Vorrang bei Einstellungen, Templates und Designs. Verschieben, aktivieren und deaktivieren Sie sie hier, prüfen Sie die Änderungen und übernehmen Sie sie in einem Schritt.</translation>
     </message>
     <message>
         <source>The extensions were not changed.</source>
-        <translation>Die Erweiterungen wurden nicht geändert.</translation>
+        <translation>Die Extensions wurden nicht geändert.</translation>
     </message>
     <message>
         <source>Activated: %names</source>
@@ -25975,7 +25975,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>The autoload arrays were regenerated, and the INI, template override, design and active extension caches were cleared.</source>
-        <translation>Die Autoload-Arrays wurden neu erzeugt, und die Caches für INI, Template-Overrides, Designs und aktive Erweiterungen wurden geleert.</translation>
+        <translation>Die Autoload-Arrays wurden neu erzeugt, und die Caches für INI, Template-Overrides, Designs und aktive Extensions wurden geleert.</translation>
     </message>
     <message>
         <source>Velocity is running: restart it with ./console exp:velocity restart, so that its workers load the new list.</source>
@@ -25991,7 +25991,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>The active extensions were changed elsewhere since this page was drawn, so the list below starts again from the file. Make your changes again.</source>
-        <translation>Die aktiven Erweiterungen wurden anderswo geändert, seit diese Seite angezeigt wurde. Die Liste unten beginnt deshalb wieder mit dem Stand der Datei. Nehmen Sie Ihre Änderungen erneut vor.</translation>
+        <translation>Die aktiven Extensions wurden anderswo geändert, seit diese Seite angezeigt wurde. Die Liste unten beginnt deshalb wieder mit dem Stand der Datei. Nehmen Sie Ihre Änderungen erneut vor.</translation>
     </message>
     <message>
         <source>Overview</source>
@@ -26015,7 +26015,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>ExtensionOrdering is enabled, so the system loads the active extensions in the order their extension.xml dependencies (requires, uses, extends) give, and the written order only decides where nothing is declared. %count of %total load at another position than written; each card says where.</source>
-        <translation>ExtensionOrdering ist eingeschaltet: Das System lädt die aktiven Erweiterungen in der Reihenfolge, die ihre Abhängigkeiten in extension.xml (requires, uses, extends) vorgeben; die geschriebene Reihenfolge entscheidet nur, wo nichts angegeben ist. %count von %total werden an einer anderen Stelle geladen als geschrieben; jede Karte sagt, wo.</translation>
+        <translation>ExtensionOrdering ist eingeschaltet: Das System lädt die aktiven Extensions in der Reihenfolge, die ihre Abhängigkeiten in extension.xml (requires, uses, extends) vorgeben; die geschriebene Reihenfolge entscheidet nur, wo nichts angegeben ist. %count von %total werden an einer anderen Stelle geladen als geschrieben; jede Karte sagt, wo.</translation>
     </message>
     <message>
         <source>Show</source>
@@ -26087,7 +26087,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Find extensions</source>
-        <translation>Erweiterungen finden</translation>
+        <translation>Extensions finden</translation>
     </message>
     <message>
         <source>Search</source>
@@ -26107,15 +26107,15 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>All extensions</source>
-        <translation>Alle Erweiterungen</translation>
+        <translation>Alle Extensions</translation>
     </message>
     <message>
         <source>Use the arrows to move an active extension, or drag it by its grip (on the grip, the up and down arrow keys move it too). Activate places an extension after the extensions it requires and before the ones it extends, otherwise at the end.</source>
-        <translation>Verschieben Sie eine aktive Erweiterung mit den Pfeilen oder ziehen Sie sie am Griff (auf dem Griff verschieben auch die Pfeiltasten nach oben und unten). „Aktivieren“ setzt eine Erweiterung hinter die Erweiterungen, die sie benötigt, und vor die, die sie erweitert, sonst ans Ende.</translation>
+        <translation>Verschieben Sie eine aktive Extension mit den Pfeilen oder ziehen Sie sie am Griff (auf dem Griff verschieben auch die Pfeiltasten nach oben und unten). „Aktivieren“ setzt eine Extension hinter die Extensions, die sie benötigt, und vor die, die sie erweitert, sonst ans Ende.</translation>
     </message>
     <message>
         <source>No extension matches.</source>
-        <translation>Keine Erweiterung passt.</translation>
+        <translation>Keine Extension passt.</translation>
     </message>
     <message>
         <source>%name is now number %position.</source>
@@ -26123,7 +26123,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Showing %shown of %total extensions.</source>
-        <translation>%shown von %total Erweiterungen angezeigt.</translation>
+        <translation>%shown von %total Extensions angezeigt.</translation>
     </message>
     <message>
         <source>Position in ActiveExtensions</source>
@@ -26159,7 +26159,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Access extension: %siteaccess</source>
-        <translation>Access-Erweiterung: %siteaccess</translation>
+        <translation>Access-Extension: %siteaccess</translation>
     </message>
     <message>
         <source>A git checkout: updated with git, not by a package</source>
@@ -26227,7 +26227,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Changes are written only by Apply changes, after the review. Regenerate the autoload arrays after adding classes to an extension.</source>
-        <translation>Änderungen werden erst mit „Änderungen übernehmen“ nach der Prüfung geschrieben. Erzeugen Sie die Autoload-Arrays neu, nachdem Sie einer Erweiterung Klassen hinzugefügt haben.</translation>
+        <translation>Änderungen werden erst mit „Änderungen übernehmen“ nach der Prüfung geschrieben. Erzeugen Sie die Autoload-Arrays neu, nachdem Sie einer Extension Klassen hinzugefügt haben.</translation>
     </message>
     <message>
         <source>Regenerate autoload arrays</source>
@@ -26235,7 +26235,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>The autoload arrays of the extensions were regenerated.</source>
-        <translation>Die Autoload-Arrays der Erweiterungen wurden neu erzeugt.</translation>
+        <translation>Die Autoload-Arrays der Extensions wurden neu erzeugt.</translation>
     </message>
     <message>
         <source>Listed in ActiveExtensions, but its directory is missing.</source>
@@ -26263,7 +26263,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>%name is deactivated, but the siteaccesses %siteaccesses use its design %design, which no other active extension provides.</source>
-        <translation>%name wird deaktiviert, aber die Siteaccesses %siteaccesses verwenden sein Design %design, das keine andere aktive Erweiterung bereitstellt.</translation>
+        <translation>%name wird deaktiviert, aber die Siteaccesses %siteaccesses verwenden sein Design %design, das keine andere aktive Extension bereitstellt.</translation>
     </message>
     <message>
         <source>%name is deactivated: this switches off %what.</source>
@@ -26271,7 +26271,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Only the written order changes. The declared dependencies decide the loading order of these extensions, so they load in the same order as before.</source>
-        <translation>Nur die geschriebene Reihenfolge ändert sich. Die angegebenen Abhängigkeiten bestimmen die Ladereihenfolge dieser Erweiterungen, sie werden also in derselben Reihenfolge wie bisher geladen.</translation>
+        <translation>Nur die geschriebene Reihenfolge ändert sich. Die angegebenen Abhängigkeiten bestimmen die Ladereihenfolge dieser Extensions, sie werden also in derselben Reihenfolge wie bisher geladen.</translation>
     </message>
     <message>
         <source>the CSRF protection of every form</source>
@@ -26331,7 +26331,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Extensions</source>
         <comment>Exponential extensions</comment>
-        <translation>Erweiterungen</translation>
+        <translation>Extensions</translation>
     </message>
     <message>
         <source>Version</source>
@@ -27038,7 +27038,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>The first page requested on a cached siteaccess starts it.</source>
-        <translation>Die erste angeforderte Seite eines zwischengespeicherten Seitenzugangs startet ihn.</translation>
+        <translation>Die erste angeforderte Seite eines zwischengespeicherten Siteaccess startet ihn.</translation>
     </message>
     <message>
         <source>No server has counted yet: hit counts need APCu in the PHP that serves the site.</source>
@@ -27574,7 +27574,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Active extensions</source>
-        <translation>Aktive Erweiterungen</translation>
+        <translation>Aktive Extensions</translation>
     </message>
     <message>
         <source>in load order, with the version their extension.xml, ezinfo.php or composer.json states</source>
@@ -27594,7 +27594,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>extensions</source>
-        <translation>Erweiterungen</translation>
+        <translation>Extensions</translation>
     </message>
     <message>
         <source>on</source>
@@ -28526,7 +28526,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Extensions</source>
-        <translation>Erweiterungen</translation>
+        <translation>Extensions</translation>
     </message>
     <message>
         <source>Server</source>
@@ -28893,7 +28893,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>The page is errors/maintenance.html of the first active extension that has one, else share/maintenance.html.</source>
-        <translation>Die Seite ist errors/maintenance.html der ersten aktiven Erweiterung, die eine hat, sonst share/maintenance.html.</translation>
+        <translation>Die Seite ist errors/maintenance.html der ersten aktiven Extension, die eine hat, sonst share/maintenance.html.</translation>
     </message>
     <message>
         <source>Expected back around %local (%utc UTC).</source>
@@ -30486,7 +30486,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Implements the VAT handler interface</source>
-        <translation>Implementiert die Schnittstelle für MwSt.-Handler</translation>
+        <translation>Implementiert die Schnittstelle für USt-Handler</translation>
     </message>
     <message>
         <source>shop.ini [ShippingSettings] Handler and RepositoryDirectories[]</source>
@@ -30578,15 +30578,15 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>A kind of large content operation that runs in the background in batches, with a progress page, cancel and resume (content/job/&lt;id&gt;, exp:expcontentjob). The kernel ships remove, copy, move, hide, reveal, section, state, addlocation and removelocation; an extension adds its own, for example JobTypes[republish]=myExtJobRepublish.</source>
-        <translation>Eine Art umfangreicher Inhaltsoperation, die im Hintergrund in Stapeln läuft, mit Fortschrittsseite sowie Abbrechen und Fortsetzen (content/job/&lt;id&gt;, exp:expcontentjob). Der Kernel liefert remove, copy, move, hide, reveal, section, state, addlocation und removelocation; eine Erweiterung fügt eigene hinzu, zum Beispiel JobTypes[republish]=myExtJobRepublish.</translation>
+        <translation>Eine Art umfangreicher Inhaltsoperation, die im Hintergrund in Stapeln läuft, mit Fortschrittsseite sowie Abbrechen und Fortsetzen (content/job/&lt;id&gt;, exp:expcontentjob). Der Kernel liefert remove, copy, move, hide, reveal, section, state, addlocation und removelocation; eine Extension fügt eigene hinzu, zum Beispiel JobTypes[republish]=myExtJobRepublish.</translation>
     </message>
     <message>
         <source>A subclass of a command, cronjob part or view class, named in site.ini [RunnableSettings] Implementation[]. The file of the command, part or view stays as it is; Runnable::create() makes the subclass instead, and an entry that is not a subclass is ignored. A command reads it from settings/site.ini and settings/override only, because it starts before its siteaccess and extensions are loaded.</source>
-        <translation>Eine Unterklasse einer Kommando-, Cronjob-Teil- oder View-Klasse, die in site.ini [RunnableSettings] Implementation[] genannt wird. Die Datei des Kommandos, Teils oder Views bleibt unverändert; Runnable::create() erzeugt stattdessen die Unterklasse, und ein Eintrag, der keine Unterklasse ist, wird ignoriert. Ein Kommando liest den Eintrag nur aus settings/site.ini und settings/override, da es startet, bevor sein Siteaccess und die Erweiterungen geladen sind.</translation>
+        <translation>Eine Unterklasse einer Kommando-, Cronjob-Teil- oder View-Klasse, die in site.ini [RunnableSettings] Implementation[] genannt wird. Die Datei des Kommandos, Teils oder Views bleibt unverändert; Runnable::create() erzeugt stattdessen die Unterklasse, und ein Eintrag, der keine Unterklasse ist, wird ignoriert. Ein Kommando liest den Eintrag nur aus settings/site.ini und settings/override, da es startet, bevor sein Siteaccess und die Extensions geladen sind.</translation>
     </message>
     <message>
         <source>A word of the exp:ini command (console exp:ini &lt;action&gt; ...) or a place it can write settings. The kernel ships get, set, add, rem, clear, toggle, copy, where, list, scopes and actions; an extension adds its own, for example Actions[dump]=myExtIniActionDump makes "exp:ini dump" run that class, and ScopeProviders[]=myExtIniScopeProvider adds scopes such as a directory every cluster node shares.</source>
-        <translation>Ein Wort des Kommandos exp:ini (console exp:ini &lt;action&gt; ...) oder ein Ort, an den es Einstellungen schreiben kann. Der Kernel liefert get, set, add, rem, clear, toggle, copy, where, list, scopes und actions; eine Erweiterung fügt eigene hinzu, zum Beispiel lässt Actions[dump]=myExtIniActionDump "exp:ini dump" diese Klasse ausführen, und ScopeProviders[]=myExtIniScopeProvider ergänzt Geltungsbereiche wie ein Verzeichnis, das alle Cluster-Knoten gemeinsam nutzen.</translation>
+        <translation>Ein Wort des Kommandos exp:ini (console exp:ini &lt;action&gt; ...) oder ein Ort, an den es Einstellungen schreiben kann. Der Kernel liefert get, set, add, rem, clear, toggle, copy, where, list, scopes und actions; eine Extension fügt eigene hinzu, zum Beispiel lässt Actions[dump]=myExtIniActionDump "exp:ini dump" diese Klasse ausführen, und ScopeProviders[]=myExtIniScopeProvider ergänzt Geltungsbereiche wie ein Verzeichnis, das alle Cluster-Knoten gemeinsam nutzen.</translation>
     </message>
     <message>
         <source>Audit alert rule classes</source>
@@ -30730,7 +30730,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>%registries registries are declared in rad.ini by %origins sources (the kernel and extensions), with %entries entries. %limitations policy limitations give the values the role editor offers.</source>
-        <translation>%registries Registries sind in rad.ini von %origins Quellen (dem Kernel und Erweiterungen) deklariert, mit %entries Einträgen. %limitations Richtlinien-Einschränkungen liefern die Werte, die der Rollen-Editor anbietet.</translation>
+        <translation>%registries Registries sind in rad.ini von %origins Quellen (dem Kernel und Extensions) deklariert, mit %entries Einträgen. %limitations Richtlinien-Einschränkungen liefern die Werte, die der Rollen-Editor anbietet.</translation>
     </message>
     <message>
         <source>%broken registry entries cannot work and are shown as broken in the survey.</source>
@@ -30742,7 +30742,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>A list of implementations that an extension reads from its own settings or from its own code, such as AI providers and tools, MCP tools or queue job types. Declared in rad.ini, it is counted and checked by the extension point survey like the kernel's own registries: every entry is listed, and one whose class, method, template or block is missing is shown as broken.</source>
-        <translation>Eine Liste von Implementierungen, die eine Erweiterung aus ihren eigenen Einstellungen oder ihrem eigenen Code liest, etwa KI-Anbieter und -Werkzeuge, MCP-Werkzeuge oder Jobtypen der Warteschlange. In rad.ini deklariert, wird sie von der Übersicht der Erweiterungspunkte wie die Registries des Kernels gezählt und geprüft: Jeder Eintrag wird aufgelistet, und einer, dessen Klasse, Methode, Template oder Block fehlt, wird als defekt gezeigt.</translation>
+        <translation>Eine Liste von Implementierungen, die eine Extension aus ihren eigenen Einstellungen oder ihrem eigenen Code liest, etwa KI-Anbieter und -Werkzeuge, MCP-Werkzeuge oder Jobtypen der Warteschlange. In rad.ini deklariert, wird sie von der Übersicht der Erweiterungspunkte wie die Registries des Kernels gezählt und geprüft: Jeder Eintrag wird aufgelistet, und einer, dessen Klasse, Methode, Template oder Block fehlt, wird als defekt gezeigt.</translation>
     </message>
     <message>
         <source>rad.ini [RegistrySettings] Registries[]=&lt;key&gt; and [Registry_&lt;key&gt;] with Title, Ini, Section and Entries[&lt;variable&gt;]=&lt;check&gt;, or List=&lt;class&gt;::&lt;constant or method&gt;</source>
@@ -30766,7 +30766,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>An entry of a registry that rad.ini declares: the kernel or an extension says which ini blocks, or which class list, hold the entries and what each must be, and the extension point survey counts and checks every entry without the kernel naming the extension.</source>
-        <translation>Ein Eintrag einer Registry, die rad.ini deklariert: Der Kernel oder eine Erweiterung sagt, welche INI-Blöcke oder welche Klassenliste die Einträge enthalten und was jeder sein muss, und die Übersicht der Erweiterungspunkte zählt und prüft jeden Eintrag, ohne dass der Kernel die Erweiterung nennt.</translation>
+        <translation>Ein Eintrag einer Registry, die rad.ini deklariert: Der Kernel oder eine Extension sagt, welche INI-Blöcke oder welche Klassenliste die Einträge enthalten und was jeder sein muss, und die Übersicht der Erweiterungspunkte zählt und prüft jeden Eintrag, ohne dass der Kernel die Extension nennt.</translation>
     </message>
     <message>
         <source>A listener of a filter event in site.ini [Event] Listeners[]. The kernel passes a value and goes on with what the listener returns, so a listener that forgets to return it destroys the value.</source>
@@ -30794,7 +30794,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>A limitation of your own for a content function such as content/read, next to Class, Section and Subtree: an extension adds it to the function, and its handler decides for objects, nodes and versions and gives the SQL condition of list and tree fetches. Without a handler the limitation denies everywhere.</source>
-        <translation>Eine eigene Limitierung für eine Inhaltsfunktion wie content/read, neben Klasse, Sektion und Teilbaum: Eine Erweiterung fügt sie der Funktion hinzu, und ihr Handler entscheidet für Objekte, Knoten und Versionen und liefert die SQL-Bedingung der Listen- und Baumabfragen. Ohne Handler verweigert die Limitierung überall den Zugriff.</translation>
+        <translation>Eine eigene Limitierung für eine Inhaltsfunktion wie content/read, neben Klasse, Sektion und Teilbaum: Eine Extension fügt sie der Funktion hinzu, und ihr Handler entscheidet für Objekte, Knoten und Versionen und liefert die SQL-Bedingung der Listen- und Baumabfragen. Ohne Handler verweigert die Limitierung überall den Zugriff.</translation>
     </message>
     <message>
         <source>Cronjob part left out</source>
@@ -31827,7 +31827,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Siteaccess</source>
-        <translation>Seitenzugang</translation>
+        <translation>Siteaccess</translation>
     </message>
     <message>
         <source>None - just add the design to the chain</source>
@@ -31835,7 +31835,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Used only when siteaccess settings are ticked below.</source>
-        <translation>Wird nur verwendet, wenn unten Einstellungen für Seitenzugänge angehakt sind.</translation>
+        <translation>Wird nur verwendet, wenn unten Einstellungen für Siteaccesses angehakt sind.</translation>
     </message>
     <message>
         <source>What goes in it</source>
@@ -34745,15 +34745,15 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Siteaccess settings</source>
-        <translation>Einstellungen für Seitenzugänge</translation>
+        <translation>Einstellungen für Siteaccesses</translation>
     </message>
     <message>
         <source>Settings that apply to one siteaccess only and travel with this extension rather than living in settings/.</source>
-        <translation>Einstellungen, die nur für einen Seitenzugang gelten und mit dieser Extension wandern, statt in settings/ zu liegen.</translation>
+        <translation>Einstellungen, die nur für einen Siteaccess gelten und mit dieser Extension wandern, statt in settings/ zu liegen.</translation>
     </message>
     <message>
         <source>Siteaccess</source>
-        <translation>Seitenzugang</translation>
+        <translation>Siteaccess</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -36125,7 +36125,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Remove selected sessions.</source>
@@ -36201,7 +36201,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Overview</source>
-        <translation>Überblick</translation>
+        <translation>Übersicht</translation>
     </message>
     <message>
         <source>Sessions in all</source>
@@ -36596,7 +36596,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>The database matches the schema of Exponential and the active extensions (%files schema files).</source>
-        <translation>Die Datenbank entspricht dem Schema von Exponential und der aktiven Erweiterungen (%files Schemadateien).</translation>
+        <translation>Die Datenbank entspricht dem Schema von Exponential und der aktiven Extensions (%files Schemadateien).</translation>
     </message>
     <message>
         <source>Every collection Exponential needs is there.</source>
@@ -36616,7 +36616,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Overview</source>
-        <translation>Überblick</translation>
+        <translation>Übersicht</translation>
     </message>
     <message>
         <source>Exponential version</source>
@@ -36640,7 +36640,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>of %count active extensions carry a manifest of their own</source>
-        <translation>von %count aktiven Erweiterungen haben ein eigenes Manifest</translation>
+        <translation>von %count aktiven Extensions haben ein eigenes Manifest</translation>
     </message>
     <message>
         <source>Database engine</source>
@@ -36664,7 +36664,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Compares every file listed in share/filelist.md5, and in the share/filelist.md5 of each active extension that has one, with its checksum. The same check from a shell: %command</source>
-        <translation>Vergleicht jede in share/filelist.md5 aufgeführte Datei, und in der share/filelist.md5 jeder aktiven Erweiterung, die eine hat, mit ihrer Prüfsumme. Dieselbe Prüfung in einer Shell: %command</translation>
+        <translation>Vergleicht jede in share/filelist.md5 aufgeführte Datei, und in der share/filelist.md5 jeder aktiven Extension, die eine hat, mit ihrer Prüfsumme. Dieselbe Prüfung in einer Shell: %command</translation>
     </message>
     <message>
         <source>Download CSV</source>
@@ -36676,7 +36676,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Compares the tables, fields and indexes of the database with the schema that ships with Exponential and the active extensions, and shows the SQL that would bring the database in line. Nothing is run: read the SQL, make a backup, then run what you agree with yourself.</source>
-        <translation>Vergleicht die Tabellen, Felder und Indizes der Datenbank mit dem Schema, das mit Exponential und den aktiven Erweiterungen ausgeliefert wird, und zeigt das SQL, das die Datenbank angleichen würde. Nichts wird ausgeführt: Lesen Sie das SQL, legen Sie eine Sicherung an und führen Sie dann selbst aus, was Sie für richtig halten.</translation>
+        <translation>Vergleicht die Tabellen, Felder und Indizes der Datenbank mit dem Schema, das mit Exponential und den aktiven Extensions ausgeliefert wird, und zeigt das SQL, das die Datenbank angleichen würde. Nichts wird ausgeführt: Lesen Sie das SQL, legen Sie eine Sicherung an und führen Sie dann selbst aus, was Sie für richtig halten.</translation>
     </message>
     <message>
         <source>Download SQL</source>
@@ -36780,7 +36780,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>The file differs from the one the release shipped. If you changed it on purpose, move the change into an override, a design or an extension of your own, because an upgrade replaces this file, and merge it into the new version. If nobody changed it on purpose, restore it from the release.</source>
-        <translation>Die Datei weicht von der im Release ausgelieferten ab. Wenn Sie sie absichtlich geändert haben, verschieben Sie die Änderung in einen Override, ein Design oder eine eigene Erweiterung, denn ein Upgrade ersetzt diese Datei, und übernehmen Sie sie in die neue Version. Wenn niemand sie absichtlich geändert hat, stellen Sie sie aus dem Release wieder her.</translation>
+        <translation>Die Datei weicht von der im Release ausgelieferten ab. Wenn Sie sie absichtlich geändert haben, verschieben Sie die Änderung in einen Override, ein Design oder eine eigene Extension, denn ein Upgrade ersetzt diese Datei, und übernehmen Sie sie in die neue Version. Wenn niemand sie absichtlich geändert hat, stellen Sie sie aus dem Release wieder her.</translation>
     </message>
     <message>
         <source>For a maintainer who changed it in the source: refresh its line with %command and commit the manifest with the change.</source>
@@ -36792,7 +36792,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>The file is there but could not be read: a directory where a file belongs, or permissions that keep the web server out. Check its owner and mode.</source>
-        <translation>Die Datei ist vorhanden, konnte aber nicht gelesen werden: ein Verzeichnis, wo eine Datei hingehört, oder Rechte, die den Webserver aussperren. Prüfen Sie Besitzer und Rechte.</translation>
+        <translation>Die Datei ist vorhanden, konnte aber nicht gelesen werden: ein Verzeichnis, wo eine Datei hingehört, oder Rechte, die den Webserver aussperren. Prüfen Sie Eigentümer und Rechte.</translation>
     </message>
     <message>
         <source>Git tracks the file but the manifest does not list it, so this check cannot tell whether it changed. Nothing to do on an installed site; a maintainer adds it with %command in the release that adds the file.</source>
@@ -36896,11 +36896,11 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>The table ships with Exponential or an active extension, and the database does not have it. Run the CREATE statement after a backup; the feature that uses the table fails until it is there.</source>
-        <translation>Die Tabelle wird mit Exponential oder einer aktiven Erweiterung ausgeliefert, und die Datenbank hat sie nicht. Führen Sie die CREATE-Anweisung nach einer Sicherung aus; die Funktion, die die Tabelle nutzt, schlägt fehl, bis sie da ist.</translation>
+        <translation>Die Tabelle wird mit Exponential oder einer aktiven Extension ausgeliefert, und die Datenbank hat sie nicht. Führen Sie die CREATE-Anweisung nach einer Sicherung aus; die Funktion, die die Tabelle nutzt, schlägt fehl, bis sie da ist.</translation>
     </message>
     <message>
         <source>No shipped schema names this table: usually it belongs to an extension that is not active, or to an extension of your own without a schema file. Leave it, unless you know its data is no longer needed; the DROP statement is shown only to be complete.</source>
-        <translation>Kein ausgeliefertes Schema nennt diese Tabelle: Meist gehört sie zu einer nicht aktiven Erweiterung oder zu einer eigenen Erweiterung ohne Schemadatei. Lassen Sie sie, sofern Sie nicht wissen, dass ihre Daten nicht mehr gebraucht werden; die DROP-Anweisung steht nur der Vollständigkeit halber da.</translation>
+        <translation>Kein ausgeliefertes Schema nennt diese Tabelle: Meist gehört sie zu einer nicht aktiven Extension oder zu einer eigenen Extension ohne Schemadatei. Lassen Sie sie, sofern Sie nicht wissen, dass ihre Daten nicht mehr gebraucht werden; die DROP-Anweisung steht nur der Vollständigkeit halber da.</translation>
     </message>
     <message>
         <source>Fields or indexes differ from the shipped definition. Read each statement and run the ones you agree with, after a backup. A statement that removes a field or an index may remove data of your own.</source>
@@ -36956,11 +36956,11 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>%own extensions with a manifest of their own, %root in the manifest of Exponential, %none without one</source>
-        <translation>%own Erweiterungen mit eigenem Manifest, %root im Manifest von Exponential, %none ohne</translation>
+        <translation>%own Extensions mit eigenem Manifest, %root im Manifest von Exponential, %none ohne</translation>
     </message>
     <message>
         <source>share/filelist.md5 lists every file of the Exponential release with its checksum, the extensions shipped inside it included. An extension released on its own may carry a share/filelist.md5 of its own, refreshed in each of its releases. An extension with neither is not checked.</source>
-        <translation>share/filelist.md5 führt jede Datei des Exponential-Releases mit ihrer Prüfsumme auf, einschließlich der darin ausgelieferten Erweiterungen. Eine eigenständig veröffentlichte Erweiterung kann eine eigene share/filelist.md5 mitbringen, die in jedem ihrer Releases aktualisiert wird. Eine Erweiterung ohne beides wird nicht geprüft.</translation>
+        <translation>share/filelist.md5 führt jede Datei des Exponential-Releases mit ihrer Prüfsumme auf, einschließlich der darin ausgelieferten Extensions. Eine eigenständig veröffentlichte Extension kann eine eigene share/filelist.md5 mitbringen, die in jedem ihrer Releases aktualisiert wird. Eine Extension ohne beides wird nicht geprüft.</translation>
     </message>
     <message>
         <source>Files listed</source>
@@ -36980,7 +36980,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Active extension</source>
-        <translation>Aktive Erweiterung</translation>
+        <translation>Aktive Extension</translation>
     </message>
     <message>
         <source>Checked by</source>
@@ -37004,7 +37004,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>extension %version</source>
-        <translation>Erweiterung %version</translation>
+        <translation>Extension %version</translation>
     </message>
     <message>
         <source>The versions differ</source>
@@ -37048,15 +37048,15 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Table of an extension that is not active</source>
-        <translation>Tabelle einer nicht aktiven Erweiterung</translation>
+        <translation>Tabelle einer nicht aktiven Extension</translation>
     </message>
     <message>
         <source>%count tables belong to extensions that are installed and not active; they are listed below, with nothing to run.</source>
-        <translation>%count Tabellen gehören zu installierten, nicht aktiven Erweiterungen; sie sind unten aufgeführt, ohne dass etwas auszuführen ist.</translation>
+        <translation>%count Tabellen gehören zu installierten, nicht aktiven Extensions; sie sind unten aufgeführt, ohne dass etwas auszuführen ist.</translation>
     </message>
     <message>
         <source>Tables of extensions that are not active</source>
-        <translation>Tabellen nicht aktiver Erweiterungen</translation>
+        <translation>Tabellen nicht aktiver Extensions</translation>
     </message>
     <message>
         <source>belongs to %extension (not active)</source>
@@ -37064,11 +37064,11 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>This table belongs to the extension %extension, which is installed and not active. Activate the extension, or leave the table; dropping it removes its data. No SQL is written for it.</source>
-        <translation>Diese Tabelle gehört zur Erweiterung %extension, die installiert und nicht aktiv ist. Aktivieren Sie die Erweiterung oder lassen Sie die Tabelle stehen; wird sie gelöscht, sind ihre Daten verloren. Für sie wird kein SQL geschrieben.</translation>
+        <translation>Diese Tabelle gehört zur Extension %extension, die installiert und nicht aktiv ist. Aktivieren Sie die Extension oder lassen Sie die Tabelle stehen; wird sie gelöscht, sind ihre Daten verloren. Für sie wird kein SQL geschrieben.</translation>
     </message>
     <message>
         <source>No shipped schema names this table, not even that of an installed extension that is not active: usually it belongs to an extension of your own without a schema file, or to an extension that was removed. Leave it, unless you know its data is no longer needed; the DROP statement is shown only to be complete.</source>
-        <translation>Kein mitgeliefertes Schema nennt diese Tabelle, auch nicht das einer installierten, nicht aktiven Erweiterung: Meist gehört sie zu einer eigenen Erweiterung ohne Schemadatei oder zu einer entfernten Erweiterung. Lassen Sie sie stehen, sofern Sie nicht wissen, dass ihre Daten nicht mehr gebraucht werden; die DROP-Anweisung wird nur der Vollständigkeit halber gezeigt.</translation>
+        <translation>Kein mitgeliefertes Schema nennt diese Tabelle, auch nicht das einer installierten, nicht aktiven Extension: Meist gehört sie zu einer eigenen Extension ohne Schemadatei oder zu einer entfernten Extension. Lassen Sie sie stehen, sofern Sie nicht wissen, dass ihre Daten nicht mehr gebraucht werden; die DROP-Anweisung wird nur der Vollständigkeit halber gezeigt.</translation>
     </message>
 </context>
 <context>
@@ -37237,7 +37237,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Apply changes</source>
@@ -37553,7 +37553,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Remove selected currencies from the list above.</source>
@@ -37722,7 +37722,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>New discount group</source>
@@ -37808,7 +37808,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>New discount rule</source>
@@ -37895,7 +37895,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Discount percent</source>
-        <translation>Ermäßigungs Prozentsatz</translation>
+        <translation>Ermäßigungsprozentsatz</translation>
     </message>
     <message>
         <source>Class</source>
@@ -37947,7 +37947,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Add products</source>
@@ -38056,7 +38056,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Create new VAT charging rule</source>
-        <translation>Neue USt Abrechnungsregel erstellen</translation>
+        <translation>Neue USt-Abrechnungsregel erstellen</translation>
     </message>
     <message>
         <source>Country</source>
@@ -38391,7 +38391,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Remove selected product categories.</source>
@@ -38415,7 +38415,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Input did not validate</source>
-        <translation>Eingabe ist ungültig</translation>
+        <translation>Die Eingabe ist ungültig</translation>
     </message>
     <message>
         <source>Product categories (%categories)</source>
@@ -38540,11 +38540,11 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Removing category &lt;%1&gt; will result in modifying 1 VAT charging rule.</source>
-        <translation>Das Löschen der Kategorie &lt;%1&gt; wird eine USt Abrechnungsregel betreffen.</translation>
+        <translation>Das Löschen der Kategorie &lt;%1&gt; wird eine USt-Abrechnungsregel betreffen.</translation>
     </message>
     <message>
         <source>Removing category &lt;%1&gt; will result in modifying %2 VAT charging rules.</source>
-        <translation>Das Löschen der Kategorie &lt;%1&gt; wird &lt;%2&gt; USt Regeln betreffen.</translation>
+        <translation>Das Löschen der Kategorie &lt;%1&gt; wird &lt;%2&gt; USt-Regeln betreffen.</translation>
     </message>
     <message>
         <source>Removing category &lt;%1&gt; will result in resetting category for 1 product.</source>
@@ -38556,7 +38556,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Note that the removal may cause conflicts in VAT charging rules.</source>
-        <translation>Beachten Sie, dass das Entfernen möglicherweise Konflikte bei den USt Regeln auslösen wird.</translation>
+        <translation>Beachten Sie, dass das Entfernen möglicherweise Konflikte bei den USt-Regeln auslösen wird.</translation>
     </message>
     <message>
         <source>OK</source>
@@ -38571,7 +38571,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <name>design/admin/shop/removevattypes</name>
     <message>
         <source>Confirm removal of the VAT types</source>
-        <translation>Bestätigen Sie das Entfernen der USt Typen</translation>
+        <translation>Bestätigen Sie das Entfernen der USt-Typen</translation>
     </message>
     <message>
         <source>Confirm removal of this VAT type</source>
@@ -38579,39 +38579,39 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Removing VAT types</source>
-        <translation>USt Typen entfernen</translation>
+        <translation>USt-Typen entfernen</translation>
     </message>
     <message>
         <source>Removing VAT type</source>
-        <translation>USt Typ entfernen</translation>
+        <translation>USt-Typ entfernen</translation>
     </message>
     <message>
         <source>Unable to remove the VAT types</source>
-        <translation>Kann die USt Typen nicht entfernen</translation>
+        <translation>Kann die USt-Typen nicht entfernen</translation>
     </message>
     <message>
         <source>Unable to remove this VAT type</source>
-        <translation>Kann den USt Typ nicht entfernen</translation>
+        <translation>Kann den USt-Typ nicht entfernen</translation>
     </message>
     <message>
         <source>Are you sure you want to remove the VAT types?</source>
-        <translation>Sind Sie sicher, dass Sie den USt Typ entfernen wollen?</translation>
+        <translation>Sind Sie sicher, dass Sie den USt-Typ entfernen wollen?</translation>
     </message>
     <message>
         <source>Are you sure you want to remove this VAT type?</source>
-        <translation>Sind Sie sicher, dass Sie diesen USt Typ entfernen wollen?</translation>
+        <translation>Sind Sie sicher, dass Sie diesen USt-Typ entfernen wollen?</translation>
     </message>
     <message>
         <source>VAT type &lt;%1&gt; is set as default for 1 product class.</source>
-        <translation>USt Typ &lt;%1&gt; wurde als Standard für 1 Produkt Klasse eingestellt.</translation>
+        <translation>USt-Typ &lt;%1&gt; wurde als Standard für 1 Produkt Klasse eingestellt.</translation>
     </message>
     <message>
         <source>VAT type &lt;%1&gt; is set as default for %2 product classes.</source>
-        <translation>USt Typ &lt;%1&gt; wurde als Standard für %2 Produkt Klassen eingestellt.</translation>
+        <translation>USt-Typ &lt;%1&gt; wurde als Standard für %2 Produkt Klassen eingestellt.</translation>
     </message>
     <message>
         <source>Removing VAT type &lt;%1&gt; will result in removal of 1 VAT charging rule.</source>
-        <translation>Das Löschen des USt Types &lt;%1&gt; wird auch eine USt Abrechnungsregel entfernen.</translation>
+        <translation>Das Löschen des USt Types &lt;%1&gt; wird auch eine USt-Abrechnungsregel entfernen.</translation>
     </message>
     <message>
         <source>Removing VAT type &lt;%1&gt; will result in removal of %2 VAT charging rules.</source>
@@ -38619,7 +38619,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Removing VAT type &lt;%1&gt; will result in resetting VAT type for 1 product to its default value.</source>
-        <translation>Das Entfernen von USt Type &lt;%1&gt; wird auch den USt Typ für 1 Produkt zum Standard Wert zurücksetzen.</translation>
+        <translation>Das Entfernen von USt Type &lt;%1&gt; wird auch den USt-Typ für 1 Produkt zum Standard Wert zurücksetzen.</translation>
     </message>
     <message>
         <source>Removing VAT type &lt;%1&gt; will result in resetting VAT type for %2 products to its default value.</source>
@@ -38639,7 +38639,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Removing VAT type &lt;%1&gt; will result in resetting VAT type for %2 products to their default value.</source>
-        <translation>Das Entfernen von USt Type &lt;%1&gt; wird auch den USt Typ für %2 Produkte zum Standard Wert zurücksetzen.</translation>
+        <translation>Das Entfernen von USt Type &lt;%1&gt; wird auch den USt-Typ für %2 Produkte zum Standard Wert zurücksetzen.</translation>
     </message>
 </context>
 <context>
@@ -38682,7 +38682,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Remove selected order statuses.</source>
@@ -38832,7 +38832,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Remove selected VAT charging rules.</source>
@@ -38844,7 +38844,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Create a new VAT charging rule.</source>
-        <translation>Neue USt Abrechnungsregel erstellen.</translation>
+        <translation>Neue USt-Abrechnungsregel erstellen.</translation>
     </message>
     <message>
         <source>Apply changes</source>
@@ -38895,7 +38895,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Remove selected VAT types.</source>
@@ -38919,7 +38919,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Input did not validate</source>
-        <translation>Eingabe ist ungültig</translation>
+        <translation>Die Eingabe ist ungültig</translation>
     </message>
     <message>
         <source>VAT types (%vat_types)</source>
@@ -38982,7 +38982,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Remove selected items.</source>
@@ -39152,7 +39152,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Remove selected states.</source>
@@ -39566,7 +39566,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Remove selected state groups.</source>
@@ -40103,7 +40103,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Auswahl entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Removing one of these changes nothing that runs now: an operation not offered here does not run its triggers. The workflow stays.</source>
@@ -40551,7 +40551,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Pending</source>
-        <translation>Schwebend</translation>
+        <translation>Ausstehend</translation>
     </message>
     <message>
         <source>Archived</source>
@@ -42312,7 +42312,7 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     </message>
     <message>
         <source>Siteaccess</source>
-        <translation>Seitenzugang</translation>
+        <translation>Siteaccess</translation>
     </message>
     <message>
         <source>Menus (classic)</source>
@@ -42492,11 +42492,11 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     </message>
     <message>
         <source>an extension</source>
-        <translation>einer Erweiterung</translation>
+        <translation>einer Extension</translation>
     </message>
     <message>
         <source>an extension, for this siteaccess</source>
-        <translation>einer Erweiterung, für diesen Siteaccess</translation>
+        <translation>einer Extension, für diesen Siteaccess</translation>
     </message>
     <message>
         <source>the global override</source>
@@ -42848,7 +42848,7 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     </message>
     <message>
         <source>Never edit a shipped design: an update replaces it. Your design extension is found before the shipped designs, and the extra [MenuSettings] entry offers your templates as a fifth arrangement on this page.</source>
-        <translation>Bearbeiten Sie nie ein mitgeliefertes Design: Ein Update ersetzt es. Ihre Design-Erweiterung wird vor den mitgelieferten Designs gefunden, und der zusätzliche Eintrag in [MenuSettings] bietet Ihre Templates auf dieser Seite als fünfte Anordnung an.</translation>
+        <translation>Bearbeiten Sie nie ein mitgeliefertes Design: Ein Update ersetzt es. Ihre Design-Extension wird vor den mitgelieferten Designs gefunden, und der zusätzliche Eintrag in [MenuSettings] bietet Ihre Templates auf dieser Seite als fünfte Anordnung an.</translation>
     </message>
     <message>
         <source>With Exponential Layouts:</source>
@@ -43106,7 +43106,7 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     </message>
     <message>
         <source>Siteaccess</source>
-        <translation>Seitenzugang</translation>
+        <translation>Siteaccess</translation>
     </message>
     <message>
         <source>Overrides template</source>
@@ -43172,7 +43172,7 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     </message>
     <message>
         <source>Siteaccess</source>
-        <translation>Seitenzugang</translation>
+        <translation>Siteaccess</translation>
     </message>
     <message>
         <source>Set</source>
@@ -43204,7 +43204,7 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Remove selected template overrides.</source>
@@ -43248,7 +43248,7 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     </message>
     <message>
         <source>Overrides for &lt;%template_name&gt; template in &lt;%current_siteaccess&gt; siteaccess (%override_count)</source>
-        <translation>Überschreibungen für das Template &lt;%template_name&gt; im &lt;%current_siteaccess&gt; Seiten-Zugang (%override_count)</translation>
+        <translation>Überschreibungen für das Template &lt;%template_name&gt; im Siteaccess &lt;%current_siteaccess&gt; (%override_count)</translation>
     </message>
     <message>
         <source>No source template resource found.</source>
@@ -43304,7 +43304,7 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     </message>
     <message>
         <source>Defined by an extension; its order and conditions can be changed here, removing it is done in the extension</source>
-        <translation>Von einer Erweiterung definiert; Reihenfolge und Bedingungen können hier geändert werden, das Entfernen erfolgt in der Erweiterung</translation>
+        <translation>Von einer Extension definiert; Reihenfolge und Bedingungen können hier geändert werden, das Entfernen erfolgt in der Extension</translation>
     </message>
     <message>
         <source>Drag to move</source>
@@ -43352,7 +43352,7 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     </message>
     <message>
         <source>These are defined by an extension, not in the siteaccess settings, and have to be removed there:</source>
-        <translation>Diese sind von einer Erweiterung definiert, nicht in den Siteaccess-Einstellungen, und müssen dort entfernt werden:</translation>
+        <translation>Diese sind von einer Extension definiert, nicht in den Siteaccess-Einstellungen, und müssen dort entfernt werden:</translation>
     </message>
     <message>
         <source>Try earlier</source>
@@ -43368,7 +43368,7 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     </message>
     <message>
         <source>extension</source>
-        <translation>Erweiterung</translation>
+        <translation>Extension</translation>
     </message>
     <message>
         <source>siteaccess</source>
@@ -43412,7 +43412,7 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     </message>
     <message>
         <source>The order was written to %file, but other settings still decide it. Check the Priority of these overrides in the extensions&apos; override.ini files.</source>
-        <translation>Die Reihenfolge wurde in %file geschrieben, aber andere Einstellungen bestimmen sie weiterhin. Prüfen Sie die Priority dieser Overrides in den override.ini-Dateien der Erweiterungen.</translation>
+        <translation>Die Reihenfolge wurde in %file geschrieben, aber andere Einstellungen bestimmen sie weiterhin. Prüfen Sie die Priority dieser Overrides in den override.ini-Dateien der Extensions.</translation>
     </message>
     <message>
         <source>The overrides of this template changed since this page was loaded. Reload the page and try again.</source>
@@ -43467,7 +43467,7 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Update priorities</source>
@@ -43503,11 +43503,11 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     </message>
     <message>
         <source>Current siteaccess</source>
-        <translation>Aktuelles Seiten Zugang</translation>
+        <translation>Aktueller Siteaccess</translation>
     </message>
     <message>
         <source>Select siteaccess</source>
-        <translation>Seiten Zugang auswählen</translation>
+        <translation>Siteaccess auswählen</translation>
     </message>
     <message>
         <source>Set</source>
@@ -43515,7 +43515,7 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     </message>
     <message>
         <source>Available toolbars for the &lt;%siteaccess&gt; siteaccess</source>
-        <translation>Verfügbare Werkzeuge für den &lt;%siteaccess&gt; Zugang</translation>
+        <translation>Verfügbare Werkzeugleisten für den Siteaccess &lt;%siteaccess&gt;</translation>
     </message>
     <message>
         <source>Tool list for &lt;Toolbar_%toolbar_position&gt;</source>
@@ -43523,14 +43523,14 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     </message>
     <message>
         <source>Siteaccess</source>
-        <translation>Seitenzugang</translation>
+        <translation>Siteaccess</translation>
     </message>
 </context>
 <context>
     <name>design/admin/workflow/edit</name>
     <message>
         <source>Input did not validate</source>
-        <translation>Eingabe ist ungültig</translation>
+        <translation>Die Eingabe ist ungültig</translation>
     </message>
     <message>
         <source>Data requires fixup</source>
@@ -43665,7 +43665,7 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Modify the objects&apos; publishing dates</source>
@@ -43811,7 +43811,7 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Remove selected workflow groups.</source>
@@ -44273,7 +44273,7 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     </message>
     <message>
         <source>Overview</source>
-        <translation>Überblick</translation>
+        <translation>Übersicht</translation>
     </message>
     <message>
         <source>Waiting</source>
@@ -44844,7 +44844,7 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     <name>design/admin/workflow/view</name>
     <message>
         <source>Input did not validate</source>
-        <translation>Die Eingaben konnten nicht validiert werden</translation>
+        <translation>Die Eingabe ist ungültig</translation>
     </message>
     <message>
         <source>%workflow_name [Workflow]</source>
@@ -44880,7 +44880,7 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Add to group</source>
@@ -44959,7 +44959,7 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>New workflow</source>
@@ -45318,7 +45318,7 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     </message>
     <message>
         <source>Remove Selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Price</source>
@@ -46281,7 +46281,7 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Do not allow fuzzy match</source>
@@ -46779,7 +46779,7 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     <name>design/standard/class/edit</name>
     <message>
         <source>Input did not validate</source>
-        <translation>Eingabe konnte nicht validiert werden</translation>
+        <translation>Die Eingabe ist ungültig</translation>
     </message>
     <message>
         <source>Input was stored successfully</source>
@@ -47289,7 +47289,7 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     </message>
     <message>
         <source>Siteaccess</source>
-        <translation>Seitenzugang</translation>
+        <translation>Siteaccess</translation>
     </message>
     <message>
         <source>Description</source>
@@ -48310,7 +48310,7 @@ Wenn Sie einen Kommentar zum Freigebenden schicken oder den Status sehen wollen,
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Remove selected rows from the author list.</source>
@@ -48558,7 +48558,7 @@ Wenn Sie einen Kommentar zum Freigebenden schicken oder den Status sehen wollen,
     </message>
     <message>
         <source>VAT type</source>
-        <translation>USt Typ</translation>
+        <translation>USt-Typ</translation>
     </message>
     <message>
         <source>Current account status:</source>
@@ -48951,7 +48951,7 @@ Wenn Sie einen Kommentar zum Freigebenden schicken oder den Status sehen wollen,
     </message>
     <message>
         <source>Input did not validate</source>
-        <translation>Eingabe war nicht validierbar</translation>
+        <translation>Die Eingabe ist ungültig</translation>
     </message>
     <message>
         <source>Input was stored successfully</source>
@@ -49015,7 +49015,7 @@ Wenn Sie einen Kommentar zum Freigebenden schicken oder den Status sehen wollen,
     </message>
     <message>
         <source>Discard</source>
-        <translation>Abbrechen</translation>
+        <translation>Verwerfen</translation>
     </message>
     <message>
         <source>Object info</source>
@@ -49165,7 +49165,7 @@ Sie sollten entweder den Benutzer kontaktieren oder einen neuen Entwurf erstelle
     </message>
     <message>
         <source>Owner</source>
-        <translation>Besitzer</translation>
+        <translation>Eigentümer</translation>
     </message>
     <message>
         <source>Last modified</source>
@@ -49438,7 +49438,7 @@ Sie sollten entweder den Benutzer kontaktieren oder einen neuen Entwurf erstelle
     </message>
     <message>
         <source>Pending</source>
-        <translation>Schwebend</translation>
+        <translation>Ausstehend</translation>
     </message>
     <message>
         <source>Archived</source>
@@ -49474,7 +49474,7 @@ Sie sollten entweder den Benutzer kontaktieren oder einen neuen Entwurf erstelle
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Remove the selected versions from the object.</source>
@@ -50554,7 +50554,7 @@ Wählen Sie den Ort und klicken Sie dann auf &quot;%buttonname&quot;. Wenn Sie a
     </message>
     <message>
         <source>Site Access</source>
-        <translation>Seitenzugang</translation>
+        <translation>Siteaccess</translation>
     </message>
     <message>
         <source>Language</source>
@@ -50903,7 +50903,7 @@ Wenn Sie noch mehr Objekte hinzufügen wollen, klicken Sie die %emphasize_startL
     <name>design/standard/design/templateview</name>
     <message>
         <source>Overrides for &lt;%template_name&gt; template in &lt;%current_siteaccess&gt; siteaccess [%override_count]</source>
-        <translation>Überschreibungen für das Template &lt;%template_name&gt; im &lt;%current_siteaccess&gt; Seiten-Zugang [%override_count]</translation>
+        <translation>Überschreibungen für das Template &lt;%template_name&gt; im Siteaccess &lt;%current_siteaccess&gt; [%override_count]</translation>
     </message>
     <message>
         <source>Default template resource</source>
@@ -50911,7 +50911,7 @@ Wenn Sie noch mehr Objekte hinzufügen wollen, klicken Sie die %emphasize_startL
     </message>
     <message>
         <source>Siteaccess</source>
-        <translation>Seitenzugang</translation>
+        <translation>Siteaccess</translation>
     </message>
     <message>
         <source>Set</source>
@@ -50935,7 +50935,7 @@ Wenn Sie noch mehr Objekte hinzufügen wollen, klicken Sie die %emphasize_startL
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>New override</source>
@@ -51010,11 +51010,11 @@ Wenn Sie noch mehr Objekte hinzufügen wollen, klicken Sie die %emphasize_startL
     </message>
     <message>
         <source>Current siteaccess</source>
-        <translation>Aktuelles Seiten Zugang</translation>
+        <translation>Aktueller Siteaccess</translation>
     </message>
     <message>
         <source>Select siteaccess</source>
-        <translation>Seiten Zugang auswählen</translation>
+        <translation>Siteaccess auswählen</translation>
     </message>
     <message>
         <source>Set</source>
@@ -51026,14 +51026,14 @@ Wenn Sie noch mehr Objekte hinzufügen wollen, klicken Sie die %emphasize_startL
     </message>
     <message>
         <source>Siteaccess</source>
-        <translation>Seitenzugang</translation>
+        <translation>Siteaccess</translation>
     </message>
 </context>
 <context>
     <name>design/standard/edit/</name>
     <message>
         <source>Siteaccess</source>
-        <translation>Seitenzugang</translation>
+        <translation>Siteaccess</translation>
     </message>
     <message>
         <source>Global (override)</source>
@@ -51364,7 +51364,7 @@ Wenn Sie noch mehr Objekte hinzufügen wollen, klicken Sie die %emphasize_startL
     </message>
     <message>
         <source>The following is a list of the extensions that have been loaded at run-time by this copy of Exponential.</source>
-        <translation>Die folgende Liste enthält die Erweiterungen, die diese Exponential-Installation zur Laufzeit geladen hat.</translation>
+        <translation>Die folgende Liste enthält die Extensions, die diese Exponential-Installation zur Laufzeit geladen hat.</translation>
     </message>
     <message>
         <source>The following is a list of the third-party software that is distributed with this copy of Exponential. The list of third party software includes the license for the software in question and the directory or files that contain the third-party software.</source>
@@ -51573,11 +51573,11 @@ Falls Sie das machen, werden die Unterelemente ebenfalls entfernt.</translation>
     </message>
     <message>
         <source>Current siteaccess</source>
-        <translation>Aktuelles Seiten Zugang</translation>
+        <translation>Aktueller Siteaccess</translation>
     </message>
     <message>
         <source>Select siteaccess</source>
-        <translation>Seiten Zugang auswählen</translation>
+        <translation>Siteaccess auswählen</translation>
     </message>
     <message>
         <source>Set</source>
@@ -51597,7 +51597,7 @@ Falls Sie das machen, werden die Unterelemente ebenfalls entfernt.</translation>
     </message>
     <message>
         <source>Siteaccess</source>
-        <translation>Seitenzugang</translation>
+        <translation>Siteaccess</translation>
     </message>
     <message>
         <source>Menus (classic)</source>
@@ -52085,7 +52085,7 @@ Das Objekt können Sie bei untenstehendem Link aufrufen.</translation>
     </message>
     <message>
         <source>(Owner: %owner)</source>
-        <translation>(Besitzer: %owner)</translation>
+        <translation>(Eigentümer: %owner)</translation>
     </message>
     <message>
         <source>Collaboration and approvals</source>
@@ -52427,7 +52427,7 @@ Falls Sie unsicher sind, wählen Sie einen, der den Benutzerbereich Ihrer Seite 
     </message>
     <message>
         <source>Select siteaccess</source>
-        <translation>Seiten Zugang auswählen</translation>
+        <translation>Siteaccess auswählen</translation>
     </message>
     <message>
         <source>Please select where you want to place the imported items.</source>
@@ -52479,7 +52479,7 @@ Falls Sie unsicher sind, wählen Sie einen, der den Benutzerbereich Ihrer Seite 
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Map %siteaccess_name to</source>
@@ -52764,7 +52764,7 @@ Sie können das Paket auch entfernen ohne es von der Paketliste zu entfernen.</t
     </message>
     <message>
         <source>Select templates from the following siteaccesses</source>
-        <translation>Templates von folgendem Seiten Zugang verwenden</translation>
+        <translation>Templates aus folgenden Siteaccesses verwenden</translation>
     </message>
     <message>
         <source>Versions</source>
@@ -52866,7 +52866,7 @@ Sie können das Paket auch entfernen ohne es von der Paketliste zu entfernen.</t
     </message>
     <message>
         <source>Siteaccess:</source>
-        <translation>Seitenzugang:</translation>
+        <translation>Siteaccess:</translation>
     </message>
     <message>
         <source>Global (override)</source>
@@ -53300,7 +53300,7 @@ Wählen Sie die Knoten aus und klicken Sie dann auf &quot;%buttonname&quot;. Wen
     </message>
     <message>
         <source>Choose owner of imported objects</source>
-        <translation>Wähen Sie den Besitzer der importierten Objekte</translation>
+        <translation>Wählen Sie den Eigentümer der importierten Objekte</translation>
     </message>
     <message>
         <source>Please select the owner of the objects to import
@@ -53381,7 +53381,7 @@ Wenn Sie auf den Namen klicken, können Sie navigieren. Sie können zur Auswahl 
     Select the user then click the %buttonname button.
     Using the recent and bookmark items for quick selection is also possible.
     Click on placement names to change the browse listing.</source>
-        <translation>Wählen Sie den Besitzer der Objekte, die importiert werden.
+        <translation>Wählen Sie den Eigentümer der Objekte, die importiert werden.
 
     Wählen Sie den Benutzer aus und klicken Sie dann auf die Schaltfläche %buttonname. 
     Wenn Sie auf den Namen klicken, können Sie die Unterelemente des geklickten Elements aufrufen. 
@@ -53420,7 +53420,7 @@ Wenn Sie auf den Namen klicken, können Sie navigieren. Sie können zur Auswahl 
     </message>
     <message>
         <source>Site Access</source>
-        <translation>Seitenzugang</translation>
+        <translation>Siteaccess</translation>
     </message>
     <message>
         <source>RSS version</source>
@@ -54325,7 +54325,7 @@ By using %datatypename you can ...</translation>
     <message>
         <source>Extensions</source>
         <comment>Exponential extensions</comment>
-        <translation>Erweiterungen</translation>
+        <translation>Extensions</translation>
     </message>
     <message>
         <source>Version</source>
@@ -54729,11 +54729,11 @@ Der Vorgabecode wurde aus den grundlegenen Parametern, die Sie ausgewählt haben
     </message>
     <message>
         <source>Current siteaccess</source>
-        <translation>Aktuelles Seiten Zugang</translation>
+        <translation>Aktueller Siteaccess</translation>
     </message>
     <message>
         <source>Select siteaccess</source>
-        <translation>Seiten Zugang auswählen</translation>
+        <translation>Siteaccess auswählen</translation>
     </message>
     <message>
         <source>Activate extensions</source>
@@ -54795,7 +54795,7 @@ Der Vorgabecode wurde aus den grundlegenen Parametern erstellt, die Sie ausgewä
     </message>
     <message>
         <source>Siteaccess</source>
-        <translation>Seitenzugang</translation>
+        <translation>Siteaccess</translation>
     </message>
     <message>
         <source>Ini caches.</source>
@@ -55052,7 +55052,7 @@ Der Vorgabecode wurde aus den grundlegenen Parametern erstellt, die Sie ausgewä
     </message>
     <message>
         <source>An extension that is mostly ini files: image aliases, event listeners, view cache rules, information collection, trigger operations and siteaccess settings.</source>
-        <translation>Eine Extension, die hauptsächlich aus INI-Dateien besteht: Bild-Aliase, Event-Listener, View-Cache-Regeln, Informationssammlung, Trigger-Operationen und Einstellungen für Seitenzugänge.</translation>
+        <translation>Eine Extension, die hauptsächlich aus INI-Dateien besteht: Bild-Aliase, Event-Listener, View-Cache-Regeln, Informationssammlung, Trigger-Operationen und Einstellungen für Siteaccesses.</translation>
     </message>
     <message>
         <source>What this extension says</source>
@@ -55088,7 +55088,7 @@ Der Vorgabecode wurde aus den grundlegenen Parametern erstellt, die Sie ausgewä
     </message>
     <message>
         <source>Siteaccess settings</source>
-        <translation>Einstellungen für Seitenzugänge</translation>
+        <translation>Einstellungen für Siteaccesses</translation>
     </message>
     <message>
         <source>Event listeners</source>
@@ -55888,7 +55888,7 @@ Der Vorgabecode wurde aus den grundlegenen Parametern erstellt, die Sie ausgewä
     </message>
     <message>
         <source>Site access</source>
-        <translation>Seitenzugang</translation>
+        <translation>Siteaccess</translation>
     </message>
     <message>
         <source>Site details</source>
@@ -55966,7 +55966,7 @@ Um das Problem zu lösen, müssen Sie eins der folgenden Dinge tun:</translation
     </message>
     <message>
         <source>Site access configuration</source>
-        <translation>Konfiguration der Seitenzugänge</translation>
+        <translation>Konfiguration der Siteaccesses</translation>
     </message>
     <message>
         <source>URL (recommended)</source>
@@ -56966,7 +56966,7 @@ Mit Ihrer Hilfe können wir Fehler, die eventuell in Exponential auftreten könn
     </message>
     <message>
         <source>For more detailed information on site access, refer to the %1</source>
-        <translation>Für detaillierte Informationen über Seitenzugänge, folgen Sie der %1</translation>
+        <translation>Für detaillierte Informationen über Siteaccesses, folgen Sie der %1</translation>
     </message>
     <message>
         <source>This page lets you modify information about the site you have chosen to install. In addition, it also lets you choose a database for the site.</source>
@@ -56978,7 +56978,7 @@ Mit Ihrer Hilfe können wir Fehler, die eventuell in Exponential auftreten könn
     </message>
     <message>
         <source>For more information about how to configure site access, refer to the %1</source>
-        <translation>Für mehr Informationen, wie Sie Seitenzugänge einrichten, folgen Sie der %1</translation>
+        <translation>Für mehr Informationen, wie Sie Siteaccesses einrichten, folgen Sie der %1</translation>
     </message>
     <message>
         <source>Each site comes with a predefined set of functionality, however it is possible to add extra functionality.
@@ -57912,7 +57912,7 @@ Weitere Informationen finden Sie auf der Seite mit den Anforderungen.</translati
     </message>
     <message>
         <source>If you don&apos;t have permissions to change the ownership you can try these commands.</source>
-        <translation>Falls Sie keine Rechte haben, den Besitzer zu ändern, versuchen Sie diese Befehle.</translation>
+        <translation>Falls Sie keine Rechte haben, den Eigentümer zu ändern, versuchen Sie diese Befehle.</translation>
     </message>
     <message>
         <source>Exponential could not detect the user and group of the webserver.
@@ -58378,7 +58378,7 @@ Um das zu tun, müssen Sie die %chown Kommandos unter den alternativen Shell-Bef
     </message>
     <message>
         <source>If the site is not setup correctly Exponential will not be able to work with files correctly, this could mean file uploads, image handling and cache creation. Safe mode requires that the same owner is set on the index.php script and all other files for the site.</source>
-        <translation>Wenn die Website nicht richtig eingerichtet ist, kann Exponential nicht korrekt mit Dateien arbeiten; das betrifft Datei-Uploads, die Bildverarbeitung und das Erstellen des Caches. Der Safe Mode verlangt, dass das Skript index.php und alle anderen Dateien der Website denselben Besitzer haben.</translation>
+        <translation>Wenn die Website nicht richtig eingerichtet ist, kann Exponential nicht korrekt mit Dateien arbeiten; das betrifft Datei-Uploads, die Bildverarbeitung und das Erstellen des Caches. Der Safe Mode verlangt, dass das Skript index.php und alle anderen Dateien der Website denselben Eigentümer haben.</translation>
     </message>
     <message>
         <source>File uploading</source>
@@ -58398,7 +58398,7 @@ Um das zu tun, müssen Sie die %chown Kommandos unter den alternativen Shell-Bef
     </message>
     <message>
         <source>To make sure that all files have the correct user and group owner run the following commands.</source>
-        <translation>Führen Sie die folgenden Befehle aus, damit alle Dateien den richtigen Besitzer und die richtige Gruppe haben.</translation>
+        <translation>Führen Sie die folgenden Befehle aus, damit alle Dateien den richtigen Eigentümer und die richtige Gruppe haben.</translation>
     </message>
     <message>
         <source>Alternatively you may run</source>
@@ -58664,7 +58664,7 @@ Um das zu tun, müssen Sie die %chown Kommandos unter den alternativen Shell-Bef
     </message>
     <message>
         <source>Discount percent</source>
-        <translation>Ermäßigungs Prozentsatz</translation>
+        <translation>Ermäßigungsprozentsatz</translation>
     </message>
     <message>
         <source>Class</source>
@@ -59009,7 +59009,7 @@ Um das zu tun, müssen Sie die %chown Kommandos unter den alternativen Shell-Bef
     </message>
     <message>
         <source>Please contact the owner of the webshop and provide your order ID</source>
-        <translation>Bitte nehmen Sie mit dem Besitzer des Internetshops kontakt auf und geben Sie im die ID der Bestellung</translation>
+        <translation>Bitte nehmen Sie mit dem Eigentümer des Internetshops Kontakt auf und geben Sie ihm die ID der Bestellung</translation>
     </message>
     <message>
         <source>Archive list</source>
@@ -59319,11 +59319,11 @@ Um das zu tun, müssen Sie die %chown Kommandos unter den alternativen Shell-Bef
     </message>
     <message>
         <source>Ex. VAT</source>
-        <translation>Ohne MwSt.</translation>
+        <translation>Ohne USt</translation>
     </message>
     <message>
         <source>Inc. VAT</source>
-        <translation>Inkl. MwSt.</translation>
+        <translation>Inkl. USt</translation>
     </message>
     <message>
         <source>Subtotal of items</source>
@@ -59979,7 +59979,7 @@ Wählen Sie Ihre Kunden und klicken Sie die Schaltfläche %buttonname.
     </message>
     <message>
         <source>Input did not validate</source>
-        <translation>Eingabe ist ungültig</translation>
+        <translation>Die Eingabe ist ungültig</translation>
     </message>
     <message>
         <source>Input was stored successfully</source>
@@ -60570,7 +60570,7 @@ Bitte folgen Sie den Hinweisen in der Email, um Ihr Konto zu aktivieren.</transl
     </message>
     <message>
         <source>Siteaccess</source>
-        <translation>Seitenzugang</translation>
+        <translation>Siteaccess</translation>
     </message>
 </context>
 <context>
@@ -60740,7 +60740,7 @@ Bitte folgen Sie den Hinweisen in der Email, um Ihr Konto zu aktivieren.</transl
     </message>
     <message>
         <source>Siteaccess</source>
-        <translation>Seitenzugang</translation>
+        <translation>Siteaccess</translation>
     </message>
     <message>
         <source>Overrides template</source>
@@ -60806,7 +60806,7 @@ Bitte folgen Sie den Hinweisen in der Email, um Ihr Konto zu aktivieren.</transl
     </message>
     <message>
         <source>Overrides for &lt;%template_name&gt; template in &lt;%current_siteaccess&gt; siteaccess [%override_count]</source>
-        <translation>Überschreibungen für das Template &lt;%template_name&gt; im &lt;%current_siteaccess&gt; Seiten-Zugang [%override_count]</translation>
+        <translation>Überschreibungen für das Template &lt;%template_name&gt; im Siteaccess &lt;%current_siteaccess&gt; [%override_count]</translation>
     </message>
     <message>
         <source>Default template resource</source>
@@ -60814,7 +60814,7 @@ Bitte folgen Sie den Hinweisen in der Email, um Ihr Konto zu aktivieren.</transl
     </message>
     <message>
         <source>Siteaccess</source>
-        <translation>Seitenzugang</translation>
+        <translation>Siteaccess</translation>
     </message>
     <message>
         <source>Set</source>
@@ -60850,7 +60850,7 @@ Bitte folgen Sie den Hinweisen in der Email, um Ihr Konto zu aktivieren.</transl
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Remove selected template overrides.</source>
@@ -60917,7 +60917,7 @@ Bitte folgen Sie den Hinweisen in der Email, um Ihr Konto zu aktivieren.</transl
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Update priorities</source>
@@ -60953,11 +60953,11 @@ Bitte folgen Sie den Hinweisen in der Email, um Ihr Konto zu aktivieren.</transl
     </message>
     <message>
         <source>Current siteaccess</source>
-        <translation>Aktuelles Seiten Zugang</translation>
+        <translation>Aktueller Siteaccess</translation>
     </message>
     <message>
         <source>Select siteaccess</source>
-        <translation>Seiten Zugang auswählen</translation>
+        <translation>Siteaccess auswählen</translation>
     </message>
     <message>
         <source>Set</source>
@@ -60965,7 +60965,7 @@ Bitte folgen Sie den Hinweisen in der Email, um Ihr Konto zu aktivieren.</transl
     </message>
     <message>
         <source>Available toolbars for the &lt;%siteaccess&gt; siteaccess</source>
-        <translation>Verfügbare Werkzeuge für den &lt;%siteaccess&gt; Zugang</translation>
+        <translation>Verfügbare Werkzeugleisten für den Siteaccess &lt;%siteaccess&gt;</translation>
     </message>
     <message>
         <source>Tool list for &lt;Toolbar_%toolbar_position&gt;</source>
@@ -60973,7 +60973,7 @@ Bitte folgen Sie den Hinweisen in der Email, um Ihr Konto zu aktivieren.</transl
     </message>
     <message>
         <source>Siteaccess</source>
-        <translation>Seitenzugang</translation>
+        <translation>Siteaccess</translation>
     </message>
 </context>
 <context>
@@ -61213,7 +61213,7 @@ Bitte folgen Sie den Hinweisen in der Email, um Ihr Konto zu aktivieren.</transl
     </message>
     <message>
         <source>Input did not validate</source>
-        <translation>Eingabe ist ungültig</translation>
+        <translation>Die Eingabe ist ungültig</translation>
     </message>
     <message>
         <source>Move down</source>
@@ -61327,7 +61327,7 @@ Bitte folgen Sie den Hinweisen in der Email, um Ihr Konto zu aktivieren.</transl
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Load attributes</source>
@@ -61595,7 +61595,7 @@ Bitte folgen Sie den Hinweisen in der Email, um Ihr Konto zu aktivieren.</transl
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Ausgewähltes entfernen</translation>
+        <translation>Ausgewählte entfernen</translation>
     </message>
     <message>
         <source>Remove the selected applications.</source>
@@ -61709,7 +61709,7 @@ Bitte folgen Sie den Hinweisen in der Email, um Ihr Konto zu aktivieren.</transl
     </message>
     <message>
         <source>Active extensions cache</source>
-        <translation>Cache der aktiven Erweiterungen</translation>
+        <translation>Cache der aktiven Extensions</translation>
     </message>
     <message>
         <source>TS Translation cache</source>
@@ -61902,7 +61902,7 @@ Bitte folgen Sie den Hinweisen in der Email, um Ihr Konto zu aktivieren.</transl
     </message>
     <message>
         <source>Owner</source>
-        <translation>Besitzer</translation>
+        <translation>Eigentümer</translation>
     </message>
     <message>
         <source>Approver</source>
@@ -62475,7 +62475,7 @@ Bitte folgen Sie den Hinweisen in der Email, um Ihr Konto zu aktivieren.</transl
     </message>
     <message>
         <source>The account owner is currently logged in.</source>
-        <translation>Der Besitzer des Kontos ist gerade angemeldet.</translation>
+        <translation>Der Eigentümer des Kontos ist gerade angemeldet.</translation>
     </message>
     <message>
         <source>The account is currently used by the anonymous user.</source>
@@ -65202,7 +65202,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>Pending</source>
-        <translation>Wartend</translation>
+        <translation>Ausstehend</translation>
     </message>
     <message>
         <source>Repeat</source>
@@ -65298,7 +65298,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>Section</source>
-        <translation>Bereich</translation>
+        <translation>Sektion</translation>
     </message>
     <message>
         <source>Languages</source>
@@ -65967,7 +65967,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>You must choose one or more site access.</source>
-        <translation>Sie müssen einen oder mehrere Seitenzugänge auswählen.</translation>
+        <translation>Sie müssen einen oder mehrere Siteaccesses auswählen.</translation>
     </message>
     <message>
         <source>CSS files</source>
@@ -65983,7 +65983,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>Site access mapping</source>
-        <translation>Zuordnung der Seitenzugriffe</translation>
+        <translation>Zuordnung der Siteaccesses</translation>
     </message>
     <message>
         <source>Top node placements</source>
@@ -66732,7 +66732,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>Group view of discount rule</source>
-        <translation>Gruppensicht auf Ermäßigungs-Regeln</translation>
+        <translation>Gruppensicht auf Ermäßigungsregeln</translation>
     </message>
     <message>
         <source>Editing rule</source>
@@ -66752,7 +66752,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>VAT types</source>
-        <translation>USt Typen</translation>
+        <translation>USt-Typen</translation>
     </message>
     <message>
         <source>Customer list</source>
@@ -66772,7 +66772,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>VAT type</source>
-        <translation>USt Typ</translation>
+        <translation>USt-Typ</translation>
     </message>
     <message>
         <source>Classes</source>
@@ -66962,7 +66962,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>Store dashboard</source>
-        <translation>Shop-Übersicht</translation>
+        <translation>Shop-Dashboard</translation>
     </message>
 </context>
 <context>
@@ -66999,7 +66999,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>Choose a VAT type.</source>
-        <translation>Wählen Sie einen USt Typ.</translation>
+        <translation>Wählen Sie einen USt-Typ.</translation>
     </message>
     <message>
         <source>Rule not found</source>
@@ -67007,11 +67007,11 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>Edit VAT charging rule</source>
-        <translation>USt Abrechnungsregel bearbeiten</translation>
+        <translation>USt-Abrechnungsregel bearbeiten</translation>
     </message>
     <message>
         <source>Create new VAT charging rule</source>
-        <translation>Neue USt Abrechnungsregel erstellen</translation>
+        <translation>Neue USt-Abrechnungsregel erstellen</translation>
     </message>
     <message>
         <source>Invalid data entered</source>
@@ -67049,14 +67049,14 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>VAT rules</source>
-        <translation>USt Regeln</translation>
+        <translation>USt-Regeln</translation>
     </message>
 </context>
 <context>
     <name>kernel/shop/vattype</name>
     <message>
         <source>Empty VAT type names are not allowed (corrected).</source>
-        <translation>Leere USt Typ Namen sind nicht erlaubt (korrigiert).</translation>
+        <translation>Leere USt-Typ Namen sind nicht erlaubt (korrigiert).</translation>
     </message>
     <message>
         <source>Wrong VAT percentage (corrected).</source>
@@ -67502,7 +67502,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>The extension needs a name: lower case letters, digits and underscores, three to forty one characters, starting with a letter.</source>
-        <translation>Die Erweiterung braucht einen Namen: Kleinbuchstaben, Ziffern und Unterstriche, drei bis einundvierzig Zeichen, beginnend mit einem Buchstaben.</translation>
+        <translation>Die Extension braucht einen Namen: Kleinbuchstaben, Ziffern und Unterstriche, drei bis einundvierzig Zeichen, beginnend mit einem Buchstaben.</translation>
     </message>
     <message>
         <source>extension/%name already exists. Choose another name, or remove it first.</source>
@@ -67526,7 +67526,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>Choose at least one thing for this extension to carry, or there is nothing to write.</source>
-        <translation>Wählen Sie mindestens etwas, das diese Erweiterung enthalten soll, sonst gibt es nichts zu schreiben.</translation>
+        <translation>Wählen Sie mindestens etwas, das diese Extension enthalten soll, sonst gibt es nichts zu schreiben.</translation>
     </message>
     <message>
         <source>The content class needs an identifier: lower case letters, digits and underscores, starting with a letter. It cannot be changed once content exists.</source>
@@ -68338,7 +68338,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>extension</source>
-        <translation>Erweiterung</translation>
+        <translation>Extension</translation>
     </message>
     <message>
         <source>kernel</source>
@@ -68494,7 +68494,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>What shows an extension's own audit records in the audit console (audit.ini [AuditSourceSettings] Sources[&lt;name&gt;]=, implementing expAuditSource).</source>
-        <translation>Was die eigenen Audit-Einträge einer Erweiterung in der Audit-Konsole zeigt (audit.ini [AuditSourceSettings] Sources[&lt;Name&gt;]=, implementiert expAuditSource).</translation>
+        <translation>Was die eigenen Audit-Einträge einer Extension in der Audit-Konsole zeigt (audit.ini [AuditSourceSettings] Sources[&lt;Name&gt;]=, implementiert expAuditSource).</translation>
     </message>
     <message>
         <source>The server functions of ezjscore (ezjscore.ini [ezjscServer_&lt;name&gt;] Class=), each called as ezjscore/call/&lt;name&gt;::&lt;function&gt;.</source>
@@ -68513,7 +68513,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <name>design/admin/shop/dashboard</name>
     <message>
         <source>Store dashboard</source>
-        <translation>Shop-Übersicht</translation>
+        <translation>Shop-Dashboard</translation>
     </message>
     <message>
         <source>As of %time. Amounts include VAT. Periods count from midnight.</source>
@@ -69161,7 +69161,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>Action</source>
-        <translation>Handeln</translation>
+        <translation>Aktion</translation>
     </message>
     <message>
         <source>Check</source>
@@ -69201,7 +69201,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>The PayPal extension is active but paypal.ini [PaypalSettings] Business (the PayPal account that receives the money) is empty.</source>
-        <translation>Die PayPal-Erweiterung ist aktiv, aber paypal.ini [PaypalSettings] Business (das PayPal-Konto, das das Geld erhält) ist leer.</translation>
+        <translation>Die PayPal-Extension ist aktiv, aber paypal.ini [PaypalSettings] Business (das PayPal-Konto, das das Geld erhält) ist leer.</translation>
     </message>
     <message>
         <source>%count products have no price and cannot be sold.</source>
@@ -69560,7 +69560,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>extension</source>
-        <translation>Erweiterung</translation>
+        <translation>Extension</translation>
     </message>
     <message>
         <source>not set</source>
@@ -69768,7 +69768,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>Extension switches</source>
-        <translation>Schalter der Erweiterungen</translation>
+        <translation>Schalter der Extensions</translation>
     </message>
     <message>
         <source>Reload the page to see the effect.</source>
@@ -71471,7 +71471,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>Audit dashboard</source>
-        <translation>Audit-Übersicht</translation>
+        <translation>Audit-Dashboard</translation>
     </message>
     <message>
         <source>Built in %ms ms from the index and the stored chain verification; opening this page is recorded (system.audit.read).</source>
@@ -71483,7 +71483,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>Dashboard</source>
-        <translation>Übersicht</translation>
+        <translation>Dashboard</translation>
     </message>
     <message>
         <source>Events per day, last 7 days</source>
@@ -72695,7 +72695,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>Extension change</source>
-        <translation>Erweiterung geändert</translation>
+        <translation>Extension geändert</translation>
     </message>
     <message>
         <source>Import csv</source>
@@ -72791,7 +72791,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>Node section</source>
-        <translation>Knoten-Bereich geändert</translation>
+        <translation>Knoten-Sektion geändert</translation>
     </message>
     <message>
         <source>Node sort</source>
@@ -72939,11 +72939,11 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>Section change</source>
-        <translation>Bereich geändert</translation>
+        <translation>Sektion geändert</translation>
     </message>
     <message>
         <source>Section remove</source>
-        <translation>Bereich entfernt</translation>
+        <translation>Sektion entfernt</translation>
     </message>
     <message>
         <source>Session expire</source>
@@ -73250,11 +73250,11 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>Exponential itself -- the kernel, its designs and the extensions kept in git -- is updated by pulling the newest release into the installation: see which branch and version it runs, what has changed upstream, and update.</source>
-        <translation>Exponential selbst -- der Kernel, seine Designs und die in Git geführten Erweiterungen -- wird aktualisiert, indem die neueste Version in die Installation übernommen wird: Sehen Sie, welchen Branch und welche Version sie nutzt, was sich upstream geändert hat, und aktualisieren Sie.</translation>
+        <translation>Exponential selbst -- der Kernel, seine Designs und die in Git geführten Extensions -- wird aktualisiert, indem die neueste Version in die Installation übernommen wird: Sehen Sie, welchen Branch und welche Version sie nutzt, was sich upstream geändert hat, und aktualisieren Sie.</translation>
     </message>
     <message>
         <source>Extensions</source>
-        <translation>Erweiterungen</translation>
+        <translation>Extensions</translation>
     </message>
     <message>
         <source>Good afternoon</source>
@@ -73972,7 +73972,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>Extension</source>
-        <translation>Erweiterung</translation>
+        <translation>Extension</translation>
     </message>
     <message>
         <source>Categories</source>
@@ -75676,7 +75676,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>Every request with a revoked key is refused at once, and the key cannot be made valid again. The owner sees that it was revoked and can make a new one if they still may.</source>
-        <translation>Jede Anfrage mit einem widerrufenen Schlüssel wird sofort abgewiesen, und der Schlüssel kann nicht wieder gültig werden. Der Besitzer sieht, dass er widerrufen wurde, und kann einen neuen erstellen, sofern er noch darf.</translation>
+        <translation>Jede Anfrage mit einem widerrufenen Schlüssel wird sofort abgewiesen, und der Schlüssel kann nicht wieder gültig werden. Der Eigentümer sieht, dass er widerrufen wurde, und kann einen neuen erstellen, sofern er noch darf.</translation>
     </message>
     <message>
         <source>Removed user %id</source>
@@ -75700,7 +75700,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>Users make these keys themselves on the API access page of their account. A key acts as its owner, within the scopes it was given, so it can never do more than the owner may. Revoke a key that is no longer needed, leaked, or belongs to someone who should not publish any more.</source>
-        <translation>Benutzer erstellen diese Schlüssel selbst auf der Seite „API-Zugang“ ihres Kontos. Ein Schlüssel handelt als sein Besitzer, innerhalb der Bereiche, die er erhalten hat, und kann daher nie mehr als der Besitzer. Widerrufen Sie einen Schlüssel, der nicht mehr gebraucht wird, bekannt geworden ist oder jemandem gehört, der nicht mehr veröffentlichen soll.</translation>
+        <translation>Benutzer erstellen diese Schlüssel selbst auf der Seite „API-Zugang“ ihres Kontos. Ein Schlüssel handelt als sein Eigentümer, innerhalb der Bereiche, die er erhalten hat, und kann daher nie mehr als der Eigentümer. Widerrufen Sie einen Schlüssel, der nicht mehr gebraucht wird, bekannt geworden ist oder jemandem gehört, der nicht mehr veröffentlichen soll.</translation>
     </message>
     <message>
         <source>%count keys revoked. Requests with them are refused from now on.</source>
@@ -75804,7 +75804,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>Owner</source>
-        <translation>Besitzer</translation>
+        <translation>Eigentümer</translation>
     </message>
     <message>
         <source>Scopes</source>
@@ -75852,7 +75852,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>Revoking cannot be undone: the owner makes a new key if one is still needed.</source>
-        <translation>Ein Widerruf lässt sich nicht rückgängig machen: Der Besitzer erstellt einen neuen Schlüssel, falls er noch einen braucht.</translation>
+        <translation>Ein Widerruf lässt sich nicht rückgängig machen: Der Eigentümer erstellt einen neuen Schlüssel, falls er noch einen braucht.</translation>
     </message>
     <message>
         <source>Revoke selected</source>
@@ -76360,7 +76360,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>Site data are name and value pairs the installation and its extensions keep in the database, such as the version of the installed database schema. This list is read only.</source>
-        <translation>Site-Daten sind Paare aus Name und Wert, die die Installation und ihre Erweiterungen in der Datenbank ablegen, etwa die Version des installierten Datenbankschemas. Diese Liste kann nur gelesen werden.</translation>
+        <translation>Site-Daten sind Paare aus Name und Wert, die die Installation und ihre Extensions in der Datenbank ablegen, etwa die Version des installierten Datenbankschemas. Diese Liste kann nur gelesen werden.</translation>
     </message>
     <message>
         <source>Templates can read a row with fetch( 'content', 'site_data', hash( 'name', ... ) ) only when its name is listed in site.ini [SiteDataSettings] TemplateReadable[].</source>
@@ -76928,7 +76928,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>Extensions</source>
-        <translation>Erweiterungen</translation>
+        <translation>Extensions</translation>
     </message>
     <message>
         <source>Rotated archives</source>
@@ -77644,7 +77644,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>The web server cannot write this file or its directory: owner %owner, group %group.</source>
-        <translation>Der Webserver kann diese Datei oder ihr Verzeichnis nicht schreiben: Besitzer %owner, Gruppe %group.</translation>
+        <translation>Der Webserver kann diese Datei oder ihr Verzeichnis nicht schreiben: Eigentümer %owner, Gruppe %group.</translation>
     </message>
     <message>
         <source>This is a preview: nothing has changed yet. Confirm to carry out these %count steps. The files are checked again before each step, and each step is recorded in the audit.</source>
