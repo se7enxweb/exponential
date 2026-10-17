@@ -14,6 +14,8 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminJobTranslationsTest extends PHPUnit\Framework\TestCase
 {
     const CONTEXT = 'design/admin/content/job';
@@ -41,11 +43,11 @@ class AdminJobTranslationsTest extends PHPUnit\Framework\TestCase
     private static function jobTexts()
     {
         $texts = array();
-        $files = array_merge( glob( self::root() . '/kernel/private/classes/views/content/*.php' ),
-                              glob( self::root() . '/kernel/classes/contentjob/*.php' ) );
+        $files = array_merge( AdminFiles::files( self::root() . '/kernel/private/classes/views/content/*.php' ),
+                              AdminFiles::files( self::root() . '/kernel/classes/contentjob/*.php' ) );
         foreach ( $files as $file )
         {
-            $code = (string)file_get_contents( $file );
+            $code = AdminFiles::read( $file );
             $tr = '(?:\\\\?ezpI18n::tr\(\s*\'' . preg_quote( self::CONTEXT, '/' ) . '\'\s*,|\$tr\()';
             // a call with the text, or with a choice of two texts ($a ? 'x' : 'y')
             preg_match_all( '/' . $tr . '\s*(?:\$\w+\s*\?\s*)?\'((?:[^\'\\\\]|\\\\.)*)\'(?:\s*:\s*\'((?:[^\'\\\\]|\\\\.)*)\')?/', $code, $m, PREG_SET_ORDER );
@@ -54,9 +56,9 @@ class AdminJobTranslationsTest extends PHPUnit\Framework\TestCase
                     if ( $text !== '' )
                         $texts[stripslashes( $text )] = basename( $file );
         }
-        foreach ( glob( self::root() . '/design/admin4/templates/content/job*.tpl' ) as $file )
+        foreach ( AdminFiles::files( self::root() . '/design/admin4/templates/content/job*.tpl' ) as $file )
         {
-            preg_match_all( '/\'((?:[^\'\\\\]|\\\\.)*)\'\|i18n\(\s*\'' . preg_quote( self::CONTEXT, '/' ) . '\'/', (string)file_get_contents( $file ), $m );
+            preg_match_all( '/\'((?:[^\'\\\\]|\\\\.)*)\'\|i18n\(\s*\'' . preg_quote( self::CONTEXT, '/' ) . '\'/', AdminFiles::read( $file ), $m );
             foreach ( $m[1] as $text )
                 $texts[stripslashes( $text )] = basename( $file );
         }
@@ -93,7 +95,7 @@ class AdminJobTranslationsTest extends PHPUnit\Framework\TestCase
         {
             foreach ( array( 'children_detailed.tpl', 'contentstructuremenu/content_structure_menu_dynamic.tpl' ) as $path )
             {
-                $tpl = (string)file_get_contents( self::root() . "/design/$design/templates/$path" );
+                $tpl = AdminFiles::read( self::root() . "/design/$design/templates/$path" );
                 $this->assertMatchesRegularExpression( "/\\{foreach fetch\\( 'content', 'prioritized_languages' \\) as \\\$language\\}\\{\\*\\s*\\*\\}['\"]\\{\\\$language\\.locale\\|wash\\(javascript\\)\\}['\"]: ?['\"]\\{\\\$language\\.name\\|wash\\(javascript\\)\\}/",
                                                        $tpl, "$design/$path" );
                 $this->assertStringNotContainsString( 'intl_language_name', $tpl, "$design/$path" );

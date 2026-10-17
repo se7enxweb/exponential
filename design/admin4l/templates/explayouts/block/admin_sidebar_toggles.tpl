@@ -1,13 +1,5 @@
-{* Admin block (explayouts). Markup copied from admin4 page_topmenu.tpl lines, keep in step with it. *}
-    {* The phone-width menu button; ezadmin_menubar.js toggles the menu, aria-expanded and the keys. *}
-    <div class="navbar-icon" role="button" tabindex="0" aria-expanded="false" aria-controls="a4-navbar-menu" aria-label="{'Menu'|i18n( 'design/admin/pagelayout' )|wash}"><span aria-hidden="true">&#9776;</span></div>
-    <!-- begin::Sidebar Controls -->
-        <div class="sidebar-controls">
-            <button type="button" class="sidebar-control left" aria-controls="leftmenu" aria-expanded="false" aria-label="{'Left column'|i18n( 'design/admin/pagelayout' )|wash}" title="{'Show or hide the left sidebar'|i18n( 'design/admin/pagelayout' )|wash}">
-                <span class="a4-icon a4-bi-chevron-right" aria-hidden="true"></span>
-            </button>
-            <button type="button" class="sidebar-control right" aria-controls="rightmenu" aria-expanded="false" aria-label="{'Right column'|i18n( 'design/admin/pagelayout' )|wash}" title="{'Show or hide the right sidebar'|i18n( 'design/admin/pagelayout' )|wash}">
-                <span class="a4-icon a4-bi-chevron-right" aria-hidden="true"></span>
-            </button>
-        </div>
-    <!-- end::Sidebar Controls -->
+{* Admin block (explayouts), kept for layouts stored before the block was split: the menu button and the sidebar
+   controls in one. The page draws it with the rest of the header zone, after the tools, so a layout that still has
+   it keeps the old Tab order; the stock layouts use admin_menu_button and admin_sidebar_controls instead. *}
+{include uri='design:explayouts/block/admin_menu_button.tpl'}
+{include uri='design:explayouts/block/admin_sidebar_controls.tpl'}

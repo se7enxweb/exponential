@@ -12,6 +12,8 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminNoticesTest extends PHPUnit\Framework\TestCase
 {
     const STATES = array( 'ok' => 'check-circle-fill', 'bad' => 'x-circle-fill', 'warn' => 'exclamation-triangle-fill', 'info' => 'info-circle-fill' );
@@ -39,7 +41,7 @@ class AdminNoticesTest extends PHPUnit\Framework\TestCase
 
     public function testEveryStateOfANoticeHasAnIconThatExists()
     {
-        $css = (string)file_get_contents( self::root() . '/design/admin4/stylesheets/components.css' );
+        $css = AdminFiles::read( self::root() . '/design/admin4/stylesheets/components.css' );
         foreach ( self::STATES as $state => $icon )
         {
             $this->assertMatchesRegularExpression( '/\.a4-notice\.is-' . $state . '::before \{[^}]*mask-image: url\([^)]*\/' . preg_quote( $icon, '/' ) . '\.svg\)/', $css,
@@ -58,14 +60,14 @@ class AdminNoticesTest extends PHPUnit\Framework\TestCase
 
     public function testToastsHaveTheirComponentAndLiveRegions()
     {
-        $css = (string)file_get_contents( self::root() . '/design/admin4/stylesheets/components.css' );
+        $css = AdminFiles::read( self::root() . '/design/admin4/stylesheets/components.css' );
         foreach ( array( '.a4-toasts {', '.a4-toasts > [aria-live] {', '.a4-toast {', '.a4-toast .a4-toast-close {' ) as $rule )
             $this->assertStringContainsString( $rule, $css );
         $this->assertMatchesRegularExpression( '/@media \(prefers-reduced-motion: reduce\) \{\s*\.a4-toast \{ animation: none; \}/', $css );
 
         foreach ( array( 'admin4', 'admin4l' ) as $design )
         {
-            $layout = (string)file_get_contents( self::root() . "/design/$design/templates/pagelayout.tpl" );
+            $layout = AdminFiles::read( self::root() . "/design/$design/templates/pagelayout.tpl" );
             $this->assertMatchesRegularExpression( '/<div id="a4-toasts" aria-live="polite"[^>]*data-close-label="\{\'Dismiss\'\|i18n\( \'design\/admin\/pagelayout\' \)\|wash\}"/', $layout );
             $this->assertMatchesRegularExpression( '/<div id="a4-toasts-alert" aria-live="assertive"/', $layout );
             // both regions in one stack, so two toasts never cover each other
@@ -74,9 +76,9 @@ class AdminNoticesTest extends PHPUnit\Framework\TestCase
         // above the debug bar, on the layer scale; an error stays until it is dismissed
         $this->assertStringContainsString( 'z-index: var(--a4-z-toast);', $css );
         $this->assertStringContainsString( 'body.exp-debug-bar .a4-toasts {', $css );
-        $this->assertStringContainsString( "kind !== 'bad'", (string)file_get_contents( self::root() . '/design/admin4/javascript/admin4.js' ) );
+        $this->assertStringContainsString( "kind !== 'bad'", AdminFiles::read( self::root() . '/design/admin4/javascript/admin4.js' ) );
 
-        $js = (string)file_get_contents( self::root() . '/design/admin4/javascript/admin4.js' );
+        $js = AdminFiles::read( self::root() . '/design/admin4/javascript/admin4.js' );
         $this->assertStringContainsString( 'window.a4Toast = function (message, kind', $js );
         $start = strpos( $js, 'window.a4Toast = function' );
         $toast = substr( $js, $start, strpos( $js, '})();', $start ) - $start );
@@ -92,7 +94,7 @@ class AdminNoticesTest extends PHPUnit\Framework\TestCase
         $missing = array();
         foreach ( self::templates() as $file )
         {
-            preg_match_all( '/<div\s+class="message-(error|warning|feedback|confirmation|information)[^"]*"([^>]*)>/', (string)file_get_contents( $file ), $m, PREG_SET_ORDER );
+            preg_match_all( '/<div\s+class="message-(error|warning|feedback|confirmation|information)[^"]*"([^>]*)>/', AdminFiles::read( $file ), $m, PREG_SET_ORDER );
             foreach ( $m as $div )
             {
                 // a warning that reports a failed action (did not validate, could not be stored) is an alert too
@@ -109,17 +111,17 @@ class AdminNoticesTest extends PHPUnit\Framework\TestCase
         $found = array();
         foreach ( self::templates() as $file )
         {
-            if ( preg_match_all( '/a4-notice[^>]*>\s*<(strong|b|span)[^>]*>\s*(!|i|&#10003;|&#x2713;|\x{2713}|\x{2714})\s*<\//u', (string)file_get_contents( $file ), $m ) )
+            if ( preg_match_all( '/a4-notice[^>]*>\s*<(strong|b|span)[^>]*>\s*(!|i|&#10003;|&#x2713;|\x{2713}|\x{2714})\s*<\//u', AdminFiles::read( $file ), $m ) )
                 $found[] = substr( $file, strlen( self::root() ) + 1 );
         }
         $this->assertSame( array(), $found, 'the state class draws the icon; a "!" or tick beside it shows the state twice' );
-        $css = (string)file_get_contents( self::root() . '/design/admin4/stylesheets/components.css' );
+        $css = AdminFiles::read( self::root() . '/design/admin4/stylesheets/components.css' );
         $this->assertStringContainsString( 'li.a4-notice { list-style: none; }', $css );
     }
 
     public function testToastsStayFewAndGiveTheFocusBack()
     {
-        $js = (string)file_get_contents( self::root() . '/design/admin4/javascript/admin4.js' );
+        $js = AdminFiles::read( self::root() . '/design/admin4/javascript/admin4.js' );
         $this->assertStringContainsString( 'window.a4Toast = function (message, kind, opener, delay)', $js );
         $this->assertStringContainsString( 'timer = setTimeout(remove, delay > 0 ? delay : DELAY)', $js, 'a toast with an action may stay longer' );
         $this->assertStringContainsString( 'MAX = 3', $js );
@@ -131,26 +133,26 @@ class AdminNoticesTest extends PHPUnit\Framework\TestCase
 
     public function testACopyThatFailsSaysSo()
     {
-        $body = (string)file_get_contents( self::root() . '/design/admin4/templates/node/view/a4_full_body.tpl' );
+        $body = AdminFiles::read( self::root() . '/design/admin4/templates/node/view/a4_full_body.tpl' );
         $this->assertSame( substr_count( $body, 'data-a4-copy=' ), substr_count( $body, 'data-a4-copy-failed=' ) );
-        $js = (string)file_get_contents( self::root() . '/design/admin4/javascript/admin4.js' );
+        $js = AdminFiles::read( self::root() . '/design/admin4/javascript/admin4.js' );
         $this->assertStringContainsString( "window.a4Toast(chip.getAttribute('data-a4-copy-failed'), 'bad', chip)", $js );
-        $menu = (string)file_get_contents( self::root() . '/design/admin4/templates/visual/menuconfig.tpl' );
+        $menu = AdminFiles::read( self::root() . '/design/admin4/templates/visual/menuconfig.tpl' );
         $this->assertStringContainsString( "window.a4Toast(button.getAttribute('data-copy-failed'), 'bad', button)", $menu );
         foreach ( array( 'eng-US', 'ger-DE' ) as $lang )
         {
-            $ts = (string)file_get_contents( self::root() . "/share/translations/$lang/translation.ts" );
+            $ts = AdminFiles::read( self::root() . "/share/translations/$lang/translation.ts" );
             $this->assertGreaterThanOrEqual( 2, substr_count( $ts, '<source>Could not copy</source>' ), $lang );
         }
     }
 
     public function testCopyFeedbackIsAlsoAToast()
     {
-        $body = (string)file_get_contents( self::root() . '/design/admin4/templates/node/view/a4_full_body.tpl' );
+        $body = AdminFiles::read( self::root() . '/design/admin4/templates/node/view/a4_full_body.tpl' );
         $this->assertSame( substr_count( $body, 'data-a4-copy=' ), substr_count( $body, 'data-a4-copied=' ), 'every copy chip names its toast' );
-        $js = (string)file_get_contents( self::root() . '/design/admin4/javascript/admin4.js' );
+        $js = AdminFiles::read( self::root() . '/design/admin4/javascript/admin4.js' );
         $this->assertStringContainsString( "window.a4Toast(chip.getAttribute('data-a4-copied')", $js );
-        $menu = (string)file_get_contents( self::root() . '/design/admin4/templates/visual/menuconfig.tpl' );
+        $menu = AdminFiles::read( self::root() . '/design/admin4/templates/visual/menuconfig.tpl' );
         $this->assertStringContainsString( "window.a4Toast(button.getAttribute('data-copied'), 'ok', button)", $menu );
     }
 }

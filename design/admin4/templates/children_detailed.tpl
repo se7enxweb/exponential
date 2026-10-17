@@ -266,12 +266,31 @@ var labelsObj = {ldelim}
     var createOptions = [];
 {/if}
 
+var noTableText = "{'The sub items cannot be listed: Exponential UI (the extension expui) is not active or not loaded on this siteaccess.'|i18n( 'design/admin/node/view/full' )|wash('javascript')}";
 {literal}
 // The sub-items table: Exponential UI's exp::datatable (ezajaxsubitems_expdatatable.js)
 if ( window.Exp && Exp.$ && Exp.$.fn.expDataTable && window.eZAjaxSubitemsExpDataTable ) {
     Exp.ready( function() {
         eZAjaxSubitemsExpDataTable.init(confObj, labelsObj, createGroups, createOptions);
     } );
+}
+else {
+    // Without Exponential UI the table cannot be drawn: say so instead of leaving its place empty. The place comes
+    // after this script, so the note waits for the page.
+    var showNoTable = function() {
+        var list = document.getElementById( 'content-sub-items-list' );
+        if ( !list || list.querySelector( '.exp-no-subitems-table' ) )
+            return;
+        var note = document.createElement( 'div' );
+        note.className = 'a4-notice is-warn exp-no-subitems-table';
+        note.setAttribute( 'role', 'status' );
+        note.textContent = noTableText;
+        list.appendChild( note );
+    };
+    if ( document.readyState === 'loading' )
+        document.addEventListener( 'DOMContentLoaded', showNoTable );
+    else
+        showNoTable();
 }
 
 })();

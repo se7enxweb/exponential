@@ -26,11 +26,13 @@
 
 require_once __DIR__ . '/AdminBaseStylesheetsTest.php';
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminHeaderTest extends PHPUnit\Framework\TestCase
 {
     private static function file( $path )
     {
-        return (string)file_get_contents( dirname( __DIR__, 3 ) . '/' . $path );
+        return AdminFiles::read( dirname( __DIR__, 3 ) . '/' . $path );
     }
 
     private static function css( $file )
@@ -156,7 +158,7 @@ class AdminHeaderTest extends PHPUnit\Framework\TestCase
     {
         $root = dirname( __DIR__, 3 );
         $check = "fetch( 'user', 'can_open', hash( 'uri', 'user/password' ) )";
-        $source = (string)file_get_contents( $root . '/design/admin4/templates/parts/a4_header_user.tpl' );
+        $source = AdminFiles::read( $root . '/design/admin4/templates/parts/a4_header_user.tpl' );
         $this->assertSame( 1, substr_count( $source, $check ), 'the one database access of the template' );
         $dir = $root . '/var/tmp/phpunit-header-user-' . getmypid() . '-' . substr( md5( uniqid( '', true ) ), 0, 8 );
         mkdir( $dir, 0777, true );
@@ -253,7 +255,7 @@ class AdminHeaderTest extends PHPUnit\Framework\TestCase
             $block = array( 1 => substr( $layout, $open, strpos( $layout, '{/cache-block}', $at ) - $open ) );
         }
         // admin4l draws the header zone (admin_theme_switch.tpl includes this template) in the same block
-        $this->assertStringContainsString( "{include uri='design:explayouts/admin_zone.tpl' layout=\$admin_layout zone_identifier='header'}", $block[1] );
+        $this->assertStringContainsString( "{include uri='design:explayouts/admin_zone.tpl' layout=\$admin_layout zone_identifier='header' skip=array( 'admin_logo', 'admin_menu_button' )}", $block[1] );
         $this->assertStringContainsString( "{include uri='design:page_topmenu.tpl'}", self::file( 'design/admin4/templates/page_header.tpl' ) );
         $this->assertStringContainsString( '$user_hash = concat( $current_user.role_id_list|implode( \',\' ), \',\', $current_user.limited_assignment_value_list|implode( \',\' )', self::file( 'design/admin4/templates/pagelayout.tpl' ) );
 

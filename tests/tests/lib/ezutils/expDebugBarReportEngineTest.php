@@ -209,6 +209,9 @@ class expDebugBarReportEngineTest extends PHPUnit\Framework\TestCase
         $this->assertStringNotContainsString( '<th>Host</th>', $visitor );
         $this->assertStringNotContainsString( 'exp-debug-velocity-cache', $visitor );
         $this->assertStringContainsString( 'data-rendered-by="PHP cli"', $visitor, 'no process id for a visitor' );
+        $this->assertStringContainsString( '<tr><th>PHP</th><td>' . PHP_VERSION . ' (cli)</td></tr>', $html );
+        $this->assertStringContainsString( '<tr><th>PHP</th><td>cli</td></tr>', $visitor, 'the server API, not the version, for a visitor' );
+        $this->assertStringNotContainsString( PHP_VERSION, $visitor );
     }
 
     public function testScriptSaysWhenTheReportCameFromACache()
