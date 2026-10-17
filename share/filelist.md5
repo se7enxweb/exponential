@@ -2963,7 +2963,7 @@ ef64aacab3749199176823b6f77f0728  doc/bc/5.4/changes-5.4.txt
 cdbe0fdc9c9011438bf808f4842b0982  doc/bc/5.90/relation_indexing.md
 80fe50b87915a03608f4e2717961df7b  doc/bc/6.0/AdditionalExtensionDirectories.md
 1e03a68c3131eb9d1c8b4570c969d237  doc/bc/6.0/EXT_SORT_ORDERS.md
-7bd7841ebda1338b74f5d29c8e3d4df0  doc/bc/6.0/ICONS.md
+8e2adc9f8ca094c2b59be71438c748b5  doc/bc/6.0/ICONS.md
 2c56f7a3506917910383af311b62a3cb  doc/bc/6.0/LAYOUTS.md
 d386923e32f7abc18de9e5392795bb5f  doc/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md
 d95203ddf57747c5dcb15b6923bd0356  doc/bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXPANSION_HIDE_UNHIDE.md
@@ -3201,7 +3201,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-05559aea26ca4e1c27a437188718ccd0  doc/changelogs/6.0/6.0.15.md
+6cd15af893c9744d8e8c01ded1a70ca3  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3529,7 +3529,7 @@ d054ec0eb0da44b4658d442f6b051953  doc/features/6.0/admin-content-tree-top-node.m
 8ee6875c6693489d567c309177b49b81  doc/features/6.0/admin-list-paging.md
 41099ca247392d7ed963caa4b857e51c  doc/features/6.0/admin3-responsive-admin.md
 98b1eb658a2475fc31af9b9cbfaba709  doc/features/6.0/admin3-sidebar-width-and-font-size.md
-8dd36f750d148c5aa68615f200642154  doc/features/6.0/admin4-design.md
+14a0ddfa631bb967a967ee7dfd12dd27  doc/features/6.0/admin4-design.md
 71bb2f64a4847b2614637164a40765b6  doc/features/6.0/admin4l.md
 cb077d1f37f8e8811c377ede4bc99357  doc/features/6.0/adminneo-database-manager.md
 ae7d698fad5f10287ad37ade2f97d8aa  doc/features/6.0/audit-trail.md
@@ -5501,7 +5501,7 @@ b13aefe62a3e0030247f06a02f133148  kernel/common/eztocoperator.php
 4e1f25ed5d8a1e1f9aa54625a88a8593  kernel/common/eztopmenuoperator.php
 84fe1fae52b9b8b9f029ff975ce1e09b  kernel/common/eztreemenuoperator.php
 6953a12aa883c8681e89d787fac58636  kernel/common/ezurloperator.php
-33112e10449d1ace7abd21ca64f35d8e  kernel/common/ezwordtoimageoperator.php
+9c673095d805ecd7fc7b25aec396dd4e  kernel/common/ezwordtoimageoperator.php
 02173ea3c8c2a03249c09f3c5fd0f451  kernel/common/i18n.php
 d2ddf7466b4280c4911c37c8102bbfa9  kernel/common/template.php
 d9a19707d273b7203fc3126bfb7cf064  kernel/content/action.php
@@ -6274,9 +6274,9 @@ fd65c2cce9e61492592c18344e029370  kernel/setup/expmoduleextensionwizard.php
 b9392be853cb2039808b3bae645020b3  kernel/setup/expmodulewizard.php
 13e4e1c42da6fa4cd090425a4afb2e25  kernel/setup/exppreloadrunner.php
 d3ea20d766c7626faa10b17d67e67f90  kernel/setup/expradcatalogue.php
-f0085160fe76a946a6b16270ea5e6262  kernel/setup/expradhealth.php
+4a4f674970ea95417dc775f5fae9c52a  kernel/setup/expradhealth.php
 63966bfa64081ffffca7171f20c95e3f  kernel/setup/expradsurvey.php
-dd66c27efaf05f70d9ac86a5db71289f  kernel/setup/expsettingsextensionwizard.php
+80bb3fffcec0bdc6c18e0d91faf1db28  kernel/setup/expsettingsextensionwizard.php
 1f83c0a2d52102dcc25243247dca9d32  kernel/setup/expstaticcacherunner.php
 9bc458d96c3589dc82f294aca4d45a21  kernel/setup/exptemplateextensionwizard.php
 684ce9086a4f21ab860271d9d506fb96  kernel/setup/expworkfloweventwizard.php
@@ -6720,7 +6720,7 @@ fb2495206b5c7b42cdef926446b6f7c0  settings/fetchalias.ini
 cb0b16d6478138ba8429920d17189ded  settings/file.ini
 d67b9d8070da89d40e422a18fd8d5142  settings/httpcache.ini
 9ff1cef13a954b0c1608d1afc0e9045b  settings/i18n.ini
-6bdd02dfee6898322c34dd0bbef5b904  settings/icon.ini
+23933bf2a339997bfa0b5571b5bcc123  settings/icon.ini
 3c3f4535b3898b2acb8bd3b321694379  settings/image.ini
 ff628948e2b39a3ebfb9a8f9f81ae678  settings/ini.ini
 ba31587f56f91488816b2dcd90470594  settings/layout.ini
@@ -7592,7 +7592,7 @@ a4e7a187670959adc083b3b4ab09caca  tests/runtests.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 9ff58a769386f12831d56db2598e292e  tests/suite.php
-a68ceefbb4fdd928cd62f1f84c23b7ec  tests/test-map.json
+826da226d60a2432a1d749491b937adb  tests/test-map.json
 8b29711fe10a56c5c5b90916f35d0a00  tests/tests/bin/phpcs/NoTypeDeclarationsSniffTest.php
 4e3eeb18c2ea423afb62388e5e3dcafc  tests/tests/bin/phpcs/fixtures/typedeclarations.inc
 0f61a66b5e0996561766fc594dec3781  tests/tests/design/Admin4lReviewTest.php
@@ -8017,7 +8017,6 @@ f54782a8f10898bc22d75eaf1c33d2de  tests/tests/kernel/classes/eZSectionTest.php
 4191385b59cae3b5ac73a6da4acbf405  tests/tests/kernel/classes/eZShopCustomerOrderViewEmailTest.php
 d2b2aa97184624a1b60cebe09319e82a  tests/tests/kernel/classes/eZSiteAccessMatchHostUriTest.php
 d61e47486ee9a916d28189fd4e6aba6d  tests/tests/kernel/classes/eZSiteAccessSitePathsTest.php
-68d772f3db6a9ae2a865ce3eb3a607e3  tests/tests/kernel/classes/eZSiteAccess_Test.php
 d3640c0812da0b4776d03987703bf832  tests/tests/kernel/classes/eZSiteDataCreateNewLiveTest.php
 701e47e83c834e38a17999aa4c5e306e  tests/tests/kernel/classes/eZSiteDataCreateTest.php
 aec17c87e108b370bb8d629a55864026  tests/tests/kernel/classes/eZSiteDataTest.php
@@ -8135,7 +8134,6 @@ bb8499047a14bfaded92aa6ed5af9d6c  tests/tests/kernel/classes/ezrss/testCreateRSS
 842235247153939617e2f6808ba9626f  tests/tests/kernel/classes/ezrss/testCreateRSS2With2Items1Hidden.xml
 921b53a9271cb854bf72081c3a8524b4  tests/tests/kernel/classes/ezrss_export_test.php
 ec496f6cf7c5e33c88b32ec1d1522127  tests/tests/kernel/classes/ezsection_test.php
-caf171103b405564fcc436e60c0408f5  tests/tests/kernel/classes/ezsiteaccess_test.php
 7e30c7f0f6736df0086e0a6e28d21b1c  tests/tests/kernel/classes/ezsiteaccessmatchhosturi_test.php
 d04c7963df8ab9f8eeef0f4cedf5b736  tests/tests/kernel/classes/ezsitedata_test.php
 0a0fc572221e7a22f24d824ff568e76e  tests/tests/kernel/classes/ezsiteinstaller_test.php
@@ -8360,6 +8358,7 @@ d44f7d91cfcfce7f540940d68cc67a08  tests/tests/kernel/common/eZTopMenuOperatorMis
 39eff462eb44a140ba4ab2f5e15f143c  tests/tests/kernel/common/eZTopMenuOperatorSetupTabAccessTest.php
 8b30e928ef30214515342d68df84a9ee  tests/tests/kernel/common/eZTopMenuOperatorSetupTabsTest.php
 598827358b1c432bc3318f2109f7e9f8  tests/tests/kernel/common/eZURLOperatorAbsoluteEscapeTest.php
+35c133866c4c97925b4707908a6d3101  tests/tests/kernel/common/eZWordToImageOperatorDesignThemeTest.php
 2750fff669b9a51f2ad1a9cf046ccd88  tests/tests/kernel/common/ezautolinkoperator_test.php
 0272b9db6554e00826c7f5085696ac37  tests/tests/kernel/common/ezurloperator_test.php
 3d6dcc36e9e26204ace452a523e46979  tests/tests/kernel/content/eZAdminFullViewCopyButtonTest.php
@@ -8691,7 +8690,7 @@ ea78290da17011e1c5e5fa5c26e2f812  tests/tests/kernel/private/webdav/regression/P
 0c4d498d365638f271d6368732362b01  tests/tests/kernel/search/eZSearchEngineIdsTest.php
 3fd64cf8d6100ef095a212afa06b5f22  tests/tests/kernel/search/eZSearchEngineIntegerClampTest.php
 7672ec3f2714756db70059a8fdabf898  tests/tests/kernel/search/ezsearchengine_regression.php
-a3ea1bdfc39cf79ebe3eeda15c967a85  tests/tests/kernel/suite.php
+4725a01ac91d7ad87618512d3f2b9357  tests/tests/kernel/suite.php
 f41f1ce2427c94f00213bc3ba51685cf  tests/tests/lib/ezdb/eZDBExceptionCodeTest.php
 859ec399542c1118723b6c217ff29a77  tests/tests/lib/ezdb/eZDBInterfaceHelpersTest.php
 d0fbfd88dc279221eee85b97921f6add  tests/tests/lib/ezdb/eZDBInterfaceTest.php
