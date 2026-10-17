@@ -230,7 +230,8 @@ class eZXMLInputParser
         // see http://www.w3.org/TR/REC-xml/#charsets
         // including #x10000-#x10FFFF, as XML 1.0 allows. Before, every character beyond U+FFFF became a space on
         // saving: "a \u{1F600} b" became "a b", "\u{1D538} = \mathbb{A}" became " = \mathbb{A}".
-        $text = preg_replace( '/[^\x{0009}\x{000a}\x{000d}\x{0020}-\x{D7FF}\x{E000}-\x{FFFD}\x{10000}-\x{10FFFF}]+/u', ' ', $text, -1, $count );
+        // They are kept only where the database can store them (eZXMLInputHandler::supplementaryCharactersAllowed()).
+        $text = eZXMLInputHandler::replaceCharactersXMLDoesNotAllow( $text, ' ', $count );
         if ( $count > 0 )
         {
             $this->Messages[] = ezpI18n::tr(
