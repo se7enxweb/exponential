@@ -351,7 +351,7 @@ also a setting of the bar (Settings tab, Debug output, "Bar theme").
 | Value | The bar |
 |---|---|
 | `default` | The summary as light chips (dark in a dark colour scheme), the details of a chip in its tooltip (`title`). Also any value that is not `toolbar`. |
-| `toolbar` | A dark, compact toolbar in both colour schemes, in the manner of the Symfony web debug toolbar: each block with an icon, the first block the request (HTTP status and module/view, green, amber from status 400, red from 500; it opens the Server tab), amber and red blocks filled with their colour, and the details of a block in a popup above it while the pointer or the keyboard focus is on it. "Keep open on reload" shows its box alone, the words as its tooltip. |
+| `toolbar` | A dark, compact toolbar in both colour schemes, in the manner of the Symfony web debug toolbar: each block with an icon, the first block the request (HTTP status and module/view, green, amber from status 400, red from 500; it opens the Server tab), amber and red blocks filled with their colour, and the details of a block in a popup above it while the pointer or the keyboard focus is on it. "Keep open on reload" shows its box alone, the words as its tooltip. "Exp Debug", the switch of the panel, is a lighter block of its own at the right end, filled orange while the panel is open; its arrow points up, and down while it is open. |
 
 In the toolbar theme a chip carries its text in `.exp-debug-chip-text` and its popup in `.exp-debug-chip-info`
 (`aria-hidden`, the chip's `aria-label` says the same) and has no `title`. The popup lists the rows a chip gives

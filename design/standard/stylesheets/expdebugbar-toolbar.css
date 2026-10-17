@@ -17,6 +17,8 @@
   --xd-tb-warn: #95601b;
   --xd-tb-high: #b0413e;
   --xd-tb-focus: #8ab4f8;
+  --xd-tb-toggle: #3a3a3a;
+  --xd-tb-open: #c2410c;
 }
 
 /* --- the bar */
@@ -26,8 +28,17 @@
 }
 /* the blocks wrap inside their row, so the title and "Keep open on reload" stay at the right end of the first line */
 #debug[data-exp-debug-theme="toolbar"] > h2 > .exp-debug-summary { flex: 1 1 0%; min-width: 0; gap: 0; padding: 0; align-self: stretch; }
-#debug[data-exp-debug-theme="toolbar"] > h2 > a { color: var(--xd-tb-soft); font-weight: 600; font-size: 12px; padding: 0 8px; }
-#debug[data-exp-debug-theme="toolbar"] > h2 > a:hover { color: var(--xd-tb-fg); }
+/* "Exp Debug", the switch that opens the panel: a block of its own at the right end, lighter than the bar, filled
+   while the panel is open; its arrow points up (the panel opens above the bar) and down while it is open */
+#debug[data-exp-debug-theme="toolbar"] > h2 > a {
+  display: inline-flex; align-items: center; gap: 6px; align-self: stretch; box-sizing: border-box; min-height: 36px;
+  margin-left: 6px; padding: 0 12px; background: var(--xd-tb-toggle); color: var(--xd-tb-fg);
+  border-left: 1px solid var(--xd-tb-line); font-size: 13px; font-weight: 700; cursor: pointer;
+}
+#debug[data-exp-debug-theme="toolbar"] > h2 > a:hover, #debug[data-exp-debug-theme="toolbar"] > h2 > a:focus-visible { background: var(--xd-tb-hover); color: #ffffff; }
+#debug[data-exp-debug-theme="toolbar"] > h2 > a.active { background: var(--xd-tb-open); color: #ffffff; }
+#debug[data-exp-debug-theme="toolbar"] > h2 > a::after { content: '\25B2'; margin-left: 0; font-size: 10px; transition: none; }
+#debug[data-exp-debug-theme="toolbar"] > h2 > a.active::after { content: '\25BC'; transform: none; }
 /* "Keep open on reload" as its box alone, the words in its tooltip (title) and still its accessible name */
 #debug[data-exp-debug-theme="toolbar"] > h2 > label.debug-keep-open { display: inline-flex; align-items: center; color: var(--xd-tb-soft); font-size: 0; margin-left: 6px; margin-right: 0; }
 #debug[data-exp-debug-theme="toolbar"] > h2 > label.debug-keep-open > input { margin: 0; }

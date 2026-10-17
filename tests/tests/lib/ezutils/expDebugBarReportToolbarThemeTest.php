@@ -131,6 +131,8 @@ class expDebugBarReportToolbarThemeTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( '#debug[data-exp-debug-theme="toolbar"] .exp-debug-chip.exp-debug-end { margin-left: auto; }', $css,
                                            'the chip rule sets margin: 0, the right end is set again' );
         $this->assertDoesNotMatchRegularExpression( '#\]\s+:focus-visible#', $css, 'no focus rule reaches into the panel' );
+        $this->assertStringContainsString( '#debug[data-exp-debug-theme="toolbar"] > h2 > a.active { background: var(--xd-tb-open);', $css,
+                                           'the switch of the panel is filled while the panel is open' );
 
         $source = file_get_contents( $this->root . '/lib/ezutils/classes/expdebugbarreport.php' );
         // the default theme's markup and data stay as they were: no theme attribute, no request in the page's JSON
