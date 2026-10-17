@@ -235,6 +235,19 @@ cjw_tmv and cjw_themes_jumper. At run time the context menu entries of ezmultiup
 output and Exponential UI's head script (Ace and the jQuery UI fallback) add to them. Each of these is changed in its
 own repository before a siteaccess that uses it is set to `enforce`.
 
+### Extensions without inline scripts (17 October 2026)
+
+The extensions listed in `tests/tests/design/ExtensionInlineScriptsTest.php` carry no inline script, no event handler
+attribute and no `javascript:` link in any template from the version listed there on (composer.json requires those
+versions); the test holds them to it whenever they are installed. They follow the patterns above with one
+difference: an extension runs in every administration design and on earlier releases, so it does not rely on
+admin4's `data-a4-*` actions or on the `data-menu-*` menus. Each ships its own script file with delegated listeners;
+its context menu entries are declared in data attributes, and its script adds them to `menuArray` and calls the
+same `ezpopmenu_*` functions as before.
+
+What they still have inline is styles (`style=""`, `<style>`), which `style-src 'self'` reports; enforce with
+`style-src 'self' 'unsafe-inline'` until those are moved as well.
+
 ### Before enforcing on the administration
 
 - **Menu items of extensions.** An extension that adds context menu items with an inline script

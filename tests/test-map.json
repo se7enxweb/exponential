@@ -36,7 +36,8 @@
     "composer.json": [
       "tests/tests/kernel/classes/ini/expIniRoundTripTest.php",
       "tests/tests/kernel/classes/security/expFileModeLimitsTest.php",
-      "tests/tests/design/AdminStylingRulesTest.php"
+      "tests/tests/design/AdminStylingRulesTest.php",
+      "tests/tests/design/ExtensionInlineScriptsTest.php"
     ],
     "kernel/classes/mail/expmailtemplatebody.php": [
       "tests/tests/kernel/classes/mail/expMailTemplateBodyTest.php",
