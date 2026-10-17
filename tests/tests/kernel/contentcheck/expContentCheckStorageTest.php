@@ -26,6 +26,9 @@
  *  CS-13  one layout for every check: the scope picker first, "Select all" / "Select none" of a filter group as
  *         buttons of the form (no JavaScript needed) after "Show", which Enter in a field must keep pressing, the shared
  *         results header and pager
+ *  CS-15  the scope buttons (Whole tree, Websites, Media) and the second row of sites and sections: visible children
+ *         only, in order, the first N and "More", the current one and the one the start location lies in; the picker
+ *         at another level; the links keep plain filters only; one template in both designs
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -432,5 +435,69 @@ class expContentCheckStorageTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'confirm', true ), array( $d['step'], $d['all_results'] ) );
         $d = \Exponential\View\Kernel\Contentcheck\Trash::decide( 'POST', $post + array( 'ObjectIDList' => array( '5' ), 'ConfirmButton' => 1 ) );
         $this->assertSame( array( 'execute', false ), array( $d['step'], $d['all_results'] ) );
+    }
+
+    /** CS-15 */
+    public function testTheScopeButtonsAndTheSitesRow()
+    {
+        // the quick buttons: Whole tree, Websites, Media by default; a node id or a path keeps the node's name
+        $this->assertSame( array( 'tree', 'content', 'media' ), expContentCheckScope::DEFAULT_PRESETS );
+        $this->assertSame( 'Websites', expContentCheckScope::presetLabel( 'content', 'Home' ) );
+        $this->assertSame( 'Media', expContentCheckScope::presetLabel( 'media', 'Media files' ) );
+        $this->assertSame( 'Whole tree', expContentCheckScope::presetLabel( 'tree', '' ) );
+        $this->assertSame( 'Images', expContentCheckScope::presetLabel( 'media/images', 'Images' ) );
+        $this->assertSame( 'Blog', expContentCheckScope::presetLabel( '58', 'Blog' ) );
+        $this->assertSame( '', expContentCheckScope::presetLabel( array( 'content' ), '' ) );
+
+        // the settings: on, under the content root, 12 at most, bounded
+        $settings = expContentCheckScope::siteRowSettings();
+        $this->assertTrue( $settings['enabled'] );
+        $this->assertSame( 'content', $settings['parent'] );
+        $this->assertGreaterThanOrEqual( 1, $settings['limit'] );
+        $this->assertLessThanOrEqual( 50, $settings['limit'] );
+
+        // the row: visible children only, in the order given (the content root's sort order), the first N, "More"
+        $children = array();
+        foreach ( range( 60, 75 ) as $id )
+            $children[] = array( 'node_id' => $id, 'name' => 'Site ' . $id, 'is_hidden' => 0, 'is_invisible' => 0 );
+        $children[1]['is_hidden'] = 1;
+        $children[2]['is_invisible'] = 1;
+        array_unshift( $children, array( 'node_id' => 0, 'name' => 'none' ), 'junk', array( 'node_id' => 61, 'name' => 'twice' ) );
+        $row = expContentCheckScope::siteRow( $children, '/1/2/64/90/', 64, 12 );
+        $ids = array_column( $row['items'], 'node_id' );
+        $this->assertSame( array( 61, 60, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72 ), $ids );
+        $this->assertSame( 'twice', $row['items'][0]['name'], 'a node comes once, the first time' );
+        $this->assertTrue( $row['more'] );
+        $this->assertTrue( $row['items'][3]['current'] );
+        $this->assertFalse( $row['items'][3]['within'] );
+        $row = expContentCheckScope::siteRow( $children, '/1/2/64/90/', 90, 50 );
+        $this->assertFalse( $row['more'] );
+        $this->assertSame( 15, count( $row['items'] ) );
+        $within = array_values( array_filter( $row['items'], function ( $item ) { return $item['within']; } ) );
+        $this->assertSame( array( 64 ), array_column( $within, 'node_id' ), 'the site the start location lies in' );
+        $this->assertSame( array(), array_filter( array_column( $row['items'], 'current' ) ) );
+        // /1/2/6/ must not mark 64 nor 60 by prefix
+        $row = expContentCheckScope::siteRow( $children, '/1/2/6/', 6, 50 );
+        $this->assertSame( array(), array_filter( array_column( $row['items'], 'within' ) ) );
+        $this->assertSame( array( 'items' => array(), 'more' => false ), expContentCheckScope::siteRow( array(), '', 2, 0 ) );
+
+        // the node picker: back to the check at the node, "More" opens it at another level
+        $this->assertSame( '/contentcheck/scope/storage/64', expContentCheckScope::browseURL( 'storage', 64 ) );
+        $this->assertSame( '/contentcheck/scope/storage/64/2', expContentCheckScope::browseURL( 'storage', 64, 2 ) );
+        $this->assertSame( '/contentcheck/scope/storage/2', expContentCheckScope::browseURL( 'storage', 2, 2 ) );
+        $this->assertSame( '', expContentCheckScope::browseURL( '../x', 2, 2 ) );
+
+        // the links keep plain filters only, never NodeID
+        $this->assertSame( '?Show=problems', expContentCheckScope::query( array( 'Show' => 'problems' ) ) );
+        $this->assertSame( '', expContentCheckScope::query( array( 'Show' => '"><script>', 'NodeID' => '5', 'a b' => 'x', 'K' => array( 1 ) ) ) );
+        $this->assertSame( '', expContentCheckScope::query( array() ) );
+
+        // one shared part in both designs: plain links, the current one marked, no inline CSS, escaped names
+        $root = dirname( __DIR__, 4 );
+        $admin = (string)file_get_contents( $root . '/design/admin/templates/contentcheck/scope.tpl' );
+        $this->assertSame( $admin, (string)file_get_contents( $root . '/design/admin4/templates/contentcheck/scope.tpl' ) );
+        foreach ( array( 'aria-current="true"', '$site.name|wash', '$scope.sites.more_url|ezurl', 'a4-toolbar', 'a4-btn' ) as $needle )
+            $this->assertStringContainsString( $needle, $admin );
+        $this->assertDoesNotMatchRegularExpression( '/<style|style="|<script|onclick=/i', $admin );
     }
 }
